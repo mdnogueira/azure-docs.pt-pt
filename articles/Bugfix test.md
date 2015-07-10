@@ -30,3 +30,4 @@ Azure Active Directory Connect 精靈是單一工具，其引導式體驗可將�
 [Azure Active Directory 文件](http://azure.microsoft.com/documentation/services/active-directory/)
 
 <!--testingHONumber=47-->
+Test2
