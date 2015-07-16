@@ -4,7 +4,7 @@
 
 <h1 id="vnettut1">Azure Active Directory Connect</h1>
 
-zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz。此精靈會部署及設定讓您的目錄整合啟動並執行所需的所有元件，包括同步服務、密碼同步或 Active Directory Federation Services (AD FS) 和必要元件，例如 Azure AD PowerShell 模組。
+Master Master Master Master Master Master Master Master Master Master Master Master Master Master Master此精靈會部署及設定讓您的目錄整合啟動並執行所需的所有元件，包括同步服務、密碼同步或 Active Directory Federation Services (AD FS) 和必要元件，例如 Azure AD PowerShell 模組。
 
 
 >[AZURE.NOTE] **Azure Active Directory Connect 包含先前發行為 DirSync 和 AAD 同步的功能。這些工具將不再個別發行。** 
