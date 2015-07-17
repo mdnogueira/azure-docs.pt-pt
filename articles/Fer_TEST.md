@@ -29,4 +29,5 @@ Azure Active Directory Connect 精靈是單一工具，其引導式體驗可將�
 ##  其他資源
 [Azure Active Directory 文件](http://azure.microsoft.com/documentation/services/active-directory/)
 
-<!--HONumber=255858-->
+<!--testingHONumber=1-->
+Test2
