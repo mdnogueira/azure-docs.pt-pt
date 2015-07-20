@@ -32,4 +32,3 @@ Azure Active Directory Connect 精靈是單一工具，其引導式體驗可將�
 
 <!--testingHONumber=Version to stay-->
 Testing july 17 A
-
