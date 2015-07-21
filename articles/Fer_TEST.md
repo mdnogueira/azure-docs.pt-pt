@@ -6,7 +6,7 @@
 
 Azure Active Directory Connect 精靈是單一工具，其引導式體驗可將您的內部部署目錄與 Azure Active Directory 連線。此精靈會部署及設定讓您的目錄整合啟動並執行所需的所有元件，包括同步服務、密碼同步或 Active Directory Federation Services (AD FS) 和必要元件，例如 Azure AD PowerShell 模組。
 
->[AZURE.NOTE] **Azure Active Directory Connect 包含先前發行為 DirSync 和 AAD 同步的功能。這些工具將不再個別發行。** 
+>[AZURE.NOTA] **Azure Active Directory Connect 包含先前發行為 DirSync 和 AAD 同步的功能。這些工具將不再個別發行。** 
 
 > **Azure Active Directory Connect 現在是同步、登入，以及內部部署至 Azure AD 整合的所有其他層面的單一資訊點。**
 
@@ -30,7 +30,7 @@ Azure Active Directory Connect 精靈是單一工具，其引導式體驗可將�
 [Azure Active Directory 文件](http://azure.microsoft.com/documentation/services/active-directory/)
 
 
-After Bugfixing
-<!--testingHONumber=55555554-->
-Test2
+
+<!--Multiple changes-->
+
 
