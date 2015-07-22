@@ -203,4 +203,4 @@ Más información acerca de ExpressRoute. Consulte [Información técnica de Exp
 
 Más información acerca de las puertas de enlace de VPN. Consulte [Información acerca de las puertas de enlace de VPN](../vpn-gateway/vpn-gateway-about-vpngateways.md).
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_H99-->
