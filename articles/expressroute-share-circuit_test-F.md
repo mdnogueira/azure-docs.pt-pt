@@ -19,11 +19,11 @@
 
 Se puede compartir un solo circuito ExpressRoute entre varias suscripciones. En la **ilustración 1**, se muestra un sencillo esquema de cómo funciona el uso compartido de circuitos ExpressRoute entre varias suscripciones.
 
-Cada una de las nubes más pequeñas dentro de la nube de gran tamaño se usa para representar las suscripciones que pertenecen a diferentes departamentos dentro de una organización. Cada departamento de la organización puede usar su propia suscripción para implementar sus servicios, pero puede compartir un único circuito ExpressRoute dedicado para volver a conectarse a la red corporativa. Un solo departamento (en este ejemplo: TI) puede ser el propietario del circuito ExpressRoute dedicado. Los cargos de conectividad y ancho de banda de un circuito dedicado se recaerán en el propietario del circuito dedicado. Otras suscripciones dentro de la organización pueden usar el circuito ExpressRoute.
+Cada una de las nubes más pequeñas dentro de la nube de gran tamaño se usa para representar las suscripciones que pertenecen a diferentes departamentos dentro de una organización. Cada departamento de la organización puede usar su propia suscripción para implementar sus servicios, pero puede compartir un único circuito ExpressRoute dedicado para volver a conectarse a la red corporativa. Un solo departamento (en este ejemplo: TI) puede ser el propietario del circuito ExpressRoute dedicado. Los cargos de conectividad y ancho de banda de un circuito dedicado se recaerán en el propietario del circuito dedicado. Otras suscripciones dentro de la organización pueden usar el circuito ExpressRoute. DFSGSDFGSDFGSGSDGSGSFG
 
 **Ilustración 1**
 
-![Uso compartido de la suscripción](./media/expressroute-share-circuit/IC766124.png)
+![Uso compartido de la suscripciónKDASFSADLKÑFJSKADFASDJKLÑFKJALDSKJSDAFKLJSDFAKJ (./media/expressroute-share-circuit/IC766124.png)
 
 ## Administración
 
