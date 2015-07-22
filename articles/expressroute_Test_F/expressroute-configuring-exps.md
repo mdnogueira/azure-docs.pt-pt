@@ -228,4 +228,4 @@ Windows PowerShell es un potente entorno de scripting que puede usar para contro
 			New-AzureDedicatedCircuitLink -ServiceKey $ServiceKey -VNetName $Vnet
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_H99-->
