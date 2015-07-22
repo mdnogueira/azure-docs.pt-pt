@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
    pageTitle="設定負載平衡器使用 SQL 一律開啟 | Microsoft Azure"
    description="設定負載平衡器使用 SQL 一律開啟，以及如何運用 powershell 來建立 SQL 實作的負載平衡器"
    services="load-balancer"
@@ -15,6 +15,7 @@
    ms.date="05/01/2015"
    ms.author="joaoma" />
 
+zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
 # SQL 一律開啟
 
 SQL Server AlwaysOn 可用性群組現在可以與 ILB 搭配執行。可用性群組是 SQL Server 針對高可用性和災難復原的旗艦解決方案。不論組態中的複本數目為何，可用性群組接聽程式可讓用戶端應用程式順暢地連接到主要複本。

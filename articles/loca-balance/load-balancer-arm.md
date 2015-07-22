@@ -1,4 +1,4 @@
-<properties
+﻿<properties
    pageTitle="Azure 資源管理員的負載平衡器支援預覽版 | Microsoft Azure"
    description="在預覽中，搭配使用適用於負載平衡器的 PowerShell 與 Azure 資源管理員 (ARM)在負載平衡器中使用範本"
    services="load-balancer"
@@ -15,7 +15,7 @@
    ms.date="06/30/2015"
    ms.author="joaoma" />
 
-
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 # Azure 資源管理員的 Azure 負載平衡器支援 
 
 Azure 資源管理員 (ARM) 是 Azure 中新的服務管理架構。Azure 負載平衡器現在可使用以 Azure 資源管理員為基礎的 API 和工具來進行管理。若要深入了解 Azure 資源管理員，請參閱[使用資源群組管理您的 Azure 資源](../azure-preview-portal-using-resource-groups.md)。
