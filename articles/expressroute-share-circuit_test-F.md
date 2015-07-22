@@ -23,7 +23,9 @@ Cada una de las nubes más pequeñas dentro de la nube de gran tamaño se usa pa
 
 **Ilustración 1**
 
-![Uso compartido de la suscripciónKDASFSADLKÑFJSKADFASDJKLÑFKJALDSKJSDAFKLJSDFAKJ (./media/expressroute-share-circuit/IC766124.png)
+CHANGEEEEEEEEEEEEEEEEEEE
+ión](./media/expressroute-share-circuit/IC766124.png)
+
 
 ## Administración
 
