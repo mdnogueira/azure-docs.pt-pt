@@ -1,4 +1,4 @@
-<properties
+﻿<properties
    pageTitle="使用 Azure 資源管理員建立負載平衡器 | Microsoft Azure"
    description="如何建立 Azure 資源管理員的負載平衡器規則、NAT 規則、探查。逐步示範建立負載平衡器資源的端對端流程。"
    services="load-balancer"
@@ -15,6 +15,7 @@
    ms.date="06/30/2015"
    ms.author="joaoma" />
 
+yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy
 # 如何使用 Azure 資源管理員建立負載平衡器
 
 下列步驟將說明如何搭配 PowerShell 使用 Azure 資源管理員建立負載平衡器。使用 Azure 資源管理員時，會個別設定建立負載平衡器所需的項目，然後放置在一起，以建立資源。
