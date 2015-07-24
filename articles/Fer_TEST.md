@@ -30,7 +30,13 @@ Azure Active Directory Connect 精靈是單一工具，其引導式體驗可將�
 [Azure Active Directory 文件](http://azure.microsoft.com/documentation/services/active-directory/)
 
 
+<<<<<<< HEAD
 another change
 <!--Multiple changes-->
 
+=======
+
+<!--Multiple changes-->< t
+is line of text added on git hub by Natalia
+>>>>>>> origin/master
 
