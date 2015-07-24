@@ -1,5 +1,8 @@
-bugFix branch: keep HONumber as 52
+
+Handback branch: change the HONumber to 62 (was 52)
+
 xxxxxxxxxxxxxxxxxxxxxxxxxx
 This is for Demo: to be deleted later
 
-HOnumber=52
+
+HOnumber=62
