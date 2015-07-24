@@ -1,4 +1,4 @@
-<properties pageTitle="Azure Active Directory Connect" description="Azure Active Directory Connect 精靈是單一工具，其引導式體驗可將您的內部部署 Windows Server Active Directory 與 Azure Active Directory 連線" services="active-directory" documentationCenter="" authors="Gayana" manager="terrylan" editor="" />
+﻿<properties pageTitle="Azure Active Directory Connect" description="Azure Active Directory Connect 精靈是單一工具，其引導式體驗可將您的內部部署 Windows Server Active Directory 與 Azure Active Directory 連線" services="active-directory" documentationCenter="" authors="Gayana" manager="terrylan" editor="" />
 
 <tags ms.service="active-directory" ms.workload="identity" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="02/27/2015" ms.author="gabag" />
 
@@ -30,7 +30,7 @@ Azure Active Directory Connect 精靈是單一工具，其引導式體驗可將�
 [Azure Active Directory 文件](http://azure.microsoft.com/documentation/services/active-directory/)
 
 
-
+another change
 <!--Multiple changes-->
 
 
