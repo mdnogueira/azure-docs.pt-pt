@@ -33,6 +33,5 @@ Azure Active Directory Connect 精靈是單一工具，其引導式體驗可將�
 
 
 <!--Multiple changes-->< t
-is line of text added on git hub by Natalia
-
+is line of text added on git hub by Natalia==deleting on local
 
