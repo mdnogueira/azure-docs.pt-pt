@@ -1,5 +1,5 @@
-<properties 
-	pageTitle="如何使用 Azure AD 建置 AngularJS 單頁應用程式" 
+﻿<properties 
+	pageTitle="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" 
 	description="示範使用 Active Directory 驗證程式庫 (ADAL) for JavaScript 來保護 AngularJS 式單一頁面應用程式，使用 ASP.NET Web API 後端實作，其呼叫使用 CORS 的另一個 ASP.NET Web API。" 
 	services="active-directory" 
 	documentationCenter="" 
