@@ -15,6 +15,8 @@
    ms.date="06/30/2015"
    ms.author="joaoma" />
 
+zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 # Azure 資源管理員的 Azure 負載平衡器支援 
 
@@ -77,4 +79,4 @@ Azure 資源管理員可讓您使用宣告式範本佈建應用程式。在單�
 [設定負載平衡器的閒置 TCP 逾時設定](load-balancer-tcp-idle-timeout.md)
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->
