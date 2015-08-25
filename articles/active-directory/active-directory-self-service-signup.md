@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="What is Self-Service Signup for Azure?" 
-	description="An overview self-service signup for Azure, how to manage the sign up process and how to ." 
+	pageTitle="¿Qué es la suscripción de autoservicio de Azure?" 
+	description="Información general de la suscripción de autoservicio de Azure: cómo administrar el proceso de suscripción." 
 	services="active-directory" 
 	documentationCenter="" 
 	authors="Justinha" 
@@ -17,220 +17,217 @@
 	ms.author="Justinha"/>
 
 
-# What is Self-Service Signup for Azure?
+# ¿Qué es la suscripción de autoservicio de Azure?
 
-This topic explains the self-service signup process (sometimes known as viral signup) and how to take over a DNS domain name.  
+En este tema se explica el proceso de suscripción de autoservicio (conocido también como suscripción viral) y cómo adquirir un nombre de dominio DNS.
 
-## Why use self-service signup?
+## Razones para usar la suscripción de autoservicio
 
-- Get customers to services they want faster.
-- Create email-based (viral) offers for a service.
-- Create email-based signup flows which quickly allow users to create identities using their easy-to-remember work email aliases.
-- Unmanaged Azure tenants can grow and become managed tenants later and be reused for other services. 
+- Permita que los usuarios tengan acceso a los servicios que desean más rápido.
+- Cree ofertas (virales) basadas en correo electrónico para un servicio.
+- Cree flujos de suscripción basados en correo electrónico que permitan a los usuarios crear identidades rápidamente con sus alias de correo electrónico del trabajo fáciles de recordar.
+- Los inquilinos de Azure no administrados pueden crecer y convertirse en inquilinos administrados más adelante y reutilizarse para otros servicios. 
 
-## Terms and Definitions
+## Términos y definiciones
 
-+ **Self-service sign up**: This is the method by which a user signs up for a cloud service and has an identity automatically created for them in Azure Active Directory based on their email domain. 
-+ **Unmanaged Azure tenant**: This is the directory where that identity is created. An unmanaged tenant is a directory that has no global administrator. 
-+ **Email-verified user**: This is a type of user account in Azure AD. A user who has an identity created automatically after signing up for a self-service offer is known as an email-verified user. An email-verified user is a regular member of a directory tagged with creationmethod=EmailVerified.
++ **Suscripción de autoservicio**: método por el que un usuario se suscribe a un servicio en la nube y por el que se le crea automáticamente una identidad en Azure Active Directory basado en su dominio de correo electrónico. 
++ **Inquilino de Azure no administrado**: directorio donde se crea la identidad. Un inquilino no administrado es un directorio que no tiene administrador global. 
++ **Usuario comprobado por correo electrónico**: tipo de cuenta de usuario en Azure AD. Un usuario que tiene una identidad que se crean automáticamente después de suscribirse a una oferta de autoservicio se conoce como usuario comprobado por correo electrónico. Un usuario comprobado por correo electrónico es un miembro regular de un directorio etiquetado con creationmethod = EmailVerified.
 
-## Customer experience
+## Experiencia del cliente
 
-### User experience
+### Experiencia del usuario
 
-For example, let's say a user whose email is Dan@BellowsCollege.com receives sensitive files via email. The files have been protected by Azure Rights Management (Azure RMS). But Dan's organization, Bellows College, has not signed up for Azure RMS, nor has it deployed Active Directory RMS. In this case, Dan can sign up for a free subscription to RMS for individuals in order to read the protected files.
+Por ejemplo, supongamos que un usuario cuyo correo electrónico es Dan@BellowsCollege.com recibe archivos confidenciales por correo electrónico. Los archivos se han protegido con Azure Rights Management (Azure RMS). Pero la organización de Dan, Bellows College, no se ha suscrito a Azure RMS ni ha implementado Active Directory RMS. En este caso, Dan puede suscribirse a una suscripción gratuita de RMS para usuarios a fin de leer los archivos protegidos.
 
-If Dan is the first user with an email address from BellowsCollege.com to sign up for this self-service offering, then an unmanaged tenant will be created for BellowsCollege.com in Azure AD. If other users from the BellowsCollege.com domain sign up for this offering or a similar self-service offering, they will also have email-verified user accounts created in the same unmanaged tenant in Azure.
+Si Dan es el primer usuario con una dirección de correo electrónico de BellowsCollege.com en suscribirse a esta oferta de autoservicio, se creará un inquilino no administrado para BellowsCollege.com en Azure AD. Si otros usuarios del dominio BellowsCollege.com se suscriben a esta oferta o a una oferta de autoservicio similar, también se crearán para ellos cuentas de usuario comprobado por correo electrónico en el mismo inquilino no administrado en Azure.
 
-### Admin experience
+### Experiencia del administrador
 
-An admin who owns the DNS domain name of an unmanaged Azure tenant can take over or merge the tenant after proving ownership. The next sections explain the admin experience in more detail, but here's a summary: 
+Un administrador que posee el nombre de dominio DNS de un inquilino de Azure no administrado puede adquirir o fusionar el inquilino después de demostrar la propiedad. En las secciones siguientes se explica con más detalle la experiencia del administrador, pero a continuación se incluye un resumen:
 
-- When you take over an unmanaged Azure tenant, you simply become the global administrator of the unmanaged tenant. This is sometimes called an internal takeover. 
-- When you merge an unmanaged Azure tenant, you add the DNS domain name of the unmanaged tenant to your managed Azure tenant and a mapping of users-to-resources is created so users can continue to access services without interruption. This is sometimes called an external takeover. 
+- Al adquirir un inquilino de Azure no administrado, se convierte en administrador global del inquilino no administrado. Esto se denomina a veces adquisición interna. 
+- Al fusionar un inquilino de Azure no administrado, agregue el nombre de dominio DNS del inquilino no administrado a su inquilino de Azure administrado. Se creará una asignación de usuarios a recursos para que los usuarios puedan seguir teniendo acceso a los servicios sin interrupción. Esto se denomina a veces adquisición externa. 
 
-### What gets created in the Microsoft Azure Directory?
+### ¿Qué se crea en Microsoft Azure Directory?
 
-#### Tenant
+#### Inquilino
 
-- An Azure tenant for the domain is created, one tenant per domain.
-- The Azure tenant directory has no global admin.
+- Se crea un inquilino de Azure para el dominio, un inquilino por dominio.
+- El directorio del inquilino de Azure no tiene administrador global.
 
-#### Users
+#### Usuarios
 
-- For each user who signs up, a user object is created in the Azure tenant.
-- Each user object is marked as viral.
-- Each user is given access to the service that they user signed up for.
+- Para cada usuario que se suscribe , se crea un objeto en el inquilino de Azure.
+- Cada objeto de usuario se marca como viral.
+- Cada usuario tiene acceso al servicio al que se ha suscrito.
 
-### How do I claim a self-service Azure tenant for a domain I own?
+### ¿Cómo puedo reclamar un inquilino de Azure de autoservicio para un dominio de mi propiedad?
 
-You can claim a self-service Azure tenant by performing domain validation. Domain validation proves you own the domain by creating DNS records.
+Puede reclamar un inquilino de Azure de autoservicio realizando la validación del dominio. La validación del dominio demuestra que es el propietario del dominio mediante la creación de registros DNS.
 
-There are two ways to do a DNS takeover of an Azure tenant: 
+Hay dos formas de realizar una adquisición de DNS de un inquilino de Azure:
 
-- internal takeover (Admin discovers an unmanaged Azure tenant, and wants to turn into a managed tenant)
-- external takeover (Admin tries to add a new domain to their managed Azure tenant)
+- adquisición interna (el administrador detecta a un inquilino de Azure no administrado y desea convertirlo en un inquilino administrado)
+- adquisición externa (el administrador intenta agregar un nuevo dominio a su inquilino de Azure administrado).
 
-You might be interested in validating that you own a domain because you are taking over an unmanaged tenant after a user performed self-service signup, or you might be adding a new domain to an existing managed tenant. For example, you have a domain named contoso.com and you want to add a new domain named contoso.co.uk or contoso.uk. 
+Pude que le interese validar un dominio que posee porque va a adquirir un inquilino no administrado después de que un usuario realice una suscripción de autoservicio, o bien puede que quiera agregar un dominio nuevo a un inquilino administrado existente. Por ejemplo, tiene un dominio denominado contoso.com y desea agregar un nuevo dominio denominado contoso.co.uk o contoso.uk.
 
-## What is domain takeover?  
+## ¿Qué es la adquisición de un dominio?  
 
-This section covers how to validate that you own a domain
+En esta sección se describe cómo validar la propiedad de su dominio.
 
-### What is domain validation and why is it used?
+### ¿Qué es la validación de dominios y por qué se usa?
 
-In order to perform operations on a tenant, Azure AD requires that you validate ownership of the DNS domain.  Validation of the domain allows you to claim the tenant and either promote the self-service tenant to a managed tenant, or merge the self-service tenant into an existing managed tenant.	
+Para realizar operaciones en un inquilino, Azure AD necesita que valide la propiedad del dominio DNS. La validación del dominio permite reclamar el inquilino y ascender el inquilino de autoservicio a un inquilino administrado o fusionar el inquilino de autoservicio en un inquilino administrado existente.
 
-## Examples of domain validation
+## Ejemplos de validación de dominio
 
-There are two ways to do a DNS takeover of a tenant: 
+Hay dos formas de realizar una adquisición de DNS de un inquilino:
 
-+ internal takeover  (For example, an admin discovers a self-service, unmanaged tenant, and wants to turn into managed tenant)
-+ external takeover (For example, a admin tries to add a new domain to a managed tenant)
++ adquisición interna (por ejemplo, un administrador detecta un inquilino no administrado de autoservicio y desea convertirlo en inquilino administrado)
++ adquisición externa (por ejemplo, el administrador intenta agregar un nuevo dominio a un inquilino administrado).
 
-### Internal Takeover - promote a self-service, unmanaged tenant to be a managed tenant
+### Adquisición interna: ascienda un inquilino no administrado de autoservicio a un inquilino administrado
 
-When you do internal takeover, the tenant gets converted from an unmanaged tenant to a managed tenant. You need to complete DNS domain name validation, where you create an MX record or a TXT record in the DNS zone. That action:
+Cuando realiza una adquisición interna, el inquilino pasa de ser un inquilino no administrado a un inquilino administrado. Debe completar la validación del nombre de dominio DNS, donde crea un registro MX o un registro TXT en la zona DNS. Esa acción:
 
-+ Validates that you own the domain
-+ Makes the tenant managed
-+ Makes you the global admin of the tenant
++ Valida la propiedad de su dominio
++ Hace que el inquilino sea administrado
++ Le convierte en administrador global del inquilino
 
-Let's say an IT administrator from Bellows College discovers that users from the school have signed up for self-service offerings. As the registered owner of the DNS name BellowsCollege.com, the IT administrator can validate ownership of the DNS name in Azure and then take over the unmanaged tenant. The tenant then becomes a managed tenant, and the IT administrator is assigned the global administrator role for the BellowsCollege.com directory. 
+Supongamos que un administrador de TI de Bellows College detecta que los usuarios de la escuela se han suscrito a ofertas de autoservicio. Como propietario registrado del nombre DNS BellowsCollege.com, el administrador de TI puede validar la propiedad del nombre DNS en Azure y adquirir el inquilino no administrado. A continuación, el inquilino se convierte en un inquilino administrado y al administrador de TI se le asigna el rol de administrador global para el directorio BellowsCollege.com.
 
-### External Takeover - merge a self-service tenant into an existing managed tenant
+### Adquisición externa: fusione un inquilino de autoservicio en un inquilino administrado existente
 
-In an external takeover, you already have a managed tenant and you want all users and groups from an unmanaged tenant to join that managed tenant, rather than own two separate tenants.
+En una adquisición externa, ya tiene un inquilino administrado y desea que todos los usuarios y grupos de un inquilino no administrado se unan a ese inquilino administrado en lugar de poseer dos inquilinos independientes.
 
-As an admin of a managed tenant, you add a domain, and that domain happens to have an unmanaged tenant associated with it.
+Como administrador de un inquilino administrado, se agrega un dominio que tiene asociado un inquilino no administrado.
 	
-For example, let's say you are an IT administrator and you already have a managed tenant for Contoso.com, a domain name that is registered to your organization. You discover that users from your organization have performed self-service sign up for an offering by using email domain name user@contoso.co.uk, which is another domain name that your organization owns. Those users currently have accounts in an unmanaged tenant for contoso.co.uk.
+Por ejemplo, supongamos que es administrador de TI y ya tiene un inquilino administrado para Contoso.com, un nombre de dominio registrado para su organización. Descubre que los usuarios de su organización han realizado una suscripción de autoservicio a una oferta con un nombre de dominio de correo electrónico user@contoso.co.uk, que es otro nombre de dominio que posee su organización. Actualmente, esos usuarios tienen cuentas en un inquilino no administrado para contoso.co.uk.
 
-You don't want to manage two separate tenants, so you merge the unmanaged tenant for contoso.co.uk into your existing IT managed tenant for contoso.com.
+Usted no desea administrar dos inquilinos independientes, por lo que fusiona el inquilino no administrado para contoso.co.uk en su inquilino administrado de TI existente para contoso.com.
 	
-External takeover follows the same DNS validation process as internal takeover.  Difference being: users and services are remapped to the IT managed tenant.
+La adquisición externa sigue el mismo proceso de validación de DNS que la adquisición interna. La diferencia es que se reasignan los usuarios y servicios al inquilino administrado de TI.
 	
-#### What's the impact of performing an external takeover?
+#### ¿Cuál es el impacto de realizar una adquisición externa?
 
-With an external takeover, a mapping of users-to-resources is created so users can continue to access services without interruption. Many applications, including RMS for individuals, handle the mapping of users-to-resources well, and users can continue to access those services without change. If an application does not handle the mapping of users-to-resources effectively, external takeover may be explicitly blocked to prevent users from a poor experience. 
+Con una adquisición externa, se crea una asignación de usuarios a recursos para que los usuarios sigan teniendo acceso a los servicios sin interrupción. Muchas aplicaciones, como RMS para usuarios, administran la asignación de usuarios a los recursos bien y los usuarios pueden seguir teniendo acceso a los servicios sin cambios. Si una aplicación no administra la asignación de usuarios a recursos de forma eficaz, es posible que se bloquee la adquisición externa explícitamente para evitar una experiencia deficiente de los usuarios.
 
-#### Tenant takeover support by service
+#### Admisión de la adquisición del inquilino por servicio
 
-Currently the following services support takeover:
+Actualmente, los servicios siguientes admiten la adquisición:
 
 - RMS
 
 
-The following services will soon be supporting takeover:
+Los siguientes servicios admitirán la adquisición próximamente:
 
 - PowerBI
 
-The following do not and require additional admin action to migrate user data after an external takeover.
+Los siguientes servicios no la admiten y requieren una acción adicional del administrador para migrar datos de usuario después de una adquisición externa.
 
 - SharePoint/OneDrive
 
 
-## How to perform a DNS domain name takeover
+## Realización de una adquisición de nombre de dominio DNS
 
-You have a few options for how to perform a domain validation (and do a takeover if you wish):
+Tiene unas cuantas opciones para realizar una validación de dominio (y realizar una adquisición si lo desea):
 
-1.  Azure Management Portal
+1.  Portal de administración de Azure
 
-	A takeover is triggered by doing a domain addition.  If a tenant already exists for the domain, you'll have the option to perform an external takeover.
+	Una adquisición se desencadena agregando un dominio. Si ya existe un inquilino para el dominio, tendrá la opción de realizar una adquisición externa.
 
-	Sign in to the Azure portal using your credentials.  Navigate to your existing tenant and then to **Add domain**.
+	Inicio de sesión en el portal de Azure con credenciales Vaya al inquilino existente y a **Agregar dominio**.
 
 2.  Office 365
 
-	You can use the options on the [Manage domains](https://support.office.com/article/Navigate-to-the-Office-365-Manage-domains-page-026af1f2-0e6d-4f2d-9b33-fd147420fac2/) page in Office 365 to work with your domains and DNS records. See [Verify your domain in Office 365](https://support.office.com/article/Verify-your-domain-in-Office-365-6383f56d-3d09-4dcb-9b41-b5f5a5efd611/).
+	Puede usar las opciones de la [Administrar dominios](https://support.office.com/article/Navigate-to-the-Office-365-Manage-domains-page-026af1f2-0e6d-4f2d-9b33-fd147420fac2/) en Office 365 para trabajar con sus dominios y registros DNS. Consulte [Comprobar el dominio en Office 365](https://support.office.com/article/Verify-your-domain-in-Office-365-6383f56d-3d09-4dcb-9b41-b5f5a5efd611/).
 
 3.  Windows PowerShell
 
-	The following steps are required to perform a validation using Windows PowerShell.
+	Los pasos siguientes son necesarios para realizar una validación con Windows PowerShell.
 
-	Step	|	Cmdlet to use
+	Paso |	Cmdlet que se debe usar
 	-------	| -------------
-	Create a credential object | Get-Credential
-	Connect to Azure AD	| Connect-MsolService
-	get a list of domains	| Get-MsolDomain
-	Create a challenge	| Get-MsolDomainVerificationDns
-	Create DNS record	| Do this on your DNS server
-	Verify the challenge	| Confirm-MsolEmailVerifiedDomain
+	Crear un objeto de credencial | Get-Credential
+	Conectarse a Azure | Connect-MsolService
+	Obtener una lista de dominios | Get-MsolDomain
+	Crear un desafío | Get-MsolDomainVerificationDns
+	Crear un registro DNS | Realice esta acción en su servidor de DNS
+	Comprobar el desafío | Confirm-MsolEmailVerifiedDomain
 
-For example:
+Por ejemplo:
 
-1. Connect to Azure AD using the credentials that were used to respond to the self-service offering:
-		import-module MSOnline
-		$msolcred = get-credential
-		connect-msolservice -credential $msolcred
+1. Conéctese a Azure AD con las credenciales que se usaron para responder a la oferta de autoservicio: import-module MSOnline $msolcred = get-credential connect-msolservice -credential $msolcred
 		
-2. Get a list of domains:
+2. Obtenga una lista de dominios:
 
 	Get-MsolDomain
 
-3. Then run the Get-MsolDomainVerificationDns cmdlet to create a challenge:
+3. A continuación, ejecute el cmdlet Get-MsolDomainVerificationDns para crear un desafío:
 
-	Get-MsolDomainVerificationDns –DomainName *your_domain_name* –Mode DnsTxtRecord
+	Get-MsolDomainVerificationDns –DomainName *nombre\_de\_dominio* –Mode DnsTxtRecord
 
-	For example: 
+	Por ejemplo:
 
 	Get-MsolDomainVerificationDns –DomainName contoso.com –Mode DnsTxtRecord
 
-4. Copy the value (the challenge) that is returned from this command.
+4. Copie el valor (el desafío) que se devuelve desde este comando.
 
-	For example: 
+	Por ejemplo:
 
 	MS=32DD01B82C05D27151EA9AE93C5890787F0E65D9
 
-5. In your public DNS namespace, create a DNS txt record that contains the value that you copied in the previous step.
+5. En el espacio de nombres DNS público, cree un registro txt de DNS que contenga el valor que copió en el paso anterior.
 
-	The name for this record is the name of the parent domain, so if you create this resource record by using the DNS role from Windows Server, leave the Record name blank and just paste the value into the Text box
+	El nombre de este registro es el nombre del dominio principal, por lo que si crea este registro de recursos con el rol DNS desde Windows Server, deje el nombre del registro en blanco y pegue el valor en el cuadro de texto.
 
-6. Run the Confirm-MsolDomain cmdlet to verify the challenge:
+6. Ejecute el cmdlet Confirm-MsolDomain para comprobar el desafío:
 
-	Confirm-MsolEmailVerifiedDomain -DomainName *your_domain_name*
+	Confirm-MsolEmailVerifiedDomain -DomainName *nombre\_de\_dominio*
 
-	for example:
+	Por ejemplo:
 
 	Confirm-MsolEmailVerifiedDomain -DomainName contoso.com
 
-A successful challenge returns you to the prompt without an error.
+Un desafío correcto le devuelve el mensaje sin errores.
 
-## How do I control self-service settings?
+## ¿Cómo controlo la configuración de autoservicio?
 
-Admins have two self-service controls today. They can control:
+Actualmente, los administradores tienen dos controles de autoservicio . Pueden controlar:
 
-- Whether or not users can join the tenant via email.
-- Whether or not users can license themselves for applications and services.
-
-
-### How can I control these capabilities?
-
-An admin can configure these capabilities using these Azure AD cmdlet Set-MsolCompanySettings parameters:
-
-+ **AllowEmailVerifiedUsers** controls whether a user can create or join an unmanaged tenant. If you set that parameter to $false, no email-verified users can join the tenant. 
-+ **AllowAdHocSubscriptions** controls the ability for users to perform self-service sign up. If you set that parameter to $false, no users can perform self-service signup. 
+- Si los usuarios pueden unirse o no al inquilino a través de correo electrónico.
+- Si los usuarios pueden concederse o no licencias para aplicaciones y servicios.
 
 
-### How do the controls work together?
+### ¿Cómo puedo controlar estas capacidades?
 
-These two parameters can be used in conjunction to define more precise control over self-service sign up. For example, the following command will allow users to perform self-service sign up, but only if those users already have an account in Azure AD (in other words, users who would need an email-verified account to be created cannot perform self-service sign up):
+Un administrador puede configurar estas capacidades con estos parámetros Set-MsolCompanySettings de cmdlet de Azure AD:
+
++ **AllowEmailVerifiedUsers** controla si un usuario puede crear o unirse a un inquilino no administrado. Si establece este parámetro en $false, ningún usuario comprobado por correo electrónico se puede unir al inquilino. 
++ **AllowAdHocSubscriptions** controla la capacidad de los usuarios de realizar suscripciones de autoservicio. Si establece el parámetro en $false, ningún usuario puede realizar suscripciones de autoservicio. 
+
+
+### ¿Cómo funciona los controles conjuntamente?
+
+Estos dos parámetros se pueden usar juntos para definir un control más preciso de la suscripción de autoservicio. Por ejemplo, el comando siguiente permitirá a los usuarios realizar suscripciones de autoservicio pero solo si estos usuarios ya tienen una cuenta en Azure AD (en otras palabras, los usuarios que necesitan crear una cuenta comprobada por correo electrónico no pueden realizar suscripciones de autoservicio):
 
 	Set-MsolCompanySettings -AllowEmailVerifiedUsers $false -AllowAdHocSubscriptions $true
 
-The following flowchart explains all the different combinations for these parameters and the resulting conditions for the tenant and self-service sign up.
+En el siguiente diagrama se explican las distintas combinaciones de estos parámetros y las condiciones resultantes para el inquilino y la suscripción de autoservicio.
 
 ![][1]
 
-For more information and examples of how to use these parameters, see [Set-MsolCompanySettings](https://msdn.microsoft.com/library/azure/dn194127.aspx).
+Para obtener más información y ejemplos de cómo usar estos parámetros, consulte [Set-MsolCompanySettings](https://msdn.microsoft.com/library/azure/dn194127.aspx).
 
-## See Also
+## Otras referencias
 
--  [How to install and configure Azure PowerShell](../powershell-install-configure/)
+-  [Instalación y configuración de Azure PowerShell](../powershell-install-configure/)
 
 -  [Azure PowerShell](https://msdn.microsoft.com/library/azure/jj156055.aspx)
 
--  [Azure Cmdlet Reference](https://msdn.microsoft.com/library/azure/jj554330.aspx)
+-  [Referencia de cmdlets de Azure](https://msdn.microsoft.com/library/azure/jj554330.aspx)
 
 -  [Set-MsolCompanySettings](https://msdn.microsoft.com/library/azure/dn194127.aspx)
 
@@ -238,3 +235,5 @@ For more information and examples of how to use these parameters, see [Set-MsolC
 [1]: ./media/active-directory-self-service-signup/SelfServiceSignUpControls.png
 
  
+
+<!---HONumber=August15_HO6-->

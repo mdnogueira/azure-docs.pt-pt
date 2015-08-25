@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Federation Metadata"
-   description="A description of metadata endpoints and the content in the metadata document that services that accept Azure AD tokens must use."
+   pageTitle="Metadatos de federación"
+   description="Una descripción de los extremos de metadatos y el contenido del documento de metadatos que deben usar los servicios que aceptan tokens de Azure AD."
    services="active-directory"
    documentationCenter="dev-center-name"
    authors="msmbaldwin"
@@ -16,64 +16,63 @@
    ms.date="05/30/2015"
    ms.author="mbaldwin"/>
 
-# Federation Metadata
-Azure Active Directory (Azure AD) publishes a federation metadata document for services that are configured to accept the security tokens that Azure Active Directory issues. The federation metadata document format is described in the [Web Services Federation Language (WS-Federation) Version 1.2](http://docs.oasis-open.org/wsfed/federation/v1.2/os/ws-federation-1.2-spec-os.html), which extends [Metadata for the OASIS Security Assertion Markup Language (SAML) V2.0](http://docs.oasis-open.org/security/saml/v2.0/saml-metadata-2.0-os.pdf).
+# Metadatos de federación
+Azure Active Directory (Azure AD) publica un documento de metadatos de federación para los servicios que están configurados para aceptar los tokens de seguridad que emite Azure Active Directory. El formato del documento de metadatos de federación se describe en el [lenguaje de federación de servicios web (WS-Federation) versión 1.2](http://docs.oasis-open.org/wsfed/federation/v1.2/os/ws-federation-1.2-spec-os.html), que extiende los [metadatos para el lenguaje de marcado de aserción de seguridad (SAML) de OASIS V2.0](http://docs.oasis-open.org/security/saml/v2.0/saml-metadata-2.0-os.pdf).
 
-This topic lists the metadata endpoints and explains the content in the metadata document that services that accept Azure AD tokens need to use.
+En este tema se enumeran los extremos de metadatos y se explica el contenido del documento de metadatos que necesitan usar los servicios que aceptan tokens de Azure AD.
 
-##Tenant-Specific and Tenant-Independent Metadata Endpoints
+##Extremos de metadatos específicos del inquilino e independientes del inquilino
 
-Azure AD publishes tenant-specific and tenant-independent endpoints. Tenant-specific endpoints are designed for a particular tenant. The tenant-specific federation metadata includes information about the tenant, including tenant-specific issuer and endpoint information. Applications that restrict access to a single tenant use tenant-specific endpoints.
+Azure AD publica los extremos específicos del inquilino e independientes del inquilino. Los extremos específicos del inquilino están diseñados para un inquilino determinado. Los metadatos de federación específicos del inquilino incluyen información sobre el inquilino, incluida la información sobre el emisor y el extremo específica del inquilino. Las aplicaciones que restringen el acceso a un solo inquilino utilizan extremos específicos del inquilino.
 
-Tenant-independent endpoints provide information that is common to all Azure AD tenants. This information applies to tenants hosted at *login.windows.net* and is shared across tenants. Tenant-independent endpoints are recommended for multi-tenant applications, since they are not associated with any particular tenant.
+Los extremos independientes del inquilino proporcionan información que es común a todos los inquilinos de Azure AD. Esta información se aplica a los inquilinos hospedados en *login.windows.net* y se comparte entre los inquilinos. Los extremos independientes del inquilino se recomiendan para aplicaciones de varios inquilinos, ya que no están asociados a ningún inquilino en particular.
 
-## Federation Metadata Endpoints
+## Extremos de metadatos de federación
 
-Azure AD publishes federation metadata at *https://login.windows.net/<TenantDomainName>/FederationMetadata/2007-06/FederationMetadata.xml*,where the value of <TenantDomainName> can be "common" or a tenant-specific value.
-The endpoints are addressable, so you can go to the address site to view the federation metadata for a tenant.
+Azure AD publica los metadatos de federación en *https://login.windows.net/<TenantDomainName>/FederationMetadata/2007-06/FederationMetadata.xml*, donde el valor de <TenantDomainName> puede ser "común" o un valor específico del inquilino. Los extremos son direccionables; por tanto, puede ir al sitio de la dirección para ver los metadatos de federación para un inquilino.
 
-For **tenant-specific endpoints**, the <TenantDomainName> can be one of the following types:
+En el caso de los **extremos específicos del inquilino**, el <TenantDomainName> puede ser uno de los siguientes tipos:
 
-- A registered domain name of an Azure AD tenant, such as: contoso.onmicrosoft.com.
+- Un nombre de dominio registrado de un inquilino de Azure AD, como contoso.onmicrosoft.com.
 
-- The immutable tenant id of the domain, such as 72f988bf-86f1-41af-91ab-2d7cd011db45.
+- El identificador del inquilino inmutable del dominio, como 72f988bf-86f1-41af-91ab-2d7cd011db45.
 
-For **tenant-independent endpoints**, the <TenantDomainName> is **common**. This name indicates that only the Federation Metadata elements that are common to all Azure AD tenants that are hosted at login.windows.net.
+En el caso de los **extremos independientes del inquilino **, el <TenantDomainName> es **común**. Este nombre indica que los elementos de metadatos de federación que son comunes a todos los inquilinos de Azure AD son los únicos que se hospedan en login.windows.net.
 
-For example, a tenant-specific endpoint might be *https://login.windows.net/contoso.onmicrosoft.comFederationMetadata/2007-06/FederationMetadata.xml*. The tenant-independent endpoint is *https://login.windows.net/common/FederationMetadata/2007-06/FederationMetadata.xml*.
+Por ejemplo, un extremo específico del inquilino podría ser **https://login.windows.net/contoso.onmicrosoft.comFederationMetadata/2007-06/FederationMetadata.xml*. El extremo independiente del inquilino es **https://login.windows.net/common/FederationMetadata/2007-06/FederationMetadata.xml*.
 
-## Contents of Federation Metadata
+## Contenido de los metadatos de federación
 
-The following section provides information needed by services that consume the tokens issued by Azure AD.
+La siguiente sección proporciona la información necesaria para los servicios que consumen los tokens emitidos por Azure AD.
 
 ### EntityID
 
-The **EntityDescriptor** element contains an **EntityID** attribute. The value of the **EntityID** attribute represents the issuer, that is, the security token service (STS) that issued the token. It is important to validate the issuer so you can confirm which tenant issued a token.
+El elemento **EntityDescriptor** contiene un atributo **EntityID**. El valor del atributo **EntityID** representa al emisor; es decir, al servicio de token de seguridad (STS) que emitió el token. Es importante validar al emisor para poder confirmar qué inquilino emitió un token.
 
-The following metadata shows a sample tenant-specific **EntityDescriptor** element with an **EntityID** element.
+Los metadatos siguientes muestran un ejemplo de un elemento **EntityDescriptor** específico del inquilino con un elemento **EntityID**.
 
     <EntityDescriptor 
     xmlns="urn:oasis:names:tc:SAML:2.0:metadata" 
     ID="_b827a749-cfcb-46b3-ab8b-9f6d14a1294b" 
     entityID="https://sts.windows.net/72f988bf-86f1-41af-91ab-2d7cd011db45/">
 
-The **EntityID** in the tenant-independent endpoint provides a template that can be used to generate a tenant-specific **EntityID** value. Replace the "{tenant}" literal in the tenant-independent endpoint with the value of the **TenantID** claim from a token. The resulting value will be the same as the token issuer. This strategy allows a multi-tenant application to validate the issuer for a given tenant.
+El **EntityID** en el extremo independiente del inquilino proporciona una plantilla que puede utilizarse para generar un valor **EntityID** específico del inquilino. Reemplace el literal "{inquilino}" del extremo independiente del inquilino por el valor de la notificación **TenantID** de un token. El valor resultante será el mismo que el emisor del token. Esta estrategia permite a una aplicación de varios inquilinos validar al emisor de un inquilino determinado.
 
-The following metadata shows a sample tenant-independent **EntityID** element. In this element, {tenant} is a literal, not a placeholder.
+Los metadatos siguientes muestran un ejemplo de un elemento **EntityID** independiente del inquilino. En este elemento, {inquilino} es un literal, no un marcador de posición.
 
     <EntityDescriptor 
     xmlns="urn:oasis:names:tc:SAML:2.0:metadata" 
     ID="="_0e5bd9d0-49ef-4258-bc15-21ce143b61bd" 
     entityID="https://sts.windows.net/{tenant}/">
 
-### Token Signing Certificate
-When a service receives a token that is issued by a Azure AD tenant, the signature of the token must be validated with a signing key that is published in the federation metadata document.  
+### Certificado de firma de tokens
+Cuando un servicio recibe un token emitido por un inquilino de Azure AD, la firma del token debe validarse con una clave de firma que se publica en el documento de metadatos de federación.
 
-The federation metadata includes the public portion of the certificates that the tenants use for token signing. The certificate raw bytes appear in the **KeyDescriptor** element. The token signing certificate is valid for signing only when the value of the **use** attribute is **signing**.
+Los metadatos de federación incluyen la parte pública de los certificados que utilizan los inquilinos para la firma de tokens. Los bytes sin formato del certificado aparecen en el elemento **KeyDescriptor**. El certificado de la firma del token es válido para la firma solo cuando el valor del atributo **use** es **signing**.
 
-A federation metadata document published by Azure AD can have multiple signing keys , such as when Azure AD is preparing to update the signing certificate. When a federation metadata document includes more than one certificate, a service that is validating the tokens should support all certificates in the document.
+Un documento de metadatos de federación publicado por Azure AD puede tener varias claves de firma, como en aquellos casos en que Azure AD se está preparando para actualizar el certificado de firma. Cuando un documento de metadatos de federación incluye más de un certificado, un servicio que está validando los tokens debe admitir todos los certificados del documento.
 
-The following metadata shows a sample **KeyDescriptor** element with a signing key.
+Los metadatos siguientes muestran un ejemplo del elemento **KeyDescriptor** con una clave de firma.
 
     <KeyDescriptor use="signing">
     <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
@@ -85,27 +84,27 @@ The following metadata shows a sample **KeyDescriptor** element with a signing k
     </KeyInfo>
     </KeyDescriptor>
 
-The **KeyDescriptor** element appears in two places in the federation metadata document; in the WS-Federation-specific section and the SAML-specific section. The certificates published in both sections will be the same.
+El elemento **KeyDescriptor** aparece en dos lugares en el documento de metadatos de federación; en la sección específica de WS-Federation y la sección específica de SAML. Los certificados publicados en ambas secciones serán el mismo.
 
-In the WS-Federation-specific section, a WS-Federation metadata reader would read the certificates from a **RoleDescriptor** element with the **SecurityTokenServiceType** type.
+En la sección específica de WS-Federation, un lector de metadatos de WS-Federation leería los certificados de un elemento **RoleDescriptor** con el tipo **SecurityTokenServiceType**.
 
-The following metadata shows a sample **RoleDescriptor** element.
+Los metadatos siguientes muestran un ejemplo del elemento **RoleDescriptor**.
 
     <RoleDescriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fed="http://docs.oasis-open.org/wsfed/federation/200706"
     xsi:type="fed:SecurityTokenServiceType"protocolSupportEnumeration="http://docs.oasis-open.org/wsfed/federation/200706">`
 
-In the SAML-specific section, a WS-Federation metadata reader would read the certificates from a **IDPSSODescriptor** element.
+En la sección específica de SAML, un lector de metadatos de WS-Federation leería los certificados de un elemento **IDPSSODescriptor**.
 
-The following metadata shows a sample **IDPSSODescriptor** element.
+Los metadatos siguientes muestran un ejemplo del elemento **IDPSSODescriptor**.
 
     <IDPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
 
-There are no differences in the format of tenant-specific and tenant-independent certificates.
+No existen diferencias en el formato de los certificados específicos del inquilino e independientes del inquilino.
 
-### WS-Federation Endpoint URL
-The federation metadata includes the URL that is Azure AD uses for single sign-in and single sign-out in WS-Federation protocol. This endpoint appears in the **PassiveRequestorEndpoint** element.
+### Dirección URL del extremo de WS-Federation
+Los metadatos de federación incluyen la dirección URL que utiliza Azure AD para el inicio de sesión único y el cierre de sesión único en el protocolo WS-Federation. Este extremo aparece en el elemento **PassiveRequestorEndpoint**.
 
-The following metadata shows a sample **PassiveRequestorEndpoint** element for a tenant-specific endpoint.
+Los metadatos siguientes muestran un ejemplo del elemento **PassiveRequestorEndpoint** para un extremo específico del inquilino.
 
     <fed:PassiveRequestorEndpoint>
     <EndpointReference xmlns="http://www.w3.org/2005/08/addressing">
@@ -115,7 +114,7 @@ The following metadata shows a sample **PassiveRequestorEndpoint** element for a
     </EndpointReference>
     </fed:PassiveRequestorEndpoint>
 
-For the tenant-independent endpoint, the WS-Federation URL appears in the WS-Federation endpoint, as shown in the following sample.
+Para el extremo independiente del inquilino, la dirección URL de WS-Federation aparece en el extremo de WS-Federation, como se muestra en el ejemplo siguiente.
 
     <fed:PassiveRequestorEndpoint>
     <EndpointReference xmlns="http://www.w3.org/2005/08/addressing">
@@ -125,12 +124,11 @@ For the tenant-independent endpoint, the WS-Federation URL appears in the WS-Fed
     </EndpointReference>
     </fed:PassiveRequestorEndpoint>
 
-### SAML Protocol Endpoint URL
+### Dirección URL del extremo de protocolo SAML
 
-The federation metadata includes the URL that Azure AD uses for single sign-in and single sign-out in SAML 2.0 protocol. These endpoints appear in the **IDPSSODescriptor** element.
+Los metadatos de federación incluyen la dirección URL que utiliza Azure AD para el inicio de sesión único y el cierre de sesión único en el protocolo SAML 2.0. Estos extremos aparecen en el elemento **IDPSSODescriptor**.
 
-The sign-in and sign-out URLs appear in the **SingleSignOnService** and **SingleLogoutService** elements.
-The following metadata shows a sample **PassiveResistorEndpoint** for a tenant-specific endpoint.
+Las direcciones URL de inicio de sesión y cierre de sesión aparecen en los elementos **SingleSignOnService** y **SingleLogoutService**. Los metadatos siguientes muestran un ejemplo de **PassiveResistorEndpoint** para un extremo específico del inquilino.
 
     <IDPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
     …
@@ -138,7 +136,7 @@ The following metadata shows a sample **PassiveResistorEndpoint** for a tenant-s
     <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https:// login.windows.net/contoso.onmicrosoft.com /saml2" />
     </IDPSSODescriptor>
 
-Similarly the endpoints for the common SAML 2.0 protocol endpoints are published in the tenant-independent federation metadata, as shown in the following sample. 
+Del mismo modo, los extremos comunes del protocolo SAML 2.0 se publican en los metadatos de federación independientes del inquilino, tal como se muestra en el ejemplo siguiente.
 
     <IDPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
     …
@@ -146,7 +144,9 @@ Similarly the endpoints for the common SAML 2.0 protocol endpoints are published
     <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://login.windows.net/common/saml2" />
     </IDPSSODescriptor>
 
-## See Also
-[Azure Active Directory Authentication Protocols](active-directory-authentication-protocols.md)
+## Otras referencias
+[Protocolos de autenticación de Azure Active Directory](active-directory-authentication-protocols.md)
 
-[Azure Active Directory Developer's Guide](active-directory-developers-guide.md) 
+[Guía del desarrollador de Azure Active Directory](active-directory-developers-guide.md)
+
+<!---HONumber=August15_HO6-->

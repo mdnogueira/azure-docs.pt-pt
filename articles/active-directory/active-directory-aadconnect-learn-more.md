@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Azure Active Directory Connect - Learn More" 
-	description="Learn more about Azure AD Connect." 
+	pageTitle="Azure Active Directory Connect: más información" 
+	description="Obtenga más información acerca de Azure AD Connect." 
 	services="active-directory" 
 	documentationCenter="" 
 	authors="billmath" 
@@ -16,38 +16,37 @@
 	ms.date="05/28/2015" 
 	ms.author="billmath"/>
 
-# Azure Active Directory Connect - Learn More
+# Azure Active Directory Connect: más información
 
-<div class="dev-center-tutorial-selector sublanding">
-<a href="../active-directory-aadconnect/" title="What is It">What is It</a>
-<a href="../active-directory-aadconnect-how-it-works/" title="How it Works">How it Works</a>
-<a href="../active-directory-aadconnect-get-started/" title="Getting Started">Getting Started</a>
-<a href="../active-directory-aadconnect-whats-next/" title="What's Next">What's Next</a>
-<a href="../active-directory-aadconnect-learn-more/" title="Learn More" class="current">Learn More</a>
-</div>
+> [AZURE.SELECTOR]
+- [What is It](../active-directory-aadconnect.md)
+- [How it Works](../active-directory-aadconnect-how-it-works.md)
+- [Getting Started](../active-directory-aadconnect-get-started.md)
+- [What's Next](../active-directory-aadconnect-whats-next.md) - [Learn More](../active-directory-aadconnect-learn-more.md)
 
-The following is a list of additional resources for using Azure AD Connect and integrating your on-premises directories with Azure AD.
+A continuación se presenta una lista de recursos adicionales para utilizar Azure AD Connect e integrar los directorios locales con Azure AD.
 
->[AZURE.NOTE] Azure AD Connect incorporates the components and functionality previously released as Dirsync and AAD Sync. These tools are no longer being released individually, and all future improvements will be included in updates to Azure AD Connect, so that you always know where to get the most current functionality.
+>[AZURE.NOTE]Azure AD Connect incorpora los componentes y la funcionalidad publicados previamente como Dirsync y Sincronización de AAD. Estas herramientas ya no se publican de manera individual, y todas las futuras mejoras se incluirán en actualizaciones de Azure AD Connect; así, siempre sabrá dónde obtener la funcionalidad más actualizada.
 
-## Documentation
+## Documentación
 
 
-[Multi-forest Directory Sync with Single Sign-On Scenario](https://msdn.microsoft.com/library/azure/dn510976.aspx) - Integrate multiple directories with Azure AD.
+[Sincronización de directorios de varios bosques con el escenario de inicio de sesión único](https://msdn.microsoft.com/library/azure/dn510976.aspx): integre varios directorios con Azure AD.
 
-[Azure AD Connect Health](https://msdn.microsoft.com/library/azure/dn906722.aspx) - Monitor the health of your on-premises AD FS infrastructure.
+[Azure AD Connect Health](https://msdn.microsoft.com/library/azure/dn906722.aspx): supervise el estado de su infraestructura de AD FS local.
 
-## Videos
+## Vídeos
 
-Ignite 2015 presentation on extending your on-premises directories to the cloud.
+Presentación de Ignite 2015 sobre cómo extender los directorios locales a la nube.
 
 [AZURE.VIDEO microsoft-ignite-2015-extending-on-premises-directories-to-the-cloud-made-easy-with-azure-active-directory-connect]
 
-<br>
-<br>
+<br> <br>
 
-Watch this video to learn how easy it is to extend your on-premises Active Directory to the cloud by using the express settings of Azure Active Directory Connect.
+Vea este vídeo para aprender lo fácil que es ampliar su Active Directory local a la nube mediante el uso de la configuración rápida de Azure Active Directory Connect.
 
 [AZURE.VIDEO azure-active-directory-connect-express-settings]
 
  
+
+<!---HONumber=August15_HO6-->

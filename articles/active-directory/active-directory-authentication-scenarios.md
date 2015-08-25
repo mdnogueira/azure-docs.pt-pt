@@ -1,7 +1,7 @@
 
 <properties
-   pageTitle="Authentication Scenarios for Azure AD"
-   description="An overview of the five most common authentication scenarios for Azure Active Directory (AAD)"
+   pageTitle="Escenarios de autenticación para Azure AD"
+   description="Información general de los cinco escenarios de autenticación más comunes para Azure Active Directory (AAD)."
    services="active-directory"
    documentationCenter="dev-center-name"
    authors="msmbaldwin"
@@ -17,451 +17,453 @@
    ms.date="06/01/2015"
    ms.author="mbaldwin"/>
 
-# Authentication Scenarios for Azure AD
+# Escenarios de autenticación para Azure AD
 
-Azure Active Directory (Azure AD) simplifies authentication for developers by providing identity as a service, with support for industry-standard protocols such as OAuth 2.0 and OpenID Connect, as well as open source libraries for different platforms to help you start coding quickly. This document will help you understand the various scenarios Azure AD supports and will show you how to get started. It’s divided into the following sections:
+Azure Active Directory (Azure AD) simplifica la autenticación para los desarrolladores, ya que ofrece la identificación como un servicio, con compatibilidad con protocolos genéricos del sector como OAuth 2.0 y OpenID Connect, además de bibliotecas de código abierto para distintas plataformas, para poder empezar a codificar rápidamente. Este documento le ayudará a comprender los diversos escenarios admitidos por Azure AD y le mostrará las tareas iniciales. Se divide en las secciones siguientes:
 
-- [Basics of Authentication in Azure AD](#basics-of-authentication-in-azure-ad)
+- [Conceptos básicos sobre autenticación en Azure AD](#basics-of-authentication-in-azure-ad)
 
-- [Claims in Azure AD Security Tokens](#claims-in-azure-ad-security-tokens)
+- [Notificaciones de tokens de seguridad de Azure AD](#claims-in-azure-ad-security-tokens)
 
-- [Basics of Registering an Application in Azure AD](#basics-of-registering-an-application-in-azure-ad)
+- [Conceptos básicos sobre el registro de una aplicación en Azure AD](#basics-of-registering-an-application-in-azure-ad)
 
-- [Application Types and Scenarios](#application-types-and-scenarios)
+- [Tipos de aplicaciones y escenarios](#application-types-and-scenarios)
 
-  - [Web Browser to Web Application](#web-browser-to-web-application)
+  - [Explorador web a aplicación web](#web-browser-to-web-application)
 
-  - [Single Page Application (SPA)](#single-page-application-spa)
+  - [Aplicación de una sola página (SPA)](#single-page-application-spa)
 
-  - [Native Application to Web API](#native-application-to-web-api)
+  - [Aplicación nativa a API web](#native-application-to-web-api)
 
-  - [Web Application to Web API](#web-application-to-web-api)
+  - [Aplicación web a API web](#web-application-to-web-api)
 
-  - [Daemon or Server Application to Web API](#daemon-or-server-application-to-web-api)
-
-
-
-## Basics of Authentication in Azure AD
-
-If you are unfamiliar with basic concepts of authentication in Azure AD, read this section. Otherwise, you may want to skip down to [Application Types and Scenarios](#application-types-and-scenarios).
-
-Let’s consider the most basic scenario where identity is required: a user in a web browser needs to authenticate to a web application. This scenario is described in greater detail in the [Web Browser to Web Application](#web-browser-to-web-application) section, but it’s a useful starting point to illustrate the capabilities of Azure AD and conceptualize how the scenario works. Consider the following diagram for this scenario:
-
-![Overview of sign-on to web application](./media/active-directory-authentication-scenarios/basics_of_auth_in_aad.png)
-
-With the diagram above in mind, here’s what you need to know about its various components:
-
-- Azure AD is the identity provider, responsible for verifying the identity of users and applications that exist in an organization’s directory, and ultimately issuing security tokens upon successful authentication of those users and applications.
+  - [Aplicación de servidor o de demonio en API web](#daemon-or-server-application-to-web-api)
 
 
-- An application that wants to outsource authentication to Azure AD must be registered in Azure AD, which registers and uniquely identifies the app in the directory.
+
+## Conceptos básicos sobre autenticación en Azure AD
+
+Si no está familiarizado con los conceptos básicos de la autenticación en Azure AD, lea esta sección. De lo contrario, puede pasar a [Tipos de aplicaciones y escenarios](#application-types-and-scenarios).
+
+Veamos el escenario más básico en el que es necesario identificarse: un usuario de un explorador web debe autenticarse en una aplicación web. Este escenario se describe más detalladamente en la sección [Explorador web a aplicación web](#web-browser-to-web-application), pero es un punto de partida útil para ilustrar las capacidades de Azure AD y conceptualizar el funcionamiento del escenario. Tenga en cuenta el diagrama siguiente para este escenario:
+
+![Información general de inicio de sesión en la aplicación web](./media/active-directory-authentication-scenarios/basics_of_auth_in_aad.png)
+
+Teniendo en cuenta el diagrama anterior, a continuación se indica qué debe saber sobre los distintos componentes:
+
+- Azure AD es el proveedor de identidades, responsable de comprobar la identidad de los usuarios y las aplicaciones que existen en el directorio de una organización y, en última instancia, de emitir tokens de seguridad tras la autenticación correcta de dichos usuarios y aplicaciones.
 
 
-- Developers can use the open source Azure AD authentication libraries to make authentication easy by handling the protocol details for you. See [Azure Active Directory Authentication Libraries](https://msdn.microsoft.com/library/azure/dn151135.aspx) for more information.
+- Una aplicación que desee externalizar la autenticación a Azure AD debe estar registrada en Azure AD, que registra e identifica de modo único la aplicación en el directorio.
 
 
-• Once a user has been authenticated, the application must validate the user’s security token to ensure that authentication was successful for the intended parties. Developers can use the provided authentication libraries to handle validation of any token from Azure AD, including JSON Web Tokens (JWT) or SAML 2.0. If you want to perform validation manually, see the [JWT Token Handler](https://msdn.microsoft.com/library/dn205065(v=vs.110).aspx) documentation.
+- Los desarrolladores pueden usar las bibliotecas de autenticación de código abierto de Azure AD para facilitar la autenticación, ya que administran los detalles de los protocolos para el usuario. Consulte [Bibliotecas de autenticación de Azure Active Directory](https://msdn.microsoft.com/library/azure/dn151135.aspx) para obtener más información.
 
 
-> [AZURE.IMPORTANT] Azure AD uses public key cryptography to sign tokens and verify that they are valid. See [Important Information About Signing Key Rollover in Azure AD](https://msdn.microsoft.com/library/azure/dn641920.aspx) for more information on the necessary logic you must have in your application to ensure it’s always updated with the latest keys.
+• Una vez autenticado el usuario, la aplicación debe validar el token de seguridad de este para garantizar que la autenticación se realizó correctamente para las partes implicadas. Los desarrolladores pueden usar las bibliotecas de autenticación proporcionadas para administrar la validación de cualquier token de Azure AD, incluidos los tokens web JSON (JWT) o de SAML 2.0. Si desea realizar la validación manualmente, consulte la documentación del [JWT Token Handler](https://msdn.microsoft.com/library/dn205065(v=vs.110).aspx).
 
 
-• The flow of requests and responses for the authentication process is determined by the authentication protocol that was used, such as OAuth 2.0, OpenID Connect, WS-Federation, or SAML 2.0. These protocols are discussed in more detail in the [Azure Active Directory Authentication Protocols](https://msdn.microsoft.com/library/azure/dn151124.aspx) topic and in the sections below.
-
-> [AZURE.NOTE] Azure AD supports the OAuth 2.0 and OpenID Connect standards that make extensive use of bearer tokens, including bearer tokens represented as JWTs. A bearer token is a lightweight security token that grants the “bearer” access to a protected resource. In this sense, the “bearer” is any party that can present the token. Though a party must first authenticate with Azure AD to receive the bearer token, if the required steps are not taken to secure the token in transmission and storage, it can be intercepted and used by an unintended party. While some security tokens have a built-in mechanism for preventing unauthorized parties from using them, bearer tokens do not have this mechanism and must be transported in a secure channel such as transport layer security (HTTPS). If a bearer token is transmitted in the clear, a man-in the middle attack can be used by a malicious party to acquire the token and use it for an unauthorized access to a protected resource. The same security principles apply when storing or caching bearer tokens for later use. Always ensure that your application transmits and stores bearer tokens in a secure manner. For more security considerations on bearer tokens, see [RFC 6750 Section 5](http://tools.ietf.org/html/rfc6750).
+> [AZURE.IMPORTANT]Azure AD usa criptografía de clave pública para firmar los tokens y verificar que son válidos. Consulte [Información importante acerca de la cadencia de sustitución de clave en Azure AD](https://msdn.microsoft.com/library/azure/dn641920.aspx) para obtener más información sobre la lógica necesaria que debe tener en la aplicación para garantizar que siempre está actualizada con las claves más recientes.
 
 
-Now that you have an overview of the basics, read the sections below to understand how provisioning works in Azure AD and the common scenarios Azure AD supports.
+• El flujo de solicitudes y respuestas del proceso de autenticación lo determina el protocolo de autenticación que se use, como OAuth 2.0, OpenID Connect, WS-Federation o SAML 2.0. Estos protocolos se analizan con más detalle en el tema [Protocolos de autenticación de Azure Active Directory](https://msdn.microsoft.com/library/azure/dn151124.aspx) y en las secciones siguientes.
+
+> [AZURE.NOTE]Azure AD admite los estándares OAuth 2.0 y OpenID Connect, que hacen un uso generalizado de tokens portadores, incluidos los representados como JWT. Un token portador es un token de seguridad ligero que concede al "portador" acceso a un recurso protegido. En este sentido, el "portador" es cualquier parte que pueda presentar el token. Aunque una parte debe autenticarse primero con Azure AD para recibir el token portador, si no se realizan los pasos necesarios para asegurar el token en la transmisión y el almacenamiento, este puede interceptarse y ser utilizado por un usuario no deseado. Mientras que algunos tokens de seguridad disponen de un mecanismo integrado para evitar ser usados por partes no autorizadas, los tokens portadores no tienen este mecanismo y deben transportarse en un canal seguro como, por ejemplo, la seguridad de la capa de transporte (HTTPS). Si un token portador se transmite sin cifrar, un usuario malintencionado puede utilizar un ataque de tipo "Man in the middle" para adquirir el token y usarlo para obtener acceso sin autorización a un recurso protegido. Los mismos principios de seguridad se aplican al almacenamiento o almacenamiento en caché de tokens portadores para su uso posterior. Asegúrese siempre de que la aplicación transmite y almacena los tokens portadores de manera segura. Para otras consideraciones sobre la seguridad de los tokens portadores, consulte la [Sección 5 de RFC 6750](http://tools.ietf.org/html/rfc6750).
 
 
-## Claims in Azure AD Security Tokens
-
-Security tokens issued by Azure AD contain claims, or assertions of information about the subject that has been authenticated. These claims can be used by the application for various tasks. For example, they can be used to validate the token, identify the subject's directory tenant, display user information, determine the subject's authorization, and so on. The claims present in any given security token are dependent upon the type of token, the type of credential used to authenticate the user, and the application configuration. A brief description of each type of claim emitted by Azure AD is provided in the table below. For more information, refer to [Supported Token and Claim Types](https://msdn.microsoft.com/library/azure/dn195587.aspx).
+Ahora que ya tiene información general sobre los conceptos básicos, lea las secciones siguientes para comprender cómo funciona el aprovisionamiento en Azure AD, así como los escenarios comunes admitidos por Azure AD.
 
 
-| Claim | Description |
+## Notificaciones de tokens de seguridad de Azure AD
+
+Los tokens de seguridad que emite Azure AD contienen notificaciones o aserciones de información sobre el usuario que se ha autenticado. La aplicación puede usar estas notificaciones para varias tareas. Por ejemplo, pueden usarse para validar el token, identificar el inquilino de directorio del usuario, mostrar información del usuario o determinar la autorización del usuario, entre otros. Las notificaciones presentes en cualquier token de seguridad dependen del tipo de token, el tipo de credencial que se usa para autenticar al usuario y la configuración de la aplicación. En la tabla siguiente se proporciona una breve descripción de cada tipo de notificación que Azure AD emite. Para obtener más información, consulte [Tipos de token y notificación compatibles](https://msdn.microsoft.com/library/azure/dn195587.aspx).
+
+
+| Notificación | Descripción |
 |-------|-------------|
-| Application ID | Identifies the application that is using the token.
-| Audience | Identifies the recipient resource the token is intended for. |
-| Application Authentication Context Class Reference | Indicates how the client was authenticated (public client vs. confidential client). |
-| Authentication Instant | Records the date and time when the authentication occurred. |
-| Authentication Method | Indicates how the subject of the token was authenticated (password, certificate, etc.). |
-| First Name | Provides the given name of the user as set in Azure AD. |
-| Groups | Contains object Ids of Azure AD groups the user is a member of. |
-| Identity Provider | Records the identity provider that authenticated the subject of the token. |
-| Issued At | Records the time at which the token was issued, often used for token freshness. |
-| Issuer | Identifies the STS that emitted the token as well as the Azure AD tenant. |
-| Last Name | Provides the surname of the user as set in Azure AD. |
-| Name | Provides a human readable value that identifies the subject of the token. |
-| Object Id | Contains an immutable, unique identifier of the subject in Azure AD. |
-| Roles | Contains friendly names of Azure AD Application Roles that the user has been granted. |
-| Scope | Indicates the permissions granted to the client application. |
-| Subject | Indicates the principal about which the token asserts information. |
-| Tenant Id | Contains an immutable, unique identifier of the directory tenant that issued the token. |
-| Token Lifetime | Defines the time interval within which a token is valid. |
-| User Principal Name | Contains the user principal name of the subject. |
-| Version | Contains the version number of the token. |
+| Identificador de aplicación | Identifica la aplicación que está usando el token.
+| Público | Identifica el recurso de destinatario al que está destinado el token. |
+| Referencia de clase de contexto de autenticación de aplicación | Indica cómo se autenticó el cliente (cliente público frente a cliente confidencial). |
+| Instante de autenticación | Registra la fecha y la hora de la autenticación. |
+| Método de autenticación | Indica cómo se autenticó el firmante del token (contraseña, certificado, etc.). |
+| Nombre de usuario | Proporciona el nombre de usuario, tal como se estableció en Azure AD. |
+| Grupos | Contiene identificadores de objeto de los grupos de Azure AD de los que es miembro el usuario. |
+| Proveedor de identidades | Registra el proveedor de identidades que autenticó al firmante del token. |
+| Emitido a las | Registra la hora a la que se emitió el token; suele utilizarse para la actualización del token. |
+| Emisor | Identifica al STS que emitió el token, así como el inquilino de Azure AD. |
+| Apellidos | Proporciona los apellidos del usuario, tal como se establecieron en Azure AD. |
+| Nombre | Proporciona un valor en lenguaje natural que identifica al firmante del token. |
+| Identificador de objeto | Contiene un identificador único e inmutable del firmante en Azure AD. |
+| Roles | Contiene los nombres descriptivos de los roles de aplicación de Azure AD que se han concedido al usuario. |
+| Scope | Indica los permisos concedidos a la aplicación cliente. |
+| Asunto | Indica la entidad de seguridad sobre la que el token valida información. |
+| Identificador de inquilino | Contiene un identificador único e inmutable del inquilino de directorio que emitió el token. |
+| Duración del token | Define el intervalo de tiempo dentro del cual es válido un token. |
+| Nombre principal de usuario | Contiene el nombre principal de usuario del firmante. |
+| Versión | Contiene el número de versión del token. |
 
 
-## Basics of Registering an Application in Azure AD
+## Conceptos básicos sobre el registro de una aplicación en Azure AD
 
-Any application that outsources authentication to Azure AD must be registered in a directory. This step involves telling Azure AD about your application, including the URL where it’s located, the URL to send replies after authentication, the URI to identify your application, and more. This information is required for a few key reasons:
+Cualquier aplicación que externalice la autenticación a Azure AD debe registrarse en un directorio. Este paso implica informar a Azure AD de la aplicación, incluidos, entre otros, la dirección URL donde se encuentra, la dirección URL a la que se envían las respuestas tras la autenticación y el URI que identifica la aplicación. Esta información es necesaria por algunos motivos importantes:
 
-- Azure AD needs coordinates to communicate with the application when handling sign-on or exchanging tokens. These include the following:
+- Azure AD necesita coordenadas para comunicarse con la aplicación cuando administra el inicio de sesión o intercambia tokens. Entre ellas se incluyen las siguientes:
 
-  - Application ID URI: The identifier for an application. This value is sent to Azure AD during authentication to indicate which application the caller wants a token for. Additionally, this value is included in the token so that the application knows it was the intended target.
+  - URI del identificador de la aplicación: identificador de una aplicación. Este valor se envía a Azure AD durante la autenticación para indicar para qué aplicación el llamador quiere un token. Además, este valor se incluye en el token de manera que la aplicación sepa que se trata del objetivo.
 
 
-  - Reply URL and Redirect URI: In the case of a web API or web application, the Reply URL is the location to which Azure AD will send the authentication response, including a token if authentication was successful. In the case of a native application, the Redirect URI is a unique identifier to which Azure AD will redirect the user-agent in an OAuth 2.0 request.
+  - URL de respuesta y URI de redirección: en el caso de una API web o aplicación web, la dirección URL de respuesta es la ubicación a la que Azure AD enviará la respuesta de autenticación, incluido un token si la autenticación fue correcta. En el caso de una aplicación nativa, el URI de redirección es un identificador único al que Azure AD redirigirá el agente de usuario de una solicitud de OAuth 2.0.
 
 
-  - Client ID: The ID for an application, which is generated by Azure AD when the application is registered. When requesting an authorization code or token, the client ID and key are sent to Azure AD during authentication.
+  - Identificador de cliente: identificador de una aplicación que Azure AD genera cuando se registra la aplicación. Al solicitar un token o código de autorización, se envían la clave y el identificador del cliente a Azure AD durante la autenticación.
 
 
-  - Key: The key that is sent along with a client ID when authenticating to Azure AD to call a web API.
+  - Clave: clave que se envía junto con un identificador de cliente al autenticarse en Azure AD para llamar a una API web.
 
 
-- Azure AD needs to ensure the application has the required permissions to access your directory data, other applications in your organization, and so on
+- Azure AD debe asegurarse de que la aplicación tiene los permisos necesarios para obtener acceso a los datos del directorio, a otras aplicaciones de la organización, etc.
 
-Provisioning becomes clearer when you understand that there are two categories of applications that can be developed and integrated with Azure AD:
+El aprovisionamiento se entiende mejor cuando se comprende que existen dos categorías de aplicaciones que se pueden desarrollar e integrarse con Azure AD:
 
-- Single tenant application: A single tenant application is intended for use in one organization. These are typically line-of-business (LoB) applications written by an enterprise developer. A single tenant application only needs to be accessed by users in one directory, and as a result, it only needs to be provisioned in one directory. These applications are typically registered by a developer in the organization.
+- Aplicación de un solo inquilino: el uso de una aplicación de un solo inquilino se destina a una sola organización. Suele tratarse de aplicaciones de línea de negocio (LOB) escritas por un desarrollador de la empresa. A una aplicación de un solo inquilino solo obtienen acceso usuarios de un solo directorio y, por tanto, solo es necesario aprovisionarla en un directorio. Suele tratarse de aplicaciones registradas por un desarrollador de la organización.
 
 
-- Multi-tenant application: A multi-tenant application is intended for use in many organizations, not just one organization. These are typically software-as-a-service (SaaS) applications written by an independent software vendor (ISV). Multi-tenant applications need to be provisioned in each directory where they will be used, which requires user or administrator consent to register them. This consent process starts when an application has been registered in the directory and is given access to the Graph API or perhaps another web API. When a user or administrator from a different organization signs up to use the application, they are presented with a dialog that displays the permissions the application requires. The user or administrator can then consent to the application, which gives the application access to the stated data, and finally registers the application in their directory. For more information, see [Overview of the Consent Framework](https://msdn.microsoft.com/library/azure/b08d91fa-6a64-4deb-92f4-f5857add9ed8#BKMK_Consent).
+- Aplicación multiempresa (de varios inquilinos): el uso de una aplicación multiempresa se destina a varias organizaciones, no solo a una. Suele tratarse de aplicaciones de software como servicio (SaaS) escritas por un proveedor de software independiente (ISV). Las aplicaciones multiempresa se deben aprovisionar en cada uno de los directorios en los que se usarán, lo que requiere el consentimiento del usuario o del administrador para registrarlas. El proceso de consentimiento se inicia cuando una aplicación se ha registrado en el directorio y se le proporciona acceso a la API de gráficos o quizás a otra API web. Cuando un usuario o un administrador de otra organización inicia sesión para usar la aplicación, se muestra un cuadro de diálogo que indica los permisos requeridos por la aplicación. A continuación, el usuario o el administrador pueden dar su consentimiento a la aplicación, lo que proporciona a la aplicación acceso a los datos establecidos y, por último, registra la aplicación en el directorio. Para obtener más información, consulte [Información general del marco de consentimiento](https://msdn.microsoft.com/library/azure/b08d91fa-6a64-4deb-92f4-f5857add9ed8#BKMK_Consent).
 
-Some additional considerations arise when developing a multi-tenant application instead of a single tenant application. For example, if you are making your application available to users in multiple directories, you need a mechanism to determine which tenant they’re in. A single tenant application only needs to look in its own directory for a user, while a multi-tenant application needs to identify a specific user from all the directories in Azure AD. To accomplish this task, Azure AD provides a common authentication endpoint where any multi-tenant application can direct sign-in requests, instead of a tenant-specific endpoint. This endpoint is https://login.microsoftonline.com/common for all directories in Azure AD, whereas a tenant-specific endpoint might be https://login.microsoftonline.com/contoso.onmicrosoft.com. The common endpoint is especially important to consider when developing your application because you’ll need the necessary logic to handle multiple tenants during sign-in, sign-out, and token validation.
+Cuando se desarrolla una aplicación multiempresa en lugar de una aplicación de un solo inquilino hay que tener en cuenta otros aspectos. Por ejemplo, si pone la aplicación a disposición de usuarios de varios directorios, necesitará un mecanismo para determinar en qué inquilino se encuentran. Una aplicación de un solo inquilino únicamente necesita buscar un usuario en su propio directorio, mientras que una aplicación multiempresa debe identificar un usuario específico en todos los directorios de Azure AD. Para realizar esta tarea, Azure AD proporciona un extremo de autenticación común donde cualquier aplicación multiempresa puede dirigir solicitudes de inicio de sesión, en lugar de un extremo específico del inquilino. Este extremo es https://login.microsoftonline.com/common para todos los directorios de Azure AD, mientras que un extremo específico de un inquilino podría ser https://login.microsoftonline.com/contoso.onmicrosoft.com. Es especialmente importante tener en cuenta el extremo común al desarrollar la aplicación porque necesitará toda la lógica necesaria para administrar varios inquilinos durante el inicio y el cierre de sesión y la validación de tokens.
 
-If you are currently developing a single tenant application but want to make it available to many organizations, you can easily make changes to the application and its configuration in Azure AD to make it multi-tenant capable. In addition, Azure AD uses the same signing key for all tokens in all directories, whether you are providing authentication in a single tenant or multi-tenant application.
+Si actualmente desarrolla una aplicación de un solo inquilino pero quiere ponerla a disposición de varias organizaciones, puede realizar cambios fácilmente en la aplicación y en su configuración en Azure AD para que pueda aceptar varios inquilinos. Además, Azure AD usa la misma clave de firma para todos los tokens en todos los directorios, tanto si se proporciona autenticación para una aplicación de un solo inquilino como para una aplicación multiempresa de varios inquilinos.
 
-Each scenario listed in this document includes a sub-section that describes its provisioning requirements. For more in-depth information about provisioning an application in Azure AD and the differences between single and multi-tenant applications, see [Adding, Updating, and Removing an Application](https://msdn.microsoft.com/library/azure/dn132599.aspx) for more information. Continue reading to understand the common application scenarios in Azure AD.
+Cada uno de los escenarios incluidos en este documento incluye una subsección en donde se describen sus requisitos de aprovisionamiento. Para obtener información más detallada sobre el aprovisionamiento de aplicaciones en Azure AD y las diferencias entre las aplicaciones de un solo inquilino y multiempresa, consulte [Agregar, actualizar y quitar una aplicación](https://msdn.microsoft.com/library/azure/dn132599.aspx) para obtener más información. Siga leyendo para comprender los escenarios de aplicación comunes de Azure AD.
 
-## Application Types and Scenarios
+## Tipos de aplicaciones y escenarios
 
-Each of the scenarios described in this document can be developed using various languages and platforms, and there are [complete code samples available on GitHub](https://github.com/AzureADSamples) for each of them. In addition, if your application needs a specific piece or segment of an end-to-end scenario, in most cases that functionality can be added independently. For example, if you have a native application that calls a web API, you can easily add a web application that also calls the web API. The following diagram illustrates these scenarios and application types, and how different components can be added:
+Cada uno de los escenarios que se describe en este documento puede desarrollarse con diversos lenguajes y plataformas, y existen [ejemplos de código completo disponibles en GitHub](https://github.com/AzureADSamples) para cada uno. Además, si la aplicación necesita un determinado fragmento o segmento de un escenario de un extremo a otro, dicha funcionalidad se podrá agregar de manera independiente en la mayoría de los casos. Por ejemplo, si tiene una aplicación nativa que llama a una API web, puede agregar fácilmente una aplicación web que también llame a la API web. En el diagrama siguiente se ilustran estos escenarios y tipos de aplicación, además de cómo pueden agregarse distintos componentes:
 
-![Application Types and scenarios](./media/active-directory-authentication-scenarios/application_types_and_scenarios.png)
+![Tipos de aplicaciones y escenarios](./media/active-directory-authentication-scenarios/application_types_and_scenarios.png)
 
-These are the five primary application scenarios supported by Azure AD:
+Estos son los cinco escenarios principales de aplicación que admite Azure AD:
 
-- [Web Browser to Web Application](#web-browser-to-web-application): A user needs to sign in to a web application that is secured by Azure AD.
+- [Explorador web a aplicación web](#web-browser-to-web-application): un usuario tiene que iniciar sesión en una aplicación web protegida por Azure AD.
 
-- [Single Page Application (SPA)](#single-page-application-spa): A user needs to sign in to a single page application that is secured by Azure AD.
+- [Aplicación de una sola página (SPA)](#single-page-application-spa): un usuario tiene que iniciar sesión en una aplicación de una sola página protegida por Azure AD.
 
-- [Native Application to Web API](#native-application-to-web-api): A native application that runs on a phone, tablet, or PC needs to authenticate a user to get resources from a web API that is secured by Azure AD.
+- [Aplicación nativa a API web](#native-application-to-web-api): una aplicación nativa que se ejecuta en teléfonos, tabletas o equipos tiene que autenticar un usuario para obtener recursos de una API web protegida por Azure AD.
 
-- [Web Application to Web API](#web-application-to-web-api): A web application needs to get resources from a web API secured by Azure AD.
+- [Aplicación web a API web](#web-application-to-web-api): una aplicación web tiene que obtener recursos de una API web protegida por Azure AD.
 
-- [Daemon or Server Application to Web API](#daemon-or-server-application-to-web-api): A daemon application or a server application with no web user interface needs to get resources from a web API secured by Azure AD.
+- [Aplicación de servidor o de demonio en API web](#daemon-or-server-application-to-web-api): una aplicación de demonio o de servidor sin interfaz de usuario web tiene que obtener recursos de una API web protegida por Azure AD.
 
-### Web Browser to Web Application
+### Explorador web a aplicación web
 
-This section describes an application that authenticates a user in a web browser to a web application. In this scenario, the web application directs the user’s browser to sign them in to Azure AD. Azure AD returns a sign-in response through the user’s browser, which contains claims about the user in a security token. This scenario supports sign-on using the WS-Federation, SAML 2.0, and OpenID Connect protocols.
+En esta sección se describe una aplicación que autentica a un usuario de un explorador web en una aplicación web. En este escenario, la aplicación web dirige el explorador del usuario para que inicie sesión en Azure AD. Azure AD devuelve una respuesta de inicio de sesión a través el explorador del usuario, que contiene notificaciones sobre el usuario en un token de seguridad. Este escenario admite el inicio de sesión mediante los protocolos WS-Federation, SAML 2.0 y OpenID Connect.
 
 
-#### Diagram
-![Authentication flow for browser to web application](./media/active-directory-authentication-scenarios/web_browser_to_web_api.png)
+#### Diagrama
+![Flujo de autenticación de explorador a aplicación web](./media/active-directory-authentication-scenarios/web_browser_to_web_api.png)
 
 
-#### Description of Protocol Flow
+#### Descripción del flujo de protocolo
 
 
-1. When a user visits the application and needs to sign in, they are redirected via a sign-in request to the authentication endpoint in Azure AD.
+1. Cuando un usuario visita la aplicación y debe iniciar sesión, se le redirige mediante una solicitud de inicio de sesión al extremo de autenticación de Azure AD.
 
 
-2. The user signs in on the sign-in page.
+2. El usuario inicia sesión en la página de inicio de sesión.
 
 
-3. If authentication is successful, Azure AD creates an authentication token and returns a sign-in response to the application’s Reply URL that was configured in the Azure Management Portal. For a production application, this Reply URL should be HTTPS. The returned token includes claims about the user and Azure AD that are required by the application to validate the token.
+3. Si la autenticación es correcta, Azure AD crea un token de autenticación y devuelve una respuesta de inicio de sesión a la dirección URL de respuesta de la aplicación que se configuró en el Portal de administración de Azure. En el caso de una aplicación de producción, esta URL de respuesta debe ser HTTPS. El token devuelto incluye notificaciones sobre el usuario y Azure AD, necesarias para que la aplicación valide el token.
 
 
-4. The application validates the token by using a public signing key and issuer information available at the federation metadata document for Azure AD. After the application validates the token, Azure AD starts a new session with the user. This session allows the user to access the application until it expires.
+4. La aplicación valida el token mediante una clave de firma pública y la información del emisor disponible en el documento de metadatos de federación para Azure AD. Cuando la aplicación haya validado el token, Azure AD inicia una nueva sesión con el usuario. Hasta que expire, esta sesión permitirá al usuario tener acceso a la aplicación.
 
 
-#### Code Samples
+#### Ejemplos de código
 
 
-See the code samples for Web Browser to Web Application scenarios. And, check back frequently -- we add new samples all the time. [Web Browser to Web Application](active-directory-code-samples.md#web-browser-to-web-application).
+Vea los ejemplos de código para escenarios de explorador web a aplicación web. Agregamos nuevos ejemplos continuamente, así que no olvide consultarlos con frecuencia. [Explorador web a aplicación web](active-directory-code-samples.md#web-browser-to-web-application).
 
 
-#### Registering
+#### Registro
 
 
-- Single Tenant: If you are building an application just for your organization, it must be registered in your company’s directory by using the Azure Management Portal.
+- Un solo inquilino: si compila una aplicación únicamente para la organización, esta debe registrarse en el directorio de la compañía mediante el Portal de administración de Azure.
 
 
-- Multi-Tenant: If you are building an application that can be used by users outside your organization, it must be registered in your company’s directory, but also must be registered in each organization’s directory that will be using the application. To make your application available in their directory, you can include a sign-up process for your customers that enables them to consent to your application. When they sign up for your application, they will be presented with a dialog that shows the permissions the application requires, and then the option to consent. Depending on the required permissions, an administrator in the other organization may be required to give consent. When the user or administrator consents, the application is registered in their directory. For more information, see [Adding, Updating, and Removing an Application](https://msdn.microsoft.com/library/azure/dn132599.aspx).
+- Multiempresa (varios inquilinos): si compila una aplicación que puede ser utilizada por usuarios ajenos a la organización, esta debe registrarse en el directorio de la compañía, pero también en el directorio de cada organización que vaya a usar la aplicación. Para que la aplicación esté disponible en su directorio, puede incluir un proceso de inicio de sesión para que los clientes puedan dar su consentimiento a la aplicación. Cuando inicien sesión en la aplicación, se les presentará un cuadro de diálogo que muestra los permisos que la aplicación requiere y la opción de consentimiento. Según los permisos necesarios, es posible que se requiera que un administrador de la otra organización dé su consentimiento. Cuando el usuario o el administrador dan su consentimiento, la aplicación queda registrada en el directorio. Para obtener más información, consulte [Agregar, actualizar y quitar una aplicación](https://msdn.microsoft.com/library/azure/dn132599.aspx).
 
 
-#### Token Expiration
+#### Expiración del token
 
-The user’s session expires when the lifetime of the token issued by Azure AD expires. Your application can shorten this time period if desired, such as signing out users based on a period of inactivity. When the session expires, the user will be prompted to sign in again.
+La sesión del usuario expira cuando expira la duración del token emitido por Azure AD. Si lo desea, la aplicación puede reducir este período de tiempo; por ejemplo, cerrar sesiones de usuario en función de un período de inactividad. Cuando la sesión expire, se le pedirá al usuario que vuelva a iniciar sesión.
 
 
 
 
 
-### Single Page Application (SPA)
+### Aplicación de una sola página (SPA)
 
 
-This section describes authentication for a single page application that uses Azure AD to secure its web API back end. Single page applications are typically structured as a JavaScript presentation layer (front end) that runs in the browser and a web API back end that runs on a server and implements the application’s business logic. In this scenario, when the user signs in, the JavaScript front end uses [Active Directory Authentication Library for JavaScript (ADAL.JS)](https://github.com/AzureAD/azure-activedirectory-library-for-js/tree/dev) preview and the OAuth 2.0 Implicit Grant protocol to obtain an ID token (id_token) from Azure AD. The token is cached and the client attaches it to the request as the bearer token when making calls to its web API back end, which is secured using the OWIN middleware.
+Esta sección describe la autenticación para una aplicación de una sola página que usa Azure AD para proteger su back-end de la API web. Las aplicaciones de una sola página normalmente están estructuradas como una capa de presentación (front-end) de JavaScript que se ejecuta en el explorador y un back-end de la API web que se ejecuta en un servidor e implementa la lógica de negocios de la aplicación. En este escenario, cuando el usuario inicia sesión, el front-end de JavaScript usa la [biblioteca de autenticación de Active Directory para vista previa de JavaScript (ADAL.JS) ](https://github.com/AzureAD/azure-activedirectory-library-for-js/tree/dev) y el protocolo de concesión implícita OAuth 2.0 para obtener un token de identificador (id\_token) de Azure AD. El token se almacena en caché y el cliente lo adjunta a la solicitud como token portador al realizar llamadas al back-end de la API web, que se protege con el middleware de OWIN.
 
 
-#### Diagram
+#### Diagrama
 
-![Single Page Application diagram](./media/active-directory-authentication-scenarios/single_page_app.png)
+![Diagrama de aplicación de una sola página](./media/active-directory-authentication-scenarios/single_page_app.png)
 
-#### Description of Protocol Flow
+#### Descripción del flujo de protocolo
 
-1. The user navigates to the web application.
+1. El usuario navega a la aplicación web.
 
 
-2. The application returns the JavaScript front end (presentation layer) to the browser.
+2. La aplicación devuelve el front-end de JavaScript (capa de presentación) en el explorador.
 
 
-3. The user initiates sign in, for example by clicking a sign in link. The browser sends a GET to the Azure AD authorization endpoint to request an ID token. This request includes the client ID and reply URL in the query parameters.
+3. El usuario inicia sesión, por ejemplo, haciendo clic en un vínculo de inicio de sesión. El explorador envía un comando GET al extremo de autorización de Azure AD para solicitar un identificador de token. Esta solicitud incluye el identificador de cliente y la URL de respuesta en los parámetros de consulta.
 
 
-4. Azure AD validates the Reply URL against the registered Reply URL that was configured in the Azure Management Portal.
+4. Azure AD valida la URL de respuesta contrastándola con la URL de respuesta registrada que se configuró en el Portal de administración de Azure.
 
 
-5. The user signs in on the sign-in page.
+5. El usuario inicia sesión en la página de inicio de sesión.
 
 
-6. If authentication is successful, Azure AD creates an ID token and returns it as a URL fragment (#) to the application’s Reply URL. For a production application, this Reply URL should be HTTPS. The returned token includes claims about the user and Azure AD that are required by the application to validate the token.
+6. Si la autenticación es correcta, Azure AD crea un token de identificador y lo devuelve como un fragmento de URL (#) a la URL de respuesta de la aplicación. En el caso de una aplicación de producción, esta URL de respuesta debe ser HTTPS. El token devuelto incluye notificaciones sobre el usuario y Azure AD, necesarias para que la aplicación valide el token.
 
 
-7. The JavaScript client code running in the browser extracts the token from the response to use in securing calls to the application’s web API back end.
+7. El código de cliente de JavaScript que se ejecuta en el explorador extrae el token de la respuesta para usarlo para proteger las llamadas al back-end de la API web de la aplicación.
 
 
-8. The browser calls the application’s web API back end with the access token in the authorization header.
+8. El explorador llama al back-end de la API web de la aplicación con el token de acceso en el encabezado de autorización.
 
-#### Code Samples
+#### Ejemplos de código
 
 
-See the code samples for Single Page Application (SPA) scenarios. Be sure to check back frequently -- we add new samples all the time. [Single Page Application (SPA)](active-directory-code-samples.md#single-page-application-spa).
+Consulte los ejemplos de código para escenarios de aplicación de una sola página (SPA). Asegúrese de consultarlos con frecuencia; agregamos nuevos ejemplos continuamente. [Aplicación de una sola página (SPA)](active-directory-code-samples.md#single-page-application-spa).
 
 
-#### Registering
+#### Registro
 
 
-- Single Tenant: If you are building an application just for your organization, it must be registered in your company’s directory by using the Azure Management Portal.
+- Un solo inquilino: si compila una aplicación únicamente para la organización, esta debe registrarse en el directorio de la compañía mediante el Portal de administración de Azure.
 
 
-- Multi-Tenant: If you are building an application that can be used by users outside your organization, it must be registered in your company’s directory, but also must be registered in each organization’s directory that will be using the application. To make your application available in their directory, you can include a sign-up process for your customers that enables them to consent to your application. When they sign up for your application, they will be presented with a dialog that shows the permissions the application requires, and then the option to consent. Depending on the required permissions, an administrator in the other organization may be required to give consent. When the user or administrator consents, the application is registered in their directory. For more information, see [Adding, Updating, and Removing an Application](https://msdn.microsoft.com/library/azure/dn132599.aspx).
+- Multiempresa (varios inquilinos): si compila una aplicación que puede ser utilizada por usuarios ajenos a la organización, esta debe registrarse en el directorio de la compañía, pero también en el directorio de cada organización que vaya a usar la aplicación. Para que la aplicación esté disponible en su directorio, puede incluir un proceso de inicio de sesión para que los clientes puedan dar su consentimiento a la aplicación. Cuando inicien sesión en la aplicación, se les presentará un cuadro de diálogo que muestra los permisos que la aplicación requiere y la opción de consentimiento. Según los permisos necesarios, es posible que se requiera que un administrador de la otra organización dé su consentimiento. Cuando el usuario o el administrador dan su consentimiento, la aplicación queda registrada en el directorio. Para obtener más información, consulte [Agregar, actualizar y quitar una aplicación](https://msdn.microsoft.com/library/azure/dn132599.aspx).
 
-After registering the application, it must be configured to use OAuth 2.0 Implicit Grant protocol. By default, this protocol is disabled for applications. To enable the OAuth2 Implicit Grant protocol for your application, download its application manifest from the Azure Management Portal, set the “oauth2AllowImplicitFlow” value to true, and then upload the manifest back to the portal. For detailed instructions, see [Enabling OAuth 2.0 Implicit Grant for Single Page Applications](https://msdn.microsoft.com/library/azure/b08d91fa-6a64-4deb-92f4-f5857add9ed8#BKMK_ImplicitGrant).
+Después de registrar la aplicación, esta debe configurarse para usar el protocolo de concesión implícita OAuth 2.0. De forma predeterminada, este protocolo está deshabilitado para las aplicaciones. Para habilitar el protocolo de concesión implícita OAuth2 para su aplicación, descargue el manifiesto de aplicación del Portal de administración de Azure, establezca el valor de "oauth2AllowImplicitFlow" en true y, a continuación, vuelva a cargar el manifiesto en el portal. Para obtener instrucciones detalladas, consulte [Habilitar la concesión implícita de OAuth 2.0 para aplicaciones de una sola página](https://msdn.microsoft.com/library/azure/b08d91fa-6a64-4deb-92f4-f5857add9ed8#BKMK_ImplicitGrant).
 
 
-#### Token Expiration
+#### Expiración del token
 
-When you use ADAL.js to manage authentication with Azure AD, you benefit from several features that facilitate refreshing an expired token as well as getting tokens for additional web API resources that may be called by the application. When the user successfully authenticates with Azure AD, a session secured by a cookie is established for the user between the browser and Azure AD. It’s important to note that the session exists between the user and Azure AD and not between the user and the web application running on the server. When a token expires, ADAL.js uses this session to silently obtain another token. It does this by using a hidden iFrame to send and receive the request using the OAuth Implicit Grant protocol. ADAL.js can also use this same mechanism to silently obtain access tokens from Azure AD for other web API resources that the application calls as long as these resources support cross-origin resource sharing (CORS), are registered in the user’s directory, and any required consent was given by the user during sign-in.
+Al usar ADAL.js para administrar la autenticación con Azure AD, se beneficia de varias características que facilitan la actualización de un token caducado, así como la obtención de tokens para recursos de la API web adicionales a los que puede llamar la aplicación. Cuando el usuario se autentica correctamente con Azure AD, se establece una sesión protegida por una cookie entre el explorador y Azure AD. Es importante tener en cuenta que la sesión tiene lugar entre el usuario y Azure AD, no entre el usuario y la aplicación web que se ejecuta en el servidor. Cuando un token expira, ADAL.js usa esta sesión para obtener otro token automáticamente. Esto se hace mediante el uso de un iFrame oculto para enviar y recibir la solicitud con el protocolo de concesión implícita OAuth. ADAL.js también puede usar el mismo mecanismo para obtener acceso automático a tokens de Azure AD para otros recursos de la API web a los que la aplicación llame, siempre que dichos recursos admitan el uso compartido de recursos entre orígenes (CORS), estén registrados en el directorio del usuario y este haya dado el consentimiento requerido durante el inicio de sesión.
 
 
-### Native Application to Web API
+### Aplicación nativa a Web API
 
 
-This section describes a native application that calls a web API on behalf of a user. This scenario is built on the OAuth 2.0 authorization code grant type with a public client, as described in section 4.1 of the [OAuth 2.0 specification](http://tools.ietf.org/html/rfc6749). The native application obtains an access token for the user by using the OAuth 2.0 protocol. This access token is then sent in the request to the web API, which authorizes the user and returns the desired resource.
+En esta sección se describe una aplicación nativa que llama a una API web en nombre de un usuario. Este escenario se basa en el tipo de concesión de código de autorización OAuth 2.0 con un cliente público, tal como se describe en la sección 4.1 de la [especificación de OAuth 2.0](http://tools.ietf.org/html/rfc6749). La aplicación nativa obtiene un token de acceso para el usuario mediante el protocolo OAuth 2.0. Este token de acceso se envía después en la respuesta a la API web, que autoriza al usuario y devuelve el recurso deseado.
 
-#### Diagram
+#### Diagrama
 
-![Native Application to Web API Diagram](./media/active-directory-authentication-scenarios/native_app_to_web_api.png)
+![Diagrama de aplicación nativa a API web](./media/active-directory-authentication-scenarios/native_app_to_web_api.png)
 
-#### Authentication flow for native application to API
+#### Flujo de autenticación para aplicación nativa a API
 
-#### Description of Protocol Flow
+#### Descripción del flujo de protocolo
 
 
-If you are using the AD Authentication Libraries, most of the protocol details described below are handled for you, such as the browser pop-up, token caching, and handling of refresh tokens.
+Si usa las bibliotecas de autenticación de AD, la mayoría de los detalles del protocolo que se describen a continuación se administran automáticamente, por ejemplo, la ventana emergente del explorador, el almacenamiento en caché de los tokens y la administración de los tokens de actualización.
 
-1. Using a browser pop-up, the native application makes a request to the authorization endpoint in Azure AD. This request includes the client ID and the redirect URI of the native application as shown in the Management Portal, and the application ID URI for the web API. If the user hasn’t already signed in, they are prompted to sign in again
+1. Mediante una ventana emergente del explorador, la aplicación nativa realiza una solicitud al extremo de autorización de Azure AD. Esta solicitud incluye el identificador del cliente y el URI de redirección de la aplicación nativa, tal como se muestra en el Portal de administración, así como el URI del identificador de la aplicación para la API web. Si el usuario todavía no ha iniciado sesión, se le pide que lo haga.
 
 
-2. Azure AD authenticates the user. If it is a multi-tenant application and consent is required to use the application, the user will be required to consent if they haven’t already done so. After granting consent and upon successful authentication, Azure AD issues an authorization code response back to the client application’s redirect URI.
+2. Azure AD autentica al usuario. Si se trata de una aplicación de varios inquilinos y se requiere consentimiento para usarla, se pedirá el consentimiento del usuario si todavía no lo ha dado. Después de conceder consentimiento y tras la correcta autenticación, Azure AD emite una respuesta de código de autorización al URI de redirección de la aplicación cliente.
 
 
-3. When Azure AD issues an authorization code response back to the redirect URI, the client application stops browser interaction and extracts the authorization code from the response. Using this authorization code, the client application sends a request to Azure AD’s token endpoint that includes the authorization code, details about the client application (client ID and redirect URI), and the desired resource (application ID URI for the web API).
+3. Cuando Azure AD devuelve una respuesta de código de autorización al URI de redirección, la aplicación cliente detiene la interacción con el explorador y extrae el código de autorización de la respuesta. Con este código de autorización, la aplicación cliente envía una solicitud al extremo de token de Azure AD que incluye el código de autorización, detalles sobre la aplicación cliente (URI de redirección e identificador del cliente), además del recurso deseado (URI del identificador de aplicación para la API web).
 
 
-4. The authorization code and information about the client application and web API are validated by Azure AD. Upon successful validation, Azure AD returns two tokens: a JWT access token and a JWT refresh token. In addition, Azure AD returns basic information about the user, such as their display name and tenant ID.
+4. Azure AD valida el código de autorización e información sobre la aplicación cliente y la API web. Tras la correcta validación, Azure AD devuelve dos tokens: un token de acceso de JWT y un token de actualización de JWT. Además, Azure AD devuelve información básica sobre el usuario como, por ejemplo, el nombre para mostrar y el identificador de inquilino.
 
 
-5. Over HTTPS, the client application uses the returned JWT access token to add the JWT string with a “Bearer” designation in the Authorization header of the request to the web API. The web API then validates the JWT token, and if validation is successful, returns the desired resource.
+5. A través de HTTPS, la aplicación cliente usa el token de acceso de JWT devuelto para agregar la cadena JWT con una designación “Bearer” en el encabezado Authorization de la solicitud a la API web. A continuación, la API web valida el token de JWT y, si la validación es correcta, devuelve el recurso deseado.
 
 
-6. When the access token expires, the client application will receive an error that indicates the user needs to authenticate again. If the application has a valid refresh token, it can be used to acquire a new access token without prompting the user to sign in again. If the refresh token expires, the application will need to interactively authenticate the user once again.
+6. Cuando el token de acceso expire, la aplicación cliente recibirá un mensaje de error que indica que el usuario debe volver a autenticarse. Si la aplicación tiene un token de actualización válido, puede usarse para adquirir un nuevo token de acceso sin pedir al usuario que vuelva a iniciar sesión. Si el token de actualización expira, será necesario que la aplicación vuelva a autenticar interactivamente al usuario.
 
 
-> [AZURE.NOTE] The refresh token issued by Azure AD can be used to access multiple resources. For example, if you have a client application that has permission to call two web APIs, the refresh token can be used to get an access token to the other web API as well.
+> [AZURE.NOTE]El token de actualización que emite Azure AD se puede usar para obtener acceso a varios recursos. Por ejemplo, si tiene una aplicación cliente con permiso para llamar a dos API web, el token de actualización puede usarse para obtener también un token de acceso a la otra API web.
 
 
-#### Code Samples
+#### Ejemplos de código
 
 
-See the code samples for Native Application to Web API scenarios. And, check back frequently -- we add new samples all the time. [Native Application to Web API](active-directory-code-samples.md#native-application-to-web-api).
+Vea los ejemplos de código en escenarios de aplicación nativa a API web. Agregamos nuevos ejemplos continuamente, así que no olvide consultarlos con frecuencia. [Aplicación nativa a API web](active-directory-code-samples.md#native-application-to-web-api).
 
 
-#### Registering
+#### Registro
 
 
-- Single Tenant: Both the native application and the web API must be registered in the same directory in Azure AD. The web API can be configured to expose a set of permissions, which are used to limit the native application’s access to its resources. The client application then selects the desired permissions from the “Permissions to Other Applications” drop-down menu in the Azure Management Portal.
+- Un solo inquilino: tanto la aplicación nativa como la API web deben estar registradas en el mismo directorio de Azure AD. La API web se puede configurar para que exponga un conjunto de permisos, que se usan para limitar el acceso de la aplicación nativa a sus recursos. A continuación, la aplicación cliente selecciona los permisos deseados en el menú desplegable “Permisos para otras aplicaciones” del Portal de administración de Azure.
 
 
-- Multi-Tenant: First, the native application only ever registered in the developer or publisher’s directory. Second, the native application is configured to indicate the permissions it requires to be functional. This list of required permissions is shown in a dialog when a user or administrator in the destination directory gives consent to the application, which makes it available to their organization. Some applications require just user-level permissions, which any user in the organization can consent to. Other applications require administrator-level permissions, which a user in the organization cannot consent to. Only a directory administrator can give consent to applications that require this level of permissions. When the user or administrator consents, only the web API is registered in their directory. For more information, see [Adding, Updating, and Removing an Application](https://msdn.microsoft.com/library/azure/dn132599.aspx).
+- Multiempresa (varios inquilinos): en primer lugar, la aplicación nativa siempre se registra en el directorio del desarrollador o del editor. En segundo lugar, la aplicación nativa está configurada para indicar los permisos que requiere para ser funcional. La lista de permisos necesarios se muestra en un cuadro de diálogo cuando un usuario o administrador del directorio de destino da su consentimiento a la aplicación, lo que la pone a disposición de la organización. Algunas aplicaciones solo requieren permisos de nivel de usuario, para los que cualquier usuario de la organización puede dar el consentimiento. Otras aplicaciones requieren permisos de nivel de administrador, para los que un usuario de la organización no puede dar su consentimiento. Solo un administrador de directorio puede dar su consentimiento a las aplicaciones que requieran este nivel de permisos. Cuando el usuario o el administrador dan su consentimiento, solo la API web queda registrada en el directorio. Para obtener más información, consulte [Agregar, actualizar y quitar una aplicación](https://msdn.microsoft.com/library/azure/dn132599.aspx).
 
 
-#### Token Expiration
+#### Expiración del token
 
 
-When the native application uses its authorization code to get a JWT access token, it also receives a JWT refresh token. When the access token expires, the refresh token can be used to re-authenticate the user without requiring them to sign in again. This refresh token is then used to authenticate the user, which results in a new access token and refresh token.
+Cuando la aplicación nativa usa su código de autorización para obtener un token de acceso de JWT, también recibe un token de actualización de JWT. Cuando el token de acceso expira, se puede usar el token de actualización para volver a autenticar al usuario sin solicitarle que inicie sesión de nuevo. Este token de actualización se usa a continuación para autenticar al usuario, lo que se traduce en un token de acceso y un token de actualización nuevos.
 
 
 
 
 
-### Web Application to Web API
+### Aplicación web a Web API
 
 
-This section describes a web application that needs to get resources from a web API. In this scenario, there are two identity types that the web application can use to authenticate and call the web API: an application identity, or a delegated user identity. For the application identity type, this scenario uses OAuth 2.0 client credentials grant to authenticate as the application and access the web API. When using an application identity, the web API can only detect that the web application is calling it, as the web API does not receive any information about the user. If the application receives information about the user, it will be sent via the application protocol, and it is not signed by Azure AD. The web API trusts that the web application authenticated the user. For this reason, this pattern is called a trusted subsystem.
+En esta sección se describe una aplicación web que necesita obtener recursos de una API web. En este escenario, existen dos tipos de identidad que la aplicación web puede usar para autenticar y llamar a la API web: una identidad de aplicación o una identidad de usuario delegado. Para el tipo de identidad de aplicación, en este escenario se usan credenciales de cliente de OAuth 2.0 concedidas para autenticarse como aplicación y obtener acceso a la API web. Cuando se usa una identidad de aplicación, la API web solo puede detectar que la aplicación web la llama, ya que la API web no recibe ninguna información sobre el usuario. Si la aplicación recibe información sobre el usuario, se enviará mediante el protocolo de aplicación, sin la firma de Azure AD. La API web confía en que la aplicación web autenticó al usuario. Por ello, este patrón se conoce como subsistema de confianza.
 
-For the delegated user identity type, the scenario can be accomplished in two ways: OpenID Connect, and OAuth 2.0 authorization code grant with a confidential client. The web application obtains an access token for the user, which proves to the web API that the user successfully authenticated to the web application and that the web application was able to obtain a delegated user identity to call the web API. This access token is sent in the request to the web API, which authorizes the user and returns the desired resource.
+Para el tipo de identidad de usuario delegado, este escenario se puede conseguir de dos maneras: concesión de código de autorización OpenID Connect y OAuth 2.0 con un cliente confidencial. La aplicación web obtiene un token de acceso para el usuario, que demuestra a la API web que el usuario se autenticó correctamente ante la aplicación web y que la aplicación web pudo obtener una identidad de usuario delegado para llamar a la API web. Este token de acceso se envía en la respuesta a la API web, que autoriza al usuario y devuelve el recurso deseado.
 
-#### Diagram
+#### Diagrama
 
-![Web Application to Web API diagram](./media/active-directory-authentication-scenarios/web_app_to_web_api.png)
+![Diagrama de aplicación web a API web](./media/active-directory-authentication-scenarios/web_app_to_web_api.png)
 
 
 
-#### Description of Protocol Flow
+#### Descripción del flujo de protocolo
 
-Both the application identity and delegated user identity types are discussed in the flow below. The key difference between them is that the delegated user identity must first acquire an authorization code before the user can sign-in and gain access to the web API.
+Los tipos de identidad de aplicación y de identidad de usuario delegado se tratan en el flujo siguiente. La diferencia clave entre ambos es que la identidad de usuario delegado debe adquirir primero un código de autorización para que el usuario pueda iniciar sesión y obtener acceso a la API web.
 
-##### Application Identity with OAuth 2.0 Client Credentials Grant
+##### Identidad de aplicación con concesión de credenciales de cliente OAuth 2.0
 
-1. A user is signed in to Azure AD in the web application (see the Web Browser to Web Application section above).
+1. Un usuario inicia sesión en Azure AD en la aplicación web (vea la sección anterior Explorador web a aplicación web).
 
 
-2. The web application needs to acquire an access token so that it can authenticate to the web API and retrieve the desired resource. It makes a request to Azure AD’s token endpoint, providing the credential, client ID, and web API’s application ID URI.
+2. La aplicación web necesita adquirir un token de acceso para poder autenticarse ante la API web y recuperar el recurso deseado. Realiza una solicitud al extremo de token de Azure AD y proporciona las credenciales, el identificador del cliente y el URI del identificador de aplicación de la API web.
 
 
-3. Azure AD authenticates the application and returns a JWT access token that is used to call the web API.
+3. Azure AD autentica la aplicación y devuelve un token de acceso de JWT que se usa para llamar a la API web.
 
 
-4. Over HTTPS, the web application uses the returned JWT access token to add the JWT string with a “Bearer” designation in the Authorization header of the request to the web API. The web API then validates the JWT token, and if validation is successful, returns the desired resource.
+4. A través de HTTPS, la aplicación web usa el token de acceso de JWT devuelto para agregar la cadena JWT con una designación “Bearer” en el encabezado Authorization de la solicitud a la API web. A continuación, la API web valida el token de JWT y, si la validación es correcta, devuelve el recurso deseado.
 
-##### Delegated User Identity with OpenID Connect
+##### Identidad de usuario delegado con OpenID Connect
 
-1. A user is signed in to a web application using Azure AD (see the [Web Browser to Web Application](#web-browser-to-web-application) above). If the user of the web application has not yet consented to allowing the web application to call the web API on its behalf, the user will need to consent. The application will display the permissions it requires, and if any of these are administrator-level permissions, a normal user in the directory will not be able to consent. This consent process only applies to multi-tenant applications, not single tenant applications, as the application will already have the necessary permissions. When the user signed in, the web application received an ID token with information about the user, as well as an authorization code.
+1. Un usuario inicia sesión en una aplicación web mediante Azure AD (consulte la sección anterior [Explorador web a aplicación web](#web-browser-to-web-application)). Si el usuario de la aplicación web todavía no ha dado su consentimiento para permitir que la aplicación web llame a la API web en su nombre, el usuario tendrá que dar su consentimiento. La aplicación mostrará los permisos que requiere y, si alguno de estos permisos es de nivel de administrador, un usuario normal del directorio no podrá dar su consentimiento. Este proceso de consentimiento solo se aplica a las aplicaciones multiempresa (de varios inquilinos), no a las aplicaciones de un solo inquilino, puesto que la aplicación ya tendrá los permisos necesarios. Cuando el usuario inicia sesión, la aplicación web recibe un token de identificador con información sobre el usuario, así como un código de autorización.
 
 
-2. Using the authorization code issued by Azure AD, the web application sends a request to Azure AD’s token endpoint that includes the authorization code, details about the client application (client ID and redirect URI), and the desired resource (application ID URI for the web API).
+2. Con el código de autorización emitido por Azure AD, la aplicación web envía una solicitud al extremo de token de Azure AD que incluye el código de autorización, detalles sobre la aplicación cliente (URI de redirección e identificador del cliente), además del recurso deseado (URI del identificador de aplicación para la API web).
 
 
-3. The authorization code and information about the web application and web API are validated by Azure AD. Upon successful validation, Azure AD returns two tokens: a JWT access token and a JWT refresh token.
+3. Azure AD valida el código de autorización e información sobre la aplicación web y la API web. Tras la correcta validación, Azure AD devuelve dos tokens: un token de acceso de JWT y un token de actualización de JWT.
 
 
-4. Over HTTPS, the web application uses the returned JWT access token to add the JWT string with a “Bearer” designation in the Authorization header of the request to the web API. The web API then validates the JWT token, and if validation is successful, returns the desired resource.
+4. A través de HTTPS, la aplicación web usa el token de acceso de JWT devuelto para agregar la cadena JWT con una designación “Bearer” en el encabezado Authorization de la solicitud a la API web. A continuación, la API web valida el token de JWT y, si la validación es correcta, devuelve el recurso deseado.
 
-##### Delegated User Identity with OAuth 2.0 Authorization Code Grant
+##### Identidad de usuario delegado con concesión de código de autorización OAuth 2.0
 
-1. A user is already signed in to a web application, whose authentication mechanism is independent of Azure AD.
+1. Un usuario ya ha iniciado sesión en una aplicación web, cuyo mecanismo de autenticación es independiente de Azure AD.
 
 
-2. The web application requires an authorization code to acquire an access token, so it issues a request through the browser to Azure AD’s authorization endpoint, providing the client ID and redirect URI for the web application after successful authentication. The user signs in to Azure AD.
+2. La aplicación web requiere un código de autorización para adquirir un token de acceso, por lo que emite una solicitud a través del explorador al extremo de autorización de Azure AD y proporciona el identificador del cliente y el URI de redirección de la aplicación web después de la correcta autenticación. El usuario inicia sesión en Azure AD.
 
 
-3. If the user of the web application has not yet consented to allowing the web application to call the web API on its behalf, the user will need to consent. The application will display the permissions it requires, and if any of these are administrator-level permissions, a normal user in the directory will not be able to consent. This consent process only applies to multi-tenant applications, not single tenant applications, as the application will already have the necessary permissions.
+3. Si el usuario de la aplicación web todavía no ha dado su consentimiento para permitir que la aplicación web llame a la API web en su nombre, el usuario tendrá que dar su consentimiento. La aplicación mostrará los permisos que requiere y, si alguno de estos permisos es de nivel de administrador, un usuario normal del directorio no podrá dar su consentimiento. Este proceso de consentimiento solo se aplica a las aplicaciones multiempresa (de varios inquilinos), no a las aplicaciones de un solo inquilino, puesto que la aplicación ya tendrá los permisos necesarios.
 
 
-4. After the user has consented, the web application receives the authorization code that it needs to acquire an access token.
+4. Una vez que el usuario haya dado su consentimiento, la aplicación web recibe el código de autorización que necesita para adquirir un token de acceso.
 
 
-5. Using the authorization code issued by Azure AD, the web application sends a request to Azure AD’s token endpoint that includes the authorization code, details about the client application (client ID and redirect URI), and the desired resource (application ID URI for the web API).
+5. Con el código de autorización emitido por Azure AD, la aplicación web envía una solicitud al extremo de token de Azure AD que incluye el código de autorización, detalles sobre la aplicación cliente (URI de redirección e identificador del cliente), además del recurso deseado (URI del identificador de aplicación para la API web).
 
 
-6. The authorization code and information about the web application and web API are validated by Azure AD. Upon successful validation, Azure AD returns two tokens: a JWT access token and a JWT refresh token.
+6. Azure AD valida el código de autorización e información sobre la aplicación web y la API web. Tras la correcta validación, Azure AD devuelve dos tokens: un token de acceso de JWT y un token de actualización de JWT.
 
 
-7. Over HTTPS, the web application uses the returned JWT access token to add the JWT string with a “Bearer” designation in the Authorization header of the request to the web API. The web API then validates the JWT token, and if validation is successful, returns the desired resource.
+7. A través de HTTPS, la aplicación web usa el token de acceso de JWT devuelto para agregar la cadena JWT con una designación “Bearer” en el encabezado Authorization de la solicitud a la API web. A continuación, la API web valida el token de JWT y, si la validación es correcta, devuelve el recurso deseado.
 
-#### Code Samples
+#### Ejemplos de código
 
-See the code samples for Web Application to Web API scenarios. And, check back frequently -- we add new samples all the time. Web [Application to Web API](active-directory-code-samples.md#web-application-to-web-api).
+Vea los ejemplos de código para escenarios de aplicación web a API web. Agregamos nuevos ejemplos continuamente, así que no olvide consultarlos con frecuencia. [Aplicación web a API web](active-directory-code-samples.md#web-application-to-web-api).
 
 
-#### Registering
+#### Registro
 
-- Single Tenant: For both the application identity and delegated user identity cases, the web application and the web API must be registered in the same directory in Azure AD. The web API can be configured to expose a set of permissions, which are used to limit the web application’s access to its resources. If a delegated user identity type is being used, the web application needs to select the desired permissions from the “Permissions to Other Applications” drop-down menu in the Azure Management Portal. This step is not required if the application identity type is being used.
+- Un solo inquilino: tanto en el caso de la identidad de aplicación como en el de la identidad de usuario delegado, la aplicación web y la API web deben estar registradas en el mismo directorio de Azure AD. La API web puede configurarse para exponer un conjunto de permisos, que se usan para limitar el acceso de la aplicación web a sus recursos. Si se usa una identidad de usuario delegado, es necesario que la aplicación web seleccione los permisos deseados en el menú desplegable “Permisos para otras aplicaciones” del Portal de administración de Azure. Este paso no es necesario si se usa el tipo de identidad de aplicación.
 
 
-- Multi-Tenant: First, the web application is configured to indicate the permissions it requires to be functional. This list of required permissions is shown in a dialog when a user or administrator in the destination directory gives consent to the application, which makes it available to their organization. Some applications require just user-level permissions, which any user in the organization can consent to. Other applications require administrator-level permissions, which a user in the organization cannot consent to. Only a directory administrator can give consent to applications that require this level of permissions. When the user or administrator consents, the web application and the web API are both registered in their directory.
+- Multiempresa (varios inquilinos): en primer lugar, la aplicación web se configura para indicar los permisos que requiere para ser funcional. La lista de permisos necesarios se muestra en un cuadro de diálogo cuando un usuario o administrador del directorio de destino da su consentimiento a la aplicación, lo que la pone a disposición de la organización. Algunas aplicaciones solo requieren permisos de nivel de usuario, para los que cualquier usuario de la organización puede dar el consentimiento. Otras aplicaciones requieren permisos de nivel de administrador, para los que un usuario de la organización no puede dar su consentimiento. Solo un administrador de directorio puede dar su consentimiento a las aplicaciones que requieran este nivel de permisos. Cuando el usuario o el administrador dan su consentimiento, la aplicación web y la API web quedan registradas en el directorio.
 
-#### Token Expiration
+#### Expiración del token
 
-When the web application uses its authorization code to get a JWT access token, it also receives a JWT refresh token. When the access token expires, the refresh token can be used to re-authenticate the user without requiring them to sign in again. This refresh token is then used to authenticate the user, which results in a new access token and refresh token.
+Cuando la aplicación web usa su código de autorización para obtener un token de acceso de JWT, también recibe un token de actualización de JWT. Cuando el token de acceso expira, se puede usar el token de actualización para volver a autenticar al usuario sin solicitarle que inicie sesión de nuevo. Este token de actualización se usa a continuación para autenticar al usuario, lo que se traduce en un token de acceso y un token de actualización nuevos.
 
 
-### Daemon or Server Application to Web API
+### Aplicación de servidor o de demonio en API web
 
 
-This section describes a daemon or server application that needs to get resources from a web API. There are two sub-scenarios that apply to this section: A daemon that needs to call a web API, built on OAuth 2.0 client credentials grant type; and a server application (such as a web API) that needs to call a web API, built on OAuth 2.0 On-Behalf-Of draft specification.
+En esta sección se describe una aplicación de demonio o de servidor que necesita obtener recursos de una API web. Hay dos subescenarios aplicables a esta sección: un demonio que necesita llamar a una API web, basada en el tipo de concesión de credenciales de cliente OAuth 2.0, y una aplicación de servidor (como, por ejemplo, una API web) que necesita llamar a una API web, basada en la especificación provisional "On-Behalf-Of" de OAuth 2.0.
 
-For the scenario when a daemon application needs to call a web API, it’s important to understand a few things. First, user interaction is not possible with a daemon application, which requires the application to have its own identity. An example of a daemon application is a batch job, or an operating system service running in the background. This type of application requests an access token by using its application identity and presenting its client ID, credential (password or certificate), and application ID URI to Azure AD. After successful authentication, the daemon receives an access token from Azure AD, which is then used to call the web API.
+Es importante entender algunos aspectos para el escenario en el que una aplicación de demonio necesita llamar a una API web. En primer lugar, la interacción con el usuario no es posible con una aplicación de demonio, que requiere que la aplicación tenga su propia identidad. Un ejemplo de aplicación de demonio es un trabajo por lotes o un servicio de sistema operativo que se ejecuta en segundo plano. Este tipo de aplicación solicita un token de acceso con su identidad de aplicación y presenta el identificador del cliente, las credenciales (contraseña o certificado) y el URI del identificador de aplicación a Azure AD. Tras la correcta autenticación, el demonio recibe un token de acceso de Azure AD, que se usa posteriormente para llamar a la API web.
 
-For the scenario when a server application needs to call a web API, it’s helpful to use an example. Imagine that a user has authenticated on a native application, and this native application needs to call a web API. Azure AD issues a JWT access token to call the web API. If the web API needs to call another downstream web API, it can use the on-behalf-of flow to delegate the user’s identity and authenticate to the second-tier web API.
+Para el escenario en el que una aplicación de servidor necesita llamar a una API web resulta útil usar un ejemplo. Imagine que un usuario se ha autenticado en una aplicación nativa y que la aplicación nativa necesita llamar a una API web. Azure AD emite un token de acceso de JWT para llamar a la API web. Si la API web necesita llamar a otra API web de nivel inferior, puede usar el flujo "On-Behalf-Of" para delegar la identidad del usuario y autenticarlo en la API web de segundo nivel.
 
-#### Diagram
+#### Diagrama
 
-![Daemon or Server Application to Web API diagram](./media/active-directory-authentication-scenarios/daemon_server_app_to_web_api.png)
+![Diagrama de aplicación de servidor o de demonio en API web](./media/active-directory-authentication-scenarios/daemon_server_app_to_web_api.png)
 
-#### Description of Protocol Flow
+#### Descripción del flujo de protocolo
 
-##### Application Identity with OAuth 2.0 Client Credentials Grant
+##### Identidad de aplicación con concesión de credenciales de cliente OAuth 2.0
 
-1. First, the server application needs to authenticate with Azure AD as itself, without any human interaction such as an interactive sign-on dialog. It makes a request to Azure AD’s token endpoint, providing the credential, client ID, and application ID URI.
+1. En primer lugar, la aplicación de servidor necesita autenticarse con Azure AD por sí misma, sin ninguna interacción como, por ejemplo, un cuadro de diálogo de inicio de sesión interactivo. Esta realiza una solicitud al extremo de token de Azure AD y proporciona las credenciales, el identificador del cliente y el URI del identificador de aplicación.
 
 
-2. Azure AD authenticates the application and returns a JWT access token that is used to call the web API.
+2. Azure AD autentica la aplicación y devuelve un token de acceso de JWT que se usa para llamar a la API web.
 
 
-3. Over HTTPS, the web application uses the returned JWT access token to add the JWT string with a “Bearer” designation in the Authorization header of the request to the web API. The web API then validates the JWT token, and if validation is successful, returns the desired resource.
+3. A través de HTTPS, la aplicación web usa el token de acceso de JWT devuelto para agregar la cadena JWT con una designación “Bearer” en el encabezado Authorization de la solicitud a la API web. A continuación, la API web valida el token de JWT y, si la validación es correcta, devuelve el recurso deseado.
 
 
-##### Delegated User Identity with OAuth 2.0 On-Behalf-Of Draft Specification
+##### Identidad de usuario delegado con la especificación provisional "On-Behalf-Of" de OAuth 2.0
 
-The flow discussed below assumes that a user has been authenticated on another application (such as a native application), and their user identity has been used to acquire an access token to the first-tier web API.
+En el flujo descrito a continuación se asume que un usuario se ha autenticado en otra aplicación (por ejemplo, una aplicación nativa) y se ha usado su identidad de usuario para adquirir un token de acceso para la API web de primer nivel.
 
-1. The native application sends the access token to the first-tier web API.
+1. La aplicación nativa envía el token de acceso a la API web de primer nivel.
 
 
-2. The first-tier web API sends a request to Azure AD’s token endpoint, providing its client ID and credentials, as well as the user’s access token. In addition, the request is sent with an on_behalf_of parameter that indicates the web API is requesting new tokens to call a downstream web API on behalf of the original user.
+2. La API web de primer nivel envía una solicitud al extremo de token de Azure AD y proporciona el identificador del cliente y las credenciales, así como el token de acceso del usuario. Además, la solicitud se envía con un parámetro on\_behalf\_of que indica que la API web solicita nuevos tokens para llamar a una API web de nivel inferior en nombre del usuario original.
 
 
-3. Azure AD verifies that the first-tier web API has permissions to access the second-tier web API and validates the request, returning a JWT access token and a JWT refresh token to the first-tier web API.
+3. Azure AD comprueba que la API web de primer nivel tiene permisos de acceso a la API web de segundo nivel, valida la solicitud y devuelve un token de acceso de JWT y un token de actualización de JWT a la API web de primer nivel.
 
 
-4. Over HTTPS, the first-tier web API then calls the second-tier web API by appending the token string in the Authorization header in the request. The first-tier web API can continue to call the second-tier web API as long as the access token and refresh tokens are valid.
+4. La API web de primer nivel llama después a la API web de segundo nivel a través de HTTPS. Para ello, anexa la cadena de token en el encabezado Authorization de la solicitud. La API web de primer nivel puede seguir llamando a la API web de segundo nivel siempre que el token de acceso y los tokens de actualización sean válidos.
 
-#### Code Samples
+#### Ejemplos de código
 
-See the code samples for Daemon or Server Application to Web API scenarios. And, check back frequently -- we add new samples all the time. [Server or Daemon Application to Web API](active-directory-code-samples.md#server-or-daemon-application-to-web-api)
+Vea los ejemplos de código para escenarios de aplicación de servidor o de demonio en API web. Agregamos nuevos ejemplos continuamente, así que no olvide consultarlos con frecuencia. [Aplicación de servidor o de demonio en API web](active-directory-code-samples.md#server-or-daemon-application-to-web-api)
 
-#### Registering
+#### Registro
 
-- Single Tenant: For both the application identity and delegated user identity cases, the daemon or server application must be registered in the same directory in Azure AD. The web API can be configured to expose a set of permissions, which are used to limit the daemon or server’s access to its resources. If a delegated user identity type is being used, the server application needs to select the desired permissions from the “Permissions to Other Applications” drop-down menu in the Azure Management Portal. This step is not required if the application identity type is being used.
+- Un solo inquilino: tanto en el caso de la identidad de aplicación como en el de la identidad de usuario delegado, la aplicación de demonio o de servidor debe estar registrada en el mismo directorio de Azure AD. La API web puede configurarse para exponer un conjunto de permisos, que se usan para limitar el acceso de la aplicación de demonio o de servidor a sus recursos. Si se usa un tipo de identidad de usuario delegado, es necesario que la aplicación de servidor seleccione los permisos deseados en el menú desplegable “Permisos para otras aplicaciones” del Portal de administración de Azure. Este paso no es necesario si se usa el tipo de identidad de aplicación.
 
 
-- Multi-Tenant: First, the daemon or server application is configured to indicate the permissions it requires to be functional. This list of required permissions is shown in a dialog when a user or administrator in the destination directory gives consent to the application, which makes it available to their organization. Some applications require just user-level permissions, which any user in the organization can consent to. Other applications require administrator-level permissions, which a user in the organization cannot consent to. Only a directory administrator can give consent to applications that require this level of permissions. When the user or administrator consents, both of the web APIs registered in their directory.
+- Multiempresa (varios inquilinos): en primer lugar, la aplicación de demonio o de servidor se configura para indicar los permisos que requiere para ser funcional. La lista de permisos necesarios se muestra en un cuadro de diálogo cuando un usuario o administrador del directorio de destino da su consentimiento a la aplicación, lo que la pone a disposición de la organización. Algunas aplicaciones solo requieren permisos de nivel de usuario, para los que cualquier usuario de la organización puede dar el consentimiento. Otras aplicaciones requieren permisos de nivel de administrador, para los que un usuario de la organización no puede dar su consentimiento. Solo un administrador de directorio puede dar su consentimiento a las aplicaciones que requieran este nivel de permisos. Cuando el usuario o el administrador dan su consentimiento, las dos API web quedan registradas en el directorio.
 
-#### Token Expiration
+#### Expiración del token
 
-When the first application uses its authorization code to get a JWT access token, it also receives a JWT refresh token. When the access token expires, the refresh token can be used to re-authenticate the user without prompting for credentials. This refresh token is then used to authenticate the user, which results in a new access token and refresh token.
+Cuando la primera aplicación usa su código de autorización para obtener un token de acceso de JWT, también recibe un token de actualización de JWT. Cuando el token de acceso expira, el token de actualización se puede usar para autenticar al usuario sin pedir credenciales. Este token de actualización se usa a continuación para autenticar al usuario, lo que se traduce en un token de acceso y un token de actualización nuevos.
 
-## See Also
+## Otras referencias
 
-[Azure Active Directory Code Samples](active-directory-code-samples.md)
+[Ejemplos de código de Azure Active Directory](active-directory-code-samples.md)
 
-[Important Information About Signing Key Rollover in Azure AD](https://msdn.microsoft.com/library/azure/dn641920.aspx)
+[Información importante acerca de la cadencia de sustitución de clave en Azure AD](https://msdn.microsoft.com/library/azure/dn641920.aspx)
  
-[OAuth 2.0 in Azure AD](https://msdn.microsoft.com/library/azure/dn645545.aspx)
+[OAuth 2.0 en Azure AD](https://msdn.microsoft.com/library/azure/dn645545.aspx)
  
+
+<!---HONumber=August15_HO6-->

@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Azure AD Connect - Windows Remote Managed Hints" 
-	description="Azure AD Connect Windows Remote Managed hints for using with AD FS." 
+	pageTitle="Azure AD Connect: sugerencias para la Administración remota de Windows" 
+	description="Sugerencias para la Administración remota de Windows de Azure AD Connect para usar con AD FS." 
 	services="active-directory" 
 	documentationCenter="" 
 	authors="billmath" 
@@ -16,31 +16,33 @@
 	ms.date="05/28/2015" 
 	ms.author="billmath"/>
 
-# Azure AD Connect - Windows Remote Managed Hints
+# Azure AD Connect: sugerencias para la Administración remota de Windows
 
 
-When using Azure AD Connect to deploy Active Directory Federation Services or the Web Application Proxy, check the requirements below hints to ensure connectivity and configuration will succeed: 
+Al utilizar Azure AD Connect para implementar los Servicios de federación de Active Directory (AD FS) o el Proxy de aplicación web, compruebe los requisitos y las sugerencias siguientes para garantizar la conectividad y la configuración se completará correctamente.
 
-- If the target server is domain joined, ensure that Windows Remote Managed is enabled 
-	* In an elevated PSH command window, use command “Enable-PSRemoting –force” 
+- Si el servidor de destino está unido al dominio, compruebe que está habilitada la opción Administración remota de Windows. 
+	* En una ventana de comandos PSH con privilegios elevados, use el comando "Enable-PSRemoting –force". 
 
-- If the target server is a non domain joined WAP machine, there are a couple of additional requirements 
-	- On the target machine (WAP machine):” 
+- Si el servidor de destino es un equipo WAP no unido al dominio, hay un par de requisitos adicionales.
+	- En el equipo de destino (equipo WAP): 
 
-- Ensure the winrm (Windows Remote Management / WS-Management) service is running via the Services snap-in 
+- Asegúrese de que winrm (Administración remota de Windows / WS-Management) se está ejecutando mediante el complemento Servicios.
 
-- In an elevated PSH command window, use command “Enable-PSRemoting –force” 
-	- On the machine on which the wizard is running (if the target machine is non domain joined or untrusted domain): 
+- En una ventana de comandos PSH con privilegios elevados, use el comando "Enable-PSRemoting –force".
+	- En el equipo en el que se está ejecutando el asistente (si el equipo de destino no está unido al dominio o el dominio no es de confianza): 
 
-- In an elevated PSH command window, use the command “Set-Item WSMan:\localhost\Client\TrustedHosts –Value <DMZServerFQDN> -Force –Concatenate” 
-	- In Server Manager:
-		- add DMZ WAP host to machine pool (server manager -> Manage -> Add Servers...use DNS tab) 
-		- Server Manager All Servers tab: right click WAP server and choose Manage As..., enter local (not domain) creds for the WAP machine 
-		- To validate remote PSH connectivity, in the Server Manager All Servers tab: right click WAP server and choose Windows PowerShell.  A remote PSH session should open to ensure remote PowerShell sessions can be established. 
+- En una ventana de comandos PSH con privilegios elevados, use el comando "Set-Item WSMan:\\localhost\\Client\\TrustedHosts –Value <DMZServerFQDN> -Force –Concatenate"
+	- En el Administrador de servidores:
+		- Agregue el host WAP de DMZ al grupo de máquinas (pestaña Administrador de servidores -> Administrar -> Agregar servidores... usar DNS) 
+		- Pestaña Todos los servidores del Administrador de servidores: haga clic con el botón derecho en el servidor WAP y elija Administrar como..., escriba credenciales locales (no de dominio) para la máquina WAP. 
+		- Para validar la conectividad remota de PSH, en la pestaña Todos los servidores del Administrador de servidores, haga clic con el botón derecho en el servidor WAP y elija Windows PowerShell. Debe abrirse una sesión remota de PSH para asegurarse de que se pueden establecer sesiones remotas de PowerShell. 
 
-**Additional Resources**
+**Recursos adicionales**
 
 
-* [More on Azure AD Connect accounts and permissions](active-directory-aadconnect-account-summary.md)
-* [Custom installation of Azure AD Connect](active-directory-aadconnect-get-started-custom.md)
-* [Azure AD Connect on MSDN](https://msdn.microsoft.com/library/azure/dn832695.aspx) 
+* [Más información sobre permisos y cuentas de Azure AD Connect](active-directory-aadconnect-account-summary.md)
+* [Instalación personalizada de Azure AD Connect](active-directory-aadconnect-get-started-custom.md)
+* [Azure AD Connect en MSDN](https://msdn.microsoft.com/library/azure/dn832695.aspx) 
+
+<!---HONumber=August15_HO6-->

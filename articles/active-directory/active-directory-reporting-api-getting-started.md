@@ -1,9 +1,9 @@
 <properties
-   pageTitle="Getting started with the Azure AD Reporting API"
-   description="How to get started with the Azure Active Directory Reporting API"
+   pageTitle="Introducción a la API de informes de Azure AD"
+   description="Introducción a la API de informes de Azure Active Directory"
    services="active-directory"
    documentationCenter=""
-   authors="yossibanai"
+   authors="kenhoff"
    manager="mbaldwin"
    editor=""/>
 
@@ -13,70 +13,70 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="05/22/2015"
-   ms.author="yossib"/>
+   ms.date="07/17/2015"
+   ms.author="kenhoff;yossib"/>
 
 
-# Getting started with the Azure AD Reporting API
+# Introducción a la API de informes de Azure AD
 
-Azure Active Directory provides a variety of activity, security and audit reports. This data can be consumed through the Azure portal, but can also be very useful in a many other applications, such as SIEM systems, audit, and business intelligence tools.
+Azure Active Directory proporciona una variedad de informes de actividad, seguridad y auditoría. Estos datos se pueden consumir a través del Portal de Azure, pero también pueden ser muy útiles en muchas otras aplicaciones, como los sistemas SIEM y herramientas de auditoría y de inteligencia empresarial.
 
-The Azure AD Reporting APIs provide programmatic access to these data through a set of REST-based APIs that can be called from a variety programming languages and tools.
+Las API de informes de Azure AD proporcionan acceso mediante programación a estos datos a través de un conjunto de API basadas en REST al que se puede llamar desde una variedad de lenguajes y herramientas de programación.
 
-This article will walk you through the process of calling the Azure AD Reporting APIs using PowerShell. You can modify the sample PowerShell script to access data from any of the available reports in JSON, XML or text format, as your scenario requires.
+Este artículo le guiará a través del proceso de llamada a las API de informes de Azure AD mediante PowerShell. Puede modificar el script de PowerShell de ejemplo para tener acceso a datos desde cualquiera de los informes disponibles en formato JSON, XML o texto, según lo requiera su escenario.
 
-To use this sample, you will need an [Azure Active Directory](active-directory-whatis.md)
+Para usar este ejemplo, será necesario [Azure Active Directory](active-directory-whatis.md)
 
-## Creating an Azure AD application to access the API
+## Creación de una aplicación de Azure AD para tener acceso a la API
 
-The Reporting API uses [OAuth](https://msdn.microsoft.com/library/azure/dn645545.aspx) to authorize access to the web APIs. To access information from your directory, you must create an application in your Active Directory, and grant it appropriate permissions to access the AAD data.
-
-
-### Create an application
-- Navigate to the [Azure Management Portal](https://manage.windowsazure.com/).
-- Navigate into your directory.
-- Navigate into applications.
-- On the bottom bar, click "Add".
-	- Click "Add an application my organization is developing".
-	- **Name**: Any name is fine. Something like "Reporting API Application" is recommended.
-	- **Type**: Select "Web application and/or Web API".
-	- Click the arrow to move to the next page.
-	- **Sign-on URL**: ```http://localhost```.
-	- **App ID URI**: ```http://localhost```.
-	- Click the checkmark to finish adding the application.
-
-### Grant your application permission to use the API
-- Navigate to the Applications tab.
-- Navigate to your newly created application.
-- Click the **Configure** tab.
-- In the "Permissions to Other Applications" section:
-	- In the microsoft Azure Active Directory > Application Permissions, select **Read directory data**.
-- Click **Save** on the bottom bar.
+La API de informes utiliza [OAuth](https://msdn.microsoft.com/library/azure/dn645545.aspx) para autorizar el acceso a las API web. Para tener acceso a información desde su directorio, debe crear una aplicación en Active Directory y concederle los permisos adecuados para tener acceso a los datos de AAD.
 
 
-### Get your directory ID, client ID, and client secret
+### Creación de una aplicación
+- Vaya al [Portal de administración de Azure](https://manage.windowsazure.com/).
+- Vaya al directorio.
+- Vaya a las aplicaciones.
+- En la barra inferior, haga clic en "Agregar".
+	- Haga clic en "Agregar una aplicación que mi organización está desarrollando".
+	- **Nombre**: cualquier nombre es correcto. Se recomienda algo como "Aplicación de API de informes".
+	- **Tipo**: seleccione "Aplicación web y/o API web".
+	- Haga clic en la flecha para ir a la página siguiente.
+	- **URL de inicio de sesión**: ```http://localhost```.
+	- **URI de id. de aplicación**: ```http://localhost```.
+	- Haga clic en la marca de verificación para terminar de agregar la aplicación.
 
-The steps below will walk you through obtaining your application's client ID and client secret.  You will also need to know your tenant name, it can be either your *.onmicrosoft.com or a custom domain name.  Copy these into a separate place; you'll use them to modify the script.
-
-#### Application Client ID
-- Navigate to the Applications tab.
-- Navigate to your newly created application.
-- Navigate to the **Configure** tab.
-- Your application's client ID is listed on the **Client ID** field.
-
-#### Application client secret
-- Navigate to the Applications tab.
-- Navigate to your newly created application.
-- Navigate to the Configure tab.
-- Generate a new secret key for your application by selecting a duration in the "Keys" section.
-- The key will be displayed upon saving. Make sure to copy it and paste it into a safe location, because there is no way to retrieve it later.
+### Conceder a la aplicación permiso para usar la API
+- Vaya a la pestaña Aplicaciones.
+- Vaya a la aplicación recién creada.
+- Haga clic en la pestaña **Configurar**.
+- En la sección "Permisos para otras aplicaciones":
+	- En Microsoft Azure Active Directory > Permisos de la aplicación, seleccione **Leer datos de directorio**.
+- Haga clic en **Guardar** en la parte inferior.
 
 
-## Modify the script
-To edit the PowerShell script below to work with your directory, replace $ClientID, $ClientSecret and $tenantdomain with the correct values from “Delegating Access in Azure AD”.
+### Obtención del id. de directorio, el id. de cliente y el secreto de cliente
+
+Los pasos siguientes le guiarán para obtener el id. de cliente y el secreto de cliente de la aplicación. También necesitará saber el nombre del inquilino, que puede ser su *.onmicrosoft.com o un nombre de dominio personalizado. Cópielos en un lugar independiente; los usará para modificar el script.
+
+#### Id. de cliente de la aplicación
+- Vaya a la pestaña Aplicaciones.
+- Vaya a la aplicación recién creada.
+- Vaya a la pestaña **Configurar**.
+- El id. de cliente de la aplicación aparece en el campo **Id. de cliente**.
+
+#### Secreto de cliente de la aplicación
+- Vaya a la pestaña Aplicaciones.
+- Vaya a la aplicación recién creada.
+- Vaya a la pestaña Configurar.
+- Genere una clave secreta nueva para la aplicación seleccionando una duración en la sección "Claves".
+- La clave se mostrará al realizar la operación de guardar. Asegúrese de copiarla y pegarla en una ubicación segura, porque no hay manera de recuperarla más adelante.
+
+
+## Modificación del script
+Para editar el script de PowerShell para trabajar con su directorio, reemplace $ClientID, $ClientSecret y $tenantdomain con los valores correctos de "Delegación de acceso en Azure AD".
 
     # This script will require the Web Application and permissions setup in Azure Active Directory
-    $ClientID      = <<YOUR CLIENT ID HERE>>                # Should be a ~35 character string insert your info here
+    $ClientID      = "<<YOUR CLIENT ID HERE>>"                # Should be a ~35 character string insert your info here
     $ClientSecret  = "<<YOUR CLIENT SECRET HERE>>"          # Should be a ~44 character string insert your info here
     $loginURL      = "https://login.windows.net"
     $tenantdomain  = "<<YOUR TENANT NAME HERE>>"            # For example, contoso.onmicrosoft.com
@@ -126,14 +126,15 @@ To edit the PowerShell script below to work with your directory, replace $Client
         }
 
 
-## Execute the script
-Once you finish editing the script, run it and verify that the expected data from the is returned.
+## Ejecución del script
+Una vez que termine de editar el script, ejecútelo y compruebe que el informe AuditEvents devuelve los datos esperados.
 
-The script returns lists all the available reports, and returns output from the AccountProvisioningEvents report in the PowerShell window in JSON format. It also creates files with the same output in JSON, text and XML. You can comment experiment with modifying the script to return data from other reports, and comment out the output formats that you do not need.
+El script devuelve listas de todos los informes disponibles y devuelve los resultados del informe AccountProvisioningEvents en la ventana de PowerShell en formato JSON. También crea archivos con la misma salida en JSON, texto y XML. Puede comentar la experiencia de modificar el script para devolver datos de otros informes y puede comentar los formatos de salida que no necesita.
 
 
-## Next Steps
-- Curious about what security, audit, and activity reports are available? Check out [Azure AD Security, Audit, and Activity Reports](active-directory-view-access-usage-reports.md)
-- See [Azure AD Audit Report Events](active-directory-reporting-audit-events.md) for more details on the Audit Report
-- See [Azure AD Reports and Events (Preview)](https://msdn.microsoft.com/library/azure/mt126081.aspx) for more details on the Graph API REST service
- 
+## Pasos siguientes
+- ¿Tiene curiosidad sobre qué informes de actividad, auditoría y seguridad están disponibles? Consulte [Informes de actividad, auditoría y seguridad de Azure AD](active-directory-view-access-usage-reports.md).
+- Consulte [Eventos del informe de auditoría de Azure AD](active-directory-reporting-audit-events.md) para obtener más detalles sobre el informe de auditoría.
+- Consulte [Informes y eventos de Azure AD (vista previa)](https://msdn.microsoft.com/library/azure/mt126081.aspx) para obtener más detalles sobre el servicio REST de API Graph.
+
+<!---HONumber=August15_HO6-->

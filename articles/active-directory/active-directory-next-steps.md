@@ -1,6 +1,6 @@
 <properties
-	pageTitle="What are the next steps I can take using Azure AD?"
-	description="Covers advanced tasks using Azure AD."
+	pageTitle="¿Cuáles son los pasos que puedo realizar al usar Azure AD?"
+	description="Incluye tareas avanzadas con Azure AD."
 	services="active-directory"
 	documentationCenter=""
 	authors="curtand"
@@ -16,31 +16,29 @@
 	ms.date="06/02/2015"
 	ms.author="curtand"/>
 
-# What are the next steps I can take using Azure AD?
+# ¿Cuáles son los pasos que puedo realizar al usar Azure AD?
 
 
-###Other articles on this topic
-[What is Azure AD?](active-directory-whatis.md)<br>
-[How does it work?](active-directory-works.md)<br>
-[Get started](active-directory-get-started.md)<br>
-[Next steps](active-directory-next-steps.md)<br>
-[Learn more](active-directory-learn-map.md)
+###Otros artículos sobre este tema
+[¿Qué es Azure AD?](active-directory-whatis.md)<br> [¿Cómo funciona?](active-directory-works.md)<br> [Introducción](active-directory-get-started.md)<br> [Pasos siguientes](active-directory-next-steps.md)<br> [Más información](active-directory-learn-map.md)
 
-## Manage users in Azure AD
-Managing user accounts is more than just creating or deleting users and assigning permissions. You can generate reports on access and usage, set password policies, enable password self-service rest, set up multifactor authentication and more. [Learn more about managing users](active-directory-create-users.md).
+## Administración de usuarios en Azure AD
+Administrar cuentas de usuario es más que crear o eliminar usuarios y asignar permisos. Puede generar informes de acceso y uso, establecer directivas de contraseñas, habilitar el resto de autoservicio de contraseña, configurar Multifactor Authentication y mucho más. [Obtenga más información sobre la administración de usuarios](active-directory-create-users.md).
 
-## Sync and manage passwords
-Sync user passwords so that your users can sign into Microsoft cloud services (such as Office 365, Dynamics CRM, and Microsoft Intune) using the same password that they use to sign in to your on-premises network. [Learn more about managing passwords](active-directory-manage-passwords.md).
+## Sincronización y administración de contraseñas
+Sincronice contraseñas de usuario de manera que los usuarios puedan iniciar sesión en servicios en la nube de Microsoft (como Office 365, Dynamics CRM y Microsoft Intune) con la misma contraseña que usan para iniciar sesión en la red local. [Más información sobre la administración de contraseñas](active-directory-manage-passwords.md).
 
-## Manage groups in Azure AD
-Use groups to assign a common set of permissions and rights to many accounts at once, instead of to each account individually. You can also sync groups from your local on-premises Windows Server Active Directory. Learn more about managing groups in Azure Active Directory. [Learn more about managing groups](active-directory-manage-groups.md).
+## Administración de grupos en Azure AD
+Utilice grupos para asignar un conjunto común de permisos y derechos a muchas cuentas a la vez, en lugar de cada cuenta individualmente. También puede sincronizar grupos desde Windows Server Active local. Obtenga información sobre grupos de administración en Azure Active Directory. [Obtenga más información sobre la administración de grupos](active-directory-manage-groups.md).
 
-## Enforce conditional access policies for registered mobile devices
-Azure AD Device Registration provisions devices with an identity that is used to authenticate the device when the user signs in. The authenticated device, and the attributes of the device, can then be used to enforce conditional access policies for applications that are hosted in the cloud and on-premises. [Learn more about Azure AD Device Registration](active-directory-conditional-access.md).
+## Aplicación de directivas de acceso condicional para dispositivos móviles registrados
+Los dispositivos de provisiones de registro de dispositivos de Azure AD con una identidad que se usó para autenticar el dispositivo cuando el usuario inicia sesión. El dispositivo autenticado y los atributos del dispositivo pueden utilizarse para aplicar directivas de acceso condicional para las aplicaciones que se hospedan en la nube y locales. [Obtenga más información sobre el registro de dispositivos de Azure AD](active-directory-conditional-access.md).
 
 
-## Additional Resources
+## Recursos adicionales
 
-* [Sign up for Azure as an organization](sign-up-organization.md)
-* [Azure Identity](fundamentals-identity.md)
+* [Registro en Azure como una organización](sign-up-organization.md)
+* [Identidad de Azure](fundamentals-identity.md)
  
+
+<!---HONumber=August15_HO6-->
