@@ -1,32 +1,32 @@
-<properties 
-	pageTitle="Getting Started with Active Directory Authentication - What Happened" 
-	description="Describes what happened to your Azure Active Directory project in Visual Studio" 
-	services="active-directory" 
-	documentationCenter="" 
-	authors="patshea123" 
-	manager="douge" 
+<properties
+	pageTitle="Introducción a la autenticación de Active Directory - ¿Qué ha ocurrido?"
+	description="Describe lo que le ha ocurrido al proyecto de Azure Active Directory en Visual Studio"
+	services="active-directory"
+	documentationCenter=""
+	authors="patshea123"
+	manager="douge"
 	editor="tglee"/>
-  
-<tags 
-	ms.service="active-directory" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="vs-what-happened" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="05/06/2015" 
+
+<tags
+	ms.service="active-directory"
+	ms.workload="web"
+	ms.tgt_pltfrm="vs-what-happened"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/22/2015"
 	ms.author="patshea123"/>
 
-# What happened to my project?
+# ¿Qué le ha ocurrido a mi proyecto?
 
 > [AZURE.SELECTOR]
 > - [Getting Started](vs-active-directory-dotnet-getting-started.md)
 > - [What Happened](vs-active-directory-dotnet-what-happened.md)
 
-###<span id="whathappened">What happened to my project?</span>
- 
-References have been added.
 
-#####NuGet package references
+
+##Se han agregado referencias
+
+###Referencias de paquetes de NuGet
 
 - `Microsoft.IdentityModel.Protocol.Extensions`
 - `Microsoft.Owin`
@@ -37,7 +37,7 @@ References have been added.
 - `Owin`
 - `System.IdentityModel.Tokens.Jwt`
 
-#####.NET references
+###Referencias de .NET
 
 - `Microsoft.IdentityModel.Protocol.Extensions`
 - `Microsoft.Owin`
@@ -50,33 +50,61 @@ References have been added.
 - `System.IdentityModel.Tokens.Jwt`
 - `System.Runtime.Serialization`
 
-#####Code files were added to your project 
+##Se ha agregado el código
 
-An authentication startup class, `App_Start/Startup.Auth.cs` was added to your project containing startup logic for Azure AD authentication. Also, a controller class, Controllers/AccountController.cs was added which contains `SignIn()` and `SignOut()` methods. Finally, a partial view, `Views/Shared/_LoginPartial.cshtml` was added containing an action link for SignIn/SignOut. 
+###Se han agregado archivos de código a su proyecto
 
-#####Startup code was added to your project
- 
-If you already had a Startup class in your project, the **Configuration** method was updated to include a call to `ConfigureAuth(app)`. Otherwise, a Startup class was added to your project. 
+Se ha agregado una clase de inicio de autenticación, `App_Start/Startup.Auth.cs`, a su proyecto que contiene la lógica de inicio para la autenticación de Azure AD. Además, se ha agregado una clase de controlador, Controllers/AccountController.cs, que contiene los métodos `SignIn()` y `SignOut()`. Por último, se ha agregado una vista parcial, `Views/Shared/_LoginPartial.cshtml`, que contiene un vínculo de acción para iniciar y cerrar sesión.
 
-#####Your app.config or web.config has new configuration values 
+###Se ha agregado código de inicio a su proyecto.
 
-The following configuration entries have been added. 
-	<pre>
-	`<appSettings>
-	    <add key="ida:ClientId" value="ClientId from the new Azure AD App" /> 
-	    <add key="ida:AADInstance" value="https://login.windows.net/" /> 
+Si ya tenía una clase de inicio en su proyecto, el método **Configuration** se ha actualizado para incluir una llamada a `ConfigureAuth(app)`. Si no era así, se ha agregado una clase de inicio a su proyecto.
+
+###Su archivo app.config o web.config tiene nuevos valores de configuración
+
+Se han agregado las siguientes entradas de configuración. <pre> `<appSettings>
+	    <add key="ida:ClientId" value="ClientId from the new Azure AD App" />
+	    <add key="ida:AADInstance" value="https://login.microsoftonline.com/" />
 	    <add key="ida:Domain" value="The selected Azure AD Domain" />
 	    <add key="ida:TenantId" value="The Id of your selected Azure AD Tenant" />
-	    <add key="Ida:PostLogoutRedirectURI" value="Your project start page" /> 
+	    <add key="ida:PostLogoutRedirectUri" value="Your project start page" />
 	</appSettings>` </pre>
 
-#####An Azure Active Directory (AD) App was created 
-An Azure AD Application was created in the directory that you selected in the wizard. 
+###Se ha creado una aplicación de Azure Active Directory (AD)
+Se ha creado una aplicación de Azure AD en el directorio que seleccionó en el asistente.
 
-###What additional changes were made to my project because I checked *Read directory data*?
-Additional references have been added.
+##Si he activado la *deshabilitación de la autenticación de cuentas de usuario individuales*, ¿qué otros cambios se realizaron en mi proyecto?
+Se han quitado las referencias al paquete NuGet y se han quitado los archivos y se ha realizado una copia de seguridad de los mismos. Según el estado del proyecto, tendrá que quitar referencias o archivos adicionales manualmente o modificar el código, según corresponda.
 
-#####Additional NuGet package references
+###Referencias al paquete NuGet quitadas (si existen)
+
+- `Microsoft.AspNet.Identity.Core`
+- `Microsoft.AspNet.Identity.EntityFramework`
+- `Microsoft.AspNet.Identity.Owin`
+
+###Se ha realizado una copia de seguridad de los archivos y se han eliminado (si existen)
+
+Se ha realizado una copia de seguridad de cada uno de los siguientes archivos y se han eliminado del proyecto. Los archivos de copia de seguridad se encuentran en una carpeta 'Backup' en la raíz del directorio del proyecto.
+
+- `App_Start\IdentityConfig.cs`
+- `Controllers\ManageController.cs`
+- `Models\IdentityModels.cs`
+- `Models\ManageViewModels.cs`
+
+###Copia de seguridad de los archivos de código (si existen)
+
+Se realizó una copia de seguridad de cada uno de los siguientes archivos antes de ser reemplazados. Los archivos de copia de seguridad se encuentran en una carpeta 'Backup' en la raíz del directorio del proyecto.
+
+- `Startup.cs`
+- `App_Start\Startup.Auth.cs`
+- `Controllers\AccountController.cs`
+- `Views\Shared\_LoginPartial.cshtml`
+
+##Si activé *Leer datos de directorio*, ¿qué otros cambios se realizaron en mi proyecto?
+
+Se han agregado referencias adicionales.
+
+###Referencias de paquetes de NuGet adicionales
 
 - `EntityFramework`
 - `Microsoft.Azure.ActiveDirectory.GraphClient`
@@ -86,7 +114,7 @@ Additional references have been added.
 - `Microsoft.IdentityModel.Clients.ActiveDirectory`
 - `System.Spatial`
 
-#####Additional .NET references
+###Referencias de .NET adicionales
 
 - `EntityFramework`
 - `EntityFramework.SqlServer`
@@ -98,25 +126,21 @@ Additional references have been added.
 - `Microsoft.IdentityModel.Clients.ActiveDirectory.WindowsForms`
 - `System.Spatial`
 
-#####Additional Code files were added to your project 
+###Se han agregado archivos de código adicionales a su proyecto
 
-Two files were added to support token caching: `Models\ADALTokenCache.cs` and `Models\ApplicationDbContext.cs`.  An additional controller and view were added to illustrate accessing user profile information using Azure graph APIs.  These files are `Controllers\UserProfileController.cs` and `Views\UserProfile\Index.cshtml`.
+Se han agregado dos archivos para admitir el almacenamiento en caché de los tokens: `Models\ADALTokenCache.cs` y `Models\ApplicationDbContext.cs`. Se han agregado un controlador y una vista adicionales para ilustrar el acceso a la información de perfil de usuario mediante las API Graph de Azure. Estos archivos son `Controllers\UserProfileController.cs` y `Views\UserProfile\Index.cshtml`.
 
-#####Additional Startup code was added to your project
- 
-In the `startup.auth.cs` file, a new `OpenIdConnectAuthenticationNotifications` object was added to the `Notifications` member of the `OpenIdConnectAuthenticationOptions`.  This is to enable receiving the OAuth code and exchange it for an access token.
+###Se ha agregado código de inicio adicional al proyecto.
 
-#####Additional changes were made to your app.config or web.config
+En el archivo `startup.auth.cs`, se agregó un nuevo objeto `OpenIdConnectAuthenticationNotifications` al miembro `Notifications` de `OpenIdConnectAuthenticationOptions`. Esto permite recibir el código de OAuth y cambiarlo por un token de acceso.
 
-The following additional configuration entries have been added. 
-	<pre>
-	`<appSettings>
-	    <add key="Ida:ClientSecret" value="Your Azure AD App's new client secret" /> 
+###Se realizaron cambios adicionales en app.config o web.config
+
+Se han agregado las siguientes entradas de configuración adicionales. <pre> `<appSettings>
+	    <add key="ida:ClientSecret" value="Your Azure AD App's new client secret" />
 	</appSettings>` </pre>
 
-The following configuration sections and connection string have been added.
-	<pre>
- 	`<configSections>
+Se han agregado las siguientes secciones de configuración y la cadena de conexión. <pre> `<configSections>
 	    <!-- For more information on Entity Framework configuration, visit http://go.microsoft.com/fwlink/?LinkID=237468 -->
 	    <section name="entityFramework" type="System.Data.Entity.Internal.ConfigFile.EntityFrameworkSection, EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
 	</configSections>
@@ -135,8 +159,9 @@ The following configuration sections and connection string have been added.
 	</entityFramework>`</pre>
 
 
-#####Your Azure Active Directory App was updated
-Your Azure Active Directory App was updated to include the *Read directory data* permission and an additional key was created which was then used as the *ClientSecret* in the `web.config` file.
+###Se ha actualizado la aplicación Azure Active Directory
+La aplicación Azure Active Directory se actualizó para incluir el permiso *Leer datos de directorio* y se creó una clave adicional que luego se usó como *ida:ClientSecret* en el archivo `web.config`.
 
-[Learn more about Azure Active Directory](http://azure.microsoft.com/services/active-directory/)
- 
+[Más información acerca de Azure Active Directory](http://azure.microsoft.com/services/active-directory/)
+
+<!---HONumber=August15_HO6-->

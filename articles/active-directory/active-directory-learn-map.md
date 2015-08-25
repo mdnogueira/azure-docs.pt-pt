@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Learn more about Azure AD"
-	description="A learning map for the Azure AD content set."
+	pageTitle="Obtenga más información acerca de Azure AD"
+	description="Un mapa de aprendizaje para el conjunto de contenido de Azure AD."
 	services="active-directory"
 	documentationCenter=""
 	authors="curtand"
@@ -16,28 +16,26 @@
 	ms.date="06/02/2015"
 	ms.author="curtand"/>
 
-# Learn more about Azure AD
+# Obtenga más información acerca de Azure AD
 
-###Other articles on this topic
-[What is Azure AD?](active-directory-whatis.md)<br>
-[How does it work?](active-directory-works.md)<br>
-[Get started](active-directory-get-started.md)<br>
-[Next steps](active-directory-next-steps.md)<br>
-[Learn more](active-directory-learn-map.md)
+###Otros artículos sobre este tema
+[¿Qué es Azure AD?](active-directory-whatis.md)<br> [¿Cómo funciona?](active-directory-works.md)<br> [Introducción](active-directory-get-started.md)<br> [Pasos siguientes](active-directory-next-steps.md)<br> [Más información](active-directory-learn-map.md)
 
-I already have an Azure subscription. How is Azure AD related to that? [How subscriptions are associated with a directory](active-directory-how-subscriptions-associated-directory.md)
+Ya tengo una suscripción de Azure. ¿Qué relación guarda con Azure AD? [Asociación de las suscripciones con un directorio](active-directory-how-subscriptions-associated-directory.md)
 
-For Azure AD administrative tasks such as user management, domain management, or configuring single sign-on, use the Azure Active Directory Module for Windows PowerShell cmdlets. [Manage Azure AD using Windows PowerShell](https://msdn.microsoft.com/library/azure/jj151815.aspx)
+Para tareas administrativas de Azure AD como la administración de usuarios, la administración de dominios o la configuración de inicio de sesión único, use el Módulo de Azure Active Directory para cmdlets de Windows PowerShell. [Administración de Azure AD mediante Windows PowerShell](https://msdn.microsoft.com/library/azure/jj151815.aspx)
 
-Use the Azure Active Directory Graph API for programmatic access to Azure AD through REST API endpoints. [Azure AD Graph API](https://msdn.microsoft.com/library/azure/hh974476.aspx)
+Use la API Graph de Azure Active Directory para el acceso mediante programación a Azure AD a través de los extremos de la API de REST. [ API de gráficos de Windows Azure AD](https://msdn.microsoft.com/library/azure/hh974476.aspx)
 
-You can add your own custom domain name to Azure Active Directory to use it with Microsoft online services. [Internet domain management](active-directory-add-domain.md)
+Puede agregar su propio nombre de dominio personalizado a Azure Active Directory para usarlo con Microsoft Online Services. [Administración de dominios de Internet](active-directory-add-domain.md)
 
-To understand usage constraints and other service limits for the Azure Active Directory service, see [Azure AD service limits and restrictions](active-directory-service-limits-restrictions.md)
+Para entender las restricciones de uso y otros límites de servicio para el servicio de Azure Active Directory, vea [Restricciones y límites de los servicios de Azure AD](active-directory-service-limits-restrictions.md).
 
 
-## Additional Resources
+## Recursos adicionales
 
-* [Sign up for Azure as an organization](sign-up-organization.md)
-* [Azure Identity](fundamentals-identity.md)
+* [Registro en Azure como una organización](sign-up-organization.md)
+* [Identidad de Azure](fundamentals-identity.md)
  
+
+<!---HONumber=August15_HO6-->

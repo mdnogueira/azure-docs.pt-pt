@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Why we require an enterprise administrator account" 
-	description="Custom settings description." 
+	pageTitle="Por qué se requiere una cuenta de administrador de empresa" 
+	description="Descripción de la configuración personalizada." 
 	services="active-directory" 
 	documentationCenter="" 
 	authors="billmath" 
@@ -16,19 +16,21 @@
 	ms.date="05/28/2015" 
 	ms.author="billmath"/>
 
-# Why we require an enterprise administrator account for connecting to AD DS when setting up Azure AD Connect
+# Por qué se requiere una cuenta de administrador de empresa para conectarse a AD DS al configurar Azure AD Connect
 
-The following table shows the reasons an enterprise administrator account is required for setting up Azure AD Connect.
+La siguiente tabla muestra los motivos por los cuales se requiere una cuenta de administrador de empresa para configurar Azure AD Connect.
 
-Under the following conditions  | Description 
+En las siguientes condiciones | Descripción 
 ------------- | ------------- |
-For Express Settings and DirSync Upgrade | <li>For Express Settings, we create the local Active Directory account that is used for sync  (otherwise known as the AD Connector account) and assign the correct permissions for sync and password sync</li> <li>For Dirsync upgrade, we reset the password on the currently configured AD Connector account and configure the new Azure AD Connect sync service to use this account. </li>
+Para la configuración rápida y la actualización de la sincronización de directorios | <li>En el caso de la configuración rápida, se crea la cuenta de Active Directory local que se utiliza para la sincronización (también conocida como la cuenta de AD Connector) y se asignan los permisos correctos para la sincronización y la sincronización de contraseñas.</li> <li>En el caso de la actualización de la sincronización de directorios, se restablece la contraseña de la cuenta de AD Connector configurada actualmente y se configura el nuevo servicio de sincronización de Azure AD Connect para utilizar esta cuenta. </li>
 
 
 
-**Additional Resources**
+**Recursos adicionales**
 
 
-* [More on Azure AD Connect accounts and permissions](active-directory-aadconnect-account-summary.md)
-* [Custom installation of Azure AD Connect](active-directory-aadconnect-get-started-custom.md)
-* [Azure AD Connect on MSDN](https://msdn.microsoft.com/library/azure/dn832695.aspx) 
+* [Más información sobre permisos y cuentas de Azure AD Connect](active-directory-aadconnect-account-summary.md)
+* [Instalación personalizada de Azure AD Connect](active-directory-aadconnect-get-started-custom.md)
+* [Azure AD Connect en MSDN](https://msdn.microsoft.com/library/azure/dn832695.aspx) 
+
+<!---HONumber=August15_HO6-->

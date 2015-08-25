@@ -1,6 +1,6 @@
 <properties
-	pageTitle="How to get an Azure AD tenant | Microsoft Azure"
-	description="How to get an Azure Active Directory tenant for registering and building applications."
+	pageTitle="Obtención de un inquilino de Azure AD | Microsoft Azure"
+	description="Obtenga un inquilino de Azure Active Directory para el registro y la creación de aplicaciones."
 	services="active-directory"
 	documentationCenter=""
 	authors="dstrockis"
@@ -12,56 +12,57 @@
 	ms.workload="identity"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="article"
-	ms.date="04/28/2015"
+	ms.topic="hero-article"
+	ms.date="07/02/2015"
 	ms.author="dastrock"/>
 
-# How to get an Azure Active Directory tenant
+# Obtención de un inquilino de Azure Active Directory
 
-In Azure Active Directory (Azure AD), a [tenant](https://msdn.microsoft.com/library/azure/jj573650.aspx#BKMK_WhatIsAnAzureADTenant) is representative of an organization.  It is a dedicated instance of the Azure AD service that an organization receives and owns when it signs up for a Microsoft cloud service such as Azure, Microsoft Intune, or Office 365.  Each Azure AD tenant is distinct and separate from other Azure AD tenants.  
+En Azure Active Directory (Azure AD), un [inquilino](https://msdn.microsoft.com/library/azure/jj573650.aspx#BKMK_WhatIsAnAzureADTenant) es un representante de una organización. Se trata de una instancia dedicada del servicio de Azure AD que recibe una organización y que posee cuando registra un servicio en la nube de Microsoft, como Azure, Microsoft InTune u Office 365. Cada inquilino de Azure AD es distinto e independiente de los demás inquilinos de Azure AD.
 
-A tenant houses the users in a company and the information about them - their passwords, user profile data, permissions, and so on.  It also contains groups, applications, and other information pertaining to an organization and its security.
+Un inquilino aloja los usuarios de una empresa y la información sobre ellos: sus contraseñas, datos de perfil de usuario, permisos, etc. También contiene grupos, aplicaciones y otra información relativa a una organización y su seguridad.
 
-To allow Azure AD users to sign in to your application, you must register your application in a tenant of your own.  Publishing an application in an Azure AD tenant is **absolutely free**.  In fact, most developers will create several tenants and applications for experimentation, development, staging and testing purposes.  Organizations that sign up for and consume your application can optionally choose to purchase licenses if they wish to take advantage of advanced directory features.
+Para permitir que los usuarios de Azure AD inicien sesión en su aplicación, debe registrar la aplicación en un inquilino que elija. La publicación de una aplicación en un inquilino de Azure AD es **totalmente gratis**. De hecho, la mayoría de programadores creará varios inquilinos y aplicaciones para fines de experimentación, desarrollo, almacenamiento provisional y prueba. Las organizaciones que se registren y consuman la aplicación pueden elegir opcionalmente adquirir licencias si desean aprovechar las características avanzadas de directorio.
 
-So, how do you go about getting an Azure AD tenant?  The process might be a little different if you:
+Por lo tanto, ¿cómo obtiene un inquilino de Azure AD? El proceso puede ser poco diferente si:
 
-- [Have an existing Office 365 subscription](#use-an-existing-office-365-subscription)
-- [Have an existing Azure subscription associated with a Microsoft Account](#use-an-msa-azure-subscription)
-- [Have an existing Azure subscription associated with an organizational account](#use-an-organizational-azure-subscription)
-- [Have none of the above & want to start from scratch](#start-from-scratch)
+- [Dispone de una suscripción de Office 365 existente](#use-an-existing-office-365-subscription)
+- [Tiene una suscripción de Azure asociada a una cuenta Microsoft](#use-an-msa-azure-subscription)
+- [Dispone de una suscripción de Azure existente asociada a una cuenta organizativa](#use-an-organizational-azure-subscription)
+- [No dispone de ninguna de las opciones anteriores y desea comenzar desde el principio](#start-from-scratch)
 
-## Use an existing Office 365 subscription
-If you have an existing Office 365 subscription but don't have an Azure subscription (and can't sign into the [Azure Management Portal](https://manage.windowsazure.com)), please follow [these instructions](https://technet.microsoft.com/library/dn832618.aspx) to gain access to your Azure AD tenant.
+## Uso de una suscripción de Office 365 existente
+Si dispone de una suscripción de Office 365 existente, pero no tiene una suscripción de Azure (y no se puede iniciar sesión en el [Portal de administración de Azure](https://manage.windowsazure.com)), siga [estas instrucciones](https://technet.microsoft.com/library/dn832618.aspx) para obtener acceso al inquilino de Azure AD.
 
-## Use an MSA Azure subscription
-If you have previously signed up for an Azure subscription with your individual Microsoft Account, you already have a tenant!  In the [Azure Management Portal](https://manage.windowsazure.com), you should find a tenant named "Default Tenant" listed under "All Items" and "Active Directory."  You are free to use this tenant as you see fit - but you may want to create an Organizational administrator account.
+## Uso de una suscripción de MSA Azure
+Si se ha registrado anteriormente en una suscripción de Azure con una cuenta Microsoft individual, ya dispone de un inquilino. En el [Portal de administración de Azure](https://manage.windowsazure.com), debe encontrar un inquilino con el nombre "Inquilino predeterminado" en "Todos los elementos" y "Active Directory". Pueden usa este inquilino como considere oportuno, pero es posible que desee crear una cuenta de administrador organizativo.
 
-To do so, follow these steps.  Alternatively, you may wish to create a new tenant and create an administrator in that tenant following a similar process.
+Para hacerlo, siga estos pasos: También es posible que quiera crear a un nuevo inquilino y crear un administrador en ese inquilino siguiendo un proceso similar.
 
-1.	Log into the [Azure Management Portal](https://manage.windowsazure.com) with your individual account
-2.	Navigate to the “Active Directory” section of the portal (found in the left nav bar)
-3.	Select the “Default Directory” entry in the list of available directories
-4.	Click on the Users link at the top of the page.  You will see a single user in the list with value “Microsoft account” in the Sourced From column
-5.	Click “Add User” at the bottom of the page
-6.	In the Add User Form provide the following details:
-    - Type of User: New user in your organization
-    - User name: (choose a user name for this administrator)
-    - First Name/Last Name/Display Name: (choose appropriate values)
-    - Role: Global Administrator
-    - Alternate Email Address: (enter appropriate values)
-    - Optional: Enable Multi-Factor Authentication
-    - Lastly, click on the green “CREATE” button to finalize user creation (and display the temporary password).
-7.	When you have completed the Add User Form, and receive the temporary password for the new administrative user, be sure to record this password as you will need to login with this new user in order to change the password. You can also send the password directly to the user, using an alternative e-mail.
-8.	To change the temporary password, log into https://login.microsoftonline.com with this new user account and change the password when requested.
-
-
-## Use an organizational Azure subscription
-If you have previously signed up for an Azure subscription with your organizational account, you already have a tenant!  In the [Azure Management Portal](https://manage.windowsazure.com), you should find a tenant listed under "All Items" and "Active Directory."  You are free to use this tenant as you see fit.  You may also wish to create a new tenant using the "New" button in the bottom left hand corner of the portal.
+1.	Inicie sesión en el [Portal de administración de Azure](https://manage.windowsazure.com) con su cuenta individual.
+2.	Vaya a la sección "Active Directory" del portal (que se encuentra en la barra de navegación izquierda).
+3.	Seleccione la entrada "Directorio predeterminado" en la lista de directorios disponibles.
+4.	Haga clic en el vínculo Usuarios en la parte superior de la página. Verá un único usuario en la lista con el valor "Cuenta de Microsoft" en la columna Con origen en.
+5.	En la parte inferior de la página, haga clic en "Agregar usuario".
+6.	En el formulario Agregar usuario, proporcione la siguiente información:
+    - Tipo de usuario: usuario nuevo en su organización
+    - Nombre de usuario: (elija un nombre de usuario para este administrador)
+    - Nombre/Apellidos/Nombre para mostrar: (elija valores adecuados)
+    - Rol: administrador global
+    - Dirección de correo electrónico alternativa: (especifique valores adecuados)
+    - Opcional: Habilitación de Multi-Factor Authentication
+    - Por último, haga clic en el botón verde "CREAR" para finalizar la creación del usuario (y mostrar la contraseña temporal).
+7.	Cuando haya completado el formulario de adición de usuario y reciba la contraseña temporal para el nuevo usuario administrativo, asegúrese de registrar esta contraseña, puesto que tendrá que iniciar sesión con este nuevo usuario para cambiar la contraseña. También puede enviar la contraseña directamente al usuario mediante un correo electrónico alternativo.
+8.	Para cambiar la contraseña temporal, inicie sesión en https://login.microsoftonline.com con esta nueva cuenta de usuario y cambie la contraseña cuando se solicite.
 
 
-## Start from scratch
-If all of the above is gibberish to you, don't worry.  Simply visit [https://account.windowsazure.com/organization](https://account.windowsazure.com/organization) to sign up for Azure with a new organization.  Once you've completed the process, you will have your very own Azure AD tenant with the domain name you chose during sign up.  In the [Azure Management Portal](https://manage.windowsazure.com), you can find your tenant by navigating to "Active Directory" in the left hand nav.
+## Uso de una suscripción de Azure organizativa
+Si se ha registrado anteriormente en una suscripción de Azure con la cuenta organizativa, ya dispone de un inquilino. En el [Portal de administración de Azure](https://manage.windowsazure.com), debe encontrar un inquilino con el nombre "Todos los elementos" y "Active Directory". Pueden usar a este inquilino como considere oportuno. También puede crear a un nuevo inquilino mediante el botón "Nuevo" en la esquina inferior izquierda del portal.
 
-As part of the process of signing up for Azure, you will be required to provide credit card details.  You can proceed with confidence - you will not be charged for publishing applications in Azure AD or creating new tenants.
- 
+
+## Comienzo desde cero
+Si todo lo anterior es un galimatías para usted, no se preocupe. Simplemente visite [https://account.windowsazure.com/organization](https://account.windowsazure.com/organization) para registrarse en Azure con una nueva organización. Cuando haya completado el proceso, tendrá su propio inquilino de Azure AD con el nombre de dominio que elija durante el registro. En el [Portal de administración de Azure](https://manage.windowsazure.com), puede encontrar el inquilino dirigiéndose a "Active Directory" en panel de navegación de la izquierda.
+
+Como parte del proceso de registro en Azure, se le solicitará que proporcione la información de tarjeta de crédito. Puede continuar con confianza: no se le cobrará por publicar aplicaciones en Azure AD o crear nuevos inquilinos.
+
+<!---HONumber=August15_HO6-->

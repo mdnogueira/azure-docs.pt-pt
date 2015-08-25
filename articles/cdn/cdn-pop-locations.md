@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Azure Content Delivery Network (CDN) POP Locations" 
-	description="This topic lists Azure Content Delivery Network (CDN) POP locations." 
+	pageTitle="Ubicaciones POP de la Red de entrega de contenido (CDN) de Azure" 
+	description="En este tema se enumeran las ubicaciones POP de la Red de entrega de contenido (CDN) de Azure." 
 	services="cdn" 
 	documentationCenter="" 
 	authors="Juliako" 
@@ -17,56 +17,58 @@
 	ms.author="juliako"/>
 
 
-#Azure Content Delivery Network (CDN) POP Locations
+#Ubicaciones POP de la Red de entrega de contenido (CDN) de Azure
 
-This topic lists current Microsoft Azure CDN point of presence (POP) locations.
+En este tema se enumeran las ubicaciones del punto de presencia (POP) de CDN de Microsoft Azure actuales.
    
 
-![CDN POP Locations](./media/cdn-pop-locations/CDN_POP_locations_update.png)
+![Ubicaciones POP de CDN](./media/cdn-pop-locations/CDN_POP_locations_update.png)
 
 
-##United States
+##Estados Unidos
 
 - Atlanta
 - Chicago
 - Dallas
 - Philadelphia
-- Los Angeles
+- Los Ángeles
 - Miami
-- New York
-- San Jose
+- Nueva York
+- San José
 - Seattle
 - Washington DC
 - Boston
 
 
-##Europe
+##Europa
 
-- Amsterdam
-- Copenhagen
-- Frankfurt
+- Ámsterdam
+- Copenhague
+- Fráncfort
 - Helsinki
-- London
+- Londres
 - Madrid
-- Milan
-- Paris
-- Stockholm
-- Vienna
-- Warsaw
+- Milán
+- París
+- Estocolmo
+- Viena
+- Varsovia
 
 ##Asia
 
 - Batam
 - Hong Kong
-- Jakarta
+- Yakarta
 - Kaohsiung
 - Osaka
-- Seoul
-- Singapore
-- Tokyo
+- Seúl
+- Singapur
+- Tokio
 
 
 ##Australia
 
 - Melbourne
-- Sydney 
+- Sidney 
+
+<!---HONumber=August15_HO6-->

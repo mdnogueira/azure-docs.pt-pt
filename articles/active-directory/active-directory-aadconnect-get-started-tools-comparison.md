@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Directory integration tools comparison" 
-	description="This is page will provide you with comprehensive tables that compare the various directory integration tools." 
+	pageTitle="Comparación de las herramientas para la integración de directorios" 
+	description="Esta página proporcionará tablas completas que comparan las distintas herramientas para la integración de directorios." 
 	services="active-directory" 
 	documentationCenter="" 
 	authors="billmath" 
@@ -16,73 +16,76 @@
 	ms.date="06/24/2015" 
 	ms.author="billmath"/>
 
-# Directory integration tools comparison
+# Comparación de las herramientas para la integración de directorios
 
-Over the years the directory integration tools have grown and evolved.  This document is to help provide a consolidated view of these tools and a comparison of the features that are available in each. 
+A lo largo de los años, las herramientas para la integración de directorios han crecido y evolucionado. En este documento, se proporciona una vista consolidada de estas herramientas, además de una comparación de las características disponibles en cada una de ellas.
 
->[AZURE.NOTE] Azure AD Connect incorporates the components and functionality previously released as Dirsync and AAD Sync. These tools are no longer being released individually, and all future improvements will be included in updates to Azure AD Connect, so that you always know where to get the most current functionality. 
-
-Use the following key for each of the tables.
-
-●  = Available Now</br>
-CS = Coming Soon</br>
-PP = Public Preview</br>
+>[AZURE.NOTE]Azure AD Connect incorpora los componentes y la funcionalidad publicados previamente como Dirsync y Sincronización de AAD. Estas herramientas ya no se publican de manera individual, y todas las futuras mejoras se incluirán en actualizaciones de Azure AD Connect; así, siempre sabrá dónde obtener la funcionalidad más actualizada.
+>
+>Actualmente, todavía se admite DirSync, pero quedará desusado en algún punto del futuro. Una vez desusado, solo se admitirá durante un período de tiempo. Después de ese período, se dejará de admitir DirSync.
 
 
-## On-Premises to Cloud Synchronization
+Utilice la clave siguiente para cada una de las tablas.
 
-| Feature  | Azure Active Directory Connect  | Azure Active Directory Synchronization Services (AAD Sync) | Azure Active Directory Synchronization Tool (DirSync)| Forefront Identity Manager 2010 R2 (FIM) |
+● = Disponible ahora</br> VF = Versión futura</br> VP = Vista previa pública</br>
+
+
+## Sincronización de local a la nube
+
+| Característica | Azure Active Directory Connect | Servicios de sincronización de Azure Active Directory (Sincronización de AAD) | Herramienta de sincronización de Azure Active Directory (DirSync)| Forefront Identity Manager 2010 R2 (FIM) |
 | :-------- |:--------:|:--------:|:--------:|:--------:
-| Connect to single on-premises AD forest | ● | ● | ● | ● |
-| Connect to multiple on-premises AD forests |●  | ● |  | ● |
-| Connect to multiple on-premises Exchange Orgs |PP  |  |  |  |
-| Connect to single on-premises LDAP directory | CS |  |  | ● |
-| Connect to multiple on-premises LDAP directories |CS  |  |  | ● |
-| Connect to on-premises AD and on-premises LDAP directories |CS  |  |  | ● |
-| Connect to custom systems (i.e. SQL, Oracle, MySQL, etc.) | CS |  |  | ● |
-| Synchronize customer defined attributes (directory extensions) | PP |  |  |  |
+| Conexión a un bosque de AD local | ● | ● | ● | ● |
+| Conexión a varios bosques de AD locales |● | ● | | ● |
+| Conexión a varias organizaciones de Exchange locales | ● | | | |
+| Conexión a un directorio LDAP local | VF | | | ● |
+| Conexión a varios directorios LDAP locales |VF | | | ● |
+| Conexión a directorios AD y LDAP locales |VF | | | ● |
+| Conexión a sistemas personalizados (es decir, SQL, Oracle, MySQL, etc.) | VF | | | ● |
+| Sincronización de atributos definidos por el cliente (extensiones de directorio) | ● | | | |
 
-## Cloud to On-Premises Synchronization
+## Sincronización de la nube a local
 
-| Feature  | Azure Active Directory Connect  | Azure Active Directory Synchronization Services | Azure Active Directory Synchronization Tool (DirSync) | Forefront Identity Manager 2010 R2 (FIM) |
+| Característica | Azure Active Directory Connect | Servicios de sincronización de Azure Active Directory | Herramienta de sincronización de Azure Active Directory (DirSync) | Forefront Identity Manager 2010 R2 (FIM) |
 | :-------- |:--------:|:--------:|:--------:|:--------:
-| Writeback of devices | ● |  | ● |  |
-| Attribute writeback (for Exchange hybrid deployment ) | ● | ● | ● | ● |
-| Writeback of users and groups objects |  PP|  | |  |
-| Writeback of passwords (from self-service password reset (SSPR) and password change) |  ● | ● |  |  |
+| Escritura diferida de dispositivos | ● | | ● | |
+| Escritura diferida de atributos (para la implementación híbrida de Exchange) | ● | ● | ● | ● |
+| Escritura diferida de objetos de grupos y usuarios | ●| | | |
+| Escritura diferida de contraseñas (desde autoservicio de restablecimiento de contraseña [SSPR] y cambio de contraseña) | ● | ● | | |
 
 
 
-## Authentication Feature Support
+## Compatibilidad con características de autenticación
 
-| Feature  | Azure Active Directory Connect | Azure Active Directory Synchronization Services | Azure Active Directory Synchronization Tool (DirSync) | Forefront Identity Manager 2010 R2 (FIM) |
+| Característica | Azure Active Directory Connect | Servicios de sincronización de Azure Active Directory | Herramienta de sincronización de Azure Active Directory (DirSync) | Forefront Identity Manager 2010 R2 (FIM) |
 | :-------- |:--------:|:--------:|:--------:|:--------:
-| Password Sync for single on-premises AD forest | ● | ● | ● |  |
-| Password Sync for multiple on-premises AD forests |  ●| ● |  |  |
-| Single Sign-on with Federation | ● | ● | ● | ● |
-| Writeback of passwords (from SSPR and password change) |●  | ● |  |  |
+| Sincronización de contraseñas para bosque de AD local | ● | ● | ● | |
+| Sincronización de contraseñas para varios bosques de AD locales | ●| ● | | |
+| Inicio de sesión único con federación | ● | ● | ● | ● |
+| Escritura diferida de contraseñas (desde SSPR y cambio de contraseña) |● | ● | | |
 
 
 
-## Set-up and Installation
+## Configuración e instalación
 
-| Feature  | Azure Active Directory Connect  | Azure Active Directory Synchronization Services | Azure Active Directory Synchronization Tool (DirSync) | Forefront Identity Manager 2010 R2 (FIM) |
+| Característica | Azure Active Directory Connect | Servicios de sincronización de Azure Active Directory | Herramienta de sincronización de Azure Active Directory (DirSync) | Forefront Identity Manager 2010 R2 (FIM) |
 | :-------- |:--------:|:--------:|:--------:|:--------:
-| Supports installation on a Domain Controller | ● | ● | ● |  |
-| Supports installation using SQL Express | ● | ● | ● |  |
-| Easy upgrade from DirSync |● |  |  |  |
-| Localization Windows Server languages | CS | ● | ● |  |
-| Support for Windows Server 2008 and Windows Server 2008 R2 | ● for Sync, No for federation| ● | ●  | ● |
-| Support for Windows Server 2012 and Windows Server 2012 R2 | ● | ● | ● | Only 2012 |
+| Admite la instalación de un controlador de dominio | ● | ● | ● | |
+| Admite la instalación con SQL Express | ● | ● | ● | |
+| Actualización sencilla desde DirSync |● | | | |
+| Idiomas de localización de Windows Server | VF | ● | ● | |
+| Compatibilidad con Windows Server 2008 y Windows Server 2008 R2 | ● para sincronización, no para federación| ● | ● | ● |
+| Compatibilidad con Windows Server 2012 y Windows Server 2012 R2 | ● | ● | ● | Solo 2012 |
 
 
-## Filtering and Configuration
+## Filtrado y configuración
 
-Feature  | Azure Active Directory Connect | Azure Active Directory Synchronization Services | Azure Active Directory Synchronization Tool (DirSync) | Forefront Identity Manager 2010 R2 (FIM)  
+Característica | Azure Active Directory Connect | Servicios de sincronización de Azure Active Directory | Herramienta de sincronización de Azure Active Directory (DirSync) | Forefront Identity Manager 2010 R2 (FIM)  
 :-------- |:--------:|:--------:|:--------:|:--------:|
-Filter on Domains and Organizational Units | ● | ● | ● | ●  
-Filter on objects’ attribute values | ● | ● | ● | ● 
-Allow minimal set of attributes to be synchronized (MinSync) | ● | ● |  |   
-Allow different service templates to be applied for attribute flows |●  | ● |  |   
-Allow removing attributes from flowing from AD to Azure AD | ● | ● |  |  
-Allow advanced customization for attribute flows | ● | ● |  | ●  
+Filtrar según dominios y unidades organizativas | ● | ● | ● | ●  
+Filtrar según valores de atributo de los objetos | ● | ● | ● | ● 
+Permitir sincronización de un conjunto mínimo de atributos (MinSync) | ● | ● | |   
+Permitir aplicar distintas plantillas de servicio para flujos de atributo |● | ● | |   
+Permitir quitar atributos del flujo de AD a Azure AD | ● | ● | |  
+Permitir personalización avanzada para flujos de atributo | ● | ● | | ●  
+
+<!---HONumber=August15_HO6-->

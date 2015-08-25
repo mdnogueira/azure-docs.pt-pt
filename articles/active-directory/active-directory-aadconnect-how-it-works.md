@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="How Azure AD Connect Works" 
-	description="Learn about how Azure AD Connect Works." 
+	pageTitle="Cómo funciona Azure AD Connect" 
+	description="Obtenga información acerca de cómo funciona Azure AD Connect." 
 	services="active-directory" 
 	documentationCenter="" 
 	authors="billmath" 
@@ -16,39 +16,40 @@
 	ms.date="05/28/2015" 
 	ms.author="billmath"/>
 
-# How Azure AD Connect works
+# Cómo funciona Azure AD Connect
 
-<div class="dev-center-tutorial-selector sublanding">
-<a href="../active-directory-aadconnect/" title="What is It">What is It</a>
-<a href="../active-directory-aadconnect-how-it-works/" title="How it Works" class="current">How it Works</a>
-<a href="../active-directory-aadconnect-get-started/" title="Getting Started">Getting Started</a>
-<a href="../active-directory-aadconnect-whats-next/" title="What's Next">What's Next</a>
-<a href="../active-directory-aadconnect-learn-more/" title="Learn More">Learn More</a>
-</div>
-Azure Active Directory Connect is made up of three primary parts.  They are the synchronization services, the optional Active Directory Federation Services piece, and the monitoring piece which is done using [Azure AD Connect Health](https://msdn.microsoft.com/library/azure/dn906722.aspx).
+ > [AZURE.SELECTOR]
+- [What is It](../active-directory-aadconnect/)
+- [How it Works](../active-directory-aadconnect-how-it-works/)
+- [Getting Started](../active-directory-aadconnect-get-started/)
+- [What's Next](../active-directory-aadconnect-whats-next/) 
+- [Learn More](../active-directory-aadconnect-learn-more/)
 
-
-<center>![Azure AD Connect Stack](./media/active-directory-aadconnect-how-it-works/AADConnectStack2.png)
-</center>
-
-- Synchronization - This part is made up of the the components and functionality previously released as Dirsync and AAD Sync.  This is the part that is responsible for creating users and groups.  It is also responsible for making sure that the information on users and groups in your on-premises environment, matches the cloud.
-- AD FS - This is an optional part of Azure AD Connect and can be used to setup a hybrid environment using an on-premises AD FS infrastructure.  This part can be used by organizations to address complex deployments that include such things as domain join SSO, enforcement of AD login policy and smart card or 3rd party MFA.  For additional information on configuring SSO see [DirSync with Single-Sign On](https://msdn.microsoft.com/library/azure/dn441213.aspx).
-- Health Monitoring - For complex deployments using AD FS, Azure AD Connect Health can provide robust monitoring of your federation servers and provide a central location in the Azure portal to view this activity.  For additional information see [Azure Active Directory Connect Health](https://msdn.microsoft.com/library/azure/dn906722.aspx).
+Azure Active Directory Connect se compone de tres partes principales. Se trata de los servicios de sincronización, la parte opcional de Servicios de federación de Active Directory y la parte de supervisión que se lleva a cabo mediante [Azure AD Connect Health](https://msdn.microsoft.com/library/azure/dn906722.aspx).
 
 
-## Azure AD Connect supporting components
+<center>![Azure AD Connect Stack](./media/active-directory-aadconnect-how-it-works/AADConnectStack2.png) </center>
 
-The following is a list of per-requisites and supporting components that Azure AD Connect will install on the server that you set Azure AD Connect up on.  This list is for a basic Express installation.  If you choose to use a different SQL Server on the Install synchronization services page then, the SQL Server 2012 components listed below are not installed. 
+- Sincronización: esta parte consta de los componentes y la funcionalidad publicados previamente como Dirsync y Sincronización de AAD. Esta es la parte que se encarga de crear usuarios y grupos. También es responsable de asegurarse de que la información sobre los usuarios y los grupos de su entorno local coincide con la de la nube.
+- AD FS: se trata de una parte opcional de Azure AD Connect y puede utilizarse para configurar un entorno híbrido mediante una infraestructura local de AD FS. Las organizaciones pueden usar esta parte para abordar implementaciones complejas que incluyen elementos como un inicio de sesión único de unión a dominio, la aplicación de la directiva de inicio de sesión de AD y MFA mediante tarjeta inteligente o de terceros. Para obtener información adicional sobre la configuración del inicio de sesión único, vea [DirSync con inicio de sesión único](https://msdn.microsoft.com/library/azure/dn441213.aspx).
+- Supervisión de estado: en el caso de las implementaciones complejas que usan AD FS, Azure AD Connect Health puede ofrecer una sólida supervisión de los servidores de federación y proporcionar una ubicación central en el portal de Azure para ver esta actividad. Para obtener más información, consulte [Azure Active Directory Connect Health](https://msdn.microsoft.com/library/azure/dn906722.aspx).
 
-- Azure AD Connect Azure AD Connector
-- Microsoft SQL Server 2012 Command Line Utilities
+
+## Componentes de soporte de Azure AD Connect
+
+La siguiente es una lista de requisitos previos y componentes de soporte que Azure AD Connect instalará en el servidor en el que configuró Azure AD Connect. Esta lista es para una instalación rápida básica. Si decide usar un servidor SQL Server diferente en la página Instalar servicios de sincronización, los componentes de SQL Server 2012 enumerados a continuación no se instalarán.
+
+- Conector de Azure AD para Azure AD Connect
+- Utilidades de línea de comandos de Microsoft SQL Server 2012
 - Microsoft SQL Server 2012 Native Client
 - Microsoft SQL Server 2012 Express LocalDB
-- Azure Active Directory Module for Windows PowerShell
-- Microsoft Online Services Sign-In Assistant for IT Professionals
-- Microsoft Visual C++ 2013 Redistribution Package
+- Módulo de Active Directory para Windows PowerShell
+- Microsoft Online Services - Ayudante para el inicio de sesión para profesionales de TI
+- Paquete de redistribución de Microsoft Visual C++ 2013
 
 
 
 
  
+
+<!---HONumber=August15_HO6-->

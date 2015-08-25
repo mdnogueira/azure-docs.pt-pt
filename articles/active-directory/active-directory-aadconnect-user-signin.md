@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Azure AD Connect - User Sign In" 
-	description="Azure AD Connect user sign in for custom settings." 
+	pageTitle="Azure AD Connect: inicio de sesión de usuarios" 
+	description="Inicio de sesión de usuarios de Azure AD Connect para la configuración personalizada." 
 	services="active-directory" 
 	documentationCenter="" 
 	authors="billmath" 
@@ -18,50 +18,50 @@
 
 
 
-# Azure AD Connect User Sign on options
+# Opciones para el inicio de sesión de los usuarios en Azure AD Connect
 
-Azure AD Connect allows your users to sign on to both cloud and on-premises resources using the same passwords.  You can choose from several different ways to enable this.
-
-
-### Password synchronization
-With password synchronization, hashes of user passwords are synchronized from your on-premises Active Directory to Azure AD.  When passwords are changed or reset on premises, the new passwords are synchronized immediately to Azure AD so that your users can always use the same password for cloud resources as they do on-premises.  The passwords are never sent to Azure AD nor stored in Azure AD in clear text.
-Password synchronization can be used together with password write-back to enable self service password reset in Azure AD.
-
-<center>![Cloud](./media/active-directory-aadconnect-user-signin/passwordhash.png)</center>
-
-[More information about password synchronization](https://msdn.microsoft.com/library/azure/dn246918.aspx)
+Azure AD Connect permite que los usuarios inicien sesión en los recursos en la nube y locales con las mismas contraseñas. Puede elegir entre varias maneras de habilitar esta opción.
 
 
-### Federation using a new or existing AD FS in Windows Server 2012 R2 farm
-With federated sign on, your users can sign on to Azure AD based services with their on-premises passwords and, while on the corporate network, without having to enter their passwords again.  The federation option with AD FS allows you to deploy a new or specify an existing AD FS in Windows Server 2012 R2 farm.  If you choose to specify an existing farm, Azure AD Connect will configure the trust between your farm and Azure AD so that your users can sign on.
+### Sincronización de contraseñas
+Con la sincronización de contraseñas, se sincronizan los valores hash de las contraseñas de usuario de Active Directory local con Azure AD. Cuando las contraseñas se cambian o se restablecen de forma local, las nuevas contraseñas se sincronizan de inmediato con Azure AD para que los usuarios puedan utilizar siempre en los recursos en la nube la misma contraseña que utilizan a nivel local. Las contraseñas nunca se envían a Azure AD ni se almacenan en Azure AD en texto no cifrado. La sincronización de contraseñas puede utilizarse junto con la escritura diferida de contraseñas para habilitar el autoservicio de restablecimiento de contraseña en Azure AD.
 
-<center>![Cloud](./media/active-directory-aadconnect-user-signin/federatedsignin.png)</center>
+<center>![Nube](./media/active-directory-aadconnect-user-signin/passwordhash.png)</center>
 
-#### To deploy Federation with AD FS in Windows Server 2012 R2, you will need the following
-If you are deploying a new farm:
+[Más información acerca de la sincronización de contraseñas](https://msdn.microsoft.com/library/azure/dn246918.aspx)
 
-- A Windows Server 2012 R2 server for the federation server.
-- A Windows Server 2012 R2 server for the Web Application Proxy.
-- a .pfx file with one SSL certificate for your intended federation service name, such as fs.contoso.com.
 
-If you are deploying a new farm or using an existing farm:
+### Federación con AD FS nuevo o existente en granja de Windows Server 2012 R2
+Con el inicio de sesión federado, los usuarios pueden iniciar sesión en los servicios basados en Azure AD con sus contraseñas locales y, mientras se encuentren en la red corporativa, sin necesidad de volver a introducir sus contraseñas. La opción de federación con AD FS le permite implementar servicios AD FS nuevos o especificar servicios AD FS existentes en la granja de Windows Server 2012 R2. Si decide especificar una granja existente, Azure AD Connect configurará la confianza entre la granja y Azure AD para que los usuarios puedan iniciar sesión.
 
-- Local administrator credentials on your federation servers.
-- Local administrator credentials on any workgroup (non-domain joined) servers on which you intend to deploy the Web Application Proxy role.
-- The machine on which you execute the wizard must be able to connect to any other machines on which you want to install AD FS or Web Application Proxy via Windows Remote Management.
+<center>![Nube](./media/active-directory-aadconnect-user-signin/federatedsignin.png)</center>
 
-#### Sign on using an earlier version of AD FS or a third party solution
-If you have already configured cloud sign on using an earlier version of AD FS (such as AD FS 2.0) or a third party federation provider, you can choose to skip user sign in configuration via Azure AD Connect.  This will enable you to get the latest synchronization and other capabilities of Azure AD Connect while still using your existing solution for sign on.
+#### Para implementar la federación con AD FS en Windows Server 2012 R2, necesitará lo siguiente.
+Si va a implementar una nueva granja:
 
-### Choosing the a User sign-in method for your organization
-For most organizations who just want to enable user sign on to Office 365, SaaS applications and other Azure AD based resources, the default Password synchronization option is recommended.
-Some organizations, however, have particular reasons for using a federated sign on option such as AD FS.  These include: 
+- Un servidor Windows Server 2012 R2 para el servidor de federación.
+- Un servidor Windows Server 2012 R2 para el Proxy de aplicación web.
+- un archivo .pfx con un certificado SSL para el nombre de servicio de federación previsto, como fs.contoso.com.
 
-- Your organization already has AD FS or a 3rd party federation provider deployed
-- Your security policy prohibits synchronizing password hashes to the cloud
-- You require that users experience seamless SSO (without additional password prompts) when accessing cloud resources from domain joined machines on the corporate network
-- You require some specific capabilities AD FS has
-	- On-premises multi-factor authentication using a third party provider or smart cards (learn about third party MFA providers for AD FS in Windows Server 2012 R2)
-	- Active Directory integration features such as soft account lockout or AD password and work hours policy
-	- Conditional access to both on-premises and cloud resources using device registration, Azure AD join, or Intune MDM policies
+Si va a implementar una nueva granja o va a utilizar una granja existente:
+
+- Credenciales de administrador local en los servidores de federación.
+- Credenciales de administrador local en cualquier servidor de grupo de trabajo (no unido a dominio) en el que pretenda implementar el rol Proxy de aplicación web.
+- La máquina en la que se ejecuta al asistente debe poder conectarse a otras máquinas en las que va a instalar AD FS o el Proxy de aplicación web a través de Administración remota de Windows.
+
+#### Inicio de sesión con una versión anterior de AD FS o una solución de terceros
+Si ya ha configurado el inicio de sesión en la nube con una versión anterior de AD FS (por ejemplo, AD FS 2.0) o un proveedor de federación de terceros, puede optar por omitir la configuración del inicio de sesión de usuarios a través de Azure AD Connect. De este modo, podrá obtener la sincronización más reciente y otras capacidades de Azure AD Connect mientras sigue usando la solución existente para el inicio de sesión.
+
+### Selección de un método de inicio de sesión para los usuarios de su organización
+Para la mayoría de las organizaciones que simplemente desean habilitar el inicio de sesión de usuarios en Office 365, aplicaciones SaaS y otros recursos basados en Azure AD, se recomienda la opción de sincronización de contraseña predeterminada. Sin embargo, algunas organizaciones tienen razones concretas para usar una opción de inicio de sesión federado, como AD FS. Entre ellas se incluyen las siguientes:
+
+- Su organización ya tiene implementado AD FS o un proveedor de federación de terceros.
+- La directiva de seguridad prohíbe la sincronización de los valores hash de contraseña en la nube.
+- Se requiere que los usuarios experimenten un inicio de sesión único fluido (sin solicitudes de contraseña adicionales) al tener acceso a recursos en la nube a partir de equipos unidos a dominio en la red corporativa.
+- Se requieren algunas de las capacidades específicas de AD FS:
+	- Multi-Factor Authentication a nivel local mediante un proveedor de terceros o tarjetas inteligentes (obtenga información acerca de los proveedores de MFA de terceros para AD FS en Windows Server 2012 R2).
+	- Características de integración de Active Directory, como el bloqueo de cuenta no rígido o la directiva de horas de trabajo y contraseña de AD.
+	- Acceso condicional a los recursos locales y en la nube mediante el registro de dispositivos, la unión a Azure AD o las directivas MDM de Intune.
  
+
+<!---HONumber=August15_HO6-->

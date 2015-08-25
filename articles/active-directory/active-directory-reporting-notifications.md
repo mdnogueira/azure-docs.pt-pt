@@ -1,9 +1,9 @@
 <properties
-	pageTitle="Azure Active Directory Reporting Notifications"
-	description="How to use the Azure Active Directory reporting notifications for suspicious sign ins."
+	pageTitle="Notificaciones de informes de Azure Active Directory"
+	description="Uso de las notificaciones de informes de Azure Active Directory para inicios de sesión sospechosos"
 	services="active-directory"
 	documentationCenter=""
-	authors="kenhoff"
+	authors="SSalahAhmed"
 	manager="TerryLan"
 	editor="LisaToft"/>
 
@@ -16,53 +16,55 @@
 	ms.date="06/24/2015"
 	ms.author="kenhoff"/>
 
-# Azure Active Directory Reporting Notifications
+# Notificaciones de informes de Azure Active Directory
 
-## What reports generate email notifications
+## Qué informes generan notificaciones de correo electrónico
 
-At this time, only the Anomalous Sign In Activity report and the Users with Anomalous Sign In Activity report are using the email notification system.
+En este momento, solo el informe de inicio actividad de inicio de sesión erróneo y el informe de usuarios con actividad de inicio de sesión erróneo usan el sistema de notificación de correo electrónico.
 
-## What triggers the email notification to be sent?
+## ¿Qué desencadena el envío de la notificación de correo electrónico?
 
-By default, Azure Active Directory is set to automatically send email notifications to all global admins. The email is sent under the following conditions for each report.
+De forma predeterminada, Azure Active Directory se establece para enviar automáticamente notificaciones de correo electrónico a todos los administradores globales. El correo electrónico se envía en las siguientes condiciones para cada informe.
 
-For the Anomalous Sign In Activity report:
+En el caso del informe de actividad de inicio de sesión erróneo.
 
-- Unknown sources: 10 events
-- Multiple failures: 10 events
-- IP addresses with suspicious activity: 10 events
-- Infected devices: 10 events
+- Orígenes desconocidos: 10 eventos
+- Varios errores: 10 eventos
+- Direcciones IP con actividad sospechosa: 10 eventos
+- Dispositivos infectados: 10 eventos
 
-For the Users with Anomalous Sign In Activity report:
+En el caso del informe de usuarios con actividad de inicio de sesión erróneo:
 
-- Unknown sources: 10 events
-- Multiple failures: 10 events
-- IP addresses with suspicious activity: 10 events
-- Infected devices: 5 events
-- Anomalous sign ins report: 15 events
+- Orígenes desconocidos: 10 eventos
+- Varios errores: 10 eventos
+- Direcciones IP con actividad sospechosa: 10 eventos
+- Dispositivos infectados: 5 eventos
+- Informe de inicios de sesión erróneos: 15 eventos
 
-The email is sent if any of the above conditions is met within 30 days, or since the last email was sent if it is less than 30 days.
+El correo electrónico se envía si se cumple alguna de las condiciones anteriores en un período de 30 días o desde que se envió el último correo electrónico si es menos de 30 días.
 
-Anomalous Sign Ins are those that have been identified as “anomalous” by our machine learning algorithms, on the basis of unexpected sign in locations, time of day and locations or a combination of these. This may indicate that a hacker has been trying to sign in using this account. More information about this report can be found in the table above.
+Los inicios de sesión erróneos son aquellos que nuestros algoritmos de aprendizaje automático han identificado como "erróneos" debido a ubicaciones de inicio de sesión inesperadas, la hora del día y las ubicaciones o una combinación de ambas cosas. Esto puede indicar que un hacker ha intentado iniciar sesión con esta cuenta. Puede encontrar más información sobre el informe en la tabla anterior.
 
-## Who receives the email notifications?
+## ¿Quién recibe las notificaciones de correo electrónico?
 
-The email is sent to all global admins who have been assigned an Active Directory Premium license. To ensure it is delivered, we send it to the admins Alternate Email Address as well. Admins should include aad-alerts-noreply@mail.windowsazure.com in their safe senders list so they don’t miss the email.
+El correo electrónico se envía a todos los administradores globales a los que se ha asignado una licencia de Active Directory Premium. Para asegurarnos de que se entrega, también lo enviamos a la dirección de correo electrónico alternativa de los administradores. Los administradores deben incluir aad-alerts-noreply@mail.windowsazure.com en su lista de remitentes seguros para no perder el correo electrónico.
 
-## How often are these emails sent?
+## ¿Con qué frecuencia se envían los correos electrónicos?
 
-Once an email is sent, the next one will be sent only when 10 or more new Anomalous Sign In events are encountered within 30 days of sending that email. How do I access the report mentioned in the email?
+Una vez que se envía un correo electrónico, el siguiente se enviará solo cuando se detecten 10 o más eventos de inicio de sesión erróneo en el período de 30 días tras el envío de dicho correo electrónico. ¿Cómo puedo tener acceso al informe mencionado en el correo electrónico?
 
-When you click on the link, you will be redirected to the report page within the Azure Management Portal. In order to access the report, you need to be both:
+Al hacer clic en el vínculo, se le redirigirá a la página del informe en el Portal de administración de Azure. Para tener acceso al informe, deberá ser:
 
-- An admin or co-admin of your Azure subscription
-- A global administrator in the directory, and assigned an Active Directory Premium license. For more information, see Azure Active Directory editions.
+- Administrador o coadministrador de su suscripción de Azure
+- Administrador global en el directorio y tener asignada una licencia de Active Directory Premium. Para obtener más información, consulte Ediciones de Azure Active Directory.
 
-## Can I turn off these emails?
+## ¿Puedo desactivar los correos electrónicos?
 
-Yes, to turn off notifications related to anomalous sign ins within the Azure Management Portal, click **Configure**, and then select **Disabled** under the **Notifications** section.
+Sí, para desactivar las notificaciones relacionadas con inicios de sesión erróneos dentro del Portal de administración de Azure, haga clic en **Configurar**, y, a continuación, seleccione **Deshabilitadas** en la sección **Notificaciones**.
 
-## What's next
-- Curious about what security, audit, and activity reports are available? Check out [Azure AD Security, Audit, and Activity Reports](active-directory-view-access-usage-reports.md)
-- [Getting started with Azure Active Directory Premium](active-directory-get-started-premium.md)
-- [Add company branding to your Sign In and Access Panel pages](active-directory-add-company-branding.md)
+## Pasos siguientes
+- ¿Tiene curiosidad sobre qué informes de actividad, auditoría y seguridad están disponibles? Consulte [Informes de actividad, auditoría y seguridad de Azure AD](active-directory-view-access-usage-reports.md).
+- [Introducción a Azure Active Directory Premium](active-directory-get-started-premium.md)
+- [Incorporación de la marca de empresa a sus páginas de inicio de sesión y panel de acceso](active-directory-add-company-branding.md)
+
+<!---HONumber=August15_HO6-->

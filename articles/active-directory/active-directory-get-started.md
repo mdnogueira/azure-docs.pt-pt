@@ -1,6 +1,6 @@
 <properties
-	pageTitle="How to get started using Azure AD"
-	description="Covers how to sign up for Azure and first steps you can try with Azure AD."
+	pageTitle="Introducción al uso de HDInsight de Azure"
+	description="Explica cómo suscribirse a Azure y cómo realizar los primeros pasos que puede intentar con Azure AD."
 	services="active-directory"
 	documentationCenter=""
 	authors="curtand"
@@ -12,39 +12,36 @@
 	ms.workload="identity"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="hero-article"
-	ms.date="06/02/2015"
+	ms.topic="article"
+	ms.date="07/02/2015"
 	ms.author="curtand"/>
 
-# How to get started using Azure AD
+# Introducción al uso de HDInsight de Azure
 
-###Other articles on this topic
-[What is Azure AD?](active-directory-whatis.md)<br>
-[How does it work?](active-directory-works.md)<br>
-[Get started](active-directory-get-started.md)<br>
-[Next steps](active-directory-next-steps.md)<br>
-[Learn more](active-directory-learn-map.md)
+###Otros artículos sobre este tema
+[¿Qué es Azure AD?](active-directory-whatis.md)<br> [¿Cómo funciona?](active-directory-works.md)<br> [Introducción](active-directory-get-started.md)<br> [Pasos siguientes](active-directory-next-steps.md)<br> [Más información](active-directory-learn-map.md)
 
 
-Ready to get started? You should try out some of the really cool stuff we've released with Azure Active Directory. Use these capabilities to really add value to your organization's identity and access management. Read documentation to learn how to configure these features. Then see how you can start testing these capabilities by taking the first step and assigning trial licenses to administrators and users.
+¿Ya está listo para comenzar? Pruebe algunas de las cosas realmente interesantes que hemos incluido en Azure Active Directory. Utilice estas capacidades para agregar valor real a la administración de identidades y accesos de la organización. Lea la documentación para obtener información sobre cómo configurar estas características. A continuación, para ver cómo empezar a probar estas capacidades, realice el primer paso y asigne licencias de prueba a los administradores y usuarios.
 
 
-> [AZURE.NOTE] Azure AD is available to everyone for free. Sign up now for an Azure trial subscription and your directory will be waiting for you. The directory is yours whether you buy anything or not. [Try Azure AD now](http://azure.microsoft.com/trial/get-started-active-directory/)
+> [AZURE.NOTE]Azure AD está disponible para todos los usuarios de forma gratuita. Inscríbase ahora para obtener una suscripción de prueba gratuita de Azure y el directorio estará esperando por usted. El directorio es suyo independientemente de si compra algo o no. [Pruebe ahora Azure AD](http://azure.microsoft.com/trial/get-started-active-directory/)
 
-##Secure your organization's access
-Protect your organization's identity data in the cloud using Multi-Factor Authentication to ensure secure local and remote access. [Learn more about multi-factor authentication](../multi-factor-authentication.md)
+##Protección del acceso de su organización
+Proteja los datos de identidad de su organización en la nube con Multi-Factor Authentication para proteger el acceso local y remoto. [Obtenga más información sobre Multi-Factor Authentication](../multi-factor-authentication.md).
 
-##Change and reset passwords
-Cut costs and decrease helpdesk calls by empowering users to change or reset their Active Directory or Azure Active Directory passwords from any device, at any location. An administrator can manage password and notification policies, and can see detailed audit activity of these password reset operations the moment they occur. [Learn more about managing passwords with Azure Active Directory](active-directory-manage-passwords.md)
+##Cambio y restablecimiento de contraseñas
+Reduzca costos y disminuya las llamadas al soporte técnico al permitir a los usuarios cambiar o restablecer sus contraseñas de Active Directory o Azure Active Directory desde cualquier dispositivo y en cualquier ubicación. Un administrador puede administrar directivas de contraseña y notificación, además de ver la actividad de auditoría detallada de las operaciones de restablecimiento de estas contraseñas en el momento en que se producen. [Más información sobre la administración de contraseñas en Azure Active Directory](active-directory-manage-passwords.md)
 
-##Create and edit users
-Create an account for every user who will access a Microsoft cloud service. By default, users do not have administrator permissions, but you can assign them. [Learn more about creating Azure AD users](active-directory-create-users.md).
+##Creación y edición de usuarios
+Cree una cuenta para cada usuario que vaya a tener acceso a un servicio de nube de Microsoft. De forma predeterminada, los usuarios no tienen permisos de administrador, pero puede asignárselos. [Obtenga más información sobre cómo crear usuarios de Azure AD](active-directory-create-users.md).
 
-##View access and usage reports
-Azure AD provides a number of reports for administrators. Even more reports are available in the paid editions of Azure AD, and there's a reporting API for creating your own custom reports. [Learn more about Azure AD reports](active-directory-view-access-usage-reports.md).
+##Visualización de los informes de acceso y uso
+Azure AD proporciona una serie de informes para los administradores. Hay aún más informes disponibles en las ediciones de pago de Azure AD y hay una API de generación de informes para crear sus propios informes personalizados. [Obtenga más información acerca de los informes de Azure AD](active-directory-view-access-usage-reports.md).
 
-## Additional Resources
+## Recursos adicionales
 
-* [Sign up for Azure as an organization](sign-up-organization.md)
-* [Azure Identity](fundamentals-identity.md)
- 
+* [Registro en Azure como una organización](sign-up-organization.md)
+* [Identidad de Azure](fundamentals-identity.md)
+
+<!---HONumber=August15_HO6-->

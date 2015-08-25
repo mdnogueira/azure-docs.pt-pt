@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Best Practices: Azure AD Password Management | Microsoft Azure" 
-	description="Deployment and usage best practices, sample end-user documentation, and training guides for Password Management in Azure Active Directory." 
+	pageTitle="Procedimientos recomendados: Administración de contraseñas de Azure AD | Microsoft Azure" 
+	description="Procedimientos recomendados de implementación y uso, ejemplo de documentación de usuario final y guías de formación para Administración de contraseñas en Azure Active Directory." 
 	services="active-directory" 
 	documentationCenter="" 
 	authors="asteen" 
@@ -16,119 +16,117 @@
 	ms.date="06/08/2015" 
 	ms.author="asteen"/>
 
-# Deploying Password Management and training users to use it
-After enabling password reset, the next step you need to take is to get users using the service in your organization. To do this, you'll need to make sure your users are configured to use the service properly and also that your users have the training they need to be successful in managing their own passwords. This article will explain to you the following concepts:
+# Implementación de la Administración de contraseñas y formación a los usuarios para que la utilicen
+Después de habilitar el restablecimiento de contraseña, la siguiente tarea es conseguir que los usuarios de su organización utilicen este servicio. Para ello, deberá asegurarse de que los usuarios están configurados para usar el servicio correctamente y también de que los usuarios tienen la formación que necesitan para administrar correctamente sus propias contraseñas. En este artículo se explican los conceptos siguientes:
 
-* [**How to get your users configured for Password Management**](#how-to-get-users-configured-for-password-reset)
-  * [What makes an account configured for password reset](#what-makes-an-account-configured)
-  * [Ways you can to populate authentication data yourself](#ways-to-populate-authentication-data)
-* [**The best ways to roll out password reset to your organization**](#what-is-the-best-way-to-roll-out-password-reset-for-users)
-  * [Email-based rollout + sample email communications](#email-based-rollout)
-  * [How to use enforced registration to force users to register at sign in](#using-enforced-registration)
-  * [How to upload authentication data for user accounts](#uploading-data-yourself)
-* [**Sample user and support training materials (coming soon!)**](#sample-training-materials)
+* [**Configuración de los usuarios para la Administración de contraseñas**](#how-to-get-users-configured-for-password-reset)
+  * [Configuración de una cuenta para el restablecimiento de la contraseña](#what-makes-an-account-configured)
+  * [Maneras de rellenar los datos de autenticación personalmente](#ways-to-populate-authentication-data)
+* [**Las mejores maneras de aplicar el restablecimiento de contraseña por toda su organización**](#what-is-the-best-way-to-roll-out-password-reset-for-users)
+  * [Implementación basada en correo electrónico + ejemplo de comunicaciones por correo electrónico](#email-based-rollout)
+  * [Uso del registro exigido para obligar a los usuarios a registrarse en el inicio de sesión](#using-enforced-registration)
+  * [Carga de datos de autenticación para cuentas de usuario](#uploading-data-yourself)
+* [**Ejemplo de usuario y materiales de formación de soporte técnico (disponible próximamente)**](#sample-training-materials)
 
-## How to get users configured for password reset
-This section describes to you various methods by which you can ensure every user in your organization can use self-service password reset effectively in case they forget their password.
+## Configuración de los usuarios para el restablecimiento de contraseña
+En esta sección se describen diversos métodos por los que se garantiza que todos los usuarios de su organización pueden utilizar el autoservicio de restablecimiento de contraseña de forma eficaz en caso de que olviden su contraseña.
 
-### What makes an account configured
-Before a user can use password reset, **all** of the following conditions must be met:
+### Configuración de una cuenta
+Antes de que un usuario pueda utilizar el restablecimiento de contraseña, deben cumplirse **todas** las siguientes condiciones:
 
-1.	Password reset must be enabled in the directory.  Learn how to enable password reset by reading [Enable users to reset their Azure AD Passwords](active-directory-passwords-getting-started.md#enable-users-to-reset-their-azure-ad-passwords) or [Enable users to reset or change their AD Passwords](active-directory-passwords-getting-started.md#enable-users-to-reset-or-change-their-ad-passwords)
-2.	The user must be licensed.
- - For cloud users, the user must have **any paid Office 365 license**, or an **AAD Basic** or **AAD Premium license** assigned.
- - For on-prem users (federated or hash synced), the user **must have an AAD Premium license assigned**.
-3.	The user must have the **minimum set of authentication data defined** in accordance with the current password reset policy.
- - Authentication data is considered defined if the corresponding field in the directory contains well-formed data.
- - A minimum set of authentication data is defined as at **least one** of the enabled authentication options if a one gate policy is configured, or at **least two** of the enabled authentication options if a two gate policy is configured.
-4.	If the user is using an on-premises account, then [Password Writeback](active-directory-passwords-getting-started.md#enable-users-to-reset-or-change-their-ad-passwords) must be enabled and turned on
+1.	El restablecimiento de la contraseña debe estar habilitado en el directorio. Aprenda a habilitar el restablecimiento de contraseña en [Permitir a los usuarios restablecer sus contraseñas de Azure AD](active-directory-passwords-getting-started.md#enable-users-to-reset-their-azure-ad-passwords) o [Permitir a los usuarios restablecer o cambiar sus contraseñas de AD](active-directory-passwords-getting-started.md#enable-users-to-reset-or-change-their-ad-passwords).
+2.	El usuario debe tener licencia.
+ - En el caso de los usuarios en la nube, el usuario debe tener asignada **cualquier licencia de Office 365 de pago** o una licencia de nivel **Básico** o **Premium de AAD**.
+ - En el caso de los usuarios locales (federados o sincronizados mediante hash), el usuario **debe tener asignada una licencia Premium de AAD**.
+3.	El usuario debe tener el **conjunto mínimo de datos de autenticación definidos** de conformidad con la directiva actual de restablecimiento de contraseña.
+ - Los datos de autenticación se consideran definidos si el campo correspondiente del directorio contiene datos con formato correcto.
+ - Un conjunto mínimo de datos de autenticación se define como **al menos una** de las opciones de autenticación habilitadas si se configura una directiva de una puerta, o **al menos dos** de las opciones autenticación habilitadas si se configura una directiva de dos puertas.
+4.	Si el usuario está utilizando una cuenta local, debe habilitarse y activarse la [escritura diferida de contraseñas](active-directory-passwords-getting-started.md#enable-users-to-reset-or-change-their-ad-passwords).
 
-### Ways to populate authentication data
-You have several options on how to specify data for users in your organization to be used for password reset.
+### Maneras de rellenar los datos de autenticación
+Tiene varias opciones para especificar los datos de los usuarios de su organización que se usarán para restablecer la contraseña.
 
-- Edit users in the [Azure Management Portal](https://manage.windowsazure.com) or the [Office 365 Admin Portal](https://portal.microsoftonline.com)
-- Use AADSync to synchronize user properties into Azure AD from an on-premises Active Directory domain
-- Use Windows PowerShell to edit user properties
-- Allow users to register their own data by guiding them to the registration portal at [http://aka.ms/ssprsetup](http://aka.ms/ssprsetup)
-- Require users to register for password reset when they sign in to the Access Panel at [http://myapps.microsoft.com](http://myapps.microsoft.com) by setting the **Require users to register SSPR** configuration option to **Yes**.
+- Editar usuarios en el [Portal de administración de Azure](https://manage.windowsazure.com) o en el [Portal de administración de Office 365](https://portal.microsoftonline.com)
+- Usar AADSync para sincronizar las propiedades de usuario en Azure AD desde un dominio de Active Directory local
+- Usar Windows PowerShell para editar las propiedades de usuario
+- Permitir a los usuarios que registren sus propios datos guiándolos al portal de registro en [http://aka.ms/ssprsetup](http://aka.ms/ssprsetup)
+- Requerir a los usuarios que se registren para el restablecimiento de contraseña al iniciar sesión en el panel de acceso en [http://myapps.microsoft.com](http://myapps.microsoft.com) mediante el establecimiento de la opción de configuración **Requerir que los usuarios se registren en el autoservicio de restablecimiento de contraseña** en **Sí**
 
-Users need not register for password reset for the system to work.  For example, if you have existing phone numbers in your local directory, you can synchronize them in Azure AD and we will use them for password reset automatically.
+No es necesario que los usuarios se registren en el restablecimiento de contraseña para que el sistema funcione. Por ejemplo, si ya tiene números de teléfono en el directorio local, puede sincronizarlos en Azure AD y de este modo se utilizarán para restablecer la contraseña automáticamente.
 
-## What is the best way to roll out password reset for users?
-The following are the general rollout steps for password reset:
+## ¿Cuál es la mejor forma de aplicar el restablecimiento de contraseña para los usuarios?
+Estos son los pasos de implementación generales para restablecer la contraseña:
 
-1.	Enable password reset in your directory by going to the **Configure** tab in the [Azure Management Portal](https://manage.windowsazure.com) and selecting **Yes** for the **Users Enabled for Password Reset** option.
-2.	Assign the appropriate licenses to each user to whom you’d like to offer password reset in the by going to the **Licenses** tab in the [Azure Management Portal](https://manage.windowsazure.com).
-3.	Optionally restrict password reset to a group of users to roll out the feature slowly over time by setting the **Restrict Access to Password Reset** toggle to **Yes** and selecting a security group to enable for password reset (note these users must all have licenses assigned to them).
-4.	Instruct your users to use password reset by either sending them an email instructing them to register, enabling enforced registration on the access panel, or by uploading the appropriate authentication data for those users yourself via DirSync, PowerShell, or the [Azure Management Portal](https://manage.windowsazure.com).  More details on this are provided below.
-5.	Over time, review users registering by navigating to the Reports tab and viewing the [**Password Reset Registration Activity**](active-directory-passwords-get-insights.md#view-password-reset-registration-activity) report.
-6.	Once a good number of users have registered, watch them use password reset by navigating to the Reports tab and viewing the [**Password Reset Activity**](active-directory-passwords-get-insights.md#view-password-reset-activity) report.
+1.	Habilite el restablecimiento de contraseña; para ello, vaya a la pestaña **Configurar** en el [Portal de administración de Azure](https://manage.windowsazure.com) y seleccione **Sí** en la opción **Usuarios habilitados para restablecer la contraseña**.
+2.	Asigne las licencias correspondientes a cada uno de los usuarios a los que desea conceder el restablecimiento de contraseña; para ello, vaya a la pestaña **Licencias** del [Portal de administración de Azure](https://manage.windowsazure.com).
+3.	Tiene la opción de restringir el restablecimiento de contraseña a un grupo de usuarios para aplicar la característica lentamente con el tiempo; para ello, establezca el botón de alternancia **Restringir el acceso al restablecimiento de contraseña** en **Sí** y seleccione un grupo de seguridad para habilitar el restablecimiento de contraseña (tenga en cuenta que todos estos usuarios deben tener licencias asignadas).
+4.	Indique a los usuarios que utilicen el restablecimiento de contraseña enviándoles un correo electrónico en el que se les pida que se registren, habilitando el registro exigido en el panel de control o cargando usted mismo los datos de autenticación apropiados para esos usuarios a través de la sincronización de directorios, PowerShell o el [Portal de administración de Azure](https://manage.windowsazure.com). A continuación se proporcionan más detalles al respecto.
+5.	Con el tiempo, revise los usuarios que se han registrado; para ello, desplácese hasta la pestaña Informes y consulte el informe [**Actividad de registro de restablecimiento de contraseña**](active-directory-passwords-get-insights.md#view-password-reset-registration-activity).
+6.	Una vez que se haya registrado un buen número de usuarios, compruebe cómo hacen uso del restablecimiento de contraseña; para ello, desplácese hasta la pestaña Informes y consulte el informe [**Actividad de restablecimiento de contraseña**](active-directory-passwords-get-insights.md#view-password-reset-activity).
 
-There are several ways to inform your users that they can register for and use password reset in your organization.  They are detailed below.
+Hay varias maneras de informar a los usuarios de que pueden registrarse en el restablecimiento de contraseña y utilizar este servicio en su organización. Se explican a continuación.
 
-### Email-based rollout
-Perhaps the simplest approach to inform your users about to register for or use password reset is by sending them an email instructing them to do so.  Below is a template you can use to do this.  Feel free to replace the colors / logos with those of your own choosing to customize it to fit your needs.
+### Implementación basada en correo electrónico
+Quizás el enfoque más sencillo para informar a los usuarios sobre el registro en el restablecimiento de contraseña o el uso de este servicio es enviarles un correo electrónico pidiéndoles que lo hagan. A continuación se muestra una plantilla que puede utilizar para ello. Reemplace los colores y logotipos por otros de su elección para personalizarla de manera que se ajuste a sus necesidades.
 
   ![][001]
 
-You can download the email template [here](http://1drv.ms/1xWFtQM).
+Puede descargar la plantilla de correo electrónico [aquí](http://1drv.ms/1xWFtQM).
 
-### Using enforced registration
-If you want your users to register for password reset themselves, you can also force them to register when they sign in to the access panel at [http://myapps.microsoft.com](http://myapps.microsoft.com).  You can enable this option from your directory’s **Configure** tab by enabling the **Require Users to Register when Signing in to the Access Panel** option.  
+### Uso del registro exigido
+Si desea que sean los usuarios quienes se registren para el restablecimiento de contraseña, también puede obligarles a registrarse al iniciar sesión en el panel de acceso, en [http://myapps.microsoft.com](http://myapps.microsoft.com). Puede habilitar esta opción desde la pestaña **Configurar** del directorio habilitando la opción **Requerir que los usuarios se registren al iniciar sesión en el panel de acceso** .
 
-You can also optionally define whether or not they will be asked to re-register after a configurable period of time by modifying the **Number of days before users must confirm their contact data** option to be a non-zero value. See [Customizing User Password Management Behavior](active-directory-passwords-customize.md#password-management-behavior) for more information.
+Opcionalmente, también puede definir si se les pedirá o no que se vuelvan a registrar transcurrido un período de tiempo configurable mediante la modificación de la opción **Antelación con la que los usuarios deben confirmar sus datos de contacto, en días** en un valor distinto de cero. Consulte [Personalización del comportamiento de la administración de contraseñas de usuario](active-directory-passwords-customize.md#password-management-behavior) para obtener más información.
 
   ![][002]
 
-After you enable this option, when users sign in to the access panel, they will see a popup that informs them that their administrator has required them to verify their contact information. They can use it to reset their password if they ever lose access to their account.
+Después de habilitar esta opción, cuando los usuarios inicien sesión en el panel de acceso, verán un menú emergente que les informa de que su administrador ha requerido que verifiquen su información de contacto. Pueden usarlo para restablecer su contraseña si alguna vez pierden acceso a su cuenta.
 
   ![][003]
 
-Clicking **Verify Now** brings them to the **password reset registration portal** at [http://aka.ms/ssprsetup](http://aka.ms/ssprsetup) and requires them to register.  Registration via this method can be dismissed by clicking the **cancel** button or closing the window, but users are reminded every time they sign in if they do not register.
+Al hacer clic en **Comprobar ahora**, el usuario llegará al **portal de registro de restablecimiento de contraseña** en [http://aka.ms/ssprsetup](http://aka.ms/ssprsetup) y se le pedirá que se registre. El registro mediante este método se puede descartar haciendo clic en el botón **Cancelar** o cerrando la ventana, pero los usuarios seguirán viendo este recordatorio cada vez que inicien sesión en tanto no se registren.
 
   ![][004]
 
-### Uploading data yourself
-If you want to upload authentication data yourself, then users need not register for password reset before being able to reset their passwords.  As long as users have the authentication data defined on their account that meets the password reset policy you have defined, then those users will be able to reset their passwords.
+### Carga de los datos personalmente
+Si desea cargar los datos de autenticación personalmente, no es necesario que los usuarios se registren en el restablecimiento de contraseña para poder restablecer sus contraseñas. Siempre que los datos de autenticación definidos en la cuenta de los usuarios se correspondan con la directiva de restablecimiento de contraseña, estos usuarios podrán restablecer sus contraseñas.
 
-To learn what properties you can set via AAD Connect or Windows PowerShell, see [What data is used by password reset](active-directory-passwords-learn-more.md#what-data-is-used-by-password-reset).
+Para obtener información sobre las propiedades que puede configurar a través de AAD Connect o Windows PowerShell, consulte [Qué datos se utilizan por el restablecimiento de contraseña](active-directory-passwords-learn-more.md#what-data-is-used-by-password-reset).
 
-You can upload the authentication data via the [Azure Management Portal](https://manage.windowsazure.com) by following the steps below:
+Puede cargar los datos de autenticación a través del [Portal de administración de Azure](https://manage.windowsazure.com) siguiendo estos pasos:
 
-1.	Navigate to your directory in the **Active Directory extension** in the [Azure Management Portal](https://manage.windowsazure.com).
-2.	Click on the **Users** tab.
-3.	Select the user you are interested in from the list.
-4.	On the first tab, you will find **Alternate Email**, which can be used as a property to enable password reset. 
+1.	Diríjase a su directorio en la **extensión de Active Directory** en el [Portal de administración de Azure](https://manage.windowsazure.com).
+2.	Haga clic en la pestaña **Usuarios**.
+3.	Seleccione en la lista el usuario que le interese.
+4.	En la primera pestaña, verá **Correo electrónico alternativo**, que puede utilizarse como una propiedad para habilitar el restablecimiento de contraseña. 
 
     ![][005]
 
-5.	Click on the **Work Info** tab.
-6.	On this page, you will find **Office Phone**, **Mobile Phone**, **Authentication Phone**, and **Authentication Email**.  These properties can also be set to allow a user to reset his or her password. 
+5.	Haga clic en la pestaña **Información laboral**.
+6.	En esta página, encontrará el **Teléfono de la oficina**, el **Teléfono móvil**, el **Teléfono de autenticación** y el **Correo electrónico de autenticación**. Estas propiedades también se pueden establecer para permitir a un usuario restablecer su contraseña. 
 
     ![][006]
 
-See [What data is used by password reset](active-directory-passwords-learn-more.md#what-data-is-used-by-password-reset) to see how each of these properties can be used.
+Consulte [Qué datos se utilizan por el restablecimiento de contraseña](active-directory-passwords-learn-more.md#what-data-is-used-by-password-reset) para ver cómo se puede utilizar cada una de estas propiedades.
 
-## Sample training materials
-We are working on sample training materials that you can use to get your IT organization and your users up to speed quickly on how to deploy and use password reset.  Stay tuned!
-
-
-<br/>
-<br/>
-<br/>
-
-**Additional Resources**
+## Ejemplo de materiales de formación
+Estamos trabajando en materiales de formación de ejemplo que puede utilizar para hacer que su organización de TI y sus usuarios se pongan al día rápidamente sobre cómo implementar y usar el restablecimiento de contraseña. Permanezca atento.
 
 
-* [What is Password Management](active-directory-passwords.md)
-* [How Password Management works](active-directory-passwords-how-it-works.md)
-* [Getting started with Password Mangement](active-directory-passwords-getting-started.md)
-* [Customize Password Management](active-directory-passwords-customize.md)
-* [How to get Operational Insights with Password Management Reports](active-directory-passwords-get-insights.md)
-* [Password Management FAQ](active-directory-passwords-faq.md)
-* [Troubleshoot Password Management](active-directory-passwords-troubleshoot.md)
-* [Learn More](active-directory-passwords-learn-more.md)
-* [Password Management on MSDN](https://msdn.microsoft.com/library/azure/dn510386.aspx)
+<br/> <br/> <br/>
+
+**Recursos adicionales**
+
+
+* [Qué es la administración de contraseñas](active-directory-passwords.md)
+* [Funcionamiento de la administración de contraseñas](active-directory-passwords-how-it-works.md)
+* [Introducción a la administración de contraseñas](active-directory-passwords-getting-started.md)
+* [Personalización de la administración de contraseñas](active-directory-passwords-customize.md)
+* [Visión operativa con los informes de administración de contraseñas](active-directory-passwords-get-insights.md)
+* [Preguntas más frecuentes sobre la administración de contraseñas](active-directory-passwords-faq.md)
+* [Solución de problemas de administración de contraseñas](active-directory-passwords-troubleshoot.md)
+* [Más información](active-directory-passwords-learn-more.md)
+* [Administración de contraseñas en MSDN](https://msdn.microsoft.com/library/azure/dn510386.aspx)
 
 
 
@@ -139,3 +137,5 @@ We are working on sample training materials that you can use to get your IT orga
 [005]: ./media/active-directory-passwords-best-practices/005.jpg "Image_005.jpg"
 [006]: ./media/active-directory-passwords-best-practices/006.jpg "Image_006.jpg"
  
+
+<!---HONumber=August15_HO6-->
