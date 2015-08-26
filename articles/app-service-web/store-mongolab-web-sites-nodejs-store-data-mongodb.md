@@ -25,7 +25,7 @@
 # Creación de una aplicación web Node.js en Azure con MongoDB y el complemento MongoLab
 
 
-<p><em>Por Eric Sedor, MongoLab</em></p>
+*Por Eric Sedor, MongoLab*
 
 ¡Saludos, aventurero! Bienvenido a MongoDB como servicio. En este tutorial, aprenderá lo siguiente:
 

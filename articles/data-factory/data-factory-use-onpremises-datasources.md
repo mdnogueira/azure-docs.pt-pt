@@ -113,7 +113,7 @@ En este paso, use el Portal de administración de Azure para crear una instancia
 
 3. En la hoja **Configurar**, haga clic en **Instalar directamente en este equipo**. Esto descarga el paquete de instalación de la puerta de enlace, instala, configura y registra la puerta de enlace en el equipo.
 
-	> [AZURE.NOTE]Utilice Internet Explorer o un explorador web compatible con Microsoft ClickOnce.
+	> [AZURE.NOTE] Utilice Internet Explorer o un explorador web compatible con Microsoft ClickOnce.
 
 	![Puerta de enlace: hoja Configurar][image-data-factory-gateway-configure-blade]
 
@@ -123,7 +123,7 @@ En este paso, use el Portal de administración de Azure para crear una instancia
 	
 	Consulte la sección [Data Management Gateway](#DMG) para obtener información detallada de la puerta de enlace, incluidos procedimientos recomendados y algunas consideraciones importantes.
 
-	>[AZURE.NOTE]Debe ser administrador del equipo local para instalar y configurar correctamente Data Management Gateway. Puede agregar usuarios adicionales al grupo local de Windows Usuarios de usuarios de Data Management Gateway. Los miembros de este grupo podrán usar la herramienta Administrador de configuración de Data Management Gateway para configurar la puerta de enlace.
+	>[AZURE.NOTE] Debe ser administrador del equipo local para instalar y configurar correctamente Data Management Gateway. Puede agregar usuarios adicionales al grupo local de Windows Usuarios de usuarios de Data Management Gateway. Los miembros de este grupo podrán usar la herramienta Administrador de configuración de Data Management Gateway para configurar la puerta de enlace.
 
 4. Haga clic en el centro de **NOTIFICACIONES** en la parte izquierda. Espere hasta ver el mensaje **La configuración rápida de ''adftutorialgateway'' se realizó correctamente** en la hoja **Notificaciones**.
 
@@ -486,7 +486,7 @@ En esta sección se explica cómo crear y registrar una puerta de enlace usando 
 	**Ejemplo de comando y salida**:
 
 
-		PS C:> New-AzureDataFactoryGateway -Name MyGateway -DataFactoryName $df -ResourceGroupName ADF –Description “gateway for walkthrough”
+		PS C:\> New-AzureDataFactoryGateway -Name MyGateway -DataFactoryName $df -ResourceGroupName ADF –Description “gateway for walkthrough”
 
 		Name              : MyGateway
 		Description       : gateway for walkthrough
@@ -508,12 +508,12 @@ En esta sección se explica cómo crear y registrar una puerta de enlace usando 
 	**Ejemplo de comando y salida:**
 
 
-		PS C:> $Key = New-AzureDataFactoryGatewayKey -GatewayName MyGateway -ResourceGroupName ADF -DataFactoryName $df 
+		PS C:\> $Key = New-AzureDataFactoryGatewayKey -GatewayName MyGateway -ResourceGroupName ADF -DataFactoryName $df 
 
 	
 4. En Azure PowerSell, cambie a la carpeta **C:\\Program Files\\Microsoft Data Management Gateway\\1.0\\PowerShellScript** y ejecute el script **RegisterGateway.ps1** asociado con la variable local **$Key** como se muestra en el siguiente comando para registrar el agente cliente instalado en su equipo en la puerta de enlace lógica que creó antes.
 
-		PS C:> .\RegisterGateway.ps1 $Key.GatewayKey
+		PS C:\> .\RegisterGateway.ps1 $Key.GatewayKey
 		
 		Agent registration is successful!
 
@@ -626,4 +626,4 @@ Puede quitar una puerta de enlace con el cmdlet **Remove-AzureDataFactoryGateway
 
 [image-data-factory-preview-portal-storage-key]: ./media/data-factory-get-started/PreviewPortalStorageKey.png
 
-<!---HONumber=August15_HO6-->
+<!----HONumber=August15_HO6-->

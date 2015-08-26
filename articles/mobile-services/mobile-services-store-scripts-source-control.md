@@ -95,8 +95,7 @@ Ahora que ha creado su repositorio local, puede realizar cambios en los scripts 
 	Aparecerá una serie de comandos que indica que la confirmación se ha implementado en el servicio móvil.
 
 6. Nuevamente en el Portal de administración, haga clic en la pestaña **Datos**, haga clic en la tabla **TodoItem** y en **Script**; a continuación, seleccione la operación **Insert**.
-7. 
-	Observe que el script de operación de inserción que se muestra es el mismo que el del código de JavaScript que acaba de cargar en el repositorio.
+7. Observe que el script de operación de inserción que se muestra es el mismo que el del código de JavaScript que acaba de cargar en el repositorio.
 
 ##<a name="use-npm"></a>Aprovechamiento del código compartido y de módulos Node.js en los scripts del servidor
 
