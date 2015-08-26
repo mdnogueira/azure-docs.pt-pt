@@ -37,7 +37,7 @@ Al seguir este tutorial, podrá crear una aplicación de administración de tare
 
 ## <a name="_Toc395783176"></a>Requisitos previos
 
-> [AZURE.TIP]En este tutorial se asume que tiene experiencia previa con el uso de Node.js y los sitios web de Azure.
+> [AZURE.TIP] En este tutorial se asume que tiene experiencia previa con el uso de Node.js y los sitios web de Azure.
 
 Antes de seguir las instrucciones del presente artículo, debe asegurarse de tener lo siguiente:
 
@@ -176,7 +176,7 @@ Se encarga de toda la configuración e instalación inicial; ahora volvamos a la
 				
 		module.exports = DocDBUtils;
 
-> [AZURE.TIP]createCollection toma un parámetro de requestOptions opcional que puede utilizarse para especificar el tipo de la oferta para la colección. Si no se proporciona ningún valor requestOptions.offerType, la colección se creará con el tipo de oferta predeterminada. Para obtener más información sobre los tipos de oferta de DocumentDB , consulte [Niveles de rendimiento de DocumentDB](documentdb-performance-levels.md)
+> [AZURE.TIP] createCollection toma un parámetro de requestOptions opcional que puede utilizarse para especificar el tipo de la oferta para la colección. Si no se proporciona ningún valor requestOptions.offerType, la colección se creará con el tipo de oferta predeterminada. Para obtener más información sobre los tipos de oferta de DocumentDB , consulte [Niveles de rendimiento de DocumentDB](documentdb-performance-levels.md)
 		
 3. Guarde y cierre el archivo **docdbUtils.js**.
 

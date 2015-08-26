@@ -25,7 +25,7 @@ Para resaltar cómo pueden aprovechar eficazmente Azure DocumentDB para almacena
 
 Este tutorial muestra cómo utilizar el servicio de DocumentDB proporcionado por Azure para almacenar y tener acceso a datos desde una aplicación web de ASP.NET MVC hospedada en Azure.
 
-> [AZURE.TIP]En este tutorial se supone que tiene experiencia previa con ASP.NET MVC y Sitios web Azure. Si no está familiarizado con ASP.NET o con las [herramientas de requisitos previos](#_Toc395637760), se recomienda que descargue el proyecto del tutorial [todo](https://github.com/Azure/azure-documentdb-net/tree/master/tutorials/todo) completo de [GitHub](https://github.com/Azure/azure-documentdb-net) y lo cree mediante las [instrucciones que se encuentran al final de este artículo](#GetProject). Una vez compilado, puede revisar el artículo para obtener información sobre el código en el contexto del proyecto.
+> [AZURE.TIP] En este tutorial se supone que tiene experiencia previa con ASP.NET MVC y Sitios web Azure. Si no está familiarizado con ASP.NET o con las [herramientas de requisitos previos](#_Toc395637760), se recomienda que descargue el proyecto del tutorial [todo](https://github.com/Azure/azure-documentdb-net/tree/master/tutorials/todo) completo de [GitHub](https://github.com/Azure/azure-documentdb-net) y lo cree mediante las [instrucciones que se encuentran al final de este artículo](#GetProject). Una vez compilado, puede revisar el artículo para obtener información sobre el código en el contexto del proyecto.
 
 ## <a name="_Toc395637760"></a>Requisitos previos
 
@@ -390,7 +390,7 @@ Lo primero que debe hacerse es agregar una clase que contenga toda la lógica pa
     	    }
     	}
 
-	> [AZURE.TIP]Al crear DocumentCollection nuevo, puede proporcionar un parámetro RequestOptions opcional de OfferType, que le permite especificar el nivel de rendimiento de la nueva colección. Si no se pasa este parámetro, se utilizará el tipo de oferta predeterminado. Para obtener más información sobre los tipos de oferta de DocumentDB , consulte [Niveles de coherencia de DocumentDB](documentdb-performance-levels.md)
+	> [AZURE.TIP] Al crear DocumentCollection nuevo, puede proporcionar un parámetro RequestOptions opcional de OfferType, que le permite especificar el nivel de rendimiento de la nueva colección. Si no se pasa este parámetro, se utilizará el tipo de oferta predeterminado. Para obtener más información sobre los tipos de oferta de DocumentDB , consulte [Niveles de coherencia de DocumentDB](documentdb-performance-levels.md)
 
 3. Estamos leyendo algunos valores de la configuración; por tanto, abra el archivo **Web.config** de su aplicación y agregue las siguientes líneas debajo de la sección `<AppSettings>`.
 	
@@ -447,7 +447,7 @@ Abra ***App\\\_Start\\RouteConfig.cs***, busque la línea que empieza con "defau
 
 Esto indica ahora a ASP.NET MVC que si no ha especificado un valor en la dirección URL para controlar el comportamiento de enrutamiento que, en lugar de **Inicio**, usa **Elemento** como controlador e **Índice** de usuario como vista.
 
-Si ejecuta la aplicación, llamará a su **ItemController**, que llamará a la clase de repositorio y usará el método GetItems para devolver todos los elementos incompletos a la vista **Vistas**\**Elemento**\**Índice**.
+Si ejecuta la aplicación, llamará a su **ItemController**, que llamará a la clase de repositorio y usará el método GetItems para devolver todos los elementos incompletos a la vista **Vistas**\\**Elemento**\\**Índice** .
 
 Si crea y ejecuta este proyecto ahora, deberá ver algo parecido a esto.
 

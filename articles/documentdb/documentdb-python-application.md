@@ -91,7 +91,7 @@ Una vez que el proyecto esté configurado, deberá agregar ciertos paquetes Flas
 
 	![Captura de pantalla que muestra env (Python 2.7) seleccionado con Instalación desde requirements.txt resaltado en la lista](./media/documentdb-python-application/image11.png)
 
-> [AZURE.NOTE]En casos excepcionales, es posible que aparezca un error en la ventana de resultados. De ser así, compruebe si el error está relacionado con la limpieza. En ocasiones la limpieza da error, pero la instalación se realiza correctamente (desplácese hacia arriba en la ventana de resultados para comprobarlo). <a name="verify-the-virtual-environment"></a> Si es el caso, puede continuar.
+> [AZURE.NOTE] En casos excepcionales, es posible que aparezca un error en la ventana de resultados. De ser así, compruebe si el error está relacionado con la limpieza. En ocasiones la limpieza da error, pero la instalación se realiza correctamente (desplácese hacia arriba en la ventana de resultados para comprobarlo). <a name="verify-the-virtual-environment"></a> Si es el caso, puede continuar.
 
 
 ### Comprobación del entorno virtual
@@ -160,7 +160,7 @@ Ahora vamos a crear la aplicación de voto.
             	year=datetime.now().year,
             	message='You just created a new database, collection, and document.  Your old votes have been deleted')
 
-> [AZURE.TIP]El método CreateCollection toma un RequestOptions opcional como el tercer parámetro. Esto puede usarse para especificar el tipo de oferta para la colección. Si no se proporciona ningún valor offerType, la colección se creará con el tipo de oferta predeterminada. Para obtener más información sobre los tipos de oferta de DocumentDB , consulte [Niveles de rendimiento de DocumentDB](documentdb-performance-levels.md)
+> [AZURE.TIP] El método CreateCollection toma un RequestOptions opcional como el tercer parámetro. Esto puede usarse para especificar el tipo de oferta para la colección. Si no se proporciona ningún valor offerType, la colección se creará con el tipo de oferta predeterminada. Para obtener más información sobre los tipos de oferta de DocumentDB , consulte [Niveles de rendimiento de DocumentDB](documentdb-performance-levels.md)
 >
 ### Lectura de la base de datos, la colección y el documento, y envío del formulario
 
