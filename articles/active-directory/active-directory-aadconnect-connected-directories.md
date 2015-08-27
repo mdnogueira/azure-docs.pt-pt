@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Connect your directories with Azure AD Connect" 
-	description="Custom settings description of Azure AD Connect connected directories." 
+	pageTitle="Conexión de directorios con Azure AD Connect" 
+	description="Descripción de la configuración personalizada de directorios conectados de Azure AD Connect." 
 	services="active-directory" 
 	documentationCenter="" 
 	authors="billmath" 
@@ -18,30 +18,32 @@
 
 
 
-# Connect your directories with Azure AD Connect
+# Conexión de directorios con Azure AD Connect
 
-For Custom Settings, an enterprise administrator account is not required to connect to your Active Directory forests.  The wizard will accept a domain or local user account.  However, the account is used as the local AD Connector account, that is, it is the account that reads and writes the directory information for synchronization.
+Para la configuración personalizada, no se requiere una cuenta de administrador de empresa para conectarse a los bosques de Active Directory. El asistente aceptará una cuenta de dominio o de usuario local. Sin embargo, la cuenta se usa como cuenta local de AD Conector, es decir, es la cuenta que lee y escribe la información del directorio para la sincronización.
 
-This means you will need to assign additional permissions to enable the following scenarios: 
+Esto significa que debe asignar permisos adicionales para habilitar los escenarios siguientes:
 
-Scenario  |Permission
+Escenario |Permiso
 ------------- | ------------- |
-Password Sync| <li>Replicate Directory Changes.</li>  <li>Replicate Directory Changes All.</li>
-Exchange Hybrid Deployment|See [Office 365 Exchange Hybrid AAD Sync write-back attributes and permissions](https://msdn.microsoft.com/library/azure/dn757602.aspx#exchange).
-Password Write-back | <li>Change Password</li><li>Reset password</li>
-User, Group, and Device Write-back|Write permissions to the directory objects and attributes that you wish to 'write-back'
-Single Sign-On and AD FS| Domain admin permissions in the domain in which your federated servers are located.
+Sincronización de contraseñas| <li>Replicación de cambios de directorio.</li> <li>Replicación de todos los cambios de directorio.</li>
+Implementación híbrida de Exchange|Consulte [Permisos y atributos de reescritura de Sincronización de AAD para Office 365 Exchange Hybrid](https://msdn.microsoft.com/library/azure/dn757602.aspx#exchange).
+Escritura diferida de contraseñas | <li>Cambiar contraseña</li><li>Restablecer contraseña</li>
+Reescritura de usuario, grupo y dispositivo|Permisos de escritura en los objetos y atributos de directorio que desea 'reescribir'
+Inicio de sesión único y AD FS| Permisos de administrador de dominio en el dominio en el que están ubicados los servidores federados.
 
 
 
 
 
-**Additional Resources**
+**Recursos adicionales**
 
-* [More on Azure AD Connect accounts and permissions](active-directory-aadconnect-account-summary.md)
-* [Permissions for password synchronization](https://msdn.microsoft.com/library/azure/dn757602.aspx#psynch)
-* [Permissions for Exchange Hybrid](https://msdn.microsoft.com/library/azure/dn757602.aspx#exchange)
-* [Permissions for password writeback](https://msdn.microsoft.com/library/azure/dn757602.aspx#pwriteback)
-* [Custom installation of Azure AD Connect](active-directory-aadconnect-get-started-custom.md)
-* [Azure AD Connect on MSDN](https://msdn.microsoft.com/library/azure/dn832695.aspx)
+* [Más información sobre permisos y cuentas de Azure AD Connect](active-directory-aadconnect-account-summary.md)
+* [Permisos para la sincronización de contraseñas](https://msdn.microsoft.com/library/azure/dn757602.aspx#psynch)
+* [Permisos para la implementación híbrida de Exchange](https://msdn.microsoft.com/library/azure/dn757602.aspx#exchange)
+* [Permisos de escritura diferida de contraseñas](https://msdn.microsoft.com/library/azure/dn757602.aspx#pwriteback)
+* [Instalación personalizada de Azure AD Connect](active-directory-aadconnect-get-started-custom.md)
+* [Azure AD Connect en MSDN](https://msdn.microsoft.com/library/azure/dn832695.aspx)
  
+
+<!---HONumber=August15_HO6-->

@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Managing Azure AD Connect" 
-	description="Learn how to extend the default configuration and operational tasks for Azure AD Connect." 
+	pageTitle="Administración de Azure AD Connect" 
+	description="Aprenda a ampliar la configuración predeterminada y las tareas operativas de Azure AD Connect." 
 	services="active-directory" 
 	documentationCenter="" 
 	authors="billmath" 
@@ -16,68 +16,66 @@
 	ms.date="05/28/2015" 
 	ms.author="billmath"/>
 
-# Managing Azure AD Connect 
+# Administración de Azure AD Connect 
 
-<div class="dev-center-tutorial-selector sublanding">
-<a href="../active-directory-aadconnect/" title="What is It">What is It</a>
-<a href="../active-directory-aadconnect-how-it-works/" title="How it Works">How it Works</a>
-<a href="../active-directory-aadconnect-get-started/" title="Getting Started">Getting Started</a>
-<a href="../active-directory-aadconnect-whats-next/" title="What's Next" class="current">What's Next</a>
-<a href="../active-directory-aadconnect-learn-more/" title="Learn More">Learn More</a>
-</div>
+> [AZURE.SELECTOR]
+- [What is It](../active-directory-aadconnect/)
+- [How it Works](../active-directory-aadconnect-how-it-works/)
+- [Getting Started](../active-directory-aadconnect-get-started/)
+- [What's Next](../active-directory-aadconnect-whats-next/) 
+- [Learn More](../active-directory-aadconnect-learn-more/)
 
-The following are advanced operational topics that allow you to customize Azure Active Directory Connect to meet your organization's needs and requirements.  
+Los siguientes temas tratan cuestiones operativas avanzadas que le permiten personalizar Azure Active Directory Connect para satisfacer las necesidades y los requisitos de sus organizaciones.
 
-## Assigning licenses to Azure AD Premium and Enterprise Mobility users
+## Asignación de licencias a usuarios de Azure AD Premium y Enterprise Mobility
 
-Now that your users have been synchronized to the cloud, you will need to assign them a license so they can get going with cloud apps such as Office 365. 
+Ahora que los usuarios se han sincronizado a la nube, debe asignarlos una licencia para lo que puedan empezar a trabajar con las aplicaciones de nube, como Office 365.
 
-### To assign an Azure AD Premium or Enterprise Mobility Suite License
+### Para asignar una licencia de Azure AD Premium o Enterprise Mobility Suite
 --------------------------------------------------------------------------------
-<ol>
-<li>Sign-in to the Azure Portal as an Administrator.</li>
-<li>On the left, select **Active Directory**.</li>
-<li>On the Active Directory page, double-click on the directory that has the users you wish to enable.</li>
-<li>At the top of the directory page, select **Licenses**.</li>
-<li>On the Licenses page, select Active Directory Premium or Enterprise Mobility Suite, and then click **Assign**.</li>
-<li>In the dialog box, select the users you want to assign licenses to, and then click the check mark icon to save the changes.</li>
+1. Inicie sesión en el Portal de Azure como administrador.
+2. En la parte izquierda, seleccione **Active Directory**.
+3. En la página Active Directory, haga doble clic en el directorio que tiene los usuarios que desea habilitar.
+4. En la parte superior de la página de directorios, seleccione **Licencias**.
+5. En la página Licencias, seleccione Active Directory Premium o Enterprise Mobility Suite y luego haga clic en **Asignar**.
+6. En el cuadro de diálogo, seleccione los usuarios a los que desee asignar las licencias y, a continuación, haga clic en el icono de marca de verificación para guardar los cambios.
 
 
-## Verifying the scheduled synchronization task
-If you want to check on the status of a synchronization you can do this by checking in the Azure portal.
+## Comprobación de la tarea de sincronización programada
+Puede comprobar el estado de una sincronización en el Portal de Azure.
 
-### To verify the scheduled synchronization task
+### Para comprobar la tarea de sincronización programada
 --------------------------------------------------------------------------------
 
-1. Sign-in to the Azure Portal as an Administrator.
-2. On the left, select **Active Directory**.
-3. On the Active Directory page, double-click on the directory that has the users you wish to enable.
-4. At the top of the directory page, select **Directory Integration**.
-5. Under integration with local active directory note the last sync time.
+1. Inicie sesión en el Portal de Azure como administrador.
+2. En la parte izquierda, seleccione **Active Directory**.
+3. En la página Active Directory, haga doble clic en el directorio que tiene los usuarios que desea habilitar.
+4. En la parte superior de la página de directorios, seleccione **Integración de directorios**.
+5. En la integración con Active Directory local, anote la hora de la última sincronización.
 
 <center>![Cloud](./media/active-directory-aadconnect-whats-next/verify.png)</center>
 
-## Starting a scheduled synchronization task
-If you need to run a synchronization task you can do this by running through the Azure AD Connect wizard again.  You will need to provide your Azure AD credentials.  In the wizard, select the **Customize synchronization options** task and click next through the wizard. At the end, ensure that the **Start the synchronization process as soon as the initial configuration completes** box is checked.
+## Inicio de una tarea de sincronización programada
+Si necesita ejecutar una tarea de sincronización, ejecútelo de nuevo mediante el Asistente de Azure AD Connect. Necesitará proporcionar sus credenciales de Azure AD. En el asistente, seleccione la tarea **Personalizar las opciones de sincronización** y haga clic en siguiente en todo el asistente. Al final, asegúrese de que la casilla **Iniciar el proceso de configuración tan pronto como se complete la configuración** está seleccionada.
 
 <center>![Cloud](./media/active-directory-aadconnect-whats-next/startsynch.png)</center>
 
 
 
 
-## Additional tasks available in Azure AD Connect
-After your initial installation of Azure AD Connect, you can always start the wizard again from the Azure AD Connect start page or desktop shortcut.  You will notice that going through the wizard again provides some new options in the form of Additional tasks.  
+## Tareas adicionales disponibles en Azure AD Connect
+Después de la instalación inicial de Azure AD Connect, siempre puede volver a iniciar el asistente desde la página de inicio de Azure AD Connect o el acceso directo de escritorio. Verá que volver a pasar por el asistente ofrece algunas nuevas opciones en el formulario de tareas adicionales.
 
-The following table provides a summary of these tasks and a brief description on each of them.
+En la tabla siguiente se proporciona un resumen de estas tareas y una breve descripción de cada una de ellas.
 
-<center>![Join Rule](./media/active-directory-aadconnect-whats-next/addtasks.png)
-</center>
+![Regla de unión](./media/active-directory-aadconnect-whats-next/addtasks.png)
 
-Additional Task | Description 
+
+Tarea adicional | Descripción 
 ------------- | ------------- |
-View the selected scenario  |Allows you to view your current Azure AD Connect solution.  This includes general settings, synchronized directories, synch settings, etc.
-Customize Synchronization options | Allows you to change the current configuration including adding additional Active Directory forests to the configuration or enabling sync options such as user, group, device or password write-back.
-Enable Staging Mode |  This allows you to stage information that will later be synchronized but nothing will be exported to Azure AD or Active Directory.  This allows you to preview the synchronizations before they occur.
+Ver el escenario seleccionado |Permite ver la solución actual de Azure AD Connect. Incluye la configuración general, los directorios sincronizados, la configuración de sincronización, etc.
+Personalizar las opciones de sincronización | Permite cambiar la configuración actual, incluida la adición de bosques de Active Directory adicionales a la configuración o habilitar las opciones de sincronización, como usuario, grupo, dispositivo o reescritura de contraseña.
+Habilitar el modo provisional | Esto permite almacenar información que se sincronizará más adelante, pero no se exportará nada a Azure AD o Active Directory. Esto permite obtener una vista previa de las sincronizaciones antes de que ocurran.
 
 
  
@@ -87,14 +85,17 @@ Enable Staging Mode |  This allows you to stage information that will later be s
 
 
 
-## Additional Documentation
-For additional documentation on working with Azure AD Connect see the following;
+## Documentación adicional
+Para ver documentación adicional acerca de cómo trabajar con Azure AD Connect, consulte lo siguiente:
 
-- [Changing the Azure AD Connect default configuration](active-directory-aadconnect-whats-next-change-default-config.md)
-- [Using the Azure AD Connect Synchronization Rules Editor](active-directory-aadconnect-whats-next-synch-rules-editor.md)
-- [Using declarative provisioning](active-directory-aadconnect-whats-next-declarative-prov.md)
+- [Sincronización de Azure AD Connect: personalización de las opciones de sincronización](active-directory-aadconnectsync-whatis.md)
+- [Cambio de la configuración predeterminada de Azure AD Connect](active-directory-aadconnect-whats-next-change-default-config.md)
+- [Uso del editor de reglas de sincronización de Azure AD Connect](active-directory-aadconnect-whats-next-synch-rules-editor.md)
+- [Uso del aprovisionamiento declarativo](active-directory-aadconnect-whats-next-declarative-prov.md)
 
-Also, some of the documentation that was created for Azure AD Sync is still relevant and applies to Azure AD Connect.  Although every effort is being made to bring this documentation over to Azure.com, some of this documentation still resides in the MSDN scoped library.  For additional documentation see [Azure AD Connect on MSDN](https://msdn.microsoft.com/library/azure/dn832695.aspx) and [Azure AD Sync on MSDN](https://msdn.microsoft.com/library/azure/dn790204.aspx).
+Algunos de los documentos que se crearon para Sincronización de Azure AD siguen siendo válidos y se aplican a Azure AD Connect. Aunque se está poniendo todo el empeño en trasladar esa documentación a Azure.com, parte de la misma sigue residiendo en la biblioteca del ámbito de MSDN. Para obtener documentación adicional, consulte [Azure AD Connect en MSDN](https://msdn.microsoft.com/library/azure/dn832695.aspx) y [Sincronización de Azure AD en MSDN](https://msdn.microsoft.com/library/azure/dn790204.aspx).
 
 
  
+
+<!---HONumber=August15_HO6-->

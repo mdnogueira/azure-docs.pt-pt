@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Azure CDN Overview" 
-	description="Learn what the Azure Content Delivery Network (CDN) is and how to use it to deliver high-bandwidth content by caching blobs and static content." 
+	pageTitle="Información general de la red CDN de Azure" 
+	description="Obtenga información acerca de la Red de entrega de contenido (CDN) de Azure y de cómo usarla para ofrecer contenido con alto ancho de banda mediante el almacenamiento en caché de blobs y contenidos estáticos." 
 	services="cdn" 
 	documentationCenter=".NET" 
 	authors="zhangmanling" 
@@ -16,100 +16,102 @@
 	ms.date="05/26/2015" 
 	ms.author="mazha"/>
 
-#Overview of the Azure Content Delivery Network (CDN)
+#Información general de la red de entrega de contenido (CDN) de Azure
 
-The Azure Content Delivery Network (CDN) caches Azure blobs and static content used by cloud services at strategically placed locations to provide maximum bandwidth for delivering content to users. 
+La Red de entrega de contenido (CDN) de Azure almacena en caché blobs de Azure y contenido estático usado por servicios en la nube en ubicaciones colocadas estratégicamente para proporcionar el ancho de banda máximo para entregar contenido a los usuarios.
 
-If you are an existing CDN customer, you can now manage your CDN endpoints through the [Microsoft Azure Management Portal](https://manage.windowsazure.com). 
+Si es un cliente de red CDN existente, ahora puede administrar sus extremos de red CDN a través del [Portal de administración de Microsoft Azure](https://manage.windowsazure.com).
 
 
->[AZURE.NOTE] Azure CDN has a separate [billing plan](http://www.microsoft.com/windowsazure/pricing/) from Azure Storage or Azure Cloud Services.
+>[AZURE.NOTE]CDN de Azure tiene un [plan de facturación](http://www.microsoft.com/windowsazure/pricing/) independiente de Almacenamiento de Azure o Servicios en la nube de Azure.
  
 
-The CDN offers developers a global solution for delivering high-bandwidth content by caching the content at physical nodes across the world. For a current list of CDN node locations, see [Azure Content Delivery Network (CDN) POP Locations](http://msdn.microsoft.com/library/azure/gg680302.aspx).
+CDN ofrece a los desarrolladores una solución global para entregar contenido de alto ancho de banda almacenando en caché el contenido en nodos físicos en todo el mundo. Para obtener una lista actualizada de las ubicaciones de nodos de la red CDN, consulte [Ubicaciones POP de la Red de entrega de contenido (CDN) de Azure](http://msdn.microsoft.com/library/azure/gg680302.aspx).
 
-The benefits of using the CDN to cache Azure data include:
+Entre las ventajas de utilizar la red CDN para almacenar en memoria caché los datos de Azure se incluyen:
 
-- Better performance and user experience for end users who are far from a content source, and are using applications where many "internet trips" are required to load content
-- Large distributed scale to better handle instantaneous high load, like at the start of a product launch event. 
+- Mejor rendimiento y experiencia de usuario para aquellos usuarios finales que están lejos de un origen de contenido y utilicen aplicaciones donde son necesarias muchas "conexiones a Internet" para cargar el contenido.
+- Gran distribución para mejorar la administración de cargas instantáneas pesadas, por ejemplo, al comienzo de un evento de lanzamiento de un producto. 
 
 
->[AZURE.IMPORTANT] When you create or enable a CDN endpoint, it may take up to 60 minutes to propagate worldwide.
+>[AZURE.IMPORTANT]Cuando crea o habilita un extremo de red CDN, su propagación por todo el mundo puede tardar hasta 60 minutos.
  
-When a request for an object is first made to the CDN, the object is retrieved directly from the Blob service or from the cloud service. When a request is made using the CDN syntax, the request is redirected to the CDN endpoint closest to the location from which the request was made to provide access to the object. If the object is not found at that endpoint, then it is retrieved from the service and cached at the endpoint, where a time-to-live (TTL) setting is maintained for the cached object.
+Cuando una solicitud para un objeto se realiza primero a la red CDN, el objeto se recupera directamente desde el servicio BLOB o desde el servicio en la nube. Cuando una solicitud se realiza usando la sintaxis de red CDN, dicha solicitud se redirecciona al extremo de red CDN más cercano a la ubicación desde la que la solicitud se realizó para proporcionar acceso al objeto. Si el objeto no se encuentra en ese extremo, se recupera del servicio y se almacena en caché en el extremo, donde se mantiene una configuración de tiempo de vida (TTL) para el objeto almacenado en caché.
  
-##Caching content from Azure storage
+##Almacenamiento en caché de contenido de almacenamiento de Azure
 
-Once the CDN is enabled on a Azure storage account, any blobs that are in public containers and are available for anonymous access will be cached via the CDN. Only blobs that are publicly available can be cached with the Azure CDN. To make a blob publicly available for anonymous access, you must denote its container as public. Once you do so, all blobs within that container will be available for anonymous read access. You have the option of making container data public as well, or restricting access only to the blobs within it. See [Restrict Access to Containers and Blobs](http://msdn.microsoft.com/library/azure/dd179354.aspx) for information on managing access control for containers and blobs.
+Una vez habilitada la red CDN en una cuenta de almacenamiento de Azure, cualquier blob que se encuentre en contenedores públicos y esté disponible para acceso anónimo se almacenará en caché a través de la red CDN . Solamente los blobs que estén públicamente disponibles se pueden almacenar en caché con CDN de Azure. Para que un blob esté públicamente disponible para acceso anónimo, debe denotar su contenedor como público. Una vez hecho eso, todos los blobs que se encuentren dentro de ese contenedor estarán disponibles para acceso de lectura anónimo. También tiene la opción de hacer públicos los datos de un contenedor o restringir el acceso solamente a los bloques que se encuentran dentro de él. Consulte [Restricción del acceso a contenedores y blobs](http://msdn.microsoft.com/library/azure/dd179354.aspx) para obtener información acerca de la administración del control de acceso para contenedores y blobs.
 
-For best performance, use CDN edge caching for delivering blobs less than 10 GB in size.
+Para obtener el máximo rendimiento, utilice la memoria caché perimetral de red CDN para entregar blobs con un tamaño inferior a 10 GB.
 
-When you enable CDN access for a storage account, the Management Portal provides you with a CDN domain name in the following format: http://<identifier>.vo.msecnd.net/. This domain name can be used to access blobs in a public container. For example, given a public container named music in a storage account named myaccount, users can access the blobs in that container using either of the following two URLs:
+Cuando habilite el acceso de red CDN para una cuenta de almacenamiento, el Portal de administración le proporcionará un nombre de dominio de red CDN con el siguiente formato: http://<identifier>.vo.msecnd.net/. Este nombre de dominio puede usarse para obtener acceso a los blobs de un contenedor público. Por ejemplo, en un contenedor público llamado Música de una cuenta de almacenamiento denominada MiCuenta, los usuarios pueden obtener acceso a los blobs de ese contenedor mediante el uso de cualquiera de las dos direcciones URL siguientes:
 
-- **Azure Blob service URL**: `http://myAccount.blob.core.windows.net/music/` 
-- **Azure CDN URL**: `http://<identifier>.vo.msecnd.net/music/` 
+- **Dirección URL del servicio BLOB de Azure**: `http://myAccount.blob.core.windows.net/music/` 
+- **Dirección URL de red CDN de Azure**: `http://<identifier>.vo.msecnd.net/music/` 
 
-##Caching content from Azure websites
+##Almacenamiento en caché de contenido de Sitios web Azure
 
-You can enable CDN from your websites to cache your web contents, such as images, scripts, and stylesheets. See [Integrate an Azure Website with Azure CDN](../cdn-websites-with-cdn.md).
+Puede habilitar la red CDN desde sus sitios web para almacenar en caché su contenido web, como imágenes, scripts y hojas de estilo. Consulte[ Integración de un sitio web de Azure con la red CDN de Azure](../cdn-websites-with-cdn.md).
 
-When you enable CDN access for a website, the Management Portal provides you with a CDN domain name in the following format: http://<identifier>.vo.msecnd.net/. This domain name can be used to retrieve objects from a website. For example, given a public container named cdn and an image file called music.png, users can access the object using either of the following two URLs:
+Cuando habilite el acceso de la red CDN para un sitio web, el Portal de administración le proporcionará un nombre de dominio de red CDN con el siguiente formato: http://<identifier>.vo.msecnd.net/. Este nombre de dominio se puede usar para recuperar objetos desde un sitio web. Por ejemplo, dado un contenedor público llamado cdn y un archivo de imagen llamado music.png, los usuarios pueden obtener acceso al objeto usando una de las dos direcciones URL siguientes:
 
-- **Azure Website URL**: `http://mySiteName.azurewebsites.net/cdn/music.png` 
-- **Azure CDN URL**: `http://<identifier>.vo.msecnd.net/cdn/music.png`
+- **Dirección URL del sitio web de azure**: `http://mySiteName.azurewebsites.net/cdn/music.png` 
+- **Dirección URL de red CDN de Azure**: `http://<identifier>.vo.msecnd.net/cdn/music.png`
  
-##Caching content from Azure cloud services
+##Almacenamiento en caché de contenido de servicios en la nube de Azure
 
-You can cache objects to the CDN that are provided by a Azure cloud service. 
+Puede almacenar en caché objetos en la red CDN proporcionados por un servicio en la nube de Azure.
 
-Caching for cloud services has the following constraints: 
-
-
-- The CDN should be used to cache static content only.
-
-	>[AZURE.WARNING] Caching of highly volatile or truly dynamic content may adversely affect your performance or cause content problems, all at increased cost.
-- Your cloud service must be deployed to in a production deployment.
-- Your cloud service must provide the object on port 80 using HTTP.
-- The cloud service must place the content to be cached in, or delivered from, the /cdn folder on the cloud service.
-
-When you enable CDN access for on a cloud service, the Management Portal provides you with a CDN domain name in the following format: http://<identifier>.vo.msecnd.net/. This domain name can be used to retrieve objects from a cloud service. For example, given a cloud service named myHostedService and an ASP.NET web page called music.aspx that delivers content, users can access the object using either of the following two URLs:
+El almacenamiento en caché para servicios en la nube tiene las siguientes restricciones:
 
 
-- **Azure cloud service URL**: `http://myHostedService.cloudapp.net/cdn/music.aspx` 
-- **Azure CDN URL**: `http://<identifier>.vo.msecnd.net/music.aspx` 
+- La red CDN solamente se debe usar para almacenar en caché contenido estático.
+
+	>[AZURE.WARNING]El almacenamiento en caché de contenido totalmente dinámico o muy volátil puede afectar negativamente al rendimiento o provocar problemas de contenido, todo ello con mayor costo.
+- En el servicio la nube se debe implementar en una implementación de producción.
+- El servicio en la nube debe proporcionar el objeto en el puerto 80 mediante HTTP.
+- El servicio en la nube debe colocar el contenido que se va a almacenar en caché o que se va a proporcionar en la carpeta /cdn en dicho servicio.
+
+Cuando habilite el acceso de la red CDN para un servicio en la nube, el Portal de administración le proporcionará un nombre de dominio de red CDN con el siguiente formato: http://<identifier>.vo.msecnd.net/. Este nombre de dominio se puede usar para recuperar objetos desde un servicio en la nube. Por ejemplo, dado un servicio en la nube llamado myHostedService y una página web ASP.NET llamada music.aspx que proporciona contenido, los usuarios pueden obtener acceso al objeto usando una de las dos direcciones URL siguientes:
 
 
-###Caching specific content with query strings
+- **Dirección URL del servicio en la nube de Azure**: `http://myHostedService.cloudapp.net/cdn/music.aspx` 
+- **Dirección URL de red CDN de Azure**: `http://<identifier>.vo.msecnd.net/music.aspx` 
 
-You can use query strings to differentiate objects retrieved from a cloud service. For example, if the cloud service displays a chart that can vary you can pass a query string to retrieve the specific chart required. For example: 
+
+###Almacenamiento en caché de contenido específico con cadenas de consulta
+
+Puede utilizar cadenas de consulta para diferenciar objetos recuperados desde un servicio en la nube. Por ejemplo, si el servicio en la nube muestra un gráfico que puede variar, puede pasar una cadena de consulta para recuperar el gráfico específico requerido. Por ejemplo:
 
 `http://<identifier>.vo.msecnd.net/chart.aspx?item=1`
 
-Query strings are passed as string literals. If you have an service that takes two parameters, such as `?area=2&item=1` and make subsequent call to the service using `?item=1&area=2`, you will cache two copies of the same object.
+Las cadenas de consulta se pasan como literales de cárdenas. Si tiene un servicio que toma dos parámetros, como `?area=2&item=1` y realiza una llamada posterior al servicio mediante `?item=1&area=2`, almacenará en caché dos copias del mismo objeto.
  
 
-##Accessing cached content over HTTPS
+##Obtener acceso a contenido almacenado en caché a través de HTTPS
 
 
-Azure allows you to retrieve content from the CDN using HTTPS calls. This allows you to incorporate content cached in the CDN into secure web pages without receiving warnings about mixed security content types.
+Azure le permite recuperar contenido desde la red CDN usando llamadas HTTPS. Esto le permite incorporar contenido almacenado en caché en la red CDN en páginas web seguras sin recibir advertencias acerca de los tipos de contenido de seguridad mixtos.
 
-Accessing CDN content using HTTPS has the following constraints:
-
-
-- You must use the certificate provided by the CDN. Third party certificates are not supported.
-- You must use the CDN domain to access content. HTTPS support is not available for custom domain names (CNAMEs) since the CDN does not support custom certificates at this time.
+El acceso al contenido de la red CDN usando HTTPS tiene la siguiente restricciones:
 
 
-
-Even when HTTPS is enabled, content from the CDN can be retrieved using both HTTP and HTTPS.
-
-For more information on enabling HTTPS for CDN content, see [How to Enable the Content Delivery Network (CDN) for Azure](http://msdn.microsoft.com/library/azure/gg680301.aspx).
+- Debe utilizar el certificado proporcionado por la red CDN. No se admiten certificados de terceros.
+- Debe usar el dominio de red CDN para obtener acceso el contenido. La compatibilidad con HTTPS no está disponible para nombres de dominio personalizados (CNAME) dado que la red CDN no admite certificados personalizados en este momento.
 
 
-##Accessing cached content with custom domains
 
-You can map the CDN HTTP endpoint to a custom domain name and use that name to request objects from the CDN.
+Incluso cuando HTTPS se habilite, el contenido de la red CDN se puede recuperar usando tanto HTTP como HTTPS.
 
-For more information on mapping a custom domain, see [How to Map Content Delivery Network (CDN) Content to a Custom Domain](http://msdn.microsoft.com/library/azure/gg680307.aspx).
+Para obtener más información acerca de la habilitación de HTTPS para contenido de red CDN, consulte [Habilitar la Red de entrega de contenido (CDN) para Azure](http://msdn.microsoft.com/library/azure/gg680301.aspx).
+
+
+##Obtención de acceso a contenido almacenado en caché de con dominios personalizados
+
+Puede asignar el extremo HTTP de la red CDN a un nombre de dominio personalizado y usar ese nombre para solicitar objetos desde dicha red.
+
+Para obtener más información acerca de la asignación de un dominio personalizado, consulte [Asignación del contenido de la Red de entrega de contenido (CDN) a un dominio personalizado](http://msdn.microsoft.com/library/azure/gg680307.aspx).
 
  
+
+<!---HONumber=August15_HO6-->

@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Automated SaaS App User Provisioning in Azure AD | Microsoft Azure"
-   description="An introduction to how you can use Azure AD to automatically provision, de-provision, and continuously update user accounts across multiple third-party SaaS applications."
+   pageTitle="Aprovisionamiento automático de usuarios para aplicaciones SaaS | Microsoft Azure"
+   description="Una introducción sobre cómo puede usar Azure AD para el aprovisionamiento, el desaprovisionamiento y la actualización continua de cuentas de usuario de manera automática en varias aplicaciones SaaS de terceros."
    services="active-directory"
    documentationCenter=""
    authors="liviodlc"
@@ -13,96 +13,99 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="05/07/2015"
+   ms.date="07/14/2015"
    ms.author="liviodlc"/>
 
-#Automate User Provisioning and Deprovisioning to SaaS Applications with Azure Active Directory
+#Automatización del aprovisionamiento y desaprovisionamiento de usuarios para aplicaciones SaaS con Azure Active Directory
 
-##What is Automated User Provisioning for SaaS Apps?
+##¿Qué es el aprovisionamiento automático de usuarios para aplicaciones SaaS?
 
-Azure Active Directory (Azure AD) allows you to automate the creation, maintenance, and removal of user identities in cloud (SaaS) applications such as Dropbox, Salesforce, ServiceNow, and more.
+Azure Active Directory (Azure AD) permite automatizar la creación, el mantenimiento y la eliminación de identidades de usuario en aplicaciones de nube (SaaS) como Dropbox, Salesforce, ServiceNow y muchas más.
 
-**Below are some examples of what this feature allows you to do:**
+**A continuación se muestran algunos ejemplos de lo que esta característica permite hacer:**
 
-- Automatically create new accounts in the right SaaS apps for new people when they join your team.
-- Have accounts be automatically removed from SaaS apps when people inevitably leave the team.
-- Ensure that the identities in your SaaS apps are kept up to date based on changes in the directory.
-- Provision non-user objects, such as groups, to SaaS apps that support them.
+- Crear automáticamente nuevas cuentas en las aplicaciones SaaS adecuadas para los usuarios nuevos cuando se unen a su equipo.
+- Eliminar cuentas automáticamente de las aplicaciones SaaS cuando los usuarios abandonan el equipo.
+- Garantizar que las identidades se mantienen actualizadas en las aplicaciones SaaS según los cambios en el directorio.
+- Aprovisionar objetos que no son de usuario, como grupos, para aplicaciones SaaS que los admiten.
 
-**Automated user provisioning also includes the following functionality:**
+**El aprovisionamiento automático de usuarios también incluye la funcionalidad siguiente:**
 
-- The ability to match existing identities between Azure AD and SaaS apps.
-- Customization options to help Azure AD fit the current configurations of the SaaS apps that your organization is currently using.
-- Optional email alerts for provisioning errors.
-- Reporting and activity logs to help with monitoring and troubleshooting.
+- La capacidad de hacer coincidir las identidades existentes entre Azure AD y las aplicaciones SaaS.
+- Opciones de personalización para ayudar a Azure AD a ajustar las configuraciones actuales de las aplicaciones SaaS que su organización utiliza actualmente.
+- Alertas de correo electrónico opcionales para errores de aprovisionamiento.
+- Informes y registros de actividades para facilitar la supervisión y solución de problemas.
 
-##Why Use Automated Provisioning?
+##¿Por qué usar el aprovisionamiento automático?
 
-Some common motivations for using this feature include:
+Las razones habituales por las que se debe usar esta característica son:
 
-- To avoid the costs, inefficiencies, and human error associated with manual provisioning processes.
-- To secure your organization by instantly removing users' identities from key SaaS apps when they leave the organization.
-- To easily import a bulk number of users into a particular SaaS application.
-- To enjoy the convenience of having your provisioning solution run off of the same app access policies that you defined for Azure AD Single Sign-On.
+- Evitar los costes, las ineficiencias y los errores humanos asociados con los procesos de aprovisionamiento manuales.
+- Proteger su organización mediante la eliminación instantánea de las identidades de los usuarios de aplicaciones SaaS claves cuando estos abandonan la organización.
+- Importar una cantidad masiva de usuarios fácilmente a una aplicación SaaS concreta.
+- Disfrutar de la comodidad de que la solución de aprovisionamiento se ejecute fuera de las mismas directivas de acceso a las aplicaciones definidas para el Inicio de sesión único de Azure AD.
 
-##Frequently Asked Questions
+##Preguntas frecuentes
 
-**How frequently does Azure AD write directory changes to the SaaS app?**
+**¿Con qué frecuencia Azure AD escribe los cambios de directorio en las aplicaciones SaaS?**
 
-Azure AD checks for changes every five to ten minutes. If the SaaS app is returning several errors (such as in the case of invalid admin credentials), then Azure AD will gradually slow its frequency to up to once per day until the errors are fixed.
+Azure AD comprueba si hay cambios a intervalos de cinco a diez minutos. Si la aplicación SaaS devuelve varios errores (como en el caso de las credenciales de administrador no válidas), Azure AD disminuye gradualmente su frecuencia hasta una vez al día hasta que se solucionan los errores.
 
-**How long will it take to provision my users?**
+**¿Cuánto tiempo se tarda en aprovisionar usuarios?**
 
-Incremental changes happen nearly instantly but if you are trying to provision most of your directory, then it depends on the number of users and groups that you have. Small directories take only a few minutes, medium-sized directories may take several minutes, and very large directories may take several hours.
+Los cambios incrementales se producirán casi instantáneamente, pero si intenta aprovisionar la mayor parte de su directorio, entonces depende del número de usuarios y grupos que tiene. Los directorios pequeños tardan sólo unos minutos, los medianos pueden tardar varios minutos y los directorios muy grandes pueden tardar varias horas.
 
-**How can I track the progress of the current provisioning job?**
+**¿Cómo se puede seguir el progreso del trabajo de aprovisionamiento actual?**
 
-You can review the Account Provisioning Report under the Reports section of your directory. Another option is to visit the Dashboard tab for the SaaS application that you are provisioning to, and look under the "Integration Status" section near the bottom of the page.
+Puede revisar el informe de aprovisionamiento de cuentas en la sección Informes de su directorio. Otra opción es visitar la pestaña Panel de la aplicación SaaS que se va a aprovisionar y buscar en la sección "Estado de integración" cerca de la parte inferior de la página.
 
-**How will I know if users fail to get provisioned properly?**
+**¿Cómo puedo saber si se produce algún error en el aprovisionamiento de un usuario?**
 
-At the end of the provisioning configuration wizard there is an option to subscribe to email notifications for provisioning failures. You can also check the Provisioning Errors Report to see which users failed to be provisioned and why.
+Al final del asistente de configuración del aprovisionamiento hay una opción para suscribirse a notificaciones de correo electrónico para errores de aprovisionamiento. También puede comprobar el informe de errores de aprovisionamiento para saber qué usuarios no se han podido aprovisionar y por qué.
 
-**Can Azure AD write changes from the SaaS app back to the directory?**
+**¿Azure AD puede escribir cambios desde la aplicación SaaS en el directorio?**
 
-For most SaaS apps, provisioning is outbound-only, which means that users are written from the directory to the application, and changes from the application cannot be written back to the directory. For [Workday](https://msdn.microsoft.com/library/azure/dn762434.aspx), however, provisioning is inbound-only, which means that that users are imported into the directory from Workday, and likewise, changes in the directory do not get written back into Workday.
+Para la mayoría de las aplicaciones SaaS, el aprovisionamiento es sólo de salida, lo que significa que los usuarios se escriben en la aplicación desde el directorio, y los cambios de la aplicación no se pueden volver a escribir en el directorio. Para [Workday](https://msdn.microsoft.com/library/azure/dn762434.aspx), sin embargo, el aprovisionamiento es sólo de entrada, lo que significa que los usuarios se importan en el directorio desde Workday y, del mismo modo, los cambios del directorio no se vuelven a escribir en Workday.
 
-**How can I submit feedback to the engineering team?**
+**¿Cómo puedo enviar comentarios al equipo de ingeniería?**
 
-Please contact us through the [Azure Active Directory feedback forum](http://feedback.azure.com/forums/169401-azure-active-directory).
+Póngase en contacto con nosotros a través del [foro de comentarios de Azure Active Directory](http://feedback.azure.com/forums/169401-azure-active-directory).
 
-##How Does Automated Provisioning Work?
+##¿Cómo funciona el aprovisionamiento automático?
 
-Azure AD provisions users to SaaS apps by connecting to provisioning endpoints provided by each application vendor. These endpoints allow Azure AD to programmatically create, update, and remove users. Below is a brief overview of the different steps that Azure AD takes to automate provisioning.
+Azure AD aprovisiona a los usuarios para aplicaciones SaaS mediante la conexión de los extremos de aprovisionamiento proporcionados por el proveedor de cada aplicación. Estos extremos permiten a Azure AD crear, actualizar y quitar usuarios mediante programación. A continuación se ofrece una breve introducción de los diferentes pasos que Azure AD realiza para automatizar el aprovisionamiento.
 
-1. When you enable provisioning for an application for the first time, the following actions are performed:
- - Azure AD will attempt to match any existing users in the SaaS app with their corresponding identities in the directory.
- - When a user is matched, they are automatically assigned access to the application, which enables them for single sign-on.
- - If you have already specified which users should be assigned to the application, and if Azure AD fails to find existing accounts for those users, Azure AD will provision new accounts for them in the application.
-2. Once the initial synchronization has been completed as described above, Azure AD will check every 10 minutes for the following changes:
- - If new users have been assigned to the application (either directly or through group membership), then they will be provisioned a new account in the SaaS app.
- - If a user's access has been removed, then their account in the SaaS app will be marked as disabled (users are never fully deleted, which protects you from data loss in the event of a misconfiguration).
- - If a user was recently assigned to the application and they already had an account in the SaaS app, that account will be marked as enabled, and certain user properties may be updated if they are out-of-date compared to the directory.
- - If a user's information (such as phone number, office location, etc) has been changed in the directory, then that information will also be updated in the SaaS application.
+1. Al habilitar el aprovisionamiento de una aplicación por primera vez, se realizan las siguientes acciones:
+ - Azure AD intentará hacer coincidir todos los usuarios existentes en la aplicación SaaS con sus identidades correspondientes en el directorio. Cuando se asocia un usuario, *no* se habilitan automáticamente para el inicio de sesión único. Para que un usuario disponga de acceso a la aplicación, deben asignarse explícitamente a la aplicación en Azure AD, ya sea directamente o a través de la pertenencia a grupos.
+ - Si ya ha especificado qué usuarios deben asignarse a la aplicación, y si Azure AD no logra encontrar cuentas existentes para tales usuarios, Azure AD aprovisionará cuentas nuevas para ellos en la aplicación.
+2. Una vez que se ha completado la sincronización inicial, como se ha descrito anteriormente, Azure AD comprobará cada 10 minutos si se han producido los siguientes cambios:
+ - Si se han asignado usuarios nuevos a la aplicación (directamente o a través de la pertenencia a grupos), se les aprovisionará una cuenta nueva en la aplicación SaaS.
+ - Si se ha anulado el acceso de un usuario, su cuenta en la aplicación SaaS se marcará como deshabilitada (los usuarios nunca se eliminarán totalmente, lo que lo protege frente a pérdidas de datos si se producen errores de configuración).
+ - Si ha asignado un usuario a la aplicación recientemente y ya tenía una cuenta en la aplicación SaaS, esa cuenta se marcará como habilitada, y algunas propiedades de usuario pueden actualizarse si están obsoletas con respecto al directorio.
+ - Si se ha cambiado la información del usuario (por ejemplo, el número de teléfono, el domicilio de la oficina, etc.) en el directorio, esta información también se actualizará en la aplicación SaaS.
 
-For more information on how attributes are mapped between Azure AD and your SaaS app, see the article on [Customizing Attribute Mappings](https://msdn.microsoft.com/library/azure/dn872469.aspx).
+Para obtener más información sobre cómo se asignan los atributos entre Azure AD y la aplicación SaaS, consulte el artículo [Personalización de asignaciones de atributos](active-directory-saas-customizing-attribute-mappings.md).
 
-##List of Apps that Support Automated User Provisioning
+##Lista de aplicaciones que admiten el aprovisionamiento automático de usuarios
 
-Click on an app to see a tutorial on how to configure automated provisioning for it:
+Haga clic en una aplicación para ver un tutorial sobre cómo configurar el aprovisionamiento automático correspondiente:
 
 - [Box](http://go.microsoft.com/fwlink/?LinkId=286016)
 - [Citrix GoToMeeting](http://go.microsoft.com/fwlink/?LinkId=309580)
 - [Concur](http://go.microsoft.com/fwlink/?LinkId=309575)
 - [Docusign](http://go.microsoft.com/fwlink/?LinkId=403254)
-- [Dropbox for Business](http://go.microsoft.com/fwlink/?LinkId=309581)
+- [Dropbox para Empresas](http://go.microsoft.com/fwlink/?LinkId=309581)
 - [Google Apps](http://go.microsoft.com/fwlink/?LinkId=309577)
 - [Jive](http://go.microsoft.com/fwlink/?LinkId=309591)
 - [Salesforce](http://go.microsoft.com/fwlink/?LinkId=286017)
 - [Salesforce Sandbox](http://go.microsoft.com/fwlink/?LinkId=327869)
 - [ServiceNow](http://go.microsoft.com/fwlink/?LinkId=309587)
-- [Workday](https://msdn.microsoft.com/library/azure/dn762434.aspx) (inbound provisioning)
+- [Workday](https://msdn.microsoft.com/library/azure/dn762434.aspx) (aprovisionamiento de entrada)
 
-In order for an application to support automated user provisioning, it must first provide the necessary endpoints that allow for external programs to automate the creation, maintenance, and removal of users. Therefore, not all SaaS apps are compatible with this feature. For apps that do support this, the Azure AD engineering team will then be able to build a provisioning connector to those apps, and this work is prioritized by the needs of current and prospective customers.
+Para que una aplicación admita el aprovisionamiento automático de usuarios, primero debe proporcionar los extremos necesarios que permitan a los programas externos automatizar la creación, el mantenimiento y la eliminación de usuarios. Por lo tanto, no todas las aplicaciones SaaS son compatibles con esta característica. En el caso de las aplicaciones que sí son compatibles, el equipo de ingeniería de Azure AD podrá crear un conector de aprovisionamiento para esas aplicaciones, y las prioridades para realizar este trabajo se basan en las necesidades de los clientes actuales y potenciales.
 
-To contact the Azure AD engineering team to request provisioning support for additional applications, please submit a message through the [Azure Active Directory feedback forum](http://feedback.azure.com/forums/169401-azure-active-directory).
+Si desea ponerse en contacto con el equipo de ingeniería de Azure AD para solicitar soporte técnico para el aprovisionamiento de aplicaciones adicionales, envíe un mensaje a través del [foro de comentarios de Azure Active Directory](http://feedback.azure.com/forums/169401-azure-active-directory).
+
+[AZURE.INCLUDE [saas-toc](../../includes/active-directory-saas-toc.md)]
+
+<!---HONumber=August15_HO6-->

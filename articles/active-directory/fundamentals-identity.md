@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Azure Identity"
-	description="Learn about using Active Directory in Azure."
+	pageTitle="Identidad de Azure"
+	description="Vea cómo utilizar Active Directory en Azure."
 	services="active-directory"
 	documentationCenter=".net"
 	authors="TerryLanfear"
@@ -17,11 +17,13 @@
 	ms.author="terrylan"/>
 
 
-# The fundamentals of Azure identity management
+# Aspectos básicos de la administración de identidades de Azure
 
 
 
 
 
-[AZURE.INCLUDE [identity](../../includes/identity.md)]
+[AZURE.INCLUDE [identidad](../../includes/identity.md)]
  
+
+<!---HONumber=August15_HO6-->

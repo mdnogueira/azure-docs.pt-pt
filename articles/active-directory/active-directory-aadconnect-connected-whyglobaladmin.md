@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Why we require an Azure AD global administrator account for setting up Azure AD Connect" 
-	description="Custom settings description of why we require a global admin account." 
+	pageTitle="Por qué necesitamos una cuenta de administrador global de Azure AD para configurar Azure AD Connect" 
+	description="Descripción de la configuración personalizada de por qué necesitamos una cuenta de administrador global." 
 	services="active-directory" 
 	documentationCenter="" 
 	authors="billmath" 
@@ -16,20 +16,22 @@
 	ms.date="05/28/2015" 
 	ms.author="billmath"/>
 
-# Why we require an Azure AD global administrator account for setting up Azure AD Connect
+# Por qué necesitamos una cuenta de administrador global de Azure AD para configurar Azure AD Connect
 
-The following table shows the reasons an Azure AD global administrator account is required for setting up Azure AD Connect.
+En la siguiente tabla se indican los motivos por los cuales se necesita una cuenta de administrador global de Azure AD para configurar Azure AD Connect.
 
-Under the following conditions  | Description 
+En las siguientes condiciones | Descripción 
 ------------- | ------------- |
-For Express Settings and DirSync Upgrade | We enable sync (if required) in your Azure AD directory and create the Azure AD account that will be used for the on-going sync operations (the Azure AD Connector account). 
-For custom settings | We enable sync in your Azure AD directory and create the Azure AD account that will be used for on-going sync operations (the Azure AD Connector account).  For the Single Sign-on with the AD FS option, we read and configure federation properties in Azure AD.
+Para la configuración rápida y la actualización de la sincronización de directorios | Habilitamos la sincronización (si es necesario) en el directorio de Azure AD y creamos la cuenta de Azure AD que se usará para las operaciones de sincronización continua (la cuenta de Azure AD Connector). 
+Para la configuración personalizada | Habilitamos la sincronización en el directorio de Azure AD y creamos la cuenta de Azure AD que se usará para las operaciones de sincronización continua (la cuenta de Azure AD Connector). Para el inicio de sesión único con la opción de AD FS, leemos y configuramos las propiedades de federación en Azure AD.
 
 
 
-**Additional Resources**
+**Recursos adicionales**
 
 
-* [More on Azure AD Connect accounts and permissions](active-directory-aadconnect-account-summary.md)
-* [Custom installation of Azure AD Connect](active-directory-aadconnect-get-started-custom.md)
-* [Azure AD Connect on MSDN](https://msdn.microsoft.com/library/azure/dn832695.aspx) 
+* [Más información sobre permisos y cuentas de Azure AD Connect](active-directory-aadconnect-account-summary.md)
+* [Instalación personalizada de Azure AD Connect](active-directory-aadconnect-get-started-custom.md)
+* [Azure AD Connect en MSDN](https://msdn.microsoft.com/library/azure/dn832695.aspx) 
+
+<!---HONumber=August15_HO6-->

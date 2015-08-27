@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Azure Active Directory Audit Report Events"
-   description="Audited events that are available for viewing and downloading from your Azure Active Directory"
+   pageTitle="Eventos del Informe de auditoría de Azure Active Directory"
+   description="Eventos auditados que están disponibles para ver y descargar desde Azure Active Directory"
    services="active-directory"
    documentationCenter=""
    authors="kenhoff"
@@ -16,61 +16,61 @@
    ms.date="06/18/2015"
    ms.author="kenhoff"/>
 
-# Azure Active Directory Audit Report Events
+# Eventos del Informe de auditoría de Azure Active Directory
 
-The Azure Active Directory Audit Report helps customers identify privileged actions that occurred in their Azure Active Directory. Privileged actions include elevation changes (for example, role creation or password resets), changing policy configurations (for example password policies), or changes to directory configuration (for example, changes to domain federation settings). The reports provide the audit record for the event name, the actor who performed the action, the target resource affected by the change, and the date and time (in UTC). Customers are able to retrieve the list of audit events for their Azure Active Directory via the [Azure Management Portal](https://manage.windowsazure.com/), as described in [View your access and usage reports](active-directory-view-access-usage-reports.md).
+El Informe de auditoría de Azure Active Directory ayuda a los clientes a identificar las acciones con privilegios que se produjeron en su Azure Active Directory. Las acciones con privilegios incluyen cambios de elevación (por ejemplo, creación de roles o restablecimientos de contraseña), cambios de configuraciones de directiva (por ejemplo, directivas de contraseña) o cambios de configuración de directorio (por ejemplo, cambios en la configuración de la federación de dominio). Los informes proporcionan el registro de auditoría para el nombre del evento, el actor que realizó la acción, el recurso de destino que se ve afectado por el cambio y la fecha y hora (en UTC). Los clientes pueden recuperar la lista de eventos de auditoría para su Azure Active Directory a través del [Portal de administración de Azure](https://manage.windowsazure.com/), como se describe en [Visualización de los informes de acceso y uso](active-directory-view-access-usage-reports.md).
 
-## Audit report retention
+## Retención de informes de auditoría
 
-Events in the Azure AD Audit report are retained for 180 days. For more information about retention on reports, see [Azure Active Directory Report Retention Policies](active-directory-reporting-retention.md).
+Los eventos del informe de auditoría de Azure AD se conservan durante 180 días. Para obtener más información acerca de la retención de los informes, consulte [Directivas de retención de informes de Azure Active Directory](active-directory-reporting-retention.md).
 
-For customers interested in storing their audit events for longer retention periods, the Reporting API can be used to regularly pull audit events into a separate data store. See [Getting Started with the Reporting API](active-directory-reporting-api-getting-started.md) for details.
+Para los clientes interesados en almacenar eventos de auditoría durante períodos de retención más largos, se puede utilizar la API de informes para extraer periódicamente los eventos de auditoría en un almacén de datos independiente. Consulte [Introducción a la API de informes](active-directory-reporting-api-getting-started.md) para obtener más información.
 
-## Properties included with each audit event
+## Propiedades que se incluyen con cada evento de auditoría
 
-| Property	| Description								|
+| Propiedad | Descripción |
 | ------	| ------								|
-| Date and Time	| The date and time that the audit event occured			|
-| Actor		| The user or service principal that performed the action		|
-| Action	| The action that was performed						|
-| Target	| The user or service principal that the action was performed on	|
+| Fecha y hora | La fecha y la hora en que se produjo el evento de auditoría |
+| Actor | El usuario o la entidad de servicio que realizó la acción |
+| Acción | La acción que se realizó |
+| Destino | El usuario o la entidad de servicio en que se realizó la acción |
 
-## List of Audit Report Events
+## Lista de eventos del informe de auditoría
 
 <!--- audit event descriptions should be in the past tense --->
 
-| Events 				| Event Description																				|
+| Eventos | Descripción del evento |
 | ------------------------------	| -------																					|
-| Add User				| Added a user to the directory.																		|
-| Delete User				| Deleted a user from the directory.																		|
-| Set license properties		| Set the license properties for a user in the directory.															|
-| Reset user password			| Reset the password for a user in the directory.																|
-| Change user password			| Changed the password for a user in the directory.																|
-| Change user license			| Changed the license assigned to a user in the directory.															|
-| Update user				| Updated a user in the directory.																		|
-| Add role member to Role		| Added a user to a directory role.																		|
-| Remove role member from Role		| Removed a user from a directory role.																	|
-| Set Company contact information	| Set company-level contact preferences. This includes email addresses for marketing, as well as technical notifications about Microsoft Online Services.			|
-| Add partner to company		| Added a partner to the directory.																		|
-| Remove Partner from company		| Removed a partner from the directory.																		|
-| Add service principal			| Added a service principal to the directory.																	|
-| Remove service principal		| Removed a service principal from the directory.																|
-| Add service principal credentials	| Added credentials to a service principal.																	|
-| Remove service principal credentials	| Removed credentials from a service principal.																	|
-| Add domain to company			| Added a domain to the directory.																		|
-| Remove domain from company		| Removed a domain from the directory.																		|
-| Update domain				| Updated a domain on the directory.																		|
-| Set domain authentication		| Changed the default domain setting for the company																|
-| Set federation settings on domain	| Updated the federation settings for a domain.																	|
-| Verify domain				| Verified a domain on the directory.																		|
-| Verify email verified domain		| Verified a domain on the directory using email verification.															|
-| Add delegation entry			| Added a delegation entry to the directory.																	|
-| Set delegation entry			| Update a delegation entry in the directory.																	|
-| Remove delegation entry		| Removed a delegation entry from the directory.																|
-| Set DirSyncEnabled flag on company	| Set the property that enables a directory for Azure AD Sync.															|
-| Set Password Policy			| Set length and character constraints for user passwords.															|
-| Set Company Information		| Updated the company-level information. See the [Get-MsolCompanyInformation](https://msdn.microsoft.com/library/azure/dn194126.aspx) PowerShell cmdlet for more details.	|
-| Set force change user password	| Set the property that forces a user to change their password on login.													|
+| Agregar usuario | Agregó un usuario al directorio. |
+| Eliminar usuario | Eliminó un usuario del directorio. |
+| Establecer propiedades de la licencia | Estableció las propiedades de la licencia para un usuario en el directorio. |
+| Restablecer contraseña de usuario | Restableció la contraseña de un usuario en el directorio. |
+| Cambiar la contraseña de usuario | Cambió la contraseña de un usuario en el directorio. |
+| Cambiar la licencia de usuario | Cambió la licencia asignada a un usuario en el directorio. |
+| Actualizar usuario | Actualizó un usuario en el directorio. |
+| Agregar miembro de rol a Rol | Agregó un usuario a un rol del directorio. |
+| Quitar miembro de rol de Rol | Quitó un usuario de un rol del directorio. |
+| Establecer la información de contacto de la compañía | Establecer preferencias de contacto a nivel de compañía. Incluye direcciones de correo electrónico para marketing, así como notificaciones técnicas sobre Microsoft Online Services. |
+| Agregar asociado a la compañía | Agregó un asociado al directorio. |
+| Quitar asociado de la compañía | Quitó un asociado del directorio. |
+| Agregar entidad de servicio | Agregó una entidad de servicio al directorio. |
+| Quitar entidad de servicio | Quitó una entidad de servicio del directorio. |
+| Agregar credenciales de la entidad de servicio | Agregó credenciales a una entidad de servicio. |
+| Quitar credenciales de la entidad de servicio | Quitó las credenciales de una entidad de servicio. |
+| Agregar dominio a la compañía | Agregó un dominio al directorio. |
+| Quitar dominio de la compañía | Quitó un dominio del directorio. |
+| Actualizar dominio | Actualizó un dominio en el directorio. |
+| Establecer la autenticación de dominio | Cambió la configuración de dominio predeterminada para la compañía. |
+| Establecer la configuración de la federación en el dominio | Actualizó la configuración de la federación para un dominio. |
+| Comprobar dominio | Comprobó un dominio en el directorio. |
+| Comprobar dominio verificado por correo electrónico | Comprobó un dominio en el directorio mediante la verificación por correo electrónico. |
+| Agregar entrada de delegación | Agregó una entrada de delegación al directorio. |
+| Establecer entrada de delegación | Actualizó una entrada de delegación en el directorio. |
+| Quitar entrada de delegación | Quitó una entrada de delegación del directorio. |
+| Establecer la marca DirSyncEnabled en la compañía | Estableció la propiedad que habilita un directorio para Sincronización de Azure AD. |
+| Establecer directiva de contraseñas | Estableció las restricciones de longitud y caracteres para las contraseñas de usuario. |
+| Establecer información sobre la compañía | Actualizó la información a nivel de la compañía. Consulte el cmdlet [Get-MsolCompanyInformation](https://msdn.microsoft.com/library/azure/dn194126.aspx) de PowerShell para obtener más información. |
+| Establecer el cambio forzado de la contraseña de usuario | Estableció la propiedad que fuerza a un usuario a cambiar su contraseña en el inicio de sesión. |
 
 <!---
 
@@ -82,23 +82,25 @@ Promote tenant to partner
 
 --->
 
-### User attributes included in the Update User audit event
+### Atributos de usuario que se incluyen en el evento de auditoría Actualizar usuario
 
-The "Update user" audit event includes additional information about what user attributes were updated. For each attribute, both the previous value and the new value is included.
+El evento de auditoría "Actualizar usuario" incluye información adicional sobre los atributos de usuario que se actualizaron. Para cada atributo, se incluye el valor anterior y el valor nuevo.
 
-| Attribute 				| Description																			|
+| Atributo | Descripción |
 | ---------------------------------	| ---------																			|
-| AccountEnabled			| The user is allowed to sign in.																|
-| AssignedLicense			| All licenses that have been assigned to the user.														|
-| AssignedPlan				| Service plans resulting from the licenses assigned to the user.												|
-| LicenseAssignmentDetail		| Details on licenses assigned to the user. For instance, if group-based licensing was involved, this would include the group that granted the license.		|
-| Mobile				| The user's mobile phone.																	|
-| OtherMail				| The user's alternate email address.																|
-| OtherMobile				| The user's alternate mobile phone.																|
-| StrongAuthenticationMethod		| A list of verification methods configured by the user for Multi-Factor Authentication, such as Voice Call, SMS, or Verification code from a mobile app.	|
-| StrongAuthenticationRequirement	| If Multi-Factor Authentication is enforced, enabled, or disabled for this user.										|
-| StrongAuthenticationUserDetails	| The user’s phone number, alternative phone number and email address used for Multi-Factor Authentication and password reset verification.			|
-| TelephoneNumber			| The user's telephone number.																	|
+| AccountEnabled | El usuario puede iniciar sesión. |
+| AssignedLicense | Todas las licencias que se han asignado al usuario. |
+| AssignedPlan | Planes de servicio que se derivan de las licencias asignadas al usuario. |
+| LicenseAssignmentDetail | Detalles sobre las licencias asignadas al usuario. Por ejemplo, si se incluyeran licencias basadas en un grupo, esto incluiría a todo el grupo que concedió la licencia. |
+| Móvil | Teléfono móvil del usuario. |
+| OtherMail | Dirección de correo electrónico alternativa del usuario. |
+| OtherMobile | Teléfono móvil alternativo del usuario. |
+| StrongAuthenticationMethod | Una lista de métodos de comprobación configurados por el usuario para Multi-Factor Authentication, como la llamada de voz, los SMS o el código de comprobación de una aplicación móvil. |
+| StrongAuthenticationRequirement | Si Multi-Factor Authentication se exige, habilita o deshabilita para este usuario. |
+| StrongAuthenticationUserDetails | Número de teléfono, número de teléfono alternativo y dirección de correo electrónico del usuario que se usan para Multi-Factor Authentication y para la comprobación de restablecimiento de contraseña. |
+| TelephoneNumber | Número de teléfono del usuario. |
 
-Audit records are a required control for many compliance regulations. For customers using the Azure Active Directory Audit Report to meet their compliance regulations, it is recommended that the customer submit a copy of this help topic with the copy of the customer’s exported audit report to help explain the report details. If the auditor would like to understand the compliance regulations that Azure currently meets, direct the auditor to the [Compliance page](http://azure.microsoft.com/support/trust-center/compliance/) of the Microsoft Azure Trust Center.
+Los registros de auditoría son un control necesario para muchas regulaciones de conformidad. Para que los clientes que usan el Informe de auditoría de Azure Active Directory cumplan las regulaciones de conformidad, se recomienda que el cliente envíe una copia de este tema de ayuda con la copia del informe de auditoría exportado del cliente para ayudar a explicar los detalles del informe. Si el auditor desea conocer las regulaciones de conformidad que cumple actualmente Azure, diríjalo a la [página Conformidad](http://azure.microsoft.com/support/trust-center/compliance/) del Centro de confianza de Microsoft Azure.
  
+
+<!---HONumber=August15_HO6-->

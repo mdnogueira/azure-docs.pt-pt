@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Configure a VPN Gateway in the Management Portal | Microsoft Azure"
-   description="This article walks you through configuring your virtual network VPN gateway and changing a VPN gateway routing type from static to dynamic or dynamic to static."
+   pageTitle="Configuración de una puerta de enlace de red virtual en el Portal de administración | Microsoft Azure"
+   description="Este artículo le guiará a través de la configuración de la puerta de enlace VPN de red virtual y el cambio de un tipo de enrutamiento de la puerta de enlace VPN de estático a dinámico o de dinámico a estático."
    services="vpn-gateway"
    documentationCenter="na"
    authors="cherylmc"
@@ -15,136 +15,138 @@
    ms.date="06/12/2015"
    ms.author="cherylmc" />
 
-# Configure a VPN gateway in the Management Portal
+# Configuración de una puerta de enlace de red virtual en el Portal de administración
 
-If you want to create a secure cross-premises connection between Azure and your on-premises location, you'll need to configure a VPN gateway. There are different types of gateways and the type of gateway you'll create depends both on your network design plan, and the on-premises VPN device you want to use. For example, some connectivity options, such as a point-to-site connection, require a dynamic routing gateway. If you want to configure your gateway to support both point-to-site (P2S) connections and a site-to-site (S2S) connection, you'll have to configure a dynamic routing gateway even though site-to-site can be configured with either gateway routing type. Additionally, you'll have to make sure the device you want to use for your site-to-site connection will support the gateway type that you want to create. See [About Gateways](http://go.microsoft.com/fwlink/p/?LinkID=615098).
+Si desea crear una conexión segura entre entornos Azure y la ubicación local, necesita configurar una puerta de enlace de red virtual. Hay diferentes tipos de puertas de enlace y el tipo de puerta de enlace que se va a crear depende tanto del plan de diseño de la red y el dispositivo VPN local que desee utilizar. Por ejemplo, algunas opciones de conectividad, como una conexión punto a sitio, requieren una puerta de enlace de enrutamiento dinámico. Si desea configurar la puerta de enlace para admitir conexiones punto a sitio (P2S) y una conexión de sitio a sitio (S2S), tendrá que configurar una puerta de enlace de enrutamiento dinámico, aunque se puede configurar el sitio a sitio con cualquier tipo de enrutamiento de puerta de enlace. Además, tendrá que asegurarse de que el dispositivo que desea utilizar para la conexión de sitio a sitio será compatible con el tipo de puerta de enlace que se va a crear. Consulte [Información acerca de las puertas de enlace de VPN](vpn-gateway-about-vpngateways.md).
 
-## Configuration overview
+## Información general sobre la configuración
 
-Before you configure your gateway, you'll first need to create your virtual network. For steps to create a virtual network for cross-premises connectivity, see [Configure a Virtual Network with Site-to-Site VPN](vpn-gateway-site-to-site-create.md), or [Configure a Virtual Network with Point-to-Site VPN](vpn-gateway-point-to-site-create.md). Then, use steps below to configure the VPN gateway and gather the information you'll need to configure your VPN device. 
+Antes de configurar la puerta de enlace, primero deberá crear la red virtual. Para ver los pasos para crear una red virtual para conectividad entre entornos, consulte [Configuración de una red virtual con una conexión VPN de sitio a sitio](vpn-gateway-site-to-site-create.md) o [Configuración de una red virtual con una conexión VPN de punto a sitio](vpn-gateway-point-to-site-create.md). A continuación, utilice los pasos siguientes para configurar la puerta de enlace de VPN y recopilar la información necesaria para configurar el dispositivo VPN.
 
-If you already have a VPN gateway and you want to change the routing type, see [How to change your VPN gateway type](#how-to-change-your-vpn-gateway-type).
+Si ya tiene una puerta de enlace de VPN y desea cambiar el tipo de enrutamiento, consulte [Cambio del tipo de puerta de enlace de VPN](#how-to-change-your-vpn-gateway-type).
 
-1. [Create a VPN gateway](#create-a-vpn-gateway)
+1. [Creación de una puerta de enlace de VPN](#create-a-vpn-gateway)
 
-1. [Gather information for your VPN device configuration](#gather-information-for-your-vpn-device-configuration)
+1. [Recopilación de información para la configuración del dispositivo VPN](#gather-information-for-your-vpn-device-configuration)
 
-1. [Configure your VPN device](#configure-your-vpn-device)
+1. [Configuración del dispositivo VPN](#configure-your-vpn-device)
 
-1. [Verify your local network ranges and VPN gateway IP address](#verify-your-local-network-ranges-and-vpn-gateway-ip-address)
+1. [Verificación de los intervalos de red local y la dirección IP de puerta de enlace de VPN](#verify-your-local-network-ranges-and-vpn-gateway-ip-address)
 
-## Create a VPN gateway
+## Creación de una puerta de enlace de VPN
 
-1. On the **Networks** page, verify that the status column for your virtual network is **Created**.
+1. En la página **Redes**, compruebe que la columna de estado de la red virtual sea **Creada**.
 
-1. In the **Name** column, click the name of your virtual network.
+1. En la columna **Nombre**, haga clic en el nombre de la red virtual.
 
-1. On the **Dashboard** page, notice that this VNet doesn't have a gateway configured yet. You'll see this status as you go through the steps to configure your gateway.
+1. En la página **Panel**, observe que esta red virtual aún no tiene configurada ninguna puerta de enlace. Verá que este estado cambia a medida que avance por los pasos para configurar la puerta de enlace.
 
-![Gateway Not Created](./media/vpn-gateway-configure-vpn-gateway-mp/IC717025.png)
-
-
-Next, at the bottom of the page, click **Create Gateway**. You can select either *Static Routing* or *Dynamic Routing*. The routing type you select depends on a number of factors. For example, what your VPN device will support and whether you need to support point-to-site connections. Check [About VPN Devices for Virtual Network Connectivity](http://go.microsoft.com/fwlink/p/?LinkId=615934) to verify the routing type that you need. Once the gateway has been created, you can't change between gateway types without deleting and re-creating the gateway. When the system prompts you to confirm that you want the gateway created, click **Yes**.
-
-![Gateway Type](./media/vpn-gateway-configure-vpn-gateway-mp/IC717026.png)
-
-When your gateway is creating, notice the gateway graphic on the page changes to yellow and says *Creating Gateway*. It may take up to 25 minutes for the gateway to create. You'll have to wait until the gateway is complete before you can move forward with other configuration settings.
-
-![Gateway Creating](./media/vpn-gateway-configure-vpn-gateway-mp/IC717027.png)
-
-When the gateway changes to *Connecting*, you can gather the information you'll need for your VPN device.
-
-![Gateway Connecting](./media/vpn-gateway-configure-vpn-gateway-mp/IC717028.png)
-
-## Gather information for your VPN device configuration
-
-After the gateway has been created, gather information for your VPN device configuration. This information is located on the **Dashboard** page for your virtual network:
-
-1. **Gateway IP address -** The IP address can be found on the **Dashboard** page. You won't be able to see it until after your gateway has finished creating.
-
-1. **Shared key -** Click **Manage Key** at the bottom of the screen. Click the icon next to the key in order to copy it to your clipboard, and then paste and save the key. Note that this button only works when there is a single S2S VPN tunnel. If you have multiple S2S VPN tunnels, please use the Get Virtual Network Gateway Shared Key API or PowerShell cmdlet.
-
-![Manage Key](./media/vpn-gateway-configure-vpn-gateway-mp/IC717029.png)
+![Puerta de enlace no creada](./media/vpn-gateway-configure-vpn-gateway-mp/IC717025.png)
 
 
-## Configure your VPN device
+A continuación, en la parte inferior de la página, haga clic en **Crear puerta de enlace**. Puede seleccionar *Enrutamiento estático* o *Enrutamiento dinámico*. El tipo de enrutamiento que seleccione depende de una serie de factores. Por ejemplo, lo que será compatible con el dispositivo VPN y si necesita admitir conexiones punto a sitio. Consulte [Acerca de los dispositivos VPN para la conectividad de redes virtuales](http://go.microsoft.com/fwlink/p/?LinkId=615934) para comprobar el tipo de enrutamiento que necesita. Una vez creada la puerta de enlace, no se puede cambiar entre los tipos de puerta de enlace sin eliminar y volver a crear la puerta de enlace. Cuando el sistema le pida confirmación de que desea crear la puerta de enlace, haga clic en **SÍ**.
 
-After completing the previous steps, you or your network administrator will need configure the VPN device in order to create the connection. See [About VPN Devices for Virtual Network Connectivity](http://go.microsoft.com/fwlink/p/?LinkID=615934) for more information about VPN devices.
+![Tipo de puerta de enlace](./media/vpn-gateway-configure-vpn-gateway-mp/IC717026.png)
 
-After the VPN device has been configured, you can view your updated connection information on the Dashboard page for your VNet.
+Una vez creada la puerta de enlace, verá que el gráfico de la puerta de enlace de la página cambia a amarillo e indica *Creando puerta de enlace*. La puerta de enlace puede tardar hasta 25 minutos en crearse. Tendrá que esperar hasta que la puerta de enlace se haya completado antes de poder avanzar con otras opciones de configuración.
 
-You can also run one of the following commands to test your connection:
+![Creación de una puerta de enlace](./media/vpn-gateway-configure-vpn-gateway-mp/IC717027.png)
 
-|                      | Cisco ASA             | Cisco ISR/ASR         | Juniper SSG/ISG | Juniper SRX/J                            |
+Cuando la puerta de enlace cambia a *Conectando*, puede recopilar la información que necesitará para el dispositivo VPN.
+
+![Conexión de una puerta de enlace](./media/vpn-gateway-configure-vpn-gateway-mp/IC717028.png)
+
+## Recopilación de información para la configuración del dispositivo VPN
+
+Una vez creada la puerta de enlace, recopile la información de la configuración del dispositivo VPN. Esta información se encuentra en la página **Panel** de la red virtual:
+
+1. **Dirección IP de puerta de enlace:** la dirección IP se encuentra en la página **Panel**. No podrá verla hasta después de que ha terminado de crear la puerta de enlace.
+
+1. **Clave compartida:** haga clic en el botón **Administrar claves**, en la parte inferior de la pantalla. Haga clic en el icono situado junto a la clave para copiarlo en el Portapapeles y, a continuación, pegar y guardar la clave. Tenga en cuenta que este botón solo funciona cuando hay un solo túnel VPN S2S. Si tiene varios túneles de VPN S2S, utilice la API Obtener clave compartida de puerta de enlace de red virtual o el cmdlet de PowerShell.
+
+![Administración de una clave](./media/vpn-gateway-configure-vpn-gateway-mp/IC717029.png)
+
+
+## Configurar el dispositivo VPN
+
+Después de completar los pasos anteriores, usted o su administrador de red se debe configurar el dispositivo VPN para crear la conexión. [Para obtener más información acerca de los dispositivos VPN, consulte Acerca de los dispositivos VPN para la conectividad de redes virtuales](http://go.microsoft.com/fwlink/p/?LinkID=615934).
+
+Una vez configurado el dispositivo VPN, puede ver la información de conexión actualizada en la página Panel para la red virtual.
+
+También puede ejecutar uno de los comandos siguientes para probar la conexión:
+
+| | Cisco ASA | Cisco ISR/ASR | Juniper SSG/ISG | Juniper SRX/J |
 |----------------------|-----------------------|-----------------------|-----------------|------------------------------------------|
-| **Check main mode SAs**  | show crypto isakmp sa | show crypto isakmp sa | get ike cookie  | show security ike security-association   |
-| **Check quick mode SAs** | show crypto ipsec sa  | show crypto ipsec sa  | get sa          | show security ipsec security-association |
+| **SA de comprobación de modo principal** | show crypto isakmp sa | show crypto isakmp sa | get ike cookie | show security ike security-association |
+| **SA de comprobación de modo rápido** | show crypto ipsec sa | show crypto ipsec sa | get sa | show security ipsec security-association |
 
 
-## Verify your local network ranges and VPN gateway IP address
+## Verificación de los intervalos de red local y la dirección IP de puerta de enlace de VPN
 
-### Verify your VPN gateway IP address
+### Verificación de la dirección IP de la puerta de enlace de VPN
 
-For gateway to connect properly, the IP address for your VPN device must be correctly configured for the Local Network that you specified for your cross-premises configuration. Typically, this is configured during the site-to-site configuration process. However, if you previously used this local network with a different device, or the IP address has changed for this local network, you'll want to edit the settings to specify the correct Gateway IP address.
+Para que la puerta de enlace se conecte correctamente, la dirección IP del dispositivo VPN debe configurarse correctamente para la red local que especificó para la configuración entre entornos. Normalmente, esto se configura durante el proceso de configuración de sitio a sitio. Sin embargo, si anteriormente usó esta red local con un dispositivo diferente o ha cambiado la dirección IP para esta red local, deberá modificar la configuración para especificar la dirección IP de la puerta de enlace correcta.
 
-1. To verify your gateway IP address, click **Networks** on the left portal pane and then select **Local Networks** at the top of the page. You'll see the VPN Gateway Address for each local network that you have created. To edit the IP address, select the VNet and click **Edit** at the bottom of the page.
+1. Para comprobar la dirección IP de la puerta de enlace, haga clic en **Redes** en el panel izquierdo del portal y seleccione **Redes locales** en la parte superior de la página. Verá la dirección de la puerta de enlace de VPN para cada red local que ha creado. Para modificar la dirección IP, seleccione la red virtual y haga clic en **Editar** en la parte inferior de la página.
 
-1. On the **Specify your local network details** page, edit the IP address, and then click the next arrow at the bottom of the page.
+1. En la página **Especificación de detalles de la red local** , modifique la dirección IP y, a continuación, haga clic en la flecha siguiente en la parte inferior de la página.
 
-1. On the **Specify the address space** page, click the checkmark on the lower right to save your settings.
+1. En la página **Especificación del espacio de direcciones**, haga clic en la marca de verificación de la parte inferior derecha para guardar la configuración.
 
-### Verify the address ranges for your local networks
+### Verificación de los intervalos de direcciones de sus redes locales
 
-For the correct traffic to flow through the gateway to your on-premises location, you'll need to verify that you have listed each IP address range that you want to include in your local network configuration. Depending on the network configuration of your on-premises location, this can be a somewhat large task because each range must be listed in your Azure **Local Networks** configuration. Traffic that is bound for an IP address that is contained within the ranges listed will then be sent through the virtual network VPN gateway. The IP address ranges that you list do not have to be private ranges, although you will want to verify that your on-premises configuration is able to receive the inbound traffic.
+Para que el tráfico correcto pase a través de la puerta de enlace a la ubicación local, deberá comprobar que ha enumerado cada intervalo de direcciones IP que desea incluir en la configuración de la red local. Según la configuración de red de su ubicación local, puede ser una tarea bastante pesada porque cada intervalo debe estar incluido en su configuración de **Redes locales** de Azure. A continuación, el tráfico vinculado a una dirección IP que está dentro de los intervalos especificados se enviará a través de la puerta de enlace de VPN de red virtual. Los intervalos de direcciones IP que indique no debe ser intervalos privados, aunque deberá comprobar que la configuración local puede recibir el tráfico entrante.
 
-To add or edit the ranges for a Local Network, follow the procedure below.
+Para agregar o editar los intervalos de una red local, siga este procedimiento.
 
-1. To edit the IP address ranges for a local network, click **Networks** on the left portal pane and then select **Local Networks** at the top of the page. In the portal, the easiest way to view the ranges that you've listed is on the **Edit** page. To see your ranges, select the VNet and click **Edit** at the bottom of the page.
+1. Para editar los intervalos de direcciones IP de una red local, haga clic en **Redes** en el panel izquierdo del portal y seleccione **Redes locales** en la parte superior de la página. En el portal, la manera más fácil de ver los intervalos que ha enumerado es en la página **Editar**. Para ver los intervalos, seleccione la red virtual y haga clic en **Editar** en la parte inferior de la página.
 
-1. On the **Specify your local network details** page, don't make any changes. Click the next arrow at the bottom of the page.
+1. No realice ningún cambio en la página **Especificación de detalles de la red local**. Haga clic en la flecha siguiente de la parte inferior de la página.
 
-1. On the **Specify the address space** page, make your network address space changes. Then click the checkmark to save your configuration.
+1. En la página **Especificación del espacio de direcciones**, realice los cambios del espacio de direcciones de red. A continuación, haga clic en la marca de verificación para guardar la configuración.
 
-## How to view gateway traffic
+## Visualización del tráfico de la puerta de enlace
 
-You can view your gateway and gateway traffic from your Virtual Network **Dashboard** page.
+Puede ver la puerta de enlace y el tráfico de la puerta de enlace desde la página **Panel** de la red virtual.
 
-On the **Dashboard** page you can view the following:
+En la página **Panel** puede ver lo siguiente:
 
-- The amount of data that is flowing through your gateway, both data in and data out.
+- La cantidad de datos que fluyen a través de la puerta de enlace, tanto de entrada como de salida.
 
-- The names of the DNS servers that are specified for your virtual network.
+- Los nombres de los servidores DNS especificados para la red virtual.
 
-- The connection between your gateway and your VPN device.
+- La conexión entre la puerta de enlace y el dispositivo VPN.
 
-- The shared key that is used to configure your gateway connection to your VPN device.
-
-
-## How to change your VPN gateway type
-
-Because some connectivity configurations are only available for certain gateway types, you may find that you need to change the gateway type of an existing VPN gateway. For example, you may want to add point-to-site connectivity to an already existing site-to-site connection that has a static gateway. Point-to-site requires a dynamic gateway, which means in order to configure it, you'll have to change your gateway type from static to dynamic.
-
-If you need to change a VPN gateway routing type, you'll delete the existing gateway, and then recreate it with the new routing type. You don't need to delete the entire virtual network in order to change the gateway routing type.
-
-Before changing your gateway type, be sure to verify that your VPN device will support the routing type that you want to use. To download new routing configuration samples and check VPN device requirements, see [About VPN Devices for Virtual Network Connectivity](http://go.microsoft.com/fwlink/p/?LinkID=615934).
-
->[AZURE.IMPORTANT] When you delete a virtual network VPN gateway, the VIP assigned to the gateway is released. When you recreate the gateway, a new VIP will be assigned to it.
-
-1. **Delete the existing VPN gateway.**
-
-	On the **Dashboard** page for your virtual network, navigate to the bottom of the page and click **Delete Gateway**. Wait for the notification that the gateway has been deleted. When you receive notification on the screen that your gateway has been deleted, you can then create a new gateway.
-
-1. **Create a new VPN gateway.**
-
-	Use the procedure at the top of the page to create a new gateway: [Create a VPN gateway](#create-a-vpn-gateway).
+- La clave compartida que se utiliza para configurar la conexión de la puerta de enlace para el dispositivo VPN.
 
 
-## Next steps
+## Cambio del tipo de puerta de enlace de VPN
 
-You can learn more about Virtual Network cross-premises connectivity in this article: [About Virtual Network Secure Cross-Premises Connectivity](http://go.microsoft.com/fwlink/p/?LinkID=532884).
+Puesto que algunas configuraciones de conectividad solo están disponibles para ciertos tipos de puerta de enlace, puede que necesite cambiar el tipo de puerta de enlace de una puerta de enlace VPN existente. Por ejemplo, puede desear agregar conectividad punto a sitio a una conexión de sitio a sitio ya existente que tiene una puerta de enlace estática. Punto a sitio requiere una puerta de enlace dinámica, lo que significa que para configurarla, tendrá que cambiar el tipo de puerta de enlace de estática a dinámica.
 
-You can add virtual machines to your virtual network. See [How to Create a Custom Virtual Machine](../virtual-machines/virtual-machines-create-custom.md).
+Si necesita cambiar un tipo de enrutamiento de puerta de enlace de VPN, deberá eliminar la puerta de enlace existente y, a continuación, volver a crearla con el nuevo tipo de enrutamiento. No es necesario eliminar toda la red virtual para cambiar el tipo de enrutamiento de la puerta de enlace.
 
-If you want to configure a point-to-site VPN connection, see [Configure a Point-to-Site VPN Connection](vpn-gateway-point-to-site-create.md).
+Antes de cambiar el tipo de puerta de enlace, asegúrese de comprobar que el dispositivo VPN será compatible con el tipo de enrutamiento que desea utilizar. Para descargar nuevos ejemplos de configuración de enrutamiento y comprobar los requisitos del dispositivo VPN, consulte [Acerca de los dispositivos VPN para la conectividad de redes virtuales](http://go.microsoft.com/fwlink/p/?LinkID=615934).
+
+>[AZURE.IMPORTANT]Cuando se elimina una puerta de enlace de VPN de red virtual, se libera la VIP asignada a la puerta de enlace. Al volver a crear la puerta de enlace, se la asignará una nueva VIP.
+
+1. **Elimine la puerta de enlace VPN existente.**
+
+	En la página **Panel** de la red virtual, desplácese a la parte inferior de la página y haga clic en **Eliminar puerta de enlace**. Espere la notificación de que se ha eliminado la puerta de enlace. Cuando reciba una notificación en la pantalla de que se ha eliminado la puerta de enlace, podrá crear una nueva puerta de enlace.
+
+1. **Cree una puerta de enlace de VPN.**
+
+	Utilice el procedimiento que aparece en la parte superior de la página para crear una nueva puerta de enlace: [Creación de una puerta de enlace de VPN](#create-a-vpn-gateway).
+
+
+## Pasos siguientes
+
+Puede obtener más información acerca de la conectividad de red virtual entre entornos en este artículo: [Sobre la conectividad segura entre entornos de redes virtuales](http://go.microsoft.com/fwlink/p/?LinkID=532884)
+
+Puede agregar máquinas virtuales a la red virtual. Consulte [Creación de una máquina virtual personalizada](../virtual-machines/virtual-machines-create-custom.md)
+
+Si desea configurar una conexión VPN de sitio a sitio, consulte [Configuración de una conexión VPN de punto a sitio](vpn-gateway-point-to-site-create.md)
 
  
+
+<!---HONumber=August15_HO6-->

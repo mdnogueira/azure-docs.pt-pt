@@ -1,37 +1,38 @@
-<properties 
-	pageTitle="Sign up for Azure as an organization" 
-	description="Learn how you can use a work or school account to leverage the existing user accounts, policies, settings, or on-premise server deployments you already have and improve efficiency between your organization's on-premises identity infrastructure and Azure AD." 
-	services="active-directory" 
-	documentationCenter="" 
-	authors="Justinha" 
-	manager="terrylan" 
-	editor="Lisatoft"/>
+<properties
+	pageTitle="Inicio de sesión en Azure como una organización"
+	description="Obtenga información acerca de cómo puede utilizar una cuenta profesional o educativa para aprovechar las cuentas de usuario, las directivas, las configuraciones o las implementaciones de servidor local que ya tiene y mejorar la eficacia entre la infraestructura de identidad local de su organización y Azure AD."
+	services="active-directory"
+	documentationCenter=""
+	authors="markvi"
+	manager="stevenpo"
+	editor=""/>
 
-<tags 
-	ms.service="active-directory" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="04/27/2015" 
-	ms.author="terrylan"/>
+<tags
+	ms.service="active-directory"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/30/2015"
+	ms.author="markvi"/>
 
 
-# Sign up for Azure as an organization
+# Inicio de sesión en Azure como una organización
 
-Until recently, you could only sign up for a new Microsoft Azure subscription using your Microsoft account (Windows Live ID). Azure now supports using either of the following two account methods to sign up:
+Hasta hace poco, solo era posible registrarse para obtener una suscripción a Microsoft Azure con su cuenta Microsoft (Windows Live ID). Azure ahora es compatible con cualquiera de los dos métodos de cuenta siguientes para registrarse:
 
-* **Microsoft accounts** (created by you for personal use) - Provide access to all consumer-oriented Microsoft products and cloud services, such as Outlook (Hotmail), Messenger, OneDrive, MSN, Xbox LIVE, or Office 365. Signing up for an Outlook.com mailbox automatically creates a Microsoft account. After a Microsoft account is created, it can be used to access consumer-related Microsoft cloud services or Azure. [Learn more](http://www.microsoft.com/account/default.aspx)
+* **Cuentas Microsoft** (creadas por usted para su uso personal): proporcionan acceso a todos los productos y servicios en la nube de Microsoft orientados al cliente, como Outlook (Hotmail), Messenger, OneDrive, MSN, Xbox LIVE u Office 365. El registro en un buzón de Outlook.com crea automáticamente una cuenta Microsoft con una dirección @Outlook.com. Después de crear una cuenta Microsoft, puede usarla para tener acceso a servicios de nube de Microsoft orientados al cliente o Azure. [Más información](http://www.microsoft.com/account/default.aspx)
 
-* **Work or school accounts** (issued by an admin for business/academic use) - Provide access to all small, medium, and enterprise business-level Microsoft cloud services, such as Azure, Microsoft Intune, or Office 365. When you sign up to one of these services as an organization, a cloud-based directory is automatically provisioned in Azure Active Directory to represent your organization. [Learn more](active-directory-administer.md) 
+* **Cuentas profesionales o educativas** (generadas por un administrador para uso empresarial o académico): proporcionan acceso a todos los servicios en la nube de Microsoft de nivel pequeño, mediano y empresarial, como Azure, Microsoft Intune u Office 365. Cuando se registre en uno de estos servicios como organización, se aprovisionará automáticamente un directorio basado en la nube en Azure Active Directory para representar a su organización. [Más información](active-directory-administer.md)
 
-	After this directory has been created, an admin can then create users and assign licenses to them based on which cloud service subscriptions they need access to, such as Azure. 
+	Después de crear este directorio, un administrador puede crear usuarios y asignarles licencias basándose en las suscripciones de servicio de nube a las que necesiten acceso, como Azure.
 
-Want to sign up for Azure as an organization? [**Sign up now**](http://go.microsoft.com/fwlink/?LinkId=269967) 
+¿Desea registrarse como organización en Azure? [**Regístrese ahora**](https://azure.microsoft.com/pricing/purchase-options/)
 
-**Additional Resources**
+**Recursos adicionales**
 
-* [Microsoft Azure blog](http://azure.microsoft.com/blog/) 
-* [What is Azure AD?](active-directory-whatis.md)
-* [Use your on-premises identity infrastructure in the cloud](active-directory-aadconnect.md)
- 
+* [Blog de Microsoft Azure](http://azure.microsoft.com/blog/)
+* [¿Qué es Azure AD?](active-directory-whatis.md)
+* [Uso de la infraestructura de identidad local en la nube](active-directory-aadconnect.md)
+
+<!---HONumber=August15_HO6-->
