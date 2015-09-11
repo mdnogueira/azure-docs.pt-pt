@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Actividades de transformación de datos | Factoría de datos de Azure" 
+	pageTitle="Actividades de transformación de datos | Microsoft Azure" 
 	description="Obtenga información sobre cómo puede usar el servicio de la Factoría de datos de Azure para transformar y analizar los datos." 
 	services="data-factory" 
 	documentationCenter="" 
@@ -22,7 +22,11 @@ Las actividades de transformación en la Factoría de datos de Azure transforman
 
 Actividad de transformación | Entorno de procesos 
 ----------------------- | --------------------
-[Hive](data-factory-hive-activity.md) | HDInsight [Hadoop] [Pig](data-factory-pig-activity.md) | HDInsight [Hadoop] [MapReduce](data-factory-map-reduce.md) | HDInsight [Hadoop] [Streaming de Hadoop](https://msdn.microsoft.com/library/mt185698.aspx) | HDInsight [Hadoop] [Puntuación de lote de aprendizaje automático](data-factory-create-predictive-pipelines.md) | MV de Azure 
+[Hive](data-factory-hive-activity.md) | HDInsight [Hadoop] 
+[Pig](data-factory-pig-activity.md) | HDInsight [Hadoop]  
+[MapReduce](data-factory-map-reduce.md) | HDInsight [Hadoop]  
+[Streaming de Hadoop](https://msdn.microsoft.com/library/mt185698.aspx) | HDInsight [Hadoop]
+[Puntuación de lote de aprendizaje automático](data-factory-create-predictive-pipelines.md) | MV de Azure 
 [Procedimiento almacenado](data-factory-stored-proc-activity.md) | SQL de Azure | 
 [DotNet](data-factory-use-custom-activities.md) | HDInsight [Hadoop] o Lote de Azure    
 
@@ -33,4 +37,4 @@ Deberá crear un servicio vinculado para el entorno de proceso y después usar e
 
 Vea el artículo [Servicios vinculados de procesos](data-factory-compute-linked-services.md) para obtener información sobre los servicios vinculados de proceso compatibles con la Factoría de datos.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->
