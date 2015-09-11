@@ -6,7 +6,7 @@
    authors="bandersmsft"
    manager="jwhit"
    editor="" />
-<tags
+<tags 
    ms.service="operational-insights"
    ms.devlang="na"
    ms.topic="article"
@@ -346,4 +346,4 @@ Puede especificar los marcadores de inicio y final que se usarán en la búsqued
 
 Observe que el resultado anterior contiene un mensaje de error que se ha incluido como prefijo y se ha anexado.
 
-<!-------HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

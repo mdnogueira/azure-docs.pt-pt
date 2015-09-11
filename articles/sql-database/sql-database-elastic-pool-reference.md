@@ -10,14 +10,14 @@
 <tags 
 	ms.service="sql-database"
 	ms.devlang="NA"
-	ms.date="07/14/2015" 
+	ms.date="08/13/2015" 
 	ms.author="sstein" 
 	ms.workload="data-management" 
 	ms.topic="article" 
 	ms.tgt_pltfrm="NA"/>
 
 
-# Referencia de grupos elásticos de bases de datos SQL (vista previa)
+# Referencia de grupos de bases de datos elásticas de Base de datos SQL
 
 Para desarrolladores de SaaS que tienen decenas, cientos o incluso miles de bases de datos, los grupos de bases de datos elásticas simplifican el proceso de creación, mantenimiento y administración del rendimiento y el coste de todo el grupo de bases de datos.
 
@@ -25,7 +25,7 @@ Esta referencia proporciona vínculos y detalles de artículos de grupos elásti
 
 ## Información general
 
-Un grupo de bases de datos elásticas es una colección de unidades de rendimiento de bases de datos (DTU) y almacenamiento (GB) que varias bases de datos comparten. Las bases de datos elásticas se pueden agregar y quitar del grupo en cualquier momento. Las bases de datos elásticas del grupo usan solo los recursos que necesitan, con lo que liberan recursos disponibles solo para las bases de datos activas que los necesiten. Para obtener ayuda para determinar si las bases de datos se beneficiarían de un grupo de bases de datos elásticas, consulte [Consideraciones de precio y rendimiento para un grupo de bases de datos elásticas](sql-database-elastic-pool-guidance.md).
+Un grupo de bases de datos elásticas es una colección de unidades de rendimiento de base de datos elástica (eDTU) y almacenamiento (GB) que varias bases de datos comparten. Las bases de datos elásticas se pueden agregar y quitar del grupo en cualquier momento. Las bases de datos elásticas del grupo usan solo los recursos que necesitan, con lo que liberan recursos disponibles solo para las bases de datos activas que los necesiten. Para obtener ayuda para determinar si las bases de datos se beneficiarían de un grupo de bases de datos elásticas, consulte [Consideraciones de precio y rendimiento para un grupo de bases de datos elásticas](sql-database-elastic-pool-guidance.md).
 
 
 
@@ -33,14 +33,23 @@ Un grupo de bases de datos elásticas es una colección de unidades de rendimien
 
 
 - Los grupos de bases de datos elásticas solo están disponibles en los servidores de Base de datos SQL V12 de Azure.   
-- La creación y administración de grupos de bases de datos elásticas se puede realizar con el [portal de Microsoft Azure](https://portal.azure.com), PowerShell y las API de REST del Administrador de recursos de Azure (ARM); no se admiten el [portal clásico](https://manage.windowsazure.com/) y los comandos de administración de servicio (RDFE). 
+- La creación y administración de grupos de bases de datos elásticas se pueden realizar con el [Portal de vista previa](https://portal.azure.com), PowerShell y una biblioteca cliente de .NET (contenedor para las API de REST) únicamente en el Administrador de recursos de Azure; no se admiten el [Portal](https://manage.windowsazure.com/) ni los comandos de administración de servicios. 
 
 
-## Restricciones de la vista previa actual
+## Consideraciones sobre la vista previa actual
 
-- El nivel de precios de un grupos de bases de datos elásticas en la versión preliminar actual es Standard.  
-- No se admite la importación de una base de datos directamente en un grupo. Puede importar a una base de datos independiente y, a continuación, mover la base de datos a un grupo. No se admite la exportación de una base de datos desde un grupo.
-- Cada grupo puede tener un máximo 100 bases de datos.
+
+- Cada grupo tiene un número máximo de bases de datos y eDTU de grupo:
+
+    | Nivel de servicio | Número máximo de bases de datos por grupo* | Número máximo de eDTU por grupo* |
+    | :-- | :-- | :-- |
+    | Básica | 200 | 1200 | 
+    | Estándar | 200 | 1200 |
+    | Premium | 50 | 1\.500 |
+
+    ****Se espera que los límites actuales para el número de bases de datos por grupo y el número de eDTU de grupo aumenten.***
+
+
 
 
 ## Lista de artículos
@@ -49,9 +58,11 @@ Los artículos siguientes le ayudarán a empezar a usar bases de datos y trabajo
 
 | Artículo | Descripción |
 | :-- | :-- |
-| [Grupos de bases de datos SQL elásticas](sql-database-elastic-pool.md) | Información general sobre los grupos elásticos |
-| [Creación y administración de un grupo de bases de datos SQL elásticas con el portal de Azure](sql-database-elastic-pool-portal.md) | Creación y administración de un grupo elástico mediante el portal de Azure |
-| [Creación y administración de un grupo de bases de datos SQL elásticas con PowerShell](sql-database-elastic-pool-powershell.md) | Creación y administración de un grupo elástico mediante cmdlets de PowerShell |
+| [Grupos de bases de datos SQL elásticas](sql-database-elastic-pool.md) | Información general sobre los grupos de bases de datos elásticas |
+| [Consideraciones sobre precios y rendimiento](sql-database-elastic-pool-guidance.md) | Evaluación de si el uso de un grupo de bases de datos elásticas es rentable |
+| [Creación y administración de un grupo de bases de datos SQL elásticas con el portal de Azure](sql-database-elastic-pool-portal.md) | Creación y administración de grupos de bases de datos elásticas mediante el Portal de Azure |
+| [Creación y administración de un grupo de bases de datos SQL elásticas con PowerShell](sql-database-elastic-pool-powershell.md) | Creación y administración de grupos de bases de datos elásticas mediante cmdlets de PowerShell |
+| [Creación y administración de una base de datos SQL con la biblioteca de Base de datos SQL de Azure para .NET](sql-database-elastic-pool-powershell.md) | Creación y administración de grupos de bases de datos elásticas mediante C# |
 | [Información general de los trabajos de bases de datos elásticas](sql-database-elastic-jobs-overview.md) | Información general acerca del servicio de trabajos elásticos, que permite ejecutar secuencias de comandos de T-SQL en todas las bases de datos elásticas de un grupo. |
 | [Instalación del componente de trabajo de la base de datos elástica](sql-database-elastic-jobs-service-installation.md) | Instalación del servicio de trabajo de base de datos elástica |
 | [Creación del usuario necesario para el servicio de trabajos elásticos](sql-database-elastic-jobs-add-logins-to-dbs.md) | Para ejecutar una secuencia de comandos de trabajo de la base de datos elástica, deberá agregar un usuario con los permisos adecuados para cada base de datos del grupo. |
@@ -60,10 +71,10 @@ Los artículos siguientes le ayudarán a empezar a usar bases de datos y trabajo
 
 
 ## Detalles del espacio de nombres y del extremo
-Un grupo elástico es un recurso ARM de tipo "ElasticPool" en la base de datos SQL de Microsoft Azure.
+Un grupo de bases de datos elásticas es un recurso del Administrador de recursos de Azure de tipo "ElasticPool" en la Base de datos SQL de Microsoft Azure.
 
 - **Espacio de nombres**: Microsoft.Sql/ElasticPool
-- **management-endpoint** para llamadas a la API de REST (Administrador de recursos de Azure): https://management.azure.com
+- **management-endpoint** para llamadas a la API de REST (Administrador de recursos): https://management.azure.com
 
 
 
@@ -72,9 +83,9 @@ Un grupo elástico es un recurso ARM de tipo "ElasticPool" en la base de datos S
 | Propiedad | Descripción |
 | :-- | :-- |
 | creationDate | Fecha en que se crea el grupo. |
-| databaseDtuMax | Número máximo de DTU que puede usar una base de datos del grupo. El número máximo de DTU de la base de datos no es una garantía de recursos. El número máximo de DTU se aplica a todas las bases de datos del grupo. |
-| databaseDtuMin | El número mínimo de DTU que puede usar una base de datos del grupo está garantizado. El número mínimo DTU de la base de datos se puede establecer en 0. El número mínimo de DTU se aplica a todas las bases de datos del grupo. Tenga en cuenta que el producto del número de bases de datos del grupo y el número mínimo de DTU de la base de datos no puede superar el número de DTU de la propia agrupación. |
-| Dtu | Número de DTU compartidos por todas las bases de datos del grupo. |
+| databaseDtuMax | Número máximo de eDTU que puede usar una base de datos única del grupo. El número máximo de eDTU de la base de datos no es un número garantizado de recursos. El número máximo de eDTU se aplica a todas las bases de datos del grupo. |
+| databaseDtuMin | Número mínimo de eDTU que se garantiza en una base de datos única del grupo. El número mínimo eDTU de la base de datos se puede establecer en 0. El número mínimo de eDTU se aplica a todas las bases de datos del grupo. Tenga en cuenta que el producto del número de bases de datos del grupo y el número mínimo de eDTU de la base de datos no puede superar el número de eDTU del propio grupo. |
+| Dtu | Número de eDTU que comparten todas las bases de datos del grupo. |
 | edition | Nivel de servicio del grupo. Todas las bases de datos del grupo tienen esta edición. |
 | elasticPoolId | GUID de la instancia del grupo. |
 | elasticPoolName | Nombre del grupo. El nombre es exclusivo en relación a su servidor principal. |
@@ -83,30 +94,38 @@ Un grupo elástico es un recurso ARM de tipo "ElasticPool" en la base de datos S
 | storageMB | Límite de almacenamiento en MB del grupo. Cada base de datos del grupo tiene el límite de almacenamiento de la versión Standard Edition (250 GB); sin embargo, el almacenamiento total usado por todas las bases de datos del grupo no puede superar este límite de grupo. |
 
 
-## Límites de DTU y de almacenamiento de grupos y bases de datos elásticas
+## Límites de almacenamiento y de eDTU para grupos de bases de datos elásticas y bases de datos elásticas
 
-El límite de almacenamiento del grupo se determina según la cantidad de DTU del grupo; cada DTU = 1 GB de almacenamiento. Por ejemplo, un grupo con 200 DTU tiene un límite de almacenamiento de 200 GB.
+El límite de almacenamiento del grupo se determina mediante la cantidad de eDTU del grupo.
 
-| . | Valor predeterminado | Valores válidos |
-| :-- | :-- | :-- |
-| Dtu | 100 | 100, 200, 400, 800, 1200 |
-| databaseDtuMax | 100 | 10, 20, 50 100 |
-| databaseDtuMin | 0 | 0, 10, 20, 50 |
-| storageMB | 100 GB* | 100 GB, 200 GB, 400 GB, 800 GB, 1200 GB |
+| . | Básica | Standard | Premium |
+| :-- | :-- | :-- | :-- |
+| dtu | **100**, 200, 400, 800, 1200 | **100**, 200, 400, 800, 1200 | **125**, 250, 500, 1000, 1500 |
+| databaseDtuMax | **5** | 10, 20, 50, **100** | **125**, 250, 500, 1000 |
+| databaseDtuMin | **0**, 5 | **0**, 10, 20, 50, 100 | **0**, 125, 250, 500, 1000 |
+| storageMB* | **10 000 MB**, 20 000 MB, 40 000 MB, 80 000 MB, 120 000 MB | **100 GB**, 200 GB, 400 GB, 800 GB, 1200 GB | **62.5 GB**, 125 GB, 250 GB, 500 GB, 750 GB |
+| almacenamiento por DTU | 100 MB | 1 GB | 0,5 GB |
+| número máximo de bases de datos por grupo | 200 | 200 | 50 |
 
-*Las unidades de API son MB y no GB.
+Los valores predeterminados están en **negrita**.
+
+**las unidades de API son MB y no GB.
+
+
+
+
 
 ## Límites de trabajadores y sesiones
 
-El número máximo de sesiones y trabajadores simultáneos que se admiten para todas las bases de datos del grupo elástico depende del valor de DTU del grupo:
+El número máximo de sesiones simultáneas y trabajos simultáneos que se admiten para todas las bases de datos de un grupo elástico depende del ajuste eDTU del grupo:
 
-| DTU | N.º máximo de trabajadores simultáneos | N.º máximo de sesiones simultáneas |
+| eDTU | N.º máximo de trabajadores simultáneos | N.º máximo de sesiones simultáneas |
 | :-- | :-- | :-- |
-| 100 | 200 | 2400 |
-| 200 | 400 | 4800 |
-| 400 | 800 | 9600 |
-| 800 | 1600 | 19 200 |
-| 1200 | 2400 | 28 800 |
+| 100 (Basic/Standard), 125 (Premium) | 200 | 2400 |
+| 200 (Basic/Standard), 250 (Premium) | 400 | 4800 |
+| 400 (Basic/Standard), 500 (Premium) | 800 | 9600 |
+| 800 (Basic/Standard), 1000 (Premium) | 1600 | 19 200 |
+| 1200 (Basic/Standard), 1500 (Premium) | 2400 | 28 800 |
 
 
 ## Limitaciones del Administrador de recursos de Azure
@@ -119,8 +138,8 @@ Los servidores de Base de datos SQL V12 de Azure se encuentran en grupos de recu
 
 ## Latencia de las operaciones de grupos elásticos
 
-- El cambio de DTU garantizadas por base de datos (databaseDtuMin) o del número máximo de DTU por base de datos (databaseDtuMax) suele completarse en 5 minutos o menos. 
-- El cambio de DTU o del límite de almacenamiento (storageMB) del grupo depende de la cantidad total de espacio que usen todas las bases de datos del grupo. Los cambios tienen un duración media de 90 minutos o menos por cada 100 GB. Por ejemplo, si el espacio total usado por todas las bases de datos del grupo es de 200 GB, la latencia esperada para el cambio de DTU/límite de almacenamiento es de 3 horas o menos. 
+- El cambio del número garantizado de eDTU por base de datos (databaseDtuMin) o del número máximo de eDTU por base de datos (databaseDtuMax) suele completarse en cinco minutos o menos. 
+- El cambio del límite de eDTU o de almacenamiento (storageMB) del grupo depende de la cantidad total de espacio que usen todas las bases de datos del grupo. Los cambios tienen un duración media de 90 minutos o menos por cada 100 GB. Por ejemplo, si el espacio total que usan todas las bases de datos del grupo es de 200 GB, la latencia esperada para el cambio del límite de eDTU o de almacenamiento es de tres horas o menos. 
 
 
 
@@ -158,13 +177,13 @@ Los grupos de bases de datos elásticos se facturan según la características s
 
 - Los grupos elásticos se facturan desde su creación, incluso si no contiene ninguna base de datos. 
 - Los grupos elásticos se facturan por horas. Se trata de la misma frecuencia de medición que la de los niveles de rendimiento de las bases de datos independientes. 
-- Si se cambia el tamaño de un grupo elástico a una nueva cantidad de DTU, el grupo no se factura según la nueva cantidad de DTU hasta que se complete la operación de cambio de tamaño. Esto sigue el mismo patrón que el cambio de nivel de rendimiento de las bases de datos independientes. 
+- Si se cambia el tamaño de un grupo elástico a una nueva cantidad de eDTU, el grupo no se factura según la nueva cantidad de eDTU hasta que la operación de cambio de tamaño se complete. Esto sigue el mismo patrón que el cambio de nivel de rendimiento de las bases de datos independientes. 
 
 
-- El precio de un grupo elástico se basa en el número de DTU del grupo y el número de bases de datos del grupo.
-- El precio se calcula de la manera siguiente: (número de DTU del grupo) x (precio unitario por DTU) + (número de bases de datos) x (precio unitario por base de datos).
+- El precio de un grupo elástico se basa en el número de eDTU del grupo y el número de bases de datos del grupo.
+- El precio se calcula de la manera siguiente: (número de eDTU del grupo) x (precio unitario por eDTU) + (número de bases de datos) x (precio unitario por base de datos).
 
-El precio unitario de DTU de un grupo elástico es mayor que el precio unitario de DTU para una base de datos independiente del mismo nivel de servicio. Para obtener información detallada, vea [Precios de bases de datos SQL](http://azure.microsoft.com/pricing/details/sql-database/).
+El precio unitario de eDTU de un grupo elástico es mayor que el precio unitario de eDTU para una base de datos independiente del mismo nivel de servicio. Para obtener información detallada, vea [Precios de bases de datos SQL](http://azure.microsoft.com/pricing/details/sql-database/).
 
 ## Errores de grupos de bases de datos elásticos
 
@@ -191,4 +210,4 @@ El precio unitario de DTU de un grupo elástico es mayor que el precio unitario 
 | 40891 | EX_USER | El número mínimo de DTU por base de datos (%d) no puede superar el número máximo de DTU por base de datos (%d). | Número mínimo de DTU por base de datos; número máximo de DTU por base de datos. | Se intentó establecer el número mínimo de DTU por base de datos con un valor superior al número máximo de DTU por base de datos. | Asegúrese de que el número mínimo de DTU por base de datos no supere el número máximo de DTU por base de datos. |
 | TBD | EX_USER | El tamaño de almacenamiento para una base de datos individual de un grupo elástico no puede superar el tamaño máximo permitido por el grupo elástico del nivel de servicio ' %.* ls'. | Nivel de servicio de grupo elástico. | El tamaño máximo de la base de datos supera el tamaño máximo permitido por el nivel de servicio del grupo elástico. | Establezca el tamaño máximo de la base de datos por debajo de los límites de tamaño máximo permitidos por el nivel de servicio del grupo elástico. |
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

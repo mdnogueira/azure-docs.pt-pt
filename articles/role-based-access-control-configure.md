@@ -3,8 +3,8 @@
 	description="Describe la manera en que funciona el control de acceso basado en roles y cómo configurarlo"
 	services=""
 	documentationCenter=""
-	authors="Justinha"
-	manager="terrylan"
+	authors="IHenkel"
+	manager="stevenpo"
 	editor=""/>
 
 <tags
@@ -13,8 +13,8 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="Ibiza"
 	ms.workload="infrastructure-services"
-	ms.date="06/29/2015"
-	ms.author="justinha"/>
+	ms.date="08/14/2015"
+	ms.author="inhenk"/>
 
 # Control de acceso basado en roles en el portal de Microsoft Azure
 
@@ -55,7 +55,7 @@ El acceso no tiene por qué concederse a toda la suscripción. Los roles tambié
 
 El administrador y los coadministradores de suscripciones seguirán teniendo acceso total a los portales de Azure y a las API de administración. En el modelo RBAC, se les asigna el rol de propietario en el nivel de suscripción. Sin embargo, el nuevo modelo RBAC solo es compatible con el Portal de Azure y las API del Administrador de recursos de Azure. Los usuarios y los servicios a los que se les asignan roles RBAC no pueden acceder al Portal de administración de Azure ni a las API de administración de servicios. Los usuarios agregados al rol de propietario de una suscripción en el Portal de Azure no se convierten en coadministradores de la suscripción en el Portal de Azure completo.
 
-Si desea conceder a un usuario acceso a un recurso de Azure que todavía no está disponible para su administración a través del Portal de Azure, agréguelo a los coadministradores de suscripción mediante el Portal de administración de Azure. El Bus de servicio y los Servicios en la nube son ejemplos de recursos que actualmente no se pueden administrar mediante RBAC.
+Si desea conceder a un usuario acceso a un recurso de Azure que todavía no está disponible para su administración a través del Portal de Azure, agréguelo a los coadministradores de suscripción mediante el Portal de administración de Azure. El Bus de servicio y StorSimple son ejemplos de recursos que actualmente no se pueden administrar mediante RBAC.
 
 ## Autorización para administración frente a operaciones de datos
 
@@ -84,7 +84,7 @@ En primer lugar, vamos a agregar el acceso de lectura para todos los recursos de
 
 ![][3]
 
-Haga clic en el *nombre de su suscripción* ** > Lector > Agregar**. En la lista de usuarios y grupos, seleccione o escriba el nombre del grupo de Active Directory.
+Haga clic en el *nombre de su suscripción* \*\* > Lector > Agregar\*\*. En la lista de usuarios y grupos, seleccione o escriba el nombre del grupo de Active Directory.
 
 ![][4]
 
@@ -1293,4 +1293,4 @@ Los recursos siguientes le servirán de ayuda para el control de acceso basado e
 [9]: ./media/role-based-access-control-configure/RBACInviteExtUser_NEW.png
 [10]: ./media/role-based-access-control-configure/RBACDirConfigTab.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

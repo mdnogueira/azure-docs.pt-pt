@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration" 
-   ms.date="06/30/2015"
+   ms.date="08/19/2015"
    ms.author="rajram"/>
    
 # Conector de blobs de almacenamiento de Azure
@@ -36,9 +36,9 @@ None | <ul><li>Obtener blob: para obtener un blob específico del contenedor</li
 Un conector puede crearse dentro de una aplicación lógica o directamente desde Azure Marketplace. Para crear un conector desde Marketplace:
 
 1. En el panel de inicio de Azure, seleccione **Marketplace**.
-2. Seleccione **Aplicaciones de API** y busque "Blob": <br/>![Selección del conector del blobs de almacenamiento de Azure][2]
+2. Busque “Blob”: ![Selección del conector del blobs de almacenamiento de Azure][2]
 
-3. Haga clic en **Crear** para crear el conector.
+3. Selecciónelo y elija **Crear**.
 4. Escriba el nombre, el plan del Servicio de aplicaciones y otras propiedades.
 5. Escriba la siguiente configuración del paquete:
 
@@ -54,21 +54,13 @@ Clave de acceso | No | Escriba una clave de acceso válida a la cuenta de almace
 ## Uso del conector de blobs de almacenamiento de Azure en la aplicación lógica
 Una vez que ha creado el conector de Blob de almacenamiento de Azure, puede agregarlo al flujo de trabajo.
 
-1. Cree una nueva aplicación de lógica: Nuevo -> Web y Móvil -> Aplicación lógica. Establezca las propiedades de la aplicación lógica:
+1. Cree una nueva aplicación de lógica: Nuevo -> Web y Móvil -> Aplicación lógica. Establezca las propiedades de la aplicación lógica: ![Creación de la aplicación lógica][4]
 
-	![Creación de la aplicación lógica][4]
+2. Haga clic en **Desencadenadores y acciones**. Se abre el diseñador del flujo de trabajo: ![Diseñador de flujo vacío de la aplicación lógica][5]
 
-2. Haga clic en **Desencadenadores y acciones**. Se abre el diseñador del flujo de trabajo:
+3. En el panel derecho, seleccione el conector de Blob de almacenamiento de Azure. El conector muestra las acciones disponibles: ![Lista de acciones de blobs de almacenamiento de Azure][10]
 
-	![Diseñador de flujo vacío de la aplicación lógica][5]
-
-3. En el panel derecho, seleccione el conector de Blob de almacenamiento de Azure. El conector muestra las acciones disponibles:
-
-	![Lista de acciones de blobs de almacenamiento de Azure][10]
-
-4. En este escenario, vamos a usar la acción **Cargar blob**:
-
-	![Entradas de acción Cargar blob][11]
+4. En este escenario, vamos a usar la acción **Cargar blob**: ![Entradas de acción Cargar blob][11]
 
 5. Escriba los valores de entrada y seleccione la marca de verificación para completar la configuración:
 
@@ -93,7 +85,7 @@ Puede establecerlo en cualquier valor que desee. La expresión toma el resultado
 ## Aplicaciones adicionales del conector
 Una vez creado el conector, puede agregarlo a un flujo de trabajo empresarial mediante una aplicación lógica. Consulte [¿Qué son las aplicaciones lógicas?](app-service-logic-what-are-logic-apps.md)
 
-Cree las aplicaciones de API mediante las API de REST. Consulte [Referencia sobre conectores y aplicaciones de API](http://go.microsoft.com/fwlink/p/?LinkId=529766).
+Consulte la referencia de API de REST de Swagger en [Referencia de conectores y aplicaciones de API](http://go.microsoft.com/fwlink/p/?LinkId=529766).
 
 También puede consultar las estadísticas de rendimiento y la seguridad de control para el conector. Consulte [Administración y supervisión de las aplicaciones de API y los conectores integrados](app-service-logic-monitor-your-connectors.md).
 
@@ -110,4 +102,4 @@ También puede consultar las estadísticas de rendimiento y la seguridad de cont
 [11]: ./media/app-service-logic-connector-azurestorageblob/BasicInputsUploadBlob.PNG
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

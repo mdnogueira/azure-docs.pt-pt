@@ -1,11 +1,12 @@
 <properties 
-	pageTitle="Introducción a Apache Spark en HDInsight | Azure" 
+	pageTitle="Información general de Apache Spark en HDInsight | Microsoft Azure" 
 	description="Introducción a Apache Spark en HDInsight y escenarios en los que usar Spark en HDInsight en sus aplicaciones." 
 	services="hdinsight" 
 	documentationCenter="" 
 	authors="nitinme" 
 	manager="paulettm" 
-	editor="cgronlun"/>
+	editor="cgronlun"
+	tags="azure-portal"/>
 
 <tags 
 	ms.service="hdinsight" 
@@ -99,4 +100,4 @@ Spark en HDInsight también proporciona un[controlador ODBC](http://go.microsoft
 
 [hdinsight-storage]: ../hdinsight-use-blob-storage/
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

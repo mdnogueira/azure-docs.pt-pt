@@ -12,15 +12,13 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="04/22/2015"
+   ms.date="08/17/2015"
    ms.author="telmos" />
 
 # Descripción general de una IP reservada
 Las direcciones IP en Azure se dividen en dos categorías: dinámicas y reservadas. Las direcciones IP públicas administradas por Azure son dinámicas de forma predeterminada. Esto significa que la dirección IP usada para un determinado servicio en la nube (VIP) o para tener acceso a una máquina virtual o instancia de rol directamente (ILPIP) puede cambiar de vez en cuando, cuando los recursos se cierran o desasignan.
 
 Para impedir que cambien las direcciones IP, puede reservar una dirección IP. La IP reservadas únicamente puede usarse como una VIP, lo que garantiza que la dirección IP para el servicio en la nube sea la misma incluso cuando se cierran o desasignan recursos. Además, se puede convertir direcciones IP dinámicas existentes utilizadas como una VIP en una IP reservada.
-
->[AZURE.WARNING]Solo se puede asignar una IP reservada a una VIP.
 
 ## ¿Cuándo se necesita una IP reservada?
 - **Para asegurarse de que la dirección IP está reservada en su suscripción**. Si desea reservar una dirección IP que no se libera de su suscripción bajo ninguna circunstancia, debe usar una dirección IP pública reservada.  
@@ -34,8 +32,6 @@ Para impedir que cambien las direcciones IP, puede reservar una dirección IP. L
   - En este momento, todas las suscripciones de Azure tienen autorización para usar 20 direcciones IP reservadas. Sin embargo, puede solicitar direcciones IP reservadas adicionales. Consulte la página [Límites y restricciones de suscripción](../azure-subscription-service-limits/) para obtener más información.
 1. ¿Hay un cargo por las IP reservadas? 
   - Para obtener información sobre los precios, consulte [Detalles de precios de las direcciones IP reservadas](http://go.microsoft.com/fwlink/?LinkID=398482).
-1. ¿Cuántas direcciones IP reservadas puedo asignar a un servicio en la nube? 
-  - Solo se permite una dirección IP por cada extremo en un servicio en la nube, independientemente de si esa dirección IP está reservada o no. Al reservar una dirección IP no permite agregar direcciones IP adicionales a un servicio en la nube.
 1. ¿Cómo se reserva una dirección IP? 
   - Puede usar PowerShell o la [API de REST de administración de Azure](https://msdn.microsoft.com/library/azure/dn722420.aspx) para solicitar una IP reservada de una región determinada. Azure reservará una dirección IP de dicha región y la correlacionará con su suscripción. A continuación, puede utilizar la IP reservada en dicha región. No se puede reservar una dirección IP mediante el Portal de administración.
 1. ¿Puedo usarla con redes virtuales basadas en grupos de afinidad? 
@@ -117,10 +113,10 @@ También puede asociar una IP reservada a un servicio en la nube mediante un arc
 
 ## Pasos siguientes
 
-[IP privada reservada](../virtual-networks-reserved-private-ip)
+- Obtenga más información acerca de las [direcciones IP privadas reservadas](../virtual-networks-reserved-private-ip).
 
-[IP pública a nivel de instancia (ILIP)](../virtual-networks-instance-level-public-ip)
+- Obtenga más información acerca de las [direcciones IP públicas de nivel de instancia (ILPIP)](../virtual-networks-instance-level-public-ip).
 
-[API de REST de IP reservada](https://msdn.microsoft.com/library/azure/dn722420.aspx)
+- Consulte las [API de REST de IP reservada](https://msdn.microsoft.com/library/azure/dn722420.aspx).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->
