@@ -1,18 +1,18 @@
 <properties 
-   pageTitle="Componentes y estado de hardware StorSimple"
+   pageTitle="Componentes de hardware de StorSimple y su estado | Microsoft Azure"
    description="Obtenga información sobre cómo supervisar los componentes de hardware del dispositivo StorSimple a través del servicio Administrador de StorSimple."
    services="storsimple"
    documentationCenter=""
    authors="alkohli"
    manager="carolz"
-   editor="tysonn" />
+   editor="" />
 <tags 
    ms.service="storsimple"
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="07/31/2015"
+   ms.date="08/14/2015"
    ms.author="alkohli" />
 
 # Componentes y estado de hardware StorSimple
@@ -45,21 +45,19 @@ Un dispositivo 8600 tiene componentes adicionales que se corresponden con el rev
 Realice los pasos siguientes para ver el estado de hardware de un componente del dispositivo:
 
 1. Vaya a **Dispositivos** y seleccione un dispositivo de StorSimple concreto. Haga clic en él para ir al menú de nivel de dispositivo y, elija la pestaña **Mantenimiento**. 
-2. Busque la sección **Estado de hardware** y elija entre los componentes disponibles (como se describió anteriormente). Simplemente haga clic en una flecha situada antes de la etiqueta del componente para expandir la lista y ver el estado de los distintos componentes del dispositivo. Consulte la [lista detallada de componentes detallados del revestimiento principal](Component-list-for-primary-enclosure) y la [lista detallada de componentes del revestimiento de EBOD](Component-list-for-EBOD-enclosure).
+2. Busque la sección **Estado de hardware** y elija entre los componentes disponibles (como se describió anteriormente). Simplemente haga clic en una flecha situada antes de la etiqueta del componente para expandir la lista y ver el estado de los distintos componentes del dispositivo. Consulte la [lista detallada de componentes del revestimiento principal](#component-list-for-primary-enclosure-of-storsimple-device) y la [lista detallada de componentes del revestimiento de EBOD](#component-list-for-ebod-enclosure-of-storsimple-device).
 2. Use el siguiente esquema de codificación de color para interpretar el estado de los componentes:
 	-  **Marca de verificación verde**: denota un componente **Correcto** u **OK**.
 	-  **Amarillo**: denota un componente en estado **Advertencia**.
 	-  **Signo de exclamación rojo**: denota un componente que tiene un estado de **Error** o **Necesita atención**.
 	-  **Blanco con texto negro**: denota un componente que no está presente.
 
-3. Si se encuentra un componente que no está en estado **Correcto**, póngase en contacto con el soporte técnico de Microsoft. Si las alertas están habilitadas en el dispositivo, recibirá una alerta por correo electrónico. Si necesita reemplazar un componente de hardware con errores, consulte la [Guía de reemplazo de componentes de hardware](https://msdn.microsoft.com/library/azure/dn757736.aspx).
+3. Si se encuentra un componente que no está en estado **Correcto**, póngase en contacto con el soporte técnico de Microsoft. Si las alertas están habilitadas en el dispositivo, recibirá una alerta por correo electrónico. Si necesita reemplazar un componente de hardware con errores, consulte la [Reemplazo de los componentes de hardware de StorSimple](storsimple-hardware-component-replacement.md).
 
 
-## Lista de componentes del dispositivo StorSimple
+## Lista de componentes de la caja principal del dispositivo StorSimple
 
-En la tabla siguiente se describen los componentes físicos y lógicos que contiene el dispositivo StorSimple local. El dispositivo tiene dos revestimientos, el principal y el de EBOD. Las listas de los dos revestimientos están tabuladas por separado.
-
-### Lista de componentes del revestimiento principal
+En la tabla siguiente se describen los componentes físicos y lógicos que contiene la caja principal del dispositivo StorSimple local.
 
 |Componente|Módulo|Escriba|Ubicación|¿Unidad reemplazable en campo (FRU)?|Descripción|
 |---|---|---|---|---|---|
@@ -99,7 +97,9 @@ En la tabla siguiente se describen los componentes físicos y lógicos que conti
 |Ethernet|E/S|Física|Controller|No|Indica el estado de cada una de las interfaces de red, es decir, la administración y los puertos de datos proporcionados en el controlador.|
 |NVRAM|E/S|Física|Controller|No|Indica el estado de la NVRAM, una memoria de acceso aleatorio no volátil respaldada por la batería que sirve para conservar la información crítica para la aplicación en caso de error de alimentación.|
 
-### Lista de componentes del revestimiento de EBOD
+## Lista de componentes de la caja EBOD del dispositivo StorSimple
+
+En la tabla siguiente se describen los componentes físicos y lógicos que contiene la caja EBOD del dispositivo StorSimple local.
 
 |Componente|Módulo|Escriba|Ubicación|¿FRU?|Descripción|
 |---|---|---|---|---|---|
@@ -124,11 +124,11 @@ En la tabla siguiente se describen los componentes físicos y lógicos que conti
 |Diagnóstico de la electrónica del revestimiento|E/S|Física|Controller|No|Indica el estado de los subsistemas de diagnóstico que proporciona el controlador.|
 |Conexión al controlador del dispositivo|E/S|Física|Controller|No|Indica el estado de la conexión entre el módulo de E/S de EBOD y el controlador del dispositivo.|
 
-## Paso siguiente
-Si necesita solucionar problemas de un componente del dispositivo que tiene un estado degradado o con error, consulte [Solución de problemas con indicadores de supervisión](storsimple-monitoring-indicators).
+## Pasos siguientes
+Si necesita solucionar problemas de un componente del dispositivo que tiene un estado degradado o con error, consulte [Indicadores de supervisión de StorSimple](storsimple-monitoring-indicators.md).
 
-Si necesita reemplazar un componente de hardware con errores, consulte la [Guía de reemplazo de componentes de hardware](https://msdn.microsoft.com/library/azure/dn757736.aspx).
+Para reemplazar un componente de hardware con errores, consulte la [Reemplazo de los componentes de hardware de StorSimple](storsimple-hardware-component-replacement.md).
 
-Si sigue teniendo problemas con el dispositivo, [póngase en contacto con el soporte técnico de Microsoft](storsimple-contact-microsoft-support.md).
+Si sigue teniendo problemas con el dispositivo, [póngase en contacto con el servicio de soporte técnico de Microsoft](storsimple-contact-microsoft-support.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

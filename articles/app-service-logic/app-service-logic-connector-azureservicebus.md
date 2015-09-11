@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="06/29/2015"
+   ms.date="08/19/2015"
    ms.author="andalmia"/>
 
 
@@ -36,22 +36,19 @@ Mensaje disponible | Enviar mensaje
 Un conector puede crearse dentro de una aplicación lógica o directamente desde Azure Marketplace. Para crear un conector desde Marketplace:
 
 1. En el panel de inicio de Azure, seleccione **Marketplace**.
-2. Seleccione **Aplicaciones de API** y busque "Conector de Bus de servicio de Azure".
+2. Busque "Conector del Bus de servicio de Azure", selecciónelo y seleccione **Crear**.
 3. Escriba el nombre, el plan del Servicio de aplicaciones y otras propiedades: 
-<br/> 
 ![][1]
 
 4. Escriba la siguiente configuración del paquete:
 
 	Nombre | Descripción
 --- | ---
-Cadena de conexión | La cadena de conexión para Bus de servicio de Azure. Por ejemplo, escriba: *Endpoint=sb://[namespace].servicebus.windows.net;SharedAccessKeyName=[name];SharedAccessKey=[key]*.
+Cadena de conexión | La cadena de conexión para Bus de servicio de Azure. Por ejemplo, escriba: *Endpoint=sb://[espaciodenombres].servicebus.windows.net;SharedAccessKeyName=[nombre];SharedAccessKey=[key]*.
 Nombre de entidad | Escriba el nombre de la cola o del tema.
 Subscription Name | Escriba el nombre de la suscripción desde la que se van a recibir los mensajes.
 
 5. Haga clic en **Crear**.
-
-Una vez creado el conector, puede agregarlo a una aplicación lógica en el mismo grupo de recursos.
 
 ## Uso del conector de Bus de servicio en la aplicación lógica
 Una vez creado el conector, ya puede usar el conector de Bus de servicio de Azure como desencadenador o acción para la aplicación lógica. Para ello, siga estos pasos:
@@ -85,12 +82,12 @@ También puede usar la acción “Enviar mensaje” del Bus de servicio de Azure
 ## Aplicaciones adicionales del conector
 Una vez creado el conector, puede agregarlo a un flujo de trabajo empresarial mediante una aplicación lógica. Consulte [¿Qué son las aplicaciones lógicas?](app-service-logic-what-are-logic-apps.md)
 
-Cree las aplicaciones de API mediante las API de REST. Consulte [Referencia sobre conectores y aplicaciones de API](http://go.microsoft.com/fwlink/p/?LinkId=529766).
+Consulte la referencia de API de REST de Swagger en [Referencia de conectores y aplicaciones de API](http://go.microsoft.com/fwlink/p/?LinkId=529766).
 
 También puede consultar las estadísticas de rendimiento y la seguridad de control para el conector. Consulte [Administración y supervisión de las aplicaciones de API y los conectores integrados](app-service-logic-monitor-your-connectors.md).
 
 
-	<!--Image references-->
+<!--Image references-->
 [1]: ./media/app-service-logic-connector-azureservicebus/img1.PNG
 [2]: ./media/app-service-logic-connector-azureservicebus/img2.PNG
 [3]: ./media/app-service-logic-connector-azureservicebus/img3.png
@@ -100,4 +97,4 @@ También puede consultar las estadísticas de rendimiento y la seguridad de cont
 [7]: ./media/app-service-logic-connector-azureservicebus/img7.PNG
 [8]: ./media/app-service-logic-connector-azureservicebus/img8.PNG
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->
