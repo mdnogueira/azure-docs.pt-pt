@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/30/2015"
+	ms.date="08/06/2015"
 	ms.author="tamram;selcint"/>
 
 
@@ -21,9 +21,9 @@
 
 ## Información general
 
-Bienvenido a **Almacenamiento premium de Azure para discos** para tener unas máquinas virtuales más rápidas.
+Bienvenido a **Discos de almacenamiento premium de Azure** para tener unas máquinas virtuales más rápidas.
 
-Con la introducción del nuevo Almacenamiento premium, Microsoft Azure ahora ofrece dos tipos de almacenamiento duradero: **Almacenamiento premium** y **Almacenamiento estándar**. Almacenamiento premium almacena datos en unidades de estado sólido (SSD) de última tecnología, mientras que el Almacenamiento estándar almacena los datos en unidades de disco duro (HDD).
+Con la introducción del Almacenamiento premium, Microsoft Azure ahora ofrece dos tipos de almacenamiento duradero: **Almacenamiento premium** y **Almacenamiento estándar**. Almacenamiento premium almacena datos en unidades de estado sólido (SSD) de última tecnología, mientras que el Almacenamiento estándar almacena los datos en unidades de disco duro (HDD).
 
 Almacenamiento premium ofrece soporte de disco de alto rendimiento y latencia baja para cargas de trabajo intensivas de E/S que se ejecutan en máquinas virtuales de Azure. Puede adjuntar varios discos de Almacenamiento premium a una máquina virtual (VM). Con Almacenamiento premium, las aplicaciones pueden tener hasta 32 TB de almacenamiento por máquina virtual y logran 64.000 E/S por segundo (operaciones de entrada/salida por segundo) por máquina virtual con latencias extremadamente bajas para operaciones de lectura.
 
@@ -39,7 +39,7 @@ La siguiente es una lista de las cosas importantes que deben tenerse en cuenta a
 
 - Almacenamiento premium está disponible actualmente en el [Portal de vista previa de Microsoft Azure](https://portal.azure.com/), y accesible a través de las siguientes bibliotecas de SDK: [API de REST de almacenamiento](http://msdn.microsoft.com//library/azure/dd179355.aspx) versión 2014-02-14 o posterior; [API de REST de administración del servicio](http://msdn.microsoft.com/library/azure/ee460799.aspx) versión 2014-10-01 o posterior; y [Azure PowerShell](../install-configure-powershell.md) versión 0.8.10 o posterior.
 
-- Almacenamiento premium está disponible actualmente en las siguientes regiones: Oeste de EE. UU., Este de EE. UU. - 2, Europa occidental, Este de China, Sudeste asiático, Oeste de Japón y Este de Australia.
+- Para obtener una lista de regiones que admiten actualmente almacenamiento Premium, consulte [Servicios de Azure por región](http://azure.microsoft.com/regions/#services).
 
 - Almacenamiento premium admite solo blobs en páginas de Azure, que se usan para contener discos persistentes para máquinas virtuales de Azure (VM). Para obtener información acerca de los blobs en páginas de Azure, consulte [Introducción a los blobs en bloques y a los blobs en páginas](http://msdn.microsoft.com/library/azure/ee691964.aspx). Almacenamiento premium no admite Blobs en bloque de Azure, archivos de Azure, tablas de Azure ni colas de Azure.
 
@@ -51,7 +51,7 @@ La siguiente es una lista de las cosas importantes que deben tenerse en cuenta a
 
 - Una cuenta de almacenamiento premium no se puede asignar a un nombre de dominio personalizado.
 
-- El análisis de almacenamiento no se admite actualmente para el Almacenamiento premium. Para analizar las métricas de rendimiento de máquinas virtuales con discos en cuentas de Almacenamiento premium, utilice las herramientas en función del sistema operativo, tales como [Monitor de rendimiento de Windows](https://technet.microsoft.com/library/cc749249.aspx) para máquinas virtuales Windows e [IOSTAT](http://linux.die.net/man/1/iostat) para máquinas virtuales Linux.
+- El análisis de almacenamiento no se admite actualmente para el Almacenamiento premium. Para analizar las métricas de rendimiento de máquinas virtuales con discos en cuentas de Almacenamiento premium, utilice las herramientas en función del sistema operativo, tales como [Monitor de rendimiento de Windows](https://technet.microsoft.com/library/cc749249.aspx) para máquinas virtuales Windows e [IOSTAT](http://linux.die.net/man/1/iostat) para máquinas virtuales Linux. También puede habilitar los diagnósticos de máquinas virtuales de Azure en el Portal de vista previa de Azure. Consulte [Supervisión de máquinas virtuales de Microsoft Azure con la extensión de Diagnósticos de Azure](http://azure.microsoft.com/blog/2014/09/02/windows-azure-virtual-machine-monitoring-with-wad-extension/) para ver información detallada.
 
 ## Uso de Almacenamiento Premium para discos
 Puede usar Almacenamiento premium para discos de una de las siguientes maneras:
@@ -246,10 +246,9 @@ Si un disco está conectado a una máquina virtual, no se permiten determinadas 
 
 ### Notas importantes:
 
-- Si la operación de blob de copia en un Almacenamiento premium sobrescribe un blob existente en el destino, el blob sobrescrito no deberá tener instantáneas. Una copia en o entre cuentas de almacenamiento premium requiere que el blob de destino no tenga instantáneas al iniciar la copia.
 - El número de instantáneas de un único blob está limitado a 100. Una instantánea puede tomarse cada 10 minutos como máximo.
-- 10 TB es la capacidad máxima para las instantáneas por cuenta de Almacenamiento premium. Tenga en cuenta que la capacidad de instantánea es el único dato que existe en las instantáneas. En otras palabras, la capacidad de instantánea no incluye el tamaño del blob base.
-- Para copiar una instantánea de una cuenta de Almacenamiento premium a otra cuenta, debe hacer primero un CopyBlob de la instantánea para crear un nuevo blob en la misma cuenta de Almacenamiento premium. A continuación, puede copiar el nuevo blob a otras cuentas de almacenamiento. Puede eliminar el blob intermedio una vez finalizada la copia. Siga esta procedimiento para copiar instantáneas de una cuenta de Almacenamiento premium a una cuenta de Almacenamiento estándar con redundancia geográfica mediante AzCopy o Copy Blob. Para obtener más información, consulte [Uso de AzCopy con Almacenamiento de Microsoft Azure](storage-use-azcopy.md) y [Copy Blob](http://msdn.microsoft.com/library/azure/dd894037.aspx).
+- La capacidad máxima para las instantáneas por cuenta de Almacenamiento premium es de 10 TB. Tenga en cuenta que la capacidad de instantáneas solo se refiere a la cantidad total de datos de instantáneas; no incluye datos en el blob de base.
+- Para mantener copias con redundancia geográfica, puede copiar instantáneas desde una cuenta de almacenamiento premium a una cuenta de almacenamiento estándar con redundancia geográfica con AzCopy o Copy Blob. Para obtener más información, consulte [Uso de AzCopy con Almacenamiento de Microsoft Azure](storage-use-azcopy.md) y [Copy Blob](http://msdn.microsoft.com/library/azure/dd894037.aspx).
 - Para obtener más información acerca de cómo realizar operaciones REST en blobs en página en las cuentas de Almacenamiento premium, consulte [Uso de operaciones de servicios BLOB con Almacenamiento premium de Azure](http://go.microsoft.com/fwlink/?LinkId=521969) en MSDN library.
 
 ## Uso de máquinas virtuales Linux con Almacenamiento premium
@@ -263,58 +262,66 @@ Consulte a continuación instrucciones importantes para configurar las máquinas
 - Para discos de Almacenamiento premium con caché de configuración "ReadWrite", deben habilitarse las barreras para la durabilidad de las escrituras.
 
 Las siguientes son las distribuciones de Linux que se validan con Almacenamiento premium. Se recomienda actualizar las máquinas virtuales al menos a una de estas versiones (o posteriores) para mejorar el rendimiento y la estabilidad con Almacenamiento premium. Además, algunas de las versiones requieren el LIS más reciente (Linux Integration Services v4.0 para Microsoft Azure). Siga el vínculo proporcionado para su descarga e instalación. Seguiremos agregando más imágenes a la lista según vayamos completando validaciones adicionales. Tenga en cuenta que nuestras validaciones demostraron que el rendimiento varía para estas imágenes y también depende de las características de carga de trabajo y la configuración de las imágenes. Se optimizan diferentes imágenes para distintos tipos de cargas de trabajo. 
-<table border="1" cellspacing="0" cellpadding="5" style="border: 1px solid #000000;">
-<tbody>
-<tr>
-	<td><strong>Distribución</strong></td>
-	<td><strong>Versión</strong></td>
-	<td><strong>Kernel admitido</strong></td>
-	<td><strong>Imagen admitida</strong></td>
+<table border="1" cellspacing="0" cellpadding="5" style="border: 1px solid #000000;"> 
+<tbody> 
+<tr> 
+	<td><strong>Distribución</strong></td> 
+	<td><strong>Versión</strong></td> 
+	<td><strong>Kernel admitido</strong></td> 
+	<td><strong>Imagen admitida</strong></td> 
+</tr> 
+<tr> 
+	<td rowspan="4"><strong>Ubuntu</strong></td> 
+	<td>12.04</td> 
+	<td>3.2.0-75.110</td> 
+	<td>Ubuntu-12\_04\_5-LTS-amd64-server-20150119-es-es-30GB</td> 
 </tr>
-<tr>
-	<td rowspan="4"><strong>Ubuntu</strong></td>
-	<td>12.04</td> <td>3.2.0-75.110</td>
-	<td>Ubuntu-12_04_5-LTS-amd64-server-20150119-es-es-30GB</td>
-</tr>
-<tr>
-	<td>14.04</td> <td>3.13.0-44.73</td> <td>Ubuntu-14_04_1-LTS-amd64-server-20150123-es-es-30GB</td>
-</tr>
-<tr>
-	<td>14.10</td>
-	<td>3.16.0-29.39</td>
-	<td>Ubuntu-14_10-amd64-server-20150202-es-es-30GB</td>
-</tr>
-<tr>
-	<td>15.04</td>
-	<td>3.19.0-15</td>
-	<td>Ubuntu-15_04-amd64-server-20150422-es-es-30GB</td>
-</tr>
-<tr>
-	<td><strong>SUSE</strong></td>
-	<td>SLES 12</td>
-	<td>3.12.36-38.1</td>
-	<td>suse-sles-12-priority-v20150213<br>suse-sles-12-v20150213</td>
-</tr>
-<tr>
-	<td><strong>CoreOS</strong></td>
-	<td>584.0.0</td>
-	<td>3.18.4</td>
-	<td>CoreOS 584.0.0</td>
-</tr>
-<tr>
-	<td rowspan="2"><strong>CentOS</strong></td>
-	<td>6.5, 6.6, 7.0</td>
-	<td></td>
-	<td><a href="http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409"> LIS 4.0 requerido</a></td>
-</tr>
+<tr> 
+	<td>14.04</td> 
+	<td>3.13.0-44.73</td> 
+	<td>Ubuntu-14\_04\_1-LTS-amd64-server-20150123-es-es-30GB</td> 
+</tr> 
+<tr> 
+	<td>14.10</td> 
+	<td>3.16.0-29.39</td> 
+	<td>Ubuntu-14\_10-amd64-server-20150202-es-es-30GB</td> 
+</tr> 
+<tr> 
+	<td>15.04</td> 
+	<td>3.19.0-15</td> 
+	<td>Ubuntu-15\_04-amd64-server-20150422-es-es-30GB</td> 
+</tr> 
+<tr> 
+	<td><strong>SUSE</strong></td> 
+	<td>SLES 12</td> 
+	<td>3.12.36-38.1</td> 
+	<td>suse-sles-12-priority-v20150213<br>suse-sles-12-v20150213</td> 
+</tr> 
+<tr> 
+	<td><strong>CoreOS</strong></td> 
+	<td>584.0.0</td> 
+	<td>3.18.4</td> 
+	<td>CoreOS 584.0.0</td> 
+</tr> 
+<tr> 
+	<td rowspan="2"><strong>CentOS</strong></td> 
+	<td>6.5, 6.6, 7.0</td> 
+	<td></td> 
+	<td>
+		<a href="http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409"> LIS 4.0 requerido</a>
+	</td> 
+</tr> 
 <tr>
 	<td>7.1</td>
 	<td>3.10.0-229.1.2.el7</td>
-	<td><a href="http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409"> LIS 4.0 recomendado</a></td>
+	<td>LIS 4.0 recomendado
+		<a href="http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409"></a> <br/> 
+		*Vea la nota a continuación 
+	</td> 
 </tr>
 
 <tr>
-	<td rowspan="2"><link id="138" refid="139" url="virtual-machines-oracle-azure-virtual-machines.md">Oracle</link></td>
+	<td rowspan="2"><strong>Oracle</strong></td>
 	<td>6.4.</td>
 	<td></td>
 	<td><a href="http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409"> LIS 4.0 necesarios </a></td>
@@ -324,8 +331,9 @@ Las siguientes son las distribuciones de Linux que se validan con Almacenamiento
 	<td></td>
 	<td>Póngase en contacto con soporte técnico para obtener más información</td>
 </tr>
-</tbody>
+</tbody> 
 </table>
+
 
 ### Controladores de LIS para CentOS Openlogic
 
@@ -450,4 +458,4 @@ azure storage account create "premiumtestaccount" -l "west us" --type PLRS
 [Image1]: ./media/storage-premium-storage-preview-portal/Azure_pricing_tier.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->
