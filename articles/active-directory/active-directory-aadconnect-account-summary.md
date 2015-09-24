@@ -19,7 +19,7 @@
 
 
 # More about Azure AD Connect credentials and permissions 
-
+HO1 HO1 HO1 HO1 HO1 HO1 HO1 HO1 HO1 HO1 HO1 HO1 HO1 HO1 
 
 The Azure AD Connect wizard offers two different paths with distinct permissions requirements:  
 
