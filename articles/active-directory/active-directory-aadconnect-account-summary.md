@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
 	pageTitle="Más información sobre las credenciales y los permisos de Azure AD Connect" 
 	description="Descripción de la configuración personalizada de credenciales y permisos de Azure AD Connect." 
 	services="active-directory" 
@@ -18,8 +18,9 @@
 
 
 
-# Más información sobre las credenciales y los permisos de Azure AD Connect 
 
+# More about Azure AD Connect credentials and permissions 
+HO1 HO1 HO1 HO1 HO1 HO1 HO1 HO1 HO1 HO1 HO1 HO1 HO1 HO1 
 
 El asistente de Azure AD Connect ofrece dos rutas de acceso diferentes con distintos requisitos de permisos:
 
@@ -93,3 +94,10 @@ Cuenta de AD FS:GMSA (aadcsvc$)|Usuario de dominio|Cuenta de inicio de sesión d
  
 
 <!---HONumber=August15_HO6-->
+* [Permissions for password synchronization](https://msdn.microsoft.com/library/azure/dn757602.aspx#psynch)
+* [Permissions for Exchange hybrid](https://msdn.microsoft.com/library/azure/dn757602.aspx#exchange)
+* [Permissions for password writeback](https://msdn.microsoft.com/library/azure/dn757602.aspx#pwriteback)
+* [Custom installation of Azure AD Connect](active-directory-aadconnect-get-started-custom.md)
+* [Azure AD Connect on MSDN](https://msdn.microsoft.com/library/azure/dn832695.aspx)
+ 
+
