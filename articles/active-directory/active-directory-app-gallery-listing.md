@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Listing your application in the Azure Active Directory application gallery"
-   description="A comprehensive guide to developer-oriented resources for Azure Active Directory"
+   pageTitle="Anuncio de la aplicación en la galería de aplicaciones de Azure Active Directory"
+   description="Una guía completa sobre recursos orientados al desarrollador para Azure Active Directory"
    services="active-directory"
    documentationCenter="dev-center-name"
    authors="msmbaldwin"
@@ -13,47 +13,49 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="04/29/2015"
+   ms.date="07/30/2015"
    ms.author="mbaldwin"/>
 
 
-# Listing your application in the Azure Active Directory application gallery
+# Anuncio de la aplicación en la galería de aplicaciones de Azure Active Directory
 
-To list an application that supports single sign-on with Azure Active Directory in the [Azure AD gallery](http://azure.microsoft.com/marketplace/active-directory/all/) and in the Azure Marketplace, the Azure AD team will need to verify your integration. This requires that you send the following information to <waadpartners@microsoft.com>:
+Para anunciar una aplicación compatible con inicio de sesión único con Azure Active Directory en la [galería de Azure AD](http://azure.microsoft.com/marketplace/active-directory/all/) y en Azure Marketplace, el equipo de Azure AD tendrá que comprobar la integración. Esto requiere que envíe la información siguiente a <waadpartners@microsoft.com>:
 
-- The username and password of a test user account in a test instance of Azure Active Directory that is able to sign into your application
-- URL and/or instructions on how this test user should sign into the application
-- Provide a brief description of how your customers create the connection between your application and Azure AD. This could be:
-  - Built into the application using the Azure AD consent framework
-  - By  configuring Azure AD as an identity provider (SAML 2.0, WS-Federation, or OpenID Connect) using an you application’s administrative portal
-  - By contacting someone in your organization to manually create the connection
-- If your application supports configuring Azure AD as an identity provider through a self-service administrative portal, then please also provide a test admin account for verification.
+- El nombre de usuario y la contraseña de una cuenta de usuario de prueba en una instancia de prueba de Azure Active Directory que pueda iniciar sesión en la aplicación
+- La dirección URL o las instrucciones que expliquen cómo puede iniciar sesión en la aplicación dicho usuario de prueba
+- Proporcione una breve descripción del modo en que los clientes crean la conexión entre su aplicación y Azure AD. Podría ser alguna de las opciones siguientes:
+  - Integración en la aplicación mediante el marco de consentimiento de Azure AD
+  - Configuración de Azure AD como proveedor de identidades (SAML 2.0, WS-Federation u OpenID Connect) mediante el portal administrativo de la aplicación
+  - Contacto con alguien de su organización para crear manualmente la conexión
+- Si la aplicación admite la configuración de Azure AD como proveedor de identidades a través de un portal administrativo de autoservicio, proporcione también una cuenta de administrador de prueba para la comprobación.
 
-After testing is completed, then the application can be listed in the Azure Active Directory application gallery and in the Azure Marketplace. Complete the questions below and send to <waadpartners@microsoft.com>.
+Una vez completada la prueba, la aplicación puede anunciarse en la galería de aplicaciones de Azure Active Directory y Azure Marketplace. Complete la siguiente información y envíela a <waadpartners@microsoft.com>.
 
-> Company Name:
+> Nombre de la empresa:
 >
-> Company Website:
+> Sitio web de la empresa:
 >
-> Application Name:
+> Nombre de la aplicación:
 >
-> Application Description (256 character limit):
+> Descripción de la aplicación (límite de 256 caracteres):
 >
-> Application Website (informational):
+> Sitio web de la aplicación (informativo):
 >
-> Application Technical Support Website or Contact Info:
+> Sitio web de soporte de técnico de la aplicación o información de contacto:
 >
-> Have you integrated your application with Azure AD and tested it (see [Azure Active Directory authentication scenarios](active-directory-authentication-scenarios.md))?
+> ¿Ha integrado su aplicación con Azure AD y la ha probado (consulte [Escenarios de autenticación de Azure Active Directory](active-directory-authentication-scenarios.md))?
 >
-> Client ID of the application, as shown in the application details at https://manage.windowsazure.com:
+> Identificador de cliente de la aplicación, como se muestra en los detalles de la aplicación en https://manage.windowsazure.com:
 >
-> Application Sign-Up URL where customers go to sign up for and /or purchase the application:
+> Dirección URL de suscripción a una aplicación donde van los clientes para suscribirse o adquirir la aplicación:
 >
-> Choose up to three categories for your application to be listed under (for available categories see the [Azure Active Directory Marketplace](http://go.microsoft.com/fwlink/?LinkId=327881)):
+> Elija hasta tres categorías donde desea que se anuncie la aplicación (para ver las categorías disponibles, consulte [Azure Active Directory Marketplace](http://go.microsoft.com/fwlink/?LinkId=327881)):
 >
-> Attach Application Small Icon (PNG file, 45px by 45px, solid background color):
+> Adjunte un icono pequeño de la aplicación (archivo PNG, 45 px por 45 px, color de fondo sólido):
 >
-> Attach Application Large Icon (PNG file, 215px by 215px, solid background color):
+> Adjunte un icono grande de la aplicación (archivo PNG, 215 px por 215 px, color de fondo sólido):
 >
-> Attach Application Logo (PNG file, 150px by 122px, transparent background color):
+> Adjunte el logotipo de la aplicación (archivo PNG, 150 px por 122 px, color de fondo transparente):
  
+
+<!---HONumber=August15_HO6-->

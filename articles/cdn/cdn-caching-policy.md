@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="CDN Caching Policy in Media Services Extension" 
-	description="This topic gives an overview of a CDM caching policy in Media Services Extension." 
+	pageTitle="Directiva de almacenamiento en caché de CDN en extensión de Servicios multimedia" 
+	description="En este tema se proporciona información general sobre una directiva de almacenamiento en caché CDM en extensión de Servicios multimedia." 
 	services="cdn" 
 	documentationCenter=".NET" 
 	authors="juliako" 
@@ -16,29 +16,31 @@
 	ms.date="06/03/2015" 
 	ms.author="juliako"/>
 
-#CDN Caching Policy in Media Services Extension
+#Directiva de almacenamiento en caché de CDN en extensión de Servicios multimedia
 
-Azure Media Services provides HTTP based Adaptive Streaming and progressive download. HTTP based streaming is highly scalable with benefits of caching in proxy and CDN layers as well as client side caching. Streaming endpoints provides general streaming capabilities and also configuration for HTTP cache headers. Streaming endpoints sets HTTP Cache-Control: max-age and Expires headers. You can get more information for HTTP cache headers from [W3.org](http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html).
+Servicios multimedia de Azure proporciona streaming adaptable basado en HTTP y descarga progresiva. El streaming basado en HTTP es altamente escalable con ventajas de almacenamiento en caché en proxy y capas CDN, además de almacenamiento en caché del cliente. Los extremos de streaming proporcionan capacidades generales de streaming, así como configuración para encabezados de caché HTTP. Los extremos de streaming establecen Control de caché HTTP: encabezados max-age y Expires. Puede obtener más información sobre los encabezados de caché HTTP en [W3.org](http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html).
 
-##Default Caching headers
+##Encabezados de almacenamiento en caché predeterminados
 
-By default streaming-endpoints apply 3 day cache headers for on-demand streaming data (actual media fragments/chunks) and manifest(playlist). For live streaming, streaming endpoints apply 3 day cache headers for data (actual media fragments/chunks) and 2 seconds cache header for manifest(playlist) requests. When live program turns to on-demand (live archive) then on-demand streaming cache headers apply.
+De forma predeterminada, los extremos de streaming aplican encabezados de caché de 3 días para datos de streaming a petición (fragmentos/segmentos multimedia reales) y manifest(playlist). Para streaming en directo, los extremos de streaming aplican encabezados de caché de 3 días para datos (fragmentos/segmentos multimedia reales) y encabezados de caché de 2 segundos para solicitudes de manifest(playlist). Cuando un programa en directo pasa a ser a petición (archivo directo), se aplican encabezados de caché de streaming a petición.
 
-##Azure CDN integration
+##Integración de CDN de Azure
 
-Azure Media services provides [integrated CDN](http://azure.microsoft.com/updates/azure-media-services-now-fully-integrated-with-azure-cdn/) for streaming-endpoints. Cache-control headers applies in the same way as streaming endpoints to CDN enabled streaming endpoints. Azure CDN uses streaming endpoint configured cache values to define the life time of the internally cached objects and also uses this value to set the delivery cache headers. When using CDN enabled streaming endpoints it is not recommended to set small cache values. Setting small values will decrease the performance and reduce the benefit of CDN. It is not allowed to set cache headers smaller than 600 seconds for CDN enabled streaming endpoints.
+Servicios multimedia de Azure proporciona [CDN integrado ](http://azure.microsoft.com/updates/azure-media-services-now-fully-integrated-with-azure-cdn/) para extremos de streaming. Los encabezados Cache-control se aplican de la misma manera que los extremos de streaming a extremos de streaming habilitados para CDN. CDN de Azure usa valores de caché configurados de extremo de streaming para definir el tiempo de duración de los objetos almacenados en caché internamente y también utiliza este valor para establecer encabezados de caché de entrega. Cuando se utilizan extremos de streaming habilitados para CDN, no se recomienda establecer valores de caché pequeños. Si se establecen valores pequeños, se disminuye el rendimiento y se reducen las ventajas de CDN. No se permite establecer encabezados de caché menores de 600 segundos para extremos de streaming habilitados para CDN.
 
-##Configuring cache headers with Azure Media Services
+##Configuración de encabezados de caché con Servicios multimedia de Azure
 
-You can use Azure Management portal or Azure Media Services APIs to configure cache header values.
+Puede usar el Portal de administración de Azure o las API de Servicios multimedia de Azure para configurar valores de encabezados de caché.
 
-1. To configure cache headers using management portal please refer to [How to Manage Streaming Endpoints](../media-services-manage-origins.md) section Configuring the Streaming Endpoint.
-2. Azure Media Services REST API, [StreamingEndpoint](https://msdn.microsoft.com/library/azure/dn783468.aspx#StreamingEndpointCacheControl).
-3. Azure Media Services .NET SDK, [StreamingEndpointCacheControl Properties](http://go.microsoft.com/fwlink/?LinkId=615302).
+1. Para configurar encabezados de caché mediante el Portal de administración, consulte [Administración de extremos de streaming](../media-services-manage-origins.md), sección Configuración del extremo de streaming.
+2. API de REST de Servicios multimedia de Azure, [StreamingEndpoint](https://msdn.microsoft.com/library/azure/dn783468.aspx#StreamingEndpointCacheControl).
+3. .NET SDK de Servicios multimedia de Azure, [Propiedades de StreamingEndpointCacheControl](http://go.microsoft.com/fwlink/?LinkId=615302).
 
-##Cache configuration precedence order
+##Orden de prioridad de configuración de caché
 
-1. Azure Media Services configured cache value overrides default value.
-2. If there is no manual configuration, default values applies.
-3. By default 2 seconds cache headers applies to live streaming manifest(playlist) regardless of Azure Media or Azure Storage configuration and overriding of this value is not available.
+1. El valor de caché configurado de Servicios multimedia de Azure reemplaza el valor predeterminado.
+2. Si no hay ninguna configuración manual, se aplican los valores predeterminados.
+3. De forma predeterminada, se aplican encabezados de caché de 2 segundos para manifest(playlist) de streaming en directo independientemente de la configuración multimedia o de almacenamiento de Azure y la anulación de este valor no está disponible.
  
+
+<!---HONumber=August15_HO6-->

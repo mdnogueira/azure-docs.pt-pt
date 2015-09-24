@@ -1,216 +1,215 @@
-<properties 
-	pageTitle="Add your own domain name to Azure AD" 
-	description="A topic that explains how to add your own domain name to Azure AD and related info." 
-	services="active-directory" 
-	documentationCenter="" 
-	authors="Justinha" 
-	manager="TerryLan" 
-	editor="LisaToft"/>
+<properties
+	pageTitle="Incorporación de su propio nombre de dominio a Azure AD | Microsoft Azure"
+	description="En este tema se explica cómo agregar su propio nombre de dominio a Azure AD y se proporciona información relacionada."
+	services="active-directory"
+	documentationCenter=""
+	authors="curtand"
+	manager="msStevenPo"
+	editor=""/>
 
-<tags 
-	ms.service="active-directory" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="05/12/2015" 
-	ms.author="Justinha"/>
+<tags
+	ms.service="active-directory"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="get-started-article"
+	ms.date="08/14/2015"
+	ms.author="curtand"/>
 
-# Add your own domain name to Azure AD
+# Incorporación de su propio nombre de dominio a Azure AD
 
-When you sign up for a Microsoft cloud service, you are issued a domain name that has the following format: contoso.onmicrosoft.com. You can continue to use that initial domain name, or you can add your own custom domain name to the cloud service. This topic explains how to add your own domain name and related information.
+Cuando se registre en un servicio en la nube de Microsoft, se le facilitará un nombre de dominio que tiene el siguiente formato: contoso.onmicrosoft.com. Puede seguir utilizando ese nombre de dominio inicial o bien agregar su propio nombre de dominio personalizado al servicio en la nube. En este tema se explica cómo agregar su propio nombre de dominio y se proporciona información relacionada.
 
-Office 365 users may be interested in these related topics:
+Es posible que a los usuarios de Office 365 también le interesen los siguientes temas relacionados:
 
-- [DNS basics](https://support.office.com/article/854b6b2b-0255-4089-8019-b765cff70377)
-- [Find your domain registrar or DNS hosting provider](https://support.office.com/article/Find-your-domain-registrar-or-DNS-hosting-provider-b5b633ba-1e56-4a98-8ff5-2acaac63a5c8/)
-- [Work with domain names in Office 365](https://support.office.com/article/Work-with-domain-names-in-Office-365-4f1bd681-337a-4bd3-a7b7-cf77b18d0870/)
+- [Conceptos básicos de DNS](https://support.office.com/article/854b6b2b-0255-4089-8019-b765cff70377)
+- [Encuentre su registrador de dominio o proveedor de host DNS ](https://support.office.com/article/Find-your-domain-registrar-or-DNS-hosting-provider-b5b633ba-1e56-4a98-8ff5-2acaac63a5c8/)
+- [Trabajar con nombres de dominio en Office 365](https://support.office.com/article/Work-with-domain-names-in-Office-365-4f1bd681-337a-4bd3-a7b7-cf77b18d0870/)
 
-## About your onmicrosoft.com domain
+## Acerca de su dominio onmicrosoft.com
 
-You can use your onmicrosoft.com domain with other services. For example, you can use the domain with Exchange Online and Lync Online to create distribution lists and sign-in accounts so users can access SharePoint Online and site collections.
+Puede utilizar el dominio onmicrosoft.com con otros servicios. Por ejemplo, puede usar el dominio con Exchange Online y Lync Online para crear listas de distribución y cuentas de inicio de sesión para que los usuarios puedan tener acceso a SharePoint Online y las colecciones de sitios.
 
-If you add your own domain names to your directory, you can continue to use your onmicrosoft.com domain.
+Si agrega sus propios nombres de dominio a su directorio, puede seguir utilizando el dominio onmicrosoft.com.
 
-After you choose the name to use with the cloud service during signup, such as contoso.onmicrosoft.com, you cannot change the name. 
+Una vez elegido el nombre que se va a utilizar con el servicio en la nube durante la suscripción, como contoso.onmicrosoft.com, no podrá cambiarlo.
 
-## How can I add my own domain?
+## ¿Cómo puedo agregar mi propio dominio?
 
-If your organization already has a custom domain name, as an administrator, you can add it to your Azure AD directory to use with all of the Microsoft online services that you have subscribed to. After you've added your domain name to Azure AD, you can start associating your domain name with your various cloud services.
+Si su organización ya tiene un nombre de dominio personalizado, como administrador, puede agregarlo a su directorio de Azure AD para utilizarlo con todos los servicios en línea de Microsoft a los que se haya suscrito. Una vez agregado su nombre de dominio a Azure AD, puede empezar a asociar dicho nombre de dominio a los distintos servicios en la nube.
 
-You can add up to 900 domain names to your Azure AD tenant by using, either: 
+Puede agregar hasta 900 nombres de dominio a su inquilino de Azure AD mediante el uso de una de estas opciones:
 
-- The Azure Management Portal, the Office 365 portal, or the Microsoft Intune portal.
-- The Azure Active Directory Module for Windows PowerShell. For more information about which cmdlet you can use for this, see [Manage domains](https://msdn.microsoft.com/library/azure/dn919677.aspx).
+- El Portal de administración de Azure, el portal de Office 365 o el portal de Microsoft Intune.
+- El módulo de Azure Active Directory para Windows PowerShell. Para obtener más información sobre el cmdlet que puede usar para ello, vea [Administración de dominios en Azure AD](https://msdn.microsoft.com/library/azure/dn919677.aspx).
 
-You must have already registered a domain name and have the sign-in credentials needed for your domain name registrar (for example, Go Daddy or Register.com). 
+Ya debe haber registrado un nombre de dominio y tener las credenciales de inicio de sesión necesarias para el registrador de nombres de dominio (por ejemplo, GoDaddy o Register.com).
 
-You can add multiple domains to your directory. However, you can't add the same domain to different directories. So, for example, If you add your domain to your directory, you can't create another Azure AD directory and add the same domain name to it.
+Puede agregar varios dominios a su directorio. Sin embargo, no puede agregar el mismo dominio a directorios distintos. Así, por ejemplo, si agrega el dominio a su directorio, no puede crear otro directorio de Azure AD y agregarle el mismo nombre de dominio.
 
-If you plan to use single sign-on with the cloud service, we recommend that you help prepare your Active Directory environment by running the Microsoft Deployment Readiness Tool. This tool inspects your Active Directory environment and provides a report that includes information about whether you are ready to set up single sign-on. If not, it lists the changes you need to make to prepare for single sign-on. For example, it inspects whether your users have UPNs and if those UPNs are in the correct format. To download the tool, see [Microsoft Deployment Readiness Tool](http://go.microsoft.com/fwlink/?linkid=235650).
+Si piensa utilizar el inicio de sesión único con el servicio en la nube, se recomienda que ayude a preparar el entorno de Active Directory mediante la ejecución de la herramienta de preparación de la implementación de Microsoft. Esta herramienta inspecciona el entorno de Active Directory y proporciona un informe que incluye información sobre si está listo para configurar el inicio de sesión único. Si no lo está, esta herramienta muestra los cambios que necesita hacer para prepararse para el inicio de sesión único. Por ejemplo, inspecciona si los usuarios tienen UPN y si esos UPN tienen el formato correcto. Para descargar la herramienta, consulte [Herramienta de preparación de implementación de Microsoft](http://go.microsoft.com/fwlink/?linkid=235650).
 
-> [AZURE.NOTE]
-> Using Office 365? Once you have set up your domain, you can start creating email addresses, Lync Online accounts, and distribution groups that use your custom domain name. You can also use your domain name for a public-facing website hosted on SharePoint Online.
+> [AZURE.NOTE]¿Utiliza Office 365? Una vez que haya configurado su dominio, puede empezar a crear direcciones de correo electrónico, cuentas de Lync Online y grupos de distribución que usen su nombre de dominio personalizado. También puede utilizar el nombre de dominio para un sitio web de acceso público hospedado en SharePoint Online.
 
-- [Add and verify a domain using the Azure Management Portal](#add-and-verify-a-domain-using-the-azure-management-portal)
-- [Edit DNS records for your cloud services](#edit-dns-records-for-your-cloud-services)
-- [Verify a domain at any domain name registrar](#verify-a-domain-at-any-domain-name-registrar)
+- [Agregar y comprobar un dominio mediante el Portal de administración de Azure](#add-and-verify-a-domain-using-the-azure-management-portal)
+- [Editar registros DNS para servicios en la nube](#edit-dns-records-for-your-cloud-services)
+- [Comprobar un dominio en cualquier registrador de nombres de dominio](#verify-a-domain-at-any-domain-name-registrar)
 
-### Add and verify a domain using the Azure Management Portal
+### Agregar y comprobar un dominio mediante el Portal de administración de Azure
 
-1. In the portal, click **Active Directory**, and then click on the name of your organization's directory.You can do one of the following:
-    1. On the default directory page, click **Add Domain** in the **Improve user sign-in experience **section. 
-    2. Click **Domains** and then click either **Add a customer domain** or the **Add** button.
-2. On the **Add domain** page, type the domain name that you want to add and the do one of the following:
-    1. If you do not plan to integrate your on-premises Active Directory with Azure AD, do the following:
-        1. Leave the **I plan to configure this domain for single sign-on with my local Active Directory** checkbox unchecked and click the **Add** button.
-        2. After you see the message that your domain has been successfully added to Azure AD, click the arrow to move to the next page so you can verify your domain.
-        3. Follow the directions on the next page to verify that the domain name you added in the previous steps belongs to you. For step-by-step directions, see Verify a domain at any domain name registrar.
-    2. If you want to integrate your on-premises Active Directory with Azure AD, do the following:
-        1. Make sure to check the **I plan to configure this domain for single sign-on with my local Active Directory** checkbox and then click the **Add** button.
-        2. After you see the message that your domain has been successfully added to Azure AD, click the arrow to move to the next page and then follow the directions on that page to configure the domain you added for single sign-on.
+1. En el portal, haga clic en **Active Directory** y, a continuación, haga clic en el nombre del directorio de su organización. Puede realizar una de las acciones siguientes:
+    1. En la página del directorio predeterminado, haga clic en **Agregar dominio** en la sección **Mejorar la experiencia de inicio de sesión del usuario**.
+2. Haga clic en **Dominios** y, a continuación, haga clic en **Agregar un dominio de cliente** o en el botón **Agregar**.
+2. En la página **Agregar dominio**, escriba el nombre de dominio que desea agregar y realice una de las acciones siguientes:
+    1. Si no tiene previsto integrar Active Directory local con Azure AD, haga lo siguiente:
+        1. Deje la casilla **Pretendo configurar este dominio para el inicio de sesión único con mi Active Directory local** desactivada y haga clic en el botón **Agregar**.
+        2. Una vez que aparezca el mensaje que informa de que el dominio se ha agregado correctamente a Azure AD, haga clic en la flecha para desplazarse a la página siguiente a fin de comprobar su dominio.
+        3. Siga las instrucciones en la página siguiente para comprobar que el nombre de dominio que agregó en los pasos anteriores le pertenece. Para obtener instrucciones detalladas, consulte Comprobar un dominio en cualquier registrador de nombres de dominio.
+    2. Si desea integrar su Active Directory local con Azure AD, haga lo siguiente:
+        1. Asegúrese de activar la casilla **Pretendo configurar este dominio para el inicio de sesión único con mi Active Directory local** y luego haga clic en el botón **Agregar**.
+        2. Una vez que aparezca el mensaje que informa de que el dominio se ha agregado correctamente a Azure AD, haga clic en la flecha para desplazarse a la página siguiente y, a continuación, siga las instrucciones de esa página para configurar el dominio agregado para el inicio de sesión único.
 
-> [AZURE.NOTE]
-> After you add your domain name to Azure AD, you can change the default domain name for new email addresses. For more information, see [How can I change the primary domain name for users?](#how-can-i-change-the-primary-domain-name-for-users?) You can also edit the profile for an existing user account to update the email address (which is also your user ID) to use your custom domain name instead of the onmicrosoft.com domain. 
+> [AZURE.NOTE]Después de agregar el nombre de dominio a Azure AD, puede cambiar el nombre de dominio predeterminado para nuevas direcciones de correo electrónico. Para obtener más información, consulte [¿Cómo puedo cambiar el nombre de dominio principal para los usuarios?](#how-can-i-change-the-primary-domain-name-for-users?) También puede editar el perfil de una cuenta de usuario existente para actualizar la dirección de correo electrónico (que también es el identificador de usuario) a fin de utilizar el nombre de dominio personalizado en lugar del dominio onmicrosoft.com.
 
-### Edit DNS records for your cloud services
+### Edición de registros DNS para servicios en la nube
 
-> [AZURE.NOTE]
-> Using Microsoft Intune? You do not need to edit DNS records for the Microsoft Intune cloud service.
+> [AZURE.NOTE]¿Usa Microsoft Intune? No es necesario editar los registros de DNS para el servicio en la nube de Microsoft Intune.
 
-After you add and verify your custom domain name, the next step is to edit the DNS records at your domain registrar or DNS hosting provider that point traffic to your cloud service. Azure AD provides the DNS information that you need.
+Después de agregar y comprobar su nombre de dominio personalizado, el paso siguiente es modificar los registros DNS en el registrador de dominios o el proveedor de host DNS que dirige el tráfico al servicio en la nube. Azure AD proporciona la información de DNS que necesita.
 
-If you've just completed the **Add a domain** wizard, click **Configure DNS records**. Otherwise, follow these steps.
+Si ha completado el asistente para **agregar un dominio**, haga clic en **Configurar registros de DNS**. De lo contrario, siga estos pasos.
 
-1. In the portal, in the left pane, click **Domains**.
-2. Depending on which portal you are using, click the domain name that you want to set up, and then click either **DNS settings** or **View DNS settings**. The **DNS settings** page lists the DNS records for the cloud service.
+1. En el portal, en el panel izquierdo, haga clic en **Dominios**.
+2. En función del portal que utilice, haga clic en el nombre de dominio que desea configurar y, a continuación, haga clic en **Configuración DNS** o **Ver la configuración DNS**. En la página **Configuración DNS** se enumeran los registros DNS del servicio en la nube.
 
-    If you want to configure a service that you don't see on the DNS settings tab, check your domain services selections to make sure you've chosen that service for this domain name. To change the settings, for example, to add Lync Online, see Specify the services you'll use with your domain.
+    Si quiere configurar un servicio que no aparece en la pestaña Configuración DNS, compruebe las selecciones de servicios de dominio para asegurarse de que eligió ese servicio para este nombre de dominio. Para cambiar la configuración, por ejemplo, para agregar Lync Online, vea Especificar los servicios que utilizará con su dominio.
 
-3. At your domain name registrar website, add the required records to your DNS file.
+3. En el sitio web registrador del nombre de dominio, agregue los registros necesarios al archivo DNS.
 
-Typically it takes about 15 minutes for your changes to take effect. But it can take up to 72 hours for the DNS record that you created to propagate through the DNS system. If you need to view these record settings again, on the **Domains** page, click the domain, and then, on the **Domain properties** page, click the **DNS settings** tab.
+Los cambios suelen tardar unos 15 minutos en surtir efecto. Sin embargo, el registro DNS que ha creado puede tardar hasta 72 horas en propagarse por el sistema DNS. Si necesita ver la configuración de estos registros de nuevo, en la página **Dominios**, haga clic en el dominio y, a continuación, en la página **Propiedades del dominio**, haga clic en la pestaña **Configuración DNS**.
 
-To check the status of your domain, on the **Domains** page, click the domain, and then, on the **Domain properties** page, click **Troubleshoot domain**.
+Para comprobar el estado de su dominio, en la página **Dominios**, haga clic en el dominio y, a continuación, en la página **Propiedades del dominio**, haga clic en **Solucionar problemas de dominio**.
 
-### Verify a domain at any domain name registrar
+### Comprobación de un dominio en cualquier registrador de nombres de dominio
 
-If you already have a domain registered with a domain name registrar, and you want to configure it to work with Azure AD, domain verification is required to confirm that you own the domain. To verify your domain, you create a DNS record at the domain name registrar, or wherever your DNS is hosted, and then Azure AD uses that record to confirm that you own the domain.
+Si ya tiene un dominio registrado con un registrador de nombres de dominio y desea configurarlo de modo que funcione con Azure AD, es necesario comprobar el dominio para confirmar que usted es el propietario del mismo. Para comprobar el dominio, se crea un registro DNS en el registrador de nombres de dominio, o donde se hospede su DNS y, a continuación, Azure AD usa ese registro para confirmar que usted es el propietario del dominio.
 
-Before you can verify your domain, you must add a custom domain to Azure AD. When you've added a custom domain but the domain hasn't yet been verified, the status will either show as **Click to verify domain** or **Unverified**.
+Antes de poder comprobar su dominio, debe agregar un dominio personalizado a Azure AD. Si se ha agregado un dominio personalizado pero este aún no se ha comprobado, el estado se mostrará como **Haga clic para comprobar el dominio** o **No comprobado**.
 
-#### Gather your domain information 
+#### Recopilación de la información de dominio
 
-Based on the portal you are using to administer your Azure AD directory, you'll need to collect some information about your domain so that you can later create a DNS record that will be used during the verification process. 
+Según el portal que utilice para administrar el directorio de Azure AD, debe recopilar cierta información sobre el dominio para que posteriormente pueda crear un registro DNS que se usará durante el proceso de comprobación.
 
-If you are using Microsoft Intune or the Azure Account Portal:
+Si está usando Microsoft Intune o el portal de la cuenta de Azure:
 
-1. On the **Domains** page, in the list of domain names, find the domain that you are verifying. In the **Status** column, click **Click to verify domain**.
-2. On the **Verify domain** page, in the **See instructions for performing this step with:** drop-down list, choose your DNS hosting provider. If your provider doesn't appear in the list, choose **General instructions**.
-3. In the **Select a verification method:** drop-down list, choose **Add a TXT record (preferred method)** or **Add an MX record (alternate method)**.
+1. En la página **Dominios**, en la lista de nombres de dominio, busque el dominio que esté verificando. En la columna **Estado**, haga clic en **Haga clic para comprobar el dominio**.
+2. En la página **Comprobar dominio**, en la lista desplegable **Consulte las instrucciones para llevar a cabo este paso con:**, elija el proveedor de host DNS. Si el proveedor no aparece en la lista, elija **Instrucciones generales**.
+3. En la lista desplegable **Seleccione un método de verificación:**, elija **Agregar un registro TXT (método preferido)** o **Agregar un registro MX (método alternativo)**.
 
-    If your DNS hosting provider allows you create TXT records, we recommend you use a TXT record for verification. Why? TXT records are straightforward to create and don't introduce the possibility of interfering with email delivery if an incorrect value is accidentally entered.
+    Si el proveedor de host DNS le permite crear registros TXT, se recomienda que use un registro TXT para la comprobación. ¿Por qué? Los registros TXT son fáciles de crear y no existe la posibilidad de interferencia con la entrega de correo electrónico si se especifica involuntariamente un valor incorrecto.
 
-4. From the table, copy or record the **Destination or Points to Address** information.
+4. En la tabla, copie o registre la información de **Dirección de destino**.
 
-If you are using the Management Portal:
+Si está usando el Portal de administración:
 
-1. In the portal, click **Active Directory**, click the name of your directory, click **Domains**. 
-2. On the **Domains** page, in the list of domain names, click the domain that you want to verify, and then click **Verify**.
-2. On the **Verify** page, in the **Record Type** drop-down list, choose either **TXT record** or **MX record**.
-3. Copy or record the information under it.
+1. En el portal, haga clic en **Active Directory**, haga clic en el nombre del directorio y haga clic en **Dominios**.
+2. En la página **Dominios**, en la lista de nombres de dominio, haga clic en el dominio que desee comprobar y, a continuación, haga clic en **Comprobar**.
+2. En la página **Comprobar**, en la lista desplegable **Tipo de registro**, elija **Registro TXT** o **Registro MX**.
+3. Copie o anote la información que aparece debajo.
 
-#### Add a DNS record at your domain name registrar 
+#### Incorporación de un registro DNS en el registrador de nombres de dominio
 
-Azure AD uses a DNS record that you create at your domain name registrar to confirm that you own the domain. Use the instructions below to create either a TXT or MX record type for a domain that is registered at your registrar.
+Azure AD usa un registro DNS que usted crea en el registrador de nombres de dominio para confirmar que usted es el propietario del dominio. Utilice las instrucciones siguientes para crear un tipo de registro TXT o MX para un dominio que está registrado en su registrador.
 
-If your domain registrar does not accept '@' as a hostname, contact your domain registrar to find out how to represent 'parent of the current zone.'
+Si el registrador de dominios no acepta "@" como nombre de host, póngase en contacto con el registrador de dominios para averiguar cómo representar el "elemento principal de la zona actual".
 
-Office 365 has [specific instructions for common domain registrars](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/).
+Office 365 tiene [instrucciones específicas para los registradores de dominio comunes](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/).
 
-For general instructions, follow these steps to add a TXT or MX record:
+Para obtener instrucciones generales, siga estos pasos para agregar un registro TXT o MX:
 
-1. Sign in to your domain name registrar's website, and then select the domain that you're verifying.
-2. In the DNS management area for your account, select the option to add a TXT or an MX record for your domain.
-3. In the **TXT** or **MX** box for the domain, type the following: @
-4. In the **Fully qualified domain name (FQDN)** or **Points to** box, type or paste the **Destination or Points to Address** that you recorded in the previous step.
-5. For a TXT record, it asks for **TTL** information, type **1** to set TTL to one hour. 
+1. Inicie sesión en el sitio web del registrador de su nombre de dominio y, a continuación, seleccione el dominio que quiera comprobar.
+2. En el área de administración de DNS de su cuenta, seleccione la opción para agregar un registro TXT o MX para el dominio.
+3. En el cuadro **TXT** o **MX** del dominio, escriba lo siguiente: @
+4. En el cuadro **Nombre de dominio completo (FQDN)** o **Apunta a**, escriba o pegue la **Dirección de destino** que anotó en el paso anterior.
+5. En el caso de un registro TXT, se solicitará información **TTL**, escriba **1** para establecer el período de vida en una hora.
 
-    For an MX record, it asks for a priority (or preference), type a number that is larger than the number you've specified for existing MX records. This can help prevent the new MX record from interfering with mail routing for the domain. Instead of a priority, you may see the following options: **Low**, **Medium**, **High**. In this case, choose **Low**.
+    En el caso de un registro MX, se solicitará un tipo de prioridad (o preferencia), escriba un número que sea mayor que el número especificado para los registros MX existentes. Esto puede ayudar a impedir que el nuevo registro MX interfiera con el enrutamiento de correo para el dominio. En lugar de una prioridad, verá las siguientes opciones: **Bajo**, **Medio**, **Alto**. En este caso, elija **Bajo**.
 
-6. Save your changes, and then sign out of your domain name registrar's website.
+6. Guarde los cambios y, a continuación, cierre sesión en el sitio web del registrador de su nombre de dominio.
 
-After you create either the TXT record or the MX record and sign out of the website, return to the cloud service to verify the domain. Typically it takes about 15 minutes for your changes to take effect. But it can take up to 72 hours for the record that you created to propagate through the DNS system.
+Después de crear el registro TXT o el registro MX y cerrar sesión en el sitio web, vuelva al servicio en la nube para comprobar el dominio. Los cambios suelen tardar unos 15 minutos en surtir efecto. Sin embargo, el registro que ha creado puede tardar hasta 72 horas en propagarse por el sistema DNS.
 
-#### Verify your domain 
+#### Verificación de su dominio
 
-After the record that you created for your domain has propagated successfully through the DNS system, do the following to finish verifying your domain with Azure AD.
+Después de que el registro que ha creado para el dominio se haya propagado correctamente por el sistema DNS, haga lo siguiente para acabar de comprobar su dominio con Azure AD.
 
-1. In the portal, click **Domains**.
-2. In the **Domains** list, find the domain that you're verifying, and then based on the portal you are using, click either **Click to verify domain** or **Verify**.
-3. Follow the instructions provided to complete the verification process.
-    - If domain verification succeeds, you will be notified that your domain has been added to your account.
-    - If domain verification fails, then the changes that you made at the domain registrar might need more time to propagate. Cancel the verification process, and return later to try the verification again.
+1. En el portal, haga clic en **Dominios**.
+2. En la lista **Dominios**, busque el dominio que se va a comprobar y, a continuación, según el portal que utilice, haga clic en **Haga clic para comprobar el dominio** o en **Comprobar**.
+3. Siga las instrucciones para completar el proceso de comprobación.
+    - Si la comprobación del dominio se realiza correctamente, se le notificará que el dominio se ha agregado a su cuenta.
+    - Si se produce un error en la comprobación del dominio, los cambios que realizó en el registrador de dominios tardarán más tiempo en propagarse. Cancele el proceso de comprobación y vuelva más tarde para intentar de nuevo la comprobación.
 
-If it has been more than 72 hours since you made the changes to your domain, sign in to the domain registrar's website and verify that you entered the alias information correctly. If you entered the information incorrectly, you must remove the incorrect DNS record and create a new one with the correct information by using the procedures in this topic.
+Si han pasado más de 72 horas desde que hizo los cambios en su dominio, inicie sesión en el sitio web del registrador de dominios y compruebe que especificó correctamente la información del alias. Si escribió incorrectamente la información, debe quitar el registro DNS incorrecto y crear uno nuevo con la información correcta utilizando los procedimientos de este tema.
 
-After you've verified your domain, you can configure your domain to work with your accounts.
+Una vez comprobado el dominio, puede configurarlo para que funcione con sus cuentas.
 
-## How can I change the primary domain name for users?
+## ¿Cómo puedo cambiar el nombre de dominio principal para los usuarios?
 
-After you add your domain name to Azure AD, you can change the domain name that should show as the default when you create a new user account. To do this, follow these steps.
+Después de agregar el nombre de dominio a Azure AD, puede cambiar el nombre de dominio que debería mostrarse como el valor predeterminado cuando se crea una nueva cuenta de usuario. Para ello, siga estos pasos.
 
-1. On the portal page, in the top left corner, click your organization name.
-2. Click **Edit**.
-3. Choose a new default domain name, such as the custom domain name that you added.
+1. En la página del portal, en la esquina superior izquierda, haga clic en el nombre de su organización.
+2. Haga clic en **Editar**.
+3. Elija un nuevo nombre de dominio predeterminado, como el nombre de dominio personalizado que ha agregado.
 
-## How can I remove a domain?
+## ¿Cómo puedo quitar un dominio?
 
-Before you remove a domain name, we recommend that you read the following information:
+Antes de quitar un nombre de dominio, se recomienda que lea la siguiente información:
 
-- The original contoso.onmicrosoft.com domain name that was provided for your directory when you signed up cannot be removed. 
-- Any top-level domain that has subdomains associated with it cannot be removed until the subdomains have been removed. For example, you can't remove adatum.com if you have corp.adatum.com or another subdomain that uses the top-level domain name. For more information, see this [Support article](https://support.microsoft.com/kb/2787792/).
-- Have you activated directory synchronization? If so, a domain was automatically added to your account that looks similar to this: contoso.mail.onmicrosoft.com. This domain name can't be removed.
-- Before you can remove a domain name, you must first remove the domain name from all user or email accounts associated with the domain. You can remove all of the accounts, or you can bulk edit user accounts to change their domain name information and email addresses. For more information, see [Create or edit users in Azure AD](active-directory-create-users.md).
-- If you are hosting a SharePoint Online site on a domain name that is being used for a SharePoint Online site collection, you must delete the site collection before you can remove the domain name.
+- No se puede quitar el nombre de dominio contoso.onmicrosoft.com original que se proporcionó para el directorio al suscribirse.
+- Un dominio de nivel superior que tenga subdominios asociados no se podrá quitar hasta que se hayan quitado dichos subdominios. Por ejemplo, no puede quitar adatum.com si tiene corp.adatum.com u otro subdominio que use el nombre de dominio de nivel superior. Para obtener más información, consulte este [artículo de soporte técnico](https://support.microsoft.com/kb/2787792/).
+- ¿Ha activado la sincronización de directorios? Si es así, se habrá agregado automáticamente a su cuenta un dominio con un aspecto similar a este: contoso.mail.onmicrosoft.com. No se puede quitar este nombre de dominio.
+- Para poder quitar un nombre de dominio, primero debe quitar el nombre de dominio de todas las cuentas de usuario o correo electrónico asociadas con el dominio. Puede quitar todas las cuentas o bien editarlas en masa para cambiar las direcciones de correo electrónico y la información de nombre de dominio. Para obtener más información, consulte [Creación o edición de usuarios en Azure AD](active-directory-create-users.md).
+- Si hospeda un sitio de SharePoint Online en un nombre de dominio que se utiliza para una colección de sitios de SharePoint Online, debe eliminar la colección de sitios para poder quitar el nombre de dominio.
 
-To remove a domain name:
+Para quitar un nombre de dominio:
 
-1. On the portal page, in the left pane, click **Domains**.
-2. On the **Domains** page, select the domain name that you want to remove, and then click **Remove domain**.
-3. On the **Remove domain** page, click **Yes**.
+1. En la página del portal, en el panel izquierdo, haga clic en **Dominios**.
+2. En la página **Dominios** seleccione el nombre de dominio que desea quitar y, a continuación, haga clic en **Quitar dominio**.
+3. En la página **Quitar dominio**, haga clic en **Sí**.
 
-If your domain name can't be removed at this time, the status for the domain name is shown as Pending removal on the Domains page. If you continue to see this status, try again to remove the domain name.
+Si no se puede quitar el nombre de dominio en este momento, el estado del nombre de dominio aparece como Eliminación en espera en la página Dominios. Si continúa viendo este estado, intente quitar el nombre de dominio de nuevo.
 
-## Troubleshooting problems after changing your domain name 
+## Solución de problemas después de cambiar el nombre de dominio
 
-### I made changes to my domain, but it doesn't show the changes yet.
+### He realizado cambios en mi dominio, pero este no muestra aún los cambios.
 
-Because of the way updates move through the domain name system (DNS), it can take up to 72 hours before the changes you make at a domain registrar or hosting provider fully propagate through the Internet and you can begin using your domain name with your services.
+Debido a la manera en que las actualizaciones se desplazan a través del sistema de nombres de dominio (DNS), pueden transcurrir hasta 72 horas para que los cambios realizados en el registrador de dominios o en el proveedor de host se propaguen completamente por Internet y pueda empezar a utilizar el nombre de dominio con los servicios.
 
-In addition, the edits that you make at the domain registrar must be exactly correct. If you go back to correct an error, it may take several days for the updated setting to appear on the cloud service portal site.
+Además, las modificaciones que realice en el registrador de dominios deben ser totalmente correctas. Si vuelve para corregir un error, es posible que trascurran varios días hasta que el valor actualizado aparezca en el sitio del portal del servicio en la nube.
 
-How long will it take? It depends in part on the time to live (TTL) setting you've specified for the DNS record that you are replacing or updating. Until the TTL expires, Internet servers that have cached the previous data won't query the authoritative name server to request the new value. 
+¿Cuánto tardará? Depende en parte del valor del período de vida (TTL) que haya especificado para el registro DNS que está sustituyendo o actualizando. Hasta que no expire el período de vida, los servidores de Internet que hayan almacenado en caché los datos anteriores no consultarán el servidor de nombres autoritativo para solicitar el nuevo valor.
 
-### I added a domain, verified it, and configured the DNS records on the domain registrar site. Why aren't new email accounts getting mail yet? 
+### He agregado un dominio, lo he comprobado y he configurado los registros DNS en el sitio del registrador de dominios. ¿Por qué las nuevas cuentas de correo electrónico no reciben correo todavía?
 
-After you have finished adding or updating DNS records for your domain, it can take up to 72 hours for the changes to take effect.
+Una vez que haya terminado de agregar o actualizar los registros DNS de su dominio, pueden transcurrir hasta 72 horas para que los cambios surtan efecto.
 
-In addition, the settings information must be exactly correct on the domain registrar site. Double-check your settings, and make sure that you've allowed enough time for the changed DNS records to propagate through the system.
+Además, la información de configuración debe ser totalmente correcta en el sitio del registrador de dominios. Compruebe de nuevo la configuración y asegúrese de que ha asignado tiempo suficiente para que los registros DNS modificados se propaguen por el sistema.
 
-### I can't verify my domain name. How can I find out what's wrong? 
+### No se puede comprobar el nombre de dominio. ¿Cómo puedo saber qué ha pasado?
 
-One way to track down issues is to use the domains troubleshooting wizard. To start the wizard, do the following: In the cloud service portal, on the Admin page, click **Domains**, and then double-click the domain name that you want to verify. Then, under **Troubleshooting**, click **Troubleshoot domain**. 
+Una manera de realizar un seguimiento de los problemas es utilizar el asistente para la solución de problemas de dominios. Para iniciar el asistente, haga lo siguiente: en el portal de servicios en la nube, en la página de administración, haga clic en **Dominios**, y, a continuación, haga doble clic en el nombre de dominio que desea comprobar. A continuación, en **Solución de problemas**, haga clic en **Solucionar problemas de dominio**.
 
-The troubleshooting wizard asks you for information about where you are in the verification process, and then provides you with information to help you complete the verification.
+El asistente para la solución de problemas le solicita información acerca del punto del proceso de verificación en que se encuentra y, a continuación, le ofrece información para ayudarle a completar la comprobación.
 
-### I added and verified my domain, but the new domain name isn't working for existing users' email addresses. 
+### He agregado y comprobado mi dominio, pero el nuevo nombre de dominio no funciona para las direcciones de correo electrónico de los usuarios existentes.
 
-If you add your custom domain name to the cloud service after you have already added user accounts, you may have to make updates to use the new domain name. For example, you will need to edit your users' accounts to set their email addresses to use your custom domain. 
+Si agrega el nombre de dominio personalizado al servicio en la nube después de haber agregado cuentas de usuario, es posible que tenga que aplicar actualizaciones para usar el nuevo nombre de dominio. Por ejemplo, necesitará editar las cuentas de los usuarios para configurar sus direcciones de correo electrónico a fin de utilizar el dominio personalizado.
 
-## What's next
+## Pasos siguientes
 
-- [Azure AD Forum](https://social.msdn.microsoft.com/Forums/home?forum=WindowsAzureAD)
+- [Foro de Azure AD](https://social.msdn.microsoft.com/Forums/home?forum=WindowsAzureAD)
 - [Stackoverflow](http://stackoverflow.com/questions/tagged/azure)
-- [Sign up for Azure as an organization](sign-up-organization.md)
-- [Manage domains in Azure AD](https://msdn.microsoft.com/library/azure/dn919677.aspx) 
+- [Registro en Azure como una organización](sign-up-organization.md)
+- [Administración de dominios en Azure AD](https://msdn.microsoft.com/library/azure/dn919677.aspx)
+
+<!---HONumber=August15_HO8-->

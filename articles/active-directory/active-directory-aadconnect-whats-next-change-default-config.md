@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Change Azure AD Connect Default Configuration" 
-	description="Learn how to change default configuration for Azure AD Connect." 
+	pageTitle="Cambio de la configuración predeterminada de Azure AD Connect" 
+	description="Obtenga información acerca de cómo cambiar la configuración predeterminada de Azure AD Connect." 
 	services="active-directory" 
 	documentationCenter="" 
 	authors="billmath" 
@@ -16,13 +16,15 @@
 	ms.date="05/28/2015" 
 	ms.author="billmath"/>
 
-# Changing the Azure AD Connect default configuration 
+# Cambio de la configuración predeterminada de Azure AD Connect 
 
 
-The default configuration of Azure AD Connect in most instances is sufficient to easily extend your on-premises directories into the cloud.  However there are certain instances when you may need to modify the default and tailor it to your organizations business logic.  In these instances you can modify the default configuration however there are some things you need to be aware of before you do this.
+La configuración predeterminada de Azure AD Connect en la mayoría de casos es suficiente para ampliar fácilmente los directorios locales llevándolos a la nube. Sin embargo, hay ciertas instancias en las que necesita modificar el valor predeterminado y adaptarlo a su lógica de negocios de sus organizaciones. En estos casos, puede modificar la configuración predeterminada; sin embargo, hay algunos aspectos que debe tener en cuenta antes de hacerlo.
 
-When you need to change the default configuration, do the following:
+Si necesita cambiar la configuración predeterminada, haga lo siguiente:
 
-- When you need to modify an attribute flow of an “out-of-box” synchronization rule, do not change it. Instead, create a new synchronization rule with a higher precedence (lower numeric value) that contains your required attribute flow.
-- Export your custom synchronization rules using the Synchronization Rules Editor. This provides you with a PowerShell script you can use to easily recreate them in the case of a disaster recovery scenario.
-- If you need to change the scope or the join setting in an “out-of-box” synchronization rule, document this and reapply the change after upgrading to a newer version of Azure AD Connect. 
+- Si necesita modificar un flujo de atributos de una regla de sincronización lista para su aplicación, no lo cambie directamente. En su lugar, cree una nueva regla de sincronización con una prioridad más alta (valor numérico más bajo) que contenga el flujo de atributos necesario.
+- Exporte las reglas de sincronización personalizadas mediante el editor de reglas de sincronización. De este modo, obtiene un script de PowerShell que puede utilizar fácilmente para volver a crearlas en un posible escenario de recuperación ante desastres.
+- Si necesita cambiar el ámbito o la configuración de unión de una regla de sincronización lista para su aplicación, documéntelo y vuelva a aplicar el cambio tras actualizar a una versión más reciente de Azure AD Connect. 
+
+<!---HONumber=August15_HO6-->

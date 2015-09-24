@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Application Objects and Service Principal Objects"
-   description="A discussion of the relationship between Application objects and ServicePrincipal objects in Azure Active Directory"
+   pageTitle="Objetos Application y objetos ServicePrincipal"
+   description="Una descripción de la relación entre los objetos Application y ServicePrincipal de Azure Active Directory"
    documentationCenter="dev-center-name"
    authors="msmbaldwin"
    manager="mbaldwin"
@@ -17,75 +17,76 @@
    ms.author="mbaldwin"/>
 
 
-# Application Objects and Service Principal Objects
+# Objetos Application y objetos ServicePrincipal
 
-This diagram illustrates the relationship between an Application object and a ServicePrincipal object in the context of an sample application called **HR app**. There are three tenants: **Adatum**, the tenant that develops the app, and **Contoso** and **Fabrikam**, the tenants that consume the **HR app**.
+Este diagrama ilustra la relación entre un objeto Application y un objeto ServicePrincipal en el contexto de una aplicación de ejemplo denominada **HR app**. Hay tres inquilinos: **Adatum**, el inquilino que desarrolla la aplicación, y **Contoso** y **Fabrikam**, los inquilinos que consumen la aplicación **HR app**.
 
-![Relationship between an Application object and a ServicePrincipal object](./media/active-directory-application-objects/application-objects-relationship.png)
-
-
-When you register an app in the Azure Management Portal, two objects are created in your directory tenant:
-
-- **Application object**: This object represents a definition for your app. You can find a detailed description of its properties in the **Application Object** section below.
-
-- **ServicePrincipal object**: This object represents an instance of your app in your directory tenant. You can apply policies to ServicePrincipal objects, including assigning permissions to the ServicePrincipal that allow the app to read your tenant’s directory data. Whenever you change your Application object, the changes are also applied to the associated ServicePrincipal object in your tenant.
+![Relación entre un objeto Application y un objeto ServicePrincipal](./media/active-directory-application-objects/application-objects-relationship.png)
 
 
-> [AZURE.NOTE] If your application is configured for external access, changes to the application object are not reflected in a consumer tenant’s ServicePrincipal until the consumer tenant removes access and grants access again.
+Al registrar una aplicación en el Portal de administración de Azure, se crean dos objetos en el inquilino del directorio:
+
+- **Objeto Application**: este objeto representa una definición de la aplicación. Puede encontrar una descripción detallada de sus propiedades en la sección **Objeto Application** más adelante.
+
+- **Objeto ServicePrincipal**: este objeto representa una instancia de su aplicación en el inquilino del directorio. Puede aplicar directivas a objetos ServicePrincipal, incluida la asignación de permisos a ServicePrincipal que permiten que la aplicación lea los datos del directorio de su inquilino. Cada vez que cambie el objeto Application, los cambios también se aplicarán al objeto ServicePrincipal asociado en el inquilino.
+
+
+> [AZURE.NOTE]Si la aplicación está configurada para el acceso externo, los cambios realizados en el objeto Application no se reflejan en el ServicePrincipal del inquilino consumidor hasta que el inquilino consumidor quite el acceso y lo conceda de nuevo.
  
 
 
-In the diagram above, Step "1" is the process of creating the Application and ServicePrincipal objects.
+En el diagrama anterior, el paso "1" es el proceso de creación de los objetos Application y ServicePrincipal.
 
-In Step 2, when a company admin grants access, a ServicePrincipal object is created in the company's Azure AD tenant and is assigned the directory access level that the company admin granted.
+En el paso 2, cuando el administrador de una empresa concede acceso, se crea un objeto ServicePrincipal en el inquilino de Azure AD de la empresa y se le asigna el nivel de acceso de directorio que concedió el administrador de la empresa.
 
-In Step 3, the consumer tenants of an app (such as Contoso and Fabrikam) each have their own ServicePrincipal object that represents their instance of the app. In this example, they each have a ServicePrincipal that represents the HR app.
+En el paso 3, los inquilinos consumidores de una aplicación (como Contoso y Fabrikam) tienen cada uno su propio objeto ServicePrincipal que representa la instancia de la aplicación. En este ejemplo, cada uno de ellos tiene un ServicePrincipal que representa a la aplicación HR app.
  
 
 
 
 
-## Application Object Properties
+## Propiedades del objeto Application
 
-The following tables list all the properties of an application object and includes important details for developers. These properties apply to web applications, web APIs, and native client applications that are registered with Azure AD.
+En las siguientes tablas se enumeran todas las propiedades de un objeto Application y se incluyen detalles importantes para los desarrolladores. Estas propiedades se aplican a las aplicaciones web, las API web y las aplicaciones cliente nativas que se registran con Azure AD.
 
  
 ### General
 
-Property | Description
+Propiedad | Descripción
 | ------------- | ----------- 
-| Name | Display name of the app. Required property in the **Add Application** wizard.
-| Logo | An app logo that represents your app or company. This logo allows external users to more easily associate the grant access request with your app. When uploading a logo, please adhere to the specifications in the **Upload logo** wizard. If you don’t supply a logo, a default logo appears.
-| External access | Determines whether users in external organizations are allowed to grant your app single sign-on and access to data in their organization's directory. This control affects only the ability to grant access. It does not change access that has already been granted. Only Company Administrators can grant access.
+| Nombre | Nombre para mostrar de la aplicación. Propiedad requerida en el asistente para **agregar aplicación**.
+| Logotipo | Un logotipo de aplicación que representa a la aplicación o la empresa. Este logotipo permite a los usuarios externos asociar más fácilmente la solicitud de concesión de acceso con la aplicación. Al cargar un logotipo, respete las especificaciones del asistente para **cargar logotipo**. Si no se proporciona un logotipo, aparece un logotipo predeterminado.
+| Acceso externo | Determina si los usuarios de las organizaciones externas pueden conceder el inicio de sesión único en la aplicación y el acceso a datos en el directorio de su organización. Este control repercute solo en la capacidad de conceder acceso. No cambia el acceso que ya se ha concedido. Los administradores de la empresa son los únicos que pueden conceder acceso.
  
 
-### Single Sign-On
+### Inicio de sesión único
  
-Property | Description
+Propiedad | Descripción
 | ------------- | ----------- 
-| App ID URI | A unique logical identifier for your app. Required property in the **Add Application** wizard. <br><br>Because the App ID URI is a logical identifier, it does not need to resolve to an Internet address. It is presented by your app when sending a single sign-on request to Azure AD. Azure AD identifies your app and sends the sign-on response (a SAML token) to the Reply URL that was provided during app registration. Use the App ID URI value to set the wtrealm property (for WS-Federation) or the Issuer property (for SAML-P) when making a sign-in request. The **App ID URI** must be a unique value in your organization’s Azure AD.<br><br>**Note**: When enabling an app for external users, the value of the App ID URI of the app must be an address in one of your directory’s verified domains. As a result, it cannot be a URN. This safeguard prevents other organizations from specifying (and taking) unique property that belongs to your organization. During development, you can change your App ID URI to a location in your organization’s initial domain (if you haven’t verified a custom/vanity domain), and update your app to use this new value. The initial domain is the 3-level domain that you create during sign up, such as contoso.onmicrosoft.com.
-| App URL | The address of a web page where users can sign in and use your app. Required property in the **Add Application** wizard.<br><BR>**Note**: The value set for this property in the Add Application wizard is also set as the value of the Reply URL.
-| Reply URL | The physical address of your app. Azure AD sends a token with the single sign-on response to this address. During first registration in the **Add Application** wizard, the value set for the App URL is also set as the value of the Reply URL. When making a sign in request, use the Reply URL value to set the wreply property (for WS-Federation) or the **AssertionConsumerServiceURL** property (for SAML-P).<br><BR>**Note**: When enabling an app for external users, the Reply URL must be an **https://** address.
-| Federation Metadata URL | (Optional). Represents the physical URL of the federation metadata document for your app. It is required to support SAML-P sign out. Azure AD downloads the metadata document that is hosted at this endpoint and uses it to discover the public portion of the certificate that you use to verify the signature on your sign-out requests and your app’s sign-out URL. You cannot configure this property when you first add your app. It can only be configured later.<br><BR>**Note**: If you need to support SAML-P sign-out, but you do not have a federation metadata endpoint for your app, contact Customer Support for other options.
+| URI de identificador de aplicación | Un identificador lógico único para la aplicación. Propiedad requerida en el asistente para **agregar aplicación**. <br><br>Dado que el URI de identificador de aplicación es un identificador lógico, no necesita resolverse en una dirección de Internet. La aplicación lo presenta al enviar una solicitud de inicio de sesión único a Azure AD. Azure AD identifica la aplicación y envía la respuesta de inicio de sesión (un token SAML) a la dirección URL de respuesta que se proporcionó durante el registro de la aplicación. Utilice el valor de URI de identificador de aplicación para establecer la propiedad wtrealm (para WS-Federation) o la propiedad Issuer (de SAML-P) al realizar una solicitud de inicio de sesión. El **URI de identificador de aplicación** debe ser un valor único en Azure AD en su organización.<br><br>**Nota**: al habilitar una aplicación para los usuarios externos, el valor del URI de identificador de aplicación debe ser una dirección en uno de los dominios comprobados de su directorio. Por lo tanto, no puede ser un URN. Esta medida de seguridad impide a otras organizaciones especificar (y tomar) una propiedad única que pertenezca a su organización. Durante el desarrollo, puede cambiar el URI de identificador de aplicación a una ubicación en el dominio inicial de su organización (si no ha comprobado un dominio personalizado o personal) y actualizar la aplicación para utilizar este nuevo valor. El dominio inicial es el dominio de nivel 3 que crea durante el registro; por ejemplo, contoso.onmicrosoft.com.
+| Dirección URL de la aplicación | La dirección de una página web donde los usuarios pueden iniciar sesión y utilizar la aplicación. Propiedad requerida en el asistente para **agregar aplicación**.<br><BR>**Nota**: el valor establecido para esta propiedad en el asistente para agregar aplicación también se establece como el valor de la dirección URL de respuesta.
+| URL de respuesta | La dirección física de la aplicación. Azure AD envía un token con la respuesta de inicio de sesión único a esta dirección. Durante el primer registro en el asistente para **agregar aplicación**, el valor establecido para la dirección URL de la aplicación también se establece como el valor de la dirección URL de respuesta. Al realizar una solicitud de inicio de sesión, use el valor de la dirección URL de respuesta para establecer la propiedad wreply (de WS-Federation) o la propiedad **AssertionConsumerServiceURL** (para SAML-P).<br><BR>**Nota**: al habilitar una aplicación para los usuarios externos, la dirección URL de respuesta debe ser una dirección **https://**. | Dirección URL de metadatos de federación | (Opcional). Representa la dirección URL física del documento de metadatos de federación para su aplicación. Es un valor requerido para admitir el cierre de sesión de SAML-P. Azure AD descarga el documento de metadatos que se hospeda en este extremo y lo utiliza para detectar la parte pública del certificado que se utiliza para comprobar la firma de las solicitudes de cierre de sesión y la dirección URL de cierre de sesión de la aplicación. No puede configurar esta propiedad cuando se agrega primero la aplicación. Solo se pueden configurarse posteriormente.<br><BR>**Nota**: si necesita admitir el cierre de sesión de SAML-P, pero no tiene un extremo de metadatos de federación para su aplicación, póngase en contacto con el soporte al cliente para ver otras opciones.
  
 
-### Calling the Graph API or Web APIs
+### Llamada a la API Graph o las API web
  
-Property | Description
+Propiedad | Descripción
 | ------------- | ----------- 
-| Client ID | The unique identifier for your app. You need to use this identifier in calls to the Graph API or other web APIs registered with Azure AD. Azure AD automatically generates this value during app registration and it cannot be changed.<BR><BR>To enable your app to access the directory (for read or write access) through the Graph API, you need a Client ID and a key (known in OAuth 2.0 as a client secret). Your app uses the Client ID and key to request an access token from the Azure AD OAuth 2.0 token endpoint. (To view all Azure AD endpoints, in the command bar, click **View endpoints**.) When using the Graph API to get or set (change) directory data, your app uses this access token in the Authorize header of the request to the Graph API.
-| Keys | If your app reads or writes data in Azure AD, such as data that is made available through the Graph API, your app needs a key. When you request an access token to call the Graph API, your app supplies its **Client ID** and **Key**. The token endpoint uses the ID and key to authenticate your app before issuing the access token. You can create multiple keys to address key rollover scenarios. And, you can delete keys that are expired, compromised, or no longer in use.
-| Manage Access | Choose from one of three different access levels: single sign-on (SSO), SSO and read directory data, or SSO and read/write directory data. You can also remove access. For more information about directory access, see [Application Access Levels](https://msdn.microsoft.com/library/azure/b08d91fa-6a64-4deb-92f4-f5857add9ed8#BKMK_AccessLevels).<br><BR>**Note**: Changes to the directory access level of your app apply only to your directory. The changes do not apply to customers who have granted access to your app.
+| Id. de cliente | El identificador único para la aplicación. Deberá utilizar este identificador en las llamadas a la API Graph u otras API web registradas en Azure AD. Azure AD genera automáticamente este valor durante el registro de la aplicación y no se puede cambiar.<BR><BR>Para permitir que la aplicación tenga acceso al directorio (acceso de lectura y escritura) a través de la API Graph, necesita un identificador de cliente y una clave (conocidos en OAuth 2.0 como un secreto de cliente). La aplicación utiliza el identificador de cliente y la clave para solicitar un token de acceso desde el extremo del token de OAuth 2.0 de Azure AD. (Para ver todos los extremos de Azure AD, en la barra de comandos, haga clic en **Ver extremos**). Al usar la API Graph para obtener o establecer (cambiar) datos de directorio, la aplicación usa este token de acceso en el encabezado de autorización de la solicitud a la API Graph.
+| Claves | Si la aplicación lee o escribe datos en Azure AD, como los datos que pasan a estar disponibles a través de la API Graph, la aplicación necesita una clave. Cuando se solicita un token de acceso para llamar a la API Graph, la aplicación proporciona el **identificador de cliente** y la **clave**. El extremo de token utiliza el identificador y la clave para autenticar la aplicación antes de emitir el token de acceso. Puede crear varias claves para tratar los escenarios de sustitución de claves. Y puede eliminar las claves que han caducado, están en riesgo o ya no se utilizan.
+| Administración del acceso | Elija uno de los tres diferentes niveles de acceso: inicio de sesión único (SSO), SSO y lectura de datos de directorio o SSO y lectura/escritura de datos de directorio. También puede quitar el acceso. Para obtener más información acerca del acceso de directorio, consulte [Niveles de acceso de la aplicación](https://msdn.microsoft.com/library/azure/b08d91fa-6a64-4deb-92f4-f5857add9ed8#BKMK_AccessLevels).<br><BR>**Nota**: los cambios realizados en el nivel de acceso del directorio de la aplicación solo se aplican a su directorio. Los cambios no se aplican a los clientes a los que se haya concedido acceso a la aplicación.
  
  
-### Native Clients
+### Clientes nativos
  
-Property | Description
+Propiedad | Descripción
 | ------------- | ----------- 
-| Redirect URI | The URI to which Azure AD will redirect the user-agent in response to an OAuth 2.0 authorization request. The value does not need to be a physical endpoint, but must be a valid URI.
+| URI de redireccionamiento | Se trata del URI al que Azure AD redirigirá al usuario-agente en respuesta a una solicitud de autorización OAuth 2.0. El valor no tiene que ser un extremo físico, pero debe ser un URI válido.
 
-## 
+##
 
 
  
  
+
+<!---HONumber=August15_HO6-->

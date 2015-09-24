@@ -1,50 +1,50 @@
-<properties 
-	pageTitle="Manage passwords in Azure AD" 
-	description="A topic that explains how to manage passwords in Azure AD." 
-	services="active-directory" 
-	documentationCenter="" 
-	authors="Justinha" 
-	manager="TerryLan" 
-	editor="LisaToft"
+<properties
+	pageTitle="Administración de contraseñas en Azure AD | Microsoft Azure"
+	description="Un tema que explica cómo administrar contraseñas en Azure AD."
+	services="active-directory"
+	documentationCenter=""
+	authors="curtand"
+	manager="swadwha"
+	editor=""
 	tags="azure-classic-portal"/>
 
-<tags 
-	ms.service="active-directory" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="04/27/2015" 
-	ms.author="Justinha"/>
+<tags
+	ms.service="active-directory"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/28/2015"
+	ms.author="curtand"/>
 
-# Manage passwords in Azure AD
+# Administración de contraseñas en Azure AD
 
-If you are an administrator, you can reset a user’s password in Azure in the Azure classic portal. Click the name of your directory and on the Users page, click the name of the user and at the bottom of the portal click **Reset Password**.
+Si es administrador, puede restablecer la contraseña de un usuario en Azure en el portal clásico de Azure. Haga clic en el nombre del directorio y en la página Usuarios, haga clic en el nombre del usuario y en la parte inferior del portal, haga clic en **Restablecer contraseña**.
 
-This rest of this topic covers the full set of password management capabilities that Azure Active Directory supports, including:
+El resto de este tema abarca el conjunto completo de capacidades de administración de contraseñas que admite Azure Active Directory, que incluye:
 
-- **Self-service password** change allows end users or administrators to change their expired or non-expired passwords without calling an administrator or helpdesk for support.
-- **Self-service password** reset allows end users or administrators to reset their passwords automatically without calling an administrator or helpdesk for support. Self-service password reset requires Azure AD Premium or Basic. For more information, see [Azure Active Directory editions](active-directory-editions.md).
-- **Administrator-initiated password reset** allows an administrator to reset an end user’s or another administrator’s password from within the Azure Management Portal.
-- **Password management activity reports** give administrators insights into password reset and registration activity occurring in their organization. 
-- **Password writeback** allows management of on-premises passwords from the cloud so all of the above scenarios can be performed by, or on the behalf of, federated or password synchronized users. Password writeback requires Azure AD Premium. For more information, see [Getting started with Azure Active Directory Premium](active-directory-get-started-premium.md).
+- El cambio de la **contraseña de autoservicio** permite a los usuarios finales o administradores cambiar sus contraseñas expiradas o no expiradas sin llamar a un administrador o departamento de soporte técnico para obtener soporte técnico.
+- El restablecimiento de la **contraseña de autoservicio** permite a los usuarios finales o administradores restablecer sus contraseñas automáticas sin llamar a un administrador o departamento de soporte técnico para obtener soporte técnico. El restablecimiento de la contraseña de autoservicio requiere Azure AD Premium o Básico. Para obtener más información, consulte [Ediciones de Azure Active Directory](active-directory-editions.md).
+- El **restablecimiento de la contraseña iniciada por el administrador** permite a un administrador restablecer la contraseña de un usuario final o de otro administrador desde dentro del Portal de administración de Azure.
+- Los **informes de actividad de administración de contraseñas** proporcionan a los administradores perspectivas sobre una actividad de registro y restablecimiento de contraseña en su organización.
+- La **escritura diferida de la contraseña** permite la administración de contraseñas locales desde la nube, por lo que todos los escenarios anteriores pueden realizarlos los usuarios sincronizados con contraseña y federados, o en nombre de ellos. La escritura diferida de la contraseña requiere Azure AD Premium. Para obtener más información, consulte [Introducción a Azure Active Directory Premium](active-directory-get-started-premium.md).
 
-> [AZURE.NOTE] 
-> Azure AD Premium is available for Chinese customers using the world wide instance of Azure AD. Azure AD Premium is not currently supported in the Microsoft Azure service operated by 21Vianet in China. For more information, contact us at the [Azure Active Directory Forum](http://feedback.azure.com/forums/169401-azure-active-directory). 
+> [AZURE.NOTE]Azure AD Premium está disponible para los clientes chinos con la instancia de todo el mundo de Azure AD. Azure AD Premium no es compatible actualmente en el servicio de Microsoft Azure operado por 21Vianet en China. Para obtener más información, póngase en contacto con nosotros en el [foro de Azure Active Directory](http://feedback.azure.com/forums/169401-azure-active-directory).
 
-Use the following links to jump to the documentation you are most interested in:
+Utilice los siguientes vínculos para ir a la documentación en la que esté más interesado:
 
-- [Overview: password management in Azure AD](https://msdn.microsoft.com/library/azure/dn683880.aspx)
-- [Self-service password reset in Azure AD: how to enable, configure, and test self-service password reset](https://msdn.microsoft.com/library/azure/dn683881.aspx)
-- [Self-service password reset in Azure AD: how to customize password reset to meet your needs](https://msdn.microsoft.com/library/azure/dn688249.aspx)
-- [Self-service password reset in Azure AD: deployment and management best practices](https://msdn.microsoft.com/library/azure/dn903643.aspx)
-- [Password management reports in Azure AD: how to view password management activity in your tenant](https://msdn.microsoft.com/library/azure/dn903641.aspx)
-- [Password writeback: how to configure Azure AD to manage on-premises passwords](https://msdn.microsoft.com/library/azure/dn903642.aspx)
-- [FAQ/Troubleshooting for Azure AD password management](https://msdn.microsoft.com/library/azure/dn683878.aspx)
+- [Información general: administración de contraseñas en Azure AD](https://msdn.microsoft.com/library/azure/dn683880.aspx)
+- [Restablecimiento de la contraseña de autoservicio: habilitación, configuración y prueba de restablecimiento de la contraseña de autoservicio](https://msdn.microsoft.com/library/azure/dn683881.aspx)
+- [Restablecimiento de la contraseña de autoservicio: personalización del restablecimiento de la contraseña para satisfacer sus necesidades](https://msdn.microsoft.com/library/azure/dn688249.aspx)
+- [Restablecimiento de la contraseña de autoservicio: prácticas recomendadas de implementación y administración](https://msdn.microsoft.com/library/azure/dn903643.aspx)
+- [Informes de administración de contraseñas de Azure AD: visualización de la actividad de administración de contraseñas en el inquilino](https://msdn.microsoft.com/library/azure/dn903641.aspx)
+- [Escritura diferida de contraseñas: configuración de Azure AD para administrar las contraseñas locales](https://msdn.microsoft.com/library/azure/dn903642.aspx)
+- [Preguntas más frecuentes y solución de problemas para la administración de contraseñas de Azure AD](https://msdn.microsoft.com/library/azure/dn683878.aspx)
 
-## What's next
+## Pasos siguientes
 
-- [Administering Azure AD](active-directory-administer.md)
-- [Create or edit users in Azure AD](active-directory-create-users.md)
-- [Manage groups in Azure AD](active-directory-manage-groups.md)
- 
+- [Administración de Azure AD](active-directory-administer.md)
+- [Creación o edición de usuarios en Azure AD](active-directory-create-users.md)
+- [Administración de grupos en Azure AD](active-directory-manage-groups.md)
+
+<!---HONumber=August15_HO6-->

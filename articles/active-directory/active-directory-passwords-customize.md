@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Customize: Azure AD Password Management | Microsoft Azure" 
-	description="How to customize Password Management look and feel, behavior, and notifications in Azure AD to meet your needs." 
+	pageTitle="Personalizar: Administración de contraseñas de Azure AD | Microsoft Azure" 
+	description="Cómo personalizar el aspecto, el comportamiento y las notificaciones de la Administración de contraseñas en Azure AD para satisfacer sus necesidades." 
 	services="active-directory" 
 	documentationCenter="" 
 	authors="asteen" 
@@ -16,717 +16,717 @@
 	ms.date="06/08/2015" 
 	ms.author="asteen"/>
 
-# Customizing Password Management to fit your organization's needs
-In order to give your users the best possible experience, we recommend that you explore and play with all of the Password Management configuration options available to you. In fact, you can start exploring this right away by going to the configuration tab of the **Active Directory extension** in the [Azure Management Portal](https://manage.windowsazure.com). This topic walks you through all of the different Password Management customizations you can make as an administrator from within **Configure** tab of your directory within the [Azure Management Portal](https://manage.windowsazure.com), including:
+# Personalización de la administración de contraseñas para ajustarse a las necesidades de su organización
+A fin de ofrecer la mejor experiencia posible a los usuarios, se recomienda explorar y jugar con todas las opciones de configuración de administración de contraseñas que están a su disposición. De hecho, puede empezar a explorarlas de inmediato en la pestaña de configuración de la **extensión de Active Directory** en el [Portal de administración de Azure](https://manage.windowsazure.com). Este tema le guiará a través de todas las diferentes personalizaciones de la Administración de contraseñas que puede realizar como administrador desde la pestaña **Configurar** del directorio dentro del [Portal de administración de Azure](https://manage.windowsazure.com), entre las que se incluyen las siguientes:
 
-- [**Customizing Password Management Look and Feel**](#password-managment-look-and-feel)
-- [**Customizing User Password Management Behavior**](#password-management-behavior)
-- [**Customizing Password Management Notifications**](#password-management-notifications)
+- [**Personalización del aspecto de la Administración de contraseñas**](#password-managment-look-and-feel)
+- [**Personalización del comportamiento de la Administración de contraseñas del usuario**](#password-management-behavior)
+- [**Personalización de las notificaciones de Administración de contraseñas**](#password-management-notifications)
 
-## Password managment look and feel
-The following table describes how each control affects the experience for users registering for password reset and resetting their passwords.  You can configure these options under the **Directory Properties** section of your directory’s **Configure** tab within the [Azure Management Portal](https://manage.windowsazure.com).
+## Aspecto de la Administración de contraseñas
+En la siguiente tabla se describe la forma en la que cada control afecta a la experiencia de los usuarios que se registran para el restablecimiento de contraseña y que restablecen sus contraseñas. Puede configurar estas opciones en la sección **Propiedades de directorio** de la pestaña **Configurar** del [Portal de administración de Azure](https://manage.windowsazure.com).
 
 <table>
             <tbody><tr>
               <td>
                 <p>
-                  <strong>Policy Control</strong>
+                  <strong>Control de directivas</strong>
                 </p>
               </td>
               <td>
                 <p>
-                  <strong>Description</strong>
+                  <strong>Descripción</strong>
                 </p>
               </td>
               <td>
                 <p>
-                  <strong>Affects?</strong>
+                  <strong>¿Afecta?</strong>
                 </p>
               </td>
             </tr>
             <tr>
               <td>
-                <p>Directory Name</p>
+                <p>Nombre de directorio</p>
               </td>
               <td>
-                <p>Determines what organizational name users or admins see on password reset email communications</p>
+                <p>Determina lo que ven los usuarios o administradores de la organización en las comunicaciones por correo electrónico sobre restablecimiento de contraseñas.</p>
               </td>
               <td>
                 <p>
-                  <strong>”Contact your administrator” emails:</strong>
+                  <strong>Mensajes de correo electrónico de tipo "Póngase en contacto con el administrador":</strong>
                 </p>
                 <ul>
                   <li class="unordered">
-												Determines the from address friendly name, e.g. “Microsoft on behalf of <strong>Wingtip Toys</strong>”<br><br></li>
+												Determina el nombre descriptivo del remitente; por ejemplo, "Microsoft en nombre de <strong>Wingtip Toys</strong>".<br><br></li>
                   <li class="unordered">
-												Determines the subject name of the email, e.g. “<strong>Wingtip Toys</strong> account email verification code”<br><br></li>
+												Determina el nombre de asunto del correo electrónico; por ejemplo, "Código de comprobación de correo electrónico de la cuenta <strong>Wingtip Toys</strong>".<br><br></li>
                 </ul>
                 <p>
-                  <strong>Password reset emails:</strong>
+                  <strong>Mensajes de correo electrónico de restablecimiento de contraseña:</strong>
                 </p>
                 <ul>
                   <li class="unordered">
-												Determines the from address friendly name, e.g. “Microsoft on behalf of <strong>Wingtip Toys</strong>”<br><br></li>
+												Determina el nombre descriptivo del remitente; por ejemplo, "Microsoft en nombre de <strong>Wingtip Toys</strong>".<br><br></li>
                 </ul>
               </td>
             </tr>
             <tr>
               <td>
-                <p>Sign in and access panel page appearance</p>
+                <p>Aspecto de la página de inicio de sesión y del panel de acceso</p>
               </td>
               <td>
-                <p>Determines if users visiting the password reset page see the Microsoft logo or your own custom logo.  This configuration item also adds your branding to the access panel and sign in page.</p>
+                <p>Determina si los usuarios que visitan la página de restablecimiento de contraseña ven el logotipo de Microsoft o su propio logotipo personalizado. Este elemento de configuración agrega también su marca al panel de acceso y a la página de inicio de sesión.</p>
                 <p>
                   
                 </p>
-                <p>You can learn more about the tenant branding and customization feature at <a href="https://technet.microsoft.com/library/dn532270.aspx">Add company branding to your Sign In and Access Panel pages</a>.</p>
+                <p>Puede obtener más información acerca de la característica de personalización y uso de marca en inquilinos en <a href="https://technet.microsoft.com/library/dn532270.aspx">Añadir marcas de empresa a sus páginas de inicio de sesión y del panel de acceso</a>.</p>
               </td>
               <td>
                 <p>
-                  <strong>Password reset portal:</strong>
+                  <strong>Portal de restablecimiento de contraseña:</strong>
                 </p>
                 <ul>
                   <li class="unordered">
-												Determines whether or not your logo is shown at the top of the password reset portal instead of the default Microsoft logo.<br><br></li>
+												Determina si se muestra o no el logotipo en la parte superior del portal de restablecimiento de contraseña en lugar del logotipo de Microsoft predeterminado.<br><br></li>
                   <li class="unordered">
-                    <strong>Note:</strong> you may not see your logo on the first page of the password reset portal if you come to the password reset page directly.  Once a user enters his or her userID and clicks next, your logo will appear.  You can force your logo to appear on page load by passing the whr parameter to the password reset page, like this: <a href="https://passwordreset.microsoftonline.com?whr=wingtiptoysonline.com">https://passwordreset.microsoftonline.com?whr=wingtiptoysonline.com</a><br><br></li>
+                    <strong>Nota:</strong> puede que no vea su logotipo en la primera página del portal de restablecimiento de contraseña si llega directamente a la página de restablecimiento de contraseña. Una vez que el usuario escriba su identificador de usuario y haga clic en Siguiente, aparecerá su logotipo. Puede forzar que su logotipo aparezca al cargar la página si pasa el parámetro whr a la página de restablecimiento de contraseña, como se muestra aquí: <a href="https://passwordreset.microsoftonline.com?whr=wingtiptoysonline.com">https://passwordreset.microsoftonline.com?whr=wingtiptoysonline.com</a>.<br><br></li>
                 </ul>
                 <p>
-                  <strong>”Contact your administrator” emails:</strong>
+                  <strong>Mensajes de correo electrónico de tipo "Póngase en contacto con el administrador":</strong>
                 </p>
                 <ul>
                   <li class="unordered">
-												Determines whether or not your logo is shown at the bottom of the emails sent to admins when users choose to contact you by clicking the “contact your administrator” link on the password reset UI.<br><br></li>
+												Determina si el logotipo se muestra en la parte inferior de los correos electrónicos enviados a los administradores cuando los usuarios eligen ponerse en contacto con usted haciendo clic en el vínculo "Póngase en contacto con el administrador" en la interfaz de usuario de restablecimiento de contraseña.<br><br></li>
                 </ul>
                 <p>
-                  <strong>Password reset emails:</strong>
+                  <strong>Mensajes de correo electrónico de restablecimiento de contraseña:</strong>
                 </p>
                 <ul>
                   <li class="unordered">
-												Determines whether or not your logo is shown at the bottom of the emails sent to users when they reset their passwords.<br><br></li>
+												Determina si el logotipo se muestra en la parte inferior de los correos electrónicos enviados a los usuarios cuando restablecen sus contraseñas.<br><br></li>
                 </ul>
               </td>
             </tr>
           </tbody></table>
 
-## Password Management behavior
-The following table describes how each control affects the experience for users registering for password reset and resetting their passwords.  You can configure these options under the **User Password Reset Policy** section of your directory’s **Configure** tab in the [Azure Management Portal](https://manage.windowsazure.com).
+## Comportamiento de la Administración de contraseñas
+En la siguiente tabla se describe la forma en la que cada control afecta a la experiencia de los usuarios que se registran para el restablecimiento de contraseña y que restablecen sus contraseñas. Puede configurar estas opciones en la sección **Directiva de restablecimiento de contraseña del usuario** en la pestaña **Configurar** del [Portal de administración de Azure](https://manage.windowsazure.com).
 
-> [AZURE.NOTE] The administrator account you are using must have an AAD Premium license assigned in order to see these policy controls.<br><br>These policy controls only apply to end users resetting their passwords, not administrators.  **Administrators have a default policy of alternate email and/or mobile phone that is specified for them by Microsoft which cannot be changed.**
+> [AZURE.NOTE]La cuenta de administrador que utilice debe tener asignada una licencia Premium de AAD para ver estos controles de directiva.<br><br>Estos controles de directiva solo se aplican a usuarios finales que restablecen sus contraseñas, no a administradores. **Los administradores tienen una directiva predeterminada de correo electrónico alternativo o teléfono móvil que se especifica para ellos por parte de Microsoft y que no se puede cambiar.**
 
 <table>
             <tbody><tr>
               <td>
                 <p>
-                  <strong>Policy Control</strong>
+                  <strong>Control de directivas</strong>
                 </p>
               </td>
               <td>
                 <p>
-                  <strong>Description</strong>
+                  <strong>Descripción</strong>
                 </p>
               </td>
               <td>
                 <p>
-                  <strong>Affects?</strong>
+                  <strong>¿Afecta?</strong>
                 </p>
               </td>
             </tr>
             <tr>
               <td>
-                <p>Users enabled for password reset</p>
+                <p>Usuarios habilitados para restablecer la contraseña</p>
               </td>
               <td>
-                <p>Determines if password reset is enabled for users in this directory. </p>
+                <p>Determina si está habilitado el restablecimiento de contraseña para los usuarios en este directorio. </p>
               </td>
               <td>
                 <p>
-                  <strong>Registration portal:</strong>
+                  <strong>Portal de registro:</strong>
                 </p>
                 <ul>
                   <li class="unordered">
-												If set to no, no users can register their own challenge data.<br><br></li>
+												Si está establecido en No, ningún usuario puede registrar sus propios datos de desafíos.<br><br></li>
                   <li class="unordered">
-												If set to yes, any end user in the directory can register challenge data by going to the registration portal at <a href="http://aka.ms/ssprsetup">http://aka.ms/ssprsetup</a>.<br><br></li>
+												Si está establecido en Sí, cualquier usuario del directorio puede registrar datos de desafíos en el portal de registro en <a href="http://aka.ms/ssprsetup">http://aka.ms/ssprsetup</a>.<br><br></li>
                   <li class="unordered">
-                    <strong>Note:</strong> users must have an Azure AD Premium or Basic license assigned before they can register for password reset.<br><br></li>
+                    <strong>Nota:</strong> los usuarios deben tener asignada una licencia de Azure AD de nivel Premium o Básico para registrarse para restablecer la contraseña.<br><br></li>
                 </ul>
                 <p>
-                  <strong>Password reset portal:</strong>
+                  <strong>Portal de restablecimiento de contraseña:</strong>
                 </p>
                 <ul>
                   <li class="unordered">
-												If set to no, users see a message saying the must contact their admin to reset their password.<br><br></li>
+												Si está establecido en No, los usuarios ven un mensaje que indica que deben ponerse en contacto con su administrador para restablecer la contraseña.<br><br></li>
                   <li class="unordered">
-												If set to yes, users are able to reset their passwords automatically by going to  <a href="http://passwordreset.microsoftonline.com">http://passwordreset.microsoftonline.com</a>, or clicking on the <strong>can’t access your account</strong> link on any Organizational ID sign-in page.<br><br></li>
+												Si está establecido en Sí, los usuarios pueden restablecer sus contraseñas automáticamente en <a href="http://passwordreset.microsoftonline.com">http://passwordreset.microsoftonline.com</a> o al hacer clic en el vínculo <strong>¿No puede tener acceso a su cuenta?</strong> en cualquier página de inicio de sesión de identificador organizativo.<br><br></li>
                   <li class="unordered">
-                    <strong>Note:</strong> users must have an Azure AD Premium or Basic license assigned before they can reset their passwords.<br><br></li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Restrict access to password reset</p>
-              </td>
-              <td>
-                <p>Determines whether only a particular group of users is allowed to use password reset. (Only visible if <strong>users enabled for password reset</strong> is set to <strong>yes</strong>).</p>
-              </td>
-              <td>
-                <p>
-                  <strong>Registration portal:</strong>
-                </p>
-                <ul>
-                  <li class="unordered">
-												If set to no, then all end users in your directory can register for password reset at <a href="http://aka.ms/ssprsetup">http://aka.ms/ssprsetup</a><br><br></li>
-                  <li class="unordered">
-												If set to yes, then only end users specified in the <strong>group that can perform password reset</strong> control can register for password reset at  <a href="http://aka.ms/ssprsetup">http://aka.ms/ssprsetup</a><br><br></li>
-                </ul>
-                <p>
-                  <strong>Password reset portal:</strong>
-                </p>
-                <ul>
-                  <li class="unordered">
-												If set to no, then all end users in your directory can reset their passwords.<br><br></li>
-                  <li class="unordered">
-												If set to yes, then only end users specified in the <strong>group that can perform password reset</strong> control can reset their passwords.<br><br></li>
+                    <strong>Nota:</strong> los usuarios deben tener asignada una licencia de Azure AD de nivel Premium o Básico para poder restablecer la contraseña.<br><br></li>
                 </ul>
               </td>
             </tr>
             <tr>
               <td>
-                <p>Group that can perform password reset</p>
+                <p>Restricción de acceso para restablecer la contraseña</p>
               </td>
               <td>
-                <p>Determines what group of end users is allowed to use password reset. </p>
-                <p>
-                  
-                </p>
-                <p>(Only visible if <strong>restrict access to password reset</strong> is set to <strong>yes</strong>).</p>
+                <p>Determina si el restablecimiento de contraseña se permite solo a un determinado grupo de usuarios. (Solo visible si <strong>Usuarios habilitados para restablecer la contraseña</strong> está establecido en <strong>Sí</strong>).</p>
               </td>
               <td>
                 <p>
-                  <strong>Note:</strong>
+                  <strong>Portal de registro:</strong>
                 </p>
                 <ul>
                   <li class="unordered">
-												If no group is specified and you click <strong>Save</strong>, an empty group called <strong>SSPRSecurityGroupUsers</strong> will be created for you.<br><br></li>
+												Si se establece en No, todos los usuarios finales de su directorio pueden registrarse para restablecer la contraseña en <a href="http://aka.ms/ssprsetup">http://aka.ms/ssprsetup</a>.<br><br></li>
                   <li class="unordered">
-												If you’d like to specify your own group, you can provide your own display name.<br><br></li>
+												Si se establece en Sí, solo los usuarios finales especificados en el control del <strong>grupo que puede realizar el restablecimiento de contraseña</strong> pueden registrarse para restablecer la contraseña en <a href="http://aka.ms/ssprsetup">http://aka.ms/ssprsetup</a>.<br><br></li>
                 </ul>
                 <p>
-                  <strong>Registration portal:</strong>
+                  <strong>Portal de restablecimiento de contraseña:</strong>
                 </p>
                 <ul>
                   <li class="unordered">
-												If <strong>restrict access to password reset</strong> is set to <strong>yes</strong>, then only end users in this group will be able to register for password reset. <br><br></li>
-                </ul>
-                <p>
-                  <strong>Password reset portal:</strong>
-                </p>
-                <ul>
+												Si se establece en No, todos los usuarios finales del directorio pueden restablecer sus contraseñas.<br><br></li>
                   <li class="unordered">
-												If <strong>restrict access to password reset</strong> is set to <strong>yes</strong>, then only end users in this group will be able to reset their passwords.<br><br></li>
+												Si se establece en Sí, solo los usuarios finales especificados en el control del <strong>grupo que puede realizar el restablecimiento de contraseña</strong> pueden restablecer sus contraseñas.<br><br></li>
                 </ul>
               </td>
             </tr>
             <tr>
               <td>
-                <p>Authentication methods available to users</p>
+                <p>Grupo que puede realizar el restablecimiento de contraseña</p>
               </td>
               <td>
-                <p>Determines which challenges a user is allowed to use to reset his or her password.</p>
+                <p>Determina qué grupo de usuarios finales puede utilizar el restablecimiento de contraseña. </p>
                 <p>
                   
                 </p>
-                <p>(Only visible if <strong>users enabled for password reset</strong> is set to <strong>yes</strong>).</p>
+                <p>(Solo visible si <strong>Restringir acceso para restablecer la contraseña</strong> está establecido en <strong>Sí</strong>).</p>
               </td>
               <td>
                 <p>
-                  
-                </p>
-                <p>
-                  
-                </p>
-                <p>
-                  <strong>Note:</strong>
+                  <strong>Nota:</strong>
                 </p>
                 <ul>
                   <li class="unordered">
-												At least one option must be selected.<br><br></li>
+												Si no se especifica ningún grupo y hace clic en <strong>Guardar</strong>, se crea un grupo vacío denominado <strong>SSPRSecurityGroupUsers</strong>.<br><br></li>
                   <li class="unordered">
-												We highly recommend enabling at least 2 options to give your users the most flexibility when resetting their passwords.<br><br></li>
-                  <li class="unordered">
-												If you are using security questions, we highly recommend you use them in conjunction with another authentication method, as security questions can be less secure than phone or email-based password reset methods.<br><br></li>
+												Si desea especificar su propio grupo, puede proporcionar su propio nombre para mostrar.<br><br></li>
                 </ul>
                 <p>
-                  <strong>Which directory fields are used?</strong>
+                  <strong>Portal de registro:</strong>
                 </p>
                 <ul>
                   <li class="unordered">
-												Office Phone corresponds to the <strong>Office Phone</strong> attribute on a user object in the directory.<br><br></li>
-                  <li class="unordered">
-												Mobile Phone corresponds to either the <strong>Authentication Mobile</strong> attribute (which is not publically visible) or the <strong>Mobile Phone</strong> attribute (which is publically visible) on a user object in the directory.  The service first checks <strong>Authentication Phone</strong> for data, and if there is none present, falls back to the <strong>Mobile Phone</strong> attribute.<br><br></li>
-                  <li class="unordered">
-												Alternate Email Address corresponds to either the <strong>Authentication Email</strong> attribute (which is not publically visible) or the <strong>Alternate Email</strong> attribute on a user object in the directory.  The service first checks <strong>Authentication Email</strong> for data, and if there is none present, falls back to the <strong>Alternate Email</strong> attribute.<br><br></li>
-                  <li class="unordered">
-												Security Questions are stored privately and securely on a user object in the directory and can only be answered by users during registration.  For security purposes, there is currently no way for an administrator to edit or see these answers.<br><br></li>
-                  <li class="unordered">
-                    <strong>Note: </strong>by default, only the cloud attributes Office Phone and Mobile Phone are synchronized to your cloud directory from your on-premises directory.  To learn more about which on-premises attributes are synced to the cloud, see <a href="https://msdn.microsoft.com/library/azure/dn764938.aspx">Attributes synchronized to Azure AD.</a><br><br></li>
+												Si <strong>Restringir acceso para restablecer la contraseña</strong> está establecido en <strong>Sí</strong>, solo los usuarios finales de este grupo podrán registrarse para restablecer la contraseña. <br><br></li>
                 </ul>
                 <p>
-                  <strong>Registration portal:</strong>
+                  <strong>Portal de restablecimiento de contraseña:</strong>
                 </p>
                 <ul>
                   <li class="unordered">
-												Affects which authentication methods are displayed when users are registering.  If you do not enable a given authentication method, users will not be able to self-register for that authentication method.<br><br></li>
-                  <li class="unordered">
-                    <strong>Note: </strong>users are currently not able to register their own office phone numbers; that authentication method must be defined by their administrator.<br><br></li>
-                </ul>
-                <p>
-                  <strong>Password reset portal:</strong>
-                </p>
-                <ul>
-                  <li class="unordered">
-												Determines which authentication methods a user can use as challenges for a given verification step.  For example, if a user has data in both the <strong>Office Phone</strong> and <strong>Authentication Phone</strong> fields in Azure Active Directory, then he or she can use either of these authentication methods to recover his or her password.<br><br></li>
-                  <li class="unordered">
-                    <strong>Note: </strong>users will be able to reset their password if and only if they have data present in the authentication methods you have enabled as an administrator.<br><br></li>
+												Si <strong>Restringir acceso para restablecer la contraseña</strong> está establecido en <strong>Sí</strong>, solo los usuarios finales de este grupo podrán restablecer la contraseña.<br><br></li>
                 </ul>
               </td>
             </tr>
             <tr>
               <td>
-                <p>Number of authentication methods required</p>
+                <p>Métodos de autenticación disponibles para los usuarios</p>
               </td>
               <td>
-                <p>Determines the minimum number of the available authentication methods a user must go through to reset his or her password.</p>
+                <p>Determina qué desafíos puede utilizar un usuario para restablecer su contraseña.</p>
                 <p>
                   
                 </p>
-                <p>(Only visible if <strong>users enabled for password reset</strong> is set to <strong>yes</strong>).</p>
+                <p>(Solo visible si <strong>Usuarios habilitados para restablecer la contraseña</strong> está establecido en <strong>Sí</strong>).</p>
               </td>
               <td>
                 <p>
-                  <strong>Note:</strong>
+                  
+                </p>
+                <p>
+                  
+                </p>
+                <p>
+                  <strong>Nota:</strong>
                 </p>
                 <ul>
                   <li class="unordered">
-												Can be set to 1 or 2 authentication methods required.<br><br></li>
+												Debe seleccionarse al menos una opción.<br><br></li>
+                  <li class="unordered">
+												Se recomienda habilitar al menos dos opciones para ofrecer la máxima flexibilidad a los usuarios al restablecer sus contraseñas.<br><br></li>
+                  <li class="unordered">
+												Si está utilizando preguntas de seguridad, recomendamos encarecidamente que las use junto con otro método de autenticación, ya que las preguntas de seguridad pueden resultar menos seguras que los métodos de restablecimiento de contraseña por teléfono o correo electrónico.<br><br></li>
                 </ul>
                 <p>
-                  <strong>Registration portal:</strong>
+                  <strong>¿Qué campos del directorio se usan?</strong>
                 </p>
                 <ul>
                   <li class="unordered">
-												Determines the minimum number of authentication methods a user must register before being able to finish the registration experience.<br><br></li>
+												Teléfono de la oficina corresponde al atributo <strong>Teléfono de la oficina</strong> en un objeto de usuario en el directorio.<br><br></li>
+                  <li class="unordered">
+												Teléfono móvil corresponde al atributo <strong>Móvil de autenticación</strong> (que no está visible públicamente) o al atributo <strong>Teléfono móvil</strong> (que está visible públicamente) en un objeto de usuario en el directorio. El servicio comprueba primero si hay datos en <strong>Teléfono de autenticación</strong> y, si no hay ninguno, vuelve al atributo <strong>Teléfono móvil</strong>.<br><br></li>
+                  <li class="unordered">
+												Dirección de correo electrónico alternativa corresponde al atributo <strong>Correo electrónico de autenticación</strong> (que no está visible públicamente) o al atributo <strong>Correo electrónico alternativo</strong> de un objeto de usuario en el directorio. El servicio comprueba primero si hay datos en <strong>Correo electrónico de autenticación</strong> y, si no hay ninguno, vuelve al atributo <strong>Correo electrónico alternativo</strong>.<br><br></li>
+                  <li class="unordered">
+												Las preguntas de seguridad se almacenan de forma privada y segura en un objeto de usuario en el directorio y solo las pueden responder los usuarios durante el registro. Por motivos de seguridad, no hay actualmente ninguna manera de que un administrador edite o vea estas respuestas.<br><br></li>
+                  <li class="unordered">
+                    <strong>Nota: </strong>de forma predeterminada, solo los atributos de la nube Teléfono de la oficina y Teléfono móvil se sincronizan en su directorio en la nube desde el directorio local. Para obtener más información acerca de qué atributos locales se sincronizan en la nube, consulte <a href="https://msdn.microsoft.com/library/azure/dn764938.aspx">Atributos sincronizados con Azure AD.</a><br><br></li>
                 </ul>
                 <p>
-                  <strong>Password reset portal:</strong>
+                  <strong>Portal de registro:</strong>
                 </p>
                 <ul>
                   <li class="unordered">
-												Affects number of verification steps a user must go through before being able to reset a password.  A verification step is defined to be a user using one piece of authentication information (such as a call to their office phone, or an email to their alternate email) to verify their account.<br><br></li>
+												Afecta a los métodos de autenticación que se muestran cuando los usuarios se van a registrar. Si no habilita un método de autenticación determinado, los usuarios no pueden registrarse por sí mismos para ese método de autenticación.<br><br></li>
                   <li class="unordered">
-                    <strong>Note:</strong> If a user does not have the required amount of authentication information defined on his or her account in order to be successful resetting his or her password in accordance with the policy you’ve set, he or she will see an error page which will direct them to request an administrator to reset his or her password.  <br><br></li>
+                    <strong>Nota: </strong>actualmente, los usuarios no pueden registrar sus propios números de teléfono de la oficina; ese método de autenticación debe definirlo el administrador.<br><br></li>
+                </ul>
+                <p>
+                  <strong>Portal de restablecimiento de contraseña:</strong>
+                </p>
+                <ul>
+                  <li class="unordered">
+												Determina qué métodos de autenticación puede utilizar un usuario como desafíos para un determinado paso de verificación. Por ejemplo, si un usuario tiene datos en los campos <strong>Teléfono de la oficina</strong> y <strong>Teléfono de autenticación</strong> de Azure Active Directory, puede usar cualquiera de estos métodos de autenticación para recuperar su contraseña.<br><br></li>
+                  <li class="unordered">
+                    <strong>Nota: </strong>los usuarios podrán restablecer su contraseña solo si tienen datos en los métodos de autenticación que haya habilitado como administrador.<br><br></li>
                 </ul>
               </td>
             </tr>
             <tr>
               <td>
-                <p>Number of question required to register</p>
+                <p>Número de métodos de autenticación requeridos</p>
               </td>
               <td>
-                <p>Determines the minimum number of questions a user must answer when registering for the security questions option.</p>
-                <p>(Only visible if the <strong>Security Questions</strong> checkbox is enabled).</p>
+                <p>Determina el número mínimo de métodos de autenticación disponibles que un usuario debe superar para restablecer su contraseña.</p>
+                <p>
+                  
+                </p>
+                <p>(Solo visible si <strong>Usuarios habilitados para restablecer la contraseña</strong> está establecido en <strong>Sí</strong>).</p>
               </td>
               <td>
                 <p>
-                  <strong>Note:</strong>
+                  <strong>Nota:</strong>
                 </p>
                 <ul>
                   <li class="unordered">
-												Can be set to 3 – 5 questions required to register.<br><br></li>
-                  <li class="unordered">
-												Number of questions required to register must be greater than or equal to the number of questions required to reset.<br><br></li>
-                  <li class="unordered">
-												We recommend you set the number of questions required to register to be higher than the number required to reset so users have more flexibility when resetting their passwords.  This is also a more secure configuration because we will randomly select questions for the user to answer from the pool of all of the questions they have registered.<br><br></li>
+												Puede establecerse en 1 o 2 métodos de autenticación necesarios.<br><br></li>
                 </ul>
                 <p>
-                  <strong>Registration portal:</strong>
+                  <strong>Portal de registro:</strong>
                 </p>
                 <ul>
                   <li class="unordered">
-												Determines the minimum number of questions a user must answer before the user is considered fully registered for password reset.<br><br></li>
+												Determina el número mínimo de métodos de autenticación que un usuario debe registrar para poder finalizar la experiencia de registro.<br><br></li>
+                </ul>
+                <p>
+                  <strong>Portal de restablecimiento de contraseña:</strong>
+                </p>
+                <ul>
+                  <li class="unordered">
+												Afecta a la cantidad de pasos de verificación que debe superar un usuario antes de poder restablecer una contraseña. Un paso de verificación se define como el uso por parte de un usuario de un elemento de información de autenticación (como una llamada a su teléfono de la oficina o un correo electrónico a su correo electrónico alternativo) para comprobar su cuenta.<br><br></li>
+                  <li class="unordered">
+                    <strong>Nota:</strong> si un usuario no tiene la cantidad necesaria de información de autenticación definida en su cuenta para poder restablecer correctamente la contraseña de acuerdo con la directiva que ha establecido, aparece una página de error que le indica al usuario que debe solicitarle a un administrador que restablezca su contraseña.  <br><br></li>
                 </ul>
               </td>
             </tr>
             <tr>
               <td>
-                <p>Number of question required to reset </p>
+                <p>Número de preguntas necesarias para registrarse</p>
               </td>
               <td>
-                <p>Determines the minimum number of questions a user must answer when resetting a password.</p>
-                <p>
-                  
-                </p>
-                <p>(Only visible if the <strong>Security Questions</strong> checkbox is enabled).</p>
+                <p>Determina el número mínimo de preguntas que un usuario debe responder al registrarse para la opción de preguntas de seguridad.</p>
+                <p>(Solo visible si está activada la casilla <strong>Preguntas de seguridad</strong>).</p>
               </td>
               <td>
                 <p>
-                  <strong>Note:</strong>
+                  <strong>Nota:</strong>
                 </p>
                 <ul>
                   <li class="unordered">
-												Can be set to 3 – 5 questions required to reset.<br><br></li>
+												Se pueden establecer de 3 a 5 preguntas necesarias para registrarse.<br><br></li>
                   <li class="unordered">
-												Number of questions required to reset must be less than or equal to the number of questions required to register.<br><br></li>
+												El número de preguntas necesarias para registrarse debe ser mayor o igual que el número de preguntas necesarias para el restablecimiento.<br><br></li>
+                  <li class="unordered">
+												Se recomienda establecer un número de preguntas necesarias para registrarse que sea mayor que el número necesario para el restablecimiento, de modo que los usuarios tengan más flexibilidad para restablecer sus contraseñas. También es una configuración más segura porque las preguntas se seleccionan de forma aleatoria para que el usuario las responda entre todas las preguntas que registren.<br><br></li>
                 </ul>
                 <p>
-                  <strong>Password reset portal:</strong>
+                  <strong>Portal de registro:</strong>
                 </p>
                 <ul>
                   <li class="unordered">
-												Determines the minimum number of questions a user must answer before the user’s password can be reset.<br><br></li>
-                  <li class="unordered">
-												At the time of password reset, this number of questions will be selected at random from the user’s total list of registered questions.  For example, if the user has 5 questions registered, 3 of those 5 questions will be selected at random when the user comes to reset a password.  The user must then answer all of these questions correctly before the password can be reset.<br><br></li>
+												Determina el número mínimo de preguntas que debe responder el usuario para que se le considere totalmente registrado para restablecer la contraseña.<br><br></li>
                 </ul>
               </td>
             </tr>
             <tr>
               <td>
-                <p>Security question</p>
+                <p>Número de preguntas necesarias para el restablecimiento </p>
               </td>
               <td>
-                <p>Defines the security questions your users may choose from when registering for password reset and when resetting their passwords.</p>
+                <p>Determina el número mínimo de preguntas que debe responder el usuario cuando restablece una contraseña.</p>
                 <p>
                   
                 </p>
-                <p>(Only visible if the <strong>Security Questions</strong> checkbox is enabled).</p>
+                <p>(Solo visible si está activada la casilla <strong>Preguntas de seguridad</strong>).</p>
               </td>
               <td>
                 <p>
-                  <strong>Note:</strong>
+                  <strong>Nota:</strong>
                 </p>
                 <ul>
                   <li class="unordered">
-												Up to 20 questions can be defined.<br><br></li>
+												Se pueden establecer de 3 a 5 preguntas necesarias para el restablecimiento.<br><br></li>
                   <li class="unordered">
-												Max question character limit is 200 characters.<br><br></li>
-                  <li class="unordered">
-												Min answer character limit is 3 characters.<br><br></li>
-                  <li class="unordered">
-												Max answer character limit is 40 characters.<br><br></li>
-                  <li class="unordered">
-												Users may not answer the same question twice.<br><br></li>
-                  <li class="unordered">
-												Users may not provide the same answer to two different questions twice.<br><br></li>
-                  <li class="unordered">
-												Any character set may be used to define questions and answer (including Unicode characters).<br><br></li>
-                  <li class="unordered">
-												The number of questions defined must be greater than or equal to the number of questions required to register.<br><br></li>
-                  <li class="unordered">
-												Defining different questions for different locales is not yet supported, but will be in the future.<br><br></li>
+												El número de preguntas necesarias para el restablecimiento debe ser menor o igual que el número de preguntas necesarias para registrarse.<br><br></li>
                 </ul>
                 <p>
-                  <strong>Registration portal:</strong>
+                  <strong>Portal de restablecimiento de contraseña:</strong>
                 </p>
                 <ul>
                   <li class="unordered">
-												Determines which questions a user is able to provide answers for when registering for password reset.<br><br></li>
-                </ul>
-                <p>
-                  <strong>Password reset portal:</strong>
-                </p>
-                <ul>
+												Determina el número mínimo de preguntas que debe responder el usuario para que se pueda restablecer su contraseña.<br><br></li>
                   <li class="unordered">
-												Determines which questions a user is able to use to reset a password.<br><br></li>
+												En el momento de restablecer la contraseña, este número de preguntas se selecciona de forma aleatoria en la lista total de preguntas registradas del usuario. Por ejemplo, si el usuario tiene 5 preguntas registradas, se seleccionan 3 de esas 5 preguntas de forma aleatoria cuando el usuario trata de restablecer una contraseña. El usuario debe responder todas las preguntas correctamente para que se pueda restablecer la contraseña.<br><br></li>
                 </ul>
               </td>
             </tr>
             <tr>
               <td>
-                <p>Require users to register when signing in to the access panel?</p>
-                <p>
-                  
-                </p>
+                <p>Pregunta de seguridad</p>
               </td>
               <td>
-                <p>Determines if a user is required to register contact data for password reset the next time he or she signs in to the access panel.</p>
+                <p>Define las preguntas de seguridad entre las que los usuarios pueden elegir al registrarse para el restablecimiento de contraseña y al restablecer sus contraseñas.</p>
                 <p>
                   
                 </p>
-                <p>(Only visible if <strong>users enabled for password reset</strong> is set to <strong>yes</strong>).</p>
+                <p>(Solo visible si está activada la casilla <strong>Preguntas de seguridad</strong>).</p>
               </td>
               <td>
                 <p>
-                  
-                </p>
-                <p>
-                  
-                </p>
-                <p>
-                  <strong>Note:</strong>
+                  <strong>Nota:</strong>
                 </p>
                 <ul>
                   <li class="unordered">
-												If you disable this feature, you can also manually send users to <a href="http://aka.ms/ssprsetup">http://aka.ms/ssprsetup</a> to register their contact data.  <br><br></li>
+												Se pueden definir hasta 20 preguntas.<br><br></li>
                   <li class="unordered">
-												Users can also reach the registration portal by clicking the <strong>register for password reset</strong> link under the profile tab in the access panel.<br><br></li>
+												El límite máximo de caracteres para las preguntas es de 200 caracteres.<br><br></li>
                   <li class="unordered">
-												Registration via this method can be dismissed by clicking the cancel button or closing the window, but users will be nagged every time they sign in if they do not register.<br><br></li>
+												El límite mínimo de caracteres para las respuestas es de 3 caracteres.<br><br></li>
+                  <li class="unordered">
+												El límite máximo de caracteres para las respuestas es de 40 caracteres.<br><br></li>
+                  <li class="unordered">
+												Los usuarios no pueden responder a la misma pregunta dos veces.<br><br></li>
+                  <li class="unordered">
+												Los usuarios no pueden proporcionar dos veces la misma respuesta a dos preguntas diferentes.<br><br></li>
+                  <li class="unordered">
+												Puede utilizarse cualquier conjunto de caracteres para definir las preguntas y respuestas (incluidos los caracteres Unicode).<br><br></li>
+                  <li class="unordered">
+												El número de preguntas definidas debe ser mayor o igual que el número de preguntas necesarias para registrarse.<br><br></li>
+                  <li class="unordered">
+												La definición de preguntas diferentes para distintas configuraciones regionales no se admite aún, pero se admitirá en el futuro.<br><br></li>
                 </ul>
                 <p>
-                  <strong>Registration portal:</strong>
+                  <strong>Portal de registro:</strong>
                 </p>
                 <ul>
                   <li class="unordered">
-												This setting does not affect the behavior of the registration portal itself, rather, it determines whether or not the registration portal is shown to users when they sign in to the access panel.<br><br></li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Number of days before users must confirm their contact data</p>
-              </td>
-              <td>
-                <p>When <strong>require users to register</strong> is turned on, this setting determines the period of time which can elapse before a user must re-confirm their data. </p>
-                <p>
-                  
-                </p>
-                <p>(Only visible if <strong>require users to register when signing in to the access panel</strong> is set to <strong>yes</strong>).</p>
-              </td>
-              <td>
-                <p>
-                  
-                </p>
-                <p>
-                  
-                </p>
-                <p>
-                  <strong>Note: </strong>
-                </p>
-                <ul>
-                  <li class="unordered">
-												Values between 0-730 days are accepted, with 0 days meaning that users will never be asked to re-confirm their contact data.<br><br></li>
+												Determina qué preguntas puede responder un usuario cuando se registra para el restablecimiento de contraseña.<br><br></li>
                 </ul>
                 <p>
-                  <strong>Registration portal:</strong>
+                  <strong>Portal de restablecimiento de contraseña:</strong>
                 </p>
                 <ul>
                   <li class="unordered">
-												This setting does not affect the behavior of the registration portal itself, rather, it determines whether or not the registration portal is shown to users when their contact data needs to be reconfirmed. <br><br></li>
+												Determina qué preguntas puede utilizar un usuario para restablecer una contraseña.<br><br></li>
                 </ul>
               </td>
             </tr>
             <tr>
               <td>
-                <p>Customize the contact your administrator link?</p>
-              </td>
-              <td>
-                <p>Controls whether or not the contact your administrator link (shown to the left) that appears on the password reset portal when an error occurs or a user waits too long on an operation points to a custom URL or email address.</p>
+                <p>¿Es necesario que los usuarios se registren cuando inician sesión en el panel de acceso?</p>
                 <p>
                   
                 </p>
-                <p>(Only visible if <strong>users enabled for password reset</strong> is set to <strong>yes</strong>).</p>
+              </td>
+              <td>
+                <p>Determina si un usuario debe registrar datos de contacto para el restablecimiento de la contraseña la próxima vez que inicie sesión en el panel de acceso.</p>
+                <p>
+                  
+                </p>
+                <p>(Solo visible si <strong>Usuarios habilitados para restablecer la contraseña</strong> está establecido en <strong>Sí</strong>).</p>
               </td>
               <td>
                 <p>
-                  <strong>Note: </strong>
+                  
+                </p>
+                <p>
+                  
+                </p>
+                <p>
+                  <strong>Nota:</strong>
                 </p>
                 <ul>
                   <li class="unordered">
-												If you enable this setting, you must choose a custom URL or email address by filling out the <strong>custom email address or url</strong> field immediately below this setting.<br><br></li>
+												Si deshabilita esta característica, puede enviar manualmente a los usuarios a <a href="http://aka.ms/ssprsetup">http://aka.ms/ssprsetup</a> para que registren sus datos de contacto.  <br><br></li>
+                  <li class="unordered">
+												Los usuarios también pueden obtener acceso al portal de registro si hacen clic en el vínculo <strong>Registrarme para restablecer la contraseña</strong> debajo de la pestaña de perfil en el panel de acceso.<br><br></li>
+                  <li class="unordered">
+												El registro con este método se puede descartar haciendo clic en el botón Cancelar o cerrando la ventana, pero puede ser molesto para los usuarios cada vez que inicien sesión si no se registran.<br><br></li>
                 </ul>
                 <p>
-                  <strong>Password reset portal:</strong>
+                  <strong>Portal de registro:</strong>
                 </p>
                 <ul>
                   <li class="unordered">
-												If set to no, users clicking the highlighted link will dispatch an email to the primary email address of all tenant administrators requesting that his or her password be reset.  This email is dispatched by following the logic below:<br><br></li>
+												Esta configuración no afecta al comportamiento del portal de registro en sí, sino que determina si se les muestra o no el portal de registro a los usuarios cuando inician sesión en el panel de acceso.<br><br></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Cantidad de días que los usuarios disponen para confirmar sus datos de contacto</p>
+              </td>
+              <td>
+                <p>Cuando está activada la opción para <strong>obligar a los usuarios a registrarse</strong>, esta configuración determina el período de tiempo que puede transcurrir hasta que un usuario deba confirmar nuevamente sus datos. </p>
+                <p>
+                  
+                </p>
+                <p>(Solo visible si la opción <strong>¿Desea obligar a los usuarios a registrarse cuando inicien sesión en el panel de acceso?</strong> está establecida en <strong>Sí</strong>).</p>
+              </td>
+              <td>
+                <p>
+                  
+                </p>
+                <p>
+                  
+                </p>
+                <p>
+                  <strong>Nota: </strong>
+                </p>
+                <ul>
+                  <li class="unordered">
+												Se aceptan valores entre 0 y 730 días. El valor 0 días significa que nunca se les solicitará a los usuarios que vuelvan a confirmar sus datos de contacto.<br><br></li>
+                </ul>
+                <p>
+                  <strong>Portal de registro:</strong>
+                </p>
+                <ul>
+                  <li class="unordered">
+												Esta configuración no afecta al comportamiento del portal de registro en sí, sino que determina si se les muestra o no el portal de registro a los usuarios cuando deban confirmar nuevamente sus datos de contacto. <br><br></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>¿Desea personalizar el vínculo para ponerse en contacto con el administrador?</p>
+              </td>
+              <td>
+                <p>Controla si el vínculo para ponerse en contacto con el administrador (ubicado a la izquierda) que aparece en el portal de restablecimiento de contraseña cuando se produce un error o el usuario tarda demasiado tiempo en una operación apunta a una dirección de correo electrónico o una dirección URL personalizada.</p>
+                <p>
+                  
+                </p>
+                <p>(Solo visible si <strong>Usuarios habilitados para restablecer la contraseña</strong> está establecido en <strong>Sí</strong>).</p>
+              </td>
+              <td>
+                <p>
+                  <strong>Nota: </strong>
+                </p>
+                <ul>
+                  <li class="unordered">
+												Si habilita esta configuración, debe elegir una dirección de correo electrónico o una dirección URL personalizada rellenando el campo el campo <strong>Dirección de correo electrónico o URL personalizada</strong> que se encuentra debajo de esta opción.<br><br></li>
+                </ul>
+                <p>
+                  <strong>Portal de restablecimiento de contraseña:</strong>
+                </p>
+                <ul>
+                  <li class="unordered">
+												Si esta opción está establecida en No, cuando los usuarios hagan clic en el vínculo resaltado se enviará un correo electrónico a la dirección de correo electrónico principal de todos los administradores inquilinos para solicitar el restablecimiento de la contraseña. El correo electrónico se envía siguiendo la lógica que se indica a continuación:<br><br></li>
                   <li class="unordered">
                     <ul>
                       <li class="unordered">
-														If there are password administrators, send the email to all password administrators, up to a maximum of 100 total recipients.<br><br></li>
+														Si hay administradores de contraseñas, se envía el correo electrónico a todos los administradores de contraseñas, hasta un máximo de 100 destinatarios en total.<br><br></li>
                       <li class="unordered">
-														If there are no password administrators, send the email to all user administrators, up to a maximum of 100 total recipients.<br><br></li>
+														Si no hay administradores de contraseñas, se envía el correo electrónico a todos los administradores de usuarios, hasta un máximo de 100 destinatarios en total.<br><br></li>
                       <li class="unordered">
-														If there are no user administrators, send the email to all global administrators, up to a maximum of 100 total recipients.<br><br></li>
+														Si no hay administradores de usuarios, se envía el correo electrónico a todos los administradores globales, hasta un máximo de 100 destinatarios en total.<br><br></li>
                     </ul>
                   </li>
                   <li class="unordered">
-												If set to yes, this setting will customize the behavior of the highlighted link above to point to a custom URL or email address to which your users can navigate to get help with password reset.<br><br></li>
+												Si esta opción está establecida en Sí, la configuración personalizará el comportamiento del vínculo resaltado para que apunte a una dirección de correo electrónico o una dirección URL personalizada a la que los usuarios pueden ir para obtener ayuda con el restablecimiento de la contraseña.<br><br></li>
                   <li class="unordered">
-												If you specify a URL, it will be opened in a new tab.<br><br></li>
+												Si especifica una dirección URL, esta se abrirá en una pestaña nueva.<br><br></li>
                   <li class="unordered">
-												If you specify an email address, we’ll create a mailto link to that email address.<br><br></li>
+												Si especifica una dirección de correo electrónico, crearemos un vínculo mailto a dicha dirección de correo electrónico.<br><br></li>
                 </ul>
               </td>
             </tr>
             <tr>
               <td>
-                <p>Custom email address or URL</p>
+                <p>Dirección de correo electrónico o dirección URL personalizada</p>
               </td>
               <td>
-                <p>Controls the email address or URL to which the <strong>contact your administrator</strong> link points. </p>
+                <p>Controla la dirección URL o de correo electrónico a la que apunta el vínculo <strong>Póngase en contacto con el administrador</strong>. </p>
                 <p>
                   
                 </p>
-                <p>(Only visible if <strong>customize contact your administrator link</strong> is set to <strong>yes</strong>).</p>
+                <p>(Solo visible si la opción <strong>¿Desea personalizar el vínculo Póngase en contacto con el administrador?</strong> está establecida en <strong>Sí</strong>).</p>
               </td>
               <td>
                 <p>
-                  <strong>Note:</strong>
+                  <strong>Nota:</strong>
                 </p>
                 <ul>
                   <li class="unordered">
-												Must be a valid intranet or extranet URL or email address.<br><br></li>
+												Debe ser una dirección de correo electrónico o dirección URL de intranet o extranet válida.<br><br></li>
                 </ul>
                 <p>
-                  <strong>Password reset portal:</strong>
+                  <strong>Portal de restablecimiento de contraseña:</strong>
                 </p>
                 <ul>
                   <li class="unordered">
-												Changes where the <strong>contact your administrator</strong> link points.<br><br></li>
+												Cambia la ubicación a la que apunta el vínculo <strong>Póngase en contacto con el administrador</strong>.<br><br></li>
                   <li class="unordered">
-												If you provide an email address, the link will become a “mailto” link to that email address.<br><br></li>
+												Si proporciona una dirección de correo electrónico, el vínculo se convierte en un vínculo "mailto" a esa dirección de correo electrónico.<br><br></li>
                   <li class="unordered">
-												If you provide a URL, the link will become a standard href pointing to that URL which will open in a new tab.  <br><br></li>
+												Si proporciona una dirección URL, el vínculo se convierte en un href estándar que señala a esa dirección URL, que se abrirá en una nueva pestaña.  <br><br></li>
                 </ul>
               </td>
             </tr>
             <tr>
               <td>
-                <p>Write back password to on-premises directory</p>
+                <p>Escritura diferida de contraseñas en el directorio local</p>
               </td>
               <td>
-                <p>Controls whether or not Password Writeback is enabled for this directory and, if writeback is on, indicates the status of the on-premises writeback service.</p>
+                <p>Controla si la escritura diferida de contraseñas está habilitada para este directorio y, si lo está, indica el estado del servicio de escritura diferida local.</p>
                 <p>
                   
                 </p>
-                <p>This is useful if you want to temporarily disable the service due to an outage.</p>
+                <p>Esto resulta útil si desea deshabilitar temporalmente el servicio debido a una interrupción.</p>
               </td>
               <td>
                 <p>
                   
                 </p>
                 <p>
-                  <strong>Note:</strong>
+                  <strong>Nota:</strong>
                 </p>
                 <ul>
                   <li class="unordered">
-												This control only appears if you have installed Password Writeback by downloading the latest version of Azure AD Connect and enabling the <strong>Password Writeback</strong> option under the <strong>optional features</strong> selection screen.<br><br></li>
+												Este control solo aparece si ha instalado la escritura diferida de contraseñas tras descargar la versión más reciente de Azure AD Connect y habilitar la opción <strong>Escritura diferida de contraseñas</strong> en la pantalla de selección <strong>Características opcionales</strong>.<br><br></li>
                   <li class="unordered">
-												If you have enabled Password Writeback and feel there is a configuration issue with the service, you can come to this tab and look at the <strong>password write back service status</strong> label to see if something is wrong.<br><br></li>
+												Si ha habilitado la escritura diferida de contraseñas y cree que existe un problema de configuración con el servicio, vaya a esta pestaña y compruebe la etiqueta <strong>Estado del servicio de escritura diferida de contraseñas</strong> para ver si algo va mal.<br><br></li>
                   <li class="unordered">
-												Statuses that can be shown are:<br><br><ul><li class="unordered"><strong>Configured </strong>– everything is working as expected<br><br></li><li class="unordered"><strong>Not configured</strong> – you have writeback installed, but we can’t reach the service, check to make sure you are not blocking outbound connections to 443 and try re-installing the service if you still have problems.<br><br></li></ul></li>
+												Los estados que se pueden mostrar son:<br><br><ul><li class="unordered"><strong>Configurado</strong>: todo funciona con normalidad.<br><br></li><li class="unordered"><strong>Sin configurar</strong>: tiene instalada la función de escritura diferida, pero no podemos acceder al servicio. Compruebe que no están bloqueadas las conexiones salientes a 443 y vuelva a instalar el servicio si sigue teniendo problemas.<br><br></li></ul></li>
                 </ul>
                 <p>
-                  <strong>Registration portal:</strong>
+                  <strong>Portal de registro:</strong>
                 </p>
                 <ul>
                   <li class="unordered">
-												If writeback is deployed and configured and this switch is set to <strong>no</strong>, then writeback will be disabled, and federated and password hash sync’d users will not be able to register for password reset their passwords.<br><br></li>
+												Si se ha implementado y configurado la escritura diferida y este modificador se establece en <strong>No</strong>, se deshabilita la escritura diferida y los usuarios federados y sincronizados por hash de contraseña no pueden registrarse para restablecer sus contraseñas.<br><br></li>
                   <li class="unordered">
-												If the switch is set to <strong>yes</strong>, then writeback will be enabled, and federated and password hash sync’d users will be able to reset their passwords.<br><br></li>
+												Si el modificador se establece en <strong>Sí</strong>, se habilita la escritura diferida y los usuarios federados y sincronizados por hash de contraseña pueden restablecer sus contraseñas.<br><br></li>
                 </ul>
                 <p>
-                  <strong>Password reset portal:</strong>
+                  <strong>Portal de restablecimiento de contraseña:</strong>
                 </p>
                 <ul>
                   <li class="unordered">
-												If writeback is deployed and configured and this switch is set to <strong>no</strong>, then writeback will be disabled, and federated and password hash sync’d users will not be able to reset their passwords.<br><br></li>
+												Si se ha implementado y configurado la escritura diferida y este modificador se establece en <strong>No</strong>, se deshabilita la escritura diferida y los usuarios federados y sincronizados por hash de contraseña no pueden restablecer sus contraseñas.<br><br></li>
                   <li class="unordered">
-												If the switch is set to <strong>yes</strong>, then writeback will be enabled, and federated and password hash sync’d users will be able to reset their passwords.<br><br></li>
+												Si el modificador se establece en <strong>Sí</strong>, se habilita la escritura diferida y los usuarios federados y sincronizados por hash de contraseña pueden restablecer sus contraseñas.<br><br></li>
                 </ul>
               </td>
             </tr>
           </tbody></table>
 
-## Password Management notifications
-The following table describes how each control affects the experience for users and admins who receive password reset notifications.  You can configure these options under the **Notifications** section of your directory’s **Configure** tab in the [Azure Management Portal](https://manage.windowsazure.com).
+## Notificaciones de Administración de contraseñas
+En la tabla siguiente se describe cómo afecta cada control a la experiencia de los usuarios y administradores que reciben notificaciones de restablecimiento de contraseña. Puede configurar estas opciones en la sección **Notificaciones** de la pestaña **Configurar** de su directorio en el [Portal de administración de Azure](https://manage.windowsazure.com).
 
 <table>
             <tbody><tr>
               <td>
                 <p>
-                  <strong>Policy Control</strong>
+                  <strong>Control de directivas</strong>
                 </p>
               </td>
               <td>
                 <p>
-                  <strong>Description</strong>
+                  <strong>Descripción</strong>
                 </p>
               </td>
               <td>
                 <p>
-                  <strong>Affects?</strong>
+                  <strong>¿Afecta?</strong>
                 </p>
               </td>
             </tr>
             <tr>
               <td>
-                <p>Notify admins when other admins reset their own passwords</p>
+                <p>Notificar a los administradores cuando otros administradores restablezcan sus contraseñas</p>
               </td>
               <td>
-                <p>Determines whether or not all global admins will be notified via an email to their primary email address when another admin of any type resets his or her own password.</p>
+                <p>Determina si a todos los administradores globales se les notificará mediante un mensaje a su dirección de correo electrónico principal cuando otro administrador de cualquier tipo restablezca su contraseña.</p>
               </td>
               <td>
                 <p>
-                  <strong>Password reset portal:</strong>
+                  <strong>Portal de restablecimiento de contraseña:</strong>
                 </p>
                 <ul>
                   <li class="unordered">
-												If set to no, then no notifications will be sent.<br><br></li>
+												Si se establece en No, no se envían notificaciones.<br><br></li>
                   <li class="unordered">
-												If set to yes, then all other global administrators will be notified when any single admin resets his or her own password.<br><br></li>
+												Si se establece en Sí, se notifica a todos los administradores globales cuando cualquier administrador restablezca su propia contraseña.<br><br></li>
                   <li class="unordered">
-												This notification is sent via an email to the primary email addresses of all other global admins in the organization.<br><br></li>
+												Esta notificación se envía por correo electrónico a las direcciones de correo electrónico principales de todos los demás administradores globales de la organización.<br><br></li>
                 </ul>
                 <p>
-                  <strong>Example:</strong>
+                  <strong>Ejemplo:</strong>
                 </p>
                 <ul>
                   <li class="unordered">
-												If this option was enabled when admin A resets his password, and there are 3 other admins in the tenant, B, C, and D, then admins B, C, and D would receive an email indicating admin A reset his password.<br><br></li>
+												Si esta opción está habilitada cuando el administrador A restablece su contraseña, y hay otros 3 administradores en el inquilino, B, C y D, los administradores B, C y D reciben un correo electrónico que indica que el administrador A ha restablecido su contraseña.<br><br></li>
                 </ul>
               </td>
             </tr>
             <tr>
               <td>
-                <p>Notify users and admins when their own password has been reset</p>
+                <p>Notificar a los usuarios y administradores cuando se haya restablecido su contraseña</p>
               </td>
               <td>
-                <p>Determines whether or not end users or admins who reset their own passwords will receive an email notification that their password has been reset.</p>
+                <p>Determina si los usuarios finales y los administradores que restablecen sus contraseñas reciben o no una notificación por correo electrónico de que se ha restablecido su contraseña.</p>
               </td>
               <td>
                 <p>
-                  <strong>Password reset portal:</strong>
+                  <strong>Portal de restablecimiento de contraseña:</strong>
                 </p>
                 <ul>
                   <li class="unordered">
-												If set to no, then no notifications will be sent.<br><br></li>
+												Si se establece en No, no se envían notificaciones.<br><br></li>
                   <li class="unordered">
-												If set to yes, then whenever a user or admin resets his own password, he or she will receive a notification indicating his or her password has been reset.<br><br></li>
+												Si se establece en Sí, cada vez que un usuario o un administrador restablece su propia contraseña, recibe una notificación que indica que se ha restablecido su contraseña.<br><br></li>
                   <li class="unordered">
-												This notification is sent via an email to the primary, and alternate (or authentication) email address of the user who reset his or her password.<br><br></li>
+												Esta notificación se envía por correo electrónico a las direcciones principal y alternativa (o de autenticación) del usuario que restablezca su contraseña.<br><br></li>
                 </ul>
               </td>
             </tr>
           </tbody></table>
 
 
-<br/>
-<br/>
-<br/>
+<br/> <br/> <br/>
 
-**Additional Resources**
+**Recursos adicionales**
 
 
-* [What is Password Management](active-directory-passwords.md)
-* [How Password Management works](active-directory-passwords-how-it-works.md)
-* [Getting started with Password Mangement](active-directory-passwords-getting-started.md)
-* [Password Management Best Practices](active-directory-passwords-best-practices.md)
-* [How to get Operational Insights with Password Management Reports](active-directory-passwords-get-insights.md)
-* [Password Management FAQ](active-directory-passwords-faq.md)
-* [Troubleshoot Password Management](active-directory-passwords-troubleshoot.md)
-* [Learn More](active-directory-passwords-learn-more.md)
-* [Password Management on MSDN](https://msdn.microsoft.com/library/azure/dn510386.aspx) 
+* [Qué es la administración de contraseñas](active-directory-passwords.md)
+* [Funcionamiento de la administración de contraseñas](active-directory-passwords-how-it-works.md)
+* [Introducción a la Administración de contraseñas](active-directory-passwords-getting-started.md)
+* [Prácticas recomendadas de la Administración de contraseñas](active-directory-passwords-best-practices.md)
+* [Visión operativa con los informes de administración de contraseñas](active-directory-passwords-get-insights.md)
+* [Preguntas más frecuentes sobre la administración de contraseñas](active-directory-passwords-faq.md)
+* [Solución de problemas de administración de contraseñas](active-directory-passwords-troubleshoot.md)
+* [Más información](active-directory-passwords-learn-more.md)
+* [Administración de contraseñas en MSDN](https://msdn.microsoft.com/library/azure/dn510386.aspx) 
+
+<!---HONumber=August15_HO6-->

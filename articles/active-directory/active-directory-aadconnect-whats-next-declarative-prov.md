@@ -1,8 +1,8 @@
 
 
 <properties 
-	pageTitle="Using Azure AD Connect declarative provisioning" 
-	description="Learn how to use the Azure AD Connect declarative provisioning." 
+	pageTitle="Uso del aprovisionamiento declarativo de Azure AD Connect" 
+	description="Aprenda a usar el aprovisionamiento declarativo de Azure AD Connect." 
 	services="active-directory" 
 	documentationCenter="" 
 	authors="billmath" 
@@ -18,12 +18,14 @@
 	ms.date="05/28/2015" 
 	ms.author="billmath"/>
 
-# Azure AD Connect declarative provisioning
+# Aprovisionamiento declarativo de Azure AD Connect
 
 
-## Using declarative provisioning 
-Declarative provisioning is "codeless" provisioning and can be setup and configured using the Synchronization Rules Editor.  The Editor can be used setup and create your own provisioning rules.
+## Uso del aprovisionamiento declarativo 
+El aprovisionamiento declarativo es un aprovisionamiento "sin código" que se puede instalar y configurar mediante el editor de reglas de sincronización. Puede utilizar el editor para configurar y crear sus propias reglas de aprovisionamiento.
 
-An essential part of Declarative Provisioning is the expression language used in attribute flows. The language used is a subset of Microsoft® Visual Basic® for Applications (VBA). This language is used in Microsoft Office and users with experience of VBScript will also recognize it. The Declarative Provisioning Expression Language is only using functions and is not a structured language; there are no methods or statements. Functions will instead be nested to express program flow.
+Una parte esencial del aprovisionamiento declarativo es el lenguaje de expresiones que se usa en flujos de atributos. El lenguaje usado es un subconjunto de Microsoft® Visual Basic® para Aplicaciones. Este lenguaje se usa en Microsoft Office, y los usuarios con experiencia en VBScript también lo reconocerán. El lenguaje de expresiones de aprovisionamiento declarativo solo utiliza funciones y no es un lenguaje estructurado; no hay métodos ni instrucciones. Las funciones se anidarán en su lugar en el flujo de programa rápido.
 
-For more information on the expression language see [Understanding Declarative Provisioning Expressions](https://msdn.microsoft.com/library/azure/dn801048.aspx) 
+Para obtener más información sobre el lenguaje de expresiones, vea [Descripción de las expresiones de aprovisionamiento declarativo](https://msdn.microsoft.com/library/azure/dn801048.aspx).
+
+<!---HONumber=August15_HO6-->

@@ -1,6 +1,6 @@
 <properties
-	pageTitle="View your access and usage reports"
-	description="A topic that explains how to view access and usage reports to gain insight into the integrity and security of your organization’s directory."
+	pageTitle="Visualización de los informes de acceso y uso"
+	description="Tema que explica cómo ver informes de acceso y uso para proporcionar visibilidad sobre la integridad y la seguridad del directorio de su organización."
 	services="active-directory"
 	documentationCenter=""
 	authors="kenhoff"
@@ -16,273 +16,290 @@
 	ms.date="06/24/2015"
 	ms.author="kenhoff;Justinha"/>
 
-# View your access and usage reports
+# Visualización de los informes de acceso y uso
 
-You can use Azure Active Directory's access and usage reports to gain visibility into the integrity and security of your organization’s directory. With this information, a directory admin can better determine where possible security risks may lie so that they can adequately plan to mitigate those risks.
+Puede usar los informes de acceso y uso de Active Directory de Azure para proporcionar visibilidad sobre la integridad y la seguridad del directorio de su organización. Con esta información, un administrador de directorios puede determinar mejor dónde puede haber posibles riesgos de seguridad de modo que pueda planear adecuadamente la mitigación de estos riesgos.
 
-In the Azure Management Portal, reports are categorized in the following ways:
+En el Portal de administración de Azure, los informes se clasifican de la manera siguiente:
 
-- Anomaly reports – Contain sign in events that we found to be anomalous. Our goal is to make you aware of such activity and enable you to be able to make a determination about whether an event is suspicious.
-- Integrated Application reports – Provides insights into how cloud applications are being used in your organization. Azure Active Directory offers integration with thousands of cloud applications.
-- Error reports – Indicate errors that may occur when provisioning accounts to external applications.
-- User-specific reports – Display device/sign in activity data for a specific user.
-- Activity logs – Contain a record of all audited events within the last 24 hours, last 7 days, or last 30 days, as well as group activity changes, and password reset and registration activity.
+- Informes de anomalías: contienen eventos de inicio de sesión que consideramos anómalos. Nuestro objetivo es que sea consciente de dicha actividad y que pueda tomar una decisión sobre si un evento es sospechoso.
+- Informes de aplicaciones integradas: proporciona información sobre cómo se usan en su organización aplicaciones en la nube. Azure Active Directory ofrece integración con miles de aplicaciones en la nube.
+- Informes de errores: indican errores que se pueden producir al aprovisionar cuentas a aplicaciones externas.
+- Informes específicos del usuario: muestran los datos de actividad de dispositivo/inicio de sesión para un usuario específico.
+- Registros de actividad: contienen un registro de todos los eventos auditados en las últimas 24 horas, los últimos 7 días o los últimos 30 días, así como los cambios de la actividad de grupo y la actividad de registro y restablecimiento de contraseña.
 
 > [AZURE.NOTE]
 >
-- Some advanced anomaly and resource usage reports are only available when you enable [Azure Active Directory Premium](active-directory-get-started-premium.md). Advanced reports help you improve access security, respond to potential threats and get access to analytics on device access and application usage.
-- Azure Active Directory Premium and Basic editions are available for customers in China using the worldwide instance of Azure Active Directory. Azure Active Directory Premium and Basic editions are not currently supported in the Microsoft Azure service operated by 21Vianet in China. For more information, contact us at the [Azure Active Directory Forum](http://feedback.azure.com/forums/169401-azure-active-directory).
+- Algunos informes de uso de recursos y de anomalías avanzados solo están disponibles cuando se habilita [Azure Active Directory Premium](active-directory-get-started-premium.md). Los informes avanzados le ayudan a mejorar la seguridad de acceso, responder a amenazas potenciales y obtener acceso a análisis sobre el uso de aplicaciones y el acceso a dispositivos.
+- Las ediciones Premium y Básico de Azure Active Directory están disponibles para los clientes de China que utilizan la instancia de Azure Active Directory en todo el mundo. Las ediciones Premium y Básico de Azure Active Directory no se admiten actualmente en el servicio de Microsoft Azure operado por 21Vianet en China. Para obtener más información, póngase en contacto con nosotros en el [foro de Azure Active Directory](http://feedback.azure.com/forums/169401-azure-active-directory).
 
-## Report descriptions
+## Informes
 
-|	Report												|	Description																					|
+|	Informe |	Descripción |
 |	------												|	-----																						|
-|	Sign ins from unknown sources						|	May indicate an attempt to sign in without being traced.									|
-|	Sign ins after multiple failures					|	May indicate a successful brute force attack.												|
-|	Sign ins from multiple geographies					|	May indicate that multiple users are signing in with the same account.						|
-|	Sign ins from IP addresses with suspicious activity	|	May indicate a successful sign in after a sustained intrusion attempt.						|
-|	Sign ins from possibly infected devices				|	May indicate an attempt to sign in from possibly infected devices.							|
-|	Irregular sign in activity							|	May indicate events anomalous to users’ sign in patterns.									|
-|	Users with anomalous sign in activity				|	Indicates users whose accounts may have been compromised.									|
-|	Users with leaked credentials						|	Users with leaked credentials																|
-|	Audit report										|	Audited events in your directory															|
-|	Password reset activity								|	Provides a detailed view of password resets that occur in your organization.				|
-|	Password reset registration activity				|	Provides a detailed view of password reset registrations that occur in your organization.	|
-|	Self service groups activity						|	Provides an activity log to all group self service activity in your directory				|
-|	Application usage									|	Provides a usage summary for all SaaS applications integrated with your directory.			|
-|	Account provisioning activity						|	Provides a history of attempts to provision accounts to external applications.				|
-|	Password rollover status							|	Provides a detailed overview of automatic password rollover status of SaaS applications.	|
-|	Account provisioning errors							|	Indicates an impact to users’ access to external applications.								|
-|	RMS usage											|	Provides a summary for Rights Management usage												|
-|	Most active RMS users								|	Lists top 1000 active users who accessed RMS-protected files								|
-|	RMS device usage									|	Lists devices used for accessing RMS-protected files										|
-|	RMS enabled application usage						|	Provides usage of RMS enabled applications													|
+|	**Informes de actividades anómalas**
+|	[Inicios de sesión desde orígenes desconocidos](active-directory-reporting-sign-ins-from-unknown-sources.md) |	Puede indicar un intento de iniciar sesión sin realizar ningún seguimiento. |
+|	[Inicios de sesión tras varios errores](active-directory-sign-ins-after-multiple-failures.md) |	Puede indicar un ataque por fuerza bruta realizado con éxito. |
+|	[Inicios de sesión desde varias ubicaciones geográficas](active-directory-sign-ins-from-multiple-geographies.md) |	Puede indicar que varios usuarios inician una sesión con la misma cuenta. |
+|	[Inicios de sesión desde direcciones IP con actividad sospechosa](active-directory-reporting-sign-ins-from-ip-addresses-with-suspicious-activity.md) |	Puede indicar un inicio de sesión correcto después de un intento de intrusión sostenido. |
+|	[Inicios de sesión desde dispositivos posiblemente infectados](active-directory-reporting-sign-ins-from-possibly-infected-devices.md) |	Puede indicar un intento de iniciar sesión desde dispositivos posiblemente infectados. |
+|	[Actividad de inicio de sesión irregular](active-directory-reporting-irregular-sign-in-activity.md) |	Puede indicar eventos incorrectos en los patrones de inicio de sesión de los usuarios. |
+|	[Usuarios con actividad de inicio de sesión erróneo.](active-directory-reporting-users-with-anomalous-sign-in-activity.md) |	Indica los usuarios cuyas cuentas se han comprometido. |
+|	Usuarios con credenciales perdidas |	Usuarios con credenciales perdidas |
+|	**Registros de actividad**
+|	Informe de auditoría |	Eventos auditados en el directorio |
+|	Actividad de restablecimiento de contraseña |	Proporciona una vista detallada de los restablecimientos de contraseña que se producen en su organización. |
+|	Actividad de registro de restablecimiento de contraseñas |	Proporciona una vista detallada de los registros de restablecimiento de contraseña que se producen en su organización. |
+|	Actividad de los grupos de autoservicio |	Proporciona un registro de actividad para la actividad de autoservicio de todo el grupo en su directorio |
+|	**Aplicaciones integradas**
+|	Uso de la aplicación |	Proporciona un resumen de uso para todas las aplicaciones de SaaS integradas con su directorio. |
+|	Actividad de aprovisionamiento de cuentas |	Proporciona un historial de intentos para aprovisionar cuentas en aplicaciones externas. |
+|	Estado de la sustitución de contraseña |	Proporciona información detallada del estado de sustitución automática de contraseñas de aplicaciones SaaS. |
+|	Errores de aprovisionamiento de cuentas |	Indica un impacto en el acceso de los usuarios a aplicaciones externas. |
+|	**Administración de derechos**
+|	Uso de RMS |	Proporciona un resumen de uso de Rights Management |
+|	Usuarios de RMS más activos |	Enumera los 1.000 usuarios activos principales que han accedido a archivos protegidos mediante RMS |
+|	Uso de dispositivos RMS |	Enumera los dispositivos utilizados para obtener acceso a los archivos protegidos mediante RMS |
+|	Uso de aplicaciones habilitadas para RMS |	Permite usar aplicaciones habilitadas para RMS |
 
-## Report editions
+## Ediciones de los informes
 
-|	Report												|	Free	|	Basic	|	Premium		|
+|	Informe |	Gratuito |	Básica |	Premium |
 |	------												|	----	|	-----	|	--------	|
-|	Sign ins from unknown sources						|	✓		|	✓	|	✓			|
-|	Sign ins after multiple failures					|	✓		|	✓	|	✓			|
-|	Sign ins from multiple geographies					|	✓		|	✓	|	✓			|
-|	Sign ins from IP addresses with suspicious activity	|			|		|	✓			|
-|	Sign ins from possibly infected devices				|			|		|	✓			|
-|	Irregular sign in activity							|			|		|	✓			|
-|	Users with anomalous sign in activity				|			|		|	✓			|
-|	Users with leaked credentials						|			|		|	✓			|
-|	Audit report										|			|		|	✓			|
-|	Password reset activity								|			|		|	✓			|
-|	Password reset registration activity				|			|		|	✓			|
-|	Self service groups activity						|			|		|	✓			|
-|	Application usage									|			|		|	✓			|
-|	Account provisioning activity						|	✓		|	✓	|	✓			|
-|	Password rollover status							|			|		|	✓			|
-|	Account provisioning errors							|	✓		|	✓	|	✓			|
-|	RMS usage											|			|		|	RMS Only	|
-|	Most active RMS users								|			|		|	RMS Only	|
-|	RMS device usage									|			|		|	RMS Only	|
-|	RMS enabled application usage						|			|		|	RMS Only	|
+|	**Informes de actividades anómalas**
+|	Inicios de sesión desde orígenes desconocidos |	✓ |	✓ |	✓ |
+|	Inicios de sesión tras varios errores |	✓ |	✓ |	✓ |
+|	Inicios de sesión desde varias ubicaciones geográficas |	✓ |	✓ |	✓ |
+|	Inicios de sesión desde direcciones IP con actividad sospechosa | | |	✓ |
+|	Inicios de sesión desde dispositivos posiblemente infectados | | |	✓ |
+|	Actividad de inicio de sesión irregular | | |	✓ |
+|	Usuarios con actividad de inicio de sesión erróneo. | | |	✓ |
+|	Usuarios con credenciales perdidas | | |	✓ |
+|	**Registros de actividad**
+|	Informe de auditoría | | |	✓ |
+|	Actividad de restablecimiento de contraseña | | |	✓ |
+|	Actividad de registro de restablecimiento de contraseñas | | |	✓ |
+|	Actividad de los grupos de autoservicio | | |	✓ |
+|	**Aplicaciones integradas**
+|	Uso de la aplicación | | |	✓ |
+|	Actividad de aprovisionamiento de cuentas |	✓ |	✓ |	✓ |
+|	Estado de la sustitución de contraseña | | |	✓ |
+|	Errores de aprovisionamiento de cuentas |	✓ |	✓ |	✓ |
+|	**Administración de derechos**
+|	Uso de RMS | | |	Solo RMS |
+|	Usuarios de RMS más activos | | |	Solo RMS |
+|	Uso de dispositivos RMS | | |	Solo RMS |
+|	Uso de aplicaciones habilitadas para RMS | | |	Solo RMS |
 
-## Report details
 
-### Sign ins from unknown sources
 
-| Description        | Report location |
+
+
+
+
+
+
+## Informes de actividades anómalas
+
+### Inicios de sesión desde orígenes desconocidos
+
+Para obtener detalles sobre este informe, consulte [Inicios de sesión de orígenes desconocidos](active-directory-reporting-sign-ins-from-unknown-sources.md).
+
+### Inicios de sesión tras varios errores
+
+Para obtener detalles sobre este informe, consulte [Inicios de sesión tras varios errores](active-directory-reporting-sign-ins-after-multiple-failures.md).
+
+### Inicios de sesión desde varias ubicaciones geográficas
+
+Para obtener detalles sobre este informe, consulte [Inicios de sesión desde varias ubicaciones geográficas](active-directory-reporting-sign-ins-from-multiple-geographies.md).
+
+### Inicios de sesión desde direcciones IP con actividad sospechosa
+
+Para obtener detalles sobre este informe, consulte [Inicios de sesión desde direcciones IP con actividad sospechosa](active-directory-reporting-sign-ins-from-ip-addresses-with-suspicious-activity.md).
+
+### Actividad de inicio de sesión irregular
+
+Para obtener detalles sobre este informe, consulte [Actividad de inicio de sesión irregular](active-directory-reporting-irregular-sign-in-activity.md).
+
+### Inicios de sesión desde dispositivos posiblemente infectados
+
+Para obtener detalles sobre este informe, consulte [Inicios de sesión desde dispositivos posiblemente infectados](active-directory-reporting-sign-ins-from-possibly-infected-devices.md).
+
+### Usuarios con actividad de inicio de sesión erróneo.
+
+Para obtener detalles sobre este informe, consulte [Usuarios con actividad de inicio de sesión anómala](active-directory-reporting-users-with-anomalous-sign-in-activity.md).
+
+<!-- Users with leaked credentials goes here -->
+
+
+
+
+
+
+
+
+
+## Registros de actividad
+
+### Informe de auditoría
+
+| Descripción | Ubicación del informe |
 | :-------------     | :-------        |
-| <p>This report indicates users who have successfully signed in to your directory while assigned a client IP address that has been recognized by Microsoft as an anonymous proxy IP address. These proxies are often used by users that want to hide their computer’s IP address, and may be used for malicious intent – sometimes hackers use these proxies. </p><p> Results from this report will show the number of times a user successfully signed in to your directory from that address and the proxy’s IP address.</p> | Directory > Reports tab |
+| Muestra un registro de todos los eventos auditados en las últimas 24 horas, los últimos 7 días o los últimos 30 días. <br /> Para obtener más información, consulte [Eventos del informe de auditoría de Azure Active Directory](active-directory-reporting-audit-events.md). | Directorio > pestaña Informes |
 
-![Sign ins from unknown sources](./media/active-directory-view-access-usage-reports/signInsFromUnknownSources.PNG)]
+![Informe de auditoría](./media/active-directory-view-access-usage-reports/auditReport.PNG)
 
-### Sign ins after multiple failures
+### Actividad de restablecimiento de contraseña
 
-| Description        | Report location |
+| Descripción | Ubicación del informe |
 | :-------------     | :-------        |
-| This report indicates users who have successfully signed in after multiple consecutive failed sign in attempts. Possible causes include: <ul><li>User had forgotten their password</li><li>User is the victim of a successful password guessing brute force attack</li></ul><p>Results from this report will show you the number of consecutive failed sign in attempts made prior to the successful sign in and a timestamp associated with the first successful sign in.</p><p><b>Report Settings</b>: You can configure the minimum number of consecutive failed sign in attempts that must occur before it can be displayed in the report. When you make changes to this setting it is important to note that these changes will not be applied to any existing failed sign ins that currently show up in your existing report. However, they will be applied to all future sign ins. Changes to this report can only be made by licensed admins. | Directory > Reports tab |
+| Muestra los intentos de restablecimiento de contraseña que se han producido en su organización. | Directorio > pestaña Informes |
 
-![Sign ins after multiple failures](./media/active-directory-view-access-usage-reports/signInsAfterMultipleFailures.PNG)]
+![Actividad de restablecimiento de contraseña](./media/active-directory-view-access-usage-reports/passwordResetActivity.PNG)
 
+### Actividad de registro de restablecimiento de contraseñas
 
-### Sign ins from multiple geographies
-
-| Description        | Report location |
+| Descripción | Ubicación del informe |
 | :-------------     | :-------        |
-| <p>This report includes successful sign in activities from a user where two sign ins appeared to originate from different regions and the time between the sign ins makes it impossible for the user to have travelled between those regions. Possible causes include:</p><ul><li>User is sharing their password</li><li>User is using a remote desktop to launch a web browser for sign in</li><li>A hacker has signed in to the account of a user from a different country.</li></ul><p>Results from this report will show you the successful sign in events, together with the time between the sign ins, the regions where the sign ins appeared to originate from and the estimated travel time between those regions.</p><p>The travel time shown is only an estimate and may be different from the actual travel time between the locations. Also, no events are generated for sign ins between neighboring regions.</p> | Directory > Reports tab |
+| Muestra los registros de restablecimiento de contraseña que se han producido en su organización. | Directorio > pestaña Informes |
 
-![Sign ins from multiple geographies](./media/active-directory-view-access-usage-reports/signInsFromMultipleGeographies.PNG)]
+![Actividad de registro de restablecimiento de contraseñas](./media/active-directory-view-access-usage-reports/passwordResetRegistrationActivity.PNG)
 
+### Actividad de los grupos de autoservicio
 
-### Sign ins from IP addresses with suspicious activity
-
-| Description        | Report location |
+| Descripción | Ubicación del informe |
 | :-------------     | :-------        |
-| <p>This report includes sign in attempts that have been executed from IP addresses where suspicious activity has been noted. Suspicious activity includes many failed sign in attempts from the same IP address over a short period of time, and other activity that was deemed suspicious. This may indicate that a hacker has been trying to sign in from this IP address.</p><p>Results from this report will show you sign in attempts that were originated from an IP address where suspicious activity was noted, together with the timestamp associated with the sign in.</p> | Directory > Reports tab |
+| Muestra toda la actividad de los grupos administrados de autoservicio en el directorio. | Directorio > Usuarios > <i>Usuario</i> > pestaña Dispositivos |
 
-![Sign ins from IP addresses with suspicious activity](./media/active-directory-view-access-usage-reports/signInsFromIPAddressesWithSuspiciousActivity.PNG)]
+![Actividad de los grupos de autoservicio](./media/active-directory-view-access-usage-reports/selfServiceGroupsActivity.PNG)
 
 
-### Anomalous sign in activity
 
-| Description        | Report location |
+
+
+
+
+
+
+
+
+## Informes de aplicaciones integradas
+
+### Uso de la aplicación: resumen
+
+| Descripción | Ubicación del informe |
 | :-------------     | :-------        |
-| <p>This report includes sign ins that have been identified as “anomalous” by our machine learning algorithms. Reasons for marking a sign in attempt as irregular include unexpected sign in locations, time of day and locations or a combination of these. This may indicate that a hacker has been trying to sign in using this account. The machine learning algorithm classifies events as “anomalous” or “suspicious”, where “suspicious” indicates a higher likelihood of a security breach.</p><p>Results from this report will show you these sign ins, together with the classification, location and a timestamp associated with each sign in.</p><p>We will send an email notification to the global admins if we encounter 10 or more anomalous sign in events within a span of 30 days or less. Please be sure to include aad-alerts-noreply@mail.windowsazure.com in your safe senders list.</p> | Directory > Reports tab |
+| Use este informe cuando quiera ver el uso de todas las aplicaciones SaaS en su directorio. Este informe se basa en el número de veces que los usuarios hacen clic en la aplicación en el Panel de acceso. | Directorio > pestaña Informes |
+
+![Resumen de uso de la aplicación](./media/active-directory-view-access-usage-reports/applicationUsage.PNG)
 
 
+### Uso de la aplicación: detallado
 
-### Sign ins from possibly infected devices
-
-| Description        | Report location |
+| Descripción | Ubicación del informe |
 | :-------------     | :-------        |
-| <p>Use this report when you want to see sign ins from devices on which some malware (malicious software) may be running. We correlate IP addresses of sign ins against IP addresses from which an attempt was made to contact a malware server.</p><p>Recommendation: Since this report assumes an IP address was associated with the same device in both cases, we recommend that you contact the user and scan the user's device to be certain.</p><p>For more information about how to address malware infections, see the [Malware Protection Center](http://go.microsoft.com/fwlink/?linkid=335773). </p> | Directory > Reports tab |
+| Use este informe cuando quiera ver cuánto se está usando una aplicación SaaS específica. Este informe se basa en el número de veces que los usuarios hacen clic en la aplicación en el Panel de acceso. | Directorio > pestaña Informes |
 
-![Sign ins from possibly infected devices](./media/active-directory-view-access-usage-reports/signInsFromPossiblyInfectedDevices.PNG)]
+### Panel de la aplicación
 
-
-### Users with anomalous sign in activity
-
-| Description        | Report location |
+| Descripción | Ubicación del informe |
 | :-------------     | :-------        |
-| <p>Use this report when you want to view all user accounts for which anomalous sign in activity has been identified. This report includes data from all other anomalous activity reports. Results from this report will show you details about the user, the reason why the sign in event was identified as anomalous, the date and time, and other relevant information about the event.</p> | Directory > Reports tab |
+| Este informe indica los inicios de sesión acumulados en la aplicación por los usuarios de su organización en un intervalo de tiempo seleccionado. El gráfico de la página Panel le ayudará a identificar las tendencias de uso de la aplicación. | Directorio > Aplicación > pestaña Panel |
 
-![Users with anomalous sign in activity](./media/active-directory-view-access-usage-reports/usersWithAnomalousSignInActivity.PNG)]
+## Informes de errores
 
+### Errores de aprovisionamiento de cuentas
 
-## Integrated Application reports
-
-### Application usage: summary
-
-| Description        | Report location |
+| Descripción | Ubicación del informe |
 | :-------------     | :-------        |
-| Use this report when you want to see usage for all the SaaS applications in your directory. This report is based on the number of times users have clicked on the application in the Access Panel. | Directory > Reports tab |
+| Úselo para supervisar los errores que se producen durante la sincronización de cuentas desde las aplicaciones SaaS a Azure Active Directory. | Directorio > pestaña Informes |
 
-![Application usage summary](./media/active-directory-view-access-usage-reports/applicationUsage.PNG)]
+![Errores de aprovisionamiento de cuentas](./media/active-directory-view-access-usage-reports/accountProvisioningErrors.PNG)
 
 
-### Application usage: detailed
 
-| Description        | Report location |
+
+
+
+
+
+
+## Informes específicos del usuario
+
+### Dispositivos
+
+| Descripción | Ubicación del informe |
 | :-------------     | :-------        |
-| Use this report when you want to see how much a specific SaaS application is being used. This report is based on the number of times users have clicked on the application in the Access Panel. | Directory > Reports tab |
+| Use este informe si desea ver la dirección IP y la ubicación geográfica de los dispositivos que un usuario específico ha usado para tener acceso a Active Directory de Azure. | Directorio > Usuarios > <i>Usuario</i> > pestaña Dispositivos |
 
-### Application dashboard
+### Actividad
 
-| Description        | Report location |
+| Descripción | Ubicación del informe |
 | :-------------     | :-------        |
-| This report indicates cumulative sign ins to the application by users in your organization, over a selected time interval. The chart on the dashboard page will help you identify trends for all usage of that application. | Directory > Application > Dashboard tab |
+| Muestra la actividad de inicio de sesión de un usuario. El informe incluye información como la aplicación en la que se ha iniciado sesión, el dispositivo usado, la dirección IP y la ubicación. No recopilamos el historial de los usuarios que inician sesión con una cuenta de Microsoft. | Directorio > Usuarios > <i>Usuario</i> > pestaña Actividad |
 
-## Error reports
+#### Eventos de inicio de sesión incluidos en el informe de actividad
 
-### Account provisioning errors
+Solo determinados tipos de eventos de inicio de sesión aparecerán en el informe de actividad del usuario.
 
-| Description        | Report location |
-| :-------------     | :-------        |
-| Use this to monitor errors that occur during the synchronization of accounts from SaaS applications to Azure Active Directory. | Directory > Reports tab |
-
-![Account provisioning errors](./media/active-directory-view-access-usage-reports/accountProvisioningErrors.PNG)]
-
-
-## User-specific reports
-
-### Devices
-
-| Description        | Report location |
-| :-------------     | :-------        |
-| Use this report when you want to see the IP address and geographical location of devices that a specific user has used to access Azure Active Directory. | Directory > Users > <i>User</i> > Devices tab |
-
-### Activity
-
-| Description        | Report location |
-| :-------------     | :-------        |
-| Shows the sign in activity for a user. The report includes information like the application signed into, device used, IP address, and location. We do not collect the history for users that sign in with a Microsoft account. | Directory > Users > <i>User</i> > Activity tab |
-
-#### Sign in events included in the User Activity report
-
-Only certain types of sign in events will appear in the User Activity report.
-
-| Event type										| Included?		|
+| Tipo de evento | ¿Se incluye? |
 | ----------------------								| ---------		|
-| Sign ins to the [Access Panel](http://myapps.microsoft.com/)				| Yes			|
-| Sign ins to the [Azure Management Portal](https://manage.windowsazure.com/)		| Yes			|
-| Sign ins to the [Microsoft Azure Portal](http://portal.azure.com/)			| Yes			|
-| Sign ins to the [Office 365 portal](http://portal.office.com/)			| Yes			|
-| Sign ins to a native application, like Outlook (see exception below)			| Yes			|
-| Sign ins to a federated/provisioned app through the Access Panel, like Salesforce	| Yes			|
-| Sign ins to a password-based app through the Access Panel, like Twitter		| Yes			|
-| Sign ins to a custom business app that has been added to the directory		| No (Coming soon)	|
-| Sign ins to an Azure AD Application Proxy app that has been added to the directory	| No (Coming soon)	|
+| Inicios de sesión en el [Panel de acceso](http://myapps.microsoft.com/) | Sí |
+| Inicios de sesión en el [Portal de administración de Azure](https://manage.windowsazure.com/) | Sí |
+| Inicios de sesión en el [Portal de Microsoft Azure](http://portal.azure.com/) | Sí |
+| Inicios de sesión en el [portal de Office 365](http://portal.office.com/) | Sí |
+| Inicios de sesión en una aplicación nativa, como Outlook (consulte la excepción a continuación) | Sí |
+| Inicios de sesión en una aplicación federada/aprovisionada a través del Panel de acceso, como Salesforce | Sí |
+| Inicios de sesión en una aplicación basada en contraseña a través del Panel de acceso, como Twitter | Sí |
+| Inicios de sesión en una aplicación empresarial personalizada que se ha agregado al directorio | No (próximamente) |
+| Inicios de sesión en una aplicación de Proxy de aplicación de Azure AD que se ha agregado al directorio | No (próximamente) |
 
-> Note: To reduce the amount of noise in this report, sign ins to the [Lync/Skype for Business](http://products.office.com/en-us/skype-for-business/online-meetings) native app and by the [Microsoft Online Services Sign-In Assistant](http://community.office365.com/en-us/w/sso/534.aspx) are not shown.
-
-## Activity logs
-
-### Audit report
-
-| Description        | Report location |
-| :-------------     | :-------        |
-| Shows a record of all audited events within the last 24 hours, last 7 days, or last 30 days. <br /> For more information, see [Azure Active Directory Audit Report Events](active-directory-reporting-audit-events.md) | Directory > Reports tab |
-
-![Audit report](./media/active-directory-view-access-usage-reports/auditReport.PNG)]
+> Nota: para reducir la cantidad de ruido en este informe, no se muestran los inicios de sesión en la aplicación nativa [Lync/Skype para empresas](http://products.office.com/es-es/skype-for-business/online-meetings) y el [Asistente para el inicio de sesión de Microsoft Online Services](http://community.office365.com/es-es/w/sso/534.aspx).
 
 
-### Groups activity report
-
-| Description        | Report location |
-| :-------------     | :-------        |
-| Shows all activity for the self-service managed groups in your directory. | Directory > Users > <i>User</i> > Devices tab |
-
-![Self service groups activity](./media/active-directory-view-access-usage-reports/selfServiceGroupsActivity.PNG)]
 
 
-### Password reset registration activity report
-
-| Description        | Report location |
-| :-------------     | :-------        |
-| Shows all password reset registrations that have occurred in your organization | Directory > Reports tab |
-
-![Password reset registration activity](./media/active-directory-view-access-usage-reports/passwordResetRegistrationActivity.PNG)]
 
 
-### Password reset activity
-
-| Description        | Report location |
-| :-------------     | :-------        |
-| Shows all password reset attempts that have occurred in your organization. | Directory > Reports tab |
-
-![Password reset activity](./media/active-directory-view-access-usage-reports/passwordResetActivity.PNG)]
 
 
-## Things to consider if you suspect security breach
 
-If you suspect that a user account may be compromised or any kind of suspicious user activity that may lead to a security breach of your directory data in the cloud, you may want to consider one or more of the following actions:
 
-- Contact the user to verify the activity
-- Reset the user's password
-- [Enable multi-factor authentication](http://go.microsoft.com/fwlink/?linkid=335774) for additional security
+## Aspectos que se deben tener en cuenta si sospecha de una infracción de seguridad
 
-## View or download a report
+Si sospecha que una cuenta de usuario puede estar en peligro o que cualquier tipo de actividad de usuario sospechosa puede dar lugar a una infracción de seguridad de los datos del directorio en la nube, considere la posibilidad de realizar una o varias de las acciones siguientes:
 
-1. In the Azure Management Portal, click **Active Directory**, click the name of your organization’s directory, and then click **Reports**.
-2. On the Reports page, click the report you want to view and/or download.
-    >
-    > [AZURE.NOTE] If this is the first time you have used the reporting feature of Azure Active Directory, you will see a message to Opt In. If you agree, click the check mark icon to continue.
+- Póngase en contacto con el usuario para comprobar la actividad.
+- Restablezca la contraseña del usuario.
+- [Habilite Multi-factor Authentication](http://go.microsoft.com/fwlink/?linkid=335774) para obtener seguridad adicional
 
-3. Click the drop-down menu next to Interval, and then select one of the following time ranges that should be used when generating this report:
-    - Last 24 hours
-    - Last 7 days
-    - Last 30 days
-4. Click the check mark icon to run the report.
-	- Up to 1000 events will be shown in the Azure Management Portal.
-5. If applicable, click **Download** to download the report to a compressed file in Comma Separated Values (CSV) format for offline viewing or archiving purposes.
-	- Up to 75,000 events will be included in the downloaded file.
+## Visualización o descarga de un informe
 
-## Ignore an event
+1. En el Portal de administración de Azure, haga clic en **Active Directory**, haga clic en el nombre del directorio de la organización y, a continuación, haga clic en **Informes**.
+2. En la página Informes, haga clic en el informe que desea ver o descargar.
 
-If you are viewing any anomaly reports, you may notice that you can ignore various events that show up in related reports. To ignore an event, simply highlight the event in the report and then click **Ignore**. The **Ignore** button will permanently remove the highlighted event from the report and can only be used by licensed global admins.
+    > [AZURE.NOTE]Si es la primera vez que se usa la característica de informes de Azure Active Directory, verá un mensaje para participar. Si está de acuerdo, haga clic en el icono de marca de verificación para continuar.
 
-## Automatic email notifications
+3. Haga clic en el menú desplegable situado al lado de Intervalo y, a continuación, seleccione uno de los siguientes intervalos de tiempo que se debe usar al generar este informe:
+    - Últimas 24 horas
+    - Últimos 7 días
+    - Últimos 30 días
+4. Haga clic en el icono de marca de verificación para ejecutar el informe.
+	- Se mostrarán hasta 1000 eventos en el Portal de administración de Azure.
+5. Si corresponde, haga clic en **Descargar** para descargar el informe en un archivo comprimido en formato de valores separados por comas (CSV) para verlo sin conexión o con fines de archivo.
+	- Hasta 75000 eventos se incluirán en el archivo descargado.
 
-For more information about Azure AD's reporting notifications, check out [Azure Active Directory Reporting Notifications](active-directory-reporting-notifications.md).
+## Ignorar un evento
 
-## What's next
+Si está viendo informes de anomalías, observará que puede ignorar varios eventos que se muestran en informes relacionados. Para ignorar un evento, resáltelo en el informe y, a continuación, haga clic en **Ignorar**. El botón **Ignorar** quitará de forma permanente el evento resaltado del informe y solo lo pueden usar administradores globales con licencia.
 
-- [Getting started with Azure Active Directory Premium](active-directory-get-started-premium.md)
-- [Add company branding to your Sign In and Access Panel pages](active-directory-add-company-branding.md)
+## Notificaciones de correo electrónico automáticas
+
+Para obtener más información sobre las notificaciones de informes de Azure AD, consulte [Notificaciones de informes de Azure Active Directory](active-directory-reporting-notifications.md).
+
+## Pasos siguientes
+
+- [Introducción a Azure Active Directory Premium](active-directory-get-started-premium.md)
+- [Incorporación de la información de marca de empresa a sus páginas de inicio de sesión y del panel de acceso](active-directory-add-company-branding.md)
+
+<!---HONumber=August15_HO8-->

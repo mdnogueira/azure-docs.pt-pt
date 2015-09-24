@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="How to use Access Control (.NET) - Azure feature guide" 
-	description="Learn how to use Access Control Service (ACS) in your Azure application to authenticate users when they try to gain access to a web app." 
+	pageTitle="Uso del control de acceso (.NET) - Guía de características de Azure" 
+	description="Aprenda a usar el servicio de control de acceso (ACS) en la aplicación de Azure para autenticar a los usuarios cuando intentan obtener acceso a una aplicación web." 
 	services="active-directory" 
 	documentationCenter=".net" 
 	authors="msmbaldwin" 
@@ -19,115 +19,104 @@
 
 
 
-# How to Authenticate Web Users with Azure Active Directory Access Control
+# Autenticación de usuarios web con el control de acceso de Azure Active Directory
 
 
-This guide shows you how to use Azure Active Directory Access Control (also known as Access Control Service or ACS) to authenticate users from identity providers such as Microsoft, Google, Yahoo, and Facebook when they try to gain access to a web application.
+En esta guía se indica cómo usar el control de acceso de Azure Active Directory (también conocido como servicio de control de acceso o ACS) para autenticar usuarios con proveedores de identidades como Microsoft, Google, Yahoo y Facebook cuando intentan obtener acceso a una aplicación web.
 
 
-## What is ACS?
+## ¿Qué es ACS?
 
-Most developers are not identity experts and do not want to spend time developing authentication and authorization mechanisms for their applications and services. ACS is an Azure service that provides an easy way for you to authenticate users to access your web applications and services without having to add complex authentication logic to your code.
+La mayoría de los desarrolladores ni son expertos en identidad ni quieren dedicar demasiado tiempo a desarrollar mecanismos de autenticación y autorización para sus aplicaciones y servicios. ACS es un servicio de Azure que ofrece un sencillo método de autenticación para que los usuarios tenga acceso a sus servicios y aplicaciones sin tener que agregar una lógica de autenticación compleja a su código.
 
-The following features are available in ACS:
+En ACS están disponibles las características siguientes:
 
--   Integration with Windows Identity Foundation (WIF).
--   Support for popular web identity providers (IPs) including Microsoft accounts (formerly known as Windows Live ID), Google, Yahoo, and Facebook.
--   Support for Active Directory Federation Services (AD FS) 2.0.
--   An Open Data Protocol (OData)-based management service that provides
-    programmatic access to ACS settings.
--   A Management Portal that allows administrative access to the ACS
-    settings.
+-   Integración con Windows Identity Foundation (WIF).
+-   Compatibilidad con los proveedores de identidades (IP) habituales, entre los que se incluyen las cuentas de Microsoft (anteriormente conocidas como Windows Live ID), Google, Yahoo y Facebook.
+-   Compatibilidad con los servicios de federación de Active Directory (AD FS) 2.0.
+-   Un servicio de administración basado en un protocolo de datos abierto (OData) que proporciona acceso programático a la configuración de ACS.
+-   Un portal de administración que concede acceso administrativo a la configuración de ACS.
 
-For more information about ACS, see [Access Control Service 2.0][].
+Para obtener más información acerca de ACS, consulte [Access Control Service 2.0][].
 
-## Concepts
+## Conceptos
 
-ACS is built on the principles of claims-based identity -- a consistent approach to creating authentication mechanisms for applications running on-premises or in the cloud. Claims-based identity provides a common way for applications and services to get the identity information they need about users inside their organization, in other organizations, and on the Internet.
+ACS se ha creado sobre los principios de la identidad basada en notificaciones, un enfoque coherente para crear mecanismos de autenticación para las aplicaciones que se ejecutan en el entorno local o en la nube. La identidad basada en notificaciones proporciona un método común para que las aplicaciones y los servicios obtengan la información necesaria acerca de la identidad de los usuarios de la organización, de otras organizaciones y en Internet.
 
-To complete the tasks in this guide, you should understand the following terms and concepts are used in this guide:
+Para completar las tareas de esta guía, debe comprender los términos y los conceptos siguientes que en ella se usan:
 
 
-**Client** - A browser that is attempting to gain access to your web application.
+**Cliente**: explorador que intenta obtener acceso a su aplicación web.
 
-**Relying party (RP) application** - Your web app. An RP application is a website or service that outsources authentication to one external authority. In identity jargon, we say that the RP trusts that authority. This guide explains how to configure your application to trust ACS.
+**Aplicación de usuarios de confianza (RP)**: su aplicación web. Una aplicación RP es un sitio web o un servicio que externaliza la autenticación a una autoridad diferente. En la jerga de la identidad, se dice que los RP confían en dicha autoridad. En esta guía se explica cómo configurar su aplicación para que confíe en ACS.
 
-**Token** - A user gains access to an RP application by presenting a valid token that was issued by an authority that the RP application trusts. A collection of security data that is issued when a client is authenticated. It contains a set of claims, which are attributes of the authenticated user, such as a user's name or age, or an identifier for a user role. A token is digitally signed so its issuer can be identified and its content cannot be changed.
+**Token**: el usuario accede a una aplicación RP presentando un token válido emitido por una autoridad en la confía la aplicación RP. Cuando el usuario se autentica, se envía una colección de datos de seguridad. Esta contiene un conjunto de notificaciones, que son atributos del usuario autenticado, como su nombre o su edad, o bien un identificador para el rol del usuario. Se firma un token digitalmente para poder identificar a quien lo emite y no se pueda cambiar su contenido.
 
-**Identity Provider (IP)** - An  authority that authenticates user identities and issues security tokens, such as Microsoft account (Windows Live ID), Facebook,  Google, Twitter, and Active Directory. When ACS is configured to trust an IP, it accepts and validates the tokens that the IP issues. Because ACS can trust multiple IPs at the same time, when your application trusts ACS, you can  your application can offer users the option to be authenticated by any of the IPs that ACS trusts on your behalf.
+**Proveedor de identidades (IP)**: autoridad que autentica las identidades de los usuarios y emite los tokens de seguridad, como una cuenta de Microsoft (Windows Live ID), Facebook, Google, Twitter y Active Directory. Cuando ACS se ha configurado para confiar en un IP, acepta y valida los tokens que emite dicho IP. Como ACS puede confiar en varios IP a la vez, cuando su aplicación confía en ACS, puede ofrecer a los usuarios la opción de autenticarse con otro IP en el que confíe ACS.
 
-**Federation Provider (FP)** - Identity providers (IPs) have direct knowledge of users, authenticate users by using their credentials, and issue claims about users. A Federation Provider (FP) is a different kind of authority. Instead of authenticating users directly, the FP brokers authentication. It acts as an intermediary between a relying party application and one or more IPs. ACS is a federation provider (FP).
+**Proveedor de federación (FP)**: los proveedores de identidades (IP) conocen directamente a los usuarios, los autentican usando sus credenciales y emiten notificaciones sobre ellos. Otro tipo de autoridad es el proveedor de federación (FP). En lugar de autenticar a los usuarios directamente, el FP negocia su autenticación; es decir, actúa como intermediario entre la aplicación de un usuario de confianza y uno o varios IP. ACS es un proveedor de federación (FP).
 
-**ACS Rule Engine** - Claims transformation rules convert the claims in tokens from trusted IPs so they can be used by an RP. ACS includes a rule engine that  applies the claims transformation rules that you specify for your RP.
+**Motor de reglas de ACS**: las reglas de transformación de notificaciones convierten las notificaciones en tokens de IP de confianza para que un RP las pueda usar. ACS incluye un motor de reglas que aplica las reglas de transformación de notificaciones que usted especifique para su RP.
 
-**Access Control Namespace** - Provides a unique scope for addressing ACS resources within your application. The namespace contains your settings, such as the IPs you trust, the RP applications you want to serve, the rules that you apply to incoming tokens, and it displays the endpoints that the application and the developer use to communicate with ACS.
+**Espacio de nombres de control de acceso**: proporciona un ámbito único para dirigir los recursos de ACS a su aplicación. El espacio de nombres contiene su configuración, como los IP en los que confía, las aplicaciones RP que desea servir, las reglas que aplica a los tokens entrantes y muestra los extremos que la aplicación y el desarrollador usan para comunicarse con ACS.
 
-The following figure shows how ACS authentication works with a web application:
+La siguiente ilustración muestra cómo funciona la autenticación de ACS con una aplicación web:
 
 ![][0]
 
-1.  The client (in this case, a browser) requests a page from the RP.
-2.  Since the request is not yet authenticated, the RP redirects the
-    user to the authority that it trusts, which is ACS. The ACS presents
-    the user with the choice of IPs that were specified for this RP. The
-    user selects the appropriate IP.
-3.  The client browses to the IP's authentication page, and prompts the
-    user to log on.
-4.  After the client is authenticated (for example, the identity
-    credentials are entered), the IP issues a security token.
-5.  After issuing a security token, the IP directs the client to send the security token that the IP issued to ACS.
-6.  ACS validates the security token issued by the IP, inputs the
-    identity claims in this token into the ACS rules engine, calculates
-    the output identity claims, and issues a new security token that
-    contains these output claims.
-7.  ACS directs the client to send the security token that ACS issued to the RP. The RP validates the signature on the security token, extracts claims for use by the application business logic, and returns the page that was originally requested.
+1.  El cliente (en este caso, un explorador) solicita una página del RP.
+2.  Como la solicitud no se ha autenticado todavía, el RP redirige al usuario a la autoridad en la que confía, es decir, ACS. El ACS presenta al usuario la selección de IP especificados para este RP. El usuario selecciona el IP adecuado.
+3.  El cliente examina la página de autenticación del IP y pide al usuario que inicie sesión.
+4.  Cuando el cliente se haya autenticado (por ejemplo, cuando haya escrito las credenciales de identidad), el IP emitirá un token de seguridad.
+5.  Después de haber emitido un token de seguridad, el IP ordena al cliente que envíe a ACS el token de seguridad emitido por el IP.
+6.  ACS valida el token de seguridad emitido por el IP, introduce las notificaciones de identidad de este token en el motor de reglas de ACS, calcula las notificaciones de identidad resultantes y emite un nuevo token de seguridad que contenga estas notificaciones.
+7.  ACS ordena al cliente que envíe al RP el token de seguridad emitido por ACS. El RP valida la firma del token de seguridad, extrae las notificaciones que debe usar la lógica de negocios de la aplicación y devuelve la página que se solicitó originalmente.
 
-## Prerequisites
+## Requisitos previos
 
 
-To complete the tasks in this guide, you will need the following:
+Necesitará lo siguiente para completar las tareas de esta guía:
 
--	Azure subscription
+-	Suscripción de Azure
 -	Microsoft Visual Studio 2012 
--	Identity and Access Tool for Visual Studio 2012 (To download, see [Identity and Access Tool][])
+-	Herramienta de identidades y acceso para Visual Studio 2012 (para descargarla, consulte [Herramientas de identidades y acceso][])
 
 
-## Create an Access Control Namespace
+## Creación de un espacio de nombres de control de acceso
 
-To use Active Directory Access Control in Azure, create an Access Control namespace. The namespace provides a unique scope for
-addressing ACS resources within your application.
+Para usar el control de acceso de Active Directory en Azure, cree un espacio de nombres de control de acceso. El espacio de nombres proporciona un ámbito único para dirigir los recursos de ACS a su aplicación.
 
-1.  Log into the [Azure Management Portal][] (https://manage.WindowsAzure.com).
+1.  Inicie sesión en el [Portal de administración de Azure][] (https://manage.WindowsAzure.com).
     
-2.  Click **Active Directory**.  
+2.  Haga clic en **Active Directory**.
 
 	![][1]
 
-3.  To create a new Access Control namespace, click **New**. **App Services** and **Access Control** will be selected. Click **Quick Create**. 
+3.  Para crear un nuevo espacio de nombres de control de acceso, haga clic en **Nuevo**. **Servicios de aplicaciones** y **Control de acceso** se seleccionarán. Haga clic en **Creación rápida**.
 
 	![][2]
 
-4.  Enter a name for the namespace. Azure verifies that the name is unique.
+4.  Escriba un nombre para el espacio de nombres. Azure verificará si el nombre es único.
 
-5.  Select the region in which the namespace is used. For best performance, use the region in which you are deploying your application, and then click **Create**.
+5.  Seleccione la región en la que se usa el espacio de nombres. Para conseguir el mejor rendimiento, use la región en la que esté implementando su aplicación y, a continuación, haga clic en **Crear**.
 
-Azure creates and activates the namespace.
+Azure crea y activa el espacio de nombres.
 
-## Create an ASP.NET MVC Application
+## Crear una aplicación ASP.NET MVC
 
-In this step, you create a ASP.NET MVC application. In later steps, we'll integrate this simple web forms application with ACS.
+En este paso, creará una aplicación ASP.NET MVC. En los pasos siguientes, integraremos esta sencilla aplicación de formularios web con ACS.
 
-1.	Start Visual Studio 2012 or Visual Studio Express for Web 2012 (Previous versions of Visual Studio will not work with this tutorial).
-1.	Click **File**, and then click **New Project**.
-1.	Select the Visual C#/Web template, and then select **ASP.NET MVC 4 Web Application**.
+1.	Inicie Visual Studio 2012 o Visual Studio Express 2012 para Web (las versiones anteriores de Visual Studio no funcionan con este tutorial).
+1.	Haga clic en **Archivo** y, a continuación, en **Nuevo proyecto**.
+1.	Seleccione la plantilla Visual C#/Web y, a continuación, **Aplicación Web ASP.NET MVC 4**.
 
-	We'll use a MVC application for this guide, but you can use any web application type for this task.
+	En esta guía usaremos una aplicación de MVC, pero puede utilizar cualquier tipo de aplicación web para esta tarea.
 
 	![][3]
 
-1. In **Name**, type **MvcACS**, and then click **OK**.
-1. In the next dialog, select **Internet Application**, and then click **OK**.
-1. Edit the *Views\Shared\_LoginPartial.cshtml* file and replace the contents with the following code:
+1. En **Nombre**, escriba **MvcACS** y, a continuación, haga clic en **Aceptar**.
+1. En el diálogo siguiente, seleccione **Aplicación de Internet** y, a continuación, haga clic en **Aceptar**.
+1. Edite el archivo *Views\\Shared\_LoginPartial.cshtml* y sustituya el contenido por el código siguiente:
 
         @if (Request.IsAuthenticated)
         {
@@ -153,92 +142,90 @@ In this step, you create a ASP.NET MVC application. In later steps, we'll integr
             </ul>
         }
 
-Currently, ACS doesn't set User.Identity.Name, so we need to make the above change.
+Actualmente, ACS no configura User.Identity.Name, por lo que hay que realizar el cambio anterior.
 
-1. Press F5 to run the application. The default ASP.NET MVC application appears in your web browser.
+1. Presione F5 para ejecutar la aplicación. La aplicación ASP.NET MVC predeterminada aparece en su explorador web.
 
-## Integrate your Web Application with ACS
+## Integración de su aplicación web con ACS
 
-In this task, you will integrate your ASP.NET web application with ACS.
+En esta tarea, integrará su aplicación web ASP.NET con ACS.
 
-1.	In Solution Explorer, right-click the MvcACS project, and then select **Identity and Access**.
+1.	En el Explorador de soluciones, haga clic con el botón secundario en el proyecto MvcACS y, a continuación, seleccione **Identidades y acceso**.
 
-	If the **Identity and Access** option does not appear on the context menu, install the Identity and Access Tool. For information, see [Identity and Access Tool]. 
+	Si la opción**Identidades y acceso** no aparece en el menú contextual, instale la herramienta de identidades y acceso. Para obtener información, consulte [Herramienta de identidades y acceso].
 
 	![][4]
 
-2.	On the **Providers** tab, select **Use the Azure Access Control Service**.
+2.	En la pestaña **Proveedores**, seleccione **Usar Azure Access Control Service **.
 
     ![][44]
 
-3.  Click the **Configure** link.
+3.  Haga clic en el vínculo **Configurar**.
 
     ![][444]
 
-	Visual Studio requests information about the Access Control namespace. Enter the namespace name you created earlier (Test in this images above, but you will have a different namespace). Switch back to the Azure Management Portal to get the symmetric key.
+	Visual Studio solicita información acerca del espacio de nombres de control de acceso. Escriba el nombre del espacio de nombres que ha creado anteriormente (pruebe en las imágenes de arriba, aunque tendrá un espacio de nombres diferente). Vuelva al portal de administración de Azure para obtener la clave simétrica.
 
 	![][17]
 
-4.  In the Azure Management Portal, click the Access Control namespace and then click **Manage**.
+4.  En el Portal de administración de Azure, haga clic en el espacio de nombres de control de acceso y, a continuación, en **Administrar**.
 
 	![][8]
 
-5.	Click **Management Service** and then click **Management Client**.
+5.	Haga clic en **Servicio de administración** y, a continuación, en **Cliente de administración**.
 
 	![][18]
 
-6.	Click **Symmetric Key**, click **Show Key**, and copy the key value. Then, click **Cancel** to exit the Edit Management Client page without making changes. 
+6.	Haga clic en **Clave simétrica**, después en **Mostrar clave** y copie el valor de la clave. A continuación, haga clic en **Cancelar** para salir de la página de edición del cliente de administración para salir sin realizar cambios.
 
 	![][19]
 
-7.  In Visual Studio, paste the key in the **Enter the Management Key for the namespace** field and click **Save management key**, and then click **OK**.
+7.  En Visual Studio, pegue la clave en el campo **Especificar la clave de administración para el espacio de nombres** y haga clic en **Guardar clave de administración** y, a continuación, haga clic en **Aceptar**.
 
 	![][20]
 
-	Visual Studio uses the information about the namespace to connect to the ACS Management Portal and get the settings for your namespace, including the identity providers, realm, and return URL.
+	Visual Studio utiliza la información del espacio de nombres para conectarse al portal de administración de ACS y obtener la configuración de su espacio de nombres, incluyendo los proveedores de identidades, el dominio y la URL de retorno.
 
-8.	Select **Windows Live ID** (Microsoft account) and click OK. 
+8.	Seleccione **Windows Live ID** (cuenta de Microsoft) y haga clic en Aceptar.
 
 	![][5]
 
-## Test the Integration with ACS
+## Prueba de la integración con ACS
 
-This task explains how to test the integration of your RP application and ACS.
+En esta tarea se explica cómo probar la integración de su aplicación RP con ACS.
 
--	Press F5 in Visual Studio to run the app.
+-	Presione F5 en Visual Studio para ejecutar la aplicación.
 
-When your application is integrated with ACS and you have selected Windows Live ID (Microsoft account), instead of opening the default ASP.NET Web Forms application, your browser is redirected to the sign-in page for Microsoft accounts. When you sign in with a valid user name a password, you are then redirected to the  MvcACS application.
+Cuando la aplicación se integre con ACS y haya seleccionado Windows Live ID (cuenta de Microsoft), en lugar de abrir la aplicación de formularios web ASP.NET predeterminada, el navegador se redirigirá a la página de inicio de sesión para la cuenta de Microsoft. Cuando inicie sesión con un nombre de usuario y una contraseña válidos, entonces se le redirigirá a la aplicación MvcACS.
 
 ![][6]
 
-Congratulations! You have successfully integrated ACS with your ASP.NET web application. ACS is now handling the authentication of users using their Microsoft account credentials.
+¡Enhorabuena! Ha integrado correctamente ACS con la aplicación web ASP.NET. ACS ahora se encarga de la autenticación de los usuarios que utilizan sus credenciales de la cuenta de Microsoft.
 
-## View Claims Sent By ACS
+## Visualización de las notificaciones enviadas por ACS
 
-In this section we will modify the application to view the claims sent by ACS.  The Identity and Access tool has created a rule group that passes through all claims from the IP to your application.  Note that different identity providers send different claims.
+En esta sección se modificará la aplicación para ver las notificaciones enviadas por ACS. La herramienta de identidades y acceso ha creado un grupo de reglas que pasa por todas las notificaciones que emite el IP a su aplicación. Tenga en cuenta que cada proveedor de identidades envía notificaciones diferentes.
 
-1. Open the *Controllers\HomeController.cs* file. Add a **using** statement for **System.Threading**:
+1. Abra el archivo *Controllers\\HomeController.cs*. Agregue una instrucción **using** a **System.Threading**:
 
  	using System.Threading;
 
-1. In the HomeController class add the *Claims* method:
+1. En la clase HomeController, agregue el método *Claims*:
 
-    public ActionResult Claims()
-    {
-        ViewBag.Message = "Your claims page.";
+    public ActionResult Claims() { ViewBag.Message = "Your claims page.";
 
         ViewBag.ClaimsIdentity = Thread.CurrentPrincipal.Identity;
 
         return View();
     }
 
-1. Right click on the *Claims* method and select **Add View**.
+1. Haga clic con el botón derecho en el método *Claims* y seleccione **Agregar vista**.
 
 ![][66]
 
-1. Click **Add**.
+1. Haga clic en **Agregar**.
 
-1. Replace the contents of the *Views\Home\Claims.cshtml* file with the following code:
+1. Reemplace el contenido del archivo *Views\\Home\\Claims.cshtml* por el código siguiente:
 
         @{
             ViewBag.Title = "Claims";
@@ -288,86 +275,86 @@ In this section we will modify the application to view the claims sent by ACS.  
         }
         </table>
 
-1. Run the application and navigate to the *Claims* method:
+1. Ejecute la aplicación y desplácese hasta el método*Claims*:
 
 ![][666]
 
-For more information on using claims in your application, see the [Windows Identity Foundation library](http://msdn.microsoft.com/library/hh377151.aspx).
+Para obtener más información acerca de cómo usar las notificaciones de su aplicación, consulte la [biblioteca de Windows Identity Foundation](http://msdn.microsoft.com/library/hh377151.aspx).
 
-## View the App in the ACS Management Portal
+## Visualización de la aplicación en el portal de administración de ACS
 
-The Identity and Access Tool in Visual Studio automatically integrates your application with ACS.
+La herramienta de identidades y acceso de Visual Studio integra automáticamente su aplicación con ACS.
 
-When you select the Use Azure Access Control option and then run your application, the Identity and Access Tool adds your application as a relying party, configures it to use the selected identity providers, and generates and selects the default claims transformation rules for the application.
+Cuando selecciona la opción Use Azure Access Control y, a continuación, ejecuta su aplicación, la herramienta de identidades y acceso agrega su aplicación como usuario de confianza, la configura para usar los proveedores de identidades seleccionados y, finalmente, genera y selecciona las reglas de transformación de notificaciones predeterminadas para la aplicación.
 
-You can review and change these configuration settings in the ACS Management Portal. Use the following steps to review the changes in the portal.
+Puede revisar y cambiar estas opciones de configuración en el portal de administración de ACS. Siga estos pasos para revisar los cambios del portal.
 
-1.	Log into the Windows [Azure Management Portal](http://manage.WindowsAzure.com).
+1.	Inicie sesión en el [Portal de administración de Azure](http://manage.WindowsAzure.com).
 
-2.	Click **Active Directory**. 
+2.	Haga clic en **Active Directory**.
 
 	![][8]
 
-3.	Select an Access Control namespace and then click **Manage**. This action opens the ACS Management Portal.
+3.	Seleccione un espacio de nombres de Access Control y luego haga clic en **Administrar**. Esta acción abre el portal de administración de ACS.
 
 	![][9]
 
 
-4.	Click **Relying party applications**.
+4.	Haga clic en **Aplicaciones de usuarios de confianza**.
 
-	The new MvcACS application appears in the list of relying party applications. The realm is automatically set to the application main page.
+	Aparece la nueva aplicación MvcACS en la lista de aplicaciones de usuarios de confianza. El dominio se establece automáticamente en la página principal de la aplicación.
 
 	![][10]
 
 
-5.	Click **MvcACS**.
+5.	Haga clic en **MvcACS**.
 
-	The Edit Relying Party Application page contains configuration settings for the MvcACS web application. When you change the settings on this page and save them, the changes are immediately applied to the application.
+	La página de edición de las aplicaciones de los usuarios de confianza contiene la configuración para la aplicación web MvcACS. Cuando realice cambios en la configuración de esta página y los guarde, estos se reflejarán inmediatamente en la aplicación.
 
 	![][11]
 
-6.	Scroll down the page to see the remaining configuration settings for the MvcACS application, including the identity providers and claims transformation rules.
+6.	Desplácese por la página para ver las opciones de configuración restantes de la aplicación MvcACS, incluyendo los proveedores de identidades y las reglas de transformación de notificaciones.
 
 	![][12]
 
-In the next section, we'll use the features of the ACS Management Portal to make a change to the web application -- just to show how easy it is to do.
+En la sección siguiente, utilizaremos las características del portal de administración de ACS para realizar un cambio en la aplicación web, simplemente para mostrar lo fácil que es hacerlo.
 
-## Add an Identity Provider
+## Incorporación de un proveedor de identidades
 
-Let's use the ACS Management Portal to change the authentication of our MvcACS application. In this example, we'll add Google as an identity provider for MvcACS.
+Utilizaremos el portal de administración de ACS para cambiar la autenticación de nuestra aplicación MvcACS. En este ejemplo, incorporaremos Google como proveedor de identidades para MvcACS.
 
-1.	Click **Identity providers** (in the navigation menu) and then click **Add**.
+1.	Haga clic en **Proveedores de identidades** (en el menú de navegación) y, a continuación, haga clic en **Agregar**.
 
 	![][13]
 
-2.	Click **Google** and then click **Next**. The MvcACS app checkbox is selected by default. 
+2.	Haga clic en **Google** y, a continuación, en **Siguiente**. La casilla de la aplicación MvcACS está activa de forma predeterminada.
 
 	![][14]
 
-3. Click Save. 
+3. Haga clic en Guardar.
 
 	![][15]
 
 
-Done! If you go back to Visual Studio, open the project for the MvcACS app, and click **Identity and Access**, the tool lists both the Windows Live ID and Google identity providers.  
+¡Listo! Si vuelve a Visual Studio, abra el proyecto para la aplicación MvcACS y haga clic en **Identidades y acceso**, la herramienta muestra los proveedores de identidades Windows Live ID y Google.
 
 ![][16]
 
-And, when you run your application, you'll see the effect. When an application supports more than one identity provider, the user's browser is first directed to a page hosted by ACS that prompts the user to choose an identity provider. 
+Y cuando ejecute la aplicación, verá el efecto. Cuando una aplicación admite más de un proveedor de identidades, el explorador se dirige en primer lugar a la página hospedada por ACS y pide al usuario que elija un proveedor de identidades.
 
 ![][7]
 
-After the user selects an identity provider, the browser goes to the identity provider sign-in page.
+Una vez que el usuario seleccione un proveedor de identidades, el explorador irá a la página de inicio de sesión de este.
 
-## What's Next
+## Pasos siguientes
 
-You have created a web application that is integrated with ACS. But, this is just the beginning! You can expand on this scenario.
+Ha creado una aplicación web que está integrada con ACS. Sin embargo, esto es solo el principio. Puede expandir este escenario.
  
-For example, you can add more identity providers for this RP or allow users registered in enterprise directories, such as Active Directory Domain Services, to log on to the web application.
+Por ejemplo, puede agregar más proveedores de identidades para este RP o permitir que los usuarios registrados en los directorios empresariales, como los servicios de dominio de Active Directory, inicien sesión en la aplicación web.
 
-You can also add rules to your namespace that determine which claims are sent to an application for processing in the application business logic.
+También puede agregar reglas a su espacio de nombres que determinen qué notificaciones se envían a una aplicación para que se procese en su lógica de negocios.
 
-To further explore ACS functionality and to experiment with more scenarios, see [Access Control Service 2.0].
+Para seguir explorando la funcionalidad de ACS y experimentar con más escenarios, consulte [Access Control Service 2.0].
 
 
 
@@ -385,8 +372,9 @@ To further explore ACS functionality and to experiment with more scenarios, see 
   [vpp]: #bkmk_VP
 
   [Access Control Service 2.0]: http://go.microsoft.com/fwlink/?LinkID=212360
-  [Identity and Access Tool]: http://go.microsoft.com/fwlink/?LinkID=245849
-  [Azure Management Portal]: http://manage.WindowsAzure.com
+  [Herramienta de identidades y acceso]: http://go.microsoft.com/fwlink/?LinkID=245849
+  [Herramientas de identidades y acceso]: http://go.microsoft.com/fwlink/?LinkID=245849
+  [Portal de administración de Azure]: http://manage.WindowsAzure.com
 
   [0]: ./media/active-directory-dotnet-how-to-use-access-control/acs-01.png
   [1]: ./media/active-directory-dotnet-how-to-use-access-control/acsCreateNamespace.png
@@ -414,3 +402,5 @@ To further explore ACS functionality and to experiment with more scenarios, see 
   [19]: ./media/active-directory-dotnet-how-to-use-access-control/acsShowKey.png
   [20]: ./media/active-directory-dotnet-how-to-use-access-control/acsConfigAcsNamespace2.png
  
+
+<!---HONumber=August15_HO6-->

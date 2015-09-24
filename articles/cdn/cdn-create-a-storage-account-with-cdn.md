@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="How to use CDN - Azure feature guide" 
-	description="Learn how to use the Azure Content Delivery Network (CDN) to deliver high-bandwidth content by caching blobs and static content." 
+	pageTitle="Uso de la red CDN | Microsoft Azure" 
+	description="Obtenga información acerca del uso de la Red de entrega de contenido (CDN) de Azure para ofrecer contenido con alto ancho de banda mediante el almacenamiento en caché de blobs y contenidos estáticos." 
 	services="cdn" 
 	documentationCenter=".net" 
 	authors="zhangmanling" 
@@ -13,139 +13,111 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="05/05/2015" 
+	ms.date="08/18/2015" 
 	ms.author="mazha"/>
 
 
-# Integrate a Storage Account with CDN
+# Integración de una cuenta de almacenamiento con CDN
 
-CDN can be enabled to cache content from your Azure storage. It offers developers a global solution for delivering high-bandwidth content by caching blobs and static content of compute instances at physical nodes in the United States, Europe, Asia, Australia and South America.
+CDN puede habilitarse para almacenar el contenido de la caché en Almacenamiento de Azure. Ofrece a los desarrolladores una solución global de entrega de contenido con alto ancho de banda; para ello, almacena en memoria caché los blobs y los contenidos estáticos de las instancias de proceso en nodos físicos ubicados en Estados Unidos, Europa, Asia, Australia y Sudamérica.
 
 
-## Step 1: Create a storage account
+## Paso 1: Creación de una cuenta de almacenamiento
 
-Use the following procedure to create a new storage account for a
-Azure subscription. A storage account gives access to 
-Azure storage services. The storage account represents the highest level
-of the namespace for accessing each of the Azure storage service
-components: Blob services, Queue services, and Table services. For more
-information about the Azure storage services, see [Using the
-Azure Storage Services](http://msdn.microsoft.com/library/azure/gg433040.aspx).
+Use el siguiente procedimiento para crear una nueva cuenta de almacenamiento para una suscripción de Azure. Una cuenta de almacenamiento proporciona acceso a los servicios de almacenamiento de Azure. La cuenta de almacenamiento representa el máximo nivel de espacio de nombres para tener acceso a todos los componentes del servicio de almacenamiento de Azure: servicios BLOB, servicios Cola y servicios Tabla. Para obtener más información acerca de los servicios de almacenamiento de Azure, consulte [Uso de los servicios de almacenamiento de Azure](http://msdn.microsoft.com/library/azure/gg433040.aspx).
 
-To create a storage account, you must be either the service
-administrator or a co-administrator for the associated subscription.
+Para crear una cuenta de almacenamiento, debe ser administrador del servicio o coadministrador de la suscripción correspondiente.
 
-> [AZURE.NOTE] For information about performing this operation by using the
-Azure Service Management API, see the [Create Storage Account](http://msdn.microsoft.com/library/windowsazure/hh264518.aspx) reference topic.
+> [AZURE.NOTE]Para obtener información acerca de la realización de esta operación mediante la API de administración de servicios de Azure, consulte el tema de referencia [Creación de una cuenta de almacenamiento](http://msdn.microsoft.com/library/windowsazure/hh264518.aspx).
 
-**To create a storage account for an Azure subscription**
+**Para crear una cuenta de almacenamiento para una suscripción de Azure**
 
-1.  Log into the [Azure Management Portal].
-2.  In the lower left corner, click **New**. In the **New** Dialog, select **Data Services**, then click **Storage**, then **Quick Create**.
+1.  Inicie sesión en el [Portal de administración de Azure].
+2.  En la esquina inferior izquierda, seleccione **Nuevo**. En el cuadro de diálogo **Nuevo**, seleccione **Servicios de datos**, haga clic en **Almacenamiento** y, a continuación en **Creación rápida**.
 
-    The **Create Storage Account** dialog appears.
+    Aparece el cuadro de diálogo **Crear cuenta de almacenamiento**.
 
-    ![Create Storage Account][create-new-storage-account]
+    ![Crear una cuenta de almacenamiento][create-new-storage-account]
 
-4. In the **URL** field, type a subdomain name. This entry can contain from 3-24 lowercase letters and numbers.
+4. En el campo **URL**, escriba un nombre de subdominio. Esta entrada puede contener de 3 a 24 letras minúsculas y números.
 
-    This value becomes the host name within the URI that is used to
-    address Blob, Queue, or Table resources for the subscription. To
-    address a container resource in the Blob service, you would use a
-    URI in the following format, where *&lt;StorageAccountLabel&gt;* refers
-    to the value you typed in **Enter a URL**:
+    Este valor se convierte en el nombre del host dentro del URI que se ha usado para direccionar los recursos Blob, Cola o Tabla de la suscripción. Para dirigir un recurso contenedor en el servicio BLOB, debería usar un URI en el siguiente formato, en el que *&lt;StorageAccountLabel&gt;* hace referencia al valor que ha escrito en **Escriba una dirección URL**:
 
     http://*&lt;StorageAcountLabel&gt;*.blob.core.windows.net/*&lt;mycontainer&gt;*
 
-    **Important:** The URL label forms the subdomain of the storage
-    account URI and must be unique among all hosted services in 
-    Azure.
+    **Importante**: La etiqueta de URL forma el subdominio del URI de la cuenta de almacenamiento y debe ser único entre todos los servicios hospedados en Azure.
 
-	This value is also used as the name of this storage account in the portal, or when accessing this account programmatically.
+	Este valor también se utiliza como nombre de esta cuenta de almacenamiento en el portal o en el acceso a esta cuenta mediante programación.
 
-5.  From the **Region/Affinity Group** drop-down list, select a region or affinity group for the storage account. Select an affinity group instead of a region if you want your storage services to be in the same data center with other Microsoft Azure services that you are using. This can improve performance, and no charges are incurred for egress.  
+5.  En la lista desplegable **Región/grupo de afinidad**, seleccione una región o grupo de afinidad para la cuenta de almacenamiento. Seleccione un grupo de afinidad en lugar de una región si desea que sus servicios de almacenamiento estén en el mismo centro de datos con otros servicios de Microsoft Azure que utilice. Con esto se puede mejorar el rendimiento y no se generan cargos por concepto de salida.
 
-    **Note:** To create an affinity group, open the **Settings** area of the Management Portal, click **Affinity Groups**, and then click either **Add an affinity group** or **Add**. You can also create and manage affinity groups using the Microsoft Azure Service Management API. For more information, see [Operations on Affinity Groups].
+    **Nota**: para crear un grupo de afinidad, abra el área **Configuración** del Portal de administración, haga clic en **Grupos de afinidad** y haga clic en **Agregar un grupo de afinidad** o en **Agregar**. Además puede crear y administrar los grupos de afinidad usando la API de administración de servicios de Microsoft Azure. Para obtener más información, consulte [Operaciones en grupos de afinidad\].
 
-6. From the **Subscription** drop-down list, select the subscription that the storage account will be used with.
-7.  Click **Create Storage Account**. The process of creating the storage account might take several minutes to complete.
-8.  To verify that the storage account was created successfully, verify that the account appears in the items listed for **Storage** with a status of **Online**.
+6. En la lista desplegable **Suscripción**, seleccione la suscripción que se usará con la cuenta de almacenamiento.
+7.  Haga clic en **Crear cuenta de almacenamiento**. El proceso de creación de la cuenta de almacenamiento podría tardar varios minutos en completarse.
+8.  Para comprobar que la cuenta de almacenamiento se ha creado correctamente, verifique que la cuenta aparece en la lista de elementos de **Almacenamiento** con el estado **Conectado**.
 
 
-## Step 2: Create a new CDN endpoint for your storage account
+## Paso 2: Creación de un nuevo extremo de la red CDN para una cuenta de almacenamiento
 
-Once you enable CDN access to a storage account or hosted service, all
-publicly available objects are eligible for CDN edge caching. If you
-modify an object that is currently cached in the CDN, the new content
-will not be available via the CDN until the CDN refreshes its content
-when the cached content time-to-live period expires.
+Una vez que haya habilitado el acceso de la red CDN a una cuenta de almacenamiento o servicio hospedado, todos los objetos disponibles de forma pública se pueden almacenar en la memoria caché perimetral de la red CDN. Si modifica un objeto que está almacenado en la memoria caché de la red CDN actualmente, el nuevo contenido no estará disponible a través de la red CDN hasta que la red CDN actualice su contenido al cumplir el período de vida del contenido almacenado en caché.
 
-**To create a new CDN endpoint for your storage account**
+**Para crear un nuevo extremo de una red CDN para una cuenta de almacenamiento**
 
-1. In the [Azure Management Portal], in the navigation pane, click **CDN**.
+1. En el [Portal de administración de Azure], en el panel de navegación, haga clic en **CDN**.
 
-2. On the ribbon, click **New**. In the **New** dialog, select **App Services**, then **CDN**, then **Quick Create**.
+2. En la cinta, haga clic en **Nuevo**. En el cuadro de diálogo **Nuevo**, seleccione **Servicios de aplicaciones**, a continuación **CDN** y, finalmente, **Creación rápida**.
 
-3. In the **Origin Domain** dropdown, select the storage account you created in the previous section from the list of your available storage accounts. 
+3. En la lista desplegable **Dominio de origen**, seleccione en la lista de cuentas de almacenamiento disponibles la que creó en la sección anterior.
 
-4. Click the **Create** button to create the new endpoint.
+4. Haga clic en el botón **Crear** para crear el nuevo extremo.
 
-5. Once the endpoint is created, it appears in a list of endpoints for the subscription. The list view shows the URL to use to access cached content, as well as the origin domain. 
+5. Una vez creado el extremo, aparecerá en la lista de extremos de la suscripción. La visualización de la lista muestra la URL que se debe utilizar para tener acceso al contenido en caché, así como al dominio de origen.
 
-	The origin domain is the location from which the CDN caches
-    content. The origin domain can be either a storage account or a cloud service; a storage account is used for the purposes of this example. Storage content is cached to edge servers according either to a cache-control setting that you specify, or to the default heuristics of the caching network. See [How to Manage Expiration of Blob Content](http://msdn.microsoft.com/library/gg680306.aspx) for more information. 
+	El dominio de origen es la ubicación desde la que la red CDN almacena el contenido en la memoria caché. El dominio de origen puede ser una cuenta de almacenamiento o un servicio en la nube; en este ejemplo se usa una cuenta de almacenamiento. El contenido de almacenamiento se almacena en la memoria caché de los servidores perimetrales conforme a la configuración de control de la memoria caché que se haya especificado o a la heurística predeterminada de la red de almacenamiento en caché. Para obtener más información, consulte [Cómo administrar la caducidad del contenido de blobs](http://msdn.microsoft.com/library/gg680306.aspx).
 
 
-    > [AZURE.NOTE] The configuration created for the endpoint will not
-    immediately be available; it can take up to 60 minutes for the
-    registration to propagate through the CDN network. Users who try to
-    use the CDN domain name immediately may receive status code 400
-    (Bad Request) until the content is available via the CDN.
+    > [AZURE.NOTE]La configuración que ha establecido para el extremo no estará disponible de forma inmediata; el registro puede tardar hasta 60 minutos en propagarse a través de la red CDN. Es posible que los usuarios que intenten usar el nombre de dominio de la red CDN de forma inmediata reciban el código de estado 400 (solicitud incorrecta) hasta que el contenido esté disponible a través de la red CDN.
 
 
-## Step 3: Access CDN content
+## Paso 3: Obtención de acceso a su contenido de la red CDN
 
-To access cached content on the CDN, use the CDN URL provided in the portal. The address for a cached blob will be similar to the following:
+Para obtener acceso al contenido almacenado en la memoria caché de la red CDN, use la URL de la red CDN que se le ha proporcionado en el portal. La dirección del blob en caché será similar a la siguiente:
 
-http://<*CDNNamespace*\>.vo.msecnd.net/<*myPublicContainer*\>/<*BlobName*\>
+http://<*espacioDeNombresCDN*>.vo.msecnd.net/<*miContenedorPúblico*>/<*NombreBlob*>
 
 
-## Step 4: Remove content from the CDN
+## Paso 4: Eliminación de su contenido de la red CDN
 
-If you no longer wish to cache an object in the Azure Content
-Delivery Network (CDN), you can take one of the following steps:
+Si no desea seguir almacenando un objeto en la memoria caché de la Red de entrega de contenido de Azure (CDN), puede realizar uno de los siguientes pasos:
 
--   You can make the container private instead of public. See [Restrict Access to Containers and Blobs](http://msdn.microsoft.com/library/dd179354.aspx) for more information.
--   You can disable or delete the CDN endpoint using the Management
-    Portal.
--   You can modify your hosted service to no longer respond to requests for the
-    object.
+-   Puede crear un contenedor privado en vez de público. Para obtener más información, consulte [Acceso restringido a contenedores y blobs](http://msdn.microsoft.com/library/dd179354.aspx).
+-   Puede deshabilitar o eliminar el extremo de la red CDN con el Portal de administración.
+-   Puede modificar su servicio hospedado para no seguir respondiendo las solicitudes del objeto.
 
-An object already cached in the CDN will remain cached until the
-time-to-live period for the object expires. When the time-to-live period
-expires, the CDN will check to see whether the CDN endpoint is still
-valid and the object still anonymously accessible. If it is not, then
-the object will no longer be cached.
+Un objeto que ya está almacenado en la memoria caché de la red CDN permanecerá almacenado en caché hasta que cumpla el período de vida del objeto. Al cumplir el período de vida, la red CDN comprobará si el extremo de la red CDN sigue siendo válido y si el objeto sigue siendo accesible de forma anónima. Si no lo es, el objeto dejará de estar almacenado en caché.
 
-The ability to immediately purge content is currently not supported on Azure Management Portal. Please contact [Azure support](http://azure.microsoft.com/support/options/)  if you need to immediately purge content. 
+El Portal de administración de Azure no admite actualmente la posibilidad de purgar contenido. Póngase en contacto con el [soporte técnico de Azure](http://azure.microsoft.com/support/options/) si necesita purgar inmediatamente el contenido.
 
-## Additional resources
+## Recursos adicionales
 
--   [How to Create an Affinity Group in Azure]
--   [How to: Manage Storage Accounts for an Azure Subscription]
--   [How to Map CDN Content to a Custom Domain]
+-   [Creación de un grupo de afinidad en Azure]
+-   [Administración de cuentas de almacenamiento en una suscripción de Azure]
+-   [Asignación del contenido de la red CDN a un dominio personalizado]
 
 [Create Storage Account]: http://msdn.microsoft.com/library/azure/hh264518.aspx
 [Azure CDN Node Locations]: cdn-pop-locations.md
-[Azure Management Portal]: https://manage.windowsazure.com/
+[Portal de administración de Azure]: https://manage.windowsazure.com/
 [billing plan]: /pricing/calculator/?scenario=full
 [How to Register a Custom Subdomain Name for Accessing Blobs in Azure]: ../storage-custom-domain-name.md
-[How to Create an Affinity Group in Azure]: http://msdn.microsoft.com/library/azure/ee460798.aspx
+[Creación de un grupo de afinidad en Azure]: http://msdn.microsoft.com/library/azure/ee460798.aspx
 [Overview of the Azure CDN]: cdn-overview.md
-[How to: Manage Storage Accounts for an Azure Subscription]: https://msdn.microsoft.com/en-us/library/azure/hh531793.aspx
-[How to Map CDN Content to a Custom Domain]: cdn-map-content-to-custom-domain.md
+[Administración de cuentas de almacenamiento en una suscripción de Azure]: https://msdn.microsoft.com/es-es/library/azure/hh531793.aspx
+[Asignación del contenido de la red CDN a un dominio personalizado]: cdn-map-content-to-custom-domain.md
 
 
 [create-new-storage-account]: ./media/cdn-create-a-storage-account-with-cdn/CDN_CreateNewStorageAcct.png
 
  
+
+<!---HONumber=August15_HO8-->

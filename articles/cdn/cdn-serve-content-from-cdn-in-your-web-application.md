@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Serve Content from Azure CDN in Your Web Application" 
-	description="A tutorial that teaches you how to use content from a CDN to improve the performance of your Web application." 
+	pageTitle="Entrega de contenido desde la red CDN de Azure en su aplicación web" 
+	description="Un tutorial que le enseña a usar el contenido de una CDN para mejorar el rendimiento de su aplicación web." 
 	services="cdn" 
 	documentationCenter=".net" 
 	authors="cephalin" 
@@ -16,184 +16,182 @@
 	ms.date="05/27/2015" 
 	ms.author="cephalin"/>
 
-# Serve Content from Azure CDN in Your Web Application #
+# Entrega de contenido desde la red CDN de Azure en su aplicación web #
 
-This tutorial shows you how to take advantage of Azure CDN to improve the reach and performance of your Web application. Azure CDN can help improve the performance of your Web application when:
+Este tutorial le mostrará cómo sacar el máximo partido de la red CDN de Azure para mejorar el alcance y el rendimiento de su aplicación web. La red CDN de Azure puede ayudarle a mejorar el rendimiento de su aplicación web cuando:
 
-- You have many links to static or semi-static content on your pages
-- Your application is accessed by clients globally
-- You want to offload traffic from your Web server
-- You want to reduce the number of concurrent client connections to your Web server (there is a great discussion on this at [Bundling and Minification](http://www.asp.net/mvc/tutorials/mvc-4/bundling-and-minification)) 
-- You want to increase the perceived load/refresh time of your pages
+- Tiene varios vínculos a contenido estático o semiestático en las páginas.
+- La aplicación la utilizan los clientes globalmente.
+- Desea descargar tráfico desde el servicio web.
+- Desea reducir el número de conexiones de cliente simultáneas al servidor web (en [Unión y minificación](http://www.asp.net/mvc/tutorials/mvc-4/bundling-and-minification) se habla de ello). 
+- Si desea aumentar el tiempo de actualización/carga percibido en las páginas.
 
-## What you will learn ##
+## Lo qué aprenderá ##
 
-In this tutorial, you will learn how to do the following:
+En este tutorial, aprenderá los siguientes procedimientos:
 
--	[Serve static content from an Azure CDN endpoint](#deploy)
--	[Automate content upload from your ASP.NET application to your CDN endpoint](#upload)
--	[Configure the CDN cache to reflect the desired content update](#update)
--	[Serve fresh content immediately using query strings](#query)
+-	[Entrega de contenido estático desde un extremo de la red CDN de Azure](#deploy)
+-	[Carga de contenido automatizada desde la aplicación ASP .NET al extremo de la red CDN](#upload)
+-	[Configuración de la memoria caché de la red CDN para reflejar la actualización deseada del contenido](#update)
+-	[Entrega inmediata de contenido nuevo mediante cadenas de consulta](#query)
 
-## What you will need ##
+## Qué necesita ##
 
-This tutorial has the following prerequisites:
+Este tutorial cuenta con los siguientes requisitos previos:
 
--	An active [Microsoft Azure account](/account/). You can sign up for a trial account
--	Visual Studio 2013 with [Azure SDK](http://go.microsoft.com/fwlink/p/?linkid=323510&clcid=0x409) for blob management GUI
--	[Azure PowerShell](http://go.microsoft.com/?linkid=9811175&clcid=0x409) (used by [Automate content upload from your ASP.NET application to your CDN endpoint](#upload))
+-	Una [cuenta de Microsoft Azure](/account/) activa Puede registrarse para una cuenta de prueba.
+-	Visual Studio 2013 con el [SDK de Azure](http://go.microsoft.com/fwlink/p/?linkid=323510&clcid=0x409) para GUI de administración de blobs
+-	[Azure PowerShell](http://go.microsoft.com/?linkid=9811175&clcid=0x409) (utilizado por [Carga de contenido automatizada desde la aplicación ASP .NET al extremo de la red CDN](#upload))
 
-> [AZURE.NOTE] You need an Azure account to complete this tutorial:
-> + You can [open an Azure account for free](/pricing/free-trial/?WT.mc_id=A261C142F) - You get credits you can use to try out paid Azure services, and even after they're used up you can keep the account and use free Azure services, such as Websites.
-> + You can [activate MSDN subscriber benefits](/pricing/member-offers/msdn-benefits-details/) - Your MSDN subscription gives you credits every month that you can use for paid Azure services.
+> [AZURE.NOTE]Necesita una cuenta de Azure para completar este tutorial: + Puede [abrir una cuenta de Azure gratis](/pricing/free-trial/?WT.mc_id=A261C142F): obtenga créditos que puede usar para probar los servicios de pago de Azure, e incluso cuando los haya agotado, podrá conservar la cuenta y usar los servicios de Azure gratis, como Sitios web. + Puede [activar los beneficios de suscriptores de MSDN](/pricing/member-offers/msdn-benefits-details/): su suscripción a MSDN le proporciona créditos todos los meses que puede usar para servicios de Azure de pago.
 
 <a name="static"></a>
-## Serve static content from an Azure CDN endpoint ##
+## Entrega de contenido estático desde un extremo de la red CDN de Azure ##
 
-In this tutorial section, you will learn how to create a CDN and use it to serve your static content. The major steps involved are:
+En esta sección del tutorial, aprenderá a crear una red CDN y a utilizarla para entregar contenido estático. Los pasos principales implicados son los siguientes:
 
-1. Create a storage account
-2. Create a CDN linked to the storage account
-3. Create a blob container in your storage account
-4. Upload content to your blob container
-5. Link to the the content you uploaded using its CDN URL
+1. Crear una cuenta de almacenamiento
+2. Crear una red CDN vinculada a la cuenta de almacenamiento
+3. Crear un contenedor de blobs en la cuenta de almacenamiento
+4. Cargar contenido en su contenedor de blobs
+5. Vincular al contenido que ha cargado mediante su URL de la red CDN
 
-Let's get to it. Follow the steps below to start using the Azure CDN:
+Vamos a verlo. Siga los pasos siguientes para comenzar a utilizar la red CDN de Azure:
 
-1. To create a CDN endpoint, log into your [Azure management portal](http://manage.windowsazure.com/). 
-1. Create a storage account by clicking **New > Data Services > Storage > Quick Create**. Specify a URL, a location, and click **Create Storage Account**. 
+1. Para crear un extremo de la red CDN, inicie sesión en el [Portal de administración de Azure](http://manage.windowsazure.com/). 
+1. Cree una cuenta de almacenamiento haciendo clic en **Nuevo > Servicios de datos > Almacenamiento > Creación rápida**. Especifique una URL, una ubicación y haga clic en **Crear cuenta de almacenamiento**. 
 
 	![](media/cdn-serve-content-from-cdn-in-your-web-application/cdn-static-1.PNG)
 
-	>[AZURE.NOTE] Note that I'm using East Asia as the region as it is far enough away for me to test my CDN from North America later.
+	>[AZURE.NOTE]Tenga en cuenta que estoy usando Asia Oriental como región, ya que está lo suficientemente alejada para probar después mi red CDN desde Norteamérica.
 
-2. Once the new storage account's status is **Online**, create a new CDN endpoint that's tied to the storage account you created. Click **New > App Services > CDN > Quick Create**. Select the storage account you created and click **Create**.
+2. Cuando el nuevo estado de la cuenta de almacenamiento es **En línea**, cree un nuevo extremo de red CDN que esté vinculado a la cuenta de almacenamiento que ha creado. Haga clic en **Nuevo > Servicios de aplicaciones > CDN > Creación rápida**. Seleccione la cuenta de almacenamiento que ha creado y haga clic en **Crear**.
 
 	![](media/cdn-serve-content-from-cdn-in-your-web-application/cdn-static-2.PNG)
 
-	>[AZURE.NOTE] Once your CDN is created, the Azure portal will show you its URL and the origin domain that it's tied to. However, it can take awhile for the CDN endpoint's configuration to be fully propagated to all the node locations.  
+	>[AZURE.NOTE]Una vez creada la red CDN, el portal de Azure le mostrará su URL y el dominio de origen al que está vinculada. Sin embargo, la configuración del extremo de red CDN puede tardar un poco en propagarse por completo a todas las ubicaciones del nodo.
 
-3. Test your CDN endpoint to make sure that it's online by pinging it. If your CDN endpoint has not propagated to all the nodes, you will see a message similar to the one below.
+3. Pruebe el extremo de red CDN para asegurarse de que está en línea haciendo ping en él. Si el extremo de red CDN no se ha propagado en todos los nodos, verá un mensaje similar al siguiente.
 
 	![](media/cdn-serve-content-from-cdn-in-your-web-application/cdn-static-3-fail.PNG)
 
-	Wait another hour and test again. Once your CDN endpoint has finished propagating to the nodes, it should respond to your pings.
+	Espere otra hora y vuelva a probarlo. Cuando el extremo de red CDN ha acabado de propagarse a los nodos, debe responder a los pings.
 
 	![](media/cdn-serve-content-from-cdn-in-your-web-application/cdn-static-3-succeed.PNG)
 
-4. At this point, you can already see where the CDN endpoint determines to be the closest CDN node to you. From my desktop computer, the responding IP address is **93.184.215.201**. Plug it into a site like [www.ip-address.org](http://www.ip-address.org) and see that the server is located in Washington D.C.
+4. En este punto, ya puede ver dónde el extremo de red CDN determina cuál es el nodo de red CDN más cercano. Desde mi equipo de sobremesa, la dirección IP de respuesta es** 93.184.215.201**. Conéctese a un sitio como [www.ip-address.org](http://www.ip-address.org) y compruebe que el servidor está ubicado en Washington D.C.
 
 	![](media/cdn-serve-content-from-cdn-in-your-web-application/cdn-static-4.PNG)
 
-	For a list of all CDN node locations, see [Azure Content Delivery Network (CDN) Node Locations](http://msdn.microsoft.com/library/azure/gg680302.aspx).
+	Para obtener una lista actualizada de todas las ubicaciones de nodos de la red CDN, consulte [Ubicaciones del nodo de la red de entrega de contenido (CDN) de Azure](http://msdn.microsoft.com/library/azure/gg680302.aspx).
 
-3. Back in the Azure portal, in the **CDN** tab, click the name of the CDN endpoint you just created.
+3. De vuelta en el portal de Azure, en la pestaña **CDN**, haga clic en el nombre del extremo de red CDN que acaba de crear.
 
 	![](media/cdn-serve-content-from-cdn-in-your-web-application/cdn-static-2-enablequerya.PNG)
 
-3. Click **Enable Query String** to enable query strings in the Azure CDN cache. Once you enable this, the same link accessed with different query strings will be cached as separate entries.
+3. Haga clic en **Habilitar cadena de consulta** para habilitar cadenas de consulta en el caché de la red CDN de Azure. Una vez realizada la habilitación, el mismo vínculo al que se accede con diferentes cadenas de consulta se almacenará en caché como entradas independientes.
 
 	![](media/cdn-serve-content-from-cdn-in-your-web-application/cdn-static-2-enablequeryb.PNG)
 
-	>[AZURE.NOTE] While enabling the query string is not necessary for this part of the tutorial, you want to do this as early as possible for convenience sake since any change here is going to take time to propagate to the rest of the nodes, and you don't want any non-query-string-enabled content to clog up the CDN cache (updating CDN content will be discussed later). You will find out how to take advantage of this in [Serve fresh content immediately through query strings](#query).
+	>[AZURE.NOTE]Aunque no es necesario habilitar la cadena de consulta para esta parte del tutorial, le conviene hacerlo lo antes posible para mayor comodidad ya que cualquier cambio va a tardar tiempo en propagarse al resto de los nodos y no deseará que cualquier contenido no habilitado para cadenas de consulta atasque el caché de la red CDN (la actualización del contenido de la red CDN se tratará después). Averiguará cómo sacar partido de esto en [Entrega inmediata de contenido nuevo mediante cadenas de consulta](#query).
 
-6. In Visual Studio 2013, in Server Explorer, click the **Connect to Microsoft Azure** button.
+6. En Visual Studio 2013, en el Explorador de soluciones, haga clic en el botón **Conectar a Microsoft Azure**.
 
 	![](media/cdn-serve-content-from-cdn-in-your-web-application/cdn-static-5.PNG)
 
-7.  Follow the prompt to sign into your Azure account. 
-8.  Once you sign in, expand the **Microsoft Azure > Storage > your storage account**. Right-click **Blob** and select **Create Blob Container**.
+7.  Siga las indicaciones en pantalla para registrarse en su cuenta de Azure.
+8.  Una vez registrado, expanda **Microsoft Azure > Almacenamiento > su cuenta de almacenamiento**. Haga clic con el botón derecho en **Blob** y seleccione **Crear contenedor de blobs**.
 
 	![](media/cdn-serve-content-from-cdn-in-your-web-application/cdn-static-6.PNG)
 
-8.	Specify a blob container name and click **OK**.
+8.	Especifique un nombre de contenedor de blobs y haga clic en **Aceptar**.
 
 	![](media/cdn-serve-content-from-cdn-in-your-web-application/cdn-static-7.PNG)
 
-9.	In Server Explorer, double-click the blob container you created to manage it. You should see the management interface in the center pane.
+9.	En el Explorador de servidores, haga doble clic en el contenedor de blobs que ha creado para administrarlo. Debería ver la interfaz de administración en el panel central.
 
 	![](media/cdn-serve-content-from-cdn-in-your-web-application/cdn-static-8.PNG)
 
-10.	Click the **Upload Blob** button to upload images, scripts, or stylesheets that are used by your Web pages into the blob container. The upload progress will be shown in the **Azure Activity Log**, and the blobs will appear in the container view when they are uploaded. 
+10.	Haga clic en el botón **Cargar blob** para cargar imágenes, scripts u hojas de estilo que utilizan las páginas web en el contenedor de blob. El progreso de carga se mostrará en el** registro de actividades de Azure** y los blobs aparecerán en la vista del contenedor cuando se cargan.
 
 	![](media/cdn-serve-content-from-cdn-in-your-web-application/cdn-static-9.PNG)
 
-11.	Now that you have uploaded the blobs, you must make them public for you to access them. In Server Explorer, right-click the container and select **Properties**. Set the **Public Read Access** property to **Blob**.
+11.	Ahora que ha cargado los blobs, debe hacerlos públicos para que pueda obtener acceso a ellos. En el Explorador de servidores, haga clic con el botón derecho en el contenedor y seleccione **Propiedades**. Establezca la propiedad **Acceso de lectura público** en **Blob**.
 
 	![](media/cdn-serve-content-from-cdn-in-your-web-application/cdn-static-10.PNG)
 
-12.	Test the public access of your blobs by navigating to the URL for one of the blobs in a browser. For example, I can test the first image in my uploaded list with `http://cephalinstorage.blob.core.windows.net/cdn/cephas_lin.png`.
+12.	Pruebe el acceso público de los blobs mediante el desplazamiento de la URL para uno de los blobs de un explorador. Por ejemplo, puedo probar la primera imagen en mi lista de carga con `http://cephalinstorage.blob.core.windows.net/cdn/cephas_lin.png`.
 
-	Note that I'm not using the HTTPS address given in the blob management interface in Visual Studio. By using HTTP, you test whether the content is publicly accessible, which is a requirement for Azure CDN.
+	Tenga en cuenta que no estoy utilizando la dirección HTTPS dada en la interfaz de administración de blobs en Visual Studio. Al utilizar HTTP, prueba si se puede obtener acceso al contenido públicamente, lo que es un requisito para la red CDN de Azure.
 
-13.	If you can see the blob rendered properly in your browser, change the URL from `http://<yourStorageAccountName>.blob.core.windows.net` to the URL of your Azure CDN. In my case, to test the first image at my CDN endpoint, I would use `http://az623979.vo.msecnd.net/cdn/cephas_lin.png`.
+13.	Si puede ver el blob correctamente representado en el explorador, cambie la URL de `http://<yourStorageAccountName>.blob.core.windows.net` a la URL de la red CDN de Azure. En mi caso, para probar la primera imagen en mi extremo de red CDN, utilizo `http://az623979.vo.msecnd.net/cdn/cephas_lin.png`.
 
-	>[AZURE.NOTE] You can find the CDN endpoint's URL in the Azure management portal, in the CDN tab.
+	>[AZURE.NOTE]Puede encontrar la URL del extremo de red CDN en el portal de administración de Azure, en la pestaña CDN.
 
-	If you compare the performance of direct blob access and CDN access, you can see the performance gain from using Azure CDN. Below is the Internet Explorer 11 F12 developer tools screenshot for blob URL access of my image:
+	Si compara el rendimiento del acceso directo de blobs y el acceso a la red CDN, puede ver la ganancia de rendimiento al utilizar la red CDN de Azure. A continuación se muestra la captura de pantalla de las herramientas de desarrollador F12 de Internet Explorer 11 para el acceso de la URL del blob de mi imagen:
 
 	![](media/cdn-serve-content-from-cdn-in-your-web-application/cdn-static-11-blob.PNG)
 
-	And for CDN URL access of the same image 
+	Y para el acceso de la URL de la red CDN de la misma imagen.
 
 	![](media/cdn-serve-content-from-cdn-in-your-web-application/cdn-static-11-cdn.PNG)
 
- 	Pay attention to the numbers for the **Request** timing, which is the time to first byte, or the time taken to send the request and receive the first response from the server. When I access the blob, which is hosted in the East Asia region, it takes 266 ms for me - since the request must traverse the entire Pacific Ocean just to get to the server. However, when I access the Azure CDN, it takes only 16 ms, which is nearly a **20-fold gain in performance**!
+ 	Preste atención a las cifras del período de la **solicitud**, que es el período al primer byte o el tiempo dedicado a enviar la solicitud y recibir la primera respuesta del servidor. Cuando accedo al blob, que está hospedado en la región de Asia Oriental, tarda 266 ms para mí, ya que la solicitud debe atravesar el Océano Pacífico para llegar al servidor. Sin embargo, cuando obtengo acceso a la red CDN de Azure, tarda solo 16 ms, lo que representa prácticamente una **ganancia 20 veces mayor del rendimiento**.
 	
-15.	Now, it's just a matter of using the new link in your Web page. For example, I can add the following image tag:
+15.	Ahora, es solo cuestión de utilizar el nuevo vínculo a la página web. Por ejemplo, puedo agregar la siguiente etiqueta de imagen:
 
 		<img alt="Mugshot" src="http://az623979.vo.msecnd.net/cdn/cephas_lin.png" />
 
-In this section, you have learned how to create a CDN endpoint, upload content to it, and link to CDN contentfrom any Web page.
+En esta sección, ha aprendido a crear un extremo de red CDN, cargar contenido en él y vincular el contenido de la red CDN en cualquier página web.
 
 <a name="upload"></a>
-## Automate content upload from your ASP.NET application to your CDN endpoint ##
+## Carga de contenido automatizada desde la aplicación ASP .NET al extremo de la red CDN ##
 
-If you want to easily upload all of the static content in your ASP.NET Web application to your CDN endpoint, or if your deploy your Web application using continuous delivery (for an example, see [Continuous Delivery for Cloud Services in Azure](../cloud-services/cloud-services-dotnet-continuous-delivery.md)), you can use Azure PowerShell to automate the synchronization of the latest content files to Azure blobs every time you deploy your Web application. For example, you can run the script at [Upload Content Files from ASP.NET Application to Azure Blobs](http://gallery.technet.microsoft.com/scriptcenter/Upload-Content-Files-from-41c2142a) upload all the content files in an ASP.NET application. To use this script:
+Si desea cargar fácilmente todo el contenido estático a su aplicación web de ASP .NET a su extremo de red CDN, o si implementa su aplicación web usando la entrega continua (para ver un ejemplo, consulte [Entrega continua para Servicios en la nube de Azure](../cloud-services/cloud-services-dotnet-continuous-delivery.md)), puede usar Azure PowerShell para automatizar la sincronización de los últimos archivos de contenido en los blobs de Azure cada vez que implemente la aplicación web. Por ejemplo, puede ejecutar el script en [Carga de archivos de contenido desde la aplicación ASP .NET a los blobs de Azure](http://gallery.technet.microsoft.com/scriptcenter/Upload-Content-Files-from-41c2142a) para cargar todos los archivos de contenido en una aplicación de ASP .NET. Para utilizar este script:
 
-4. From the **Start** menu, run **Microsoft Azure PowerShell**.
-5. In the Azure PowerShell window, run `Get-AzurePublishSettingsFile` to download a publish settings file for your Azure account.
-6. Once you have downloaded your publish settings file, run the following: 
+4. En el menú **Inicio**, ejecute **Microsoft Azure PowerShell**.
+5. En la ventana de Azure PowerShell, ejecute `Get-AzurePublishSettingsFile` para descargar un archivo de configuración de publicación para la cuenta de Azure.
+6. Cuando haya descargado el archivo de configuración de publicación, ejecute lo siguiente: 
 
 		Import-AzurePublishSettingsFile "<yourDownloadedFilePath>"
 
-	>[AZURE.NOTE] Once you import your publish settings file, it will be the default Azure account used for all Azure PowerShell sessions. This means that the above steps only need to be done once.
+	>[AZURE.NOTE]Cuando haya importado el archivo de configuración de publicación, será la cuenta de Azure predeterminada la que se utilizará en todas las sesiones de Azure PowerShell. Esto significa que los pasos anteriores solo tienen que realizarse una vez.
 	
-1. Download the script from the [download page](http://gallery.technet.microsoft.com/scriptcenter/Upload-Content-Files-from-41c2142a). Save it into your ASP.NET application's project folder.
-2. Right-click the downloaded script and click **Properties**.
-3. Click **Unblock**.
-4. Open a PowerShell window and run the following:
+1. Descargue el script desde la [página de descargas](http://gallery.technet.microsoft.com/scriptcenter/Upload-Content-Files-from-41c2142a). Guárdelo en la carpeta de proyecto de la aplicación ASP.NET.
+2. Haga clic con el botón derecho en el archivo descargado y haga clic en **Propiedades**.
+3. Haga clic en **Desbloquear**.
+4. Abra una ventana de PowerShell y ejecute lo siguiente:
 
 		cd <ProjectFolder>
 		.\UploadContentToAzureBlobs.ps1 -StorageAccount "<yourStorageAccountName>" -StorageContainer "<yourContainerName>"
 
-This script uploads all files from your *\Content* and *\Scripts* folders to the specified storage account and container. It has the following advantages:
+Este script carga todos los archivos desde las carpetas *\\Content* y *\\Scripts* en la cuenta y contenedor de almacenamiento especificados. Tiene las ventajas siguientes:
 
--	Automatically replicate the file structure of your Visual Studio project
--	Automatically create blob containers as needed
--	Reuse the same Azure storage account and CDN endpoint for multiple Web applications, each in a separate blob container
--	Easily update the Azure CDN with new content. For more information on updating content, see [Configure the CDN cache to reflect the desired content update](#update).
+-	Replicar automáticamente la estructura del archivo de su proyecto de Visual Studio
+-	Crear automáticamente contenedores de blobs cuando se necesite
+-	Reutilizar la misma cuenta de almacenamiento de Azure y el extremo de red CDN para varias aplicaciones web, cada una en un contenedor de blobs separado
+-	Actualizar fácilmente la red CDN de Azure con nuevo contenido. Para obtener más información sobre la actualización del contenido, consulte [Configuración del caché de la red CDN para reflejar la actualización deseada del contenido](#update).
 
-For the `-StorageContainer` parameter, it makes sense to use the name of your Web application, or the Visual Studio project name. Whereas I used the generic "cdn" as the container name previously, using the name of your Web application allows related content to be organized into the same easily identifiable container.
+Para el parámetro `-StorageContainer`, tiene sentido utilizar el nombre de la aplicación web, o el nombre del proyecto de Visual Studio. Aunque he utilizado el "cdn" genérico como el nombre anterior del contenedor, si se utiliza el nombre de la aplicación web, se permite que el contenido relacionado se organice en el mismo contenedor fácilmente identificable.
 
-Once the content has finished uploading, you can link to anything in your *\Content* and *\Scripts* folder in your HTML code, such as in your .cshtml files, using `http://<yourCDNName>.vo.msecnd.net/<containerName>`. Here is an example of something I can use in a Razor view: 
+Cuando el contenido haya finalizado la carga, puede vincularlo a cualquier elemento de su carpeta *\\Content* y *\\Scripts* en el código HTML, como en sus archivos .cshtml, mediante `http://<yourCDNName>.vo.msecnd.net/<containerName>`. Este es un ejemplo de algo que puedo usar en una vista Razor:
 
 	<img alt="Mugshot" src="http://az623979.vo.msecnd.net/MyMvcApp/Content/cephas_lin.png" />
 
-For an example of integrating PowerShell scripts into your continuous delivery configuration, see [Continuous Delivery for Cloud Services in Azure](../cloud-services/cloud-services-dotnet-continuous-delivery.md). 
+Para un ejemplo de la integración de scripts de PowerShell en su configuración de entrega continua, consulte [Entrega continua para Servicio en la nube de Azure](../cloud-services/cloud-services-dotnet-continuous-delivery.md).
 
 <a name="update"></a>
-## Configure the CDN cache to reflect the desired content update ##
+## Configuración de la memoria caché de la red CDN para reflejar la actualización deseada del contenido ##
 
-Now, suppose after you have uploaded the static files from your Web app in a blob container, you make a change to one of the files in your project and upload it to the blob container again. You may think that it's automatically updated to your CDN endpoint, but are actually puzzled why you don't see the update reflected when you access the content's CDN URL. 
+Ahora, supongamos que después de haber cargado los archivos estáticos desde la aplicación web en un contenedor de blobs, realiza un cambio en uno de los archivos el proyecto y lo carga de nuevo en el contenedor de blobs. Puede pensar que se actualiza automáticamente en el extremo de red CDN, pero en realidad se siente desconcertado porque no ve la actualización reflejada cuando obtenga acceso a la URL de la red CDN del contenido.
 
-The truth is that the CDN does indeed automatically update from your blob storage, but it does so by applying a default 7-day caching rule to the content. This means that once a CDN node pulls your content from blob storage, the same content is not refreshed until it expires in the cache.
+La verdad es que al red CDN no se actualiza automáticamente desde su almacenamiento de blobs, pero lo hace al aplicar una regla de almacenamiento en caché de siete días predeterminada al contenido. Esto significa que una vez que un nodo de red CDN extrae el contenido desde el almacenamiento de blobs, el mismo contenido no se actualiza hasta que expira en el caché.
 
-The good news is that you can customize cache expiration. Similar to most browsers, Azure CDN respects the expiration time specified in the content's Cache-Control header. You can specify a custom Cache-Control header value by navigating to the blob container in the Azure portal and editing the blob properties. The screenshot below shows cache expiration set to 1 hour (3600 seconds). 
+Las buenas noticias es que puede personalizar la expiración del caché. De igual forma a la mayoría de los exploradores, la red CDN de Azure respecta el período de expiración especificado en el encabezado Cache-Control del contenido. Puede especificar un valor de encabezado Cache-Control personalizado desplazándose al contenedor de blobs en el portal de Azure y modificando las propiedades de los blobs. La captura de pantalla siguiente muestra la expiración del caché establecida en 1 hora (3600 segundos).
 
 ![](media/cdn-serve-content-from-cdn-in-your-web-application/cdn-updates-1.PNG)
 
-You can also do this in your PowerShell script to set all blobs' Cache-Control headers. For the script in [Automate content upload from your ASP.NET application to your CDN endpoint](#upload), find the following code snippet:
+También puede hacer en el script de PowerShell para establecer todos los encabezados de Cache-Control de los blobs. Para el script de la [Carga de contenido automatizada desde la aplicación ASP .NET al extremo de la red CDN](#upload), encuentre el siguiente fragmento de código:
 
     Set-AzureStorageBlobContent `
         -Container $StorageContainer `
@@ -203,7 +201,7 @@ You can also do this in your PowerShell script to set all blobs' Cache-Control h
         -Properties @{ContentType=$contentType} `
         -Force
 
-and modify it as follows:  
+y modifíquelo de la forma siguiente:
 
     Set-AzureStorageBlobContent `
         -Container $StorageContainer `
@@ -213,67 +211,54 @@ and modify it as follows:
         -Properties @{ContentType=$contentType; CacheControl="public, max-age=3600"} `
         -Force
 
-You may still need to wait for the full 7-day cached content on your Azure CDN to expire before it pulls the new content, with the new Cache-Control header. This illustrates the fact that custom caching values do not help if you want your content update to go live immediately, such as JavaScript or CSS updates. However, you can work around this issue by renamiving the files or versioning them through query strings. For more information, see [Serve fresh content immediately using query strings](#query).
+Todavía puede esperar al contenido en caché completo de 7 días en la red CDN de Azure para expirar antes de que extraiga el nuevo contenido, con el nuevo encabezado Cache-Control. Esto ilustra el hecho de que los valores de almacenamiento en caché personalizados no ayudan si desea que la actualización del contenido se active de inmediato, como actualizaciones de JavaScript o CSS. Sin embargo, puede resolver este problema cambiando el nombre de los archivos o controlando las versiones a través de cadenas de consulta. Para obtener más información, consulte [Entrega inmediata de contenido nuevo mediante cadenas de consulta](#query).
 
-There is, of course, a time and place for caching. For example, you may have content that does not require the frequent update, such as the upcoming World Cup games that can be refreshed every 3 hours, but gets enough global traffic that you want to offload it from your own Web server. That can be a good candidate to use the Azure CDN caching.
+Por supuesto, hay un tiempo y un lugar para el almacenamiento en caché. Por ejemplo, puede tener contenido que no requiera la actualización frecuente, como los próximos juegos mundiales de fútbol que pueden actualizarse cada tres horas, pero obtener el suficiente tráfico global que desea descargar desde su propio servidor web. Esto puede ser un buen candidato a utilizar el almacenamiento en caché de la red CDN de Azure.
 
 <a name="query"></a>
-## Serve fresh content immediately using query strings ##
+## Entrega inmediata de contenido nuevo mediante cadenas de consulta ##
 
-In Azure CDN, you can enable query strings so that content from URLs with specific query strings are cached separately. This is a great feature to use if you want to push certain content updates to the client browsers immediately instead of waiting for the cached CDN content to expire. Suppose I publish my Web page with a version number in the URL.  
-<pre class="prettyprint">
-&lt;link href=&quot;http://az623979.vo.msecnd.net/MyMvcApp/Content/bootstrap.css<mark>?v=3.0.0</mark>&quot; rel=&quot;stylesheet&quot;/&gt;
-</pre>
+En la red CDN de Azure, puede habilitar cadenas de consulta de tal forma que el contenido de URL con cadenas de consulta específicas se almacenen en caché de forma independiente. Esto es una excelente característica que puede utilizar si desea insertar inmediatamente determinadas actualizaciones de contenido a los exploradores de cliente en lugar que el contenido de la red CDN en caché expire. Supongamos que publico mi página web con un número de versión en la dirección URL. <pre class="prettyprint"> &lt;link href=";http://az623979.vo.msecnd.net/MyMvcApp/Content/bootstrap.css?v=3.0.0"; rel=";stylesheet";/&gt; </pre>
 
-When I publish a CSS update and use a different version number in my CSS URL:  
-<pre class="prettyprint">
-&lt;link href=&quot;http://az623979.vo.msecnd.net/MyMvcApp/Content/bootstrap.css<mark>?v=3.1.1</mark>&quot; rel=&quot;stylesheet&quot;/&gt;
-</pre>
+Cuando publico una actualización de CSS y utilizo un número de versión diferente en mi dirección URL de CSS: <pre class="prettyprint"> &lt;link href=";http://az623979.vo.msecnd.net/MyMvcApp/Content/bootstrap.css?v=3.1.1"; rel=";stylesheet";/&gt; </pre>
 
-To a CDN endpoint that has query strings enabled, the two URLs are unique to each other, and it will make a new request to my Web server to retrieve the new *bootstrap.css*. To a CDN endpoint that doesn't have query strings enabled, however, these are the same URL, and it will simply serve the cached *bootstrap.css*. 
+Para un extremo de red de CDN con cadenas de consulta habilitadas, las dos URL son únicas y se realizará una nueva solicitud a mi servidor web para recuperar el nuevo *bootstrap.css*. Sin embargo, en un extremo de red de CDN que no tenga cadenas de consulta habilitadas, son las mismas URL y simplemente entregarán el *bootstrap.css* en caché.
 
-The trick then is to update the version number automatically. In Visual Studio, this is easy to do. In a .cshtml file where I would use the link above, I can specify a version number based on the assembly number.  
-<pre class="prettyprint">
-@{
-    <mark>var cdnVersion = System.Reflection.Assembly.GetAssembly(
-        typeof(MyMvcApp.Controllers.HomeController))
-        .GetName().Version.ToString();</mark>
-}
+El truco aquí consiste en actualizar el número de versión de manera automática. En Visual Studio, esto es fácil de hacer. En un archivo .cshtml donde me gustaría usar el vínculo anterior, puedo especificar un número de versión en función del número de ensamblado. <pre class="prettyprint"> @{ var cdnVersion = System.Reflection.Assembly.GetAssembly( typeof(MyMvcApp.Controllers.HomeController)) .GetName().Version.ToString(); }
 
 ...
 
-&lt;link href=&quot;http://az623979.vo.msecnd.net/MyMvcApp/Content/bootstrap.css<mark>?v=@cdnVersion</mark>&quot; rel=&quot;stylesheet&quot;/&gt;
-</pre>
+&lt;link href=";http://az623979.vo.msecnd.net/MyMvcApp/Content/bootstrap.css?v=@cdnVersion"; rel=";stylesheet";/&gt; </pre>
 
-If you change the assembly number as part of every publish cycle, then you can likewise be sure to get a unique version number every time you publish your Web app, which will remain the same until the next publish cycle. Or, you can make Visual Studio automatically increment the assembly version number every time the Web app builds by opening *Properties\AssemblyInfo.cs* in your Visual Studio project and use `*` in `AssemblyVersion`. For example:
+Si cambia el número de ensamblado como parte de cada ciclo de publicación, puede asegurarse igualmente de obtener un número de versión único cada vez que publique su aplicación web, que permanecerá igual hasta el siguiente ciclo de publicación. O bien, puede hacer que Visual Studio incremente automáticamente el número de versión de ensamblado cada vez que la aplicación web se crea abriendo *Properties\\AssemblyInfo.cs* en su proyecto de Visual Studio y utilizar `*` en `AssemblyVersion`. Por ejemplo:
 
 	[assembly: AssemblyVersion("1.0.0.*")]
 
-## What about bundled scripts and stylesheets in ASP.NET? ##
+## Información acerca de scripts y hojas de estilos integrados en ASP.NET ##
 
-With [Azure App Service Web Apps](http://go.microsoft.com/fwlink/?LinkId=529714) and [Azure Cloud Services](/services/cloud-services/), you get the best Azure CDN integration with [ASP.NET bundling and minification](http://www.asp.net/mvc/tutorials/mvc-4/bundling-and-minification). 
+Con [Aplicaciones web del Servicio de aplicaciones de Azure](http://go.microsoft.com/fwlink/?LinkId=529714) y [Servicios en la nube de Azure](/services/cloud-services/), obtendrá la mejor integración de red CDN de Azure con [Unión y minificación ASP.NET](http://www.asp.net/mvc/tutorials/mvc-4/bundling-and-minification).
 
-Integrating Azure App Service or Azure Cloud Services with Azure CDN gives you the following advantages:
+La integración de Servicio de aplicaciones de Azure o Servicios en la nube de Azure con la red CDN de Azure le ofrece las siguientes ventajas:
 
-- Integrate content deployment (images, scripts, and stylesheets) as part of your Azure web app's [continuous deployment](../web-sites-publish-source-control.md) process
-- Easily upgrade your CDN-served NuGet packages, such as jQuery or Bootstrap versions 
-- Manage your Web application and your CDN-served content from the same Visual Studio interface
+- Integración de la implementación de contenido (imágenes, scripts y hojas de estilo) como parte del proceso de [implementación continua](../web-sites-publish-source-control.md) de la aplicación web de Azure
+- Actualización sencilla de los paquetes de NuGet servidos por CDN, como versiones de jQuery o Bootstrap 
+- Administración de la aplicación web y del contenido servido por CDN desde la misma interfaz de Visual Studio
 
-For related tutorials, see:
-- [Use Azure CDN in Azure App Service](../cdn-websites-with-cdn.md)
-- [Integrate a cloud service with Azure CDN](cdn-cloud-service-with-cdn.md)
+Para ver tutoriales relacionados, consulte: - [Uso de la red CDN de Azure del Servicio de aplicaciones de Azure](../cdn-websites-with-cdn.md) - [Integración de un servicio en la nube con la Red de entrega de contenido (CDN) de Azure](cdn-cloud-service-with-cdn.md)
 
-Without integration with Azure App Service Web Apps or Azure Cloud Services, it is possible to use Azure CDN for your script bundles, with the following caveats:
+Sin la integración con Aplicaciones web del Servicio de aplicaciones de Azure o Servicios en la nube de Azure, es posible utilizar la red CDN de Azure para sus uniones de scripts, con las siguientes reservas:
 
-- You must manually upload the bundled scripts to blob storage. A programmatic solution is proposed at [stackoverflow](http://stackoverflow.com/a/13736433).
-- In your .cshtml files, transform the rendered script/CSS tags to use the Azure CDN. For example:
+- Debe cargar manualmente los scripts agrupados al almacenamiento de blobs. Una solución programática se propone en [stackoverflow](http://stackoverflow.com/a/13736433).
+- En los archivos .cshtml, transforme las etiquetas de CSS/scripts representadas para utilizar la red CDN de Azure. Por ejemplo:
 
 		@Html.Raw(Styles.Render("~/Content/css").ToString().Insert(0, "http://<yourCDNName>.vo.msecnd.net"))
 
-## More Information ##
-- [Overview of the Azure Content Delivery Network (CDN)](cdn-overview.md)
-- [Use Azure CDN in Azure App Service](../cdn-websites-with-cdn.md)
-- [Integrate a cloud service with Azure CDN](cdn-cloud-service-with-cdn.md)
-- [How to Map Content Delivery Network (CDN) Content to a Custom Domain](http://msdn.microsoft.com/library/azure/gg680307.aspx)
-- [Using CDN for Azure](cdn-how-to-use-cdn.md)
+## Más información ##
+- [Información general de la red de entrega de contenido (CDN) de Azure](cdn-overview.md)
+- [Uso de la red CDN de Azure del Servicio de aplicaciones de Azure](../cdn-websites-with-cdn.md)
+- [Integración de un servicio en la nube con la Red de entrega de contenido (CDN) de Azure](cdn-cloud-service-with-cdn.md)
+- [Asignación del contenido de la Red de entrega de contenido (CDN) a un dominio personalizado](http://msdn.microsoft.com/library/azure/gg680307.aspx)
+- [Uso de la red CDN en Azure](cdn-how-to-use-cdn.md)
  
+
+<!---HONumber=August15_HO6-->

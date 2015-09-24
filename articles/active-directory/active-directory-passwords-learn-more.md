@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Learn More: Azure AD Password Management | Microsoft Azure" 
-	description="Advanced topics on Azure AD Password Management, including how password writeback works, password writeback security, how the password reset portal works, and what data is used by password reset." 
+	pageTitle="Más información: Administración de contraseñas de Azure AD | Microsoft Azure" 
+	description="Temas avanzados sobre administración de contraseñas de Azure AD, entre otros, el funcionamiento de la escritura diferida de contraseñas, la seguridad de la escritura diferida de contraseñas, el funcionamiento del portal de restablecimiento de contraseñas y los datos que sirven para el restablecimiento de contraseñas." 
 	services="active-directory" 
 	documentationCenter="" 
 	authors="asteen" 
@@ -16,270 +16,270 @@
 	ms.date="06/08/2015" 
 	ms.author="asteen"/>
 
-# Learn more about Password Management
-If you have already deployed Password Management, or are just looking to learn more about the technical nitty gritty of how it works before deploying, this section will give you a good overview of the technical concepts behind the service. We'll cover the following:
+# Más información sobre la administración de contraseñas
+Si ya ha implementado la administración de contraseñas, o simplemente desea obtener más información sobre los detalles técnicos del funcionamiento antes de implementarla, en esta sección se le ofrece una introducción apropiada de los conceptos técnicos subyacentes al servicio. Trataremos lo siguiente:
 
-* [**Password writeback overview**](#password-writeback-overview)
-  - [How pasword writeback works](#how-password-writeback-works)
-  - [Scenarios supported for password writeback](#scenarios-supported-for-password-writeback)
-  - [Password writeback security model](#password-writeback-security-model)
-* [**How does the password reset portal work?**](#how-does-the-password-reset-portal-work)
-  - [What data is used by password reset?](#what-data-is-used-by-password-reset)
+* [**Información general sobre la escritura diferida de contraseñas**](#password-writeback-overview)
+  - [Funcionamiento de la escritura diferida de contraseñas](#how-password-writeback-works)
+  - [Escenarios admitidos para la escritura diferida de contraseñas](#scenarios-supported-for-password-writeback)
+  - [Modelo de seguridad de la escritura diferida de contraseñas](#password-writeback-security-model)
+* [**¿Cómo funciona el portal de restablecimiento de contraseñas?**](#how-does-the-password-reset-portal-work)
+  - [¿Qué datos sirven para restablecer la contraseña?](#what-data-is-used-by-password-reset)
 
-## Password writeback overview
-Password writeback is an [Azure Active Directory Connect](active-directory-aadconnect) component that can be enabled and used by the current subscribers of Azure Active Directory Premium. For more information, see [Azure Active Directory Editions](active-directory-editions.md). 
+## Información general sobre la escritura diferida de contraseñas
+La escritura diferida de contraseñas es un componente de [Azure Active Directory Connect](active-directory-aadconnect) que los suscriptores actuales de Azure Active Directory Premium pueden habilitar y utilizar. Para obtener más información, consulte [Ediciones de Azure Active Directory](active-directory-editions.md).
 
-Password writeback allows you to configure your cloud tenant to write passwords back to you on-premises Active Directory.  It obviates you from having to set up and manage a complicated on-premises self-service password reset solution, and it provides a convenient cloud-based way for your users to reset their on-premises passwords wherever they are.  Read on for some of the key features of password writeback:
+La escritura diferida de contraseñas le permite configurar el inquilino de nube para que escriba contraseñas en diferido en su Active Directory local. Evita tener que configurar y administrar una solución de restablecimiento de contraseñas de autoservicio local y ofrece una manera conveniente basada en la nube para que los usuarios restablezcan sus contraseñas locales dondequiera que estén. Siga leyendo para conocer algunas de las características clave de la escritura diferida de contraseñas:
 
-- **Zero delay feedback.**  Password writeback is a synchronous operation.  Your users will be notified immediately if their password did not meet policy or was not able to be reset or changed for any reason.
-- **Supports resetting passwords for users using AD FS or other federation technologies.**  With password writeback, as long as the federated user accounts are synchronized into your Azure AD tenant, they will be able to manage their on-premises AD passwords from the cloud.
-- **Supports resetting passwords for users using password hash sync.** When the password reset service detects that a synchronized user account is enabled for password hash sync, we reset both this account’s on-premises and cloud password simultaneously.
-- **Supports changing passwords from the access panel and Office 365.**  When federated or password sync’d users come to change their expired or non-expired passwords, we’ll write those passwords back to your local AD environment.
-- **Supports writing back passwords when an admin reset them from the** [**Azure Management Portal**](https://manage.windowsazure.com).  Whenever an admin resets a user’s password in the [Azure Management Portal](https://manage.windowsazure.com), if that user is federated or password sync’d, we’ll set the password the admin selects on your local AD, as well.  This is currently not supported in the Office Admin Portal.
-- **Enforces your on-premises AD password policies.**  When a user resets his/her password, we make sure that it meets your on-premises AD policy before committing it to that directory.  This includes history, complexity, age, password filters, and any other password restrictions you have defined in your local AD.
-- **Doesn’t require any inbound firewall rules.**  Password writeback uses an Azure Service Bus relay as an underlying communication channel, meaning that you do not have to open any inbound ports on your firewall for this feature to work.
-- **Is not supported for user accounts that exist within protected groups in your on-premises Active Directory.** For more information about protected groups, see [Protected Accounts and Groups in Active Directory](https://technet.microsoft.com/library/dn535499.aspx).
+- **Comentarios sin ningún retraso.** La escritura diferida de contraseñas es una operación sincrónica. Si la contraseña de un usuario no cumple la directiva o no se puede restablecer o modificar por algún motivo, a dicho usuario se le enviará una notificación inmediatamente.
+- **Admite el restablecimiento de contraseñas de los usuarios que usan AD FS u otras tecnologías de federación.** Con la escritura diferida de contraseñas, siempre que las cuentas de usuario federadas estén sincronizadas en el inquilino de Azure AD, podrán administrar sus contraseñas de AD locales desde la nube.
+- **Admite el restablecimiento de las contraseñas de usuario mediante la sincronización de hash de contraseñas.** Cuando el servicio de restablecimiento de contraseñas detecta que una cuenta de usuario sincronizada está habilitada para la sincronización de hash de contraseñas, restablecemos la contraseña local y de la nube de la cuenta al mismo tiempo.
+- **Permite cambiar las contraseñas del panel de acceso y Office 365.** Si los usuarios con sincronización de contraseñas o federados modifican las contraseñas expiradas o no expiradas, escribiremos tales contraseñas en diferido en el entorno local de AD.
+- **Admite la escritura diferida de contraseñas cuando un administrador las restablece desde el** [**Portal de administración de Azure**](https://manage.windowsazure.com). Cada vez que un administrador restablece una contraseña de usuario en el [Portal de administración de Azure](https://manage.windowsazure.com), si ese usuario se federa o se sincroniza con contraseña, también estableceremos la contraseña que el administrador seleccione en el entorno local de AD. Esto actualmente no se admite en el Portal de administración de Office.
+- **Aplica las directivas de contraseñas del entorno de AD local.** Cuando un usuario restablece su contraseña, nos aseguramos de que cumple la directiva del entorno local de AD antes de enviarla a ese directorio. Esto incluye el historial, la complejidad, la antigüedad, los filtros de contraseñas y otras restricciones de contraseña que ha definido en el entorno local de AD.
+- **No requiere ninguna regla de firewall de entrada.** La escritura diferida de contraseñas usa una retransmisión de Bus de servicio de Azure como un canal de comunicación subyacente, lo que significa que no tendrá que abrir puertos de entrada en el firewall para que esta característica funcione.
+- **No se admite para las cuentas de usuario que se encuentran en grupos protegidos del entorno local de Active Directory.** Para obtener más información sobre los grupos protegidos, consulte [Cuentas y grupos protegidos en Active Directory](https://technet.microsoft.com/library/dn535499.aspx).
 
-### How password writeback works
-Password writeback has three main components:
+### Funcionamiento de la escritura diferida de contraseñas
+La escritura diferida de contraseñas tiene tres componentes principales:
 
-- Password Reset cloud service (this is also integrated into Azure AD’s password change pages)
-- Tenant-specific Azure Service Bus relay
-- On-prem password reset endpoint
+- Servicio en la nube de restablecimiento de contraseñas (también está integrado en las páginas de cambio de contraseña de Azure AD)
+- Retransmisión de Bus de servicio de Azure específica del inquilino
+- Extremo de restablecimiento de contraseña local
 
-They fit together as described in the below diagram:
+Se relacionan entre sí como se describe en el diagrama siguiente:
 
   ![][001]
 
-When a federated or password hash sync’d user comes to reset or change his or her password in the cloud, the following occurs:
+Si un usuario federado o con sincronización de hash de contraseña cambia o restablece su contraseña en la nube, ocurre lo siguiente:
 
-1.	We check to see what type of password the user has.  If we see the password is managed on premises, then we ensure the writeback service is up and running.  If it is, we let the user proceed, if it is not, we tell the user that their password cannot be reset here.
-2.	Next, the user passes the appropriate authentication gates and reaches the reset password screen.
-3.	The user selects a new password and confirms it.
-4.	Upon clicking submit, we encrypt the plaintext password with a symmetric key that was created during the writeback setup process.
-5.	After encrypting the password, we include it in a payload that gets sent over an HTTPS channel to your tenant specific service bus relay (that we also set up for you during the writeback setup process).  This relay is protected by a randomly generated password that only your on-premises installation knows.
-6.	Once the message reaches service bus, the password reset endpoint automatically wakes up and sees that it has a reset request pending.
-7.	The service then looks for the user in question by using the cloud anchor attribute.  For this lookup to succeed, the user object must exist in the AD connector space, it must be linked to the corresponding MV object, and it must be linked to the corresponding AAD connector object. Finally, in order for sync to find this user account, the link from AD connector object to MV must have the sync rule `Microsoft.InfromADUserAccountEnabled.xxx` on the link.  This is needed because when the call comes in from the cloud, the sync engine uses the cloudAnchor attribute to look up the AAD connector space object, then follows the link back to the MV object, and then follows the link back to the AD object. Because there could be multiple AD objects (multi-forest) for the same user, the sync engine relies on the `Microsoft.InfromADUserAccountEnabled.xxx` link to pick the correct one.
-8.	Once the user account is found, we attempt to reset the password directly in the appropriate AD forest.
-9.	If the password set operation is successful, we tell the user their password has been modified and that they can go on their merry way.
-10.	If the password set operation fails, we return the error to the user and let them try again.  The operation might fail because the service was down, because the password they selected did not meet organization policies, because we could not find the user in the local AD, or any number of reasons.  We have a specific message for many of these cases and tell the user what they can do to resolve the issue.
+1.	Comprobamos qué tipo de contraseña tiene el usuario. Si observamos que la contraseña se administra de forma local, a continuación, garantizamos que el servicio de escritura diferida está en funcionamiento. Si es así, permitimos al usuario continuar; de lo contrario, comunicaremos al usuario que la contraseña no se puede restablecer aquí.
+2.	A continuación, el usuario pasa las puertas de autenticación adecuadas y llega a la pantalla de restablecimiento de contraseña.
+3.	El usuario selecciona una nueva contraseña y la confirma.
+4.	Al hacer clic en enviar, se cifra la contraseña de texto no cifrado con una clave simétrica que se creó durante el proceso de configuración de la escritura diferida.
+5.	Después de cifrar la contraseña, la incluimos en una carga que se envía a través de un canal HTTPS a la retransmisión de Bus de servicio específico del inquilino (que también establecemos automáticamente durante el proceso de configuración de la escritura diferida). Esta retransmisión está protegida por una contraseña generada de forma aleatoria que sólo conoce la instalación local.
+6.	Una vez que el mensaje llega al bus de servicio, el extremo de restablecimiento de contraseña se activa automáticamente y observa que tiene una solicitud de restablecimiento pendiente.
+7.	A continuación, el servicio busca al usuario correspondiente mediante el atributo delimitador de la nube. Para que esta búsqueda se realice correctamente, el objeto de usuario debe existir en el espacio del conector AD, debe estar vinculado al objeto MV correspondiente y se debe vincular al objeto de conector de AAD correspondiente. Por último, para que la sincronización encuentre esta cuenta de usuario, el vínculo del objeto de conector de AD al objeto MV debe tener la regla de sincronización `Microsoft.InfromADUserAccountEnabled.xxx` en el vínculo. Esto es necesario porque cuando se recibe la llamada de la nube, el motor de sincronización utiliza el atributo cloudAnchor para buscar el objeto del espacio del conector de AAD; posteriormente, sigue el vínculo al objeto MV y, a continuación, sigue el vínculo al objeto de AD. Dado que podría haber varios objetos de AD (bosque múltiple) para el mismo usuario, el motor de sincronización se basa en el `Microsoft.InfromADUserAccountEnabled.xxx` vínculo para seleccionar el correcto.
+8.	Una vez que se encuentra la cuenta de usuario, se intenta restablecer la contraseña directamente en el bosque de AD correspondiente.
+9.	Si la operación de establecimiento de la contraseña se realiza correctamente, notificamos al usuario que la contraseña se ha modificado y que puede continuar con su trabajo.
+10.	Si se produce un error en la operación de establecimiento de la contraseña, se devolverá el error al usuario y se le permitirá que vuelva a intentarlo. La operación puede producir un error porque el servicio no estaba disponible, la contraseña seleccionada no cumplía las directivas de la organización, no se encontraba el usuario en el entorno local de AD o por otros motivos. Disponemos de un mensaje específico para muchos de estos casos, a fin de indicar al usuario qué puede hacer para resolver el problema.
 
-### Scenarios supported for password writeback
-The table below describes which scenarios are supported for which versions of our sync capabilities.  In general, it is highly recommended that you install the latest version of [Azure AD Connect](active-directory-aadconnect.md#download-azure-ad-connect) if you want to use password writeback.
+### Escenarios admitidos para la escritura diferida de contraseñas
+En la tabla siguiente se describe qué escenarios se admiten para las versiones de nuestras capacidades de sincronización. En general, se recomienda que instale la versión más reciente de [Azure AD Connect](active-directory-aadconnect.md#download-azure-ad-connect) si desea utilizar la escritura diferida de contraseñas.
 
   ![][002]
 
-### Password writeback security model
-Password writeback is a highly secure and robust service.  In order to ensure your information is protected, we enable a 4-tiered security model that is described below.
+### Modelo de seguridad de la escritura diferida de contraseñas
+La escritura diferida de contraseñas es un servicio sumamente seguro y sólido. Para asegurarse de que su información está protegida, habilitamos un modelo de seguridad de cuatro niveles que describimos a continuación.
 
-- **Tenant specific service-bus relay** – When you set up the service, we set up a tenant-specific service bus relay that is protected by a randomly generated strong password that Microsoft never has access to.
-- **Locked down, cryptographically strong, password encryption key** – After the service bus relay is created, we create a strong symmetric key which we use to encrypt the password as it comes over the wire.  This key lives only in your tenant's secret store in the cloud, which is heavily locked down and audited, just like any password in the directory.
-- **Industry standard TLS** – When a password reset or change operation occurs in the cloud, we take the plaintext password and encrypt it with your public key.  We then plop that into an HTTPS message which is sent over an encrypted channel using Microsoft’s SSL certs to your service bus relay.  After that message arrives into Service Bus, your on-prem agent wakes up, authenticates to Service Bus using the strong password that had been previously generated, picks up the encrypted message, decrypts it using the private key we generated, and then attempts to set the password through the AD DS SetPassword API.  This step is what allows us to enforce your AD on-prem password policy (complexity, age, history, filters, etc) in the cloud.
-- **Message expiration policies** – Finally, if for some reason the message sits in Service Bus because your on-prem service is down, it will be timed out and removed after several minutes in order to increase security even further.
+- **Retransmisión de Bus de servicio específica de inquilino**: al configurar el servicio, configuramos una retransmisión de Bus de servicio específica del inquilino que está protegida por una contraseña segura generada aleatoriamente a la que Microsoft nunca tiene acceso.
+- **Clave de cifrado de contraseñas bloqueadas y criptográficamente segura**: una vez creada la retransmisión de Bus de servicio, creamos una clave simétrica segura que se utiliza para cifrar la contraseña tal como se transfiere a través de la red. Esta clave reside sólo en el almacén secreto del inquilino en la nube, que se bloquea y audita de forma estricta como cualquier contraseña en el directorio.
+- **TLS estándar del sector**: cuando se produce una operación de restablecimiento o cambio de contraseña, ciframos la contraseña de texto no cifrado con la clave pública. A continuación, la insertamos en un mensaje HTTPS que se envía a través de un canal cifrado con certificados SSL de Microsoft para la retransmisión de Bus de servicio. Después de que ese mensaje llega al Bus de servicio, el agente local se activa, se autentica en el Bus de servicio con la contraseña segura que se había generado previamente, recoge el mensaje cifrado, lo descifra con la clave privada generada y, a continuación, intenta establecer la contraseña a través de la API SetPassword de AD DS. Este paso nos permite aplicar la directiva de contraseñas local de AD (complejidad, edad, historial, filtros, etc.) en la nube.
+- **Directivas de expiración de mensajes**: por último, si por alguna razón el mensaje espera en el Bus de servicio porque el servicio local no funciona, se agotará el tiempo de espera y se eliminará transcurridos unos minutos para aumentar aún más la seguridad.
 
-## How does the password reset portal work?
-When a user navigates to the password reset portal, a workflow is kicked off to determine if that user account is valid, what organization that users belongs to, where that user’s password is managed, and whether or not the user is licensed to use the feature.  Read through the steps below to learn about the logic behind the password reset page.
+## ¿Cómo funciona el portal de restablecimiento de contraseñas?
+Cuando un usuario navega al portal de restablecimiento de contraseñas, se inicia un flujo de trabajo para determinar si esa cuenta de usuario es válida, a qué organización pertenece, dónde se administra la contraseña del usuario y si el usuario dispone o no de una licencia para usar la característica. Lea los pasos siguientes para obtener información sobre la lógica de la página de restablecimiento de contraseña.
 
-1.	User clicks on the Can’t access your account link or goes directly to [https://passwordreset.microsoftonline.com](https://passwordreset.microsoftonline.com).
-2.	User enters a user id and passes a captcha.
-3.	Azure AD verifies if the user is able to use this feature by doing the following:
-    - Checks that the user has this feature enabled and an Azure AD license assigned.
-        - If the user does not have this feature enabled or a license assigned, the user is asked to contact his or her administrator to reset his or her password.
-    - Checks that the user has the right challenge data defined on his or her account in accordance with administrator policy.
-        - If policy requires only one challenge, then it is ensured that the user has the appropriate data defined for at least one of the challenges enabled by the administrator policy.
-          - If the user is not configured, then the user is advised to contact his or her administrator to reset his or her password.
-        - If the policy requires two challenges, then it is ensured that the user has the appropriate data defined for at least two of the challenges enabled by the administrator policy.
-          - If the user is not configured, then we the user is advised to contact his or her administrator to reset his or her password.
-    - Checks whether or not the user’s password is managed on premises (federated or password hash sync’d).
-       - If writeback is deployed and the user’s password is managed on premises, then the user is allowed to proceed to authenticate and reset his or her password.
-       - If writeback is not deployed and the user’s password is managed on premises, then the user is asked to contact his or her administrator to reset his or her password.
-4.	If it is determined that the user is able to successfully reset his or her password, then the user is guided through the reset process.
+1.	El usuario hace clic en el vínculo ¿No puede tener acceso a su cuenta? o visita directamente [https://passwordreset.microsoftonline.com](https://passwordreset.microsoftonline.com).
+2.	El usuario escribe un identificador de usuario y pasa un captcha.
+3.	Azure AD comprueba si el usuario es capaz de utilizar esta característica; para ello, hace lo siguiente:
+    - Comprueba que el usuario tiene esta característica habilitada y una licencia de Azure AD asignada.
+        - Si el usuario no tiene asignada una licencia o esta característica no está habilitada, se solicita al usuario que se ponga en contacto con el administrador para restablecer la contraseña.
+    - Comprueba que el usuario tiene los datos de comprobación definidos en la cuenta según la directiva del administrador.
+        - Si la directiva requiere solo una comprobación, se garantiza que el usuario tiene los datos correspondientes definidos para al menos una de las comprobaciones habilitadas por la directiva del administrador.
+          - Si el usuario no está configurado, se recomienda al usuario que se ponga en contacto con el administrador para restablecer la contraseña.
+        - Si la directiva requiere dos comprobaciones, se garantiza que el usuario tiene los datos correspondientes definidos para al menos dos de las comprobaciones habilitadas por la directiva del administrador.
+          - Si el usuario no está configurado, se recomienda al usuario que se ponga en contacto con el administrador para restablecer la contraseña.
+    - Comprueba si la contraseña del usuario se administra o no a nivel local (federada o sincronizada con hash de contraseña).
+       - Si la escritura diferida de contraseñas está implementada y la contraseña del usuario se administra de forma local, se le permite continuar con la autenticación y restablecer la contraseña.
+       - Si la escritura diferida de contraseñas no está implementada y la contraseña del usuario se administra de forma local, se le pide que se ponga en contacto con el administrador para restablecer la contraseña.
+4.	Si se determina que el usuario puede restablecer correctamente la contraseña, se le guiará a través del proceso de restablecimiento.
 
-Learn more about how to deploy password writeback at [Getting Started: Azure AD Password Management](active-directory-passwords-getting-started.md).
+Obtenga más información sobre cómo implementar la escritura diferida de contraseñas en [Introducción a la administración de contraseñas en Azure AD](active-directory-passwords-getting-started.md).
 
-### What data is used by password reset?
-The following table outlines where and how this data is used during password reset and is designed to help you decide which authentication options are appropriate for your organization. This table also shows any formatting requirements for cases where you are providing data on behalf of users from input paths that do not validate this data.
+### ¿Qué datos sirven para restablecer la contraseña?
+En la tabla siguiente se describe dónde y cómo se usan estos datos durante el restablecimiento de la contraseña y está diseñada para ayudarle a decidir qué opciones de autenticación resultan apropiadas para su organización. En esta tabla también se indican los requisitos de formato para los casos donde va a proporcionar datos en nombre de usuarios desde rutas de acceso de entrada que no validan estos datos.
 
-> [AZURE.NOTE] Office Phone does not appear in the registration portal because users are currently not able to edit this property in the directory.
+> [AZURE.NOTE]El teléfono del trabajo no aparece en el portal de registro porque los usuarios actualmente no pueden editar esta propiedad en el directorio.
 
 <table>
           <tbody><tr>
             <td>
               <p>
-                <strong>Contact Method Name</strong>
+                <strong>Nombre del método de contacto</strong>
               </p>
             </td>
             <td>
               <p>
-                <strong>Azure Active Directory Data Element</strong>
+                <strong>Elemento de datos de Azure Active Directory</strong>
               </p>
             </td>
             <td>
               <p>
-                <strong>Used / Settable Where?</strong>
+                <strong>¿Dónde se usa/configura?</strong>
               </p>
             </td>
             <td>
               <p>
-                <strong>Format requirements</strong>
+                <strong>Requisitos de formato</strong>
               </p>
             </td>
           </tr>
           <tr>
             <td>
-              <p>Office Phone</p>
+              <p>Teléfono del trabajo</p>
             </td>
             <td>
               <p>PhoneNumber</p>
-              <p>e.g. Set-MsolUser -UserPrincipalName JWarner@contoso.com -PhoneNumber "+1 1234567890x1234"</p>
+              <p>Por ejemplo: Set-MsolUser -UserPrincipalName JWarner@contoso.com -PhoneNumber "+1 1234567890x1234"</p>
             </td>
             <td>
-              <p>Used in:</p>
-              <p>Password Reset Portal</p>
-              <p>Settable from:</p>
-              <p>PhoneNumber is settable from PowerShell, DirSync, Azure Management Portal, and the Office Admin Portal</p>
+              <p>Usado en:</p>
+              <p>Portal de restablecimiento de contraseñas</p>
+              <p>Configurable en:</p>
+              <p>PhoneNumber se puede configurar desde PowerShell, DirSync, el Portal de administración de Azure y el Portal de administración de Office</p>
             </td>
             <td>
-              <p>+ccc xxxyyyzzzz (e.g. +1 1234567890)</p>
+              <p>+ccc xxxyyyzzzz (p. ej.: +1 1234567890)</p>
               <ul>
                 <li class="unordered">
-										Must provide a country code<br><br></li>
+										Debe proporcionar un código de país.<br><br></li>
               </ul>
               <ul>
                 <li class="unordered">
-										Must provide an area code (where applicable)<br><br></li>
+										Debe proporcionar un código de área (si procede).<br><br></li>
               </ul>
               <ul>
                 <li class="unordered">
-										Must have provide a + in front of the country code<br><br></li>
+										Debe proporcionar un signo + antes del código de país.<br><br></li>
               </ul>
               <ul>
                 <li class="unordered">
-										Must have a space between country code and the rest of the number<br><br></li>
+										Debe haber un espacio entre el código de país y el resto del número.<br><br></li>
               </ul>
               <ul>
                 <li class="unordered">
-										Extensions are not supported, if you have any extensions specified, we will strip it from the number before dispatching the phone call.<br><br></li>
+										No se admiten extensiones; por tanto, si ha especificado extensiones, las quitaremos antes de enviar la llamada de teléfono.<br><br></li>
               </ul>
             </td>
           </tr>
           <tr>
             <td>
-              <p>Mobile Phone</p>
+              <p>Teléfono móvil</p>
             </td>
             <td>
               <p>AuthenticationPhone</p>
-              <p>OR</p>
+              <p>O</p>
               <p>MobilePhone</p>
-              <p>(Authentication Phone is used if there is data present, otherwise this falls back to the mobile phone field).</p>
-              <p>e.g. Set-MsolUser -UserPrincipalName JWarner@contoso.com -MobilePhone "+1 1234567890x1234"</p>
+              <p>(El teléfono de autenticación se utiliza si hay datos presentes; en caso contrario, recurre al campo de teléfono móvil).</p>
+              <p>Por ejemplo: Set-MsolUser -UserPrincipalName JWarner@contoso.com -MobilePhone "+1 1234567890x1234"</p>
             </td>
             <td>
-              <p>Used in:</p>
-              <p>Password Reset Portal</p>
-              <p>Registration Portal</p>
-              <p>Settable from: </p>
-              <p>AuthenticationPhone is settable from the password reset registration portal or MFA registration portal.</p>
-              <p>MobilePhone is settable from PowerShell, DirSync, Azure Management Portal, and the Office Admin Portal</p>
+              <p>Usado en:</p>
+              <p>Portal de restablecimiento de contraseñas</p>
+              <p>Portal de registro</p>
+              <p>Configurable en: </p>
+              <p>AuthenticationPhone se puede configurar desde el portal de registro de restablecimiento de contraseña o desde el portal de registro de MFA.</p>
+              <p>MobilePhone se puede configurar desde PowerShell, DirSync, el Portal de administración de Azure y el Portal de administración de Office</p>
             </td>
             <td>
-              <p>+ccc xxxyyyzzzz (e.g. +1 1234567890)</p>
+              <p>+ccc xxxyyyzzzz (p. ej.: +1 1234567890)</p>
               <ul>
                 <li class="unordered">
-										Must provide a country code.<br><br></li>
+										Debe proporcionar un código de país.<br><br></li>
               </ul>
               <ul>
                 <li class="unordered">
-										Must provide an area code (where applicable).<br><br></li>
+										Debe proporcionar un código de área (si procede).<br><br></li>
               </ul>
               <ul>
                 <li class="unordered">
-										Must have provide a + in front of the country code.<br><br></li>
+										Debe proporcionar un signo + antes del código de país.<br><br></li>
               </ul>
               <ul>
                 <li class="unordered">
-										Must have a space between country code and the rest of the number.<br><br></li>
+										Debe haber un espacio entre el código de país y el resto del número.<br><br></li>
               </ul>
               <ul>
                 <li class="unordered">
-										Extensions are not supported, if you have any extensions specified, we ignore it when dispatching the phone call.<br><br></li>
+										No se admiten extensiones; por tanto, si ha especificado extensiones, las ignoraremos al realizar la llamada de teléfono.<br><br></li>
               </ul>
             </td>
           </tr>
           <tr>
             <td>
-              <p>Alternate Email</p>
+              <p>Correo electrónico alternativo</p>
             </td>
             <td>
               <p>AuthenticationEmail</p>
-              <p>OR</p>
+              <p>O</p>
               <p>AlternateEmailAddresses[0] </p>
-              <p>(Authentication Email is used if there is data present, otherwise this falls back to the Alternate Email field).</p>
-              <p>Note: the alternate email field is specified as an array of strings in the directory.  We use the first entry in this array.</p>
-              <p>e.g. Set-MsolUser -UserPrincipalName JWarner@contoso.com -AlternateEmailAddresses "email@live.com"</p>
+              <p>(El correo electrónico de autenticación se utiliza si hay datos presentes; en caso contrario, recurre al campo de correo electrónico alternativo).</p>
+              <p>Nota: El campo de correo electrónico alternativo se especifica como una matriz de cadenas en el directorio. Usamos la primera entrada de esta matriz.</p>
+              <p>Por ejemplo: Set-MsolUser -UserPrincipalName JWarner@contoso.com -AlternateEmailAddresses "email@live.com"</p>
             </td>
             <td>
-              <p>Used in:</p>
-              <p>Password Reset Portal</p>
-              <p>Registration Portal</p>
-              <p>Settable from: </p>
-              <p>AuthenticationEmail is settable from the password reset registration portal or MFA registration portal.</p>
-              <p>AlternateEmail is settable from PowerShell, the Azure Management Portal, and the Office Admin Portal</p>
+              <p>Usado en:</p>
+              <p>Portal de restablecimiento de contraseñas</p>
+              <p>Portal de registro</p>
+              <p>Configurable en: </p>
+              <p>AuthenticationEmail se puede configurar desde el portal de registro de restablecimiento de contraseña o desde el portal de registro de MFA.</p>
+              <p>AuthenticationEmail se puede configurar desde PowerShell, el Portal de administración de Azure y el Portal de administración de Office</p>
             </td>
             <td>
               <p>
-                <a href="mailto:user@domain.com">user@domain.com</a> or 甲斐@黒川.日本</p>
+                <a href="mailto:user@domain.com">user@domain.com</a> o 甲斐@黒川.日本</p>
               <ul>
                 <li class="unordered">
-										Emails should follow standard formatting as per .<br><br></li>
+										Los mensajes de correo electrónico deben seguir el formato estándar.<br><br></li>
               </ul>
               <ul>
                 <li class="unordered">
-										Unicode emails are supported.<br><br></li>
+										Se admiten los correos electrónicos Unicode.<br><br></li>
               </ul>
             </td>
           </tr>
           <tr>
             <td>
-              <p>Security Questions and Answers</p>
+              <p>Preguntas y respuestas de seguridad</p>
             </td>
             <td>
-              <p>Not available to modify directly in the directory.</p>
+              <p>No está disponible para modificarlo directamente en el directorio.</p>
             </td>
             <td>
-              <p>Used in:</p>
-              <p>Password Reset Portal</p>
-              <p>Registration Portal </p>
-              <p>Settable from: </p>
-              <p>The only way to set security questions is through the Azure Management Portal.</p>
-              <p>The only way to set answers to security questions for a given user is through the Registration Portal.</p>
+              <p>Usado en:</p>
+              <p>Portal de restablecimiento de contraseñas</p>
+              <p>Portal de registro </p>
+              <p>Configurable en: </p>
+              <p>Las preguntas de seguridad solo pueden realizarse en el Portal de administración de Azure.</p>
+              <p>Las respuestas a preguntas de seguridad de un usuario determinado solo se pueden realizar en el Portal de registro.</p>
             </td>
             <td>
-              <p>Security questions have a max of 200 characters and a min of 3 characters</p>
-              <p>Answers have a max of 40 characters and a min of 3 characters</p>
+              <p>Las preguntas de seguridad deben contener un máximo de 200 caracteres y un mínimo de 3.</p>
+              <p>Las preguntas de seguridad deben contener un máximo de 40 caracteres y un mínimo de 3.</p>
             </td>
           </tr>
         </tbody></table>
 
-<br/>
-<br/>
-<br/>
+<br/> <br/> <br/>
 
-**Additional Resources**
+**Recursos adicionales**
 
 
-* [What is Password Management](active-directory-passwords.md)
-* [How Password Management works](active-directory-passwords-how-it-works.md)
-* [Getting started with Password Mangement](active-directory-passwords-getting-started.md)
-* [Customize Password Management](active-directory-passwords-customize.md)
-* [Password Management Best Practices](active-directory-passwords-best-practices.md)
-* [How to get Operational Insights with Password Management Reports](active-directory-passwords-get-insights.md)
-* [Password Management FAQ](active-directory-passwords-faq.md)
-* [Troubleshoot Password Management](active-directory-passwords-troubleshoot.md)
-* [Password Management on MSDN](https://msdn.microsoft.com/library/azure/dn510386.aspx)
+* [Qué es la administración de contraseñas](active-directory-passwords.md)
+* [Funcionamiento de la administración de contraseñas](active-directory-passwords-how-it-works.md)
+* [Introducción a la administración de contraseñas](active-directory-passwords-getting-started.md)
+* [Personalización de la administración de contraseñas](active-directory-passwords-customize.md)
+* [Prácticas recomendadas de administración de contraseñas](active-directory-passwords-best-practices.md)
+* [Visión operativa con los informes de administración de contraseñas](active-directory-passwords-get-insights.md)
+* [Preguntas más frecuentes sobre la administración de contraseñas](active-directory-passwords-faq.md)
+* [Solución de problemas de Administración de contraseñas](active-directory-passwords-troubleshoot.md)
+* [Administración de contraseñas en MSDN](https://msdn.microsoft.com/library/azure/dn510386.aspx)
 
 
 
 [001]: ./media/active-directory-passwords-learn-more/001.jpg "Image_001.jpg"
 [002]: ./media/active-directory-passwords-learn-more/002.jpg "Image_002.jpg"
  
+
+<!---HONumber=August15_HO6-->

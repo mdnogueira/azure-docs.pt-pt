@@ -1,46 +1,47 @@
-<properties 
-	pageTitle="Managing Risk With Conditional Access" 
-	description="A topic that explains how to allow anywhere access to specific resources from known devices compliant with policies and disallow access from lost, stolen, non-compliant devices." 
-	services="active-directory, virtual-network" 
-	documentationCenter="" 
-	authors="Justinha" 
-	manager="TerryLan" 
-	editor="LisaToft"/>
+<properties
+	pageTitle="Administración de riesgos con el acceso condicional"
+	description="Tema en el que se explica cómo permitir el acceso desde cualquier lugar a recursos específicos desde dispositivos conocidos compatibles con las directivas. También se explica cómo denegar el acceso desde dispositivos perdidos, robados o no compatibles."
+	services="active-directory, virtual-network"
+	documentationCenter=""
+	authors="femila"
+	manager="stevepo"
+	editor=""/>
 
-<tags 
-	ms.service="active-directory" 
-	ms.devlang="na" 
-	ms.topic="article" 
-    ms.tgt_pltfrm="na" 
-    ms.workload="identity" 
-	ms.date="05/05/2015" 
-	ms.author="Justinha"/>
+<tags
+	ms.service="active-directory"
+	ms.devlang="na"
+	ms.topic="article"
+  ms.tgt_pltfrm="na"
+  ms.workload="identity" 
+	ms.date="07/31/2015"
+	ms.author="femila"/>
 
 
-# Managing Risk With Conditional Access
+# Administración de riesgos con el acceso condicional
 
-The current trends of how employees work, how they are productive, and  the means to do their work is fast changing. Employees are bringing in their personal devices to work. On these personal devices, they have apps that they use in their personal, digital lives. And they’re accustomed to the freedom and to the capabilities that this brings to them. They want to use these same applications at work, and they want to have the same flexibility that they have in their personal digital lives in their work life. Today’s corporate employees expect to work from any location, on devices of their choice and seamlessly connect and access business applications.
+Las tendencias actuales relacionadas con el método de trabajo de los empleados, su forma de ser productivos y los medios con los que cuentan para hacer su trabajo están cambiando rápidamente. Los empleados llevan sus dispositivos personales al trabajo. En estos dispositivos personales, tienen aplicaciones que utilizan en su vida personal digital. Y están acostumbrados a la libertad y las funcionalidades que estos les proporcionan. Desean usar estas mismas aplicaciones en el trabajo, y quieren que su vida laboral tenga la misma flexibilidad de la que gozan en su vida personal digital. Los empleados corporativos de hoy en día esperan poder trabajar desde cualquier ubicación en los dispositivos que deseen, así como conectarse y acceder sin problemas a las aplicaciones empresariales.
 
-With this flexibility of enabling users to work where, when, and how they want comes increased risk. Plenty of data point to these devices being stolen, misplaced, or lost. On many of these smartphones and tablets there’s an incredible amount of sensitive and confidential customer and corporate content on it. This is the fine balance that IT Architects, Security Specialists, and IT Administrators are trying to maintain. It’s this balance between enabling users to be productive on all the devices that they love, while delivering the appropriate level of security and protection for the corporate content that resides on these devices.
+Esta flexibilidad de permitir a los usuarios trabajar dónde, cuándo y cómo deseen conlleva un riesgo mayor. No en vano, son multitud los datos que demuestran que estos dispositivos se pueden robar, traspapelar o perder. En muchos de estos smartphones y tabletas hay una cantidad increíble de contenido corporativo y de clientes de carácter confidencial Este es el equilibrio perfecto que los arquitectos de TI, los expertos en seguridad y los administradores de TI intentan mantener. Es el equilibrio entre permitir a los usuarios ser productivos en los dispositivos que les gusta usar y, al mismo tiempo, ofrecer el nivel adecuado de protección y seguridad para el contenido corporativo que reside en ellos.
 
-With the multiple conditional access capabilities offered through Azure Active Directory, Office 365, and Microsoft Intune, IT administrators can solve the following:
+Con las diversas funcionalidades de acceso que se ofrecen a través de Azure Active Directory, Office 365 y Microsoft Intune, los administradores de TI pueden solucionar cuestiones como las siguientes:
 
-- Allow employee anywhere access, without opening the door for everyone on the internet.
-- Allow anywhere access to specific resources from known devices compliant with policies.
-- Disallow access from lost, stolen, non-compliant devices.
+- Permitir a los empleados el acceso en cualquier parte, sin abrir la puerta a nadie en Internet.
+- Permitir el acceso desde cualquier parte a recursos específicos con dispositivos conocidos que sean compatibles con las directivas.
+- Denegar el acceso desde dispositivos perdidos, robados o no compatibles.
 
 ![][1]
 
-## What's next
+## Pasos siguientes
 
-The following topics discuss each of the different mechanisms available for setting conditional access polices in your organization.
+En los temas siguientes, se describen los distintos mecanismos que existen para el establecimiento de directivas de acceso condicional en su organización.
 
-- [Azure Active Directory Device Registration Overview](https://msdn.microsoft.com/library/azure/dn903763.aspx)
-- [Setting up On-premises Conditional Access using Azure Active Directory Device Registration](https://msdn.microsoft.com/library/azure/dn788908.aspx)
-- [Conditional Access Device Policies for Office 365 services](https://msdn.microsoft.com/library/azure/dn903766.aspx)
-- [Azure Conditional Access Preview for SaaS Apps](https://msdn.microsoft.com/library/azure/dn906877.aspx)
+- [Descripción general sobre el registro de dispositivos de Azure Active Directory](https://msdn.microsoft.com/library/azure/dn903763.aspx)
+- [Configuración del acceso condicional local mediante el registro de dispositivos de Azure Active Directory](https://msdn.microsoft.com/library/azure/dn788908.aspx)
+- [Directivas de dispositivo de acceso condicional para servicios de Office 365](https://msdn.microsoft.com/library/azure/dn903766.aspx)
+- [Acceso condicional de Azure en versión de vista previa para aplicaciones SaaS](https://msdn.microsoft.com/library/azure/dn906877.aspx)
 
 
 <!--Image references-->
 [1]: ./media/active-directory-conditional-access/condaccoverviewvsdx1.png
- 
+
+<!---HONumber=August15_HO6-->

@@ -1,7 +1,7 @@
 
 <properties 
-	pageTitle="Using the Azure AD Connect Synchronization Rules Editor" 
-	description="Learn how to use the Azure AD Connect Synchronization Rules Editor." 
+	pageTitle="Uso del Editor de reglas de sincronización de Azure AD Connect" 
+	description="Aprenda a utilizar el Editor de reglas de sincronización de Azure AD Connect." 
 	services="active-directory" 
 	documentationCenter="" 
 	authors="billmath" 
@@ -17,54 +17,49 @@
 	ms.date="05/28/2015" 
 	ms.author="billmath"/>
 
-# Azure AD Connect Synchronization rules editor
+# Editor de reglas de sincronización de Azure AD Connect
 
 
-## Using the synchronization rules editor
+## Uso del editor de reglas de sincronización
 
-In Azure AD Connect, you can configure and fine-tune the object and attribute flow between Azure AD and your on-premises directories by configuring synchronization rules.  
+En Azure AD Connect, puede configurar y ajustar el flujo de objetos y atributos entre Azure AD y sus directorios locales mediante la configuración de reglas de sincronización.
 
-A Synchronization Rule is a configuration object with a set of attributes flowing when a condition is satisfied. It is also used to describe how an object in a connector space is related to an object in the metaverse, known as join or match. The Synchronization Rules have a precedence indicating how they relate to each other. A Synchronization Rule with a lower numeric value in precedence has a higher precedence and in case of an attribute flow conflict, higher precedence will win the conflict resolution.Synchronization rules can be configured using the Synchronization Rules Editor.  
+Una regla de sincronización es un objeto de configuración con un conjunto de atributos que se pasan cuando se cumple una condición. También se utiliza para describir cómo se relaciona un objeto en un espacio de conector con un objeto en el metaverso, proceso conocido como unión o coincidencia. Las reglas de sincronización tienen una prioridad que indica cómo se relacionan entre sí. Una regla de sincronización con un menor valor numérico en prioridad tiene una prioridad más alta y, en el caso de un conflicto en el flujo de atributos, la prioridad superior prevalecerá en su resolución. Las reglas de sincronización pueden configurarse mediante el Editor de reglas de sincronización.
 
-As an example we will look at the Synchronization Rule “In from AD – User AccountEnabled”. We will mark this line in the SRE and select Edit.A Synchronization Rule has four configuration sections: Description, Scoping filter, Join rules, and Transformations.
+Nos fijaremos a modo de ejemplo en la regla de sincronización "In from AD – User AccountEnabled". Marcaremos esta línea en el Editor de reglas de sincronización y seleccionaremos Editar. Una regla de sincronización tiene cuatro secciones de configuración: Descripción, Filtro de ámbito, Reglas de unión y Transformaciones.
 
-### Description
-The first section provides basic information such as a name and description.
+### Descripción
+La primera sección proporciona información básica como el nombre y la descripción.
 
-<center>![Join Rule](./media/active-directory-aadconnect-whats-next-synch-rules-editor/sync1.png)
-</center>
+<center>![Regla de unión](./media/active-directory-aadconnect-whats-next-synch-rules-editor/sync1.png) </center>
 
-We also find information about which connected system this rule is related to, which object type in the connected system it applies to, and the metaverse object type. The metaverse object type is always person regardless if the source object type is a user, iNetOrgPerson, or contact. The metaverse object type should never change so it is created as a generic type. The Link Type can be set to Join, StickyJoin, or Provision. This setting works together with the Join Rules section and we will cover this later.
+También encontramos información acerca del sistema conectado con el que se relaciona esta regla, el tipo de objeto del sistema conectado al que se aplica y el tipo de objeto del metaverso. El tipo de objeto del metaverso siempre es persona, independientemente de si el tipo de objeto de origen es usuario, iNetOrgPerson o contacto. El tipo de objeto del metaverso nunca debe cambiar, por lo que se crea como un tipo genérico. El tipo de vínculo se puede establecer en Unión, Unión permanente o Aprovisionamiento. Esta configuración funciona junto con la sección Reglas de unión, que abordaremos más adelante.
 
-### Scoping Filter
+### Filtro de ámbito
 
-The Scoping Filter section is used to configure when a Synchronization Rule should apply. Since the name of the Synchronization Rule we are looking at indicates it should only be applied for enabled users, the scope is configured so the AD attribute userAccountControl must not have the bit 2 set. When we find a user in AD we will apply this rule if userAccountControl is set to the decimal value 512 (enabled normal user) but it will not apply if the user we find has userAccountControl set to 514 (disabled normal user).
+La sección Filtro de ámbito se utiliza para configurar cuándo se debe aplicar una regla de sincronización. Como el nombre de la regla de sincronización que estamos examinando indica que solo debe aplicarse para los usuarios habilitados, el ámbito se configura de modo que el atributo userAccountControl de AD no deba tener establecido el bit 2. Cuando encontremos un usuario en AD aplicaremos esta regla si userAccountControl se ha establecido en el valor decimal 512 (usuario normal habilitado), pero no se aplicará si el usuario que encontremos tiene userAccountControl establecido en 514 (usuario normal deshabilitado).
 
-<center>![Join Rule](./media/active-directory-aadconnect-whats-next-synch-rules-editor/sync2.png)
-</center>
+<center>![Regla de unión](./media/active-directory-aadconnect-whats-next-synch-rules-editor/sync2.png) </center>
 
-The scoping filter has Groups and Clauses which can be nested. All clauses inside a group must be satisfied for a Synchronization Rule to apply. When multiple groups are defined then at least one group must be satisfied for the rule to apply. I.e. a logical OR is evaluated between groups and a logical AND is evaluated inside a group. An example of this can be found in the outbound Synchronization Rule Out to AAD – Group Join, shown below. There are two synchronization filter groups, one for security groups (securityEnabled EQUAL True) and one for distribution groups (securityEnabled EQUAL False).
+El filtro de ámbito tiene grupos y las cláusulas que se pueden anidar. Deben cumplirse todas las cláusulas dentro de un grupo para que se aplique una regla de sincronización. Cuando se definen varios grupos, se debe cumplir al menos uno para que la regla se aplique. Por ejemplo, un OR lógico se evalúa entre grupos y un AND lógico se evalúa dentro de un grupo. Un ejemplo de esto se puede encontrar en la regla de sincronización saliente Out to AAD – Group Join, que se muestra a continuación. Hay dos grupos de filtros de sincronización, uno para los grupos de seguridad (securityEnabled EQUAL True) y otro para los grupos de distribución (securityEnabled EQUAL False).
 
-<center>![Join Rule](./media/active-directory-aadconnect-whats-next-synch-rules-editor/sync3.png)
-</center>
+<center>![Regla de unión](./media/active-directory-aadconnect-whats-next-synch-rules-editor/sync3.png) </center>
 
-This rule is used to define which Groups should be provisioned to AAD. Distribution Groups must be mail enabled to be synchronized with AAD, but for security groups this is not required. As you can also see, a lot of additional attributes are evaluated as well.
+Esta regla se usa para definir qué grupos se deben aprovisionar a ADD. Los grupos de distribución deben tener el correo habilitado para sincronizarse con ADD, pero esto no es necesario para los grupos de seguridad. Como se puede ver además, también se evalúan bastantes atributos más.
 
-###Join Rules
-The third section is used to configure how objects in the connector space relate to objects in the metaverse. The rule we have looked at earlier does not have any configuration for Join Rules, so instead we are going to look at In from AD – User Join. 
+###Reglas de unión
+La tercera sección se usa para configurar cómo se relacionan los objetos del espacio conector con los objetos del metaverso. La regla que hemos examinado antes no tiene ninguna configuración para Reglas de unión, por lo que vamos a examinar la regla In from AD – User Join en su lugar.
 
-<center>![Join Rule](./media/active-directory-aadconnect-whats-next-synch-rules-editor/sync4.png)
-</center>
+<center>![Regla de unión](./media/active-directory-aadconnect-whats-next-synch-rules-editor/sync4.png) </center>
 
-The content of the join rules will depend on the matching option selected in the installation wizard. For an inbound rule the evaluation starts with an object in the source connector space and each group in join rules is evaluated in sequence. If a source object is evaluated to match exactly one object in the metaverse using one of the join rules, the objects are joined together. If all rules have been evaluated and there is no match, then the Link Type on the description page is used. If this setting is set to Provision then a new object is created in the target, the metaverse. To provision a new object to the metaverse is also known as to project an object to the metaverse. The join rules are only evaluated once. When a connector space object and a metaverse object are joined together, they will remain joined as long as the scope of the Synchronization Rule is still satisfied. When evaluating Synchronization Rules only one Synchronization Rule with join rules defined must be in scope. If multiple Synchronization Rules with join rules are found for one object, an error is thrown. For this reason the best practice is to have only one Synchronization Rule with join defined when multiple Synchronization Rules are in scope for an object. In the out-of-box configuration for Azure AD Connect these rules can be found by looking at the name and find those with the word Join at the end of the name. A Synchronization Rule without any join rules defined will apply the attribute flows if another Synchronization Rule joined the objects together or provisioned a new object in the target.
+El contenido de las reglas de unión dependerá de la opción de coincidencia seleccionada en el asistente para instalación. Para una regla entrante, la evaluación se inicia con un objeto en el espacio conector de origen y cada grupo de las reglas de unión se evalúa en secuencia. Si se evalúa si un objeto de origen coincide exactamente con un objeto del metaverso usando una de las reglas de unión, los objetos se unen. Si se han evaluado todas las reglas y no hay coincidencia, se usa el tipo de vínculo de la página de descripción. Si este valor se establece en Provision, se crea un nuevo objeto en el destino, el metaverso. Aprovisionar un nuevo objeto en el metaverso también se denomina proyectar un objeto en el metaverso. Las reglas de unión solo se evalúan una vez. Cuando un objeto del espacio conector y un objeto del metaverso se unen, permanecerán unidos mientras el ámbito de la regla de sincronización se siga cumpliendo. Cuando se evalúan reglas de sincronización, solo debe haber en el ámbito una regla de sincronización con reglas de unión definidas. Si se encuentran varias reglas de sincronización con reglas de unión para un objeto, se emite un error. Por este motivo, lo mejor es tener solo una regla de sincronización con una unión definida cuando haya varias reglas de sincronización en el ámbito para un objeto. En la configuración de origen para Azure AD Connect, estas reglas se pueden encontrar consultando el nombre y buscando las que tienen la palabra Join al final del mismo. Una regla de sincronización sin ninguna regla de unión definida aplicará los flujos de atributo si otra regla de sincronización ha unido los objetos o ha aprovisionado un nuevo objeto en el destino.
 
-###Transformations
-The transformation section defines all attribute flows which will apply to the target object when the objects are joined and the scope filter is satisfied. Going back to our In from AD – User AccountEnabled Synchronization Rule we will find the following transformations:
+###Transformaciones
+La sección sobre las transformaciones define todos los flujos de atributo que se aplicarán al objeto de destino cuando se unan los objetos y se cumpla el filtro de ámbito. Volviendo a nuestra regla de sincronización In from AD – User AccountEnabled, encontraremos las transformaciones siguientes:
 
-<center>![Join Rule](./media/active-directory-aadconnect-whats-next-synch-rules-editor/sync5.png)
-</center>
+<center>![Regla de unión](./media/active-directory-aadconnect-whats-next-synch-rules-editor/sync5.png) </center>
 
-To put this in context, in an Account-Resource forest deployment we expect to find an enabled account in the account forest and a disabled account in the resource forest with Exchange and Lync settings. The Synchronization Rule we are looking at contains the attributes required for login and we want these to flow from the forest where we found an enabled account. All these attribute flows are put together in one Synchronization Rule.A transformation can have different types: Constant, Direct, and Expression. A constant flow will always flow a particular value, in the case above we will always set the value True in the metaverse attribute named accountEnabled. A Direct flow will flow the value of the attribute in the source to the target attribute. The third flow type is Expression and it allows for more advanced configurations. The expression language is VBA (Visual Basic for Applications) so user with experience of Microsoft Office or VBScript will recognize the format. Attributes are enclosed in square brackets, [attributeName]. Attribute names and function names are case sensitive, but the Synchronization Rules Editor will evaluate the expressions and provide a warning if the expression is not valid.All expressions are expressed on a single line with nested functions. To show the power of the configuration language, here is the flow for pwdLastSet, but with additional comments inserted:
+Para ponerlo en contexto, en una implementación de bosque cuenta-recurso esperamos encontrar una cuenta habilitada en el bosque de cuenta y una cuenta deshabilitada en el bosque de recurso con la configuración de Exchange y Lync. La regla de sincronización que estamos examinando contiene los atributos necesarios para el inicio de sesión y queremos que fluyan desde el bosque en el que hemos encontrado una cuenta habilitada. Todos estos flujos de atributo se combinan en una regla de sincronización. Una transformación puede tener tipos diferentes: constante, directo y expresión. En un flujo de tipo constante siempre fluirá un valor en particular, en el caso anterior estableceremos siempre el valor True en el atributo del metaverso denominado accountEnabled. En un flujo de tipo directo fluirá el valor del atributo del origen hacia el atributo de destino. El tercer flujo es de tipo expresión y permite configuraciones más avanzadas. El lenguaje de la expresión es VBA (Visual Basic para Aplicaciones), por lo que un usuario con experiencia en Microsoft Office o VBScript reconocerá el formato Los atributos se especifican entre corchetes, [nombreAtributo]. Los nombres de atributo y los nombres de función distinguen entre mayúsculas y minúsculas, pero el Editor de reglas de sincronización evaluará las expresiones y proporcionará una advertencia si la expresión no es válida. Todas las expresiones se expresan en una única línea con funciones anidadas. Para mostrar la eficacia del lenguaje de configuración, encontrará a continuación el flujo para pwdLastSet, pero con comentarios adicionales insertados:
 
 		// If-then-else
 		IIF(
@@ -76,5 +71,7 @@ To put this in context, in an Account-Resource forest deployment we expect to fi
 		NULL
 		)
 
-The topic of transformation is large and it provides a large portion of the custom configuration possible with Azure AD Connect. Custom configuration will not be covered in this overview document but we will look at some additional attribute flows later in this document.
+El tema de transformación es amplio y proporciona una gran parte de la configuración personalizada posible con Azure AD Connect. La configuración personalizada no se explicará en este documento de información general, pero examinaremos algunos de los flujos de atributo adicionales más adelante en este documento.
  
+
+<!---HONumber=August15_HO6-->

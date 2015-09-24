@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Azure Active Directory Report Retention Policies"
-	description="Retention policies on report data in your Azure Active Directory"
+	pageTitle="Directivas de retención de informes de Azure Active Directory"
+	description="Directivas de retención de datos de informes en Azure Active Directory"
 	services="active-directory"
 	documentationCenter=""
 	authors="kenhoff"
@@ -16,30 +16,32 @@
 	ms.date="06/18/2015"
 	ms.author="kenhoff"/>
 
-# Azure Active Directory Report Retention Policies
+# Directivas de retención de informes de Azure Active Directory
 
-Azure AD's reports retain data for a certain number of days, indicated here.
+Los informes de Azure AD conservan los datos durante un número determinado de días, que indicamos a continuación.
 
-|	Report												|	Description	|
+|	Informe |	Descripción |
 |	------												|	-----		|
-|	Sign ins from unknown sources						|	30 days		|
-|	Sign ins after multiple failures					|	30 days		|
-|	Sign ins from multiple geographies					|	30 days		|
-|	Sign ins from IP addresses with suspicious activity	|	30 days		|
-|	Sign ins from possibly infected devices				|	30 days		|
-|	Irregular sign in activity							|	30 days		|
-|	Users with anomalous sign in activity				|	30 days		|
-|	Users with leaked credentials						|	30 days		|
-|	Audit report										|	180 days	|
-|	Password reset activity								|	30 days		|
-|	Password reset registration activity				|	30 days		|
-|	Self service groups activity						|	30 days		|
-|	Application usage									|	30 days		|
-|	Account provisioning activity						|	30 days		|
-|	Password rollover status							|	30 days		|
-|	Account provisioning errors							|	30 days		|
-|	RMS usage											|	30 days		|
-|	Most active RMS users								|	30 days		|
-|	RMS device usage									|	30 days		|
-|	RMS enabled application usage						|	30 days		|
+|	Inicios de sesión desde orígenes desconocidos |	30 días |
+|	Inicios de sesión tras varios errores |	30 días |
+|	Inicios de sesión desde varias ubicaciones geográficas |	30 días |
+|	Inicios de sesión desde direcciones IP con actividad sospechosa |	30 días |
+|	Inicios de sesión desde dispositivos posiblemente infectados |	30 días |
+|	Actividad de inicio de sesión irregular |	30 días |
+|	Usuarios con actividad de inicio de sesión erróneo. |	30 días |
+|	Usuarios con credenciales perdidas |	30 días |
+|	Informe de auditoría |	180 días |
+|	Actividad de restablecimiento de contraseña |	30 días |
+|	Actividad de registro de restablecimiento de contraseñas |	30 días |
+|	Actividad de los grupos de autoservicio |	30 días |
+|	Uso de la aplicación |	30 días |
+|	Actividad de aprovisionamiento de cuentas |	30 días |
+|	Estado de la sustitución de contraseña |	30 días |
+|	Errores de aprovisionamiento de cuentas |	30 días |
+|	Uso de RMS |	30 días |
+|	Usuarios de RMS más activos |	30 días |
+|	Uso de dispositivos RMS |	30 días |
+|	Uso de aplicaciones habilitadas para RMS |	30 días |
  
+
+<!---HONumber=August15_HO6-->

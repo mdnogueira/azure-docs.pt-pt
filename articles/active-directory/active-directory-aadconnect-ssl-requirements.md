@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Azure AD Connect - SSL Certificate Requirements" 
-	description="The Azure AD Connect SSL Certificate requirements for using with AD FS." 
+	pageTitle="Azure AD Connect: requisitos del certificado SSL" 
+	description="Requisitos del certificado SSL de Azure AD Connect para su uso con AD FS." 
 	services="active-directory" 
 	documentationCenter="" 
 	authors="billmath" 
@@ -16,18 +16,20 @@
 	ms.date="05/28/2015" 
 	ms.author="billmath"/>
 
-# Azure AD Connect - SSL Certificate Requirements
+# Azure AD Connect: requisitos del certificado SSL
 
-**Important:** it’s strongly recommended to use the same SSL certificate across all nodes of your AD FS farm as well as all Web Application proxy servers. 
+**Importante:** se recomienda encarecidamente utilizar el mismo certificado SSL en todos los nodos de la granja de AD FS, así como todos los servidores del Proxy de aplicación web.
 
-- This certificate must be an X509 certificate. 
-- You can use a self-signed certificate on federation servers in a test lab environment; however, for a production environment, we recommend that you obtain the certificate from a public CA. 
-	- If using a certificate that is not publicly trusted, ensure that the certificate installed on each Web Application Proxy server is trusted on both the local server and on all federation servers 
-- Certificates based on CryptoAPI next generation (CNG) keys and key storage providers are not supported.  This means you must use a certificate based on a CSP (cryptographic service provider) and not a KSP (key storage provider). 
-- The identity of the certificate must match the federation service name (for example, fs.contoso.com). 
-	- The identity is either a subject alternative name (SAN) extension of type dNSName or, if there are no SAN entries, the subject name specified as a common name.  
-	- Multiple SAN entries can be present in the certificate, provided one of them matches the federation service name. 
-	- If you are planning to use Workplace Join, an additional SAN is required with the value “enterpriseregistration.” followed by the User Principal Name (UPN) suffix of your organization, for example, enterpriseregistration.contoso.com. 
+- Este certificado debe ser del tipo X 509. 
+- Puede usar un certificado autofirmado en servidores de federación en un entorno de laboratorio de pruebas; sin embargo, para un entorno de producción, recomendamos que obtenga el certificado de una entidad de certificación pública. 
+	- Si usa un certificado que no es de confianza pública, asegúrese de que el certificado instalado en cada servidor del Proxy de aplicación web sea de confianza tanto en el servidor local como en todos los servidores de federación. 
+- No se admiten certificados basados en claves CryptoAPI Next Generation (CNG) ni en proveedores de almacenamiento de claves. Esto significa que debe utilizar un certificado basado en un CSP (proveedor de servicios criptográficos) y no en un KSP (proveedor de almacenamiento de claves). 
+- La identidad del certificado debe coincidir con el nombre del servicio de federación (por ejemplo, fs.contoso.com). 
+	- La identidad es una extensión de nombre alternativo del firmante (SAN) de tipo dNSName, o bien, si no hay ninguna entrada de SAN, el nombre del firmante se especifica como un nombre común.  
+	- Puede haber varias entradas de SAN en el certificado, siempre que una de ellas coincida con el nombre de servicio de federación. 
+	- Si piensa usar la unión al área de trabajo, se requiere un SAN adicional con el valor "enterpriseregistration." seguido del sufijo de nombre principal de usuario (UPN) de su organización, por ejemplo, enterpriseregistration.contoso.com. 
 
-Wild card certificates are supported.  
+Se admiten certificados comodín.
  
+
+<!---HONumber=August15_HO6-->
