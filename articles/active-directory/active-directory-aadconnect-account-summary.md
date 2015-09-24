@@ -20,7 +20,7 @@
 
 
 # More about Azure AD Connect credentials and permissions 
-HO1 HO1 HO1 HO1 HO1 HO1 HO1 HO1 HO1 HO1 HO1 HO1 HO1 HO1 
+HOHOHOHOHOHOHOHOHO - new after bug fix 
 
 El asistente de Azure AD Connect ofrece dos rutas de acceso diferentes con distintos requisitos de permisos:
 
