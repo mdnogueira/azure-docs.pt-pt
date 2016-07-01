@@ -1,0 +1,53 @@
+<properties
+   pageTitle="Segurança da Automatização do Azure"
+   description="Este artigo fornece uma descrição geral da segurança de automatização e os métodos de autenticação diferentes disponíveis para as Contas de Automatização na Automatização do Azure."
+   services="automation"
+   documentationCenter=""
+   authors="MGoedtel"
+   manager="jwhit"
+   editor="tysonn"
+   keywords="automation security, secure automation" />
+<tags
+   ms.service="automation"
+   ms.devlang="na"
+   ms.topic="get-started-article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="05/10/2016"
+   ms.author="magoedte" />
+
+# Segurança da Automatização do Azure
+A Automatização do Azure permite-lhe automatizar tarefas relativamente aos recursos no Azure, no local e outros fornecedores de serviços em nuvem, tais como os Amazon Web Services (AWS).  Para um runbook efetuar as ações necessárias, tem de ter permissões para aceder de forma segura aos recursos com os direitos mínimos necessários dentro da subscrição.  
+Este artigo irá cobrir os vários cenários de autenticação suportados pela Automatização do Azure e irá mostrar como começar com base no ambiente ou ambientes que tem de gerir.  
+
+## Descrição Geral da Conta de Automatização
+Quando inicia a Automatização do Azure pela primeira vez, tem de criar pelo menos uma conta de Automatização. As contas de automatização permitem-lhe a isolar os recursos de Automatização (runbooks, recursos, configurações) a partir dos recursos contidos noutras contas de Automatização. Pode utilizar contas de Automatização para separar recursos em ambientes lógicos separados. Por exemplo, poderá utilizar uma conta para o desenvolvimento, outra para a produção e outra para o seu ambiente no local.  Uma conta de automatização do Azure é diferente da sua conta Microsoft ou contas criadas na sua subscrição do Azure.
+
+Os recursos de Automatização para cada conta de Automatização estão associados a uma única região do Azure, mas as contas de Automatização podem gerir os recursos em qualquer região. A razão principal para criar contas de Automatização em diferentes regiões seria se tiver políticas que exigem que os dados e os recursos estejam isolados numa região específica.
+
+>[AZURE.NOTE]As contas de Automatização e os recursos que contêm que são criados no portal do Azure não podem ser acedidos no portal clássico do Azure. Se pretende gerir estas contas ou os respetivos recursos com o Windows PowerShell, tem de utilizar os módulos do Azure Resource Manager.
+
+Todas as tarefas que executa relativamente aos recursos utilizando o Azure Resource Manager (ARM) e os cmdlets do Azure na Automatização do Azure têm de ser autenticados no Azure utilizando a autenticação com base em credenciais de identidade organizacional do Azure Active Directory.  A autenticação baseada em certificados foi o método de autenticação original com o modo de Gestão de Serviço do Azure (ASM), mas foi difícil de configurar.  A autenticação no Azure com o utilizador do Azure AD foi introduzida em 2014 para simplificar o processo de configuração de uma conta de Autenticação, mas também para suportar a capacidade de autenticar de forma não interativa no Azure com uma única conta de utilizador que funcionou com o modo ASM e ARM.   
+
+Recentemente, lançamos outra atualização, onde agora criamos automaticamente um objeto principal do serviço Azure AD quando é criada a conta de Automatização. Isto é referido como uma conta Run As do Azure e é o método de autenticação predefinido para a automatização do runbook com o Azure Resource Manager.     
+
+O controlo de acesso baseado em funções está disponível no modo ARM para conceder ações permitidas a uma conta de utilizador do Azure AD e um principal de serviço e autenticar esse principal de serviço.  Leia [o artigo Controlo de acesso baseado em funções na Automatização do Azure](../automation/automation-role-based-access-control.md) para obter mais informações ajudar a desenvolver o seu modelo para a gestão de permissões de Automatização.  
+
+Os Runbooks em execução numa Função de Trabalho de Runbook Híbrida no seu datacenter ou em relação a serviços de computação no AWS não podem utilizar o mesmo método que é normalmente utilizado para a autenticação de runbooks nos recursos do Azure.  Isto acontece porque esses recursos estão a ser executados fora do Azure e, como tal, necessitarão das suas próprias credenciais de segurança definidas na Automatização para autenticar em recursos que acedem localmente.  
+
+## Métodos de Autenticação
+
+A tabela seguinte resume os métodos de autenticação diferentes para cada ambiente suportado pela Automatização do Azure e o artigo que descreve como configurar a autenticação para os runbooks.
+
+Método  |  Ambiente  | Artigo
+----------|----------|----------
+Conta de Utilizador do Azure AD | Azure Resource Manager e Gestão do Serviço do Azure | [Autenticar Runbooks com a conta de Utilizador do Azure AD](../automation/automation-sec-configure-aduser-account.md)
+Objeto Principal do Serviço Azure AD | Azure Resource Manager | [Autenticar Runbooks com a conta Run As do Azure](../automation/automation-sec-configure-azure-runas-account.md)
+Autenticação do Windows | Datacenter No Local | [Autenticar Runbooks para Funções de Trabalho de Runbook Híbridas](../automation/automation-hybrid-runbook-worker.md)
+Credenciais AWS | Amazon Web Services | [Autenticar Runbooks com os Amazon Web Services (AWS)](../automation/automation-sec-configure-aws-account.md)
+
+
+
+<!--HONumber=Jun16_HO2-->
+
+
