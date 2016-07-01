@@ -1,0 +1,143 @@
+<properties
+   pageTitle="Descrição geral do Azure Resource Manager | Microsoft Azure"
+   description="Descreve como utilizar o Azure Resource Manager para a implementação, a gestão e o controlo de acesso de recursos no Azure."
+   services="azure-resource-manager"
+   documentationCenter="na"
+   authors="tfitzmac"
+   manager="timlt"
+   editor="tysonn"/>
+
+<tags
+   ms.service="azure-resource-manager"
+   ms.devlang="na"
+   ms.topic="get-started-article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
+   ms.date="05/27/2016"
+   ms.author="tomfitz"/>
+
+# Descrição geral do Azure Resource Manager
+
+ Normalmente, a infraestrutura da sua aplicação é composta por vários componentes, como uma máquina virtual, uma conta do Storage e uma rede virtual, ou uma aplicação Web, uma base de dados, um servidor de base de dados e serviços de terceiros. Não vê estes componentes como entidades separadas. Em vez disso, vê-os como partes relacionadas e interdependentes de uma única entidade. Deve implementá-los, geri-los e monitorizá-los como um grupo. O Azure Resource Manager permite trabalhar com os recursos na sua solução como um grupo. Pode implementar, atualizar ou eliminar todos os recursos da sua solução numa operação única e coordenada. Utiliza um modelo para a implementação e esse modelo pode funcionar para ambientes diferentes, como de teste e produção. O Resource Manager fornece funcionalidades de segurança, auditoria e etiquetagem para o ajudar a gerir os recursos após a implementação. 
+
+## Vantagens da utilização do Resource Manager
+
+O Resource Manager oferece várias vantagens:
+
+- Pode implementar, gerir e monitorizar todos os recursos da sua solução como um grupo, em vez de os processar individualmente.
+- Pode implementar repetidamente a solução durante todo o ciclo de vida de desenvolvimento e ter a confiança de que os recursos são implementados num estado consistente.
+- Pode utilizar modelos declarativos para definir a implementação.
+- Pode definir as dependências entre os recursos, de modo a que sejam implementados na ordem correta.
+- Pode aplicar o controlo de acesso a todos os serviços no seu grupo de recursos porque o Controlo de Acesso Baseado em Funções (RBAC) está integrado de forma nativa na plataforma de gestão.
+- Pode aplicar etiquetas a recursos para organizar logicamente todos os recursos na sua subscrição.
+- Pode clarificar a faturação da sua organização ao visualizar os custos agregados do grupo inteiro ou de um grupo de recursos que partilha a mesma etiqueta.  
+
+O Resource Manager proporciona uma nova forma de implementar e gerir as suas soluções. Se utilizou o modelo de implementação anterior e pretende obter informações sobre as alterações, consulte [Compreender a implementação do Resource Manager e a implementação clássica](resource-manager-deployment-model.md).
+
+## Orientação
+
+As seguintes sugestões ajudá-lo-ão a tirar o máximo partido do Resource Manager ao trabalhar com as suas soluções.
+
+1. Defina e implemente a infraestrutura através da sintaxe declarativa nos modelos do Resource Manager, em vez de utilizar comandos imperativos.
+2. Defina todos os passos de implementação e configuração no modelo. A configuração da sua solução não deverá ter quaisquer passos manuais.
+3. Execute comandos imperativo para gerir os recursos, tal como para iniciar ou parar uma aplicação ou uma máquina.
+4. Disponha os recursos com o mesmo ciclo de vida num grupo de recursos. Utilize etiquetas para todas as outras organizações de recursos.
+
+## Grupos de recursos
+
+Um grupo de recursos é um contentor que retém recursos relacionados para uma aplicação. O grupo de recursos pode incluir todos os recursos para uma aplicação ou apenas os recursos que estão logicamente agrupados em conjunto. Pode decidir como pretende atribuir recursos a grupos de recursos com base no que é mais adequado para a sua organização.
+
+Existem alguns fatores importantes a considerar ao definir o grupo de recursos:
+
+1. Todos os recursos do grupo devem partilhar o mesmo ciclo de vida. Irá implementá-los, atualizá-los e eliminá-los em conjunto. Se um recurso, tal como um servidor de base de dados, tiver de existir num ciclo de implementação diferente, deve ser colocado noutro grupo de recursos.
+2. Cada recurso só pode existir num grupo de recursos.
+3. Pode adicionar ou remover um recurso de um grupo de recursos em qualquer altura.
+4. Pode mover um recurso de um grupo de recursos para outro grupo. Para obter mais informações, consulte [Mover recursos para um novo grupo de recursos ou subscrição](resource-group-move-resources.md).
+4. Um grupo de recursos pode conter recursos que residem em regiões diferentes.
+5. Um grupo de recursos pode ser utilizado para definir o âmbito do controlo de acesso para ações administrativas.
+6. Um recurso pode ser associado a um recurso noutro grupo de recursos quando os dois recursos têm de interagir entre si, mas não partilham o mesmo ciclo de vida (por exemplo, várias aplicações ligadas a uma base de dados). Para obter mais informações, consulte [Ligar recursos no Azure Resource Manager](resource-group-link-resources.md).
+
+## Fornecedores de recursos
+
+Um fornecedor de recursos é um serviço que fornece os recursos que pode implementar e gerir através do Resource Manager. Cada fornecedor de recursos oferece operações de API REST para trabalhar com os recursos. Por exemplo, se pretender implementar um Cofre de Chaves do Azure para armazenar chaves e segredos, irá trabalhar com o fornecedor de recursos **Microsoft.KeyVault**. Este fornecedor de recursos oferece um tipo de recurso denominado **vaults** para criar o cofre de chaves e um tipo de recurso denominado **vaults/secrets** para criar um segredo no cofre de chaves. Pode obter informações sobre um fornecedor de recursos ao saber mais sobre as respetivas operações de API REST, tais como [Operações de API REST do Cofre de Chaves](https://msdn.microsoft.com/library/azure/dn903609.aspx).
+
+Para implementar e gerir a infraestrutura, terá de saber detalhes sobre os fornecedores de recursos, tais como os tipos de recursos que oferecem, os números de versão das operações de API REST, as operações que suportam e o esquema a utilizar ao definir os valores do tipo de recurso a criar. Para saber mais sobre os fornecedores de recursos suportados, consulte [Fornecedores, regiões, versões de API e esquemas do Resource Manager](resource-manager-supported-services.md).
+
+## Implementação de modelos
+
+Com o Resource Manager, pode criar um modelo simples (no formato JSON) que define a implementação e configuração da sua aplicação. Este modelo é conhecido como um modelo do Resource Manager e fornece uma forma declarativa de definir a implementação. Ao utilizar um modelo, pode implementar repetidamente a aplicação durante todo o ciclo de vida da mesma e ter a confiança de que os recursos são implementados num estado consistente.
+
+Num modelo, define a infraestrutura para a sua aplicação, como configurar essa infraestrutura e como publicar o código da aplicação nessa infraestrutura. Não se precisa de preocupar com a ordem de implementação, uma vez que o Azure Resource Manager analisa as dependências para garantir que os recursos são criados na ordem correta. Para obter mais informações, consulte [Definir dependências nos modelos do Azure Resource Manager](resource-group-define-dependencies.md).
+
+Quando cria uma solução a partir do Marketplace, esta inclui automaticamente um modelo de implementação. Não é necessário criar o modelo a partir do zero porque pode começar com o modelo para a sua solução e personalizá-lo de modo a satisfazer as suas necessidades específicas. Pode obter um modelo para um grupo de recursos existente ao exportar o estado atual do grupo de recursos para um modelo ou ao visualizar o modelo que foi utilizado para uma implementação específica. Visualizar o modelo exportado é uma forma útil de saber mais sobre a sintaxe do modelo. Para saber mais sobre como trabalhar com modelos exportados, consulte [Exportar um modelo do Azure Resource Manager a partir dos recursos existentes](resource-manager-export-template.md).
+
+Não é necessário definir toda a infraestrutura num único modelo. Muitas vezes, faz sentido dividir os requisitos de implementação num conjunto de modelos direcionados e com uma finalidade específica. Pode reutilizar facilmente estes modelos para soluções diferentes. Para implementar uma solução específica, cria um modelo global que liga todos os modelos necessários. Para obter mais informações, consulte [Utilizar modelos ligados com o Azure Resource Manager](resource-group-linked-templates.md).
+
+Também pode utilizar o modelo para atualizar a infraestrutura. Por exemplo, pode adicionar um novo recurso à sua aplicação e adicionar regras de configuração para os recursos que já estão implementados. Se o modelo especificar a criação de um novo recurso, mas esse recurso já existir, o Azure Resource Manager efetua uma atualização em vez de criar um novo recurso. O Azure Resource Manager atualiza o recurso existente para o mesmo estado que teria como novo. Em alternativa, pode especificar que o Resource Manager elimine quaisquer recursos que não estejam especificados no modelo. Para compreender as diferentes opções disponíveis durante a implementação, consulte [Implementar uma aplicação com o modelo do Azure Resource Manager](resource-group-template-deploy.md). 
+
+Pode especificar parâmetros no modelo para permitir personalização e flexibilidade na implementação. Por exemplo, pode passar valores de parâmetros que personalizam a implementação para o seu ambiente de teste. Ao especificar os parâmetros, pode utilizar o mesmo modelo para a implementação em todos os ambientes da sua aplicação.
+
+O Resource Manager fornece extensões para cenários em que necessita de operações adicionais como a instalação de software específico que não está incluído na configuração. Se já estiver a utilizar um serviço de gestão de configuração, como o DSC, Chef ou Puppet, pode continuar a trabalhar com esse serviço ao utilizar extensões.
+
+Por último, o modelo torna-se parte do código fonte da sua aplicação. Pode verificá-lo no repositório de código fonte e atualizá-lo à medida que a aplicação evolui. Pode editar o modelo através do Visual Studio.
+
+Para obter mais informações sobre como definir o modelo, consulte [Criação de Modelos do Azure Resource Manager](resource-group-authoring-templates.md).
+
+Para obter instruções passo-a-passo sobre como criar um modelo, consulte [Instruções do Modelo do Resource Manager](resource-manager-template-walkthrough.md).
+
+Para obter orientações sobre a implementação da sua solução em ambientes diferentes, consulte [Ambientes de desenvolvimento e teste no Microsoft Azure](solution-dev-test-environments.md). 
+
+## Etiquetas
+
+O Resource Manager fornece uma funcionalidade de etiquetagem que permite categorizar os recursos de acordo com os seus requisitos de gestão ou faturação. Pode pretender utilizar etiquetas quando tem uma coleção complexa de grupos de recursos e recursos e precisa de visualizar esses elementos da forma mais adequada para si. Por exemplo, pode etiquetar recursos que desempenham uma função semelhante na sua organização ou pertencem ao mesmo departamento. Sem etiquetas, os utilizadores da organização podem criar vários recursos que poderá ser muito difícil identificar e gerir mais tarde. Por exemplo, se pretender eliminar todos os recursos de um projeto específico, mas esses recursos não tiverem sido etiquetados para o projeto, terá de os localizar manualmente. A etiquetagem pode ser um meio importante para reduzir os custos desnecessários associados à sua subscrição. 
+
+Os recursos não precisam de residir no mesmo grupo de recursos para partilhar uma etiqueta. Pode criar a sua própria taxonomia de etiquetas para se certificar de que todos os utilizadores da sua organização utilizam etiquetas comuns em vez de aplicarem inadvertidamente etiquetas ligeiramente diferentes (por exemplo, “depart” em vez de “departamento”).
+
+Para obter mais informações sobre etiquetas, consulte [Utilizar etiquetas para organizar os recursos do Azure](resource-group-using-tags.md). Pode criar uma [política personalizada](#manage-resources-with-customized-policies) que exija a adição de etiquetas aos recursos durante a implementação.
+
+## Controlo de acesso
+
+O Resource Manager permite controlar quem tem acesso a ações específicas para a sua organização. Integra de forma nativa o OAuth e o Controlo de Acesso Baseado em Funções (RBAC) na plataforma de gestão e aplica esse controlo de acesso a todos os serviços no seu grupo de recursos. Pode adicionar utilizadores a funções específicas da plataforma e dos recursos predefinidas e aplicar essas funções a uma subscrição, um grupo de recursos ou um recurso para limitar o acesso. Por exemplo, pode tirar partido da função predefinida denominada Contribuinte da BD do SQL que permite aos utilizadores gerir bases de dados, mas não servidores de base de dados ou políticas de segurança. Adiciona os utilizadores da sua organização que necessitam deste tipo de acesso à função Contribuinte da BD do SQL e aplica a função à subscrição, ao grupo de recursos ou ao recurso.
+
+O Resource Manager regista automaticamente as ações do utilizador para auditoria. Para obter informações sobre como trabalhar com os registos de auditoria, consulte [Auditar operações com o Resource Manager](resource-group-audit.md).
+
+Para obter mais informações sobre o controlo de acesso baseado em funções, consulte [Controlo de Acesso Baseado em Funções do Azure](./active-directory/role-based-access-control-configure.md). O tópico [RBAC: Funções Incorporadas](./active-directory/role-based-access-built-in-roles.md) contém uma lista das funções incorporadas e das ações permitidas. As funções incorporadas incluem funções gerais, tais como Proprietário, Leitor e Contribuinte, bem como funções específicas do serviço, tais como Contribuinte de Máquina Virtual, Contribuinte de Virtual Network e Gestor de Segurança do SQL (para indicar apenas algumas das funções disponíveis).
+
+Pode também bloquear explicitamente recursos críticos para impedir que os utilizadores os eliminem ou modifiquem. Para obter mais informações, consulte [Bloquear recursos com o Azure Resource Manager](resource-group-lock-resources.md).
+
+Para melhores práticas, consulte [Considerações de segurança para o Azure Resource Manager](best-practices-resource-manager-security.md)
+
+## Gerir recursos com políticas personalizadas
+
+O Resource Manager permite criar políticas personalizadas para gerir os seus recursos. Os tipos de políticas que cria podem incluir cenários tão diversos como impor uma convenção de nomenclatura aos recursos, limitar os tipos e as instâncias de recursos que podem ser implementados, limitar as regiões que podem alojar um tipo de recurso ou exigir um valor de etiqueta nos recursos para organizar a faturação por departamentos. Cria políticas para ajudar a reduzir os custos e manter a consistência na sua subscrição. Para obter mais informações, consulte [Utilizar a Política para gerir recursos e controlar o acesso](resource-manager-policy.md).
+
+## Camada de gestão consistente
+
+O Resource Manager proporciona operações totalmente compatíveis através do Azure PowerShell, da CLI do Azure para Mac, Linux e Windows, do Portal do Azure ou da API REST. Pode utilizar a interface mais adequada para si e alternar rapidamente entre as interfaces sem confusões. O portal apresenta mesmo notificações relacionadas com ações executadas fora do portal.
+
+Para obter informações sobre o PowerShell, consulte [Utilizar o Azure PowerShell com o Resource Manager](powershell-azure-resource-manager.md) e [Cmdlets do Azure Resource Manager](https://msdn.microsoft.com/library/azure/dn757692.aspx).
+
+Para obter informações sobre a CLI do Azure, consulte [Utilizar a CLI do Azure para Mac, Linux e Windows com a Gestão de Recursos do Azure](xplat-cli-azure-resource-manager.md).
+
+Para obter informações sobre a API REST, consulte [Referência de API REST do Azure Resource Manager](https://msdn.microsoft.com/library/azure/dn790568.aspx). Para ver as operações REST para os recursos implementados, consulte [Utilizar o Explorador de Recursos do Azure para ver e modificar recursos](resource-manager-resource-explorer.md).
+
+Para obter mais informações acerca da utilização do portal, consulte [Utilizar o Portal do Azure para gerir os recursos do Azure](./azure-portal/resource-group-portal.md).
+
+O Azure Resource Manager suporta a Partilha de Recursos de Várias Origens (CORS). Com a CORS, pode chamar a API REST do Resource Manager ou a API REST de um serviço do Azure a partir de uma aplicação Web que reside num domínio diferente. Sem o suporte para CORS, o browser impediria que uma aplicação num domínio acedesse a recursos noutro domínio. O Resource Manager ativa a CORS para todos os pedidos com credenciais de autenticação válidas.
+
+## Passos seguintes
+
+- Para obter uma introdução simples sobre como trabalhar com modelos, consulte [Exportar um modelo do Azure Resource Manager a partir de recursos existentes](resource-manager-export-template.md).
+- Para obter instruções mais detalhadas sobre como criar um modelo, consulte [Instruções do Modelo do Resource Manager](resource-manager-template-walkthrough.md).
+- Para compreender as funções que pode utilizar num modelo, consulte [Funções de modelo](resource-group-template-functions.md)
+- Para obter informações sobre como utilizar o Visual Studio com o Resource Manager, consulte [Criar e implementar grupos de recursos do Azure através do Visual Studio](vs-azure-tools-resource-groups-deployment-projects-create-deploy.md)
+
+Eis uma demonstração em vídeo desta descrição geral:
+
+[AZURE.VIDEO azure-resource-manager-overview]
+
+
+
+<!--HONumber=Jun16_HO2-->
+
+
