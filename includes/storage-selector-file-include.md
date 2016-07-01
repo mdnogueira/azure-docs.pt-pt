@@ -2,8 +2,3 @@
 - [.NET](../articles/storage/storage-dotnet-how-to-use-files.md)
 - [Java](../articles/storage/storage-java-how-to-use-file-storage.md)
 - [Python](../articles/storage/storage-python-how-to-use-file-storage.md)
-
-
-<!--HONumber=Jun16_HO2-->
-
-
