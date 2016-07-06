@@ -89,7 +89,7 @@ Esta secção mostra como criar uma aplicação Web e configurá-la para Java ut
 
 12. Selecione o **Contentor Web** pretendido. Se selecionar um nome de contentor que começa com **O mais recente**, a aplicação será mantida na versão mais recente da versão principal do contentor Web que está disponível no App Service. 
 
-    ![Versões do Contentor Web][versions]
+    ![Versões do Contentor Web][versões]
 
 13. Clique em **Guardar**.
 
@@ -194,6 +194,6 @@ Para obter mais informações sobre a programação de aplicações Java no Azur
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!---HONumber=Jun16_HO2-->
 
 

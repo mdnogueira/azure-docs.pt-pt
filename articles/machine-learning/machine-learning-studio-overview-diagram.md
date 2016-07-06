@@ -37,7 +37,7 @@ Transfira o diagrama da **Descrição geral das funcionalidades do Microsoft Azu
 
 ![Descrição geral das funcionalidades do Microsoft Azure Machine Learning Studio][studio-overview]
 
-[descrição geral do studio]: ./media/machine-learning-studio-overview-diagram/ml_studio_overview_v1.1.png
+[studio-overview]: ./media/machine-learning-studio-overview-diagram/ml_studio_overview_v1.1.png
 
 
 ## Mais ajuda no Machine Learning Studio
@@ -50,6 +50,6 @@ Transfira o diagrama da **Descrição geral das funcionalidades do Microsoft Azu
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!---HONumber=Jun16_HO2-->
 
 

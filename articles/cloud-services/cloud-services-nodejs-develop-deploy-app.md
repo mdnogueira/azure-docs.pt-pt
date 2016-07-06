@@ -188,17 +188,17 @@ Para obter mais informações, consulte o [Centro para Programadores do Node.js]
 
 <!-- IMG List -->
 
-[Resultado do comando New-AzureService helloworld]: ./media/cloud-services-nodejs-develop-deploy-app/node9.png
-[Resultado do comando Add-AzureNodeWebRole]: ./media/cloud-services-nodejs-develop-deploy-app/node11.png
-[Um browser a apresentar a página Web “Olá, Mundo”]: ./media/cloud-services-nodejs-develop-deploy-app/node14.png
-[Resultado do comando Publish-AzureService]: ./media/cloud-services-nodejs-develop-deploy-app/node19.png
-[Resultado do estado completo do comando Publish-AzureService]: ./media/cloud-services-nodejs-develop-deploy-app/node20.png
-[Uma janela do browser a apresentar a página Olá, Mundo; o URL indica que a página está alojada no Azure.]: ./media/cloud-services-nodejs-develop-deploy-app/node21.png
-[Estado do comando Stop-AzureService]: ./media/cloud-services-nodejs-develop-deploy-app/node48.png
-[Estado do comando Remove-AzureService]: ./media/cloud-services-nodejs-develop-deploy-app/node49.png
+[The result of the New-AzureService helloworld command]: ./media/cloud-services-nodejs-develop-deploy-app/node9.png
+[The output of the Add-AzureNodeWebRole command]: ./media/cloud-services-nodejs-develop-deploy-app/node11.png
+[A web browser displaying the Hello World web page]: ./media/cloud-services-nodejs-develop-deploy-app/node14.png
+[The output of the Publish-AzureService command]: ./media/cloud-services-nodejs-develop-deploy-app/node19.png
+[The full status output of the Publish-AzureService command]: ./media/cloud-services-nodejs-develop-deploy-app/node20.png
+[A browser window displaying the hello world page; the URL indicates the page is hosted on Azure.]: ./media/cloud-services-nodejs-develop-deploy-app/node21.png
+[The status of the Stop-AzureService command]: ./media/cloud-services-nodejs-develop-deploy-app/node48.png
+[The status of the Remove-AzureService command]: ./media/cloud-services-nodejs-develop-deploy-app/node49.png
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!---HONumber=Jun16_HO2-->
 
 

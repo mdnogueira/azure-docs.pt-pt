@@ -210,20 +210,20 @@ Para instruções mais extensas e detalhadas sobre as técnicas de modelação p
 [instruções]: machine-learning-walkthrough-develop-predictive-solution.md
 
 <!-- Images -->
-[ecrã1]:./media/machine-learning-create-experiment/screen1.png
-[ecrã1a]:./media/machine-learning-create-experiment/screen1a.png
-[ecrã1b]:./media/machine-learning-create-experiment/screen1b.png
-[ecrã2]:./media/machine-learning-create-experiment/screen2.png
-[ecrã3]:./media/machine-learning-create-experiment/screen3.png
-[ecrã4]:./media/machine-learning-create-experiment/screen4.png
-[ecrã4a]:./media/machine-learning-create-experiment/screen4a.png
-[ecrã5]:./media/machine-learning-create-experiment/screen5.png
-[ecrã6]:./media/machine-learning-create-experiment/screen6.png
-[ecrã7]:./media/machine-learning-create-experiment/screen7.png
-[ecrã8]:./media/machine-learning-create-experiment/screen8.png
-[ecrã8a]:./media/machine-learning-create-experiment/screen8a.png
-[ecrã9]:./media/machine-learning-create-experiment/screen9.png
-[ecrã10]:./media/machine-learning-create-experiment/complete-linear-regression-experiment.png
+[screen1]:./media/machine-learning-create-experiment/screen1.png
+[screen1a]:./media/machine-learning-create-experiment/screen1a.png
+[screen1b]:./media/machine-learning-create-experiment/screen1b.png
+[screen2]:./media/machine-learning-create-experiment/screen2.png
+[screen3]:./media/machine-learning-create-experiment/screen3.png
+[screen4]:./media/machine-learning-create-experiment/screen4.png
+[screen4a]:./media/machine-learning-create-experiment/screen4a.png
+[screen5]:./media/machine-learning-create-experiment/screen5.png
+[screen6]:./media/machine-learning-create-experiment/screen6.png
+[screen7]:./media/machine-learning-create-experiment/screen7.png
+[screen8]:./media/machine-learning-create-experiment/screen8.png
+[screen8a]:./media/machine-learning-create-experiment/screen8a.png
+[screen9]:./media/machine-learning-create-experiment/screen9.png
+[screen10]:./media/machine-learning-create-experiment/complete-linear-regression-experiment.png
 
 
 <!-- Module References -->
@@ -237,6 +237,6 @@ Para instruções mais extensas e detalhadas sobre as técnicas de modelação p
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!---HONumber=Jun16_HO2-->
 
 

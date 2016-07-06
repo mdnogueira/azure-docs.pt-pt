@@ -278,12 +278,12 @@ Uma vez que alguns dos NSGs acima têm de ser associados a NICs individuais, tem
 - [Implementar NSGs no Resource Manager](virtual-networks-create-nsg-arm-pportal.md).
 - [Gerir registos de NSG](virtual-network-nsg-manage-log.md).
 
-[verde]: ./media/virtual-network-nsg-overview/green.png
-[amarelo]: ./media/virtual-network-nsg-overview/yellow.png
-[vermelho]: ./media/virtual-network-nsg-overview/red.png
+[green]: ./media/virtual-network-nsg-overview/green.png
+[yellow]: ./media/virtual-network-nsg-overview/yellow.png
+[red]: ./media/virtual-network-nsg-overview/red.png
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!---HONumber=Jun16_HO2-->
 
 

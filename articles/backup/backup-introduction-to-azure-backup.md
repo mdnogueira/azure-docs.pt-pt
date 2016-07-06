@@ -225,12 +225,12 @@ Uma vez que estes tutoriais o ajudam a efetuar uma cópia de segurança rapidame
 
 
 
-[verde]: ./media/backup-introduction-to-azure-backup/green.png
-[amarelo]: ./media/backup-introduction-to-azure-backup/yellow.png
-[vermelho]: ./media/backup-introduction-to-azure-backup/red.png
+[green]: ./media/backup-introduction-to-azure-backup/green.png
+[yellow]: ./media/backup-introduction-to-azure-backup/yellow.png
+[red]: ./media/backup-introduction-to-azure-backup/red.png
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!---HONumber=Jun16_HO2-->
 
 
