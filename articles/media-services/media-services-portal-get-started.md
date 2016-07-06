@@ -242,20 +242,20 @@ Se este tópico não continha o que pretendia, algo está em falta ou não corre
 
 
 <!-- Images -->
-[descrição geral portal]: ./media/media-services-portal-get-started/media-services-content-page.png
-[conteúdo publicado]: ./media/media-services-portal-get-started/media-services-upload-content-published.png
-[conteúdo carregado]: ./media/media-services-portal-get-started/UploadContent.png
-[estado]: ./media/media-services-portal-get-started/Status.png
-[codificador]: ./media/media-services-manage-content/EncoderDialog2.png
-[imagem corporativa]: ./media/branding-reporting.png
-[página conteúdo]: ./media/media-services-portal-get-started/media-services-content-page.png
-[processo]: ./media/media-services-manage-content/media-services-process-video.png
-[processo 2]: ./media/media-services-portal-get-started/media-services-process-video2.png
-[encriptar]: ./media/media-services-manage-content/media-services-encrypt-content.png
-[Leitor AMS]: ./media/media-services-portal-get-started/media-services-portal-player.png
+[portaloverview]: ./media/media-services-portal-get-started/media-services-content-page.png
+[publishedcontent]: ./media/media-services-portal-get-started/media-services-upload-content-published.png
+[uploadcontent]: ./media/media-services-portal-get-started/UploadContent.png
+[status]: ./media/media-services-portal-get-started/Status.png
+[encoder]: ./media/media-services-manage-content/EncoderDialog2.png
+[branding]: ./media/branding-reporting.png
+[contentpage]: ./media/media-services-portal-get-started/media-services-content-page.png
+[process]: ./media/media-services-manage-content/media-services-process-video.png
+[process2]: ./media/media-services-portal-get-started/media-services-process-video2.png
+[encrypt]: ./media/media-services-manage-content/media-services-encrypt-content.png
+[AMSPlayer]: ./media/media-services-portal-get-started/media-services-portal-player.png
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!---HONumber=Jun16_HO2-->
 
 

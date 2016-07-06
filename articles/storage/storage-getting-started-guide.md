@@ -62,7 +62,8 @@ Em seguida, execute a aplicação de exemplo:
 
     `<!--<add key="StorageConnectionString" value = "UseDevelopmentStorage=true;"/>-->`
 
-2.  Anule os comentários da cadeia de ligação para o Serviço do Storage do Azure e forneça a chave de acesso e o nome da conta do Storage no ficheiro App.config: `<add key="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=[AccountName];AccountKey=[AccountKey]"`
+2.  Anule os comentários da cadeia de ligação para o Serviço do Storage do Azure e forneça a chave de acesso e o nome da conta do Storage no ficheiro App.config: 
+	`<add key="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=[AccountName];AccountKey=[AccountKey]"`
 
     Para obter a sua chave de acesso da conta do Storage, consulte o artigo [Gerir as chaves de acesso de armazenamento](storage-create-storage-account.md#manage-your-storage-access-keys).
 
@@ -112,11 +113,11 @@ Consulte estes recursos para saber mais sobre o Storage do Azure:
 * [Biblioteca de Clientes do Storage do Microsoft Azure para o .NET](https://msdn.microsoft.com/library/azure/dn261237.aspx)
 * [API REST dos Serviços do Storage do Azure](https://msdn.microsoft.com/library/azure/dd179355.aspx)
 
-[Imagem1]: ./media/storage-getting-started-guide/QuickStart.png
+[Image1]: ./media/storage-getting-started-guide/QuickStart.png
  
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!---HONumber=Jun16_HO2-->
 
 

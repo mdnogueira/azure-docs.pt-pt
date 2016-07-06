@@ -23,8 +23,9 @@ Para mover as Logic Apps existentes para o novo esquema, efetue o seguinte:
 1. Abra a aplicação lógica no Portal do Azure  
 2. Clique em Atualizar Esquema:
 
- ![Ícone de API][step1]   
-A página Atualizar Esquema apresenta e fornece uma ligação para um documento que fornece detalhes sobre as melhorias efetuadas no novo esquema: ![Ícone de API][step2]
+ ![API Icon][step1]   
+A página Atualizar Esquema apresenta e fornece uma ligação para um documento que fornece detalhes sobre as melhorias efetuadas no novo esquema:
+ ![API Icon][step2]
 
 >[AZURE.NOTE] Ao selecionar **Atualizar Esquema**, os passos de migração são automaticamente executados e o código de saída é fornecido. Pode utilizar este código para atualizar a definição. No entanto, certifique-se de que segue as melhores práticas de codificação, tal como as descritas na secção **Melhores práticas** abaixo.
 
@@ -40,8 +41,8 @@ A página Atualizar Esquema apresenta e fornece uma ligação para um documento 
 
 
 <!--Icon references-->
-[passo1]: ./media/connectors-schema-migration/migrateschema1.png
-[passo2]: ./media/connectors-schema-migration/migrateschema2.png
+[step1]: ./media/connectors-schema-migration/migrateschema1.png
+[step2]: ./media/connectors-schema-migration/migrateschema2.png
 
 
 
@@ -51,6 +52,6 @@ A página Atualizar Esquema apresenta e fornece uma ligação para um documento 
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!---HONumber=Jun16_HO2-->
 
 
