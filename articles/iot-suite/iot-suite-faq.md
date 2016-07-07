@@ -59,13 +59,13 @@ Neste momento, não é possível criar uma solução pré-configurada com uma co
 Consulte a mensagem de blogue de Eric Golpe [Instruções de Eliminação de um Inquilino do Azure AD][Ink-delete-aad-tennant].
 
 [link-azuresupportticket]: https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade 
-[lnk-azure-portal]: https://portal.azure.com
-[lnk-azureiotsuite]: https://www.azureiotsuite.com/
-[lnk-classic-portal]: https://manage.windowsazure.com
-[lnk-remote-monitoring-github]: https://github.com/Azure/azure-iot-remote-monitoring 
-[lnk-dreamspark]: https://www.dreamspark.com/Product/Product.aspx?productid=99 
-[lnk-30daytrial]: https://azure.microsoft.com/free/
-[lnk-delete-aad-tennant]: http://blogs.msdn.com/b/ericgolpe/archive/2015/04/30/walkthrough-of-deleting-an-azure-ad-tenant.aspx
+[Ink-azure-portal]: https://portal.azure.com
+[Ink-azureiotsuite]: https://www.azureiotsuite.com/
+[Ink-classic-portal]: https://manage.windowsazure.com
+[Ink-remote-monitoring-github]: https://github.com/Azure/azure-iot-remote-monitoring 
+[Ink-dreamspark]: https://www.dreamspark.com/Product/Product.aspx?productid=99 
+[Ink-30daytrial]: https://azure.microsoft.com/free/
+[Ink-delete-aad-tennant]: http://blogs.msdn.com/b/ericgolpe/archive/2015/04/30/walkthrough-of-deleting-an-azure-ad-tenant.aspx
 
 
 
