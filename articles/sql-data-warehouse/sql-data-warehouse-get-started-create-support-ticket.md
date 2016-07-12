@@ -84,7 +84,7 @@ Além disso, pode ligar-se à comunidade do SQL Data Warehouse no [Stack Overflo
 <!-- External links -->
 [Portal do Azure]: https://portal.azure.com/
 [Planos de suporte do Azure]: https://azure.microsoft.com/support/plans/?WT.mc_id=Support_Plan_510979/
-[Perguntas frequentes do suporte do Azure]: https://azure.microsoft.com/support/faq/
+[Perguntas mais frequentes do suporte do Azure]: https://azure.microsoft.com/support/faq/
 [Portal online do Microsoft Premier]: https://premier.microsoft.com/
 [Stack Overflow]: https://stackoverflow.com/questions/tagged/azure-sqldw/
 [Fórum MSDN do Azure SQL Data Warehouse]: https://social.msdn.microsoft.com/Forums/home?forum=AzureSQLDataWarehouse/
@@ -93,5 +93,6 @@ Além disso, pode ligar-se à comunidade do SQL Data Warehouse no [Stack Overflo
 
 
 <!--HONumber=Jun16_HO2-->
+
 
 
