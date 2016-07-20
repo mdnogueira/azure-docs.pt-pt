@@ -1,8 +1,13 @@
-|    | **VPN Gateway throughput (1)** | **VPN Gateway max IPsec tunnels (2)** | **ExpressRoute Gateway throughput** | **VPN Gateway and ExpressRoute coexist**|
+|    | **Débito do VPN Gateway (1)** | **Máximo de túneis IPsec do VPN Gateway (2)** | **Débito do Gateway do ExpressRoute** | **Coexistência do ExpressRoute e do VPN Gateway**|
 |--- |----------------------------|-----------------------------------|-------------------------------------|-----------------------------------------|
-| **Basic SKU**              |  100 Mbps | 10                         |  500 Mbps                           | No   |
-| **Standard SKU**           |  100 Mbps | 10                         | 1000 Mbps                           | Yes  |
-| **High Performance SKU**   | 200 Mbps  | 30                         | 2000 Mbps                           | Yes  |
+| **SKU Básico**              |  100 Mbps | 10                         |  500 Mbps                           | Não   |
+| **SKU Standard**           |  100 Mbps | 10                         | 1000 Mbps                           | Sim  |
+| **SKU de Elevado Desempenho**   | 200 Mbps  | 30                         | 2000 Mbps                           | Sim  |
 
-- (1) The VPN throughput is a rough estimate based on the measurements between VNets in the same Azure region. It is not a guarantee of what you can get for cross-premises connections across the Internet, but should be used as a maximum possible measure.
-- (2) The number of tunnels refer to route-based VPN below. A policy-based VPN can only support one Site-to-Site VPN tunnel
+- (1) O débito da VPN é uma estimativa aproximada baseada em medidas entre VNets na mesma região do Azure. Não é uma garantia do que pode receber para ligações em vários locais através da Internet, mas deve ser utilizado como uma medida máxima possível.
+- (2) O número de túneis refere-se à VPN baseada na rota abaixo. Uma VPN baseada em políticas só pode suportar um túnel de Rede de VPNs
+
+
+<!--HONumber=Jun16_HO2-->
+
+

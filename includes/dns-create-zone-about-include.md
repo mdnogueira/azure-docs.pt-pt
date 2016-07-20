@@ -1,12 +1,17 @@
-A DNS zone is used to host the DNS records for a particular domain. In order to start hosting your domain, you need to create a DNS zone. Any DNS record created for a particular domain will be inside a DNS zone for the domain. 
+Uma zona DNS serve para alojar os registos DNS para um determinado domínio. Para iniciar o alojamento do seu domínio, terá de criar uma zona DNS. Qualquer registo DNS criado para um determinado domínio ficará dentro de uma zona DNS do domínio. 
 
-For example, the domain "contoso.com" may contain a number of DNS records, such as "mail.contoso.com" (for a mail server) and "www.contoso.com" (for a web site). 
+Por exemplo, o domínio “contoso.com” pode conter vários registos DNS, como “mail.contoso.com” (para um servidor de e-mail) e “www.contoso.com” (para um site). 
 
 
-## <a name="names"></a>About DNS zone names
+## <a name="names"></a>Sobre os nomes das zonas DNS
  
-- The name of the zone must be unique within the resource group, and the zone must not exist already. Otherwise, the operation will fail.
+- O nome da zona deve ser exclusivo dentro do grupo de recursos e a zona não pode já existir. Caso contrário, a operação falhará.
 
-- The same zone name can be re-used in a different resource group or a different Azure subscription. 
+- O mesmo nome de zona pode ser reutilizado num grupo de recursos diferente ou numa subscrição diferente do Azure. 
 
-- Where multiple zones share the same name, each instance will be assigned different name server addresses, and only one instance can be delegated from the parent domain. For more information, see [Delegate a domain to Azure DNS](../articles/dns/dns-domain-delegation.md).
+- Quando várias zonas partilham o mesmo nome, cada instância receberá endereços de servidor de nomes diferentes e apenas uma instância pode ser delegada do domínio principal. Para obter mais informações, veja [Delegar um domínio ao DNS do Azure](../articles/dns/dns-domain-delegation.md).
+
+
+<!--HONumber=Jun16_HO2-->
+
+

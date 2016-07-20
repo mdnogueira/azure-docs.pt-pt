@@ -1,65 +1,70 @@
-### Is BGP supported on all Azure VPN Gateway SKUs?
+### O BGP é suportado em todos os SKUs do VPN Gateway do Azure?
 
-No, BGP is supported on Azure **Standard** and **HighPerformance** VPN gateways. **Basic** SKU is NOT supported.
+Não, o BGP é suportado nos gateways de VPN **Standard** e **HighPerformance** do Azure. O SKU **Básico** NÃO é suportado.
 
-### Can I use BGP with Azure Policy-Based VPN gateways?
+### Posso utilizar o BGP com gateways de VPN do Azure baseados em políticas?
 
-No, BGP is supported on Route-Based VPN gateways only.
+Não, o BGP é apenas suportado em gateways de VPN baseados na rota.
 
-### Can I use private ASNs (Autonomous System Numbers)?
+### Posso utilizar ASNs (Números de Sistema Autónomo) privados?
 
-Yes, you can use your own public ASNs or private ASNs for both your on-premises networks and Azure virtual networks.
+Sim, pode utilizar os seus próprios ASNs públicos ou privados para as suas redes no local e para redes virtuais do Azure.
 
-### Can I use the same ASN for both on-premises VPN networks and Azure VNets?
+### Posso utilizar o mesmo ASN para as redes VPN no local e as VNets do Azure?
 
-No, you must assign different ASNs between your on-premises networks and your Azure VNets if you are connecting them together with BGP. Azure VPN Gateways have a default ASN of 65515 assigned, whether BGP is enabled for not for your cross-premises connectivity. You can override this default by assigning a different ASN when creating the VPN gateway, or change the ASN after the gateway is created. You will need to assign your on-premises ASNs to the corresponding Azure Local Network Gateways.
+Não, tem de atribuir ASNs diferentes entre as suas redes no local e as VNets do Azure se estiver a ligá-las entre si com o BGP. Os VPN Gateways do Azure têm atribuída uma predefinição ASN de 65515,quer o BGP esteja ou não ativado para conectividade em vários locais. Pode substituir esta predefinição atribuindo um ASN diferente ao criar o gateway de VPN ou alterar o ASN depois do gateway ter sido criado. Terá de atribuir os seus ASNs no local aos Gateways de Rede Local do Azure correspondentes.
 
 
 
-### What address prefixes will Azure VPN gateways advertise to me?
+### Que prefixos de endereços irão os gateways de VPN do Azure anunciar-me?
 
-Azure VPN gateway will advertise the following routes to your on-premises BGP devices:
+O gateway de VPN do Azure irá anunciar as seguintes rotas para os seus dispositivos BGP no local:
 
-- Your VNet address prefixes
-- Address prefixes for each Local Network Gateways connected to the Azure VPN gateway
-- Routes learned from other BGP peering sessions connected to the Azure VPN gateway, **except default route or routes overlapped with any VNet prefix**.
+- Os seus prefixos de endereços VNet
+- Prefixos de endereços para cada Gateway de Rede Local ligado ao gateway de VPN do Azure
+- Rotas aprendidas de outras sessões de peering de BGP ligadas ao gateway de VPN do Azure, **exceto a rota ou as rotas predefinidas que se sobreponham a um prefixo VNet**.
 
-### Can I use BGP with my VNet-to-VNet connections?
+### Posso utilizar o BGP com as minhas ligações VNet a VNet?
 
-Yes, you can use BGP for both cross-premises connections and VNet-to-VNet connections.
+Sim, pode utilizar o BGP para ligações em vários locais e ligações VNet a VNet.
 
-### Can I mix BGP with non-BGP connections for my Azure VPN gateways?
+### Posso combinar ligações BGP com ligações não BGP para os meus gateways de VPN do Azure?
 
-Yes, you can mix both BGP and non-BGP connections for the same Azure VPN gateway.
+Sim, pode misturar ligações BGP e não BGP para o mesmo gateway de VPN do Azure.
 
-### Does Azure VPN gateway support BGP transit routing?
+### O gateway de VPN do Azure suporta encaminhamento de trânsito BGP?
 
-Yes, BGP transit routing is supported, with the exception that Azure VPN gateways will **NOT** advertise default routes to other BGP peers. To enable transit routing across multiple Azure VPN gateways, you must enable BGP on all intermediate VNet-to-VNet connections.
+Sim, o encaminhamento de trânsito BGP é suportado. No entanto, os gateways de VPN do Azure **NÃO** anunciarão rotas predefinidas a outros elementos de rede BGP. Para ativar o encaminhamento de trânsito através de vários gateways de VPN do Azure, tem de ativar o BGP em todas as ligações VNet para VNet intermédias.
 
-### Can I have more than one tunnels between Azure VPN gateway and my on-premises network?
+### Posso ter mais do que um túnel entre o gateway de VPN do Azure e a minha rede no local?
 
-Yes, you can establish more than one S2S VPN tunnels between an Azure VPN gateway and your on-premises network. Please note that all these tunnels will be counted against the total number of tunnels for your Azure VPN gateways. For example, if you have two redundant tunnels between your Azure VPN gateway and one of your on-premises network, they will consume 2 tunnels out of the total quota for your Azure VPN gateway (10 for Standard and 30 for HighPerformance).
+Sim, pode estabelecer mais do que um túnel VPN S2S entre um gateway de VPN do Azure e a sua rede no local. Tenha em atenção que todos estes túneis serão contados tendo em conta o número total de túneis dos seus gateways de VPN do Azure. Por exemplo, se tiver dois túneis redundantes entre o gateway de VPN do Azure e um da sua rede no local, irá consumir dois túneis da quota total para o seu gateway de VPN do Azure (10 para Standard e 30 para HighPerformance).
 
-### Can I have multiple tunnels between two Azure VNets with BGP?
+### Posso ter vários túneis entre duas VNets do Azure com BGP?
 
-No, redundant tunnels between a pair of virtual networks are not supported.
+Não, os túneis redundantes entre um par de redes virtuais não são suportados.
 
-### Can I use BGP for S2S VPN in an ExpressRoute/S2S VPN co-existence configuration?
+### Posso utilizar o BGP para VPN S2S numa configuração de coexistência ExpressRoute/VPN S2S?
 
-Not at this time.
+Neste momento, não.
 
-### What address does Azure VPN gateway use for BGP Peer IP?
+### Que endereço utiliza o gateway de VPN do Azure para o IP do Elemento de Rede BGP?
 
-The Azure VPN gateway will allocate a single IP address from the GatewaySubnet range defined for the virtual network. By default, it is the second last address of the range. For example, if your GatewaySubnet is 10.12.255.0.0/27, ranging from 10.42.255.0.0 to 10.42.255.31, then the BGP Peer IP address on the Azure VPN gateway will be 10.12.255.30. You can find this information when you list the Azure VPN gateway information.
+O gateway de VPN do Azure irá alocar um único endereço IP a partir do intervalo GatewaySubnet definido para a rede virtual. Por predefinição, é o penúltimo endereço do intervalo. Por exemplo, se o GatewaySubnet for 10.12.255.0.0/27, situado entre 10.42.255.0.0 e 10.42.255.31, o endereço IP do Elemento de Rede BGP no gateway de VPN do Azure será 10.12.255.30. Pode encontrar estas informações quando listar as informações do gateway de VPN do Azure.
 
-### What are the requirements for the BGP Peer IP addresses on my VPN device?
+### Quais são os requisitos dos endereços IP do Elemento de Rede BGP no meu dispositivo VPN?
 
-Your on-premises BGP peer address **MUST NOT** be the same as the public IP address of your VPN device. Use a different IP address on the VPN device for your BGP Peer IP. It can be an address assigned to the loopback interface on the device. Specify this address in the corresponding Local Network Gateway representing the location.
+O seu endereço do elemento de rede BGP no local **NÃO DEVE** ser o mesmo que o endereço IP público do seu dispositivo VPN. Utilize um endereço IP diferente no dispositivo VPN do IP do Elemento de Rede BGP. Pode ser um endereço atribuído à interface de loopback no dispositivo. Especifique este endereço no Gateway de Rede Local correspondente que representa a localização.
 
-### What should I specify as my address prefixes for the Local Network Gateway when I use BGP?
+### O que devo especificar como prefixos de endereços para o Gateway de Rede Local ao utilizar o BGP?
 
-Azure Local Network Gateway specifies the initial address prefixes for the on-premises network. With BGP, you must allocate the host prefix (/32 prefix) of your BGP Peer IP address as the address space for that on-premises network. If your BGP Peer IP is 10.52.255.254, you should specify "10.52.255.254/32" as the localNetworkAddressSpace of the Local Network Gateway representing this on-premises network. This is to ensure that the Azure VPN gateway establishes the BGP session through the S2S VPN tunnel.
+O Gateway de Rede Local do Azure especifica os prefixos de endereços iniciais da rede no local. Com o BGP, tem de alocar o prefixo de anfitrião (prefixo /32) do seu endereço IP do Elemento de Rede BGP como o espaço de endereços para essa rede no local. Se o IP do Elemento de Rede BGP for 10.52.255.254, deve especificar “10.52.255.254/32” como o localNetworkAddressSpace do Gateway de Rede Local que representa esta rede no local. Trata-se de garantir que o gateway de VPN do Azure estabelece a sessão BGP através do túnel VPN S2S.
 
-### What should I add to my on-premises VPN device for the BGP peering session?
+### O que devo adicionar ao meu dispositivo VPN no local para a sessão de peering de BGP?
 
-You should add a host route of the Azure BGP Peer IP address on your VPN device pointing to the IPsec S2S VPN tunnel. For example, if the Azure VPN Peer IP is "10.12.255.30", you should add a host route for "10.12.255.30" with a nexthop interface of the matching IPsec tunnel interface on your VPN device.
+Deve adicionar uma rota de anfitrião do endereço IP do Elemento de Rede BGP do Azure no dispositivo VPN para apontar para o túnel VPN S2S IPsec. Por exemplo, se o IP do Elemento VPN do Azure for “10.12.255.30”, deve adicionar no dispositivo VPN uma rota de anfitrião para “10.12.255.30” com uma interface nexthop da interface de túnel IPsec correspondente.
+
+
+<!--HONumber=Jun16_HO2-->
+
+

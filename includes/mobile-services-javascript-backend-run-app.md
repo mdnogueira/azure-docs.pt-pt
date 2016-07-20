@@ -1,20 +1,25 @@
 
-The final stage of this tutorial is to build and run your new app.
+A etapa final deste tutorial consiste em criar e executar a nova aplicação.
 
-1. Browse to the location where you saved the compressed project files, expand the files on your computer, and open the solution file in Visual Studio.
+1. Navegue até à localização onde guardou os ficheiros comprimidos do projeto, expanda- os no computador e abra o ficheiro da solução no Visual Studio.
 
-2. Press the **F5** key to rebuild the project and start the app.
+2. Prima a tecla **F5** para reconstruir o projeto e iniciar a aplicação.
 
-3. In the app, type meaningful text, such as *Complete the tutorial*, in **Insert a TodoItem**, and then click **Save**.
+3. Na aplicação, digite um texto significativo, tal como *Concluir o tutorial*, em **Inserir um TodoItem** e, em seguida, clique em **Guardar**.
 
-   	This sends a POST request to the new mobile service hosted in Azure. Data from the request is inserted into the TodoItem table. Items stored in the table are returned by the mobile service, and the data is displayed in the second column in the app.
+    Esta ação envia um pedido POST ao novo serviço móvel alojado no Azure. Os dados do pedido são inseridos na tabela TodoItem. Os itens armazenados na tabela são devolvidos pelo servidor móvel e os dados são apresentados na segunda coluna na aplicação.
 
-4. (Optional) In a universal Windows solution, change the default start up project to the other app and run the app again.
+4. (Opcional) Numa solução universal do Windows, altere o projeto arranque predefinido para a outra aplicação e execute novamente a aplicação.
 
-	Notice that data saved from the previous step is loaded from the mobile service after the app starts.
+    Repare que os dados guardados no passo anterior são carregados do serviço móvel depois de a aplicação iniciar.
  
-4. Back in the [Azure classic portal](https://manage.windowsazure.com/), click the **Data** tab and then click the **TodoItems** table.
+4. No [Portal Clássico do Azure](https://manage.windowsazure.com/), clique no separador **Dados** e na tabela **TodoItems**.
 
-   	This lets you browse the data inserted by the app into the table.
+    Esta ação permite procurar os dados inseridos pela aplicação na tabela.
 
-   	![](./media/mobile-services-javascript-backend-run-app/mobile-data-browse.png)
+    ![](./media/mobile-services-javascript-backend-run-app/mobile-data-browse.png)
+
+
+<!--HONumber=Jun16_HO2-->
+
+

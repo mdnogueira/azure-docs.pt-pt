@@ -1,32 +1,38 @@
-## What is Blob Storage?
+## O que é Blob Storage?
 
-Azure Blob storage is a service for storing large amounts of unstructured object data, such as text or binary data, that can be accessed from anywhere in the world via HTTP or HTTPS. You can use Blob storage to expose data publicly to the world, or to store application data privately.
+O Blob Storage do Azure é um serviço para armazenar grandes quantidades de dados de objetos não estruturados, como texto ou dados binários, que podem ser acedidos de qualquer local no mundo através de HTTP ou HTTPS. Pode utilizar o armazenamento de Blobs para expor publicamente os dados ao mundo ou para armazenar dados da aplicação em privado.
 
-Common uses of Blob storage include:
+Utilizações comuns do armazenamento de Blobs:
 
-- Serving images or documents directly to a browser
-- Storing files for distributed access
-- Streaming video and audio
-- Storing data for backup and restore, disaster recovery, and archiving
-- Storing data for analysis by an on-premises or Azure-hosted service
+- Entrega de imagens ou documentos diretamente a um browser
+- Armazenamento de ficheiros para acesso distribuído
+- Transmissão de áudio e vídeo
+- Armazenamento de dados de cópia de segurança e restauro, recuperação após desastre e arquivo
+- Armazenamento de dados para análise por um serviço no local ou alojado no Azure
 
-## Blob service concepts
+## Conceitos do serviço Blob
 
-The Blob service contains the following components:
+O serviço Blob contém os seguintes componentes:
 
 ![Blob1][Blob1]
 
-- **Storage Account:** All access to Azure Storage is done through a storage account. This storage account can be a **General-purpose storage account** or a **Blob storage account** which is specialized for storing objects/blobs. For more information about storage accounts, see [Azure storage account](../articles/storage/storage-create-storage-account.md).
+- **Conta de Armazenamento:** todos os acessos ao Storage do Azure são efetuados através de uma conta de armazenamento. Esta conta de armazenamento pode ser uma **Conta de armazenamento para fins gerais** ou uma **Conta de armazenamento de Blobs**, que é especializada para armazenar objetos/blobs. Para obter mais informações sobre as contas de armazenamento, veja [Conta de armazenamento do Azure](../articles/storage/storage-create-storage-account.md).
 
-- **Container:** A container provides a grouping of a set of blobs. All blobs must be in a container. An account can contain an unlimited number of containers. A container can store an unlimited number of blobs. Note that the container name must be lowercase.
+- **Contentor:** um contentor fornece um agrupamento de um conjunto de blobs. Todos os blobs tem de estar num contentor. Uma conta pode conter um número ilimitado de contentores. Um contentor pode armazenar um número ilimitado de blobs. Tenha em atenção que o nome do contentor tem de ser em minúsculas.
 
-- **Blob:** A file of any type and size. Azure Storage offers three types of blobs: block blobs, page blobs, and append blobs.
+- **Blob:** um ficheiro de qualquer tipo e tamanho. O Storage do Azure oferece três tipos de blobs: blobs de blocos, blobs de páginas e blobs de acréscimo.
 
-    *Block blobs* are ideal for storing text or binary files, such as documents and media files. *Append blobs* are similar to block blobs in that they are made up of blocks, but they are optimized for append operations, so they are useful for logging scenarios. A single block blob or append blob can contain up to 50,000 blocks of up to 4 MB each, for a total size of slightly more than 195 GB (4 MB X 50,000).
+    Os *blobs de blocos* são ideais para armazenar ficheiros de texto ou binários, como documentos e ficheiros multimédia. Os *blobs de acréscimo* são semelhantes aos blobs de blocos na medida em que são constituídos por blocos, mas estão otimizados para operações de acréscimo, sendo pois úteis para cenários de registo. Um único blob de blocos ou de acréscimo pode conter até 50 000 blocos com um máximo de 4 MB cada, para um tamanho total ligeiramente acima de 195 GB (4 MB X 50 000).
 
-    *Page blobs* can be up to 1 TB in size, and are more efficient for frequent read/write operations. Azure Virtual Machines use page blobs as OS and data disks.
+    Os *blobs de páginas* podem ter até 1 TB de tamanho e são mais eficientes para operações de leitura/escrita frequentes. As Virtual Machines do Azure utilizam blobs de páginas como discos de dados e SO.
 
-    For details about naming containers and blobs, see [Naming and Referencing Containers, Blobs, and Metadata](https://msdn.microsoft.com/library/azure/dd135715.aspx).
+    Para obter detalhes sobre os nomes dos contentores e dos blobs, veja [Naming and Referencing Containers, Blobs, and Metadata (Nomenclatura e Referência de Contentores, Blobs e Metadados)](https://msdn.microsoft.com/library/azure/dd135715.aspx).
 
 
 [Blob1]: ./media/storage-blob-concepts-include/blob1.jpg
+
+
+
+<!--HONumber=Jun16_HO2-->
+
+

@@ -1,9 +1,15 @@
-|  | **Classic Deployment** | **Resource Manager Deployment** | **Classic to Resource Manager Deployments** |
+|  | **Implementação Clássica** | **Implementação Resource Manager** | **Clássica para Implementações Resource Manager** |
 |----------------------------------------|-------------|----------------------|---------------------------------|
-| **Classic Portal** | [Article](../articles/vpn-gateway/virtual-networks-configure-vnet-to-vnet-connection.md)  |  Not Supported |  Not Supported |
-| **Azure Portal** |  Not Supported | Supported+ |  Not Supported |
-| **PowerShell** | Supported | [Article](../articles/vpn-gateway/vpn-gateway-vnet-vnet-rm-ps.md) | [Article](../articles/virtual-network/virtual-networks-arm-asm-s2s.md)
+| **Portal Clássico** | [Artigo](../articles/vpn-gateway/virtual-networks-configure-vnet-to-vnet-connection.md)  |  Não Suportado |  Não Suportado |
+| **Portal do Azure** |  Não Suportado | Suportado+ |  Não Suportado |
+| **PowerShell** | Suportado | [Artigo](../articles/vpn-gateway/vpn-gateway-vnet-vnet-rm-ps.md) | [Artigo](../articles/virtual-network/virtual-networks-arm-asm-s2s.md)
 
-(+) denotes this deployment method is available only for VNets in the same subscription.
+(+) indica que este método de implementação só está disponível para VNets na mesma subscrição.
+
+
+
+
+
+<!--HONumber=Jun16_HO2-->
 
 

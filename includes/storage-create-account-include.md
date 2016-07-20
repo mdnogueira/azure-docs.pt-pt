@@ -1,8 +1,13 @@
-## Create an Azure storage account
+## Criar uma conta de armazenamento do Azure
 
-The easiest way to create your first Azure storage account is by using the [Azure Portal](https://portal.azure.com). To learn more, see [Create a storage account](../articles/storage/storage-create-storage-account.md#create-a-storage-account).
+A forma mais fácil de criar a primeira conta de armazenamento do Azure é com o [Portal do Azure](https://portal.azure.com). Para saber mais, veja [Criar uma conta de armazenamento](../articles/storage/storage-create-storage-account.md#create-a-storage-account).
 
-You can also create an Azure storage account by using [Azure PowerShell](../articles/storage/storage-powershell-guide-full.md), [Azure CLI](../articles/storage/storage-azure-cli.md), or the [Storage Resource Provider Client Library for .NET](https://msdn.microsoft.com/library/azure/mt131037.aspx).
+Também pode criar uma conta de armazenamento do Azure com o [Azure PowerShell](../articles/storage/storage-powershell-guide-full.md), o [CLI do Azure](../articles/storage/storage-azure-cli.md) ou a [Biblioteca de Clientes do Fornecedor de Recursos de Armazenamento para .NET](https://msdn.microsoft.com/library/azure/mt131037.aspx).
 
-If you prefer not to create a storage account at this time, you can also use the Azure storage emulator to run and test your code in a local environment. For more information, see [Use the Azure Storage Emulator for Development and Testing](../articles/storage/storage-use-emulator.md).
+Se preferir não criar uma conta de armazenamento neste momento, pode também utilizar o emulador de armazenamento do Azure para executar e testar o seu código num ambiente local. Para obter mais informações, veja [Utilizar o Emulador de Armazenamento do Azure para Programação e Teste](../articles/storage/storage-use-emulator.md).
  
+
+
+<!--HONumber=Jun16_HO2-->
+
+

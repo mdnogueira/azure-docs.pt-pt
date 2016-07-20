@@ -1,7 +1,13 @@
 
 
-The mobile service project lets you run your new mobile service locally. This makes it easy to debug your service code before you even publish it to Azure.
+O projeto de serviços móveis permite-lhe executar o novo serviço móvel localmente. Este processo facilita a depuração do código do serviço ainda antes de o publicar no Azure.
 
-1. On your Windows PC, download your personalized server project, extract it, and then open it in Visual Studio.
+1. No PC Windows, transfira o projeto do servidor personalizado, extraia-o e abra-o no Visual Studio.
 
-2. Press the **F5** key to rebuild the project and start the mobile service locally. A web page is displayed after the mobile service starts successfully.
+2. Prima a tecla **F5** para reconstruir o projeto e iniciar o serviço móvel localmente. Após iniciar o serviço móvel com êxito, é apresentada uma página Web.
+
+
+
+<!--HONumber=Jun16_HO2-->
+
+

@@ -1,29 +1,35 @@
-To create a cache, first sign in to the [Azure Portal](https://portal.azure.com), and click **New**, **Data + Storage**, **Redis Cache**.
+Para criar uma cache, comece por iniciar sessão no [Portal do Azure](https://portal.azure.com) e clique em **Novo**, **Dados + Armazenamento**, **Cache de Redis**.
 
->[AZURE.NOTE] If you don't have an Azure account, you can [Open an Azure account for free](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=redis_cache_hero) in just a couple of minutes.
+>[AZURE.NOTE] Se não tiver uma conta do Azure, pode [Criar uma conta do Azure gratuita](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=redis_cache_hero) em apenas alguns minutos.
 
-![New cache](media/redis-cache-create/redis-cache-new-cache-menu.png)
+![Nova cache](media/redis-cache-create/redis-cache-new-cache-menu.png)
 
->[AZURE.NOTE] In addition to creating caches in the Azure Portal, you can also create them using ARM templates, PowerShell, or Azure CLI.
+>[AZURE.NOTE] Para além de criar caches no Portal do Azure, pode também criá-las com os modelos ARM, o PowerShell ou a CLI do Azure.
 >
->-	To create a cache using ARM templates, see [Create a Redis cache using a template](../articles/redis-cache/cache-redis-cache-arm-provision.md).
->-	To create a cache using Azure PowerShell, see [Manage Azure Redis Cache with Azure PowerShell](../articles/redis-cache/cache-howto-manage-redis-cache-powershell.md).
->-	To create a cache using Azure CLI, see [How to create and manage Azure Redis Cache using the Azure Command-Line Interface (Azure CLI)](../articles/redis-cache/cache-manage-cli.md).
+>-  Para criar uma cache com os modelos ARM, veja [Criar uma cache de Redis com um modelo](../articles/redis-cache/cache-redis-cache-arm-provision.md).
+>-  Para criar uma cache com o Azure PowerShell, veja [Gerir Cache de Redis do Azure com o Azure PowerShell](../articles/redis-cache/cache-howto-manage-redis-cache-powershell.md).
+>-  Para criar uma cache com a CLI do Azure, veja [Como criar e gerir uma Cache de Redis do Azure com a Interface de Linha de Comandos do Azure (CLI do Azure)](../articles/redis-cache/cache-manage-cli.md).
 
-In the **New Redis Cache** blade, specify the desired configuration for the cache.
+No painel **Nova Cache de Redis**, especifique a configuração pretendida para a cache.
 
-![Create cache](media/redis-cache-create/redis-cache-cache-create.png) 
+![Criar cache](media/redis-cache-create/redis-cache-cache-create.png) 
 
--	In **Dns name**, enter a cache name to use for the cache endpoint. The cache name must be a string between 1 and 63 characters and contain only numbers, letters, and the `-` character. The cache name cannot start or end with the `-` character, and consecutive `-` characters are not valid.
--	For **Subscription**, select the Azure subscription that you want to use for the cache. If your account has only one subscription, it will be automatically selected and the **Subscription** drop-down will not be displayed.
--	In **Resource group**, select or create a resource group for your cache. For more information, see [Using Resource groups to manage your Azure resources](../articles/resource-group-overview.md). 
--	Use **Location** to specify the geographic location in which your cache is hosted. For the best performance, Microsoft strongly recommends that you create the cache in the same region as the cache client application.
--	Use **Pricing Tier** to select the desired cache size and features.
--	**Redis cluster** allows you to create caches larger than 53 GB and to shard data across multiple Redis nodes. For more information, see [How to configure clustering for a Premium Azure Redis Cache](../articles/redis-cache/cache-how-to-premium-clustering.md).
--	**Redis persistence** offers the ability to persist your cache to an Azure Storage account. For instructions on configuring persistence, see [How to configure persistence for a Premium Azure Redis Cache](../articles/redis-cache/cache-how-to-premium-persistence.md).
--	**Virtual Network** provides enhanced security and isolation by restricting access to your cache to only those clients within the specified Azure Virtual Network. You can use all the features of VNet such as subnets, access control policies, and other features to further restrict access to Redis. For more information, see [How to configure Virtual Network support for a Premium Azure Redis Cache](../articles/redis-cache/cache-how-to-premium-vnet.md).
+-   Em **Nome DNS**, introduza um nome da cache a utilizar para o ponto final da cache. O nome da cache tem de ser uma cadeia entre 1 e 63 carateres e conter apenas números, letras e o caráter `-`. O nome da cache não pode começar nem terminar com o caráter `-` e os carateres `-` consecutivos não são válidos.
+-   Para **Subscrição**, selecione a subscrição do Azure que pretende utilizar para a cache. Se a sua conta tiver apenas uma subscrição, esta será selecionada automaticamente e não será apresentado o menu pendente **Subscrição**.
+-   Em **Grupo de recursos**, selecione ou crie um grupo de recursos para a sua cache. Para obter mais informações, veja [Utilizar Grupos de recursos para gerir os recursos do Azure](../articles/resource-group-overview.md). 
+-   Utilize **Localização** para especificar a localização geográfica onde a sua cache será alojada. Para obter o melhor desempenho, a Microsoft recomenda vivamente que crie a cache na mesma região da aplicação cliente da cache.
+-   Utilize **Escalão de Preço** para selecionar o tamanho e as funcionalidades que pretende para a cache.
+-   O **Cluster de Redis** permite-lhe criar caches superiores a 53 GB e dividir os dados entre os diversos nós de Redis. Para obter mais informações, veja [Como configurar o clustering de uma Cache de Redis do Azure Premium](../articles/redis-cache/cache-how-to-premium-clustering.md).
+-   A **Persistência Redis** permite-lhe persistir a cache numa conta de armazenamento do Azure. Para obter instruções sobre como configurar a persistência, veja [Como configurar a persistência para uma Cache de Redis do Azure Premium](../articles/redis-cache/cache-how-to-premium-persistence.md).
+-   A **Rede Virtual** fornece segurança e isolamento melhorados ao restringir o acesso à cache apenas aos clientes dentro da Rede Virtual do Azure especificada. Pode utilizar todas as funcionalidades de VNet, como sub-redes, políticas de controlo de acesso e outras funcionalidades adicionais para restringir ainda mais o acesso ao Redis. Para obter mais informações, veja [Como configurar o suporte da Rede Virtual de uma Cache de Redis do Azure Premium](../articles/redis-cache/cache-how-to-premium-vnet.md).
 
-Once the new cache options are configured, click **Create**. It can take a few minutes for the cache to be created. To check the status, you can monitor the progress on the startboard. After the cache has been created, your new cache has a **Running** status and is ready for use with default settings.
+Uma vez configuradas as opções da nova cache, clique em **Criar**. A criação da cache pode demorar alguns minutos. Para verificar o estado, pode monitorizar o progresso no Startboard. Uma vez criada, a nova cache tem um estado **Em Execução** e está pronta para ser utilizada com as predefinições.
 
-![Cache created](media/redis-cache-create/redis-cache-cache-created.png)
+![Cache criada](media/redis-cache-create/redis-cache-cache-created.png)
+
+
+
+
+<!--HONumber=Jun16_HO2-->
+
 

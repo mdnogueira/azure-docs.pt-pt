@@ -8,38 +8,43 @@ As of circa 2016-04-11, the following topics might include this include:
 articles/sql-database/sql-database-get-started-tutorial.md
 
 -->
-## Create an Azure SQL Database logical server
+## Criar um servidor lógico da SQL Database do Azure
 
-Use the following steps in the Azure portal to create an Azure SQL Database logical server.
+Utilize os seguintes passos no portal do Azure para criar um servidor lógico da SQL Database do Azure.
 
-1. If not currently connected, connect to the [Azure portal](http://portal.azure.com).
-2. Click **New** , type **SQL Database** and then click **SQL Database (new logical server)**
+1. Se não estiver atualmente ligado, ligue-se ao [Portal do Azure](http://portal.azure.com).
+2. Clique em **Novo**, escreva **SQL Database** e clique em ** SQL Database (novo servidor lógico)**
 
-      ![new logocal server](./media/sql-database-create-new-server-portal/sql-database-create-new-server-portal-1.png)
+      ![novo servidor lógico](./media/sql-database-create-new-server-portal/sql-database-create-new-server-portal-1.png)
 
-3. Click SQL Database (new logical server).
+3. Clique em SQL Database (novo servidor lógico).
 
-      ![new logccal server](./media/sql-database-create-new-server-portal/sql-database-create-new-server-portal-2.png)
+      ![novo servidor lógico](./media/sql-database-create-new-server-portal/sql-database-create-new-server-portal-2.png)
    
-4. Click **Create** to open a template to create an empty logical server that can host single databases and elastic database pools.
+4. Clique em **Criar** para abrir um modelo para criar um servidor lógico vazio para alojar bases de dados individuais e conjuntos de bases de dados elásticas.
 
-      ![new logical server](./media/sql-database-create-new-server-portal/sql-database-create-new-server-portal-3.png)
+      ![novo servidor lógico](./media/sql-database-create-new-server-portal/sql-database-create-new-server-portal-3.png)
 
-5. Provide the values for the following server properties:
+5. Forneça os valores para as seguintes propriedades do servidor:
 
- - Server name
- - Server admin login
- - Password
- - Subscription (only if have multiple subscriptions)
- - Resource group (new or existing)
- - Location
+ - Nome do servidor
+ - Início de sessão de administrador do servidor
+ - Palavra-passe
+ - Subscrição (apenas se tiver várias subscrições)
+ - Grupo de recursos (novo ou existente)
+ - Localização
 
         ![new logical server](./media/sql-database-create-new-server-portal/sql-database-create-new-server-portal-4.png)
 
-6.  Click **Create** and in the notification area, you can see that deployment has started.
+6.  Clique em **Criar** e, na área de notificação, pode ver que a implementação foi iniciada.
 
-       ![new logical server](./media/sql-database-create-new-server-portal/sql-database-create-new-server-portal-5.png)
+       ![novo servidor lógico](./media/sql-database-create-new-server-portal/sql-database-create-new-server-portal-5.png)
 
-7. Wait for deployment to finish before continuing to the next step.
+7. Aguarde o fim da implementação antes avançar para o passo seguinte.
 
        ![new logical server](./media/sql-database-create-new-server-portal/sql-database-create-new-server-portal-6.png)
+
+
+<!--HONumber=Jun16_HO2-->
+
+

@@ -1,28 +1,34 @@
-## What is Queue Storage?
+## O que é o Armazenamento de Filas?
 
-Azure Queue storage is a service for storing large numbers of messages that can be accessed from anywhere in the world via authenticated calls using HTTP or HTTPS. A single queue message can be up to 64 KB in size, and a queue can contain millions of messages, up to the total capacity limit of a storage account.
+O Armazenamento de Filas do Azure é um serviço para armazenar um grande número de mensagens que podem ser acedidas a partir de qualquer local no mundo através de chamadas autenticadas com HTTP ou HTTPS. Uma mensagem de fila única pode ter até 64 KB e uma fila pode conter milhões de mensagens, até ao limite da capacidade total de uma conta de armazenamento.
 
-Common uses of Queue storage include:
+Utilizações comuns do Armazenamento de filas:
 
--   Creating a backlog of work to process asynchronously
--   Passing messages from an Azure web role to an Azure worker role
+-   Criação de um registo de tarefas pendentes do trabalho para processamento de forma assíncrona
+-   Transmissão de mensagens de uma função da Web do Azure para uma função de trabalho do Azure
 
-## Queue Service Concepts
+## Conceitos do Serviço Fila
 
-The Queue service contains the following components:
+O serviço Fila contém os seguintes componentes:
 
 ![Queue1](./media/storage-queue-concepts-include/queue1.png)
 
 
-- **URL format:** Queues are addressable using the following URL format:   
-	http://`<storage account>`.queue.core.windows.net/`<queue>` 
+- **Formato do URL:** os ficheiros são endereçáveis com o seguinte formato de URL:   
+    http://`<storage account>`.queue.core.windows.net/`<queue>` 
       
-	The following URL addresses a queue in the diagram:  
-		
-		http://myaccount.queue.core.windows.net/images-to-download
+    O seguinte URL endereça uma fila no diagrama:  
+        
+        http://myaccount.queue.core.windows.net/images-to-download
 
-- **Storage Account:** All access to Azure Storage is done through a storage account. See [Azure Storage Scalability and Performance Targets](../articles/storage/storage-scalability-targets.md) for details about storage account capacity.
+- **Conta de Armazenamento:** todos os acessos ao Storage do Azure são efetuados através de uma conta de armazenamento. Veja [Metas de Desempenho e Escalabilidade do Storage do Azure](../articles/storage/storage-scalability-targets.md) para obter detalhes acerca da capacidade das contas de armazenamento.
 
-- **Queue:** A queue contains a set of messages. All messages must be in a queue. Note that the queue name must be all lowercase. For information on naming queues, see [Naming Queues and Metadata](https://msdn.microsoft.com/library/azure/dd179349.aspx).
+- **Fila:** uma fila contém um conjunto de mensagens. Todas as mensagens têm de estar numa fila. Tenha em atenção que o nome da fila tem de estar todo em minúsculas. Para obter informações sobre a nomenclatura de filas, veja [Nomenclatura de Filas e Metadados](https://msdn.microsoft.com/library/azure/dd179349.aspx).
 
-- **Message:** A message, in any format, of up to 64 KB. The maximum time that a message can remain in the queue is 7 days.
+- **Mensagem:** uma mensagem, em qualquer formato, até 64 KB. O tempo máximo que uma mensagem pode permanecer na fila de espera é de 7 dias.
+
+
+
+<!--HONumber=Jun16_HO2-->
+
+

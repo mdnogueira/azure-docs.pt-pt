@@ -1,31 +1,37 @@
 <!--author=SharS last changed: 02/04/2016-->
 
-#### To create a volume
+#### Para criar um volume
 
-1. On the device **Quick Start** page, click **Add a volume**. This starts the Add a volume wizard.
+1. Na página **Início Rápido** do dispositivo, clique em **Adicionar um volume**. Esta ação inicia o assistente Adicionar um volume.
 
-2. In the Add a volume wizard, under **Basic Settings**, do the following:
-   1. Supply a **Name** for your volume.
-   2. Specify the **Provisioned Capacity** for your volume in GB or TB. The volume capacity must be between 1 GB and 64 TB for a physical device.
-   3. On the drop-down list, select the **Usage Type** for your volume. 
-   4. If you are using this volume for archival data, select the **Use this volume for less frequently accessed archival data** check box. For all other use cases, simply select **Tiered Volume**. (Tiered volumes were formerly called primary volumes).
+2. No assistente Adicionar um volume, em **Definições Básicas**, faça o seguinte:
+   1. Forneça um **Nome** para o volume.
+   2. Especifique a **Capacidade Aprovisionada** para o volume em GB ou TB. A capacidade do volume tem de estar entre 1 GB e 64 TB para um dispositivo físico.
+   3. Na lista pendente, selecione o **Tipo de Utilização** do volume. 
+   4. Se estiver a utilizar este volume de dados de arquivo, selecione a caixa de verificação **Utilizar este volume para dados de arquivo acedidos com menos frequência**. Para todos os outros casos de utilização selecione simplesmente **Volume em Camadas**. (Os volumes em camadas chamavam-se anteriormente volumes principais).
 
-        ![Add volume](./media/storsimple-create-volume/ScreenshotUpdate1VolumeFlow.png)
+        ![Adicionar volume](./media/storsimple-create-volume/ScreenshotUpdate1VolumeFlow.png)
 
-    4. Click the arrow icon ![arrow-icon](./media/storsimple-create-volume/HCS_ArrowIcon-include.png) to go to the next page.
+    4. Clique no ícone de seta ![ícone de seta](./media/storsimple-create-volume/HCS_ArrowIcon-include.png) para ir para a página seguinte.
 
-3. In the **Additional Settings** dialog box, add a new access control record (ACR):
-   1. Supply a **Name** for your ACR.
-   2. Under **iSCSI Initiator Name**, provide the iSCSI Qualified Name (IQN) of your Windows host. If you don't have the IQN, go to [Get the IQN of a Windows Server host](#get-the-iqn-of-a-windows-server-host).
-   3. We recommend that you enable a default backup by selecting the **Enable a default backup for this volume** check box. The default backup will create a policy that executes at 22:30 each day (device time) and creates a cloud snapshot of this volume.
+3. Na caixa de diálogo **Definições Adicionais**, adicione um novo registo de controlo de acesso (ACR):
+   1. Forneça um **Nome** para o ACR.
+   2. Em **Nome do Iniciador iSCSI**, forneça o Nome Qualificado (IQN) do iSCSI do seu anfitrião do Windows. Se não tiver o IQN, veja [Get the IQN of a Windows Server host (Obter o IQN de um anfitrião do Windows Server)](#get-the-iqn-of-a-windows-server-host).
+   3. Recomendamos que ative uma cópia de segurança predefinida selecionando a caixa de verificação **Ativar uma cópia de segurança predefinido para este volume**. A cópia de segurança predefinida criará uma política que é executada às 22:30 todos os dias (hora do dispositivo) e cria um instantâneo na nuvem do volume.
 
-        > [AZURE.NOTE] After the backup is enabled here, it cannot be reverted. You will need to edit the volume to modify this setting.
+        > [AZURE.NOTE] Após ativar aqui a cópia de segurança, não será possível reverter a ação. Terá de editar o volume para modificar a definição.
 
-        ![Add volume](./media/storsimple-create-volume/AddVolume2-include.png)
+        ![Adicionar volume](./media/storsimple-create-volume/AddVolume2-include.png)
 
-4. Click the check icon ![check icon](./media/storsimple-create-volume/HCS_CheckIcon-include.png). A volume will be created with the specified settings.
+4. Clique no ícone de verificação ![ícone de verificação](./media/storsimple-create-volume/HCS_CheckIcon-include.png). Será criado um volume com as definições especificadas.
 
-![Video available](./media/storsimple-create-volume/Video_icon.png) **Video available**
+![Vídeo disponível](./media/storsimple-create-volume/Video_icon.png) **Vídeo disponível**
 
-To watch a video that demonstrates how to create a StorSimple volume, click [here](https://azure.microsoft.com/documentation/videos/create-a-storsimple-volume/).
+Para ver um vídeo que demonstra como criar um volume do StorSimple, clique [aqui](https://azure.microsoft.com/documentation/videos/create-a-storsimple-volume/).
+
+
+
+
+<!--HONumber=Jun16_HO2-->
+
 

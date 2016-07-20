@@ -1,36 +1,42 @@
 
-###Create a Google Cloud Messaging project with API key
+###Criar um projeto do Google Cloud Messaging com a chave de API
 
->[AZURE.NOTE] To complete this procedure, you must have a Google account that has a verified email address. To create a new Google account, go to <a href="http://go.microsoft.com/fwlink/p/?LinkId=268302" target="_blank">accounts.google.com</a>.
+>[AZURE.NOTE] Para concluir este procedimento, tem de ter uma conta do Google que tenha um endereço de correio eletrónico verificado. Para criar uma nova conta do Google, aceda a <a href="http://go.microsoft.com/fwlink/p/?LinkId=268302" target="_blank">accounts.google.com</a>.
 
-1. Navigate to the [Google Cloud Console](https://console.developers.google.com/project) and sign-in with your Google account credentials.
+1. Navegue até à [Consola do Google na Nuvem](https://console.developers.google.com/project) e inicie sessão com as suas credenciais da conta do Google.
 
-2. Click **Go to project**, and then click **Create Project**.
+2. Clique em **Ir para o projeto** e, em seguida, em **Criar Projeto**.
 <!--
-   	![](./media/mobile-engagement-enable-google-cloud-messaging/new-project.png)
+    ![](./media/mobile-engagement-enable-google-cloud-messaging/new-project.png)
 
-   	![](./media/mobile-engagement-enable-google-cloud-messaging/new-project-2.png)   
+    ![](./media/mobile-engagement-enable-google-cloud-messaging/new-project-2.png)   
 -->
-3. Enter a project name.
+3. Introduza um nome de projeto.
 
-4. Make a note of the project number which appears under the **Project name** text box. You will need it later in the tutorial to populate in the Android Manifest file.
-   	![](./media/mobile-engagement-enable-google-cloud-messaging/project-number.png)   
-5. Click **Create**.
+4. Anote o número de projeto que surge sob a caixa de texto **Nome do projeto**. Irá precisar dele mais tarde no tutorial para preencher no ficheiro de Manifesto do Android.
+    ![](./media/mobile-engagement-enable-google-cloud-messaging/project-number.png)   
+5. Clique em **Criar**.
 
-6. In the left column, make sure **Overview** is selected, and under Mobile APIs click **Google Cloud Messaging**. Then on the next page click **Enable**.
+6. Na coluna esquerda, verifique se **Descrição geral** está selecionada e, em APIs Móveis, clique em **Google Cloud Messaging**. Na página seguinte, clique em **Ativar**.
 
-	![](./media/mobile-engagement-enable-google-cloud-messaging/enable-GCM.png)
+    ![](./media/mobile-engagement-enable-google-cloud-messaging/enable-GCM.png)
 <!--
-	![](./media/mobile-engagement-enable-google-cloud-messaging/enable-gcm-2.png)
+    ![](./media/mobile-engagement-enable-google-cloud-messaging/enable-gcm-2.png)
 -->
-7. On the next page, click **Go to Credentials**, and on the following page, select **Google Cloud Messaging** from the first dropdown box and **Web server** from the second one, and then click **What credentials do I need?**
+7. Na página seguinte, clique em **Ir para Credenciais** e, na página apresentada, selecione **Google Cloud Messaging** na primeira caixa pendente e **servidor Web** na segunda e, em seguida, clique em **Que credenciais que preciso?**
 
-   	![](./media/mobile-engagement-enable-google-cloud-messaging/create-server-key.png)
+    ![](./media/mobile-engagement-enable-google-cloud-messaging/create-server-key.png)
 
-8. In **Add credentials to your project** page, click **Create API key**.
+8. Na página **Adicionar credenciais ao projeto**, clique em **Criar chave de API**.
 
-   	![](./media/mobile-engagement-enable-google-cloud-messaging/create-server-key5.png)
+    ![](./media/mobile-engagement-enable-google-cloud-messaging/create-server-key5.png)
 <!--
-   	![](./media/mobile-engagement-enable-google-cloud-messaging/create-server-key6.png)
+    ![](./media/mobile-engagement-enable-google-cloud-messaging/create-server-key6.png)
 -->
-9. Make a note of the **API KEY** value. You will use this API key value later to configure in the "Native Push" section. Now click **Done**.
+9. Anote o valor da **CHAVE DE API**. Irá utilizar este valor de chave de API mais tarde para configurar a secção “Push Nativo”. Agora, clique em **Concluído**.
+
+
+
+<!--HONumber=Jun16_HO2-->
+
+

@@ -1,14 +1,20 @@
-This section shows you how to connect your app to the Mobile Engagement backend by using the Mobile Engagement's real-time monitoring feature. 
+Esta secção mostra como ligar a aplicação ao back-end do Mobile Engagement com a funcionalidade de monitorização em tempo real do Mobile Engagement. 
 
-1. In your **Azure Mobile Engagement** account, make sure you select the app you wish to monitor and manage in the **Mobile Engagement** portal. Navigate to your Mobile Engagement portal by clicking the **Engage** button at the bottom. 
+1. Na conta do **Azure Mobile Engagement**, verifique se selecionou a aplicação que pretende monitorizar e gerir no portal do **Mobile Engagement**. Navegue até ao portal do Mobile Engagement clicando no botão **Iniciar** na parte inferior. 
 
-	 ![](./media/mobile-engagement-connect-app-with-monitor/engage-button.png)
+     ![](./media/mobile-engagement-connect-app-with-monitor/engage-button.png)
 
-2. You will land in the Mobile Engagement portal. If the Monitor tab is not selected, click on the **Monitor**.
+2. Será apresentado o portal do Mobile Engagement. Se o separador Monitor não estiver selecionado, clique em **Monitor**.
 
-3. The monitor is ready to show you any device in real time, which will start your app.
-	 
-4. Start your app either in the emulator/simulator or on a connected device. You should see one session in the monitor if your integration is correct which means that your app is now connected to the Mobile Engagement backend and is sending data to it.  
-	
-	 ![](./media/mobile-engagement-connect-app-with-monitor/monitor.png)
+3. O monitor está pronto para lhe mostrar qualquer dispositivo em tempo real, que irá iniciar a sua aplicação.
+     
+4. Inicie a sua aplicação no emulador/simulator ou num dispositivo ligado. Deverá ver uma sessão no monitor se a integração estiver correta, o que significa que a aplicação está agora ligada ao back-end do Mobile Engagement e está a enviar-lhe dados.  
+    
+     ![](./media/mobile-engagement-connect-app-with-monitor/monitor.png)
+
+
+
+
+<!--HONumber=Jun16_HO2-->
+
 

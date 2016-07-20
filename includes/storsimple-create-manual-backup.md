@@ -2,24 +2,30 @@
 <!--author=SharS last changed: 9/15/15-->
 
 
-#### To create a manual backup
+#### Para criar uma cópia de segurança manual
 
-1. On the **Devices** page, go to the **Backup Policies** tab. This tab lists all the backup policies in a tabular format, including the policy for the volume that you want to back up.
+1. Na página **Dispositivos**, aceda ao separador **Políticas de Cópia de Segurança**. Este separador lista todas as políticas de cópia de segurança em formato tabular, incluindo a política do volume do qual pretende criar cópias de segurança.
 
-2. Select the policy by clicking anywhere in the corresponding row except for the first column. At the bottom of the page, click **Take backup**. The button will expand to show the backup options: local snapshot and cloud snapshot. 
+2. Selecione a política clicando em qualquer parte na linha correspondente, exceto na primeira coluna. Na parte inferior da página, clique em **Criar cópia de segurança**. O botão será expandido para mostrar as opções de cópia de segurança: instantâneo local e instantâneo na nuvem. 
 
-3. When you choose either of these options, you will be prompted for confirmation. Click **Yes**. 
+3. Ao escolher uma destas opções, ser-lhe-á solicitada a confirmação. Clique em **Sim**. 
 
-    ![Create manual backup](./media/storsimple-create-manual-backup/HCS_CreateManualBackup1-include.png)
+    ![Criar uma cópia de segurança manual](./media/storsimple-create-manual-backup/HCS_CreateManualBackup1-include.png)
  
-    This will start a job to create a snapshot. You will see a notification at the bottom of the page after the job is successfully created.
+    Esta ação iniciará uma tarefa para criar um instantâneo. Verá uma notificação na parte inferior da página quando a tarefa tiver sido criada com êxito.
 
-4. To monitor the job, click **View Job** in the notification area (at the bottom of the page). 
+4. Para monitorizar a tarefa, clique em **Ver Tarefa** na área de notificação (na parte inferior da página). 
 
-    ![Monitor the manual backup](./media/storsimple-create-manual-backup/HCS_CreateManualBackup2-include.png)
+    ![Monitorizar a cópia de segurança manual](./media/storsimple-create-manual-backup/HCS_CreateManualBackup2-include.png)
 
-5. After the backup job is finished, go to the **Backup catalog** tab.
+5. Uma vez concluída a tarefa da cópia de segurança, aceda ao separador **Catálogo de cópias de segurança**.
 
-6. Set the filter selections to the appropriate device, backup policy, and time range. Click the check icon ![check icon](./media/storsimple-create-manual-backup/HCS_CheckIcon-include.png) after setting the filters.
+6. Defina as seleções de filtro para o dispositivo, a política de cópia de segurança e o intervalo de tempo adequados. Clique no ícone de verificação ![ícone de verificação](./media/storsimple-create-manual-backup/HCS_CheckIcon-include.png) depois de definir os filtros.
 
-  The backup should appear in the list of backup sets that is displayed in the catalog.
+  A cópia de segurança deverá aparecer na lista de conjuntos de cópias de segurança que é apresentada no catálogo.
+
+
+
+<!--HONumber=Jun16_HO2-->
+
+

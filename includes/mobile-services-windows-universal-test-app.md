@@ -1,14 +1,19 @@
 
-1. Press the F5 key to rebuild the project and start the Windows Store app.
+1. Prima a tecla F5 para reconstruir o projeto e iniciar a aplicação da Loja Windows.
 
-2. In the app, type meaningful text, such as *Complete the tutorial*, in **Insert a TodoItem**, and then click **Save**.
+2. Na aplicação, digite um texto significativo, tal como *Concluir o tutorial*, em **Inserir um TodoItem** e, em seguida, clique em **Guardar**.
 
-	![](./media/mobile-services-windows-universal-test-app/mobile-quickstart-startup.png)
+    ![](./media/mobile-services-windows-universal-test-app/mobile-quickstart-startup.png)
 
-	This sends a POST request to the new mobile service hosted in Azure.
+    Esta ação envia um pedido POST ao novo serviço móvel alojado no Azure.
 
-3. Stop debugging and change the default start up project in the universal Windows solution to the Windows Phone Store app and press F5 again.
+3. Pare a depuração e altere o projeto de arranque predefinido na solução Windows universal para a aplicação da Loja do Windows Phone e prima novamente F5.
 
-	![](./media/mobile-services-windows-universal-test-app/mobile-quickstart-completed-wp8.png)
-	
-	Notice that data saved from the previous step is loaded from the mobile service after the app starts.
+    ![](./media/mobile-services-windows-universal-test-app/mobile-quickstart-completed-wp8.png)
+    
+    Repare que os dados guardados no passo anterior são carregados do serviço móvel depois de a aplicação iniciar.
+
+
+<!--HONumber=Jun16_HO2-->
+
+

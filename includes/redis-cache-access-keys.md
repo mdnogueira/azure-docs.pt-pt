@@ -1,15 +1,20 @@
-To connect to the cache, your cache clients need the host name, ports, and keys. Some clients may refer to these items by slightly different names. To retrieve these items, [browse](../articles/redis-cache/cache-configure.md#configure-redis-cache-settings) to your cache in the [Azure portal](https://portal.azure.com) and click **Settings** or **All settings**.
+Para se ligarem à cache, os seus clientes de cache precisam das portas, das chaves e do nome do anfitrião. Alguns clientes podem mencionar esses itens por nomes ligeiramente diferentes. Para obter estes itens, [navegue](../articles/redis-cache/cache-configure.md#configure-redis-cache-settings) até à sua cache no [Portal do Azure](https://portal.azure.com) e clique em **Definições** ou em **Todas as definições**.
 
-![Redis cache settings](media/redis-cache-access-keys/redis-cache-settings.png)
+![Definições da cache de Redis](media/redis-cache-access-keys/redis-cache-settings.png)
 
-### Host name and ports
+### Portas e nome do anfitrião
 
-To access the host name and ports click **Properties**.
+Para aceder às portas e ao nome do anfitrião, clique em **Propriedades**.
 
-![Redis cache properties](media/redis-cache-access-keys/redis-cache-properties.png)
+![Propriedades da cache de Redis](media/redis-cache-access-keys/redis-cache-properties.png)
 
-### Access keys
+### Chaves de acesso
 
-To retrieve the access keys, click **Access keys**.
+Para obter as chaves de acesso, clique em **Chaves de acesso**.
 
-![Redis cache access keys](media/redis-cache-access-keys/redis-cache-access-keys.png)
+![Chaves de acesso da cache de Redis](media/redis-cache-access-keys/redis-cache-access-keys.png)
+
+
+<!--HONumber=Jun16_HO2-->
+
+

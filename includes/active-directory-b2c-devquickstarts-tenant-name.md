@@ -1,1 +1,6 @@
-> [AZURE.NOTE] Your B2C tenant's name is the domain that you entered during tenant creation, and is displayed on the directory blade in the Azure preview portal.  It usually ends with the suffix `.onmicrosoft.com`, for instance, `contosob2c.onmicrosoft.com`.
+> [AZURE.NOTE] O nome do inquilino B2C é o domínio que introduziu durante a criação do inquilino, sendo exibido no painel do diretório no Portal de Pré-Visualização do Azure.  Normalmente, termina com o sufixo `.onmicrosoft.com`, por exemplo, `contosob2c.onmicrosoft.com`.
+
+
+<!--HONumber=Jun16_HO2-->
+
+

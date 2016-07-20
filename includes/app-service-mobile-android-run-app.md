@@ -1,12 +1,18 @@
 
-1. Visit the [Azure Portal]. Click **Browse All** > **Mobile Apps** > the backend that you just created. In the mobile app settings, click **Quickstart** > **Android)**. Under **Configure your client application**, click **Download**. This downloads a complete Android project for an app pre-configured to connect to your backend. 
+1. Visite o [Portal do Azure]. Clique em **Procurar Tudo** > **Mobile Apps** > o back-end que acabou de criar. Nas definições da aplicação móvel, clique em **Início Rápido** > **Android)**. Em **Configurar a aplicação cliente**, clique em **Transferir**. Esta ação transfere um projeto Android concluído para uma aplicação pré-configurada para ligar ao back-end. 
 
-2. Open the project using **Android Studio**, using **Import project (Eclipse ADT, Gradle, etc.)**. Make sure you make this import selection to avoid any JDK errors.
+2. Abra o projeto com o **Android Studio**, utilizando **Importar projeto (Eclipse ADT, Gradle, etc.)**. Verifique se seleciona esta importação para evitar eventuais erros do JDK.
 
-3. Press the **Run 'app'** button to build the project and start the app in the Android simulator.
+3. Prima o botão **Executar “aplicação”** para criar o projeto e iniciar a aplicação no simulador do Android.
 
-4. In the app, type meaningful text, such as _Complete the tutorial_ and then click the 'Add' button. This sends a POST request to the Azure backend you deployed earlier. The backend inserts data from the request is into the TodoItem SQL table, and returns information about the newly stored items back to the mobile app. The mobile app displays this data in the list. 
+4. Na aplicação, digite um texto significativo, como _Concluir o tutorial_ e, em seguida, clique no botão “Adicionar”. Esta ação envia um pedido POST ao back-end do Azure que implementou anteriormente. Os dados de inserções de back-end do pedido encontram-se na tabela TodoItem SQL e devolve informações sobre os itens recentemente armazenados na aplicação móvel. A aplicação móvel apresenta estes dados na lista. 
 
     ![](./media/mobile-services-android-get-started/mobile-quickstart-startup-android.png)
 
-[Azure Portal]: https://portal.azure.com/
+[Portal do Azure]: https://portal.azure.com/
+
+
+
+<!--HONumber=Jun16_HO2-->
+
+

@@ -1,40 +1,46 @@
-## Connect to Azure SQL Database as a user
+## Ligar à SQL Database do Azure como um utilizador
 
-Use the following steps to connect to Azure SQL Database with SSMS as a user.
+Utilize os passos seguintes para ligar à SQL Database do Azure com o SSMS como um utilizador.
 
-1. Type "Microsoft SQL Server Management Studio" in the Windows search box, and then click the desktop app to start SSMS.
+1. Escreva “Microsoft SQL Server Management Studio” na caixa de pesquisa do Windows e clique na aplicação de ambiente de trabalho para iniciar o SSMS.
 
-2. In the Connect to Server window, enter the following information:
+2. Na janela Ligar ao Servidor, introduza as seguintes informações:
 
-- **Server type**: The default is database engine; do not change this value.
- - **Server name**: Enter the name of the server that hosts your SQL database in the followinbg format: *&lt;servername>*.**database.windows.net**
- - **Authentication type**: If you are just getting started, select SQL Authentication. If you have enabled Active Directory for your SQL Database logical server, you can select either Active Directory Password Authentication or Active Directory Integrated Authentication.
- - **User name**: If you selected either SQL Authentication or Active Directory Password Authentication, enter the name of a user with access to a database on the server.
- - **Password**: If you selected either SQL Authentication or Active Directory Password Authentication, enter the password for the specified user.
+- **Tipo de servidor**: o valor predefinido é motor de base de dados; não o altere.
+ - **Nome do servidor**: introduza o nome do servidor que aloja a base de dados SQL no seguinte formato: *&lt;nomedoservidor>*.**database.windows.net**
+ - **Tipo de autenticação**: se estiver a começar, selecione Autenticação SQL. Se tiver ativado o Active Directory para o servidor lógico da SQL Database, pode selecionar Autenticação por Palavra-passe do Active Directory ou Autenticação Integrada do Active Directory.
+ - **Nome de utilizador**: se tiver selecionado Autenticação SQL ou Autenticação por Palavra-passe do Active Directory, introduza o nome de um utilizador com acesso a uma base de dados no servidor.
+ - **Palavra-passe**: se tiver selecionado Autenticação SQL ou Autenticação por Palavra-passe do Active Directory, introduza a palavra-passe para o utilizador especificado.
    
        ![SQL Server Management Studio: Connect to SQL Database server](./media/sql-database-sql-server-management-studio-connect-user/connect-user-1.png)
 
-3. Click **Options** to specify the database to which you want to connect.
+3. Clique em **Opções** para especificar a base de dados à qual pretende ligar.
 
-      ![SQL Server Management Studio: Connect to SQL Database server](./media/sql-database-sql-server-management-studio-connect-user/connect-user-2.png)
+      ![SQL Server Management Studio: ligar ao servidor da SQL Database](./media/sql-database-sql-server-management-studio-connect-user/connect-user-2.png)
  
-4. In the **Connect to Database**, select the database to which you wish to connect.
+4. Em **Ligar à Base de Dados**, selecione a base de dados à qual pretende ligar.
 
-     ![SQL Server Management Studio: Connect to SQL Database server](./media/sql-database-sql-server-management-studio-connect-user/connect-user-3.png)
+     ![SQL Server Management Studio: ligar ao servidor da SQL Database](./media/sql-database-sql-server-management-studio-connect-user/connect-user-3.png)
 
-5. Click **Connect**.
+5. Clique em **Ligar**.
  
-6. If your client's IP address does not have access to the SQL Database logical server, you will be prompted to sign in to an Azure account and create a server-level firewall rule. If you are an Azure subscription administrator, Click **Sign in** to create a server-level firewall rule. If not, have an administrator create either a server-level firewall rule or a database-level firewall rule in the database to which you are trying to connect.
+6. Se o endereço IP do cliente não tiver acesso ao servidor lógico da SQL Database, ser-lhe-á pedido que inicie sessão numa conta do Azure e que crie uma regra de firewall ao nível do servidor. Se for um administrador de subscrição do Azure, clique em **Iniciar sessão** para criar uma regra de firewall ao nível do servidor. Caso contrário, solicite a um administrador que crie uma regra de firewall ao nível do servidor ou uma regra de firewall ao nível da base de dados na base de dados a qual está a tentar ligar.
  
-      ![SQL Server Management Studio: Connect to SQL Database server](./media/sql-database-sql-server-management-studio-connect-user/connect-user-4.png)
+      ![SQL Server Management Studio: ligar ao servidor da SQL Database](./media/sql-database-sql-server-management-studio-connect-user/connect-user-4.png)
  
-7. If your credentials grant you access to the specified database, Object Explorer opens and you can now perform administrative tasks or query data, depending upon the user permissions.
+7. Se as suas credenciais lhe concederem acesso à base de dados especificada, o Object Explorer será apresentado e poderá realizar tarefas administrativas ou consultar dados, consoante as permissões de utilizador.
   
-      ![SQL Server Management Studio: Connect to SQL Database server](./media/sql-database-sql-server-management-studio-connect-user/connect-user-5.png)
+      ![SQL Server Management Studio: ligar ao servidor da SQL Database](./media/sql-database-sql-server-management-studio-connect-user/connect-user-5.png)
       
  
- ## Troubleshoot connection failures
+ ## Resolver problemas relacionados com falhas de ligação
 
-The most common reason for connection failures are mistakes in the server name (remember, <*servername*> is the name of the logical server, not the database), the user name, or the password, as well as the server not allowing connections for security reasons. 
+A razão mais comum para as falhas de ligação prende-se com erros no nome do servidor (não se esqueça, <*nomedoservidor*> é o nome do servidor lógico, não da base de dados), no nome de utilizador ou na palavra-passe, bem como o servidor não permitir ligações por motivos de segurança. 
+
+
+
+
+
+<!--HONumber=Jun16_HO2-->
 
 

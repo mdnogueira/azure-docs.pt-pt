@@ -1,16 +1,22 @@
 
 
 
-The final stage of this tutorial is to build and run your new app.
+A etapa final deste tutorial consiste em criar e executar a nova aplicação.
 
-1. Browse to the location where you saved the compressed project files, expand the files on your computer, and open the project file using Xcode.
+1. Navegue até à localização onde guardou os ficheiros comprimidos do projeto , expanda-os no computador e abra o ficheiro do projeto com o Xcode.
 
-2. Press the **Run** button to build the project and start the app in the iPhone emulator.
+2. Prima o botão **Executar** para compilar o projeto e iniciar a aplicação no emulador do iPhone.
 
-3. In the app, type meaningful text, such as _Complete the tutorial_ and then click the plus (**+**) icon.
+3. Na aplicação, digite um texto significativo, tal como _Concluir o tutorial_, e clique no ícone de mais (**+**).
 
-   	![](./media/mobile-services-ios-run-app/mobile-quickstart-startup-ios.png)
+    ![](./media/mobile-services-ios-run-app/mobile-quickstart-startup-ios.png)
 
-   	This sends a POST request to the new mobile service hosted in Azure. Data from the request is inserted into the TodoItem table. Items stored in the table are returned by the mobile service, and the data is displayed in the list.
+    Esta ação envia um pedido POST ao novo serviço móvel alojado no Azure. Os dados do pedido são inseridos na tabela TodoItem. Os itens armazenados na tabela são devolvidos pelo serviço móvel e os dados são apresentados na lista.
 
- 	</div>
+    </div>
+
+
+
+<!--HONumber=Jun16_HO2-->
+
+

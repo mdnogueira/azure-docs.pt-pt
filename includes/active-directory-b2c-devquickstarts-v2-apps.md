@@ -1,2 +1,7 @@
 > [AZURE.IMPORTANT]
-You cannot use applications registered in the **Applications** tab on the classic [Azure Management Portal](https://manage.windowsazure.com/) for this.
+Não pode utilizar aplicações registadas no separador **Aplicações** no [Portal de Gestão do Azure](https://manage.windowsazure.com/) clássico.
+
+
+<!--HONumber=Jun16_HO2-->
+
+

@@ -1,29 +1,35 @@
-## Defining a backup policy
+## Definir uma política de cópia de segurança
 
-A backup policy defines a matrix of when the data snapshots are taken, and how long those snapshots are retained. When defining a policy for backing up a VM, you can trigger a backup job *once a day*. When you create a new policy, it is applied to the vault. The backup policy interface looks like this:
+Uma política de cópia de segurança define uma matriz de quando os instantâneos de dados são executados e quanto tempo os instantâneos são retidos. Ao definir uma política para a cópia de segurança de uma VM, pode acionar uma tarefa de cópia de segurança *uma vez por dia*. Quando cria uma nova política, esta é aplicada ao cofre. A interface da política de cópia de segurança tem o seguinte aspeto:
 
-![Backup policy](./media/backup-create-policy-for-vms/backup-policy.png)
+![Política de cópia de segurança](./media/backup-create-policy-for-vms/backup-policy.png)
 
-To create a policy:
+Para criar uma política:
 
-1. Enter a name for the **Policy name**.
+1. Introduza um nome para o **Nome da política**.
 
-2. Snapshots of your data can be taken at Daily or Weekly intervals. Use the **Backup Frequency** drop-down menu to choose whether data snapshots are taken Daily or Weekly.
+2. Os instantâneos dos seus dados podem ser efetuados num intervalo Diário ou Semanal. Utilize o menu pendente **Frequência da Cópia de segurança** para escolher se os instantâneos de dados são efetuados num intervalo Diário ou Semanal.
 
-    - If you choose a Daily interval, use the highlighted control to select the time of the day for the snapshot. To change the hour, de-select the hour, and select the new hour.
+    - Se escolher um intervalo Diário, utilize o controlo realçado para selecionar a hora do dia para o instantâneo. Para alterar a hora, anule a seleção da hora e selecione novamente a hora.
 
-    ![Daily backup policy](./media/backup-create-policy-for-vms/backup-policy-daily.png) <br/>
+    ![Política de cópia de segurança diária](./media/backup-create-policy-for-vms/backup-policy-daily.png) <br/>
 
-    - If you choose a Weekly interval, use the highlighted controls to select the day(s) of the week, and the time of day to take the snapshot. In the day menu, select one or multiple days. In the hour menu, select one hour. To change the hour, de-select the selected hour, and select the new hour.
+    - Se escolher um intervalo Semanal, utilize os controlos realçados para selecionar o(s) dia(s) da semana e a hora do dia para efetuar o instantâneo. No menu dos dias, selecione um ou vários dias. No menu das horas, selecione uma hora. Para alterar a hora, anule a seleção da hora e selecione a nova hora.
 
-    ![Weekly backup policy](./media/backup-create-policy-for-vms/backup-policy-weekly.png)
+    ![Política de cópia de segurança semanal](./media/backup-create-policy-for-vms/backup-policy-weekly.png)
 
-3. By default, all **Retention Range** options are selected. Uncheck any retention range limit you do not want to use. Then, specify the interval(s) to use.
+3. Por predefinição, todas as opções do **Intervalo de Retenção** estão selecionadas. Desmarque os limites do intervalo de retenção que não pretende utilizar. Em seguida, especifique o intervalo(s) a utilizar.
 
-    Monthly and Yearly retention ranges allow you to specify the snapshots based on a weekly or daily increment.
+    Os intervalos de retenção Mensal e Anual permitem-lhe especificar os instantâneos com base num incremento semanal ou diário.
 
-    >[AZURE.NOTE] When protecting a VM, a backup job runs once a day. The time when the backup runs is the same for each retention range.
+    >[AZURE.NOTE] Ao proteger uma VM, é executada uma tarefa de cópia de segurança uma vez por dia. A hora quando a cópia de segurança é executada é a mesma para cada intervalo de retenção.
 
-4. After setting all options for the policy, at the top of the blade click **Save**.
+4. Depois de definir todas as opções para a política, na parte superior do painel, clique em **Guardar**.
 
-    The new policy is immediately applied to the vault.
+    A nova política é imediatamente aplicada ao cofre.
+
+
+
+<!--HONumber=Jun16_HO2-->
+
+

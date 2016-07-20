@@ -1,30 +1,36 @@
-## About records
+## Sobre os registos
 
-Each DNS record has a name and a type. Records are organized into various types according to the data they contain. The most common type is an "A" record, which maps a name to an IPv4 address. Another type is an "MX" record, which maps a name to a mail server.
+Cada registo DNS tem um nome e um tipo. Os registos são organizados em vários tipos de acordo com os dados que contêm. O tipo mais comum é um registo “A”, que mapeia um nome para um endereço IPv4. Outro tipo é um registo “MX”, que mapeia um nome para um servidor de correio.
 
-Azure DNS supports all common DNS record types, including A, AAAA, CNAME, MX, NS, SOA, SRV, and TXT. SOA record sets  are created automatically with each zone. They cannot be created separately. Note that SPF records should be created by using the TXT record type. For more information, see [this page](http://tools.ietf.org/html/rfc7208#section-3.1).
+O DNS do Azure suporta todos os tipos de registo DNS comuns, incluindo A, AAAA, CNAME, MX, NS, SOA, SRV e TXT. Os conjuntos de registos SOA são criados automaticamente com cada zona. Estes não podem ser criados separadamente. Tenha em atenção que os registos SPF devem ser criados com o tipo de registo TXT. Para obter mais informações, veja [esta página](http://tools.ietf.org/html/rfc7208#section-3.1).
 
-In Azure DNS, records are specified by using relative names. A "fully qualified" domain name (FQDN) includes the zone name, whereas a "relative" name does not. For example, the relative record name "www" in the zone "contoso.com" gives the fully qualified record name www.contoso.com.
+No DNS do Azure, os registos são especificados com nomes relativos. Um nome de domínio “completamente qualificado” (FQDN) inclui o nome da zona, enquanto um nome “relativo” não. Por exemplo, o nome do registo relativo “www” na zona “contoso.com” fornece o nome do registo completamente qualificado www.contoso.com.
 
-## About record sets
+## Sobre os conjuntos de registos
 
-Sometimes you need to create more than one DNS record with a given name and type. For example, suppose the "www.contoso.com" web site is hosted on two different IP addresses. The website requires two different A records, one for each IP address. This is an example of a record set:
+Por vezes, precisa de criar mais do que um registo DNS com um determinado nome e tipo. Por exemplo, suponha que o site “www.contoso.com” está alojado em dois endereços IP diferentes. O site necessita de dois registos A diferentes, um para cada endereço IP. Este é um exemplo de um conjunto de registos:
 
-	www.contoso.com.		3600	IN	A	134.170.185.46
-	www.contoso.com.		3600	IN	A	134.170.188.221
+    www.contoso.com.        3600    IN  A   134.170.185.46
+    www.contoso.com.        3600    IN  A   134.170.188.221
 
-Azure DNS manages DNS records by using record sets. A record set is the collection of DNS records in a zone that have the same name and are the same type. Most record sets contain a single record, but examples like this one, in which a record set contains more than one record, are not uncommon.
+O DNS do Azure gere registos DNS com conjuntos de registos. Um conjunto de registos é uma coleção de registos DNS numa zona com o mesmo nome e o mesmo tipo. A maioria dos conjuntos de registos contém um único registo, contudo, não são incomuns exemplos como este no qual um conjunto de registos contém mais do que um registo.
 
-SOA and CNAME record sets are exceptions. The DNS standards don't permit multiple records with the same name for these types.
+Os conjuntos de registos SOA e CNAME são exceções. As normas DNS não permitem vários registos com o mesmo nome para estes tipos.
 
-The time to live, or TTL, specifies how long each record is cached by clients before being re-queried. In this example, the TTL is 3600 seconds or 1 hour. The TTL is specified for the record set, not for each record, so the same value is used for all records within that record set.
+O limite de tempo, ou TTL, especifica o tempo que cada registo é colocado em cache por clientes antes de voltar a ser consultado. Neste exemplo, o TTL é de 3600 segundos ou 1 hora. O TTL é especificado para o conjunto de registos, não para cada registo, para que o mesmo valor seja utilizado em todos os registos nesse conjunto de registos.
 
-#### Wildcard record sets
+#### Conjuntos de registos de carateres universais
 
-Azure DNS supports [wildcard records](https://en.wikipedia.org/wiki/Wildcard_DNS_record). These are returned for any query with a matching name (unless there is a closer match from a non-wildcard record set). Wildcard record sets are supported for all record types except NS and SOA.  
+O DNS do Azure suporta [registos de carateres universais](https://en.wikipedia.org/wiki/Wildcard_DNS_record). Estes são devolvidos para qualquer consulta com um nome correspondente (a menos que exista uma correspondência mais próxima de um conjunto de registos de carateres não universais). Os conjuntos de registos de carateres universais são suportados para todos os tipos de registos, exceto NS e SOA.  
 
-To create a wildcard record set, use the record set name "\*". Or, use a name with the label "\*", for example, "\*.foo".
+Para criar um conjunto de registos de carateres universais, utilize o nome do conjunto de registos “\*”. Alternativamente, utilize um nome com a etiqueta “\*”, por exemplo, “\*.foo”.
 
-#### CNAME record sets
+#### Conjuntos de registos CNAME
 
-CNAME record sets cannot coexist with other record sets with the same name. For example, you cannot create a CNAME record set with the relative name "www" and an A record with the relative name "www" at the same time. Because the zone apex (name = ‘@’) always contains the NS and SOA record sets that were created when the zone was created, you can't create a CNAME record set at the zone apex. These constraints arise from the DNS standards and aren't limitations of Azure DNS.
+Os conjuntos de registos CNAME não podem coexistir com outros conjuntos de registos com o mesmo nome. Por exemplo, não pode criar em simultâneo um conjunto de registos CNAME com o nome relativo “www” e um registo A com o nome relativo “www”. Uma vez que o vértice da zona (nome = '@') contém sempre os conjuntos de registos NS e SOA, criados quando a zona foi criada, não pode criar um conjunto de registos CNAME no vértice da zona. Estas restrições derivam das normas DNS e não são limitações do DNS do Azure.
+
+
+
+<!--HONumber=Jun16_HO2-->
+
+

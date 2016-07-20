@@ -1,8 +1,13 @@
-This setting allows you to specify the DNS server that you want to use for name resolution for this virtual network. It does not create a DNS server.
+Esta definição permite-lhe especificar um servidor DNS que pretende utilizar para a resolução de nomes desta rede virtual. Não cria um servidor DNS.
 
-1. On the **Settings** page for your virtual network, navigate to **DNS Servers** and click to open the DNS servers blade.
-2. On the **DNS Servers** page, under **DNS servers**, select **Custom DNS**.
-3. In the **Primary DNS server** field, enter the IP address of the DNS server that you want to use for name resolution.
-4. Click **Save** at the top of the blade to save your configuration.
+1. Na página**Definições** da rede virtual, navegue até **Servidores DNS** e clique para abrir o painel Servidores DNS.
+2. Na página **Servidores DNS**, em **Servidores DNS**, selecione **DNS Personalizado**.
+3. No campo **Servidor DNS primário**, introduza o endereço IP do servidor DNS que pretende utilizar para a resolução de nomes.
+4. Clique em **Guardar** na parte superior do painel para guardar a configuração.
 
-	![Custom DNS](./media/vpn-gateway-add-dns-rm-portal/customdns400.png)
+    ![DNS Personalizado](./media/vpn-gateway-add-dns-rm-portal/customdns400.png)
+
+
+<!--HONumber=Jun16_HO2-->
+
+
