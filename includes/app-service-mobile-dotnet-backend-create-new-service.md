@@ -1,27 +1,33 @@
-1. Log in at the [Azure Portal].
+1. Inicie sessão no [Portal do Azure].
 
-2. Click **+NEW** > **Web + Mobile** > **Mobile App**, then provide a name for your Mobile App backend.
+2. Clique em **+NOVO** > **Web + Móvel** > **Aplicação Móvel** e indique um nome para o back-end da Aplicação Móvel.
 
-3. For the **Resource Group**, select an existing resource group, or create a new one (using the same name as your app.) 
+3. Para o **Grupo de Recursos**, selecione um grupo de recursos existente ou crie um novo (utilizando o mesmo nome que a sua aplicação). 
  
 
- You can either select another App Service plan or create a new one. For more about App Services plans and how to create a new plan in a different pricing tier and in your desired location, see [Azure App Service plans in-depth overview](../articles/app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md).
+ Pode selecionar outro plano do Serviço de Aplicações ou criar um novo. Para obter mais informações sobre os planos dos Serviços de Aplicações e como criar um novo plano com um escalão de preço diferente na localização pretendida, veja [Azure App Service plans in-depth overview (Descrição geral aprofundada dos planos do Serviço de Aplicações do Azure)](../articles/app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md).
 
-4. For the **App Service plan**, the default plan (in the [Standard tier](https://azure.microsoft.com/pricing/details/app-service/)) is selected. You can also  select a different plan, or [create a new one](../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md#create-an-app-service-plan). The App Service plan's settings determine the [location, features, cost and compute resources](https://azure.microsoft.com/pricing/details/app-service/) associated with your app. 
+4. Para o **Plano do Serviço de Aplicações**, encontra-se selecionado o plano predefinido (no [Escalão Standard](https://azure.microsoft.com/pricing/details/app-service/)). Pode ainda selecionar um plano diferente ou [criar um novo](../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md#create-an-app-service-plan). As definições do plano do Serviço de Aplicações determinam [a localização, as funcionalidades, o custo e os recursos de computação](https://azure.microsoft.com/pricing/details/app-service/) associados à aplicação. 
 
-	After you decide on the plan, click **Create**. This creates the Mobile App backend. 
-	
-6. In the **Settings** blade for the new Mobile App backend, click **Quick start** > your client app platform > **Connect a database**. 
+    Depois de decidir o plano, clique em **Criar**. Esta ação cria o back-end da Aplicação Móvel. 
+    
+6. No painel **Definições** do back-end da nova Aplicação Móvel, clique em **Início rápido** > plataforma da sua aplicação cliente > **Ligar uma base de dados**. 
 
-	![](./media/app-service-mobile-dotnet-backend-create-new-service/dotnet-backend-create-data-connection.png)
+    ![](./media/app-service-mobile-dotnet-backend-create-new-service/dotnet-backend-create-data-connection.png)
 
-7. In the **Add data connection** blade, click **SQL Database** > **Create a new database**, type the database **Name**, choose a pricing tier, then click **Server**.  You can reuse this new database. If you already have a database in the same location, you can instead choose **Use an existing database**. The use of a database in a different location isn't recommended due to bandwidth costs and higher latency.
+7. No painel **Adicionar ligação de dados**, clique em **SQL Database** > **Criar uma nova base de dados**, escreva o **Nome** da base de dados, escolha um escalão de preço e clique em **Servidor**.  Pode reutilizar esta nova base de dados. Se já tiver uma base de dados na mesma localização, pode escolher **Utilizar uma base de dados existente**. Não é recomendado utilizar uma base de dados numa localização diferente devido aos custos da largura de banda e latência superior.
  
     ![](./media/app-service-mobile-dotnet-backend-create-new-service/dotnet-backend-create-db.png)
 
-8. In the **New server** blade, type a unique server name in the **Server name** field, provide a login and password, check **Allow azure services to access server**, and click **OK**. This creates the new database.
+8. No painel **Novo servidor**, escreva um nome de servidor exclusivo no campo **Nome do servidor**, forneça um início de sessão e palavra-passe, marque **Permitir o acesso dos serviços do Azure ao servidor** e clique em **OK**. Esta ação cria a nova base de dados.
 
-9. Back in the **Add data connection** blade, click **Connection string**, type the login and password values for your database, and click **OK**. Wait a few minutes for the database to be deployed successfully before proceeding.
+9. De regresso ao painel **Adicionar ligação de dados**, clique em **Cadeia de ligação**, escreva os valores do início de sessão e da palavra-passe para a sua base de dados e clique em **OK**. Antes de prosseguir, aguarde alguns minutos até a base de dados ser implementada com êxito.
 
 <!-- URLs. -->
-[Azure Portal]: https://portal.azure.com/
+[Portal do Azure]: https://portal.azure.com/
+
+
+
+<!--HONumber=Jun16_HO2-->
+
+

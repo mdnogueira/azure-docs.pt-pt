@@ -1,22 +1,27 @@
 <!--author=SharS last changed: 9/17/15-->
 
-#### To create a volume container
+#### Para criar um contentor de volume
 
-1. In the device **Quick Start** page, click **Add a volume container**. The **Create Volume Container** dialog box appears.
+1. Na página **Início Rápido** do dispositivo, clique em **Adicionar um contentor do volume**. É apresentada a caixa de diálogo **Criar Contentor de Volume**.
 
-    ![Create Volume Container](./media/storsimple-create-volume-container/HCS_CreateVolumeContainerM-include.png)
+    ![Criar Contentor de Volume](./media/storsimple-create-volume-container/HCS_CreateVolumeContainerM-include.png)
 
-2. In the **Create Volume container** dialog box:
-  1. Supply a **Name** for your volume container. The name must be 3 to 32 characters long.
-  2. Select a **Storage Account** to associate with this volume container. You can choose the default account that is generated at the time of service creation. You can also use the **Add new** option to specify a storage account that is not linked to this service subscription.
-  3. Select **Enable Cloud Storage Encryption** to enable encryption of the data sent from the device to the cloud.
-  4. Provide and confirm a **Cloud Storage Encryption Key** that is 8 to 32 characters long. This key is used by the device to access encrypted data.
-  5. Select **Unlimited** in the **Specify bandwidth** drop-down list if you wish to consume all the available bandwidth. You can also set this option to **Custom** to employ bandwidth controls, and specify a value between 1 and 1,000 Mbps. 
-  If you have your bandwidth usage information available, you may be able to allocate bandwidth based on a schedule by specifying **Select a bandwidth template**. For a step-by-step procedure, go to [Add a bandwidth template](storsimple-manage-bandwidth-templates.md#add-a-bandwidth-template).
-  6. Click the check icon ![check-icon](./media/storsimple-create-volume-container/HCS_CheckIcon-include.png) to save this volume container and exit the wizard. 
+2. Na caixa de diálogo **Criar Contentor de Volume**:
+  1. Forneça um **Nome** para o contentor do volume. O nome tem de ter entre 3 e 32 carateres.
+  2. Selecione uma **Conta de Armazenamento** associada a este contentor de volume Pode escolher a conta predefinida que é gerada no momento da criação do serviço. Também pode utilizar a opção **Adicionar nova** para especificar uma conta de armazenamento que não esteja associada a esta subscrição do serviço.
+  3. Selecione **Ativar Encriptação do Armazenamento na Nuvem** para ativar a encriptação dos dados enviados do dispositivo para a nuvem.
+  4. Forneça e confirme uma **Chave de Encriptação do Armazenamento na Nuvem** que tenha entre 8 e 32 carateres. Esta chave é utilizada pelo dispositivo para aceder aos dados encriptados.
+  5. Selecione **Sem limite** na lista pendente **Especificar largura de banda** se desejar consumir toda a largura de banda disponível. Também pode configurar esta opção para **Personalizar** para utilizar controlos de largura de banda e especificar um valor entre 1 e 1000 Mbps. 
+  Se tiver disponíveis as informações de utilização da largura de banda, poderá conseguir alocar a largura de banda com base no agendamento, especificando **Selecionar um modelo de largura de banda**. Para um procedimento passo-a-passo, veja [Adicionar um modelo de largura de banda](storsimple-manage-bandwidth-templates.md#add-a-bandwidth-template).
+  6. Clique no ícone de verificação ![ícone de verificação](./media/storsimple-create-volume-container/HCS_CheckIcon-include.png) para guardar este contentor de volume e sair do assistente. 
 
-  The newly created volume container will be listed on the **Volume containers** page.
+  O contentor de volume criado recentemente será apresentado na página **Contentores de volume**.
 
-![Video available](./media/storsimple-create-volume-container/Video_icon.png) **Video available**
+![Vídeo disponível](./media/storsimple-create-volume-container/Video_icon.png) **Vídeo disponível**
 
-To watch a video that demonstrates how to create a volume container in your StorSimple solution, click [here](https://azure.microsoft.com/documentation/videos/create-a-volume-container-in-your-storsimple-solution/).
+Para ver um vídeo que demonstra como criar um contentor de volume na sua solução StorSimple, clique [aqui](https://azure.microsoft.com/documentation/videos/create-a-volume-container-in-your-storsimple-solution/).
+
+
+<!--HONumber=Jun16_HO2-->
+
+

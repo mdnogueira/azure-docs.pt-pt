@@ -1,25 +1,31 @@
-1. Log on to the [Azure Classic Portal](https://manage.windowsazure.com), and then click **+NEW** at the bottom of the screen.
+1. Inicie sessão no [Portal Clássico do Azure](https://manage.windowsazure.com) e clique em **+NOVO** na parte inferior do ecrã.
 
-2. Click on **App Services**, then **Mobile Engagement**, and then **Create**.
+2. Clique em **Serviços Aplicacionais**, em **Mobile Engagement** e em **Criar**.
 
-   	![](./media/mobile-engagement-create-app-in-portal/create-mobile-engagement-app.png)
+    ![](./media/mobile-engagement-create-app-in-portal/create-mobile-engagement-app.png)
 
-3. In the popup that appears, enter the following information:
+3. No pop-up apresentado, introduza as seguintes informações:
 
-   	![](./media/mobile-engagement-create-app-in-portal/create-azme-popup.png)
+    ![](./media/mobile-engagement-create-app-in-portal/create-azme-popup.png)
 
-	- **Application Name**: Name of your application. 
-	- **Platform**: Target platform for the app. You must create one Mobile Engagement app per platform that you are targeting for your mobile application. 
-	- **Application Resource Name**: Name by which this application will be accessible via APIs and URLs. 
-	- **Location**: Region/Data center where this app and app collection will be hosted.
-	- **Collection**: Select a previously created Collection or select 'New Collection'.
-	- **Collection Name**: Represents your group of applications. This will also ensure all your apps are in a group that will allow aggregated calculations of metrics. You should use your company name or department here if applicable.
+    - **Nome da Aplicação**: o nome da sua aplicação. 
+    - **Plataforma**: a plataforma de destino da aplicação. Tem de criar uma aplicação Mobile Engagement por cada plataforma de destino da aplicação móvel. 
+    - **Nome de Recurso de Aplicação**: nome através do qual esta aplicação estará acessível através de APIs e URLs. 
+    - **Localização**: a região/datacenter onde estarão alojadas esta aplicação e a coleção de aplicações.
+    - **Coleção**: selecione uma Coleção criada anteriormente ou selecione “Nova Coleção”.
+    - **Nome da Coleção**: representa o grupo de aplicações. Esta ação também permite garantir que todas as aplicações estão num grupo que permitirá cálculos agregados de métricas. Deve utilizar aqui o nome da empresa ou o departamento, se aplicável.
 
-4. Select the app you just created in the **Applications** tab.
+4. Selecione a aplicação que acabou de criar no separador **Aplicações**.
 
-5. Click on **CONNECTION INFO** in order to display the connection settings to put into your SDK integration in your mobile app.
+5. Clique em **INFORMAÇÕES DA LIGAÇÃO** para visualizar as definições de ligação a colocar na integração SDK na aplicação móvel.
 
-6. Copy the **CONNECTION STRING** - this is what you will need to identify this app in your Application code and connect with Mobile Engagement from your App.
+6. Copie a **CADEIA DE LIGAÇÃO** – precisará dela para identificar esta aplicação no Código da aplicação e para estabelecer ligação ao Mobile Engagement a partir da Aplicação.
 
-   	![](./media/mobile-engagement-create-app-in-portal/app-connection-info-page.png)
+    ![](./media/mobile-engagement-create-app-in-portal/app-connection-info-page.png)
+
+
+
+
+<!--HONumber=Jun16_HO2-->
+
 

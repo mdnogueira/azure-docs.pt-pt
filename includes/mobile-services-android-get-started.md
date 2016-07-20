@@ -1,40 +1,46 @@
-The final stage of this tutorial is to build and run your new app.
+A etapa final deste tutorial consiste em criar e executar a nova aplicação.
 
-### Load project into Android Studio and sync Gradle
+### Carregar o projeto para o Android Studio e sincronizar o Gradle
 
-1. Browse to the location where you saved the compressed project files and expand the files on your computer into your Android Studio projects directory.
+1. Navegue até à localização onde guardou os ficheiros comprimidos do projeto e expanda os ficheiros no computador, no diretório de projetos Android Studio.
 
-2. Open Android Studio. If you are working with a project and it appears, close the project (File => Close Project).
+2. Abra o Android Studio. Se estiver a trabalhar com um projeto e este aparecer, feche o projeto (Ficheiro = > Fechar Projeto).
 
-3. Select **Open an existing Android Studio project**, browse to the project location, and then click **OK.** This will load the project and start to sync it with Gradle.
+3. Selecione **Abrir um projeto existente do Android Studio**, navegue até à localização do projeto e clique em **OK**. Este procedimento permitirá carregar o projeto e começar a sincronizá-lo com o Gradle.
 
- 	![](./media/mobile-services-android-get-started/android-studio-import-project.png)
+    ![](./media/mobile-services-android-get-started/android-studio-import-project.png)
 
-4. Wait for the Gradle sync activity to complete. If you see a "failed to find target" error, this is because the version used in Android Studio doesn't match that of the sample. The easiest way to fix this is to click the **Install missing platform(s) and sync project** link in the error message. You might get additional version error messages, and you simply repeat this process until no errors appear.
-    - There is another way to fix this if you want to run with the "latest and greatest" version of Android. You can update the **targetSdkVersion** in the *build.gradle* file in the *app* directory to match the version already installed on your machine, which you can discover by clicking the **SDK Manager** icon and seeing what version is listed. Next you press the **Sync Project with Gradle Files**. You may get an error message for the version of Build Tools, and you fix that the same way.
+4. Aguarde que a atividade de sincronização do Gradle fique concluída. Se vir um erro “falha ao localizar o destino”, significa que a versão utilizada no Android Studio não corresponde à do exemplo. O modo mais fácil de corrigir este problema é clicar na ligação **Instalar platforma(s) em falta e sincronizar projeto** na mensagem de erro. Poderá obter mensagens de erro da versão adicionais, basta repetir este processo até que deixem de aparecer erros.
+    - Há um outro modo de corrigir esta situação caso pretenda executar a versão “mais recente e melhor” do Android. Pode atualizar o **targetSdkVersion** no ficheiro *build.gradle* no diretório *app* para que corresponda à versão já instalada no computador, que pode descobrir clicando no ícone **SDK Manager** e vendo a versão que está listada. Em seguida, prima **Sincronizar Projeto com os Ficheiros do Gradle**. Se for apresentada uma mensagem de erro relativamente à versão das Ferramentas de Compilação, proceda da mesma forma para corrigir o erro.
 
-### Running the app
+### Executar a aplicação
 
-You can run the app using the emulator, or using an actual device.
+Pode executar a aplicação com o emulador ou com um dispositivo real.
 
-1. To run from a device, connect it to your computer with a USB cable. You must [set up the device for development](https://developer.android.com/training/basics/firstapp/running-app.html). If you are developing on a Windows machine, you must also download and install a USB driver.
+1. Para executar num dispositivo, ligue-o ao computador com um cabo USB. Tem de [configurar o dispositivo para programação](https://developer.android.com/training/basics/firstapp/running-app.html). Se estiver a programar num computador Windows, deverá também transferir e instalar um controlador USB.
 
-2. To run using the Android emulator, you must define at least one Android Virtual Device (AVD). Click the AVD Manager icon to create and manage these devices.
+2. Para executar com o emulador do Android, tem de definir, no mínimo, um Dispositivo Virtual Android (AVD). Clique no ícone do Gestor do AVD para criar e gerir estes dispositivos.
 
-3. From the **Run** menu, click **Run** to start the project. and choose a device or emulator from the dialog box that appears.
+3. No menu **Executar**, clique em **Executar** para iniciar o projeto e escolha um dispositivo ou emulador na caixa de diálogo apresentada.
 
-4. When the app appears, type meaningful text, such as _Complete the tutorial_, and then click **Add**.
+4. Quando vir a aplicação, digite um texto significativo, como _Concluir o tutorial_, e clique em **Adicionar**.
 
-   	![](./media/mobile-services-android-get-started/mobile-quickstart-startup-android.png)
+    ![](./media/mobile-services-android-get-started/mobile-quickstart-startup-android.png)
 
-   	This sends a POST request to the new mobile service hosted in Azure. Data from the request is inserted into the TodoItem table. Items stored in the table are returned by the mobile service, and the data is displayed in the list.
+    Esta ação envia um pedido POST ao novo serviço móvel alojado no Azure. Os dados do pedido são inseridos na tabela TodoItem. Os itens armazenados na tabela são devolvidos pelo serviço móvel e os dados são apresentados na lista.
 
-	> [AZURE.NOTE] You can review the code that accesses your mobile service to query and insert data, which is found in the ToDoActivity.java file.
+    > [AZURE.NOTE] Pode rever o código que acede ao seu serviço móvel para consultar e inserir dados, que poderá encontrar no ficheiro ToDoActivity.java.
 
-8. Back in the Azure classic portal, click the **Data** tab and then click the **TodoItems** table.
+8. No Portal Clássico do Azure, clique no separador **Dados** e, em seguida, na tabela **TodoItems**.
 
-   	![](./media/mobile-services-android-get-started/mobile-data-tab1.png)
+    ![](./media/mobile-services-android-get-started/mobile-data-tab1.png)
 
-   	This lets you browse the data inserted by the app into the table.
+    Esta ação permite procurar os dados inseridos pela aplicação na tabela.
 
-   	![](./media/mobile-services-android-get-started/mobile-data-browse.png)
+    ![](./media/mobile-services-android-get-started/mobile-data-browse.png)
+
+
+
+<!--HONumber=Jun16_HO2-->
+
+

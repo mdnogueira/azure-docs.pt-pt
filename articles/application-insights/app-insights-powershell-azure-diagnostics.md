@@ -1,0 +1,125 @@
+<properties
+    pageTitle="Utilizar o PowerShell para enviar Diagnósticos do Azure ao Application Insights | Microsoft Azure"
+    description="Automatizar a configuração do Diagnóstico do Azure para encaminhar para o Application Insights."
+    services="application-insights"
+    documentationCenter=".net"
+    authors="sbtron"
+    manager="douge"/>
+
+<tags
+    ms.service="application-insights"
+    ms.workload="tbd"
+    ms.tgt_pltfrm="ibiza" 
+    ms.devlang="na"
+    ms.topic="get-started-article"
+    ms.date="11/17/2015"
+    ms.author="awills"/>
+
+# Utilizar o PowerShell para enviar Diagnósticos do Azure ao Application Insights
+
+O [Microsoft Azure](https://azure.com) pode ser [configurado para enviar Diagnósticos do Azure](app-insights-azure-diagnostics.md) ao [Visual Studio Application Insights](app-insights-overview.md). O diagnóstico refere-se aos Cloud Services e às VMs do Azure. Complementa a telemetria que envia da aplicação com o Application Insights SDK. Como parte da automatização do processo de criação de novos recursos no Azure, pode configurar o diagnóstico com o PowerShell.
+
+## Ativar a extensão de diagnóstico como parte da implementação de um Serviço Cloud
+
+O cmdlet `New-AzureDeployment` tem um parâmetro `ExtensionConfiguration`, que assume uma matriz de configurações de diagnóstico. Estas configurações podem ser criadas com o cmdlet `New-AzureServiceDiagnosticsExtensionConfig`. Por exemplo:
+
+```ps
+
+    $service_package = "CloudService.cspkg"
+    $service_config = "ServiceConfiguration.Cloud.cscfg"
+    $diagnostics_storagename = "myservicediagnostics"
+    $webrole_diagconfigpath = "MyService.WebRole.PubConfig.xml" 
+    $workerrole_diagconfigpath = "MyService.WorkerRole.PubConfig.xml"
+
+    $primary_storagekey = (Get-AzureStorageKey `
+     -StorageAccountName "$diagnostics_storagename").Primary
+    $storage_context = New-AzureStorageContext `
+       -StorageAccountName $diagnostics_storagename `
+       -StorageAccountKey $primary_storagekey
+
+    $webrole_diagconfig = `
+     New-AzureServiceDiagnosticsExtensionConfig `
+      -Role "WebRole" -Storage_context $storageContext `
+      -DiagnosticsConfigurationPath $webrole_diagconfigpath
+    $workerrole_diagconfig = `
+     New-AzureServiceDiagnosticsExtensionConfig `
+      -Role "WorkerRole" `
+      -StorageContext $storage_context `
+      -DiagnosticsConfigurationPath $workerrole_diagconfigpath
+
+    New-AzureDeployment `
+      -ServiceName $service_name `
+      -Slot Production `
+      -Package $service_package `
+      -Configuration $service_config `
+      -ExtensionConfiguration @($webrole_diagconfig,$workerrole_diagconfig)
+
+``` 
+
+## Ativar a extensão de diagnóstico num Serviço Cloud existente
+
+Num serviço existente, utilize `Set-AzureServiceDiagnosticsExtension`.
+
+```ps
+ 
+    $service_name = "MyService"
+    $diagnostics_storagename = "myservicediagnostics"
+    $webrole_diagconfigpath = "MyService.WebRole.PubConfig.xml" 
+    $workerrole_diagconfigpath = "MyService.WorkerRole.PubConfig.xml"
+    $primary_storagekey = (Get-AzureStorageKey `
+         -StorageAccountName "$diagnostics_storagename").Primary
+    $storage_context = New-AzureStorageContext `
+        -StorageAccountName $diagnostics_storagename `
+        -StorageAccountKey $primary_storagekey
+
+    Set-AzureServiceDiagnosticsExtension `
+        -StorageContext $storage_context `
+        -DiagnosticsConfigurationPath $webrole_diagconfigpath `
+        -ServiceName $service_name `
+        -Slot Production `
+        -Role "WebRole" 
+    Set-AzureServiceDiagnosticsExtension `
+        -StorageContext $storage_context `
+        -DiagnosticsConfigurationPath $workerrole_diagconfigpath `
+        -ServiceName $service_name `
+        -Slot Production `
+        -Role "WorkerRole"
+```
+
+## Obter a configuração atual da extensão de diagnóstico
+
+```ps
+
+    Get-AzureServiceDiagnosticsExtension -ServiceName "MyService"
+```
+
+
+## Remover a extensão de diagnóstico
+
+```ps
+
+    Remove-AzureServiceDiagnosticsExtension -ServiceName "MyService"
+```
+
+Se tiver ativado a extensão de diagnóstico com `Set-AzureServiceDiagnosticsExtension` ou `New-AzureServiceDiagnosticsExtensionConfig` sem o parâmetro Função, pode remover a extensão com `Remove-AzureServiceDiagnosticsExtension` sem o parâmetro Função. Se o parâmetro Função tiver sido utilizado ao ativar a extensão, também o deverá utilizar para remover a extensão.
+
+Para remover a extensão de diagnóstico de cada função individual:
+
+```ps
+
+    Remove-AzureServiceDiagnosticsExtension -ServiceName "MyService" -Role "WebRole"
+```
+
+
+## Veja também
+
+* [Monitorizar aplicações Cloud Services do Azure com o Application Insights](app-insights-cloudservices.md)
+* [Enviar o Diagnóstico do Azure ao Application Insights](app-insights-azure-diagnostics.md)
+* [Automatizar alertas de configuração](app-insights-powershell-alerts.md)
+
+
+
+
+<!--HONumber=Jun16_HO2-->
+
+

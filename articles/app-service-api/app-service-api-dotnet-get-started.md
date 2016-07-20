@@ -76,7 +76,7 @@ O próximo tutorial da série implementa o front-end SPA na nuvem.
 
 2. Crie a solução para restaurar os pacotes NuGet.
 
-    Se pretender ver a aplicação a funcionar antes de implementá-la, pode executá-la localmente. Certifique-se de que os três projetos são projetos de arranque. Terá de utilizar o Internet Explorer ou o Edge uma vez esses browsers permitirem chamadas JavaScript transversáveis à origem para `http://localhost` URLs. 
+    Se pretender ver a aplicação a funcionar antes de implementá-la, pode executá-la localmente. Certifique-se de que os três projetos são projetos de arranque. Terá de utilizar o Internet Explorer ou o Microsoft Edge, uma vez que esses browsers permitem chamadas JavaScript transversáveis à origem para`http://localhost` URLs. 
 
 ## Utilizar metadados e IU da API do Swagger
 
@@ -100,7 +100,7 @@ Nesta secção do tutorial, observe os metadados do Swagger 2.0 gerado e, em seg
 
     ![Transferir metadados JSON no IE](./media/app-service-api-dotnet-get-started/iev1json.png)
 
-    Se estiver a utilizar o Chrome, Firefox ou Edge, o browser apresenta o JSON na janela do browser. Diferentes browsers processam o JSON de forma diferente e a janela do browser poderá não ser exatamente igual ao exemplo.
+    Se estiver a utilizar o Chrome, o Firefox ou o Microsoft Edge, o browser apresenta o JSON na janela do browser. Diferentes browsers processam o JSON de forma diferente e a janela do browser poderá não ser exatamente igual ao exemplo.
 
     ![Metadados JSON no Chrome](./media/app-service-api-dotnet-get-started/chromev1json.png)
 

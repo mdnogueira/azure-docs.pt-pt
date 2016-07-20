@@ -1,36 +1,42 @@
-#### To create a virtual device
+#### Para criar um dispositivo virtual
 
-1.  In the Azure portal, go to the **StorSimple Manager** service.
+1.  No Portal do Azure, aceda ao serviço **StorSimple Manager**.
 
-2. Go to the **Devices** page. Click **Create virtual device** at the bottom of the **Devices** page.
+2. Aceda à página **Dispositivos**. Clique em **Criar dispositivo virtual** na parte inferior da página **Dispositivos**.
 
-3. In the **Create Virtual Device dialog box**, specify the following details.
+3. Na caixa de diálogo **Criar Dispositivo Virtual**, especifique os seguintes detalhes.
 
-     ![StorSimple create virtual device](./media/storsimple-create-virtual-device-u2/CreatePremiumsva1.png)
+     ![Criar dispositivo virtual StorSimple](./media/storsimple-create-virtual-device-u2/CreatePremiumsva1.png)
 
-	1. **Name** – A unique name for your virtual device.
+    1. **Nome** – um nome exclusivo para o seu dispositivo virtual.
 
 
-	2. **Model** - Choose the model of the virtual device. This field is presented only if you are running Update 2 or later. An 8010 device model offers 30 TB of Standard Storage whereas 8020 has 64 TB of Premium Storage. Specify 8010
-	3.  to deploy item level retrieval  scenarios from backups. Select 8020 to deploy high performance, low latency workloads or used as a secondary device for disaster recovery.
-	 
-	4. **Version** - Choose the version of the virtual device. If an 8020 device model is selected, then the version field will not be presented to the user. This option is absent if all the physical devices registered with this service are running Update 1 (or later). This field is presented only if you have a mix of pre-Update 1 and Update 1 physical devices registered with the same service. Given the version of the virtual device will determine which physical device you can failover or clone from, it is important that you create an appropriate version of the virtual device. Select:
+    2. **Modelo** – escolha o modelo do dispositivo virtual. Este campo é apresentado apenas se estiver a executar a Atualização 2 ou posterior. Um dispositivo modelo 8010 oferece 30 TB de armazenamento Standard ao passo que o 8020 tem 64 TB de armazenamento Premium. Especifique 8010
+    3.  para implementar cenários de obtenção a nível de itens a partir de cópias de segurança. Selecione 8020 para implementar cargas de trabalho de elevado desempenho e de baixa latência ou para utilizar como um dispositivo secundário para recuperação após desastre.
+     
+    4. **Versão** – escolha a versão do dispositivo virtual. Se tiver selecionado um dispositivo modelo 8020, o campo Versão não será apresentado. Esta opção estará ausente se todos os dispositivos físicos registados neste serviço estiverem a executar a Atualização 1 (ou posterior). Este campo será apresentado apenas se tiver uma mistura de dispositivos físicos pré-Atualização 1 e Atualização 1 registados no mesmo serviço. Uma vez que a versão do dispositivo virtual irá determinar que dispositivo físico poderá utilizar para a ativação pós-falha ou para a clonagem, é importante que crie uma versão adequada do dispositivo virtual. Selecione:
 
-	   - Version Update 0.3 if you will fail over or DR from a physical device running Update 0.3 or earlier. 
-	   - Version Update 1 if you will fail over or clone from a physical device running Update 1 (or later). 
-	   
-	
-	5. **Virtual Network** – Specify a virtual network that you want to use with this virtual device. If using Premium Storage (Update 2 or later), you must select a virtual network that is supported with the Premium Storage account. The unsupported virtual networks will be grayed out in the dropdown list. You will be warned if you select an unsupported virtual network. 
+       - Atualização versão 0.3 se pretender efetuar a ativação pós-falha ou DR a partir de um dispositivo físico a executar a Atualização 0.3 ou anterior. 
+       - Atualização versão 1 se pretender efetuar a ativação pós-falha ou clonar a partir de um dispositivo físico a executar a Atualização 1 (ou posterior). 
+       
+    
+    5. **Virtual Network** – especifique a rede virtual que pretende utilizar com este dispositivo virtual. Se utilizar o Premium Storage (Atualização 2 ou posterior), tem de selecionar uma rede virtual que seja suportada com a Conta do Premium Storage. As redes virtuais não suportadas estarão indisponíveis na lista pendente. Será avisado se selecionar uma rede virtual não suportada. 
 
-	5. **Storage Account for Virtual Device Creation** – Select a storage account to hold the image of the virtual device during provisioning. This storage account should be in the same region as the virtual device and virtual network. It should not be used for data storage by either the physical or the virtual device. By default, a new storage account will be created for this purpose. However, if you know that you already have a storage account that is suitable for this use, you can select it from the list. If creating a premium virtual device, the dropdown list will only display Premium Storage accounts. 
+    5. **Conta de Armazenamento para a Criação de Dispositivos Virtuais** – selecione uma conta de armazenamento para armazenar a imagem do dispositivo virtual durante o aprovisionamento. Esta conta de armazenamento deve estar na mesma região que o dispositivo virtual e a rede virtual. Não deverá ser utilizada para armazenamento de dados do dispositivo físicos ou virtual. Por predefinição, será criada uma nova conta de armazenamento para esta finalidade. No entanto, se souber que já tem uma conta de armazenamento adequada para esta utilização, poderá selecioná-la na lista. Se criar um dispositivo virtual Premium, a lista pendente apresentará apenas contas do Premium Storage. 
 
-    	>[AZURE.NOTE] The virtual device can only work with the Azure storage accounts. Other cloud service providers such as Amazon, HP, and OpenStack (that are supported for the physical device) are not supported for the StorSimple virtual device.
-	
-	1. Click the check mark to indicate that you understand that the data stored on the virtual device will be hosted in a Microsoft datacenter. When you use only a physical device, your encryption key is kept with your device; therefore, Microsoft cannot decrypt it. 
-	 
-		When you use a virtual device, both the encryption key and the decryption key are stored in Microsoft Azure. For more information, see [security considerations for using a virtual device](storsimple-security/#storsimple-virtual-device-security).
-	2. Click the check icon to create the virtual device. The device may take around 30 minutes to be provisioned.
+        >[AZURE.NOTE] O dispositivo virtual só pode ser utilizado com as contas de armazenamento do Azure. Outros fornecedores de serviços em nuvem como Amazon, HP e OpenStack (que são suportados para o dispositivo físico) não são suportados para o dispositivo virtual StorSimple.
+    
+    1. Clique na marca de verificação para indicar que entende que os dados armazenados no dispositivo virtual serão alojados num Microsoft Datacenter. Se utilizar apenas um dispositivo físico, a sua chave de encriptação é mantida com o dispositivo. Por conseguinte, a Microsoft não a poderá desencriptar. 
+     
+        Se utilizar um dispositivo virtual, a chave de encriptação e a chave de desencriptação são armazenadas no Microsoft Azure. Para obter mais informações, veja [Considerações de segurança para utilizar um dispositivo virtual](storsimple-security/#storsimple-virtual-device-security).
+    2. Clique no ícone de verificação para criar o dispositivo virtual. O dispositivo poderá demorar cerca de 30 minutos a ser aprovisionado.
 
-	![StorSimple virtual device creating stage](./media/storsimple-create-virtual-device-u2/StorSimple_VirtualDeviceCreating1M.png)
+    ![Fase de criação do dispositivo virtual StorSimple](./media/storsimple-create-virtual-device-u2/StorSimple_VirtualDeviceCreating1M.png)
 
     
+
+
+
+<!--HONumber=Jun16_HO2-->
+
+

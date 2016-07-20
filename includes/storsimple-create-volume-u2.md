@@ -1,45 +1,51 @@
 <!--author=SharS last changed: 02/29/2016-->
 
-#### To create a volume
+#### Para criar um volume
 
-1. On the device **Quick Start** page, click **Add a volume**. This starts the Add a volume wizard.
+1. Na página **Início Rápido** do dispositivo, clique em **Adicionar um volume**. Esta ação inicia o assistente Adicionar um volume.
 
-2. In the Add a volume wizard, under **Basic Settings**:
+2. No assistente Adicionar um volume, em **Definições Básicas**:
 
-	4. Type a **Name** for your volume.
-	5. On the drop-down list, select the **Usage Type** for your volume. For workloads that require local guarantees, low latencies, and higher performance, select a **Locally pinned** volume. For all other data, select a **Tiered** volume. If you are using this volume for archival data, check **Use this volume for less frequently accessed archival data**. 
-	
-		A locally pinned volume is thickly provisioned and ensures that the primary data on the volume stays local to the device and does not spill to the cloud.  If you create a locally pinned volume, the device will check for available space on the local tiers to provision the volume of the requested size. The operation of creating a locally pinned volume may involve spilling existing data from the device to the cloud and the time taken to create the volume may be long. The total time depends on the size of the provisioned volume, available network bandwidth, and the data on your device. 
+    4. Escreva um **Nome** para o volume.
+    5. Na lista pendente, selecione o **Tipo de Utilização** do volume. Para cargas de trabalho que necessitem de garantias locais, latências baixas e desempenho superior, selecione um volume **Afixado localmente**. Para todos os outros dados, selecione um volume **Em camadas**. Se estiver a utilizar este volume para os dados de arquivo, marque **Utilizar este volume para dados de arquivo acedidos com menos frequência**. 
+    
+        Um volume localmente afixado é fortemente aprovisionado e assegura que os dados primários no volume permanecem locais no dispositivo e não transbordam para a nuvem.  Se criar um volume localmente afixado, o dispositivo verificará o espaço disponível nas camadas locais para aprovisionar o volume do tamanho pedido. A operação de criação de um volume localmente afixado pode envolver transbordar dados existentes do dispositivo para a nuvem e o tempo necessário para criar o volume poderá ser longo. O tempo total depende do tamanho do volume aprovisionado, da largura de banda de rede disponível e dos dados no dispositivo. 
 
-		A tiered volume is thinly provisioned and can be created very quickly. If you are using the tiered volume for archival data, selecting **Use this volume for less frequently accessed archival data** changes the deduplication chunk size for your volume to 512 KB. If this field is not checked, the corresponding tiered volume will use a chunk size of 64 KB. A larger deduplication chunk size allows the device to expedite the transfer of large archival data to the cloud.
+        Um volume em camadas é fracamente aprovisionado e pode ser criado muito rapidamente. Se estiver a utilizar o volume em camadas para os dados de arquivo, selecionar **Utilizar este volume para dados de arquivo acedidos com menos frequência** altera o tamanho dos segmentos de eliminação de duplicados do volume para 512 KB. Se este campo não estiver selecionado, o volume em camadas correspondente irá utilizar um tamanho de segmentos de 64 KB. Um tamanho de segmentos de eliminação de duplicados maior permite ao dispositivo agilizar a transferência de dados de arquivo de grandes dimensões para a nuvem.
 
-	3. Specify the **Provisioned Capacity** for your volume. Make a note of the capacity that is available based on the volume type selected. The specified volume size must not exceed the available space.
+    3. Especifique a **Capacidade Aprovisionada** para o volume. Tome nota da capacidade que está disponível, consoante o tipo de volume selecionado. O tamanho do volume especificado não pode exceder o espaço disponível.
 
-		You can provision locally pinned volumes up to 8 TB or tiered volumes up to 200 TB on the 8100 device. On the larger 8600 device, you can provision locally pinned volumes up to 20 TB or tiered volumes up to 500 TB. As local space on the device is required to host the working set of tiered volumes, creation of locally pinned volumes will impact the space available for provisioning tiered volumes. Therefore, if you create a locally pinned volume, space available for creation of tiered volumes will be reduced. Similarly, if a tiered volume is created, the available space for creation of  locally pinned volumes will be reduced. 
+        Pode aprovisionar volumes localmente afixados até 8 TB ou volumes em camadas até 200 TB no dispositivo 8100. No dispositivo 8600 maior, pode aprovisionar volumes localmente afixados até 20 TB ou volumes em camadas até 500 TB. Como é necessário espaço local no dispositivo para alojar o conjunto de trabalho de volumes em camadas, a criação de volumes localmente afixados terá impacto no espaço disponível para o aprovisionamento de volumes em camadas. Por conseguinte, se criar um volume afixado localmente, será reduzido o espaço disponível para criação de volumes em camadas. Do mesmo modo, se for criado um volume em camadas, o espaço disponível para a criação de volumes localmente afixados irá ser reduzido. 
 
-		If you provision a locally pinned volume of 8 TB (maximum allowable size) on your 8100 device, then you will have exhausted all the local space available on the device. You will not be able to create any tiered volume from that point onwards as there is no local space on the device to host the working set of the tiered volume. Existing tiered volumes also affect the space available. For example, if you have an 8100 device that already has tiered volumes of 100 TB, only 4 TB of space will be available for locally pinned volumes.
+        Se aprovisionar um volume localmente afixado de 8 TB (tamanho máximo admissível) no dispositivo 8100, terá esgotado todo o espaço local disponível no dispositivo. Não poderá criar nenhum volume em camadas a partir desse ponto, uma vez que não há espaço local no dispositivo para alojar o conjunto de trabalho do volume em camadas. Os volumes em camadas existentes também afetam o espaço disponível. Por exemplo, se tiver um dispositivo 8100 que já tem volumes em camadas de 100 TB, estará disponível apenas um espaço de 4 TB para volumes afixados localmente.
 
-        The following image shows the **Basic Settings** dialog box for a locally pinned volume.
+        A imagem seguinte mostra a caixa de diálogo **Definições Básicas** para um volume afixado localmente.
 
-         ![Add local volume](./media/storsimple-create-volume-u2/add-local-volume-include.png)
+         ![Adicionar volume local](./media/storsimple-create-volume-u2/add-local-volume-include.png)
 
-        The following image shows the **Basic Settings** dialog box for a tiered volume.
+        A imagem seguinte mostra a caixa de diálogo **Definições Básicas** para um volume em camadas.
 
-         ![Add local volume](./media/storsimple-create-volume-u2/add-tiered-volume-include.png)
+         ![Adicionar volume local](./media/storsimple-create-volume-u2/add-tiered-volume-include.png)
 
-   4. Click the arrow icon ![arrow-icon](./media/storsimple-create-volume-u2/HCS_ArrowIcon-include.png) to go to the next page.
+   4. Clique no ícone de seta ![ícone de seta](./media/storsimple-create-volume-u2/HCS_ArrowIcon-include.png) para ir para a página seguinte.
 
 
-3. In the **Additional Settings** dialog box, add a new access control record (ACR):
+3. Na caixa de diálogo **Definições Adicionais**, adicione um novo registo de controlo de acesso (ACR):
 
-	1. Supply a **Name** for your ACR.
-	2. Under **iSCSI Initiator Name**, provide the iSCSI Qualified Name (IQN) of your Windows host. If you don't have the IQN, go to [Get the IQN of a Windows Server host](#get-the-iqn-of-a-windows-server-host).
-	3. Under **Default backup for this volume?**, select the **Enable** check box. The default backup will create a policy that executes at 22:30 each day (device time) and creates a cloud snapshot of this volume.
-	 
-     > [AZURE.NOTE] After the backup is enabled here, it cannot be reverted. You will need to edit the volume to modify this setting.
+    1. Forneça um **Nome** para o ACR.
+    2. Em **Nome do Iniciador iSCSI**, forneça o Nome Qualificado (IQN) do iSCSI do seu anfitrião do Windows. Se não tiver o IQN, veja [Get the IQN of a Windows Server host (Obter o IQN de um anfitrião do Windows Server)](#get-the-iqn-of-a-windows-server-host).
+    3. Em **Cópia de segurança predefinida para este volume?**, selecione a caixa de verificação **Ativar**. A cópia de segurança predefinida criará uma política que é executada às 22:30 todos os dias (hora do dispositivo) e cria um instantâneo na nuvem do volume.
+     
+     > [AZURE.NOTE] Após ativar aqui a cópia de segurança, não será possível reverter a ação. Terá de editar o volume para modificar a definição.
 
-     ![Add volume](./media/storsimple-create-volume-u2/AddVolumeAdditionalSettings1.png)
+     ![Adicionar volume](./media/storsimple-create-volume-u2/AddVolumeAdditionalSettings1.png)
 
-4. Click the check icon ![check icon](./media/storsimple-create-volume-u2/HCS_CheckIcon-include.png). A volume will be created with the specified settings.
+4. Clique no ícone de verificação ![ícone de verificação](./media/storsimple-create-volume-u2/HCS_CheckIcon-include.png). Será criado um volume com as definições especificadas.
+
+
+
+
+
+<!--HONumber=Jun16_HO2-->
 
 

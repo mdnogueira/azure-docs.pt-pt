@@ -1,19 +1,25 @@
 <properties services="virtual-machines" title="How to Log on to a Virtual Machine Running Windows Server" authors="cynthn" solutions="" manager="timlt" editor="tysonn" />
 
-4. Clicking **Connect** creates and downloads a Remote Desktop Protocol file (.rdp file). Click **Open** to use this file.
+4. Clicar em **Ligar** cria e transfere um ficheiro do protocolo RDP (ficheiro .rdp). Clique em **Abrir** para utilizar este ficheiro.
 
-5. You will get a warning that the .rdp is from an unknown publisher. This is normal. In the Remote Desktop window, click **Connect** to continue.
+5. Receberá um aviso a informar que o .rdp é de um publicador desconhecido. Esta é uma situação normal. Na janela Ambiente de Trabalho Remoto, clique em **Ligar** para continuar.
 
-	![Screenshot of a warning about an unknown publisher.](./media/virtual-machines-log-on-win-server/rdp-warn.png)
+    ![Captura de ecrã de um aviso sobre um publicador desconhecido.](./media/virtual-machines-log-on-win-server/rdp-warn.png)
 
-6. In the **Windows Security** window, type the credentials for an account on the virtual machine and then click **OK**.
+6. Na janela **Segurança do Windows**, escreva as credenciais para uma conta da máquina virtual e clique em **OK**.
 
- 	**Local account** - this is usually the local account user name and password that you specified when you created the virtual machine. In this case, the domain is the name of the virtual machine and it is entered as *vmname*&#92;*username*.  
-	
-	**Domain joined VM** - if the VM belongs to a domain, enter the user name in the format *Domain*&#92;*Username*. The account also needs to either be in the Administrators group or have been granted remote access privileges to the VM.
-	
-	**Domain controller** - if the VM is a domain controller, type the user name and password of a domain administrator account for that domain.
+    **Conta local** – trata-se normalmente do nome de utilizador e da palavra-passe da conta local que especificou quando criou a máquina virtual. Neste caso, o domínio é o nome da máquina virtual e é introduzido como *nomedavm*& #92;*nomedeutilizador*.  
+    
+    **VM associada ao domínio** – se a VM pertence a um domínio, introduza o nome de utilizador no formato *Domínio*& #92;*Nomedeutilizador*. A conta também tem de estar no grupo Administradores ou terem sido concedidos privilégios de acesso remoto à VM.
+    
+    **Controlador de domínio** – se a VM for um controlador de domínio, escreva o nome de utilizador e a palavra-passe de uma conta de administrador para esse domínio.
 
-7.	Click **Yes** to verify the identity of the virtual machine and finish logging on.
+7.  Clique em **Sim** para confirmar a identidade da máquina virtual e concluir o início de sessão.
 
-	![Screenshot showing a message abut verifying the identity of the VM.](./media/virtual-machines-log-on-win-server/cert-warning.png)
+    ![Captura de ecrã que mostra uma mensagem sobre a confirmação da identidade da VM.](./media/virtual-machines-log-on-win-server/cert-warning.png)
+
+
+
+<!--HONumber=Jun16_HO2-->
+
+

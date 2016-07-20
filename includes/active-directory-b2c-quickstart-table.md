@@ -1,8 +1,14 @@
-| Mobile & Native Apps | Web Apps & Web APIs | Integrate Directly with Protocols |
+| Aplicações Móveis e Nativas | Aplicações Web e APIs da Web | Integrar Diretamente com Protocolos |
 | ----------------------- | ------------------------------- | --------------------- |
-| [Add Sign Up & Sign In to an iOS App](active-directory-b2c-devquickstarts-ios.md) | Add Sign Up & Sign In to an AngularJS SPA (Coming Soon) | [Register an Application](active-directory-b2c-app-registration.md) |
-| [Add Sign Up & Sign In to an Android App](active-directory-b2c-devquickstarts-android.md) | [Add Sign Up & Sign In to a .NET MVC App](active-directory-b2c-devquickstarts-web-dotnet.md)  | [Mobile Apps with OAuth 2.0](active-directory-b2c-reference-oauth-code.md) |
-| Add Sign Up & Sign In to a Windows Universal App (Coming Soon) | [Add Sign Up & Sign In to a Node JS Web App](active-directory-b2c-devquickstarts-web-node.md) | [Web Apps with OpenID Connect](active-directory-b2c-reference-oidc.md) |
-| Add Sign Up & Sign In to a Windows Desktop App (Coming Soon) | [Secure a .NET Web API](active-directory-b2c-devquickstarts-api-dotnet.md) | Single Page Apps with OpenID Connect (Coming Soon)
-|  | [Secure a NodeJS Web API](active-directory-b2c-devquickstarts-api-node.md) | Server Side Daemons (Coming Soon) |
-|  | [Call a Web API from a .NET Web App](active-directory-b2c-devquickstarts-web-api-dotnet.md) | Server Side Daemons (Coming Soon) |
+| [Adicionar Subscrições e Inícios de Sessão a uma Aplicação iOS](active-directory-b2c-devquickstarts-ios.md) | Adicionar Subscrições e Inícios de Sessão a um AngularJS SPA (Brevemente) | [Registar uma Aplicação](active-directory-b2c-app-registration.md) |
+| [Adicionar Subscrições e Inícios de Sessão a uma Aplicação Android](active-directory-b2c-devquickstarts-android.md) | [Adicionar Subscrições e Inícios de Sessão a uma Aplicação .NET MVC](active-directory-b2c-devquickstarts-web-dotnet.md)  | [Aplicações Móveis com OAuth 2.0](active-directory-b2c-reference-oauth-code.md) |
+| Adicionar Subscrições e Inícios de Sessão a uma Aplicação Universal do Windows (Brevemente) | [Adicionar Subscrições e Inícios de Sessão a uma aplicação Web Node JS](active-directory-b2c-devquickstarts-web-node.md) | [Aplicações Web com OpenID Connect](active-directory-b2c-reference-oidc.md) |
+| Adicionar Subscrições e Inícios de Sessão a uma Aplicação do Ambiente do Windows (Brevemente) | [Proteger uma API Web do .NET](active-directory-b2c-devquickstarts-api-dotnet.md) | Aplicações de Página Única com OpenID Connect (Brevemente)
+|  | [Proteger uma API Web do NodeJS](active-directory-b2c-devquickstarts-api-node.md) | Servidor Side Daemons (Brevemente) |
+|  | [Chamar uma API Web a partir de uma aplicação Web do .NET](active-directory-b2c-devquickstarts-web-api-dotnet.md) | Servidor Side Daemons (Brevemente) |
+
+
+
+<!--HONumber=Jun16_HO2-->
+
+

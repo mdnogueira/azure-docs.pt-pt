@@ -122,7 +122,7 @@ $memcached_servers = array(
 );
 ```
 
-Assim que tiver sido colado este código, Mónaco automaticamente guardará o documento.
+Assim que tiver sido colado este código, o editor Monaco guarda automaticamente o documento.
 
 O passo seguinte consiste em ativar o plug-in da cache de objeto. Para o fazer, arraste e largue **objeto cache.php** da pasta **wp-content/plugins/memcached** para a pasta **wp-content** para ativar a funcionalidade de Cache de Objeto Memcache.
 

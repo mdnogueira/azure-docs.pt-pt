@@ -1,36 +1,42 @@
 <!--author=SharS last changed: 9/17/15-->
 
-#### To mount, initialize, and format a volume
+#### Para montar, inicializar e formatar um volume
 
-1. Start the Microsoft iSCSI initiator.
+1. Inicie o iniciador do Microsoft iSCSI.
 
-2. In the **iSCSI Initiator Properties** window, on the **Discovery** tab, click **Discover Portal**.
+2. Na janela **Propriedades do Iniciador iSCSI**, no separador **Deteção**, clique em **Detetar Portal**.
 
-3. In the **Discover Target Portal** dialog box, supply the IP address of your iSCSI-enabled network interface, and then click **OK**. 
+3. Na caixa de diálogo **Detetar Portal de Destino**, forneça o endereço IP da sua interface de rede ativada com permissão para iSCSI e clique em **OK**. 
 
-4. In the **iSCSI Initiator Properties** window, on the **Targets** tab, locate the **Discovered targets**. The device status should appear as **Inactive**.
+4. Na janela **Propriedades do Iniciador iSCSI**, no separador **Destinos**, localize os **Destinos Detetados**. O estado do dispositivo deve ser apresentado como **Inativo**.
 
-5. Select the target device and then click **Connect**. After the device is connected, the status should change to **Connected**. (For more information about using the Microsoft iSCSI initiator, see [Installing and Configuring Microsoft iSCSI Initiator][1]).
+5. Selecione o dispositivo de destino e clique em **Ligar**. Quando o dispositivo estiver ligado, o estado deverá mudar para **Ligado**. (Para obter mais informações sobre como utilizar o iniciador do Microsoft iSCSI, veja [Installing and Configuring Microsoft iSCSI Initiator (Instalar e Configurar o Iniciador do Microsoft iSCSI)][1]).
 
-6. On your Windows host, press the Windows Logo key + X, and then click **Run**. 
+6. No anfitrião do Windows, prima a tecla do Logótipo do Windows + X e clique em **Executar**. 
 
-7. In the **Run** dialog box, type **Diskmgmt.msc**. Click **OK**, and the **Disk Management** dialog box will appear. The right pane will show the volumes on your host.
+7. Na caixa de diálogo **Executar**, escreva **Diskmgmt.msc**. Clique em **OK**. Será apresentada a caixa de diálogo **Gestão de Discos**. O painel da direita apresentará os volumes no anfitrião.
 
-8. In the **Disk Management** window, the mounted volumes will appear as shown in the following illustration. Right-click the discovered volume (click the disk name), and then click **Online**.
+8. Na janela **Gestão de Discos**, os volumes montados serão apresentados como mostrado na ilustração seguinte. Clique com o botão direito do rato no volume detetado (clique no nome do disco) e, em seguida, clique em **Online**.
 
-     ![Initialize format volume](./media/storsimple-mount-initialize-format-volume/HCS_InitializeFormatVolume-include.png) 
+     ![Inicializar a formatação do volume](./media/storsimple-mount-initialize-format-volume/HCS_InitializeFormatVolume-include.png) 
 
-9. Right-click the volume (click the disk name) again, and then click **Initialize**.
+9. Clique novamente com o botão direito do rato no volume (clique no nome do disco) e, em seguida, clique em **Inicializar**.
 
-10. To format a simple volume, perform the following steps:
-  1. Select the volume, right-click it (click the right area), and click **New Simple Volume**.
-  2. In the New Simple Volume wizard, specify the volume size and drive letter and configure the volume as an NTFS file system.
-  3. Specify a 64 KB allocation unit size. This allocation unit size works well with the deduplication algorithms used in the StorSimple solution.
-  4. Perform a quick format.
+10. Para formatar um volume simples, execute os seguintes passos:
+  1. Selecione o volume, faça duplo clique nele (clique na área à direita) e clique em **Novo Volume Simples**.
+  2. No assistente Novo Volume Simples, especifique o tamanho do volume e a letra de unidade e configure o volume como um sistema de ficheiros NTFS.
+  3. Especifique um tamanho de unidade de alocação de 64 KB. Este tamanho de unidade de alocação funciona bem com os algoritmos de eliminação de duplicados utilizados na solução StorSimple.
+  4. Efetue uma formatação rápida.
 
-![Video available](./media/storsimple-mount-initialize-format-volume/Video_icon.png) **Video available**
+![Vídeo disponível](./media/storsimple-mount-initialize-format-volume/Video_icon.png) **Vídeo disponível**
 
-To watch a video that demonstrates how to mount, initialize, and format a StorSimple volume, click [here](https://azure.microsoft.com/documentation/videos/mount-initialize-and-format-a-storsimple-volume/).
+Para ver um vídeo que demonstra como montar, inicializar e formatar um volume StorSimple, clique [aqui](https://azure.microsoft.com/documentation/videos/mount-initialize-and-format-a-storsimple-volume/).
 
 <!--Link references-->
 [1]: https://technet.microsoft.com/library/ee338480(WS.10).aspx
+
+
+
+<!--HONumber=Jun16_HO2-->
+
+

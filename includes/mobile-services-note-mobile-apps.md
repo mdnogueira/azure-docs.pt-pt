@@ -1,5 +1,11 @@
->[AZURE.WARNING] This is an **Azure Mobile Services** topic.  This service has been superseded by Azure App Service Mobile Apps and is scheduled for removal from Azure.  We recommend using Azure Mobile Apps for all new mobile backend deployments.  Read [this announcement](https://azure.microsoft.com/blog/transition-of-azure-mobile-services/) to learn more about the pending deprecation of this service.  
+>[AZURE.WARNING] Este é um tópico dos ** Mobile Services do Azure**.  Este serviço foi substituído pelas Aplicações Móveis do Serviço de Aplicações do Azure e está agendado para remoção do Azure.  Recomendamos que utilize as Mobile Apps do Azure para todas as implementações de back-end móve lnovas.  Leia [este anúncio](https://azure.microsoft.com/blog/transition-of-azure-mobile-services/) para saber mais sobre a preterição pendente deste serviço.  
 > 
-> Learn about [migrating your site to Azure App Service](../articles/app-service-mobile/app-service-mobile-migrating-from-mobile-services.md).
+> Saiba mais sobre como [migrar o site para o Serviço de Aplicações do Azure](../articles/app-service-mobile/app-service-mobile-migrating-from-mobile-services.md).
 >
-> Get started with Azure Mobile Apps, see the [Azure Mobile Apps documentation center](https://azure.microsoft.com/documentation/learning-paths/appservice-mobileapps/).
+> Para obter uma introdução às Mobile Apps do Azure, veja o [Centro de documentação das Mobile Apps do Azure](https://azure.microsoft.com/documentation/learning-paths/appservice-mobileapps/).
+
+
+
+<!--HONumber=Jun16_HO2-->
+
+

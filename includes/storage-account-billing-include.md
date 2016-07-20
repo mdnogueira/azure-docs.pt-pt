@@ -1,10 +1,16 @@
-You are billed for Azure Storage usage based on your storage account. Storage costs are based on the following factors: region/location, account type, storage capacity, replication scheme, storage transactions, and data egress.
+A utilização do Storage do Azure é-lhe cobrada com base na sua conta de armazenamento. Os custos de armazenamento dependem dos seguintes fatores: região/localização, tipo de conta, capacidade de armazenamento, esquema de replicação, transações de armazenamento e saída de dados.
 
-- Region refers to the geographical region in which your account is based.
-- Account type refers to whether you are using a general-purpose storage account or a Blob storage account. With a Blob storage account, the access tier also determines the billing model for the account.
-- Storage capacity refers to how much of your storage account allotment you are using to store data.
-- Replication determines how many copies of your data are maintained at one time, and in what locations.
-- Transactions refer to all read and write operations to Azure Storage.
-- Data egress refers to data transferred out of an Azure region. When the data in your storage account is accessed by an application that is not running in the same region, you are charged for data egress. (For Azure services, you can take steps to group your data and services in the same data centers to reduce or eliminate data egress charges.)
+- Região refere-se à região geográfica na qual se baseia a sua conta.
+- Tipo de conta refere-se a estar a utilizar uma conta de armazenamento para fins gerais ou uma conta de armazenamento de Blobs. Com uma conta de armazenamento de Blobs, a camada de acesso determina também o modelo de faturação da conta.
+- Capacidade de armazenamento refere-se à quantidade da alocação da sua conta de armazenamento que está a utilizar para armazenar dados.
+- A replicação determina o número de cópias dos dados que e mantidó em simultâneo e em que localizações.
+- Transações refere-se a todas as operações de leitura e escrita do Storage do Azure.
+- Saída de dados refere-se aos dados transferidos para fora de uma região do Azure. Quando os dados na sua conta de armazenamento são acedidos por uma aplicação que não está em execução na mesma região, é-lhe cobrada a saída dos dados. (Para os serviços do Azure, pode tomar medidas para agrupar os seus dados e serviços nos mesmo datacenters, de modo a reduzir ou eliminar os encargos associados à saída de dados.)
 
-The [Azure Storage Pricing](https://azure.microsoft.com/pricing/details/storage/) page provides detailed pricing information based on account type, storage capacity, replication, and transactions. The [Data Transfers Pricing Details](https://azure.microsoft.com/pricing/details/data-transfers/) provides detailed pricing information for data egress. You can use the [Azure Storage Pricing Calculator](https://azure.microsoft.com/pricing/calculator/?scenario=data-management) to help estimate your costs.
+A página [Preços de Armazenamento do Azure](https://azure.microsoft.com/pricing/details/storage/) fornece informações detalhadas sobre os preços com base na capacidade de armazenamento, replicação e transações. A página [Detalhes de Preços das Transferências de Dados](https://azure.microsoft.com/pricing/details/data-transfers/) fornece informações detalhadas sobre os preços de saída de dados. Pode utilizar a [Calculadora de Preços do Storage do Azure](https://azure.microsoft.com/pricing/calculator/?scenario=data-management) para o ajudar a avaliar os custos.
+
+
+
+<!--HONumber=Jun16_HO2-->
+
+

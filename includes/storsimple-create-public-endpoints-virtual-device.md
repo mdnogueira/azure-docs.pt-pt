@@ -1,21 +1,26 @@
-#### To create public endpoints on the virtual device
+#### Para criar pontos finais públicos no dispositivo virtual
 
-1. Sign in to the Azure classic portal.
+1. Inicie sessão no Portal Clássico do Azure.
 
-- Click **Virtual Machines**, and then select the virtual machine that is being used as your virtual device.
+- Clique em **Virtual Machines** e selecione a máquina virtual que está a ser utilizada como o seu dispositivo virtual.
 
-- Click **Endpoints**. The **Endpoints** page lists all endpoints for the virtual machine.
+- Clique em **Pontos Finais**. A página **Pontos Finais** apresenta uma lista de todos os pontos finais da máquina virtual.
 
-- Click **Add**. The **Add Endpoint** dialog box appears. Click the arrow to continue.
+- Clique em **Adicionar**. É apresentada a caixa de diálogo **Adicionar Ponto final**. Clique na seta para continuar.
 
-- For the **Name**, type the following name for the endpoint: **WinRMHttps**.
+- Em **Nome**, escreva o seguinte nome para o ponto final: **WinRMHttps**.
 
-- For the **Protocol**, specify **TCP**.
+- Em **Protocolo**, especifique **TCP**.
 
-- For the **Public Port**, type the port numbers that you want to use for the connection.
+- Em **Porta Pública**, escreva os números de porta que pretende utilizar para a ligação.
 
-- For the **Private Port**, type **5986**.
+- Em **Porta Privada**, escreva **5986**.
 
-- Click the check mark to create the endpoint.
+- Clique na marca de verificação para criar o ponto final.
 
-After the endpoint is created, you can view its details to determine the Public Virtual IP (VIP) address. Record this address.
+Uma vez criado o ponto final, pode ver os respetivos detalhes para determinar o endereço IP Virtual Público (VIP). Registe esse endereço.
+
+
+<!--HONumber=Jun16_HO2-->
+
+

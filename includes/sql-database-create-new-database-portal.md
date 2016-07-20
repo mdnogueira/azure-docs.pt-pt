@@ -8,41 +8,46 @@ As of circa 2016-04-11, the following topics might include this include:
 articles/sql-database/sql-database-get-started-tutorial.md
 
 -->
-## Create a new Azure SQL database
+## Criar uma nova base de dados SQL do Azure
 
-Use the following steps in the Azure portal to create a new Azure SQL database on a new or existing Azure SQL Database logical server.
+Utilize os seguintes passos no portal do Azure para criar uma nova base de dados SQL do Azure num servidor lógico da SQL Database do Azure, novo ou existente.
 
-1. If not currently connected, connect to the [Azure portal](http://portal.azure.com).
-2. Click **New** , type **SQL Database** and then click **SQL Database (new database)**
+1. Se não estiver atualmente ligado, ligue-se ao [Portal do Azure](http://portal.azure.com).
+2. Clique em **Novo**, escreva **SQL Database** e, em seguida, clique em ** SQL Database (nova base de dados)**
 
-     ![new database](./media/sql-database-create-new-database-portal/sql-database-create-new-database-portal-1.png)
+     ![nova base de dados](./media/sql-database-create-new-database-portal/sql-database-create-new-database-portal-1.png)
 
-3. Click SQL Database (new database).
+3. Clique em SQL Database (nova base de dados).
 
-     ![new database](./media/sql-database-create-new-database-portal/sql-database-create-new-database-portal-2.png)
+     ![nova base de dados](./media/sql-database-create-new-database-portal/sql-database-create-new-database-portal-2.png)
    
-4. Click **Create** to create a new database in the SQL Database service.
+4. Clique em **Criar** para criar uma nova base de dados no serviço SQL Database.
 
-     ![new database](./media/sql-database-create-new-database-portal/sql-database-create-new-database-portal-3.png)
+     ![nova base de dados](./media/sql-database-create-new-database-portal/sql-database-create-new-database-portal-3.png)
 
-5. Provide the values for the following server properties:
+5. Forneça os valores para as seguintes propriedades do servidor:
 
- - Database name
- - Subscription (only if you have multiple subscriptions)
- - Resource group (if just getting started, use the resource group of the logical server)
- - Select source (you can choose a blank database, sample data or a database backup)
- - Server (a new or existing logical server)
- - Server admin password
- - Password
- - Pricing tier (if just getting started, use the default value S0)
- - Collation (only if blank database chosen)
+ - Nome da base de dados
+ - Subscrição (apenas se tiver várias subscrições)
+ - Grupo de recursos (se estiver a começar, utilize o grupo de recursos do servidor lógico)
+ - Selecione a origem (pode escolher uma base de dados em branco, dados de exemplo ou uma cópia de segurança da base de dados)
+ - Servidor (um servidor lógico novo ou existente)
+ - Palavra-passe de administrador do servidor
+ - Palavra-passe
+ - Escalão de preço (se estiver a começar, utilize o valor predefinido S0)
+ - Agrupamento (apenas se escolheu a base de dados em branco)
 
         ![new database](./media/sql-database-create-new-database-portal/sql-database-create-new-database-portal-4.png)
 
-6.  Click **Create** and in the notification area, you can see that deployment has started.
+6.  Clique em **Criar** e, na área de notificação, pode ver que a implementação foi iniciada.
 
-     ![new database](./media/sql-database-create-new-database-portal/sql-database-create-new-database-portal-5.png)
+     ![nova base de dados](./media/sql-database-create-new-database-portal/sql-database-create-new-database-portal-5.png)
 
-7. Wait for deployment to finish before continuing to the next step.
+7. Aguarde o fim da implementação antes avançar para o passo seguinte.
 
-     ![new database](./media/sql-database-create-new-database-portal/sql-database-create-new-database-portal-6.png)
+     ![nova base de dados](./media/sql-database-create-new-database-portal/sql-database-create-new-database-portal-6.png)
+
+
+<!--HONumber=Jun16_HO2-->
+
+

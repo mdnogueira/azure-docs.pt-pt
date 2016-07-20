@@ -1,10 +1,15 @@
 
-The following are screen captures from the completed app:
+As capturas de ecrã seguintes mostram a aplicação completa:
 
 ![](./media/mobile-services-windows-universal-get-started/mobile-quickstart-completed.png)
-<br/>Windows Store app
+<br/>Aplicação da Loja Windows
 
 ![](./media/mobile-services-windows-universal-get-started/mobile-quickstart-completed-wp8.png)
-<br/>Windows Phone Store app
+<br/>Aplicação da Loja do Windows Phone
 
-Completing this tutorial is a prerequisite for all other Mobile Services tutorials for Windows Store and Windows Phone Store apps. 
+A conclusão deste tutorial é um pré-requisito para todos os outros tutoriais dos Mobile Services para aplicações da Loja Windows e da Loja do Windows Phone. 
+
+
+<!--HONumber=Jun16_HO2-->
+
+

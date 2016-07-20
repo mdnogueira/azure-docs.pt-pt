@@ -1,7 +1,12 @@
-#### To delete a virtual device
+#### Para eliminar um dispositivo virtual
 
-1. Sign in to the Azure classic portal.
+1. Inicie sessão no Portal Clássico do Azure.
 
-- Click **Virtual Machines**, and then select the virtual device.
+- Clique em **Virtual Machines** e selecione o dispositivo virtual.
 
-- Click **Delete** and choose to delete all the virtual machine disks.
+- Clique em **Eliminar** e opte por eliminar todos os discos da máquina virtual.
+
+
+<!--HONumber=Jun16_HO2-->
+
+

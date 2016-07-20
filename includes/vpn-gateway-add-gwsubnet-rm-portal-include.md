@@ -1,16 +1,22 @@
-1. In the portal, navigate to the virtual network to which you want to connect a gateway. On the blade for your virtual network, click the **Settings** icon at the top of the blade to expand the Setting blade. 
+1. No portal, navegue até à rede virtual a que pretende ligar um gateway. No painel da sua rede virtual, clique no ícone **Definições** na parte superior do painel para expandir o painel Definição. 
 
-2. On the **Settings** blade, click **Subnets** to expand the Subnets blade.
+2. No painel **Definições**, clique em **Sub-redes** para expandir o painel Sub-redes.
 
-3. On the **Subnets** blade, click **Add** to expand the **Add subnet** blade.
+3. No painel **Definições**, clique em **Adiciona** para expandir o painel **Adicionar sub-rede**.
 
-	![Add the gateway subnet](./media/vpn-gateway-add-gwsubnet-rm-portal-include/addgwsubnet250.png)
+    ![Adicionar a sub-rede do gateway](./media/vpn-gateway-add-gwsubnet-rm-portal-include/addgwsubnet250.png)
 
-4. On the **Add subnet** blade, name your subnet **GatewaySubnet**. You should not name it anything else, or the gateway will not work.
+4. No painel **Adicionar sub-rede**, dê à sua sub-rede o nome **GatewaySubnet**. Não lhe deve dar nenhum outro nome. caso contrário, o gateway não funcionará.
 
-5. Add the IP **address range** for your gateway.
+5. Adicione o **intervalo de endereços** IP para o gateway.
 
-6. Click **OK** at the bottom of the blade to create the subnet.
+6. Clique em **OK** na parte inferior do painel para criar a sub-rede.
 
+
+
+
+
+
+<!--HONumber=Jun16_HO2-->
 
 

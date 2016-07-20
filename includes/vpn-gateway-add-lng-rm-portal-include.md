@@ -1,23 +1,29 @@
-1. In the Azure Portal, navigate to **New** **>** **Networking** **>** **Local network gateway**.
+1. No Portal do Azure, navegue até **Novo** **>** **Redes** **>** **Gateway de rede local**.
 
-	![create local network gateway](./media/vpn-gateway-add-lng-rm-portal-include/addlng250.png)
+    ![criar gateway de rede local](./media/vpn-gateway-add-lng-rm-portal-include/addlng250.png)
 
-2. On the **Create local network gateway blade**, specify a **Name** for your local network gateway object.
+2. No painel **Criar gateway de rede local**, especifique um **Nome** para o objeto do gateway de rede local.
  
-3. Specify an **IP address** for your gateway. This is the IP address of the external VPN device that you want to connect to. It cannot be behind NAT and has to be reachable by Azure.
+3. Especifique um **Endereço IP** para o seu gateway. Este é o endereço IP do dispositivo VPN externo a que pretende ligar. Não pode estar protegido por NAT e tem de estar acessível ao Azure.
 
-4. **Address Space** refers to the address ranges on your local (typically on-premises) network. You can add multiple address space ranges. The ranges that you enter here cannot overlap any of the address space ranges that you are using for any of the virtual networks that will communicate through the gateway.  You will need to coordinate with your on-premises configuration as well as with your Azure virtual network address spaces.
+4. O **Espaço de Endereços** refere-se aos intervalos de endereços na rede local (normalmente, no local). Pode adicionar vários intervalos de espaço de endereços. Os intervalos que introduzir aqui não se podem sobrepor a nenhum dos intervalos de espaço de endereços que está a utilizar numa das redes virtuais que irão comunicar através do gateway.  Terá de coordenar com a sua configuração no local, bem como com os espaços de endereços da sua rede virtual do Azure.
  
-5. For **Subscription**, verify that the correct subscription is showing.
+5. Para **Subscrição**, verifique se é apresentada a subscrição correta.
 
-6. For **Resource Group**, select the resource group that you want to use. You can either create a new resource group, or select one that you have already created. To create a new resource group, type the name in the box. To select a resource group that you've already created, click **Resource Group** to open the **Resource group** blade, and then select the resource group that you want to use.
+6. Para **Grupo de Recursos**, selecione o grupo de recursos que pretende utilizar. Pode criar um novo grupo de recursos ou selecionar um que já tenha criado. Para criar um novo grupo de recursos, escreva o nome na caixa. Para selecionar um grupo de recursos já criado, clique em **Grupo de Recursos** para abrir o painel **Grupo de Recursos** e selecione o grupo de recursos que pretende utilizar.
 
-7. For **Location**, if you are creating a new local network gateway, you can use the same location as the virtual network gateway. But, this is not required. The local network gateway can be in a different location. 
+7. Para **Localização**, se estiver a criar um novo gateway de rede local, pode utilizar a mesma localização do gateway da rede virtual. No entanto, não é obrigatório. O gateway da rede local pode estar numa localização diferente. 
 
-8. Leave "Pin to dashboard" selected if you want to find this local network gateway easily from the dashboard.
+8. Deixe “Afixar ao dashboard” selecionado se pretender encontrar este gateway de rede local facilmente no dashboard.
 
-9. Click **Create** to create the local network gateway. You'll see "Deploying Local network gateway" on your dashboard.
+9. Clique em **Criar** para criar o gateway da rede local. Verá “A implementar gateway da rede local” no dashboard.
 
-10. When the local network gateway has been created, it will open in the portal for you to view.
+10. Quando o gateway da rede local tiver sido criado, será aberto no portal para que o possa ver.
 
-	
+    
+
+
+
+<!--HONumber=Jun16_HO2-->
+
+

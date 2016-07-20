@@ -51,7 +51,7 @@ Além dos requisitos identificados acima, qualquer solução IoT também deverá
 
 O IoT Hub do Azure aborda os desafios relativos à conectividade do dispositivo da seguinte forma:
 
--   **Através da autenticação do dispositivo e da conectividade segura**. Pode aprovisionar cada dispositivo com a sua própria [chave de segurança][Ink-devguide-security] de modo a ativá-la para estabelecer a ligação ao IoT Hub. O [registo de identidade do IoT Hub][Ink-devguide-identityregistry] armazena identidades e chaves do dispositivo numa solução. Uma solução de back-end pode incluir uma lista branca e uma lista negra de dispositivos individuais, o que permite controlar totalmente o acesso de outros dispositivos.
+-   **Através da autenticação do dispositivo e da conectividade segura**. Pode aprovisionar cada dispositivo com a sua própria [chave de segurança][Ink-devguide-security] de modo a ativá-la para estabelecer a ligação ao IoT Hub. O [registo de identidade do IoT Hub][Ink-devguide-identityregistry] armazena identidades e chaves do dispositivo numa solução. Uma solução de back-end pode incluir uma lista de permissões e uma lista de bloqueios de dispositivos individuais, o que permite controlar totalmente o acesso de outros dispositivos.
 
 -   **Monitorização de operações de conectividade do dispositivo**. Pode receber registos detalhados de operações sobre a gestão de identidade do dispositivo e eventos de conectividade do dispositivo. Tal permite à sua solução IoT detetar facilmente problemas de conectividade, como dispositivos que tentam conectar-se com credenciais incorretas, enviar mensagens com uma frequência excessiva ou rejeitar todas as mensagens da nuvem para o dispositivo.
 

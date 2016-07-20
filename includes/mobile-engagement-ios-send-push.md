@@ -1,57 +1,62 @@
-###Grant access to your Push Certificate to Mobile Engagement
+###Conceder ao Certificado Push acesso ao Mobile Engagement
 
-To allow Mobile Engagement to send Push Notifications on your behalf, you need to grant it access to your certificate. This is done by configuring and entering your certificate into the Mobile Engagement portal. Make sure you obtain your .p12 certificate as explained in [Apple's documentation](https://developer.apple.com/library/prerelease/ios/documentation/IDEs/Conceptual/AppDistributionGuide/AddingCapabilities/AddingCapabilities.html#//apple_ref/doc/uid/TP40012582-CH26-SW6)
+Para permitir que o Mobile Engagement envie Notificações Push em seu nome, tem de conceder acesso ao certificado. Para tal, deve configurar e introduzir o certificado no portal de Mobile Engagement. Não se esqueça de obter o certificado .p12 conforme explicado na [Documentação da Apple](https://developer.apple.com/library/prerelease/ios/documentation/IDEs/Conceptual/AppDistributionGuide/AddingCapabilities/AddingCapabilities.html#//apple_ref/doc/uid/TP40012582-CH26-SW6).
 
-1. Navigate to your Mobile Engagement portal. Ensure you're in the correct and then click on the **Engage** button at the bottom:
+1. Navegue até ao portal do Mobile Engagement. Confirme se está no portal correto e clique no botão **Iniciar** na parte inferior:
 
-	![](./media/mobile-engagement-ios-send-push/engage-button.png)
+    ![](./media/mobile-engagement-ios-send-push/engage-button.png)
 
-2. Click on the **Settings** page in your Engagement Portal. From there click on the **Native Push** section to upload your p12 certificate:
+2. Clique na página **Definições** no Portal do Engagement. Aqui, clique na secção **Push Nativo** para carregar o certificado p12:
 
-	![](./media/mobile-engagement-ios-send-push/engagement-portal.png)
+    ![](./media/mobile-engagement-ios-send-push/engagement-portal.png)
 
-3. Select your p12, upload it and type your password:
+3. Selecione o p12, carregue-o e escreva a palavra-passe:
 
-	![](./media/mobile-engagement-ios-send-push/native-push-settings.png)
+    ![](./media/mobile-engagement-ios-send-push/native-push-settings.png)
 
-##<a id="send"></a>Send a notification to your app
+##<a id="send"></a>Enviar uma notificação à aplicação
 
-We will now create a simple Push Notification campaign that will send a push to our app:
+Vamos agora criar uma campanha de Notificações Push simples para enviar uma notificação push à nossa aplicação:
 
-1. Navigate to the **Reach** tab in your Mobile Engagement portal.
+1. Navegue até ao separador **Alcance** no portal do Mobile Engagement.
 
-2. Click **New Announcement** to create your push campaign
+2. Clique em **Novo Anúncio** para criar a campanha push.
 
-	![](./media/mobile-engagement-ios-send-push/new-announcement.png)
+    ![](./media/mobile-engagement-ios-send-push/new-announcement.png)
 
-3. Setup the first fields of your campaign:
+3. Configure os primeiros campos da campanha:
 
-	![](./media/mobile-engagement-ios-send-push/campaign-first-params.png)
+    ![](./media/mobile-engagement-ios-send-push/campaign-first-params.png)
 
-	- 	Provide a **Name** for your campaign 
-	- 	Select the **Delivery time** as **Out of app only**: this is the simple Apple push notification type that features some text.
-	- 	In the notification text, type first the **Title** which will be the first line in the push.
-	- 	Then type your **Message** which will be the second line
+    -   Forneça um **Nome** para a campanha. 
+    -   Selecione o **Tempo de entrega** como **Apenas fora da aplicação**: este é o tipo de notificação push simples da Apple que inclui algum texto.
+    -   No tipo de texto de notificação, escreva primeiro o **Título** que será a primeira linha no push.
+    -   Em seguida, escreva a **Mensagem** que será a segunda linha
 
-4. Scroll down, and in the content section select **Notification only**
+4. Desloque o ecrã para baixo e, na secção Conteúdo, selecione **Apenas notificação**
 
-	![](./media/mobile-engagement-ios-send-push/campaign-content.png)
+    ![](./media/mobile-engagement-ios-send-push/campaign-content.png)
 
-5. You're done setting the most basic campaign. Now scroll down and click on **Create** button to save your push notification campaign. 
+5. Terminou a configuração da campanha mais básica. Desloque o ecrã novamente para baixo e clique no botão **Criar** para guardar a campanha de notificações push. 
 
-6. Finally - click on **Activate** to send push notification. 
+6. Por fim, clique em **Ativar** para enviar a notificação push. 
 
-	![](./media/mobile-engagement-ios-send-push/campaign-activate.png)
+    ![](./media/mobile-engagement-ios-send-push/campaign-activate.png)
 
-7. You will be able receive the notification on your iOS device in the notification center like the following:
+7. Poderá receber a seguinte notificação do dispositivo iOS no centro de notificações:
 
-	![](./media/mobile-engagement-ios-send-push/iphone-notification.png)
+    ![](./media/mobile-engagement-ios-send-push/iphone-notification.png)
 
-8. If you have an Apple Watch paired with this iOS device then you will see the notification on your Apple Watch:
+8. Se tiver um Apple Watch emparelhado com este dispositivo iOS, verá a notificação no Apple Watch:
 
-	![](./media/mobile-engagement-ios-send-push/apple-watch.png)
+    ![](./media/mobile-engagement-ios-send-push/apple-watch.png)
 
+
+ 
 
  
 
- 
+
+<!--HONumber=Jun16_HO2-->
+
+

@@ -1,31 +1,36 @@
 <!--author=SharS last changed: 9/17/15-->
 
-#### To connect through the serial console
+#### Para ligar através da consola de série
 
-1. Connect your serial cable to the device (directly or through a USB-serial adapter).
+1. Ligue o cabo de série ao dispositivo (diretamente ou através de um adaptador USB de série).
 
-2. Open the **Control Panel**, and then open the **Device Manager**.
+2. Abra o **Painel de Controlo** e, em seguida, abra o **Gestor de Dispositivos**.
 
-3. Identify the COM port as shown in the following illustration.
+3. Identifique a porta COM, como mostrado na ilustração seguinte.
 
-     ![Connecting through serial console](./media/storsimple-use-putty/HCS_ConnectingDeviceS-include.png)
+     ![Ligar através da consola de série](./media/storsimple-use-putty/HCS_ConnectingDeviceS-include.png)
 
-4. Start PuTTY. 
+4. Inicie o PuTTY. 
 
-5. In the right pane, change the **Connection type** to **Serial**.
+5. No painel da direita, altere o **Tipo de ligação** para **Série**.
 
-6. In the right pane, type the appropriate COM port. Make sure that the serial configuration parameters are set as follows:
-  - Speed: 115,200
-  - Data bits: 8
-  - Stop bits: 1
-  - Parity: None
-  - Flow control: None
+6. No painel da direita, escreva a porta COM correta. Verifique se os parâmetros de configuração de série estão definidos do seguinte modo:
+  - Velocidade: 115.200
+  - Bits de dados: 8
+  - Bits de paragem: 1
+  - Paridade: Nenhuma
+  - Fluxo de controlo: Nenhum
 
-    These settings are shown in the following illustration.
+    Estas definições são apresentadas na ilustração seguinte.
 
-     ![PuTTY settings](./media/storsimple-use-putty/HCS_PuttyConfig-include.png) 
+     ![Definições do PuTTY](./media/storsimple-use-putty/HCS_PuttyConfig-include.png) 
 
-    > [AZURE.NOTE] If the default flow control setting does not work, try setting the flow control to XON/XOFF.
+    > [AZURE.NOTE] Se o controlo de fluxo predefinido não funcionar, experimente defini-lo como XON/XOFF
 
-7. Click **Open** to start a serial session.
+7. Clique em **Abrir** para iniciar uma sessão de série.
  
+
+
+<!--HONumber=Jun16_HO2-->
+
+

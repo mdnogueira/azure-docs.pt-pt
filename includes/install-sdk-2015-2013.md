@@ -1,7 +1,13 @@
-## <a name="setupdevenv"></a>Set up the development environment
+## <a name="setupdevenv"></a>Configurar o ambiente de desenvolvimento
 
-To start, set up your development environment by installing the [Azure SDK for Visual Studio 2015](http://go.microsoft.com/fwlink/?linkid=518003) or the [Azure SDK for Visual Studio 2013](http://go.microsoft.com/fwlink/?LinkID=324322).
+Para começar, configure o ambiente de desenvolvimento instalando o [Azure SDK para o Visual Studio 2015](http://go.microsoft.com/fwlink/?linkid=518003) ou o [Azure SDK para o Visual Studio 2013](http://go.microsoft.com/fwlink/?LinkID=324322).
 
-If you don't have Visual Studio installed, use the link for Visual Studio 2015, and Visual Studio will be installed along with the SDK.
+Se não tiver o Visual Studio instalado, utilize a ligação para o Visual Studio 2015 e este será instalado juntamente com o SDK.
 
->[AZURE.NOTE] Depending on how many of the SDK dependencies you already have on your machine, installing the SDK could take a long time, from several minutes to a half hour or more.
+>[AZURE.NOTE] Dependendo do número de dependências do SDK que já tem no computador, instalar o SDK pode demorar muito tempo, de alguns minutos a meia hora ou mais.
+
+
+
+<!--HONumber=Jun16_HO2-->
+
+

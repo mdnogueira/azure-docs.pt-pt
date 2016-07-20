@@ -1,15 +1,21 @@
-The Database Transaction Unit (DTU) is the unit of measure in SQL Database that represents the relative power of databases based on a real-world measure: the database transaction. We took a set of operations that are typical for an online transaction processing (OLTP) request, and then measured how many transactions could be completed per second under fully loaded conditions (that’s the short version, you can read the gory details in the [Benchmark overview](../articles/sql-database/sql-database-benchmark-overview.md)). 
+A Unidade de Transação da Base de Dados (DTU) é a unidade de medida na SQL Database que representa a potência relativa das bases de dados baseada numa medida do mundo real: a transação da base de dados. Pegámos num conjunto de operações que são características do processamento de transações online (OLTP) e medimos quantas transações foi possível concluir por segundo em condições de carga completa (que é a versão abreviada, pode ler todos os detalhes em [Descrição geral de referência](../articles/sql-database/sql-database-benchmark-overview.md)). 
 
-For example, a Premium P11 database with 1750 DTUs provides 350x more DTU compute power than a Basic database with 5 DTUs. 
+Por exemplo, uma base de dados Premium P11 com 1750 DTUs fornece 350 x mais potência de computação de DTUs do que uma base de dados básica com cinco DTUs. 
 
-![Intro to SQL Database: Single database DTUs by tier and level.](./media/sql-database-understanding-dtus/single_db_dtus.png)
+![Introdução à SQL Database: DTUs da base de dados individual por camada e nível.](./media/sql-database-understanding-dtus/single_db_dtus.png)
 
->[AZURE.NOTE] If you are migrating an existing SQL Server database, you can use a third-party tool, [the Azure SQL Database DTU Calculator](http://dtucalculator.azurewebsites.net/), to get an estimate of the performance level and service tier your database might require in Azure SQL Database.
+>[AZURE.NOTE] Se está a migrar uma base de dados SQL Server existente, pode utilizar uma ferramenta de terceiros, a [Calculadora de DTUs da SQL Database do Azure](http://dtucalculator.azurewebsites.net/), para obter uma estimativa do nível de desempenho e a camada de serviço de que a sua base de dados poderá necessitar na SQL Database do Azure.
 
 ### DTU vs. eDTU
 
-The DTU for single databases translates directly to the eDTU for elastic databases. For example, a database in a Basic elastic database pool offers up to 5 eDTUs. That’s the same performance as a single Basic database. The difference is that the elastic database won’t consume any eDTUs from the pool until it has to. 
+A DTU das bases de dados individuais é diretamente convertida para a eDTU das bases de dados elásticas. Por exemplo, uma base de dados num Conjunto de bases de dados elásticas básicas oferece até cinco eDTUs. É o mesmo desempenho de uma única base de dados básica individual. A diferença é que a base de dados elástica não irá consumir quaisquer eDTUs do conjunto até ter de o fazer. 
 
-![Intro to SQL Database: Elastic pools by tier.](./media/sql-database-understanding-dtus/sqldb_elastic_pools.png)
+![Introdução à SQL Database: conjuntos elásticos por camada.](./media/sql-database-understanding-dtus/sqldb_elastic_pools.png)
 
-A simple example helps. Take a Basic elastic database pool with 1000 DTUs and drop 800 databases in it. As long as only 200 of the 800 databases are being used at any point in time (5 DTU X 200 = 1000), you won’t hit capacity of the pool, and database performance won’t degrade. This example is simplified for clarity. The real math is a bit more involved. The portal does the math for you, and makes a recommendation based on historical database usage. See [Price and performance considerations for an elastic database pool](../articles/sql-database/sql-database-elastic-pool-guidance.md) to learn how the recommendations work, or to do the math yourself. 
+Um exemplo simples pode ajudar. Vejamos um Conjunto de bases de dados elásticas básicas com 1000 DTUs e adicionemos 800 bases de dados. Desde que apenas 200 das 800 bases de dados estejam a ser utilizadas num dado momento (5 DTUs X 200 = 1000), não atingirá a capacidade do conjunto e o desempenho da base de dados não se degradará. Este exemplo foi simplificado para efeitos de clareza. As contas reais são um pouco mais complexas. O portal faz as contas por si e faz uma recomendação com base no histórico da utilização da base de dados. Veja [Considerações sobre os preços e o desempenho de um conjunto de bases de dados elásticas](../articles/sql-database/sql-database-elastic-pool-guidance.md) para saber como funcionam as recomendações ou para realizar os cálculos. 
+
+
+
+<!--HONumber=Jun16_HO2-->
+
+
