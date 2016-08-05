@@ -20,8 +20,8 @@
 
 Uma vez que existem vários tipos de Multi-Factor Authentication do Azure, é necessário determinar algumas ações para descobrir qual a versão mais adequada a utilizar.  Essas ações são:
 
--   [O que estou a tentar proteger](#what-am-i-trying-to-secure)
--   [Onde estão localizados os utilizadores](#where-are-the-users-located)
+-   [O que estou a tentar proteger](#o-que-estou-a-tentar-proteger)
+-   [Onde estão localizados os utilizadores](#onde-esto-localizados-os-utilizadores)
 
 As secções seguintes irão fornecer orientação sobre como determinar cada uma destas ações.
 
