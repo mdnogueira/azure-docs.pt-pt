@@ -1,106 +1,116 @@
-# Azure Technical Documentation Contributor Guide
+# Guia do Contribuidor de Documentação Técnica do Azure
 
-You've found the GitHub repository that houses the source for the technical documentation that is published to the Azure Documentation Center at [http://azure.microsoft.com/documentation](http://azure.microsoft.com/documentation).
+Encontrou o repositório do GitHub que aloja a fonte da documentação técnica que é publicada no Centro de Documentação do Azure, em [http://azure.microsoft.com/documentation](http://azure.microsoft.com/documentation).
 
-This repository also contains guidance to help you contribute to our technical documentation.  For a list of the articles in the contributors' guide, see [the index](https://github.com/Azure/azure-content/blob/master/contributor-guide/contributor-guide-index.md).
+Este repositório também contém orientações que o ajudam a contribuir para a nossa documentação técnica.  Para obter uma lista dos artigos no guia dos contribuidores, veja [o índice](https://github.com/Azure/azure-content/blob/master/contributor-guide/contributor-guide-index.md).
 
-## Contribute to Azure documentation
+## Contribuir para a documentação do Azure
 
-Thank you for your interest in Azure documentation!
+Obrigado pelo seu interesse na documentação do Azure!
 
-* [Ways to contribute](#ways-to-contribute)
-* [About your contributions to Azure content](#about-your-contributions-to-azure-content)
-* [Repository organization](#repository-organization)
-* [Use GitHub, Git, and this repository](#use-github-git-and-this-repository)
-* [How to use markdown to format your topic](#how-to-use-markdown-to-format-your-topic)
-* [Feedback, comments, and support](./contributor-guide/feedback-and-comments.md)
-* [More resources](#more-resources)
-* [Index of all contributors' guide articles](./contributor-guide/contributor-guide-index.md) (opens new page)
+* [Formas de contribuir](#ways-to-contribute)
+* [Código de conduta](#code-of-conduct)
+* [Sobre as suas contribuições para conteúdo do Azure](#about-your-contributions-to-azure-content)
+* [Organização do repositório](#repository-organization)
+* [Utilizar o GitHub, o Git e este repositório](#use-github-git-and-this-repository)
+* [Como utilizar markdown para formatar o seu tópico](#how-to-use-markdown-to-format-your-topic)
+* [Comentários, opiniões e suporte](./contributor-guide/feedback-and-comments.md)
+* [Mais recursos](#more-resources)
+* [Índice de todos os artigos de guia para os contribuidores](./contributor-guide/contributor-guide-index.md) (abre uma nova página)
 
-## Ways to contribute
+## Formas de contribuir 
 
-You can contribute to [Azure documentation](http://azure.microsoft.com/documentation/) in a few different ways:
+Pode contribuir para a [Documentação do Azure](http://azure.microsoft.com/documentation/) de várias formas:
 
-* Contribute to a [forum discussion](http://social.msdn.microsoft.com/Forums/windowsazure/home).
-* Submit Disqus comments at the bottom of articles.
-* You can easily contribute to technical articles in the GitHub user interface. Either find the article in this repository, or visit the article on [http://azure.microsoft.com/documentation](http://azure.microsoft.com/documentation) and click the link in the article that goes to the GitHub source for the article.
-* If you are making substantial changes to an existing article, adding or changing images, or contributing a new article, you need to fork this repository, install Git Bash, Markdown Pad, and learn some git commands.
+* Contribuir para um [debate no fórum](http://social.msdn.microsoft.com/Forums/windowsazure/home).
+* Submeter comentários do Disqus na parte inferior dos artigos.
+* Pode contribuir facilmente para artigos técnicos na interface de utilizador do GitHub. Encontre o artigo neste repositório ou visite-o em [http://azure.microsoft.com/documentation](http://azure.microsoft.com/documentation) e clique na ligação no artigo que direciona para a fonte do mesmo no GitHub.
+* Se estiver a efetuar alterações substanciais a um artigo existente, a adicionar ou alterar imagens ou a contribuir com um artigo novo, terá de copiar este repositório, instalar o Git Bash, o Markdown Pad e aprender alguns comandos git.
 
-##About your contributions to Azure content
+##Código de conduta
 
-###Minor corrections
+Este projeto adotou o [Microsoft Open Source Code of Conduct (Código de Conduta do Microsoft Open Source)](https://opensource.microsoft.com/codeofconduct/). Para obter mais informações, consulte [Code of Conduct FAQ (FAQ do Código de Conduta)](https://opensource.microsoft.com/codeofconduct/faq/) ou envie um e-mail para [opencode@microsoft.com](mailto:opencode@microsoft.com) com perguntas ou comentários adicionais.
 
-Minor corrections or clarifications you submit for documentation and code examples in this repo are covered by the [Azure Website Terms of Use (ToU)](http://azure.microsoft.com/support/legal/website-terms-of-use/).
+##Sobre as suas contribuições para conteúdo do Azure
+
+###Correções secundárias
+
+As correções secundárias ou clarificações que submeter relativamente a documentação e exemplos de códigos neste repositório estão abrangidas pelos [Termos de Utilização do Web Site do Azure (ToU)](http://azure.microsoft.com/support/legal/website-terms-of-use/).
 
 
-###Larger submissions
+###Submissões maiores
 
-If you submit a pull request with new or significant changes to documentation and code examples, we'll send a comment in GitHub asking you to submit an online Contribution License Agreement (CLA) if you are in one of these groups:
+Se submeter um pedido de aviso com alterações novas ou significativas a documentação e exemplos de códigos, enviaremos um comentário no GitHub a pedir-lhe para submeter um Contribution License Agreement (CLA, Contrato de Licença de Contribuição) online, se fizer parte de um destes grupos:
 
-* Members of the Microsoft Open Technologies group.
-* Contributors who don't work for Microsoft.
+* Membros do grupo Microsoft Open Technologies.
+* Contribuidores que não trabalham para a Microsoft.
 
-We need you to complete the online form before we can accept your pull request.
+Antes de podermos aceitar o seu pedido de aviso, tem de preencher o formulário online.
 
-Full details are available at [http://azure.github.io/guidelines/#cla](http://azure.github.io/guidelines/#cla).
+Estão disponíveis todos os detalhes em [http://azure.github.io/guidelines/#cla](http://azure.github.io/guidelines/#cla).
 
-## Repository organization
+## Organização do repositório
 
-The content in the azure-content repository follows the organization of documentation on [Azure.Microsoft.com](http://azure.microsoft.com). This repository contains two root folders:
+O conteúdo do repositório azure-content segue a organização da documentação em [Azure.Microsoft.com](http://azure.microsoft.com). Este repositório inclui duas pastas raiz:
 
 ### \articles
 
-The *\articles* folder contains the documentation articles formatted as markdown files with an *.md* extension.
+A pasta *\articles* contém os artigos de documentação formatados como ficheiros markdown com uma extensão *.md*.
 
-Articles in the root directory are published to Azure.Microsoft.com in the path *http://azure.microsoft.com/documentation/articles/{article-name-without-md}/*.
+Os artigos no diretório de raiz são publicados em Azure.Microsoft.com, no caminho *http://azure.microsoft.com/documentation/articles/{nome-do-artigo-sem-md}/*.
 
-* **Article filenames:** See [our file naming guidance](./contributor-guide/file-names-and-locations.md).
+* **Nomes de ficheiros de artigos:** consulte a [nossa orientação relativa à nomenclatura de ficheiros](./contributor-guide/file-names-and-locations.md).
 
-Articles within their own service folder are published to Azure.Microsoft.com in the path
-*http://azure.microsoft.com/documentation/articles/service-folder/{article-name-without-md}/*
+Os artigos na respetiva pasta de serviço são publicados em Azure.Microsoft.com, no caminho *http://azure.microsoft.com/documentation/articles/service-folder/{nome-do-artigo-sem-md}/*
 
-* **Media subfolders:** The *\articles* folder contains the *\media* folder for root directory article media files, inside which are subfolders with the images for each article.  The service folders contain a separate media folder for the articles within each service folder. The article image folders are named identically to the article file, minus the *.md* file extension.
+* **Subpastas de multimédia:** a pasta *\articles* contém a pasta *\media* para ficheiros de multimédia de artigos do diretório de raiz, dentro da qual estão subpastas com as imagens de cada artigo.  As pastas de serviço contêm uma pasta de multimédia em separado para os artigos dentro de cada uma daquelas pastas. As pastas de imagens de artigos são denominadas de forma idêntica ao ficheiro do artigo, sem a extensão de ficheiro *.md*.
 
 ### \includes
 
-You can create reusable content sections to be included in one or more articles. See [Custom extensions used in our technical content](./contributor-guide/custom-markdown-extensions.md).
+Pode criar secções de conteúdos reutilizáveis para serem incluídos num ou mais artigos. Consulte [Custom extensions used in our technical content (Extensões personalizadas utilizadas no nosso conteúdo técnico)](./contributor-guide/custom-markdown-extensions.md).
 
 ### \markdown templates
 
-This folder contains our standard markdown template with the basic markdown formatting you need for an article.
+Esta pasta contém o nosso modelo padrão de markdown com a formatação de markdown básica necessária para os artigos.
 
 ### \contributor-guide
 
-This folder contains articles that are part of our contributors' guide.  
+Esta pasta contém artigos que fazem parte do guia dos nossos contribuidores.  
 
-## Use GitHub, Git, and this repository
+## Utilizar o GitHub, o Git e este repositório
 
-For information about how to contribute, how to use the GitHub UI to contribute small changes, and how to fork and clone the repository for more significant contributions, see [Install and set up tools for authoring in GitHub](./contributor-guide/tools-and-setup.md).
+Para obter informações sobre como contribuir, como utilizar a IU do GitHub para contribuir com pequenas alterações e como copiar e clonar o repositório para criar contribuições mais significativas, consulte [Install and set up tools for authoring in GitHub (Instalar e configurar ferramentas para criação no GitHub)](./contributor-guide/tools-and-setup.md).
 
-If you install GitBash and choose to work locally, the steps for creating a new local working branch, making changes, and submitting the changes back to the main branch are listed in [Git commands for creating a new article or updating an existing article](./contributor-guide/git-commands-for-master.md)
+Se instalar o Git Bash e optar por trabalhar localmente, os passos para criar um novo ramo de trabalho local, realizar alterações e submeter as alterações novamente para o ramo principal estão indicados em [Git commands for creating a new article or updating an existing article (Comandos Git para criar um artigo novo ou atualizar um artigo existente)](./contributor-guide/git-commands-for-master.md)
 
-### Branches
+### Ramos
 
-We recommend that you create local working branches that target a specific scope of change. Each branch should be limited to a single concept/article both to streamline work flow and reduce the possibility of merge conflicts.  The following efforts are of the appropriate scope for a new branch:
+Recomendamos que crie ramos de trabalho local direcionados para um âmbito específico de alteração. Cada ramo deve estar limitado a um único conceito/artigo, quer para otimizar o fluxo de trabalho, quer para reduzir a possibilidade de conflitos de intercalação.  Os esforços seguintes correspondem ao âmbito adequado para um ramo novo:
 
-* A new article (and associated images)
-* Spelling and grammar edits on an article.
-* Applying a single formatting change across a large set of articles (e.g. new copyright footer).
+* Um artigo novo (e imagens associadas)
+* Edições de ortografia e gramática num artigo.
+* Aplicar uma alteração de formatação única num conjunto grande de artigos (por exemplo, um rodapé de direitos de autor novo).
 
-## How to use markdown to format your topic
+## Como utilizar markdown para formatar o seu tópico
 
-All the articles in this repository use GitHub flavored markdown.  Here's a list of resources.
+Todos os artigos neste repositório utilizam o markdown do GitHub.  Eis uma lista de recursos.
 
-- [Markdown basics](https://help.github.com/articles/markdown-basics/)
+- [Noções básicas de markdown](https://help.github.com/articles/markdown-basics/)
 
-- [Printable markdown cheatsheet](./contributor-guide/media/documents/markdown-cheatsheet.pdf?raw=true)
+- [Printable markdown cheatsheet (Referência rápida do markdown imprimível)](./contributor-guide/media/documents/markdown-cheatsheet.pdf?raw=true)
 
-- For our list of markdown editors, see the [tools and setup topic](./contributor-guide/tools-and-setup.md#install-a-markdown-editor).
+- Para a nossa lista de editores de markdown, consulte o [tópico de ferramentas e configuração](./contributor-guide/tools-and-setup.md#install-a-markdown-editor).
 
-## Article metadata
+## Metadados dos artigos
 
-Article metadata enables certain functionalities on the azure.microsoft.com web site, such as author attribution, contributor attribution, breadcrumbs, article descriptions, and SEO optimizations as well as reporting Microsoft uses to evaluate the performance of the content. So, the metadata is important! [Here's the guidance for making sure your metadata is done right](./contributor-guide/article-metadata.md).
+Os metadados dos artigos ativam determinadas funcionalidades no Web site azure.microsoft.com, como a atribuição do autor e do contribuidor, a navegação estrutural, descrições de artigos e otimizações de SEO, bem como relatórios que a Microsoft utiliza para avaliar o desempenho do conteúdo. Por este motivo, os metadados são importantes! [Esta é a orientação para se certificar de que cria os seus metadados corretamente](./contributor-guide/article-metadata.md).
 
-## More resources
+## Mais recursos
 
-See the [index of our contributor's guide](./contributor-guide/contributor-guide-index.md) for all our guidance topics.
+Consulte o [índice do guia do contribuidor](./contributor-guide/contributor-guide-index.md) para ver todos os tópicos de orientação.
+
+
+
+<!--HONumber=Aug16_HO1-->
+
+
