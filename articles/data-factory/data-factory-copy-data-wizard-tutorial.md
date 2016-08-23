@@ -13,20 +13,20 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="get-started-article" 
-    ms.date="05/16/2016" 
+    ms.date="08/01/2016" 
     ms.author="spelluru"/>
 
 # Tutorial: Criar um pipeline com Atividade de Cópia com o Assistente de Cópia do Data Factory
 > [AZURE.SELECTOR]
-- [Descrição Geral do Tutorial](data-factory-get-started.md)
-- [Com o Editor do Data Factory](data-factory-get-started-using-editor.md)
-- [Com o PowerShell](data-factory-monitor-manage-using-powershell.md)
-- [Com o Visual Studio](data-factory-get-started-using-vs.md)
+- [Descrição Geral do Tutorial](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
+- [Com o Editor do Data Factory](data-factory-copy-activity-tutorial-using-azure-portal.md)
+- [Com o PowerShell](data-factory-copy-activity-tutorial-using-powershell.md)
+- [Com o Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md)
 - [Com o Assistente de Cópia](data-factory-copy-data-wizard-tutorial.md)
 
 Neste tutorial, vai utilizar o Assistente de Cópia do Data Factory para criar um pipeline com uma Atividade de Cópia numa fábrica de dados. Comece por criar uma fábrica de dados através do Portal do Azure e, em seguida, utilize o Assistente de Cópia para criar serviços ligados ao Data Factory, conjuntos de dados e um pipeline com uma Atividade de Cópia para copiar dados de um armazenamento de blobs do Azure para uma base de dados SQL do Azure.
 
-> [AZURE.IMPORTANT] Veja o artigo [Descrição Geral do Tutorial](data-factory-get-started.md) e execute os passos de pré-requisitos antes de executar este tutorial.
+> [AZURE.IMPORTANT] Veja o artigo [Descrição Geral do Tutorial](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) e execute os passos de pré-requisitos antes de executar este tutorial.
 
 ## Criar fábrica de dados
 Neste passo, deverá utilizar o Portal do Azure para criar uma fábrica de dados do Azure com o nome **ADFTutorialDataFactory**.
@@ -120,6 +120,6 @@ Neste passo, deverá utilizar o Portal do Azure para criar uma fábrica de dados
 | [Monitorizar e gerir pipelines com a Aplicação de Monitorização](data-factory-monitor-manage-app.md) | Este artigo descreve como monitorizar, gerir e depurar pipelines com a Aplicação de Monitorização e Gestão. 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

@@ -13,7 +13,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="compute"
-   ms.date="04/05/2016"
+   ms.date="06/27/2016"
    ms.author="guscatal;elizapo"/>
 
 
@@ -69,6 +69,6 @@ Ao clicar em qualquer uma destas, a aplicação deverá iniciar na máquina virt
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

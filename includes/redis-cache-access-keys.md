@@ -1,4 +1,4 @@
-Para se ligarem à cache, os seus clientes de cache precisam das portas, das chaves e do nome do anfitrião. Alguns clientes podem mencionar esses itens por nomes ligeiramente diferentes. Para obter estes itens, [navegue](../articles/redis-cache/cache-configure.md#configure-redis-cache-settings) até à sua cache no [Portal do Azure](https://portal.azure.com) e clique em **Definições** ou em **Todas as definições**.
+Para se ligarem a uma instância da Cache de Redis do Azure, os clientes de cache precisam do nome de anfitrião, das portas e das chaves da cache. Alguns clientes podem mencionar esses itens por nomes ligeiramente diferentes. Para obter estes itens, [navegue](../articles/redis-cache/cache-configure.md#configure-redis-cache-settings) até à sua cache no [Portal do Azure](https://portal.azure.com) e clique em **Definições** ou em **Todas as definições**.
 
 ![Definições da cache de Redis](media/redis-cache-access-keys/redis-cache-settings.png)
 
@@ -15,6 +15,6 @@ Para obter as chaves de acesso, clique em **Chaves de acesso**.
 ![Chaves de acesso da cache de Redis](media/redis-cache-access-keys/redis-cache-access-keys.png)
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

@@ -30,7 +30,7 @@ Utilize os seguintes passos no portal do Azure para criar uma nova base de dados
  - Nome da base de dados
  - Subscrição (apenas se tiver várias subscrições)
  - Grupo de recursos (se estiver a começar, utilize o grupo de recursos do servidor lógico)
- - Selecione a origem (pode escolher uma base de dados em branco, dados de exemplo ou uma cópia de segurança da base de dados)
+ - Selecionar a origem (pode escolher uma base de dados em branco, dados de exemplo ou uma cópia de segurança da base de dados do Azure. Para migrar uma base de dados do SQL Server no local ou carregar dados com o BCP, consulte as hiperligações no fim deste artigo)
  - Servidor (um servidor lógico novo ou existente)
  - Palavra-passe de administrador do servidor
  - Palavra-passe
@@ -48,6 +48,7 @@ Utilize os seguintes passos no portal do Azure para criar uma nova base de dados
      ![nova base de dados](./media/sql-database-create-new-database-portal/sql-database-create-new-database-portal-6.png)
 
 
-<!--HONumber=Jun16_HO2-->
+
+<!--HONumber=Aug16_HO1-->
 
 

@@ -14,7 +14,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="03/30/2016"
+   ms.date="07/18/2016"
    ms.author="cherylmc"/>
 
 # Configurar uma ligação VPN Ponto a Site para uma VNet através do portal clássico
@@ -25,7 +25,7 @@
 
 Uma configuração Ponto a Site permite-lhe criar uma ligação segura para a sua rede virtual a partir de um computador cliente, individualmente. É estabelecida uma ligação VPN ao iniciar a ligação a partir do computador cliente. O Ponto a Site é uma excelente solução quando pretende ligar a VNet a partir de uma localização remota, por exemplo, quando está em casa ou numa conferência ou quando tem apenas alguns clientes que precisam de se ligar a uma rede virtual. 
 
-As ligações Ponto a Site não precisam de nenhum dispositivo VPN ou endereço IP destinado ao público para funcionar. Para obter mais informações sobre ligações Ponto a Site, veja [FAQs do VPN Gateway](vpn-gateway-vpn-faq.md#point-to-site-connections) e [Acerca das ligações em vários locais](vpn-gateway-cross-premises-options.md).
+As ligações Ponto a Site não precisam de nenhum dispositivo VPN ou endereço IP destinado ao público para funcionar. Para obter mais informações sobre ligações Ponto a Site, veja [FAQ do Gateway de VPN](vpn-gateway-vpn-faq.md#point-to-site-connections) e [Acerca das ligações em vários locais](vpn-gateway-cross-premises-options.md).
 
 Este artigo aplica-se às ligações do VPN Gateway Ponto a Site para uma rede virtual criadas com o **modelo de implementação clássica** (Gestão de Serviço) e o portal clássico. Quando criarmos os passos para o Portal do Azure, criaremos ligações para esse artigo nesta página.
 
@@ -212,6 +212,6 @@ Se pretender obter mais informações sobre Redes Virtuais, veja a página [Docu
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

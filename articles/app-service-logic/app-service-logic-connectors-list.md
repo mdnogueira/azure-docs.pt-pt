@@ -1,30 +1,30 @@
 <properties
     pageTitle="Lista de Conectores e API Apps disponíveis | App Service do Microsoft Azure"
     description="Leia sobre os Conectores e API Apps no App Service do Azure e"
-    services="app-service\logic"
+    services="logic-apps"
     documentationCenter=""
     authors="MandiOhlinger"
     manager="erikre"
     editor="cgronlun"/>
 
 <tags
-    ms.service="app-service-logic"
+    ms.service="logic-apps"
     ms.workload="integration"
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="04/11/2016"
+    ms.date="07/28/2016"
     ms.author="mandia"/>
 
 
 # Lista de Conectores e API Apps para utilizar nas suas Logic Apps
->[AZURE.NOTE] Esta versão do artigo aplica-se à versão do esquema de pré-visualização 2014-12-01 das Logic Apps. Para a versão do esquema de pré-visualização 2015-08-01, clique em [Nova Lista de Conectores](../connectors/apis-list.md).
+>[AZURE.NOTE] Esta versão do artigo aplica-se à versão do esquema de pré-visualização 2014-12-01 das Logic Apps. Para a versão de Disponibilidade Geral (GA) das Logic Apps, veja a [Nova Lista de Conectores](../connectors/apis-list.md).
 
 Saiba mais sobre todos os conectores e API Apps disponíveis criados pela Microsoft para utilizar nas suas Logic Apps.
 
 Para obter informações sobre preços e uma lista do que está incluído com cada Escalão de Serviços, consulte [Preços dos Serviços de Aplicações do Azure](https://azure.microsoft.com/pricing/details/app-service/).
 
-> [AZURE.NOTE] Se pretende começar com Azure Logic Apps antes de se inscrever para uma conta do Azure, aceda a [Experimentar Aplicação Lógica](https://tryappservice.azure.com/?appservice=logic). Pode criar de imediato uma aplicação lógica de arranque de curta duração no App Service. Sem cartões de crédito; sem compromissos.
+> [AZURE.NOTE] Se pretende uma introdução às Logic Apps antes de se inscrever para uma conta do Azure, aceda a [Experimentar a Aplicação Lógica](https://tryappservice.azure.com/?appservice=logic). Pode criar de imediato uma aplicação lógica de arranque de curta duração no App Service. Sem cartões de crédito; sem compromissos.
 
 ## Conectores de Núcleo
 A tabela seguinte apresenta uma lista de todos os conectores e API Apps disponíveis criados pela Microsoft que estão disponíveis como Conectores de Núcleo:
@@ -86,6 +86,6 @@ Os conectores também podem ser utilizados como ações na sua Aplicação Lógi
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

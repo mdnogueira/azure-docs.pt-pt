@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="04/25/2016"
+    ms.date="07/06/2016"
     ms.author="maheshu"/>
 
 # Serviços de Domínio do Azure AD *(Pré-visualização)* – Atualizar as definições de DNS para a Azure Virtual Network
@@ -53,6 +53,6 @@ A próxima tarefa de configuração é [ativar a sincronização de palavras-pas
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

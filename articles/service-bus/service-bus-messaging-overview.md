@@ -1,6 +1,6 @@
 <properties
     pageTitle="Descrição geral de mensagens do Service Bus | Microsoft Azure"
-    description="Mensagens do Service Bus: Entrega Flexível de Dados na nuvem"
+    description="Mensagens do Service Bus: entrega flexível de dados na nuvem"
     services="service-bus"
     documentationCenter=".net"
     authors="sethmanheim"
@@ -13,13 +13,13 @@
     ms.tgt_pltfrm="na"
     ms.devlang="multiple"
     ms.topic="get-started-article"
-    ms.date="03/09/2016"
+    ms.date="06/20/2016"
     ms.author="sethm"/>
 
 
 # Mensagens do Service Bus: entrega flexível de dados na nuvem
 
-Mensagens do Service Bus do Azure são um serviço fiável de entrega de informações. O objetivo deste serviço é facilitar a comunicação. Quando duas ou mais entidades querem trocar informações, precisam de um mecanismo de comunicação. Mensagens do Service Bus são um mecanismo de comunicação mediado ou de terceiros. É algo semelhante a um serviço postal de entrega de cartas no mundo físico. Os serviços postais facilitam o envio de diferentes tipos de cartas e pacotes, com uma variedade de garantias de entrega, em qualquer lugar do mundo.
+As mensagens do Microsoft Azure Service Bus são um serviço fiável de entrega de informações. O objetivo deste serviço é facilitar a comunicação. Quando duas ou mais entidades querem trocar informações, precisam de um mecanismo de comunicação. Mensagens do Service Bus são um mecanismo de comunicação mediado ou de terceiros. É algo semelhante a um serviço postal de entrega de cartas no mundo físico. Os serviços postais facilitam o envio de diferentes tipos de cartas e pacotes, com uma variedade de garantias de entrega, em qualquer lugar do mundo.
 
 As mensagens do Service Bus são semelhantes ao serviço postal de entrega de cartas, pois trata da entrega flexível de informações entre o remetente e o destinatário. O serviço de mensagens assegura que a informação é entregue, mesmo se as duas partes nunca estão online ao mesmo tempo ou se não estão disponíveis no mesmo momento exato. Desta forma, enviar mensagens é semelhante a enviar uma carta, enquanto a comunicação não mediada é semelhante a fazer uma chamada telefónica (ou como uma chamada telefónica costumava ser - antes da criação de serviços de identificação de chamada ou chamada de espera, que são muito mais semelhantes a mensagens mediadas).
 
@@ -39,7 +39,7 @@ As mensagens retransmitidas têm muitas vantagens, mas requer que tanto o servid
 
 ## Mensagens mediadas
 
-Contrariamente ao esquema de mensagens retransmitidas, as [mensagens mediadas ](service-bus-fundamentals-hybrid-solutions.md) podem considerar-se como assíncronas ou “temporariamente desacopladas”. Os produtores (remetentes) e os consumidores (recetores) não têm de estar online ao mesmo tempo. A infraestrutura de mensagens armazena mensagens, de modo fiável, no "mediador" (por exemplo, numa fila) até que a parte consumidora esteja preparada para recebê-las. Isto permite que os componentes da aplicação distribuída estejam desconectados, quer voluntariamente, por exemplo, para manutenção, quer devido a uma falha de componente, sem afetar todo o sistema. Além disso, é possível que a aplicação recetora só tenha de ficar online durante determinadas horas do dia, por exemplo, um sistema de gestão de stocks que só é necessário executar no fim do dia.
+Ao contrário do esquema de mensagens retransmitidas, as [mensagens mediadas ](service-bus-queues-topics-subscriptions.md) podem considerar-se como assíncronas ou “temporariamente desacopladas”. Os produtores (remetentes) e os consumidores (recetores) não têm de estar online ao mesmo tempo. A infraestrutura de mensagens armazena mensagens, de modo fiável, no "mediador" (por exemplo, numa fila) até que a parte consumidora esteja preparada para recebê-las. Isto permite que os componentes da aplicação distribuída estejam desconectados, quer voluntariamente, por exemplo, para manutenção, quer devido a uma falha de componente, sem afetar todo o sistema. Além disso, é possível que a aplicação recetora só tenha de ficar online durante determinadas horas do dia, por exemplo, um sistema de gestão de stocks que só é necessário executar no fim do dia.
 
 Os componentes principais da infraestrutura de mensagens mediadas do Service Bus são filas, tópicos e subscrições.  A principal diferença é que os tópicos suportam funcionalidades de publicação/subscrição que podem ser utilizadas para o encaminhamento com base em conteúdo sofisticado e lógica de entrega, incluindo o envio para vários destinatários. Estes componentes permitem novos cenários de mensagens assíncronas, tais como desacoplamento temporal, publicação/subscrição e balanceamento de carga. Para mais informações sobre estas entidades de mensagens, consulte o artigo [Filas, tópicos e subscrições do Service Bus](service-bus-queues-topics-subscriptions.md).
 
@@ -49,15 +49,15 @@ Tal como acontece com a infraestrutura de mensagens retransmitidas, a capacidade
 
 Para mais informações sobre mensagens do Service Bus, consulte os seguintes tópicos.
 
+- [Noções básicas do Service Bus](service-bus-fundamentals-hybrid-solutions.md)
 - [Filas, tópicos e subscrições do Service Bus](service-bus-queues-topics-subscriptions.md)
-- [Noções básicas sobre o Service Bus](service-bus-fundamentals-hybrid-solutions.md)
 - [Arquitetura do Service Bus](service-bus-architecture.md)
-- [Como utilizar as Filas do Service Bus](service-bus-dotnet-how-to-use-queues.md)
-- [Como utilizar os Tópicos do Service Bus](service-bus-dotnet-how-to-use-topics-subscriptions.md)
+- [Como utilizar as filas do Service Bus](service-bus-dotnet-get-started-with-queues.md)
+- [Como utilizar os tópicos e as subscrições do Service Bus](service-bus-dotnet-how-to-use-topics-subscriptions.md)
  
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

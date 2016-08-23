@@ -1,7 +1,7 @@
 <properties 
     pageTitle="O que é o Azure Machine Learning Studio? | Microsoft Azure"
     description="Descrição geral do Azure ML Studio, uma ferramenta de arrastar e largar para rapidamente criar modelos de uma biblioteca de algoritmos e módulos prontos a utilizar."
-    keywords="azure machine learning,azure ml, ml studio"
+    keywords="azure machine learning, azure ml, ml studio"
     services="machine-learning"
     documentationCenter=""
     authors="garyericson"
@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="03/09/2016"
+    ms.date="06/10/2016"
     ms.author="garye"/>
 
 # O que é o Azure Machine Learning Studio?
@@ -47,6 +47,7 @@ Existem três separadores na parte superior: **Página inicial** (onde deve come
 
 Clique no separador **Studio** e ser-lhe-á pedido para iniciar sessão com a sua conta Microsoft ou a sua conta escolar ou profissional. Depois de iniciar sessão, irá ver os seguintes separadores no lado esquerdo:
 
+- **PROJETOS** - Coleções de experimentações, conjuntos de dados, blocos de notas e outros recursos que representam um único projeto
 - **EXPERIMENTAÇÕES** - As experimentações que foram criadas, executadas e guardadas como rascunhos
 - **SERVIÇOS WEB** - Os serviços web que foram implementados a partir das suas experimentações
 - **BLOCOS DE NOTAS** - Blocos de notas Jupyter que criou
@@ -107,7 +108,7 @@ Para obter ajuda na navegação pela da extensa biblioteca dos algoritmos do Mac
 
 Assim que o modelo de análise preditiva estiver pronto, pode implementá-lo como um serviço web a partir do Machine Learning Studio. Consulte o artigo [Implementar um serviço web do Azure Machine Learning](machine-learning-publish-a-machine-learning-web-service.md) para obter mais detalhes.
 
-[ml-studio-overview]:./media/machine-learning-what-is-ml-studio/azure-ml-studio-diagram.jpg
+[descrição geral do ml studio]:./media/machine-learning-what-is-ml-studio/azure-ml-studio-diagram.jpg
 
 <!-- Module References -->
 [converter em arff]: https://msdn.microsoft.com/library/azure/62d2cece-d832-4a7a-a0bd-f01f03af0960/
@@ -117,6 +118,6 @@ Assim que o modelo de análise preditiva estiver pronto, pode implementá-lo com
 
 
 
-<!---HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

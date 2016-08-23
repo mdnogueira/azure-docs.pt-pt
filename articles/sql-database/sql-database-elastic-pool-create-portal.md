@@ -1,7 +1,7 @@
 <properties
     pageTitle="Criar um novo conjunto elástico com o portal do Azure | Microsoft Azure"
     description="Como adicionar um conjunto de bases de dados elásticas dimensionável à sua configuração de base de dados SQL para uma administração e partilha de recursos mais fácil entre muitas bases de dados."
-    keywords="scalable database,database configuration"
+    keywords="base de dados dimensionável, configuração de base de dados"
     services="sql-database"
     documentationCenter=""
     authors="ninarn"
@@ -11,7 +11,7 @@
 <tags
     ms.service="sql-database"
     ms.devlang="NA"
-    ms.date="05/06/2016"
+    ms.date="07/20/2016"
     ms.author="ninarn"
     ms.workload="data-management"
     ms.topic="get-started-article"
@@ -33,9 +33,11 @@ Pode adicionar vários conjuntos a um servidor, mas não pode adicionar bases de
 
 ## Passo 1: criar um novo conjunto
 
-Crie um conjunto de bases de dados elásticas, adicionando um novo conjunto a um servidor. Pode adicionar vários conjuntos a um servidor, mas não pode adicionar bases de dados de diferentes servidores ao mesmo conjunto.
+Este artigo mostra como criar um novo conjunto a partir de um painel do **servidor** existente no portal, que é a forma mais fácil de mover bases de dados existentes para um conjunto. 
 
-1. No [portal do Azure](http://portal.azure.com/), clique em **SQL Servers** e, em seguida, clique no servidor que contém as bases de dados que pretende adicionar a um conjunto.
+> [AZURE.NOTE] Quer já tenha ou não um servidor, também pode criar um novo conjunto a partir do painel **Conjuntos elásticos SQL** (abaixo da lista do lado esquerdo do portal, clique em **Procurar** **>** **Conjuntos elásticos SQL**). Ao clicar em **+Adicionar** no painel **Conjuntos elásticos SQL**, verá os passos para criar um novo servidor durante o aprovisionamento de fluxo de trabalho do conjunto.
+
+1. No [Portal do Azure](http://portal.azure.com/), abaixo da lista do lado esquerdo, clique em **Procurar** **>** **Servidores SQL** e, em seguida, clique no servidor que contém as bases de dados que pretende adicionar a um conjunto.
 2. Clique em **Novo conjunto**.
 
     ![Adicionar um conjunto a um servidor](./media/sql-database-elastic-pool-create-portal/new-pool.png)
@@ -115,6 +117,6 @@ Depois de adicionar as bases de dados ao conjunto, as recomendações serão ger
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

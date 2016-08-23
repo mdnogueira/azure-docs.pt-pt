@@ -5,7 +5,7 @@
     documentationCenter=""
     authors="markusvi"
     writer="markvi"
-    manager="stevenpo"
+    manager="femila"
     editor=""/>
 
 <tags
@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="04/07/2016"
+    ms.date="07/13/2016"
     ms.author="markvi"/>
 
 # Administrar o diretório do Azure AD
@@ -40,7 +40,8 @@ O Azure AD oferece as principais funcionalidades de gestão de diretórios e de 
 
 Obtém um diretório do Azure AD quando se inscreve em qualquer um desses Cloud Services da Microsoft. Pode criar diretórios adicionais, conforme necessário. Por exemplo, poderá manter o primeiro diretório como um diretório de produção e criar posteriormente outro diretório para o processo de teste e transição.
 
-> [AZURE.NOTE] Depois de se inscrever no primeiro serviço, recomendamos que utilize a mesma conta de administrador associada à sua organização sempre que se inscrever noutros Cloud Services da Microsoft.
+> [AZURE.NOTE]
+> Depois de se inscrever no primeiro serviço, recomendamos que utilize a mesma conta de administrador associada à sua organização sempre que se inscrever noutros Cloud Services da Microsoft.
 
 Na primeira vez que se inscrever num serviço em nuvem da Microsoft, ser-lhe-á pedido que faculte os detalhes da sua organização, bem como o nome de registo do domínio na Internet. Estas informações são posteriormente utilizadas para criar uma nova instância do diretório do Azure AD para a sua organização. Esse mesmo diretório é utilizado para autenticar as tentativas de início de sessão, caso subscreva vários Cloud Services da Microsoft.
 
@@ -101,8 +102,8 @@ Pode gerir cada diretório como um recurso totalmente independente: cada diretó
 
 - **Independência de recursos**. Se criar ou eliminar um recurso num diretório, isso não terá impacto em nenhum outro recurso de nenhum outro diretório, com a exceção parcial dos utilizadores externos, descritos abaixo. Se utilizar um domínio personalizado “contoso.com” com um diretório, não o poderá utilizar com qualquer outro diretório.
 - **Independência administrativa**.  Se um utilizador não administrativo do diretório “Contoso” criar um diretório de “Teste”, então:
-    - ◦A ferramenta de sincronização de diretórios, para sincronizar dados com uma floresta única do AD.
-    - ◦Os administradores do diretório “Contoso” não têm privilégios administrativos diretos para o diretório de “Teste”, exceto se um administrador de “Teste” lhes conceder esses privilégios. Os administradores da “Contoso” podem controlar o acesso ao diretório de “Teste” controlando a conta de utilizador que tiver criado o “Teste”.
+    - A ferramenta de sincronização de diretórios, para sincronizar dados com uma floresta única do AD.
+    - Os administradores do diretório “Contoso” não têm privilégios administrativos diretos para o diretório de “Teste”, exceto se um administrador de “Teste” lhes conceder esses privilégios. Os administradores da “Contoso” podem controlar o acesso ao diretório de “Teste” controlando a conta de utilizador que tiver criado o “Teste”.
 
     E, se alterar (adicionar ou remover) uma função de administrador de um utilizador num diretório, a alteração não afetará nenhuma função de administrador que o utilizador possa ter em qualquer outro diretório.
 
@@ -129,8 +130,8 @@ Verificam-se as seguintes condições:
 - Não podem existir aplicações no diretório. As aplicações devem ser eliminadas antes de eliminar o diretório.
 - Não podem existir subscrições para quaisquer Serviços Online da Microsoft, como o Microsoft Azure, o Office 365 ou o Azure AD Premium, associadas ao diretório. Por exemplo, se tiver criado um diretório predefinido no Azure, não o poderá eliminar se a sua subscrição do Azure ainda depender desse diretório para a autenticação. Do mesmo modo, não pode eliminar um diretório se outro utilizador tiver uma subscrição associada. Para associar a subscrição a um diretório diferente, inicie sessão no Portal de Gestão do Azure e clique em **Definições** no painel de navegação esquerdo. Em seguida, na parte inferior da página **Subscrições**, clique em **Editar Diretório**. Para obter mais informações sobre as subscrições do Azure, consulte [Como estão associadas as subscrições do Azure ao Azure AD](active-directory-how-subscriptions-associated-directory.md).
 
-    > [AZURE.NOTE]
-    > Se o utilizador tiver iniciado sessão com uma conta profissional ou escolar, o utilizador não deverá tentar eliminar o diretório raiz. Por exemplo, se o utilizador tiver iniciado sessão como luis@contoso.onmicrosoft.com, esse utilizador não poderá eliminar o diretório contoso.onmicrosoft.com, uma vez que se trata do domínio predefinido.
+> [AZURE.NOTE]
+> Se o utilizador tiver iniciado sessão com uma conta profissional ou escolar, o utilizador não deverá tentar eliminar o diretório raiz. Por exemplo, se o utilizador tiver iniciado sessão como luis@contoso.onmicrosoft.com, esse utilizador não poderá eliminar o diretório contoso.onmicrosoft.com, uma vez que se trata do domínio predefinido.
 
 - Não podem ser associados ao diretório nenhuns fornecedores Multi-Factor Authentication.
 
@@ -150,6 +151,6 @@ Verificam-se as seguintes condições:
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

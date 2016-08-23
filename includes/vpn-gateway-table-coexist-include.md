@@ -2,10 +2,10 @@
 |-----------------------------|-------------|---------------------|
 | **Portal Clássico**          | Não Suportado          | Não Suportado                  |
 | **Portal do Azure**            | Não Suportado         | Não Suportado                  |
-| **PowerShell** | [Artigo](../articles/expressroute/expressroute-howto-coexist-classic.md) | Não Suportado |
+| **PowerShell** | [Artigo](../articles/expressroute/expressroute-howto-coexist-classic.md) | [Artigo](../articles/expressroute/expressroute-howto-coexist-resource-manager.md) |
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

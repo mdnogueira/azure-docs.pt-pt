@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="nodejs"
     ms.topic="hero-article"
-    ms.date="05/03/2016" 
+    ms.date="06/24/2016" 
     ms.author="robmcm"/>
 
 # Compilar e implementar uma aplicação Node.js num Serviço em Nuvem do Azure
@@ -127,7 +127,8 @@ Se publicação for bem sucedida, verá uma resposta semelhante ao seguinte:
 
 ![Resultado do comando Publish-AzureService][The output of the Publish-AzureService command]
 
-> [AZURE.NOTE] Pode demorar alguns minutos para que a aplicação seja implementada e fique disponível quando publicada pela primeira vez.
+> [AZURE.NOTE]
+> Pode demorar alguns minutos para que a aplicação seja implementada e fique disponível quando publicada pela primeira vez.
 
 Depois de concluída a implementação, a janela do browser será apresentada e navegará para o serviço em nuvem.
 
@@ -188,17 +189,17 @@ Para obter mais informações, consulte o [Centro para Programadores do Node.js]
 
 <!-- IMG List -->
 
-[The result of the New-AzureService helloworld command]: ./media/cloud-services-nodejs-develop-deploy-app/node9.png
-[The output of the Add-AzureNodeWebRole command]: ./media/cloud-services-nodejs-develop-deploy-app/node11.png
+[Resultado do comando New-AzureService helloworld]: ./media/cloud-services-nodejs-develop-deploy-app/node9.png
+[Resultado do comando Add-AzureNodeWebRole]: ./media/cloud-services-nodejs-develop-deploy-app/node11.png
 [A web browser displaying the Hello World web page]: ./media/cloud-services-nodejs-develop-deploy-app/node14.png
-[The output of the Publish-AzureService command]: ./media/cloud-services-nodejs-develop-deploy-app/node19.png
-[The full status output of the Publish-AzureService command]: ./media/cloud-services-nodejs-develop-deploy-app/node20.png
-[A browser window displaying the hello world page; the URL indicates the page is hosted on Azure.]: ./media/cloud-services-nodejs-develop-deploy-app/node21.png
-[The status of the Stop-AzureService command]: ./media/cloud-services-nodejs-develop-deploy-app/node48.png
-[The status of the Remove-AzureService command]: ./media/cloud-services-nodejs-develop-deploy-app/node49.png
+[Resultado do comando Publish-AzureService]: ./media/cloud-services-nodejs-develop-deploy-app/node19.png
+[Resultado do estado completo do comando Publish-AzureService]: ./media/cloud-services-nodejs-develop-deploy-app/node20.png
+[Uma janela do browser a apresentar a página Olá, Mundo; o URL indica que a página está alojada no Azure.]: ./media/cloud-services-nodejs-develop-deploy-app/node21.png
+[Estado do comando Stop-AzureService]: ./media/cloud-services-nodejs-develop-deploy-app/node48.png
+[Estado do comando Remove-AzureService]: ./media/cloud-services-nodejs-develop-deploy-app/node49.png
 
 
 
-<!---HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

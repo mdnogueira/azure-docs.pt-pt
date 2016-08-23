@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="05/04/2016"
+   ms.date="07/19/2016"
    ms.author="charleywen"/>
 
 # Configurar ligações ExpressRoute e de Site a Site coexistentes para o modelo de implementação Resource Manager
@@ -196,6 +196,6 @@ Para obter mais informações acerca do ExpressRoute, veja as [FAQs do ExpressRo
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

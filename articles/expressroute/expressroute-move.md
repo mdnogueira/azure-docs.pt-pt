@@ -12,7 +12,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="04/01/2016"
+   ms.date="06/20/2016"
    ms.author="ganesr"/>
 
 # Mover circuitos ExpressRoute do modelo de implementação clássica para o modelo do Resource Manager
@@ -112,6 +112,6 @@ Siga as instruções descritas em [Mover um circuito ExpressRoute do modelo de i
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

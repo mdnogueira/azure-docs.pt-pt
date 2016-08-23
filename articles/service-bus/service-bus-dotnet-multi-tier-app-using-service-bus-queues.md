@@ -498,11 +498,11 @@ Para obter mais informações sobre os cenários de multicamadas, consulte:
 
   [sbmsdn]: http://msdn.microsoft.com/library/azure/ee732537.aspx  
   [sbwacom]: /documentation/services/service-bus/  
-  [sbwacomqhowto]: service-bus-dotnet-how-to-use-queues.md  
+  [sbwacomqhowto]: service-bus-dotnet-get-started-with-queues.md  
   [mutitierstorage]: https://code.msdn.microsoft.com/Windows-Azure-Multi-Tier-eadceb36
   
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

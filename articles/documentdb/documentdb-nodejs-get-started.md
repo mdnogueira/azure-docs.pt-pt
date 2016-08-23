@@ -1,7 +1,7 @@
 <properties
   pageTitle="Tutorial NoSQL Node.js para o DocumentDB | Microsoft Azure"
   description="Um tutorial NoSQL Node.js que cria uma base de dados e uma aplicação de consola com o SDK DocumentDB Node.js. O DocumentDB é uma base de dados NoSQL para JSON."
-    keywords="node.js tutorial, node database"
+    keywords="tutorial de node.js, base de dados de node"
   services="documentdb"
   documentationCenter="node.js"
   authors="AndrewHoh"
@@ -23,7 +23,7 @@
 - [.NET](documentdb-get-started.md)
 - [Node.js](documentdb-nodejs-get-started.md)
 
-Bem-vindo ao tutorial Node.js para o SDK Node.js do DocumentDB! Depois de seguir este tutorial, terá de uma aplicação de consola que cria e consulta recursos do DocumentDB, incluindo uma base de dados Node.
+Bem-vindo ao tutorial de Node.js para o SDK Node.js do DocumentDB! Depois de seguir este tutorial, terá de uma aplicação de consola que cria e consulta recursos do DocumentDB, incluindo uma base de dados Node.
 
 Iremos abranger:
 
@@ -623,6 +623,6 @@ Em seguida, no ficheiro ```config.js```, atualize os valores config.endpoint e c
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

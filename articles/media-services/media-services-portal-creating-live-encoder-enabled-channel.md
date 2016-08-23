@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="get-started-article"
-    ms.date="05/05/2016" 
+    ms.date="06/22/2016"
     ms.author="juliako"/>
 
 
@@ -277,6 +277,6 @@ Se terminar a transmissão em fluxo de eventos e pretende limpar os recursos apr
 [standard5]: ./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-create-channel-standard_encode.png 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

@@ -134,9 +134,13 @@ Gere uma chave de registo no cofre. Depois de transferir o Fornecedor do Azure S
 
     ![InstallComplete](./media/site-recovery-vmm-to-azure-classic/install-complete.png)
 
-7. Em **Ligação à Internet**, especifique a forma como o Fornecedor em execução no servidor VMM estabelece ligação à Internet. Selecione **Utilizar definições de proxy do sistema predefinidas** para utilizar as definições predefinidas de ligação à Internet configuradas no servidor.
+9. Em **Nome do cofre**, verifique o nome do cofre no qual o servidor será registado. Clique em *Seguinte*.
 
-    ![Definições da Internet](./media/site-recovery-vmm-to-azure-classic/proxy.png)
+    ![Registo do servidor](./media/site-recovery-vmm-to-azure-classic/vaultcred.PNG)
+
+7. Em **Ligação à Internet**, especifique a forma como o Fornecedor em execução no servidor VMM estabelece ligação à Internet. Selecione **Ligar com as definições de proxy existentes** para utilizar as definições predefinidas de ligação à Internet configuradas no servidor.
+
+    ![Definições da Internet](./media/site-recovery-vmm-to-azure-classic/proxydetails.PNG)
 
     - Se pretender utilizar um proxy personalizado, deve configurá-lo antes de instalar o Fornecedor. Quando configurar as definições de proxy personalizado, será executado um teste para verificar a ligação proxy.
     - Se utilizar um proxy personalizado ou se o proxy predefinido exigir autenticação, precisará de introduzir os detalhes do proxy, incluindo o endereço de proxy e a porta.
@@ -146,26 +150,23 @@ Gere uma chave de registo no cofre. Depois de transferir o Fornecedor do Azure S
         - *.backup.windowsazure.com
         - *.blob.core.windows.net
         - *.store.core.windows.net
-    - Permita os endereços IP descritos em [Intervalos de IP do Datacenter do Azure](https://www.microsoft.com/download/details.aspx?id=41653) e o protocolo HTTPS (443). Também deverá incluir numa lista de permissões os intervalos de IP da região do Azure que pretende utilizar e de EUA Oeste.
+    - Permita os endereços IP descritos em [Intervalos de IP do Datacenter do Azure](https://www.microsoft.com/download/confirmation.aspx?id=41653) e o protocolo HTTPS (443). Também deverá incluir numa lista de permissões os intervalos de IP da região do Azure que pretende utilizar e dos E.U.A. Oeste.
+    - Se utilizar um proxy personalizado será automaticamente criada uma conta RunAs do VMM (DRAProxyAccount) utilizando as credenciais de proxy especificado. Configure o servidor proxy para que esta conta possa autenticar-se com êxito. As definições de conta RunAs do VMM podem ser modificadas na consola do VMM. Para tal, abra a área de trabalho **Definições**, expanda **Segurança**, clique em **Contas Run As** e, em seguida, modifique a palavra-passe para DRAProxyAccount. Terá de reiniciar o serviço VMM para que esta definição surta efeito.
 
-    - Se utilizar um proxy personalizado será automaticamente criada uma conta RunAs do VMM (DRAProxyAccount) utilizando as credenciais de proxy especificado. Configure o servidor proxy para que esta conta possa autenticar-se com êxito. As definições de conta RunAs do VMM podem ser modificadas na consola do VMM. Para tal, abra as definições da área de trabalho, expanda Segurança, clique em Contas Run As e, em seguida, modifique a palavra-passe para DRAProxyAccount. Terá de reiniciar o serviço VMM para que esta definição surta efeito.
 
-8. Em **Chave de Registo**, selecione o que transferiu a partir do Azure Site Recovery e copie para o servidor VMM.
-9. Em **Nome do cofre**, verifique o nome do cofre no qual o servidor será registado.
+8. Em **Chave de Registo**, selecione a chave que transferiu a partir do Azure Site Recovery e copiou para o servidor VMM.
 
-    ![Registo do servidor](./media/site-recovery-vmm-to-azure-classic/credentials.png)
 
-10. Pode especificar uma localização para guardar o certificado SSL que é gerado automaticamente para a encriptação de dados. Este certificado será utilizado se ativar a encriptação de dados para uma nuvem VMM durante a implementação da Recuperação de Sites. Mantenha este certificado num local seguro. Quando executar uma ativação pós-falha para o Azure, selecionará a mesma para desencriptar dados encriptados.
+10.  A definição da encriptação é apenas utilizada quando replicar VMs Hyper-V em nuvens VMM para o Azure. Não será utilizada se estiver a replicar para um site secundário.
 
-    ![Registo do servidor](./media/site-recovery-vmm-to-azure-classic/encryption.png)
+11.  Em **Nome do servidor**, especifique um nome amigável para identificar o servidor VMM no cofre. Numa configuração de cluster, especifique o nome da função de cluster do VMM.
+12.  Em **Sincronizar metadados da nuvem**, selecione se pretende sincronizar ou não os metadados de todas as nuvens no servidor VMM com o cofre. Esta ação só deverá ocorrer uma vez em cada servidor. Se não quiser sincronizar todas as nuvens, pode deixar esta definição desmarcada e sincronizar cada nuvem individualmente nas propriedades de nuvem na consola do VMM.
 
-11. Em **Nome do servidor**, especifique um nome amigável para identificar o servidor VMM no cofre. Numa configuração de cluster, especifique o nome da função de cluster do VMM.
+13.  Clique em **Seguinte** para concluir o processo. Após o registo, os metadados do servidor VMM são obtidos pelo Azure Site Recovery. O servidor é apresentado no separador **Servidores VMM**, na página **Servidores** do cofre.
+    
+    ![Lastpage](./media/site-recovery-vmm-to-azure-classic/provider13.PNG)
 
-12. Em **Metadados da nuvem inicial**, selecione se pretende sincronizar ou não os metadados para todas as nuvens no servidor VMM no cofre. Esta ação só deverá ocorrer uma vez em cada servidor. Se não quiser sincronizar todas as nuvens, pode deixar esta definição desmarcada e sincronizar cada nuvem individualmente nas propriedades de nuvem na consola do VMM.
-
-    ![Registo do servidor](./media/site-recovery-vmm-to-azure-classic/friendly.png)
-
-13. Clique em **Seguinte** para concluir o processo. Após o registo, os metadados do servidor VMM são obtidos pelo Azure Site Recovery. O servidor é apresentado no separador **Servidores VMM**, na página **Servidores** do cofre.
+Após o registo, os metadados do servidor VMM são obtidos pelo Azure Site Recovery. O servidor é apresentado no separador **Servidores VMM**, na página **Servidores** do cofre.
 
 ### Instalação com linha de comandos
 
@@ -331,7 +332,10 @@ A ativação pós-falha de teste simula o mecanismo de ativação pós-falha e r
 
     ![Criar plano de recuperação](./media/site-recovery-vmm-to-azure-classic/recovery-plan1.png)
 
-2. Na página **Selecionar Virtual Machines**, selecione as máquinas virtuais a adicionar ao plano de recuperação. Estas máquinas virtuais são adicionadas ao grupo predefinido do plano de recuperação – Grupo 1. Foi testado um máximo de 100 máquinas virtuais num plano de recuperação simples.
+2. Na página **Selecionar Virtual Machines**, selecione as máquinas virtuais a adicionar ao plano de recuperação. Estas máquinas virtuais são adicionadas ao grupo predefinido do plano de recuperação – Grupo 
+3. 
+4. 
+5. 1. Foi testado um máximo de 100 máquinas virtuais num plano de recuperação simples.
 
     - Se pretender verificar as propriedades da máquina virtual antes de adicioná-las ao plano, clique na máquina virtual na página de propriedades da nuvem em que está localizada. Também pode configurar as propriedades da máquina virtual na consola do VMM.
     - Todas as máquinas virtuais apresentadas foram ativadas para proteção. A lista inclui ambas as máquinas virtuais que estão ativadas para proteção e onde a replicação inicial foi concluída, assim como as que estão ativadas para proteção com replicação inicial pendente. Apenas as máquinas virtuais com replicação inicial concluída podem realizar a ativação pós-falha como parte de um plano de recuperação.
@@ -381,6 +385,6 @@ Saiba mais sobre como [Configurar planos de recuperação](site-recovery-create-
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

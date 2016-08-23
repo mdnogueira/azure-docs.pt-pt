@@ -151,7 +151,7 @@ Terá de configurar o mapeamento da rede durante a implementação da Recuperaç
     ![Novo cofre](./media/site-recovery-vmm-to-azure/new-vault3.png)
 
 3. Em **Nome**, introduza um nome amigável para identificar o cofre. Se tiver mais do que uma subscrição, selecione uma delas.
-4. [Crie um novo grupo de recursos](../resource-group-portal.md#create-resource-group) ou selecione um existente. Selecione uma região do Azure. As máquinas serão replicadas para esta região. Para verificar as regiões suportadas veja Disponibilidade Geográfica em [Detalhes dos Preços do Azure Site Recovery](https://azure.microsoft.com/pricing/details/site-recovery/).
+4. [Crie um novo grupo de recursos](../resource-group-template-deploy-portal.md) ou selecione um existente. Selecione uma região do Azure. As máquinas serão replicadas para esta região. Para verificar as regiões suportadas veja Disponibilidade Geográfica em [Detalhes dos Preços do Azure Site Recovery](https://azure.microsoft.com/pricing/details/site-recovery/).
 4. Se pretender aceder rapidamente ao cofre a partir do Dashboard, clique em **Afixar ao dashboard** e clique em **Criar cofre**.
 
     ![Novo cofre](./media/site-recovery-vmm-to-azure/new-vault-settings.png)
@@ -213,31 +213,29 @@ Instale o Fornecedor do Azure Site Recovery no servidor VMM e registe o servidor
     ![Localização de instalação](./media/site-recovery-vmm-to-azure/provider2.png)
 
 4. Quando a instalação for concluída, clique em **Registar** para registar o servidor VMM no cofre.
-5. Em **Ligação à Internet**, especifique a forma como o Fornecedor em execução no servidor VMM estabelece ligação à Internet.
+5. Na página **Definições do Cofre**, clique em **Procurar** para selecionar o ficheiro de chave do cofre. Especifique a subscrição do Azure Site Recovery e o nome do cofre.
 
-    - Se pretender que o Fornecedor se ligue diretamente, selecione **Ligar diretamente sem um proxy**.
-    - Se pretender estabelecer ligação com o proxy que está atualmente configurado no servidor, selecione **Ligar com definições de proxy existentes**.
-    - Se o seu proxy existente requer autenticação ou pretende utilizar um proxy personalizado, selecione **Ligar com definições de proxy personalizado**.
+    ![Registo do servidor](./media/site-recovery-vmm-to-azure/provider10.PNG)
+
+6. Em **Ligação à Internet**, especifique a forma como o Fornecedor em execução no servidor VMM estabelece ligação à Internet.
+
+    - Se pretender que o Fornecedor se ligue diretamente, selecione **Ligar diretamente ao Azure Site Recovery sem um proxy**.
+    - Se o seu proxy existente requer autenticação ou se pretende utilizar um proxy personalizado, selecione **Ligar ao Azure Site Recovery com um servidor proxy**.
     - Se utilizar um proxy personalizado, terá de especificar o endereço, a porta e as credenciais
     - Se estiver a utilizar um proxy, já deverá ter permitido os URLs descritos em [pré-requisitos](#on-premises-prerequisites).
     - Se utilizar um proxy personalizado será automaticamente criada uma conta RunAs do VMM (DRAProxyAccount) utilizando as credenciais de proxy especificado. Configure o servidor proxy para que esta conta possa autenticar-se com êxito. As definições de conta RunAs do VMM podem ser modificadas na consola do VMM. Em **Definições**, expanda **Segurança** > **Contas Run As** e modifique a palavra-passe de DRAProxyAccount. Terá de reiniciar o serviço VMM para que esta definição surta efeito.
 
-    ![Internet](./media/site-recovery-vmm-to-azure/provider3.png)
-
-6. Na página **Definições do Cofre**, clique em **Procurar** para selecionar o ficheiro de chave do cofre. Especifique a subscrição do Azure Site Recovery e o nome do cofre.
-
-    ![Registo do servidor](./media/site-recovery-vmm-to-azure/provider4.png)
+    ![Internet](./media/site-recovery-vmm-to-azure/provider13.PNG)
 
 7. Aceite ou modifique a localização de um certificado SSL que é gerado automaticamente para a encriptação de dados. Este certificado é utilizado se ativar a encriptação de dados para uma nuvem protegida pelo Azure no portal do Azure Site Recovery. Mantenha este certificado num local seguro. Quando executar uma ativação pós-falha para o Azure, precisará das mesmas para desencriptar se estiver ativada a encriptação de dados.
 
-    ![Registo do servidor](./media/site-recovery-vmm-to-azure/provider5.png)
 
 8. Em **Nome do servidor**, especifique um nome amigável para identificar o servidor VMM no cofre. Numa configuração de cluster, especifique o nome da função de cluster do VMM.
-13. Ative **Sincronizar metadados de nuvem** se pretender sincronizar os metadados para todas as nuvens no servidor VMM com o cofre. Esta ação só deverá ocorrer uma vez em cada servidor. Se não quiser sincronizar todas as nuvens, pode deixar esta definição desmarcada e sincronizar cada nuvem individualmente nas propriedades de nuvem na consola do VMM. Clique em **Registar** para concluir o processo.
+9. Ative **Sincronizar metadados de nuvem** se pretender sincronizar os metadados para todas as nuvens no servidor VMM com o cofre. Esta ação só deverá ocorrer uma vez em cada servidor. Se não quiser sincronizar todas as nuvens, pode deixar esta definição desmarcada e sincronizar cada nuvem individualmente nas propriedades de nuvem na consola do VMM. Clique em **Registar** para concluir o processo.
 
-    ![Registo do servidor](./media/site-recovery-vmm-to-azure/provider6.png)
+    ![Registo do servidor](./media/site-recovery-vmm-to-azure/provider16.PNG)
 
-9. Inicia-se o registo. Após a conclusão de registo, o servidor é apresentado no painel **Definições** > **Servidores** no cofre.
+10. Inicia-se o registo. Após a conclusão de registo, o servidor é apresentado no painel **Definições** > **Servidores** no cofre.
 
 
 #### Instalação de linha de comandos para o Fornecedor do Azure Site Recovery
@@ -573,6 +571,6 @@ Depois da implementação estar instalada e em execução, [saiba mais](site-rec
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

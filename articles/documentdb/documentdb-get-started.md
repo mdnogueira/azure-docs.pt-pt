@@ -1,7 +1,7 @@
 <properties
     pageTitle="Tutorial NoSQL: SDK do .NET DocumentDB | Microsoft Azure"
     description="Um tutorial NoSQL que cria uma base de dados online e uma aplicação de consola C# com o SDK do .NET DocumentDB. O DocumentDB é uma base de dados NoSQL para JSON."
-    keywords="nosql tutorial, online database, c# console application"
+    keywords="tutorial nosql, base de dados online, aplicações de consola em c#"
     services="documentdb"
     documentationCenter=".net"
     authors="AndrewHoh"
@@ -23,7 +23,7 @@
 - [.NET](documentdb-get-started.md)
 - [Node.js](documentdb-nodejs-get-started.md)
 
-Bem-vindo ao tutorial NoSQL para o SDK do .NET DocumentDB! Depois de seguir este tutorial, terá de uma aplicação de consola que cria e consulta recursos do DocumentDB.
+Bem-vindo ao tutorial NoSQL para o SDK .NET do Azure DocumentDB! Depois de seguir este tutorial, terá de uma aplicação de consola que cria e consulta recursos do DocumentDB.
 
 Iremos abranger:
 
@@ -236,7 +236,7 @@ Copie e cole o método **CreateDocumentCollectionIfNotExists** por baixo do seu 
                 // Here we create a collection with 400 RU/s.
                 await this.client.CreateDocumentCollectionAsync(
                     UriFactory.CreateDatabaseUri(databaseName),
-                    new DocumentCollection { Id = collectionName },
+                    collectionInfo,
                     new RequestOptions { OfferThroughput = 400 });
 
                 this.WriteToConsoleAndPromptToContinue("Created {0}", collectionName);
@@ -488,15 +488,15 @@ Copie e cole o método **ReplaceFamilyDocument** por baixo do seu método **Exec
     // ADD THIS PART TO YOUR CODE
     private async Task ReplaceFamilyDocument(string databaseName, string collectionName, string familyName, Family updatedFamily)
     {
-            try
-            {
-                    await this.client.ReplaceDocumentAsync(UriFactory.CreateDocumentUri(databaseName, collectionName, familyName), updatedFamily);
-                    this.WriteToConsoleAndPromptToContinue("Replaced Family {0}", familyName);
-            }
-            catch (DocumentClientException de)
-            {
-                    throw de;
-            }
+        try
+        {
+            await this.client.ReplaceDocumentAsync(UriFactory.CreateDocumentUri(databaseName, collectionName, familyName), updatedFamily);
+            this.WriteToConsoleAndPromptToContinue("Replaced Family {0}", familyName);
+        }
+        catch (DocumentClientException de)
+        {
+            throw;
+        }
     }
 
 Copie e cole o seguinte código no seu método **GetStartedDemo**, por baixo da execução da consulta. Depois de substituir o documento, este irá executar a mesma consulta par ver o documento alterado.
@@ -526,15 +526,15 @@ Copie e cole o método **DeleteFamilyDocument** por baixo do seu método **Repla
     // ADD THIS PART TO YOUR CODE
     private async Task DeleteFamilyDocument(string databaseName, string collectionName, string documentName)
     {
-            try
-            {
-                    await this.client.DeleteDocumentAsync(UriFactory.CreateDocumentUri(databaseName, collectionName, documentName));
-                    Console.WriteLine("Deleted Family {0}", documentName);
-            }
-            catch (DocumentClientException de)
-            {
-                            throw de;
-            }
+        try
+        {
+            await this.client.DeleteDocumentAsync(UriFactory.CreateDocumentUri(databaseName, collectionName, documentName));
+            Console.WriteLine("Deleted Family {0}", documentName);
+        }
+        catch (DocumentClientException de)
+        {
+            throw;
+        }
     }
 
 Copie e cole o seguinte código no seu método **GetStartedDemo**, por baixo da segunda execução de consulta.
@@ -620,6 +620,6 @@ Para restaurar as referências ao SDK do .NET DocumentDB no Visual Studio, cliqu
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

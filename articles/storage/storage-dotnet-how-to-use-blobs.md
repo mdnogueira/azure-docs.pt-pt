@@ -13,13 +13,15 @@
     ms.tgt_pltfrm="na"
     ms.devlang="dotnet"
     ms.topic="hero-article"
-    ms.date="04/25/2016"
+    ms.date="07/22/2016"
     ms.author="tamram"/>
 
 
 # Introdução ao Blob Storage do Azure através do .NET
 
 [AZURE.INCLUDE [storage-selector-blob-include](../../includes/storage-selector-blob-include.md)]
+<br/>
+[AZURE.INCLUDE [storage-try-azure-tools-blobs](../../includes/storage-try-azure-tools-blobs.md)]
 
 ## Descrição geral
 
@@ -40,6 +42,11 @@ Este tutorial demonstra como escrever código .NET para alguns cenários comuns 
 
 
 [AZURE.INCLUDE [storage-dotnet-client-library-version-include](../../includes/storage-dotnet-client-library-version-include.md)]
+
+### Mais exemplos
+
+Para obter exemplos adicionais que utilizam o Armazenamento de Blobs, veja [Introdução ao Armazenamento de Blobs do Azure no .NET](https://azure.microsoft.com/documentation/samples/storage-blob-dotnet-getting-started/). Pode transferir a aplicação de exemplo e executá-la ou procurar o código no GitHub. 
+
 
 [AZURE.INCLUDE [storage-blob-concepts-include](../../includes/storage-blob-concepts-include.md)]
 
@@ -373,6 +380,13 @@ O Storage do Azure suporta a encriptação de dados de blobs do cliente e no ser
 
 Agora que aprendeu as noções básicas do Blob Storage, siga estas ligações para saber mais.
 
+### Explorador de Armazenamento do Microsoft Azure
+- O [Explorador de Armazenamento do Microsoft Azure (MASE)](../vs-azure-tools-storage-manage-with-storage-explorer.md) é uma aplicação autónoma e gratuita da Microsoft que lhe permite trabalhar visualmente com dados do Armazenamento do Azure no Windows, OS X e Linux.
+
+### Exemplos de Armazenamento de Blobs
+
+- [Introdução ao Armazenamento de Blobs do Azure no .NET](https://azure.microsoft.com/documentation/samples/storage-blob-dotnet-getting-started/)
+
 ### Referência do Blob Storage
 
 - [Referência da Biblioteca de Clientes do Storage para o .NET](http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409)
@@ -397,6 +411,6 @@ Agora que aprendeu as noções básicas do Blob Storage, siga estas ligações p
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

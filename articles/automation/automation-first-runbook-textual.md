@@ -6,14 +6,14 @@
     authors="mgoedtel"
     manager="jwhit"
     editor=""
-    keywords="powershell workflow, powershell workflow examples, workflow powershell"/>
+    keywords="fluxo de trabalho powerShell, exemplos de fluxo de trabalho do powershell, fluxo de trabalho do powershell"/>
 <tags
     ms.service="automation"
     ms.workload="tbd"
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="06/02/2016"
+    ms.date="07/19/2016"
     ms.author="magoedte;bwren"/>
 
 # O meu primeiro runbook do Fluxo de Trabalho do PowerShell
@@ -110,7 +110,7 @@ Testamos e publicamos o nosso runbook, mas, até ao momento, não faz nada de ú
     ```
 
 5.  Clique em **Painel de teste** para que possamos testar o runbook.
-6.  Clique em **Iniciar** para iniciar o teste. Depois de terminar, deverá receber um resultado que mostra informações básicas da sua conta. Isto confirma que a credencial é válida. <br> ![Autenticar](media/automation-first-runbook-textual/runbook-auth-results.png)
+6.  Clique em **Iniciar** para iniciar o teste. Depois de terminar, deverá receber um resultado parecido ao seguinte que mostra informações básicas da sua conta. Isto confirma que a credencial é válida.<br> ![Autenticar](media/automation-first-runbook-textual/runbook-auth-output.png)
 
 ## Passo 6 – adicionar código para iniciar uma máquina virtual
 
@@ -121,12 +121,11 @@ Agora que o nosso runbook está a autenticar para a nossa subscrição do Azure,
     ```
     workflow MyFirstRunbook-Workflow
     {
-     $Conn = Get-AutomationConnection -Name AzureRunAsConnection 
-     Add-AzureRMAccount -ServicePrincipal -Tenant $Conn.TenantID `
-     -ApplicationId $Conn.ApplicationID -CertificateThumbprint $Conn.CertificateThumbprint
-     Start-AzureRmVM -Name 'VMName' -ResourceGroupName 'ResourceGroupName'
+      $Conn = Get-AutomationConnection -Name AzureRunAsConnection
+      Add-AzureRMAccount -ServicePrincipal -Tenant $Conn.TenantID -ApplicationId $Conn.ApplicationID -CertificateThumbprint $Conn.CertificateThumbprint
+      Start-AzureRmVM -Name 'VMName' -ResourceGroupName 'ResourceGroupName'
     }
-    ```
+    ``` 
 
 2.  Guarde o runbook e, em seguida, clique no **painel de Teste** para que o possamos testar.
 3.  Clique em **Iniciar** para iniciar o teste. Depois de terminar, verifique se a máquina virtual foi iniciada.
@@ -145,8 +144,7 @@ Atualmente, o nosso runbook inicia a virtual máquina que codificamos no runbook
         [string]$ResourceGroupName
        )  
      $Conn = Get-AutomationConnection -Name AzureRunAsConnection 
-     Add-AzureRMAccount -ServicePrincipal -Tenant $Conn.TenantID `
-     -ApplicationId $Conn.ApplicationID -CertificateThumbprint $Conn.CertificateThumbprint
+     Add-AzureRMAccount -ServicePrincipal -Tenant $Conn.TenantID -ApplicationId $Conn.ApplicationID -CertificateThumbprint $Conn.CertificateThumbprint
      Start-AzureRmVM -Name $VMName -ResourceGroupName $ResourceGroupName
     }
     ```
@@ -159,15 +157,14 @@ Atualmente, o nosso runbook inicia a virtual máquina que codificamos no runbook
 
 7.  Depois de o runbook terminar, verifique se a máquina virtual foi iniciada.
 
-## Passos Seguintes
+## Passos seguintes
 
 -  Para começar com runbooks Gráficos, consulte o artigo [O meu primeiro runbook gráfico](automation-first-runbook-graphical.md)
--   Para começar com runbooks do PowerShell, consulte [O meu primeiro runbook do PowerShell](automation-first-runbook-textual-powershell.md)
+-  Para começar com runbooks do PowerShell, consulte [O meu primeiro runbook do PowerShell](automation-first-runbook-textual-powershell.md)
 -  Para saber mais sobre os tipos de runbook, as vantagens e limitações, consulte o artigo [Tipos de runbook da Automatização do Azure](automation-runbook-types.md)
--   Para mais informações sobre a funcionalidade de suporte de scripts do PowerShell, consulte o artigo [Suporte de scripts do PowerShell Nativo na Automatização do Azure](https://azure.microsoft.com/blog/announcing-powershell-script-support-azure-automation-2/)
+-  Para mais informações sobre a funcionalidade de suporte de scripts do PowerShell, consulte o artigo [Suporte de scripts do PowerShell Nativo na Automatização do Azure](https://azure.microsoft.com/blog/announcing-powershell-script-support-azure-automation-2/)
 
 
-
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

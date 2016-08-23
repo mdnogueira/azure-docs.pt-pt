@@ -4,7 +4,7 @@
     services="active-directory"
     documentationCenter=""
     authors="curtand"
-    manager="stevenpo"
+    manager="femila"
     editor=""/>
 
 <tags
@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="03/31/2016"
+    ms.date="06/21/2016"
     ms.author="curtand;viviali"/>
 
 # Adicionar utilizadores de outros diretórios ou empresas associadas no Azure Active Directory
@@ -56,7 +56,8 @@ Quando adiciona no seu diretório um utilizador de outro diretório, esse utiliz
 
 A única ligação entre as duas contas é que o utilizador é sempre autenticado no respetivo diretório raiz ou com a respetiva conta Microsoft. Tal explica porque não é apresentada nenhuma opção para repor a palavra-passe ou ativar o Multi-Factor Authentication para um utilizador externo. Atualmente, a política de autenticação da conta Microsoft ou do diretório raiz é a única que é avaliada quando o utilizador inicia sessão.
 
-> [AZURE.NOTE] Ainda pode desativar o utilizador externo no diretório, bloqueando assim o acesso ao diretório.
+> [AZURE.NOTE]
+> Ainda pode desativar o utilizador externo no diretório, bloqueando assim o acesso ao diretório.
 
 Se um utilizador for eliminado do respetivo diretório raiz ou se cancelar a respetiva conta Microsoft, o utilizador externo continuará a existir no seu diretório. Contudo, o utilizador no seu diretório não poderá aceder aos recursos, uma vez que não poderá autenticar-se com um diretório raiz ou conta Microsoft.
 
@@ -85,6 +86,6 @@ Se um utilizador for eliminado do respetivo diretório raiz ou se cancelar a res
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

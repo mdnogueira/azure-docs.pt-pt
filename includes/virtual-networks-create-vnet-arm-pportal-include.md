@@ -11,7 +11,7 @@ Para criar uma VNet com base no cenário acima com o Portal de Pré-Visualizaç�
 
     ![Painel Criar rede virtual](./media/virtual-networks-create-vnet-arm-pportal-include/vnet-create-arm-pportal-figure2.png)
 
-4. Clique em **Grupo de recursos** e selecione um grupo de recursos a qual deve adicionar a VNet ou clique em **Criar novo** para adicionar a VNet a um novo grupo de recursos. A ilustração abaixo mostra as definições do grupo de recursos para um novo grupo de recursos chamado **TestRG**. Para obter mais informações sobre os grupos de recursos, veja [Descrição Geral do Azure Resource Manager](../articles/resource-group-overview.md/#resource-groups).
+4. Clique em **Grupo de recursos** e selecione um grupo de recursos a qual deve adicionar a VNet ou clique em **Criar novo** para adicionar a VNet a um novo grupo de recursos. A ilustração abaixo mostra as definições do grupo de recursos para um novo grupo de recursos chamado **TestRG**. Para obter mais informações sobre os grupos de recursos, visite [Descrição geral do Azure Resource Manager](../articles/resource-group-overview.md#resource-groups).
 
     ![Grupo de recursos](./media/virtual-networks-create-vnet-arm-pportal-include/vnet-create-arm-pportal-figure3.png)
 
@@ -36,6 +36,7 @@ Para criar uma VNet com base no cenário acima com o Portal de Pré-Visualizaç�
     ![Lista de sub-redes na VNet](./media/virtual-networks-create-vnet-arm-pportal-include/vnet-create-arm-pportal-figure7.png)
 
 
-<!--HONumber=Jun16_HO2-->
+
+<!--HONumber=Aug16_HO1-->
 
 

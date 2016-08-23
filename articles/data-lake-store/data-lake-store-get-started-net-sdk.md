@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="04/27/2016"
+   ms.date="07/18/2016"
    ms.author="nitinme"/>
 
 # Introdução ao Azure Data Lake Store com SDK .NET
@@ -528,6 +528,6 @@ Por fim, certifique-se de que o caminho local e o nome de ficheiro fornecidos aq
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

@@ -43,13 +43,9 @@ Para poder enviar notificações push para uma aplicação iOS, tem de registar 
 
     ![](./media/notification-hubs-enable-apple-push-notifications/notification-hubs-new-appid-info.png)
 
-    Esta ação gera o ID da aplicação e pede-lhe que confirme as informações. Clique em **Submeter**
+    Esta ação gera o ID da Aplicação e pede-lhe que confirme as informações. Clique em **Registar** para confirmar o novo ID da Aplicação.
 
-
-    ![](./media/notification-hubs-enable-apple-push-notifications/notification-hubs-confirm-new-appid.png)
-
-
-    Assim que clicar em **Submeter**, verá o ecrã **Registo Concluído**, como mostrado abaixo. Clique em **Concluído**.
+    Assim que clicar em **Registar**, verá o ecrã **Registo concluído**, como mostrado abaixo. Clique em **Concluído**.
 
 
     ![](./media/notification-hubs-enable-apple-push-notifications/notification-hubs-appid-registration-complete.png)
@@ -139,6 +135,6 @@ Para poder enviar notificações push para uma aplicação iOS, tem de registar 
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

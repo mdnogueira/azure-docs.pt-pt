@@ -14,7 +14,7 @@
     ms.devlang="java"
     ms.topic="get-started-article"
     ms.date="06/01/2016"
-    ms.author="bradygaster"/>
+    ms.author="rachelap"/>
 
 # Criar e implementar uma aplicação API Java no App Service do Azure
 
@@ -340,6 +340,6 @@ Para obter mais informações sobre como utilizar o Java no Azure, consulte o [C
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

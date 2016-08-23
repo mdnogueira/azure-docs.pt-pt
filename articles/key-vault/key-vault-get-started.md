@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="hero-article"
-    ms.date="05/06/2016"
+    ms.date="07/15/2016"
     ms.author="cabailey"/>
 
 # Introdução Cofre de Chaves do Azure #
@@ -247,6 +247,6 @@ Para as referências de programação, consulte o [Guia para programadores do Co
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

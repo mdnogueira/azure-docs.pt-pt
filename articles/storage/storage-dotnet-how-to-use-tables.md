@@ -13,13 +13,15 @@
     ms.tgt_pltfrm="na"
     ms.devlang="dotnet"
     ms.topic="hero-article"
-    ms.date="04/29/2016"
+    ms.date="07/23/2016"
     ms.author="tamram"/>
 
 
 # Introdução ao Table Storage do Azure através do .NET
 
 [AZURE.INCLUDE [storage-selector-table-include](../../includes/storage-selector-table-include.md)]
+<br/>
+[AZURE.INCLUDE [storage-try-azure-tools-tables](../../includes/storage-try-azure-tools-tables.md)]
 
 ## Descrição geral
 
@@ -41,6 +43,11 @@ Este tutorial mostra como escrever código .NET para alguns cenários comuns uti
 - Uma [Conta do Storage do Azure](storage-create-storage-account.md#create-a-storage-account)
 
 [AZURE.INCLUDE [storage-dotnet-client-library-version-include](../../includes/storage-dotnet-client-library-version-include.md)]
+
+### Mais exemplos
+
+Para obter exemplos adicionais que utilizam o Armazenamento de Tabelas, veja [Introdução ao Armazenamento de Tabelas do Azure do Azure no .NET](https://azure.microsoft.com/documentation/samples/storage-table-dotnet-getting-started/). Pode transferir a aplicação de exemplo e executá-la ou procurar o código no GitHub. 
+
 
 [AZURE.INCLUDE [storage-table-concepts-include](../../includes/storage-table-concepts-include.md)]
 
@@ -442,6 +449,7 @@ Se estiver a ler um grande número de entidades e pretende processar/apresentar 
 
 Agora que aprendeu as noções básicas do Table Storage, siga estas ligações para saber mais sobre as tarefas de armazenamento mais complexas:
 
+- Ver mais exemplos do Armazenamento de Tabelas em [Introdução ao Armazenamento de Tabelas do Azure no .NET](https://azure.microsoft.com/documentation/samples/storage-table-dotnet-getting-started/)
 - Consulte a documentação de referência do serviço Tabela para obter detalhes completos sobre as APIs disponíveis:
     - [Referência da Biblioteca de Clientes do Storage para o .NET](http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409)
     - [Referência da API REST](http://msdn.microsoft.com/library/azure/dd179355)
@@ -470,6 +478,6 @@ Agora que aprendeu as noções básicas do Table Storage, siga estas ligações 
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

@@ -14,6 +14,8 @@ Para criar uma Etiqueta de DNS, comece por selecionar **Máquinas virtuais** no 
 
 3. Introduza um nome para a Etiqueta de DNS. Este nome é um Registo A que pode ser utilizado para ligar à sua VM do SQL Server diretamente pelo nome em vez de ser pelo Endereço IP.
 
+4. Clique no botão **Guardar**.
+
     ![etiqueta de DNS](./media/virtual-machines-sql-server-connection-steps/rm-dns-label.png)
 
 ### Ligar ao Motor da Base de Dados a partir de outro computador
@@ -34,6 +36,6 @@ Para criar uma Etiqueta de DNS, comece por selecionar **Máquinas virtuais** no 
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

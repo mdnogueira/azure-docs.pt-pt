@@ -7,7 +7,7 @@
    manager="timlt"
    editor=""
    tags="acs, azure-container-service"
-   keywords="Containers, Micro-services, DC/OS, Azure"/>
+   keywords="Contentores, Microserviços, DC/OS, Azure"/>
 
 <tags
    ms.service="container-service"
@@ -15,109 +15,132 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="04/18/2016"
+   ms.date="07/11/2016"
    ms.author="rogardle"/>
 
 # Balanceamento de carga de um cluster do Serviço de Contentor do Azure
 
-Neste artigo, vamos configurar um front-end da Web que pode ser aumentado verticalmente para fornecer serviços atrás do Azure LB.
-
+Neste artigo, vamos definir um front-end da Web num Serviço de Contentor do Azure DC/SO gerido. Vamos também configurar uma LB Marathon para que possa aumentar verticalmente a aplicação.
 
 ## Pré-requisitos
 
-[Implemente uma instância do Serviço de Contentor do Azure](container-service-deployment.md) com o tipo de orquestrador DCOS [e certifique-se de que o cliente pode ligar ao cluster](container-service-connect.md) e ao [AZURE.INCLUDE [install the DC/OS CLI](../../includes/container-service-install-dcos-cli-include.md)].
-
+[Implemente uma instância do Serviço de Contentor do Azure](container-service-deployment.md) com o tipo de orquestrador DC/SO [e certifique-se de que o cliente pode ligar ao cluster](container-service-connect.md). 
 
 ## Balanceamento de carga
 
-Existem duas camadas de balanceamento de carga num cluster do Serviço do Contentor: o Azure LB para os pontos de entrada públicos (os que os utilizadores finais irão aceder) e o marathon-lb subjacente, que redireciona os pedidos de entrada para os pedidos de serviço de instâncias de contentor. À medida que dimensionamos os contentores que fornecem o serviço, o marathon-lb irá adaptar-se dinamicamente.
+Existem duas camadas de balanceamento de carga no cluster de Serviço de Contentor que iremos criar: 
 
-## Marathon LB 
+  1. O Balanceador de Carga do Azure fornece pontos de entrada pública (aqueles a que os utilizadores finais irão aceder). Isto é fornecido automaticamente pelo Serviço do Contentor do Azure e está, por predefinição, configurado para expor as portas 80, 443 e 8080.
+  2. O Balanceador de Carga Marathon (marathon lb) encaminha pedidos de entrada para instâncias de contentor que fornecem assistência a esses pedidos. À medida que dimensionamos os contentores que fornecem o nosso serviço Web, o marathon-lb adapta-se dinamicamente. Este balanceador de carga não é fornecido por predefinição no seu Serviço de Contentor, mas é muito fácil instalar.
 
-A solução Marathon LB reconfigura-se dinamicamente, com base nos contentores que implementou. Também é resiliente para a perda de um contentor ou de um agente; se isto ocorrer, o Mesos simplesmente reinicia o contentor noutro local e reconfigura o Marathon LB. 
+## Balanceador de Carga Marathon
 
-Para instalar o Marathon LB, execute o comando seguinte no computador cliente:
+O Balanceador de Carga Marathon reconfigura-se dinamicamente, com base nos contentores que tenha implementado. É também resiliente à perda de um contentor ou de um agente. Se isto ocorrer, o Apache Mesos irá reiniciar simplesmente o contentor noutro local e o marathon-lb irá adaptar-se.
+
+Para instalar o Balanceador de carga Marathon pode utilizar a IU da Web de DC/SO ou a linha de comandos.
+
+### Instalar Marathon-LB utilizando a IU da Web de DC/SO
+
+  1. Clique em «Universo»
+  2. Procure «Marathon-LB»
+  3. Clique em «Instalar»
+
+![Instalar o marathon-lb através da Interface de Web de DC/SO](./media/dcos/marathon-lb-install.png)
+
+### Instalar o Marathon-LB utilizando a CLI de DC/SO
+
+Depois de instalar a CLI de DC/SO e garantir que consegue ligar ao cluster, execute o seguinte comando a partir do seu computador cliente:
 
 ```bash
-dcos package install marathon-lb 
-``` 
+dcos package install marathon-lb
+```
 
-Agora que temos o pacote marathon-lb, pode implementar um servidor Web simples utilizando a configuração seguinte:
+## Implementar uma Aplicação Web com Balanceamento de Carga
 
+Agora que temos o pacote do marathon-lb, podemos implementar um servidor Web simples utilizando a configuração seguinte:
 
 ```json
-{ 
-  "id": "web", 
-  "container": { 
-    "type": "DOCKER", 
-    "docker": { 
-      "image": "tutum/hello-world", 
-      "network": "BRIDGE", 
-      "portMappings": [ 
-        { "hostPort": 0, "containerPort": 80, "servicePort": 10000 } 
-      ], 
-      "forcePullImage":true 
-    } 
-  }, 
-  "instances": 3, 
-  "cpus": 0.1, 
-  "mem": 65, 
-  "healthChecks": [{ 
-      "protocol": "HTTP", 
-      "path": "/", 
-      "portIndex": 0, 
-      "timeoutSeconds": 10, 
-      "gracePeriodSeconds": 10, 
-      "intervalSeconds": 2, 
-      "maxConsecutiveFailures": 10 
-  }], 
-  "labels":{ 
+{
+  "id": "web",
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "yeasy/simple-web",
+      "network": "BRIDGE",
+      "portMappings": [
+        { "hostPort": 0, "containerPort": 80, "servicePort": 10000 }
+      ],
+      "forcePullImage":true
+    }
+  },
+  "instances": 3,
+  "cpus": 0.1,
+  "mem": 65,
+  "healthChecks": [{
+      "protocol": "HTTP",
+      "path": "/",
+      "portIndex": 0,
+      "timeoutSeconds": 10,
+      "gracePeriodSeconds": 10,
+      "intervalSeconds": 2,
+      "maxConsecutiveFailures": 10
+  }],
+  "labels":{
     "HAPROXY_GROUP":"external",
     "HAPROXY_0_VHOST":"YOUR FQDN",
-    "HAPROXY_0_MODE":"http" 
-  } 
+    "HAPROXY_0_MODE":"http"
+  }
 }
 
 ```
 
-Estas são as partes de chave: 
-  * defina o valor de HAProxy_0_VHOST para o FQDN do load balancer dos agentes. Este é o formato: `<acsName>agents.<region>.cloudapp.azure.com`. Por exemplo, se criar um cluster do Serviço de Contentor denominado `myacs` na região `West US`, o FQDN seria: `myacsagents.westus.cloudapp.azure.com`. Também pode encontrar isto procurando o load balancer com “agent” no nome quando consultar os recursos no grupo de recursos que criou para o serviço de contentor no [Portal do Azure](https://portal.azure.com).
-  * Defina servicePort como uma porta >= 10 000. Se o fizer, identifica o serviço em execução neste contentor; o marathon-lb utiliza-o para identificar os serviços que deve balancear.
-  * Defina a etiqueta HAPROXY_GROUP para “externa”.
-  * Defina hostPort para 0. Ao fazer isto, o marathon aloca de forma arbitrária uma porta disponível.
+  * Defina o valor de `HAProxy_0_VHOST` para o FQDN do balanceador de carga dos agentes. Este é o formato: `<acsName>agents.<region>.cloudapp.azure.com`. Por exemplo, se criar um cluster do Serviço de Contentor denominado `myacs` na região `West US`, o FQDN seria `myacsagents.westus.cloudapp.azure.com`. Também pode encontrar isto, procurando o balanceador de carga com "agente" no nome quando estiver à procura de recursos no grupo de recursos que criou para o Serviço de Contentor no [portal do Azure](https://portal.azure.com).
+  * Defina servicePort como uma porta >= 10 000. Isto identifica o serviço em execução neste contentor. O marathon-lb utiliza isto para identificar os serviços que deve balancear.
+  * Defina a etiqueta `HAPROXY_GROUP` como "externa".
+  * Defina `hostPort` como 0. Isto significa que o Marathon irá atribuir de forma arbitrária uma porta disponível.
+  * Defina `instances` para o número de instâncias que pretende criar. Pode sempre aumentá-los na vertical e na horizontal mais tarde.
 
-Copie este JSON para um ficheiro denominado `hello-web.json` e utilize-o para implementar um contentor: 
+### Implementar utilizando a IU da Web de DC/SO
+
+  1. Visite a página de Marathon em http://localhost/marathon (depois de configurar o [túnel SSH](container-service-connect.md) e clique em `Create Appliction`
+  2. Na caixa de diálogo `New Application`, clique em `JSON Mode` no canto superior direito
+  3. Cole o JSON acima no editor
+  4. Clique `Create Appliction`
+
+### Implementar utilizando o CLI de DC/SO
+
+Para implementar esta aplicação com a CLI de DC/SO, basta copiar o JSON acima para um ficheiro denominado `hello-web.json` e executar:
 
 ```bash
-dcos marathon app add hello-web.json 
-``` 
+dcos marathon app add hello-web.json
+```
 
-## Azure LB 
+## Azure Load Balancer
 
-Por predefinição, o Azure LB expõe as portas 80, 8080 e 443. Se estiver a utilizar uma destas três portas (como no exemplo acima), não precisará de fazer nada: deve ser capaz de aceder ao FQDN do LB do agente e, sempre que atualizar, acederá a um dos três servidores Web de uma forma round robin. Se, no entanto, utilizar uma porta diferente, terá de adicionar uma regra round robin e sonda ao Azure LB para a porta que utilizou. Pode fazê-lo na [CLI XPLAT do Azure](../xplat-cli-azure-resource-manager.md) com os comandos `azure lb rule create` e `azure lb probe create`.
+Por predefinição, o Balanceador de Carga do Azure expõe as portas 80, 8080 e 443. Se utilizar uma das três seguintes portas (como podemos ver no exemplo acima) não tem de efetuar qualquer ação. Deve conseguir aceder à FQDN do balanceador de carga do agente - e sempre que atualizar, irá aceder a um dos seus três servidores Web de uma maneira round-robin. Se, no entanto, utilizar uma porta diferente, terá de adicionar uma regra round-robin e uma sonda no balanceador de carga para a porta que utilizou. Pode fazê-lo a partir da [CLI do Azure](../xplat-cli-azure-resource-manager.md), com os comandos `azure lb rule create` e `azure lb probe create`. Também é possível fazê-lo através do Portal do Azure.
 
 
 ## Cenários adicionais
 
-Pode ter um cenário em que utiliza domínios diferentes para expor os diferentes serviços. Por exemplo: 
+Pode ter um cenário em que utiliza domínios diferentes para expor os diferentes serviços. Por exemplo:
 
 mydomain1.com -> Azure LB:80 -> marathon-lb:10001 -> mycontainer1:33292  
-mydomain2.com -> Azure LB:80 -> marathon-lb:10002 -> mycontainer2:22321 
+mydomain2.com -> Azure LB:80 -> marathon-lb:10002 -> mycontainer2:22321
 
-Para isso, consulte os [Anfitriões Virtuais](https://mesosphere.com/blog/2015/12/04/dcos-marathon-lb/), que proporcionam uma forma de associar domínios a caminhos do marathon-lb específico.
+Para tal, consulte os [anfitriões virtuais](https://mesosphere.com/blog/2015/12/04/dcos-marathon-lb/), que proporcionam uma forma de associar domínios a caminhos do marathon-lb específicos.
 
 Em alternativa, pode expor portas diferentes e remapeá-las para o serviço correto atrás do marathon-lb. Por exemplo:
 
 Azure lb:80 -> marathon-lb:10001 -> mycontainer:233423  
-Azure lb:8080 -> marathon-lb:1002 -> mycontainer2:33432 
- 
+Azure lb:8080 -> marathon-lb:1002 -> mycontainer2:33432
+
 
 ## Passos seguintes
 
-Consulte [esta mensagem de blogue](https://mesosphere.com/blog/2015/12/04/dcos-marathon-lb/) para obter mais informações sobre o Marathon LB.
+Veja a documentação de DC/SO para obter mais informações sobre o [marathon-lb](https://dcos.io/docs/1.7/usage/service-discovery/marathon-lb/).
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

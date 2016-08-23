@@ -6,7 +6,7 @@
    authors="markgalioto"
    manager="jwhit"
    editor=""
-   keywords="backup and disaster recovery; backup service"/>
+   keywords="recuperação de cópia de segurança e após desastres; serviço de cópia de segurança"/>
 
 <tags
    ms.service="backup"
@@ -14,7 +14,7 @@
      ms.tgt_pltfrm="na"
      ms.devlang="na"
      ms.topic="get-started-article"
-     ms.date="04/04/2016"
+     ms.date="07/01/2016"
      ms.author="trinadhk; giridham; arunak; markgal; jimpark;"/>
 
 # Serviço de Backup do Azure – FAQ
@@ -275,6 +275,6 @@ Recomenda-se que a pasta cache e os metadados de VHD não tenham os atributos ac
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

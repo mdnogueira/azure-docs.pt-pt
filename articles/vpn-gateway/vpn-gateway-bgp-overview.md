@@ -14,7 +14,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="04/26/2016"
+   ms.date="06/16/2016"
    ms.author="yushwang"/>
 
 # Descrição geral do BGP com Gateways de VPN do Azure
@@ -35,7 +35,9 @@ O BGP possui várias vantagens e novas capacidades:
 
 Com o BGP, só tem de declarar um prefixo mínimo para um elemento de rede BGP específico no túnel VPN S2S de IPsec. Pode ser tão pequeno como um prefixo de anfitrião (/32) do endereço IP do elemento de rede BGP do seu dispositivo VPN no local. Pode controlar que prefixos da rede no local pretende anunciar no Azure, para permitir o acesso da sua Rede Virtual do Azure.
     
-Também pode anunciar prefixos maiores, que podem incluir alguns dos seus prefixos de endereço VNet, tais como a rota predefinida (0.0.0.0/0) ou um grande espaço de endereços IP privados (por exemplo, 10.0.0.0/8). Tenha em atenção que os prefixos não podem ser idênticos a nenhum dos seus prefixos VNet. As rotas idênticas aos prefixos VNet serão rejeitadas.
+Também pode anunciar prefixos maiores, que podem incluir alguns dos seus prefixos de endereço VNet, tais como um grande espaço de endereços IP privados (por exemplo, 10.0.0.0/8). Tenha em atenção que os prefixos não podem ser idênticos a nenhum dos seus prefixos VNet. As rotas idênticas aos prefixos VNet serão rejeitadas.
+
+>[AZURE.IMPORTANT] Atualmente, será bloqueado publicitar aos gateways de VPN do Azure a rota predefinida (0.0.0.0/0). Será fornecida uma atualização adicional assim que esta capacidade for disponibilizada.
 
 #### Suporte de vários túneis entre uma VNet e um site no local, com ativação pós-falha automática baseada no BGP
 
@@ -68,6 +70,6 @@ Veja [Introdução ao BGP nos gateways de VPN do Azure](./vpn-gateway-bgp-resour
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

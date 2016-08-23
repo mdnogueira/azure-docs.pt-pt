@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="04/26/2016"
+   ms.date="05/16/2016"
    ms.author="edmaca"/>
 
 # Gerir a Análise do Azure Data Lake com o Azure SDK para Node.js
@@ -144,6 +144,6 @@ catalogClient.catalog.listDatabases(accountName, function (err, result, request,
 - [Microsoft Azure SDK para Node.js - Gestão do Data Lake Store](https://github.com/Azure/azure-sdk-for-node/tree/autorest/lib/services/dataLake.Store)
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

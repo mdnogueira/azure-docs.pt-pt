@@ -14,7 +14,7 @@
     ms.devlang="na" 
     ms.topic="get-started-article" 
     ms.date="05/03/2016" 
-    ms.author="tdykstra"/>
+    ms.author="rachelap"/>
 
 # Descrição geral de API Apps
 
@@ -65,6 +65,6 @@ Para colocar questões sobre API Apps, inicie um thread no [Fórum das API Apps]
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

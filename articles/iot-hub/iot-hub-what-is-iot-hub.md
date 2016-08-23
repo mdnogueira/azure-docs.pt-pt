@@ -1,6 +1,6 @@
 <properties
- pageTitle="Descrição geral do Hub IoT do Azure | Microsoft Azure"
- description="Descrição geral do serviço de Hub IoT do Azure: o que a conectividade do dispositivo IoT Hub, os padrões de comunicação da Internet das Coisas e o padrão de comunicação auxiliado"
+ pageTitle="Descrição geral do IoT Hub do Azure | Microsoft Azure"
+ description="Descrição geral do serviço de IoT Hub do Azure: o que a conectividade do dispositivo IoT Hub, os padrões de comunicação da Internet das Coisas e o padrão de comunicação auxiliado"
  services="iot-hub"
  documentationCenter=""
  authors="dominicbetts"
@@ -16,11 +16,11 @@
  ms.date="06/06/2016"
  ms.author="dobett"/>
 
-# O que é o Hub IoT do Azure?
+# O que é o IoT Hub do Azure?
 
-Bem-vindo ao Hub IoT do Azure. Este artigo fornece uma descrição geral do Hub IoT do Azure e descreve porque deveria utilizar este serviço aquando da implementação da uma solução Internet das Coisas (IoT).
+Bem-vindo ao IoT Hub do Azure. Este artigo fornece uma descrição geral do IoT Hub do Azure e descreve porque deveria utilizar este serviço aquando da implementação da uma solução Internet das Coisas (IoT).
 
-O Hub IoT do Azure é um serviço completamente gerido que permite comunicações bidirecionais fiáveis e seguras entre milhões de dispositivos IoT e uma solução de back-end. Hub IoT do Azure:
+O IoT Hub do Azure é um serviço completamente gerido que permite comunicações bidirecionais fiáveis e seguras entre milhões de dispositivos IoT e uma solução de back-end. IoT Hub do Azure:
 
 - Oferece um serviço de mensagens fiável do dispositivo para a nuvem e da nuvem para o dispositivo.
 - Tal permite realizar comunicações seguras utilizando credenciais de segurança por dispositivo e controlo de acesso.
@@ -29,7 +29,7 @@ O Hub IoT do Azure é um serviço completamente gerido que permite comunicaçõe
 
 O artigo [Comparação do IoT Hub e do Event Hubs][Ink-compare] descreve as principais diferenças entre esses dois serviços e realça as vantagens de utilizar o IoT Hub nas suas soluções de IoT.
 
-![O Hub IoT do Azure como um gateway em nuvem da solução Internet das Coisas][img-architecture]
+![O IoT Hub do Azure como um gateway em nuvem da solução Internet das Coisas][img-architecture]
 
 > [AZURE.NOTE] Para um debate aprofundado da arquitetura do IoT, consulte o artigo [Arquitetura de Referência do IoT do Microsoft Azure][Ink refarch].
 
@@ -47,9 +47,9 @@ O IoT Hub e as bibliotecas do dispositivo ajudam-no a aceitar o desafio de estab
 
 Além dos requisitos identificados acima, qualquer solução IoT também deverá oferecer um dimensionamento, segurança e fiabilidade. É difícil e moroso implementar o conjunto resultante dos requisitos de conectividade se utilizar tecnologias tradicionais, como contentores Web e mediadores de mensagens.
 
-## Porque utilizar o Hub IoT do Azure?
+## Porque utilizar o IoT Hub do Azure?
 
-O Hub IoT do Azure aborda os desafios relativos à conectividade do dispositivo da seguinte forma:
+O IoT Hub do Azure aborda os desafios relativos à conectividade do dispositivo da seguinte forma:
 
 -   **Através da autenticação do dispositivo e da conectividade segura**. Pode aprovisionar cada dispositivo com a sua própria [chave de segurança][Ink-devguide-security] de modo a ativá-la para estabelecer a ligação ao IoT Hub. O [registo de identidade do IoT Hub][Ink-devguide-identityregistry] armazena identidades e chaves do dispositivo numa solução. Uma solução de back-end pode incluir uma lista de permissões e uma lista de bloqueios de dispositivos individuais, o que permite controlar totalmente o acesso de outros dispositivos.
 
@@ -62,7 +62,7 @@ O Hub IoT do Azure aborda os desafios relativos à conectividade do dispositivo 
     - Criar um gateway de campo com o [SDK do Gateway do IoT do Azure][lnk-gateway-sdk] que converte o seu protocolo personalizado num dos três protocolos abrangidos pelo IoT Hub. 
     - Personalizar o [gateway de protocolo do Azure IoT][protocol-gateway], um componente de open source executado em nuvem.
 
--   **Dimensionamento**. O Hub IoT do Azure IoT dimensiona milhões de dispositivos ligados em simultâneo e milhões de eventos por segundo.
+-   **Dimensionamento**. O IoT Hub do Azure IoT dimensiona milhões de dispositivos ligados em simultâneo e milhões de eventos por segundo.
 
 Estas vantagens são genéricas a muitos padrões de comunicação. Atualmente, o IoT Hub permite-lhe implementar os seguintes padrões de comunicação específicos:
 
@@ -82,7 +82,7 @@ Uma solução pode incluir os gateways de protocolo e de campo.
 
 ## Como funciona o IoT Hub?
 
-O Hub IoT do Azure implementa o padrão de comunicação [auxiliado][Ink-service-assisted-pattern] para mediar as interações entre os seus dispositivos e a sua solução de back-end. O objetivo da comunicação auxiliada consiste em estabelecer percursos de comunicação fidedignos e bidirecionais entre um sistema de controlo, como o IoT Hub e dispositivos com objetivos especiais implementados num espaço físico não fidedigno. O padrão estabelece os seguintes princípios:
+O IoT Hub do Azure implementa o padrão de comunicação [auxiliado][Ink-service-assisted-pattern] para mediar as interações entre os seus dispositivos e a sua solução de back-end. O objetivo da comunicação auxiliada consiste em estabelecer percursos de comunicação fidedignos e bidirecionais entre um sistema de controlo, como o IoT Hub e dispositivos com objetivos especiais implementados num espaço físico não fidedigno. O padrão estabelece os seguintes princípios:
 
 - A segurança tem precedência sobre todas as outras funcionalidades.
 - Os dispositivos não aceitam informações da rede não solicitadas. Um dispositivo estabelece todas as ligações e rotas de uma forma apenas de saída. Para que um dispositivo receba um comando do back-end, deverá frequentemente iniciar uma ligação para verificar se devem ser processados quaisquer comandos pendentes.
@@ -96,33 +96,35 @@ A indústria móvel utilizou com êxito o padrão de comunicação auxiliada a u
 
 ## Passos seguintes
 
-Para saber mais sobre Hub IoT do Azure, aceda a estas ligações:
+Para saber como o Hub IoT do Azure permite a gestão de dispositivos de IoT baseada em normas para que possa gerir remotamente, configurar e atualizar os seus dispositivos, veja [Descrição geral da gestão de dispositivos do Hub IoT do Azure][lnk-device-management].
 
-* [Introdução ao IoT Hub][lnk-get-started]
-* [Ligar o seu dispositivo][lnk-connect-device]
-* [Processar as mensagens do dispositivo para a nuvem][lnk-d2c]
+Para implementar aplicações de cliente em várias plataformas de hardware e sistemas operativos para dispositivos, pode utilizar os SDKs do dispositivo IoT. Os SDKs do dispositivo IoT incluem bibliotecas que facilitam o envio de telemetria a um IoT Hub e a receção de comandos da nuvem para o dispositivo. Quando utiliza os SDKs, pode escolher entre vários protocolos de rede para comunicar com o IoT Hub. Para saber mais, consulte [informações sobre os SDKs do dispositivo][Ink-dispositivo-sdks].
+
+Para começar a escrever código e executar alguns exemplos, veja o tutorial [Introdução ao Hub IoT][Ink get-started].
 
 [img-architecture]: media/iot-hub-what-is-iot-hub/hubarchitecture.png
 
-[lnk-get-started]: iot-hub-csharp-csharp-getstarted.md
+
+[Ink get-started]: iot-hub-csharp-csharp-getstarted.md
 [lnk-connect-device]: https://azure.microsoft.com/develop/iot/
 [lnk-d2c]: iot-hub-csharp-csharp-process-d2c.md
 [protocol-gateway]: https://github.com/Azure/azure-iot-protocol-gateway/blob/master/README.md
 [lnk-service-assisted-pattern]: http://blogs.msdn.com/b/clemensv/archive/2014/02/10/service-assisted-communication-for-connected-devices.aspx "Comunicação auxiliada, mensagem de blogue por Clemens Vasters"
-[lnk-compare]: iot-hub-compare-event-hubs.md
-[lnk-gateway]: iot-hub-protocol-gateway.md
-[lnk-field-gateway]: iot-hub-guidance.md#field-gateways
-[lnk-devguide-identityregistry]: iot-hub-devguide.md#identityregistry
-[lnk-devguide-security]: iot-hub-devguide.md#security
-[lnk-wns]: https://msdn.microsoft.com/library/windows/apps/mt187203.aspx
+[Ink-compare]: iot-hub-compare-event-hubs.md
+[Ink-gateway]: iot-hub-protocol-gateway.md
+[gateway-field-gateway]: iot-hub-guidance.md#field-gateways
+[Ink-devguide-identityregistry]: iot-hub-devguide.md#identityregistry
+[Ink-devguide-security]: iot-hub-devguide.md#security
+[Ink-wns]: https://msdn.microsoft.com/library/windows/apps/mt187203.aspx
 [lnk-google-messaging]: https://developers.google.com/cloud-messaging/
 [lnk-apple-push]: https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW9
-[lnk-device-sdks]: https://github.com/Azure/azure-iot-sdks
-[lnk-refarch]: http://download.microsoft.com/download/A/4/D/A4DAD253-BC21-41D3-B9D9-87D2AE6F0719/Microsoft_Azure_IoT_Reference_Architecture.pdf
+[Ink-dispositivo-sdks]: https://github.com/Azure/azure-iot-sdks
+[Ink refarch]: http://download.microsoft.com/download/A/4/D/A4DAD253-BC21-41D3-B9D9-87D2AE6F0719/Microsoft_Azure_IoT_Reference_Architecture.pdf
 [lnk-gateway-sdk]: https://github.com/Azure/azure-iot-gateway-sdk
+[lnk-device-management]: iot-hub-device-management-overview.md
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

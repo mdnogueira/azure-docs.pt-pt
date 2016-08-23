@@ -13,7 +13,7 @@
     ms.topic="hero-article"
     ms.tgt_pltfrm="na"
     ms.workload="big-compute"
-    ms.date="06/03/2016"
+    ms.date="06/17/2016"
     ms.author="marsma"/>
 
 # Introdução ao cliente Azure Batch Python
@@ -60,10 +60,6 @@ Problema ao seguir o comando **pip** para instalar os pacotes Batch e Armazename
 Em alternativa, pode instalar manualmente os pacotes do Python [azure-batch][pypi_batch] e [azure-storage][pypi_storage].
 
 > [AZURE.TIP] Poderá ter de utilizar prefixos nos comandos com `sudo`, por exemplo, `sudo pip install -r requirements.txt`, se estiver a utilizar uma conta sem privilégios (recomendado). Para obter mais informações sobre como instalar pacotes de Python, veja [Instalar Pacotes][pypi_install] no readthedocs.io.
-
-### Explorador do Azure Batch (opcional)
-
-O [Explorador do Azure Batch][github_batchexplorer] é um utilitário gratuito que está incluído no repositório [azure-batch-samples][github_samples] do GitHub. Embora não seja necessário para concluir este tutorial, poderá ser útil no desenvolvimento e depuração das soluções Batch.
 
 ## Exemplo de código do tutorial do Batch Python
 
@@ -265,9 +261,8 @@ Depois de carregar o script da tarefa e os ficheiros de dados para a conta de Ar
                                               _BATCH_ACCOUNT_KEY)
 
  batch_client = batch.BatchServiceClient(
-     batch.BatchServiceClientConfiguration(
-         credentials,
-         base_url=_BATCH_ACCOUNT_URL))
+     credentials,
+     base_url=_BATCH_ACCOUNT_URL)
 ```
 
 Em seguida, é criado um conjunto de nós de computação na conta do Batch, com uma chamada para `create_pool`.
@@ -437,7 +432,7 @@ def add_tasks(batch_service_client, job_id, input_files,
     batch_service_client.task.add_collection(job_id, tasks)
 ```
 
-> [AZURE.IMPORTANT] Quando acedem a variáveis de ambiente, como `$AZ_BATCH_NODE_SHARED_DIR` ou executar uma aplicação que não está no nó `PATH`, as linhas de comandos de tarefas têm de ter o prefixo `/bin/bash` (Linux) ou `cmd /c` (Windows). Isto irá executar explicitamente a shell de comandos e instruí-la para terminar depois de o comando ser executado. Este requisito é desnecessário se as suas tarefas estiverem a executar uma aplicação no nó `PATH` (como *python* no fragmento acima).
+> [AZURE.IMPORTANT] Quando acedem a variáveis de ambiente, como `$AZ_BATCH_NODE_SHARED_DIR`, ou executam uma aplicação que não está no `PATH` do nó, as linhas de comandos de tarefas devem invocar a shell explicitamente, assim como em `/bin/sh -c MyTaskApplication $MY_ENV_VAR`. Este requisito é desnecessário se as suas tarefas estiverem a executar uma aplicação no nó `PATH` e não fazem referência a quaisquer variáveis de ambiente.
 
 Dentro do ciclo `for` no fragmento de código acima, pode ver que a linha de comandos da tarefa está construída com cinco argumentos da linha de comandos que são transmitidos para *python_tutorial_task.py*:
 
@@ -576,7 +571,7 @@ if query_yes_no('Delete pool?') == 'yes':
 
 ## Executar a aplicação de exemplo
 
-Quando executa o script *python_tutorial_client.py*, o resultado da consola será semelhante ao seguinte. Verá uma pausa no `Monitoring all tasks for 'Completed' state, timeout in 0:20:00...` enquanto os nós de computação do conjunto são criados, iniciados, e os comandos na tarefa de início do conjunto são executados. Utilize o [portal do Azure][azure_portal] ou o [Explorador do Batch][github_batchexplorer] para monitorizar o conjunto, nós de computação, o trabalho e as tarefas durante e após a execução. Utilize o [portal do Azure][azure_portal] ou o [Explorador de Armazenamento do Microsoft Azure][storage_explorer] para ver os recursos de Armazenamento (contentores e blobs) que são criados pela aplicação.
+Quando executa o script *python_tutorial_client.py*, o resultado da consola será semelhante ao seguinte. Verá uma pausa no `Monitoring all tasks for 'Completed' state, timeout in 0:20:00...` enquanto os nós de computação do conjunto são criados, iniciados, e os comandos na tarefa de início do conjunto são executados. Utilize o [portal do Azure][azure_portal] para monitorizar o conjunto, nós de computação, o trabalho e as tarefas durante e após a execução. Utilize o [portal do Azure][azure_portal] ou o [Explorador de Armazenamento do Microsoft Azure][storage_explorer] para ver os recursos de Armazenamento (contentores e blobs) que são criados pela aplicação.
 
 O tempo de execução típico é **aproximadamente 5 a 7 minutos** quando executa a aplicação na configuração predefinida.
 
@@ -610,7 +605,7 @@ Press ENTER to exit...
 
 ## Passos seguintes
 
-Pode efetuar alterações em *python_tutorial_client.py* e *python_tutorial_task.py* para testar cenários de computação diferentes. Por exemplo, tente adicionar um atraso de execução a *python_tutorial_task.py* para simular tarefas demoradas e monitorizá-las com a funcionalidade *Mapa Térmico* do Explorador do Batch. Experimente adicionar mais tarefas ou ajustar o número de nós de computação. Adicione lógica para procurar e permitir a utilização de um conjunto existente para acelerar o tempo de execução.
+Pode efetuar alterações em *python_tutorial_client.py* e *python_tutorial_task.py* para testar cenários de computação diferentes. Por exemplo, tente adicionar um atraso de execução a *python_tutorial_task.py* para simular tarefas demoradas e monitorizá-las no portal. Experimente adicionar mais tarefas ou ajustar o número de nós de computação. Adicione lógica para procurar e permitir a utilização de um conjunto existente para acelerar o tempo de execução.
 
 Agora que está familiarizado com o fluxo de trabalho básico de uma solução do Batch, está na altura de aprofundar as funcionalidades adicionais do serviço Batch.
 
@@ -621,10 +616,8 @@ Agora que está familiarizado com o fluxo de trabalho básico de uma solução d
 [azure_batch]: https://azure.microsoft.com/services/batch/
 [azure_free_account]: https://azure.microsoft.com/free/
 [azure_portal]: https://portal.azure.com
-[batch_explorer_blog]: http://blogs.technet.com/b/windowshpc/archive/2015/01/20/azure-batch-explorer-sample-walkthrough.aspx
 [batch_learning_path]: https://azure.microsoft.com/documentation/learning-paths/batch/
 [blog_linux]: http://blogs.technet.com/b/windowshpc/archive/2016/03/30/introducing-linux-support-on-azure-batch.aspx
-[github_batchexplorer]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/BatchExplorer
 [github_samples]: https://github.com/Azure/azure-batch-samples
 [github_samples_common]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/Common
 [github_samples_zip]: https://github.com/Azure/azure-batch-samples/archive/master.zip
@@ -673,7 +666,7 @@ Agora que está familiarizado com o fluxo de trabalho básico de uma solução d
 [1]: ./media/batch-dotnet-get-started/batch_workflow_01_sm.png "Criar contentores no Armazenamento do Azure"
 [2]: ./media/batch-dotnet-get-started/batch_workflow_02_sm.png "Carregar a aplicação de tarefa e os ficheiros de entrada (dados) para contentores"
 [3]: ./media/batch-dotnet-get-started/batch_workflow_03_sm.png "Criar conjunto do Batch"
-[4]: ./media/batch-dotnet-get-started/batch_workflow_04_sm.png "Criar trabalho do Batch"
+[4]: ./media/batch-dotnet-get-started/batch_workflow_04_sm.png "Criar um trabalho do Batch"
 [5]: ./media/batch-dotnet-get-started/batch_workflow_05_sm.png "Adicionar tarefas ao trabalho"
 [6]: ./media/batch-dotnet-get-started/batch_workflow_06_sm.png "Monitorizar tarefas"
 [7]: ./media/batch-dotnet-get-started/batch_workflow_07_sm.png "Transferir o resultado da tarefa do Armazenamento"
@@ -684,6 +677,6 @@ Agora que está familiarizado com o fluxo de trabalho básico de uma solução d
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

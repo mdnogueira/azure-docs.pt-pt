@@ -1,7 +1,7 @@
 <properties 
     pageTitle="App Service do Azure para Web Apps e aplicações móveis| Microsoft Azure" 
     description="Saiba como o App Service do Azure o pode ajudar a desenvolver, implementar e gerir Web Apps e móveis." 
-    keywords="app service, azure app service, app service cost, scale, scalable, app deployment, azure app deployment, paas, platform-as-a-service"
+    keywords="serviço de aplicações, serviço de aplicações do azure, custo do serviço de aplicações, dimensionamento, dimensionável, implementação de aplicações, implementação de aplicações do azure, paas, plataforma-como-serviço"
     services="app-service" 
     documentationCenter="" 
     authors="omarkmsft" 
@@ -17,7 +17,7 @@
     ms.date="05/25/2016" 
     ms.author="omark"/>
 
-# O que é o App Service do Azure?
+# O que é o Serviço de Aplicações do Azure?
 
 O *App Service* é uma oferta [plataforma-como-um-serviço](https://en.wikipedia.org/wiki/Platform_as_a_service) (PaaS) da Microsoft Azure. Crie Web Apps e móveis para qualquer plataforma ou dispositivo. Integrar as suas aplicações com soluções SaaS, ligue-se com as aplicações no local e automatize os processos empresariais. O Azure executa as suas aplicações em máquinas virtuais (VMs) completamente geridas, com os recursos de MV partilhados ou VMs dedicadas que escolher. 
 
@@ -33,9 +33,9 @@ São a seguir apresentadas algumas funcionalidades-chave e capacidades do App Se
 
 - **Várias linguagens e arquiteturas** – o App Service tem suporte de primeira classe para ASP.NET, Node.js, Java, PHP e Python. Também pode executar [o Windows PowerShell e outros scripts ou executáveis](../app-service-web/web-sites-create-web-jobs.md) em VMs do App Service.
 
-- **Otimização de DevOps** – configure [a integração e a implementação contínuas](../app-service-web/app-service-continous-deployment.md) com os Visual Studio Team Services, o GitHub ou o BitBucket. Promova atualizações através de [ambientes de teste](../app-service-web/web-sites-staged-publishing.md). Realize [testes A/B](../app-service-web/app-service-web-test-in-production-get-start.md). Faça a gestão das suas aplicações no App Service utilizando o [Azure PowerShell](../powershell-install-configure.md) ou a [interface de linha de comandos (CLI) de várias plataformas](../xplat-cli-install.md).
+- **Otimização de DevOps** – configure [a integração e a implementação contínuas](../app-service-web/app-service-continuous-deployment.md) com os Visual Studio Team Services, o GitHub ou o BitBucket. Promova atualizações através de [ambientes de teste](../app-service-web/web-sites-staged-publishing.md). Realize [testes A/B](../app-service-web/app-service-web-test-in-production-get-start.md). Faça a gestão das suas aplicações no App Service utilizando o [Azure PowerShell](../powershell-install-configure.md) ou a [interface de linha de comandos (CLI) de várias plataformas](../xplat-cli-install.md).
  
-- **Dimensionamento global com elevada disponibilidade** – aumente [verticalmente](../app-service/app-service-scale.md) ou [horizontalmente](../azure-portal/insights-how-to-scale.md) de forma manual ou automática. Aloje as aplicações em qualquer lugar da infraestrutura do datacenter global da Microsoft e o App Service [SLA](https://azure.microsoft.com/support/legal/sla/app-service/) promete elevada disponibilidade.
+- **Dimensionamento global com elevada disponibilidade** – aumente [verticalmente](../app-service-web/web-sites-scale.md) ou [horizontalmente](../azure-portal/insights-how-to-scale.md) de forma manual ou automática. Aloje as aplicações em qualquer lugar da infraestrutura do datacenter global da Microsoft e o App Service [SLA](https://azure.microsoft.com/support/legal/sla/app-service/) promete elevada disponibilidade.
 
 - **Ligações a plataformas SaaS e dados no local** – escolha entre mais de 50 [conectores](../connectors/apis-list.md) para sistemas empresariais (como SAP, Siebel e Oracle), serviços SaaS (como o Salesforce e o Office 365) e serviços Internet (como o Facebook e o Twitter). Aceda a dados no local ao utilizar [Ligações Híbridas](../biztalk-services/integration-hybrid-connection-overview.md) e [Azure Virtual Networks](../app-service-web/web-sites-integrate-with-vnet.md).
 
@@ -82,6 +82,6 @@ Ou abra uma [conta do Azure gratuita](https://azure.microsoft.com/pricing/free-t
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

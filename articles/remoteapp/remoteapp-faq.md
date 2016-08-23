@@ -4,7 +4,7 @@
     services="remoteapp" 
     documentationCenter="" 
     authors="lizap" 
-    manager="mbaldwin" 
+    manager="swadhwa" 
     editor=""/>
 
 <tags 
@@ -13,11 +13,14 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="get-started-article" 
-    ms.date="04/08/2016" 
+    ms.date="07/25/2016" 
     ms.author="elizapo"/>
 
 # Perguntas mais frequentes (FAQ) do Azure RemoteApp
 A seguir são apresentadas as perguntas relativas ao Azure RemoteApp. Tem outras perguntas? Visite os [fóruns do RemoteApp](https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureRemoteApp) e indique o que precisa de saber ou deixe um comentário a seguir.
+
+## Não consegue encontrar o que procura? Tem alguma pergunta que não tenhamos respondido?
+Se não consegue encontrar as informações que procura ou tem uma pergunta adicional que não é abordada aqui, visite o [Fórum do Azure RemoteApp](http://aka.ms/araforum) e coloque lá a sua pergunta. Podemos sempre adicionar mais respostas aqui.
 
 ## O que é o Azure RemoteApp? ##
 
@@ -33,7 +36,7 @@ A seguir são apresentadas as perguntas relativas ao Azure RemoteApp. Tem outras
 - **Quais são os limites de serviço?** Pode saber mais sobre as predefinições e os limites de serviço do Azure RemoteApp em [Subscrição e Limites de Serviço, Quotas e Restrições do Azure](../azure-subscription-service-limits.md). Informe-nos caso tenha mais perguntas.
 - **Quantos utilizadores devo ter?** Existe um mínimo de 20 utilizadores. Permita-me repetir para ser extremamente claro – 20 no MÍNIMO. Será faturado por 20. 
 - **Qual é o custo do RemoteApp?** Consulte os [Detalhes dos Preços do Azure RemoteApp ](https://azure.microsoft.com/pricing/details/remoteapp/).
-- **O custo de um tipo de coleção é superior ao outro?** Sim, poderá ser superior, dependendo dos requisitos da coleção. Uma coleção híbrida requer uma ligação do Azure RemoteApp à sua rede no local. Caso utilize uma VNET/Express Route, não existe qualquer custo adicional. No entanto, se utilizar uma nova Azure VNET e um gateway ou uma ExpressRoute, o [VPN Gateway](https://azure.microsoft.com/pricing/details/vpn-gateway) ou a [ExpressRoute](../../../pricing/details/expressroute/) serão cobrados. Esse custo (detalhado nas ligações) reflete-se no custo mensal do Azure RemoteApp.
+- **O custo de um tipo de coleção é superior ao outro?** Sim, poderá ser superior, dependendo dos requisitos da coleção. Uma coleção híbrida requer uma ligação do Azure RemoteApp à sua rede no local. Caso utilize uma VNET/Express Route, não existe qualquer custo adicional. No entanto, se utilizar uma nova VNET do Azure e um gateway ou ExpressRoute, ser-lh-á cobrado um montante pelo [Gateway de VPN](https://azure.microsoft.com/pricing/details/vpn-gateway) ou o [ExpressRoute](https://azure.microsoft.com/pricing/details/expressroute/). Esse custo (detalhado nas ligações) reflete-se no custo mensal do Azure RemoteApp.
 
 ## Coleções – o que é suportado e qual deverá utilizar, entre outros
 - **São suportadas aplicações de linha de negócio (LOB) personalizadas?** Sim. Para utilizar uma aplicação personalizada no Azure RemoteApp, crie uma [imagem de modelo personalizada](remoteapp-create-custom-image.md) e, em seguida, carregue a mesma para a coleção do RemoteApp.
@@ -117,6 +120,6 @@ Sabia que além de classificar este artigo e deixar um comentário a seguir, pod
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

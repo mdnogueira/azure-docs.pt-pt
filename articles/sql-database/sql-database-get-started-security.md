@@ -4,7 +4,7 @@
     keywords=""
     services="sql-database"
     documentationCenter=""
-    authors="carlrabeler"
+    authors="CarlRabeler"
     manager="jhubbard"
     editor=""/>
 
@@ -15,10 +15,15 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="hero-article"
-    ms.date="05/03/2016"
+    ms.date="07/19/2016"
     ms.author="carlrab"/>
 
 # Tutorial de Base de Dados SQL: criar contas de utilizador de base de dados SQL para aceder e gerir uma base de dados com o portal do Azure
+
+
+> [AZURE.SELECTOR]
+- [Tutorial de introdução](sql-database-get-started-security.md)
+- [Conceder acesso](sql-database-manage-logins.md)
 
 Neste tutorial, irá aprender a utilizar o portal do Azure para:
 
@@ -49,6 +54,6 @@ Agora que já concluiu este tutorial de Base de Dados SQL e criou uma conta de u
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

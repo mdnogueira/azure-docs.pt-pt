@@ -13,18 +13,16 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="03/18/2016"
+   ms.date="07/19/2016"
    ms.author="cherylmc" />
 
-# Topologias da ligação do VPN Gateway do Azure
+# Ligações do Gateway de VPN do Azure
 
 Este artigo mostra as topologias da ligação do gateway de VPN da linha de base. Pode utilizar os gráficos e as descrições para ajudar a selecionar a topologia de configuração para corresponder aos seus requisitos. Apesar deste artigo abordar as principais topologias de linha de base, é possível criar topologias mais complexas utilizando os diagramas como orientação.
 
 Cada topologia contém uma tabela que lista o modelo de implementação para o qual a topologia está disponível, as ferramentas de implementação que pode utilizar para configurar cada topologia e um link direto para um artigo, se existir. Atualizamos as tabelas com frequência, à medida que novos artigos e ferramentas de implementação ficam disponíveis para utilização.
 
-Se pretender obter mais informações sobre os gateways de VPN, veja [Acerca dos VPN Gateways](vpn-gateway-about-vpngateways.md).
-
-
+Tendo decidido a ligação que pretende criar, as instruções utilizadas para criar o gateway de VPN dependerão do modelo de implementação que utilizou para criar a rede virtual. Por exemplo, se tiver criado a VNet com o modelo de implementação clássica, deverá utilizar as diretrizes e as instruções do modelo de implementação clássica para criar e configurar o gateway de VPN. Não pode criar um gateway de VPN do Resource Manager para uma rede virtual do modelo de implementação clássica. Para obter mais informações sobre os modelos de implementação, veja [Compreender os modelos de implementação clássica e Resource Manager](../resource-manager-deployment-model.md).
 
 ## Site a Site e Multilocal
 
@@ -64,6 +62,28 @@ Atualmente, o Azure tem dois modelos de implementação: a Gestão do Serviço d
 [AZURE.INCLUDE [vpn-gateway-table-vnet-to-vnet](../../includes/vpn-gateway-table-vnet-to-vnet-include.md)] 
 
 
+## Ponto a Site
+
+Uma configuração Ponto a Site permite-lhe criar uma ligação segura para a sua rede virtual a partir de um computador cliente, individualmente. É estabelecida uma ligação VPN ao iniciar a ligação a partir do computador cliente. Esta é uma excelente solução quando pretende ligar a VNet a partir de uma localização remota, por exemplo, quando está em casa ou numa conferência ou quando tem apenas alguns clientes que precisam de se ligar a uma rede virtual. 
+
+Uma ligação Ponto a Site é uma ligação VPN através de SSTP (Secure Socket Tunneling Protocol). As ligações Ponto a Site não precisam de nenhum dispositivo VPN ou endereço IP destinado ao público para funcionar. 
+
+**Diagrama P2S**
+
+![Ligação Site a Site](./media/vpn-gateway-topology/point2site.png "point-to-site")
+
+**Métodos e modelos de implementação disponíveis**
+
+[AZURE.INCLUDE [vpn-gateway-table-point-to-site](../../includes/vpn-gateway-table-point-to-site-include.md)] 
+
+
+##ExpressRoute
+
+[AZURE.INCLUDE [expressroute-intro](../../includes/expressroute-intro-include.md)]
+
+Para obter mais informações sobre o ExpressRoute, veja a [Descrição geral técnica do ExpressRoute](../expressroute/expressroute-introduction.md).
+
+
 
 ## Ligações Site a Site e ExpressRoute coexistentes
 
@@ -80,23 +100,11 @@ O ExpressRoute é uma ligação dedicada direta aos Serviços Microsoft, incluin
 [AZURE.INCLUDE [vpn-gateway-table-coexist](../../includes/vpn-gateway-table-coexist-include.md)] 
 
 
-## Ponto a Site
 
-Uma configuração Ponto a Site permite-lhe criar uma ligação segura para a sua rede virtual a partir de um computador cliente, individualmente. É estabelecida uma ligação VPN ao iniciar a ligação a partir do computador cliente. Esta é uma excelente solução quando pretende ligar a VNet a partir de uma localização remota, por exemplo, quando está em casa ou numa conferência ou quando tem apenas alguns clientes que precisam de se ligar a uma rede virtual. 
-
-Uma ligação Ponto a Site é uma ligação VPN através de SSTP (Secure Socket Tunneling Protocol). As ligações Ponto a Site não precisam de nenhum dispositivo VPN ou endereço IP destinado ao público para funcionar. 
-
-**Diagrama P2S**
-
-![Ligação Site a Site](./media/vpn-gateway-topology/point2site.png "point-to-site")
-
-**Métodos e modelos de implementação disponíveis**
-
-[AZURE.INCLUDE [vpn-gateway-table-point-to-site](../../includes/vpn-gateway-table-point-to-site-include.md)] 
 
 ## Passos seguintes
 
-Deverá familiarizar-se com os itens nos artigos [Acerca dos VPN Gateways](vpn-gateway-about-vpngateways.md) e [FAQs do VPN Gateway](vpn-gateway-vpn-faq.md) para melhor compreender os gateways de VPN antes de prosseguir com o planeamento e a conceção da ligação.
+Deverá familiarizar-se com os itens nos artigos [Acerca dos Gateways de VPN](vpn-gateway-about-vpngateways.md) e [FAQ do Gateway de VPN](vpn-gateway-vpn-faq.md) para melhor compreender as definições do Gateway de VPN.
 
 
 
@@ -106,6 +114,6 @@ Deverá familiarizar-se com os itens nos artigos [Acerca dos VPN Gateways](vpn-g
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

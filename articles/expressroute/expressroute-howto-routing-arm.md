@@ -13,7 +13,7 @@
    ms.topic="hero-article" 
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="04/08/2016"
+   ms.date="06/29/2016"
    ms.author="ganesr"/>
 
 # Criar e modificar o encaminhamento de um circuito ExpressRoute
@@ -406,6 +406,6 @@ Passo seguinte, [Ligar uma VNet a um circuito ExpressRoute](expressroute-howto-l
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

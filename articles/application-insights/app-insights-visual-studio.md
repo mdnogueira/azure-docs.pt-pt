@@ -12,7 +12,7 @@
     ms.tgt_pltfrm="ibiza" 
     ms.devlang="na" 
     ms.topic="get-started-article" 
-    ms.date="05/25/2016" 
+    ms.date="06/21/2016" 
     ms.author="awills"/>
 
 
@@ -65,7 +65,11 @@ Se tiver [configurado a monitorização de exceção](app-insights-asp-net-excep
 Clique numa exceção para obter um rastreio de pilha. Se abrir o código da aplicação no Visual Studio, pode clicar no rastreio de pilha para a linha relevante do código.
 
 
-![](./media/app-insights-visual-studio/17.png)
+![Rastreio de pilha de exceção](./media/app-insights-visual-studio/17.png)
+
+Além disso, na linha Código lente acima de cada método, verá uma contagem das exceções registadas pelo Application Insights nas últimas 24 horas.
+
+![Rastreio de pilha de exceção](./media/app-insights-visual-studio/21.png)
 
 
 ## Monitorização local
@@ -84,16 +88,15 @@ Também poderá ser útil se tiver alguma [telemetria personalizada](app-insight
  * Nas Definições da janela Pesquisa, encontrará uma opção para procurar o diagnóstico local, mesmo se a sua aplicação enviar telemetria para o portal.
  * Para parar o envio de telemetria para o portal, comente a linha `<instrumentationkey>...` no ApplicationInsights.com. Quando estiver pronto para enviar novamente telemetria para o portal, anule o comentário.
 
+## Tendências
 
+Tendências é uma ferramenta para visualizar a forma como a aplicação se comporta ao longo do tempo. 
 
+Selecione **Explorar Tendências de Telemetria** no botão da barra de ferramentas do Application Insights ou na janela Pesquisa do Application Insights Escolha uma das cinco consultas comuns para começar. Pode analisar os diferentes conjuntos de dados com base em tipos de telemetria, intervalos de tempo e outras propriedades. 
 
+Para localizar anomalias nos seus dados, escolha uma das opções anómalas na lista pendente "Tipo de Vista". As opções de filtragem na parte inferior da janela facilitam a maximização de subconjuntos específicos da sua telemetria.
 
-## Para atualizar para versões futuras do SDK
-
-Para atualizar para uma [nova versão do SDK](app-insights-release-notes-dotnet.md), abra o gestor de pacotes NuGet novamente e filtre os pacotes instalados. Selecione Microsoft.ApplicationInsights.Web e escolha Atualizar.
-
-Se tiver efetuado personalizações no ApplicationInsights.config, guarde uma cópia do mesmo antes de atualizar e, posteriormente, intercale as alterações na nova versão.
-
+![Tendências](./media/app-insights-visual-studio/51.png)
 
 
 ## Passos seguintes?
@@ -108,6 +111,6 @@ Se tiver efetuado personalizações no ApplicationInsights.config, guarde uma c�
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

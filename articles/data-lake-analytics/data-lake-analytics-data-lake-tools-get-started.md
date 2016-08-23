@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="04/26/2016"
+   ms.date="05/16/2016"
    ms.author="edmaca"/>
 
 # Tutorial: desenvolver scripts U-SQL com as Ferramentas do Data Lake para Visual Studio
@@ -77,7 +77,7 @@ Caso pretenda utilizar os seus dados, eis os procedimentos para carregar dados a
 
 ## Desenvolver scripts U-SQL
 
-As tarefas de Análise do Data Lake são escritas na linguagem U-SQL. Para saber mais sobre U-SQL, veja [Introdução à linguagem U-SQL](data-lake-analytics-u-sql-get-started.md) e [Referência de linguagem U-SQL](http://go.microsoft.com/fwlink/?LinkId=691348).
+As tarefas de Data Lake Analytics são escritas em linguagem U-SQL. Para saber mais sobre U-SQL, consulte [Introdução à linguagem U SQL](data-lake-analytics-u-sql-get-started.md) e [Referência de linguagem U-SQL](http://go.microsoft.com/fwlink/?LinkId=691348).
 
 **Para criar e submeter tarefas de Data Lake Analytics**
 
@@ -364,6 +364,6 @@ O seguinte script do PowerShell prepara uma conta do Azure Data Lake Analytics e
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

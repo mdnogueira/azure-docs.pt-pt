@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="04/12/2016"
+   ms.date="06/09/2016"
    ms.author="ryanwi"/>
 
 # Introdução à implementação e atualização de aplicações no seu cluster local
@@ -66,7 +66,7 @@ Neste tutorial, utilizaremos uma aplicação de exemplo existente (denominada Wo
     cd c:\ServiceFabric\
     ```
 
-4. [Transfira a aplicação WordCount](http://aka.ms/servicefabric-wordcountapp) para a localização criada.
+4. [Transfira a aplicação WordCount](http://aka.ms/servicefabric-wordcountapp) para a localização criada.  Nota: o browser da Microsoft Edge irá guardar o ficheiro com a extensão *.zip*.  Terá de alterar a extensão do ficheiro para *.sfpkg*.
 
 5. Ligar ao cluster local:
 
@@ -88,7 +88,7 @@ Neste tutorial, utilizaremos uma aplicação de exemplo existente (denominada Wo
 
     ![Interface do utilizador da aplicação implementada][deployed-app-ui]
 
-    A aplicação de WordCount é muito simples. Inclui código JavaScript do lado do cliente para gerar "palavras" aleatórias de cinco carateres que posteriormente são reencaminhadas para a aplicação através da API Web ASP.NET. Um serviço com estado mantém um registo do número de palavras contadas. Criam-se partições com base no primeiro caráter da palavra.
+    A aplicação de WordCount é muito simples. Inclui código JavaScript do lado do cliente para gerar "palavras" aleatórias de cinco carateres que posteriormente são reencaminhadas para a aplicação através da API Web ASP.NET. Um serviço com estado mantém um registo do número de palavras contadas. Criam-se partições com base no primeiro caráter da palavra. Pode localizar o código de origem para a aplicação de WordCount nos [exemplos de introdução](https://azure.microsoft.com/documentation/samples/service-fabric-dotnet-getting-started/).
 
     A aplicação que foi implementada contém quatro partições. Deste modo, as palavras que começam de A a G são armazenadas na primeira partição, as palavras de H a N são armazenadas na segunda partição e assim sucessivamente.
 
@@ -168,6 +168,33 @@ A nova versão da aplicação agora contará apenas as palavras que começam por
 
     ![Ver a nova versão da aplicação no navegador][deployed-app-ui-v2]
 
+## Limpeza
+
+Antes de concluir, é importante lembrar-se de que o cluster local é real. As aplicações continuarão a ser executadas em segundo plano até serem removidas.  Dependendo da natureza das suas aplicações, uma aplicação em execução pode consumir recursos significativos no seu computador. Tem várias opções para lidar com isto:
+
+1. Para remover uma aplicação individual e todos os seus dados, execute o seguinte:
+
+    ```powershell
+    Unpublish-ServiceFabricApplication -ApplicationName "fabric:/WordCount"
+    ```
+
+    Ou utilize a ação **Eliminar aplicação** no Service Fabric Explorer com o menu **AÇÕES** ou com o menu de contexto, na vista da lista de aplicações, no painel da esquerda.
+
+    ![Eliminar uma aplicação no Service Fabric Explorer][sfe-delete-application]
+
+2. Depois de eliminar a aplicação do cluster, pode, em seguida, anular o registo das versões 1.0.0 e 2.0.0 do tipo de aplicação WordCount. Esta ação remove pacotes de aplicação, incluindo o código e a configuração, do armazém de imagem do cluster.
+
+    ```powershell
+    Remove-ServiceFabricApplicationType -ApplicationTypeName WordCount -ApplicationTypeVersion 2.0.0
+    Remove-ServiceFabricApplicationType -ApplicationTypeName WordCount -ApplicationTypeVersion 1.0.0
+    ```
+
+    Ou, no Service Fabric Explorer, selecione **Tipo de Não Aprovisionamento** para a aplicação.
+
+3. Para encerrar o cluster, mas manter os dados de aplicação e o rastreio, clique em **Parar Cluster Local** na aplicação de tabuleiro do sistema.
+
+4. Para eliminar o cluster totalmente, clique em **Remover Cluster Local** na aplicação de tabuleiro do sistema. Tenha em atenção que esta opção resultará noutra implementação lenta da próxima vez que premir F5 no Visual Studio. Utilize esta opção apenas se não pretender utilizar o cluster local durante algum tempo ou se precisar de recuperar recursos.
+
 ## Passos seguintes
 - Agora que implementou e atualizou algumas aplicações pré-criadas, pode [tentar criar a sua no Visual Studio](service-fabric-create-your-first-application-in-visual-studio.md).
 - Todas as ações executadas no cluster local neste artigo também podem ser efetuadas num [cluster do Azure](service-fabric-cluster-creation-via-portal.md).
@@ -189,9 +216,10 @@ A nova versão da aplicação agora contará apenas as palavras que começam por
 [ps-getsfsvc-postupgrade]: ./media/service-fabric-get-started-with-a-local-cluster/PS-GetSFSvc-PostUpgrade.png
 [sfx-upgradeprogress]: ./media/service-fabric-get-started-with-a-local-cluster/SfxUpgradeOverview.png
 [sfx-service-overview]: ./media/service-fabric-get-started-with-a-local-cluster/sfx-service-overview.png
+[sfe-delete-application]: ./media/service-fabric-get-started-with-a-local-cluster/sfe-delete-application.png
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

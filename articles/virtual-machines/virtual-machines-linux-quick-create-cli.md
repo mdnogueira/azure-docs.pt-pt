@@ -173,6 +173,6 @@ Esses artigos ajudam a começar a criar uma infraestrutura do Azure, bem como qu
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

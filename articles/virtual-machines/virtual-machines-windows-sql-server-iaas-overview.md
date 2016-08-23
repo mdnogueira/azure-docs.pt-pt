@@ -14,7 +14,7 @@
     ms.topic="get-started-article"
     ms.tgt_pltfrm="vm-windows-sql-server"
     ms.workload="infrastructure-services"
-    ms.date="06/03/2016"
+    ms.date="07/22/2016"
     ms.author="jroth"/>
 
 # Introdução ao SQL Server em Virtual Machines do Azure
@@ -31,7 +31,7 @@ Antes de começar, avalie primeiro o que ganha com a utilização do SQL Server 
 
 Se estiver a mover outras cargas de trabalho para o Azure, tal como uma aplicação empresarial, faz sentido também mover as bases de dados do SQL Server dependentes para o Azure para um melhor desempenho. Mas alojar o SQL Server em VMs do Azure fornece outras vantagens. Por exemplo, tem automaticamente acesso a vários centros de dados para uma recuperação após desastre e uma presença global. Para obter uma lista completa de cenários e vantagens, consulte a [Página de produto do SQL Server em VMs do Azure](https://azure.microsoft.com/services/virtual-machines/sql-server/).
 
-> [AZURE.NOTE] Quando estiver a avaliar o SQL Server em VMs do Azure, reveja também as outras opções de armazenamento e SQL no Azure, tal como [SQL Database](../sql-database/sql-database-technical-overview.md), [SQL Data Warehouse](../sql-data-warehouse/sql-data-warehouse-overview-what-is.md) e [SQL Server Stretch Database](../sql     -server-stretch-database/sql-server-stretch-database-overview.md). Para uma comparação mais detalhada, consulte [Escolher uma opção do SQL Server de nuvem: SQL Database do Azure (PaaS) ou do SQL Server em VMs do Azure (IaaS)](../sql-database/data-management-azure-sql-database-and-sql-server-iaas.md).
+> [AZURE.NOTE] Quando estiver a avaliar o SQL Server em VMs do Azure, reveja também as outras opções de armazenamento e SQL no Azure, tal como [SQL Database](../sql-database/sql-database-technical-overview.md), [SQL Data Warehouse](../sql-data-warehouse/sql-data-warehouse-overview-what-is.md) e [SQL Server Stretch Database](../sql     -server-stretch-database/sql-server-stretch-database-overview.md). Para uma comparação mais detalhada, veja [Choose a cloud SQL Server option: Azure SQL (PaaS) Database or SQL Server on Azure VMs (IaaS) (Escolher uma opção do SQL Server de nuvem: Base de Dados SQL do Azure (PaaS) ou SQL Server em VMs do Azure (IaaS))](../sql-database/sql-database-paas-vs-sql-server-iaas.md).
 
 Depois de optar por executar o SQL Server em VMs do Azure, uma das suas primeiras decisões é se pretende utilizar uma imagem da VM que inclui os custos de licenciamento do SQL Server. A outra opção consiste em trazer a sua própria licença (BYOL) e apenas pagar a própria VM. As duas secções seguintes descrevem estas opções.
 
@@ -40,16 +40,16 @@ A tabela seguinte fornece uma matriz de imagens do SQL Server disponíveis na ga
 
 A orientação passo-a-passo está disponível no tutorial, [Aprovisionar uma máquina virtual do SQL Server no Portal do Azure](virtual-machines-windows-portal-sql-server-provision.md). Além disso, reveja as [Melhores práticas do desempenho para as VMs do SQL Server](virtual-machines-windows-sql-performance.md), que explica como selecionar o tamanho da máquina apropriada e outras funcionalidades disponíveis durante o aprovisionamento.
 
-|Versão do SQL Server|Sistema operativo|Edição do SQL Server|
+|Versão|Sistema Operativo|Edição|
 |---|---|---|
-|**SQL Server 2016**|Windows Server 2012 R2|[Enterprise](https://portal.azure.com/#create/Microsoft.SQLServer2016RTMEnterpriseWindowsServer2012R2), [Standard](https://portal.azure.com/#create/Microsoft.SQLServer2016RTMStandardWindowsServer2012R2), [Web](https://portal.azure.com/#create/Microsoft.SQLServer2016RTMWebWindowsServer2012R2), [Express](https://portal.azure.com/#create/Microsoft.SQLServer2016RTMExpressWindowsServer2012R2)|
-|**SQL Server 2014 SP1**|Windows Server 2012 R2|[Enterprise](https://portal.azure.com/#create/Microsoft.SQLServer2014SP1EnterpriseWindowsServer2012R2), [Standard](https://portal.azure.com/#create/Microsoft.SQLServer2014SP1StandardWindowsServer2012R2), [Web](https://portal.azure.com/#create/Microsoft.SQLServer2014SP1WebWindowsServer2012R2), [Express](https://portal.azure.com/#create/Microsoft.SQLServer2014SP1ExpressWindowsServer2012R2)|
-|**SQL Server 2014**|Windows Server 2012 R2|[Enterprise](https://portal.azure.com/#create/Microsoft.SQLServer2014EnterpriseWindowsServer2012R2), [Standard](https://portal.azure.com/#create/Microsoft.SQLServer2014StandardWindowsServer2012R2), [Web](https://portal.azure.com/#create/Microsoft.SQLServer2014WebWindowsServer2012R2)|
-|**SQL Server 2012 SP3**|Windows Server 2012 R2|[Enterprise](https://portal.azure.com/#create/Microsoft.SQLServer2012SP3EnterpriseWindowsServer2012R2), [Standard](https://portal.azure.com/#create/Microsoft.SQLServer2012SP3StandardWindowsServer2012R2), [Web](https://portal.azure.com/#create/Microsoft.SQLServer2012SP3WebWindowsServer2012R2), [Express](https://portal.azure.com/#create/Microsoft.SQLServer2012SP3ExpressWindowsServer2012R2)|
-|**SQL Server 2012 SP2**|Windows Server 2012 R2|[Enterprise](https://portal.azure.com/#create/Microsoft.SQLServer2012SP2EnterpriseWindowsServer2012R2), [Standard](https://portal.azure.com/#create/Microsoft.SQLServer2012SP2StandardWindowsServer2012R2), [Web](https://portal.azure.com/#create/Microsoft.SQLServer2012SP2WebWindowsServer2012R2)|
-|**SQL Server 2012 SP2**|Windows Server 2012|[Enterprise](https://portal.azure.com/#create/Microsoft.SQLServer2012SP2EnterpriseWindowsServer2012), [Standard](https://portal.azure.com/#create/Microsoft.SQLServer2012SP2StandardWindowsServer2012), [Web](https://portal.azure.com/#create/Microsoft.SQLServer2012SP2WebWindowsServer2012), [Express](https://portal.azure.com/#create/Microsoft.SQLServer2012SP2ExpressWindowsServer2012)|
-|**SQL Server 2008 R2 SP3**|Windows Server 2008 R2|[Enterprise](https://portal.azure.com/#create/Microsoft.SQLServer2008R2SP3EnterpriseWindowsServer2008R2), [Standard](https://portal.azure.com/#create/Microsoft.SQLServer2008R2SP3StandardWindowsServer2008R2), [Web](https://portal.azure.com/#create/Microsoft.SQLServer2008R2SP3WebWindowsServer2008R2)|
-|**SQL Server 2008 R2 SP3**|Windows Server 2012|[Express](https://portal.azure.com/#create/Microsoft.SQLServer2008R2SP3ExpressWindowsServer2012)|
+|**SQL 2016**|Windows Server 2012 R2|[Enterprise](https://portal.azure.com/#create/Microsoft.SQLServer2016RTMEnterpriseWindowsServer2012R2), [Standard](https://portal.azure.com/#create/Microsoft.SQLServer2016RTMStandardWindowsServer2012R2), [Web](https://portal.azure.com/#create/Microsoft.SQLServer2016RTMWebWindowsServer2012R2), [Dev](https://portal.azure.com/#create/Microsoft.SQLServer2016RTMDeveloperWindowsServer2012R2), [Express](https://portal.azure.com/#create/Microsoft.SQLServer2016RTMExpressWindowsServer2012R2)|
+|**SQL 2014 SP1**|Windows Server 2012 R2|[Enterprise](https://portal.azure.com/#create/Microsoft.SQLServer2014SP1EnterpriseWindowsServer2012R2), [Standard](https://portal.azure.com/#create/Microsoft.SQLServer2014SP1StandardWindowsServer2012R2), [Web](https://portal.azure.com/#create/Microsoft.SQLServer2014SP1WebWindowsServer2012R2), [Express](https://portal.azure.com/#create/Microsoft.SQLServer2014SP1ExpressWindowsServer2012R2)|
+|**SQL 2014**|Windows Server 2012 R2|[Enterprise](https://portal.azure.com/#create/Microsoft.SQLServer2014EnterpriseWindowsServer2012R2), [Standard](https://portal.azure.com/#create/Microsoft.SQLServer2014StandardWindowsServer2012R2), [Web](https://portal.azure.com/#create/Microsoft.SQLServer2014WebWindowsServer2012R2)|
+|**SQL 2012 SP3**|Windows Server 2012 R2|[Enterprise](https://portal.azure.com/#create/Microsoft.SQLServer2012SP3EnterpriseWindowsServer2012R2), [Standard](https://portal.azure.com/#create/Microsoft.SQLServer2012SP3StandardWindowsServer2012R2), [Web](https://portal.azure.com/#create/Microsoft.SQLServer2012SP3WebWindowsServer2012R2), [Express](https://portal.azure.com/#create/Microsoft.SQLServer2012SP3ExpressWindowsServer2012R2)|
+|**SQL 2012 SP2**|Windows Server 2012 R2|[Enterprise](https://portal.azure.com/#create/Microsoft.SQLServer2012SP2EnterpriseWindowsServer2012R2), [Standard](https://portal.azure.com/#create/Microsoft.SQLServer2012SP2StandardWindowsServer2012R2), [Web](https://portal.azure.com/#create/Microsoft.SQLServer2012SP2WebWindowsServer2012R2)|
+|**SQL 2012 SP2**|Windows Server 2012|[Enterprise](https://portal.azure.com/#create/Microsoft.SQLServer2012SP2EnterpriseWindowsServer2012), [Standard](https://portal.azure.com/#create/Microsoft.SQLServer2012SP2StandardWindowsServer2012), [Web](https://portal.azure.com/#create/Microsoft.SQLServer2012SP2WebWindowsServer2012), [Express](https://portal.azure.com/#create/Microsoft.SQLServer2012SP2ExpressWindowsServer2012)|
+|**SQL 2008 R2 SP3**|Windows Server 2008 R2|[Enterprise](https://portal.azure.com/#create/Microsoft.SQLServer2008R2SP3EnterpriseWindowsServer2008R2), [Standard](https://portal.azure.com/#create/Microsoft.SQLServer2008R2SP3StandardWindowsServer2008R2), [Web](https://portal.azure.com/#create/Microsoft.SQLServer2008R2SP3WebWindowsServer2008R2)|
+|**SQL 2008 R2 SP3**|Windows Server 2012|[Express](https://portal.azure.com/#create/Microsoft.SQLServer2008R2SP3ExpressWindowsServer2012)|
 
 ## Opção 2: implementar uma VM do SQL Server (BYOL)
 A outra opção consiste em trazer a sua própria licença (BYOL). Neste cenário, apenas paga a VM sem quaisquer taxas adicionais para o licenciamento do SQL Server. Para utilizar a sua própria licença, utilize a matriz das versões do SQL Server, edições e sistemas operativos abaixo. No portal, é adicionado o prefixo **{BYOL}** aos nomes de imagens no Portal.
@@ -58,7 +58,7 @@ A outra opção consiste em trazer a sua própria licença (BYOL). Neste cenári
 
 Aplicam-se as orientações no [tutorial de aprovisionamento](virtual-machines-windows-portal-sql-server-provision.md), mas tem de utilizar uma das seguintes opções de imagem **BYOL**. Além disso, reveja as [Melhores práticas do desempenho para as VMs do SQL Server](virtual-machines-windows-sql-performance.md), que explica como selecionar o tamanho da máquina apropriada e outras funcionalidades disponíveis durante o aprovisionamento.
 
-|Versão do SQL Server|Sistema operativo|Edição do SQL Server|
+|Versão|Sistema operativo|Edição|
 |---|---|---|
 |**SQL Server 2016**|Windows Server 2012 R2|[Enterprise BYOL](https://portal.azure.com/#create/Microsoft.BYOLSQLServer2016RTMStandardWindowsServer2012R2), [Standard BYOL](https://portal.azure.com/#create/Microsoft.BYOLSQLServer2016RTMStandardWindowsServer2012R2)|
 |**SQL Server 2014 SP1**|Windows Server 2012 R2|[Enterprise BYOL](https://portal.azure.com/#create/Microsoft.BYOLSQLServer2014SP1EnterpriseWindowsServer2012R2), [Standard BYOL](https://portal.azure.com/#create/Microsoft.BYOLSQLServer2014SP1StandardWindowsServer2012R2)|
@@ -78,9 +78,10 @@ Se necessitar de elevada disponibilidade, considere configurar Grupos de Disponi
 Para outras considerações de elevada disponibilidade, consulte o artigo [Elevada Disponibilidade e Recuperação Após Desastre para o SQL Server em Virtual Machines do Azure](virtual-machines-windows-sql-high-availability-dr.md).
 
 ### Efetuar uma cópia de segurança dos dados
-Armazene cópias de segurança da base de dados diretamente no Azure utilizando o Blob Storage. Para obter mais informações, consulte o artigo [Utilizar o Storage do Azure para o Restauro e a Cópia de Segurança do SQL Server](../sql-database/storage-use-storage-sql-server-backup-restore.md). Apesar de isto funcionar bem com as VMs do SQL, também funciona para bases de dados do SQL Server no local. Para obter uma descrição geral das opções de cópia de segurança e restauro, consulte o artigo [Cópia de segurança e Restauro para o SQL Server em Virtual Machines do Azure](virtual-machines-windows-sql-backup-recovery.md).
+As VMs do Azure podem tirar partido da [Cópia de Segurança Automatizada](virtual-machines-windows-sql-automated-backup.md), que cria regularmente cópias de segurança da sua base de dados para o armazenamento de blobs. Pode também utilizar esta técnica manualmente. Para obter mais informações, veja [Use Azure Storage for SQL Server Backup and Restore (Utilizar o Armazenamento do Azure para o Restauro e a Cópia de Segurança do SQL Server)](virtual-machines-windows-use-storage-sql-server-backup-restore.md). Para obter uma descrição geral de todas as opções de cópia de segurança e restauro,veja [Backup and Restore for SQL Server in Azure Virtual Machines (Cópia de segurança e Restauro para o SQL Server em Máquinas Virtuais do Azure)](virtual-machines-windows-sql-backup-recovery.md).
 
-As VMs do Azure também podem tirar partido da [Cópia de Segurança Automatizada](virtual-machines-windows-sql-automated-backup.md) e da [Aplicação de Patches automatizada](virtual-machines-windows-sql-automated-patching.md) para o SQL Server.
+### Automatizar as atualizações
+As VMs do Azure podem utilizar a [ Aplicação Automatizada de Patches](virtual-machines-windows-sql-automated-patching.md) para agendar uma janela de manutenção para a instalação automática de atualizações importantes do Windows e do SQL Server.
 
 ### Programa de melhoramento da experiência do cliente (PMEC)
 O Programa de Melhoramento da Experiência do Cliente (PMEC) está ativado por predefinição. Não é uma tarefa de gestão, a menos que pretenda desativar o PMEC após o aprovisionamento. Pode personalizar ou desativar o PMEC ligando-se à VM com o ambiente de trabalho remoto. Em seguida, execute o utilitário **Relatórios de Utilização e Erros do SQL Server**. Siga as instruções para desativar os relatórios.
@@ -92,6 +93,6 @@ Tem mais alguma pergunta? Em primeiro lugar, consulte as [FAQ acerca do SQL Serv
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

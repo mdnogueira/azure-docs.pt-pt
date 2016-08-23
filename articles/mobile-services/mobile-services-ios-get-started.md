@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="mobile-ios"
     ms.devlang="objective-c"
     ms.topic="hero-article"
-    ms.date="03/09/2016"
+    ms.date="07/21/2016"
     ms.author="krisragh"/>
 
 # <a name="getting-started"> </a>Introdução aos Mobile Services
@@ -98,6 +98,6 @@ Saiba como efetuar tarefas importantes adicionais nos Mobile Services:
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

@@ -1,7 +1,7 @@
 <properties 
     pageTitle="Saiba Node. js - Tutorial DocumentDB Node.js | Microsoft Azure" 
     description="Aprenda sobre Node.js! O tutorial explicar como utilizar o Microsoft Azure DocumentDB para armazenar e aceder a dados a partir de uma aplicação Web Node.js Express alojada em sites Web do Azure." 
-    keywords="Application development, database tutorial, learn node.js, node.js tutorial, documentdb, azure, Microsoft azure"
+    keywords="Desenvolvimento de aplicações, tutorial de bases de dados, aprenda node.js, tutorial de node.js, documentdb, azure, Microsoft azure"
     services="documentdb" 
     documentationCenter="nodejs" 
     authors="aliuy" 
@@ -549,7 +549,7 @@ Agora, vamos concentrar a nossa atenção na criação de uma interface de utili
 
 ## <a name="_Toc395783182"></a>Passo 7: Implementar o projeto de desenvolvimento da sua aplicação em sites Web do Azure
 
-1. Se ainda não o fez, ative um repositório de git para o seu site Web do Azure. Pode encontrar instruções sobre como efetuar esta ação no tópico [Implementação contínua utilizando GIT no App Services do Azure](../app-service-web/web-sites-publish-source-control.md).
+1. Se ainda não o fez, ative um repositório de git para o seu site Web do Azure. Pode encontrar instruções sobre como efetuar esta ação no tópico [Implementação de Git Local para o Serviço de Aplicações do Azure](../app-service-web/app-service-deploy-local-git.md).
 
 2. Adicione o seu site do Azure como um git remoto.
 
@@ -576,6 +576,6 @@ Para mais informações, consulte o [Centro de Programadores de Node.js](https:/
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

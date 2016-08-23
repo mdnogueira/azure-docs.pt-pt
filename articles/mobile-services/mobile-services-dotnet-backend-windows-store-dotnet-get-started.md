@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="mobile-windows"
     ms.devlang="dotnet"
     ms.topic="hero-article"
-    ms.date="05/11/2016"
+    ms.date="07/21/2016"
     ms.author="glenga"/>
 
 
@@ -84,7 +84,7 @@ Nesta secção, irá criar uma nova aplicação universal do Windows que está l
             "https://todolist.azure-mobile.net/",
             "XXXX-APPLICATION-KEY-XXXXX");</code></pre>
 
-    <p>The client will now access the mobile service published to Azure.</p></li>
+    <p>O cliente terá agora acesso ao serviço móvel publicado para o Azure.</p></li>
 </ol>
 
 ## Testar a aplicação contra o serviço móvel alojado no Azure
@@ -136,6 +136,6 @@ Para obter mais informações sobre as aplicações universais do Windows, consu
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

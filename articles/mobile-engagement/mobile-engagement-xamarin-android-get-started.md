@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="mobile-xamarin-android"
     ms.devlang="dotnet"
     ms.topic="hero-article"
-    ms.date="03/25/2016"
+    ms.date="06/16/2016"
     ms.author="piyushjo" />
 
 # Introdução ao Azure Mobile Engagement para Aplicações Xamarin.Android
@@ -28,7 +28,7 @@ Neste tutorial necessita do seguinte:
 + [Xamarin Studio](http://xamarin.com/studio). Também pode utilizar o Visual Studio com Xamarin, mas este tutorial utiliza o Xamarin Studio. Para obter instruções de instalação, consulte [Configuração e Instalação do Visual Studio e Xamarin](https://msdn.microsoft.com/library/mt613162.aspx).
 + [SDK Xamarin do Mobile Engagement](https://www.nuget.org/packages/Microsoft.Azure.Engagement.Xamarin/)
 
-> [AZURE.NOTE] Para concluir este tutorial, tem de ter uma conta ativa do Azure. Se não tiver uma conta, pode criar uma conta de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fmobile-engagement-xamarin-android-get-started).
+> [AZURE.NOTE] Para concluir este tutorial, tem de ter uma conta ativa do Azure. Se não tiver uma conta, pode criar uma de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fmobile-engagement-xamarin-android-get-started).
 
 ##<a id="setup-azme"></a>Configurar o Mobile Engagement para a aplicação Android
 
@@ -109,6 +109,20 @@ O Xamarin Studio criará a aplicação na qual iremos integrar o Mobile Engageme
 Para iniciar o envio de dados e garantir que os utilizadores estão ativos, terá de enviar, pelo menos, um ecrã para o back-end do Mobile Engagement. Para fazê-lo, certifique-se de que `MainActivity` herda de `EngagementActivity` em vez de `Activity`.
 
     public class MainActivity : EngagementActivity
+    
+Em alternativa, se não for possível herdar de `EngagementActivity`, deve adicionar os métodos `.StartActivity` e `.EndActivity` em `OnResume` e `OnPause`, respetivamente.  
+
+        protected override void OnResume()
+            {
+                EngagementAgent.StartActivity(EngagementAgentUtils.BuildEngagementActivityName(Java.Lang.Class.FromType(this.GetType())), null);
+                base.OnResume();             
+            }
+    
+            protected override void OnPause()
+            {
+                EngagementAgent.EndActivity();
+                base.OnPause();            
+            }
 
 ##<a id="monitor"></a>Ligar a aplicação com a monitorização em tempo real
 
@@ -134,6 +148,7 @@ As secções seguintes configuram a aplicação para as receber.
 [6]: ./media/mobile-engagement-xamarin-android-get-started/6.png
 
 
-<!--HONumber=Jun16_HO2-->
+
+<!--HONumber=Aug16_HO1-->
 
 

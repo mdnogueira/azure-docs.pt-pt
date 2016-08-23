@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="get-started-article"
-    ms.date="04/18/2016"  
+    ms.date="06/22/2016"   
     ms.author="robmcm"/>
 
 #Como utilizar os Media Services com Java
@@ -278,6 +278,6 @@ Para obter documentação Javadoc de Media Services, consulte a [Documentação 
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

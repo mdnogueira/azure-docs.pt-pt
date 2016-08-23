@@ -2,7 +2,7 @@
     pageTitle="Ligar o Excel à Base de Dados SQL | Microsoft Azure"
     description="Saiba como ligar o Microsoft Excel à base de dados SQL do Azure na nuvem. Importe dados para o Excel para criação de relatórios e exploração de dados."
     services="sql-database"
-    keywords="connect excel to sql, import data to excel"
+    keywords="ligar o excel ao sql, importar dados para o excel"
     documentationCenter=""
     authors="joseidz"
     manager="jhubbard"
@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="03/25/2016"
+    ms.date="07/05/2016"
     ms.author="joseidz"/>
 
 
@@ -86,6 +86,6 @@ Agora que estabeleceu a ligação e criou o ficheiro com os dados e as informaç
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

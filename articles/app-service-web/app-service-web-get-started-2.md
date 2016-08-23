@@ -72,7 +72,7 @@ O App Service fornece uma solução “chave na mão” para algumas das necessi
 
 ## Dimensionar a sua aplicação automaticamente com base no pedido
 
-Em seguida, vamos dimensionar a sua aplicação automaticamente, de modo a que a mesma ajuste a sua capacidade de forma automática para satisfazer o pedido do utilizador (leia mais em [Dimensionar o escalão de preço no App Service do Azure](app-service-scale) e [Dimensionar a contagem de instâncias manual ou automaticamente](../azure-portal/insights-how-to-scale.md)). 
+Em seguida, vamos dimensionar a sua aplicação automaticamente, de modo a que a mesma ajuste a sua capacidade de forma automática para satisfazer o pedido do utilizador (leia mais em [Aumentar verticalmente a sua aplicação no Azure ](web-sites-scale.md) e [Dimensionar a contagem de instâncias manual ou automaticamente](../azure-portal/insights-how-to-scale.md)). 
 
 Resumidamente, pode dimensionar a sua aplicação Web de duas formas:
 
@@ -112,7 +112,7 @@ Parabéns! A sua aplicação está a efetuar o dimensionamento automático.
 - Dimensionar automaticamente conforme agendado
 - Definir o comportamento de dimensionamento automático num evento futuro
 
-Para obter mais informações sobre como aumentar verticalmente a sua aplicação, consulte [Dimensionar o escalão de preço no App Service do Azure](../app-service/app-service-scale.md). Para obter mais informações sobre como aumentar horizontalmente, consulte [Dimensionar a contagem de instâncias manual ou automaticamente](../azure-portal/insights-how-to-scale.md).
+Para obter mais informações sobre como aumentar verticalmente a sua aplicação, consulte [Aumentar verticalmente a sua aplicação no Azure](../app-service-web/web-sites-scale.md). Para obter mais informações sobre como aumentar horizontalmente, consulte [Dimensionar a contagem de instâncias manual ou automaticamente](../azure-portal/insights-how-to-scale.md).
 
 ## Receber alertas para a sua aplicação
 
@@ -147,7 +147,7 @@ Saiba como fazer mais com a sua aplicação implementada. Segue-se apenas uma li
 
 - [Comprar e configurar um nome de domínio personalizado](custom-dns-web-site-buydomains-web-app.md) – Compre um domínio apelativo para a sua aplicação Web em vez do domínio *.azurewebsites.net. Em alternativa, utilize um domínio que já tenha.
 - [Configurar ambientes de teste](web-sites-staged-publishing.md) – Implemente a aplicação num URL de teste antes de a passar para produção. Atualize a sua aplicação Web online com confiança. Configure uma solução de DevOps elaborada com várias ranhuras de implementação. 
-- [Configurar uma implementação contínua](web-sites-publish-source-control.md) – Integre a implementação da aplicação no seu sistema de controlo de origem. Implemente no Azure com cada consolidação.
+- [Configurar uma implementação contínua](app-service-continuous-deployment.md) – Integre a implementação da aplicação no seu sistema de controlo de origem. Implemente no Azure com cada consolidação.
 - [Aceder a recursos no local](web-sites-hybrid-connection-get-started.md) – aceder a uma base de dados existente no local ou ao sistema de CRM.
 - [Fazer uma cópia de segurança da aplicação](web-sites-backup.md) – configure a cópia de segurança e o restauro para a sua aplicação Web. Esteja preparado para falhas inesperadas e recupere.
 - [Ativar registos de diagnóstico](web-sites-enable-diagnostic-log.md) – leia os registos de IIS a partir de rastreios do Azure ou da aplicação. Leia-os num fluxo, transfira-os ou migre-os para o [Application Insights](../application-insights/app-insights-overview.md) para uma análise “chave na mão”.
@@ -157,6 +157,6 @@ Analise a sua aplicação Web quanto a ameaças modernas utilizando o serviço f
 - [Saiba como funciona o App Service](../app-service/app-service-how-works-readme.md) 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

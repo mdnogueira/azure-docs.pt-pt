@@ -4,7 +4,7 @@
     services="active-directory"
     documentationCenter=""
     authors="femila"
-    manager="stevenpo"
+    manager="swadhwa"
     editor=""
     tags="azure-classic-portal"/>
 
@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="02/26/2016"
+    ms.date="06/23/2016"
     ms.author="femila"/>
 
 # Configurar a Associação do Azure AD na sua 
@@ -34,7 +34,7 @@ Para criar e gerir manualmente utilizadores no Azure AD, consulte [Gestão de ut
 5. Aceda à secção **Dispositivos**.
 6. No separador **Dispositivos**, defina o seguinte:  
    * **NÚMERO MÁXIMO DE DISPOSITIVOS POR UTILIZADOR**: selecione o número máximo de dispositivos que um utilizador pode ter no Azure AD.  Se um utilizador atingir esta quota, este não poderá adicionar dispositivos até remover um ou mais dispositivos existentes.
-   * **REQUER MULTI-FACTOR AUTH PARA ASSOCIAR DISPOSITIVOS**: defina se os utilizadores têm de fornecer um segundo fator de autenticação para associar os seus dispositivos ao Azure AD. Para obter mais informações sobre o Multi-Factor Authentication do Azure, consulte [Introdução ao Multi-Factor Authentication do Azure na nuvem](multi-factor-authentication-get-started-cloud/).
+   * **REQUER MULTI-FACTOR AUTH PARA ASSOCIAR DISPOSITIVOS**: defina se os utilizadores têm de fornecer um segundo fator de autenticação para associar os seus dispositivos ao Azure AD. Para obter mais informações sobre o Multi-Factor Authentication do Azure, consulte [Introdução ao Multi-Factor Authentication do Azure na nuvem](..\multi-factor-authentication\multi-factor-authentication-get-started-cloud.md).
    * **OS UTILIZADORES PODEM ASSOCIAR DISPOSITIVOS AO AZURE AD**: selecione os utilizadores e grupos que estão autorizados a associar dispositivos ao Azure AD.
    * **ADMINISTRADORES ADICIONAIS EM DISPOSITIVOS ASSOCIADOS DO AZURE AD**: com o Azure AD Premium ou o Enterprise Mobility Suite (EMS), pode escolher quais os utilizadores que terão direitos de administrador no dispositivo. Por predefinição, são concedidos direitos de administrador local as administradores globais e aos proprietários do dispositivo.
 
@@ -57,6 +57,6 @@ Apresentamos a seguir os três cenários que pode utilizar para permitir aos seu
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

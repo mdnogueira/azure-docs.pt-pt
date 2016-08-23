@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="hero-article" 
-    ms.date="05/16/2016"
+    ms.date="08/01/2016"
     ms.author="spelluru"/>
 
 # Criar a primeira fábrica de dados do Azure com o Portal do Azure/Editor do Data Factory
@@ -332,7 +332,7 @@ Neste tutorial, criou uma fábrica de dados do Azure para processar dados execut
 4.  Criar um **pipeline** com uma atividade do **Ramo de Registo do HDInsight**. 
 
 ## Passos Seguintes
-Neste artigo, criou um pipeline com uma atividade de transformação (Atividade do HDInsight) que executa um Script de ramo de registo num cluster do HDInsight a pedido. Para ver como utilizar uma Atividade de Cópia para copiar dados de um Blob do Azure para o Azure SQL, veja o [Tutorial: Copiar dados de um Blob do Azure para o Azure SQL](./data-factory-get-started.md).
+Neste artigo, criou um pipeline com uma atividade de transformação (Atividade do HDInsight) que executa um Script de ramo de registo num cluster do HDInsight a pedido. Para ver como utilizar uma Atividade de Cópia para copiar dados de um Blob do Azure para o Azure SQL, veja o [Tutorial: Copiar dados de um Blob do Azure para o Azure SQL](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
 
 ## Veja também
 | Tópico | Descrição |
@@ -348,6 +348,6 @@ Neste artigo, criou um pipeline com uma atividade de transformação (Atividade 
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

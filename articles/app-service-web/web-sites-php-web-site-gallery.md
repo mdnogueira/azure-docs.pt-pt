@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="PHP"
     ms.topic="hero-article"
-    ms.date="04/08/2016"
+    ms.date="06/24/2016"
     ms.author="robmcm"/>
 
 # Criar uma aplicação Web WordPress no App Service do Azure
@@ -65,7 +65,7 @@ O site do WordPress que implementa neste tutorial utiliza o MySQL para a base de
 
 5. Selecione um **Grupo de Recursos** ou crie um novo.
 
-    Para obter mais informações acerca dos grupos de recursos, consulte [Utilizar o Portal do Azure para gerir os recursos do Azure](../resource-group-portal.md).
+    Para mais informações sobre grupos de recursos, veja [Descrição Geral do Azure Resource Manager](../resource-group-overview.md).
 
 5. Selecione um **Plano do App Service/Localização** ou crie um novo.
 
@@ -130,6 +130,6 @@ Para obter mais informações sobre como trabalhar com as Web Apps do App Servic
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

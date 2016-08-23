@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article" 
-    ms.date="05/03/2016" 
+    ms.date="06/22/2016"
     ms.author="juliako"/>
 
 
@@ -628,6 +628,6 @@ O exemplo seguinte demonstra a funcionalidade que foi introduzida no SDK de Medi
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

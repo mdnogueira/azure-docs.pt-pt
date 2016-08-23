@@ -12,7 +12,7 @@
  ms.tgt_pltfrm="na"
  ms.devlang="dotnet"
  ms.topic="hero-article"
- ms.date="03/09/2016"
+ ms.date="06/30/2016"
  ms.author="krisragh"/>
 
 # Introdução ao Agendador do Azure no portal do Azure
@@ -184,6 +184,6 @@ O Controlo de Acesso Baseado em Funções (RBAC) do Azure permite uma gestão po
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

@@ -40,7 +40,7 @@ Este artigo descreve os passos para criar, configurar, iniciar e eliminar um gat
 ## Antes de começar
 
 1. Instale a versão mais recente dos cmdlets Azure PowerShell com o Instalador de Plataforma Web. Pode transferir e instalar a versão mais recente a partir da secção **Windows PowerShell** da página [Transferências](https://azure.microsoft.com/downloads/).
-2. Vai criar uma rede virtual e uma sub-rede para o Application Gateway. Verifique se a sub-rede não está a ser utilizada por nenhuma máquina virtual ou implementação na nuvem. O gateway de aplicação tem de constar, por si só, numa sub-rede de rede virtual.
+2. Se tiver uma rede virtual existente, selecione uma subrede vazia existente ou crie uma nova subrede na sua rede virtual existente apenas para utilização pelo gateway de aplicação. Não é possível implementar o gateway de aplicação a uma rede virtual diferente dos recursos que pretende implementar por trás do gateway de aplicação. 
 3. Os servidores que irá configurar para utilizar o gateway de aplicação devem existir. Caso contrário, os respetivos pontos finais terão de ser criados na rede virtual ou com um IP/VIP público atribuído.
 
 ## O que é necessário para criar um gateway de aplicação?
@@ -197,6 +197,30 @@ Crie um gateway de aplicação com todos os itens de configuração indicados no
 
     $appgw = New-AzureRmApplicationGateway -Name appgwtest -ResourceGroupName appgw-rg -Location "West US" -BackendAddressPools $pool -BackendHttpSettingsCollection $poolSetting -FrontendIpConfigurations $fipconfig  -GatewayIpConfigurations $gipconfig -FrontendPorts $fp -HttpListeners $listener -RequestRoutingRules $rule -Sku $sku
 
+### Passo 9
+Obter os detalhes de DNS e VIP do gatway da aplicação do recurso de IP público anexado ao gateway de aplicação.
+
+    Get-AzureRmPublicIpAddress -Name publicIP01 -ResourceGroupName appgw-rg  
+
+    Name                     : publicIP01
+    ResourceGroupName        : appgwtest 
+    Location                 : westus
+    Id                       : /subscriptions/<sub_id>/resourceGroups/appgw-rg/providers/Microsoft.Network/publicIPAddresses/publicIP01
+    Etag                     : W/"12302060-78d6-4a33-942b-a494d6323767"
+    ResourceGuid             : ee9gd76a-3gf6-4236-aca4-gc1f4gf14171
+    ProvisioningState        : Succeeded
+    Tags                     : 
+    PublicIpAllocationMethod : Dynamic
+    IpAddress                : 137.116.26.16
+    IdleTimeoutInMinutes     : 4
+    IpConfiguration          : {
+                                 "Id": "/subscriptions/<sub_id>/resourceGroups/appgw-rg/providers/Microsoft.Network/applicationGateways/appgwtest/frontendIPConfigurations/fipconfig01"
+                               }
+    DnsSettings              : {
+                                 "Fqdn": "ee7aca47-4344-4810-a999-2c631b73e3cd.cloudapp.net"
+                               } 
+
+
 
 ## Eliminar um gateway de aplicação
 
@@ -248,6 +272,6 @@ Se pretender obter mais informações sobre as opções de balanceamento de carg
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

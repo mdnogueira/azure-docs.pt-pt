@@ -102,7 +102,8 @@ Na aplicação, digite um texto significativo, tal como _Saber mais sobre o Xama
 
 Esta ação permite enviar um pedido POST para o novo back-end da aplicação móvel alojado no Azure. Os dados do pedido são inseridos na tabela Item da Lista de Tarefas. Os itens armazenados na tabela são devolvidos pelo back-end da aplicação móvel e os dados são apresentados na lista.
 
->[AZURE.NOTE] Encontrará o código que acede ao back-end da aplicação móvel no ficheiro TodoItemManager.cs C# do projeto da biblioteca de classe portátil da sua solução.
+>[AZURE.NOTE]
+> Vai encontrar o código que acede ao back-end da aplicação móvel no ficheiro TodoItemManager.cs em C# do projeto da biblioteca de classe portátil da sua solução.
 
 ##(Opcional) Executar o projeto Android
 
@@ -128,7 +129,8 @@ Na aplicação, digite um texto significativo, tal como _Saber mais sobre o Xama
 
 Esta ação permite enviar um pedido POST para o novo back-end da aplicação móvel alojado no Azure. Os dados do pedido são inseridos na tabela Item da Lista de Tarefas. Os itens armazenados na tabela são devolvidos pelo back-end da aplicação móvel e os dados são apresentados na lista.
 
-> [AZURE.NOTE] Encontrará o código que acede ao back-end da aplicação móvel no ficheiro TodoItemManager.cs C# do projeto da biblioteca de classe portátil da sua solução.
+> [AZURE.NOTE]
+> Vai encontrar o código que acede ao back-end da aplicação móvel no ficheiro TodoItemManager.cs em C# do projeto da biblioteca de classe portátil da sua solução.
 
 
 ##(Opcional) Executar o projeto Windows
@@ -152,14 +154,20 @@ Esta ação permite enviar um pedido POST para o novo back-end da aplicação m�
 
 ![][12]
 
-> [AZURE.NOTE] Encontrará o código que acede ao back-end da aplicação móvel no ficheiro TodoItemManager.cs C# do projeto da biblioteca de classe portátil da sua solução.
+> [AZURE.NOTE]
+> Vai encontrar o código que acede ao back-end da aplicação móvel no ficheiro TodoItemManager.cs em C# do projeto da biblioteca de classe portátil da sua solução.
 
 ##Passos seguintes
 
-* [Adicionar autenticação à aplicação ](app-service-mobile-xamarin-forms-get-started-users.md)  
+* [Adicionar autenticação à aplicação](app-service-mobile-xamarin-forms-get-started-users.md)  
 Saiba como autenticar os utilizadores da aplicação com um fornecedor de identidade.
-* [Adicionar notificações push à aplicação Xamarin.Android](app-service-mobile-xamarin-forms-get-started-push.md)  
-Saiba como adicionar notificações push à aplicação.
+
+* [Adicionar notificações push à aplicação](app-service-mobile-xamarin-forms-get-started-push.md)  
+Saiba como adicionar suporte de notificações push à aplicação e configurar o back-end da Aplicação Móvel para utilizar Notification Hubs do Azure para enviar notificações push.
+
+* [Permitir sincronização offline para a sua aplicação](app-service-mobile-xamarin-forms-get-started-offline-data.md)  
+  Saiba como adicionar suporte offline à aplicação utilizando um back-end de Aplicação Móvel. A sincronização offline permite que os utilizadores finais interajam com uma aplicação móvel &mdash; visualizar, adicionar ou modificar dados &mdash;, mesmo quando não existe qualquer ligação de rede.
+
 * [Como utilizar o cliente gerido para Mobile Apps do Azure](app-service-mobile-dotnet-how-to-use-client-library.md)  
 Saiba como trabalhar com o SDK cliente gerido na aplicação Xamarin. 
 
@@ -187,6 +195,6 @@ Saiba como trabalhar com o SDK cliente gerido na aplicação Xamarin.
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

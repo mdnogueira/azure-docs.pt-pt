@@ -12,7 +12,7 @@
  ms.tgt_pltfrm="na"
  ms.devlang="dotnet"
  ms.topic="get-started-article"
- ms.date="03/09/2016"
+ ms.date="06/30/2016"
  ms.author="krisragh"/>
 
 # Conceitos, terminologia e hierarquia de entidades do Agendador
@@ -220,6 +220,6 @@ O intervalo entre tentativas, especificado com o objeto **retryInterval**, é o 
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

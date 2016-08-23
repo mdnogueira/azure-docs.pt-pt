@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="mobile-windows"
     ms.devlang="dotnet"
     ms.topic="get-started-article" 
-    ms.date="05/11/2016"
+    ms.date="07/21/2016"
     ms.author="glenga"/>
 
 # <a name="getting-started"> </a>Introdução aos Mobile Services
@@ -104,6 +104,6 @@ Agora que concluiu o guia de introdução, saiba como efetuar tarefas importante
  
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

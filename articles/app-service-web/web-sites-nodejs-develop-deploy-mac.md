@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="nodejs"
     ms.topic="hero-article"
-    ms.date="04/08/2016"
+    ms.date="06/24/2016"
     ms.author="robmcm"/>
 
 # Criar uma aplicação Web Node.js no App Service do Azure
@@ -66,7 +66,7 @@ O [Git](http://git-scm.com/) é um sistema de controlo de versão distribuída q
 
 6. Selecione um **Grupo de Recursos** ou crie um novo.
 
-    Para obter mais informações acerca dos grupos de recursos, consulte [Utilizar o Portal do Azure para gerir os recursos do Azure](../resource-group-portal.md).
+    Para mais informações sobre grupos de recursos, veja [Descrição Geral do Azure Resource Manager](../resource-group-overview.md).
 
 7. Selecione um **Plano do App Service/Localização** ou crie um novo.
 
@@ -227,6 +227,6 @@ Para obter mais informações sobre como desenvolver aplicações Node.js no Azu
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

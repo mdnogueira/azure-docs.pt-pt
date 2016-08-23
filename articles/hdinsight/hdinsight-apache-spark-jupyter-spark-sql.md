@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="06/06/2016"
+    ms.date="07/25/2016"
     ms.author="nitinme"/>
 
 
@@ -37,6 +37,8 @@ Saiba como criar um cluster do Apache Spark no HDInsight e, em seguida, utilizar
     -  Num computador com Linux – [Utilizar o SSH com o HDInsight (Hadoop) baseado em Linux a partir do Linux, Unix ou OS X](hdinsight-hadoop-linux-use-ssh-unix.md).
     
     -  Num computador com Windows – [Utilizar o SSH com o HDInsight (Hadoop) baseado em Linux a partir do Windows](hdinsight-hadoop-linux-use-ssh-windows.md).
+
+>[AZURE.NOTE] Este artigo utiliza um modelo ARM para criar um cluster Spark que utiliza [Blobs de armazenamento do Azure como armazenamento de cluster](hdinsight-hadoop-use-blob-storage.md). Também pode criar um cluster Spark que utiliza [Arquivo azure Data Lake](../data-lake-store/data-lake-store-overview.md) como um armazenamento adicional, além de Blobs de armazenamento do Azure como armazenamento de predefinido. Para obter instruções, consulte [Criar um cluster de HDInsight com o Arquivo Data Lake](../data-lake-store/data-lake-store-hdinsight-hadoop-use-portal.md).
 
 
 ## Criar um cluster do Spark
@@ -121,7 +123,7 @@ Neste artigo, utilizará o kernel do PySpark. No artigo [Kernels disponíveis no
     Numa célula vazia, cole o seguinte exemplo de código e prima **SHIFT + ENTER**. Este exemplo de código regista os dados numa tabela temporária denominada **hvac**.
 
         # Load the data
-        hvacText = sc.textFile("wasb:///HdiSamples/HdiSamples/SensorSampleData/hvac/HVAC.csv")
+        hvacText = sc.textFile("wasbs:///HdiSamples/HdiSamples/SensorSampleData/hvac/HVAC.csv")
         
         # Create the schema
         hvacSchema = StructType([StructField("date", StringType(), False),StructField("time", StringType(), False),StructField("targettemp", IntegerType(), False),StructField("actualtemp", IntegerType(), False),StructField("buildingID", StringType(), False)])
@@ -212,6 +214,6 @@ Neste artigo, utilizará o kernel do PySpark. No artigo [Kernels disponíveis no
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

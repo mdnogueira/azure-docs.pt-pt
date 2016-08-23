@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
-   ms.date="04/26/2016"
+   ms.date="05/16/2016"
    ms.author="edmaca"/>
 
 # Descrição geral do Microsoft Azure Data Lake Analytics
@@ -81,6 +81,6 @@ O Azure Data Lake Analytics é um novo serviço incorporado para facilitar a an�
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

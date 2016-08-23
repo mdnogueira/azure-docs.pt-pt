@@ -13,14 +13,14 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
-   ms.date="04/26/2016"
+   ms.date="05/16/2016"
    ms.author="edmaca"/>
 
 # Tutorial: introdução à Análise do Azure Data Lake ao utilizar o Azure PowerShell
 
 [AZURE.INCLUDE [get-started-selector](../../includes/data-lake-analytics-selector-get-started.md)]
 
-Saiba como utilizar o Azure PowerShell para criar contas de Análise do Azure Data Lake, definir as tarefas de Data Lake Analytics em [U-SQL](data-lake-analytics-u-sql-get-started.md) e submeter as tarefas para contas de Data Lake Analytics. Para mais informações sobre a Data Lake Analytics, consulte [Descrição geral da Análise do Azure Data Lake](data-lake-analytics-overview.md).
+Saiba como utilizar o Azure PowerShell para criar contas de Azure Data Lake Analytics, definir as tarefas de Data Lake Analytics em [U-SQL](data-lake-analytics-u-sql-get-started.md) e submeter as tarefas para contas de Data Lake Analytics. Para mais informações sobre a Data Lake Analytics, consulte [Descrição geral do Azure Data Lake Analytics](data-lake-analytics-overview.md).
 
 Neste tutorial, irá desenvolver uma tarefa que lê um ficheiro de valores separados por tabulações (TSV) e converte-o num ficheiro de valores separados por vírgulas (CSV). Para seguir o mesmo tutorial, utilizando outras ferramentas suportadas, clique nos separadores na parte superior desta secção.
 
@@ -133,7 +133,7 @@ A Data Lake Analytics também pode aceder ao armazenamento de Blobs do Azure.  P
 
 ##Submeter tarefas de Data Lake Analytics
 
-As tarefas de Análise do Data Lake são escritas na linguagem U-SQL. Para saber mais sobre U-SQL, consulte [Introdução à linguagem U SQL](data-lake-analytics-u-sql-get-started.md) e [Referência de linguagem U-SQL](http://go.microsoft.com/fwlink/?LinkId=691348).
+As tarefas de Data Lake Analytics são escritas em linguagem U-SQL. Para saber mais sobre U-SQL, consulte [Introdução à linguagem U SQL](data-lake-analytics-u-sql-get-started.md) e [Referência de linguagem U-SQL](http://go.microsoft.com/fwlink/?LinkId=691348).
 
 **Para criar um script de tarefa de Data Lake Analytics**
 
@@ -212,6 +212,6 @@ Depois de a tarefa ser concluída, pode utilizar os seguintes cmdlets para lista
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

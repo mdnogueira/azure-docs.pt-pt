@@ -13,7 +13,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
-   ms.date="04/26/2016"
+   ms.date="05/16/2016"
    ms.author="edmaca"/>
 
 # Tutorial: introdução à Análise do Azure Data Lake utilizando o Portal do Azure
@@ -34,7 +34,7 @@ Antes de começar este tutorial, tem de ter o seguinte:
 
 ##Criar conta de Data Lake Analytics
 
-Tem de ter uma conta de Data Lake Analytics antes de poder executar quaisquer tarefas.
+Tem de ter uma conta do Data Lake Analytics antes de poder executar quaisquer tarefas.
 
 Cada conta de Data Lake Analytics tem uma dependência de conta de [Arquivo Azure Data Lake]().  Esta conta é referida como a conta predefinida do Data Lake Store.  Pode criar a conta de Data Lake Store previamente ou quando criar a conta de Data Lake Analytics. Neste tutorial, irá criar a conta de Data Lake Store com a conta de Data Lake Analytics.
 
@@ -44,11 +44,11 @@ Cada conta de Data Lake Analytics tem uma dependência de conta de [Arquivo Azur
 2. Clique em **Novo**, clique em **Dados + Análise** e, em seguida, clique em **Data Lake Analytics**.
 6. Escreva ou selecione o seguinte:
 
-    ![Painel de portal da Análise do Azure Data Lake](./media/data-lake-analytics-get-started-portal/data-lake-analytics-portal-create-adla.png)
+    ![Painel do portal da Análise do Azure Data Lake](./media/data-lake-analytics-get-started-portal/data-lake-analytics-portal-create-adla.png)
 
-    - **Nome**: atribua um nome à conta de Análise.
-    - **Data Lake Store**: cada conta de Data Lake Analytics tem uma dependência de conta de Data Lake Store. A conta de Data Lake Analytics e a conta de Data Lake Store dependente têm de estar localizadas no datacenter do Azure. Siga as instruções para criar uma nova conta de Data Lake Store ou selecione uma conta existente.
-    - **Subscrição**: selecione a subscrição do Azure utilizada para a conta de Análise.
+    - **Nome**: atribua um nome à conta da Análise.
+    - **Data Lake Store**: cada conta do Data Lake Analytics tem uma conta do Data Lake Store dependente. A conta do Data Lake Analytics e a conta do Data Lake Store dependente têm de estar localizadas no centro de dados do Azure. Siga as instruções para criar uma nova conta do Data Lake Store ou selecione uma conta existente.
+    - **Subscrição**: selecione a subscrição do Azure utilizada para a conta da Análise.
     - **Grupo de Recursos**. Selecione um Grupo de Recursos do Azure existente ou crie um novo. O Azure Resource Manager (ARM) permite trabalhar com os recursos na sua aplicação como um grupo. Para obter mais informações, consulte o artigo [Descrição geral do Azure Resource Manager](resource-group-overview.md). 
     - **Localização**. Selecione um datacenter do Azure para a conta de Data Lake Analytics. 
 7. Selecione **Afixar ao StartBoard**. Esta ação é necessária para seguir este tutorial.
@@ -158,6 +158,6 @@ Depois de ter preparado os dados de origem, pode começar a desenvolver um scrip
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

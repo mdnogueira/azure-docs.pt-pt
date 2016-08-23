@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="04/25/2016"
+    ms.date="07/06/2016"
     ms.author="maheshu"/>
 
 # Serviços de Domínio do Azure AD *(Pré-visualização)* – Ativar a sincronização de palavras-passe para os Serviços de Domínio do Azure AD
@@ -40,7 +40,7 @@ Terá de instalar a versão mais recente recomendada do Azure AD Connect num com
 
 **[Transferir o Azure AD Connect](http://www.microsoft.com/download/details.aspx?id=47594)**
 
-Versão recomendada: **1.1.130.0** - publicada em 12 abril de 2016.
+Versão recomendada: **1.1.189.0** - publicada em 3 de junho de 2016.
 
   > [AZURE.WARNING] TEM de instalar a versão mais recente recomendada do Azure AD Connect para permitir que as credenciais de palavra-passe legadas (necessárias para a autenticação NTLM e Kerberos) para sincronizar com o seu inquilino do Azure AD. Esta funcionalidade não está disponível em versões anteriores do Azure AD Connect ou com a ferramenta DirSync legada.
 
@@ -82,6 +82,6 @@ Dependendo do tamanho do seu diretório (número de utilizadores, grupos, etc.),
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

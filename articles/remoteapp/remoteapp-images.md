@@ -12,7 +12,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="04/05/2016"
+    ms.date="08/02/2016"
     ms.author="elizapo" />
 
 # O que existe nas imagens de modelo do Azure RemoteApp?
@@ -61,7 +61,7 @@ Esta imagem é uma extensão da imagem clássica e tem os seguintes componentes 
 - Excel
 - Lync
 - OneNote
-- OneDrive para Empresas
+- OneDrive para Empresas (tenha em atenção que o agente de sincronização não é suportado para utilização com o Azure RemoteApp)
 - Outlook
 - PowerPoint
 - Word
@@ -94,7 +94,7 @@ Esta imagem é uma extensão da imagem clássica e tem os seguintes componentes 
 - Excel
 - Lync
 - OneNote
-- OneDrive para Empresas
+- OneDrive para Empresas (tenha em atenção que o agente de sincronização não é suportado para utilização com o Azure RemoteApp)
 - Outlook
 - PowerPoint
 - Project
@@ -106,6 +106,6 @@ Esta imagem é uma extensão da imagem clássica e tem os seguintes componentes 
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

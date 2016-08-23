@@ -2,10 +2,10 @@
     pageTitle="Descrição geral do Registo de Dispositivos do Azure Active Directory | Microsoft Azure"
     description="é a base para cenários de acesso condicional baseado no dispositivo. Quando um dispositivo é registado, o Registo de Dispositivos do Azure Active Directory aprovisiona o dispositivo com uma identidade que é utilizada para autenticar o dispositivo quando o utilizador inicia sessão."
     services="active-directory"
-    keywords="device registration, enable device registration, device registration and MDM"
+    keywords="registo de dispositivos, ativar o registo de dispositivos, registo de dispositivos e MDM"
     documentationCenter=""
     authors="femila"
-    manager="stevenpo"
+    manager="swadhwa"
     editor=""/>
 
 <tags
@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="03/29/2016"
+    ms.date="06/23/2016"
     ms.author="femila"/>
 
 # Introdução ao Registo de Dispositivos do Azure Active Directory
@@ -90,6 +90,6 @@ Pode registar os dispositivos Associados a um Domínio Windows 7 e Windows 8.1
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

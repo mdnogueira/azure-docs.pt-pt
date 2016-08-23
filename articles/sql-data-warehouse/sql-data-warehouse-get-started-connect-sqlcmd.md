@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Introdução: ligar ao Azure SQL Data Warehouse | Microsoft Azure"
-   description="Introdução à ligação ao SQL Data Warehouse e execução de algumas consultas."
+   pageTitle="Consulta do Azure SQL Data Warehouse (sqlcmd) | Microsoft Azure"
+   description="Consultar o Azure SQL Data Warehouse com o Utilitário de Linha de Comandos sqlcmd."
    services="sql-data-warehouse"
    documentationCenter="NA"
    authors="sonyam"
@@ -13,41 +13,28 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="05/16/2016"
+   ms.date="07/22/2016"
    ms.author="mausher;barbkess;sonyama"/>
 
-# Ligar e consultar com SQLCMD
+# Consulta do Azure SQL Data Warehouse (sqlcmd)
 
 > [AZURE.SELECTOR]
-- [Visual Studio](sql-data-warehouse-get-started-connect.md)
-- [SQLCMD](sql-data-warehouse-get-started-connect-sqlcmd.md)
-- [AAD](sql-data-warehouse-get-started-connect-aad-authentication.md)
+- [Power BI](sql-data-warehouse-get-started-visualize-with-power-bi.md)
+- [Azure Machine Learning](sql-data-warehouse-get-started-analyze-with-azure-machine-learning.md)
+- [Visual Studio](sql-data-warehouse-query-visual-studio.md)
+- [sqlcmd](sql-data-warehouse-get-started-connect-sqlcmd.md) 
 
-
-Estas instruções mostram como ligar e consultar uma base de dados Azure SQL Data Warehouse em apenas alguns minutos, utilizando o utilitário sqlcmd.exe. Nestas instruções, irá:
-
-+ Instalar software de pré-requisitos
-+ Ligar a uma base de dados que contém a base de dados de exemplo AdventureWorksDW
-+ Executar uma consulta na base de dados de exemplo  
+Estas instruções utilizam o Utilitário de Linha de Comando sqlcmd para consultar um Azure SQL Data Warehouse.  
 
 ## Pré-requisitos
 
-+ Para transferir [sqlcmd.exe][], consulte [Microsoft Command Line Utilities 11 para SQL Server][].
+Para seguir este tutorial, é necessário:
 
-## Obter o seu nome de servidor completamente qualificado do SQL do Azure
+-  [sqlcmd.exe][]. Para transferir, consulte [Microsoft Command Line Utilities 11 for SQL Server (Microsoft Command Line Utilities 11 para o SQL Server)][], que também poderá requerer o [Controlador ODBC 11 da Microsoft para o SQL Server do Windows][].
 
-Para ligar à base de dados, é necessário o nome completo do servidor (***servername**.database.windows.net*) que contém a base de dados à qual pretende ligar.
+## 1. Ligar
 
-1. Aceda ao [Portal do Azure][].
-2. Navegue para a base de dados à qual pretende ligar.
-3. Localize o nome de servidor completo (iremos utilizá-lo nos passos abaixo):
-
-![][1]
-
-
-## Ligar ao SQL Data Warehouse com sqlcmd
-
-Para ligar a uma instância específica do SQL Data Warehouse ao utilizar o sqlcmd, terá de abrir a linha de comandos e introduzir **sqlcmd**, seguido da cadeia de ligação para a base de dados SQL Data Warehouse. A cadeia de ligação terá de seguir os parâmetros necessários:
+Para começar a utilizar o sqlcmd, abra a linha de comandos e escreva **sqlcmd**, seguido da cadeia de ligação para a sua base de dados SQL Data Warehouse. A cadeia de ligação terá de seguir os parâmetros necessários:
 
 + **Server (-S):** servidor sob a forma `<`Nome do Servidor`>`. database.windows.net
 + **Database (-d):** nome da base de dados.
@@ -55,48 +42,53 @@ Para ligar a uma instância específica do SQL Data Warehouse ao utilizar o sqlc
 + **Password (-P):** palavra-passe associada ao utilizador.
 + **Enable Quoted Identifiers (-I):** os identificadores delimitado por aspas têm de estar ativados para ligar a uma instância do SQL Data Warehouse.
 
-Por conseguinte, para ligar a uma instância do SQL Data Warehouse, introduziria o seguinte:
+Por exemplo, a cadeia de ligação poderá ter o seguinte aspeto:
 
 ```sql
-C:\>sqlcmd -S <Server Name>.database.windows.net -d <Database> -U <User> -P <Password> -I
+C:\>sqlcmd -S MySqlDw.database.windows.net -d Adventure_Works -U myuser -P myP@ssword -I
 ```
 
-## Executar consultas de exemplo
+> [AZURE.NOTE] A opção -I, que permite identificadores delimitados, é atualmente necessária para ligar ao SQL Data Warehouse.
 
-Após a ligação, pode emitir quaisquer instruções Transact-SQL suportadas na instância.
+## 2. Consulta
+
+Após a ligação, pode emitir quaisquer instruções Transact-SQL suportadas na instância.  Neste exemplo, as consultas são submetidas no modo interativo.
 
 ```sql
-C:\>sqlcmd -S <Server Name>.database.windows.net -d <Database> -U <User> -P <Password> -I
+C:\>sqlcmd -S MySqlDw.database.windows.net -d Adventure_Works -U myuser -P myP@ssword -I
 1> SELECT name FROM sys.tables;
 2> GO
 3> QUIT
 ```
 
-Para informações adicionais sobre o sqlcmd, consulte a [documentação do sqlcmd][sqlcmd.exe].
+Os exemplos que se seguem mostram como pode executar consultas no modo batch através da opção -Q ou ao ligar o seu SQL ao sqlcmd.
 
+```sql
+sqlcmd -S MySqlDw.database.windows.net -d Adventure_Works -U myuser -P myP@ssword -I -Q "SELECT name FROM sys.tables;"
+```
+
+```sql
+"SELECT name FROM sys.tables;" | sqlcmd -S MySqlDw.database.windows.net -d Adventure_Works -U myuser -P myP@ssword -I > .\tables.out
+```
 
 ## Passos seguintes
 
-Agora que pode ligar e consultar, experimente [ligar com o PowerBI][].
-
-Para configurar o ambiente para a autenticação do Windows, consulte [Ligar à Base de Dados SQL ou SQL Data Warehouse, utilizando a Autenticação do Azure Active Directory][].
-
-<!--Articles-->
-[Ligar à Base de Dados SQL ou SQL Data Warehouse, utilizando a Autenticação do Azure Active Directory]: ../sql-data-warehouse/sql-data-warehouse-get-started-connect-aad-authentication.md
-[ligar com o PowerBI]: ./sql-data-warehouse-integrate-power-bi.md
-[Visual Studio]: ./sql-data-warehouse-get-started-connect.md
-[SQLCMD]: ./sql-data-warehouse-get-started-connect-sqlcmd.md
-
-<!--Other-->
-[sqlcmd.exe]: https://msdn.microsoft.com/en-us/library/ms162773.aspx
-[Microsoft Command Line Utilities 11 para SQL Server]: http://go.microsoft.com/fwlink/?LinkId=321501
-[Portal do Azure]: https://portal.azure.com
+Consulte a [documentação do sqlcmd][sqlcmd.exe] para obter mais informações detalhadas sobre as opções disponíveis no sqlcmd.
 
 <!--Image references-->
-[1]: ./media/sql-data-warehouse-get-started-connect/get-server-name.png
+
+<!--Article references-->
+
+<!--MSDN references--> 
+[sqlcmd.exe]: https://msdn.microsoft.com/library/ms162773.aspx
+[Controlador ODBC 11 da Microsoft para o SQL Server do Windows]: https://www.microsoft.com/download/details.aspx?id=36434
+[Microsoft Command Line Utilities 11 for SQL Server (Microsoft Command Line Utilities 11 para o SQL Server)]: http://go.microsoft.com/fwlink/?LinkId=321501
+[Portal do Azure]: https://portal.azure.com
+
+<!--Other Web references-->
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

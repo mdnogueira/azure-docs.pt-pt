@@ -1,10 +1,10 @@
 <properties
     pageTitle="Utilizar o Controlo de Acesso Baseado em Funções no Portal do Azure | Microsoft Azure"
-    description="Introdução à gestão de acessos com Controlo de Acesso Baseado em Funções no Portal do Azure. Utilize atribuições de funções para atribuir permissões no diretório."
+    description="Introdução à gestão de acessos com Controlo de Acesso Baseado em Funções no Portal do Azure. Utilize atribuições de funções para atribuir permissões aos seus recursos."
     services="active-directory"
     documentationCenter=""
     authors="kgremban"
-    manager="stevenpo"
+    manager="femila"
     editor=""/>
 
 <tags
@@ -13,10 +13,10 @@
     ms.topic="get-started-article"
     ms.tgt_pltfrm="na"
     ms.workload="identity"
-    ms.date="05/03/2016"
+    ms.date="07/21/2016"
     ms.author="kgremban"/>
 
-# Utilize atribuições de funções para gerir o acesso aos recursos no Azure Active Directory.
+# Utilize atribuições de funções para gerir o acesso aos recursos de subscrição do Azure
 
 O Controlo de Acesso Baseado em Funções (RBAC) do Azure permite uma gestão pormenorizada de acesso ao Azure. Utilizando o RBAC, pode conceder apenas a quantidade de acesso precisa aos utilizadores para realizar os trabalhos. Este artigo ajuda-o a começar a utilizar o RBAC no Portal do Azure. Se quiser saber mais sobre como o RBAC pode ajudá-lo a gerir o acesso, consulte o artigo [O que é o Controlo de Acesso Baseado em Funções](role-based-access-control-what-is.md).
 
@@ -78,6 +78,6 @@ Pode atribuir funções e gerir acessos com os comandos de Azure RBAC noutras fe
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="04/18/2016"
+    ms.date="06/22/2016"
     ms.author="juliako"/>
 
 
@@ -108,6 +108,6 @@ Além disso, pode ver o código que utiliza o SDK dos Media Services do Azure pa
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

@@ -63,13 +63,13 @@ Não se esqueça de mudar o modo do PowerShell para utilizar o cmdlets do Azure 
 
 ### Passo 1
 
-        PS C:\> Login-AzureRmAccount
+        Login-AzureRmAccount
 
 ### Passo 2
 
 Verifique as subscrições da conta.
 
-        PS C:\> get-AzureRmSubscription
+        get-AzureRmSubscription
 
 Ser-lhe-á solicitado a autenticação com as suas credenciais.<BR>
 
@@ -78,7 +78,7 @@ Ser-lhe-á solicitado a autenticação com as suas credenciais.<BR>
 Escolha qual das subscrições do Azure utilizar. <BR>
 
 
-        PS C:\> Select-AzureRmSubscription -Subscriptionid "GUID of subscription"
+        Select-AzureRmSubscription -Subscriptionid "GUID of subscription"
 
 
 ### Passo 4
@@ -240,6 +240,6 @@ Se pretender obter mais informações sobre as opções de balanceamento de carg
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

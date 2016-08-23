@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="mobile-xamarin-ios"
     ms.devlang="dotnet"
     ms.topic="hero-article"
-    ms.date="02/13/2016"
+    ms.date="06/28/2016"
     ms.author="normesta"/>
 
 
@@ -33,7 +33,7 @@ Para concluir este tutorial, precisa do seguinte:
 
 * Uma conta ativa do Azure. Se não tiver uma conta, pode inscrever-se para uma versão de avaliação do Azure e obter até 10 Mobile Apps gratuitas, que pode continuar a utilizar mesmo após o final do período de avaliação. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/).
 
-* Visual Studio com Xamarin. Para obter instruções, consulte [Configuração e instalação do Visual Studio e Xamarin](https://msdn.microsoft.com/library/mt613162.aspx). 
+* Visual Studio com Xamarin. Para obter instruções, consulte [Configuração e instalação do Visual Studio e Xamarin](https://msdn.microsoft.com/library/mt613162.aspx).
 
 * Um Mac com Xcode v7.0 ou posterior e Xamarin Studio Community instalado. Consulte [Configuração e instalação do Visual Studio e Xamarin](https://msdn.microsoft.com/library/mt613162.aspx) e [Configuração, instalação e verificações para utilizadores Mac](https://msdn.microsoft.com/library/mt488770.aspx) (MSDN).
 
@@ -112,6 +112,6 @@ Caso tenha optado pela configuração de back-end .NET acima, opcionalmente, pod
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

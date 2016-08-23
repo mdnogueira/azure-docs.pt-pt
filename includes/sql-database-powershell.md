@@ -1,10 +1,10 @@
 
 ## Iniciar a sessão do PowerShell
 
-Primeiro tem de ter o [Azure PowerShell](https://msdn.microsoft.com/library/mt619274.aspx) (1.0 ou posterior) instalado e em execução. Para obter informações detalhadas, veja [Como instalar e configurar o Azure PowerShell](../articles/powershell-install-configure.md).
+Primeiro, tem de ter a versão mais recente do [Azure PowerShell](https://msdn.microsoft.com/library/mt619274.aspx) instalada e em execução. Para obter informações detalhadas, veja [Como instalar e configurar o Azure PowerShell](../articles/powershell-install-configure.md).
 
 
->[AZURE.NOTE] Muitas funcionalidades novas da SQL Database só são suportadas com o [Modelo de implementação Azure Resource Manager](../articles/resource-group-overview.md). Assim, os exemplos utilizam os [Cmdlets PowerShell da SQL Database do Azure](https://msdn.microsoft.com/library/azure/mt574084.aspx) para o Resource Manager. Os [Cmdlets da SQL Database do Azure (clássica)](https://msdn.microsoft.com/library/azure/dn546723.aspx) do modelo de implementação clássica existentes são suportados para compatibilidade com versões anteriores, mas recomendamos que utilize os cmdlets Resource Manager. 
+>[AZURE.NOTE] Muitas funcionalidades novas da Base de Dados SQL só são suportadas quando utilizar o [Modelo de implementação Azure Resource Manager](../articles/resource-group-overview.md). Assim, os exemplos utilizam os [Cmdlets PowerShell da Base de Dados do Azure](https://msdn.microsoft.com/library/azure/mt574084.aspx) para o Resource Manager. Os [Cmdlets da SQL Database do Azure (clássica)](https://msdn.microsoft.com/library/azure/dn546723.aspx) do modelo de implementação clássica existentes são suportados para compatibilidade com versões anteriores, mas recomendamos que utilize os cmdlets Resource Manager.
 
 
 Execute o cmdlet [**Add-AzureRmAccount**](https://msdn.microsoft.com/library/mt619267.aspx) para visualizar um ecrã de início de sessão para introduzir as suas credenciais. Utilize as mesmas credenciais que utiliza para iniciar sessão no Portal do Azure.
@@ -17,7 +17,6 @@ Se tiver várias subscrições, utilize o cmdlet [**Set-AzureRmContext**](https:
 
 
 
-
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

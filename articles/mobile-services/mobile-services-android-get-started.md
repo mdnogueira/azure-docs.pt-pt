@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="mobile-android"
     ms.devlang="java"
     ms.topic="hero-article"
-    ms.date="04/08/2016"
+    ms.date="07/21/2016"
     ms.author="ricksal"/>
 
 # Introdução aos Mobile Services para Android (Back-end de JavaScript)
@@ -100,6 +100,6 @@ Agora que concluiu o guia de introdução, saiba como efetuar tarefas importante
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

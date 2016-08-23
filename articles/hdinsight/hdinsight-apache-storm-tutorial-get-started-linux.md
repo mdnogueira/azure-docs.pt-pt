@@ -1,7 +1,7 @@
 <properties
     pageTitle="Tutorial do Apache Storm: Introdução ao Storm baseado em Linux no HDInsight | Microsoft Azure"
     description="Comece com a análise de macrodados com os exemplos do Apache Storm e do Storm Starter no HDInsight baseado em Linux. Saiba como utilizar o Storm para o processamento de dados em tempo real."
-    keywords="apache storm,apache storm tutorial,big data analytics,storm starter"
+    keywords="apache storm,tutorial do apache storm,análise de macrodados,storm starter"
     services="hdinsight"
     documentationCenter=""
     authors="Blackmist"
@@ -44,7 +44,7 @@ Nesta secção, criará um cluster do HDInsight versão 3.2 (versão 0.9.3 do St
 
 1. Clique na imagem seguinte para abrir um modelo ARM no Portal do Azure.         
 
-    <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fhditutorialdata.blob.core.windows.net%2Fusesqoop%2Fcreate-linux-based-storm-cluster-in-hdinsight.json" target="_blank"><img src="https://acom.azurecomcdn.net/80C57D/cdn/mediahandler/docarticles/dpsmedia-prod/azure.microsoft.com/en-us/documentation/articles/hdinsight-hbase-tutorial-get-started-linux/20160201111850/deploy-to-azure.png" alt="Deploy to Azure"></a>
+    <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fhditutorialdata.blob.core.windows.net%2Farmtemplates%2Fcreate-linux-based-storm-cluster-in-hdinsight.json" target="_blank"><img src="https://acom.azurecomcdn.net/80C57D/cdn/mediahandler/docarticles/dpsmedia-prod/azure.microsoft.com/en-us/documentation/articles/hdinsight-hbase-tutorial-get-started-linux/20160201111850/deploy-to-azure.png" alt="Deploy to Azure"></a>
     
     O modelo ARM está localizado num contentor de blobs público, *https://hditutorialdata.blob.core.windows.net/armtemplates/create-linux-based-storm-cluster-in-hdinsight.json*. 
    
@@ -193,6 +193,6 @@ Se já estiver familiarizado com o desenvolvimento de topologias baseadas em Jav
 [preview-portal]: https://portal.azure.com/
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

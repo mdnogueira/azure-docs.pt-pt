@@ -6,10 +6,12 @@
 
 (+) indica que este método de implementação só está disponível para VNets na mesma subscrição.
 
+Tenha em atenção que o VNet peering, que está atualmente em Pré-visualização, está disponível para determinados modelos de implementação e configurações. Veja o artigo [VNet peering](../articles/virtual-network/virtual-network-peering-overview.md) para obter mais informações.
 
 
 
 
-<!--HONumber=Jun16_HO2-->
+
+<!--HONumber=Aug16_HO1-->
 
 

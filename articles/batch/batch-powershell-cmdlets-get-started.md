@@ -13,11 +13,11 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="powershell"
    ms.workload="big-compute"
-   ms.date="04/21/2016"
+   ms.date="07/28/2016"
    ms.author="danlep"/>
 
 # Introdução aos cmdlets do Azure Batch PowerShell
-Esta é uma introdução rápida aos cmdlets do Azure PowerShell que pode utilizar para gerir as contas do Batch e trabalhar com os recursos do Batch, como agrupamentos e tarefas. Pode efetuar muitas das mesmas tarefas com os cmdlets do Batch executados com as APIs do Batch, o portal do Azure e a Interface de Linha de Comandos do Azure (CLI). Este artigo baseia-se nos cmdlets do Azure PowerShell versão 1.3.2 ou posterior.
+Com os cmdlets do Azure Batch PowerShell, pode efetuar e encriptar muitas das mesmas tarefas que desempenha com as APIs do lote, o portal do Azure e a Interface de Linha de Comandos do Azure (CLI). Isto é uma introdução rápida aos cmdlets que pode utilizar para gerir as contas do Batch e trabalhar com os recursos do Batch, como conjuntos e tarefas. Este artigo baseia-se nos cmdlets do Azure PowerShell versão 1.6.0.
 
 Para obter uma lista completa de cmdlets do Batch e a sintaxe detalhada dos cmdlets, veja a [Referência de cmdlets do Azure Batch](https://msdn.microsoft.com/library/azure/mt125957.aspx). 
 
@@ -45,7 +45,7 @@ Para obter uma lista completa de cmdlets do Batch e a sintaxe detalhada dos cmdl
     New-AzureRmResourceGroup –Name MyBatchResourceGroup –location "Central US"
 
 
-Em seguida, crie uma nova conta do Batch no grupo de recursos, especificando também um nome de conta para <*nome_conta*> e uma localização onde o serviço Batch esteja disponível. A criação da conta pode demorar vários minutos a concluir. Por exemplo:
+Em seguida, crie uma nova conta do Batch no grupo de recursos, especificando um nome de conta em <*nome_conta*> e a localização e o nome do seu grupo de recursos. Criar a conta do Batch pode demorar algum tempo a concluir. Por exemplo:
 
 
     New-AzureRmBatchAccount –AccountName <account_name> –Location "Central US" –ResourceGroupName MyBatchResourceGroup
@@ -92,18 +92,24 @@ O objeto BatchAccountContext é transmitido aos cmdlets que utilizam o parâmetr
 
 
 ## Criar e modificar recursos do Batch
-Utilize cmdlets, como **New-AzureBatchPool**, **New-AzureBatchJob** e **New-AzureBatchTask** para criar recursos na conta do Batch. Existem cmdlets **Get-** e **Set-** correspondentes para atualizar as propriedades dos recursos existentes e cmdlets **Remove-** para remover recursos numa conta do Batch. 
+Utilize cmdlets como **New-AzureBatchPool**, **New-AzureBatchJob** e **New-AzureBatchTask** para criar recursos numa conta do Batch. Existem cmdlets **Get-** e **Set-** correspondentes para atualizar as propriedades dos recursos existentes e cmdlets **Remove-** para remover recursos numa conta do Batch. 
+
+Quando utiliza muitos destes cmdlets, além de transmitir um objeto de BatchContext, terá de criar ou passar objetos que contêm definições detalhadas de recursos, conforme mostrado no exemplo seguinte. Consulte a ajuda detalhada de cada cmdlet para obter exemplos adicionais.
 
 ### Criar um conjunto do Batch
 
-Por exemplo, o cmdlet seguinte cria um novo conjunto do Batch, configurado para utilizar pequenas imagens de máquinas virtuais instaladas com a versão mais recente do sistema operativo da família 3 (Windows Server 2012), com o número de destino de nós determinado por uma fórmula de dimensionamento automático. Neste caso, a fórmula é simplesmente **$TargetDedicated=3**, que indica que o número de nós de computação no agrupamento é, no máximo, 3. O parâmetro **BatchContext** especifica uma variável *$context* definida anteriormente como objeto BatchAccountContext.
+Quando criar ou atualizar um conjunto de Batch, selecione uma configuração de serviço na nuvem ou uma configuração de máquina virtual para o sistema operativo nos nós de computação (veja [Descrição geral da funcionalidade do Batch](batch-api-basics.md#pool)). A sua escolha determina se os nós de computação são instalados com uma das [versões do SO Convidado do Azure](../cloud-services/cloud-services-guestos-update-matrix.md#releases) ou com uma das imagens suportadas do Linux ou VM do Windows no Azure Marketplace. 
+
+Quando executa o **New-AzureBatchPool**, introduza as definições do sistema operativo num objeto PSCloudServiceConfiguration ou PSVirtualMachineConfiguration. Por exemplo, o seguinte cmdlet cria um novo conjunto do Batch com nós de computação pequenos na configuração de serviço na nuvem, instalados com a versão mais recente do sistema operativo da família 3 (Windows Server 2012). Neste caso, o parâmetro **CloudServiceConfiguration** especifica a variável *$configuration* como o objeto PSCloudServiceConfiguration. O parâmetro **BatchContext** especifica uma variável *$context* definida anteriormente como objeto BatchAccountContext.
 
 
-    New-AzureBatchPool -Id "MyAutoScalePool" -VirtualMachineSize "Small" -OSFamily "3" -TargetOSVersion "*" -AutoScaleFormula '$TargetDedicated=3;' -BatchContext $Context
+    $configuration = New-Object -TypeName "Microsoft.Azure.Commands.Batch.Models.PSCloudServiceConfiguration" -ArgumentList @(3,"*")
+    
+    New-AzureBatchPool -Id "AutoScalePool" -VirtualMachineSize "Small" -CloudServiceConfiguration $configuration -AutoScaleFormula '$TargetDedicated=4;' -BatchContext $context
 
->[AZURE.NOTE]Atualmente, os cmdlets do Batch PowerShell suportam apenas a configuração de serviços em nuvem para nós de computação. Isto permite-lhe escolher uma das versões de SO Convidado do Azure do sistema operativo Windows Server para ser executada nos nós de computação. Para outras opções de configuração de nós de computação para agrupamentos do Batch, utilize os SDKs do Batch ou a CLI do Azure.
+O número de destino dos nós de computação do novo conjunto é determinado por uma fórmula de dimensionamento automático. Neste caso, a fórmula é simplesmente **$TargetDedicated=4**, que indica que o número de nós de computação no conjunto é, no máximo, 4. 
 
-## Consulta para agrupamento, tarefas e outros detalhes
+## Consulta para conjuntos, tarefas e outros detalhes
 
 Utilize cmdlets, como **Get-AzureBatchPool**, **Get-AzureBatchJob** e **Get-AzureBatchTask** para consultar entidades criadas numa conta do Batch.
 
@@ -163,6 +169,6 @@ Os cmdlets do Batch podem tirar partido do pipeline do PowerShell para enviar da
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 
