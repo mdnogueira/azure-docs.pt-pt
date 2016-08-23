@@ -13,7 +13,7 @@
     ms.topic="get-started-article"
     ms.tgt_pltfrm="na"
     ms.workload="storage-backup-recovery" 
-    ms.date="03/27/2016" 
+    ms.date="07/06/2016" 
     ms.author="raynew"/>
 
 # Quais as cargas de trabalho que podem ser protegidas com o Azure Site Recovery?
@@ -152,6 +152,6 @@ Utilize a Recuperação de Sites para proteger a sua implementação de SAP da s
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

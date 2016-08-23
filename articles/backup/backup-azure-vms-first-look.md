@@ -1,10 +1,10 @@
 <properties
-    pageTitle="Proteger VMs no Azure com o Backup do Azure | Microsoft Azure"
-    description="Proteja as VMs do Azure com o serviço de Backup do Azure. O tutorial explica como criar um cofre, registar VMs, criar uma política e proteger as VMs no Azure."
+    pageTitle="Primeira Impressão: proteger VMs do Azure com o cofre de cópia de segurança | Microsoft Azure"
+    description="Proteger VMs do Azure com o cofre de Cópia de segurança. O tutorial explica como criar um cofre, registar VMs, criar uma política e proteger as VMs no Azure."
     services="backup"
     documentationCenter=""
     authors="markgalioto"
-    manager="jwhit"
+    manager="cfreeman"
     editor=""/>
 
 <tags
@@ -13,17 +13,17 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="hero-article"
-    ms.date="04/22/2016"
+    ms.date="07/29/2016"
     ms.author="markgal; jimpark"/>
 
 
 # Primeiras impressões: efetuar uma cópia de segurança das máquinas virtuais do Azure
 
 > [AZURE.SELECTOR]
-- [Efetuar uma cópia de segurança das VMs do ARM](backup-azure-vms-first-look-arm.md)
-- [Efetuar uma cópia de segurança das VMs no Modo clássico](backup-azure-vms-first-look.md)
+- [Primeira impressão: proteger VMs com um cofre de serviços de recuperação](backup-azure-vms-first-look-arm.md)
+- [Primeira Impressão: proteger VMs do Azure com o cofre de cópia de segurança](backup-azure-vms-first-look.md)
 
-Este tutorial guia-o através dos passos para criar uma cópia de segurança de uma máquina virtual (VM) do Azure para o Azure. Para concluir com êxito este tutorial, estes pré-requisitos têm de existir:
+Este tutorial guia-o através dos passos para criar uma cópia de segurança de uma máquina virtual (VM) do Azure para um cofre de cópia de segurança do Azure. Este artigo descreve o modelo de Clássico ou modelo de implementação do Service Manager, para a cópia de segurança das VMs. Se estiver interessado em efetuar uma cópia de segurança de uma VM para um cofre dos Serviços de Recuperação que pertence a um Grupo de Recursos, consulte [Primeira impressão: proteger VMs com um cofre de serviços de recuperação](backup-azure-vms-first-look-arm.md). Para concluir com êxito este tutorial, estes pré-requisitos têm de existir:
 
 - Criou uma VM na sua subscrição do Azure.
 - A VM tem conetividade aos endereços IP públicos do Azure. Para obter informações adicionais, consulte o artigo [Conetividade de rede](./backup-azure-vms-prepare.md#network-connectivity).
@@ -38,7 +38,7 @@ Para efetuar a cópia de segurança de uma VM, existem cinco passos principais:
 
 ![Vista de nível elevado do processo de cópia de segurança da VM](./media/backup-azure-vms-first-look/backupazurevm-classic.png)
 
->[AZURE.NOTE] O Azure tem dois modelos de implementação para criar e trabalhar com recursos: [Resource Manager e Clássico](../resource-manager-deployment-model.md). Este tutorial é para ser utilizado com as VMs que podem ser criadas no portal Clássico do Azure. O serviço de Backup do Azure suporta VMs baseadas no Azure Resource Manager (ARM), também conhecidas como VMs do IaaS V2. Para obter detalhes sobre a cópia de segurança das VMs do ARM, consulte o artigo [Primeiras Impressões: criar uma Cópia de Segurança das VMs do ARM para um cofre dos Serviços de Recuperação](backup-azure-vms-first-look-arm.md).
+>[AZURE.NOTE] O Azure tem dois modelos de implementação para criar e trabalhar com recursos: [Resource Manager e Clássico](../resource-manager-deployment-model.md). Este tutorial é para ser utilizado com as VMs que podem ser criadas no portal Clássico do Azure. O serviço Azure Backup suporta VMs baseadas no Resource Manager. Para obter detalhes sobre a cópia de segurança de VMs para um cofre de serviços de recuperação, consulte [Primeira Impressão: proteger VMs com um cofre de serviços de recuperação](backup-azure-vms-first-look-arm.md).
 
 
 
@@ -225,6 +225,6 @@ Se tiver dúvidas ou se houver alguma funcionalidade que gostaria de ver incluí
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

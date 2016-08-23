@@ -1,7 +1,7 @@
 <properties
     pageTitle="Azure AD Connect : integrar as identidades no local ao Azure Active Directory. | Microsoft Azure"
     description="O Azure AD Connect irá integrar os diretórios no local ao Azure Active Directory. Isto permite-lhe fornecer uma identidade comum para as aplicações do Office 365, do Azure e do SaaS integradas com o Azure AD."
-    keywords="introduction to Azure AD Connect, Azure AD Connect overview, what is Azure AD Connect, install active directory"
+    keywords="introdução ao Azure AD Connect, descrição geral do Azure AD Connect, o que é o Azure AD Connect, instalar o Active Directory"
     services="active-directory"
     documentationCenter=""
     authors="andkjell"
@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="05/19/2016"
+    ms.date="07/14/2016"
     ms.author="andkjell;billmath"/>
 
 # Integrar as identidades no local ao Azure Active Directory
@@ -139,6 +139,7 @@ Se o servidor do ADFS não tiver sido configurado para atualizar automaticamente
 
 Tópico |  
 --------- | ---------
+Todos os artigos do AD FS | [Azure AD Connect e a federação](active-directory-aadconnectfed-whatis.md)
 Configuração do ADFS com subdomínios | [Suporte para Vários Domínios para Federação com o Azure AD](active-directory-aadconnect-multiple-domains.md)
 Gerir o farm do AD FS | [Gestão e personalização do AD FS com o Azure AD Connect](active-directory-aadconnect-federation-management.md)
 Atualizar manualmente certificados de federação | [Renovar certificados de federação do Office 365 e do Azure AD](active-directory-aadconnect-o365-certs.md)
@@ -164,6 +165,6 @@ Apresentação do Ignite 2015 acerca de como expandir os diretórios no local pa
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

@@ -53,14 +53,7 @@ O IoT Suite inclui soluções pré-configuradas que lhe permitem começar rapida
 
 ## Passos seguintes
 
-Agora que tem uma descrição geral daquilo que o IoT Suite pode fazer e dos seus principais componentes, pode:
-
-- Para saber mais sobre as soluções pré-configuradas no IoT Suite, consulte [Quais são as soluções pré-configuradas do Azure IoT?][lnk-what-are-preconfig]
-
-- Para uma introdução às soluções pré-configuradas, consulte [Introdução às soluções pré-configuradas do IoT][Ink-preconfig-start].
-
-- Para saber mais sobre o serviço do Azure IoT Hub, consulte a [documentação sobre o IoT Hub][Ink-iot-hub].
-
+Agora que tem uma ideia geral sobre o que o IoT Suite pode fazer e quais são os seus principais componentes, pode obter mais informações sobre as soluções pré-configuradas no IoT Suite. Para tal, veja [Quais são as soluções pré-configuradas do Azure IoT?][lnk-what-are-preconfig]
 
 [lnk-sdks]: https://azure.microsoft.com/documentation/articles/iot-hub-sdks-summary/
 [lnk-iot-hub]: https://azure.microsoft.com/documentation/services/iot-hub/
@@ -71,11 +64,9 @@ Agora que tem uma descrição geral daquilo que o IoT Suite pode fazer e dos seu
 [lnk-web-apps]: https://azure.microsoft.com/documentation/services/app-service/web/
 [iot-suite-what-is-azure-iot]: iot-suite-what-is-azure-iot.md
 [lnk-what-are-preconfig]: iot-suite-what-are-preconfigured-solutions.md
-[lnk-preconfig-start]: iot-suite-getstarted-preconfigured-solutions.md
-[lnk-iot-hub]: https://azure.microsoft.com/documentation/services/iot-hub/
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

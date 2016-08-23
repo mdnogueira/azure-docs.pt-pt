@@ -13,7 +13,7 @@
     ms.workload="search"
     ms.topic="hero-article"
     ms.tgt_pltfrm="na"
-    ms.date="03/08/2016"
+    ms.date="07/14/2016"
     ms.author="evboyle"/>
 
 # Introdução à Azure Search em Java
@@ -69,7 +69,7 @@ Todas as chamadas da API REST na Azure Search requerem que forneça o URL do ser
 
 ## Transferir os ficheiros de exemplo
 
-1. Aceda a [AzureSearchJavaDemo](http://go.microsoft.com/fwlink/p/?LinkId=530197) no Github.
+1. Aceda a [AzureSearchJavaDemo](https://github.com/AzureSearch/AzureSearchJavaIndexerDemo) no Github.
 
 2. Clique em **Transferir ZIP**, guarde o ficheiro .zip no disco e, em seguida, extraia todos os ficheiros nele contidos. Considere extrair os ficheiros para a sua área de trabalho Java para tornar mais fácil localizar o projeto mais tarde.
 
@@ -205,6 +205,6 @@ Novo na Azure Search? Recomendamos que experimente outros tutoriais para desenvo
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

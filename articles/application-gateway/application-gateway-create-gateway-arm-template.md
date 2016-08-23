@@ -13,7 +13,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="04/05/2016"
+   ms.date="06/07/2016"
    ms.author="joaoma"/>
 
 
@@ -81,7 +81,7 @@ Pode transferir o modelo Azure Resource Manager existente para criar uma rede vi
     - **nome**. Nome do recurso. Tenha em atenção a utilização de **[parameters('applicationGatewayName')]**, que significa que o nome será fornecido como uma entrada do utilizador ou por um ficheiro de parâmetros durante a implementação.
     - **propriedades**. Lista de propriedades do recurso. Este modelo utiliza a rede virtual e o endereço IP público durante a criação do gateway de aplicação.
 
-7. Navegue de volta para https://github.com/Azure/azure-quickstart-templates/blob/master/101-application-gateway-create/.
+7. Navegue de volta para [https://github.com/Azure/azure-quickstart-templates/blob/master/101-application-gateway-create/](https://github.com/Azure/azure-quickstart-templates/blob/master/101-application-gateway-create).
 8. Clique em **azuredeploy-paremeters.json** e em **RAW**.
 9. Guarde o ficheiro numa pasta local do computador.
 10. Abra o ficheiro que guardou e edite os valores dos parâmetros. Utilize os valores abaixo para implementar o gateway de aplicação descrito no nosso cenário.
@@ -286,6 +286,6 @@ Se pretender obter mais informações sobre as opções de balanceamento de carg
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

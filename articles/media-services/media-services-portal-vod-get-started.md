@@ -13,11 +13,11 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="06/05/2016"
+    ms.date="06/22/2016"
     ms.author="juliako"/>
 
 
-# Introdução à entrega de conteúdos a pedido utilizando o Portal do Azure (pré-visualização)
+# Introdução à entrega de conteúdos a pedido com o Portal do Azure
 
 Este tutorial explica os passos para implementar um serviço básico de entrega de conteúdos de Vídeo a Pedido (VoD) com a aplicação dos Media Services do Azure (AMS) utilizando o Portal do Azure.
 
@@ -40,7 +40,7 @@ Este tutorial inclui as seguintes tarefas:
 Os passos nesta secção explicam como criar uma nova conta de AMS.
 
 1. Inicie sessão no [Portal do Azure](https://portal.azure.com/).
-2. Clique em **+Novo** > **Serviço de Multimédia + CDN** > **Media Services**.
+2. Clique em **+Novo** > **Multimédia + CDN** > **Serviços de Multimédia**.
 
     ![Criar Media Services](./media/media-services-portal-vod-get-started/media-services-new1.png)
 
@@ -233,6 +233,6 @@ São aplicáveis algumas considerações:
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

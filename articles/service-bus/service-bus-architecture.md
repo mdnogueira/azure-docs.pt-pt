@@ -1,23 +1,23 @@
 <properties 
     pageTitle="Arquitetura do Service Bus | Microsoft Azure"
-    description="Descreve a arquitetura de processamento de mensagens do Service Bus do Azure."
+    description="Descreve a arquitetura de processamento de mensagens e do reencaminhamento do Azure Service Bus."
     services="service-bus"
     documentationCenter="na"
     authors="sethmanheim"
     manager="timlt"
-    editor="tysonn" />
+    editor="" />
 <tags 
     ms.service="service-bus"
     ms.devlang="na"
     ms.topic="get-started-article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="04/19/2016"
+    ms.date="07/11/2016"
     ms.author="sethm" />
 
 # Arquitetura do Service Bus
 
-Este artigo descreve a arquitetura de processamento de mensagens do Service Bus do Azure.
+Este artigo descreve a arquitetura de processamento de mensagens e do reencaminhamento do Azure Service Bus.
 
 ## Unidades de escala do Service Bus
 
@@ -53,7 +53,7 @@ Quando a ligação de reencaminhamento é estabelecida, os clientes podem trocar
 
 ## Passos seguintes
 
-Agora que já leu uma descrição geral de como o Service Bus funciona, para começar visite as seguintes ligações:
+Agora que já leu uma descrição geral da arquitetura do Service Bus, visite as seguintes ligações para começar:
 
 - [Descrição geral de mensagens do Service Bus](service-bus-messaging-overview.md)
 - [Noções básicas do Service Bus](service-bus-fundamentals-hybrid-solutions.md)
@@ -61,6 +61,6 @@ Agora que já leu uma descrição geral de como o Service Bus funciona, para com
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

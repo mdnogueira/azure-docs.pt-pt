@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="05/11/2016"
+   ms.date="08/02/2016"
    ms.author="nitinme"/>
 
 # Descrição geral do Azure Data Lake Store
@@ -65,7 +65,7 @@ O Azure Data Lake Store utiliza o Azure Active Directory para autenticação e l
 | Funcionalidade                                 | Descrição                              |
 |-----------------------------------------|------------------------------------------|
 | Autenticação | O Azure Data Lake Store integra-se com o Azure Active Directory (AAD) para gestão de identidade e de acesso de todos os dados armazenados no Azure Data Lake Store. Como resultado de integração, o Azure Data Lake a partir de todas as funcionalidades do AAD, incluindo autenticação multifator, acesso condicional, controlo de acesso baseado em funções, monitorização de utilização de aplicações, monitorização de segurança e alertas, etc. O Azure Data Lake Store suporta o protocolo de OAuth 2.0 para a autenticação com a interface REST. |
-| Controlo de acesso                          | O Azure Data Lake Store fornece controlo de acesso ao suportar permissões do estilo POSIX expostas pelo protocolo WebHDFS. Na versão atual, as permissões podem ser especificadas ao nível do data lake e serão aplicadas a todos os ficheiros e pastas aí disponíveis. Nas atualizações futuras, vamos ativar o controlo de acesso detalhado ao permitir que as permissões sejam especificadas em ficheiros e pastas individuais.|
+| Controlo de acesso                          | O Azure Data Lake Store fornece controlo de acesso ao suportar permissões do estilo POSIX expostas pelo protocolo WebHDFS. Na versão atual, os ACLs podem ser ativados na pasta raíz, subpastas, bem como em ficheiros individuais. Os ACLs que aplicar à pasta raiz também serão aplicáveis a todas as pastas/ficheiros subordinados.|
 
 Pretende obter mais informações sobre como proteger dados no Data Lake Store. Siga as ligações abaixo.
 
@@ -115,6 +115,6 @@ Se preferir assistir a vídeos para obter mais informações, o Data Lake Store 
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

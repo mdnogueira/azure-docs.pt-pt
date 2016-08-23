@@ -7,7 +7,7 @@
    manager="timlt"
    editor=""
    tags="acs, azure-container-service"
-   keywords="Docker, Containers, Micro-services, DC/OS, Azure"/>
+   keywords="Docker, Contentores, Microserviços, DC/OS, Azure"/>
 
 <tags
    ms.service="container-service"
@@ -21,7 +21,7 @@
 
 # Ligar a um cluster do Serviço de Contentor Azure
 
-Os clusters DC/OS e do Swarm que são implementados pelo Serviço de Contentor do Azure expõem pontos finais REST. No entanto, estes pontos finais não estão abertos ao mundo externo. Para gerir estes pontos finais, tem de criar um túnel Secure Shell (SSH). Depois de estabelecer um túnel SSH, pode executar comandos nos pontos finais de cluster e ver a IU do cluster através de um browser no seu próprio sistema. Este documento explica-lhe como criar um túnel SSH no Linux, OS X e Windows.
+Os clusters DC/OS e do Docker Swarm que são implementados pelo Serviço de Contentor do Azure expõem pontos finais REST. No entanto, estes pontos finais não estão abertos ao mundo externo. Para gerir estes pontos finais, tem de criar um túnel Secure Shell (SSH). Depois de estabelecer um túnel SSH, pode executar comandos nos pontos finais de cluster e ver a IU do cluster através de um browser no seu próprio sistema. Este documento explica-lhe como criar um túnel SSH no Linux, OS X e Windows.
 
 >[AZURE.NOTE] Pode criar uma sessão SSH com um sistema de gestão de clusters. No entanto, não é recomendável. Trabalhar diretamente num sistema de gestão expõe o risco de alterações de configuração inadvertidas.   
 
@@ -38,14 +38,14 @@ Agora, abra uma shell e execute o seguinte comando em que:
 **USERNAME** é o nome de utilizador que foi fornecido quando implementou o cluster.  
 **DNSPREFIX** é o prefixo DNS que forneceu quando implementou o cluster.  
 **REGION** é a região no qual o grupo de recursos está localizado.  
-**PATH_TO_PRIVATE_KEY** [OPCIONAL] é o caminho para a chave privada correspondente à chave pública que forneceu ao criar o cluster do serviço de contentor. Utilize esta opção com o sinalizador -i.
+**PATH_TO_PRIVATE_KEY** [OPCIONAL] é o caminho para a chave privada que corresponde à chave pública que forneceu ao criar o cluster do Serviço de Contentor. Utilize esta opção com o sinalizador -i.
 
 ```bash
 # ssh sample
 
 ssh -L PORT:localhost:PORT -f -N [USERNAME]@[DNSPREFIX]mgmt.[REGION].cloudapp.azure.com -p 2200
 ```
-> A porta de ligação SSH é 2200 e não a 22 padrão.
+> A porta de ligação SSH é 2200 – não a porta padrão 22.
 
 ## Túnel do DC/OS
 
@@ -75,7 +75,7 @@ Para abrir um túnel para o ponto final Swarm, execute um comando semelhante ao 
 ssh -L 2375:localhost:2375 -f -N azureuser@acsexamplemgmt.japaneast.cloudapp.azure.com -p 2200
 ```
 
-Agora, pode definir a variável de ambiente DOCKER_HOST do seguinte modo e continuar a utilizar a interface de linha de comandos (CLI) do Docker como habitualmente.
+Agora pode definir a variável de ambiente de DOCKER_HOST da seguinte forma. Pode continuar a utilizar a interface de linha de comandos (CLI) Docker normalmente.
 
 ```bash
 export DOCKER_HOST=:2375
@@ -91,11 +91,11 @@ Introduza um nome de anfitrião composto pelo nome de utilizador administrador d
 
 ![Configuração do puTTY 1](media/putty1.png)
 
-Selecione `SSH` e `Authentication`. Adicione o ficheiro de chave privada para autenticação.
+Selecione **SSH** e **Autenticação**. Adicione o ficheiro de chave privada para autenticação.
 
 ![Configuração do puTTY 2](media/putty2.png)
 
-Selecione `Tunnels` e configure as seguintes portas reencaminhadas:
+Selecione **Tunnels** e configure as seguintes portas reencaminhadas:
 - **Porta de Origem:** a sua preferência – utilize a 80 para DC/OS ou 2375 para Swarm.
 - **Destino:** utilize localhost:80 para DC/OS ou localhost:2375 para Swarm.
 
@@ -119,13 +119,13 @@ Quando tiver configurado o túnel para Docker Swarm, pode aceder ao cluster Swar
 
 ## Passos seguintes
 
-Implementar e gerir contentores com DC/OS ou Swarm.
+Implementar e gerir contentores com DC/OS ou Swarm:
 
-[Trabalhar com o Serviço de Contentor do Azure e DC/OS](container-service-mesos-marathon-rest.md)
-[Trabalhar com o Serviço de Contentor do Azure e Docker Swarm](container-service-docker-swarm.md)
+- [Trabalhar com o Serviço de Contentor do Azure e o DC/OS](container-service-mesos-marathon-rest.md)
+- [Trabalhar com o Serviço de Contentor do Azure e o Docker Swarm](container-service-docker-swarm.md)
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="mobile-phonegap"
     ms.devlang="multiple"
     ms.topic="get-started-article" 
-    ms.date="02/10/2016"
+    ms.date="07/21/2016"
     ms.author="ggailey777"/>
 
 # Introdução aos Mobile Services
@@ -182,6 +182,6 @@ Agora que concluiu o guia de introdução, saiba como efetuar tarefas importante
  
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

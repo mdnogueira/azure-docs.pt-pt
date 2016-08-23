@@ -14,7 +14,7 @@
     ms.topic="hero-article"
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
-    ms.date="03/16/2016"
+    ms.date="06/13/2016"
     ms.author="jgao"/>
 
 # Tutorial do Hadoop: começar a utilizar o Hadoop baseado em Linux no HDInsight
@@ -23,7 +23,7 @@
 - [Baseado em Linux](hdinsight-hadoop-linux-tutorial-get-started.md)
 - [Baseado em Windows](hdinsight-hadoop-tutorial-get-started-windows.md)
 
-Saiba como criar clusters do [Hadoop](http://hadoop.apache.org/) baseados em Linux no HDInsight e como executar tarefas do Hive no HDInsight. O [Apache Hive](https://hive.apache.org/) é o componente mais popular do ecossistema Hadoop. Atualmente, o HDInsight inclui 4 tipos de cluster diferentes: [Hadoop](hdinsight-hadoop-introduction), [Spark](hdinsight-apache-spark-overview.md), [HBase](hdinsight-hbase-overview.md) e [Storm](hdinsight-storm-overview.md).  Cada tipo de cluster suporta um conjunto diferente de componentes. Todos os 4 tipos de cluster suportam o Hive. Para obter uma lista dos componentes suportados no HDInsight, consulte [Quais são as novidades nas versões de cluster do Hadoop fornecidas pelo HDInsight?](hdinsight-component-versioning.md)  
+Saiba como criar clusters do [Hadoop](http://hadoop.apache.org/) baseados em Linux no HDInsight e como executar tarefas do Hive no HDInsight. O [Apache Hive](https://hive.apache.org/) é o componente mais popular do ecossistema Hadoop. Atualmente, o HDInsight inclui quatro tipos de cluster diferentes: [Hadoop](hdinsight-hadoop-introduction.md), [Spark](hdinsight-apache-spark-overview.md), [HBase](hdinsight-hbase-overview.md) e [Storm](hdinsight-storm-overview.md).  Cada tipo de cluster suporta um conjunto diferente de componentes. Todos os 4 tipos de cluster suportam o Hive. Para obter uma lista dos componentes suportados no HDInsight, consulte [Quais são as novidades nas versões de cluster do Hadoop fornecidas pelo HDInsight?](hdinsight-component-versioning.md)  
 
 [AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
@@ -163,6 +163,6 @@ Se gostaria de saber mais sobre como criar ou gerir um cluster do HDInsight, con
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

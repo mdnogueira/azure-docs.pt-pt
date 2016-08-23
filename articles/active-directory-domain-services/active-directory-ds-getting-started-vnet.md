@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="04/25/2016"
+    ms.date="07/06/2016"
     ms.author="maheshu"/>
 
 # Serviços de Domínio do Azure AD *(Pré-visualização)* – Criar ou selecionar uma rede virtual
@@ -72,6 +72,6 @@ A próxima tarefa de configuração consiste em [ativar os Serviços de Domínio
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

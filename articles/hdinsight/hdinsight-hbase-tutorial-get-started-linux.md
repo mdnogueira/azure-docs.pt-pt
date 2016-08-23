@@ -1,7 +1,7 @@
 <properties
     pageTitle="Tutorial do HBase: Introdução aos clusters de HBase no Hadoop baseado em Linux | Microsoft Azure"
     description="Siga este tutorial de HBase para uma introdução ao HBase do Apache com Hadoop no HDInsight. Criar tabelas a partir da shell de HBase e fazer consultas utilizando o Hive."
-    keywords="apache hbase,hbase,hbase shell,hbase tutorial"
+    keywords="apache hbase,hbase,hbase shell,tutorial de hbase"
     services="hdinsight"
     documentationCenter=""
     authors="mumian"
@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="05/04/2016"
+    ms.date="07/25/2016"
     ms.author="jgao"/>
 
 
@@ -61,7 +61,7 @@ O procedimento a seguir utiliza um modelo de ARM do Azure para criar um cluster 
 6. Clique em **Criar**. A criação de um cluster demora cerca de 20 minutos.
 
 
->[AZURE.NOTE] Depois de eliminar um cluster HBase, pode criar outro cluster HBase utilizando o mesmo contentor de blob predefinido. O novo cluster selecionará as tabelas de HBase criadas por si no cluster original.
+>[AZURE.NOTE] Depois de eliminar um cluster HBase, pode criar outro cluster HBase utilizando o mesmo contentor de blob predefinido. O novo cluster selecionará as tabelas de HBase criadas por si no cluster original. Para evitar inconsistências, recomendamos que desative as tabelas do HBase antes de eliminar o cluster.
 
 ## Criar tabelas e inserir dados
 
@@ -111,12 +111,14 @@ Depois de concluir o procedimento a seguir, isto fará mais sentido.
 
         exit
 
+
+
 **Para efetuar o carregamento em massa de dados para a tabela de contactos HBase**
 
 O HBase inclui vários métodos de carregamento dos dados em tabelas.  Para obter mais informações, consulte o artigo [Carregamento em massa](http://hbase.apache.org/book.html#arch.bulk.load).
 
 
-Um ficheiro de dados de exemplo foi carregado para um contentor do blob público, *wasb://hbasecontacts@hditutorialdata.blob.core.windows.net/contacts.txt*.  O conteúdo do ficheiro de dados é:
+Um ficheiro de dados de exemplo foi carregado para um contentor do blob público, *wasbs://hbasecontacts@hditutorialdata.blob.core.windows.net/contacts.txt*.  O conteúdo do ficheiro de dados é:
 
     8396    Calvin Raji     230-555-0191    230-555-0191    5415 San Gabriel Dr.
     16600   Karen Wu        646-555-0113    230-555-0192    9265 La Paz
@@ -135,7 +137,7 @@ Pode criar um ficheiro de texto e carregar o ficheiro para a sua própria conta 
 
 1. Do SSH, execute o seguinte comando para transformar o ficheiro de dados em StoreFiles e armazená-lo num caminho relativo especificado por Dimporttsv.bulk.output:.  Se estiver na Shell de HBase, utilize o comando exit para sair.
 
-        hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dimporttsv.columns="HBASE_ROW_KEY,Personal:Name, Personal:Phone, Office:Phone, Office:Address" -Dimporttsv.bulk.output="/example/data/storeDataFileOutput" Contacts wasb://hbasecontacts@hditutorialdata.blob.core.windows.net/contacts.txt
+        hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dimporttsv.columns="HBASE_ROW_KEY,Personal:Name, Personal:Phone, Office:Phone, Office:Address" -Dimporttsv.bulk.output="/example/data/storeDataFileOutput" Contacts wasbs://hbasecontacts@hditutorialdata.blob.core.windows.net/contacts.txt
 
 4. Execute o seguinte comando para carregar os dados do /example/data/storeDataFileOutput para a tabela HBase:
 
@@ -174,34 +176,59 @@ Pode consultar dados nas tabelas HBase através do Hive. Esta secção cria uma 
 
 1. Numa linha de comandos, utilize o seguinte comando para verificar que se consegue ligar ao cluster do HDInsight:
 
-        curl -u <UserName>:<Password> -G https://<ClusterName>.azurehdinsight.net/templeton/v1/status
+        curl -u <UserName>:<Password> \
+        -G https://<ClusterName>.azurehdinsight.net/templeton/v1/status
 
     Deverá receber uma resposta semelhante ao seguinte:
 
-    {"estado": "ok", "versão": "v1"}
+        {"status":"ok","version":"v1"}
 
-  Os parâmetros utilizados neste comando são os seguintes:
+    Os parâmetros utilizados neste comando são os seguintes:
 
     * **-u** -o nome de utilizador e palavra-passe utilizada para autenticar o pedido.
     * **-G** -indica que se trata de um pedido GET.
 
 2. Utilize o seguinte comando para listar as tabelas HBase existentes:
 
-        curl -u <UserName>:<Password> -G https://<ClusterName>.azurehdinsight.net/hbaserest/
+        curl -u <UserName>:<Password> \
+        -G https://<ClusterName>.azurehdinsight.net/hbaserest/
 
 3. Utilize o seguinte comando para criar uma nova tabela HBase com duas famílias de coluna:
 
-        curl -u <UserName>:<Password> -v -X PUT "https://<ClusterName>.azurehdinsight.net/hbaserest/Contacts1/schema" -H "Accept: application/json" -H "Content-Type: application/json" -d "{\"@name\":\"test\",\"ColumnSchema\":[{\"name\":\"Personal\"},{\"name\":\"Office\"}]}"
+        curl -u <UserName>:<Password> \
+        -X PUT "https://<ClusterName>.azurehdinsight.net/hbaserest/Contacts1/schema" \
+        -H "Accept: application/json" \
+        -H "Content-Type: application/json" \
+        -d "{\"@name\":\"Contact1\",\"ColumnSchema\":[{\"name\":\"Personal\"},{\"name\":\"Office\"}]}" \
+        -v
 
     O esquema é fornecido no formato JSon.
 
 4. Utilize o seguinte comando para inserir alguns dados:
 
-        curl -u <UserName>:<Password> -v -X PUT "https://<ClusterName>.azurehdinsight.net/hbaserest/Contacts1/schema" -H "Accept: application/json" -H "Content-Type: application/json" -d "{\"Row\":{\"key\":\"1000\",\"Cell\":{\"column\":\"Personal:Name\", \"$\":\"John Dole\"}}}"
+        curl -u <UserName>:<Password> \
+        -X PUT "https://<ClusterName>.azurehdinsight.net/hbaserest/Contacts1/false-row-key" \
+        -H "Accept: application/json" \
+        -H "Content-Type: application/json" \
+        -d "{\"Row\":{\"key\":\"MTAwMA==\",\"Cell\":{\"column\":\"UGVyc29uYWw6TmFtZQ==\", \"$\":\"Sm9obiBEb2xl\"}}}" \
+        -v
+
+    Terá de codificar em base64 os valores especificados no comutador -d.  No exemplo:
+
+    - MTAwMA==: 1000
+    - UGVyc29uYWw6TmFtZQ==: Personal:Name
+    - Sm9obiBEb2xl: João Dinis
+
+    [false-row-key](https://hbase.apache.org/apidocs/org/apache/hadoop/hbase/rest/package-summary.html#operation_cell_store_single) permite-lhe inserir múltiplos valores (em lote).
 
 5. Utilize o seguinte comando para obter uma linha:
 
-        curl -u <UserName>:<Password> -v -X GET "https://<ClusterName>.azurehdinsight.net/hbaserest/Contacts1/1000" -H "Accept: application/json"
+        curl -u <UserName>:<Password> \
+        -X GET "https://<ClusterName>.azurehdinsight.net/hbaserest/Contacts1/1000" \
+        -H "Accept: application/json" \
+        -v
+
+Para mais informações sobre o HBase Rest, veja [Guia de Referência do HBase Apache](https://hbase.apache.org/book.html#_rest).
 
 ## Verificar o estado do cluster
 
@@ -252,15 +279,18 @@ O HBase em HDInsight é fornecido com uma interface de utilizador da Web para mo
     - **SOCKS v5**: (selecionado)
     - **DNS remoto**: (selecionado)
 7. Clique em **OK** para guardar as alterações.
-8. Navegar para http://<TheFQDN of a ZooKeeper>:60010/master-status
+8. Navegar para http://&lt;o FQDN de um ZooKeeper>:60010/master-status.
 
 Num cluster de elevada disponibilidade, encontrará uma ligação para o nó mestre HBase atualmente ativo que está a alojar a interface de utilizador na Web.
 
 ##Eliminar o cluster
 
+Para evitar inconsistências, recomendamos que desative as tabelas do HBase antes de eliminar o cluster.
+
 [AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
-## Passos seguintes?
+## Passos seguintes
+
 Neste tutorial do HBase para o HDInsight, aprendeu como criar um cluster HBase e como criar tabelas e ver os dados nessas tabelas a partir da shell HBase. Também aprendeu como utilizar uma consulta Hive nos dados de tabelas de HBase e como utilizar as APIs REST C# para criar uma tabela de HBase e recuperar os dados da tabela.
 
 Para saber mais, consulte:
@@ -297,6 +327,6 @@ Para saber mais, consulte:
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

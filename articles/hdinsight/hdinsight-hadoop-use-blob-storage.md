@@ -1,7 +1,7 @@
 <properties
     pageTitle="Consultar dados a partir do Blob Storage compatível com HDFS | Microsoft Azure"
     description="O HDInsight utiliza o Blob Storage do Azure como o arquivo de macrodados para o HDFS. Saiba como consultar dados a partir do Blob Storage e armazenar os resultados da sua análise."
-    keywords="blob storage,hdfs,structured data,unstructured data"
+    keywords="armazenamento de blobs, hdfs, dados estruturados, dados não estruturados"
     services="hdinsight,storage"
     documentationCenter=""
     tags="azure-portal"
@@ -27,11 +27,7 @@ O Blob Storage do Azure é uma solução de armazenamento para fins gerais robus
 
 O armazenamento de dados no Blob Storage permite eliminar em segurança os clusters do HDInsight que são utilizados para o cálculo sem que haja perda de dados do utilizador.
 
-> [AZURE.NOTE]  A sintaxe *asv://* não é suportada nos clusters do HDInsight versão 3.0. Como tal, as tarefas submetidas para um cluster do HDInsight versão 3.0 que utilizem explicitamente a sintaxe *asv://* falharão. Em vez disso, deve ser utilizada a sintaxe *wasb://*. Além disso, as tarefas submetidas para os clusters do HDInsight versão 3.0 que tenham sido criadas com um metastore existente que contenha referências explícitas a recursos que utilizam a sintaxe asv:// também falharão. É necessário voltar a criar estes metastores utilizando a sintaxe wasb:// para endereçar os recursos.
-
-> Atualmente, o HDInsight suporta apenas blobs de blocos.
-
-> A maioria dos comandos HDFS (por exemplo, <b>ls</b>, <b>copyFromLocal</b> e <b>mkdir</b>) continua a funcionar conforme esperado. Apenas os comandos específicos da implementação nativa do HDFS (que é conhecida como DFS), tal como <b>fschk</b> e <b>dfsadmin</b>, apresentarão um comportamento diferente no Blob Storage do Azure.
+> [AZURE.IMPORTANT] O HDInsight suporta apenas blobs de blocos. Não suporta a página ou o anexo de blobs.
 
 Para obter informações sobre a criação de um cluster do HDInsight, consulte [Introdução ao HDInsight][hdinsight-get-started] ou [Criar clusters do HDInsight][hdinsight-creation].
 
@@ -49,6 +45,7 @@ Além disso, o HDInsight oferece a capacidade de aceder aos dados armazenados no
 
     wasb[s]://<containername>@<accountname>.blob.core.windows.net/<path>
 
+> [AZURE.NOTE] Em versões anteriores ao 3.0 do HDInsight, `asv://` foi utilizado em vez de `wasb://`. `asv://` não deve ser utilizada com clusters de HDInsight 3.0 ou superiores, pois irá resultar num erro.
 
 O Hadoop suporta uma noção do sistema de ficheiros predefinido. O sistema de ficheiros predefinido implica um esquema e uma autoridade predefinidos. Também pode ser utilizado para resolver caminhos relativos. Durante o processo de criação do HDInsight, uma conta do Storage do Azure e um contentor de Blob Storage do Azure específico dessa conta são designados como o sistema de ficheiros predefinido.
 
@@ -83,7 +80,7 @@ Existem várias vantagens associadas ao armazenamento de dados no Blob Storage d
 
 Determinados pacotes e tarefas de MapReduce podem criar resultados intermédios que não pretende realmente armazenar no Blob Storage do Azure. Nesse caso, pode optar por armazenar os dados no HDFS local. Na verdade, o HDInsight utiliza o DFS para vários destes resultados intermédios nas tarefas do Hive e noutros processos.
 
-
+> [AZURE.NOTE] A maioria dos comandos HDFS (por exemplo, <b>ls</b>, <b>copyFromLocal</b> e <b>mkdir</b>) continua a funcionar conforme esperado. Apenas os comandos específicos da implementação nativa do HDFS (que é conhecida como DFS), tal como <b>fschk</b> e <b>dfsadmin</b>, apresentarão um comportamento diferente no Blob Storage do Azure.
 
 ## Criar contentores de blobs
 
@@ -155,10 +152,6 @@ O esquema URI para aceder a ficheiros no Blob Storage a partir do HDInsight é:
     wasb[s]://<BlobStorageContainerName>@<StorageAccountName>.blob.core.windows.net/<path>
 
 
-> [AZURE.NOTE] A sintaxe para endereçar os ficheiros no emulador de armazenamento (em execução no emulador do HDInsight) é <i>wasb://&lt;ContainerName&gt;@storageemulator</i>.
-
-
-
 O esquema URI fornece acesso não encriptado (com o prefixo *wasb:*) e acesso encriptado por SSL (com *wasbs*). Recomendamos a utilização de *wasbs* sempre que possível, mesmo ao aceder a dados que se encontrem dentro da mesma região no Azure.
 
 O &lt;BlobStorageContainerName&gt; identifica o nome do contentor no Blob Storage do Azure.
@@ -166,8 +159,8 @@ O &lt;StorageAccountName&gt; identifica o nome de conta do Storage do Azure. É 
 
 Se o &lt;BlobStorageContainerName&gt; e o &lt;StorageAccountName&gt; não tiverem sido especificados, é utilizado o sistema de ficheiros predefinido. Para os ficheiros no sistema de ficheiros predefinido, pode utilizar um caminho relativo ou um caminho absoluto. Por exemplo, é possível fazer referência ao ficheiro *hadoop-mapreduce-examples.jar* incluído nos clusters do HDInsight ao utilizar um dos seguintes procedimentos:
 
-    wasb://mycontainer@myaccount.blob.core.windows.net/example/jars/hadoop-mapreduce-examples.jar
-    wasb:///example/jars/hadoop-mapreduce-examples.jar
+    wasbs://mycontainer@myaccount.blob.core.windows.net/example/jars/hadoop-mapreduce-examples.jar
+    wasbs:///example/jars/hadoop-mapreduce-examples.jar
     /example/jars/hadoop-mapreduce-examples.jar
 
 > [AZURE.NOTE] O nome de ficheiro é <i>hadoop-examples.jar</i> nos clusters do HDInsight versões 2.1 e 1.6.
@@ -277,7 +270,7 @@ $clusterName = "<HDInsightClusterName>"
     $defines = @{}
     $defines.Add("fs.azure.account.key.$undefinedStorageAccount.blob.core.windows.net", $undefinedStorageKey)
 
-    Invoke-AzureRmHDInsightHiveJob -Defines $defines -Query "dfs -ls wasb://$undefinedContainer@$undefinedStorageAccount.blob.core.windows.net/;"
+    Invoke-AzureRmHDInsightHiveJob -Defines $defines -Query "dfs -ls wasbs://$undefinedContainer@$undefinedStorageAccount.blob.core.windows.net/;"
 
 ## Passos seguintes
 
@@ -308,6 +301,6 @@ Para obter mais informações, consulte:
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

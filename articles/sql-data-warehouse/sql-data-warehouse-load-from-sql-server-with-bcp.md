@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="05/08/2016"
+   ms.date="06/30/2016"
    ms.author="lodipalm;barbkess;sonyama"/>
 
 
@@ -184,26 +184,26 @@ Pode utilizar a função **queryout** do bcp para exportar os resultados de uma 
 ## Passos seguintes
 Para uma descrição geral do carregamento, consulte [Carregar dados para o SQL Data Warehouse][].
 Para mais sugestões de desenvolvimento, consulte [Descrição geral do desenvolvimento no SQL Data Warehouse][].
-Consulte [Estruturar Tabela][] ou a [sintaxe CREATE TABLE][] para mais informações sobre como criar uma tabela no SQL Data Warehouse.
+Consulte [Descrição Geral da Tabela][] ou a [sintaxe CREATE TABLE syntax][] para obter mais informações sobre como criar uma tabela no SQL Data Warehouse.
 
 <!--Image references-->
 
 <!--Article references-->
 
-[Carregar dados para o SQL Data Warehouse]: sql-data-warehouse-overview-load.md
-[Descrição geral do desenvolvimento no SQL Data Warehouse]: sql-data-warehouse-overview-develop.md
-[Estruturar Tabela]: sql-data-warehouse-develop-table-design.md
-[Estatísticas]: sql-data-warehouse-develop-statistics.md
+[Carregar dados para o SQL Data Warehouse]: ./sql-data-warehouse-overview-load.md
+[Descrição geral do desenvolvimento no SQL Data Warehouse]: ./sql-data-warehouse-overview-develop.md
+[Descrição Geral da Tabela]: ./sql-data-warehouse-tables-overview.md
+[Estatísticas]: ./sql-data-warehouse-tables-statistics.md
 
 <!--MSDN references-->
 [bcp]: https://msdn.microsoft.com/library/ms162802.aspx
-[sintaxe CREATE TABLE]: https://msdn.microsoft.com/library/mt203953.aspx
+[sintaxe CREATE TABLE syntax]: https://msdn.microsoft.com/library/mt203953.aspx
 
 <!--Other Web references-->
 [Centro de Transferências da Microsoft]: https://www.microsoft.com/download/details.aspx?id=36433
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

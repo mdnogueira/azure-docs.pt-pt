@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="05/08/2016"
+   ms.date="06/30/2016"
    ms.author="lodipalm;barbkess;sonyama"/>
 
 
@@ -56,7 +56,7 @@ sqlcmd.exe -S <server name> -d <database name> -U <username> -P <password> -I -Q
 "
 ```
 
->[AZURE.NOTE] Consulte [Estruturar Tabela][] ou a [sintaxe CREATE TABLE][] para mais informações sobre como criar uma tabela no SQL Data Warehouse e as opções disponíveis na cláusula WITH.
+>[AZURE.NOTE] Consulte [Descrição Geral da Tabela][] ou a [sintaxe CREATE TABLE][] para obter mais informações sobre como criar uma tabela no SQL Data Warehouse e as opções disponíveis na cláusula WITH.
 
 ### Passo 2: criar um ficheiro de dados de origem
 
@@ -160,10 +160,10 @@ Para mais sugestões de desenvolvimento, consulte [Descrição geral do desenvol
 
 <!--Article references-->
 
-[Carregar dados para o SQL Data Warehouse]: sql-data-warehouse-overview-load.md
-[Descrição geral do desenvolvimento no SQL Data Warehouse]: sql-data-warehouse-overview-develop.md
-[Estruturar Tabela]: sql-data-warehouse-develop-table-design.md
-[Estatísticas]: sql-data-warehouse-develop-statistics.md
+[Carregar dados para o SQL Data Warehouse]: ./sql-data-warehouse-overview-load.md
+[Descrição geral do desenvolvimento no SQL Data Warehouse]: ./sql-data-warehouse-overview-develop.md
+[Descrição Geral da Tabela]: ./sql-data-warehouse-tables-overview.md
+[Estatísticas]: ./sql-data-warehouse-tables-statistics.md
 
 <!--MSDN references-->
 [bcp]: https://msdn.microsoft.com/library/ms162802.aspx
@@ -174,6 +174,6 @@ Para mais sugestões de desenvolvimento, consulte [Descrição geral do desenvol
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

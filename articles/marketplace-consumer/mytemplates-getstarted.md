@@ -33,7 +33,7 @@ As seguintes sugestões ajudá-lo-ão a tirar o máximo partido dos **Modelos** 
 - Um **Modelo** é um recurso encapsulado que contém um modelo do Resource Manager e metadados adicionais. Este comporta-se de uma forma muito semelhante a um item no Marketplace. A principal diferença é que é um item privado em vez de um item público do Marketplace.
 - A biblioteca de **Modelos** funciona bem para utilizadores que necessitam de personalizar as respetivas implementações.
 - Os **Modelos** funcionam bem para utilizadores que necessitam de um repositório simples no Azure.
-- Comece com um modelo do Resource Manager existente. Encontre modelos no [github](https://github.com/Azure/azure-quickstart-templates) ou [Exportar modelo](https://azure.microsoft.com/blog/export-template/) a partir de um grupo de recursos existente.
+- Comece com um modelo do Resource Manager existente. Encontre modelos no [github](https://github.com/Azure/azure-quickstart-templates) ou escolha a opção [Exportar modelo](../resource-manager-export-template.md) a partir de um grupo de recursos existente.
 - Os **Modelos** estão ligados ao utilizador que os publica. O nome do publicador é visível para todas as pessoas que têm acesso de leitura ao mesmo.
 - Os **Modelos** são recursos do Resource Manager e não é possível mudar o nome uma vez publicado.
 
@@ -44,7 +44,7 @@ Existem duas formas de criar um recurso de **Modelo** no Portal do Azure.
 ### Método 1: Criar um novo recurso de Modelo a partir de um grupo de recursos em execução
 
 1. Navegue para um grupo de recursos existente no Portal do Azure. Selecione **Exportar modelo** em **Definições**.
-2. Assim que o modelo do Resource Manager seja exportado, utilize o botão **Guardar Modelo** para guardá-lo no repositório de **Modelos**. Encontre detalhes completos sobre a Exportação do modelo [aqui](https://azure.microsoft.com/blog/export-template/).
+2. Assim que o modelo do Resource Manager seja exportado, utilize o botão **Guardar Modelo** para guardá-lo no repositório de **Modelos**. Encontre detalhes completos sobre a Exportação do modelo [aqui](../resource-manager-export-template.md).
 <br /><br />
 ![Exportar grupo de recursos](media/rg-export-portal1.PNG)  <br />
 
@@ -116,7 +116,7 @@ Selecione **Partilhar** no item de procura ao clicar com o botão direito em ou 
 
 ![Partilhar Modelo](media/share-template-portal1a.png)  <br />
 
- Agora, pode escolher uma função e um utilizador ou grupo para fornecer acesso a um determinado **Modelo**. As funções disponíveis são Proprietário, Leitor e Contribuinte. Obter mais detalhes na secção [controlo de acesso](#access-control-for-a-tenant-resource-provider) abaixo.
+ Agora, pode escolher uma função e um utilizador ou grupo para fornecer acesso a um determinado **Modelo**. As funções disponíveis são Proprietário, Leitor e Contribuinte. Obtenha mais detalhes na secção [controlo de acesso](#access-control-for-a-tenant-resource-provider) acima.
 
 ![Partilhar Modelo](media/share-template-portal2b.png)  <br />
 
@@ -136,6 +136,6 @@ Clique em **Selecionar** e **Ok**. Agora, pode ver os utilizadores ou grupos que
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

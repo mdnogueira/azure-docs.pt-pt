@@ -13,26 +13,12 @@
      ms.topic="hero-article"
      ms.tgt_pltfrm="na"
      ms.workload="na"
-     ms.date="03/22/2016"
+     ms.date="06/16/2016"
      ms.author="dobett"/>
 
 # Introdução ao IoT Hub do Azure para .NET
 
 [AZURE.INCLUDE [iot-hub-selector-get-started](../../includes/iot-hub-selector-get-started.md)]
-
-## Introdução
-
-O IoT Hub do Azure é um serviço completamente gerido que permite comunicações fiáveis e bidirecionais entre milhões de dispositivos Internet das Coisas (IoT) e uma solução de back-end. Um dos maiores desafios de projetos IoT consiste na ligação segura e fiável de dispositivos à solução de back-end. Para abordar este desafio, o IoT Hub:
-
-- Oferece um serviço de mensagens de hiper escala fiável dispositivo para nuvem e nuvem para dispositivo.
-- Tal permite realizar comunicações seguras utilizando credenciais de segurança por dispositivo e controlo de acesso.
-- Inclui bibliotecas de dispositivo para os idiomas e plataformas mais populares.
-
-Este tutorial mostrar-lhe como:
-
-- Utilizar o Portal do Azure para criar um IoT Hub.
-- Criar uma identidade de dispositivo no seu IoT Hub.
-- Criar um dispositivo simulado que envia telemetria à sua back-end em nuvem, e recebe comandos da sua back-end em nuvem.
 
 No final deste tutorial, terá três aplicações de consola do Windows:
 
@@ -243,11 +229,11 @@ Este tutorial guia-o pelos passos para criar um dispositivo-cliente do IoT Hub. 
 
 Pode agora executar as aplicações.
 
-1.  No Visual Studio, no Explorador de Soluções, clique com o botão direito do rato na sua solução e, em seguida, clique em **Definir projetos de Arranque**. Selecione **Vários projetos de arranque** e, em seguida, selecione **Iniciar** como a ação para ambos os projetos **ProcessDeviceToCloudMessages** e **SimulatedDevice**.
+1.  No Visual Studio, no Explorador de Soluções, clique com o botão direito do rato na sua solução e, em seguida, clique em **Definir projetos de Arranque**. Selecione **Vários projetos de arranque** e, em seguida, selecione **Iniciar** como a ação para ambos os projetos **ReadDeviceToCloudMessages** e **SimulatedDevice**.
 
     ![Propriedades do projeto de arranque][41]
 
-2.  Prima **F5** para começar a executar ambas as aplicações. O resultado da consola da aplicação **SimulatedDevice** apresenta as mensagens que o seu dispositivo simulado envia ao seu IoT Hub. O resultado da consola da aplicação **ProcessDeviceToCloudMessages** apresenta as mensagens que recebe o seu IoT Hub.
+2.  Prima **F5** para começar a executar ambas as aplicações. O resultado da consola da aplicação **SimulatedDevice** apresenta as mensagens que o seu dispositivo simulado envia ao seu IoT Hub. O resultado da consola da aplicação **ReadDeviceToCloudMessages** apresenta as mensagens que recebe o seu Hub IoT.
 
     ![Resultado da consola das aplicações][42]
 
@@ -258,11 +244,15 @@ Pode agora executar as aplicações.
 
 ## Passos seguintes
 
-Neste tutorial, configurou um novo IoT Hub no Portal e, de seguida, criou uma identidade de dispositivo no registo de identidade do Hub. Utilizou esta identidade de dispositivo para que a aplicação do dispositivo simulado pudesse enviar mensagens do dispositivo para a nuvem ao Hub. Também criou uma aplicação que apresenta as mensagens recebidas através do Hub. Pode continuar a explorar as funcionalidades do IoT Hub e outros cenários do IoT nos seguintes tutoriais:
+Neste tutorial, configurou um novo IoT Hub no Portal e, de seguida, criou uma identidade de dispositivo no registo de identidade do Hub. Utilizou esta identidade de dispositivo para que a aplicação do dispositivo simulado pudesse enviar mensagens do dispositivo para a nuvem ao Hub. Também criou uma aplicação que apresenta as mensagens recebidas através do Hub. 
 
-- O tutorial [Enviar mensagens da Nuvem para o Disositivo com o IoT Hub][Ink-c2d-tutorial] mostra como enviar mensagens aos dispositivos e processar os relatórios de entrega gerados pelo IoT Hub.
-- O tutorial [Processar mensagens do Dispositivo para a nuvem][Ink-process-d2c-tutorial] mostra como processar de forma fiável a telemetria e mensagens interativas de dispositivos.
-- O tutorial [Carregar ficheiros a partir dos dispositivos][Ink-upload-tutorial] descreve um padrão que utiliza as mensagens da nuvem para o dispositivo para facilitar os carregamentos de ficheiros a partir dos dispositivos.
+Para continuar a introdução ao Hub IoT e explorar outros cenários de IoT, veja:
+
+- [Ligar o seu dispositivo][lnk-connect-device]
+- [Introdução à gestão de dispositivos][lnk-device-management]
+- [Introdução ao SDK do Gateway][lnk-gateway-SDK]
+
+Para saber como expandir a sua solução IoT e processar mensagens do dispositivo para a nuvem à escala, veja o tutorial [Processar mensagens do dispositivo para a nuvem][Ink-process-d2c-tutorial].
 
 <!-- Images. -->
 [41]: ./media/iot-hub-csharp-csharp-getstarted/run-apps1.png
@@ -273,9 +263,7 @@ Neste tutorial, configurou um novo IoT Hub no Portal e, de seguida, criou uma id
 [12]: ./media/iot-hub-csharp-csharp-getstarted/create-identity-csharp3.png
 
 <!-- Links -->
-[Ink-c2d-tutorial]: iot-hub-csharp-csharp-c2d.md
 [lnk-process-d2c-tutorial]: iot-hub-csharp-csharp-process-d2c.md
-[lnk-upload-tutorial]: iot-hub-csharp-csharp-file-upload.md
 
 [lnk-hub-sdks]: iot-hub-sdks-summary.md
 [lnk-free-trial]: http://azure.microsoft.com/pricing/free-trial/
@@ -284,15 +272,17 @@ Neste tutorial, configurou um novo IoT Hub no Portal e, de seguida, criou uma id
 [lnk-eventhubs-tutorial]: ../event-hubs/event-hubs-csharp-ephcs-getstarted.md
 [lnk-devguide-identity]: iot-hub-devguide.md#identityregistry
 [lnk-servicebus-nuget]: https://www.nuget.org/packages/WindowsAzure.ServiceBus
-[lnk-event-hubs-overview]: ../event-hubs/event-hubs-overview.md
+[Ink-event-hubs-overview]: ../event-hubs/event-hubs-overview.md
 
-[lnk-nuget-service-sdk]: https://www.nuget.org/packages/Microsoft.Azure.Devices/
+[Ink-nuget-service-sdk]: https://www.nuget.org/packages/Microsoft.Azure.Devices/
 [lnk-device-nuget]: https://www.nuget.org/packages/Microsoft.Azure.Devices.Client/
-[lnk-transient-faults]: https://msdn.microsoft.com/library/hh680901(v=pandp.50).aspx
+[Ink-transitório-lento]: https://msdn.microsoft.com/library/hh680901(v=pandp.50).aspx
 [lnk-connected-service]: https://visualstudiogallery.msdn.microsoft.com/e254a3a5-d72e-488e-9bd3-8fee8e0cd1d6
+[lnk-device-management]: iot-hub-device-management-get-started.md
+[lnk-gateway-SDK]: iot-hub-linux-gateway-sdk-get-started.md
+[lnk-connect-device]: https://azure.microsoft.com/develop/iot/
 
 
-
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

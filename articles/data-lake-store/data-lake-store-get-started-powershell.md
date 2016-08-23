@@ -13,7 +13,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="04/07/2016"
+   ms.date="07/07/2016"
    ms.author="nitinme"/>
 
 # Introdução ao Azure Data Lake Store utilizando o Azure PowerShell
@@ -43,7 +43,7 @@ Veja a secção Pré-requisitos de [Utilizar o Azure PowerShell com o Azure Reso
 
 ## Criar uma conta do Azure Data Lake Store
 
-1. A partir do ambiente de trabalho, abra uma nova janela do Azure PowerShell e introduza o fragmento seguinte para iniciar sessão na sua conta do Azure, definir a subscrição e registar o fornecedor do Data Lake Store. Quando lhe for pedido para iniciar sessão, certifique-se de que o faz como um dos admininistradores/proprietário da subscrição:
+1. A partir do ambiente de trabalho, abra uma nova janela do Windows PowerShell e introduza o fragmento seguinte para iniciar sessão na sua conta do Azure, definir a subscrição e registar o fornecedor do Data Lake Store. Quando lhe for pedido para iniciar sessão, certifique-se de que o faz como um dos admininistradores/proprietário da subscrição:
 
         # Log in to your Azure account
         Login-AzureRmAccount
@@ -143,6 +143,6 @@ Quando lhe for pedido, introduza **S** para eliminar a conta.
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

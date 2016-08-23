@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="05/02/2016"
+    ms.date="06/07/2016"
     ms.author="davidmu"/>
 
 # Criar uma VM do Windows utilizando o Resource Manager e o PowerShell
@@ -33,34 +33,36 @@ Primeiro, crie um grupo de recursos.
 
 1. Obtenha uma lista de localizações disponíveis onde os recursos podem ser criados.
 
-        Get-AzureLocation | sort Name | Select Name
+        Get-AzureRmLocation | sort Location | Select Location
         
     Deverá ver algo semelhante ao seguinte:
     
-        Name
-        ----
-        Australia East
-        Australia Southeast
-        Brazil South
-        Central India
-        Central US
-        East Asia
-        East US
-        East US 2
-        Japan East
-        Japan West
-        North Central US
-        North Europe
-        South Central US
-        South India
-        Southeast Asia
-        West Europe
-        West India
-        West US
+        Location
+        --------
+        australiaeast
+        australiasoutheast
+        brazilsouth
+        canadacentral
+        canadaeast
+        centralindia
+        centralus
+        eastasia
+        eastus
+        eastus2
+        japaneast
+        japanwest
+        northcentralus
+        northeurope
+        southcentralus
+        southeastasia
+        southindia
+        westeurope
+        westindia
+        westus
 
 2. Substitua o valor de **$locName** por uma localização da lista. Crie a variável.
 
-        $locName = "Central US"
+        $locName = "centralus"
         
 3. Substitua o valor do **$rgName** por um nome para o novo grupo de recursos. Crie a variável e o grupo de recursos.
 
@@ -74,13 +76,13 @@ Primeiro, crie um grupo de recursos.
 1. Substitua o valor do **$stName** por um nome para a conta do Storage. Teste a exclusividade do nome.
 
         $stName = "mystorage1"
-        Test-AzureName -Storage $stName
+        Get-AzureRmStorageAccountNameAvailability $stName
 
-    Se este comando devolve **Falso**, o nome proposto é exclusivo no Azure. Os nomes das contas do Storage devem ter entre 3 e 24 carateres de comprimento e apenas podem conter números e letras minúsculas.
+    Se este comando devolver **Verdadeiro**, o nome proposto é exclusivo no Azure. Os nomes das contas do Storage devem ter entre 3 e 24 carateres de comprimento e apenas podem conter números e letras minúsculas.
     
 2. Agora, execute o comando para criar a conta do Storage.
     
-        $storageAcc = New-AzureRmStorageAccount -ResourceGroupName $rgName -Name $stName -Type "Standard_LRS" -Location $locName
+        $storageAcc = New-AzureRmStorageAccount -ResourceGroupName $rgName -Name $stName -SkuName "Standard_LRS" -Kind "Storage" -Location $locName
         
 ## Passo 4: criar uma rede virtual
 
@@ -120,7 +122,7 @@ Agora que tem todas as peças no local, é a altura de criar a máquina virtual.
 
         $cred = Get-Credential -Message "Type the name and password of the local administrator account."
         
-    A palavra-passe tem de ter entre 8-123 carateres e ter, pelo menos, 3 dos seguintes: uma minúscula, uma maiúscula, um número e um caráter especial. 
+    A palavra-passe tem de ter 12-123 carateres e ter, no mínimo, uma minúscula, uma maiúscula, um número e um caráter especial. 
         
 2. Substitua o valor de **$vmName** por um nome para a máquina virtual. Crie a variável e a configuração da máquina virtual.
 
@@ -172,6 +174,6 @@ Agora que tem todas as peças no local, é a altura de criar a máquina virtual.
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

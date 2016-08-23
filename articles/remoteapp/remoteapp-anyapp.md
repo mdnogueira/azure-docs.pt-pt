@@ -13,7 +13,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="compute"
-   ms.date="05/02/2016"
+   ms.date="07/02/2016"
    ms.author="elizapo"/>
 
 # Executar qualquer aplicação do Windows em qualquer dispositivo com o Azure RemoteApp
@@ -28,7 +28,9 @@ Neste artigo, vamos partilhar o Access com todos os nossos utilizadores. No enta
 
 Como o Access é uma base de dados e queremos que a base de dados seja útil, vamos seguir alguns passos adicionais para permitir que os utilizadores acedam à partilha de dados do Access. Se a aplicação não é uma base de dados ou não precisa que os utilizadores acedam a uma partilha de ficheiros, pode ignorar esses passos neste tutorial
 
-[AZURE.INCLUDE [free-trial-note](../../includes/free-trial-note.md)]
+> [AZURE.NOTE] <a name="note"></a>Para concluir este tutorial, precisa de uma conta do Azure:
+> - Pode [abrir uma conta do Azure gratuitamente](https://azure.microsoft.com/free/?WT.mc_id=A261C142F): obterá créditos que pode utilizar para experimentar serviços pagos do Azure e, mesmo depois de os ter gasto, pode manter a conta e utilizar os serviços gratuitos do Azure, como Web Sites. O seu cartão de crédito não será cobrado, a menos que altere explicitamente as suas definições e peça para ser cobrado.
+> - Pode [ativar os benefícios de subscritor do MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F): a sua subscrição do MSDN dá-lhe créditos todos os meses que pode utilizar em serviços pagos do Azure.
 
 
 ## Criar uma coleção no RemoteApp
@@ -120,6 +122,6 @@ Agora que já aprendeu a criar uma coleção, experimente criar uma [coleção q
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

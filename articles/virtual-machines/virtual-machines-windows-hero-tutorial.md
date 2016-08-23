@@ -1,7 +1,7 @@
 <properties
     pageTitle="Criar a sua primeira VM do Windows | Microsoft Azure"
     description="Saiba como criar a sua primeira máquina virtual do Windows através do Portal do Azure."
-    keywords="Windows virtual machine,create a virtual machine,virtual computer,setting up a virtual machine"
+    keywords="Máquina virtual do Windows, criar uma máquina virtual, computador virtual, configurar uma máquina virtual"
     services="virtual-machines-windows"
     documentationCenter=""
     authors="cynthn"
@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="vm-windows"
     ms.devlang="na"
     ms.topic="hero-article"
-    ms.date="05/05/2016"
+    ms.date="06/07/2016"
     ms.author="cynthn"/>
 
 # Criar a sua primeira máquina virtual do Windows no Portal do Azure
@@ -49,7 +49,7 @@ Depois de selecionar a imagem, pode utilizar as predefinições do Azure para a 
 
 2. Introduza um **Nome de utilizador** e uma **Palavra-passe** forte que será utilizada para criar uma conta local na VM. A conta local é utilizada para iniciar sessão e gerir a VM. 
 
-    A palavra-passe tem de ter, pelo menos, entre 8-123 carateres e ter, pelo menos, 3 dos seguintes: uma minúscula, uma maiúscula, um número e um caráter especial. 
+    A palavra-passe tem de ter entre 12-123 carateres e ter, no mínimo, uma minúscula, uma maiúscula, um número e um caráter especial. 
 
 
 3. Selecione um [Grupo de recursos](../resource-group-overview.md#resource-groups) ou escreva o nome para um novo. Escreva a **Localização** de um datacenter Azure, tal como **EUA Oeste**. 
@@ -84,7 +84,7 @@ Depois de selecionar a imagem, pode utilizar as predefinições do Azure para a 
 
     ![Captura de ecrã do Portal do Azure que mostra como ligar à VM.](./media/virtual-machines-windows-hero-tutorial/connect.png)
 
-4. Irá receber um aviso a informar que o .rdp é de um publicador desconhecido. Isto é normal. Na janela do Ambiente de Trabalho Remoto, clique em **Ligar** para continuar.
+4. Irá receber um aviso a informar que o .rdp é de um publicador desconhecido. Esta é uma situação normal. Na janela Ambiente de Trabalho Remoto, clique em **Ligar** para continuar.
 
     ![Captura de ecrã de um aviso sobre um publicador desconhecido.](./media/virtual-machines-windows-hero-tutorial/rdp-warn.png)
 
@@ -118,6 +118,6 @@ Basta clicar no botão **Iniciar** para reiniciar a VM quando estiver pronto par
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

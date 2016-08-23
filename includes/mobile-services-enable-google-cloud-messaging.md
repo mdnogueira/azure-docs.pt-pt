@@ -14,9 +14,9 @@
 
 4. No dashboard do projeto, em **APIs Móveis**, clique em **Google Cloud Messaging**, na página seguinte, clique em **Ativar API** e aceite os termos de serviço. 
 
-    ![](./media/mobile-services-enable-google-cloud-messaging/enable-GCM.png)
+    ![Ativar o GCM](./media/mobile-services-enable-google-cloud-messaging/enable-GCM.png)
 
-    ![](./media/mobile-services-enable-google-cloud-messaging/enable-gcm-2.png) 
+    ![Ativar o GCM](./media/mobile-services-enable-google-cloud-messaging/enable-gcm-2.png) 
 
 5. No dashboard do projeto, clique em **Credenciais** > **Criar Credencial** > **Chave de API**. 
 
@@ -31,6 +31,6 @@
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

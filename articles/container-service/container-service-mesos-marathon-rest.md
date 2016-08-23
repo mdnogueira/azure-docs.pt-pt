@@ -7,7 +7,7 @@
    manager="timlt"
    editor=""
    tags="acs, azure-container-service"
-   keywords="Docker, Containers, Micro-services, Mesos, Azure"/>
+   keywords="Docker, Contentores, Microserviços, Mesos, Azure"/>
 
 <tags
    ms.service="container-service"
@@ -47,7 +47,7 @@ curl localhost/marathon/v2/apps
 
 ## Implementar um contentor formatado para Docker
 
-Os contentores formatados para Docker são implementados através do Marathon utilizando um ficheiro JSON que descreve a implementação pretendida. O exemplo seguinte implementa o contentor Nginx, a porta de enlace 80 do agente DC/OS para a porta 80 do contentor. Note também que a propriedade “acceptedResourceRoles” está definida para “slave_public”. Isto permitirá implementar o contentor num agente no conjunto de dimensionamento do agente destinado ao público.
+Os contentores formatados para Docker são implementados através do Marathon utilizando um ficheiro JSON que descreve a implementação pretendida. O exemplo seguinte implementa o contentor Nginx, a porta de enlace 80 do agente DC/OS para a porta 80 do contentor. Note também que a propriedade “acceptedResourceRoles” está definida para “slave_public”. Isto permite implementar o contentor num agente no conjunto de dimensionamento do agente destinado ao público.
 
 ```json
 {
@@ -172,14 +172,11 @@ Invoke-WebRequest -Method Put -Uri http://localhost/marathon/v2/apps/nginx -Cont
 
 ## Passos seguintes
 
-[Saiba mais sobre os pontos finais de HTTP do Mesos]( http://mesos.apache.org/documentation/latest/endpoints/).
-[Saiba mais sobre a API REST do Marathon]( https://mesosphere.github.io/marathon/docs/rest-api.html).
+- [Saiba mais sobre os pontos finais de HTTP do Mesos]( http://mesos.apache.org/documentation/latest/endpoints/).
+- [Saiba mais sobre a API REST do Marathon]( https://mesosphere.github.io/marathon/docs/rest-api.html).
 
 
 
-
-
-
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="nodejs"
     ms.topic="get-started-article"
-    ms.date="06/01/2016"
+    ms.date="07/01/2016"
     ms.author="cephalin"/>
 
 # Introdução às Web Apps Node.js no App Service do Azure
@@ -70,7 +70,7 @@ Este tutorial mostra como criar uma aplicação [Node.js][NODEJS] simples e impl
 
     Siga o pedido para selecionar uma região do Azure para a implementação. Se nunca configurou as credenciais de implementação do Git/FTP para a sua subscrição do Azure, ser-lhe-á solicitado que as crie.
 
-3. Abra o ficheiro ./config/config.js na raiz da aplicação e altere a porta de produção para `process.env.port`; o objeto JSON de produção deverá ter um aspeto semelhante ao do exemplo que se segue. Se este caminho de pasta/ficheiro não existir no diretório de raiz da sua aplicação, crie uma pasta denominada **config** no diretório de raiz da sua aplicação e copie o seguinte código JSON para a mesma.
+3. Abra o ficheiro ./config/config.js na raiz da aplicação e altere a porta de produção para `process.env.port`; a sua propriedade `production` no objeto `config` deve parecer-se semelhante ao seguinte exemplo.
 
         production: {
             root: rootPath,
@@ -208,6 +208,7 @@ Para ativar o Node-Inspector, siga estes passos:
 ## Mais recursos
 
 - [Especificar uma versão do Node.js numa aplicação do Azure](../nodejs-specify-node-version-azure-apps.md)
+- [Melhores práticas e guia de resolução de problemas para as aplicações Node.js no Azure](app-service-web-nodejs-best-practices-and-troubleshoot-guide.md)
 - [Como depurar uma aplicação Web Node.js no App Service do Azure](web-sites-nodejs-debug.md)
 - [Utilizar Módulos do Node.js com aplicações do Azure](../nodejs-use-node-modules-azure-apps.md)
 - [Web Apps do App Service do Azure: Node.js](http://blogs.msdn.com/b/silverlining/archive/2012/06/14/windows-azure-websites-node-js.aspx)
@@ -244,6 +245,6 @@ Para ativar o Node-Inspector, siga estes passos:
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

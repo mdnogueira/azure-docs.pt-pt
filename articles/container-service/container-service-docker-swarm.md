@@ -7,7 +7,7 @@
    manager="timlt"
    editor=""
    tags="acs, azure-container-service"
-   keywords="Docker, Containers, Micro-services, Mesos, Azure"/>
+   keywords="Docker, Contentores, Microserviços, Mesos, Azure"/>
 
 <tags
    ms.service="container-service"
@@ -30,7 +30,7 @@ Pré-requisitos para os exercícios deste documento:
 
 ## Implementar um novo contentor
 
-Para criar um novo contentor no Docker Swarm, utilizar o comando `docker run`. Este exemplo cria um contentor a partir da imagem `yeasy/simple-web`:
+Para criar um novo contentor no Docker Swarm, utilize o comando `docker run` (certificando-se de que tem aberto um túnel SSH para os principais, de acordo com os pré-requisitos acima). Este exemplo cria um contentor a partir da imagem `yeasy/simple-web`:
 
 
 ```bash
@@ -54,9 +54,11 @@ Agora pode aceder à aplicação que está em execução neste contentor atravé
 
 ![Resultados da visita reais](media/real-visit.jpg)  
 
+Por predefinição, o Balanceador de Carga tem as portas 80, 8080 e 443 abertas. Se pretender ligar-se a outra porta terá de abrir essa porta no Balanceador de Carga do Azure para o Agrupamento de Agentes.
+
 ## Implementar vários contentores
 
-Como os vários contentores são iniciados no cluster Docker Swarm, pode utilizar o comando `docker ps` para ver em que os anfitriões os contentores estão em execução. Neste exemplo, três contentores são distribuídos uniformemente por três agentes Swarm:  
+Como os vários contentores são iniciados, executando "docker run" várias vezes, pode utilizar o comando `docker ps` para ver em que os anfitriões os contentores estão em execução. No exemplo abaixo, três contentores são distribuídos uniformemente por três agentes Swarm:  
 
 
 ```bash
@@ -70,7 +72,7 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 
 ## Implementar contentores utilizando o Docker Compose
 
-Pode utilizar o Docker Compose para automatizar a implementação e a configuração de vários contentores. Para tal, certifique-se de que foi criado um túnel Secure Shell (SSH) e que a variável DOCKER_HOST foi definida.
+Pode utilizar o Docker Compose para automatizar a implementação e a configuração de vários contentores. Para tal, certifique-se de que foi criado um túnel Secure Shell (SSH) e que a variável DOCKER_HOST foi definida (ver os pré-requisitos acima).
 
 Crie um ficheiro docker-compose.yml no sistema local. Para tal, utilize este [exemplo](https://raw.githubusercontent.com/rgardler/AzureDevTestDeploy/master/docker-compose.yml).
 
@@ -115,12 +117,14 @@ caf185d221b7        adtd/web:0.1        "apache2-foreground"   2 minutes ago    
 040efc0ea937        adtd/rest:0.1       "catalina.sh run"      3 minutes ago       Up 2 minutes        10.0.0.4:8080->8080/tcp   swarm-agent-3B7093B8-0/compose_rest_1
 ```
 
+Naturalmente, pode utilizar `docker-compose ps` para examinar apenas os contentores definidos noficheiro `compose.yml`.
+
 ## Passos seguintes
 
 [Saiba mais sobre o Docker Swarm](https://docs.docker.com/swarm/)
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

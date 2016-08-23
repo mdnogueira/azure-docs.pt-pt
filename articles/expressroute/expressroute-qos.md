@@ -12,7 +12,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="04/18/2016"
+   ms.date="07/19/2016"
    ms.author="cherylmc"/>
 
 # Requisitos do QoS do ExpressRoute
@@ -21,7 +21,7 @@ O Skype para Empresas tem várias cargas de trabalho que exigem um tratamento do
 
 ![](./media/expressroute-qos/expressroute-qos.png)
 
->[AZURE.NOTE] Os requisitos do QoS aplicam-se apenas ao peering da Microsoft.
+>[AZURE.NOTE] Os requisitos do QoS aplicam-se apenas ao peering da Microsoft. Os valores DSCP no seu tráfego recebido de rede no peering público do Azure e no peering privado do Azure serão repostos a 0. 
 
 A tabela seguinte fornece uma lista de marcações DSCP utilizadas pelo Skype para Empresas. Para obter mais informações, veja [Gerir QoS para Skype para Empresas](https://technet.microsoft.com/library/gg405409.aspx).
 
@@ -52,6 +52,6 @@ A tabela seguinte fornece uma lista de marcações DSCP utilizadas pelo Skype pa
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

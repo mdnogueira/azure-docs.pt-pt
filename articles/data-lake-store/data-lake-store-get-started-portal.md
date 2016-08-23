@@ -13,7 +13,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
-   ms.date="05/11/2016"
+   ms.date="08/02/2016"
    ms.author="nitinme"/>
 
 # Introdução ao Azure Data Lake Store utilizando o Portal do Azure
@@ -136,9 +136,10 @@ Para eliminar uma conta do Azure Data Lake Store, a partir do painel Data Lake S
 - [Proteger dados no Data Lake Store](data-lake-store-secure-data.md)
 - [Utilizar o Azure Data Lake Analytics com o Data Lake Store](../data-lake-analytics/data-lake-analytics-get-started-portal.md)
 - [Utilizar o Azure HDInsight com o Data Lake Store](data-lake-store-hdinsight-hadoop-use-portal.md)
+- [Registos de diagnóstico de acesso para o Data Lake Store](data-lake-store-diagnostic-logs.md)
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

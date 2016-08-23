@@ -4,7 +4,7 @@
     services="active-directory"
     documentationCenter=""
     authors="markusvi"
-    manager="stevenpo"
+    manager="femila"
     editor=""/>
 
 <tags
@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="04/16/2016" 
+    ms.date="07/13/2016"
     ms.author="MarkVi"/>
 
 # Adicionar a imagem corporativa às suas páginas de início de sessão e Painel de Acesso
@@ -46,9 +46,7 @@ Quando visita um serviço com URLs específicos de não inquilino (por exemplo, 
 
 > [AZURE.NOTE]
 >
-
 - O nome de domínio tem de aparecer como “Ativo” na secção **Domínios** > **do Diretório** > **do Active Directory** do Portal Clássico do Azure onde tiver configurado uma imagem corporativa.
-
 - A imagem corporativa na página de início de sessão de imagem não passa para a página de sessão do consumidor da Microsoft. Se iniciar sessão com uma conta Microsoft pessoal, poderá ver uma lista de mosaicos de utilizador com marca corporativa composto pelo Azure AD, mas a aplicação de imagem corporativa da sua organização não se aplica à página de início de sessão da Microsoft.
 
 
@@ -107,7 +105,7 @@ Também pode localizar todos os elementos nesta página. Depois de configurar um
 
 ## Personalização de página do painel de acesso
 
-A página do Painel de Acesso é essencialmente uma página de portal para um acesso rápido às aplicações da nuvem a que o seu administrador lhe concedeu acesso. Nesta página, as suas aplicações são apresentados como mosaicos clicáveis de aplicações. 
+A página do Painel de Acesso é essencialmente uma página de portal para um acesso rápido às aplicações da nuvem a que o seu administrador lhe concedeu acesso. Nesta página, as suas aplicações são apresentados como mosaicos clicáveis de aplicações.
 
 
 A seguinte captura de ecrã mostra um exemplo de uma página do painel de acesso após a personalização.
@@ -118,14 +116,14 @@ A seguinte captura de ecrã mostra um exemplo de uma página do painel de acesso
 
 Pode configurar um conjunto predefinido de elementos personalizáveis por diretório no Portal Clássico do Azure. Uma vez guardadas as predefinições, um administrador pode adicionar versões localizadas de cada elemento, para idiomas / regiões diferentes. Todos os elementos personalizáveis são opcionais.
 
-Por exemplo, se configurar um Logótipo de Faixa predefinido, mas não uma Ilustração Grande, a página de início de sessão apresenta o seu logótipo no canto superior direito. É no entanto apresentada a ilustração predefinida do site. 
+Por exemplo, se configurar um Logótipo de Faixa predefinido, mas não uma Ilustração Grande, a página de início de sessão apresenta o seu logótipo no canto superior direito. É no entanto apresentada a ilustração predefinida do site.
 
 Imagine a seguinte configuração:
 
-- Um Logótipo de Faixa e Texto da Página de Início de Sessão predefinidos em inglês 
-- Um Texto da Página de Início de Sessão específico para o alemão 
+- Um Logótipo de Faixa e Texto da Página de Início de Sessão predefinidos em inglês
+- Um Texto da Página de Início de Sessão específico para o alemão
 
-Se a sua preferência de idioma é alemão, verá o Logótipo de Faixa predefinido, mas o texto em alemão. 
+Se a sua preferência de idioma é alemão, verá o Logótipo de Faixa predefinido, mas o texto em alemão.
 
 Embora possa tecnicamente configurar um conjunto diferente para cada idioma suportado pelo Azure AD, recomendamos que mantenha o número de variações baixo, por motivos de manutenção e desempenho.
 
@@ -180,8 +178,8 @@ Recomendamos que experimente com um inquilino de teste antes de efetuar alteraç
 
 **Para verificar se a imagem corporativa foi aplicada:**
 
-1. Abra uma sessão de browser InPrivate ou Incognito. 
-2. Visite https://outlook.com/contoso.com, substituindo contoso.com com o domínio que tenha personalizado. 
+1. Abra uma sessão de browser InPrivate ou Incognito.
+2. Visite https://outlook.com/contoso.com, substituindo contoso.com com o domínio que tenha personalizado.
 
 Isto também funciona com domínios com o aspeto de contoso.onmicrosoft.com.
 
@@ -224,6 +222,6 @@ Cor de Fundo da Página de Início de Sessão | A cor de fundo de página de in�
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

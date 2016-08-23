@@ -162,6 +162,20 @@ Substitua a chave de instrumentação que recebeu do portal do Azure.
 * A chave de instrumentação é enviada juntamente com todos os itens de telemetria e diz ao Application Insights para apresentá-la no seu recurso.
 * O componente de Pedido HTTP é opcional. Envia automaticamente telemetria sobre pedidos e tempos de resposta para o portal.
 * A correlação de eventos é uma adição ao componente de pedido HTTP. Atribui um identificador a cada pedido recebido pelo servidor e adiciona-o como uma propriedade a todos os itens de telemetria como a propriedade “Operation.Id”. Permite-lhe correlacionar a telemetria associada a cada pedido, definindo um filtro em [pesquisa de diagnóstico][diagnóstico].
+* A chave do Application Insight pode ser transmitida dinamicamente a partir do portal do Azure como uma propriedade de sistema (-DAPPLICATION_INSIGHTS_IKEY=your_ikey). Se não houver uma propriedade definida, verifica a existência de uma variável de ambiente (APPLICATION_INSIGHTS_IKEY) no Appsetting do Azure. Se ambas as propriedades não estiverem definidas, a InstrumentationKey predefinida é utilizada a partir do ApplicationInsights.xml. Isto ajuda a gerir dinamicamente o InstrumentationKey diferente para o ambiente diferente.
+
+### Maneiras alternativas de definir a chave de instrumentação
+
+O SDK do Application Insights procura a chave pela seguinte ordem:
+
+1. Propriedade de sistema: -DAPPLICATION_INSIGHTS_IKEY=your_ikey
+2. Variável de ambiente: APPLICATION_INSIGHTS_IKEY
+3. Ficheiro de configuração: ApplicationInsights.xml
+
+Também pode [defini-lo no código](app-insights-api-custom-events-metrics.md#ikey):
+
+    telemetryClient.InstrumentationKey = "...";
+
 
 ## 4. Adicionar um filtro HTTP
 
@@ -248,16 +262,14 @@ Ao visualizar as propriedades de um pedido, pode ver os eventos de telemetria as
 ![Exemplo de Análise](./media/app-insights-java-get-started/025.png)
 
 
-## 5. Instalar a aplicação no servidor
+## 7. Instalar a aplicação no servidor
 
 Agora publique a aplicação no servidor, permita que as pessoas a utilizem e veja a telemetria a ser mostrada no portal.
 
 * Certifique-se que a firewall permite à aplicação enviar telemetria para estas portas:
 
  * dc.services.visualstudio.com:443
- * dc.services.visualstudio.com:80
  * f5.services.visualstudio.com:443
- * f5.services.visualstudio.com:80
 
 
 * Nos servidores do Windows, instale:
@@ -403,6 +415,6 @@ Para obter mais informações, veja [Centro para Programadores do Java](/develop
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

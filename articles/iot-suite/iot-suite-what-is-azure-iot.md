@@ -29,15 +29,14 @@ Também poderá estar interessado no serviço [Azure IoT Hub][] utilizado por mu
 
 ## Passos seguintes
 
-Explore estes recursos para obter mais informações sobre IoT no Azure:
+Explore estes recursos para saber mais sobre o IoT Suite e as soluções pré-configuradas:
 
-- [Descrição geral do Azure IoT Suite][lnk-suite-overview].
-- [Introdução às soluções pré-configuradas do IoT][lnk-preconfigured-solutions].
-- [Ligar o seu dispositivo à solução de monitorização remota do IoT Suite][lnk-connecting].
-- [Azure IoT Hub]
+- [O que é o Azure IoT Suite?][Ink-whatissuite]
+- [Quais são as soluções pré-configuradas do Azure IoT Suite?][lnk-whatarepreconfigured]
 
-[lnk-suite-overview]: iot-suite-overview.md
-[lnk-connecting]: iot-suite-connecting-devices.md
+[lnk-whatissuite]: iot-suite-overview.md
+[lnk-whatarepreconfigured]: iot-suite-what-are-preconfigured-solutions.md
+
 [lnk-preconfigured-solutions]: iot-suite-getstarted-preconfigured-solutions.md
 [Azure IoT Hub]: https://azure.microsoft.com/documentation/services/iot-hub/
 [Azure Event Hubs]: https://azure.microsoft.com/documentation/services/event-hubs/
@@ -47,6 +46,6 @@ Explore estes recursos para obter mais informações sobre IoT no Azure:
 [lnk-predictive-maintenance]: iot-suite-predictive-overview.md
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

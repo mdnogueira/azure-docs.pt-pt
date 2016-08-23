@@ -28,13 +28,13 @@ Cada solução pré-configurada é uma implementação completa, ponto-a-ponto, 
 
 Para além de implementar e executar as soluções no Azure, pode ainda transferir o código de origem completo e personalizar e expandir a solução para que responda aos seus requisitos específicos do IoT.
 
-> [AZURE.NOTE] Para implementar uma das soluções pré-configuradas, consulte [Microsoft Azure IoT Suite][Ink-azureiotsuite]. O artigo [Introdução às soluções pré-configuradas do IoT][Ink-preconf-get-started] fornece mais informações sobre a implementação e a execução de uma das soluções.
+> [AZURE.NOTE] Para implementar uma das soluções pré-configuradas, consulte [Microsoft Azure IoT Suite][Ink-azureiotsuite]. O artigo [Introdução às soluções pré-configuradas do IoT][Ink-getstarted-preconfigured] fornece mais informações sobre a implementação e a execução de uma das soluções.
 
 A tabela seguinte mostra a forma como as soluções mapeiam funcionalidades específicas do IoT:
 
 | Solução | Ingestion de Dados | Identidade do Dispositivo | Comando e Controlo | Regras e Ações | Análise Preditiva |
 |------------------------|-----|-----|-----|-----|-----|
-| [Monitorização remota][Ink-preconf-get-started] | Sim | Sim | Sim | Sim | -   |
+| [Monitorização remota][lnk-getstarted-preconfigured] | Sim | Sim | Sim | Sim | -   |
 | [Manutenção preditiva][lnk-predictive-maintenance] | Sim | Sim | Sim | Sim | Sim |
 
 - *Ingestão de dados*: Entrada de dados à escala na nuvem.
@@ -117,10 +117,7 @@ Nesta solução pré-configurada, o portal de solução faz parte da **solução
 
 Para mais informações sobre as arquiteturas da solução IoT, consulte [Serviços do Microsoft Azure IoT: Arquitetura de Referência][Ink-refarch].
 
-Explore estes recursos para obter mais informações sobre as soluções pré-configuradas de IoT:
-
-- [Introdução às soluções pré-configuradas do IoT][lnk-preconf-get-started]
-- [Descrição geral da solução pré-configurada de manutenção preditiva][lnk-predictive-maintenance]
+Agora que sabe o que é uma solução pré-configurada, pode começar por implementar a solução pré-configurada de *monitorização remota*: [Introdução às soluções pré-configuradas][lnk-getstarted-preconfigured].
 
 [img-remote-monitoring-arch]: ./media/iot-suite-what-are-preconfigured-solutions/remote-monitoring-arch1.png
 [img-dashboard]: ./media/iot-suite-what-are-preconfigured-solutions/dashboard.png
@@ -128,15 +125,13 @@ Explore estes recursos para obter mais informações sobre as soluções pré-co
 [lnk-asa]: https://azure.microsoft.com/documentation/services/stream-analytics/
 [lnk-event-processor]: ../event-hubs/event-hubs-programming-guide.md#event-processor-host
 [lnk-web-job]: ../app-service-web/web-sites-create-web-jobs.md
-[lnk-document-db]: https://azure.microsoft.com/documentation/services/documentdb/
 [lnk-identity-registry]: ../iot-hub/iot-hub-devguide.md#device-identity-registry
-[lnk-suite-overview]: iot-suite-overview.md
-[lnk-preconf-get-started]: iot-suite-getstarted-preconfigured-solutions.md
 [lnk-predictive-maintenance]: iot-suite-predictive-overview.md
 [lnk-azureiotsuite]: https://www.azureiotsuite.com/
 [lnk-refarch]: http://download.microsoft.com/download/A/4/D/A4DAD253-BC21-41D3-B9D9-87D2AE6F0719/Microsoft_Azure_IoT_Reference_Architecture.pdf
+[lnk-getstarted-preconfigured]: iot-suite-getstarted-preconfigured-solutions.md
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

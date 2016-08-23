@@ -149,7 +149,7 @@ Depois de criar os serviços ligados, temos de definir os conjuntos de dados.  N
 
 ## Passo 3: criar e executar o pipeline
 
-Por último, iremos configurar e executar o pipeline no Azure Data Factory.  Esta é a operação que irá concluir o movimento de dados.  Pode encontrar uma visão completa das operações que pode realizar com o SQL Data Warehouse e o Azure Data Factory [aqui][Mover dados de e para o Azure SQL Data Warehouse com o Azure Data Factory].
+Por último, iremos configurar e executar o pipeline no Azure Data Factory.  Esta é a operação que irá concluir o movimento de dados.  Pode encontrar uma visão completa das operações que pode realizar com o SQL Data Warehouse e o Azure Data Factory [aqui][Mover dados para e do Azure SQL Data Warehouse, utilizando o Azure Data Factory].
 
 Na secção “Criar e implementar”, clique agora em “Mais comandos” e, em seguida, em “Novo pipeline”.  Depois de criar o pipeline, pode utilizar o código abaixo para transferir os dados para o armazém de dados:
 
@@ -226,8 +226,8 @@ Estes tópicos fornecem informações detalhadas sobre o Azure Data Factory. Abr
 [Data Factory]: sql-data-warehouse-get-started-load-with-azure-data-factory.md
 [Introdução ao Azure Data Factory (Data Factory Editor)]: ../data-factory/data-factory-build-your-first-pipeline-using-editor.md
 [Introdução ao Azure Data Factory]: ../data-factory/data-factory-introduction.md
-[Carregar dados de exemplo para o SQL Data Warehouse]: sql-data-warehouse-get-started-manually-load-samples.md
-[Mover dados de e para o Azure SQL Data Warehouse com o Azure Data Factory]: ../data-factory/data-factory-azure-sql-data-warehouse-connector.md
+[Carregar dados de exemplo para o SQL Data Warehouse]: sql-data-warehouse-load-sample-databases.md
+[Mover dados para e do Azure SQL Data Warehouse, utilizando o Azure Data Factory]: ../data-factory/data-factory-azure-sql-data-warehouse-connector.md
 [PolyBase]: sql-data-warehouse-get-started-load-with-polybase.md
 [Tutorial com cenário real]: ../data-factory/data-factory-tutorial.md
 [Tutorial: copiar dados do Blob de Armazenamento do Azure para a Base de Dados SQL do Azure]: ../data-factory/data-factory-get-started
@@ -242,6 +242,6 @@ Estes tópicos fornecem informações detalhadas sobre o Azure Data Factory. Abr
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

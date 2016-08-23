@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="dotnet"
     ms.topic="get-started-article"
-    ms.date="04/22/2016"
-    ms.author="tdykstra"/>
+    ms.date="07/22/2016"
+    ms.author="rachelap"/>
 
 # Implementar uma aplicação Web ASP.NET no App Service do Azure com o Visual Studio
 
@@ -239,9 +239,12 @@ Neste tutorial, aprendeu a criar uma aplicação Web simples e a implementá-la 
 
 * Elimine o grupo de recursos que contém a aplicação Web e quaisquer recursos relacionados do Azure quando tiver terminado com os mesmos.
 
-    Para obter informações sobre como trabalhar com grupos de recursos no Portal do Azure, consulte o artigo [Utilizar o Portal do Azure para implementar e gerir os recursos do Azure](../resource-group-portal.md).   
+    Para obter informações sobre como trabalhar com grupos de recursos no Portal do Azure, veja [Implementar recursos com modelos do Resource Manager e com o portal do Azure](../resource-group-template-deploy-portal.md).   
+
+*   Para obter mais exemplos de criação de uma Aplicação Web ASP.NET no Serviço de Aplicações, veja [Create and deploy an ASP.NET web app in Azure App Service (Criar e implementar uma aplicação Web ASP.NET no Serviço de Aplicações do Azure)](https://github.com/Microsoft/HealthClinic.biz/wiki/Create-and-deploy-an-ASP.NET-web-app-in-Azure-App-Service) e [Create and deploy a mobile app in Azure App Service (Criar e implementar uma aplicação móvel no Serviço de Aplicações do Azure)](https://github.com/Microsoft/HealthClinic.biz/wiki/Create-and-deploy-a-mobile-app-in-Azure-App-Service) da [demonstração](https://blogs.msdn.microsoft.com/visualstudio/2015/12/08/connectdemos-2015-healthclinic-biz/) de [HealthClinic.biz](https://github.com/Microsoft/HealthClinic.biz) 2015 Connect. Para obter mais inícios rápidos a partir da demonstração de HealthClinic.biz, veja [Inícios Rápidos de Ferramentas de Programador do Azure](https://github.com/Microsoft/HealthClinic.biz/wiki/Azure-Developer-Tools-Quickstarts).
 
 
-<!--HONumber=Jun16_HO2-->
+
+<!--HONumber=Aug16_HO1-->
 
 

@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="05/10/2016"
+   ms.date="06/30/2016"
    ms.author="lodipalm;barbkess;sonyama"/>
 
 
@@ -109,7 +109,7 @@ Para copiar os dados para o armazenamento de blobs do Azure:
     .\AzCopy.exe /Source:C:\Temp\ /Dest:<blob service endpoint URL> /datacontainer/datedimension/ /DestKey:<azure_storage_account_key> /Pattern:DimDate2.txt
     ```
 
-Consulte também [Introdução ao Utilitário de Linha de Comandos AzCopy][].
+Consulte também a [Getting Started with the AzCopy Command-Line Utility (Introdução ao Utilitário de Linha de Comandos AzCopy)][versão mais recente do AzCopy].
 
 ### E. Explorar o contentor do armazenamento de blobs
 
@@ -256,13 +256,10 @@ Consulte o [Guia do PolyBase][] para obter informações adicionais que deve con
 
 
 <!--Article references-->
-[Tutorial do PolyBase no SQL Data Warehouse]: sql-data-warehouse-get-started-load-with-polybase.md
-[Carregar dados com o bcp]: sql-data-warehouse-load-with-bcp.md
-[parceiros de solução]: sql-data-warehouse-solution-partners.md
-[descrição geral do desenvolvimento]: sql-data-warehouse-overview-develop.md
-[Estatísticas]: sql-data-warehouse-develop-statistics.md
-[Guia do PolyBase]: sql-data-warehouse-load-polybase-guide.md
-[Introdução ao Utilitário de Linha de Comandos AzCopy]: ../storage/storage-use-azcopy.md
+[Tutorial do PolyBase no SQL Data Warehouse]: ./sql-data-warehouse-get-started-load-with-polybase.md
+[Carregar dados com o bcp]: ./sql-data-warehouse-load-with-bcp.md
+[Estatísticas]: ./sql-data-warehouse-tables-statistics.md
+[Guia do PolyBase]: ./sql-data-warehouse-load-polybase-guide.md
 [versão mais recente do AzCopy]: ../storage/storage-use-azcopy.md
 
 <!--External references-->
@@ -289,6 +286,6 @@ Consulte o [Guia do PolyBase][] para obter informações adicionais que deve con
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

@@ -13,20 +13,12 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="05/26/2016"
+   ms.date="06/03/2016"
    ms.author="curtand"/>
 
 # Gerir o diretório da subscrição do Office 365 no Azure
 
-Este artigo descreve como gerir um diretório criado para uma subscrição do Office 365, mas utilizaremos o Portal Clássico do Azure. Tem de ser Administrador de Serviço ou coadministrador de uma subscrição do Azure para poder iniciar sessão no Portal Clássico do Azure. Se ainda não tem uma subscrição do Azure
-
-1. Pode registar-se utilizando a conta de estudante ou profissional que utiliza para iniciar sessão no Office 365.
-
-![Caixa de entrada do endereço de e-mail](./media/active-directory-manage-o365-subscription/AAD_O365_01.png)
-
-Não será encontrada uma subscrição correspondente do Azure, mas pode clicar em **Inscrever-se no Azure** e as informações relevantes da conta do Office 365 serão pré-povoadas no formulário de inscrição. Por predefinição, a mesma conta será atribuída à função de Administrador de Serviço.
-
-![Ligação para a subscrição do Azure](./media/active-directory-manage-o365-subscription/AAD_O365_02.png)
+Este artigo descreve como gerir um diretório criado para uma subscrição do Office 365 utilizando o portal clássico do Azure. Tem de ser Administrador de Serviço ou coadministrador de uma subscrição do Azure para iniciar sessão no portal clássico do Azure. Se ainda não tiver uma subscrição do Azure, pode inscrever-se para obter uma [avaliação de 30 dias gratuita](https://azure.microsoft.com/trial/get-started-active-directory/) hoje e implementar a sua primeira solução em nuvem em menos de 5 minutos, utilizando a seguinte ligação. Certifique-se de que usa a conta de estudante ou profissional que utiliza para iniciar sessão no Office 365.
 
 Depois de concluir a subscrição do Azure, pode iniciar sessão no Portal Clássico do Azure e aceder aos serviços do Azure. Clique na extensão do Active Directory para gerir o mesmo diretório que autentica os utilizadores do Office 365.
 
@@ -47,7 +39,7 @@ Neste caso, os dois diretórios são independentes entre si.
 Para Miguel Cardoso gerir os dois diretórios enquanto tiver sessão iniciada no Azure como mcardoso@hotmail.com, tem de concluir os seguintes passos:
 
 > [AZURE.NOTE]
-> Estes passos só podem ser concluídos quando o utilizador tiver iniciado sessão com uma conta Microsoft. Se o utilizador tiver iniciado sessão com um conta de estudante ou profissional, a opção **Utilizar diretório existente** não estará disponível, porque a conta de estudante ou profissional só pode ser autenticada pelo seu diretório raiz (ou seja, o diretório onde está armazenada a conta de estudante ou profissional, que é propriedade da escola ou da empresa).
+> Estes passos só podem ser concluídos quando o utilizador tiver iniciado sessão com uma conta Microsoft. Se o utilizador tiver iniciado sessão com uma conta de estudante ou profissional, a opção **Utilizar diretório existente** não está disponível. Uma conta de estudante ou profissional só pode ser autenticada pelo respetivo diretório raiz (ou seja, o diretório onde está armazenada a conta escolar ou profissional e que é propriedade da empresa ou escola).
 
 1.  Inicie sessão no [Portal Clássico do Azure](https://manage.windowsazure.com) como mcardoso@hotmail.com.
 2.  Clique em **Novo** > **Serviços de aplicações** > **Active Directory** > **Diretório** > **Criação Personalizada**.
@@ -60,17 +52,17 @@ Para Miguel Cardoso gerir os dois diretórios enquanto tiver sessão iniciada no
 Depois de concluir estes passos, mcardoso@hotmail.com é um administrador global no diretório da Contoso.
 
 ## Para administrar recursos como administrador global
-Agora vamos imaginar que Júlia Martins precisa de iniciar sessão no Portal Clássico do Azure e administrar Web sites e recursos de base de dados associados à subscrição do Azure de mcardoso@hotmail.com. Para o poder fazer, Miguel Cardoso precisa de concluir estes passos adicionais:
+Agora vamos imaginar que Júlia Martins necessita de administrar Websites e recursos da base de dados associados à subscrição do Azure de mcardoso@hotmail.com. Para o poder fazer, Miguel Cardoso precisa de concluir estes passos adicionais:
 
 1.  Iniciar sessão no [Portal Clássico do Azure](https://manage.windowsazure.com) utilizando a conta de Administrador de Serviços da subscrição do Azure (neste exemplo, mcardoso@hotmail.com).
 2.  Transferir a subscrição para o diretório da Contoso: clicar em **Definições** > **Subscrições** > selecionar a subscrição > **Editar Diretório** > selecionar **Contoso (Contoso.com)**. Como parte da transferência, será removida qualquer conta de estudante ou profissional pertencente a coadministradores da subscrição.
 3.  Adicionar a Júlia Martins como coadministradora da subscrição: clicar em **Definições** > **administradores** > selecionar a subscrição > **Adicionar** > introduzir **JorgeSantos@Contoso.com**.
 
-##Passos seguintes
+## Passos seguintes
 Para mais informações sobre a relação entre subscrições e diretórios, consulte [Como associar uma subscrição a um diretório](active-directory-how-subscriptions-associated-directory.md).
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

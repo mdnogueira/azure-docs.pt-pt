@@ -12,7 +12,7 @@
    ms.topic="get-started-article" 
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services" 
-   ms.date="05/02/2016"
+   ms.date="06/13/2016"
    ms.author="cherylmc"/>
 
 # Descrição geral técnica do ExpressRoute
@@ -69,6 +69,8 @@ Cada circuito ExpressRoute é composto por duas ligações para dois routers de 
 
 ### Conectividade com serviços em nuvem da Microsoft
 
+[AZURE.INCLUDE [expressroute-office365-include](../../includes/expressroute-office365-include.md)]
+
 As ligações ExpressRoute permitem o acesso aos seguintes serviços:
 
 - Serviços do Microsoft Azure
@@ -85,13 +87,13 @@ Por exemplo, se ligar à Microsoft em Amesterdão através do ExpressRoute, ter�
 
 ### Conectividade global com o suplemento do ExpressRoute Premium
 
-Pode ativar a funcionalidade do suplemento ExpressRoute Premium para expandir a conectividade ao longo dos limites geopolíticos. Por exemplo, se estiver ligado à Microsoft em Amesterdão através do ExpressRoute, terá acesso a todos os serviços em nuvem da Microsoft alojados em todas as regiões pelo mundo (exceto nuvens nacional). Pode aceder aos serviços implementados na América do Sul ou Austrália da mesma forma que acede às regiões da Europa do Norte e Europa Ocidental.
+Pode ativar a funcionalidade do suplemento ExpressRoute Premium para expandir a conectividade ao longo dos limites geopolíticos. Por exemplo, se estiver ligado à Microsoft em Amesterdão através do ExpressRoute, terá acesso a todos os serviços em nuvem da Microsoft alojados em todas as regiões pelo mundo (exceto nuvens nacionais). Pode aceder aos serviços implementados na América do Sul ou Austrália da mesma forma que acede às regiões da Europa do Norte e Europa Ocidental.
 
 ### Ecossistema de parceiro de conectividade avançada
 
 O ExpressRoute tem um crescente ecossistema de fornecedores de conectividade e parceiros de SI. Pode ver o artigo [Fornecedores e localizações do ExpressRoute](expressroute-locations.md) para obter as informações mais recentes.
 
-### Conectividade com nuvens nacional
+### Conectividade com nuvens nacionais
 
 A Microsoft funciona em ambientes de nuvem isolados para regiões geopolíticas especiais e segmentos de cliente. Veja a página [Fornecedores e localizações do ExpressRoute](expressroute-locations.md) para obter uma lista de nuvens e fornecedores nacionais.
 
@@ -136,6 +138,6 @@ Pode escolher um modelo de faturação que funciona melhor para si. Escolha entr
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

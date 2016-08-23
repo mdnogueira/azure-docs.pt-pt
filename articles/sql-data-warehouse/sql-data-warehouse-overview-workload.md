@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="05/31/2016"
+   ms.date="07/25/2016"
    ms.author="barbkess;mausher;jrj;sonyama"/>
 
 
@@ -38,7 +38,7 @@ O carregamento de dados é uma grande parte da carga de trabalho do armazém de 
 
 - Tradicionalmente, o processo de carregamento é designado por ETL, que significa Extração, Transformação e Carregamento. Normalmente, os dados precisam de ser transformados para que sejam consistentes com outros dados no armazém de dados. Anteriormente, as empresas utilizavam servidores ETL dedicados para efetuar as transformações. Agora, com um processamento paralelo em grande escala tão rápido, pode carregar primeiro os dados para o SQL Data Warehouse e, em seguida, efetuar as transformações. Este processo é chamado Extração, Carregamento e Transformação (ELT) e está a tornar-se num novo padrão para a carga de trabalho do armazém de dados.
 
-> [AZURE.NOTE] Com o SQL Server CTP2, pode agora efetuar análises em tempo real numa tabela OLTP. Isto não substitui a necessidade de um armazém de dados armazenar e analisar dados, mas proporciona uma forma de efetuar uma análise em tempo real.
+> [AZURE.NOTE] Com o SQL Server 2016, pode agora efetuar análises em tempo real numa tabela OLTP. Isto não substitui a necessidade de um armazém de dados armazenar e analisar dados, mas proporciona uma forma de efetuar uma análise em tempo real.
 
 ### Consultas de análise e relatórios
 As consultas de análise e relatórios são muitas vezes categorizadas em pequenas, médias e grandes, com base em vários critérios, mas geralmente é com base na hora. Na maioria dos armazéns de dados, existe uma carga de trabalho mista de consultas de execução rápida e de execução longa. Em cada caso, é importante determinar esta combinação e determinar a respetiva frequência (de hora a hora, diariamente, no fim do mês, no fim do trimestre, etc.). É importante compreender que a carga de trabalho de consultas mistas, conjugada com a simultaneidade, levam a um planeamento de capacidade adequado de um armazém de dados.
@@ -59,15 +59,13 @@ Uma forma de disponibilizar dados para relatórios e análise consiste em enviar
 - Para análise, pode criar um cubo de análise no armazém de dados e executar análises no armazém de dados ou pré-processar os dados e exportá-los para o servidor de análise para análise adicional.
 
 ## Passos seguintes
-Para começar a desenvolver o seu armazém de dados, consulte a [descrição geral do desenvolvimento][].
-
-## Livros
-[Big Data Warehousing](https://www.manning.com/books/big-data-warehousing), por Karthik Ramachandran, Istvan Szededi e Richard L. Saltzer (Manning Publications). [Capítulo 1](https://manning-content.s3.amazonaws.com/download/e/3d94acd-9512-46c8-b0b0-8c9c3c6a303b/BDW_MEAP_ch1.pdf)
+Agora que já sabe um pouco sobre o SQL Data Warehouse, saiba como [criar um SQL Data Warehouse][] e [carregar dados de exemplo][] rapidamente.
 
 <!--Image references-->
 
 <!--Article references-->
-[descrição geral do desenvolvimento]: sql-data-warehouse-overview-develop.md
+[carregar dados de exemplo]: ./sql-data-warehouse-load-sample-databases.md
+[criar um SQL Data Warehouse]: ./sql-data-warehouse-get-started-provision.md
 
 <!--MSDN references-->
 
@@ -75,6 +73,6 @@ Para começar a desenvolver o seu armazém de dados, consulte a [descrição ger
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

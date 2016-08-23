@@ -12,7 +12,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="06/03/2016"
+   ms.date="06/07/2016"
    ms.author="charwen"/>
 
 # Otimizar o Encaminhamento do ExpressRoute
@@ -44,6 +44,6 @@ A segunda solução é continuar a anunciar ambos os prefixos em ambos os circui
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

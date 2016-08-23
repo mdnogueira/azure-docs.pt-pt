@@ -79,7 +79,7 @@ Para começar a utilizar as funcionalidades do Service Bus no Azure, deve criar,
     O sistema verifica imediatamente a disponibilidade do nome.
     ![][6]
 
-5.  Após verificar se o nome do espaço de nomes está disponível, escolha o país ou a região onde será alojado o espaço de nomes (certifique-se de que utiliza o mesmo país/região onde está a implementar os recursos de computação).
+5.  Após verificar se o nome do espaço de nomes está disponível, escolha o país ou a região onde será alojado o espaço de nomes (verifique se utiliza o mesmo país/região onde está a implementar os recursos de computação).
 
     > [AZURE.IMPORTANT] Escolha a *mesma região* que pretende para a implementação da aplicação. Tal proporcionará o melhor desempenho.
 
@@ -571,11 +571,11 @@ Para obter mais informações sobre o Service Bus, consulte os seguintes recurso
   [46]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/service-bus-policies.png
 
   [sbwacom]: /documentation/services/service-bus/  
-  [sbwacomqhowto]: service-bus-dotnet-how-to-use-queues.md
+  [sbwacomqhowto]: service-bus-dotnet-get-started-with-queues.md
 
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

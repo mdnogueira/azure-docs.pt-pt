@@ -4,7 +4,7 @@
     services="active-directory"
     documentationCenter=""
     authors="kgremban"
-    manager="stevenpo"
+    manager="femila"
     editor=""/>
 
 <tags
@@ -13,18 +13,13 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="06/01/2016"
+    ms.date="07/19/2016"
     ms.author="kgremban"/>
 
 
 # Publicar aplicações com o Proxy da Aplicação do Azure AD
 
-
-Depois de ativar o Proxy da Aplicação do Microsoft Azure Active Directory (AD), pode publicar aplicações no local de modo a que os utilizadores remotos possam aceder às referidas aplicações fora da rede privada.
-
-Este artigo explica os passos para publicar aplicações que estão a ser executadas na sua rede local e fornecem acesso remoto seguro fora da rede. Se ainda não tiver configurado o Proxy da Aplicação ou instalado quaisquer Conectores, siga os passos em [Ativar o Proxy da Aplicação no Portal do Azure](active-directory-application-proxy-enable.md) antes de continuar.
-
-Se utilizar o Proxy da Aplicação do Azure AD pela primeira vez, recomendamos que teste o Conector publicando um site da sua rede privada antes de publicar aplicações.
+A Proxy de Aplicação do Azure AD ajuda-o a fornecer suporte a funcionários remotos através da publicação de aplicações no local para que sejam acedidas através da Internet. Nesta altura, já deve ter [ativado a Proxy de Aplicação no portal clássico do Azure](active-directory-application-proxy-enable.md). Este artigo explica os passos para publicar aplicações que estão a ser executadas na sua rede local e fornecem acesso remoto seguro fora da rede. Depois de concluir este artigo, estará pronto para configurar a aplicação com informação personalizada ou requisitos de segurança.
 
 > [AZURE.NOTE] O Proxy da Aplicação é uma funcionalidade que só estar disponível se tiver efetuado a atualização para a edição Premium ou Basic do Azure Active Directory. Para obter mais informações, consulte [Edições do Azure Active Directory](active-directory-editions.md).
 
@@ -46,10 +41,13 @@ Se utilizar o Proxy da Aplicação do Azure AD pela primeira vez, recomendamos q
 5. Forneça as seguintes informações sobre a aplicação:
 
     - **Nome**: o nome amigável de utilizador para a aplicação. Tem de ser exclusivo no diretório.
-    - **URL interno**: o endereço que o Conector do Proxy da Aplicação utiliza para aceder à aplicação do interior da rede privada. Pode fornecer um caminho específico no servidor de back-end para publicação, enquanto o resto do servidor não é publicado. Desta forma, pode publicar diferentes sites no mesmo servidor e atribuir a cada um o seu próprio nome e regras de acesso.
-    - **Método de pré-autenticação**: a forma como o Proxy da Aplicação verifica os utilizadores antes de conceder acesso à aplicação. Escolha uma das opções no menu pendente.
+    - **URL interno**: o endereço que o Conector do Proxy da Aplicação utiliza para aceder à aplicação do interior da rede privada. Pode fornecer um caminho específico no servidor de back-end para publicação, enquanto o resto do servidor não é publicado. Desta forma, pode publicar sites diferentes no mesmo servidor e atribuir a cada um nome e regras de acesso próprios.
 
-        - Azure Active Directory: o Proxy da Aplicação redireciona os utilizadores para iniciarem sessão no Azure AD, que autenticam as respetivas permissões para o diretório e a aplicação.
+        > [AZURE.TIP] Se publicar um caminho, certifique-se de que inclui todas as imagens, scripts e folhas de estilo necessários para a sua aplicação. Por exemplo, se a aplicação estiver em https://yourapp/app e utiliza as imagens localizadas em https://yourapp/media, deve publicar https://yourapp/ como caminho.
+
+    - **Método de Pré-autenticação**: como a Proxy da Aplicação verifica os utilizadores antes de conceder acesso à aplicação. Escolha uma das opções no menu pendente.
+
+        - Azure Active Directory: a Proxy da Aplicação redireciona os utilizadores para iniciarem sessão no Azure AD, que autentica as respetivas permissões para o diretório e aplicação.
         - Passth-rough: os utilizadores não têm de autenticar-se para aceder à aplicação.
 
     ![Propriedades da aplicação](./media/active-directory-application-proxy-publish/aad_appproxy_appproperties.png)  
@@ -59,13 +57,15 @@ Se utilizar o Proxy da Aplicação do Azure AD pela primeira vez, recomendamos q
 
 ## Atribuir utilizadores e grupos à aplicação
 
-Para que os utilizadores possam aceder à aplicação que publicou, terá de os atribuir individualmente ou em grupos. Para aplicações que requerem pré-autenticação, esta ação garante permissões para utilizar a aplicação. Para aplicações que não necessitam de pré-autenticação, os utilizadores não precisam de permissões. No entanto, terão de ser atribuídos à aplicação para que esta seja apresentada na lista de aplicações.
+Para que os utilizadores possam aceder à aplicação que publicou, terá de os atribuir individualmente ou em grupos. (Lembre-se de atribuir também acesso a si.) Isto requer que cada utilizador tenha uma licença para o Azure básico ou superior. Pode atribuir licenças individualmente ou a grupos. Veja o artigo [Atribuir utilizadores a uma aplicação](active-directory-applications-guiding-developers-assigning-users.md) para obter mais detalhes. 
+
+Para aplicações que requerem pré-autenticação, esta ação garante permissões para utilizar a aplicação. Para aplicações que não necessitam de pré-autenticação, os utilizadores podem continuar a ser atribuídos à aplicação para que esta seja apresentada na lista de aplicações, como MyApps.
 
 1. Depois de concluir o assistente Adicionar Aplicação, será apresentada a página Início Rápido da aplicação. Para gerir quem tem acesso à aplicação, selecione **Utilizadores e grupos**.
 
     ![Início rápido do Proxy da Aplicação para atribuir utilizadores – captura de ecrã](./media/active-directory-application-proxy-publish/aad_appproxy_usersgroups.png)
 
-2. Procure grupos específicos no diretório ou veja todos os utilizadores. Clique na marca de verificação para apresentar os resultados.
+2. Procure grupos específicos no diretório ou veja todos os utilizadores. Para visualizar os resultados de pesquisa, clique na marca de verificação.
 
     ![Procurar grupos ou utilizadores - captura de ecrã](./media/active-directory-application-proxy-publish/aad_appproxy_search.png)
 
@@ -73,8 +73,11 @@ Para que os utilizadores possam aceder à aplicação que publicou, terá de os 
 
 > [AZURE.NOTE] Para aplicações de Autenticação Integrada do Windows, apenas pode atribuir utilizadores e grupos que são sincronizados a partir do Active Directory no local. As aplicações publicadas com o Proxy da Aplicação do Azure Active Directory não podem ser atribuídas a utilizadores que iniciam sessão com uma conta Microsoft ou a convidados. Certifique-se de que os utilizadores iniciam sessão com as credenciais que fazem parte do mesmo domínio que a aplicação que está a publicar.
 
+## Testar a aplicação publicada
 
-## Configuração avançada
+Assim que tiver publicado a aplicação, pode testá-la navegando para o URL que publicou. Certifique-se de que consegue aceder à aplicação, que compõe corretamente e que tudo funciona conforme esperado. Se tiver dificuldade ou aparecer uma mensagem de erro, experimente o [guia de resolução de problemas](active-directory-application-proxy-troubleshoot.md).
+
+## Configurar a aplicação
 
 Pode modificar as aplicações publicadas ou configurar opções avançadas na página Configurar. Nesta página, pode personalizar a aplicação ao alterar o nome ou ao carregar um logótipo. Pode ainda gerir as regras de acesso, como o método de pré-autenticação ou a autenticação multifator.
 
@@ -83,7 +86,7 @@ Pode modificar as aplicações publicadas ou configurar opções avançadas na p
 
 Depois de publicar as aplicações com o Proxy da Aplicação do Azure Active Directory, estas aparecem na lista de Aplicações do Azure AD, onde as pode gerir.
 
-Se desativar os serviços do Proxy da Aplicação depois de ter publicado aplicações, estas não serão eliminadas mas deixarão de ser acessíveis fora da rede privada.
+Se desativar os serviços da Proxy da Aplicação depois de ter publicado aplicações, estas não serão acessíveis fora da rede privada. Isto não elimina as aplicações.
 
 Para ver uma aplicação e certificar-se de que é acessível, faça duplo clique no nome da aplicação. Se o serviço do Proxy da Aplicação estiver desativado e a aplicação não estiver disponível, será exibida uma mensagem de aviso na parte superior do ecrã.
 
@@ -100,6 +103,6 @@ Para obter as notícias e atualizações mais recentes, consulte o [blogue do Pr
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

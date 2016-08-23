@@ -14,7 +14,7 @@
     ms.devlang="node"
     ms.topic="get-started-article"
     ms.date="05/26/2016"
-    ms.author="bradygaster"/>
+    ms.author="rachelap"/>
 
 # Criar uma API RESTful Node.js e implementá-la numa aplicação API no Azure
 
@@ -193,7 +193,7 @@ Nesta secção irá utilizar o Portal do Azure para criar uma nova Aplicação A
 
 6. No menu pendente **Grupo de Recursos**, clique em **Novo** e, em seguida, em **Novo nome do grupo de recursos** introduza "NodejsAPIAppGroup" ou outro nome se preferir. 
 
-    Um [grupo de recursos](../azure-portal/resource-group-portal.md) é uma coleção de recursos do Azure, tais como API Apps, bases de dados e VMs. Para este tutorial, é melhor criar um novo grupo de recursos porque torna mais fácil eliminar num único passo todos os recursos do Azure que criar para o tutorial.
+    Um [grupo de recursos](../resource-group-overview.md) é uma coleção de recursos do Azure, tais como API Apps, bases de dados e VMs. Para este tutorial, é melhor criar um novo grupo de recursos porque torna mais fácil eliminar num único passo todos os recursos do Azure que criar para o tutorial.
 
 4. Clique em **Plano do App Service/Localização** e, em seguida, clique em **Criar Novo**.
 
@@ -314,6 +314,6 @@ Neste momento, já criou com êxito uma aplicação API e implementou o código 
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

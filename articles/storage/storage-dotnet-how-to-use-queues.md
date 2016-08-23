@@ -1,6 +1,6 @@
 <properties
     pageTitle="Introdução ao Armazenamento de filas do Azure através do .NET | Microsoft Azure"
-    description="Envie e receba mensagens no modo assíncrono entre componentes da aplicação utilizando o Armazenamento de filas do Azure. Comece com operações simples de Armazenamento de filas, incluindo criar e eliminar filas e adicionar, ler e eliminar mensagens de filas."
+    description="As Filas do Azure fornecem um serviço de mensagens fiável e assíncrono entre componentes da aplicação. O serviço de mensagens na nuvem permite que os componentes da sua aplicação sejam dimensionados de forma independente."
     services="storage"
     documentationCenter=".net"
     authors="robinsh"
@@ -13,16 +13,18 @@
     ms.tgt_pltfrm="na"
     ms.devlang="dotnet"
     ms.topic="hero-article"
-    ms.date="04/07/2016"
+    ms.date="07/26/2016"
     ms.author="gusapost"/>
 
 # Introdução ao Armazenamento de filas do Azure através do .NET
 
 [AZURE.INCLUDE [storage-selector-queue-include](../../includes/storage-selector-queue-include.md)]
+<br/>
+[AZURE.INCLUDE [storage-try-azure-tools-queues](../../includes/storage-try-azure-tools-queues.md)]
 
 ## Descrição geral
 
-O Armazenamento de filas do Azure é um serviço que fornece filas de mensagens na nuvem. Ao conceber aplicações para o dimensionamento, os componentes da aplicação, muitas vezes, são desacoplados para um dimensionamento independente.  O Armazenamento de filas oferece uma solução de mensagens fiável para uma comunicação assíncrona entre os componentes da aplicação, quer estejam a ser executados na nuvem, no ambiente de trabalho, num servidor no local ou num dispositivo móvel. O Armazenamento de filas também suporta a gestão das tarefas assíncronas e a criação de fluxos de trabalho do processo.
+O armazenamento de Filas do Azure fornece um serviço de mensagens na nuvem entre componentes da aplicação. Ao conceber aplicações para o dimensionamento, os componentes da aplicação, muitas vezes, são desacoplados para um dimensionamento independente. O Armazenamento de filas fornece um serviço de mensagens assíncrono para uma comunicação entre os componentes da aplicação, quer estejam a ser executados na nuvem, no ambiente de trabalho, num servidor no local ou num dispositivo móvel. O Armazenamento de filas também suporta a gestão das tarefas assíncronas e a criação de fluxos de trabalho do processo.
 
 ### Acerca deste tutorial
 
@@ -278,6 +280,6 @@ Agora que aprendeu as noções básicas do Armazenamento de filas, siga estas li
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

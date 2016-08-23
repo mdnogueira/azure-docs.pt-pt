@@ -4,7 +4,7 @@
 
     É apresentado o painel do novo perfil da CDN.
 
-    ![Novo Perfil da CDN](./media/cdn-create-profile/new-cdn-profile.png)
+    ![Novo Perfil da CDN](./media/cdn-create-profile/new-cdn-profile-include.png)
 
 2. Introduza um nome para o seu perfil da CDN.
 
@@ -14,13 +14,13 @@
 
 5. Selecione um **Escalão de preço**.  Veja [Descrição Geral da CDN](cdn-overview.md#azure-cdn-features) para obter uma comparação dos escalões de preço.
     
-    ![Seleção do escalão de preço da CDN](./media/cdn-create-profile/cdn-choose-sku.png)
+    ![Seleção do escalão de preço da CDN](./media/cdn-create-profile/cdn-choose-sku-include.png)
 
 6. Selecione a **Subscrição** para este perfil da CDN.
 
 7. Clique no botão **Criar** para criar o novo perfil. 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

@@ -14,7 +14,7 @@
     ms.devlang="na"
     ms.topic="hero-article"
     ms.date="05/27/2016"
-    ms.author="tdykstra"/>
+    ms.author="rachelap"/>
 
 # Introdução às API Apps, ASP.NET e Swagger no App Service do Azure
 
@@ -233,13 +233,13 @@ Nesta secção, irá utilizar as ferramentas do Azure que estão integradas no a
 
     Se introduzir um nome que outra pessoa já tenha utilizado, verá um ponto de exclamação vermelho à direita.
 
-    O URL da aplicação API será `{APi app name}.azurewebsites.net`.
+    O URL da aplicação API será `{API app name}.azurewebsites.net`.
 
 6. No menu pendente **Grupo de Recursos**, clique em **Novo**, e, em seguida, introduza “ToDoListGroup” ou outro nome, se preferir. 
 
     Um grupo de recursos é uma coleção de recursos do Azure, tais como API Apps, bases de dados, VMs e por aí adiante. Para este tutorial, é melhor criar um novo grupo de recursos porque torna mais fácil eliminar num único passo todos os recursos do Azure que criar para o tutorial.
 
-    Esta caixa permite-lhe selecionar um [grupo de recursos](../azure-portal/resource-group-portal.md) existente ou criar um novo ao escrever um nome diferente a partir de qualquer grupo de recursos existente na sua subscrição.
+    Esta caixa permite-lhe selecionar um [grupo de recursos](../resource-group-overview.md) existente ou criar um novo ao escrever um nome diferente a partir de qualquer grupo de recursos existente na sua subscrição.
 
 4. Clique no botão **Novo** junto ao menu pendente **Plano do App Service**.
 
@@ -391,7 +391,7 @@ O projeto ToDoListAPI já tem o código de cliente gerado, mas nos passos seguin
 
     O parâmetro construtor obtém o URL de ponto final a partir da definição de aplicação `toDoListDataAPIURL`. No ficheiro Web.config, esse valor é definido para o URL de Express de IIS local do projeto API, de modo a que possa executar a aplicação localmente. Se omitir o parâmetro construtor, o ponto final predefinido é o URL a partir do qual gerou o código.
 
-6. A classe de cliente será gerado com um nome diferente com base no nome da aplicação API; altere o código em *Controllers\ToDoListController.cs* para que o nome do tipo corresponda ao que foi gerado no seu projeto. Por exemplo, se denominar a aplicação API ToDoListDataAPI0121, alteraria este código:
+6. A classe de cliente será gerado com um nome diferente com base no nome da aplicação API; altere o código em *Controllers\ToDoListController.cs* para que o nome do tipo corresponda ao que foi gerado no seu projeto. Por exemplo, se denominar a aplicação API ToDoListDataAPI071316, alteraria este código:
 
         private static ToDoListDataAPI NewDataAPIClient()
         {
@@ -399,9 +399,9 @@ O projeto ToDoListAPI já tem o código de cliente gerado, mas nos passos seguin
 
 para este:
 
-        private static ToDoListDataAPI0121 NewDataAPIClient()
+        private static ToDoListDataAPI071316 NewDataAPIClient()
         {
-            var client = new ToDoListDataAPI0121(new Uri(ConfigurationManager.AppSettings["toDoListDataAPIURL"]));
+            var client = new ToDoListDataAPI071316(new Uri(ConfigurationManager.AppSettings["toDoListDataAPIURL"]));
 
 
 ## Criar uma aplicação API para alojar a camada média
@@ -445,7 +445,7 @@ Se chamar a aplicação API de camada média agora, tentaria chamar a camada de 
   	| **Chave** | toDoListDataAPIURL |
   	|---|---|
   	| **Valor** | https://{o nome da aplicação API de camada de dados}.azurewebsites.net |
-  	| **Exemplo** | https://todolistdataapi0121.azurewebsites.net |
+  	| **Exemplo** | https://todolistdataapi.azurewebsites.NET |
 
 4. Clique em **Guardar**.
 
@@ -493,6 +493,6 @@ O modelo do projeto **Aplicação API do Azure** é equivalente a escolher o mod
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

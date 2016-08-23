@@ -1,6 +1,6 @@
 <properties
-    pageTitle="Proteger VMs implementadas no Resource Manager com o Backup do Azure | Microsoft Azure"
-    description="Proteja as VMs implementadas no Resource Manager com o serviço de Backup do Azure. Utilize cópias de segurança de VMs implementadas no Resource Manager e VMs do Premium Storage para proteger os seus dados. Crie e registe um cofre dos Serviços de Recuperação Registe VMs, crie uma política e proteja VMs no Azure."
+    pageTitle="Primeira impressão: proteger VMs do Azure com o cofre de serviços de recuperação | Microsoft Azure"
+    description="Proteger VMs do Azure com um cofre de serviços de recuperação. Utilize cópias de segurança de VMs implementadas no Resource Manager, VMs implementadas de forma Clássica e VMs do Armazenamento Premium para proteger os seus dados. Crie e registe um cofre dos serviços de recuperação. Registe VMs, crie uma política e proteja VMs no Azure."
     services="backup"
     documentationCenter=""
     authors="markgalioto"
@@ -18,13 +18,13 @@
     ms.author="markgal; jimpark"/>
 
 
-# Primeiras impressões: criar uma cópia de segurança das VMs implementadas no Resource Manager para um cofre dos Serviços de Recuperação
+# Primeira impressão: proteger VMs do Azure com um cofre de serviços de recuperação
 
 > [AZURE.SELECTOR]
-- [Efetuar uma cópia de segurança das VMs implementadas no Resource Manager](backup-azure-vms-first-look-arm.md)
-- [Efetuar uma cópia de segurança das VMs no Modo clássico](backup-azure-vms-first-look.md)
+- [Primeira impressão: proteger VMs com um cofre de serviços de recuperação](backup-azure-vms-first-look-arm.md)
+- [Primeira Impressão: proteger VMs do Azure com o cofre de cópia de segurança](backup-azure-vms-first-look.md)
 
-Este tutorial guia-o através dos passos para criar um cofre dos Serviços de Recuperação e efetuar a cópia de segurança de uma máquina virtual do Azure (VM). Os cofres dos Serviços de Recuperação protegem:
+Este tutorial guia-o através dos passos para criar um cofre dos serviços de recuperação e efetuar a cópia de segurança de uma máquina virtual do Azure (VM). Os cofres dos serviços de recuperação protegem:
 
 - VMs implementadas pelo Azure Resource Manager
 - VMs clássicas
@@ -37,20 +37,20 @@ Para obter informações adicionais sobre a proteção de VMs do Premium Storage
 
 A um nível elevado, eis os passos que irá concluir.  
 
-1. Crie um cofre dos Serviços de Recuperação para uma VM.
+1. Crie um cofre dos serviços de recuperação para uma VM.
 2. Utilize o portal do Azure para selecionar um Cenário, definir uma Política e identificar itens para proteger.
 3. Execute a cópia de segurança inicial.
 
 
 
-## Passo 1 – criar um cofre dos Serviços de Recuperação para uma VM
+## Passo 1 – criar um cofre dos serviços de recuperação para uma VM
 
-Um cofre dos Serviços de Recuperação é uma entidade que armazena todas as cópias de segurança e os pontos de recuperação que foram criados ao longo do tempo. O cofre dos Serviços de Recuperação também contém a política de cópia de segurança aplicada às VMs protegidas.
+Um cofre dos serviços de recuperação é uma entidade que armazena todas as cópias de segurança e os pontos de recuperação que foram criados ao longo do tempo. O cofre dos serviços de recuperação também contém a política de cópias de segurança aplicada às VMs protegidas.
 
->[AZURE.NOTE] A criação de cópias de segurança de VMs é um processo local. Não pode efetuar a cópia de segurança de VMs de uma localização para um cofre dos Serviços de Recuperação noutra localização. Por isso, para cada localização do Azure com VMs para a cópia de segurança, tem de existir, pelo menos, um cofre dos Serviços de Recuperação nessa localização.
+>[AZURE.NOTE] A criação de cópias de segurança de VMs é um processo local. Não pode efetuar a cópia de segurança de VMs de uma localização para um cofre dos serviços de recuperação noutra localização. Por isso, para cada localização do Azure com VMs para a cópia de segurança, tem de existir, pelo menos, um cofre dos serviços de recuperação nessa localização.
 
 
-Para criar um cofre dos Serviços de Recuperação:
+Para criar um cofre dos serviços de recuperação:
 
 1. Inicie sessão no [Portal do Azure](https://portal.azure.com/).
 
@@ -58,7 +58,7 @@ Para criar um cofre dos Serviços de Recuperação:
 
     ![Passo 1 da Criação de um Cofre dos Serviços de Recuperação](./media/backup-azure-vms-first-look-arm/browse-to-rs-vaults.png) <br/>
 
-    É apresentada a lista dos cofres dos Serviços de Recuperação.
+    É apresentada a lista dos cofres dos serviços de recuperação.
 
 3. No menu **Cofres dos Serviços de Recuperação**, clique em **Adicionar**.
 
@@ -72,13 +72,13 @@ Para criar um cofre dos Serviços de Recuperação:
 
 5. Clique em **Subscrição** para ver a lista de subscrições disponíveis. Se não tiver a certeza de que subscrição utilizar, utilize a subscrição predefinida (ou sugerida). Apenas haverá várias escolhas se a sua conta organizacional estiver associada a várias subscrições do Azure.
 
-6. Clique em **Grupo de recursos** para ver a lista de Grupos de recursos disponíveis ou clique em **Novo** para criar um novo Grupo de recursos. Para obter informações completas acerca dos Grupos de recursos, consulte [Utilizar o Portal do Azure para implementar e gerir os recursos do Azure](../azure-portal/resource-group-portal.md).
+6. Clique em **Grupo de recursos** para ver a lista de Grupos de recursos disponíveis ou clique em **Novo** para criar um novo Grupo de recursos. Para mais informações mais completas sobre os grupos de Recursos, veja [Descrição geral do Azure Resource Manager](../resource-group-overview.md)
 
 7. Clique em **Localização** para selecionar a região geográfica do cofre. O cofre **tem de** estar na mesma região que as máquinas virtuais que pretende proteger.
 
-    >[AZURE.IMPORTANT] Se não tiver a certeza de qual é a localização em que se encontra a VM, feche a caixa de diálogo de criação do cofre e aceda à lista de Máquinas Virtuais no portal. Se tiver máquinas virtuais em várias regiões, terá de criar um cofre dos Serviços de Recuperação em cada região. Crie o cofre na primeira localização antes de ir para a localização seguinte. Não é necessário especificar contas de armazenamento para armazenar os dados de cópia de segurança – o cofre dos Serviços de Recuperação e o serviço de Backup do Azure processam isto automaticamente.
+    >[AZURE.IMPORTANT] Se não tiver a certeza de qual é a localização em que se encontra a VM, feche a caixa de diálogo de criação do cofre e aceda à lista de Máquinas Virtuais no portal. Se tiver máquinas virtuais em várias regiões, terá de criar um cofre dos serviços de recuperação em cada região. Crie o cofre na primeira localização antes de ir para a localização seguinte. Não é necessário especificar contas de armazenamento para armazenar os dados de cópia de segurança – o cofre dos serviços de recuperação e o serviço de Backup do Azure processam isto automaticamente.
 
-8. Clique em **Criar**. Pode demorar algum tempo até que o cofre dos Serviços de Recuperação seja criado. Monitorize as notificações de estado na área superior direita no portal. Quando o cofre for criado, aparecerá na lista de cofres dos Serviços de Recuperação.
+8. Clique em **Criar**. Pode demorar algum tempo até que o cofre dos serviços de recuperação seja criado. Monitorize as notificações de estado na área superior direita no portal. Quando o cofre for criado, aparecerá na lista de cofres dos serviços de recuperação.
 
     ![Lista de cofres de cópia de segurança](./media/backup-azure-vms-first-look-arm/rs-list-of-vaults.png)
 
@@ -102,15 +102,15 @@ Para editar a definição de replicação de armazenamento:
 
 Antes de registar uma VM com um cofre, execute o processo de deteção para se certificar de que as novas máquinas virtuais que foram adicionadas à subscrição são identificadas. O processo consulta o Azure para obter a lista de máquinas virtuais na subscrição, juntamente com informações adicionais, tais como a região e o nome do serviço em nuvem. No portal do Azure, o cenário refere-se ao que vai introduzir no cofre dos Serviços de Recuperação. A política é a agenda da frequência e de quando os pontos de recuperação são obtidos. A política também inclui o período de retenção para os pontos de recuperação.
 
-1. Se já tiver um cofre dos Serviços de Recuperação aberto, avance para o passo 2. Se não tiver um cofre dos Serviços de Recuperação aberto, mas está no portal do Azure, no menu Hub, clique em **Procurar**.
+1. Se já tiver um cofre dos serviços de recuperação aberto, avance para o passo 2. Se não tiver um cofre dos serviços de recuperação aberto, mas está no portal do Azure, no menu Hub, clique em **Procurar**.
 
   - Na lista de recursos, escreva **Serviços de Recuperação**.
   - À medida que começa a escrever, irá filtrar a lista com base na sua entrada. Quando vir **Cofres dos Serviços de Recuperação**, clique no mesmo.
 
     ![Passo 1 da Criação de um Cofre dos Serviços de Recuperação](./media/backup-azure-vms-first-look-arm/browse-to-rs-vaults.png) <br/>
 
-    É apresentada a lista dos cofres dos Serviços de Recuperação.
-  - Na lista dos cofres dos Serviços de Recuperação, selecione um cofre.
+    É apresentada a lista dos cofres dos serviços de recuperação.
+  - Na lista dos cofres dos serviços de recuperação, selecione um cofre.
 
     O dashboard do cofre selecionado é aberto.
 
@@ -222,6 +222,6 @@ Se tiver dúvidas ou se houver alguma funcionalidade que gostaria de ver incluí
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="05/10/2016"
+   ms.date="06/30/2016"
    ms.author="cherylmc"/>
 
 
@@ -116,7 +116,9 @@ Também pode utilizar a CLI do Azure de várias plataformas para obter os regist
 
 Cada entidade de registo tem as suas próprias ferramentas de gestão de DNS para alterar os registos do servidor de nome de um domínio. Na página de gestão do DNS da entidade de registo, edite os registos NS e substitua os registos NS por aqueles que o DNS do Azure criou.
 
-Quando delegar um domínio ao DNS do Azure, tem de utilizar os nomes dos servidores de nome fornecidos pelo DNS do Azure. Não deve utilizar «registos “glue”» para que apontem para os endereços IP do servidor de nomes do DNS do Azure, uma vez que estes endereços IP podem ser alterados no futuro. As delegações que utilizam nomes de servidores de nome na sua própria zona, por vezes denominados “servidores de nomes personalizados”, não são atualmente suportadas no DNS do Azure.
+Quando delegar um domínio ao DNS do Azure, tem de utilizar os nomes dos servidores de nome fornecidos pelo DNS do Azure.  Deve sempre utilizar todos os quatro nomes de servidor de nome, independentemente do seu domínio.  A delegação de domínio não necessita que o nome do servidor de nome utilize o mesmo domínio de nível superior que o seu domínio.
+
+Não deve utilizar «registos “glue”» para que apontem para os endereços IP do servidor de nomes do DNS do Azure, uma vez que estes endereços IP podem ser alterados no futuro. As delegações que utilizam nomes de servidores de nome na sua própria zona, por vezes denominados “servidores de nomes personalizados”, não são atualmente suportadas no DNS do Azure.
 
 ### Para confirmar que a resolução de nomes está a funcionar
 
@@ -202,6 +204,6 @@ Pode confirmar que tudo está configurado corretamente ao procurar o registo SOA
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

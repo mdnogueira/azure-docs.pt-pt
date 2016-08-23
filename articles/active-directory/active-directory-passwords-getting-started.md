@@ -2,11 +2,11 @@
     pageTitle="Introdução: Gestão de Palavras-passe do Azure AD | Microsoft Azure"
     description="Permita que os utilizadores reponham as suas próprias palavras-passe, conheçam os pré-requisitos para a reposição de palavra-passe e ativem a Repetição de Escrita de Palavras-passe para gerir no local as palavras-passe no Active Directory."
     services="active-directory"
-    keywords="Active directory password management, password management, reset Azure AD password"
+    keywords="Gestão de palavra-passe do Active Directory, gestão de palavra-passe, repor a palavra-passe do Azure AD"
     documentationCenter=""
     authors="asteen"
-    manager="kbrint"
-    editor="billmath"/>
+    manager="femila"
+    editor="curtand"/>
 
 <tags
     ms.service="active-directory"
@@ -14,10 +14,13 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="02/16/2016" 
+    ms.date="07/12/2016"
     ms.author="asteen"/>
 
 # Introdução à Gestão de Palavras-passe
+
+> [AZURE.IMPORTANT] **Está aqui porque está a ter problemas em iniciar sessão?** Se assim for, [Eis como pode alterar e repor a sua própria palavra-passe](active-directory-passwords-update-your-own-password.md).
+
 Para permitir que os utilizadores façam a gestão das suas próprias palavras-passe do Active Directory no local ou do Azure Active Directory na nuvem precisa apenas de alguns passos simples. Depois de se certificar que cumpriu alguns pré-requisitos simples, terá a opção de alterar e repor a palavra-passe para toda a organização em menos de nada. Este artigo descreve os seguintes conceitos:
 
 * [**Como permitir que os utilizadores reponham as respetivas palavras-passe do Azure Active Directory na nuvem**](#enable-users-to-reset-their-azure-ad-passwords)
@@ -195,7 +198,7 @@ Para poder ativar e utilizar a Repetição de Escrita de Palavras-passe, tem de 
 
 
 ### Passo 1: Transferir a versão mais recente do Azure AD Connect
-A Repetição de Escrita de Palavras-passe está disponível nas versões do Azure AD Connect ou na ferramenta Azure AD Sync com o número de versão **1.0.0419.0911** ou superior.  A Repetição de Escrita de Palavras-passe com desbloqueio automático da conta está disponível nas versões do Azure AD Connect ou na ferramenta Azure AD Sync com o número de versão **1.0.0485.0222** ou superior. Se estiver a executar uma versão anterior, atualize para, pelo menos, esta versão antes de continuar. [Clique aqui para transferir a versão mais recente do Azure AD Connect](active-directory-aadconnect.md#download-azure-ad-connect).
+A Repetição de Escrita de Palavras-passe está disponível nas versões do Azure AD Connect ou na ferramenta Azure AD Sync com o número de versão **1.0.0419.0911** ou superior.  A Repetição de Escrita de Palavras-passe com desbloqueio automático da conta está disponível nas versões do Azure AD Connect ou na ferramenta Azure AD Sync com o número de versão **1.0.0485.0222** ou superior. Se estiver a executar uma versão anterior, atualize para, pelo menos, esta versão antes de continuar. [Clique aqui para transferir a versão mais recente do Azure AD Connect](active-directory-aadconnect.md#install-azure-ad-connect).
 
 #### Para verificar a versão do Azure AD Sync
 1.  Navegue para **%ProgramFiles%\Azure Active Directory Sync\**.
@@ -312,7 +315,7 @@ Agora que a Repetição de Escrita de Palavras-passe foi ativada, pode testar se
 ## Ligações para a documentação de reposição de palavra-passe
 Veja-se abaixo as ligações para todas as páginas da documentação de reposição de palavra-passe do Azure AD:
 
-* [**Repor a própria palavra-passe**](active-directory-passwords-update-your-own-password.md) – saiba mais sobre como repor ou alterar a própria palavra-passe como um utilizador do sistema
+* **Está aqui porque está a ter problemas em iniciar sessão?** Se assim for, [Eis como pode alterar e repor a sua própria palavra-passe](active-directory-passwords-update-your-own-password.md).
 * [**Como funciona**](active-directory-passwords-how-it-works.md) – saiba mais acerca dos seis componentes diferentes do serviço e o que cada um faz
 * [**Personalizar**](active-directory-passwords-customize.md) – saiba como personalizar o aspeto e o comportamento do serviço de acordo com as necessidades da sua organização
 * [**Práticas recomendadas**](active-directory-passwords-best-practices.md) – saiba como implementar rapidamente e gerir de forma eficaz as palavras-passe da organização
@@ -358,6 +361,6 @@ Veja-se abaixo as ligações para todas as páginas da documentação de reposi�
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

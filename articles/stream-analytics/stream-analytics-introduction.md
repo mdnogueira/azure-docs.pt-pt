@@ -1,7 +1,7 @@
 <properties 
     pageTitle="Introdução ao Stream Analytics | Microsoft Azure" 
     description="Saiba mais sobre o Stream Analytics, um serviço gerido que o ajuda a analisar os dados de transmissão a partir da Internet de Coisas (IoT) em tempo real." 
-    keywords="analytics as a service, managed services, stream processing, streaming analytics, what is stream analytics"
+    keywords="análise como um serviço, serviços geridos, processamento de fluxo, stream analytics, o que é o stream analytics"
     services="stream-analytics" 
     documentationCenter="" 
     authors="jeffstokes72" 
@@ -14,7 +14,7 @@
     ms.topic="get-started-article" 
     ms.tgt_pltfrm="na" 
     ms.workload="data-services" 
-    ms.date="05/03/2016" 
+    ms.date="07/27/2016" 
     ms.author="jeffstok"/>
 
 
@@ -56,6 +56,6 @@ Agora já conhece o Stream Analytics, um serviço gerido para a transmissão da 
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

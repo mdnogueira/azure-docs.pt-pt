@@ -1,10 +1,10 @@
 <properties
     pageTitle="Tutorial de Base de Dados SQL: criar uma base de dados SQL | Microsoft Azure"
     description="Saiba como configurar um servidor lógico de Base de Dados SQL, uma regra de firewall do servidor, a base de dados SQL, dados de exemplo, ligar-se com ferramentas de cliente, configurar utilizadores e a regra de firewall de base de dados."
-    keywords="sql database tutorial, create a sql database"
+    keywords="tutorial de base de dados sql, criar uma base de dados sql"
     services="sql-database"
     documentationCenter=""
-    authors="carlrabeler"
+    authors="CarlRabeler"
     manager="jhubbard"
     editor=""/>
 
@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="hero-article"
-    ms.date="04/14/2016"
+    ms.date="07/05/2016"
     ms.author="carlrab"/>
 
 # Tutorial de Base de Dados SQL: criar uma base de dados SQL em minutos com o portal do Azure
@@ -54,14 +54,16 @@ Agora que concluiu este tutorial de Base de Dados SQL e criou uma base de dados 
 
 - Se pretender mover as bases de dados SQL Server no local para o Azure, consulte [Migrar uma base de dados para a Base de Dados SQL do Azure](sql-database-cloud-migrate.md) para saber mais.
 
+- Se pretender carregar alguns dados para uma nova tabela a partir de um ficheiro CSV com o BCP, veja [Loading data into SQL Database from a CSV file using BCP (Carregar dados para a Base de Dados SQL a partir de um ficheiro CSV com o BCP)](sql-database-load-from-csv-with-bcp.md).
 
-## Saiba Mais
+
+## Recursos adicionais
 
 [O que é a Base de Dados SQL?](sql-database-technical-overview.md)
 
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

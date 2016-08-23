@@ -2,7 +2,7 @@
     pageTitle="Ligar à Base de Dados SQL com uma consulta C# | Microsoft Azure"
     description="Escreva um programa C# para consultar e ligar à base de dados SQL. Informações sobre endereços IP, cadeias de ligação, início de sessão seguro e Visual Studio gratuito."
     services="sql-database"
-    keywords="c# database query, c# query, connect to database, SQL C#"
+    keywords="consulta da base de dados c#, consulta c#, ligar à base de dados, SQL C#"
     documentationCenter=""
     authors="MightyPen"
     manager="jhubbard"
@@ -112,7 +112,7 @@ Depois de ligar ao seu servidor lógico, pode ligar a uma base de dados e execut
 
     ![Êxito. Ligar ao servidor de Base de Dados SQL Server: Visual Studio](./media/sql-database-connect-query-ssms/5-success.png)
 
-## Passos Seguintes
+## Passos seguintes
 
 [Ligar à Base de Dados SQL com o .NET (C#)](sql-database-develop-dotnet-simple.md) 
 
@@ -124,6 +124,6 @@ Depois de ligar ao seu servidor lógico, pode ligar a uma base de dados e execut
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

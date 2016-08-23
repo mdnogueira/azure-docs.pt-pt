@@ -3,7 +3,7 @@
    description="Saiba o que é PolyBase e como utilizá-lo em cenários de armazenamento de dados."
    services="sql-data-warehouse"
    documentationCenter="NA"
-   authors="sahaj08"
+   authors="happynicolle"
    manager="barbkess"
    editor=""/>
 
@@ -13,8 +13,8 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="04/18/2016"
-   ms.author="sahajs;barbkess;jrj;sonyama"/>
+   ms.date="06/30/2016"
+   ms.author="nicw;barbkess;jrj;sonyama"/>
 
 
 # Carregar os dados com o PolyBase para o SQL Data Warehouse
@@ -109,7 +109,7 @@ Para copiar os dados para o armazenamento de blobs do Azure:
     .\AzCopy.exe /Source:C:\Temp\ /Dest:<blob service endpoint URL> /datacontainer/datedimension/ /DestKey:<azure_storage_account_key> /Pattern:DimDate2.txt
     ```
 
-Consulte também [Introdução ao Utilitário de Linha de Comandos do AzCopy][].
+Consulte também [Introdução ao Utilitário de Linha de Comandos AzCopy][].
 
 ### E. Explorar o contentor do armazenamento de blobs
 
@@ -256,19 +256,17 @@ Consulte o [Guia do PolyBase][] para obter informações adicionais que deve con
 
 
 <!--Article references-->
-[Tutorial do PolyBase no SQL Data Warehouse]: sql-data-warehouse-get-started-load-with-polybase.md
-[Carregar dados com o bcp]: sql-data-warehouse-load-with-bcp.md
-[parceiros de solução]: sql-data-warehouse-solution-partners.md
-[descrição geral do desenvolvimento]: sql-data-warehouse-overview-develop.md
-[Estatísticas]: sql-data-warehouse-develop-statistics.md
-[Guia do PolyBase]: sql-data-warehouse-load-polybase-guide.md
-[Introdução ao Utilitário de Linha de Comandos do AzCopy]: ../storage/storage-use-azcopy.md
+[Tutorial do PolyBase no SQL Data Warehouse]: ./sql-data-warehouse-get-started-load-with-polybase.md
+[Carregar dados com o bcp]: ./sql-data-warehouse-load-with-bcp.md
+[Estatísticas]: ./sql-data-warehouse-tables-statistics.md
+[Guia do PolyBase]: ./sql-data-warehouse-load-polybase-guide.md
+[Introdução ao Utilitário de Linha de Comandos AzCopy]: ../storage/storage-use-azcopy.md
 [versão mais recente do AzCopy]: ../storage/storage-use-azcopy.md
 
 <!--External references-->
 [origem suportada/sink]: https://msdn.microsoft.com/library/dn894007.aspx
 [atividade de cópia]: https://msdn.microsoft.com/library/dn835035.aspx
-[Adaptador de destino do SQL Server]: https://msdn.microsoft.com/library/ms141095.aspx
+[adaptador de destino do SQL Server]: https://msdn.microsoft.com/library/ms141095.aspx
 [SSIS]: https://msdn.microsoft.com/library/ms141026.aspx
 
 
@@ -289,6 +287,6 @@ Consulte o [Guia do PolyBase][] para obter informações adicionais que deve con
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

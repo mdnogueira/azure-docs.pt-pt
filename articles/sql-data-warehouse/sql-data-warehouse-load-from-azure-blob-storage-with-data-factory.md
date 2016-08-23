@@ -70,7 +70,7 @@ Para começar, abra o [Portal do Azure][] e selecione a sua fábrica de dados a 
 
 Ligue a sua conta de armazenamento do Azure e o SQL Data Warehouse à sua fábrica de dados.  
 
-1. Em primeiro lugar, inicie o processo de registo, clicando na secção “Serviços ligados” da fábrica de dados e, em seguida, clique em “novo arquivo de dados”. Escolha um nome para registar o armazenamento no Azure, selecione Armazenamento do Azure como o tipo e, em seguida, introduza o Nome de Conta e a Chave da Conta.
+1. Em primeiro lugar, inicie o processo de registo, clicando na secção “Serviços Ligados” da fábrica de dados e, em seguida, clique em “Novo arquivo de dados”. Escolha um nome para registar o armazenamento no Azure, selecione Armazenamento do Azure como o tipo e, em seguida, introduza o Nome de Conta e a Chave da Conta.
 
 2. Para registar o SQL Data Warehouse, navegue até à secção “Criar e implementar”, selecione “Novo arquivo de dados” e, em seguida, “Azure SQL Data Warehouse”. Copie e cole neste modelo e, em seguida, preencha as suas informações específicas.
 
@@ -91,9 +91,9 @@ Ligue a sua conta de armazenamento do Azure e o SQL Data Warehouse à sua fábri
 
 Depois de criar os serviços ligados, temos de definir os conjuntos de dados.  Neste caso, significa definir a estrutura dos dados que estão a ser movidos do seu armazenamento para o seu armazém de dados.  Pode ler mais sobre como criar
 
-1. Inicie este processo, navegando para a secção “Criar e Implementar” da fábrica de dados.
+1. Inicie este processo, navegando para a secção “Criar e implementar” da fábrica de dados.
 
-2. Clique em “Novo conjunto de dados” e, em seguida, em “Armazenamento de Blobs do Azure” para ligar o seu armazenamento à fábrica de dados.  Pode utilizar o script abaixo para definir os dados no armazenamento de Blobs do Azure:
+2. Clique em “Novo conjunto de dados” e, em seguida, em “Armazenamento de blobs do Azure” para ligar o seu armazenamento à fábrica de dados.  Pode utilizar o script abaixo para definir os dados no armazenamento de blobs do Azure:
 
 ```JSON
 {
@@ -150,7 +150,7 @@ Depois de criar os serviços ligados, temos de definir os conjuntos de dados.  N
 
 Por último, iremos configurar e executar o pipeline no Azure Data Factory.  Esta é a operação que irá concluir o movimento de dados.  Pode encontrar uma visão completa das operações que pode realizar com o SQL Data Warehouse e o Azure Data Factory [aqui][Mover dados para e do Azure SQL Data Warehouse, utilizando o Azure Data Factory].
 
-Na secção “Criar e Implementar”, clique agora em “Mais comandos” e, em seguida, em “Novo Pipeline”.  Depois de criar o pipeline, pode utilizar o código abaixo para transferir os dados para o armazém de dados:
+Na secção “Criar e implementar”, clique agora em “Mais comandos” e, em seguida, em “Novo pipeline”.  Depois de criar o pipeline, pode utilizar o código abaixo para transferir os dados para o armazém de dados:
 
 ```JSON
 {
@@ -225,7 +225,7 @@ Estes tópicos fornecem informações detalhadas sobre o Azure Data Factory. Abr
 [Data Factory]: sql-data-warehouse-get-started-load-with-azure-data-factory.md
 [Introdução ao Azure Data Factory (Data Factory Editor)]: ../data-factory/data-factory-build-your-first-pipeline-using-editor.md
 [Introdução ao Azure Data Factory]: ../data-factory/data-factory-introduction.md
-[Carregar dados de exemplo para o SQL Data Warehouse]: sql-data-warehouse-get-started-manually-load-samples.md
+[Carregar dados de exemplo para o SQL Data Warehouse]: sql-data-warehouse-load-sample-databases.md
 [Mover dados para e do Azure SQL Data Warehouse, utilizando o Azure Data Factory]: ../data-factory/data-factory-azure-sql-data-warehouse-connector.md
 [PolyBase]: sql-data-warehouse-get-started-load-with-polybase.md
 [Tutorial com cenário real]: ../data-factory/data-factory-tutorial.md
@@ -241,6 +241,6 @@ Estes tópicos fornecem informações detalhadas sobre o Azure Data Factory. Abr
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="05/10/2016"
+    ms.date="07/11/2016"
     ms.author="robmcm"/>
 
 <!-- Note: This article replaces web-sites-php-web-site-gallery.md -->
@@ -26,13 +26,13 @@ O Azure Marketplace disponibiliza uma vasta gama de Web Apps populares desenvolv
 
 Neste tutorial, ficará a saber como:
 
-* Localizar um modelo de aplicação no Azure Marketplace.
-* Criar uma aplicação Web no App Service do Azure baseada no modelo.
-* Configurar as definições do App Service do Azure para a nova aplicação Web e a base de dados.
+* Localizar e criar uma aplicação Web no Serviço de Aplicações do Azure com base num modelo do Azure Marketplace.
+* Configure as definições do Serviço de Aplicações do Azure da nova aplicação Web.
+* Inicie e faça a gestão da aplicação Web.
 
 Para efeitos deste tutorial, irá implementar um site de blogue do WordPress a partir do Azure Marketplace. Após concluir os passos deste tutorial, o seu próprio site do WordPress estará operacional na nuvem.
 
-![Exemplo de dashboard da aplicação Web do WordPress][WordPressDashboard]
+![Exemplo de dashboard da aplicação Web do WordPress][WordPressDashboard1]
 
 O site do WordPress que irá implementar neste tutorial utiliza o MySQL para a base de dados. Se, em alternativa, pretender utilizar a SQL Database para a base de dados, consulte [Projeto Nami], que também está disponível através do Azure Marketplace.
 
@@ -41,7 +41,7 @@ O site do WordPress que irá implementar neste tutorial utiliza o MySQL para a b
 >
 > Se pretender começar com o App Service do Azure antes de se inscrever numa conta do Azure, aceda a [Experimentar o App Service]. A partir daí, pode criar imediatamente uma aplicação Web de arranque de curta duração no App Service — sem necessidade de cartões de crédito e sem compromissos.
 
-## Selecionar o WordPress e configurar para o App Service do Azure
+## Localizar e Criar uma Aplicação Web no Serviço de Aplicações do Azure
 
 1. Inicie sessão no [Portal do Azure].
 
@@ -57,7 +57,9 @@ O site do WordPress que irá implementar neste tutorial utiliza o MySQL para a b
 
     ![Criar aplicação Web do WordPress][MarketplaceCreate]
 
-1. É apresentado o painel de definições do WordPress, que irá utilizar para concluir os seguintes passos:
+## Configure as Definições do Serviço de Aplicações do Azure da Nova Aplicação Web
+
+1. Depois de ser criada uma nova aplicação Web, é apresentado o painel de definições do WordPress, que irá utilizar para concluir os seguintes passos:
 
     ![Configurar definições da aplicação Web do WordPress][ConfigStart]
 
@@ -73,7 +75,7 @@ O site do WordPress que irá implementar neste tutorial utiliza o MySQL para a b
 
 1. Selecione um **Grupo de Recursos** ou crie um novo.
 
-    Para obter mais informações acerca dos grupos de recursos, consulte [Utilizar o Portal do Azure para gerir os recursos do Azure][ResourceGroups].
+    Para obter mais informações sobre grupos de recursos, veja o artigo [Descrição geral do Azure Resource Manager][ResourceGroups].
 
     ![Configurar o grupo de recursos da aplicação Web][ConfigResourceGroup]
 
@@ -131,7 +133,7 @@ O site do WordPress que irá implementar neste tutorial utiliza o MySQL para a b
 
 1. A página Dashboard do site abre-se e apresenta as informações que forneceu.    
 
-    ![Ver o dashboard do WordPress][WordPressDashboard]
+    ![Ver o dashboard do WordPress][WordPressDashboard2]
 
 ## Passos seguintes
 
@@ -151,7 +153,7 @@ Para obter mais informações acerca do desenvolvimento de Web Apps do WordPress
 [ativar]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [avaliação gratuita]: https://azure.microsoft.com/pricing/free-trial/
 [Experimentar o App Service]: http://go.microsoft.com/fwlink/?LinkId=523751
-[ResourceGroups]: ../azure-portal/resource-group-portal.md
+[ResourceGroups]: ../resource-group-overview.md
 [AzureAppServicePlans]: ../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md
 [ApplicationInsights]: https://azure.microsoft.com/services/application-insights/
 [Portal do Azure]: https://portal.azure.com/
@@ -174,11 +176,12 @@ Para obter mais informações acerca do desenvolvimento de Web Apps do WordPress
 [WordPressSelect]: ./media/app-service-web-create-web-app-from-marketplace/wpselect.png
 [WordPressBrowse]: ./media/app-service-web-create-web-app-from-marketplace/wpbrowse.png
 [WordPressLanguage]: ./media/app-service-web-create-web-app-from-marketplace/wplanguage.png
-[WordPressDashboard]: ./media/app-service-web-create-web-app-from-marketplace/wpdashboard.png
+[WordPressDashboard1]: ./media/app-service-web-create-web-app-from-marketplace/wpdashboard1.png
+[WordPressDashboard2]: ./media/app-service-web-create-web-app-from-marketplace/wpdashboard2.png
 [WordPressConfigure]: ./media/app-service-web-create-web-app-from-marketplace/wpconfigure.png
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

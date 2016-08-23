@@ -13,7 +13,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="03/27/2016"
+   ms.date="06/09/2016"
    ms.author="ryanwi"/>
 
 # Criação da sua primeira aplicação de Service Fabric no Visual Studio
@@ -46,7 +46,7 @@ Uma aplicação de Service Fabric pode conter um ou mais serviços, cada um com 
 
     ![Caixa de diálogo novo serviço no Visual Studio][2]
 
-    >[AZURE.NOTE] Para obter mais informações sobre as opções, consulte o artigo [Escolher uma estrutura](service-fabric-choose-framework.md).
+    >[AZURE.NOTE] Para obter mais informações sobre as opções, veja [Service Fabric programming model overview (Descrição geral do modelo de programação Service Fabric)](service-fabric-choose-framework.md).
 
     O Visual Studio cria o projeto de aplicação e o projeto de serviço com estado e apresenta-os no Explorador de Soluções.
 
@@ -110,31 +110,19 @@ Agora que tem uma aplicação, pode tentar executá-la.
 
     ![Visualizador de eventos de diagnóstico após falha][diagnostic-events-viewer-detail-post-failover]
 
-### Limpeza
+## Limpeza
 
-  Antes de concluir, é importante lembrar-se de que o cluster local é real. Mesmo depois de parar o depurador e fechar o Visual Studio, as aplicações continuarão a ser executadas em segundo plano. Dependendo da natureza das suas aplicações, esta atividade em segundo plano pode consumir recursos significativos no seu computador. Tem várias opções para lidar com isto:
+  Antes de concluir, é importante lembrar-se de que o cluster local é real. Parar o depurador irá remover a instância da aplicação e anular o registo do tipo de aplicação.  Contudo, o cluster continuará a ser executado em segundo plano. Tem várias opções para lidar com isto:
 
-  1. Para remover uma aplicação individual e todos os seus dados, utilize a ação **Eliminar aplicação** no Service Fabric Explorer com o menu **AÇÕES** ou com o menu de contexto, na vista da lista de aplicações, no painel da esquerda.
+  1. Para encerrar o cluster, mas manter os dados de aplicação e o rastreio, clique em **Parar Cluster Local** na aplicação de tabuleiro do sistema.
 
-    ![Eliminar uma aplicação no Service Fabric Explorer][sfe-delete-application]
-
-  2. Depois de eliminar a aplicação do cluster, pode optar por **Tipo de Não Aprovisionamento** para a aplicação que remove o pacote da aplicação, incluindo o código e a configuração, a partir do armazém de imagem do cluster.
-  3. Para encerrar o cluster, mas manter os dados de aplicação e o rastreio, clique em **Parar Cluster Local** na aplicação de tabuleiro do sistema.
-
-  4. Para eliminar o cluster totalmente, clique em **Remover Cluster Local** na aplicação de tabuleiro do sistema. Tenha em atenção que esta opção resultará noutra implementação lenta da próxima vez que premir F5 no Visual Studio. Utilize esta opção apenas se não pretender utilizar o cluster local durante algum tempo ou se precisar de recuperar recursos.
-
-
+  2. Para eliminar o cluster totalmente, clique em **Remover Cluster Local** na aplicação de tabuleiro do sistema. Tenha em atenção que esta opção resultará noutra implementação lenta da próxima vez que premir F5 no Visual Studio. Utilize esta opção apenas se não pretender utilizar o cluster local durante algum tempo ou se precisar de recuperar recursos.
 
 ## Passos seguintes
 
-<!--
-Temporarily removing this link because we have removed the ASP.NET template.
-
- - [See how you can expose your services to the Internet with a web service front end](service-fabric-add-a-web-frontend.md)
--->
-- [Saiba como criar um cluster no Azure](service-fabric-cluster-creation-via-portal.md)
-- [Obter mais informações sobre Reliable Services](service-fabric-reliable-services-quick-start.md)
-- [Experimente criar um serviço utilizando o modelo de programação Reliable Actors](service-fabric-reliable-actors-get-started.md)
+- Saiba como criar um [cluster no Azure](service-fabric-cluster-creation-via-portal.md) ou um [cluster autónomo no Windows](service-fabric-cluster-creation-for-windows-server.md).
+- Experimente criar um serviço com os modelos de programação [Reliable Services](service-fabric-reliable-services-quick-start.md) ou [Reliable Actors](service-fabric-reliable-actors-get-started.md).
+- Saiba como pode expor os seus serviços à Internet com um [front-end do serviço Web](service-fabric-add-a-web-frontend.md).
 
 <!-- Image References -->
 
@@ -152,6 +140,6 @@ Temporarily removing this link because we have removed the ASP.NET template.
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

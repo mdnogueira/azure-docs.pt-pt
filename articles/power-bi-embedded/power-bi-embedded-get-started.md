@@ -1,9 +1,9 @@
 <properties
-   pageTitle="Introdução à Pré-visualização do Microsoft Power BI Embedded"
+   pageTitle="Introdução ao Microsoft Power BI Embedded"
    description="Power BI Embedded, adicione relatórios interativos do Power BI à aplicação de business intelligence"
    services="power-bi-embedded"
    documentationCenter=""
-   authors="dvana"
+   authors="minewiskan"
    manager="NA"
    editor=""
    tags=""/>
@@ -13,16 +13,14 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="NA"
    ms.workload="powerbi"
-   ms.date="04/24/2016"
-   ms.author="derrickv"/>
+   ms.date="07/05/2016"
+   ms.author="owend"/>
 
-# Introdução à Pré-visualização do Microsoft Power BI Embedded
+# Introdução ao Microsoft Power BI Embedded
 
-O **Microsoft Power BI Embedded** é um serviço Azure que permite aos programadores de aplicações adicionar os relatórios de Power BI interativos às suas próprias aplicações. O **Power BI Embedded** funciona com as aplicações existentes sem a necessidade de recriar as aplicações ou alterar o modo como os respetivos utilizadores iniciam sessão.
+O **Power BI Embedded** é um serviço do Azure que permite aos programadores de aplicações adicionar relatórios de Power BI interativos às suas próprias aplicações. O **Power BI Embedded** funciona com as aplicações existentes sem precisar de recriar ou alterar a forma como os utilizadores iniciam sessão.
 
-Para saber mais sobre o Power BI Embedded, consulte o artigo [O que é o Power BI Embedded](power-bi-embedded-what-is-power-bi-embedded.md).
-
-Conforme descrito em [O que é o Power BI Embedded ](power-bi-embedded-what-is-power-bi-embedded.md), os recursos para o **Microsoft Power BI Embedded** são aprovisionados através das [APIs ARM do Azure](https://msdn.microsoft.com/library/mt712306.aspx). Neste caso, o recurso que for aprovisionado é uma **Coleção de Áreas de Trabalho do Power BI**. A secção seguinte mostra-lhe como criar uma coleção de área de trabalho.
+Os recursos para o **Microsoft Power BI Embedded** são aprovisionados através das [APIs ARM do Azure](https://msdn.microsoft.com/library/mt712306.aspx). Neste caso, o recurso que aprovisiona é uma **Coleção de Áreas de Trabalho do Power BI**.
 
 ![](media\power-bi-embedded-get-started\introduction.png)
 
@@ -47,18 +45,16 @@ Vamos guiá-lo pelos passos para criar uma **Coleção de Área de Trabalho** at
 
    5. Clique em **Criar**.
 
-A **Coleção de Área de Trabalho** levará alguns minutos para aprovisionar. Quando estiver concluída, será levado para o **Painel de Coleção de Área de Trabalho**.
+A **Coleção de Área de Trabalho** levará alguns minutos para aprovisionar. Quando concluída, será direcionado para o **Painel de Coleção de Área de Trabalho**.
 
    ![](media\power-bi-embedded-get-started\create-workspace-3.png)
 
-Este **Painel de Criação** contém as informações necessárias para chamar as APIs que criam áreas de trabalho e implementam conteúdo para estas.
-
-A seguinte secção descreve como utilizar as **Teclas de Acesso** para gerar **tokens de aplicação** os quais são utilizados para autenticar os pedidos de API.
+O **Painel de Criação** contém as informações de que precisa para chamar as APIs que criam áreas de trabalho e implementam conteúdo nas mesmas.
 
 <a name="view-access-keys"/>
 ## Visualizar Chaves de Acesso da API do Power BI
 
-Uma das informações mais importantes necessárias para chamar as APIs REST do Power BI é são as **Teclas de Acesso**. Estas são utilizadas para gerar os **tokens de aplicação** utilizados para autenticar os pedidos de API. Para ver as suas **Teclas de Acesso**, clique em **Teclas de Acesso** no **Painel de Definições**. Para mais informações sobre **tokens de aplicação**, consulte o artigo [Como funciona o fluxo de tokens de aplicação](power-bi-embedded-app-token-flow.md).
+Uma das informações mais importantes necessárias para chamar as APIs REST do Power BI é são as **Teclas de Acesso**. Estas são utilizadas para gerar os **tokens de aplicação** utilizados para autenticar os pedidos de API. Para ver as suas **Teclas de Acesso**, clique em **Teclas de Acesso** no **Painel de Definições**. Para obter mais informações sobre **tokens de aplicação**, veja [Authenticating and authorizing with Power BI Embedded (Autenticação e autorização com Power BI Embedded)](power-bi-embedded-app-token-flow.md).
 
    ![](media\power-bi-embedded-get-started\access-keys.png)
 
@@ -66,9 +62,9 @@ Vai notar que tem duas chaves.
 
    ![](media\power-bi-embedded-get-started\access-keys-2.png)
 
-Copie estas chaves e armazene-as de forma segura na aplicação. É muito importante tratar estas chaves como faria com uma palavra-passe, porque dão acesso a todo o conteúdo na **Coleção de Área de Trabalho**.
+Copie estas chaves e armazene-as de forma segura na aplicação. É muito importante que trate estas chaves como se fossem uma palavra-passe, porque dão acesso a todo o conteúdo na **Coleção de Área de Trabalho**.
 
-Embora sejam apresentadas duas chaves, apenas uma é necessária de cada vez. A segunda chave é fornecida para periodicamente regenerar chaves sem interromper o acesso ao serviço.
+Embora sejam apresentadas duas chaves, apenas é necessária uma de cada vez. A segunda chave é fornecida para periodicamente regenerar chaves sem interromper o acesso ao serviço.
 
 Agora que tem uma instância do Power BI para a aplicação e as **Chaves de Acesso**, pode importar um relatório para a própria aplicação. Antes de saber como importar um relatório, a secção a seguir descreve como criar conjuntos de dados do Power BI e relatórios para incorporar numa aplicação.
 
@@ -102,13 +98,11 @@ Nos passos anteriores, criou uma coleção de áreas de trabalho e o primeiro re
 
 ## Consultar Também
 - [Introdução com exemplo](power-bi-embedded-get-started-sample.md)
-- [O que é o Power BI Embedded](power-bi-embedded-what-is-power-bi-embedded.md)
-- [Introdução ao Power BI Desktop](https://powerbi.microsoft.com/documentation/powerbi-desktop-getting-started)
+- [Autenticação e autorização com Power BI Embedded](power-bi-embedded-app-token-flow.md)
 - [Ambiente de trabalho do Power BI](https://powerbi.microsoft.com/documentation/powerbi-desktop-get-the-desktop/)
-- [Preços Power BI Embedded](http://go.microsoft.com/fwlink/?LinkID=760527)
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

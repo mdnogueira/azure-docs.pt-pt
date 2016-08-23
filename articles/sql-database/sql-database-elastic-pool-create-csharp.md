@@ -3,7 +3,7 @@
     description="Utilize técnicas de programação de base de dados C# para criar um conjunto de bases de dados elásticas dimensionáveis na Base de Dados SQL do Azure, para poder partilhar recursos em muitas bases de dados."
     services="sql-database"
     documentationCenter=""
-    authors="srinia"
+    authors="stevestein"
     manager="jhubbard"
     editor=""/>
 
@@ -13,8 +13,8 @@
     ms.topic="get-started-article"
     ms.tgt_pltfrm="csharp"
     ms.workload="data-management"
-    ms.date="05/27/2016"
-    ms.author="srinia"/>
+    ms.date="07/22/2016"
+    ms.author="sstein"/>
 
 # Criar um novo conjunto de bases de dados elásticas com C&#x23;
 
@@ -24,15 +24,13 @@
 - [C#](sql-database-elastic-pool-create-csharp.md)
 
 
-Saiba como criar um [conjunto de bases de dados elásticas](sql-database-elastic-pool.md), utilizando C&#x23;. 
+Saiba como criar um [conjunto de bases de dados elásticas](sql-database-elastic-pool.md) com C#;. 
 
 Para códigos de erro comuns, consulte [Códigos de erro de SQL para aplicações de clientes de Base de Dados SQL: erro de ligação à base de dados e outros problemas](sql-database-develop-error-messages.md).
 
-Os conjuntos de bases de dados elásticas estão atualmente na pré-visualização e só estão disponíveis com os servidores V12 de Base de Dados SQL. Se tiver um servidor V11 de Base de Dados SQL, pode [utilizar o PowerShell para atualizar para o V12 e criar um conjunto](sql-database-upgrade-server-portal.md), num único passo.
+Os exemplos abaixo utilizam a [Biblioteca da Base de Dados SQL para .NET](https://msdn.microsoft.com/library/azure/mt349017.aspx), por isso, se ainda não estiver instalada, terá de instalar esta biblioteca antes de continuar. Pode instalar esta biblioteca ao executar o seguinte comando na [consola do gestor de pacotes](http://docs.nuget.org/Consume/Package-Manager-Console) no Visual Studio (**Ferramentas** > **Gestor de Pacotes NuGet** > **Consola do Gestor de Pacotes**):
 
-Os exemplos utilizam a [Biblioteca de Base de Dados SQL para .NET](https://msdn.microsoft.com/library/azure/mt349017.aspx). Por conseguinte, terá de instalar a biblioteca. Pode instalá-la ao executar seguinte comando na [consola do gestor de pacotes](http://docs.nuget.org/Consume/Package-Manager-Console) no Visual Studio (**Ferramentas** > **Gestor de Pacotes NuGet** > **Consola do Gestor de Pacotes**):
-
-    PM> Install-Package Microsoft.Azure.Management.Sql –Pre
+    Install-Package Microsoft.Azure.Management.Sql –Pre
 
 ## Criar um novo conjunto
 
@@ -76,7 +74,7 @@ Crie uma instância [DataBaseCreateorUpdateProperties](https://msdn.microsoft.co
 
 Para mover uma base de dados existente para um conjunto, consulte [Mover uma base de dados para um conjunto elástico](sql-database-elastic-pool-manage-csharp.md#Move-a-database-into-an-elastic-pool).
 
-## Exemplo: criar um conjunto com C&#x23
+## Exemplo: criar um conjunto com C&#x23;
 
 Este exemplo cria um novo grupo de recursos do Azure, uma nova instância do Azure SQL Server e um novo conjunto elástico. 
  
@@ -84,7 +82,7 @@ Este exemplo cria um novo grupo de recursos do Azure, uma nova instância do Azu
 As bibliotecas seguintes são necessárias para executar este exemplo. Pode instalá-las ao executar os seguintes comandos na [consola do gestor de pacotes](http://docs.nuget.org/Consume/Package-Manager-Console) no Visual Studio (**Ferramentas** > **Gestor de Pacotes NuGet** > **Consola do Gestor de Pacotes**)
 
     Install-Package Microsoft.Azure.Management.Sql –Pre
-    Install-Package Microsoft.Azure.Management.Resources –Pre
+    Install-Package Microsoft.Azure.Management.ResourceManager –Pre -Version 1.1.1-preview
     Install-Package Microsoft.Azure.Common.Authentication –Pre
 
 Crie uma aplicação da consola e substitua os conteúdos de Program.cs pelos seguintes. Para instalar o id de cliente e os valores relacionados necessários, consulte [Registar a aplicação e obter os valores de cliente necessários para ligar a aplicação à Base de Dados SQL](sql-database-client-id-keys.md). Utilize o cmdlet [Get-AzureRmSubscription](https://msdn.microsoft.com/library/mt619284.aspx) para obter o valor para o subscriptionId.
@@ -252,6 +250,7 @@ Crie uma aplicação da consola e substitua os conteúdos de Program.cs pelos se
 - [APIs de Gestão de Recursos do Azure](https://msdn.microsoft.com/library/azure/dn948464.aspx)
 
 
-<!--HONumber=Jun16_HO2-->
+
+<!--HONumber=Aug16_HO1-->
 
 

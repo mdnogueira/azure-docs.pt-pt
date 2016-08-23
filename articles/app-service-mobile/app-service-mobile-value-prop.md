@@ -18,7 +18,7 @@
 
 # <a name="getting-started"> </a>O que são Mobile Apps?
 
-O App Service do Azure é uma Plataforma completamente gerida como uma oferta de Serviços (PaaS) para programadores profissionais que fornece um conjunto avançado de capacidades para cenários Web, móveis e de integração. As *Mobile Apps* no *App Service do Azure* oferecem uma plataforma de desenvolvimento de aplicações móveis altamente dimensionável e globalmente disponíveis para Programadores Empresariais e Integradores de Sistemas que fornece um conjunto avançado de capacidades para programadores móveis.
+O Serviço de Aplicações do Azure é uma [Plataforma como Serviço](https://azure.microsoft.com/overview/what-is-paas/) (PaaS) para programadores profissionais que fornece um conjunto avançado de capacidades para cenários Web, móveis e de integração. As *Mobile Apps* no *App Service do Azure* oferecem uma plataforma de desenvolvimento de aplicações móveis altamente dimensionável e globalmente disponíveis para Programadores Empresariais e Integradores de Sistemas que fornece um conjunto avançado de capacidades para programadores móveis.
 
 ![Mobile Apps](./media/app-service-mobile-value-prop/overview.png)
 
@@ -92,7 +92,7 @@ Para obter mais informações sobre a plataforma do App Service do Azure, consul
 [Android]: ./app-service-mobile-android-how-to-use-client-library.md
 [Windows]: ./app-service-mobile-dotnet-how-to-use-client-library.md
 [Xamarin para iOS e Android]: ./app-service-mobile-dotnet-how-to-use-client-library.md
-[Formulários de Xamarin]: ./app-service-mobile-xamarin-forms-get-started.md
+[Formulários Xamarin]: ./app-service-mobile-xamarin-forms-get-started.md
 [Apache Cordova]: ./app-service-mobile-cordova-how-to-use-client-library.md
 [escala automática]: ../app-service-web/web-sites-scale.md
 [ambientes de teste]: ../app-service-web/web-sites-staged-publishing.md
@@ -105,6 +105,6 @@ Para obter mais informações sobre a plataforma do App Service do Azure, consul
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

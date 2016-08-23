@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="dotnet" 
     ms.topic="hero-article" 
-    ms.date="05/18/2016" 
+    ms.date="08/01/2016" 
     ms.author="andrl"/>
 
 #<a name="_Toc395809351"></a>Tutorial ASP.NET MVC: Programação de aplicações Web com o DocumentDB
@@ -38,8 +38,8 @@ Esta orientação mostra-lhe como utilizar o serviço do DocumentDB fornecido pe
 
 Antes de seguir as instruções deste artigo, deve certificar-se de que tem o seguinte:
 
-- Uma conta ativa do Azure. Se não tiver uma conta, pode criar uma conta de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/).
-- Atualização 4 ou superior do [Visual Studio 2013](http://www.visualstudio.com/).
+- Uma conta ativa do Azure. Se não tiver uma conta, pode criar uma de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/).
+- [Visual Studio 2015](http://www.visualstudio.com/) ou Visual Studio 2013 Atualização 4 ou superior. Se utilizar o Visual Studio 2013, terá de instalar o [pacote nuget Microsoft.Net.Compilers](https://www.nuget.org/packages/Microsoft.Net.Compilers/) para adicionar suporte para C# 6.0. 
 - O Azure SDK para o .NET versão 2.5.1 ou superior, disponível através do [Instalador de Plataforma Web da Microsoft][].
 
 Todas as capturas de ecrã neste artigo foram executadas ao utilizar o Visual Studio 2013 com a Atualização 4 aplicada e o Azure SDK para o .NET versão 2.5.1. Se o sistema estiver configurado com versões diferentes, é possível que as suas opções e ecrãs não coincidam na totalidade, mas se cumpre os pré-requisitos acima, esta solução deverá funcionar.
@@ -546,7 +546,7 @@ Para testar a aplicação no seu computador local, efetue o seguinte:
 
     ![Captura de ecrã da aplicação Web de lista de tarefas criada por este tutorial de base de dados](./media/documentdb-dotnet-application/image24.png)
 
-    Caso se depare com erros neste momento, pode comparar o seu código com o do projeto de exemplo no [GitHub][]
+    Se estiver a utilizar o Visual Studio 2013 e lhe aparecer o erro "Não é possível aguardar no corpo de uma cláusula catch." deve instalar o [pacote nuget Microsoft.Net.Compilers](https://www.nuget.org/packages/Microsoft.Net.Compilers/). Também pode comparar o seu código ao projeto de amostra no [GitHub][]. 
 
 2. Clique na ligação **Criar Novo** e adicione valores aos campos **Nome** e **Descrição**. Deixe a caixa de verificação **Concluído** desmarcada, caso contrário, o novo **Item** será adicionado a um estado concluído e não aparece na lista inicial.
 
@@ -564,7 +564,7 @@ Para testar a aplicação no seu computador local, efetue o seguinte:
 
 4. Assim que já tiver testado a aplicação, prima Ctrl+F5 para parar a depuração da aplicação. Está pronto para implementar!
 
-##<a name="_Toc395637774"></a>Passo 7: implementar a aplicação em Web Sites do Azure
+## <a name="_Toc395637774"></a>Passo 7: implementar a aplicação em Web Sites do Azure
 
 Agora que a sua aplicação completa funciona corretamente no DocumentDB, iremos implementar esta aplicação Web em Web Sites do Azure. Se tiver selecionado **Anfitrião na nuvem** quando criou o projeto MVC ASP.NET vazio, o Visual Studio facilita bastante esta ação e faz a maior parte do trabalho por si. 
 
@@ -578,7 +578,7 @@ Agora que a sua aplicação completa funciona corretamente no DocumentDB, iremos
 
 Em alguns segundos, o Visual Studio irá concluir a publicação da sua aplicação Web e iniciar um browser, onde poderá ver o seu trabalho em execução no Azure!
 
-##<a name="_Toc395637775"></a>Passos seguintes
+## <a name="_Toc395637775"></a>Passos seguintes
 
 Parabéns! Acabou de criar a sua primeira aplicação Web ASP.NET MVC com o Azure DocumentDB, que foi publicada em Web sites do Azure. É possível transferir ou clonar a partir do [GitHub][] o código fonte da aplicação completa, incluindo a funcionalidade de detalhe e eliminação que não foram incluídos neste tutorial. Por isso, se estiver interessado em adicioná-la à sua aplicação, copie o código e adicione-o a esta aplicação.
 
@@ -594,6 +594,6 @@ Para adicionar mais funcionalidades à sua aplicação, reveja as APIs disponív
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

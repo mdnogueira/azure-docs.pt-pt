@@ -6,7 +6,7 @@
     authors="Jim-Parker"
     manager="jwhit"
     editor="tysonn"
-    keywords="backup and restore; recovery services; backup solutions"/>
+    keywords="cópia de segurança e restauro; serviços de recuperação; soluções de cópia de segurança"/>
 
 <tags
     ms.service="backup"
@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="05/10/2016"
+    ms.date="07/21/2016"
     ms.author="jimpark; trinadhk"/>
 
 # O que é o Backup do Azure?
@@ -80,7 +80,7 @@ Uma vez que a Cópia de Segurança é uma solução de cópia de segurança híb
 | Agente do Backup do Azure (MARS) | Sim | Nenhum (Apenas agente baseado no Windows) |
 | System Center Data Protection Manager | Sim (Agente no convidado) | Apenas é possível a cópia de segurança consistente com ficheiros apenas no Hyper-V (Não na VM do Azure) |
 | Servidor do Backup do Azure (MABS) | Sim (Agente no convidado) | Apenas é possível a cópia de segurança consistente com ficheiros apenas no Hyper-V (Não na VM do Azure) (Tal como no DPM) |
-| Cópia de segurança da VM do IaaS do Azure | Na Pré-visualização Pública | Na Pré-visualização Pública - VMs do Linux no modelo de implementação do Resource Manager <br>(Consistência ao nível do sistema de ficheiros)<br><br>Sim para as VMs do Linux no modelo de implementação clássica |
+| Cópia de segurança da VM do IaaS do Azure | Sim | Sim |
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]
 
@@ -99,7 +99,7 @@ Depois de a tarefa de cópia de segurança estar concluída, a localização de 
 
 ### Restaurar VMs do Premium Storage
 
-Restaurar um ponto de recuperação de uma VM do Premium Storage novamente para o Premium Storage é o processo normal de restauro. No entanto, pode ser económico restaurar um ponto de recuperação de uma VM do Premium Storage para o armazenamento standard. Este tipo de restauro pode ser utilizado se precisar de um subconjunto de ficheiros da VM.
+As VM de Armazenamento Premium podem ser restauradas para o Armazenamento Premium ou para o armazenamento normal. Restaurar um ponto de recuperação de uma VM do Premium Storage novamente para o Premium Storage é o processo normal de restauro. No entanto, pode ser económico restaurar um ponto de recuperação de uma VM do Premium Storage para o armazenamento standard. Este tipo de restauro pode ser utilizado se precisar de um subconjunto de ficheiros da VM.
 
 ## Funcionalidade
 Estas cinco tabelas resumem como a funcionalidade de cópia de segurança é processada em cada componente.
@@ -231,6 +231,6 @@ Uma vez que estes tutoriais o ajudam a efetuar uma cópia de segurança rapidame
 
 
 
-<!---HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

@@ -1,10 +1,10 @@
 <properties
     pageTitle="Monitorizar o desempenho de base de dados na Base de Dados SQL do Azure | Microsoft Azure"
     description="Saiba mais sobre as opções para monitorizar a base de dados com ferramentas do Azure e vistas de gestão dinâmica."
-    keywords="database monitoring, cloud database performance"
+    keywords="monitorização de base de dados, desempenho de base de dados em nuvem"
     services="sql-database"
     documentationCenter=""
-    authors="carlrabeler"
+    authors="CarlRabeler"
     manager="jhubbard"
     editor=""/>
 
@@ -14,7 +14,7 @@
     ms.topic="get-started-article"
     ms.tgt_pltfrm="na"
     ms.workload="data-management"
-    ms.date="03/25/2016"
+    ms.date="07/06/2016"
     ms.author="carlrab"/>
 
 # Monitorizar o desempenho de base de dados na Base de Dados SQL do Azure
@@ -27,7 +27,7 @@ No [portal do Azure](https://portal.azure.com/), pode monitorizar a utilização
 - Percentagem de CPU
 - Percentagem de DTU
 - Percentagem de ES de Dados
-- Percentagem de Armazenamento
+- Percentagem de tamanho da Base de Dados
 
 Depois de adicionar estas métricas, pode continuar a visualizá-las no gráfico **Monitorização** com mais detalhes sobre a janela **Métricas**. As quatro métricas mostram a percentagem de utilização média relativa à **DTU** da base de dados. Consulte o artigo [camadas do serviço](sql-database-service-tiers.md) para detalhes sobre as DTUs.
 
@@ -49,6 +49,6 @@ Para conjuntos de bases de dados elásticas, pode monitorizar bases de dados ind
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

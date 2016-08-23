@@ -6,7 +6,7 @@
    authors="markgalioto"
    manager="jwhit"
    editor=""
-   keywords="backup solution; backup service"/>
+   keywords="solução de cópia de segurança; serviço de cópia de segurança"/>
 
 <tags
    ms.service="backup"
@@ -14,7 +14,7 @@
      ms.tgt_pltfrm="na"
      ms.devlang="na"
      ms.topic="get-started-article"
-     ms.date="03/30/2016"
+     ms.date="07/01/2016"
      ms.author="trinadhk; markgal; jimpark;"/>
 
 # FAQ sobre o lançamento da Pré-visualização Pública do serviço do Backup do Azure
@@ -49,6 +49,6 @@ R1. Os cmdlets do PowerShell para ARM não estão atualmente disponíveis. Tem d
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

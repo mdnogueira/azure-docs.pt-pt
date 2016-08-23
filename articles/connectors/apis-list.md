@@ -1,7 +1,7 @@
 <properties
-    pageTitle="Lista de conectores geridos pela Microsoft para utilização em Logic Apps do Microsoft Azure | App Service do Microsoft Azure"
+    pageTitle="Lista de conetores geridos pela Microsoft para utilização em aplicações lógicas do Microsoft Azure | Serviço de Aplicações do Microsoft Azure | Microsoft Azure"
     description="Obtenha uma lista completa dos conectores geridos pela Microsoft que pode utilizar para criar Logic Apps no App Service do Azure"
-    services="app-service\logic"
+    services="logic-apps"
     documentationCenter=""
     authors="MSFTMAN"
     manager="erikre"
@@ -9,38 +9,47 @@
     tags="connectors"/>
 
 <tags
-    ms.service="app-service-logic"
+    ms.service="logic-apps"
     ms.workload="integration"
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="05/31/2016"
+    ms.date="07/15/2016"
     ms.author="deonhe"/>
 
-# Lista de conectores geridos
+# Lista de conetores
 
->[AZURE.NOTE] Esta versão do artigo aplica-se à versão do esquema de pré-visualização 2015-08-01 das Logic Apps. Para a versão do esquema de pré-visualização 2014-12-01, clique em [Lista de Conectores](../app-service-logic/app-service-logic-connectors-list.md). 
+Selecione um ícone para saber como pode rapidamente tirar partido destes conetores para compilar fluxos de trabalho que chamam estes serviços.
 
-Para obter informações sobre preços e uma lista do que está incluído com cada Escalão de Serviços, consulte [Preços dos Serviços de Aplicações do Azure](https://azure.microsoft.com/pricing/details/app-service/).
-
-> [AZURE.NOTE] Se pretende começar com Azure Logic Apps antes de se inscrever para uma conta do Azure, aceda a [Experimentar Aplicação Lógica](https://tryappservice.azure.com/?appservice=logic). Pode criar de imediato uma aplicação lógica de arranque de curta duração no App Service. Sem cartões de crédito; sem compromissos.
-
-Selecione um ícone para saber como pode rapidamente tirar partido destes conectores para compilar aplicações que chamam estes serviços. Estes conectores podem ser utilizados para compilar Logic Apps, PowerApps e Fluxos.
+## Conetores padrão
 
 |Conectores||||
 |-----------|-----------|-----------|-----------|
-|[![Ícone da API][blobicon]<br/>**Blob do Azure**][azureblobdoc]|[![Ícone da API][boxicon]<br/>**Box**][boxDoc]|[![Ícone da API][crmonlineicon]<br/>**CRM Online**][crmonlinedoc]|[![Ícone da API][dropboxicon]<br/>**Dropbox**][dropboxdoc]|
-|[![Ícone da API][facebookicon]<br/>**Facebook**][facebookdoc]|[![Ícone da API][ftpicon]<br/>**FTP**][ftpdoc]|[![Ícone da API][githubicon]<br/>**GitHub**][githubdoc]|[![Ícone da API][googledriveicon]<br/>**Google Drive**][googledrivedoc]|
-|[![Ícone da API][mailchimpicon]<br/>**MailChimp**][mailchimpdoc]|[![Ícone da API][microsofttranslatoricon]<br/>**Tradutor**][microsofttranslatordoc]|[![Ícone da API][office365icon]<br/>**Office 365**<br/>**Outlook**][office365outlookdoc]|[![Ícone da API][office365icon]<br/>**Office 365**<br/>**Utilizadores**][office365usersdoc]|
-|[![Ícone da API][office365icon]<br/>**Office 365**<br/>**Vídeo**][office365videodoc]|[![Ícone da API][onedriveicon]<br/>**OneDrive**][onedrivedoc]|[![Ícone da API][onedriveicon]<br/>**OneDrive<br/>para Negócios**][onedriveforbusinessdoc]|[![Ícone da API][outlookicon]<br/>**Outlook**][outlookdoc]|
-|[![Ícone da API][projectonlineicon]<br/>**Project<br/>Online**][projectonlinedoc]|[![Ícone da API][rssicon]<br/>**RSS**][rssdoc]|[![Ícone da API][salesforceicon]<br/>**Salesforce**][salesforcedoc]|[![Ícone da API][sendgridicon]<br/>**SendGrid**][sendgriddoc]|
-|[![Ícone da API][servicebusicon]<br/>**Service Bus**][servicebusdoc]|[![Ícone da API][sftpicon]<br/>**SFTP**][sftpdoc]|[![Ícone da API][sharepointicon]<br/>**SharePoint**<br/>**Online**][sharepointdoc]|[![Ícone da API][slackicon]<br/>**Slack**<br/>][slackdoc]|
-|[![Ícone da API][smtpicon]<br/>**SMTP**][smtpdoc]|[![Ícone da API][sqlicon]<br/>**SQL Azure**][sqldoc]|[![Ícone da API][trelloicon]<br/>**Trello**][trellodoc]|[![Ícone da API][twilioicon]<br/>**Twilio**][twiliodoc]|
-|[![Ícone da API][twittericon]<br/>**Twitter**][twitterdoc]|[![Ícone da API][wunderlisticon]<br/>**Wunderlist**][wunderlistdoc]|[![Ícone da API][yammericon]<br/>**Yammer**][yammerdoc] | |
+|[![Ícone da API][API/Web-Appicon]<br/>**API/Aplicação Web**][API/Web-Appdoc]|[![Ícone da API][Azure-Blobicon]<br/>**Azure Blob**][Azure-Blobdoc]|[![Ícone da API][Azure~Functionsicon]<br/>**Funções<br/>do Azure**][Azure~Functionsdoc]|[![Ícone da API][Boxicon]<br/>**Box**][Boxdoc]|
+|[![Ícone da API][CRM-Onlineicon]<br/>**CRM Online**][CRM-Onlinedoc]|[![Ícone da API][Delayicon]<br/>**Atraso**][Delaydoc]|[![Ícone da API][Dropboxicon]<br/>**Dropbox**][Dropboxdoc]|[![Ícone da API][Facebookicon]<br/>**Facebook**][Facebookdoc]|
+|[![Ícone da API][FTPicon]<br/>**FTP**][FTPdoc]|[![Ícone da API][GitHubicon]<br/>**GitHub**][GitHubdoc]|[![Ícone da API][Google-Driveicon]<br/>**Google Drive**][Google-Drivedoc]|![Ícone de API][Google-Sheetsicon]<br/>**Folhas do Google**|
+|![Ícone de API][Google-Tasksicon]<br/>**Tarefas do Google**|![Ícone de API][Google~Calendaricon]<br/>**Calendário<br/>do Google**|[![Ícone da API][HTTPicon]<br/>**HTTP**][HTTPdoc]|[![Ícone da API][HTTP-Swaggericon]<br/>**HTTP Swagger**][HTTP-Swaggerdoc]|
+|[![Ícone da API][HTTP~Requesticon]<br/>**HTTP<br/>Pedido**][HTTP~Requestdoc]|[![Ícone da API][HTTP~Responseicon]<br/>**HTTP<br/>Resposta**][HTTP~Responsedoc]|![Ícone de API][Instagramicon]<br/>**Instagram**|[![Ícone da API][MailChimpicon]<br/>**MailChimp**][MailChimpdoc]|
+|![Ícone de API][Mandrillicon]<br/>**Mandrill**|[![Ícone da API][Nested~Logic-Appicon]<br/>**Agrupado<br/>Aplicação Lógica**][Nested~Logic-Appdoc]|[![Ícone da API][Office-365~Outlookicon]<br/>**Office 365<br/>Outlook**][Office-365~Outlookdoc]|[![Ícone da API][Office-365~Usersicon]<br/>**Office 365<br/>Utilizadores**][Office-365~Usersdoc]|
+|[![Ícone da API][Office-365~Videoicon]<br/>**Office 365<br/>Vídeo**][Office-365~Videodoc]|[![Ícone da API][OneDriveicon]<br/>**OneDrive**][OneDrivedoc]|[![Ícone da API][OneDrive-for~Businessicon]<br/>**OneDrive para<br/>Empresas**][OneDrive-for~Businessdoc]|[![Ícone da API][Outlookicon]<br/>**Outlook**][Outlookdoc]|
+|[![Ícone da API][Project-Onlineicon]<br/>**Projeto Online**][Project-Onlinedoc]|[![Ícone da API][Queryicon]<br/>**Consulta**][Querydoc]|[![Ícone da API][Recurrenceicon]<br/>**Periodicidade**][Recurrencedoc]|[![Ícone da API][RSSicon]<br/>**RSS**][RSSdoc]|
+|[![Ícone da API][Salesforceicon]<br/>**Salesforce**][Salesforcedoc]|[![Ícone da API][SendGridicon]<br/>**SendGrid**][SendGriddoc]|[![Ícone da API][Service-Busicon]<br/>**Service Bus**][Service-Busdoc]|[![Ícone da API][SFTPicon]<br/>**SFTP**][SFTPdoc]|
+|[![Ícone da API][SharePointicon]<br/>**SharePoint**][SharePointdoc]|[![Ícone da API][Slackicon]<br/>**Slack**][Slackdoc]|[![Ícone da API][SMTPicon]<br/>**SMTP**][SMTPdoc]|![Ícone de API][SparkPosticon]<br/>**SparkPost**|
+|[![Ícone da API][SQLicon]<br/>**SQL**][SQLdoc]|[![Ícone da API][Translatoricon]<br/>**Translator**][Translatordoc]|[![Ícone da API][Trelloicon]<br/>**Trello**][Trellodoc]|[![Ícone da API][Twilioicon]<br/>**Twilio**][Twiliodoc]|
+|[![Ícone da API][Twittericon]<br/>**Twitter**][Twitterdoc]|[![Ícone da API][Webhookicon]<br/>**Webhook**][Webhookdoc]|[![Ícone da API][Wunderlisticon]<br/>**Wunderlist**][Wunderlistdoc]|[![Ícone da API][Yammericon]<br/>**Yammer**][Yammerdoc]|
+|![Ícone de API][YouTubeicon]<br/>**YouTube**||||
 
-> [AZURE.NOTE] Se tem utilizado o esquema de pré-visualização 2014-12-01 para criar Logic Apps, irá notar que os conectores de integração empresarial, tais como do BizTalk, não estão listados acima. Sabemos que estes são importantes e estamos a esforçar-nos para corrigir rapidamente esta situação. Apesar de não termos uma data de disponibilidade exata, queremos que saiba que esta é uma das nossas principais prioridades. Entretanto, pode aceder às suas [APIs v1 e BizTalk a partir das Logic Apps](https://blogs.msdn.microsoft.com/logicapps/2016/02/25/accessing-v1-apis-and-biztalk-apis-from-logic-apps/). Obrigado pela sua compreensão. Esteja atento.
+> [AZURE.NOTE] Se pretende começar com Azure Logic Apps antes de se inscrever para uma conta do Azure, aceda a [Experimentar Aplicação Lógica](https://tryappservice.azure.com/?appservice=logic). Pode criar de imediato uma aplicação lógica de arranque de curta duração no App Service. Sem cartões de crédito; sem compromissos.
 
+## Conetores do Enterprise Integration Pack (EIP)
+Utilize os conetores EIP para aplicações lógicas para cenários B2B que incluem EAI e EDI.  
+ 
+|Conetores EIP ||||
+|-----------|-----------|-----------|-----------|
+|[![Ícone da API][as2icon]<br/>**AS2</br>encode/decode**][as2doc]|[![Ícone da API][x12icon]<br/>**X12</br>encode/decode**][x12Doc]|[![Ícone da API][xmlvalidateicon]<br/>**XML <br/>validação**][xmlvalidatedoc]|[![Ícone da API][xmltransformicon]<br/>**XML<br/> transformar**][xmltransformdoc]|
+|[![Ícone da API][flatfileicon]<br/>**Ficheiro simples</br>codificar**][flatfiledoc]|[![Ícone da API][flatfiledecodeicon]<br/>**Ficheiro simples</br>descodificar**][flatfiledecodedoc]|||
 
+<!-- TODO: Add Functions, App Service, and Nested Workflow Icons -->
 ### Os conectores podem ser acionadores
 Vários conectores fornecem acionadores que podem notificar a sua aplicação quando ocorrem eventos específicos. Por exemplo, o conector FTP tem o acionador OnUpdatedFile. Pode compilar uma aplicação lógica, PowerApp ou Fluxo que fica à escuta deste acionador e efetua uma ação sempre que este é acionado.
 
@@ -49,39 +58,35 @@ Existem dois tipos de acionadores:
 * Acionadores de Consultas: estes acionadores consultam o serviço a uma frequência especificada para verificar se existem novos dados. Quando estão disponíveis novos dados, é executada uma nova instância da aplicação com a entrada desses dados. Para impedir que os mesmos dados sejam consumidos várias vezes, o acionador pode limpar os dados que foram lidos e transmitidos para a aplicação.
 * Acionadores Push: estes acionadores estão à escuta de dados num ponto final ou da ocorrência de um evento. Em seguida, acionam uma nova instância da aplicação. O conector do Twitter é um exemplo desse tipo.
 
-
 ### Os conectores podem ser ações
 Os conectores também podem ser utilizados como ações nas aplicações. As ações são úteis para procurar dados que podem ser utilizados na execução da aplicação. Por exemplo, pode precisar de procurar dados de clientes numa SQL Database durante o processamento de uma ordem. Alternativamente, pode ter de escrever, atualizar ou eliminar dados numa tabela de destino. Pode fazê-lo utilizando as ações fornecidas pelos conectores. Mapa de ações para operações que são definidas nos metadados Swagger.
 
+## Passos Seguintes
 
-[Novidades](../app-service-logic/app-service-logic-schema-2015-08-01.md)  
-[Compilar agora uma aplicação lógica](../app-service-logic/app-service-logic-create-a-logic-app.md)  
-[Introdução imediata às PowerApps](../power-apps/powerapps-get-started-azure-portal.md)  
-[Migrar Logic Apps existentes para a versão mais recente do esquema](connectors-schema-migration.md) 
+- [Compilar uma aplicação lógica agora](../app-service-logic/app-service-logic-create-a-logic-app.md)  
+- [Criar um conetor personalizado](../app-service-logic/app-service-logic-create-api-app.md)
+- [Monitorizar aplicações lógicas](../app-service-logic/app-service-logic-monitor-your-logic-apps.md)
 
 <!--Connectors Documentation-->
-[azureblobdoc]: ./connectors-create-api-azureblobstorage.md "Ligue-se ao blob do Azure para gerir ficheiros no contentor de blob."
-[bingsearchDoc]: ./connectors-create-api-bingsearch.md "Procure no Bing imagens, notícias e vídeos."
+[azure-blobdoc]: ./connectors-create-api-azureblobstorage.md "Ligue-se ao blob do Azure para gerir ficheiros no contentor de blob."
 [boxDoc]: ./connectors-create-api-box.md "Liga-se ao Box e pode carregar, obter, eliminar, listar tarefas de ficheiros e muito mais."
-[crmonlinedoc]: ./connectors-create-api-crmonline.md "Ligue-se ao Dynamics CRM Online e faça mais com os seus dados CRM Online."
+[crm-onlinedoc]: ./connectors-create-api-crmonline.md "Ligue-se ao Dynamics CRM Online e faça mais com os seus dados CRM Online."
 [dropboxdoc]: ./connectors-create-api-dropbox.md "Ligue-se ao Dropbox para obter, eliminar, listar tarefas de ficheiros e muito mais."
-[exceldoc]: ./connectors-create-api-excel.md "Ligue-se ao Excel."
 [facebookdoc]: ./connectors-create-api-facebook.md "Ligue-se ao Facebook para publicar numa linha cronológica, obter o feed de uma página e muito mais."
 [ftpdoc]: ./connectors-create-api-ftp.md "Liga-se a um servidor FTP/FTPS e realize diferentes tarefas FTP, incluindo carregar, obter, eliminar ficheiros e muito mais."
-[googledrivedoc]: ./connectors-create-api-googledrive.md "Ligue-se ao Google Drive e interaja com os seus dados."
-[microsofttranslatordoc]: ./connectors-create-api-microsofttranslator.md
-[office365outlookdoc]: ./connectors-create-api-office365-outlook.md "O Conector do Office 365 pode enviar e receber e-mails, gerir o calendário e os contactos com a conta do Office 365."
-[officeunifieddoc]: ./connectors-create-api-bingsearch.md
-[office365usersdoc]: ./connectors-create-api-office365-users.md
-[office365videodoc]: ./connectors-create-api-office365-video.md
+[google-drivedoc]: ./connectors-create-api-googledrive.md "Ligue-se ao GoogleDrive e interaja com os seus dados."
+[translatordoc]: ./connectors-create-api-microsofttranslator.md
+[office-365~outlookdoc]: ./connectors-create-api-office365-outlook.md "O Conetor do Office 365 pode enviar e receber e-mails, gerir o calendário e os contactos com a conta do Office 365."
+[office-365~usersdoc]: ./connectors-create-api-office365-users.md
+[office-365~videodoc]: ./connectors-create-api-office365-video.md
 [onedrivedoc]: ./connectors-create-api-onedrive.md "Liga-se ao seu Microsoft OneDrive e carrega, elimina, lista ficheiros e muito mais."
-[onedriveforbusinessdoc]: ./connectors-create-api-onedriveforbusiness.md "Liga-se ao seu Microsoft OneDrive empresarial e carrega, elimina, lista ficheiros e muito mais."
+[onedrive-for~businessdoc]: ./connectors-create-api-onedriveforbusiness.md "Liga-se ao seu Microsoft OneDrive empresarial e carrega, elimina, lista ficheiros e muito mais."
 [outlookdoc]: ./connectors-create-api-outlook.md "Ligue-se à sua caixa de correio do Outlook e aceda ao e-mail, entre outros."
-[projectonlinedoc]: ./connectors-create-api-projectonline.md "Liga-se ao Microsoft Project Online."
+[project-onlinedoc]: ./connectors-create-api-projectonline.md "Liga-se ao Microsoft Project Online."
 [rssdoc]: ./connectors-create-api-rss.md "O conector RSS permite que os utilizadores publiquem e obtenham itens do feed. Também permite que os utilizadores acionem operações quando um novo item é publicado no feed."
 [salesforcedoc]: ./connectors-create-api-salesforce.md "Ligue-se à conta Salesforce e gira contas, responsáveis, oportunidades e muito mais."
 [sendgriddoc]: ./connectors-create-api-sendgrid.md "Liga-se ao Microsoft Project Online."
-[servicebusdoc]: ./connectors-create-api-servicebus.md "Pode enviar mensagens de Filas e Tópicos do Service Bus e receber mensagens de Filas e Subscrições do Service Bus."
+[service-busdoc]: ./connectors-create-api-servicebus.md "Pode enviar mensagens de Filas e Tópicos de Service Bus e receber mensagens de Filas e Subscrições de Service Bus."
 [sharepointdoc]: ./connectors-create-api-sharepointonline.md "Liga-se ao SharePoint Online para gerir documentos e listar itens."
 [slackdoc]: ./connectors-create-api-slack.md "Ligue-se ao Slack e publique mensagens nos canais Slack."
 [sftpdoc]: ./connectors-create-api-sftp.md "Ligue-se ao SFTP para carregar, obter, eliminar ficheiros e muito mais."
@@ -94,42 +99,91 @@ Os conectores também podem ser utilizados como ações nas aplicações. As aç
 [twitterdoc]: ./connectors-create-api-twitter.md "Liga-se ao Twitter e obtém linhas cronológicas, publica tweets, entre outros."
 [wunderlistdoc]: ./connectors-create-api-wunderlist.md "Mantém a sua vida sincronizada."
 [yammerdoc]: ./connectors-create-api-yammer.md "Liga-se ao Yammer para publicar mensagens e receber novas mensagens."
+[as2doc]: ../app-service-logic/app-service-logic-enterprise-integration-as2.md "Saiba mais sobre a integração empresarial com o AS2."
+[x12doc]: ../app-service-logic/app-service-logic-enterprise-integration-x12.md "Saiba mais sobre a integração empresarial com o X12"
+[flatfiledoc]: ../app-service-logic/app-service-logic-enterprise-integration-flatfile.md "Saiba mais sobre a integração empresarial com ficheiros simples."
+[flatfiledecodedoc]: ../app-service-logic/app-service-logic-enterprise-integration-flatfile.md/#how-to-create-the-flat-file-decoding-connector "Saiba mais sobre a integração empresarial com ficheiros simples."
+[xmlvalidatedoc]: ../app-service-logic/app-service-logic-enterprise-integration-xml.md "Saiba mais sobre a integração empresarial com validação XML."
+[xmltransformdoc]: ../app-service-logic/app-service-logic-enterprise-integration-transform.md "Saiba mais sobre transformações de integração empresarial."
+[httpdoc]: ./connectors-native-http.md "Conetor HTTP para efetuar chamadas HTTP."
+[http~requestdoc]: ./connectors-native-reqres.md "Ações de pedido e resposta."
+[http~responsedoc]: ./connectors-native-reqres.md "Ações de pedido e resposta."
+[delaydoc]: ./connectors-native-delay.md "Saiba mais sobre a ação de atraso."
+[http swaggerdoc]: ./connectors-native-http-swagger.md "HTTP + Swagger Connector para efetuar chamadas HTTP."
+[querydoc]: ./connectors-native-query.md "Ação de consulta para selecionar e filtrar matrizes."
+[webhookdoc]: ./connectors-native-webhook.md "Acionador e ação do Webhook para aplicações lógicas."
+[azure~functionsdoc]: ../app-service-logic/app-service-logic-azure-functions.md "integrar aplicações lógicas com Funções do Azure."
+[api/web-appdoc]: ../app-service-logic/app-service-logic-custom-hosted-api.md "Integrar aplicações lógicas com Aplicações API do Serviço de Aplicações."
+[nested~logic-appdoc]: ../app-service-logic/app-service-logic-http-endpoint.md "Integrar aplicações lógicas com um fluxo de trabalho aninhado."
+[recurrencedoc]:  ./connectors-native-recurrence.md "Acionador de recorrência para aplicações lógicas."
+[google-sheetsdoc]: ./connectors-create-api-googlesheet.md "Liga ao Folhas do Google e pode modificar folhas."
+[google-tasksdoc]: ./connectors-create-api-googletasks.md "Liga às Tarefas do Google e pode gerir tarefas."
+[google~calendardoc]: ./connectors-create-api-googlecalendar.md "Liga ao Calendário Google e pode gerir o calendário."
+[instagramdoc]: ./connectors-create-api-instagram.md "Liga ao Instagram e pode acionar ou agir sobre eventos."
+[mandrilldoc]: ./connectors-create-api-mandrill.md "Liga ao Mandrill e pode ser utilizado para comunicação."
+[youtubedoc]: ./connectors-create-api-youtube.md "Liga ao YouTube e pode interagir com vídeos e canais."
+[sparkpostdoc]: ./connectors-create-api-sparkpost.md "Liga ao SparkPost e pode ser utilizado para comunicação."
 
 <!--Icon references-->
-[blobicon]: ./media/apis-list/blobicon.png
-[bingsearchicon]: ./media/apis-list/bingsearchicon.png
-[boxicon]: ./media/apis-list/boxicon.png
-[ftpicon]: ./media/apis-list/ftpicon.png
-[githubicon]: ./media/apis-list/githubicon.png
-[crmonlineicon]: ./media/apis-list/dynamicscrmicon.png
-[dropboxicon]: ./media/apis-list/dropboxicon.png
-[excelicon]: ./media/apis-list/excelicon.png
-[facebookicon]: ./media/apis-list/facebookicon.png
-[googledriveicon]: ./media/apis-list/googledriveicon.png
-[mailchimpicon]: ./media/apis-list/mailchimpicon.png
-[microsofttranslatoricon]: ./media/apis-list/translatoricon.png
-[office365icon]: ./media/apis-list/office365icon.png
-[onedriveicon]: ./media/apis-list/onedriveicon.png
-[onedriveforbusinessicon]: ./media/apis-list/onedriveforbusinessicon.png
-[outlookicon]: ./media/apis-list/outlookicon.png
-[projectonlineicon]: ./media/apis-list/projectonlineicon.png
-[rssicon]: ./media/apis-list/rssicon.png
-[salesforceicon]: ./media/apis-list/salesforceicon.png
-[sendgridicon]: ./media/apis-list/sendgridicon.png
-[servicebusicon]: ./media/apis-list/servicebusicon.png
-[sftpicon]: ./media/apis-list/sftpicon.png
-[sharepointicon]: ./media/apis-list/sharepointicon.png
-[slackicon]: ./media/apis-list/slackicon.png
-[smtpicon]: ./media/apis-list/smtpicon.png
-[sqlicon]: ./media/apis-list/sqlicon.png
-[trelloicon]: ./media/apis-list/trelloicon.png
-[twilioicon]: ./media/apis-list/twilioicon.png
-[twittericon]: ./media/apis-list/twittericon.png
-[wunderlisticon]: ./media/apis-list/wunderlisticon.png
-[yammericon]: ./media/apis-list/yammericon.png
+[Azure-Blobicon]: ./media/apis-list/azureblob.png
+[Boxicon]: ./media/apis-list/box.png
+[FTPicon]: ./media/apis-list/ftp.png
+[GitHubicon]: ./media/apis-list/github.png
+[CRM-Onlineicon]: ./media/apis-list/dynamicscrmonline.png
+[Dropboxicon]: ./media/apis-list/dropbox.png
+[Facebookicon]: ./media/apis-list/facebook.png
+[Google-Driveicon]: ./media/apis-list/googledrive.png
+[MailChimpicon]: ./media/apis-list/mailchimp.png
+[Translatoricon]: ./media/apis-list/microsofttranslator.png
+[Office-365~Outlookicon]: ./media/apis-list/office365.png
+[Office-365~Usersicon]: ./media/apis-list/office365.png
+[Office-365~Videoicon]: ./media/apis-list/sharepointonline.png
+[OneDriveicon]: ./media/apis-list/onedrive.png
+[OneDrive-for~Businessicon]: ./media/apis-list/onedriveforbusiness.png
+[Outlookicon]: ./media/apis-list/outlook.png
+[Project-Onlineicon]: ./media/apis-list/projectonline.png
+[RSSicon]: ./media/apis-list/rss.png
+[Salesforceicon]: ./media/apis-list/salesforce.png
+[SendGridicon]: ./media/apis-list/sendgrid.png
+[Service-Busicon]: ./media/apis-list/servicebus.png
+[SFTPicon]: ./media/apis-list/sftp.png
+[SharePointicon]: ./media/apis-list/sharepointonline.png
+[Slackicon]: ./media/apis-list/slack.png
+[SMTPicon]: ./media/apis-list/smtp.png
+[SQLicon]: ./media/apis-list/sql.png
+[Trelloicon]: ./media/apis-list/trello.png
+[Twilioicon]: ./media/apis-list/twilio.png
+[Twittericon]: ./media/apis-list/twitter.png
+[Wunderlisticon]: ./media/apis-list/wunderlist.png
+[Yammericon]: ./media/apis-list/yammer.png
+[Google~Calendaricon]: ./media/apis-list/googlecalendar.png
+[Google-Tasksicon]: ./media/apis-list/googletasks.png
+[Google-Sheetsicon]: ./media/apis-list/googlesheet.png
+[Mandrillicon]: ./media/apis-list/mandrill.png
+[SparkPosticon]: ./media/apis-list/sparkpost.png
+[Instagramicon]: ./media/apis-list/instagram.png
+[YouTubeicon]: ./media/apis-list/youtube.png
+[HTTPicon]: ./media/apis-list/http.png
+[HTTP~Requesticon]: ./media/apis-list/request.png
+[HTTP~Responseicon]: ./media/apis-list/response.png
+[Delayicon]: ./media/apis-list/delay.png
+[HTTP-Swaggericon]: ./media/apis-list/http_swagger.png
+[Queryicon]: ./media/apis-list/query.png
+[Webhookicon]: ./media/apis-list/webhook.png
+[Azure~Functionsicon]: ./media/apis-list/function.png
+[API/Web-Appicon]: ./media/apis-list/api.png
+[Nested~Logic-Appicon]: ./media/apis-list/workflow.png
+[Recurrenceicon]: ./media/apis-list/recurrence.png
+
+<!-- EIP Icons -->
+[as2icon]: ./media/apis-list/as2new.png
+[x12icon]: ./media/apis-list/x12new.png
+[flatfileicon]: ./media/apis-list/flatfileencoding.png
+[flatfiledecodeicon]: ./media/apis-list/flatfiledecoding.png
+[xmlvalidateicon]: ./media/apis-list/xmlvalidation.png
+[xmltransformicon]: ./media/apis-list/xsltransform.png
 
 
-
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

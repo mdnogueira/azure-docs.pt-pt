@@ -17,7 +17,7 @@
 
 # Descrição Geral da Rede Virtual
 
-Uma rede virtual do Azure (VNet) é uma representação da sua própria rede na nuvem.  É um isolamento lógico da nuvem do Azure dedicado à sua subscrição. Pode controlar totalmente os blocos de endereços IP, as definições de DNS, as políticas de segurança e as tabelas de rotas dentro desta rede. Pode também segmentar ainda mais a sua VNet em sub-redes e iniciar máquinas virtuais (VMs) IaaS do Azure e/ou [serviços em nuvem (instâncias de função PaaS)](../cloud-services/cloud-services-choose-me.md). Além disso, pode ligar a rede virtual à sua rede no local utilizando uma das [opções de conectividade](../vpn-gateway/vpn-gateway-cross-premises-options.md) disponíveis no Azure. Essencialmente, pode expandir a sua rede para o Azure, com controlo total sobre blocos de endereços IP com a vantagem da escala empresarial que o Azure oferece.
+Uma rede virtual do Azure (VNet) é uma representação da sua própria rede na nuvem.  É um isolamento lógico da nuvem do Azure dedicado à sua subscrição. Pode controlar totalmente os blocos de endereços IP, as definições de DNS, as políticas de segurança e as tabelas de rotas dentro desta rede. Pode também segmentar ainda mais a sua VNet em sub-redes e iniciar máquinas virtuais (VMs) IaaS do Azure e/ou [serviços em nuvem (instâncias de função PaaS)](../cloud-services/cloud-services-choose-me.md). Além disso, pode ligar a rede virtual à sua rede no local através de uma das [opções de conectividade](../vpn-gateway/vpn-gateway-cross-premises-options.md) disponíveis no Azure. Essencialmente, pode expandir a sua rede para o Azure, com controlo total sobre blocos de endereços IP com a vantagem da escala empresarial que o Azure oferece.
 
 Para melhor compreender as VNets, observe a figura abaixo, que mostra uma rede no local simplificada.
 
@@ -97,6 +97,6 @@ Não existe um custo extra para utilizar Redes Virtuais no Azure. As instâncias
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

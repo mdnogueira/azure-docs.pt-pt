@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="hero-article"
-    ms.date="05/06/2016"
+    ms.date="07/15/2016"
     ms.author="cabailey"/>
 
 # Registo do Cofre de Chaves do Azure #
@@ -33,6 +33,8 @@ Utilize este tutorial para o ajudar a começar com o registo do Cofre de Chaves 
 >[AZURE.NOTE]  Este tutorial não inclui instruções sobre a criação dos cofres de chaves, chaves ou segredos. Para obter estas informações, consulte o artigo [Introdução ao Cofre de Chaves do Azure](key-vault-get-started.md). Ou, para obter instruções sobre a Interface de Linha de Comandos de várias plataformas, veja o [tutorial equivalente](key-vault-manage-with-cli.md).
 >
 >Atualmente, não é possível configurar o Cofre de Chaves do Azure no Portal do Azure. Em alternativa, utilize estas instruções do Azure PowerShell.
+
+Os registos que recolhe podem ser visualizados através de Log Analytics a partir do Operations Management Suite. Para obter mais informações, veja [Azure Key Vault (Preview) solution in Log Analytics (Solução Cofre de Chaves do Azure (pré-visualização) no Log Analytics)](../log-analytics/log-analytics-azure-key-vault.md).
 
 Para obter informações gerais sobre o Cofre de Chaves do Azure, consulte o artigo [O que é o Cofre de Chaves do Azure?](key-vault-whatis.md)
 
@@ -269,12 +271,10 @@ Para um tutorial que utiliza o Cofre de Chaves do Azure numa aplicação Web, co
 Para as referências de programação, consulte o [Guia para programadores do Cofre de Chaves do Azure](key-vault-developers-guide.md).
 
 Para obter uma lista dos cmdlets do Azure PowerShell 1.0 para o Cofre de Chaves do Azure, consulte o artigo [Cmdlets do Cofre de Chaves do Azure](https://msdn.microsoft.com/library/azure/dn868052.aspx). 
- 
+
+Para um tutorial de rotação da chave e auditoria do registo com o Cofre de Chaves do Azure, veja [How to setup Key Vault with end to end key rotation and auditing (Como configurar o Cofre de Chaves com auditoria e rotação de chave ponto a ponto)](key-vault-key-rotation-log-monitoring.md).
 
 
-
-
-
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

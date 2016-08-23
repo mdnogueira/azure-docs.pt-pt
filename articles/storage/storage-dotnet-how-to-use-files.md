@@ -1,23 +1,25 @@
 <properties
-            pageTitle="Introdução ao File Storage do Azure no Windows | Microsoft Azure"
-            description="Armazene dados de ficheiros na nuvem com o File Storage do Azure e monte a partilha de ficheiros na nuvem a partir de uma máquina virtual do Azure (VM) ou a partir de uma aplicação no local com o Windows."
-            services="storage"
-            documentationCenter=".net"
-            authors="mine-msft"
-            manager="aungoo"
-            editor="tysonn" />
+    pageTitle="Introdução ao File Storage do Azure no Windows | Microsoft Azure"
+    description="Armazene dados de ficheiros na nuvem com o File Storage do Azure e monte a partilha de ficheiros na nuvem a partir de uma máquina virtual do Azure (VM) ou a partir de uma aplicação no local com o Windows."
+    services="storage"
+    documentationCenter=".net"
+    authors="mine-msft"
+    manager="aungoo"
+    editor="tysonn" />
 
 <tags ms.service="storage"
-      ms.workload="storage"
-      ms.tgt_pltfrm="na"
-      ms.devlang="dotnet"
-      ms.topic="hero-article"
-      ms.date="04/11/2016"
-      ms.author="minet" />
+    ms.workload="storage"
+    ms.tgt_pltfrm="na"
+    ms.devlang="dotnet"
+    ms.topic="hero-article"
+    ms.date="07/26/2016"
+    ms.author="minet" />
 
 # Introdução ao File Storage do Azure no Windows
 
 [AZURE.INCLUDE [storage-selector-file-include](../../includes/storage-selector-file-include.md)]
+<br/>
+[AZURE.INCLUDE [storage-try-azure-tools-files](../../includes/storage-try-azure-tools-files.md)]
 
 ## Descrição geral
 
@@ -669,6 +671,6 @@ Consulte as ligações para obter mais informações sobre o File Storage do Azu
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

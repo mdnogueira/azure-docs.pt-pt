@@ -28,14 +28,13 @@ Este tutorial mostra como utilizar o Portal Clássico do Azure para criar um Hub
 
 Para concluir este tutorial, precisa do seguinte:
 
-+ Microsoft Visual Studio 2013 ou posterior ou Microsoft Visual Studio Express para Windows. Os exemplos neste artigo utilizam o Visual Studio 2015.
++ [Microsoft Visual Studio](http://visualstudio.com)
 
 + Uma conta ativa do Azure. <br/>Se não tiver uma, pode criar uma conta gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F target="_blank").
 
 [AZURE.INCLUDE [event-hubs-create-event-hub](../../includes/event-hubs-create-event-hub.md)]
 
 [AZURE.INCLUDE [service-bus-event-hubs-get-started-send-csharp](../../includes/service-bus-event-hubs-get-started-send-csharp.md)]
-
 
 [AZURE.INCLUDE [service-bus-event-hubs-get-started-receive-ephcs](../../includes/service-bus-event-hubs-get-started-receive-ephcs.md)]
 
@@ -97,6 +96,6 @@ Agora que compilou uma aplicação de trabalho que cria um Hub de Eventos e envi
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

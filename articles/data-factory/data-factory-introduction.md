@@ -1,6 +1,7 @@
 <properties 
-    pageTitle="Introdução ao Azure Data Factory" 
-    description="Saiba como pode utilizar o serviço do Azure Data Factory para compor o processamento de dados, armazenamento de dados e serviços de movimento de dados para criar pipelines que produzem informações fidedignas." 
+    pageTitle="O que é o Data Factory? Serviço de integração de dados | Microsoft Azure" 
+    description="Saiba o que o Azure Data Factory é: um serviço de integração de dados em nuvem que orquestra e automatiza o movimento e a transformação de dados." 
+    keywords="data integration, cloud data integration, what is azure data factory"
     services="data-factory" 
     documentationCenter="" 
     authors="spelluru" 
@@ -13,17 +14,17 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="get-started-article" 
-    ms.date="04/26/2016" 
+    ms.date="07/12/2016" 
     ms.author="spelluru"/>
 
-# Introdução ao Serviço do Azure Data Factory
+# Introdução ao Azure Data Factory Service, um serviço de integração de dados em nuvem
 
-## Descrição geral
+## O que é o Azure Data Factory? 
 Data Factory é um serviço de integração de dados baseado na nuvem que orquestra e automatiza o movimento e a transformação de dados. Tal como uma fábrica de produção que opera equipamento para processar matéria-prima e transformá-la em bens acabados, o Data Factory orquestra os serviços existentes que recolhem dados não processados e os transforma em informações prontas a utilizar. 
 
 O Data Factory funciona em fontes de dados e SaaS na nuvem e no local para inserir, preparar, transformar, analisar e publicar os seus dados.  Utilize o Data Factory para compor serviços nos pipelines geridos de fluxo de dados para transformar os seus dados com serviços, como [HDInsight (Hadoop) da Azure](http://azure.microsoft.com/documentation/services/hdinsight/) e [Azure Batch](https://azure.microsoft.com/documentation/services/batch/), para as suas necessidades de computação de macrodados e com o [Azure Machine Learning](https://azure.microsoft.com/documentation/services/machine-learning/) para operacionalizar as soluções de análise.  Vá além apenas de uma vista de monitorização de tabela e utilize as visualizações otimizadas do Data Factory para visualizar rapidamente a linhagem e as dependências entre os pipelines de dados. Monitorize todos os pipelines de fluxo de dados a partir de uma vista unificada única para identificar facilmente os problemas e alertas de monitorização de configuração.
 
-![Descrição geral](./media/data-factory-introduction/data-factory-overview.png)
+![Diagrama: descrição geral do Data Factory Overview, um serviço de integração de dados](./media/data-factory-introduction/what-is-azure-data-factory.png)
 
 **Figura 1.** Recolha dados de várias origens de dados diferentes no local, insira e prepare-os, organize e analise-os com um intervalo de transformações e, em seguida, publicar dados prontos a utilizar para consumo.
 
@@ -35,7 +36,7 @@ Pode utilizar o Data Factory sempre que precisar para recolher dados de diferent
 
 O Azure Data Factory tem algumas entidades-chave que funcionam em conjunto para definir a entrada e saída de dados, eventos de processamento e a agenda e os recursos necessários para executar o fluxo de dados pretendido.
 
-![Conceitos-chave](./media/data-factory-introduction/key-concepts.png)
+![Diagrama: Data Factory, um serviço de integração de dados em nuvem – Conceitos Chave](./media/data-factory-introduction/data-integration-service-key-concepts.png)
 
 **Figura 2.** Relações entre o Conjunto de Dados, Atividade, Pipeline e Serviço Ligado
 
@@ -68,10 +69,16 @@ Por exemplo, vamos assumir que os ambientes de computação, tais como o cluster
 
 Pretendemos ter o Azure Data Factory em cada geografia suportada pelo Azure no futuro.
   
+## Passos seguintes
+Siga as instruções passo a passo nos tutoriais seguintes para saber como criar fábricas de dados com pipelines de dados. 
+
+Tutorial | Descrição
+-------- | -----------
+[Criar um pipeline de dados que processa os dados que utilizam o cluster do Hadoop](data-factory-build-your-first-pipeline.md) | Neste tutorial, irá criar a primeira fábrica de dados do Azure com um pipeline de dados que **processa dados** executando o script Hive num cluster do Azure HDInsight (Hadoop). |
+[Criar um pipeline de dados para mover dados entre dois arquivos de dados em nuvem](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) | Neste tutorial, criará uma fábrica de dados com um pipeline que **move dados** do armazenamento de Blobs para base de dados SQL.
+[Criar um pipeline de dados para mover dados entre um arquivo de dados no local e um arquivo de dados em nuvem utilizando o Data Management Gateway](data-factory-move-data-between-onprem-and-cloud.md) |  Neste tutorial, criaár uma fábrica de dados com um pipeline que **move dados** a partir de uma base de dados do SQL Server **no local** para um blob do Azure. Como parte de instruções, irá instalar e configurar o Data Management Gateway no computador. 
 
 
-
-
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

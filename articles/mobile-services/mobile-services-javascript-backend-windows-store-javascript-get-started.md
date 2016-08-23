@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="mobile-windows-store"
     ms.devlang="javascript"
     ms.topic="get-started-article"
-    ms.date="03/06/2016"
+    ms.date="07/21/2016"
     ms.author="glenga"/>
 
 # Introdução aos Mobile Services
@@ -29,7 +29,7 @@ Este tutorial mostra como adicionar um serviço de back-end baseado na nuvem a u
 
 Para concluir este tutorial, precisa do seguinte:
 
-* Uma conta ativa do Azure. Se não tiver uma conta, pode criar uma conta de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fdocumentation%2Farticles%2Fmobile-services-javascript-backend-windows-store-javascript-get-started%2F).
+* Uma conta ativa do Azure. Se não tiver uma conta, pode criar uma de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fdocumentation%2Farticles%2Fmobile-services-javascript-backend-windows-store-javascript-get-started%2F).
 * [Visual Studio 2013 Express para Windows]
 
 ## Criar um novo serviço móvel
@@ -57,13 +57,13 @@ Assim que tiver criado o seu serviço móvel, pode seguir um guia de introduçã
 
 A etapa final deste tutorial consiste em criar e executar a sua nova aplicação.
 
-1. Navegue até à localização onde guardou os ficheiros de projeto comprimidos, expanda os ficheiros no computador e abra o ficheiro de solução no Visual Studio.
+1. Navegue até à localização onde guardou os ficheiros comprimidos do projeto, expanda- os no computador e abra o ficheiro da solução no Visual Studio.
 
 2. Prima a tecla **F5** para reconstruir o projeto e iniciar a aplicação.
 
-3. Na aplicação, digite um texto significativo, tal como *Concluir o tutorial*, em **Inserir um Item da Lista de Tarefas** e, em seguida, clique em **Guardar**.
+3. Na aplicação, digite um texto significativo, tal como *Concluir o tutorial*, em **Inserir um TodoItem** e, em seguida, clique em **Guardar**.
 
-    Esta ação envia um pedido POST para o novo serviço móvel alojado no Azure. Os dados do pedido são inseridos na tabela Item da Lista de Tarefas. Os itens armazenados na tabela são devolvidos pelo servidor móvel e os dados são apresentados na segunda coluna na aplicação.
+    Esta ação envia um pedido POST ao novo serviço móvel alojado no Azure. Os dados do pedido são inseridos na tabela TodoItem. Os itens armazenados na tabela são devolvidos pelo servidor móvel e os dados são apresentados na segunda coluna na aplicação.
 
 4. (Opcional) Execute novamente a aplicação e repare que os dados guardados do passo anterior são carregados a partir do serviço móvel depois de a aplicação iniciar.
  
@@ -93,6 +93,6 @@ Agora que concluiu o guia de introdução, saiba como trabalhar com o [Cliente d
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="dotnet"
     ms.topic="hero-article"
-    ms.date="03/21/2016"
+    ms.date="06/10/2016"
     ms.author="adegeo"/>
 
 # Introdução ao Cloud Services do Azure e ao ASP.NET
@@ -60,7 +60,7 @@ As instruções do tutorial funcionam com qualquer um dos seguintes produtos:
 * Visual Studio 2013
 * Visual Studio 2015
 
-Se não tiver nenhum destes produtos, o Visual Studio 2015 será instalado automaticamente ao instalar o Azure SDK. 
+Se não tiver nenhum destes produtos, o Visual Studio 2015 será instalado automaticamente ao instalar o Azure SDK.
 
 ## Arquitetura da aplicação
 
@@ -229,7 +229,7 @@ Utilizará uma [transformação Web.config](http://www.asp.net/mvc/tutorials/dep
         providerName="System.Data.SqlClient" xdt:Transform="SetAttributes" xdt:Locator="Match(name)"/>
     </connectionStrings>
     ```
-    
+
     Deixe o ficheiro aberto para edição.
 
 2. No [Portal Clássico do Azure](http://manage.windowsazure.com), clique em **Bases de Dados SQL** no painel esquerdo, clique na base de dados criada para este tutorial, clique no separador **Dashboard** e, em seguida, clique em **Mostrar cadeias de ligação**.
@@ -314,10 +314,10 @@ E o ficheiro *ServiceConfiguration.Cloud.cscfg* inclui os valores que introduziu
         <Setting name="StorageConnectionString" value="{yourconnectionstring}" />
         <Setting name="ContosoAdsDbConnectionString" value="{yourconnectionstring}" />
         <!-- other settings not shown -->
-    
+
     </ConfigurationSettings>
     <!-- other settings not shown -->
-    
+
 </Role>
 ```
 
@@ -442,7 +442,7 @@ Nesta secção, deverá configurar o Storage do Azure e as cadeias de ligação 
         <add name="ContosoAdsContext" connectionString="Data Source=(localdb)\v11.0; Initial Catalog=ContosoAds; Integrated Security=True; MultipleActiveResultSets=True;" providerName="System.Data.SqlClient" />
     </connectionStrings>
     ```
-    
+
     Se estiver a utilizar o Visual Studio 2015, substitua “v11.0” por “MSSQLLocalDB”.
 
 2. Guarde as alterações.
@@ -868,9 +868,10 @@ Para obter mais informações, consulte os seguintes recursos:
 * [Parte 1 dos Cloud Services do Azure: Introdução](http://justazure.com/microsoft-azure-cloud-services-part-1-introduction/)
 * [Como gerir Cloud Services](cloud-services-how-to-manage.md)
 * [Storage do Azure](/documentation/services/storage/)
+* [Como escolher um fornecedor de serviços de nuvem](https://azure.microsoft.com/overview/choosing-a-cloud-service-provider/)
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="mobile-xamarin-ios"
     ms.devlang="dotnet"
     ms.topic="hero-article"
-    ms.date="03/16/2016"
+    ms.date="07/21/2016"
     ms.author="craig.dunn@xamarin.com"/>
 
 # <a name="getting-started"> </a>Introdução aos Mobile Services
@@ -83,7 +83,7 @@ A etapa final deste tutorial consiste em criar e executar a sua nova aplicação
 
     ![][10]
 
-    Esta ação envia um pedido POST para o novo serviço móvel alojado no Azure. Os dados do pedido são inseridos na tabela Item da Lista de Tarefas. Os itens armazenados na tabela são devolvidos pelo serviço móvel e os dados são apresentados na lista.
+    Esta ação envia um pedido POST ao novo serviço móvel alojado no Azure. Os dados do pedido são inseridos na tabela TodoItem. Os itens armazenados na tabela são devolvidos pelo serviço móvel e os dados são apresentados na lista.
 
     > [AZURE.NOTE] Pode rever o código que acede ao seu serviço móvel para consultar e inserir dados, que se encontra no ficheiro C# TodoService.cs.
 
@@ -139,6 +139,6 @@ Agora que concluiu o guia de introdução, saiba como efetuar tarefas importante
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

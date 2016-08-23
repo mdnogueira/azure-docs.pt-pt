@@ -13,23 +13,23 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="04/02/2016"
+   ms.date="07/06/2016"
    ms.author="mbaldwin"/>
 
 
 # Guia para programadores do Azure Active Directory
 
 ## Descrição geral
-Como gestão de identidade como uma plataforma de serviço (IDMaaS), o Azure Active Directory fornece aos programadores uma forma eficaz de integrar a gestão de identidades às suas aplicações. Os artigos que se seguem fornecem descrições gerais sobre a implementação e as principais funcionalidades do Azure Active Directory. Sugerimos a sua leitura por ordem, ou avance para [Introdução](#getting-started) se já estiver pronto a aprofundar ainda mais o assunto.
+Como gestão de identidade como uma plataforma de serviço (IDMaaS), o Azure Active Directory (AD) fornece aos programadores uma forma eficaz de integrar a gestão de identidades nas suas aplicações. Os artigos que se seguem fornecem descrições gerais sobre a implementação e as principais funcionalidades do Azure AD. Sugerimos a sua leitura por ordem, ou avance para [Introdução](#getting-started) se já estiver pronto a aprofundar ainda mais o assunto.
 
 
-1. [As vantagens da integração do Azure Active Directory](active-directory-how-to-integrate.md): detetar por que motivo a integração com o Azure Active Directory oferece a melhor solução para o início de sessão seguro e autorização.
+1. [Vantagens da integração do Azure Active Directory](active-directory-how-to-integrate.md): detetar por que motivo a integração com o Azure AD oferece a melhor solução para um início de sessão e autorização seguros.
 
-1. [Cenários de autenticação do Active Directory](active-directory-authentication-scenarios.md): tirar partido da autenticação simplificada do Azure Active Directory para fornecer início de sessão na aplicação.
+1. [Cenários de autenticação do Active Directory](active-directory-authentication-scenarios.md): tirar partido da autenticação simplificada do Azure AD para fornecer início de sessão na aplicação.
 
-1. [Integrar aplicações com o Azure Active Directory](active-directory-integrating-applications.md): saiba como adicionar, atualizar e remover aplicações a partir do Azure Active Directory e sobre as diretrizes de imagem corporativa para aplicações integradas.
+1. [Integrar aplicações com o Azure Active Directory](active-directory-integrating-applications.md): saiba como adicionar, atualizar e remover aplicações a partir do Azure AD e sobre as diretrizes de imagem corporativa para aplicações integradas.
 
-1. [Graph API do Azure Active Directory](active-directory-graph-api.md): utilize a Graph API do Azure Active Directory para aceder, através de programação, ao Azure Active Directory através de pontos finais da API REST. Tenha em conta que a Graph API do Azure AD também é acessível através do [Microsoft Graph](https://graph.microsoft.io/), uma API unificada que permite aceder a várias APIs de serviço em nuvem da Microsoft, através de um único ponto final de API REST e com um único token de acesso.
+1. [Graph API do Azure Active Directory](active-directory-graph-api.md): utilize a Graph API do Azure AD para aceder, através de programação, ao Azure AD através de pontos finais da API REST. Tenha em conta que a Graph API do Azure AD também é acessível através do [Microsoft Graph](https://graph.microsoft.io/), uma API unificada que permite aceder a várias APIs de serviço em nuvem da Microsoft, através de um único ponto final de API REST e com um único token de acesso.
 
 1. [Bibliotecas de autenticação do Azure Active Directory](active-directory-authentication-libraries.md): autentique facilmente os utilizadores para obter os tokens de acesso através do recurso a bibliotecas de autenticação do Azure AD para .NET, JavaScript, Objective-C, Android e muito mais.
 
@@ -40,15 +40,15 @@ Estes tutoriais são adaptados para várias plataformas e podem ajudá-lo a come
 
 ### Guias de introdução a aplicações móveis e para PC
 
-|[![iOS](./media/active-directory-developers-guide/ios.png)](active-directory-devquickstarts-ios.md)|[![Android](./media/active-directory-developers-guide/android.png)](active-directory-devquickstarts-android.md)|[![.NET](./media/active-directory-developers-guide/net.png)](active-directory-devquickstarts-dotnet.md)|[![Windows Universal](./media/active-directory-developers-guide/windows.png)](active-directory-devquickstarts-windowsstore.md)|[![Xamarin](./media/active-directory-developers-guide/xamarin.png)](active-directory-devquickstarts-xamarin.md)|[![Cordova](./media/active-directory-developers-guide/cordova.png)](active-directory-devquickstarts-cordova.md)
-|:--:|:--:|:--:|:--:|:--:|:--:|:--:
-|[iOS](active-directory-devquickstarts-ios.md)|[Android](active-directory-devquickstarts-android.md)|[.NET](active-directory-devquickstarts-dotnet.md)|[Windows Phone](active-directory-devquickstarts-windowsphone.md)|[Loja Windows](active-directory-devquickstarts-windowsstore.md)|[Xamarin](active-directory-devquickstarts-xamarin.md)|[Cordova](active-directory-devquickstarts-cordova.md)
+|[![iOS](./media/active-directory-developers-guide/ios.png)](active-directory-devquickstarts-ios.md)|[![Android](./media/active-directory-developers-guide/android.png)](active-directory-devquickstarts-android.md)|[![.NET](./media/active-directory-developers-guide/net.png)](active-directory-devquickstarts-dotnet.md)|[![Windows Universal](./media/active-directory-developers-guide/windows.png)](active-directory-devquickstarts-windowsstore.md)|[![Xamarin](./media/active-directory-developers-guide/xamarin.png)](active-directory-devquickstarts-xamarin.md)|[![Cordova](./media/active-directory-developers-guide/cordova.png)](active-directory-devquickstarts-cordova.md)|[![OAuth 2.0](./media/active-directory-developers-guide/oauth-2.png)](active-directory-protocols-oauth-code.md)
+|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+|[iOS](active-directory-devquickstarts-ios.md)|[Android](active-directory-devquickstarts-android.md)|[.NET](active-directory-devquickstarts-dotnet.md)|[Windows Universal](active-directory-devquickstarts-windowsstore.md)|[Xamarin](active-directory-devquickstarts-xamarin.md)|[Cordova](active-directory-devquickstarts-cordova.md)|[Integrar diretamente com OAuth 2.0](active-directory-protocols-oauth-code.md)|
 
 ### Guias de introdução a Web Apps
 
-|[![.NET](./media/active-directory-developers-guide/net.png)](active-directory-devquickstarts-webapp-dotnet.md)|[![JAva](./media/active-directory-developers-guide/java.png)](active-directory-devquickstarts-webapp-java.md)|[![Javascript](./media/active-directory-developers-guide/javascript.png)](active-directory-devquickstarts-angular.md)|[![Node.js](./media/active-directory-developers-guide/nodejs.png)](active-directory-devquickstarts-openidconnect-nodejs.md)
-|:--:|:--:|:--:|:--:|
-|[.NET](active-directory-devquickstarts-webapp-dotnet.md)|[Java](active-directory-devquickstarts-webapp-java.md)|[Javascript](active-directory-devquickstarts-angular.md)|[Node.js](active-directory-devquickstarts-openidconnect-nodejs.md)
+|[![.NET](./media/active-directory-developers-guide/net.png)](active-directory-devquickstarts-webapp-dotnet.md)|[![JAva](./media/active-directory-developers-guide/java.png)](active-directory-devquickstarts-webapp-java.md)|[![AngularJS](./media/active-directory-developers-guide/angularjs.png)](active-directory-devquickstarts-angular.md)|[![Javascript](./media/active-directory-developers-guide/javascript.png)](https://github.com/Azure-Samples/active-directory-javascript-singlepageapp-dotnet-webapi)|[![Node.js](./media/active-directory-developers-guide/nodejs.png)](active-directory-devquickstarts-openidconnect-nodejs.md) | [![OpenID Connect](./media/active-directory-developers-guide/openid-connect.png)](active-directory-protocols-openid-connect-code.md)
+|:--:|:--:|:--:|:--:|:--:|:--:|
+|[.NET](active-directory-devquickstarts-webapp-dotnet.md)|[Java](active-directory-devquickstarts-webapp-java.md)|[AngularJS](active-directory-devquickstarts-angular.md)|[Javascript](https://github.com/Azure-Samples/active-directory-javascript-singlepageapp-dotnet-webapi)|[Node.js](active-directory-devquickstarts-openidconnect-nodejs.md)|[Integrar diretamente com OpenID Connect](active-directory-protocols-openid-connect-code.md)|
 
 ### Guias de introdução à API Web
 
@@ -66,12 +66,14 @@ Estes tutoriais são adaptados para várias plataformas e podem ajudá-lo a come
 
 Estes artigos descrevem como efetuar tarefas específicas com o Azure Active Directory:
 
-- [Obter um inquilino do Azure Active Directory](active-directory-howto-tenant.md)
-- [Listar a aplicação na galeria de aplicações do Azure Active Directory](active-directory-app-gallery-listing.md)
-- [Compreender o manifesto da aplicação do Azure Active Directory](active-directory-application-manifest.md)
-- [Criar uma aplicação com APIs do Office 365](https://msdn.microsoft.com/office/office365/howto/getting-started-Office-365-APIs)
+- [Obter um inquilino do Azure AD](active-directory-howto-tenant.md)
+- [Iniciar sessão de qualquer utilizador do Azure AD utilizando o padrão de aplicação multi-inquilino](active-directory-devhowto-multi-tenant-overview.md) 
+- Ativar a SSO em várias aplicações com ADAL em dispositivos [Android](active-directory-sso-android.md) e [iOS](active-directory-sso-ios.md)
+- [Tornar a sua aplicação AppSource certificada para Azure AD](active-directory-devhowto-appsource-certified.md)
+- [Liste a sua aplicação na galeria de aplicações do Azure AD](active-directory-app-gallery-listing.md)
 - [Submeter Web Apps do Office 365 ao Dashboard do Vendedor](https://msdn.microsoft.com/office/office365/howto/submit-web-apps-seller-dashboard)
-- Saiba como ativar a SSO em vária aplicações com ADAL em dispositivos [Android](active-directory-sso-android.md) e [iOS](active-directory-sso-ios.md)
+- [Compreender o manifesto da aplicação do Azure Active Directory](active-directory-application-manifest.md)
+- [Compreender as diretrizes de imagem corporativa para os botões de início de sessão e aquisição de aplicações na aplicação de cliente](active-directory-branding-guidelines.md)
 - [Pré-visualização: como criar aplicações que inscrevem os utilizadores em contas pessoais, profissionais ou escolares](active-directory-appmodel-v2-overview.md)
 - [Pré-visualização: como criar aplicações que inscrevem e iniciam sessão dos consumidores](../active-directory-b2c/active-directory-b2c-overview.md)
 
@@ -97,17 +99,21 @@ Estes artigos fornecem uma referência de base para as APIs REST e da biblioteca
 
 - [Âmbitos de permissões da Graph API](https://msdn.microsoft.com/Library/Azure/Ad/Graph/howto/azure-ad-graph-api-permission-scopes): âmbitos de permissões de OAuth 2.0 utilizados para controlar o acesso que uma aplicação tem aos dados do diretório de um inquilino.
 
-### Protocolos de autenticação
+### Protocolos de autenticação e autorização
 
-- [Protocolos de autenticação do Azure Active Directory](active-directory-protocols.md): saiba mais acerca dos diferentes protocolos de autenticação e autorização suportados pelo Azure Active Directory.
+- [Assinar Rollover de chave no Azure AD](active-directory-signing-key-rollover.md): saiba mais sobre a cadência da chave de assinatura do Azure AD e como atualizar a chave para os cenários mais comuns de aplicação.
+
+- [Protocolo OAuth 2.0: utilizar a concessão do código de autorização](active-directory-protocols-oauth-code.md): pode utilizar a concessão do código de autorização do protocolo OAuth 2.0 para autorizar o acesso às aplicações Web e APIs Web no inquilino do Azure Active Directory.
+
+- [Protocolo OAuth 2.0: noções sobre a concessão implícita](active-directory-dev-understanding-oauth2-implicit-grant.md) : saiba mais sobre a concessão de autorização implícita, e se é adequada para a sua aplicação.
+
+- [Protocolo de OAuth 2.0: serviço para chamadas de serviço utilizando credenciais de cliente](active-directory-protocols-oauth-service-to-service.md): o fluxo de Concessão de credenciais do OAuth 2.0 de cliente permite um serviço Web (um cliente confidencial) para utilizar as suas próprias credenciais para a autenticação quando chama outro serviço da Web, em vez de representar um utilizador. Neste cenário, o cliente é normalmente um serviço Web de camada média, um serviço do daemon ou um site.
+
+- [Protocolo OpenID Connect 1.0: início de sessão e autenticação](active-directory-protocols-openid-connect-code.md): o protocolo OpenID Connect 1.0 expande o OAuth 2.0 para ser utilizado como protocolo de autenticação. Uma aplicação de cliente pode receber uma id_token para gerir o processo de início de sessão ou aumentar o fluxo de código de autorização para receber uma id_token e o código de autorização.
 
 - [Referência do protocolo SAML 2.0](active-directory-saml-protocol-reference.md): o protocolo SAML 2.0 permite às aplicações fornecer uma experiência de início de sessão única aos respetivos utilizadores.
 
-- [Referência do protocolo OAuth 2.0](active-directory-protocols-oauth-code.md): pode utilizar o protocolo OAuth 2.0 para autorizar o acesso às Web Apps e APIs Web no inquilino do Azure Active Directory.
-
-- [Referência do protocolo OpenID Connect 1.0](active-directory-protocols-openid-connect-code.md): o protocolo OpenID Connect 1.0 expande o OAuth 2.0 para ser utilizado como protocolo de autenticação.
-
-- [Protocolo WS-Federation 1.2](http://docs.oasis-open.org/wsfed/federation/v1.2/os/ws-federation-1.2-spec-os.html): o Azure Active Directory suporta o WS-Federation 1.2 de acordo com a Especificação Versão 1.2 do Web Services Federation.
+- [Protocolo WS-Federation 1.2](http://docs.oasis-open.org/wsfed/federation/v1.2/os/ws-federation-1.2-spec-os.html): o Azure Active Directory suporta o WS-Federation 1.2 de acordo com a Especificação Versão 1.2 do Web Services Federation. Para obter mais informações sobre o documento de metadados de federação, veja o artigo [Metadados de Federação](active-directory-federation-metadata.md).
 
 - [Token e tipos de afirmações suportados](active-directory-token-and-claims.md): pode utilizar este guia para compreender e avaliar as afirmações no SAML 2.0 e JSON Web Tokens (JWT).
 
@@ -141,6 +147,6 @@ O [Azure Friday](https://azure.microsoft.com/documentation/videos/azure-friday/)
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

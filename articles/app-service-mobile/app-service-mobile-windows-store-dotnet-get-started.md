@@ -80,13 +80,13 @@ Depois de configurar o back-end da Aplicação Móvel, pode criar uma nova aplic
 
 ##Passos seguintes
 
-* [Adicionar autenticação à aplicação ](app-service-mobile-windows-store-dotnet-get-started-users.md)  
+* [Adicionar autenticação à aplicação](app-service-mobile-windows-store-dotnet-get-started-users.md)  
   Saiba como autenticar os utilizadores da aplicação com um fornecedor de identidade.
 
 * [Adicionar notificações push à aplicação](app-service-mobile-windows-store-dotnet-get-started-push.md)  
   Saiba como adicionar suporte de notificações push à aplicação e configurar o back-end da Aplicação Móvel para utilizar Notification Hubs do Azure para enviar notificações push.
 
-* [Ativar a sincronização offline da aplicação do Windows](app-service-mobile-windows-store-dotnet-get-started-offline-data.md)  
+* [Permitir sincronização offline para a sua aplicação](app-service-mobile-windows-store-dotnet-get-started-offline-data.md)  
   Saiba como adicionar suporte offline à aplicação utilizando um back-end de Aplicação Móvel. A sincronização offline permite que os utilizadores finais interajam com uma aplicação móvel &mdash; visualizar, adicionar ou modificar dados &mdash;, mesmo quando não existe qualquer ligação de rede.
 
 <!-- Anchors. -->
@@ -98,6 +98,6 @@ Depois de configurar o back-end da Aplicação Móvel, pode criar uma nova aplic
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

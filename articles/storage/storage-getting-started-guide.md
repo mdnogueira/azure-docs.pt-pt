@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="dotnet" 
     ms.topic="get-started-article" 
-    ms.date="05/23/2016"
+    ms.date="07/21/2016"
     ms.author="tamram"/>
 
 # Introdução ao Storage do Azure em cinco minutos 
@@ -62,8 +62,7 @@ Em seguida, execute a aplicação de exemplo:
 
     `<!--<add key="StorageConnectionString" value = "UseDevelopmentStorage=true;"/>-->`
 
-2.  Anule os comentários da cadeia de ligação para o Serviço do Storage do Azure e forneça a chave de acesso e o nome da conta do Storage no ficheiro App.config: 
-	`<add key="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=[AccountName];AccountKey=[AccountKey]"`
+2.  Anule os comentários da cadeia de ligação para o Serviço do Storage do Azure e forneça a chave de acesso e o nome da conta do Storage no ficheiro App.config: `<add key="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=[AccountName];AccountKey=[AccountKey]"`
 
     Para obter a sua chave de acesso da conta do Storage, consulte o artigo [Gerir as chaves de acesso de armazenamento](storage-create-storage-account.md#manage-your-storage-access-keys).
 
@@ -104,6 +103,7 @@ Em seguida, execute o exemplo de aplicação no Emulador do Storage do Azure:
 Consulte estes recursos para saber mais sobre o Storage do Azure:
 
 * [Introdução ao Storage do Microsoft Azure](storage-introduction.md)
+* [Introdução ao Explorador do Armazenamento do Azure](../vs-azure-tools-storage-manage-with-storage-explorer.md)
 * [Introdução ao Blob Storage do Azure através do .NET](storage-dotnet-how-to-use-blobs.md)
 * [Introdução ao Table Storage do Azure através do .NET](storage-dotnet-how-to-use-tables.md)
 * [Introdução ao Armazenamento de Filas do Azure através do .NET](storage-dotnet-how-to-use-queues.md)
@@ -118,6 +118,6 @@ Consulte estes recursos para saber mais sobre o Storage do Azure:
 
 
 
-<!---HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

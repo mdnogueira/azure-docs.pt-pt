@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="mobile-html5"
     ms.devlang="javascript"
     ms.topic="get-started-article" 
-    ms.date="11/30/2015"
+    ms.date="07/21/2016"
     ms.author="glenga"/>
 
 
@@ -105,7 +105,7 @@ A etapa final deste tutorial consiste em alojar e executar a nova aplicação no
 
     ![][10]
 
-    Esta ação envia um pedido POST para o novo serviço móvel alojado no Azure. Os dados do pedido são inseridos na tabela Item da Lista de Tarefas. Os itens armazenados na tabela são devolvidos pelo servidor móvel e os dados são apresentados na segunda coluna na aplicação.
+    Esta ação envia um pedido POST para o novo serviço móvel alojado no Azure. Os dados do pedido são inseridos na tabela TodoItem. Os itens armazenados na tabela são devolvidos pelo servidor móvel e os dados são apresentados na segunda coluna na aplicação.
 
     > [AZURE.NOTE] Pode rever o código que acede ao seu serviço móvel para consultar e inserir dados, o qual se encontra no ficheiro page.js.
 
@@ -159,6 +159,6 @@ Agora que concluiu o guia de introdução, saiba como efetuar tarefas importante
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

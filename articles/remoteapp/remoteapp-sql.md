@@ -13,7 +13,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="compute"
-   ms.date="05/02/2016"
+   ms.date="06/27/2016"
    ms.author="elizapo"/>
 
 # SQL Azure com o Azure RemoteApp
@@ -53,6 +53,6 @@ Caso a experiência de utilização de uma aplicação cliente alojada no Azure 
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

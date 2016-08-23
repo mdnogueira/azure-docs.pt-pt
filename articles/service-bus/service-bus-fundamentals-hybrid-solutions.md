@@ -1,6 +1,6 @@
 <properties 
     pageTitle="Service Bus do Azure | Microsoft Azure" 
-    description="Uma introdução às diferentes formas em que pode utilizar o Service Bus para ligar aplicações Azure com outros programas de software." 
+    description="Uma introdução à utilização do Service Bus para ligar aplicações Azure com outros programas de software." 
     services="service-bus" 
     documentationCenter=".net" 
     authors="sethmanheim" 
@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="get-started-article" 
-    ms.date="03/09/2016" 
+    ms.date="06/20/2016" 
     ms.author="sethm"/>
 
 # Service Bus do Azure
@@ -39,7 +39,7 @@ Dentro de um espaço de nomes, pode utilizar uma ou mais instâncias dos quatro 
 
 Ao criar uma fila, tópico, reencaminhamento ou Event Hub, atribui-lhe um nome. Quando combinado com o espaço de nomes, cria-se um identificador exclusivo para o objeto. As aplicações podem fornecer este nome ao Service Bus e, em seguida, utilizar essa fila, tópico, reencaminhamento ou Event Hub para comunicar entre si. 
 
-Para utilizar qualquer um destes objetos, as aplicações do Windows podem utilizar o Windows Communication Foundation (WCF). Para as filas, tópicos e Event Hubs, as aplicações de Windows também podem utilizar as APIs de mensagens definidas pelo Service Bus. Para facilitar a utilização destes objetos a partir de aplicações que não sejam de Windows, a Microsoft disponibiliza SDKs para Java, Node.js e outras linguagens. Também pode aceder às filas, tópicos e Event Hubs utilizando as APIs REST através do HTTP. 
+Para utilizar qualquer um destes objetos no cenário de reencaminhamento, as aplicações do Windows podem utilizar o Windows Communication Foundation (WCF). Para as filas, tópicos e Event Hubs, as aplicações do Windows podem utilizar as APIs de mensagens definidas pelo Service Bus. Para facilitar a utilização destes objetos a partir de aplicações que não sejam de Windows, a Microsoft disponibiliza SDKs para Java, Node.js e outras linguagens. Também pode aceder às filas, tópicos e Event Hubs utilizando as APIs REST através do HTTP. 
 
 É importante compreender que, apesar do Service Bus propriamente dito ser executado na nuvem (ou seja, nos datacenters de Azure da Microsoft), as aplicações que o utilizam podem ser executadas em qualquer lugar. Pode utilizar o Service Bus para ligar aplicações que se executam, por exemplo, no Azure, ou aplicações que se executam dentro do seu próprio datacenter. Também pode utilizá-lo para ligar uma aplicação em execução no Azure ou noutra plataforma na nuvem com uma aplicação no local ou com telemóveis e tablets. Também é possível ligar aparelhos domésticos, sensores e outros dispositivos a uma aplicação central ou entre si. O Service Bus é um mecanismo de comunicação genérico na nuvem que é acessível em praticamente qualquer lugar. O modo como o utiliza depende do que tem de realizar a aplicação.
 
@@ -65,7 +65,7 @@ A segunda opção, *PeekLock*, foi criada para solucionar este problema. Como ac
 
 Tenha em atenção o que pode acontecer aqui: a mesma mensagem poderá ser entregue duas vezes, talvez a dois recetores diferentes. As aplicações que utilizam filas do Service Bus devem estar preparadas para tal. Para facilitar a deteção duplicada, cada mensagem dispõe de uma propriedade **MessageID** exclusiva que não se modifica de forma predefinida, independentemente do número de vezes que se leia uma mensagem numa fila. 
 
-As filas são úteis em determinadas situações. Permitem às aplicações comunicar entre si, mesmo quando ambas não estão a ser executadas ao mesmo tempo, algo que é especialmente útil com lotes e aplicações. Uma fila com vários recetores também proporciona um balanceamento de carga automático, uma vez que as mensagens enviadas são distribuídas por estes recetores.
+As filas são úteis em determinadas situações. Permitem às aplicações comunicar entre si, mesmo quando ambas não estão a ser executadas ao mesmo tempo, algo que é especialmente útil com lotes e aplicações móveis. Uma fila com vários recetores também proporciona um balanceamento de carga automático, uma vez que as mensagens enviadas são distribuídas por estes recetores.
 
 ## Tópicos
 
@@ -75,17 +75,17 @@ Ainda que sejam úteis, as filas não sempre são a solução certa. Por vezes, 
  
 **Figura 3: Segundo o filtro que especifica uma aplicação de subscrição, pode receber algumas ou todas as mensagens enviadas para um tópico do Service Bus.**
 
-Um tópico é semelhante em muitos aspetos a uma fila. Os remetentes submetem mensagens a um tópico da mesma forma que submetem mensagens a uma fila e essas mensagens têm o mesmo aspeto que nas filas. A grande diferença é que os tópicos permitem a cada aplicação de receção criar a sua própria subscrição, através da definição de um *filtro*. Consequentemente, o subscritor verá apenas as mensagens que correspondem a esse filtro. Por exemplo, a figura 3 mostra um remetente e um tópico com três subscritores, cada um com o seu próprio filtro:
+Um *tópico* é semelhante em muitos aspetos a uma fila. Os remetentes submetem mensagens a um tópico da mesma forma que submetem mensagens a uma fila e essas mensagens têm o mesmo aspeto que nas filas. A grande diferença é que os tópicos permitem a cada aplicação de receção criar a sua própria *subscrição* através da definição de um *filtro*. Consequentemente, o subscritor verá apenas as mensagens que correspondem a esse filtro. Por exemplo, a figura 3 mostra um remetente e um tópico com três subscritores, cada um com o seu próprio filtro:
 
 - O subscritor 1 recebe apenas as mensagens que contêm a propriedade *Vendedor="Ava"*.
 - O subscritor 2 recebe mensagens que contêm a propriedade *Vendedor="Ruby"* e/ou contem a propriedade *Valor* cujo valor é superior a 100.000. Talvez Ruby seja a gestora de vendas, pelo que pretende ver as suas próprias vendas e todas as vendas grandes, independentemente de quem as faz.
 - O subscritor 3 definiu o seu filtro como *True*, o que significa que recebe todas as mensagens. Por exemplo, esta aplicação pode ser responsável por manter um registo de auditoria e, por conseguinte, precisa de ver todas as mensagens.
 
-Como acontece com as filas, os subscritores de um tópico podem ler mensagens através de **ReceiveAndDelete** ou de **PeekLock**. No entanto, ao contrário das filas, uma única mensagem enviada para um tópico pode recebida por vários subscritores. Esta abordagem, geralmente designada por *publicar e subscrever*, é útil quando várias aplicações estão interessadas nas mesmas mensagens. Se definir o filtro adequado, cada subscritor pode recuperar apenas a parte do fluxo de mensagens que quer ver.
+Como acontece com as filas, os subscritores de um tópico podem ler mensagens através de **ReceiveAndDelete** ou de **PeekLock**. No entanto, ao contrário das filas, uma única mensagem enviada para um tópico pode recebida por várias subscrições. Esta abordagem, geralmente designada por *publicar e subscrever* (ou *pub/sub*), é útil quando várias aplicações estão interessadas nas mesmas mensagens. Se definir o filtro adequado, cada subscritor pode recuperar apenas a parte do fluxo de mensagens que quer ver.
 
 ## Reencaminhamentos
 
-Tanto as filas como os tópicos proporcionam comunicação assíncrona unidirecional através de um mediador. O tráfego flui numa única direção e não existe uma ligação direta entre os remetentes e os recetores. Mas e se não o quiser? Suponha que as suas aplicações precisam de enviar e receber mensagens ou talvez pretenda uma ligação direta entre elas e não precisa de um mediador para armazenar as mensagens. Para solucionar soluções como esta, o Service Bus proporciona reencaminhamentos, como mostra a Figura 4.
+Tanto as filas como os tópicos proporcionam comunicação assíncrona unidirecional através de um mediador. O tráfego flui numa única direção e não existe uma ligação direta entre os remetentes e os recetores. Mas e se não o quiser? Suponha que as suas aplicações precisam de enviar e receber mensagens ou talvez pretenda uma ligação direta entre elas e não precisa de um mediador para armazenar as mensagens. Para solucionar soluções como esta, o Service Bus proporciona *reencaminhamentos*, como mostra a Figura 4.
 
 ![][4]
  
@@ -95,7 +95,7 @@ A questão óbvia sobre os reencaminhamentos que se coloca é esta: por que tenh
 
 Suponha que pretende ligar duas aplicações no local, ambas em execução dentro dos datacenters empresariais. Cada uma dessas aplicações encontra-se protegida por uma firewall e cada datacenter utiliza provavelmente tradução de endereços de rede (NAT). A firewall bloqueia os dados recebidos em quase todas as portas e NAT significa que a máquina em que se executa cada aplicação não tem um endereço IP fixo ao qual pode aceder diretamente a partir de fora do datacenter. Se não houver ajuda extra, é complicado ligar estas aplicações através da Internet pública.
 
-Um reencaminhamento de Service Bus proporciona esta ajuda. Para comunicar de forma bidirecional através de um reencaminhamento, cada aplicação estabelece uma ligação TCP de saída com o Service Bus e mantém-na aberta. Toda a comunicação entre as duas aplicações percorre essas ligações. Uma vez que cada ligação se estabeleceu de dentro do datacenter, a firewall permitirá o tráfego de entrada para cada aplicação sem abrir novas portas. Esta abordagem também contorna o problema de NAT porque cada aplicação dispõe de um ponto final consistente na nuvem durante toda a duração da comunicação. Ao trocar dados através do reencaminhamento, as aplicações podem evitar os problemas que dificultariam a comunicação. 
+Um reencaminhamento do Service Bus pode ajudar. Para comunicar de forma bidirecional através de um reencaminhamento, cada aplicação estabelece uma ligação TCP de saída com o Service Bus e mantém-na aberta. Toda a comunicação entre as duas aplicações percorre essas ligações. Uma vez que cada ligação se estabeleceu de dentro do datacenter, a firewall permite o tráfego de entrada para cada aplicação sem abrir novas portas. Esta abordagem também contorna o problema de NAT porque cada aplicação dispõe de um ponto final consistente na nuvem durante toda a duração da comunicação. Ao trocar dados através do reencaminhamento, as aplicações podem evitar os problemas que dificultariam a comunicação. 
 
 Para utilizar os reencaminhamentos do Service Bus, as aplicações baseiam-se no Windows Communication Foundation (WCF). O Service Bus proporciona enlaces WCF que facilitam a interação das aplicações de Windows através dos reencaminhamentos. As aplicações que já utilizam WCF podem normalmente especificar apenas um destes enlaces e depois comunicar entre si através de um reencaminhamento. Todavia, ao contrário das filas e tópicos, a utilização de reencaminhamentos a partir de aplicações que não sejam de Windows, ainda que possível, necessita de algum esforço de programação; não são fornecidas bibliotecas padrão.
 
@@ -105,7 +105,7 @@ Os reencaminhamentos são a solução certa quando precisa de comunicação dire
 
 ## Event Hubs
 
-Os Event Hubs são um serviço de ingestão de dados altamente dimensionável, que pode processar milhões de eventos por segundo para que a sua aplicação possa processar e analisar as quantidades enormes de dados produzidos pelos dispositivos e aplicações ligados. Por exemplo, pode utilizar um Event Hub para recolher dados de desempenho do motor em direto de uma frota de automóveis. Depois de recolhidos nos Event Hubs, pode transformar e armazenar dados em qualquer fornecedor de análise em tempo real ou cluster de armazenamento. Para mais informações sobre os Event Hubs, consulte [Descrição geral dos Event Hubs](../event-hubs/event-hubs-overview.md).
+Os [Event Hubs](https://azure.microsoft.com/services/event-hubs/) são um serviço de ingestão de dados altamente dimensionável, que pode processar milhões de eventos por segundo para que a sua aplicação possa processar e analisar as quantidades enormes de dados produzidos pelos dispositivos e aplicações ligados. Por exemplo, pode utilizar um Event Hub para recolher dados de desempenho do motor em direto de uma frota de automóveis. Depois de recolhidos nos Event Hubs, pode transformar e armazenar dados em qualquer fornecedor de análise em tempo real ou cluster de armazenamento. Para mais informações sobre os Event Hubs, consulte [Descrição geral dos Event Hubs](../event-hubs/event-hubs-overview.md).
 
 ## Resumo
 
@@ -115,7 +115,7 @@ A ligação de aplicações sempre fez parte da criação de soluções completa
 
 Agora que aprendeu as noções básicas sobre o Service Bus do Azure, siga estas ligações para obter mais informação.
 
-- Como utilizar as [Filas do Service Bus](service-bus-dotnet-how-to-use-queues.md)
+- Como utilizar as [filas do Service Bus](service-bus-dotnet-get-started-with-queues.md)
 - Como utilizar os [Tópicos do Service Bus](service-bus-dotnet-how-to-use-topics-subscriptions.md)
 - Como utilizar o [Reencaminhamento do Service Bus](service-bus-dotnet-how-to-use-relay.md)
 - [Exemplos de Service Bus](service-bus-samples.md)
@@ -127,6 +127,6 @@ Agora que aprendeu as noções básicas sobre o Service Bus do Azure, siga estas
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

@@ -17,14 +17,15 @@ Estes passos presumem que está ligado à SQL Database no Object Explorer com o 
 3. Na janela da consulta, edite e utilize a seguinte instrução Transact-SQL para criar um utilizador contido na base de dados de utilizadores. 
 
     ```CREATE USER user1 WITH PASSWORD ='p@ssw0rd1';
+    ```
 
-     ![SQL Server Management Studio: ligar ao servidor da SQL Database](./media/sql-database-create-new-database-user/sql-database-create-new-database-user-3.png)
-
-
-
+     ![SQL Server Management Studio: Connect to SQL Database server](./media/sql-database-create-new-database-user/sql-database-create-new-database-user-3.png)
 
 
 
-<!--HONumber=Jun16_HO2-->
+
+
+
+<!--HONumber=Aug16_HO1-->
 
 

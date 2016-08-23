@@ -12,7 +12,7 @@
     ms.tgt_pltfrm="ibiza"
     ms.devlang="na"
     ms.topic="hero-article"
-    ms.date="03/31/2016"
+    ms.date="06/06/2016"
     ms.author="awills"/>
 
 # Introdução ao Visual Studio Application Insights
@@ -52,8 +52,6 @@ O que pretende | O que fazer | O que obtém
  * [Resolução de problemas][FAQ]
  * [Fórum MSDN](https://social.msdn.microsoft.com/Forums/vstudio/en-US/home?forum=ApplicationInsights)
  * [Stackoverflow](http://stackoverflow.com/questions/tagged/ms-application-insights)
-* Erros:
- * [Ligar](https://connect.microsoft.com/VisualStudio/Feedback/LoadSubmitFeedbackForm?FormID=6076)
 * Sugestões:
  * [UserVoice](https://visualstudio.uservoice.com/forums/357324)
 * Exemplos de código
@@ -61,8 +59,9 @@ O que pretende | O que fazer | O que obtém
 
 
 
-## <a name="video"></a>Vídeos
+## <a name="video"></a>Vídeo
 
+[![Aintrodução animada](./media/app-insights-get-started/video-front-1.png)](https://www.youtube.com/watch?v=fX2NtGrh-Y0)
 
 > [AZURE.VIDEO 218]
 
@@ -78,6 +77,6 @@ O que pretende | O que fazer | O que obtém
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

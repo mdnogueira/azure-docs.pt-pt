@@ -6,7 +6,7 @@
    authors="Jim-Parker"
    manager="jwhit"
    editor=""
-   keywords="how to backup; how to back up"/>
+   keywords="como fazer uma cópia de segurança; como fazer cópia de segurança"/>
 
 <tags
    ms.service="backup"
@@ -14,10 +14,10 @@
    ms.tgt_pltfrm="na"
    ms.devlang="na"
    ms.topic="hero-article"
-   ms.date="05/10/2016"
+   ms.date="06/27/2016"
    ms.author="jimpark;"/>
 
-# Primeiras impressões: efetuar cópias de segurança de ficheiros e pastas a partir do Windows Server ou do cliente Windows para o Azure com oBackup do Azure utilizando o modelo de implementação do Resource Manager
+# Primeiras impressões: efetuar cópias de segurança de ficheiros e pastas com o Backup do Azure utilizando o modelo de implementação do Resource Manager
 
 Este artigo explica como criar uma cópia de segurança dos ficheiros e pastas do Windows Server (ou do cliente Windows) para o Azure com o Backup do Azure através do Resource Manager. É um tutorial que se destina a explicar as noções básicas. Se pretender começar a utilizar o Backup do Azure, está no sítio certo.
 
@@ -209,6 +209,6 @@ Se tiver dúvidas ou se houver alguma funcionalidade que gostaria de ver incluí
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

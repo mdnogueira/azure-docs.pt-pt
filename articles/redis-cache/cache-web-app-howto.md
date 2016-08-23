@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="cache-redis" 
     ms.devlang="na" 
     ms.topic="hero-article" 
-    ms.date="05/18/2016" 
+    ms.date="07/22/2016" 
     ms.author="sdanie"/>
 
 # Como criar uma aplicação Web com a Cache de Redis
@@ -802,6 +802,8 @@ Assim que tiver selecionado ou criado a cache a utilizar, navegue para a cache n
 ## Passos seguintes
 
 -   Para obter mais informações, veja [Getting Started with ASP.NET MVC 5 (Introdução ao ASP.NET MVC 5)](http://www.asp.net/mvc/overview/getting-started/introduction/getting-started) no site [ASP.NET](http://asp.net/).
+-   Para obter mais exemplos de criação de uma Aplicação Web ASP.NET no Serviço de Aplicações, veja [Create and deploy an ASP.NET web app in Azure App Service (Criar e implementar uma aplicação Web ASP.NET no Serviço de Aplicações do Azure)](https://github.com/Microsoft/HealthClinic.biz/wiki/Create-and-deploy-an-ASP.NET-web-app-in-Azure-App-Service) da [demonstração](https://blogs.msdn.microsoft.com/visualstudio/2015/12/08/connectdemos-2015-healthclinic-biz/) de [HealthClinic.biz](https://github.com/Microsoft/HealthClinic.biz) 2015 Connect.
+    -   Para obter mais inícios rápidos da demonstração de HealthClinic.biz, veja [Azure Developer Tools Quickstarts (Inícios Rápidos de Ferramentas de Programador do Azure)](https://github.com/Microsoft/HealthClinic.biz/wiki/Azure-Developer-Tools-Quickstarts).
 -   Saiba mais sobre a abordagem [Code first to a new database (Primeiro código para uma nova base de dados)](https://msdn.microsoft.com/data/jj193542) para o Entity Framework utilizado neste tutorial.
 -   Saiba mais sobre as [Aplicações Web do Serviço de Aplicações do Azure](../app-service-web/app-service-web-overview.md).
 -   Saiba como [monitorizar](cache-how-to-monitor.md) a sua cache no Portal do Azure.
@@ -811,6 +813,7 @@ Assim que tiver selecionado ou criado a cache a utilizar, navegue para a cache n
     -   [Como configurar o clustering para uma Cache de Redis do Azure Premium](cache-how-to-premium-clustering.md)
     -   [Como configurar o suporte da Virtual Network para uma Cache de Redis do Azure Premium](cache-how-to-premium-vnet.md)
     -   Veja as [Azure Redis Cache FAQ (FAQ sobre a Cache de Redis do Azure)](cache-faq.md#what-redis-cache-offering-and-size-should-i-use) para obter mais detalhes sobre o tamanho, o débito e a largura de banda com caches Premium.
+
 
 
 <!-- IMAGES -->
@@ -849,6 +852,6 @@ Assim que tiver selecionado ou criado a cache a utilizar, navegue para a cache n
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="hero-article" 
-    ms.date="05/03/2016" 
+    ms.date="06/22/2016"
     ms.author="juliako;anilmur"/>
 
 #Descrição Geral e Cenários Comuns dos Media Services do Azure
@@ -49,7 +49,7 @@ Pode ver percurso de aprendizagem do AMS aqui:
 
 Para começar a utilizar os Media Services do Azure, deve ter o seguinte:
  
-3. Uma conta do Azure. Se não tiver uma conta, pode criar uma conta de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](azure.microsoft.com).
+3. Uma conta do Azure. Se não tiver uma conta, pode criar uma conta de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com).
 2. Uma conta de Media Services do Azure Utilize o Portal Clássico do Azure, .NET ou a API REST para criar uma conta dos Media Services do Azure. Para obter mais informações, consulte [Criar Conta](media-services-create-account.md).
 3. (Opcional) Configurar o ambiente de desenvolvimento. Escolha .NET ou a API REST para o ambiente de desenvolvimento. Para obter mais informações, consulte [Configurar o ambiente](media-services-dotnet-how-to-use.md). 
 
@@ -222,6 +222,6 @@ Para obter mais informações, consulte [SLA do Microsoft Azure](https://azure.m
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

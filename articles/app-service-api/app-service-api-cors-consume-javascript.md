@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="dotnet"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="03/31/2016"
-    ms.author="tdykstra"/>
+    ms.date="05/27/2016"
+    ms.author="rachelap"/>
 
 # Consumir uma aplicação API da JavaScript utilizando CORS
 
@@ -80,8 +80,7 @@ Na [aplicação de exemplo ToDoList](https://github.com/Azure-Samples/app-servic
 
         angular.module('todoApp')
         .factory('todoListSvc', ['$http', function ($http) {
-            var apiEndpoint = "http://localhost:46439";
-        
+
             $http.defaults.useXDomain = true;
             delete $http.defaults.headers.common['X-Requested-With']; 
         
@@ -287,6 +286,6 @@ Neste artigo, vimos como ativar o suporte de CORS do App Service para que o cód
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

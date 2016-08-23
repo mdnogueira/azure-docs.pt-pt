@@ -1,7 +1,7 @@
 <properties
     pageTitle="Como migrar Logic Apps para o esquema versão 2015-08-01-pré-visualização | App Service do Microsoft Azure"
     description="Pode migrar facilmente as Logic Apps para a versão mais recente do esquema. Basta seguir estes passos."
-    services="app-service\logic"
+    services="logic-apps"
     documentationCenter=""
     authors="MSFTMAN"
     manager="erikre"
@@ -9,7 +9,7 @@
     tags="connectors"/>
 
 <tags
-    ms.service="app-service-logic"
+    ms.service="logic-apps"
     ms.workload="integration"
     ms.tgt_pltfrm="na"
     ms.devlang="na"
@@ -23,9 +23,8 @@ Para mover as Logic Apps existentes para o novo esquema, efetue o seguinte:
 1. Abra a aplicação lógica no Portal do Azure  
 2. Clique em Atualizar Esquema:
 
- ![API Icon][step1]   
-A página Atualizar Esquema apresenta e fornece uma ligação para um documento que fornece detalhes sobre as melhorias efetuadas no novo esquema:
- ![API Icon][step2]
+ ![Ícone de API][step1]   
+A página Atualizar Esquema apresenta e fornece uma ligação para um documento que fornece detalhes sobre as melhorias efetuadas no novo esquema: ![Ícone de API][step2]
 
 >[AZURE.NOTE] Ao selecionar **Atualizar Esquema**, os passos de migração são automaticamente executados e o código de saída é fornecido. Pode utilizar este código para atualizar a definição. No entanto, certifique-se de que segue as melhores práticas de codificação, tal como as descritas na secção **Melhores práticas** abaixo.
 
@@ -52,6 +51,6 @@ A página Atualizar Esquema apresenta e fornece uma ligação para um documento 
 
 
 
-<!---HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

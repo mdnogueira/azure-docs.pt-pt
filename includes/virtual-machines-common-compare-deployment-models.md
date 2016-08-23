@@ -85,16 +85,12 @@ As quotas das Máquinas Virtuais, das Redes Virtuais e das Contas de Armazenamen
 
 Toda a automatização e os scripts que criou irão continuar a funcionar para as Máquinas Virtuais e Redes Virtuais existentes criadas no modo Gestão de Serviço do Azure. No entanto, os scripts têm de ser atualizados para utilizar o novo esquema para criarem os mesmos recursos através do novo modo Azure Resource Manager.
 
-**As Redes Virtuais criadas com as novas APIs do Azure Resource Manager podem ser ligadas ao meu circuito Express Route?**
-
-No momento, essa ação não é suportada. Não pode ligar as Redes Virtuais criadas com as novas APIs do Azure Resource Manager a um circuito Express Route. Essa ação será suportada no futuro.
-
 **Onde posso encontrar exemplos de modelos do Azure Resource Manager?**
 
 Pode encontrar um conjunto abrangente de modelos iniciais em [Modelos de Início Rápido do Azure Resource Manager](https://azure.microsoft.com/documentation/templates/).
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

@@ -13,13 +13,15 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="05/09/2016"
+    ms.date="07/26/2016"
     ms.author="robinsh"/>
 
 
 # Acerca das contas do Storage do Azure
 
 [AZURE.INCLUDE [storage-selector-portal-create-storage-account](../../includes/storage-selector-portal-create-storage-account.md)]
+<br/>
+[AZURE.INCLUDE [storage-try-azure-tools](../../includes/storage-try-azure-tools.md)]
 
 ## Descrição geral
 
@@ -51,9 +53,9 @@ Por exemplo, se a sua conta do Storage tiver o nome *mystorageaccount*, os ponto
 
 O URL para aceder a um objeto numa conta do Storage é criado ao acrescentar a localização do objeto na conta do Storage ao ponto final. Por exemplo, um endereço de blob pode ter este formato: http://*mystorageaccount*.blob.core.windows.net/*mycontainer*/*myblob*.
 
-Também pode configurar um nome de domínio personalizado para utilizar com a sua conta do Storage. Para contas do Storage Clássicas, consulte [Configurar um nome de domínio personalizado para o ponto final do Blob Storage](storage-custom-domain-name.md) para obter detalhes. Para contas do Storage ARM, esta capacidade ainda não foi adicionada ao [Portal do Azure](https://portal.azure.com), mas pode configurá-la com o PowerShell. Para obter mais informações, consulte o cmdlet [Set-AzureRmStorageAccount](https://msdn.microsoft.com/library/mt607146.aspx).  
+Também pode configurar um nome de domínio personalizado para utilizar com a sua conta do Storage. Para contas de armazenamento clássicas, veja [Configure a custom domain Name for your Blob Storage Endpoint (Configurar um Nome de domínio personalizado para o Ponto final do Armazenamento de Blobs)](storage-custom-domain-name.md) para obter detalhes. Para contas do Resource Manager, esta capacidade ainda não foi adicionada ao [Portal do Azure](https://portal.azure.com), mas pode configurá-la com o PowerShell. Para obter mais informações, consulte o cmdlet [Set-AzureRmStorageAccount](https://msdn.microsoft.com/library/mt607146.aspx).  
 
-## Criar uma conta do Storage
+## Criar uma conta de armazenamento
 
 1. Inicie sessão no [Portal do Azure](https://portal.azure.com).
 
@@ -63,7 +65,7 @@ Também pode configurar um nome de domínio personalizado para utilizar com a su
 
     > [AZURE.NOTE] Os nomes das contas do Storage devem ter entre 3 e 24 carateres de comprimento e apenas podem conter números e letras minúsculas.
     >  
-    > O nome da sua conta do Storage tem de ser exclusivo no Azure. O Portal do Azure indica se o nome da conta do Storage que selecionou já está a ser utilizado.
+    > O nome da sua conta do Storage tem de ser exclusivo no Azure. O portal do Azure indica se o nome da conta de armazenamento que selecionou já está a ser utilizado.
 
 4. Especifique o modelo de implementação a utilizar: **Resource Manager** ou **Clássico**. O modelo de implementação recomendado é **Resource Manager**. Para obter mais informações, consulte [Compreender a implementação do Resource Manager e a implementação clássica](../resource-manager-deployment-model.md).
 
@@ -79,9 +81,9 @@ Também pode configurar um nome de domínio personalizado para utilizar com a su
 
 7. Selecione a subscrição na qual pretende criar a nova conta do Storage.
 
-8. Especifique um novo grupo de recursos ou selecione um grupo de recursos existente. Para obter mais informações acerca dos grupos de recursos, consulte [Utilizar o Portal do Azure para gerir os recursos do Azure](../azure-portal/resource-group-portal.md).
+8. Especifique um novo grupo de recursos ou selecione um grupo de recursos existente. Para obter mais informações sobre os grupos de recursos, veja [Descrição geral do Azure Resource Manager](../resource-group-overview.md).
 
-9. Selecione a localização geográfica para a conta do Storage.
+9. Selecione a localização geográfica para a conta do Storage. Veja [Regiões do Azure](https://azure.microsoft.com/regions/#services) para obter mais informações sobre os serviços que estão disponíveis em cada região.
 
 10. Clique em **Criar** para criar a conta do Storage.
 
@@ -89,7 +91,7 @@ Também pode configurar um nome de domínio personalizado para utilizar com a su
 
 ### Alterar a configuração da conta
 
-Depois de criar a sua conta do Storage, pode modificar a respetiva configuração, como, por exemplo, ao alterar a opção de replicação utilizada para a conta ou alterar a camada de acesso para uma conta do Blob Storage. No [Portal do Azure](https://portal.azure.com), navegue até à sua conta do Storage, clique em **Todas as definições** e, em seguida, clique em **Configuração** para ver e/ou alterar a configuração da conta.
+Depois de criar a sua conta do Storage, pode modificar a respetiva configuração, como, por exemplo, ao alterar a opção de replicação utilizada para a conta ou alterar a camada de acesso para uma conta do Blob Storage. No [Portal do Azure](https://portal.azure.com), navegue até à sua conta de armazenamento, clique em **Todas as definições** e clique depois em **Configuração** para ver e/ou alterar a configuração da conta.
 
 > [AZURE.NOTE] Consoante a camada de desempenho que escolheu ao criar a conta do Storage, algumas opções de replicação podem não estar disponíveis.
 
@@ -105,7 +107,7 @@ Quando cria uma conta do Storage, o Azure gera duas chaves de acesso ao armazena
 
 #### Ver e copiar chaves de acesso ao armazenamento
 
-No [Portal do Azure](https://portal.azure.com), navegue até à sua conta do Storage, clique em **Todas as definições** e, em seguida, clique em **Chaves de acesso** para ver, copiar e voltar a gerar as chaves de acesso da conta. O painel **Chaves de Acesso** também inclui cadeias de ligação pré-configuradas com as chaves primárias e secundárias que pode copiar para utilizar nas suas aplicações.
+No [Portal do Azure](https://portal.azure.com), navegue até à sua conta de armazenamento, clique em **Todas as definições** e clique depois em **Chaves de acesso** para ver, copiar e voltar a gerar as chaves de acesso da conta. O painel **Chaves de Acesso** também inclui cadeias de ligação pré-configuradas com as chaves primárias e secundárias que pode copiar para utilizar nas suas aplicações.
 
 #### Voltar a gerar chaves de acesso ao armazenamento
 
@@ -131,7 +133,7 @@ Eis o processo para rodar as chaves de acesso ao armazenamento:
 
 ## Eliminar uma conta do Storage
 
-Para remover uma conta do Storage que já não está a utilizar, navegue até à conta do Storage no [Portal do Azure](https://portal.azure.com) e clique em **Eliminar**. A eliminação de uma conta do Storage elimina toda a conta, incluindo todos os dados na mesma.
+Para remover uma conta de armazenamento que já não está a utilizar, navegue até à mesma no [Portal do Azure](https://portal.azure.com) e clique em **Eliminar**. A eliminação de uma conta do Storage elimina toda a conta, incluindo todos os dados na mesma.
 
 > [AZURE.WARNING] Não é possível restaurar uma conta do Storage eliminada ou obter os conteúdos que esta continha antes da eliminação. Certifique-se de que faz uma cópia de segurança de tudo o que pretende guardar antes de eliminar a conta. Isto também se aplica a quaisquer recursos na conta – depois de eliminar um blob, tabela, fila ou ficheiro, este é eliminado permanentemente.
 
@@ -139,9 +141,9 @@ Para eliminar uma conta do Storage que está associada uma máquina virtual do A
 
     Failed to delete storage account <vm-storage-account-name>. Unable to delete storage account <vm-storage-account-name>: 'Storage account <vm-storage-account-name> has some active image(s) and/or disk(s). Ensure these image(s) and/or disk(s) are removed before deleting this storage account.'.
 
-Se a conta do Storage utilizar o modelo de implementação clássica, pode remover o disco da máquina virtual ao seguir estes passos no [Portal do Azure](https://manage.windowsazure.com):
+Se a conta de armazenamento utilizar o modelo de implementação Clássica, pode remover o disco da máquina virtual ao seguir estes passos no [Portal do Azure](https://manage.windowsazure.com):
 
-1. Navegue até ao [Portal Clássico](https://manage.windowsazure.com).
+1. Navegue até ao [Portal clássico do Azure](https://manage.windowsazure.com).
 2. Navegue até ao separador Virtual Machines.
 3. Clique no separador Discos.
 4. Selecione o disco de dados e, em seguida, clique em Eliminar Disco.
@@ -159,6 +161,6 @@ Para obter mais informações, consulte a [documentação de Virtual Machines do
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

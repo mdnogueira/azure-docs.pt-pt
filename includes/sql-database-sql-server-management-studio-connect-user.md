@@ -33,7 +33,7 @@ Utilize os passos seguintes para ligar à SQL Database do Azure com o SSMS como 
       ![SQL Server Management Studio: ligar ao servidor da SQL Database](./media/sql-database-sql-server-management-studio-connect-user/connect-user-5.png)
       
  
- ## Resolver problemas relacionados com falhas de ligação
+## Resolver problemas relacionados com falhas de ligação
 
 A razão mais comum para as falhas de ligação prende-se com erros no nome do servidor (não se esqueça, <*nomedoservidor*> é o nome do servidor lógico, não da base de dados), no nome de utilizador ou na palavra-passe, bem como o servidor não permitir ligações por motivos de segurança. 
 
@@ -41,6 +41,6 @@ A razão mais comum para as falhas de ligação prende-se com erros no nome do s
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

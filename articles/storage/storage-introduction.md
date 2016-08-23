@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="05/23/2016"
+    ms.date="07/21/2016"
     ms.author="tamram"/>
 
 # Introdução ao Storage do Microsoft Azure
@@ -132,7 +132,11 @@ Consulte o artigo [Assinaturas de Acesso Partilhado: Compreender o Modelo SAS](s
 
 ## Replicação para Durabilidade e Elevada Disponibilidade
 
-Os dados na sua conta do Storage do Microsoft Azure estão sempre replicados para garantir a durabilidade e a elevada disponibilidade, cumprindo o [SLA para o Armazenamento](https://azure.microsoft.com/support/legal/sla/storage/), mesmo face a falhas de hardware transitórias. Quando cria uma conta do Storage, tem de selecionar uma das seguintes opções de replicação:  
+Os dados na sua conta do Storage do Microsoft Azure estão sempre replicados para garantir a durabilidade e a elevada disponibilidade, cumprindo o [SLA para o Armazenamento](https://azure.microsoft.com/support/legal/sla/storage/), mesmo face a falhas de hardware transitórias. 
+
+Veja [Regiões do Azure](https://azure.microsoft.com/regions/#services) para obter mais informações sobre os serviços que estão disponíveis em cada região.
+
+Quando cria uma conta do Storage, tem de selecionar uma das seguintes opções de replicação:  
 
 - **Armazenamento localmente redundante (LRS).** O Armazenamento localmente redundante mantém três cópias dos seus dados. LRS é replicado três vezes num único local e numa única região. O LRS protege os dados de falhas normais de hardware, mas não da falha de um único local.  
   
@@ -147,10 +151,11 @@ Os dados na sua conta do Storage do Microsoft Azure estão sempre replicados par
     > 
     > Depois de criar a sua conta do Storage e selecionado o ZRS, não é possível convertê-lo para utilizar qualquer outro tipo de replicação ou vice-versa. 
 
-- **Armazenamento georredundante (GRS)**. O Armazenamento georredundante está ativado para a sua conta do Storage por predefinição aquando da sua criação. O GRS mantém seis cópias dos seus dados. Com a GRS, os dados são replicados três vezes numa região principal e também são replicados três vezes numa região secundária a centenas de quilómetros de distância da região primária, fornecendo o nível mais elevado de durabilidade. Se ocorrer uma falha na região primária, o Storage do Azure terá uma ativação pós-falha para a região secundária. O GRS garante que os seus dados são duráveis em duas regiões separadas.
+- **Armazenamento georredundante (GRS)**. O GRS mantém seis cópias dos seus dados. Com a GRS, os dados são replicados três vezes numa região principal e também são replicados três vezes numa região secundária a centenas de quilómetros de distância da região primária, fornecendo o nível mais elevado de durabilidade. Se ocorrer uma falha na região primária, o Storage do Azure terá uma ativação pós-falha para a região secundária. O GRS garante que os seus dados são duráveis em duas regiões separadas.
 
+    Para obter informações sobre emparelhamentos primários e secundários por região, veja [Regiões do Azure](https://azure.microsoft.com/regions/).
 
-- **Armazenamento georredundante com acesso de leitura (RA-GRS)**. O Armazenamento georredundante com acesso de leitura replica os dados para uma localização geográfica secundária e também fornece acesso de leitura aos seus dados na localização secundária. O Armazenamento georredundante com acesso de leitura permite-lhe aceder aos seus dados a partir da localização principal ou secundária, no caso de uma localização ficar indisponível.
+- **Armazenamento georredundante com acesso de leitura (RA-GRS)**. O Armazenamento georredundante com acesso de leitura é ativado para a sua conta de armazenamento por predefinição aquando da respetiva criação. O Armazenamento georredundante com acesso de leitura replica os dados para uma localização geográfica secundária e também fornece acesso de leitura aos seus dados na localização secundária. O Armazenamento georredundante com acesso de leitura permite-lhe aceder aos seus dados a partir da localização principal ou secundária, no caso de uma localização ficar indisponível.
 
     > [AZURE.IMPORTANT] Pode alterar como os dados são replicados depois de criar a sua conta do Storage, a menos que tenha especificado o ZRS quando criou a conta. No entanto, tenha em atenção que pode ser cobrado um custo único adicional relativo à transferência de dados se mudar do LRS para o GRS ou o RA-GRS.
  
@@ -203,7 +208,9 @@ O serviço de Importação/Exportação do Azure fornece uma forma de importar o
 
 ### Ferramentas e Utilitários
 
-- [Azure SDKs e Ferramentas](https://azure.microsoft.com/downloads/)
+- [Explorador do Storage do Azure](http://go.microsoft.com/fwlink/?LinkID=822673&clcid=0x409)
+- [Ferramentas de Cliente do Armazenamento do Azure](storage-explorers.md)
+- [Azure SDKs e Ferramentas](https://azure.microsoft.com/tools/)
 - [Emulador do Storage do Azure](http://www.microsoft.com/download/details.aspx?id=43709)
 - [Azure PowerShell](../powershell-install-configure.md)
 - [Utilitário da Linha de Comandos do AzCopy](http://aka.ms/downloadazcopy)
@@ -262,6 +269,6 @@ Para saber mais sobre o Storage do Azure, explore estes recursos:
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

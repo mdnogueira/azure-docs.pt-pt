@@ -3,7 +3,7 @@
     description="Siga este tutorial para começar a utilizar back-ends de aplicações móveis do Azure para desenvolvimento do Android"
     services="app-service\mobile"
     documentationCenter="android"
-    authors="ysxu"
+    authors="RickSaling"
     manager="erikre"
     editor=""/>
 
@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="mobile-android"
     ms.devlang="java"
     ms.topic="hero-article"
-    ms.date="05/03/2016"
-    ms.author="yuaxu;ricksal"/>
+    ms.date="07/21/2016"
+    ms.author="ricksal"/>
 
 #Criar uma aplicação Android
 
@@ -56,6 +56,6 @@ Para concluir este tutorial, precisa do seguinte:
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

@@ -1,8 +1,8 @@
 <properties
-    pageTitle="Descrição geral da CDN do Azure"
+    pageTitle="Descrição geral do Azure CDN | Microsoft Azure"
     description="Saiba o que é a Rede de Entrega de Conteúdos (CDN) do Azure e como utilizá-la para fornecer conteúdo de largura de banda alta ao colocar em cache blobs e conteúdo estático."
     services="cdn"
-    documentationCenter=".NET"
+    documentationCenter=""
     authors="camsoper"
     manager="erikre"
     editor=""/>
@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="hero-article"
-    ms.date="06/06/2016"
+    ms.date="07/28/2016"
     ms.author="casoper"/>
 
 # Descrição geral da Rede de Entrega de Conteúdos (CDN) do Azure
@@ -68,6 +68,7 @@ Existem três produtos da CDN do Azure: **CDN do Azure Standard da Akamai**, **C
 | [Relatórios avançados de HTTP](cdn-advanced-http-reports.md) | | | **&#x2713;** |
 | [Estatísticas em tempo real](cdn-real-time-stats.md) | | | **&#x2713;** |
 
+>[AZURE.TIP] Existe uma funcionalidade que gostaria de ver na CDN do Azure?  [Envie-nos comentários](https://feedback.azure.com/forums/169397-cdn)! 
 
 ## Passos seguintes
 
@@ -77,12 +78,12 @@ Se for um cliente existente da CDN, já pode gerir os pontos finais da CDN atrav
 
 Para ver o CDN em ação, consulte o [vídeo da nossa sessão de Compilação 2016](https://azure.microsoft.com/documentation/videos/build-2016-leveraging-the-new-azure-cdn-apis-to-build-wicked-fast-applications/).
 
+Saiba como automatizar o CDN do Azure com [.NET](./cdn-app-dev-net.md) ou [node. js](./cdn-app-dev-node.md).
+
 Para obter informações sobre preços, consulte [Preços da CDN](https://azure.microsoft.com/pricing/details/cdn/).
 
-Existe uma funcionalidade que gostaria de ver na CDN do Azure?  [Envie-nos comentários](https://feedback.azure.com/forums/169397-cdn)! 
 
 
-
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

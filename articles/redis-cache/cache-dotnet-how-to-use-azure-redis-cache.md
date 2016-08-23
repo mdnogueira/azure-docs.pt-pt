@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="cache-redis" 
     ms.devlang="dotnet" 
     ms.topic="hero-article" 
-    ms.date="05/31/2016" 
+    ms.date="06/09/2016" 
     ms.author="sdanie"/>
 
 # Como Utilizar a Cache de Redis do Azure
@@ -59,21 +59,7 @@ Para obter mais informações sobre como configurar a cache, veja [How to config
 <a name="NuGet"></a>
 ## Configurar os clientes de cache
 
-Pode aceder a uma cache criada com a Cache de Redis do Azure a partir de qualquer aplicação do Azure. As aplicações .NET desenvolvidas no Visual Studio podem utilizar o cliente de cache **StackExchange.Redis**, que poderá ser configurado com um pacote NuGet que simplifica a configuração das aplicações cliente de cache. 
-
->[AZURE.NOTE] Para obter mais informações, veja a página do GitHub [StackExchange.Redis][] e a [Documentação do cliente de cache StackExchange.Redis][].
-
-Para configurar uma aplicação cliente no Visual Studio com o pacote NuGet StackExchange.Redis, clique com o botão direito do rato no projeto em **Explorador de Soluções** e escolha **Gerir Pacotes NuGet**. 
-
-![Gerir pacotes NuGet][NuGetMenu]
-
-Introduza **StackExchange.Redis** ou **StackExchange.Redis.StrongName** na caixa de texto de pesquisa, selecione a versão pretendida apresentada nos resultados e clique em **Instalar**.
-
->[AZURE.NOTE] Se preferir utilizar uma versão da biblioteca de clientes **StackExchange.Redis** com nome seguro, escolha **StackExchange.Redis.StrongName**; caso contrário, escolha **StackExchange.Redis**.
-
-![Pacote NuGet StackExchange.Redis][StackExchangeNuget]
-
-O pacote NuGet transfere e adiciona as referências de assemblagem necessárias para a sua aplicação cliente aceder à Cache de Redis do Azure com o cliente de cache StackExchange.Redis.
+[AZURE.INCLUDE [redis-cache-configure](../../includes/redis-cache-configure-stackexchange-redis-nuget.md)]
 
 Depois de ter configurado o projeto do cliente para a colocação em cache, pode utilizar as técnicas descritas nas secções seguintes para trabalhar com a cache.
 
@@ -207,7 +193,9 @@ Agora que aprendeu as noções básicas, siga estas ligações para saber mais s
 -   [Ativar o diagnóstico da cache](cache-how-to-monitor.md#enable-cache-diagnostics) para poder [monitorizar](cache-how-to-monitor.md) o estado de funcionamento da cache. Pode ver as métricas no Portal do Azure e [transferi-las e revê-las](https://github.com/rustd/RedisSamples/tree/master/CustomMonitoring) com as ferramentas da sua escolha.
 -   Veja a [Documentação do cliente de cache StackExchange.Redis][].
     -   Pode aceder à Cache de Redis do Azure a partir de muitos clientes de Redis e linguagens de desenvolvimento. Para obter mais informações, veja [http://redis.io/clients][].
-    -   Também pode utilizar a Cache de Redis do Azure com serviços como o Redsmin. Para obter mais informações, veja [How to retrieve an Azure Redis connection string and use it with Redsmin (Como obter uma cadeia de ligação Redis do Azure e utilizá-la com o Redsmin)][].
+-   A Cache de Redis do Azure também pode ser utilizada com serviços e ferramentas de terceiros, tais como Redsmin e Redis Desktop Manager.
+    -   Para obter mais informações sobre Redsmin, veja [How to retrieve an Azure Redis connection string and use it with Redsmin (Como obter uma cadeia de ligação Redis do Azure e utilizá-la com o Redsmin)][].
+    -   Aceda e inspecione os seus dados na Cache de Redis do Azure através de uma GUI com o [RedisDesktopManager](https://github.com/uglide/RedisDesktopManager).
 -   Veja a documentação [Redis][] e obtenha mais informações sobre os [Tipos de dados de Redis][] e [uma introdução de quinze minutos aos tipos de dados de Redis][].
 
 
@@ -302,6 +290,6 @@ Agora que aprendeu as noções básicas, siga estas ligações para saber mais s
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

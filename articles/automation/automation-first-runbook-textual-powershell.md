@@ -6,19 +6,19 @@
     authors="mgoedtel"
     manager="jwhit"
     editor=""
-    keywords="azure powershell, powershell script tutorial, powershell automation"/>
+    keywords="Azure powershell, tutorial de script do powershell, automatização de powershell"/>
 <tags
     ms.service="automation"
     ms.workload="tbd"
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="06/02/2016"
+    ms.date="07/19/2016"
     ms.author="magoedte;sngun"/>
 
 # O meu primeiro runbook do PowerShell
 
-> [AZURE.SELECTOR] - [Gráfico](automation-first-runbook-graphical.md) - [PowerShell](automation-first-runbook-textual-PowerShell.md) - [Fluxo de Trabalho do PowerShell](automation-first-runbook-textual.md)
+> [AZURE.SELECTOR] - [Gráfico](automation-first-runbook-graphical.md) - [PowerShell](automation-first-runbook-textual-PowerShell.md) - [Fluxo de Trabalho do PowerShell](automation-first-runbook-textual.md)  
 
 Este tutorial explica como criar um [ runbook do PowerShell](automation-runbook-types.md#powershell-runbooks) na Automatização do Azure. Iremos começar com um runbook simples que vamos testar e publicar enquanto explicamos como controlar o estado da tarefa de runbook. Em seguida, iremos modificar o runbook para gerir recursos do Azure, neste caso, iniciar uma máquina virtual do Azure. Por último, iremos tornar o runbook mais robusto ao adicionar parâmetros do runbook.
 
@@ -106,7 +106,7 @@ Testamos e publicamos o nosso runbook, mas, até ao momento, não faz nada de ú
     ``` 
 <br>
 4.  Clique em **Painel de teste** para que possamos testar o runbook.
-5.  Clique em **Iniciar** para iniciar o teste. Depois de terminar, deverá receber um resultado que mostra informações básicas da sua conta. Isto confirma que a credencial é válida. <br> ![Autenticar](media/automation-first-runbook-textual-powershell/runbook-auth-results.png)
+5.  Clique em **Iniciar** para iniciar o teste. Depois de terminar, deverá receber um resultado parecido ao seguinte que mostra informações básicas da sua conta. Isto confirma que a credencial é válida. <br> ![Autenticar](media/automation-first-runbook-textual-powershell/runbook-auth-output.png)
 
 ## Passo 6 – adicionar código para iniciar uma máquina virtual
 
@@ -117,7 +117,7 @@ Agora que o nosso runbook está a autenticar para a nossa subscrição do Azure,
     ```
      $Conn = Get-AutomationConnection -Name AzureRunAsConnection 
      Add-AzureRMAccount -ServicePrincipal -Tenant $Conn.TenantID `
-     -ApplicationID `$Conn.ApplicationID -CertificateThumbprint $Conn.CertificateThumbprint 
+     -ApplicationID $Conn.ApplicationID -CertificateThumbprint $Conn.CertificateThumbprint 
      Start-AzureRmVM -Name 'VMName' -ResourceGroupName 'ResourceGroupName'
      ```
 <br>
@@ -137,7 +137,7 @@ Atualmente, o nosso runbook inicia a virtual máquina que codificamos no runbook
     )
      $Conn = Get-AutomationConnection -Name AzureRunAsConnection 
      Add-AzureRMAccount -ServicePrincipal -Tenant $Conn.TenantID `
-     -ApplicationID `$Conn.ApplicationID -CertificateThumbprint $Conn.CertificateThumbprint 
+     -ApplicationID $Conn.ApplicationID -CertificateThumbprint $Conn.CertificateThumbprint 
      Start-AzureRmVM -Name $VMName -ResourceGroupName $ResourceGroupName
      ```
 <br> 
@@ -158,7 +158,7 @@ Os runbooks do PowerShell têm o mesmo ciclo de vida, capacidades e gestão que 
 3.  Os runbooks do Fluxo de Trabalho do PowerShell suportam a execução paralela e em série, enquanto os runbooks do PowerShell só podem executar comandos serialmente.
 4.  Num runbook de Fluxo de Trabalho do PowerShell, uma atividade, um comando ou um bloco de scripts podem ter o seu próprio espaço de execução, ao passo que num runbook do PowerShell, tudo num script é executado num único espaço de execução. Também existem algumas [diferenças sintáticas](https://technet.microsoft.com/magazine/dn151046.aspx) entre um runbook de PowerShell nativo e um runbook de Fluxo de Trabalho do PowerShell.
 
-## Passos Seguintes
+## Passos seguintes
 
 -   Para começar com runbooks Gráficos, consulte o artigo [O meu primeiro runbook gráfico](automation-first-runbook-graphical.md)
 -   Para começar com runbooks do fluxo de trabalho do PowerShell, consulte o artigo [O meu primeiro runbook do fluxo de trabalho do PowerShell](automation-first-runbook-textual.md)
@@ -167,6 +167,6 @@ Os runbooks do PowerShell têm o mesmo ciclo de vida, capacidades e gestão que 
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

@@ -1,5 +1,5 @@
 <properties
-     pageTitle="Utilizar a CDN do Azure"
+     pageTitle="Utilizar o Azure CDN | Microsoft Azure"
      description="Este tópico mostra como ativar a Rede de Entrega de Conteúdos (CDN) para o Azure. O tutorial explica a criação de um novo perfil e ponto final da CDN."
      services="cdn"
      documentationCenter=""
@@ -12,7 +12,7 @@
      ms.tgt_pltfrm="na"
      ms.devlang="na"
      ms.topic="get-started-article"
-     ms.date="05/24/2016" 
+     ms.date="07/28/2016" 
      ms.author="casoper"/>
 
 # Utilizar a CDN do Azure  
@@ -67,7 +67,7 @@ Um perfil da CDN é uma coleção de pontos finais da CDN.  Cada perfil contém 
     
     > [AZURE.NOTE] A **Porta de origem** afeta apenas a porta que o ponto final utiliza para obter informações a partir da origem.  O próprio ponto final só estará disponível para clientes finais nas portas HTTP ou HTTPS predefinidas (80 e 443), independentemente da **Porta de origem**.  
     >
-    > Os pontos finais da **CDN do Azure da Akamai** não permitem o intervalo de portas TCP completo para origens.  Para obter uma lista das portas de origem que não são permitidas, consulte [Detalhes de comportamento da CDN do Azure da Akamai](cdn-akamai-behavior-details.md).  
+    > Os pontos finais da **CDN do Azure da Akamai** não permitem o intervalo de portas TCP completo para origens.  Para obter uma lista das portas de origem que não são permitidas, consulte [Portas de Origem Permitidas do Azure CDN da Akamai](https://msdn.microsoft.com/library/mt757337.aspx).  
     >
     > O acesso ao conteúdo da CDN através de HTTPS tem as seguintes restrições:
     > 
@@ -99,6 +99,6 @@ Um perfil da CDN é uma coleção de pontos finais da CDN.  Cada perfil contém 
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

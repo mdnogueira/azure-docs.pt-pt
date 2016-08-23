@@ -1,14 +1,14 @@
 <properties 
    pageTitle="Criar um Contrato de Parceiro Comercial no App Service do Azure | Microsoft Azure" 
    description="Criar Contratos de Parceiros Comerciais" 
-   services="app-service\logic" 
+   services="logic-apps" 
    documentationCenter=".net,nodejs,java" 
    authors="rajram" 
    manager="erikre" 
    editor=""/>
 
 <tags
-   ms.service="app-service-logic"
+   ms.service="logic-apps"
    ms.devlang="multiple"
     ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
@@ -81,6 +81,6 @@ Para criar contratos de parceiros comerciais:
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

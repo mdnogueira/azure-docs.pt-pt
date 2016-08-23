@@ -63,7 +63,7 @@ Utilize o procedimento seguinte para ativar o MFA para os utilizadores.
 
 ## Automatizar a ativação da autenticação multifator com o PowerShell
 
-Para alterar o [estado](multi-factor-authentication-whats-next.md) utilizando o [Azure AD PowerShell](powershell-install-configuremd), pode utilizar o seguinte.  Pode alterar `$st.State` para ser igual a um dos seguintes estados:
+Para alterar o [estado](multi-factor-authentication-whats-next.md) através do [Azure AD PowerShell](../powershell-install-configure.md), pode utilizar o seguinte.  Pode alterar `$st.State` para ser igual a um dos seguintes estados:
 
 
 - Ativado
@@ -98,6 +98,6 @@ Agora que configurou a autenticação multifator na nuvem, pode configurar a sua
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

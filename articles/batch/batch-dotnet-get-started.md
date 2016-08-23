@@ -13,7 +13,7 @@
     ms.topic="hero-article"
     ms.tgt_pltfrm="na"
     ms.workload="big-compute"
-    ms.date="05/27/2016"
+    ms.date="06/16/2016"
     ms.author="marsma"/>
 
 # Introdução à biblioteca do Azure Batch para .NET
@@ -40,7 +40,7 @@ Este artigo parte do princípio de que tem um conhecimento prático do C# e do V
 
 ### Visual Studio
 
-Tem de ter o **Visual Studio 2013** ou o **Visual Studio 2015** para compilar o projeto de exemplo. Pode encontrar versões de avaliação e gratuitas do Visual Studio na [descrição geral dos produtos Visual Studio 2015][visual_studio].
+Tem de ter o **Visual Studio 2015** para compilar o projeto de exemplo. Pode encontrar versões de avaliação e gratuitas do Visual Studio na [descrição geral dos produtos Visual Studio 2015][visual_studio].
 
 ### Exemplo de código *DotNetTutorial*
 
@@ -48,13 +48,9 @@ O exemplo [DotNetTutorial][github_dotnettutorial] é um dos muitos exemplos de c
 
 `\azure-batch-samples\CSharp\ArticleProjects\DotNetTutorial`
 
-### Explorador do Azure Batch (opcional)
-
-O [Explorador do Azure Batch][github_batchexplorer] é um utilitário gratuito que está incluído no repositório [azure-batch-samples][github_samples] do GitHub. Embora não seja necessário para concluir este tutorial, poderá ser útil no desenvolvimento e depuração das soluções Batch.
-
 ## Descrição geral do projeto de exemplo DotNetTutorial
 
-O exemplo de código *DotNetTutorial* é uma solução do Visual Studio 2013 que consiste em dois projetos: **DotNetTutorial** e **TaskApplication**.
+O exemplo de código *DotNetTutorial* é uma solução do Visual Studio 2015 que consiste em dois projetos: **DotNetTutorial** e **TaskApplication**.
 
 - **DotNetTutorial** é a aplicação cliente que interage com os serviços Batch e Armazenamento para executar uma carga de trabalho paralela em nós de computação (máquinas virtuais). O DotNetTutorial é executado na sua estação de trabalho local.
 
@@ -274,7 +270,7 @@ As assinaturas de acesso partilhado são cadeias que, quando incluídas como par
 
 - **Assinaturas de acesso partilhado de contentor**: à medida que cada tarefa conclui o respetivo trabalho no nó de computação, carrega o respetivo ficheiro de saída para o contentor de *saída* no Armazenamento do Azure. Para fazê-lo, o TaskApplication utiliza uma assinatura de acesso partilhado de contentor, que fornece acesso de escrita ao contentor como parte do caminho quando carrega o ficheiro. A obtenção da assinatura de acesso partilhado do contentor é feita de forma semelhante à obtenção da assinatura de acesso partilhado do blob. No DotNetTutorial, irá descobrir que o método de ajuda `GetContainerSasUrl` chama [CloudBlobContainer.GetSharedAccessSignature][net_sas_container] para fazê-lo. Irá ler mais sobre como o TaskApplication utiliza a assinatura de acesso partilhado do contentor no "Passo 6: monitorizar tarefas".
 
-> [AZURE.TIP] Consulte a série de duas partes sobre assinaturas de acesso partilhado, [Parte 1: compreender o modelo de assinatura de acesso partilhado (SAS)](../storage/storage-dotnet-shared-access-signature-part-1.md) e [Parte 2: criar e utilizar uma assinatura de acesso partilhado (SAS) com o serviço Blob](../storage/storage-dotnet-shared-access-signature-part-2.md), para saber mais sobre como fornecer acesso seguro aos dados da sua conta de Armazenamento.
+> [AZURE.TIP] Consulte a série de duas partes sobre assinaturas de acesso partilhado, [Parte 1: compreender o modelo de assinatura de acesso partilhado (SAS)](../storage/storage-dotnet-shared-access-signature-part-1.md) e [Parte 2: criar e utilizar uma assinatura de acesso partilhado (SAS) com o armazenamento de Blobs](../storage/storage-dotnet-shared-access-signature-part-2.md), para saber mais sobre como fornecer acesso seguro aos dados da sua conta de Armazenamento.
 
 ## Passo 3: criar conjunto do Batch
 
@@ -349,7 +345,7 @@ Nesta aplicação de exemplo, o StartTask copia os ficheiros que transfere do Ar
 
 A utilização de duas variáveis de ambiente na propriedade *CommandLine* do StartTask, `%AZ_BATCH_TASK_WORKING_DIR%` e `%AZ_BATCH_NODE_SHARED_DIR%`, é também visível no fragmento de código acima. Cada nó de computação num conjunto do Batch é automaticamente configurado com várias variáveis de ambiente que são específicas do Batch. Qualquer processo executado por uma tarefa tem acesso a estas variáveis de ambiente.
 
-> [AZURE.TIP] Para obter mais informações sobre as variáveis de ambiente que estão disponíveis nos nós de computação de um conjunto do Batch, bem como informações sobre os diretórios de trabalho de tarefas, veja as secções "Definições de ambiente para tarefas" e "Ficheiros e diretórios" na [descrição geral das funcionalidades do Azure Batch](batch-api-basics.md).
+> [AZURE.TIP] Para obter mais informações sobre as variáveis de ambiente que estão disponíveis nos nós de computação de um conjunto do Batch, bem como informações sobre os diretórios de trabalho de tarefas, veja as secções [Definições de ambiente para tarefas](batch-api-basics.md#environment-settings-for-tasks) e [Ficheiros e diretórios](batch-api-basics.md#files-and-directories) na [Descrição geral da funcionalidade Batch para programadores](batch-api-basics.md).
 
 ## Passo 4: criar trabalho do Batch
 
@@ -357,7 +353,7 @@ A utilização de duas variáveis de ambiente na propriedade *CommandLine* do St
 
 Um trabalho do Batch é, essencialmente, uma coleção de tarefas que estão associadas a um conjunto de nós de computação. Pode utilizá-lo não só para organizar e controlar tarefas em cargas de trabalho relacionadas, mas também para impor determinadas restrições, como o tempo máximo de execução do trabalho (e, por arrastamento, das respetivas tarefas), bem como a prioridade do trabalho em relação a outros trabalhos da conta do Batch. Neste exemplo, no entanto, o trabalho está associado apenas ao conjunto que foi criado no passo 3. Não estão configuradas propriedades adicionais.
 
-Todos os trabalhos do Batch estão associados a um conjunto específico. Esta associação indica os nós nos quais as tarefas do trabalho irão ser executadas.  Isto é especificado através da propriedade [CloudJob.PoolInformation][net_job_poolinfo], conforme ilustrado no fragmento de código abaixo.
+Todos os trabalhos do Batch estão associados a um conjunto específico. Esta associação indica os nós nos quais as tarefas do trabalho irão ser executadas. Isto é especificado através da propriedade [CloudJob.PoolInformation][net_job_poolinfo], conforme ilustrado no fragmento de código abaixo.
 
 ```
 private static async Task CreateJobAsync(
@@ -667,11 +663,11 @@ if (response != "n" && response != "no")
 }
 ```
 
-> [AZURE.IMPORTANT] Tenha em atenção que os recursos de computação são-lhe cobrados - a eliminação dos conjuntos não utilizados irá minimizar os custos. Além disso, tenha em atenção que eliminar um conjunto elimina todos os nós de computação nesse conjunto, e que quaisquer dados nos nós serão irrecuperáveis depois de o conjunto ser eliminado.
+> [AZURE.IMPORTANT] Tenha em atenção que os recursos de computação são-lhe cobrados — a eliminação dos conjuntos não utilizados irá minimizar os custos. Além disso, tenha em atenção que eliminar um conjunto elimina todos os nós de computação nesse conjunto, e que quaisquer dados nos nós serão irrecuperáveis depois de o conjunto ser eliminado.
 
 ## Executar o exemplo *DotNetTutorial*
 
-Quando executa o exemplo de aplicação, o resultado da consola será semelhante ao seguinte. Durante a execução, irá ocorrer uma pausa em `Awaiting task completion, timeout in 00:30:00...` enquanto os nós de computação do conjunto são iniciados. Utilize o [Explorador do Batch][github_batchexplorer] para monitorizar o conjunto, os nós de computação, o trabalho e as tarefas durante e após a execução. Utilize o [portal do Azure][azure_portal] ou um dos [exploradores do Armazenamento do Azure disponíveis][storage_explorers] para ver os recursos de Armazenamento (contentores e blobs) que são criados pela aplicação.
+Quando executa o exemplo de aplicação, o resultado da consola será semelhante ao seguinte. Durante a execução, irá ocorrer uma pausa em `Awaiting task completion, timeout in 00:30:00...` enquanto os nós de computação do conjunto são iniciados. Utilize o [portal do Azure][azure_portal] para monitorizar o conjunto, nós de computação, o trabalho e as tarefas durante e após a execução. Utilize o [portal do Azure][azure_portal] ou o [Explorador de Armazenamento do Azure][storage_explorers] para ver os recursos de Armazenamento (contentores e blobs) que são criados pela aplicação.
 
 O tempo de execução normal é **aproximadamente 5 minutos** quando executa a aplicação na configuração predefinida.
 
@@ -708,21 +704,18 @@ Sample complete, hit ENTER to exit...
 
 ## Passos seguintes
 
-Pode fazer alterações a *DotNetTutorial* e a *TaskApplication* para testar cenários de computação diferentes. Por exemplo, experimente adicionar um atraso de execução a *TaskApplication*, tal como com [Thread.Sleep][net_thread_sleep], para simular tarefas demoradas e monitorizá-las com a funcionalidade *Mapa Térmico* do Explorador do Batch. Experimente adicionar mais tarefas ou ajustar o número de nós de computação. Adicione lógica para procurar e permita a utilização de um conjunto existente para acelerar o tempo de execução (*sugestão*: dê saída de `ArticleHelpers.cs` no projeto [Microsoft.Azure.Batch.Samples.Common][github_samples_common] em [azure-batch-samples][github_samples]).
+Pode fazer alterações a *DotNetTutorial* e a *TaskApplication* para testar cenários de computação diferentes. Por exemplo, experimente adicionar um atraso de execução a *TaskApplication*, tal como com [Thread.Sleep][net_thread_sleep], para simular tarefas demoradas e monitorizá-las no portal. Experimente adicionar mais tarefas ou ajustar o número de nós de computação. Adicione lógica para procurar e permita a utilização de um conjunto existente para acelerar o tempo de execução (*sugestão*: dê saída de `ArticleHelpers.cs` no projeto [Microsoft.Azure.Batch.Samples.Common][github_samples_common] em [azure-batch-samples][github_samples]).
 
 Agora que está familiarizado com o fluxo de trabalho básico de uma solução do Batch, está na altura de aprofundar as funcionalidades adicionais do serviço Batch.
 
-- Reveja o artigo [Descrição geral das funcionalidades do Azure Batch](batch-api-basics.md), que recomendamos se não estiver familiarizado com o serviço.
+- Leia a [Descrição geral da funcionalidade Batch para programadores](batch-api-basics.md), que recomendamos a todos os novos utilizadores do Batch.
 - Comece pelos outros artigos de desenvolvimento do Batch em **Desenvolvimento aprofundado** no [percurso de aprendizagem do Batch][batch_learning_path].
 - Veja uma implementação diferente para processar a carga de trabalho "N palavras principais" através do Batch no exemplo [TopNWords][github_topnwords].
 
 [azure_batch]: https://azure.microsoft.com/services/batch/
 [azure_free_account]: https://azure.microsoft.com/free/
 [azure_portal]: https://portal.azure.com
-[batch_explorer_blog]: http://blogs.technet.com/b/windowshpc/archive/2015/01/20/azure-batch-explorer-sample-walkthrough.aspx
 [batch_learning_path]: https://azure.microsoft.com/documentation/learning-paths/batch/
-[blog_linux]: http://blogs.technet.com/b/windowshpc/archive/2016/03/30/introducing-linux-support-on-azure-batch.aspx
-[github_batchexplorer]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/BatchExplorer
 [github_dotnettutorial]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/ArticleProjects/DotNetTutorial
 [github_samples]: https://github.com/Azure/azure-batch-samples
 [github_samples_common]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/Common
@@ -760,9 +753,9 @@ Agora que está familiarizado com o fluxo de trabalho básico de uma solução d
 [net_taskstatemonitor]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.taskstatemonitor.aspx
 [net_thread_sleep]: https://msdn.microsoft.com/library/274eh01d(v=vs.110).aspx
 [net_virtualmachineconfiguration]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.virtualmachineconfiguration.aspx
-[nuget_packagemgr]: https://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c
+[nuget_packagemgr]: https://docs.nuget.org/consume/installing-nuget
 [nuget_restore]: https://docs.nuget.org/consume/package-restore/msbuild-integrated#enabling-package-restore-during-build
-[storage_explorers]: http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx
+[storage_explorers]: http://storageexplorer.com/
 [visual_studio]: https://www.visualstudio.com/products/vs-2015-product-editions
 
 [1]: ./media/batch-dotnet-get-started/batch_workflow_01_sm.png "Criar contentores no Armazenamento do Azure"
@@ -779,6 +772,6 @@ Agora que está familiarizado com o fluxo de trabalho básico de uma solução d
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

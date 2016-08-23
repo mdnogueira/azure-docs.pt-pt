@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="hero-article"
-    ms.date="05/16/2016"
+    ms.date="08/01/2016"
     ms.author="spelluru"/>
 
 # Tutorial: Criar a primeira fábrica de dados do Azure com o modelo Azure Resource Manager
@@ -36,7 +36,8 @@ Para além dos pré-requisitos listados no tópico Descrição Geral do Tutorial
 - Este artigo não fornece uma descrição geral conceptual do serviço Azure Data Factory. Para obter uma descrição detalhada do serviço, leia o artigo [Introduction to Azure Data Factory (Introdução ao Azure Data Factory)](data-factory-introduction.md). 
 - Veja [Authoring Azure Resource Manager Templates (Criação de Modelos Azure Resource Manager)](../resource-group-authoring-templates.md) para saber mais sobre os modelos Azure Resource Manager (ARM). 
 
-> [AZURE.IMPORTANT] Tem de concluir os passos dos pré-requisitos descritos em [Descrição Geral do Tutorial](data-factory-build-your-first-pipeline.md) para executar as instruções deste artigo. 
+> [AZURE.IMPORTANT]
+> Tem de concluir os passos dos pré-requisitos descritos em [Descrição Geral do Tutorial](data-factory-build-your-first-pipeline.md) para executar as instruções deste artigo. 
 
 ## Criar um modelo ARM
 
@@ -313,6 +314,6 @@ Este modelo cria uma fábrica de dados com o nome GatewayUsingArmDF com um gatew
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

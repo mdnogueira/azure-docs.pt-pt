@@ -13,7 +13,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
-   ms.date="04/26/2016"
+   ms.date="05/16/2016"
    ms.author="edmaca"/>
 
 # Tutorial: introdução à Análise do Azure Data Lake, utilizando a Interface de Linha de Comandos do Azure (CLI)
@@ -86,7 +86,7 @@ Tem de ter uma conta de Data Lake Analytics antes de poder executar quaisquer ta
 
 ## Carregar dados para o Data Lake Store
 
-Neste tutorial, irá processar alguns registos de pesquisa.  O registo de pesquisa pode ser armazenado no arquivo Data Lake ou no armazenamento de Blobs do Azure. 
+Neste tutorial, irá processar alguns registos de pesquisa.  O registo de pesquisa pode ser armazenado no Data Lake Store ou no Armazenamento de Blobs do Azure. 
 
 O Portal do Azure fornece uma interface de utilizador para copiar alguns ficheiros de dados de exemplo para a conta do Data Lake predefinida, que inclui um ficheiro de registo de pesquisa. Consulte [Preparar dados de origem](data-lake-analytics-get-started-portal.md#prepare-source-data) para carregar os dados para a conta de Data Lake Store predefinida.
 
@@ -165,6 +165,6 @@ Depois de a tarefa ser concluída, pode utilizar os seguintes cmdlets para lista
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

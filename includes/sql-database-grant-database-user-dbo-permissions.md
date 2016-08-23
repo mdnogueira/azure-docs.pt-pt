@@ -17,13 +17,14 @@ Estes passos presumem que está ligado à SQL Database no Object Explorer no SSM
 3. Na janela de consulta, edite e utilize a seguinte instrução Transact-SQL para conceder permissões dbo a um utilizador especificado. 
 
     '''ALTER ROLE db_owner ADD MEMBER user1;
+    ```
 
-     ![SQL Server Management Studio: ligar ao servidor da SQL Database](./media/sql-database-grant-database-user-dbo-permissions/sql-database-grant-database-user-dbo-permissions-1.png)
-
-
-
+     ![SQL Server Management Studio: Connect to SQL Database server](./media/sql-database-grant-database-user-dbo-permissions/sql-database-grant-database-user-dbo-permissions-1.png)
 
 
-<!--HONumber=Jun16_HO2-->
+
+
+
+<!--HONumber=Aug16_HO1-->
 
 

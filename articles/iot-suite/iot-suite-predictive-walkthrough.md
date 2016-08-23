@@ -107,11 +107,16 @@ Pode parar a simulação a qualquer momento mas, se clicar em **Iniciar Simulaç
 
 ## Passos seguintes
 
-Agora que já executou a solução pré-configurada de manutenção preditiva, poderá querer modificá-la. Para tal, consulte [Orientações sobre a personalização de soluções pré-configuradas][Ink-personalizar].
+Agora que já executou a solução pré-configurada de manutenção preditiva, poderá querer modificá-la. Para tal, consulte [Orientações sobre a personalização de soluções pré-configuradas][Ink-customize].
 
 A mensagem de blogue [Manutenção Preditiva - Sob Definições Avançadas - IoT Suite](http://social.technet.microsoft.com/wiki/contents/articles/33527.iot-suite-under-the-hood-predictive-maintenance.aspx) de TechNet fornece detalhes adicionais sobre a solução pré-configurada de manutenção preditiva.
 
-  
+Também pode explorar algumas das outras funcionalidades e capacidades das soluções pré-configuradas do IoT Suite:
+
+- [Perguntas mais frequentes sobre o IoT Suite][lnk-faq]
+- [Segurança de IoT a partir do zero][lnk-security-groundup]
+
+
 [img-architecture]: media/iot-suite-predictive-walkthrough/architecture.png
 [img-resource-group]: media/iot-suite-predictive-walkthrough/resource-group.png
 [img-machine-learning]: media/iot-suite-predictive-walkthrough/machine-learning.png
@@ -119,15 +124,16 @@ A mensagem de blogue [Manutenção Preditiva - Sob Definições Avançadas - IoT
 [img-simulation-running]: media/iot-suite-predictive-walkthrough/simulation-running.png
 [img-simulation-warning]: media/iot-suite-predictive-walkthrough/simulation-warning.png
 
-[lnk-powerbi]: https://www.github.com/Microsoft/PowerBI-visuals
+[Ink powerbi]: https://www.github.com/Microsoft/PowerBI-visuals
 [lnk_machine_learning]: https://azure.microsoft.com/services/machine-learning/
 [lnk-remote-monitoring]: iot-suite-remote-monitoring-sample-walkthrough.md
 [lnk-cortana-analytics]: http://gallery.cortanaintelligence.com/Collection/Predictive-Maintenance-Template-3
 [lnk-azureiotsuite]: https://www.azureiotsuite.com/
 [lnk-customize]: iot-suite-guidance-on-customizing-preconfigured-solutions.md
+[lnk-faq]: iot-suite-faq.md
+[lnk-security-groundup]: securing-iot-ground-up.md
 
 
-
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

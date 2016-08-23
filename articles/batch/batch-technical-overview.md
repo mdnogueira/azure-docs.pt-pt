@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="06/02/2016"
+    ms.date="07/06/2016"
     ms.author="marsma"/>
 
 # Noções básicas do Azure Batch
@@ -46,9 +46,11 @@ Para uma comparação entre o Batch e outras opções de solução HPC no Azure,
 
 ## Programar com o Batch
 
-Quando criar soluções que utilizam o Azure Batch para processamento paralelo de carga de trabalho, fá-lo através de programação, com as APIs do Batch. Com as APIs do Batch, pode criar e gerir conjuntos de nós de computação (máquinas virtuais) e agendar trabalhos e tarefas a executar nesses nós. Uma aplicação ou serviço de cliente criada por si, que utiliza APIs do Batch para comunicar com o serviço Batch. Pode processar de forma eficaz cargas de trabalho em grande escala para a sua organização ou fornecer um front-end de serviço aos seus clientes para que eles possam executar tarefas - a pedido ou com base numa agenda - em um, centenas ou milhares de nós. Também pode utilizar o Batch como parte de um fluxo de trabalho maior, gerido por ferramentas como o [Azure Data Factory][data_factory].
+O processamento de cargas de trabalho paralelas com o Batch é geralmente realizado através de programação, utilizando uma das [APIs do Batch](#batch-development-apis). Com as APIs do Batch, pode criar e gerir conjuntos de nós de computação (máquinas virtuais) e agendar trabalhos e tarefas a executar nesses nós. Uma aplicação ou serviço de cliente criada por si, que utiliza APIs do Batch para comunicar com o serviço Batch.
 
-> [AZURE.TIP] Quando estiver pronto para aprofundar a API do Batch para uma maior compreensão das funcionalidades que fornece, veja [Descrição geral da funcionalidade do Azure Batch](batch-api-basics.md).
+Pode processar de forma eficaz cargas de trabalho em grande escala para a sua organização ou fornecer um front-end de serviço aos seus clientes para que eles possam executar tarefas — a pedido ou com base numa agenda — em um, centenas ou mesmo em milhares de nós. Também pode utilizar o Batch como parte de um fluxo de trabalho maior, gerido por ferramentas como o [Azure Data Factory](../data-factory/data-factory-data-processing-using-batch.md).
+
+> [AZURE.TIP] Quando estiver pronto para aprofundar a API do Batch para uma maior compreensão das funcionalidades que fornece, veja [Descrição geral da funcionalidade Batch para desenvolvedores](batch-api-basics.md).
 
 ### As contas do Azure de que irá precisar
 
@@ -70,7 +72,7 @@ As suas aplicações e serviços podem emitir chamadas diretas de API REST, util
 | **.NET do Batch**    | [MSDN][api_net] | [NuGet ][api_net_nuget] | [GitHub][api_sample_net] |
 | **Batch Python**  | [readthedocs.io][api_python] | [PyPI][api_python_pypi] |[GitHub][api_sample_python] |
 | **Batch Node.js** | [github.io][api_nodejs] | [npm][api_nodejs_npm] | - |
-| **Batch Java** (pré-visualização) | [github.io][api_java] | [Reposição de instantâneo Maven][api_java_jar] | - |
+| **Batch Java** (pré-visualização) | [github.io][api_java] | [Reposição de instantâneo Maven][api_java_jar] | [GitHub][api_sample_java] |
 
 ### Gestão de recursos do Batch
 
@@ -81,14 +83,6 @@ Além das APIs de cliente, também pode utilizar o seguinte procedimento para ge
 - [CLI do Azure](../xplat-cli-install.md): a Interface de Linha de Comandos do Azure (CLI do Azure) é um conjunto de ferramentas de várias plataformas que fornece comandos shell para interagir com vários serviços do Azure, incluindo o Batch.
 
 - Biblioteca de cliente [Batch Management .NET](batch-management-dotnet.md): também disponível através de [NuGet][api_net_mgmt_nuget], pode utilizar a biblioteca de cliente .NET de Gestão do Batch para gerir contas do Batch, quotas e pacotes de aplicações, através de programação. A referência para a biblioteca de gestão está em [MSDN][api_net_mgmt].
-
-### Ferramentas do Batch
-
-Embora não sejam necessárias para criar soluções com o Batch, estas ferramentas podem ser consideradas essenciais durante a criação e a depuração das suas aplicações e serviços Batch.
-
-- [Explorador do Azure Batch][batch_explorer]: o Explorador do Batch é uma das aplicações de exemplo .NET do Batch disponíveis em [GitHub][github_samples]. Crie esta aplicação do Windows Presentation Foundation (WPF) com o Visual Studio 2013 ou 2015 e utilize-a para procurar e gerir os recursos na sua conta do Batch enquanto estiver a desenvolver e a depurar as soluções do Batch. Veja o trabalho, o conjunto e os detalhes da tarefa, transfira ficheiros a partir de nós de computação ou ligue a nós remotamente, com ficheiros de Ambiente de Trabalho Remoto (RDP) que obtém com apenas alguns cliques na interface do Explorador do Batch.
-
-- [Explorador de Armazenamento do Microsoft Azure][storage_explorer]: embora não seja estritamente uma ferramenta do Azure Batch, o Explorador de Armazenamento é outra ferramenta valiosa a ter enquanto estiver a desenvolver e a depurar as soluções do Batch.
 
 ## Cenário: aumentar horizontalmente uma carga de trabalho paralela
 
@@ -120,13 +114,13 @@ Tenha em atenção que esta é apenas uma forma de utilizar o Batch, e este cen�
 
 ## Passos seguintes
 
-Agora que viu um cenário de exemplo do Batch, está na altura de aprofundar o serviço para saber como pode utilizá-lo para processar cargas de trabalho de computação intensivas e paralelas.
+Agora que tem um elevado nível de descrição geral do serviço Batch, está na altura de aprofundar para saber como pode utilizá-lo para processar cargas de trabalho de computação intensivas e paralelas.
 
-- [Introdução à biblioteca do Azure Batch para .NET](batch-dotnet-get-started.md) para saber como utilizar C# e a biblioteca .NET do Batch para efetuar as técnicas descritas acima. Isto deve ser uma das suas primeiras paragens ao aprender a utilizar o serviço Batch.
+- Leia a [Descrição geral da funcionalidade Batch para programadores](batch-api-basics.md) para obter mais informações aprofundadas sobre as funcionalidades de API que o Batch fornece para processar cargas de trabalho. Isto é leitura essencial para todos os utilizadores que se estejam a preparar para utilizar o Batch.
 
-- Consulte a [Descrição geral da funcionalidade do Batch](batch-api-basics.md) para obter mais informações aprofundadas sobre as funcionalidades de API que o Batch fornece para processar cargas de trabalho de computação intensiva.
+- [Introdução à biblioteca do Azure Batch para .NET](batch-dotnet-get-started.md) para saber como utilizar C# e a biblioteca .NET do Batch para executar uma carga de trabalho simples utilizando um fluxo de trabalho Batch comum. Isto deve ser uma das suas primeiras paragens ao aprender a utilizar o serviço Batch. Também existe a [versão Python](batch-python-tutorial.md) do tutorial.
 
-- Além do Explorador do Batch, os outros [exemplos de código no GitHub][github_samples] mostram-lhe como utilizar várias funcionalidades do Batch com a biblioteca .NET do Batch.
+- Transfira as [amostras de código no GitHub][github_samples] para ver como tanto o C# como o Python pode interagir com o Batch para agendar e processar amostras de cargas de trabalho.
 
 - Consulte [Percurso de aprendizagem do Batch][learning_path] para ter uma ideia dos recursos disponíveis à medida que aprende a trabalhar com o Batch.
 
@@ -143,21 +137,19 @@ Agora que viu um cenário de exemplo do Batch, está na altura de aprofundar o s
 [api_python_pypi]: https://pypi.python.org/pypi/azure-batch
 [api_sample_net]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp
 [api_sample_python]: https://github.com/Azure/azure-batch-samples/tree/master/Python/Batch
-[batch_explorer]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/BatchExplorer
+[api_sample_java]: https://github.com/Azure/azure-batch-samples/tree/master/Java/
 [batch_ps]: https://msdn.microsoft.com/library/azure/mt125957.aspx
 [batch_rest]: https://msdn.microsoft.com/library/azure/Dn820158.aspx
-[data_factory]: https://azure.microsoft.com/documentation/services/data-factory/
 [free_account]: https://azure.microsoft.com/free/
 [github_samples]: https://github.com/Azure/azure-batch-samples
 [learning_path]: https://azure.microsoft.com/documentation/learning-paths/batch/
 [msdn_benefits]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
-[storage_explorer]: http://storageexplorer.com/
 
 [1]: ./media/batch-technical-overview/tech_overview_01.png
 [2]: ./media/batch-technical-overview/tech_overview_02.png
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

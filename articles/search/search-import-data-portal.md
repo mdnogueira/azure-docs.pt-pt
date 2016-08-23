@@ -14,14 +14,14 @@
     ms.workload="search"
     ms.topic="get-started-article"
     ms.tgt_pltfrm="na"
-    ms.date="03/10/2016"
+    ms.date="06/08/2016"
     ms.author="heidist"/>
 
 # Importar dados para a Pesquisa do Azure através do portal
 
-O Portal do Azure inclui um comando **Importar Dados** no dashboard da Pesquisa do Azure que o conduz através da ingestão de dados na Pesquisa do Azure. O comando baseia-se na funcionalidade de indexadores incorporados que pesquisa uma origem de dados existente, criando e carregando documentos com base num conjunto de linhas encontrado na origem de dados.
+O Portal do Azure inclui um comando **Importar Dados** no dashboard do Azure Search para carregar dados para um índice. O comando baseia-se nas funcionalidades do indexador incorporado que pesquisam uma origem de dados existente ao criar e carregar documentos com base num conjunto de linhas retirado da origem de dados.
 
-Utilizando o assistente, a importação de dados é uma construção composta por 3 partes:
+A importação de dados no assistente é uma construção composta por 3 partes:
 
 - uma ligação à origem de dados
 - um índice de destino no qual são carregados dados (o assistente pode frequentemente gerar este por si)
@@ -37,7 +37,7 @@ Pode tentar terminar este fluxo de trabalho com dados de exemplo. Visite [Introd
 
 1. Inicie sessão no [Portal do Azure](https://portal.azure.com).
 
-2. Abra o dashboard de serviço do seu serviço de Pesquisa do Azure. Seguem-se algumas formas de localizar o dashboard.
+2. Abra o dashboard de serviço do seu serviço da Azure Search. Seguem-se algumas formas de localizar o dashboard.
     - No Jumpbar, clique em **Base**. A home page tem mosaicos para cada serviço na sua subscrição. Clique no mosaico para abrir o dashboard de serviço.
     - No Jumpbar, clique em **Procurar tudo** > **Filtrar por** > **Procurar serviços** para localizar o serviço de Pesquisa na lista.
 
@@ -68,10 +68,16 @@ A operação de importação de dados que acabou concluir criou um indexador em 
 
 ##Editar um indexador existente
 
-No dashboard de serviço, faça duplo clique no mosaico Indexador para fazer deslizar uma lista de todos os indexadores criados para a sua subscrição. Faça duplo clique num dos indexadores para executar, editar ou eliminá-lo.
+No dashboard de serviço, faça duplo clique no mosaico Indexador para fazer deslizar uma lista de todos os indexadores criados para a sua subscrição. Faça duplo clique num dos indexadores para executar, editar ou eliminá-lo. Pode substituir o índice por outro já existente, alterar a origem de dados e definir as opções de limiares de erros durante a indexação.
+
+##Editar um índice existente
+
+No Azure Search, as atualizações estruturais de um índice irão exigir uma reconstrução do mesmo, o que consiste na eliminação, recriação e recarregamento dos dados. As atualizações estruturais incluem a alteração de um tipo de dados e a mudança do nome ou eliminação de um campo.
+
+As edições que não requerem uma reconstrução incluem a adição de um novo campo, alteração dos perfis de classificação, alteração dos sugestores ou alteração dos analisadores de idiomas. Para obter mais informações, veja [Update Index (Atualizar Índice)](https://msdn.microsoft.com/library/azure/dn800964.aspx).
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

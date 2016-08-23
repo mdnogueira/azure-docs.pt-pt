@@ -1,7 +1,7 @@
 <properties
     pageTitle="Uma solução preditiva para risco de crédito com Machine Learning | Microsoft Azure"
     description="Instruções detalhadas sobre como criar uma solução de análise preditiva para a avaliação de riscos de crédito no Azure Machine Learning Studio."
-    keywords="credit risk, predictive analytics solution,risk assessment"
+    keywords="risco de crédito, solução de análise preditiva, avaliação de riscos"
     services="machine-learning"
     documentationCenter=""
     authors="garyericson"
@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="03/09/2016"
+    ms.date="06/10/2016"
     ms.author="garye"/>
 
 
@@ -27,6 +27,8 @@ A avaliação de riscos de crédito é um problema complexo, obviamente, mas vam
 Nestas instruções detalhadas, iremos seguir o processo de desenvolvimento de um modelo de análise preditiva no Machine Learning Studio e, em seguida, implementá-lo como um serviço web do Azure Machine Learning. Iremos começar com dados de risco de crédito publicamente disponíveis, desenvolver e formar um modelo preditivo com base nesses dados e, em seguida, implementar o modelo como um serviço web que pode ser utilizado por terceiros para a avaliação de riscos de crédito.
 
 [AZURE.INCLUDE [machine-learning-free-trial](../../includes/machine-learning-free-trial.md)]
+
+<!-- -->
 
 >[AZURE.TIP] Para transferir e imprimir um diagrama da descrição geral das funcionalidades do Machine Learning Studio, consulte o artigo [Diagrama da descrição geral das funcionalidades do Azure Machine Learning Studio](machine-learning-studio-overview-diagram.md).
 
@@ -43,6 +45,6 @@ Estas instruções baseiam-se uma versão simplificada da [Classificação do bi
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 

@@ -1,10 +1,10 @@
 <properties
     pageTitle="Desempenho e opções da Base de Dados SQL: camadas de serviço | Microsoft Azure"
     description="Compare o desempenho da Base de Dados SQL e as funcionalidades de continuidade do negócio das camadas de serviços para balancear o custo e a capacidade, à medida que aumenta de dimensão."
-    keywords="database options,database performance"
+    keywords="opções da base de dados, desempenho da base de dados"
     services="sql-database"
     documentationCenter=""
-    authors="carlrabeler"
+    authors="CarlRabeler"
     manager="jhubbard"
     editor=""/>
 
@@ -14,12 +14,12 @@
     ms.topic="get-started-article"
     ms.tgt_pltfrm="na"
     ms.workload="data-management"
-    ms.date="05/13/2016"
+    ms.date="07/05/2016"
     ms.author="carlrab"/>
 
 # Opções e desempenho da Base de Dados SQL: compreender o que está disponível em cada camada de serviço
 
-[Base de dados SQL do Azure](sql-database-technical-overview.md) tem várias camadas de serviços para processar cargas de trabalho diferentes. Pode alterar camadas de serviços em qualquer altura, sem períodos de indisponibilidade para a aplicação. Também pode [criar uma base de dados individual](sql-database-get-started.md) com características e preços definidos. Ou pode gerir várias bases de dados ao [criar um conjunto de bases de dados elásticas](sql-database-elastic-pool-create-portal.md). Em ambos os casos, as camadas incluem **Básica**, **Standard** e **Premium**. As opções de base de dados nestas camadas são semelhantes às de bases de dados individuais e conjuntos elásticos, mas existem considerações adicionais para os conjuntos elásticos. Este artigo fornece detalhes sobre camadas de serviços para bases de dados individuais e bases de dados elásticas.
+[Base de dados SQL do Azure](sql-database-technical-overview.md) tem várias camadas de serviços para processar cargas de trabalho diferentes. Pode [alterar as camadas de serviços](sql-database-scale-up.md) em qualquer altura, com um período mínimo de indisponibilidade para a aplicação (em média, menos de 4 segundos). Também pode [criar uma base de dados individual](sql-database-get-started.md) com características e preços definidos. Ou pode gerir várias bases de dados ao [criar um conjunto de bases de dados elásticas](sql-database-elastic-pool-create-portal.md). Em ambos os casos, as camadas incluem **Básica**, **Standard** e **Premium**. As opções de base de dados nestas camadas são semelhantes às de bases de dados individuais e conjuntos elásticos, mas existem considerações adicionais para os conjuntos elásticos. Este artigo fornece detalhes sobre camadas de serviços para bases de dados individuais e bases de dados elásticas.
 
 ## Camadas de serviços e opções de base de dados
 As camadas de serviços Básica, Standard e Premium têm um SLA de 99,99% de tempo de atividade e oferecem desempenho previsível, opções de continuidade do negócio flexíveis, funcionalidades de segurança e faturação por hora. A tabela seguinte fornece exemplos de camadas mais adequadas para cargas de trabalho de aplicações diferentes.
@@ -33,7 +33,7 @@ As camadas de serviços Básica, Standard e Premium têm um SLA de 99,99% de tem
 >[AZURE.NOTE] As edições Web e Business foram extinguidas. Leia [Perguntas Frequentes sobre o Sunset](https://azure.microsoft.com/pricing/details/sql-database/web-business/), se pretender continuar a utilizar edições Web e Business.
 
 ## Camadas de serviços de bases de dados individuais e níveis de desempenho
-Para bases de dados individuais, existem vários níveis de desempenho dentro de cada camada de serviços. Tem a flexibilidade de escolher o nível que melhor se adequa às exigências da sua carga de trabalho. Se precisar de aumentar ou reduzir verticalmente, pode alterar facilmente as camadas da base de dados, **sem períodos de indisponibilidade para a aplicação.** Consulte [Alterar Camadas de Serviços de Bases de Dados e Níveis de Desempenho](sql-database-scale-up.md), para detalhes.
+Para bases de dados individuais, existem vários níveis de desempenho dentro de cada camada de serviços. Tem a flexibilidade de escolher o nível que melhor se adequa às exigências da sua carga de trabalho. Se precisar de aumentar ou reduzir verticalmente, pode alterar facilmente as camadas da base de dados. Consulte [Alterar Camadas de Serviços de Bases de Dados e Níveis de Desempenho](sql-database-scale-up.md), para detalhes.
 
 As características de desempenho aqui listadas aplicam-se às bases de dados criadas com [SQL Database V12](sql-database-v12-whats-new.md). Em situações em que o hardware subjacente no Azure aloja várias bases de dados, a base de dados continua a obter um conjunto de recursos garantido, e as características de desempenho esperadas da base de dados não são afetadas.
 
@@ -58,14 +58,42 @@ Cada base de dados dentro de um conjunto também respeita as características de
 
 [AZURE.INCLUDE [SQL DB DTU description](../../includes/sql-database-understanding-dtus.md)]
 
+## Escolher uma camada de serviços
+
+Para decidir qual a camada de serviços a utilizar, comece por determinar se a base de dados será uma base de dados autónoma ou se fará parte de um conjunto elástico. 
+
+### Escolher uma camada de serviços para uma base de dados autónoma
+
+Para decidir qual a camada de serviços a utilizar para uma base de dados autónoma, comece por determinar as funcionalidades da base de dados de que precisa para escolher a sua edição da Base de Dados SQL:
+
+- Tamanho da base de dados (5 GB no máximo para Básico, 250 GB no máximo para Standard e 500 GB a 1 TB no máximo para Premium, consoante o nível de desempenho)
+- Período de retenção de cópias de segurança da base de dados (7 dias para Básico, 35 dias para Standard e 35 dias para Premium)
+
+Depois de ter determinado a edição da Base de Dados SQL, estará pronto para determinar o nível de desempenho para a base de dados (o número de DTUs). Pode adivinhar e, em seguida, [aumentar ou reduzir vertical e dinamicamente](sql-database-scale-up.md) com base na experiência real. Pode ainda utilizar a [Calculadora de DTU](http://dtucalculator.azurewebsites.net/) para se obter uma estimativa do número de DTUs necessários. 
+
+### Escolher uma camada de serviços para um conjunto de bases de dados elásticas.
+
+Para decidir qual a camada de serviços a utilizar para um conjunto de bases de dados elásticas, comece por determinar as funcionalidades da base de dados de que precisa para escolher a camada de serviço para o seu conjunto.
+
+- Tamanho da base de dados (2 GB para Básico, 250 GB para Standard e 500 GB para Premium)
+- Período de retenção de cópias de segurança da base de dados (7 dias para Básico, 35 dias para Standard e 35 dias para Premium)
+- Número de bases de dados por conjunto (400 para Básico, 400 para Standard e 50 para Premium)
+- Armazenamento máximo por conjunto (117 GB para Básico, 1200 para Standard e 750 para Premium)
+
+Depois de ter determinado a camada de serviços para o seu conjunto, estará pronto para determinar o nível de desempenho para o conjunto (eDTUs). Pode adivinhar e, em seguida, [aumentar ou reduzir vertical e dinamicamente](sql-database-elastic-pool-manage-portal.md#change-performance-settings-of-a-pool) com base na experiência real. Pode ainda utilizar a [Calculadora de DTU](http://dtucalculator.azurewebsites.net/) para obter uma estimativa do número de DTUs necessários para uma base de dados individual dentro do conjunto, para o ajudar a definir o limite superior do conjunto.
+
 ## Passos seguintes
 - Saber mais sobre os preços para estas camadas em [Preços de Bases de Dados SQL](https://azure.microsoft.com/pricing/details/sql-database/).
 - Saiba os detalhes de [conjuntos de bases de dados elásticas](sql-database-elastic-pool-guidance.md) e as [considerações sobre preços e o desempenho de conjuntos de bases de dados elásticas](sql-database-elastic-pool-guidance.md).
 - Saiba como [Monitorizar, gerir e redimensionar conjuntos elásticos](sql-database-elastic-pool-manage-portal.md) e [Monitorizar o desempenho de bases de dados individuais](sql-database-single-database-monitor.md).
 - Agora que sabe mais sobre as camadas de base de dados SQL, experimente com uma [conta gratuita](https://azure.microsoft.com/pricing/free-trial/) e saiba [como criar a sua primeira base de dados SQL](sql-database-get-started.md).
 
+## Recursos adicionais
+
+Para obter informações sobre os padrões da arquitetura de dados comuns de aplicações de base de dados de software como um serviço (Saas) de multi-inquilino, consulte [Design Patterns for Multi-tenant SaaS Applications with Azure SQL Database (Padrões de estrutura para Aplicações SaaS Multi-inquilino com a Base de Dados SQL do Azure)](sql-database-design-patterns-multi-tenancy-saas-applications.md).
 
 
-<!--HONumber=Jun16_HO2-->
+
+<!--HONumber=Aug16_HO1-->
 
 

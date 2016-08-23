@@ -8,10 +8,11 @@ A tabela abaixo lista os requisitos para gateways de VPN baseados na rota e em p
 | **Método de autenticação**                 |    Chave pré-partilhada  | Chave pré-partilhada para a conetividade S2S, Certificados para a conetividade P2S | Chave pré-partilhada para a conetividade S2S, Certificados para a conetividade P2S | Chave pré-partilhada para a conetividade S2S, Certificados para a conetividade P2S |
 | **Número máximo de ligações S2S**       | 1                              | 10                                                                    | 10                                | 30                               |
 | **Número máximo de ligações P2S**       | Não suportado                  | 128                                                                   | 128                               | 128                              |
-|**Suporte de encaminhamento ativo (BGP)**           | Não suportado                  | Não suportado                                                         | Não suportado                     | Não suportado                    |
+|**Suporte de encaminhamento ativo (BGP)**           | Não suportado                  | Não suportado                                                         | Suportado                     | Suportado                   |
  
 
 
-<!--HONumber=Jun16_HO2-->
+
+<!--HONumber=Aug16_HO1-->
 
 

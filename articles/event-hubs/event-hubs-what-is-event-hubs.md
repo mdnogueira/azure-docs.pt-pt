@@ -14,7 +14,7 @@
     ms.devlang="na"
     ms.topic="get-started-article"
     ms.date="04/12/2016"
-    ms.author="sethm;nberdy"/>
+    ms.author="sethm"/>
 
 # O que são os Event Hubs do Azure?
 
@@ -46,6 +46,7 @@ Para obter informações detalhadas sobre os Event Hubs, consulte os tópicos se
 [aplicação de exemplo que utiliza Event Hubs]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-286fd097
 
 
-<!--HONumber=Jun16_HO2-->
+
+<!--HONumber=Aug16_HO1-->
 
 

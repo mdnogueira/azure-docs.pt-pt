@@ -7,7 +7,7 @@
    manager="timlt"
    editor=""
    tags="acs, azure-container-service"
-   keywords="Docker, Containers, Micro-services, Mesos, Azure"/>
+   keywords="Docker, Contentores, Microserviços, Mesos, Azure"/>
 
 <tags
    ms.service="container-service"
@@ -26,57 +26,57 @@ Este documento explica como implementar um cluster do Serviço de Contentor do A
 
 ## Criar um serviço utilizando o Portal do Azure
 
-Inicie sessão no Portal do Azure, selecione Novo e procure no Azure Marketplace o **Serviço de Contentor do Azure**.
+Inicie sessão no portal do Azure, selecione **Novo** e procure o Azure Marketplace em **Serviço de Contentor do Azure**.
 
-![Criar implementação](media/acs-portal1.png)  <br /> 
+![Criar implementação 1](media/acs-portal1.png)  <br />
 
 Selecione **Serviço de Contentor do Azure** e clique em **Criar**.
 
-![Criar implementação](media/acs-portal2.png)  <br /> 
+![Criar implementação 2](media/acs-portal2.png)  <br />
 
 Introduza as seguintes informações:
 
-- Nome de utilizador – este é o nome de utilizador que será utilizado para a conta em cada uma das máquinas virtuais e nos conjuntos de dimensionamento das máquinas virtuais no cluster do Serviço de Contentor do Azure.
-- Subscrição – selecione uma subscrição do Azure.
-- Grupo de Recursos – selecione um Grupo de Recursos existente ou crie um novo.
-- Localização – selecione uma região do Azure para a implementação do Serviço de Contentor do Azure.
-- Chave pública SSH– adicione a chave pública que será utilizada para autenticação nas Virtual Machines do Serviço de Contentor do Azure. É muito importante que esta chave não contenha quebras de linha e que inclua o prefixo “ssh-rsa” e o sufixo “nomedeutilizador@domínio”. Deve ser semelhante ao seguinte, “**ssh-rsa AAAAB3Nz... SNIPPEDCONTENT... UcyupgH azureuser@linuxvm**”. Para obter as instruções sobre a criação de chaves SSH, consulte [Linux]( https://azure.microsoft.com/documentation/articles/virtual-machines-linux-ssh-from-linux/) e [Windows]( https://azure.microsoft.com/documentation/articles/virtual-machines-linux-ssh-from-windows/).
+- **Nome de utilizador**: este é o nome de utilizador que será utilizado para uma conta em cada uma das máquinas virtuais e nos conjuntos de dimensionamento de máquinas virtuais no cluster do Serviço de Contentor do Azure.
+- **Subscrição**: selecione uma subscrição do Azure.
+- **Grupo de recursos**: selecione um grupo de recursos existente ou crie um novo.
+- **Localização**: selecione uma região do Azure para a implementação do Serviço de Contentor do Azure.
+- **Chave pública SSH**: adicione a chave pública que será utilizada para autenticação nas máquinas virtuais do Serviço de Contentor do Azure. É muito importante que esta chave não contenha quebras de linha e que inclua o prefixo “ssh-rsa” e o sufixo “nomedeutilizador@domínio”. Deve ser algo semelhante ao seguinte: **ssh-rsa AAAAB3Nz...<...>...UcyupgH azureuser@linuxvm**. Para obter orientações sobre a criação de chaves Secure Shell (SSH), veja os artigos [Linux]( https://azure.microsoft.com/documentation/articles/virtual-machines-linux-ssh-from-linux/) e [Windows]( https://azure.microsoft.com/documentation/articles/virtual-machines-linux-ssh-from-windows/).
 
 Clique em **OK** quando estiver pronto para continuar.
 
-![Criar implementação](media/acs-portal3.png)  <br /> 
+![Criar implementação 3](media/acs-portal3.png)  <br />
 
 Selecione um tipo de Orquestração. As opções são:
 
-- DC/OS – implementa um cluster DC/OS.
-- Swarm – implementa um cluster Docker Swarm.
+- **DC/OS**: implementa um cluster DC/OS.
+- **Swarm**: implementa um cluster Docker Swarm.
 
 Clique em **OK** quando estiver pronto para continuar.
 
-![Criar implementação](media/acs-portal4.png)  <br /> 
+![Criar implementação 4](media/acs-portal4.png)  <br />
 
 Introduza as seguintes informações:
 
-- Contagem de modelos de estrutura mestres – o número de modelos de estrutura mestres no cluster.
-- Contagem de agentes – para o Docker Swarm, este será o número inicial de agentes no conjunto de dimensionamento dos agentes. Para o DC/OS, este será o número inicial de agentes num conjunto de dimensionamento privado. Além disso, é criado um conjunto de dimensionamento público, que contém um número pré-determinado de agentes. O número de agentes neste conjunto de dimensionamento público é determinado pelo número de modelos de estrutura mestres criados no cluster, 1 agente público para 1 modelo de estrutura mestre e 2 agentes públicos para 3 ou 5 modelos de estrutura mestres.
-- Tamanho das máquinas virtuais dos agentes – o tamanho das máquinas virtuais dos agentes.
-- Prefixo DNS – um nome exclusivo a nível mundial que será utilizado para o prefixo das partes de chave dos nomes de domínio completamente qualificados do serviço. 
+- **Contagem de modelos de estrutura mestres**: o número de modelos de estrutura mestres no cluster.
+- **Contagem de agentes**: para o Docker Swarm, este será o número inicial de agentes no conjunto de dimensionamento dos agentes. Para o DC/OS, este será o número inicial de agentes num conjunto de dimensionamento privado. Além disso, é criado um conjunto de dimensionamento público, que contém um número pré-determinado de agentes. O número de agentes neste conjunto de dimensionamento público é determinado pelo número de modelos de estrutura mestres criados no cluster: um agente público para um modelo de estrutura mestre e dois agentes públicos para três ou cinco modelos de estrutura mestres.
+- **Tamanho das máquinas virtuais dos agentes**: o tamanho das máquinas virtuais dos agentes.
+- **Prefixo DNS**: um nome exclusivo a nível mundial que será utilizado para o prefixo das partes de chave dos nomes de domínio completamente qualificados do serviço.
 
 Clique em **OK** quando estiver pronto para continuar.
 
-![Criar implementação](media/acs-portal5.png)  <br /> 
+![Criar implementação 5](media/acs-portal5.png)  <br />
 
-Clique em **OK** depois de concluída a validação do serviço.
+Clique em **OK** após a conclusão da validação de serviço.
 
-![Criar implementação](media/acs-portal6.png)  <br /> 
+![Criar implementação 6](media/acs-portal6.png)  <br />
 
 Clique em **Criar** para iniciar o processo de implementação.
 
-![Criar implementação](media/acs-portal7.png)  <br /> 
+![Criar implementação 7](media/acs-portal7.png)  <br />
 
-Se tiver optado por afixar a implementação no Portal do Azure, o estado da implementação pode ser visto.
+Se optou por afixar a implementação no portal do Azure, o estado da implementação pode ser visto.
 
-![Criar implementação](media/acs-portal8.png)  <br /> 
+![Criar implementação 8](media/acs-portal8.png)  <br />
 
 Quando concluir a implementação, o cluster do Serviço de Contentor do Azure estará pronto para ser utilizado.
 
@@ -106,14 +106,14 @@ Em seguida, configure as ferramentas da CLI do Azure para utilizar o Azure Resou
 azure config mode arm
 ```
 
-Crie um cluster do Grupo de Recursos e do Serviço de Contentor do Azure com o comando seguinte, em que:
+Crie um cluster do grupo de recursos e do Serviço de Contentor do Azure com o comando seguinte, em que:
 
-- **RESOURCE_GROUP** é o nome do Grupo de Recursos que pretende utilizar para este serviço.
-- **LOCATION** é a região do Azure onde será criada a implementação do Grupo de Recursos e do Serviço de Contentor do Azure.
-- **TEMPLATE_URI** é a localização do ficheiro de implementação. **Nota**: tem de ser o ficheiro RAW, não um ponteiro para a IU do GitHub. Para localizar este URL, selecione o ficheiro azuredeploy.json no GitHub e clique no botão RAW:
+- **RESOURCE_GROUP** é o nome do grupo de recursos que pretende utilizar para este serviço.
+- **LOCATION** é a região do Azure onde será criada a implementação do grupo de recursos e do Serviço de Contentor do Azure.
+- **TEMPLATE_URI** é a localização do ficheiro de implementação. Tenha em atenção que este tem de ser o ficheiro Raw, não um ponteiro para a IU do GitHub. Para localizar este URL, selecione o ficheiro azuredeploy.json no GitHub e clique no botão **Raw**.
 
-> Nota: ao executar este comando, a shell irá solicitar-lhe os valores de parâmetros da implementação.
- 
+> [AZURE.NOTE] Quando executa este comando, a shell irá solicitar-lhe os valores dos parâmetros de implementação.
+
 ```bash
 # sample deployment
 
@@ -161,7 +161,7 @@ Se precisar de iniciar sessão no Azure, utilize o comando `Login-AzureRMAccount
 Login-AzureRmAccount
 ```
 
-Se estiver a implementar num novo grupo de recursos, tem primeiro de criar o grupo de recursos. Para criar um novo grupo de recursos, utilize o comando `New-AzureRmResourceGroup`, especificando o nome e a região de destino do grupo de recursos:
+Se estiver a implementar num novo grupo de recursos, tem primeiro de criar o grupo de recursos. Para criar um novo grupo de recursos, utilize o comando `New-AzureRmResourceGroup` e especifique o nome e a região de destino do grupo de recursos:
 
 ```powershell
 New-AzureRmResourceGroup -Name GROUP_NAME -Location REGION
@@ -188,15 +188,15 @@ New-AzureRmResourceGroupDeployment -ResourceGroupName RESOURCE_GROUP_NAME-Templa
 ```
 
 ## Passos seguintes
- 
-Agora que tem um cluster a funcionar, consulte estes documentos para obter os detalhes de ligação e de gestão.
- 
-[Ligar com um cluster do Serviço de Contentor do Azure](container-service-connect.md)
-[Trabalhar com o Serviço de Contentor do Azure e DC/OS](container-service-mesos-marathon-rest.md)
-[Trabalhar com o Serviço de Contentor do Azure e Docker Swarm](container-service-docker-swarm.md)
+
+Agora que tem um cluster a funcionar, veja estes documentos para obter os detalhes de ligação e de gestão:
+
+- [Ligar a um cluster do Serviço de Contentor Azure](container-service-connect.md)
+- [Trabalhar com o Serviço de Contentor do Azure e o DC/OS](container-service-mesos-marathon-rest.md)
+- [Trabalhar com o Serviço de Contentor do Azure e o Docker Swarm](container-service-docker-swarm.md)
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Aug16_HO1-->
 
 
