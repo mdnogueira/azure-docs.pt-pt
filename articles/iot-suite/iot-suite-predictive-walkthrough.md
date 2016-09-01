@@ -14,14 +14,14 @@
  ms.topic="get-started-article"
  ms.tgt_pltfrm="na"
  ms.workload="na"
- ms.date="05/16/2016"
+ ms.date="08/17/2016"
  ms.author="araguila"/>
 
 # Instruções sobre a solução pré-configurada de manutenção preditiva
 
 ## Introdução
 
-A solução pré-configurada de manutenção preditiva do IoT Suite é uma solução ponto-a-ponto para um cenário de negócio que prevê o momento em que poderá ocorrer uma falha. Pode tirar partido, de forma pró-ativa, desta solução pré-configurada para atividades como a otimização de manutenção. A solução combina principais serviços do Azure IoT Suite, incluindo uma área de trabalho completa do [Azure Machine Learning][lnk_machine_learning] com experimentações para prever a Vida Útil Remanescente (RUL) do motor de uma aeronave com base num conjunto de dados de exemplo público. A solução fornece uma implementação completa do cenário empresarial como um ponto de partida para que possa planear e implementar este tipo de solução IoT para satisfazer os seus próprios requisitos de negócio.
+A solução pré-configurada de manutenção preditiva do IoT Suite é uma solução ponto-a-ponto para um cenário de negócio que prevê o momento em que poderá ocorrer uma falha. Pode utilizar, de forma pró-ativa, esta solução pré-configurada para atividades como a manutenção de otimização. A solução combina os serviços principais do Azure IoT Suite, incluindo uma área de trabalho [Azure Machine Learning][lnk_machine_learning]. Esta área de trabalho contém experimentações, com base num conjunto de dados de exemplo público, para prever a Vida Útil Remanescente (RUL) de um motor de aeronave. A solução implementa completamente o cenário empresarial IoT como um ponto de partida para que possa planear e implementar uma solução que satisfaça os seus próprios requisitos de negócio.
 
 ## Arquitetura lógica
 
@@ -33,17 +33,17 @@ Os itens a azul são os serviços do Azure aprovisionados na localização que s
 
 Alguns recursos não estão disponíveis nas regiões onde aprovisiona a solução pré-configurada. Os itens a laranja no diagrama representam os serviços do Azure aprovisionados na região disponível mais próxima (E.U.A. Centro-Sul, Europa Ocidental ou Sudeste Asiático) tendo em conta a região selecionada.
 
-O item a verde é um dispositivo simulado que representa o motor de uma aeronave. Pode saber mais sobre estes dispositivos simulados abaixo.
+O item a verde é um dispositivo simulado que representa o motor de uma aeronave. Pode saber mais sobre estes dispositivos simulados na secção seguinte.
 
-Os itens a cinzento representam componentes que implementam capacidades de *administração do dispositivo*. A atual versão da solução pré-configurada de manutenção preditiva não aprovisiona estes recursos. Para saber mais sobre a administração do dispositivo, consulte o artigo [solução pré-configurada de monitorização remota][Ink-remote-monitoring].
+Os itens a cinzento representam componentes que implementam capacidades de *administração do dispositivo*. A atual versão da solução pré-configurada de manutenção preditiva não aprovisiona estes recursos. Para saber mais sobre a administração do dispositivo, consulte o artigo [solução pré-configurada de monitorização remota][lnk-remote-monitoring].
 
 ## Dispositivos simulados
 
-Na solução pré-configurada, um dispositivo simulado representa o motor de uma aeronave. A solução é aprovisionada com 2 motores que mapeiam para uma única aeronave. Cada motor emite 4 tipos de telemetria: Sensor 9, Sensor 11, Sensor 14 e Sensor 15 que fornecem os dados necessários para o modelo do Machine Learning possa calcular a Vida Útil Remanescente (RUL) desse motor. Cada dispositivo simulado envia as seguintes mensagens de telemetria ao IoT Hub:
+Na solução pré-configurada, um dispositivo simulado representa o motor de uma aeronave. A solução é aprovisionada com dois motores que mapeiam para uma única aeronave. Cada motor emite quatro tipos de telemetria: Sensor 9, Sensor 11, Sensor 14 e Sensor 15, que fornecem os dados necessários para que o modelo do Machine Learning possa calcular a Vida Útil Remanescente (RUL) desse motor. Cada dispositivo simulado envia as seguintes mensagens de telemetria ao IoT Hub:
 
-*Ciclo de contagem*. Um ciclo representa um voo concluído com duração variável entre 2 a 10 horas em que dados de telemetria são capturados a cada meia hora para a duração do voo.
+*Ciclo de contagem*. Um ciclo representa um voo concluído com duração variável entre 2 e 10 horas, no qual são capturados dados de telemetria a cada meia hora durante o voo.
 
-*Telemetria*. Existem 4 sensores que representam os atributos do motor. Os sensores são geralmente denominados Sensor 9, Sensor 11, Sensor 14 e Sensor 15. Estes 4 sensores representam a telemetria suficiente para obter resultados úteis do modelo do Machine Learning para a RUL. Este modelo é criado a partir de um conjunto de dados públicos, que inclui dados do sensor do motor. Para obter mais informações sobre a criação do modelo a partir do conjunto de dados original, consulte o artigo [Modelo de Manutenção Preditiva do Cortana Intelligence Gallery][Ink-cortana-analytics].
+*Telemetria*. Existem quatro sensores que representam os atributos do motor. Os sensores são geralmente denominados Sensor 9, Sensor 11, Sensor 14 e Sensor 15. Estes 4 sensores representam a telemetria suficiente para obter resultados úteis do modelo do Machine Learning para a RUL. Este modelo é criado a partir de um conjunto de dados públicos, que inclui dados do sensor do motor. Para obter mais informações sobre a criação do modelo a partir do conjunto de dados original, consulte o artigo [Modelo de Manutenção Preditiva do Cortana Intelligence Gallery][lnk-cortana-analytics].
 
 Os dispositivos simulados podem processar os seguintes comandos enviados a partir de um IoT Hub:
 
@@ -60,11 +60,11 @@ O IoT Hub reconhece o comando do dispositivo.
 
 ## Processador de eventos
 
-O **processador de eventos** assume os valores médios do sensor para um ciclo concluído e transmite esses valores a uma API que expõe o modelo treinado do Machine Learning para calcular a RUL de um motor.
+O **processador de eventos** obtém os valores médios do sensor para um ciclo concluído. Transmite esses valores para uma API que expõe o modelo formado do Machine Learning para calcular a RUL de um motor.
 
 ## Azure Machine Learning
 
-Para obter mais informações sobre a criação do modelo a partir do conjunto de dados original, consulte o artigo [Modelo de Manutenção Preditiva do Cortana Intelligence Gallery][Ink-cortana-analytics].
+Para obter mais informações sobre a criação do modelo a partir do conjunto de dados original, consulte o artigo [Modelo de Manutenção Preditiva do Cortana Intelligence Gallery][lnk-cortana-analytics].
 
 ## Comecemos o nosso percurso
 
@@ -79,23 +79,23 @@ Esta página na aplicação Web utiliza os controlos do PowerBI JavaScript (cons
 
 ### Observar o comportamento da solução na nuvem
 
-Pode ver os recursos que aprovisionou ao navegar para o Portal do Azure e, de seguida, ao navegar para o grupo de recursos com o nome de solução que escolheu.
+No Portal do Azure, navegue para o grupo de recursos com o nome da solução que escolheu para ver os recursos aprovisionados.
 
 ![][img-resource-group]
 
-Quando aprovisiona a solução pré-configurada, recebe um e-mail com uma ligação para a área de trabalho do Machine Learning. Pode ainda navegar para essa área de trabalho do Machine Learning a partir da página [azureiotsuite.com][Ink-azureiotsuite] para a sua solução aprovisionada quando estiver no estado **Pronto**.
+Quando aprovisiona a solução pré-configurada, recebe um e-mail com uma ligação para a área de trabalho do Machine Learning. Pode ainda navegar para a área de trabalho do Machine Learning a partir da página [azureiotsuite.com][lnk-azureiotsuite] para a sua solução aprovisionada quando estiver no estado **Pronto**.
 
 ![][img-machine-learning]
 
-No portal de solução, pode ver que o exemplo é aprovisionado com quatro dispositivos simulados para representar 2 aeronaves com 2 motores por aeronave e 4 sensores por motor. Quando navega pela primeira vez no portal de solução, a simulação é interrompida.
+No portal de solução, pode ver que o exemplo é aprovisionado com quatro dispositivos simulados para representar duas aeronaves com dois motores por aeronave, cada um com quatro sensores. Quando navega pela primeira vez no portal de solução, a simulação é interrompida.
 
 ![][img-simulation-stopped]
 
-Clique em **Iniciar simulação** para começar a simulação onde irá ver o histórico do sensor, a RUL, os Ciclos e o histórico da RUL histórico a preencher o dashboard.
+Clique em **Iniciar simulação** para começar a simulação onde verá o histórico do sensor, a RUL, os Ciclos e o histórico da RUL a preencher o dashboard.
 
 ![][img-simulation-running]
 
-Quando a RUL for inferior a 160 (limiar arbitrário escolhido para fins de demonstração), o portal de solução apresenta um símbolo de aviso junto da apresentação da RUL e o motor da aeronave aparecerá a amarelo na imagem. Poderá constatar que os valores da RUL têm uma tendência descendente geral, tendendo no entanto a saltar para cima e para baixo. Tal decorre das durações variáveis dos ciclos e da precisão do modelo.
+Quando a RUL for inferior a 160 (limiar arbitrário escolhido para fins de demonstração), o portal de solução apresentará um símbolo de aviso junto da apresentação da RUL e o motor da aeronave aparecerá realçado a amarelo. Repare como os valores da RUL têm uma tendência descendente geral, tendendo no entanto a saltar para cima e para baixo. Este comportamento decorre das durações variáveis dos ciclos e da precisão do modelo.
 
 ![][img-simulation-warning]
 
@@ -107,7 +107,7 @@ Pode parar a simulação a qualquer momento mas, se clicar em **Iniciar Simulaç
 
 ## Passos seguintes
 
-Agora que já executou a solução pré-configurada de manutenção preditiva, poderá querer modificá-la. Para tal, consulte [Orientações sobre a personalização de soluções pré-configuradas][Ink-customize].
+Agora que já executou a solução pré-configurada de manutenção preditiva, poderá querer modificá-la. Para tal, consulte [Orientações sobre a personalização de soluções pré-configuradas][lnk-customize].
 
 A mensagem de blogue [Manutenção Preditiva - Sob Definições Avançadas - IoT Suite](http://social.technet.microsoft.com/wiki/contents/articles/33527.iot-suite-under-the-hood-predictive-maintenance.aspx) de TechNet fornece detalhes adicionais sobre a solução pré-configurada de manutenção preditiva.
 
@@ -134,6 +134,7 @@ Também pode explorar algumas das outras funcionalidades e capacidades das solu�
 [lnk-security-groundup]: securing-iot-ground-up.md
 
 
-<!--HONumber=Aug16_HO1-->
+
+<!--HONumber=ago16_HO4-->
 
 

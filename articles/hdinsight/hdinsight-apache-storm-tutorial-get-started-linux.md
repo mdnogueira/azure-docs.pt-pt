@@ -14,7 +14,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="05/31/2016"
+   ms.date="08/16/2016"
    ms.author="larryfr"/>
 
 
@@ -40,13 +40,13 @@ Tem de ter o seguinte para concluir com êxito este tutorial do Apache Storm:
 
 ## Criar um cluster do Storm
 
-Nesta secção, criará um cluster do HDInsight versão 3.2 (versão 0.9.3 do Storm) utilizando um modelo ARM do Azure. Para obter informações sobre as versões do HDInsight e os respetivos SLAs, consulte [Controlo de versões de componentes do HDInsight](hdinsight-component-versioning.md). Para obter outros métodos de criação de clusters, consulte [Criar clusters do HDInsight](hdinsight-hadoop-provision-linux-clusters.md).
+Nesta secção, vai criar um cluster do HDInsight versão 3.2 (versão 0.9.3 do Storm) através de um modelo do Azure Resource Manager. Para obter informações sobre as versões do HDInsight e os respetivos SLAs, consulte [Controlo de versões de componentes do HDInsight](hdinsight-component-versioning.md). Para obter outros métodos de criação de clusters, consulte [Criar clusters do HDInsight](hdinsight-hadoop-provision-linux-clusters.md).
 
-1. Clique na imagem seguinte para abrir um modelo ARM no Portal do Azure.         
+1. Clique na imagem seguinte para abrir o modelo no portal do Azure.         
 
     <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fhditutorialdata.blob.core.windows.net%2Farmtemplates%2Fcreate-linux-based-storm-cluster-in-hdinsight.json" target="_blank"><img src="https://acom.azurecomcdn.net/80C57D/cdn/mediahandler/docarticles/dpsmedia-prod/azure.microsoft.com/en-us/documentation/articles/hdinsight-hbase-tutorial-get-started-linux/20160201111850/deploy-to-azure.png" alt="Deploy to Azure"></a>
     
-    O modelo ARM está localizado num contentor de blobs público, *https://hditutorialdata.blob.core.windows.net/armtemplates/create-linux-based-storm-cluster-in-hdinsight.json*. 
+    O modelo está localizado num contentor de blobs público, *https://hditutorialdata.blob.core.windows.net/armtemplates/create-linux-based-storm-cluster-in-hdinsight.json*. 
    
 2. No painel Parâmetros, introduza o seguinte:
 
@@ -93,9 +93,9 @@ Os exemplos [storm-starter](https://github.com/apache/storm/tree/master/examples
 
 2. Utilize o seguinte comando para iniciar uma topologia de exemplo:
 
-        storm jar /usr/hdp/current/storm-client/contrib/storm-starter/storm-starter-topologies-0.9.3.2.2.4.9-1.jar storm.starter.WordCountTopology wordcount
+        storm jar /usr/hdp/current/storm-client/contrib/storm-starter/storm-starter-topologies-0.10.0.2.4.2.4-5.jar storm.starter.WordCountTopology wordcount
         
-    > [AZURE.NOTE] A parte `0.9.3.2.2.4.9-1` do nome do ficheiro pode ser alterada à medida que o HDinsight é atualizado com versões mais recentes do Storm.
+    > [AZURE.NOTE] A parte `0.10.0.2.4.2.4-5` do nome do ficheiro pode ser alterada à medida que o HDInsight é atualizado com versões mais recentes do Storm.
 
     Deste modo, é iniciada a topologia do WordCount de exemplo no cluster, com o nome amigável “wordcount”. Irá gerar aleatoriamente frases e contar a ocorrência de cada palavra nas frases.
 
@@ -193,6 +193,6 @@ Se já estiver familiarizado com o desenvolvimento de topologias baseadas em Jav
 [preview-portal]: https://portal.azure.com/
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

@@ -12,11 +12,13 @@
 
     - Para **Subscrição**, selecione a subscrição do Azure com a qual pretende utilizar a conta DocumentDB. Por predefinição, se a sua conta tiver apenas uma subscrição, essa conta é selecionada.
 
-    - Em **Grupo de Recursos**, selecione ou crie um grupo de recursos para a sua conta DocumentDB.  Por predefinição, será selecionado um grupo de Recursos existentes na subscrição do Azure.  Pode, no entanto, optar por criar um novo grupo de recursos no qual pretenderia adicionar a sua conta DocumentDB. Para obter mais informações, veja [Utilizar o Portal do Azure para gerir os recursos do Azure](resource-group-portal.md).
+    - Em **Grupo de Recursos**, selecione ou crie um grupo de recursos para a sua conta DocumentDB.  Por predefinição, é criado um novo grupo de recursos. Para obter mais informações, veja [Utilizar o Portal do Azure para gerir os recursos do Azure](../articles/azure-portal/resource-group-portal.md).
 
-    - Utilize **Localização** para especificar a localização geográfica na qual vai alojar a sua conta DocumentDB.   
+    - Utilize **Localização** para especificar a localização geográfica na qual vai alojar a sua conta DocumentDB. 
+    
+    - Para fornecer acesso prático à conta e recursos que criar no futuro, selecione **Afixar ao dashboard**.  
 
-4.  Assim que as novas opções da conta DocumentDB estejam configuradas, clique em **Criar**.  Pode demorar alguns minutos para criar a conta DocumentDB.  Para verificar o estado, pode monitorizar o progresso no Startboard.  
+4.  Assim que as novas opções da conta DocumentDB estejam configuradas, clique em **Criar**. Para verificar o estado da implementação, pode monitorizar o progresso no Startboard.  
     ![Captura de ecrã do mosaico Criar no Startboard – Criador de base de dados online](./media/documentdb-create-dbaccount/create-nosql-db-databases-json-tutorial-3.png)  
 
     Em alternativa, pode monitorizar o seu progresso a partir do Hub de notificações.  
@@ -25,7 +27,7 @@
 
     ![Captura de ecrã do Hub de notificações, que mostra que a conta DocumentDB foi criada com êxito e implementada num grupo de recursos – Notificação do criador de base de dados online](./media/documentdb-create-dbaccount/create-nosql-db-databases-json-tutorial-5.png)
 
-5.  Depois da criação da conta DocumentDB, esta está pronta para ser utilizada com as predefinições no portal online. Tenha em atenção que a consistência predefinida da conta DocumentDB está definida como **Sessão**.  Pode ajustar a predefinição de consistência clicando no ícone **Definições** na barra de comando superior e, em seguida, na entrada **Consistência Predefinida** em **Funcionalidade** no painel **Todas as Definições**.
+5.  Depois da criação da conta DocumentDB, esta está pronta para ser utilizada com as predefinições no portal online. Tenha em atenção que a consistência predefinida da conta DocumentDB está definida como **Sessão**.  Para ajustar a predefinição de consistência, clique em **Consistência Predefinida** no menu. Para saber mais sobre os níveis de consistência oferecidos pelo DocumentDB, veja [Consistency levels in DocumentDB (Níveis de consistência no DocumentDB)](../articles/azure-portal/resource-group-portal.md)
 
     ![Captura de ecrã do painel do Grupo de Recursos – iniciar o desenvolvimento de aplicações](./media/documentdb-create-dbaccount/create-nosql-db-databases-json-tutorial-6.png)  
 
@@ -37,6 +39,6 @@
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

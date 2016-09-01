@@ -3,7 +3,7 @@
    description="Esta página fornece instruções para criar um gateway de aplicação com descarga de SSL com o Azure Resource Manager"
    documentationCenter="na"
    services="application-gateway"
-   authors="joaoma"
+   authors="georgewallace"
    manager="carmonm"
    editor="tysonn"/>
 <tags
@@ -12,14 +12,15 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="03/03/2016"
-   ms.author="joaoma"/>
+   ms.date="08/09/2016"
+   ms.author="gwallace"/>
 
 # Configurar um gateway de aplicação para a descarga de SSL com o Azure Resource Manager
 
 > [AZURE.SELECTOR]
--[Azure Classic PowerShell](application-gateway-ssl.md)
+-[Portal do Azure](application-gateway-ssl-portal.md)
 -[Azure Resource Manager PowerShell](application-gateway-ssl-arm.md)
+-[Azure Classic PowerShell](application-gateway-ssl.md)
 
  Pode configurar o Azure Application Gateway para terminar a sessão SSL (Secure Sockets Layer) no gateway para evitar tarefas dispendiosas de desencriptação de SSL que ocorrem no farm Web. A descarga de SSL simplifica ainda a configuração do servidor de front-end e a gestão da aplicação Web.
 
@@ -27,8 +28,8 @@
 ## Antes de começar
 
 1. Instale a versão mais recente dos cmdlets Azure PowerShell com o Instalador de Plataforma Web. Pode transferir e instalar a versão mais recente a partir da secção **Windows PowerShell** da página [Transferências](https://azure.microsoft.com/downloads/).
-2. Vai criar uma rede virtual e uma sub-rede para o gateway de aplicação. Verifique se a sub-rede não está a ser utilizada por nenhuma máquina virtual ou implementação na nuvem. O Application Gateway tem de constar, por si só, numa sub-rede de rede virtual.
-3. Os servidores que irá configurar para utilizar o gateway de aplicação devem existir. Caso contrário, os respetivos pontos finais terão de ser criados na rede virtual ou com um IP/VIP público atribuído.
+2. Pode criar uma rede virtual e uma subrede para o gateway de aplicação. Verifique se a sub-rede não está a ser utilizada por nenhuma máquina virtual ou implementação na nuvem. O Application Gateway tem de constar, por si só, numa sub-rede de rede virtual.
+3. Os servidores que configurar para utilizar o gateway de aplicação devem existir. Caso contrário, os respetivos pontos finais terão de ser criados na rede virtual ou com um IP/VIP público atribuído.
 
 ## O que é necessário para criar um gateway de aplicação?
 
@@ -36,19 +37,19 @@
 - **Conjunto de servidores de back-end:** a lista de endereços IP dos servidores de back-end. Os endereços IP listados devem pertencer à sub-rede da rede virtual ou ter um IP/VIP público.
 - **Definições do conjunto de servidores de back-end:** cada conjunto tem definições como a porta, o protocolo e a afinidade com base em cookies. Estas definições estão associadas a um conjunto e são aplicadas a todos os servidores do referido conjunto.
 - **Porta de front-end:** esta porta é a porta pública aberta no gateway de aplicação. O tráfego chega a esta porta, sendo posteriormente redirecionado para um dos servidores de back-end.
-- **Serviço de escuta:** o serviço de escuta possui uma porta de front-end, um protocolo (Http ou Https, sensível às maiúsculas e minúsculas) e o nome do certificado SSL (se configurar a descarga de SSL).
+- **Serviço de escuta:** o serviço de escuta possui uma porta de front-end, um protocolo (HTTP ou HTTPS, definições sensíveis a maiúsculas e minúsculas) e o nome do certificado SSL (se configurar a descarga de SSL).
 - **Regra:** a regra vincula o serviço de escuta e o conjunto de servidores de back-end e define para que conjunto de servidores de back-end o tráfego deve ser direcionado ao chegar a um determinado serviço de escuta. Atualmente, apenas é suportada a regra *básica*. A regra *básica* refere-se à distribuição de carga round robin.
 
 **Notas de configuração adicionais**
 
-Para a configuração de certificados SSL, o protocolo em **HttpListener** deverá passar para *Https* (sensível às maiúsculas e minúsculas). O elemento **SslCertificate** tem de ser adicionado a **HttpListener** com o valor da variável configurado para o certificado SSL. A porta de front-end deve ser atualizada para 443.
+Para a configuração de certificados SSL, o protocolo em **HttpListener** deverá passar para *Https* (sensível às maiúsculas e minúsculas). O elemento **SslCertificate** é adicionado a **HttpListener** com o valor da variável configurado para o certificado SSL. A porta de front-end deve ser atualizada para 443.
 
 **Para ativar a afinidade com base em cookies**: pode configurar um gateway de aplicação para garantir que um pedido feito a partir de uma sessão de cliente é sempre direcionado para a mesma VM no farm Web. Esta ação é realizada ao injetar um cookie de sessão que permite ao gateway direcionar adequadamente o tráfego. Para ativar a afinidade com base em cookies, defina **CookieBasedAffinity** como *Ativado* no elemento **BackendHttpSettings**.
 
 
-## Criar um novo gateway de aplicação
+## Criar um gateway de aplicação
 
-A diferença entre a utilização do modelo de implementação Clássica do Azure e do Azure Resource Manager é a ordem pela qual vai criar o gateway de aplicação e os itens que devem ser configurados.
+A diferença entre a utilização do modelo de implementação Clássica do Azure e do Azure Resource Manager é a ordem pela qual cria o gateway de aplicação e os itens que devem ser configurados.
 
 Com o Resource Manager, todos os itens que irão constituir um gateway de aplicação serão configurados individualmente e, em seguida, reunidos para criar um recurso do gateway de aplicação.
 
@@ -67,7 +68,7 @@ Não se esqueça de mudar o modo do PowerShell para utilizar o cmdlets do Azure 
 
 ### Passo 1
 
-        PS C:\> Login-AzureRmAccount
+    Login-AzureRmAccount
 
 
 
@@ -75,25 +76,25 @@ Não se esqueça de mudar o modo do PowerShell para utilizar o cmdlets do Azure 
 
 Verifique as subscrições da conta.
 
-        PS C:\> get-AzureRmSubscription
+    Get-AzureRmSubscription
 
-Ser-lhe-á solicitado a autenticação com as suas credenciais.<BR>
+Ser-lhe-á solicitado para autenticar com as suas credenciais.<BR>
 
 ### Passo 3
 
 Escolha qual das subscrições do Azure utilizar. <BR>
 
 
-        PS C:\> Select-AzureRmSubscription -Subscriptionid "GUID of subscription"
+    Select-AzureRmSubscription -Subscriptionid "GUID of subscription"
 
 
 ### Passo 4
 
-Crie um grupo de recursos (ignore este passo se estiver a utilizar um grupo de recursos existente).
+Crie um novo grupo de recursos (ignore este passo se estiver a utilizar um grupo de recursos existente).
 
-    New-AzureRmResourceGroup -Name appgw-rg -location "West US"
+    New-AzureRmResourceGroup -Name appgw-rg -Location "West US"
 
-O Azure Resource Manager requer que todos os grupos de recursos especifiquem uma localização, que é utilizada como a localização predefinida para os recursos nesse grupo de recursos. Verifique se todos os comandos para criar um gateway de aplicação irão utilizar o mesmo grupo de recursos.
+O Azure Resource Manager requer que todos os grupos de recursos especifiquem uma localização, Esta definição é utilizada como a localização predefinida para recursos nesse grupo de recursos. Verifique se todos os comandos para criar um gateway de aplicação utilizam o mesmo grupo de recursos.
 
 No exemplo acima, criámos um grupo de recursos denominado “appgw-RG” e a localização “EUA Oeste”.
 
@@ -114,7 +115,7 @@ Esta ação cria uma rede virtual com o nome “appgwvnet” no grupo de recurso
 
 ### Passo 3
 
-    $subnet=$vnet.Subnets[0]
+    $subnet = $vnet.Subnets[0]
 
 Esta ação atribui o objeto de sub-rede à variável $subnet para os passos seguintes.
 
@@ -131,7 +132,7 @@ Esta ação cria um recurso IP público “publicIP01” no grupo de recursos �
 
     $gipconfig = New-AzureRmApplicationGatewayIPConfiguration -Name gatewayIP01 -Subnet $subnet
 
-Esta ação cria uma configuração de IP do gateway de aplicação com o nome “gatewayIP01”. Ao iniciar, o Application Gateway escolhe um endereço IP na sub-rede configurada e encaminha o tráfego da rede para os endereços IP no conjunto de IPs de front-end. Note que cada instância terá um endereço IP.
+Esta ação cria uma configuração de IP do gateway de aplicação com o nome “gatewayIP01”. Ao iniciar, o Application Gateway escolhe um endereço IP na subrede configurada e encaminha o tráfego da rede para os endereços IP no conjunto de IPs de back-end. Note que cada instância terá um endereço IP.
 
 ### Passo 2
 
@@ -201,6 +202,6 @@ Se pretender obter mais informações sobre as opções de balanceamento de carg
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

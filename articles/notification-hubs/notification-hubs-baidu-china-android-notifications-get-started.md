@@ -13,7 +13,7 @@
     ms.topic="hero-article"
     ms.tgt_pltfrm="mobile-baidu"
     ms.workload="mobile"
-    ms.date="05/05/2016"
+    ms.date="08/19/2016"
     ms.author="wesmc"/>
 
 # Introdução aos Notification Hubs utilizando o Baidu
@@ -405,7 +405,7 @@ Pode testar rapidamente a receção das notificações na sua aplicação com o 
 
 Normalmente, as notificações push são enviadas num serviço de back-end como os Mobile Services ou ASP.NET utilizando uma biblioteca compatível. Também pode utilizar a API REST diretamente para enviar mensagens de notificação, caso não esteja disponível uma biblioteca para o back-end.
 
-Neste tutorial, vamos manter tudo simples e demonstrar apenas o modo de testar a aplicação cliente através do envio de notificações utilizando o SDK .NET para os Notification Hubs numa aplicação de consola em vez de um serviço de back-end. Recomendamos o tutorial [Use Notification Hubs to push notifications to users (Utilizar Hubs de Notificação para notificações push a utilizadores)](notification-hubs-aspnet-backend-windows-dotnet-wns-notification.md) como passo seguinte para enviar notificações de um back-end do ASP.NET. No entanto, as seguintes abordagens podem ser utilizadas para enviar notificações:
+Neste tutorial, vamos manter tudo simples e demonstrar apenas o modo de testar a aplicação cliente através do envio de notificações utilizando o SDK .NET para os Notification Hubs numa aplicação de consola em vez de um serviço de back-end. Recomendamos o tutorial [Utilizar Notification Hubs para notificações push a utilizadores](notification-hubs-aspnet-backend-windows-dotnet-wns-notification.md) como passo seguinte para enviar notificações de um back-end do ASP.NET. No entanto, as seguintes abordagens podem ser utilizadas para enviar notificações:
 
 * **Interface REST**: pode suportar notificações em qualquer plataforma de back-end utilizando a [Interface REST](http://msdn.microsoft.com/library/windowsazure/dn223264.aspx).
 
@@ -505,6 +505,6 @@ Para enviar uma notificação de teste, pode utilizar o separador de depuração
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

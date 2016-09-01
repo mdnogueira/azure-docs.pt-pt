@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="Java"
     ms.topic="get-started-article"
-    ms.date="06/01/2016"
+    ms.date="08/11/2016"
     ms.author="robmcm"/>
 
 # Criar uma aplicação Web Java no App Service do Azure
@@ -89,7 +89,7 @@ Esta secção mostra como criar uma aplicação Web e configurá-la para Java ut
 
 12. Selecione o **Contentor Web** pretendido. Se selecionar um nome de contentor que começa com **O mais recente**, a aplicação será mantida na versão mais recente da versão principal do contentor Web que está disponível no App Service. 
 
-    ![Versões do Contentor Web][versões]
+    ![Versões do Contentor Web][versions]
 
 13. Clique em **Guardar**.
 
@@ -183,7 +183,7 @@ Para obter mais informações sobre a programação de aplicações Java no Azur
 [newwebapp]: ./media/web-sites-java-get-started/newwebapp.png
 [newwebapp2]: ./media/web-sites-java-get-started/newwebapp2.png
 [selectwebapp]: ./media/web-sites-java-get-started/selectwebapp.png
-[versões]: ./media/web-sites-java-get-started/versions.png
+[versions]: ./media/web-sites-java-get-started/versions.png
 [newmarketplace]: ./media/web-sites-java-get-started/newmarketplace.png
 [webmobilejetty]: ./media/web-sites-java-get-started/webmobilejetty.png
 [jettyblade]: ./media/web-sites-java-get-started/jettyblade.png
@@ -194,6 +194,6 @@ Para obter mais informações sobre a programação de aplicações Java no Azur
 
 
 
-<!---HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

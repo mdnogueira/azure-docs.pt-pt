@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="mobile-xamarin-ios"
     ms.devlang="dotnet"
     ms.topic="hero-article"
-    ms.date="06/28/2016"
+    ms.date="08/04/2016"
     ms.author="normesta"/>
 
 
@@ -52,15 +52,6 @@ Acabou de aprovisionar um back-end da Aplicação Móvel do Azure que pode ser u
 Siga os passos abaixo para configurar o projeto de servidor para utilizar o back-end Node.js ou .NET.
 
 [AZURE.INCLUDE [app-service-mobile-configure-new-backend](../../includes/app-service-mobile-configure-new-backend.md)]
-
-
-## (Opcional) Testar o projeto de back-end localmente
-
-Caso tenha optado pela configuração de back-end .NET acima, opcionalmente, pode testar o back-end localmente.
-
-[AZURE.INCLUDE [app-service-mobile-dotnet-backend-test-local-service](../../includes/app-service-mobile-dotnet-backend-test-local-service.md)]
-
-
 
 ## Transferir e executar a aplicação Xamarin.iOS
 
@@ -112,6 +103,6 @@ Caso tenha optado pela configuração de back-end .NET acima, opcionalmente, pod
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

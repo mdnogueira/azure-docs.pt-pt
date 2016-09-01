@@ -3,8 +3,8 @@
     description="Ao utilizar os Serviços de Recuperação e o Backup do Azure, pode criar cópias de segurança e restaurar dados e aplicações a partir de Servidores Windows, computadores cliente do Windows, servidores do System Center DPM e máquinas virtuais do Azure."
     services="backup"
     documentationCenter=""
-    authors="Jim-Parker"
-    manager="jwhit"
+    authors="markgalioto"
+    manager="cfreeman"
     editor="tysonn"
     keywords="cópia de segurança e restauro; serviços de recuperação; soluções de cópia de segurança"/>
 
@@ -231,6 +231,6 @@ Uma vez que estes tutoriais o ajudam a efetuar uma cópia de segurança rapidame
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

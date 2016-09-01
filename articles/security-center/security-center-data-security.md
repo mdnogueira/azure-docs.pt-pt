@@ -13,15 +13,13 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="06/23/2016"
+   ms.date="08/08/2016"
    ms.author="yurid"/>
 
 # Segurança de Dados do Centro de Segurança do Azure
 Para ajudar os clientes a evitar, detetar e responder a ameaças, o Centro de Segurança do Azure recolhe e processa dados sobre os seus recursos do Azure, incluindo informações de configuração, metadados, registos de eventos, ficheiros de informação de falha de sistema e muito mais. Estamos extremamente empenhados em proteger a privacidade e segurança destes dados. A Microsoft respeita diretrizes rigorosas de conformidade e segurança, desde a codificação à operação de um serviço. 
 
 Este artigo explica como os dados são geridos e salvaguardados no Centro de Segurança do Azure.
-
-> [AZURE.NOTE] As informações neste documento aplicam-se ao pré-lançamento do Centro de Segurança do Azure.
 
 ## Origens de Dados
 O Centro de Segurança do Azure analisa os dados das seguintes origens:
@@ -66,6 +64,6 @@ Através deste documento aprendeu como os dados são geridos e salvaguardados no
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

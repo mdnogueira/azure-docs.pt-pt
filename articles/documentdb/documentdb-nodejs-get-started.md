@@ -14,7 +14,7 @@
   ms.tgt_pltfrm="na"
   ms.devlang="node"
   ms.topic="hero-article"
-  ms.date="04/26/2016"
+  ms.date="08/11/2016"
   ms.author="anhoh"/>
 
 # Tutorial NoSQL Node.js: aplicação da consola Node.js do DocumentDB  
@@ -56,7 +56,7 @@ Criemos uma conta DocumentDB. Se já tiver uma conta que pretende utilizar, pode
 
 [AZURE.INCLUDE [documentdb-create-dbaccount](../../includes/documentdb-create-dbaccount.md)]
 
-##<a id="SetupNode"></a> Passo 2: Configurar a sua aplicação Node.js
+## <a id="SetupNode"></a>Passo 2: Configurar a sua aplicação Node.js
 
 1. Abra o seu terminal favorito.
 2. Localize a pasta ou o diretório onde pretende guardar a sua aplicação Node.js.
@@ -72,7 +72,7 @@ Criemos uma conta DocumentDB. Se já tiver uma conta que pretende utilizar, pode
 
 Ótimo! Agora que concluiu a configuração, comecemos a escrever certos códigos.
 
-##<a id="Config"></a> Passo 3: Configurar as configurações da sua aplicação
+## <a id="Config"></a>Passo 3: Configurar as configurações da sua aplicação
 
 Abra ```config.js``` no seu editor de texto favorito.
 
@@ -598,7 +598,7 @@ Deverá ver o resultado da sua aplicação Introdução. A saída deve correspon
 
 Parabéns! Criou e completou o tutorial Node.js e tem a sua primeira aplicação de consola do DocumentDB!
 
-##<a id="GetSolution"></a> Obter a solução completa do tutorial Node.js
+## <a id="GetSolution"></a>Obter a solução completa do tutorial Node.js
 Para criar a solução GetStarted que contém todos os exemplos deste artigo, deverá ter o seguinte:
 
 -   [Conta do DocumentDB][documentdb-create-account].
@@ -623,6 +623,6 @@ Em seguida, no ficheiro ```config.js```, atualize os valores config.endpoint e c
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

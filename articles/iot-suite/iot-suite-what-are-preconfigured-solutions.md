@@ -14,7 +14,7 @@
  ms.topic="get-started-article"
  ms.tgt_pltfrm="na"
  ms.workload="na"
- ms.date="05/25/2016"
+ ms.date="08/09/2016"
  ms.author="dobett"/>
 
 # Quais são as soluções pré-configuradas do Azure IoT Suite?
@@ -24,7 +24,7 @@ As soluções pré-configuradas do Azure IoT Suite são implementações de padr
 - Como um ponto de partida para as suas próprias soluções de IoT.
 - Para saber mais sobre os padrões comuns na conceção e desenvolvimento da solução de IoT.
 
-Cada solução pré-configurada é uma implementação completa, ponto-a-ponto, utilizando dispositivos para gerar a telemetria.
+Cada solução pré-configurada é uma implementação ponto-a-ponto completa que utiliza dispositivos para gerar a telemetria.
 
 Para além de implementar e executar as soluções no Azure, pode ainda transferir o código de origem completo e personalizar e expandir a solução para que responda aos seus requisitos específicos do IoT.
 
@@ -111,7 +111,7 @@ O portal de solução é uma IU baseada na Web implementada na nuvem como parte 
 - Enviar comandos para dispositivos específicos.
 - Gerir regras e ações.
 
-Nesta solução pré-configurada, o portal de solução faz parte da **solução de back-end do IoT** e do **Processamento e conectividade de negócios** numa [arquitetura de solução IoT][lnk-what-is-azure-iot] típica.
+Nesta solução pré-configurada, o portal de solução faz parte da **Solução de back-end do IoT** e do **Processamento e conectividade de negócios** numa [Arquitetura de solução IoT][lnk-what-is-azure-iot] típica.
 
 ## Passos seguintes
 
@@ -132,6 +132,6 @@ Agora que sabe o que é uma solução pré-configurada, pode começar por implem
 [lnk-getstarted-preconfigured]: iot-suite-getstarted-preconfigured-solutions.md
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

@@ -12,10 +12,13 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="hero-article"
-    ms.date="07/20/2016"
+    ms.date="08/15/2016"
     ms.author="elizapo" />
 
 # Utilizar o Microsoft Outlook no Azure RemoteApp
+
+> [AZURE.IMPORTANT]
+> O Azure RemoteApp está a ser descontinuado. Leia o [anúncio](https://go.microsoft.com/fwlink/?linkid=821148) para obter detalhes.
 
 O Azure RemoteApp suporta o Microsoft Outlook O365. Leia mais sobre como o [Office funciona no Azure RemoteApp](remoteapp-officesubscription.md). Existem algumas definições recomendadas para o Outlook quando utilizado no Azure RemoteApp.
 
@@ -33,6 +36,6 @@ O Outlook 2016 tem uma solução para resolver este problema no modo em cache ao
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

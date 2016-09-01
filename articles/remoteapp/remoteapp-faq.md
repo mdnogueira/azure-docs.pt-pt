@@ -13,10 +13,14 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="get-started-article" 
-    ms.date="07/25/2016" 
+    ms.date="08/15/2016" 
     ms.author="elizapo"/>
 
 # Perguntas mais frequentes (FAQ) do Azure RemoteApp
+
+> [AZURE.IMPORTANT]
+> O Azure RemoteApp está a ser descontinuado. Leia o [anúncio](https://go.microsoft.com/fwlink/?linkid=821148) para obter detalhes.
+
 A seguir são apresentadas as perguntas relativas ao Azure RemoteApp. Tem outras perguntas? Visite os [fóruns do RemoteApp](https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureRemoteApp) e indique o que precisa de saber ou deixe um comentário a seguir.
 
 ## Não consegue encontrar o que procura? Tem alguma pergunta que não tenhamos respondido?
@@ -89,7 +93,7 @@ Em primeiro lugar, computadores e tablets:
 
 - **Qual é a versão do Windows Server suportada para o Anfitrião de Sessões de Ambiente de Trabalho Remoto (RDSH)?** Windows Server 2012 R2.
 
-##Suporte e comentários
+## Suporte e comentários
 
 
 - **Qual é o plano de suporte do RemoteApp?** O suporte à faturação e a gestão de subscrições são fornecidos gratuitamente. O suporte técnico está disponível através dos [planos de serviço do Azure](https://azure.microsoft.com/support/plans/). Também pode obter suporte da comunidade gratuito através do [fórum de discussão do Azure](http://social.msdn.microsoft.com/Forums/windowsazure/home?forum=AzureRemoteApp). 
@@ -120,6 +124,6 @@ Sabia que além de classificar este artigo e deixar um comentário a seguir, pod
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

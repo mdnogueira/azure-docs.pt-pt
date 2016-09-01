@@ -13,12 +13,12 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="06/21/2016"
-    ms.author="curtand;viviali"/>
+    ms.date="08/02/2016"
+    ms.author="curtand"/>
 
 # Adicionar utilizadores de outros diretórios ou empresas associadas no Azure Active Directory
 
-Adicione utilizadores para povoar o diretório. Este artigo explica como adicionar utilizadores de outros diretórios no Azure Active Directory ou adicionar utilizadores de empresas associadas. Para obter informações sobre a adição de novos utilizadores na organização e adicionar utilizadores com contas Microsoft, consulte [Adicionar novos utilizadores ao Azure Active Directory](active-directory-create-users.md). Por predefinição, os utilizadores adicionados não têm permissões de administrador. No entanto, pode atribuir-lhes funções em qualquer altura.
+Este artigo explica como adicionar utilizadores de outros diretórios no Azure Active Directory ou adicionar utilizadores de empresas associadas. Para obter informações sobre a adição de novos utilizadores na organização e adicionar utilizadores com contas Microsoft, consulte [Adicionar novos utilizadores ao Azure Active Directory](active-directory-create-users.md). Por predefinição, os utilizadores adicionados não têm permissões de administrador. No entanto, pode atribuir-lhes funções em qualquer altura.
 
 ## Adicionar um utilizador
 
@@ -86,6 +86,6 @@ Se um utilizador for eliminado do respetivo diretório raiz ou se cancelar a res
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

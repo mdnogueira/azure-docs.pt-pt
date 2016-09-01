@@ -12,12 +12,14 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="05/18/2016"
+    ms.date="08/15/2016"
     ms.author="elizapo" />
 
 
 # Como funciona o licenciamento no Azure RemoteApp?
 
+> [AZURE.IMPORTANT]
+> O Azure RemoteApp está a ser descontinuado. Leia o [anúncio](https://go.microsoft.com/fwlink/?linkid=821148) para obter detalhes.
 
 Portanto, configurou o serviço Azure RemoteApp, criou os modelos e está preparado para publicar aplicações para os utilizadores. Contudo, ainda existe um último aspeto a compreender: o licenciamento. Como funciona o licenciamento para o RemoteApp e as aplicações partilhadas através do RemoteApp?
 
@@ -37,6 +39,6 @@ Tenha em atenção que não pode utilizar uma CAL ou um contrato de Licenciament
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

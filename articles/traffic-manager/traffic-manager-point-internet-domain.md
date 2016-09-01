@@ -3,7 +3,7 @@
    description="Este artigo ajuda-o a apontar o nome de domínio da sua empresa para um nome de domínio do Traffic Manager."
    services="traffic-manager"
    documentationCenter=""
-   authors="joaoma"
+   authors="sdwheeler"
    manager="carmonm"
    editor="tysonn" />
 <tags
@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="03/17/2016"
-   ms.author="joaoma" />
+   ms.author="sewhee" />
 
 # Apontar um domínio de Internet da empresa para um domínio do Traffic Manager do Azure
 
@@ -37,6 +37,6 @@ Todos os pedidos de tráfego para *www.contoso.com* serão agora direcionados pa
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

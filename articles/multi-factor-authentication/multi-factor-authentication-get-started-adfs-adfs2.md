@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="get-started-article" 
-    ms.date="05/12/2016" 
+    ms.date="08/04/2016" 
     ms.author="billmath"/>
 # Proteger recursos na nuvem e no local utilizando o Servidor Multi-Factor Authentication do Azure com o AD FS 2.0
 
@@ -49,7 +49,7 @@ Para proteger o AD FS 2.0 com um proxy, instale o Servidor Multi-Factor Authenti
 18. A autenticação do IIS está agora ativada. No entanto, para efetuar a pré-autenticação para o Active Directory (AD) através de LDAP, tem de configurar a ligação LDAP ao controlador de domínio. Para tal, clique no ícone Integração de Diretórios.
 19. No separador Definições, selecione o botão de opção Utilizar configuração de LDAP específica.
 <center>![Configurar](./media/multi-factor-authentication-get-started-adfs-adfs2/ldap1.png)</center>
-20. Clique no botão Editar...
+20. Clique no botão Adicionar...
 21. Na caixa de diálogo Editar Configuração de LDAP, preencha os campos com as informações necessárias para ligar ao controlador de domínio do AD. As descrições dos campos estão incluídas na tabela abaixo. Nota: estas informações também estão incluídas no ficheiro de ajuda do Servidor Multi-Factor Authentication do Azure.
 22. Teste a ligação LDAP ao clicar no botão Testar.
 <center>![Configurar](./media/multi-factor-authentication-get-started-adfs-adfs2/ldap2.png)</center>
@@ -80,7 +80,7 @@ Para proteger o AD FS quando não for utilizado o proxy, instale o Servidor Mult
 
 
 ## IPs Fidedignos
-Os IPs fidedignos permitem aos utilizadores ignorar o Multi-Factor Authentication do Azure para pedidos de sites com origem em sub-redes ou endereços IP específicos. Por exemplo, pode pretender excluir utilizadores do Multi-Factor Authentication do Azure ao iniciar sessão a partir do escritório. Para tal, especifique a sub-rede do escritório como uma entrada de IPs Fidedignos. 
+Os IPs Fidedignos permitem aos utilizadores ignorar o Multi-Factor Authentication do Azure para pedidos de sites com origem em sub-redes ou endereços IP específicos. Por exemplo, pode pretender excluir utilizadores do Multi-Factor Authentication do Azure ao iniciar sessão a partir do escritório. Para tal, especifique a sub-rede do escritório como uma entrada de IPs Fidedignos. 
 
 ### Para configurar IPs fidedignos
 
@@ -96,6 +96,7 @@ Os IPs fidedignos permitem aos utilizadores ignorar o Multi-Factor Authenticatio
  
 
 
-<!--HONumber=Jun16_HO2-->
+
+<!--HONumber=ago16_HO4-->
 
 

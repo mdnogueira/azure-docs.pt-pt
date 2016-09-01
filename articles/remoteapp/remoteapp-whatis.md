@@ -13,10 +13,13 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="get-started-article" 
-    ms.date="06/18/2016" 
+    ms.date="08/15/2016" 
     ms.author="elizapo"/>
 
 # O que é o Azure RemoteApp?
+
+> [AZURE.IMPORTANT]
+> O Azure RemoteApp está a ser descontinuado. Leia o [anúncio](https://go.microsoft.com/fwlink/?linkid=821148) para obter detalhes.
 
 O Azure RemoteApp traz as funcionalidades do programa Microsoft RemoteApp no local, apoiado pelos Serviços de Ambiente de Trabalho Remoto, para o Azure. O Azure RemoteApp ajuda a fornecer um acesso remoto seguro às aplicações a partir de vários dispositivos de utilizador distintos. O Azure RemoteApp aloja, basicamente, sessões do Servidor de Terminais não persistentes na nuvem que pode utilizar e partilhar com os utilizadores.
 
@@ -81,6 +84,6 @@ Aceda! Experimente! Estes artigos ajudam a começar a utilizar o Azure RemoteApp
 Sabia que além de classificar este artigo e deixar um comentário a seguir, pode alterar o próprio artigo? Falta algo? Algo errado? Escrevi algo que é simplesmente confuso? Desloque-se para cima e clique em **Editar no GitHub** ou **Editar** para efetuar alterações – estas serão enviadas para nós para revisão e, em seguida, após serem aceites, as suas alterações e melhorias serão apresentadas aqui.
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

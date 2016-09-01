@@ -1,7 +1,7 @@
 <properties
     pageTitle="Como criar uma conta do DocumentDB | Microsoft Azure"
     description="Crie uma base de dados NoSQL com o Azure DocumentDB. Siga estas instruções para criar uma conta do DocumentDB e começar a construir a sua base de dados NoSQL rápida de escala global." 
-    keywords="build a database"
+    keywords="criar uma base de dados"
     services="documentdb"
     documentationCenter=""
     authors="mimig1"
@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="05/16/2016"
+    ms.date="08/11/2016"
     ms.author="mimig"/>
 
 # Como criar uma conta do DocumentDB através do Portal do Azure
@@ -55,6 +55,6 @@ Para saber mais sobre o DocumentDB, explore estes recursos:
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

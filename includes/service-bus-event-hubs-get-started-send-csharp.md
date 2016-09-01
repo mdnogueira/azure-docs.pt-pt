@@ -12,7 +12,7 @@ Nesta secção, irá escrever uma aplicação de consola do Windows para enviar 
 
     ![][8]
 
-    Esta ação transfere, instala e adiciona uma referência ao <a href="https://www.nuget.org/packages/WindowsAzure.ServiceBus/">Pacote NuGet da biblioteca do Service Bus do Azure</a>.
+    O Visual Studio transfere, instala e adiciona uma referência ao [Pacote NuGet da biblioteca do Service Bus do Azure](https://www.nuget.org/packages/WindowsAzure.ServiceBus).
 
 4. Adicione as seguinte declarações `using` na parte superior do ficheiro **Program.cs**:
 
@@ -54,7 +54,7 @@ Nesta secção, irá escrever uma aplicação de consola do Windows para enviar 
     }
     ```
 
-    Este método envia continuamente eventos para o seu Hub de Eventos com um atraso de 200 ms.
+    Este método envia continuamente eventos para o Event Hub com um atraso de 200 ms.
 
 7. Por fim, adicione as seguintes linhas ao método **Main**:
 
@@ -71,6 +71,6 @@ Nesta secção, irá escrever uma aplicação de consola do Windows para enviar 
 [8]: ./media/service-bus-event-hubs-getstarted/create-sender-csharp2.png
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

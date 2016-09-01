@@ -13,7 +13,7 @@
  ms.topic="get-started-article"
  ms.tgt_pltfrm="na"
  ms.workload="na"
- ms.date="04/29/2016"
+ ms.date="08/11/2016"
  ms.author="juanpere"/>
 
 # Introdução à gestão de dispositivos do IoT Hub do Azure com a C# (pré-visualização)
@@ -23,7 +23,7 @@
 ## Introdução
 Para começar a utilizar a gestão de dispositivos do Hub IoT do Azure, tem de criar um Hub IoT do Azure, aprovisionar dispositivos no Hub IoT, iniciar vários dispositivos simulados e ver estes dispositivos na IU de amostra de gestão de dispositivos. Este tutorial explica-lhe como seguir esses passos.
 
-> [AZURE.NOTE]  Tem de criar um novo IoT Hub para ativar as funcionalidades de gestão de dispositivos, mesmo se tiver um IoT Hub já que os IoT Hubs existentes ainda não dispõem de funcionalidades de gestão de dispositivos. Assim que a gestão de dispositivos estiver geralmente disponível, todos os IoT Hubs existentes serão atualizados para obterem as funcionalidades de gestão de dispositivos.
+> [AZURE.NOTE]  Tem de criar um novo IoT Hub para ativar as funcionalidades de gestão de dispositivos mesmo se já tiver um, já que os IoT Hubs existentes ainda não dispõem destas funcionalidades. Assim que a gestão de dispositivos estiver geralmente disponível, todos os IoT Hubs existentes serão atualizados para obterem as funcionalidades de gestão de dispositivos.
 
 ## Pré-requisitos
 
@@ -35,7 +35,7 @@ Os seguintes elementos terão de estar instalados para concluir os passos:
 
 - Git
 
-- CMake (versão 2.8 ou posterior). Instale o CMake a partir de <https://cmake.org/download/>. Para um PC com Windows, escolha a opção Windows Installer (. msi). Certifique-se de selecionar a caixa para adicionar o CMake à atual variável de CAMINHO de utilizador.
+- CMake (versão 2.8 ou posterior). Instale o CMake a partir de <https://cmake.org/download/>. Para um PC Windows, escolha a opção Windows Installer (.msi). Certifique-se de selecionar a caixa para adicionar o CMake à atual variável de CAMINHO de utilizador.
 
 - Node.js 6.1.0 ou superior.  Instale o Node.js para a sua plataforma a partir de <https://nodejs.org/>.
 
@@ -60,27 +60,27 @@ Tem de criar um dispositivo de gestão ativado para o IoT Hub aos quais deverá 
   -   Selecione a caixa para **Ativar a Gestão de Dispositivos**.
   -   Em **Localização**, selecione a localização para alojar o seu IoT Hub. A gestão de dispositivos do IoT Hub apenas está disponível nos EUA Leste e na Ásia Oriental durante a pré-visualização pública. No futuro, estará disponível em todas as regiões.
 
-    > [AZURE.NOTE]  Se não selecionar a caixa para **Ativar a Gestão de Dispositivos**, os exemplos não irão funcionar.
+    > [AZURE.NOTE]  Se não marcar a caixa para **Ativar Gestão do Dispositivo**, os exemplos não funcionarão.<br/>Ao marcar a caixa **Ativar Gestão do Dispositivo**, cria uma pré-visualização do IoT Hub suportada apenas nos EUA Leste, na Europa do Norte e na Ásia Oriental e não destinada a cenários de produção. Não é possível migrar dispositivos para dentro e fora de hubs de gestão de dispositivos ativados.
 
 4.  Quando tiver escolhido as suas opções de configuração para o seu IoT Hub, clique em **Criar**. O Azure poderá levar alguns minutos a criar o seu IoT Hub. Para verificar o estado, pode monitorizar o progresso no **Startboard** ou no painel **Notificações**.
 
     ![][img-monitor]
 
-5.  Quando tiver criado o IoT Hub com êxito, abra o painel do novo IoT Hub, tome nota do **Nome de anfitrião** e, em seguida, clique no ícone **Chaves**.
+5.  Quando tiver criado o IoT Hub com êxito, abra o painel do novo IoT Hub, tome nota do **Nome de anfitrião** e, em seguida, clique em **Políticas de acesso partilhado**.
 
     ![][img-keys]
 
-6.  Clique na política **iothubowner** e copie e tome nota da cadeia de ligação no painel **iothubowner**. Copie-a numa localização a que poderá aceder posteriormente uma vez que será necessária para concluir este tutorial.
+6.  Clique na política **iothubowner** e copie e tome nota da cadeia de ligação no painel **iothubowner**. Copie-a para uma localização à qual poderá aceder posteriormente, uma vez que é necessária para concluir este tutorial.
 
     > [AZURE.NOTE] Em cenários de produção, certifique-se de não utilizar as credenciais do **iothubowner**.
 
     ![][img-connection]
 
-Criou um dispositivo de gestão ativado para o IoT Hub Irá precisar da cadeia de ligação para concluir este tutorial.
+Criou um dispositivo de gestão ativado para o IoT Hub Vai precisar da cadeia de ligação para concluir este tutorial.
 
 ## Criar exemplos e aprovisionar dispositivos no seu IoT Hub
 
-Nesta secção, irá executar um script que cria o dispositivo simulado e os exemplos e aprovisiona um conjunto de novas identidades de dispositivo no registo do dispositivo do seu IoT Hub. Não é possível ligar um dispositivo ao IoT Hub exceto se tiver uma entrada no registo de dispositivo.
+Nesta secção, vai executar um script que cria o dispositivo simulado e os exemplos e aprovisiona um conjunto de novas identidades do dispositivo no registo do dispositivo do seu IoT Hub. Não é possível ligar um dispositivo ao IoT Hub exceto se tiver uma entrada no registo de dispositivo.
 
 Para criar os exemplos e aprovisionar dispositivos no seu IoT Hub, siga os passos abaixo:
 
@@ -118,13 +118,13 @@ Com a linha de comandos do programador, na pasta **\\azure-iot-sdks\\csharp\\ser
   simulate.bat
   ```
 
-Este script executa uma instância de **iotdm\_simples\_sample.exe** para cada dispositivo listado no ficheiro **devicecreds.txt**. O dispositivo simulado continuará a ser executado até fechar a janela de comandos.
+Este script executa uma instância de **iotdm\_simples\_sample.exe** para cada dispositivo listado no ficheiro **devicecreds.txt**. O dispositivo simulado continua a ser executado até fechar a janela de comandos.
 
 A aplicação de exemplo **iotdm\_simple\_sample** é compilada com a biblioteca de cliente de gestão de dispositivos do IoT Hub do Azure para C, que permite criar dispositivos de IoT que podem ser geridos pelo IoT Hub do Azure. Os criadores de dispositivos podem utilizar esta biblioteca para comunicar as propriedades do dispositivo e implementar as ações executáveis requeridas pelas tarefas do dispositivo. Esta biblioteca é um componente fornecido como parte dos SDKs de open source para IoT Hub do Azure.
 
-Quando executa **simulate.bat**, verá um fluxo de dados na janela de resultados. Esta janela de resultados mostra o tráfego de entrada e de saída, bem como as declarações **printf** nas funções de chamada de retorno específicas da aplicação. Tal permite-lhe ver o tráfego de entrada e saída, juntamente com a forma como a aplicação de exemplo está a processar os pacotes descodificados. Quando o dispositivo estabelece ligação ao IoT Hub, o serviço começa automaticamente a observar os recursos no dispositivo. A biblioteca de cliente de DM do IoT Hub invoca as chamadas de retorno do dispositivo para obter os valores mais recentes do dispositivo.
+Quando executa **simulate.bat**, verá um fluxo de dados na janela de resultados. Esta janela de resultados mostra o tráfego de entrada e de saída, bem como as declarações **printf** nas funções de chamada de retorno específicas da aplicação. Esta janela permite-lhe ver o tráfego de entrada e de saída, juntamente com a forma como a aplicação de exemplo está a processar os pacotes descodificados. Quando o dispositivo estabelece ligação ao IoT Hub, o serviço começa automaticamente a observar os recursos no dispositivo. A biblioteca de cliente de DM do IoT Hub invoca as chamadas de retorno do dispositivo para obter os valores mais recentes do dispositivo.
 
-Encontrará abaixo o resultado da aplicação de exemplo **iotdm\_simple\_sample**. Na parte superior, é apresentada uma mensagem **REGISTADO** com êxito, que mostra o dispositivo com o Id **Device11 7ce4a850** a estabelecer ligação ao IoT Hub.
+Encontrará abaixo o resultado da aplicação de exemplo **iotdm\_simple\_sample**. Na parte superior, é apresentada uma mensagem **REGISTADO** com êxito, que mostra o dispositivo com o ID **Device11 7ce4a850** a estabelecer ligação ao IoT Hub.
 
 > [AZURE.NOTE]  Para obter um resultado menos descritivo, crie e execute a configuração de retalho.
 
@@ -136,11 +136,11 @@ Certifique-se de que deixa todos os dispositivos simulados em execução à medi
 
 Agora que aprovisionou um Hub IoT e tem vários dispositivos simulados em execução e registados para gestão, pode implementar a IU de amostra da gestão de dispositivos. A IU de amostra de gestão de dispositivos fornece-lhe um exemplo de como utilizar as APIs de gestão de dispositivos para criar uma experiência de IU interativa.  Para obter mais informações sobre a IU de amostra de gestão de dispositivos, incluindo [problemas conhecidos](https://github.com/Azure/azure-iot-device-management#knownissues), veja o repositório GitHub [IU da gestão de dispositivos IoT do Azure][Ink-dm-github].
 
-Para obter, criar e executar a IU de amostra de gestão de dispositivos, siga os passos abaixo:
+Para obter, criar e executar a IU de amostra de gestão de dispositivos, siga estes passos:
 
 1. Abra uma **linha de comandos**.
 
-2. Confirme que instalou o Node.js 6.1.0 ou superior de acordo com a secção de pré-requisitos, escrevendo `node --version`.
+2. Confirme que instalou o Node.js 6.1.0 ou superior de acordo com a secção de pré-requisitos ao escrever `node --version`.
 
 3. Clone o repositório GitHub da IU de gestão de dispositivos IoT do Azure executando o seguinte comando:
 
@@ -199,6 +199,6 @@ Para saber mais sobre as funcionalidades de gestão de dispositivos do Hub IoT d
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

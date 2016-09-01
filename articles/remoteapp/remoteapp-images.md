@@ -12,10 +12,13 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="08/02/2016"
+    ms.date="08/15/2016"
     ms.author="elizapo" />
 
 # O que existe nas imagens de modelo do Azure RemoteApp?
+
+> [AZURE.IMPORTANT]
+> O Azure RemoteApp está a ser descontinuado. Leia o [anúncio](https://go.microsoft.com/fwlink/?linkid=821148) para obter detalhes.
 
 A sua subscrição do Azure RemoteApp inclui três imagens de modelo:
 
@@ -106,6 +109,6 @@ Esta imagem é uma extensão da imagem clássica e tem os seguintes componentes 
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

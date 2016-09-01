@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="05/25/2016"
+    ms.date="08/09/2016"
     ms.author="sdanie"/>
 
 # Personalizar o portal do programador na API Management do Azure
@@ -97,10 +97,10 @@ Clique na página **Bem-vindo** para editar o que é apresentado na home page do
 
 [Introdução à configuração avançada de API]: api-management-get-started-advanced.md
 [bootstrap]: http://getbootstrap.com/
-[Variáveis LESS]: http://getbootstrap.com/css/
+[variáveis LESS]: http://getbootstrap.com/css/
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

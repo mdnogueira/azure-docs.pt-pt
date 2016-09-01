@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="get-started-article" 
-    ms.date="05/03/2016" 
+    ms.date="08/23/2016" 
     ms.author="rachelap"/>
 
 # Descrição geral de API Apps
@@ -65,6 +65,6 @@ Para colocar questões sobre API Apps, inicie um thread no [Fórum das API Apps]
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

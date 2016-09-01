@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="04/29/2016"
+   ms.date="08/16/2016"
    ms.author="lodipalm;barbkess;sonyama"/>
 
 # Carregar dados do armazenamento de blobs para o Azure SQL Data Warehouse (Azure Data Factory)
@@ -212,7 +212,7 @@ Estes tópicos fornecem informações detalhadas sobre o Azure Data Factory. Abr
 
 - [Tutorial: Introdução ao Azure Data Factory][] Este é o tutorial principal para processamento de dados com o Azure Data Factory. Neste tutorial, irá criar o seu primeiro pipeline, que utiliza o HDInsight para transformar e analisar registos Web mensalmente. Tenha em atenção que não existe nenhuma atividade de cópia neste tutorial.
 - [Tutorial: copiar dados do Blob de Armazenamento do Azure para a Base de Dados SQL do Azure][]. Neste tutorial, irá criar um pipeline no Azure Data Factory para copiar dados do Blob de Armazenamento do Azure para a Base de Dados SQL do Azure.
-- [Tutorial com cenário real][]. Este é um tutorial aprofundado para utilizar o Azure Data Factory.
+
 
 <!--Image references-->
 
@@ -228,8 +228,7 @@ Estes tópicos fornecem informações detalhadas sobre o Azure Data Factory. Abr
 [Carregar dados de exemplo para o SQL Data Warehouse]: sql-data-warehouse-load-sample-databases.md
 [Mover dados para e do Azure SQL Data Warehouse, utilizando o Azure Data Factory]: ../data-factory/data-factory-azure-sql-data-warehouse-connector.md
 [PolyBase]: sql-data-warehouse-get-started-load-with-polybase.md
-[Tutorial com cenário real]: ../data-factory/data-factory-tutorial.md
-[Tutorial: copiar dados do Blob de Armazenamento do Azure para a Base de Dados SQL do Azure]: ../data-factory/data-factory-get-started
+[Tutorial: copiar dados do Blob de Armazenamento do Azure para a Base de Dados SQL do Azure]: ../data-factory/data-factory-copy-data-from-azure-blob-storage-to-sql-database.md
 [Tutorial: Introdução ao Azure Data Factory]: ../data-factory/data-factory-build-your-first-pipeline.md
 
 <!--MSDN references-->
@@ -241,6 +240,6 @@ Estes tópicos fornecem informações detalhadas sobre o Azure Data Factory. Abr
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

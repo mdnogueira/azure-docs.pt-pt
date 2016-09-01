@@ -149,7 +149,7 @@ Pode obter os detalhes de configuração com o cmdlet seguinte
 
 Pode atualizar qualquer parte da configuração com o cmdlet seguinte. No exemplo abaixo, o ID de VLAN do circuito está a ser atualizado de 100 para 500.
 
-    Set-AzureRmExpressRouteCircuitPeeringConfig -Name "AzurePrivatePeering" -Circuit $ckt -PeeringType AzurePrivatePeering -PeerASN 100 -PrimaryPeerAddressPrefix "10.0.0.0/30" -SecondaryPeerAddressPrefix "10.0.0.4/30" -VlanId 200
+    Set-AzureRmExpressRouteCircuitPeeringConfig -Name "AzurePrivatePeering" -ExpressRouteCircuit $ckt -PeeringType AzurePrivatePeering -PeerASN 100 -PrimaryPeerAddressPrefix "10.0.0.0/30" -SecondaryPeerAddressPrefix "10.0.0.4/30" -VlanId 200
 
     Set-AzureRmExpressRouteCircuit -ExpressRouteCircuit $ckt
 
@@ -406,6 +406,6 @@ Passo seguinte, [Ligar uma VNet a um circuito ExpressRoute](expressroute-howto-l
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

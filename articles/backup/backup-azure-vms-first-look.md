@@ -145,7 +145,7 @@ Antes de registar a VM com um cofre, execute o processo de deteção para identi
 
 ## Passo 3 – instalar o Agente da VM na máquina virtual
 
-O Agente da VM do Azure tem de estar instalado na máquina virtual do Azure para que a extensão da Cópia de Segurança funcione. Se a VM foi criada a partir da galeria do Azure, o Agente da VM já se encontra presente na VM. Pode avançar para [proteger as suas VMs](backup-azure-vms-first-look.md#step-4---protect-azure-virtual-machines).
+O Agente da VM do Azure tem de estar instalado na máquina virtual do Azure para que a extensão da Cópia de Segurança funcione. Se a VM foi criada a partir da galeria do Azure, o Agente da VM já se encontra presente na VM. Pode avançar para [proteger as suas VMs](backup-azure-vms-first-look.md#step-4-protect-azure-virtual-machines).
 
 Se a VM migrou a partir de um datacenter no local, a VM, provavelmente, não tem o Agente da VM instalado. Tem de instalar o Agente da VM na máquina virtual antes de prosseguir para a proteção da VM. Para obter passos detalhados sobre como instalar o Agente da VM, consulte a [secção Agente da VM do artigo VMs de Cópia de Segurança](backup-azure-vms-prepare.md#vm-agent).
 
@@ -225,6 +225,6 @@ Se tiver dúvidas ou se houver alguma funcionalidade que gostaria de ver incluí
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

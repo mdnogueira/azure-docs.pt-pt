@@ -233,7 +233,7 @@ O Notification Hub está agora configurado para trabalhar com o GCM e tem as cad
 
                         // If you want to use tags...
                         // Refer to : https://azure.microsoft.com/en-us/documentation/articles/notification-hubs-routing-tag-expressions/
-                        // regID = hub.register(token, "tag1,tag2").getRegistrationId();
+                        // regID = hub.register(token, "tag1", "tag2").getRegistrationId();
 
                         resultString = "Registered Successfully - RegId : " + regID;
                         Log.i(TAG, resultString);       
@@ -729,6 +729,6 @@ Para obter informações mais gerais sobre os Notification Hubs, consulte as nos
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

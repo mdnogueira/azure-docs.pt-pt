@@ -3,7 +3,7 @@
    description="Saiba como criar uma rede virtual com o portal do Azure no ARM | Resource Manager."
    services="virtual-network"
    documentationCenter=""
-   authors="telmosampaio"
+   authors="jimdial"
    manager="carmonm"
    editor=""
    tags="azure-resource-manager"/>
@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="03/15/2016"
-   ms.author="telmos"/>
+   ms.author="jdial"/>
 
 # Criar uma rede virtual com o portal do Azure
 
@@ -31,6 +31,6 @@
 [AZURE.INCLUDE [virtual-networks-create-vnet-arm-pportal-include](../../includes/virtual-networks-create-vnet-arm-pportal-include.md)]
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

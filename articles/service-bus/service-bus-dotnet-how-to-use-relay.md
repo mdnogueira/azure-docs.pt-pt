@@ -39,42 +39,7 @@ Para começar a utilizar o reencaminhamento do Service Bus no Azure, deve criar,
 
 Para criar um espaço de nomes de serviço:
 
-1.  Inicie sessão no [Portal Clássico do Azure][].
-
-2.  No painel de navegação esquerdo do portal, clique em **Service Bus**.
-
-3.  No painel inferior do portal, clique em **Criar**.
-
-    ![](./media/service-bus-dotnet-how-to-use-relay/sb-queues-13.png)
-
-4.  Na caixa de diálogo **Adicionar um novo espaço de nomes**, introduza um nome do espaço de nomes.
-    O sistema verifica imediatamente a disponibilidade do nome.
-
-    ![](./media/service-bus-dotnet-how-to-use-relay/sb-queues-04.png)
-
-5.  Após verificar se o nome do espaço de nomes está disponível, escolha o país ou a região onde será alojado o espaço de nomes (certifique-se de que utiliza o mesmo país/região onde está a implementar os recursos de computação).
-
-    > [AZURE.IMPORTANT] Escolha a *mesma região* que pretende para a implementação da aplicação. Tal proporcionará o melhor desempenho.
-
-6.  Deixe os outros campos na caixa de diálogo com os respetivos valores predefinidos (**Mensagens** e camada **Standard**) e, em seguida, clique na marca de verificação. O sistema cria agora o seu espaço de nomes e ativa o mesmo. Poderá ter de aguardar alguns minutos enquanto o sistema aprovisiona recursos para a sua conta.
-
-    ![](./media/service-bus-dotnet-how-to-use-relay/getting-started-multi-tier-27.png)
-
-    O espaço de nomes criado é, em seguida, apresentado no portal e demora alguns minutos a ativar. Aguarde até que o estado seja **Ativo** antes de continuar.
-
-## Obter as credenciais de gestão predefinidas para o espaço de nomes
-
-Para efetuar operações de gestão, tais como criar uma ligação de reencaminhamento, no novo espaço de nomes, deve configurar a regra de autorização de Assinatura de Acesso Partilhado (SAS) para o espaço de nomes. Para obter mais informações sobre SAS, consulte [Autenticação da Assinatura de Acesso Partilhado com o Service Bus][].
-
-1.  No painel de navegação esquerdo, clique no nó **Service Bus** para mostrar a lista de espaços de nomes disponíveis.
-    ![](./media/service-bus-dotnet-how-to-use-relay/sb-queues-13.png)
-
-2.  Faça duplo clique no nome do espaço de nomes que acabou de criar a partir da lista apresentada.
-    ![](./media/service-bus-dotnet-how-to-use-relay/sb-queues-09.png)
-
-3.  Clique no separador **Configurar** na parte superior da página.
-
-4.  Quando um espaço de nomes do Service Bus é aprovisionado, é criada por predefinição uma **SharedAccessAuthorizationRule**, com o **KeyName** definido para **RootManageSharedAccessKey**. Esta página apresenta essa chave, bem como as chaves primária e secundária para a regra predefinida.
+[AZURE.INCLUDE [service-bus-create-namespace-portal](../../includes/service-bus-create-namespace-portal.md)]
 
 ## Obter o pacote NuGet do Service Bus
 
@@ -271,12 +236,11 @@ Agora que aprendeu as noções básicas do serviço de reencaminhamento do Servi
 - [Descrição geral da arquitetura do Service Bus do Azure ](service-bus-fundamentals-hybrid-solutions.md)
 - Transfira os exemplos do Service Bus a partir dos [exemplos do Azure][] ou consulte a [descrição geral dos exemplos do Service Bus][].
 
-  [Portal Clássico do Azure]: http://manage.windowsazure.com
   [Autenticação da Assinatura de Acesso Partilhado com o Service Bus]: service-bus-shared-access-signature-authentication.md
   [exemplos do Azure]: https://code.msdn.microsoft.com/site/search?query=service%20bus&f%5B0%5D.Value=service%20bus&f%5B0%5D.Type=SearchText&ac=2
-  [Descrição geral dos exemplos do Service Bus]: service-bus-samples.md
+  [descrição geral dos exemplos do Service Bus]: service-bus-samples.md
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

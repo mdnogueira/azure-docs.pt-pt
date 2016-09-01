@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="dotnet"
     ms.devlang="na"
     ms.topic="hero-article"
-    ms.date="05/27/2016"
+    ms.date="08/19/2016"
     ms.author="rachelap"/>
 
 # Introdução às API Apps, ASP.NET e Swagger no App Service do Azure
@@ -493,6 +493,6 @@ O modelo do projeto **Aplicação API do Azure** é equivalente a escolher o mod
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

@@ -1,5 +1,5 @@
 <properties
-    pageTitle="Lista de conetores geridos pela Microsoft para utilização em aplicações lógicas do Microsoft Azure | Serviço de Aplicações do Microsoft Azure | Microsoft Azure"
+    pageTitle="Lista de conectores geridos pela Microsoft para utilização em aplicações lógicas do Microsoft Azure | Serviço de Aplicações do Microsoft Azure | Microsoft Azure"
     description="Obtenha uma lista completa dos conectores geridos pela Microsoft que pode utilizar para criar Logic Apps no App Service do Azure"
     services="logic-apps"
     documentationCenter=""
@@ -14,12 +14,12 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="07/15/2016"
+    ms.date="08/23/2016"
     ms.author="deonhe"/>
 
-# Lista de conetores
+# Lista de conectores
 
-Selecione um ícone para saber como pode rapidamente tirar partido destes conetores para compilar fluxos de trabalho que chamam estes serviços.
+Selecione um conector para saber como o utilizar para criar fluxos de trabalho rapidamente.
 
 ## Conetores padrão
 
@@ -46,17 +46,18 @@ Utilize os conetores EIP para aplicações lógicas para cenários B2B que inclu
  
 |Conetores EIP ||||
 |-----------|-----------|-----------|-----------|
-|[![Ícone da API][as2icon]<br/>**AS2</br>encode/decode**][as2doc]|[![Ícone da API][x12icon]<br/>**X12</br>encode/decode**][x12Doc]|[![Ícone da API][xmlvalidateicon]<br/>**XML <br/>validação**][xmlvalidatedoc]|[![Ícone da API][xmltransformicon]<br/>**XML<br/> transformar**][xmltransformdoc]|
-|[![Ícone da API][flatfileicon]<br/>**Ficheiro simples</br>codificar**][flatfiledoc]|[![Ícone da API][flatfiledecodeicon]<br/>**Ficheiro simples</br>descodificar**][flatfiledecodedoc]|||
+|[![Ícone da API][xmlvalidateicon]<br/>**XML <br/>validação**][xmlvalidatedoc]|[![Ícone da API][xmltransformicon]<br/>**XML<br/> transformar**][xmltransformdoc]|[![Ícone da API][flatfileicon]<br/>**Ficheiro simples</br>codificar**][flatfiledoc]|[![Ícone da API][flatfiledecodeicon]<br/>**Ficheiro simples</br>descodificar**][flatfiledecodedoc]|
+|[![Ícone da API][as2icon]<br/>**AS2</br>descodificar**][as2decode]|[![Ícone da API][as2icon]<br/>**AS2</br>codificar**][as2encode]|[![Ícone da API][x12icon]<br/>**X12</br>descodificar**][x12decode]|[![Ícone da API][x12icon]<br/>**X12</br>**][x12encode]|
+|[![Ícone da API][x12icon]<br/>**EDIFACT</br>descodificar**][EDIFACTdecode]|[![Ícone da API][x12icon]<br/>**EDIFACT</br>codificar**][EDIFACTencode]||||
 
 <!-- TODO: Add Functions, App Service, and Nested Workflow Icons -->
 ### Os conectores podem ser acionadores
-Vários conectores fornecem acionadores que podem notificar a sua aplicação quando ocorrem eventos específicos. Por exemplo, o conector FTP tem o acionador OnUpdatedFile. Pode compilar uma aplicação lógica, PowerApp ou Fluxo que fica à escuta deste acionador e efetua uma ação sempre que este é acionado.
+Vários conectores fornecem acionadores que podem notificar a sua aplicação quando ocorrem eventos específicos. Por exemplo, o conector FTP tem o acionador OnUpdatedFile. Pode compilar uma Aplicação lógica, PowerApp ou Fluxo que fica à escuta deste acionador e efetua uma ação sempre que este é acionado.
 
 Existem dois tipos de acionadores:  
 
 * Acionadores de Consultas: estes acionadores consultam o serviço a uma frequência especificada para verificar se existem novos dados. Quando estão disponíveis novos dados, é executada uma nova instância da aplicação com a entrada desses dados. Para impedir que os mesmos dados sejam consumidos várias vezes, o acionador pode limpar os dados que foram lidos e transmitidos para a aplicação.
-* Acionadores Push: estes acionadores estão à escuta de dados num ponto final ou da ocorrência de um evento. Em seguida, acionam uma nova instância da aplicação. O conector do Twitter é um exemplo desse tipo.
+* Acionadores Push: estes acionadores estão à escuta de dados num ponto final ou da ocorrência de um evento e, em seguida, acionam uma nova ocorrência da sua aplicação. O conector do Twitter é um exemplo desse tipo.
 
 ### Os conectores podem ser ações
 Os conectores também podem ser utilizados como ações nas aplicações. As ações são úteis para procurar dados que podem ser utilizados na execução da aplicação. Por exemplo, pode precisar de procurar dados de clientes numa SQL Database durante o processamento de uma ordem. Alternativamente, pode ter de escrever, atualizar ou eliminar dados numa tabela de destino. Pode fazê-lo utilizando as ações fornecidas pelos conectores. Mapa de ações para operações que são definidas nos metadados Swagger.
@@ -102,9 +103,15 @@ Os conectores também podem ser utilizados como ações nas aplicações. As aç
 [as2doc]: ../app-service-logic/app-service-logic-enterprise-integration-as2.md "Saiba mais sobre a integração empresarial com o AS2."
 [x12doc]: ../app-service-logic/app-service-logic-enterprise-integration-x12.md "Saiba mais sobre a integração empresarial com o X12"
 [flatfiledoc]: ../app-service-logic/app-service-logic-enterprise-integration-flatfile.md "Saiba mais sobre a integração empresarial com ficheiros simples."
-[flatfiledecodedoc]: ../app-service-logic/app-service-logic-enterprise-integration-flatfile.md/#how-to-create-the-flat-file-decoding-connector "Saiba mais sobre a integração empresarial com ficheiros simples."
-[xmlvalidatedoc]: ../app-service-logic/app-service-logic-enterprise-integration-xml.md "Saiba mais sobre a integração empresarial com validação XML."
+[flatfiledecodedoc]: ../app-service-logic/app-service-logic-enterprise-integration-flatfile.md "Saiba mais sobre a integração empresarial com ficheiros simples."
+[xmlvalidatedoc]: ../app-service-logic/app-service-logic-enterprise-integration-xml-validation.md "Saiba mais sobre a integração empresarial com validação XML."
 [xmltransformdoc]: ../app-service-logic/app-service-logic-enterprise-integration-transform.md "Saiba mais sobre transformações de integração empresarial."
+[as2decode]: ..//app-service-logic/app-service-logic-enterprise-integration-as2-decode.md "Saiba mais sobre a integração empresarial com a descodificação AS2"
+[as2encode]: ..//app-service-logic/app-service-logic-enterprise-integration-as2-encode.md "Saiba mais sobre a integração empresarial com a codificação AS2"
+[X12decode]: ..//app-service-logic/app-service-logic-enterprise-integration-X12-decode.md "Saiba mais sobre a integração empresarial com a descodificação X12"
+[X12encode]: ..//app-service-logic/app-service-logic-enterprise-integration-X12-encode.md "Saiba mais sobre a integração empresarial com a codificação X12"
+[EDIFACTdecode]: ..//app-service-logic/app-service-logic-enterprise-integration-EDIFACT-decode.md "Saiba mais sobre a integração empresarial com a descodificação EDIFACT"
+[EDIFACTencode]: ..//app-service-logic/app-service-logic-enterprise-integration-EDIFACT-encode.md "Saiba mais sobre a integração empresarial com a codificação EDIFACT"
 [httpdoc]: ./connectors-native-http.md "Conetor HTTP para efetuar chamadas HTTP."
 [http~requestdoc]: ./connectors-native-reqres.md "Ações de pedido e resposta."
 [http~responsedoc]: ./connectors-native-reqres.md "Ações de pedido e resposta."
@@ -184,6 +191,7 @@ Os conectores também podem ser utilizados como ações nas aplicações. As aç
 [xmltransformicon]: ./media/apis-list/xsltransform.png
 
 
-<!--HONumber=Aug16_HO1-->
+
+<!--HONumber=ago16_HO4-->
 
 

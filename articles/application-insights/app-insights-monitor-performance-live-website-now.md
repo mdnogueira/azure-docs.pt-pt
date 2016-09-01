@@ -12,7 +12,7 @@
     ms.tgt_pltfrm="ibiza"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="07/28/2016"
+    ms.date="08/24/2016"
     ms.author="awills"/>
 
 
@@ -302,6 +302,6 @@ Se a aplicação Web estiver no Azure e criar os seus recursos através de um mo
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

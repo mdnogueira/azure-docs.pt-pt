@@ -2,10 +2,12 @@ O VNet Peering é um mecanismo para ligar duas Redes Virtuais na mesma região a
 
 O VNet Peering encontra-se em pré-visualização pública. Para o poder utilizar, tem de se registar através do comando abaixo:
 
-> [AZURE.NOTE] Register-AzureRmProviderFeature -FeatureName AllowVnetPeering -ProviderNamespace Microsoft.Network –force
+    Register-AzureRmProviderFeature -FeatureName AllowVnetPeering -ProviderNamespace Microsoft.Network
+
+    Register-AzureRmResourceProvider -ProviderNamespace Microsoft.Network
  
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

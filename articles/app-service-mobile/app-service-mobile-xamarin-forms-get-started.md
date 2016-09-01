@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="mobile-xamarin"
     ms.devlang="dotnet"
     ms.topic="hero-article"
-    ms.date="05/06/2016"
+    ms.date="08/11/2016"
     ms.author="glenga"/>
 
 #Criar uma aplicação Xamarin.Forms
@@ -52,14 +52,6 @@ Acabou de aprovisionar um back-end da Aplicação Móvel do Azure que pode ser u
 Siga os passos abaixo para configurar o projeto de servidor para utilizar o back-end Node.js ou .NET.
 
 [AZURE.INCLUDE [app-service-mobile-configure-new-backend](../../includes/app-service-mobile-configure-new-backend.md)]
-
-
-## (Opcional) Testar o projeto de back-end localmente
-
-Caso tenha optado pela configuração de back-end .NET acima, opcionalmente, pode testar o back-end localmente.
-
-[AZURE.INCLUDE [app-service-mobile-dotnet-backend-test-local-service](../../includes/app-service-mobile-dotnet-backend-test-local-service.md)]
-
 
 ##Transferir e executar a aplicação Xamarin.Forms
 
@@ -195,6 +187,6 @@ Saiba como trabalhar com o SDK cliente gerido na aplicação Xamarin.
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

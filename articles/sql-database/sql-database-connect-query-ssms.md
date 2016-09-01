@@ -2,7 +2,7 @@
     pageTitle="Ligar à Base de Dados SQL - SQL Server Management Studio | Microsoft Azure"
     description="Saiba como ligar à Base de Dados SQL no Azure, utilizando o SQL Server Management Studio (SSMS). Em seguida, execute uma consulta de exemplo com Transact-SQL (T-SQL)."
     metaCanonical=""
-    keywords="connect to sql database,sql server management studio"
+    keywords="ligar à base de dados sql, sql server management studio"
     services="sql-database"
     documentationCenter=""
     authors="stevestein"
@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="05/09/2016"
+    ms.date="08/17/2016"
     ms.author="sstein;carlrab" />
 
 # Ligar à Base de Dados SQL com o SQL Server Management Studio e executar uma consulta T-SQL de exemplo
@@ -25,26 +25,23 @@
 - [SSMS](sql-database-connect-query-ssms.md)
 - [Excel](sql-database-connect-excel.md)
 
-Este artigo mostra como ligar a uma base de dados SQL do Azure, utilizando a versão mais recente do SQL Server Management Studio (SSMS), e executar uma consulta simples com instruções Transact-SQL (T-SQL).
-
-[AZURE.INCLUDE [Sign in](../../includes/azure-getting-started-portal-login.md)]
+Este artigo mostra como ligar a uma Base de Dados SQL do Azure, utilizando o SQL Server Management Studio (SSMS). Depois de se ligar com êxito, é executada uma consulta de Transact-SQL (T-SQL) simples para verificar a comunicação com a base de dados.
 
 [AZURE.INCLUDE [SSMS Install](../../includes/sql-server-management-studio-install.md)]
 
 [AZURE.INCLUDE [SSMS Connect](../../includes/sql-database-sql-server-management-studio-connect-server-principal.md)]
 
-Para informações sobre regras de firewall, consulte [Como: Configurar Definições de Firewall (Base de Dados SQL do Azure)](sql-database-configure-firewall-settings.md).
 
 ## Executar consultas de exemplo
 
-Depois de ligar ao seu servidor lógico, pode ligar a uma base de dados e executar uma consulta de exemplo. 
+Depois de se ligar ao seu servidor, pode ligar-se a uma base de dados e executar uma consulta de exemplo. Se for a primeira vez que escreve consultas, consulte o artigo [Writing Transact-SQL Statements (Escrever Declarações de Transact-SQL)](https://msdn.microsoft.com/library/ms365303.aspx).
 
-1. No **Object Explorer**, navegue para uma base de dados no servidor para o qual tem permissão, como a base de dados de exemplo **AdventureWorks**.
-2. Clique com o botão direito do rato na base de dados e, em seguida, selecione **Nova Consulta**.
+1. No **Explorador de Objetos**, navegue para uma base de dados no servidor, como a base de dados de exemplo **AdventureWorks**.
+2. Clique com o botão direito do rato na base de dados e, em seguida, selecione **Nova Consulta**:
 
     ![Nova consulta. Ligar ao servidor da Base de Dados SQL: SQL Server Management Studio](./media/sql-database-connect-query-ssms/4-run-query.png)
 
-3. Na janela da consulta, copie e cole o seguinte código.
+3. Na janela da consulta, copie e cole o seguinte:
 
         SELECT
         CustomerId
@@ -54,7 +51,7 @@ Depois de ligar ao seu servidor lógico, pode ligar a uma base de dados e execut
         ,CompanyName
         FROM SalesLT.Customer;
 
-4. Clique no botão **Executar**.  A seguinte captura de ecrã mostra uma consulta com êxito.
+4. Clique no botão **Executar**:
 
     ![Êxito. Ligar ao servidor da Base de Dados SQL: SQL Server Management Studio](./media/sql-database-connect-query-ssms/5-success.png)
 
@@ -66,8 +63,10 @@ Se estiver familiarizado com T-SQL, consulte [Tutorial: Escrever Instruções Tr
 
 Para começar a criar utilizadores de base de dados e administradores utilizadores de base de dados, consulte [Introdução à segurança da Base de Dados SQL do Azure](sql-database-get-started-security.md)
 
+Para mais informações sobre o SSMS, consulte o artigo [Use SQL Server Management Studio (Utilizar o SQL Server Management Studio)](https://msdn.microsoft.com/library/ms174173.aspx).
 
 
-<!--HONumber=Jun16_HO2-->
+
+<!--HONumber=ago16_HO4-->
 
 

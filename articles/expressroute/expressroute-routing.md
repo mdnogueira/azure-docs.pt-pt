@@ -3,8 +3,8 @@
    description="Esta página apresenta os requisitos detalhados para configurar e gerir o encaminhamento para circuitos do ExpressRoute."
    documentationCenter="na"
    services="expressroute"
-   authors="cherylmc"
-   manager="carmonm"
+   authors="ganesr"
+   manager="rossort"
    editor=""/>
 <tags
    ms.service="expressroute"
@@ -12,15 +12,15 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="06/01/2016"
-   ms.author="cherylmc"/>
+   ms.date="08/10/2016"
+   ms.author="ganesr"/>
 
 
 # Requisitos de encaminhamento do ExpressRoute  
 
 Para ligar aos serviços em nuvem da Microsoft com o ExpressRoute, terá de configurar e gerir o encaminhamento. Alguns fornecedores de conectividade oferecem a configuração e a gestão do encaminhamento como um serviço gerido. Contacte o seu fornecedor de conectividade para ver se oferece este serviço. Caso contrário, terá de cumprir os requisitos descritos abaixo. 
 
-Veja [Circuitos e domínios de encaminhamento](expressroute-circuit-peerings.md) para obter uma descrição das sessões de encaminhamento que têm de ser configuradas para facilitar a conectividade.
+Consulte o artigo [Circuitos e domínios de encaminhamento](expressroute-circuit-peerings.md) para obter uma descrição das sessões de encaminhamento que têm de ser configuradas para facilitar a conectividade.
 
 **Nota:** a Microsoft não suporta protocolos de redundância de router (por exemplo, HSRP, VRRP) para configurações de elevada disponibilidade. Precisamos de um par de sessões BGP redundante por peering para elevada disponibilidade.
 
@@ -74,7 +74,7 @@ Certifique-se de que o endereço IP e o número AS estão registados em seu nome
 
 ## Troca de rotas dinâmicas
 
-A troca do encaminhamento será feita através do protocolo EBGP. São estabelecidas sessões de EBGP entre os MSEEs e os seus routers. A autenticação das sessões de BGP não é um requisito. Se necessário, pode ser configurado um hash MD5. Veja [Configurar encaminhamento](expressroute-howto-routing-classic.md) e [Fluxos de trabalho de aprovisionamento dos circuitos e estados dos circuitos](expressroute-workflows.md) para obter informações sobre como configurar sessões de BGP.
+A troca do encaminhamento será feita através do protocolo eBGP. São estabelecidas sessões de EBGP entre os MSEEs e os seus routers. A autenticação das sessões de BGP não é um requisito. Se necessário, pode ser configurado um hash MD5. Veja [Configurar encaminhamento](expressroute-howto-routing-classic.md) e [Fluxos de trabalho de aprovisionamento dos circuitos e estados dos circuitos](expressroute-workflows.md) para obter informações sobre como configurar sessões de BGP.
 
 ## Números de Sistema Autónomos
 
@@ -99,14 +99,14 @@ As rotas predefinidas só são permitidas em sessões do peering privado do Azur
  Para ativar a conectividade para outros serviços do Azure e outros serviços de infraestrutura, tem de se certificar de que implementou um dos seguintes itens:
 
  - O peering público Azure está ativado para encaminhar o tráfego para pontos finais públicos
- - Utiliza o encaminhamento definido pelo utilizador para permitir a ligação à Internet para cada sub-rede que requer ligação à Internet.
+ - Utiliza o encaminhamento definido pelo utilizador para permitir a ligação à Internet para cada sub-rede que necessite de ligação à Internet.
 
 **Nota:** o anúncio de rotas predefinidas interrompe a ativação de licenças do Windows e de outras licenças VM. Siga as instruções [aqui](http://blogs.msdn.com/b/mast/archive/2015/05/20/use-azure-custom-routes-to-enable-kms-activation-with-forced-tunneling.aspx) para contornar este problema.
 
 ## Suporte para comunidades de BGP (pré-visualização)
 
 
-Esta secção apresenta uma descrição geral de como as comunidades de BGP serão utilizadas com o ExpressRoute. A Microsoft anuncia as rotas nos caminhos do peering público e do peering da Microsoft com rotas etiquetadas com valores de comunidade apropriados. A lógica por detrás disto e os detalhes sobre os valores das comunidades são descritos abaixo. A Microsoft não vai, no entanto, honrar os valores das comunidades marcadas em rotas anunciadas para a Microsoft.
+Esta secção apresenta uma descrição geral de como as comunidades de BGP serão utilizadas com o ExpressRoute. A Microsoft anuncia as rotas nos caminhos do peering público e do peering da Microsoft com rotas etiquetadas com valores de comunidade apropriados. A lógica por detrás disto e os detalhes sobre os valores das comunidades são descritos abaixo. A Microsoft não irá, no entanto, honrar os valores das comunidades marcadas em rotas anunciadas para a Microsoft.
 
 Se estiver a ligar à Microsoft através do ExpressRoute numa localização de peering dentro de uma região geopolítica, terá acesso a todos os serviços em nuvem da Microsoft em todas as regiões dentro dos limites geopolíticos. 
 
@@ -124,6 +124,8 @@ A Microsoft irá marcar prefixos anunciados através do peering público e do pe
 |    | EUA Leste | 12076:51004 |
 |    | EUA Leste 2 | 12076:51005 |
 |    | EUA Oeste | 12076:51006 |
+|    | EUA Oeste 2 | 12076:51026 |
+|    | EUA Centro-Oeste | 12076:51027 |
 |    | EUA Centro-Norte | 12076:51007 |
 |    | EUA Centro-Sul | 12076:51008 |
 |    | EUA Central | 12076:51009 |
@@ -177,6 +179,6 @@ Para além do que foi dito acima, a Microsoft também marcará prefixos baseados
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

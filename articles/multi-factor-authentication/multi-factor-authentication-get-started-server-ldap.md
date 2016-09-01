@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="get-started-article" 
-    ms.date="05/12/2016" 
+    ms.date="08/04/2016" 
     ms.author="billmath"/>
 
 # Autenticação LDAP e Servidor Multi-Factor Authentication do Azure 
@@ -42,7 +42,7 @@ Para configurar a autenticação LDAP, instale o Servidor Multi-Factor Authentic
 8. Pode repetir os passos 5 a 7 para adicionar clientes LDAP adicionais.
 9. Quando o Multi-Factor Authentication do Azure está configurado para receber autenticações LDAP, é necessário utilizar o proxy nessas autenticações para o diretório LDAP. Assim, o separador Destino apenas apresenta uma única opção desativada para utilizar um destino LDAP. Para configurar a ligação do diretório LDAP, clique no ícone Integração de Diretórios. 
 10. No separador Definições, selecione o botão de opção Utilizar configuração de LDAP específica.
-11. Clique no botão Editar...
+11. Clique no botão Adicionar...
 12. Na caixa de diálogo Editar Configuração de LDAP, preencha os campos com as informações necessárias para ligar ao diretório LDAP. As descrições dos campos estão incluídas na tabela abaixo. Nota: estas informações também estão incluídas no ficheiro de ajuda do Servidor Multi-Factor Authentication do Azure.![Integração de Diretórios](./media/multi-factor-authentication-get-started-server-ldap/ldap.png) 
 13. Teste a ligação LDAP ao clicar no botão Testar.
 14. Se o teste de ligação LDAP for concluído com êxito, clique no botão OK. 
@@ -67,6 +67,6 @@ Para configurar o cliente LDAP, utilize as diretrizes:
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

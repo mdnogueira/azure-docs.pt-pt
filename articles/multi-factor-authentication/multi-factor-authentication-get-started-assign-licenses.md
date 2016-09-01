@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="get-started-article" 
-    ms.date="05/12/2016" 
+    ms.date="08/04/2016" 
     ms.author="billmath"/>
 
 # Atribuir uma licença do MFA do Azure, Azure AD Premium ou Enterprise Mobility aos utilizadores
@@ -38,6 +38,7 @@ Se tiver comprado licenças do MFA do Azure, Azure AD Premium ou Enterprise Mobi
 ![Atribuir Licenças](./media/multi-factor-authentication-get-started-assign-licenses/assign5.png)
 
 
-<!--HONumber=Jun16_HO2-->
+
+<!--HONumber=ago16_HO4-->
 
 

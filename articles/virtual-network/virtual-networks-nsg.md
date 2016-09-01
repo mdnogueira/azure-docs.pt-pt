@@ -3,7 +3,7 @@
    description="Saiba mais sobre a firewall distribuída no Azure através de Grupos de Segurança de Rede (NSGs) e como utilizar os NSGs para isolar e controlar o fluxo de tráfego nas redes virtuais (VNets)."
    services="virtual-network"
    documentationCenter="na"
-   authors="telmosampaio"
+   authors="jimdial"
    manager="carmonm"
    editor="tysonn" />
 <tags 
@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="02/11/2016"
-   ms.author="telmos" />
+   ms.author="jdial" />
 
 # O que é um Grupo de Segurança de Rede (NSG)?
 
@@ -72,7 +72,7 @@ Conforme ilustrado pelas regras predefinidas abaixo, o tráfego que tem origem e
 
 **Regras predefinidas de entrada**
 
-| Nome                              | Prioridade | IP de origem          | Porta de origem | ID de destino  | Porta de destino | Protocolo | Acesso |
+| Nome                              | Prioridade | IP de origem          | Porta de origem | ID de destino  | Porta de destino | Protocolo | Access |
 |-----------------------------------|----------|--------------------|-------------|-----------------|------------------|----------|--------|
 | PERMITIR ENTRADA DE VNET                | 65000    | VIRTUAL_NETWORK    | *           | VIRTUAL_NETWORK | *                | *        | PERMITIR  |
 | PERMITIR ENTRADA DO AZURE LOAD BALANCER | 65001    | AZURE_LOADBALANCER | *           | *               | *                | *        | PERMITIR  |
@@ -80,7 +80,7 @@ Conforme ilustrado pelas regras predefinidas abaixo, o tráfego que tem origem e
 
 **Regras predefinidas de saída**
 
-| Nome                    | Prioridade | IP de origem       | Porta de origem | ID de destino  | Porta de destino | Protocolo | Acesso |
+| Nome                    | Prioridade | IP de origem       | Porta de origem | ID de destino  | Porta de destino | Protocolo | Access |
 |-------------------------|----------|-----------------|-------------|-----------------|------------------|----------|--------|
 | PERMITIR SAÍDA DE VNET     | 65000    | VIRTUAL_NETWORK | *           | VIRTUAL_NETWORK | *                | *        | PERMITIR  |
 | PERMITIR SAÍDA DE INTERNET | 65001    | *               | *           | INTERNET        | *                | *        | PERMITIR  |
@@ -115,7 +115,7 @@ Pode associar NSGs diferentes a uma VM (ou NIC, consoante o modelo de implementa
        
            If subnet NSG has a matching rule to deny traffic, packet will be dropped here, although VM\NIC NSG has a matching rule to allow traffic.
 
-![ACLs do NSG](./media/virtual-network-nsg-overview/figure2.png)
+    ![ACLs do NSG](./media/virtual-network-nsg-overview/figure2.png)
 
 >[AZURE.NOTE] Embora só possa associar um único NSG a uma sub-rede, VM ou NIC, pode associar o mesmo NSG à quantidade de recursos que pretender.
 
@@ -125,10 +125,10 @@ Pode implementar NSGs nos modelos de implementação clássica e do Resource Man
 |Ferramenta de implementação|Clássica|Resource Manager|
 |---|---|---|
 |Portal clássico|![Não][red]|![Não][red]|
-|Portal do Azure|![Sim][green]|<a href="https://azure.microsoft.com/documentation/articles/virtual-networks-create-nsg-arm-pportal">![Sim][green]</a>|
-|PowerShell|<a href="https://azure.microsoft.com/documentation/articles/virtual-networks-create-nsg-classic-ps">![Sim][green]</a>|<a href="https://azure.microsoft.com/documentation/articles/virtual-networks-create-nsg-arm-ps">![Sim][green]</a>|
-|CLI do Azure|<a href="https://azure.microsoft.com/documentation/articles/virtual-networks-create-nsg-classic-cli">![Sim][green]</a>|<a href="https://azure.microsoft.com/documentation/articles/virtual-networks-create-nsg-arm-cli">![Sim][green]</a>|
-|Modelo ARM|![Não][red]|<a href="https://azure.microsoft.com/documentation/articles/virtual-networks-create-nsg-arm-template">![Sim][green]</a>|
+|Portal do Azure|![Sim][green]|[](virtual-networks-create-nsg-arm-pportal.md)![Sim][green]|
+|PowerShell|[](virtual-networks-create-nsg-classic-ps.md)![Sim][green]|[](virtual-networks-create-nsg-arm-ps.md)![Sim][green]|
+|CLI do Azure|[](virtual-networks-create-nsg-classic-cli.md)![Sim][green]|[](virtual-networks-create-nsg-arm-cli.md)![Sim][green]|
+|Modelo ARM|![Não][red]|[](virtual-networks-create-nsg-arm-template.md)![Sim][green]|
 
 |**Chave**|![Sim][green] Suportado. Clique para ver o artigo.|![Não][red] Não suportado.|
 |---|---|---|
@@ -218,7 +218,7 @@ Os requisitos 1-6 (à exceção do 3) acima estão todos limitados a espaços de
 
 **Regras de entrada**
 
-|Regra|Acesso|Prioridade|Intervalo de endereços de origem|Porta de origem|Intervalo de endereços de destino|Porta de destino|Protocolo|
+|Regra|Access|Prioridade|Intervalo de endereços de origem|Porta de origem|Intervalo de endereços de destino|Porta de destino|Protocolo|
 |---|---|---|---|---|---|---|---|
 |permitir HTTP|Permitir|100|INTERNET|\*|\*|80|TCP|
 |permitir RDP de FrontEnd|Permitir|200|192.168.1.0/24|\*|\*|3389|TCP|
@@ -226,7 +226,7 @@ Os requisitos 1-6 (à exceção do 3) acima estão todos limitados a espaços de
 
 **Regras de saída**
 
-|Regra|Acesso|Prioridade|Intervalo de endereços de origem|Porta de origem|Intervalo de endereços de destino|Porta de destino|Protocolo|
+|Regra|Access|Prioridade|Intervalo de endereços de origem|Porta de origem|Intervalo de endereços de destino|Porta de destino|Protocolo|
 |---|---|---|---|---|---|---|---|
 |negar Internet|Negar|100|\*|\*|INTERNET|\*|\*|
 
@@ -234,13 +234,13 @@ Os requisitos 1-6 (à exceção do 3) acima estão todos limitados a espaços de
 
 **Regras de entrada**
 
-|Regra|Acesso|Prioridade|Intervalo de endereços de origem|Porta de origem|Intervalo de endereços de destino|Porta de destino|Protocolo|
+|Regra|Access|Prioridade|Intervalo de endereços de origem|Porta de origem|Intervalo de endereços de destino|Porta de destino|Protocolo|
 |---|---|---|---|---|---|---|---|
 |negar Internet|Negar|100|INTERNET|\*|\*|\*|\*|
 
 **Regras de saída**
 
-|Regra|Acesso|Prioridade|Intervalo de endereços de origem|Porta de origem|Intervalo de endereços de destino|Porta de destino|Protocolo|
+|Regra|Access|Prioridade|Intervalo de endereços de origem|Porta de origem|Intervalo de endereços de destino|Porta de destino|Protocolo|
 |---|---|---|---|---|---|---|---|
 |negar Internet|Negar|100|\*|\*|INTERNET|\*|\*|
 
@@ -248,7 +248,7 @@ Os requisitos 1-6 (à exceção do 3) acima estão todos limitados a espaços de
 
 **Regras de entrada**
 
-|Regra|Acesso|Prioridade|Intervalo de endereços de origem|Porta de origem|Intervalo de endereços de destino|Porta de destino|Protocolo|
+|Regra|Access|Prioridade|Intervalo de endereços de origem|Porta de origem|Intervalo de endereços de destino|Porta de destino|Protocolo|
 |---|---|---|---|---|---|---|---|
 |permitir RDP da Internet|Permitir|100|INTERNET|*|\*|3389|TCP|
 
@@ -258,7 +258,7 @@ Os requisitos 1-6 (à exceção do 3) acima estão todos limitados a espaços de
 
 **Regras de entrada**
 
-|Regra|Acesso|Prioridade|Intervalo de endereços de origem|Porta de origem|Intervalo de endereços de destino|Porta de destino|Protocolo|
+|Regra|Access|Prioridade|Intervalo de endereços de origem|Porta de origem|Intervalo de endereços de destino|Porta de destino|Protocolo|
 |---|---|---|---|---|---|---|---|
 |permitir RDP de front-end|Permitir|100|192.168.1.0/24|*|\*|3389|TCP|
 
@@ -266,7 +266,7 @@ Os requisitos 1-6 (à exceção do 3) acima estão todos limitados a espaços de
 
 **Regras de entrada**
 
-|Regra|Acesso|Prioridade|Intervalo de endereços de origem|Porta de origem|Intervalo de endereços de destino|Porta de destino|Protocolo|
+|Regra|Access|Prioridade|Intervalo de endereços de origem|Porta de origem|Intervalo de endereços de destino|Porta de destino|Protocolo|
 |---|---|---|---|---|---|---|---|
 |permitir SQL de front-end|Permitir|100|192.168.1.0/24|*|\*|1433|TCP|
 
@@ -284,6 +284,6 @@ Uma vez que alguns dos NSGs acima têm de ser associados a NICs individuais, tem
 
 
 
-<!---HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

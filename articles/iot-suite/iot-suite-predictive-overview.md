@@ -14,8 +14,8 @@
  ms.topic="get-started-article"
  ms.tgt_pltfrm="na"
  ms.workload="na"
- ms.date="05/24/2016"
- ms.author="stevehob"/>
+ ms.date="08/17/2016"
+ ms.author="araguila"/>
 
 # Descrição geral da solução pré-configurada de manutenção preditiva
 
@@ -48,7 +48,7 @@ A solução pré-configurada de manutenção preditiva do Azure IoT utiliza o mo
 
 Para saber mais sobre como o Azure IoT permite cenários de manutenção preditiva, leia o artigo [Valor de captura da Internet das Coisas][lnk_capture_value].
 
-Siga as [instruções][Ink-predictive-walkthrough] da solução pré-configurada da manutenção preditiva.
+Siga as [instruções][lnk-predictive-walkthrough] da solução pré-configurada da manutenção preditiva.
 
 [lnk-predictive-walkthrough]: iot-suite-predictive-walkthrough.md
 [lnk_preconfigured_solutions]: iot-suite-what-are-preconfigured-solutions.md
@@ -67,6 +67,7 @@ Também pode explorar algumas das outras funcionalidades e capacidades das solu�
 [lnk-security-groundup]: securing-iot-ground-up.md
 
 
-<!--HONumber=Aug16_HO1-->
+
+<!--HONumber=ago16_HO4-->
 
 

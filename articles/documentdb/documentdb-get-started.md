@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="dotnet"
     ms.topic="hero-article"
-    ms.date="05/16/2016"
+    ms.date="08/16/2016"
     ms.author="anhoh"/>
 
 # Tutorial NoSQL: criar uma consola de aplicação DocumentDB C#
@@ -57,7 +57,7 @@ Criemos uma conta DocumentDB. Se já tiver uma conta que pretende utilizar, pode
 
 [AZURE.INCLUDE [documentdb-create-dbaccount](../../includes/documentdb-create-dbaccount.md)]
 
-##<a id="SetupVS"></a> Passo 2: Configurar a sua Solução Visual Studio
+## <a id="SetupVS"></a>Passo 2: Configurar a sua Solução Visual Studio
 
 1. Abra o **Visual Studio 2015** no seu computador.
 2. No menu **Ficheiro**, selecione **Novo**, e, em seguida, escolha **Projeto**.
@@ -73,7 +73,7 @@ O ID do pacote para a Biblioteca de Cliente do DocumentDB é [Microsoft.Azure.Do
 
 Ótimo! Agora que concluímos a configuração, comecemos a escrever certos códigos. Pode encontrar um projeto de código completo deste tutorial em [GitHub](https://github.com/Azure-Samples/documentdb-dotnet-getting-started/blob/master/src/Program.cs).
 
-##<a id="Connect"></a> Passo 3: Ligar a uma conta DocumentDB
+## <a id="Connect"></a>Passo 3: Ligar a uma conta DocumentDB
 
 Primeiro, adicione estas referências ao início da sua aplicação C#, no ficheiro Program.cs:
 
@@ -100,9 +100,8 @@ Agora, adicione estas duas constantes e a sua variável de *Cliente* por baixo d
 
 De seguida, vá para o [Portal do Azure](https://portal.azure.com) para obter o seu URI e a chave primária. O URI do DocumentDB e a chave primária são necessários para que a sua aplicação saiba onde ligar e para que o DocumentDB confie na ligação da sua aplicação.
 
-No Portal do Azure, navegue até à sua conta DocumentDB a partir do Passo 1.
+No Portal do Azure, navegue até à sua conta do DocumentDB a partir do Passo 1 e clique em **Chaves**.
 
-Clique no ícone **Chaves**, na barra **Essentials**.
 Copie o URI e substitua *<your endpoint URI>* com o URI copiado no seu programa.
 Copie a chave primária e substitua *<your key>* com a chave copiada no seu programa.
 
@@ -206,7 +205,7 @@ Prima **F5** para executar a sua aplicação.
 
 Parabéns! Criou uma base de dados DocumentDB com êxito.  
 
-##<a id="CreateColl"></a>Passo 5: Criar uma coleção  
+## <a id="CreateColl"></a>Passo 5: Criar uma coleção  
 
 > [AZURE.WARNING] **CreateDocumentCollectionAsync** irá criar uma nova coleção com débito reservado, tendo repercussões sobre os preços. Para obter mais detalhes, visite a nossa [página de preços](https://azure.microsoft.com/pricing/details/documentdb/).
 
@@ -261,7 +260,7 @@ Prima **F5** para executar a sua aplicação.
 
 Parabéns! Criou uma coleção de documentos DocumentDB com êxito.  
 
-##<a id="CreateDoc"></a>Passo 6: Criar documentos JSON
+## <a id="CreateDoc"></a>Passo 6: Criar documentos JSON
 Pode criar um [documento](documentdb-resources.md#documents) utilizando o método [CreateDocumentAsync](https://msdn.microsoft.com/library/microsoft.azure.documents.client.documentclient.createdocumentasync.aspx) da classe **DocumentClient**. Os documentos são conteúdos (arbitrários) JSON definidos pelo utilizador. Podemos agora inserir um ou mais documentos. Se já tiver dados que pretende armazenar na sua base de dados, pode utilizar a [ferramenta de Migração de Dados](documentdb-import-data.md) do DocumentDB.
 
 Em primeiro lugar, temos de criar uma classe **Família** que irá representar objetos armazenados no DocumentDB neste exemplo. Também iremos criar subclasses **Principal**, **Subordinado**, **Animal de estimação** e **Endereço** utilizadas dentro da **Família**. Tenha em atenção que os documentos têm de ter um **Id** propriedade serializado como **id** no JSON. Crie estas classes ao adicionar as seguintes subclasses internas a seguir ao método **GetStartedDemo**.
@@ -449,7 +448,7 @@ Copie e cole o método **ExecuteSimpleQuery** por baixo do seu método **CreateF
             // Now execute the same query via direct SQL
             IQueryable<Family> familyQueryInSql = this.client.CreateDocumentQuery<Family>(
                     UriFactory.CreateDocumentCollectionUri(databaseName, collectionName),
-                    "SELECT * FROM Family WHERE Family.lastName = 'Andersen'",
+                    "SELECT * FROM Family WHERE Family.LastName = 'Andersen'",
                     queryOptions);
 
             Console.WriteLine("Running direct SQL query...");
@@ -620,6 +619,6 @@ Para restaurar as referências ao SDK do .NET DocumentDB no Visual Studio, cliqu
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

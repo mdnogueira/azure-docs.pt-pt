@@ -67,45 +67,7 @@ Antes de poder começar a desenvolver aplicações do Azure, obtenha as ferramen
 
 Para começar a utilizar as funcionalidades do Service Bus no Azure, deve criar, em primeiro lugar, um espaço de nomes de serviço. Um espaço de nomes fornece um contentor de âmbito para abordar os recursos do Service Bus na sua aplicação.
 
-1.  Inicie sessão no [Portal Clássico do Azure][].
-
-2.  No painel de navegação esquerdo do portal, clique em **Service Bus**.
-
-3.  No painel inferior do portal, clique em **Criar**.
-
-    ![][5]
-
-4.  Na caixa de diálogo **Adicionar um novo espaço de nomes**, introduza um nome do espaço de nomes.
-    O sistema verifica imediatamente a disponibilidade do nome.
-    ![][6]
-
-5.  Após verificar se o nome do espaço de nomes está disponível, escolha o país ou a região onde será alojado o espaço de nomes (verifique se utiliza o mesmo país/região onde está a implementar os recursos de computação).
-
-    > [AZURE.IMPORTANT] Escolha a *mesma região* que pretende para a implementação da aplicação. Tal proporcionará o melhor desempenho.
-
-6.  Deixe os outros campos na caixa de diálogo com os respetivos valores predefinidos e, em seguida, clique na marca de verificação OK. O sistema cria o seu espaço de nomes e ativa o mesmo. Poderá ter de aguardar alguns minutos enquanto o sistema aprovisiona recursos para a sua conta.
-
-O espaço de nomes criado será apresentado no portal, apesar de poder demorar alguns minutos a ativar. Aguarde até que o estado seja **Ativo** antes de continuar.
-
-## Obter as credenciais de gestão predefinidas para o espaço de nomes
-
-Para efetuar operações de gestão no novo espaço de nomes como, por exemplo, criar entidades de mensagens, deve obter credenciais para o espaço de nomes.
-
-1.  Na janela principal, clique no espaço de nomes que criou no passo anterior.
-
-2.  Na parte inferior da página, clique em **Informações de Ligação**.
-
-3.  No painel **Aceder às informações de ligação**, localize a cadeia de ligação com a chave SAS e o nome da chave.
-
-    ![][45]
-
-4.  Copie a cadeia de ligação e cole-a algures para a utilizar mais adiante neste tutorial.
-
-5. Na mesma página do portal, clique no separador **Configurar** na parte superior da página.
-
-6. Copie a chave primária para a política **RootManageSharedAccessKey** para a área de transferência ou cole-a no Bloco de Notas. Utilizará este valor mais adiante neste tutorial.
-
-    ![][46]
+[AZURE.INCLUDE [service-bus-create-namespace-portal](../../includes/service-bus-create-namespace-portal.md)]
 
 ## Criar um servidor no local
 
@@ -298,7 +260,7 @@ Nesta secção, compilará uma aplicação ASP.NET simples que apresenta dados o
 
 8. Deve agora configurar recursos do Azure para uma nova aplicação Web. Siga todos os passos na secção [Configurar recursos do Azure para uma nova aplicação Web](../app-service-web/web-sites-dotnet-get-started.md#configure-azure-resources-for-a-new-web-app). Em seguida, regresse a este tutorial e continue para o passo seguinte.
 
-5.  No Explorador de Soluções, clique com o botão direito em **Modelos**, clique em **Adicionar** e, de seguida, em **Classe**. Na caixa **Nome**, escreva o nome **Product.cs**. Em seguida, clique em **Adicionar**.
+5.  No Explorador de Soluções, clique com o botão direito do rato em **Modelos** e, em seguida, em **Adicionar** e em **Classe**. Na caixa **Nome**, escreva o nome **Product.cs**. Em seguida, clique em **Adicionar**.
 
     ![][17]
 
@@ -417,7 +379,7 @@ O passo seguinte consiste em ligar o servidor de produtos no local à aplicaçã
 
     ![][24]
 
-6.  Agora abra o ficheiro **HomeController.cs** no editor do Visual Studio e substitua a definição de espaço de nomes pelo código seguinte. Certifique-se de que substitui *yourServiceNamespace* pelo nome do espaço de nomes de serviço e *yourKey* pela chave SAS. Tal permitirá ao cliente chamar o serviço no local, devolvendo o resultado da chamada.
+6.  Agora abra o ficheiro **HomeController.cs** no editor do Visual Studio e substitua a definição do espaço de nomes pelo código seguinte. Certifique-se de que substitui *yourServiceNamespace* pelo nome do espaço de nomes de serviço e *yourKey* pela chave SAS. Tal permitirá ao cliente chamar o serviço no local, devolvendo o resultado da chamada.
 
     ```
     namespace ProductsWeb.Controllers
@@ -541,11 +503,6 @@ Para obter mais informações sobre o Service Bus, consulte os seguintes recurso
   [Obter Ferramentas e SDK]: http://go.microsoft.com/fwlink/?LinkId=271920
   [NuGet]: http://nuget.org
   
-  [Portal Clássico do Azure]: http://manage.windowsazure.com
-  [5]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/sb-queues-03.png
-  [6]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/sb-queues-04.png
-
-
   [11]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/hy-con-1.png
   [13]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/getting-started-multi-tier-13.png
   [15]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/hy-web-2.png
@@ -567,8 +524,7 @@ Para obter mais informações sobre o Service Bus, consulte os seguintes recurso
   [38]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/hy-service2.png
   [41]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/getting-started-multi-tier-40.png
   [43]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/getting-started-hybrid-43.png
-  [45]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/hy-web-45.png
-  [46]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/service-bus-policies.png
+
 
   [sbwacom]: /documentation/services/service-bus/  
   [sbwacomqhowto]: service-bus-dotnet-get-started-with-queues.md
@@ -576,6 +532,6 @@ Para obter mais informações sobre o Service Bus, consulte os seguintes recurso
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

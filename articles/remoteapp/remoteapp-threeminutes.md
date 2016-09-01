@@ -13,12 +13,15 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="hero-article"
-    ms.date="05/31/2016"
+    ms.date="08/15/2016"
     ms.author="mbaldwin" />
 
 
 
 # Experimentar o Azure RemoteApp no dispositivo em 3 minutos ou menos
+
+> [AZURE.IMPORTANT]
+> O Azure RemoteApp está a ser descontinuado. Leia o [anúncio](https://go.microsoft.com/fwlink/?linkid=821148) para obter detalhes.
 
 Pretende ver o Azure RemoteApp no dispositivo? Pode aceder à nossa implementação de demonstração durante 10 minutos, desde que tenha uma conta Microsoft. Temos disponíveis o Office e outras aplicações. Esta é uma excelente forma de testar a experiência de utilizador do Azure RemoteApp em menos de 3 minutos.
 
@@ -37,6 +40,6 @@ A sua opinião é importante. No final de cada sessão, será apresentada uma ca
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

@@ -2,10 +2,10 @@
     pageTitle="Introdução ao Servidor Multi-Factor Authentication do Azure" 
     description="Esta é a página do Multi-Factor Authentication do Azure que descreve como iniciar o Servidor do MFA do Azure." 
     services="multi-factor-authentication"
-    keywords="authentication server, azure multi factor authentication app activation page, authentication server download" 
+    keywords="servidor de autenticação, página de ativação da aplicação multi factor authentication do azure, transferência do servidor de autenticação" 
     documentationCenter="" 
     authors="billmath" 
-    manager="stevenpo" 
+    manager="femila" 
     editor="curtand"/>
 
 <tags 
@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="get-started-article" 
-    ms.date="05/12/2016" 
+    ms.date="08/15/2016" 
     ms.author="billmath"/>
 
 # Introdução ao Servidor Multi-Factor Authentication do Azure
@@ -192,6 +192,6 @@ Método|Descrição
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

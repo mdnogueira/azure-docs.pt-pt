@@ -1,36 +1,31 @@
 Certifique-se que já criou um espaço de nomes do Service Bus, como mostrado [aqui][namespace-how-to].
 
-1. Inicie sessão no [Portal Clássico do Azure][classic-portal].
+1. Inicie sessão no [Portal do Azure][azure-portal].
 
 2. No painel de navegação esquerdo do portal, clique em **Service Bus**.
 
-3. Selecione o espaço de nomes no qual gostaria de criar a fila. Neste caso, trata-se de “mytestns1.”
+3. Selecione o espaço de nomes no qual gostaria de criar a fila. Neste caso, é **nstest1**.
 
-    ![Selecionar um espaço de nomes][select-namespace]
+    ![Criar uma fila][createqueue1]
 
-4. Selecione **Filas**.
+4. No painel **Espaço de nomes do Service Bus**, selecione **Filas** e clique em **Adicionar fila**.
 
-    ![Selecionar Filas][select-queue]
+    ![Selecionar Filas][createqueue2]
 
-5. Selecione **Novo** no canto inferior esquerdo e, em seguida, selecione **Criação Rápida**.
+5. Introduza o **Nome da Fila** e deixe os outros valores com as respetivas predefinições.
 
-    ![Selecionar Novo][select-new]
+    ![Selecionar Novo][createqueue3]
 
-6. Introduza o **Nome da Fila** e confirme se está selecionado o espaço de nomes correto.
+7. Na parte inferior do painel, clique em **Criar**.
 
-7. Selecione **Criar uma nova fila**.
-
-    ![Criar uma fila][create-queue]
-
-[select-namespace]: ./media/service-bus-create-queue-portal/select-namespace.png
-[select-queue]: ./media/service-bus-create-queue-portal/select-queue.png
-[select-new]: ./media/service-bus-create-queue-portal/select-new.png
-[create-queue]: ./media/service-bus-create-queue-portal/create-queue.png
+[createqueue1]: ./media/service-bus-create-queue-portal/create-queue1.png
+[createqueue2]: ./media/service-bus-create-queue-portal/create-queue2.png
+[createqueue3]: ./media/service-bus-create-queue-portal/create-queue3.png
 
 [namespace-how-to]: ../articles/service-bus/service-bus-create-namespace-portal.md
-[classic-portal]: https://manage.windowsazure.com
+[azure-portal]: https://portal.azure.com
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

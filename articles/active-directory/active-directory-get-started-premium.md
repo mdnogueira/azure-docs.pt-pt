@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="05/25/2016"
+    ms.date="08/16/2016"
     ms.author="markvi"/>
 
 # Introdução ao Azure Active Directory Premium
@@ -23,7 +23,7 @@ Tem várias opções para se inscrever no Active Directory Premium:
 
 **Azure ou Office 365** – na qualidade de subscritor do Azure ou do Office 365, pode comprar o Active Directory Premium online. Para obter os passos detalhados, consulte [Como Comprar o Azure Active Directory Premium – Clientes Existentes](https://channel9.msdn.com/Series/Azure-Active-Directory-Videos-Demos/How-to-Purchase-Azure-Active-Directory-Premium-Existing-Customer) ou [Como Comprar o Azure Active Directory Premium – Novos Clientes](https://channel9.msdn.com/Series/Azure-Active-Directory-Videos-Demos/How-to-Purchase-Azure-Active-Directory-Premium-New-Customers).  
 
-**Enterprise Mobility Suite** – o Enterprise Mobility Suite é uma forma económica de as organizações utilizarem os seguintes serviços sob um único plano de licenciamento: Active Directory Premium, Azure Rights Management, Microsoft Intune. Para obter mais informações, consulte o site do [Enterprise Mobility Suite](https://www.microsoft.com/en-us/server-cloud/enterprise-mobility/overview.aspx). Para obter a avaliação gratuita de 30 dias, clique [aqui](https://portal.office.com/Signup/Signup.aspx?OfferId=2E63A04D-BE0B-4A0F-A8CF-407C1C299221&dl=EMS&ali=1#0).
+**Enterprise Mobility + Security** – o Enterprise Mobility + Security (anteriormente, Enterprise Mobility Suite) é uma forma económica de as organizações utilizarem os seguintes serviços sob um único plano de licenciamento: Active Directory Premium, Azure Rights Management, Microsoft Intune. Para obter mais informações, veja o site do [Enterprise Mobility + Security](https://www.microsoft.com/en-us/server-cloud/enterprise-mobility/overview.aspx). Para obter a avaliação gratuita de 30 dias, clique [aqui](https://portal.office.com/Signup/Signup.aspx?OfferId=2E63A04D-BE0B-4A0F-A8CF-407C1C299221&dl=EMS&ali=1#0).
 
 
 **Licenciamento em Volume da Microsoft** – o Azure Active Directory Premium está disponível através de um [Contrato Enterprise da Microsoft](https://www.microsoft.com/en-us/licensing/licensing-programs/enterprise.aspx) (250 licenças ou mais) ou do programa [Licenciamento em Volume Aberto](https://www.microsoft.com/en-us/licensing/licensing-programs/open-license.aspx) (5 a 250 licenças).
@@ -164,6 +164,6 @@ A disponibilidade dos serviços e funcionalidades para um serviço em nuvem da M
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

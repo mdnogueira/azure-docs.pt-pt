@@ -49,7 +49,7 @@ O Azure Data Lake Analytics é um novo serviço incorporado para facilitar a an�
 
     O Data Lake Analytics pode trabalhar inúmeras origens de dados do Azure: armazenamento de Blobs do Azure, base de dados SQL do Azure e, obviamente, a Data Lake Analytics está otimizada especialmente para funcionar com o Azure Data Lake Store, fornecendo o nível mais elevado de desempenho, débito e paralelização para as suas cargas de trabalho de macrodados.
 
-## Veja também
+## Consultar também
 
 - Introdução
     - [Introdução ao Data Lake Analytics com o Portal do Azure](data-lake-analytics-get-started-portal.md)
@@ -67,6 +67,7 @@ O Azure Data Lake Analytics é um novo serviço incorporado para facilitar a an�
     - [Gerir a Análise do Azure Data Lake com o Portal do Azure](data-lake-analytics-manage-use-portal.md)
     - [Gerir a Análise do Azure Data Lake com o Azure PowerShell](data-lake-analytics-manage-use-powershell.md)
     - [Monitorizar e resolver problemas das tarefas de Análise do Azure Data Lake com o Portal do Azure](data-lake-analytics-monitor-and-troubleshoot-jobs-tutorial.md)
+    - [Accessing Diagnostics logs for Azure Data Lake Analytics (Aceder aos registos de diagnóstico do Azure Data Lake Analytics)](data-lake-analytics-diagnostic-logs.md)
 
 - Tutorial ponto a ponto
     - [Utilizar tutoriais interativos do Azure Data Lake Analytics](data-lake-analytics-use-interactive-tutorials.md)
@@ -81,6 +82,6 @@ O Azure Data Lake Analytics é um novo serviço incorporado para facilitar a an�
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

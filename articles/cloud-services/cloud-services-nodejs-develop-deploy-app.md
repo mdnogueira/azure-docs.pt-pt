@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="nodejs"
     ms.topic="hero-article"
-    ms.date="06/24/2016" 
+    ms.date="08/11/2016" 
     ms.author="robmcm"/>
 
 # Compilar e implementar uma aplicação Node.js num Serviço em Nuvem do Azure
@@ -200,6 +200,6 @@ Para obter mais informações, consulte o [Centro para Programadores do Node.js]
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

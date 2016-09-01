@@ -12,7 +12,7 @@
  ms.tgt_pltfrm="na"
  ms.devlang="dotnet"
  ms.topic="hero-article"
- ms.date="06/30/2016"
+ ms.date="08/10/2016"
  ms.author="krisragh"/>
 
 # Introdução ao Agendador do Azure no portal do Azure
@@ -25,7 +25,7 @@
 
 2.  Clique em **+novo** > escreva _Agendador_ na caixa de pesquisa > selecione **Agendador** nos resultados > clique **Criar**.
 
-   ![][marketplace-create]
+     ![][marketplace-create]
 
 3.  Vamos criar uma tarefa que simplesmente chegue a http://www.microsoft.com/ com um pedido GET. No ecrã da **tarefa do Agendador**, introduza as seguintes informações:
 
@@ -43,7 +43,7 @@
 
     3.  **URL:** ` http://www.microsoft.com`  
 
-   ![][action-settings]
+      ![][action-settings]
 
 5.  Por fim, vamos definir uma agenda. A tarefa pode ser definida como uma única tarefa, mas vamos escolher uma agenda de periodicidade:
 
@@ -55,7 +55,7 @@
 
     4. **Terminar a**: dois dias a partir da data de hoje  
 
-   ![][recurrence-schedule]
+      ![][recurrence-schedule]
 
 6.  Clique em **Criar**.
 
@@ -73,7 +73,7 @@ Quando é criada uma tarefa, a mesma aparece no dashboard principal do Azure. Cl
 
 5.  Utilizadores
 
-   ![][job-overview]
+    ![][job-overview]
 
 ### Propriedades
 
@@ -100,7 +100,7 @@ Para os tipos de ação de barramento de serviço, pode alterar o espaço de nom
 
 Isto permite-lhe reconfigurar a agenda, caso gostaria de alterar a agenda que criou no assistente de criação rápida.
 
-Trata-se de uma oportunidade para criar [agendas complexas e periodicidade avançadas na sua tarefa](scheduler-advanced-complexity.md)
+Trata-se de uma oportunidade para criar [agendas complexas e periodicidade avançada na tarefa](scheduler-advanced-complexity.md)
 
 Pode alterar a data e hora de início, a agenda de periodicidade e a data e hora de fim (caso a tarefa seja recorrente).
 
@@ -134,7 +134,7 @@ Pode clicar numa execução para visualizar os seus **Detalhes de Histórico**, 
 O Controlo de Acesso Baseado em Funções (RBAC) do Azure permite uma gestão pormenorizada de acesso ao Agendador do Azure. Para saber como utilizar o separador de Utilizadores, consulte o [Controlo de Acesso Baseado em Funções do Azure](../active-directory/role-based-access-control-configure.md)
 
 
-## Veja também
+## Consultar também
 
  [O que é o Agendador?](scheduler-intro.md)
 
@@ -150,7 +150,7 @@ O Controlo de Acesso Baseado em Funções (RBAC) do Azure permite uma gestão po
 
  [Elevada disponibilidade e fiabilidade do Agendador](scheduler-high-availability-reliability.md)
 
- [Limites, predefinições e códigos de erro do Agendador](scheduler-limits-defaults-errors.md)
+ [Limites, predefinições e códigos de erro do Scheduler](scheduler-limits-defaults-errors.md)
 
  [Autenticação de saída do Agendador](scheduler-outbound-authentication.md)
 
@@ -184,6 +184,6 @@ O Controlo de Acesso Baseado em Funções (RBAC) do Azure permite uma gestão po
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

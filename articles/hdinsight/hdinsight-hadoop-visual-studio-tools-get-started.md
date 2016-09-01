@@ -1,7 +1,7 @@
 <properties
     pageTitle="Saber como utilizar as ferramentas Hadoop do Visual Studio para o HDInsight | Microsoft Azure"
     description="Saiba como instalar e utilizar as ferramentas Hadoop do Visual Studio para o HDInsight para se ligar a um cluster do Hadoop e executar uma consulta do Hive."
-    keywords="hadoop tools,hive query,visual studio"
+    keywords="ferramentas do hadoop,consulta do hive,visual studio"
     services="HDInsight"
     documentationCenter=""
     tags="azure-portal"
@@ -15,7 +15,7 @@
     ms.topic="get-started-article"
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
-    ms.date="05/25/2016"
+    ms.date="08/10/2016"
     ms.author="jgao"/>
 
 # Começar a utilizar as ferramentas Hadoop do Visual Studio para o HDInsight para executar uma consulta do Hive
@@ -86,6 +86,11 @@ Depois de se ligar à sua subscrição do Azure, poderá fazer o seguinte:
 No Explorador de Servidores, pode ver a conta do Storage predefinida e quaisquer contas do Storage ligadas. Se expandir a conta do Storage predefinida, pode ver os contentores incluídos na mesma. A conta do Storage predefinida e o contentor predefinido estão marcados. Também pode clicar com o botão direito do rato em qualquer um dos contentores para ver o respetivo conteúdo.
 
 ![Lista de clusters no explorador de servidores das Ferramentas do HDInsight para o Visual Studio.][2]
+
+Depois de abrir um contentor, pode utilizar os botões seguintes para carregar, eliminar e transferir blobs:
+
+![Ferramentas do HDInsight para operações de blobs do explorador de servidores do Visual Studio](./media/hdinsight-hadoop-visual-studio-tools-get-started/hdinsight.visual.studio.tools.blob.operations.png)
+
 
 ## Executar uma consulta do Hive
 O [Apache Hive][apache.hive] é uma infraestrutura de armazém de dados baseada em Hadoop destinada a fornecer resumo de dados, consultas e análises. As Ferramentas do HDInsight para o Visual Studio suportam a execução de consultas do Hive a partir do Visual Studio. Para obter mais informações sobre o Hive, consulte [Utilizar o Hive com o HDInsight][hdinsight.hive].
@@ -281,6 +286,6 @@ Neste artigo, aprendeu a ligar-se a clusters do HDInsight a partir do Visual Stu
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

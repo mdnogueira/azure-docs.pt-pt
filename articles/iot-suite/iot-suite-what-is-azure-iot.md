@@ -14,14 +14,14 @@
  ms.topic="get-started-article"
  ms.tgt_pltfrm="na"
  ms.workload="na"
- ms.date="05/25/2016"
+ ms.date="08/09/2016"
  ms.author="dobett"/>
 
 [AZURE.INCLUDE [iot-azure-and-iot](../../includes/iot-azure-and-iot.md)]
 
 ## Azure IoT Suite
 
-O Microsoft Azure IoT Suite é uma solução de nível empresarial que lhe permite começar a trabalhar rapidamente com um conjunto de soluções pré-configuradas extensíveis que tratam cenários comuns do IoT, tais como a [monitorização remota][Ink-preconfigured-solutions] e a [manutenção preditiva][Ink-predictive-maintenance]. Estas soluções são implementações da arquitetura de solução IoT descrita anteriormente.
+O Microsoft Azure IoT Suite é uma solução de nível empresarial que lhe permite começar a trabalhar rapidamente com um conjunto de soluções pré-configuradas extensíveis que tratam cenários comuns do IoT, tais como a [monitorização remota][Ink-preconfigured-solutions] e a [manutenção preditiva][Ink-predictive-maintenance]. Estas soluções são implementações da arquitetura da solução IoT descrita neste artigo.
 
 As soluções pré-configuradas são soluções completas, operacionais e ponto-a-ponto que incluem dispositivos simulados para uma introdução aos serviços pré-configurados do Azure, como o [Azure IoT Hub][], o [Azure Event Hubs][], o [Azure Stream Analytics][], o [Azure Machine Learning][] e o [Storage do Azure][], bem como consolas de gestão específicas para a solução. As soluções pré-configuradas contêm um código comprovado pronto para a produção que poderá personalizar e expandir para implementar os seus próprios cenários específicos do IoT.
 
@@ -46,6 +46,6 @@ Explore estes recursos para saber mais sobre o IoT Suite e as soluções pré-co
 [lnk-predictive-maintenance]: iot-suite-predictive-overview.md
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

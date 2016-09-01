@@ -139,7 +139,7 @@ As tarefas de Data Lake Analytics são escritas em linguagem U-SQL. Para saber m
 
     - **Formatação Automática**
 
-        Os utilizadores podem alterar o avanço do script Âmbito com base na estrutura do código em Editar -> Avançadas:
+        Os utilizadores podem alterar o avanço do script U-SQL com base na estrutura do código em Editar -> Avançadas:
 
         - Formatar Documento (Ctrl+E, D): Formata todo o documento   
         - Formatar Seleção (Ctrl+K, Ctrl+F): Formata a seleção. Se nada estiver selecionado, este atalho formata a linha onde se encontrar o cursor.  
@@ -364,6 +364,6 @@ O seguinte script do PowerShell prepara uma conta do Azure Data Lake Analytics e
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

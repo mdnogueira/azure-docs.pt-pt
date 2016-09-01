@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="get-started-article" 
-    ms.date="05/12/2016" 
+    ms.date="08/04/2016" 
     ms.author="billmath"/>
 
 # Atualizar o PhoneFactor Agent para o Servidor Multi-Factor Authentication do Azure
@@ -70,6 +70,7 @@ Atualizar do PhoneFactor Agent v5.x ou anterior no Servidor Multi-Factor Authent
  
 
 
-<!--HONumber=Jun16_HO2-->
+
+<!--HONumber=ago16_HO4-->
 
 

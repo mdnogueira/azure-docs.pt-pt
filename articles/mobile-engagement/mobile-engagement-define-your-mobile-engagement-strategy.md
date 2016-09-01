@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="03/01/2016"
+    ms.date="08/19/2016"
     ms.author="piyushjo" />
 
 # Definir a sua estratégia de Mobile Engagement
@@ -138,6 +138,6 @@ Todos estes tipos de dados podem ser aumentados com parâmetros (*informações 
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

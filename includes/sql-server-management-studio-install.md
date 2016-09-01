@@ -1,8 +1,16 @@
 ##Instalar a versão mais recente do SQL Server Management Studio
 
-  Ao trabalhar com a SQL Database, deve utilizar a versão mais recente do SQL Server Management Studio (SSMS) para gerir a SQL Database e o SQL Server. A versão mais recente do SSMS foi otimizada para a SQL Database e o SQL Server 2016 e foi também concebida para utilização com versões anteriores do SQL Server. Para transferir e instalar a versão mais recente do SSMS, veja [Transferir SQL Server Management Studio](https://msdn.microsoft.com/library/mt238290.aspx). Assim que tiver uma versão recente, o SSMS avisará sempre que exista uma nova versão do SSMS disponível para transferência. Também pode procurar atualizações no menu **Ferramentas**.
+  Ao trabalhar com a SQL Database, deve utilizar sempre a versão mais recente do SQL Server Management Studio (SSMS). A versão mais recente do SSMS é continuamente atualizada e otimizada para funcionar com o Azure e a Base de Dados SQL. A versão mais recente do SSMS funciona para todas as versões suportadas do SQL Server. Para transferir e instalar a versão mais recente, veja [Transferir SQL Server Management Studio](https://msdn.microsoft.com/library/mt238290.aspx). Para se manter atualizado, a versão mais recente do SSMS avisa-o quando existe uma nova versão disponível para transferência. 
+
+  Após a instalação, introduza **Microsoft SQL Server Management Studio** na caixa de pesquisa do Windows e execute a aplicação:
+
+  ![SQL Server Management Studio](./media/sql-server-management-studio-install/ssms.png)
 
 
-<!--HONumber=Jun16_HO2-->
+
+
+
+
+<!--HONumber=ago16_HO4-->
 
 

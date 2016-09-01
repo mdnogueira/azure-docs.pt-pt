@@ -4,7 +4,7 @@
     services="multi-factor-authentication" 
     documentationCenter="" 
     authors="billmath" 
-    manager="stevenpo" 
+    manager="femila" 
     editor="curtand"/>
 
 <tags 
@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="get-started-article" 
-    ms.date="05/16/2016" 
+    ms.date="08/15/2016" 
     ms.author="billmath"/>
 
 # Implementar o Portal de Utilizador do Servidor Multi-Factor Authentication do Azure
@@ -190,6 +190,7 @@ A autoinscrição do utilizador está agora concluída e o utilizador tem sessã
  
 
 
-<!--HONumber=Jun16_HO2-->
+
+<!--HONumber=ago16_HO4-->
 
 

@@ -1,7 +1,7 @@
 <properties
     pageTitle="Introdução ao Explorador de Armazenamento (Pré-visualização) | Microsoft Azure"
     description="Gerir os recursos do Storage do Azure com o Explorador de Armazenamento (Pré-visualização)"
-    services="visual-studio-online"
+    services="storage"
     documentationCenter="na"
     authors="TomArcher"
     manager="douge"
@@ -13,14 +13,14 @@
     ms.topic="get-started-article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="07/30/2016"
+    ms.date="08/17/2016"
     ms.author="tarcher" />
 
 # Introdução ao Explorador de Armazenamento (Pré-visualização)
 
 ## Descrição geral 
 
-O Explorador de Armazenamento do Microsoft Azure (Pré-visualização) é uma aplicação autónoma que lhe permite trabalhar facilmente com dados do Storage do Azure no Windows, OSX e Linux. Neste artigo, irá aprender as várias formas de ligar e gerir as contas do Storage do Azure.
+O Explorador de Armazenamento do Microsoft Azure (Pré-visualização) é uma aplicação autónoma que lhe permite trabalhar facilmente com dados do Storage do Azure no Windows, OS X e Linux. Neste artigo, irá aprender as várias formas de ligar e gerir as contas do Storage do Azure.
 
 ![Explorador de Armazenamento do Microsoft Azure (pré-visualização)][15]
 
@@ -231,6 +231,6 @@ Para limpar a pesquisa, selecione o botão **x** na caixa de pesquisa.
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

@@ -4,9 +4,9 @@ Para criar uma cache, comece por iniciar sessão no [Portal do Azure](https://po
 
 ![Nova cache](media/redis-cache-create/redis-cache-new-cache-menu.png)
 
->[AZURE.NOTE] Para além de criar caches no Portal do Azure, pode também criá-las com os modelos ARM, o PowerShell ou a CLI do Azure.
+>[AZURE.NOTE] Para além de criar caches no Portal do Azure, pode também criá-las com os modelos do Resource Manager, o PowerShell ou a CLI do Azure.
 >
->-  Para criar uma cache com os modelos ARM, veja [Criar uma cache de Redis com um modelo](../articles/redis-cache/cache-redis-cache-arm-provision.md).
+>-  Para criar uma cache com os modelos do Resource Manager, veja [Criar uma cache de Redis com um modelo](../articles/redis-cache/cache-redis-cache-arm-provision.md).
 >-  Para criar uma cache com o Azure PowerShell, veja [Gerir Cache de Redis do Azure com o Azure PowerShell](../articles/redis-cache/cache-howto-manage-redis-cache-powershell.md).
 >-  Para criar uma cache com a CLI do Azure, veja [Como criar e gerir uma Cache de Redis do Azure com a Interface de Linha de Comandos do Azure (CLI do Azure)](../articles/redis-cache/cache-manage-cli.md).
 
@@ -23,13 +23,13 @@ No painel **Nova Cache de Redis**, especifique a configuração pretendida para 
 -   A **Persistência Redis** permite-lhe persistir a cache numa conta de armazenamento do Azure. Para obter instruções sobre como configurar a persistência, veja [Como configurar a persistência para uma Cache de Redis do Azure Premium](../articles/redis-cache/cache-how-to-premium-persistence.md).
 -   A **Rede Virtual** fornece segurança e isolamento melhorados ao restringir o acesso à cache apenas aos clientes dentro da Rede Virtual do Azure especificada. Pode utilizar todas as funcionalidades de VNet, como sub-redes, políticas de controlo de acesso e outras funcionalidades adicionais para restringir ainda mais o acesso ao Redis. Para obter mais informações, veja [Como configurar o suporte da Rede Virtual de uma Cache de Redis do Azure Premium](../articles/redis-cache/cache-how-to-premium-vnet.md).
 
-Uma vez configuradas as opções da nova cache, clique em **Criar**. A criação da cache pode demorar alguns minutos. Para verificar o estado, pode monitorizar o progresso no Startboard. Uma vez criada, a nova cache tem um estado **Em Execução** e está pronta para ser utilizada com as predefinições.
+Uma vez configuradas as opções da nova cache, clique em **Criar**. A criação da cache pode demorar alguns minutos. Para verificar o estado, pode monitorizar o progresso no Startboard. Uma vez criada, a nova cache tem um estado **Em Execução** e está pronta para ser utilizada com as [predefinições](../articles/redis-cache/cache-configure.md#default-redis-server-configuration).
 
 ![Cache criada](media/redis-cache-create/redis-cache-cache-created.png)
 
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

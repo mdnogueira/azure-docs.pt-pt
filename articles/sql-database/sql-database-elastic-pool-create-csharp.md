@@ -13,7 +13,7 @@
     ms.topic="get-started-article"
     ms.tgt_pltfrm="csharp"
     ms.workload="data-management"
-    ms.date="07/22/2016"
+    ms.date="08/18/2016"
     ms.author="sstein"/>
 
 # Criar um novo conjunto de bases de dados elásticas com C&#x23;
@@ -24,17 +24,17 @@
 - [C#](sql-database-elastic-pool-create-csharp.md)
 
 
-Saiba como criar um [conjunto de bases de dados elásticas](sql-database-elastic-pool.md) com C#;. 
+Saiba como criar um [conjunto de bases de dados elásticas](sql-database-elastic-pool.md) com C#.
 
 Para códigos de erro comuns, consulte [Códigos de erro de SQL para aplicações de clientes de Base de Dados SQL: erro de ligação à base de dados e outros problemas](sql-database-develop-error-messages.md).
 
-Os exemplos abaixo utilizam a [Biblioteca da Base de Dados SQL para .NET](https://msdn.microsoft.com/library/azure/mt349017.aspx), por isso, se ainda não estiver instalada, terá de instalar esta biblioteca antes de continuar. Pode instalar esta biblioteca ao executar o seguinte comando na [consola do gestor de pacotes](http://docs.nuget.org/Consume/Package-Manager-Console) no Visual Studio (**Ferramentas** > **Gestor de Pacotes NuGet** > **Consola do Gestor de Pacotes**):
+Os exemplos utilizam a [Biblioteca da Base de Dados SQL para .NET](https://msdn.microsoft.com/library/azure/mt349017.aspx), por isso, se ainda não estiver instalada, instale esta biblioteca antes de continuar. Pode instalar esta biblioteca ao executar o seguinte comando na [consola do gestor de pacotes](http://docs.nuget.org/Consume/Package-Manager-Console) no Visual Studio (**Ferramentas** > **Gestor de Pacotes NuGet** > **Consola do Gestor de Pacotes**):
 
     Install-Package Microsoft.Azure.Management.Sql –Pre
 
-## Criar um novo conjunto
+## Criar um conjunto
 
-Crie uma instância [SqlManagementClient](https://msdn.microsoft.com/library/microsoft.azure.management.sql.sqlmanagementclient), utilizando os valores [do Azure Active Directory](sql-database-client-id-keys.md). Crie uma instância [ElasticPoolCreateOrUpdateParameters](https://msdn.microsoft.com/library/microsoft.azure.management.sql.models.elasticpoolcreateorupdateparameters) e chame o método [CreateOrUpdate](https://msdn.microsoft.com/library/microsoft.azure.management.sql.databaseoperationsextensions.createorupdate). Os valores de eDTU por conjunto e das Dtus mínimas e máximas estão restritos pelo valor da camada de serviço (básica, standard ou premium). Consulte [eDTU e limites de armazenamento para conjuntos elásticos e bases de dados elásticas](sql-database-elastic-pool.md#eDTU-and-storage-limits-for-elastic-pools-and-elastic-databases).
+Crie uma instância [SqlManagementClient](https://msdn.microsoft.com/library/microsoft.azure.management.sql.sqlmanagementclient), utilizando os valores [do Azure Active Directory](sql-database-client-id-keys.md). Crie uma instância [ElasticPoolCreateOrUpdateParameters](https://msdn.microsoft.com/library/microsoft.azure.management.sql.models.elasticpoolcreateorupdateparameters) e chame o método [CreateOrUpdate](https://msdn.microsoft.com/library/microsoft.azure.management.sql.databaseoperationsextensions.createorupdate). Os valores de eDTU por conjunto e das DTUs mínimas e máximas estão restritos pelo valor da camada de serviço (básica, standard ou premium). Consulte [eDTU e limites de armazenamento para conjuntos elásticos e bases de dados elásticas](sql-database-elastic-pool.md#eDTU-and-storage-limits-for-elastic-pools-and-elastic-databases).
 
 
     ElasticPoolCreateOrUpdateParameters newPoolParameters = new ElasticPoolCreateOrUpdateParameters()
@@ -52,7 +52,7 @@ Crie uma instância [SqlManagementClient](https://msdn.microsoft.com/library/mic
     // Create the pool
     var newPoolResponse = sqlClient.ElasticPools.CreateOrUpdate("resourcegroup-name", "server-name", "ElasticPool1", newPoolParameters);
 
-## Criar uma nova base de dados num conjunto
+## Criar uma base de dados num conjunto
 
 Crie uma instância [DataBaseCreateorUpdateProperties](https://msdn.microsoft.com/library/microsoft.azure.management.sql.models.databasecreateorupdateproperties) e defina as propriedades da nova base de dados. Em seguida, chame o método CreateOrUpdate com o grupo de recursos, o nome do servidor e o nome da nova base de dados.
 
@@ -76,20 +76,20 @@ Para mover uma base de dados existente para um conjunto, consulte [Mover uma bas
 
 ## Exemplo: criar um conjunto com C&#x23;
 
-Este exemplo cria um novo grupo de recursos do Azure, uma nova instância do Azure SQL Server e um novo conjunto elástico. 
+Este exemplo cria um grupo de recursos do Azure, um Azure SQL Server e um conjunto elástico. 
  
 
 As bibliotecas seguintes são necessárias para executar este exemplo. Pode instalá-las ao executar os seguintes comandos na [consola do gestor de pacotes](http://docs.nuget.org/Consume/Package-Manager-Console) no Visual Studio (**Ferramentas** > **Gestor de Pacotes NuGet** > **Consola do Gestor de Pacotes**)
 
     Install-Package Microsoft.Azure.Management.Sql –Pre
-    Install-Package Microsoft.Azure.Management.ResourceManager –Pre -Version 1.1.1-preview
+    Install-Package Microsoft.Azure.Management.ResourceManager –Pre
     Install-Package Microsoft.Azure.Common.Authentication –Pre
 
-Crie uma aplicação da consola e substitua os conteúdos de Program.cs pelos seguintes. Para instalar o id de cliente e os valores relacionados necessários, consulte [Registar a aplicação e obter os valores de cliente necessários para ligar a aplicação à Base de Dados SQL](sql-database-client-id-keys.md). Utilize o cmdlet [Get-AzureRmSubscription](https://msdn.microsoft.com/library/mt619284.aspx) para obter o valor para o subscriptionId.
+Crie uma aplicação da consola e substitua os conteúdos de Program.cs pelos seguintes. Para instalar o ID de cliente e os valores relacionados necessários, crie uma aplicação nativa utilizando o seguinte artigo: [Registar a aplicação e obter os valores de cliente necessários para ligar a aplicação à Base de Dados SQL](sql-database-client-id-keys.md).
 
     using Microsoft.Azure;
-    using Microsoft.Azure.Management.Resources;
-    using Microsoft.Azure.Management.Resources.Models;
+    using Microsoft.Azure.Management.ResourceManager;
+    using Microsoft.Azure.Management.ResourceManager.Models;
     using Microsoft.Azure.Management.Sql;
     using Microsoft.Azure.Management.Sql.Models;
     using Microsoft.IdentityModel.Clients.ActiveDirectory;
@@ -241,7 +241,7 @@ Crie uma aplicação da consola e substitua os conteúdos de Program.cs pelos se
 ## Passos seguintes
 
 - [Gerir o conjunto](sql-database-elastic-pool-manage-csharp.md)
-- [Criar tarefas elásticas](sql-database-elastic-jobs-overview.md) As tarefas elásticas permitem scripts T-SQL em qualquer número de bases de dados no conjunto.
+- [Criar tarefas elásticas](sql-database-elastic-jobs-overview.md): as tarefas elásticas permitem executar scripts T-SQL em qualquer número de bases de dados num conjunto.
 - [Aumentar horizontalmente com a Base de Dados SQL do Azure](sql-database-elastic-scale-introduction.md): utilize ferramentas de base de dados elástica para aumentar horizontalmente.
 
 ## Recursos Adicionais
@@ -251,6 +251,6 @@ Crie uma aplicação da consola e substitua os conteúdos de Program.cs pelos se
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

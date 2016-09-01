@@ -12,7 +12,7 @@
  ms.tgt_pltfrm="na"
  ms.devlang="dotnet"
  ms.topic="hero-article"
- ms.date="06/30/2016"
+ ms.date="08/18/2016"
  ms.author="krisragh"/>
 
 # O que é o Agendador do Azure?
@@ -30,7 +30,7 @@ Existem vários cenários que se devem à utilização do Agendador. Por exemplo
 
 O Agendador permite-lhe criar, atualizar, eliminar, ver e gerir tarefas e [recolher tarefas](scheduler-concepts-terms.md) de forma programática utilizando scripts e através do portal.
 
-## Veja também
+## Consultar também
 
  [Conceitos, terminologia e hierarquia de entidades do Agendador do Azure](scheduler-concepts-terms.md)
 
@@ -52,6 +52,6 @@ O Agendador permite-lhe criar, atualizar, eliminar, ver e gerir tarefas e [recol
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

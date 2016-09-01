@@ -12,7 +12,7 @@
     ms.workload="search"
     ms.topic="get-started-article"
     ms.tgt_pltfrm="na"
-    ms.date="05/23/2016"
+    ms.date="08/15/2016"
     ms.author="brjohnst"/>
 
 # Consultar o índice de Pesquisa do Azure utilizando o SDK .NET
@@ -32,7 +32,7 @@ Tenha em atenção que todo o código de exemplo neste artigo está escrito em C
 Agora que criou um índice de Pesquisa do Azure, está quase pronto para emitir consultas utilizando o SDK .NET. Em primeiro lugar, precisa de obter uma das chaves de API de consulta que foi gerada para o serviço de pesquisa que aprovisionou. O SDK .NET irá enviar esta chave de API em cada pedido para o seu serviço. Ter uma chave válida estabelece fidedignidade, numa base por pedido, entre a aplicação a enviar o pedido e o serviço que o processa.
 
 1. Para localizar as chaves de API do seu serviço, tem de iniciar sessão no [Portal do Azure](https://portal.azure.com/)
-2. Aceda ao painel do seu serviço de Pesquisa do Azure
+2. Aceda ao painel do seu serviço de Azure Search
 3. Clique no ícone "Chaves"
 
 O seu serviço terá *chaves de administração* e *chaves de consulta*.
@@ -164,6 +164,6 @@ O código de exemplo acima utiliza a consola para produzir os resultados da pesq
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

@@ -20,7 +20,7 @@
 
 # Implementar um cluster do Serviço de Contentor do Azure
 
-O Serviço de Contentor do Azure fornece uma implementação rápida de soluções de orquestração e de clustering populares e de open source do contentor. Ao utilizar o Serviço de Contentor do Azure, pode implementar clusters DC/OS e Docker Swarm com modelos do Azure Resource Manager ou o Portal do Azure. Deve implementar esses clusters utilizando Conjuntos de Dimensionamento das Virtual Machines do Azure. Assim, os clusters tiram partido das ofertas de redes e Storage do Azure. Para aceder ao Serviço de Contentor do Azure, terá de ter uma subscrição do Azure. Se não tiver uma, pode inscrever-se para obter uma [avaliação gratuita](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=AA4C1C935).
+O Serviço de Contentor do Azure fornece uma implementação rápida de soluções de orquestração e de clustering populares e de open source do contentor. Ao utilizar o Serviço de Contentor do Azure, pode implementar clusters DC/OS e Docker Swarm com modelos do Azure Resource Manager ou o Portal do Azure. Deve implementar esses clusters com Conjuntos de Dimensionamento das Virtual Machines do Azure. Assim, os clusters tiram partido das ofertas de redes e de armazenamento do Azure. Para aceder ao Serviço de Contentor do Azure, terá de ter uma subscrição do Azure. Se não tiver uma, pode inscrever-se para obter uma [avaliação gratuita](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=AA4C1C935).
 
 Este documento explica como implementar um cluster do Serviço de Contentor do Azure utilizando o [Portal do Azure](#creating-a-service-using-the-azure-portal), a [Interface de linha de comandos (CLI) do Azure](#creating-a-service-using-the-azure-cli) e o [módulo Azure PowerShell](#creating-a-service-using-powershell).  
 
@@ -82,7 +82,7 @@ Quando concluir a implementação, o cluster do Serviço de Contentor do Azure e
 
 ## Criar um serviço utilizando a CLI do Azure
 
-Para criar uma instância do Serviço de Contentor do Azure utilizando a linha de comandos, necessita de uma subscrição do Azure. Se não tiver uma, pode inscrever-se para obter uma [avaliação gratuita](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=AA4C1C935). Terá também de ter instalado e configurado a CLI do Azure.
+Para criar uma instância do Serviço de Contentor do Azure utilizando a linha de comandos, necessita de uma subscrição do Azure. Se não tiver uma, pode inscrever-se para obter uma [avaliação gratuita](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=AA4C1C935). Terá também de ter [instalado](../xplat-cli-install.md) e [configurado](../xplat-cli-connect.md) a CLI do Azure.
 
 Para implementar um cluster Docker Swarm ou DC/OS, selecione um dos modelos seguintes no GitHub. Tenha em atenção que estes modelos são os mesmos, com exceção da seleção do orquestrador predefinido.
 
@@ -197,6 +197,6 @@ Agora que tem um cluster a funcionar, veja estes documentos para obter os detalh
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

@@ -3,7 +3,7 @@
    description="Saiba como criar uma rede virtual com o portal do Azure no Resource Manager."
    services="virtual-network"
    documentationCenter=""
-   authors="narayanannamalai"
+   authors="NarayanAnnamalai"
    manager="jefco"
    editor=""
    tags="azure-resource-manager"/>
@@ -14,8 +14,8 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="03/15/2016"
-   ms.author="telmos"/>
+   ms.date="08/02/2016"
+   ms.author="narayanannamalai"/>
 
 # Criar um peering de rede virtual com o portal do Azure
 
@@ -62,7 +62,7 @@ Para criar um VNet peering com base no cenário acima com o portal do Azure, sig
 
 10. NOTA: o VNET peering só é estabelecido se ambas as ligações estiverem ligadas. 
 
-Existem algumas propriedades configuráveis para cada Ligação:
+Existem algumas propriedades configuráveis para cada ligação:
 
 |Opção|Descrição|Predefinição|
 |:-----|:----------|:------|
@@ -77,33 +77,33 @@ Cada ligação no VNet peering tem um conjunto das propriedades acima indicadas.
 
 1. Num browser, navegue para http://portal.azure.com e, se necessário, inicie sessão com a sua conta do Azure.
 2. Neste exemplo utilizaremos duas subscrições, A e B, e dois utilizadores, UserA e UserB, com privilégios em cada uma das subscrições, respetivamente
-2. No portal, clique em Procurar, escolha Redes Virtuais. Clique na VNET e clique em Adicionar.
+3. No portal, clique em Procurar, escolha Redes Virtuais. Clique na VNET e clique em Adicionar.
 
     ![Procurar Cenário 2](./media/virtual-networks-create-vnetpeering-arm-portal/figure09.png)
 
-3. No painel Adicionar acesso, clique em selecionar uma função e escolha Contribuinte de Rede, clique em Adicionar Utilizadores, escreva o nome de início de sessão do UserB e clique em OK.
+4. No painel Adicionar acesso, clique em selecionar uma função e escolha Contribuinte de Rede, clique em Adicionar Utilizadores, escreva o nome de início de sessão do UserB e clique em OK.
 
     ![RBAC](./media/virtual-networks-create-vnetpeering-arm-portal/figure10.png)
 
-   Isto não é um requisito. O peering pode ser estabelecido mesmo se os utilizadores emitirem individualmente pedidos de peering para as respetivas Vnets, desde que os pedidos correspondam. A adição do utilizador com privilégios da outra VNet como utilizador na VNet local torna mais fácil a configuração no portal. 
+    Isto não é um requisito. O peering pode ser estabelecido mesmo se os utilizadores emitirem individualmente pedidos de peering para as respetivas Vnets, desde que os pedidos correspondam. A adição do utilizador com privilégios da outra VNet como utilizador na VNet local torna mais fácil a configuração no portal. 
 
-4. Inicie depois sessão no portal do Azure com o UserB, que é o utilizador com privilégios para a SubscriptionB. Siga os passos acima para adicionar o UserA como Contribuinte de Rede.
+5. Inicie depois sessão no portal do Azure com o UserB, que é o utilizador com privilégios para a SubscriptionB. Siga os passos acima para adicionar o UserA como Contribuinte de Rede.
 
     ![RBAC2](./media/virtual-networks-create-vnetpeering-arm-portal/figure11.png)
 
-    NOTA: pode terminar e iniciar sessão em ambas as sessões de utilizador no browser para garantir que a autorização está ativada com êxito.
+    NOTA: pode terminar e iniciar sessão em ambas as sessões de utilizador no browser para garantir que a autorização é ativada com êxito.
 
-5. Inicie sessão no portal como UserA, navegue para o painel VNET3, clique em Peering, marque a caixa de verificação “Sei o ID de recurso” e escreva o ID do recurso para a VNET5 no formato abaixo.
+6. Inicie sessão no portal como UserA, navegue para o painel VNET3, clique em Peering, marque a caixa de verificação “Sei o ID de recurso” e escreva o ID do recurso para a VNET5 no formato abaixo.
 
     /subscriptions/<Subscription- ID>/resourceGroups/<ResourceGroupName>/providers/Microsoft.Network/VirtualNetwork/<VNET name>
 
     ![ID do Recurso](./media/virtual-networks-create-vnetpeering-arm-portal/figure12.png)
 
-6. Inicie sessão no portal como UserB e siga os passos acima para criar a ligação peering da VNET5 para a VNet3. 
+7. Inicie sessão no portal como UserB e siga os passos acima para criar a ligação peering da VNET5 para a VNet3. 
 
     ![ID do Recurso 2](./media/virtual-networks-create-vnetpeering-arm-portal/figure13.png)
 
-7. O peering será estabelecido e qualquer máquina virtual na VNet3 deverá conseguir comunicar com qualquer máquina virtual na VNet5
+8. O peering será estabelecido e qualquer máquina virtual na VNet3 deverá conseguir comunicar com qualquer máquina virtual na VNet5
 
 [AZURE.INCLUDE [virtual-networks-create-vnet-scenario-transit-include](../../includes/virtual-networks-create-vnetpeering-scenario-transit-include.md)]
 
@@ -132,6 +132,6 @@ Cada ligação no VNet peering tem um conjunto das propriedades acima indicadas.
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

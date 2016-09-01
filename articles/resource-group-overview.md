@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="07/19/2016"
+   ms.date="08/18/2016"
    ms.author="tomfitz"/>
 
 # Descrição geral do Azure Resource Manager
@@ -133,7 +133,7 @@ Para obter mais informações sobre como utilizar o portal, veja o artigo [Imple
 
 O Azure Resource Manager suporta a Partilha de Recursos de Várias Origens (CORS). Com a CORS, pode chamar a API REST do Resource Manager ou a API REST de um serviço do Azure a partir de uma aplicação Web que reside num domínio diferente. Sem o suporte para CORS, o browser impediria que uma aplicação num domínio acedesse a recursos noutro domínio. O Resource Manager ativa a CORS para todos os pedidos com credenciais de autenticação válidas.
 
-## SDKs e amostras
+## SDKs
 
 Os SDKs do Azure estão disponíveis para vários idiomas e plataformas.
 Cada uma destas implementações de idiomas está disponível através do respetivo gestor de pacotes ecossistema de pacotes e do GitHub.
@@ -144,25 +144,44 @@ O código SDK é gerado através de um projeto de fonte aberta denominado AutoRe
 O AutoRest transforma estas especificações de API RESTful em bibliotecas de cliente em vários idiomas.
 Se pretender melhorar os aspetos do código gerado nos SDKs, o conjunto completo de ferramentas para criar os SDKs são abertos, livremente disponíveis e com base num formato de especificação de API amplamente adotado.
 
-**Amostras**: comece rapidamente no idioma que preferir.
+Aqui estão os nossos repositórios de SDKs Open Source. Agradecemos o envio de comentários, problemas e pedidos pull.
 
-- [.NET](https://azure.microsoft.com/documentation/samples/?service=azure-resource-manager&platform=dotnet)
-- [Java](https://azure.microsoft.com/documentation/samples/?service=azure-resource-manager&platform=java)
-- [Node.js](https://azure.microsoft.com/documentation/samples/?service=azure-resource-manager&platform=nodejs)
-- [Python](https://azure.microsoft.com/documentation/samples/?service=azure-resource-manager&platform=python)
-- [PHP](https://azure.microsoft.com/documentation/samples/?service=azure-resource-manager&platform=php) *em breve*
-- [Ruby](https://azure.microsoft.com/documentation/samples/?service=azure-resource-manager&platform=ruby)
-
-**Abrir repositórios de SDK de origem**: agradecemos comentários, problemas e pedidos pull.
-
-- [.NET](https://github.com/Azure/azure-sdk-for-net)
-- [Java](https://github.com/Azure/azure-sdk-for-java)
-- [Node.js](https://github.com/Azure/azure-sdk-for-node)
-- [PHP](https://github.com/Azure/azure-sdk-for-php)
-- [Python](https://github.com/Azure/azure-sdk-for-python)
-- [Ruby](https://github.com/Azure/azure-sdk-ruby)
+[.NET](https://github.com/Azure/azure-sdk-for-net) | [Java](https://github.com/Azure/azure-sdk-for-java) | [Node.js](https://github.com/Azure/azure-sdk-for-node) | [PHP](https://github.com/Azure/azure-sdk-for-php) | [Python](https://github.com/Azure/azure-sdk-for-python) | [Ruby](https://github.com/Azure/azure-sdk-ruby)
 
 > [AZURE.NOTE] Se o SDK não fornecer a funcionalidade necessária, também pode ligar para a [API de REST do Azure](https://msdn.microsoft.com/library/azure/dn790568.aspx) diretamente.
+
+## Amostras
+
+### .NET
+
+- [Gerir os recursos do Azure e os grupos de recursos](https://azure.microsoft.com/documentation/samples/resource-manager-dotnet-resources-and-groups/)
+- [Implementar uma VM com SSH através de um modelo](https://azure.microsoft.com/documentation/samples/resource-manager-dotnet-template-deployment/)
+
+### Java
+
+- [Gerir os recursos do Azure](https://azure.microsoft.com/documentation/samples/resources-java-manage-resource/)
+- [Gerir os grupos de recursos do Azure](https://azure.microsoft.com/documentation/samples/resources-java-manage-resource-group/)
+- [Implementar uma VM com SSH através de um modelo](https://azure.microsoft.com/documentation/samples/resources-java-deploy-using-arm-template/)
+
+### Node.js
+
+- [Gerir os recursos do Azure e os grupos de recursos](https://azure.microsoft.com/documentation/samples/resource-manager-node-resources-and-groups/)
+- [Implementar uma VM com SSH através de um modelo](https://azure.microsoft.com/documentation/samples/resource-manager-node-template-deployment/)
+
+### Python
+
+- [Gerir os recursos do Azure e os grupos de recursos](https://azure.microsoft.com/documentation/samples/resource-manager-python-resources-and-groups/)
+- [Implementar uma VM com SSH através de um modelo](https://azure.microsoft.com/documentation/samples/resource-manager-python-template-deployment/)
+
+### Ruby
+
+- [Gerir os recursos do Azure e os grupos de recursos](https://azure.microsoft.com/documentation/samples/resource-manager-ruby-resources-and-groups/)
+- [Implementar uma VM com SSH através de um modelo](https://azure.microsoft.com/documentation/samples/resource-manager-ruby-template-deployment/)
+
+
+Para além estes exemplos, pode procurar nos exemplos da galeria.
+
+[.NET](https://azure.microsoft.com/documentation/samples/?service=azure-resource-manager&platform=dotnet) | [Java](https://azure.microsoft.com/documentation/samples/?service=azure-resource-manager&platform=java) | [Node.js](https://azure.microsoft.com/documentation/samples/?service=azure-resource-manager&platform=nodejs) | [Python](https://azure.microsoft.com/documentation/samples/?service=azure-resource-manager&platform=python) | [Ruby](https://azure.microsoft.com/documentation/samples/?service=azure-resource-manager&platform=ruby)
 
 ## Passos seguintes
 
@@ -178,6 +197,6 @@ Eis uma demonstração em vídeo desta descrição geral:
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

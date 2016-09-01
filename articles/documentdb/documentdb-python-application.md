@@ -1,10 +1,10 @@
 <properties
     pageTitle="Desenvolvimento da aplicação Web Python com o DocumentDB | Microsoft Azure"
     description="Reveja um tutorial de base de dados sobre a utilização do DocumentDB para armazenar e aceder a dados a partir de uma aplicação Web Python Flask alojada no Azure. Encontre soluções de desenvolvimento de aplicações." 
-    keywords="Application development, database tutorial, python flask, python web application, python web development, documentdb, azure, Microsoft azure"
+    keywords="Desenvolvimento de aplicações, tutorial sobre bases de dados, python flask, aplicação web python, desenvolvimento web do python, documentdb, azure, Microsoft azure"
     services="documentdb"
     documentationCenter="python"
-    authors="aliuy"
+    authors="AndrewHoh"
     manager="jhubbard"
     editor="cgronlun"/>
 
@@ -14,8 +14,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="python"
     ms.topic="hero-article"
-    ms.date="04/18/2016"
-    ms.author="andrl"/>
+    ms.date="08/18/2016"
+    ms.author="anhoh"/>
 
 # Desenvolvimento da aplicação Web Python com o DocumentDB
 
@@ -182,7 +182,7 @@ def create():
     db = client.CreateDatabase({ 'id': config.DOCUMENTDB_DATABASE })
 
     # Create collection
-    collection = client.CreateCollection(db['_self'],{ 'id': config.DOCUMENTDB_COLLECTION }, { 'offerType': 'S1' })
+    collection = client.CreateCollection(db['_self'],{ 'id': config.DOCUMENTDB_COLLECTION })
 
     # Create document
     document = client.CreateDocument(collection['_self'],
@@ -436,6 +436,6 @@ Para tutoriais adicionais do Python Flask, consulte o artigo [Mega Tutorial Flas
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="mobile-windows-store"
     ms.devlang="dotnet"
     ms.topic="hero-article"
-    ms.date="05/03/2016"
-    ms.author="piyushjo" />
+    ms.date="08/12/2016"
+    ms.author="piyushjo;ricksal" />
 
 # Introdução ao Azure Mobile Engagement para Aplicações Universais do Windows
 
@@ -23,38 +23,36 @@
 Este tópico mostra como utilizar o Azure Mobile Engagement para compreender a utilização da aplicação e o envio de notificações push para utilizadores segmentados de uma aplicação Universal do Windows.
 Este tutorial demonstra o cenário de difusão simples utilizando o Mobile Engagement. Irá criar uma Aplicação Universal do Windows em branco que recolhe dados de utilização de aplicação básicas e recebe notificações push através do Serviço de Notificações do Windows (WNS).
 
-Neste tutorial necessita do seguinte:
+## Pré-requisitos
 
-+ Visual Studio 2013
-+ Pacote NuGet [MicrosoftAzure.MobileEngagement]
+[AZURE.INCLUDE [Prereqs](../../includes/mobile-engagement-windows-store-prereqs.md)]
 
-> [AZURE.NOTE] Para concluir este tutorial, tem de ter uma conta ativa do Azure. Se não tiver uma conta, pode criar uma conta de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fmobile-engagement-windows-store-dotnet-get-started).
 
-##<a id="setup-azme"></a>Configurar Mobile Engagement para a sua aplicação Universal do Windows
+## Configurar o Mobile Engagement para a aplicação Universal do Windows
 
 [AZURE.INCLUDE [Create Mobile Engagement App in Portal](../../includes/mobile-engagement-create-app-in-portal.md)]
 
 ##<a id="connecting-app"></a>Ligar a aplicação ao back-end do Mobile Engagement
 
-Este tutorial apresenta uma “integração básica”, o conjunto mínimo necessário para recolher dados e enviar uma notificação push. É possível encontrar toda a documentação da integração na página [Integração do SDK Windows Universal do Mobile Engagement](mobile-engagement-windows-store-sdk-overview.md).
+Este tutorial apresenta uma "integração básica", o conjunto mínimo necessário para recolher dados e enviar uma notificação push. É possível encontrar toda a documentação da integração na página [Integração do SDK Windows Universal do Mobile Engagement](mobile-engagement-windows-store-sdk-overview.md).
 
-Iremos criar uma aplicação básica com o Visual Studio para demonstrar a integração.
+Irá criar uma aplicação básica com o Visual Studio para demonstrar a integração.
 
-###Criar um novo projeto da Aplicação Universal do Windows
+###Criar um projeto da Aplicação Universal do Windows
 
-Os seguintes passos assumem a utilização do Visual Studio 2015, apesar de os passos serem semelhantes em versões anteriores do Visual Studio. 
+Os seguintes passos assumem a utilização do Visual Studio 2015, apesar de os passos serem semelhantes em versões anteriores do Visual Studio.
 
 1. Inicie o Visual Studio e, no ecrã **Base**, selecione **Novo Projeto**.
 
-2. No pop-up, selecione **Windows 8** -> **Universal** -> **Aplicação em Branco (Universal Windows 8.1)**. Introduza o **Nome** da aplicação, o nome da **Solução** e, em seguida, clique em **OK**.
+2. No pop-up, selecione **Windows ** -> **Universal** -> **Aplicação em Branco (Universal do Windows)**. Introduza o **Nome** da aplicação, o nome da **Solução** e, em seguida, clique em **OK**.
 
     ![][1]
 
-Criou um novo projeto de Aplicação Universal do Windows no qual vamos integrar o SDK do Azure Mobile Engagement.
+Criou um projeto de Aplicação Universal do Windows no qual irá integrar depois o SDK do Azure Mobile Engagement.
 
 ###Ligar a aplicação ao back-end do Mobile Engagement
 
-1. Instale o pacote nuget [MicrosoftAzure.MobileEngagement] no seu projeto. Se tem como objetivo as plataformas Windows e Windows Phone, terá de efetuar este procedimento para ambos os projetos. Para o Windows 8.x e o Windows Phone 8.1, o mesmo pacote Nuget coloca os binários específicos da plataforma corretos em cada projeto.
+1. Instale o pacote Nuget [MicrosoftAzure.MobileEngagement] no seu projeto. Se tiver como objetivo as plataformas Windows e Windows Phone, terá de efetuar este procedimento para ambos os projetos. Para o Windows 8.x e o Windows Phone 8.1, o mesmo pacote Nuget coloca os binários específicos da plataforma corretos em cada projeto.
 
 2. Abra **Package.appxmanifest** e certifique-se de que a capacidade seguinte está adicionada aí:
 
@@ -66,7 +64,7 @@ Criou um novo projeto de Aplicação Universal do Windows no qual vamos integrar
 
     ![][3]
 
-    >[AZURE.TIP] Se a Aplicação visar as plataformas Windows e Windows Phone, deve criar ainda duas Aplicações Mobile Engagement – uma para cada plataforma suportada. Este procedimento serve para garantir que consegue criar a segmentação correta do público-alvo e que consegue enviar notificações adequadamente segmentadas para cada plataforma.
+    >[AZURE.TIP] Se a sua Aplicação visar as plataformas Windows e Windows Phone, deve criar ainda duas Aplicações Mobile Engagement – uma para cada plataforma suportada. Dispor de duas aplicações permite garantir que consegue criar a segmentação correta do público-alvo e que consegue enviar notificações adequadamente direcionadas para cada plataforma.
 
 4. No ficheiro `App.xaml.cs`:
 
@@ -74,7 +72,7 @@ Criou um novo projeto de Aplicação Universal do Windows no qual vamos integrar
 
             using Microsoft.Azure.Engagement;
 
-    b. Adicione um método dedicado para a inicialização e definição do Engagement:
+    b. Adicione um método que inicializa o Mobile Engagement:
 
            private void InitEngagement(IActivatedEventArgs e)
            {
@@ -109,7 +107,7 @@ Para iniciar o envio de dados e garantir que os utilizadores estão ativos, ter�
 
         using Microsoft.Azure.Engagement.Overlay;
 
-2. Substitua a classe base da **MainPage** de **Página** para **EngagementPageOverlay**:
+2. Altere a classe base da **MainPage** de **Page** para **EngagementPageOverlay**:
 
         class MainPage : EngagementPageOverlay
 
@@ -119,9 +117,9 @@ Para iniciar o envio de dados e garantir que os utilizadores estão ativos, ter�
 
         xmlns:engagement="using:Microsoft.Azure.Engagement.Overlay"
 
-    b. Substitua a **Página** no nome de etiqueta XML por **engagement:EngagementPageOverlay**
-    
-> [AZURE.IMPORTANT] Se a sua página substitui o método `OnNavigatedTo`, certifique-se de que chama `base.OnNavigatedTo(e)`. Caso contrário, a atividade não será comunicada (o `EngagementPage` chama `StartActivity` dentro do respetivo método `OnNavigatedTo`). Isto é especialmente importante num projeto Windows Phone onde o modelo predefinido tem um método `OnNavigatedTo`. 
+    b. Substitua a **Page** no nome de etiqueta XML por **engagement:EngagementPageOverlay**
+
+> [AZURE.IMPORTANT] Se a sua página substitui o método `OnNavigatedTo`, certifique-se de que chama `base.OnNavigatedTo(e)`. Caso contrário, a atividade não é comunicada (o `EngagementPage` chama `StartActivity` dentro do respetivo método `OnNavigatedTo`). Isto é especialmente importante num projeto Windows Phone onde o modelo predefinido tem um método `OnNavigatedTo`.
 
 ##<a id="monitor"></a>Ligar a aplicação com a monitorização em tempo real
 
@@ -148,16 +146,16 @@ Em `App.xaml.cs`, chame **EngagementReach.Instance.Init(e);** na função **Init
            EngagementReach.Instance.Init(e);
         }
 
-Está tudo pronto para enviar um alerta. Agora iremos confirmar que realizou corretamente esta integração básica.
+Está pronto para enviar um alerta. A seguir, vamos confirmar que realizou corretamente esta integração básica.
 
 ###Conceder acesso ao Mobile Engagement para enviar notificações
 
 1. Abra o [Dev Center da Loja Windows] no seu browser, inicie sessão e crie uma conta, se necessário.
-2. Clique em **Dashboard** no canto superior direita e, em seguida, clique em **Criar uma nova aplicação** no menu do painel esquerdo. 
+2. Clique em **Dashboard** no canto superior direita e, em seguida, clique em **Criar uma nova aplicação** no menu do painel esquerdo.
 
     ![][9]
 
-2. Crie a sua aplicação ao reservar o respetivo nome. 
+2. Crie a sua aplicação ao reservar o respetivo nome.
 
     ![][10]
 
@@ -165,7 +163,7 @@ Está tudo pronto para enviar um alerta. Agora iremos confirmar que realizou cor
 
     ![][11]
 
-4. Na secção Notificações push, clique na ligação **site dos Serviços Live**. 
+4. Na secção Notificações push, clique na ligação **site dos Serviços Live**.
 
     ![][12]
 
@@ -173,19 +171,19 @@ Está tudo pronto para enviar um alerta. Agora iremos confirmar que realizou cor
 
     ![][13]
 
-6. Navegue para as **Definições** do seu portal Mobile Engagement e clique na secção **Push Nativo** à esquerda. Em seguida, clique no botão **Editar** para introduzir o **Identificador de segurança do pacote (SID)** e a sua **Chave Secreta**, conforme mostrado abaixo:
+6. Navegue para as **Definições** do seu portal Mobile Engagement e clique na secção **Push Nativo** à esquerda. Em seguida, clique no botão **Editar** para introduzir o **Identificador de segurança do pacote (SID)** e a sua **Chave Secreta**, conforme apresentado:
 
     ![][6]
 
-8. Finalmente, certifique-se de que associou a sua aplicação do Visual Studio a esta aplicação criada na Loja de aplicações. Tem de clicar em **Associar Aplicação a Loja** no Visual Studio para efetuar este procedimento.
-
+8. Finalmente, certifique-se de que associou a sua aplicação do Visual Studio a esta aplicação criada na Loja de aplicações. Clique em **Associar a Aplicação à Loja** no Visual Studio.
     ![][7]
 
-##<a id="send"></a>Enviar uma notificação à sua aplicação
+##<a id="send"></a>Enviar uma notificação à aplicação
 
 [AZURE.INCLUDE [Create Windows Push campaign](../../includes/mobile-engagement-windows-push-campaign.md)]
 
-Se a aplicação estava em execução, verá uma notificação na aplicação, caso contrário, verá uma notificação de alerta se a aplicação estava fechada. Se estiver a ver uma notificação na aplicação, mas não uma notificação de alerta, e estiver a executar a aplicação em modo de depuração no Visual Studio, deve experimentar **Eventos de ciclo de vida -> Suspender** na barra de ferramentas para se certificar de que a aplicação está de facto suspensa. Se clicou no botão Base apenas durante a depuração da aplicação no Visual Studio, esta não fica sempre suspensa e apesar de ver a notificação como na aplicação, não aparece como notificação de alerta.  
+Se a aplicação estiver a ser executada, verá uma notificação na aplicação. Caso contrário, se a aplicação for fechada, verá uma notificação de alerta.
+Se vir uma notificação na aplicação, mas não uma notificação de alerta, e estiver a executar a aplicação em modo de depuração no Visual Studio, experimente **Eventos de ciclo de vida -> Suspender** na barra de ferramentas para se certificar de que a aplicação está suspensa. Se clicou no botão Base durante a depuração da aplicação no Visual Studio, esta não ficará sempre suspensa e, apesar de ver a notificação como na aplicação, não aparecerá como notificação de alerta.  
 
 ![][8]
 
@@ -211,8 +209,6 @@ Se a aplicação estava em execução, verá uma notificação na aplicação, c
 
 
 
-
-
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

@@ -13,7 +13,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="06/09/2016"
+   ms.date="06/10/2016"
    ms.author="ryanwi"/>
 
 # Criação da sua primeira aplicação de Service Fabric no Visual Studio
@@ -42,7 +42,7 @@ Uma aplicação de Service Fabric pode conter um ou mais serviços, cada um com 
 
     ![Caixa de diálogo de novo projeto no Visual Studio][1]
 
-4. Na página seguinte, será pedido para escolher o primeiro tipo de serviço a incluir na sua aplicação. Para este tutorial, escolheremos **Com Estado**. Atribua-lhe um nome e clique em **OK**.
+4. Na página seguinte, selecione **Com Estado** como o primeiro tipo de serviço a incluir na sua aplicação. Atribua-lhe um nome e clique em **OK**.
 
     ![Caixa de diálogo novo serviço no Visual Studio][2]
 
@@ -56,19 +56,19 @@ Uma aplicação de Service Fabric pode conter um ou mais serviços, cada um com 
 
     - **Perfis de publicação**: utiliza-se para gerir as preferências de ferramentas para os diferentes ambientes.
 
-    - **Scripts**: inclui um script de PowerShell para implementar/atualizar a sua aplicação. O Visual Studio utiliza este script em segundo plano e pode ser invocado diretamente na linha de comandos.
+    - **Scripts**: inclui um script de PowerShell para implementar/atualizar a sua aplicação. O Visual Studio utiliza o script em segundo plano do Visual Studio. O script também pode ser invocado diretamente na linha de comandos.
 
-    - **Definição da aplicação**: inclui o manifesto da aplicação em *ApplicationPackageRoot* e os ficheiros de parâmetro de aplicação em *ApplicationParameters* que definir a aplicação e permitem-lhe configurá-la especificamente para um determinado ambiente.
+    - **Definição da aplicação**: inclui o manifesto da aplicação em *ApplicationPackageRoot*. Os ficheiros de parâmetro de aplicação associados em *ApplicationParameters*, definem a aplicação e permitem configurá-la especificamente para um determinado ambiente.
 
     Para obter uma descrição geral do conteúdo do projeto de serviço, consulte o artigo [Introdução a Reliable Services](service-fabric-reliable-services-quick-start.md).
 
 ## Implemente a aplicação e depure-a
 
-Agora que tem uma aplicação, pode tentar executá-la.
+Agora que tem uma aplicação, tente executá-la.
 
 1. Prima F5 no Visual Studio para implementar a aplicação, com o fim de depurá-la.
 
-    >[AZURE.NOTE] A primeira vez que o fizer demorará algum tempo, dado que o Visual Studio está a criar um cluster local para o desenvolvimento. Nos clusters locais executa-se o mesmo código de plataforma que se compilam num cluster com várias máquinas, mas numa única máquina. O estado de criação do cluster aparecerá na janela de saída do Visual Studio.
+    >[AZURE.NOTE] A primeira implementação demorará algum tempo, dado que o Visual Studio está a criar um cluster local para o desenvolvimento. Nos clusters locais executa-se o mesmo código de plataforma que se compilam num cluster com várias máquinas, mas numa única máquina. O estado de criação do cluster aparece na janela de saída do Visual Studio.
 
     Quando o cluster estiver pronto, receberá uma notificação da aplicação do gestor de tabuleiro de sistema do cluster local que está incluído com o SDK.
 
@@ -84,7 +84,7 @@ Agora que tem uma aplicação, pode tentar executá-la.
 
     ![Detalhe do visualizador de eventos de diagnóstico][6]
 
-    O cluster local contém cinco nós que estão alojados num único computador. Imita um cluster de cinco nós, no qual os nós estão em máquinas distintas. Desativemos um dos nós no cluster local para simular a perda de uma máquina e executemos o depurador do Visual Studio ao mesmo tempo.
+    O cluster local contém cinco nós que estão alojados num único computador. Imita um cluster de cinco nós, no qual os nós estão em máquinas distintas. Vamos desativar um dos nós no cluster local para simular a perda de uma máquina enquanto executamos o depurador do Visual Studio ao mesmo tempo.
 
     >[AZURE.NOTE] Os eventos de diagnóstico de aplicações que são emitidos pelo modelo de projeto utilizam a classe `ServiceEventSource` incluída. Para obter mais informações, consulte o artigo [Como monitorizar e diagnosticar os serviços localmente](service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md).
 
@@ -96,11 +96,11 @@ Agora que tem uma aplicação, pode tentar executá-la.
 
     ![Iniciar o Service Fabric Explorer a partir do Gestor de Clusters Locais][systray-launch-sfx]
 
-    O Service Fabric Explorer proporciona uma representação visual de um cluster - incluindo o conjunto de aplicações aí implementadas e o conjunto de nós físicos que o constituem. Para saber mais acerca do Service Fabric Explorer, consulte o artigo [Visualizar o seu cluster](service-fabric-visualizing-your-cluster.md).
+    O Service Fabric Explorer proporciona uma representação visual de um cluster – incluindo o conjunto de aplicações aí implementadas e o conjunto de nós físicos que o constituem. Para saber mais acerca do Service Fabric Explorer, consulte o artigo [Visualizar o seu cluster](service-fabric-visualizing-your-cluster.md).
 
 6. No painel da esquerda, expanda **Cluster > Nós** e localizar o nó que está a executar o seu código.
 
-7. Clique em **Ações > Desativar (Reiniciar)** para simular um reinício do computador. (Tenha em atenção de que também pode fazê-lo num menu de contexto na vista de lista de nós no painel da esquerda, através da seleção das reticências.)
+7. Clique em **Ações > Desativar (Reiniciar)** para simular um reinício do computador. (Tenha em atenção que também pode desativar a partir do menu de contexto na vista de lista de nós no painel esquerdo.)
 
     ![Parar um nó no Service Fabric Explorer][sfx-stop-node]
 
@@ -112,11 +112,11 @@ Agora que tem uma aplicação, pode tentar executá-la.
 
 ## Limpeza
 
-  Antes de concluir, é importante lembrar-se de que o cluster local é real. Parar o depurador irá remover a instância da aplicação e anular o registo do tipo de aplicação.  Contudo, o cluster continuará a ser executado em segundo plano. Tem várias opções para lidar com isto:
+  Antes de concluir, é importante lembrar-se de que o cluster local é real. Parar o depurador remove a instância da aplicação e anula o registo do tipo de aplicação. Contudo, o cluster continua a ser executado em segundo plano. Tem várias opções para gerir o cluster:
 
   1. Para encerrar o cluster, mas manter os dados de aplicação e o rastreio, clique em **Parar Cluster Local** na aplicação de tabuleiro do sistema.
 
-  2. Para eliminar o cluster totalmente, clique em **Remover Cluster Local** na aplicação de tabuleiro do sistema. Tenha em atenção que esta opção resultará noutra implementação lenta da próxima vez que premir F5 no Visual Studio. Utilize esta opção apenas se não pretender utilizar o cluster local durante algum tempo ou se precisar de recuperar recursos.
+  2. Para eliminar o cluster totalmente, clique em **Remover Cluster Local** na aplicação de tabuleiro do sistema. Tenha em atenção que esta opção resultará noutra implementação lenta da próxima vez que premir F5 no Visual Studio. Elimine o cluster apenas se não pretender utilizar o cluster local durante algum tempo ou se precisar de recuperar recursos.
 
 ## Passos seguintes
 
@@ -140,6 +140,6 @@ Agora que tem uma aplicação, pode tentar executá-la.
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

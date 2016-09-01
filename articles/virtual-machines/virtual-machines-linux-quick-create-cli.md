@@ -13,13 +13,15 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="vm-linux"
    ms.workload="infrastructure"
-   ms.date="05/03/2016"
+   ms.date="08/18/2016"
    ms.author="v-livech"/>
 
 
 # Criar uma VM com Linux no Azure utilizando a CLI
 
-Este artigo mostra como implementar rapidamente uma Máquina Virtual com Linux no Azure através do comando `azure vm quick-create` do CLI do Azure. O comando `quick-create` implementa uma VM com uma infraestrutura básica envolvente, que pode utilizar para criar protótipos ou testar um conceito muito rapidamente (pode considerá-lo como a forma mais rápida para uma shell de deteção do Linux).  O artigo requer uma conta do Azure ([obtenha uma avaliação gratuita](https://azure.microsoft.com/pricing/free-trial/)) e [a CLI do Azure](../xplat-cli-install.md) com sessão iniciada (`azure login`) e no modo resource manager (`azure config mode arm`).  Pode também rapidamente implementar uma VM com Linux através do [Portal do Azure](virtual-machines-linux-quick-create-portal.md).
+> [AZURE.NOTE] Se tiver alguns minutos, ajude-nos a melhorar a documentação de VM do Azure Linux, ao responder a este [inquérito rápido](https://aka.ms/linuxdocsurvey) sobre as suas experiências. Cada resposta ajuda-nos a ajudá-lo a realizar o seu trabalho.
+
+Este artigo mostra como implementar rapidamente uma Máquina Virtual com Linux no Azure através do comando `azure vm quick-create` do CLI do Azure. O comando `quick-create` implementa uma VM com uma infraestrutura básica envolvente, que pode utilizar para criar protótipos ou testar rapidamente um conceito.  O artigo requer uma conta do Azure ([obtenha uma avaliação gratuita](https://azure.microsoft.com/pricing/free-trial/)) e [a CLI do Azure](../xplat-cli-install.md) com sessão iniciada (`azure login`) e no modo Resource Manager (`azure config mode arm`).  Também pode implementar rapidamente uma VM com Linux através do [portal do Azure](virtual-machines-linux-quick-create-portal.md).
 
 ## Resumo do Comando Rápido
 
@@ -31,7 +33,7 @@ azure vm quick-create -M ~/.ssh/azure_id_rsa.pub -Q CoreOS
 
 ## Implementar a VM com Linux
 
-Utilizando o mesmo comando acima, é demonstrado a seguir cada mensagem, bem como o resultado que deve ver, mas é utilizado o alias RHEL para criar uma VM de RedHat Enteprise Linux 7.2.  
+Iremos agora orientá-lo através do comando e explicar cada passo com o RedHat Enterprise Linux 7.2.  
 
 ## Utilizar um alias ImageURN
 
@@ -44,14 +46,13 @@ O comando da CLI do Azure `quick-create` tem aliases mapeados para as distribui�
 | Debian    | credativ  | Debian       | 8           | mais recente  |
 | openSUSE  | SUSE      | openSUSE     | 13.2        | mais recente  |
 | RHEL      | Redhat    | RHEL         | 7.2         | mais recente  |
-| SLES      | SLES      | SLES         | 12-SP1      | mais recente  |
 | UbuntuLTS | Canónico | UbuntuServer | 14.04.4-LTS | mais recente  |
 
 
 
-Para a opção **ImageURN** (`-Q`), utilizaremos `RHEL` para implementar uma VM de RedHat Enterprise Linux 7.2. (Estes 7 aliases representam uma parte muito pequena do SO disponível no Azure; encontre mais imagens no marketplace ao [procurar uma imagem](virtual-machines-linux-cli-ps-findimage.md) ou pode [carregar a sua imagem personalizada](virtual-machines-linux-create-upload-generic.md).)
+Para a opção **ImageURN** (`-Q`), utilizamos `RHEL` para implementar uma VM de RedHat Enterprise Linux 7.2. Estes aliases `quick-create` representam uma parte muito pequena do SO disponível no Azure.  Encontre mais imagens no mercado, [ao procurar uma imagem](virtual-machines-linux-cli-ps-findimage.md) ou [carregue a sua própria imagem personalizada](virtual-machines-linux-create-upload-generic.md).
 
-Nas seguintes instruções sobre o comando, substitua as mensagens por valores do seu próprio ambiente. Estamos a utilizar valores de "exemplo".  
+Nas seguintes instruções sobre o comando, substitua as mensagens por valores do seu próprio ambiente.
 
 Siga as mensagens e introduza os seus próprios nomes
 
@@ -145,7 +146,7 @@ data:      Diagnostics Instance View:
 info:    vm quick-create command OK
 ```
 
-Pode agora efetuar a SSH para a VM na porta SSH 22 predefinida e o nome de domínio completamente qualificado (FQDN) listado no resultado acima. (Pode também utilizar o endereço IP listado.)
+SSH na sua VM, na porta 22 e o endereço IP público apresentado no resultado. (Pode também utilizar o FQDN apresentado.)
 
 ```bash
 ssh ops@rhel-westu-1630678171-pip.westus.cloudapp.azure.com
@@ -163,16 +164,14 @@ Warning: Permanently added 'rhel-westu-1630678171-pip.westus.cloudapp.azure.com,
 
 ## Passos Seguintes
 
-O `azure vm quick-create` é a forma de implementar rapidamente uma VM para que possa iniciar sessão numa shell de deteção e começar a trabalhar. Utilizar `vm quick-create` não lhe dá as vantagens adicionais de um ambiente complexo.  Para implementar uma VM com Linux personalizada de acordo com a sua infraestrutura, pode seguir qualquer um dos artigos abaixo.
+O `azure vm quick-create` é a forma de implementar rapidamente uma VM para que possa iniciar sessão numa shell de deteção e começar a trabalhar. Utilizar `vm quick-create` não lhe dá as vantagens adicionais de um ambiente complexo.  Para implementar uma VM com Linux personalizada de acordo com a sua infraestrutura, pode seguir qualquer um dos artigos seguintes.
 
-- [Utilizar um modelo do Azure resource manager para criar uma implementação específica](virtual-machines-linux-cli-deploy-templates.md)
+- [Utilizar um modelo do Azure Resource Manager para criar uma implementação específica](virtual-machines-linux-cli-deploy-templates.md)
 - [Crie o seu ambiente personalizado para uma VM com Linux diretamente através dos comandos da CLI do Azure](virtual-machines-linux-create-cli-complete.md).
 - [Criar uma VM com Linux Protegida por SSH no Azure através de Modelos](virtual-machines-linux-create-ssh-secured-vm-from-template.md)
 
-Esses artigos ajudam a começar a criar uma infraestrutura do Azure, bem como qualquer número de ferramentas de orquestração, configuração e implementação de infraestruturas proprietárias e open source.
 
 
-
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

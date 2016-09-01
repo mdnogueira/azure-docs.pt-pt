@@ -1,10 +1,10 @@
 <properties
     pageTitle="Tutorial de desenvolvimento de aplicações Java utilizando o DocumentDB | Microsoft Azure"
     description="Este tutorial de aplicação Web do Java mostra-lhe como utilizar o serviço do Azure DocumentDB para armazenar e aceder a dados a partir de uma aplicação Java alojada em Web sites do Azure."
-    keywords="Application development, database tutorial, java application, java web application tutorial, documentdb, azure, Microsoft azure"
+    keywords="Desenvolvimento de aplicações, tutorial sobre bases de dados, aplicação java, tutorial sobre aplicações web java, documentdb, azure, Microsoft azure"
     services="documentdb"
     documentationCenter="java"
-    authors="aliuy"
+    authors="AndrewHoh"
     manager="jhubbard"
     editor="mimig"/>
 
@@ -14,8 +14,8 @@
     ms.topic="hero-article"
     ms.tgt_pltfrm="NA"
     ms.workload="data-services"
-    ms.date="03/10/2016"
-    ms.author="andrl"/>
+    ms.date="08/18/2016"
+    ms.author="anhoh"/>
 
 # Criar uma aplicação Web de Java utilizando o DocumentDB
 
@@ -216,13 +216,9 @@ Para tal, terá de converter o seu projeto em projeto maven, realizando os segui
                             DocumentCollection collectionDefinition = new DocumentCollection();
                             collectionDefinition.setId(COLLECTION_ID);
 
-                            // Configure the new collection performance tier to S1.
-                            RequestOptions requestOptions = new RequestOptions();
-                            requestOptions.setOfferType("S1");
-
                             collectionCache = documentClient.createCollection(
                                     getTodoDatabase().getSelfLink(),
-                                    collectionDefinition, requestOptions).getResource();
+                                    collectionDefinition, null).getResource();
                         } catch (DocumentClientException e) {
                             // TODO: Something has gone terribly wrong - the app wasn't
                             // able to query or create the collection.
@@ -786,6 +782,6 @@ Todos os exemplos deste tutorial estão incluídos no projeto [todo](https://git
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 
