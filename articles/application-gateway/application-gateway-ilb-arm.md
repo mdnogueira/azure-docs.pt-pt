@@ -3,7 +3,7 @@
    description="Esta página fornece instruções para criar, configurar, iniciar e eliminar um gateway de aplicação do Azure com o balanceador de carga interno (ILB) do Azure Resource Manager"
    documentationCenter="na"
    services="application-gateway"
-   authors="joaoma"
+   authors="georgewallace"
    manager="carmonm"
    editor="tysonn"/>
 <tags
@@ -12,8 +12,8 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="04/05/2016"
-   ms.author="joaoma"/>
+   ms.date="08/19/2016"
+   ms.author="gwallace"/>
 
 
 # Criar um gateway de aplicação com um balanceador de carga interno (ILB) com o Azure Resource Manager
@@ -30,7 +30,7 @@ Este artigo descreve os passos para configurar um gateway de aplicação com um 
 
 1. Instale a versão mais recente dos cmdlets Azure PowerShell com o Instalador de Plataforma Web. Pode transferir e instalar a versão mais recente a partir da secção **Windows PowerShell** da página [Transferências](https://azure.microsoft.com/downloads/).
 2. Vai criar uma rede virtual e uma sub-rede para o Application Gateway. Verifique se a sub-rede não está a ser utilizada por nenhuma máquina virtual ou implementação na nuvem. O Application Gateway tem de constar, por si só, numa sub-rede de rede virtual.
-3. Os servidores que irá configurar para utilizar o gateway de aplicação devem existir. Caso contrário, os respetivos pontos finais terão de ser criados na rede virtual ou com um IP/VIP público atribuído.
+3. Os servidores que vai configurar para utilizar o gateway de aplicação devem existir. Caso contrário, os respetivos pontos finais terão de ser criados na rede virtual ou com um IP/VIP público atribuído.
 
 ## O que é necessário para criar um gateway de aplicação?
 
@@ -43,10 +43,10 @@ Este artigo descreve os passos para configurar um gateway de aplicação com um 
 
 
 
-## Criar um novo gateway de aplicação
+## Para criar um gateway de aplicação
 
 A diferença entre a utilização do Azure Clássico e do Azure Resource Manager é a ordem pela qual vai criar o gateway de aplicação e os itens que devem ser configurados.
-Com o Resource Manager, todos os itens que irão constituir um gateway de aplicação serão configurados individualmente e, em seguida, reunidos para criar o recurso do gateway de aplicação.
+Com o Resource Manager, todos os itens que constituem um gateway de aplicação são configurados individualmente e, em seguida, reunidos para criar o recurso do gateway de aplicação.
 
 
 Os passos necessários para criar um gateway de aplicação encontram-se descritos abaixo:
@@ -63,13 +63,13 @@ Não se esqueça de mudar o modo do PowerShell para utilizar o cmdlets do Azure 
 
 ### Passo 1
 
-        Login-AzureRmAccount
+    Login-AzureRmAccount
 
 ### Passo 2
 
 Verifique as subscrições da conta.
 
-        get-AzureRmSubscription
+    Get-AzureRmSubscription
 
 Ser-lhe-á solicitado a autenticação com as suas credenciais.<BR>
 
@@ -78,7 +78,7 @@ Ser-lhe-á solicitado a autenticação com as suas credenciais.<BR>
 Escolha qual das subscrições do Azure utilizar. <BR>
 
 
-        Select-AzureRmSubscription -Subscriptionid "GUID of subscription"
+    Select-AzureRmSubscription -Subscriptionid "GUID of subscription"
 
 
 ### Passo 4
@@ -87,7 +87,7 @@ Crie um grupo de recursos (ignore este passo se estiver a utilizar um grupo de r
 
     New-AzureRmResourceGroup -Name appgw-rg -location "West US"
 
-O Azure Resource Manager requer que todos os grupos de recursos especifiquem uma localização, que é utilizada como a localização predefinida para os recursos nesse grupo de recursos. Verifique se todos os comandos para criar um gateway de aplicação irão utilizar o mesmo grupo de recursos.
+O Azure Resource Manager requer que todos os grupos de recursos especifiquem uma localização, que é utilizada como a localização predefinida para os recursos nesse grupo de recursos. Verifique se todos os comandos para criar um gateway de aplicação utilizam o mesmo grupo de recursos.
 
 No exemplo acima, criámos um grupo de recursos denominado “appgw-rg” e a localização “EUA Oeste”.
 
@@ -109,7 +109,7 @@ Esta ação cria uma rede virtual com o nome “appgwvnet” no grupo de recurso
 
 ### Passo 3
 
-    $subnet=$vnet.subnets[0]
+    $subnet = $vnet.subnets[0]
 
 Esta ação atribui o objeto de sub-rede à variável $subnet para os passos seguintes.
 
@@ -240,6 +240,6 @@ Se pretender obter mais informações sobre as opções de balanceamento de carg
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

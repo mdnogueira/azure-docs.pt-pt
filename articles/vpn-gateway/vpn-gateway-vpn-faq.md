@@ -42,7 +42,7 @@ São suportadas as seguintes ligações em vários locais:
 
 - [ExpressRoute](../expressroute/expressroute-introduction.md) – o ExpressRoute é uma ligação direta ao Azure a partir da sua WAN e não através da Internet pública. Veja a [Descrição Geral Técnica do ExpressRoute](../expressroute/expressroute-introduction.md) e as [FAQ do ExpressRoute](../expressroute/expressroute-faqs.md) para obter mais informações.
 
-Para obter mais informações sobre as ligações em vários locais, veja [Acerca da conetividade segura em vários locais](vpn-gateway-cross-premises-options.md).
+Para obter mais informações sobre ligações, veja [Diagramas de ligação do VPN Gateway](vpn-gateway-topology.md).
 
 ### Qual é a diferença entre uma ligação Site a Site e Ponto a Site?
 
@@ -51,8 +51,6 @@ As ligações **Site a Site** permitem estabelecer ligação entre qualquer um d
 As ligações **Ponto a Site** permitem ligar a partir de um único computador em qualquer lugar a qualquer destino localizado na sua rede virtual. Utiliza o cliente VPN fornecido pelo Windows. Como parte da configuração Ponto a Site, instale um certificado e um pacote de configuração do cliente VPN, que contém as definições que permitem que o computador estabeleça ligação a qualquer máquina virtual ou instância de função na rede virtual. É ótimo quando pretende estabelecer ligação a uma rede virtual, mas não está no local. Também é uma boa opção quando não tiver acesso ao hardware VPN ou a um endereço IPv4 com acesso exterior, que são necessários para uma ligação Site a Site. 
 
 Pode configurar a rede virtual para utilizar o Site a Site e o Ponto a Site em simultâneo, desde que crie a ligação Site a Site através de um tipo de VPN baseado na rota do seu gateway. Os tipos de VPN com base na rota são denominados gateways dinâmicos no modelo de implementação clássica.
-
-Para obter mais informações, veja [Acerca da conetividade segura em vários locais para redes virtuais](vpn-gateway-cross-premises-options.md).
 
 ### O que é o ExpressRoute?
 
@@ -285,6 +283,6 @@ Pode ver mais informações sobre o VPN Gateway na [página de documentação do
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

@@ -13,11 +13,14 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="compute"
-   ms.date="06/27/2016"
+   ms.date="08/15/2016"
    ms.author="guscatal;elizapo"/>
 
 
 # Obter a mesma experiência do Office 365 em qualquer dispositivo com o Azure RemoteApp
+
+> [AZURE.IMPORTANT]
+> O Azure RemoteApp está a ser descontinuado. Leia o [anúncio](https://go.microsoft.com/fwlink/?linkid=821148) para obter detalhes.
 
 Este artigo abordará como implementar o Office 365 em qualquer dispositivo na sua empresa. Os utilizadores podem obter as mesmas capacidades e experiência da IU no Android, Apple e Windows.
 
@@ -69,6 +72,6 @@ Ao clicar em qualquer uma destas, a aplicação deverá iniciar na máquina virt
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

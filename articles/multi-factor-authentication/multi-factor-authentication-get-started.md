@@ -4,7 +4,7 @@
     services="multi-factor-authentication" 
     documentationCenter="" 
     authors="billmath" 
-    manager="stevenpo" 
+    manager="femila" 
     editor="curtland"/>
 
 <tags 
@@ -13,19 +13,19 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="get-started-article" 
-    ms.date="05/12/2016" 
+    ms.date="08/15/2016" 
     ms.author="billmath"/>
 
 #Escolha a sua solução de segurança multifator
 
 Uma vez que existem vários tipos de Multi-Factor Authentication do Azure, é necessário determinar algumas ações para descobrir qual a versão mais adequada a utilizar.  Essas ações são:
 
--	<a href="#1">O que estou a tentar proteger</a>
--	<a href="#2">Onde estão localizados os utilizadores</a>
+-   [O que estou a tentar proteger](#what-am-i-trying-to-secure)
+-   [Onde estão localizados os utilizadores](#where-are-the-users-located)
 
 As secções seguintes irão fornecer orientação sobre como determinar cada uma destas ações.
 
-<h2 id="1">O que estou a tentar proteger</h2>
+## O que estou a tentar proteger?
 
 Para determinar a solução de autenticação multifator correta, primeiro é necessário responder à pergunta sobre o que está a tentar proteger com um segundo método de autenticação.  É uma aplicação que está no Azure?  Ou é um sistema de acesso remoto, por exemplo.  Ao determinar o que estamos a tentar proteger, respondemos à pergunta sobre onde a autenticação multifator tem de ser ativada.  
 
@@ -40,7 +40,7 @@ Acesso remoto, tais como VPN, RDG| |* |
 
 
 
-<h2 id="2">Onde estão localizados os utilizadores</h2>
+## Onde estão localizados os utilizadores
 
 Em seguida, consoante onde estão localizados os utilizadores, podemos determinar a solução correta a utilizar, se é autenticação multifator na nuvem ou no local utilizando o Servidor MFA.
 
@@ -91,6 +91,6 @@ Agora que determinámos se deve utilizar a autenticação multifator na nuvem ou
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

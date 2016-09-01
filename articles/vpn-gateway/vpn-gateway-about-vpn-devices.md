@@ -13,26 +13,26 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="07/28/2016"
+   ms.date="08/10/2016"
    ms.author="cherylmc" />
 
 # Acerca dos dispositivos de VPN para ligações de Gateway de Rede de VPNs
 
 Precisa de um dispositivo VPN para configurar uma ligação de rede de VPNs (S2S). As ligações Site a Site podem ser utilizadas para criar uma solução híbrida ou sempre que pretender uma ligação segura entre a rede no local e a rede virtual. Este artigo aborda os dispositivos VPN compatíveis e os parâmetros de configuração. Tenha em atenção que, quando configurar uma ligação Site a Site, precisa de um endereço de IPv4 destinado ao público para o dispositivo VPN.                                                                                                                                                                                
 
-Se o dispositivo não aparecer na tabela de Dispositivos VPN Validados, veja a secção Dispositivos VPN Não Validados deste artigo. É possível que o seu dispositivo funcione com o Azure. Para obter suporte para dispositivos VPN, contacte o fabricante do dispositivo.
+Se o dispositivo não aparecer na tabela de [Dispositivos VPN Validados](#devicetable), veja a secção [Dispositivos VPN Não Validados](#additionaldevices) deste artigo. É possível que o seu dispositivo funcione com o Azure. Para obter suporte para dispositivos VPN, contacte o fabricante do dispositivo.
 
 **Itens a ter em atenção quando visualizar as tabelas:**
 
 - A terminologia para o encaminhamento estático e dinâmico foi alterada. Encontrará provavelmente os dois termos. Não há nenhuma alteração de funcionalidade, só os nomes estão a mudar.
     - Encaminhamento Estático = Baseado em políticas
     - Encaminhamento Dinâmico = Baseado na rota 
-- As especificações para o gateway de VPN de Elevado Desempenho e para o gateway de VPN baseado na rota são as mesmas, salvo indicação em contrário. Por exemplo, os dispositivos VPN validados compatíveis com os gateways de VPN baseados na rota são também compatíveis com o novo gateway de VPN de Elevado Desempenho do Azure. 
+- As especificações para o gateway de VPN de Elevado Desempenho e para o gateway de VPN baseado na rota são as mesmas, salvo indicação em contrário. Por exemplo, os dispositivos VPN validados compatíveis com os gateways de VPN baseados na rota também são compatíveis com o gateway de VPN de Elevado Desempenho do Azure. 
 
 
-## Dispositivos VPN validados 
+## <a name="devicetable"></a>Dispositivos VPN validados 
 
-Validámos uma série de dispositivos VPN padrão em parceria com os fornecedores dos dispositivos. Todos os dispositivos nas famílias de dispositivos contidas na lista abaixo deverão funcionar com gateways de VPN do Azure. Veja o artigo [VPN gateways (Gateways de VPN)](vpn-gateway-about-vpngateways.md) para verificar o tipo de gateway que terá de criar para a solução que pretende configurar. 
+Validámos uma série de dispositivos VPN padrão em parceria com os fornecedores dos dispositivos. Todos os dispositivos nas famílias de dispositivos contidas na lista seguinte deverão funcionar com gateways de VPN do Azure. Veja o artigo [Acerca do VPN Gateway](vpn-gateway-about-vpngateways.md) para verificar o tipo de gateway que tem de criar para a solução que pretende configurar. 
 
 Para obter ajuda na configuração do seu dispositivo VPN, veja as ligações que correspondem à família de dispositivos adequada. 
 
@@ -48,7 +48,7 @@ Para obter ajuda na configuração do seu dispositivo VPN, veja as ligações qu
 | Cisco                           | ASA                                                      | 8.3                                                | [Exemplos da Cisco](https://github.com/Azure/Azure-vpn-config-samples/tree/master/Cisco/Current/ASA)                                                                                                                                                                        | Não compatível                                                                                                                                                                                               |
 | Cisco                           | ASR                                                      | IOS 15.1 (baseado em políticas), IOS 15.2 (baseado na rota)                | [Exemplos da Cisco](https://github.com/Azure/Azure-vpn-config-samples/tree/master/Cisco/Current/ASR)                                                                                                                                                                        | [Exemplos da Cisco](https://github.com/Azure/Azure-vpn-config-samples/tree/master/Cisco/Current/ASR)                                                                                                                                 |
 | Cisco                           | ISR                                                      | IOS 15.0 (baseado em políticas), IOS 15.1 (baseado na rota*)               | [Exemplos da Cisco](https://github.com/Azure/Azure-vpn-config-samples/tree/master/Cisco/Current/ISR)                                                                                                                                                                        | [Exemplos da Cisco*](https://github.com/Azure/Azure-vpn-config-samples/tree/master/Cisco/Current/ISR)                                                                                                                                |
-| Citrix                          | Aplicação CloudBridge MPX ou aplicação virtual VPX       | N/D                                                | [Instruções de integração](https://www.citrix.com/welcome.html?resource=%2Fdownloads%2Fcloudbridge%2Fbetas-and-tech-previews%2Fcloudbridge-azure-integration)                                                                                                                                                                            | Não compatível                                                                                                                                                                                               |
+| Citrix                          | NetScaler MPX, SDX, VPX      |10.1 e posterior                                           | [Instruções de integração](https://docs.citrix.com/en-us/netscaler/11-1/system/cloudbridge-connector-introduction/cloudbridge-connector-azure.html)                                                                                                                                                                            | Não compatível                                                                                                                                                                                               |
 | Dell SonicWALL                  | Série TZ, Série NSA, Série SuperMassive, Série NSA classe E | SonicOS 5.8.x, [SonicOS 5.9.x](http://documents.software.dell.com/sonicos/5.9/microsoft-azure-configuration-guide/supported-platforms?ParentProduct=850), [SonicOS 6. x](http://documents.software.dell.com/sonicos/6.2/microsoft-azure-configuration-guide/supported-platforms?ParentProduct=646 )          | [Instruções – SonicOS 6.2](http://documents.software.dell.com/sonicos/6.2/microsoft-azure-configuration-guide?ParentProduct=646) [instruções – SonicOS 5.9](http://documents.software.dell.com/sonicos/5.9/microsoft-azure-configuration-guide?ParentProduct=850)                                                                                                                                   | [Instruções – SonicOS 6.2](http://documents.software.dell.com/sonicos/6.2/microsoft-azure-configuration-guide?ParentProduct=646) [instruções – SonicOS 5.9](http://documents.software.dell.com/sonicos/5.9/microsoft-azure-configuration-guide?ParentProduct=850)                                                                                                                                                                                      |
 | F5                              | Série BIG-IP                                            | N/D                                                | [Instruções de configuração](https://devcentral.f5.com/articles/connecting-to-windows-azure-with-the-big-ip)                                                                                                                                                                          | Não compatível                                                                                                                                                                                               |
 | Fortinet                        | FortiGate                                                | FortiOS 5.2.7                                      | [Instruções de configuração](http://docs.fortinet.com/d/fortigate-configuring-ipsec-vpn-between-a-fortigate-and-microsoft-azure)                                                                                                                                                                          | [Instruções de configuração](http://docs.fortinet.com/d/fortigate-configuring-ipsec-vpn-between-a-fortigate-and-microsoft-azure)                                                                                                                                  |
@@ -65,7 +65,7 @@ Para obter ajuda na configuração do seu dispositivo VPN, veja as ligações qu
 
 (*) Os routers da série ISR 7200 só suportam VPNs baseadas em políticas.
 
-## Dispositivos VPN não validados
+## <a name="additionaldevices"></a>Dispositivos VPN não validados
 
 Se não vir o seu dispositivo listado na tabela de Dispositivos VPN Validados (acima), poderá, mesmo assim, funcionar com uma ligação Site a Site. Verifique se o seu dispositivo VPN cumpre os requisitos mínimos descritos na secção Requisitos de Gateway do artigo [Acerca dos Gateways de VPN](vpn-gateway-about-vpngateways.md#gateway-requirements). Os dispositivos que cumprem os requisitos mínimos devem também funcionar bem com os gateways de VPN. Contacte o fabricante do dispositivo para obter instruções adicionais de suporte e de configuração.
 
@@ -97,7 +97,7 @@ Depois de transferir o exemplo de configuração do dispositivo VPN fornecido, t
 
 ## Parâmetros IPsec
 
->[AZURE.NOTE] Apesar de os valores apresentados abaixo serem suportados pelo VPN Gateway do Azure, não há atualmente um modo de especificar ou de selecionar uma combinação específica no VPN Gateway do Azure. Tem de especificar as eventuais restrições no dispositivo VPN no local. Além disso, tem de fixar MSS em 1350.
+>[AZURE.NOTE] Apesar de os valores apresentados na tabela seguinte serem suportados pelo VPN Gateway do Azure, não há atualmente um modo de especificar ou de selecionar uma combinação específica no VPN Gateway do Azure. Tem de especificar as eventuais restrições no dispositivo VPN no local. Além disso, tem de fixar MSS em 1350.
 
 ### Configuração da Fase 1 do IKE
 
@@ -125,7 +125,7 @@ Depois de transferir o exemplo de configuração do dispositivo VPN fornecido, t
 
 ### Ofertas de Associação de Segurança (SA) de IPsec do Gateway Baseado na Rota
 
-A tabela abaixo apresenta uma lista de Ofertas de Encriptação e Autenticação de SA de IPsec. As ofertas estão listadas pela ordem de preferência com que a oferta é apresentada ou aceite.
+A tabela seguinte apresenta uma lista de Ofertas de Encriptação e Autenticação de SA de IPsec. As ofertas estão listadas pela ordem de preferência com que a oferta é apresentada ou aceite.
 
 | **Ofertas de Encriptação e Autenticação de SA de IPsec** | **Gateway do Azure como iniciador**                               | **Gateway do Azure como dispositivo de resposta**                                   |
 |---------------------------------------------------|--------------------------------------------------------------|--------------------------------------------------------------|
@@ -160,6 +160,6 @@ A tabela abaixo apresenta uma lista de Ofertas de Encriptação e Autenticação
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

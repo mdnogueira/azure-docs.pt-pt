@@ -12,15 +12,12 @@
     ms.tgt_pltfrm="ibiza"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="06/21/2016"
+    ms.date="08/10/2016"
     ms.author="awills"/>
 
 # Monitorizar a disponibilidade e a capacidade de resposta de qualquer site
 
-
-[AZURE.INCLUDE [app-insights-selector-get-started-dotnet](../../includes/app-insights-selector-get-started-dotnet.md)]
-
-Depois de implementar a aplicação Web, pode configurar testes Web para monitorizar a sua disponibilidade e capacidade de resposta. O Application Insights enviará regularmente pedidos Web a partir de pontos em todo o mundo, e poderá alertá-lo se a sua aplicação deixar de responder ou se responder lentamente.
+Depois de implementar a aplicação Web em qualquer anfitrião, pode configurar testes Web para monitorizar a sua disponibilidade e capacidade de resposta. O [Visual Studio Application Insights](app-insights-overview.md) envia regularmente pedidos Web a partir de pontos em todo o mundo, e poderá alertá-lo se a sua aplicação deixar de responder ou se responder lentamente.
 
 ![Exemplo de teste Web](./media/app-insights-monitor-web-app-availability/appinsights-10webtestresult.png)
 
@@ -40,7 +37,7 @@ Pode criar até dez testes por recurso de aplicação.
 
 Ignore este passo se já tiver [configurado um recurso do Application Insights][start] para esta aplicação e se pretende ver os dados de disponibilidade no mesmo local.
 
-Inicie sessão no [Microsoft Azure](http://azure.com), aceda ao [Portal do Azure](https://portal.azure.com) e crie um novo recurso do Application Insights.
+Inicie sessão no [Microsoft Azure](http://azure.com), aceda ao [portal do Azure](https://portal.azure.com) e crie um recurso do Application Insights.
 
 ![Novo > Application Insights](./media/app-insights-monitor-web-app-availability/11-new-app.png)
 
@@ -53,18 +50,18 @@ No recurso do Application Insights, procure o mosaico Disponibilidade. Clique no
 ![Indique, pelo menos, o URL do seu site](./media/app-insights-monitor-web-app-availability/13-availability.png)
 
 - O **URL** tem de estar visível na Internet pública. Pode incluir uma cadeia de consulta (assim, pode, por exemplo, testar um pouco a base de dados). Se o URL remeter para um redirecionamento, iremos segui-lo até dez redirecionamentos.
-- **Analisar pedidos dependentes**: imagens, scripts, ficheiros de estilo e outros recursos da página são pedidos como parte do teste. O teste falhará se todos estes recursos não puderem ser transferidos com êxito no tempo limite para a realização do teste completo.
+- **Analisar pedidos dependentes**: imagens, scripts, ficheiros de estilo e outros recursos da página são pedidos como parte do teste. O teste falha se todos estes recursos não puderem ser transferidos com êxito no tempo limite para a realização do teste completo.
 - **Permitir repetição de tentativas**: quando o teste falhar, será feita uma nova tentativa após um curto intervalo. Uma falha só é comunicada após três tentativas falhadas sucessivas. Os testes subsequentes são realizados à frequência habitual de teste. A repetição encontra-se temporariamente suspensa até ao próximo êxito. Esta regra é aplicada de forma independente em cada localização de teste. (Recomendamos esta definição. Em média, cerca de 80% das falhas desaparecem aquando da repetição.)
-- **Frequência de teste**: define a frequência de execução do teste em cada localização de teste. Com uma frequência de cinco minutos e cinco localizações de teste, o site será testado, em média, a cada minuto.
+- **Frequência de teste**: define a frequência de execução do teste em cada localização de teste. Com uma frequência de cinco minutos e cinco localizações de teste, o site é testado, em média, a cada minuto.
 - As **Localizações de teste** são os locais a partir de onde os nossos servidores enviam pedidos Web ao seu URL. Escolha mais do que uma localização para poder diferenciar os problemas no site dos problemas de rede. Pode selecionar até 16 localizações.
 
 - **Critérios de êxito**:
 
-    **Tempo limite de teste**: reduza o tempo limite para ser alertado de repostas lentas. O teste será contabilizado como uma falha se as respostas do seu site não foram recebidas durante este período. Se tiver selecionado **Pedidos dependentes de análise**, todas as imagens, ficheiros de estilos, scripts e outros recursos dependentes terão de ser recebidos durante este período.
+    **Tempo limite de teste**: reduza este valor para ser alertado de repostas lentas. O teste será contabilizado como uma falha se as respostas do seu site não foram recebidas durante este período. Se tiver selecionado **Pedidos dependentes de análise**, todas as imagens, ficheiros de estilos, scripts e outros recursos dependentes terão de ser recebidos durante este período.
 
     **Resposta HTTP**: o código de estado devolvido é contabilizado como um êxito. 200 é o código que indica que foi devolvida uma página Web normal.
 
-    **Correspondência do conteúdo**: uma cadeia, como “Bem-vindo!” Iremos testar para que ocorra em cada resposta. Tem de ser uma cadeia simples, sem carateres universais. Não se esqueça de que se alterar o conteúdo da página, poderá ter de a atualizar.
+    **Correspondência do conteúdo**: uma cadeia, como “Bem-vindo!” Testamos para que ocorra em cada resposta. Tem de ser uma cadeia simples, sem carateres universais. Não se esqueça de que se alterar o conteúdo da página, poderá ter de a atualizar.
 
 
 - Por predefinição, são-lhe enviados **Alertas** em caso de falhas nas três localizações durante mais de cinco minutos. É provável que uma falha numa localização esteja relacionada com um problema de rede e não com um problema do seu site. Contudo, pode alterar o limiar para ser mais ou menos sensível, sendo que também pode alterar os destinatários dos e-mails.
@@ -82,13 +79,13 @@ Depois de 1-2 minutos, clique em **Atualizar** no painel de testes de disponibil
 
 ![Resultados do resumo no painel principal](./media/app-insights-monitor-web-app-availability/14-availSummary.png)
 
-Clique em qualquer barra na parte superior do gráfico de resumo para obter uma vista mais detalhada desse período de tempo.
+Clique em qualquer barra no gráfico de resumo para obter uma vista mais detalhada desse período de tempo.
 
 Estes gráficos reúnem os resultados de todos os testes Web desta aplicação.
 
 #### Componentes da página Web
 
-Imagens, folhas de estilo, scripts e outros componentes estáticos da página Web que está a testar são solicitados como parte do teste.  
+As imagens, folhas de estilo, scripts e outros componentes estáticos da página Web que está a testar são solicitados como parte do teste.  
 
 O tempo de resposta registado é o tempo de carregamento necessário de todos os componentes.
 
@@ -104,7 +101,7 @@ Ou, desloque-se para baixo e clique num teste se a taxa de êxito for inferior a
 
 ![Clicar num teste Web específico](./media/app-insights-monitor-web-app-availability/15-webTestList.png)
 
-Esta ação mostra os resultados desse teste.
+Os resultados desse teste são apresentados.
 
 ![Clicar num teste Web específico](./media/app-insights-monitor-web-app-availability/16-1test.png)
 
@@ -123,7 +120,7 @@ Clique no resultado para avaliá-lo no portal e ver o motivo da sua falha.
 Em alternativa, pode transferir o ficheiro de resultado e analisá-lo no Visual Studio.
 
 
-*Os resultados parecem estar OK mas foi reportada uma falha?* Verifique todas as imagens, scripts, folhas de estilo e outros ficheiros carregados pela página. Se qualquer um deles falhar, o teste será reportado como falhado, mesmo se a página principal HTML carregar corretamente.
+*Os resultados parecem estar OK mas foi reportada uma falha?* Verifique todas as imagens, scripts, folhas de estilo e outros ficheiros carregados pela página. Se qualquer um deles falhar, o teste é reportado como falhado, mesmo se a página principal HTML carregar corretamente.
 
 
 
@@ -131,7 +128,7 @@ Em alternativa, pode transferir o ficheiro de resultado e analisá-lo no Visual 
 
 Pode monitorizar um cenário que envolva uma sequência de URLs. Por exemplo, se estiver a monitorizar um site de vendas, pode testar se a adição de artigos no carrinho de compras funciona corretamente.
 
-Para criar um teste com vários passos, registe o cenário com o Visual Studio e, em seguida, carregue o registo no Application Insights. O Application Insights irá reproduzir o cenário de tempos a tempos e verificar as respostas.
+Para criar um teste com vários passos, registe o cenário com o Visual Studio e, em seguida, carregue o registo no Application Insights. O Application Insights reproduz o cenário de tempos a tempos e verifica as respostas.
 
 Tenha em atenção que não pode utilizar funções codificadas nos testes: os passos do cenário devem ser contidos como um script no ficheiro .webtest.
 
@@ -141,7 +138,7 @@ Utilize o Visual Studio Enterprise ou o Ultimate para guardar uma sessão Web.
 
 1. Crie um projeto de teste de desempenho da Web.
 
-    ![No Visual Studio, crie um novo projeto a partir do modelo Desempenho da Web e Carregar Teste.](./media/app-insights-monitor-web-app-availability/appinsights-71webtest-multi-vs-create.png)
+    ![No Visual Studio, crie um projeto a partir do modelo Desempenho da Web e Carregar Teste.](./media/app-insights-monitor-web-app-availability/appinsights-71webtest-multi-vs-create.png)
 
 2. Abra o ficheiro .webtest e comece a gravar.
 
@@ -195,13 +192,13 @@ Suponhamos que está a testar uma ferramenta que obtém dados dependentes da hor
 
 Quando executa o teste, gostaria que a EndTime fosse sempre a hora atual e a StartTime a hora de há 15 minutos.
 
-É o que lhe permitem fazer os Plug-ins de Teste Web.
+Os Plug-ins de Teste Web permitem-lhe parametrizar tempos.
 
 1. Adicione um plug-in de teste Web para cada valor variável de parâmetro que pretende. Na barra de ferramentas do teste Web, selecione **Adicionar Plug-in de Teste Web**.
 
     ![Escolher Adicionar Plug-in de Teste Web e selecionar um tipo.](./media/app-insights-monitor-web-app-availability/appinsights-72webtest-plugins.png)
 
-    Neste exemplo, utilizaremos duas instâncias do Plug-in Data/Hora. Uma instância para “há 15 minutos” e outra para “agora”.
+    Neste exemplo, utilizamos duas instâncias do Plug-in Data/Hora. Uma instância para “há 15 minutos” e outra para “agora”.
 
 2. Abra as propriedades de cada plug-in. Atribua um nome e defina-o para utilizar a hora atual. Para uma das propriedades, defina Adicionar Minutos = -15.
 
@@ -211,24 +208,48 @@ Quando executa o teste, gostaria que a EndTime fosse sempre a hora atual e a Sta
 
     ![No parâmetro de teste, utilize {{nome do plug-in}}.](./media/app-insights-monitor-web-app-availability/appinsights-72webtest-plugin-name.png)
 
-Agora, carregue o teste no portal. Os valores dinâmicos passarão a ser utilizados sempre que o teste for executado.
+Agora, carregue o teste no portal. Os valores dinâmicos são utilizados sempre que o teste for executado.
 
 ## Lidar com início de sessão
 
-Se os seus utilizadores iniciarem sessão na sua aplicação, terá um certo número de opções para simular o início de sessão, de modo a poder testar páginas depois do início de sessão. A abordagem que utiliza depende do tipo de segurança fornecida pela aplicação.
+Se os seus utilizadores iniciarem sessão na sua aplicação, terá várias opções para simular o início de sessão, de modo a poder testar páginas depois do início de sessão. A abordagem que utiliza depende do tipo de segurança fornecida pela aplicação.
 
-Em todos os casos, deve criar uma conta apenas para efeitos de teste. Se possível, restrinja as respetivas permissões para que seja só de leitura.
+Em todos os casos, deve criar uma conta na sua aplicação apenas para efeitos de teste. Se possível, restrinja as permissões da conta neste teste, para que não haja nenhuma possibilidade de os testes Web afetarem os utilizadores reais.
 
-* Nome de utilizador e palavra-passe simples: grave um teste Web como habitualmente. Elimine primeiro os cookies.
-* Autenticação SAML. Para tal, pode utilizar o plug-in SAML disponível para testes Web.
-* Segredo do cliente: se a sua aplicação tiver uma rota de início de sessão que envolva um segredo do cliente, utilize-a. O Azure Active Directory fornece a referida rota. 
-* Autenticação Aberta – por exemplo, iniciar sessão com a conta Microsoft ou Google. Muitas aplicações que utilizam a OAuth fornecem uma alternativa ao segredo do cliente. Por isso, a primeira tática consiste em investigar isso. Se o teste tiver de iniciar sessão com a OAuth, a abordagem geral será:
+### Nome de utilizador e palavra-passe simples
+
+Grave um teste Web como habitualmente. Elimine primeiro os cookies.
+
+### Autenticação SAML
+
+Utilize o plug-in SAML disponível para testes Web.
+
+### Segredo do cliente
+
+Se a sua aplicação tiver uma rota de início de sessão que envolva um segredo do cliente, utilize-a. O Azure Active Directory (AAD) é um exemplo de um serviço que fornece um início de sessão com segredo do cliente. No AAD, o segredo do cliente é a Chave da Aplicação. 
+
+Eis um exemplo de teste Web de uma aplicação Web do Azure com uma chave de aplicação:
+
+![Exemplo de segredo do cliente](./media/app-insights-monitor-web-app-availability/110.png)
+
+1. Obtenha o token do AAD utilizando o segredo do cliente (AppKey).
+2. Extraia o token de portador a partir da resposta.
+3. Chame a API com o token de portador no cabeçalho de autorização.
+
+Certifique-se de que o teste Web é um cliente real: ou seja, tem a sua própria aplicação no AAD - e utilize o clientId + appkey. O serviço em teste tem também a sua própria aplicação no AAD: o URI appID desta aplicação é refletido no teste Web no campo “recurso”. 
+
+### Autenticação Aberta
+
+Um exemplo de Autenticação Aberta é iniciar sessão com a conta Microsoft ou Google. Muitas aplicações que utilizam a OAuth fornecem uma alternativa ao segredo do cliente. Por isso, a primeira tática deve ser investigar essa possibilidade. 
+
+Se o teste tiver de iniciar sessão com a OAuth, a abordagem geral será:
+
  * Utilizar uma ferramenta como o Fiddler para examinar o tráfego entre o browser, o site de autenticação e a aplicação. 
  * Iniciar duas sessões ou mais com computadores ou browsers diferentes ou com longos intervalos (para permitir a expiração dos tokens).
  * Ao comparar as diversas sessões, identificar o token devolvido pelo site de autenticação, que é de seguida transmitido ao servidor da aplicação depois do início de sessão. 
  * Gravar um teste Web com o Visual Studio. 
  * Parametrizar os tokens definindo o parâmetro quando o token é devolvido do autenticador e utilizando-o na consulta do site.
- (O Visual Studio tentará parametrizar o teste, mas não irá parametrizar corretamente os tokens).
+ (O Visual Studio tenta parametrizar o teste, mas não parametriza corretamente os tokens.)
 
 
 ## <a name="edit"></a> Editar ou desativar um teste
@@ -245,7 +266,7 @@ Pode executar um teste de carga no seu Website. Como o teste de disponibilidade,
 
 No painel Descrição geral, abra **Definições**, **Testes de desempenho**. Quando cria um teste, recebe um convite para ligar ou criar uma conta dos Serviços da Equipa do Visual Studio. 
 
-Quando o teste estiver concluído, serão apresentados tempos de resposta e taxas de êxito.
+Quando o teste estiver concluído, são-lhe apresentados tempos de resposta e taxas de êxito.
 
 
 ## Automatização
@@ -257,11 +278,11 @@ Quando o teste estiver concluído, serão apresentados tempos de resposta e taxa
 
 * *Posso chamar um código a partir do meu teste Web?*
 
-    Não. Os passos do teste devem estar no ficheiro .webtest. E não pode chamar outros testes Web nem utilizar ciclos. No entanto, existe uma série de plug-ins que poderão ser úteis.
+    Não. Os passos do teste devem estar no ficheiro .webtest. E não pode chamar outros testes Web nem utilizar ciclos. No entanto, existem vários plug-ins que poderão ser úteis.
 
 * *Suporta HTTPS?*
 
-    Suportamos atualmente o SSL 3.0 e o TLS 1.0.
+    Suportamos TLS 1.1 e TLS 1.2.
 
 * *Existe uma diferença entre “testes Web” e “testes de disponibilidade”?*
 
@@ -286,7 +307,7 @@ Quando o teste estiver concluído, serão apresentados tempos de resposta e taxa
 
     Existe um limite de 100 pedidos por teste.
 
-    O teste será interrompido se for executado durante mais de dois minutos.
+    O teste é interrompido se for executado durante mais de dois minutos.
 
 * *Como executar um teste com certificados de cliente?*
 
@@ -315,6 +336,6 @@ Quando o teste estiver concluído, serão apresentados tempos de resposta e taxa
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

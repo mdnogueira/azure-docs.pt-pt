@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="05/16/2016"
+    ms.date="08/15/2016"
     ms.author="mandia"/>
 
 
@@ -32,7 +32,7 @@ Pode criar e gerir Ligações Híbridas. Uma Ligação Híbrida permite ligar fa
 
 Inclui Ligações Híbridas, processamento de mensagens EAI e EDI com um portal de gestão de parceiro comercial de utilização fácil e suporte para esquemas EDI comuns e processamentos EDI através de X12 e AS2. Pode criar cenários comuns de EAI, ligando serviços em nuvem a qualquer protocolo HTTP/S, REST, FTP, WCF e SFTP para ler e escrever mensagens.  Utilize a conectividade com os sistemas LOB no local com adaptadores SAP, Oracle eBusiness, Oracle DB, Siebel e SQL Server prontos a utilizar. Utilize um ambiente centrado no programador com as ferramentas do Visual Studio para desenvolvimento e implementação fáceis. Limitado apenas a fins de desenvolvimento e teste sem nenhum Contrato de Nível de Serviço (SLA).
 
-**Básica**
+**Básico**
 
 Inclui grande parte das capacidades da edição Programador com incrementos nas Ligações Híbridas, nas Pontes EAI, nos Contratos EDI e nas ligações do BizTalk Adapter Pack. Também oferece uma elevada disponibilidade e a opção de dimensionamento com um Contrato de Nível de Serviço (SLA).
 
@@ -88,7 +88,7 @@ A tabela que se segue lista as diferenças.
 </tr>
 <tr>
 <td><strong>Pontes EAI por unidade</strong></td>
-<td>Não incluídas</td>
+<td>Não incluída</td>
 <td>25</td>
 <td>25</td>
 <td>125</td>
@@ -142,10 +142,10 @@ Inclui contratos TPM</td>
 </ul>
 </td>
 <td>Não incluídos</td>
-<td>Incluídos</td>
-<td>Incluídos</td>
-<td>Incluídos</td>
-<td>Incluídos</td>
+<td>Incluído</td>
+<td>Incluído</td>
+<td>Incluído</td>
+<td>Incluído</td>
 </tr>
 <tr>
 <td><strong>Elevada disponibilidade</strong>
@@ -154,21 +154,21 @@ Para o Contrato de Nível de Serviço (SLA), veja <a HREF="http://go.microsoft.c
 </td>
 <td>Não incluída</td>
 <td>Não incluída</td>
-<td>Incluída</td>
-<td>Incluída</td>
-<td>Incluída</td>
+<td>Incluído</td>
+<td>Incluído</td>
+<td>Incluído</td>
 </tr>
 <tr>
 <td><strong>Cópia de segurança e restauro</strong></td>
-<td>Não incluídos</td>
-<td>Incluídos</td>
-<td>Incluídos</td>
-<td>Incluídos</td>
+<td>Não incluída</td>
+<td>Incluído</td>
+<td>Incluído</td>
+<td>Incluído</td>
 <td>Incluídos</td>
 </tr>
 <tr>
 <td><strong>Controlo</strong></td>
-<td>Não incluído</td>
+<td>Não incluída</td>
 <td>Incluído</td>
 <td>Incluído</td>
 <td>Incluído</td>
@@ -177,7 +177,7 @@ Para o Contrato de Nível de Serviço (SLA), veja <a HREF="http://go.microsoft.c
 <tr>
 <td><strong>Arquivo</strong><br/><br/>
 Inclui a Não Rejeição de Receção (NRR) e a transferência de mensagens controladas</td>
-<td>Não incluído</td>
+<td>Não incluída</td>
 <td>Incluído</td>
 <td>Não Incluído</td>
 <td>Não Incluído</td>
@@ -186,18 +186,18 @@ Inclui a Não Rejeição de Receção (NRR) e a transferência de mensagens cont
 <tr>
 <td><strong>Utilização de código personalizado</strong></td>
 <td>Não incluída</td>
-<td>Incluída</td>
-<td>Incluída</td>
-<td>Incluída</td>
+<td>Incluído</td>
+<td>Incluído</td>
+<td>Incluído</td>
 <td>Incluída</td>
 </tr>
 <tr>
 <td><strong>Utilização de transformações, incluindo XSLT personalizado</strong></td>
 <td>Não incluída</td>
-<td>Incluída</td>
-<td>Incluída</td>
-<td>Incluída</td>
-<td>Incluída</td>
+<td>Incluído</td>
+<td>Incluído</td>
+<td>Incluído</td>
+<td>Incluído</td>
 </tr>
 </table>
 
@@ -261,6 +261,6 @@ Para criar os BizTalk Services do Azure no Portal do Azure, veja [BizTalk Servic
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

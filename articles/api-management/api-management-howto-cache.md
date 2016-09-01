@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="05/25/2016"
+    ms.date="08/09/2016"
     ms.author="sdanie"/>
 
 # Adicionar a colocação em cache para melhorar o desempenho na API Management do Azure
@@ -165,6 +165,6 @@ Tenha em atenção que o valor de **sampleheader** na resposta é agora **value2
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

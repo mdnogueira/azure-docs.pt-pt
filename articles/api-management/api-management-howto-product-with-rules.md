@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="05/25/2016"
+    ms.date="08/09/2016"
     ms.author="sdanie"/>
 
 # Proteger a sua API com limites de taxa utilizando a API Management do Azure
@@ -296,6 +296,6 @@ Quando a política de limite de taxa de 10 chamadas por minuto estiver em vigor,
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

@@ -32,7 +32,7 @@ A tabela seguinte apresenta uma lista de todos os conectores e API Apps disponí
 Nome | Descrição
 --- | ---
 [Service Bus do Azure](app-service-logic-connector-azureservicebus.md) | Pode enviar mensagens de Filas e Tópicos do Service Bus e receber mensagens de Filas e Subscrições do Service Bus.
-[Bing Translator](https://azure.microsoft.com/marketplace/partners/microsoft_com/bingtranslator) | Utilize o Bing para traduzir texto para outro idioma.
+[Bing Translator](https://azure.microsoft.com/marketplace/partners/bing/microsofttranslator/) | Utilize o Bing para traduzir texto para outro idioma.
 [HTTP](app-service-logic-connector-http.md) | O Serviço de Escuta de HTTP abre um ponto final que age como um servidor HTTP e escuta pedidos HTTP ou HTTPS recebidos. A ação de HTTP não necessita de uma Aplicação API e é suportada nativamente em Logic Apps.
 [Microsoft Office 365](app-service-logic-connector-office365.md) | O conector do Office 365 pode enviar e receber e-mails, gerir o seu calendário e gerir os seus contactos com a sua conta do Office 365.
 [QuickBooks](app-service-logic-connector-quickbooks.md) | Pode concluir tarefas diferentes, incluindo a criação, atualização e consulta de entidades diferentes a partir do Intuit QuickBooks como os clientes, faturas, itens e assim sucessivamente.
@@ -86,6 +86,6 @@ Os conectores também podem ser utilizados como ações na sua Aplicação Lógi
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

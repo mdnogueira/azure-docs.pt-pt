@@ -3,7 +3,7 @@
    description="Esta página fornece instruções para criar, configurar, iniciar e eliminar um gateway de aplicação do Azure com o Azure Resource Manager"
    documentationCenter="na"
    services="application-gateway"
-   authors="joaoma"
+   authors="georgewallace"
    manager="carmonm"
    editor="tysonn"/>
 <tags
@@ -12,8 +12,8 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="04/05/2016"
-   ms.author="joaoma"/>
+   ms.date="08/09/2016"
+   ms.author="gwallace"/>
 
 
 # Criar, iniciar ou eliminar um gateway de aplicação com o Azure Resource Manager
@@ -22,9 +22,10 @@ O Application Gateway do Azure é um balanceador de carga de 7 camadas. Fornece 
 
 
 > [AZURE.SELECTOR]
-- [Passos do Azure Classic PowerShell](application-gateway-create-gateway.md)
+- [Portal do Azure](application-gateway-create-gateway-portal.md)
 - [Azure Resource Manager PowerShell](application-gateway-create-gateway-arm.md)
-- [Modelo Azure Resource Manager ](application-gateway-create-gateway-arm-template.md)
+- [Azure Classic PowerShell](application-gateway-create-gateway.md)
+- [Modelo Azure Resource Manager](application-gateway-create-gateway-arm-template.md)
 
 
 <BR>
@@ -40,7 +41,7 @@ Este artigo descreve os passos para criar, configurar, iniciar e eliminar um gat
 ## Antes de começar
 
 1. Instale a versão mais recente dos cmdlets Azure PowerShell com o Instalador de Plataforma Web. Pode transferir e instalar a versão mais recente a partir da secção **Windows PowerShell** da página [Transferências](https://azure.microsoft.com/downloads/).
-2. Se tiver uma rede virtual existente, selecione uma subrede vazia existente ou crie uma nova subrede na sua rede virtual existente apenas para utilização pelo gateway de aplicação. Não é possível implementar o gateway de aplicação a uma rede virtual diferente dos recursos que pretende implementar por trás do gateway de aplicação. 
+2. Se tiver uma rede virtual existente, selecione uma subrede vazia existente ou crie uma subrede na sua rede virtual existente apenas para utilização pelo gateway de aplicação. Não é possível implementar o gateway de aplicação a uma rede virtual diferente dos recursos que pretende implementar por trás do gateway de aplicação. 
 3. Os servidores que irá configurar para utilizar o gateway de aplicação devem existir. Caso contrário, os respetivos pontos finais terão de ser criados na rede virtual ou com um IP/VIP público atribuído.
 
 ## O que é necessário para criar um gateway de aplicação?
@@ -54,7 +55,7 @@ Este artigo descreve os passos para criar, configurar, iniciar e eliminar um gat
 
 
 
-## Criar um novo gateway de aplicação
+## Criar um gateway de aplicação
 
 A diferença entre a utilização do Azure Clássico e do Azure Resource Manager é a ordem pela qual vai criar o gateway de aplicação e os itens que devem ser configurados.
 
@@ -76,7 +77,7 @@ Verifique se está a utilizar a versão mais recente do Azure PowerShell. Para o
 ### Passo 1
 Inicie sessão no Azure Login-AzureRmAccount
 
-Ser-lhe-á solicitado a autenticação com as suas credenciais.<BR>
+Ser-lhe-á solicitado para autenticar com as suas credenciais.<BR>
 ### Passo 2
 Verifique as subscrições da conta.
 
@@ -92,7 +93,7 @@ Crie um grupo de recursos (ignore este passo se estiver a utilizar um grupo de r
 
     New-AzureRmResourceGroup -Name appgw-rg -location "West US"
 
-O Azure Resource Manager requer que todos os grupos de recursos especifiquem uma localização, que é utilizada como a localização predefinida para os recursos nesse grupo de recursos. Verifique se todos os comandos para criar um gateway de aplicação irão utilizar o mesmo grupo de recursos.
+O Azure Resource Manager requer que todos os grupos de recursos especifiquem uma localização, que é utilizada como a localização predefinida para os recursos nesse grupo de recursos. Verifique se todos os comandos para criar um gateway de aplicação utilizam o mesmo grupo de recursos.
 
 No exemplo acima, criámos um grupo de recursos denominado “appgw-RG” e a localização “EUA Oeste”.
 
@@ -137,7 +138,7 @@ Tem de configurar todos os itens de configuração antes de criar o gateway de a
 
 ### Passo 1
 
-Crie uma configuração de IP do gateway de aplicação com o nome “gatewayIP01”. Ao iniciar, o Application Gateway escolhe um endereço IP na sub-rede configurada e encaminha o tráfego da rede para os endereços IP no conjunto de IPs de front-end. Note que cada instância terá um endereço IP.
+Crie uma configuração de IP do gateway de aplicação com o nome “gatewayIP01”. Ao iniciar, o Application Gateway escolhe um endereço IP na subrede configurada e encaminha o tráfego da rede para os endereços IP no conjunto de IPs de back-end. Note que cada instância terá um endereço IP.
 
 
     $gipconfig = New-AzureRmApplicationGatewayIPConfiguration -Name gatewayIP01 -Subnet $subnet
@@ -198,7 +199,7 @@ Crie um gateway de aplicação com todos os itens de configuração indicados no
     $appgw = New-AzureRmApplicationGateway -Name appgwtest -ResourceGroupName appgw-rg -Location "West US" -BackendAddressPools $pool -BackendHttpSettingsCollection $poolSetting -FrontendIpConfigurations $fipconfig  -GatewayIpConfigurations $gipconfig -FrontendPorts $fp -HttpListeners $listener -RequestRoutingRules $rule -Sku $sku
 
 ### Passo 9
-Obter os detalhes de DNS e VIP do gatway da aplicação do recurso de IP público anexado ao gateway de aplicação.
+Obter os detalhes de DNS e VIP do gateway da aplicação do recurso de IP público anexado ao gateway de aplicação.
 
     Get-AzureRmPublicIpAddress -Name publicIP01 -ResourceGroupName appgw-rg  
 
@@ -272,6 +273,6 @@ Se pretender obter mais informações sobre as opções de balanceamento de carg
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

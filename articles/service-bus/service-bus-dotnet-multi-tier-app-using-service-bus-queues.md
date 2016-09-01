@@ -73,45 +73,11 @@ Antes de poder começar a desenvolver aplicações do Azure, obtenha as ferramen
 
 6.  Após a conclusão da instalação, terá tudo o que é necessário para começar a desenvolver a aplicação. O SDK inclui ferramentas que permitem desenvolver facilmente aplicações do Azure no Visual Studio. Caso não tenha o Visual Studio instalado, o SDK também instala o Visual Studio Express gratuito.
 
-## Criar um espaço de nomes do Service Bus
+## Criar um espaço de nomes
 
-O passo seguinte consiste em criar um espaço de nomes de serviço e obter uma chave de Assinatura de Acesso Partilhado (SAS). Um espaço de nomes proporciona um limite de aplicação para cada aplicação exposta através do Service Bus. O sistema gera uma chave SAS quando se cria um espaço de nomes de serviço. A combinação do espaço de nomes e da chave SAS fornece as credenciais do Service Bus para autenticar o acesso a uma aplicação.
+O passo seguinte consiste em criar um espaço de nomes de serviço e obter uma chave de Assinatura de Acesso Partilhado (SAS). Um espaço de nomes fornece um limite de aplicação para cada aplicação exposta através do Service Bus. O sistema gera uma chave SAS quando um espaço de nomes é criado. A combinação do espaço de nomes e da chave SAS fornece as credenciais do Service Bus para autenticar o acesso a uma aplicação.
 
-### Configurar o espaço de nomes através do  Portal Clássico do Azure
-
-1.  Inicie sessão no [Portal Clássico do Azure][].
-
-2.  No painel de navegação esquerdo do portal, clique em **Service Bus**.
-
-3.  No painel inferior do portal, clique em **Criar**.
-
-    ![][6]
-
-4.  Na página **Adicionar um novo espaço de nomes**, introduza um nome do espaço de nomes. O sistema verifica imediatamente a disponibilidade do nome.
-
-    ![][7]
-
-5.  Após verificar se o nome do espaço de nomes está disponível, escolha o país ou a região onde será alojado o espaço de nomes (certifique-se de que utiliza o mesmo país/região onde está a implementar os recursos de computação). Além disso, certifique-se de que seleciona **Mensagens** no campo **Tipo** do espaço de nomes e **Padrão** no campo **Camada de Mensagens**.
-
-    > [AZURE.IMPORTANT] Escolha a **mesma região** que pretende para a implementação da aplicação. Tal proporcionará o melhor desempenho.
-
-6.  Clique na marca de verificação OK. O sistema cria agora o espaço de nomes de serviço e ativa o mesmo. Poderá ter de aguardar alguns minutos enquanto o sistema aprovisiona recursos para a sua conta.
-
-7.  Na janela principal, clique no nome do espaço de nomes de serviço.
-
-8. Clique em **Informações de Ligação**.
-
-9.  No painel **Aceder às informações de ligação**, localize a cadeia de ligação com a chave SAS e o nome da chave.
-
-    ![][35]
-
-10.  Tome nota destas credenciais ou copie-as para a área de transferência.
-
-11. Na mesma página do portal, clique no separador **Configurar** na parte superior da página.
-
-12. Copie a chave primária para a política **RootManageSharedAccessKey** para a área de transferência ou cole-a no Bloco de Notas. Utilizará este valor mais adiante neste tutorial.
-
-    ![][36]
+[AZURE.INCLUDE [service-bus-create-namespace-portal](../../includes/service-bus-create-namespace-portal.md)]
 
 ## Criar uma função da Web
 
@@ -140,7 +106,7 @@ Em seguida, adicione o código que submete itens para a fila do Service Bus e mo
 
     ![][12]
 
-6. Ainda na caixa de diálogo **Novo Projeto ASP.NET**, clique no botão **Alterar Autenticação**. Na caixa de diálogo **Alterar Autenticação**, clique em **Sem Autenticação** e, de seguida, em **OK**. Para este tutorial, está a implementar uma aplicação que não necessita de um início de sessão do utilizador.
+6. Ainda na caixa de diálogo **Novo Projeto ASP.NET**, clique no botão **Alterar Autenticação**. Na caixa de diálogo **Alterar Autenticação**, clique em **Sem Autenticação** e clique em **OK**. Para este tutorial, está a implementar uma aplicação que não necessita de um início de sessão do utilizador.
 
     ![][16]
 
@@ -272,7 +238,7 @@ Agora adicione o código para submeter itens para uma fila. Em primeiro lugar, c
 
 2.  Atribua o nome **QueueConnector.cs** à classe. Clique em **Adicionar** para criar a classe.
 
-3.  Agora, adicione o código que contém as informações de ligação e inicializa a ligação para uma fila do Service Bus. Substitua os conteúdos integrais de QueueConnector.cs pelo código seguinte e introduza os valores para `your Service Bus namespace` (o nome do espaço de nomes) e `yourKey`, que é a **chave primária** obtida anteriormente a partir do [Portal Clássico do Azure][] no passo 12 da secção "Criar um espaço de nomes do Service Bus".
+3.  Agora, adicione o código que contém as informações de ligação e inicializa a ligação para uma fila do Service Bus. Substitua os conteúdos integrais de QueueConnector.cs pelo código seguinte e introduza os valores para `your Service Bus namespace` (o nome do espaço de nomes) e `yourKey`, que é a **chave primária** obtida anteriormente a partir do Portal do Azure.
 
     ```
     using System;
@@ -473,9 +439,6 @@ Para obter mais informações sobre os cenários de multicamadas, consulte:
 
   [EventHubClient]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventhubclient.aspx
 
-  [Portal Clássico do Azure]: http://manage.windowsazure.com
-  [6]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/sb-queues-03.png
-  [7]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/sb-queues-04.png
   [9]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-10.png
   [10]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-11.png
   [11]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-02.png
@@ -493,8 +456,6 @@ Para obter mais informações sobre os cenários de multicamadas, consulte:
   [25]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/SBWorkerRoleProperties.png
   [26]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/SBNewWorkerRole.png
   [28]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-40.png
-  [35]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/multi-web-45.png
-  [36]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/service-bus-policies.png
 
   [sbmsdn]: http://msdn.microsoft.com/library/azure/ee732537.aspx  
   [sbwacom]: /documentation/services/service-bus/  
@@ -503,6 +464,6 @@ Para obter mais informações sobre os cenários de multicamadas, consulte:
   
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

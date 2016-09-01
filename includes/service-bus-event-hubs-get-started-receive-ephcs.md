@@ -2,7 +2,7 @@
 
 O [EventProcessorHost][] é uma classe do .NET que simplifica a receção de eventos provenientes dos Event Hubs ao gerir pontos de verificação persistentes e receções em paralelo desses Event Hubs. Se utilizar o [EventProcessorHost][], pode dividir eventos por vários recetores, mesmo se estiverem alojados em nós diferentes. Este exemplo mostra como utilizar o [EventProcessorHost][] para um recetor único. O exemplo de [Processamento de eventos aumentados horizontalmente][] mostra como utilizar o [EventProcessorHost][] com vários recetores.
 
-Para utilizar o [EventProcessorHost][], tem de ter uma [Conta de armazenamento do Azure][]:
+Para utilizar o [EventProcessorHost][], tem de ter uma [Conta de Armazenamento do Azure][]:
 
 1. Inicie sessão no [Portal Clássico do Azure][] e clique em **NOVO** na parte inferior do ecrã.
 
@@ -26,7 +26,7 @@ Para utilizar o [EventProcessorHost][], tem de ter uma [Conta de armazenamento d
 
     ![][13]
 
-    Esta ação permite transferir, instalar e adicionar uma referência ao [Hub de Eventos do Service Bus do Azure – Pacote NuGet do EventProcessorHost](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost), com todas as suas dependências.
+    O Visual Studio permite transferir, instalar e adicionar uma referência ao [do Service Bus do Azure – Pacote NuGet do EventProcessorHost](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost), com todas as suas dependências.
 
 7. Clique com o botão direito do rato no projeto **Recetor**, clique em **Adicionar** e em **Classe**. Dê à nova classe o nome **SimpleEventProcessor** e, em seguida, clique em **Adicionar** para criar a classe.
 
@@ -121,7 +121,7 @@ Para utilizar o [EventProcessorHost][], tem de ter uma [Conta de armazenamento d
 [Event Hubs Overview (Descrição Geral dos Event Hubs)]: event-hubs-overview.md
 [Event Hubs Programming Guide (Guia de Programação dos Event Hubs)]: event-hubs-programming-guide.md
 [Processamento de eventos aumentados horizontalmente]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-45f43fc3
-[Conta de armazenamento do Azure]: ../storage/storage-create-storage-account.md
+[Conta de Armazenamento do Azure]: ../storage/storage-create-storage-account-classic-portal.md
 [EventProcessorHost]: http://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventprocessorhost(v=azure.95).aspx
 [Portal Clássico do Azure]: http://manage.windowsazure.com
 
@@ -136,6 +136,6 @@ Para utilizar o [EventProcessorHost][], tem de ter uma [Conta de armazenamento d
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

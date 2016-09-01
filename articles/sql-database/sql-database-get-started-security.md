@@ -15,22 +15,22 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="hero-article"
-    ms.date="07/19/2016"
+    ms.date="08/17/2016"
     ms.author="carlrab"/>
 
-# Tutorial de Base de Dados SQL: criar contas de utilizador de base de dados SQL para aceder e gerir uma base de dados com o portal do Azure
+# Tutorial da SQL Database: criar contas de utilizador de base de dados SQL para aceder e gerir uma base de dados
 
 
 > [AZURE.SELECTOR]
 - [Tutorial de introdução](sql-database-get-started-security.md)
 - [Conceder acesso](sql-database-manage-logins.md)
 
-Neste tutorial, irá aprender a utilizar o portal do Azure para:
+Neste tutorial, irá aprender a utilizar o SQL Server Management Studio (SSMS) para:
 
-- Iniciar sessão na Base de Dados SQL ao utilizar um início de sessão principal ao nível do servidor
-- Criar uma conta de utilizador de Base de Dados SQL
-- Conceder permissões de dbo de conta de utilizador de Base de Dados SQL dentro de uma base de dados de utilizador
-- Ligar a uma Base de Dados SQL com uma conta de utilizador que não é principal ao nível do servidor 
+- Iniciar sessão na SQL Database ao utilizar um início de sessão principal ao nível do servidor.
+- Criar uma conta de utilizador da SQL Database.
+- Conceder [permissões db_owner](https://msdn.microsoft.com/library/ms189121.aspx#Anchor_0) a um utilizador da SQL Database.
+- Ligar a uma Base de Dados SQL com uma conta de utilizador que não é principal ao nível do servidor.
 
 [AZURE.INCLUDE [Login](../../includes/azure-getting-started-portal-login.md)]
 
@@ -54,6 +54,6 @@ Agora que já concluiu este tutorial de Base de Dados SQL e criou uma conta de u
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

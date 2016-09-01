@@ -13,7 +13,7 @@
     ms.topic="hero-article"
     ms.tgt_pltfrm="cache-redis"
     ms.workload="tbd"
-    ms.date="05/31/2016"
+    ms.date="08/16/2016"
     ms.author="sdanie"/>
 
 # Como utilizar a Cache de Redis do Azure com o Python
@@ -70,6 +70,6 @@ Substitua `<name>` pelo nome da sua cache `key` e pela sua chave de acesso.
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

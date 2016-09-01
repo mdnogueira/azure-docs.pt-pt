@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="mobile-phonegap"
     ms.devlang="js"
     ms.topic="hero-article" 
-    ms.date="04/04/2016"
+    ms.date="08/19/2016"
     ms.author="piyushjo" />
 
 # Introdução ao Azure Mobile Engagement para Cordova/Phonegap
@@ -24,9 +24,9 @@ Este tópico mostra como utilizar o Azure Mobile Engagement para compreender a u
 
 Neste tutorial, iremos criar uma aplicação Cordova em branco utilizando um Mac e, em seguida, integrar o SDK do Mobile Engagement. Este recolhe dados de análise básicos e recebe as notificações push através do Sistema de Notificações Push da Apple (APNS) para iOS e o Google Cloud Messaging (GCM) para Android. Iremos implementar a aplicação num dispositivo iOS ou Android para fins de teste. 
 
-> [AZURE.NOTE] Para concluir este tutorial, tem de ter uma conta ativa do Azure. Se não tiver uma conta, pode criar uma conta de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fmobile-engagement-cordova-get-started).
+> [AZURE.NOTE] Para concluir este tutorial, tem de ter uma conta ativa do Azure. Se não tiver uma conta, pode criar uma de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fmobile-engagement-cordova-get-started).
 
-Neste tutorial necessita do seguinte:
+Para este tutorial, necessita do seguinte:
 
 + XCode, que pode instalar a partir da Mac App Store (para implementar em iOS)
 + [SDK e emulador Android](http://developer.android.com/sdk/installing/index.html) (para a implementação para Android)
@@ -180,7 +180,7 @@ Pode simplesmente utilizar o emulador e executar a aplicação Android, uma vez 
 
     cordova run android
 
-##<a id="send"></a>Enviar uma notificação à sua aplicação
+##<a id="send"></a>Enviar uma notificação à aplicação
 
 Iremos agora criar uma campanha de Notificação Push simples que irá enviar um push para a sua aplicação em execução no dispositivo:
 
@@ -241,6 +241,6 @@ Iremos agora criar uma campanha de Notificação Push simples que irá enviar um
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

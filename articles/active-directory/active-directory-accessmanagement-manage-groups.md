@@ -1,20 +1,20 @@
 <properties
-    pageTitle="Managing groups in Azure Active Directory | Microsoft Azure"
-    description="How to create and manage groups to manage Azure users using Azure Active Directory."
-    services="active-directory"
-    documentationCenter=""
-    authors="curtand"
-    manager="stevenpo"
-    editor=""/>
+	pageTitle="Managing groups in Azure Active Directory | Microsoft Azure"
+	description="How to create and manage groups to manage Azure users using Azure Active Directory."
+	services="active-directory"
+	documentationCenter=""
+	authors="curtand"
+	manager="femila"
+	editor=""/>
 
 <tags
-    ms.service="active-directory"
-    ms.workload="identity"
-    ms.tgt_pltfrm="na"
-    ms.devlang="na"
-    ms.topic="get-started-article"
-    ms.date="06/14/2016"
-    ms.author="curtand"/>
+	ms.service="active-directory"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="get-started-article"
+	ms.date="08/10/2016"
+	ms.author="curtand"/>
 
 
 # Gerir grupos no Azure Active Directory
@@ -115,6 +115,6 @@ Estes artigos fornecem informações adicionais acerca do Azure Active Directory
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!---HONumber=ago16_HO4-->
 
 

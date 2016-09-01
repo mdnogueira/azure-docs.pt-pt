@@ -143,11 +143,11 @@ Para saber mais sobre como criar modelos preditivos de machine learning, consult
 <!--Article references-->
 [Azure Machine Learning studio]:https://studio.azureml.net/
 [Introdução ao Machine Learning no Azure]:https://azure.microsoft.com/documentation/articles/machine-learning-what-is-machine-learning/
-[carregar dados de exemplo manualmente]: sql-data-warehouse-get-started-load-sample-databases.md
+[carregar dados de exemplo manualmente]: sql-data-warehouse-load-sample-databases.md
 [Create a SQL Data Warehouse (Criar um SQL Data Warehouse)]: sql-data-warehouse-get-started-provision.md
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

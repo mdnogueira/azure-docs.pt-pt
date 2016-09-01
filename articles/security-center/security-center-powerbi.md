@@ -13,33 +13,32 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="07/19/2016"
+   ms.date="08/11/2016"
    ms.author="yurid"/>
 
 # Obter informações a partir de dados do Centro de Segurança do Azure com Power BI
-O [Dashboard do Power BI](http://aka.ms/azure-security-center-power-bi) para o Centro de Segurança do Azure permite-lhe visualizar, analisar e filtrar recomendações e alertas de segurança a partir de qualquer lugar, incluindo o seu dispositivo móvel. Utilize o dashboard do Power BI para revelar as tendências e padrões de ataques – veja alertas de segurança por recurso ou endereço IP de origem e riscos de segurança não abordados por recurso ou idade. Também pode combinar as recomendações e os alertas de segurança do Centro de Segurança com outros dados de formas interessantes, por exemplo, com [Registos de Auditoria do Azure](https://powerbi.microsoft.com/blog/monitor-azure-audit-logs-with-power-bi/) e [Auditoria de SQL Database do Azure](https://powerbi.microsoft.com/blog/monitor-your-azure-sql-database-auditing-activity-with-power-bi/), que fornecem Dashboards do Power BI, ou pode exportar estes dados para o Excel para criar facilmente relatórios acerca do estado de segurança dos seus recursos de nuvem.
+O [Dashboard do Power BI](http://aka.ms/azure-security-center-power-bi) para o Centro de Segurança do Azure permite-lhe visualizar, analisar e filtrar recomendações e alertas de segurança a partir de qualquer lugar, incluindo o seu dispositivo móvel. Utilize o dashboard do Power BI para revelar as tendências e padrões de ataques – veja alertas de segurança por recurso ou endereço IP de origem e riscos de segurança não abordados por recurso ou idade. 
 
-> [AZURE.NOTE] As informações neste documento aplicam-se ao pré-lançamento do Centro de Segurança do Azure.
-
+Também pode misturar recomendações e alertas de segurança do Centro de Segurança com outros dados de formas interessantes, por exemplo, utilizando dados dos [Registos de Auditoria do Azure](https://powerbi.microsoft.com/blog/monitor-azure-audit-logs-with-power-bi/) e da [Auditoria da Base de Dados SQL do Azure](https://powerbi.microsoft.com/blog/monitor-your-azure-sql-database-auditing-activity-with-power-bi/). Ambos oferecem Dashboards do Power BI e também pode exportar estes dados para o Excel para elaborar facilmente relatórios sobre o estado de segurança dos seus recursos de nuvem.
 
 ##Utilizar o dashboard do Centro de Segurança do Azure para aceder ao Power BI
-Também pode utilizar o dashboard do Centro de Segurança do Azure para aceder aos relatórios do Power BI. Siga os passos abaixo para realizar esta tarefa: 
+Também pode utilizar o dashboard do Centro de Segurança do Azure para aceder aos relatórios do Power BI. Siga os passos para realizar esta tarefa: 
 
 1. No dashboard do **Centro de Segurança do Azure**, clique no botão **Explorar no Power BI**.
 
     ![Ligar-se ao Centro de Segurança do Azure através do Power BI](./media/security-center-powerbi/security-center-powerbi-fig1-new1.png) 
 
-2. O painel **Explorar no Power BI** abre-se no lado direito, conforme mostrado abaixo:
+2. O painel **Explorar no Power BI** abre-se no lado direito, conforme mostrado no ecrã seguinte:
 
     ![Ligar-se ao Centro de Segurança do Azure através do Power BI](./media/security-center-powerbi/security-center-powerbi-fig1-new2.png)
 
-3. Se estiver a criar o dashboard do Power BI pela primeira vez, pode escolher uma das opções abaixo no painel Explorar no Power BI: 
+3. Se estiver a criar o dashboard do Power BI pela primeira vez, pode escolher uma das opções seguintes no painel **Explorar no Power BI**: 
 
-    - **Dashboard de informações de segurança**: escolha esta opção se pretende criar um dashboard que inclua o estado de segurança, threads e deteções. Esta é uma opção mais comum para a função de DevOps que são responsáveis por analisar o respetivo estado de proteção e os alertas detetados nas subscrições.
-    - **Dashboard de gestão de políticas**: escolha esta opção se pretende explorar a política de gestão e de imposição.  Esta é uma opção mais comum para os departamentos de TI centrais mais focados no setor governativo. Podem utilizar este dashboard para obter visibilidade e conhecimentos aprofundados acerca do cumprimento das políticas de segurança na respetiva organização.
+    - **Dashboard de informações de segurança**: escolha esta opção se pretende criar um dashboard que inclua o estado de segurança, threads e deteções. Esta opção é mais comum para a função DevOps que é responsável por analisar o respetivo estado de proteção e os alertas detetados nas subscrições.
+    - **Dashboard de gestão de políticas**: escolha esta opção se pretende explorar a política de gestão e de imposição.  Esta opção é mais comum para os departamentos de TI centrais mais focados no setor governativo. Podem utilizar este dashboard para obter visibilidade e conhecimentos aprofundados acerca do cumprimento das políticas de segurança na respetiva organização.
     - Se já tiver um dashboard do Power BI, clique em **Aceder ao seu dashboard do Power BI atual**.
 
-4. Para efeitos deste exemplo, clique na opção **Dashboard de conhecimentos de segurança aprofundados**. Se for a primeira vez que cria um dashboard do Power BI para o Centro de Segurança, ser-lhe-á solicitado que instale o pacote de conteúdos. Clique no botão **Obter** na janela **Pacotes de conteúdo do Power BI**, conforme mostrado abaixo:
+4. Para efeitos deste exemplo, clique na opção **Dashboard de conhecimentos de segurança aprofundados**. Se for a primeira vez que cria um dashboard do Power BI para o Centro de Segurança, ser-lhe-á solicitado que instale o pacote de conteúdos. Clique no botão **Obter** na janela **Pacotes de conteúdo do Power BI**, conforme mostrado no ecrã seguinte:
 
     ![Dashboard de Conhecimentos de Segurança Aprofundados do Centro de Segurança do Azure](./media/security-center-powerbi/security-center-powerbi-fig1-new3.png)
 
@@ -47,12 +46,12 @@ Também pode utilizar o dashboard do Centro de Segurança do Azure para aceder a
     
     ![Autenticação](./media/security-center-powerbi/security-center-powerbi-fig1-new4.png)
 
-6. Poderá ser-lhe pedido para se autenticar novamente com as suas credenciais do Azure. O seu dashboard será criado assim que se autenticar. Assim que for criado o dashboard, é apresentado um relatório com uma estrutura semelhante à que é mostrada abaixo:
+6. Poderá ser-lhe pedido para se autenticar novamente com as suas credenciais do Azure. O seu dashboard será criado assim que se autenticar. Assim que o dashboard for criado, é apresentado um relatório com uma estrutura semelhante à que é mostrada no ecrã seguinte:
 
     ![Dashboard do Power BI](./media/security-center-powerbi/security-center-powerbi-fig1-new5.png)
 
 
-> [AZURE.NOTE] Uma atualização do relatório está agendada para ocorrer diariamente. Se ocorrer uma falha nesta atualização, leia [Potenciais Problemas de Atualização com o Power BI do Centro de Segurança do Azure](https://blogs.msdn.microsoft.com/azuresecurity/2016/04/07/azure-security-center-power-bi-refresh-fails/) para obter mais informações sobre como resolver problemas.
+> [AZURE.NOTE] Uma atualização do relatório está agendada para ser efetuada diariamente. Se ocorrer uma falha nesta atualização, leia [Potential Refresh Issues with the Azure Security Center Power BI (Potenciais Problemas de Atualização com o Power BI do Centro de Segurança do Azure)](https://blogs.msdn.microsoft.com/azuresecurity/2016/04/07/azure-security-center-power-bi-refresh-fails/) para obter mais informações sobre como resolver problemas.
 
 Aqui pode ver o número de alertas de segurança e as recomendações, bem como o número de VMs, bases de dados SQL do Azure e recursos de rede monitorizados pelo Centro de Segurança do Azure.
 
@@ -65,15 +64,15 @@ Uma ligação para o Centro de Segurança do Azure redireciona-o para o Portal d
 - Recursos atacados
 - IPs atacados
 
-Atrás de cada gráfico existem informações adicionais. Selecione um mosaico para obter mais informações. Por exemplo, o mosaico **Estado de Segurança do Recurso** mostra-lhe detalhes adicionais acerca das recomendações pendentes por recursos, conforme mostrado abaixo:
+Atrás de cada gráfico existem informações adicionais. Selecione um mosaico para obter mais informações. Por exemplo, o mosaico **Estado de Segurança do Recurso** mostra-lhe detalhes adicionais acerca das recomendações pendentes por recursos, conforme mostrado no ecrã seguinte:
 
 ![Recomendações](./media/security-center-powerbi/security-center-powerbi-fig1-new6.png)
 
-Se clicar em qualquer linha deste gráfico, as outras ficam cinzentas e o cursor centra-se apenas na que selecionou. Para regressar ao dashboard, clique em **Centro de Segurança do Azure** sob a opção **Dashboards** no painel à esquerda desta página.
+Se clicar em qualquer linha deste gráfico, as outras ficam cinzentas e o cursor foca-se apenas na que selecionou. Para regressar ao dashboard, clique em **Centro de Segurança do Azure** sob a opção **Dashboards** no painel à esquerda desta página.
 
 > [AZURE.NOTE] Se pretender personalizar os seus relatórios ao adicionar campos adicionais ou alterar os efeitos visuais existentes, pode editar o relatório. Leia [Interagir com um relatório na Vista de Edição no Power BI](https://powerbi.microsoft.com/documentation/powerbi-service-interact-with-a-report-in-editing-view/) para obter mais informações.
 
-Os mosaicos **Alertas ao longo do Tempo, Recursos Atacados** e **IPs Atacantes** terão o resultado semelhante quando clica em cada um deles. Isto acontece porque o relatório agrega as informações relativas a essas três variáveis e denomina-o **Recursos sob Ataque** conforme é mostrado abaixo:
+Os mosaicos **Alertas ao longo do Tempo, Recursos Atacados** e **IPs Atacantes** terão o resultado semelhante quando clica em cada um deles. Isto acontece porque o relatório agrega as informações relativas a essas três variáveis e denomina-o **Recursos sob Ataque** conforme é mostrado no ecrã seguinte:
 
 ![Recursos sob ataque](./media/security-center-powerbi/security-center-powerbi-fig1-new7.png)
 
@@ -83,7 +82,7 @@ Neste momento também pode guardar uma cópia deste relatório, imprimi-la ou pu
 
 ## Explorar os dados do Centro de Segurança do Azure com os serviços Power BI
 
-Ligue-se aos [Serviços do Pacote de Conteúdo do Power BI](https://msit.powerbi.com/groups/me/getdata/services) no Power BI e siga os passos abaixo:
+Ligue-se aos [Serviços do Pacote de Conteúdo do Power BI](https://msit.powerbi.com/groups/me/getdata/services) no Power BI e execute os seguintes passos:
 
 1. Na janela **Pacote de conteúdo do Power BI** verá duas opções conforme é mostrado abaixo.
 
@@ -118,6 +117,6 @@ Neste documento, aprendeu a utilizar o Power BI no Centro de Segurança do Azure
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

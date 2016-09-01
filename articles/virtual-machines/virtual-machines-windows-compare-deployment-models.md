@@ -3,9 +3,9 @@
    description="Descrição geral conceptual dos Fornecedores de Recursos de Armazenamento, Rede e Computação (CRP, NRP e SRP) para aplicações do Windows no modelo de implementação Azure Resource Manager"
    services="virtual-machines-windows"
    documentationCenter=""
-   authors="mahthi"
+   authors="tfitzmac"
    manager="timlt"
-   editor=""
+   editor="tysonn"
    tags="azure-resource-manager,azure-service-management"/>
 
 <tags
@@ -14,8 +14,8 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="vm-windows"
    ms.workload="infrastructure-services"
-   ms.date="04/29/2015"
-   ms.author="mahthi"/>
+   ms.date="08/19/2015"
+   ms.author="tomfitz"/>
 
 # Fornecedores de Armazenamento, Rede e Computação para aplicações do Windows no modelo de implementação Azure Resource Manager
 
@@ -25,6 +25,6 @@ A inclusão de capacidades de computação, rede e armazenamento com o modelo de
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

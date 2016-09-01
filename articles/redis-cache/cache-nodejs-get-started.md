@@ -13,7 +13,7 @@
     ms.topic="hero-article"
     ms.tgt_pltfrm="cache-redis"
     ms.workload="tbd"
-    ms.date="05/31/2016"
+    ms.date="08/16/2016"
     ms.author="sdanie"/>
 
 # Como utilizar a Cache de Redis do Azure com o Node.js
@@ -36,7 +36,7 @@ Instale o [node_redis](https://github.com/mranney/node_redis):
 
     npm install redis
 
-Este tutorial utiliza o [node_redis](https://github.com/mranney/node_redis), mas pode utilizar qualquer cliente do Node.js listado em [http://redis.io/clients](http://redis.io/clients).
+Este tutorial utiliza o [node_redis](https://github.com/mranney/node_redis). Para obter exemplos de utilização de outros clientes Node.js, consulte a documentação individual para os clientes Node.js listados em [Clientes Node.js Redis](http://redis.io/clients#nodejs).
 
 ## Criar uma cache de Redis no Azure
 
@@ -46,17 +46,21 @@ Este tutorial utiliza o [node_redis](https://github.com/mranney/node_redis), mas
 
 [AZURE.INCLUDE [redis-cache-create](../../includes/redis-cache-access-keys.md)]
 
+## Ligar à cache de forma segura através de SSL
 
-## Ativar o ponto final não SSL
+As versões mais recentes do [node_redis](https://github.com/mranney/node_redis) fornecem suporte para ligar a Cache de Redis do Azure através de SSL. O seguinte exemplo mostra como ligar a Cache de Redis do Azure com o ponto final de SSL de 6380. Substitua `<name>` pelo nome da sua cache e `<key>` pela sua chave primária ou secundária, conforme descrito na secção anterior, [Obter as chaves de acesso e o nome de anfitrião](#retrieve-the-host-name-and-access-keys).
 
-Alguns clientes Redis não suportam o SSL e, por predefinição, a [porta não SSL está desativada para as novas instâncias da Cache de Redis do Azure](cache-configure.md#access-ports). No momento, o cliente [node_redos](https://github.com/mranney/node_redis) não suporta SSL. 
-
-[AZURE.INCLUDE [redis-cache-create](../../includes/redis-cache-non-ssl-port.md)]
+     var redis = require("redis");
+    
+      // Add your cache name and access key.
+    var client = redis.createClient(6380,'<name>.redis.cache.windows.net', {auth_pass: '<key>', tls: {servername: '<name>.redis.cache.windows.net'}});
 
 
 ## Adicionar um elemento à cache e recuperá-lo
 
-      var redis = require("redis");
+O seguinte exemplo mostra como ligar a uma instância da Cache de Redis do Azure, bem como armazenar e recuperar um item da cache. Para obter mais exemplos de utilização de Redis com o cliente [node_redis](https://github.com/mranney/node_redis), aceda a [http://redis.js.org/](http://redis.js.org/).
+
+     var redis = require("redis");
     
       // Add your cache name and access key.
     var client = redis.createClient(6380,'<name>.redis.cache.windows.net', {auth_pass: '<key>', tls: {servername: '<name>.redis.cache.windows.net'}});
@@ -85,6 +89,6 @@ Saída:
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

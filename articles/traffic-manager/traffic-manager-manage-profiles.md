@@ -3,7 +3,7 @@
    description="Este artigo ajuda-o a criar, desativar, ativar, eliminar e ver o histórico de um perfil do Traffic Manager do Azure."
    services="traffic-manager"
    documentationCenter=""
-   authors="joaoma"
+   authors="sdwheeler"
    manager="carmonm"
    editor="tysonn" />
 <tags
@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="03/17/2016"
-   ms.author="joaoma" />
+   ms.author="sewhee" />
 
 # Gerir um perfil no Traffic Manager do Azure
 
@@ -86,6 +86,6 @@ Pode ver o histórico de alterações do perfil do Traffic Manager no Portal Cl�
 [Resolução de problemas do estado degradado do Traffic Manager](traffic-manager-troubleshooting-degraded.md)
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

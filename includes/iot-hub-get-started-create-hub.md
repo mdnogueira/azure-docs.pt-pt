@@ -21,7 +21,7 @@ Crie um hub IoT para ligação do dispositivo simulado. Os passos que se seguem 
 
     ![Estado do novo hub IoT][3]
 
-5. Quando o hub IoT tiver sido criado com êxito, clique no novo mosaico do hub IoT no portal para abrir o painel do novo hub IoT. Anote o **Nome do anfitrião** e clique no ícone **Chaves**.
+5. Quando o hub IoT tiver sido criado com êxito, clique no novo mosaico do hub IoT no portal para abrir o painel do novo hub IoT. Anote o **Nome de anfitrião** e, em seguida, clique em **Políticas de acesso partilhado**.
 
     ![Novo painel do hub IoT][4]
 
@@ -45,6 +45,6 @@ Crie um hub IoT para ligação do dispositivo simulado. Os passos que se seguem 
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

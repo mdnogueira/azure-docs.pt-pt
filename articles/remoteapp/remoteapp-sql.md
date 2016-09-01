@@ -13,10 +13,13 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="compute"
-   ms.date="06/27/2016"
+   ms.date="08/15/2016"
    ms.author="elizapo"/>
 
 # SQL Azure com o Azure RemoteApp
+
+> [AZURE.IMPORTANT]
+> O Azure RemoteApp está a ser descontinuado. Leia o [anúncio](https://go.microsoft.com/fwlink/?linkid=821148) para obter detalhes.
 
 Frequentemente, quando os clientes escolhem alojar as aplicações do Windows na nuvem com o Azure RemoteApp, pretendem também migrar os seus dados, tais como os servidores SQL, para a nuvem para uma implementação integralmente na nuvem. Tal permite uma solução integralmente alojada na nuvem que pode ser acedida por qualquer dispositivo, em qualquer altura e local, através do Azure RemoteApp. A seguir encontram-se ligações e referências, bem como orientações para ajudar neste processo.   
 
@@ -53,6 +56,6 @@ Caso a experiência de utilização de uma aplicação cliente alojada no Azure 
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="hero-article"
-    ms.date="05/16/2016"
+    ms.date="08/15/2016"
     ms.author="mandia"/>
 
 
@@ -260,7 +260,7 @@ As Ligações Híbridas são utilizadas para ligar um site do Azure ou um servi�
 
 Agora que criou um BizTalk Service, familiarize-se com os diferentes separadores em [BizTalk Services: separadores Dashboard, Monitorização e Dimensionamento](biztalk-dashboard-monitor-scale-tabs.md). O BizTalk Service está pronto para as suas aplicações. Para começar a criar aplicações, veja [BizTalk Services do Azure](http://go.microsoft.com/fwlink/p/?LinkID=235197).
 
-## Veja também
+## Consultar também
 - [BizTalk Services: Gráfico de Edições](biztalk-editions-feature-chart.md)<br/>
 - [BizTalk Services: Gráfico de Estado](biztalk-service-state-chart.md)<br/>
 - [BizTalk Services: Cópia de segurança e Restauro](biztalk-backup-restore.md)<br/>
@@ -279,6 +279,6 @@ Agora que criou um BizTalk Service, familiarize-se com os diferentes separadores
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

@@ -14,14 +14,14 @@
      ms.tgt_pltfrm="na"
      ms.devlang="na"
      ms.topic="get-started-article"
-     ms.date="07/01/2016"
+     ms.date="08/21/2016"
      ms.author="trinadhk; giridham; arunak; markgal; jimpark;"/>
 
 # Serviço de Backup do Azure – FAQ
 
 > [AZURE.SELECTOR]
 - [FAQ sobre a Cópia de segurança para o modo Clássico](backup-azure-backup-faq.md)
-- [FAQ sobre a Cópia de segurança para o modo ARM](backup-azure-backup-ibiza-faq.md)
+- [FAQ sobre a cópia de segurança do modo Resource Manager](backup-azure-backup-ibiza-faq.md)
 
 Este artigo é uma lista de perguntas mais frequentes (e as respetivas respostas) sobre o serviço de Backup do Azure. A nossa comunidade responde rapidamente e se uma pergunta é colocada frequentemente, adicionamo-la a este artigo. Normalmente, as respostas a perguntas fornecem referência ou informações de suporte. Pode colocar perguntas sobre o Backup do Azure na secção Disqus deste artigo ou um artigo relacionado. Também pode publicar perguntas sobre o serviço de Backup do Azure no [fórum de debate](https://social.msdn.microsoft.com/forums/azure/home?forum=windowsazureonlinebackup).
 
@@ -231,6 +231,9 @@ R3. A chave de encriptação deve ter pelo menos 16 carateres.
 
 **P4. O que acontece se perder a chave de encriptação? Posso recuperar os dados (ou) pode a Microsoft recuperar os dados?** <br/>
 R4. A chave utilizada para encriptar os dados da cópia de segurança está presente apenas no local do cliente. A Microsoft não mantém uma cópia no Azure e não tem qualquer acesso à chave. Se o cliente perder a chave, a Microsoft não pode recuperar os dados da cópia de segurança.
+
+**P5. Os dados da cópia de segurança das VMs do Azure estão encriptados?** <br/>
+R5. O Backup do Azure baseia-se nas definições de encriptação da VM do Azure para a encriptação das cópias de segurança. Se a VM for encriptada com o Azure Disk Encryption, o Backup do Azure utilizará essa encriptação para proteger os dados. 
  
 
 ## Cache da cópia de segurança
@@ -275,6 +278,6 @@ Recomenda-se que a pasta cache e os metadados de VHD não tenham os atributos ac
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

@@ -98,6 +98,7 @@ Para localizar anomalias nos seus dados, escolha uma das opções anómalas na l
 
 ![Tendências](./media/app-insights-visual-studio/51.png)
 
+[Mais informações sobre as Tendências](app-insights-visual-studio-trends.md).
 
 ## Passos seguintes?
 
@@ -111,6 +112,6 @@ Para localizar anomalias nos seus dados, escolha uma das opções anómalas na l
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

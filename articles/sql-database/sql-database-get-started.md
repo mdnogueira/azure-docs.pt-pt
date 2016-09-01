@@ -27,15 +27,17 @@
 - [C#](sql-database-get-started-csharp.md)
 - [PowerShell](sql-database-get-started-powershell.md)
 
-Neste tutorial, irá aprender a utilizar o portal do Azure para:
+Neste tutorial, irá aprender a utilizar o Portal do Azure para:
 
-- Criar um servidor lógico de Base de Dados SQL para alojar bases de dados SQL
+- Criar um servidor lógico da SQL Database para alojar bases de dados SQL.
 - Crie uma base de dados SQL sem dados, com dados de exemplo ou dados de uma cópia de segurança de uma base de dados SQL.
 - Crie uma regra de firewall ao nível do servidor para um único endereço IP ou para um intervalo de endereços IP.
 
 Utilize estas ligações para efetuar estas mesmas tarefas, utilizando o [C#](sql-database-get-started-csharp.md) ou o [PowerShell](sql-database-get-started-powershell.md).
 
 [AZURE.INCLUDE [Login](../../includes/azure-getting-started-portal-login.md)]
+
+<a name="create-logical-server-bk"></a>
 
 [AZURE.INCLUDE [Create SQL Database logical server](../../includes/sql-database-create-new-server-portal.md)]
 
@@ -64,6 +66,6 @@ Agora que concluiu este tutorial de Base de Dados SQL e criou uma base de dados 
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

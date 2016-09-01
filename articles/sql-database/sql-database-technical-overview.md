@@ -1,7 +1,7 @@
 <properties
     pageTitle="O que é a Base de Dados SQL? Introdução à Base de Dados SQL | Microsoft Azure"
     description="Obtenha uma introdução à Base de Dados SQL: detalhes técnicos e capacidades do sistema de gestão de bases de dados relacionais (RDBMS) da Microsoft na nuvem."
-    keywords="introduction to sql,intro to sql,what is sql database"
+    keywords="introdução à sql, introdução sql, o que é a base de dados sql"
     services="sql-database"
     documentationCenter=""
     authors="shontnew"
@@ -14,7 +14,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="data-management"
-   ms.date="05/23/2016"
+   ms.date="08/16/2016"
    ms.author="shkurhek"/>
 
 # O que é a Base de Dados SQL? Introdução à Base de Dados SQL
@@ -61,6 +61,6 @@ Agora que já leu uma introdução à Base de Dados SQL e respondeu à pergunta 
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

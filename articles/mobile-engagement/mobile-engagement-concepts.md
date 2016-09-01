@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="mobile-android"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="02/26/2016"
+    ms.date="08/19/2016"
     ms.author="piyushjo" />
 
 # Conceitos do Azure Mobile Engagement
@@ -87,6 +87,6 @@ A árvore completa de pares chave/valor está armazenada como um objeto JSON. No
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

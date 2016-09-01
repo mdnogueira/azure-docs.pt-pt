@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="07/14/2016"
+    ms.date="08/05/2016"
     ms.author="vakarand"/>
 
 
@@ -168,12 +168,11 @@ Este procedimento inicia uma linha de comandos seguida de comandos PowerShell, q
 
 ![Verificar o Azure AD Connect Health](./media/active-directory-aadconnect-health/aadconnect-health-adds-agent-install3.png)
 
-
 Depois de iniciar sessão, o PowerShell prosseguirá. Uma vez concluído, pode fechar o PowerShell e a configuração estará concluída.
 
 Nessa altura, os serviços deverão ser iniciados automaticamente e o agente estará agora a monitorizar e a recolher dados. A captura de ecrã abaixo mostra um exemplo do resultado. Tenha em atenção de que verá avisos na janela do PowerShell se não tiver cumprido todos os pré-requisitos que foram descritos nas secções anteriores. Antes de instalar o agente, certifique-se [aqui](active-directory-aadconnect-health-agent-install.md#requirements) de que concluiu todos os requisitos. 
 
-![Verificar o Azure AD Connect Health](./media/active-directory-aadconnect-health/aadconnect-health-adds-agent-install4.png)
+![Verificar o Azure AD Connect Health para o AD DS](./media/active-directory-aadconnect-health/aadconnect-health-adds-agent-install4.png)
 
 Para verificar se o agente foi instalado, abra Serviços e procure o seguinte:
 
@@ -183,6 +182,11 @@ Para verificar se o agente foi instalado, abra Serviços e procure o seguinte:
 Estes dois serviços não arrancarão até a configuração estar concluída.
 
 ![Verificar o Azure AD Connect Health](./media/active-directory-aadconnect-health/aadconnect-health-adds-agent-install5.png)
+
+## Instalar o Agente Azure AD Connect Health para o AD DS no Server Core 
+Depois de instalar o ficheiro .exe, pode concluir o processo de registo com o seguinte comando do PowerShell:
+
+`Register-AzureADConnectHealthADDSAgent -Credentials $cred
 
 ## Configurar os Agentes do Azure AD Connect Health para utilizarem o Proxy de HTTP
 Pode configurar os Agentes do Azure AD Connect Health para trabalharem com um Proxy de HTTP.
@@ -265,6 +269,6 @@ Pode utilizar o sinalizador - ShowResults no comando para ver registos detalhado
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

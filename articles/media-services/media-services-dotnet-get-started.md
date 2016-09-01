@@ -1,5 +1,5 @@
 <properties
-    pageTitle="Introdução à distribuição de conteúdos a pedido utilizando o SDK do .NET"
+    pageTitle="Introdução à distribuição de conteúdo a pedido com o .NET | Azure"
     description="Este tutorial vai ajudá-lo a implementar uma aplicação de distribuição de conteúdos a pedido com os Media Services do Azure utilizando o .NET."
     services="media-services"
     documentationCenter=""
@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="dotnet"
     ms.topic="hero-article"
-    ms.date="07/18/2016"
+    ms.date="08/17/2016"
     ms.author="juliako"/>
 
 
@@ -52,7 +52,7 @@ O seguinte é necessário para concluir o tutorial.
 
 - Para concluir este tutorial, precisa de uma conta do Azure. 
     
-    Se não tiver uma conta, pode criar uma conta de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](/pricing/free-trial/?WT.mc_id=A261C142F). Recebe créditos que podem ser utilizados para experimentar os serviços pagos do Azure. Mesmo depois de gastar todos os créditos, pode manter a conta e utilizar os serviços e recursos gratuitos do Azure, tal como a funcionalidade Web Apps no App Service do Azure.
+    Se não tiver uma conta, pode criar uma de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](/pricing/free-trial/?WT.mc_id=A261C142F). Recebe créditos que podem ser utilizados para experimentar os serviços pagos do Azure. Mesmo depois de gastar todos os créditos, pode manter a conta e utilizar os serviços e recursos gratuitos do Azure, tal como a funcionalidade Web Apps no App Service do Azure.
 - Sistemas operativos: Windows 8 ou posterior, Windows 2008 R2, Windows 7.
 - .NET framework 4.0 ou posterior
 - Visual Studio 2010 SP1 (Professional, Premium, Ultimate ou Express) ou versões posteriores.
@@ -457,6 +457,6 @@ Se este tópico não continha o que pretendia, algo está em falta ou não corre
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

@@ -13,7 +13,7 @@
     ms.topic="get-started-article"
     ms.tgt_pltfrm="dotnet"
     ms.workload="na"
-    ms.date="06/07/2016"
+    ms.date="08/23/2016"
     ms.author="jotaub;sethm"/>
 
 # Introdução às Filas do Service Bus
@@ -54,7 +54,7 @@ Se já tiver criado uma fila do Service Bus, avance para a secção [Enviar mens
 
 ## 3. Enviar mensagens para a fila
 
-Para poder enviar mensagens para a fila, iremos escrever uma aplicação de consola C# com o Visual Studio.
+Para enviar mensagens para a fila, vamos criar uma aplicação de consola C# com o Visual Studio.
 
 ### Criar uma aplicação de consola
 
@@ -111,13 +111,13 @@ Para poder enviar mensagens para a fila, iremos escrever uma aplicação de cons
     }
     ```
   
-3. Execute o programa e consulte o Portal Clássico do Azure. Repare que o valor do **Comprimento da Fila** deve ser 1.
+3. Execute o programa e consulte o Portal do Azure. Clique no nome da sua fila no painel **Descrição geral** do espaço de nomes. Repare que o valor de **Contagem de mensagens ativas** deve ser agora 1.
     
-      ![Comprimento da fila][queue-length-send]
+      ![Contagem de mensagens][queue-message]
     
 ## 4. Receber mensagens da fila
 
-1. Crie uma nova aplicação de consola e adicione uma referência ao pacote NuGet do Service Bus, semelhante à aplicação de envio acima.
+1. Crie uma nova aplicação de consola e adicione uma referência ao pacote NuGet do Service Bus, semelhante à aplicação de envio anterior.
 
 2. Adicione a seguinte declaração `using` na parte superior do ficheiro Program.cs.
   
@@ -173,7 +173,7 @@ Para poder enviar mensagens para a fila, iremos escrever uma aplicação de cons
   
 4. Execute o programa e consulte o portal. Repare que o valor do **Comprimento da Fila** deve ser 0.
 
-    ![Comprimento da fila][queue-length-receive]
+    ![Comprimento da fila][queue-message-receive]
   
 Parabéns! Acabou de criar uma fila, enviar uma mensagem e receber uma mensagem.
 
@@ -184,8 +184,8 @@ Consulte o nosso [repositório do GitHub com exemplos](https://github.com/Azure-
 <!--Image references-->
 
 [nuget-pkg]: ./media/service-bus-dotnet-get-started-with-queues/nuget-package.png
-[queue-length-send]: ./media/service-bus-dotnet-get-started-with-queues/queue-length-send.png
-[queue-length-receive]: ./media/service-bus-dotnet-get-started-with-queues/queue-length-receive.png
+[queue-message]: ./media/service-bus-dotnet-get-started-with-queues/queue-message.png
+[queue-message-receive]: ./media/service-bus-dotnet-get-started-with-queues/queue-message-receive.png
 
 
 <!--Reference style links - using these makes the source content way more readable than using inline links-->
@@ -193,6 +193,6 @@ Consulte o nosso [repositório do GitHub com exemplos](https://github.com/Azure-
 [github-samples]: https://github.com/Azure-Samples/azure-servicebus-messaging-samples
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

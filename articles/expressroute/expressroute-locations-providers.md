@@ -29,7 +29,7 @@ Terá acesso aos serviços do Azure em todas as regiões numa região geopolíti
 
 |**Região geopolítica**|**Regiões do Azure**|**Localizações do ExpressRoute**|
 |---|---|---|
-|**América do Norte**|EUA Leste, EUA Oeste, EUA Leste 2, EUA Central, EUA Centro-Sul, EUA Centro-Norte, Canadá Central, Canadá Leste|Atlanta, Chicago, Dallas, Las Vegas+, Los Angeles, Nova Iorque, Seattle, Silicon Valley, Washington D.C., Montreal+, Cidade do Quebeque+, Toronto|
+|**América do Norte**|EUA Leste, EUA Oeste, EUA Leste 2, EUA Central, EUA Centro-Sul, EUA Centro-Norte, Canadá Central, Canadá Leste|Atlanta, Chicago, Dallas, Las Vegas, Los Angeles, Nova Iorque, Seattle, Silicon Valley, Washington D.C., Montreal+, Cidade do Quebeque+, Toronto|
 |**América do Sul**|Sul do Brasil|São Paulo|
 |**Europa**|Europa do Norte, Europa Ocidental|Amesterdão, Dublin, Londres, Newport (País de Gales)+, Paris|
 |**Ásia**|Ásia Oriental, Sudeste Asiático|RAE de Hong Kong, Singapura|
@@ -69,7 +69,7 @@ A conectividade em regiões geopolíticas não é suportada no SKU do ExpressRou
 | **RAE de Hong Kong** | British Telecom, China Telecom Global, Equinix, Megaport, Orange, PCCW Global Limited, Tata Communications, Verizon |
 | **Londres** | AT&T NetBond, British Telecom, Colt, Equinix, InterCloud, Internet Solutions - Cloud Connect, Interxion, Jisc+, Level 3 Communications, MTN, NTT Communications, Orange, Tata Communications, Telecity Group, Telenor, Verizon, Vodafone |
 | **Las Vegas** | Level 3 Communications+, Megaport+
-| **Los Angeles** | CoreSite, Equinix, Megaport, Zayo Group |
+| **Los Angeles** | CoreSite, Equinix, Megaport, NTT, Zayo Group |
 | **Melbourne** | Equinix, Megaport, NEXTDC, Telstra Corporation |
 | **Nova Iorque** | Equinix, Megaport, Zayo Group |
 | **Montreal** | Cologix+ |
@@ -158,6 +158,6 @@ A ativação da conectividade privada para atender as suas necessidades pode ser
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

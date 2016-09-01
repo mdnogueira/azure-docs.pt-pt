@@ -1,5 +1,5 @@
 <properties 
-    pageTitle="Como utilizar os Media Services do Azure com Java" 
+    pageTitle="Introdução à entrega de conteúdo a pedido com o Java | Microsoft Azure" 
     description="Descreve como utilizar Media Services do Azure para executar tarefas comuns, incluindo codificação, encriptação e recursos de transmissão em fluxo." 
     services="media-services" 
     documentationCenter="java" 
@@ -13,10 +13,10 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="get-started-article"
-    ms.date="06/22/2016"   
+    ms.date="08/17/2016"   
     ms.author="robmcm"/>
 
-#Como utilizar os Media Services com Java
+# Introdução à distribuição de conteúdo a pedido com o Java
 
 [AZURE.INCLUDE [media-services-selector-get-started](../../includes/media-services-selector-get-started.md)]
 
@@ -37,9 +37,9 @@ Esta secção contém pré-requisitos gerais para o desenvolvimento de Media Ser
 
 O código seguinte mostra como criar um elemento, carregar um ficheiro de multimédia para o elemento, executar uma função com uma tarefa para transformar o elemento e criar um localizador para transmitir o vídeo.
 
-Terá de configurar uma conta dos Media Services antes de utilizar este código. Para obter informações sobre como configurar uma conta, consulte [Como Criar uma Conta dos Media Services](media-services-create-account.md).
+Para utilizar este código, terá de configurar uma conta dos Media Services. Para obter informações sobre como configurar uma conta, consulte [Como Criar uma Conta dos Media Services](media-services-create-account.md).
 
-Substitua os valores pelas variáveis `clientId` e `clientSecret`. O código também depende de um ficheiro armazenado localmente. Terá de fornecer o seu próprio ficheiro a utilizar.
+Substitua os valores pelas variáveis “clientId” e “clientSecret”. O código também depende de um ficheiro armazenado localmente. Terá de fornecer o seu próprio ficheiro a utilizar.
     
     import java.io.*;
     import java.security.NoSuchAlgorithmException;
@@ -278,6 +278,6 @@ Para obter documentação Javadoc de Media Services, consulte a [Documentação 
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

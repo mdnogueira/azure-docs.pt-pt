@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="hero-article"
-    ms.date="06/27/2016"
+    ms.date="08/05/2016"
     ms.author="douglasl"/>
 
 # Começar através da execução do Assistente Enable Database for Stretch
@@ -21,6 +21,8 @@
 Para configurar uma base de dados para o Stretch Database, execute o Assistente Enable Database for Stretch.  Este tópico descreve as informações que tem de introduzir e as escolhas que tem de fazer no assistente.
 
 Para saber mais sobre o Stretch Database, consulte o artigo [Stretch Database](sql-server-stretch-database-overview.md).
+
+ >   [AZURE.NOTE] Mais tarde, se desativar a Stretch Database, lembre-se de que a desativação da Stretch Database para uma tabela ou uma base de dados não elimina o objeto remoto. Se pretender eliminar a tabela remota ou a base de dados remota, terá de removê-la através do Portal de Gestão do Azure. Os objetos remotos continuam a implicar custos no Azure até serem eliminados manualmente. 
 
 ## Iniciar o assistente
 
@@ -194,6 +196,6 @@ Ative tabelas adicionais para o Stretch Database. Monitorize a migração de dad
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

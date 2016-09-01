@@ -13,10 +13,13 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="compute"
-   ms.date="05/31/2016"
+   ms.date="08/15/2016"
    ms.author="piotrci"/>
 
 # Publicar aplicações para utilizadores individuais numa coleção do Azure RemoteApp (Pré-visualização)
+
+> [AZURE.IMPORTANT]
+> O Azure RemoteApp está a ser descontinuado. Leia o [anúncio](https://go.microsoft.com/fwlink/?linkid=821148) para obter detalhes.
 
 Este artigo explica como publicar aplicações para utilizadores individuais numa coleção do Azure RemoteApp. Esta é uma nova funcionalidade do Azure RemoteApp, atualmente em “pré-visualização privada” e disponível apenas para selecionar adotantes iniciais para efeitos de avaliação.
 
@@ -104,6 +107,6 @@ Caso ainda não tenha participado na pré-visualização, utilize este [inquéri
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

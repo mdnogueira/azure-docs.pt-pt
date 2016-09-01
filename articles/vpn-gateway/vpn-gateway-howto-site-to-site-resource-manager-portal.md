@@ -1,6 +1,6 @@
 <properties
    pageTitle="Criar uma rede virtual com uma ligação de Rede de VPNs utilizando o Azure Resource Manager e o Portal do Azure | Microsoft Azure"
-   description="Este artigo explica como criar uma VNet com o modelo Resource Manager e como ligá-la à sua rede local no local através de uma ligação de gateway de VPN S2S."
+   description="Como criar uma VNet com o modelo Resource Manager e como ligá-la à sua rede local no local através de uma ligação de gateway de VPN S2S."
    services="vpn-gateway"
    documentationCenter="na"
    authors="cherylmc"
@@ -14,7 +14,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="05/13/2016"
+   ms.date="08/22/2016"
    ms.author="cherylmc"/>
 
 # Criar uma VNet com uma ligação de Rede de VPNs utilizando o Portal do Azure e o Azure Resource Manager
@@ -25,29 +25,25 @@
 - [PowerShell – Resource Manager](vpn-gateway-create-site-to-site-rm-powershell.md)
 
 
-Este artigo explica como criar uma rede virtual e uma ligação de Rede de VPNs à sua rede no local utilizando o modelo de implementação Azure Resource Manager e o Portal do Azure. Nos passos abaixo, irá criar uma VNet, adicionar uma sub-rede do gateway, um gateway, um site local e uma ligação. Além disso, também terá de configurar o dispositivo VPN. 
+Este artigo explica como criar uma rede virtual e uma ligação de Rede de VPNs à sua rede no local utilizando o modelo de implementação Azure Resource Manager e o Portal do Azure.
+
+![Diagrama](./media/vpn-gateway-howto-site-to-site-resource-manager-portal/s2srmportal.png)
 
 
 
-**Acerca dos modelos de implementação do Azure**
+### Modelos de implementação e ferramentas para ligações Site a Site
 
 [AZURE.INCLUDE [vpn-gateway-clasic-rm](../../includes/vpn-gateway-classic-rm-include.md)] 
 
-## Diagrama de ligação
-
-![Site a Site](./media/vpn-gateway-howto-site-to-site-resource-manager-portal/site2site.png)
-
-**Modelos de implementação e ferramentas para ligações Site a Site**
-
 [AZURE.INCLUDE [vpn-gateway-table-site-to-site-table](../../includes/vpn-gateway-table-site-to-site-include.md)] 
 
-Se pretender ligar VNets entre si, mas não estiver a criar uma ligação para uma localização no local, veja [Configurar uma ligação VNet a VNet](vpn-gateway-vnet-vnet-rm-ps.md). Se estiver à procura de um tipo de configuração de ligação diferente, veja o artigo [Topologias da ligação do VPN Gateway](vpn-gateway-topology.md).
+Se pretender ligar VNets entre si, mas não estiver a criar uma ligação para uma localização no local, veja [Configurar uma ligação VNet a VNet](vpn-gateway-vnet-vnet-rm-ps.md).
 
 ## Antes de começar
 
 Antes de iniciar a configuração, verifique se tem os seguintes itens:
 
-- Um dispositivo VPN compatível e alguém que consiga configurá-lo. Veja [Acerca dos Dispositivos VPN](vpn-gateway-about-vpn-devices.md). Se não estiver familiarizado com a configuração do dispositivo VPN ou com os intervalos de endereços IP localizados na configuração da rede no local, terá de se coordenar com alguém que consiga fornecer esses detalhes.
+- Um dispositivo VPN compatível e alguém que consiga configurá-lo. Veja [Acerca dos Dispositivos VPN](vpn-gateway-about-vpn-devices.md). Se não estiver familiarizado com a configuração do dispositivo VPN ou com os intervalos de endereços IP localizados na configuração da rede no local, tem de se coordenar com alguém que consiga fornecer esses detalhes.
 
 - Um endereço IP público com acesso exterior para o dispositivo VPN. Este endereço IP não pode estar localizado atrás de um NAT.
     
@@ -79,7 +75,7 @@ Quando utiliza estes passos como um exercício, pode utilizar os valores de conf
 
 ## 1. Criar uma rede virtual 
 
-Se já tiver criado uma rede virtual, verifique se as definições são compatíveis com a estrutura do gateway de VPN, prestando especial atenção a quaisquer sub-redes que se possam sobrepor a outras redes. Se tiver sub-redes sobrepostas, a ligação não funcionará corretamente. Se tiver confirmado que a VNet está configurada com as definições corretas, pode iniciar os passos da secção [Especificar um servidor DNS](#dns).
+Se já tiver uma VNet, certifique-se de que as definições são compatíveis com a conceção do seu gateway de VPN. Tenha em especial atenção as sub-redes que se possam sobrepor a outras redes. Se tiver sub-redes sobrepostas, a ligação não funcionará corretamente. Se a VNet estiver configurada com as definições corretas, pode iniciar os passos da secção [Especificar um servidor DNS](#dns).
 
 ### Para criar uma rede virtual
 
@@ -123,7 +119,7 @@ Se estiver a criar esta configuração como um exercício, veja estes [valores](
 
 ## 6. Criar um gateway de rede local
 
-O *gateway de rede local* refere-se à sua localização no local. Deverá dar um nome ao gateway de rede local para o Azure o identificar. 
+O *gateway de rede local* refere-se à sua localização no local. Atribua um nome ao gateway de rede local para o Azure o identificar. 
 
 Se estiver a criar esta configuração como um exercício, veja estes [valores](#values) ao adicionar o site local.
 
@@ -137,7 +133,7 @@ Se estiver a criar esta configuração como um exercício, veja estes [valores](
 
 ## 8. Criar uma ligação de Rede de VPNs
 
-Em seguida, vai criar a ligação de Rede de VPNs entre o gateway de rede virtual e o dispositivo VPN. Não se esqueça de substituir os valores pelos seus. A chave partilhada tem de corresponder ao valor utilizado na configuração do dispositivo VPN. 
+Crie a ligação de Rede de VPNs entre o gateway de rede virtual e o dispositivo VPN. Não se esqueça de substituir os valores pelos seus. A chave partilhada tem de corresponder ao valor utilizado na configuração do dispositivo VPN. 
 
 Antes de iniciar esta secção, verifique se foi concluída a criação do gateway de rede virtual e dos gateways de rede local. Se estiver a criar esta configuração como um exercício, veja estes [valores](#values) ao criar a ligação.
 
@@ -160,6 +156,6 @@ Pode verificar a ligação VPN no portal ou com o PowerShell.
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

@@ -175,6 +175,8 @@ Neste artigo, utilizará o kernel do PySpark. No artigo [Kernels disponíveis no
 
 * [Análise de registos de Web Sites com o Spark no HDInsight](hdinsight-apache-spark-custom-library-website-log-analysis.md)
 
+* [Análise de dados de telemetria do Application Insight com o Spark no HDInsight](hdinsight-spark-analyze-application-insight-logs.md)
+
 ### Criar e executar aplicações
 
 * [Criar uma aplicação autónoma com o Scala](hdinsight-apache-spark-create-standalone-application.md)
@@ -214,6 +216,6 @@ Neste artigo, utilizará o kernel do PySpark. No artigo [Kernels disponíveis no
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

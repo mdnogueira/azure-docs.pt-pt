@@ -58,7 +58,7 @@ O primeiro passo para criar a sua aplicação consiste em criar a aplicação We
 
 1. Inicie sessão no Portal do Azure e clique no botão **NOVO** no canto inferior esquerdo.
 3. Na caixa de pesquisa, escreva "python".
-4. Nos resultados da pesquisa, selecione **Django** e, em seguida, clique em **Criar**.
+4. Nos resultados da pesquisa, selecione **Django** (publicado por PTVS) e, em seguida, clique em **Criar**.
 5. Configure a nova aplicação Django como, por exemplo, criar um novo plano do App Service e um novo grupo de recursos para o mesmo. Em seguida, clique em **Criar**.
 6. Configure a publicação de Git para a sua aplicação Web recentemente criada ao seguir as instruções apresentadas em [Implementação de Git Local para o Serviço de Aplicações do Azure](app-service-deploy-local-git.md).
 
@@ -518,6 +518,6 @@ Para obter mais informações, consulte o [Centro para Programadores do Python](
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

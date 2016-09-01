@@ -1,17 +1,18 @@
 |  | **Implementação Clássica** | **Implementação Resource Manager** | **Clássica para Implementações Resource Manager** |
 |----------------------------------------|-------------|----------------------|---------------------------------|
-| **Portal Clássico** | [Artigo](../articles/vpn-gateway/virtual-networks-configure-vnet-to-vnet-connection.md)  |  Não Suportado |  Não Suportado |
+| **Portal Clássico** | [Artigo](../articles/vpn-gateway/virtual-networks-configure-vnet-to-vnet-connection.md)  |  Não Suportado |  [Artigo*](../articles/vpn-gateway/vpn-gateway-connect-different-deployment-models-portal.md) |
 | **Portal do Azure** |  Não Suportado | Suportado+ |  Não Suportado |
-| **PowerShell** | Suportado | [Artigo](../articles/vpn-gateway/vpn-gateway-vnet-vnet-rm-ps.md) | [Artigo](../articles/virtual-network/virtual-networks-arm-asm-s2s.md)
+| **PowerShell** | Suportado | [Artigo](../articles/vpn-gateway/vpn-gateway-vnet-vnet-rm-ps.md) | [Artigo](../articles/vpn-gateway/vpn-gateway-connect-different-deployment-models-powershell.md)
 
-(+) indica que este método de implementação só está disponível para VNets na mesma subscrição.
+(+) indica que este método de implementação só está disponível para VNets na mesma subscrição.<br>
+(*) indica suporte parcial.
 
-Tenha em atenção que o VNet peering, que está atualmente em Pré-visualização, está disponível para determinados modelos de implementação e configurações. Veja o artigo [VNet peering](../articles/virtual-network/virtual-network-peering-overview.md) para obter mais informações.
-
-
-
+Tenha em atenção que o VNet peering, que está atualmente em Pré-visualização, está disponível para determinados modelos de implementação e configurações. Para mais informações, veja o artigo [VNet peering](../articles/virtual-network/virtual-network-peering-overview.md).
 
 
-<!--HONumber=Aug16_HO1-->
+
+
+
+<!--HONumber=ago16_HO4-->
 
 

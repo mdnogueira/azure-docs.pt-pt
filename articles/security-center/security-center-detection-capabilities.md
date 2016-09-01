@@ -13,7 +13,7 @@
    ms.devlang="na"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="07/21/2016"
+   ms.date="08/05/2016"
    ms.author="yurid"/>
 
 # Capacidades de deteção do Centro de Segurança do Azure
@@ -49,12 +49,12 @@ A Microsoft tem uma grande quantidade de informações sobre ameaças globais. A
 
 ## Análise comportamental
 
-A análise comportamental é uma técnica que analisa e compara os dados para uma coleção de padrões conhecidos. No entanto, estes padrões não são simples assinaturas. São determinados através de algoritmos complexos de machine learning aplicados a conjuntos de dados gigantescos. O Centro de Segurança do Azure pode utilizar a análise comportamental para identificar recursos comprometidos com base na análise de registos de máquina virtual, registos dos dispositivos de rede virtual, registos de recursos de infraestrutura e outras origens. 
+A análise comportamental é uma técnica que analisa e compara os dados para uma coleção de padrões conhecidos. No entanto, estes padrões não são simples assinaturas. São determinados através de algoritmos complexos de machine learning aplicados a conjuntos de dados gigantescos. Também são determinados através de uma análise cuidada de comportamentos maliciosos pelos analistas especialistas. O Centro de Segurança do Azure pode utilizar a análise comportamental para identificar recursos comprometidos com base na análise dos registos das máquinas virtuais, dos registos dos dispositivos de rede virtual, dos registos de recursos de infraestrutura, das informações de falhas do sistema e de outras origens. 
 
 Além disso, existe uma correlação com outros sinais para procurar provas de uma campanha ampla. Isto ajuda a identificar eventos que são consistentes com indicadores estabelecidos de comprometimento. Alguns exemplos incluem:
 
 - **Execução do processo suspeito**: os atacantes empregam várias técnicas para executar o software malicioso sem deteção. Por exemplo, um atacante pode dar a software maligno um nome igual ao dos ficheiros de sistema legítimos e colocar esses ficheiros em localizações alternativas, utilizar um nome que é muito semelhante a um ficheiro benigno ou mascarar a verdadeira extensão do ficheiro. Os modelos do Centro de Segurança processam comportamentos de processos e monitorizam as execuções dos processos para detetar valores atípicos como estes.  
-- **Software maligno oculto e explorações falhadas**: o software maligno sofisticado tem a capacidade de se esconder dos produtos de antimalware tradicionais ao nunca escrever no disco ou encriptar componentes de software armazenados no disco.  No entanto, esse software maligno pode ser detetado com a análise de memória, uma vez que este software tem de deixar rastreios na memória para funcionar. Quando o software falha, uma informação de falha de sistema captura uma parte da memória no momento da falha.  Ao analisar a memória na informação de falha de sistema, o Centro de Segurança do Azure pode detetar técnicas utilizadas para explora vulnerabilidades no software, aceder a dados confidenciais e persistir clandestinamente na máquina comprometida sem afetar o desempenho da sua máquina.
+- **Software maligno oculto e tentativas de explorações**: o software maligno sofisticado tem a capacidade de se esconder dos produtos de antimalware tradicionais ao nunca escrever no disco ou ao encriptar componentes de software armazenados no disco.  No entanto, esse software maligno pode ser detetado com a análise de memória, uma vez que este software tem de deixar rastreios na memória para funcionar. Quando o software falha, uma informação de falha de sistema captura uma parte da memória no momento da falha.  Ao analisar a memória na informação de falha de sistema, o Centro de Segurança do Azure pode detetar técnicas utilizadas para explora vulnerabilidades no software, aceder a dados confidenciais e persistir clandestinamente na máquina comprometida sem afetar o desempenho da sua máquina.
 - **Movimento lateral e reconhecimento interno**: para se manterem numa rede comprometida e localizar/recolher dados valiosos, os atacantes tentam frequentemente mover-se lateralmente da máquina comprometida para outras dentro da mesma rede. O Centro de Segurança monitoriza os processos e as atividades de início de sessão para detetar as tentativas do atacante em expandir a sua presença dentro da rede, tais como a pesquisa de rede da execução de comandos remotos e a enumeração da conta.
 - **Scripts do PowerShell maliciosos**: o PowerShell está a ser utilizado por atacantes para executar código malicioso em máquinas virtuais de destino para diversos fins. O Centro da Segurança inspeciona a atividade do PowerShell quanto a provas de atividade suspeita. 
 - **Ataques de saída**: os atacantes concentram-se muitas vezes nos recursos da nuvem com o objetivo de utilizar os mesmos para preparar ataques adicionais. As máquinas virtuais comprometidas, por exemplo, podem ser utilizadas para iniciar ataques de força bruta contra outras máquinas virtuais, enviar SPAM ou analisar portas abertas e outros dispositivos na Internet. Ao aplicar o machine learning ao tráfego de rede, o Centro de Segurança pode detetar quando as comunicações da rede de saída excedem o normal. No caso do SPAM, o Centro de Segurança correlaciona também o tráfego de e-mail invulgar com informações do Office 365 para determinar se o e-mail possui conteúdo nefasto ou se resulta de uma campanha legítima.  
@@ -76,7 +76,7 @@ O Centro de Segurança do Azure emprega equipas de pesquisa de segurança e ciê
 
 Estes esforços combinados culminam em novas e melhoradas deteções das quais pode beneficiar de imediato, sem que seja precisa qualquer ação da sua parte.
 
-## Passos seguintes
+## Consultar também
 Neste documento, aprendeu como funcionam as capacidades de deteção do Centro de Segurança do Azure. Para saber mais acerca do Centro de Segurança, consulte o seguinte:
 
 - [Guia de Operações e Planeamento do Centro de Segurança do Azure](security-center-planning-and-operations-guide.md)
@@ -88,6 +88,6 @@ Neste documento, aprendeu como funcionam as capacidades de deteção do Centro d
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

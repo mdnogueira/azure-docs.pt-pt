@@ -25,7 +25,9 @@ O Hub de Eventos foi criado e tem as cadeias de ligação necessárias para envi
 [3]: ./media/event-hubs-create-event-hub/create-event-hub3.png
 [4]: ./media/event-hubs-create-event-hub/create-conn-str1.png
 
+[Portal Clássico do Azure]: https://manage.windowsazure.com/
 
-<!--HONumber=Jun16_HO2-->
+
+<!--HONumber=ago16_HO4-->
 
 

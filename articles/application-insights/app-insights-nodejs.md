@@ -54,7 +54,7 @@ A chave identifica o recurso. Deverá instalá-lo logo no SDK para direcionar os
 ## <a name="sdk"></a> Instalar o SDK na aplicação
 
 ```
-npm install applicationinsights
+npm install applicationinsights --save
 ```
 
 ## Utilização
@@ -63,7 +63,7 @@ Esta operação permitirá monitorizar os pedidos, controlar as exceções não 
 
 ```javascript
 
-import appInsights = require("applicationinsights");
+var appInsights = require("applicationinsights");
 appInsights.setup("<instrumentation_key>").start();
 ```
 
@@ -226,6 +226,6 @@ server.on("listening", () => {
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

@@ -1,6 +1,6 @@
 <properties
     pageTitle="Identidade híbrida: comparação das ferramentas de integração de diretórios | Microsoft Azure"
-    description="Nesta página encontra uma tabela abrangente que compara as várias ferramentas de integração de diretórios que podem ser utilizadas para a integração de diretórios."
+    description="Nesta página, encontra uma tabela abrangente que compara as várias ferramentas de integração de diretórios que podem ser utilizadas para a integração de diretórios."
     services="active-directory"
     documentationCenter=""
     authors="billmath"
@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="05/12/2016"
+    ms.date="08/08/2016"
     ms.author="billmath"/>
 
 # Comparação das ferramentas de integração de diretórios de identidade híbrida
@@ -24,7 +24,7 @@ Ao longo dos anos, as ferramentas de integração de diretórios cresceram e evo
 
 >[AZURE.NOTE] O Azure AD Connect inclui os componentes e as funcionalidades já disponibilizadas como o Dirsync e o AAD Sync. Estas ferramentas deixaram de ser disponibilizadas individualmente e todos os melhoramentos futuros serão incluídos nas atualizações do Azure AD Connect para que saiba sempre onde pode obter as funcionalidades mais recentes.
 >
->O DirSync e o Azure AD Sync foram preteridos. Pode encontrar mais informações em [Atualizar a Sincronização do Windows Azure Active Directory (“DirSync”) e a Sincronização do Azure Active Directory (“Azure AD Sync”)](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect-dirsync-deprecated/?WT.mc_id=DirSyncDepACOM).
+>O DirSync e o Azure AD Sync foram preteridos. Pode encontrar mais informações [aqui](active-directory-aadconnect-dirsync-deprecated.md).
 
 
 Utilize a seguinte chave para cada uma das tabelas.
@@ -98,6 +98,6 @@ Saiba mais sobre como [Integrar as identidades no local ao Azure Active Director
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

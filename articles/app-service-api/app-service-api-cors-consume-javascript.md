@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="dotnet"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="05/27/2016"
+    ms.date="08/27/2016"
     ms.author="rachelap"/>
 
 # Consumir uma aplicação API da JavaScript utilizando CORS
@@ -286,6 +286,6 @@ Neste artigo, vimos como ativar o suporte de CORS do App Service para que o cód
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

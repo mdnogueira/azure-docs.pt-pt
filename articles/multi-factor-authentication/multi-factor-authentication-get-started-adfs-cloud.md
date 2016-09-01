@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="get-started-article" 
-    ms.date="05/12/2016" 
+    ms.date="08/04/2016" 
     ms.author="billmath"/>
 
 # Proteger recursos da nuvem com o Multi-Factor Authentication do Azure e o AD FS
@@ -106,6 +106,6 @@ Já está! Neste momento, os utilizadores federados do Office 365 apenas têm de
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

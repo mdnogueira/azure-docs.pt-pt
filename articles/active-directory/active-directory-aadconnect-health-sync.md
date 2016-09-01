@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="07/14/2016"
+    ms.date="08/08/2016"
     ms.author="billmath"/>
 
 # Utilizar o Azure AD Connect Health para sincronização
@@ -71,6 +71,6 @@ Esta funcionalidade fornece uma tendência gráfica do número de alterações q
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

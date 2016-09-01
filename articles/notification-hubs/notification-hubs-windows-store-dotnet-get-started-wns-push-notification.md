@@ -102,7 +102,7 @@ Para enviar notificações push para aplicações UWP, tem de associar a aplica�
 
 [AZURE.INCLUDE [notification-hubs-portal-create-new-hub](../../includes/notification-hubs-portal-create-new-hub.md)]
 
-<ol start="7">
+<ol start="6">
 <li><p>Selecione a opção <b>Serviços de Notificação</b> e a opção <b>Windows (WNS)</b>. Em seguida, introduza a palavra-passe do <b>Segredo da aplicação</b> no campo <b>Chave de Segurança</b>. Introduza o valor do <b>SID do Pacote</b> obtido a partir do WNS na secção anterior e, em seguida, clique em <b>Guardar</b>.</p>
 </li>
 </ol>
@@ -276,6 +276,6 @@ Para obter informações mais gerais sobre os Hubs de Notificação, consulte [D
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

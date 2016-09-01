@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="nodejs"
     ms.topic="hero-article"
-    ms.date="06/24/2016"
+    ms.date="08/11/2016"
     ms.author="robmcm"/>
 
 # Criar uma aplicação Web Node.js no App Service do Azure
@@ -227,6 +227,6 @@ Para obter mais informações sobre como desenvolver aplicações Node.js no Azu
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

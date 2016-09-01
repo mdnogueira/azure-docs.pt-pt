@@ -1,5 +1,5 @@
 <properties
-    pageTitle="Criar uma aplicação Plataforma Universal do Windows (UWP) nas Mobile Apps do App Service do Azure | Microsoft Azure"
+    pageTitle="Criar uma Plataforma Universal do Windows (UWP) nas Mobile Apps | Microsoft Azure"
     description="Siga este tutorial para começar a utilizar back-ends da aplicação móvel do Azure para o desenvolvimento da aplicação Plataforma Universal do Windows (UWP) em C#, Visual Basic ou JavaScript."
     services="app-service\mobile"
     documentationCenter="windows"
@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="mobile-windows"
     ms.devlang="dotnet"
     ms.topic="hero-article"
-    ms.date="05/03/2016"
+    ms.date="08/11/2016"
     ms.author="glenga"/>
 
 #Criar uma aplicação do Windows
@@ -98,6 +98,6 @@ Depois de configurar o back-end da Aplicação Móvel, pode criar uma nova aplic
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

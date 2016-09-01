@@ -12,7 +12,7 @@
  ms.tgt_pltfrm="na"
  ms.devlang="dotnet"
  ms.topic="get-started-article"
- ms.date="06/30/2016"
+ ms.date="08/18/2016"
  ms.author="krisragh"/>
 
 # Conceitos, terminologia e hierarquia de entidades do Agendador
@@ -198,7 +198,7 @@ Para definir uma política de repetição, é possível especificar duas defini�
 
 O intervalo entre tentativas, especificado com o objeto **retryInterval**, é o intervalo entre as repetições. O valor predefinido é 30 segundos, o valor mínimo configurável é 15 segundos e o valor máximo é 18 meses. As tarefas nas coleções de tarefas gratuitas têm um valor configurável mínimo de 1 hora.  Está definido no formato ISO 8601. Do mesmo modo, o valor de número de tentativas é especificado com o objeto **retryCount**; é o número de vezes que é tentada uma repetição. O valor predefinido é 4 e o valor máximo é 20\. **retryInterval** e **retryCount** são opcionais. São fornecidos os respetivos valores predefinidos se **retryType** estiver definido como **fixed** e não existirem valores especificados explicitamente.
 
-## Veja também
+## Consultar também
 
  [O que é o Agendador?](scheduler-intro.md)
 
@@ -220,6 +220,6 @@ O intervalo entre tentativas, especificado com o objeto **retryInterval**, é o 
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

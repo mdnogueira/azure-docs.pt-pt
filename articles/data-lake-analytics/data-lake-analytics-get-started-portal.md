@@ -155,9 +155,9 @@ Depois de ter preparado os dados de origem, pode começar a desenvolver um scrip
 - Para tarefas de gestão, consulte [Gerir a Análise do Azure Data Lake através do Portal do Azure](data-lake-analytics-manage-use-portal.md).
 - Para uma descrição geral da Data Lake Analytics, consulte [Descrição geral da Análise do Azure Data Lake](data-lake-analytics-overview.md).
 - Para ver o mesmo tutorial, utilizando outras ferramentas, clique nos seletores de separador no topo da página.
+- Para obter informações de diagnóstico de registo, veja [Accessing diagnostics logs for Azure Data Lake Analytics (Aceder aos registos de diagnóstico do Azure Data Lake Analytics)](data-lake-analytics-diagnostic-logs.md)
 
 
-
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

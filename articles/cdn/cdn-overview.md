@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="hero-article"
-    ms.date="07/28/2016"
+    ms.date="08/09/2016"
     ms.author="casoper"/>
 
 # Descrição geral da Rede de Entrega de Conteúdos (CDN) do Azure
@@ -39,7 +39,7 @@ As vantagens de utilizar a CDN para colocar em cache recursos de sites incluem:
 
 3. A origem devolve o ficheiro ao servidor Edge, incluindo os cabeçalhos HTTP opcionais que descrevem o valor de TTL (time-to-live) do ficheiro.
 
-4. O servidor Edge coloca em cache o ficheiro e devolve o ficheiro para o requerente original (Alice).  O ficheiro permanece em cache no servidor Edge até que o valor de TTL expire.  Se a origem não tiver especificado um valor de TTL, o TTL predefinido é de 7 dias.
+4. O servidor Edge coloca em cache o ficheiro e devolve o ficheiro para o requerente original (Alice).  O ficheiro permanece em cache no servidor Edge até que o valor de TTL expire.  Se a origem não tiver especificado um valor de TTL, o TTL predefinido é de sete dias.
 
 5. Os utilizadores adicionais (como Bernardo) podem, então, solicitar o mesmo ficheiro ao utilizar esse mesmo URL e também podem ser direcionados para esse mesmo POP.
 
@@ -57,16 +57,18 @@ Existem três produtos da CDN do Azure: **CDN do Azure Standard da Akamai**, **C
 | Balanceamento de carga | **&#x2713;** | **&#x2713;** | **&#x2713;** |
 | Proteção contra DDOS | **&#x2713;** | **&#x2713;** | **&#x2713;** |
 | Pilha dupla de IPv4/IPv6 | **&#x2713;** | **&#x2713;** | **&#x2713;** |
+| [HTTP/2](https://msdn.microsoft.com/library/mt762901.aspx) | **&#x2713;**  |  |  |
 | [Suporte de nomes de domínio personalizado](cdn-map-content-to-custom-domain.md) | **&#x2713;** | **&#x2713;** | **&#x2713;** |
 | [Colocação em cache de cadeia de consulta](cdn-query-string.md) | **&#x2713;** | **&#x2713;** | **&#x2713;** |
 | [Filtragem de país](cdn-restrict-access-by-country.md) |  | **&#x2713;** | **&#x2713;** |
 | [Remoção rápida](cdn-purge-endpoint.md) | **&#x2713;** | **&#x2713;** | **&#x2713;** |
 | [Pré-carregamento de recursos](cdn-preload-endpoint.md) |  | **&#x2713;** | **&#x2713;** |
 | [Análise de núcleo](cdn-analyze-usage-patterns.md) |  | **&#x2713;** | **&#x2713;** |
-| [Gestão através da API de REST](https://msdn.microsoft.com/library/mt634456.aspx) | **&#x2713;** | **&#x2713;** | **&#x2713;** |
+| Gestão através da [API REST](https://msdn.microsoft.com/library/mt634456.aspx), do [.NET](./cdn-app-dev-net.md), do [Node.js](./cdn-app-dev-node.md) ou do [PowerShell](./cdn-manage-powershell.md). | **&#x2713;** | **&#x2713;** | **&#x2713;** |
 | [Motor de entrega de conteúdo personalizável com base em regras](cdn-rules-engine.md) | | | **&#x2713;** |
 | [Relatórios avançados de HTTP](cdn-advanced-http-reports.md) | | | **&#x2713;** |
 | [Estatísticas em tempo real](cdn-real-time-stats.md) | | | **&#x2713;** |
+| [Alertas em tempo real](cdn-real-time-alerts.md) | | | **&#x2713;** |
 
 >[AZURE.TIP] Existe uma funcionalidade que gostaria de ver na CDN do Azure?  [Envie-nos comentários](https://feedback.azure.com/forums/169397-cdn)! 
 
@@ -74,7 +76,7 @@ Existem três produtos da CDN do Azure: **CDN do Azure Standard da Akamai**, **C
 
 Para começar a utilizar a CDN, consulte [Utilizar a CDN do Azure](./cdn-create-new-endpoint.md).
 
-Se for um cliente existente da CDN, já pode gerir os pontos finais da CDN através do [Portal do Microsoft Azure](https://portal.azure.com).
+Se for um cliente existente da CDN, já pode gerir os pontos finais da CDN através do [Portal do Microsoft Azure](https://portal.azure.com) ou com o [PowerShell](cdn-manage-powershell.md).
 
 Para ver o CDN em ação, consulte o [vídeo da nossa sessão de Compilação 2016](https://azure.microsoft.com/documentation/videos/build-2016-leveraging-the-new-azure-cdn-apis-to-build-wicked-fast-applications/).
 
@@ -84,6 +86,6 @@ Para obter informações sobre preços, consulte [Preços da CDN](https://azure.
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

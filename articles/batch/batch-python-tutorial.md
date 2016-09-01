@@ -13,7 +13,7 @@
     ms.topic="hero-article"
     ms.tgt_pltfrm="na"
     ms.workload="big-compute"
-    ms.date="06/17/2016"
+    ms.date="08/17/2016"
     ms.author="marsma"/>
 
 # Introdução ao cliente Azure Batch Python
@@ -22,7 +22,7 @@
 - [.NET](batch-dotnet-get-started.md)
 - [Python](batch-python-tutorial.md)
 
-Conheça os princípios básicos do [Azure Batch][azure_batch] e o cliente [Batch Python][py_azure_sdk], à medida que discutimos uma pequena aplicação Batch escrita em Python. Vamos ver como dois scripts de exemplo tiram partido do serviço Batch para processar uma carga de trabalho paralela em máquinas virtuais do Linux na nuvem, bem como eles interagem com o [Armazenamento do Azure](./../storage/storage-introduction.md) para teste e obtenção de ficheiros. Irá conhecer um fluxo de trabalho de aplicações Batch comuns e obter uma compreensão base dos componentes principais do Batch, como trabalhos, conjuntos e nós de computação.
+Conheça os princípios básicos do [Azure Batch][azure_batch] e o cliente [Batch Python][py_azure_sdk], à medida que discutimos uma pequena aplicação Batch escrita em Python. Vemos como dois scripts de exemplo utilizam o serviço Batch para processar uma carga de trabalho paralela em máquinas virtuais do Linux na nuvem, e como eles interagem com o [Armazenamento do Azure](./../storage/storage-introduction.md) para teste e obtenção de ficheiros. Irá conhecer um fluxo de trabalho de aplicações Batch comuns e obter uma compreensão base dos componentes principais do Batch, como trabalhos, conjuntos e nós de computação.
 
 > [AZURE.NOTE] O apoio técnico para Linux no Batch está atualmente em pré-visualização. Alguns aspetos da funcionalidade abordados aqui podem ser alterados antes da disponibilidade geral. Os [Pacotes de aplicações](batch-application-packages.md) **não são atualmente suportados** nos nós de computação do Linux.
 
@@ -40,16 +40,16 @@ Este artigo pressupõe que tem um conhecimento de trabalho do Python e familiari
 
 ### Exemplo de código
 
-O exemplo de código do tutorial do Python é um dos muito exemplos de código do Batch encontrados no repositório [azure-batch-samples][github_samples] do GitHub. Pode transferir todos os exemplos ao clicar em **Clonar ou transferir > Transferir ZIP** na home page do repositório, ou ao clicar na ligação de transferência direta [azure-batch-samples-master.zip][github_samples_zip]. Assim que tiver extraído o conteúdo do ficheiro ZIP, os dois scripts deste tutorial encontram-se no diretório `article_samples`:
+O [exemplo de código][github_article_samples] do tutorial do Python é um dos muito exemplos de código do Batch encontrados no repositório [azure-batch-samples][github_samples] do GitHub. Pode transferir todos os exemplos ao clicar em **Clonar ou transferir > Transferir ZIP** na home page do repositório, ou ao clicar na ligação de transferência direta [azure-batch-samples-master.zip][github_samples_zip]. Assim que tiver extraído o conteúdo do ficheiro ZIP, os dois scripts deste tutorial encontram-se no diretório `article_samples`:
 
 `/azure-batch-samples/Python/Batch/article_samples/python_tutorial_client.py`<br/>
 `/azure-batch-samples/Python/Batch/article_samples/python_tutorial_task.py`
 
 ### Ambiente do Python
 
-Para executar o script de exemplo *python_tutorial_client.py* na sua estação de trabalho local, precisará de um **interpretador Python** compatível com a versão **2.7** ou **3.3-3.5**. O script foi testado em Linux e Windows.
+Para executar o script de exemplo *python_tutorial_client.py* na sua estação de trabalho local, precisa de um **interpretador Python** compatível com a versão **2.7** ou **3.3-3.5**. O script foi testado em Linux e Windows.
 
-Também terá de instalar os pacotes Python do **Azure Batch** e do **Armazenamento do Azure**. Pode fazê-lo utilizando o *requirements.txt* encontrado aqui:
+Também tem de instalar os pacotes Python do **Azure Batch** e do **Armazenamento do Azure**. Pode fazer isto com o **pip** e o *requirements.txt* encontrados aqui:
 
 `/azure-batch-samples/Python/Batch/requirements.txt`
 
@@ -57,9 +57,12 @@ Problema ao seguir o comando **pip** para instalar os pacotes Batch e Armazename
 
 `pip install -r requirements.txt`
 
-Em alternativa, pode instalar manualmente os pacotes do Python [azure-batch][pypi_batch] e [azure-storage][pypi_storage].
+Em alternativa, pode instalar manualmente os pacotes do Python [azure-batch][pypi_batch] e [azure-storage][pypi_storage]:
 
-> [AZURE.TIP] Poderá ter de utilizar prefixos nos comandos com `sudo`, por exemplo, `sudo pip install -r requirements.txt`, se estiver a utilizar uma conta sem privilégios (recomendado). Para obter mais informações sobre como instalar pacotes de Python, veja [Instalar Pacotes][pypi_install] no readthedocs.io.
+`pip install azure-batch==0.30.0rc4`<br/>
+`pip install azure-storage==0.30.0`
+
+> [AZURE.TIP] Poderá ter de utilizar prefixos nos comandos com `sudo`, se estiver a utilizar uma conta sem privilégios. Por exemplo, `sudo pip install -r requirements.txt`. Para obter mais informações sobre como instalar pacotes de Python, veja [Instalar Pacotes][pypi_install] no readthedocs.io.
 
 ## Exemplo de código do tutorial do Batch Python
 
@@ -71,7 +74,7 @@ O exemplo de código do tutorial do Batch Python é constituído por dois script
 
 - **./data/taskdata\*. txt**: estes três ficheiros de texto fornecem a entrada para as tarefas que são executadas nos nós de computação.
 
-O diagrama seguinte ilustra as operações primárias que são realizadas pelos scripts de cliente e de tarefas. Este fluxo de trabalho básico é típico de várias soluções de computação que são criadas com o Batch. Embora demonstre todas as funcionalidades disponíveis no serviço Batch, quase todos os cenários do Batch incluirão partes deste fluxo de trabalho.
+O diagrama seguinte ilustra as operações primárias que são realizadas pelos scripts de cliente e de tarefas. Este fluxo de trabalho básico é típico de várias soluções de computação que são criadas com o Batch. Embora não demonstrem todas as funcionalidades disponíveis no serviço Batch, quase todos os cenários do Batch incluem partes deste fluxo de trabalho.
 
 ![Exemplo de fluxo de trabalho do Batch][8]<br/>
 
@@ -87,7 +90,7 @@ O diagrama seguinte ilustra as operações primárias que são realizadas pelos 
   &nbsp;&nbsp;&nbsp;&nbsp;**6a.** À medida que as tarefas são concluídas, carregam os respetivos dados de saída para o Armazenamento do Azure.<br/>
 [**Passo 7.**](#step-7-download-task-output) Transferir o resultado da tarefa do Armazenamento.
 
-Conforme mencionado, nem todas as soluções do Batch irão efetuar estes passos exatos e podem incluir muitos mais, mas este exemplo demonstra processos comuns encontrados numa solução do Batch.
+Conforme mencionado, nem todas as soluções do Batch efetuam estes passos exatos e podem incluir muitos mais, mas este exemplo demonstra processos comuns encontrados numa solução Batch.
 
 ## Preparar o script de cliente
 
@@ -226,7 +229,7 @@ def upload_file_to_container(block_blob_client, container_name, file_path):
 
 ### ResourceFiles
 
-Um [ResourceFile][py_resource_file] fornece tarefas no Batch com o URL para um ficheiro no Armazenamento do Azure que será transferido para um nó de computação antes de essa tarefa ser executada. A propriedade [ResourceFile][py_resource_file].**blob_source** especifica o URL completo do ficheiro, tal como existe no Armazenamento do Azure. O URL também pode incluir uma assinatura de acesso partilhado (SAS) que proporciona acesso seguro ao ficheiro. A maioria dos tipos de tarefas no Batch incluem uma propriedade *ResourceFiles*, incluindo:
+Um [ResourceFile][py_resource_file] fornece tarefas no Batch com o URL para um ficheiro no Armazenamento do Azure que é transferido para um nó de computação antes de essa tarefa ser executada. A propriedade [ResourceFile][py_resource_file].**blob_source** especifica o URL completo do ficheiro, tal como existe no Armazenamento do Azure. O URL também pode incluir uma assinatura de acesso partilhado (SAS) que proporciona acesso seguro ao ficheiro. A maioria dos tipos de tarefas no Batch incluem uma propriedade *ResourceFiles*, incluindo:
 
 - [CloudTask][py_task]
 - [StartTask][py_starttask]
@@ -330,15 +333,15 @@ def create_pool(batch_service_client, pool_id,
 
 Quando cria um conjunto, define um [PoolAddParameter][py_pooladdparam] que especifica várias propriedades do conjunto:
 
-- **ID** do conjunto de (*id* - necessário)<p/>Tal como com a maior parte das entidades no Batch, o seu novo conjunto tem de ter um ID exclusivo dentro da sua conta do Batch. O código irá referir-se a este conjunto com o respetivo ID, sendo assim que identifica o conjunto no [portal do Azure][azure_portal].
+- **ID** do conjunto de (*id* - necessário)<p/>Tal como com a maior parte das entidades no Batch, o seu novo conjunto tem de ter um ID exclusivo dentro da sua conta do Batch. O código refere-se a este conjunto com o respetivo ID, sendo assim que identifica o conjunto no [portal do Azure][azure_portal].
 
-- **Número de nós de computação** (*target_dedicated* - necessário)<p/>Especifica quantas VMs devem ser implementadas no conjunto. É importante que tenha em atenção que todas as contas do Batch têm uma **quota** predefinida que limita o número de **núcleos** (e, portanto, dos nós de computação) numa conta do Batch. Irá encontrar as quotas predefinidas e instruções sobre como [aumentar uma quota](batch-quota-limit.md#increase-a-quota) (por exemplo, o número máximo de núcleos na sua conta do Batch) em [Quotas e limites para o serviço Azure Batch](batch-quota-limit.md). Caso se questione "Por que motivo o meu conjunto não alcança mais de X nós?" esta quota de núcleos pode ser a causa.
+- **Número de nós de computação** (*target_dedicated* - necessário)<p/>Esta propriedade especifica quantas VMs devem ser implementadas no conjunto. É importante que tenha em atenção que todas as contas do Batch têm uma **quota** predefinida que limita o número de **núcleos** (e, portanto, dos nós de computação) numa conta do Batch. Pode encontrar as quotas predefinidas e instruções sobre como [aumentar uma quota](batch-quota-limit.md#increase-a-quota) (por exemplo, o número máximo de núcleos na sua conta do Batch) em [Quotas e limites para o serviço Azure Batch](batch-quota-limit.md). Caso se questione "Por que motivo o meu conjunto não alcança mais de X nós?" esta quota de núcleos pode ser a causa.
 
-- **Sistema operativo** para nós (*virtual_machine_configuration* **ou** *cloud_service_configuration* - necessário)<p/>No *python_tutorial_client.py*, criamos um conjunto de nós do Linux com uma [VirtualMachineConfiguration][py_vm_config] obtida com a função auxiliar `get_vm_config_for_distro`. Esta função auxiliar utiliza [list_node_agent_skus][py_list_skus] para obter e selecionar uma imagem de uma lista de imagens compatíveis do [Azure Virtual Machines Marketplace][vm_marketplace]. Em alternativa, tem a opção de especificar um [CloudServiceConfiguration][py_cs_config] e criar um conjunto de nós do Windows a partir do Cloud Services. Veja [Aprovisionar nós de computação do Linux em conjuntos do Azure Batch](batch-linux-nodes.md) para obter mais informações sobre as duas configurações.
+- **Sistema operativo** para nós (*virtual_machine_configuration* **ou** *cloud_service_configuration* - necessário)<p/>No *python_tutorial_client.py*, criamos um conjunto de nós do Linux com uma [VirtualMachineConfiguration][py_vm_config] obtida com a função auxiliar `get_vm_config_for_distro`. Esta função auxiliar utiliza [list_node_agent_skus][py_list_skus] para obter e selecionar uma imagem de uma lista de imagens compatíveis do [Azure Virtual Machines Marketplace][vm_marketplace]. Em alternativa, pode especificar um [CloudServiceConfiguration][py_cs_config] e criar um conjunto de nós do Windows a partir dos Serviços Cloud. Veja [Aprovisionar nós de computação do Linux em conjuntos do Azure Batch](batch-linux-nodes.md) para obter mais informações sobre as duas configurações.
 
 - **Tamanho dos nós de computação** (*vm_size* - necessário)<p/>Uma vez que vamos especificar nós do Linux para [VirtualMachineConfiguration][py_vm_config], especificamos um tamanho de VM (`STANDARD_A1` neste exemplo) a partir de [Tamanhos de máquinas virtuais no Azure](../virtual-machines/virtual-machines-linux-sizes.md). Novamente, veja [Aprovisionar nós de computação do Linux em conjuntos do Azure Batch](batch-linux-nodes.md) para obter mais informações.
 
-- **Tarefa de início** (*start_task* - não é necessário)<p/>Juntamente com as propriedades de nó físico anteriores, também pode especificar um [StartTask][py_starttask] para o conjunto (não é necessário). O StartTask será executado em cada nó à medida que esse nó se associa ao conjunto, bem como sempre que um nó for reiniciado. O StartTask é especialmente útil para preparar nós de computação para a execução de tarefas, como instalar as aplicações que as suas tarefas irão executar.<p/>Nesta aplicação de exemplo, o StartTask copia os ficheiros que transfere do Armazenamento (que são especificados com a propriedade **resource_files**) do StartTask, a partir do *diretório de trabalho*do StartTask para o diretório *partilhado* a que todas as tarefas em execução no nó podem aceder. Essencialmente, esta ação copia o `python_tutorial_task.py` para o diretório partilhado em cada nó, à medida que o nó se associa ao conjunto, para que quaisquer tarefas executadas no nó lhe consigam aceder.
+- **Tarefa de início** (*start_task* - não é necessário)<p/>Juntamente com as propriedades de nó físico anteriores, também pode especificar um [StartTask][py_starttask] para o conjunto (não é necessário). O StartTask é executado em cada nó à medida que esse nó se associa ao conjunto, e sempre que um nó for reiniciado. O StartTask é especialmente útil para preparar nós de computação para a execução de tarefas, como instalar as aplicações que as suas tarefas executam.<p/>Nesta aplicação de exemplo, o StartTask copia os ficheiros que transfere do Armazenamento (que são especificados com a propriedade **resource_files**) do StartTask, a partir do *diretório de trabalho*do StartTask para o diretório *partilhado* a que todas as tarefas em execução no nó podem aceder. Essencialmente, esta ação copia o `python_tutorial_task.py` para o diretório partilhado em cada nó, à medida que o nó se associa ao conjunto, para que quaisquer tarefas executadas no nó lhe consigam aceder.
 
 Repare na chamada para a função auxiliar `wrap_commands_in_shell`. Esta função aceita um conjunto de comandos separados e cria uma única linha de comandos adequada para a propriedade de linha de comandos de uma tarefa.
 
@@ -352,9 +355,9 @@ A utilização de duas variáveis de ambiente na propriedade **command_line** do
 
 Um **trabalho** do Batch é uma coleção de tarefas e está associado a um conjunto de nós de computação. As tarefas num trabalho são executadas nos nós de computação do conjunto associado.
 
-Pode utilizar um trabalho apenas para organizar e controlar tarefas em cargas de trabalho relacionadas, mas também para impor determinadas restrições, como o tempo de execução máximo para a tarefa (e, por extensão, as tarefas), bem como a prioridade do trabalho em relação a outros trabalhos da conta do Batch. Neste exemplo, no entanto, o trabalho está associado apenas ao conjunto que foi criado no passo 3. Não estão configuradas propriedades adicionais.
+Pode utilizar um trabalho não só para organizar e controlar tarefas em cargas de trabalho relacionadas, mas também para impor determinadas restrições, como o tempo de execução máximo para a tarefa (e, por extensão, as tarefas), e a prioridade do trabalho em relação a outros trabalhos da conta do Batch. Neste exemplo, no entanto, o trabalho está associado apenas ao conjunto que foi criado no passo 3. Não estão configuradas propriedades adicionais.
 
-Todos os trabalhos do Batch estão associados a um conjunto específico. Esta associação indica os nós nos quais as tarefas do trabalho irão ser executadas. Especifique isto com a propriedade [PoolInformation][py_poolinfo], conforme ilustrado no fragmento de código abaixo.
+Todos os trabalhos do Batch estão associados a um conjunto específico. Esta associação indica os nós nos quais as tarefas do trabalho são executadas. Especifique este conjunto com a propriedade [PoolInformation][py_poolinfo], conforme ilustrado no fragmento de código abaixo.
 
 ```python
 def create_job(batch_service_client, job_id, pool_id):
@@ -538,7 +541,7 @@ def download_blobs_from_container(block_blob_client,
     print('  Download complete!')
 ```
 
-> [AZURE.NOTE] A chamada para o `download_blobs_from_container` no *python_tutorial_client.py* especifica que os ficheiros devem ser transferidos para o diretório principal do utilizador. Pode modificar esta localização de saída.
+> [AZURE.NOTE] A chamada para o `download_blobs_from_container` no *python_tutorial_client.py* especifica que os ficheiros devem ser transferidos para o seu diretório principal. Pode modificar esta localização de saída.
 
 ## Passo 8: eliminar contentores
 
@@ -554,9 +557,9 @@ blob_client.delete_container(output_container_name)
 
 ## Passo 9: eliminar o trabalho e o conjunto
 
-No passo final, é pedido ao utilizador para eliminar o trabalho e o conjunto que foram criados pelo script *python_tutorial_client.py*. Apesar de os próprios trabalhos e tarefas não lhe serem cobrados, os nós de computação *são* cobrados. Assim, recomendamos que atribua nós apenas conforme necessário. A eliminação de conjuntos não utilizados pode fazer parte do processo de manutenção.
+No passo final, é-lhe pedido para eliminar o trabalho e o conjunto que foram criados pelo script *python_tutorial_client.py*. Apesar de os próprios trabalhos e tarefas não lhe serem cobrados, os nós de computação *são* cobrados. Assim, recomendamos que atribua nós apenas conforme necessário. A eliminação de conjuntos não utilizados pode fazer parte do processo de manutenção.
 
-O [JobOperations][py_job] e o [PoolOperations][py_pool] do BatchServiceClient têm métodos de eliminação correspondentes, que são chamados se o utilizador confirmar a eliminação:
+O [JobOperations][py_job] e o [PoolOperations][py_pool] do BatchServiceClient têm métodos de eliminação correspondentes, que são chamados se confirmar a eliminação:
 
 ```python
 # Clean up Batch resources (if the user so chooses).
@@ -571,7 +574,7 @@ if query_yes_no('Delete pool?') == 'yes':
 
 ## Executar a aplicação de exemplo
 
-Quando executa o script *python_tutorial_client.py*, o resultado da consola será semelhante ao seguinte. Verá uma pausa no `Monitoring all tasks for 'Completed' state, timeout in 0:20:00...` enquanto os nós de computação do conjunto são criados, iniciados, e os comandos na tarefa de início do conjunto são executados. Utilize o [portal do Azure][azure_portal] para monitorizar o conjunto, nós de computação, o trabalho e as tarefas durante e após a execução. Utilize o [portal do Azure][azure_portal] ou o [Explorador de Armazenamento do Microsoft Azure][storage_explorer] para ver os recursos de Armazenamento (contentores e blobs) que são criados pela aplicação.
+Quando executa o script *python_tutorial_client.py* a partir do tutorial [exemplo de código][github_article_samples], o resultado da consola é semelhante ao seguinte. Há uma pausa no `Monitoring all tasks for 'Completed' state, timeout in 0:20:00...` enquanto os nós de computação do conjunto são criados, iniciados, e os comandos na tarefa de início do conjunto são executados. Utilize o [portal do Azure][azure_portal] para monitorizar o conjunto, nós de computação, o trabalho e as tarefas durante e após a execução. Utilize o [portal do Azure][azure_portal] ou o [Explorador de Armazenamento do Microsoft Azure][storage_explorer] para ver os recursos de Armazenamento (contentores e blobs) que são criados pela aplicação.
 
 O tempo de execução típico é **aproximadamente 5 a 7 minutos** quando executa a aplicação na configuração predefinida.
 
@@ -619,9 +622,9 @@ Agora que está familiarizado com o fluxo de trabalho básico de uma solução d
 [batch_learning_path]: https://azure.microsoft.com/documentation/learning-paths/batch/
 [blog_linux]: http://blogs.technet.com/b/windowshpc/archive/2016/03/30/introducing-linux-support-on-azure-batch.aspx
 [github_samples]: https://github.com/Azure/azure-batch-samples
-[github_samples_common]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/Common
 [github_samples_zip]: https://github.com/Azure/azure-batch-samples/archive/master.zip
 [github_topnwords]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/TopNWords
+[github_article_samples]: https://github.com/Azure/azure-batch-samples/tree/master/Python/Batch/article_samples
 
 [nuget_packagemgr]: https://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c
 [nuget_restore]: https://docs.nuget.org/consume/package-restore/msbuild-integrated#enabling-package-restore-during-build
@@ -663,20 +666,20 @@ Agora que está familiarizado com o fluxo de trabalho básico de uma solução d
 [visual_studio]: https://www.visualstudio.com/products/vs-2015-product-editions
 [vm_marketplace]: https://azure.microsoft.com/marketplace/virtual-machines/
 
-[1]: ./media/batch-dotnet-get-started/batch_workflow_01_sm.png "Criar contentores no Armazenamento do Azure"
-[2]: ./media/batch-dotnet-get-started/batch_workflow_02_sm.png "Carregar a aplicação de tarefa e os ficheiros de entrada (dados) para contentores"
-[3]: ./media/batch-dotnet-get-started/batch_workflow_03_sm.png "Criar conjunto do Batch"
-[4]: ./media/batch-dotnet-get-started/batch_workflow_04_sm.png "Criar um trabalho do Batch"
-[5]: ./media/batch-dotnet-get-started/batch_workflow_05_sm.png "Adicionar tarefas ao trabalho"
-[6]: ./media/batch-dotnet-get-started/batch_workflow_06_sm.png "Monitorizar tarefas"
-[7]: ./media/batch-dotnet-get-started/batch_workflow_07_sm.png "Transferir o resultado da tarefa do Armazenamento"
-[8]: ./media/batch-dotnet-get-started/batch_workflow_sm.png "Fluxo de trabalho da solução Batch (diagrama completo)"
-[9]: ./media/batch-dotnet-get-started/credentials_batch_sm.png "Credenciais do Batch no Portal"
-[10]: ./media/batch-dotnet-get-started/credentials_storage_sm.png "Credenciais do Armazenamento no Portal"
-[11]: ./media/batch-dotnet-get-started/batch_workflow_minimal_sm.png "Fluxo de trabalho da solução Batch (diagrama mínimo)"
+[1]: ./media/batch-python-tutorial/batch_workflow_01_sm.png "Criar contentores no Armazenamento do Azure"
+[2]: ./media/batch-python-tutorial/batch_workflow_02_sm.png "Carregar a aplicação de tarefa e os ficheiros de entrada (dados) para contentores"
+[3]: ./media/batch-python-tutorial/batch_workflow_03_sm.png "Criar conjunto do Batch"
+[4]: ./media/batch-python-tutorial/batch_workflow_04_sm.png "Criar trabalho do Batch"
+[5]: ./media/batch-python-tutorial/batch_workflow_05_sm.png "Adicionar tarefas ao trabalho"
+[6]: ./media/batch-python-tutorial/batch_workflow_06_sm.png "Monitorizar tarefas"
+[7]: ./media/batch-python-tutorial/batch_workflow_07_sm.png "Transferir o resultado da tarefa do Armazenamento"
+[8]: ./media/batch-python-tutorial/batch_workflow_sm.png "Fluxo de trabalho da solução Batch (diagrama completo)"
+[9]: ./media/batch-python-tutorial/credentials_batch_sm.png "Credenciais do Batch no Portal"
+[10]: ./media/batch-python-tutorial/credentials_storage_sm.png "Credenciais do Armazenamento no Portal"
+[11]: ./media/batch-python-tutorial/batch_workflow_minimal_sm.png "Fluxo de trabalho da solução Batch (diagrama mínimo)"
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

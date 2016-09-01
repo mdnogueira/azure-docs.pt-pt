@@ -3,7 +3,7 @@
    description="Saiba como utilizar Rotas Definidas pelo Utilizador (UDR) e Reencaminhamento IP para reencaminhar tráfego para aplicações virtuais de rede no Azure."
    services="virtual-network"
    documentationCenter="na"
-   authors="telmosampaio"
+   authors="jimdial"
    manager="carmonm"
    editor="tysonn" />
 <tags 
@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="03/15/2016"
-   ms.author="telmos" />
+   ms.author="jdial" />
 
 # O que são Rotas Definidas pelo Utilizador e Reencaminhamento IP?
 Quando adiciona máquinas virtuais (VM) a uma rede virtual (VNet) no Azure, repara que as VM conseguem comunicar entre si através da rede, automaticamente. Não é necessário especificar um gateway, apesar das VM estarem em sub-redes diferentes. O mesmo se verifica para a comunicação entre as VM e a Internet pública, e até mesmo na sua rede no local quando está presente uma ligação híbrida a partir do Azure para o seu centro de dados.
@@ -77,7 +77,7 @@ As sub-redes dependem de rotas de sistema até uma tabela de rota ser associada 
 
 Para saber como criar rotas definidas pelo utilizador, veja [Como Criar Rotas e Permitir o Reencaminhamento IP no Azure](virtual-network-create-udr-arm-template.md).
 
->[AZURE.IMPORTANT] As rotas definidas pelo utilizador só são aplicadas às VM do Azure e aos serviços em nuvem. Por exemplo, se pretender adicionar uma aplicação virtual de firewall entre a rede no local e o Azure, terá de criar uma rota definida pelo utilizador para as suas tabelas de rota do Azure que reencaminham todo o tráfego destinado ao espaço de endereço no local para a aplicação virtual. No entanto, o tráfego de entrada do espaço de endereço no local irá fluir pelo gateway de VPN ou pelo circuito ExpressRoute diretamente para o ambiente do Azure, ignorando a aplicação virtual.
+>[AZURE.IMPORTANT] As rotas definidas pelo utilizador só são aplicadas às VM do Azure e aos serviços em nuvem. Por exemplo, se pretender adicionar uma aplicação virtual de firewall entre a rede no local e o Azure, terá de criar uma rota definida pelo utilizador para as suas tabelas de rota do Azure que reencaminham todo o tráfego destinado ao espaço de endereço no local para a aplicação virtual. Também pode adicionar uma rota definida pelo utilizador (UDR) para o GatewaySubnet para reencaminhar todo o tráfego no local para o Azure através do dispositivo virtual. Trata-se de uma adição recente.
 
 ### Rotas BGP
 Se tiver uma ligação ExpressRoute entre a rede no local e o Azure, pode ativar a BGP para propagar rotas da sua rede no local para o Azure. Estes rotas BGP são utilizadas da mesma forma que as rotas de sistema e as rotas definidas pelo utilizador em cada sub-rede do Azure. Para obter mais informações, consulte [Introdução ao ExpressRoute](../expressroute/expressroute-introduction.md).
@@ -96,6 +96,6 @@ Este VM de aplicação virtual deve ser capaz de receber tráfego de entrada que
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

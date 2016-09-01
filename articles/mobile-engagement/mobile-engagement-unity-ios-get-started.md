@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="mobile-unity-ios"
     ms.devlang="dotnet"
     ms.topic="hero-article"
-    ms.date="03/25/2016"
+    ms.date="08/19/2016"
     ms.author="piyushjo" />
 
 # Introdução ao Azure Mobile Engagement para implementação do Unity iOS
@@ -23,13 +23,13 @@
 Este tópico mostra como utilizar o Azure Mobile Engagement para compreender a utilização da aplicação e saber como enviar notificações push para utilizadores segmentados de uma aplicação Unity quando implementar num dispositivo iOS.
 Este tutorial utiliza o tutorial clássico Unity Roll a Ball como ponto de partida. Deve seguir os passos neste [tutorial](mobile-engagement-unity-roll-a-ball.md) antes de continuar com a integração do Mobile Engagement que demonstramos no tutorial abaixo. 
 
-Neste tutorial necessita do seguinte:
+Para este tutorial, necessita do seguinte:
 
 + [Unity Editor](http://unity3d.com/get-unity)
 + [SDK Unity do Mobile Engagement](https://aka.ms/azmeunitysdk)
 + XCode Editor
 
-> [AZURE.NOTE] Para concluir este tutorial, tem de ter uma conta ativa do Azure. Se não tiver uma conta, pode criar uma conta de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fmobile-engagement-unity-ios-get-started).
+> [AZURE.NOTE] Para concluir este tutorial, tem de ter uma conta ativa do Azure. Se não tiver uma conta, pode criar uma de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fmobile-engagement-unity-ios-get-started).
 
 ##<a id="setup-azme"></a>Configurar o Mobile Engagement para a aplicação iOS
 
@@ -134,6 +134,7 @@ Não tem de efetuar qualquer configuração adicional na sua aplicação para re
 [75]: ./media/mobile-engagement-unity-ios-get-started/75.png
 
 
-<!--HONumber=Jun16_HO2-->
+
+<!--HONumber=ago16_HO4-->
 
 

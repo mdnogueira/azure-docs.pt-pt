@@ -14,7 +14,7 @@
     ms.devlang="na"
     ms.topic="hero-article"
     ms.date="06/16/2016"
-    ms.author="jtaubensee"/>
+    ms.author="jotaub"/>
 
 # Introdução ao Event Hubs
 
@@ -26,7 +26,7 @@ Os Event Hubs são um serviço que processa grandes quantidades de dados de even
 
 Este tutorial mostra como utilizar o Portal Clássico do Azure para criar um Hub de Eventos. Mostra também como recolher mensagens para um Hub de Eventos utilizando uma aplicação de consola escrita em C# e como as pode recuperar em paralelo utilizando a biblioteca Java de Anfitrião do Processador de Eventos.
 
-Para concluir este tutorial, precisa do seguinte:
+Para concluir este tutorial, irá precisar do seguinte:
 
 + [Microsoft Visual Studio](http://visualstudio.com)
 
@@ -73,6 +73,6 @@ Agora que compilou uma aplicação de trabalho que cria um Hub de Eventos e envi
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

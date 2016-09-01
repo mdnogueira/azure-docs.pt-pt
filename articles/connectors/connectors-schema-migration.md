@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="04/20/2016"
+    ms.date="08/23/2016"
     ms.author="deonhe"/>
 
 # Como migrar Logic Apps para o esquema versão 2015-08-01-pré-visualização
@@ -51,6 +51,6 @@ A página Atualizar Esquema apresenta e fornece uma ligação para um documento 
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

@@ -12,7 +12,7 @@
     ms.topic="get-started-article"
     ms.tgt_pltfrm="na"
     ms.workload="tbd"
-    ms.date="04/15/2016"
+    ms.date="08/16/2016"
     ms.author="sethm" />
 
 # Guia de programação dos Event Hubs
@@ -23,7 +23,7 @@ Este tópico descreve a programação com os Event Hubs do Azure utilizando o SD
 
 O envio de eventos para um Hub de Eventos é efetuado utilizando o HTTP POST ou através de uma ligação AMQP 1.0. A escolha de qual o método a utilizar depende do cenário específico que está a ser abordado. As ligações AMQP 1.0 são medidas como ligações mediadas no Service Bus e são mais adequadas nos cenários com requisitos de latência inferiores e volumes de mensagens altos frequentes, que fornecem um canal de mensagens persistente.
 
-Os Event Hubs são criados e geridos através da classe [NamespaceManager](https://msdn.microsoft.com/library/azure/microsoft.servicebus.namespacemanager.aspx). Quando utilizar as APIs .NET geridas, as construções primárias para publicar dados para os Event Hubs são as classes [EventHubClient](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventhubclient.aspx) e [EventData](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventdata.aspx). [EventHubClient](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventhubclient.aspx) fornece o canal de comunicação AMQP, através do qual os eventos são enviados para o Hub de Eventos. A classe [EventData](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventdata.aspx) representa um evento e é utilizada para publicar mensagens num Hub de Eventos. Esta classe inclui o corpo, alguns metadados e as informações de cabeçalho sobre o evento. Outras propriedades são adicionadas ao objeto [EventData](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventdata.aspx) à medida que este passa através de um Hub de Eventos.
+Os Event Hubs são criados e geridos através da classe [NamespaceManager](https://msdn.microsoft.com/library/azure/microsoft.servicebus.namespacemanager.aspx). Quando utilizar as APIs .NET geridas, as construções primárias para publicar dados para os Event Hubs são as classes [EventHubClient](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventhubclient.aspx) e [EventData](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventdata.aspx). [EventHubClient](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventhubclient.aspx) fornece o canal de comunicação AMQP, através do qual os eventos são enviados para o Hub de Eventos. A classe [EventData](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventdata.aspx) representa um evento e é utilizada para publicar mensagens num Event Hub. Esta classe inclui o corpo, alguns metadados e as informações de cabeçalho sobre o evento. Outras propriedades são adicionadas ao objeto [EventData](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventdata.aspx) à medida que este passa através de um Hub de Eventos.
 
 ## Introdução
 
@@ -172,7 +172,7 @@ A classe [EventProcessorHost](https://msdn.microsoft.com/library/azure/microsoft
 
 ## Revogação do publicador
 
-Para além das funcionalidades avançadas de tempo de execução do [EventProcessorHost](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventprocessorhost.aspx), os Event Hubs permitem a revogação do publicador para bloquear publicadores específicos de enviar o evento para um Hub de Eventos. Estas funcionalidades são particularmente úteis se um token do publicador tiver ficado comprometido ou se uma atualização de software estiver a fazer com que elas se comportem inapropriadamente. Nestas situações, a identidade do publicador, que faz parte do respetivo token SAS, pode ser bloqueada a partir dos eventos de publicação.
+Para além das funcionalidades avançadas de tempo de execução do [EventProcessorHost](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventprocessorhost.aspx), os Event Hubs permitem a revogação do publicador para impedir que publicadores específicos enviem eventos para um Event Hub. Estas funcionalidades são particularmente úteis se um token do publicador tiver ficado comprometido ou se uma atualização de software estiver a fazer com que elas se comportem inapropriadamente. Nestas situações, a identidade do publicador, que faz parte do respetivo token SAS, pode ser bloqueada a partir dos eventos de publicação.
 
 Para mais informações acerca da revogação do publicador e sobre como enviar Event Hubs como publicador, consulte o exemplo [Publicação Segura em Larga Escala dos Event Hubs do Service Bus](https://code.msdn.microsoft.com/Service-Bus-Event-Hub-99ce67ab).
 
@@ -187,6 +187,6 @@ Para obter mais informações sobre os cenários dos Event Hubs, consulte estas 
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

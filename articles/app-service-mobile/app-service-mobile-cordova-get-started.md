@@ -7,7 +7,7 @@
     manager="erikre"
     editor=""
     tags=""
-    keywords="cordova,javascript,mobile,client" />
+    keywords="cordova,javascript,móvel,cliente" />
 
 <tags
     ms.service="app-service-mobile"
@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="mobile-html"
     ms.devlang="javascript"
     ms.topic="hero-article"
-    ms.date="05/02/2016"
+    ms.date="08/11/2016"
     ms.author="glenga"/>
 
 #Criar uma aplicação Apache Cordova
@@ -41,6 +41,8 @@ Também pode ignorar o Visual Studio e utilizar diretamente a linha de comandos 
 ## Criar um novo back-end da aplicação móvel do Azure
 
 [AZURE.INCLUDE [app-service-mobile-dotnet-backend-create-new-service](../../includes/app-service-mobile-dotnet-backend-create-new-service.md)]
+
+[Veja um vídeo que mostra os passos semelhantes](https://channel9.msdn.com/series/Azure-connected-services-with-Cordova/Azure-connected-services-task-1-Create-an-Azure-Mobile-App)
 
 ## Configurar o projeto de servidor
 
@@ -84,7 +86,6 @@ Saiba como utilizar os SDKs.
 
 
 
-
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

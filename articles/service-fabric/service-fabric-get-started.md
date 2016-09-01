@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="06/15/2016"
+   ms.date="06/16/2016"
    ms.author="ryanwi"/>
 
 # Preparar o ambiente de desenvolvimento
@@ -28,16 +28,15 @@ As seguintes versões do sistema operativo são suportadas para desenvolvimento:
 - Windows Server 2012 R2
 - Windows 10
 
->[AZURE.NOTE] O Windows 7 inclui, por predefinição, apenas o Windows PowerShell 2.0. Para utilizar os cmdlets do PowerShell para o Service Fabric, terá de instalar o PowerShell 3.0 ou superior. Pode [transferir o Windows PowerShell 5.0][powershell5-download] no Centro de Transferências da Microsoft.
+>[AZURE.NOTE] O Windows 7 inclui, por predefinição, apenas o Windows PowerShell 2.0. Os cmdlets do PowerShell do Service Fabric necessitam do PowerShell 3.0 ou superior. Pode [transferir o Windows PowerShell 5.0][powershell5-download] no Centro de Transferências da Microsoft.
 
 ## Instalar o runtime, o SDK e as ferramentas
 
 O Instalador de Plataforma Web oferece três configurações para desenvolvimento do Service Fabric:
 
-- [Instalar o runtime Service Fabric, o SDK e as ferramentas do Visual Studio 2015 Update 2][full-bundle-vs2015]
+- [Instalar o runtime Service Fabric, o SDK e as ferramentas do Visual Studio 2015 Update 2 ou mais recente][full-bundle-vs2015]
 - [Instalar a Pré-visualização "15" do runtime , do SDK e das ferramentas do Service Fabric para Visual Studio][full-bundle-dev15]
 - [Instalar apenas o runtime e o SDK do Service Fabric (sem as ferramentas do Visual Studio)][core-sdk]
-
 
 ## Ativar a execução do script do PowerShell
 
@@ -66,6 +65,6 @@ Agora que o ambiente de desenvolvimento está configurado, pode começar a criar
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

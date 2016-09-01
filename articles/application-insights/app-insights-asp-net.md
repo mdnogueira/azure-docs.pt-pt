@@ -12,7 +12,7 @@
     ms.tgt_pltfrm="ibiza" 
     ms.devlang="na" 
     ms.topic="get-started-article" 
-    ms.date="06/21/2016" 
+    ms.date="08/09/2016" 
     ms.author="daviste"/>
 
 
@@ -56,9 +56,9 @@ Clique com o botão direito do rato no Explorador de Soluções e escolha **Adic
 
 ## <a name="run"></a> 2. Executar a aplicação
 
-Execute a aplicação ao premir F5 e experimente-a: abra páginas diferentes para gerar alguma telemetria.
+Execute a aplicação com F5 e experimente-a: abra páginas diferentes para gerar alguma telemetria.
 
-No Visual Studio, verá uma contagem dos eventos que foram registados. 
+No Visual Studio, vê uma contagem dos eventos que foram registados. 
 
 ![No Visual Studio, o botão do Application Insights é apresentado durante a depuração.](./media/app-insights-asp-net/54.png)
 
@@ -89,10 +89,22 @@ Abra o recurso do Application Insights no [portal do Azure](https://portal.azure
 O portal é aberto numa vista de telemetria a partir da sua aplicação:
 ![](./media/app-insights-asp-net/66.png)
 
-* Os eventos individuais são apresentados em **Pesquisar** (1). Os dados são apresentados aqui primeiro (e na [Transmissão de Métricas em Direto](app-insights-metrics-explorer.md#live-metrics-stream)). Clique em qualquer evento para ver as respetivas propriedades. 
+* A primeira telemetria é apresentada no [Live Metrics Stream](app-insights-metrics-explorer.md#live-metrics-stream).
+* Os eventos individuais são apresentados em **Pesquisar** (1). Podem ser necessários alguns minutos para que os dados sejam apresentados. Clique em qualquer evento para ver as respetivas propriedades. 
 * As métricas agregadas são apresentadas nos gráficos (2). Poderá demorar um ou dois minutos para os dados serem apresentados aqui. Clique em qualquer gráfico para abrir um painel com mais detalhes.
 
 [Saiba mais sobre como utilizar o Application Insights no portal do Azure](app-insights-dashboards.md).
+
+## 4. Publicar a aplicação
+
+Publique a sua aplicação no seu servidor IIS ou no Azure. Veja o [Live Metrics Stream](app-insights-metrics-explorer.md#live-metrics-stream) para garantir que não existem problemas.
+
+Irá ver a telemetria a acumular-se no portal Application Insights, onde pode monitorizar métricas, procurar a sua telemetria e configurar [dashboards](app-insights-dashboards.md). Também pode utilizar o [Idioma de consulta Analytics](app-insights-analytics.md) avançado para analisar a utilização e o desempenho ou procurar eventos específicos. 
+
+Também pode continuar a analisar a sua telemetria no [Visual Studio](app-insights-visual-studio.md) com ferramentas como a pesquisa de diagnóstico e as [Tendências](app-insights-visual-studio-trends.md).
+
+> [AZURE.NOTE] Se a sua aplicação enviar telemetria suficiente para se aproximar dos [limites de monitorização](app-insights-pricing.md#limits-summary), é ativada a [amostragem](app-insights-sampling.md) automática. A amostragem reduz a quantidade de telemetria enviada pela sua aplicação, conservando os dados correlacionados para efeitos de diagnóstico.
+
 
 ##<a name="land"></a> O que fez ’’Adicionar o Application Insights’’?
 
@@ -108,7 +120,7 @@ Por isso, o comando faz três ações:
 
 Se quiser, pode executar estes passos manualmente para [ASP.NET 4](app-insights-asp-net-manual.md) ou [ASP.NET Core](https://github.com/Microsoft/ApplicationInsights-aspnetcore/wiki/Getting-Started).
 
-## Para atualizar para versões futuras do SDK
+### Para atualizar para versões futuras do SDK
 
 Para atualizar para uma [nova versão do SDK](app-insights-release-notes-dotnet.md), abra o gestor de pacotes NuGet novamente e filtre os pacotes instalados. Selecione Microsoft.ApplicationInsights.Web e escolha Atualizar.
 
@@ -132,6 +144,6 @@ Se tiver efetuado personalizações no ApplicationInsights.config, guarde uma c�
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="05/06/2016"
+   ms.date="08/16/2016"
    ms.author="cherylmc"/>
 
 # Criar conjuntos de registos e registos de DNS ao utilizar a CLI
@@ -68,6 +68,6 @@ Para mais informações sobre o DNS do Azure, consulte a [Descrição geral do D
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

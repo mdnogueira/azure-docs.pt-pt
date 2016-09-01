@@ -30,6 +30,7 @@ Este tutorial guia-o através dos passos para criar um cofre dos serviços de re
 - VMs clássicas
 - VMs de armazenamento standard
 - VMs do Premium Storage
+- VMs encriptadas com o Azure Disk Encryption, com BEK e KEK (suportado com o Powershell)
 
 Para obter informações adicionais sobre a proteção de VMs do Premium Storage, consulte o artigo [Criar cópias de segurança e Restaurar VMs de Armazenamento Premium](backup-introduction-to-azure-backup.md#back-up-and-restore-premium-storage-vms)
 
@@ -222,6 +223,6 @@ Se tiver dúvidas ou se houver alguma funcionalidade que gostaria de ver incluí
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="PHP"
     ms.topic="hero-article"
-    ms.date="06/24/2016"
+    ms.date="08/11/2016"
     ms.author="robmcm"/>
 
 # Criar uma aplicação Web WordPress no App Service do Azure
@@ -130,6 +130,6 @@ Para obter mais informações sobre como trabalhar com as Web Apps do App Servic
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

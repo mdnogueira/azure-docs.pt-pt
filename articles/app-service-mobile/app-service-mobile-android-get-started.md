@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="mobile-android"
     ms.devlang="java"
     ms.topic="hero-article"
-    ms.date="07/21/2016"
+    ms.date="08/17/2016"
     ms.author="ricksal"/>
 
 #Criar uma aplicação Android
@@ -32,7 +32,6 @@ Para concluir este tutorial, precisa do seguinte:
 
 * [Ferramentas de Programador Android](https://developer.android.com/sdk/index.html), que inclui o ambiente de desenvolvimento integrado do Android Studio e a plataforma Android mais recente.
 * SDK Móvel do Azure para Android, referenciado automaticamente como parte do projeto de início rápido que pode transferir.
-* Um PC com o [Visual Studio Community 2013] ou mais recente &mdash; não necessário para um back-end Node.js.
 * Uma [conta ativa do Azure](https://azure.microsoft.com/pricing/free-trial/).
 
 ## Criar um novo back-end da aplicação móvel do Azure
@@ -56,6 +55,6 @@ Para concluir este tutorial, precisa do seguinte:
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

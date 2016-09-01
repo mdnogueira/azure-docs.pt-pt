@@ -7,7 +7,7 @@
    manager="erikre"
    editor=""
    tags=""
-   />
+/>
 
 <tags
    ms.service="functions"
@@ -15,10 +15,10 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="multiple"
    ms.workload="na"
-   ms.date="05/05/2016"
+   ms.date="08/22/2016"
    ms.author="glenga"/>
 
-# Criar a sua primeira Função do Azure
+#Criar a sua primeira Função do Azure
 
 ##Descrição geral
 As Funções do Azure são uma experiência de computação a pedido condicionada por eventos que expande a plataforma de aplicações do Azure existente com capacidades para implementar o código acionado pelos eventos que ocorrem noutros serviços do Azure, produtos SaaS e sistemas no local. Com as Funções do Azure, as suas aplicações são dimensionadas a pedido e paga apenas os recursos que consumir. As Funções do Azure permitem-lhe criar unidades agendadas ou acionadas de código implementado em várias linguagens de programação. Para saber mais acerca das Funções do Azure, veja a [Descrição Geral das Funções do Azure](functions-overview.md).
@@ -70,6 +70,6 @@ Funções do Azure melhora a plataforma do Azure App Service para funcionalidade
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

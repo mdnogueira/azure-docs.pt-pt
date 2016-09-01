@@ -12,7 +12,7 @@
     ms.tgt_pltfrm="ibiza"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="05/18/2016"
+    ms.date="08/15/2016"
     ms.author="awills"/>
 
 # Application Insights para páginas Web
@@ -20,16 +20,16 @@
 
 [AZURE.INCLUDE [app-insights-selector-get-started-dotnet](../../includes/app-insights-selector-get-started-dotnet.md)]
 
-Saiba mais sobre o desempenho e a utilização da sua aplicação ou página Web. Adicione o Visual Studio Application Insights ao seu script de página e obterá as temporizações de carregamentos de página e chamadas AJAX, contagens e detalhes de falhas de AJAX e exceções de browser, bem como contagens de utilizadores e sessões. Todas estas podem ser segmentadas por página, SO de cliente e versão do browser, geolocalização e outras dimensões. Também pode definir alertas em contagens de falhas ou carregamento lento de página.
+Saiba mais sobre o desempenho e a utilização da sua aplicação ou página Web. Se adicionar o Visual Studio Application Insights ao seu script de página, obterá as temporizações de carregamentos de página e chamadas AJAX, contagens e detalhes de falhas de AJAX e exceções de browser, bem como contagens de utilizadores e sessões. Todas estas podem ser segmentadas por página, SO de cliente e versão do browser, geolocalização e outras dimensões. Também pode definir alertas em contagens de falhas ou carregamento lento de página.
 
 Pode utilizar o Application Insights com quaisquer páginas Web - basta adicionar um pequeno pedaço de JavaScript. Se o seu serviço Web for [Java](app-insights-java-get-started.md) ou [ASP.NET](app-insights-asp-net.md), pode integrar telemetria a partir do seu servidor e clientes.
 
-Precisará de uma subscrição do [Microsoft Azure](https://azure.com). Se a sua equipa tiver uma subscrição organizacional, peça ao proprietário para adicionar a sua conta Microsoft à mesma. Existe um escalão de preço gratuito, para que a utilização de desenvolvimento e em pequena escala não custe nada.
+Precisa de uma subscrição do [Microsoft Azure](https://azure.com). Se a sua equipa tiver uma subscrição organizacional, peça ao proprietário para adicionar a sua conta Microsoft à mesma. Existe um escalão de preço gratuito, para que a utilização de desenvolvimento e em pequena escala não custe nada.
 
 
 ## Configurar o Application Insights para a sua página Web
 
-É possível que já o tenha. Se a sua aplicação for um novo projeto ASP.NET e tiver optado por adicionar o Application Insights na caixa de diálogo Novo Projeto do Visual Studio, o script terá sido adicionado nessa altura, pelo que está pronto a começar.
+Em primeiro lugar, precisa de adicionar o Application Insights às suas páginas Web? É possível que já o tenha feito. Se decidiu adicionar o Application Insights à sua aplicação Web na caixa de diálogo Novo Projeto do Visual Studio, o script foi adicionado na altura. Nesse caso, não precisa de fazer mais nada.
 
 Caso contrário, terá de adicionar um fragmento de código às suas páginas Web, da seguinte forma.
 
@@ -39,7 +39,7 @@ O recurso do Application Insights é onde são apresentados os dados sobre o des
 
 Inicie sessão no [portal do Azure](https://portal.azure.com).
 
-Se já configurou a monitorização no lado do servidor da sua aplicação, já terá um recurso:
+Se já configurou a monitorização no lado do servidor da sua aplicação, já tem um recurso:
 
 ![Escolha Procurar, Serviços de Programação, Application Insights.](./media/app-insights-javascript/01-find.png)
 
@@ -57,7 +57,7 @@ Em Início Rápido, obtenha o script para páginas Web:
 
 ![No painel de descrição geral da aplicação, escolha Início Rápido, Obter código para monitorizar as minhas páginas Web. Copie o script.](./media/app-insights-javascript/02-monitor-web-page.png)
 
-Insira o script imediatamente antes do tag `<head>` de todas as páginas que quer controlar. Se o seu site tiver uma página mestra, pode colocar aí o script. Por exemplo:
+Insira o script imediatamente antes da etiqueta `</head>` de todas as páginas que quer controlar. Se o seu site tiver uma página mestra, pode colocar aí o script. Por exemplo:
 
 * Num projeto MVC do ASP.NET, colocá-lo-ia em  `View\Shared\_Layout.cshtml`
 * Num site do SharePoint, no painel de controlo, abra [Definições do site / Página mestra](app-insights-sharepoint.md).
@@ -71,7 +71,7 @@ O script contém a chave de instrumentação que direciona os dados para o recur
 
 ## Configuração detalhada
 
-Existem vários [parâmetros](https://github.com/Microsoft/ApplicationInsights-JS/blob/master/API-reference.md#config) que pode definir, embora na maioria dos casos não deverá ser preciso. Por exemplo, pode desativar ou limitar o número de chamadas Ajax comunicado por visualização de página (para reduzir o tráfego); ou pode definir o modo de depuração para que a telemetria se mova rapidamente pelo pipeline sem ser colocada em lotes.
+Existem vários [parâmetros](https://github.com/Microsoft/ApplicationInsights-JS/blob/master/API-reference.md#config) que pode definir, embora na maioria dos casos não deverá ser preciso. Por exemplo, pode desativar ou limitar o número de chamadas Ajax reportadas por visualização de página (para reduzir o tráfego). Pode ainda configurar o modo de depuração para que a telemetria se mova rapidamente no pipeline sem estar em lote.
 
 Para definir estes parâmetros, procure esta linha no fragmento de código e adicione mais itens separados por vírgulas a seguir à mesma:
 
@@ -120,7 +120,7 @@ Abra o painel Browsers para mostrar dados de desempenho agregados dos browsers d
 
 *Ainda não existem dados? Clique em **Atualizar** no início da página. Ainda nada? Veja [Resolução de problemas](app-insights-troubleshoot-faq.md).*
 
-O painel Browsers é um [painel do Explorador de Métricas](app-insights-metrics-explorer.md) que predefine filtros e seleções de gráficos. Pode editar o intervalo de tempo, os filtros e a configuração de gráficos se quiser e guardar o resultado como um favorito. Clique em **Restaurar predefinições** para voltar à configuração de painel original.
+O painel Browsers é um [painel do Explorador de Métricas](app-insights-metrics-explorer.md) que predefine filtros e seleções de gráficos. Se quiser, pode editar o intervalo de tempo, os filtros e a configuração de gráficos e guardar o resultado como um favorito. Clique em **Restaurar predefinições** para voltar à configuração de painel original.
 
 ## Desempenho de carregamento de página
 
@@ -175,7 +175,7 @@ e grelhas detalhadas mais abaixo:
 Clique em qualquer linha para ver detalhes específicos.
 
 
-> [AZURE.NOTE] Se eliminar o filtro Browsers no painel, tanto as dependências de servidor como de AJAX serão incluídas nestes gráficos. Clique em Restaurar predefinições para reconfigurar o filtro.
+> [AZURE.NOTE] Se eliminar o filtro Browsers no painel, tanto as dependências de servidor como de AJAX são incluídas nestes gráficos. Clique em Restaurar predefinições para reconfigurar o filtro.
 
 **Para pesquisar chamadas Ajax falhadas**, desloque o ecrã para baixo até à grelha de falhas de Dependência e, em seguida, clique numa linha para ver instâncias específicas.
 
@@ -205,9 +205,9 @@ No painel Pesquisa de Diagnóstico, defina Filtros como Visualização de Págin
 
 Selecione qualquer evento para ver mais detalhes. Na página de detalhes, clique em "…" para ver ainda mais detalhes.
 
-> [AZURE.NOTE] Se utilizar [Pesquisar](app-insights-diagnostic-search.md), tenha em atenção que tem de corresponder as palavras inteiras: "Sobr" e "bre" não correspondem a "Sobre", mas "Sobr*" corresponde. Além disso, não pode começar um termo de pesquisa com um caráter universal. Por exemplo, pesquisar "*obr" não corresponde a "Sobre".
+> [AZURE.NOTE] Se utilizar [Pesquisar](app-insights-diagnostic-search.md), tenha em atenção que tem de corresponder palavras inteiras: "Sobr" e "bre" não correspondem a "Sobre".
 
-> [Saiba mais sobre a pesquisa de diagnóstico](app-insights-diagnostic-search.md)
+Também pode utilizar o [Idioma de consulta do Analytics](app-insights-analytics-tour.md) avançado para procurar visualizações de página.
 
 ### Propriedades de visualização de página
 
@@ -215,7 +215,7 @@ Selecione qualquer evento para ver mais detalhes. Na página de detalhes, clique
 
  * Por predefinição, corresponde ao tempo que demora a carregar a página, desde o pedido do cliente até ao carregamento total (incluindo ficheiros auxiliares, mas excluindo tarefas assíncronas, tais como chamadas Ajax). 
  * Se definir `overridePageViewDuration` na [configuração da página](#detailed-configuration), corresponde ao intervalo entre o pedido do cliente e a execução do primeiro `trackPageView`. Se moveu trackPageView da sua posição habitual após a inicialização do script, irá refletir um valor diferente.
- * Se `overridePageViewDuration` estiver definido e um argumento de duração for fornecido na chamada `trackPageView()`, o valor do argumento será utilizado em alternativa. 
+ * Se `overridePageViewDuration` estiver definido e um argumento de duração for fornecido na chamada `trackPageView()`, o valor do argumento é utilizado em alternativa. 
 
 
 ## Contagens personalizadas de páginas
@@ -226,7 +226,7 @@ Insira uma chamada de JavaScript como esta no ponto adequado do código de clien
 
     appInsights.trackPageView(myPageName);
 
-O nome da página pode conter os mesmos carateres que o URL, mas qualquer caráter a seguir a "#" ou "?" será ignorado.
+O nome da página pode conter os mesmos carateres que um URL, mas qualquer caráter a seguir a "#" ou "?" é ignorado.
 
 
 
@@ -253,6 +253,6 @@ Quer descobrir o que os utilizadores fazem com a sua aplicação?
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

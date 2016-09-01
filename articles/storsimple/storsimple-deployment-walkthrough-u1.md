@@ -12,7 +12,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="04/20/2016"
+   ms.date="08/17/2016"
    ms.author="alkohli" />
 
 # Implementar o dispositivo StorSimple no local (Atualização 1)
@@ -292,6 +292,6 @@ Para obter as instruções de instalação do MPIO para o dispositivo StorSimple
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

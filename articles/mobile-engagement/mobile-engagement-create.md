@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="mobile-windows-store"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="02/17/2016"  
+    ms.date="08/19/2016"  
     ms.author="piyushjo"/>
 
 
@@ -49,6 +49,7 @@ Assim que estiver no portal do Mobile Engagement, pode analisar, criar e gerir s
 [Introdução ao Azure Mobile Engagement](mobile-engagement-windows-store-dotnet-get-started.md) (pode selecionar outras plataformas móveis na parte superior da página).
 
 
-<!--HONumber=Jun16_HO2-->
+
+<!--HONumber=ago16_HO4-->
 
 

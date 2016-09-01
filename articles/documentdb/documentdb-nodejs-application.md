@@ -4,7 +4,7 @@
     keywords="Desenvolvimento de aplicações, tutorial de bases de dados, aprenda node.js, tutorial de node.js, documentdb, azure, Microsoft azure"
     services="documentdb" 
     documentationCenter="nodejs" 
-    authors="aliuy" 
+    authors="AndrewHoh" 
     manager="jhubbard" 
     editor="cgronlun"/>
 
@@ -14,8 +14,8 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="nodejs" 
     ms.topic="hero-article" 
-    ms.date="04/18/2016" 
-    ms.author="andrl"/>
+    ms.date="08/15/2016" 
+    ms.author="anhoh"/>
 
 # <a name="_Toc395783175"></a>Criar uma aplicação Web Node.js utilizando o DocumentDB
 
@@ -165,11 +165,7 @@ Esta ação toma conta de toda a definição e configuração iniciais. Passemos
                                 id: collectionId
                             };
                             
-                            var requestOptions = {
-                                offerType: 'S1'
-                            };
-                            
-                            client.createCollection(databaseLink, collectionSpec, requestOptions, function (err, created) {
+                            client.createCollection(databaseLink, collectionSpec, function (err, created) {
                                 callback(null, created);
                             });
         
@@ -183,8 +179,9 @@ Esta ação toma conta de toda a definição e configuração iniciais. Passemos
                 
         module.exports = DocDBUtils;
 
-> [AZURE.TIP] createCollection assume um parâmetro opcional de requestOptions que pode ser utilizado para especificar o Tipo de Oferta para a Coleção. Se não for fornecido nenhum valor de requestOptions.offerType, a Coleção será então criada utilizando um Tipo de Oferta predefinido.
-> Para obter mais informações sobre os Tipos de Oferta do DocumentDB, consulte o artigo [Níveis de desempenho no DocumentDB](documentdb-performance-levels.md) 
+    > [AZURE.TIP] createCollection assume um parâmetro opcional de requestOptions que pode ser utilizado para especificar o Tipo de Oferta para a Coleção. Se não for fornecido nenhum valor de requestOptions.offerType, a Coleção será então criada utilizando um Tipo de Oferta predefinido.
+    >
+    > Para obter mais informações sobre os Tipos de Oferta do DocumentDB, consulte o artigo [Níveis de desempenho no DocumentDB](documentdb-performance-levels.md) 
         
 3. Guarde e feche o ficheiro **docdbUtils.js**.
 
@@ -576,6 +573,6 @@ Para mais informações, consulte o [Centro de Programadores de Node.js](https:/
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

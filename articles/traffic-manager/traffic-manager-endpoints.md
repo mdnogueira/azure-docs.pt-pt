@@ -3,7 +3,7 @@
    description="Este artigo ajuda-o a adicionar, remover, ativar e desativar pontos finais no Traffic Manager do Azure."
    services="traffic-manager"
    documentationCenter=""
-   authors="joaoma"
+   authors="sdwheeler"
    manager="carmonm"
    editor="tysonn" />
 <tags
@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="03/17/2016"
-   ms.author="joaoma" />
+   ms.author="sewhee" />
 
 # Adicionar, desativar, ativar ou eliminar pontos finais
 
@@ -77,6 +77,6 @@ Também pode desativar pontos finais individuais que fazem parte de um perfil do
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

@@ -14,16 +14,20 @@
  ms.topic="get-started-article"
  ms.tgt_pltfrm="na"
  ms.workload="na"
- ms.date="07/18/2016"
+ ms.date="08/17/2016"
  ms.author="dobett"/>
 
 # Instruções sobre a solução pré-configurada de monitorização remota
 
 ## Introdução
 
-A [solução pré-configurada][lnk-preconfigured-solutions] de monitorização remota do IoT Suite é uma implementação de uma solução de monitorização ponto a ponto para várias máquinas em execução em localizações remotas. A solução combina serviços-chave do Azure para fornecer uma implementação genérica do cenário de negócios e pode utilizá-la como um ponto de partida para a sua própria implementação. Pode [personalizar][Ink-customize] a solução para satisfazer os seus próprios requisitos comerciais.
+A [solução pré-configurada][lnk-preconfigured-solutions] de monitorização remota do IoT Suite é uma implementação de uma solução de monitorização ponto a ponto para várias máquinas em execução em localizações remotas. A solução combina serviços-chave do Azure para fornecer uma implementação genérica do cenário de negócios e pode utilizá-la como um ponto de partida para a sua própria implementação. Pode [personalizar][lnk-customize] a solução para satisfazer os seus próprios requisitos comerciais.
 
-Este artigo acompanha-o através de alguns dos elementos-chave da solução de monitorização remota para que possa compreender como funciona. Este conhecimento é útil para resolver problemas da solução, planear o modo de personalização da solução para satisfazer os seus próprios requisitos específicos e planear a sua própria solução de IoT que utiliza serviços do Azure.
+Este artigo acompanha-o através de alguns dos elementos-chave da solução de monitorização remota para que possa compreender como funciona. Estes conhecimentos ajudam a:
+
+- Resolver problemas na solução.
+- Planear a forma de personalizar a solução para satisfazer os seus próprios requisitos específicos. 
+- Estruturar a sua própria solução de IoT que utiliza os serviços do Azure.
 
 ## Arquitetura lógica
 
@@ -34,15 +38,15 @@ O diagrama que se segue descreve os componentes lógicos da solução pré-confi
 
 ## Dispositivos simulados
 
-Na solução pré-configurada, o dispositivo simulado representa um dispositivo de arrefecimento (como um aparelho de ar condicionado para edifícios ou unidade de tratamento do ar).  Ao implementar a solução pré-configurada também aprovisiona automaticamente quatro dispositivos simulados que são executados num [Trabalho Web do Azure][Ink-webjobs]. Os dispositivos simulados permitem-lhe explorar facilmente o comportamento da solução sem a necessidade de implementar quaisquer dispositivos físicos. Para implementar um dispositivo físico real, veja o tutorial [Connect your device to the remote monitoring preconfigured solution (Ligar o seu dispositivo à solução pré-configurada de monitorização remota)][lnk-connect-rm].
+Na solução pré-configurada, o dispositivo simulado representa um dispositivo de arrefecimento (como um aparelho de ar condicionado para edifícios ou unidade de tratamento do ar).  Ao implementar a solução pré-configurada, também aprovisiona automaticamente quatro dispositivos simulados que são executados num [Trabalho Web do Azure][lnk-webjobs]. Os dispositivos simulados permitem-lhe explorar facilmente o comportamento da solução sem a necessidade de implementar quaisquer dispositivos físicos. Para implementar um dispositivo físico real, veja o tutorial [Connect your device to the remote monitoring preconfigured solution (Ligar o seu dispositivo à solução pré-configurada de monitorização remota)][lnk-connect-rm].
 
 Cada dispositivo simulado pode enviar os seguintes tipos de mensagens para o Hub IoT:
 
 | Mensagem  | Descrição |
 |----------|-------------|
-| Arranque  | Quando o dispositivo é iniciado, envia uma mensagem **informações do dispositivo** com informações sobre si próprio, como o seu id de dispositivo, os metadados do dispositivo, uma lista de comandos que o dispositivo suporta e a atual configuração do dispositivo. |
-| Presença | Um dispositivo envia periodicamente uma mensagem de **presença** para comunicar se o dispositivo consegue detetar ou não a presença de um sensor. |
-| Telemetria | Um dispositivo envia periodicamente uma mensagem de **telemetria** que comunica valores simulados de temperatura e humidade recolhidos a partir dos sensores simulados ligados ao dispositivo simulado. |
+| Arranque  | Quando o dispositivo é iniciado, envia uma mensagem **device-info** que contém informações sobre si próprio para o back-end. Estes dados incluem o ID e metadados do dispositivo, uma lista dos comandos suportados pelo dispositivo e a configuração atual do dispositivo. |
+| Presença | Um dispositivo envia periodicamente uma mensagem de **presença** para comunicar se o dispositivo consegue detetar a presença de um sensor. |
+| Telemetria | Um dispositivo envia periodicamente uma mensagem de **telemetria** que comunica valores simulados de temperatura e humidade recolhidos a partir dos sensores simulados do dispositivo. |
 
 
 Os dispositivos simulados enviam as seguintes propriedades do dispositivo numa mensagem **device-info**:
@@ -81,11 +85,11 @@ A confirmação do comando de dispositivo para o back-end da solução é fornec
 
 ## IoT Hub
 
-O [Hub IoT][Ink-iothub] ingere dados enviados a partir dos dispositivos para a nuvem e disponibiliza-os para as tarefas do Azure Stream Analytics (ASA). O Hub IoT envia também comandos para os seus dispositivos em nome do portal do dispositivo. Cada tarefa de transmissão do ASA utiliza um grupo de consumidores do Hub IoT separado para ler a transmissão de mensagens a partir dos seus dispositivos.
+O [Hub IoT][lnk-iothub] ingere dados enviados a partir dos dispositivos para a nuvem e disponibiliza-os para as tarefas do Azure Stream Analytics (ASA). O Hub IoT envia também comandos para os seus dispositivos em nome do portal do dispositivo. Cada tarefa de transmissão do ASA utiliza um grupo de consumidores do Hub IoT separado para ler a transmissão de mensagens a partir dos seus dispositivos.
 
 ## Azure Stream Analytics
 
-Na solução de monitorização remota, o [Azure Stream Analytics][Ink-asa] (ASA) envia mensagens recebidas pelo Hub IoT a partir dos seus dispositivos para outros componentes de back-end para fins de processamento ou armazenamento. As diferentes tarefas do ASA efetuam funções específicas com base no conteúdo das mensagens.
+Na solução de monitorização remota, o [Azure Stream Analytics][lnk-asa] (ASA) envia mensagens do dispositivo recebidas pelo Hub IoT para outros componentes de back-end para fins de processamento ou armazenamento. As diferentes tarefas do ASA efetuam funções específicas com base no conteúdo das mensagens.
 
 **Tarefa 1: Informações do dispositivo** filtra as mensagens de informações do dispositivo a partir do fluxo de mensagens de entrada e envia-as para um ponto final do Event Hub. Um dispositivo envia mensagens de informações do dispositivo aquando do arranque e como resposta a um comando **SendDeviceInfo**. Esta tarefa utiliza a definição de consulta seguinte para identificar as mensagens **device-info**:
 
@@ -101,28 +105,28 @@ Esta tarefa envia o resultado para um Hub de Eventos para processamento adiciona
 WITH AlarmsData AS 
 (
 SELECT
-     Stream.DeviceID,
+     Stream.IoTHub.ConnectionDeviceId AS DeviceId,
      'Temperature' as ReadingType,
      Stream.Temperature as Reading,
      Ref.Temperature as Threshold,
      Ref.TemperatureRuleOutput as RuleOutput,
      Stream.EventEnqueuedUtcTime AS [Time]
 FROM IoTTelemetryStream Stream
-JOIN DeviceRulesBlob Ref ON Stream.DeviceID = Ref.DeviceID
+JOIN DeviceRulesBlob Ref ON Stream.IoTHub.ConnectionDeviceId = Ref.DeviceID
 WHERE
      Ref.Temperature IS NOT null AND Stream.Temperature > Ref.Temperature
 
 UNION ALL
 
 SELECT
-     Stream.DeviceID,
+     Stream.IoTHub.ConnectionDeviceId AS DeviceId,
      'Humidity' as ReadingType,
      Stream.Humidity as Reading,
      Ref.Humidity as Threshold,
      Ref.HumidityRuleOutput as RuleOutput,
      Stream.EventEnqueuedUtcTime AS [Time]
 FROM IoTTelemetryStream Stream
-JOIN DeviceRulesBlob Ref ON Stream.DeviceID = Ref.DeviceID
+JOIN DeviceRulesBlob Ref ON Stream.IoTHub.ConnectionDeviceId = Ref.DeviceID
 WHERE
      Ref.Humidity IS NOT null AND Stream.Humidity > Ref.Humidity
 )
@@ -146,33 +150,38 @@ WITH
 AS (
     SELECT
         *
-    FROM 
-      [IoTHubStream] 
+    FROM [IoTHubStream]
     WHERE
         [ObjectType] IS NULL -- Filter out device info and command responses
 ) 
 
 SELECT
-    *
+    IoTHub.ConnectionDeviceId AS DeviceId,
+    Temperature,
+    Humidity,
+    ExternalTemperature,
+    EventProcessedUtcTime,
+    PartitionId,
+    EventEnqueuedUtcTime,
+    * 
 INTO
     [Telemetry]
 FROM
     [StreamData]
 
 SELECT
-    DeviceId,
-    AVG (Humidity) AS [AverageHumidity], 
-    MIN(Humidity) AS [MinimumHumidity], 
-    MAX(Humidity) AS [MaxHumidity], 
+    IoTHub.ConnectionDeviceId AS DeviceId,
+    AVG (Humidity) AS [AverageHumidity],
+    MIN(Humidity) AS [MinimumHumidity],
+    MAX(Humidity) AS [MaxHumidity],
     5.0 AS TimeframeMinutes 
 INTO
     [TelemetrySummary]
-FROM
-    [StreamData]
+FROM [StreamData]
 WHERE
     [Humidity] IS NOT NULL
 GROUP BY
-    DeviceId, 
+    IoTHub.ConnectionDeviceId,
     SlidingWindow (mi, 5)
 ```
 
@@ -182,7 +191,7 @@ As tarefas do ASA **device info** e **rules** enviam os seus dados para os Hubs 
 
 ## Storage do Azure
 
-A solução utiliza o armazenamento de blobs do Azure para manter todos os dados de telemetria não processados e resumidos dos dispositivos na solução. O dashboard lê os dados de telemetria do armazenamento de blobs para preencher os gráficos. Para apresentar os alertas, o dashboard lê os dados do armazenamento de blobs que registam quando os valores de telemetria excederam os valores de limiar configurados. A solução também utiliza o armazenamento de blobs para registar os valores de limiar definidos por um utilizador no dashboard.
+A solução utiliza o armazenamento de blobs do Azure para manter todos os dados de telemetria não processados e resumidos dos dispositivos na solução. O dashboard lê os dados de telemetria do armazenamento de blobs para preencher os gráficos. Para apresentar os alertas, o dashboard lê os dados do armazenamento de blobs que registam quando os valores de telemetria excederam os valores de limiar configurados. A solução também utiliza o armazenamento de blobs para registar os valores de limiar definidos por si no dashboard.
 
 ## Trabalhos Web
 
@@ -193,7 +202,7 @@ Para além de alojar simuladores de dispositivo, os Trabalhos Web na solução t
 
 ## DocumentDB
 
-A solução utiliza uma base de dados DocumentDB para armazenar informações sobre os dispositivos ligados à solução, tais como metadados dos dispositivos e o histórico dos comandos enviados para os dispositivos a partir do dashboard.
+A solução utiliza uma base de dados do DocumentDB para armazenar informações sobre os dispositivos ligados à solução. Estas informações incluem metadados do dispositivo e o histórico dos comandos enviados para os dispositivos a partir do dashboard.
 
 ## Web Apps
 
@@ -205,8 +214,8 @@ Esta página na aplicação Web utiliza os controlos javascript do PowerBI (cons
 
 Esta aplicação Web permite-lhe:
 
-- Aprovisionar um novo dispositivo. Isto define o ID exclusivo do dispositivo e gera a chave de autenticação. Escreve informações sobre o dispositivo no registo de identidade do Hub IoT e na base de dados DocumentDB específica da solução.
-- Gerir propriedades dos dispositivos. Isto inclui a visualização das propriedades existentes e a atualização de novas propriedades.
+- Aprovisionar um novo dispositivo. Esta ação define o ID exclusivo do dispositivo e gera a chave de autenticação. Escreve informações sobre o dispositivo no registo de identidade do Hub IoT e na base de dados do DocumentDB específica da solução.
+- Gerir propriedades dos dispositivos. Esta ação inclui a visualização das propriedades existentes e a atualização de novas propriedades.
 - Enviar comandos para um dispositivo.
 - Ver o histórico de comando de um dispositivo.
 - Ativar e desativar dispositivos.
@@ -220,7 +229,7 @@ As seguintes mensagens de blogue do TechNet fornecem mais detalhes sobre a solu�
 
 Pode continuar a introdução ao IoT Suite ao ler os artigos seguintes:
 
-- [Connect your device to the remote monitoring preconfigured solution (Ligar o seu dispositivo à solução pré-configurada de monitorização remota)][Ink-connect-rm]
+- [Connect your device to the remote monitoring preconfigured solution (Ligar o seu dispositivo à solução pré-configurada de monitorização remota)][lnk-connect-rm]
 - [Permissions on the azureiotsuite.com site (Permissões no site azureiotsuite.com)][lnk-permissions]
 
 [lnk-preconfigured-solutions]: iot-suite-what-are-preconfigured-solutions.md
@@ -232,6 +241,6 @@ Pode continuar a introdução ao IoT Suite ao ler os artigos seguintes:
 [lnk-permissions]: iot-suite-permissions.md
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

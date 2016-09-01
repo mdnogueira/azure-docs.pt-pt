@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="mobile-windows-phone"
     ms.devlang="dotnet"
     ms.topic="hero-article"
-    ms.date="05/03/2016"
+    ms.date="08/19/2016"
     ms.author="piyushjo" />
 
 # Introdução ao Azure Mobile Engagement para aplicações do Windows Phone Silverlight
@@ -25,12 +25,12 @@ Este tutorial demonstra o cenário de difusão simples utilizando o Mobile Engag
 
 > [AZURE.NOTE] Se tem como objetivo o Windows Phone 8.1 (não Silverlight), consulte o [tutorial Windows Universal](mobile-engagement-windows-store-dotnet-get-started.md).
 
-Neste tutorial necessita do seguinte:
+Para este tutorial, necessita do seguinte:
 
 + Visual Studio 2013
 + Pacote NuGet [MicrosoftAzure.MobileEngagement]
 
-> [AZURE.NOTE] Para concluir este tutorial, tem de ter uma conta ativa do Azure. Se não tiver uma conta, pode criar uma conta de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fmobile-engagement-windows-phone-get-started).
+> [AZURE.NOTE] Para concluir este tutorial, tem de ter uma conta ativa do Azure. Se não tiver uma conta, pode criar uma de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fmobile-engagement-windows-phone-get-started).
 
 ##<a id="setup-azme"></a>Configurar Mobile Engagement para a sua aplicação do Windows Phone
 
@@ -149,7 +149,7 @@ Adicionar novas Capacidades ao seu ficheiro `WMAppManifest.xml`:
 
 Está tudo pronto. Agora iremos confirmar que realizou corretamente esta integração básica.
 
-##<a id="send"></a>Enviar uma notificação à sua aplicação
+##<a id="send"></a>Enviar uma notificação à aplicação
 
 [AZURE.INCLUDE [Create Windows Push campaign](../../includes/mobile-engagement-windows-push-campaign.md)]
 
@@ -170,6 +170,6 @@ Agora deverá ver uma notificação no seu dispositivo que irá aparecer como um
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO4-->
 
 

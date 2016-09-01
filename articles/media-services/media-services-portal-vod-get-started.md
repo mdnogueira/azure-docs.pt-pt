@@ -1,6 +1,6 @@
 <properties
-    pageTitle=" Introdução à entrega de conteúdos a pedido utilizando o Portal do Azure | Microsoft Azure"
-    description="Este tutorial explica os passos para implementar um serviço básico de entrega de conteúdos de Vídeo a Pedido (VoD) com a aplicação dos Media Services do Azure (AMS) utilizando o Portal do Azure."
+    pageTitle=" Introdução à entrega de conteúdos a pedido com o Portal do Azure | Microsoft Azure"
+    description="Este tutorial explica os passos para implementar um serviço básico de entrega de conteúdos de Vídeo a Pedido (VoD) com a aplicação Azure Media Services (AMS) com o Portal do Azure."
     services="media-services"
     documentationCenter=""
     authors="Juliako"
@@ -13,21 +13,23 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="06/22/2016"
+    ms.date="08/18/2016"
     ms.author="juliako"/>
 
 
 # Introdução à entrega de conteúdos a pedido com o Portal do Azure
 
-Este tutorial explica os passos para implementar um serviço básico de entrega de conteúdos de Vídeo a Pedido (VoD) com a aplicação dos Media Services do Azure (AMS) utilizando o Portal do Azure.
+[AZURE.INCLUDE [media-services-selector-get-started](../../includes/media-services-selector-get-started.md)]
 
-Os Media Services do Azure no Portal do Azure estão atualmente em pré-visualização. 
+Este tutorial explica os passos para implementar um serviço básico de entrega de conteúdos de Vídeo a Pedido (VoD) com a aplicação Azure Media Services (AMS) com o Portal do Azure.
+
+Os Azure Media Services no Portal do Azure estão atualmente em pré-visualização. 
 
 > [AZURE.NOTE] Para concluir este tutorial, precisa de uma conta do Azure. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/). 
 
 Este tutorial inclui as seguintes tarefas:
 
-1.  Criar uma conta dos Media Services do Azure.
+1.  Criar uma conta dos Azure Media Services.
 2.  Configurar o ponto final de transmissão em fluxo.
 1.  Carregar um ficheiro de vídeo.
 1.  Codificar o ficheiro de origem para um conjunto de ficheiros MP4 de velocidade de transmissão adaptável.
@@ -35,9 +37,9 @@ Este tutorial inclui as seguintes tarefas:
 1.  Reproduzir os conteúdos.
 
 
-## Criar uma conta dos Media Services do Azure
+## Criar uma conta dos Azure Media Services
 
-Os passos nesta secção explicam como criar uma nova conta de AMS.
+Os passos nesta secção explicam como criar uma conta dos AMS.
 
 1. Inicie sessão no [Portal do Azure](https://portal.azure.com/).
 2. Clique em **+Novo** > **Multimédia + CDN** > **Serviços de Multimédia**.
@@ -52,7 +54,7 @@ Os passos nesta secção explicam como criar uma nova conta de AMS.
     2. Na subscrição, selecione entre as diferentes subscrições do Azure disponíveis para si.
     
     2. Em **Grupo de Recursos**, selecione o recurso novo ou existente.  Um grupo de recursos é uma coleção de recursos que partilham o mesmo ciclo de vida, permissões e políticas. Sabia mais [aqui](resource-group-overview.md#resource-groups).
-    3. Em **Localização**, selecione a região geográfica que será utilizada para armazenar os registos de metadados da conta de Media Services. Esta região será utilizada para processar e transmitir em fluxo a sua multimédia. Apenas as regiões dos Media Services disponíveis são apresentadas na caixa de lista pendente. 
+    3. Em **Localização**, selecione a região geográfica que é utilizada para armazenar os registos de multimédia e metadados da conta dos Media Services. Esta região é utilizada para processar e transmitir em fluxo os seus conteúdos multimédia. Apenas as regiões dos Media Services disponíveis são apresentadas na caixa de lista pendente. 
     
     3. Em **Conta do Storage**, selecione uma conta do Storage para fornecer o Blob Storage do conteúdo de multimédia da conta de Media Services. Pode selecionar uma conta do Storage existente na mesma região geográfica da conta dos Media Services ou pode criar uma nova conta do Storage. É criada uma nova conta do Storage na mesma região. As regras para os nomes da conta do Storage são iguais às das contas dos Media Services.
 
@@ -79,22 +81,22 @@ Necessita do nome da conta e das informações da chave primária para aceder pr
 2. Na janela **Definições**, selecione **Chaves**. 
 
     A janela **Gerir chaves** mostra o nome da conta e as chaves primária e secundária são apresentadas. 
-3. Prima o botão copiar para copiar os valores.
+3. Prima o botão Copiar para copiar os valores.
     
     ![Chaves dos Media Services](./media/media-services-portal-vod-get-started/media-services-keys.png)
 
 ## Configurar os pontos finais de transmissão em fluxo
 
-Ao trabalhar com os Media Services do Azure, uma das situações mais comuns é a entrega de vídeo através de transmissão em fluxo de velocidade de transmissão adaptável para os seus clientes. Com a transmissão em fluxo de velocidade de transmissão adaptável, o cliente pode mudar para uma velocidade de transmissão superior ou inferior enquanto o vídeo é apresentado, consoante a largura de banda de rede atual, a utilização da CPU, entre outros fatores. Os Media Services suportam as seguintes tecnologias de transmissão em fluxo de velocidade de transmissão adaptável: HTTP Live Streaming (HLS), transmissão em Fluxo Uniforme, MPEG DASH e HDS (para detentores de licença do Adobe PrimeTime/acesso apenas).
+Ao trabalhar com os Azure Media Services, uma das situações mais comuns é a entrega de vídeo através de transmissão em fluxo de velocidade de transmissão adaptável para os seus clientes. Com a transmissão em fluxo de velocidade de transmissão adaptável, o cliente pode mudar para uma velocidade de transmissão superior ou inferior enquanto o vídeo é apresentado, consoante a largura de banda de rede atual, a utilização da CPU, entre outros fatores. Os Media Services suportam as seguintes tecnologias de transmissão em fluxo de velocidade de transmissão adaptável: HTTP Live Streaming (HLS), transmissão em Fluxo Uniforme, MPEG DASH e HDS (para detentores de licença do Adobe PrimeTime/acesso apenas).
 
-Os Media Services fornecem um empacotamento dinâmico, permitindo a entrega do seu conteúdo codificado em MP4 de velocidade de transmissão adaptável em formatos de transmissão em fluxo suportados pelos Media Services (MPEG DASH, HLS, Transmissão em Fluxo Uniforme, HDS) just-in-time, sem ter de voltar a armazenar versões pré-empacotadas de cada um destes formatos de transmissão em fluxo.
+Os Media Services fornecem um empacotamento dinâmico, permitindo a entrega dos seus conteúdos codificados em MP4 de velocidade de transmissão adaptável em formatos de transmissão em fluxo suportados pelos Media Services (MPEG DASH, HLS, Transmissão em Fluxo Uniforme, HDS) just-in-time, sem ter de voltar a armazenar versões pré-empacotadas de cada um destes formatos de transmissão em fluxo.
 
 Para tirar partido do empacotamento dinâmico, tem de fazer o seguinte:
 
 - Codificar o ficheiro (origem) mezanino para um conjunto de ficheiros MP4 de velocidade de transmissão adaptável (os passos da codificação são demonstrados mais à frente neste tutorial).  
 - Criar, pelo menos, uma unidade de transmissão em fluxo para o *ponto final de transmissão em fluxo* a partir do qual planeia entregar o conteúdo. Os passos abaixo mostram como alterar o número de unidades de transmissão em fluxo.
 
-Com o empacotamento dinâmico só tem de armazenar e pagar pelos ficheiros num único formato de armazenamento, os Media Services irão compilar e disponibilizar a resposta adequada com base nos pedidos de um cliente.
+Com o empacotamento dinâmico, só tem de armazenar e pagar os ficheiros num único formato de armazenamento, e os Media Services compilam e disponibilizam a resposta adequada com base nos pedidos de um cliente.
 
 Para criar e alterar o número de unidades reservadas para transmissão em fluxo, faça o seguinte:
 
@@ -115,7 +117,7 @@ Para criar e alterar o número de unidades reservadas para transmissão em fluxo
 
 ## Carregar ficheiros
 
-De forma a transmitir vídeos em fluxo através dos Media Services do Azure, terá de carregar os vídeos de origem, codificá-los múltiplas velocidades de transmissão e publicar o resultado. O primeiro passo é abrangido nesta secção. 
+De forma a transmitir vídeos em fluxo através dos Azure Media Services, tem de carregar os vídeos de origem, codificá-los em múltiplas velocidades de transmissão e publicar o resultado. O primeiro passo é abrangido nesta secção. 
 
 1. Na janela **Definição**, clique em **Elementos**.
 
@@ -133,12 +135,11 @@ De forma a transmitir vídeos em fluxo através dos Media Services do Azure, ter
 
 Após a conclusão do carregamento, verá o novo elemento listado na janela **Elementos**. 
 
-
 ## Codificar elementos
 
-Ao trabalhar com os Media Services do Azure, uma das situações mais comuns é a distribuição de transmissão em fluxo de velocidade de transmissão adaptável para os seus clientes. Os Media Services suportam as seguintes tecnologias de transmissão em fluxo de velocidade de transmissão adaptável: HTTP Live Streaming (HLS), transmissão em Fluxo Uniforme, MPEG DASH e HDS (para detentores de licença do Adobe PrimeTime/acesso apenas). Para preparar os seus vídeos para transmissão em fluxo de velocidade de transmissão adaptável, terá de codificar o seu vídeo de origem para ficheiros de múltiplas velocidades de transmissão. Deve utilizar o **Codificador de Multimédia Standard** para codificar seus vídeos.  
+Ao trabalhar com os Azure Media Services, uma das situações mais comuns é a distribuição de transmissão em fluxo de velocidade de transmissão adaptável para os seus clientes. Os Media Services suportam as seguintes tecnologias de transmissão em fluxo de velocidade de transmissão adaptável: HTTP Live Streaming (HLS), transmissão em Fluxo Uniforme, MPEG DASH e HDS (para detentores de licença do Adobe PrimeTime/acesso apenas). Para preparar os seus vídeos para transmissão em fluxo de velocidade de transmissão adaptável, terá de codificar o seu vídeo de origem para ficheiros de múltiplas velocidades de transmissão. Deve utilizar o **Codificador de Multimédia Standard** para codificar seus vídeos.  
 
-Os Media Services também fornecem um empacotamento dinâmico, permitindo a entrega do conteúdo codificado por Transmissão em Fluxo Uniforme ou MP4s de velocidade de transmissão adaptável em formatos de transmissão em fluxo suportados pelos Media Services (MPEG DASH, HLS, Transmissão em Fluxo Uniforme ou HDS) sem ter de voltar a criar o pacote para estes formatos de transmissão em fluxo. Com o empacotamento dinâmico só tem de armazenar e pagar pelos ficheiros num único formato de armazenamento, os Media Services irão compilar e disponibilizar a resposta adequada com base nos pedidos de um cliente.
+Os Media Services também fornecem um empacotamento dinâmico, permitindo a entrega dos conteúdos codificados por Transmissão em Fluxo Uniforme ou MP4s de velocidade de transmissão adaptável em formatos de transmissão em fluxo suportados pelos Media Services (MPEG DASH, HLS, Transmissão em Fluxo Uniforme ou HDS) sem ter de voltar a criar o pacote para estes formatos de transmissão em fluxo. Com o empacotamento dinâmico, só tem de armazenar e pagar os ficheiros num único formato de armazenamento, e os Media Services compilam e disponibilizam a resposta adequada com base nos pedidos de um cliente.
 
 Para tirar partido do empacotamento dinâmico, tem de fazer o seguinte:
 
@@ -167,7 +168,7 @@ Para monitorizar o progresso da tarefa de codificação, clique em **Definiçõe
 
 ## Publicar conteúdo
 
-Para fornecer um URL ao utilizador que possa ser utilizado para transmitir ou transferir o conteúdo, primeiro precisa de “publicar” o elemento criando um localizador. Os localizadores fornecem acesso aos ficheiros contidos no elemento. Os Media Services suportam dois tipos de localizadores: 
+Para fornecer um URL ao utilizador que possa ser utilizado para transmitir ou transferir o conteúdo, primeiro precisa de "publicar" o elemento criando um localizador. Os localizadores fornecem acesso aos ficheiros contidos no elemento. Os Media Services suportam dois tipos de localizadores: 
 
 - Os localizadores de transmissão em fluxo (OnDemandOrigin), utilizados para transmissão em fluxo adaptável (por exemplo, para transmissão em fluxo MPEG DASH, HLS ou Transmissão em Fluxo Uniforme). Para criar um localizador de transmissão, o seu elemento tem de conter um ficheiro .ism. 
 - Os localizadores progressivos (SAS), utilizados para a entrega de vídeo através de transferência progressiva.
@@ -192,7 +193,7 @@ Um URL SAS tem o seguinte formato.
 
 >[AZURE.NOTE] Se utilizou o portal para criar localizadores antes de março de 2015, estes foram criados com uma data de expiração de dois anos.  
 
-Para atualizar uma data de expiração num localizador, utilize as APIs [REST](http://msdn.microsoft.com/library/azure/hh974308.aspx#update_a_locator ) ou [.NET](http://go.microsoft.com/fwlink/?LinkID=533259). Observe que, ao atualizar a data de expiração de um localizador SAS, o URL é alterado.
+Para atualizar uma data de expiração num localizador, utilize as APIs [REST](http://msdn.microsoft.com/library/azure/hh974308.aspx#update_a_locator ) ou [.NET](http://go.microsoft.com/fwlink/?LinkID=533259). Ao atualizar a data de expiração de um localizador SAS, o URL é alterado.
 
 ### Para utilizar o portal para publicar um elemento
 
@@ -206,11 +207,11 @@ Para utilizar o portal para publicar um elemento, faça o seguinte:
 
     ![Publicar](./media/media-services-portal-vod-get-started/media-services-publish1.png)
 
-O URL será adicionado à lista de **URLs Publicados**.
+O URL é adicionado à lista de **URLs Publicados**.
 
 ## Reproduzir conteúdos a partir do portal
 
-O Portal do Azure fornece um leitor de conteúdos que pode utilizar para testar o vídeo.
+O Portal do Azure fornece um leitor de conteúdos que pode utilizar para testar o seu vídeo.
 
 Clique no vídeo pretendido e, em seguida, clique no botão **Reproduzir**.
 
@@ -219,7 +220,7 @@ Clique no vídeo pretendido e, em seguida, clique no botão **Reproduzir**.
 São aplicáveis algumas considerações:
 
 - Certifique-se de que o vídeo foi publicado.
-- Este *Media Player* reproduz a partir do ponto final de transmissão em fluxo predefinido. Se pretender reproduzir a partir de um ponto final de transmissão em fluxo não predefinido, clique para copiar o URL e utilize outro leitor. Por exemplo, [Leitor de Media Services do Azure](http://amsplayer.azurewebsites.net/azuremediaplayer.html).
+- Este **Media Player** reproduz a partir do ponto final de transmissão em fluxo predefinido. Se pretender reproduzir a partir de um ponto final de transmissão em fluxo não predefinido, clique para copiar o URL e utilize outro leitor. Por exemplo, [Leitor dos Azure Media Services](http://amsplayer.azurewebsites.net/azuremediaplayer.html).
 
 ##Passos Seguintes: percursos de aprendizagem dos Media Services
 
@@ -233,6 +234,6 @@ São aplicáveis algumas considerações:
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

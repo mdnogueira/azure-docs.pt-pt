@@ -12,7 +12,7 @@
     ms.tgt_pltfrm="ibiza"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="05/12/2016"
+    ms.date="08/17/2016"
     ms.author="awills"/>
 
 # Introdução ao Application Insights num projeto Web em Java
@@ -27,7 +27,7 @@ O [Application Insights](https://azure.microsoft.com/services/application-insigh
 
 O Application Insights suporta aplicações em Java em execução no Linux, Unix ou Windows.
 
-Precisa de:
+É necessário:
 
 * Oracle JRE 1.6 ou posterior, ou Zulu JRE 1.6 ou posterior
 * Uma subscrição do [Microsoft Azure](https://azure.microsoft.com/). (Poderá começar pela [versão de avaliação gratuita](https://azure.microsoft.com/pricing/free-trial/).)
@@ -38,13 +38,10 @@ Precisa de:
 ## 1. Obter uma chave de instrumentação do Application Insights
 
 1. Inicie sessão no [Portal do Microsoft Azure](https://portal.azure.com).
-2. Crie um novo recurso do Application Insights.
-
-    ![Click + e escolha Application Insights](./media/app-insights-java-get-started/01-create.png)
-3. Defina o tipo de aplicação para aplicação Web em Java.
+2. Crie um recurso do Application Insights. Defina o tipo de aplicação para aplicação Web em Java.
 
     ![Preencher um nome, escolher aplicação Web em Java e clicar em criar](./media/app-insights-java-get-started/02-create.png)
-4. Localize a chave de instrumentação do novo recurso. Terá de colar isto no seu projeto de código em breve.
+4. Localize a chave de instrumentação do novo recurso. Terá de colar esta chave no seu projeto de código em breve.
 
     ![Na descrição geral do novo recurso, clique em Propriedades e copie a Chave de Instrumentação](./media/app-insights-java-get-started/03-key.png)
 
@@ -106,23 +103,23 @@ Em seguida, atualize as dependências do projeto para obter os binários transfe
 
 Adicione manualmente o SDK:
 
-1. Transfira o [Application Insights SDK para Java](https://azuredownloads.blob.core.windows.net/applicationinsights/sdk.html).
+1. Transfira o [Application Insights SDK para Java](https://aka.ms/aijavasdk).
 2. Extraia os binários do ficheiro zip e adicione-os ao seu projeto.
 
 ### Perguntas...
 
 * *Qual é a relação entre os componentes `-core` e `-web` no zip?*
 
- * `applicationinsights-core` dá-lhe a versão simples da API. Precisa sempre dela.
- * `applicationinsights-web` fornece métricas que controlam as contagens de pedidos HTTP e os tempos de resposta. Pode omitir isto, se não pretender que esta telemetria seja recolhida automaticamente. Por exemplo, se pretender escrever a sua.
+ * `applicationinsights-core` dá-lhe a versão simples da API. Precisa sempre deste componente.
+ * `applicationinsights-web` fornece métricas que controlam as contagens de pedidos HTTP e os tempos de resposta. Pode omitir este componente, se não pretender que esta telemetria seja recolhida automaticamente. Por exemplo, se pretender escrever a sua.
 
 * *Para atualizar o SDK quando está a publicar alterações*
- * Transfira a versão mais recente de [Application Insights SDK para Java](https://azuredownloads.blob.core.windows.net/applicationinsights/sdk.zip) e substitua as anteriores.
+ * Transfira a versão mais recente de [Application Insights SDK para Java](https://aka.ms/qqkaq6) e substitua as anteriores.
  * As alterações são descritas nas [notas de versão do SDK](https://github.com/Microsoft/ApplicationInsights-Java#release-notes).
 
 
 
-## 3. Adicionar um ficheiro. XML do Application Insights
+## 3. Adicionar um ficheiro. xml do Application Insights
 
 Adicione ApplicationInsights.xml à pasta de recursos do projeto ou certifique-se de que é adicionado ao caminho da classe de implementação do projeto. Copie o seguinte XML para a mesma.
 
@@ -161,8 +158,8 @@ Substitua a chave de instrumentação que recebeu do portal do Azure.
 
 * A chave de instrumentação é enviada juntamente com todos os itens de telemetria e diz ao Application Insights para apresentá-la no seu recurso.
 * O componente de Pedido HTTP é opcional. Envia automaticamente telemetria sobre pedidos e tempos de resposta para o portal.
-* A correlação de eventos é uma adição ao componente de pedido HTTP. Atribui um identificador a cada pedido recebido pelo servidor e adiciona-o como uma propriedade a todos os itens de telemetria como a propriedade “Operation.Id”. Permite-lhe correlacionar a telemetria associada a cada pedido, definindo um filtro em [pesquisa de diagnóstico][diagnóstico].
-* A chave do Application Insight pode ser transmitida dinamicamente a partir do portal do Azure como uma propriedade de sistema (-DAPPLICATION_INSIGHTS_IKEY=your_ikey). Se não houver uma propriedade definida, verifica a existência de uma variável de ambiente (APPLICATION_INSIGHTS_IKEY) no Appsetting do Azure. Se ambas as propriedades não estiverem definidas, a InstrumentationKey predefinida é utilizada a partir do ApplicationInsights.xml. Isto ajuda a gerir dinamicamente o InstrumentationKey diferente para o ambiente diferente.
+* A correlação de eventos é uma adição ao componente de pedido HTTP. Atribui um identificador a cada pedido recebido pelo servidor e adiciona este identificador como uma propriedade a todos os itens de telemetria como a propriedade "Operation.Id". Permite-lhe correlacionar a telemetria associada a cada pedido, definindo um filtro em [pesquisa de diagnóstico][diagnóstico].
+* A chave do Application Insights pode ser transmitida dinamicamente a partir do portal do Azure como uma propriedade de sistema (-DAPPLICATION_INSIGHTS_IKEY=your_ikey). Se não houver uma propriedade definida, verifica a existência de uma variável de ambiente (APPLICATION_INSIGHTS_IKEY) nas Definições de Aplicações do Azure. Se ambas as propriedades não estiverem definidas, a InstrumentationKey predefinida é utilizada a partir do ApplicationInsights.xml. Esta sequência ajuda-o a gerir diferentes InstrumentationKeys para ambientes diferentes de forma dinâmica.
 
 ### Maneiras alternativas de definir a chave de instrumentação
 
@@ -196,7 +193,7 @@ Para obter resultados mais exatos, o filtro deve ser mapeado antes de todos os o
        <url-pattern>/*</url-pattern>
     </filter-mapping>
 
-#### Se estiver a utilizar MVC 3.1 ou posterior
+#### Se estiver a utilizar o Spring Web MVC 3.1 ou posterior
 
 Edite estes elementos para incluir o pacote do Application Insights:
 
@@ -231,7 +228,7 @@ Execute-a no modo de depuração no seu computador de desenvolvimento ou publiqu
 
 Regresse ao seu recurso do Application Insights no [Portal do Microsoft Azure](https://portal.azure.com).
 
-Os dados de pedidos HTTP irão aparecer no painel de descrição geral. (Se não aparecerem, aguarde alguns segundos e, em seguida, clique em Atualizar.)
+Os dados de pedidos HTTP aparecem no painel de descrição geral. (Se não aparecerem, aguarde alguns segundos e, em seguida, clique em Atualizar.)
 
 ![dados de exemplo](./media/app-insights-java-get-started/5-results.png)
 
@@ -241,7 +238,7 @@ Clique em qualquer gráfico para ver métricas agregadas mais detalhadas.
 
 ![](./media/app-insights-java-get-started/6-barchart.png)
 
-> O Application Insights pressupõe que o formato de pedidos HTTP para aplicações MVC é: `VERB controller/action`. Por exemplo, `GET Home/Product/f9anuh81`, `GET Home/Product/2dffwrf5` e `GET Home/Product/sdf96vws` irão ser agrupados em `GET Home/Product`. Isto permite agregações significativas de pedidos, como o número de pedidos e o tempo de execução médio dos pedidos.
+> O Application Insights pressupõe que o formato de pedidos HTTP para aplicações MVC é: `VERB controller/action`. Por exemplo, `GET Home/Product/f9anuh81`, `GET Home/Product/2dffwrf5` e `GET Home/Product/sdf96vws` são agrupados em `GET Home/Product`. Este agrupamento permite agregações significativas de pedidos, como o número de pedidos e o tempo de execução médio dos pedidos.
 
 
 ### Dados de instâncias 
@@ -276,13 +273,13 @@ Agora publique a aplicação no servidor, permita que as pessoas a utilizem e ve
 
  * [Microsoft Visual C++ Redistributable](http://www.microsoft.com/download/details.aspx?id=40784)
 
-    (Isto ativa os contadores de desempenho.)
+    (Este componente ativa os contadores de desempenho.)
 
 ## Exceções e falhas de pedido
 
 As exceções não processadas são recolhidas automaticamente:
 
-![Desloque para baixo e clique no mosaico Falhas](./media/app-insights-java-get-started/21-exceptions.png)
+![Abrir Definições, Falhas](./media/app-insights-java-get-started/21-exceptions.png)
 
 Para recolher dados de outras exceções, tem duas opções:
 
@@ -297,7 +294,7 @@ Para recolher dados de outras exceções, tem duas opções:
 
 ## Contadores de desempenho
 
-Clique no mosaico **Servidores** e verá um intervalo de contadores de desempenho.
+Abra **Definições**, **Servidores** para ver uma gama de contadores de desempenho.
 
 
 ![](./media/app-insights-java-get-started/11-perf-counters.png)
@@ -379,17 +376,15 @@ Agora que instalou o SDK, pode utilizar a API para enviar a sua própria telemet
 
 ## Testes Web de disponibilidade
 
-O Application Insights pode testar o seu site em intervalos regulares para verificar se está a funcionar e a responder bem. [Para configurar][disponibilidade], desloque para baixo para clicar em Disponibilidade.
+O Application Insights pode testar o seu site em intervalos regulares para verificar se está a funcionar e a responder bem. [Para configurar a ][disponibilidade], clique em Testes Web.
 
-![Desloque para baixo, clique em Disponibilidade e, em seguida, em Adicionar teste Web](./media/app-insights-java-get-started/31-config-web-test.png)
+![Clique em Testes Web e, em seguida, em Adicionar teste Web](./media/app-insights-java-get-started/31-config-web-test.png)
 
 Irá obter gráficos de tempos de resposta e notificações por e-mail, se o seu site ficar inativo.
 
 ![Exemplo de teste Web](./media/app-insights-java-get-started/appinsights-10webtestresult.png)
 
 [Saiba mais sobre testes Web de disponibilidade.][disponibilidade] 
-
-
 
 
 
@@ -415,6 +410,6 @@ Para obter mais informações, veja [Centro para Programadores do Java](/develop
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 

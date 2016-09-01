@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="07/29/2016"
+    ms.date="08/17/2016"
     ms.author="magoedte"/>
 
 # Autenticar Runbooks com a conta Run As do Azure
@@ -30,7 +30,7 @@ Isto simplifica o processo para si e ajuda-o a começar rapidamente a criar e im
 Ao utilizar uma conta Run As e Run As Clássica, pode:
 
 - Fornecer uma forma normalizada de autenticar com o Azure ao gerir os recursos do Azure Resource Manager ou do Gestão de Serviço do Azure através de runbooks no portal do Azure.  
-- Automatizar a utilização de runbooks globais configurados nos Alertas do Azure
+- Automatizar a utilização de runbooks globais configurados nos Alertas do Azure.
 
 
 >[AZURE.NOTE] A [Funcionalidade de integração de alertas](../azure-portal/insights-receive-alert-notifications.md) do Azure com Runbooks Globais de Automatização requer uma conta de Automatização que esteja configurada com uma conta Run As e Run As clássica. Pode selecionar uma conta de Automatização que já tenha uma conta Run As e Run As clássica definida ou opte por criar um nova.
@@ -53,7 +53,7 @@ Nesta secção, é necessário executar os seguintes passos para criar uma nova 
 
 1. Inicie sessão no portal do Azure com uma conta que seja membro da função de Administradores da Subscrição e o coadministrador da subscrição.
 2. Selecione **Contas de Automatização**.
-3. No painel Contas de Automatização, clique em **Adicionar**.<br>![Adicionar Conta de Automatização](media/automation-sec-configure-azure-runas-account/create-automation-account-properties.png)
+3. No painel Contas de Automatização, clique em **Adicionar**.<br>![Adicionar Conta de Automatização](media/automation-sec-configure-azure-runas-account/create-automation-account-properties-b.png)
 
     >[AZURE.NOTE] Se vir o seguinte aviso no painel **Adicionar Conta de Automatização**, isto acontece porque a conta não é um membro da função de Administradores da Subscrição e coadministrador da subscrição.<br>![Adicionar Aviso de Conta de Automatização](media/automation-sec-configure-azure-runas-account/create-account-without-perms.png)
 
@@ -74,7 +74,7 @@ Nesta secção, é necessário executar os seguintes passos para criar uma nova 
 Quando a conta de Automatização é criada com sucesso, são criados vários recursos automaticamente para si.  A tabela seguinte resume os recursos para a conta Run As.<br>
 
 Recurso|Descrição 
-----|----
+--------|-----------
 Runbook AzureAutomationTutorial|Um runbook do PowerShell de exemplo que demonstra como efetuar a autenticação com a conta Run As e obtém todos os recursos do Gestor de Recursos.
 AzureAutomationTutorialScript Runbook|Um runbook do PowerShell de exemplo que demonstra como efetuar a autenticação com a conta Run As e obtém todos os recursos do Gestor de Recursos. 
 AzureRunAsCertificate|Recurso de certificado criado automaticamente durante a criação da conta de Automatização ou utilizando o script do PowerShell abaixo para uma conta existente.  Permite-lhe autenticar com o Azure, para que possa gerir recursos do Azure Resource Manager a partir dos runbooks.  Este certificado tem um tempo de vida de um ano. 
@@ -83,7 +83,7 @@ AzureRunAsConnection|Recurso de ligação criado automaticamente durante a cria�
 A tabela seguinte resume os recursos da conta Run As clássica.<br>
 
 Recurso|Descrição 
-----|----
+--------|-----------
 AzureClassicAutomationTutorial Runbook|Um runbook de exemplo que obtém todas as VMs clássicas numa subscrição utilizando a conta Run As clássica (certificado) e, em seguida, devolve o nome e o estado da VM.
 AzureClassicAutomationTutorial Script Runbook|Um runbook de exemplo que obtém todas as VMs clássicas numa subscrição utilizando a conta Run As clássica (certificado) e, em seguida, devolve o nome e o estado da VM.
 AzureClassicRunAsCertificate|Recurso de certificado criado automaticamente utilizado para autenticar com o Azure, para que possa gerir os recursos clássicos do Azure a partir de runbooks.  Este certificado tem um tempo de vida de um ano. 
@@ -388,6 +388,6 @@ Pode utilizar o código de exemplo atualizado abaixo, retirado do runbook de exe
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO4-->
 
 
