@@ -341,7 +341,7 @@ Quando cria um conjunto, define um [PoolAddParameter][py_pooladdparam] que espec
 
 - **Tamanho dos nós de computação** (*vm_size* - necessário)<p/>Uma vez que vamos especificar nós do Linux para [VirtualMachineConfiguration][py_vm_config], especificamos um tamanho de VM (`STANDARD_A1` neste exemplo) a partir de [Tamanhos de máquinas virtuais no Azure](../virtual-machines/virtual-machines-linux-sizes.md). Novamente, veja [Aprovisionar nós de computação do Linux em conjuntos do Azure Batch](batch-linux-nodes.md) para obter mais informações.
 
-- **Tarefa de início** (*start_task* - não é necessário)<p/>Juntamente com as propriedades de nó físico anteriores, também pode especificar um [StartTask][py_starttask] para o conjunto (não é necessário). O StartTask é executado em cada nó à medida que esse nó se associa ao conjunto, e sempre que um nó for reiniciado. O StartTask é especialmente útil para preparar nós de computação para a execução de tarefas, como instalar as aplicações que as suas tarefas executam.<p/>Nesta aplicação de exemplo, o StartTask copia os ficheiros que transfere do Armazenamento (que são especificados com a propriedade **resource_files**) do StartTask, a partir do *diretório de trabalho*do StartTask para o diretório *partilhado* a que todas as tarefas em execução no nó podem aceder. Essencialmente, esta ação copia o `python_tutorial_task.py` para o diretório partilhado em cada nó, à medida que o nó se associa ao conjunto, para que quaisquer tarefas executadas no nó lhe consigam aceder.
+- **Tarefa de início** (*start_task* - não é necessário)<p/>Juntamente com as propriedades de nó físico anteriores, também pode especificar um [StartTask][py_starttask] para o conjunto (não é necessário). O StartTask é executado em cada nó à medida que esse nó se associa ao conjunto, e sempre que um nó for reiniciado. O StartTask é especialmente útil para preparar nós de computação para a execução de tarefas, como instalar as aplicações que as suas tarefas executam.<p/>Nesta aplicação de exemplo, o StartTask copia os ficheiros que transfere do Armazenamento (que são especificados com a propriedade **resource_files**) do StartTask, a partir do *diretório de trabalho* do StartTask para o diretório *partilhado* a que todas as tarefas em execução no nó podem aceder. Essencialmente, esta ação copia o `python_tutorial_task.py` para o diretório partilhado em cada nó, à medida que o nó se associa ao conjunto, para que quaisquer tarefas executadas no nó lhe consigam aceder.
 
 Repare na chamada para a função auxiliar `wrap_commands_in_shell`. Esta função aceita um conjunto de comandos separados e cria uma única linha de comandos adequada para a propriedade de linha de comandos de uma tarefa.
 
@@ -680,6 +680,6 @@ Agora que está familiarizado com o fluxo de trabalho básico de uma solução d
 
 
 
-<!--HONumber=ago16_HO4-->
+<!---HONumber=ago16_HO4-->
 
 
