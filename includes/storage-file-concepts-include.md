@@ -17,7 +17,7 @@ Utilizações comuns do Armazenamento de ficheiros:
 
 O Armazenamento de ficheiros contém os seguintes componentes:
 
-![ficheiros-conceitos][files-concepts]
+![files-concepts][files-concepts]
 
 -   **Conta de Armazenamento:** todos os acessos ao Storage do Azure são efetuados através de uma conta de armazenamento. Veja [Metas de Desempenho e Escalabilidade do Storage do Azure](../articles/storage/storage-scalability-targets.md) para obter detalhes acerca da capacidade das contas de armazenamento.
 
@@ -37,7 +37,7 @@ O Armazenamento de ficheiros contém os seguintes componentes:
 
 Para obter detalhes sobre a nomenclatura das partilhas, dos diretórios e dos ficheiros, veja [Naming and Referencing Shares, Directories, Files, and Metadata (Nomenclatura e Referência de Partilhas, Diretórios, Ficheiros e Metadados)](http://msdn.microsoft.com/library/azure/dn167011.aspx).
 
-[ficheiros-conceitos]: ./media/storage-file-concepts-include/files-concepts.png
+[files-concepts]: ./media/storage-file-concepts-include/files-concepts.png
 
 
 <!--HONumber=Jun16_HO2-->

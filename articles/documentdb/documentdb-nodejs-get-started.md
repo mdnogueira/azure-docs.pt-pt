@@ -619,10 +619,10 @@ Em seguida, no ficheiro ```config.js```, atualize os valores config.endpoint e c
 [documentdb-create-account]: documentdb-create-account.md
 [documentdb-gerir]: documentdb-manage.md
 
-[chaves]: media/documentdb-nodejs-get-started/node-js-tutorial-keys.png
+[keys]: media/documentdb-nodejs-get-started/node-js-tutorial-keys.png
 
 
 
-<!--HONumber=ago16_HO4-->
+<!----HONumber=ago16_HO4-->
 
 

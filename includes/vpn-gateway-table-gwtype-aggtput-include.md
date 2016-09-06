@@ -9,6 +9,6 @@
 - (3) A SKU de Elevado Desempenho não é suportada para o tipo de VPN baseada em políticas.
 
 
-<!--HONumber=Aug16_HO1-->
+<!---HONumber=Aug16_HO1-->
 
 

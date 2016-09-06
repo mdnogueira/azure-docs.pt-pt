@@ -151,8 +151,8 @@ A sua solução de Macrocomputação poderá necessitar de outros serviços do A
 * Para os anúncios mais recentes, veja o [blogue da equipa do Microsoft HPC e Batch](http://blogs.technet.com/b/windowshpc/) e o [blogue do Azure](https://azure.microsoft.com/blog/tag/hpc/).
 
 <!--Image references-->
-[paralelo]: ./media/batch-hpc-solutions/parallel.png
-[conjugado]: ./media/batch-hpc-solutions/coupled.png
+[parallel]: ./media/batch-hpc-solutions/parallel.png
+[coupled]: ./media/batch-hpc-solutions/coupled.png
 [iaas_cluster]: ./media/batch-hpc-solutions/iaas_cluster.png
 [burst_cluster]: ./media/batch-hpc-solutions/burst_cluster.png
 [batch_proc]: ./media/batch-hpc-solutions/batch_proc.png

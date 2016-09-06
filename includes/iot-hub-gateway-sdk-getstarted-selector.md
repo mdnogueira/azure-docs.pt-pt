@@ -2,7 +2,7 @@
 - [Linux](../articles/iot-hub/iot-hub-linux-gateway-sdk-get-started.md)
 - [Windows](../articles/iot-hub/iot-hub-windows-gateway-sdk-get-started.md)
 
-Este artigo fornece instruções detalhadas sobre o [código de exemplo Olá Mundo][Ink-helloworld-samples] para ilustrar os componentes fundamentais da arquitetura do [SDK do Gateway do Azure IoT][Ink-gateway-sdk]. Este exemplo utiliza o SDK do Gateway para criar um gateway simples que regista uma mensagem "olá mundo" num ficheiro a cada cinco segundos.
+Este artigo fornece instruções detalhadas sobre o [código de exemplo Olá Mundo][lnk-helloworld-sample] para ilustrar os componentes fundamentais da arquitetura do [SDK do Gateway do Azure IoT][lnk-gateway-sdk]. Este exemplo utiliza o SDK do Gateway para criar um gateway simples que regista uma mensagem "olá mundo" num ficheiro a cada cinco segundos.
 
 Estas instruções abrangem:
 
@@ -60,7 +60,7 @@ O módulo de registo consome apenas mensagens do barramento de mensagem, nunca p
 
 ![][5]
 
-A figura acima mostra a arquitetura do exemplo Olá Mundo e os caminhos relativos para os ficheiros de origem que implementam partes diferentes da amostra no [repositório][Ink-gateway-sdk]. Explore o código por si ou utilize os fragmentos de código abaixo como guia.
+A figura acima mostra a arquitetura do exemplo Olá Mundo e os caminhos relativos para os ficheiros de origem que implementam partes diferentes da amostra no [repositório][lnk-gateway-sdk]. Explore o código por si ou utilize os fragmentos de código abaixo como guia.
 
 <!-- Images -->
 [1]: media/iot-hub-gateway-sdk-getstarted-selector/modules.png
@@ -70,7 +70,7 @@ A figura acima mostra a arquitetura do exemplo Olá Mundo e os caminhos relativo
 [5]: media/iot-hub-gateway-sdk-getstarted-selector/detailed_architecture.png
 
 <!-- Links -->
-[lnk-helloworld-samples]: https://github.com/Azure/azure-iot-gateway-sdk/tree/master/samples/hello_world
+[lnk-helloworld-sample]: https://github.com/Azure/azure-iot-gateway-sdk/tree/master/samples/hello_world
 [lnk-gateway-sdk]: https://github.com/Azure/azure-iot-gateway-sdk
 
 

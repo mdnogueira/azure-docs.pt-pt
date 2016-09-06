@@ -21,7 +21,7 @@
 
 ## O que acontece quando inicia sessão
 
-Quando inicia sessão pela primeira vez em [azureiotsuite.com][Ink-azureiotsuite], o site determina os seus níveis de permissão com base no inquilino do Azure Active Directory (AAD) e na subscrição do Azure atualmente selecionados.
+Quando inicia sessão pela primeira vez em [azureiotsuite.com][lnk-azureiotsuite], o site determina os seus níveis de permissão com base no inquilino do Azure Active Directory (AAD) e na subscrição do Azure atualmente selecionados.
 
 1.  Primeiro, o site localiza os inquilinos do AAD ao quais pertence através do Azure para preencher a lista de inquilinos junto ao seu nome de utilizador com sessão iniciada. Neste momento, o site apenas pode obter os tokens de utilizador para um inquilino de cada vez. Consequentemente, quando muda para um inquilino diferente através da lista pendente no canto superior direito, o site volta a iniciar a sua sessão nesse inquilino para obter os tokens do mesmo.
 
@@ -35,17 +35,17 @@ As secções seguintes descrevem as funções que controlam o acesso às soluç�
 
 As funções do AAD controlam a capacidade de aprovisionar soluções pré-configuradas e gerir utilizadores numa solução pré-configurada.
 
-Pode encontrar mais informações sobre funções de administrador no AAD em [Atribuir funções de administrador no Azure AD][Ink-aad-admin], mas este artigo foca-se principalmente nas funções de **Administrador Global** e de **Utilizador/Membro do Domínio**, conforme utilizadas pelas soluções pré-configuradas.
+Pode encontrar mais informações sobre funções de administrador no AAD em [Atribuir funções de administrador no Azure AD][lnk-aad-admin], mas este artigo foca-se principalmente nas funções de **Administrador Global** e de **Utilizador/Membro do Domínio**, conforme utilizadas pelas soluções pré-configuradas.
 
-**Administrador Global:** podem existir vários administradores globais por cada inquilino do AAD. Quando cria um inquilino do AAD, por predefinição, é o administrador global desse inquilino. O administrador global pode aprovisionar uma solução pré-configurada e é-lhe atribuída uma função de **ADMINISTRADOR** para a aplicação no seu inquilino do AAD. No entanto, se outro utilizador no mesmo inquilino do AAD criar uma aplicação, a função predefinida concedida ao administrador global é **SÓ DE LEITURA IMPLÍCITO**. Os administradores globais podem atribuir funções para aplicações através do [portal clássico do Azure][Ink-classic-portal].
+**Administrador Global:** podem existir vários administradores globais por cada inquilino do AAD. Quando cria um inquilino do AAD, por predefinição, é o administrador global desse inquilino. O administrador global pode aprovisionar uma solução pré-configurada e é-lhe atribuída uma função de **ADMINISTRADOR** para a aplicação no seu inquilino do AAD. No entanto, se outro utilizador no mesmo inquilino do AAD criar uma aplicação, a função predefinida concedida ao administrador global é **SÓ DE LEITURA IMPLÍCITO**. Os administradores globais podem atribuir funções para aplicações através do [portal clássico do Azure][lnk-classic-portal].
 
-**Utilizador/Membro do Domínio:** podem existir vários utilizadores/membros do domínio por inquilino do AAD. Um utilizador do domínio pode aprovisionar uma solução pré-configurada através do site [azureiotsuite.com][Ink-azureiotsuite]. A função predefinida que lhe é concedida para a aplicação que aprovisiona é **ADMINISTRADOR**. Pode criar uma aplicação através do script build.cmd no repositório [azure-iot-remote-monitoring][lnk-rm-github-repo] ou [azure-iot-predictive-maintenance][lnk-pm-github-repo], mas a função predefinida que lhe é concedida é **SÓ DE LEITURA IMPLÍCITO**, uma vez que não tem permissão para atribuir funções. Se outro utilizador no inquilino do AAD criar uma aplicação, por predefinição, é-lhe atribuída a função **SÓ DE LEITURA IMPLÍCITO**. Este não tem a capacidade de atribuir funções para aplicações. Desta forma, não pode adicionar utilizadores ou funções de utilizador para uma aplicação, mesmo que a tenha aprovisionado.
+**Utilizador/Membro do Domínio:** podem existir vários utilizadores/membros do domínio por inquilino do AAD. Um utilizador do domínio pode aprovisionar uma solução pré-configurada através do site [azureiotsuite.com][lnk-azureiotsuite]. A função predefinida que lhe é concedida para a aplicação que aprovisiona é **ADMINISTRADOR**. Pode criar uma aplicação através do script build.cmd no repositório [azure-iot-remote-monitoring][lnk-rm-github-repo] ou [azure-iot-predictive-maintenance][lnk-pm-github-repo], mas a função predefinida que lhe é concedida é **SÓ DE LEITURA IMPLÍCITO**, uma vez que não tem permissão para atribuir funções. Se outro utilizador no inquilino do AAD criar uma aplicação, por predefinição, é-lhe atribuída a função **SÓ DE LEITURA IMPLÍCITO**. Este não tem a capacidade de atribuir funções para aplicações. Desta forma, não pode adicionar utilizadores ou funções de utilizador para uma aplicação, mesmo que a tenha aprovisionado.
 
 **Utilizador Convidado/Convidado:** podem existir vários utilizadores convidados/convidados por inquilino do AAD. Os utilizadores convidados têm um conjunto limitado de direitos no inquilino do AAD. Como resultado, os utilizadores convidados não podem aprovisionar uma solução pré-configurada no inquilino do AAD.
 
 Para obter mais informações, consulte os seguintes recursos:
 
-- [Criar ou Editar utilizadores no Azure AD][Ink-create-edit-users]
+- [Criar ou Editar utilizadores no Azure AD][lnk-create-edit-users]
 - [Atribuir funções de aplicações no AAD][lnk-assign-app-roles]
 
 ## Funções de administrador de subscrição do Azure
@@ -64,7 +64,7 @@ Estão estipuladas duas funções definidas e uma implícita na aplicação cria
 
 -   **SÓ DE LEITURA:** tem a capacidade de ver os dispositivos
 
--   **SÓ DE LEITURA IMPLÍCITO:** semelhante a Só de Leitura, mas é concedida a todos os utilizadores do seu inquilino do AAD. Tal acontece por motivos de comodidade durante o desenvolvimento. Pode remover esta função ao modificar o ficheiro de origem [RolePermissions.cs][Ink-resource-cs].
+-   **SÓ DE LEITURA IMPLÍCITO:** semelhante a Só de Leitura, mas é concedida a todos os utilizadores do seu inquilino do AAD. Tal acontece por motivos de comodidade durante o desenvolvimento. Pode remover esta função ao modificar o ficheiro de origem [RolePermissions.cs][lnk-resource-cs].
 
 ### Alterar funções da aplicação para um utilizador
 
@@ -92,7 +92,7 @@ Tem de ser um administrador global do AAD para alterar as funções de um utiliz
 
 ### Sou administrador de serviço e gostaria de alterar o mapeamento de diretório entre a minha subscrição e um inquilino do AAD específico. Como posso fazê-lo?
 
-1. Aceda ao [portal clássico do Azure][Ink-classic-portal] e clique em **Definições** na lista de serviços no lado esquerdo.
+1. Aceda ao [portal clássico do Azure][lnk-classic-portal] e clique em **Definições** na lista de serviços no lado esquerdo.
 
 2. Selecione a subscrição para a qual pretende alterar o mapeamento de diretório.
 
@@ -110,7 +110,7 @@ Peça a um administrador global para o definir como administrador global no inqu
 
 Pode executar uma implementação de nuvem a partir de <https://github.com/Azure/azure-iot-remote-monitoring> e voltar a implementar com um inquilino do AAD recém-criado. Uma vez que, por predefinição, é um administrador global quando cria um novo inquilino do AAD, obtém acesso para adicionar utilizadores e atribuir funções aos mesmos.
 
-1. Crie um novo diretório do AAD no [Portal de Gestão do Azure][Ink-classic-portal].
+1. Crie um novo diretório do AAD no [Portal de Gestão do Azure][lnk-classic-portal].
 
 2. Aceda a <https://github.com/Azure/azure-iot-remote-monitoring>.
 
@@ -121,7 +121,7 @@ Pode executar uma implementação de nuvem a partir de <https://github.com/Azure
 
 ### Quero alterar um Administrador de Serviço ou Coadministrador depois de iniciar sessão com uma conta institucional.
 
-Consulte o artigo de suporte [Changing Service Administrator and Co-Administrator when logged in with an organisational account (Alterar o Administrador de Serviço e Coadministrador depois de iniciar sessão com uma conta institucional)][Ink-service-admins].
+Consulte o artigo de suporte [Changing Service Administrator and Co-Administrator when logged in with an organisational account (Alterar o Administrador de Serviço e Coadministrador depois de iniciar sessão com uma conta institucional)][lnk-service-admins].
 
 ### Porque estou a ver este erro? "A sua conta não tem as permissões adequadas para criar uma solução. Consulte o seu administrador de conta ou tente com uma conta diferente."
 
@@ -129,7 +129,7 @@ Observe o diagrama abaixo:
 
 ![][img-flowchart]
 
-> [AZURE.NOTE] Se continuar a ver o erro depois de confirmar que é administrador global no inquilino do AAD e coadministrador na subscrição, solicite ao administrador de conta que remova o utilizador e atribua novamente as permissões necessárias pela seguinte ordem: adicionar o utilizador como administrador global e, em seguida, adicionar o utilizador como coadministrador na subscrição do Azure. Se os problemas persistirem, contacte [Ajuda e Suporte][Ink-help-support].
+> [AZURE.NOTE] Se continuar a ver o erro depois de confirmar que é administrador global no inquilino do AAD e coadministrador na subscrição, solicite ao administrador de conta que remova o utilizador e atribua novamente as permissões necessárias pela seguinte ordem: adicionar o utilizador como administrador global e, em seguida, adicionar o utilizador como coadministrador na subscrição do Azure. Se os problemas persistirem, contacte [Ajuda e Suporte][lnk-help-support].
 
 **Porque estou a ver este erro quando tenho uma subscrição do Azure?** *É necessária uma subscrição do Azure para criar soluções pré-configuradas. Pode criar uma conta de avaliação gratuita em apenas alguns minutos.*
 
@@ -137,12 +137,12 @@ Se tem a certeza de que tem uma subscrição do Azure, valide o mapeamento do in
 
 ## Passos seguintes
 
-Para saber mais sobre o IoT Suite, veja como pode [personalizar uma solução pré-configurada][Ink-customize].
+Para saber mais sobre o IoT Suite, veja como pode [personalizar uma solução pré-configurada][lnk-customize].
 
 [img-flowchart]: media/iot-suite-permissions/flowchart.png
 
 [lnk-azureiotsuite]: https://www.azureiotsuite.com/
-[Ink-rm-github-repo]: https://github.com/Azure/azure-iot-remote-monitoring
+[lnk-rm-github-repo]: https://github.com/Azure/azure-iot-remote-monitoring
 [lnk-pm-github-repo]: https://github.com/Azure/azure-iot-predictive-maintenance
 [lnk-aad-admin]: https://azure.microsoft.com/documentation/articles/active-directory-assign-admin-roles/
 [lnk-classic-portal]: https://manage.windowsazure.com/
