@@ -82,7 +82,7 @@ Uma solução pode incluir os gateways de protocolo e de campo.
 
 ## Como funciona o IoT Hub?
 
-O IoT Hub do Azure implementa o padrão de comunicação [auxiliado][Ink-service-assisted-pattern] para mediar as interações entre os seus dispositivos e a sua solução de back-end. O objetivo da comunicação auxiliada consiste em estabelecer percursos de comunicação fidedignos e bidirecionais entre um sistema de controlo, como o IoT Hub e dispositivos com objetivos especiais implementados num espaço físico não fidedigno. O padrão estabelece os seguintes princípios:
+O IoT Hub do Azure implementa o padrão de comunicação [auxiliado][lnk-service-assisted-pattern] para mediar as interações entre os seus dispositivos e a sua solução de back-end. O objetivo da comunicação auxiliada consiste em estabelecer percursos de comunicação fidedignos e bidirecionais entre um sistema de controlo, como o IoT Hub e dispositivos com objetivos especiais implementados num espaço físico não fidedigno. O padrão estabelece os seguintes princípios:
 
 - A segurança tem precedência sobre todas as outras funcionalidades.
 - Os dispositivos não aceitam informações da rede não solicitadas. Um dispositivo estabelece todas as ligações e rotas de uma forma apenas de saída. Para que um dispositivo receba um comando do back-end, deverá frequentemente iniciar uma ligação para verificar se devem ser processados quaisquer comandos pendentes.
@@ -125,6 +125,6 @@ Para começar a escrever código e executar alguns exemplos, veja o tutorial [In
 
 
 
-<!--HONumber=ago16_HO5-->
+<!----HONumber=ago16_HO5-->
 
 

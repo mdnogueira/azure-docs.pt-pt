@@ -25,7 +25,7 @@ As mensagens do Service Bus são semelhantes ao serviço postal de entrega de ca
 
 O remetente da mensagem também pode exigir uma variedade de características de entrega incluindo transações, deteção de duplicados, expiração com base no tempo e processamento de lotes. Estes padrões também têm analogias postais: repetição de entrega, assinatura necessária, alteração de endereço ou devolução de chamada.
 
-O Service Bus suporta dois padrões de mensagens distintos: mensagens *retransmitidas*e mensagens *mediadas*.
+O Service Bus suporta dois padrões de mensagens distintos: mensagens *retransmitidas* e mensagens *mediadas*.
 
 ## Mensagens retransmitidas
 
@@ -58,6 +58,6 @@ Para mais informações sobre mensagens do Service Bus, consulte os seguintes t�
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!----HONumber=Aug16_HO1-->
 
 

@@ -38,7 +38,7 @@ Esta secção descreve algumas partes principais do código no exemplo Olá Mund
 
 O programador deve escrever o *processo do gateway*. Este programa cria a infraestrutura interna (o barramento de mensagem), carrega os módulos e configura tudo para que funcione corretamente. O SDK fornece a função **Gateway_Create_From_JSON** para permitir o arranque de um gateway a partir de um ficheiro JSON. Para utilizar a função **Gateway_Create_From_JSON**, deve introduzir o caminho para um ficheiro JSON que especifique os módulos a carregar. 
 
-Pode encontrar o código para o processo de gateway no exemplo Olá Mundo no ficheiro [main.c][Ink-main-c]. Para melhorar a legibilidade, o fragmento abaixo mostra uma versão abreviada do código de processo do gateway. Este programa cria um gateway e, em seguida, aguarda que o utilizador prima a tecla **ENTER** antes de fechar o gateway. 
+Pode encontrar o código para o processo de gateway no exemplo Olá Mundo no ficheiro [main.c][lnk-main-c]. Para melhorar a legibilidade, o fragmento abaixo mostra uma versão abreviada do código de processo do gateway. Este programa cria um gateway e, em seguida, aguarda que o utilizador prima a tecla **ENTER** antes de fechar o gateway. 
 
 ```
 int main(int argc, char** argv)
@@ -87,7 +87,7 @@ O exemplo seguinte mostra o ficheiro de definições JSON utilizado para configu
 
 ### Publicação de mensagens do módulo Olá Mundo
 
-Pode encontrar o código utilizado pelo módulo "Olá Mundo" para publicar mensagens no ficheiro ["hello_world.c"][Ink-helloworld-c]. O fragmento abaixo mostra uma versão modificada com comentários adicionais e algum código de processamento de erros removido para melhorar a legibilidade:
+Pode encontrar o código utilizado pelo módulo "Olá Mundo" para publicar mensagens no ficheiro ["hello_world.c"][lnk-helloworld-c]. O fragmento abaixo mostra uma versão modificada com comentários adicionais e algum código de processamento de erros removido para melhorar a legibilidade:
 
 ```
 int helloWorldThread(void *param)
@@ -150,7 +150,7 @@ static void HelloWorld_Receive(MODULE_HANDLE moduleHandle, MESSAGE_HANDLE messag
 
 O módulo de registo recebe mensagens do barramento de mensagem e escreve-as num ficheiro. Nunca publica mensagens para o barramento de mensagem. Por conseguinte, o código do módulo de registo nunca chama a função **MessageBus_Publish**.
 
-A função **Logger_Recieve** no ficheiro [logger.c][Ink-logger-c] é a chamada de retorno que o barramento de mensagem invoca para a entrega de mensagens ao módulo de registo. O fragmento abaixo mostra uma versão modificada com comentários adicionais e algum código de processamento de erros removido para melhorar a legibilidade:
+A função **Logger_Recieve** no ficheiro [logger.c][lnk-logger-c] é a chamada de retorno que o barramento de mensagem invoca para a entrega de mensagens ao módulo de registo. O fragmento abaixo mostra uma versão modificada com comentários adicionais e algum código de processamento de erros removido para melhorar a legibilidade:
 
 ```
 static void Logger_Receive(MODULE_HANDLE moduleHandle, MESSAGE_HANDLE messageHandle)
@@ -201,7 +201,7 @@ Para saber mais sobre como utilizar o SDK do Gateway, veja o seguinte:
 <!-- Links -->
 [lnk-main-c]: https://github.com/Azure/azure-iot-gateway-sdk/blob/master/samples/hello_world/src/main.c
 [lnk-helloworld-c]: https://github.com/Azure/azure-iot-gateway-sdk/blob/master/modules/hello_world/src/hello_world.c
-[Ink-logger-c]: https://github.com/Azure/azure-iot-gateway-sdk/blob/master/modules/logger/src/logger.c
+[lnk-logger-c]: https://github.com/Azure/azure-iot-gateway-sdk/blob/master/modules/logger/src/logger.c
 [lnk-gateway-sdk]: https://github.com/Azure/azure-iot-gateway-sdk/
 [lnk-gateway-simulated]: ../articles/iot-hub/iot-hub-linux-gateway-sdk-simulated-device.md
 

@@ -23,7 +23,7 @@
 
 ## Como criar o exemplo
 
-Antes de começar, tem de [configurar o seu ambiente de desenvolvimento][Ink-setupdevbox] para trabalhar com o SDK no Linux.
+Antes de começar, tem de [configurar o seu ambiente de desenvolvimento][lnk-setupdevbox] para trabalhar com o SDK no Linux.
 
 1. Abra uma shell.
 2. Navegue até à pasta raiz na sua cópia local do repositório **azure-iot-gateway-sdk**.
@@ -78,6 +78,6 @@ Antes de começar, tem de [configurar o seu ambiente de desenvolvimento][Ink-set
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!----HONumber=Aug16_HO1-->
 
 

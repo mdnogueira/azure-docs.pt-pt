@@ -28,7 +28,7 @@ Cada solução pré-configurada é uma implementação ponto-a-ponto completa qu
 
 Para além de implementar e executar as soluções no Azure, pode ainda transferir o código de origem completo e personalizar e expandir a solução para que responda aos seus requisitos específicos do IoT.
 
-> [AZURE.NOTE] Para implementar uma das soluções pré-configuradas, consulte [Microsoft Azure IoT Suite][Ink-azureiotsuite]. O artigo [Introdução às soluções pré-configuradas do IoT][Ink-getstarted-preconfigured] fornece mais informações sobre a implementação e a execução de uma das soluções.
+> [AZURE.NOTE] Para implementar uma das soluções pré-configuradas, consulte [Microsoft Azure IoT Suite][lnk-azureiotsuite]. O artigo [Introdução às soluções pré-configuradas do IoT][lnk-getstarted-preconfigured] fornece mais informações sobre a implementação e a execução de uma das soluções.
 
 A tabela seguinte mostra a forma como as soluções mapeiam funcionalidades específicas do IoT:
 
@@ -68,7 +68,7 @@ Pode adicionar mais dispositivos simulados à solução que emite a mesma teleme
 
 ## IoT Hub
 
-Nesta solução pré-configurada, a instância IoT Hub corresponde ao *Gateway na Nuvem* numa [Arquitetura de solução IoT][Ink-what-is-azure-iot] típica.
+Nesta solução pré-configurada, a instância IoT Hub corresponde ao *Gateway na Nuvem* numa [Arquitetura de solução IoT][lnk-what-is-azure-iot] típica.
 
 Um IoT Hub recebe a telemetria dos dispositivos num ponto final único. Um IoT Hub mantém ainda os pontos finais do dispositivo onde cada dispositivo pode obter os comandos que lhe são enviados.
 
@@ -76,7 +76,7 @@ O IoT Hub disponibiliza a telemetria recebida através do ponto final de leitura
 
 ## Azure Stream Analytics
 
-A solução pré-configurada utiliza três tarefas do [Azure Stream Analytics][Ink-asa] (ASA) para filtrar o fluxo de telemetria dos dispositivos:
+A solução pré-configurada utiliza três tarefas do [Azure Stream Analytics][lnk-asa] (ASA) para filtrar o fluxo de telemetria dos dispositivos:
 
 
 - *Tarefa DeviceInfo* - produz dados para Event Hub que redireciona as mensagens de registo específicas do dispositivo, enviadas aquando da primeira ligação de um dispositivo ou em resposta a um comando **Alterar estado do dispositivo** na solução de registo do dispositivo (uma base de dados do DocumentDB). 
@@ -89,11 +89,11 @@ Nesta solução pré-configurada, as tarefas ASA fazem parte da **solução de b
 
 Nesta solução pré-configurada, o processador de eventos faz parte da **solução de back-end do IoT** numa [arquitetura de solução IoT][lnk-what-is-azure-iot] típica.
 
-As tarefas ASA **DeviceInfo** e **Regras** enviam o respetivo resultado ao Event Hubs para que seja transmitido a outros serviços de back-end. A solução utiliza uma instância [EventPocessorHost][Ink-event-processor] executada numa [WebJob][Ink-web-job] para ler as mensagens a partir desses Event Hubs. O **EventProcessorHost** utiliza os dados do **DeviceInfo** para atualizar os dados do dispositivo na base de dados do DocumentDB e utiliza os dados **Regras** para invocar a aplicação lógica e atualizar os alertas apresentados no portal de solução.
+As tarefas ASA **DeviceInfo** e **Regras** enviam o respetivo resultado ao Event Hubs para que seja transmitido a outros serviços de back-end. A solução utiliza uma instância [EventPocessorHost][lnk-event-processor] executada numa [WebJob][lnk-web-job] para ler as mensagens a partir desses Event Hubs. O **EventProcessorHost** utiliza os dados do **DeviceInfo** para atualizar os dados do dispositivo na base de dados do DocumentDB e utiliza os dados **Regras** para invocar a aplicação lógica e atualizar os alertas apresentados no portal de solução.
 
 ## Registo de identidade do dispositivo e DocumentDB
 
-Cada IoT Hub inclui um [registo de identidade do dispositivo][Ink-identity-registry] que armazena as chaves de dispositivo. O IoT Hub utiliza essas informações para autenticar dispositivos - um dispositivo deve estar registado e ter uma chave válida antes de estabelecer a ligação ao hub.
+Cada IoT Hub inclui um [registo de identidade do dispositivo][lnk-identity-registry] que armazena as chaves de dispositivo. O IoT Hub utiliza essas informações para autenticar dispositivos - um dispositivo deve estar registado e ter uma chave válida antes de estabelecer a ligação ao hub.
 
 Esta solução armazena informações adicionais sobre os dispositivos, como o seu estado, os comandos que suportam e outros metadados. A solução utiliza uma base de dados do DocumentDB para armazenar dados específicos do dispositivo e o portal de solução recebe dados dessa base de dados do DocumentDB para a visualização e a edição.
 
@@ -115,7 +115,7 @@ Nesta solução pré-configurada, o portal de solução faz parte da **Solução
 
 ## Passos seguintes
 
-Para mais informações sobre as arquiteturas da solução IoT, consulte [Serviços do Microsoft Azure IoT: Arquitetura de Referência][Ink-refarch].
+Para mais informações sobre as arquiteturas da solução IoT, consulte [Serviços do Microsoft Azure IoT: Arquitetura de Referência][lnk-refarch].
 
 Agora que sabe o que é uma solução pré-configurada, pode começar por implementar a solução pré-configurada de *monitorização remota*: [Introdução às soluções pré-configuradas][lnk-getstarted-preconfigured].
 

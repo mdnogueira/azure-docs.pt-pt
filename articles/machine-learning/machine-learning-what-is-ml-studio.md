@@ -108,7 +108,7 @@ Para obter ajuda na navegação pela da extensa biblioteca dos algoritmos do Mac
 
 Assim que o modelo de análise preditiva estiver pronto, pode implementá-lo como um serviço web a partir do Machine Learning Studio. Consulte o artigo [Implementar um serviço web do Azure Machine Learning](machine-learning-publish-a-machine-learning-web-service.md) para obter mais detalhes.
 
-[descrição geral do ml studio]:./media/machine-learning-what-is-ml-studio/azure-ml-studio-diagram.jpg
+[ml-studio-overview]:./media/machine-learning-what-is-ml-studio/azure-ml-studio-diagram.jpg
 
 <!-- Module References -->
 [converter em arff]: https://msdn.microsoft.com/library/azure/62d2cece-d832-4a7a-a0bd-f01f03af0960/
@@ -118,6 +118,6 @@ Assim que o modelo de análise preditiva estiver pronto, pode implementá-lo com
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!----HONumber=Aug16_HO1-->
 
 
