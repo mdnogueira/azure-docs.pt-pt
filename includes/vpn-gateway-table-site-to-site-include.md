@@ -1,6 +1,6 @@
 |  | **Implementação Clássica**  | **Implementação Resource Manager** |
 |----------------------------------------|--------------|----------------------|
-| **Portal Clássico**                     |[Artigo* (1)](../articles/vpn-gateway/vpn-gateway-site-to-site-create.md) |  Não Suportado |
+| **Portal Clássico**                     |[Artigo (1)](../articles/vpn-gateway/vpn-gateway-site-to-site-create.md) |  Não Suportado |
 | **Portal do Azure**                       | Suportado (2)              | [Artigo](vpn-gateway-howto-site-to-site-resource-manager-portal.md)|
 | **PowerShell**               |[Artigo+](..articles/vpn-gateway/vpn-gateway-multi-site.md)          | [Artigo](..articles/vpn-gateway/vpn-gateway-create-site-to-site-rm-powershell.md)| 
 
@@ -13,6 +13,6 @@
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Aug16_HO1--->
 
 
