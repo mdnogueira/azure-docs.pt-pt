@@ -12,7 +12,7 @@
     ms.workload="search"
     ms.topic="get-started-article"
     ms.tgt_pltfrm="na"
-    ms.date="05/31/2016"
+    ms.date="08/29/2016"
     ms.author="ashmaka"
 />
 # Consultar o índice da Azure Search utilizando o Portal do Azure
@@ -28,7 +28,7 @@ Antes de iniciar estas instruções, já deverá ter [criado um índice da Azure
 
 ## I. Aceda ao painel da Azure Search
 1. Clique em "Todos os recursos" no menu no lado esquerdo do [Portal do Azure](https://portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices)
-2. Selecione o seu serviço da Azure Search
+2. Selecione o seu serviço do Azure Search
 
 ## II. Selecione o índice que pretende pesquisar
 1. Selecione o índice que pretende pesquisar a partir do mosaico "Índices".
@@ -49,6 +49,6 @@ Antes de iniciar estas instruções, já deverá ter [criado um índice da Azure
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO5-->
 
 

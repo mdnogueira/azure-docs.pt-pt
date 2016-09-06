@@ -26,6 +26,7 @@ O Application Gateway do Azure é um balanceador de carga de 7 camadas. Fornece 
 - [Azure Resource Manager PowerShell](application-gateway-create-gateway-arm.md)
 - [Azure Classic PowerShell](application-gateway-create-gateway.md)
 - [Modelo Azure Resource Manager](application-gateway-create-gateway-arm-template.md)
+- [CLI do Azure](application-gateway-create-gateway-cli.md)
 
 <BR>
 
@@ -74,7 +75,7 @@ Pode transferir o modelo Azure Resource Manager existente para criar uma rede vi
   	| **backendaddress2** | Endereço IP do segundo servidor Web |
 
 
->[AZURE.IMPORTANT] Os modelos Azure Resource Manager mantidos no GitHub podem ser alterados ao longo do tempo. Verifique o modelo antes de o utilizar.
+    >[AZURE.IMPORTANT] Os modelos Azure Resource Manager mantidos no GitHub podem ser alterados ao longo do tempo. Verifique o modelo antes de o utilizar.
 
 6. Verifique o conteúdo em **recursos** e tenha em atenção o seguinte:
 
@@ -131,7 +132,7 @@ Verifique as subscrições da conta.
 
     Get-AzureRmSubscription
 
-Ser-lhe-á solicitado para autenticar com as suas credenciais.<BR>
+Ser-lhe-á solicitado a autenticação com as suas credenciais.<BR>
 
 ### Passo 3
 
@@ -147,8 +148,6 @@ Escolha qual das subscrições do Azure utilizar. <BR>
 Se necessário, crie um grupo de recursos com o cmdlet **New-AzureResourceGroup**. No exemplo abaixo, irá criar um novo grupo de recursos denominado AppgatewayRG na localização EUA Leste.
 
     New-AzureRmResourceGroup -Name AppgatewayRG -Location "East US"
-        VERBOSE: 5:38:49 PM - Created resource group 'AppgatewayRG' in location 'eastus'
-
 
         ResourceGroupName : AppgatewayRG
         Location          : eastus
@@ -295,6 +294,6 @@ Se pretender obter mais informações sobre as opções de balanceamento de carg
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=ago16_HO5-->
 
 

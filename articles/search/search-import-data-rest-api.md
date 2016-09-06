@@ -14,7 +14,7 @@
     ms.workload="search"
     ms.topic="get-started-article"
     ms.tgt_pltfrm="na"
-    ms.date="05/31/2016"
+    ms.date="08/29/2016"
     ms.author="ashmaka"/>
 
 # Importar dados para a Pesquisa do Azure utilizando a API REST
@@ -29,11 +29,11 @@ Antes de iniciar estas instruções, já deverá ter [criado um índice de Pesqu
 
 Para enviar documentos para o índice utilizando a API REST, irá emitir um pedido de HTTP POST ao ponto final do URL do seu índice. O corpo do corpo do pedido de HTTP é um objeto JSON que contém os documentos a serem adicionados, modificados ou eliminados.
 
-## I. Identificar a sua chave de API do administrador do serviço de Pesquisa do Azure
+## I. Identificar a sua chave de API do administrador do serviço Azure Search
 Quando emitir pedidos de HTTP relativamente ao seu serviço utilizando a API REST *cada* pedido da API tem de incluir a chave de API que foi gerada para o serviço de Pesquisa que aprovisionou. Ter uma chave válida estabelece fidedignidade, numa base por pedido, entre a aplicação a enviar o pedido e o serviço que o processa.
 
 1. Para localizar as chaves de API do seu serviço, tem de iniciar sessão no [Portal do Azure](https://portal.azure.com/)
-2. Aceda ao painel do seu serviço de Pesquisa do Azure
+2. Aceda ao painel do seu serviço Azure Search
 3. Clique no ícone "Chaves"
 
 O seu serviço terá *chaves de administração* e *chaves de consulta*.
@@ -50,8 +50,8 @@ Cada objeto JSON na matriz "valor" representa um documento a ser indexado. Cada 
 
 @search.action | Descrição | Campos necessários para cada documento | Notas
 --- | --- | --- | ---
-`upload` | Uma ação `upload` é semelhante a um "upsert" onde o documento será inserido se for novo e atualizado/substituído se já existir. | chave, juntamente com quaisquer outros campos que pretende definir | Quando atualizar/substituir um documento existente, qualquer campo que não está especificado no pedido terá o respetivo campo definido como `null`. Isto ocorre mesmo quando o campo foi anteriormente definido para um valor não nulo.
-`merge` | Atualiza um documento existente com os campos especificados. Se o documento não existe no índice remissivo, a intercalação irá falhar. | chave, juntamente com quaisquer outros campos que pretende definir | Qualquer campo que especifique numa intercalação irá substituir o campo existente no documento. Isto inclui campos do tipo `Collection(Edm.String)`. Por exemplo, se o documento contém um campo `tags` com o valor `["budget"]` e executar uma intercalação com o valor `["economy", "pool"]` para `tags`, o valor final do campo `tags` será `["economy", "pool"]`. Não será `["budget", "economy", "pool"]`.
+`upload` | Um ação `upload` é semelhante a um "upsert" onde o documento será inserido se for novo e atualizado/substituído se já existir. | chave, juntamente com quaisquer outros campos que pretende definir | Quando atualizar/substituir um documento existente, qualquer campo que não está especificado no pedido terá o respetivo campo definido como `null`. Isto ocorre mesmo quando o campo foi anteriormente definido para um valor não nulo.
+`merge` | Atualiza um documento existente com os campos especificados. Se o documento não existe no índice, a intercalação irá falhar. | chave, juntamente com quaisquer outros campos que pretende definir | Qualquer campo que especifique numa intercalação irá substituir o campo existente no documento. Isto inclui campos do tipo `Collection(Edm.String)`. Por exemplo, se o documento contém um campo `tags` com o valor `["budget"]` e executar uma intercalação com o valor `["economy", "pool"]` para `tags`, o valor final do campo `tags` será `["economy", "pool"]`. Não será `["budget", "economy", "pool"]`.
 `mergeOrUpload` | Esta ação tem o mesmo comportamento de `merge` caso um documento com a chave especificada já exista no índice. Se o documento não existir, tem um comportamento semelhante `upload` a um novo documento. | chave, juntamente com quaisquer outros campos que pretende definir | -
 `delete` | Remove o documento especificado do índice. | apenas chave | Quaisquer campos que especificar diferentes do campo de chave serão ignorados. Se pretender remover um campo individual de um documento, utilize `merge` em vez disso e simplesmente defina o campo explicitamente como nulo.
 
@@ -166,10 +166,10 @@ Um código de estado de `503` será devolvido se nenhum dos itens no pedido for 
 Para obter mais informações sobre ações de documentos e as respostas de erros/com êxito, consulte o artigo [Adicionar, Atualizar ou Eliminar documentos](https://msdn.microsoft.com/library/azure/dn798930.aspx). Para obter mais informações sobre outros códigos de estado HTTP que possam ser devolvidos em caso de falha, consulte [Códigos de estado HTTP (Pesquisa do Azure)](https://msdn.microsoft.com/library/azure/dn798925.aspx).
 
 ## Seguinte
-Depois de preencher o seu índice de Pesquisa do Azure, estará pronto para começar a emitir consultas para procurar documentos. Consulte o artigo [Consultar o Índice de Pesquisa do Azure](search-query-overview.md) para obter detalhes.
+Depois de preencher o seu índice da Azure Search, estará pronto para começar a emitir consultas para procurar documentos. Consulte o artigo [Consultar o Índice da Azure Search](search-query-overview.md) para obter detalhes.
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO5-->
 
 

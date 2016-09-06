@@ -14,7 +14,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="06/14/2016"
+   ms.date="08/30/2016"
    ms.author="larryfr"/>
 
 #Utilizar o SSH com o Hadoop baseado em Linux no HDInsight a partir do Windows
@@ -26,6 +26,8 @@
 O [Secure Shell (SSH)](https://en.wikipedia.org/wiki/Secure_Shell) permite-lhe efetuar operações remotamente nos seus clusters do HDInsight baseados em Linux utilizando uma interface de linha de comandos. Este documento fornece informações sobre a ligação ao HDInsight a partir de clientes baseados em Windows através do cliente SSH PuTTY.
 
 > [AZURE.NOTE] Os passos deste artigo partem do princípio de que está a utilizar um cliente baseado em Windows. Se estiver a utilizar um cliente Linux, Unix ou OS X, consulte [Utilizar o SSH com o Hadoop baseado em Linux no HDInsight a partir do Linux, Unix ou OS X](hdinsight-hadoop-linux-use-ssh-unix.md).
+>
+> Se tiver o Windows 10 e utilizar [Bash on Ubuntu on Windows](https://msdn.microsoft.com/commandline/wsl/about), pode utilizar os passos do documento [Utilizar o SSH com o Hadoop baseado em Linux no HDInsight a partir do Linux, Unix ou OS X](hdinsight-hadoop-linux-use-ssh-unix.md).
 
 ##Pré-requisitos
 
@@ -237,6 +239,6 @@ Agora que sabe como efetuar a autenticação com uma chave SSH, saiba como utili
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO5-->
 
 

@@ -23,7 +23,7 @@
 - [Com o PowerShell](data-factory-copy-activity-tutorial-using-powershell.md)
 - [Com o Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md)
 - [Com a API REST](data-factory-copy-activity-tutorial-using-rest-api.md)
-- [Com a API do .NET](data-factory-copy-activity-tutorial-using-dotnet-api.md)
+- [Com a API .NET](data-factory-copy-activity-tutorial-using-dotnet-api.md)
 - [Com o Assistente de Cópia](data-factory-copy-data-wizard-tutorial.md)
 
 Neste tutorial, irá realizar o seguinte procedimento com o Visual Studio 2013:
@@ -281,6 +281,6 @@ Consulte [Monitor datasets and pipeline (Monitorizar os conjuntos de dados e o p
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=ago16_HO5-->
 
 

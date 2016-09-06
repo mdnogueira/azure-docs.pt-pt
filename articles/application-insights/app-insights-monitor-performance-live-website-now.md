@@ -162,7 +162,7 @@ Tem de abrir [algumas portas de envio](app-insights-ip-addresses.md#outgoing-por
   * Abra Pesquisa de Diagnóstico (o mosaico de Pesquisa) para ver eventos individuais. Muitas vezes, os eventos estão visíveis na Pesquisa de Diagnóstico antes de dados agregados aparecerem nos gráficos.
   * Abra o Monitor de Estado e selecione a aplicação no painel esquerdo. Verifique se existem quaisquer mensagens de diagnóstico para esta aplicação na secção "Notificações de configuração":
 
-  ![](./media/app-insights-monitor-performance-live-website-now/appinsights-status-monitor-diagnostics-message.png)
+  ![Abra o painel Desempenho para ver o pedido, o tempo de resposta, a dependência e outros dados](./media/app-insights-monitor-performance-live-website-now/appinsights-status-monitor-diagnostics-message.png)
 
   * Certifique-se de que a firewall do servidor permite tráfego de saída nas portas indicadas acima.
   * No servidor, se vir uma mensagem sobre "permissões insuficientes", experimente o seguinte:
@@ -302,6 +302,6 @@ Se a aplicação Web estiver no Azure e criar os seus recursos através de um mo
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=ago16_HO5-->
 
 

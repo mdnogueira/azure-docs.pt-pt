@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="08/09/2016"
+    ms.date="08/24/2016"
     ms.author="sdanie"/>
 
 # Adicionar a colocação em cache para melhorar o desempenho na API Management do Azure
@@ -129,7 +129,6 @@ Tenha em atenção que o valor de **sampleheader** na resposta é agora **value2
 
 ## <a name="next-steps"> </a>Passos seguintes
 
--   Veja os outros tópicos do tutorial [Introdução à configuração avançada de API][].
 -   Para obter mais informações sobre as políticas de colocação em cache, consulte [Políticas de colocação em cache][] na [Referência de política da API Management][].
 -   Para obter informações sobre a colocação em cache de itens por chave utilizando expressões de política, consulte [Colocação em cache personalizada na API Management do Azure](api-management-sample-cache-by-key.md).
 
@@ -151,7 +150,6 @@ Tenha em atenção que o valor de **sampleheader** na resposta é agora **value2
 [Adicionar APIs a um produto]: api-management-howto-add-products.md#add-apis
 [Publicar um produto]: api-management-howto-add-products.md#publish-product
 [Introdução à API Management do Azure]: api-management-get-started.md
-[Introdução à configuração avançada de API]: api-management-get-started-advanced.md
 
 [Referência de política da API Management]: https://msdn.microsoft.com/library/azure/dn894081.aspx
 [Políticas de colocação em cache]: https://msdn.microsoft.com/library/azure/dn894086.aspx
@@ -165,6 +163,6 @@ Tenha em atenção que o valor de **sampleheader** na resposta é agora **value2
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=ago16_HO5-->
 
 

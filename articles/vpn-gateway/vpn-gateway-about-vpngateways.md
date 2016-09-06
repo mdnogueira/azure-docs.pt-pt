@@ -19,9 +19,11 @@
 # Acerca do VPN Gateway
 
 
-O Gateway de VPN é uma coleção de definições que é utilizada para enviar tráfego de rede entre redes virtuais e localizações no local. O Gateway de VPN é utilizado para ligações Site a Site, Ponto a Site e ExpressRoute. O Gateway de VPN também é utilizado para enviar tráfego entre várias redes virtuais no Azure (VNet a VNet). 
+O Gateway de VPN é uma coleção de recursos utilizada para enviar tráfego de rede entre redes virtuais e localizações no local. Os gateways são utilizados para ligações Site a Site, Ponto a Site e ExpressRoute. O Gateway de VPN também é utilizado para enviar tráfego entre várias redes virtuais no Azure (VNet a VNet). 
 
-Cada rede virtual pode ter apenas um gateway de rede virtual. Para criar uma ligação, adicione o gateway de rede virtual a uma VNet e configure as definições adicionais do Gateway de VPN. Em alguns casos, a ligação que cria é uma ligação VPN. Noutros casos, a configuração não necessita de uma VPN. A coleção das definições é designada por "Gateway de VPN" independentemente se for necessária uma VPN para a sua ligação.
+Para criar uma ligação, adicione um gateway de rede virtual a uma VNet e configure os recursos adicionais do Gateway de VPN e respetivas definições. Cada rede virtual pode ter apenas um gateway de rede virtual por tipo de gateway. Por exemplo, pode ter um gateway de rede virtual que utilize -GatewayType Vpn e outro que utilize GatewayType ExpressRoute.
+
+Para obter informações sobre os requisitos de gateways, veja [Requisitos de Gateway](vpn-gateway-about-vpn-gateway-settings.md#requirements). Para ver o débito agregado estimado, veja [About VPN Gateway Settings (Acerca das Definições do Gateway de VPN)](vpn-gateway-about-vpn-gateway-settings.md#aggthroughput). Para ver os preços, veja [Preços de Gateway de VPN](https://azure.microsoft.com/pricing/details/vpn-gateway). Para saber os limites das subscrições e do serviço, veja [Networking Limits (Limites de rede)](../articles/azure-subscription-service-limits.md#networking-limits).
 
 Ao configurar um Gateway de VPN, as instruções que utilizar dependem do modelo de implementação que utilizou para criar a rede virtual. Por exemplo, se tiver criado a VNet com o modelo de implementação clássica, utilize as diretrizes e as instruções do modelo de implementação clássica para criar e configurar as definições do gateway de VPN. Para obter mais informações, veja [Compreender os modelos de implementação clássica e Resource Manager](../resource-manager-deployment-model.md).
 
@@ -34,7 +36,10 @@ As secções abaixo contêm tabelas que listam as seguintes informações para a
 
 Utilize os diagramas e as descrições para ajudar a selecionar a topologia de configuração para corresponder aos seus requisitos. Os diagramas mostram as principais topologias de linha de base, mas é possível criar configurações mais complexas utilizando os diagramas como orientação. Cada configuração baseia-se nas definições do Gateway de VPN que selecionar.
 
-Uma vez que o Gateway de VPN é uma coleção de definições, pode configurar algumas definições com uma ferramenta e, em seguida, mudar para outra. Atualmente, não é possível configurar cada definição do gateway de VPN no portal do Azure. As instruções nos artigos de cada configuração especificam se é necessária uma ferramenta específica. Se estiver a trabalhar com o modelo de implementação clássica, poderá trabalhar no portal clássico ou utilizar o PowerShell neste momento. Para obter informações sobre as definições individuais disponíveis, consulte [Definições do Gateway de VPN](vpn-gateway-about-vpn-gateway-settings.md).
+### Configurar as definições do Gateway de VPN
+
+Uma vez que o Gateway de VPN é uma coleção de recursos, pode configurar alguns dos recursos com uma ferramenta e, em seguida, mudar para outra para configurar outras definições de recursos. Atualmente, não pode configurar todos os recursos do gateway de VPN no portal do Azure. As instruções nos artigos de cada configuração especificam se é necessária uma ferramenta específica. Se estiver a trabalhar com o modelo de implementação clássica, poderá trabalhar no portal clássico ou utilizar o PowerShell neste momento. Para obter informações sobre as definições individuais disponíveis, consulte [Definições do Gateway de VPN](vpn-gateway-about-vpn-gateway-settings.md).
+
 
 
 ## Site a Site e Multilocal
@@ -77,14 +82,15 @@ As VNets que liga podem estar:
 
 Atualmente, o Azure tem dois modelos de implementação: clássico e Resource Manager. Se tem utilizado o Azure durante algum tempo, provavelmente as VMs do Azure e as funções de instância estão em execução numa VNet clássica. As VMs mais recentes e as instâncias da função poderão estar em execução numa VNet criada no Resource Manager. Pode criar uma ligação entre as VNets para permitir que os recursos numa VNet comuniquem diretamente com recursos de outra.
 
-### VNet peering
-
-Poderá utilizar o VNet peering para criar a ligação, desde que a configuração da rede virtual cumpra determinados requisitos. O VNet peering não utiliza um gateway de rede virtual. O [VNet peering](../virtual-network/virtual-network-peering-overview.md) está atualmente em Pré-visualização.
-
 
 ### Métodos e modelos de implementação
 
 [AZURE.INCLUDE [vpn-gateway-table-vnet-to-vnet](../../includes/vpn-gateway-table-vnet-to-vnet-include.md)] 
+
+### VNet peering
+
+Poderá utilizar o VNet peering para criar a ligação, desde que a configuração da rede virtual cumpra determinados requisitos. O VNet peering não utiliza um gateway de rede virtual. O [VNet peering](../virtual-network/virtual-network-peering-overview.md) está atualmente em Pré-visualização.
+
 
 
 ## Ponto a Site
@@ -108,7 +114,9 @@ Para obter mais informações sobre o ExpressRoute, veja a [Descrição geral t�
 
 ## Ligações Site a Site e ExpressRoute coexistentes
 
-O ExpressRoute é uma ligação dedicada direta a partir da WAN (e não através da Internet pública) aos Serviços Microsoft, incluindo ao Azure. O tráfego da Rede de VPNs circula de forma encriptada através da Internet pública. Poder configurar ligações ExpressRoute e de Rede de VPNs para a mesma rede virtual tem várias vantagens. Pode configurar uma Rede de VPNs como um caminho de ativação pós-falha seguro para o ExpressRoute ou utilizar a Rede de VPNs para ligar a sites que não fazem parte da sua rede, mas que se encontram ligados através do ExpressRoute. 
+O ExpressRoute é uma ligação dedicada direta a partir da WAN (e não através da Internet pública) aos Serviços Microsoft, incluindo ao Azure. O tráfego da Rede de VPNs circula de forma encriptada através da Internet pública. Poder configurar ligações ExpressRoute e de Rede de VPNs para a mesma rede virtual tem várias vantagens.
+
+Pode configurar uma Rede de VPNs como um caminho de ativação pós-falha seguro para o ExpressRoute ou utilizar a Rede de VPNs para ligar a sites que não fazem parte da sua rede, mas que se encontram ligados através do ExpressRoute. Esta configuração requer dois gateways de rede virtual para a mesma rede virtual, um que utilize -GatewayType Vpn e o outro -GatewayType ExpressRoute.
 
 
 ![Ligação coexistente](./media/vpn-gateway-about-vpngateways/demoer.png "expressroute-site2site")
@@ -133,6 +141,6 @@ Ligue a sua localização no local a uma VNet. Consulte [Criar uma Ligação Sit
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=ago16_HO5-->
 
 

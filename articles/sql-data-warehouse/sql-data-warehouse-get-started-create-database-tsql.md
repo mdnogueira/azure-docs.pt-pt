@@ -14,7 +14,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="08/16/2016"
+   ms.date="08/24/2016"
    ms.author="lodipalm;barbkess;sonyama"/>
 
 # Criar uma base de dados SQL Data Warehouse, utilizando Transact-SQL (TSQL)
@@ -24,36 +24,36 @@
 - [TSQL](sql-data-warehouse-get-started-create-database-tsql.md)
 - [PowerShell](sql-data-warehouse-get-started-provision-powershell.md)
 
-Este artigo irá mostrar-lhe como criar um SQL Data Warehouse com T-SQL.
+Este artigo mostra-lhe como criar um SQL Data Warehouse com T-SQL.
 
 ## Pré-requisitos
 
-Para começar, irá precisar do seguinte: 
+Para começar, precisa do seguinte: 
 
 - **Conta Azure**: aceda a [Versão de Avaliação Gratuita do Azure][] ou [Créditos do MSDN Azure][] para criar uma conta.
 - **Azure SQL Server**: consulte [Create an Azure SQL Database logical server with the Azure Portal (Criar um servidor lógico de Base de Dados SQL do Azure com o Portal do Azure)][] ou [Create an Azure SQL Database logical server with PowerShell (Criar um servidor lógico de Base de Dados SQL do Azure com o PowerShell)][] para obter mais detalhes.
 - **Grupo de recursos**: utilize o mesmo grupo de recursos do Azure SQL Server ou veja [como criar um grupo de recursos][].
 - **Ambiente para executar T-SQL**: pode utilizar o [Visual Studio][Instalar o Visual Studio e SSDT], [sqlcmd][] ou [SSMS][] para executar o T-SQL.
 
-> [AZURE.NOTE] A criação de um novo SQL Data Warehouse poderá resultar num novo serviço sujeito a faturação.  Consulte [Preços do SQL Data Warehouse][], para mais detalhes sobre preços.
+> [AZURE.NOTE] A criação de um SQL Data Warehouse poderá resultar num novo serviço sujeito a faturação.  Consulte [Preços do SQL Data Warehouse][], para mais detalhes sobre preços.
 
 ## Criar uma base de dados com o Visual Studio
 
-Se não estiver familiarizado com o Visual Studio, veja o artigo [Consultar o Azure SQL Data Warehouse (Visual Studio)][].  Para começar, abra o SQL Server Object Explorer no Visual Studio e ligue ao servidor que alojará a base de dados SQL Data Warehouse.  Assim que estiver ligado, pode criar um SQL Data Warehouse, executando o seguinte comando SQL na base de dados **mestra**.  Este comando irá criar a base de dados MySqlDwDb com um Objetivo de Serviço de DW400 e permitir que a base de dados aumente o tamanho máximo de 10 TB.
+Se não estiver familiarizado com o Visual Studio, veja o artigo [Consultar o Azure SQL Data Warehouse (Visual Studio)][].  Para começar, abra o SQL Server Object Explorer no Visual Studio e ligue ao servidor que alojará a base de dados SQL Data Warehouse.  Assim que estiver ligado, pode criar um SQL Data Warehouse, executando o seguinte comando SQL na base de dados **mestra**.  Este comando cria a base de dados MySqlDwDb com um Objetivo de Serviço de DW400 e permite que esta aumente de tamanho, para um máximo de 10 TB.
 
 ```sql
-CREATE DATABASE MySqlDwDb (EDITION='datawarehouse', SERVICE_OBJECTIVE = 'DW400', MAXSIZE= 10240 GB);
+CREATE DATABASE MySqlDwDb COLLATE SQL_Latin1_General_CP1_CI_AS (EDITION='datawarehouse', SERVICE_OBJECTIVE = 'DW400', MAXSIZE= 10240 GB);
 ```
 
 ## Criar uma base de dados com sqlcmd
 
-Em alternativa, pode executar o mesmo comando com sqlcmd, executando o seguinte numa linha de comandos.
+Em alternativa, pode executar o mesmo comando com sqlcmd ao executar o seguinte numa linha de comandos.
 
 ```sql
-sqlcmd -S <Server Name>.database.windows.net -I -U <User> -P <Password> -Q "CREATE DATABASE MySqlDwDb (EDITION='datawarehouse', SERVICE_OBJECTIVE = 'DW400', MAXSIZE= 10240 GB)"
+sqlcmd -S <Server Name>.database.windows.net -I -U <User> -P <Password> -Q "CREATE DATABASE MySqlDwDb COLLATE SQL_Latin1_General_CP1_CI_AS (EDITION='datawarehouse', SERVICE_OBJECTIVE = 'DW400', MAXSIZE= 10240 GB)"
 ```
 
-O `MAXSIZE` pode estar entre 250 GB e 240 TB.  O `SERVICE_OBJECTIVE` pode estar entre DW100 e DW2000 [DWU][].  Para obter uma lista de todos os valores válidos, consulte a documentação MSDN para [CREATE DATABASE][].  O MAXSIZE e SERVICE_OBJECTIVE também podem ser alterados com um comando T-SQL [ALTER DATABASE][].  Deve ter cuidado ao alterar o SERVICE_OBJECTIVE, pois isto causa um reinício dos serviços que cancelará todas as consultas em curso.  A alteração de MAXSIZE não reinicia os serviços, pois é apenas uma operação simples de metadados.
+O agrupamento predefinido quando não é especificado é COLLATE SQL_Latin1_General_CP1_CI_AS.  O `MAXSIZE` pode estar entre 250 GB e 240 TB.  O `SERVICE_OBJECTIVE` pode estar entre DW100 e DW2000 [DWU][].  Para obter uma lista de todos os valores válidos, consulte a documentação MSDN para [CREATE DATABASE][].  O MAXSIZE e SERVICE_OBJECTIVE podem ser alterados com um comando T-SQL [ALTER DATABASE][].  O agrupamento da base de dados não pode ser alterado após a criação.   Deve ter cuidado ao alterar o SERVICE_OBJECTIVE, pois a alteração da DWU causa o reinício dos serviços, o que cancela todas as consultas em curso.  A alteração de MAXSIZE não reinicia os serviços, pois é apenas uma operação simples de metadados.
 
 ## Passos seguintes
 
@@ -85,6 +85,6 @@ Após terminar o aprovisionamento do SQL Data Warehouse,poderá querer experimen
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=ago16_HO5-->
 
 

@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="python"
     ms.topic="hero-article"
-    ms.date="08/18/2016"
+    ms.date="08/25/2016"
     ms.author="anhoh"/>
 
 # Desenvolvimento da aplicação Web Python com o DocumentDB
@@ -436,6 +436,6 @@ Para tutoriais adicionais do Python Flask, consulte o artigo [Mega Tutorial Flas
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=ago16_HO5-->
 
 

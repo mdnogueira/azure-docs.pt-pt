@@ -64,7 +64,8 @@ $
 
 ## Introdução
 
-Utilizar chaves públicas e privadas de SSH é a forma mais fácil de iniciar sessão nos seus servidores Linux. [Criptografia de chave pública](https://en.wikipedia.org/wiki/Public-key_cryptography) é uma maneira muito mais segura de iniciar sessão na sua VM do Linux ou BSD no Azure do que as palavras-passe, que podem ser forçadas de maneira bruta com maior facilidade. A sua chave pública pode ser partilhada com qualquer pessoa; mas apenas o utilizador (ou a infraestrutura de segurança local) possui a chave privada.  A chave privada SSH pode ter uma [palavra-passe](https://www.xkcd.com/936/) para salvaguardá-la.  Esta palavra-passe permite aceder facilmente à chave privada SSH e **não é** a palavra-passe da conta de utilizador.  Quando adiciona uma palavra-passe à chave SSH, encripta a chave privada para que a chave privada possa ser utilizável sem a palavra-passe para a desbloquear.  Se um atacante roubou a sua chave privada e não tiver uma palavra-passe, consegue utilizar essa chave privada para iniciar sessão em quaisquer servidores que tenham a chave pública correspondente.  Se a chave privada for protegida por palavra-passe, não pode ser utilizada por esse atacante, fornecendo uma camada adicional de segurança na sua infraestrutura no Azure.
+Utilizar chaves públicas e privadas de SSH é a forma mais fácil de iniciar sessão nos seus servidores Linux. [Criptografia de chave pública](https://en.wikipedia.org/wiki/Public-key_cryptography) é uma maneira muito mais segura de iniciar sessão na sua VM do Linux ou BSD no Azure do que as palavras-passe, que podem ser forçadas de maneira bruta com maior facilidade. A sua chave pública pode ser partilhada com qualquer pessoa; mas apenas o utilizador (ou a infraestrutura de segurança local) possui a chave privada.  A chave privada SSH deve ter uma [palavra-passe muito segura](https://www.xkcd.com/936/) (origem:[xkcd.com](https://xkcd.com)) para salvaguardá-la.  Esta palavra-passe permite aceder facilmente à chave privada SSH e **não é** a palavra-passe da conta de utilizador.  Quando adiciona uma palavra-passe à chave SSH, esta encripta a chave privada para que a chave privada não seja utilizável sem a palavra-passe para a desbloquear.  Se um atacante roubou a sua chave privada e esta não tiver uma palavra-passe, o atacante consegue utilizar essa chave privada para iniciar sessão em quaisquer servidores que tenham a chave pública correspondente.  Se a chave privada for protegida por palavra-passe, não pode ser utilizada por esse atacante, fornecendo uma camada adicional de segurança à sua infraestrutura no Azure.
+
 
 
 Este artigo cria ficheiros de chave com o formato *ssh-rsa*, que são recomendados para implementações no Resource Manager.  As chaves *ssh-rsa* são necessárias no [portal](https://portal.azure.com) para implementações clássicas e de Resource Manager.
@@ -244,6 +245,6 @@ O passo seguinte consiste na criação de VMs com Linux do Azure utilizando a no
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=ago16_HO5-->
 
 

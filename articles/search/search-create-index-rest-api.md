@@ -14,7 +14,7 @@
     ms.workload="search"
     ms.topic="get-started-article"
     ms.tgt_pltfrm="na"
-    ms.date="05/31/2016"
+    ms.date="08/29/2016"
     ms.author="ashmaka"/>
 
 # Criar um índice da Azure Search utilizando a API REST
@@ -27,16 +27,16 @@
 
 Este artigo irá guiá-lo através do processo de criação de um [índice](https://msdn.microsoft.com/library/azure/dn798941.aspx) da Azure Search utilizando a API REST da Azure Search.
 
-Antes de consultar este guia e criar um índice, deverá já ter [criado um serviço da Azure Search](search-create-service-portal.md).
+Antes de consultar este guia e criar um índice, deverá já ter [criado um serviço Azure Search](search-create-service-portal.md).
 
-Para criar um índice da Azure Search utilizando a API REST, irá emitir um pedido HTTP POST único para o ponto final do URL do seu serviço da Azure Search. As suas definições de índice ficarão contidas no corpo do pedido como conteúdo JSON corretamente formado.
+Para criar um índice da Azure Search utilizando a API REST, irá emitir um pedido HTTP POST único para o ponto final do URL do seu serviço Azure Search. As suas definições de índice ficarão contidas no corpo do pedido como conteúdo JSON corretamente formado.
 
 
-## I. Identificar a sua chave de API do administrador do serviço da Azure Search
-Agora que aprovisionou um serviço da Azure Search, pode emitir pedidos HTTP contra o ponto final do URL do seu serviço utilizando a API REST. No entanto, *todos* os pedidos de API devem incluir a chave de API que foi gerada para o serviço de Pesquisa que aprovisionou. Ter uma chave válida estabelece fidedignidade, numa base por pedido, entre a aplicação a enviar o pedido e o serviço que o processa.
+## I. Identificar a sua chave de API do administrador do serviço Azure Search
+Agora que aprovisionou um serviço Azure Search, pode emitir pedidos HTTP contra o ponto final do URL do seu serviço utilizando a API REST. No entanto, *todos* os pedidos de API devem incluir a chave de API que foi gerada para o serviço de Pesquisa que aprovisionou. Ter uma chave válida estabelece fidedignidade, numa base por pedido, entre a aplicação a enviar o pedido e o serviço que o processa.
 
 1. Para localizar as chaves de API do seu serviço, tem de iniciar sessão no [Portal do Azure](https://portal.azure.com/)
-2. Aceda ao painel do serviço da Azure Search
+2. Aceda ao painel do seu serviço Azure Search
 3. Clique no ícone "Chaves"
 
 O seu serviço terá *chaves de administração* e *chaves de consulta*.
@@ -83,7 +83,7 @@ Tenha em atenção que exatamente um campo no seu índice do tipo `Edm.String` d
 A definição de índice acima utiliza um analisador de idioma personalizado para o campo `description_fr` porque destina-se ao armazenamento de texto em francês. Consulte [o tópico de suporte de idioma na MSDN](https://msdn.microsoft.com/library/azure/dn879793.aspx), bem como a [mensagem de blogue](https://azure.microsoft.com/blog/language-support-in-azure-search/) correspondente, para obter mais informações sobre analisadores de idiomas.
 
 ## III. Emitir o pedido HTTP
-1. Utilize a sua definição de índice, tal como o corpo do pedido, emita um pedido de HTTP POST para o seu URL de ponto final de serviço da Azure Search. No URL, não se esqueça de utilizar o seu nome de serviço como nome do anfitrião e colocar a `api-version` adequada como um parâmetro de cadeia de consulta (a versão da API atual é `2015-02-28` no momento da publicação deste documento).
+1. Utilize a sua definição de índice, tal como o corpo do pedido, emita um pedido de HTTP POST para o seu URL de ponto final de serviço Azure Search. No URL, não se esqueça de utilizar o seu nome de serviço como nome do anfitrião e colocar a `api-version` adequada como um parâmetro de cadeia de consulta (a versão da API atual é `2015-02-28` no momento da publicação deste documento).
 2. Nos cabeçalhos do pedido, especifique o `Content-Type` como `application/json`. Também terá de fornecer a chave de administrador do seu serviço que identificou no Passo I no cabeçalho `api-key`.
 
 
@@ -108,6 +108,6 @@ Depois de criar um índice da Azure Search, estará pronto para [carregar o cont
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO5-->
 
 

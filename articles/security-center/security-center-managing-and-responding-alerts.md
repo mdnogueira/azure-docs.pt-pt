@@ -13,11 +13,14 @@
    ms.devlang="na"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="08/07/2016"
+   ms.date="08/26/2016"
    ms.author="yurid"/>
 
 # Gerir e responder a alertas de segurança no Centro de Segurança do Azure
 Este documento ajuda-o a utilizar o Centro de Segurança do Azure para gerir e responder a alertas de segurança.
+
+> [AZURE.NOTE] Para ativar as deteções avançadas, atualize para o Centro de Segurança do Azure Standard. Está disponível uma avaliação gratuita de 90 dias. Para atualizar, selecione Escalão de Preço na [Política de Segurança](security-center-policies.md). Veja a [página de preços](https://azure.microsoft.com/pricing/details/security-center/) para saber mais.
+
 
 ## O que são alertas de segurança?
 O Centro de Segurança recolhe, analisa e integra automaticamente dados de registo a partir dos seus recursos do Azure, da rede e soluções de parceiros ligadas, tal como soluções de proteção de ponto final e firewall, para detetar ameaças reais e reduzir os falsos positivos. Uma lista de alertas de segurança prioritários é apresentada no Centro de Segurança juntamente com as informações necessárias para investigar rapidamente o problema e fornecer recomendações sobre como remediar um ataque. O Centro de segurança do Azure também agrega alertas alinhados com padrões de cadeia de ataque em [Incidentes](security-center-incident.md). 
@@ -210,6 +213,6 @@ Neste documento, aprendeu a configurar as políticas de segurança no Centro de 
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=ago16_HO5-->
 
 

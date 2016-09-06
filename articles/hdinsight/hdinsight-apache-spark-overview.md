@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="get-started-article" 
-    ms.date="06/06/2016" 
+    ms.date="08/25/2016" 
     ms.author="nitinme"/>
 
 # Descrição geral: Apache Spark no HDInsight Linux
@@ -137,6 +137,6 @@ Comece por criar um cluster do Spark no HDInsight Linux. Consulte [Início Rápi
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO5-->
 
 

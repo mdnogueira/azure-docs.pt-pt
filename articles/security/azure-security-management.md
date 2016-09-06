@@ -13,14 +13,14 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="05/26/2016"
+   ms.date="08/25/2016"
    ms.author="terrylan"/>
 
 # Gestão de segurança no Azure
 
 Os subscritores do Azure poderão gerir os respetivos ambientes de nuvem a partir de vários dispositivos, incluindo estações de trabalho de gestão, PCs de programadores e, até mesmo, dispositivos de utilizador final com privilégios que tenham permissões específicas de tarefas. Em alguns casos, as funções administrativas são efetuadas através das consolas baseadas na Web, como o [Portal do Azure](https://azure.microsoft.com/features/azure-portal/). Noutros casos, poderão existir ligações diretas para o Azure a partir de sistemas no local através de Redes Privadas Virtuais (VPNs), Serviços de Terminal, protocolos de aplicações cliente ou (através de programação) a API de Gestão de Serviço do Azure (SMAPI). Além disso, os pontos finais de cliente podem ser um domínio associado ou isolado e não gerido, como tablets ou smartphones.
 
-Apesar destas diversas capacidades de gestão e acesso fornecerem um conjunto avançado de opções, esta variabilidade pode acarretar um risco significativo para uma implementação de nuvem, tornando difícil gerir, controlar e auditar as ações administrativas. Este variabilidade também poderá acarretar ameaças de segurança através do acesso não regulado para os pontos finais de cliente que são utilizados para gerir os Cloud Services. A utilização das estações de trabalho gerais ou pessoais para desenvolver e gerir a infraestrutura abre vetores de ameaças imprevisíveis, como navegação na Web (por exemplo, ataques de tipo “watering hole”) ou e-mail (engenharia social e phishing).
+Apesar de estas diversas capacidades de gestão e acesso fornecerem um conjunto avançado de opções, esta variabilidade pode acarretar um risco significativo para uma implementação de nuvem. Pode ser difícil gerir, controlar e auditar as ações administrativas. Este variabilidade também poderá acarretar ameaças de segurança através do acesso não regulado para os pontos finais de cliente que são utilizados para gerir os Cloud Services. A utilização das estações de trabalho gerais ou pessoais para desenvolver e gerir a infraestrutura abre vetores de ameaças imprevisíveis, como navegação na Web (por exemplo, ataques de tipo “watering hole”) ou e-mail (engenharia social e phishing).
 
 ![][1]
 
@@ -128,7 +128,7 @@ Algumas aplicações ou serviços que implementa no Azure podem ter os seus pró
 
 Estão disponíveis diversos mecanismos para o ajudar a efetuar ligações de cliente seguras às suas Azure Virtual Networks. Dois destes mecanismos, a [ede de VPNs](https://channel9.msdn.com/series/Azure-Site-to-Site-VPN) (S2S) e a [VPN ponto a site](../vpn-gateway/vpn-gateway-point-to-site-create.md) (P2S), permitem a utilização do padrão de indústria IPsec (S2S) ou o [Secure Socket Tunneling Protocol](https://technet.microsoft.com/magazine/2007.06.cableguy.aspx) (SSTP) (P2S) para encriptação e túnel. Quando o Azure está a ligar à gestão de serviços do Azure destinado ao público, como o portal de gestão do Azure, o Azure requer HTTPS (Hypertext Transfer Protocol Secure).
 
-Uma estação de trabalho autónoma protegida que não se ligar ao Azure através de um Gateway de RD deve utilizar a VPN ponto a site baseada em SSTP para criar a ligação inicial à Azure Virtual Network e, em seguida, estabelecer a ligação RDP a máquinas virtuais individuais a partir do túnel VPN.
+Uma estação de trabalho autónoma protegida que não se ligar ao Azure através de um Gateway de RD deve utilizar a VPN ponto a site baseada em SSTP para criar a ligação inicial à Rede Virtual do Azure e, em seguida, estabelecer a ligação RDP a máquinas virtuais individuais a partir do túnel VPN.
 
 ### Auditoria de gestão versus aplicação de políticas
 
@@ -161,7 +161,7 @@ Para ambientes de TI que não tenham nenhuma infraestrutura no local (por exempl
 
 ### Estação de trabalho autónoma protegida para gestão
 
-Com uma estação de trabalho autónoma protegida, os administradores têm um PC ou portátil que podem utilizar para as tarefas administrativas e outro PC ou portátil separado para as tarefas não administrativas. Uma estação de trabalho dedicada para gerir os serviços do Azure não necessita de outras aplicações instaladas. Além disso, utilizar estações de trabalho que suportam um [Trusted Platform Module](https://technet.microsoft.com/library/cc766159) (TPM) ou tecnologia de criptografia ao nível do hardware semelhante ajuda na autenticação dos dispositivos e na prevenção de determinados ataques. O TPM também pode suportar proteção de volume completo da unidade do sistema utilizando a [Encriptação de Unidade BitLocker](https://technet.microsoft.com/library/cc732774.aspx).
+Com uma estação de trabalho autónoma protegida, os administradores têm um PC ou portátil que podem utilizar para as tarefas administrativas e outro PC ou portátil separado para as tarefas não administrativas. Uma estação de trabalho dedicada para gerir os serviços do Azure não necessita de outras aplicações instaladas. Além disso, utilizar estações de trabalho que suportam um [Trusted Platform Module](https://technet.microsoft.com/library/cc766159) (TPM) ou tecnologia de criptografia ao nível do hardware semelhante ajuda na autenticação dos dispositivos e na prevenção de determinados ataques. O TPM também pode suportar proteção de volume completo da unidade do sistema ao utilizar a [Encriptação de Unidade BitLocker](https://technet.microsoft.com/library/cc732774.aspx).
 
 No cenário de estação de trabalho autónoma protegida (mostrado abaixo), a instância local do Firewall do Windows (ou uma firewall para cliente que não seja da Microsoft) está configurada para bloquear as ligações de entrada, tais como RDP. O administrador pode iniciar sessão na estação de trabalho protegida e iniciar uma sessão do RDP que liga ao Azure depois de estabelecer uma ligação VPN com uma Azure Virtual Network, mas não pode iniciar sessão num PC empresarial e utilizar o RDP para ligar à estação de trabalho protegida.
 
@@ -249,6 +249,6 @@ Os recursos seguintes estão disponíveis para fornecer informações mais gerai
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO5-->
 
 

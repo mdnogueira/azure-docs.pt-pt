@@ -14,7 +14,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="07/23/2016"
+   ms.date="08/25/2016"
    ms.author="barbkess;lodipalm;sonyama"/>
 
 # Criar um Azure SQL Data Warehouse
@@ -60,6 +60,8 @@ Para começar, precisa do seguinte:
 
     - **Selecionar origem**: clique em **Selecionar origem** > **Exemplo**. O Azure preenche automaticamente a opção **Selecionar exemplo** com AdventureWorksDW.
 
+> [AZURE.NOTE] O agrupamento predefinido de um SQL Data Warehouse é SQL_Latin1_General_CP1_CI_AS. Se for necessário um agrupamento diferente, pode ser utilizado [T-SQL][] para criar a base de dados com outro agrupamento.
+
 4. Clique em **Criar** para criar o SQL Data Warehouse.
 
 5. Aguarde alguns minutos. Quando o armazém de dados estiver pronto, deve regressar ao [Portal do Azure](https://portal.azure.com). Pode localizar o SQL Data Warehouse no seu dashboard, listado nas Bases de Dados SQL ou no grupo de recursos que utilizou para criá-lo. 
@@ -88,7 +90,8 @@ Também é uma excelente ideia consultar as [Melhores práticas][].
 [DWU]: sql-data-warehouse-overview-what-is.md#data-warehouse-units
 [subscrição]: ../azure-glossary-cloud-terminology.md#subscription
 [grupo de recursos]: ../azure-glossary-cloud-terminology.md#resource-group
-
+[T-SQL]: ./sql-data-warehouse-get-started-create-database-tsql.md
+ 
 <!--MSDN references-->
 [sp_set_firewall_rule]: https://msdn.microsoft.com/library/dn270017.aspx
 [sp_set_database_firewall_rule]: https://msdn.microsoft.com/library/dn270010.aspx
@@ -101,6 +104,6 @@ Também é uma excelente ideia consultar as [Melhores práticas][].
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=ago16_HO5-->
 
 

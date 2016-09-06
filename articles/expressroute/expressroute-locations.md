@@ -12,7 +12,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="07/28/2016"
+   ms.date="08/29/2016"
    ms.author="cherylmc" />
 
 # Parceiros e localizações de peering do ExpressRoute 
@@ -76,7 +76,7 @@ A conectividade em regiões geopolíticas não é suportada no SKU do ExpressRou
 | **[Internet Initiative Japan Inc. – IIJ](http://www.iij.ad.jp/en/news/pressrelease/2015/1216-2.html)** |  Suportado | Suportado | Osaka, Tóquio |
 | **[InterCloud]( https://www.intercloud.com/)** | Suportado | Suportado | Amesterdão, Londres, Singapura, Washington D.C. |
 | **Internet Solutions – Cloud Connect** | Suportado | Suportado | Amesterdão, Londres |
-| **Interxion** | Suportado | Suportado | Amesterdão, Londres, Paris |
+| **[Interxion](http://www.interxion.com/why-interxion/colocate-with-the-clouds/colocated-hybrid-cloud/microsoft-azure/)**  | Suportado | Suportado | Amesterdão, Londres, Paris |
 | **Jisc** | Brevemente | Brevemente | Londres+ | 
 | **[Comunicações de nível 3]( http://your.level3.com/LP=882?WT.tsrc=02192014LP882AzureVanityAzureText)** | Suportado | Suportado | Amesterdão, Chicago, Dallas, Las Vegas+, Londres, Seattle, Silicon Valley, Washington D.C. |
 | **Megaport** | Suportado | Suportado | Dallas, Hong Kong, Las Vegas, Los Angeles, Melbourne, Nova Iorque, Seattle, Singapura, Sydney, Washington D.C. |
@@ -89,7 +89,7 @@ A conectividade em regiões geopolíticas não é suportada no SKU do ExpressRou
 | **Softbank** | Suportado | Suportado | Osaka, Tóquio | 
 | **[Tata Communications](http://www.tatacommunications.com/lp/izo/azure/azure_index.html)** | Suportado | Suportado | Amesterdão, Chennai, RAE de Hong Kong, Londres, Mumbai, Silicon Valley, Singapura, Washington D.C. |
 | **[TeleCity Group]( http://www.telecitygroup.com/investor-centre/news_details.htm?locid=03100500400b00d&xml)** | Suportado | Suportado | Amesterdão, Londres |
-| **Telefonica** | Brevemente | Brevemente | São Paulo+ |
+| **Telefonica** | Suportado | Brevemente | São Paulo |
 | **Telenor** | Suportado | Suportado | Amesterdão, Londres |
 | **[Telstra Corporation]( http://www.telstra.com.au/business-enterprise/network-services/networks/cloud-direct-connect/)** | Suportado | Brevemente | Melbourne, Sydney |
 | **[Verizon](http://www.verizonenterprise.com/products/networking/secure-cloud-interconnect/)** | Suportado | Suportado | Amesterdão, RAE de Hong Kong, Londres, Silicon Valley, Singapura, Sydney, Tóquio, Washington D.C. |
@@ -133,7 +133,7 @@ Se o seu fornecedor de conectividade não está listado nas secções anteriores
 
     - [Nuvem Equinix Exchange](http://www.equinix.com/services/interconnection-connectivity/cloud-exchange/)
     - [TeleCity CloudIX](http://www.telecitygroup.com/colocation-services/cloud-ix.htm)
-    - [InterXion](http://www.interxion.com/)
+    - [Interxion](http://www.interxion.com/why-interxion/colocate-with-the-clouds/colocated-hybrid-cloud/microsoft-azure/)
     - [NextDC](http://www.nextdc.com/)
     - [CoreSite](http://www.coresite.com/)
     - [Cologix](http://www.cologix.com/)
@@ -173,6 +173,6 @@ A ativação da conectividade privada para atender as suas necessidades pode ser
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=ago16_HO5-->
 
 

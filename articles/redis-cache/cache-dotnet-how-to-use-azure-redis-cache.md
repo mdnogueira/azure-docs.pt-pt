@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="cache-redis" 
     ms.devlang="dotnet" 
     ms.topic="hero-article" 
-    ms.date="06/09/2016" 
+    ms.date="08/25/2016" 
     ms.author="sdanie"/>
 
 # Como Utilizar a Cache de Redis do Azure
@@ -290,6 +290,6 @@ Agora que aprendeu as noções básicas, siga estas ligações para saber mais s
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO5-->
 
 

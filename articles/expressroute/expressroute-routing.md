@@ -78,15 +78,15 @@ A troca do encaminhamento será feita através do protocolo eBGP. São estabelec
 
 ## Números de Sistema Autónomos
 
-A Microsoft utilizará AS 12076 para o peering público do Azure, o peering privado do Azure e o peering da Microsoft. Reservamos os ASNs do 65515 ao 65520 para utilização interna. São suportados números AS de 16 e de 32 bits.
+A Microsoft utilizará AS 12076 para o peering público do Azure, o peering privado do Azure e o peering da Microsoft. Reservamos os ASNs do 65515 ao 65520 para utilização interna. São suportados números AS de 16 e de 32 bits. No lado do peering (cliente ou fornecedor), o AS pode ser um ASN público se for possível confirmar que é detido por si ou um número ASN para o peering privado e requer um ASN público para os peerings públicos e da Microsoft. 
 
-Não há requisitos quanto à simetria da transferência de dados. Os caminhos de reencaminhamento e do remetente podem atravessar pares de routers diferentes. As rotas idênticas têm de ser anunciadas nos dois lados nos vários pares de circuito que lhe pertençam. Não é necessário que a métrica das rotas seja idêntica.
+Não existem requisitos relativamente à simetria da transferência de dados no caminho principal e secundário de um determinado circuito. Os caminhos de reencaminhamento e do remetente podem atravessar pares de routers diferentes. As rotas idênticas têm de ser anunciadas no lado principal ou secundário num determinado par de circuitos que lhe pertençam. Não é necessário que a métrica das rotas seja idêntica.
 
 ## Agregação de rotas e limites de prefixo
 
 Suportamos até 4000 prefixos que nos sejam anunciados através do peering privado do Azure. Poderá ser aumentado até 10 000 prefixos se o suplemento premium do ExpressRoute estiver ativado. Aceitamos até 200 prefixos por sessão de BGP para o peering público do Azure e o peering da Microsoft. 
 
-A sessão de BGP será ignorada se o número de prefixos exceder o limite. Só aceitamos rotas predefinidas na ligação do peering privado. O fornecedor tem de filtrar a rota predefinida e os endereços IP privados (RFC 1918) nos caminhos do peering público do Azure e do peering da Microsoft. 
+A sessão de BGP será ignorada se o número de prefixos exceder o limite. Só aceitamos rotas predefinidas na ligação do peering privado. O fornecedor ou cliente tem de filtrar a rota predefinida e os endereços IP privados (RFC 1918) dos respetivos anúncios do BGP para os caminhos do peering público do Azure e da Microsoft. 
 
 ## Encaminhamento de trânsito e encaminhamento por várias regiões
 
@@ -179,6 +179,6 @@ Para além do que foi dito acima, a Microsoft também marcará prefixos baseados
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=ago16_HO5-->
 
 

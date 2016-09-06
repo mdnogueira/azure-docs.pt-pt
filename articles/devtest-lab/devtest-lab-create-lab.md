@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="06/01/2016"
+    ms.date="08/25/2016"
     ms.author="tarcher"/>
 
 # Criar um laboratório no Azure DevTest Labs
@@ -46,6 +46,8 @@ Para criar um laboratório, precisará de:
 
     ![Painel Criar um laboratório](./media/devtest-lab-create-lab/create-devtestlab-blade.png)
 
+[AZURE.INCLUDE [devtest-lab-try-it-out](../../includes/devtest-lab-try-it-out.md)]
+
 ## Passos seguintes
 
 Assim que tiver criado o seu laboratório, seguem-se alguns passos a ter em consideração:
@@ -61,6 +63,6 @@ Assim que tiver criado o seu laboratório, seguem-se alguns passos a ter em cons
 - [Adicionar uma VM com artefactos para um laboratório](devtest-lab-add-vm-with-artifacts.md).
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO5-->
 
 

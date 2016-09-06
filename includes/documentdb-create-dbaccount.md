@@ -1,9 +1,9 @@
-1.  Inicie sessão no [Portal do Microsoft Azure](https://portal.azure.com/) online.
-2.  Na Barra de índice, clique em **Novo**, em seguida, clique em **Dados + Armazenamento** e, em seguida, clique em **DocumentDB do Azure**.
+1.  Inicie sessão no [Portal do Azure](https://portal.azure.com/).
+2.  Na Barra de índice, clique em **Novo**, clique em **Dados + Armazenamento** e, em seguida, clique em **DocumentDB (NoSQL)**.
 
-    ![Captura de ecrã do Portal do Azure para criar uma base de dados, realçando o botão Novo, Dados + Armazenamento no painel Criar e DocumentDB do Azure no painel Dados + Armazenamento](./media/documentdb-create-dbaccount/create-nosql-db-databases-json-tutorial-1.png)  
+    ![Captura de ecrã do portal do Azure, com destaque para Mais Serviços e DocumentDB (NoSQL)](./media/documentdb-create-dbaccount/create-nosql-db-databases-json-tutorial-1.png)  
 
-3. No painel **conta DocumentDB Novo**, especifique a configuração pretendida para a conta DocumentDB.
+3. No painel **Nova conta**, especifique a configuração pretendida para a conta do DocumentDB.
 
     ![Captura de ecrã do painel DocumentDB Novo](./media/documentdb-create-dbaccount/create-nosql-db-databases-json-tutorial-2.png)
 
@@ -27,7 +27,7 @@
 
     ![Captura de ecrã do Hub de notificações, que mostra que a conta DocumentDB foi criada com êxito e implementada num grupo de recursos – Notificação do criador de base de dados online](./media/documentdb-create-dbaccount/create-nosql-db-databases-json-tutorial-5.png)
 
-5.  Depois da criação da conta DocumentDB, esta está pronta para ser utilizada com as predefinições no portal online. Tenha em atenção que a consistência predefinida da conta DocumentDB está definida como **Sessão**.  Para ajustar a predefinição de consistência, clique em **Consistência Predefinida** no menu. Para saber mais sobre os níveis de consistência oferecidos pelo DocumentDB, veja [Consistency levels in DocumentDB (Níveis de consistência no DocumentDB)](../articles/azure-portal/resource-group-portal.md)
+5.  Depois da criação da conta DocumentDB, esta está pronta para ser utilizada com as predefinições. Tenha em atenção que a consistência predefinida da conta DocumentDB está definida como **Sessão**.  Pode ajustar a consistência predefinida. Para tal, clique em **Consistência Predefinida** no menu do recurso. Para saber mais sobre os níveis de consistência que o DocumentDB oferece, veja [Consistency levels in DocumentDB (Níveis de consistência no DocumentDB)](../articles/azure-portal/resource-group-portal.md).
 
     ![Captura de ecrã do painel do Grupo de Recursos – iniciar o desenvolvimento de aplicações](./media/documentdb-create-dbaccount/create-nosql-db-databases-json-tutorial-6.png)  
 
@@ -39,6 +39,6 @@
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=ago16_HO5-->
 
 

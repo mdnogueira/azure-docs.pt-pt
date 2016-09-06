@@ -58,7 +58,7 @@ Quando desenvolver soluções Batch, irá utilizar as seguintes contas no Micros
 
 - **Conta e subscrição do Azure** - se ainda não tiver uma subscrição do Azure, pode ativar o seu [benefício de subscritor do MSDN][msdn_benefits] ou inscrever-se numa [conta gratuita do Azure][free_account]. Quando cria uma conta, é criada uma subscrição predefinida para si.
 
-- **Conta do Batch** - quando as aplicações interagem com o serviço Batch, o nome da conta, o URL da conta e uma tecla de acesso são utilizados como credenciais. Todos os recursos do Batch, como conjuntos, nós de computação, trabalhos e tarefas estão associados a uma conta do Batch. Pode [criar e gerir uma conta do Batch](batch-account-create-portal.md) no portal do Azure.
+- **Conta do Batch** - quando as aplicações interagem com o serviço Batch, o nome da conta, o URL da conta e uma tecla de acesso são utilizados como credenciais. Todos os recursos do Batch, como conjuntos, nós de computação, trabalhos e tarefas estão associados a uma conta do Batch. Pode [criar uma conta do Batch](batch-account-create-portal.md) no portal do Azure.
 
 - **Conta de armazenamento** - o Batch inclui suporte incorporado para trabalhar com ficheiros no [Armazenamento do Azure][azure_storage]. Quase todos os cenários do Batch utilizam o Armazenamento do Azure para testar os programas que as tarefas executam e os dados que processam, e para o armazenamento de dados de saída por elas gerados. Para criar uma conta de Armazenamento, veja [Acerca de contas de armazenamento do Azure](./../storage/storage-create-storage-account.md).
 
@@ -163,6 +163,6 @@ Agora que tem um elevado nível de descrição geral do serviço Batch, está na
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=ago16_HO5-->
 
 

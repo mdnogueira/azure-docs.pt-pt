@@ -14,7 +14,7 @@
     ms.workload="search"
     ms.topic="get-started-article"
     ms.tgt_pltfrm="na"
-    ms.date="05/31/2016"
+    ms.date="08/29/2016"
     ms.author="brjohnst"/>
 
 # Criar um índice da Azure Search utilizando o SDK .NET
@@ -27,15 +27,15 @@
 
 Este artigo irá guiá-lo através do processo de criação de um [índice](https://msdn.microsoft.com/library/azure/dn798941.aspx) da Azure Search utilizando o [SDK .NET da Azure Search](https://msdn.microsoft.com/library/azure/dn951165.aspx).
 
-Antes de consultar este guia e criar um índice, deverá já ter [criado um serviço da Azure Search](search-create-service-portal.md).
+Antes de consultar este guia e criar um índice, deverá já ter [criado um serviço Azure Search](search-create-service-portal.md).
 
 Tenha em atenção que todo o código de exemplo neste artigo está escrito em C#. Pode localizar o código de origem completo [no GitHub](http://aka.ms/search-dotnet-howto).
 
-## I. Identificar a sua chave de API do administrador do serviço da Azure Search
-Agora que aprovisionou um serviço da Azure Search, está quase pronto para emitir pedidos HTTP contra o seu ponto final de serviço utilizando o SDK .NET. Em primeiro lugar, precisa de obter uma das chaves de API que foi gerada para o serviço de pesquisa que aprovisionou. O SDK .NET irá enviar esta chave de API em cada pedido para o seu serviço. Ter uma chave válida estabelece fidedignidade, numa base por pedido, entre a aplicação a enviar o pedido e o serviço que o processa.
+## I. Identificar a sua chave de API do administrador do serviço Azure Search
+Agora que aprovisionou um serviço do Azure Search, está quase pronto para emitir pedidos HTTP contra o seu ponto final de serviço utilizando o SDK .NET. Em primeiro lugar, precisa de obter uma das chaves de API que foi gerada para o serviço de pesquisa que aprovisionou. O SDK .NET irá enviar esta chave de API em cada pedido para o seu serviço. Ter uma chave válida estabelece fidedignidade, numa base por pedido, entre a aplicação a enviar o pedido e o serviço que o processa.
 
 1. Para localizar as chaves de API do seu serviço, tem de iniciar sessão no [Portal do Azure](https://portal.azure.com/)
-2. Aceda ao painel do serviço da Azure Search
+2. Aceda ao painel do seu serviço Azure Search
 3. Clique no ícone "Chaves"
 
 O seu serviço terá *chaves de administração* e *chaves de consulta*.
@@ -125,6 +125,6 @@ Depois de criar um índice da Azure Search, estará pronto para [carregar o cont
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO5-->
 
 

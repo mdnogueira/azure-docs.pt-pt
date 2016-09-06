@@ -1,6 +1,6 @@
 <properties
     pageTitle="Consultar o Índice da Azure Search através da API REST | Microsoft Azure | Serviço de pesquisa em nuvem alojado"
-    description="Crie uma consulta de pesquisa na Azure Search e utilize parâmetros de pesquisa para filtrar e ordenar os resultados da pesquisa."
+    description="Crie uma consulta de pesquisa na pesquisa do Azure e utilize parâmetros de pesquisa para filtrar e ordenar os resultados da pesquisa."
     services="search"
     documentationCenter=""
     authors="ashmaka"
@@ -12,7 +12,7 @@
     ms.workload="search"
     ms.topic="get-started-article"
     ms.tgt_pltfrm="na"
-    ms.date="05/31/2016"
+    ms.date="08/29/2016"
     ms.author="ashmaka"/>
 
 # Consultar o índice da Azure Search através da API REST
@@ -24,13 +24,13 @@
 
 Este artigo mostra como consultar um índice através da [API REST da Azure Search](https://msdn.microsoft.com/library/azure/dn798935.aspx).
 
-Antes de iniciar estas instruções, já deverá ter [criado um índice da Azure Search](search-what-is-an-index.md) e [preenchido este com dados](search-what-is-data-import.md).
+Antes de iniciar estas instruções, já deverá ter [criado um índice de Pesquisa do Azure](search-what-is-an-index.md) e [preenchido este com dados](search-what-is-data-import.md).
 
-## I. Identificar a sua chave de API de consulta do serviço de Azure Search
+## I. Identificar a sua chave de API de consulta do serviço Azure Search
 Um elemento-chave de qualquer operação de pesquisa em relação à API REST de Azure Search é a *chave de API* gerada para o serviço prestado por si. Ter uma chave válida estabelece fidedignidade, numa base por pedido, entre a aplicação a enviar o pedido e o serviço que o processa.
 
 1. Para localizar as chaves de API do seu serviço, tem de iniciar sessão no [Portal do Azure](https://portal.azure.com/)
-2. Aceda ao painel do seu serviço de Azure Search
+2. Aceda ao painel do seu serviço Azure Search
 3. Clique no ícone "Chaves"
 
 O seu serviço terá *chaves de administração* e *chaves de consulta*.
@@ -161,6 +161,6 @@ Para saber mais, consulte a secção "Resposta" dos [Documentos sobre Pesquisa](
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO5-->
 
 

@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="nodejs" 
     ms.topic="hero-article" 
-    ms.date="08/15/2016" 
+    ms.date="08/25/2016" 
     ms.author="anhoh"/>
 
 # <a name="_Toc395783175"></a>Criar uma aplicação Web Node.js utilizando o DocumentDB
@@ -573,6 +573,6 @@ Para mais informações, consulte o [Centro de Programadores de Node.js](https:/
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=ago16_HO5-->
 
 

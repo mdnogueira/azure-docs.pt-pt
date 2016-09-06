@@ -122,7 +122,7 @@ Agora que tem todas as peças no local, é a altura de criar a máquina virtual.
 
         $cred = Get-Credential -Message "Type the name and password of the local administrator account."
         
-    A palavra-passe tem de ter 12-123 carateres e ter, no mínimo, uma minúscula, uma maiúscula, um número e um caráter especial. 
+    A palavra-passe tem de ter entre 8 e 123 carateres e cumprir três dos quatro requisitos de complexidade: um caráter em letra minúscula, um caráter em letra maiúscula, um número e um caráter especial. Saiba mais sobre os [requisitos de nomes de utilizador e palavras-passe](virtual-machines-windows-faq.md#what-are-the-username-requirements-when-creating-a-vm).
         
 2. Substitua o valor de **$vmName** por um nome para a máquina virtual. Crie a variável e a configuração da máquina virtual.
 
@@ -174,6 +174,6 @@ Agora que tem todas as peças no local, é a altura de criar a máquina virtual.
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO5-->
 
 

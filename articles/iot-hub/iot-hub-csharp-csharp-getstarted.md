@@ -26,7 +26,7 @@ No final deste tutorial, terá três aplicações de consola do Windows:
 * **ReadDeviceToCloudMessages**, que apresenta a telemetria enviada pelo seu dispositivo simulado.
 * **SimulatedDevice**, que liga ao seu IoT Hub com a identidade de dispositivo que criou anteriormente e envia uma mensagem de telemetria a cada segundo através do protocolo AMQPS.
 
-> [AZURE.NOTE] Para obter informações sobre os vários SDKs que pode utilizar para criar ambas as aplicações a executar em dispositivos e a solução de back-end, consulte o artigo [SDKs do IoT Hub][Ink-hub-sdks].
+> [AZURE.NOTE] Para obter informações sobre os vários SDKs que pode utilizar para criar ambas as aplicações a executar em dispositivos e a solução de back-end, consulte o artigo [SDKs do IoT Hub][lnk-hub-sdks].
 
 Para concluir este tutorial, irá precisar do seguinte:
 
@@ -60,7 +60,7 @@ Nesta secção, irá criar uma aplicação de consola do Windows que cria uma no
 5. Adicione os seguintes campos à classe **Programa**. Substitua o valor do marcador de posição pela cadeia de ligação para o IoT Hub que criou na secção anterior.
 
         static RegistryManager registryManager;
-        static string connectionString = "{iothub connection string}";
+        static string connectionString = "{iot hub connection string}";
 
 6. Adicione o seguinte método à classe **Programa**:
 
@@ -252,7 +252,7 @@ Para continuar a introdução ao Hub IoT e explorar outros cenários de IoT, vej
 - [Introdução à gestão de dispositivos][lnk-device-management]
 - [Introdução ao SDK do Gateway][lnk-gateway-SDK]
 
-Para saber como expandir a sua solução IoT e processar mensagens do dispositivo para a nuvem à escala, veja o tutorial [Processar mensagens do dispositivo para a nuvem][Ink-process-d2c-tutorial].
+Para saber como expandir a sua solução de IoT e processar mensagens do dispositivo para a nuvem à escala, veja o tutorial [Processar mensagens do dispositivo para a nuvem][Ink-process-d2c-tutorial].
 
 <!-- Images. -->
 [41]: ./media/iot-hub-csharp-csharp-getstarted/run-apps1.png
@@ -263,26 +263,27 @@ Para saber como expandir a sua solução IoT e processar mensagens do dispositiv
 [12]: ./media/iot-hub-csharp-csharp-getstarted/create-identity-csharp3.png
 
 <!-- Links -->
-[lnk-process-d2c-tutorial]: iot-hub-csharp-csharp-process-d2c.md
+[Ink-process-d2c-tutorial]: iot-hub-csharp-csharp-process-d2c.md
 
 [lnk-hub-sdks]: iot-hub-sdks-summary.md
 [lnk-free-trial]: http://azure.microsoft.com/pricing/free-trial/
-[lnk-portal]: https://portal.azure.com/
+[Ink-portal]: https://portal.azure.com/
 
-[lnk-eventhubs-tutorial]: ../event-hubs/event-hubs-csharp-ephcs-getstarted.md
-[lnk-devguide-identity]: iot-hub-devguide.md#identityregistry
-[lnk-servicebus-nuget]: https://www.nuget.org/packages/WindowsAzure.ServiceBus
+[Ink-eventhubs-tutorial]: ../event-hubs/event-hubs-csharp-ephcs-getstarted.md
+[Ink-devguide-identity]: iot-hub-devguide.md#identityregistry
+[Ink-servicebus-nuget]: https://www.nuget.org/packages/WindowsAzure.ServiceBus
 [Ink-event-hubs-overview]: ../event-hubs/event-hubs-overview.md
 
 [Ink-nuget-service-sdk]: https://www.nuget.org/packages/Microsoft.Azure.Devices/
 [lnk-device-nuget]: https://www.nuget.org/packages/Microsoft.Azure.Devices.Client/
 [Ink-transitório-lento]: https://msdn.microsoft.com/library/hh680901(v=pandp.50).aspx
-[lnk-connected-service]: https://visualstudiogallery.msdn.microsoft.com/e254a3a5-d72e-488e-9bd3-8fee8e0cd1d6
+[Ink-connected-service]: https://visualstudiogallery.msdn.microsoft.com/e254a3a5-d72e-488e-9bd3-8fee8e0cd1d6
 [lnk-device-management]: iot-hub-device-management-get-started.md
 [lnk-gateway-SDK]: iot-hub-linux-gateway-sdk-get-started.md
 [lnk-connect-device]: https://azure.microsoft.com/develop/iot/
 
 
-<!--HONumber=Aug16_HO1-->
+
+<!--HONumber=ago16_HO5-->
 
 

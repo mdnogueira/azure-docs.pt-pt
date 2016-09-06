@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="08/09/2016"
+    ms.date="08/24/2016"
     ms.author="sdanie"/>
 
 # Personalizar o portal do programador na API Management do Azure
@@ -78,7 +78,7 @@ Clique na página **Bem-vindo** para editar o que é apresentado na home page do
 
 ## <a name="next-steps"> </a>Passos seguintes
 
--   Veja os outros tópicos do tutorial [Introdução à configuração avançada de API][].
+-   Saiba como personalizar o conteúdo das páginas dos portais de programador com [Modelos de portais de programador](api-management-developer-portal-templates.md).
 
 [Alterar o texto/logótipo nos cabeçalhos de página]: #change-page-headers
 [Alterar o estilo dos cabeçalhos]: #change-headers-styling
@@ -95,12 +95,11 @@ Clique na página **Bem-vindo** para editar o que é apresentado na home page do
 [api-management-customization-manage-content]: ./media/api-management-customize-portal/api-management-customization-manage-content.png
 
 
-[Introdução à configuração avançada de API]: api-management-get-started-advanced.md
 [bootstrap]: http://getbootstrap.com/
 [variáveis LESS]: http://getbootstrap.com/css/
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=ago16_HO5-->
 
 

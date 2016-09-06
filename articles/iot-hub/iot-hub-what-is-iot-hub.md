@@ -13,7 +13,7 @@
  ms.topic="get-started-article"
  ms.tgt_pltfrm="na"
  ms.workload="na"
- ms.date="06/06/2016"
+ ms.date="08/25/2016"
  ms.author="dobett"/>
 
 # O que é o IoT Hub do Azure?
@@ -53,7 +53,7 @@ O IoT Hub do Azure aborda os desafios relativos à conectividade do dispositivo 
 
 -   **Através da autenticação do dispositivo e da conectividade segura**. Pode aprovisionar cada dispositivo com a sua própria [chave de segurança][Ink-devguide-security] de modo a ativá-la para estabelecer a ligação ao IoT Hub. O [registo de identidade do IoT Hub][Ink-devguide-identityregistry] armazena identidades e chaves do dispositivo numa solução. Um back-end da solução pode adicionar dispositivos individuais para permitir ou recusar listas, possibilitando o controlo total do acesso dos dispositivos.
 
--   **Monitorização de operações de conectividade do dispositivo**. Pode receber registos detalhados de operações sobre a gestão de identidade do dispositivo e eventos de conectividade do dispositivo. Esta funcionalidade de monitorização permite à sua solução IoT detetar facilmente problemas de conectividade, como dispositivos que tentam conectar-se com credenciais incorretas, enviar mensagens com uma frequência excessiva ou rejeitar todas as mensagens da nuvem para o dispositivo.
+-   **Monitorização de operações de conectividade do dispositivo**. Pode receber registos detalhados de operações sobre a gestão de identidade do dispositivo e eventos de conectividade do dispositivo. Esta funcionalidade de monitorização permite à sua solução de IoT detetar problemas de conectividade, como dispositivos que se tentam ligar com credenciais incorretas, enviar mensagens com uma frequência excessiva ou rejeitar todas as mensagens da nuvem para o dispositivo.
 
 -   **Um vasto conjunto de bibliotecas do dispositivo**. Os [SDKs do Azure IoT Device][Ink-dispositivo-sdks] estão disponíveis e suportam vários idiomas e plataformas--C para várias distribuições em Linux e Windows e sistemas operativos em tempo real. Os SDKs do Azure IoT Device suportam ainda idiomas geridos, como o C#, Java e JavaScript.
 
@@ -92,7 +92,7 @@ O IoT Hub do Azure implementa o padrão de comunicação [auxiliado][Ink-service
 - A comunicação bidirecional para dispositivos que ligam esporadicamente devido a problemas de alimentação é facilitada ao reter comandos e notificações do dispositivo até que um dispositivo estabeleça a ligação para recebê-las. O Hub IoT mantém filas específicas de dispositivo para os comandos que envia.
 - Dados payload da aplicação são protegidos separadamente para o trânsito protegido através de gateways para um serviço particular.
 
-A indústria móvel utilizou com êxito o padrão de comunicação auxiliada a uma grande escala para implementar os serviços de notificação push, como os [Serviços de Notificação Push do Windows][Ink-wns], as [Google Cloud Messaging][Ink-google-messaging] e o [Serviço Apple Push Notification][lnk-apple-push].
+A indústria móvel utilizou o padrão de comunicação auxiliada a uma grande escala para implementar os serviços de notificação push, como os [Serviços de Notificação Push do Windows][Ink-wns], o [Google Cloud Messaging][Ink-google-messaging] e o [Serviço Apple Push Notification][lnk-apple-push].
 
 ## Passos seguintes
 
@@ -125,6 +125,6 @@ Para começar a escrever código e executar alguns exemplos, veja o tutorial [In
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=ago16_HO5-->
 
 

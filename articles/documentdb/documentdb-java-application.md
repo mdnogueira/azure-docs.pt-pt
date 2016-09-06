@@ -14,7 +14,7 @@
     ms.topic="hero-article"
     ms.tgt_pltfrm="NA"
     ms.workload="data-services"
-    ms.date="08/18/2016"
+    ms.date="08/24/2016"
     ms.author="anhoh"/>
 
 # Criar uma aplicação Web de Java utilizando o DocumentDB
@@ -782,6 +782,6 @@ Todos os exemplos deste tutorial estão incluídos no projeto [todo](https://git
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=ago16_HO5-->
 
 
