@@ -24,7 +24,7 @@ O Application Gateway do Azure é um balanceador de carga de 7 camadas. Fornece 
 - [Azure Resource Manager PowerShell](application-gateway-create-gateway-arm.md)
 - [Azure Classic PowerShell](application-gateway-create-gateway.md)
 - [Modelo Azure Resource Manager](application-gateway-create-gateway-arm-template.md)
-
+- [CLI do Azure](application-gateway-create-gateway-cli.md)
 
 <BR>
 
@@ -36,7 +36,7 @@ Este artigo descreve os passos para criar, configurar, iniciar e eliminar um gat
 1. Instale a versão mais recente dos cmdlets Azure PowerShell com o Instalador de Plataforma Web. Pode transferir e instalar a versão mais recente a partir da secção **Windows PowerShell** da página [Transferências](https://azure.microsoft.com/downloads/).
 2. Se tiver uma rede virtual existente, selecione uma subrede vazia existente ou crie uma nova subrede na sua rede virtual existente apenas para utilização pelo gateway de aplicação. Não é possível implementar o gateway de aplicação a uma rede virtual diferente dos recursos que pretende implementar por trás do gateway de aplicação.
 3. Verifique se a rede virtual funciona com uma sub-rede válida. Verifique se a sub-rede não está a ser utilizada por nenhuma máquina virtual ou implementação na nuvem. O gateway de aplicação tem de constar, por si só, numa sub-rede de rede virtual.
-3. Os servidores que irá configurar para utilizar o gateway de aplicação devem existir. Caso contrário, os respetivos pontos finais terão de ser criados na rede virtual ou com um IP/VIP público atribuído.
+3. Os servidores que vai configurar para utilizar o gateway de aplicação devem existir. Caso contrário, os respetivos pontos finais terão de ser criados na rede virtual ou com um IP/VIP público atribuído.
 
 ## O que é necessário para criar um gateway de aplicação?
 
@@ -49,11 +49,11 @@ Os valores são:
 - **Conjunto de servidores de back-end:** a lista de endereços IP dos servidores de back-end. Os endereços IP listados devem pertencer à sub-rede da rede virtual ou ter um IP/VIP público.
 - **Definições do conjunto de servidores de back-end:** cada conjunto tem definições como a porta, o protocolo e a afinidade com base em cookies. Estas definições estão associadas a um conjunto e são aplicadas a todos os servidores do referido conjunto.
 - **Porta de front-end:** esta porta é a porta pública aberta no gateway de aplicação. O tráfego chega a esta porta, sendo posteriormente redirecionado para um dos servidores de back-end.
-- **Serviço de escuta:** o serviço de escuta possui uma porta de front-end, um protocolo (Http ou Https, sensível às maiúsculas e minúsculas) e o nome do certificado SSL (se configurar a descarga de SSL).
+- **Serviço de escuta:** o serviço de escuta tem uma porta de front-end, um protocolo (Http ou Https; estes valores são sensíveis às maiúsculas e minúsculas) e o nome do certificado SSL (se configurar a descarga de SSL).
 - **Regra:** a regra vincula o serviço de escuta e o conjunto de servidores de back-end e define para que conjunto de servidores de back-end o tráfego deve ser direcionado ao chegar a um determinado serviço de escuta.
 
 
-## Criar um novo gateway de aplicação
+## Criar um gateway de aplicação
 
 Para criar um gateway de aplicação:
 
@@ -102,7 +102,7 @@ Para validar a criação do gateway, pode utilizar o cmdlet **Get-AzureApplicati
 >[AZURE.NOTE]  O valor predefinido para *InstanceCount* é 2, com um valor máximo de 10. O valor predefinido para *GatewaySize* é Médio. Pode escolher entre Pequeno, Médio e Grande.
 
 
- *VirtualIPs* e *DnsName* são apresentados em branco, porque o gateway ainda não foi iniciado. Estes valores poderão ser criados assim que o gateway estiver em execução.
+ *VirtualIPs* e *DnsName* são apresentados em branco, porque o gateway ainda não foi iniciado. Estes valores são criados assim que o gateway estiver em execução.
 
 ## Configurar o gateway de aplicação
 
@@ -110,7 +110,7 @@ Pode configurar o gateway de aplicação com XML ou um objeto de configuração.
 
 ## Configurar o gateway de aplicação com XML
 
-No exemplo que se segue, irá utilizar um ficheiro XML para configurar todas as definições do gateway de aplicação e consolidá-las para o recurso do gateway de aplicação.  
+No exemplo que se segue, vai utilizar um ficheiro XML para configurar todas as definições do gateway de aplicação e consolidá-las no recurso do gateway de aplicação.  
 
 ### Passo 1  
 
@@ -163,7 +163,7 @@ Edite os valores entre parêntesis dos itens de configuração. Guarde o ficheir
 
 >[AZURE.IMPORTANT] O item do protocolo Http ou Https é sensível às maiúsculas e minúsculas.
 
-O exemplo que se segue mostra como utilizar um ficheiro de configuração para configurar o gateway de aplicação para o balanceamento de carga do tráfego HTTP na porta pública 80 e como enviar tráfego de rede para a porta 80 de back-end entre dois endereços IP.
+O exemplo que se segue mostra como utilizar um ficheiro de configuração para configurar o gateway de aplicação. O exemplo faz o balanceamento de carga do tráfego HTTP na porta pública 80 e envia o tráfego de rede para a porta de back-end 80 entre dois endereços IP.
 
     <?xml version="1.0" encoding="utf-8"?>
     <ApplicationGatewayConfiguration xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/windowsazure">
@@ -224,9 +224,9 @@ Em seguida, configure o gateway de aplicação. Utilize o cmdlet **Set-AzureAppl
 
 ## Configurar o gateway de aplicação com um objeto de configuração
 
-O exemplo que se segue mostra como configurar o gateway de aplicação com objetos de configuração. Todos os itens de configuração devem ser configurado individualmente e, em seguida, adicionados a um objeto de configuração do gateway de aplicação. Depois de criar o objeto de configuração, utilize o comando **Set-AzureApplicationGateway** para consolidar a configuração para o recurso de gateway de aplicação criado anteriormente.
+O exemplo que se segue mostra como configurar o gateway de aplicação com objetos de configuração. Todos os itens de configuração devem ser configurado individualmente e, em seguida, adicionados a um objeto de configuração do gateway de aplicação. Depois de criar o objeto de configuração, utilize o comando **Set-AzureApplicationGateway** para consolidar a configuração no recurso de gateway de aplicação criado anteriormente.
 
->[AZURE.NOTE] Antes de atribuir um valor a cada objeto de configuração, tem de indicar qual o tipo de objeto utilizado pelo PowerShell para o armazenamento. A primeira linha para criar os itens individuais define qual Microsoft.WindowsAzure.Commands.ServiceManagement.Network.ApplicationGateway.Model (nome do objeto) será utilizado.
+>[AZURE.NOTE] Antes de atribuir um valor a cada objeto de configuração, tem de indicar qual o tipo de objeto utilizado pelo PowerShell para o armazenamento. A primeira linha para criar os itens individuais define qual o Microsoft.WindowsAzure.Commands.ServiceManagement.Network.ApplicationGateway.Model (nome do objeto) que será utilizado.
 
 ### Passo 1
 
@@ -247,7 +247,7 @@ Crie a porta de front-end, conforme mostrado no exemplo seguinte.
 
 Crie o conjunto de servidores de back-end.
 
- Defina os endereços IP que serão adicionados ao conjunto de servidores de back-end, conforme mostrado no exemplo seguinte.
+ Defina os endereços IP que são adicionados ao conjunto de servidores de back-end, conforme mostrado no exemplo seguinte.
 
 
     PS C:\> $servers = New-Object Microsoft.WindowsAzure.Commands.ServiceManagement.Network.ApplicationGateway.Model.BackendServerCollection
@@ -417,6 +417,6 @@ Se pretender obter mais informações sobre as opções de balanceamento de carg
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=ago16_HO5-->
 
 

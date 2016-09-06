@@ -13,7 +13,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="08/24/2016"
+   ms.date="08/26/2016"
    ms.author="yurid"/>
 
 # Definir políticas de segurança no Centro de Segurança do Azure
@@ -38,7 +38,13 @@ As políticas de segurança podem ser configuradas para cada subscrição ou gru
 
     ![Ativar a recolha de dados](./media/security-center-policies/security-center-policies-fig2-ga.png)
 
-4. Certifique-se de que a opção **Recolher dados de máquinas virtuais** está **Ativada**. Esta opção permite a recolha automática de registos relativos a recursos novos e existentes. 
+    As opções disponíveis neste painel são:
+    - **Política de prevenção de**: esta opção permite-lhe configurar políticas por subscrição ou grupo de recursos.  
+    - **Notificação por e-mail**: é enviada uma notificação por e-mail na primeira ocorrência diária de um alerta e apenas relativamente a alertas de gravidade elevada. As preferências de e-mail só podem ser configuradas para as políticas de subscrição. Leia [Provide security contact details in Azure Security Center (Fornecer detalhes de contacto de segurança no Centro de Segurança do Azure)](security-center-provide-security-contact-details.md) para obter mais informações sobre como configurar as notificações por e-mail. 
+    - **Escalão de preço**: utilize esta opção para atualizar a partir da seleção do Escalão de Preço. Visite a [página do Centro de Segurança](https://azure.microsoft.com/pricing/details/security-center/) para saber mais sobre as opções de preços.
+
+    
+4.  Certifique-se de que a opção **Recolher dados de máquinas virtuais** está **Ativada**. Esta opção permite a recolha automática de registos relativos a recursos novos e existentes. 
 
     >[AZURE.NOTE] Recomendamos que ative a recolha de dados para cada uma das suas subscrições para garantir que a monitorização de segurança está disponível em todas as VMs novas e existentes. Ativar a recolha de dados instala o agente de monitorização. Se não pretender ativar a recolha de dados agora a partir desta localização, pode fazê-lo mais tarde a partir das vistas de estado de funcionamento e recomendações. Também pode ativar a recolha de dados apenas para a subscrição ou para VMs selecionadas. Consulte [FAQ do Centro de Segurança do Azure](security-center-faq.md) para saber mais sobre as VMs suportadas.
 
@@ -102,6 +108,6 @@ Neste documento, aprendeu a configurar as políticas de segurança no Centro de 
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=ago16_HO5-->
 
 

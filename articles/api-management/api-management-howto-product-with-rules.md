@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="08/09/2016"
+    ms.date="08/24/2016"
     ms.author="sdanie"/>
 
 # Proteger a sua API com limites de taxa utilizando a API Management do Azure
@@ -238,7 +238,6 @@ Quando a política de limite de taxa de 10 chamadas por minuto estiver em vigor,
 
 ## <a name="next-steps"> </a>Passos seguintes
 
--   Veja os outros tópicos do tutorial [Introdução à configuração avançada de API][].
 -   Veja uma demonstração sobre como definir limites de taxa e quotas no vídeo seguinte.
 
 > [AZURE.VIDEO rate-limits-and-quotas]
@@ -289,13 +288,12 @@ Quando a política de limite de taxa de 10 chamadas por minuto estiver em vigor,
 [Publicar o produto]: #publish-product
 [Subscrever o produto com uma conta de programador]: #subscribe-account
 [Chamar uma operação e testar o limite de taxa]: #test-rate-limit
-[Introdução à configuração avançada de API]: api-management-get-started-advanced.md
 
 [Limitar taxa de chamadas]: https://msdn.microsoft.com/library/azure/dn894078.aspx#LimitCallRate
 [Definir quota de utilização]: https://msdn.microsoft.com/library/azure/dn894078.aspx#SetUsageQuota
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=ago16_HO5-->
 
 

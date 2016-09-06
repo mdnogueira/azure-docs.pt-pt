@@ -1,6 +1,6 @@
 <properties
    pageTitle="Criar uma rede virtual com uma ligação de Rede de VPNs com o Azure Resource Manager e o PowerShell | Microsoft Azure"
-   description="Este artigo explica como criar uma VNet com o modelo Resource Manager e como ligá-la à sua rede local no local através de uma ligação de gateway de VPN S2S."
+   description="Este artigo explica como criar uma VNet com o modelo de implementação Resource Manager e como ligá-la à sua rede local no local através de uma ligação de gateway de VPN S2S."
    services="vpn-gateway"
    documentationCenter="na"
    authors="cherylmc"
@@ -14,17 +14,17 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/24/2016"
+   ms.date="08/31/2016"
    ms.author="cherylmc"/>
 
-# Criar uma rede virtual com uma ligação de Rede de VPNs com o PowerShell e o Azure Resource Manager
+# Criar uma VNet com uma ligação de Rede de VPNs com o PowerShell
 
 > [AZURE.SELECTOR]
 - [Portal do Azure](vpn-gateway-howto-site-to-site-resource-manager-portal.md)
 - [Portal Clássico do Azure](vpn-gateway-site-to-site-create.md)
 - [PowerShell – Resource Manager](vpn-gateway-create-site-to-site-rm-powershell.md)
 
-Este artigo explica como criar uma rede virtual e uma ligação de Rede de VPNs para a sua rede no local com o modelo de implementação Azure Resource Manager. As ligações site a site podem ser utilizadas para configurações em vários locais e híbridas.
+Este artigo explica como criar uma rede virtual e uma ligação de Rede de VPNs para a sua rede no local com o **modelo de implementação Azure Resource Manager**. As ligações site a site podem ser utilizadas para configurações em vários locais e híbridas.
 
 ![Diagrama Site a Site](./media/vpn-gateway-create-site-to-site-rm-powershell/s2srmps.png "site-to-site") 
 
@@ -35,7 +35,7 @@ Este artigo explica como criar uma rede virtual e uma ligação de Rede de VPNs 
 
 [AZURE.INCLUDE [vpn-gateway-table-site-to-site](../../includes/vpn-gateway-table-site-to-site-include.md)]
 
-Se pretender ligar VNets entre si, mas não estiver a criar uma ligação para uma localização no local, veja [Configurar uma ligação VNet a VNet](vpn-gateway-vnet-vnet-rm-ps.md). Se estiver à procura de um tipo de configuração de ligação diferente, veja o artigo [Topologias da ligação do VPN Gateway](vpn-gateway-topology.md).
+Se pretender ligar VNets entre si, mas não estiver a criar uma ligação para uma localização no local, veja [Configurar uma ligação VNet a VNet](vpn-gateway-vnet-vnet-rm-ps.md).
 
 
 ## Antes de começar
@@ -146,11 +146,11 @@ Para adicionar um gateway de rede local com vários prefixos de endereço:
 
 Em seguida, peça um endereço IP público para atribuir ao gateway de VPN da VNet do Azure. Não é o mesmo endereço IP que foi atribuído ao seu dispositivo VPN; é, isso sim, atribuído ao próprio gateway de VPN do Azure. Não é possível especificar o endereço IP que pretende utilizar. É atribuído dinamicamente ao seu gateway. Utilize este endereço IP ao configurar o dispositivo VPN no local para ligar ao gateway.
 
-Utilize o exemplo de PowerShell seguinte. O Método de Alocação deste endereço tem de ser Dinâmico. 
+Atualmente, o gateway de VPN do Azure do modelo de implementação do Resource Manager suporta apenas endereços IP públicos com o método Alocação Dinâmica. No entanto, não significa que o endereço IP será alterado. O endereço IP do gateway de VPN do Azure só é alterado quando o gateway é eliminado e recriado. O endereço IP público do gateway não será alterado ao redimensionar, repor ou ao realizar qualquer outra manutenção/atualização interna do gateway de VPN do Azure.
+
+Utilize o exemplo de PowerShell seguinte.
 
     $gwpip= New-AzureRmPublicIpAddress -Name gwpip -ResourceGroupName testrg -Location 'West US' -AllocationMethod Dynamic
-
->[AZURE.NOTE] Atualmente, o gateway de VPN do Azure do modelo de implementação do Resource Manager suporta apenas endereços IP públicos com o método Alocação Dinâmica. No entanto, não significa que o endereço IP será alterado. O endereço IP do gateway de VPN do Azure só é alterado quando o gateway é eliminado e recriado. O endereço IP público do gateway não será alterado ao redimensionar, repor ou ao realizar qualquer outra manutenção/atualização interna do gateway de VPN do Azure.
 
 ## 5. Criar a configuração de endereçamento IP do gateway
 
@@ -225,6 +225,6 @@ Se precisar de alterar os prefixos do gateway de rede local, utilize as instruç
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=ago16_HO5-->
 
 

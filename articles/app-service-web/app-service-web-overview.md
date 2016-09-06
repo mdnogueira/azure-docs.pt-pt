@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="05/25/2016"
+    ms.date="08/26/2016"
     ms.author="rachelap"/>
 
 # Descrição geral das Web Apps
@@ -64,6 +64,6 @@ Se pretender começar a utilizar o App Service do Azure antes de se inscrever nu
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO5-->
 
 

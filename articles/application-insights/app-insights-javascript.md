@@ -85,10 +85,10 @@ Os [parâmetros disponíveis](https://github.com/Microsoft/ApplicationInsights-J
     // Send telemetry immediately without batching.
     // Remember to remove this when no longer required, as it
     // can affect browser performance.
-    enableDebug: true,
+    enableDebug: boolean,
 
     // Don't log browser exceptions.
-    disableExceptionTracking: true,
+    disableExceptionTracking: boolean,
 
     // Don't log ajax calls.
     disableAjaxTracking: boolean,
@@ -253,6 +253,6 @@ Quer descobrir o que os utilizadores fazem com a sua aplicação?
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=ago16_HO5-->
 
 

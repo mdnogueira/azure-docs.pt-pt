@@ -13,15 +13,13 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="get-started-article"
-    ms.date="06/22/2016" 
+    ms.date="08/30/2016" 
     ms.author="juliako"/>
 
 
 #Como realizar uma transmissão em fluxo em direto com codificadores no local através do Portal do Azure
 
 Este tutorial explica os passos para criar um **Canal** configurado para uma entrega pass-through através do Portal do Azure. 
-
-Os Media Services do Azure no Portal do Azure estão atualmente em pré-visualização.   
 
 
 ##Pré-requisitos
@@ -177,6 +175,6 @@ Para gerir os seus elementos, selecione **Definição** e clique em **Elementos*
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO5-->
 
 

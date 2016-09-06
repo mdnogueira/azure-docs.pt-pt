@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="08/11/2016"
+    ms.date="08/25/2016"
     ms.author="mimig"/>
 
 # Como criar uma conta do DocumentDB através do Portal do Azure
@@ -28,7 +28,7 @@ Para criar uma base de dados com o Microsoft Azure DocumentDB, tem de:
 - Possuir uma conta do Azure. Pode obter uma [conta do Azure gratuita](https://azure.microsoft.com/free) caso ainda não tenha uma. 
 - Criar uma conta do DocumentDB.  
 
-Pode criar uma conta do DocumentDB ao utilizar o portal do Azure, modelos do Azure Resource Manager ou a interface de linha de comandos (CLI) do Azure. Este artigo mostra como criar uma conta de base de dados ao utilizar o portal do Azure. Para criar uma conta ao utilizar o Azure Resource Manager ou a CLI do Azure, consulte [Automatizar criação de contas de base de dados do DocumentDB](documentdb-automation-resource-manager-cli.md).
+Pode criar uma conta do DocumentDB ao utilizar o portal do Azure, modelos do Azure Resource Manager ou a interface de linha de comandos (CLI) do Azure. Este artigo mostra como criar uma conta do DocumentDB com o portal do Azure. Para criar uma conta ao utilizar o Azure Resource Manager ou a CLI do Azure, consulte [Automatizar criação de contas de base de dados do DocumentDB](documentdb-automation-resource-manager-cli.md).
 
 Está familiarizado com o DocumentDB? Veja [este](https://azure.microsoft.com/documentation/videos/create-documentdb-on-azure/) vídeo de quatro minutos da autoria de Scott Hanselman para saber como pode realizar as tarefas mais comuns no portal online.
 
@@ -46,7 +46,7 @@ Agora que tem uma conta do DocumentDB, o passo seguinte consiste em criar a base
 
 Depois de criar a sua base de dados, terá de [adicionar uma ou mais coleções](documentdb-create-collection.md) à base de dados e, em seguida, [adicionar documentos](documentdb-view-json-document-explorer.md) às coleções.
 
-Depois de ter documentos numa coleção, pode utilizar o [SQL DocumentDB](documentdb-sql-query.md) para [executar consultas](documentdb-sql-query.md#executing-queries) contra os documentos ao utilizar o [Explorador de Consultas](documentdb-query-collections-query-explorer.md) no Portal, a [API REST](https://msdn.microsoft.com/library/azure/dn781481.aspx) ou um dos [SDKs](documentdb-sdk-dotnet.md).
+Depois de ter documentos numa coleção, pode utilizar o [DocumentDB SQL](documentdb-sql-query.md) para [executar consultas](documentdb-sql-query.md#executing-queries) relativamente aos seus documentos através do [Explorador de Consultas](documentdb-query-collections-query-explorer.md) no portal, da [API REST](https://msdn.microsoft.com/library/azure/dn781481.aspx) ou de um dos [SDKs](documentdb-sdk-dotnet.md).
 
 Para saber mais sobre o DocumentDB, explore estes recursos:
 
@@ -55,6 +55,6 @@ Para saber mais sobre o DocumentDB, explore estes recursos:
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=ago16_HO5-->
 
 

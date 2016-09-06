@@ -40,7 +40,7 @@ Após o envio dos convites aos utilizadores parceiros, podemos configurá-los no
 4. Alice recebe o seguinte e-mail.  
 ![E-mail de convite de Alice](./media/active-directory-b2b-detailed-walkthrough/AliceEmail.png)
 
-5. Alice clica na ligação e é-lhe pedido para aceitar o convite e iniciar sessão com as respetivas credenciais de trabalho. Se a Alice não estiver no diretório do Azure AD, ser-lhe-á pedido para se inscrever.  
+5. A Alice clica na ligação e é-lhe pedido para aceitar o convite e iniciar sessão com as credenciais de trabalho dela. Se a Alice não estiver no diretório do Azure AD, ser-lhe-á pedido para se inscrever.  
 ![Inscrever-se após o convite para Alice](./media/active-directory-b2b-detailed-walkthrough/AliceSignUp.png)
 
 6. Alice é redirecionada para o Painel de Acesso da Aplicação, vazia até lhe ser concedido o acesso às aplicações.  
@@ -98,6 +98,6 @@ Consulte os nossos outros artigos sobre a colaboração B2B do Azure AD:
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO5-->
 
 

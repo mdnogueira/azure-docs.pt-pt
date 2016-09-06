@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="dotnet" 
     ms.topic="hero-article" 
-    ms.date="08/11/2016" 
+    ms.date="08/25/2016" 
     ms.author="anhoh"/>
 
 # <a name="_Toc395809351"></a>Tutorial ASP.NET MVC: Programação de aplicações Web com o DocumentDB
@@ -594,6 +594,6 @@ Para adicionar mais funcionalidades à sua aplicação, reveja as APIs disponív
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=ago16_HO5-->
 
 

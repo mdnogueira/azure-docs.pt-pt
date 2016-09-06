@@ -123,6 +123,7 @@ Agora que tem uma aplicação, tente executá-la.
 - Saiba como criar um [cluster no Azure](service-fabric-cluster-creation-via-portal.md) ou um [cluster autónomo no Windows](service-fabric-cluster-creation-for-windows-server.md).
 - Experimente criar um serviço com os modelos de programação [Reliable Services](service-fabric-reliable-services-quick-start.md) ou [Reliable Actors](service-fabric-reliable-actors-get-started.md).
 - Saiba como pode expor os seus serviços à Internet com um [front-end do serviço Web](service-fabric-add-a-web-frontend.md).
+- Percorra um [laboratório prático](https://msdnshared.blob.core.windows.net/media/2016/07/SF-Lab-Part-I.docx) e crie um serviço sem monitorização de estado, configure relatórios de monitorização e estado de funcionamento e faça uma atualização da aplicação.
 
 <!-- Image References -->
 
@@ -140,6 +141,6 @@ Agora que tem uma aplicação, tente executá-la.
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=ago16_HO5-->
 
 

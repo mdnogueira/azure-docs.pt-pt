@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="07/22/2016"
+   ms.date="08/30/2016"
    ms.author="mausher;barbkess;sonyama"/>
 
 # Consulta do Azure SQL Data Warehouse (sqlcmd)
@@ -24,17 +24,11 @@
 - [Visual Studio](sql-data-warehouse-query-visual-studio.md)
 - [sqlcmd](sql-data-warehouse-get-started-connect-sqlcmd.md) 
 
-Estas instruções utilizam o Utilitário de Linha de Comando sqlcmd para consultar um Azure SQL Data Warehouse.  
-
-## Pré-requisitos
-
-Para seguir este tutorial, é necessário:
-
--  [sqlcmd.exe][]. Para transferir, consulte [Microsoft Command Line Utilities 11 for SQL Server (Microsoft Command Line Utilities 11 para o SQL Server)][], que também poderá requerer o [Controlador ODBC 11 da Microsoft para o SQL Server do Windows][].
+Estas instruções utilizam o utilitário de linha de comandos [sqlcmd][] para consultar um Azure SQL Data Warehouse.  
 
 ## 1. Ligar
 
-Para começar a utilizar o sqlcmd, abra a linha de comandos e escreva **sqlcmd**, seguido da cadeia de ligação para a sua base de dados SQL Data Warehouse. A cadeia de ligação terá de seguir os parâmetros necessários:
+Para começar a utilizar o [sqlcmd][], abra a linha de comandos e escreva **sqlcmd**, seguido da cadeia de ligação da sua base de dados SQL Data Warehouse. A cadeia de ligação requer os parâmetros seguintes:
 
 + **Server (-S):** servidor sob a forma `<`Nome do Servidor`>`. database.windows.net
 + **Database (-d):** nome da base de dados.
@@ -73,22 +67,20 @@ sqlcmd -S MySqlDw.database.windows.net -d Adventure_Works -U myuser -P myP@sswor
 
 ## Passos seguintes
 
-Consulte a [documentação do sqlcmd][sqlcmd.exe] para obter mais informações detalhadas sobre as opções disponíveis no sqlcmd.
+Veja a [documentação do sqlcmd][sqlcmd] para obter mais detalhes sobre as opções disponíveis no sqlcmd.
 
 <!--Image references-->
 
 <!--Article references-->
 
 <!--MSDN references--> 
-[sqlcmd.exe]: https://msdn.microsoft.com/library/ms162773.aspx
-[Controlador ODBC 11 da Microsoft para o SQL Server do Windows]: https://www.microsoft.com/download/details.aspx?id=36434
-[Microsoft Command Line Utilities 11 for SQL Server (Microsoft Command Line Utilities 11 para o SQL Server)]: http://go.microsoft.com/fwlink/?LinkId=321501
+[sqlcmd]: https://msdn.microsoft.com/library/ms162773.aspx
 [Portal do Azure]: https://portal.azure.com
 
 <!--Other Web references-->
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO5-->
 
 

@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="07/22/2016"
+    ms.date="08/30/2016"
     ms.author="swkrish"/>
 
 
@@ -39,11 +39,14 @@ Também pode aceder ao painel ao clicar em **Procurar** e depois em **Azure AD B
 2. Clique em **+ Adicionar** na parte superior do painel.
 3. Introduza um **Nome** para a aplicação que irá descrever a aplicação para os consumidores. Por exemplo, pode introduzir “Contoso B2C app”.
 4. Se estiver a escrever uma aplicação baseada na web, alterne o botão **Incluir web app / web API** para **Sim**. As **URLs de resposta** são pontos finais para onde o Azure AD B2C devolverá qualquer tokens que a aplicação solicite. Por exemplo, introduza `https://localhost:44321/`. Se a sua aplicação web também chamar algumas APIs da web protegidas pelo Azure AD B2C, vai querer criar um **Segredo de Aplicação** ao clicar no botão **Gerar Chave**.
+
+    > [AZURE.NOTE] Um **Segredo de Aplicação** é uma credencial de segurança importante e deve ser protegida devidamente.
+
 5. Se estiver a escrever uma aplicação móvel, ative/desative o botão **Incluir cliente nativo** para **Sim**. Copie o **URI de redirecionamento** predefinido que é criado automaticamente para si.
 6. Clique em **Criar** para registar a aplicação.
 7. Clique na aplicação que acabou de criar e copie a **ID de Aplicação de Cliente** exclusiva global que utilizará posteriormente no seu código.
 
-> [AZURE.NOTE] Um **Segredo de Aplicação** é uma credencial de segurança importante e deve ser protegida devidamente.
+> [AZURE.IMPORTANT] As aplicações criadas no painel de funcionalidades B2C têm de ser geridas no mesmo sítio. Se utilizar o PowerShell ou outro portal para editar as aplicações B2C, estas deixam de ser suportadas e é provável que não funcionem com o Azure AD B2C.
 
 ## Criar uma Aplicação de Início Rápido
 
@@ -53,6 +56,6 @@ Agora que tem uma aplicação registada no Azure AD B2C, pode concluir um dos no
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO5-->
 
 

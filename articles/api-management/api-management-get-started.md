@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="hero-article"
-    ms.date="08/09/2016"
+    ms.date="08/24/2016"
     ms.author="sdanie"/>
 
 # Gerir a sua primeira API na API Management do Azure
@@ -186,7 +186,7 @@ A secção **Análise** tem os seguintes quatro separadores:
 
 ## <a name="next-steps"> </a>Passos seguintes
 
--   Veja os outros tópicos do tutorial [Introdução à configuração avançada de API][].
+- Saiba como [Proteger a sua API com limites de velocidade](api-management-howto-product-with-rules.md).
 
 [Avaliação Gratuita do Azure]: http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=api_management_hero_a
 
@@ -205,7 +205,6 @@ A secção **Análise** tem os seguintes quatro separadores:
 [Como configurar notificações e modelos de e-mail na API Management do Azure]: api-management-howto-configure-notifications.md
 [Respostas]: api-management-howto-add-operations.md#responses
 [Como criar e publicar um produto]: api-management-howto-add-products.md
-[Introdução à configuração avançada de API]: api-management-get-started-advanced.md
 [Preços da API Management]: http://azure.microsoft.com/pricing/details/api-management/
 
 [Portal Clássico do Azure]: https://manage.windowsazure.com/
@@ -247,6 +246,6 @@ A secção **Análise** tem os seguintes quatro separadores:
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=ago16_HO5-->
 
 

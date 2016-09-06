@@ -115,12 +115,16 @@ Necessita de uma rede do Azure para que as VMs do Azure criadas após a ativaç�
 - Consoante o modelo de recursos que pretende utilizar para efetuar a ativação pós-falha nas VMs do Azure, configure a rede Azure no [modo Resource Manager](../virtual-network/virtual-networks-create-vnet-arm-pportal.md) ou no [modo clássico](../virtual-network/virtual-networks-create-vnet-classic-pportal.md).
 - Recomendamos que configure uma rede antes de começar. Caso contrário, terá de fazê-lo durante a implementação da Recuperação de Sites.
 
+> [AZURE.NOTE] A [migração de redes](../resource-group-move-resources.md) através de grupos de recursos na mesma subscrição ou em várias subscrições não é suportada em redes utilizadas para implementar o Site Recovery.
+
 
 ### Configurar uma conta de armazenamento do Azure
 
 - Precisará de uma conta de armazenamento padrão do Azure para armazenar dados replicados para o Azure. A conta tem de ser na mesma região que o cofre de Serviços de Recuperação.
 - Consoante o modelo de recursos que pretende utilizar para efetuar a ativação pós-falha nas VMs do Azure, configure uma conta no [modo Resource Manager](../storage/storage-create-storage-account.md) ou no [modo clássico](../storage/storage-create-storage-account-classic-portal.md).
 - Recomendamos que configure uma conta antes de começar. Caso contrário, terá de fazê-lo durante a implementação da Recuperação de Sites.
+
+> [AZURE.NOTE] A [migração de contas de armazenamento](../resource-group-move-resources.md) através de grupos de recursos na mesma subscrição ou em várias subscrições não é suportada em contas de armazenamento utilizadas para implementar o Site Recovery.
 
 ### Preparar o servidor VMM
 
@@ -570,6 +574,6 @@ Depois da implementação estar instalada e em execução, [saiba mais](site-rec
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=ago16_HO5-->
 
 

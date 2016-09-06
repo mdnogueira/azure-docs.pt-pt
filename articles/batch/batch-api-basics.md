@@ -67,7 +67,7 @@ Todas as soluções que utilizam o serviço Batch precisam de alguns dos recurso
 
 ## Conta
 
-Uma conta do Batch é uma entidade identificada exclusivamente no âmbito do serviço Batch. Todo o processamento está associado a uma conta do Batch. Quando faz operações com o serviço Batch, precisa do nome da conta e de uma das chaves de conta. Pode [criar e gerir contas do Azure Batch no portal do Azure](batch-account-create-portal.md).
+Uma conta do Batch é uma entidade identificada exclusivamente no âmbito do serviço Batch. Todo o processamento está associado a uma conta do Batch. Quando faz operações com o serviço Batch, precisa do nome da conta e de uma das chaves de conta. Pode [criar uma conta do Azure Batch no portal do Azure](batch-account-create-portal.md).
 
 ## Nó de computação
 
@@ -521,6 +521,6 @@ Em situações onde algumas das suas tarefas estejam a falhar, a aplicação cli
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=ago16_HO5-->
 
 

@@ -42,7 +42,7 @@ São suportadas as seguintes ligações em vários locais:
 
 - [ExpressRoute](../expressroute/expressroute-introduction.md) – o ExpressRoute é uma ligação direta ao Azure a partir da sua WAN e não através da Internet pública. Veja a [Descrição Geral Técnica do ExpressRoute](../expressroute/expressroute-introduction.md) e as [FAQ do ExpressRoute](../expressroute/expressroute-faqs.md) para obter mais informações.
 
-Para obter mais informações sobre ligações, veja [Diagramas de ligação do VPN Gateway](vpn-gateway-topology.md).
+Para obter mais informações sobre as ligações, veja [Acerca do Gateway de VPN](vpn-gateway-about-vpngateways.md).
 
 ### Qual é a diferença entre uma ligação Site a Site e Ponto a Site?
 
@@ -68,11 +68,11 @@ Validamos um conjunto de dispositivos de Rede de VPNs padrão em parceria com fo
 
 ### O que posso fazer se tiver um dispositivo VPN que não esteja na lista de dispositivos compatíveis conhecidos?
 
-Se não vir o seu dispositivo listado como um dispositivo VPN compatível conhecido e pretender utilizá-lo para a ligação VPN, terá de verificar que cumpre os parâmetros e as opções de configuração do IPsec/IKE suportados listados [aqui](vpn-gateway-about-vpn-devices.md#devices-not-on-the-compatible-list). Os dispositivos que cumprem os requisitos mínimos devem funcionar bem com gateways de VPN. Contacte o fabricante do dispositivo para obter instruções adicionais de suporte e de configuração.
+Se não vir o seu dispositivo listado como um dispositivo VPN compatível conhecido e pretender utilizá-lo para a ligação de VPN, terá de verificar que cumpre os parâmetros e as opções de configuração do IPsec/IKE suportados listados [aqui](vpn-gateway-about-vpn-devices.md#devices-not-on-the-compatible-list). Os dispositivos que cumprem os requisitos mínimos devem funcionar bem com gateways de VPN. Contacte o fabricante do dispositivo para obter instruções adicionais de suporte e de configuração.
 
 ### Por que motivo o meu túnel VPN baseado em políticas diminui quando o tráfego está inativo?
 
-Este comportamento está previsto para gateways de VPN baseados em políticas (também conhecido como encaminhamento estático). Quando o tráfego através do túnel estiver inativo durante mais de 5 minutos, o túnel é desativado. Porém, assim que o tráfego começar a fluir em qualquer direção, o túnel é restabelecido imediatamente. Se tiver um gateway de VPN baseado na rota (também conhecido como dinâmico), não se verifica este comportamento.
+Este comportamento está previsto para gateways de VPN baseados em políticas (também conhecido como encaminhamento estático). Quando o tráfego através do túnel estiver inativo durante mais de 5 minutos, o túnel é desativado. Quando o tráfego começar a fluir em qualquer direção, o túnel é restabelecido imediatamente. Se tiver um gateway de VPN baseado na rota (também conhecido como dinâmico), não se verifica este comportamento.
 
 ### Posso utilizar VPNs de software para ligar ao Azure?
 
@@ -126,7 +126,7 @@ Atualmente, o restabelecimento de ligação automático e DDNS não são suporta
 
 ### Posso ter configurações Site a Site e Ponto a Site coexistentes na mesma rede virtual?
 
-Sim. Ambas as soluções funcionarão se tiver um tipo de VPN baseado na rota para o gateway. Para o modelo de implementação clássica, precisará de um gateway dinâmico. Não suportamos a ligação Ponto a Site para gateways de VPN de encaminhamento estático ou gateways que utilizem -VpnType PolicyBased.
+Sim. Ambas as soluções funcionarão se tiver um tipo de VPN RouteBased para o gateway. No modelo de implementação clássica, precisa de um gateway dinâmico. Não suportamos a ligação Ponto a Site para gateways de VPN de encaminhamento estático ou gateways que utilizem -VpnType PolicyBased.
 
 ### Posso configurar um cliente Ponto a Site para ligar a várias redes virtuais ao mesmo tempo?
 
@@ -148,7 +148,7 @@ Os gateways baseados na rota implementam as VPNs baseadas na rota. As VPNs basea
 
 ### Posso obter o meu endereço IP do gateway de VPN antes de o criar?
 
-Não. Tem de criar o gateway primeiro para obter o endereço IP. O endereço IP será alterado se eliminar e voltar a criar o gateway de VPN.
+Não. Tem de criar o gateway primeiro para obter o endereço IP. O endereço IP é alterado se eliminar e voltar a criar o gateway de VPN.
 
 ### Como é que o meu túnel VPN é autenticado?
 
@@ -166,11 +166,11 @@ Estamos limitados à utilização de chaves pré-partilhadas (PSK) para a autent
 
 Temos um serviço de gateway que executamos para ativar a conetividade em vários locais. 
 
-Terá de configurar uma sub-rede do gateway para que a VNet configure um gateway de VPN. Todas as sub-redes do gateway têm de ter o nome GatewaySubnet para funcionarem corretamente. Não atribua outro nome à sub-rede do gateway. E não implemente VMs ou quaisquer outros elementos na sub-rede do gateway.
+Terá de configurar uma sub-rede do gateway para que a VNet configure um gateway de VPN. Para funcionarem corretamente, todas as sub-redes do gateway têm de ter o nome GatewaySubnet. Não atribua outro nome à sub-rede do gateway. E não implemente VMs ou quaisquer outros elementos na sub-rede do gateway.
 
 O tamanho mínimo da sub-rede do gateway depende totalmente da configuração que pretende criar. Apesar de poder criar uma sub-rede do gateway tão pequena como /29 para algumas configurações, recomendamos que crie uma sub-rede do gateway de /28 ou superior (/ 28, /27, /26, etc.). 
 
-## Posso implementar Virtual Machines ou instâncias de função na minha sub-rede do gateway?
+### Posso implementar Virtual Machines ou instâncias de função na minha sub-rede do gateway?
 
 Não.
 
@@ -184,7 +184,7 @@ Sim. Veja [Configurar imposição do túnel](vpn-gateway-about-forced-tunneling.
 
 ### Posso configurar o meu próprio servidor VPN no Azure e utilizá-lo para estabelecer ligação à minha rede no local?
 
-Sim, pode implementar os seus servidores ou gateways de VPN no Azure a partir do Azure Marketplace ou criar os seus próprios routers VPN. Terá de configurar Rotas Definidas pelo Utilizador na rede virtual para garantir que o tráfego é encaminhado corretamente entre as redes no local e as sub-redes da rede virtual.
+Sim, pode implementar os seus servidores ou gateways de VPN no Azure a partir do Azure Marketplace ou criar os seus próprios routers VPN. Terá de configurar rotas definidas pelo utilizador na rede virtual para garantir que o tráfego é encaminhado corretamente entre as redes no local e as sub-redes da rede virtual.
 
 ### Por que motivo determinadas portas são abertas no meu gateway de VPN?
 
@@ -195,7 +195,7 @@ Um gateway de VPN é, essencialmente, um dispositivo do tipo multi-homed com uma
 
 ### Mais informações sobre tipos de gateways, requisitos e débito
 
-Para obter mais informações, veja [Acerca dos VPN Gateways](vpn-gateway-about-vpngateways.md).
+Para obter mais informações, veja [About VPN Gateway Settings (Acerca das Definições dos Gateways de VPN)](vpn-gateway-about-vpn gateway-settings.md).
 
 ## Conetividade Multilocal e VNet a VNet
 
@@ -229,7 +229,7 @@ Não, os túneis redundantes entre uma rede virtual do Azure e um site no local 
 
 ### Pode existir uma sobreposição de espaços de endereços entre as redes virtuais ligadas e os sites locais no local?
 
-Não. A sobreposição de espaços de endereços fará com que o carregamento do ficheiro netcfg ou a Criação da Rede Virtual falhe.
+Não. A sobreposição de espaços de endereços fará com que o carregamento do ficheiro de configuração de rede ou a “Criação da Rede Virtual” falhe.
 
 ### Tenho mais largura de banda com mais Redes de VPNs do que para uma única rede virtual?
 
@@ -237,7 +237,10 @@ Não, todos os túneis VPN, incluindo VPNs Ponto a Site, partilham o mesmo gatew
 
 ### Posso utilizar o gateway de VPN do Azure para transitar o tráfego entre os meus sites no local ou para outra rede virtual?
 
-Transitar o tráfego através do gateway de VPN do Azure é possível, mas dependem de espaços de endereços estaticamente definidos no ficheiro de configuração netcfg. O BGP ainda não é suportado com Redes Virtuais do Azure e gateways de VPN. Sem o BGP, a definição manual dos espaços de endereços de trânsito é muito propensa a erros e não se recomenda.
+**Modelo de implementação clássica**<br>
+É possível transitar o tráfego através do gateway de VPN do Azure com o modelo de implementação clássica, mas tal depende de espaços de endereços definidos estaticamente no ficheiro de configuração de rede. O BGP ainda não é suportado com Redes Virtuais do Azure nem gateways de VPN mediante a utilização do modelo de implementação clássica. Sem o BGP, a definição manual dos espaços de endereços de trânsito é muito propensa a erros e não se recomenda.<br>
+**Modelo de implementação Resource Manager**<br>
+Se estiver a utilizar o modelo de implementação Resource Manager, veja a secção [BGP](#bgp) para obter mais informações.
 
 ### O Azure gera a mesma chave pré-partilhada IPsec/IKE para todas as minhas ligações VPN para a mesma rede virtual?
 
@@ -252,7 +255,7 @@ Para o tráfego entre várias redes virtuais do Azure, o Azure apenas cobra o tr
 
 Sim, esta ação é suportada. Para obter mais informações, veja [Configurar as ligações de Rede de VPNs e o ExpressRoute que coexistem](../expressroute/expressroute-howto-coexist-classic.md).
 
-## BGP
+## <a name="bgp"></a>BGP
 
 [AZURE.INCLUDE [vpn-gateway-bgp-faq-include](../../includes/vpn-gateway-bpg-faq-include.md)] 
 
@@ -268,21 +271,16 @@ Se tiver uma rede virtual com a conetividade em vários locais configurada, pode
 
 ### Se a minha máquina virtual estiver numa rede virtual com conetividade em vários locais, todo o tráfego da minha VM passa por essa ligação?
 
-Não. Apenas o tráfego que tem um IP de destino contido nos intervalos de endereços IP da Rede Local da rede virtual que especificou passará pelo gateway de rede virtual. O tráfego tem um destino IP localizado na rede virtual e irá permanecer na rede virtual. O outro tipo de tráfego é enviado através do balanceador de carga para as redes públicas, ou se a imposição do túnel for utilizada, é enviado através do gateway de VPN do Azure. Se estiver a resolver problemas, é importante garantir que tem todos os intervalos listados na Rede Local que quer enviar através do gateway. Verifique se os intervalos de endereços da Rede Local não se sobrepõem a qualquer intervalo de endereços na rede virtual. Além disso, deve verificar se o servidor DNS que está a utilizar está a resolver o nome para o endereço IP adequado.
+Não. Apenas o tráfego que tem um IP de destino contido nos intervalos de endereços IP da Rede Local da rede virtual que especificou passará pelo gateway de rede virtual. O tráfego tem um IP de destino localizado na rede virtual e permanece na rede virtual. O outro tipo de tráfego é enviado através do balanceador de carga para as redes públicas, ou se a imposição do túnel for utilizada, é enviado através do gateway de VPN do Azure. Se estiver a resolver problemas, é importante garantir que tem todos os intervalos listados na Rede Local que quer enviar através do gateway. Verifique se os intervalos de endereços da Rede Local não se sobrepõem a qualquer intervalo de endereços na rede virtual. Além disso, deve verificar se o servidor DNS que está a utilizar está a resolver o nome para o endereço IP adequado.
 
 
 ## FAQ da Rede Virtual
 
 Pode ver informações adicionais sobre a rede virtual nas [FAQ da Rede Virtual](../virtual-network/virtual-networks-faq.md).
-
-## Passos seguintes
-
-Pode ver mais informações sobre o VPN Gateway na [página de documentação do VPN Gateway](https://azure.microsoft.com/documentation/services/vpn-gateway/).
-
  
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=ago16_HO5-->
 
 

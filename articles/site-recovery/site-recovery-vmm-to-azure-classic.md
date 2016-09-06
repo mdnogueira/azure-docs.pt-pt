@@ -206,6 +206,8 @@ Onde os parâmetros são os seguintes:
 
     ![Conta de armazenamento](./media/site-recovery-vmm-to-azure-classic/storage.png)
 
+> [AZURE.NOTE] A [migração de contas de armazenamento](../resource-group-move-resources.md) através de grupos de recursos na mesma subscrição ou em várias subscrições não é suportada em contas de armazenamento utilizadas para implementar o Site Recovery.
+
 ## Passo 5: Instalar o Agente dos Serviços de Recuperação do Azure
 
 Instale o Agente do Serviços de Recuperação do Azure em cada servidor de anfitrião Hyper-V na nuvem VMM.
@@ -267,6 +269,8 @@ Antes de iniciar o mapeamento da rede, certifique-se que as máquinas virtuais n
 Depois de guardar as definições, é iniciada uma tarefa para controlar o progresso do mapeamento, que pode ser monitorizado no separador Tarefas. Todas as máquinas virtuais de réplica existentes que correspondam à rede VM de origem serão ligadas às redes de destino do Azure. As novas máquinas virtuais que estão ligadas à rede VM de origem aparecerão ligadas à rede do Azure mapeada após a replicação. Se modificar um mapeamento existente com uma nova rede, as máquinas virtuais de réplica serão ligadas utilizando as novas definições.
 
 Tenha em atenção que se a rede de destino tiver várias sub-redes e uma dessas sub-redes tiver o mesmo nome que a sub-rede onde está localizada a máquina virtual de origem, a máquina virtual de réplica será ligada a essa sub-rede de destino após a ativação pós-falha. Se não existir nenhuma sub-rede de destino com um nome correspondente, a máquina virtual será ligada à primeira sub-rede da rede.
+
+> [AZURE.NOTE] A [migração de redes](../resource-group-move-resources.md) através de grupos de recursos na mesma subscrição ou em várias subscrições não é suportada em redes utilizadas para implementar o Site Recovery.
 
 ## Passo 8: Ativar a proteção para máquinas virtuais
 
@@ -332,14 +336,10 @@ A ativação pós-falha de teste simula o mecanismo de ativação pós-falha e r
 
     ![Criar plano de recuperação](./media/site-recovery-vmm-to-azure-classic/recovery-plan1.png)
 
-2. Na página **Selecionar Virtual Machines**, selecione as máquinas virtuais a adicionar ao plano de recuperação. Estas máquinas virtuais são adicionadas ao grupo predefinido do plano de recuperação – Grupo 
-3. 
-4. 
-5. 1. Foi testado um máximo de 100 máquinas virtuais num plano de recuperação simples.
+2. Na página **Selecionar Virtual Machines**, selecione as máquinas virtuais a adicionar ao plano de recuperação. Estas máquinas virtuais são adicionadas ao grupo predefinido do plano de recuperação – Grupo 1. Foi testado um máximo de 100 máquinas virtuais num plano de recuperação simples.
 
-    - Se pretender verificar as propriedades da máquina virtual antes de adicioná-las ao plano, clique na máquina virtual na página de propriedades da nuvem em que está localizada. Também pode configurar as propriedades da máquina virtual na consola do VMM.
-    - Todas as máquinas virtuais apresentadas foram ativadas para proteção. A lista inclui ambas as máquinas virtuais que estão ativadas para proteção e onde a replicação inicial foi concluída, assim como as que estão ativadas para proteção com replicação inicial pendente. Apenas as máquinas virtuais com replicação inicial concluída podem realizar a ativação pós-falha como parte de um plano de recuperação.
-
+- Se pretender verificar as propriedades da máquina virtual antes de adicioná-las ao plano, clique na máquina virtual na página de propriedades da nuvem em que está localizada. Também pode configurar as propriedades da máquina virtual na consola do VMM.
+- Todas as máquinas virtuais apresentadas foram ativadas para proteção. A lista inclui ambas as máquinas virtuais que estão ativadas para proteção e onde a replicação inicial foi concluída, assim como as que estão ativadas para proteção com replicação inicial pendente. Apenas as máquinas virtuais com replicação inicial concluída podem realizar a ativação pós-falha como parte de um plano de recuperação.
 
     ![Criar plano de recuperação](./media/site-recovery-vmm-to-azure-classic/select-rp.png)
 
@@ -385,6 +385,6 @@ Saiba mais sobre como [Configurar planos de recuperação](site-recovery-create-
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=ago16_HO5-->
 
 

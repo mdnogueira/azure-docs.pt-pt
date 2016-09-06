@@ -7,12 +7,10 @@
 (+) indica que este método de implementação só está disponível para VNets na mesma subscrição.<br>
 (*) indica suporte parcial.
 
-Tenha em atenção que o VNet peering, que está atualmente em Pré-visualização, está disponível para determinados modelos de implementação e configurações. Para mais informações, veja o artigo [VNet peering](../articles/virtual-network/virtual-network-peering-overview.md).
 
 
 
 
-
-<!--HONumber=ago16_HO4-->
+<!--HONumber=ago16_HO5-->
 
 

@@ -12,7 +12,7 @@ authors="ashmaka"
     ms.workload="search"
     ms.topic="get-started-article"
     ms.tgt_pltfrm="na"
-    ms.date="05/31/2016"
+    ms.date="08/29/2016"
     ms.author="ashmaka"/>
 
 # Criar um índice da Azure Search
@@ -24,7 +24,7 @@ authors="ashmaka"
 
 ## O que é um índice?
 
-Um *índice* é um arquivo persistente de *documentos* e outras construções utilizado por um serviço da Azure Search. Um documento é um único dado pesquisável sobre a unidade no índice. Por exemplo, um retalhista de comércio eletrónico pode ter um documento para cada artigo que vende, uma empresa jornalística pode ter um documento para cada artigo, etc. Mapeamento destes conceitos para equivalentes da base de dados mais familiares: um *índice* é, conceptualmente, semelhante a uma *tabela* e os *documentos* são quase equivalentes a *linhas* numa tabela.
+Um *índice* é um arquivo persistente de *documentos* e outras construções utilizado por um serviço Azure Search. Um documento é um único dado pesquisável sobre a unidade no índice. Por exemplo, um retalhista de comércio eletrónico pode ter um documento para cada artigo que vende, uma empresa jornalística pode ter um documento para cada artigo, etc. Mapeamento destes conceitos para equivalentes da base de dados mais familiares: um *índice* é, conceptualmente, semelhante a uma *tabela* e os *documentos* são quase equivalentes a *linhas* numa tabela.
 
 Quando adiciona/carrega documentos e submete consultas de pesquisa para a Azure Search, submete pedidos para um índice específico no serviço de pesquisa. 
 
@@ -72,6 +72,6 @@ Caso os requisitos de armazenamento de dados alterem ao longo do tempo, pode aum
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=ago16_HO5-->
 
 
