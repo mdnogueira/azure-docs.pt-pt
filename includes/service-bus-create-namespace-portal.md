@@ -28,13 +28,13 @@
 
 5. No painel **Política: RootManageSharedAccessKey**, clique no botão de cópia junto a **Cadeia de ligação – chave primária** para copiar a cadeia de ligação para a sua área de transferência e utilizá-la mais tarde.
 
-    ![cadeia-ligação][connection-string]
+    ![connection-string][connection-string]
 
 <!--Image references-->
 
-[criar-espaço de nomes]: ./media/service-bus-create-namespace-portal/create-namespace.png
-[informações-ligação]: ./media/service-bus-create-namespace-portal/connection-info.png
-[cadeia-ligação]: ./media/service-bus-create-namespace-portal/connection-string.png
+[create-namespace]: ./media/service-bus-create-namespace-portal/create-namespace.png
+[connection-info]: ./media/service-bus-create-namespace-portal/connection-info.png
+[connection-string]: ./media/service-bus-create-namespace-portal/connection-string.png
 
 <!--Reference style links - using these makes the source content way more readable than using inline links-->
 [Portal do Azure]: https://portal.azure.com
