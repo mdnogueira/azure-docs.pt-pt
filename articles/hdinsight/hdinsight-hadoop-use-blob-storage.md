@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="08/10/2016"
+    ms.date="09/06/2016"
     ms.author="jgao"/>
 
 
@@ -49,7 +49,7 @@ Além disso, o HDInsight oferece a capacidade de aceder aos dados armazenados no
 
 O Hadoop suporta uma noção do sistema de ficheiros predefinido. O sistema de ficheiros predefinido implica um esquema e uma autoridade predefinidos. Também pode ser utilizado para resolver caminhos relativos. Durante o processo de criação do HDInsight, uma conta do Storage do Azure e um contentor de Blob Storage do Azure específico dessa conta são designados como o sistema de ficheiros predefinido.
 
-Além desta conta do Storage, pode adicionar mais contas do Storage da mesma subscrição do Azure ou de diferentes subscrições do Azure durante o processo de criação. Para obter instruções sobre como adicionar mais contas do Storage, consulte [Criar clusters do HDInsight][hdinsight-creation].
+Além desta conta de armazenamento, pode adicionar mais contas de armazenamento da mesma subscrição do Azure ou de diferentes subscrições do Azure durante o processo de criação ou depois de um cluster ter sido criado. Para obter instruções sobre como adicionar mais contas do Storage, consulte [Criar clusters do HDInsight][hdinsight-creation].
 
 - **Contentores nas contas do Storage ligadas a um cluster:** como o nome e a chave da conta são associados ao cluster durante a criação, tem acesso total aos blobs desses contentores.
 
@@ -301,6 +301,6 @@ Para obter mais informações, consulte:
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=sep16_HO1-->
 
 

@@ -12,7 +12,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/29/2016"
+   ms.date="09/07/2016"
    ms.author="cherylmc" />
 
 # Parceiros e localizações de peering do ExpressRoute 
@@ -31,7 +31,7 @@ Terá acesso aos serviços do Azure em todas as regiões numa região geopolíti
 |---|---|---|
 |**América do Norte**|EUA Leste, EUA Oeste, EUA Leste 2, EUA Central, EUA Centro-Sul, EUA Centro-Norte, Canadá Central, Canadá Leste|Atlanta, Chicago, Dallas, Las Vegas, Los Angeles, Nova Iorque, Seattle, Silicon Valley, Washington D.C., Montreal+, Cidade do Quebeque+, Toronto|
 |**América do Sul**|Sul do Brasil|São Paulo|
-|**Europa**|Europa do Norte, Europa Ocidental|Amesterdão, Dublin, Londres, Newport (País de Gales)+, Paris|
+|**Europa**|Europa do Norte, Europa Ocidental, Reino Unido Oeste, Reino Unido Sul|Amesterdão, Dublin, Londres, Newport (País de Gales)+, Paris|
 |**Ásia**|Ásia Oriental, Sudeste Asiático|RAE de Hong Kong, Singapura|
 |**Japão**|Oeste do Japão, Leste do Japão|Osaka, Tóquio|
 |**Austrália**|Sudeste da Austrália, Leste da Austrália|Melbourne, Sydney|
@@ -80,7 +80,7 @@ A conectividade em regiões geopolíticas não é suportada no SKU do ExpressRou
 | **Seattle** | Equinix, Level 3 Communications, Megaport |
 | **Silicon Valley** | Aryaka Networks, AT&T NetBond, British Telecom, CenturyLink+, Comcast, Equinix, Level 3 Communications, Orange, Tata Communications, Verizon, Zayo Group |
 | **Singapura** | Aryaka Networks, AT&T NetBond, British Telecom, Equinix, InterCloud, Megaport, Orange, SingTel, Tata Communications, Verizon |
-| **Sydney** | AT&T NetBond, British Telecom, Equinix, Megaport, NEXTDC, Telstra Corporation, Verizon |
+| **Sydney** | AT&T NetBond, British Telecom, Equinix, Megaport, NEXTDC, Orange, Telstra Corporation, Verizon |
 | **Tóquio** | Aryaka Networks, British Telecom, Colt, Equinix, Internet Initiative Japan Inc. - IIJ, NTT Communications, Softbank, Verizon |
 | **Toronto** | Cologix, Equinix, Zayo Group |
 | **Washington DC** | Aryaka Networks, AT&T NetBond, British Telecom, Comcast, Equinix, InterCloud, Level 3 Communications, Megaport, Orange, Tata Communications, Verizon, Zayo Group |
@@ -158,6 +158,6 @@ A ativação da conectividade privada para atender as suas necessidades pode ser
 
 
 
-<!--HONumber=ago16_HO5-->
+<!--HONumber=sep16_HO1-->
 
 

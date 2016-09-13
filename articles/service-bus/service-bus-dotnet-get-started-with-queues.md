@@ -10,7 +10,7 @@
 <tags
     ms.service="service-bus"
     ms.devlang="tbd"
-    ms.topic="get-started-article"
+    ms.topic="hero-article"
     ms.tgt_pltfrm="dotnet"
     ms.workload="na"
     ms.date="08/23/2016"
@@ -193,6 +193,6 @@ Consulte o nosso [repositório do GitHub com exemplos](https://github.com/Azure-
 [github-samples]: https://github.com/Azure-Samples/azure-servicebus-messaging-samples
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=sep16_HO1-->
 
 

@@ -13,11 +13,16 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="08/29/2016"
+    ms.date="09/07/2016"
     ms.author="juliako"/>
 
 
 # Criar uma conta dos Serviços de Multimédia do Azure no portal do Azure
+
+> [AZURE.SELECTOR]
+- [Portal](media-services-portal-create-account.md)
+- [PowerShell](media-services-manage-with-powershell.md)
+- [REST](http://msdn.microsoft.com/library/azure/dn194267.aspx)
 
 > [AZURE.NOTE] Para concluir este tutorial, precisa de uma conta do Azure. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/). 
 
@@ -36,7 +41,7 @@ O acesso aos Media Services requer duas contas associadas:
     O AMS está, agora, disponível também nos seguintes datacenters: Sul do Brasil, Índia Ocidental, Índia do Sul e Índia Central. Agora, pode utilizar o portal do Azure para criar contas do Serviço de Multimédia e realizar várias tarefas descritas aqui. No entanto, o Live Encoding não está ativado nestes centros de dados. Além disso, nem todos os tipos de Unidades de Codificação Reservadas estão disponíveis nestes centros de dados.
     
     - Sul do Brasil: só estão disponíveis as Unidades de Codificação Reservadas Standard e Básicas.
-    - Índia Ocidental, Índia do Sul, para ficheiros de multimédia, e têm de estar localizados na mesma região geográfica que a conta dos Serviços de Multimédia. Quando cria uma conta de Media Services, pode optar por uma conta do Storage existente na mesma região ou pode criar uma nova conta do Storage na mesma região. Se eliminar uma conta de Media Services, os blobs na sua conta do Storage relacionada não são eliminados.
+    - Índia Ocidental, Índia do Sul: forneça blobs de armazenamento para ficheiros de multimédia. As contas de armazenamento têm de estar localizadas na mesma região geográfica que a conta dos Serviços de Multimédia. Quando cria uma conta de Media Services, pode optar por uma conta do Storage existente na mesma região ou pode criar uma nova conta do Storage na mesma região. Se eliminar uma conta de Media Services, os blobs na sua conta do Storage relacionada não são eliminados.
 
 ## Criar uma conta do AMS
 
@@ -102,6 +107,6 @@ Agora, pode carregar ficheiros para a sua conta do AMS. Para obter mais informa�
 
 
 
-<!--HONumber=ago16_HO5-->
+<!--HONumber=sep16_HO1-->
 
 

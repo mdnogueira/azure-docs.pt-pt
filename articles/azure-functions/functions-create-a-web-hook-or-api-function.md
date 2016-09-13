@@ -15,7 +15,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="multiple"
    ms.workload="na"
-   ms.date="05/07/2016"
+   ms.date="08/30/2016"
    ms.author="glenga"/>
    
 # Criar um webhook ou uma Função Azure API
@@ -95,6 +95,6 @@ Aborda os planos de serviço disponíveis com as Funções do Azure, incluindo o
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=sep16_HO1-->
 
 

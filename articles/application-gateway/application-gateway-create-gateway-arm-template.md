@@ -5,7 +5,7 @@
    documentationCenter="na"
    services="application-gateway"
    authors="georgewallace"
-   manager="jdial"
+   manager="carmonm"
    editor="tysonn"/>
 <tags
    ms.service="application-gateway"
@@ -13,7 +13,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/09/2016"
+   ms.date="09/06/2016"
    ms.author="gwallace"/>
 
 
@@ -28,12 +28,9 @@ O Application Gateway do Azure é um balanceador de carga de 7 camadas. Fornece 
 - [Modelo Azure Resource Manager](application-gateway-create-gateway-arm-template.md)
 - [CLI do Azure](application-gateway-create-gateway-cli.md)
 
-<BR>
-
 Neste artigo, ficará a saber como transferir e modificar um modelo Azure Resource Manager existente a partir do GitHub e como implementar o modelo a partir do GitHub, do PowerShell e da CLI do Azure.
 
 Se estiver a implementar o modelo Azure Resource Manager diretamente do GitHub sem quaisquer alterações, avance para implementar um modelo a partir do GitHub.
-
 
 ## Cenário
 
@@ -46,15 +43,11 @@ Neste cenário, vai:
 
 >[AZURE.NOTE] Estas definições são os parâmetros para este modelo. Para personalizar o modelo, pode alterar as regras, o serviço de escuta e o SSL que abre o azuredeploy.json.
 
-
-
 ![Cenário](./media/application-gateway-create-gateway-arm-template/scenario-arm.png)
-
-
 
 ## Transferir e compreender o modelo Azure Resource Manager
 
-Pode transferir o modelo Azure Resource Manager existente para criar uma rede virtual e duas sub-redes a partir do GitHub, efetuar quaisquer alterações que pretenda e reutilizá-lo. Para tal, siga os passos abaixo:
+Pode transferir o modelo Azure Resource Manager existente para criar uma rede virtual e duas sub-redes a partir do GitHub, efetuar quaisquer alterações que pretenda e reutilizá-lo. Para fazê-lo, siga os seguintes passos:
 
 1. Aceda a [Criar Application Gateway](https://github.com/Azure/azure-quickstart-templates/tree/master/101-application-gateway-create).
 2. Clique em **azuredeploy.json** e em **RAW**.
@@ -89,7 +82,7 @@ Pode transferir o modelo Azure Resource Manager existente para criar uma rede vi
 10. Abra o ficheiro que guardou e edite os valores dos parâmetros. Utilize os seguintes valores para implementar o gateway de aplicação descrito no nosso cenário.
 
         {
-          "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+        "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
         {
         "location" : {
         "value" : "West US"
@@ -124,8 +117,6 @@ Se nunca tiver utilizado o Azure PowerShell, veja [How to install and configure 
 
     Login-AzureRmAccount
 
-
-
 ### Passo 2
 
 Verifique as subscrições da conta.
@@ -145,47 +136,14 @@ Escolha qual das subscrições do Azure utilizar. <BR>
 ### Passo 4
 
 
-Se necessário, crie um grupo de recursos com o cmdlet **New-AzureResourceGroup**. No exemplo abaixo, irá criar um novo grupo de recursos denominado AppgatewayRG na localização EUA Leste.
+Se necessário, crie um grupo de recursos com o cmdlet **New-AzureResourceGroup**. No exemplo seguinte, vai criar um grupo de recursos denominado AppgatewayRG na localização E.U.A. Leste.
 
     New-AzureRmResourceGroup -Name AppgatewayRG -Location "East US"
-
-        ResourceGroupName : AppgatewayRG
-        Location          : eastus
-        ProvisioningState : Succeeded
-        Tags              :
-        Permissions       :
-                     Actions  NotActions
-                     =======  ==========
-                      *
-
-        ResourceId        : /subscriptions/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/resourceGroups/AppgatewayRG
 
 Execute o cmdlet **New-AzureRmResourceGroupDeployment** para implementar a nova rede virtual com o modelo anterior e os ficheiros de parâmetros transferidos e alterados.
 
     New-AzureRmResourceGroupDeployment -Name TestAppgatewayDeployment -ResourceGroupName AppgatewayRG `
         -TemplateFile C:\ARM\azuredeploy.json -TemplateParameterFile C:\ARM\azuredeploy-parameters.json
-
-A linha de comandos gera o seguinte:
-
-    DeploymentName    : testappgatewaydeployment
-    ResourceGroupName : appgatewayRG
-    ProvisioningState : Succeeded
-    Timestamp         : 9/19/2015 1:49:41 AM
-    Mode              : Incremental
-    TemplateLink      :
-    Parameters        :
-                Name             Type                       Value
-                ===============  =========================  ==========
-                location         String                     East US
-                addressPrefix    String                     10.0.0.0/16
-                subnetPrefix     String                     10.0.0.0/24
-                skuName          String                     Standard_Small
-                capacity         Int                        2
-                backendIpAddress1  String                     10.0.1.10
-                backendIpAddress2  String                     10.0.1.11
-
-    Outputs           :
-
 
 ## Implementar o modelo Azure Resource Manager com a CLI do Azure
 
@@ -220,44 +178,13 @@ Execute o cmdlet **azure group deployment create** para implementar a nova rede 
 
     azure group deployment create -g appgatewayRG -n TestAppgatewayDeployment -f C:\ARM\azuredeploy.json -e C:\ARM\azuredeploy-parameters.json
 
-O resultado esperado para o comando acima é o seguinte:
-
-    azure group deployment create -g appgatewayRG -n TestAppgatewayDeployment -f C:\ARM\azuredeploy.json -e C:\ARM\azuredeploy-parameters.json
-    info:    Executing command group deployment create
-    + Initializing template configurations and parameters
-    + Creating a deployment
-    info:    Created template deployment "TestAppgatewayDeployment"
-    + Waiting for deployment to complete
-    data:    DeploymentName     : TestAppgatewayDeployment
-    data:    ResourceGroupName  : appgatewayRG
-    data:    ProvisioningState  : Succeeded
-    data:    Timestamp          : 2015-09-21T20:50:27.5129912Z
-    data:    Mode               : Incremental
-    data:    Name               Type    Value
-    data:    -----------------  ------  --------------
-    data:    location           String  East US
-    data:    addressPrefix      String  10.0.0.0/16
-    data:    subnetPrefix       String  10.0.0.0/24
-    data:    skuName            String  Standard_Small
-    data:    capacity           Int     2
-    data:    backendIpAddress1  String  10.0.1.10
-    data:    backendIpAddress2  String  10.0.1.11
-    info:    group deployment create command OK
-
-**-g (ou --resource-group)**. Nome do grupo de recursos onde é criada a nova rede virtual.
-
-**-f (ou --template-file)**. Caminho do ficheiro de modelo Azure Resource Manager.
-
-**-e (ou --parameters-file)**. Caminho do ficheiro de parâmetros do Azure Resource Manager.
-
 ## Implementar o modelo Azure Resource Manager com a função clicar para implementar
 
 A função clicar para implementar é outra forma de utilizar os modelos Azure Resource Manager. É uma forma fácil de utilizar modelos com o Portal do Azure.
 
-
 ### Passo 1
-Veja [Create an application gateway with public IP (Criar um gateway de aplicação com IP público)](https://azure.microsoft.com/documentation/templates/101-application-gateway-public-ip/).
 
+Veja [Create an application gateway with public IP (Criar um gateway de aplicação com IP público)](https://azure.microsoft.com/documentation/templates/101-application-gateway-public-ip/).
 
 ### Passo 2
 
@@ -279,8 +206,6 @@ Selecione **Termos legais** e clique em **Comprar**.
 
 No painel Implementação personalizada, clique em **Criar**.
 
-
-
 ## Passos seguintes
 
 Se pretender configurar a descarga de SSL, veja [Configure an application gateway for SSL offload (Configurar um gateway de aplicação para a descarga de SSL)](application-gateway-ssl.md).
@@ -294,6 +219,6 @@ Se pretender obter mais informações sobre as opções de balanceamento de carg
 
 
 
-<!--HONumber=ago16_HO5-->
+<!--HONumber=sep16_HO1-->
 
 

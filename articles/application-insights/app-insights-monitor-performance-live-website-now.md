@@ -283,11 +283,7 @@ Se a aplicação Web estiver no Azure e criar os seus recursos através de um mo
 * [Adicionar telemetria de cliente Web][utilização] para ver as exceções de código de página Web e permitir a inserção de chamadas de rastreio.
 * [Adicionar o Application Insights SDK ao código do serviço Web][greenbrown] para que possa inserir chamadas de rastreio e de registo no código do servidor.
 
-## Vídeo
 
-#### Monitorização de desempenho
-
-[AZURE.VIDEO app-insights-performance-monitoring]
 
 <!--Link references-->
 
@@ -302,6 +298,6 @@ Se a aplicação Web estiver no Azure e criar os seus recursos através de um mo
 
 
 
-<!--HONumber=ago16_HO5-->
+<!--HONumber=sep16_HO1-->
 
 

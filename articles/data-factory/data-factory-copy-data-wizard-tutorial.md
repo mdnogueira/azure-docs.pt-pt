@@ -25,7 +25,7 @@
 - [Com a API REST](data-factory-copy-activity-tutorial-using-rest-api.md) 
 - [Com o Assistente de Cópia](data-factory-copy-data-wizard-tutorial.md)
 
-Neste tutorial, irá utilizar o Assistente de Cópia do Data Factory para criar um pipeline com uma Atividade de Cópia numa fábrica de dados. Comece por criar uma fábrica de dados através do Portal do Azure e, em seguida, utilize o Assistente de Cópia para criar serviços ligados ao Data Factory, conjuntos de dados e um pipeline com uma Atividade de Cópia para copiar dados de um armazenamento de blobs do Azure para uma base de dados SQL do Azure.
+Neste tutorial, irá utilizar o Assistente de Cópia do Data Factory para criar um pipeline com uma Atividade de Cópia numa fábrica de dados. Em primeiro lugar, crie uma fábrica de dados utilizando o portal do Azure. Em seguida, utilize o Assistente de Cópia para criar serviços ligados ao Data Factory, conjuntos de dados e um pipeline com uma Atividade de Cópia para copiar dados de um armazenamento de blobs do Azure para uma base de dados SQL do Azure. Veja o artigo [Atividades de Movimentos de Dados](data-factory-data-movement-activities.md) para obter detalhes sobre a Atividade de Cópia. 
 
 > [AZURE.IMPORTANT] Veja o artigo [Descrição Geral do Tutorial](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) e execute os passos de pré-requisitos antes de executar este tutorial.
 
@@ -57,7 +57,7 @@ Neste passo, irá utilizar o Portal do Azure para criar uma fábrica de dados do
     > [AZURE.NOTE] O nome da fábrica de dados pode ser registado como um nome DNS no futuro e, por conseguinte, ficar publicamente visível.  
 
 9. Clique no hub **NOTIFICAÇÕES** à esquerda e procure notificações do processo de criação. Clique em **X** para fechar o painel **NOTIFICAÇÕES** se estiver aberto. 
-10. Após concluir a criação, verá o painel **DATA FACTORY**, conforme apresentado abaixo.
+10. Após concluir a criação, verá o painel **DATA FACTORY**, conforme apresentado na imagem seguinte.
 
     ![Home page da fábrica de dados](./media/data-factory-copy-data-wizard-tutorial/getstarted-data-factory-home-page.png)
 
@@ -102,11 +102,11 @@ Neste passo, irá utilizar o Portal do Azure para criar uma fábrica de dados do
 
     ![Ferramenta Copiar – Mapeamento da tabelas](./media/data-factory-copy-data-wizard-tutorial/copy-tool-table-mapping-page.png) 
 10. Na página **Mapeamento de esquemas**, clique em **Seguinte**.
-11. Reveja as informações na página **Resumo** e clique em **Concluir**. Esta ação cria dois serviços ligados, dois conjuntos de dados (entrada e saída) e um pipeline na fábrica de dados (a partir de onde foi iniciado o Assistente de Cópia). 
+11. Reveja as informações na página **Resumo** e clique em **Concluir**. O assistente cria dois serviços ligados, dois conjuntos de dados (entrada e saída) e um pipeline na fábrica de dados (a partir da qual iniciou o Assistente de Cópia). 
 12. Na página **Implementação concluída com êxito**, clique em **Clicar aqui para monitorizar o pipeline de cópia**.
 
     ![Ferramenta Copiar – Implementação concluída com êxito](./media/data-factory-copy-data-wizard-tutorial/copy-tool-deployment-succeeded.png)  
-13. Utilize as instruções em [Monitor and manage pipeline using Monitoring App (Monitorizar e gerir o pipeline com a Aplicação de Monitorização)](data-factory-monitor-manage-app.md) para saber mais sobre como monitorizar o pipeline que acabou de criar.
+13. Siga as instruções em [Monitorizar e gerir o pipeline com a Aplicação de Monitorização](data-factory-monitor-manage-app.md) para saber como monitorizar o pipeline que acabou de criar.
 
     ![Aplicação de Monitorização](./media/data-factory-copy-data-wizard-tutorial/monitoring-app.png) 
  
@@ -116,11 +116,11 @@ Neste passo, irá utilizar o Portal do Azure para criar uma fábrica de dados do
 | :---- | :---- |
 | [Atividades de Movimento de Dados](data-factory-data-movement-activities.md) | Este artigo fornece informações detalhadas sobre a Atividade de Cópia que utilizou no tutorial. |
 | [Agendamento e execução](data-factory-scheduling-and-execution.md) | Este artigo explica os aspetos de agendamento e execução do modelo da aplicação do Azure Data Factory. |
-| [Pipelines](data-factory-create-pipelines.md) | Este artigo ajuda-o a compreender os pipelines e as atividades no Azure Data Factory e como tirar partido dos mesmos para construir fluxos de dados ponto a ponto condicionados por dados para o seu cenário ou empresa. |
+| [Pipelines](data-factory-create-pipelines.md) | Este artigo ajuda-o a compreender os pipelines e as atividades no Azure Data Factory e como os utilizar para construir fluxos de dados ponto a ponto condicionados por dados para o seu cenário ou empresa. |
 | [Conjuntos de dados](data-factory-create-datasets.md) | Este artigo ajuda-o a compreender os conjuntos de dados no Azure Data Factory.
 | [Monitorizar e gerir pipelines com a Aplicação de Monitorização](data-factory-monitor-manage-app.md) | Este artigo descreve como monitorizar, gerir e depurar pipelines com a Aplicação de Monitorização e Gestão. 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=sep16_HO1-->
 
 

@@ -13,8 +13,8 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="08/30/2016"
-   ms.author="mausher;barbkess;sonyama"/>
+   ms.date="09/06/2016"
+   ms.author="barbkess;sonyama"/>
 
 # Consulta do Azure SQL Data Warehouse (sqlcmd)
 
@@ -32,9 +32,12 @@ Para começar a utilizar o [sqlcmd][], abra a linha de comandos e escreva **sqlc
 
 + **Server (-S):** servidor sob a forma `<`Nome do Servidor`>`. database.windows.net
 + **Database (-d):** nome da base de dados.
++ **Enable Quoted Identifiers (-I):** os identificadores delimitado por aspas têm de estar ativados para ligar a uma instância do SQL Data Warehouse.
+
+Para utilizar a Autenticação do SQL Server tem de adicionar os parâmetros de nome de utilizador/palavra-passe:
+
 + **User (-U):** utilizador do servidor sob a forma `<`Utilizador`>`
 + **Password (-P):** palavra-passe associada ao utilizador.
-+ **Enable Quoted Identifiers (-I):** os identificadores delimitado por aspas têm de estar ativados para ligar a uma instância do SQL Data Warehouse.
 
 Por exemplo, a cadeia de ligação poderá ter o seguinte aspeto:
 
@@ -42,7 +45,17 @@ Por exemplo, a cadeia de ligação poderá ter o seguinte aspeto:
 C:\>sqlcmd -S MySqlDw.database.windows.net -d Adventure_Works -U myuser -P myP@ssword -I
 ```
 
-> [AZURE.NOTE] A opção -I, que permite identificadores delimitados, é atualmente necessária para ligar ao SQL Data Warehouse.
+Para utilizar a autenticação Integrada do Azure Active Directory, tem de adicionar os parâmetros do Azure Active Directory:
+
++ **Autenticação do Azure Active Directory (-G):** utilize o Azure Active Directory para autenticação
+
+Por exemplo, a cadeia de ligação poderá ter o seguinte aspeto:
+
+```sql
+C:\>sqlcmd -S MySqlDw.database.windows.net -d Adventure_Works -G -I
+```
+
+> [AZURE.NOTE] terá de [ativar a Autenticação do Azure Active Directory Authentication](sql-data-warehouse-authentication.md) para realizar a autenticação utilizando o Active Directory.
 
 ## 2. Consulta
 
@@ -81,6 +94,6 @@ Veja a [documentação do sqlcmd][sqlcmd] para obter mais detalhes sobre as opç
 
 
 
-<!--HONumber=ago16_HO5-->
+<!--HONumber=sep16_HO1-->
 
 

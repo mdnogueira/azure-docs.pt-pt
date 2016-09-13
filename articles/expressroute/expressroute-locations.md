@@ -12,7 +12,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/29/2016"
+   ms.date="09/07/2016"
    ms.author="cherylmc" />
 
 # Parceiros e localizações de peering do ExpressRoute 
@@ -31,7 +31,7 @@ Terá acesso aos serviços do Azure em todas as regiões numa região geopolíti
 |---|---|---|
 |**América do Norte**|EUA Leste, EUA Oeste, EUA Leste 2, EUA Central, EUA Centro-Sul, EUA Centro-Norte, Canadá Central, Canadá Leste|Atlanta, Chicago, Dallas, Las Vegas+, Los Angeles, Nova Iorque, Seattle, Silicon Valley, Washington D.C., Montreal+, Cidade do Quebeque+, Toronto|
 |**América do Sul**|Sul do Brasil|São Paulo|
-|**Europa**|Europa do Norte, Europa Ocidental|Amesterdão, Dublin, Londres, Newport (País de Gales)+, Paris|
+|**Europa**|Europa do Norte, Europa Ocidental, Reino Unido Oeste, Reino Unido Sul|Amesterdão, Dublin, Londres, Newport (País de Gales)+, Paris|
 |**Ásia**|Ásia Oriental, Sudeste Asiático|RAE de Hong Kong, Singapura|
 |**Japão**|Oeste do Japão, Leste do Japão|Osaka, Tóquio|
 |**Austrália**|Sudeste da Austrália, Leste da Austrália|Melbourne, Sydney|
@@ -83,7 +83,7 @@ A conectividade em regiões geopolíticas não é suportada no SKU do ExpressRou
 | **MTN** | Suportado | Suportado | Londres |
 | **NEXTDC** | Suportado | Suportado | Melbourne, Sydney |
 | **Comunicações NTT** | Suportado | Suportado | Londres, Los Angeles, Osaka, Tóquio |
-| **[Orange]( http://www.orange-business.com/en/products/business-vpn-galerie)** | Suportado | Suportado | Amesterdão, RAE de Hong Kong, Londres, Silicon Valley, Singapura, Washington D.C. |
+| **[Orange]( http://www.orange-business.com/en/products/business-vpn-galerie)** | Suportado | Suportado | Amesterdão, Hong Kong, Londres, Silicon Valley, Singapura, Sydney, Washington D.C. |
 | **PCCW Global Limited** | Suportado | Suportado | RAE de Hong Kong |
 | **[SingTel]( http://info.singtel.com/about-us/news-releases/singtel-provide-secure-private-access-microsoft-azure-public-cloud)** |  Suportado | Suportado | Singapura |
 | **Softbank** | Suportado | Suportado | Osaka, Tóquio | 
@@ -173,6 +173,6 @@ A ativação da conectividade privada para atender as suas necessidades pode ser
 
 
 
-<!--HONumber=ago16_HO5-->
+<!--HONumber=sep16_HO1-->
 
 

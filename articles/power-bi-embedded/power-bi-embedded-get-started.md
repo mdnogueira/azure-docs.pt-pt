@@ -3,7 +3,7 @@
    description="Power BI Embedded, adicione relatórios interativos do Power BI à aplicação de business intelligence"
    services="power-bi-embedded"
    documentationCenter=""
-   authors="minewiskan"
+   authors="mgblythe"
    manager="NA"
    editor=""
    tags=""/>
@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="powerbi"
    ms.date="07/05/2016"
-   ms.author="owend"/>
+   ms.author="mblythe"/>
 
 # Introdução ao Microsoft Power BI Embedded
 
@@ -103,6 +103,6 @@ Nos passos anteriores, criou uma coleção de áreas de trabalho e o primeiro re
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=sep16_HO1-->
 
 

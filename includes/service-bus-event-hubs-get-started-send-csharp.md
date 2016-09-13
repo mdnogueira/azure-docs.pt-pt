@@ -67,10 +67,10 @@ Nesta secção, irá escrever uma aplicação de consola do Windows para enviar 
 
 
 <!-- Images -->
-[7]: ./media/service-bus-event-hubs-getstarted/create-sender-csharp1.png
-[8]: ./media/service-bus-event-hubs-getstarted/create-sender-csharp2.png
+[7]: ./media/service-bus-event-hubs-getstarted-send-csharp/create-sender-csharp1.png
+[8]: ./media/service-bus-event-hubs-getstarted-send-csharp/create-sender-csharp2.png
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=sep16_HO1-->
 
 

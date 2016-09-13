@@ -13,7 +13,7 @@
     ms.workload="search"
     ms.topic="get-started-article"
     ms.tgt_pltfrm="na"
-    ms.date="06/08/2016"
+    ms.date="08/08/2016"
     ms.author="heidist"/>
 
 # Utilizar o Fiddler para avaliar e testar as APIs REST da Azure Search
@@ -24,11 +24,11 @@
 - [.NET](search-query-dotnet.md)
 - [REST](search-query-rest-api.md)
 
-Este artigo explica como utilizar o Fiddler, disponível como uma [transferência gratuita da Telerik](http://www.telerik.com/fiddler), para emitir pedidos de HTTP e ver respostas utilizando a API REST da Azure Search, sem ter de escrever qualquer código. A Azure Search é serviço de pesquisa na nuvem alojado completamente gerido no Microsoft Azure, facilmente programável através das APIs .NET e REST. As APIs REST do serviço da Azure Search estão documentadas na [MSDN](https://msdn.microsoft.com/library/azure/dn798935.aspx).
+Este artigo explica como utilizar o Fiddler, disponível como uma [transferência gratuita da Telerik](http://www.telerik.com/fiddler), para emitir pedidos de HTTP e ver respostas utilizando a API REST da Azure Search, sem ter de escrever qualquer código. A Azure Search é serviço de pesquisa na nuvem alojado completamente gerido no Microsoft Azure, facilmente programável através das APIs .NET e REST. As APIs REST do serviço Azure Search estão documentadas na [MSDN](https://msdn.microsoft.com/library/azure/dn798935.aspx).
 
 Nos passos seguintes, irá criar um índice, carregar documentos, consultar o índice e, em seguida, consultar o sistema para obter informações do serviço.
 
-Para concluir estes passos, irá precisar de um serviço da Azure Search e uma `api-key`. Consulte [Criar um serviço da Azure Search no portal](search-create-service-portal.md) para obter instruções sobre como começar.
+Para concluir estes passos, irá precisar de um serviço Azure Search e uma `api-key`. Consulte [Criar um serviço Azure Search no portal](search-create-service-portal.md) para obter instruções sobre como começar.
 
 ## Criar um índice
 
@@ -241,6 +241,6 @@ Consulte [Gerir o serviço de Pesquisa no Azure](search-manage.md) para uma abor
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=sep16_HO1-->
 
 

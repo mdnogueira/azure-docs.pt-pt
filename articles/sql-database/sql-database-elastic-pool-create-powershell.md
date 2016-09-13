@@ -28,7 +28,7 @@ Saiba como criar um [conjunto de bases de dados elásticas](sql-database-elastic
 
 Para códigos de erro comuns, consulte [Códigos de erro de SQL para aplicações de clientes de Base de Dados SQL: erro de ligação à base de dados e outros problemas](sql-database-develop-error-messages.md).
 
-> [AZURE.NOTE] Os conjuntos de bases de dados elásticas estão atualmente na pré-visualização e só estão disponíveis com os servidores V12 de Base de Dados SQL. Se tiver um servidor V11 de Base de Dados SQL, pode [utilizar o PowerShell para atualizar para o V12 e criar um conjunto](sql-database-upgrade-server-portal.md), num único passo.
+> [AZURE.NOTE] Os conjuntos elásticos estão geralmente disponível (GA) em todas as regiões Azure exceto nos E.U.A. Centro-Norte e na Índia Ocidental onde se encontra, de momento, em pré-visualização.  O GA dos conjuntos elásticos nestas regiões será fornecido assim que possível. Além disso, os conjuntos elásticos não suportam atualmente as bases de dados que utilizam [OLTP dentro da memória ou análise dentro da memória](sql-database-in-memory.md).
 
 
 Tem de estar a executar o Azure PowerShell 1.0 ou superior. Para informações detalhadas, consulte [Como instalar e configurar o Azure PowerShell](../powershell-install-configure.md).
@@ -83,6 +83,6 @@ Este script cria um novo grupo de recursos e um novo servidor do Azure. Quando l
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=sep16_HO1-->
 
 

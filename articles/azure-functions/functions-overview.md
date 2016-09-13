@@ -7,7 +7,7 @@
    manager="erikre"
    editor=""
    tags=""
-   keywords="azure functions, functions, event processing, webhooks, dynamic compute, serverless architecture"/>
+   keywords="funções do azure, funções, processamento de eventos, webhooks, computação dinâmica, arquitetura sem servidor"/>
 
 <tags
    ms.service="functions"
@@ -15,7 +15,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="multiple"
    ms.workload="na"
-   ms.date="05/08/2016"
+   ms.date="08/29/2016"
    ms.author="cfowler;mahender;glenga"/>
    
    
@@ -93,6 +93,6 @@ Aborda os planos de serviço disponíveis com as Funções do Azure, incluindo o
 Funções do Azure melhora a plataforma do Azure App Service para funcionalidades essenciais como implementações, variáveis de ambiente e diagnósticos. 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=sep16_HO1-->
 
 

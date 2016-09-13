@@ -13,8 +13,8 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="07/18/2016"
-   ms.author="sonyam;barbkess;sonyama"/>
+   ms.date="09/01/2016"
+   ms.author="sonyama;barbkess"/>
 
 # Como criar um pedido de suporte para o SQL Data Warehouse
  
@@ -38,7 +38,7 @@ Se tiver problemas com o SQL Data Warehouse, crie um pedido de suporte para que 
 
     ![Tipo de pedido](./media/sql-data-warehouse-get-started-create-support-ticket/request-type.png)
     
-    >[AZURE.NOTE]  Por predefinição, cada SQL Server (por exemplo, myserver.database.windows.net) tem uma **Quota de DTU** de 45.000. Esta quota é apenas um limite de segurança. Pode aumentar a quota ao criar um pedido de suporte e selecionar *Quota* como o tipo de pedido. Para calcular as suas necessidades de DTU, deve saber que cada 100 [DWU][] do SQL Data Warehouse consome 750 DTU. Por conseguinte, a quota predefinida de 45.000 permite-lhe criar até um DW6000 (45.000/750) ou várias bases de dados mais pequenas com menos DWU. Se, por exemplo, pretender alojar dois DW6000s num SQL Server, deverá então pedir uma quota de DTU de 90.000.  Pode ver o consumo de DTU atual a partir do painel SQL Server no portal. Tanto as bases de dados em pausa como as que não estão em pausa contam para a quota de DTU. 
+    >[AZURE.NOTE]  Por predefinição, cada SQL Server (por exemplo, myserver.database.windows.net) tem uma **Quota de DTU** de 45.000. Esta quota é apenas um limite de segurança. Pode aumentar a quota ao criar um pedido de suporte e selecionar *Quota* como o tipo de pedido. Para calcular as necessidades de DTU, multiplique 7,5 pelo total de [DWU][] necessários. Por exemplo, se pretende alojar dois DW6000s num SQL Server, então deve pedir uma quota de DTU de 90.000.  Pode ver o consumo de DTU atual a partir do painel SQL Server no portal. Tanto as bases de dados em pausa como as que não estão em pausa contam para a quota de DTU. 
 
 5. Selecione a **Subscrição** que aloja a base de dados com o problema que está a denunciar.
 
@@ -105,6 +105,6 @@ Além disso, pode ligar-se à comunidade do SQL Data Warehouse no [Stack Overflo
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=sep16_HO1-->
 
 

@@ -12,8 +12,8 @@
     ms.workload="tbd"
     ms.tgt_pltfrm="na"
     ms.devlang="dotnet"
-    ms.topic="hero-article"
-    ms.date="05/27/2016"
+    ms.topic="get-started-article"
+    ms.date="09/01/2016"
     ms.author="sethm"/>
 
 # Aplicação .NET multicamadas que utiliza as filas do Service Bus do Azure
@@ -464,6 +464,6 @@ Para obter mais informações sobre os cenários de multicamadas, consulte:
   
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=sep16_HO1-->
 
 

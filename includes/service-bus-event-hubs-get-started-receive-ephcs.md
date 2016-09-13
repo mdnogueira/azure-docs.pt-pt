@@ -4,17 +4,21 @@ O [EventProcessorHost][] é uma classe do .NET que simplifica a receção de eve
 
 Para utilizar o [EventProcessorHost][], tem de ter uma [Conta de Armazenamento do Azure][]:
 
-1. Inicie sessão no [Portal Clássico do Azure][] e clique em **NOVO** na parte inferior do ecrã.
+1. Inicie sessão no [Portal do Azure][] e clique em **Novo** na parte superior esquerda do ecrã.
 
-2. Clique em **Serviços de Dados**, em **Armazenamento** em **Criação Rápida** e escreva um nome para a sua conta de armazenamento. Selecione a região pretendida e clique em **Criar Conta de Armazenamento**.
+2. Clique em **Dados + Armazenamento** e, em seguida, clique em **Conta de armazenamento**.
 
-    ![][11]
+    ![][1]
 
-3. Clique na conta de armazenamento acabada de criar e, em seguida, clique em **Gerir Chaves de Acesso**:
+3. No painel **Criar conta de armazenamento**, escreva um nome para a conta de armazenamento. Escolha uma subscrição do Azure, um grupo de recursos e uma localização na que pretenda criar o recurso. Em seguida, clique em **Criar**.
 
-    ![][12]
+    ![][2]
 
-    Copie a chave de acesso primária para a utilizar posteriormente neste tutorial.
+4. Na lista de contas de armazenamento, clique na conta de armazenamento recentemente criada.
+
+5. No painel da conta de armazenamento, clique em **Chaves de acesso**. Copie o valor da **chave1** para utilizar mais tarde neste tutorial.
+
+    ![][3]
 
 4. No Visual Studio, crie um novo projeto de Aplicação de Ambiente de Trabalho do Visual C# com o modelo de projeto **Aplicação de Consola**. Dê ao projeto o nome **Recetor**.
 
@@ -121,21 +125,22 @@ Para utilizar o [EventProcessorHost][], tem de ter uma [Conta de Armazenamento d
 [Event Hubs Overview (Descrição Geral dos Event Hubs)]: event-hubs-overview.md
 [Event Hubs Programming Guide (Guia de Programação dos Event Hubs)]: event-hubs-programming-guide.md
 [Processamento de eventos aumentados horizontalmente]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-45f43fc3
-[Conta de Armazenamento do Azure]: ../storage/storage-create-storage-account-classic-portal.md
+[Conta de Armazenamento do Azure]: ../storage/storage-create-storage-account.md
 [EventProcessorHost]: http://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventprocessorhost(v=azure.95).aspx
-[Portal Clássico do Azure]: http://manage.windowsazure.com
+[Portal do Azure]: https://portal.azure.com
 
 <!-- Images -->
 
-[11]: ./media/service-bus-event-hubs-getstarted/create-eph-csharp2.png
-[12]: ./media/service-bus-event-hubs-getstarted/create-eph-csharp3.png
-[13]: ./media/service-bus-event-hubs-getstarted/create-eph-csharp1.png
-[14]: ./media/service-bus-event-hubs-getstarted/create-receiver-csharp1.png
-[15]: ./media/service-bus-event-hubs-getstarted/create-receiver-csharp2.png
+[1]: ./media/service-bus-event-hubs-getstarted-receive-ephcs/create-storage1.png
+[2]: ./media/service-bus-event-hubs-getstarted-receive-ephcs/create-storage2.png
+[3]: ./media/service-bus-event-hubs-getstarted-receive-ephcs/create-storage3.png
+[13]: ./media/service-bus-event-hubs-getstarted-receive-ephcs/create-eph-csharp1.png
+[14]: ./media/service-bus-event-hubs-getstarted-receive-ephcs/create-receiver-csharp1.png
+[15]: ./media/service-bus-event-hubs-getstarted-receive-ephcs/create-receiver-csharp2.png
 
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=sep16_HO1-->
 
 
