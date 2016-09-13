@@ -13,14 +13,18 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="get-started-article"
-    ms.date="08/30/2016" 
+    ms.date="09/05/2016" 
     ms.author="juliako"/>
 
 
 #Como realizar uma transmissão em fluxo em direto com codificadores no local através do Portal do Azure
 
-Este tutorial explica os passos para criar um **Canal** configurado para uma entrega pass-through através do Portal do Azure. 
+> [AZURE.SELECTOR]
+- [Portal]( media-services-portal-live-passthrough-get-started.md)
+- [.NET]( media-services-dotnet-live-encode-with-onpremises-encoders.md)
+- [REST]( https://msdn.microsoft.com/library/azure/dn783458.aspx)
 
+Este tutorial explica os passos para criar um **Canal** configurado para uma entrega pass-through através do Portal do Azure. 
 
 ##Pré-requisitos
 
@@ -73,12 +77,13 @@ Se pretende ver as notificações e os erros produzidos pelo Portal do Azure, cl
 
 ##Configurar os pontos finais de transmissão em fluxo 
 
-Os Media Services fornecem um empacotamento dinâmico, permitindo a entrega dos seus MP4s com várias velocidades nos seguintes formatos de transmissão em fluxo: MPEG DASH, HLS, Transmissão em Fluxo Uniforme ou HDS, sem ter de voltar a criar o pacote para estes formatos de transmissão em fluxo. Com o empacotamento dinâmico só tem de armazenar e pagar pelos ficheiros num único formato de armazenamento, os Media Services irão compilar e disponibilizar a resposta adequada com base nos pedidos de um cliente.
+Os Serviços de Multimédia fornecem um empacotamento dinâmico, permitindo a entrega dos seus MP4s com várias velocidades nos seguintes formatos de transmissão em fluxo: MPEG DASH, HLS, Smooth Streaming, ou HDS, sem ter de voltar a criar o pacote para estes formatos de transmissão em fluxo. Com o empacotamento dinâmico, só tem de armazenar e pagar os ficheiros num único formato de armazenamento, e os Serviços de Multimédia compilam e disponibilizam a resposta adequada com base nos pedidos de um cliente.
 
 Para tirar partido do empacotamento dinâmico, precisa de, pelo menos, uma unidade de transmissão em fluxo para o ponto final de transmissão em fluxo a partir do qual planeia distribuir o conteúdo.  
 
 Para criar e alterar o número de unidades reservadas para transmissão em fluxo, faça o seguinte:
 
+1. Inicie sessão no [Portal do Azure](https://portal.azure.com/).
 1. Na janela **Definições**, clique em **Pontos finais de transmissão em fluxo**. 
 
 2. Clique no ponto final de transmissão em fluxo predefinido. 
@@ -87,7 +92,7 @@ Para criar e alterar o número de unidades reservadas para transmissão em fluxo
 
 3. Para especificar o número de unidades de transmissão em fluxo, deslize o controlo de deslize **Unidades de transmissão em fluxo**.
 
-    ![Unidades de transmissão em fluxo](./media/media-services-portal-vod-get-started/media-services-streaming-units.png)
+    ![Unidades de transmissão em fluxo](./media/media-services-portal-passthrough-get-started/media-services-streaming-units.png)
 
 4. Clique no botão **Guardar** para guardar as alterações.
 
@@ -99,7 +104,7 @@ Um canal está associado a eventos/programas que permitem controlar a publicaç�
     
 Pode especificar o número de horas que pretenda manter o conteúdo gravado para o programa através da configuração da duração da **Janela de Arquivo**. Este valor pode ser definido a partir de um mínimo de 5 minutos até um máximo de 25 horas. A duração da janela de arquivo dita também o tempo máximo que os clientes podem recuar a partir da posição atual em direto. Os eventos podem ser executados durante o período de tempo especificado, contudo, o conteúdo que não respeitar essa duração da janela é continuamente descartado. O valor desta propriedade também determina durante quanto tempo os manifestos dos clientes podem aumentar.
 
-Cada evento está associado a um elemento. Para publicar o evento, deve criar um localizador OnDemand para o elemento associado. Ter este localizador irá permitir compilar um URL de transmissão em fluxo que pode fornecer aos seus clientes.
+Cada evento está associado a um elemento. Para publicar o evento, deve criar um localizador OnDemand para o elemento associado. Ter este localizador permite compilar um URL de transmissão em fluxo que pode fornecer aos seus clientes.
 
 Um canal suporta até três eventos em execução em simultâneo para que possa criar vários arquivos da mesma transmissão em fluxo recebida. Isto permite publicar e arquivar diferentes partes de um evento, conforme necessário. Por exemplo, os seus requisitos de negócios devem arquivar 6 horas de um programa, mas difundir apenas os últimos 10 minutos. Para tal, tem de criar dois programas em execução em simultâneo. Um programa está definido para arquivar 6 horas do evento, mas o programa não está publicado. O outro programa está definido para arquivar durante 10 minutos e este está publicado.
 
@@ -115,7 +120,7 @@ Se pretende manter o conteúdo arquivado, mas não o quer manter disponível par
 
 ###Utilizar o portal para criar um canal 
 
-Estas secções mostram como utilizar a opção **Criação Rápida** para criar um canal pass-through.
+Esta secção mostra como utilizar a opção **Criação Rápida** para criar um canal pass-through.
 
 Para obter mais detalhes sobre canais pass-through, consulte [Transmissão em fluxo em direto com codificadores no local que criam transmissões em fluxo com velocidade de transmissão múltipla](media-services-live-streaming-with-onprem-encoders.md).
 
@@ -130,11 +135,15 @@ Para obter mais detalhes sobre canais pass-through, consulte [Transmissão em fl
     A janela **CRIAR UM NOVO CANAL** é apresentada.
 4. Dê um nome ao novo canal e clique em **Criar**. 
 
-    Tal irá criar um canal pass-through com o protocolo de inserção RTMP.
+    Tal cria um canal pass-through com o protocolo de inserção RTMP.
 
-    O canal também adiciona, inicia e publica um evento/programa em direto predefinido. Este evento está configurado para ter 8 horas de janela de arquivo. 
+##Criar eventos
 
-    Para adicionar mais eventos, prima o botão **Evento em Direto**.
+1. Selecione um canal para o qual pretende adicionar um evento.
+2. Prima o botão **Evento em Direto**.
+
+![Evento](./media/media-services-portal-passthrough-get-started/media-services-create-events.png)
+
 
 ##Obter URLs de inserção
 
@@ -142,19 +151,19 @@ Assim que o canal seja criado, pode obter os URLs de inserção que fornecerá a
 
 ![Criado](./media/media-services-portal-passthrough-get-started/media-services-channel-created.png)
 
-##Ver um evento
+##Ver o evento
 
 Para ver o evento, clique em **Ver** no Portal do Azure ou copie o URL de transmissão em fluxo e utilize um leitor da sua preferência. 
  
 ![Criado](./media/media-services-portal-passthrough-get-started/media-services-default-event.png)
 
-O evento em direto será convertido automaticamente para conteúdo a pedido quando parado.
+O evento em direto é convertido automaticamente para conteúdo a pedido quando parado.
 
 ##Limpeza
 
 Para obter mais detalhes sobre canais pass-through, consulte [Transmissão em fluxo em direto com codificadores no local que criam transmissões em fluxo com velocidade de transmissão múltipla](media-services-live-streaming-with-onprem-encoders.md).
 
-- Um canal pode ser parado apenas quando todos os eventos/programas no canal foram parados.  Assim que o Canal esteja parado, não será cobrado qualquer custo. Quando quiser reiniciar a transmissão, esta terá o mesmo URL de inserção, desta forma, não terá de reconfigurar o codificador.
+- Um canal pode ser parado apenas quando todos os eventos/programas no canal foram parados.  Assim que o Canal esteja parado, não é cobrado qualquer custo. Quando quiser reiniciar a transmissão, esta terá o mesmo URL de inserção, desta forma, não terá de reconfigurar o codificador.
 - Um canal pode ser eliminado apenas quando todos os eventos em direto canal tiverem sido eliminados.
 
 ##Ver conteúdo arquivado
@@ -165,7 +174,9 @@ Para gerir os seus elementos, selecione **Definição** e clique em **Elementos*
 
 ![Elementos](./media/media-services-portal-passthrough-get-started/media-services-assets.png)
 
-##Percursos de aprendizagem dos Media Services
+##Passo seguinte
+
+Rever os percursos de aprendizagem dos Serviços de Multimédia
 
 [AZURE.INCLUDE [media-services-learning-paths-include](../../includes/media-services-learning-paths-include.md)]
 
@@ -175,6 +186,6 @@ Para gerir os seus elementos, selecione **Definição** e clique em **Elementos*
 
 
 
-<!--HONumber=ago16_HO5-->
+<!--HONumber=sep16_HO1-->
 
 

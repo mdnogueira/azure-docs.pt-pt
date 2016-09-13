@@ -1,7 +1,7 @@
 <properties
     pageTitle="Serviços de Federação do Active Directory no Azure | Microsoft Azure"
     description="Neste documento, vai aprender a implementar o AD FS no Azure para disponibilidade elevada "
-    keywords="introduction to AD FS, Azure, Azure AD Connect overview, AD FS in Azure, iaas, ADFS"
+    keywords="implementar o AD FS no azure, implementar o azure adfs, azure adfs, azure ad fs, implementar adfs, implementar ad fs, adfs no azure, implementar adfs no azure, implementar AD FS no azure, adfs azure, introdução ao AD FS, Azure, AD FS no Azure, iaas, ADFS, mover adfs para o azure"
     services="active-directory"
     documentationCenter=""
     authors="anandyadavmsft"
@@ -35,11 +35,11 @@ O diagrama acima apresenta a topologia básica recomendada para começar a imple
 
 * **Servidores DC / AD FS**: se tiver menos de mil utilizadores, pode simplesmente instalar a função do AD FS nos seus controladores de domínio. Se não pretender nenhum impacto no desempenho nos controladores de domínio ou se tiver mais de mil utilizadores, implemente o AD FS em servidores separados.
 * **Servidor do WAP** – é necessário para implementar servidores Proxy de Aplicações Web, para que os utilizadores possam contactar o AD FS quando não estão também na rede da empresa.
-* **DMZ**: os servidores Proxy de Aplicações Web serão colocados no DMZ e SÓ é permitido acesso TCP/443 entre o DMZ e a sub-rede interna.
-* **Balanceadores de Carga**: para garantir a elevada disponibilidade dos servidores do AD FS e Proxy de Aplicações Web, recomendamos que utilize um balanceador de carga interno para os servidores AD FS e o Balanceador de Carga do Azure para os servidores Proxy de Aplicações Web.
+* **DMZ**: os servidores Proxy de Aplicações Web serão colocados na rede de perímetro e SÓ é permitido acesso TCP/443 entre a rede de perímetro e a sub-rede interna.
+* **Balanceadores de Carga**: para garantir a elevada disponibilidade dos servidores do AD FS e Proxy de Aplicações Web, recomendamos que utilize um balanceador de carga interno para os servidores AD FS e o Azure Load Balancer para os servidores Proxy de Aplicações Web.
 * **Conjuntos de Disponibilidade**: para fornecer redundância para a sua implementação do AD FS, recomenda-se que agrupe duas ou mais máquinas virtuais num Conjunto de Disponibilidade de cargas de trabalho semelhantes. Esta configuração garante que, durante um evento de manutenção planeado ou não planeado, está disponível, pelo menos, uma máquina virtual.
 * **Contas de Armazenamento**: recomenda-se ter duas contas de armazenamento. Ter uma única conta de armazenamento pode levar à criação de um só ponto de falha e pode fazer com que a implementação fique indisponível num cenário improvável em que a conta de armazenamento fique inativa. Ao invés, ter duas contas de armazenamento ajuda a associar uma conta de armazenamento a cada linha de falhas.
-* **Segregação de Rede**: os servidores Proxy de Aplicações Web devem ser implementados numa rede DMZ separada. Pode dividir uma rede virtual em duas sub-redes e, em seguida, implementar o servidor ou servidores Proxy de Aplicações Web numa sub-rede isolada. Pode simplesmente configurar as definições do grupo de segurança de rede para cada sub-rede e permitir apenas a comunicação necessária entre as duas sub-redes. São fornecidos mais detalhes por cenário de implementação abaixo
+* **Segregação de Rede**: os servidores Proxy de Aplicações Web devem ser implementados numa rede de perímetro separada. Pode dividir uma rede virtual em duas sub-redes e, em seguida, implementar o servidor ou servidores Proxy de Aplicações Web numa sub-rede isolada. Pode simplesmente configurar as definições do grupo de segurança de rede para cada sub-rede e permitir apenas a comunicação necessária entre as duas sub-redes. São fornecidos mais detalhes por cenário de implementação abaixo
 
 ##Passos para implementar o AD FS no Azure.
 
@@ -54,7 +54,9 @@ Conforme mencionado acima, pode criar duas sub-redes numa única rede virtual ou
 ![Criar a rede virtual](./media/active-directory-aadconnect-azure-adfs/deploynetwork1.png)
     
 No portal do Azure, selecione “rede virtual” e pode implementar a rede virtual e uma sub-rede imediatamente com um só clique. A sub-rede INT também é definida e está agora pronta para receber as VMs.
-O passo seguinte consiste em adicionar outra sub-rede à rede, por exemplo, a sub-rede DMZ. Para criar a sub-rede DMZ, basta:
+O passo seguinte consiste em adicionar outra sub-rede à rede, por exemplo, a sub-rede de perímetro.
+ Para criar a sub-rede de perímetro, basta:
+
 
 * Selecionar a rede acabada de criar
 * Selecionar a sub-rede nas propriedades
@@ -64,12 +66,13 @@ O passo seguinte consiste em adicionar outra sub-rede à rede, por exemplo, a su
 ![Subrede](./media/active-directory-aadconnect-azure-adfs/deploynetwork2.png)
 
 
-![Sub-rede DMZ](./media/active-directory-aadconnect-azure-adfs/deploynetwork3.png)
+![Sub-rede de perímetro
+](./media/active-directory-aadconnect-azure-adfs/deploynetwork3.png)
 
 **1.2. Criar os grupos de segurança de rede**
 
 Os Grupos de Segurança de Rede (NSG) contêm uma lista de regras da Lista de Controlo de Acesso (ACL) que permitem ou negam o tráfego de rede para as instâncias da sua VM numa Rede Virtual. Os NSGs podem ser associados a sub-redes ou a instâncias de VM individuais dentro dessa sub-rede. Quando um NSG é associado a uma sub-rede, as regras da ACL são aplicadas a todas as instâncias de VM nessa sub-rede.
-Para efeitos desta orientação, vamos criar dois NSGs, um para a rede interna e outro para o DMZ. Serão chamados NSG_INT e NSG_DMZ, respetivamente.
+Para efeitos desta orientação, vamos criar dois NSGs, um para a rede interna e outro para o rede de perímetro. Serão chamados NSG_INT e NSG_DMZ, respetivamente.
 
 ![Criar o NSG](./media/active-directory-aadconnect-azure-adfs/creatensg1.png)
 
@@ -77,7 +80,8 @@ Depois de criado o NSG, existiram 0 regras de entrada e 0 regras de saída. Quan
 
 ![Inicializar o NSG](./media/active-directory-aadconnect-azure-adfs/nsgint1.png)
 
-Depois de criados os NSGs, associe NSG_INT à sub-rede INT e NSG_DMZ à sub-rede DMZ. É apresentada uma captura de ecrã de exemplo abaixo:
+Depois de criados os NSGs, associe NSG_INT à sub-rede INT e NSG_DMZ à sub-rede de perímetro.
+ É apresentada uma captura de ecrã de exemplo abaixo:
 
 ![Configurar o NGS](./media/active-directory-aadconnect-azure-adfs/nsgconfigure1.png)
 
@@ -127,8 +131,8 @@ O passo seguinte é implementar máquinas virtuais que vão alojar as diferentes
 |:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
 |contosodc1|DC/ADFS|INT|contosodcset|contososac1|Estático|
 |contosodc2|DC/ADFS|INT|contosodcset|contososac2|Estático|
-|contosowap1|WAP|DMZ|contosowapset|contososac1|Estático|
-|contosowap2|WAP|DMZ|contosowapset|contososac2|Estático|
+|contosowap1|WAP|Rede de Perímetro|contosowapset|contososac1|Estático|
+|contosowap2|WAP|Rede de Perímetro|contosowapset|contososac2|Estático|
 
 Como poderá ter reparado, não foi especificado nenhum NSG. Isto acontece porque o Azure permite-lhe utilizar o NSG ao nível da sub-rede. Depois, pode controlar o tráfego de rede da máquina com o NSG individual associado à sub-rede ou ao objeto NIC. Leia mais em [O que é um Grupo de Segurança de Rede (NSG)?](https://aka.ms/Azure/NSG)
 Se estiver a gerir o DNS, recomenda-se o endereço IP estático. Pode utilizar o DNS do Azure e consulte as novas máquinas pelos respetivos FQDNs do Azure em vez de pelos registos DNS do seu domínio.
@@ -265,18 +269,21 @@ De um modo geral, precisa das regras seguintes para proteger de forma eficiente 
 
 |Regra|Descrição|Fluxo|
 |:----|:----|:------:|
-|AllowHTTPSFromDMZ| Permitir a comunicação HTTPS a partir do DMZ | Entrada |
-|DenyAllFromDMZ| Esta regra bloqueia todo o tráfego do DMZ para a sub-rede interna. A regra AllowHTTPSFromDMZ ocupa-se de garantir que a comunicação HTTPS é transmitida e que esta regra não bloqueia mais nada | Entrada |
+|AllowHTTPSFromDMZ| Permitir a comunicação HTTPS a partir da rede de perímetro | Entrada |
+|DenyAllFromDMZ| Esta regra bloqueia todo o tráfego da rede de perímetro para a sub-rede interna.
+ A regra AllowHTTPSFromDMZ ocupa-se de garantir que a comunicação HTTPS é transmitida e que esta regra não bloqueia mais nada | Entrada |
 |DenyInternetOutbound| Sem acesso à Internet | Saída |
 
 [comment]: <> (![regras de acesso INT (entrada)](./media/active-directory-aadconnect-azure-adfs/nsgintinbound.png)) [comment]: <> (![regras de acesso INT(saída)](./media/active-directory-aadconnect-azure-adfs/nsgintoutbound.png))
  
-**9.2.  Proteger a sub-rede DMZ**
+**9.2.  Proteger a sub-rede de perímetro
+**
 
 |Regra|Descrição|Fluxo|
 |:----|:----|:------:|
 |AllowHttpsFromVirtualNetwork| Permitir HTTPS a partir da rede virtual | Entrada |
-|AllowHTTPSInternet| Permitir HTTPS a partir da Internet para o DMZ | Entrada|
+|AllowHTTPSInternet| Permitir HTTPS a partir da Internet para a rede de perímetro
+ | Entrada|
 |DenyingressexceptHTTPS| Bloquear tudo o que não seja HTTPS da Internet | Entrada |
 |DenyOutToInternet| Está tudo bloqueado, exceto HTTPS para a Internet | Saída |
 
@@ -311,6 +318,7 @@ Após o início de sessão com êxito, é-lhe apresentada uma mensagem de êxito
 
 * [Integrar as identidades no local ao Azure Active Directory](active-directory-aadconnect.md)
 * [Configurar e gerir o AD FS com o Azure AD Connect](active-directory-aadconnectfed-whatis.md)
+* [Implementação de AD FS geográficos cruzados de elevada disponibilidade no Azure com o Gestor de Tráfego do Azure](active-directory-adfs-in-azure-with-azure-traffic-manager.md)
 
 
 
@@ -318,7 +326,6 @@ Após o início de sessão com êxito, é-lhe apresentada uma mensagem de êxito
 
 
 
-
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=sep16_HO1-->
 
 

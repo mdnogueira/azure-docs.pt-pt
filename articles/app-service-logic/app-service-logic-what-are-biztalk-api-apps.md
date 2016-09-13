@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="get-started-article" 
-    ms.date="07/28/2016" 
+    ms.date="09/01/2016" 
     ms.author="mandia"/>
 
 # O que são Conectores e API Apps BizTalk
@@ -35,7 +35,7 @@ Os [Preços dos Serviços de Aplicações](https://azure.microsoft.com/pricing/d
 
 
 ## Conectores Híbridos 
-Os conectores híbridos expandem ainda mais o alcance na empresa com a conectividade com [SAP](app-service-logic-connector-sap.md), [Oracle](app-service-logic-connector-oracle.md), [DB2](app-service-logic-connector-db2.md), [Informix](app-service-logic-connector-informix.md) e WebSphere MQ. 
+Os conetores híbridos expandem ainda mais o alcance na empresa com a conetividade com [DB2](app-service-logic-connector-db2.md), [Informix](app-service-logic-connector-informix.md) e WebSphere MQ. 
 
 ## Serviços EAI e EDI
 Compilar aplicações críticas de negócios exige mais do que apenas conectividade. Com base na criação da plataforma de integração da Microsoft líder do setor (BizTalk Server), as API Apps BizTalk fornecem capacidades de integração avançadas que podem ser facilmente encaixadas nas suas Web Apps, Móveis e Lógicas. Algumas destas capacidades de integração incluem [Validar](app-service-logic-xml-validator.md), [Extrair](app-service-logic-xpath-extract.md), [Transformar](app-service-logic-transform-xml-documents.md), [Codificadores](app-service-logic-connector-jsonencoder.md), [Gestão de Parceiros Comerciais](app-service-logic-connector-tpm.md) e suporte para formatos EDI, tal como [X12](app-service-logic-connector-x12.md), [EDIFACT](app-service-logic-connector-edifact.md) e [AS2](app-service-logic-connector-as2.md).
@@ -55,6 +55,6 @@ Consulte [Lista de Conectores e API Apps](app-service-logic-connectors-list.md) 
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=sep16_HO1-->
 
 

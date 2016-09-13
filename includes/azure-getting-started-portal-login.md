@@ -8,32 +8,31 @@ As of circa 2016-04-11, the following topics might include this include:
 articles/sql-database/sql-database-get-started-tutorial.md
 
 -->
-## Ligar ao Portal do Microsoft Azure com uma subscrição
+## Ligar ao portal do Azure com uma subscrição
 
-Tem de ter uma subscrição para ligar ao Portal do Microsoft Azure. 
+Tem de ter uma subscrição para ligar ao portal do Azure.
 
 ### Obter uma nova conta
 
-Se não tiver uma conta existente do Microsoft Azure, siga uma das ligações abaixo para obter uma conta:
+Se não tiver uma conta do Azure, siga uma das opções que se seguem para obter uma conta:
 
-- Obter uma [conta gratuita](https://azure.microsoft.com/get-started/)
-- Utilizar uma [Subscrição MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits/)
+- Obtenha uma [conta gratuita](https://azure.microsoft.com/get-started/).
+- Utilize uma [subscrição MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits/).
 
-###Iniciar sessão com a conta existente
+### Iniciar sessão com a conta existente
 
-Com a [subscrição existente]( https://account.windowsazure.com/Home/Index), siga os passos abaixo para se ligar ao Portal do Azure. 
+Com a [subscrição existente]( https://account.windowsazure.com/Home/Index), siga estes passos para se ligar ao portal do Azure.
 
 1. Abra o browser da sua preferência e ligue-se ao [Portal do Azure](https://portal.azure.com/).
 
 1. Inicie sessão no [Portal do Azure](https://portal.azure.com/).
 
-1. Quando for apresentada a página de início de sessão, forneça as credenciais para a sua subscrição
+1. Quando for apresentada a página **Iniciar sessão**, forneça as credenciais da sua subscrição.
 
-   ![iniciar sessão](./media/azure-getting-started-portal-login/login.png)
-   
-
+   ![Iniciar sessão](./media/azure-getting-started-portal-login/login.png)
 
 
-<!--HONumber=Jun16_HO2-->
+
+<!--HONumber=sep16_HO1-->
 
 

@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="dotnet"
     ms.topic="hero-article"
-    ms.date="08/29/2016"
+    ms.date="09/01/2016"
     ms.author="anhoh"/>
 
 # Tutorial NoSQL: criar uma consola de aplicação DocumentDB C#
@@ -25,7 +25,7 @@
 
 Bem-vindo ao tutorial NoSQL para o SDK .NET do Azure DocumentDB! Depois de obter o projeto QuickStart ou de concluir o tutorial, terá uma aplicação de consola que cria e consulta recursos do DocumentDB.
 
-- **[QuickStart](#quickstart)**: transfira o projeto de exemplo, adicione as informações da sua ligação e ponha a sua aplicação do DocumentDB a funcionar em menos de cinco minutos.
+- **[Início Rápido](#quickstart)**: transfira o projeto de exemplo, adicione as informações da sua ligação e terá a sua aplicação do DocumentDB a funcionar em menos de 10 minutos.
 - **[Tutorial](#tutorial)**: crie a aplicação QuickStart do zero em 30 minutos.
 
 ## Pré-requisitos
@@ -36,7 +36,7 @@ Bem-vindo ao tutorial NoSQL para o SDK .NET do Azure DocumentDB! Depois de obter
 
 ## QuickStart
 
-1. Transfira o projeto de exemplo no [GitHub](https://github.com/Azure-Samples/documentdb-dotnet-getting-started-quickstart/archive/master.zip).
+1. Transfira o projeto de exemplo .zip do [GitHub](https://github.com/Azure-Samples/documentdb-dotnet-getting-started-quickstart/archive/master.zip) ou clone o repo. [documentdb-dotnet-getting-started-quickstart](https://github.com/Azure-Samples/documentdb-dotnet-getting-started-quickstart).
 2. Utilize o portal do Azure para [criar uma conta do DocumentDB](documentdb-create-account.md).
 3. No ficheiro App.config, substitua os valores de EndpointUri e PrimaryKey pelos valores obtidos no [portal do Azure](https://portal.azure.com/), ao navegar para o painel **DocumentDB (NoSQL)**, clicar no **nome da Conta** e, em seguida, clicar em **Chaves**, no menu do recurso.
     ![Captura de ecrã do valor de EndpointUri e PrimaryKey a substituir no App.config](./media/documentdb-get-started-quickstart/nosql-tutorial-documentdb-keys.png)
@@ -607,6 +607,6 @@ Parabéns! Concluiu este tutorial NoSQL e a sua aplicação de consola C# está 
 
 
 
-<!--HONumber=ago16_HO5-->
+<!--HONumber=sep16_HO1-->
 
 

@@ -29,7 +29,7 @@ Este artigo mostra como criar um [conjunto de bases de dados elásticas](sql-dat
 
 Pode adicionar vários conjuntos a um servidor, mas não pode adicionar bases de dados de diferentes servidores ao mesmo conjunto. Para criar um conjunto, é necessário, pelo menos, uma base de dados num servidor V12. Se não tiver uma, consulte o artigo [Criar a primeira base de dados SQL do Azure](sql-database-get-started.md). Pode criar um conjunto com apenas uma base de dados, mas os conjuntos só são rentáveis com várias bases de dados. Consulte o artigo [Considerações sobre preço e desempenho para um conjunto de bases de dados elásticas](sql-database-elastic-pool-guidance.md).
 
-> [AZURE.NOTE] Os conjuntos só estão disponíveis com servidores V12 de Base de Dados SQL. Se tiver bases de dados num servidor V11, pode [utilizar um script do PowerShell para identificá-las como candidatas para um conjunto](sql-database-elastic-pool-database-assessment-powershell.md) num servidor V12 e, em seguida, [utilizar o PowerShell para atualizar a versão para V12 e criar um conjunto](sql-database-upgrade-server-powershell.md) num único passo.
+> [AZURE.NOTE] Os conjuntos elásticos estão geralmente disponível (GA) em todas as regiões Azure exceto nos E.U.A. Centro-Norte e na Índia Ocidental onde se encontra, de momento, em pré-visualização.  O GA dos conjuntos elásticos nestas regiões será fornecido assim que possível. Além disso, os conjuntos elásticos não suportam atualmente as bases de dados que utilizam [OLTP dentro da memória ou análise dentro da memória](sql-database-in-memory.md).
 
 ## Passo 1: criar um novo conjunto
 
@@ -117,6 +117,6 @@ Depois de adicionar as bases de dados ao conjunto, as recomendações serão ger
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=sep16_HO1-->
 
 

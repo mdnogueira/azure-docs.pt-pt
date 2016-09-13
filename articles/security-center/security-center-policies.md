@@ -26,7 +26,7 @@ Por exemplo, os recursos utilizados para programação ou testes podem ter requi
 
 ## Definir políticas de segurança para subscrições
 
-As políticas de segurança podem ser configuradas para cada subscrição ou grupo de recursos. Para modificar uma política de segurança, tem de ser um Proprietário ou Contribuinte dessa subscrição. Aceda ao Portal do Azure e siga os passos abaixo para configurar as políticas de segurança no Centro de Segurança:
+As políticas de segurança podem ser configuradas para cada subscrição ou grupo de recursos. Para modificar uma política de segurança, tem de ser um Proprietário ou Contribuinte dessa subscrição. Aceda ao portal do Azure e siga os passos subsequentes para configurar as políticas de segurança no Centro de Segurança:
 
 1. Clique no mosaico **Política** no dashboard do Centro de Segurança.
 
@@ -108,6 +108,6 @@ Neste documento, aprendeu a configurar as políticas de segurança no Centro de 
 
 
 
-<!--HONumber=ago16_HO5-->
+<!--HONumber=sep16_HO1-->
 
 

@@ -45,6 +45,6 @@ Crie um hub IoT para ligação do dispositivo simulado. Os passos que se seguem 
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=sep16_HO1-->
 
 

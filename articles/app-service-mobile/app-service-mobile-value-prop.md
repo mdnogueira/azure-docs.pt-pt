@@ -87,7 +87,7 @@ Para obter mais informações sobre a plataforma do App Service do Azure, consul
 [DocumentDB]: ../documentdb/documentdb-get-started.md
 [funcionalidades de autenticação]: ./app-service-mobile-auth.md
 [funcionalidades de dados]: ./app-service-mobile-offline-data-sync.md
-[funcionalidades de notificação push]: ../notification-hubs/notification-hubs-overview.md
+[funcionalidades de notificação push]: ../notification-hubs/notification-hubs-push-notification-overview.md
 [iOS]: ./app-service-mobile-ios-how-to-use-client-library.md
 [Android]: ./app-service-mobile-android-how-to-use-client-library.md
 [Windows]: ./app-service-mobile-dotnet-how-to-use-client-library.md
@@ -105,6 +105,6 @@ Para obter mais informações sobre a plataforma do App Service do Azure, consul
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=sep16_HO1-->
 
 

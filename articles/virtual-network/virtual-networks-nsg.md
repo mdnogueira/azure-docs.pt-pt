@@ -42,8 +42,8 @@ As regras do NSG contêm as seguintes propriedades.
 |**Protocolo**|Protocolo a corresponder para a regra|TCP, UDP ou \*|Utilizar \* como um protocolo inclui o ICMP (apenas tráfego Este-Oeste), assim como o UDP e TCP e pode reduzir o número de regras necessárias<br/>Ao mesmo tempo, utilizar \* poderá ser uma abordagem demasiado abrangente, por isso, certifique-se de que utiliza apenas quando for realmente necessário|
 |**Intervalo de portas de origem**|O intervalo de portas de origem a corresponder para a regra|Número de porta individual entre 1 e 65535, intervalo de portas (ou seja, 1-65635) ou \* (para todas as portas)|As portas de origem podem ser efémeras. A menos que o seu programa cliente esteja a utilizar uma porta específica, utilize "*" na maioria dos casos.<br/>Tente utilizar intervalos de portas sempre que possível para evitar a necessidade de várias regras<br/>Várias portas ou intervalos de portas não podem ser agrupados por uma vírgula
 |**Intervalo de portas de destino**|O intervalo de portas de destino a corresponder para a regra|Número de porta individual entre 1 e 65535, intervalo de portas (ou seja, 1-65535) ou \* (para todas as portas)|Tente utilizar intervalos de portas sempre que possível para evitar a necessidade de várias regras<br/>Várias portas ou intervalos de portas não podem ser agrupados por uma vírgula
-|**Prefixo do endereço de origem**|Prefixo do endereço de origem ou etiqueta a corresponder para a regra|Endereço IP único (ou seja, 10.10.10.10), sub-rede IP (ou seja, 192.168.1.0/24), [etiqueta predefinida](#Default-Tags) ou * (para todos os endereços)|Considere a utilização de intervalos, etiquetas predefinidas e * para reduzir o número de regras|
-|**Prefixo do endereço de destino**|Prefixo do endereço de destino ou etiqueta a corresponder para a regra|Endereço IP único (ou seja, 10.10.10.10), sub-rede IP (ou seja, 192.168.1.0/24), [etiqueta predefinida](#Default-Tags) ou * (para todos os endereços)|Considere a utilização de intervalos, etiquetas predefinidas e * para reduzir o número de regras|
+|**Prefixo do endereço de origem**|Prefixo do endereço de origem ou etiqueta a corresponder para a regra|Endereço IP único (ou seja, 10.10.10.10), sub-rede IP (ou seja, 192.168.1.0/24), [etiqueta predefinida](#default-tags) ou * (para todos os endereços)|Considere a utilização de intervalos, etiquetas predefinidas e * para reduzir o número de regras|
+|**Prefixo do endereço de destino**|Prefixo do endereço de destino ou etiqueta a corresponder para a regra|Endereço IP único (ou seja, 10.10.10.10), sub-rede IP (ou seja, 192.168.1.0/24), [etiqueta predefinida](#default-tags) ou * (para todos os endereços)|Considere a utilização de intervalos, etiquetas predefinidas e * para reduzir o número de regras|
 |**Direção**|Direção do tráfego a corresponder para a regra|De entrada ou de saída|As regras de entrada e de saída são processadas em separado, com base na direção|
 |**Prioridade**|As regras são verificados por ordem de prioridade; assim que uma regra é aplicada, não são testadas mais regras para correspondência|Número entre 100 e 4096|Considere a criação de regras que saltem as prioridades em 100 para cada regra, para deixar espaço para a entrada de novas regras entre as regras existentes|
 |**Acesso**|Tipo de acesso a aplicar se a regra corresponder|Permitir ou negar|Tenha em atenção que se uma regra de permissão não for encontrada para um pacote, o pacote é ignorado|
@@ -124,13 +124,13 @@ Pode implementar NSGs nos modelos de implementação clássica e do Resource Man
 
 |Ferramenta de implementação|Clássica|Resource Manager|
 |---|---|---|
-|Portal clássico|![Não][red]|![Não][red]|
-|Portal do Azure|![Sim][green]|[](virtual-networks-create-nsg-arm-pportal.md)![Sim][green]|
-|PowerShell|[](virtual-networks-create-nsg-classic-ps.md)![Sim][green]|[](virtual-networks-create-nsg-arm-ps.md)![Sim][green]|
-|CLI do Azure|[](virtual-networks-create-nsg-classic-cli.md)![Sim][green]|[](virtual-networks-create-nsg-arm-cli.md)![Sim][green]|
-|Modelo ARM|![Não][red]|[](virtual-networks-create-nsg-arm-template.md)![Sim][green]|
+|Portal clássico|![Não](./media/virtual-network-nsg-overview/red.png)|![Não](./media/virtual-network-nsg-overview/red.png)|
+|Portal do Azure|![Sim](./media/virtual-network-nsg-overview/green.png)|[![Sim][verde]](virtual-networks-create-nsg-arm-pportal.md)|
+|PowerShell|[![Sim][verde]](virtual-networks-create-nsg-classic-ps.md)|[![Sim][verde]](virtual-networks-create-nsg-arm-ps.md)|
+|CLI do Azure|[![Sim][verde]](virtual-networks-create-nsg-classic-cli.md)|[![Sim][verde]](virtual-networks-create-nsg-arm-cli.md)|
+|Modelo ARM|![Não](./media/virtual-network-nsg-overview/red.png)|[![Sim][verde]](virtual-networks-create-nsg-arm-template.md)|
 
-|**Chave**|![Sim][green] Suportado. Clique para ver o artigo.|![Não][red] Não suportado.|
+|**Chave**|![Sim](./media/virtual-network-nsg-overview/green.png) Suportado.|![Não](./media/virtual-network-nsg-overview/red.png) Não suportado.|
 |---|---|---|
 
 ## Planeamento
@@ -278,12 +278,12 @@ Uma vez que alguns dos NSGs acima têm de ser associados a NICs individuais, tem
 - [Implementar NSGs no Resource Manager](virtual-networks-create-nsg-arm-pportal.md).
 - [Gerir registos de NSG](virtual-network-nsg-manage-log.md).
 
-[green]: ./media/virtual-network-nsg-overview/green.png
+[verde]: ./media/virtual-network-nsg-overview/green.png
 [yellow]: ./media/virtual-network-nsg-overview/yellow.png
 [red]: ./media/virtual-network-nsg-overview/red.png
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=sep16_HO1-->
 
 

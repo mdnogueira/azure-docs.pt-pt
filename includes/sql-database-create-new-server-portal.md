@@ -13,17 +13,17 @@ articles/sql-database/sql-database-get-started-tutorial.md
 Utilize os seguintes passos no portal do Azure para criar um servidor lógico da SQL Database do Azure.
 
 1. Se não estiver atualmente ligado, ligue-se ao [Portal do Azure](http://portal.azure.com).
-2. Clique em **Novo**, escreva **SQL Database** e clique em ** SQL Database (novo servidor lógico)**
+2. Clique em **Novo**, escreva **Base de Dados SQL** e clique em ** Base de Dados SQL (novo servidor lógico)**.
 
-      ![novo servidor lógico](./media/sql-database-create-new-server-portal/sql-database-create-new-server-portal-1.png)
+      ![Novo servidor lógico](./media/sql-database-create-new-server-portal/sql-database-create-new-server-portal-1.png)
 
-3. Clique em SQL Database (novo servidor lógico).
+3. Clique em **Base de Dados SQL (novo servidor lógico)**.
 
-      ![novo servidor lógico](./media/sql-database-create-new-server-portal/sql-database-create-new-server-portal-2.png)
-   
+      ![Novo servidor lógico](./media/sql-database-create-new-server-portal/sql-database-create-new-server-portal-2.png)
+
 4. Clique em **Criar** para abrir um modelo para criar um servidor lógico vazio para alojar bases de dados individuais e conjuntos de bases de dados elásticas.
 
-      ![novo servidor lógico](./media/sql-database-create-new-server-portal/sql-database-create-new-server-portal-3.png)
+      ![Novo servidor lógico](./media/sql-database-create-new-server-portal/sql-database-create-new-server-portal-3.png)
 
 5. Forneça os valores para as seguintes propriedades do servidor:
 
@@ -34,17 +34,18 @@ Utilize os seguintes passos no portal do Azure para criar um servidor lógico da
  - Grupo de recursos (novo ou existente)
  - Localização
 
-        ![new logical server](./media/sql-database-create-new-server-portal/sql-database-create-new-server-portal-4.png)
+        ![New logical server](./media/sql-database-create-new-server-portal/sql-database-create-new-server-portal-4.png)
 
-6.  Clique em **Criar** e, na área de notificação, pode ver que a implementação foi iniciada.
+6.  Clique em **Criar**. Na área de notificação, pode ver que a implementação foi iniciada.
 
-       ![novo servidor lógico](./media/sql-database-create-new-server-portal/sql-database-create-new-server-portal-5.png)
+       ![Novo servidor lógico](./media/sql-database-create-new-server-portal/sql-database-create-new-server-portal-5.png)
 
 7. Aguarde o fim da implementação antes avançar para o passo seguinte.
 
-       ![new logical server](./media/sql-database-create-new-server-portal/sql-database-create-new-server-portal-6.png)
+       ![New logical server](./media/sql-database-create-new-server-portal/sql-database-create-new-server-portal-6.png)
 
 
-<!--HONumber=Jun16_HO2-->
+
+<!--HONumber=sep16_HO1-->
 
 

@@ -34,14 +34,14 @@ U-SQL é uma linguagem hiper escalável e altamente extensível para preparar, t
 
     Assim que as Ferramentas do Data Lake para Visual Studio estiverem instaladas, verá um nó de "Data Lake Analytics" no Explorador de Servidores, no nó "Azure" (pode abrir o Explorador de Servidores ao premir Ctrl+Alt+S).
 
-- **Avance para as duas secções seguintes [Introdução ao Azure Data Lake Analytics com o Portal do Azure](data-lake-analytics-get-started-portal.md)**.
+- **Avance para as duas secções seguintes em [Introdução ao Azure Data Lake Analytics com o portal do Azure](data-lake-analytics-get-started-portal.md)**.
 
     - [Criar uma conta do Azure Data Lake Analytics](data-lake-analytics-get-started-portal.md#create_adl_analytics_account).
     - [Carregue SearchLog.tsv para a conta de Armazenamento do Data Lake predefinida](data-lake-analytics-get-started-portal.md#update-data-to-the-default-adl-storage-account).
 
     Para sua comodidade, um script de exemplo do PowerShell para criar um serviço de Análise do Data Lake e carregar o ficheiro de origem de dados pode ser encontrado na [Amostra de Appx-A PowerShell para preparar o tutorial](data-lake-analytics-data-lake-tools-get-started.md#appx-a-powershell-sample-for-preparing-the-tutorial).
 
-    As Ferramentas do Data Lake não suportam a criação de contas do Data Lake Analytics. Por isso, tem de criá-la utilizando o Portal do Azure, o Azure PowerShell, o SDK do .NET ou a CLI do Azure. Para executar uma tarefa do Data Lake Analytics, irá precisar de alguns dados. Apesar de as Ferramentas do Data Lake suportarem o carregamento de dados, irá utilizar o portal para carregar os dados de exemplo, de modo a facilitar seguir os passos neste tutorial.
+    As Ferramentas do Data Lake não suportam a criação de contas do Data Lake Analytics. Por isso, tem de criá-la utilizando o portal do Azure, a Azure PowerShell, o SDK do .NET ou a CLI do Azure. Para executar uma tarefa do Data Lake Analytics, irá precisar de alguns dados. Apesar de as Ferramentas do Data Lake suportarem o carregamento de dados, irá utilizar o portal para carregar os dados de exemplo, de modo a facilitar seguir os passos neste tutorial.
 
 ## Ligar ao Azure
 
@@ -50,7 +50,7 @@ U-SQL é uma linguagem hiper escalável e altamente extensível para preparar, t
 1. Abra o Visual Studio.
 2. No menu **Vista**, clique em **Explorador de Servidores** para abrir o Explorador de Servidores. Ou prima **[CTRL]+[ALT]+S**.
 3. Clique com o botão direito do rato em **Azure**, clique em "Ligar a Subscrição do Microsoft Azure" e, em seguida, siga as instruções.
-4. No **Explorador de Servidores**, expanda **Azure** e, em seguida, expanda **Data Lake Analytics**. Deve ver uma lista das suas contas do Data Lake Analytics, caso existam. Não é possível criar contas do Data Lake Analytics a partir do Visual Studio. Para criar uma conta, veja [Introdução ao Azure Data Lake Analytics com o portal do Azure](data-lake-analytics-get-started-portal.md) ou [Introdução ao Azure Data Lake Analytics com o Azure PowerShell](data-lake-analytics-get-started-powershell.md).
+4. No **Explorador de Servidores**, expanda **Azure** e, em seguida, expanda **Data Lake Analytics**. Deve ver uma lista das suas contas do Data Lake Analytics, caso existam. Não é possível criar contas do Data Lake Analytics a partir do Visual Studio. Para criar uma conta, veja [Introdução ao Azure Data Lake Analytics com o portal do Azure](data-lake-analytics-get-started-portal.md) ou [Introdução ao Azure Data Lake Analytics com a Azure PowerShell](data-lake-analytics-get-started-powershell.md).
 
 ## Carregar ficheiros de dados de origem
 
@@ -155,7 +155,7 @@ As tarefas de Data Lake Analytics são escritas em linguagem U-SQL. Para saber m
 
     - **Inserir Caminho do Azure**
 
-        Em vez de ver o caminho do ficheiro do Azure e digitá-lo manualmente ao escrever o script, as Ferramentas do Data Lake para Visual Studio fornecem uma forma fácil: clique com o botão direito do rato no editor, clique em Inserir Caminho do Azure. Navegue para o ficheiro na caixa de diálogo do Browser de Blobs do Azure. Clique em **OK**. o caminho do ficheiro será inserido no seu código.
+        Em vez de memorizar o caminho do ficheiro do Azure e digitá-lo manualmente quando escrever o script, as Ferramentas do Data Lake para Visual Studio fornecem uma solução fácil: clique com o botão direito do rato no editor, clique em Inserir Caminho do Azure. Navegue para o ficheiro na caixa de diálogo do Browser de Blobs do Azure. Clique em **OK**. o caminho do ficheiro será inserido no seu código.
 
 5. Especifique a conta do Data Lake Analytics, a Base de Dados e o Esquema. Pode selecionar **(local)** para executar o script localmente, para efeitos de teste. Para obter mais informações, veja [Executar U-SQL localmente](#run-u-sql-locally).
 
@@ -242,7 +242,7 @@ O vídeo seguinte demonstra a funcionalidade de execução local do U-SQL:
     Para scripts executados no serviço do Data Lake, a conta de armazenamento predefinida será utilizada como pasta raiz e a procura será efetuada em conformidade.
 
 ### Testar scripts U-SQL localmente
-Para obter instruções sobre como desenvolver scripts U-SQL, veja [Desenvolver scripts U-SQL](#develop-and-test-u-sql-scripts). Para criar e executar scripts U-SQL localmente, selecione **(Local)** no cluster na lista pendente e, em seguida, clique em **Submeter**. Certifique-se de que tem os dados adequados referenciados - faça referência ao caminho absoluto ou coloque os dados na pasta DataRoot.
+Para obter instruções sobre como desenvolver scripts U-SQL, veja [Desenvolver scripts U-SQL](#develop-and-test-u-sql-scripts). Para criar e executar scripts U-SQL localmente, selecione **(Local)** no cluster na lista pendente do cluster e, em seguida, clique em **Submeter**. Certifique-se de que tem os dados adequados referenciados - faça referência ao caminho absoluto ou coloque os dados na pasta DataRoot.
 
 ![Submeter projeto do Visual Studio do U-SQL localmente](./media/data-lake-analytics-data-lake-tools-get-started/data-lake-analytics-data-lake-tools-submit-job-local-run.png)
 
@@ -279,9 +279,10 @@ O procedimento seguinte só funciona no Visual Studio 2015. No Visual Studio ant
 
 Para iniciar o Data Lake Analytics com ferramentas diferentes, veja:
 
-- [Introdução ao Data Lake Analytics com o Portal do Azure](data-lake-analytics-get-started-portal.md)
+- [Introdução ao Data Lake Analytics com o portal do Azure](data-lake-analytics-get-started-portal.md)
 - [Introdução ao Data Lake Analytics com o Azure PowerShell](data-lake-analytics-get-started-powershell.md)
 - [Introdução ao Data Lake Analytics com o SDK .NET](data-lake-analytics-get-started-net-sdk.md)
+- [Depuração do código c# nas tarefas U-SQL](data-lake-analytics-debug-u-sql-jobs.md)
 
 Para ver mais tópicos de desenvolvimento:
 
@@ -364,6 +365,6 @@ O seguinte script do PowerShell prepara uma conta do Azure Data Lake Analytics e
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=sep16_HO1-->
 
 

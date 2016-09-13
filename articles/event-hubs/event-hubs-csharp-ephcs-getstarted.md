@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="hero-article"
-    ms.date="08/19/2016"
+    ms.date="09/02/2016"
     ms.author="sethm"/>
 
 # Introdução ao Event Hubs
@@ -96,6 +96,6 @@ Agora que compilou uma aplicação de trabalho que cria um Hub de Eventos e envi
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=sep16_HO1-->
 
 

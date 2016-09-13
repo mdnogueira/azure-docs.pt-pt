@@ -48,7 +48,7 @@ Nesta secção, irá criar uma aplicação de consola do Node.js que cria uma no
     npm init
     ```
 
-2. Na sua linha de comandos da pasta **createdeviceidentity**, execute o seguinte comando para instalar o pacote **azure iothub**:
+2. Na sua linha de comandos na pasta **createdeviceidentity**, execute o seguinte comando para instalar o pacote SDK do Serviço **azure-iothub**:
 
     ```
     npm install azure-iothub --save
@@ -154,7 +154,7 @@ Nesta secção, irá criar uma aplicação de consola do Node.js que lê mensage
     };
     ```
 
-7. Adicione o seguinte código para criar o **EventHubClient**, abra a ligação ao seu Hub IoT e crie um recetor para cada partição. Esta aplicação utiliza um filtro quando cria o recetor . Deste modo, o recetor apenas poderá ler as mensagens enviadas ao IoT Hub depois de o recetor entrar em execução. Esta ação torna-se útil num ambiente de teste, de modo a que veja apenas o conjunto atual de mensagens. No entanto, num ambiente de produção, deverá certificar-se de que o seu código processa todas as mensagens. Para mais informações, consulte o tutorial [Como processar mensagens do dispositivo para a nuvem do Hub IoT][Ink-process-d2c-tutorial]:
+7. Adicione o seguinte código para criar o **EventHubClient**, abra a ligação ao seu Hub IoT e crie um recetor para cada partição. Esta aplicação utiliza um filtro quando cria o recetor . Deste modo, o recetor apenas poderá ler as mensagens enviadas ao IoT Hub depois de o recetor entrar em execução. Esta ação torna-se útil num ambiente de teste, de modo a que veja apenas o conjunto atual de mensagens. No entanto, num ambiente de produção, deverá certificar-se de que o seu código processa todas as mensagens. Para mais informações, consulte o tutorial [Como processar mensagens do dispositivo para a nuvem do Hub IoT][lnk-process-d2c-tutorial]:
 
     ```
     var client = EventHubClient.fromConnectionString(connectionString);
@@ -184,7 +184,7 @@ Nesta secção, irá criar uma aplicação de consola do Node.js que simula um d
     npm init
     ```
 
-2. Na sua linha de comandos da pasta **simulateddevice**, execute o seguinte comando para instalar o pacote **azure-iot-device-amqp**:
+2. Na sua linha de comandos na pasta **simulateddevice**, execute o seguinte comando para instalar o pacote SDK do Serviço **azure-iot-device** e o pacote **azure-iot-device-amqp**:
 
     ```
     npm install azure-iot-device azure-iot-device-amqp --save
@@ -286,7 +286,7 @@ Para continuar a introdução ao Hub IoT e explorar outros cenários de IoT, vej
 - [Introdução à gestão de dispositivos][lnk-device-management]
 - [Introdução ao SDK do Gateway][lnk-gateway-SDK]
 
-Para saber como expandir a sua solução de IoT e processar mensagens do dispositivo para a nuvem à escala, veja o tutorial [Process device-to-cloud messages (Processar mensagens do dispositivo para a nuvem)][Ink-process-d2c-tutorial].
+Para saber como expandir a sua solução de IoT e processar mensagens do dispositivo para a nuvem à escala, veja o tutorial [Process device-to-cloud messages (Processar mensagens do dispositivo para a nuvem)][lnk-process-d2c-tutorial].
 
 <!-- Images. -->
 [6]: ./media/iot-hub-node-node-getstarted/create-iot-hub6.png
@@ -297,22 +297,23 @@ Para saber como expandir a sua solução de IoT e processar mensagens do disposi
 <!-- Links -->
 [Ink-transitório-lento]: https://msdn.microsoft.com/library/hh680901(v=pandp.50).aspx
 
-[lnk-eventhubs-tutorial]: ../event-hubs/event-hubs-csharp-ephcs-getstarted.md
+[Ink-eventhubs-tutorial]: ../event-hubs/event-hubs-csharp-ephcs-getstarted.md
 [lnk-devguide-identity]: iot-hub-devguide.md#identityregistry
 [lnk-event-hubs-overview]: ../event-hubs/event-hubs-overview.md
 
-[lnk-dev-setup]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/get_started/node-devbox-setup.md
+[Ink-dev-setup]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/get_started/node-devbox-setup.md
 [lnk-process-d2c-tutorial]: iot-hub-csharp-csharp-process-d2c.md
 
 [lnk-hub-sdks]: iot-hub-sdks-summary.md
 [lnk-free-trial]: http://azure.microsoft.com/pricing/free-trial/
-[lnk-portal]: https://portal.azure.com/
+[Ink-portal]: https://portal.azure.com/
 
 [lnk-device-management]: iot-hub-device-management-get-started.md
 [lnk-gateway-SDK]: iot-hub-linux-gateway-sdk-get-started.md
 [lnk-connect-device]: https://azure.microsoft.com/develop/iot/
 
 
-<!--HONumber=Aug16_HO1-->
+
+<!--HONumber=sep16_HO1-->
 
 

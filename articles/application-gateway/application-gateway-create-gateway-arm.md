@@ -12,14 +12,13 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/09/2016"
+   ms.date="09/06/2016"
    ms.author="gwallace"/>
 
 
 # Criar, iniciar ou eliminar um gateway de aplicação com o Azure Resource Manager
 
 O Application Gateway do Azure é um balanceador de carga de 7 camadas. Fornece ativação pós-falha, pedidos HTTP de encaminhamento de desempenho entre diversos servidores, quer estejam na nuvem ou no local. O Aplicação Gateway tem as seguintes funcionalidades de entrega de aplicações: balanceamento de carga HTTP, afinidade de sessão com base em cookies e descarga de SSL (Secure Sockets Layer).
-
 
 > [AZURE.SELECTOR]
 - [Portal do Azure](application-gateway-create-gateway-portal.md)
@@ -28,14 +27,10 @@ O Application Gateway do Azure é um balanceador de carga de 7 camadas. Fornece 
 - [Modelo Azure Resource Manager](application-gateway-create-gateway-arm-template.md)
 - [CLI do Azure](application-gateway-create-gateway-cli.md)
 
-<BR>
-
-
 Este artigo descreve os passos para criar, configurar, iniciar e eliminar um gateway de aplicação.
 
 
 >[AZURE.IMPORTANT] Antes de trabalhar com recursos do Azure, é importante compreender que o Azure tem atualmente dois modelos de implementação: Resource Manager e clássico. Certifique-se de que compreende os [modelos e ferramentas de implementação](../azure-classic-rm.md) antes de trabalhar com qualquer recurso do Azure. Pode ver a documentação de diversas ferramentas clicando nos separadores na parte superior deste artigo. Este documento aborda a criação de um gateway de aplicação com o Azure Resource Manager. Para utilizar a versão clássica, aceda a [Create an application gateway classic deployment by using PowerShell (Criar uma implementação clássica do gateway de aplicação com o PowerShell)](application-gateway-create-gateway.md).
-
 
 
 ## Antes de começar
@@ -46,21 +41,17 @@ Este artigo descreve os passos para criar, configurar, iniciar e eliminar um gat
 
 ## O que é necessário para criar um gateway de aplicação?
 
-
 - **Conjunto de servidores de back-end:** a lista de endereços IP dos servidores de back-end. Os endereços IP listados devem pertencer à sub-rede da rede virtual ou ter um IP/VIP público.
 - **Definições do conjunto de servidores de back-end:** cada conjunto tem definições como a porta, o protocolo e a afinidade com base em cookies. Estas definições estão associadas a um conjunto e são aplicadas a todos os servidores do referido conjunto.
 - **Porta de front-end:** esta porta é a porta pública aberta no gateway de aplicação. O tráfego chega a esta porta, sendo posteriormente redirecionado para um dos servidores de back-end.
 - **Serviço de escuta:** o serviço de escuta tem uma porta de front-end, um protocolo (Http ou Https; estes valores são sensíveis às maiúsculas e minúsculas) e o nome do certificado SSL (se configurar a descarga de SSL).
 - **Regra:** a regra vincula o serviço de escuta e o conjunto de servidores de back-end e define para que conjunto de servidores de back-end o tráfego deve ser direcionado ao chegar a um determinado serviço de escuta. 
 
-
-
 ## Criar um gateway de aplicação
 
 A diferença entre a utilização do Azure Clássico e do Azure Resource Manager é a ordem pela qual vai criar o gateway de aplicação e os itens que devem ser configurados.
 
 Com o Resource Manager, todos os itens que irão constituir um gateway de aplicação serão configurados individualmente e, em seguida, reunidos para criar o recurso do gateway de aplicação.
-
 
 Os passos necessários para criar um gateway de aplicação estão descritos abaixo.
 
@@ -69,31 +60,36 @@ Os passos necessários para criar um gateway de aplicação estão descritos aba
 Verifique se está a utilizar a versão mais recente do Azure PowerShell. Para obter mais informações, veja [Using Windows PowerShell with Resource Manager (Usar o Windows PowerShell com o Resource Manager)](../powershell-azure-resource-manager.md).
 
 ### Passo 1
-Inicie sessão no Azure Login-AzureRmAccount
 
-Ser-lhe-á solicitado para autenticar com as suas credenciais.<BR>
+Iniciar sessão no Azure
+    
+    Login-AzureRmAccount
+
+Ser-lhe-á solicitado para autenticar com as suas credenciais.
+
 ### Passo 2
+
 Verifique as subscrições da conta.
 
-        Get-AzureRmSubscription
+    Get-AzureRmSubscription
 
 ### Passo 3
-Escolha qual das subscrições do Azure utilizar. <BR>
 
-        Select-AzureRmSubscription -Subscriptionid "GUID of subscription"
+Escolha qual das subscrições do Azure utilizar.
+
+    Select-AzureRmSubscription -Subscriptionid "GUID of subscription"
 
 ### Passo 4
-Crie um grupo de recursos (ignore este passo se estiver a utilizar um grupo de recursos existente).
 
-    New-AzureRmResourceGroup -Name appgw-rg -location "West US"
+Crie um novo grupo de recursos (ignore este passo se estiver a utilizar um grupo de recursos existente).
+
+    New-AzureRmResourceGroup -Name appgw-rg -Location "West US"
 
 O Azure Resource Manager requer que todos os grupos de recursos especifiquem uma localização, que é utilizada como a localização predefinida para os recursos nesse grupo de recursos. Verifique se todos os comandos para criar um gateway de aplicação utilizam o mesmo grupo de recursos.
 
 No exemplo acima, criámos um grupo de recursos denominado “appgw-RG” e a localização “EUA Oeste”.
 
 >[AZURE.NOTE] Se tiver de configurar uma sonda personalizada para o gateway de aplicação, veja [Create an application gateway with custom probes by using PowerShell (Criar um gateway de aplicação com sondas personalizadas com o PowerShell)](application-gateway-create-probe-ps.md). Veja [monitorização das sondas personalizadas e do estado de funcionamento](application-gateway-probe-overview.md) para obter mais informações.
-
-
 
 ## Criar uma rede virtual e uma sub-rede para o gateway de aplicação
 
@@ -105,13 +101,11 @@ Atribua o intervalo de endereços 10.0.0.0/24 à variável da sub-rede a utiliza
 
     $subnet = New-AzureRmVirtualNetworkSubnetConfig -Name subnet01 -AddressPrefix 10.0.0.0/24
 
-
 ### Passo 2
 
 Crie uma rede virtual com o nome “appgwvnet” no grupo de recursos “appgw-rg” para a região EUA Oeste utilizando o prefixo 10.0.0.0/16 com a sub-rede 10.0.0.0/24.
 
     $vnet = New-AzureRmVirtualNetwork -Name appgwvnet -ResourceGroupName appgw-rg -Location "West US" -AddressPrefix 10.0.0.0/16 -Subnet $subnet
-
 
 ### Passo 3
 
@@ -134,9 +128,7 @@ Tem de configurar todos os itens de configuração antes de criar o gateway de a
 
 Crie uma configuração de IP do gateway de aplicação com o nome “gatewayIP01”. Quando é iniciado, o Gateway de Aplicação escolhe um endereço IP na sub-rede configurada e encaminha o tráfego da rede para os endereços IP no conjunto de IPs do back-end. Note que cada instância terá um endereço IP.
 
-
     $gipconfig = New-AzureRmApplicationGatewayIPConfiguration -Name gatewayIP01 -Subnet $subnet
-
 
 ### Passo 2
 
@@ -144,14 +136,11 @@ Configure o conjunto de endereços IP de front-end com o nome “pool01” com o
 
     $pool = New-AzureRmApplicationGatewayBackendAddressPool -Name pool01 -BackendIPAddresses 134.170.185.46, 134.170.188.221,134.170.185.50
 
-
-
 ### Passo 3
 
 Configure a definição do gateway de aplicação “poolsetting01” para o tráfego de rede com balanceamento de carga no conjunto de back-end.
 
     $poolSetting = New-AzureRmApplicationGatewayBackendHttpSettings -Name poolsetting01 -Port 80 -Protocol Http -CookieBasedAffinity Disabled
-
 
 ### Passo 4
 
@@ -164,7 +153,6 @@ Configure a porta IP de front-end com o nome “frontendport01” para o ponto f
 Crie a configuração do IP de front-end com o nome “fipconfig01” e associe o endereço IP público à configuração do IP de front-end.
 
     $fipconfig = New-AzureRmApplicationGatewayFrontendIPConfig -Name fipconfig01 -PublicIPAddress $publicip
-
 
 ### Passo 6
 
@@ -197,26 +185,6 @@ Obter os detalhes de DNS e VIP do gateway da aplicação do recurso de IP públi
 
     Get-AzureRmPublicIpAddress -Name publicIP01 -ResourceGroupName appgw-rg  
 
-    Name                     : publicIP01
-    ResourceGroupName        : appgwtest 
-    Location                 : westus
-    Id                       : /subscriptions/<sub_id>/resourceGroups/appgw-rg/providers/Microsoft.Network/publicIPAddresses/publicIP01
-    Etag                     : W/"12302060-78d6-4a33-942b-a494d6323767"
-    ResourceGuid             : ee9gd76a-3gf6-4236-aca4-gc1f4gf14171
-    ProvisioningState        : Succeeded
-    Tags                     : 
-    PublicIpAllocationMethod : Dynamic
-    IpAddress                : 137.116.26.16
-    IdleTimeoutInMinutes     : 4
-    IpConfiguration          : {
-                                 "Id": "/subscriptions/<sub_id>/resourceGroups/appgw-rg/providers/Microsoft.Network/applicationGateways/appgwtest/frontendIPConfigurations/fipconfig01"
-                               }
-    DnsSettings              : {
-                                 "Fqdn": "ee7aca47-4344-4810-a999-2c631b73e3cd.cloudapp.net"
-                               } 
-
-
-
 ## Eliminar um gateway de aplicação
 
 Siga estes passos para eliminar um gateway de aplicação:
@@ -225,7 +193,7 @@ Siga estes passos para eliminar um gateway de aplicação:
 
 Obtenha o objeto do gateway de aplicação e associe-o a uma variável “$getgw”.
 
-    $getgw =  Get-AzureRmApplicationGateway -Name appgwtest -ResourceGroupName appgw-rg
+    $getgw = Get-AzureRmApplicationGateway -Name appgwtest -ResourceGroupName appgw-rg
 
 ### Passo 2
 
@@ -263,6 +231,6 @@ Se pretender obter mais informações sobre as opções de balanceamento de carg
 
 
 
-<!--HONumber=ago16_HO5-->
+<!--HONumber=sep16_HO1-->
 
 

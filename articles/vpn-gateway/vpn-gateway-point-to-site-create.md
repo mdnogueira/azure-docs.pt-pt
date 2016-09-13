@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Configurar uma ligação VPN Ponto a Site para uma Virtual Network do Azure através do portal clássico | Microsoft Azure"
-   description="Ligue-se de forma segura à Virtual Network do Azure criando uma ligação VPN Ponto a Site."
+   pageTitle="Configurar uma ligação de gateway de VPN Ponto a Site para uma Virtual Network do Azure através do portal clássico | Microsoft Azure"
+   description="Ligue-se de forma segura à Rede Virtual do Azure criando uma ligação de gateway de VPN Ponto a Site."
    services="vpn-gateway"
    documentationCenter="na"
    authors="cherylmc"
@@ -144,16 +144,30 @@ Para ligar à rede virtual, também tem de configurar um cliente VPN. O cliente 
 
 3. Depois de gerar e transferir o pacote de clientes VPN do Portal Clássico do Azure, pode instalá-lo no computador cliente a partir do qual pretende ligar-se à rede virtual. Se planear instalar o pacote de clientes VPN em vários computadores cliente, verifique se cada um também tem um certificado de cliente instalado.
 
-### Parte 2: instalar o pacote de configuração de VPN no cliente e iniciar a ligação
+### Parte 2: instalar o pacote de configuração de VPN no cliente
 
-1. Copie o ficheiro de configuração localmente para o computador que pretende ligar à rede virtual e faça duplo clique no ficheiro .exe. Depois de instalar o pacote, pode iniciar a ligação VPN. O pacote de configuração não está assinado pela Microsoft. Poderá pretender assinar o pacote utilizando o serviço de assinatura da sua organização ou o pacote pode ser assinado por si através da [SignTool]( http://go.microsoft.com/fwlink/p/?LinkId=699327). Pode utilizar o pacote sem assinar. No entanto, se o pacote não for assinado, é apresentado um aviso quando instalar o pacote.
-2. No computador cliente, navegue até às ligações VPN e localize a ligação VPN que criou. Terá o mesmo nome que a rede virtual. Clique em **Ligar**.
-3. É apresentada uma mensagem de pop-up utilizada para criar um certificado autoassinado para o ponto final do Gateway. Clique em **Continuar** para utilizar privilégios elevados.
-4. Na página de estado da **Ligação**, clique em **Ligar** para iniciar a ligação.
-5. Se vir um ecrã **Selecionar Certificado**, verifique se o certificado de cliente apresentado é aquele que pretende utilizar para se ligar. Se não for, utilize a seta para baixo para selecionar o certificado correto e clique em **OK**.
-6. Agora, está ligado à rede virtual e tem acesso total a qualquer serviço e máquina virtual alojada na rede virtual.
+1. Copie o ficheiro de configuração localmente para o computador que pretende ligar à rede virtual e faça duplo clique no ficheiro .exe. 
 
-### Parte 3: verificar a ligação VPN
+2. Depois de instalar o pacote, pode iniciar a ligação VPN. O pacote de configuração não está assinado pela Microsoft. Poderá pretender assinar o pacote utilizando o serviço de assinatura da sua organização ou o pacote pode ser assinado por si através da [SignTool]( http://go.microsoft.com/fwlink/p/?LinkId=699327). Pode utilizar o pacote sem assinar. No entanto, se o pacote não for assinado, é apresentado um aviso quando instalar o pacote.
+
+3. No computador cliente, navegue para **Definições de Rede** e clique em **VPN**. Verá a ligação listada. Mostra o nome da rede virtual à qual se vai ligar e terá um aspeto semelhante a: 
+
+    ![cliente de VPN](./media/vpn-gateway-point-to-site-create/vpn.png "VPN client")
+
+
+### Parte 3: ligar ao Azure
+
+1. Para se ligar à sua VNet, no computador cliente, navegue até às ligações VPN e localize a ligação VPN que criou. Tem o mesmo nome da sua rede virtual. Clique em **Ligar**. Poderá aparecer uma mensagem pop-up que se refere à utilização do certificado. Se isto ocorrer, clique em **Continuar** para utilizar privilégios elevados. 
+
+2. Na página de estado da **Ligação**, clique em **Ligar** para iniciar a ligação. Se vir um ecrã **Selecionar Certificado**, verifique se o certificado de cliente apresentado é aquele que pretende utilizar para se ligar. Se não for, utilize a seta para baixo para selecionar o certificado correto e clique em **OK**.
+
+    ![cliente de VPN 2](./media/vpn-gateway-point-to-site-create/clientconnect.png "VPN client connection")
+
+3. A ligação deve ser agora estabelecida.
+
+    ![cliente de VPN 3](./media/vpn-gateway-point-to-site-create/connected.png "VPN client connection 2")
+
+### Parte 4: verificar a ligação VPN
 
 1. Para verificar se a ligação VPN está ativa, abra uma linha de comandos elevada e execute *ipconfig/all*.
 2. Veja os resultados. Repare que o endereço IP que recebeu é um dos endereços dentro do intervalo de endereços de conetividade Ponto a Site que especificou quando criou a VNet. Os resultados deverão ser algo semelhante a isto:
@@ -181,6 +195,6 @@ Se pretender obter mais informações sobre Redes Virtuais, veja a página [Docu
 
 
 
-<!--HONumber=ago16_HO5-->
+<!--HONumber=sep16_HO1-->
 
 

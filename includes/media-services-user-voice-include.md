@@ -10,6 +10,6 @@ Utilize o fórum do [UserVoice](http://go.microsoft.com/fwlink/?linkid=698785&cl
 - [Transmissão VoD](https://feedback.azure.com/forums/169396-media-services/category/144429-vod-streaming/)
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=sep16_HO1-->
 
 

@@ -3,7 +3,7 @@
    description="Utiliza o bcp para exportar dados do SQL Server para ficheiros simples, o AZCopy para importar dados para o armazenamento de blobs do Azure e o PolyBase para incorporar os dados no Azure SQL Data Warehouse."
    services="sql-data-warehouse"
    documentationCenter="NA"
-   authors="lodipalm"
+   authors="ckarst"
    manager="barbkess"
    editor=""/>
 
@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
    ms.date="06/30/2016"
-   ms.author="lodipalm;barbkess;sonyama"/>
+   ms.author="cakarst;barbkess;sonyama"/>
 
 
 # Carregar dados do SQL Server para o Azure SQL Data Warehouse (AZCopy)
@@ -174,6 +174,6 @@ Para mais sugestões de desenvolvimento, consulte [Descrição geral do desenvol
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=sep16_HO1-->
 
 

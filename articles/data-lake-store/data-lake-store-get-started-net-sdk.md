@@ -27,7 +27,7 @@
 - [CLI do Azure](data-lake-store-get-started-cli.md)
 - [Node.js](data-lake-store-manage-use-nodejs.md)
 
-Aprenda a utilizar o SDK .NET do Azure Data Lake Store para criar uma conta do Azure Data Lake e executar operações básicas, tais como criar pastas, carregar e transferir ficheiros de dados, eliminar a conta, entre outras. Para obter mais informações sobre o Data Lake, veja [Azure Data Lake Store](data-lake-store-overview.md).
+Aprenda a utilizar o [SDK .NET do Azure Data Lake Store ](https://msdn.microsoft.com/library/mt581387.aspx) para criar uma conta do Azure Data Lake e executar operações básicas, como criar pastas, carregar e transferir ficheiros de dados, eliminar a conta, entre outras. Para obter mais informações sobre o Data Lake, veja [Azure Data Lake Store](data-lake-store-overview.md).
 
 ## Pré-requisitos
 
@@ -220,6 +220,8 @@ O fragmento seguinte mostra um método `UploadFile` que pode utilizar para carre
         var uploader = new DataLakeStoreUploader(parameters, frontend);
         uploader.Execute();
     }
+
+O DataLakeStoreUploader suporta carregamento e transferência recursivos entre um caminho de ficheiro (ou pasta) local para o Data Lake Store.    
 
 ## Obter as informações do ficheiro ou diretório
 
@@ -525,9 +527,11 @@ Por fim, certifique-se de que o caminho local e o nome de ficheiro fornecidos aq
 - [Proteger dados no Data Lake Store](data-lake-store-secure-data.md)
 - [Utilizar o Azure Data Lake Analytics com o Data Lake Store](../data-lake-analytics/data-lake-analytics-get-started-portal.md)
 - [Utilizar o Azure HDInsight com o Data Lake Store](data-lake-store-hdinsight-hadoop-use-portal.md)
+- [Referência do SDK .NET do Data Lake Store](https://msdn.microsoft.com/library/mt581387.aspx)
+- [Referência do REST do Data Lake Store](https://msdn.microsoft.com/library/mt693424.aspx)
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=sep16_HO1-->
 
 

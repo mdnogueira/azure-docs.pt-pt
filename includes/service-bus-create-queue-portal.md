@@ -26,6 +26,6 @@ Certifique-se que já criou um espaço de nomes do Service Bus, como mostrado [a
 [azure-portal]: https://portal.azure.com
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=sep16_HO1-->
 
 

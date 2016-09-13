@@ -1,5 +1,5 @@
 <properties 
-    pageTitle="Configurar a análise da aplicação Web do ASP.NET com o Application Insights" 
+    pageTitle="Configurar a análise da aplicação Web do ASP.NET com o Application Insights | Microsoft Azure" 
     description="Configure a análise de desempenho, disponibilidade e utilização do seu site ASP.NET, alojado no local ou no Azure." 
     services="application-insights" 
     documentationCenter=".net"
@@ -118,17 +118,17 @@ Por isso, o comando faz três ações:
 2. Cria um recurso do Application Insights no [portal do Azure](https://portal.azure.com/). É aqui que verá os seus dados. Obtém a *chave de instrumentação*, a qual identifica o recurso.
 3. Insere a chave de instrumentação em `ApplicationInsights.config`, para que o SDK possa enviar a telemetria para o portal.
 
-Se quiser, pode executar estes passos manualmente para [ASP.NET 4](app-insights-asp-net-manual.md) ou [ASP.NET Core](https://github.com/Microsoft/ApplicationInsights-aspnetcore/wiki/Getting-Started).
+Se quiser, pode executar estes passos manualmente para [ASP.NET 4](app-insights-windows-services.md) ou [ASP.NET Core](https://github.com/Microsoft/ApplicationInsights-aspnetcore/wiki/Getting-Started).
 
 ### Para atualizar para versões futuras do SDK
 
-Para atualizar para uma [nova versão do SDK](app-insights-release-notes-dotnet.md), abra o gestor de pacotes NuGet novamente e filtre os pacotes instalados. Selecione Microsoft.ApplicationInsights.Web e escolha Atualizar.
+Para atualizar para uma [nova versão do SDK](https://github.com/Microsoft/ApplicationInsights-dotnet-server/releases), abra o gestor de pacotes NuGet novamente e filtre os pacotes instalados. Selecione Microsoft.ApplicationInsights.Web e escolha Atualizar.
 
 Se tiver efetuado personalizações no ApplicationInsights.config, guarde uma cópia do mesmo antes de atualizar e, posteriormente, intercale as alterações na nova versão.
 
 
 
-## Passos seguintes?
+## Passos seguintes
 
 | | 
 |---|---
@@ -144,6 +144,6 @@ Se tiver efetuado personalizações no ApplicationInsights.config, guarde uma c�
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=sep16_HO1-->
 
 

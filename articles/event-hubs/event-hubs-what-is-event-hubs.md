@@ -30,8 +30,6 @@ Os Event Hubs são um serviço de processamento de eventos que permitem o proces
 
 Mais algumas capacidades chave dos Event Hubs incluem o controlo do comportamento em aplicações móveis, as informações de tráfego de Web farms, a captura de eventos nos jogos de consola ou a telemetria recolhida a partir de máquinas industriais ou veículos ligados.
 
-Ao contrário dos [tópicos e filas do Service Bus](../service-bus/service-bus-messaging-overview.md), os Event Hubs centram-se em permitir o processamento de transmissão das mensagem à escala. Por exemplo, as capacidades dos Event Hubs diferem dos tópicos do Service Bus na medida em que estes são totalmente direcionados para os cenários de processamento de eventos de débito alto. Como resultado, os Event Hubs não implementam algumas das capacidades de mensagens que estão disponíveis para os [tópicos](../service-bus/service-bus-fundamentals-hybrid-solutions.md#topics). Se precisar dessas funcionalidades, os tópicos continuam a ser a escolha ideal.
-
 ## Passos seguintes
 
 Para obter informações detalhadas sobre os Event Hubs, consulte os tópicos seguintes.
@@ -47,6 +45,6 @@ Para obter informações detalhadas sobre os Event Hubs, consulte os tópicos se
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=sep16_HO1-->
 
 

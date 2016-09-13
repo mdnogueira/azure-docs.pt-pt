@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="07/28/2016"
+    ms.date="09/01/2016"
     ms.author="mandia"/>
 
 
@@ -35,9 +35,7 @@ Nome | Descrição
 [Bing Translator](https://azure.microsoft.com/marketplace/partners/bing/microsofttranslator/) | Utilize o Bing para traduzir texto para outro idioma.
 [HTTP](app-service-logic-connector-http.md) | O Serviço de Escuta de HTTP abre um ponto final que age como um servidor HTTP e escuta pedidos HTTP ou HTTPS recebidos. A ação de HTTP não necessita de uma Aplicação API e é suportada nativamente em Logic Apps.
 [Microsoft Office 365](app-service-logic-connector-office365.md) | O conector do Office 365 pode enviar e receber e-mails, gerir o seu calendário e gerir os seus contactos com a sua conta do Office 365.
-[QuickBooks](app-service-logic-connector-quickbooks.md) | Pode concluir tarefas diferentes, incluindo a criação, atualização e consulta de entidades diferentes a partir do Intuit QuickBooks como os clientes, faturas, itens e assim sucessivamente.
 [Slack](app-service-logic-connector-slack.md) | Ligue-se ao Slack e publique mensagens nos canais Slack.
-[Wait](app-service-logic-connector-wait.md) | Utilize este conector para atrasar a execução da sua aplicação. Pode atrasar a aplicação durante um período específico ou até uma ocorrência num momento específico.
 
 
 ## Conectores de Integração do Enterprise
@@ -61,9 +59,6 @@ Nome  | Descrição
 [Informix](app-service-logic-connector-informix.md) | Estabelece ligação a uma base de dados IBM Informix no local e numa máquina virtual do Azure em execução num sistema operativo Windows. É possível mapear operações API Web e API OData para comandos Informix Structured Query Language.<br/><br/>Nenhum acionador. As ações incluem selecionar, inserir, atualizar, eliminar tabela e declaração personalizada.<br/><br/>Se utilizar no local, podem ser utilizadas a VPN ou Azure ExpressRoute. Este conector também inclui o Cliente Microsoft para DRDA para ligar a um servidor Informix através de uma rede TCP/IP.
 [Microsoft SQL Server](app-service-logic-connector-sql.md) | Estabelece ligação ao SQL Server no local ou a uma SQL Database do Azure. Pode criar, atualizar, obter e eliminar entradas numa tabela de SQL Database.
 MQ | Estabelece ligação à versão 8 do IBM WebSphere MQ Server no local e numa máquina virtual do Azure em execução num sistema operativo Windows. Se utilizar no local, podem ser utilizadas a VPN ou Azure ExpressRoute. O conector também inclui o Cliente Microsoft para MQ.<br/><br/>Nenhum acionador. Nenhuma ação.<br/><br/>**Nota** Atualmente não pode ser utilizado com Logic Apps.
-[Base de dados Oracle](app-service-logic-connector-oracle.md) | Estabelece ligação à Base de Dados Oracle no local e pode criar, atualizar, obter e eliminar entradas numa tabela de base de dados.
-[POP3](app-service-logic-connector-pop3.md) (Post Office Protocol)| Liga a um servidor POP3 para obter mensagens de correio eletrónico com anexos.
-[SAP](app-service-logic-connector-sap.md) | Liga a um servidor SAP no local e invoca RFCs, BAPIs e tRFCs e envia IDOCs.
 
 ## Conectores como Acionadores
 Vários conectores fornecem acionadores para Logic Apps. Estes acionadores são de dois tipos:
@@ -86,6 +81,6 @@ Os conectores também podem ser utilizados como ações na sua Aplicação Lógi
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=sep16_HO1-->
 
 

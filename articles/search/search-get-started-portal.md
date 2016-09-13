@@ -14,7 +14,7 @@
     ms.workload="search" 
     ms.topic="hero-article" 
     ms.tgt_pltfrm="na" 
-    ms.date="05/17/2016" 
+    ms.date="08/29/2016" 
     ms.author="heidist"/>
 
 # Introdução à Azure Search no portal
@@ -23,7 +23,7 @@ Esta introdução sem código ajuda-o a trabalhar com a Pesquisa do Microsoft Az
 
 O tutorial assume uma [base de dados de DocumentDB do Azure de exemplo](#apdx-sampledata) fácil de criar utilizando os nossos dados e instruções, mas também pode adaptar estes passos aos seus dados existentes no DocumentDB ou na Base de Dados SQL.
 
-> [AZURE.NOTE] Este Tutorial de introdução requer uma [Subscrição do Azure](../../includes/free-trial-note.md) e um [Serviço da Azure Search](search-create-service-portal.md). 
+> [AZURE.NOTE] Este Tutorial de introdução requer uma [Subscrição do Azure](../../includes/free-trial-note.md) e um [Serviço Azure Search](search-create-service-portal.md). 
  
 ## Encontrar o seu serviço
 
@@ -50,7 +50,7 @@ Antes de continuar, crie uma [base de dados do DocumentDB de exemplo](#apdx-samp
 <a id="defineDS"></a>
 #### Passo 1: Definir a origem de dados
 
-1. No seu dashboard do serviço da Azure Search, clique em **Importar dados** na barra de comando para iniciar um assistente que cria e preenche um índice.
+1. No seu dashboard do serviço Azure Search, clique em **Importar dados** na barra de comando para iniciar um assistente que cria e preenche um índice.
 
   ![][7]
 
@@ -186,6 +186,6 @@ Deve regressar à saída JSON, começando pelo documento 386 e terminando no doc
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=sep16_HO1-->
 
 

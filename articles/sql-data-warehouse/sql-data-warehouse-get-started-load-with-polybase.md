@@ -3,7 +3,7 @@
    description="Saiba o que é PolyBase e como utilizá-lo em cenários de armazenamento de dados."
    services="sql-data-warehouse"
    documentationCenter="NA"
-   authors="happynicolle"
+   authors="ckarst"
    manager="barbkess"
    editor=""/>
 
@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
    ms.date="06/30/2016"
-   ms.author="nicw;barbkess;jrj;sonyama"/>
+   ms.author="cakarst;barbkess;sonyama"/>
 
 
 # Carregar os dados com o PolyBase para o SQL Data Warehouse
@@ -287,6 +287,6 @@ Consulte o [Guia do PolyBase][] para obter informações adicionais que deve con
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=sep16_HO1-->
 
 

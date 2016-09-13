@@ -13,12 +13,12 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="06/22/2016"
+    ms.date="09/02/2016"
     ms.author="darosa;sethm"/>
 
 # Escalões de mensagens Standard e Premium do Service Bus 
 
-As mensagens mediadas do Service Bus que inclui entidades de mensagens como filas e tópicos, combina capacidades de mensagens empresariais com semântica de publicação- subscrição na escala da nuvem. As mensagens do Service Bus utilizam-se como infraestrutura de comunicação para várias soluções de nuvem sofisticadas.
+As mensagens do Service Bus que inclui entidades de mensagens como filas e tópicos, combina capacidades de mensagens empresariais com semântica de publicação- subscrição na escala da nuvem. As mensagens do Service Bus utilizam-se como infraestrutura de comunicação para várias soluções de nuvem sofisticadas.
 
 O escalão *Premium* das mensagens do Service Bus atende pedidos de cliente comuns relativamente a escala, desempenho e disponibilidade de aplicações fundamentais para a missão. Embora os conjuntos de funcionalidades sejam praticamente idênticos, estes dois escalões de mensagens do Service Bus estão concebidos para utilizar-se em situações diferentes.
 
@@ -40,13 +40,13 @@ Este desempenho não só é mais previsível e repetível, como também mais rá
 
 A seguir apresentam-se algumas diferenças entre as camadas de mensagens Standard e Premium.
 
-### Entidades particionadas
+### Filas e tópicos particionados
 
-As entidades particionadas são suportadas nas mensagens Premium, mas não funcionam da mesma forma que nos escalões de mensagens Standard e Basic do Service Bus. As mensagens Premium não utilizam SQL como armazém de dados e já não tem a possível concorrência de recursos associada a uma plataforma partilhada. Como resultado, não é necessário criar partições. Além disso, a quantidade de partições foi alterada de 16 partições nas mensagens Standard para 2 partições nas Premium. Ter duas partições garante a disponibilidade e é um número mais adequado para o ambiente de tempo de execução Premium. Para mais informações sobre a criação de partições, consulte o artigo [Entidades de Mensagens Particionadas](service-bus-partitioning.md).
+As filas e tópicos particionadas são suportados nas mensagens Premium, mas não funcionam da mesma forma que nos escalões de mensagens Standard e Basic do Service Bus. As mensagens Premium não utilizam SQL como armazém de dados e já não tem a possível concorrência de recursos associada a uma plataforma partilhada. Como resultado, não é necessário criar partições. Além disso, a quantidade de partições foi alterada de 16 partições nas mensagens Standard para 2 partições nas Premium. Ter duas partições garante a disponibilidade e é um número mais adequado para o ambiente de tempo de execução Premium. Para mais informações sobre a criação de partições, consulte o artigo [Filas e tópicos particionados](service-bus-partitioning.md).
 
 ### Entidades expressas
 
-Uma vez que as mensagens Premium se executam num ambiente de tempo de execução completamente isolado, já não existe necessidade de entidades expressas. Por conseguinte, entidades expressas não são suportadas em espaços de nomes Premium. Para mais informações sobre a funcionalidade Express, consulte a propriedade [Microsoft.ServiceBus.Messaging.QueueDescription.EnableExpress](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.queuedescription.enableexpress.aspx).
+Uma vez que as mensagens Premium se executam num ambiente de tempo de execução completamente isolado, as entidades expressas deixam de ser suportadas nos espaços de nome Premium. Para mais informações sobre a funcionalidade Express, consulte a propriedade [Microsoft.ServiceBus.Messaging.QueueDescription.EnableExpress](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.queuedescription.enableexpress.aspx).
 
 ## Passos seguintes
 
@@ -60,6 +60,6 @@ Para mais informações sobre mensagens do Service Bus, consulte os seguintes t�
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=sep16_HO1-->
 
 
