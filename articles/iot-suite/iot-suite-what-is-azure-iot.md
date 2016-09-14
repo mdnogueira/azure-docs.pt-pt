@@ -21,7 +21,7 @@
 
 ## Azure IoT Suite
 
-O Microsoft Azure IoT Suite é uma solução de nível empresarial que lhe permite começar a trabalhar rapidamente com um conjunto de soluções pré-configuradas extensíveis que tratam cenários comuns do IoT, tais como a [monitorização remota][Ink-preconfigured-solutions] e a [manutenção preditiva][Ink-predictive-maintenance]. Estas soluções são implementações da arquitetura da solução IoT descrita neste artigo.
+O Microsoft Azure IoT Suite é uma solução de nível empresarial que lhe permite começar a trabalhar rapidamente com um conjunto de soluções pré-configuradas extensíveis que tratam cenários comuns do IoT, tais como a [monitorização remota][lnk-preconfigured-solutions] e a [manutenção preditiva][lnk-predictive-maintenance]. Estas soluções são implementações da arquitetura da solução IoT descrita neste artigo.
 
 As soluções pré-configuradas são soluções completas, operacionais e ponto-a-ponto que incluem dispositivos simulados para uma introdução aos serviços pré-configurados do Azure, como o [Azure IoT Hub][], o [Azure Event Hubs][], o [Azure Stream Analytics][], o [Azure Machine Learning][] e o [Storage do Azure][], bem como consolas de gestão específicas para a solução. As soluções pré-configuradas contêm um código comprovado pronto para a produção que poderá personalizar e expandir para implementar os seus próprios cenários específicos do IoT.
 
@@ -31,7 +31,7 @@ Também poderá estar interessado no serviço [Azure IoT Hub][] utilizado por mu
 
 Explore estes recursos para saber mais sobre o IoT Suite e as soluções pré-configuradas:
 
-- [O que é o Azure IoT Suite?][Ink-whatissuite]
+- [O que é o Azure IoT Suite?][lnk-whatissuite]
 - [Quais são as soluções pré-configuradas do Azure IoT Suite?][lnk-whatarepreconfigured]
 
 [lnk-whatissuite]: iot-suite-overview.md
@@ -46,6 +46,6 @@ Explore estes recursos para saber mais sobre o IoT Suite e as soluções pré-co
 [lnk-predictive-maintenance]: iot-suite-predictive-overview.md
 
 
-<!--HONumber=ago16_HO4-->
+<!---HONumber=ago16_HO4-->
 
 
