@@ -116,7 +116,7 @@ Os conectores também podem ser utilizados como ações nas aplicações. As aç
 [http~requestdoc]: ./connectors-native-reqres.md "Ações de pedido e resposta."
 [http~responsedoc]: ./connectors-native-reqres.md "Ações de pedido e resposta."
 [delaydoc]: ./connectors-native-delay.md "Saiba mais sobre a ação de atraso."
-[http swaggerdoc]: ./connectors-native-http-swagger.md "HTTP + Swagger Connector para efetuar chamadas HTTP."
+[http-swaggerdoc]: ./connectors-native-http-swagger.md "HTTP + Swagger Connector para efetuar chamadas HTTP."
 [querydoc]: ./connectors-native-query.md "Ação de consulta para selecionar e filtrar matrizes."
 [webhookdoc]: ./connectors-native-webhook.md "Acionador e ação do Webhook para aplicações lógicas."
 [azure~functionsdoc]: ../app-service-logic/app-service-logic-azure-functions.md "integrar aplicações lógicas com Funções do Azure."
@@ -192,6 +192,6 @@ Os conectores também podem ser utilizados como ações nas aplicações. As aç
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=ago16_HO4--->
 
 

@@ -134,7 +134,7 @@ Certifique-se de que deixa todos os dispositivos simulados em execução à medi
 
 ## Executar a IU de amostra de gestão de dispositivos
 
-Agora que aprovisionou um Hub IoT e tem vários dispositivos simulados em execução e registados para gestão, pode implementar a IU de amostra da gestão de dispositivos. A IU de amostra de gestão de dispositivos fornece-lhe um exemplo de como utilizar as APIs de gestão de dispositivos para criar uma experiência de IU interativa.  Para obter mais informações sobre a IU de amostra de gestão de dispositivos, incluindo [problemas conhecidos](https://github.com/Azure/azure-iot-device-management#knownissues), veja o repositório GitHub [IU da gestão de dispositivos IoT do Azure][Ink-dm-github].
+Agora que aprovisionou um Hub IoT e tem vários dispositivos simulados em execução e registados para gestão, pode implementar a IU de amostra da gestão de dispositivos. A IU de amostra de gestão de dispositivos fornece-lhe um exemplo de como utilizar as APIs de gestão de dispositivos para criar uma experiência de IU interativa.  Para obter mais informações sobre a IU de amostra de gestão de dispositivos, incluindo [problemas conhecidos](https://github.com/Azure/azure-iot-device-management#knownissues), veja o repositório GitHub [IU da gestão de dispositivos IoT do Azure][lnk-dm-github].
 
 Para obter, criar e executar a IU de amostra de gestão de dispositivos, siga estes passos:
 
@@ -199,6 +199,6 @@ Para saber mais sobre as funcionalidades de gestão de dispositivos do Hub IoT d
 
 
 
-<!--HONumber=ago16_HO4-->
+<!---HONumber=ago16_HO4-->
 
 
