@@ -33,6 +33,6 @@ Com a [subscrição existente]( https://account.windowsazure.com/Home/Index), si
 
 
 
-<!--HONumber=sep16_HO1-->
+<!--HONumber=sep14_HO2-->
 
 
