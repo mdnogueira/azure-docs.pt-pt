@@ -37,9 +37,9 @@ O Armazenamento de ficheiros contém os seguintes componentes:
 
 Para obter detalhes sobre a nomenclatura das partilhas, dos diretórios e dos ficheiros, veja [Naming and Referencing Shares, Directories, Files, and Metadata (Nomenclatura e Referência de Partilhas, Diretórios, Ficheiros e Metadados)](http://msdn.microsoft.com/library/azure/dn167011.aspx).
 
-[files-concepts]: ./media/storage-file-concepts-include/files-concepts.png
+[ficheiros-conceitos]: ./media/storage-file-concepts-include/files-concepts.png
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=sep16_HO2-->
 
 

@@ -19,7 +19,7 @@
     
 #Implementação de AD FS geográficos cruzados de elevada disponibilidade no Azure com o Gestor de Tráfego do Azure
 
-[Implementação do AD FS no Azure](.\active-directory-aadconnect-azure-adfs.md) fornece orientação passo a passo sobre como pode implementar uma infraestrutura de AD FS simples para a sua organização no Azure. Este artigo fornece os passos seguintes para criar uma implementação geográfica cruzada do AD FS no Azure com o [Gestor de Tráfego do Azure](../traffic-manager/traffic-manager-overview.md). O Gestor de Tráfego do Azure ajuda-o a criar uma infraestrutura do AD FS de elevado desempenho e elevada disponibilidade propagada a nível geográfico para a sua organização ao utilizar o intervalo de métodos de encaminhamento disponíveis para satisfazer as necessidades diferentes da infraestrutura.
+[Implementação do AD FS no Azure](active-directory-aadconnect-azure-adfs.md) fornece orientação passo a passo sobre como pode implementar uma infraestrutura de AD FS simples para a sua organização no Azure. Este artigo fornece os passos seguintes para criar uma implementação geográfica cruzada do AD FS no Azure com o [Gestor de Tráfego do Azure](../traffic-manager/traffic-manager-overview.md). O Gestor de Tráfego do Azure ajuda-o a criar uma infraestrutura do AD FS de elevado desempenho e elevada disponibilidade propagada a nível geográfico para a sua organização ao utilizar o intervalo de métodos de encaminhamento disponíveis para satisfazer as necessidades diferentes da infraestrutura.
 
 Permite uma infraestrutura do AD FS geográfica cruzada de elevada disponibilidade:
 
@@ -49,7 +49,7 @@ Os princípios de estrutura básicos serão iguais aos listados nos princípios 
 ##Passos para integrar o Gestor de Tráfego do Azure
 
 ###Implementar o AD FS na nova região geográfica
-Siga os passos e as diretrizes indicados no [Implementação do AD FS no Azure](.\active-directory-aadconnect-azure-adfs.md) para implementar a mesma topologia na nova região geográfica.
+Siga os passos e as diretrizes indicados no [Implementação do AD FS no Azure](active-directory-aadconnect-azure-adfs.md) para implementar a mesma topologia na nova região geográfica.
 
 ###Etiquetas de DNS para os endereços IP públicos de Load Balancers com acesso à Internet (públicos)
 Como mencionado acima, o Gestor de Tráfego do Azure só pode referir etiquetas de DNS como pontos finais e, por conseguinte, é importante criar etiquetas de DNS para os endereços IP públicos dos Load Balancers Externos. A captura de ecrã abaixo mostra como pode configurar a sua etiqueta de DNS para o endereço IP público. 
@@ -135,6 +135,6 @@ A maneira mais fácil de testar o AD FS é através da página IdpInitiatedSigno
 
 
 
-<!--HONumber=sep16_HO1-->
+<!--HONumber=sep16_HO2-->
 
 

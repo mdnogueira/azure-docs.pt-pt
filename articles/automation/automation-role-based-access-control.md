@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="06/20/2016"
+   ms.date="09/12/2016"
    ms.author="magoedte;sngun"/>
 
 # Controlo de acesso baseado em funções na Automatização do Azure
@@ -239,6 +239,6 @@ Nos exemplos indicados acima, substitua o **ID de início de sessão**, o **ID d
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=sep16_HO2-->
 
 

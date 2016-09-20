@@ -12,7 +12,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="04/20/2016"
+   ms.date="08/16/2016"
    ms.author="alkohli" />
 
 # Implementar no local o dispositivo StorSimple (Atualização 2)
@@ -247,6 +247,6 @@ Execute os seguintes passos no portal de gestão para criar uma cópia de segura
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=sep16_HO2-->
 
 

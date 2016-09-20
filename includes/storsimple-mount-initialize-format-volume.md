@@ -37,6 +37,6 @@ Para ver um vídeo que demonstra como montar, inicializar e formatar um volume S
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=sep16_HO2-->
 
 

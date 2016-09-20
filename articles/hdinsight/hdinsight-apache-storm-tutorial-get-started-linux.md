@@ -5,7 +5,7 @@
     services="hdinsight"
     documentationCenter=""
     authors="Blackmist"
-    manager="paulettm"
+    manager="jhubbard"
     editor="cgronlun"/>
 
 <tags
@@ -193,6 +193,7 @@ Se já estiver familiarizado com o desenvolvimento de topologias baseadas em Jav
 [preview-portal]: https://portal.azure.com/
 
 
-<!--HONumber=ago16_HO4-->
+
+<!--HONumber=sep16_HO2-->
 
 

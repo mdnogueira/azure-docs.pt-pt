@@ -58,8 +58,9 @@ Este tutorial mostra como criar uma aplicação [Node.js][NODEJS] simples e impl
 
     No browser, navegue até <http://localhost:3000> para se certificar de que consegue ver a home page do Express. Depois de verificar que a sua aplicação está a ser executada corretamente, utilize `Ctrl-C` para a interromper.
     
-1. Inicie sessão no Azure da seguinte forma (necessita da [CLI do Azure](#prereq) para o fazer):
+1. Mudar para o modo ASM e iniciar sessão no Azure (para fazê-lo, precisa da [CLI do Azure](#prereq)):
 
+        azure config mode asm
         azure login
 
     Siga o pedido para continuar o processo de início de sessão num browser com uma conta Microsoft que tenha a sua subscrição do Azure.
@@ -245,6 +246,6 @@ Para ativar o Node-Inspector, siga estes passos:
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=sep16_HO2-->
 
 

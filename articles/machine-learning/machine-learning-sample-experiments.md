@@ -4,7 +4,7 @@
     services="machine-learning"
     documentationCenter=""
     authors="cjgronlund"
-    manager="paulettm"
+    manager="jhubbard"
     editor="cgronlun"/>
 
 <tags
@@ -70,6 +70,6 @@ Também pode criar uma nova experimentação no Machine Learning Studio, utiliza
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=sep16_HO2-->
 
 

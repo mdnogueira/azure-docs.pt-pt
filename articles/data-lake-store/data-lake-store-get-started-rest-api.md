@@ -4,7 +4,7 @@
    services="data-lake-store" 
    documentationCenter="" 
    authors="nitinme" 
-   manager="paulettm" 
+   manager="jhubbard" 
    editor="cgronlun"/>
  
 <tags
@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
-   ms.date="08/02/2016"
+   ms.date="09/13/2016"
    ms.author="nitinme"/>
 
 # Introdução ao Azure Data Lake Store utilizando APIs REST
@@ -34,7 +34,6 @@ Neste artigo, irá aprender a utilizar APIs REST WebHDFS e APIs REST do Data Lak
 ## Pré-requisitos
 
 - **Uma subscrição do Azure**. Veja [Obter versão de avaliação gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/).
-- **Ative a sua subscrição do Azure** para a pré-visualização pública do Data Lake Store. Veja as [instruções](data-lake-store-get-started-portal.md#signup).
 - **Criar uma Aplicação do Azure Active Directory**. Existem duas formas para se autenticar com o Azure Active Directory - **interativa** e **não interativa**. Existem pré-requisitos diferentes com base na forma como se pretende autenticar.
     * **Para a autenticação interativa** (utilizada neste artigo) - No Azure Active Directory, tem de criar uma **aplicação de Cliente Nativo**. Assim que tiver criado a aplicação, obtenha os seguintes valores relacionados com a aplicação.
         - Obtenha o **ID de cliente** e o **URI de redirecionamento** para a aplicação
@@ -271,13 +270,13 @@ Deve ver um resultado como o seguinte:
     ...
     ...
 
-## Veja também
+## Consultar também
 
 - [Aplicações de Macrodados Open Source compatíveis com o Azure Data Lake Store](data-lake-store-compatible-oss-other-applications.md)
  
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=sep16_HO2-->
 
 

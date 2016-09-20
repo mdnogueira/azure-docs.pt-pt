@@ -13,6 +13,6 @@ Um nome de contentor tem de ser um nome DNS válido, cumprindo as seguintes regr
 > [AZURE.IMPORTANT] Tenha em atenção que o nome de um contentor deve estar sempre em minúsculas. Se incluir uma letra em maiúsculas num nome de contentor ou violar as regras dos nomes de contentores, poderá receber um erro 400 (Pedido Incorreto). 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=sep16_HO2-->
 
 

@@ -15,7 +15,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="04/13/2016"
+   ms.date="09/13/2016"
    ms.author="nepeters"/>
 
 # Gestão de contentores com o Docker Swarm
@@ -125,6 +125,6 @@ Naturalmente, pode utilizar `docker-compose ps` para examinar apenas os contento
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=sep16_HO2-->
 
 

@@ -4,6 +4,6 @@ Os Serviços de armazenamento do Azure são atualizados regularmente com suporte
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=sep16_HO2-->
 
 

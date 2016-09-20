@@ -5,7 +5,7 @@
     services="machine-learning"
     documentationCenter=""
     authors="garyericson"
-    manager="paulettm"
+    manager="jhubbard"
     editor="cgronlun"/>
 
 <tags
@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="06/10/2016"
+    ms.date="09/09/2016"
     ms.author="garye"/>
 
 # O que é o Azure Machine Learning Studio?
@@ -29,7 +29,7 @@ Machine Learning Studio é onde se reúnem a ciência de dados, a análise predi
 
 Para desenvolver um modelo de análise preditiva, utiliza normalmente dados a partir de uma ou mais origens, transforma e analisa esses dados através da manipulação de vários dados e funções estatísticas e gera um conjunto de resultados. Desenvolver um modelo como este é um processo iterativo. À medida que modifica nas várias funções e os respetivos parâmetros, os seus resultados convergem até achar que tem um modelo preparado e eficaz.
 
-O **Azure Machine Learning Studio** fornece uma área de trabalho interativa e visual para facilmente criar, testar e iterar um modelo de análise preditiva. Pode arrastar e largar ***conjuntos de dados*** e ***módulos*** de análise em ***telas*** interativas, ligá-las em conjunto para formar uma ***experimentação*** que ***executa*** no Machine Learning Studio. Para iterar o design do modelo, pode ***editar*** a experimentação, ***guardar*** uma cópia se assim o desejar e executá-la novamente. Quando estiver pronto, pode converter a ***experimentação de preparação*** numa ***experimentação preditiva*** e, em seguida, ***publicá-la*** como um ***serviço web*** para que o modelo possa ser acedido por outras pessoas.
+O **Azure Machine Learning Studio** fornece uma área de trabalho interativa e visual para facilmente criar, testar e iterar um modelo de análise preditiva. Pode arrastar e largar ***conjuntos de dados*** e ***módulos*** de análise em telas interativas, ligá-las entre si para formar uma ***experimentação***, que executa no Machine Learning Studio. Para iterar o design do modelo, edite a experimentação, guarde uma cópia se assim pretender e execute-a novamente. Quando estiver pronto, pode converter a ***experimentação de preparação*** numa ***experimentação preditiva*** e, em seguida, publicá-la como um ***serviço Web*** para que o modelo possa ser acedido por outras pessoas.
 
 >[AZURE.TIP] Para transferir e imprimir um diagrama da descrição geral das funcionalidades do Machine Learning Studio, consulte o artigo [Diagrama da descrição geral das funcionalidades do Azure Machine Learning Studio](machine-learning-studio-overview-diagram.md).
 
@@ -108,7 +108,7 @@ Para obter ajuda na navegação pela da extensa biblioteca dos algoritmos do Mac
 
 Assim que o modelo de análise preditiva estiver pronto, pode implementá-lo como um serviço web a partir do Machine Learning Studio. Consulte o artigo [Implementar um serviço web do Azure Machine Learning](machine-learning-publish-a-machine-learning-web-service.md) para obter mais detalhes.
 
-[ml-studio-overview]:./media/machine-learning-what-is-ml-studio/azure-ml-studio-diagram.jpg
+[descrição geral do ml studio]:./media/machine-learning-what-is-ml-studio/azure-ml-studio-diagram.jpg
 
 <!-- Module References -->
 [converter em arff]: https://msdn.microsoft.com/library/azure/62d2cece-d832-4a7a-a0bd-f01f03af0960/
@@ -118,6 +118,6 @@ Assim que o modelo de análise preditiva estiver pronto, pode implementá-lo com
 
 
 
-<!----HONumber=Aug16_HO1-->
+<!--HONumber=sep16_HO2-->
 
 

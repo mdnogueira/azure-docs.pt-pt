@@ -5,7 +5,7 @@
     keywords="o que é o Azure AD Connect, instale o Active Directory, componentes precisos para o Azure AD"
     documentationCenter=""
     authors="andkjell"
-    manager="stevenpo"
+    manager="femila"
     editor="curtand"/>
 
 <tags
@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="06/27/2016"
+    ms.date="09/13/2016"
     ms.author="billmath;andkjell"/>
 
 # Instalação personalizada do Azure AD Connect
@@ -43,7 +43,7 @@ Especificar grupos de sincronização personalizados | Por predefinição, o Azu
 ### Início de sessão do utilizador
 Depois de instalar os componentes necessários, é-lhe pedido que selecione o método de início de sessão único dos utilizadores. A tabela seguinte fornece uma breve descrição das opções disponíveis. Para obter uma descrição completa dos métodos de início de sessão, consulte [Início de sessão do utilizador](active-directory-aadconnect-user-signin.md).
 
-![Início de Sessão do Utilizador](./media/active-directory-aadconnect-get-started-custom/usersignin.png)
+![Início de Sessão de Utilizador](./media/active-directory-aadconnect-get-started-custom/usersignin.png)
 
 Opção Início de Sessão Único | Descrição
 ------------- | -------------
@@ -55,14 +55,14 @@ Não configurar | Nenhuma destas funcionalidades é instalada e configurada. Esc
 No ecrã Ligar ao Azure AD, introduza uma conta de administrador global e a palavra-passe. Se tiver selecionado **Federação com o AD FS** na página anterior, não inicie sessão com uma conta num domínio que pretenda ativar para federação. Uma das recomendações é utilizar uma conta no domínio predefinido **onmicrosoft.com**, incluído com o diretório do Azure AD.
 
 Esta conta é utilizada apenas para criar uma conta de serviço no Azure AD e deixa de ser utilizada uma vez concluído o assistente.  
-![Início de Sessão do Utilizador](./media/active-directory-aadconnect-get-started-custom/connectaad.png)
+![Início de Sessão de Utilizador](./media/active-directory-aadconnect-get-started-custom/connectaad.png)
 
 Se a conta de administrador global tiver a MFA ativada, terá de fornecer novamente a palavra-passe no pop-up início de sessão e completar o desafio MFA. O desafio pode ser fornecer um código de verificação ou uma chamada telefónica.  
-![MFA de Início de Sessão do Utilizador](./media/active-directory-aadconnect-get-started-custom/connectaadmfa.png)
+![Início de Sessão de Utilizador no MFA](./media/active-directory-aadconnect-get-started-custom/connectaadmfa.png)
 
 A conta de administrador global também pode ter a opção [Privileged Identity Management](active-directory-privileged-identity-management-getting-started.md) ativada.
 
-Se receber um erro e tiver problemas com a conectividade, consulte [Resolver problemas de conectividade](active-directory-aadconnect-troubleshoot-connectivity.md).
+Se receber um erro e tiver problemas com a conectividade, veja [Resolver problemas de conectividade](active-directory-aadconnect-troubleshoot-connectivity.md).
 
 ## Páginas na secção Sincronização
 
@@ -72,15 +72,15 @@ Para se ligar ao Serviço de Domínio do Active Directory, o Azure AD Connect te
 ![Ligar o Diretório](./media/active-directory-aadconnect-get-started-custom/connectdir.png)
 
 ### Configuração do início de sessão do Azure AD
-Esta página permite-lhe rever os domínios UPN presentes no AD DS no local e que foram verificados no Azure AD. Esta página permitir-lhe-á também configurar o atributo a utilizar para userPrincipalName.
+Esta página permite-lhe rever os domínios UPN presentes no AD DS no local e que foram verificados no Azure AD. Esta página também lhe permite configurar o atributo a utilizar para userPrincipalName.
 
 ![Domínios não verificados](./media/active-directory-aadconnect-get-started-custom/aadsigninconfig.png)  
-Reveja todos os domínios marcados como **Não Adicionado** e **Não Verificado**. Certifique-se de que os que utiliza foram verificados no Azure AD. Quando tiver verificado os domínios, clique no símbolo de atualização. Para obter mais informações, consulte [Adicionar e verificar o domínio](active-directory-add-domain.md)
+Reveja todos os domínios marcados como **Não Adicionado** e **Não Verificado**. Certifique-se de que os domínios que utiliza foram verificados no Azure AD. Quando tiver verificado os domínios, clique no símbolo de atualização. Para obter mais informações, consulte [Adicionar e verificar o domínio](active-directory-add-domain.md)
 
 **UserPrincipalName** -o atributo userPrincipalName é o atributo que os utilizadores utilizam quando iniciam sessão no Azure AD e no Office 365. O domínio utilizado, também conhecido como sufixo UPN, deve ser verificado no Azure AD para que os utilizadores possam ser sincronizados. A Microsoft recomenda que mantenha o atributo predefinido userPrincipalName. Se este atributo não for encaminhável e não puder ser verificado, é possível selecionar outro atributo. Pode, por exemplo, selecionar o correio eletrónico como o atributo que contém o ID de início de sessão. A utilização de um atributo diferente de userPrincipalName é conhecida como **ID Alternativo**. O valor do atributo ID Alternativo tem de seguir a norma RFC822. Um ID Alternativo pode ser utilizado na sincronização de palavras-passe e na federação.
 
 >[AZURE.WARNING]
-A utilização de um ID Alternativo não é compatível com todas as cargas de trabalho do Office 365. Para obter mais informações, consulte [Configurar ID de Início de Sessão Alternativo](https://technet.microsoft.com/library/dn659436.aspx).
+A utilização de um ID Alternativo não é compatível com todas as cargas de trabalho do Office 365. Para obter mais informações, veja [Configurar ID de Início de Sessão Alternativo](https://technet.microsoft.com/library/dn659436.aspx).
 
 ### Filtragem de domínios e de UOs
 Por predefinição, todos os domínios e UOs são sincronizados. Se houver domínios ou UOs que não pretende sincronizar com o Azure AD, pode anular a seleção destes domínios e UOs.  
@@ -143,7 +143,7 @@ Com base nos serviços selecionados no passo anterior, esta página mostra todos
 ![Atributos de funcionalidades opcionais](./media/active-directory-aadconnect-get-started-custom/azureadattributes2.png)
 
 >[AZURE.WARNING]
-A remoção de atributos pode afetar a funcionalidade de impacto. Para obter as melhores práticas e recomendações, consulte [tributos sincronizados](active-directory-aadconnectsync-attributes-synchronized.md#attributes-to-synchronize).
+A remoção de atributos pode afetar a funcionalidade. Para obter as melhores práticas e recomendações, consulte [tributos sincronizados](active-directory-aadconnectsync-attributes-synchronized.md#attributes-to-synchronize).
 
 ### Sincronização de atributos de Extensões de Diretórios
 Pode expandir o esquema no Azure AD com atributos personalizados adicionados através da organização ou outros atributos no Active Directory. Para utilizar esta funcionalidade, selecione **Sincronização de atributos de extensão de diretórios** na página **Funcionalidades Opcionais**. Pode selecionar nesta página mais atributos para sincronizar.
@@ -160,7 +160,7 @@ Configurar o AD FS com o Azure AD Connect é simples, bastam apenas alguns cliqu
 - Um certificado SSL para o nome do serviço de federação que pretende utilizar (por exemplo, sts.contoso.com)
 
 ### Pré-requisitos de configuração do AD FS
-Para configurar o farm do AD FS utilizando o Azure AD Connect, certifique-se de que WinRM está ativado nos servidores remotos. Além disso, verifique também os requisitos de portas listados na [Tabela 3 – Servidores do Azure AD Connect e de Federação/WAP](active-directory-aadconnect-ports.md#table-3---azure-ad-connect-and-federation-serverswap).
+Para configurar o farm do AD FS com o Azure AD Connect, certifique-se de que o WinRM está ativado nos servidores remotos. Além disso, verifique também os requisitos de portas listados na [Tabela 3 – Servidores do Azure AD Connect e de Federação/WAP](active-directory-aadconnect-ports.md#table-3---azure-ad-connect-and-federation-serverswap).
 
 ### Criar um novo farm do AD FS ou utilizar um existente
 Pode utilizar um farm do AD FS existente ou pode optar por criar um novo. Se optar por criar um novo, é necessário fornecer o certificado SSL. Se o certificado SSL estiver protegido por uma palavra-passe, é-lhe pedida a palavra-passe.
@@ -178,7 +178,8 @@ Certifique-se de que todos os servidores estão associados a um domínio do AD a
 ![Servidores do AD FS](./media/active-directory-aadconnect-get-started-custom/adfs2.png)
 
 ### Especificar os servidores Proxy de Web Apps
-Introduza os servidores que pretende ter como servidores proxy de Web Apps. O servidor proxy de Web Apps está implementado no DMZ (com acesso à extranet) e suporta pedidos de autenticação da extranet. Pode adicionar um ou mais servidores com base nas suas necessidades de planeamento da capacidade. A Microsoft recomenda a instalação de um único servidor proxy de Web Apps para implementações de teste e piloto. Em seguida, adicione e implemente mais servidores para satisfazer as suas necessidades de dimensionamento, executando novamente o Azure AD Connect após a configuração inicial. Recomenda-se ter um número equivalente de servidores proxy para satisfazer a autenticação da intranet.
+Introduza os servidores que pretende ter como servidores proxy de Web Apps. O servidor proxy de Web Apps está implementado na rede de perímetro (com acesso à extranet) e suporta pedidos de autenticação da extranet.
+ Pode adicionar um ou mais servidores com base nas suas necessidades de planeamento da capacidade. A Microsoft recomenda a instalação de um único servidor proxy de aplicação Web para implementações de teste e piloto. Em seguida, adicione e implemente mais servidores para satisfazer as suas necessidades de dimensionamento, executando novamente o Azure AD Connect após a configuração inicial. Recomenda-se ter um número equivalente de servidores proxy para satisfazer a autenticação da intranet.
 
 >[AZURE.NOTE]
 <li> Se a conta utilizada não for um administrador local nos servidores AD FS, ser-lhe-ão pedidas as credenciais de administrador.</li>
@@ -266,6 +267,6 @@ Contas utilizadas para a instalação | [Mais acerca de contas e permissões do 
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=sep16_HO2-->
 
 

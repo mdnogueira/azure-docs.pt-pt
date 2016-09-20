@@ -4,7 +4,7 @@
    services="hdinsight"
    documentationCenter=""
    authors="Blackmist"
-   manager="paulettm"
+   manager="jhubbard"
    editor="cgronlun"
     tags="azure-portal"/>
 
@@ -239,6 +239,6 @@ Agora que sabe como efetuar a autenticação com uma chave SSH, saiba como utili
 
 
 
-<!--HONumber=ago16_HO5-->
+<!--HONumber=sep16_HO2-->
 
 

@@ -5,7 +5,7 @@
     services="machine-learning"
     documentationCenter=""
     authors="garyericson"
-    manager="paulettm"
+    manager="jhubbard"
     editor="cgronlun"/>
 
 <tags
@@ -588,6 +588,6 @@ O Acesso de Convidado é uma experimentação de avaliação restrita que lhe pe
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=sep16_HO2-->
 
 

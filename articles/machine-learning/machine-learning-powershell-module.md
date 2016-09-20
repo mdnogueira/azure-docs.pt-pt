@@ -5,7 +5,7 @@
     services="machine-learning"
     documentationCenter=""
     authors="hning86"
-    manager="paulettm"
+    manager="jhubbard"
     editor="cgronlun"/>
 
 <tags
@@ -56,6 +56,7 @@ Para começar a utilizar o PowerShell do Machine Learning, transfira o [pacote d
 O módulo do PowerShell irá continuar a ser melhorado e expandido durante este período de pré-visualização. Esteja atento ao [Blogue do Cortana Intelligence e do Machine Learning](https://blogs.technet.microsoft.com/machinelearning/) para obter mais informações e notícias.
 
 
-<!--HONumber=ago16_HO4-->
+
+<!--HONumber=sep16_HO2-->
 
 

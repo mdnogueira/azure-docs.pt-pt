@@ -28,6 +28,6 @@ Para saber como criar uma conta de armazenamento, veja [Criar uma conta de armaz
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=sep16_HO2-->
 
 

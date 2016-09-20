@@ -1,11 +1,11 @@
 <properties
     pageTitle="Diagrama de descrição geral das funcionalidades do Machine Learning Studio | Microsoft Azure"
     description="Um diagrama imprimível das funcionalidades do Azure Machine Learning Studio demonstra como utilizar o Studio para desenvolver uma análise preditiva experimentá-lo e operacionalizá-lo na nuvem do Azure."
-    keywords="machine learning studio,overview diagram,download"
+    keywords="machine learning studio,diagrama de descrição geral,transferir"
     services="machine-learning"
     documentationCenter=""
     authors="hning86"
-    manager="paulettm"
+    manager="jhubbard"
     editor="cgronlun"/>
 
 <tags
@@ -37,7 +37,7 @@ Transfira o diagrama da **Descrição geral das funcionalidades do Microsoft Azu
 
 ![Descrição geral das funcionalidades do Microsoft Azure Machine Learning Studio][studio-overview]
 
-[studio-overview]: ./media/machine-learning-studio-overview-diagram/ml_studio_overview_v1.1.png
+[descrição geral do studio]: ./media/machine-learning-studio-overview-diagram/ml_studio_overview_v1.1.png
 
 
 ## Mais ajuda no Machine Learning Studio
@@ -50,6 +50,6 @@ Transfira o diagrama da **Descrição geral das funcionalidades do Microsoft Azu
 
 
 
-<!---HONumber=Jun16_HO2-->
+<!--HONumber=sep16_HO2-->
 
 

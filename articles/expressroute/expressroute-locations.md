@@ -29,7 +29,7 @@ Terá acesso aos serviços do Azure em todas as regiões numa região geopolíti
 
 |**Região geopolítica**|**Regiões do Azure**|**Localizações do ExpressRoute**|
 |---|---|---|
-|**América do Norte**|EUA Leste, EUA Oeste, EUA Leste 2, EUA Central, EUA Centro-Sul, EUA Centro-Norte, Canadá Central, Canadá Leste|Atlanta, Chicago, Dallas, Las Vegas+, Los Angeles, Nova Iorque, Seattle, Silicon Valley, Washington D.C., Montreal+, Cidade do Quebeque+, Toronto|
+|**América do Norte**|EUA Leste, EUA Oeste, EUA Leste 2, EUA Central, EUA Centro-Sul, EUA Centro-Norte, Canadá Central, Canadá Leste|Atlanta, Chicago, Dallas, Las Vegas, Los Angeles, Nova Iorque, Seattle, Silicon Valley, Washington D.C., Montreal+, Cidade do Quebeque+, Toronto|
 |**América do Sul**|Sul do Brasil|São Paulo|
 |**Europa**|Europa do Norte, Europa Ocidental, Reino Unido Oeste, Reino Unido Sul|Amesterdão, Dublin, Londres, Newport (País de Gales)+, Paris|
 |**Ásia**|Ásia Oriental, Sudeste Asiático|RAE de Hong Kong, Singapura|
@@ -43,9 +43,9 @@ A tabela abaixo fornece informações sobre regiões e limites geopolíticos par
 
 |**Região geopolítica**|**Regiões do Azure**|**Localizações do ExpressRoute**|
 |---|---|---|---|
-|**Nuvem do Governo dos EUA**|Gov (US) – Iowa, Gov (US) – Virginia|Chicago, Dallas + Nova Iorque, Washington D.C.|
+|**Nuvem do Governo dos EUA**|Gov (US) – Iowa, Gov (US) – Virginia|Chicago, Dallas, Nova Iorque, Washington D.C.|
 |**China**|Norte da China, Leste da China|Pequim, Xangai|
-|**Alemanha**|Alemanha Central, Leste da Alemanha|Berlim, Frankfurt|
+|**Alemanha**|Alemanha Central, Leste da Alemanha|Berlim+, Frankfurt|
 
 
 A conectividade em regiões geopolíticas não é suportada no SKU do ExpressRoute standard. Terá de ativar o suplemento ExpressRoute Premium para suportar a conetividade global. A conectividade com ambientes em nuvem nacionais não é suportada. Pode trabalhar com o seu fornecedor de conectividade, se tal for necessário.
@@ -88,7 +88,7 @@ A conectividade em regiões geopolíticas não é suportada no SKU do ExpressRou
 | **[SingTel]( http://info.singtel.com/about-us/news-releases/singtel-provide-secure-private-access-microsoft-azure-public-cloud)** |  Suportado | Suportado | Singapura |
 | **Softbank** | Suportado | Suportado | Osaka, Tóquio | 
 | **[Tata Communications](http://www.tatacommunications.com/lp/izo/azure/azure_index.html)** | Suportado | Suportado | Amesterdão, Chennai, RAE de Hong Kong, Londres, Mumbai, Silicon Valley, Singapura, Washington D.C. |
-| **[TeleCity Group]( http://www.telecitygroup.com/investor-centre/news_details.htm?locid=03100500400b00d&xml)** | Suportado | Suportado | Amesterdão, Londres |
+| **[TeleCity Group]( http://www.telecitygroup.com/investor-centre/news_details.htm?locid=03100500400b00d&xml)** | Suportado | Suportado | Amesterdão, Dublin, Londres |
 | **Telefonica** | Suportado | Brevemente | São Paulo |
 | **Telenor** | Suportado | Suportado | Amesterdão, Londres |
 | **[Telstra Corporation]( http://www.telstra.com.au/business-enterprise/network-services/networks/cloud-direct-connect/)** | Suportado | Brevemente | Melbourne, Sydney |
@@ -105,7 +105,7 @@ A conectividade em regiões geopolíticas não é suportada no SKU do ExpressRou
 | **Fornecedor de serviços**  |**Microsoft Azure** | **Office 365** | **Localizações** |
 |-----------------------|--------------------|----------------|---------------|
 | **[AT & T NetBond]( https://www.synaptic.att.com/clouduser/html/productdetail/ATT_NetBond.htm)** | Suportado | Suportado | Chicago, Washington D.C. |
-| **[Equinix](http://www.equinix.com/partners/microsoft-azure/)** | Suportado | Suportado | Chicago, Dallas + Nova Iorque, Washington D.C. |
+| **[Equinix](http://www.equinix.com/partners/microsoft-azure/)** | Suportado | Suportado | Chicago, Dallas, Nova Iorque, Washington D.C. |
 | **[Comunicações de nível 3]( http://your.level3.com/LP=882?WT.tsrc=02192014LP882AzureVanityAzureText)** | Suportado | Suportado | Chicago, Nova Iorque+, Washington D.C. |
 | **[Verizon](http://news.verizonenterprise.com/2014/04/secure-cloud-interconnect-solutions-enterprise/)** | Suportado | Suportado | Chicago, Dallas + Nova Iorque, Washington D.C. |
 
@@ -173,6 +173,6 @@ A ativação da conectividade privada para atender as suas necessidades pode ser
 
 
 
-<!--HONumber=sep16_HO1-->
+<!--HONumber=sep16_HO2-->
 
 

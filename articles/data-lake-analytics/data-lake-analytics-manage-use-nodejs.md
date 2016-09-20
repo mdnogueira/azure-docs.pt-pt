@@ -4,7 +4,7 @@
    services="data-lake-analytics"
    documentationCenter=""
    authors="edmacauley"
-   manager="paulettm"
+   manager="jhubbard"
    editor="cgronlun"/>
 
 <tags
@@ -138,12 +138,13 @@ catalogClient.catalog.listDatabases(accountName, function (err, result, request,
 });
 ```
 
-## Consulte também
+## Consultar também
 
 - [Microsoft Azure SDK para Node.js](https://github.com/azure/azure-sdk-for-node)
 - [Microsoft Azure SDK para Node.js - Gestão do Data Lake Store](https://github.com/Azure/azure-sdk-for-node/tree/autorest/lib/services/dataLake.Store)
 
 
-<!--HONumber=Aug16_HO1-->
+
+<!--HONumber=sep16_HO2-->
 
 

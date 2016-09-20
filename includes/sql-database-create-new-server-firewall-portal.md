@@ -48,6 +48,6 @@ Utilize os seguintes passos no portal do Azure para criar uma regra de firewall 
 
 
 
-<!--HONumber=sep14_HO2-->
+<!--HONumber=sep16_HO2-->
 
 

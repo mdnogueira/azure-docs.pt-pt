@@ -6,7 +6,7 @@
     documentationCenter=""
     tags="azure-portal"
     authors="mumian"
-    manager="paulettm"
+    manager="jhubbard"
     editor="cgronlun"/>
 
 <tags
@@ -286,6 +286,6 @@ Neste artigo, aprendeu a ligar-se a clusters do HDInsight a partir do Visual Stu
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=sep16_HO2-->
 
 

@@ -367,7 +367,7 @@ Por predefinição, o Storage do Azure mantém os seus dados seguros ao limitar 
 Por predefinição, os dados de blobs na sua conta do Storage estão acessíveis apenas para o proprietário da conta do Storage. A autenticação de pedidos para o Blob Storage requer a chave de acesso da conta por predefinição. No entanto, é possível que pretenda disponibilizar certos dados de blobs a outros utilizadores. Tem duas opções:
 
 - **Acesso anónimo:** pode tornar um contentor ou os respetivos blobs publicamente disponíveis para acesso anónimo. Consulte [Gerir o acesso de leitura anónimo a contentores e blobs](storage-manage-access-to-resources.md) para obter mais informações.
-- **Assinaturas de acesso partilhado:** pode fornecer aos clientes uma assinatura de acesso partilhado (SAS), que concede acesso delegado a um recurso na sua conta do Storage, com as permissões que especificar e durante um intervalo que definir. Consulte [Assinaturas de Acesso Partilhado: Compreender o Modelo SAS](storage-dotnet-shared-access-signature-part-1.md) para mais informações.
+- **Assinaturas de acesso partilhado:** pode fornecer aos clientes uma assinatura de acesso partilhado (SAS), que concede acesso delegado a um recurso na sua conta do Storage, com as permissões que especificar e durante um intervalo que definir. Veja [Utilizar Assinaturas de Acesso Partilhado (SAS)](storage-dotnet-shared-access-signature-part-1.md) para obter mais informações.
 
 ### Encriptar dados de blobs
 
@@ -411,6 +411,6 @@ Agora que aprendeu as noções básicas do Blob Storage, siga estas ligações p
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=sep16_HO2-->
 
 

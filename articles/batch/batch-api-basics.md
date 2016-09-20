@@ -13,7 +13,7 @@
     ms.topic="get-started-article"
     ms.tgt_pltfrm="na"
     ms.workload="big-compute"
-    ms.date="08/22/2016"
+    ms.date="09/08/2016"
     ms.author="marsma"/>
 
 # Descrição geral das funcionalidades do Batch para programadores
@@ -81,8 +81,6 @@ Todos os nós de computação do Batch incluem também:
 - Definições de **Firewall** que são configuradas para controlar o acesso.
 - [Acesso remoto](#connecting-to-compute-nodes) para Windows (protocolo RDP (Remote Desktop Protocol)) e nós Linux (Secure Shell (SSH)).
 
-> [AZURE.NOTE] O apoio técnico para Linux no Batch está atualmente em pré-visualização. Para obter mais detalhes, veja [Provision Linux compute nodes in Azure Batch pools (Aprovisionar nós do Linux nos conjuntos do Azure Batch)](batch-linux-nodes.md).
-
 ## Conjunto
 
 Um conjunto é uma coleção de nós na qual a sua aplicação é executada. O conjunto pode ser criado manualmente por si ou pelo serviço Batch automaticamente quando especifica o trabalho a ser realizado. Pode criar e gerir um conjunto que cumpra os requisitos de recursos da sua aplicação. Os conjuntos só podem ser utilizados pela conta do Batch em que foram criados. Uma conta do Batch pode ter mais do que um conjunto.
@@ -146,7 +144,7 @@ Quando cria um conjunto, pode especificar os seguintes atributos:
 
 - **Pacotes de aplicações**
 
-    Pode especificar [pacotes de aplicações](#application-packages) para implementar os nós de computação no conjunto. Os pacotes de aplicações fornecem uma implementação simplificada e o controlo de versões das aplicações que as suas tarefas executam. Os pacotes de aplicações que especificou para um conjunto são instalados em cada nó associado a esse conjunto, e sempre que um nó é reiniciado ou sempre que a respetiva imagem for recriada.
+    Pode especificar [pacotes de aplicações](#application-packages) para implementar os nós de computação no conjunto. Os pacotes de aplicações fornecem uma implementação simplificada e o controlo de versões das aplicações que as suas tarefas executam. Os pacotes de aplicações que especificou para um conjunto são instalados em cada nó associado a esse conjunto, e sempre que um nó é reiniciado ou sempre que a respetiva imagem for recriada. Os pacotes de aplicações não são atualmente suportados nos nós de computação do Linux.
 
 - **Configuração da rede**
 
@@ -521,6 +519,6 @@ Em situações onde algumas das suas tarefas estejam a falhar, a aplicação cli
 
 
 
-<!--HONumber=ago16_HO5-->
+<!--HONumber=sep16_HO2-->
 
 

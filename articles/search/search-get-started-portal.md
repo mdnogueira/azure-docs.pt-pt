@@ -4,7 +4,7 @@
     services="search" 
     documentationCenter="" 
     authors="HeidiSteen" 
-    manager="paulettm" 
+    manager="jhubbard" 
     editor=""
     tags="azure-portal"/>
 
@@ -186,6 +186,6 @@ Deve regressar à saída JSON, começando pelo documento 386 e terminando no doc
 
 
 
-<!--HONumber=sep16_HO1-->
+<!--HONumber=sep16_HO2-->
 
 
