@@ -43,9 +43,9 @@ A tabela abaixo fornece informações sobre regiões e limites geopolíticos par
 
 |**Região geopolítica**|**Regiões do Azure**|**Localizações do ExpressRoute**|
 |---|---|---|---|
-|**Nuvem do Governo dos EUA**|Gov (US) – Iowa, Gov (US) – Virginia|Chicago, Dallas + Nova Iorque, Washington D.C.|
+|**Nuvem do Governo dos EUA**|Gov (US) – Iowa, Gov (US) – Virginia|Chicago, Dallas, Nova Iorque, Washington D.C.|
 |**China**|Norte da China, Leste da China|Pequim, Xangai|
-|**Alemanha**|Alemanha Central, Leste da Alemanha|Berlim, Frankfurt|
+|**Alemanha**|Alemanha Central, Leste da Alemanha|Berlim+, Frankfurt|
 
 
 A conectividade em regiões geopolíticas não é suportada no SKU do ExpressRoute standard. Terá de ativar o suplemento ExpressRoute Premium para suportar a conetividade global. A conectividade com ambientes em nuvem nacionais não é suportada. Pode trabalhar com o seu fornecedor de conectividade, se tal for necessário.
@@ -65,7 +65,7 @@ A conectividade em regiões geopolíticas não é suportada no SKU do ExpressRou
 | **Chennai** | Tata Communications |
 | **Chicago** | AT&T NetBond, Comcast, Equinix, Level 3 Communications, Zayo Group |
 | **Dallas** | AT&T NetBond, Equinix, Level 3 Communications, Megaport |
-| **Dublin** | Colt |
+| **Dublin** | Colt, Telecity Group |
 | **RAE de Hong Kong** | British Telecom, China Telecom Global, Equinix, Megaport, Orange, PCCW Global Limited, Tata Communications, Verizon |
 | **Londres** | AT&T NetBond, British Telecom, Colt, Equinix, InterCloud, Internet Solutions - Cloud Connect, Interxion, Jisc+, Level 3 Communications, MTN, NTT Communications, Orange, Tata Communications, Telecity Group, Telenor, Verizon, Vodafone |
 | **Las Vegas** | Level 3 Communications+, Megaport+
@@ -94,7 +94,7 @@ A conectividade em regiões geopolíticas não é suportada no SKU do ExpressRou
 | **Localização**  |**Fornecedores de Serviços** |
 |---------------|--------------------|
 | **Chicago** | AT&T NetBond, Equinix, Level 3 Communications, Verizon |
-| **Dallas** |  Equinix+, Verizon+ |
+| **Dallas** |  Equinix, Verizon+ |
 | **Nova Iorque** | Equinix, Level 3 Communications+, Verizon |
 | **Washington DC** | AT&T NetBond, Equinix, Level 3 Communications, Verizon |
 
@@ -158,6 +158,6 @@ A ativação da conectividade privada para atender as suas necessidades pode ser
 
 
 
-<!--HONumber=sep16_HO1-->
+<!--HONumber=sep16_HO2-->
 
 

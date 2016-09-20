@@ -72,7 +72,7 @@ Adicionar mais testes. Para o exemplo, tal como para o teste da sua home page, p
 
 ## <a name="monitor"></a>3. Ver resultados do teste Web
 
-Depois de 1-2 minutos, os resultados são apresentados nos 
+Passados 1 a 2 minutos, os resultados são apresentados no painel Teste Web.
 
 ![Resultados do resumo no painel principal](./media/app-insights-monitor-web-app-availability/14-availSummary.png)
 
@@ -326,6 +326,6 @@ Quando o teste estiver concluído, são-lhe apresentados tempos de resposta e ta
 
 
 
-<!--HONumber=sep16_HO1-->
+<!--HONumber=sep16_HO2-->
 
 

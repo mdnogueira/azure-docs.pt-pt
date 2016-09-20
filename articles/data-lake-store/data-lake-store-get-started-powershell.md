@@ -4,7 +4,7 @@
    services="data-lake-store"
    documentationCenter=""
    authors="nitinme"
-   manager="paulettm"
+   manager="jhubbard"
    editor="cgronlun"/>
 
 <tags
@@ -13,7 +13,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="07/07/2016"
+   ms.date="09/13/2016"
    ms.author="nitinme"/>
 
 # Introdução ao Azure Data Lake Store utilizando o Azure PowerShell
@@ -34,7 +34,6 @@ Aprenda a utilizar o Azure PowerShell para criar uma conta do Azure Data Lake St
 Antes de começar este tutorial, tem de ter o seguinte:
 
 - **Uma subscrição do Azure**. Veja [Obter versão de avaliação gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/).
-- **Ative a sua subscrição do Azure** para a pré-visualização pública do Data Lake Store. Veja as [instruções](data-lake-store-get-started-portal.md#signup).
 
 
 ##Instalar o Azure PowerShell 1.0 ou superior
@@ -143,6 +142,6 @@ Quando lhe for pedido, introduza **S** para eliminar a conta.
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=sep16_HO2-->
 
 

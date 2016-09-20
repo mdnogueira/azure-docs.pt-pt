@@ -13,14 +13,14 @@
      ms.topic="hero-article"
      ms.tgt_pltfrm="na"
      ms.workload="na"
-     ms.date="06/16/2016"
+     ms.date="09/12/2016"
      ms.author="dobett"/>
 
 # Introdução ao IoT Hub do Azure para Node.js
 
 [AZURE.INCLUDE [iot-hub-selector-get-started](../../includes/iot-hub-selector-get-started.md)]
 
-No final deste tutorial, terá três aplicações de consola do Node.js:
+No final deste tutorial, tem três aplicações de consola do Node.js:
 
 * **CreateDeviceIdentity.js**, que cria uma identidade de dispositivo e a chave de segurança associada para ligar o seu dispositivo simulado.
 * **ReadDeviceToCloudMessages.js**, que apresenta a telemetria enviada pelo seu dispositivo simulado.
@@ -28,7 +28,7 @@ No final deste tutorial, terá três aplicações de consola do Node.js:
 
 > [AZURE.NOTE] O artigo [SDKs do IoT Hub][lnk-hub-sdks] fornece informações sobre os vários SDKs que pode utilizar para criar ambas as aplicações a executar em dispositivos e a sua solução de back-end.
 
-Para concluir este tutorial, irá precisar de:
+Para concluir este tutorial, precisa do seguinte:
 
 + Versão 0.12.x ou posterior do Node.js. <br/> [Preparar o seu ambiente de desenvolvimento][Ink-dev-setup] descreve como instalar o Node.js para este tutorial no Windows ou Linux.
 
@@ -40,9 +40,9 @@ Criou o seu hub IoT. Tem o nome de anfitrião e a cadeia de ligação do Hub IoT
 
 ## Criar uma identidade de dispositivo
 
-Nesta secção, irá criar uma aplicação de consola do Node.js que cria uma nova identidade de dispositivo no registo de identidade do seu IoT Hub. Não é possível ligar um dispositivo ao IoT Hub exceto se tiver uma entrada no registo de identidade de dispositivo. Para mais informações, consulte a secção **Registo de Identidade de Dispositivo** do [Guia para Programadores do IoT Hub][lnk-devguide-identity]. Ao executar esta aplicação de consola, é gerado um ID de dispositivo exclusivo e uma chave que o seu dispositivo pode utilizar para se identificar quando enviar mensagens do dispositivo para a nuvem ao Hub IoT.
+Nesta secção, vai criar uma aplicação de consola do Node.js que cria uma identidade de dispositivo no registo de identidade do seu hub IoT. Não é possível ligar um dispositivo ao IoT Hub exceto se tiver uma entrada no registo de identidade de dispositivo. Para mais informações, consulte a secção **Registo de Identidade de Dispositivo** do [Guia para Programadores do IoT Hub][lnk-devguide-identity]. Ao executar esta aplicação de consola, é gerado um ID de dispositivo exclusivo e uma chave que o seu dispositivo pode utilizar para se identificar quando enviar mensagens do dispositivo para a nuvem ao Hub IoT.
 
-1. Criar uma nova pasta designada **createdeviceidentity**. Na pasta **createdeviceidentity**, crie um novo ficheiro package.json utilizando o seguinte comando na sua linha de comandos. Aceite todas as predefinições:
+1. Criar uma nova pasta designada **createdeviceidentity**. Na pasta **createdeviceidentity**, crie um ficheiro package.json com o seguinte comando na sua linha de comandos. Aceite todas as predefinições:
 
     ```
     npm init
@@ -54,7 +54,7 @@ Nesta secção, irá criar uma aplicação de consola do Node.js que cria uma no
     npm install azure-iothub --save
     ```
 
-3. Com um editor de texto, crie um novo ficheiro **CreateDeviceIdentity.js** na pasta **createdeviceidentity**.
+3. Com um editor de texto, crie um ficheiro **CreateDeviceIdentity.js** na pasta **createdeviceidentity**.
 
 4. Adicione a seguinte instrução `require` no início do ficheiro **CreateDeviceIdentity.js**:
 
@@ -72,7 +72,7 @@ Nesta secção, irá criar uma aplicação de consola do Node.js que cria uma no
     var registry = iothub.Registry.fromConnectionString(connectionString);
     ```
 
-6. Adicione o seguinte código para criar uma nova definição de dispositivo no registo de identidade do dispositivo do seu IoT Hub. Este código cria um novo dispositivo se o id de dispositivo não existir no registo, caso contrário, irá devolver a chave do dispositivo existente:
+6. Adicione o seguinte código para criar uma definição de dispositivo no registo de identidade do dispositivo do seu hub IoT. Este código cria um dispositivo se o id de dispositivo não existir no registo. Caso contrário, irá devolver a chave do dispositivo existente:
 
     ```
     var device = new iothub.Device(null);
@@ -102,17 +102,17 @@ Nesta secção, irá criar uma aplicação de consola do Node.js que cria uma no
     node CreateDeviceIdentity.js 
     ```
 
-9. Tome note do **Id do Dispositivo** e da **Chave do Dispositivo**. Irá precisar destas informações posteriormente quando criar uma aplicação que liga ao IoT Hub como um dispositivo.
+9. Tome note do **Id do Dispositivo** e da **Chave do Dispositivo**. Vai precisar destes valores mais tarde quando criar uma aplicação que liga ao Hub IoT como um dispositivo.
 
 > [AZURE.NOTE] O registo de identidade do IoT Hub apenas armazena identidades de dispositivo para permitir um acesso seguro ao Hub. Armazena os IDs do dispositivo e as chaves a utilizar como credenciais de segurança e um sinalizador ativado/desativado que pode utilizar para desativar o acesso de um dispositivo individual. Se a sua aplicação tiver de armazenar outros metadados específicos do dispositivo, deverá utilizar um armazenamento específico da aplicação.  Para obter mais informações, consulte o artigo [Guia para Programadores do IoT Hub][lnk-devguide-identity].
 
 ## Receber mensagens dispositivo-nuvem
 
-Nesta secção, irá criar uma aplicação de consola do Node.js que lê mensagens do dispositivo para a nuvem a partir do IoT Hub. Um IoT Hub expõe um ponto final compatível com [Event Hubs][lnk-event-hubs-overview], o que lhe permite ler mensagens do dispositivo para a nuvem. Para simplificar, este tutorial cria um leitor básico que não é adequado para uma implementação com débito elevado. O tutorial [Processar mensagens do dispositivo para a nuvem][lnk-process-d2c-tutorial] mostra-lhe como processar mensagens do dispositivo para a nuvem à escala. O tutorial [Introdução aos Hubs de Eventos][Ink-eventhubs-tutorial] fornece mais informações sobre como processar mensagens a partir dos Hubs de Eventos e é aplicável aos pontos finais do Hub IoT compatíveis com os Hubs de Eventos.
+Nesta secção, vai criar uma aplicação de consola do Node.js que lê mensagens do dispositivo para a nuvem a partir do Hub IoT. Um IoT Hub expõe um ponto final compatível com [Event Hubs][lnk-event-hubs-overview], o que lhe permite ler mensagens do dispositivo para a nuvem. Para simplificar, este tutorial cria um leitor básico que não é adequado para uma implementação com débito elevado. O tutorial [Processar mensagens do dispositivo para a nuvem][lnk-process-d2c-tutorial] mostra-lhe como processar mensagens do dispositivo para a nuvem à escala. O tutorial [Introdução aos Hubs de Eventos][Ink-eventhubs-tutorial] fornece mais informações sobre como processar mensagens a partir dos Hubs de Eventos e é aplicável aos pontos finais do Hub IoT compatíveis com os Hubs de Eventos.
 
 > [AZURE.NOTE] O ponto final compatível com o Event Hubs para a leitura de mensagens do dispositivo para a nuvem utiliza sempre o protocolo AMQPS.
 
-1. Crie uma nova pasta vazia designada **readdevicetocloudmessages**. Na pasta **readdevicetocloudmessages**, crie um novo ficheiro package.json utilizando o seguinte comando na sua linha de comandos. Aceite todas as predefinições:
+1. Crie uma nova pasta vazia designada **readdevicetocloudmessages**. Na pasta **readdevicetocloudmessages**, crie um ficheiro package.json com o seguinte comando na sua linha de comandos. Aceite todas as predefinições:
 
     ```
     npm init
@@ -124,7 +124,7 @@ Nesta secção, irá criar uma aplicação de consola do Node.js que lê mensage
     npm install azure-event-hubs --save
     ```
 
-3. Com um editor de texto, crie um novo ficheiro **ReadDeviceToCloudMessages.js** na pasta **readdevicetocloudmessages**.
+3. Com um editor de texto, crie um ficheiro **ReadDeviceToCloudMessages.js** na pasta **readdevicetocloudmessages**.
 
 4. Adicione as seguintes instruções `require` no início do **ReadDeviceToCloudMessages.js**:
 
@@ -154,7 +154,7 @@ Nesta secção, irá criar uma aplicação de consola do Node.js que lê mensage
     };
     ```
 
-7. Adicione o seguinte código para criar o **EventHubClient**, abra a ligação ao seu Hub IoT e crie um recetor para cada partição. Esta aplicação utiliza um filtro quando cria o recetor . Deste modo, o recetor apenas poderá ler as mensagens enviadas ao IoT Hub depois de o recetor entrar em execução. Esta ação torna-se útil num ambiente de teste, de modo a que veja apenas o conjunto atual de mensagens. No entanto, num ambiente de produção, deverá certificar-se de que o seu código processa todas as mensagens. Para mais informações, consulte o tutorial [Como processar mensagens do dispositivo para a nuvem do Hub IoT][lnk-process-d2c-tutorial]:
+7. Adicione o seguinte código para criar o **EventHubClient**, abra a ligação ao seu Hub IoT e crie um recetor para cada partição. Esta aplicação utiliza um filtro quando cria o recetor . Deste modo, o recetor apenas poderá ler as mensagens enviadas ao IoT Hub depois de o recetor entrar em execução. Este filtro é útil num ambiente de teste para que veja apenas o conjunto atual de mensagens. Num ambiente de produção, o seu código deverá certificar-se de que processa todas as mensagens. Veja o tutorial [Como processar mensagens do dispositivo para a nuvem do Hub IoT][lnk-process-d2c-tutorial] para obter mais informações:
 
     ```
     var client = EventHubClient.fromConnectionString(connectionString);
@@ -176,9 +176,9 @@ Nesta secção, irá criar uma aplicação de consola do Node.js que lê mensage
 
 ## Criar uma aplicação de dispositivo simulada
 
-Nesta secção, irá criar uma aplicação de consola do Node.js que simula um dispositivo que envia mensagens do dispositivo para a nuvem a um IoT Hub.
+Nesta secção, vai criar uma aplicação de consola do Node.js que simula um dispositivo que envia mensagens do dispositivo para a nuvem para um Hub IoT.
 
-1. Crie uma nova pasta vazia designada **simulateddevice**. Na pasta **simulateddevice**, crie um novo ficheiro package.json utilizando o seguinte comando na sua linha de comandos. Aceite todas as predefinições:
+1. Crie uma nova pasta vazia designada **simulateddevice**. Na pasta **simulateddevice**, crie um ficheiro package.json com o seguinte comando na sua linha de comandos. Aceite todas as predefinições:
 
     ```
     npm init
@@ -201,7 +201,7 @@ Nesta secção, irá criar uma aplicação de consola do Node.js que simula um d
     var Message = require('azure-iot-device').Message;
     ```
 
-5. Adicione uma variável **connectionString** e utilize-a para criar um cliente do dispositivo. Substitua **{youriothostname}** pelo nome do hub IoT que criou na secção *Criar um Hub IoT* e **{yourdevicekey}** pelo valor-chave do dispositivo que gerou na secção *Criar uma identidade de dispositivo*:
+5. Adicione uma variável **connectionString** e utilize-a para criar um cliente do dispositivo. Substitua **{oseunomedeanfitriãoiot}** pelo nome do hub IoT que criou na secção *Criar um Hub IoT*. Substitua **{asuachavededispositivo}** pelo valor da chave do dispositivo que gerou na secção *Criar uma identidade de dispositivo*:
 
     ```
     var connectionString = 'HostName={youriothostname};DeviceId=myFirstNodeDevice;SharedAccessKey={yourdevicekey}';
@@ -286,7 +286,7 @@ Para continuar a introdução ao Hub IoT e explorar outros cenários de IoT, vej
 - [Introdução à gestão de dispositivos][lnk-device-management]
 - [Introdução ao SDK do Gateway][lnk-gateway-SDK]
 
-Para saber como expandir a sua solução de IoT e processar mensagens do dispositivo para a nuvem à escala, veja o tutorial [Process device-to-cloud messages (Processar mensagens do dispositivo para a nuvem)][lnk-process-d2c-tutorial].
+Para saber como expandir a sua solução de IoT e processar mensagens do dispositivo para a nuvem à escala, veja o tutorial [Processar mensagens do dispositivo para a nuvem][lnk-process-d2c-tutorial].
 
 <!-- Images. -->
 [6]: ./media/iot-hub-node-node-getstarted/create-iot-hub6.png
@@ -314,6 +314,6 @@ Para saber como expandir a sua solução de IoT e processar mensagens do disposi
 
 
 
-<!--HONumber=sep16_HO1-->
+<!--HONumber=sep16_HO2-->
 
 

@@ -15,7 +15,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="04/12/2016"
+   ms.date="09/13/2016"
    ms.author="rogardle"/>
 
 
@@ -41,8 +41,6 @@ Agora, abra uma shell e execute o seguinte comando em que:
 **PATH_TO_PRIVATE_KEY** [OPCIONAL] é o caminho para a chave privada que corresponde à chave pública que forneceu ao criar o cluster do Serviço de Contentor. Utilize esta opção com o sinalizador -i.
 
 ```bash
-# ssh sample
-
 ssh -L PORT:localhost:PORT -f -N [USERNAME]@[DNSPREFIX]mgmt.[REGION].cloudapp.azure.com -p 2200
 ```
 > A porta de ligação SSH é 2200 – não a porta padrão 22.
@@ -52,8 +50,6 @@ ssh -L PORT:localhost:PORT -f -N [USERNAME]@[DNSPREFIX]mgmt.[REGION].cloudapp.az
 Para abrir um túnel para os pontos finais relacionados ao DC/OS, execute um comando semelhante ao seguinte:
 
 ```bash
-# ssh sample
-
 sudo ssh -L 80:localhost:80 -f -N azureuser@acsexamplemgmt.japaneast.cloudapp.azure.com -p 2200
 ```
 
@@ -70,8 +66,6 @@ Da mesma forma, pode aceder ao resto das APIs de cada aplicação através deste
 Para abrir um túnel para o ponto final Swarm, execute um comando semelhante ao seguinte:
 
 ```bash
-# ssh sample
-
 ssh -L 2375:localhost:2375 -f -N azureuser@acsexamplemgmt.japaneast.cloudapp.azure.com -p 2200
 ```
 
@@ -126,6 +120,6 @@ Implementar e gerir contentores com DC/OS ou Swarm:
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=sep16_HO2-->
 
 

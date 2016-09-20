@@ -4,7 +4,7 @@
    services="data-lake-analytics" 
    documentationCenter="" 
    authors="edmacauley" 
-   manager="paulettm" 
+   manager="jhubbard" 
    editor="cgronlun"/>
  
 <tags
@@ -267,6 +267,6 @@ Um registo de pesquisa de exemplo foi copiado para um contentor de Blobs do Azur
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=sep16_HO2-->
 
 

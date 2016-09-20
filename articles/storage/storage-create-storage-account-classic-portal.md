@@ -113,7 +113,7 @@ Um *grupo de afinidades* consiste num agrupamento geográfico dos seus serviços
 
 Quando cria uma conta do Storage, o Azure gera duas chaves de acesso ao armazenamento de 512 bits, que são utilizadas para autenticação quando a conta do Storage é acedida. Ao fornecer duas chaves de acesso ao armazenamento, o Azure permite que volte a gerar as chaves sem quaisquer interrupções ao seu serviço de armazenamento ou ao acesso a esse serviço.
 
-> [AZURE.NOTE] Recomendamos que evite partilhar as chaves de acesso ao armazenamento com outras pessoas. Para permitir o acesso aos recursos de armazenamento sem fornecer as chaves de acesso, pode utilizar uma *assinatura de acesso partilhado*. Uma assinatura de acesso partilhado fornece acesso a um recurso na sua conta durante um intervalo definido por si e com as permissões que especificar. Consulte [Assinaturas de Acesso Partilhado: Compreender o Modelo SAS](storage-dotnet-shared-access-signature-part-1.md) para mais informações.
+> [AZURE.NOTE] Recomendamos que evite partilhar as chaves de acesso ao armazenamento com outras pessoas. Para permitir o acesso aos recursos de armazenamento sem fornecer as chaves de acesso, pode utilizar uma *assinatura de acesso partilhado*. Uma assinatura de acesso partilhado fornece acesso a um recurso na sua conta durante um intervalo definido por si e com as permissões que especificar. Veja [Utilizar Assinaturas de Acesso Partilhado (SAS)](storage-dotnet-shared-access-signature-part-1.md) para obter mais informações.
 
 No [Portal Clássico do Azure](https://manage.windowsazure.com), utilize **Gerir Chaves** no dashboard ou a página **Armazenamento** para ver, copiar e voltar a gerar as chaves de acesso ao armazenamento utilizadas para aceder aos serviços Blob, Tabela e Fila.
 
@@ -179,6 +179,6 @@ Para remover uma conta do Storage que já não está a utilizar, utilize **Elimi
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=sep16_HO2-->
 
 

@@ -11,6 +11,6 @@ A página [Preços de Armazenamento do Azure](https://azure.microsoft.com/pricin
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=sep16_HO2-->
 
 

@@ -4,7 +4,7 @@
     services="active-directory"
     documentationCenter=""
     authors="andkjell"
-    manager="stevenpo"
+    manager="femila"
     editor="curtand"/>
 
 <tags
@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="06/27/2016"
+    ms.date="09/13/2016"
     ms.author="billmath;andkjell"/>
 
 # Introdução ao Azure AD Connect utilizando as definições rápidas
@@ -32,14 +32,14 @@ Pode ver estes passos em ação na secção [vídeos](#videos).
 4. No ecrã de definições rápidas, clique em **Utilizar definições rápidas**.  
 ![Bem-vindo ao Azure AD Connect](./media/active-directory-aadconnect-get-started-express/express.png)
 5. No ecrã Ligar ao Azure AD, introduza o nome de utilizador e palavra-passe de um administrador global do Azure AD. Clique em **Seguinte**.  
-![Ligar ao Azure AD](./media/active-directory-aadconnect-get-started-express/connectaad.png) Se receber um erro e tiver problemas com a conectividade, consulte [Resolver problemas de conectividade](active-directory-aadconnect-troubleshoot-connectivity.md).
-6. No ecrã Ligar ao AD DS, introduza o nome de utilizador e palavra-passe para uma conta de administrador da empresa. Pode introduzir a parte do domínio no formato NetBios ou FQDN, ou seja, FABRIKAM\administrador ou fabrikam.com\administrador. Clique em **Seguinte**.  
+![Ligar ao Azure AD](./media/active-directory-aadconnect-get-started-express/connectaad.png) Se receber um erro e tiver problemas de conectividade, veja [Resolver problemas de conectividade](active-directory-aadconnect-troubleshoot-connectivity.md).
+6. No ecrã Ligar ao AD DS, introduza o nome de utilizador e palavra-passe para uma conta de administrador da empresa. Pode introduzir a parte do domínio no formato NetBios ou FQDN, ou seja, FABRIKAM\administrator ou fabrikam.com\administrator. Clique em **Seguinte**.  
 ![Ligar ao AD DS](./media/active-directory-aadconnect-get-started-express/connectad.png)
-7. A página [**Configuração do início de sessão do Azure AD**](active-directory-aadconnect-user-signin.md#azure-ad-sign-in-configuration) só será mostrada caso não tenha concluído a [verificação dos domínios](active-directory-add-domain.md) nos [pré-requisitos](active-directory-aadconnect-prerequisites.md).
+7. A página [**Configuração do início de sessão do Azure AD**](active-directory-aadconnect-user-signin.md#azure-ad-sign-in-configuration) só é mostrada caso não tenha concluído a [verificação dos domínios](active-directory-add-domain.md) nos [pré-requisitos](active-directory-aadconnect-prerequisites.md).
 ![Domínios não verificados](./media/active-directory-aadconnect-get-started-express/unverifieddomain.png)  
-Se esta página for apresentada, reveja todos os domínios marcados como **Não Adicionado** e **Não Verificado**. Certifique-se de que os que utiliza foram verificados no Azure AD. Quando tiver verificado os domínios, clique no símbolo de atualização.
+Se esta página for apresentada, reveja todos os domínios marcados como **Não Adicionado** e **Não Verificado**. Certifique-se de que os domínios que utiliza foram verificados no Azure AD. Quando tiver verificado os domínios, clique no símbolo de atualização.
 8. No ecrã Preparado para configurar, clique em **Instalar**.
-    - Opcionalmente, na página Preparado para configurar, pode desmarcar a caixa de verificação **Inicie o processo de sincronização assim que a configuração for concluída**. Deve desmarcar esta caixa de verificação se pretender efetuar qualquer configuração adicional, como [filtragem](active-directory-aadconnectsync-configure-filtering.md). Se desmarcar esta opção, o assistente configura a sincronização, mas deixa o agendador desativado. Não será executado até que o ative manualmente [voltando a executar o assistente de instalação](active-directory-aadconnectsync-installation-wizard.md).
+    - Opcionalmente, na página Preparado para configurar, pode desmarcar a caixa de verificação **Inicie o processo de sincronização assim que a configuração for concluída**. Deve desmarcar esta caixa de verificação se pretender efetuar qualquer configuração adicional, como [filtragem](active-directory-aadconnectsync-configure-filtering.md). Se desmarcar esta opção, o assistente configura a sincronização, mas deixa o agendador desativado. Não é executado até que o ative manualmente, [voltando a executar o assistente de instalação](active-directory-aadconnectsync-installation-wizard.md).
     - Se tiver o Exchange no Active Directory no local, terá também uma opção para ativar a [**Implementação Híbrida do Exchange**](https://technet.microsoft.com/library/jj200581.aspx). Ative esta opção se planear ter caixas de correio do Exchange simultaneamente na nuvem e no local.
 ![Pronto para configurar o Azure AD Connect](./media/active-directory-aadconnect-get-started-express/readytoconfigure.png)
 9. Quando concluir a instalação, clique em **Sair**.
@@ -71,6 +71,6 @@ Contas utilizadas para a instalação | [Mais acerca de contas e permissões do 
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=sep16_HO2-->
 
 

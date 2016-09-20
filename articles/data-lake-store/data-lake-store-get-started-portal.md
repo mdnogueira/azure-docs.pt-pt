@@ -4,7 +4,7 @@
    services="data-lake-store" 
    documentationCenter="" 
    authors="nitinme" 
-   manager="paulettm" 
+   manager="jhubbard" 
    editor="cgronlun"/>
  
 <tags
@@ -13,7 +13,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
-   ms.date="08/02/2016"
+   ms.date="09/13/2016"
    ms.author="nitinme"/>
 
 # Introdução ao Azure Data Lake Store utilizando o Portal do Azure
@@ -34,16 +34,6 @@ Aprenda a utilizar o Portal do Azure para criar uma conta do Azure Data Lake Sto
 Antes de começar este tutorial, tem de ter o seguinte:
 
 - **Uma subscrição do Azure**. Veja [Obter versão de avaliação gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/).
-
-## <a name="signup"></a>Ativar a subscrição do Azure para a Pré-visualização Pública do Data Lake Store
-
-Primeiro, tem de pedir a ativação da sua subscrição do Azure para a Pré-visualização Pública do Data Lake Store. Siga os passos abaixo.
-
-1. Inicie sessão no novo [Portal do Azure](https://portal.azure.com).
-2. Clique em **NOVO**, **Dados + Armazenamento** e, em seguida, em **Azure Data Lake Store**.
-3. No painel **Novo Data Lake Store**, clique em **Inscrever-se na pré-visualização**. Leia as informações e, em seguida, clique em **OK**. Receberá um e-mail assim que a sua subscrição tiver sido ativada para a Pré-visualização Pública.
-
-    ![Inscrever-se na Pré-visualização Pública](./media/data-lake-store-get-started-portal/preview-signup.png "Create a new Azure Data Lake account")
 
 ## Aprende depressa com vídeos?
 
@@ -140,6 +130,6 @@ Para eliminar uma conta do Azure Data Lake Store, a partir do painel Data Lake S
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=sep16_HO2-->
 
 

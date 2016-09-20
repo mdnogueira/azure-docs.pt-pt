@@ -215,7 +215,7 @@ server.on("listening", () => {
 ## Passos seguintes
 
 * [Monitorizar a telemetria no portal](app-insights-dashboards.md)
-* [Escrever consultas de análise na sua telemetria(app-insights-analytics-tour.md)
+* [Escrever consultas de análise sobre a telemetria](app-insights-analytics-tour.md)
 
 
 
@@ -230,6 +230,6 @@ server.on("listening", () => {
 
 
 
-<!--HONumber=sep16_HO1-->
+<!--HONumber=sep16_HO2-->
 
 

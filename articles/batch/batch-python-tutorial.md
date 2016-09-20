@@ -13,7 +13,7 @@
     ms.topic="hero-article"
     ms.tgt_pltfrm="na"
     ms.workload="big-compute"
-    ms.date="08/17/2016"
+    ms.date="09/08/2016"
     ms.author="marsma"/>
 
 # Introdução ao cliente Azure Batch Python
@@ -23,8 +23,6 @@
 - [Python](batch-python-tutorial.md)
 
 Conheça os princípios básicos do [Azure Batch][azure_batch] e o cliente [Batch Python][py_azure_sdk], à medida que discutimos uma pequena aplicação Batch escrita em Python. Vemos como dois scripts de exemplo utilizam o serviço Batch para processar uma carga de trabalho paralela em máquinas virtuais do Linux na nuvem, e como eles interagem com o [Armazenamento do Azure](./../storage/storage-introduction.md) para teste e obtenção de ficheiros. Irá conhecer um fluxo de trabalho de aplicações Batch comuns e obter uma compreensão base dos componentes principais do Batch, como trabalhos, conjuntos e nós de computação.
-
-> [AZURE.NOTE] O apoio técnico para Linux no Batch está atualmente em pré-visualização. Alguns aspetos da funcionalidade abordados aqui podem ser alterados antes da disponibilidade geral. Os [Pacotes de aplicações](batch-application-packages.md) **não são atualmente suportados** nos nós de computação do Linux.
 
 ![Fluxo de trabalho da solução Batch (básico)][11]<br/>
 
@@ -341,7 +339,7 @@ Quando cria um conjunto, define um [PoolAddParameter][py_pooladdparam] que espec
 
 - **Tamanho dos nós de computação** (*vm_size* - necessário)<p/>Uma vez que vamos especificar nós do Linux para [VirtualMachineConfiguration][py_vm_config], especificamos um tamanho de VM (`STANDARD_A1` neste exemplo) a partir de [Tamanhos de máquinas virtuais no Azure](../virtual-machines/virtual-machines-linux-sizes.md). Novamente, veja [Aprovisionar nós de computação do Linux em conjuntos do Azure Batch](batch-linux-nodes.md) para obter mais informações.
 
-- **Tarefa de início** (*start_task* - não é necessário)<p/>Juntamente com as propriedades de nó físico anteriores, também pode especificar um [StartTask][py_starttask] para o conjunto (não é necessário). O StartTask é executado em cada nó à medida que esse nó se associa ao conjunto, e sempre que um nó for reiniciado. O StartTask é especialmente útil para preparar nós de computação para a execução de tarefas, como instalar as aplicações que as suas tarefas executam.<p/>Nesta aplicação de exemplo, o StartTask copia os ficheiros que transfere do Armazenamento (que são especificados com a propriedade **resource_files**) do StartTask, a partir do *diretório de trabalho* do StartTask para o diretório *partilhado* a que todas as tarefas em execução no nó podem aceder. Essencialmente, esta ação copia o `python_tutorial_task.py` para o diretório partilhado em cada nó, à medida que o nó se associa ao conjunto, para que quaisquer tarefas executadas no nó lhe consigam aceder.
+- **Tarefa de início** (*start_task* - não é necessário)<p/>Juntamente com as propriedades de nó físico anteriores, também pode especificar um [StartTask][py_starttask] para o conjunto (não é necessário). O StartTask é executado em cada nó à medida que esse nó se associa ao conjunto, e sempre que um nó for reiniciado. O StartTask é especialmente útil para preparar nós de computação para a execução de tarefas, como instalar as aplicações que as suas tarefas executam.<p/>Nesta aplicação de exemplo, o StartTask copia os ficheiros que transfere do Armazenamento (que são especificados com a propriedade **resource_files**) do StartTask, a partir do *diretório de trabalho*do StartTask para o diretório *partilhado* a que todas as tarefas em execução no nó podem aceder. Essencialmente, esta ação copia o `python_tutorial_task.py` para o diretório partilhado em cada nó, à medida que o nó se associa ao conjunto, para que quaisquer tarefas executadas no nó lhe consigam aceder.
 
 Repare na chamada para a função auxiliar `wrap_commands_in_shell`. Esta função aceita um conjunto de comandos separados e cria uma única linha de comandos adequada para a propriedade de linha de comandos de uma tarefa.
 
@@ -669,7 +667,7 @@ Agora que está familiarizado com o fluxo de trabalho básico de uma solução d
 [1]: ./media/batch-python-tutorial/batch_workflow_01_sm.png "Criar contentores no Armazenamento do Azure"
 [2]: ./media/batch-python-tutorial/batch_workflow_02_sm.png "Carregar a aplicação de tarefa e os ficheiros de entrada (dados) para contentores"
 [3]: ./media/batch-python-tutorial/batch_workflow_03_sm.png "Criar conjunto do Batch"
-[4]: ./media/batch-python-tutorial/batch_workflow_04_sm.png "Criar trabalho do Batch"
+[4]: ./media/batch-python-tutorial/batch_workflow_04_sm.png "Criar um trabalho do Batch"
 [5]: ./media/batch-python-tutorial/batch_workflow_05_sm.png "Adicionar tarefas ao trabalho"
 [6]: ./media/batch-python-tutorial/batch_workflow_06_sm.png "Monitorizar tarefas"
 [7]: ./media/batch-python-tutorial/batch_workflow_07_sm.png "Transferir o resultado da tarefa do Armazenamento"
@@ -680,6 +678,6 @@ Agora que está familiarizado com o fluxo de trabalho básico de uma solução d
 
 
 
-<!---HONumber=ago16_HO4-->
+<!--HONumber=sep16_HO2-->
 
 

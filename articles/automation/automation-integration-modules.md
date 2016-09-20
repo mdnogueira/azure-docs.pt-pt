@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.devlang="na"
    ms.topic="get-started-article"
-   ms.date="07/14/2016"
+   ms.date="09/12/2016"
    ms.author="magoedte" />
 
 # Módulos de Integração da Automatização do Azure
@@ -208,6 +208,6 @@ Apesar de os Módulos de Integração serem essencialmente módulos do PowerShel
 - Para saber mais sobre a criação de Módulos do PowerShell, veja o artigo [Escrever um Módulo do Windows PowerShell](https://msdn.microsoft.com/library/dd878310%28v=vs.85%29.aspx)
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=sep16_HO2-->
 
 

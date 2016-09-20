@@ -4,7 +4,7 @@
    services="data-lake-store"
    documentationCenter=""
    authors="nitinme"
-   manager="paulettm"
+   manager="jhubbard"
    editor="cgronlun"/>
 
 <tags
@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="08/18/2016"
+   ms.date="09/13/2016"
    ms.author="nitinme"/>
 
 # Introdução ao Azure Data Lake Store com Java
@@ -41,7 +41,6 @@ As ligações seguintes dão-lhe a localização de transferência para o SDK Ja
 * Java Development Kit (JDK) 8 (utilizando a versão 1.8 do Java).
 * IntelliJ ou outro ambiente de desenvolvimento Java adequado. Isto é opcional mas recomendado. As instruções abaixo utilizam o IntelliJ.
 * **Uma subscrição do Azure**. Veja [Obter versão de avaliação gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/).
-* **Ative a sua subscrição do Azure** para a pré-visualização pública do Data Lake Store. Veja as [instruções](data-lake-store-get-started-portal.md#signup).
 * **Criar uma Aplicação do Azure Active Directory**. Existem duas formas de se autenticar com o Azure Active Directory: **interativa** e **não interativa**. Existem pré-requisitos diferentes com base na forma como se pretende autenticar.
     * **Para a autenticação interativa** - No Azure Active Directory, tem de criar uma **aplicação de Cliente Nativo**. Assim que tiver criado a aplicação, obtenha os seguintes valores relacionados com a aplicação.
         - Obtenha o **ID de cliente** e o **URI de redirecionamento** para a aplicação
@@ -282,6 +281,6 @@ Para que este tutorial funcione, tem de conceder à sua aplicação permissão p
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=sep16_HO2-->
 
 

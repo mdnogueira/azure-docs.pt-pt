@@ -14,6 +14,6 @@ A utilização do Gestor de Configuração do Azure é opcional. Pode também ut
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=sep16_HO2-->
 
 

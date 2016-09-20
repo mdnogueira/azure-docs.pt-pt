@@ -4,7 +4,7 @@
    services="data-lake-analytics" 
    documentationCenter="" 
    authors="edmacauley" 
-   manager="paulettm" 
+   manager="jhubbard" 
    editor="cgronlun"/>
  
 <tags
@@ -212,6 +212,6 @@ Depois de a tarefa ser concluída, pode utilizar os seguintes cmdlets para lista
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=sep16_HO2-->
 
 

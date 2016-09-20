@@ -14,7 +14,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="csharp"
    ms.workload="data-management"
-   ms.date="09/01/2016"
+   ms.date="09/14/2016"
    ms.author="sstein"/>
 
 # Experimentar a Base de Dados SQL: utilizar C# para criar uma base de dados SQL com a Biblioteca da Base de Dados SQL para .NET
@@ -114,7 +114,7 @@ Substituir o conteúdo de **Program.cs** com o seguinte e atualizar as `{variabl
         {
             // Authenticate:
             _token = GetToken(_tenantId, _applicationId, _applicationSecret);
-            Console.WriteLine("Token aquired. Expires on:" + _token.ExpiresOn);
+            Console.WriteLine("Token acquired. Expires on:" + _token.ExpiresOn);
 
             // Instantiate management clients:
             _resourceMgmtClient = new ResourceManagementClient(new Microsoft.Rest.TokenCredentials(_token.AccessToken));
@@ -293,6 +293,6 @@ Agora que já experimentou a Base de Dados SQL e configurou uma base de dados co
 
 
 
-<!--HONumber=sep16_HO1-->
+<!--HONumber=sep16_HO2-->
 
 

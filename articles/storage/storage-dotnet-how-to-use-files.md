@@ -424,7 +424,7 @@ O exemplo seguinte cria uma política de acesso partilhado numa partilha e, em s
         Console.WriteLine(fileSas.DownloadText());
     }
 
-Para obter mais informações sobre como criar e utilizar assinaturas de acesso partilhado, consulte [Assinaturas de Acesso Partilhado: compreender o modelo SAS](storage-dotnet-shared-access-signature-part-1.md) e [Criar e utilizar um SAS com o Blob Storage](storage-dotnet-shared-access-signature-part-2.md).
+Para obter mais informações sobre a criação e utilização de assinaturas de acesso partilhado, veja [Utilizar Assinaturas de Acesso Partilhado (SAS)](storage-dotnet-shared-access-signature-part-1.md) e [Criar e utilizar um SAS com armazenamento de Blobs](storage-dotnet-shared-access-signature-part-2.md).
 
 ### Copiar ficheiros
 
@@ -671,6 +671,6 @@ Consulte as ligações para obter mais informações sobre o File Storage do Azu
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=sep16_HO2-->
 
 

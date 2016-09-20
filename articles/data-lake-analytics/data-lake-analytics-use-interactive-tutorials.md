@@ -4,7 +4,7 @@
    services="data-lake-analytics" 
    documentationCenter="" 
    authors="edmacauley" 
-   manager="paulettm" 
+   manager="jhubbard" 
    editor="cgronlun"/>
  
 <tags
@@ -43,7 +43,7 @@ Antes de começar este tutorial, tem de ter o seguinte:
 
 Tem de ter uma conta do Data Lake Analytics antes de poder executar quaisquer tarefas.
 
-Cada conta do Data Lake Analytics tem uma dependência de conta do [Azure Data Lake Store](../data-lake-store/data-lake-store-overview.md).  Esta conta é referida como a conta predefinida do Data Lake Store.  Pode criar a conta do Data Lake Store previamente ou quando criar a conta do Data Lake Analytics . Neste tutorial, irá criar a conta do Data Lake Store com a conta do Data Lake Analytics 
+Cada conta de Data Lake Analytics tem uma dependência de conta de [Arquivo Azure Data Lake](../data-lake-store/data-lake-store-overview.md).  Esta conta é referida como a conta predefinida do Data Lake Store.  Pode criar a conta do Data Lake Store previamente ou quando criar a conta do Data Lake Analytics . Neste tutorial, irá criar a conta do Data Lake Store com a conta do Data Lake Analytics 
 
 **Para criar uma conta do Data Lake Analytics **
 
@@ -81,7 +81,7 @@ Cada conta do Data Lake Analytics tem uma dependência de conta do [Azure Data L
 5. A partir do painel **Tutoriais Interativos**, clique em **Website Log Analytics**. O portal abre o tutorial num novo painel do portal.
 5. Clique em **1 Introdução** e, em seguida, siga as instruções
 
-##Veja também
+##Consultar também
 
 - [Descrição geral do Microsoft Azure Data Lake Analytics](data-lake-analytics-overview.md)
 - [Introdução ao Data Lake Analytics com o Portal do Azure](data-lake-analytics-get-started-portal.md)
@@ -91,6 +91,6 @@ Cada conta do Data Lake Analytics tem uma dependência de conta do [Azure Data L
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=sep16_HO2-->
 
 

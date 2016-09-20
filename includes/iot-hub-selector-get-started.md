@@ -18,6 +18,6 @@ Este tutorial mostrar-lhe como:
 - Criar um dispositivo simulado que envia telemetria à sua back-end em nuvem, e recebe comandos da sua back-end em nuvem.
 
 
-<!--HONumber=sep16_HO1-->
+<!--HONumber=sep16_HO2-->
 
 

@@ -4,7 +4,7 @@
     services="search"
     documentationCenter=""
     authors="HeidiSteen"
-    manager="paulettm"
+    manager="jhubbard"
     editor=""
     tags="azure-portal"/>
 
@@ -79,6 +79,6 @@ Agora que tem uma noção básica, o passo seguinte é rever os requisitos e as 
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=sep16_HO2-->
 
 

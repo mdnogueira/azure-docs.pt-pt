@@ -5,7 +5,7 @@
     services="machine-learning"
     documentationCenter=""
     authors="garyericson"
-    manager="paulettm"
+    manager="jhubbard"
     editor="cgronlun"/>
 
 <tags
@@ -45,6 +45,6 @@ Estas instruções baseiam-se uma versão simplificada da [Classificação do bi
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=sep16_HO2-->
 
 

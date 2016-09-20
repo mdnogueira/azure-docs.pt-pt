@@ -242,6 +242,8 @@ if (-not $is_emulated){
 
 #### Modificar o LaunchWorker.ps1
 
+>[AZURE.NOTE] No caso de um projeto de uma **função de trabalho**, é preciso o ficheiro **LauncherWorker.ps1** para executar o ficheiro de arranque. Num projeto **função da Web**, o ficheiro de arranque é definido nas propriedades do projeto.
+
 O **bin\LaunchWorker.ps1** foi criado originalmente para muito trabalho de preparação, mas realmente não funciona. Substitua o conteúdo nesse ficheiro pelo seguinte script.
 
 Este script chama o ficheiro **worker.py** a partir do seu projeto de Python. Se a variável do ambiente **PYTHON2** estiver definida como **Ligado**, o Python 2.7 será utilizado, caso contrário será utilizado o Python 3.5.
@@ -368,6 +370,6 @@ Para obter mais detalhes sobre a utilização de serviços do Azure a partir das
 
 
 
-<!--HONumber=ago16_HO5-->
+<!--HONumber=sep16_HO2-->
 
 

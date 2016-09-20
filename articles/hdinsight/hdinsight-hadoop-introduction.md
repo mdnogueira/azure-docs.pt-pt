@@ -5,7 +5,7 @@
     services="hdinsight"
     documentationCenter=""
     authors="cjgronlund"
-    manager="paulettm"
+    manager="jhubbard"
     editor="cgronlun"/>
 
 <tags
@@ -271,6 +271,6 @@ Estas ferramentas de BI podem ser úteis na análise de macrodados:
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=sep16_HO2-->
 
 

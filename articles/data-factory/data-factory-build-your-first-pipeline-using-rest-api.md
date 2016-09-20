@@ -17,20 +17,17 @@
     ms.date="08/16/2016"
     ms.author="spelluru"/>
 
-# Criar a primeira fábrica de dados do Azure com a API REST do Data Factory
+# Tutorial: Criar a primeira fábrica de dados do Azure com a API REST do Data Factory
 > [AZURE.SELECTOR]
-- [Descrição Geral do Tutorial](data-factory-build-your-first-pipeline.md)
-- [Com o Editor do Data Factory](data-factory-build-your-first-pipeline-using-editor.md)
-- [Com o PowerShell](data-factory-build-your-first-pipeline-using-powershell.md)
-- [Com o Visual Studio](data-factory-build-your-first-pipeline-using-vs.md)
-- [Com o Modelo Azure Resource Manager](data-factory-build-your-first-pipeline-using-arm.md)
-- [Com a API REST](data-factory-build-your-first-pipeline-using-rest-api.md)
+- [Portal do Azure](data-factory-build-your-first-pipeline-using-editor.md)
+- [Visual Studio](data-factory-build-your-first-pipeline-using-vs.md)
+- [PowerShell](data-factory-build-your-first-pipeline-using-powershell.md)
+- [Modelo do Resource Manager](data-factory-build-your-first-pipeline-using-arm.md)
+- [API REST](data-factory-build-your-first-pipeline-using-rest-api.md)
 
-Neste artigo, vai aprender a utilizar a API REST do Data Factory para criar a primeira fábrica de dados do Azure.
+[AZURE.INCLUDE [data-factory-tutorial-prerequisites](../../includes/data-factory-tutorial-prerequisites.md)] 
 
-## Pré-requisitos
-
-- Leia o artigo [Descrição Geral do Tutorial](data-factory-build-your-first-pipeline.md). Este artigo ajuda-o a compreender os conceitos básicos do Azure Data Factory. 
+## Pré-requisitos adicionais
 - Instale o [Curl](https://curl.haxx.se/dlwiz/) no seu computador. Utilize a ferramenta CURL com comandos REST para criar uma fábrica de dados. 
 - Siga as instruções [neste artigo](../resource-group-create-service-principal-portal.md) para: 
     1. Criar uma aplicação Web com o nome **ADFGetStartedApp** no Azure Active Directory.
@@ -408,6 +405,6 @@ Neste artigo, criou um pipeline com uma atividade de transformação (Atividade 
 
 
 
-<!--HONumber=ago16_HO5-->
+<!--HONumber=sep16_HO2-->
 
 

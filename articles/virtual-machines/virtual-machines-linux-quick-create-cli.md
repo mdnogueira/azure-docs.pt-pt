@@ -207,6 +207,6 @@ Também pode [utilizar o controlador `docker-machine` do Azure com vários coman
 
 
 
-<!--HONumber=sep14_HO2-->
+<!--HONumber=sep16_HO2-->
 
 

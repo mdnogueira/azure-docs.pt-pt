@@ -4,7 +4,7 @@
     services="hdinsight"
     documentationCenter=""
     authors="mumian"
-    manager="paulettm"
+    manager="jhubbard"
     editor="cgronlun"
     tags="azure-portal"/>
 
@@ -14,7 +14,7 @@
     ms.topic="hero-article"
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
-    ms.date="06/29/2016"
+    ms.date="09/14/2016"
     ms.author="jgao"/>
 
 # Instalar aplicações do HDInsight personalizadas
@@ -143,8 +143,10 @@ Com a CLI do Azure, pode eliminar o cluster ou o grupo de recursos. Consulte [El
 - [Publicar aplicações do HDInsight](hdinsight-apps-publish-applications.md): Saiba como publicar as suas aplicações do HDInsight personalizadas no Azure Marketplace.
 - [Personalizar clusters do HDInsight baseados em Linux através da Ação de Script](hdinsight-hadoop-customize-cluster-linux.md): saiba como utilizar a Ação de Script para instalar outras aplicações.
 - [Create Linux-based Hadoop clusters in HDInsight using Resource Manager templates (Criar clusters Hadoop baseados em Linux no HDInsight com modelos do Resource Manager)](hdinsight-hadoop-create-linux-clusters-arm-templates.md): saiba como chamar modelos do Resource Manager para criar clusters HDInsight.
+- [Utilizar nós de extremidade vazios no HDInsight](hdinsight-apps-use-edge-node.md): saiba como utilizar um nó de extremidade vazio para aceder ao cluster do HDInsight, testar aplicações do HDInsight e alojar aplicações do HDInsight.
 
 
-<!--HONumber=Aug16_HO1-->
+
+<!--HONumber=sep16_HO2-->
 
 

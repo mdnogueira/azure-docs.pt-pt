@@ -6,14 +6,14 @@
    authors="MGoedtel"
    manager="jwhit"
    editor="tysonn"
-   keywords="azure active directory user, azure service management, azure ad user account" />
+   keywords="utilizador do azure active directory, gestão do serviço do azure, conta de utilizador do azure ad" />
 <tags
    ms.service="automation"
    ms.devlang="na"
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="05/10/2016"
+   ms.date="09/12/2016"
    ms.author="magoedte" />
 
 # Autenticar Runbooks com a Gestão do Serviço do Azure e o Resource Manager
@@ -89,6 +89,6 @@ Deve repetir estas linhas após qualquer [ponto de verificação](http://technet
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=sep16_HO2-->
 
 

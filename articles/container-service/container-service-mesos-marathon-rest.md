@@ -15,7 +15,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="02/16/2016"
+   ms.date="09/13/2016"
    ms.author="nepeters"/>
 
 # Gestão de contentores através da API REST
@@ -74,8 +74,6 @@ Os contentores formatados para Docker são implementados através do Marathon ut
 Para poder implementar um contentor formatado para Docker, crie o seu próprio ficheiro JSON ou utilize o exemplo fornecido na [demonstração do Serviço de Contentor do Azure](https://raw.githubusercontent.com/rgardler/AzureDevTestDeploy/master/marathon/marathon.json). Armazene-o numa localização acessível. Em seguida, para implementar o contentor, execute o comando seguinte. Especifique o nome do ficheiro JSON.
 
 ```
-# deploy container
-
 curl -X POST http://localhost/marathon/v2/apps -d @marathon.json -H "Content-type: application/json"
 ```
 
@@ -104,8 +102,6 @@ Execute o comando seguinte para aumentar horizontalmente a aplicação.
 >[AZURE.NOTE] O URI será http://localhost/marathon/v2/apps/ e, em seguida, o ID da aplicação a dimensionar. Se estiver a utilizar o exemplo Nginx facultado aqui, o URI será http://localhost/marathon/v2/apps/nginx.
 
 ```json
-# scale container
-
 curl http://localhost/marathon/v2/apps/nginx -H "Content-type: application/json" -X PUT -d @scale.json
 ```
 
@@ -149,8 +145,6 @@ Os contentores formatados para Docker são implementados através do Marathon ut
 Crie o seu próprio ficheiro JSON ou utilize o exemplo fornecido na [demonstração do Serviço de Contentor do Azure](https://raw.githubusercontent.com/rgardler/AzureDevTestDeploy/master/marathon/marathon.json). Armazene-o numa localização acessível. Em seguida, para implementar o contentor, execute o comando seguinte. Especifique o nome do ficheiro JSON.
 
 ```powershell
-# deploy container
-
 Invoke-WebRequest -Method Post -Uri http://localhost/marathon/v2/apps -ContentType application/json -InFile 'c:\marathon.json'
 ```
 
@@ -165,8 +159,6 @@ Execute o comando seguinte para aumentar horizontalmente a aplicação.
 > [AZURE.NOTE] O URI será http://localhost/marathon/v2/apps/ e, em seguida, o ID da aplicação a dimensionar. Se estiver a utilizar o exemplo Nginx facultado aqui, o URI será http://localhost/marathon/v2/apps/nginx.
 
 ```powershell
-# scale container
-
 Invoke-WebRequest -Method Put -Uri http://localhost/marathon/v2/apps/nginx -ContentType application/json -InFile 'c:\scale.json'
 ```
 
@@ -177,6 +169,6 @@ Invoke-WebRequest -Method Put -Uri http://localhost/marathon/v2/apps/nginx -Cont
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=sep16_HO2-->
 
 

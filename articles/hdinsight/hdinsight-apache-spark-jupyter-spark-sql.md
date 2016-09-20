@@ -4,7 +4,7 @@
     services="hdinsight"
     documentationCenter=""
     authors="nitinme"
-    manager="paulettm"
+    manager="jhubbard"
     editor="cgronlun"
     tags="azure-portal"/>
 
@@ -216,6 +216,6 @@ Neste artigo, utilizará o kernel do PySpark. No artigo [Kernels disponíveis no
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=sep16_HO2-->
 
 

@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.devlang="na"
    ms.topic="get-started-article"
-   ms.date="08/17/2016"
+   ms.date="09/12/2016"
    ms.author="magoedte"/>
 
 # Autenticar Runbooks com Amazon Web Services
@@ -38,6 +38,6 @@ Depois de ter criado e copiado as chaves de segurança AWS, terá de criar um re
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=sep16_HO2-->
 
 

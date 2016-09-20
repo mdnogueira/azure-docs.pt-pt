@@ -19,7 +19,9 @@
 
 # Opções e desempenho da Base de Dados SQL: compreender o que está disponível em cada camada de serviço
 
-[Base de dados SQL do Azure](sql-database-technical-overview.md) tem várias camadas de serviços para processar cargas de trabalho diferentes. Pode [alterar as camadas de serviços](sql-database-scale-up.md) em qualquer altura, com um período mínimo de indisponibilidade para a aplicação (em média, menos de quatro segundos). Também pode [criar uma base de dados individual](sql-database-get-started.md) com características e preços definidos. Ou pode gerir várias bases de dados ao [criar um conjunto de bases de dados elásticas](sql-database-elastic-pool-create-portal.md). Em ambos os casos, as camadas incluem **Básica**, **Standard** e **Premium**. As opções de base de dados nestas camadas são semelhantes às de bases de dados autónomas e conjuntos elásticos, mas existem considerações adicionais para os conjuntos elásticos. Este artigo fornece detalhes sobre camadas de serviços para bases de dados autónomas e conjuntos elásticos.
+A [Base de Dados SQL do Azure](sql-database-technical-overview.md) oferece três camadas de serviço com vários níveis de desempenho para processar diferentes cargas de trabalho. Cada nível de desempenho fornece um conjunto cada vez maior de recursos concebidos para proporcionar um débito cada vez mais elevado. Pode gerir cada base de dados na sua própria [camada de serviço](sql-database-service-tiers.md#standalone-database-service-tiers-and-performance-levels) com o seu próprio nível de desempenho. Também pode gerir várias bases de dados num [conjunto elástico](sql-database-service-tiers.md#elastic-pool-service-tiers-and-performance-in-edtus) com um conjunto partilhado de recursos. Os recursos disponíveis para bases de dados autónomas são expressos em termos de Unidades de Transação da Base de Dados (DTUs) e para conjuntos elásticos em termos de DTUs elásticas ou eDTUs. Para obter mais informações sobre DTUs e eDTUs, veja [O que é uma DTU](sql-database-what-is-a-DTU.md). 
+
+Em ambos os casos, as camadas de serviço incluem **Básico**, **Standard** e **Premium**. As opções de base de dados nestas camadas são semelhantes às de bases de dados autónomas e conjuntos elásticos, mas existem considerações adicionais para os conjuntos elásticos. Este artigo fornece detalhes sobre camadas de serviços para bases de dados autónomas e conjuntos elásticos.
 
 ## Camadas de serviços e opções de base de dados
 As camadas de serviços Básica, Standard e Premium têm um SLA de 99,99% de tempo de atividade e oferecem desempenho previsível, opções de continuidade do negócio flexíveis, funcionalidades de segurança e faturação por hora. A tabela seguinte fornece exemplos de camadas mais adequadas para cargas de trabalho de aplicações diferentes.
@@ -39,24 +41,18 @@ As características de desempenho aqui listadas aplicam-se às bases de dados cr
 
 [AZURE.INCLUDE [SQL DB service tiers table](../../includes/sql-database-service-tiers-table.md)]
 
-Para uma melhor compreensão das DTUs, consulte a [secção DTU](#understanding-dtus) neste tópico.
-
 >[AZURE.NOTE] Para obter uma explicação detalhada de todas as outras linhas nesta tabela de camadas de serviço, consulte [Capacidades e limites da camada de serviço](sql-database-performance-guidance.md#service-tier-capabilities-and-limits).
 
 ## Camadas de serviços do conjunto elástico e o desempenho nas eDTUs
 Além de criar e dimensionar uma base de dados autónoma, também tem a opção de gerir várias bases de dados dentro de um [conjunto elástico](sql-database-elastic-pool.md). Todas as bases de dados num conjunto elástico partilham um conjunto comum de recursos. As características de desempenho são avaliadas por *Unidades de Transação de Bases de Dados elásticas* (eDTUs). Tal como nas bases de dados autónomas, os conjuntos são fornecidos em três camadas de serviços: **Básica**, **Standard** e **Premium**. Para os conjuntos, estas três camadas de serviços definem também os limites de desempenho global e várias funcionalidades.
 
-Os conjuntos permitem que as bases de dados partilhem e consumam recursos DTU sem necessidade de atribuir um nível de desempenho específico a cada base de dados no conjunto. Por exemplo, uma base de dados autónoma num conjunto Standard pode utilizar desde 0 eDTUs até ao número máximo de eDTUs de base de dados que definir quando configurar o conjunto. Os conjuntos permitem que várias bases de dados com diferentes cargas de trabalho utilizem eficazmente os recursos eDTU disponíveis para o conjunto completo. Consulte [Considerações sobre preços e o desempenho de um conjunto elástico](sql-database-elastic-pool-guidance.md), para detalhes.
+Os conjuntos permitem que as bases de dados partilhem e consumam recursos de DTU sem ser necessário atribuir um nível de desempenho específico a cada base de dados no conjunto. Por exemplo, uma base de dados autónoma num conjunto Standard pode utilizar desde 0 eDTUs até ao número máximo de eDTUs de base de dados que definir quando configurar o conjunto. Os conjuntos permitem que várias bases de dados com diferentes cargas de trabalho utilizem eficazmente os recursos eDTU disponíveis para o conjunto completo. Consulte [Considerações sobre preços e o desempenho de um conjunto elástico](sql-database-elastic-pool-guidance.md), para detalhes.
 
 A tabela seguinte descreve as características de camadas de serviços de conjunto.
 
 [AZURE.INCLUDE [SQL DB service tiers table for elastic pools](../../includes/sql-database-service-tiers-table-elastic-db-pools.md)]
 
 Cada base de dados dentro de um conjunto também respeita as características de base de dados autónoma para essa camada. Por exemplo, o conjunto Básico tem um limite máximo de sessões por conjunto de 4 800–28 800, mas uma base de dados individual dentro de um conjunto Básico tem um limite de base de dados de 300 sessões.
-
-## Compreender as DTUs
-
-[AZURE.INCLUDE [SQL DB DTU description](../../includes/sql-database-understanding-dtus.md)]
 
 ## Escolher uma camada de serviços
 
@@ -94,6 +90,6 @@ Para obter informações sobre os padrões da arquitetura de dados comuns de apl
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=sep16_HO2-->
 
 

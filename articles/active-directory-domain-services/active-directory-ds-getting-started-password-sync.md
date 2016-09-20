@@ -13,49 +13,59 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="07/06/2016"
+    ms.date="09/08/2016"
     ms.author="maheshu"/>
 
 # Serviços de Domínio do Azure AD *(Pré-visualização)* – Ativar a sincronização de palavras-passe para os Serviços de Domínio do Azure AD
+Nas tarefas anteriores, ativou os Serviços de Domínio do Azure AD Domain Services para o seu inquilino do Azure AD. A tarefa seguinte consiste em ativar hashes de credenciais necessários para a autenticação NTLM e Kerberos para sincronizar com os Serviços de Domínio do Azure AD. Quando a sincronização de credenciais estiver configurada, os utilizadores podem iniciar sessão no domínio gerido com as credenciais da empresa.
 
-## Tarefa 5: Ativar a sincronização de palavras-passe para os Serviços de Domínio do AAD para um diretório do Azure AD apenas na nuvem
-Assim que tiver ativado os Serviços de Domínio do Azure AD para o inquilino do Azure AD, a tarefa seguinte consiste em ativar as credenciais para sincronizar com os Serviços de Domínio do Azure AD. Isto permite aos utilizadores iniciar sessão no domínio gerido utilizando as respetivas credenciais empresariais.
-
-Os passos envolvidos são diferentes, com base se a sua organização tem um diretório do Azure AD apenas na nuvem ou se está definida para sincronizar com o seu diretório no local com o Azure AD Connect.
+Os passos envolvidos diferem consoante a sua organização tenha um inquilino do Azure AD apenas na nuvem ou se estiver definido para sincronizar com o seu diretório no local com o Azure AD Connect.
 
 <br>
 
 > [AZURE.SELECTOR]
-- [Diretório do Azure AD apenas na nuvem](active-directory-ds-getting-started-password-sync.md)
-- [Diretório do Azure AD sincronizado](active-directory-ds-getting-started-password-sync-synced-tenant.md)
+- [Inquilino do Azure AD apenas na nuvem](active-directory-ds-getting-started-password-sync.md)
+- [Inquilino do Azure AD sincronizado](active-directory-ds-getting-started-password-sync-synced-tenant.md)
 
 <br>
 
-### Ativar geração de hashes de credencial NTLM e de Kerberos para um diretório do Azure AD apenas na nuvem
-Se a sua organização tiver um diretório do Azure AD apenas na nuvem, os utilizadores que necessitam de utilizar os Serviços de Domínio do Azure AD terão de alterar as palavras-passe. Este processo de alteração de palavras-passe faz com que os hashes de credencial necessários pelos Serviços de Domínio do Azure AD para a autenticação Kerberos e NTLM sejam gerados no Azure AD. Pode optar por expirar palavras-passe para todos os utilizadores no inquilino que necessitam de utilizar os Serviços de Domínio do Azure AD ou instruir esses utilizadores para alterarem as palavras-passe.
 
-Seguem-se as instruções que tem de fornecer aos utilizadores finais, para alterarem as respetivas palavras-passe:
+## Tarefa 5: Ativar a sincronização de palavras-passe para os Serviços de Domínio do AAD para um inquilino do Azure AD apenas na nuvem
+Os Serviços de Domínio do Azure AD precisam de hashes de credenciais num formato adequado para autenticação NTLM e Kerberos, para autenticar os utilizadores no domínio gerido. A menos que ative os Serviços de Domínio do AAD Domain Services para o seu inquilino, o Azure AD não gera nem armazena hashes de credenciais no formato necessário para a autenticação NTLM ou Kerberos. Por motivos óbvios de segurança, o Azure AD também não armazena quaisquer credenciais no formato de texto não encriptado. Por isso, o Azure AD não tem uma forma de gerar estes hashes de credenciais NTLM ou Kerberos, com base nas credenciais existentes dos utilizadores.
 
-1. Navegue para a página do Painel de Acesso do Azure AD para a sua organização. Este está normalmente disponível em [http://myapps.microsoft.com](http://myapps.microsoft.com).
+> [AZURE.NOTE] Se a sua organização tiver um inquilino do Azure AD apenas na nuvem, os utilizadores que necessitam de utilizar os Serviços de Domínio do Azure AD têm de alterar as respetivas palavras-passe.
+
+Este processo de alteração de palavras-passe faz com que os hashes de credencial necessários pelos Serviços de Domínio do Azure AD para a autenticação Kerberos e NTLM sejam gerados no Azure AD. Pode optar por expirar palavras-passe para todos os utilizadores no inquilino que necessitam de utilizar os Serviços de Domínio do Azure AD ou instruir esses utilizadores para alterarem as palavras-passe.
+
+
+### Ativar a geração de hashes de credenciais NTLM e Kerberos para um inquilino do Azure AD apenas na nuvem
+Seguem-se as instruções que tem de fornecer aos utilizadores finais, para que possam alterar as respetivas palavras-passe:
+
+1. Navegue até à página do Painel de Acesso do Azure AD para a sua organização, em [http://myapps.microsoft.com](http://myapps.microsoft.com).
 
 2. Selecione o separador **perfil** nesta página.
 
-3. Clique no mosaico **Alterar palavra-passe** nesta página para iniciar uma alteração de palavra-passe.
+3. Clique no mosaico **Alterar palavra-passe** nesta página.
 
     ![Crie uma rede virtual para os Serviços de Domínio do Azure AD.](./media/active-directory-domain-services-getting-started/user-change-password.png)
 
-4. Ao fazê-lo, é apresentada a página **alterar palavra-passe**. Os utilizadores podem introduzir a palavra-passe (antiga) existente e prosseguirem para alterar palavra-passe.
+    > [AZURE.NOTE] Se não vir a opção **Alterar palavra-passe** na página do Painel de Acesso, certifique-se de que a sua organização configurou a [gestão de palavras-passe no Azure AD](../active-directory/active-directory-passwords-getting-started.md).
+
+4. Na página **Alterar palavra-passe**, escreva a palavra-passe existente (antiga) e, em seguida, escreva uma palavra-passe nova e confirme-a. Clique em **Submeter**.
 
     ![Crie uma rede virtual para os Serviços de Domínio do Azure AD.](./media/active-directory-domain-services-getting-started/user-change-password2.png)
 
-Depois de os utilizadores terem alterado a palavra-passe, a nova palavra-passe pode ser utilizada nos Serviços de Domínio do Azure AD dentro de pouco tempo. Após alguns minutos, os utilizadores podem iniciar sessão em computadores associados ao domínio gerido utilizando a palavra-passe recentemente alterada.
-
+Depois de ter alterado a palavra-passe, a nova palavra-passe será utilizada nos Serviços de Domínio do Azure AD dentro de pouco tempo. Após alguns minutos (normalmente, cerca de 20 minutos), pode iniciar sessão em computadores associados ao domínio gerido com a palavra-passe recentemente alterada.
 
 <br>
 
 ## Conteúdo relacionado
 
-- [Ativar a sincronização de palavras-passe para os Serviços de Domínio do AAD para um diretório do Azure AD sincronizado](active-directory-ds-getting-started-password-sync-synced-tenant.md)
+- [Ativar a sincronização de palavras-passe para os Serviços de Domínio do AAD para um inquilino do Azure AD sincronizado](active-directory-ds-getting-started-password-sync-synced-tenant.md)
+
+- [Como atualizar a sua própria palavra-passe](../active-directory/active-directory-passwords-update-your-own-password.md)
+
+- [Introdução à Gestão de Palavras-passe no Azure AD](../active-directory/active-directory-passwords-getting-started.md).
 
 - [Administrar um domínio gerido dos Serviços de Domínio do Azure AD](active-directory-ds-admin-guide-administer-domain.md)
 
@@ -65,6 +75,6 @@ Depois de os utilizadores terem alterado a palavra-passe, a nova palavra-passe p
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=sep16_HO2-->
 
 

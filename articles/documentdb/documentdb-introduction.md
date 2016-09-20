@@ -14,33 +14,26 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="get-started-article" 
-    ms.date="07/01/2016" 
+    ms.date="09/13/2016" 
     ms.author="mimig"/>
 
 # Introdução ao DocumentDB: uma Base de dados NoSQL JSON
 
-O Azure DocumentDB é um serviço de base de dados NoSQL completamente gerido criado para um desempenho previsível e rápido, elevada disponibilidade, dimensionamento automático, distribuição global e facilidade de desenvolvimento. O seu modelo flexível de dados, baixas latências consistentes e capacidades de consulta avançada tornam-no ótimo para aplicações Web, móveis, jogos e IoT e outras aplicações que requerem um dimensionamento integrado.
+##O que é o DocumentDB?
 
-Uma forma rápida de saber mais sobre esta base de dados JSON e vê-la em ação passa por seguir estes três passos: 
+O DocumentDB é um serviço de base de dados NoSQL completamente gerido criado para um desempenho previsível e rápido, elevada disponibilidade, dimensionamento elástico, distribuição global e facilidade de desenvolvimento. Como uma base de dados NoSQL sem esquema, o DocumentDB fornece capacidades de consulta SQL avançadas e familiares com latências baixas consistentes em dados JSON, garantindo que 99% das suas leituras são servidas em menos de 10 milissegundos e 99% das suas escritas são servidas em menos de 15 milissegundos. Estas vantagens exclusivas fazem do DocumentDB a opção perfeita para aplicações Web, para telemóveis, jogos e IoT, bem como para muitas outras aplicações que necessitam de dimensionamento totalmente integrado e replicação global.
+
+## Como posso saber mais sobre o DocumentDB? 
+
+Uma forma rápida de saber mais sobre o DocumentDB e vê-lo em ação passa por seguir estes três passos: 
 
 1. Veja o vídeo de dois minutos [O que é o DocumentDB?](https://azure.microsoft.com/documentation/videos/what-is-azure-documentdb/), que apresenta as vantagens da utilização do DocumentDB.
 2. Veja o vídeo de três minutos [Criar DocumentDB no Azure](https://azure.microsoft.com/documentation/videos/create-documentdb-on-azure/), que realça como começar com o DocumentDB através do Portal do Azure.
 3. Aceda ao [consulta Playground](http://www.documentdb.com/sql/demo), onde pode percorrer as diversas atividades para saber mais sobre a funcionalidade de consulta avançada disponível no DocumentDB. Em seguida, aceda ao separador Sandbox e execute as suas próprias consultas SQL personalizadas e experimentações com o DocumentDB.
 
-De seguida, regresse a este artigo, onde iremos aprofundar o assunto e poderá aprender as respostas às seguintes perguntas:  
+Em seguida, volte a este artigo, onde iremos aprofundar mais o serviço.  
 
--   [O que é o DocumentDB e qual o seu valor para aplicações modernas?](#what-is-azure-documentdb)
--   [Como são geridos os meus dados no DocumentDB e como posso aceder-lhes?](#data-management)
--   [Como posso desenvolver aplicações com o DocumentDB?](#develop)
--   [Quais são os meus passos seguintes para criar uma aplicação do DocumentDB?](#next-steps)  
-
-## O que é do Azure DocumentDB?  
-
-As aplicações modernas produzem, consomem e respondem rapidamente a grandes volumes de dados. Estas aplicações evoluem muito rapidamente, tal como o esquema de dados subjacente. Em resposta, os programadores escolheram bases de dados de documentos NoSQL sem esquemas, como soluções simples, rápidas e dimensionáveis para armazenar e processar dados, mantendo a capacidade de iterar rapidamente sobre modelos de aplicação de dados e feeds de dados não estruturados. No entanto, muitas bases de dados sem esquemas não permitem consultas complexas nem o processamento transacional, dificultando deste modo a gestão avançada de dados. É aqui que o DocumentDB entra em ação. A Microsoft desenvolveu o DocumentDB para cumprir estes requisitos na gestão de dados de aplicações atuais.
-
-O DocumentDB é um autêntico serviço de base de dados NoSQL sem esquema concebido para aplicações móveis modernas, aplicações Web, jogos e aplicações IoT. O DocumentDB garante que 99% contra as leituras são servidas em 10 milissegundos e 99% contra as escritas são servidas 15 em milissegundos. Também fornece flexibilidade de esquema e a capacidade de dimensionar facilmente uma base de dados para cima e para baixo a pedido. Não assume nem requer nenhum esquema para os documentos JSON que indexa. Por predefinição, indexa automaticamente todos os documentos na base de dados e não espera nem requer nenhum esquema ou criação de índices secundários. O DocumentDB permite consultas ad hoc complexas utilizando uma linguagem SQL, suporta níveis de consistência bem definidos e oferece a linguagem JavaScript integrada, com o processamento de transações de documentos múltiplos, utilizando o modelo de programação familiar de procedimentos armazenados, acionadores e UDFs. 
-
-Como base de dados JSON, o DocumentDB suporta de forma nativa documentos JSON, permitindo a fácil iteração do esquema de aplicações, suportando ainda aplicações que requerem uma chave-valor, um documento ou modelos de dados de tabela. O DocumentDB engloba a ubiquidade do JSON e do JavaScript, eliminando não correspondências entre os objetos definidos da aplicação e o esquema da base de dados. A integração profunda do JavaScript permite ainda aos programadores executarem eficiente e diretamente a lógica da aplicação - dentro do motor da base de dados, numa transação de base de dados. 
+## Que capacidades e funcionalidades chave oferece o DocumentDB?  
 
 O Azure DocumentDB oferece as principais capacidades e vantagens seguintes:
 
@@ -58,10 +51,11 @@ O Azure DocumentDB oferece as principais capacidades e vantagens seguintes:
 
 -   **Abrir por conceção:** Comece a trabalhar rapidamente utilizando as competências e ferramentas existentes. A programação do DocumentDB é simples, acessível e não requer a utilização de novas ferramentas ou a adesão a extensões personalizadas para o JSON ou o JavaScript. Pode aceder a todas as funcionalidades da base de dados, incluindo CRUD, consulta e processamento de JavaScript através de uma interface RESTful HTTP simples. O DocumentDB engloba formatos, idiomas e normas existentes, oferecendo capacidades de base de dados de elevado valor.
 
-Pode utilizar o DocumentDB para armazenar os conjuntos de dados flexíveis que requerem a obtenção de consulta e o processamento de transações. Os cenários de aplicações podem incluir dados de utilizador para aplicações Web interativas, aplicações móveis e jogos, bem como para o armazenamento, a obtenção e processamento dados JSON gerados no dispositivo IoT. Uma base de dados pode armazenar qualquer volume de documentos JSON uma vez que o DocumentDB convém a aplicações executadas na escala na Internet.
+-   **Indexação automática:** por predefinição, o DocumentDB [indexa automaticamente](documentdb-indexing.md) todos os documentos na base de dados e não espera nem exige nenhum esquema ou criação de índices secundários. Não pretende indexar tudo? Não se preocupe, também pode [optar por excluir caminhos nos seus ficheiros JSON](documentdb-indexing-policies.md).
 
-##<a name="data-management"></a>Recursos do Azure DocumentDB
-O Azure DocumentDB gere dados através de recursos de bases de dados bem definidos. Estes recursos são replicados para elevada disponibilidade, sendo exclusivamente endereçáveis pelo respetivo URI lógico. O DocumentDB oferece um modelo de programação HTTP simples com base na RESTful para todos os recursos. 
+##<a name="data-management"></a>Como é que o DocumentDB gere dados?
+
+O Azure DocumentDB gere dados JSON através de recursos de bases de dados bem definidos. Estes recursos são replicados para elevada disponibilidade, sendo exclusivamente endereçáveis pelo respetivo URI lógico. O DocumentDB oferece um modelo de programação HTTP simples com base na RESTful para todos os recursos. 
 
 A conta da base de dados do DocumentDB é um espaço de nomes único que lhe dá acesso ao Azure DocumentDB. Antes de poder criar uma conta de base de dados, terá de ter uma subscrição do Azure, que lhe permitirá aceder a vários serviços do Azure. 
 
@@ -73,7 +67,8 @@ A imagem abaixo mostra as relações entre os recursos do DocumentDB:
 
 Uma conta de base de dados consiste num conjunto de bases de dados, em que cada uma contém várias coleções que, por sua vez, podem conter procedimentos armazenados, acionadores, UDFs, documentos e anexos relacionados. Uma base de dados também tem utilizadores associados, cada um com um conjunto de permissões para aceder a várias outras coleções, procedimentos armazenados, acionadores, UDFs, documentos ou anexos. Enquanto as bases de dados, os utilizadores, as permissões e as coleções são recursos definidos pelo sistema com esquemas bem conhecidos - os documentos, procedimentos armazenados, acionadores, UDFs e anexos contêm conteúdos JSON arbitrários definidos pelo utilizador.  
 
-##<a name="develop"></a> Desenvolver com o Azure DocumentDB
+##<a name="develop"></a> Como posso programar aplicações com o DocumentDB?
+
 O Azure DocumentDB expõe recursos através de uma API REST que pode ser chamada por qualquer idioma com capacidade de efetuar pedidos HTTP/HTTPS. Além disso, o DocumentDB oferece bibliotecas de programação para vários idiomas populares. Estas bibliotecas simplificam muitos aspetos do trabalho com o Azure DocumentDB, processando detalhes como detalhes como a colocação em cache do endereço, a gestão de exceções, tentativas automáticas e assim sucessivamente. Atualmente, as bibliotecas estão disponíveis para os seguintes idiomas e plataformas:  
 
 Transferência | Documentação
@@ -100,9 +95,9 @@ O DocumentDB permite-lhe escrever a lógica da aplicação como programas com no
 A execução do JavaScript no DocumentDB é modelada após os conceitos suportados pelos sistemas de base de dados relacional, o JavaScript sendo um substituto moderno para Transact-SQL. Toda a lógica do JavaScript é executada numa transação do ambiente ACID, com o isolamento do instantâneo. Durante a sua execução, se o JavaScript emitir uma exceção, toda a transação será abortada.
 
 ## Passos seguintes
-Se já tiver uma conta do Azure, pode começar com o DocumentDB no [Portal do Azure](https://portal.azure.com/#gallery/Microsoft.DocumentDB), [criando uma conta de base de dados DocumentDB](documentdb-create-account.md).
+Já tem uma conta do Azure? Então, pode começar a utilizar o DocumentDB no [Portal do Azure](https://portal.azure.com/#gallery/Microsoft.DocumentDB), [criando uma conta de base de dados DocumentDB](documentdb-create-account.md).
 
-Se não tiver uma conta do Azure, pode:
+Não tem uma conta do Azure? Pode:
 
 - Inscrever-se numa [avaliação gratuita do Azure](https://azure.microsoft.com/free/), que lhe oferece 30 dias e $200 para experimentar todos os serviços do Azure. 
 - Se tiver uma subscrição do MSDN, poderá beneficiar de [$150 em créditos mensais gratuitos do Azure](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) para utilizar em qualquer serviço Azure. 
@@ -115,6 +110,6 @@ Em seguida, quando estiver pronto para saber mais, aceda ao nosso [percurso de a
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=sep16_HO2-->
 
 

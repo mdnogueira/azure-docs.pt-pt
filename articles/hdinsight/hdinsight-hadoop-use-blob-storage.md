@@ -6,7 +6,7 @@
     documentationCenter=""
     tags="azure-portal"
     authors="mumian"
-    manager="paulettm"
+    manager="jhubbard"
     editor="cgronlun"/>
 
 <tags
@@ -301,6 +301,6 @@ Para obter mais informações, consulte:
 
 
 
-<!--HONumber=sep16_HO1-->
+<!--HONumber=sep16_HO2-->
 
 

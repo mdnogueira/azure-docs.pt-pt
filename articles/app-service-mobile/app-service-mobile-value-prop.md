@@ -37,7 +37,7 @@ As seguintes funcionalidades são importantes para o desenvolvimento móvel prep
 
   Saiba mais sobre as nossas [funcionalidades de autenticação].
 
-- **Acesso a Dados** – As Mobile Apps do Azure fornecem uma fonte de dados OData v3 compatível com dispositivos móveis ligados ao SQL Azure ou a um Servidor SQL no local.  Este serviço pode ser baseado em Entity Framework, permitindo uma fácil integração com outros fornecedores de dados NoSQL e SQL, incluindo [Table Storage do Azure], MongoDB, [DocumentDB] e fornecedores de API SaaS, como o Office 365 e Salesforce.com.
+- **Acesso a Dados** – As Aplicações Móveis do Azure fornecem uma origem de dados OData v3 compatível com dispositivos móveis, ligada ao SQL Azure ou a um SQL Server no local.  Este serviço pode ser baseado em Entity Framework, permitindo uma fácil integração com outros fornecedores de dados NoSQL e SQL, incluindo [Table Storage do Azure], MongoDB, [DocumentDB] e fornecedores de API SaaS, como o Office 365 e Salesforce.com.
 - **Sincronização Offline** - Os nossos SDKs do Cliente tornam mais fácil a compilação de aplicações robustas e reativas que funcionam com um conjunto de dados offline, que podem ser sincronizados automaticamente com os dados de back-end, incluindo suporte para resolução de conflitos.
 
   Saiba mais sobre as nossas [funcionalidades de dados].
@@ -63,7 +63,7 @@ As seguintes funcionalidades da plataforma são geralmente úteis para sites de 
 
   Saiba mais sobre as [opções de implementação].
 
-- **Redes Virtuais** - O App Service pode ligar-se a recursos no local através de uma rede virtual, ExpressRoute ou ligações híbridas.
+- **Redes Virtuais** - O Serviço de Aplicações pode ligar-se a recursos no local através de uma rede virtual, ExpressRoute ou ligações híbridas.
 
   Saiba mais sobre [ligações híbridas], [redes virtuais] e [ExpressRoute].
 
@@ -105,6 +105,6 @@ Para obter mais informações sobre a plataforma do App Service do Azure, consul
 
 
 
-<!--HONumber=sep16_HO1-->
+<!--HONumber=sep16_HO2-->
 
 

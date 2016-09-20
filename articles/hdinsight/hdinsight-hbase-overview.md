@@ -6,7 +6,7 @@
     documentationCenter=""
     tags="azure-portal"
     authors="mumian" 
-    manager="paulettm"
+    manager="jhubbard"
     editor="cgronlun"/>
 
 <tags
@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="06/28/2016"
+    ms.date="09/14/2016"
     ms.author="jgao"/>
 
 
@@ -96,6 +96,6 @@ O caso de utilização canónico para o qual o BigTable (e, por extensão, o HBa
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=sep16_HO2-->
 
 

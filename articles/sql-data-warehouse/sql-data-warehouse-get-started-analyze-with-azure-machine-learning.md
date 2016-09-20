@@ -3,7 +3,7 @@
    description="Utilize o Azure Machine Learning para criar um modelo preditivo de machine learning com base em dados armazenados no Azure SQL Data Warehouse."
    services="sql-data-warehouse"
    documentationCenter="NA"
-   authors="shivaniguptamsft"
+   authors="kevinvngo"
    manager="barbkess"
    editor=""/>
 
@@ -13,8 +13,8 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="06/16/2016"
-   ms.author="shigu;barbkess;sonyama"/>
+   ms.date="09/14/2016"
+   ms.author="kevin;barbkess;sonyama"/>
 
 # Analisar dados com o Azure Machine Learning
 
@@ -148,6 +148,6 @@ Para saber mais sobre como criar modelos preditivos de machine learning, consult
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=sep16_HO2-->
 
 

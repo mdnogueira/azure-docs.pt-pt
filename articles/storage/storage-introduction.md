@@ -128,7 +128,7 @@ Uma conta SAS delega o acesso aos recursos em um ou mais dos serviços de armaze
 
 Por fim, pode especificar que um contentor e os respetivos blobs, ou um blob específico, estão disponíveis para acesso público. Quando indicar que um contentor ou um blob é público, todas as pessoas podem lê-lo anonimamente. Não é necessária autenticação.  Os blobs e os contentores públicos são úteis para expor recursos, tais como ficheiros multimédia e documentos que estão alojados em Web sites.  Para diminuir a latência de rede para um público global, pode colocar em cache dados blob utilizados por Web sites com o Azure CDN.
 
-Consulte o artigo [Assinaturas de Acesso Partilhado: Compreender o Modelo SAS](storage-dotnet-shared-access-signature-part-1.md) para mais informações sobre assinaturas de acesso partilhado. Consulte o artigo [Gerir o acesso de leitura anónimo a contentores e blobs](storage-manage-access-to-resources.md) e [Autenticação para os Serviços do Storage do Azure](https://msdn.microsoft.com/library/azure/dd179428.aspx) para mais informações sobre o acesso seguro à sua conta do Storage.
+Veja [Utilizar Assinaturas de Acesso Partilhado (SAS)](storage-dotnet-shared-access-signature-part-1.md) para obter mais informações sobre assinaturas de acesso partilhado. Consulte o artigo [Gerir o acesso de leitura anónimo a contentores e blobs](storage-manage-access-to-resources.md) e [Autenticação para os Serviços do Storage do Azure](https://msdn.microsoft.com/library/azure/dd179428.aspx) para mais informações sobre o acesso seguro à sua conta do Storage.
 
 ## Replicação para Durabilidade e Elevada Disponibilidade
 
@@ -269,6 +269,6 @@ Para saber mais sobre o Storage do Azure, explore estes recursos:
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=sep16_HO2-->
 
 

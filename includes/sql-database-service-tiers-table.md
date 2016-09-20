@@ -3,7 +3,7 @@
 |  |  |
 |---|---|
 | Máximo de DTUs | 5 |
-| Tamanho Máx. da Base de Dados | 2 |
+| Tamanho Máx. da Base de Dados (GB) | 2 |
 | Armazenamento em OLTP na memória máx. (GB) | N/D |
 | Trabalhadores simultâneos máx. | 30 |
 | Inícios de sessão simultâneos máx. | 30 |
@@ -18,7 +18,7 @@
 |---|:---:|
 || **S0** &nbsp;&nbsp;&nbsp;&nbsp; **S1** &nbsp;&nbsp;&nbsp;&nbsp; **S2** &nbsp;&nbsp;&nbsp; **S3**|
 | Máximo de DTUs | &nbsp;&nbsp;10 &nbsp;&nbsp;&nbsp;&nbsp; 20 &nbsp;&nbsp;&nbsp;&nbsp; 50 &nbsp;&nbsp; 100 |
-| Tamanho Máx. da Base de Dados | 250 |
+| Tamanho Máx. da Base de Dados (GB) | 250 |
 | Armazenamento em OLTP na memória máx. (GB) | N/D |
 | Trabalhadores simultâneos máx. | 60 &nbsp;&nbsp;&nbsp; 90 &nbsp;&nbsp;&nbsp; 120 &nbsp;&nbsp;&nbsp; 200 |
 | Inícios de sessão simultâneos máx. | 60 &nbsp;&nbsp;&nbsp; 90 &nbsp;&nbsp;&nbsp; 120 &nbsp;&nbsp;&nbsp; 200 |
@@ -33,7 +33,7 @@
 |---|:---:|
 || **P1** &nbsp;&nbsp;&nbsp;&nbsp; **P2** &nbsp;&nbsp;&nbsp;&nbsp; **P4** &nbsp;&nbsp;&nbsp; **P6/P3** &nbsp;&nbsp; **P11** &nbsp;&nbsp; **P15**|
 | Máximo de DTUs | 125 &nbsp;&nbsp; 250 &nbsp;&nbsp; 500 &nbsp;&nbsp; 1000 &nbsp;&nbsp;&nbsp; 1750 &nbsp;&nbsp; 4000 |
-| Tamanho Máx. da Base de Dados | 500 &nbsp;&nbsp; 500 &nbsp;&nbsp;&nbsp; 500 &nbsp;&nbsp;&nbsp; 500 &nbsp;&nbsp;&nbsp; 1000 &nbsp;&nbsp; 1000 |
+| Tamanho Máx. da Base de Dados (GB) | 500 &nbsp;&nbsp; 500 &nbsp;&nbsp;&nbsp; 500 &nbsp;&nbsp;&nbsp; 500 &nbsp;&nbsp;&nbsp; 1000 &nbsp;&nbsp; 1000 |
 | Armazenamento em OLTP na memória máx. (GB) | &nbsp;&nbsp;&nbsp;&nbsp;1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 14 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 32 |
 | Trabalhadores simultâneos máx. | &nbsp; 200 &nbsp;&nbsp; 400 &nbsp;&nbsp;&nbsp; 800 &nbsp;&nbsp; 1600 &nbsp; 2400 &nbsp;&nbsp; 6400 |
 | Inícios de sessão simultâneos máx. | &nbsp; 200 &nbsp;&nbsp; 400 &nbsp;&nbsp;&nbsp; 800 &nbsp;&nbsp; 1600 &nbsp; 2400 &nbsp;&nbsp; 6400 |
@@ -44,6 +44,6 @@
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=sep16_HO2-->
 
 
