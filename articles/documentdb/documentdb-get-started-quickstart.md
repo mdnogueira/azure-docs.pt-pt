@@ -602,7 +602,7 @@ Parabéns! Concluiu este tutorial NoSQL e a sua aplicação de consola C# está 
 
 [documentdb-criar-conta]: documentdb-create-account.md
 [documentdb-gerir]: documentdb-manage.md
-[chaves]: media/documentdb-get-started-quickstart/nosql-tutorial-keys.png
+[keys]: media/documentdb-get-started-quickstart/nosql-tutorial-keys.png
 
 
 

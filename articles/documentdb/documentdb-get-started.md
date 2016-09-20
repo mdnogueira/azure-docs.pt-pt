@@ -614,7 +614,7 @@ Para restaurar as referências ao SDK do .NET DocumentDB no Visual Studio, cliqu
 
 [documentdb-criar-conta]: documentdb-create-account.md
 [documentdb-gerir]: documentdb-manage.md
-[chaves]: media/documentdb-get-started/nosql-tutorial-keys.png
+[keys]: media/documentdb-get-started/nosql-tutorial-keys.png
 
 
 
