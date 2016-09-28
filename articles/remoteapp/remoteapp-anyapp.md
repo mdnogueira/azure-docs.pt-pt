@@ -16,6 +16,7 @@
    ms.date="08/15/2016"
    ms.author="elizapo"/>
 
+
 # Executar qualquer aplicação do Windows em qualquer dispositivo com o Azure RemoteApp
 
 > [AZURE.IMPORTANT]
@@ -125,6 +126,6 @@ Agora que já aprendeu a criar uma coleção, experimente criar uma [coleção q
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

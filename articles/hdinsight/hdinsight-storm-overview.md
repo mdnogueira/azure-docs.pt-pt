@@ -17,6 +17,7 @@
    ms.date="07/27/2016"
    ms.author="larryfr"/>
 
+
 #Introdução ao Apache Storm no HDInsight: Análise em tempo real para o Hadoop
 
 O Apache Storm no HDInsight permite-lhe criar soluções de análise em tempo real, distribuídas no ambiente do Azure, utilizando o [Apache Hadoop](http://hadoop.apache.org).
@@ -227,6 +228,6 @@ Saiba mais sobre as soluções de análise em tempo real com Apache Storm no HDI
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

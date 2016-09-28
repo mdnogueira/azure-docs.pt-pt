@@ -16,6 +16,7 @@
     ms.date="08/09/2016" 
     ms.author="sdanie"/>
 
+
 #O que é a API Management?
 
 A API Management ajuda as organizações a publicar APIs para programadores externos, parceiros e internos, de modo a que estes possam explorar ao máximo o potencial dos seus dados e serviços. Um pouco por todo o lado, as empresas procuram expandir as suas operações como uma plataforma digital, criando novos canais, encontrando novos clientes e promovendo um envolvimento mais profundo com os clientes existentes. A API Management fornece as competências essenciais para garantir um programa de API bem-sucedido através do envolvimento dos programadores, das informações de negócio, da análise, da segurança e da proteção.
@@ -124,6 +125,6 @@ Para obter mais informações sobre a API Management, veja a seguinte apresenta�
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

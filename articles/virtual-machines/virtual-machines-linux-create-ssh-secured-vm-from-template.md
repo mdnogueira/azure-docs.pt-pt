@@ -17,6 +17,7 @@
     ms.date="08/17/2016"
     ms.author="v-livech"/>
 
+
 # Criar uma VM com Linux utilizando um modelo do Azure
 
 Este artigo mostra como implementar rapidamente um Computador Virtual com Linux no Azure através de um Modelo do Azure.  O artigo requer uma conta do Azure ([obtenha uma avaliação gratuita](https://azure.microsoft.com/pricing/free-trial/)) com o [CLI do Azure](../xplat-cli-install.md) com sessão iniciada (`azure login`) e no modo Resource Manager (`azure config mode arm`).  Também pode implementar rapidamente uma VM com Linux através do [Portal do Azure](virtual-machines-linux-quick-create-portal.md) ou do [CLI do Azure](virtual-machines-linux-quick-create-cli.md).
@@ -76,6 +77,6 @@ Pesquise a [galeria de modelos](https://azure.microsoft.com/documentation/templa
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

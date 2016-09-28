@@ -4,13 +4,13 @@ Nesta secção, irá escrever uma aplicação de consola do Windows para enviar 
 
 1. No Visual Studio, crie um novo projeto de Aplicação de Ambiente de Trabalho do Visual C# com o modelo de projeto **Aplicação de Consola**. Dê ao projeto o nome **Remetente**.
 
-    ![][7]
+    ![](./media/service-bus-event-hubs-getstarted-send-csharp/create-sender-csharp1.png)
 
 2. No Explorador de Soluções, clique com o botão direito do rato na solução e, em seguida, clique em **Gerir Pacotes NuGet para Solução**. 
 
 3. Clique no separador **Procurar** e procure `Microsoft Azure Service Bus`. Verifique se o nome do projeto (**Remetente**) está especificado na caixa **Versões**. Clique em **Instalar** e aceite os termos de utilização. 
 
-    ![][8]
+    ![](./media/service-bus-event-hubs-getstarted-send-csharp/create-sender-csharp2.png)
 
     O Visual Studio transfere, instala e adiciona uma referência ao [Pacote NuGet da biblioteca do Service Bus do Azure](https://www.nuget.org/packages/WindowsAzure.ServiceBus).
 
@@ -66,11 +66,6 @@ Nesta secção, irá escrever uma aplicação de consola do Windows para enviar 
     ```
 
 
-<!-- Images -->
-[7]: ./media/service-bus-event-hubs-getstarted-send-csharp/create-sender-csharp1.png
-[8]: ./media/service-bus-event-hubs-getstarted-send-csharp/create-sender-csharp2.png
-
-
-<!--HONumber=sep16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

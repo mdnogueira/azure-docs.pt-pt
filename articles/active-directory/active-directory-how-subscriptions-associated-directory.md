@@ -16,6 +16,7 @@
     ms.date="08/15/2016"
     ms.author="curtand"/>
 
+
 # Como as subscrições do Azure estão associadas ao Azure Active Directory
 
 Este tópico inclui informações sobre o início de sessão no Microsoft Azure e os problemas relacionados, como a relação entre a subscrição do Azure e o Azure Active Directory (Azure AD).
@@ -141,6 +142,6 @@ Para gerir ambos os diretórios no Portal Clássico do Azure, siga estes passos.
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

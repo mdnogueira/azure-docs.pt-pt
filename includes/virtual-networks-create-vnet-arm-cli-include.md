@@ -107,7 +107,6 @@ Pode utilizar a CLI do Azure para gerir os seus recursos do Azure na linha de co
         info:    network vnet show command OK
 
 
-
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

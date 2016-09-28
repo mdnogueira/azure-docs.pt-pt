@@ -17,6 +17,7 @@
     ms.date="08/08/2016"
     ms.author="heidist"/>
 
+
 # Indexadores na Pesquisa do Azure
 > [AZURE.SELECTOR]
 - [Descrição geral](search-indexer-overview.md)
@@ -79,6 +80,6 @@ Agora que tem uma noção básica, o passo seguinte é rever os requisitos e as 
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

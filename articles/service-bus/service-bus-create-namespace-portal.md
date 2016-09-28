@@ -16,6 +16,7 @@
     ms.date="08/22/2016"
     ms.author="jotaub"/>
 
+
 # Criar um espaço de nomes do Service Bus com o Portal do Azure
 
 O espaço de nomes é um contentor comum para todos os componentes de mensagens. Um único espaço de nomes pode conter várias filas e tópicos, sendo que os espaços de nomes servem frequentemente de contentores da aplicação. Existem atualmente duas formas diferentes de criar um espaço de nomes do Service Bus.
@@ -34,10 +35,10 @@ Parabéns! Criou um espaço de nomes de Mensagens do Service Bus.
 
 Veja o nosso [epositório do GitHub](https://github.com/Azure-Samples/azure-servicebus-messaging-samples][github-samples) com exemplos que mostram algumas das funcionalidades mais avançadas das Mensagens do Azure Service Bus.
 
-[create-namespace-using-arm]: ./service-bus-resource-manager-overview.md
+[create-namespace-using-arm]: ../service-bus-messaging/service-bus-resource-manager-overview.md
 [github-samples]: https://github.com/Azure-Samples/azure-servicebus-messaging-samples
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

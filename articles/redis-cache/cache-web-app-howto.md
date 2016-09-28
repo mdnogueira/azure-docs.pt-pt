@@ -16,6 +16,7 @@
     ms.date="07/22/2016" 
     ms.author="sdanie"/>
 
+
 # Como criar uma aplicação Web com a Cache de Redis
 
 > [AZURE.SELECTOR]
@@ -852,6 +853,6 @@ Assim que tiver selecionado ou criado a cache a utilizar, navegue para a cache n
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

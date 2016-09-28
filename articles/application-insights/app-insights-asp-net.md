@@ -16,6 +16,7 @@
     ms.author="daviste"/>
 
 
+
 # Configurar o Application Insights para o ASP.NET
 
 O [Visual Studio Application Insights](app-insights-overview.md) monitoriza a aplicação em direto para o ajudar a [detetar e diagnosticar problemas de desempenho e exceções](app-insights-detect-triage-diagnose.md) e [detetar como a aplicação é utilizada](app-insights-overview-usage.md).  Funciona para as aplicações que estão alojadas nos seus próprios servidores IIS no local ou em VMs na nuvem, bem como em aplicações Web do Azure.
@@ -144,6 +145,6 @@ Se tiver efetuado personalizações no ApplicationInsights.config, guarde uma c�
 
 
 
-<!--HONumber=sep16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -16,6 +16,7 @@
    ms.date="08/23/2016"
    ms.author="curtand"/>
 
+
 # Gerir o diretório da subscrição do Office 365 no Azure
 
 Este artigo descreve como gerir um diretório criado para uma subscrição do Office 365 utilizando o portal clássico do Azure. Tem de ser Administrador de Serviço ou coadministrador de uma subscrição do Azure para iniciar sessão no portal clássico do Azure. Se ainda não tiver uma subscrição do Azure, pode inscrever-se para obter uma [avaliação de 30 dias gratuita](https://azure.microsoft.com/trial/get-started-active-directory/) hoje e implementar a sua primeira solução em nuvem em menos de 5 minutos, utilizando a seguinte ligação. Certifique-se de que usa a conta de estudante ou profissional que utiliza para iniciar sessão no Office 365.
@@ -63,6 +64,6 @@ Para mais informações sobre a relação entre subscrições e diretórios, con
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

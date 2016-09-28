@@ -16,16 +16,17 @@
     ms.date="07/14/2016"
     ms.author="evboyle"/>
 
+
 # Introdução à Azure Search no NodeJS
 > [AZURE.SELECTOR]
 - [Portal](search-get-started-portal.md)
 - [.NET](search-howto-dotnet-sdk.md)
 
-Saiba como compilar uma aplicação de pesquisa NodeJS personalizada que utiliza a Azure Search pela sua experiência de pesquisa. Este tutorial utiliza a [API REST do Serviço da Azure Search](https://msdn.microsoft.com/library/dn798935.aspx) para construir os objetos e as operações utilizados neste exercício.
+Saiba como compilar uma aplicação de pesquisa NodeJS personalizada que utiliza a Azure Search pela sua experiência de pesquisa. Este tutorial utiliza a [API REST do Serviço Azure Search](https://msdn.microsoft.com/library/dn798935.aspx) para construir os objetos e as operações utilizados neste exercício.
 
 Utilizamos [NodeJS](https://nodejs.org) e NPM, [Sublime Text 3](http://www.sublimetext.com/3) e Windows PowerShell no Windows 8.1 para desenvolver e testar este código.
 
-Para executar este exemplo, precisa de um serviço da Azure Search e, para isso, pode inscrever-se no [Portal do Azure](https://portal.azure.com). Consulte [Criar um serviço da Azure Search no portal](search-create-service-portal.md) para obter instruções passo a passo.
+Para executar este exemplo, precisa de um serviço do Azure Search e, para isso, pode inscrever-se no [Portal do Azure](https://portal.azure.com). Consulte [Criar um serviço Azure Search no portal](search-create-service-portal.md) para obter instruções passo a passo.
 
 ## Sobre os dados
 
@@ -42,7 +43,7 @@ Nesta aplicação, o programa **DataIndexer** compila e carrega o índice utiliz
 Depois de criar o serviço, volte ao portal para obter o URL ou `api-key`. As ligações ao serviço Search requerem que tenha o URL e uma `api-key` para autenticar a chamada.
 
 1. Inicie sessão no [Portal do Azure](https://portal.azure.com).
-2. Na barra de índice, clique em **Serviço de pesquisa** para listar todos os serviços da Azure Search aprovisionados para a sua subscrição.
+2. Na barra de índice, clique em **Serviço de pesquisa** para listar todos os serviços Azure Search aprovisionados para a sua subscrição.
 3. Selecione o serviço que pretende utilizar.
 4. No dashboard do serviço, verá os mosaicos com informações essenciais, bem como o ícone da chave para aceder às chaves de administração.
 
@@ -122,6 +123,6 @@ Novo na Azure Search? Recomendamos que experimente outros tutoriais para desenvo
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

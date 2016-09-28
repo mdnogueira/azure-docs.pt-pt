@@ -16,6 +16,7 @@
     ms.date="08/17/2016"
     ms.author="magoedte"/>
 
+
 # Autenticar Runbooks com a conta Run As do Azure
 
 Este tópico mostra como configurar uma conta de Automatização do portal do Azure, utilizando a funcionalidade da conta Run as para autenticar runbooks que gerem recursos no Azure Resource Manager ou na Gestão de Serviço do Azure.
@@ -388,6 +389,6 @@ Pode utilizar o código de exemplo atualizado abaixo, retirado do runbook de exe
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

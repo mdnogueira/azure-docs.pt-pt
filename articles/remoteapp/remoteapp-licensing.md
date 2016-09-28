@@ -16,6 +16,7 @@
     ms.author="elizapo" />
 
 
+
 # Como funciona o licenciamento no Azure RemoteApp?
 
 > [AZURE.IMPORTANT]
@@ -39,6 +40,6 @@ Tenha em atenção que não pode utilizar uma CAL ou um contrato de Licenciament
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -17,6 +17,7 @@
     ms.date="07/14/2016"
     ms.author="garye"/>
 
+
 # Tutorial de Machine Learning: crie a sua primeira experimentação de ciência de dados no Azure Machine Learning Studio
 
 Este tutorial de machine learning apresenta-lhe uma experimentação de ciência de dados fácil. Vamos criar um modelo de regressão linear que prevê o preço de um automóvel com base em diferentes variáveis, como a marca e as especificações técnicas. Para fazer isto, iremos utilizar o Azure Machine Learning Studio para desenvolver e repetir uma simples experimentação de análise preditiva.
@@ -249,6 +250,6 @@ Para instruções mais extensas e detalhadas sobre as técnicas de modelação p
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

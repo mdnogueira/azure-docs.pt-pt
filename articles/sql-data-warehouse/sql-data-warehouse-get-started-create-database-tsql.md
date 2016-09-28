@@ -17,6 +17,7 @@
    ms.date="08/24/2016"
    ms.author="lodipalm;barbkess;sonyama"/>
 
+
 # Criar uma base de dados SQL Data Warehouse, utilizando Transact-SQL (TSQL)
 
 > [AZURE.SELECTOR]
@@ -85,6 +86,6 @@ Após terminar o aprovisionamento do SQL Data Warehouse,poderá querer experimen
 
 
 
-<!--HONumber=ago16_HO5-->
+<!--HONumber=Sep16_HO3-->
 
 

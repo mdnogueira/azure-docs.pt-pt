@@ -16,6 +16,7 @@
     ms.date="07/07/2016"
     ms.author="wesmc;ricksal"/>
 
+
 # Azure Mobile Engagement – Guia de Introdução com Melhores Práticas
 
 ## Descrição geral
@@ -409,6 +410,6 @@ Depois de ter programado alguma experiência, pode considerar adicionar o seguin
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

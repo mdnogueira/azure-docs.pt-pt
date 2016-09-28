@@ -7,7 +7,6 @@ O projeto de serviços móveis permite-lhe executar o novo serviço móvel local
 2. Prima a tecla **F5** para reconstruir o projeto e iniciar o serviço móvel localmente. Após iniciar o serviço móvel com êxito, é apresentada uma página Web.
 
 
-
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -5,7 +5,7 @@
     services="active-directory"
     documentationCenter=""
     authors="karavar"
-    manager="stevenpo"
+    manager="femila"
     editor="karavar"/>
 
 <tags
@@ -16,6 +16,7 @@
     ms.topic="get-started-article"
     ms.date="07/14/2016"
     ms.author="vakarand"/>
+
 
 # Utilizar o Azure AD Connect Health com o AD FS
 A seguinte documentação é específica para monitorizar a infraestrutura do AD FS com o Azure AD Connect Health. Para obter informações sobre a monitorização do Azure AD Connect (Sincronização) com o Azure AD Connect Health, consulte [Utilizar Azure AD Connect Health para Sincronização](active-directory-aadconnect-health-sync.md). Além disso, para obter informações sobre a monitorização dos Serviços de Domínio do Active Directory com o Azure AD Connect Health, consulte [Utilizar Azure AD Connect Health com AD DS](active-directory-aadconnect-health-adds.md). 
@@ -116,6 +117,6 @@ O relatório fornece o seguinte:
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

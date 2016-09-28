@@ -16,6 +16,7 @@
    ms.date="07/21/2016"
    ms.author="yurid"/>
 
+
 # Guia de Resolução de Problemas do Centro de Segurança do Azure
 Este guia destina-se a profissionais de tecnologias da informação (TI), analistas de segurança de informações e administradores de nuvem cujas organizações utilizam o Centro de Segurança do Azure e que precisam de resolver problemas relacionados com o Centro de Segurança.
 
@@ -82,6 +83,6 @@ Neste documento, aprendeu a configurar as políticas de segurança no Centro de 
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

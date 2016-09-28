@@ -16,6 +16,7 @@
    ms.date="07/19/2016"
    ms.author="charleywen"/>
 
+
 # Configurar ligações ExpressRoute e de Site a Site coexistentes para o modelo de implementação Resource Manager
 
 > [AZURE.SELECTOR]
@@ -196,6 +197,6 @@ Para obter mais informações acerca do ExpressRoute, veja as [FAQs do ExpressRo
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -15,6 +15,7 @@
    ms.date="03/17/2016"
    ms.author="sewhee" />
 
+
 # Adicionar, desativar, ativar ou eliminar pontos finais
 
 A funcionalidade Web Apps no Serviço de Aplicações do Azure já fornece ativação pós-falha e a funcionalidade de encaminhamento de tráfego round robin para sites num centro de dados, independentemente do modo do site. O Traffic Manager do Azure permite-lhe especificar a ativação pós-falha e o encaminhamento de tráfego round robin para sites e serviços em nuvem em diferentes centros de dados. O primeiro passo necessário para fornecer essa funcionalidade é adicionar o ponto final de serviço em nuvem ou do site ao Traffic Manager.
@@ -77,6 +78,6 @@ Também pode desativar pontos finais individuais que fazem parte de um perfil do
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

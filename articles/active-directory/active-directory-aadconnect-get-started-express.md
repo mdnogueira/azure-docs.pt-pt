@@ -16,6 +16,7 @@
     ms.date="09/13/2016"
     ms.author="billmath;andkjell"/>
 
+
 # Introdução ao Azure AD Connect utilizando as definições rápidas
 Utilizam-se as **Definições Rápidas** do Azure AD Connect se tiver uma topologia de floresta única e a [sincronização de palavras-passe](active-directory-aadconnectsync-implement-password-synchronization.md) para autenticação. **Definições Rápidas** é a opção predefinida e é utilizada para o cenário de implementação mais comum. Estará a apenas alguns cliques da expansão do seu diretório no local para a nuvem.
 
@@ -71,6 +72,6 @@ Contas utilizadas para a instalação | [Mais acerca de contas e permissões do 
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -11,7 +11,6 @@ Por exemplo, o domínio “contoso.com” pode conter vários registos DNS, como
 
 - Quando várias zonas partilham o mesmo nome, cada instância receberá endereços de servidor de nomes diferentes e apenas uma instância pode ser delegada do domínio principal. Para obter mais informações, veja [Delegar um domínio ao DNS do Azure](../articles/dns/dns-domain-delegation.md).
 
-
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

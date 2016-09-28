@@ -17,6 +17,7 @@
     ms.date="08/29/2016"
     ms.author="ashmaka"/>
 
+
 # Carregar dados para a Azure Search
 > [AZURE.SELECTOR]
 - [Descrição geral](search-what-is-data-import.md)
@@ -47,6 +48,6 @@ A funcionalidade de indexador está exposta no [Portal do Azure](search-import-d
 
 
 
-<!--HONumber=ago16_HO5-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -46,13 +46,12 @@ Vamos agora criar uma campanha de notificações push simples para enviar uma no
 
     ![](./media/mobile-engagement-android-send-push/campaign-content.png)
 
-5. Acabou de configurar a campanha mais básica possível. Agora, desloque-se para baixo novamente e clique no botão **Criar** para guardar a campanha.
+5. Acabou de configurar a campanha mais básica possível. Agora, desloque-se para baixo novamente e clique no botão **Criar** para guardar a sua campanha.
 
 6. Último passo: clique em **Ativar** para ativar a campanha para enviar notificações push.
 
     ![](./media/mobile-engagement-android-send-push/campaign-activate.png)
 
-
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

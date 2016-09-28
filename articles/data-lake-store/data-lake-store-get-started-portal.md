@@ -16,6 +16,7 @@
    ms.date="09/13/2016"
    ms.author="nitinme"/>
 
+
 # Introdução ao Azure Data Lake Store utilizando o Portal do Azure
 
 > [AZURE.SELECTOR]
@@ -130,6 +131,6 @@ Para eliminar uma conta do Azure Data Lake Store, a partir do painel Data Lake S
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

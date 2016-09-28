@@ -17,6 +17,7 @@
    ms.author="guscatal;elizapo"/>
 
 
+
 # Obter a mesma experiência do Office 365 em qualquer dispositivo com o Azure RemoteApp
 
 > [AZURE.IMPORTANT]
@@ -72,6 +73,6 @@ Ao clicar em qualquer uma destas, a aplicação deverá iniciar na máquina virt
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

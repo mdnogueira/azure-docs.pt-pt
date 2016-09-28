@@ -16,6 +16,7 @@
     ms.date="09/14/2016"
     ms.author="sstein"/>
 
+
 # Criar um conjunto de bases de dados elásticas com C&#x23;
 
 > [AZURE.SELECTOR]
@@ -317,6 +318,6 @@ O seguinte script do PowerShell cria a aplicação do Active Directory (AD) e o 
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -18,6 +18,7 @@
    ms.date="09/13/2016"
    ms.author="rogardle"/>
 
+
 # Implementar um cluster do Serviço de Contentor do Azure
 
 O Serviço de Contentor do Azure fornece uma implementação rápida de soluções de orquestração e de clustering populares e de open source do contentor. Ao utilizar o Serviço de Contentor do Azure, pode implementar clusters DC/OS e Docker Swarm com modelos do Azure Resource Manager ou o Portal do Azure. Deve implementar esses clusters com Conjuntos de Dimensionamento das Virtual Machines do Azure. Assim, os clusters tiram partido das ofertas de redes e de armazenamento do Azure. Para aceder ao Serviço de Contentor do Azure, terá de ter uma subscrição do Azure. Se não tiver uma, pode inscrever-se para obter uma [avaliação gratuita](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=AA4C1C935).
@@ -187,6 +188,6 @@ Agora que tem um cluster a funcionar, veja estes documentos para obter os detalh
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

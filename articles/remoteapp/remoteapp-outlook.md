@@ -15,6 +15,7 @@
     ms.date="08/15/2016"
     ms.author="elizapo" />
 
+
 # Utilizar o Microsoft Outlook no Azure RemoteApp
 
 > [AZURE.IMPORTANT]
@@ -36,6 +37,6 @@ O Outlook 2016 tem uma solução para resolver este problema no modo em cache ao
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

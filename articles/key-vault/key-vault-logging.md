@@ -16,6 +16,7 @@
     ms.date="08/31/2016"
     ms.author="cabailey"/>
 
+
 # Registo do Cofre de Chaves do Azure #
 O Cofre de Chaves do Azure chave está disponível na maior parte das regiões. Para obter mais informações, consulte a [página de preços do Cofre de Chaves](https://azure.microsoft.com/pricing/details/key-vault/).
 
@@ -284,6 +285,6 @@ Para um tutorial de rotação da chave e auditoria do registo com o Cofre de Cha
 
 
 
-<!--HONumber=sep16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

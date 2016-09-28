@@ -4,7 +4,7 @@
     services="active-directory"
     documentationCenter=""
     authors="karavar"
-    manager="stevenpo"
+    manager="femila"
     editor="karavar"/>
 
 <tags
@@ -15,6 +15,7 @@
     ms.topic="get-started-article"
     ms.date="08/05/2016"
     ms.author="vakarand"/>
+
 
 
 # Instalação do Agente do Azure AD Connect Health
@@ -269,6 +270,6 @@ Pode utilizar o sinalizador - ShowResults no comando para ver registos detalhado
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -17,7 +17,6 @@ Esta ação envia um pedido POST ao back-end do Azure que implementou anteriorme
 [Portal do Azure]: https://portal.azure.com/
 
 
-
-<!--HONumber=sep16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -17,9 +17,8 @@ Nesta secção, vai testar a nova aplicação com o serviço móvel a ser execut
 
 4. Na aplicação, digite um texto significativo, tal como _Concluir o tutorial_, em **Inserir um TodoItem** e, em seguida, clique em **Guardar**.
 
-    Esta ação envia um pedido POST ao novo serviço móvel local. Os dados do pedido são inseridos na tabela TodoItem. Os itens armazenados na tabela são devolvidos pelo servidor móvel e os dados são apresentados na segunda coluna na aplicação.
+    Esta ação envia um pedido POST ao novo serviço móvel local. Os dados do pedido são inseridos na tabela Item da Lista de Tarefas. Os itens armazenados na tabela são devolvidos pelo servidor móvel e os dados são apresentados na segunda coluna na aplicação.
 
-
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

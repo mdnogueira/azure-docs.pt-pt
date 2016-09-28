@@ -16,6 +16,7 @@
    ms.date="09/01/2016"
    ms.author="cherylmc" />
 
+
 # Acerca do VPN Gateway
 
 
@@ -138,6 +139,6 @@ Planeie a configuração do gateway de VPN. Consulte [Design e Planeamento de Ga
 
 
 
-<!--HONumber=sep16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -15,6 +15,7 @@
     ms.date="09/01/2016"
     ms.author="awills"/>
 
+
 # Análise do programador: idiomas, plataformas e integrações
 
 Estes itens são implementações do [Application Insights](app-insights-overview.md) que já conhecemos, incluindo alguns de terceiros.
@@ -87,6 +88,6 @@ Se ainda não tem um SDK para o seu idioma ou plataforma, gostaria de criar um? 
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

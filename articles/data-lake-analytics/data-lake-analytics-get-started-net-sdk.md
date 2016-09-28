@@ -16,6 +16,7 @@
    ms.date="06/22/2016"
    ms.author="edmaca"/>
 
+
 # Tutorial: introdução à Análise do Azure Data Lake ao utilizar o SDK do .NET
 
 [AZURE.INCLUDE [get-started-selector](../../includes/data-lake-analytics-selector-get-started.md)]
@@ -24,8 +25,6 @@
 Saiba como utilizar o SDK do .NET para criar contas de Azure Data Lake Analytics, definir as tarefas de Data Lake Analytics em [U-SQL](data-lake-analytics-u-sql-get-started.md) e submeter as tarefas para contas de Data Lake Analytics. Para mais informações sobre a Data Lake Analytics, consulte [Descrição geral da Análise do Azure Data Lake](data-lake-analytics-overview.md).
 
 Neste tutorial, irá desenvolver uma aplicação de consola C# que contém um script U_SQL que lê um ficheiro de valores separados por tabulações (TSV) e converte-o num ficheiro de valores separados por vírgulas (CSV). Para seguir o mesmo tutorial, utilizando outras ferramentas suportadas, clique nos separadores na parte superior desta secção.
-
-[AZURE.INCLUDE [basic-process-include](../../includes/data-lake-analytics-basic-process.md)]
 
 ##Pré-requisitos
 
@@ -267,6 +266,6 @@ Um registo de pesquisa de exemplo foi copiado para um contentor de Blobs do Azur
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

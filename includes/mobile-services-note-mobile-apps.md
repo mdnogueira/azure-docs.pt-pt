@@ -5,7 +5,6 @@
 > Para obter uma introdução às Mobile Apps do Azure, veja o [Centro de documentação das Mobile Apps do Azure](https://azure.microsoft.com/documentation/learning-paths/appservice-mobileapps/).
 
 
-
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

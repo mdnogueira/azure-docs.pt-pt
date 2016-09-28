@@ -18,6 +18,7 @@
    ms.date="04/12/2016"
    ms.author="rogardle"/>
 
+
 # Criar um serviço Marathon específico para aplicações ou utilizadores
 
 O Serviço de Contentor do Azure fornece um conjunto de servidores principais no qual podemos pré-configurar o Apache Mesos e o Marathon. Estes podem ser utilizados para orquestrar as aplicações no cluster, mas é melhor não utilizar os servidores mestres para esta finalidade. Por exemplo, para ajustar a configuração do Marathon, necessita de iniciar sessão nos próprios servidores mestres e efetuar as alterações – isto encoraja servidores mestre exclusivos, que são ligeiramente diferentes do padrão e têm de ser tratados e geridos de forma independente. Para além disso, a configuração necessária para uma equipa pode não ser a configuração ideal para outra equipa.
@@ -60,6 +61,6 @@ Pode verificar com que instância do Marathon o CLI está a trabalhar contra com
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

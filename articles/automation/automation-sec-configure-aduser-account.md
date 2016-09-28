@@ -16,6 +16,7 @@
    ms.date="09/12/2016"
    ms.author="magoedte" />
 
+
 # Autenticar Runbooks com a Gestão do Serviço do Azure e o Resource Manager
 
 Este artigo descreve os passos que tem de efetuar para configurar uma conta de Utilizador do Azure AD para runbooks de Automatização do Azure em execução na Gestão do Serviço do Azure (ASM) ou nos recursos do Azure Resource Manager (ARM).  Embora isto continue a ser uma identidade de autenticação suportada para os runbooks com base no ARM, o método recomendado consiste em utilizar a nova conta Run As do Azure.       
@@ -89,6 +90,6 @@ Deve repetir estas linhas após qualquer [ponto de verificação](http://technet
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

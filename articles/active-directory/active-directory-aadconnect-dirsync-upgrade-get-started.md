@@ -4,7 +4,7 @@
    services="active-directory"
    documentationCenter=""
    authors="andkjell"
-   manager="stevenpo"
+   manager="femila"
    editor=""/>
 
 <tags
@@ -15,6 +15,7 @@
    ms.topic="get-started-article"
    ms.date="08/19/2016"
    ms.author="andkjell;shoatman;billmath"/>
+
 
 # Azure AD Connect: atualizar do DirSync
 O Azure AD Connect é o sucessor do DirSync. Encontrará neste tópico as forma de atualizar a partir do DirSync. Estes passos não funcionam para atualizar a partir de outra versão do Azure AD Connect ou a partir do Azure AD Sync.
@@ -223,6 +224,6 @@ Contas utilizadas para a instalação | [Mais acerca de contas e permissões do 
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

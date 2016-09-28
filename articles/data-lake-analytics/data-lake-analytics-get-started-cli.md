@@ -16,6 +16,7 @@
    ms.date="05/16/2016"
    ms.author="edmaca"/>
 
+
 # Tutorial: introdução à Análise do Azure Data Lake, utilizando a Interface de Linha de Comandos do Azure (CLI)
 
 [AZURE.INCLUDE [get-started-selector](../../includes/data-lake-analytics-selector-get-started.md)]
@@ -24,8 +25,6 @@
 Saiba como utilizar a CLI do Azure para criar contas de Análise do Azure Data Lake, definir as tarefas de Data Lake Analytics em [U-SQL](data-lake-analytics-u-sql-get-started.md) e submeter as tarefas para contas de Data Lake Analytics. Para mais informações sobre a Data Lake Analytics, consulte [Descrição geral da Análise do Azure Data Lake](data-lake-analytics-overview.md).
 
 Neste tutorial, irá desenvolver uma tarefa que lê um ficheiro de valores separados por tabulações (TSV) e converte-o num ficheiro de valores separados por vírgulas (CSV). Para seguir o mesmo tutorial, utilizando outras ferramentas suportadas, clique nos separadores na parte superior desta secção.
-
-[AZURE.INCLUDE [basic-process-include](../../includes/data-lake-analytics-basic-process.md)]
 
 ##Pré-requisitos
 
@@ -165,6 +164,6 @@ Depois de a tarefa ser concluída, pode utilizar os seguintes cmdlets para lista
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

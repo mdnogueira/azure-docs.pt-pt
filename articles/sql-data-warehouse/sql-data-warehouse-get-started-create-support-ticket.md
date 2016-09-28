@@ -16,6 +16,7 @@
    ms.date="09/01/2016"
    ms.author="sonyama;barbkess"/>
 
+
 # Como criar um pedido de suporte para o SQL Data Warehouse
  
 Se tiver problemas com o SQL Data Warehouse, crie um pedido de suporte para que a nossa equipa de engenharia possa ajudá-lo.
@@ -105,6 +106,6 @@ Além disso, pode ligar-se à comunidade do SQL Data Warehouse no [Stack Overflo
 
 
 
-<!--HONumber=sep16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

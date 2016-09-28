@@ -16,6 +16,7 @@
     ms.date="08/02/2016"
     ms.author="curtand"/>
 
+
 # Adicionar utilizadores de outros diretórios ou empresas associadas no Azure Active Directory
 
 > [AZURE.SELECTOR]
@@ -90,6 +91,6 @@ Se um utilizador for eliminado do respetivo diretório raiz ou se cancelar a res
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

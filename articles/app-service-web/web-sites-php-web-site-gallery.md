@@ -16,6 +16,7 @@
     ms.date="08/11/2016"
     ms.author="robmcm"/>
 
+
 # Criar uma aplicação Web WordPress no App Service do Azure
 
 [AZURE.INCLUDE [tabs](../../includes/app-service-web-get-started-nav-tabs.md)]
@@ -130,6 +131,6 @@ Para obter mais informações sobre como trabalhar com as Web Apps do App Servic
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

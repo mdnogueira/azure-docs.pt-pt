@@ -16,6 +16,7 @@
    ms.date="09/13/2016"
    ms.author="nitinme"/>
 
+
 # Introdução ao Azure Data Lake Store utilizando APIs REST
 
 > [AZURE.SELECTOR]
@@ -277,6 +278,6 @@ Deve ver um resultado como o seguinte:
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

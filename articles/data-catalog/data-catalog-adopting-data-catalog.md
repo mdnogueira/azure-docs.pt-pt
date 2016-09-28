@@ -16,6 +16,7 @@
     ms.date="07/25/2016"
     ms.author="spelluru"/>
 
+
 # Adotar o Catálogo de Dados do Azure
 Este artigo irá ajudá-lo a começar a adotar o **Catálogo de Dados do Azure** na sua organização. Para adotar com êxito o **Catálogo de Dados do Azure**, irá concentrar-se em três itens principais: definir a visão, identificar os casos de utilização empresarial fundamentais dentro da organização e escolher um projeto piloto.
 
@@ -175,6 +176,6 @@ Este artigo informou-o sobre como introduzir o **Catálogo de Dados do Azure** n
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

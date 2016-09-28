@@ -30,7 +30,6 @@
 7. Clique em **Abrir** para iniciar uma sessão de série.
  
 
-
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

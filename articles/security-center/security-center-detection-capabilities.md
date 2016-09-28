@@ -16,6 +16,7 @@
    ms.date="08/25/2016"
    ms.author="yurid"/>
 
+
 # Capacidades de deteção do Centro de Segurança do Azure
 Este documento descreve as capacidades de deteção avançadas do Centro de Segurança do Azure, o que ajuda a identificar ameaças ativas que ameaçam os seus recursos do Microsoft Azure e fornece informações necessárias para responder rapidamente.
 
@@ -90,6 +91,6 @@ Neste documento, aprendeu como funcionam as capacidades de deteção do Centro d
 
 
 
-<!--HONumber=ago16_HO5-->
+<!--HONumber=Sep16_HO3-->
 
 

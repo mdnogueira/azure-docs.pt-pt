@@ -16,6 +16,7 @@
     ms.date="08/16/2016"
     ms.author="markvi"/>
 
+
 # Introdução ao Azure Active Directory Premium
 
 
@@ -164,6 +165,6 @@ A disponibilidade dos serviços e funcionalidades para um serviço em nuvem da M
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

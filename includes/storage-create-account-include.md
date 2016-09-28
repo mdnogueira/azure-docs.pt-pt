@@ -7,7 +7,6 @@ Também pode criar uma conta de armazenamento do Azure com o [Azure PowerShell](
 Se preferir não criar uma conta de armazenamento neste momento, pode também utilizar o emulador de armazenamento do Azure para executar e testar o seu código num ambiente local. Para obter mais informações, veja [Utilizar o Emulador de Armazenamento do Azure para Programação e Teste](../articles/storage/storage-use-emulator.md).
  
 
-
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

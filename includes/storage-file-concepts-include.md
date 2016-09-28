@@ -39,7 +39,6 @@ Para obter detalhes sobre a nomenclatura das partilhas, dos diretórios e dos fi
 
 [ficheiros-conceitos]: ./media/storage-file-concepts-include/files-concepts.png
 
-
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

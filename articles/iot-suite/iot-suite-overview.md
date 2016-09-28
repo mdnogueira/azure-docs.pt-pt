@@ -17,6 +17,7 @@
      ms.date="08/09/2016"
      ms.author="dobett"/>
 
+
 # O que é o Azure IoT Suite?
 
 Os serviços Internet das Coisas (IoT) do Azure oferecem uma vasta gama de capacidades. Estes serviços de nível empresarial permitem-lhe:
@@ -67,6 +68,6 @@ Agora que tem uma ideia geral sobre o que o IoT Suite pode fazer e quais são os
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

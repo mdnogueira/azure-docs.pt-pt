@@ -18,6 +18,7 @@
    ms.date="09/08/2016"
    ms.author="glenga"/>
 
+
 #Criar a sua primeira Função do Azure
 
 ##Descrição geral
@@ -76,6 +77,6 @@ Funções do Azure melhora a plataforma do Azure App Service para funcionalidade
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -18,6 +18,7 @@
    ms.date="08/30/2016"
    ms.author="glenga"/>
    
+
 # Criar um webhook ou uma Função Azure API
 
 As Funções do Azure são uma experiência baseada em eventos, de cálculo a pedido que lhe permite criar unidades agendadas ou acionadas de código implementado em várias linguagens de programação. Para saber mais acerca das Funções do Azure, veja a [Descrição Geral das Funções do Azure](functions-overview.md).
@@ -95,6 +96,6 @@ Aborda os planos de serviço disponíveis com as Funções do Azure, incluindo o
 
 
 
-<!--HONumber=sep16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

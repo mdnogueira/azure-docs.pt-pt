@@ -18,6 +18,7 @@
     ms.author="markvi"/>
 
 
+
 # Resolução de problemas: Problemas difíceis de resolver
 
 Obteve um página com acesso negado ao aceder a uma aplicação como o SharePoint Online.  
@@ -142,6 +143,6 @@ Volte em breve para obter instruções para telemóveis ou tablets Android.
 
 
 
-<!--HONumber=ago16_HO5-->
+<!--HONumber=Sep16_HO3-->
 
 

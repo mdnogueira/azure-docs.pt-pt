@@ -27,7 +27,6 @@ Pode reutilizar um carregamento predefinido de modelos ARM para um repositório 
 
     ![Criar a VNet no portal de pré-visualização](./media/virtual-networks-create-vnet-arm-template-click-include/figure5.gif)
 
-
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

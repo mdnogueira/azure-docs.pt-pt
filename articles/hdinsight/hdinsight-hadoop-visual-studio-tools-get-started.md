@@ -18,6 +18,7 @@
     ms.date="08/10/2016"
     ms.author="jgao"/>
 
+
 # Começar a utilizar as ferramentas Hadoop do Visual Studio para o HDInsight para executar uma consulta do Hive
 
 Saiba como utilizar as Ferramentas do HDInsight para o Visual Studio para se ligar a clusters do HDInsight e submeter consultas do Hive. Para obter mais informações sobre a utilização do HDInsight, consulte [Introdução ao HDInsight][hdinsight.introduction] e [Começar a utilizar o HDInsight][hdinsight.get.started]. Para obter mais informações sobre a ligação a um cluster do Storm, consulte [Desenvolver topologias C# para o Apache Storm no HDInsight com o Visual Studio][hdinsight.storm.visual.studio.tools].
@@ -286,6 +287,6 @@ Neste artigo, aprendeu a ligar-se a clusters do HDInsight a partir do Visual Stu
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

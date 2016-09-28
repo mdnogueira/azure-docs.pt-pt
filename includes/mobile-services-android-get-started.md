@@ -1,4 +1,4 @@
-A etapa final deste tutorial consiste em criar e executar a nova aplicação.
+A etapa final deste tutorial consiste em criar e executar a sua nova aplicação.
 
 ### Carregar o projeto para o Android Studio e sincronizar o Gradle
 
@@ -27,7 +27,7 @@ Pode executar a aplicação com o emulador ou com um dispositivo real.
 
     ![](./media/mobile-services-android-get-started/mobile-quickstart-startup-android.png)
 
-    Esta ação envia um pedido POST ao novo serviço móvel alojado no Azure. Os dados do pedido são inseridos na tabela TodoItem. Os itens armazenados na tabela são devolvidos pelo serviço móvel e os dados são apresentados na lista.
+    Esta ação envia um pedido POST para o novo serviço móvel alojado no Azure. Os dados do pedido são inseridos na tabela TodoItem. Os itens armazenados na tabela são devolvidos pelo serviço móvel e os dados são apresentados na lista.
 
     > [AZURE.NOTE] Pode rever o código que acede ao seu serviço móvel para consultar e inserir dados, que poderá encontrar no ficheiro ToDoActivity.java.
 
@@ -40,7 +40,6 @@ Pode executar a aplicação com o emulador ou com um dispositivo real.
     ![](./media/mobile-services-android-get-started/mobile-data-browse.png)
 
 
-
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

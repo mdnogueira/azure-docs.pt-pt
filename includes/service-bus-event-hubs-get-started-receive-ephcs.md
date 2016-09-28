@@ -8,33 +8,33 @@ Para utilizar o [EventProcessorHost][], tem de ter uma [Conta de Armazenamento d
 
 2. Clique em **Dados + Armazenamento** e, em seguida, clique em **Conta de armazenamento**.
 
-    ![][1]
+    ![](./media/service-bus-event-hubs-getstarted-receive-ephcs/create-storage1.png)
 
 3. No painel **Criar conta de armazenamento**, escreva um nome para a conta de armazenamento. Escolha uma subscrição do Azure, um grupo de recursos e uma localização na que pretenda criar o recurso. Em seguida, clique em **Criar**.
 
-    ![][2]
+    ![](./media/service-bus-event-hubs-getstarted-receive-ephcs/create-storage2.png)
 
 4. Na lista de contas de armazenamento, clique na conta de armazenamento recentemente criada.
 
 5. No painel da conta de armazenamento, clique em **Chaves de acesso**. Copie o valor da **chave1** para utilizar mais tarde neste tutorial.
 
-    ![][3]
+    ![](./media/service-bus-event-hubs-getstarted-receive-ephcs/create-storage3.png)
 
 4. No Visual Studio, crie um novo projeto de Aplicação de Ambiente de Trabalho do Visual C# com o modelo de projeto **Aplicação de Consola**. Dê ao projeto o nome **Recetor**.
 
-    ![][14]
+    ![](./media/service-bus-event-hubs-getstarted-receive-ephcs/create-receiver-csharp1.png)
 
 5. No Explorador de Soluções, clique com o botão direito do rato na solução e, em seguida, clique em **Gerir Pacotes NuGet para Solução**.
 
 6. Clique no separador **Procurar** e procure `Microsoft Azure Service Bus Event Hub - EventProcessorHost`. Verifique se o nome do projeto (**Recetor**) está especificado na caixa **Versões**. Clique em **Instalar** e aceite os termos de utilização.
 
-    ![][13]
+    ![](./media/service-bus-event-hubs-getstarted-receive-ephcs/create-eph-csharp1.png)
 
     O Visual Studio permite transferir, instalar e adicionar uma referência ao [do Service Bus do Azure – Pacote NuGet do EventProcessorHost](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost), com todas as suas dependências.
 
 7. Clique com o botão direito do rato no projeto **Recetor**, clique em **Adicionar** e em **Classe**. Dê à nova classe o nome **SimpleEventProcessor** e, em seguida, clique em **Adicionar** para criar a classe.
 
-    ![][15]
+    ![](./media/service-bus-event-hubs-getstarted-receive-ephcs/create-receiver-csharp2.png)
 
 8. Adicione as seguintes declarações na parte superior do ficheiro SimpleEventProcessor.cs:
 
@@ -129,18 +129,6 @@ Para utilizar o [EventProcessorHost][], tem de ter uma [Conta de Armazenamento d
 [EventProcessorHost]: http://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventprocessorhost(v=azure.95).aspx
 [Portal do Azure]: https://portal.azure.com
 
-<!-- Images -->
-
-[1]: ./media/service-bus-event-hubs-getstarted-receive-ephcs/create-storage1.png
-[2]: ./media/service-bus-event-hubs-getstarted-receive-ephcs/create-storage2.png
-[3]: ./media/service-bus-event-hubs-getstarted-receive-ephcs/create-storage3.png
-[13]: ./media/service-bus-event-hubs-getstarted-receive-ephcs/create-eph-csharp1.png
-[14]: ./media/service-bus-event-hubs-getstarted-receive-ephcs/create-receiver-csharp1.png
-[15]: ./media/service-bus-event-hubs-getstarted-receive-ephcs/create-receiver-csharp2.png
-
-
-
-
-<!--HONumber=sep16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

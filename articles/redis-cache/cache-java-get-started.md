@@ -16,6 +16,7 @@
     ms.date="08/24/2016"
     ms.author="sdanie"/>
 
+
 # Como utilizar a Cache de Redis do Azure com o Java
 
 > [AZURE.SELECTOR]
@@ -82,6 +83,6 @@ Alguns clientes Redis não suportam o SSL e, por predefinição, a [porta não S
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

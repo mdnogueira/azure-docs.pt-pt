@@ -15,6 +15,7 @@
    ms.date="08/17/2016"
    ms.author="alkohli" />
 
+
 # Implementar o dispositivo StorSimple no local (Atualização 1)
 
 > [AZURE.SELECTOR]
@@ -292,6 +293,6 @@ Para obter as instruções de instalação do MPIO para o dispositivo StorSimple
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

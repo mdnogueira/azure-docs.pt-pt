@@ -16,6 +16,7 @@
     ms.date="06/27/2016"
     ms.author="douglasl"/>
 
+
 # Descrição geral da Stretch Database
 
 A Stretch Database migra os seus dados amovíveis de forma transparente e segura para a nuvem do Microsoft Azure.
@@ -82,6 +83,6 @@ Utilize o Stretch Database Advisor, uma funcionalidade do Assistente de Atualiza
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

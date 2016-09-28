@@ -15,6 +15,7 @@
     ms.date="11/17/2015"
     ms.author="awills"/>
 
+
 # Utilizar o PowerShell para enviar Diagnósticos do Azure ao Application Insights
 
 O [Microsoft Azure](https://azure.com) pode ser [configurado para enviar Diagnósticos do Azure](app-insights-azure-diagnostics.md) ao [Visual Studio Application Insights](app-insights-overview.md). O diagnóstico refere-se aos Cloud Services e às VMs do Azure. Complementa a telemetria que envia da aplicação com o Application Insights SDK. Como parte da automatização do processo de criação de novos recursos no Azure, pode configurar o diagnóstico com o PowerShell.
@@ -120,6 +121,6 @@ Para remover a extensão de diagnóstico de cada função individual:
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

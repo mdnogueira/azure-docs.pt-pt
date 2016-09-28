@@ -12,57 +12,50 @@ Os tópicos e as subscrições do Service Bus permitem ao utilizador dimensionar
 
 ## Criar um espaço de nomes
 
-Para começar a utilizar os tópicos e as subscrições do Service Bus no Azure, deve começar por criar um *espaço de nomes do serviço*. Um espaço de nomes fornece um contentor de âmbito para enviar os recursos do Service Bus na aplicação.
+Para começar a utilizar os tópicos e as subscrições do Service Bus no Azure, deve começar por criar um *espaço de nomes do serviço*. Um espaço de nomes fornece um contentor de âmbito para abordar os recursos do Service Bus na sua aplicação.
 
 Para criar um espaço de nomes:
 
-1.  Inicie sessão no [Portal Clássico do Azure][].
+1. Inicie sessão no [Portal do Azure][].
 
-2.  No painel de navegação esquerdo do portal, clique em **Service Bus**.
+2. No painel de navegação à esquerda do portal, clique em **Novo** e, em seguida, clique em **Integração do Enterprise** e em **Service Bus**.
 
-3.  No painel inferior do portal, clique em **Criar**.   
-    ![][0]
+4. Na caixa de diálogo **Criar espaço de nomes**, introduza um nome de espaço de nomes. O sistema verifica imediatamente a disponibilidade do nome.
 
-4.  Na caixa de diálogo **Adicionar um novo espaço de nomes**, introduza um nome de espaço de nomes. O sistema verifica imediatamente a disponibilidade do nome.   
-    ![][2]
+5. Após se certificar de que o espaço de nomes está disponível, selecione o escalão de preço (Básico, Standard ou Premium).
 
-5.  Após verificar se o nome do espaço de nomes está disponível, escolha o país ou a região onde será alojado o espaço de nomes (verifique se utiliza o mesmo país/região onde está a implementar os recursos de computação).
+7. No campo **Subscrição**, selecione a subscrição do Azure em que pretende criar o espaço de nomes.
 
-    > [AZURE.IMPORTANT] Escolha a **mesma região** que pretende escolher para a implementação da aplicação. Tal proporcionará o melhor desempenho.
+9. No campo **Grupo de recursos**, selecione um grupo de recursos existente em que o espaço de nomes será colocado ou crie um novo.      
 
-6.  Deixe os outros campos na caixa de diálogo com os respetivos valores predefinidos (**Mensagens** e **Escalão Standard**) e clique na marca de verificação OK. O sistema cria o espaço de nomes e ativa-o. Poderá ter de aguardar alguns minutos enquanto o sistema aprovisiona recursos para a sua conta.
+8. Em **Localização**, selecione o país ou a região em que o espaço de nomes deverá ser alojado.
 
-    ![][6]
+    ![Criar espaço de nomes][create-namespace]
 
-## Obter as credenciais de gestão predefinidas para o espaço de nomes
+6. Clique no botão **Criar**. O sistema cria o espaço de nomes e ativa-o. Poderá ter de aguardar alguns minutos enquanto o sistema aprovisiona recursos para a sua conta.
+ 
+### Obter as credenciais
 
-Para realizar operações de gestão como, por exemplo, criar um tópico ou uma subscrição no novo espaço de nomes, tem de obter as credenciais de gestão para o espaço de nomes. Pode obter estas credenciais no portal.
+1. Na lista de espaços de nomes, clique no nome do espaço de nomes criado recentemente.
+ 
+3. No painel **Espaço de nomes do Service Bus**, clique em **Políticas de acesso partilhado**.
 
-### Obter as credenciais de gestão no portal
+4. No painel **Políticas de acesso partilhado**, clique em **RootManageSharedAccessKey**.
 
-1.  No painel de navegação esquerdo, clique no nó **Service Bus** para mostrar a lista de espaços de nomes disponíveis.   
-    ![][0]
+    ![informações-ligação][connection-info]
 
-2.  Na lista apresentada, selecione o nome do espaço de nomes que acabou de criar:   
-    ![][3]
+5. No painel **Política: RootManageSharedAccessKey**, clique no botão de cópia junto a **Cadeia de ligação – chave primária** para copiar a cadeia de ligação para a sua área de transferência e utilizá-la mais tarde.
 
-3.  Clique em **Informações da Ligação**.   
-    ![][4]
+    ![cadeia-ligação][connection-string]
 
-4.  Na caixa de diálogo **Aceder às informações da ligação**, localize a cadeia de ligação com a chave SAS e o nome da chave. Tome nota destes valores, uma vez que irá utilizar esta informação mais tarde para realizar as operações com o espaço de nomes. 
-
-
-  [Portal Clássico do Azure]: http://manage.windowsazure.com
-  [0]: ./media/howto-service-bus-topics/sb-queues-13.png
-  [2]: ./media/howto-service-bus-topics/sb-queues-04.png
-  [3]: ./media/howto-service-bus-topics/sb-queues-09.png
-  [4]: ./media/howto-service-bus-topics/sb-queues-06.png
-  
-  [6]: ./media/howto-service-bus-topics/getting-started-multi-tier-27.png
+[Portal do Azure]: https://portal.azure.com
+[criar-espaço de nomes]: ./media/howto-service-bus-topics/create-namespace.png
+[informações-ligação]: ./media/howto-service-bus-topics/connection-info.png
+[cadeia-ligação]: ./media/howto-service-bus-topics/connection-string.png
 
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

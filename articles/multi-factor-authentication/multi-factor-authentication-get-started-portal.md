@@ -1,28 +1,29 @@
 <properties 
-    pageTitle="Implementar o Portal de Utilizador do Servidor Multi-Factor Authentication do Azure" 
-    description="Esta é a página do Multi-Factor Authentication que descreve como iniciar o MFA do Azure e o Portal de Utilizador." 
-    services="multi-factor-authentication" 
-    documentationCenter="" 
-    authors="billmath" 
-    manager="femila" 
+    pageTitle="Implementar o Portal de Utilizador do Servidor Multi-Factor Authentication do Azure"
+    description="Esta é a página do Multi-Factor Authentication que descreve como iniciar o MFA do Azure e o Portal de Utilizador."
+    services="multi-factor-authentication"
+    documentationCenter=""
+    authors="kgremban"
+    manager="femila"
     editor="curtand"/>
 
-<tags 
-    ms.service="multi-factor-authentication" 
-    ms.workload="identity" 
-    ms.tgt_pltfrm="na" 
-    ms.devlang="na" 
-    ms.topic="get-started-article" 
-    ms.date="08/15/2016" 
-    ms.author="billmath"/>
+<tags
+    ms.service="multi-factor-authentication"
+    ms.workload="identity"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="get-started-article"
+    ms.date="08/15/2016"
+    ms.author="kgremban"/>
+
 
 # Implementar o Portal de Utilizador do Servidor Multi-Factor Authentication do Azure
 
-O Portal de Utilizador permite ao administrador instalar e configurar o Portal de Utilizador do Multi-Factor Authentication do Azure. O Portal de Utilizador é um site do IIS que permite aos utilizadores inscreverem-se no Multi-Factor Authentication do Azure e fazerem a manutenção das contas deles. Um utilizador pode alterar o número de telefone, alterar o PIN ou ignorar o Multi-Factor Authentication do Azure durante o próximo início de sessão. 
+O Portal de Utilizador permite ao administrador instalar e configurar o Portal de Utilizador do Multi-Factor Authentication do Azure. O Portal de Utilizador é um site do IIS que permite aos utilizadores inscreverem-se no Multi-Factor Authentication do Azure e fazerem a manutenção das contas deles. Um utilizador pode alterar o número de telefone, alterar o PIN ou ignorar o Multi-Factor Authentication do Azure durante o próximo início de sessão.
 
-Os utilizadores iniciam sessão no Portal de Utilizador com o nome de utilizador e a palavra-passe habituais e irão concluir uma chamada do Multi-Factor Authentication do Azure ou responder a perguntas de segurança para concluir a respetiva autenticação. Se a inscrição de utilizadores for permitida, um utilizador irá configurar o número de telefone e o PIN na primeira vez que iniciar sessão Portal de Utilizador. 
+Os utilizadores iniciam sessão no Portal de Utilizador com o nome de utilizador e a palavra-passe habituais e irão concluir uma chamada do Multi-Factor Authentication do Azure ou responder a perguntas de segurança para concluir a respetiva autenticação. Se a inscrição de utilizadores for permitida, um utilizador irá configurar o número de telefone e o PIN na primeira vez que iniciar sessão Portal de Utilizador.
 
-Os Administradores do Portal de Utilizador podem ser configurados e ser-lhes concedida permissão para adicionar novos utilizadores e atualizar utilizadores existentes. 
+Os Administradores do Portal de Utilizador podem ser configurados e ser-lhes concedida permissão para adicionar novos utilizadores e atualizar utilizadores existentes.
 
 <center>![Configurar](./media/multi-factor-authentication-get-started-portal/install.png)</center>
 
@@ -30,12 +31,12 @@ Os Administradores do Portal de Utilizador podem ser configurados e ser-lhes con
 
 Os seguintes pré-requisitos são necessários para instalar o Portal de Utilizador no mesmo servidor do Servidor Multi-Factor Authentication do Azure:
 
-- O IIS tem de ser instalado, incluindo compatibilidade base meta para asp.net e IIS 6 (para IIS 7 ou posterior) 
+- O IIS tem de ser instalado, incluindo compatibilidade base meta para asp.net e IIS 6 (para IIS 7 ou posterior)
 - O utilizador com sessão iniciada deve ter direitos de administrador para o computador e Domínio, se aplicável.  Tal deve-se ao facto de a conta necessitar de permissões para criar grupos de segurança do Active Directory.
 
 ### Para implementar o Portal de Utilizador do Servidor Multi-Factor Authentication do Azure
 
-1. No Servidor Multi-Factor Authentication do Azure: clique no ícone do Portal de Utilizador no menu à esquerda, clique no botão Instalar o Portal de Utilizador. 
+1. No Servidor Multi-Factor Authentication do Azure: clique no ícone do Portal de Utilizador no menu à esquerda, clique no botão Instalar o Portal de Utilizador.
 1. Clique em Seguinte.
 1. Clique em Seguinte.
 1. Se o computador estiver associado a um domínio e a configuração do Active Directory para proteger a comunicação entre o Portal de Utilizador e o serviço Multi-Factor Authentication do Azure estiver incompleta, o passo do Active Directory será apresentado. Clique no botão seguinte para concluir esta configuração automaticamente.
@@ -48,7 +49,7 @@ Os seguintes pré-requisitos são necessários para instalar o Portal de Utiliza
 
 ## Implementar o Portal de Utilizador do Servidor Multi-Factor Authentication do Azure num Servidor Separado
 
-Para utilizar a Aplicação Multi-Factor Authentication do Azure, é necessário o seguinte para que a aplicação consiga comunicar com o Portal de Utilizador com êxito: 
+Para utilizar a Aplicação Multi-Factor Authentication do Azure, é necessário o seguinte para que a aplicação consiga comunicar com o Portal de Utilizador com êxito:
 
 Veja Requisitos de Hardware e Software, para obter os requisitos de hardware e software:
 
@@ -71,7 +72,7 @@ Instalar o portal de utilizador num servidor diferente do Servidor Multi-Factor 
 
 ### Instalar o SDK do serviço Web
 
-Se o SDK do Serviço Web do Multi-Factor Authentication do Azure não estiver já instalado no Servidor Multi-Factor Authentication do Azure, aceda a esse servidor e abra o Servidor Multi-Factor Authentication do Azure. Clique no ícone de SDK do serviço Web, clique no botão Instalar SDK do Serviço Web... e siga as instruções apresentadas. O SDK do Serviço Web tem de estar protegido por um certificado SSL. Um certificado autoassinado pode ser utilizado para esta finalidade, mas tem de ser importado para o arquivo de “Autoridades de Certificação de Raiz Fidedigna” da conta de Computador Local no servidor Web do Portal de Utilizador, para que este confie no certificado quando inicia a ligação SSL. 
+Se o SDK do Serviço Web do Multi-Factor Authentication do Azure não estiver já instalado no Servidor Multi-Factor Authentication do Azure, aceda a esse servidor e abra o Servidor Multi-Factor Authentication do Azure. Clique no ícone de SDK do serviço Web, clique no botão Instalar SDK do Serviço Web... e siga as instruções apresentadas. O SDK do Serviço Web tem de estar protegido por um certificado SSL. Um certificado autoassinado pode ser utilizado para esta finalidade, mas tem de ser importado para o arquivo de “Autoridades de Certificação de Raiz Fidedigna” da conta de Computador Local no servidor Web do Portal de Utilizador, para que este confie no certificado quando inicia a ligação SSL.
 
 <center>![Configurar](./media/multi-factor-authentication-get-started-portal/sdk.png)</center>
 
@@ -101,7 +102,7 @@ Agora que o portal está instalado, terá de configurar o Servidor Multi-Factor 
 O Servidor Multi-Factor Authentication do Azure fornece várias opções para o portal de utilizador.  A tabela seguinte fornece uma lista destas opções e uma explicação das respetivas utilizações.
 
 Definições do Portal de Utilizador|Descrição|
-:------------- | :------------- | 
+:------------- | :------------- |
 URL do Portal de Utilizador| Permite-lhe introduzir o URL no qual o portal está alojado.
 Autenticação primária| Permite-lhe especificar o tipo de autenticação a utilizar quando iniciar sessão no portal.  Autenticação do Windows, Radius ou LDAP.
 Permitir que os utilizadores iniciem sessão|Permite aos utilizadores introduzir um nome de utilizador e palavra-passe na página de início de sessão do Portal de Utilizador.  Se não estiver selecionado, as caixas estarão esbatidas.
@@ -153,7 +154,7 @@ Permite-lhe configurar o portal de utilizador para aceitar instruções de um fo
 ![SAML](./media/multi-factor-authentication-get-started-portal/saml.png)
 
 ## IPs Fidedignos
-Este separador permite-lhe especificar endereços IP únicos ou intervalos de endereços IP que podem ser adicionados, de modo a que, se um utilizador iniciar sessão a partir destes endereços IP, a autenticação multifator seja ignorada. 
+Este separador permite-lhe especificar endereços IP únicos ou intervalos de endereços IP que podem ser adicionados, de modo a que, se um utilizador iniciar sessão a partir destes endereços IP, a autenticação multifator seja ignorada.
 
 ![IPs fidedignos do portal de utilizador](./media/multi-factor-authentication-get-started-portal/trusted.png)
 
@@ -168,13 +169,13 @@ Se o utilizador selecionar o método de autenticação Chamada de Voz ou tiver s
 
 Se for pedido ao utilizador para utilizar um PIN quando fizer a autenticação, a página também lhe pedirá para introduzir um PIN.  Após introduzir o(s) número(s) de telefone e o PIN (se aplicável), o utilizador clica no botão Telefonar-me Agora para Autenticação.  O Multi-Factor Authentication do Azure irá efetuar uma chamada telefónica de autenticação para o número de telefone principal do utilizador.  O utilizador tem de atender a chamada e introduzir o PIN (se aplicável), e premir # para avançar para o próximo passo do processo de autoinscrição.   
 
-Se o utilizador selecionar o método de autenticação por Texto SMS ou tiver sido pré-configurado para utilizar este método, a página pedirá ao utilizador o respetivo número de telemóvel.  Se for pedido ao utilizador para utilizar um PIN quando fizer a autenticação, a página também lhe pedirá para introduzir um PIN.  Após introduzir o número de telefone e o PIN (se aplicável), o utilizador clica no botão Enviar-me SMS Agora para Autenticação.  O Multi-Factor Authentication do Azure irá efetuar uma autenticação por SMS para o telemóvel do utilizador.  O utilizador tem de receber a SMS que contém um Código de Acesso de Uso Individual (OTP) e responder à mensagem com esse OTP e o seu PIN, se aplicável) para avançar para o próximo passo do processo de autoinscrição. 
+Se o utilizador selecionar o método de autenticação por Texto SMS ou tiver sido pré-configurado para utilizar este método, a página pedirá ao utilizador o respetivo número de telemóvel.  Se for pedido ao utilizador para utilizar um PIN quando fizer a autenticação, a página também lhe pedirá para introduzir um PIN.  Após introduzir o número de telefone e o PIN (se aplicável), o utilizador clica no botão Enviar-me SMS Agora para Autenticação.  O Multi-Factor Authentication do Azure irá efetuar uma autenticação por SMS para o telemóvel do utilizador.  O utilizador tem de receber a SMS que contém um Código de Acesso de Uso Individual (OTP) e responder à mensagem com esse OTP e o seu PIN, se aplicável) para avançar para o próximo passo do processo de autoinscrição.
 
 ![SMS do portal de utilizador](./media/multi-factor-authentication-get-started-portal/text.png)   
 
 Se o utilizador seleciona o método de autenticação de aplicação Móvel ou tiver sido pré-configurado para utilizar este método, a página pedirá ao utilizador para instalar a aplicação Multi-Factor Authentication do Azure no seu dispositivo e gerar um código de ativação.  Depois de instalar a aplicação Multi-Factor Authentication do Azure, o utilizador clica no botão Gerar Código de Ativação.    
 
->[AZURE.NOTE]Para utilizar a aplicação Multi-Factor Authentication do Azure, o utilizador tem de ativar as notificações push para o dispositivo dele. 
+>[AZURE.NOTE]Para utilizar a aplicação Multi-Factor Authentication do Azure, o utilizador tem de ativar as notificações push para o dispositivo dele.
 
 A página apresenta então um código de ativação e um URL, juntamente com uma imagem de código de barras.  Se for pedido ao utilizador para utilizar um PIN quando fizer a autenticação, a página também lhe pedirá para introduzir um PIN.  O utilizador introduz o código de ativação e o URL na aplicação Multi-Factor Authentication do Azure ou utiliza o leitor de código de barras para digitalizar a imagem de código de barras, e clica no botão Ativar.    
 
@@ -187,10 +188,8 @@ Se os administradores tiverem configurado o Servidor Multi-Factor Authentication
 
 A autoinscrição do utilizador está agora concluída e o utilizador tem sessão iniciada no portal de utilizador.  Os utilizadores podem voltar a iniciar sessão no Portal de Utilizador em qualquer altura no futuro para alterarem os números de telefone, PINs, métodos de autenticação e perguntas de segurança, se tal for permitido pelos administradores deles.
 
- 
 
 
-
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

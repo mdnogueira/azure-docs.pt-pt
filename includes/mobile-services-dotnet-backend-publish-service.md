@@ -4,7 +4,6 @@
 2. Inicie sessão com as credenciais do Azure e selecione o serviço em ** Mobile Services Existentes**. O Visual Studio transfere as definições de publicação diretamente do Azure. Por fim, clique em **Publicar**.
 
 
-
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -16,6 +16,7 @@
    ms.date="09/13/2016"
    ms.author="yushwang;cherylmc" />
 
+
 # Acerca dos dispositivos de VPN para ligações de Gateway de Rede de VPNs
 
 Precisa de um dispositivo VPN para configurar uma ligação de rede de VPNs (S2S). As ligações Site a Site podem ser utilizadas para criar uma solução híbrida ou sempre que pretender uma ligação segura entre a rede no local e a rede virtual. Este artigo aborda os dispositivos VPN compatíveis e os parâmetros de configuração. 
@@ -164,6 +165,6 @@ A tabela seguinte apresenta uma lista de Ofertas de Encriptação e Autenticaç�
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

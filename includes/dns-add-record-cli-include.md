@@ -55,7 +55,6 @@ Se estiver a criar um registo SRV na raiz da zona, pode especificar â€œ_serviceâ
     azure network dns record-set add-record myresourcegroup contoso.com "test-txt" TXT -x "this is a TXT record"
 
 
-
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

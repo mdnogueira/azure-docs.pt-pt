@@ -7,7 +7,6 @@ Para localizar o endereço IP público do gateway de rede virtual com o PowerShe
 
 Também pode ver o endereço IP público do gateway da rede virtual com Portal do Azure. Navegue até **Gateways da rede virtual** e clique no nome do seu gateway.
 
-
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -17,6 +17,7 @@
    ms.date="03/15/2016"
    ms.author="jdial"/>
 
+
 # Criar uma rede virtual com um modelo ARM
 
 [AZURE.INCLUDE [virtual-networks-create-vnet-selectors-arm-include](../../includes/virtual-networks-create-vnet-selectors-arm-include.md)]
@@ -40,6 +41,6 @@ Se estiver a implementar o modelo ARM diretamente a partir do GitHub, sem quaisq
 [AZURE.INCLUDE [virtual-networks-create-vnet-arm-template-click-include](../../includes/virtual-networks-create-vnet-arm-template-click-include.md)]
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

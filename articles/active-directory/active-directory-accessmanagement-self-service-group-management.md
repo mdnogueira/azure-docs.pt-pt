@@ -17,6 +17,7 @@
     ms.date="08/10/2016"
     ms.author="curtand"/>
 
+
 # Configurar o Azure Active Directory para gestão de grupo personalizada
 
 A gestão de grupo personalizada permite aos utilizadores criar e gerir grupos de segurança ou grupos do Office 365 no Azure Active Directory (Azure AD). Os utilizadores também podem pedir um grupo de segurança ou as associações de grupos do Office 365 e, em seguida, o proprietário do grupo pode aceitar ou recusar a associação. Deste modo, o controlo diário da filiação no grupo pode ser delegado a quem entenda o contexto empresarial dessa filiação. As funcionalidades de gestão de grupo personalizada estão disponíveis apenas para grupos de segurança e grupos do Office 365, mas não para grupos de segurança com capacidade de e-mail correio ou listas de distribuição.
@@ -59,6 +60,6 @@ Estes artigos fornecem informações adicionais acerca do Azure Active Directory
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -1,21 +1,22 @@
 <properties 
-    pageTitle="Introdução ao Servidor Multi-Factor Authentication do Azure" 
-    description="Esta é a página do Multi-Factor Authentication do Azure que descreve como iniciar o Servidor do MFA do Azure." 
+    pageTitle="Introdução ao Servidor Multi-Factor Authentication do Azure"
+    description="Esta é a página do Multi-Factor Authentication do Azure que descreve como iniciar o Servidor do MFA do Azure."
     services="multi-factor-authentication"
-    keywords="servidor de autenticação, página de ativação da aplicação multi factor authentication do azure, transferência do servidor de autenticação" 
-    documentationCenter="" 
-    authors="billmath" 
-    manager="femila" 
+    keywords="servidor de autenticação, página de ativação da aplicação multi factor authentication do azure, transferência do servidor de autenticação"
+    documentationCenter=""
+    authors="kgremban"
+    manager="femila"
     editor="curtand"/>
 
-<tags 
-    ms.service="multi-factor-authentication" 
-    ms.workload="identity" 
-    ms.tgt_pltfrm="na" 
-    ms.devlang="na" 
-    ms.topic="get-started-article" 
-    ms.date="08/15/2016" 
-    ms.author="billmath"/>
+<tags
+    ms.service="multi-factor-authentication"
+    ms.workload="identity"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="get-started-article"
+    ms.date="08/15/2016"
+    ms.author="kgremban"/>
+
 
 # Introdução ao Servidor Multi-Factor Authentication do Azure
 
@@ -73,7 +74,7 @@ Agora que transferiu o servidor, pode instalá-lo e configurá-lo.  Certifique-s
 
 
 Requisitos do Servidor Multi-Factor Authentication do Azure|Descrição|
-:------------- | :------------- | 
+:------------- | :------------- |
 Hardware|<li>200 MB de espaço no disco rígido</li><li>processador com capacidade de 32 ou 64 bits</li><li>1 GB de RAM ou superior</li>
 Software|<li>Windows Server 2008 ou superior, se o anfitrião for um SO servidor</li><li>Windows 7 ou superior, se o anfitrião for um SO cliente</li><li>Microsoft .NET 4.0 Framework</li><li>O IIS 7.0 ou superior, se estiver a instalar o portal de utilizador ou o SDK do serviço Web</li>
 
@@ -122,7 +123,7 @@ Os passos acima mostram uma configuração rápida com o assistente de configura
 
 ##Importar utilizadores do Active Directory
 
-Agora que o servidor está instalado e configurado, pode rapidamente importar utilizadores para o Servidor MFA no Azure. 
+Agora que o servidor está instalado e configurado, pode rapidamente importar utilizadores para o Servidor MFA no Azure.
 
 ### Para importar utilizadores do Active Directory
 --------------------------------------------------------------------------------
@@ -164,10 +165,10 @@ Quando utiliza o Servidor Multi-Factor Authentication (MFA) no local, os dados d
 - Endereço de E-mail - opcional
 - Número de telefone - ao efetuar uma chamada de voz ou autenticação por SMS
 - Token do dispositivo - ao efetuar a autenticação da aplicação móvel
-- Modo de Autenticação 
-- Resultado da Autenticação 
-- Nome do Servidor MFA 
-- IP do Servidor MFA 
+- Modo de Autenticação
+- Resultado da Autenticação
+- Nome do Servidor MFA
+- IP do Servidor MFA
 - Cliente IP - se disponível
 
 
@@ -179,7 +180,7 @@ Além dos campos anteriores, o resultado da autenticação (êxito/rejeição) e
 Para obter mais informações sobre a configuração avançada e informações de configuração, utilize a tabela abaixo.
 
 Método|Descrição
-:------------- | :------------- | 
+:------------- | :------------- |
 [Portal de Utilizador](multi-factor-authentication-get-started-portal.md)|  Informações sobre a configuração e como configurar o portal de Utilizador, incluindo a implementação e o utilizador self-service.
 [Serviço de Federação do Active Directory](multi-factor-authentication-get-started-adfs.md)|Informações sobre a configuração do Multi-Factor Authentication do Azure com o AD FS.
 [Autenticação RADIUS](multi-factor-authentication-get-started-server-radius.md)|  Informações sobre a configuração e como configurar o Servidor MFA do Azure com RADIUS.
@@ -192,6 +193,6 @@ Método|Descrição
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

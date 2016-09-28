@@ -7,7 +7,6 @@ Esta definição permite-lhe especificar um servidor DNS que pretende utilizar p
 
     ![DNS Personalizado](./media/vpn-gateway-add-dns-rm-portal/customdns400.png)
 
-
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -49,7 +49,6 @@ Se tiver criado a ligação de gateway e pretender adicionar ou remover os prefi
         -RoutingWeight 10 -SharedKey 'abc123'
 
 
-
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

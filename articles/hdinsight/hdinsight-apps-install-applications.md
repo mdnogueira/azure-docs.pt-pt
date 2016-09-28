@@ -17,6 +17,7 @@
     ms.date="09/14/2016"
     ms.author="jgao"/>
 
+
 # Instalar aplicações do HDInsight
 
 Uma aplicação HDInsight é uma aplicação que os utilizadores podem instalar num cluster do HDInsight baseado em Linux. Estas aplicações podem ser desenvolvidas pela Microsoft, por fornecedores independentes de software (ISV) ou por si. Neste artigo, vai ficar a saber como instalar uma aplicação publicada. Para instalar a sua própria aplicação, veja [Instalar aplicações do HDInsight personalizadas](hdinsight-apps-install-custom-applications.md). 
@@ -126,6 +127,6 @@ Veja [Troubleshoot the installation (Resolver problemas de instalação)](hdinsi
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

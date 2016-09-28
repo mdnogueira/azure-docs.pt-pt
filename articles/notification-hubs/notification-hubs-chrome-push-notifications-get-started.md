@@ -17,6 +17,7 @@
     ms.date="07/22/2016"
     ms.author="wesmc"/>
 
+
 # Enviar notificações push para aplicações do Chrome com Notification Hubs do Azure
 
 [AZURE.INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
@@ -480,6 +481,6 @@ Se pretender segmentar os utilizadores por grupos de interesse, pode acompanhar 
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

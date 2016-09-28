@@ -14,7 +14,8 @@
     ms.devlang="na"
     ms.topic="get-started-article"
     ms.date="07/26/2016"
-    ms.author="robinsh"/>
+    ms.author="micurd;robinsh"/>
+
 
 
 # Acerca das contas do Storage do Azure
@@ -179,6 +180,6 @@ Para remover uma conta do Storage que já não está a utilizar, utilize **Elimi
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

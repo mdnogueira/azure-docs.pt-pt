@@ -17,6 +17,7 @@
     ms.date="09/14/2016"
     ms.author="jgao"/>
 
+
 # Instalar aplicações do HDInsight personalizadas
 
 Uma aplicação HDInsight é uma aplicação que os utilizadores podem instalar num cluster do HDInsight baseado em Linux.  Estas aplicações podem ser desenvolvidas pela Microsoft, por fornecedores independentes de software (ISV) ou por si. Neste artigo, ficará a saber como instalar uma aplicação do HDInsight que não tenha sido publicada ao Portal do Azure no HDInsight. A aplicação que irá instalar é a [Hue](http://gethue.com/). 
@@ -147,6 +148,6 @@ Com a CLI do Azure, pode eliminar o cluster ou o grupo de recursos. Consulte [El
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

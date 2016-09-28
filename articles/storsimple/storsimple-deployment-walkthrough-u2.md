@@ -15,6 +15,7 @@
    ms.date="08/16/2016"
    ms.author="alkohli" />
 
+
 # Implementar no local o dispositivo StorSimple (Atualização 2)
 
 > [AZURE.SELECTOR]
@@ -247,6 +248,6 @@ Execute os seguintes passos no portal de gestão para criar uma cópia de segura
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

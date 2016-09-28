@@ -17,6 +17,7 @@
     ms.date="09/01/2016"
     ms.author="anhoh"/>
 
+
 # Tutorial NoSQL: criar uma consola de aplicação DocumentDB C#
 
 > [AZURE.SELECTOR]
@@ -607,6 +608,6 @@ Parabéns! Concluiu este tutorial NoSQL e a sua aplicação de consola C# está 
 
 
 
-<!--HONumber=sep16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

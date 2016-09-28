@@ -16,6 +16,7 @@
     ms.date="08/19/2016"
     ms.author="piyushjo" />
 
+
 # Conceitos do Azure Mobile Engagement
 
 O Mobile Engagement define alguns conceitos comuns para todas as plataformas suportadas. Este artigo descreve brevemente esses conceitos.
@@ -87,6 +88,6 @@ A árvore completa de pares chave/valor está armazenada como um objeto JSON. No
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

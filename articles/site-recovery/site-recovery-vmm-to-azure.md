@@ -13,8 +13,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="hero-article"
-    ms.date="08/23/2016"
+    ms.date="09/16/2016"
     ms.author="raynew"/>
+
 
 # Replicar máquinas virtuais Hyper-V em nuvens VMM para o Azure utilizando o Azure Site Recovery com o Portal do Azure | Microsoft Azure
 
@@ -574,6 +575,6 @@ Depois da implementação estar instalada e em execução, [saiba mais](site-rec
 
 
 
-<!--HONumber=ago16_HO5-->
+<!--HONumber=Sep16_HO3-->
 
 

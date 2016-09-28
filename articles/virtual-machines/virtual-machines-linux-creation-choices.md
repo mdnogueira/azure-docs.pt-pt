@@ -17,6 +17,7 @@
     ms.date="07/06/2016"
     ms.author="iainfou"/>
 
+
 # Diferentes formas para criar uma máquina virtual com Linux com o Resource Manager
 
 O Azure disponibiliza várias formas para criar uma VM utilizando o modelo de implementação do Resource Manager para se adequar aos diferentes utilizadores e efeitos. Este artigo resume estas diferenças e as escolhas que pode fazer para a criação de máquinas virtuais (VMs) com Linux.
@@ -123,6 +124,6 @@ Se necessitar de personalizações específicas, pode utilizar uma imagem com ba
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

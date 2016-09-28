@@ -19,6 +19,7 @@
     ms.author="v-livech"
 />
 
+
 # Criar uma VM com Linux no Azure atrav√©s do Portal
 
 
@@ -80,6 +81,6 @@ Acabou de criar uma VM com Linux rapidamente para fins de teste ou de demonstra√
 
 
 
-<!--HONumber=sep16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

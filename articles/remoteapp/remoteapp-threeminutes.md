@@ -18,6 +18,7 @@
 
 
 
+
 # Experimentar o Azure RemoteApp no dispositivo em 3 minutos ou menos
 
 > [AZURE.IMPORTANT]
@@ -40,6 +41,6 @@ A sua opinião é importante. No final de cada sessão, será apresentada uma ca
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

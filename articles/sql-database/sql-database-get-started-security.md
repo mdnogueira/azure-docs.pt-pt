@@ -18,6 +18,7 @@
     ms.date="08/17/2016"
     ms.author="carlrab"/>
 
+
 # Tutorial da SQL Database: criar contas de utilizador de base de dados SQL para aceder e gerir uma base de dados
 
 
@@ -54,6 +55,6 @@ Agora que já concluiu este tutorial de Base de Dados SQL e criou uma conta de u
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

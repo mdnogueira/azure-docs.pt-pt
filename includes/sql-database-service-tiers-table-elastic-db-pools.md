@@ -67,7 +67,6 @@
 ** A base de dados elástica partilha o armazenamento do conjunto, pelo que o armazenamento da base de dados é limitado ao armazenamento mais pequeno do conjunto restante ou ao armazenamento máximo por base de dados
 
 
-
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

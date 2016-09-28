@@ -17,6 +17,7 @@
     ms.date="08/29/2016"
     ms.author="ashmaka"/>
 
+
 # Criar um índice da Azure Search utilizando a API REST
 > [AZURE.SELECTOR]
 - [Descrição geral](search-what-is-an-index.md)
@@ -108,6 +109,6 @@ Depois de criar um índice da Azure Search, estará pronto para [carregar o cont
 
 
 
-<!--HONumber=ago16_HO5-->
+<!--HONumber=Sep16_HO3-->
 
 

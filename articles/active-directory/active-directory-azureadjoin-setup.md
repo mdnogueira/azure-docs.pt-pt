@@ -14,8 +14,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="06/23/2016"
+    ms.date="09/27/2016"
     ms.author="femila"/>
+
 
 # Configurar a Associação do Azure AD na sua 
 
@@ -57,6 +58,6 @@ Apresentamos a seguir os três cenários que pode utilizar para permitir aos seu
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

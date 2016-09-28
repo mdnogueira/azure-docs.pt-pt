@@ -18,6 +18,7 @@
    ms.date="03/09/2016"
    ms.author="yochayk@microsoft.com"/>
    
+
 # Criar uma Função do Azure vinculada a um serviço Azure
    
 [AZURE.INCLUDE [Getting Started Note](../../includes/functions-getting-started.md)]
@@ -30,6 +31,6 @@ Neste breve vídeo, vai aprender a criar uma Função do Azure que ouve as mensa
 [AZURE.INCLUDE [Getting Started Note](../../includes/functions-get-help.md)]
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

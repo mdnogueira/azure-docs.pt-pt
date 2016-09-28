@@ -17,6 +17,7 @@
     ms.author="juliako"/>
 
 
+
 #Como realizar uma transmissão em fluxo em direto com codificadores no local através do Portal do Azure
 
 > [AZURE.SELECTOR]
@@ -186,6 +187,6 @@ Rever os percursos de aprendizagem dos Serviços de Multimédia
 
 
 
-<!--HONumber=sep16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

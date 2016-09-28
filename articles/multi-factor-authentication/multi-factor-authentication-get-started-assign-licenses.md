@@ -1,20 +1,21 @@
-<properties 
-    pageTitle="Atribuir Licenças para o Multi-Factor Authentication do Microsoft Azure" 
-    description="Saiba como atribuir licenças para o Multi-Factor Authentication do Microsoft Azure." 
-    services="multi-factor-authentication" 
-    documentationCenter="" 
-    authors="billmath" 
-    manager="stevenpo" 
+<properties
+    pageTitle="Atribuir Licenças para o Multi-Factor Authentication do Microsoft Azure"
+    description="Saiba como atribuir licenças para o Multi-Factor Authentication do Microsoft Azure."
+    services="multi-factor-authentication"
+    documentationCenter=""
+    authors="kgremban"
+    manager="femila"
     editor="curtand"/>
 
-<tags 
-    ms.service="multi-factor-authentication" 
-    ms.workload="identity" 
-    ms.tgt_pltfrm="na" 
-    ms.devlang="na" 
-    ms.topic="get-started-article" 
-    ms.date="08/04/2016" 
-    ms.author="billmath"/>
+<tags
+    ms.service="multi-factor-authentication"
+    ms.workload="identity"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="get-started-article"
+    ms.date="08/04/2016"
+    ms.author="kgremban"/>
+
 
 # Atribuir uma licença do MFA do Azure, Azure AD Premium ou Enterprise Mobility aos utilizadores
 
@@ -28,7 +29,7 @@ Se tiver comprado licenças do MFA do Azure, Azure AD Premium ou Enterprise Mobi
 3. Na página do Active Directory, faça duplo clique no diretório que tem os utilizadores que pretende ativar.
 4. Na parte superior da página do diretório, selecione **Licenças**.
 ![Atribuir Licenças](./media/multi-factor-authentication-get-started-assign-licenses/assign1.png)
-5. Na página Licenças, selecione **Multi-Factor Authentication do Azure**, **Active Directory Premium** ou **Enterprise Mobility Suite**.  Se tiver apenas uma, esta deve estar selecionada automaticamente. 
+5. Na página Licenças, selecione **Multi-Factor Authentication do Azure**, **Active Directory Premium** ou **Enterprise Mobility Suite**.  Se tiver apenas uma, esta deve estar selecionada automaticamente.
 6. Na parte inferior da página, clique em **Atribuir**.
 ![Atribuir Licenças](./media/multi-factor-authentication-get-started-assign-licenses/assign3.png)
 6. Na caixa apresentada, **clique** junto aos utilizadores ou grupos aos quais pretende atribuir licenças.  Deverá ver uma **marca de verificação verde**.
@@ -39,6 +40,6 @@ Se tiver comprado licenças do MFA do Azure, Azure AD Premium ou Enterprise Mobi
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

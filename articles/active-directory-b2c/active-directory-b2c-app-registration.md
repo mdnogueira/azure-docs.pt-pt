@@ -17,6 +17,7 @@
     ms.author="swkrish"/>
 
 
+
 # Azure Active Directory B2C : Registar a aplicação
 
 ## Pré-requisito
@@ -56,6 +57,6 @@ Agora que tem uma aplicação registada no Azure AD B2C, pode concluir um dos no
 
 
 
-<!--HONumber=ago16_HO5-->
+<!--HONumber=Sep16_HO3-->
 
 

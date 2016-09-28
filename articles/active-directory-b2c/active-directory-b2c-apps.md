@@ -16,6 +16,7 @@
     ms.date="07/22/2016"
     ms.author="dastrock"/>
 
+
 # Azure Active Directory B2C: tipos de aplicações
 
 O Azure Active Directory (Azure AD) B2C suporta a autenticação de uma variedade de arquiteturas de aplicações modernas. Todos elas baseiam-se nos protocolos padrão da indústria [OAuth 2.0](active-directory-b2c-reference-protocols.md) ou [OpenID Connect](active-directory-b2c-reference-protocols.md). Este documento descreve brevemente os tipos de aplicações que podem ser criados, independentemente do idioma ou plataforma preferida. Também ajuda-o a compreender os cenários de alto nível antes de [começar a construir aplicações](active-directory-b2c-overview.md#getting-started).
@@ -130,6 +131,6 @@ Este cenário de API web em cadeia pode ser suportado utilizando a concessão de
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

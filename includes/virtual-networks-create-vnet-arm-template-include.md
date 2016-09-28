@@ -58,7 +58,6 @@ Pode transferir o modelo ARM existente para criar uma VNet e duas sub-redes a pa
 11. Guarde o ficheiro.
   
 
-
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

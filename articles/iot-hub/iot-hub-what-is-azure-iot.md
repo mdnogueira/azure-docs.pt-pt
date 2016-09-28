@@ -16,6 +16,7 @@
  ms.date="07/19/2016"
  ms.author="dobett"/>
 
+
 [AZURE.INCLUDE [iot-azure-and-iot](../../includes/iot-azure-and-iot.md)]
 
 ## Passos seguintes
@@ -30,14 +31,14 @@ Para começar a escrever código e executar alguns exemplos, veja o tutorial [In
 
 Também poderá estar interessado na [Azure IoT Suite][Ink-iot-suite], que é uma coleção de soluções pré-configuradas. A IoT Suite oferece-lhe uma introdução rápida e um dimensionamento de projetos IoT para abordar cenários comuns do IoT - tais como a monitorização remota, a gestão de elementos e a manutenção preditiva.
 
-[lnk-getstarted]: iot-hub-csharp-csharp-getstarted.md
+[Ink-getstarted]: iot-hub-csharp-csharp-getstarted.md
 [Ink-dispositivo-sdks]: https://github.com/Azure/azure-iot-sdks/blob/master/readme.md
-[lnk-iot-hub]: iot-hub-what-is-iot-hub.md
-[lnk-iot-suite]: https://azure.microsoft.com/documentation/suites/iot-suite/
+[Ink-iot-hub]: iot-hub-what-is-iot-hub.md
+[Ink-iot-suite]: https://azure.microsoft.com/documentation/suites/iot-suite/
 [lnk-iotdev]: https://azure.microsoft.com/develop/iot/
 [lnk-device-management]: iot-hub-device-management-overview.md
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

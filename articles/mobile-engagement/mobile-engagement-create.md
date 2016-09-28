@@ -17,6 +17,7 @@
     ms.author="piyushjo"/>
 
 
+
 # Criar uma aplicação do Azure Mobile Engagement
 
 Este artigo mostra como utilizar o método **Criação rápida** para criar uma nova aplicação **Azure Mobile Engagement**. O artigo mostra também como navegar para o seu portal **Mobile Engagement** para começar a monitorizar e gerir as suas aplicações. 
@@ -50,6 +51,6 @@ Assim que estiver no portal do Mobile Engagement, pode analisar, criar e gerir s
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

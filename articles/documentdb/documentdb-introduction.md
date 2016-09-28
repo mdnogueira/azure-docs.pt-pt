@@ -17,6 +17,7 @@
     ms.date="09/13/2016" 
     ms.author="mimig"/>
 
+
 # Introdução ao DocumentDB: uma Base de dados NoSQL JSON
 
 ##O que é o DocumentDB?
@@ -110,6 +111,6 @@ Em seguida, quando estiver pronto para saber mais, aceda ao nosso [percurso de a
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

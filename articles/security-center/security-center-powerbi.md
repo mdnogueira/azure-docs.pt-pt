@@ -13,8 +13,9 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="08/11/2016"
+   ms.date="09/22/2016"
    ms.author="yurid"/>
+
 
 # Obter informações a partir de dados do Centro de Segurança do Azure com Power BI
 O [Dashboard do Power BI](http://aka.ms/azure-security-center-power-bi) para o Centro de Segurança do Azure permite-lhe visualizar, analisar e filtrar recomendações e alertas de segurança a partir de qualquer lugar, incluindo o seu dispositivo móvel. Utilize o dashboard do Power BI para revelar as tendências e padrões de ataques – veja alertas de segurança por recurso ou endereço IP de origem e riscos de segurança não abordados por recurso ou idade. 
@@ -26,7 +27,7 @@ Também pode utilizar o dashboard do Centro de Segurança do Azure para aceder a
 
 1. No dashboard do **Centro de Segurança do Azure**, clique no botão **Explorar no Power BI**.
 
-    ![Ligar-se ao Centro de Segurança do Azure através do Power BI](./media/security-center-powerbi/security-center-powerbi-fig1-new1.png) 
+    ![Ligar-se ao Centro de Segurança do Azure através do Power BI](./media/security-center-powerbi/security-center-powerbi-fig1-new10.png) 
 
 2. O painel **Explorar no Power BI** abre-se no lado direito, conforme mostrado no ecrã seguinte:
 
@@ -117,6 +118,6 @@ Neste documento, aprendeu a utilizar o Power BI no Centro de Segurança do Azure
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

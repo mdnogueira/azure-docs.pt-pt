@@ -17,6 +17,7 @@
  ms.date="08/17/2016"
  ms.author="araguila"/>
 
+
 # Instruções sobre a solução pré-configurada de manutenção preditiva
 
 ## Introdução
@@ -135,6 +136,6 @@ Também pode explorar algumas das outras funcionalidades e capacidades das solu�
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

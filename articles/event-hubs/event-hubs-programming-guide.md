@@ -15,6 +15,7 @@
     ms.date="08/16/2016"
     ms.author="sethm" />
 
+
 # Guia de programação dos Event Hubs
 
 Este tópico descreve a programação com os Event Hubs do Azure utilizando o SDK .NET do Azure. Parte do princípio de que possui compreensão preliminar dos Event Hubs. Para obter uma descrição geral conceptual dos Event Hubs, consulte [Descrição geral dos Event Hubs](event-hubs-overview.md).
@@ -187,6 +188,6 @@ Para obter mais informações sobre os cenários dos Event Hubs, consulte estas 
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -15,6 +15,7 @@
    ms.date="08/17/2016"
    ms.author="alkohli" />
 
+
 # Implementar e gerir um dispositivo virtual StorSimple no Azure
 
 
@@ -283,6 +284,6 @@ Se eliminar ou encerrar o dispositivo virtual, este será apresentado individual
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

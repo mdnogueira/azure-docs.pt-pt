@@ -15,6 +15,7 @@
     ms.date="08/29/2016"
     ms.author="brjohnst"/>
 
+
 # Consultar o índice de Pesquisa do Azure utilizando o SDK .NET
 > [AZURE.SELECTOR]
 - [Descrição geral](search-query-overview.md)
@@ -164,6 +165,6 @@ O código de exemplo acima utiliza a consola para produzir os resultados da pesq
 
 
 
-<!--HONumber=ago16_HO5-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -16,6 +16,7 @@
     ms.date="06/29/2016"
     ms.author="wesmc"/>
 
+
 # Introdução aos Notification Hubs com Xamarin para Android
 
 [AZURE.INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
@@ -522,6 +523,6 @@ Neste exemplo simples, difundiu notificações para todos os seus dispositivos A
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

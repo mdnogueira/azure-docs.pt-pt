@@ -17,6 +17,7 @@
     ms.date="06/07/2016"
     ms.author="davidmu"/>
 
+
 # Criar uma VM do Windows utilizando o Resource Manager e o PowerShell
 
 Este artigo mostra-lhe como criar rapidamente uma Máquina Virtual do Azure a executar o Windows Server e os recursos de que necessita para utilizar o [Resource Manager](../resource-group-overview.md) e o PowerShell. 
@@ -174,6 +175,6 @@ Agora que tem todas as peças no local, é a altura de criar a máquina virtual.
 
 
 
-<!--HONumber=ago16_HO5-->
+<!--HONumber=Sep16_HO3-->
 
 

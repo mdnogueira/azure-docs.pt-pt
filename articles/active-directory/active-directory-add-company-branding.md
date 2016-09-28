@@ -16,6 +16,7 @@
     ms.date="07/13/2016"
     ms.author="MarkVi"/>
 
+
 # Adicionar a imagem corporativa às suas páginas de início de sessão e Painel de Acesso
 
 
@@ -222,6 +223,6 @@ Cor de Fundo da Página de Início de Sessão | A cor de fundo de página de in�
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

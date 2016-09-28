@@ -17,6 +17,7 @@
     ms.date="09/06/2016"
     ms.author="cynthn"/>
 
+
 # Criar a sua primeira máquina virtual do Windows no Portal do Azure
 
 Este tutorial mostra-lhe como é fácil criar uma máquina virtual (VM) do Windows em apenas alguns minutos através utilizando o Portal do Azure.  
@@ -119,6 +120,6 @@ Clique no botão **Iniciar** para reiniciar a VM quando estiver pronto para a ut
 
 
 
-<!--HONumber=sep12_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

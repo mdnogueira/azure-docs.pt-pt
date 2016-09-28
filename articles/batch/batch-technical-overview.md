@@ -16,6 +16,7 @@
     ms.date="08/22/2016"
     ms.author="marsma"/>
 
+
 # Noções básicas do Azure Batch
 
 O Azure Batch permite-lhe executar aplicações de computação de alto desempenho (HPC) e paralelas em larga escala, de forma eficaz na nuvem. É um serviço de plataforma que agenda trabalho de computação intensivo para ser executado numa coleção gerida de máquinas virtuais, e pode dimensionar automaticamente recursos de computação para satisfazer as necessidades das suas tarefas.
@@ -163,6 +164,6 @@ Agora que tem um elevado nível de descrição geral do serviço Batch, está na
 
 
 
-<!--HONumber=ago16_HO5-->
+<!--HONumber=Sep16_HO3-->
 
 

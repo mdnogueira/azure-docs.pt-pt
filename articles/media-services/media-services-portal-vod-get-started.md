@@ -17,6 +17,7 @@
     ms.author="juliako"/>
 
 
+
 # Introdução à entrega de conteúdos a pedido com o Portal do Azure
 
 [AZURE.INCLUDE [media-services-selector-get-started](../../includes/media-services-selector-get-started.md)]
@@ -234,6 +235,6 @@ Rever os percursos de aprendizagem dos Serviços de Multimédia
 
 
 
-<!--HONumber=ago16_HO5-->
+<!--HONumber=Sep16_HO3-->
 
 

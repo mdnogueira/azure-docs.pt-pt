@@ -15,6 +15,7 @@
     ms.date="08/30/2016" 
     ms.author="daviste"/>
     
+
 # Telemetria do Application Insights no Visual Studio CodeLens
 
 Os métodos no código da sua aplicação Web podem ser anotados com telemetria sobre exceções de tempo de execução e tempos de resposta do pedido. Se instalar o [Visual Studio Application Insights](app-insights-overview.md) na sua aplicação, a telemetria é apresentada no Visual Studio [CodeLens](https://msdn.microsoft.com/library/dn269218.aspx) - as notas na parte superior de cada função onde está habituado a ver informações úteis, como o número de locais onde a função é referida ou a última pessoa que a editou.
@@ -72,6 +73,6 @@ Para ver mais detalhes, clique no indicador de CodeLens de pedidos:
 
 
 
-<!--HONumber=sep16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

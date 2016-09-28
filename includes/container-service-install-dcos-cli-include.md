@@ -7,7 +7,7 @@
    manager="timlt"
    editor=""
    tags="acs, azure-container-service"
-   keywords="Containers, Micro-services, DC/OS, Azure"/>
+   keywords="Contentores, Microserviços, DC/OS, Azure"/>
 
 <tags
    ms.service="container-service"
@@ -17,6 +17,7 @@
    ms.workload="na"
    ms.date="05/10/2016"
    ms.author="rogardle"/>
+
 
 >[AZURE.NOTE] Esta ação é para trabalhar com clusters de ACS baseados em DC/SO. Não é necessário efetuar este procedimento para clusters de ACS com base em Swarm.
 
@@ -47,6 +48,6 @@ dcos --help
 ```
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

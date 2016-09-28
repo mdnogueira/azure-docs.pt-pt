@@ -16,6 +16,7 @@
    ms.date="08/15/2016"
    ms.author="elizapo"/>
 
+
 # OneDrive para Empresas e Azure RemoteApp
 
 > [AZURE.IMPORTANT]
@@ -26,6 +27,6 @@ O agente de sincronização do OneDrive para Empresas não é suportado com o Az
 Pode incluir o OneDrive para Empresas numa coleção para utilização com o Office 365. 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

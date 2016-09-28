@@ -16,6 +16,7 @@
    ms.date="06/16/2016"
    ms.author="lodipalm;barbkess;sonyama" />
 
+
 # Visualizar dados com o Power BI
 
 > [AZURE.SELECTOR]
@@ -123,6 +124,6 @@ Agora que lhe demos algum tempo para entender os dados de exemplo, consulte como
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

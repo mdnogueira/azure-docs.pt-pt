@@ -16,6 +16,7 @@
    ms.date="09/12/2016"
    ms.author="markvi"/>
 
+
 # Relatórios do Azure Active Directory - pré-visualização
 
 *Esta documentação faz parte do [Guia dos Relatórios do Azure Active Directory](active-directory-reporting-guide.md).*
@@ -219,6 +220,6 @@ Veja o [Guia dos Relatórios do Azure Active Directory](active-directory-reporti
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

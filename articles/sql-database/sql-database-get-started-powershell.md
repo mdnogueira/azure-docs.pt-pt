@@ -17,6 +17,7 @@
     ms.date="08/19/2016"
     ms.author="sstein"/>
 
+
 # Criar uma Base de Dados SQL e executar tarefas comuns de configuração de base de dados com os cmdlets do PowerShell
 
 
@@ -142,6 +143,6 @@ Depois de criar uma base de dados SQL e efetuar tarefas básicas de configuraç�
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

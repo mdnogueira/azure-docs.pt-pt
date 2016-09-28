@@ -17,6 +17,7 @@
     ms.date="07/14/2016"
     ms.author="garye"/>
 
+
 # Perguntas mais frequentes do Azure Machine Learning: faturação, capacidades, limitações e suporte
 
 Estas perguntas mais frequentes respondem a dúvidas sobre o Azure Machine Learning, um serviço em nuvem para desenvolver modelos preditivos e operacionalizar soluções através dos serviços da Web. Estas perguntas mais frequentes incluem perguntas sobre como utilizar o serviço, incluindo o modelo de faturação, capacidades, limitações e suporte.
@@ -588,6 +589,6 @@ O Acesso de Convidado é uma experimentação de avaliação restrita que lhe pe
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

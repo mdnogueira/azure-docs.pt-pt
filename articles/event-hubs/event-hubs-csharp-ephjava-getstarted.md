@@ -3,7 +3,7 @@
     description="Siga este tutorial para começar a utilizar os Hubs de Eventos do Azure; enviando eventos em C# e recebendo os mesmo em Java utilizando o EventProcessorHost."
     services="event-hubs"
     documentationCenter=""
-    authors="fsautomata"
+    authors="jtaubensee"
     manager="timlt"
     editor=""/>
 
@@ -13,8 +13,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="hero-article"
-    ms.date="06/16/2016"
-    ms.author="jotaub"/>
+    ms.date="09/27/2016"
+    ms.author="jotaub;sethm"/>
+
 
 # Introdução ao Event Hubs
 
@@ -73,6 +74,6 @@ Agora que compilou uma aplicação de trabalho que cria um Hub de Eventos e envi
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

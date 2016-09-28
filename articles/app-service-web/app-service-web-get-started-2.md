@@ -18,6 +18,7 @@
     ms.author="cephalin"
 />
 
+
 # Adicionar funcionalidades à sua primeira aplicação Web
 
 Em [Implementar uma aplicação Web no Azure em 5 minutos](app-service-web-get-started.md), implementou uma aplicação Web de exemplo no [App Service do Azure](../app-service/app-service-value-prop-what-is.md). Neste artigo, irá adicionar rapidamente algumas funcionalidades excelentes à sua aplicação Web implementada. Em apenas alguns minutos, irá:
@@ -157,6 +158,6 @@ Analise a sua aplicação Web quanto a ameaças modernas utilizando o serviço f
 - [Saiba como funciona o App Service](../app-service/app-service-how-works-readme.md) 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

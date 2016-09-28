@@ -16,6 +16,7 @@
     ms.date="05/06/2016"
     ms.author="raynew"/>
 
+
 #  Replicar máquinas virtuais Hyper-V em nuvens VMM para o Azure
 
 > [AZURE.SELECTOR]
@@ -50,7 +51,7 @@ Eis o que necessita no Azure.
 
 **Pré-requisito** | **Detalhes**
 --- | ---
-**Conta do Azure**| Precisará de uma conta do [Microsoft Azure](https://azure.microsoft.com/). Pode começar com uma [avaliação gratuita](https://azure.microsoft.com/pricing/free-trial/). [Saiba mais](https://azure.microsoft.com/pricing/details/site-recovery/) sobre os preços da Recuperação de Sites.
+**Conta do Azure **| Precisará de uma conta do [Microsoft Azure](https://azure.microsoft.com/). Pode começar com uma [avaliação gratuita](https://azure.microsoft.com/pricing/free-trial/). [Saiba mais](https://azure.microsoft.com/pricing/details/site-recovery/) sobre os preços da Recuperação de Sites.
 **Storage do Azure** | Precisará de uma conta de armazenamento do Azure para armazenar dados replicados. Os dados replicados são guardados no armazenamento do Azure e as VMs do Azure são aceleradas quando ocorre a ativação pós-falha. <br/><br/>Precisará de uma [conta de armazenamento georredundante padrão](../storage/storage-redundancy.md#geo-redundant-storage). A conta tem de estar na mesma região que o serviço de Recuperação de Sites e estar associado à mesma subscrição. Tenha em atenção que a replicação para contas de armazenamento Premium não é atualmente suportada e não deve ser utilizada.<br/><br/>[Leia sobre](../storage/storage-introduction.md) o armazenamento do Azure.
 **Rede do Azure** | Precisará de uma rede virtual do Azure à qual se ligarão as VMs do Azure quando ocorrer a ativação pós-falha. A rede virtual do Azure tem de estar na mesma região que o cofre de Recuperação de Sites.
 
@@ -385,6 +386,6 @@ Saiba mais sobre como [Configurar planos de recuperação](site-recovery-create-
 
 
 
-<!---HONumber=ago16_HO5-->
+<!--HONumber=Sep16_HO3-->
 
 

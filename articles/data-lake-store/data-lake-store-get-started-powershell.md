@@ -16,6 +16,7 @@
    ms.date="09/13/2016"
    ms.author="nitinme"/>
 
+
 # Introdução ao Azure Data Lake Store utilizando o Azure PowerShell
 
 > [AZURE.SELECTOR]
@@ -142,6 +143,6 @@ Quando lhe for pedido, introduza **S** para eliminar a conta.
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

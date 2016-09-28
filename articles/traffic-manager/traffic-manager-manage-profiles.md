@@ -15,6 +15,7 @@
    ms.date="03/17/2016"
    ms.author="sewhee" />
 
+
 # Gerir um perfil no Traffic Manager do Azure
 
 Utilize um perfil do Traffic Manager para especificar os serviços em nuvem ou pontos finais de sites que serão monitorizados pelo Traffic Manager, e qual o método de tráfego de encaminhamento que pretende utilizar para distribuir as ligações a esses pontos finais.
@@ -86,6 +87,6 @@ Pode ver o histórico de alterações do perfil do Traffic Manager no Portal Cl�
 [Resolução de problemas do estado degradado do Traffic Manager](traffic-manager-troubleshooting-degraded.md)
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

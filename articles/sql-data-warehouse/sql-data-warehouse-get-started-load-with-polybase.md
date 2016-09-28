@@ -17,6 +17,7 @@
    ms.author="cakarst;barbkess;sonyama"/>
 
 
+
 # Carregar os dados com o PolyBase para o SQL Data Warehouse
 
 > [AZURE.SELECTOR]
@@ -287,6 +288,6 @@ Consulte o [Guia do PolyBase][] para obter informações adicionais que deve con
 
 
 
-<!--HONumber=sep16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

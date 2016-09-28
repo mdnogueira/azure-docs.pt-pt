@@ -16,6 +16,7 @@
     ms.date="07/21/2016"
     ms.author="glenga"/>
 
+
 # Introdução aos Mobile Services
 
 [AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]
@@ -63,7 +64,7 @@ A etapa final deste tutorial consiste em criar e executar a sua nova aplicação
 
 3. Na aplicação, digite um texto significativo, tal como *Concluir o tutorial*, em **Inserir um TodoItem** e, em seguida, clique em **Guardar**.
 
-    Esta ação envia um pedido POST ao novo serviço móvel alojado no Azure. Os dados do pedido são inseridos na tabela TodoItem. Os itens armazenados na tabela são devolvidos pelo servidor móvel e os dados são apresentados na segunda coluna na aplicação.
+    Esta ação envia um pedido POST para o novo serviço móvel alojado no Azure. Os dados do pedido são inseridos na tabela TodoItem. Os itens armazenados na tabela são devolvidos pelo servidor móvel e os dados são apresentados na segunda coluna na aplicação.
 
 4. (Opcional) Execute novamente a aplicação e repare que os dados guardados do passo anterior são carregados a partir do serviço móvel depois de a aplicação iniciar.
  
@@ -93,6 +94,6 @@ Agora que concluiu o guia de introdução, saiba como trabalhar com o [Cliente d
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

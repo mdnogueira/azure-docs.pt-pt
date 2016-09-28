@@ -47,7 +47,6 @@ Se já existir uma ligação de gateway, terá primeiro de remover a ligação. 
 
 
 
-
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

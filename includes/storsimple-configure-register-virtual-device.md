@@ -20,7 +20,6 @@ Após concluir o registo e a configuração, o dispositivo ficará online. (Pode
 
 ![Fase online do dispositivo virtual StorSimple](./media/storsimple-configure-register-virtual-device/StorSimple_VirtualDeviceOnline1M.png)
 
-
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

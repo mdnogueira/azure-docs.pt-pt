@@ -16,6 +16,7 @@
    ms.date="08/16/2016"
    ms.author="lodipalm;barbkess;sonyama"/>
 
+
 # Carregar dados do armazenamento de blobs para o Azure SQL Data Warehouse (Azure Data Factory)
 
 > [AZURE.SELECTOR]
@@ -240,6 +241,6 @@ Estes tópicos fornecem informações detalhadas sobre o Azure Data Factory. Abr
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

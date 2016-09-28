@@ -16,6 +16,7 @@
    ms.date="08/25/2016"
    ms.author="lodipalm;barbkess;sonyama"/>
 
+
 # Criar SQL Data Warehouse com o PowerShell
 
 > [AZURE.SELECTOR]
@@ -109,6 +110,6 @@ Se estiver interessado em obter mais informações sobre como gerir o SQL Data W
 
 
 
-<!--HONumber=ago16_HO5-->
+<!--HONumber=Sep16_HO3-->
 
 

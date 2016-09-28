@@ -18,6 +18,7 @@
    ms.author="larryfr"/>
 
 
+
 # Tutorial do Apache Storm: Introdução aos exemplos do Storm Starter para a análise de macrodados no HDInsight
 
 O Apache Storm é um sistema de cálculo dimensionável, tolerante a falhas, distribuído e em tempo real para o processamento de fluxos de dados. Com o Storm no Azure HDInsight, pode criar um cluster do Storm baseado na nuvem que executa a análise de macrodados em tempo real.
@@ -194,6 +195,6 @@ Se já estiver familiarizado com o desenvolvimento de topologias baseadas em Jav
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

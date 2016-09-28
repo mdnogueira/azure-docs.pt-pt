@@ -96,7 +96,6 @@ Desloque o ecrã para baixo até à secção **Notificação**, clique num ícon
 
 
 
-
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

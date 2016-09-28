@@ -1,24 +1,25 @@
 <properties 
-    pageTitle="Atualizar o PhoneFactor Agent para o Servidor Multi-Factor Authentication do Azure" 
-    description="Este documento descreve como começar a utilizar o Servidor MFA do Azure e como atualizar a partir de um phonefactor agent mais antigo." 
-    services="multi-factor-authentication" 
-    documentationCenter="" 
-    authors="billmath" 
-    manager="stevenpo" 
+    pageTitle="Atualizar o PhoneFactor Agent para o Servidor Multi-Factor Authentication do Azure"
+    description="Este documento descreve como começar a utilizar o Servidor MFA do Azure e como atualizar a partir de um phonefactor agent mais antigo."
+    services="multi-factor-authentication"
+    documentationCenter=""
+    authors="kgremban"
+    manager="femila"
     editor="curtland"/>
 
-<tags 
-    ms.service="multi-factor-authentication" 
-    ms.workload="identity" 
-    ms.tgt_pltfrm="na" 
-    ms.devlang="na" 
-    ms.topic="get-started-article" 
-    ms.date="08/04/2016" 
-    ms.author="billmath"/>
+<tags
+    ms.service="multi-factor-authentication"
+    ms.workload="identity"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="get-started-article"
+    ms.date="08/04/2016"
+    ms.author="kgremban"/>
+
 
 # Atualizar o PhoneFactor Agent para o Servidor Multi-Factor Authentication do Azure
 
-Atualizar do PhoneFactor Agent v5.x ou anterior no Servidor Multi-Factor Authentication do Azure requer a desinstalação do PhoneFactor Agent e dos componentes afiliados antes de o Servidor Multi-Factor Authentication e os respetivos componentes afiliados poderem ser instalados. 
+Atualizar do PhoneFactor Agent v5.x ou anterior no Servidor Multi-Factor Authentication do Azure requer a desinstalação do PhoneFactor Agent e dos componentes afiliados antes de o Servidor Multi-Factor Authentication e os respetivos componentes afiliados poderem ser instalados.
 
 ## Para atualizar o PhoneFactor Agent para o Servidor Multi-Factor Authentication do Azure
 <ol>
@@ -53,7 +54,7 @@ Atualizar do PhoneFactor Agent v5.x ou anterior no Servidor Multi-Factor Authent
 
 <li>Se o SDK do Serviço Web tiver sido instalado anteriormente, instale o novo SDK do Serviço Web através da Interface de Utilizador do Servidor Multi-Factor Authentication. Tenha em atenção que o nome do diretório virtual predefinido é agora “MultiFactorAuthWebServiceSdk”, em vez de “PhoneFactorWebServiceSdk”. Se pretender utilizar o nome anterior, tem de alterar o nome do diretório virtual durante a instalação. Caso contrário, se permitir que a instalação utilize o novo nome predefinido, terá de alterar o URL em todas as aplicações que referenciam o SDK do Serviço Web, como o Portal de Utilizador e o Serviço Web da Aplicação Móvel, para apontarem para a localização correta.
 
-<li>Se o Portal de Utilizador tiver sido instalado anteriormente no Servidor do PhoneFactor Agent, instale o novo Portal de Utilizador do Multi-Factor Authentication através da Interface de Utilizador do Servidor Multi-Factor Authentication. Tenha em atenção que o nome do diretório virtual predefinido é agora “MultiFactorAuth”, em vez de “PhoneFactor”. Se pretender utilizar o nome anterior, tem de alterar o nome do diretório virtual durante a instalação. Caso contrário, se permitir que a instalação utilize o novo nome predefinido, deve clicar no ícone do Portal de Utilizador no Servidor Multi-Factor Authentication e atualizar o URL do Portal de Utilizador no separador Definições. 
+<li>Se o Portal de Utilizador tiver sido instalado anteriormente no Servidor do PhoneFactor Agent, instale o novo Portal de Utilizador do Multi-Factor Authentication através da Interface de Utilizador do Servidor Multi-Factor Authentication. Tenha em atenção que o nome do diretório virtual predefinido é agora “MultiFactorAuth”, em vez de “PhoneFactor”. Se pretender utilizar o nome anterior, tem de alterar o nome do diretório virtual durante a instalação. Caso contrário, se permitir que a instalação utilize o novo nome predefinido, deve clicar no ícone do Portal de Utilizador no Servidor Multi-Factor Authentication e atualizar o URL do Portal de Utilizador no separador Definições.
 
 <li>Se o Portal de Utilizador e/ou o Serviço Web da Aplicação Móvel tiverem sido instalados anteriormente num servidor diferente do PhoneFactor Agent:
 <ol>
@@ -64,13 +65,7 @@ Atualizar do PhoneFactor Agent v5.x ou anterior no Servidor Multi-Factor Authent
 <li>Vá para a localização de instalação do Serviço Web da Aplicação Móvel (por exemplo, C:\inetpub\wwwroot\MultiFactorAuthMobileAppWebService) e edite o ficheiro web.config. Copie os valores nas secções appSettings e applicationSettings a partir do ficheiro web.config original cuja cópia de segurança foi feita antes da atualização para o novo ficheiro web.config. Se o novo nome do diretório virtual predefinido foi mantido quando instalou o SDK do Serviço Web, altere o URL na secção applicationSettings para apontar para a localização correta. Se quaisquer outras predefinições foram alteradas no ficheiro web.config anterior, aplique as mesmas alterações ao novo ficheiro web.config.</li></ol>
 
 
- 
 
-
- 
-
-
-
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

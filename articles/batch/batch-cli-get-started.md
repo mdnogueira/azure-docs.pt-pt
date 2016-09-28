@@ -16,6 +16,7 @@
    ms.date="09/06/2016"
    ms.author="marsma"/>
 
+
 # Introdução ao Azure Batch CLI
 
 A Interface de linha de comandos para várias plataformas do Azure (CLI do Azure) permite-lhe gerir as suas contas e recursos do Batch, como conjuntos, trabalhos e tarefas em shells de comando do Linux, Mac e Windows. Com a CLI do Azure, pode efetuar e encriptar muitas das mesmas tarefas que desempenha com as APIs do Batch, o portal do Azure e as cdmlets da Batch PowerShell.
@@ -255,6 +256,6 @@ Esta secção destina-se a fornecer-lhe recursos para utilizar na resolução de
 [rest_add_pool]: https://msdn.microsoft.com/library/azure/dn820174.aspx
 
 
-<!--HONumber=sep16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -16,6 +16,7 @@
     ms.date="07/24/2016"
     ms.author="swkrish"/>
 
+
 # Azure Active Directory B2C: inscrever-se e iniciar sessão em consumidores nas suas aplicações
 
 O Azure Active Directory B2C é uma solução de gestão de identidades de nuvem abrangente para as suas aplicações móveis e Web direcionadas para o consumidor. É um serviço global com elevada disponibilidade preparada para centenas de milhões de identidades de consumidor. Incorporado numa plataforma segura de nível empresarial, o Azure Active Directory B2C mantém as aplicações, a sua empresa e os seus consumidores protegidos.
@@ -68,6 +69,6 @@ Aconselhamo-lo a obter notificações de quando os incidentes de segurança ocor
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

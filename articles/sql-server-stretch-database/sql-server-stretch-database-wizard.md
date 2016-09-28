@@ -16,6 +16,7 @@
     ms.date="08/05/2016"
     ms.author="douglasl"/>
 
+
 # Começar através da execução do Assistente Enable Database for Stretch
 
 Para configurar uma base de dados para o Stretch Database, execute o Assistente Enable Database for Stretch.  Este tópico descreve as informações que tem de introduzir e as escolhas que tem de fazer no assistente.
@@ -196,6 +197,6 @@ Ative tabelas adicionais para o Stretch Database. Monitorize a migração de dad
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

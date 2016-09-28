@@ -6,7 +6,6 @@
 
 - Clique em **Eliminar** e opte por eliminar todos os discos da máquina virtual.
 
-
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

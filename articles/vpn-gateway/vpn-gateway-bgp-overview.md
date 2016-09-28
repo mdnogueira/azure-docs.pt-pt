@@ -17,6 +17,7 @@
    ms.date="06/16/2016"
    ms.author="yushwang"/>
 
+
 # Descrição geral do BGP com Gateways de VPN do Azure
 
 Este artigo fornece uma descrição geral do suporte BGP (Border Gateway Protocol) nos Gateways de VPN do Azure.
@@ -70,6 +71,6 @@ Veja [Introdução ao BGP nos gateways de VPN do Azure](./vpn-gateway-bgp-resour
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

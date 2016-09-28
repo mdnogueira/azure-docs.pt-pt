@@ -24,12 +24,11 @@
 
 Pretendia ver certos detalhes que não se encontram listados para a sua solução? Dê-nos a suas sugestões de funcionalidades através de [A Voz do Utilizador](https://feedback.azure.com/forums/321918-azure-iot).
 
-[lnk-azureiotsuite]: https://www.azureiotsuite.com
-[lnk-permissions]: ../articles/iot-suite/iot-suite-permissions.md
-[lnk-portal]: http://portal.azure.com/
-[lnk-faq]: ../articles/iot-suite/iot-suite-faq.md
+[Ink-azureiotsuite]: https://www.azureiotsuite.com
+[Ink-permissions]: ../articles/iot-suite/iot-suite-permissions.md
+[Ink-portal]: http://portal.azure.com/
+[Ink-faq]: ../articles/iot-suite/iot-suite-faq.md
 
-
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

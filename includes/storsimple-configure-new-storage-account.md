@@ -19,7 +19,6 @@
 4. A conta de armazenamento recentemente criada será apresentada na página **Configurar** em **Contas de armazenamento**. Clique em **Guardar** para guardar a conta de armazenamento recentemente criada. Clique em **OK** quando lhe for pedida a confirmação.
 
 
-
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

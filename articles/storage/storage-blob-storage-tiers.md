@@ -3,8 +3,8 @@
     description="As camadas de armazenamento para o Armazenamento de Blobs do Azure oferecem um armazenamento económico para dados de objetos com base em padrões de acesso. A camada de armazenamento de acesso esporádico está otimizada para dados que são acedidos com menor frequência."
     services="storage"
     documentationCenter=""
-    authors="sribhat-msft"
-    manager=""
+    authors="michaelhauss"
+    manager="vamshik"
     editor="tysonn"/>
 
 <tags
@@ -13,8 +13,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="07/05/2016"
-    ms.author="sribhat"/>
+    ms.date="09/20/2016"
+    ms.author="mihauss;robinsh"/>
+
 
 
 # Armazenamento de Blobs do Azure: camadas de armazenamento de acesso frequente e esporádico
@@ -355,6 +356,6 @@ Para obter mais detalhes, consulte [Introdução ao Blob Storage do Azure](stora
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

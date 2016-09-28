@@ -16,6 +16,7 @@
    ms.date="09/12/2016"
    ms.author="magoedte;sngun"/>
 
+
 # Controlo de acesso baseado em funções na Automatização do Azure
 
 ## Controlo de acesso baseado em funções
@@ -239,6 +240,6 @@ Nos exemplos indicados acima, substitua o **ID de início de sessão**, o **ID d
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

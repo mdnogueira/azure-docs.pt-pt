@@ -16,6 +16,7 @@
    ms.date="07/05/2016"
    ms.author="mblythe"/>
 
+
 # Introdução ao Microsoft Power BI Embedded
 
 O **Power BI Embedded** é um serviço do Azure que permite aos programadores de aplicações adicionar relatórios de Power BI interativos às suas próprias aplicações. O **Power BI Embedded** funciona com as aplicações existentes sem precisar de recriar ou alterar a forma como os utilizadores iniciam sessão.
@@ -103,6 +104,6 @@ Nos passos anteriores, criou uma coleção de áreas de trabalho e o primeiro re
 
 
 
-<!--HONumber=sep16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

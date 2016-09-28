@@ -16,6 +16,7 @@
     ms.date="06/16/2016"
     ms.author="piyushjo" />
 
+
 # Introdução ao Azure Mobile Engagement para Aplicações Xamarin.Android
 
 [AZURE.INCLUDE [Hero tutorial switcher](../../includes/mobile-engagement-hero-tutorial-switcher.md)]
@@ -149,6 +150,6 @@ As secções seguintes configuram a aplicação para as receber.
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

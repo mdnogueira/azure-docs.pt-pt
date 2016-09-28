@@ -35,7 +35,6 @@ Para criar uma Etiqueta de DNS, comece por selecionar **Máquinas virtuais** no 
     ![ligação SSMS](./media/virtual-machines-sql-server-connection-steps/rm-ssms-connect.png)
 
 
-
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

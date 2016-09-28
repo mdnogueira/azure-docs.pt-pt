@@ -17,6 +17,7 @@
     ms.date="06/29/2016"
     ms.author="wesmc"/>
 
+
 # Notificação Push de iOS com Notification Hubs para aplicações Xamarin
 
 [AZURE.INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
@@ -190,7 +191,7 @@ Pode testar a receção de notificações push na sua aplicação através do en
 
 Normalmente, as notificações push são enviadas por um serviço de back-end, como Mobile Services ou ASP.NET, utilizando uma biblioteca compatível. Também pode utilizar a API REST diretamente para enviar mensagens push se uma biblioteca não está disponível para o seu cenário. 
 
-Neste tutorial, vamos manter tudo simples e demonstrar apenas o modo de testar a aplicação cliente através do envio de notificações utilizando o SDK .NET para os Notification Hubs numa aplicação de consola em vez de um serviço de back-end. Recomendamos o tutorial [Use Notification Hubs to push notifications to users (Utilizar Hubs de Notificação para notificações push a utilizadores)](notification-hubs-aspnet-backend-ios-apple-apns-notification.md) como passo seguinte para enviar notificações de um back-end do ASP.NET. No entanto, as seguintes abordagens podem ser utilizadas para enviar notificações:
+Neste tutorial, vamos manter tudo simples e demonstrar apenas o modo de testar a aplicação cliente através do envio de notificações utilizando o SDK .NET para os Notification Hubs numa aplicação de consola em vez de um serviço de back-end. Recomendamos o tutorial [Utilizar Notification Hubs para notificações push a utilizadores](notification-hubs-aspnet-backend-ios-apple-apns-notification.md) como passo seguinte para enviar notificações de um back-end do ASP.NET. No entanto, as seguintes abordagens podem ser utilizadas para enviar notificações:
 
 * **Interface REST**: Pode suportar notificações push em qualquer plataforma de back-end utilizando a [interface REST](http://msdn.microsoft.com/library/windowsazure/dn223264.aspx).
 
@@ -331,6 +332,6 @@ Neste exemplo simples, difundiu notificações push para todos os seus dispositi
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

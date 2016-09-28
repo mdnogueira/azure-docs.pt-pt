@@ -16,6 +16,7 @@
     ms.date="08/30/2016"
     ms.author="brandwe"/>
 
+
 # B2C do Azure AD: Proteger uma API Web utilizando Node.js
 
 <!-- TODO [AZURE.INCLUDE [active-directory-b2c-devquickstarts-web-switcher](../../includes/active-directory-b2c-devquickstarts-web-switcher.md)]-->
@@ -782,6 +783,6 @@ Agora pode aceder a tópicos mais avançados, como:
 [Ligar a uma API Web utilizando o iOS com o B2C](active-directory-b2c-devquickstarts-ios.md)
 
 
-<!--HONumber=sep16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

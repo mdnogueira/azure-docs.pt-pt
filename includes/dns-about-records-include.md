@@ -30,7 +30,6 @@ Para criar um conjunto de registos de carateres universais, utilize o nome do co
 Os conjuntos de registos CNAME não podem coexistir com outros conjuntos de registos com o mesmo nome. Por exemplo, não pode criar em simultâneo um conjunto de registos CNAME com o nome relativo “www” e um registo A com o nome relativo “www”. Uma vez que o vértice da zona (nome = '@') contém sempre os conjuntos de registos NS e SOA, criados quando a zona foi criada, não pode criar um conjunto de registos CNAME no vértice da zona. Estas restrições derivam das normas DNS e não são limitações do DNS do Azure.
 
 
-
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

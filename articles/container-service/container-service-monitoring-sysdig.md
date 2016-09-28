@@ -18,6 +18,7 @@
    ms.date="08/08/2016"
    ms.author="t-ribhat"/>
 
+
 # Monitorizar um cluster do Azure Container Service com o Sysdig
 
 Neste artigo, vamos implementar agentes do Sysdig em todos os nós de agentes no seu cluster do Azure Container Service. Para esta configuração, é necessária uma conta do Sysdig. 
@@ -55,6 +56,6 @@ Agora, defina as ocorrências para 10000000. Assim, sempre que um novo nó for a
 Após instalar o pacote, regresse à IU do Sysdig e poderá explorar as diferentes métricas de utilização para contentores no seu cluster. 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

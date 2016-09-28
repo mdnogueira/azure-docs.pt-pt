@@ -16,6 +16,7 @@
     ms.date="07/14/2016"
     ms.author="wesmc"/>
 
+
 # Enviar notificações push para aplicações para o Android com os Notification Hubs do Azure
 
 [AZURE.INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
@@ -735,6 +736,6 @@ Para obter informações mais gerais sobre os Notification Hubs, consulte as nos
 
 
 
-<!--HONumber=sep16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

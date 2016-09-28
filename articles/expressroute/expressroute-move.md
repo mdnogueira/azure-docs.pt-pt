@@ -15,6 +15,7 @@
    ms.date="06/20/2016"
    ms.author="ganesr"/>
 
+
 # Mover circuitos ExpressRoute do modelo de implementação clássica para o modelo do Resource Manager
 
 Este artigo fornece uma descrição geral sobre o que significa mover um circuito Azure ExpressRoute do modelo de implementação clássica Azure Resource Manager.
@@ -112,6 +113,6 @@ Siga as instruções descritas em [Mover um circuito ExpressRoute do modelo de i
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

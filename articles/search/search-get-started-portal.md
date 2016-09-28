@@ -17,6 +17,7 @@
     ms.date="08/29/2016" 
     ms.author="heidist"/>
 
+
 # Introdução à Azure Search no portal
 
 Esta introdução sem código ajuda-o a trabalhar com a Pesquisa do Microsoft Azure utilizando as funcionalidades integradas diretamente no portal. 
@@ -186,6 +187,6 @@ Deve regressar à saída JSON, começando pelo documento 386 e terminando no doc
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

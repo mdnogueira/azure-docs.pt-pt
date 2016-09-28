@@ -17,6 +17,7 @@
    ms.author="cakarst;barbkess;sonyama"/>
 
 
+
 # Carregar dados do SQL Server para o Azure SQL Data Warehouse (AZCopy)
 
 Utilize os utilitários bcp e AZCopy de linha de comandos para carregar dados do SQL Server para o armazenamento de blobs do Azure. Em seguida, utilize o PolyBase ou o Azure Data Factory para carregar os dados para o Azure SQL Data Warehouse. 
@@ -174,6 +175,6 @@ Para mais sugestões de desenvolvimento, consulte [Descrição geral do desenvol
 
 
 
-<!--HONumber=sep16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

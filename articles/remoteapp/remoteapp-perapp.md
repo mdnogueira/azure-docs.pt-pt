@@ -16,6 +16,7 @@
    ms.date="08/15/2016"
    ms.author="piotrci"/>
 
+
 # Publicar aplicações para utilizadores individuais numa coleção do Azure RemoteApp (Pré-visualização)
 
 > [AZURE.IMPORTANT]
@@ -107,6 +108,6 @@ Caso ainda não tenha participado na pré-visualização, utilize este [inquéri
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

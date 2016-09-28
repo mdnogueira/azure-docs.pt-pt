@@ -16,6 +16,7 @@
     ms.date="08/17/2016"
     ms.author="sethm"/>
 
+
 # O que são os Event Hubs do Azure?
 
 Os Event Hubs do Azure são um serviço de entrada de dados altamente dimensionável, que pode ingerir milhões de eventos por segundo para que possa processar e analisar os quantidades enormes de dados produzidos pelos dispositivos e aplicações ligados. Os Event Hubs atuam como a “porta de entrada” para um pipeline de eventos. E, quando os dados são recolhidos para um Hub de Eventos, podem ser transformados e armazenados através de qualquer fornecedor de análise em tempo real ou adaptadores de criação de batches/armazenamento. Os Event Hubs desacoplam a produção de um fluxo de eventos do consumo desses eventos, para que os consumidores de eventos possam aceder aos eventos de acordo com seu próprio agendamento. Para obter mais informações e detalhes técnicos, veja [Descrição geral dos Event Hubs](event-hubs-overview.md).
@@ -45,6 +46,6 @@ Para obter informações detalhadas sobre os Event Hubs, consulte os tópicos se
 
 
 
-<!--HONumber=sep16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

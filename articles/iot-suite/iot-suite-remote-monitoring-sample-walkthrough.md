@@ -17,6 +17,7 @@
  ms.date="08/17/2016"
  ms.author="dobett"/>
 
+
 # Instruções sobre a solução pré-configurada de monitorização remota
 
 ## Introdução
@@ -241,6 +242,6 @@ Pode continuar a introdução ao IoT Suite ao ler os artigos seguintes:
 [lnk-permissions]: iot-suite-permissions.md
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

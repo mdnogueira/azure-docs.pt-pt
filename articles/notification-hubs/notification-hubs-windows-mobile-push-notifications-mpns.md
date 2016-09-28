@@ -17,6 +17,7 @@
     ms.date="06/29/2016"
     ms.author="wesmc"/>
 
+
 # Enviar notificações push com os Notification Hubs do Azure no Windows Phone
 
 [AZURE.INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
@@ -224,6 +225,6 @@ Saiba mais sobre como utilizar os Notification Hubs em [Documentação de Orient
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

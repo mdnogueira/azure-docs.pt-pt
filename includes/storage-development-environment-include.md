@@ -70,7 +70,6 @@ Para filtrar o emulador de armazenamento, pode utilizar um atalho que mapeia par
 
 
 
-
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

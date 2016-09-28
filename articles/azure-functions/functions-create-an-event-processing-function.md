@@ -18,6 +18,7 @@
    ms.date="06/05/2016"
    ms.author="glenga"/>
    
+
 # Criar uma Função do Azure de processamento de eventos
 
 As Funções do Azure são uma experiência baseada em eventos, de cálculo a pedido que lhe permite criar unidades agendadas ou acionadas de código implementado em várias linguagens de programação. Para saber mais acerca das Funções do Azure, veja a [Descrição Geral das Funções do Azure](functions-overview.md).
@@ -76,7 +77,7 @@ Isto é um exemplo muito simplificado de um acionador de temporizador e de um v�
 Veja os seguintes tópicos para obter mais informações sobre o Funções do Azure.
 
 + [Referência para programadores das Funções do Azure](functions-reference.md)  
-Referência para programadores de funções de codificação e definição de acionadores e enlaces.
+Referência para programadores para codificar funções e definir acionadores e enlaces.
 + [Testar as Funções do Azure](functions-test-a-function.md)  
 Descreve várias ferramentas e técnicas para testar as suas funções.
 + [Como dimensionar as Funções do Azure](functions-scale.md)  
@@ -86,6 +87,6 @@ Aborda os planos de serviço disponíveis com as Funções do Azure, incluindo o
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

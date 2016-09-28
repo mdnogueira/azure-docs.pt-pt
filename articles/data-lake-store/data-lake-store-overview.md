@@ -16,6 +16,7 @@
    ms.date="08/02/2016"
    ms.author="nitinme"/>
 
+
 # Descrição geral do Azure Data Lake Store
 
 O Azure Data Lake Store é um repositório de hiper escala a nível da empresa para cargas de trabalho de análise de macrodados. O Azure Data Lake permite-lhe capturar dados de qualquer tamanho, tipo e velocidade de ingestão num único local para análises exploratórias e operacionais.
@@ -115,6 +116,6 @@ Se preferir assistir a vídeos para obter mais informações, o Data Lake Store 
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

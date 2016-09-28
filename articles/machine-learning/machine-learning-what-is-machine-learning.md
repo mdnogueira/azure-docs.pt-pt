@@ -18,6 +18,7 @@
     ms.author="cgronlun;tedway;olgali"/>
 
 
+
 # Introdução ao machine learning na nuvem
 
 ## O que é o Machine Learning?
@@ -127,6 +128,6 @@ Pode saber as noções básicas de análise preditiva e do Machine Learning util
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

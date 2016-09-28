@@ -7,7 +7,6 @@ O VNet Peering encontra-se em pré-visualização pública. Para o poder utiliza
     Register-AzureRmResourceProvider -ProviderNamespace Microsoft.Network
  
 
-
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

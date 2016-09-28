@@ -16,6 +16,7 @@
     ms.date="08/01/2016"
     ms.author="tomfitz"/>
 
+
 # Personalizar um modelo exportado do Azure Resource Manager
 
 Este artigo mostra como modificar um modelo exportado para que possa passar valores adicionais como parâmetros. Apesar de ter como base os passos executados no artigo [Exportar um modelo do Resource Manager](resource-manager-export-template.md), não é essencial que conclua primeiro esse artigo. Pode encontrar o modelo e os scripts necessários neste artigo.
@@ -236,6 +237,6 @@ Ambas as opções são apresentadas neste artigo.
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -17,6 +17,7 @@
     ms.date="08/08/2016"
     ms.author="v-livech"/>
 
+
 # Criar chaves SSH no Linux e Mac para VMs com Linux no Azure
 
 Com um par de chaves SSH pode criar Máquinas Virtuais no Azure que estão predefinidas para utilizar chaves SSH para autenticação, eliminando a necessidade de palavras-passe para iniciar sessão.  As palavras-passe podem ser adivinhadas e abrir as VMs até as tentativas de força bruta excessiva desvendarem a sua palavra-passe. As VMs criadas com Modelos do Azure ou a `azure-cli` podem incluir a sua chave pública do SSH como parte da implementação, removendo uma configuração de pós-implementação.  Se estiver a ligar a uma VM do Linux a partir do Windows, veja [este documento.](virtual-machines-linux-ssh-from-windows.md)
@@ -245,6 +246,6 @@ O passo seguinte consiste na criação de VMs com Linux do Azure utilizando a no
 
 
 
-<!--HONumber=ago16_HO5-->
+<!--HONumber=Sep16_HO3-->
 
 

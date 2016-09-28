@@ -16,6 +16,7 @@
     ms.date="07/16/2016"
     ms.author="jehollan"/>
 
+
 # Criar uma nova aplicação lógica de ligação aos serviços SaaS
 
 Este tópico demonstra, em apenas alguns minutos, como pode começar a utilizar [Azure Logic Apps](app-service-logic-what-are-logic-apps.md). Vamos explicar através de um fluxo de trabalho simples que lhe permite enviar tweets interessantes para o seu e-mail.
@@ -68,6 +69,6 @@ Em menos de 5 minutos conseguiu configurar uma aplicação lógica simples em ex
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

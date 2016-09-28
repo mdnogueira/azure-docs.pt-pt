@@ -16,6 +16,7 @@
    ms.date="07/28/2016"
    ms.author="narayan" />
 
+
 # VNet peering
 
 O VNet peering é um mecanismo que liga duas redes virtuais na mesma região através da rede principal do Azure. Uma vez executado o peering, as duas redes virtuais aparecem como uma única para todos os fins de conetividade. Vão continuar a ser geridas como recursos separados, mas as máquinas virtuais nestas redes virtuais podem comunicar diretamente entre si através de endereços IP privados.
@@ -90,6 +91,6 @@ O VNet peering não será cobrado durante o período de avaliação. Uma vez lan
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

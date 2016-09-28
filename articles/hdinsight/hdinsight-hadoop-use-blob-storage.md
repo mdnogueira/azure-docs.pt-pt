@@ -19,6 +19,7 @@
     ms.author="jgao"/>
 
 
+
 # Utilizar o Blob Storage do Azure compatível com HDFS com o Hadoop no HDInsight
 
 Saiba como utilizar o Blob Storage de baixo custo do Azure com o HDInsight, como criar uma conta do Storage e um contentor de Blob Storage do Azure e como processar os dados aí guardados.
@@ -301,6 +302,6 @@ Para obter mais informações, consulte:
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

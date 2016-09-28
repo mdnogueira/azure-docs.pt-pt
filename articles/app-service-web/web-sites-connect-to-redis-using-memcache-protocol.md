@@ -16,6 +16,7 @@
     ms.date="02/29/2016"
     ms.author="cfowler"/>
 
+
 # Ligar uma aplicação Web no App Service do Azure para a Cache de Redis através do protocolo Memcache
 
 Neste artigo, irá aprender como ligar uma aplicação Web WordPress no [App Service do Azure](http://go.microsoft.com/fwlink/?LinkId=529714) para [a Cache de Redis do Azure][12] através do protocolo [Memcache][13]. Se tiver uma aplicação Web existente que utiliza um servidor Memcached para colocar em cache dentro da memória, pode migrá-la para o App Service do Azure e utilizar a solução de colocação em cache originais no Microsoft Azure com pouca ou nenhuma alteração para o código da aplicação. Além disso, pode utilizar os seus conhecimentos de Memcache existentes para criar aplicações distribuídas e altamente dimensionáveis no App Service do Azure com a Cache de Redis do Azure para colocar em cache dentro da memória, ao utilizar as estruturas de aplicações populares, tais como .NET, PHP, Node.js, Java e Python.  
@@ -199,6 +200,6 @@ Parabéns! A aplicação WordPress centralizou a cache de memória interna para 
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -9,7 +9,6 @@ As capturas de ecrã seguintes mostram a aplicação completa:
 
 A conclusão deste tutorial é um pré-requisito para todos os outros tutoriais dos Mobile Services para aplicações da Loja Windows e da Loja do Windows Phone. 
 
-
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

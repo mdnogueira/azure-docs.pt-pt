@@ -16,6 +16,7 @@
     ms.date="09/08/2016"
     ms.author="marsma"/>
 
+
 # Introdução ao cliente Azure Batch Python
 
 > [AZURE.SELECTOR]
@@ -678,6 +679,6 @@ Agora que está familiarizado com o fluxo de trabalho básico de uma solução d
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

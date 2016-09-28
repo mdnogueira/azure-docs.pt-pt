@@ -18,6 +18,7 @@
    ms.date="09/13/2016"
    ms.author="nepeters"/>
 
+
 # Gestão de contentores com o Docker Swarm
 
 O Docker Swarm fornece um ambiente para a implementação de cargas de trabalho de conteúdo através de um conjunto agrupado de anfitriões de Docker. O Docker Swarm utiliza a API do Docker nativa. O fluxo de trabalho para gerir contentores num Docker Swarm é quase idêntico ao que de um anfitrião de contentor único. Este documento fornece exemplos simples de implementação de cargas de trabalho de conteúdo numa instância de Serviço de Contentor do Azure do Docker Swarm. Para obter documentação mais detalhada sobre o Docker Swarm, consulte [Docker Swarm em Docker.com](https://docs.docker.com/swarm/).
@@ -125,6 +126,6 @@ Naturalmente, pode utilizar `docker-compose ps` para examinar apenas os contento
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -4,7 +4,7 @@
     services="active-directory"
     documentationCenter=""
     authors="karavar"
-    manager="stevenpo"
+    manager="femila"
     editor="karavar"/>
 
 <tags
@@ -15,6 +15,7 @@
     ms.topic="get-started-article"
     ms.date="07/14/2016"
     ms.author="vakarand"/>
+
 
 # Monitorizar a infraestrutura de identidade no local e os serviços de sincronização na nuvem
 
@@ -127,6 +128,6 @@ O Portal do Azure AD Connect Health permite a visualização de alertas, a monit
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

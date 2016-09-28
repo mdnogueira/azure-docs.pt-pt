@@ -21,7 +21,6 @@ Utilize os seguintes cmdlets para reiniciar um dispositivo virtual.
 
 
 
-
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

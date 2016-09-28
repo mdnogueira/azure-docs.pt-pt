@@ -13,8 +13,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="06/22/2016"
+    ms.date="09/26/2016"
     ms.author="juliako"/>
+
 
 # Configurar o ambiente
 
@@ -56,6 +57,6 @@ Escolha .NET ou a API REST para se ligar através de programação aos Media Ser
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

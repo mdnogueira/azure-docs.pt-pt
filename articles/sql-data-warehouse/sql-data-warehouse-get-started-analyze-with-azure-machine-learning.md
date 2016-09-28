@@ -16,6 +16,7 @@
    ms.date="09/14/2016"
    ms.author="kevin;barbkess;sonyama"/>
 
+
 # Analisar dados com o Azure Machine Learning
 
 > [AZURE.SELECTOR]
@@ -148,6 +149,6 @@ Para saber mais sobre como criar modelos preditivos de machine learning, consult
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 
