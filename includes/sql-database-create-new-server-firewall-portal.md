@@ -47,6 +47,6 @@ Utilize os seguintes passos no portal do Azure para criar uma regra de firewall 
     >[AZURE.IMPORTANT] O endereço IP do cliente poderá ser alterado de tempos a tempos e poderá não conseguir aceder ao servidor até criar uma nova regra de firewall. Pode verificar o seu endereço IP utilizando o [Bing](http://www.bing.com/search?q=my%20ip%20address). Em seguida, adicione um único endereço IP ou um intervalo de endereços IP. Veja [Gerir as definições da firewall](sql-database-configure-firewall-settings.md#manage-existing-server-level-firewall-rules-through-the-azure-portal) para obter detalhes.
 
 
-<!--HONumber=Sep16_HO3-->
+<!------HONumber=Sep16_HO3-->
 
 
