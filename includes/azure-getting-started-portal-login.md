@@ -32,6 +32,6 @@ Com a [subscrição existente]( https://account.windowsazure.com/Home/Index), si
    ![Iniciar sessão](./media/azure-getting-started-portal-login/login.png)
 
 
-<!--HONumber=Sep16_HO3-->
+<!----HONumber=Sep16_HO3-->
 
 
