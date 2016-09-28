@@ -17,6 +17,7 @@
     ms.date="07/13/2016"
     ms.author="anandy;billmath"/>
 
+
 # Implementação do AD FS no Azure 
 
 O AD FS proporciona federação de identidade simplificada e protegida e capacidades de início de sessão único (SSO) na Web. A Federação com o Azure AD ou o O365 permite aos utilizadores autenticarem-se com credenciais no local e aceder a todos os recursos na nuvem. Como resultado, torna-se importante ter uma infraestrutura do AD FS de elevada disponibilidade para garantir acesso aos recursos no local e na nuvem. Implementar o AD FS no Azure pode ajudar a alcançar a elevada disponibilidade necessária com um esforço mínimo.
@@ -326,6 +327,6 @@ Após o início de sessão com êxito, é-lhe apresentada uma mensagem de êxito
 
 
 
-<!--HONumber=sep16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

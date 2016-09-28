@@ -13,8 +13,9 @@
      ms.topic="get-started-article"
      ms.tgt_pltfrm="na"
      ms.workload="na"
-     ms.date="04/20/2016"
-     ms.author="cstreet"/>
+     ms.date="08/25/2016"
+     ms.author="andbuc"/>
+
 
 
 # SDK do Gateway de IoT (beta) – Introdução à utilização do Linux
@@ -60,6 +61,13 @@ Antes de começar, tem de [configurar o seu ambiente de desenvolvimento][lnk-set
           "module path" : "./build/modules/hello_world/libhello_world_hl.so",
           "args" : null
         }
+      ],
+      "links" :
+      [
+        {
+          "source": "hello_world",
+          "sink": "logger_hl"
+        }
       ]
     }
     ```
@@ -78,6 +86,6 @@ Antes de começar, tem de [configurar o seu ambiente de desenvolvimento][lnk-set
 
 
 
-<!----HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

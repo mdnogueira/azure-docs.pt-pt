@@ -15,6 +15,7 @@
    ms.date="02/11/2016"
    ms.author="jdial" />
 
+
 # O que é um Grupo de Segurança de Rede (NSG)?
 
 O Grupo de Segurança de Rede (NSG) contém uma lista de regras da Lista de Controlo de Acesso (ACL) que permitem ou negam o tráfego de rede para as instâncias de VM numa Rede Virtual. Os NSGs podem ser associados a sub-redes ou a instâncias de VM individuais dentro dessa sub-rede. Quando um NSG é associado a uma sub-rede, as regras da ACL são aplicadas a todas as instâncias de VM nessa sub-rede. Além disso, o tráfego para uma VM individual pode ser mais restringido ao associar um NSG diretamente a essa VM.
@@ -284,6 +285,6 @@ Uma vez que alguns dos NSGs acima têm de ser associados a NICs individuais, tem
 
 
 
-<!--HONumber=sep16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

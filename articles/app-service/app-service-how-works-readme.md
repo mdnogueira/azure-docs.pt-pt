@@ -17,6 +17,7 @@
     ms.date="02/10/2016" 
     ms.author="yochay"/>
 
+
 # Como funciona o App Service
 
 O Serviço de Aplicações do Azure é um serviço em nuvem concebido para resolver os problemas práticos com que se deparam atualmente os engenheiros. O App Service concentra-se em fornecer uma produtividade de programador superior sem comprometer a necessidade de fornecer aplicações à escala da nuvem. O Serviço de Aplicações também fornece as funcionalidades e estruturas necessárias para compor aplicações de Linha de Negócio empresariais ao mesmo tempo que fornece suporte aos programadores com as linguagens de programação mais conhecidas (.NET, Java, PHP, Node.JS e Python).
@@ -42,6 +43,6 @@ Em conjunto, as capacidades do App Service permitem aos programadores focarem-se
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

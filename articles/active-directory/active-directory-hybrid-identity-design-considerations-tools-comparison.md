@@ -4,7 +4,7 @@
     services="active-directory"
     documentationCenter=""
     authors="billmath"
-    manager="stevenpo"
+    manager="femila"
     editor="curtand"/>
 
 <tags
@@ -15,6 +15,7 @@
     ms.topic="get-started-article"
     ms.date="08/08/2016"
     ms.author="billmath"/>
+
 
 # Comparação das ferramentas de integração de diretórios de identidade híbrida
 
@@ -98,6 +99,6 @@ Saiba mais sobre como [Integrar as identidades no local ao Azure Active Director
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

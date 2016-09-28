@@ -14,7 +14,8 @@
     ms.devlang="na"
     ms.topic="get-started-article"
     ms.date="07/26/2016"
-    ms.author="robinsh"/>
+    ms.author="micurd;robinsh"/>
+
 
 
 # Acerca das contas do Storage do Azure
@@ -161,6 +162,6 @@ Para obter mais informações, consulte a [documentação de Virtual Machines do
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -17,6 +17,7 @@
     ms.date="09/12/2016"
     ms.author="mimig"/>
 
+
 # Como criar uma conta NoSQL do DocumentDB através do portal do Azure
 
 > [AZURE.SELECTOR]
@@ -95,6 +96,6 @@ Para saber mais sobre o DocumentDB, explore estes recursos:
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

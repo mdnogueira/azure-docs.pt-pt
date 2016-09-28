@@ -16,6 +16,7 @@
    ms.date="05/16/2016"
    ms.author="edmaca"/>
 
+
 # Gerir a Análise do Azure Data Lake com o Azure SDK para Node.js
 
 
@@ -145,6 +146,6 @@ catalogClient.catalog.listDatabases(accountName, function (err, result, request,
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

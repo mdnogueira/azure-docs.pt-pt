@@ -16,6 +16,7 @@
     ms.date="05/27/2016"
     ms.author="srinia"/>
 
+
 # Criar um novo conjunto de bases de dados elásticas com o PowerShell
 
 > [AZURE.SELECTOR]
@@ -83,6 +84,6 @@ Este script cria um novo grupo de recursos e um novo servidor do Azure. Quando l
 
 
 
-<!--HONumber=sep16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

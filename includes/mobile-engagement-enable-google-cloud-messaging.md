@@ -32,7 +32,6 @@
 8. Anote o valor da **CHAVE DE API**. Irá utilizar este valor de chave de API mais tarde para configurar a secção “Push Nativo”. Agora, clique em **Concluído**.
 
 
-
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

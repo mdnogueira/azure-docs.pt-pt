@@ -25,7 +25,6 @@
   A cópia de segurança deverá aparecer na lista de conjuntos de cópias de segurança que é apresentada no catálogo.
 
 
-
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

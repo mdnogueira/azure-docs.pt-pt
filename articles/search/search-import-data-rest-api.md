@@ -17,6 +17,7 @@
     ms.date="08/29/2016"
     ms.author="ashmaka"/>
 
+
 # Importar dados para a Pesquisa do Azure utilizando a API REST
 > [AZURE.SELECTOR]
 - [Descrição geral](search-what-is-data-import.md)
@@ -170,6 +171,6 @@ Depois de preencher o seu índice da Azure Search, estará pronto para começar 
 
 
 
-<!--HONumber=ago16_HO5-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -15,6 +15,7 @@
  ms.date="08/10/2016"
  ms.author="krisragh"/>
 
+
 # Introdução ao Agendador do Azure no portal do Azure
 
 É fácil criar tarefas agendadas no Agendador do Azure. Neste tutorial, ficará a saber como criar uma tarefa. Também irá aprender capacidades de monitorização e gestão do Agendador.
@@ -184,6 +185,6 @@ O Controlo de Acesso Baseado em Funções (RBAC) do Azure permite uma gestão po
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

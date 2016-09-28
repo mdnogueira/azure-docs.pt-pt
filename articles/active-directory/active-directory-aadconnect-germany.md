@@ -17,6 +17,7 @@
     ms.date="09/08/2016"
     ms.author="billmath"/>
 
+
 #Azure AD Connect no Microsoft Cloud Alemanha - Pré-visualização Pública
 
 ## Introdução
@@ -69,6 +70,6 @@ Para obter informações adicionais e orientações sobre definições personali
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

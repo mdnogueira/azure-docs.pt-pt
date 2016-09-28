@@ -13,7 +13,6 @@
 
 6. Clique em **Guardar** na parte inferior da página.
 
-
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -4,7 +4,6 @@ Publique as suas perguntas nos fóruns do Azure. - [Visite o MSDN](http://go.mic
 
 Marque as perguntas com a palavra-chave `azure-functions`. - [Visite o Stack Overflow](http://stackoverflow.com/questions/tagged/azure-functions)
 
-
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -16,6 +16,7 @@
     ms.author="awills"/>
 
 
+
 # Instrumentar aplicações Web no tempo de execução com o Application Insights
 
 *O Application Insights está em pré-visualização.*
@@ -298,6 +299,6 @@ Se a aplicação Web estiver no Azure e criar os seus recursos através de um mo
 
 
 
-<!--HONumber=sep16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

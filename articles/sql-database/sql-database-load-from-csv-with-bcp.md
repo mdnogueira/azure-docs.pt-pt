@@ -17,6 +17,7 @@
    ms.author="carlrab"/>
 
 
+
 # Carregar dados do ficheiro CSV para o SQL Data Warehouse (ficheiros simples)
 
 Pode utilizar o utilitário da linha de comandos do bcp para importar dados a partir de um ficheiro CSV para uma Base de Dados SQL do Azure.
@@ -126,6 +127,6 @@ Para migrar uma base de dados do SQL Server, veja [SQL Server database migration
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

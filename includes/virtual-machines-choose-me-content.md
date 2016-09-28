@@ -41,7 +41,6 @@ Outros benefícios a ter em conta ao utilizar VMs:
 
 
 
-
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -16,6 +16,7 @@
    ms.date="09/13/2016"
    ms.author="ryanwi"/>
 
+
 # Preparar o ambiente de desenvolvimento
  Para compilar e executar [Aplicações do Service Fabric do Azure][1] no computador de desenvolvimento, tem de instalar o runtime, o SDK e as ferramentas. Também precisa de ativar a execução dos scripts do Windows PowerShell incluídos no SDK.
 
@@ -64,6 +65,6 @@ Agora que o ambiente de desenvolvimento está configurado, pode começar a criar
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

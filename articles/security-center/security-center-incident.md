@@ -16,6 +16,7 @@
    ms.date="08/03/2016"
    ms.author="yurid"/>
 
+
 # Lidar com Incidentes de Segurança no Centro de Segurança do Azure 
 A triagem e a investigação dos alertas de segurança pode ser algo moroso, mesmo para analistas de segurança mais qualificados, e, para muitos, é até difícil saber por onde começar. Através da utilização de [análises](security-center-detection-capabilities.md) para ligar as informações entre [alertas de segurança](security-center-managing-and-responding-alerts.md) distintos, o Centro de Segurança pode fornecer-lhe uma vista única de uma campanha de ataque e todos os alertas relacionados. Deste modo, pode perceber rapidamente quais as ações realizadas pelo atacante e que recursos foram afetados.
 
@@ -65,6 +66,6 @@ Neste documento, aprendeu a utilizar a capacidade de incidentes de segurança no
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

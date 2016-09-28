@@ -19,6 +19,7 @@
     ms.author="carlrab"/>
 
 
+
 # Tutorial de Base de Dados SQL: criar uma base de dados SQL em minutos utilizando o portal do Azure
 
 > [AZURE.SELECTOR]
@@ -139,6 +140,6 @@ Agora que concluiu este tutorial de Base de Dados SQL e criou uma base de dados 
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

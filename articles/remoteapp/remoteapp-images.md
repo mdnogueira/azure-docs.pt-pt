@@ -15,6 +15,7 @@
     ms.date="08/15/2016"
     ms.author="elizapo" />
 
+
 # O que existe nas imagens de modelo do Azure RemoteApp?
 
 > [AZURE.IMPORTANT]
@@ -109,6 +110,6 @@ Esta imagem é uma extensão da imagem clássica e tem os seguintes componentes 
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -15,6 +15,7 @@
     ms.date="08/29/2016"
     ms.author="ashmaka"/>
 
+
 # Consultar o índice da Azure Search através da API REST
 > [AZURE.SELECTOR]
 - [Descrição geral](search-query-overview.md)
@@ -161,6 +162,6 @@ Para saber mais, consulte a secção "Resposta" dos [Documentos sobre Pesquisa](
 
 
 
-<!--HONumber=ago16_HO5-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -9,7 +9,6 @@ Utilize o fórum do [UserVoice](http://go.microsoft.com/fwlink/?linkid=698785&cl
 - [API REST e plataforma](https://feedback.azure.com/forums/169396-media-services/category/144423-rest-api-and-platform/)
 - [Transmissão VoD](https://feedback.azure.com/forums/169396-media-services/category/144429-vod-streaming/)
 
-
-<!--HONumber=sep16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

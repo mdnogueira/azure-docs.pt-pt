@@ -1,20 +1,21 @@
 <properties 
-    pageTitle="Autenticação do Windows e Servidor Multi-Factor Authentication do Azure" 
-    description="Esta é a página do Multi-Factor Authentication do Azure que irá ajudar a implementar a Autenticação do Windows e o Servidor Multi-Factor Authentication do Azure." 
-    services="multi-factor-authentication" 
-    documentationCenter="" 
-    authors="billmath" 
-    manager="stevenpo" 
+    pageTitle="Autenticação do Windows e Servidor Multi-Factor Authentication do Azure"
+    description="Esta é a página do Multi-Factor Authentication do Azure que irá ajudar a implementar a Autenticação do Windows e o Servidor Multi-Factor Authentication do Azure."
+    services="multi-factor-authentication"
+    documentationCenter=""
+    authors="kgremban"
+    manager="femila"
     editor="curtand"/>
 
-<tags 
-    ms.service="multi-factor-authentication" 
-    ms.workload="identity" 
-    ms.tgt_pltfrm="na" 
-    ms.devlang="na" 
-    ms.topic="get-started-article" 
-    ms.date="08/04/2016" 
-    ms.author="billmath"/>
+<tags
+    ms.service="multi-factor-authentication"
+    ms.workload="identity"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="get-started-article"
+    ms.date="08/04/2016"
+    ms.author="kgremban"/>
+
 
 # Autenticação do Windows e Servidor Multi-Factor Authentication do Azure
 
@@ -31,7 +32,7 @@ A secção Autenticação do Windows permite ao administrador ativar e configura
 
 
 >[AZURE.NOTE]Esta funcionalidade não é suportada para proteger os Serviços de Terminal no Windows Server 2012 R2.
- 
+
 
 
 
@@ -47,11 +48,11 @@ A secção Autenticação do Windows permite ao administrador ativar e configura
 7. Clique no botão Adicionar...
 8. Selecione IP Único se gostaria de ignorar um único endereço IP.
 9. Selecione Intervalo de IP se gostaria de ignorar um intervalo de IP completo. Por exemplo, 10.63.193.1-10.63.193.100.
-10. Selecione Sub-rede se pretende especificar um intervalo de IPs utilizando a notação de sub-rede. Introduza o IP inicial da sub-rede e escolha a máscara de rede adequada na lista pendente. 
+10. Selecione Sub-rede se pretende especificar um intervalo de IPs utilizando a notação de sub-rede. Introduza o IP inicial da sub-rede e escolha a máscara de rede adequada na lista pendente.
 11. Clique no botão OK.
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

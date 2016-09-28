@@ -11,7 +11,7 @@ Para implementar o modelo ARM que transferiu com a CLI do Azure, siga os passos 
 
         info:    New mode is arm
 
-3. Se necessário, execute o comando **`azure group create`** para criar um novo grupo de recursos, como mostrado abaixo. Repare no resultado do comando. A lista apresentada depois do resultado explica os parâmetros utilizados. Para obter mais informações sobre os grupos de recursos, veja [Descrição Geral do Azure Resource Manager](../articles/resource-group-overview.md).
+3. Se necessário, execute o comando **`azure group create`** para criar um novo grupo de recursos, como mostrado abaixo. Repare no resultado do comando. A lista apresentada depois do resultado explica os parâmetros utilizados. Para obter mais informações sobre os grupos de recursos, visite [Descrição geral do Azure Resource Manager](../articles/resource-group-overview.md).
 
         azure group create -n TestRG -l centralus
 
@@ -90,7 +90,6 @@ Para implementar o modelo ARM que transferiu com a CLI do Azure, siga os passos 
         info:    network vnet show command OK
 
 
-
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

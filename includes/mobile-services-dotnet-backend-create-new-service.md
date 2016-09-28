@@ -21,7 +21,6 @@ Siga estes passos para criar um novo serviço móvel.
 Acabou de criar um novo serviço móvel que pode ser utilizado pelas suas aplicações móveis.
 
 
-
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

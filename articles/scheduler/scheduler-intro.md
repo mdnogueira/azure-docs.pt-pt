@@ -15,6 +15,7 @@
  ms.date="08/18/2016"
  ms.author="krisragh"/>
 
+
 # O que é o Agendador do Azure?
 
 O Agendador do Azure permite-lhe descrever detalhamente as ações a executar na nuvem. Então agenda e executa essas ações automaticamente.  O Agendador pode fazê-lo através do [Portal do Azure](scheduler-get-started-portal.md), POR código, [API REST](https://msdn.microsoft.com/library/mt629143.aspx) ou do Azure PowerShell.
@@ -52,6 +53,6 @@ O Agendador permite-lhe criar, atualizar, eliminar, ver e gerir tarefas e [recol
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

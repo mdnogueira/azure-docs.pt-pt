@@ -3,7 +3,6 @@ Para realizar os passos descritos neste artigo, tem de [instalar e configurar o 
 
 > [AZURE.NOTE] Se não tiver uma conta do Azure, irá precisar de uma. Subscreva [uma avaliação gratuita aqui](../articles/active-directory/sign-up-organization.md). 
 
-
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

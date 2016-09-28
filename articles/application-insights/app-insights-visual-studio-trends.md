@@ -15,6 +15,7 @@
     ms.date="08/08/2016" 
     ms.author="daviste"/>
     
+
 # Analisar Tendências no Visual Studio
 
 A ferramenta Application Insights Trends visualiza como eventos de telemetria importantes da sua aplicação alteram ao longo do tempo, ajudando-o a identificar rapidamente problemas e anomalias. Ao ligá-lo a informações mais detalhadas de diagnóstico, o Trends pode ajudá-lo a melhorar o desempenho da aplicação, identificar as causas de exceções e descobrir conhecimentos aprofundados dos seus eventos personalizados.
@@ -102,6 +103,6 @@ A ferramenta Trends pode realçar bolhas de eventos que são anómalos em compar
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

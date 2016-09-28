@@ -18,6 +18,7 @@
     ms.author="nitinme"/>
 
 
+
 # Introdução: Criar o cluster do Apache Spark no HDInsight Linux e executar consultas interativas com o Spark SQL
 
 Saiba como criar um cluster do Apache Spark no HDInsight e, em seguida, utilizar o bloco de notas do [Jupyter](https://jupyter.org) para executar consultas interativas do Spark SQL no cluster do Spark.
@@ -216,6 +217,6 @@ Neste artigo, utilizará o kernel do PySpark. No artigo [Kernels disponíveis no
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

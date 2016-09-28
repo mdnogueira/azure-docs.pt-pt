@@ -17,6 +17,7 @@
    ms.author="edmaca"/>
 
 
+
 # Utilizar tutoriais interativos do Azure Data Lake Analytics
 
 O Portal do Azure fornece um tutorial interativo para começar a utilizar o Data Lake Analytics . Este artigo mostra como seguir o tutorial para analisar os registos de sites.
@@ -91,6 +92,6 @@ Cada conta de Data Lake Analytics tem uma dependência de conta de [Arquivo Azur
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

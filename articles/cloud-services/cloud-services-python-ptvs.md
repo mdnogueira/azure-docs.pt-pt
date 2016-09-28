@@ -17,6 +17,7 @@
     ms.author="adegeo"/>
 
 
+
 # Funções da Web e de trabalho do Python com Ferramentas de Python para Visual Studio
 
 Este artigo fornece uma descrição geral da utilização de funções da Web e de trabalho do Python através das [Ferramentas do Python para Visual Studio][]. Ficará a saber como utilizar o Visual Studio para criar e implementar um Serviço em Nuvem básico que utiliza o Python.
@@ -370,6 +371,6 @@ Para obter mais detalhes sobre a utilização de serviços do Azure a partir das
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

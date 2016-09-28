@@ -16,6 +16,7 @@
     ms.date="07/19/2016"
     ms.author="magoedte;bwren"/>
 
+
 # O meu primeiro runbook do Fluxo de Trabalho do PowerShell
 
 > [AZURE.SELECTOR] - [Gráfico](automation-first-runbook-graphical.md) - [PowerShell](automation-first-runbook-textual-PowerShell.md) - [Fluxo de Trabalho do PowerShell](automation-first-runbook-textual.md)
@@ -165,6 +166,6 @@ Atualmente, o nosso runbook inicia a virtual máquina que codificamos no runbook
 -  Para mais informações sobre a funcionalidade de suporte de scripts do PowerShell, consulte o artigo [Suporte de scripts do PowerShell Nativo na Automatização do Azure](https://azure.microsoft.com/blog/announcing-powershell-script-support-azure-automation-2/)
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -17,6 +17,7 @@
     ms.date="05/31/2016"
     ms.author="dendeli"/>
     
+
 # Notificações push de perímetro geográfico com Notification Hubs do Azure e Dados Geográficos do Bing
  
  > [AZURE.NOTE] Para concluir este tutorial, tem de ter uma conta ativa do Azure. Se não tiver uma conta, pode criar uma de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02).
@@ -384,6 +385,6 @@ Para obter mais detalhes sobre as capacidades dos Notification Hubs, consulte o 
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

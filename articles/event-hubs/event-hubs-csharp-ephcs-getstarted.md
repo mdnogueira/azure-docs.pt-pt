@@ -3,7 +3,7 @@
     description="Siga este tutorial para começar a utilizar Event Hubs do Azure com C# e utilizar EventProcessorHost."
     services="event-hubs"
     documentationCenter=""
-    authors="fsautomata"
+    authors="jtaubensee"
     manager="timlt"
     editor=""/>
 
@@ -14,7 +14,8 @@
     ms.devlang="na"
     ms.topic="hero-article"
     ms.date="09/02/2016"
-    ms.author="sethm"/>
+    ms.author="jotaub;sethm"/>
+
 
 # Introdução ao Event Hubs
 
@@ -96,6 +97,6 @@ Agora que compilou uma aplicação de trabalho que cria um Hub de Eventos e envi
 
 
 
-<!--HONumber=sep16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

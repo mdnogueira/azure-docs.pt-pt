@@ -27,7 +27,6 @@ Para poder criar uma conta de armazenamento, terá de ter uma subscrição do Az
 Para saber como criar uma conta de armazenamento, veja [Criar uma conta de armazenamento](../articles/storage/storage-create-storage-account.md#create-a-storage-account) para obter mais detalhes. Pode criar até 100 contas de armazenamento com nomes exclusivos com uma única subscrição. Veja [Metas de Desempenho e Escalabilidade do Armazenamento do Azure](../articles/storage/storage-scalability-targets.md) para obter detalhes sobre os limites das contas de armazenamento.
 
 
-
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

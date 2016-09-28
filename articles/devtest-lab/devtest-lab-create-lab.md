@@ -16,6 +16,7 @@
     ms.date="09/12/2016"
     ms.author="tarcher"/>
 
+
 # Criar um laboratório no Azure DevTest Labs
 
 ## Pré-requisitos
@@ -69,6 +70,6 @@ Assim que tiver criado o seu laboratório, seguem-se alguns passos a ter em cons
 - [Adicionar uma VM com artefactos para um laboratório](devtest-lab-add-vm-with-artifacts.md).
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

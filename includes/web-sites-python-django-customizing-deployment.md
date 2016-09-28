@@ -34,7 +34,6 @@ Se estes ficheiros não existirem, o Azure cria um script de implementação tem
 [Interface de linha de comandos do Azure]: http://azure.microsoft.com/downloads/
 
 
-
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

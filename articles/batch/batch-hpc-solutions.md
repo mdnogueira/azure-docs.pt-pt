@@ -16,6 +16,7 @@
    ms.date="07/27/2016"
    ms.author="danlep"/>
 
+
 # Soluções Batch e HPC na nuvem do Azure
 
 O Azure oferece soluções na nuvem eficientes e dimensionáveis para lotes e computação de alto desempenho (HPC) - também denominada *Macrocomputação*. Saiba mais aqui sobre cargas de trabalho de Macrocomputação e os serviços do Azure para suportá-las ou vá diretamente para [cenários de soluções](#scenarios) posteriormente neste artigo. Este artigo destina-se principalmente a decisores, gestores de TI e fabricantes independentes de software, mas outros programadores e profissionais de TI podem utilizá-lo para se familiarizarem com estas soluções.
@@ -151,14 +152,14 @@ A sua solução de Macrocomputação poderá necessitar de outros serviços do A
 * Para os anúncios mais recentes, veja o [blogue da equipa do Microsoft HPC e Batch](http://blogs.technet.com/b/windowshpc/) e o [blogue do Azure](https://azure.microsoft.com/blog/tag/hpc/).
 
 <!--Image references-->
-[parallel]: ./media/batch-hpc-solutions/parallel.png
-[coupled]: ./media/batch-hpc-solutions/coupled.png
+[paralelo]: ./media/batch-hpc-solutions/parallel.png
+[conjugado]: ./media/batch-hpc-solutions/coupled.png
 [iaas_cluster]: ./media/batch-hpc-solutions/iaas_cluster.png
 [burst_cluster]: ./media/batch-hpc-solutions/burst_cluster.png
 [batch_proc]: ./media/batch-hpc-solutions/batch_proc.png
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

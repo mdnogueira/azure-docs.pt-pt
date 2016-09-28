@@ -1,24 +1,25 @@
 <properties 
-    pageTitle="Integração de diretórios entre o Multi-Factor Authentication do Azure e o Active Directory" 
-    description="Esta é a página do Multi-Factor Authentication do Azure, que descreve como integrar o Servidor Multi-Factor Authentication do Azure com o Active Directory para que possa sincronizar os diretórios." 
-    services="multi-factor-authentication" 
-    documentationCenter="" 
-    authors="billmath" 
-    manager="stevenpo" 
+    pageTitle="Integração de diretórios entre o Multi-Factor Authentication do Azure e o Active Directory"
+    description="Esta é a página do Multi-Factor Authentication do Azure, que descreve como integrar o Servidor Multi-Factor Authentication do Azure com o Active Directory para que possa sincronizar os diretórios."
+    services="multi-factor-authentication"
+    documentationCenter=""
+    authors="kgremban"
+    manager="femila"
     editor="curtand"/>
 
-<tags 
-    ms.service="multi-factor-authentication" 
-    ms.workload="identity" 
-    ms.tgt_pltfrm="na" 
-    ms.devlang="na" 
-    ms.topic="get-started-article" 
-    ms.date="08/04/2016" 
-    ms.author="billmath"/>
+<tags
+    ms.service="multi-factor-authentication"
+    ms.workload="identity"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="get-started-article"
+    ms.date="08/04/2016"
+    ms.author="kgremban"/>
+
 
 # Integração de diretórios entre o Servidor MFA do Azure e o Active Directory
 
-A secção Integração de Diretórios permite-lhe configurar o servidor para integrar com o Active Directory ou outro diretório LDAP.  Permite-lhe configurar atributos para fazer corresponder o esquema de diretório e configurar a sincronização automática de utilizadores. 
+A secção Integração de Diretórios permite-lhe configurar o servidor para integrar com o Active Directory ou outro diretório LDAP.  Permite-lhe configurar atributos para fazer corresponder o esquema de diretório e configurar a sincronização automática de utilizadores.
 
 ## Definições
 Por predefinição, o Servidor Multi-Factor Authentication do Azure está configurado para importar ou sincronizar os utilizadores do Active Directory.  O separador permite substituir o comportamento predefinido e vincular a um diretório LDAP diferente, a um diretório de ADAM ou a um controlador de domínio do Active Directory específico.  Também prevê a utilização de Autenticação LDAP para o LDAP do proxy ou para o Enlace de LDAP como um destino RADIUS, pré-autenticação para Autenticação do IIS ou autenticação primária para o Portal de Utilizador.  A tabela seguinte descreve as definições individuais.
@@ -126,7 +127,7 @@ O botão **Remover** permite ao administrador eliminar um ou mais itens de sincr
 
 >[AZURE.WARNING]Assim que um registo de item de sincronização tiver sido removido, não pode ser recuperado. Terá de voltar a adicionar o registo do item de sincronização, caso o tenha eliminado por engano.
 
-O item de sincronização ou os itens de sincronização foram removidos do Servidor Multi-Factor Auth.  O serviço Servidor Multi-Factor Auth já não irá processar os itens de sincronização. 
+O item de sincronização ou os itens de sincronização foram removidos do Servidor Multi-Factor Auth.  O serviço Servidor Multi-Factor Auth já não irá processar os itens de sincronização.
 
 Os botões Mover para cima e Mover para baixo permitem ao administrador alterar a ordem dos itens de sincronização.  A ordem é importante, uma vez que o mesmo utilizador poderá ser membro de mais do que um item de sincronização (por exemplo, um contentor e um grupo de segurança).  As definições aplicadas ao utilizador durante a sincronização serão provenientes do primeiro item de sincronização na lista ao qual o utilizador está associado.  Por isso, os itens de sincronização devem ser colocados por ordem de prioridade.
 
@@ -139,6 +140,6 @@ Podem ser configurados Servidores Multi-Factor Auth adicionais para funcionarem 
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

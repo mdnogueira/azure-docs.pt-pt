@@ -16,6 +16,7 @@
     ms.date="12/16/2015"
     ms.author="dwrede"/>
 
+
 # Descrição geral do portal do Microsoft Azure
 
 O portal do Microsoft Azure é um local central onde pode aprovisionar e gerir os recursos do Azure.  Este tutorial irá familiarizá-lo com o portal e mostrar-lhe como utilizar algumas dessas capacidades essenciais:
@@ -100,6 +101,6 @@ O portal do Microsoft Azure simplifica de forma radical a criação e a gestão 
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

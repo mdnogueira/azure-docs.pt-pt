@@ -17,6 +17,7 @@
     ms.date="09/14/2016"
     ms.author="jgao"/>
 
+
 # Tutorial do Hadoop: começar a utilizar o Hadoop baseado em Linux no HDInsight
 
 > [AZURE.SELECTOR]
@@ -163,6 +164,6 @@ Se gostaria de saber mais sobre como criar ou gerir um cluster do HDInsight, con
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

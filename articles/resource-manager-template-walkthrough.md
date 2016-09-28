@@ -16,6 +16,7 @@
    ms.date="08/04/2016"
    ms.author="navale;tomfitz"/>
    
+
 # Instruções do modelo do Resource Manager
 
 Uma das primeiras questões colocadas ao criar um modelo é “como começar?”. Pode começar com um modelo em branco ao seguir a estrutura básica descrita no [artigo sobre Criação de Modelos](resource-group-authoring-templates.md#template-format) e adicionar os recursos e os parâmetros e variáveis adequados. Uma boa alternativa seria começar por aceder à [galeria de início rápido](https://github.com/Azure/azure-quickstart-templates) e procurar cenários semelhantes ao que está a tentar criar. Pode intercalar vários modelos ou editar um já existente de acordo com o seu cenário específico. 
@@ -583,6 +584,6 @@ Pode implementar novamente o modelo ao utilizar os mesmos comandos que utilizou 
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

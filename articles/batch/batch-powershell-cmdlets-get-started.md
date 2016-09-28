@@ -16,6 +16,7 @@
    ms.date="07/28/2016"
    ms.author="danlep"/>
 
+
 # Introdução aos cmdlets do Azure Batch PowerShell
 Com os cmdlets do Azure Batch PowerShell, pode efetuar e encriptar muitas das mesmas tarefas que desempenha com as APIs do lote, o portal do Azure e a Interface de Linha de Comandos do Azure (CLI). Isto é uma introdução rápida aos cmdlets que pode utilizar para gerir as contas do Batch e trabalhar com os recursos do Batch, como conjuntos e tarefas. Este artigo baseia-se nos cmdlets do Azure PowerShell versão 1.6.0.
 
@@ -169,6 +170,6 @@ Os cmdlets do Batch podem tirar partido do pipeline do PowerShell para enviar da
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

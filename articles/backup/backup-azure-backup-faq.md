@@ -17,6 +17,7 @@
      ms.date="08/29/2016"
      ms.author="trinadhk; giridham; arunak; markgal; jimpark;"/>
 
+
 # Serviço de Backup do Azure – FAQ
 
 > [AZURE.SELECTOR]
@@ -262,6 +263,6 @@ Recomenda-se que a pasta cache e os metadados de VHD não tenham os atributos ac
 
 
 
-<!--HONumber=ago16_HO5-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -15,7 +15,6 @@ Na secção seguinte do tutorial, irá aprender a utilizar a [Interface REST dos
 
 
 
-
-<!--HONumber=sep16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

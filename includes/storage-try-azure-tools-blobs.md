@@ -2,7 +2,6 @@
 > 
 > O Explorador de Armazenamento do Microsoft Azure permite-lhe [gerir recursos do Armazenamento de Blobs do Azure](../articles/vs-azure-tools-storage-explorer-blobs.md), incluindo a capacidade de criar, ler, atualizar e eliminar visualmente contentores de blobs e blobs, bem como gerir o acesso aos seus contentores de blobs e blobs.
 
-
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

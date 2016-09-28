@@ -15,6 +15,7 @@
     ms.date="08/29/2016"
     ms.author="ashmaka"/>
 
+
 # Consultar o índice da Azure Search
 > [AZURE.SELECTOR]
 - [Descrição geral](search-query-overview.md)
@@ -60,6 +61,6 @@ Na Azure Search, o realce da parte exata dos resultados da pesquisa que correspo
 
 
 
-<!--HONumber=ago16_HO5-->
+<!--HONumber=Sep16_HO3-->
 
 

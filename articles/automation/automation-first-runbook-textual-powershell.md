@@ -16,6 +16,7 @@
     ms.date="07/19/2016"
     ms.author="magoedte;sngun"/>
 
+
 # O meu primeiro runbook do PowerShell
 
 > [AZURE.SELECTOR] - [Gráfico](automation-first-runbook-graphical.md) - [PowerShell](automation-first-runbook-textual-PowerShell.md) - [Fluxo de Trabalho do PowerShell](automation-first-runbook-textual.md)  
@@ -167,6 +168,6 @@ Os runbooks do PowerShell têm o mesmo ciclo de vida, capacidades e gestão que 
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

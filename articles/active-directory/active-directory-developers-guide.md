@@ -17,6 +17,7 @@
    ms.author="mbaldwin"/>
 
 
+
 # Guia para programadores do Azure Active Directory
 
 ## Descrição geral
@@ -148,6 +149,6 @@ O [Azure Friday](https://azure.microsoft.com/documentation/videos/azure-friday/)
 
 
 
-<!--HONumber=ago16_HO5-->
+<!--HONumber=Sep16_HO3-->
 
 

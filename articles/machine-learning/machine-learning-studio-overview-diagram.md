@@ -14,8 +14,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="05/22/2016"
+    ms.date="09/21/2016"
     ms.author="haining;garye" />
+
 
 
 # Diagrama de descrição geral das funcionalidades do Machine Learning Studio
@@ -50,6 +51,6 @@ Transfira o diagrama da **Descrição geral das funcionalidades do Microsoft Azu
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

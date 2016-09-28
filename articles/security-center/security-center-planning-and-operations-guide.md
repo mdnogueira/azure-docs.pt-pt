@@ -16,6 +16,7 @@
    ms.date="08/11/2016"
    ms.author="yurid"/>
 
+
 # Guia de operações e planeamento do Centro de Segurança do Azure
 Este guia destina-se a profissionais de tecnologias da informação (TI), arquitetos de TI, analistas de segurança de informações e administradores de nuvem cujas organizações estejam a planear utilizar o Centro de Segurança do Azure.
 
@@ -244,6 +245,6 @@ Neste documento, aprendeu a planear a adoção do Centro de Segurança. Para sab
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

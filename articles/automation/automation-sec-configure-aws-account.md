@@ -16,6 +16,7 @@
    ms.date="09/12/2016"
    ms.author="magoedte"/>
 
+
 # Autenticar Runbooks com Amazon Web Services
 Automatizar tarefas comuns com recursos nos Amazon Web Services (AWS) pode ser efetuado com runbooks de Automatização no Azure.  Pode automatizar muitas tarefas no AWS através de runbooks de Automatização, tal como o pode fazer com recursos no Azure.  Apenas são necessárias duas coisas:
 
@@ -38,6 +39,6 @@ Depois de ter criado e copiado as chaves de segurança AWS, terá de criar um re
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -17,6 +17,7 @@
     ms.date="07/14/2016"
     ms.author="arluca"/>
 
+
 # Utilizar o Azure AD Connect Health com o AD DS
 A seguinte documentação é específica para monitorizar os Serviços de Domínio do Active Directory com o Azure AD Connect Health. Isto inclui o AD DS instalado no Windows Server 2008 R2, Windows Server 2012 e no Windows Server 2012 R2.
 
@@ -62,6 +63,6 @@ Por predefinição, podemos pré-selecionar quatro contadores de desempenho. No 
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

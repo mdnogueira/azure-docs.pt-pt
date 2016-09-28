@@ -16,6 +16,7 @@
      ms.date="09/12/2016"
      ms.author="dobett"/>
 
+
 # Introdução ao IoT Hub do Azure para .NET
 
 [AZURE.INCLUDE [iot-hub-selector-get-started](../../includes/iot-hub-selector-get-started.md)]
@@ -284,6 +285,6 @@ Para saber como expandir a sua solução de IoT e processar mensagens do disposi
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

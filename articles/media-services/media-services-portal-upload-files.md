@@ -17,6 +17,7 @@
     ms.author="juliako"/>
 
 
+
 # Carregar ficheiros para uma conta dos Serviços de Multimédia com o portal do Azure 
 
 > [AZURE.SELECTOR]
@@ -61,6 +62,6 @@ Agora, pode codificar os elementos que carregar. Para obter mais informações, 
 
 
 
-<!--HONumber=ago16_HO5-->
+<!--HONumber=Sep16_HO3-->
 
 

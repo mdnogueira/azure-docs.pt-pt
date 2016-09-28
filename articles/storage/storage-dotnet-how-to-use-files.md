@@ -13,7 +13,8 @@
     ms.devlang="dotnet"
     ms.topic="hero-article"
     ms.date="07/26/2016"
-    ms.author="minet" />
+    ms.author="minet;robinsh" />
+
 
 # Introdução ao File Storage do Azure no Windows
 
@@ -27,7 +28,7 @@ O File Storage do Azure é um serviço que oferece partilhas de ficheiros na nuv
 
 Uma vez que uma partilha do File Storage é uma partilha de ficheiros SMB padrão, as aplicações em execução no Azure podem aceder a dados na partilha de através das APIs E/S do sistema de ficheiros. Os programadores, por conseguinte, podem tirar partido do respetivo código existente e competências para migrar as aplicações existentes. Os profissionais de TI podem utilizar os cmdlets do PowerShell para criar, montar e gerir partilhas de File Storage como parte da administração de aplicações Azure.
 
-Pode criar partilhas de ficheiros do Azure através do [Portal do Azure](https://portal.azure.com), dos cmdlets do PowerShell do Storage do Azure, das bibliotecas de cliente do Storage do Azure ou da API REST do Storage do Azure. Além disso, uma vez que estas partilhas de ficheiros são partilhas SMB, pode aceder às mesmas através de APIs do sistema de ficheiros padrão e familiares. 
+Pode criar partilhas de ficheiros do Azure através do [Portal do Azure](https://portal.azure.com), dos cmdlets do PowerShell do Storage do Azure, das bibliotecas de cliente do Storage do Azure ou da API REST do Storage do Azure. Além disso, uma vez que estas partilhas de ficheiros são partilhas SMB, pode aceder às mesmas através de APIs do sistema de ficheiros padrão e familiares.
 
 Para obter informações sobre a utilização do File Storage com o Linux, consulte [Como utilizar o File Storage do Azure com o Linux](storage-how-to-use-files-linux.md).
 
@@ -67,7 +68,7 @@ O [Portal do Azure](https://portal.azure.com) fornece uma interface de utilizado
 - Carregar e transferir os ficheiros de e para a partilha de ficheiros
 - Monitorizar a utilização real de cada partilha de ficheiros
 - Ajustar a quota de tamanho da partilha
-- Obter o comando `net use` a utilizar para montar a partilha de ficheiros a partir de um cliente Windows 
+- Obter o comando `net use` a utilizar para montar a partilha de ficheiros a partir de um cliente Windows
 
 ### Criar partilha de ficheiros
 
@@ -85,7 +86,7 @@ O [Portal do Azure](https://portal.azure.com) fornece uma interface de utilizado
 
     ![Captura de ecrã que mostra como criar a partilha de ficheiros no portal](./media/storage-dotnet-how-to-use-files/files-create-share-2.png)
 
-5. Clique em "Partilhas de ficheiros" e siga a hiperligação para criar a sua primeira partilha de ficheiros. 
+5. Clique em "Partilhas de ficheiros" e siga a hiperligação para criar a sua primeira partilha de ficheiros.
 
     ![Captura de ecrã que mostra como criar a partilha de ficheiros no portal](./media/storage-dotnet-how-to-use-files/files-create-share-3.png)
 
@@ -119,7 +120,7 @@ O [Portal do Azure](https://portal.azure.com) fornece uma interface de utilizado
 
     ![Captura de ecrã que mostra como montar a partilha de ficheiros](./media/storage-dotnet-how-to-use-files/files-manage-3.png)
 
-    >[AZURE.TIP] Para localizar a chave de acesso da conta do Storage para a montagem, clique nas **Definições** da sua conta do Storage e, em seguida, clique em **Chaves de acesso**. 
+    >[AZURE.TIP] Para localizar a chave de acesso da conta do Storage para a montagem, clique nas **Definições** da sua conta do Storage e, em seguida, clique em **Chaves de acesso**.
 
     ![Captura de ecrã que mostra como encontrar a chave de acesso da conta do Storage](./media/storage-dotnet-how-to-use-files/files-manage-4.png)
 
@@ -191,18 +192,18 @@ A partir da versão 0.9.7 do Azure PowerShell, pode copiar um ficheiro para outr
     # copy a blob to a file directory
     Start-AzureStorageFileCopy -SrcContainerName srcctn -SrcBlobName hello2.txt -DestShareName hello -DestFilePath hellodir/hello2copy.txt -DestContext $ctx -Context $ctx
 
-## Montar a partilha de ficheiros 
+## Montar a partilha de ficheiros
 
-Com suporte para o SMB 3.0, o File Storage suporta agora a encriptação e os identificadores persistentes de clientes SMB 3.0. O suporte para a encriptação significa que os clientes SMB 3.0 podem montar uma partilha de ficheiros a partir de qualquer local, incluindo a partir de: 
+Com suporte para o SMB 3.0, o File Storage suporta agora a encriptação e os identificadores persistentes de clientes SMB 3.0. O suporte para a encriptação significa que os clientes SMB 3.0 podem montar uma partilha de ficheiros a partir de qualquer local, incluindo a partir de:
 
 - Uma máquina virtual do Azure na mesma região (também suportada pelo SMB 2.1)
 - Uma máquina virtual do Azure numa região diferente (apenas para o SMB 3.0)
-- Uma aplicação de cliente no local (apenas para o SMB 3.0) 
+- Uma aplicação de cliente no local (apenas para o SMB 3.0)
 
 Quando um cliente acede ao File Storage, a versão do SMB utilizada depende da versão do SMB suportada pelo sistema operativo. A tabela abaixo fornece um resumo de suporte para clientes Windows. Consulte este blogue para obter mais detalhes sobre as [versões do SMB](http://blogs.technet.com/b/josebda/archive/2013/10/02/windows-server-2012-r2-which-version-of-the-smb-protocol-smb-1-0-smb-2-0-smb-2-1-smb-3-0-or-smb-3-02-you-are-using.aspx).
 
 | Cliente Windows         | Versão do SMB suportada |
-|------------------------|-----------------------|
+|:-----------------------|:----------------------|
 | Windows 7              | SMB 2.1               |
 | Windows Server 2008 R2 | SMB 2.1               |
 | Windows 8              | SMB 3.0               |
@@ -249,12 +250,12 @@ Agora, pode trabalhar com a partilha do File Storage a partir do computador virt
 
 De igual modo, é possível montar a partilha de ficheiros a partir de uma função executada num serviço em nuvem do Azure ao aceder remotamente à função.
 
-### Montar a partilha de ficheiros a partir de um cliente no local a executar o Windows 
+### Montar a partilha de ficheiros a partir de um cliente no local a executar o Windows
 
 Para montar a partilha de ficheiros a partir de um cliente no local, primeiro tem de seguir estes passos:
 
-- Instalar a versão do Windows que suporta o SMB 3.0. O Windows irá tirar partido da encriptação do SMB 3.0 para transferir de forma segura os dados entre o cliente no local e a partilha de ficheiros do Azure na nuvem. 
-- Abra o acesso à Internet para a porta 445 (Saída de TCP) na sua rede local, conforme é necessário pelo protocolo SMB. 
+- Instalar a versão do Windows que suporta o SMB 3.0. O Windows irá tirar partido da encriptação do SMB 3.0 para transferir de forma segura os dados entre o cliente no local e a partilha de ficheiros do Azure na nuvem.
+- Abra o acesso à Internet para a porta 445 (Saída de TCP) na sua rede local, conforme é necessário pelo protocolo SMB.
 
 > [AZURE.NOTE] Alguns fornecedores de serviços de Internet podem bloquear a porta 445, pelo que terá de verificar junto do seu fornecedor de serviços.
 
@@ -270,7 +271,7 @@ Para criar uma nova aplicação de consola no Visual Studio e instalar o pacote 
 2. Forneça um nome para a aplicação de consola e, em seguida, clique em **OK**.
 3. Depois de o projeto ter sido criado, clique com o botão direito do rato no projeto no Explorador de Soluções e escolha **Gerir Pacotes NuGet**. Procure online por "WindowsAzure.Storage" e clique em **Instalar** para instalar a Biblioteca de Clientes do Storage do Azure para dependências e pacotes do .NET.
 
-Os exemplos de código neste artigo também utilizam a [Biblioteca do Gestor de Configuração do Microsoft Azure](https://msdn.microsoft.com/library/azure/mt634646.aspx) para obter a cadeia de ligação do armazenamento a partir de um ficheiro app.config na aplicação de consola. Com o Gestor de Configuração do Azure, pode obter a cadeia de ligação no runtime, quer a aplicação esteja em execução no Microsoft Azure ou a partir de um ambiente de trabalho, telemóvel ou aplicação Web. 
+Os exemplos de código neste artigo também utilizam a [Biblioteca do Gestor de Configuração do Microsoft Azure](https://msdn.microsoft.com/library/azure/mt634646.aspx) para obter a cadeia de ligação do armazenamento a partir de um ficheiro app.config na aplicação de consola. Com o Gestor de Configuração do Azure, pode obter a cadeia de ligação no runtime, quer a aplicação esteja em execução no Microsoft Azure ou a partir de um ambiente de trabalho, telemóvel ou aplicação Web.
 
 Para instalar o pacote do Gestor de Configuração do Azure, clique com o botão direito do rato no Explorador de Soluções e escolha **Gerir Pacotes NuGet**. Procure online por "ConfigurationManager" e clique em **Instalar** para instalar o pacote.
 
@@ -540,7 +541,7 @@ Primeiro, adicione as seguintes declarações `using` ao ficheiro program.cs, pa
     using Microsoft.WindowsAzure.Storage.File.Protocol;
     using Microsoft.WindowsAzure.Storage.Shared.Protocol;
 
-Tenha em atenção que enquanto o Blob, a Tabela e o Armazenamento de filas utilizam o tipo `ServiceProperties` partilhado no espaço de nomes `Microsoft.WindowsAzure.Storage.Shared.Protocol`, o File Storage utiliza o seu próprio tipo, o tipo `FileServiceProperties` no espaço de nomes `Microsoft.WindowsAzure.Storage.File.Protocol`. Ambos os espaços de nomes têm de ser referenciados a partir do código, no entanto, para o seguinte código compilar. 
+Tenha em atenção que enquanto o Blob, a Tabela e o Armazenamento de filas utilizam o tipo `ServiceProperties` partilhado no espaço de nomes `Microsoft.WindowsAzure.Storage.Shared.Protocol`, o File Storage utiliza o seu próprio tipo, o tipo `FileServiceProperties` no espaço de nomes `Microsoft.WindowsAzure.Storage.File.Protocol`. Ambos os espaços de nomes têm de ser referenciados a partir do código, no entanto, para o seguinte código compilar.
 
     // Parse your storage connection string from your application's configuration file.
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -584,37 +585,37 @@ Tenha em atenção que enquanto o Blob, a Tabela e o Armazenamento de filas util
 
 ## FAQ sobre o File Storage
 
-1. **A autenticação baseada no Active Directory é suportada pelo File Storage?** 
+1. **A autenticação baseada no Active Directory é suportada pelo File Storage?**
 
-    Atualmente, não suportamos a autenticação baseada no AD ou ACLs, mas é algo está presente na nossa lista de pedidos de funcionalidades. Por agora, as chaves de conta do Storage do Azure são utilizadas para fornecer a autenticação à partilha de ficheiros. Oferecemos uma solução através de assinaturas de acesso partilhado (SAS) através da API REST ou de bibliotecas de cliente. Através de SAS, pode gerar tokens com permissões específicas que são válidas ao longo de um intervalo de tempo especificado. Por exemplo, pode gerar um token de acesso só de leitura para um determinado ficheiro. Quem tiver este token enquanto for válido tem acesso só de leitura a esse ficheiro. 
+    Atualmente, não suportamos a autenticação baseada no AD ou ACLs, mas é algo está presente na nossa lista de pedidos de funcionalidades. Por agora, as chaves de conta do Storage do Azure são utilizadas para fornecer a autenticação à partilha de ficheiros. Oferecemos uma solução através de assinaturas de acesso partilhado (SAS) através da API REST ou de bibliotecas de cliente. Através de SAS, pode gerar tokens com permissões específicas que são válidas ao longo de um intervalo de tempo especificado. Por exemplo, pode gerar um token de acesso só de leitura para um determinado ficheiro. Quem tiver este token enquanto for válido tem acesso só de leitura a esse ficheiro.
 
     A SAS só é suportada através da API REST ou de bibliotecas cliente. Ao montar a partilha de ficheiros através do protocolo SMB, não pode utilizar uma SAS para delegar o acesso ao seu conteúdo.
 
 2. **As Partilhas de ficheiros do Azure são visíveis publicamente através da Internet ou são apenas acessíveis a partir do Azure?**
- 
+
     Desde que a porta 445 (Saída de TCP) esteja aberta e o cliente suportar o protocolo SMB 3.0 (*por exemplo,*, Windows 8 ou Windows Server 2012), a partilha de ficheiros está disponível através da Internet.  
 
-3. **O tráfego de rede entre um computador virtual do Azure e uma partilha de ficheiros conta como largura de banda externa que é cobrada na subscrição?** 
+3. **O tráfego de rede entre um computador virtual do Azure e uma partilha de ficheiros conta como largura de banda externa que é cobrada na subscrição?**
 
     Se a partilha de ficheiros e o computador virtual estiverem em regiões diferentes, o tráfego entre os mesmos será cobrado como largura de banda externa.
- 
-4. **Se o tráfego de rede estiver entre um computador virtual e uma partilha de ficheiros na mesma região, é gratuito?** 
+
+4. **Se o tráfego de rede estiver entre um computador virtual e uma partilha de ficheiros na mesma região, é gratuito?**
 
     Sim. É gratuito se o tráfego estiver na mesma região.
 
-5. **Estabelecer ligação a partir de computadores virtuais no local ao File Storage do Azure depende do Azure ExpressRoute?** 
+5. **Estabelecer ligação a partir de computadores virtuais no local ao File Storage do Azure depende do Azure ExpressRoute?**
 
     Não. Se não tiver o ExpressRoute, pode continuar a aceder à partilha de ficheiros no local, desde que tenha a porta 445 (Saída de TCP) aberta para o acesso à Internet. No entanto, pode utilizar o ExpressRoute com File Storage se assim o desejar.
 
 6. **Um “Testemunho de Partilha de Ficheiros” para um cluster de ativação pós-falha é um dos casos de utilização para o File Storage do Azure?**
 
     Isto não é suportado, de momento.
- 
+
 7. **O File Storage é apenas replicado através do LRS ou do GRS neste momento, certo?**  
 
     Planeamos suportar o RA-GRS, mas ainda não existe qualquer linha cronológica para partilhar.
 
-8. **Quando posso utilizar contas do Storage existentes para o File Storage do Azure?** 
+8. **Quando posso utilizar contas do Storage existentes para o File Storage do Azure?**
 
     O File Storage do Azure está agora ativado para todas as contas do Storage.
 
@@ -636,7 +637,7 @@ Tenha em atenção que enquanto o Blob, a Tabela e o Armazenamento de filas util
 
 13. **Patch lançado para corrigir o problema do desempenho lento com Ficheiros do Azure**
 
-    A equipa do Windows lançou recentemente uma correção para resolver um problema de desempenho lento quando o cliente acede ao File Storage do Azure a partir do Windows 8.1 ou Windows Server 2012 R2. Para mais informações, consulte o artigo KB associado [Desempenho lento ao aceder ao File Storage do Azure a partir do Windows 8.1 ou Server 2012 R2](https://support.microsoft.com/en-us/kb/3114025). 
+    A equipa do Windows lançou recentemente uma correção para resolver um problema de desempenho lento quando o cliente acede ao File Storage do Azure a partir do Windows 8.1 ou Windows Server 2012 R2. Para mais informações, consulte o artigo KB associado [Desempenho lento ao aceder ao File Storage do Azure a partir do Windows 8.1 ou Server 2012 R2](https://support.microsoft.com/en-us/kb/3114025).
 
 14. **Utilizar o File Storage do Azure com o IBM MQ**
 
@@ -665,12 +666,12 @@ Consulte as ligações para obter mais informações sobre o File Storage do Azu
 ### Publicações no blogue
 
 - [O File Storage do Azure está agora disponível normalmente](https://azure.microsoft.com/blog/azure-file-storage-now-generally-available/)
-- [No interior do File Storage do Azure](https://azure.microsoft.com/blog/inside-azure-file-storage/) 
+- [No interior do File Storage do Azure](https://azure.microsoft.com/blog/inside-azure-file-storage/)
 - [Introdução ao Serviço do Ficheiro do Microsoft Azure](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
 - [Ligações persistentes aos Ficheiros do Microsoft Azure](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

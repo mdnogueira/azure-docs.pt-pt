@@ -19,6 +19,7 @@
 
 
 
+
 # Ligar a uma Base de Dados SQL com o Visual Studio
 
 > [AZURE.SELECTOR]
@@ -107,6 +108,6 @@ Agora que estabelecemos a ligação à base de dados, os passos seguintes mostra
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

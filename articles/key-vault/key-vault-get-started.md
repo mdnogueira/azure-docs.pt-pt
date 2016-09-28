@@ -16,6 +16,7 @@
     ms.date="07/15/2016"
     ms.author="cabailey"/>
 
+
 # Introdução Cofre de Chaves do Azure #
 O Cofre de Chaves do Azure chave está disponível na maior parte das regiões. Para obter mais informações, consulte a [página de preços do Cofre de Chaves](https://azure.microsoft.com/pricing/details/key-vault/).
 
@@ -247,6 +248,6 @@ Para as referências de programação, consulte o [Guia para programadores do Co
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

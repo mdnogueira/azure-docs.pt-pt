@@ -17,6 +17,7 @@
     ms.date="08/29/2016"
     ms.author="heidist"/>
 
+
 # Importar dados para a Pesquisa do Azure através do portal
 
 O Portal do Azure fornece um assistente de **Importação de Dados** no dashboard do Azure Search para carregar dados para um índice. 
@@ -122,6 +123,6 @@ Reveja estas ligações para saber mais sobre indexadores:
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

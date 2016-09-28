@@ -15,6 +15,7 @@
     ms.date="08/29/2016"
     ms.author="ashmaka"
 />
+
 # Consultar o índice da Azure Search utilizando o Portal do Azure
 > [AZURE.SELECTOR]
 - [Descrição geral](search-query-overview.md)
@@ -49,6 +50,6 @@ Antes de iniciar estas instruções, já deverá ter [criado um índice da Azure
 
 
 
-<!--HONumber=ago16_HO5-->
+<!--HONumber=Sep16_HO3-->
 
 

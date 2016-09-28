@@ -17,6 +17,7 @@
     ms.author="mandia"/>
 
 
+
 # Lista de Conectores e API Apps para utilizar nas suas Logic Apps
 >[AZURE.NOTE] Esta versão do artigo aplica-se à versão do esquema de pré-visualização 2014-12-01 das Logic Apps. Para a versão de Disponibilidade Geral (GA) das Logic Apps, veja a [Nova Lista de Conectores](../connectors/apis-list.md).
 
@@ -81,6 +82,6 @@ Os conectores também podem ser utilizados como ações na sua Aplicação Lógi
 
 
 
-<!--HONumber=sep16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

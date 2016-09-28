@@ -16,6 +16,7 @@
     ms.date="07/21/2016"
     ms.author="glenga"/>
 
+
 # <a name="getting-started"> </a>Introdução aos Mobile Services e ao Sencha Touch
 
 [AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
@@ -726,6 +727,6 @@ Para obter mais informações sobre como começar a utilizar o Sencha Touch, con
 [Portal Clássico do Azure]: https://manage.windowsazure.com/
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

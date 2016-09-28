@@ -15,6 +15,7 @@
    ms.date="08/23/2016"
    ms.author="osamazia"/>
 
+
 # Encaminhamento assimétrico com vários caminhos de rede
 
 Este artigo explica como o tráfego de rede de encaminhamento e retorno poderá seguir rotas diferentes quando vários caminhos estão disponíveis entre a origem e o destino de rede.
@@ -79,6 +80,6 @@ O Traceroute é a melhor forma de garantir que o tráfego de rede atravessa o ca
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

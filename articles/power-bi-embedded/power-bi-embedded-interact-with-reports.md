@@ -16,6 +16,7 @@
    ms.date="08/26/2016"
    ms.author="mblythe"/>
 
+
 # Interagir com relatórios do Power BI através da API de JavaScript
 
 A API de JavaScript do Power BI permite-lhe incorporar facilmente os relatórios do Power BI nas suas aplicações. Com a API, as suas aplicações podem interagir, programaticamente, com diferentes elementos dos relatórios, como páginas e filtros. Esta interatividade faz com que os relatórios do Power BI sejam uma parte mais integrante das aplicações.
@@ -139,6 +140,6 @@ Para obter mais informações sobre a API de JavaScript do Power BI, veja as lig
 
 
 
-<!--HONumber=sep16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

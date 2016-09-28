@@ -12,7 +12,6 @@
 4. Clique no separador **Cloud Messaging** nas definições do projeto e copie o valor da **Chave do servidor** e do **ID do Remetente**.  Estes valores serão utilizados posteriormente para configurar a Política de Acesso do hub de notificação e o controlador de notificação na aplicação.
   
 
-
-<!--HONumber=sep16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

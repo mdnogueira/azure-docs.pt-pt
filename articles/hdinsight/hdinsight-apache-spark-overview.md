@@ -17,6 +17,7 @@
     ms.date="08/25/2016" 
     ms.author="nitinme"/>
 
+
 # Descrição geral: Apache Spark no HDInsight Linux
  
 <a href="http://spark.apache.org/" target="_blank">O Apache Spark</a> é uma arquitetura de processamento paralelo open source que suporta o processamento dentro da memória para melhorar o desempenho de aplicações de análise de macrodados. O motor de processamento do Spark foi concebido para ser rápido, fácil de utilizar e efetuar análises sofisticadas. As capacidades de computação dentro da memória do Spark transformam-no numa boa opção para algoritmos iterativos na Machine Learning e nas operações de gráficos. O Spark também é compatível com o Blob Storage do Azure (WASB), pelo que os dados existentes armazenados no Azure podem ser facilmente processados através do Spark.
@@ -137,6 +138,6 @@ Comece por criar um cluster do Spark no HDInsight Linux. Consulte [Início Rápi
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

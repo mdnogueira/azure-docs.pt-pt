@@ -3,7 +3,6 @@
 > Siga os passos em [Instalar e configurar o Azure PowerShell](../articles/powershell-install-configure.md) para instalar a versão mais recente do Azure PowerShell. Se tiver scripts que tenham de ser modificados para utilizar os novos cmdlets que funcionam com o Azure Resource Manager, veja [Migrar para as ferramentas de desenvolvimento baseadas no Azure Resource Manager para clusters do HDInsight](../articles/hdinsight/hdinsight-hadoop-development-using-azure-resource-manager.md) para obter mais informações.
 
 
-
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

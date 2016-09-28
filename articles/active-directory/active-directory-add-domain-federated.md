@@ -16,6 +16,7 @@
     ms.date="07/18/2016"
     ms.author="curtand;jeffsta"/>
 
+
 # Adicionar o seu nome de domínio personalizado ao Azure Active Directory
 
 Pode configurar um nome de domínio personalizado, como "contoso.com", para que os utilizadores em contoso.com possam ter uma experiência de início de sessão único federado a partir da sua rede empresarial. Se já tiver Serviços de Federação do Active Directory (AD FS) ou um servidor de federação diferente em execução na sua rede empresarial, pode configurar o Azure AD para utilizar o seu nome de domínio personalizado utilizando a ferramenta do Azure AD Connect. Também pode utilizar o Azure AD Connect para implementar um novo ambiente AD FS e configurá-lo para o início de sessão único federado para o Azure AD.
@@ -77,6 +78,6 @@ Se a sua organização utilizar vários nomes de domínio personalizados, como �
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

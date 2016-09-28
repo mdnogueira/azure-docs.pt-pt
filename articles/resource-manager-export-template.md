@@ -16,6 +16,7 @@
     ms.date="08/03/2016"
     ms.author="tomfitz"/>
 
+
 # Exportar um modelo do Azure Resource Manager a partir de recursos existentes
 
 O Gestor de Recursos permite-lhe exportar um modelo do Gestor de Recursos a partir de recursos existentes na sua subscrição. Pode utilizar esse modelo gerado para saber mais sobre a sintaxe do modelo ou para automatizar a reimplementação da sua solução conforme necessário.
@@ -306,6 +307,6 @@ Parabéns! Aprendeu a exportar um modelo a partir dos recursos que criou no port
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -19,6 +19,7 @@
     ms.author="joseidz"/>
 
 
+
 # Tutorial de Base de Dados SQL: ligar o Excel a uma base de dados SQL do Azure e criar um relatório
 
 > [AZURE.SELECTOR]
@@ -86,6 +87,6 @@ Agora que estabeleceu a ligação e criou o ficheiro com os dados e as informaç
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

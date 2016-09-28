@@ -13,8 +13,9 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="06/29/2016"
+   ms.date="09/26/2016"
    ms.author="chmatsk;tomfitz"/>
+
 
 # Trabalhar com Modelos do Azure Resource Manager no Visual Studio Code
 
@@ -138,6 +139,6 @@ Quando o modelo estiver pronto, pode implementar os novos recursos de acordo com
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -17,6 +17,7 @@
  ms.date="08/17/2016"
  ms.author="araguila"/>
 
+
 # Descrição geral da solução pré-configurada de manutenção preditiva
 
 A solução pré-configurada de *manutenção preditiva* é uma das [soluções pré-configuradas][lnk_preconfigured_solutions] disponibilizadas como parte do [Microsoft Azure IoT Suite][lnk_iot_suite]. Esta solução integra a coleção de telemetria de dispositivos em tempo real com um modelo preditivo criado com o [Azure Machine Learning][lnk_machine_learning].
@@ -68,6 +69,6 @@ Também pode explorar algumas das outras funcionalidades e capacidades das solu�
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

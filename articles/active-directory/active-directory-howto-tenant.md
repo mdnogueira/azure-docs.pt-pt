@@ -16,6 +16,7 @@
     ms.date="09/28/2015"
     ms.author="dastrock"/>
 
+
 # Como obter um inquilino do Azure Active Directory
 
 No Azure Active Directory (Azure AD), uma organização é representada por um [inquilino](https://msdn.microsoft.com/library/azure/jj573650.aspx#BKMK_WhatIsAnAzureADTenant).  Quando assina um serviço em nuvem da Microsoft, tal como o Azure, o Microsoft Intune ou o Office 365, a organização recebe e fica proprietária de uma instância dedicada do serviço Azure AD.  Cada inquilino do Azure AD é distinto e separado dos outros inquilinos do Azure AD.  
@@ -67,6 +68,6 @@ Como parte do processo de subscrição do Azure, ser-lhe-á pedido para fornecer
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

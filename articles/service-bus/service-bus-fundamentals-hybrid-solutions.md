@@ -16,6 +16,7 @@
     ms.date="08/31/2016" 
     ms.author="sethm"/>
 
+
 # Service Bus do Azure
 
 Se uma aplicação ou serviço é executado na nuvem ou de modo local, muitas vezes, tem de interagir com outros serviços ou aplicações. Para fornecer uma forma amplamente útil de efetuar este procedimento, o Microsoft Azure oferece o Service Bus. Este artigo dá uma vista de olhos a esta tecnologia, descreve o que é e por que razão poderá pretender utilizá-la.
@@ -122,6 +123,6 @@ Agora que aprendeu as noções básicas sobre o Service Bus do Azure, siga estas
 
 
 
-<!--HONumber=ago16_HO5-->
+<!--HONumber=Sep16_HO3-->
 
 

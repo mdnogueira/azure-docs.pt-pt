@@ -17,6 +17,7 @@
     ms.date="08/29/2016"
     ms.author="jroth"/>
 
+
 # Descrição Geral do SQL Server em Máquinas Virtuais do Azure
 
 Este tópico descreve as opções para executar o SQL Server em máquinas virtuais do Azure e inclui [ligações para imagens do portal](#option-1-deploy-a-sql-vm-per-minute-licensing) e uma descrição geral das [tarefas comuns](#manage-your-sql-vm).
@@ -96,6 +97,6 @@ Tem mais alguma pergunta? Em primeiro lugar, consulte as [FAQ acerca do SQL Serv
 
 
 
-<!--HONumber=ago16_HO5-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -17,6 +17,7 @@
  ms.date="08/09/2016"
  ms.author="dobett"/>
 
+
 [AZURE.INCLUDE [iot-azure-and-iot](../../includes/iot-azure-and-iot.md)]
 
 ## Azure IoT Suite
@@ -31,10 +32,10 @@ Também poderá estar interessado no serviço [Azure IoT Hub][] utilizado por mu
 
 Explore estes recursos para saber mais sobre o IoT Suite e as soluções pré-configuradas:
 
-- [O que é o Azure IoT Suite?][lnk-whatissuite]
+- [O que é o Azure IoT Suite?][Ink-whatissuite]
 - [Quais são as soluções pré-configuradas do Azure IoT Suite?][lnk-whatarepreconfigured]
 
-[lnk-whatissuite]: iot-suite-overview.md
+[Ink-whatissuite]: iot-suite-overview.md
 [lnk-whatarepreconfigured]: iot-suite-what-are-preconfigured-solutions.md
 
 [lnk-preconfigured-solutions]: iot-suite-getstarted-preconfigured-solutions.md
@@ -46,6 +47,6 @@ Explore estes recursos para saber mais sobre o IoT Suite e as soluções pré-co
 [lnk-predictive-maintenance]: iot-suite-predictive-overview.md
 
 
-<!---HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

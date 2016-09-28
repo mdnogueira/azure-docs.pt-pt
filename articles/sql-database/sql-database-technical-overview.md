@@ -17,6 +17,7 @@
    ms.date="08/16/2016"
    ms.author="shkurhek"/>
 
+
 # O que é a Base de Dados SQL? Introdução à Base de Dados SQL
 
 A Base de Dados SQL é um serviço de base de dados relacional na nuvem baseado no motor Microsoft SQL Server líder de mercado, com capacidades fundamentais. A Base de Dados SQL proporciona um desempenho previsível, escalabilidade sem períodos de indisponibilidade, continuidade do negócio e proteção de dados — tudo quase sem administração. Pode concentrar-se no desenvolvimento rápido de aplicações e acelerar o seu tempo de colocação no mercado, em vez de gerir máquinas virtuais e infraestruturas. Como se baseia no motor do [SQL Server](https://msdn.microsoft.com/library/bb545450.aspx), a Base de Dados SQL suporta as ferramentas, bibliotecas e APIs existentes do SQL Server, o que facilita a transição e a expansão para a nuvem.
@@ -61,6 +62,6 @@ Agora que já leu uma introdução à Base de Dados SQL e respondeu à pergunta 
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

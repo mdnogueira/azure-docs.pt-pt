@@ -16,7 +16,6 @@ Instale o SDK e, em seguida, adicione a monitorização para os outros dados:
 
 
 
-
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

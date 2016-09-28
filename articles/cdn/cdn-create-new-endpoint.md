@@ -15,6 +15,7 @@
      ms.date="07/28/2016" 
      ms.author="casoper"/>
 
+
 # Utilizar a CDN do Azure  
 
 Este tópico explica a ativação da CDN do Azure através da criação de um novo perfil e ponto final da CDN.
@@ -99,6 +100,6 @@ Um perfil da CDN é uma coleção de pontos finais da CDN.  Cada perfil contém 
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -17,6 +17,7 @@
     ms.date="07/21/2016"
     ms.author="jimpark; trinadhk"/>
 
+
 # O que é o Backup do Azure?
 O Backup do Azure é o serviço que utiliza para criar cópias de segurança e restaurar os dados no Microsoft cloud. Substitui a solução de cópia de segurança no local ou fora das instalações com uma solução baseada na nuvem que é fiável, segura e competitiva em termos de custos. Também ajuda a proteger os ativos que são executados na nuvem. O Backup do Azure fornece serviços de recuperação concebidos numa infraestrutura de nível internacional dimensionável, durável e altamente disponível.
 
@@ -231,6 +232,6 @@ Uma vez que estes tutoriais o ajudam a efetuar uma cópia de segurança rapidame
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -6,7 +6,6 @@ Neste cenário, irá criar um peering entre duas VNets chamadas **VNet1** e **VN
 
 O VNet peering permitirá uma conectividade total entre todo o espaço de endereços das redes virtuais em modo de peering.    
 
-
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

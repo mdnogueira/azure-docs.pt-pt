@@ -17,6 +17,7 @@
     ms.date="09/06/2016"
     ms.author="carlrab"/>
 
+
 # Escolha uma opção de SQL Server na nuvem: Base de Dados SQL (PaaS) do Azure ou SQL Server em VMs (IaaS) do Azure
 
 O Azure tem duas opções para alojar cargas de trabalho do SQL Server no Microsoft Azure:
@@ -159,6 +160,6 @@ Opte pelo **SQL Server em VMs do Azure** se:
 
 
 
-<!--HONumber=sep16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

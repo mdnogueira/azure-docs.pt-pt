@@ -19,6 +19,7 @@
    ms.author="rogardle"/>
 
 
+
 # Ligar a um cluster do Serviço de Contentor Azure
 
 Os clusters DC/OS e do Docker Swarm que são implementados pelo Serviço de Contentor do Azure expõem pontos finais REST. No entanto, estes pontos finais não estão abertos ao mundo externo. Para gerir estes pontos finais, tem de criar um túnel Secure Shell (SSH). Depois de estabelecer um túnel SSH, pode executar comandos nos pontos finais de cluster e ver a IU do cluster através de um browser no seu próprio sistema. Este documento explica-lhe como criar um túnel SSH no Linux, OS X e Windows.
@@ -120,6 +121,6 @@ Implementar e gerir contentores com DC/OS ou Swarm:
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

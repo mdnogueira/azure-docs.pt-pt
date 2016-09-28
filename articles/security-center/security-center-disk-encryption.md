@@ -16,6 +16,7 @@
    ms.date="05/27/2016"
    ms.author="tomsh"/>
 
+
 # Encriptar uma Máquina Virtual do Azure
 O Centro de Segurança do Azure alerta-o se tiver máquinas virtuais que não estão encriptadas. Estes alertas serão apresentados como de Gravidade Alta e a recomendação é de encriptar estas máquinas virtuais.
 
@@ -176,6 +177,6 @@ Neste documento, aprendeu a encriptar uma Máquina Virtual do Azure. Para saber 
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

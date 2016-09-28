@@ -17,6 +17,7 @@
     ms.date="07/28/2016"
     ms.author="cynthn"/>
 
+
 # Como ligar e iniciar sessão numa máquina virtual do Azure a executar o Windows 
 
 
@@ -47,6 +48,6 @@ Caso se depare com problemas ao tentar ligar, veja [Troubleshoot Remote Desktop 
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -16,6 +16,7 @@
     ms.date="07/19/2016"
     ms.author="kgremban"/>
 
+
 # Ativar o Proxy da Aplicação no Portal do Azure
 
 Este artigo explica como ativar a Proxy da Aplicação do Microsoft Azure AD para o diretório em nuvem no Azure AD.
@@ -92,6 +93,6 @@ Se tiver aplicações que estão em redes separadas ou em diferentes localizaç�
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

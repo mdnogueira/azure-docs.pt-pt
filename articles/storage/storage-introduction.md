@@ -13,8 +13,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="07/21/2016"
-    ms.author="tamram"/>
+    ms.date="09/20/2016"
+    ms.author="vamshik;tamram"/>
+
 
 # Introdução ao Storage do Microsoft Azure
 
@@ -132,14 +133,14 @@ Veja [Utilizar Assinaturas de Acesso Partilhado (SAS)](storage-dotnet-shared-acc
 
 ## Replicação para Durabilidade e Elevada Disponibilidade
 
-Os dados na sua conta do Storage do Microsoft Azure estão sempre replicados para garantir a durabilidade e a elevada disponibilidade, cumprindo o [SLA para o Armazenamento](https://azure.microsoft.com/support/legal/sla/storage/), mesmo face a falhas de hardware transitórias. 
+Os dados na sua conta do Storage do Microsoft Azure estão sempre replicados para garantir a durabilidade e a elevada disponibilidade, cumprindo o [SLA para o Armazenamento](https://azure.microsoft.com/support/legal/sla/storage/), mesmo face a falhas de hardware transitórias.
 
 Veja [Regiões do Azure](https://azure.microsoft.com/regions/#services) para obter mais informações sobre os serviços que estão disponíveis em cada região.
 
 Quando cria uma conta do Storage, tem de selecionar uma das seguintes opções de replicação:  
 
 - **Armazenamento localmente redundante (LRS).** O Armazenamento localmente redundante mantém três cópias dos seus dados. LRS é replicado três vezes num único local e numa única região. O LRS protege os dados de falhas normais de hardware, mas não da falha de um único local.  
-  
+
     O LRS é oferecido com um desconto. Para a máxima durabilidade, recomendamos que utilize o armazenamento georredundante, descrito abaixo.
 
 
@@ -148,8 +149,8 @@ Quando cria uma conta do Storage, tem de selecionar uma das seguintes opções d
     O ZRS fornece um nível mais elevado de durabilidade do que o LRS. No entanto, para uma durabilidade máxima, recomendamos que utilize o armazenamento georredundante, descrito abaixo.  
 
     > [AZURE.NOTE] Atualmente, o ZRS só está disponível para blobs de blocos e só é suportado para as versões de 14/02/2014 e posteriores.
-    > 
-    > Depois de criar a sua conta do Storage e selecionado o ZRS, não é possível convertê-lo para utilizar qualquer outro tipo de replicação ou vice-versa. 
+    >
+    > Depois de criar a sua conta do Storage e selecionado o ZRS, não é possível convertê-lo para utilizar qualquer outro tipo de replicação ou vice-versa.
 
 - **Armazenamento georredundante (GRS)**. O GRS mantém seis cópias dos seus dados. Com a GRS, os dados são replicados três vezes numa região principal e também são replicados três vezes numa região secundária a centenas de quilómetros de distância da região primária, fornecendo o nível mais elevado de durabilidade. Se ocorrer uma falha na região primária, o Storage do Azure terá uma ativação pós-falha para a região secundária. O GRS garante que os seus dados são duráveis em duas regiões separadas.
 
@@ -158,7 +159,7 @@ Quando cria uma conta do Storage, tem de selecionar uma das seguintes opções d
 - **Armazenamento georredundante com acesso de leitura (RA-GRS)**. O Armazenamento georredundante com acesso de leitura é ativado para a sua conta de armazenamento por predefinição aquando da respetiva criação. O Armazenamento georredundante com acesso de leitura replica os dados para uma localização geográfica secundária e também fornece acesso de leitura aos seus dados na localização secundária. O Armazenamento georredundante com acesso de leitura permite-lhe aceder aos seus dados a partir da localização principal ou secundária, no caso de uma localização ficar indisponível.
 
     > [AZURE.IMPORTANT] Pode alterar como os dados são replicados depois de criar a sua conta do Storage, a menos que tenha especificado o ZRS quando criou a conta. No entanto, tenha em atenção que pode ser cobrado um custo único adicional relativo à transferência de dados se mudar do LRS para o GRS ou o RA-GRS.
- 
+
 Consulte o artigo [Replicação do Storage do Azure](storage-redundancy.md) para obter detalhes adicionais sobre as opções de replicação do armazenamento.
 
 Para informações sobre os preços da replicação da conta do Storage, consulte o artigo [Preços do Storage do Azure](https://azure.microsoft.com/pricing/details/storage/).
@@ -269,6 +270,6 @@ Para saber mais sobre o Storage do Azure, explore estes recursos:
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

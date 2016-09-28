@@ -17,6 +17,7 @@
      ms.date="08/21/2016"
      ms.author="trinadhk; markgal; jimpark;"/>
 
+
 # Cofre dos Serviços de Recuperação – FAQ
 
 > [AZURE.SELECTOR]
@@ -45,6 +46,6 @@ As cópias de segurança de VMs clássicas no cofre de cópia de segurança não
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

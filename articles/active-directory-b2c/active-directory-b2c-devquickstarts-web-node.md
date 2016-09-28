@@ -17,11 +17,12 @@
     ms.author="brandwe"/>
 
 
+
 # Azure AD B2C: Adicionar início de sessão a uma aplicação Web Node.js
 
 > [AZURE.WARNING] As nossas sinceras desculpas, mas este tutorial precisa de uma manutenção importante e decidimos tirá-lo do ar por algum tempo.  Temos um tutorial equivalente em .NET disponível no nosso [guia do programador](active-directory-b2c-overview.md).
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

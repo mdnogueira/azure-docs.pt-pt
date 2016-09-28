@@ -17,6 +17,7 @@
     ms.date="06/29/2016"
     ms.author="jgao"/>
 
+
 # Publicar aplicações HDInsight para no Azure Marketplace
 
 Uma aplicação HDInsight é uma aplicação que os utilizadores podem instalar num cluster do HDInsight baseado em Linux. Estas aplicações podem ser desenvolvidas pela Microsoft, por fornecedores independentes de software (ISV) ou por si. Neste artigo, ficará a saber como publicar uma aplicação HDInsight no Azure Marketplace.  Para obter informações gerais sobre a publicação no Azure Marketplace, consulte [publicar uma oferta no Azure Marketplace](../marketplace-publishing/marketplace-publishing-getting-started.md).
@@ -104,6 +105,6 @@ Siga os passos abaixo para publicar uma aplicação HDInsight:
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -1,5 +1,5 @@
 
-A etapa final deste tutorial consiste em criar e executar a nova aplicação.
+A etapa final deste tutorial consiste em criar e executar a sua nova aplicação.
 
 1. Navegue até à localização onde guardou os ficheiros comprimidos do projeto, expanda- os no computador e abra o ficheiro da solução no Visual Studio.
 
@@ -7,7 +7,7 @@ A etapa final deste tutorial consiste em criar e executar a nova aplicação.
 
 3. Na aplicação, digite um texto significativo, tal como *Concluir o tutorial*, em **Inserir um TodoItem** e, em seguida, clique em **Guardar**.
 
-    Esta ação envia um pedido POST ao novo serviço móvel alojado no Azure. Os dados do pedido são inseridos na tabela TodoItem. Os itens armazenados na tabela são devolvidos pelo servidor móvel e os dados são apresentados na segunda coluna na aplicação.
+    Esta ação envia um pedido POST para o novo serviço móvel alojado no Azure. Os dados do pedido são inseridos na tabela TodoItem. Os itens armazenados na tabela são devolvidos pelo servidor móvel e os dados são apresentados na segunda coluna na aplicação.
 
 4. (Opcional) Numa solução universal do Windows, altere o projeto arranque predefinido para a outra aplicação e execute novamente a aplicação.
 
@@ -19,7 +19,6 @@ A etapa final deste tutorial consiste em criar e executar a nova aplicação.
 
     ![](./media/mobile-services-javascript-backend-run-app/mobile-data-browse.png)
 
-
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

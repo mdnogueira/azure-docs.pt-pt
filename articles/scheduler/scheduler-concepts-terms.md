@@ -15,6 +15,7 @@
  ms.date="08/18/2016"
  ms.author="krisragh"/>
 
+
 # Conceitos, terminologia e hierarquia de entidades do Agendador
 
 ## Hierarquia de entidades do Agendador
@@ -220,6 +221,6 @@ O intervalo entre tentativas, especificado com o objeto **retryInterval**, é o 
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

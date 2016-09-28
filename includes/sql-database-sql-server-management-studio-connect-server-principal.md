@@ -45,7 +45,6 @@ Os problemas de conetividade de rede também podem causar erros de ligação e t
 
 
 
-
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

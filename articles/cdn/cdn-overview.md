@@ -16,6 +16,7 @@
     ms.date="09/01/2016"
     ms.author="casoper"/>
 
+
 # Descrição geral da Rede de Entrega de Conteúdos (CDN) do Azure
 
 > [AZURE.NOTE] Este documento descreve o que é a Rede de Entrega de Conteúdos (CDN) do Azure, como funciona e as funcionalidades de cada produto da CDN do Azure.  Se pretende ignorar estas informações e ir diretamente para um tutorial sobre como criar um ponto final da CDN, consulte [Utilizar a CDN do Azure](cdn-create-new-endpoint.md).  Se pretende ver uma lista das localizações de nós da CDN atual, consulte [Localizações de POP da CDN do Azure](cdn-pop-locations.md).
@@ -89,6 +90,6 @@ Para obter informações sobre preços, consulte [Preços da CDN](https://azure.
 
 
 
-<!--HONumber=sep16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

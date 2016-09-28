@@ -15,6 +15,7 @@
    ms.date="03/17/2016"
    ms.author="sewhee" />
 
+
 # Apontar um domínio de Internet da empresa para um domínio do Traffic Manager do Azure
 
 Para apontar o nome de domínio da sua empresa para um nome de domínio do Traffic Manager, modifique o registo de recursos DNS no servidor DNS de Internet para utilizar o tipo de registo CNAME, que mapeia o nome de domínio da empresa para o nome de domínio do seu perfil do Traffic Manager. Pode ver o nome de domínio do Traffic Manager na secção **Geral** na página Configuração do perfil do Traffic Manager.
@@ -37,6 +38,6 @@ Todos os pedidos de tráfego para *www.contoso.com* serão agora direcionados pa
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

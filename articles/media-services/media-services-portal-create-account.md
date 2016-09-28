@@ -17,6 +17,7 @@
     ms.author="juliako"/>
 
 
+
 # Criar uma conta dos Serviços de Multimédia do Azure no portal do Azure
 
 > [AZURE.SELECTOR]
@@ -107,6 +108,6 @@ Agora, pode carregar ficheiros para a sua conta do AMS. Para obter mais informa�
 
 
 
-<!--HONumber=sep16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

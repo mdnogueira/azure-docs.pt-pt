@@ -16,6 +16,7 @@
     ms.date="08/16/2016"
     ms.author="markusvi"/>
 
+
 # FAQ do Azure Active Directory
 
 O Azure Active Directory é uma solução Identidade como um Serviço (IDaaS) completa que abrange todos os aspetos relativos à identidade, gestão de acesso e segurança.
@@ -207,6 +208,6 @@ Para obter mais informações, consulte[Automatizar o Aprovisionamento do Utiliz
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

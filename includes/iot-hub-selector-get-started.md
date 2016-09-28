@@ -17,7 +17,6 @@ Este tutorial mostrar-lhe como:
 - Criar uma identidade de dispositivo no seu IoT Hub.
 - Criar um dispositivo simulado que envia telemetria à sua back-end em nuvem, e recebe comandos da sua back-end em nuvem.
 
-
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -1,26 +1,27 @@
-<properties 
-    pageTitle="Proteger recursos da nuvem com o Multi-Factor Authentication do Azure e o AD FS" 
-    description="Esta é a página do Multi-Factor Authentication do Azure que descreve como começar a utilizar o MFA do Azure e o AD FS na nuvem." 
-    services="multi-factor-authentication" 
-    documentationCenter="" 
-    authors="billmath" 
-    manager="stevenpo" 
+<properties
+    pageTitle="Proteger recursos da nuvem com o Multi-Factor Authentication do Azure e o AD FS"
+    description="Esta é a página do Multi-Factor Authentication do Azure que descreve como começar a utilizar o MFA do Azure e o AD FS na nuvem."
+    services="multi-factor-authentication"
+    documentationCenter=""
+    authors="kgremban"
+    manager="femila"
     editor="curtland"/>
 
-<tags 
-    ms.service="multi-factor-authentication" 
-    ms.workload="identity" 
-    ms.tgt_pltfrm="na" 
-    ms.devlang="na" 
-    ms.topic="get-started-article" 
-    ms.date="08/04/2016" 
-    ms.author="billmath"/>
+<tags
+    ms.service="multi-factor-authentication"
+    ms.workload="identity"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="get-started-article"
+    ms.date="08/04/2016"
+    ms.author="kgremban"/>
+
 
 # Proteger recursos da nuvem com o Multi-Factor Authentication do Azure e o AD FS
 
 Se a sua organização estiver federada no Azure Active Directory e tiver recursos que sejam acedidos pelo Azure AD, pode utilizar o Multi-Factor Authentication do Azure ou os Serviços de Federação do Active Directory para proteger estes recursos. Utilize os procedimentos abaixo para proteger os recursos do Azure Active Directory com o Multi-Factor Authentication do Azure ou os Serviços de Federação do Active Directory.
 
-## Para proteger os recursos do Azure AD utilizando o AD FS, efetue o seguinte: 
+## Para proteger os recursos do Azure AD utilizando o AD FS, efetue o seguinte:
 
 
 
@@ -71,7 +72,7 @@ A primeira coisa a fazer é configurar as afirmações do AD FS. Vamos criar dua
 10. No Assistente para Adicionar Regras de Afirmações de Transformação, selecione Enviar Afirmações Utilizando uma Regra Personalizada no menu pendente e clique em Seguinte.
 11. Na caixa em Nome da regra de afirmação, introduza Manter Utilizadores com Sessão Iniciada.
 12. Na caixa Regra personalizada, introduza:
-        
+
         c:[Type == "http://schemas.microsoft.com/2014/03/psso"]
             => issue(claim = c);
 ![Nuvem](./media/multi-factor-authentication-get-started-adfs-cloud/trustedip5.png)
@@ -100,12 +101,6 @@ Já está! Neste momento, os utilizadores federados do Office 365 apenas têm de
 
 
 
-
-
-
-
-
-
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

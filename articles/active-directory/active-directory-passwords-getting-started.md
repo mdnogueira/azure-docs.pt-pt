@@ -17,6 +17,7 @@
     ms.date="07/12/2016"
     ms.author="asteen"/>
 
+
 # Introdução à Gestão de Palavras-passe
 
 > [AZURE.IMPORTANT] **Está aqui porque está a ter problemas em iniciar sessão?** Se assim for, [Eis como pode alterar e repor a sua própria palavra-passe](active-directory-passwords-update-your-own-password.md).
@@ -361,6 +362,6 @@ Veja-se abaixo as ligações para todas as páginas da documentação de reposi�
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

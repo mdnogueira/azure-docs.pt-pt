@@ -16,6 +16,7 @@
     ms.date="07/14/2016"
     ms.author="evboyle"/>
 
+
 # Introdução à Azure Search em Java
 > [AZURE.SELECTOR]
 - [Portal](search-get-started-portal.md)
@@ -59,7 +60,7 @@ A lista seguinte descreve os ficheiros relevantes para este exemplo.
 Todas as chamadas da API REST na Azure Search requerem que forneça o URL do serviço e uma chave de API. 
 
 1. Inicie sessão no [Portal do Azure](https://portal.azure.com).
-2. Na barra de índice, clique em **Serviço de pesquisa** para listar todos os serviços da Azure Search aprovisionados para a sua subscrição.
+2. Na barra de índice, clique em **Serviço de pesquisa** para listar todos os serviços Azure Search aprovisionados para a sua subscrição.
 3. Selecione o serviço que pretende utilizar.
 4. No dashboard do serviço, verá os mosaicos com informações essenciais, bem como o ícone da chave para aceder às chaves de administração.
 
@@ -205,6 +206,6 @@ Novo na Azure Search? Recomendamos que experimente outros tutoriais para desenvo
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

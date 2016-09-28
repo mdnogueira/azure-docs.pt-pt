@@ -4,7 +4,6 @@ Para ativar a porta não SSL, [navegue](../articles/redis-cache/cache-configure.
 
 
 
-
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

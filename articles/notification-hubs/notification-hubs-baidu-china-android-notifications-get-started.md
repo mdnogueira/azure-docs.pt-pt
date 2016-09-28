@@ -16,6 +16,7 @@
     ms.date="08/19/2016"
     ms.author="wesmc"/>
 
+
 # Introdução aos Notification Hubs utilizando o Baidu
 
 [AZURE.INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
@@ -505,6 +506,6 @@ Para enviar uma notificação de teste, pode utilizar o separador de depuração
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

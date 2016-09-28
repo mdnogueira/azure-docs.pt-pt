@@ -16,6 +16,7 @@
    ms.date="07/29/2016"
    ms.author="magoedte" />
 
+
 # Segurança da Automatização do Azure
 A Automatização do Azure permite-lhe automatizar tarefas relativamente aos recursos no Azure, no local e outros fornecedores de serviços em nuvem, tais como os Amazon Web Services (AWS).  Para um runbook efetuar as ações necessárias, tem de ter permissões para aceder de forma segura aos recursos com os direitos mínimos necessários dentro da subscrição.  
 Este artigo irá cobrir os vários cenários de autenticação suportados pela Automatização do Azure e irá mostrar como começar com base no ambiente ou ambientes que tem de gerir.  
@@ -55,6 +56,6 @@ Credenciais AWS | Amazon Web Services | [Autenticar Runbooks com os Amazon Web S
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

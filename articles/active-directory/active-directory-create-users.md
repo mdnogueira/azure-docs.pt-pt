@@ -13,8 +13,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="06/21/2016"
-    ms.author="curtand;viviali"/>
+    ms.date="09/22/2016"
+    ms.author="curtand"/>
+
 
 # Adicionar novos utilizadores ou utilizadores com contas Microsoft ao Azure Active Directory.
 
@@ -88,6 +89,6 @@ Em seguida, pode editar as opções para controlar o acesso dos utilizadores con
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

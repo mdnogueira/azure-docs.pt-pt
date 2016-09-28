@@ -18,6 +18,7 @@
    ms.author="cgronlun"/>
 
 
+
 # O que é o Hadoop na nuvem? Introdução ao ecossistema do Hadoop no HDInsight
 
 Obtenha uma introdução ao Hadoop, ao seu ecossistema e aos macrodados no Azure HDInsight: O que é Hadoop no HDInsight e quais são os componentes do Hadoop, terminologia comum e cenários para a análise de macrodados? Além disso, saiba mais sobre tutoriais do Hadoop, documentação e recursos para a utilização do Hadoop na nuvem no HDInsight.
@@ -271,6 +272,6 @@ Estas ferramentas de BI podem ser úteis na análise de macrodados:
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

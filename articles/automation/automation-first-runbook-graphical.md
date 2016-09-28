@@ -16,6 +16,7 @@
     ms.date="07/06/2016"
     ms.author="magoedte;bwren"/>
 
+
 # O meu primeiro runbook gráfico
 
 > [AZURE.SELECTOR] - [Gráfico](automation-first-runbook-graphical.md) - [PowerShell](automation-first-runbook-textual-PowerShell.md) - [Fluxo de Trabalho do PowerShell](automation-first-runbook-textual.md)
@@ -218,6 +219,6 @@ Iremos agora modificar o runbook para que apenas tente iniciar a máquina virtua
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

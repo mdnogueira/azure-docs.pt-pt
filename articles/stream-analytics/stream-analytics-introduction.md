@@ -5,7 +5,7 @@
     services="stream-analytics" 
     documentationCenter="" 
     authors="jeffstokes72" 
-    manager="paulettm" 
+    manager="jhubbard" 
     editor="cgronlun"/>
 
 <tags 
@@ -14,8 +14,9 @@
     ms.topic="get-started-article" 
     ms.tgt_pltfrm="na" 
     ms.workload="data-services" 
-    ms.date="08/04/2016" 
+    ms.date="09/26/2016" 
     ms.author="jeffstok"/>
+
 
 
 # O que é o Stream Analytics?
@@ -58,6 +59,6 @@ Agora já conhece o Stream Analytics, um serviço gerido para a transmissão da 
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

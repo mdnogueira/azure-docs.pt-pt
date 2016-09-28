@@ -17,6 +17,7 @@
     ms.date="09/08/2016" 
     ms.author="spelluru"/>
 
+
 # Introdução ao Azure Data Factory Service, um serviço de integração de dados em nuvem
 
 ## O que é o Azure Data Factory? 
@@ -78,6 +79,6 @@ Tutorial | Descrição
 [Criar um pipeline de dados para mover dados entre um arquivo de dados no local e um arquivo de dados em nuvem utilizando o Data Management Gateway](data-factory-move-data-between-onprem-and-cloud.md) | Neste tutorial, vai criar uma fábrica de dados com um pipeline que **move dados** de uma base de dados do SQL Server **no local** para um blob do Azure. Como parte das instruções, vai instalar e configurar o Data Management Gateway no seu computador. 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

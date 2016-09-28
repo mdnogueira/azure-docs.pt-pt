@@ -16,6 +16,7 @@
    ms.date="08/15/2016"
    ms.author="elizapo"/>
 
+
 # SQL Azure com o Azure RemoteApp
 
 > [AZURE.IMPORTANT]
@@ -56,6 +57,6 @@ Caso a experiência de utilização de uma aplicação cliente alojada no Azure 
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

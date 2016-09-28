@@ -16,6 +16,7 @@
     ms.date="08/17/2016"
     ms.author="tarcher" />
 
+
 # Introdução ao Explorador de Armazenamento (Pré-visualização)
 
 ## Descrição geral 
@@ -64,7 +65,7 @@ O Explorador de Armazenamento (Pré-visualização) permite-lhe funcionar com o 
 
 >[AZURE.NOTE] Atualmente, o Emulador do Storage do Azure é suportado apenas para o Windows. 
 
-1. No painel da esquerda do Explorador de Armazenamento (pré-visualização), expanda o nó **(Contas de Armazenamento** > **Locais e Anexadas** > **(Desenvolvimento)**.
+1. No painel da esquerda do Explorador de Armazenamento (pré-visualização), expanda o nó **(Contas de Armazenamento ** > **Locais e Anexadas** > **(Desenvolvimento)**.
 
     ![Nó de desenvolvimento local][21]
 
@@ -231,6 +232,6 @@ Para limpar a pesquisa, selecione o botão **x** na caixa de pesquisa.
 
 
 
-<!----HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

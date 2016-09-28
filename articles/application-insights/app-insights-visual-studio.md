@@ -16,6 +16,7 @@
     ms.author="awills"/>
 
 
+
 # Trabalhar com o Application Insights no Visual Studio
 
 No Visual Studio (versão 2015 e posterior), pode analisar o desempenho e diagnosticar problemas de depuração e produção, com a telemetria do [Application Insights do Visual Studio](app-insights-overview.md).
@@ -112,6 +113,6 @@ Para localizar anomalias nos seus dados, escolha uma das opções anómalas na l
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -15,6 +15,7 @@
    ms.date="08/17/2016"
    ms.author="alkohli" />
 
+
 # Implementar o dispositivo StorSimple no local
 
 > [AZURE.SELECTOR]
@@ -296,6 +297,6 @@ Execute os seguintes passos no Portal Clássico do Azure para criar uma cópia d
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -16,6 +16,7 @@
     ms.author="awills"/>
 
 
+
 # Adicionar o Application Insights SDK para monitorizar a aplicação Node.js
 
 *O Application Insights está em pré-visualização.*
@@ -230,6 +231,6 @@ server.on("listening", () => {
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

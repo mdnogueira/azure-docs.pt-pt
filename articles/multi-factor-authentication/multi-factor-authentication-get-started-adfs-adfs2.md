@@ -1,20 +1,21 @@
-<properties 
-    pageTitle="Proteger recursos na nuvem e no local utilizando o Servidor Multi-Factor Authentication do Azure com o AD FS 2.0" 
-    description="Esta é a página do Multi-Factor Authentication do Azure que descreve como começar a utilizar o MFA do Azure e o AD FS 2.0." 
-    services="multi-factor-authentication" 
-    documentationCenter="" 
-    authors="billmath" 
-    manager="stevenpo" 
+<properties
+    pageTitle="Proteger recursos na nuvem e no local utilizando o Servidor Multi-Factor Authentication do Azure com o AD FS 2.0"
+    description="Esta é a página do Multi-Factor Authentication do Azure que descreve como começar a utilizar o MFA do Azure e o AD FS 2.0."
+    services="multi-factor-authentication"
+    documentationCenter=""
+    authors="kgremban"
+    manager="femila"
     editor="curtland"/>
 
-<tags 
-    ms.service="multi-factor-authentication" 
-    ms.workload="identity" 
-    ms.tgt_pltfrm="na" 
-    ms.devlang="na" 
-    ms.topic="get-started-article" 
-    ms.date="08/04/2016" 
-    ms.author="billmath"/>
+<tags
+    ms.service="multi-factor-authentication"
+    ms.workload="identity"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="get-started-article"
+    ms.date="08/04/2016"
+    ms.author="kgremban"/>
+
 # Proteger recursos na nuvem e no local utilizando o Servidor Multi-Factor Authentication do Azure com o AD FS 2.0
 
 Se a sua organização estiver federada com o Azure Active Directory e tiver recursos que estão no local ou na nuvem que pretende proteger, pode fazê-lo utilizando o Servidor Multi-Factor Authentication do Azure e configurando-o para funcionar com o AD FS para que a autenticação multifator seja acionada para pontos finais de valor elevado.
@@ -23,7 +24,7 @@ Esta documentação abrange a utilização do Servidor Multi-Factor Authenticati
 
 
 ## Proxy do AD FS 2.0
-Para proteger o AD FS 2.0 com um proxy, instale o Servidor Multi-Factor Authentication do Azure no servidor proxy do AD FS e configure o Servidor através dos seguintes passos. 
+Para proteger o AD FS 2.0 com um proxy, instale o Servidor Multi-Factor Authentication do Azure no servidor proxy do AD FS e configure o Servidor através dos seguintes passos.
 
 ### Para proteger o AD FS 2.0 com um proxy
 
@@ -63,7 +64,7 @@ Para proteger o AD FS 2.0 com um proxy, instale o Servidor Multi-Factor Authenti
 
 ## AD FS 2.0 Direct sem proxy
 
-Para proteger o AD FS quando não for utilizado o proxy, instale o Servidor Multi-Factor Authentication do Azure no servidor do AD FS e configure o Servidor através dos seguintes passos. 
+Para proteger o AD FS quando não for utilizado o proxy, instale o Servidor Multi-Factor Authentication do Azure no servidor do AD FS e configure o Servidor através dos seguintes passos.
 
 ### Para proteger o AD FS 2.0 sem um proxy
 1. No Servidor Multi-Factor Authentication do Azure, clique no ícone Autenticação do IIS no menu esquerdo.
@@ -80,7 +81,7 @@ Para proteger o AD FS quando não for utilizado o proxy, instale o Servidor Mult
 
 
 ## IPs Fidedignos
-Os IPs Fidedignos permitem aos utilizadores ignorar o Multi-Factor Authentication do Azure para pedidos de sites com origem em sub-redes ou endereços IP específicos. Por exemplo, pode pretender excluir utilizadores do Multi-Factor Authentication do Azure ao iniciar sessão a partir do escritório. Para tal, especifique a sub-rede do escritório como uma entrada de IPs Fidedignos. 
+Os IPs Fidedignos permitem aos utilizadores ignorar o Multi-Factor Authentication do Azure para pedidos de sites com origem em sub-redes ou endereços IP específicos. Por exemplo, pode pretender excluir utilizadores do Multi-Factor Authentication do Azure ao iniciar sessão a partir do escritório. Para tal, especifique a sub-rede do escritório como uma entrada de IPs Fidedignos.
 
 ### Para configurar IPs fidedignos
 
@@ -93,10 +94,8 @@ Os IPs Fidedignos permitem aos utilizadores ignorar o Multi-Factor Authenticatio
 
 <center>![Configurar](./media/multi-factor-authentication-get-started-adfs-adfs2/trusted.png)</center>
 
- 
 
 
-
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -16,6 +16,7 @@
     ms.date="07/06/2016"
     ms.author="maheshu"/>
 
+
 # Serviços de domínio do Azure AD *(pré-visualização)* – Ativar os Serviços de Domínio do Azure AD
 
 ## Tarefa 3: Ativar os Serviços de Domínio do Azure AD
@@ -96,6 +97,6 @@ A próxima tarefa de configuração é [atualizar as definições de DNS para a 
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

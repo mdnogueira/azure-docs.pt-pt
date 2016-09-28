@@ -16,6 +16,7 @@
     ms.date="07/21/2016"
     ms.author="wesmc"/>
 
+
 # Introdução aos Hubs de Notificação do Azure para Aplicações da Plataforma Universal do Windows
 
 [AZURE.INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
@@ -276,6 +277,6 @@ Para obter informações mais gerais sobre os Hubs de Notificação, consulte [D
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

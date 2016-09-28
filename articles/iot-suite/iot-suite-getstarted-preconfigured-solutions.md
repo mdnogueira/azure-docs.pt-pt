@@ -17,6 +17,7 @@
      ms.date="08/16/2016"
      ms.author="dobett"/>
 
+
 # Tutorial: Introdução às soluções pré-configuradas
 
 ## Introdução
@@ -251,6 +252,6 @@ Agora que implementou uma solução pré-configurada funcional, pode ler os arti
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

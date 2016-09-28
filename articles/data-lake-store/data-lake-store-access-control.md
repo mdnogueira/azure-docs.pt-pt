@@ -16,6 +16,7 @@
    ms.date="09/06/2016"
    ms.author="nitinme"/>
 
+
 # Controlo de acesso no Azure Data Lake Store
 
 O Data Lake Store implementa um modelo de controlo de acesso que deriva do HDFS e, por sua vez, do modelo de controlo de acesso POSIX. Este artigo resume as noções básicas do modelo de controlo de acesso para o Data Lake Store. Para saber mais sobre o modelo de controlo de acesso HDFS consulte [Guia de Permissões HDFS](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsPermissionsGuide.html).
@@ -313,6 +314,6 @@ Não.
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

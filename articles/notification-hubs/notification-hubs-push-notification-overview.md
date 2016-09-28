@@ -17,6 +17,7 @@
     ms.author="wesmc"/>
 
 
+
 #Notification Hubs do Azure
 
 ##Descrição geral
@@ -177,6 +178,6 @@ As referências relevantes à API .NET gerida para notificações push estão lo
 
 
 
-<!--HONumber=sep16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

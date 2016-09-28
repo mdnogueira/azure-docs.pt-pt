@@ -13,7 +13,6 @@
     
     Repare que os dados guardados no passo anterior são carregados do serviço móvel depois de a aplicação iniciar.
 
-
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

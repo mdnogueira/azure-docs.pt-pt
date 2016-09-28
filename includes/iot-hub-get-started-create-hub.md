@@ -44,7 +44,6 @@ Crie um hub IoT para ligação do dispositivo simulado. Os passos que se seguem 
 [Ink-access-control]: ../articles/iot-hub/iot-hub-devguide.md#accesscontrol
 
 
-
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

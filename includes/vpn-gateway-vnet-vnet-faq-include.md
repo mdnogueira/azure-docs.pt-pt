@@ -20,7 +20,6 @@
 
 - O tráfego VNet a VNet na mesma região é gratuito em ambas as direções; o tráfego de saída VNet a VNet entre várias regiões é cobrado com as taxas de transferência de dados inter-VNet de saída baseadas nas regiões de origem. Veja a [página de preços](https://azure.microsoft.com/pricing/details/vpn-gateway/) para obter detalhes.
 
-
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

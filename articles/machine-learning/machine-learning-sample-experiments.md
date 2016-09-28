@@ -16,6 +16,7 @@
     ms.date="08/17/2016"
     ms.author="cgronlun;chhavib;olgali"/>
 
+
 # Copiar experimentações de exemplo para criar novas experimentações no Machine Learning
 Saiba como iniciar experimentações de exemplo a partir do [Cortana Intelligence Gallery](http://gallery.cortanaintelligence.com/) em vez de criar experimentações do zero no Machine Learning. Pode utilizar os exemplos para criar a sua própria solução de Machine Learning.
 
@@ -70,6 +71,6 @@ Também pode criar uma nova experimentação no Machine Learning Studio, utiliza
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

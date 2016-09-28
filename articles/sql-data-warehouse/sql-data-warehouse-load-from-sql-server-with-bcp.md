@@ -17,6 +17,7 @@
    ms.author="lodipalm;barbkess;sonyama"/>
 
 
+
 # Carregar dados do SQL Server para o Azure SQL Data Warehouse (ficheiros simples)
 
 > [AZURE.SELECTOR]
@@ -204,6 +205,6 @@ Consulte [Descrição Geral da Tabela][] ou a [sintaxe CREATE TABLE syntax][] pa
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -16,6 +16,7 @@
     ms.date="07/18/2016"
     ms.author="curtand;jeffsta"/>
 
+
 # Adicionar um nome de domínio personalizado ao Azure Active Directory
 
 Já tem um ou mais nomes de domínio que a sua organização utiliza para fins comerciais e os seus utilizadores iniciam sessão na rede da sua empresa utilizando o nome de domínio da sua empresa. Agora que está a utilizar o Azure Active Directory (Azure AD), pode também adicionar ao Azure AD o nome de domínio da sua empresa. Isto permite-lhe atribuir nomes de utilizador no diretório com que os seus utilizadores estão familiarizados, como “alice@contoso.com”. O processo é simples:
@@ -93,6 +94,6 @@ Se a sua organização utilizar vários nomes de domínio personalizados, como �
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

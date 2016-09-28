@@ -36,7 +36,6 @@ Para criar uma VNet com base no cenário acima com o Portal de Pré-Visualizaç�
     ![Lista de sub-redes na VNet](./media/virtual-networks-create-vnet-arm-pportal-include/vnet-create-arm-pportal-figure7.png)
 
 
-
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

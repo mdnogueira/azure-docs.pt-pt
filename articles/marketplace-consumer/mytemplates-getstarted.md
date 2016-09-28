@@ -18,6 +18,7 @@
    ms.date="05/18/2016"
    ms.author="vybavar"/>
 
+
 # Introdução ao Modelos privados no Portal do Azure
 
 Um modelo do [Azure Resource Manager](../resource-group-authoring-templates.md) é um modelo declarativo utilizado para definir a implementação. Pode definir os recursos a implementar para uma solução e especificar os parâmetros e as variáveis que permitem introduzir os valores para vários ambientes. O modelo é constituído por JSON e expressões que pode utilizar para construir valores para a implementação.
@@ -136,6 +137,6 @@ Clique em **Selecionar** e **Ok**. Agora, pode ver os utilizadores ou grupos que
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

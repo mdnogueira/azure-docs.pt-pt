@@ -17,6 +17,7 @@
     ms.date="08/05/2016"
     ms.author="garye;haining"/>
 
+
 # Módulo PowerShell para Microsoft Azure Machine Learning
 
 O módulo do PowerShell do Azure Machine Learning é uma poderosa ferramenta que lhe permite utilizar o Windows PowerShell para gerir áreas de trabalho, experiências, conjuntos de dados, serviços Web e muito mais.
@@ -57,6 +58,6 @@ O módulo do PowerShell irá continuar a ser melhorado e expandido durante este 
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

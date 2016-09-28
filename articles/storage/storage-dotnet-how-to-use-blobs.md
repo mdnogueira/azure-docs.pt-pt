@@ -13,8 +13,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="dotnet"
     ms.topic="hero-article"
-    ms.date="07/22/2016"
-    ms.author="tamram"/>
+    ms.date="09/20/2016"
+    ms.author="jwillis;tamram"/>
+
 
 
 # Introdução ao Blob Storage do Azure através do .NET
@@ -45,7 +46,7 @@ Este tutorial demonstra como escrever código .NET para alguns cenários comuns 
 
 ### Mais exemplos
 
-Para obter exemplos adicionais que utilizam o Armazenamento de Blobs, veja [Introdução ao Armazenamento de Blobs do Azure no .NET](https://azure.microsoft.com/documentation/samples/storage-blob-dotnet-getting-started/). Pode transferir a aplicação de exemplo e executá-la ou procurar o código no GitHub. 
+Para obter exemplos adicionais que utilizam o Armazenamento de Blobs, veja [Introdução ao Armazenamento de Blobs do Azure no .NET](https://azure.microsoft.com/documentation/samples/storage-blob-dotnet-getting-started/). Pode transferir a aplicação de exemplo e executá-la ou procurar o código no GitHub.
 
 
 [AZURE.INCLUDE [storage-blob-concepts-include](../../includes/storage-blob-concepts-include.md)]
@@ -374,7 +375,7 @@ Por predefinição, os dados de blobs na sua conta do Storage estão acessíveis
 O Storage do Azure suporta a encriptação de dados de blobs do cliente e no servidor:
 
 - **Encriptação do lado do cliente:** a Biblioteca de Clientes do Storage para o .NET suporta a encriptação de dados dentro de aplicações de cliente antes do carregamento para o Storage do Azure e a desencriptação de dados durante a transferência para o cliente. A biblioteca também suporta a integração com o Cofre de Chaves do Azure para a gestão de chaves da conta do Storage. Consulte [Encriptação do Lado do Cliente com .NET para o Armazenamento do Microsoft Azure](storage-client-side-encryption.md) para obter mais informações. Consulte também [Tutorial: encriptar e desencriptar blobs no Armazenamento do Microsoft Azure com o Cofre de Chaves do Azure](storage-encrypt-decrypt-blobs-key-vault.md).
-- **Encriptação do lado do servidor**: agora, o Storage do Azure suporta a encriptação do lado do servidor. Consulte [Encriptação do Serviço do Storage do Azure para Dados Inativos (Pré-visualização)](storage-service-encryption.md). 
+- **Encriptação do lado do servidor**: agora, o Storage do Azure suporta a encriptação do lado do servidor. Consulte [Encriptação do Serviço do Storage do Azure para Dados Inativos (Pré-visualização)](storage-service-encryption.md).
 
 ## Passos seguintes
 
@@ -411,6 +412,6 @@ Agora que aprendeu as noções básicas do Blob Storage, siga estas ligações p
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

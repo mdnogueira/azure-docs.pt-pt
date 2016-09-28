@@ -17,6 +17,7 @@
     ms.date="05/25/2016" 
     ms.author="omark"/>
 
+
 # O que é o Serviço de Aplicações do Azure?
 
 O *App Service* é uma oferta [plataforma-como-um-serviço](https://en.wikipedia.org/wiki/Platform_as_a_service) (PaaS) da Microsoft Azure. Crie Web Apps e móveis para qualquer plataforma ou dispositivo. Integrar as suas aplicações com soluções SaaS, ligue-se com as aplicações no local e automatize os processos empresariais. O Azure executa as suas aplicações em máquinas virtuais (VMs) completamente geridas, com os recursos de MV partilhados ou VMs dedicadas que escolher. 
@@ -82,6 +83,6 @@ Ou abra uma [conta do Azure gratuita](https://azure.microsoft.com/pricing/free-t
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

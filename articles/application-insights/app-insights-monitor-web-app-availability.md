@@ -15,6 +15,7 @@
     ms.date="09/07/2016"
     ms.author="awills"/>
 
+
 # Monitorizar a disponibilidade e a capacidade de resposta de qualquer site
 
 Depois de implementar a aplicação Web ou o site em qualquer servidor, pode configurar testes Web para monitorizar a respetiva disponibilidade e capacidade de resposta. O [Visual Studio Application Insights](app-insights-overview.md) envia regularmente pedidos Web para a sua aplicação a partir de pontos em todo o mundo. Este ferramenta alerta-o se a aplicação não responder ou responder lentamente.
@@ -326,6 +327,6 @@ Quando o teste estiver concluído, são-lhe apresentados tempos de resposta e ta
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -1,20 +1,21 @@
 <properties 
-    pageTitle="Introdução ao Multi-Factor Authentication do Microsoft Azure na nuvem" 
-    description="Esta é a página do Multi-Factor Authentication do Microsoft Azure que descreve como iniciar o MFA do Azure na nuvem." 
-    services="multi-factor-authentication" 
-    documentationCenter="" 
-    authors="billmath" 
-    manager="femila" 
+    pageTitle="Introdução ao Multi-Factor Authentication do Microsoft Azure na nuvem"
+    description="Esta é a página do Multi-Factor Authentication do Microsoft Azure que descreve como iniciar o MFA do Azure na nuvem."
+    services="multi-factor-authentication"
+    documentationCenter=""
+    authors="kgremban"
+    manager="femila"
     editor="curtand"/>
 
-<tags 
-    ms.service="multi-factor-authentication" 
-    ms.workload="identity" 
-    ms.tgt_pltfrm="na" 
-    ms.devlang="na" 
-    ms.topic="get-started-article" 
-    ms.date="08/15/2016" 
-    ms.author="billmath"/>
+<tags
+    ms.service="multi-factor-authentication"
+    ms.workload="identity"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="get-started-article"
+    ms.date="08/15/2016"
+    ms.author="kgremban"/>
+
 
 # Introdução ao Multi-Factor Authentication do Azure na nuvem
 No seguinte artigo, irá aprender a começar a utilizar o Multi-Factor Authentication do Azure na nuvem.
@@ -24,16 +25,16 @@ No seguinte artigo, irá aprender a começar a utilizar o Multi-Factor Authentic
 ![MFA na Nuvem](./media/multi-factor-authentication-get-started-cloud/mfa_in_cloud.png)
 
 ## Pré-requisitos
-São necessários os seguintes pré-requisitos antes de poder ativar o Multi-Factor Authentication do Azure para os utilizadores. 
+São necessários os seguintes pré-requisitos antes de poder ativar o Multi-Factor Authentication do Azure para os utilizadores.
 
 
 
 
 - [Inscreva-se numa subscrição do Azure](https://azure.microsoft.com/pricing/free-trial/) - Se ainda não possui uma subscrição do Azure, tem de se inscrever numa. Se estiver apenas a começar e a utilizar o MFA do Azure, pode utilizar uma subscrição de avaliação
-2. [Crie um Fornecedor de Multi-Factor Auth](multi-factor-authentication-get-started-auth-provider.md) e atribua-o ao diretório ou [atribua licenças a utilizadores](multi-factor-authentication-get-started-assign-licenses.md) 
+2. [Crie um Fornecedor de Multi-Factor Auth](multi-factor-authentication-get-started-auth-provider.md) e atribua-o ao diretório ou [atribua licenças a utilizadores](multi-factor-authentication-get-started-assign-licenses.md)
 
-> [AZURE.NOTE]  As licenças estão disponíveis para os utilizadores que têm o MFA do Azure, o Azure AD Premium ou o Enterprise Mobility Suite (EMS).  O MFA está incluído no Azure AD Premium e no EMS. Se tiver licenças suficientes, não é necessário criar um Fornecedor de Autenticação. 
-        
+> [AZURE.NOTE]  As licenças estão disponíveis para os utilizadores que têm o MFA do Azure, o Azure AD Premium ou o Enterprise Mobility Suite (EMS).  O MFA está incluído no Azure AD Premium e no EMS. Se tiver licenças suficientes, não é necessário criar um Fornecedor de Autenticação.
+
 
 ## Ativar a autenticação multifator para os utilizadores
 Para ativar a autenticação multifator para um utilizador, altere simplesmente o estado do utilizador de desativado para ativado.  Para obter mais informações sobre os estados de utilizador, veja [Estados de Utilizador no Multi-Factor Authentication do Azure](multi-factor-authentication-get-started-user-states.md)
@@ -52,7 +53,7 @@ Utilize o procedimento seguinte para ativar o MFA para os utilizadores.
 6.  Esta ação irá abrir um novo separador do browser.  Localize o utilizador que pretende ativar para a autenticação multifator. Pode ter de alterar a vista na parte superior. Certifique-se de que o estado é **desativado.**
 ![Ativar utilizador](./media/multi-factor-authentication-get-started-cloud/enable1.png)
 7.  Coloque uma **marca de verificação** na caixa junto ao nome.
-7.  À direita, clique em **Ativar**. 
+7.  À direita, clique em **Ativar**.
 ![Ativar utilizador](./media/multi-factor-authentication-get-started-cloud/user1.png)
 8.  Clique em **Ativar Multi-Factor Auth**.
 ![Ativar utilizador](./media/multi-factor-authentication-get-started-cloud/enable2.png)
@@ -71,7 +72,7 @@ Para alterar o [estado](multi-factor-authentication-whats-next.md) através do [
 - Desativado  
 
 > [AZURE.IMPORTANT]  Tenha em atenção que se passar diretamente do estado Desativado para o estado Imposto, os clientes de autenticação não moderna deixarão de funcionar, porque o utilizador não passou pelo registo do MFA nem obteve uma [palavra-passe de aplicação](multi-factor-authentication-whats-next.md#app-passwords).  Se tiver clientes de autenticação não moderna e exigir palavras-passe de aplicação, é recomendado passar do estado Desativado para Ativado.  Isto permitirá aos utilizadores registar e obter as respetivas palavras-passe de aplicação.   
-        
+
         $st = New-Object -TypeName Microsoft.Online.Administration.StrongAuthenticationRequirement
         $st.RelyingParty = "*"
         $st.State = “Enabled”
@@ -79,7 +80,7 @@ Para alterar o [estado](multi-factor-authentication-whats-next.md) através do [
         Set-MsolUser -UserPrincipalName bsimon@contoso.com -StrongAuthenticationRequirements $sta
 
 Utilizar o PowerShell é uma opção para ativar utilizadores em massa.  Atualmente, não existe nenhuma funcionalidade de ativação em massa no portal do Azure e tem de selecionar cada utilizador individualmente.  Isto pode ser uma tarefa demorada se tiver muitos utilizadores.  Ao criar um script do PowerShell utilizando o procedimento acima, pode percorrer uma lista de utilizadores e ativá-los.  Segue-se um exemplo:
-    
+
     $users = "bsimon@contoso.com","jsmith@contoso.com","ljacobson@contoso.com"
     foreach ($user in $users)
     {
@@ -98,6 +99,6 @@ Agora que configurou a autenticação multifator na nuvem, pode configurar a sua
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

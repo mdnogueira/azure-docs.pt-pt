@@ -18,6 +18,7 @@
     ms.tgt_pltfrm="NA"/>
 
 
+
 # Criar um novo conjunto de bases de dados elásticas com o portal do Azure
 
 > [AZURE.SELECTOR]
@@ -117,6 +118,6 @@ Depois de adicionar as bases de dados ao conjunto, as recomendações serão ger
 
 
 
-<!--HONumber=sep16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

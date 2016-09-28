@@ -18,6 +18,7 @@
     ms.date="08/17/2016"
     ms.author="sstein;carlrab" />
 
+
 # Ligar à Base de Dados SQL com o SQL Server Management Studio e executar uma consulta T-SQL de exemplo
 
 > [AZURE.SELECTOR]
@@ -67,6 +68,6 @@ Para mais informações sobre o SSMS, consulte o artigo [Use SQL Server Manageme
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -16,6 +16,7 @@
     ms.date="09/01/2016" 
     ms.author="mandia"/>
 
+
 # O que são Conectores e API Apps BizTalk
 
 [AZURE.INCLUDE [app-service-logic-version-message](../../includes/app-service-logic-version-message.md)]
@@ -55,6 +56,6 @@ Consulte [Lista de Conectores e API Apps](app-service-logic-connectors-list.md) 
 
 
 
-<!--HONumber=sep16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

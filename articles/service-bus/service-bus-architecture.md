@@ -15,6 +15,7 @@
     ms.date="07/11/2016"
     ms.author="sethm" />
 
+
 # Arquitetura do Service Bus
 
 Este artigo descreve a arquitetura de processamento de mensagens e do reencaminhamento do Azure Service Bus.
@@ -61,6 +62,6 @@ Agora que já leu uma descrição geral da arquitetura do Service Bus, visite as
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

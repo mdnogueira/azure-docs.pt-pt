@@ -17,6 +17,7 @@
    ms.date="09/14/2016"
    ms.author="sstein"/>
 
+
 # Experimentar a Base de Dados SQL: utilizar C# para criar uma base de dados SQL com a Biblioteca da Base de Dados SQL para .NET
 
 
@@ -293,6 +294,6 @@ Agora que já experimentou a Base de Dados SQL e configurou uma base de dados co
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 
