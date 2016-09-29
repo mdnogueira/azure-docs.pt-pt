@@ -13,8 +13,9 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="06/10/2016"
-   ms.author="ryanwi"/>
+   ms.date="09/09/2016"
+   ms.author="ryanwi;mikhegn"/>
+
 
 # Introdução à implementação e atualização de aplicações no seu cluster local
 O SDK de Service Fabric de Azure inclui um ambiente de desenvolvimento local completo que pode utilizar para rapidamente começar a implementar e gerir aplicações num cluster local. Neste artigo, cria um cluster local, implementa nele uma aplicação existente e atualiza essa aplicação para uma nova versão, tudo a partir do Windows PowerShell.
@@ -193,11 +194,41 @@ Antes de concluir, é importante lembrar-se de que o cluster local é real. As a
 
 3. Para encerrar o cluster, mas manter os dados de aplicação e o rastreio, clique em **Parar Cluster Local** na aplicação de tabuleiro do sistema.
 
-4. Para eliminar o cluster totalmente, clique em **Remover Cluster Local** na aplicação de tabuleiro do sistema. Tenha em atenção que esta opção resultará noutra implementação lenta da próxima vez que premir F5 no Visual Studio. Remova o cluster local apenas se não pretender utilizá-lo durante algum tempo ou se precisar de recuperar recursos.
+4. Para eliminar o cluster totalmente, clique em **Remover Cluster Local** na aplicação de tabuleiro do sistema. Esta opção resultará noutra implementação lenta da próxima vez que premir F5 no Visual Studio. Remova o cluster local apenas se não pretender utilizá-lo durante algum tempo ou se precisar de recuperar recursos.
+
+## Modo do cluster de 1 Nó e de 5 Nós
+
+Ao trabalhar com o cluster local para desenvolver aplicações, irá frequentemente fazer iterações rápidas de escrita de código, depuração, alteração de código, depuração, etc. Para ajudar a otimizar este processo, pode executar o cluster local em dois modos: 1 Nó ou 5 Nós. Ambos os modos de cluster têm as suas vantagens.
+O modo de cluster de 5 Nós permite-lhe trabalhar com um cluster real. Pode testar cenários de ativação pós-falha, trabalhar com mais instâncias e réplicas dos seus serviços.
+O modo de cluster de 1 Nó foi otimizado para implementações e registos rápidos dos serviços, com vista a ajudá-lo a validar rapidamente o código através do runtime do Service Fabric.
+
+Nenhum dos modos de cluster de 1 e 5 Nós é um emulador ou um simulador. Executa o mesmo código de plataforma que se encontra nos clusters de várias máquinas.
+
+> [AZURE.NOTE] Esta funcionalidade está disponível na versão 5.2 e superior do SDK.
+
+Para alterar o modo de cluster para um cluster de 1 Nó, utilize o Gestor de Clusters Locais do Service Fabric ou utilize o PowerShell da seguinte forma:
+
+1. Inicie uma nova janela do PowerShell como administrador.
+
+2. Execute o script de configuração de cluster a partir da pasta SDK:
+
+    ```powershell
+    & "$ENV:ProgramFiles\Microsoft SDKs\Service Fabric\ClusterSetup\DevClusterSetup.ps1" -CreateOneNodeCluster
+    ```
+
+    A configuração do cluster demora alguns minutos. Após a conclusão do programa de configuração, deverá ver resultados semelhantes ao seguinte:
+    
+    ![Saída do programa de configuração do cluster][cluster-setup-success-1-node]
+
+Se estiver a utilizar o Gestor de Clusters Locais do Service Fabric:
+
+![Alternar o modo do cluster][switch-cluster-mode]
+
+> [AZURE.WARNING] Ao alterar o modo de cluster, o cluster atual será removido do sistema e será criado um novo. Os dados que tiver armazenado no cluster serão eliminados ao alterar o modo de cluster.
 
 ## Passos seguintes
 - Agora que implementou e atualizou algumas aplicações pré-criadas, pode [tentar criar a sua no Visual Studio](service-fabric-create-your-first-application-in-visual-studio.md).
-- Todas as ações executadas no cluster local neste artigo também podem ser efetuadas num [cluster do Azure](service-fabric-cluster-creation-via-portal.md).
+- Todas as ações executadas no cluster local neste artigo também podem ser realizadas num [cluster do Azure](service-fabric-cluster-creation-via-portal.md).
 - A atualização que efetuámos neste artigo foi básica. Consulte a [documentação de atualização](service-fabric-application-upgrade.md) para saber mais sobre a capacidade e a flexibilidade das atualizações do Service Fabric.
 
 <!-- Images -->
@@ -217,9 +248,11 @@ Antes de concluir, é importante lembrar-se de que o cluster local é real. As a
 [sfx-upgradeprogress]: ./media/service-fabric-get-started-with-a-local-cluster/SfxUpgradeOverview.png
 [sfx-service-overview]: ./media/service-fabric-get-started-with-a-local-cluster/sfx-service-overview.png
 [sfe-delete-application]: ./media/service-fabric-get-started-with-a-local-cluster/sfe-delete-application.png
+[cluster-setup-success-1-node]: ./media/service-fabric-get-started-with-a-local-cluster/cluster-setup-success-1-node.png
+[switch-cluster-mode]: ./media/service-fabric-get-started-with-a-local-cluster/switch-cluster-mode.png
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

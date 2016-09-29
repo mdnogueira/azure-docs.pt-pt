@@ -19,6 +19,7 @@
 
 
 
+
 # Tutorial de HBase: Introdução ao HBase do Apache com Hadoop baseado em Linux no HDInsight 
 
 [AZURE.INCLUDE [hbase-selector](../../includes/hdinsight-hbase-selector.md)]
@@ -39,9 +40,9 @@ Antes de começar este tutorial do HBase, tem de ter o seguinte:
 
 ## Criar cluster HBase
 
-O procedimento a seguir utiliza um modelo de ARM do Azure para criar um cluster HBase. Para compreender os parâmetros utilizados no procedimento e outros métodos de criação do cluster, consulte o artigo [Criar clusters do Hadoop baseados em Linux no HDInsight](hdinsight-hadoop-provision-linux-clusters.md).
+O procedimento a seguir utiliza um modelo do Azure Resource Manager para criar um cluster HBase. Para compreender os parâmetros utilizados no procedimento e outros métodos de criação do cluster, consulte o artigo [Criar clusters do Hadoop baseados em Linux no HDInsight](hdinsight-hadoop-provision-linux-clusters.md).
 
-1. Clique na imagem seguinte para abrir um modelo ARM no Portal do Azure. O modelo ARM está localizado num contentor de blob público. 
+1. Clique na imagem seguinte para abrir o modelo no Portal do Azure. O modelo está localizado num contentor de blob público. 
 
     <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fhditutorialdata.blob.core.windows.net%2Farmtemplates%2Fcreate-linux-based-hbase-cluster-in-hdinsight.json" target="_blank"><img src="https://acom.azurecomcdn.net/80C57D/cdn/mediahandler/docarticles/dpsmedia-prod/azure.microsoft.com/en-us/documentation/articles/hdinsight-hbase-tutorial-get-started-linux/20160201111850/deploy-to-azure.png" alt="Deploy to Azure"></a>
 
@@ -247,7 +248,7 @@ O HBase em HDInsight é fornecido com uma interface de utilizador da Web para mo
 4. Das opções básicas para o ecrã de sessão PuTTY, introduza os seguintes valores:
 
     - **Nome do Anfitrião**: o endereço SSH do servidor HDInsight no campo nome de anfitrião (ou endereço IP). O endereço SSH é o nome de cluster, em seguida, **-ssh.azurehdinsight.net**. Por exemplo, *mycluster-ssh.azurehdinsight.net*.
-    - **Porta**: 22. A porta ssh no nó principal 0 é 22.  
+    - **Porta**: 22. A porta ssh no nó principal primário é 22.  
 5. Na secção**Categoria** à esquerda da caixa de diálogo, expanda **Ligação**, expanda **SSH** e em seguida, clique em **Túneis**.
 6. Forneça as seguintes informações no formulário de Opções de controlo de reencaminhamento da porta SSH:
 
@@ -327,6 +328,6 @@ Para saber mais, consulte:
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

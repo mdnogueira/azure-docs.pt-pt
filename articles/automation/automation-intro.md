@@ -6,7 +6,7 @@
     authors="mgoedtel"
     manager="jwhit"
     editor=""
-    keywords="what is automation, azure automation, azure automation examples"/>
+    keywords="o que é a automatização, automatização do azure, exemplos de automatização do azure"/>
 <tags
     ms.service="automation"
     ms.workload="tbd"
@@ -15,6 +15,7 @@
     ms.topic="get-started-article" 
     ms.date="05/10/2016"
     ms.author="magoedte;bwren"/>
+
 
 # Descrição geral da Automatização do Azure
 
@@ -104,6 +105,6 @@ Está disponível uma variedade de recursos para obter mais informações sobre 
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

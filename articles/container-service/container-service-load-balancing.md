@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Balanceamento de carga de um cluster do Serviço de Contentor do Azure | Microsoft Azure"
-   description="Balanceamento de carga de um cluster do Serviço de Contentor do Azure."
+   pageTitle="Contentores de balanceamento de carga num cluster do Azure Container Service | Microsoft Azure"
+   description="Balanceamento de carga entre múltiplos contentores num cluster do Azure Container Service."
    services="container-service"
    documentationCenter=""
    authors="rgardler"
@@ -18,9 +18,10 @@
    ms.date="07/11/2016"
    ms.author="rogardle"/>
 
-# Balanceamento de carga de um cluster do Serviço de Contentor do Azure
 
-Neste artigo, vamos definir um front-end da Web num Serviço de Contentor do Azure DC/SO gerido. Vamos também configurar uma LB Marathon para que possa aumentar verticalmente a aplicação.
+# Contentores de balanceamento de carga num cluster do Azure Container Service
+
+Neste artigo, vamos explorar como criar um balanceador de carga interno num DC/OS gerido pelo Azure Container Service com o Marathon-LB. Este procedimento vai permitir-lhe dimensionar as suas aplicações horizontalmente. Permitir-lhe-á também tirar partido dos clusters de agentes públicos e privados, ao colocar os balanceadores de carga no cluster público e os contentores aplicacionais no cluster privado.
 
 ## Pré-requisitos
 
@@ -55,9 +56,11 @@ Depois de instalar a CLI de DC/SO e garantir que consegue ligar ao cluster, exec
 dcos package install marathon-lb
 ```
 
+Este comando instala automaticamente o balanceador de carga no cluster de agentes públicos.
+
 ## Implementar uma Aplicação Web com Balanceamento de Carga
 
-Agora que temos o pacote do marathon-lb, podemos implementar um servidor Web simples utilizando a configuração seguinte:
+Agora que temos o pacote marathon-lb, podemos implementar o contentor aplicacional que queremos para balancear a carga. Neste exemplo, vamos implementar um servidor Web simples através da seguinte configuração:
 
 ```json
 {
@@ -100,6 +103,8 @@ Agora que temos o pacote do marathon-lb, podemos implementar um servidor Web sim
   * Defina `hostPort` como 0. Isto significa que o Marathon irá atribuir de forma arbitrária uma porta disponível.
   * Defina `instances` para o número de instâncias que pretende criar. Pode sempre aumentá-los na vertical e na horizontal mais tarde.
 
+Vale a pena saber que, por predefinição, o Marathon implementará no cluster privado, o que significa que a implementação acima apenas será acessível através do seu balanceador de carga, que é normalmente o comportamento pretendido.
+
 ### Implementar utilizando a IU da Web de DC/SO
 
   1. Visite a página de Marathon em http://localhost/marathon (depois de configurar o [túnel SSH](container-service-connect.md) e clique em `Create Appliction`
@@ -141,6 +146,6 @@ Veja a documentação de DC/SO para obter mais informações sobre o [marathon-l
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

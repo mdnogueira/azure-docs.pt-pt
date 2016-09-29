@@ -1,5 +1,5 @@
 <properties 
-    pageTitle="Implementar a sua primeira aplicação Web no Azure em cinco minutos | Microsoft Azure" 
+    pageTitle="Implemente a sua primeira aplicação Web para o Azure em cinco minutos | Microsoft Azure" 
     description="Saiba como é fácil executar aplicações Web no Serviço de Aplicações ao implementar uma aplicação de exemplo. Comece a programar verdadeiramente em pouco tempo e a ver resultados imediatos." 
     services="app-service\web"
     documentationCenter=""
@@ -18,15 +18,16 @@
     ms.author="cephalin"
 />
     
-# Implementar a sua primeira aplicação Web no Azure em cinco minutos
+
+# Implemente a sua primeira aplicação Web no Azure em cinco minutos
 
 Este tutorial ajuda-o a implementar uma aplicação Web HTML+CSS simples no [Serviço de Aplicações do Azure](../app-service/app-service-value-prop-what-is.md).
-Pode utilizar o Serviço de Aplicações para criar aplicações Web, [back-ends de aplicações móveis](/documentation/learning-paths/appservice-mobileapps/) e [aplicações API](../app-service-api/app-service-api-apps-why-best-platform.md).
+Pode utilizar o Serviço de Aplicações para criar aplicações, [back-ends de aplicações móveis](/documentation/learning-paths/appservice-mobileapps/) e [aplicações API](../app-service-api/app-service-api-apps-why-best-platform.md).
 
 Irá: 
 
 - Criar uma aplicação Web no Serviço de Aplicações do Azure.
-- Implementar HTML e CSS na mesma.
+- Implementar HTML e CSS na aplicação.
 - Ver as suas páginas em execução em direto na produção.
 - Atualizar o seu conteúdo da mesma forma que [emitiria consolidações do Git](https://git-scm.com/docs/git-push).
 
@@ -52,7 +53,7 @@ Irá:
     - **Grupo de recursos**: selecione **Criar novo** e dê um nome ao grupo de recursos.
     - **Plano do Serviço de Aplicações/Localização**: clique nele para configurar e, em seguida, clique em **Criar Novo** para definir o nome, a localização e o escalão de preço do plano do Serviço de Aplicações. Pode utilizar o escalão de preço **Gratuito**.
 
-    Quando tiver terminado, o painel de criação da aplicação deverá ter este aspeto:
+    Quando tiver terminado, o painel de criação da aplicação deverá este aspeto:
 
     ![](./media/app-service-web-get-started-languages/create-web-app-settings.png)
 
@@ -68,7 +69,7 @@ Irá:
 
     ![](./media/app-service-web-get-started-languages/create-web-app-resource.png)
 
-## Implementar conteúdo para a sua aplicação Web
+## Implementar conteúdo na aplicação Web
 
 Agora, vamos implementar algum conteúdo no Azure através do Git.
 
@@ -98,7 +99,7 @@ Agora, vamos implementar algum conteúdo no Azure através do Git.
 
         cd app-service-web-html-get-started
 
-3. Configure o Git remoto para a sua aplicação do Azure com o respetivo URL do Git, que copiou do Portal há alguns passos.
+3. Configure o Git remoto para a sua aplicação Azure com o respetivo URL do Git, que copiou do Portal há alguns passos.
 
         git remote add azure <giturlfromportal>
 
@@ -110,9 +111,9 @@ Agora, vamos implementar algum conteúdo no Azure através do Git.
 
 Já está! O código já está em execução em direto no Azure. No seu browser, navegue para http://*&lt;nomeaplic>*.azurewebsites.net para vê-lo em ação. 
 
-## Fazer atualizações à sua aplicação
+## Efetuar atualizações à sua aplicação
 
-Agora, pode utilizar o Git para emitir a partir da raiz do projeto (repositório) em qualquer altura para fazer uma atualização ao site online. Pode fazê-lo tal como quando implementou o seu conteúdo pela primeira vez. Por exemplo, sempre que quiser emitir uma nova alteração que tenha testado localmente, basta executar os seguintes comandos a partir da raiz do projeto (repositório):
+Agora, pode utilizar o Git para emitir a partir da raiz do projeto (repositório) em qualquer altura para efetuar uma atualização ao site online. Pode fazê-lo tal como quando implementou o seu conteúdo pela primeira vez. Por exemplo, sempre que pretender emitir uma nova alteração que tenha testado localmente, basta executar os seguintes comandos a partir da raiz do projeto (repositório):
 
     git add .
     git commit -m "<your_message>"
@@ -120,7 +121,7 @@ Agora, pode utilizar o Git para emitir a partir da raiz do projeto (repositório
 
 ## Passos seguintes
 
-Localize os passos de programação e de implementação preferenciais para a arquitetura da sua linguagem:
+Localize os passos de desenvolvimento e de implementação preferenciais para a arquitetura da sua linguagem:
 
 > [AZURE.SELECTOR]
 - [.NET](web-sites-dotnet-get-started.md)
@@ -132,11 +133,11 @@ Localize os passos de programação e de implementação preferenciais para a ar
 Em alternativa, faça mais com a sua primeira aplicação Web. Por exemplo:
 
 - Experimente [outras formas de implementar o seu código no Azure](../app-service-web/web-sites-deploy.md). Por exemplo, para implementar a partir de um dos seus repositórios do GitHub, só tem de selecionar **GitHub** em vez de **Repositório de Git Local** nas **Opções de implementação**.
-- Eleve a sua aplicação do Azure ao nível seguinte. Autentique os seus utilizadores. Dimensione-a com base no pedido. Configure alguns alertas de desempenho. Tudo com apenas alguns cliques. Consulte o artigo [Adicionar funcionalidade à sua primeira aplicação Web](app-service-web-get-started-2.md).
+- Eleve a sua aplicação do Azure ao nível seguinte. Autentique os seus utilizadores. Dimensione-a com base no pedido. Configure alguns alertas de desempenho. Tudo com apenas alguns cliques. Consulte [Adicionar funcionalidades à sua primeira aplicação Web](app-service-web-get-started-2.md).
 
 
 
 
-<!----HONumber=Sep16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

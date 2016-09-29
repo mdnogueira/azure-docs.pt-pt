@@ -37,7 +37,7 @@ Neste momento, não.
 
 #### Posso anunciar os prefixos exatos como prefixos da minha Rede Virtual?
 
-Não, o ato de anunciar os mesmos prefixos como prefixos de endereços da sua Rede Virtual será bloqueado ou filtrado pela plataforma do Azure.
+Não, o ato de anunciar os mesmos prefixos como prefixos de endereços da sua Rede Virtual será bloqueado ou filtrado pela plataforma do Azure. No entanto, pode anunciar um prefixo que é um conjunto mais amplo do que tem no interior da Rede Virtual. Por exemplo, a Rede Virtual pode utilizar o espaço de endereços 10.10.0.0/16 e pode anunciar 10.0.0.0/8.
 
 ### Posso utilizar o BGP com as minhas ligações VNet a VNet?
 
@@ -80,7 +80,6 @@ O Gateway de Rede Local do Azure especifica os prefixos de endereços iniciais d
 Deve adicionar uma rota de anfitrião do endereço IP do Elemento de Rede BGP do Azure no dispositivo VPN para apontar para o túnel VPN S2S IPsec. Por exemplo, se o IP do Elemento VPN do Azure for “10.12.255.30”, deve adicionar no dispositivo VPN uma rota de anfitrião para “10.12.255.30” com uma interface nexthop da interface de túnel IPsec correspondente.
 
 
-
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

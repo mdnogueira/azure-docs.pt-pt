@@ -1,10 +1,10 @@
 <properties
-    pageTitle="Introdução ao Azure Mobile Engagement para iOS no Objective C"
+    pageTitle="Introdução ao Azure Mobile Engagement para iOS no Objective C | Microsoft Azure"
     description="Saiba como utilizar o Azure Mobile Engagement com notificações push e de análise para aplicações iOS."
     services="mobile-engagement"
-    documentationCenter="ios"
+    documentationCenter="mobile"
     authors="piyushjo"
-    manager="dwrede"
+    manager="erikre"
     editor="" />
 
 <tags
@@ -13,8 +13,9 @@
     ms.tgt_pltfrm="mobile-ios"
     ms.devlang="objective-c"
     ms.topic="hero-article"
-    ms.date="05/03/2016"
+    ms.date="09/14/2016"
     ms.author="piyushjo" />
+
 
 # Introdução ao Azure Mobile Engagement para aplicações iOS no Objective C
 
@@ -23,14 +24,14 @@
 Este tópico mostra como utilizar o Azure Mobile Engagement para compreender a utilização da aplicação e o envio de notificações push para utilizadores segmentados para uma aplicação iOS.
 Neste tutorial, crie uma aplicação iOS em branco que recolhe dados básicos e recebe as notificações push através do Sistema Apple Push Notification (APNS).
 
-Neste tutorial necessita do seguinte:
+Para este tutorial, necessita do seguinte:
 
-+ XCode 6 ou XCode 7, que pode instalar a partir da MAC App Store
++ XCode 8, que pode instalar a partir da MAC App Store
 + O [SDK iOS do Mobile Engagement]
 
 A conclusão deste tutorial é um pré-requisito para todos os outros tutoriais do Mobile Engagement para aplicações iOS.
 
-> [AZURE.NOTE] Para concluir este tutorial, tem de ter uma conta ativa do Azure. Se não tiver uma conta, pode criar uma conta de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fmobile-engagement-ios-get-started).
+> [AZURE.NOTE] Para concluir este tutorial, tem de ter uma conta ativa do Azure. Se não tiver uma conta, pode criar uma de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fmobile-engagement-ios-get-started).
 
 ##<a id="setup-azme"></a>Configurar o Mobile Engagement para a aplicação iOS
 
@@ -183,6 +184,6 @@ As secções seguintes configuram a aplicação para as receber.
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

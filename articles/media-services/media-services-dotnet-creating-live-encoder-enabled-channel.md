@@ -1,9 +1,9 @@
 <properties 
-    pageTitle="Como realizar uma transmissão em fluxo em direto utilizando os Media Services do Azure para criar transmissões com velocidade de transmissão múltipla com .NET" 
+    pageTitle="Como realizar a transmissão em fluxo em direto através dos Serviços de Multimédia do Azure para criar transmissões com velocidade de transmissão múltipla com o .NET | Microsoft Azure" 
     description="Este tutorial explica-lhe os passos da criação de um canal que recebe uma transmissão em fluxo em direto com uma velocidade de transmissão única e a codifica para uma transmissão com velocidade de transmissão múltipla utilizando o SDK .NET." 
     services="media-services" 
     documentationCenter="" 
-    authors="juliako,anilmur" 
+    authors="anilmur" 
     manager="erikre" 
     editor=""/>
 
@@ -13,8 +13,9 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="get-started-article"
-    ms.date="06/22/2016"
-    ms.author="juliako"/>
+    ms.date="09/15/2016"
+    ms.author="juliako;anilmur"/>
+
 
 
 #Como realizar uma transmissão em fluxo em direto utilizando os Media Services do Azure para criar transmissões com velocidade de transmissão múltipla com .NET
@@ -91,7 +92,7 @@ O seguinte é necessário para concluir o tutorial.
 
 - Para concluir este tutorial, precisa de uma conta do Azure. 
     
-    Se não tiver uma conta, pode criar uma conta de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](/pricing/free-trial/?WT.mc_id=A261C142F). Recebe créditos que podem ser utilizados para experimentar os serviços pagos do Azure. Mesmo depois de gastar todos os créditos, pode manter a conta e utilizar os serviços e recursos gratuitos do Azure, tal como a funcionalidade Web Apps no App Service do Azure.
+    Se não tiver uma conta, pode criar uma de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](/pricing/free-trial/?WT.mc_id=A261C142F). Recebe créditos que podem ser utilizados para experimentar os serviços pagos do Azure. Mesmo depois de gastar todos os créditos, pode manter a conta e utilizar os serviços e recursos gratuitos do Azure, tal como a funcionalidade Web Apps no App Service do Azure.
 - Uma conta dos Media Services. Para criar uma conta dos Media Services, consulte [Criar Conta](media-services-create-account.md).
 - Visual Studio 2010 SP1 (Professional, Premium, Ultimate ou Express) ou versões posteriores.
 - Tem de utilizar a versão 3.2.0.0 ou mais recente do SDK .NET dos Media Services.
@@ -518,7 +519,9 @@ Adicione a secção appSettings ao ficheiro app.config e configure os valores da
     }   
 
 
-##Passos seguintes: percursos de aprendizagem dos Media Services
+##Passo seguinte
+
+Rever os percursos de aprendizagem dos Serviços de Multimédia
 
 [AZURE.INCLUDE [media-services-learning-paths-include](../../includes/media-services-learning-paths-include.md)]
 
@@ -532,6 +535,6 @@ Se este tópico não continha o que pretendia, algo está em falta ou não corre
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -14,19 +14,19 @@
 
     ![Criar espaço de nomes][create-namespace]
 
-6. Clique no botão **Criar**. O sistema cria o espaço de nomes e ativa-o. Poderá ter de aguardar alguns minutos enquanto o sistema aprovisiona recursos para a sua conta.
+6. Clique em **Criar**. O sistema cria o espaço de nomes e ativa-o. Poderá ter de aguardar alguns minutos enquanto o sistema aprovisiona recursos para a sua conta.
  
 ### Obter as credenciais de gestão
 
 1. Na lista de espaços de nomes, clique no nome do espaço de nomes criado recentemente.
  
-3. No painel **Espaço de nomes do Service Bus**, clique em **Políticas de acesso partilhado**.
+3. No painel de espaço de nomes clique em **Políticas de Acesso Partilhado**.
 
 4. No painel **Políticas de acesso partilhado**, clique em **RootManageSharedAccessKey**.
 
     ![informações-ligação][connection-info]
 
-5. No painel **Política: RootManageSharedAccessKey**, clique no botão de cópia junto a **Cadeia de ligação – chave primária** para copiar a cadeia de ligação para a sua área de transferência e utilizá-la mais tarde.
+5. No painel **Política: RootManageSharedAccessKey**, clique no botão de cópia junto a **Cadeia de ligação – chave primária** para copiar a cadeia de ligação para a sua área de transferência e utilizá-la mais tarde. Cole este valor no Bloco de Notas ou noutra localização temporária.
 
     ![cadeia-ligação][connection-string]
 
@@ -39,7 +39,6 @@
 <!--Reference style links - using these makes the source content way more readable than using inline links-->
 [Portal do Azure]: https://portal.azure.com
 
-
-<!--HONumber=sep16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

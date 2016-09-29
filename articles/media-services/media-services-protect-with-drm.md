@@ -1,9 +1,9 @@
 <properties
-    pageTitle="Utilizar Encriptação Comum PlayReady e/ou Widevine Dinâmico"
+    pageTitle="Utilizar a encriptação comum dinâmica com PlayReady e/ou Widevine | Microsoft Azure"
     description="Os Media Services do Microsoft Azure permitem entregar MPEG-DASH, Transmissão em Fluxo Uniforme e transmissões em fluxo Http-Live-Streaming (HLS) protegidas com o Microsoft PlayReady DRM. Também permite entregar DASH encriptado com Widevine DRM Este tópico mostra como encriptar de forma dinâmica com PlayReady e Widevine DRM."
     services="media-services"
     documentationCenter=""
-    authors="Juliako,Mingfeiy"
+    authors="juliako"
     manager="erikre"
     editor=""/>
 
@@ -13,11 +13,12 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article" 
-    ms.date="06/22/2016"
+    ms.date="09/27/2016"
     ms.author="juliako"/>
 
 
-#Utilizar Encriptação Comum PlayReady e/ou Widevine Dinâmico
+
+#Utilizar a encriptação comum dinâmica com PlayReady e/ou Widevine
 
 > [AZURE.SELECTOR]
 - [.NET](media-services-protect-with-drm.md)
@@ -37,7 +38,7 @@ Para tirar partido da encriptação dinâmica, tem de ter um elemento que conten
 
 Este tópico seria útil para os programadores que funcionam em aplicações que entregam multimédia protegida com vários DRMs, tais como PlayReady e Widevine. O tópico mostra como configurar o serviço de entrega de licença PlayReady com políticas de autorização para que apenas os clientes autorizados possam receber licenças PlayReady ou Widevine. Este também mostra como utilizar a encriptação dinâmica com PlayReady ou Widevine DRM sobre DASH.
 
->[AZURE.NOTE]Para começar a utilizar a encriptação dinâmica, tem primeiro de obter, pelo menos, uma unidade de escala (também conhecida como unidade de transmissão em fluxo). Para obter mais informações, consulte [Como escalar um Serviço de Multimédia](media-services-manage-origins.md#scale_streaming_endpoints).
+>[AZURE.NOTE]Para começar a utilizar a encriptação dinâmica, tem primeiro de obter, pelo menos, uma unidade de escala (também conhecida como unidade de transmissão em fluxo). Para obter mais informações, veja [How to Scale a Media Service (Como Dimensionar um Serviço de Multimédia)](media-services-portal-manage-streaming-endpoints.md).
 
 
 ##Transferir exemplo
@@ -48,15 +49,15 @@ Pode transferir a amostra descrita neste artigo [aqui](https://github.com/Azure-
 
 A seguir são apresentados os passos gerais que precisa de realizar ao proteger os seus elementos com PlayReady, através do serviço de entrega de licença de Media Services e também da encriptação dinâmica.
 
-1. Crie um elemento e carregue ficheiros no elemento. 
+1. Crie um elemento e carregue ficheiros no elemento.
 1. Codifique o elemento que contém o ficheiro para o MP4 de velocidade de transmissão adaptável definido.
-1. Crie uma chave de conteúdo e associe-a com elemento codificado. Nos Media Services, a chave de conteúdo contém a chave de encriptação do elemento. 
+1. Crie uma chave de conteúdo e associe-a com elemento codificado. Nos Media Services, a chave de conteúdo contém a chave de encriptação do elemento.
 1. Configure a política de autorização da chave de conteúdo. A política de autorização da chave de conteúdo tem de ser configurada por si e cumprida pelo cliente para que a chave de conteúdo seja entregue ao cliente.
 
-    Ao criar a política de autorização da chave de conteúdo, tem de especificar o seguinte: método de entrega (PlayReady ou Widevine), restrições (aberto ou token) e informações específicas para o tipo de entrega de chave que define a forma como esta é entregue ao cliente (modelo de licença [PlayReady](media-services-playready-license-template-overview.md) ou [Widevine](media-services-widevine-license-template-overview.md)). 
-1. Configure a política de entrega para um elemento. A configuração da política de entrega inclui: protocolo entrega (por exemplo, MPEG DASH, HLS, HDS, Transmissão em Fluxo Uniforme ou todos), o tipo de encriptação dinâmica (por exemplo, Encriptação Comum), URL de aquisição de licença PlayReady ou Widevine. 
- 
-    Pode aplicar uma política diferente para cada protocolo no mesmo elemento. Por exemplo, pode aplicar encriptação PlayReady para Uniforme/DASH e Envelope AES para HLS. Quaisquer protocolos que não estão definidos numa política de entrega (por exemplo, adicionar uma única política que especifica apenas HLS como o protocolo) serão bloqueados da transmissão em fluxo. A exceção é quando não há qualquer política de entrega de elemento definida. Em seguida, todos os protocolos serão permitidos.
+Ao criar a política de autorização da chave de conteúdo, tem de especificar o seguinte: método de entrega (PlayReady ou Widevine), restrições (aberto ou token) e informações específicas para o tipo de entrega de chave que define a forma como esta é entregue ao cliente (modelo de licença [PlayReady](media-services-playready-license-template-overview.md) ou [Widevine](media-services-widevine-license-template-overview.md)).
+1. Configure a política de entrega para um elemento. A configuração da política de entrega inclui: protocolo entrega (por exemplo, MPEG DASH, HLS, HDS, Transmissão em Fluxo Uniforme ou todos), o tipo de encriptação dinâmica (por exemplo, Encriptação Comum), URL de aquisição de licença PlayReady ou Widevine.
+
+Pode aplicar uma política diferente para cada protocolo no mesmo elemento. Por exemplo, pode aplicar encriptação PlayReady para Uniforme/DASH e Envelope AES para HLS. Quaisquer protocolos que não estão definidos numa política de entrega (por exemplo, adicionar uma única política que especifica apenas HLS como o protocolo) serão bloqueados da transmissão em fluxo. A exceção é quando não há qualquer política de entrega de elemento definida. Em seguida, todos os protocolos serão permitidos.
 1. Crie um localizador OnDemand para obter um URL de transmissão em fluxo.
 
 Irá encontrar um exemplo .NET concluído no final do tópico.
@@ -65,17 +66,17 @@ A imagem seguinte demonstra o fluxo de trabalho descrito acima. Aqui, o token é
 
 ![Proteger com PlayReady](./media/media-services-content-protection-overview/media-services-content-protection-with-drm.png)
 
-O resto deste tópico fornece explicações detalhadas, exemplos de códigos e ligações para tópicos que mostram como atingir as tarefas descritas acima. 
+O resto deste tópico fornece explicações detalhadas, exemplos de códigos e ligações para tópicos que mostram como atingir as tarefas descritas acima.
 
 ##Limitações atuais
 
 Se adicionar ou atualizar uma política de entrega de elemento, tem de eliminar o localizador associado (se aplicável) e criar um novo localizador.
 
-Limitação ao encriptar com Widevine com os Media Services do Azure: atualmente, não são suportados várias chaves de conteúdo. 
+Limitação ao encriptar com Widevine com os Media Services do Azure: atualmente, não são suportados várias chaves de conteúdo.
 
 ##Criar um elemento e carregar ficheiros no elemento.
 
-Para poder gerir, codificar e transmitir em fluxo os seus vídeos, primeiro tem de carregar o conteúdo para os Media Services do Microsoft Azure. Assim que seja carregado, o seu conteúdo é armazenado em segurança na nuvem para processamento adicional e a transmissão em fluxo. 
+Para poder gerir, codificar e transmitir em fluxo os seus vídeos, primeiro tem de carregar o conteúdo para os Media Services do Microsoft Azure. Assim que seja carregado, o seu conteúdo é armazenado em segurança na nuvem para processamento adicional e a transmissão em fluxo.
 
 Para obter informações detalhadas, consulte [Carregar Ficheiros para uma conta de Media Services](media-services-dotnet-upload-files.md).
 
@@ -84,7 +85,7 @@ Para obter informações detalhadas, consulte [Carregar Ficheiros para uma conta
 Com a encriptação dinâmica, apenas tem de criar um elemento que contenha um conjunto de ficheiros MP4 com velocidade de transmissão múltipla ou ficheiros de origem de Transmissão em Fluxo Uniforme de múltipla transmissão. Em seguida, com base no formato especificado no manifesto e pedido de fragmento, o servidor de Transmissão em Fluxo a Pedido irá garantir que recebe a transmissão em fluxo no protocolo que escolheu. Como resultado, só tem de armazenar e pagar pelos ficheiros num único formato de armazenamento e os Media Services irão compilar e disponibilizar a resposta adequada com base nos pedidos de um cliente. Para obter mais informações, consulte o tópico [Descrição Geral de Empacotamento Dinâmico](media-services-dynamic-packaging-overview.md).
 
 Para obter instruções sobre como codificar, consulte [Como codificar um elemento utilizando um Codificador de Multimédia Standard](media-services-dotnet-encode-with-media-encoder-standard.md).
-    
+
 
 ##<a id="create_contentkey"></a>Criar uma chave de conteúdo e associe-a com elemento codificado
 
@@ -329,7 +330,7 @@ O exemplo seguinte demonstra a funcionalidade que foi introduzida no SDK de Medi
         
                 static public IContentKey CreateCommonTypeContentKey(IAsset asset)
                 {
-                    // Create envelope encryption content key
+                    
                     Guid keyId = Guid.NewGuid();
                     byte[] contentKey = GetRandomBuffer(16);
         
@@ -544,6 +545,8 @@ O exemplo seguinte demonstra a funcionalidade que foi introduzida no SDK de Medi
         
                         };
         
+                    // In this case we only specify Dash streaming protocol in the delivery policy,
+                    // All other protocols will be blocked from streaming.
                     var assetDeliveryPolicy = _context.AssetDeliveryPolicies.Create(
                             "AssetDeliveryPolicy",
                         AssetDeliveryPolicyType.DynamicCommonEncryption,
@@ -609,7 +612,9 @@ O exemplo seguinte demonstra a funcionalidade que foi introduzida no SDK de Medi
         }
 
 
-##Percursos de aprendizagem dos Media Services
+## Passo seguinte
+
+Rever os percursos de aprendizagem dos Serviços de Multimédia
 
 [AZURE.INCLUDE [media-services-learning-paths-include](../../includes/media-services-learning-paths-include.md)]
 
@@ -628,6 +633,6 @@ O exemplo seguinte demonstra a funcionalidade que foi introduzida no SDK de Medi
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

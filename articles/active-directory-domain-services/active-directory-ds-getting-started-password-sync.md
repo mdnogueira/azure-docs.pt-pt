@@ -13,10 +13,11 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="09/08/2016"
+    ms.date="09/20/2016"
     ms.author="maheshu"/>
 
-# Serviços de Domínio do Azure AD *(Pré-visualização)* – Ativar a sincronização de palavras-passe para os Serviços de Domínio do Azure AD
+
+# Ativar a sincronização de palavras-passe para os Serviços de Domínio do Azure AD
 Nas tarefas anteriores, ativou os Serviços de Domínio do Azure AD Domain Services para o seu inquilino do Azure AD. A tarefa seguinte consiste em ativar hashes de credenciais necessários para a autenticação NTLM e Kerberos para sincronizar com os Serviços de Domínio do Azure AD. Quando a sincronização de credenciais estiver configurada, os utilizadores podem iniciar sessão no domínio gerido com as credenciais da empresa.
 
 Os passos envolvidos diferem consoante a sua organização tenha um inquilino do Azure AD apenas na nuvem ou se estiver definido para sincronizar com o seu diretório no local com o Azure AD Connect.
@@ -61,11 +62,11 @@ Depois de ter alterado a palavra-passe, a nova palavra-passe será utilizada nos
 
 ## Conteúdo relacionado
 
-- [Ativar a sincronização de palavras-passe para os Serviços de Domínio do AAD para um inquilino do Azure AD sincronizado](active-directory-ds-getting-started-password-sync-synced-tenant.md)
-
 - [Como atualizar a sua própria palavra-passe](../active-directory/active-directory-passwords-update-your-own-password.md)
 
 - [Introdução à Gestão de Palavras-passe no Azure AD](../active-directory/active-directory-passwords-getting-started.md).
+
+- [Ativar a sincronização de palavras-passe para os Serviços de Domínio do AAD para um inquilino do Azure AD sincronizado](active-directory-ds-getting-started-password-sync-synced-tenant.md)
 
 - [Administrar um domínio gerido dos Serviços de Domínio do Azure AD](active-directory-ds-admin-guide-administer-domain.md)
 
@@ -75,6 +76,6 @@ Depois de ter alterado a palavra-passe, a nova palavra-passe será utilizada nos
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

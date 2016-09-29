@@ -17,6 +17,7 @@
     ms.author="kgremban"/>
 
 
+
 # Publicar aplicações com o Proxy da Aplicação do Azure AD
 
 A Proxy de Aplicação do Azure AD ajuda-o a fornecer suporte a funcionários remotos através da publicação de aplicações no local para que sejam acedidas através da Internet. Nesta altura, já deve ter [ativado a Proxy de Aplicação no portal clássico do Azure](active-directory-application-proxy-enable.md). Este artigo explica os passos para publicar aplicações que estão a ser executadas na sua rede local e fornecem acesso remoto seguro fora da rede. Depois de concluir este artigo, estará pronto para configurar a aplicação com informação personalizada ou requisitos de segurança.
@@ -75,7 +76,7 @@ Para aplicações que requerem pré-autenticação, esta ação garante permiss�
 
 ## Testar a aplicação publicada
 
-Assim que tiver publicado a aplicação, pode testá-la navegando para o URL que publicou. Certifique-se de que consegue aceder à aplicação, que compõe corretamente e que tudo funciona conforme esperado. Se tiver dificuldade ou aparecer uma mensagem de erro, experimente o [guia de resolução de problemas](active-directory-application-proxy-troubleshoot.md).
+Assim que tiver publicado a aplicação, pode testá-la navegando para o URL que publicou. Verifique se consegue aceder à aplicação, se compõe corretamente e se tudo funciona conforme esperado. Se tiver dificuldade ou aparecer uma mensagem de erro, experimente o [guia de resolução de problemas](active-directory-application-proxy-troubleshoot.md).
 
 ## Configurar a aplicação
 
@@ -103,6 +104,6 @@ Para obter as notícias e atualizações mais recentes, consulte o [blogue do Pr
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

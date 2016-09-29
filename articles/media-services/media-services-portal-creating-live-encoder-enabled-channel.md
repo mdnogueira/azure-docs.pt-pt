@@ -3,7 +3,7 @@
     description="Este tutorial explica-lhe os passos da criação de um canal que recebe uma transmissão em fluxo em direto com uma velocidade de transmissão única e a codifica para uma transmissão em fluxo com velocidade de transmissão múltipla utilizando o Portal do Azure." 
     services="media-services" 
     documentationCenter="" 
-    authors="juliako,anilmur" 
+    authors="anilmur" 
     manager="erikre" 
     editor=""/>
 
@@ -14,7 +14,8 @@
     ms.devlang="na" 
     ms.topic="get-started-article"
     ms.date="09/06/2016"
-    ms.author="juliako"/>
+    ms.author="juliako;juliako"/>
+
 
 
 #Como realizar uma transmissão em fluxo em direto utilizando os Serviços de Multimédia do Azure para criar transmissões em fluxo com velocidade de transmissão múltipla com o Portal do Azure
@@ -183,7 +184,7 @@ Existem duas formas de iniciar o evento:
     
     ![createprogram](./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-create-program.png)
     
-    Se marcou **Publicar este evento agora**, os URLs de EVENTO serão criados.
+    Se tiver marcado **Publicar este evento em direto agora**, serão criados os URLs de PUBLICAÇÃO.
     
     Pode premir **Iniciar**, sempre que estiver pronto para transmitir o evento.
 
@@ -241,6 +242,7 @@ Rever os percursos de aprendizagem dos Serviços de Multimédia
  
 
 
-<!--HONumber=sep16_HO1-->
+
+<!--HONumber=Sep16_HO3-->
 
 

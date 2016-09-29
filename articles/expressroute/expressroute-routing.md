@@ -12,8 +12,9 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/10/2016"
+   ms.date="09/16/2016"
    ms.author="ganesr"/>
+
 
 
 # Requisitos de encaminhamento do ExpressRoute  
@@ -78,7 +79,7 @@ A troca do encaminhamento será feita através do protocolo eBGP. São estabelec
 
 ## Números de Sistema Autónomos
 
-A Microsoft utilizará AS 12076 para o peering público do Azure, o peering privado do Azure e o peering da Microsoft. Reservamos os ASNs do 65515 ao 65520 para utilização interna. São suportados números AS de 16 e de 32 bits. No lado do peering (cliente ou fornecedor), o AS pode ser um ASN público se for possível confirmar que é detido por si ou um número ASN para o peering privado e requer um ASN público para os peerings públicos e da Microsoft. 
+A Microsoft utilizará AS 12076 para o peering público do Azure, o peering privado do Azure e o peering da Microsoft. Reservamos os ASNs do 65515 ao 65520 para utilização interna. São suportados números AS de 16 e de 32 bits. No lado do peering (cliente ou fornecedor), o AS pode ser um ASN público se for possível confirmar que é detido por si ou um número ASN.
 
 Não existem requisitos relativamente à simetria da transferência de dados no caminho principal e secundário de um determinado circuito. Os caminhos de reencaminhamento e do remetente podem atravessar pares de routers diferentes. As rotas idênticas têm de ser anunciadas no lado principal ou secundário num determinado par de circuitos que lhe pertençam. Não é necessário que a métrica das rotas seja idêntica.
 
@@ -179,6 +180,6 @@ Para além do que foi dito acima, a Microsoft também marcará prefixos baseados
 
 
 
-<!--HONumber=ago16_HO5-->
+<!--HONumber=Sep16_HO3-->
 
 

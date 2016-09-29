@@ -1,5 +1,5 @@
 <properties 
-    pageTitle="Implementar a sua primeira aplicação Web PHP no Azure em cinco minutos | Microsoft Azure" 
+    pageTitle="Implementar a primeira aplicação Web PHP no Azure em cinco minutos | Microsoft Azure" 
     description="Saiba como é fácil executar aplicações Web no Serviço de Aplicações ao implementar uma aplicação de exemplo. Comece a programar verdadeiramente em pouco tempo e a ver resultados imediatos." 
     services="app-service\web"
     documentationCenter=""
@@ -18,10 +18,11 @@
     ms.author="cephalin"
 />
     
-# Implementar a sua primeira aplicação Web PHP no Azure em cinco minutos
+
+# Implementar a primeira aplicação Web PHP no Azure em cinco minutos
 
 Este tutorial ajuda-o a implementar a sua primeira aplicação Web PHP no [Serviço de Aplicações do Azure](../app-service/app-service-value-prop-what-is.md).
-Pode utilizar o Serviço de Aplicações para criar aplicações Web, [back-ends de aplicações móveis](/documentation/learning-paths/appservice-mobileapps/) e [aplicações API](../app-service-api/app-service-api-apps-why-best-platform.md).
+Pode utilizar o Serviço de Aplicações para criar aplicações, [back-ends de aplicações móveis](/documentation/learning-paths/appservice-mobileapps/) e [aplicações API](../app-service-api/app-service-api-apps-why-best-platform.md).
 
 Irá: 
 
@@ -52,7 +53,7 @@ Irá:
     - **Grupo de recursos**: selecione **Criar novo** e dê um nome ao grupo de recursos.
     - **Plano do Serviço de Aplicações/Localização**: clique nele para configurar e, em seguida, clique em **Criar Novo** para definir o nome, a localização e o escalão de preço do plano do Serviço de Aplicações. Pode utilizar o escalão de preço **Gratuito**.
 
-    Quando tiver terminado, o painel de criação da aplicação deverá ter este aspeto:
+    Quando tiver terminado, o painel de criação da aplicação deverá este aspeto:
 
     ![](./media/app-service-web-get-started-languages/create-web-app-settings.png)
 
@@ -94,13 +95,13 @@ Agora, vamos implementar algum código no Azure através do Git.
 
     ![Clonar o código de exemplo de aplicação para a sua primeira aplicação Web no Azure](./media/app-service-web-get-started-languages/php-git-clone.png)
 
-    Para *&lt;url_de_exemplo_do_github>*, utilize um dos seguintes URLs, consoante a arquitetura da sua preferência:
+    Para *&lt;github_sample_url>*, utilize um dos seguintes URLs, consoante a arquitetura da sua preferência:
 
 2. Altere para o repositório da sua aplicação de exemplo. Por exemplo, 
 
         cd app-service-web-html-get-started
 
-3. Configure o Git remoto para a sua aplicação do Azure com o respetivo URL do Git, que copiou do Portal há alguns passos.
+3. Configure o Git remoto para a sua aplicação Azure com o respetivo URL do Git, que copiou do Portal há alguns passos.
 
         git remote add azure <giturlfromportal>
 
@@ -114,9 +115,9 @@ Agora, vamos implementar algum código no Azure através do Git.
 
 Já está! O código já está em execução em direto no Azure. No seu browser, navegue para http://*&lt;nomeaplic>*.azurewebsites.net para vê-lo em ação. 
 
-## Fazer atualizações à sua aplicação
+## Efetuar atualizações à sua aplicação
 
-Agora, pode utilizar o Git para emitir a partir da raiz do projeto (repositório) em qualquer altura para fazer uma atualização ao site online. Pode fazê-lo tal como quando implementou o seu código pela primeira vez. Por exemplo, sempre que quiser emitir uma nova alteração que tenha testado localmente, basta executar os seguintes comandos a partir da raiz do projeto (repositório):
+Agora, pode utilizar o Git para emitir a partir da raiz do projeto (repositório) em qualquer altura para efetuar uma atualização ao site online. Pode fazê-lo tal como quando implementou o seu código pela primeira vez. Por exemplo, sempre que pretender emitir uma nova alteração que tenha testado localmente, basta executar os seguintes comandos a partir da raiz do projeto (repositório):
 
     git add .
     git commit -m "<your_message>"
@@ -128,7 +129,7 @@ Agora, pode utilizar o Git para emitir a partir da raiz do projeto (repositório
 
 - Criar e configurar aplicações no Azure a partir do PowerShell/Bash.
 - Definir a versão do PHP.
-- Utilizar um ficheiro de arranque que não se encontre no diretório de aplicações de raiz.
+- Utilizar um ficheiro de arranque que não se encontra no diretório de aplicações de raiz.
 - Ativar a automatização do Compositor.
 - Aceder a variáveis específicas do ambiente.
 - Resolver erros comuns.
@@ -136,11 +137,11 @@ Agora, pode utilizar o Git para emitir a partir da raiz do projeto (repositório
 Em alternativa, faça mais com a sua primeira aplicação Web. Por exemplo:
 
 - Experimente [outras formas de implementar o seu código no Azure](../app-service-web/web-sites-deploy.md). Por exemplo, para implementar a partir de um dos seus repositórios do GitHub, só tem de selecionar **GitHub** em vez de **Repositório de Git Local** nas **Opções de implementação**.
-- Eleve a sua aplicação do Azure ao nível seguinte. Autentique os seus utilizadores. Dimensione-a com base no pedido. Configure alguns alertas de desempenho. Tudo com apenas alguns cliques. Consulte o artigo [Adicionar funcionalidade à sua primeira aplicação Web](app-service-web-get-started-2.md).
+- Eleve a sua aplicação do Azure ao nível seguinte. Autentique os seus utilizadores. Dimensione-a com base no pedido. Configure alguns alertas de desempenho. Tudo com apenas alguns cliques. Consulte [Adicionar funcionalidades à sua primeira aplicação Web](app-service-web-get-started-2.md).
 
 
 
 
-<!----HONumber=Sep16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

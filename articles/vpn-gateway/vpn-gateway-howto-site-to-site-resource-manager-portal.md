@@ -17,12 +17,13 @@
    ms.date="08/31/2016"
    ms.author="cherylmc"/>
 
+
 # Criar uma VNet com uma ligação de Rede de VPNs no portal do Azure
 
 > [AZURE.SELECTOR]
-- [Portal do Azure](vpn-gateway-howto-site-to-site-resource-manager-portal.md)
-- [Portal Clássico do Azure](vpn-gateway-site-to-site-create.md)
-- [PowerShell – Resource Manager](vpn-gateway-create-site-to-site-rm-powershell.md)
+- [Resource Manager – Portal do Azure](vpn-gateway-howto-site-to-site-resource-manager-portal.md)
+- [Resource Manager – PowerShell](vpn-gateway-create-site-to-site-rm-powershell.md)
+- [Clássica – Portal Clássico](vpn-gateway-site-to-site-create.md)
 
 
 Este artigo explica como criar uma rede virtual e uma ligação de Rede de VPNs à sua rede no local com o **modelo de implementação Azure Resource Manager** e o Portal do Azure. As ligações site a site podem ser utilizadas para configurações em vários locais e híbridas.
@@ -156,6 +157,6 @@ Pode verificar a ligação VPN no portal ou com o PowerShell.
 
 
 
-<!--HONumber=ago16_HO5-->
+<!--HONumber=Sep16_HO3-->
 
 

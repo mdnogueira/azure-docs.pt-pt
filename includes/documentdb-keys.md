@@ -1,9 +1,8 @@
-       Now navigate to the DocumentDB account blade, and click **Keys**, as we will use these values in the web application we create next.
+  Navegue agora até ao painel Conta do DocumentDB e clique em **Chaves**, uma vez que iremos utilizar estes valores na aplicação Web que vamos criar a seguir.
 
-       ![Screen shot of the Azure portal, showing a DocumentDB account, with the Keys button highlighted on the DocumentDB account blade, and the URI, PRIMARY KEY and SECONDARY KEY values highlighted on the Keys blade](./media/documentdb-keys/keys.png)
+![Captura de ecrã do Portal do Azure, que mostra uma conta do DocumentDB, com o botão Chaves realçado no painel Conta do DocumentDB e os valores URI, CHAVE PRIMÁRIA e CHAVE SECUNDÁRIA realçados no painel Chaves](./media/documentdb-keys/keys.png)
 
 
-
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -13,22 +13,21 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="get-started-article" 
-    ms.date="08/17/2016" 
+    ms.date="09/16/2016" 
     ms.author="spelluru"/>
+
 
 # Tutorial: Criar um pipeline com a Atividade de Cópia com a API REST
 > [AZURE.SELECTOR]
-- [Descrição Geral do Tutorial](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
-- [Com o Editor do Data Factory](data-factory-copy-activity-tutorial-using-azure-portal.md)
-- [Com o PowerShell](data-factory-copy-activity-tutorial-using-powershell.md)
-- [Com o Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md)
-- [Com a API REST](data-factory-copy-activity-tutorial-using-rest-api.md)
-- [Com a API .NET](data-factory-copy-activity-tutorial-using-dotnet-api.md)
-- [Com o Assistente de Cópia](data-factory-copy-data-wizard-tutorial.md)
+- [Descrição geral e pré-requisitos](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
+- [Portal do Azure](data-factory-copy-activity-tutorial-using-azure-portal.md)
+- [Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md)
+- [PowerShell](data-factory-copy-activity-tutorial-using-powershell.md)
+- [API REST](data-factory-copy-activity-tutorial-using-rest-api.md)
+- [API .NET](data-factory-copy-activity-tutorial-using-dotnet-api.md)
+- [Assistente de Cópia](data-factory-copy-data-wizard-tutorial.md)
 
 Este tutorial mostra-lhe como criar e monitorizar uma fábrica de dados do Azure com a API REST. O pipeline na fábrica de dados utiliza uma Atividade de Cópia para copiar dados do Armazenamento de Blobs do Azure para uma Base de Dados SQL do Azure.
-
-A Atividade de Cópia executa o movimento de dados no Azure Data Factory. A atividade utiliza a tecnologia de um serviço globalmente disponível que pode copiar dados entre vários arquivos de dados de uma forma segura, fiável e escalável. Veja o artigo [Atividades de Movimentos de Dados](data-factory-data-movement-activities.md) para obter detalhes sobre a Atividade de Cópia.   
 
 > [AZURE.NOTE] 
 > Este artigo não abrange toda a API REST do Data Factory. Veja [Referência da API REST do Data Factory](https://msdn.microsoft.com/library/azure/dn906738.aspx) para obter a documentação completa sobre os cmdlets do Data Factory.
@@ -36,7 +35,7 @@ A Atividade de Cópia executa o movimento de dados no Azure Data Factory. A ativ
 
 ## Pré-requisitos
 
-- Leia a [Descrição Geral do Tutorial](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
+- Leia o artigo [Descrição Geral do Tutorial](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) e conclua os passos de **pré-requisitos**.
 - Instale o [Curl](https://curl.haxx.se/dlwiz/) no seu computador. Utilize a ferramenta Curl com comandos REST para criar uma fábrica de dados. 
 - Siga as instruções [neste artigo](../resource-group-create-service-principal-portal.md) para: 
     1. Criar uma aplicação Web com o nome **ADFCopyTutorialApp** no Azure Active Directory.
@@ -136,7 +135,7 @@ Crie os seguintes ficheiros JSON na pasta onde está localizado curl.exe.
 
 A definição JSON define um conjunto de dados com o nome **AzureBlobInput**, que representa dados de entrada para uma atividade no pipeline. Além disso, especifica que os dados de entrada estão localizados no ficheiro **emp.txt** que está no do contentor de blobs **adftutorial**. 
 
- Tenha em atenção o seguinte: 
+ Tenha em atenção os seguintes pontos: 
 
 - O **type** do conjunto de dados está definido como **AzureBlob**.
 - O **linkedServiceName** está definido como **AzureStorageLinkedService**. 
@@ -192,7 +191,7 @@ Para definir **folderPath** e **fileName** de forma dinâmica com base no tempo 
 
 A definição JSON define um conjunto de dados com o nome **AzureSqlOutput**, que representa os dados de saída para uma atividade no pipeline. Além disso, especifica que os resultados são armazenados na tabela: **emp** na base de dados representada pelo AzureSqlLinkedService. A secção **disponibilidade** especifica que o conjunto de dados de saída é produzido de hora a hora (frequência: hora e intervalo: 1).
 
-Tenha em atenção o seguinte: 
+Tenha em atenção os seguintes pontos: 
 
 - O **type** do conjunto de dados está definido como **AzureSQLTable**.
 - O **linkedServiceName** está definido como **AzureSqlLinkedService**.
@@ -245,7 +244,7 @@ Tenha em atenção o seguinte:
     }
 
 
-Tenha em atenção o seguinte:
+Tenha em atenção os seguintes pontos:
 
 - Na secção atividades, existe apenas uma atividade cujo **type** está definido como **CopyActivity**.
 - A entrada da atividade está definida como **AzureBlobInput** e a saída da atividade está definida como **AzureSqlOutput**.
@@ -300,9 +299,9 @@ Neste passo, irá criar uma fábrica de dados do Azure com o nome **ADFCopyTutor
 
         Write-Host $results
 
-Tenha em atenção o seguinte:
+Tenha em atenção os seguintes pontos:
  
-- O nome do Azure Data Factory deve ser globalmente exclusivo. Se vir o erro nos resultados: **Nome da fábrica de dados “ADFCopyTutorialDF” não disponível**, faça o seguinte:  
+- O nome do Azure Data Factory deve ser globalmente exclusivo. Se vir o erro nos resultados: **Nome da fábrica de dados “ADFCopyTutorialDF” não disponível**, realize os seguintes passos:  
     1. Altere o nome (por exemplo, oseunomeADFCopyTutorialDF) no ficheiro **datafactory.json**.
     2. No primeiro comando em que está atribuído um valor à variável **$cmd**, substitua ADFCopyTutorialDF pelo novo nome e execute o comando. 
     3. Execute os dois comandos seguintes para invocar a API REST, para criar a fábrica de dados e imprimir os resultados da operação. 
@@ -494,6 +493,6 @@ Neste tutorial, utilizou uma API REST para criar uma fábrica de dados do Azure 
  
 
 
-<!--HONumber=ago16_HO5-->
+<!--HONumber=Sep16_HO3-->
 
 

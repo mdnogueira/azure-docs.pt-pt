@@ -19,9 +19,10 @@
    ms.author="cfowler;mahender;glenga"/>
    
    
+
 # Descrição geral das Funções do Azure
 
-Funções do Azure é uma solução para uma fácil execução de pequenos blocos de código, ou "funções", na nuvem. É possível escrever apenas o código que necessita para o problema em questão, sem ter de se preocupar com toda a aplicação ou a infraestrutura para executá-la. Isto pode tornar o desenvolvimento ainda mais produtivo, e pode utilizar uma linguagem de desenvolvimento à sua escolha, tal como C#, Node.js, Python ou PHP. Paga apenas para a hora que o seu código é executado e confie no Azure para dimensionar conforme necessário.
+Funções do Azure é uma solução para uma fácil execução de pequenos blocos de código, ou "funções", na nuvem. É possível escrever apenas o código que necessita para o problema em questão, sem ter de se preocupar com toda a aplicação ou a infraestrutura para executá-la. Isto pode tornar o desenvolvimento ainda mais produtivo, e pode utilizar uma linguagem de desenvolvimento à sua escolha, tal como C#, F#, Node.js, Python ou PHP. Paga apenas para a hora que o seu código é executado e confie no Azure para dimensionar conforme necessário.
 
 Este tópico fornece uma descrição geral de alto nível das Funções do Azure. Se quiser iniciar de imediato e utilizar as Funções do Azure, comece por [Criar a sua primeira Função do Azure](functions-create-first-azure-function.md). Se estiver à procura de mais informações técnicas acerca das Funções, consulte a [referência para programadores](functions-reference.md).
 
@@ -29,7 +30,7 @@ Este tópico fornece uma descrição geral de alto nível das Funções do Azure
 
 Seguem-se algumas funcionalidades-chave das Funções do Azure:
     
-* **Escolha de idioma** - Escreva funções com C#, Node.js, Python, F#, PHP, lote, bash, Java ou qualquer executável.  
+* **Escolha de idioma** - escreva funções com C#, F#, Node.js, Python, PHP, batch, bash, Java ou qualquer executável.
 * **Modelo de preços de pagamento por utilização** - Pague apenas o tempo despendido a executar o seu código. Consulte a opção Plano do Dynamic App Service na [secção de preços](#pricing) abaixo.  
 * **Traga as suas próprias dependências** - As funções são compatíveis com NuGet e NPM, pelo que pode utilizar as suas bibliotecas favoritas.  
 * **Segurança integrada** - Proteja as funções acionadas por HTTP com fornecedores de OAuth, como o Azure Active Directory, Facebook, Google, Twitter e Conta Microsoft.  
@@ -93,6 +94,6 @@ Aborda os planos de serviço disponíveis com as Funções do Azure, incluindo o
 Funções do Azure melhora a plataforma do Azure App Service para funcionalidades essenciais como implementações, variáveis de ambiente e diagnósticos. 
 
 
-<!--HONumber=sep16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

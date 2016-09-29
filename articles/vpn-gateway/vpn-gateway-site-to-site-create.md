@@ -17,13 +17,13 @@
    ms.date="08/31/2016"
    ms.author="cherylmc"/>
 
+
 # Criar uma VNet com uma ligação de Rede de VPNs no portal clássico do Azure
 
 > [AZURE.SELECTOR]
-- [Portal do Azure](vpn-gateway-howto-site-to-site-resource-manager-portal.md)
-- [Portal Clássico do Azure](vpn-gateway-site-to-site-create.md)
-- [PowerShell – Resource Manager](vpn-gateway-create-site-to-site-rm-powershell.md)
-
+- [Resource Manager – Portal do Azure](vpn-gateway-howto-site-to-site-resource-manager-portal.md)
+- [Resource Manager – PowerShell](vpn-gateway-create-site-to-site-rm-powershell.md)
+- [Clássica – Portal Clássico](vpn-gateway-site-to-site-create.md)
 
 Este artigo explica-lhe como criar uma rede virtual e uma ligação de Rede de VPNs à sua rede no local com o **modelo de implementação clássica** e o portal clássico. As ligações site a site podem ser utilizadas para configurações em vários locais e híbridas. Atualmente, não é possível criar uma configuração Site a Site de ponto a ponto para o modelo de implementação clássico através do portal do Azure.
 
@@ -55,11 +55,11 @@ Antes de iniciar a configuração, verifique se tem os seguintes itens.
 
 2. No canto inferior esquerdo do ecrã, clique em **Novo**. No painel de navegação, clique em **Serviços de Rede** e em **Rede Virtual**. Clique em **Criação Personalizada** para iniciar o assistente de configuração.
 
-3. Para criar a VNet, preencha as informações nas páginas seguintes.
+3. Para criar a VNet, introduza as suas definições de configuração nas seguintes páginas:
 
 ## Página de detalhes da rede virtual
 
-Introduza as seguintes informações.
+Introduza as seguintes informações:
 
 - **Nome**: atribua um nome à rede virtual. Por exemplo, *EastUSVNet*. Utilizará este nome da rede virtual ao implementar as instâncias de VMs e PaaS, pelo que não deve escolher um nome demasiado complicado.
 - **Localização**: a localização está diretamente relacionada com a localização física (região) onde pretende que os recursos (VMs) residam. Por exemplo, se pretender que as VMs que implementa nesta rede virtual estejam fisicamente localizadas nos *EUA Leste*, selecione essa localização. Não é possível alterar a região associada à rede virtual depois de a criar.
@@ -109,6 +109,6 @@ Assim que a ligação estiver concluída, pode adicionar máquinas virtuais às 
 
 
 
-<!--HONumber=ago16_HO5-->
+<!--HONumber=Sep16_HO3-->
 
 
