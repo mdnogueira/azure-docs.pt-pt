@@ -17,6 +17,7 @@
     ms.date="08/10/2016"
     ms.author="carlrab"/>
 
+
 # Opções e desempenho da Base de Dados SQL: compreender o que está disponível em cada camada de serviço
 
 A [Base de Dados SQL do Azure](sql-database-technical-overview.md) oferece três camadas de serviço com vários níveis de desempenho para processar diferentes cargas de trabalho. Cada nível de desempenho fornece um conjunto cada vez maior de recursos concebidos para proporcionar um débito cada vez mais elevado. Pode gerir cada base de dados na sua própria [camada de serviço](sql-database-service-tiers.md#standalone-database-service-tiers-and-performance-levels) com o seu próprio nível de desempenho. Também pode gerir várias bases de dados num [conjunto elástico](sql-database-service-tiers.md#elastic-pool-service-tiers-and-performance-in-edtus) com um conjunto partilhado de recursos. Os recursos disponíveis para bases de dados autónomas são expressos em termos de Unidades de Transação da Base de Dados (DTUs) e para conjuntos elásticos em termos de DTUs elásticas ou eDTUs. Para obter mais informações sobre DTUs e eDTUs, veja [O que é uma DTU](sql-database-what-is-a-DTU.md). 
@@ -62,7 +63,7 @@ Para decidir qual a camada de serviços a utilizar, comece por determinar se a b
 
 Para decidir qual a camada de serviços a utilizar para uma base de dados autónoma, comece por determinar as funcionalidades da base de dados de que precisa para escolher a sua edição da Base de Dados SQL:
 
-- Tamanho da base de dados (5 GB no máximo para Básico, 250 GB no máximo para Standard e 500 GB a 1 TB no máximo para Premium, consoante o nível de desempenho)
+- Tamanho da base de dados (2 GB no máximo para Basic, 250 GB no máximo para Standard e 500 GB a 1 TB no máximo para Premium, consoante o nível de desempenho)
 - Período de retenção de cópias de segurança da base de dados (7 dias para Básico, 35 dias para Standard e 35 dias para Premium)
 
 Depois de ter determinado a edição da Base de Dados SQL, estará pronto para determinar o nível de desempenho para a base de dados (o número de DTUs). Pode adivinhar e, em seguida, [aumentar ou reduzir vertical e dinamicamente](sql-database-scale-up.md) com base na experiência real. Pode ainda utilizar a [Calculadora de DTU](http://dtucalculator.azurewebsites.net/) para se obter uma estimativa do número de DTUs necessários. 
@@ -90,6 +91,6 @@ Para obter informações sobre os padrões da arquitetura de dados comuns de apl
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

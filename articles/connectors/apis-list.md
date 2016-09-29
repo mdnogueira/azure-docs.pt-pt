@@ -14,8 +14,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="08/23/2016"
+    ms.date="09/20/2016"
     ms.author="deonhe"/>
+
 
 # Lista de conectores
 
@@ -26,18 +27,18 @@ Selecione um conector para saber como o utilizar para criar fluxos de trabalho r
 |Conectores||||
 |-----------|-----------|-----------|-----------|
 |[![Ícone da API][API/Web-Appicon]<br/>**API/Aplicação Web**][API/Web-Appdoc]|[![Ícone da API][Azure-Blobicon]<br/>**Azure Blob**][Azure-Blobdoc]|[![Ícone da API][Azure~Functionsicon]<br/>**Funções<br/>do Azure**][Azure~Functionsdoc]|[![Ícone da API][Boxicon]<br/>**Box**][Boxdoc]|
-|[![Ícone da API][CRM-Onlineicon]<br/>**CRM Online**][CRM-Onlinedoc]|[![Ícone da API][Delayicon]<br/>**Atraso**][Delaydoc]|[![Ícone da API][Dropboxicon]<br/>**Dropbox**][Dropboxdoc]|[![Ícone da API][Facebookicon]<br/>**Facebook**][Facebookdoc]|
-|[![Ícone da API][FTPicon]<br/>**FTP**][FTPdoc]|[![Ícone da API][GitHubicon]<br/>**GitHub**][GitHubdoc]|[![Ícone da API][Google-Driveicon]<br/>**Google Drive**][Google-Drivedoc]|![Ícone de API][Google-Sheetsicon]<br/>**Folhas do Google**|
-|![Ícone de API][Google-Tasksicon]<br/>**Tarefas do Google**|![Ícone de API][Google~Calendaricon]<br/>**Calendário<br/>do Google**|[![Ícone da API][HTTPicon]<br/>**HTTP**][HTTPdoc]|[![Ícone da API][HTTP-Swaggericon]<br/>**HTTP Swagger**][HTTP-Swaggerdoc]|
-|[![Ícone da API][HTTP~Requesticon]<br/>**HTTP<br/>Pedido**][HTTP~Requestdoc]|[![Ícone da API][HTTP~Responseicon]<br/>**HTTP<br/>Resposta**][HTTP~Responsedoc]|![Ícone de API][Instagramicon]<br/>**Instagram**|[![Ícone da API][MailChimpicon]<br/>**MailChimp**][MailChimpdoc]|
-|![Ícone de API][Mandrillicon]<br/>**Mandrill**|[![Ícone da API][Nested~Logic-Appicon]<br/>**Agrupado<br/>Aplicação Lógica**][Nested~Logic-Appdoc]|[![Ícone da API][Office-365~Outlookicon]<br/>**Office 365<br/>Outlook**][Office-365~Outlookdoc]|[![Ícone da API][Office-365~Usersicon]<br/>**Office 365<br/>Utilizadores**][Office-365~Usersdoc]|
-|[![Ícone da API][Office-365~Videoicon]<br/>**Office 365<br/>Vídeo**][Office-365~Videodoc]|[![Ícone da API][OneDriveicon]<br/>**OneDrive**][OneDrivedoc]|[![Ícone da API][OneDrive-for~Businessicon]<br/>**OneDrive para<br/>Empresas**][OneDrive-for~Businessdoc]|[![Ícone da API][Outlookicon]<br/>**Outlook**][Outlookdoc]|
-|[![Ícone da API][Project-Onlineicon]<br/>**Projeto Online**][Project-Onlinedoc]|[![Ícone da API][Queryicon]<br/>**Consulta**][Querydoc]|[![Ícone da API][Recurrenceicon]<br/>**Periodicidade**][Recurrencedoc]|[![Ícone da API][RSSicon]<br/>**RSS**][RSSdoc]|
-|[![Ícone da API][Salesforceicon]<br/>**Salesforce**][Salesforcedoc]|[![Ícone da API][SendGridicon]<br/>**SendGrid**][SendGriddoc]|[![Ícone da API][Service-Busicon]<br/>**Service Bus**][Service-Busdoc]|[![Ícone da API][SFTPicon]<br/>**SFTP**][SFTPdoc]|
-|[![Ícone da API][SharePointicon]<br/>**SharePoint**][SharePointdoc]|[![Ícone da API][Slackicon]<br/>**Slack**][Slackdoc]|[![Ícone da API][SMTPicon]<br/>**SMTP**][SMTPdoc]|![Ícone de API][SparkPosticon]<br/>**SparkPost**|
-|[![Ícone da API][SQLicon]<br/>**SQL**][SQLdoc]|[![Ícone da API][Translatoricon]<br/>**Translator**][Translatordoc]|[![Ícone da API][Trelloicon]<br/>**Trello**][Trellodoc]|[![Ícone da API][Twilioicon]<br/>**Twilio**][Twiliodoc]|
-|[![Ícone da API][Twittericon]<br/>**Twitter**][Twitterdoc]|[![Ícone da API][Webhookicon]<br/>**Webhook**][Webhookdoc]|[![Ícone da API][Wunderlisticon]<br/>**Wunderlist**][Wunderlistdoc]|[![Ícone da API][Yammericon]<br/>**Yammer**][Yammerdoc]|
-|![Ícone de API][YouTubeicon]<br/>**YouTube**||||
+|[![Ícone da API][CRM-Onlineicon]<br/>**CRM Online**][CRM-Onlinedoc]|[![API Icon][DB2icon]<br/>**DB2**][db2doc]|[![Ícone da API][Delayicon]<br/>**Atraso**][Delaydoc]|[![Ícone da API][Dropboxicon]<br/>**Dropbox**][Dropboxdoc]|
+|[![Ícone da API][Facebookicon]<br/>**Facebook**][Facebookdoc]|[![Ícone da API][FTPicon]<br/>**FTP**][FTPdoc]|[![Ícone da API][GitHubicon]<br/>**GitHub**][GitHubdoc]|[![Ícone da API][Google-Driveicon]<br/>**Google Drive**][Google-Drivedoc]|
+|![Ícone de API][Google-Sheetsicon]<br/>**Folhas do Google**|![Ícone de API][Google-Tasksicon]<br/>**Tarefas do Google**|![Ícone de API][Google~Calendaricon]<br/>**Calendário<br/>do Google**|[![Ícone da API][HTTPicon]<br/>**HTTP**][HTTPdoc]|
+|[![Ícone da API][HTTP-Swaggericon]<br/>**HTTP Swagger**][HTTP-Swaggerdoc]|[![Ícone da API][HTTP~Requesticon]<br/>**HTTP<br/>Pedido**][HTTP~Requestdoc]|[![Ícone da API][HTTP~Responseicon]<br/>**HTTP<br/>Resposta**][HTTP~Responsedoc]|[![API Icon][Informixicon]<br/>**Informix**][informixdoc]|
+|![Ícone de API][Instagramicon]<br/>**Instagram**|[![Ícone da API][MailChimpicon]<br/>**MailChimp**][MailChimpdoc]|![Ícone de API][Mandrillicon]<br/>**Mandrill**|[![Ícone da API][Nested~Logic-Appicon]<br/>**Agrupado<br/>Aplicação Lógica**][Nested~Logic-Appdoc]|
+|[![Ícone da API][Office-365~Outlookicon]<br/>**Office 365<br/>Outlook**][Office-365~Outlookdoc]|[![Ícone da API][Office-365~Usersicon]<br/>**Office 365<br/>Utilizadores**][Office-365~Usersdoc]|[![Ícone da API][Office-365~Videoicon]<br/>**Office 365<br/>Vídeo**][Office-365~Videodoc]|[![Ícone da API][OneDriveicon]<br/>**OneDrive**][OneDrivedoc]|
+|[![Ícone da API][OneDrive-for~Businessicon]<br/>**OneDrive para<br/>Empresas**][OneDrive-for~Businessdoc]|[![Ícone da API][Outlookicon]<br/>**Outlook**][Outlookdoc]|[![Ícone da API][Project-Onlineicon]<br/>**Projeto Online**][Project-Onlinedoc]|[![Ícone da API][Queryicon]<br/>**Consulta**][Querydoc]|
+|[![Ícone da API][Recurrenceicon]<br/>**Periodicidade**][Recurrencedoc]|[![Ícone da API][RSSicon]<br/>**RSS**][RSSdoc]|[![Ícone da API][Salesforceicon]<br/>**Salesforce**][Salesforcedoc]|[![Ícone da API][SendGridicon]<br/>**SendGrid**][SendGriddoc]|
+|[![Ícone da API][Service-Busicon]<br/>**Service Bus**][Service-Busdoc]|[![Ícone da API][SFTPicon]<br/>**SFTP**][SFTPdoc]|[![Ícone da API][SharePointicon]<br/>**SharePoint**][SharePointdoc]|[![Ícone da API][Slackicon]<br/>**Slack**][Slackdoc]|
+|[![Ícone da API][SMTPicon]<br/>**SMTP**][SMTPdoc]|![Ícone de API][SparkPosticon]<br/>**SparkPost**|[![Ícone da API][SQLicon]<br/>**SQL**][SQLdoc]|[![Ícone da API][Translatoricon]<br/>**Translator**][Translatordoc]|
+|[![Ícone da API][Trelloicon]<br/>**Trello**][Trellodoc]|[![Ícone da API][Twilioicon]<br/>**Twilio**][Twiliodoc]|[![Ícone da API][Twittericon]<br/>**Twitter**][Twitterdoc]|[![Ícone da API][Webhookicon]<br/>**Webhook**][Webhookdoc]|
+|[![Ícone da API][Wunderlisticon]<br/>**Wunderlist**][Wunderlistdoc]|[![Ícone da API][Yammericon]<br/>**Yammer**][Yammerdoc]|![Ícone de API][YouTubeicon]<br/>**YouTube**||
 
 > [AZURE.NOTE] Se pretende começar com Azure Logic Apps antes de se inscrever para uma conta do Azure, aceda a [Experimentar Aplicação Lógica](https://tryappservice.azure.com/?appservice=logic). Pode criar de imediato uma aplicação lógica de arranque de curta duração no App Service. Sem cartões de crédito; sem compromissos.
 
@@ -72,10 +73,12 @@ Os conectores também podem ser utilizados como ações nas aplicações. As aç
 [azure-blobdoc]: ./connectors-create-api-azureblobstorage.md "Ligue-se ao blob do Azure para gerir ficheiros no contentor de blob."
 [boxDoc]: ./connectors-create-api-box.md "Liga-se ao Box e pode carregar, obter, eliminar, listar tarefas de ficheiros e muito mais."
 [crm-onlinedoc]: ./connectors-create-api-crmonline.md "Ligue-se ao Dynamics CRM Online e faça mais com os seus dados CRM Online."
+[db2doc]: ./connectors-create-api-db2.md "Ligue ao IBM DB2 na nuvem ou no local para atualizar uma linha, obter uma tabela e muito mais."
 [dropboxdoc]: ./connectors-create-api-dropbox.md "Ligue-se ao Dropbox para obter, eliminar, listar tarefas de ficheiros e muito mais."
 [facebookdoc]: ./connectors-create-api-facebook.md "Ligue-se ao Facebook para publicar numa linha cronológica, obter o feed de uma página e muito mais."
 [ftpdoc]: ./connectors-create-api-ftp.md "Liga-se a um servidor FTP/FTPS e realize diferentes tarefas FTP, incluindo carregar, obter, eliminar ficheiros e muito mais."
 [google-drivedoc]: ./connectors-create-api-googledrive.md "Ligue-se ao GoogleDrive e interaja com os seus dados."
+[informixdoc]: ./connectors-create-api-informix.md "Ligue ao Informix na nuvem ou no local para ler uma linha, listar uma tabela e muito mais."
 [translatordoc]: ./connectors-create-api-microsofttranslator.md
 [office-365~outlookdoc]: ./connectors-create-api-office365-outlook.md "O Conetor do Office 365 pode enviar e receber e-mails, gerir o calendário e os contactos com a conta do Office 365."
 [office-365~usersdoc]: ./connectors-create-api-office365-users.md
@@ -133,13 +136,22 @@ Os conectores também podem ser utilizados como ações nas aplicações. As aç
 
 <!--Icon references-->
 [Azure-Blobicon]: ./media/apis-list/azureblob.png
+[Azure~Functionsicon]: ./media/apis-list/function.png
 [Boxicon]: ./media/apis-list/box.png
-[FTPicon]: ./media/apis-list/ftp.png
-[GitHubicon]: ./media/apis-list/github.png
 [CRM-Onlineicon]: ./media/apis-list/dynamicscrmonline.png
+[DB2icon]: ./media/apis-list/db2.png
 [Dropboxicon]: ./media/apis-list/dropbox.png
 [Facebookicon]: ./media/apis-list/facebook.png
+[FTPicon]: ./media/apis-list/ftp.png
+[GitHubicon]: ./media/apis-list/github.png
 [Google-Driveicon]: ./media/apis-list/googledrive.png
+[Google~Calendaricon]: ./media/apis-list/googlecalendar.png
+[Google-Tasksicon]: ./media/apis-list/googletasks.png
+[Google-Sheetsicon]: ./media/apis-list/googlesheet.png
+[HTTPicon]: ./media/apis-list/http.png
+[HTTP~Requesticon]: ./media/apis-list/request.png
+[HTTP~Responseicon]: ./media/apis-list/response.png
+[Informixicon]: ./media/apis-list/informix.png
 [MailChimpicon]: ./media/apis-list/mailchimp.png
 [Translatoricon]: ./media/apis-list/microsofttranslator.png
 [Office-365~Outlookicon]: ./media/apis-list/office365.png
@@ -163,21 +175,14 @@ Os conectores também podem ser utilizados como ações nas aplicações. As aç
 [Twittericon]: ./media/apis-list/twitter.png
 [Wunderlisticon]: ./media/apis-list/wunderlist.png
 [Yammericon]: ./media/apis-list/yammer.png
-[Google~Calendaricon]: ./media/apis-list/googlecalendar.png
-[Google-Tasksicon]: ./media/apis-list/googletasks.png
-[Google-Sheetsicon]: ./media/apis-list/googlesheet.png
 [Mandrillicon]: ./media/apis-list/mandrill.png
 [SparkPosticon]: ./media/apis-list/sparkpost.png
 [Instagramicon]: ./media/apis-list/instagram.png
 [YouTubeicon]: ./media/apis-list/youtube.png
-[HTTPicon]: ./media/apis-list/http.png
-[HTTP~Requesticon]: ./media/apis-list/request.png
-[HTTP~Responseicon]: ./media/apis-list/response.png
 [Delayicon]: ./media/apis-list/delay.png
 [HTTP-Swaggericon]: ./media/apis-list/http_swagger.png
 [Queryicon]: ./media/apis-list/query.png
 [Webhookicon]: ./media/apis-list/webhook.png
-[Azure~Functionsicon]: ./media/apis-list/function.png
 [API/Web-Appicon]: ./media/apis-list/api.png
 [Nested~Logic-Appicon]: ./media/apis-list/workflow.png
 [Recurrenceicon]: ./media/apis-list/recurrence.png
@@ -192,6 +197,6 @@ Os conectores também podem ser utilizados como ações nas aplicações. As aç
 
 
 
-<!--HONumber=ago16_HO4--->
+<!--HONumber=Sep16_HO3-->
 
 

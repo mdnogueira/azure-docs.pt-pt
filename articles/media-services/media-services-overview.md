@@ -1,5 +1,5 @@
 <properties 
-    pageTitle="Descrição Geral e Cenários Comuns dos Media Services do Azure" 
+    pageTitle="Descrição geral e cenários comuns dos Serviços de Multimédia do Azure | Microsoft Azure" 
     description="Este tópico fornece uma descrição geral dos Media Services do Azure" 
     services="media-services" 
     documentationCenter="" 
@@ -13,10 +13,11 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="hero-article" 
-    ms.date="08/07/2016"
+    ms.date="09/19/2016"
     ms.author="juliako;anilmur"/>
 
-#Descrição Geral e Cenários Comuns dos Media Services do Azure
+
+#Descrição geral e cenários comuns dos Serviços de Multimédia do Azure
 
 Os Media Services do Microsoft Azure são uma plataforma baseado na nuvem extensível que permite aos programadores compilar uma gestão de multimédia dimensionável e aplicações de entrega. Os Media Services são baseados nas APIs REST, que permitem carregar, armazenar, codificar e empacotar de forma segura conteúdos de vídeo ou áudio, para o envio de transmissão em fluxo tanto a pedido como em direto para vários clientes (por exemplo, TV, PC e dispositivos móveis).
 
@@ -24,19 +25,19 @@ Pode compilar fluxos de trabalho ponto-a-ponto utilizando inteiramente os Media 
 
 Pode também optar por transmitir os seus conteúdos em direto ou enviar conteúdos a pedido. Este tópico mostra cenários comuns para a entrega dos seus conteúdos [em direto](media-services-overview.md#live_scenarios) ou [a pedido](media-services-overview.md#vod_scenarios). O tópico também está ligado a outros tópicos relevantes.
 
-## SDKs e ferramentas 
+## SDKs e ferramentas
 
 Para compilar soluções de Media Services, pode utilizar:
 
 - [API REST dos Media Services](https://msdn.microsoft.com/library/azure/hh973617.aspx)
-- Um dos SDKs do Cliente disponíveis: 
-    - [SDK do .NET dos Media Services do Azure](https://github.com/Azure/azure-sdk-for-media-services), 
-    - [Azure SDK para Java](https://github.com/Azure/azure-sdk-for-java), 
-    - [SDK do PHP do Azure](https://github.com/Azure/azure-sdk-for-php), 
-    - [Media Services do Azure para Node.js](https://github.com/michelle-becker/node-ams-sdk/blob/master/lib/request.js) (Esta é uma versão não Microsoft de um SDK Node.js. Esta é mantida por uma comunidade e não tem atualmente uma cobertura de 100% das APIs do AMS). 
-- Ferramentas existentes: 
-    - [Portal Clássico do Azure](http://manage.windowsazure.com/) 
-    - [Explorador de Media Services do Azure](https://github.com/Azure/Azure-Media-Services-Explorer) (AMSE – Azure Media Services Explorer, uma aplicação Winforms/C# para Windows)
+- Um dos SDKs do Cliente disponíveis:
+- [SDK do .NET dos Media Services do Azure](https://github.com/Azure/azure-sdk-for-media-services),
+- [Azure SDK para Java](https://github.com/Azure/azure-sdk-for-java),
+- [SDK do PHP do Azure](https://github.com/Azure/azure-sdk-for-php),
+- [Media Services do Azure para Node.js](https://github.com/michelle-becker/node-ams-sdk/blob/master/lib/request.js) (Esta é uma versão não Microsoft de um SDK Node.js. Esta é mantida por uma comunidade e não tem atualmente uma cobertura de 100% das APIs do AMS).
+- Ferramentas existentes:
+- [Portal Clássico do Azure](http://manage.windowsazure.com/)
+- [Explorador de Media Services do Azure](https://github.com/Azure/Azure-Media-Services-Explorer) (AMSE – Azure Media Services Explorer, uma aplicação Winforms/C# para Windows)
 
 ##Percursos de aprendizagem dos Media Services
 
@@ -48,13 +49,13 @@ Pode ver percurso de aprendizagem do AMS aqui:
 ##Pré-requisitos
 
 Para começar a utilizar os Media Services do Azure, deve ter o seguinte:
- 
+
 3. Uma conta do Azure. Se não tiver uma conta, pode criar uma conta de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com).
 2. Uma conta de Media Services do Azure Utilize o Portal Clássico do Azure, .NET ou a API REST para criar uma conta dos Media Services do Azure. Para obter mais informações, consulte [Criar Conta](media-services-create-account.md).
-3. (Opcional) Configurar o ambiente de desenvolvimento. Escolha .NET ou a API REST para o ambiente de desenvolvimento. Para obter mais informações, consulte [Configurar o ambiente](media-services-dotnet-how-to-use.md). 
+3. (Opcional) Configurar o ambiente de desenvolvimento. Escolha .NET ou a API REST para o ambiente de desenvolvimento. Para obter mais informações, consulte [Configurar o ambiente](media-services-dotnet-how-to-use.md).
 
-    Além disso, saiba como se ligar através de programação [Ligar](media-services-dotnet-connect-programmatically.md).
-4. (Recomendado) Atribua uma ou mais unidades de escala. É recomendado alocar uma ou mais unidades de escala para as aplicações no ambiente de produção.   Para obter mais informações, consulte [Gerir pontos finais de transmissão em fluxo](media-services-manage-origins.md).
+Além disso, saiba como se ligar através de programação [Ligar](media-services-dotnet-connect-programmatically.md).
+4. (Recomendado) Atribua uma ou mais unidades de escala. É recomendado alocar uma ou mais unidades de escala para as aplicações no ambiente de produção.   Para obter mais informações, consulte [Gerir pontos finais de transmissão em fluxo](media-services-portal-manage-streaming-endpoints.md).
 
 ##Conceitos e descrição geral
 
@@ -135,14 +136,14 @@ Ao trabalhar com Transmissão em Fluxo em Direto, os seguintes componentes estã
 - Uma câmara, que é utilizada para difundir um evento.
 - Um codificador vídeo em direto que converte sinais da câmara para transmissões em fluxos que são enviadas para um serviço de transmissão em fluxo em direto.
 
-    Opcionalmente, vários codificadores com sincronização de hora em direto. Para determinados eventos críticos em direto que exigem uma enorme disponibilidade e qualidade da experiência, é recomendado utilizar codificadores ativo-ativo com sincronização de hora para obter uma ativação pós-falha totalmente integrada sem perda de dados.
+Opcionalmente, vários codificadores com sincronização de hora em direto. Para determinados eventos críticos em direto que exigem uma enorme disponibilidade e qualidade da experiência, é recomendado utilizar codificadores ativo-ativo com sincronização de hora para obter uma ativação pós-falha totalmente integrada sem perda de dados.
 - Um serviço de transmissão em fluxo em direto que permite realizar o seguinte:
-    
-    - inserir conteúdos em direto utilizando vários protocolos de transmissão em fluxo em direto (por exemplo, RTMP ou Transmissão em Fluxo Uniforme)
-    - (opcionalmente) codificação da sua transmissão para uma transmissão em fluxo de velocidade de transmissão adaptável
-    - pré-visualizar a sua transmissão em fluxo em direto
-    - gravar e armazenar os conteúdos inseridos de forma a transmiti-los em fluxo posteriormente (Vídeo a Pedido)
-    - distribuir os conteúdos através de protocolos de transmissão em fluxo comuns (por exemplo, MPEG DASH, Uniforme, HLS, HDS) diretamente para os seus clientes ou para uma Rede de Entrega de Conteúdos (CDN) para uma maior distribuição.
+
+- inserir conteúdos em direto utilizando vários protocolos de transmissão em fluxo em direto (por exemplo, RTMP ou Transmissão em Fluxo Uniforme)
+- (opcionalmente) codificação da sua transmissão para uma transmissão em fluxo de velocidade de transmissão adaptável
+- pré-visualizar a sua transmissão em fluxo em direto
+- gravar e armazenar os conteúdos inseridos de forma a transmiti-los em fluxo posteriormente (Vídeo a Pedido)
+- distribuir os conteúdos através de protocolos de transmissão em fluxo comuns (por exemplo, MPEG DASH, Uniforme, HLS, HDS) diretamente para os seus clientes ou para uma Rede de Entrega de Conteúdos (CDN) para uma maior distribuição.
 
 
 Os **Media Services do Microsoft Azure** (AMS) fornecem a capacidade de inserir, codificar, pré-visualizar, armazenar e distribuir os seus conteúdos por transmissão em fluxo em direto.
@@ -155,8 +156,8 @@ Um **Canal** representa um pipeline de processamento de conteúdos de transmiss�
 
 - Um codificador em direto no local envia um **RTMP** ou uma **Transmissão em Fluxo Uniforme** com velocidade de transmissão múltipla (MP4 fragmentado) para o Canal configurado para distribuição **pass-through**. A distribuição **pass-through** ocorre quando as transmissões em fluxo inseridas passam pelos **Canais** sem qualquer processamento adicional. Pode utilizar os seguintes codificadores em direto que transmitam uma Transmissão em Fluxo Uniforme com velocidade de transmissão múltipla: Elementar, Envivio, Cisco.  Os seguintes codificadores em direito transmitem RTMP: transcodificadores Tricaster, Telestream Wirecast e Adobe Flash Live.  Um codificador em direto pode também enviar uma transmissão em fluxo de velocidade de transmissão única para um canal, que não está ativado para live encoding, mas tal não é recomendado. Quando solicitado, os Media Services disponibilizam a transmissão em fluxo para os clientes.
 
-    >[AZURE.NOTE] A utilização de um método pass-through é a forma mais económica de realizar uma transmissão em fluxo em direto quando estiver a realizar vários eventos durante um longo período de tempo e já investiu em codificadores no local. Consulte os detalhes dos [preços](/pricing/details/media-services/).
-    
+>[AZURE.NOTE] A utilização de um método pass-through é a forma mais económica de realizar uma transmissão em fluxo em direto quando estiver a realizar vários eventos durante um longo período de tempo e já investiu em codificadores no local. Consulte os detalhes dos [preços](/pricing/details/media-services/).
+
 - Um codificador em direto no local envia uma transmissão fluxo de velocidade única para o Canal ativado para realizar live encoding com os Media Services num dos seguintes formatos: RTP (MPEG-TS), RTMP ou Transmissão em Fluxo Uniforme (MP4 fragmentado). O Canal, em seguida, realiza live encoding da transmissão em fluxo de velocidade de transmissão única de entrada para uma transmissão em fluxo de vídeo com várias velocidades (adaptável). Quando solicitado, os Media Services disponibilizam a transmissão em fluxo para os clientes.
 
 
@@ -185,7 +186,7 @@ Os Media Services do Azure fornecem as ferramentas necessárias para criar aplic
 
 ##Ativar a CDN do Azure
 
-Os Media Services suportam a integração com a CDN do Azure. Para obter mais informações sobre como ativar a CDN do Azure, consulte [Como Gerir Transmissão em Fluxo de Pontos Finais numa Conta de Media Services](media-services-manage-origins.md#enable_cdn).
+Os Media Services suportam a integração com a CDN do Azure. Para obter mais informações sobre como ativar a CDN do Azure, consulte [Como Gerir Transmissão em Fluxo de Pontos Finais numa Conta de Media Services](media-services-portal-manage-streaming-endpoints.md).
 
 ##Escalar uma conta dos Media Services
 
@@ -193,7 +194,7 @@ Pode escalar **Media Services** especificando o número das **Unidades Reservada
 
 Também pode escalar a sua conta dos Media Services adicionando-lhe contas deo Storage. Cada conta do Storage está limitada a 500 TB. Para expandir o limite predefinido do seu armazenamento, pode optar por ligar várias contas do Storage numa única conta de Media Services.
 
-[Este](media-services-how-to-scale.md) tópico está ligado a tópicos relevantes.
+[Este](media-services-portal-scale-streaming-endpoints.md) tópico está ligado a tópicos relevantes.
 
 ##Suporte
 
@@ -222,6 +223,6 @@ Para obter mais informações, consulte [SLA do Microsoft Azure](https://azure.m
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -1,5 +1,5 @@
 <properties 
-    pageTitle="Implementar a sua primeira aplicação Web Java no Azure em cinco minutos | Microsoft Azure" 
+    pageTitle="Implementar a primeira aplicação Web Java no Azure em cinco minutos | Microsoft Azure" 
     description="Saiba como é fácil executar aplicações Web no Serviço de Aplicações ao implementar uma aplicação de exemplo. Comece a programar verdadeiramente em pouco tempo e a ver resultados imediatos." 
     services="app-service\web"
     documentationCenter=""
@@ -18,10 +18,11 @@
     ms.author="cephalin"
 />
     
-# Implementar a sua primeira aplicação Web Java no Azure em cinco minutos
+
+# Implementar a primeira aplicação Web Java no Azure em cinco minutos
 
 Este tutorial ajuda-o a implementar uma aplicação Web Java simples no [Serviço de Aplicações do Azure](../app-service/app-service-value-prop-what-is.md).
-Pode utilizar o Serviço de Aplicações para criar aplicações Web, [back-ends de aplicações móveis](/documentation/learning-paths/appservice-mobileapps/) e [aplicações API](../app-service-api/app-service-api-apps-why-best-platform.md).
+Pode utilizar o Serviço de Aplicações para criar aplicações, [back-ends de aplicações móveis](/documentation/learning-paths/appservice-mobileapps/) e [aplicações API](../app-service-api/app-service-api-apps-why-best-platform.md).
 
 Irá: 
 
@@ -51,7 +52,7 @@ Irá:
     - **Grupo de recursos**: selecione **Criar novo** e dê um nome ao grupo de recursos.
     - **Plano do Serviço de Aplicações/Localização**: clique nele para configurar e, em seguida, clique em **Criar Novo** para definir o nome, a localização e o escalão de preço do plano do Serviço de Aplicações. Pode utilizar o escalão de preço **Gratuito**.
 
-    Quando tiver terminado, o painel de criação da aplicação deverá ter este aspeto:
+    Quando tiver terminado, o painel de criação da aplicação deverá este aspeto:
 
     ![](./media/app-service-web-get-started-languages/create-web-app-settings.png)
 
@@ -67,11 +68,11 @@ Irá:
 
     ![](./media/app-service-web-get-started-languages/create-web-app-resource.png)
 
-## Implementar uma aplicação Java para a sua aplicação Web
+## Implementar uma aplicação Java na aplicação Web
 
 Agora, vamos implementar uma aplicação Java no Azure através de FTPS.
 
-5. No painel da aplicação Web, desloque-se até às **Definições da aplicação** ou procure as mesmas e, em seguida, clique nestas. 
+5. No painel da aplicação Web, desloque-se até às **Definições da aplicação** ou procure-as e, em seguida, clique na opção. 
 
     ![](./media/app-service-web-get-started-languages/set-java-application-settings.png)
 
@@ -79,13 +80,13 @@ Agora, vamos implementar uma aplicação Java no Azure através de FTPS.
 
     ![](./media/app-service-web-get-started-languages/set-java-application-settings.png)
 
-    Quando receber a notificação **Definições da aplicação Web atualizadas com êxito**, navegue para http://*&lt;nomeaplic>*.azurewebsites.net para ver a servlet JSP predefinida em ação.
+    Quando receber a notificação **Definições da aplicação Web atualizadas com êxito**, navegue para http://*&lt;nomedaaplicação>*.azurewebsites.net para ver o servlet JSP predefinido em ação.
 
-7. Novamente no painel da aplicação Web, desloque-se para baixo até às **Credenciais de implementação** ou procure as mesmas e, em seguida, clique nestas.
+7. Novamente no painel da aplicação Web, desloque-se para baixo até às **Credenciais de implementação** ou procure-as e, em seguida, clique na opção.
 
 8. Defina as suas credenciais de implementação e clique em **Guardar**.
 
-7. Novamente no painel da aplicação Web, clique em **Descrição geral**. Junto a **Nome de utilizador de FTP/Implementação** e de **Nome do anfitrião FTPS**, clique no botão **Copiar** para copiar estes valores.
+7. Novamente no painel da aplicação Web, clique em **Descrição geral**. Junto do **Nome de utilizador de FTP/Implementação** e do **Nome do anfitrião FTPS**, clique no botão **Copiar** para copiar esses valores.
 
     ![](./media/app-service-web-get-started-languages/get-ftp-url.png)
 
@@ -97,21 +98,21 @@ Agora, vamos implementar uma aplicação Java no Azure através de FTPS.
 
     ![](./media/app-service-web-get-started-languages/filezilla-login.png)
 
-    Poderá ver avisos de segurança para o certificado SSL não reconhecido do Azure. Inicie sessão e continue.
+    Poderá ver avisos de segurança para o certificado SSL não reconhecido pelo Azure. Inicie sessão e continue.
 
 9. Clique [nesta ligação](https://github.com/Azure-Samples/app-service-web-java-get-started/raw/master/webapps/ROOT.war) para transferir o ficheiro WAR para o computador local.
 
-9. No cliente FTP/FTPS, navegue até **/site/wwwroot/webapps** no site remoto e arraste o ficheiro WAR transferido no seu computador local para esse diretório remoto.
+9. No cliente FTP/FTPS, navegue até **/site/wwwroot/webapps** no site remoto e arraste o ficheiro WAR transferido do computador local para esse diretório remoto.
 
     ![](./media/app-service-web-get-started-languages/transfer-war-file.png)
 
     Clique em **OK** para substituir o ficheiro no Azure.
 
-    >[AZURE.NOTE] Em conformidade com o comportamento predefinido do Tomcat, o nome de ficheiro **ROOT.war** em /site/wwwroot/webapps dá-lhe a aplicação Web de raiz (http://*&lt;nomeaplic>*.azurewebsites.net) e o nome de ficheiro ***&lt;qualquernome>*.war** dá-lhe uma aplicação Web nomeada (http://*&lt;nomeaplic>*.azurewebsites.net/*&lt;qualquernome>*).
+    >[AZURE.NOTE] Em conformidade com o comportamento predefinido do Tomcat, o nome de ficheiro **ROOT.war** em /site/wwwroot/webapps dá-lhe a aplicação Web de raiz (http://*&lt;nomedaaplicação>*.azurewebsites.net) e o nome de ficheiro ***&lt;qualquernome>*.war** dá-lhe uma aplicação Web nomeada (http://*&lt;nomedaaplicação>*.azurewebsites.net/*&lt;qualquernome>*).
 
 Já está! A aplicação Java já está em execução em direto no Azure. No seu browser, navegue para http://*&lt;nomeaplic>*.azurewebsites.net para vê-lo em ação. 
 
-## Fazer atualizações à sua aplicação
+## Efetuar atualizações à sua aplicação
 
 Sempre que precisar de fazer uma atualização, basta carregar o novo ficheiro WAR para o mesmo diretório remoto com o seu cliente FTP/FTPS.
 
@@ -124,11 +125,11 @@ Depure a sua aplicação Web do Azure diretamente no [IntelliJ](app-service-web-
 Em alternativa, faça mais com a sua primeira aplicação Web. Por exemplo:
 
 - Experimente [outras formas de implementar o seu código no Azure](../app-service-web/web-sites-deploy.md). Por exemplo, para implementar a partir de um dos seus repositórios do GitHub, só tem de selecionar **GitHub** em vez de **Repositório de Git Local** nas **Opções de implementação**.
-- Eleve a sua aplicação do Azure ao nível seguinte. Autentique os seus utilizadores. Dimensione-a com base no pedido. Configure alguns alertas de desempenho. Tudo com apenas alguns cliques. Consulte o artigo [Adicionar funcionalidade à sua primeira aplicação Web](app-service-web-get-started-2.md).
+- Eleve a sua aplicação do Azure ao nível seguinte. Autentique os seus utilizadores. Dimensione-a com base no pedido. Configure alguns alertas de desempenho. Tudo com apenas alguns cliques. Consulte [Adicionar funcionalidades à sua primeira aplicação Web](app-service-web-get-started-2.md).
 
 
 
 
-<!----HONumber=Sep16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

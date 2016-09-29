@@ -17,15 +17,16 @@
    ms.date="08/31/2016"
    ms.author="cherylmc"/>
 
+
 # Configurar uma ligação de Ponto a Site a uma VNet através do portal clássico
 
 > [AZURE.SELECTOR]
-- [PowerShell – Resource Manager](vpn-gateway-howto-point-to-site-rm-ps.md)
-- [Portal – Clássico](vpn-gateway-point-to-site-create.md)
+- [Resource Manager – PowerShell](vpn-gateway-howto-point-to-site-rm-ps.md)
+- [Clássica – Portal Clássico](vpn-gateway-point-to-site-create.md)
 
 Uma configuração Ponto a Site (P2S) permite-lhe criar uma ligação segura a partir de um computador cliente individual para a sua rede virtual. Uma ligação P2S é útil quando pretende ligar a VNet a partir de uma localização remota, por exemplo, quando está em casa ou numa conferência ou quando tem apenas alguns clientes que precisam de se ligar a uma rede virtual.
 
-Este artigo explica-lhe como criar uma VNet com uma ligação Ponto a Site no **modelo de implementação clássica** através do portal clássico. Atualmente, não pode criar esta configuração do princípio ao fim para o modelo de implementação clássica no portal do Azure 
+Este artigo explica-lhe como criar uma VNet com uma ligação Ponto a Site no **modelo de implementação clássica** através do **portal clássico**. Atualmente, não pode criar esta configuração do princípio ao fim para o modelo de implementação clássica no portal do Azure  Embora possa realizar alguns dos passos no Portal do Azure, o PowerShell ainda é necessário para transferir a configuração do cliente VPN.
 
 As ligações Ponto a Site não precisam de nenhum dispositivo VPN ou endereço IP destinado ao público para funcionar. É estabelecida uma ligação VPN ao iniciar a ligação a partir do computador cliente. Para obter mais informações sobre ligações Ponto a Site, veja [FAQ do Gateway de VPN](vpn-gateway-vpn-faq.md#point-to-site-connections) e [Planeamento e Conceção](vpn-gateway-plan-design.md).
 
@@ -102,7 +103,7 @@ Nesta secção irá efetuar o seguinte:
 
 ### <a name="root"></a>Parte 1: obtenha o ficheiro .cer para o certificado de raiz
 
-Se estiver a utilizar um sistema de certificado de empresa, obtenha o ficheiro .cer para o certificado de raiz que pretende utilizar. Na [Parte 3](#createclientcert), irá gerar os certificados de cliente a partir do certificado de raiz.
+Se estiver a utilizar um sistema de certificado de empresa, obtenha o ficheiro .cer para o certificado de raiz que pretende utilizar. Na [Parte 3](#createclientcert), pode gerar os certificados de cliente a partir do certificado de raiz.
 
 Se não estiver a utilizar uma solução de certificados de raiz, terá de gerar um certificado de raiz autoassinado. Para obter os passos para o Windows 10, pode ver [Trabalhar com certificados de raiz autoassinados para configurações Ponto a Site](vpn-gateway-certificates-point-to-site.md). O artigo vai orientá-lo utilizando o makecert para gerar um certificado autoassinado e, em seguida, exportar o ficheiro .cer.
 
@@ -195,6 +196,6 @@ Se pretender obter mais informações sobre Redes Virtuais, veja a página [Docu
 
 
 
-<!--HONumber=sep16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

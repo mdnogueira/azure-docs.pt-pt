@@ -13,8 +13,9 @@
     ms.topic="hero-article"
     ms.tgt_pltfrm="vm-windows-sql-server"
     ms.workload="infrastructure-services"
-    ms.date="06/21/2016"
+    ms.date="09/20/2016"
     ms.author="jroth" />
+
 
 # Aprovisionar uma máquina virtual do SQL Server no Portal do Azure
 
@@ -125,6 +126,7 @@ No painel **Definições do SQL Server**, configure definições e otimizações
 | [Aplicação de Patches Automatizada](#automated-patching) |
 | [Cópia de Segurança Automatizada](#automated-backup)             |
 | [Integração do Cofre de Chaves do Azure](#azure-key-vault-integration)             |
+| [Serviços R](#r-services) |
 
 ### Conectividade
 Em **Conectividade do SQL**, especifique o tipo de acesso que pretende para a instância do SQL Server nesta VM. Para efeitos deste tutorial, selecione **Público (Internet)** para permitir ligações ao SQL Server a partir de máquinas ou serviços na Internet. Com esta opção selecionada, o Azure configura automaticamente a firewall e o grupo de segurança de rede para permitir tráfego na porta 1433.  
@@ -141,6 +143,8 @@ Se preferir não ativar ligações para o Motor de Base de dados através da Int
 - **Privada (na Virtual Network)** para permitir ligações ao SQL Server a partir de máquinas ou serviços na mesma rede virtual.
 
 Em geral, melhore a segurança, selecionando a conectividade mais restritiva que permite o seu cenário. Mas todas as opções têm capacidade de segurança através das regras do Grupo de Segurança de Rede e Autenticação do SQL/Windows.
+
+>[AZURE.NOTE] As imagens da máquina virtual das edições SQL Server Express ou Developer não ativam automaticamente o protocolo TCP/IP. Tal impede a conetividade remota, mesmo se tiver selecionado Público ou Privado no portal. Para edições Express e Developer, deve utilizar o Gestor de Configuração do SQL Server para [ativar manualmente o protocolo TCP/IP](virtual-machines-windows-sql-connect.md#configure-sql-server-to-listen-on-the-tcp-protocol) depois de criar a VM.
 
 A predefinição da **Porta** é 1433. Pode especificar um número de porta diferente.
 Para obter mais informações, consulte o artigo [Ligar a uma Máquina Virtual do SQL Server (Resource Manager) | Microsoft Azure](virtual-machines-windows-sql-connect.md).
@@ -178,7 +182,7 @@ A **Aplicação de patches automatizada** está ativada por predefinição. A Ap
 
 ![Aplicação de Patches Automatizada do SQL](./media/virtual-machines-windows-portal-sql-server-provision/azure-sql-arm-patching.png)
 
-Para obter mais informações, consulte o artigo [Aplicação de Patches Automatizada para o SQL Server nas Virtual Machines do Azure](virtual-machines-windows-classic-sql-automated-patching.md).
+Para obter mais informações, consulte o artigo [Aplicação de Patches Automatizada para o SQL Server nas Virtual Machines do Azure](virtual-machines-windows-sql-automated-patching.md).
 
 ### Cópia de segurança automatizada
 Ative as cópias de segurança de bases de dados automáticas em **Cópia de segurança automatizada**. A cópia de segurança automatizada está desativada por predefinição.
@@ -193,7 +197,7 @@ Para encriptar a cópia de segurança, clique em **Ativar**. Em seguida, especif
 
 ![Cópia de Segurança Automatizada do SQL](./media/virtual-machines-windows-portal-sql-server-provision/azure-sql-arm-autobackup.png)
 
- Para obter mais informações, consulte o artigo [Cópia de Segurança Automatizada para o SQL Server nas Virtual Machines do Azure](virtual-machines-windows-classic-sql-automated-backup.md).
+ Para obter mais informações, consulte o artigo [Cópia de Segurança Automatizada para o SQL Server nas Virtual Machines do Azure](virtual-machines-windows-sql-automated-backup.md).
 
 ### Integração do Cofre de Chaves do Azure
 Para armazenar segredos de segurança no Azure para a encriptação, clique em **Integração do cofre de chaves do Azure** e clique em **Ativar**.
@@ -209,9 +213,16 @@ A tabela seguinte lista os parâmetros necessários para configurar a Integraç�
 | **Segredo principal**|Segredo principal do serviço Azure Active Directory. Este segredo também é referido como o Segredo do Cliente. | 9VTJSQwzlFepD8XODnzy8n2V01Jd8dAjwm/azF1XDKM=|
 |**Nome da credencial**|**Nome da credencial**: a Integração AKV cria uma credencial dentro do SQL Server, permitindo que a VM tenha acesso ao cofre de chaves. Escolha um nome para esta credencial.| mycred1|
 
-Para obter mais informações, consulte o artigo [Configurar a Integração do Cofre de Chaves do Azure para o SQL Server em VMs do Azure](virtual-machines-windows-classic-ps-sql-keyvault.md).
+Para obter mais informações, consulte o artigo [Configurar a Integração do Cofre de Chaves do Azure para o SQL Server em VMs do Azure](virtual-machines-windows-ps-sql-keyvault.md).
 
 Quando tiver terminado de configurar as definições do SQL Server, clique em **OK**.
+
+### Serviços R
+Para a edição SQL Server 2016 Enterprise, tem a opção de ativar os [Serviços R do SQL Server](https://msdn.microsoft.com/library/mt604845.aspx). Esta ação permite-lhe utilizar a análise avançada com o SQL Server 2016. Clique em **Ativar** no painel **Definições do SQL Server**.
+
+![Ativar os Serviços R do SQL Server](./media/virtual-machines-windows-portal-sql-server-provision/azure-vm-sql-server-r-services.png)
+
+>[AZURE.NOTE] Para imagens do SQL Server que não são da edição 2016 Enterprise, a opção para ativar os Serviços R está desativada.
 
 ## 5. Reveja o resumo
 No painel **Resumo**, reveja o resumo e clique em **OK** para criar o SQL Server, o grupo de recursos e recursos especificados para esta VM.
@@ -257,6 +268,6 @@ Para obter uma descrição geral do vídeo do SQL Server em Virtual Machines do 
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

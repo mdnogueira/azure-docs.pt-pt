@@ -17,13 +17,14 @@
    ms.date="08/30/2016"
    ms.author="larryfr"/>
 
+
 #Utilizar o SSH com o Hadoop baseado em Linux no HDInsight a partir do Windows
 
 > [AZURE.SELECTOR]
 - [Windows](hdinsight-hadoop-linux-use-ssh-windows.md)
 - [Linux, Unix, OS X](hdinsight-hadoop-linux-use-ssh-unix.md)
 
-O [Secure Shell (SSH)](https://en.wikipedia.org/wiki/Secure_Shell) permite-lhe efetuar operações remotamente nos seus clusters do HDInsight baseados em Linux utilizando uma interface de linha de comandos. Este documento fornece informações sobre a ligação ao HDInsight a partir de clientes baseados em Windows através do cliente SSH PuTTY.
+O [Secure Shell (SSH)](https://en.wikipedia.org/wiki/Secure_Shell) permite-lhe efetuar operações remotamente nos seus clusters do HDInsight baseado em Linux utilizando uma interface de linha de comandos. Este documento fornece informações sobre a ligação ao HDInsight a partir de clientes baseados em Windows através do cliente SSH PuTTY.
 
 > [AZURE.NOTE] Os passos deste artigo partem do princípio de que está a utilizar um cliente baseado em Windows. Se estiver a utilizar um cliente Linux, Unix ou OS X, consulte [Utilizar o SSH com o Hadoop baseado em Linux no HDInsight a partir do Linux, Unix ou OS X](hdinsight-hadoop-linux-use-ssh-unix.md).
 >
@@ -141,7 +142,7 @@ Para obter mais informações sobre a utilização deste comando, consulte [Apro
 
 6. Quando lhe for pedido, introduza o utilizador que introduziu ao criar o cluster. Caso tenha fornecido uma palavra-passe para o utilizador, também lhe é pedido que a introduza.
 
-> [AZURE.NOTE] Os passos acima partem do princípio de que está a utilizar a porta 22, que ligará ao nó principal 0 no cluster do HDInsight. Se utilizar a porta 23, ligar-se-á ao nó principal 1. Para obter mais informações sobre os nós principais, consulte [Disponibilidade e fiabilidade de clusters do Hadoop no HDInsight](hdinsight-high-availability-linux.md).
+> [AZURE.NOTE] Os passos acima partem do princípio de que está a utilizar a porta 22, que ligará ao nó principal primário no cluster do HDInsight. Se utilizar a porta 23, liga-se ao secundário. Para obter mais informações sobre os nós principais, consulte [Disponibilidade e fiabilidade de clusters do Hadoop no HDInsight](hdinsight-high-availability-linux.md).
 
 ###Ligar a nós de trabalho
 
@@ -185,9 +186,9 @@ Se forneceu uma chave SSH quando criou a sua conta de utilizador, tem de executa
 
     > [AZURE.NOTE] Se utilizar uma palavra-passe para autenticar a sessão SSH, é-lhe pedido que introduza novamente a palavra-passe. Se utilizar uma chave SSH, a ligação deverá ser concluída sem serem apresentados quaisquer pedidos.
 
-9. Quando a sessão for estabelecida, o prompt da sessão do PuTTY mudará de `username@hn0-clustername` para `username@wn0-clustername` para indicar que está ligado ao nó de trabalho. Todos os comandos que executar neste momento serão executados no nó de trabalho.
+9. Quando a sessão for estabelecida, o prompt da sessão do PuTTY mudará de `username@hn#-clustername` para `username@wn#-clustername` para indicar que está ligado ao nó de trabalho. Todos os comandos que executar neste momento serão executados no nó de trabalho.
 
-10. Quando terminar de realizar ações no nó de trabalho, utilize o comando `exit` para fechar a sessão no nó de trabalho. Desta forma, regressa ao prompt `username@hn0-clustername`.
+10. Quando terminar de realizar ações no nó de trabalho, utilize o comando `exit` para fechar a sessão no nó de trabalho. Desta forma, regressa ao prompt `username@hn#-clustername`.
 
 ##Adicionar mais contas
 
@@ -239,6 +240,6 @@ Agora que sabe como efetuar a autenticação com uma chave SSH, saiba como utili
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

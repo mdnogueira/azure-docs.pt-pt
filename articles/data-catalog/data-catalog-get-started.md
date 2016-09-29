@@ -13,27 +13,26 @@
     ms.topic="get-started-article"
     ms.tgt_pltfrm="NA"
     ms.workload="data-catalog"
-    ms.date="07/06/2016"
+    ms.date="09/20/2016"
     ms.author="spelluru"/>
+
 
 # Introdução ao Catálogo de Dados do Azure
 O Catálogo de Dados do Azure é um serviço em nuvem totalmente gerido que funciona como um sistema de registo e um sistema de deteção de recursos de dados empresariais. Para obter uma descrição detalhada, veja [O que é o Catálogo de Dados do Azure](data-catalog-what-is-data-catalog.md).
 
-Este tutorial ajuda-o a começar a utilizar o Catálogo de Dados do Azure. Vai fazer os procedimentos seguintes:
+Este tutorial ajuda-o a começar a utilizar o Catálogo de Dados do Azure. Neste tutorial, vai executar os seguintes procedimentos:
 
 | Procedimento | Descrição |
 | :--- | :---------- |
-| [Aprovisionar o catálogo de dados](#provision-data-catalog) | Neste procedimento, vai aprovisionar ou configurar o Catálogo de Dados do Azure. Este passo só é feito se o catálogo ainda não tiver sido configurado. Só pode ter um catálogo de dados por organização (domínio do Microsoft Azure Active Directory), apesar de existirem várias subscrições associadas à sua conta do Azure. |
+| [Aprovisionar o catálogo de dados](#provision-data-catalog) | Neste procedimento, vai aprovisionar ou configurar o Catálogo de Dados do Azure. Só realizará este passo se o catálogo ainda não tiver sido configurado. Só pode ter um catálogo de dados por organização (domínio do Microsoft Azure Active Directory), apesar de existirem várias subscrições associadas à sua conta do Azure. |
 | [Registar recursos de dados](#register-data-assets) | Neste procedimento, vai registar recursos de dados da base de dados de exemplo AdventureWorks2014 no catálogo de dados. O registo é o processo de extrair metadados estruturais chave, por exemplo, nomes, tipos e localizações, a partir da origem de dados e copiar esses metadados para o catálogo. A origem de dados e os recursos de dados permanecem onde estão, mas os metadados são utilizados pelo catálogo para os tornar mais facilmente detetáveis e compreensíveis. |
 | [Detetar recursos de dados](#discover-data-assets) | Neste procedimento, vai utilizar o portal do Catálogo de Dados do Azure para detetar os recursos de dados que foram registados no passo anterior. Depois de uma origem de dados ter sido registada no Catálogo de Dados do Azure, o serviço indexa os metadados da mesma, para que os utilizadores possam procurar facilmente os dados de que precisam. |
-| [Anotar recursos de dados](#annotate-data-assets) | Neste procedimento, vai disponibilizar anotações (informações como descrições, etiquetas, documentação ou especialistas) para os recursos de dados, para complementar os metadados extraídos da origem de dados e para que esta se torne mais compreensível para as pessoas. |
-| [Ligar a recursos de dados](#connect-to-data-assets) | Neste procedimento, vai abrir os recursos de dados em ferramentas de cliente integradas (como o Excel e os SQL Server Data Tools) e numa ferramenta não integrada (SQL Server Management Studio) mediante a utilização de informações de ligação.  |
+| [Anotar recursos de dados](#annotate-data-assets) | Neste procedimento, vai fornecer anotações (informações como descrições, etiquetas, documentação ou especialistas) para os recursos de dados. Estas informações complementam os metadados extraídos da origem de dados, tornando a origem de dados mais compreensível para mais pessoas. |
+| [Ligar a recursos de dados](#connect-to-data-assets) | Neste procedimento, vai abrir os recursos de dados em ferramentas de cliente integradas (como o Excel e os SQL Server Data Tools) e numa ferramenta não integrada (SQL Server Management Studio). |
 | [Gerir recursos de dados](#manage-data-assets) | Neste procedimento, vai configurar a segurança dos recursos de dados. O Catálogo de Dados não dá acesso aos dados propriamente ditos aos utilizadores. O proprietário da origem de dados controla o acesso aos dados. <br/><br/> Com o Catálogo de Dados, pode detetar origens de dados e ver os **metadados** relacionados com as origens registadas no catálogo. Contudo, poderá haver situações em que as origens de dados devem estar visíveis apenas a determinados utilizadores ou a membros de grupos específicos. Nestes cenários, pode utilizar o Catálogo de Dados para assumir a propriedade dos recursos de dados registados no catálogo e controlar a visibilidade dos dados dos quais é proprietário. |
 | [Remover recursos de dados](#remove-data-assets) | Neste procedimento, vai aprender a remover recursos de dados do catálogo de dados. |  
 
 ## Pré-requisitos do tutorial
-
-Antes de começar este tutorial, tem de ter o seguinte.
 
 ### Subscrição do Azure
 Para configurar o Catálogo de Dados do Azure, tem de ser o proprietário ou coproprietário de uma subscrição do Azure.
@@ -43,13 +42,13 @@ As subscrições do Azure ajudam-no a organizar o acesso a recursos de serviços
 Se não tiver uma subscrição, pode criar uma conta gratuita em apenas alguns minutos. Veja [Avaliação Gratuita](https://azure.microsoft.com/pricing/free-trial/) para obter detalhes.
 
 ### Azure Active Directory
-Para configurar o Catálogo de Dados do Azure, tem de ter sessão iniciada com uma conta de utilizador do Azure Active Directory (Azure AD). O utilizador tem de ser o proprietário ou coproprietário de uma subscrição do Azure.  
+Para configurar o Catálogo de Dados do Azure, tem de ter sessão iniciada com uma conta de utilizador do Azure Active Directory (Azure AD). Tem de ser o proprietário ou coproprietário de uma subscrição do Azure.  
 
-O Azure AD proporciona uma forma fácil de a sua empresa gerir a identidade e o acesso, tanto na nuvem, como no local. Os utilizadores podem utilizar uma única conta escolar ou profissional para iniciar sessão em qualquer aplicação Web na nuvem ou no local. O Catálogo de Dados do Azure utiliza o Azure AD para autenticar o início de sessão. Para saber mais, veja [What is Azure Active Directory? (O que é o Azure Active Directory?)](../active-directory/active-directory-whatis.md).
+O Azure AD proporciona uma forma fácil de a sua empresa gerir a identidade e o acesso, tanto na nuvem, como no local. Pode utilizar uma única conta escolar ou profissional para iniciar sessão em qualquer aplicação Web na nuvem ou no local. O Catálogo de Dados do Azure utiliza o Azure AD para autenticar o início de sessão. Para saber mais, veja [What is Azure Active Directory? (O que é o Azure Active Directory?)](../active-directory/active-directory-whatis.md).
 
 ### Configuração de políticas do Azure Active Directory
 
-Pode deparar-se com casos em que consegue iniciar sessão no portal do Catálogo de Dados do Azure, mas quando tenta iniciá-la na ferramenta de registo da origem de dados, recebe uma mensagem de erro que o impede de o fazer. Estas situações podem ocorrer quando está na rede da empresa ou está a ligar de fora desta.
+Pode deparar-se com casos em que consegue iniciar sessão no portal do Catálogo de Dados do Azure, mas quando tenta iniciá-la na ferramenta de registo da origem de dados, recebe uma mensagem de erro que o impede de o fazer. Este erro pode ocorrer quando está na rede da empresa ou está a ligar de fora da rede da empresa.
 
 A ferramenta de registo utiliza a *autenticação de formulários* para validar os inícios de sessão dos utilizadores relativamente ao Azure Active Directory. Para um início de sessão bem-sucedido, o administrador do Azure Active Directory tem de ativar a autenticação de formulários na *política de autenticação global*.
 
@@ -59,13 +58,13 @@ Com a política de autenticação global, pode ativar a autenticação em separa
 
 Para obter mais informações, veja [Configuring authentication policies (Configurar políticas de autenticação)](https://technet.microsoft.com/library/dn486781.aspx).
 
-## Aprovisionar um catálogo de dados
+## Aprovisionar o catálogo de dados
 Pode aprovisionar apenas um catálogo de dados por organização (domínio do Azure Active Directory). Por conseguinte, se o proprietário ou coproprietário de uma subscrição do Azure que pertença a este domínio do Azure Active Directory já tiver criado um catálogo, não poderá criar um catálogo novamente, mesmo se tiver várias subscrições do Azure. Para testar se um catálogo de dados foi criado por um utilizador no seu domínio do Azure Active Directory, aceda à [home page do Catálogo de Dados do Azure](http://azuredatacatalog.com) e verifique se vê o catálogo. Se já tiver sido criado um catálogo para si, ignore o procedimento seguinte e avance para a próxima secção.    
 
 1. Aceda à [página do serviço Catálogo de Dados](https://azure.microsoft.com/services/data-catalog) e clique em **Começar**.
 
     ![Catálogo de Dados do Azure -- página de destino de marketing](media/data-catalog-get-started/data-catalog-marketing-landing-page.png)
-2. Inicie sessão com uma conta de utilizador que seja proprietária ou coproprietária de uma subscrição do Azure. Verá a seguinte página depois de iniciar sessão.
+2. Inicie sessão com uma conta de utilizador que seja proprietária ou coproprietária de uma subscrição do Azure. Após iniciar sessão, é apresentada a seguinte página.
 
     ![Catálogo de Dados do Azure -- aprovisionar catálogo de dados](media/data-catalog-get-started/data-catalog-create-azure-data-catalog.png)
 3. Especifique um **nome** para o catálogo de dados, a **subscrição** que pretende utilizar e a **localização** para o catálogo.
@@ -75,17 +74,17 @@ Pode aprovisionar apenas um catálogo de dados por organização (domínio do Az
     ![Catálogo de Dados do Azure -- utilizadores](media/data-catalog-get-started/data-catalog-add-catalog-user.png)
 6. Expanda **Administradores do Catálogo** e clique em **Adicionar** para adicionar outros administradores ao catálogo de dados. Você é adicionado automaticamente a este grupo.
     ![Catálogo de Dados do Azure -- administradores](media/data-catalog-get-started/data-catalog-add-catalog-admins.png)
-7. Clique em **Criar Catálogo** para criar o catálogo de dados da sua organização. Verá a home page do catálogo de dados depois de ser criado.
+7. Clique em **Criar Catálogo** para criar o catálogo de dados da sua organização. Após criar o catálogo de dados, é apresentada a respetiva home page.
     ![Catálogo de Dados do Azure -- criado](media/data-catalog-get-started/data-catalog-created.png)    
 
 ### Encontrar um catálogo de dados no portal do Azure
 1. Noutro separador do browser ou numa janela separada do browser, aceda ao [portal do Azure](https://portal.azure.com) e inicie sessão com a mesma conta que utilizou para criar o catálogo de dados no passo anterior.
 2. Selecione **Procurar** e, em seguida, clique em **Catálogo de Dados**.
 
-    ![Catálogo de Dados do Azure -- procurar no Azure](media/data-catalog-get-started/data-catalog-browse-azure-portal.png) Verá o catálogo de dados que criou.
+    ![Catálogo de Dados do Azure -- procurar no Azure](media/data-catalog-get-started/data-catalog-browse-azure-portal.png) É apresentado o catálogo de dados que criou.
 
     ![Catálogo de Dados do Azure - ver o catálogo na lista](media/data-catalog-get-started/data-catalog-azure-portal-show-catalog.png)
-4.  Clique no catálogo que criou. Verá o painel **Catálogo de Dados** no portal.
+4.  Clique no catálogo que criou. É apresentado o painel **Catálogo de Dados** no portal.
 
     ![Catálogo de Dados do Azure -- painel no portal ](media/data-catalog-get-started/data-catalog-blade-azure-portal.png)
 5. Pode ver as propriedades do catálogo de dados, bem como atualizá-las. Por exemplo, clique em **Escalão de preço** e altere a edição.
@@ -118,7 +117,7 @@ Neste exercício, vai utilizar a ferramenta de registo para registar recursos de
 
 ### Registar origens de dados
 
-1.  Aceda à [home page do Catálogo de Dados do Azure](https://azuredatacatlog.com) e clique em **Publicar Dados**.
+1.  Aceda à [home page do Catálogo de Dados do Azure](https://azuredatacatalog.com) e clique em **Publicar Dados**.
 
     ![Catálogo de Dados do Azure -- Botão “Publicar Dados”](media/data-catalog-get-started/data-catalog-publish-data.png)
 
@@ -142,12 +141,12 @@ Neste exercício, vai utilizar a ferramenta de registo para registar recursos de
 
     1. Na árvore da **Hierarquia do Servidor**, expanda **AdventureWorks2014** e clique em **Production**.
     2. Selecione **Product**, **ProductCategory**, **ProductDescription** e **ProductPhoto** com Ctrl+clique.
-    3. Clique na **seta “mover seleção”** (**>**). São movidos todos os objetos selecionados para a lista **Objetos a registar**.
+    3. Clique na **seta “mover seleção”** (**>**). Esta ação move todos os objetos selecionados para a lista **Objetos a registar**.
 
         ![Tutorial do Catálogo de Dados do Azure -- procurar e selecionar objetos](media/data-catalog-get-started/data-catalog-server-hierarchy.png)
     4. Selecione **Incluir uma Pré-visualização** para incluir uma pré-visualização de instantâneo dos dados. O instantâneo inclui até 20 registos de cada tabela e é copiado para o catálogo.
     5. Selecione **Incluir Perfil de Dados** para incluir um instantâneo das estatísticas dos objetos relativas ao perfil de dados (por exemplo, valores mínimos, máximos e médios de uma coluna, número de linhas, etc.).
-    6. No campo **Adicionar etiquetas**, introduza **adventure works, cycles**. Isto irá adicionar etiquetas de pesquisa a estes recursos de dados. As etiquetas são uma excelente forma de ajudar os utilizadores a localizar uma origem de dados registada.
+    6. No campo **Adicionar etiquetas**, introduza **adventure works, cycles**. Esta ação irá adicionar etiquetas de pesquisa a estes recursos de dados. As etiquetas são uma excelente forma de ajudar os utilizadores a localizar uma origem de dados registada.
     7. Especifique o nome de um **especialista** sobre estes dados (opcional).
 
         ![Tutorial do Catálogo de Dados do Azure -- objetos a registar](media/data-catalog-get-started/data-catalog-objects-register.png)
@@ -161,7 +160,7 @@ Neste exercício, vai utilizar a ferramenta de registo para registar recursos de
         ![Objetos no portal do Catálogo de Dados do Azure ](media/data-catalog-get-started/data-catalog-view-portal.png)
 
 
-Neste exercício, registou objetos da base de dados de exemplo Adventure Works, para que possam ser facilmente detetados pelos utilizadores da sua organização. No exercício seguinte, irá aprender a detetar recursos de dados registados.
+Neste exercício, registou objetos da base de dados de exemplo Adventure Works, para que possam ser facilmente detetados pelos utilizadores da sua organização. No exercício seguinte, vai aprender a detetar recursos de dados registados.
 
 ## Detetar recursos de dados
 A deteção no Catálogo de Dados do Azure utiliza dois mecanismos principais -- pesquisa e filtragem.
@@ -180,7 +179,7 @@ Seguem-se alguns exemplos para detetar recursos de dados no catálogo.
 A pesquisa básica ajuda-o a pesquisar catálogos com um ou mais termos de pesquisa. Os resultados são qualquer recurso que corresponda a uma propriedade com um ou mais dos termos especificados.
 
 1. No portal do Catálogo de Dados do Azure, clique em **Home page**. Caso tenha fechado o browser, aceda à [home page do Catálogo de Dados do Azure](https://www.azuredatacatalog.com).
-2. Na caixa de pesquisa, introduza **cycles** e prima **ENTER**.
+2. Na caixa de pesquisa, introduza `cycles` e prima **ENTER**.
 
     ![Catálogo de Dados do Azure -- pesquisa de texto básica](media/data-catalog-get-started/data-catalog-basic-text-search.png)
 3. Confirme que vê as quatro tabelas e a base de dados (AdventureWorkds2014) nos resultados. Pode alternar entre **vista de grelha** e **vista de lista** ao clicar nos botões da barra de ferramentas, conforme mostrado na imagem seguinte. Tenha em atenção que a palavra-chave da pesquisa é realçada nos resultados da pesquisa porque a opção **Realçar** está **LIGADA**. Também pode especificar o número de **resultados por página** nos resultados de pesquisa.
@@ -193,7 +192,7 @@ A pesquisa básica ajuda-o a pesquisar catálogos com um ou mais termos de pesqu
 
     ![Catálogo de Dados do Azure - painel inferior](media/data-catalog-get-started/data-catalog-data-asset-preview.png)
 
-    No separador **Pré-visualização**, verá uma pré-visualização dos dados na tabela **Product**.  
+    No separador **Pré-visualização**, é apresentada uma pré-visualização dos dados na tabela **Produto**.  
 5. Clique no separador **Colunas** para obter detalhes sobre as colunas (como **nome** e **tipo de dados**) no recurso de dados.
 6. Clique no separador **Perfil de Dados** para ver a criação de perfis de dados (por exemplo, o número de linhas, o tamanho dos dados ou o valor mínimo numa coluna) no recurso de dados.
 7. Utilize os **Filtros**, à esquerda, para filtrar os resultados. Por exemplo, clique em **Tabela** para **Tipo de Objeto** e verá apenas as quatro tabelas, não a base de dados.
@@ -204,7 +203,7 @@ A pesquisa básica ajuda-o a pesquisar catálogos com um ou mais termos de pesqu
 O âmbito de propriedade ajuda-o a detetar recursos de dados quando o termo de pesquisa tem correspondência com a propriedade especificada.
 
 1. Limpe o filtro **Tabela** em **Tipo de Objeto**, nos **Filtros**.  
-2. Na caixa de pesquisa, introduza **tags:cycles** e prima **ENTER**. Veja [Data Catalog Search syntax reference (Referência para a sintaxe da Pesquisa do Catálogo de Dados)](https://msdn.microsoft.com/library/azure/mt267594.aspx) para ver todas as propriedades que pode utilizar para pesquisar o catálogo de dados.
+2. Na caixa de pesquisa, introduza `tags:cycles` e prima **ENTER**. Veja [Data Catalog Search syntax reference (Referência para a sintaxe da Pesquisa do Catálogo de Dados)](https://msdn.microsoft.com/library/azure/mt267594.aspx) para ver todas as propriedades que pode utilizar para pesquisar o catálogo de dados.
 3. Confirme que vê as quatro tabelas e a base de dados (AdventureWorkds2014) nos resultados.  
 
     ![Catálogo de Dados -- resultados de pesquisa de âmbito de propriedade](media/data-catalog-get-started/data-catalog-property-scoping-results.png)
@@ -223,7 +222,7 @@ O âmbito de propriedade ajuda-o a detetar recursos de dados quando o termo de p
 ### Operadores Booleanos
 Pode alargar ou restringir as pesquisas com operadores Booleanos.
 
-1. Na caixa de pesquisa, introduza **tags:cycles AND objectType:table** e prima **ENTER**.
+1. Na caixa de pesquisa, introduza `tags:cycles AND objectType:table` e prima **ENTER**.
 2. Confirme que só vê as tabelas (e não a base de dados) nos resultados.  
 
     ![Catálogo de Dados do Azure -- operador Booleano na pesquisa](media/data-catalog-get-started/data-catalog-search-boolean-operator.png)
@@ -231,7 +230,7 @@ Pode alargar ou restringir as pesquisas com operadores Booleanos.
 ### Agrupar com parênteses
 Ao agrupar com parênteses, pode agrupar partes da consulta para alcançar isolamento lógico, especialmente em conjunto com operadores Booleanos.
 
-1. Na caixa de pesquisa, introduza **name:product AND (tags:cycles AND objectType:table)** e prima **ENTER**.
+1. Na caixa de pesquisa, introduza `name:product AND (tags:cycles AND objectType:table)` e prima **ENTER**.
 2. Confirme que só vê a tabela **Product** nos resultados da pesquisa.
 
     ![Catálogo de Dados do Azure -- agrupar pesquisa](media/data-catalog-get-started/data-catalog-grouping-search.png)   
@@ -239,7 +238,7 @@ Ao agrupar com parênteses, pode agrupar partes da consulta para alcançar isola
 ### Operadores de Comparação
 Com os operadores de comparação, pode utilizar comparações além das de igualdade para propriedades que têm tipos de dados numéricos e de data.
 
-1. Na caixa de pesquisa, introduza **lastRegisteredTime:>"06/09/2016"**.
+1. Na caixa de pesquisa, introduza `lastRegisteredTime:>"06/09/2016"`.
 2. Limpe o filtro **Tabela** em **Tipo de Objeto**.
 3. Prima **ENTER**.
 4. Confirme que vê as tabelas **Product**, **ProductCategory**, **ProductDescription** e **ProductPhoto** e a base de dados AdventureWorks2014 que registou nos resultados da pesquisa.
@@ -249,19 +248,19 @@ Com os operadores de comparação, pode utilizar comparações além das de igua
 Veja [How to discover data assets (Como detetar recursos de dados)](data-catalog-how-to-discover.md), para obter informações detalhes sobre a deteção de recursos de dados, e [Data Catalog Search syntax reference (Referência para a sintaxe da Pesquisa do Catálogo de Dados)](https://msdn.microsoft.com/library/azure/mt267594.aspx), para informações sobre a sintaxe das pesquisas.
 
 ## Anotar recursos de dados
-Neste exercício, vai utilizar o portal do Catálogo de Dados do Azure para anotar (adicionar informações, como descrições, etiquetas ou especialistas) recursos de dados que registou anteriormente no catálogo. As anotações que fornecer irão complementar e melhorar os metadados estruturais extraídos da origem de dados durante o registo, e farão com que os recursos de dados sejam muito fáceis de detetar e compreender.
+Neste exercício, vai utilizar o portal do Catálogo de Dados do Azure para anotar (adicionar informações, como descrições, etiquetas ou especialistas) recursos de dados que registou anteriormente no catálogo. As anotações complementam e melhoram os metadados estruturais extraídos da origem de dados durante o registo, e farão com que os recursos de dados sejam muito fáceis de detetar e compreender.
 
 Neste exercício, vai anotar um recurso de dados individual (ProductPhoto). Vai adicionar um nome amigável e uma descrição ao recurso de dados ProductPhoto.  
 
-1.  Aceda à [home page do Catálogo de Dados do Azure](https://www.azuredatacatalog.com) e pesquise com **tags:cycles** para encontrar os recursos de dados que registou.  
+1.  Aceda à [home page do Catálogo de Dados do Azure](https://www.azuredatacatalog.com) e pesquise com `tags:cycles` para encontrar os recursos de dados que registou.  
 2. Clique em **ProductPhoto** nos resultados da pesquisa.  
 3. Introduza **Imagens do produto** em **Nome Amigável** e **Fotografias do produto para os materiais de marketing** na **Descrição**.
 
     ![Catálogo de Dados do Azure -- descrição de ProductPhoto](media/data-catalog-get-started/data-catalog-productphoto-description.png)
 
-    A **Descrição** vai ajudar os outros utilizadores a detetar e compreender porquê e como utilizar os recursos de dados selecionados. Também pode adicionar mais etiquetas e ver as colunas. Agora, pode tentar pesquisar e filtrar para detetar recursos de dados com os metadados descritivos que adicionou ao catálogo.
+    A **Descrição** ajuda os outros utilizadores a detetar e compreender porquê e como utilizar os recursos de dados selecionados. Também pode adicionar mais etiquetas e ver as colunas. Agora, pode tentar pesquisar e filtrar para detetar recursos de dados com os metadados descritivos que adicionou ao catálogo.
 
-Tenha em conta que também pode fazer o seguinte nesta página:
+Também pode fazer o seguinte nesta página:
 
 - Adicionar especialistas ao recurso de dados. Clique em **Adicionar**, na área **Especialistas**.
 - Adicionar etiquetas ao nível do conjunto de dados. Clique em **Adicionar**, na área **Etiquetas**. Uma etiqueta pode ser uma etiqueta de utilizador ou uma etiqueta do glossário. A Edição Standard do Catálogo de Dados inclui um glossário comercial que ajuda os administradores do catálogo a definir uma taxonomia comercial central. Os utilizadores do catálogo podem assim anotar recursos de dados com os termos do glossário. Para obter mais informações, veja [How to set up the Business Glossary for Governed Tagging (Como configurar o Glossário Comercial para Etiquetagem Regida)](data-catalog-how-to-business-glossary.md).
@@ -285,9 +284,9 @@ O Catálogo de Dados do Azure suporta uma abordagem baseada em “crowd-sourcing
 Veja [How to annotate data assets (Como anotar recursos de dados)](data-catalog-how-to-annotate.md) para obter informações detalhadas sobre como anotar recursos de dados.
 
 ## Ligar a recursos de dados
-Neste exercício, vai abrir os recursos de dados numa ferramenta de cliente integrada (Excel) e numa ferramenta não integrada (SQL Server Management Studio) mediante a utilização de informações de ligação. 
+Neste exercício, vai abrir os recursos de dados numa ferramenta de cliente integrada (Excel) e numa ferramenta não integrada (SQL Server Management Studio) mediante a utilização de informações de ligação.
 
-> [AZURE.NOTE] É importante lembrar-se de que o Catálogo de Dados do Azure não lhe dá acesso à origem de dados real, apenas lhe permite detetá-la e compreendê-la mais facilmente. Quando se liga a uma origem de dados, a aplicação cliente que escolher vai utilizar as suas credenciais do Windows ou pedir-lhe-á as credenciais, conforme necessário. Se não lhe tiver sido concedido anteriormente acesso à origem de dados, este tem de lhe ser concedido para que se possa ligar.
+> [AZURE.NOTE] É importante lembrar-se de que o Catálogo de Dados do Azure não lhe dá acesso à origem de dados real, apenas lhe permite detetá-la e compreendê-la mais facilmente. Quando se liga a uma origem de dados, a aplicação cliente que escolher utiliza as suas credenciais do Windows ou pede-lhe as credenciais, conforme necessário. Se não lhe tiver sido concedido anteriormente acesso à origem de dados, este tem de lhe ser concedido para que se possa ligar.
 
 ### Ligar a um recurso de dados a partir do Excel
 
@@ -307,7 +306,7 @@ Neste exercício, vai abrir os recursos de dados numa ferramenta de cliente inte
 
     ![Catálogo de Dados do Azure - tabela “product” no Excel](media/data-catalog-get-started/data-catalog-connect2.png)
 
-Neste exercício, ligou a recursos de dados que foram detetados com o Catálogo de Dados do Azure. Com o portal do Catálogo de Dados do Azure, pode ligar diretamente ao utilizar as aplicações cliente integradas no respetivo menu **Abrir em**. Também pode utilizar as informações de localização incluídas nos metadados do recurso para ligar com qualquer aplicação que quiser. Por exemplo, pode utilizar o SQL Server Management Studio para ligar à base de dados AdventureWorks2014 para aceder aos dados nos recursos de dados registados neste tutorial.
+Neste exercício, ligou a recursos de dados que foram detetados com o Catálogo de Dados do Azure. Com o portal do Catálogo de Dados do Azure, pode ligar diretamente através das aplicações cliente integradas no menu **Abrir em**. Também pode utilizar as informações de localização incluídas nos metadados do recurso para ligar com qualquer aplicação que quiser. Por exemplo, pode utilizar o SQL Server Management Studio para ligar à base de dados AdventureWorks2014 para aceder aos dados nos recursos de dados registados neste tutorial.
 
 1. Abra o **SQL Server Management Studio**.
 2. Na caixa de diálogo **Ligar ao Servidor**, introduza o nome do servidor do painel **Propriedades** no portal do Catálogo de Dados do Azure.
@@ -327,7 +326,7 @@ No Catálogo de Dados do Azure, pode assumir a propriedade, adicionar copropriet
 
 ### Assumir a propriedade de recursos de dados e restringir a visibilidade
 
-1. Aceda à [home page do Catálogo de Dados do Azure](https://www.azuredatacatalog.com). Na caixa de texto **Pesquisar**, introduza **tags:cycles** e prima **ENTER**.
+1. Aceda à [home page do Catálogo de Dados do Azure](https://www.azuredatacatalog.com). Na caixa de **Pesquisa**, introduza `tags:cycles` e prima **ENTER**.
 2. Clique num item na lista de resultados e clique em **Obter Propriedade**, na barra de ferramentas.
 3. Na secção **Gestão** do painel **Propriedades**, clique em **Obter Propriedade**.
 
@@ -338,17 +337,17 @@ No Catálogo de Dados do Azure, pode assumir a propriedade, adicionar copropriet
 
 ## Remover recursos de dados
 
-Neste exercício, vai utilizar o portal do Catálogo de Dados do Azure para remover dados de pré-visualização de recursos de dados registados e eliminar recursos de dados do catálogo.
+Neste exercício, vai utilizar o portal do Catálogo de Dados do Azure para remover dados de pré-visualização dos recursos de dados registados e eliminar recursos de dados do catálogo.
 
 No Catálogo de Dados do Azure, pode eliminar um recurso individual ou vários recursos.
 
 1. Aceda à [home page do Catálogo de Dados do Azure](https://www.azuredatacatalog.com).
-2. Na caixa de texto **Pesquisar**, introduza **tags:cycles** e clique em **ENTER**.
-3. Selecione um item na lista de resultados e clique em **Eliminar**, na barra de ferramentas, conforme mostrado na imagem seguinte.
+2. Na caixa de **Pesquisa**, introduza `tags:cycles` e clique em **ENTER**.
+3. Selecione um item na lista de resultados e clique em **Eliminar**, na barra de ferramentas, conforme mostrado na imagem seguinte:
 
     ![Catálogo de Dados do Azure -- eliminar item de grelha](media/data-catalog-get-started/data-catalog-delete-grid-item.png)
 
-    Se estiver a utilizar a vista de lista, a caixa de verificação está à esquerda do item, conforme mostrado na imagem seguinte.
+    Se estiver a utilizar a vista de lista, a caixa de verificação estará à esquerda do item, conforme mostrado na imagem seguinte:
 
     ![Catálogo de Dados do Azure -- eliminar item de lista](media/data-catalog-get-started/data-catalog-delete-list-item.png)
 
@@ -375,6 +374,6 @@ Neste tutorial, explorou as capacidades essenciais do Catálogo de Dados do Azur
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

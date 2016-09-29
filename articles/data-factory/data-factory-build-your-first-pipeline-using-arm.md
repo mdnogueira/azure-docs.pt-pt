@@ -16,28 +16,26 @@
     ms.date="08/01/2016"
     ms.author="spelluru"/>
 
+
 # Tutorial: Criar a primeira fábrica de dados do Azure com o modelo Azure Resource Manager
 > [AZURE.SELECTOR]
+- [Descrição geral e pré-requisitos](data-factory-build-your-first-pipeline.md)
 - [Portal do Azure](data-factory-build-your-first-pipeline-using-editor.md)
 - [Visual Studio](data-factory-build-your-first-pipeline-using-vs.md)
 - [PowerShell](data-factory-build-your-first-pipeline-using-powershell.md)
 - [Modelo do Resource Manager](data-factory-build-your-first-pipeline-using-arm.md)
 - [API REST](data-factory-build-your-first-pipeline-using-rest-api.md)
 
+Neste artigo, vai utilizar um modelo do Azure Resource Manager para criar a sua primeira fábrica de dados do Azure.
 
-[AZURE.INCLUDE [data-factory-tutorial-prerequisites](../../includes/data-factory-tutorial-prerequisites.md)] 
-
-## Pré-requisitos adicionais
-Para além dos pré-requisitos indicados na secção de pré-requisitos anterior, instale o seguinte:
-
-- **Instalar o Azure PowerShell**. Siga as instruções no artigo [How to install and configure Azure PowerShell (Como instalar e configurar o Azure PowerShell)](../powershell-install-configure.md) para instalar a versão mais recente do Azure PowerShell no computador.
+## Pré-requisitos
+- Leia o artigo [Descrição Geral do Tutorial](data-factory-build-your-first-pipeline.md) e conclua os passos de **pré-requisitos**.
+- Siga as instruções no artigo [How to install and configure Azure PowerShell (Como instalar e configurar o Azure PowerShell)](../powershell-install-configure.md) para instalar a versão mais recente do Azure PowerShell no computador.
 - Veja [Authoring Azure Resource Manager Templates (Criação de Modelos Azure Resource Manager)](../resource-group-authoring-templates.md) para saber mais sobre os modelos Azure Resource Manager. 
 
 ## Criar Modelo do Resource Manager
 
-Crie um ficheiro JSON com o nome **ADFTutorialARM.json** na pasta **C:\ADFGetStarted** com o seguinte conteúdo: 
-
-O modelo permite-lhe criar as seguintes entidades do Data Factory.
+Nesta secção, vai criar as seguintes entidades do Data Factory: 
 
 1. Uma **fábrica de dados** com o nome **TutorialDataFactoryARM**. Uma fábrica de dados pode ter um ou mais pipelines. Um pipeline pode conter uma atividade ou mais. Por exemplo, uma Atividade de Cópia para copiar dados de uma origem para um arquivo de dados de destino e uma Atividade Hive do HDInsight para executar o script de Hive para transformar dados de entrada. 
 2. Dois **serviços ligados**: **StorageLinkedService** e **HDInsightOnDemandLinkedService**. Estes serviços ligados ligam a Conta de armazenamento do Azure e um cluster do Azure HDInsight a pedido à fábrica de dados. A conta de Armazenamento do Azure possui os dados de entrada e de saída do pipeline neste exemplo. Neste exemplo, o serviço ligado do HDInsight é utilizado para executar o Script de ramo de registo especificado na atividade do pipeline. Identifique os dados de arquivo de dados/serviços de computação que são utilizados no seu cenário e ligue esses serviços à fábrica de dados, criando serviços ligados. 
@@ -45,8 +43,9 @@ O modelo permite-lhe criar as seguintes entidades do Data Factory.
 
 Clique no separador **Com o Editor do Data Factory** para passar para o artigo com detalhes sobre as propriedades JSON utilizadas neste modelo.
 
-> [AZURE.IMPORTANT] Altere os valores das variáveis **storageAccountName** e **storageAccountKey**. Altere ainda o **dataFactoryName** uma vez que o nome tem de ser exclusivo.
+Crie um ficheiro JSON com o nome **ADFTutorialARM.json** na pasta **C:\ADFGetStarted** com o seguinte conteúdo:
 
+> [AZURE.IMPORTANT] Altere os valores das variáveis **storageAccountName** e **storageAccountKey**. Altere ainda o **dataFactoryName** uma vez que o nome tem de ser exclusivo.
 
     {
         "contentVersion": "1.0.0.0",
@@ -226,10 +225,10 @@ Veja [On-demand HDInsight Linked Service (Serviço Ligado do HDInsight a Pedido)
 
 ## Criar fábrica de dados
 
-1. Inicie o **Azure PowerShell** e execute o seguinte comando. 
-    - Execute **Login-AzureRmAccount** e introduza o nome de utilizador e a palavra-passe que utiliza para iniciar sessão no portal do Azure.  
-    - Execute o seguinte comando para selecionar uma subscrição em que pretende criar a fábrica de dados.
-            Get-AzureRmSubscription -SubscriptionName <SUBSCRIPTION NAME> | Set-AzureRmContext
+1. Inicie o **Azure PowerShell** e execute o seguinte comando: 
+    - Execute `Login-AzureRmAccount` e introduza o nome de utilizador e a palavra-passe que utiliza para iniciar sessão no portal do Azure.  
+    - Execute `Get-AzureRmSubscription` para ver todas as subscrições para esta conta.
+    - Execute `Get-AzureRmSubscription -SubscriptionName <SUBSCRIPTION NAME> | Set-AzureRmContext` para selecionar a subscrição com a qual pretende trabalhar. Esta subscrição deve ser idêntica à que utilizou no Portal do Azure.
 1. Execute o seguinte comando para implementar as entidades do Data Factory com o modelo do Resource Manager que criou no Passo 1. 
 
         New-AzureRmResourceGroupDeployment -Name MyARMDeployment -ResourceGroupName ADFTutorialResourceGroup -TemplateFile C:\ADFGetStarted\ADFTutorialARM.json
@@ -247,7 +246,7 @@ Veja [On-demand HDInsight Linked Service (Serviço Ligado do HDInsight a Pedido)
 8. Na Vista de Diagrama, faça duplo clique no conjunto de dados **AzureBlobOutput**. Verá o setor que está atualmente a ser processado.
 
     ![Conjunto de dados](./media/data-factory-build-your-first-pipeline-using-arm/AzureBlobOutput.png)
-9. Quando o processamento terminar, verá o setor no estado **Pronto**. A criação de um cluster do HDInsight a pedido demora, por norma, algum tempo (cerca de 20 minutos). 
+9. Quando o processamento terminar, verá o setor no estado **Pronto**. A criação de um cluster do HDInsight a pedido demora, por norma, algum tempo (cerca de 20 minutos). Assim, prevê-se que o pipeline demore **aproximadamente 30 minutos** a processar o setor.
 
     ![Conjunto de dados](./media/data-factory-build-your-first-pipeline-using-arm/SliceReady.png) 
 10. Quando o setor estiver no estado **Pronto**, verifique a pasta **partitioneddata** no contentor **adfgetstarted** do seu armazenamento de blobs para os dados de saída.  
@@ -308,6 +307,6 @@ Este modelo cria uma fábrica de dados com o nome GatewayUsingArmDF com um gatew
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -18,12 +18,13 @@
     ms.author="cephalin"
 />
     
+
 # Implemente a sua primeira aplicação Web no Azure em cinco minutos
 
 Este tutorial ajuda-o a implementar a sua primeira aplicação Web no [App Service do Azure](../app-service/app-service-value-prop-what-is.md).
 Pode utilizar o Serviço de Aplicações para criar aplicações, [back-ends de aplicações móveis](/documentation/learning-paths/appservice-mobileapps/) e [aplicações API](../app-service-api/app-service-api-apps-why-best-platform.md).
 
-Vai: 
+Irá: 
 
 - Criar uma aplicação Web no Serviço de Aplicações do Azure.
 - Implementar código de exemplo (escolha entre ASP.NET, PHP, Node.js, Java ou Python).
@@ -74,7 +75,7 @@ Agora, vamos implementar algum código no Azure através do Git.
 
 5. No painel da aplicação Web, desloque-se para baixo até às **Opções de implementação** ou procure as mesmas e, em seguida, clique nestas. 
 
-    ![opções de implementação para a sua primeira aplicação web no Azure](./media/app-service-web-get-started/deploy-web-app-deployment-options.png)
+    ![opções de implementação para a sua primeira aplicação Web no Azure](./media/app-service-web-get-started/deploy-web-app-deployment-options.png)
 
 6. Clique em **Escolher Origem** > **Repositório de Git Local** > **OK**.
 
@@ -148,6 +149,6 @@ Em alternativa, faça mais com a sua primeira aplicação Web. Por exemplo:
 
 
 
-<!------HONumber=Sep16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

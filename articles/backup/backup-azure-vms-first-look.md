@@ -13,15 +13,16 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="hero-article"
-    ms.date="07/29/2016"
+    ms.date="09/15/2016"
     ms.author="markgal; jimpark"/>
+
 
 
 # Primeiras impressões: efetuar uma cópia de segurança das máquinas virtuais do Azure
 
 > [AZURE.SELECTOR]
-- [Primeira impressão: proteger VMs com um cofre de serviços de recuperação](backup-azure-vms-first-look-arm.md)
-- [Primeira Impressão: proteger VMs do Azure com o cofre de cópia de segurança](backup-azure-vms-first-look.md)
+- [Proteger VMs com um cofre dos Serviços de Recuperação](backup-azure-vms-first-look-arm.md)
+- [Proteger VMs do Azure com um cofre das Cópias de Segurança](backup-azure-vms-first-look.md)
 
 Este tutorial guia-o através dos passos para criar uma cópia de segurança de uma máquina virtual (VM) do Azure para um cofre de cópia de segurança do Azure. Este artigo descreve o modelo de Clássico ou modelo de implementação do Service Manager, para a cópia de segurança das VMs. Se estiver interessado em efetuar uma cópia de segurança de uma VM para um cofre dos Serviços de Recuperação que pertence a um Grupo de Recursos, consulte [Primeira impressão: proteger VMs com um cofre de serviços de recuperação](backup-azure-vms-first-look-arm.md). Para concluir com êxito este tutorial, estes pré-requisitos têm de existir:
 
@@ -225,6 +226,6 @@ Se tiver dúvidas ou se houver alguma funcionalidade que gostaria de ver incluí
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

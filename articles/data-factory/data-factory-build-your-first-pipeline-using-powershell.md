@@ -17,30 +17,23 @@
     ms.date="08/16/2016"
     ms.author="spelluru"/>
 
+
 # Tutorial: Criar a primeira fábrica de dados do Azure com o Azure PowerShell
 > [AZURE.SELECTOR]
+- [Descrição geral e pré-requisitos](data-factory-build-your-first-pipeline.md)
 - [Portal do Azure](data-factory-build-your-first-pipeline-using-editor.md)
 - [Visual Studio](data-factory-build-your-first-pipeline-using-vs.md)
 - [PowerShell](data-factory-build-your-first-pipeline-using-powershell.md)
 - [Modelo do Resource Manager](data-factory-build-your-first-pipeline-using-arm.md)
 - [API REST](data-factory-build-your-first-pipeline-using-rest-api.md)
 
+Neste artigo, vai utilizar o Azure PowerShell para criar a sua primeira fábrica de dados do Azure. 
 
-[AZURE.INCLUDE [data-factory-tutorial-prerequisites](../../includes/data-factory-tutorial-prerequisites.md)] 
+## Pré-requisitos
 
-## Pré-requisitos adicionais
-Para além dos pré-requisitos listados no tópico Descrição Geral do Tutorial, tem de instalar o seguinte:
-
-- **Azure PowerShell**. Siga as instruções no artigo [How to install and configure Azure PowerShell (Como instalar e configurar o Azure PowerShell)](../powershell-install-configure.md) para instalar a versão mais recente do Azure PowerShell no computador.
+- Leia o artigo [Descrição Geral do Tutorial](data-factory-build-your-first-pipeline.md) e conclua os passos de **pré-requisitos**.
+- Siga as instruções no artigo [How to install and configure Azure PowerShell (Como instalar e configurar o Azure PowerShell)](../powershell-install-configure.md) para instalar a versão mais recente do Azure PowerShell no computador.
 - (opcional) Este artigo não abrange todos os cmdlets do Data Factory. Veja [Referência dos Cmdlets do Data Factory](https://msdn.microsoft.com/library/dn820234.aspx) para obter a documentação completa sobre os cmdlets do Data Factory. 
-
-Se estiver a utilizar uma **versão inferior às versão 1.0** do Azure PowerShell, terá de utilizar os cmdlets que estão documentados [aqui](https://msdn.microsoft.com/library/azure/dn820234.aspx). Também terá de executar os seguintes comandos antes de utilizar os cmdlets do Data Factory: 
- 
-1. Inicie o Azure PowerShell e execute os seguintes comandos. Mantenha o Azure PowerShell aberto até ao fim deste tutorial. Se o fechar e reabrir, terá de executar os comandos novamente.
-    1. Execute `Add-AzureAccount` e introduza o nome de utilizador e a palavra-passe que utiliza para iniciar sessão no portal do Azure.
-    2. Execute `Get-AzureSubscription` para ver todas as subscrições para esta conta.
-    3. Execute `Get-AzureRmSubscription -SubscriptionName NameOfAzureSubscription | Set-AzureRmContext` para selecionar a subscrição com a qual pretende trabalhar. Substitua **NameOfAzureSubscription** pelo nome da sua subscrição do Azure.
-4. Passe para o modo Azure Resource Manager, uma vez que os cmdlets do Azure Data Factory estão disponíveis neste modo: `Switch-AzureMode AzureResourceManager`.
 
 ## Criar fábrica de dados
 
@@ -49,8 +42,8 @@ Neste passo, utiliza o Azure PowerShell para criar um Azure Data Factory com o n
 1. Inicie o Azure PowerShell e execute o seguinte comando. Mantenha o Azure PowerShell aberto até ao fim deste tutorial. Se o fechar e reabrir, terá de executar os comandos novamente.
     - Execute `Login-AzureRmAccount` e introduza o nome de utilizador e a palavra-passe que utiliza para iniciar sessão no portal do Azure.  
     - Execute `Get-AzureRmSubscription` para ver todas as subscrições para esta conta.
-    - Execute `Select-AzureRmSubscription <Name of the subscription>` para selecionar a subscrição com a qual pretende trabalhar. Esta subscrição deve ser idêntica à que utilizou no Portal do Azure.
-3. Crie um grupo de recursos do Azure com o nome **ADFTutorialResourceGroup** executando o seguinte comando.
+    - Execute `Get-AzureRmSubscription -SubscriptionName <SUBSCRIPTION NAME> | Set-AzureRmContext` para selecionar a subscrição com a qual pretende trabalhar. Esta subscrição deve ser idêntica à que utilizou no Portal do Azure.
+3. Crie um grupo de recursos do Azure com o nome **ADFTutorialResourceGroup** ao executar o seguinte comando:
 
         New-AzureRmResourceGroup -Name ADFTutorialResourceGroup  -Location "West US"
 
@@ -60,18 +53,18 @@ Neste passo, utiliza o Azure PowerShell para criar um Azure Data Factory com o n
         New-AzureRmDataFactory -ResourceGroupName ADFTutorialResourceGroup -Name FirstDataFactoryPSH –Location "West US"
 
 
-Tenha em atenção o seguinte:
+Tenha em atenção os seguintes pontos:
  
 - O nome do Azure Data Factory deve ser globalmente exclusivo. Se receber o erro **Nome "FirstDataFactoryPSH" não disponível para a fábrica de dados**, altere o nome (por exemplo, seunomeFirstDataFactoryPSH). Utilize este nome em vez de ADFTutorialFactoryPSH ao realizar os passos deste tutorial. Veja o tópico [Data Factory – Naming Rules (Data Factory – Regras de Nomenclatura)](data-factory-naming-rules.md) para obter as regras de nomenclatura dos artefactos do Data Factory.
 - Para criar instâncias do Data Factory, tem de ser um contribuidor/administrador da subscrição do Azure
 - O nome da fábrica de dados pode ser registado como um nome DNS no futuro e, por conseguinte, ficar publicamente visível.
-- Se receber o erro: “**Esta subscrição não está registada para utilizar o espaço de nomes Microsoft.DataFactory**”, realize um dos seguintes procedimentos e tente publicar novamente: 
+- Se receber o erro: "**Esta subscrição não está registada para utilizar o espaço de nomes Microsoft.DataFactory**", realize um dos seguintes procedimentos e tente publicar novamente: 
 
-    - No Azure PowerShell, execute o seguinte comando para registar o fornecedor do Data Factory. 
+    - No Azure PowerShell, execute o seguinte comando para registar o fornecedor do Data Factory: 
         
             Register-AzureRmResourceProvider -ProviderNamespace Microsoft.DataFactory
     
-        Pode executar o seguinte comando para confirmar que o fornecedor do Data Factory está registado. 
+        Pode executar o seguinte comando para confirmar que o fornecedor do Data Factory está registado: 
     
             Get-AzureRmResourceProvider
     - Inicie sessão com a subscrição do Azure no [Portal do Azure](https://portal.azure.com) e navegue até um painel do Data Factory (ou) crie uma fábrica de dados no Portal do Azure. Esta ação regista automaticamente o fornecedor por si.
@@ -112,7 +105,7 @@ Neste passo, vai ligar a sua conta de Armazenamento do Azure à fábrica de dado
 
         New-AzureRmDataFactoryLinkedService -ResourceGroupName ADFTutorialResourceGroup -DataFactoryName FirstDataFactoryPSH -File .\StorageLinkedService.json
 
-    Se fechar o Azure PowerShell a meio do tutorial, tem de executar o cmdlet **Get-AzureRmDataFactory** da próxima vez que iniciar o Azure PowerShell para concluir o tutorial.
+    Se fechar o Azure PowerShell a meio do tutorial, terá de executar o cmdlet **Get-AzureRmDataFactory** da próxima vez que iniciar o Azure PowerShell para concluir o tutorial.
 
 ### Criar o serviço ligado do Azure HDInsight
 Neste passo, irá ligar um cluster do HDInsight a pedido à sua fábrica de dados. O cluster do HDInsight é criado automaticamente no tempo de execução e eliminado depois de ter sido processado e ficado inativo pelo período de tempo especificado. Também pode utilizar o seu próprio cluster do HDInsight em vez de utilizar um cluster do HDInsight a pedido. Veja [Compute Linked Services (Serviços Ligados de Computação)](data-factory-compute-linked-services.md) para obter detalhes.  
@@ -141,7 +134,7 @@ Neste passo, irá ligar um cluster do HDInsight a pedido à sua fábrica de dado
   	| TimeToLive | Especifica o tempo de inatividade do cluster do HDInsight, antes de ser eliminado. |
   	| linkedServiceName | Especifica a conta de armazenamento que é utilizada para armazenar os registos que são gerados pelo HDInsight |
 
-    Tenha em atenção o seguinte: 
+    Tenha em atenção os seguintes pontos: 
     
     - O Data Factory cria um cluster do HDInsight **baseado no Windows** com o JSON. Também pode fazer com que crie um cluster do HDInsight **baseado no Linux**. Veja [On-demand HDInsight Linked Service (Serviço Ligado do HDInsight a Pedido)](data-factory-compute-linked-services.md#azure-hdinsight-on-demand-linked-service) para obter detalhes. 
     - Também pode utilizar o **seu próprio cluster do HDInsight** em vez de utilizar um cluster do HDInsight a pedido. Veja [HDInsight Linked Service (Serviço Ligado do HDInsight)](data-factory-compute-linked-services.md#azure-hdinsight-linked-service) para obter detalhes.
@@ -197,7 +190,7 @@ Neste passo, vai criar conjuntos de dados para representar os dados de entrada e
   	| frequência/intervalo | A frequência definida para o Mês, sendo o intervalo 1, o que significa que os setores de entrada estão disponíveis mensalmente. | 
   	| externo | Esta propriedade é definida como verdadeira se os dados de entrada não forem gerados pelo serviço Data Factory. | 
 
-2. Execute o seguinte comando no Azure PowerShell para criar o conjunto de dados do Data Factory.
+2. Execute o seguinte comando no Azure PowerShell para criar o conjunto de dados do Data Factory:
 
         New-AzureRmDataFactoryDataset $df -File .\InputTable.json
 
@@ -227,7 +220,7 @@ Agora, irá criar o conjunto de dados de saída para representar os dados de sa�
 
     O JSON define um conjunto de dados com o nome **AzureBlobOutput**, que representa dados de saída para uma atividade no pipeline. Além disso, especifica que os dados de saída estão armazenados no contentor do blob denominado **adfgetstarted** e na pasta denominada **partitioneddata**. A secção **disponibilidade** especifica que o conjunto de dados de saída é produzido mensalmente.
 
-2. Execute o seguinte comando no Azure PowerShell para criar o conjunto de dados do Data Factory.
+2. Execute o seguinte comando no Azure PowerShell para criar o conjunto de dados do Data Factory:
 
         New-AzureRmDataFactoryDataset $df -File .\OutputTable.json
 
@@ -307,15 +300,15 @@ Neste passo, irá utilizar o Azure PowerShell para monitorizar os acontecimentos
 
 2. Execute **Get-AzureRmDataFactorySlice** para obter detalhes sobre todos os setores do **EmpSQLTable**, que é a tabela de saída do pipeline.  
 
-        Get-AzureRmDataFactorySlice $df -DatasetName AzureBlobOutput -StartDateTime 2014-02-01
+        Get-AzureRmDataFactorySlice $df -DatasetName AzureBlobOutput -StartDateTime 2016-04-01
 
     Repare que a StartDateTime que especificar aqui é a mesma hora especificada no JSON do pipeline. Deverá ver um resultado semelhante ao seguinte.
 
         ResourceGroupName : ADFTutorialResourceGroup
         DataFactoryName   : FirstDataFactoryPSH
         DatasetName       : AzureBlobOutput
-        Start             : 2/1/2014 12:00:00 AM
-        End               : 3/1/2014 12:00:00 AM
+        Start             : 4/1/2016 12:00:00 AM
+        End               : 4/2/2016 12:00:00 AM
         RetryCount        : 0
         State             : InProgress
         SubState          :
@@ -325,7 +318,7 @@ Neste passo, irá utilizar o Azure PowerShell para monitorizar os acontecimentos
 
 3. Execute **Get-AzureRmDataFactoryRun** para obter os detalhes das execuções de um setor específico da atividade.
 
-        Get-AzureRmDataFactoryRun $df -DatasetName AzureBlobOutput -StartDateTime 2014-02-01
+        Get-AzureRmDataFactoryRun $df -DatasetName AzureBlobOutput -StartDateTime 2016-04-01
 
     Deverá ver um resultado semelhante ao seguinte.
         
@@ -336,8 +329,8 @@ Neste passo, irá utilizar o Azure PowerShell para monitorizar os acontecimentos
         ProcessingStartTime : 12/18/2015 4:50:33 AM
         ProcessingEndTime   : 12/31/9999 11:59:59 PM
         PercentComplete     : 0
-        DataSliceStart      : 2/1/2014 12:00:00 AM
-        DataSliceEnd        : 3/1/2014 12:00:00 AM
+        DataSliceStart      : 4/1/2016 12:00:00 AM
+        DataSliceEnd        : 4/2/2016 12:00:00 AM
         Status              : AllocatingResources
         Timestamp           : 12/18/2015 4:50:33 AM
         RetryAttempt        : 0
@@ -352,7 +345,10 @@ Neste passo, irá utilizar o Azure PowerShell para monitorizar os acontecimentos
     ![dados de saída](./media/data-factory-build-your-first-pipeline-using-powershell/three-ouptut-files.png)
 
 
-> [AZURE.IMPORTANT] O ficheiro de entrada é eliminado quando o setor é processado com êxito. Por conseguinte, se pretender voltar a executar o setor ou repetir o tutorial, carregue o ficheiro de entrada (input.log) na pasta inputdata do contentor adfgetstarted.
+> [AZURE.IMPORTANT] 
+> A criação de um cluster do HDInsight a pedido demora, por norma, algum tempo (cerca de 20 minutos). Assim, prevê-se que o pipeline demore **aproximadamente 30 minutos** a processar o setor.  
+> 
+> O ficheiro de entrada é eliminado quando o setor é processado com êxito. Por conseguinte, se pretender voltar a executar o setor ou repetir o tutorial, carregue o ficheiro de entrada (input.log) na pasta inputdata do contentor adfgetstarted.
 
 ## Resumo 
 Neste tutorial, criou uma fábrica de dados do Azure para processar dados executando o Script de ramo de registo num cluster de hadoop do HDInsight. Utilizou o Editor do Data Factory no portal do Azure para realizar os seguintes passos:  
@@ -381,6 +377,6 @@ Neste artigo, criou um pipeline com uma atividade de transformação (Atividade 
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

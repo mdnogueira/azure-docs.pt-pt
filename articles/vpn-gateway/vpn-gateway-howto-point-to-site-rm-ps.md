@@ -16,11 +16,12 @@
    ms.date="08/31/2016"
    ms.author="cherylmc" />
 
+
 # Configurar uma ligação Ponto a Site a uma VNet com o PowerShell
 
 > [AZURE.SELECTOR]
-- [PowerShell – Resource Manager](vpn-gateway-howto-point-to-site-rm-ps.md)
-- [Portal – Clássico](vpn-gateway-point-to-site-create.md)
+- [Resource Manager – PowerShell](vpn-gateway-howto-point-to-site-rm-ps.md)
+- [Clássica – Portal Clássico](vpn-gateway-point-to-site-create.md)
 
 Uma configuração Ponto a Site (P2S) permite-lhe criar uma ligação segura a partir de um computador cliente individual para a sua rede virtual. Uma ligação P2S é útil quando pretende ligar a VNet a partir de uma localização remota, por exemplo, quando está em casa ou numa conferência ou quando tem apenas alguns clientes que precisam de se ligar a uma rede virtual. 
 
@@ -111,7 +112,7 @@ Nesta secção, vai iniciar sessão e declarar os valores utilizados para esta c
 
         New-AzureRmResourceGroup -Name $RG -Location $Location
 
-2. Crie as configurações de sub-rede para a rede virtual, nomeando-as *FrontEnd*, *BackEnd* e *GatewaySubnet*. Estes prefixos têm de fazer parte do espaço de endereços da VNet declarado acima.
+2. Crie as configurações de sub-rede para a rede virtual, nomeando-as *FrontEnd*, *BackEnd* e *GatewaySubnet*. Estes prefixos têm de fazer parte do espaço de endereços da VNet que declarou.
 
         $fesub = New-AzureRmVirtualNetworkSubnetConfig -Name $FESubName -AddressPrefix $FESubPrefix
         $besub = New-AzureRmVirtualNetworkSubnetConfig -Name $BESubName -AddressPrefix $BESubPrefix
@@ -172,7 +173,7 @@ Os clientes que se liguem ao Azure com P2S têm de ter um certificado de cliente
 
 3. Copie e cole a ligação devolvida num browser, para transferir o pacote. Em seguida, instale o pacote no computador cliente.
 
-4. No computador cliente, navegue para **Definições de Rede** e clique em **VPN**. Verá a ligação listada. Mostra o nome da rede virtual à qual se vai ligar e terá um aspeto semelhante a: 
+4. No computador cliente, navegue para **Definições de Rede** e clique em **VPN**. Verá a ligação listada. Mostrará o nome da rede virtual à qual se vai ligar e terá um aspeto semelhante a este exemplo: 
 
     ![cliente de VPN](./media/vpn-gateway-howto-point-to-site-rm-ps/vpn.png "VPN client")
 
@@ -226,7 +227,7 @@ Instale um certificado de cliente em cada computador que pretende ligar à rede 
 
 Os certificados são utilizados para autenticar clientes VPN para as VPNs Ponto a Site. Os seguintes passos orientam-no para adicionar e remover certificados de raiz. Quando adiciona um ficheiro com codificação x.509 Base64 (.cer) ao Azure, está a dizer ao Azure para confiar no certificado de raiz que o ficheiro representa. 
 
-Pode adicionar ou remover os certificados de raiz fidedigna com o PowerShell ou através do portal do Azure. Se quiser fazê-lo através do portal do Azure, aceda ao **gateway de rede virtual > definições > Configuração de Ponto a Site > Certificados de raiz**. Os passos abaixo orientam-no ao longo destas tarefas com o PowerShell. 
+Pode adicionar ou remover os certificados de raiz fidedigna com o PowerShell ou através do portal do Azure. Se quiser fazê-lo através do portal do Azure, aceda ao **gateway de rede virtual > definições > Configuração de Ponto a Site > Certificados de raiz**. Os passos abaixo descrevem estas tarefas com o PowerShell. 
 
 ### Adicionar um certificado de raiz fidedigna
 
@@ -234,11 +235,11 @@ Pode adicionar até 20 ficheiros .cer de certificado de raiz fidedigna ao Azure.
 
 1. Crie e prepare o novo certificado de raiz que será adicionado ao Azure. Exporte a chave pública como um X.509 codificado em Base64 (.CER). e abra-o num editor de texto. Em seguida, copie apenas a secção mostrada abaixo. 
  
-    Copie os valores, conforme mostrado no exemplo seguinte.
+    Copie os valores, conforme mostrado no exemplo seguinte:
 
     ![certificado](./media/vpn-gateway-howto-point-to-site-rm-ps/copycert.png "certificate")
     
-2. No exemplo abaixo, especifique o nome do certificado e as informações da chave como uma variável. Substitua as informações pelas suas próprias.
+2. Especifique o nome do certificado e as informações da chave como uma variável. Substitua as informações pelas suas próprias informações, conforme mostrado no exemplo seguinte:
 
         $P2SRootCertName2 = "ARMP2SRootCert2.cer"
         $MyP2SCertPubKeyBase64_2 = "MIIC/zCCAeugAwIBAgIQKazxzFjMkp9JRiX+tkTfSzAJBgUrDgMCHQUAMBgxFjAUBgNVBAMTDU15UDJTUm9vdENlcnQwHhcNMTUxMjE5MDI1MTIxWhcNMzkxMjMxMjM1OTU5WjAYMRYwFAYDVQQDEw1NeVAyU1Jvb3RDZXJ0MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAyjIXoWy8xE/GF1OSIvUaA0bxBjZ1PJfcXkMWsHPzvhWc2esOKrVQtgFgDz4ggAnOUFEkFaszjiHdnXv3mjzE2SpmAVIZPf2/yPWqkoHwkmrp6BpOvNVOpKxaGPOuK8+dql1xcL0eCkt69g4lxy0FGRFkBcSIgVTViS9wjuuS7LPo5+OXgyFkAY3pSDiMzQCkRGNFgw5WGMHRDAiruDQF1ciLNojAQCsDdLnI3pDYsvRW73HZEhmOqRRnJQe6VekvBYKLvnKaxUTKhFIYwuymHBB96nMFdRUKCZIiWRIy8Hc8+sQEsAML2EItAjQv4+fqgYiFdSWqnQCPf/7IZbotgQIDAQABo00wSzBJBgNVHQEEQjBAgBAkuVrWvFsCJAdK5pb/eoCNoRowGDEWMBQGA1UEAxMNTXlQMlNSb290Q2VydIIQKazxzFjMkp9JRiX+tkTfSzAJBgUrDgMCHQUAA4IBAQA223veAZEIar9N12ubNH2+HwZASNzDVNqspkPKD97TXfKHlPlIcS43TaYkTz38eVrwI6E0yDk4jAuPaKnPuPYFRj9w540SvY6PdOUwDoEqpIcAVp+b4VYwxPL6oyEQ8wnOYuoAK1hhh20lCbo8h9mMy9ofU+RP6HJ7lTqupLfXdID/XevI8tW6Dm+C/wCeV3EmIlO9KUoblD/e24zlo3YzOtbyXwTIh34T0fO/zQvUuBqZMcIPfM1cDvqcqiEFLWvWKoAnxbzckye2uk1gHO52d8AVL3mGiX8wBJkjc/pMdxrEvvCzJkltBmqxTM6XjDJALuVh16qFlqgTWCIcb7ju"
@@ -315,6 +316,6 @@ Pode adicionar uma máquina virtual à rede virtual. Veja [Criar uma Máquina Vi
 
 
 
-<!--HONumber=sep16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

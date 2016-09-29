@@ -14,8 +14,9 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="08/30/2016"
+   ms.date="09/13/2016"
    ms.author="larryfr"/>
+
 
 #Utilizar o SSH com o Hadoop baseado em Linux no HDInsight a partir do Linux, Unix ou OS X
 
@@ -128,7 +129,7 @@ A partir de uma sessão de terminal, utilize o comando SSH para ligar ao nó pri
 
 * **Nome de utilizador** – o nome de utilizador SSH que forneceu quando criou o cluster.
 
-O exemplo seguinte irá ligar ao nó principal 0 de **mycluster** como o utilizador **me**:
+O exemplo seguinte irá ligar ao nó principal primário de **mycluster** como o utilizador **me**:
 
     ssh me@mycluster-ssh.azurehdinsight.net
 
@@ -140,7 +141,7 @@ Caso tenha utilizado uma chave SSH protegida por uma frase de acesso, é-lhe ped
 >
 > `ssh -i ~/.ssh/id_rsa me@mycluster-ssh.azurehdinsight.net`
 
-Se estiver a estabelecer ligação com o endereço do nó principal e não for especificada qualquer porta, o SSH utilizará a porta 22 como predefinição, que ligará ao nó principal 0 no cluster do HDInsight. Se utilizar a porta 23, ligar-se-á ao nó principal 1. Para obter mais informações sobre os nós principais, consulte [Disponibilidade e fiabilidade de clusters do Hadoop no HDInsight](hdinsight-high-availability-linux.md).
+Se estiver a estabelecer ligação com o endereço do nó principal e não for especificada qualquer porta, o SSH utilizará a porta 22 como predefinição, que ligará ao nó principal primário no cluster do HDInsight. Se utilizar a porta 23, liga-se ao secundário. Para obter mais informações sobre os nós principais, consulte [Disponibilidade e fiabilidade de clusters do Hadoop no HDInsight](hdinsight-high-availability-linux.md).
 
 ###Ligar a nós de trabalho
 
@@ -195,9 +196,9 @@ Utilize os seguintes passos para ligar aos nós de trabalho do cluster.
 
     > [AZURE.NOTE] Se utilizar uma palavra-passe para autenticar a sessão SSH, é-lhe pedido que introduza novamente a palavra-passe. Se utilizar uma chave SSH, a ligação deverá ser concluída sem serem apresentados quaisquer pedidos.
 
-4. Quando a sessão for estabelecida, o prompt do terminal mudará de `username@hn0-clustername` para `username@wk0-clustername` para indicar que está ligado ao nó de trabalho. Todos os comandos que executar neste momento serão executados no nó de trabalho.
+4. Quando a sessão for estabelecida, o prompt do terminal mudará de `username@hn#-clustername` para `username@wk#-clustername` para indicar que está ligado ao nó de trabalho. Todos os comandos que executar neste momento serão executados no nó de trabalho.
 
-4. Quando terminar de realizar ações no nó de trabalho, utilize o comando `exit` para fechar a sessão no nó de trabalho. Desta forma, regressa ao prompt `username@hn0-clustername`.
+4. Quando terminar de realizar ações no nó de trabalho, utilize o comando `exit` para fechar a sessão no nó de trabalho. Desta forma, regressa ao prompt `username@hn#-clustername`.
 
 ##Adicionar mais contas
 
@@ -249,6 +250,6 @@ Agora que sabe como efetuar a autenticação com uma chave SSH, saiba como utili
 
 
 
-<!--HONumber=sep16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 
