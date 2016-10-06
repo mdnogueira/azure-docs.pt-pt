@@ -118,6 +118,6 @@ Neste documento, aprendeu a utilizar o Power BI no Centro de Segurança do Azure
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 

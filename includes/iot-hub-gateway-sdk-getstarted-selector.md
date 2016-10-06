@@ -35,13 +35,15 @@ O SDK fornece uma camada de abstração que lhe permite criar gateways para exec
 
 ### Mensagens
 
-Apesar de a ideia dos módulos a transmitir mensagens entre si ser uma forma conveniente de conceptualizar o funcionamento do gateway, esta não reflete com precisão o que acontece. Os módulos utilizam um barramento de mensagem para comunicar entre si, publicam mensagens no barramento e o barramento difunde as mensagens para todos os módulos a si ligados.
+Apesar de a ideia dos módulos a transmitir mensagens entre si ser uma forma conveniente de conceptualizar o funcionamento do gateway, esta não reflete com precisão o que acontece. Os módulos utilizam mediadores para comunicarem entre si, publicam mensagens no mediador (bus, pubsub ou qualquer outro padrão de mensagens) e, depois, deixam que o mediador encaminhe as mensagens para os módulos ligados a ele.
 
-Um módulo utiliza a função **MessageBus_Publish** para publicar uma mensagem para o barramento de mensagem. O barramento de mensagem entrega mensagens a um módulo ao invocar uma função de chamada de retorno. Uma mensagem é composta por um conjunto de propriedades chave/valor e conteúdo transmitido como um bloco de memória.
+Os módulos utilizam a função **Broker_Publish** para publicar mensagens no mediador. O mediador entrega as mensagens a um módulo ao invocar uma função de chamada de retorno. Uma mensagem é composta por um conjunto de propriedades chave/valor e conteúdo transmitido como um bloco de memória.
 
 ![][3]
 
-Cada módulo é responsável por filtrar as mensagens, uma vez que o barramento de mensagem utiliza um mecanismo de difusão para disponibilizar cada mensagem a cada módulo ligado a si. Um módulo só deve realizar ações nas mensagens que se destinam ao mesmo. A filtragem de mensagens cria o pipeline de mensagens de forma eficaz. Normalmente, um módulo filtra as mensagens que recebe ao utilizar as propriedades da mensagem para identificar as mensagens que deve processar.
+### Encaminhamento e filtragem de mensagens
+
+Existem duas formas de direcionar as mensagens para os módulos corretos. Pode ser transmitido um conjunto de ligações para o mediador, para que este saiba qual é a origem e o sink de cada módulo, ou o módulo pode filtrar as propriedades das mensagens. Os módulos só devem tomar medidas relativamente a uma mensagem se esta se destinar aos mesmos. São as ligações e a filtragem de mensagens que criam, efetivamente, um pipeline de mensagens.
 
 ## Arquitetura do exemplo Olá Mundo
 
@@ -52,11 +54,11 @@ O exemplo Olá Mundo ilustra os conceitos descritos na secção anterior. O exem
 
 ![][4]
 
-Tal como descrito na secção anterior, o módulo Olá Mundo não passa mensagens diretamente para o módulo de registo a cada cinco segundos. Em vez disso, publica uma mensagem no barramento de mensagem a cada cinco segundos.
+Tal como descrito na secção anterior, o módulo Olá Mundo não passa mensagens diretamente para o módulo de registo a cada cinco segundos. Em vez disso, publica uma mensagem no mediador a cada cinco segundos.
 
-O módulo de registo recebe a mensagem do barramento de mensagem e inspeciona as respetivas propriedades num filtro. Se o módulo de registo determinar que deve processar a mensagem, escreve o conteúdo da mesma num ficheiro.
+O módulo Logger recebe a mensagem a partir do mediador e toma medidas relativamente à mesma, escrevendo os conteúdos da mensagem num ficheiro.
 
-O módulo de registo consome apenas mensagens do barramento de mensagem, nunca publica mensagens novas no barramento.
+O módulo Logger só consome mensagens do mediador, nunca publica mensagens novas no mesmo.
 
 ![][5]
 
@@ -73,6 +75,6 @@ A figura acima mostra a arquitetura do exemplo Olá Mundo e os caminhos relativo
 [lnk-helloworld-sample]: https://github.com/Azure/azure-iot-gateway-sdk/tree/master/samples/hello_world
 [lnk-gateway-sdk]: https://github.com/Azure/azure-iot-gateway-sdk
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 

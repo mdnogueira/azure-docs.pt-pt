@@ -14,49 +14,53 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="get-started-article" 
-    ms.date="09/08/2016" 
+    ms.date="09/22/2016" 
     ms.author="spelluru"/>
 
 
 # Introdução ao Azure Data Factory Service, um serviço de integração de dados em nuvem
 
 ## O que é o Azure Data Factory? 
-Data Factory é um serviço de integração de dados baseado na nuvem que orquestra e automatiza o movimento e a transformação de dados. Tal como uma fábrica de produção que opera equipamento para processar matéria-prima e transformá-la em bens acabados, o Data Factory orquestra os serviços existentes que recolhem dados não processados e os transforma em informações prontas a utilizar. 
+O Data Factory é um serviço de integração de dados baseado na nuvem que orquestra e automatiza o **movimento** e a **transformação** de dados. Pode criar soluções de integração de dados com o serviço Data Factory, que pode ingerir dados de vários arquivos de dados, transformá-los/processá-los e publicar os dados resultantes nos arquivos de dados. 
 
-O Data Factory funciona em fontes de dados e SaaS na nuvem e no local para inserir, preparar, transformar, analisar e publicar os seus dados. Utilize o Data Factory para compor serviços nos pipelines geridos de fluxo de dados para transformar os seus dados com serviços como o [Azure HDInsight (Hadoop)](http://azure.microsoft.com/documentation/services/hdinsight/) e o [Azure Batch](https://azure.microsoft.com/documentation/services/batch/), para as suas necessidades de computação de macrodados, e com o [Azure Machine Learning](https://azure.microsoft.com/documentation/services/machine-learning/) para operacionalizar as soluções de análise. Vá além apenas de uma vista de monitorização de tabela e utilize as visualizações otimizadas do Data Factory para visualizar rapidamente a linhagem e as dependências entre os pipelines de dados. Monitorize todos os pipelines de fluxo de dados a partir de uma vista unificada única para identificar facilmente os problemas e configurar alertas de monitorização.
+O serviço Data Factory permite-lhe criar pipelines de dados que movimentam e transformam dados e, depois, executar esses pipelines numa agenda especificada (hora a hora, diariamente, semanalmente, etc.). Também proporciona visualizações ricas para apresentar a linhagem e as dependências entre os pipelines de dados e monitorizá-los a partir de uma vista unificada única, para identificar facilmente problemas e configurar alertas de monitorização.
 
-![Diagrama: descrição geral do Data Factory Overview, um serviço de integração de dados](./media/data-factory-introduction/what-is-azure-data-factory.png)
+![Diagrama: descrição geral do Data Factory, um serviço de integração de dados](./media/data-factory-introduction/what-is-azure-data-factory.png)
+**Figure1.** Ingira dados de várias origens de dados, prepare-os, transforme-os e analise-os e, depois, publique dados prontos a utilizar para consumo.
 
-**Figura 1.** Recolha dados de várias origens de dados diferentes no local, insira, prepare, transforme e analise os dados e, em seguida, publique dados prontos a utilizar para consumo.
+## Pipelines e atividades
+Numa solução do Data Factory, pode criar um ou mais **pipelines** de dados. Os pipelines são agrupamentos lógicos de atividades. São utilizados para agrupar atividades numa unidade que, em conjunto, executa uma tarefa. 
 
-Pode utilizar o Data Factory sempre que precisar para recolher dados de diferentes formas e tamanhos, transformar e publicá-los para extrair conhecimentos aprofundados – tudo numa agenda fiável. O Data Factory serve para criar pipelines de fluxo de dados altamente disponíveis para muitos cenários em diferentes indústrias para as suas necessidades de pipeline de análise. Os retalhistas online utilizam-no para gerar [recomendações de produto](data-factory-product-reco-usecase.md) personalizadas com base no comportamento de navegação do cliente. Os estúdios de jogos utilizam-no para compreender a [eficácia das suas campanhas de marketing](data-factory-customer-profiling-usecase.md). Saiba diretamente a partir dos nossos clientes como e porque utilizam o Data Factory revendo [Casos Práticos de Clientes](data-factory-customer-case-studies.md). 
+As **atividades** definem as ações a efetuar nos seus dados. Por exemplo, pode utilizar uma atividade de Cópia para copiar dados de um arquivo de dados para outro. Da mesma forma, pode utilizar uma Atividade do Hive, que executa uma consulta do Hive num cluster do Azure HDInsight, para transformar ou analisar os seus dados. O Data Factory suporta dois tipos de atividades -- atividades de movimento de dados e atividades de transformação de dados. 
+  
+## Atividades de movimento de dados 
+[AZURE.INCLUDE [data-factory-supported-data-stores](../../includes/data-factory-supported-data-stores.md)]
 
-> [AZURE.VIDEO azure-data-factory-overview]
+Veja o artigo [Data Movement Activities (Atividades de Movimentos de Dados)](data-factory-data-movement-activities.md) para obter mais detalhes. 
 
-## Conceitos-chave
+## Atividades de transformação de dados
+[AZURE.INCLUDE [data-factory-transformation-activities](../../includes/data-factory-transformation-activities.md)]
 
+Veja o artigo [Data Transformation Activities (Atividades de Transformação de Dados)](data-factory-data-transformation-activities.md) para obter mais detalhes.
+
+Se precisar de mover dados de/para um arquivo de dados que a Atividade de Cópia não suporte ou de transformar dados com a sua própria lógica, crie uma **atividade .NET personalizada**. Para obter detalhes sobre criar e utilizar uma atividade personalizada, veja [Use custom activities in an Azure Data Factory pipeline (Utilizar atividades personalizadas num pipeline do Azure Data Factory)](data-factory-use-custom-activities.md).
+
+## Serviços ligados
+Os serviços ligados definem as informações necessárias para que o Data Factory se ligue a recursos externos (exemplos: Armazenamento do Azure, SQL Server no local, Azure HDInsight). Os serviços ligados são utilizados para duas finalidades no Data Factory:
+
+- Para representar um **arquivo de dados**, incluindo, entre outros, num SQL Server no local, numa base de dados Oracle, numa partilha de ficheiros ou numa conta do Armazenamento de Blobs do Azure. Veja a secção [Data movement activities (Atividades de movimento de dados)](data-factory-data-movement-activities.md) para obter uma lista dos arquivos de dados suportados. 
+- Para representar um **recurso de computação** que pode alojar a execução de uma atividade. Por exemplo, a Atividade HDInsightHive é executada num cluster do HDInsight Hadoop. Veja a secção [Data transformation activities (Atividades de transformação de dados)](data-factory-data-transformation-activities.md) para obter uma lista dos ambientes de computação suportados. 
+
+## Conjuntos de dados 
+Os serviços ligados ligam os arquivos de dados a uma fábrica de dados do Azure. Os conjuntos de dados representam estruturas de dados dentro dos arquivos de dados. Por exemplo, um serviço ligado do Armazenamento do Azure fornece informações de ligação para que o Data Factory se ligue a uma conta do Armazenamento do Azure. Um conjunto de dados do Blob do Azure especifica o contentor de blobs e a pasta no Armazenamento de Blobs do Azure a partir dos quais o pipeline deve ler os dados. Do mesmo modo, um serviço ligado do SQL Azure fornece informações de ligação para uma base de dados SQL do Azure e um conjunto de dados do SQL Azure especifica a tabela que contém os dados.   
+
+## Relação entre as entidades do Data Factory
 O Data Factory tem algumas entidades-chave que funcionam em conjunto para definir os dados de entrada e saída, eventos de processamento e a agenda e os recursos necessários para executar o fluxo de dados pretendido.
 
-![Diagrama: Data Factory, um serviço de integração de dados em nuvem – Conceitos Chave](./media/data-factory-introduction/data-integration-service-key-concepts.png)
+![Diagrama: Data Factory, um serviço de integração de dados na nuvem – Conceitos-chave](./media/data-factory-introduction/data-integration-service-key-concepts.png)
+**Figure 2.** Relações entre o Conjunto de Dados, Atividade, Pipeline e Serviço Ligado
 
-**Figura 2.** Relações entre o Conjunto de Dados, Atividade, Pipeline e Serviço Ligado
-
-### Pipelines
-[Pipelines](data-factory-create-pipelines.md) são agrupamentos lógicos de Atividades. São utilizados para agrupar atividades numa unidade que, em conjunto, executa uma tarefa. Por exemplo, pode ser necessária uma sequência de várias Atividades de transformação para limpar os dados do ficheiro de registo. Esta sequência pode ter uma agenda complexa e dependências que precisam de ser orquestradas e automatizadas. Todas estas atividades podem ser agrupadas num único Pipeline com o nome “CleanLogFiles”. Os “CleanLogFiles” podem, então, ser implementados, agendados ou eliminados como uma única unidade, ao invés de gerir cada atividade individual de forma independente.
-
-### Atividades
-As Atividades definem as ações a efetuar nos seus dados. Cada atividade aceita zero ou mais [conjuntos de dados](data-factory-create-datasets.md) como entradas e produz um ou mais conjuntos de dados como saídas. Uma atividade é uma unidade da orquestração no Azure Data Factory. Por exemplo, pode utilizar [Copiar atividade](data-factory-data-movement-activities.md) para orquestrar a cópia de dados de um conjunto de dados para outro. Da mesma forma, pode utilizar uma [Atividade do Hive](data-factory-data-transformation-activities.md), que executa uma consulta do Hive num cluster do Azure HDInsight, para transformar ou analisar os seus dados. O Azure Data Factory fornece uma vasta gama de atividades de transformação, análise e movimentos de dados. 
-
-### Conjuntos de dados
-[Conjuntos de dados](data-factory-create-datasets.md) são referências/ponteiros com nomes para os dados que pretende utilizar como entrada ou saída de uma Atividade. Os conjuntos de dados identificam estruturas de dados dentro de diferentes arquivos de dados, incluindo tabelas, ficheiros, pastas e documentos.
-
-### Serviço ligado
-Os serviços ligados definem as informações necessárias para que o Data Factory estabeleça uma ligação a recursos externos. Os serviços ligados são utilizados para duas finalidades no Data Factory:
-
-- Para representar um arquivo de dados, incluindo, mas não limitado a, um SQL Server no local, Oracle DB, Partilha de ficheiros ou uma conta do Armazenamento de Blobs do Azure. Conforme mencionado anteriormente, os Conjuntos de dados representam as estruturas de dados dentro dos arquivos de dados ligados ao Data Factory através de um Serviço ligado.
-- Para representar um recurso de computação que pode alojar a execução de uma Atividade. Por exemplo, a “Atividade HDInsightHive” é executada num cluster HDInsight Hadoop.
-
-Com os quatro conceitos simples dos conjuntos de dados, atividades, pipelines e serviços ligados, está pronto para começar! Pode [construir o seu primeiro pipeline](data-factory-build-your-first-pipeline.md) ou implementar uma amostra pronta a utilizar, seguindo as instruções no nosso artigo [Amostras do Data Factory](data-factory-samples.md). 
+Com os quatro conceitos simples de serviços ligados, conjuntos de dados, atividades e pipelines, está pronto para começar! Pode [criar o seu primeiro pipeline](data-factory-build-your-first-pipeline.md). 
 
 ## Regiões suportadas
 Atualmente, pode criar fábricas de dados nas regiões **E.U.A. Oeste**, **E.U.A. Leste** e **Europa do Norte**. No entanto, uma fábrica de dados pode aceder aos arquivos de dados e serviços de computação noutras regiões do Azure para mover dados entre os arquivos de dados ou processar dados com serviços de computação. 
@@ -79,6 +83,6 @@ Tutorial | Descrição
 [Criar um pipeline de dados para mover dados entre um arquivo de dados no local e um arquivo de dados em nuvem utilizando o Data Management Gateway](data-factory-move-data-between-onprem-and-cloud.md) | Neste tutorial, vai criar uma fábrica de dados com um pipeline que **move dados** de uma base de dados do SQL Server **no local** para um blob do Azure. Como parte das instruções, vai instalar e configurar o Data Management Gateway no seu computador. 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 

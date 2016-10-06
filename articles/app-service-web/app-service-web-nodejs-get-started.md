@@ -21,16 +21,17 @@
 
 [AZURE.INCLUDE [tabs](../../includes/app-service-web-get-started-nav-tabs.md)]
 
-Este tutorial mostra como criar uma aplicação [Node.js][NODEJS] simples e implementá-la numa [aplicação Web] no [App Service do Azure] a partir de um ambiente de linha de comandos como cmd.exe ou bash. As instruções deste tutorial podem ser seguidas em qualquer sistema operativo capaz de executar Node.js.
+Este tutorial mostra como criar uma aplicação [Node.js] simples e implementá-la no [Serviço de Aplicações do Azure] a partir de um ambiente de linha de comandos, como cmd.exe ou bash. As instruções deste tutorial podem ser seguidas em qualquer sistema operativo que possa executar Node.js.
+
 
 <a name="prereq"></a>
 ## Pré-requisitos
 
-- **Node.js** ([Clique aqui para instalar][NODEJS])
-- **Bower** ([Clique aqui para instalar][BOWER])
-- **Yeoman** ([Clique aqui para instalar][YEOMAN])
-- **Git** ([Clique aqui para instalar][GIT])
-- **CLI do Azure** ([Clique aqui para instalar][CLI do Azure])
+- [Node.js]
+- [Bower]
+- [Yeoman]
+- [Git]
+- [CLI do Azure]
 - Uma conta do Microsoft Azure. Se não tiver uma conta, pode [inscrever-se numa avaliação gratuita] ou [ativar os benefícios de subscritor do Visual Studio].
 
 ## Criar e implementar uma aplicação Web Node.js simples
@@ -59,20 +60,20 @@ Este tutorial mostra como criar uma aplicação [Node.js][NODEJS] simples e impl
 
     No browser, navegue até <http://localhost:3000> para se certificar de que consegue ver a home page do Express. Depois de verificar que a sua aplicação está a ser executada corretamente, utilize `Ctrl-C` para a interromper.
     
-1. Mudar para o modo ASM e iniciar sessão no Azure (para fazê-lo, precisa da [CLI do Azure](#prereq)):
+1. Mudar para o modo ASM e iniciar sessão no Azure (precisa da [CLI do Azure](#prereq)):
 
         azure config mode asm
         azure login
 
     Siga o pedido para continuar o processo de início de sessão num browser com uma conta Microsoft que tenha a sua subscrição do Azure.
 
-2. Certifique-se de que ainda se encontra no diretório de raiz da sua aplicação e, em seguida, crie o recurso de aplicações do App Service no Azure com um nome de aplicação único com o comando seguinte; por exemplo: http://{appname}.azurewebsites.net
+2. Confirme que ainda está no diretório de raiz da sua aplicação e, em seguida, crie o recurso da aplicação do Serviço de Aplicações no Azure com um nome de aplicação exclusivo com o comando seguinte. Por exemplo: http://{appname}.azurewebsites.net
 
         azure site create --git {appname}
 
     Siga o pedido para selecionar uma região do Azure para a implementação. Se nunca configurou as credenciais de implementação do Git/FTP para a sua subscrição do Azure, ser-lhe-á solicitado que as crie.
 
-3. Abra o ficheiro ./config/config.js na raiz da aplicação e altere a porta de produção para `process.env.port`; a sua propriedade `production` no objeto `config` deve parecer-se semelhante ao seguinte exemplo.
+3. Abra o ficheiro ./config/config.js na raiz da aplicação e altere a porta de produção para `process.env.port`; a propriedade `production` no objeto `config` deve ser semelhante ao seguinte exemplo:
 
         production: {
             root: rootPath,
@@ -84,13 +85,19 @@ Este tutorial mostra como criar uma aplicação [Node.js][NODEJS] simples e impl
 
     Esta funcionalidade permite à aplicação Node.js responder a pedidos da Web na porta predefinida que o iisnode escuta.
     
+4. Abra./package.json e adicione a propriedade `engines` para [especificar a versão pretendida do Node.js](#version).
+
+        "engines": {
+            "node": "6.6.0"
+        }, 
+
 4. Guarde as alterações e, em seguida, utilize o git para implementar a sua aplicação no Azure:
 
         git add .
         git commit -m "{your commit message}"
         git push azure master
 
-    O gerador do Express já fornece um ficheiro .gitignore, por isso, o `git push` não irá consumir largura de banda ao tentar carregar o diretório node_modules/.
+    O gerador do Express já fornece um ficheiro .gitignore, por isso, o `git push` não consome largura de banda quando tenta carregar o diretório node_modules/.
 
 5. Por fim, inicie a aplicação Azure online no browser:
 
@@ -117,7 +124,7 @@ O App Service do Azure utiliza o [iisnode] para executar aplicações Node.js. A
     
 ## Utilizar uma arquitetura Node.js
 
-Se utilizar uma arquitetura Node.js popular, como [Sails.js][SAILSJS] ou [MEAN.js][MEANJS] para desenvolver aplicações, pode implementá-los no App Service. As arquiteturas populares Node.js têm as suas caraterísticas específicas e as respetivas dependências são constantemente atualizadas. No entanto, o App Service coloca à sua disposição os registos de stdout e stderr, pelo que pode saber exatamente o que está a acontecer com a aplicação e efetuar alterações em conformidade. Para obter mais informações, consulte [Obter registos de stdout e stderr do iisnode](#iisnodelog).
+Se utilizar uma arquitetura Node.js popular, como [Sails.js][SAILSJS] ou [MEAN.js][MEANJS] para desenvolver aplicações, pode implementá-los no App Service. As arquiteturas populares Node.js têm as suas caraterísticas específicas e as respetivas dependências são constantemente atualizadas. No entanto, o Serviço de Aplicações coloca à sua disposição os registos de stdout e stderr, pelo que pode saber exatamente o que está a acontecer com a aplicação e efetuar alterações em conformidade. Para obter mais informações, consulte [Obter registos de stdout e stderr do iisnode](#iisnodelog).
 
 Os tutoriais seguinte mostrar-lhe-ão como trabalhar com uma arquitetura específica no App Service:
 
@@ -125,13 +132,14 @@ Os tutoriais seguinte mostrar-lhe-ão como trabalhar com uma arquitetura especí
 - [Criar uma aplicação de chat Node.js com o Socket.IO no App Service do Azure]
 - [Como utilizar o io.js com as Web Apps do App Service do Azure]
 
+<a name="version"></a>
 ## Utilizar um motor Node.js específico
 
-No seu fluxo de trabalho normal, pode dizer ao App Service para utilizar um motor Node.js específico, tal como faria normalmente no package.json.
+No seu fluxo de trabalho normal, pode dizer ao Serviço de Aplicações para utilizar um motor Node.js específico, tal como faria normalmente em package.json.
 Por exemplo:
 
     "engines": {
-        "node": "5.5.0"
+        "node": "6.6.0"
     }, 
 
 O motor de implementação do Kudu determina qual o motor Node.js a utilizar pela seguinte ordem:
@@ -140,10 +148,12 @@ O motor de implementação do Kudu determina qual o motor Node.js a utilizar pel
 - Em seguida, observe o package.json para ver se `"node": "..."` está especificado no objeto `engines`. Se sim, utilize-o.
 - Escolha uma versão do Node.js predefinida por predefinição.
 
+>[AZURE.NOTE] É recomendado que defina explicitamente o motor de Node.js que pretende. A versão do Node.js predefinida pode mudar e poderá receber erros na sua aplicação Web do Azure, devido à versão do Node.js predefinida não ser adequada à aplicação.
+
 <a name="iisnodelog"></a>
 ## Obter registos de stdout e stderr do iisnode
 
-Para ler os registos do iisnode, siga os passos abaixo.
+Para ler registos iisnode, siga estes passos.
 
 > [AZURE.NOTE] Depois de concluir estes passos, os ficheiros de registo podem não existir até que ocorra um erro.
 
@@ -162,13 +172,13 @@ Para ler os registos do iisnode, siga os passos abaixo.
         git commit -m "{your commit message}"
         git push azure master
    
-   O iisnode está agora configurado. Os passos seguintes mostram-lhe como aceder a estes registos.
+    O iisnode está agora configurado. Os passos seguintes mostram-lhe como aceder a estes registos.
      
 4. No browser, aceda à consola de depuração do Kudu relativa à sua aplicação, que se encontra em:
 
         https://{appname}.scm.azurewebsites.net/DebugConsole 
 
-    Tenha em atenção que este URL é diferente do URL da aplicação Web ao ter "*.scm.*" adicionado ao nome DNS. Se omitir esse adição no URL, obterá um erro 404.
+    Este URL é diferente do URL da aplicação Web ao ter "*.scm.*" adicionado ao nome DNS. Se omitir esse adição no URL, obterá um erro 404.
 
 5. Navegue até D:\home\site\wwwroot\iisnode
 
@@ -221,22 +231,22 @@ Para ativar o Node-Inspector, siga estes passos:
 <!-- URL List -->
 
 [CLI do Azure]: ../xplat-cli-install.md
-[App Service do Azure]: ../app-service/app-service-value-prop-what-is.md
+[Serviço de Aplicações do Azure]: ../app-service/app-service-value-prop-what-is.md
 [ativar os benefícios de subscritor do Visual Studio]: http://go.microsoft.com/fwlink/?LinkId=623901
-[BOWER]: http://bower.io/
+[Bower]: http://bower.io/
 [Criar uma aplicação de chat Node.js com o Socket.IO no App Service do Azure]: ./web-sites-nodejs-chat-app-socketio.md
 [Implementar uma aplicação Web Sails.js no App Service do Azure]: ./app-service-web-nodejs-sails.md
 [Explorar a Consola de Depuração do Kudu Super Secreta]: /documentation/videos/super-secret-kudu-debug-console-for-azure-web-sites/
 [Gerador do Express para o Yeoman]: https://github.com/petecoop/generator-express
-[GIT]: http://www.git-scm.com/downloads
+[Git]: http://www.git-scm.com/downloads
 [Como utilizar o io.js com as Web Apps do App Service do Azure]: ./web-sites-nodejs-iojs.md
 [iisnode]: https://github.com/tjanczuk/iisnode/wiki
 [MEANJS]: http://meanjs.org/
-[NODEJS]: http://nodejs.org
+[Node.js]: http://nodejs.org
 [SAILSJS]: http://sailsjs.org/
 [inscrever-se numa avaliação gratuita]: http://go.microsoft.com/fwlink/?LinkId=623901
 [aplicação Web]: ./app-service-web-overview.md
-[YEOMAN]: http://yeoman.io/
+[Yeoman]: http://yeoman.io/
 
 <!-- IMG List -->
 
@@ -247,6 +257,6 @@ Para ativar o Node-Inspector, siga estes passos:
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 

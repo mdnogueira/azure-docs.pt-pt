@@ -13,8 +13,9 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="07/21/2016"
+   ms.date="09/22/2016"
    ms.author="yurid"/>
+
 
 #Monitorização de estado de funcionamento de segurança no Centro de Segurança do Azure
 Este documento ajuda-o a utilizar as capacidades de monitorização no Centro de Segurança do Azure para monitorizar a conformidade com políticas.
@@ -29,7 +30,7 @@ Para mais informações sobre como aplicar recomendações, leia [Implementar re
 
 No mosaico **Estado de Funcionamento da Segurança de Recursos** pode monitorizar o estado de segurança dos seus recursos. No exemplo abaixo, pode ver vários problemas com uma gravidade média e alta que necessitam da atenção. As políticas de segurança que estão ativadas terão impacto nos tipos de controlos que são monitorizados.
 
-![Estado de funcionamento de recursos](./media/security-center-monitoring/security-center-monitoring-fig1-ga.png)
+![Estado de funcionamento de recursos](./media/security-center-monitoring/security-center-monitoring-fig1-new4.png)
 
 Se o Centro de Segurança identificar uma vulnerabilidade que necessita de ser tratada, tal como uma VM com atualizações de segurança em falta ou uma sub-rede sem um [grupo de segurança de rede](../virtual-network/virtual-networks-nsg.md), esta será listada aqui.
 
@@ -51,7 +52,7 @@ Esta secção mostra o número total de VMs que foram inicializadas para recolha
 
 
 ####Recomendações de Virtual Machines
-Esta secção tem um conjunto de recomendações para cada VM monitorizada pelo Centro de Segurança do Azure. A primeira coluna inclui a recomendação, a segunda coluna o número total de VMs que são afetadas por essa recomendação e a terceira coluna indica a gravidade do problema conforme ilustrado abaixo.
+Esta secção tem um conjunto de [recomendações para cada VM](security-center-virtual-machine-recommendations.md) monitorizada pelo Centro de Segurança do Azure. A primeira coluna inclui a recomendação, a segunda coluna o número total de VMs que são afetadas por essa recomendação e a terceira coluna indica a gravidade do problema conforme ilustrado abaixo.
 
 ![Recomendações da VM](./media/security-center-monitoring/security-center-monitoring-fig4-ga.png)
 
@@ -116,7 +117,7 @@ Quando clica em **Redes** no mosaico **Estado de funcionamento da segurança de 
 
 À semelhança das informações de estado de funcionamento de recursos de máquinas virtuais, este painel fornece uma lista resumida dos problemas na parte superior do painel e uma lista das redes monitorizadas na parte inferior.
 
-A secção da divisão de estado de funcionamento de redes apresenta uma lista de potenciais problemas de segurança e oferece recomendações. Os possíveis problemas podem incluir:
+A secção da divisão de estado de funcionamento de redes apresenta uma lista de potenciais problemas de segurança e oferece [recomendações](security-center-network-recommendations.md). Os possíveis problemas podem incluir:
 
 - Firewall da Próxima Geração (NGFW) não instalada
 - Grupos de Segurança de Rede (NSGs) em sub-redes não ativadas
@@ -160,8 +161,8 @@ Nesta vista de topologia, o primeiro nível tem [Virtual Networks](../virtual-ne
 
 A parte inferior deste painel tem as recomendações para esta VM, semelhantes ao que está descrito acima. Pode clicar numa recomendação para obter mais informações ou aplicar o controlo/configuração de segurança necessário.
 
-###Monitorizar recursos SQL
-Quando clica em **SQL** no mosaico **Estado de funcionamento da segurança de recursos**, o painel SQL abre-se com recomendações para problemas tais como a auditoria, a encriptação de dados transparente não ativada. Também tem recomendações para o estado de funcionamento geral da base de dados.
+###Monitorizar dados
+Quando clica em **Dados** no mosaico **Estado de funcionamento da segurança de recursos**, o painel **SQL** abre-se com recomendações para problemas como auditoria, encriptação de dados transparente não ativada, entre outros. Também tem [recomendações](security-center-sql-service-recommendations.md) para o estado de funcionamento geral da base de dados.
 
 ![Estado de funcionamento de Recursos SQL](./media/security-center-monitoring/security-center-monitoring-fig13-ga.png)
 
@@ -208,6 +209,6 @@ Neste documento, aprendeu a utilizar as capacidades de monitorização no Centro
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO4-->
 
 

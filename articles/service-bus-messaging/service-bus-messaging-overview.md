@@ -1,57 +1,64 @@
 <properties
-	pageTitle="Service Bus messaging overview | Microsoft Azure"
-	description="Service Bus Messaging: flexible data delivery in the cloud"
-	services="service-bus-messaging"
-	documentationCenter=".net"
-	authors="sethmanheim"
-	manager="timlt"
-	editor=""/>
+    pageTitle="Descrição geral de mensagens do Service Bus | Microsoft Azure"
+    description="Mensagens do Service Bus: entrega flexível de dados na nuvem"
+    services="service-bus-messaging"
+    documentationCenter=".net"
+    authors="sethmanheim"
+    manager="timlt"
+    editor=""/>
 
 <tags
-	ms.service="service-bus-messaging"
-	ms.workload="na"
-	ms.tgt_pltfrm="na"
-	ms.devlang="multiple"
-	ms.topic="get-started-article"
-	ms.date="09/27/2016"
-	ms.author="sethm"/>
+    ms.service="service-bus-messaging"
+    ms.workload="na"
+    ms.tgt_pltfrm="na"
+    ms.devlang="multiple"
+    ms.topic="get-started-article"
+    ms.date="09/27/2016"
+    ms.author="sethm"/>
 
 
-# Service Bus messaging: flexible data delivery in the cloud
 
-Microsoft Azure Service Bus is a reliable information delivery service. The purpose of this service is to make communication easier. When two or more parties want to exchange information, they need a communication mechanism. Service Bus is a brokered, or third-party communication mechanism. This is similar to a postal service in the physical world. Postal services make it very easy to send different kinds of letters and packages with a variety of delivery guarantees, anywhere in the world.
+# Mensagens do Service Bus: entrega flexível de dados na nuvem
 
-Similar to the postal service delivering letters, Service Bus is flexible information delivery from both the sender and the recipient. The messaging service ensures that the information is delivered even if the two parties are never both online at the same time, or if they aren't available at the exact same time. In this way, messaging is similar to sending a letter, while non-brokered communication is similar to placing a phone call (or how a phone call used to be - before call waiting and caller ID, which are much more like brokered messaging).
+O Microsoft Azure Service Bus é um serviço fiável de entrega de informações. O objetivo deste serviço é facilitar a comunicação. Quando duas ou mais entidades querem trocar informações, precisam de um mecanismo de comunicação. O Service Bus é um mecanismo de comunicação mediado ou de terceiros. É algo semelhante a um serviço postal de entrega de cartas no mundo físico. Os serviços postais facilitam o envio de diferentes tipos de cartas e pacotes, com uma variedade de garantias de entrega, em qualquer lugar do mundo.
 
-The message sender can also require a variety of delivery characteristics including transactions, duplicate detection, time-based expiration, and batching. These patterns have postal analogies as well: repeat delivery, required signature, address change, or recall.
+O Service Bus é semelhante ao serviço postal de entrega de cartas, pois trata da entrega flexível de informações entre o remetente e o destinatário. O serviço de mensagens assegura que a informação é entregue, mesmo se as duas partes nunca estão online ao mesmo tempo ou se não estão disponíveis no mesmo momento exato. Desta forma, enviar mensagens é semelhante a enviar uma carta, enquanto a comunicação não mediada é semelhante a fazer uma chamada telefónica (ou como uma chamada telefónica costumava ser - antes da criação de serviços de identificação de chamada ou chamada de espera, que são muito mais semelhantes a mensagens mediadas).
 
-Service Bus supports two distinct messaging patterns: *Relay* and *brokered messaging*.
+O remetente da mensagem também pode exigir uma variedade de características de entrega incluindo transações, deteção de duplicados, expiração com base no tempo e processamento de lotes. Estes padrões também têm analogias postais: repetição de entrega, assinatura necessária, alteração de endereço ou devolução de chamada.
 
-## Service Bus Relay
+O Service Bus suporta dois padrões de mensagens distintos: *Reencaminhamento* e *mensagens mediadas*.
 
-The [Relay](../service-bus-relay/service-bus-relay-overview.md) component of Service Bus is a centralized (but highly load-balanced) service that supports a variety of different transport protocols and Web services standards. This includes SOAP, WS-*, and even REST. The [relay service](../service-bus-relay/service-bus-dotnet-how-to-use-relay.md) provides a variety of different relay connectivity options and can help negotiate direct peer-to-peer connections when it is possible. Service Bus is optimized for .NET developers who use the Windows Communication Foundation (WCF), both with regard to performance and usability, and provides full access to its relay service through SOAP and REST interfaces. This makes it possible for any SOAP or REST programming environment to integrate with Service Bus.
+## Reencaminhamento do Service Bus
 
-The relay service supports traditional one-way messaging, request/response messaging, and peer-to-peer messaging. It also supports event distribution at Internet-scope to enable publish-subscribe scenarios and bi-directional socket communication for increased point-to-point efficiency. In the relayed messaging pattern, an on-premises service connects to the relay service through an outbound port and creates a bi-directional socket for communication tied to a particular rendezvous address. The client can then communicate with the on-premises service by sending messages to the relay service targeting the rendezvous address. The relay service will then "relay" messages to the on-premises service through the bi-directional socket already in place. The client does not need a direct connection to the on-premises service, nor is it required to know where the service resides, and the on-premises service does not need any inbound ports open on the firewall.
+O componente [Reencaminhamento](../service-bus-relay/service-bus-relay-overview.md) do Service Bus é um serviço centralizado (mas com grande balanceamento de carga) que suporta uma variedade de protocolos diferentes de transporte e normas de serviços Web. Inclui SOAP, WS-* e até REST. O [serviço de reencaminhamento](../service-bus-relay/service-bus-dotnet-how-to-use-relay.md) proporciona uma variedade de opções de conectividade de reencaminhamento diferentes e podem ajudá-lo na negociação de ligações diretas ponto a ponto sempre que for possível. O Service Bus foi otimizado para os programadores do .NET que utilizam o Windows Communication Foundation (WCF), tanto em termos de desempenho com em facilidade de utilização, e fornece acesso total ao respetivo serviço de reencaminhamento através de interfaces SOAP e REST. Isto permite que qualquer ambiente de programação SOAP ou REST se integre com o Service Bus.
 
-You initiate the connection between your on-premises service and the relay service, using a suite of WCF "relay" bindings. Behind the scenes, the relay bindings map to transport binding elements designed to create WCF channel components that integrate with Service Bus in the cloud.
+O serviço de reencaminhamento suporta as tradicionais mensagens unidirecionais, mensagens de pedido/resposta e mensagens de ponto a ponto. Também suporta a distribuição de eventos no âmbito de Internet para permitir cenários de publicação-subscrição e comunicação de socket bidirecional para aumentar a eficiência ponto a ponto. No padrão de mensagens retransmitidas, um serviço no local liga-se ao serviço de reencaminhamento através de uma porta de saída e cria um socket bidirecional para comunicação associada a um endereço de encontro específico. Depois, o cliente pode comunicar com o serviço no local enviando mensagens para o serviço de reencaminhamento destinadas ao endereço de encontro. O serviço de reencaminhamento "reencaminhará" as mensagens para o serviço no local através do socket bidirecional existente. O cliente não precisa de uma ligação direta para o serviço no local, nem precisa de saber onde reside o serviço e o serviço no local não precisa de nenhuma porta de entrada aberta na firewall.
 
-Service Bus Relay provides many benefits, but requires the server and client to both be online at the same time in order to send and receive messages. This is not optimal for HTTP-style communication, in which the requests may not be typically long-lived, nor for clients that connect only occasionally, such as browsers, mobile applications, and so on. Brokered messaging supports decoupled communication, and has its own advantages; clients and servers can connect when needed and perform their operations in an asynchronous manner.
+Deve iniciar a ligação entre o serviço no local e o serviço de reencaminhamento através de um conjunto de enlaces de "reencaminhamento" do WCF. Em segundo plano, os enlaces de reencaminhamento mapeiam para elementos de enlace de transporte concebidos para criar os componentes de canal WCF que se integram ao Service Bus na nuvem.
 
-## Brokered messaging
+O Reencaminhamento do Service Bus tem muitas vantagens, mas requer que, tanto o servidor, como o cliente, estejam online ao mesmo tempo para enviar e receber mensagens. Esta não é situação ideal para a comunicação de estilo HTTP, na qual os pedidos normalmente não podem ser de longa duração, nem para os clientes que só se ligam ocasionalmente, tais como navegadores, aplicações móveis, etc.. As mensagens mediadas suportam comunicação desacoplada e tem as suas próprias vantagens; os clientes e servidores podem ligar-se quando seja necessário e efetuar as operações de forma assíncrona.
 
-In contrast to the relay scheme, [brokered messaging](service-bus-queues-topics-subscriptions.md) can be thought of as asynchronous, or "temporally decoupled." Producers (senders) and consumers (receivers) do not have to be online at the same time. The messaging infrastructure reliably stores messages in a "broker" (such as a queue) until the consuming party is ready to receive them. This allows the components of the distributed application to be disconnected, either voluntarily; for example, for maintenance, or due to a component crash, without affecting the entire system. Furthermore, the receiving application may only have to come online during certain times of the day, such as an inventory management system that only is required to run at the end of the business day.
+## Mensagens mediadas
 
-The core components of the Service Bus brokered messaging infrastructure are queues, topics, and subscriptions.  The primary difference is that topics support publish/subscribe capabilities that can be used for sophisticated content-based routing and delivery logic, including sending to multiple recipients. These components enable new asynchronous messaging scenarios, such as temporal decoupling, publish/subscribe, and load balancing. For more information about these messaging entities, see [Service Bus queues, topics, and subscriptions](service-bus-queues-topics-subscriptions.md).
+Ao contrário do esquema do reencaminhamento, as [mensagens mediadas ](service-bus-queues-topics-subscriptions.md) podem considerar-se como assíncronas ou “temporariamente dissociadas”. Os produtores (remetentes) e os consumidores (recetores) não têm de estar online ao mesmo tempo. A infraestrutura de mensagens armazena mensagens, de modo fiável, no "mediador" (por exemplo, numa fila) até que a parte consumidora esteja preparada para recebê-las. Isto permite que os componentes da aplicação distribuída estejam desconectados, quer voluntariamente, por exemplo, para manutenção, quer devido a uma falha de componente, sem afetar todo o sistema. Além disso, é possível que a aplicação recetora só tenha de ficar online durante determinadas horas do dia, por exemplo, um sistema de gestão de stocks que só é necessário executar no fim do dia.
 
-As with the Relay infrastructure, the brokered messaging capability is provided for WCF and .NET Framework programmers, and also via REST.
+Os componentes principais da infraestrutura de mensagens mediadas do Service Bus são filas, tópicos e subscrições.  A principal diferença é que os tópicos suportam funcionalidades de publicação/subscrição que podem ser utilizadas para o encaminhamento com base em conteúdo sofisticado e lógica de entrega, incluindo o envio para vários destinatários. Estes componentes permitem novos cenários de mensagens assíncronas, tais como desacoplamento temporal, publicação/subscrição e balanceamento de carga. Para mais informações sobre estas entidades de mensagens, consulte o artigo [Filas, tópicos e subscrições do Service Bus](service-bus-queues-topics-subscriptions.md).
 
-## Next steps
+Tal como acontece com a infraestrutura do Reencaminhamento, a capacidade de mensagens mediadas é fornecida para os programadores de WCF e de .NET Framework, bem como através de REST.
 
-To learn more about Service Bus messaging, see the following topics.
+## Passos seguintes
 
-- [Service Bus fundamentals](../service-bus/service-bus-fundamentals-hybrid-solutions.md)
-- [Service Bus queues, topics, and subscriptions](service-bus-queues-topics-subscriptions.md)
-- [Service Bus architecture](../service-bus/service-bus-architecture.md)
-- [How to use Service Bus queues](service-bus-dotnet-get-started-with-queues.md)
-- [How to use Service Bus topics and subscriptions](service-bus-dotnet-how-to-use-topics-subscriptions.md)
+Para mais informações sobre mensagens do Service Bus, consulte os seguintes tópicos.
+
+- [Noções básicas do Service Bus](../service-bus/service-bus-fundamentals-hybrid-solutions.md)
+- [Filas, tópicos e subscrições do Service Bus](service-bus-queues-topics-subscriptions.md)
+- [Arquitetura do Service Bus](../service-bus/service-bus-architecture.md)
+- [Como utilizar as filas do Service Bus](service-bus-dotnet-get-started-with-queues.md)
+- [Como utilizar os tópicos e as subscrições do Service Bus](service-bus-dotnet-how-to-use-topics-subscriptions.md)
  
+
+
+
+<!--HONumber=Sep16_HO4-->
+
+

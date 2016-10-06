@@ -26,7 +26,7 @@
 - [C#](sql-database-get-started-csharp.md)
 - [PowerShell](sql-database-get-started-powershell.md)
 
-Saiba como utilizar o C# para criar uma base de dados SQL do Azure com a [Biblioteca da Base de Dados SQL do Azure para .NET](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql). Este artigo descreve como criar uma base de dados única com o SQL Server e o C#. Para criar conjuntos de bases de dados elásticas, consulte o artigo [Criar um conjunto de bases de dados elásticas](sql-database-elastic-pool-create-portal.md).
+Saiba como utilizar o C# para criar uma base de dados SQL do Azure com a [Biblioteca da Base de Dados SQL do Azure para .NET](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql). Este artigo descreve como criar uma base de dados única com o SQL Server e o C#. Para criar conjuntos de bases de dados elásticas, consulte o artigo [Criar um conjunto de bases de dados elásticas](sql-database-elastic-pool-create-csharp.md).
 
 A Biblioteca da Base de Dados SQL do Azure para .NET fornece uma API baseada no [Azure Resource Manager](../resource-group-overview.md) que encapsula num wrapper a [API REST da Base de Dados SQL baseada no Resource Manager](https://msdn.microsoft.com/library/azure/mt163571.aspx).
 
@@ -294,6 +294,6 @@ Agora que já experimentou a Base de Dados SQL e configurou uma base de dados co
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 

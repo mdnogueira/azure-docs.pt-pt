@@ -43,6 +43,6 @@ Uma vez que o tutorial o ajuda a criar rapidamente uma máquina virtual, apenas 
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 

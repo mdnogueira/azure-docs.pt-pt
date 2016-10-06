@@ -39,6 +39,11 @@ Neste exemplo, utilizamos o nome do conjunto de registos “@” para criar o re
 
     azure network dns record-set add-record myresourcegroup  contoso.com  "test-ns" NS -d "ns1.contoso.com"
 
+#### Criar um conjunto de registos PTR com um único registo  
+Neste caso, “my-arpa-zone.com” representa a zona ARPA, que representa o seu intervalo de IP.  Cada conjunto de registos PTR nesta zona corresponde a um endereço IP neste intervalo de IPs.    
+
+    azure network dns record-set add-record myresourcegroup my-arpa-zone.com "10" PTR -P "myservice.contoso.com"   
+
 #### Criar um conjunto de registos SRV com um único registo
 
 Se estiver a criar um registo SRV na raiz da zona, pode especificar “_service” e “_protocol” no nome do registo. Não é necessário incluir “@” no nome do registo.
@@ -55,6 +60,6 @@ Se estiver a criar um registo SRV na raiz da zona, pode especificar “_service�
     azure network dns record-set add-record myresourcegroup contoso.com "test-txt" TXT -x "this is a TXT record"
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 

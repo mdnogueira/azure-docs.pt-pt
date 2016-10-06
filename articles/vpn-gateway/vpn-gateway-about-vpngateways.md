@@ -13,21 +13,33 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="09/01/2016"
+   ms.date="09/21/2016"
    ms.author="cherylmc" />
 
 
 # Acerca do VPN Gateway
 
 
-Um gateway de rede virtual é utilizado para enviar tráfego de rede entre redes virtuais do Azure e localizações no local, assim como entre redes virtuais dentro do Azure (VNet-para-VNet). Para criar uma ligação, adicione um gateway de rede virtual a uma VNet, em conjunto com recursos adicionais e as respetivas definições. 
+Um gateway de rede virtual é utilizado para enviar tráfego de rede entre redes virtuais do Azure e localizações no local, assim como entre redes virtuais dentro do Azure (VNet a VNet). Se configurar um gateway de VPN, tem de criar e configurar um gateway de rede virtual e uma ligação ao mesmo.
 
-Quando criar um recurso de gateway de rede virtual, especifica várias definições. Uma das definições necessárias é "-GatewayType". O tipo de gateway especifica como o gateway se liga. Existem dois tipos de gateway de rede virtual: Vpn e ExpressRoute. Quando o tráfego de rede é enviado numa ligação privada dedicada, está a utilizar o tipo de gateway "ExpressRoute". Também se refere a este como um gateway ExpressRoute. Quando o tráfego de rede é enviado encriptado através de uma ligação pública, está a utilizar o tipo de gateway "Vpn". Isto é referido como um gateway de VPN. As ligações Sites para Site, Ponto para site e VNet para VNet utilizam todas um gateway de VPN.
+No modelo de implementação Resource Manager, quando cria um recurso de gateway de rede virtual, são especificadas várias definições. Uma das definições necessárias é "-GatewayType". Existem dois tipos de gateway de rede virtual: Vpn e ExpressRoute. 
 
-Cada rede virtual pode ter apenas um gateway de rede virtual por tipo de gateway. Por exemplo, pode ter um gateway de rede virtual que utilize -GatewayType Vpn e outro que utilize GatewayType ExpressRoute. Este artigo centra-se, principalmente, no Gateway de VPN. Para obter mais informações sobre ExpressRoute, veja a [Descrição Geral Técnica do ExpressRoute](../expressroute/expressroute-introduction.md).
+Quando o tráfego de rede é enviado numa ligação privada dedicada, está a utilizar o tipo de gateway "ExpressRoute". Também se refere a este como um gateway ExpressRoute. Quando o tráfego de rede é enviado encriptado através de uma ligação pública, está a utilizar o tipo de gateway "Vpn". Isto é referido como um gateway de VPN. As ligações Sites para Site, Ponto para site e VNet para VNet utilizam todas um gateway de VPN.
 
-Para obter informações sobre os requisitos de gateways, veja [Requisitos de Gateway](vpn-gateway-about-vpn-gateway-settings.md#requirements). Para ver o débito agregado estimado, veja [About VPN Gateway Settings (Acerca das Definições do Gateway de VPN)](vpn-gateway-about-vpn-gateway-settings.md#aggthroughput). Para ver os preços, veja [Preços de Gateway de VPN](https://azure.microsoft.com/pricing/details/vpn-gateway). Para saber os limites das subscrições e do serviço, veja [Networking Limits (Limites de rede)](../articles/azure-subscription-service-limits.md#networking-limits).
+Cada rede virtual pode ter apenas um gateway de rede virtual por tipo de gateway. Por exemplo, pode ter um gateway de rede virtual que utilize -GatewayType ExpressRoute e outro que utilize -GatewayType Vpn. Este artigo centra-se, principalmente, no Gateway de VPN. Para obter mais informações sobre ExpressRoute, veja a [Descrição Geral Técnica do ExpressRoute](../expressroute/expressroute-introduction.md).
 
+## Preços
+
+[AZURE.INCLUDE [vpn-gateway-about-pricing-include](../../includes/vpn-gateway-about-pricing-include.md)] 
+
+
+## SKUs de gateway
+
+[AZURE.INCLUDE [vpn-gateway-gwsku-include](../../includes/vpn-gateway-gwsku-include.md)] 
+
+A tabela seguinte mostra os tipos de gateways e o débito agregado estimado. Esta tabela aplica-se aos modelos de implementação clássica e Resource Manager.
+
+[AZURE.INCLUDE [vpn-gateway-table-gwtype-aggthroughput](../../includes/vpn-gateway-table-gwtype-aggtput-include.md)] 
 
 ## Configurar um Gateway de VPN
 
@@ -35,7 +47,7 @@ Ao configurar um gateway de VPN, as instruções que utilizar dependem do modelo
 
 Uma ligação de gateway de VPN depende de vários recursos que estão configurados com definições específicas. A maior parte dos recursos podem ser configurados em separado, embora estes, em alguns casos, devam ser configurados numa determinada ordem. Pode começar por criar e configurar recursos utilizando uma ferramenta de configuração, como o portal do Azure. Mais tarde, em seguida, pode decidir mudar para outra ferramenta, como o PowerShell, para configurar recursos adicionais ou para modificar os recursos existentes, quando aplicável. Atualmente, não pode configurar todos os recursos e definições de recursos no portal do Azure. As instruções nos artigos para cada topologia de ligação especificam quando uma ferramenta de configuração especifica é necessária. Para obter informações sobre recursos individuais e sobre definições para o Gateway de VPN, consulte [definições sobre o Gateway de VPN](vpn-gateway-about-vpn-gateway-settings.md).
 
-As secções abaixo contêm tabelas que listam o seguinte:
+As secções abaixo contêm tabelas que listam:
 
 - modelos de implementação disponíveis
 - ferramentas de configuração disponíveis
@@ -82,7 +94,7 @@ Atualmente, o Azure tem dois modelos de implementação: clássico e Resource Ma
 
 #### VNet peering
 
-Poderá utilizar o VNet peering para criar a ligação, desde que a rede virtual cumpra determinados requisitos. O VNet peering não utiliza um gateway de rede virtual. O [VNet peering](../virtual-network/virtual-network-peering-overview.md) está atualmente em Pré-visualização.
+Poderá utilizar o VNet peering para criar a ligação, desde que a rede virtual cumpra determinados requisitos. O VNet peering não utiliza um gateway de rede virtual. Para obter mais informações, veja [VNet peering](../virtual-network/virtual-network-peering-overview.md).
 
 
 ### Modelos de implementação e métodos para VNet para VNet
@@ -139,6 +151,6 @@ Planeie a configuração do gateway de VPN. Consulte [Design e Planeamento de Ga
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 

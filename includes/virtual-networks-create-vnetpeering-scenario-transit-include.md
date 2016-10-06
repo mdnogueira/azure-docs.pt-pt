@@ -7,9 +7,9 @@ Neste cenário, existem duas VNets numa subscrição, HubVNet e VNet1, como se d
 
 > [AZURE.NOTE] Por razões de simplicidade, parta do princípio de que todas as VNets aqui estão na mesma subscrição. No entanto, este exemplo também funciona para o cenário entre subscrições.
 
-A propriedade-chave para ativar o encaminhamento do Trânsito é o parâmetro “Permitir Tráfego Reencaminhado”. Isto permite aceitar e enviar tráfego de/para a NVA na VNet em modo de peering.  
+A propriedade-chave para ativar o encaminhamento do Trânsito é o parâmetro “Permitir Tráfego Reencaminhado”. Desta forma, é possível aceitar e enviar tráfego de/para a NVA na VNet em modo de peering.  
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 

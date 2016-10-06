@@ -30,7 +30,7 @@ Para criar um VNet peering com o PowerShell, siga os passos abaixo:
 
 1. Se nunca tiver utilizado o Azure PowerShell, veja [How to Install and Configure Azure PowerShell (Como instalar e configurar o Azure PowerShell)](../powershell-install-configure.md) e siga as instruções até ao fim para iniciar sessão no Azure e selecionar a sua subscrição.
 
-        > [AZURE.NOTE] O cmdlet PowerShell para gerir o VNet Peering é fornecido com o [Azure PowerShell 1.6.](http://www.powershellgallery.com/packages/Azure/1.6.0)
+> [AZURE.NOTE] O cmdlet PowerShell para gerir o VNet Peering é fornecido com o [Azure PowerShell 1.6.](http://www.powershellgallery.com/packages/Azure/1.6.0)
 
 2. Ler objetos de rede virtual:
 
@@ -48,7 +48,8 @@ Para criar um VNet peering com o PowerShell, siga os passos abaixo:
         Etag            : W/"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
         ResourceGroupName   : vnet101
         VirtualNetworkName  : vnet1
-        ProvisioningState       : Succeeded
+        PeeringState        : Initiated
+        ProvisioningState   : Succeeded
         RemoteVirtualNetwork    : {
                                             "Id": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/vnet101/providers/Microsoft.Network/virtualNetworks/vnet2"
                                         }
@@ -70,7 +71,8 @@ Para criar um VNet peering com o PowerShell, siga os passos abaixo:
         Etag            : W/"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
         ResourceGroupName   : vnet101
         VirtualNetworkName  : vnet2
-        ProvisioningState       : Succeeded
+        PeeringState        : Connected
+        ProvisioningState   : Succeeded
         RemoteVirtualNetwork    : {
                                             "Id": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/vnet101/providers/Microsoft.Network/virtualNetworks/vnet1"
                                         }
@@ -92,7 +94,8 @@ Para criar um VNet peering com o PowerShell, siga os passos abaixo:
         Etag            : W/"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
         ResourceGroupName   : vnet101
         VirtualNetworkName  : vnet1
-        ProvisioningState       : Succeeded
+        PeeringState        : Connected
+        ProvisioningState   : Succeeded
         RemoteVirtualNetwork    : {
                                              "Id": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/vnet101/providers/Microsoft.Network/virtualNetworks/vnet2"
                                         }
@@ -110,7 +113,7 @@ Para criar um VNet peering com o PowerShell, siga os passos abaixo:
   	|AllowVirtualNetworkAccess|Se o espaço de endereços da VNet em modo de peering vai ser incluído como parte da Etiqueta Virtual_network|Sim|
   	|AllowForwardedTraffic|Permite que o tráfego que não provém da VNet em modo de peering seja aceite ou removido|Não|
   	|AllowGatewayTransit|Permite que a VNet em modo de peering utilize o seu gateway de VNet|Não|
-  	|UseRemoteGateways|Utilize o gateway da VNet em modo de peering. A VNet em modo de peering tem de ter um gateway configurado e AllowGatewayTransit deve estar selecionado. Não pode utilizar esta opção se tiver um gateway configurado|Não|
+  	|UseRemoteGateways|Utilize o gateway da VNet em modo de peering. A VNet em modo de peering tem de ter um gateway configurado e AllowGatewayTransit selecionado. Não pode utilizar esta opção se tiver um gateway configurado|Não|
 
     Cada ligação no VNet peering tem o conjunto das propriedades acima indicadas. Por exemplo, pode definir AllowVirtualNetworkAccess para Verdadeiro para a ligação VNet peering da VNet1 para a VNet2 e defini-lo como Falso para a ligação VNet peering na outra direção.
 
@@ -125,6 +128,7 @@ Para criar um VNet peering com o PowerShell, siga os passos abaixo:
         Etag            : W/"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
         ResourceGroupName   : vnet101
         VirtualNetworkName  : vnet1
+        PeeringState        : Connected
         ProvisioningState   : Succeeded
         RemoteVirtualNetwork    : {
                                             "Id": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/vnet101/providers/Microsoft.Network/virtualNetworks/vnet2"
@@ -237,6 +241,6 @@ Para criar um VNet Peering entre uma Rede virtual clássica e uma Rede virtual d
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 

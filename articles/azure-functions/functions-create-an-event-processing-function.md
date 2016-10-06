@@ -1,7 +1,7 @@
 <properties
    pageTitle="Criar uma função de processamento de eventos | Microsoft Azure"
    description="Utilize funções do Azure para criar uma função de C# que seja executada com base num temporizador de eventos."
-   services="azure-functions"
+   services="functions"
    documentationCenter="na"
    authors="ggailey777"
    manager="erikre"
@@ -15,7 +15,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="multiple"
    ms.workload="na"
-   ms.date="06/05/2016"
+   ms.date="09/25/2016"
    ms.author="glenga"/>
    
 
@@ -45,7 +45,7 @@ Uma aplicação de função aloja a execução das suas funções no Azure. Ante
 
     ![Criar uma nova função de acionada por temporizador](./media/functions-create-an-event-processing-function/functions-create-storage-queue-output-binding.png)
 
-5. Em **Saída da Fila de Armazenamento do Azure**, clique em **Selecionar** junto a **Ligação de conta de armazenamento**, selecione a conta de armazenamento existente ou crie uma nova e clique em **Guardar**. 
+5. Em **saída da Fila de Armazenamento do Azure**, selecione uma **ligação de conta de Armazenamento** existente ou crie uma nova e clique em **Guardar**. 
 
     ![Criar uma nova função de acionada por temporizador](./media/functions-create-an-event-processing-function/functions-create-storage-queue-output-binding-2.png)
 
@@ -87,6 +87,6 @@ Aborda os planos de serviço disponíveis com as Funções do Azure, incluindo o
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 

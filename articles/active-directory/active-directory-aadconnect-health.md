@@ -128,6 +128,6 @@ O Portal do Azure AD Connect Health permite a visualização de alertas, a monit
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 

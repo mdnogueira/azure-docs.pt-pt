@@ -12,7 +12,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="08/17/2016"
+   ms.date="09/23/2016"
    ms.author="alkohli" />
 
 
@@ -132,13 +132,15 @@ Certifique-se de que tem as seguintes informações antes de começar:
 
 Antes de executar estes procedimentos, certifique-se de que cumpriu os [pré-requisitos para o dispositivo virtual](#prerequisites-for-the-virtual-device). 
 
-Depois de ter criado uma rede virtual, de ter configurado um serviço StorSimple Manager e registado o dispositivo físico StorSimple com o serviço, pode executar os seguintes passos para criar e configurar um dispositivo virtual StorSimple.
+Depois de ter criado uma rede virtual, de ter configurado um serviço StorSimple Manager e registado o dispositivo físico StorSimple com o serviço, pode executar os seguintes passos para criar e configurar um dispositivo virtual StorSimple. 
 
 ### Passo 1: Configurar um dispositivo virtual
 
 Execute os seguintes passos para criar o dispositivo virtual StorSimple.
 
 [AZURE.INCLUDE [Create a virtual device](../../includes/storsimple-create-virtual-device-u2.md)]
+
+Se a criação do dispositivo virtual falhar neste passo, é possível que não tenha conectividade à Internet. Para obter mais informações, aceda a [Resolver problemas relacionados com falhas de conectividade Internet](#troubleshoot-internet-connectivity-errors) ao criar um dispositivo virtual.
 
 
 ### Passo 2: Configurar e registar o dispositivo virtual
@@ -274,6 +276,19 @@ Se eliminar ou encerrar o dispositivo virtual, este será apresentado individual
 [AZURE.INCLUDE [Delete a virtual device](../../includes/storsimple-delete-virtual-device.md)]
 
    
+## Resolver problemas relacionados com falhas de conectividade Internet 
+
+Durante a criação de um dispositivo virtual, se não existir conectividade à Internet, o passo de criação falha. Para saber se a falha se deve à conectividade Internet, execute os passos seguintes no portal clássico do Azure:
+
+1. Crie uma máquina virtual do Windows Server 2012 no Azure. Esta máquina virtual deve utilizar a mesma conta de armazenamento, a mesma VNet e a mesma sub-rede que o dispositivo virtual utiliza. Se já tiver um anfitrião do Windows Server existente no Azure que utilize a mesma conta de armazenamento, a mesma VNet e a mesma sub-rede, também pode utilizá-lo para resolver problemas relacionados com a conectividade Internet.
+2. Registe remotamente na máquina virtual criada no passo anterior. 
+3. Abra uma janela de comando dentro da máquina virtual (Win + R e em seguida, escreva `cmd`).
+4. Na linha de comandos, escreva o comando seguinte.
+
+    `nslookup windows.net`
+
+5. Se `nslookup` falhar, significa que a falha de conectividade Internet está a impedir o dispositivo virtual de se registar no serviço StorSimple Manager. 
+6. Faça as alterações necessárias à rede virtual para se certificar de que o dispositivo virtual é capaz de aceder a sites do Azure, como "windows.net".
 
 ## Passos seguintes
 
@@ -284,6 +299,6 @@ Se eliminar ou encerrar o dispositivo virtual, este será apresentado individual
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 

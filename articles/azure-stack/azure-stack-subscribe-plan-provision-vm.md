@@ -1,6 +1,6 @@
 <properties
-    pageTitle="Subscrever uma oferta e aprovisionar uma VM no Azure Stack (inquilino) | Microsoft Azure"
-    description="Como inquilino, saiba como subscrever uma oferta e aprovisionar uma VM no Azure Stack."
+    pageTitle="Subscribe to an offer and then provision a VM in Azure Stack (tenant) | Microsoft Azure"
+    description="As a tenant, learn how to subscribe to an offer and then provision a VM in Azure Stack."
     services="azure-stack"
     documentationCenter=""
     authors="ErikjeMS"
@@ -13,41 +13,38 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="08/15/2016"
+    ms.date="09/26/2016"
     ms.author="erikje"/>
 
 
-# Subscrever uma oferta
+# Subscribe to an offer
 
-Agora que [criou uma oferta](azure-stack-create-offer.md), verifique se os seus inquilinos podem criar a subscrição.
+Now that you've [created an offer](azure-stack-create-offer.md), test that your tenants can create a subscription.
 
-1.  No computador da Prova de Conceito do Azure Stack, inicie sessão `https://portal.azurestack.local` como [inquilino](azure-stack-connect-azure-stack.md#log-in-as-a-tenant) e clique em **Obter uma Subscrição**.
+1.  On the Azure Stack POC computer, log in to `https://portal.azurestack.local` as [a tenant](azure-stack-connect-azure-stack.md#log-in-as-a-tenant) and click **Get a Subscription**.
 
-    ![](media/azure-stack-subscribe-plan-provision-vm/image1.png)
+    ![](media/azure-stack-subscribe-plan-provision-vm/image01.png)
 
-2.  No campo **Nome a Apresentar**, introduza um nome para a subscrição.
+2.  In the **Display Name** field, type a name for your subscription, click **Offer**, click one of the offers in the **Choose an offer** blade, and then click **Create**.
 
-    ![](media/azure-stack-subscribe-plan-provision-vm/image2.png)
+    ![](media/azure-stack-subscribe-plan-provision-vm/image02.png)
 
-3.  Clique em **Oferta** e verifique se a oferta que criou se encontra no painel **Escolher uma oferta**. Clique nessa oferta, em **Selecionar** e, em seguida, em **OK**.  
+4.  To view the subscription you created, click **Browse**, click **Subscriptions**, then click your new subscription.  
 
-    ![](media/azure-stack-subscribe-plan-provision-vm/image3.png)
+    ![](media/azure-stack-subscribe-plan-provision-vm/image03.png)
 
-4.  Para ver a subscrição que acabou de criar, clique em **Procurar** e, em seguida, em **Subscrições**.  
 
-    ![](media/azure-stack-subscribe-plan-provision-vm/image4.png)
-
-Após subscrever uma oferta, aguarde até o estado da subscrição ser InSync. Em seguida, atualize o portal para ver quais os serviços que fazem parte da nova subscrição.
+After you subscribe to an offer, refresh the portal to see which services are part of the new subscription.
 
 
 
 
-## Passos seguintes
+## Next steps
 
-[Contas de armazenamento](azure-stack-provision-storage-account.md)
+[Provision a virtual machine](azure-stack-provision-vm.md)
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 

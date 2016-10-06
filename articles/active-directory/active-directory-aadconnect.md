@@ -5,7 +5,7 @@
     services="active-directory"
     documentationCenter=""
     authors="andkjell"
-    manager="stevenpo"
+    manager="femila"
     editor=""/>
 
 <tags
@@ -14,10 +14,12 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="07/14/2016"
+    ms.date="09/30/2016"
     ms.author="andkjell;billmath"/>
 
+
 # Integrar as identidades no local ao Azure Active Directory
+
 O Azure AD Connect irá integrar os diretórios no local ao Azure Active Directory. Isto permite-lhe fornecer uma identidade comum para o utilizadores das aplicações do Office 365, do Azure e do SaaS integradas com o Azure AD. Este tópico descreve o planeamento, a implementação e os passos de operação. É uma coleção de ligações para os tópicos relacionados com esta área.
 
 <!-- The hardcoded link is a workaround for campaign ids not working in acom links-->
@@ -165,6 +167,6 @@ Apresentação do Ignite 2015 acerca de como expandir os diretórios no local pa
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO4-->
 
 

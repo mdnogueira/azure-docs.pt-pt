@@ -106,6 +106,8 @@ Normalmente, é melhor trabalhar com um modelo que implementa toda a infraestrut
 
 Embora cada implementação mostre apenas as alterações que efetuou ao seu grupo de recursos, pode exportar um modelo em qualquer altura para mostrar os atributos de todo o grupo de recursos.  
 
+> [AZURE.NOTE] Não pode exportar um modelo para um grupo de recursos que tenha mais de 200 recursos.
+
 1. Para ver o modelo para um grupo de recursos, selecione **Script de automatização**.
 
       ![exportar grupo de recursos](./media/resource-manager-export-template/export-resource-group.png)
@@ -307,6 +309,6 @@ Parabéns! Aprendeu a exportar um modelo a partir dos recursos que criou no port
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 

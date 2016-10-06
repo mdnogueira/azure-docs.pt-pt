@@ -59,6 +59,6 @@ Agora já conhece o Stream Analytics, um serviço gerido para a transmissão da 
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 

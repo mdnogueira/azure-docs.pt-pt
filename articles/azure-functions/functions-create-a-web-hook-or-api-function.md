@@ -43,7 +43,7 @@ Uma aplicação de função aloja a execução das suas funções no Azure. Ante
 
     ![Criar uma nova função de webhook GitHub](./media/functions-create-a-web-hook-or-api-function/functions-create-new-github-webhook.png) 
 
-4. No separador **Desenvolver**, tenha em conta a função de express.js de amostra na janela **Código**. Esta função recebe um pedido de GitHub a partir de um webhook de comentário ao problema, regista o texto de problema e envia uma resposta para o webhook como `New GitHub comment: <Your issue comment text>`.
+4. Em **Desenvolver**, tenha em conta a função express.js na janela **Código**. Esta função recebe um pedido de GitHub a partir de um webhook de comentário ao problema, regista o texto de problema e envia uma resposta para o webhook como `New GitHub comment: <Your issue comment text>`.
 
 
     ![Criar uma nova função de webhook GitHub](./media/functions-create-a-web-hook-or-api-function/functions-new-webhook-in-portal.png) 
@@ -96,6 +96,6 @@ Aborda os planos de serviço disponíveis com as Funções do Azure, incluindo o
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 

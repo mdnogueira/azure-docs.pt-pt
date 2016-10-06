@@ -1,6 +1,6 @@
 <properties
-    pageTitle="Use Service Bus topics with .NET | Microsoft Azure"
-    description="Learn how to use Service Bus topics and subscriptions with .NET in Azure. Code samples are written for .NET applications."
+    pageTitle="Utilizar os tópicos do Service Bus com o .NET | Microsoft Azure"
+    description="Saiba como utilizar os tópicos e as subscrições do Service Bus com o .NET no Azure. Os exemplos de código são escritos para aplicações .NET."
     services="service-bus-messaging"
     documentationCenter=".net"
     authors="sethmanheim"
@@ -16,46 +16,44 @@
     ms.date="09/16/2016"
     ms.author="sethm"/>
 
-# How to use Service Bus topics and subscriptions
+
+# Como utilizar os tópicos e as subscrições do Service Bus
 
 [AZURE.INCLUDE [service-bus-selector-topics](../../includes/service-bus-selector-topics.md)]
 
-This article describes how to use Service Bus topics and subscriptions. The samples are written in C# and use the .NET APIs. The scenarios covered include creating topics and subscriptions, creating subscription filters, sending messages to a topic, receiving messages from a subscription, and deleting topics and subscriptions. For more information about topics and subscriptions, see the [Next steps](#next-steps) section.
+Este artigo descreve como utilizar os tópicos e as subscrições do Service Bus. Os exemplos são escritos em C# e utilizam as APIs .NET. Os cenários abrangidos incluem a criação de tópicos e subscrições, a criação de filtros de subscrição, o envio de mensagens para um tópico, a receção de mensagens de uma subscrição e a eliminação de tópicos e subscrições. Para obter mais informações sobre os tópicos e as subscrições, veja a secção [Passos seguintes](#next-steps).
 
 [AZURE.INCLUDE [create-account-note](../../includes/create-account-note.md)]
 
 [AZURE.INCLUDE [howto-service-bus-topics](../../includes/howto-service-bus-topics.md)]
 
-## Configure the application to use Service Bus
+## Configurar a aplicação para utilizar o Service Bus
 
-When you create an application that uses Service Bus, you must add a reference to the Service Bus assembly and include the corresponding namespaces. The easiest way to do this is to download the appropriate [NuGet](https://www.nuget.org) package.
+Quando cria uma aplicação que utiliza o Service Bus, deve adicionar uma referência à assemblagem do Service Bus e incluir os espaços de nomes correspondentes. A forma mais fácil de fazê-lo é através da transferência do pacote [NuGet](https://www.nuget.org) adequado.
 
-## Get the Service Bus NuGet package
+## Obter o pacote NuGet do Service Bus
 
-The [Service Bus NuGet package](https://www.nuget.org/packages/WindowsAzure.ServiceBus) is the easiest way to get the Service Bus API and to configure your application with all the necessary Service Bus dependencies. To install the Service Bus NuGet package in your project, do the following:
+O [Pacote NuGet do Service Bus](https://www.nuget.org/packages/WindowsAzure.ServiceBus) é a forma mais fácil de obter a API do Service Bus e de configurar a sua aplicação com todas as dependências necessárias do Service Bus. Para instalar o pacote NuGet do Service Bus no projeto, realize o seguinte:
 
-1.  In Solution Explorer, right-click **References**, then click
-    **Manage NuGet Packages**.
-2.  Search for "Service Bus" and select the **Microsoft Azure
-    Service Bus** item. Click **Install** to complete the installation,
-    then close the following dialog box:
+1.  No Explorador de Soluções, clique com o botão direito em **Referências** e, em seguida, clique em **Gerir Pacotes NuGet**.
+2.  Localize "Service Bus" e selecione o item **Service Bus do Microsoft Azure**. Clique em **Instalar** para concluir a instalação e, em seguida, feche a caixa de diálogo seguinte:
 
     ![][7]
 
-You are now ready to write code for Service Bus.
+Está agora preparado para escrever o código para o Service Bus.
 
-## Create a Service Bus connection string
+## Criar uma cadeia de ligação do Service Bus
 
-Service Bus uses a connection string to store endpoints and credentials. You can put your connection string in a configuration file, rather than hard-coding it:
+O Service Bus utiliza uma cadeia de ligação para armazenar pontos finais e credenciais. Pode colocar a cadeia de ligação num ficheiro de configuração em vez de pré-programar a mesma:
 
-- When using Azure services, it is recommended that you store your connection string using the Azure service configuration system (.csdef and .cscfg files).
-- When using Azure websites or Azure Virtual Machines, it is recommended that you store your connection string using the .NET configuration system (for example, the Web.config file).
+- Ao utilizar os serviços do Azure, é recomendado o armazenamento da cadeia de ligação utilizando o sistema de configuração do serviço do Azure (ficheiros .csdef e .cscfg).
+- Ao utilizar os Web sites Azure ou as Virtual Machines do Azure, é recomendado o armazenamento da cadeia de ligação utilizando o sistema de configuração do .NET (por exemplo, o ficheiro Web.config).
 
-In both cases, you can retrieve your connection string using the `CloudConfigurationManager.GetSetting` method, as shown later in this article.
+Em ambos os casos, pode obter a cadeia de ligação utilizando o método `CloudConfigurationManager.GetSetting`, conforme mostrado posteriormente neste artigo.
 
-### Configure your connection string
+### Configurar a cadeia de ligação
 
-The service configuration mechanism enables you to dynamically change configuration settings from the [Azure portal][] without redeploying your application. For example, add a `Setting` label to your service definition (**.csdef**) file, as shown in the next example.
+O mecanismo de configuração do serviço permite alterar dinamicamente as definições de configuração do [Portal do Azure][] sem reimplementar a aplicação. Por exemplo, adicione uma etiqueta `Setting` ao ficheiro de definição do serviço (**.csdef**), conforme mostrado no exemplo seguinte.
 
 ```
 <ServiceDefinition name="Azure1">
@@ -69,7 +67,7 @@ The service configuration mechanism enables you to dynamically change configurat
 </ServiceDefinition>
 ```
 
-You then specify values in the service configuration (.cscfg) file.
+Em seguida, especifique os valores no ficheiro de configuração do serviço (.cscfg).
 
 ```
 <ServiceConfiguration serviceName="Azure1">
@@ -84,11 +82,11 @@ You then specify values in the service configuration (.cscfg) file.
 </ServiceConfiguration>
 ```
 
-Use the Shared Access Signature (SAS) key name and key values retrieved from the portal as described previously.
+Utilize os valores e o nome da chave de Assinatura de Acesso Partilhado (SAS) obtidos no portal, conforme descrito anteriormente.
 
-### Configure your connection string when using Azure websites or Azure Virtual Machines
+### Configurar a cadeia de ligação na utilização dos Web sites Azure ou das Virtual Machines do Azure
 
-When using websites or Virtual Machines, it is recommended that you use the .NET configuration system (for example, Web.config). You store the connection string using the `<appSettings>` element.
+Na utilização de Web sites ou de Virtual Machines, é recomendada a utilização do sistema de configuração do .NET (por exemplo, Web.config). Armazene a cadeia de ligação utilizando o elemento `<appSettings>`.
 
 ```
 <configuration>
@@ -99,21 +97,19 @@ When using websites or Virtual Machines, it is recommended that you use the .NET
 </configuration>
 ```
 
-Use the SAS name and key values that you retrieved from the [Azure portal][], as described previously.
+Utilize o nome e os valores da chave SAS obtidos no [Portal do Azure][], conforme descrito anteriormente.
 
-## Create a topic
+## Criar um tópico
 
-You can perform management operations for Service Bus topics and subscriptions using the [NamespaceManager](https://msdn.microsoft.com/library/azure/microsoft.servicebus.namespacemanager.aspx) class. This class provides methods to create, enumerate, and delete topics.
+Pode efetuar operações de gestão para tópicos e subscrições do Service Bus utilizando a classe [NamespaceManager](https://msdn.microsoft.com/library/azure/microsoft.servicebus.namespacemanager.aspx). Esta classe fornece métodos para criar, enumerar e eliminar tópicos.
 
-The following example constructs a `NamespaceManager` object using the Azure `CloudConfigurationManager` class
-with a connection string consisting of the base address of a Service Bus namespace and the appropriate
-SAS credentials with permissions to manage it. This connection string is of the following form:
+O exemplo seguinte constrói um objeto `NamespaceManager` utilizando a classe `CloudConfigurationManager` do Azure com uma cadeia de ligação composta pelo endereço de base de um espaço de nomes do Service Bus e pelas credenciais de SAS adequadas com permissões para a respetiva gestão. Esta cadeia de ligação tem a seguinte forma:
 
 ```
 Endpoint=sb://<yourNamespace>.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=<yourKey>
 ```
 
-Use the following example, given the configuration settings in the previous section.
+Utilize o exemplo seguinte, tendo em conta as definições de configuração na secção anterior.
 
 ```
 // Create the topic if it does not exist already.
@@ -129,7 +125,7 @@ if (!namespaceManager.TopicExists("TestTopic"))
 }
 ```
 
-There are overloads of the [CreateTopic](https://msdn.microsoft.com/library/azure/microsoft.servicebus.namespacemanager.createtopic.aspx) method that enable you to set properties of the topic; for example, to set the default time-to-live (TTL) value to be applied to messages sent to the topic. These settings are applied by using the [TopicDescription](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.topicdescription.aspx) class. The following example shows how to create a topic named **TestTopic** with a maximum size of 5 GB and a default message TTL of 1 minute.
+Existem sobrecargas do método [CreateTopic](https://msdn.microsoft.com/library/azure/microsoft.servicebus.namespacemanager.createtopic.aspx) que permitem definir propriedades do tópico; por exemplo, para definir o valor de TTL (time-to-live) predefinido a ser aplicado às mensagens enviadas para o tópico. Estas definições são aplicadas utilizando a classe [TopicDescription](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.topicdescription.aspx). O exemplo seguinte mostra como criar um tópico com o nome **TestTopic** com um tamanho máximo de 5 GB e um TTL da mensagem predefinido de 1 minuto.
 
 ```
 // Configure Topic Settings.
@@ -150,16 +146,15 @@ if (!namespaceManager.TopicExists("TestTopic"))
 }
 ```
 
-> [AZURE.NOTE] You can use the [TopicExists](https://msdn.microsoft.com/library/azure/microsoft.servicebus.namespacemanager.topicexists.aspx) method on [NamespaceManager](https://msdn.microsoft.com/library/azure/microsoft.servicebus.namespacemanager.aspx) objects to check whether a topic with a specified name already exists within a namespace.
+> [AZURE.NOTE] Pode utilizar o método [TopicExists](https://msdn.microsoft.com/library/azure/microsoft.servicebus.namespacemanager.topicexists.aspx) nos objetos [NamespaceManager](https://msdn.microsoft.com/library/azure/microsoft.servicebus.namespacemanager.aspx) para verificar se um tópico com um nome especificado já existe num espaço de nomes.
 
-## Create a subscription
+## Criar uma subscrição
 
-You can also create topic subscriptions using the [NamespaceManager](https://msdn.microsoft.com/library/azure/microsoft.servicebus.namespacemanager.aspx) class. Subscriptions are named and can have an optional filter that
-restricts the set of messages passed to the subscription's virtual queue.
+Também pode criar subscrições de tópicos utilizando a classe [NamespaceManager](https://msdn.microsoft.com/library/azure/microsoft.servicebus.namespacemanager.aspx). As subscrições têm um nome e podem ter um filtro opcional que restringe o conjunto de mensagens transmitidas para a fila virtual da subscrição.
 
-### Create a subscription with the default (MatchAll) filter
+### Criar uma subscrição com o filtro (MatchAll) predefinido
 
-If no filter is specified when a new subscription is created, the **MatchAll** filter is the default filter that is used. When you use the **MatchAll** filter, all messages published to the topic are placed in the subscription's virtual queue. The following example creates a subscription named "AllMessages" and uses the default **MatchAll** filter.
+Se não for especificado nenhum filtro aquando da criação de uma nova subscrição, será utilizado o filtro predefinido **MatchAll**. Quando utiliza o filtro **MatchAll**, todas as mensagens publicadas para o tópico são colocadas na fila virtual da subscrição. O exemplo seguinte cria uma subscrição com o nome "AllMessages" e utiliza o filtro **MatchAll** predefinido.
 
 ```
 string connectionString =
@@ -174,13 +169,13 @@ if (!namespaceManager.SubscriptionExists("TestTopic", "AllMessages"))
 }
 ```
 
-### Create subscriptions with filters
+### Criar subscrições com filtros
 
-You can also set up filters that enable you to specify which messages sent to a topic should appear within a specific topic subscription.
+Também pode definir filtros que permitem especificar quais as mensagens enviadas para um tópico a serem apresentadas numa subscrição de tópico específica.
 
-The most flexible type of filter supported by subscriptions is the [SqlFilter][] class, which implements a subset of SQL92. SQL filters operate on the properties of the messages that are published to the topic. For more information about the expressions that can be used with a SQL filter, see the [SqlFilter.SqlExpression][] syntax.
+O tipo de filtro mais flexível suportado pelas subscrições é a classe [SqlFilter][], que implementa um subconjunto de SQL92. Os filtros do SQL operam nas propriedades das mensagens publicadas para o tópico. Para obter mais informações sobre as expressões que podem ser utilizadas com um filtro do SQL, veja a sintaxe [SqlFilter.SqlExpression][].
 
-The following example creates a subscription named **HighMessages** with a [SqlFilter][] object that only selects messages that have a custom **MessageNumber** property greater than 3.
+O exemplo seguinte cria uma subscrição com o nome **HighMessages** com um objeto [SqlFilter][] que seleciona apenas as mensagens com uma propriedade **MessageNumber** personalizada superior a 3.
 
 ```
 // Create a "HighMessages" filtered subscription.
@@ -192,7 +187,7 @@ namespaceManager.CreateSubscription("TestTopic",
    highMessagesFilter);
 ```
 
-Similarly, the following example creates a subscription named **LowMessages** with a [SqlFilter][] that only selects messages that have a **MessageNumber** property less than or equal to 3.
+Do mesmo modo, o exemplo seguinte cria uma subscrição com o nome **LowMessages** com um [SqlFilter][] que seleciona apenas as mensagens com uma propriedade **MessageNumber** inferior ou igual a 3.
 
 ```
 // Create a "LowMessages" filtered subscription.
@@ -204,13 +199,13 @@ namespaceManager.CreateSubscription("TestTopic",
    lowMessagesFilter);
 ```
 
-Now when a message is sent to `TestTopic`, it is always delivered to receivers subscribed to the **AllMessages** topic subscription, and selectively delivered to receivers subscribed to the **HighMessages** and **LowMessages** topic subscriptions (depending on the message content).
+Agora quando uma mensagem for enviada para `TestTopic`, será sempre entregue aos destinatários com subscrição do tópico **AllMessages** e entregue seletivamente aos destinatários com subscrições dos tópicos **HighMessages** e **LowMessages** (dependendo do conteúdo da mensagem).
 
-## Send messages to a topic
+## Enviar mensagens para um tópico
 
-To send a message to a Service Bus topic, your application creates a [TopicClient](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.topicclient.aspx) object using the connection string.
+Para enviar uma mensagem para um tópico do Service Bus, a sua aplicação cria um objeto [TopicClient](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.topicclient.aspx) utilizando a cadeia de ligação.
 
-The following code demonstrates how to create a [TopicClient](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.topicclient.aspx) object for the **TestTopic** topic created earlier using the [`CreateFromConnectionString`](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.topicclient.createfromconnectionstring.aspx) API call.
+O código seguinte mostra como criar um objeto [TopicClient](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.topicclient.aspx) para o tópico **TestTopic** criado anteriormente utilizando a chamada à API [`CreateFromConnectionString`](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.topicclient.createfromconnectionstring.aspx).
 
 ```
 string connectionString =
@@ -222,10 +217,9 @@ TopicClient Client =
 Client.Send(new BrokeredMessage());
 ```
 
-Messages sent to Service Bus topics are instances of the [BrokeredMessage](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx) class. [BrokeredMessage](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx) objects have a set of
-standard properties (such as [Label](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.label.aspx) and [TimeToLive](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.timetolive.aspx)), a dictionary that is used to hold custom application-specific properties, and a body of arbitrary application data. An application can set the body of the message by passing any serializable object to the constructor of the [BrokeredMessage](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx) object, and the appropriate **DataContractSerializer** is then used to serialize the object. Alternatively, a **System.IO.Stream** can be provided.
+As mensagens enviadas para os tópicos do Service Bus são instâncias da classe [BrokeredMessage](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx). Os objetos [BrokeredMessage](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx) têm um conjunto de propriedades padrão (tais como [Etiqueta](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.label.aspx) e [TimeToLive](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.timetolive.aspx)), um dicionário utilizado para reter propriedades personalizadas específicas da aplicação e um corpo de dados arbitrários da aplicação. Uma aplicação pode definir o corpo da mensagem através da transmissão de qualquer objeto serializável para o construtor do objeto [BrokeredMessage](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx) e o **DataContractSerializer** adequado é, em seguida, utilizado para serializar o objeto. Em alternativa, pode ser pode ser fornecido um **System.IO.Stream**.
 
-The following example demonstrates how to send five test messages to the **TestTopic** [TopicClient](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.topicclient.aspx) object obtained in the previous code example. Note that the [MessageNumber](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.properties.aspx) property value of each message varies depending on the iteration of the loop (this determines which subscriptions receive it).
+O exemplo seguinte mostra como enviar cinco mensagens de teste para o objeto **TestTopic** [TopicClient](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.topicclient.aspx) obtido no exemplo de código anterior. Tenha em atenção que o valor da propriedade [MessageNumber](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.properties.aspx) de cada mensagem varia dependendo da iteração do ciclo (isto determina quais as subscrições que recebem a mesma).
 
 ```
 for (int i=0; i<5; i++)
@@ -241,19 +235,17 @@ for (int i=0; i<5; i++)
 }
 ```
 
-Service Bus topics support a maximum message size of 256 KB in the [Standard tier](service-bus-premium-messaging.md) and 1 MB in the [Premium tier](service-bus-premium-messaging.md). The header, which includes the standard and custom application properties, can have a maximum size of 64 KB. There is no limit on the number of messages held in a topic but there is a cap on the total size of the messages held by a topic. This topic size is defined at creation time, with an upper limit of 5 GB. If partitioning is enabled, the upper limit is higher. For more information, see [Partitioned messaging entities](service-bus-partitioning.md).
+Os tópicos do Service Bus suportam um tamanho da mensagem máximo de 256 KB no [escalão Padrão](service-bus-premium-messaging.md) e de 1 MB no [escalão Premium](service-bus-premium-messaging.md). O cabeçalho, que inclui as propriedades da aplicação padrão e personalizadas, pode ter um tamanho máximo de 64 KB. Não existe qualquer limite no número de mensagens contidas num tópico, contudo, existe um limite do tamanho total das mensagens contidas num tópico. O tamanho do tópico é definido no momento de criação, com um limite superior de 5 GB. Se a criação de partições estiver ativada, o limite superior é mais elevado. Para obter mais informações, consulte [Entidades de mensagens particionadas](service-bus-partitioning.md).
 
-## How to receive messages from a subscription
+## Como receber mensagens de uma subscrição
 
-The recommended way to receive messages from a subscription is to use a [SubscriptionClient](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.subscriptionclient.aspx) object. [SubscriptionClient](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.subscriptionclient.aspx) objects can work in two different modes: [*ReceiveAndDelete* and *PeekLock*](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.receivemode.aspx).
+O modo recomendado para receber mensagens de uma subscrição é utilizar um objeto [SubscriptionClient](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.subscriptionclient.aspx). Os objetos [SubscriptionClient](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.subscriptionclient.aspx) podem funcionar em dois modos diferentes: [*ReceiveAndDelete* e *PeekLock*](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.receivemode.aspx).
 
-When using the **ReceiveAndDelete** mode, receive is a single-shot operation; that is, when Service Bus receives a read request for a message in a subscription, it marks the message as being consumed and returns it to the application. **ReceiveAndDelete** mode is the simplest model and works best for scenarios in which an application can tolerate not processing a message in the event of a failure. To understand this, consider a scenario in which the consumer issues the receive request and then crashes before processing it. Because Service Bus has marked the message as consumed, when the application restarts and begins consuming messages again, it will have missed the message that was consumed prior to the crash.
+Na utilização do modo **ReceiveAndDelete**, a receção é uma operação única; ou seja, quando o Service Bus recebe um pedido de leitura para uma mensagem numa subscrição, aquele marca a mensagem como consumida e devolve a mesma à aplicação. O modo **ReceiveAndDelete** é o modelo mais simples e funciona melhor para cenários em que uma aplicação pode tolerar o não processamento de uma mensagem no caso de falha. Para compreender isto, considere um cenário em que o consumidor emite o pedido de receção e, em seguida, o sistema falha antes do respetivo processamento. Uma vez que o Service Bus marcou a mensagem como consumida, quando a aplicação reiniciar e começar a consumir novamente mensagens, terá perdido a mensagem consumida antes da falha de sistema.
 
-In **PeekLock** mode (which is the default mode), the receive process becomes a two-stage operation, which makes it possible to support applications that cannot tolerate missing messages. When Service Bus receives a request,
-it finds the next message to be consumed, locks it to prevent other consumers receiving it, and then returns it to the application. After the application finishes processing the message (or stores it reliably for future processing), it completes the second stage of the receive process by calling [Complete](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.complete.aspx) on the received message. When Service Bus sees the **Complete** call, it marks the message as being consumed and removes it from the subscription.
+No modo **PeekLock** (o modo predefinido), o processo de receção torna-se uma operação de duas etapas que possibilita o suporte de aplicações que não toleram mensagens em falta. Quando o Service Bus recebe um pedido, localiza a mensagem seguinte a ser consumida, bloqueia-a para impedir a respetiva receção por outros consumidores e, em seguida, devolve a mesma à aplicação. Após a aplicação concluir o processamento da mensagem (ou armazenar a mesma de forma fiável para processamento futuro), conclui a segunda etapa do processo de receção ao atribuir o nome [Concluída](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.complete.aspx) à mensagem recebida. Quando o Service Bus vê a chamada **Concluída**, marca a mensagem como consumida e remove a mesma da subscrição.
 
-The following example demonstrates how messages can be received and processed using the default **PeekLock** mode. To specify a different [ReceiveMode](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.receivemode.aspx) value, you can use another overload for [CreateFromConnectionString](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.subscriptionclient.createfromconnectionstring.aspx). This example uses the [OnMessage](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.subscriptionclient.onmessage.aspx) callback to process messages as they arrive
-into the **HighMessages** subscription.
+O exemplo seguinte mostra como as mensagens podem ser recebidas e processadas utilizando o modo **PeekLock** predefinido. Para especificar um valor [ReceiveMode](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.receivemode.aspx) diferente, pode utilizar outra sobrecarga para [CreateFromConnectionString](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.subscriptionclient.createfromconnectionstring.aspx). Este exemplo utiliza a chamada de retorno [OnMessage](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.subscriptionclient.onmessage.aspx) para processar mensagens à medida que chegam à subscrição **HighMessages**.
 
 ```
 string connectionString =
@@ -290,51 +282,54 @@ Client.OnMessage((message) =>
 }, options);
 ```
 
-This example configures the [OnMessage](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.subscriptionclient.onmessage.aspx) callback using an [OnMessageOptions](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.onmessageoptions.aspx) object. [AutoComplete](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.onmessageoptions.autocomplete.aspx) is set to **false** to enable manual control of when to call [Complete](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.complete.aspx) on the received message. [AutoRenewTimeout](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.onmessageoptions.autorenewtimeout.aspx) is set to 1 minute, which causes the client to wait for up to one minute before terminating the auto-renewal feature and the client makes a new call to check for messages. This property value reduces the number of times the client makes chargeable calls that do not retrieve messages.
+Este exemplo configura a chamada de retorno [OnMessage](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.subscriptionclient.onmessage.aspx) utilizando um objeto [OnMessageOptions](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.onmessageoptions.aspx). A [Conclusão Automática](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.onmessageoptions.autocomplete.aspx) é definida para **falso** para permitir o controlo manual para atribuição do nome [Concluída](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.complete.aspx) à mensagem recebida. O [AutoRenewTimeout](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.onmessageoptions.autorenewtimeout.aspx) é definido para 1 minuto, o que faz com que o cliente aguarde até um minuto antes de terminar a funcionalidade de renovação automática e o cliente efetuar uma nova chamada para procurar mensagens. Este valor da propriedade reduz o número de vezes que o cliente efetua chamadas cobráveis que não obtêm mensagens.
 
-## How to handle application crashes and unreadable messages
+## Como processar falhas da aplicação e mensagens ilegíveis
 
-Service Bus provides functionality to help you gracefully recover from errors in your application or difficulties processing a message. If a receiving application is unable to process the message for some reason, then it can call the [Abandon](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.abandon.aspx) method on the received message (instead
-of the [Complete](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.complete.aspx) method). This causes Service Bus to unlock the message within the subscription and make it available to be received again, either by the same consuming application or by another consuming application.
+O Service Bus fornece funcionalidades para ajudar a recuperar corretamente de erros na sua aplicação ou problemas no processamento de uma mensagem. Se uma aplicação recetora não conseguir processar a mensagem por qualquer motivo, pode chamar o método [Cancelar](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.abandon.aspx) na mensagem recebida (em vez do método [Concluída](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.complete.aspx)). Tal faz com que o Service Bus desbloqueie a mensagem na subscrição e torna a mesma disponível para ser novamente recebida, quer pela mesma aplicação de consumo quer por outra aplicação de consumo.
 
-There is also a time-out associated with a message locked within the subscription, and if the application fails to process the message before the lock time-out expires (for example, if the application crashes), then Service Bus unlocks the message automatically and makes it available to be received again.
+Existe também um tempo limite associado à mensagem bloqueada na subscrição e, se a aplicação não conseguir processar a mensagem antes de o tempo limite de bloqueio expirar (por exemplo, no caso de falha da aplicação), o Service Bus desbloqueia automaticamente a mensagem e torna a mesma disponível para ser recebida novamente.
 
-In the event that the application crashes after processing the message but before the [Complete](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.complete.aspx) request is issued, the message will be redelivered to the application when it restarts. This is often called *At Least Once processing*; that is, each message is processed at least once but in certain situations the same message may be
-redelivered. If the scenario cannot tolerate duplicate processing, then application developers should add additional logic to their application to handle duplicate message delivery. This is often achieved using the
-[MessageId](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.messageid.aspx) property of the message, which remains constant across delivery attempts.
+No caso de falha da aplicação após o processamento da mensagem, mas antes de ser emitido o pedido [Concluída](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.complete.aspx), a mensagem será reenviada para a aplicação quando esta reiniciar. Tal é, frequentemente, designado *Processar Pelo Menos Uma Vez*; ou seja, cada mensagem é processada pelo menos uma vez, contudo, em determinadas situações, a mesma mensagem poderá ser reenviada. Se o cenário não conseguir tolerar o processamento duplicado, os programadores da aplicação devem acrescentar uma lógica adicional à aplicação para processar a entrega da mensagem duplicada. Tal é, frequentemente, conseguido através da propriedade [MessageId](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.messageid.aspx) da mensagem, que permanece constante nas tentativas de entrega.
 
-## Delete topics and subscriptions
+## Eliminar tópicos e subscrições
 
-The following example demonstrates how to delete the topic **TestTopic** from the **HowToSample** service namespace.
+O exemplo seguinte mostra como eliminar o tópico **TestTopic** do espaço de nomes de serviço **HowToSample**.
 
 ```
 // Delete Topic.
 namespaceManager.DeleteTopic("TestTopic");
 ```
 
-Deleting a topic also deletes any subscriptions that are registered with the topic. Subscriptions can also be deleted independently. The following code demonstrates how to delete a subscription named **HighMessages** from the **TestTopic** topic.
+A eliminação de um tópico elimina também quaisquer subscrições registadas com o tópico. As subscrições também podem ser eliminadas de modo independente. O código seguinte mostra como eliminar uma subscrição designada **HighMessages** do tópico **TestTopic**.
 
 ```
 namespaceManager.DeleteSubscription("TestTopic", "HighMessages");
 ```
 
-## Next steps
+## Passos seguintes
 
-Now that you've learned the basics of Service Bus topics and subscriptions, follow these links to learn more.
+Agora que aprendeu as noções básicas dos tópicos e das subscrições do Service Bus, siga estas hiperligações para saber mais.
 
--   [Queues, topics, and subscriptions][].
--   [Topic filters sample][]
--   API reference for [SqlFilter][].
--   Build a working application that sends and receives messages to and from a Service Bus queue: [Service Bus brokered messaging .NET tutorial][].
--   Service Bus samples: Download from [Azure samples][] or see the [overview](../service-bus/service-bus-samples.md).
+-   [Filas, tópicos e subscrições][].
+-   [Exemplo de filtros de tópico][]
+-   Referência da API para [SqlFilter][].
+-   Compile uma aplicação de trabalho que envie e receba mensagens para/de uma fila do Service Bus: [Tutorial de .NET de mensagens mediadas do Service Bus][].
+-   Exemplos do Service Bus: transfira a partir dos [exemplos do Azure][] ou consulte a [descrição geral](../service-bus/service-bus-samples.md).
 
-  [Azure portal]: https://portal.azure.com
+  [Portal do Azure]: https://portal.azure.com
 
   [7]: ./media/service-bus-dotnet-how-to-use-topics-subscriptions/getting-started-multi-tier-13.png
 
-  [Queues, topics, and subscriptions]: service-bus-queues-topics-subscriptions.md
-  [Topic filters sample]: https://github.com/Azure-Samples/azure-servicebus-messaging-samples/tree/master/TopicFilters
+  [Filas, tópicos e subscrições]: service-bus-queues-topics-subscriptions.md
+  [Exemplo de filtros de tópico]: https://github.com/Azure-Samples/azure-servicebus-messaging-samples/tree/master/TopicFilters
   [SqlFilter]: http://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.sqlfilter.aspx
   [SqlFilter.SqlExpression]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
-  [Service Bus brokered messaging .NET tutorial]: service-bus-brokered-tutorial-dotnet.md
-  [Azure samples]: https://code.msdn.microsoft.com/site/search?query=service%20bus&f%5B0%5D.Value=service%20bus&f%5B0%5D.Type=SearchText&ac=2
+  [Tutorial de .NET de mensagens mediadas do Service Bus]: service-bus-brokered-tutorial-dotnet.md
+  [exemplos do Azure]: https://code.msdn.microsoft.com/site/search?query=service%20bus&f%5B0%5D.Value=service%20bus&f%5B0%5D.Type=SearchText&ac=2
+
+
+
+<!--HONumber=Sep16_HO4-->
+
+

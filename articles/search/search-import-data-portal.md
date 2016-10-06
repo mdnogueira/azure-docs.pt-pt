@@ -35,7 +35,7 @@ Pode tentar terminar este fluxo de trabalho com dados de exemplo no DocumentDB. 
 
 ## Origens de dados suportadas pelo Assistente de Importação de Dados
 
-A automatização de indexação e as ferramentas estão disponível para as seguintes origens de dados: 
+O Assistente para Importar Dados suporta as seguintes origens de dados: 
 
 - Base de Dados SQL do Azure
 - Dados relacionais do SQL Server numa VM do Azure
@@ -123,6 +123,6 @@ Reveja estas ligações para saber mais sobre indexadores:
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 

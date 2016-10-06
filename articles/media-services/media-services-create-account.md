@@ -13,11 +13,12 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="06/22/2016"
+    ms.date="09/26/2016"
     ms.author="juliako"/>
 
 
-# Criar uma conta dos Media Services do Azure
+
+# Criar uma conta dos Azure Media Services
 
 > [AZURE.SELECTOR]
 - [Portal](media-services-create-account.md)
@@ -108,6 +109,6 @@ Além disso, pode ver o código que utiliza o SDK dos Media Services do Azure pa
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO4-->
 
 

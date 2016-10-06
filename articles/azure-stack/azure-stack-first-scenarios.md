@@ -1,6 +1,6 @@
 <properties
-    pageTitle="Tarefas principais da Prova de Conceito do Azure Stack | Microsoft Azure"
-    description="Saiba como criar um plano e uma oferta e, em seguida, subscrever essa oferta e utilizar os serviços fornecidos para criar uma máquina virtual."
+    pageTitle="Azure Stack POC key tasks | Microsoft Azure"
+    description="Learn how to create a plan and offer and then subscribe to that offer and use the services provided to create a virtual machine."
     services="azure-stack"
     documentationCenter=""
     authors="ErikjeMS"
@@ -17,30 +17,20 @@
     ms.author="erikje"/>
 
 
-# Primeiras tarefas da Prova de Conceito do Azure Stack
+# Azure Stack POC first tasks
 
-Os objetos principais no Azure Stack – [planos, ofertas e subscrições](azure-stack-key-features.md#services-plans-offers-and-subscriptions) – fornecem serviços IaaS, como máquinas virtuais e sites, aos inquilinos. São esses serviços que fornecem valor aos seus inquilinos.
+Now that you've [deployed](azure-stack-deploy.md) and [logged in](azure-stack-connect-azure-stack.md) to Azure Stack POC, you can create some resources.
 
-Agora que [implementou](azure-stack-deploy.md) e [iniciou sessão](azure-stack-connect-azure-stack.md) na Prova de Conceito do Azure Stack, siga os passos seguintes.
+1.  [Provision a virtual machine](azure-stack-subscribe-plan-provision-vm.md).
 
-Primeiro, [inicie sessão como administrador de serviços](azure-stack-connect-azure-stack.md#log-in-as-a-service-administrator) e:
+2.  [Create a storage account](azure-stack-provision-storage-account.md).
 
-1.  [Crie um plano](azure-stack-create-plan.md) para fornecer serviços de computação, rede e armazenamento.
+## Next steps
 
-2.  [Crie uma oferta](azure-stack-create-offer.md) que irá conter o plano.
-
-Em seguida, [inicie sessão como um inquilino](azure-stack-connect-azure-stack.md#log-in-as-a-tenant) e:
-
-1.  [Subscreva a oferta](azure-stack-subscribe-plan-provision-vm.md) e aceda aos planos da oferta.
-
-2.  [Utilize os serviços](azure-stack-provision-vm.md) fornecidos pelo plano da oferta para criar uma máquina virtual.
-
-## Passos seguintes
-
-[Criar um plano](azure-stack-create-plan.md)
+[Provision a virtual machine](azure-stack-subscribe-plan-provision-vm.md)
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 

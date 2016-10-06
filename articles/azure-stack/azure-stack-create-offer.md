@@ -1,6 +1,6 @@
 <properties
-    pageTitle="Criar uma oferta no Azure Stack | Microsoft Azure"
-    description="Enquanto administrador de serviços, saiba como criar uma oferta para os seus inquilinos do Azure Stack."
+    pageTitle="Create an offer in Azure Stack | Microsoft Azure"
+    description="As a service administrator, learn how to create an offer for your tenants in Azure Stack."
     services="azure-stack"
     documentationCenter=""
     authors="ErikjeMS"
@@ -13,55 +13,50 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="05/25/2016"
+    ms.date="09/26/2016"
     ms.author="erikje"/>
 
 
-# Criar uma oferta no Azure Stack
+# Create an offer in Azure Stack
 
-As [Ofertas](azure-stack-key-features.md#services-plans-offers-and-subscriptions) são grupos de um ou mais planos que os fornecedores apresentam aos inquilinos para comprarem (subscrever). Neste exemplo, vai criar uma oferta que inclui o [plano que criou](azure-stack-create-plan.md) no último passo. Este procedimento vai permitir que os subscritores da oferta aprovisionem máquinas virtuais.
+[Offers](azure-stack-key-features.md#services-plans-offers-and-subscriptions) are groups of one or more plans that providers present to tenants to purchase or subscribe to. This document shows you how to create an offer that includes the [plan that you created](azure-stack-create-plan.md) in the last step. This offer gives subscribers the ability to provision virtual machines.
 
-1.  [Inicie sessão](azure-stack-connect-azure-stack.md#log-in-as-a-service-administrator) no portal como administrador de serviços.
-    ![](media/azure-stack-create-offer/image1.png)
+1.  [Sign in](azure-stack-connect-azure-stack.md#log-in-as-a-service-administrator) to the portal as a service administrator and then click **New** > **Tenant Offers + Plans** > **Offer**.
+    ![](media/azure-stack-create-offer/image01.png)
 
-2.  Clique em **Novo**.
+2.  In the **New Offer** blade, fill in **Display Name** and **Resource Name**, and then select a new or existing **Resource Group**. The Display Name is the offer's friendly name. Only the admin can see the Resource Name. It's the name that admins use to work with the offer as an Azure Resource Manager resource.
 
-3.  Clique em **Ofertas e Planos do Inquilino** e, em seguida, clique em **Oferta**.
-    ![](media/azure-stack-create-offer/image2.png)
+    ![](media/azure-stack-create-offer/image01a.png)
 
-4.  No painel **Nova Oferta**, faça o seguinte:
+3.  Click **Base plans** and, in the **Plan** blade, select the plans you want to include in the offer, and then click **Select**. Click **Create** to create the offer.
 
-    1.  Preencha o **Nome a Apresentar** e o **Nome do Recurso**. O Nome a Apresentar é o nome amigável da oferta. Apenas o administrador pode ver o Nome do Recurso. Trata-se do nome que o administrador utiliza para trabalhar com a oferta como um recurso do Azure Resource Manager.
+    ![](media/azure-stack-create-offer/image02.png)
+    
+4. Click **Offers** and then click the offer you just created.
 
-    2.  Selecione um novo **Grupo de Recursos** ou um grupo existente.
+    ![](media/azure-stack-create-offer/image03.png)
 
-        ![](media/azure-stack-create-offer/image3.png)
 
-5.  Clique em **Planos base** e, no painel **Plano**, selecione os planos que pretende incluir na oferta e, em seguida, clique em **Selecionar**. Clique em **Criar** para criar a oferta.
+5.  Click **Change State**, and then click **Public**.
+  
+    ![](media/azure-stack-create-offer/image04.png)
 
-    ![](media/azure-stack-create-offer/image4.png)
+Offers must be made public for tenants to get the full view when subscribing. Offers can be:
 
-6.  Clique em **Alterar Estado** e, em seguida, em **Público**.
-Os planos e as ofertas têm de ser públicos para que os inquilinos possam ter a vista completa aquando da subscrição. Se um plano for privado e a oferta pública, os inquilinos poderão obter a oferta, mas não poderão ver os detalhes do plano. Os planos e as ofertas têm três opções:
+- **Public**: Visible to tenants.
 
-    -   **Públicos**: visíveis para os inquilinos.
+- **Private**: Only visible to the service administrators. Useful while drafting the plan or offer, or if the service administrator wants to approve every subscription.
 
-    -   **Privados**: apenas visíveis para os administradores do serviço. Útil durante a elaboração do plano ou da oferta, ou se o administrador de serviços pretender aprovar cada subscrição.
+- **Decommissioned**: Closed to new subscribers. The service administrator can use decommissioned to prevent future subscriptions, but leave current subscribers untouched.
 
-    -   **Fora de Utilização**: fechados a novos subscritores. O administrador de serviços pode utilizar a opção Fora de Utilização para evitar futuras subscrições, sem afetar os atuais subscritores.
+Changes to the offer are not immediately visible to the tenant. To see the changes, you might have to logout/login to see the new subscription in the “Subscription picker” when creating resources/resource groups.
 
-    ![](media/azure-stack-create-offer/image6.png)
+## Next steps
 
-As alterações ao plano ou à oferta não são imediatamente visíveis para o inquilino. Para ver as alterações, o estado da subscrição tem de ser Em Sincronização e, em seguida, o inquilino deve atualizar o portal ou iniciar/terminar sessão.
-
-Mesmo depois de ter sido criada uma subscrição adicional e o estado estar Em Sincronização, poderá ter de terminar/iniciar sessão para ver a nova subscrição no “Seletor de subscrições” ao criar novos recursos/grupos de recursos.
-
-## Passos seguintes
-
-[Subscrever uma oferta e aprovisionar uma VM](azure-stack-subscribe-plan-provision-vm.md)
+[Subscribe to an offer and then provision a VM](azure-stack-subscribe-plan-provision-vm.md)
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 

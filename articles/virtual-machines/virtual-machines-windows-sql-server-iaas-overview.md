@@ -14,7 +14,7 @@
     ms.topic="get-started-article"
     ms.tgt_pltfrm="vm-windows-sql-server"
     ms.workload="infrastructure-services"
-    ms.date="08/29/2016"
+    ms.date="09/21/2016"
     ms.author="jroth"/>
 
 
@@ -39,10 +39,13 @@ Se estiver a mover outras cargas de trabalho para o Azure, tal como uma aplicaç
 
 Depois de optar por executar o SQL Server em VMs do Azure, uma das suas primeiras decisões é se pretende utilizar uma imagem da VM que inclui os custos de licenciamento do SQL Server. A outra opção consiste em trazer a sua própria licença (BYOL) e apenas pagar a própria VM. As duas secções seguintes descrevem estas opções.
 
-## Opção 1: implementar uma VM do SQL (licenciamento por minuto)
-A tabela seguinte fornece uma matriz de imagens do SQL Server disponíveis na galeria da máquina virtual. Clique em qualquer ligação para começar a criar uma nova VM do SQL Server com a versão especificada, edição e sistema operativo. Todas as imagens incluem [os custos de licenciamento do SQL Server](https://azure.microsoft.com/pricing/details/virtual-machines/#Sql).
+## Criar uma VM do SQL nova
+As secções seguintes fornecem ligações diretas para o portal do Azure para as imagens da galeria das máquinas virtuais do SQL Server. Consoante a imagem que selecionou, pode pagar os custos de licenciamento do SQL Server por minuto ou pode trazer a sua própria licença (BYOL).
 
-A orientação passo-a-passo está disponível no tutorial, [Aprovisionar uma máquina virtual do SQL Server no Portal do Azure](virtual-machines-windows-portal-sql-server-provision.md). Além disso, reveja as [Melhores práticas do desempenho para as VMs do SQL Server](virtual-machines-windows-sql-performance.md), que explica como selecionar o tamanho da máquina apropriada e outras funcionalidades disponíveis durante o aprovisionamento.
+Pode obter orientações passo a passo para este processo no tutorial [Aprovisionar uma máquina virtual do SQL Server no Portal do Azure](virtual-machines-windows-portal-sql-server-provision.md). Além disso, reveja as [Melhores práticas do desempenho para as VMs do SQL Server](virtual-machines-windows-sql-performance.md), que explica como selecionar o tamanho da máquina apropriada e outras funcionalidades disponíveis durante o aprovisionamento.
+
+## Opção 1: Criar uma VM do SQL Server com licenciamento por minuto
+A tabela seguinte fornece uma matriz de imagens do SQL Server disponíveis na galeria da máquina virtual. Clique em qualquer ligação para começar a criar uma nova VM do SQL Server com a versão especificada, edição e sistema operativo.
 
 |Versão|Sistema Operativo|Edição|
 |---|---|---|
@@ -55,12 +58,8 @@ A orientação passo-a-passo está disponível no tutorial, [Aprovisionar uma m�
 |**SQL 2008 R2 SP3**|Windows Server 2008 R2|[Enterprise](https://portal.azure.com/#create/Microsoft.SQLServer2008R2SP3EnterpriseWindowsServer2008R2), [Standard](https://portal.azure.com/#create/Microsoft.SQLServer2008R2SP3StandardWindowsServer2008R2), [Web](https://portal.azure.com/#create/Microsoft.SQLServer2008R2SP3WebWindowsServer2008R2)|
 |**SQL 2008 R2 SP3**|Windows Server 2012|[Express](https://portal.azure.com/#create/Microsoft.SQLServer2008R2SP3ExpressWindowsServer2012)|
 
-## Opção 2: implementar uma VM do SQL Server (BYOL)
-A outra opção consiste em trazer a sua própria licença (BYOL). Neste cenário, apenas paga a VM sem quaisquer taxas adicionais para o licenciamento do SQL Server. Para utilizar a sua própria licença, utilize a matriz das versões do SQL Server, edições e sistemas operativos abaixo. No portal, é adicionado o prefixo **{BYOL}** aos nomes de imagens no Portal.
-
-> [AZURE.IMPORTANT] Para utilizar imagens da VM BYOL, tem de ter um Contrato Enterprise com [Licença Mobilidade através do Software Assurance no Azure](https://azure.microsoft.com/pricing/license-mobility/). Também precisa de uma licença válida para a versão/edição do SQL Server que pretende utilizar. Tem de [fornecer as informações de BYOL necessárias à Microsoft](http://d36cz9buwru1tt.cloudfront.net/License_Mobility_Customer_Verification_Guide.pdf) até **10** dias após o aprovisionamento da VM.
-
-Aplicam-se as orientações no [tutorial de aprovisionamento](virtual-machines-windows-portal-sql-server-provision.md), mas tem de utilizar uma das seguintes opções de imagem **BYOL**. Além disso, reveja as [Melhores práticas do desempenho para as VMs do SQL Server](virtual-machines-windows-sql-performance.md), que explica como selecionar o tamanho da máquina apropriada e outras funcionalidades disponíveis durante o aprovisionamento.
+## Opção 2: Criar uma VM do SQL Server com uma licença já existente
+Também pode trazer a sua licença (BYOL). Neste cenário, apenas paga a VM sem quaisquer taxas adicionais para o licenciamento do SQL Server. Para utilizar a sua própria licença, utilize a matriz das versões do SQL Server, edições e sistemas operativos abaixo. No portal, é adicionado o prefixo **{BYOL}** aos nomes destas imagens.
 
 |Versão|Sistema operativo|Edição|
 |---|---|---|
@@ -68,8 +67,10 @@ Aplicam-se as orientações no [tutorial de aprovisionamento](virtual-machines-w
 |**SQL Server 2014 SP1**|Windows Server 2012 R2|[Enterprise BYOL](https://portal.azure.com/#create/Microsoft.BYOLSQLServer2014SP1EnterpriseWindowsServer2012R2), [Standard BYOL](https://portal.azure.com/#create/Microsoft.BYOLSQLServer2014SP1StandardWindowsServer2012R2)|
 |**SQL Server 2012 SP2**|Windows Server 2012 R2|[Enterprise BYOL](https://portal.azure.com/#create/Microsoft.BYOLSQLServer2012SP3EnterpriseWindowsServer2012R2), [Standard BYOL](https://portal.azure.com/#create/Microsoft.BYOLSQLServer2012SP3StandardWindowsServer2012R2)|
 
+> [AZURE.IMPORTANT] Para utilizar imagens de VM BYOL, tem de ter um Contrato Enterprise com [Mobilidade de Licenças através do Software Assurance no Azure](https://azure.microsoft.com/pricing/license-mobility/). Também precisa de uma licença válida para a versão/edição do SQL Server que pretende utilizar. Tem de [fornecer as informações de BYOL necessárias à Microsoft](http://d36cz9buwru1tt.cloudfront.net/License_Mobility_Customer_Verification_Guide.pdf) até **10** dias após o aprovisionamento da VM.
+
 ## Gerir a VM do SQL
-Depois de aprovisionar a VM do SQL Server, existem várias tarefas de gestão opcionais. Em alguns aspetos, pode configurar e gerir o SQL Server exatamente da mesma forma que o faria no local. Mas algumas tarefas são específicas para o Azure. As secções seguintes realçam algumas das seguintes áreas com ligações para mais informações.
+Depois de aprovisionar a VM do SQL Server, existem várias tarefas de gestão opcionais. Em muitos aspetos, pode configurar e gerir o SQL Server exatamente da mesma forma que geriria uma instância do SQL Server no local. Contudo, algumas tarefas são específicas para o Azure. As secções seguintes realçam algumas das seguintes áreas com ligações para mais informações.
 
 ### Migrar os dados
 

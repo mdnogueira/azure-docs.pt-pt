@@ -3,7 +3,7 @@
     description="Saiba como adicionar uma imagem corporativa à página de início de sessão do Azure e à página de painel de acesso"
     services="active-directory"
     documentationCenter=""
-    authors="markusvi"
+    authors="curtand"
     manager="femila"
     editor=""/>
 
@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="07/13/2016"
-    ms.author="MarkVi"/>
+    ms.date="09/22/2016"
+    ms.author="curtand"/>
 
 
 # Adicionar a imagem corporativa às suas páginas de início de sessão e Painel de Acesso
@@ -30,7 +30,7 @@ Este tópico explica como pode personalizar a página de início de sessão e a 
 
 > [AZURE.NOTE]
 >
-- Imagem corporativa é uma funcionalidade que só estará disponível se tiver efetuado a atualização para a edição Premium ou Basic do Azure Active Directory. Para obter mais informações, consulte [Edições do Azure Active Directory](active-directory-editions.md).
+- “Imagem corporativa” é uma funcionalidade que só está disponível se tiver atualizado para a edição Premium ou Básica do Azure Active Directory ou se for utilizador do Office 365. Para obter mais informações, consulte [Edições do Azure Active Directory](active-directory-editions.md).
 - As edições Premium e Basic do Azure Active Directory estão disponíveis para clientes na China que utilizem a instância mundial do Azure Active Directory. As edições Basic e Premium do Azure Active Directory não são atualmente suportadas pelo serviço Microsoft Azure operado pela 21Vianet na China. Para mais informações, contacte-nos através do [Fórum do Azure Active Directory](https://feedback.azure.com/forums/169401-azure-active-directory/).
 
 
@@ -223,6 +223,6 @@ Cor de Fundo da Página de Início de Sessão | A cor de fundo de página de in�
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 

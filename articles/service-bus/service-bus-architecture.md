@@ -32,7 +32,7 @@ Um espaço de nomes do Service Bus é mapeado para uma unidade de escala. A unid
 
 - **Um arquivo de gateway.** O arquivo de gateway contém os dados para cada entidade que está definida nessa unidade de escala. O arquivo de gateway é implementado por cima de uma SQL Database do Azure.
 
-- **Vários arquivos de mensagens.** Os arquivos de mensagens contêm as mensagens de todas as filas, tópicos e subscrições definidas nessa unidade de escala. Além disso, contêm todos os dados de subscrição. A menos que a opção [entidades de mensagens particionadas](service-bus-partitioning.md) esteja ativada, uma fila ou um tópico é mapeado para um arquivo de mensagens. As subscrições são armazenadas no mesmo arquivo de mensagens do respetivo tópico principal. Exceto as [Mensagens Premium](service-bus-premium-messaging.md) do Service Bus, os arquivos de mensagens são implementados por cima de bases de dados SQL Azure.
+- **Vários arquivos de mensagens.** Os arquivos de mensagens contêm as mensagens de todas as filas, tópicos e subscrições definidas nessa unidade de escala. Além disso, contêm todos os dados de subscrição. A menos que a opção [entidades de mensagens particionadas](../service-bus-messaging/service-bus-partitioning.md) esteja ativada, uma fila ou um tópico é mapeado para um arquivo de mensagens. As subscrições são armazenadas no mesmo arquivo de mensagens do respetivo tópico principal. Exceto as [Mensagens Premium](../service-bus-messaging/service-bus-premium-messaging.md) do Service Bus, os arquivos de mensagens são implementados por cima de bases de dados SQL Azure.
 
 ## Contentores
 
@@ -56,12 +56,12 @@ Quando a ligação de reencaminhamento é estabelecida, os clientes podem trocar
 
 Agora que já leu uma descrição geral da arquitetura do Service Bus, visite as seguintes ligações para começar:
 
-- [Descrição geral de mensagens do Service Bus](service-bus-messaging-overview.md)
+- [Descrição geral de mensagens do Service Bus](../service-bus-messaging/service-bus-messaging-overview.md)
 - [Noções básicas do Service Bus](service-bus-fundamentals-hybrid-solutions.md)
-- [Uma solução de mensagens em fila a utilizar filas do Service Bus](service-bus-dotnet-multi-tier-app-using-service-bus-queues.md)
+- [Uma solução de mensagens em fila a utilizar filas do Service Bus](../service-bus-messaging/service-bus-dotnet-multi-tier-app-using-service-bus-queues.md)
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 

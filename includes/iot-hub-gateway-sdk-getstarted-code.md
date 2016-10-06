@@ -36,7 +36,7 @@ Esta secção descreve algumas partes principais do código no exemplo Olá Mund
 
 ### Criação do gateway
 
-O programador deve escrever o *processo do gateway*. Este programa cria a infraestrutura interna (o barramento de mensagem), carrega os módulos e configura tudo para que funcione corretamente. O SDK fornece a função **Gateway_Create_From_JSON** para permitir o arranque de um gateway a partir de um ficheiro JSON. Para utilizar a função **Gateway_Create_From_JSON**, deve introduzir o caminho para um ficheiro JSON que especifique os módulos a carregar. 
+O programador deve escrever o *processo do gateway*. Este programa cria a infraestrutura interna (o mediador), carrega os módulos e configura tudo para que funcione corretamente. O SDK fornece a função **Gateway_Create_From_JSON** para permitir o arranque de um gateway a partir de um ficheiro JSON. Para utilizar a função **Gateway_Create_From_JSON**, deve introduzir o caminho para um ficheiro JSON que especifique os módulos a carregar. 
 
 Pode encontrar o código para o processo de gateway no exemplo Olá Mundo no ficheiro [main.c][lnk-main-c]. Para melhorar a legibilidade, o fragmento abaixo mostra uma versão abreviada do código de processo do gateway. Este programa cria um gateway e, em seguida, aguarda que o utilizador prima a tecla **ENTER** antes de fechar o gateway. 
 
@@ -65,21 +65,34 @@ O ficheiro de definições JSON contém uma lista de módulos a carregar. Cada m
 - **module_path**: o caminho para a biblioteca que contém o módulo. Para o Linux, é um ficheiro .so, no Windows, é um ficheiro. dll.
 - **args**: quaisquer informações de configuração de que o módulo precise.
 
-O exemplo seguinte mostra o ficheiro de definições JSON utilizado para configurar o exemplo Olá Mundo no Linux. A necessidade de um argumento por parte de um módulo depende da estrutura desse módulo. Neste exemplo, o módulo de registo assume um argumento que é o caminho para o ficheiro de saída e o módulo Olá Mundo não assume qualquer argumento:
+O ficheiro JSON também contém as ligações entre os módulos que vão ser transmitidos para o mediador. As ligações têm duas propriedades:
+- **origem**: um nome de módulo da secção `modules` ou "\*".
+- **sink**: um nome de módulo da secção `modules`.
+
+Cada ligação define uma rota e direção de mensagem. As mensagens do módulo `source` são entregues no módulo `sink`. `source` poderá estar definido como "\*", o que indica que as mensagens de qualquer módulo serão recebidas pelo `sink`.
+
+O exemplo seguinte mostra o ficheiro de definições JSON utilizado para configurar o exemplo Olá Mundo no Linux. Todas as mensagens produzidas pelo módulo `hello_world` serão consumidas pelo módulo `logger`. A necessidade de um argumento por parte de um módulo depende da estrutura desse módulo. Neste exemplo, o módulo de registo assume um argumento que é o caminho para o ficheiro de saída e o módulo Olá Mundo não assume qualquer argumento:
 
 ```
 {
     "modules" :
     [ 
         {
-            "module name" : "logger_hl",
+            "module name" : "logger",
             "module path" : "./modules/logger/liblogger_hl.so",
             "args" : {"filename":"log.txt"}
         },
         {
-            "module name" : "helloworld",
+            "module name" : "hello_world",
             "module path" : "./modules/hello_world/libhello_world_hl.so",
             "args" : null
+        }
+    ],
+    "links" :
+    [
+        {
+            "source" : "hello_world",
+            "sink" : "logger"
         }
     ]
 }
@@ -92,24 +105,24 @@ Pode encontrar o código utilizado pelo módulo "Olá Mundo" para publicar mensa
 ```
 int helloWorldThread(void *param)
 {
-    // Create data structures used in function.
+    // create data structures used in function.
     HELLOWORLD_HANDLE_DATA* handleData = param;
     MESSAGE_CONFIG msgConfig;
     MAP_HANDLE propertiesMap = Map_Create(NULL);
     
-    // Add a property named "helloWorld" with a value of "from Azure IoT
+    // add a property named "helloWorld" with a value of "from Azure IoT
     // Gateway SDK simple sample!" to a set of message properties that
     // will be appended to the message before publishing it. 
     Map_AddOrUpdate(propertiesMap, "helloWorld", "from Azure IoT Gateway SDK simple sample!")
 
-    // Set the content for the message
+    // set the content for the message
     msgConfig.size = strlen(HELLOWORLD_MESSAGE);
     msgConfig.source = HELLOWORLD_MESSAGE;
 
-    // Set the properties for the message
+    // set the properties for the message
     msgConfig.sourceProperties = propertiesMap;
     
-    // Create a message based on the msgConfig structure
+    // create a message based on the msgConfig structure
     MESSAGE_HANDLE helloWorldMessage = Message_Create(&msgConfig);
 
     while (1)
@@ -121,8 +134,8 @@ int helloWorldThread(void *param)
         }
         else
         {
-            // Publish the message to the bus
-            (void)MessageBus_Publish(handleData->busHandle, helloWorldMessage);
+            // publish the message to the broker
+            (void)Broker_Publish(handleData->brokerHandle, helloWorldMessage);
             (void)Unlock(handleData->lockHandle);
         }
 
@@ -137,7 +150,7 @@ int helloWorldThread(void *param)
 
 ### Processamento de mensagens do módulo Olá Mundo
 
-O módulo Olá Mundo não tem necessidade de processar mensagens publicadas por outros módulos no barramento de mensagem. Isto torna a implementação da chamada de retorno da mensagem no módulo Olá Mundo uma função sem operações.
+O módulo Olá Mundo não tem necessidade de processar mensagens publicadas por outros módulos no mediador. Isto torna a implementação da chamada de retorno da mensagem no módulo Olá Mundo uma função sem operações.
 
 ```
 static void HelloWorld_Receive(MODULE_HANDLE moduleHandle, MESSAGE_HANDLE messageHandle)
@@ -148,9 +161,9 @@ static void HelloWorld_Receive(MODULE_HANDLE moduleHandle, MESSAGE_HANDLE messag
 
 ### Processamento e publicação de mensagens do módulo de registo
 
-O módulo de registo recebe mensagens do barramento de mensagem e escreve-as num ficheiro. Nunca publica mensagens para o barramento de mensagem. Por conseguinte, o código do módulo de registo nunca chama a função **MessageBus_Publish**.
+O módulo Logger recebe mensagens do mediador e escreve-as num ficheiro. Nunca publica mensagens. Por conseguinte, o código do módulo Logger nunca chama a função **Broker_Publish**.
 
-A função **Logger_Recieve** no ficheiro [logger.c][lnk-logger-c] é a chamada de retorno que o barramento de mensagem invoca para a entrega de mensagens ao módulo de registo. O fragmento abaixo mostra uma versão modificada com comentários adicionais e algum código de processamento de erros removido para melhorar a legibilidade:
+A função **Logger_Recieve** no ficheiro [logger.c][lnk-logger-c] é a chamada de retorno que o mediador invoca para a entrega de mensagens ao módulo Logger. O fragmento abaixo mostra uma versão modificada com comentários adicionais e algum código de processamento de erros removido para melhorar a legibilidade:
 
 ```
 static void Logger_Receive(MODULE_HANDLE moduleHandle, MESSAGE_HANDLE messageHandle)
@@ -205,6 +218,6 @@ Para saber mais sobre como utilizar o SDK do Gateway, veja o seguinte:
 [lnk-gateway-sdk]: https://github.com/Azure/azure-iot-gateway-sdk/
 [lnk-gateway-simulated]: ../articles/iot-hub/iot-hub-linux-gateway-sdk-simulated-device.md
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 

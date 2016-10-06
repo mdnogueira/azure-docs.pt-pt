@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Create your first Service Fabric application on Linux using Java | Microsoft Azure"
-   description="Create and deploy a Service Fabric application using Java"
+   pageTitle="Criar a sua primeira aplicação do Service Fabric no Linux com Java | Microsoft Azure"
+   description="Criar e implementar uma aplicação do Service Fabric com Java"
    services="service-fabric"
    documentationCenter="java"
    authors="seanmck"
@@ -13,115 +13,117 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="09/28/2016"
+   ms.date="09/25/2016"
    ms.author="seanmck"/>
 
 
-# Create your first Azure Service Fabric application
+# Criar a sua primeira aplicação do Azure Service Fabric no Linux com Java
 
-> [AZURE.SELECTOR]
-- [C Sharp](service-fabric-create-your-first-application-in-visual-studio.md)
-- [Java](service-fabric-create-your-first-linux-application-with-java.md)
+O Service Fabric disponibiliza SDKs para criar serviços no Linux em .NET Core e Java. Neste tutorial, vamos ver como pode criar uma aplicação para Linux e compilar um serviço com Java.
 
-Service Fabric provides SDKs for building services on Linux in both .NET Core and Java. In this tutorial, we will look at how to create an application for Linux and build a service using Java.
+## Pré-requisitos
 
-## Prerequisites
+Antes de começar, certifique-se de que [configurou o seu ambiente de desenvolvimento do Linux](service-fabric-get-started-linux.md). Se estiver a utilizar o Mac OS X, pode [configurar um ambiente de uma caixa do Linux numa máquina virtual com Vagrant](service-fabric-get-started-mac.md).
 
-Before you get started, make sure that you have [set up your Linux development environment](service-fabric-get-started-linux.md). If you are using Mac OS X, you can [set up a Linux one-box environment in a virtual machine using Vagrant](service-fabric-get-started-mac.md).
+## Criar a aplicação
 
-## Create the application
+Uma aplicação de Service Fabric pode conter um ou mais serviços, cada um com uma função específica no fornecimento de funcionalidade da aplicação. O SDK do Service Fabric para Linux inclui um gerador [Yeoman](http://yeoman.io/) que permite criar facilmente o seu primeiro serviço e adicionar outros mais tarde. Vamos utilizar o Yeoman para criar uma aplicação nova com um único serviço.
 
-A Service Fabric application can contain one or more services, each with a specific role in delivering the application's functionality. The Service Fabric SDK for Linux includes a [Yeoman](http://yeoman.io/) generator that makes it easy to create your first service and to add more later. Let's use Yeoman to create a new application with a single service.
+1. Num terminal, escreva **yo azuresfjava**.
 
-1. In a terminal, type **yo azuresfjava**.
+2. Dê um nome à aplicação.
 
-2. Name your application.
+3. Escolha o tipo do seu primeiro serviço e dê-lhe um nome. Para os objetivos deste tutorial, vamos escolher um Serviço Reliable Actor.
 
-3. Choose the type of your first service and name it. For the purposes of this tutorial, we will choose a Reliable Actor Service.
+  ![Gerador Yeoman do Service Fabric para Java][sf-yeoman]
 
-  ![Service Fabric Yeoman generator for Java][sf-yeoman]
+>[AZURE.NOTE] Para obter mais informações sobre as opções, veja [Service Fabric programming model overview (Descrição geral do modelo de programação Service Fabric)](service-fabric-choose-framework.md).
 
->[AZURE.NOTE] For more information about the options, see [Service Fabric programming model overview](service-fabric-choose-framework.md).
+## Criar a aplicação
 
-## Build the application
-
-The Service Fabric Yeoman templates include a build script for [Gradle](https://gradle.org/), which you can use to build the app from the terminal.
+Os modelos Yeoman do Service Fabric incluem um script de compilação para [Gradle](https://gradle.org/), que pode utilizar para criar a aplicação a partir do terminal.
 
   ```bash
   gradle
   ```
 
-## Deploy the application
+## Implementar a aplicação
 
-Once the application is built, you can deploy it to the local cluster using the Azure CLI.
+Depois de criada a aplicação, pode implementá-la no cluster local com a CLI do Azure.
 
-1. Connect to the local Service Fabric cluster.
+1. Ligue ao cluster do Service Fabric local.
 
     ```bash
     azuresfcli servicefabric cluster connect
     ```
 
-2. Use the install script provided in the template to copy the application package to the cluster's image store, register the application type, and create an instance of the application.
+2. Utilize o script de instalação fornecido no modelo para copiar o pacote de aplicação para o arquivo de imagens do cluster, registar o tipo de aplicação e criar uma instância da mesma.
 
     ```bash
     cd myapp
     ./install.sh
     ```
 
-3. Open a browser and navigate to Service Fabric Explorer at http://localhost:19080/Explorer (replace localhost with the private IP of the VM if using Vagrant on Mac OS X).
+3. Abra um browser e navegue para o Service Fabric Explorer, em http://localhost:19080/Explorer (substitua localhost pelo IP privado da VM se estiver a utilizar Vagrant em Mac OS X).
 
-4. Expand the Applications node and note that there is now an entry for your application type and another for the first instance of that type.
+4. Expanda o nó Aplicações e repare que há, agora, uma entrada para o tipo de aplicação e outra para a primeira instância desse tipo.
 
-## Start the test client and perform a failover
+## Iniciar o cliente de teste e executar uma ativação pós-falha
 
-Actor projects do not do anything on their own. They require another service or client to send them messages. The actor template includes a simple test script that you can use to interact with the actor service.
+Os projetos de ator não fazem nada só por si. Precisam de outro serviço ou cliente que lhes envie mensagens. O modelo de ator inclui um script de teste simples, que pode utilizar para interagir com o serviço de ator.
 
-1. Run the script using the watch utility to see the output of the actor service.
+1. Execute o script com o utilitário watch para ver o resultado do serviço de ator.
 
     ```bash
     cd myactorsvcTestClient
     watch -n 1 ./testclient.sh
     ```
 
-2. In Service Fabric Explorer, locate node hosting the primary replica for the actor service. In the screenshot below, it is node 3.
+2. No Service Fabric Explorer, localize o nó que aloja a réplica primária do serviço de ator. Na captura de ecrã, é o nó 3.
 
-    ![Finding the primary replica in Service Fabric Explorer][sfx-primary]
+    ![Localizar a réplica primária no Service Fabric Explorer][sfx-primary]
 
-3. Click the node you found in the previous step, then select **Deactivate (restart)** from the Actions menu. This will restart one of the five nodes in your local cluster and force a failover to one of the secondary replicas running on another node. As you do this, pay attention to the output from the test client and note that the counter continues to increment despite the failover.
+3. Clique no nó que localizou no passo anterior e selecione **Desativar (reiniciar)**, no menu Ações. É reiniciado um dos cinco nós no seu cluster local e forçada uma ativação pós-falha numa das réplicas secundárias em execução noutro nó. Quando o fizer, tenha atenção à saída do cliente de teste e repare que o contador continua a aumentar, apesar da ativação pós-falha.
 
-## Build and deploy an application with the Eclipse Neon plugin
+## Criar e implementar uma aplicação com o plug-in do Eclipse Neon
 
-If you installed the Service Plugin for Eclipse Neon, you can use it to create, build, and deploy Service Fabric applications built with Java.
+Se tiver instalado o plug-in do Service Fabric para o Eclipse Neon, pode utilizá-lo para criar, compilar e implementar aplicações do Service Fabric criadas com Java.
 
-### Create the application
+### Criar a aplicação
 
-The Service Fabric plugin is available through Eclipse extensibility.
+O plug-in do Service Fabric está disponível através da extensibilidade do Eclipse.
 
-1. In Eclipse, choose **File > Other > Service Fabric**. You see a set of options, including Actors and Containers.
+1. No Eclipse, escolha **Ficheiro > Outro > Service Fabric**. Verá um conjunto de opções, incluindo Atores e Contentores.
 
-    ![Service Fabric templates in Eclipse][sf-eclipse-templates]
+    ![Modelos do Service Fabric no Eclipse][sf-eclipse-templates]
 
-2. In this case, choose Stateless Service.
+2. Neste caso, escolha Serviço Sem Estado.
 
-3. You are asked to confirm the use of the Service Fabric perspective, which optimizes Eclipse for use with Service Fabric projects. Choose 'Yes'.
+3. É-lhe pedido para confirmar a utilização da perspetiva do Service Fabric, o que otimiza o Eclipse para uso com os projetos do Service Fabric. Escolha "Sim".
 
-### Deploy the application
+### Implementar a aplicação
 
-The Service Fabric templates include a set of Gradle tasks for building and deploying applications, which you can trigger through Eclipse.
+Os modelos do Service Fabric incluem um conjunto de tarefas Gradle para criar e implementar aplicações, que pode acionar através do Eclipse.
 
-1. Choose **Run > Run Configurations**.
+1. Escolha **Executar > Executar Configurações**.
 
-2. Expand **Gradle Project** and choose **ServiceFabricDeployer**.
+2. Expanda **Projeto do Gradle** e escolha **ServiceFabricDeployer**.
 
-3. Click **Run**.
+3. Clique em **Executar**.
 
-Your app will build and deploy within a few moments. You can monitor its status from Service Fabric Explorer.
+A aplicação vai ser criada e implementada ao fim de alguns momentos. Pode monitorizar o respetivo estado no Service Fabric Explorer.
 
-## Next steps
+## Passos seguintes
 
-- [Learn more about Reliable Actors](service-fabric-reliable-actors-introduction.md)
+- [Saiba mais sobre o Reliable Actors](service-fabric-reliable-actors-introduction.md)
 
 <!-- Images -->
 [sf-yeoman]: ./media/service-fabric-create-your-first-linux-application-with-java/sf-yeoman.png
 [sfx-primary]: ./media/service-fabric-create-your-first-linux-application-with-java/sfx-primary.png
 [sf-eclipse-templates]: ./media/service-fabric-create-your-first-linux-application-with-java/sf-eclipse-templates.png
+
+
+
+<!--HONumber=Sep16_HO4-->
+
+

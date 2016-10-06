@@ -32,7 +32,7 @@ Requisitos e aspetos fundamentais da VNet peering:
 - As duas redes virtuais que são colocadas em modo de peering devem estar na mesma região do Azure.
 - As redes virtuais colocadas em modo de peering devem ter espaços de endereços IP não sobrepostos.
 - A VNet peering ocorre entre duas redes virtuais e não existe nenhuma relação transitiva derivada. Por exemplo, se a rede virtual A estiver no modo de peering com a rede virtual B e se a rede virtual B estiver no modo de peering com a rede virtual C, não converte para a rede virtual A que está a ser colocada no modo de peering com a rede virtual C.
-- O peering pode ser estabelecido entre redes virtuais em duas subscrições diferentes, desde que um utilizador com privilégios com ambas as subscrições autorize o peering.
+- O peering pode ser estabelecido entre redes virtuais em duas subscrições diferentes, desde que um utilizador com privilégios em ambas as subscrições o autorize e que essas subscrições estejam associadas ao mesmo inquilino do Active Directory. 
 - Uma rede virtual que utiliza o modelo de implementação do Resource Manager pode ser colocado no modo de peering com outra rede virtual que utilize este modelo ou com uma rede virtual que utiliza o modelo de implementação clássico. No entanto, as redes virtuais que utilizam o modelo de implementação clássica não podem ser colocadas no modo de peering entre si.
 - Apesar de a comunicação entre as máquinas virtuais em redes virtuais em modo de peering não ter restrições de largura de banda adicionais, continua a aplicar-se o limite de largura de banda baseado no tamanho das VM.
 
@@ -91,6 +91,6 @@ O VNet peering não será cobrado durante o período de avaliação. Uma vez lan
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 
