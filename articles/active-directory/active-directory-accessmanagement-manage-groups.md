@@ -1,4 +1,5 @@
-<properties
+< propriedades
+
     pageTitle="Managing groups in Azure Active Directory | Microsoft Azure"
     description="How to create and manage groups to manage Azure users using Azure Active Directory."
     services="active-directory"
@@ -76,6 +77,8 @@ Vamos descrever as tarefas, tal como foram executadas no portal clássico do Azu
 
 No Azure AD, pode configurar muito facilmente uma regra simples para determinar que utilizadores são membros do grupo. Uma regra simples é aquela que faz apenas uma única comparação. Por exemplo, se um grupo for atribuído a uma aplicação SaaS, pode configurar uma regra para adicionar utilizadores que tenham um cargo de "Representante de Vendas" Esta regra, em seguida, concede acesso a esta aplicação SaaS a todos os utilizadores com esse cargo no seu diretório.
 
+Quando os atributos de um utilizador mudam, o sistema avalia todas as regras de grupos dinâmicos num diretório para ver se a alteração do atributo do utilizador acionará adições ou remoções no grupo. Se um utilizador cumprir uma regra num grupo, é adicionado como membro a esse grupo. Se deixar de cumprir a regra de um grupo do qual é membro, o utilizador é removido do mesmo.
+
 > [AZURE.NOTE] Pode configurar uma regra de filiação dinâmica em grupos de segurança ou grupos do Office 365. As filiações aninhadas em grupos não são suportadas atualmente para uma atribuição baseada em grupos para aplicações .
 >
 > A filiação dinâmica para grupos exige uma licença do Azure AD Premium a ser atribuída
@@ -114,6 +117,6 @@ Estes artigos fornecem informações adicionais acerca do Azure Active Directory
 * [Integrar as identidades no local ao Azure Active Directory](active-directory-aadconnect.md)
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 

@@ -1,6 +1,6 @@
 <properties
-    pageTitle="Implementar a Prova de Conceito do Azure Stack | Microsoft Azure"
-    description="Saiba como preparar a Prova de Conceito do Azure e executar o script do PowerShell para implementá-la."
+    pageTitle="Deploy Azure Stack POC | Microsoft Azure"
+    description="Learn how to prepare the Azure Stack POC and run the PowerShell script to deploy Azure Stack POC."
     services="azure-stack"
     documentationCenter=""
     authors="ErikjeMS"
@@ -13,184 +13,132 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="06/29/2016"
+    ms.date="09/27/2016"
     ms.author="erikje"/>
 
 
-# Implementar a Prova de Conceito do Azure Stack
-Para implementar a Prova de Conceito do Azure Stack, tem primeiro de [preparar o computador de implementação](#prepare-the-deployment-machine) e, em seguida, [executar o script de implementação do PowerShell](#run-the-powershell-deployment-script).
+# Deploy Azure Stack POC
+To deploy the Azure Stack POC, you first need to [prepare the deployment machine](#prepare-the-deployment-machine) and then [run the PowerShell deployment script](#run-the-powershell-deployment-script).
 
-## Preparar o computador de implementação
+## Download and extract Microsoft Azure Stack POC TP2
 
-1. Verifique se pode ligar fisicamente ao computador de implementação ou ter acesso físico à consola (como KVM). Precisará desse acesso depois de reiniciar o computador de implementação no passo 9.
- 
-2. Verifique se o computador de implementação cumpre os [requisitos mínimos](azure-stack-deploy.md). Pode utilizar o [Deployment Checker for Azure Stack Technical Preview 1 (Verificador de Implementação do Azure Stack Technical Preview 1)](https://gallery.technet.microsoft.com/Deployment-Checker-for-76d824e1) para confirmar os requisitos.
+Before you start, make sure that you at least 85 GB of space.
 
-3.  [Transfira](http://aka.ms/ReqOSforAzureStack) e instale o Windows Server 2016 Datacenter Edition Technical Preview 4 EN-US (Edição Completa).
+1. The download of Azure Stack POC TP2 is comprised of a zip file containing the following 12 files, totaling ~20GB:
+    - 1 MicrosoftAzureStackPOC.EXE
+    - 11 MicrosoftAzureStackPOC-N.BIN (where N is 1-11)
+2. Extract these files into a single folder on your computer.
+3. Right-Click on the MicrosoftAzureStackPOC.EXE > Run as an administrator.
+4. Review the License Agreement screen and information of the Self-Extractor Wizard and then click **Next**.
+5. Review the Privacy Statement screen and information of the Self-Extractor Wizard and then click **Next**.
+6. Select the Destination for the files to be extracted, click **Next**.
+    - The default is: <drive letter>:\<current folder>\Microsoft Azure Stack POC
+7. Review the Destination location screen and information of the Self-Extractor Wizard, and then **click** Extract.
+8. Extraction will take some time, because it is extracting: CloudBuilder.vhdx (~44.5GB) and ThirdPartyLicenses.rtf files.
 
-4.  [Transfira](https://azure.microsoft.com/overview/azure-stack/try/?v=try) o pacote de implementação da Prova de Conceito do Azure Stack para uma pasta na unidade C, (por exemplo, C:\\AzureStack).
+## Prepare the deployment machine
 
-5.  Execute o ficheiro **Microsoft Azure Stack POC.exe**.
+1. Make sure that you can physically connect to the deployment machine, or have physical console access (such as KVM). You will need such access after you reboot the deployment machine in step 9.
 
-    Este procedimento cria a pasta \\Prova de Conceito do Microsoft Azure Stack\\ que contém os seguintes itens:
+2. Make sure the deployment machine meets the [minimum requirements](azure-stack-deploy.md). You can use the [Deployment Checker for Azure Stack Technical Preview 2](https://gallery.technet.microsoft.com/Deployment-Checker-for-50e0f51b) to confirm your requirements.
 
-    -   DeployAzureStack.ps1: script do PowerShell de instalação da Prova de Conceito do Azure Stack
+3. Log in as the Local Administrator to your POC machine.
 
-    -   MicrosoftAzureStackPOC.vhdx: pacote de dados do Azure Stack
+4. Copy the CloudBuilder.vhdx file to C:\CloudBuilder.vhdx.
 
-    -   SQLServer2014.vhdx: VHD do SQL Server
+    > [AZURE.NOTE] If you choose not to use the recommended script to prepare your POC host computer (steps 5 – step 7), do not enter any license key at the activation page. Included is a trial version of Windows Server 2016 image and entering license key will result in expiration warning messages
 
-    -   WindowsServer2012R2DatacenterEval.vhd
+5. Download these support files from [Github](https://aka.ms/azurestackdeploytools).
 
-    -   WindowsServer2016Datacenter.vhdx: VHD do Windows Server 2016 Datacenter (inclui KB 3124262)
+    - PrepareBootFromVHD.ps1
+    - unattend.xml
+    - unattend_NoKVM.xml 
 
-    > [AZURE.IMPORTANT] Tem de ter, pelo menos, 128 GB de espaço livre no volume de arranque físico.
+6. Open an elevated PowerShell console and change the directory to where you copied the files.
 
-6. Copie o WindowsServer2016Datacenter.vhdx para a unidade C:\ e mude o nome para MicrosoftAzureStackPOCBoot.vhdx.
+7. Run the PrepareBootFromVHD.ps1 script. This and the unattend files are available with the other support scripts provided along with this build.
+    There are five parameters for this PowerShell script:
+    - CloudBuilderDiskPath (required) – path to the CloudBuilder.vhdx on the HOST.
+    - DriverPath (optional) – allows you to add additional drivers for the host in the virtual HD.
+    - ApplyUnattend (optional) – switch parameter, if specified, the configuration of the OS is automated, and the user will be prompted for the AdminPassword to configure at boot (requires provided accompanying file unattend_NoKVM.xml).
+    If you do not use this parameter, the generic unattend.xml file is used without further customization. You will need KVM to complete customization after it reboots.
+    - AdminPassword (optional) – only used when the ApplyUnattend parameter is set, requires a minimum of 6 characters.
+    - VHDLanguage (optional) – specifies the VHD language, defaulted to “en-US”.
+    The script is documented and contains example usage, though the most common usage is:
+    
+        `.\PrepareBootFromVHD.ps1 -CloudBuilderDiskPath C:\CloudBuilder.vhdx -ApplyUnattend`
+    
+        If you run this exact command, you will be prompted to enter the AdminPassword.
 
-7. No Explorador de Ficheiros, clique com o botão direito do rato em MicrosoftAzureStackPOCBoot.vhdx e clique em **Montar**.
+8. When the script is complete you will be asked to confirm reboot. If there are other users logged in, this command will fail. If this happens, run the following command: `Restart-Computer -force` 
 
-8. Abra uma janela da Linha de Comandos como administrador e execute o comando bcdboot abaixo. Este comando cria um ambiente de arranque duplo. A partir deste ponto, o arranque deve ser feito na opção de arranque superior.
+9. The HOST will reboot into the OS of the CloudBuilder.vhdx, where the remainder of the deployment steps will take place.
 
-        bcdboot <mounted drive letter>:\windows
+> [AZURE.IMPORTANT] Azure Stack requires access to the Internet, either directly or through a transparent proxy. The TP2 POC deployment supports exactly one NIC for networking. If you have multiple NICs, make sure that only one is enabled (and all others are disabled) before running the deployment script below.
 
-9. Reinicie o computador. Irá automaticamente executar a Configuração do Windows à medida que o sistema VHD é preparado. A partir deste momento, terá de ligar fisicamente ao computador de implementação ou ter acesso físico à consola para concluir os passos seguintes.
+## Run the PowerShell deployment script
 
-10. Se o seu BIOS incluir essa opção, deverá configurá-lo para utilizar a hora local em vez da hora UTC.
+1. Log in as the Local Administrator to your POC machine. Use the credentials specified in the previous steps.
 
-11. Quando lhe for solicitado, indique o seu país, idioma, teclado e outras preferências. Se lhe for solicitada a chave do produto, poderá encontrá-la em [Requisitos do Sistema e Instalação](https://technet.microsoft.com/library/mt126134.aspx).
+2. Open an elevated PowerShell console.
 
-12. Quando lhe for pedido, defina a palavra-passe da conta de Administrador e, em seguida, inicie sessão com esse nome de conta e palavra-passe.
+3. In PowerShell, run this command: `cd C:\CloudDeployment\Configuration`
 
-13. Depois de reiniciar o computador e iniciar sessão, se não tiver o DHCP, defina a configuração estática na NIC.
+4. Run the deploy command: `.\InstallAzureStackPOC.ps1`
 
-14. Para ativar as Ligações ao Ambiente de Trabalho Remoto, aceda às **Propriedades do Sistema** e selecione a opção **Permitir ligações remotas a este computador**.
+5. At the **Enter the password** prompt, enter a password and then confirm it. This is the password to all the virtual machines. Be sure to record it.
 
-15. Inicie sessão com uma conta local com permissões de administrador.
+6. Enter the credentials for your Azure Active Directory account. This user must be the Global Admin in the directory tenant.
 
-16. Verifique se **precisamente** quatro unidades para os dados da Prova de Conceito do Azure Stack:
-  - São visíveis na gestão de discos
-  - Não estão a ser utilizadas
-  - São mostradas como Online, Não alocadas
+7. The deployment process will take a couple of hours, during which one automated system reboot will occur. If you want to monitor the deployment progress, sign in as azurestack\AzureStackAdmin. If the deployment fails, you can try to [rerun it](azure-stack-rerun-deploy.md).
 
-17. Confira que o anfitrião não está associado a um domínio.
+### Deployment script examples
 
-18. Com o Internet Explorer, verifique a conetividade da rede ao Azure.com.
+If your AAD Identity is only associated with ONE AAD Directory:
 
-> [AZURE.IMPORTANT] A implementação da Prova de Conceito TP1 suporta precisamente quatro unidades para as funcionalidades de armazenamento e apenas uma NIC para as redes.
->
-> - **Para o armazenamento**, utilize o gestor de dispositivos ou a WMI para desativar todas as outras unidades (não basta colocar os discos offline através do gestor de discos).
->
-> - **Para a rede**, se tiver várias NICs, confira que apenas uma está ativada (e todas as outras desativadas) antes de executar o script de implementação abaixo.
->
-> Se tiver utilizado os passos de arranque do VHD definidos acima, terá de executar estas atualizações após o arranque no VHD e antes de iniciar o script de implementação.
+    cd C:\CloudDeployment\Configuration
+    $adminpass = ConvertTo-SecureString "<LOCAL ADMIN PASSWORD>" -AsPlainText -Force
+    $aadpass = ConvertTo-SecureString "<AAD GLOBAL ADMIN ACCOUNT PASSWORD>" -AsPlainText -Force
+    $aadcred = New-Object System.Management.Automation.PSCredential ("<AAD GLOBAL ADMIN ACCOUNT>", $aadpass)
+    .\InstallAzureStackPOC.ps1 -AdminPassword $adminpass -AADAdminCredential $aadcred
 
-## Executar o script de implementação do PowerShell
+If your AAD Identity is associated with GREATER THAN ONE AAD Directory:
 
-1. Mova os seguintes ficheiros de implementação de D:\Prova de Conceito do Azure Stack\ para C:\Prova de Conceito do Azure Stack\.
-    - DeployAzureStack.ps1
-    - MicrosoftAzureStackPOC.vhdx
-    - SQLServer14.vhdx
-    - WindowsServer2012R2DatacenterEval.vhd
-    - WindowsServer2016Datacenter.vhdx
+    cd C:\CloudDeployment\Configuration
+    $adminpass = ConvertTo-SecureString "<LOCAL ADMIN PASSWORD>" -AsPlainText -Force
+    $aadpass = ConvertTo-SecureString "<AAD GLOBAL ADMIN ACCOUNT PASSWORD>" -AsPlainText -Force
+    $aadcred = New-Object System.Management.Automation.PSCredential "<AAD GLOBAL ADMIN ACCOUNT> example: user@AADDirName.onmicrosoft.com>", $aadpass)
+    .\InstallAzureStackPOC.ps1 -AdminPassword $adminpass -AADAdminCredential $aadcred -AADDirectoryTenantName "<SPECIFIC AAD DIRECTORY example: AADDirName.onmicrosoft.com>"
 
-2.  Abra o PowerShell como um Administrador.
+If your environment DOES NOT have DHCP enabled, you will need to include the following ADDITIONAL parameters to one of the options above (example usage provided):
 
-3.  No PowerShell, aceda à localização da pasta do Azure Stack (\\Prova de Conceito do Microsoft Azure Stack\\ se utilizou a localização predefinida).
+    .\InstallAzureStackPOC.ps1 -AdminPassword $adminpass -AADAdminCredential $aadcred
+    -NatIPv4Subnet 10.10.10.0/24 -NatIPv4Address 10.10.10.3 -NatIPv4DefaultGateway 10.10.10.1
 
-4.  Execute o comando de implementação:
 
-        .\DeployAzureStack.ps1 –Verbose
+### InstallAzureStackPOC.ps1 optional parameters
 
-    Na China, utilize antes o seguinte comando:
+| Parameter | Required/Optional | Description |
+| --------- | ----------------- | ----------- |
+| AADAdminCredential | Optional | Sets the Azure Active Directory user name and password. These Azure credentials can be either an Org ID or a Microsoft Account. To use Microsoft Account credentials, do not include this parameter in the cmdlet, thus prompting the Azure Authentication popup during deployment (this will create the authentication and refresh tokens used during deployment). |
+| AADDirectoryTenantName | Required | Sets the tenant directory. Use this parameter to specify a specific directory where the AAD account has permissions to manage multiple directories. Full Name of an AAD Directory Tenant in the format of <directoryName>.onmicrosoft.com. |
+| AdminPassword | Required | Sets the local administrator account and all other user accounts on all the virtual machines that will be created as part of POC deployment. This must match the current local administrator password on the host. |
+| AzureEnvironment | Optional | Select the Azure Environment with which you want to register this Azure Stack deployment. Options include *Public Azure*, *Azure - China*, *Azure - US Government*. |
+| EnvironmentDNS | Optional | A DNS server is created as part of the Azure Stack deployment. To allow computers inside of the solution to resolve names outside of the stamp, provide your existing infrastructure DNS server. The in-stamp DNS server will forward unknown name resolution requests to this server. |
+| NatIPv4Address | Required for DHCP NAT support | Sets a static IP address for the NAT VM. Only use this parameter if the DHCP can’t assign a valid IP address to access the Internet. |
+| NatIPv4DefaultGateway | Required for DHCP NAT support | Sets the default gateway used with the static IP address for the NAT VM. Only use this parameter if the DHCP can’t assign a valid IP address to access the Internet.  |
+| NatIPv4Subnet | Required for DHCP NAT support | IP Subnet prefix used for DHCP over NAT support. Only use this parameter if the DHCP can’t assign a valid IP address to access the Internet.  |
+| NatSubnetPrefix | Required for DHCP NAT support | IP Subnet prefix to be used for DHCP over NAT support. Only use this parameter if the DHCP can’t assign a valid IP address to access the Internet. |
+| PublicVLan | Optional | Sets the VLAN ID. Only use this parameter if the host and NATVM must configure VLAN ID to access the physical network (and Internet). For example, `.\InstallAzureStackPOC.ps1 –Verbose –PublicVLan 305` |
+| Rerun | Optional | Use this flag to re-run deployment.  All previous input will be used. Re-entering data previously provided is not supported because several unique values are generated and used for deployment. |
+| TimeServer | Optional | Use this parameter if you need to specify a specific time server. |
 
-        .\DeployAzureStack.ps1 –Verbose -UseAADChina $true
+## Next steps
 
-    A implementação começa e o nome de domínio da Prova de Conceito do Azure Stack é codificado como azurestack.local.
+[Connect to Azure Stack](azure-stack-connect-azure-stack.md)
 
-5.  No pedido **Introduzir a palavra-passe do administrador incorporado**, introduza uma palavra-passe e, em seguida, confirme-a. Esta será a palavra-passe para todas as máquinas virtuais. Não se esqueça de registar esta palavra-passe de Administrador de Serviços.
 
-6.  Em **Inicie sessão na sua conta do Azure no menu de contexto Página de autenticação do Azure**, prima qualquer tecla para abrir a caixa de diálogo de início de sessão do Microsoft Azure.
 
-7.  Introduza as credenciais da sua conta do Azure Active Directory. Este utilizador deve ser o Administrador Global no inquilino do diretório.
-
-8.  Novamente no PowerShell, no pedido de confirmação de seleção da conta, introduza *s*. Esta ação cria dois utilizadores e três aplicações para o Azure Stack nesse inquilino do diretório: um utilizador administrador do Azure Stack, um utilizador inquilino dos testes TiP e uma aplicação para cada fornecedor de recursos do Portal, da API e de Monitorização. Para além disto, o instalador adiciona autorizações do Azure PowerShell, da CLI do XPlat e do Visual Studio para o referido Inquino do Diretório.
-
-9.  No pedido **A Prova de Conceito do Microsoft Azure Stack está pronta a ser implementada. Continuar?**, introduza *s*.
-
-10.  O processo de implementação demorará algumas horas, durante as quais irão ocorrer vários reinícios automatizados do sistema. Se iniciar sessão durante a implementação, será automaticamente aberta uma janela do PowerShell a indicar o progresso da implementação. A janela do PowerShell fecha-se assim que for concluída a implementação.
-
-11. No computador da Prova de Conceito do Azure Stack, inicie sessão como AzureStack\administrador, abra o **Gestor do Servidores** e desative a **Configuração de Segurança Avançada do IE** para administradores e utilizadores.
-
-Se a implementação falhar com um erro de hora ou data, configure o BIOS para utilizar a Hora Local em vez da UTC. Em seguida, implemente novamente.
-
-Se o script falhar, reinicie o script. Se a falha persistir, apague e reinicie o script.
-
-Pode localizar os registos dos scripts no anfitrião da Prova de Conceito `C:\ProgramData\microsoft\azurestack`.
-
-### Parâmetros opcionais de DeployAzureStack.ps1
-
-**AADCredential** (PSCredential) – Define o nome de utilizador e a palavra-passe do Azure Active Directory. Se este parâmetro não for fornecido, o script solicitar-lhe-á o nome de utilizador e a palavra-passe.
-
-**AADTenant** (cadeia) – Define o diretório de inquilinos. Utilize este parâmetro para especificar um diretório específico se a conta do AAD tiver permissões para gerir vários diretórios. Se este parâmetro não for fornecido, o script solicitar-lhe-á o diretório.
-
-**AdminPassword** (SecureString) – Define a palavra-passe de administrador predefinida. Se este parâmetro não for fornecido, o script solicitar-lhe-á a palavra-passe.
-
-**Force** (Switch) – Define o cmdlet a ser executado sem confirmações.
-
-**NATVMStaticGateway** (String) – Define o gateway predefinido utilizado no endereço IP estático da NATVM. Só utilize este parâmetro se o DHCP não conseguir atribuir um endereço IP válido para aceder à Internet. Se utilizar este parâmetro, também deverá utilizar o parâmetro NATVMStaticIP.
-Por exemplo, `.\DeployAzureStack.ps1 –Verbose -NATVMStaticIP 10.10.10.10/24 – NATVMStaticGateway 10.10.10.1`
-
-**NATVMStaticIP** (string) – Define um endereço IP estático adicional para a NATVM. Só utilize este parâmetro se o DHCP não conseguir atribuir um endereço IP válido para aceder à Internet.
-Por exemplo, `.\DeployAzureStack.ps1 –Verbose -NATVMStaticIP 10.10.10.10/24`
-
-**NoAutoReboot** (Switch) – Define o script a ser executado sem reinícios automáticos.
-
-**ProxyServer** (String) – Define as informações de proxy. Só utilize este parâmetro se o seu ambiente tiver de utilizar um proxy para aceder à Internet. Não são suportados servidores de proxy que requeiram credenciais.
-Por exemplo, `.\DeployAzureStack.ps1 -Verbose -ProxyServer 172.11.1.1:8080`
-
-**PublicVLan** (String) – Define o ID da VLAN. Só utilize este parâmetro se o anfitrião e a NATVM tiverem de configurar o ID da VLAN para aceder à rede física (e à Internet).
-Por exemplo, `.\DeployAzureStack.ps1 –Verbose –PublicVLan 305`
-
-**TIPServiceAdminCredential** (PSCredential) – Define as credenciais de uma conta de administrador de serviços existente do Azure Active Directory. Esta conta é utilizada pelo TiP (Teste em Produção). Se este parâmetro não for fornecido, será automaticamente criada uma conta.
-
-**TIPTenantAdminCredential** (PSCredential) – Define as credenciais de uma conta de administrador de inquilinos existente do Azure Active Directory. Esta conta é utilizada pelo TiP (Teste em Produção). Se este parâmetro não for fornecido, será automaticamente criada uma conta.
-
-**UseAADChina**(Boolean) – Defina este parâmetro Booleano como $verdadeiro se pretender implementar a Prova de Conceito do Microsoft Azure Stack com o Azure China (Mooncake).
-
-## Desative a funcionalidade de testes TiP automatizada (opcional)
-
-O Microsoft Azure Stack Technical Preview 1 inclui um conjunto de testes de validação utilizados durante o processo de implementação e nos agendamentos diários recorrentes. Simulam ações executadas por um inquilino do Azure Stack, sendo criadas contas de utilizador Test-in-Poc (TiP) no Azure Active Directory com vista a executar os testes. Após uma implementação bem sucedida, pode desativar estes testes TiP. 
-
-**Para desativar os testes automatizados TiP**
-
-  - Na ClientVM, execute o seguinte cmdlet:
-
-  `Disable-ScheduledTask -TaskName AzureStackSystemvalidationTask`
-
-**Para ver os resultados do teste**
-
-  - Na ClientVM, execute o seguinte cmdlet:
-
-  `Get-AzureStackTiPTestsResult`
-
-
-
-## Desativar a telemetria da Prova de Conceito do Microsoft Azure Stack (opcional)
-
-
-Antes de implementar a Prova de Conceito do Microsoft Azure Stack, pode desativar a telemetria do Microsoft Azure Stack no computador a partir da qual é efetuada a implementação. Para desativar esta funcionalidade num único computador, veja: [http://windows.microsoft.com/pt-pt/windows-10/feedback-diagnostics-privacy-faq](http://windows.microsoft.com/en-us/windows-10/feedback-diagnostics-privacy-faq) e altere a definição **Dados de utilização e de diagnóstico** para **Básico**.
-
-
-
-Depois de implementar a Prova de Conceito do Microsoft Azure Stack, pode desativar a telemetria em todas as máquinas virtuais associadas ao domínio do Azure Stack. Para criar uma política de grupo e gerir as definições de telemetria nessas máquinas virtuais, veja: [https://technet.microsoft.com/library/mt577208(v=vs.85).aspx\#BKMK\_UTC](https://technet.microsoft.com/library/mt577208%28v=vs.85%29.aspx#BKMK_UTC) e selecione **0** ou **1** para a política de grupo **Permitir Telemetria**. Existem duas máquinas virtuais (bgpvm e natvm) que não estão associadas ao domínio do Azure Stack. Para alterar separadamente as definições de Comentários e Diagnósticos nestas máquinas virtuais, veja: [http://windows.microsoft.com/pt-pt/windows-10/feedback-diagnostics-privacy-faq](http://windows.microsoft.com/en-us/windows-10/feedback-diagnostics-privacy-faq).
-
-## Passos seguintes
-
-[Ligar ao Azure Stack](azure-stack-connect-azure-stack.md)
-
-
-
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 

@@ -13,7 +13,7 @@
     ms.topic="hero-article"
     ms.tgt_pltfrm="vm-windows-sql-server"
     ms.workload="infrastructure-services"
-    ms.date="09/20/2016"
+    ms.date="09/21/2016"
     ms.author="jroth" />
 
 
@@ -142,9 +142,9 @@ Se preferir não ativar ligações para o Motor de Base de dados através da Int
 - **Local (no interior da VM)** para permitir ligações ao SQL Server, apenas a partir de dentro da VM.
 - **Privada (na Virtual Network)** para permitir ligações ao SQL Server a partir de máquinas ou serviços na mesma rede virtual.
 
-Em geral, melhore a segurança, selecionando a conectividade mais restritiva que permite o seu cenário. Mas todas as opções têm capacidade de segurança através das regras do Grupo de Segurança de Rede e Autenticação do SQL/Windows.
+>[AZURE.NOTE] A imagem da máquina virtual da edição SQL Server Express não ativa automaticamente o protocolo TCP/IP. Isto verifica-se mesmo nas opções de conectividade Pública e Privada. Relativamente à edição Express, tem de utilizar o Gestor de Configuração do SQL Server para [ativar manualmente o protocolo TCP/IP](#configure-sql-server-to-listen-on-the-tcp-protocol) depois de criar a VM.
 
->[AZURE.NOTE] As imagens da máquina virtual das edições SQL Server Express ou Developer não ativam automaticamente o protocolo TCP/IP. Tal impede a conetividade remota, mesmo se tiver selecionado Público ou Privado no portal. Para edições Express e Developer, deve utilizar o Gestor de Configuração do SQL Server para [ativar manualmente o protocolo TCP/IP](virtual-machines-windows-sql-connect.md#configure-sql-server-to-listen-on-the-tcp-protocol) depois de criar a VM.
+Em geral, melhore a segurança, selecionando a conectividade mais restritiva que permite o seu cenário. Mas todas as opções têm capacidade de segurança através das regras do Grupo de Segurança de Rede e Autenticação do SQL/Windows.
 
 A predefinição da **Porta** é 1433. Pode especificar um número de porta diferente.
 Para obter mais informações, consulte o artigo [Ligar a uma Máquina Virtual do SQL Server (Resource Manager) | Microsoft Azure](virtual-machines-windows-sql-connect.md).

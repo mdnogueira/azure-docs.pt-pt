@@ -1,6 +1,6 @@
 <properties
     pageTitle="Serviços de domínio do Azure AD: Atualizar as definições de DNS para a Azure Virtual Network | Microsoft Azure"
-    description="Introdução aos Serviços de Domínio do Azure Active Directory (pré-visualização)"
+    description="Introdução aos Serviços de Domínio do Azure Active Directory"
     services="active-directory-ds"
     documentationCenter=""
     authors="mahesh-unnikrishnan"
@@ -13,18 +13,18 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="07/06/2016"
+    ms.date="09/21/2016"
     ms.author="maheshu"/>
 
 
-# Serviços de Domínio do Azure AD *(Pré-visualização)* – Atualizar as definições de DNS para a Azure Virtual Network
+# Azure AD Domain Services - atualizar as definições de DNS para a rede virtual do Azure
 
 ## Tarefa 4: Atualizar as definições de DNS para a Azure Virtual Network
-Agora que ativou com êxito os Serviços de Domínio do Azure AD para o diretório, a próxima tarefa consiste em garantir que os computadores dentro da rede virtual podem ligar e consumir estes serviços. Para fazer isto, terá de atualizar as definições do servidor DNS da sua rede virtual para que apontem para os endereços IP para os quais os Serviços de Domínio do Azure AD estão disponíveis na rede virtual.
+Nas tarefas de configuração anteriores, ativou com êxito o Azure AD Domain Services no seu diretório. A tarefa seguinte é garantir que os computadores na rede virtual se conseguem ligar e consumir esses serviços. Atualize as definições do servidor DNS da sua rede virtual para que apontem para os dois endereços IP nos quais o Azure AD Domain Services está disponível na rede virtual.
 
 > [AZURE.NOTE] Tome nota dos endereços IP para os Serviços de Domínio do Azure AD apresentados no separador **Configurar** do seu diretório, depois de ter ativado os Serviços de Domínio do Azure AD para o diretório.
 
-Execute os seguintes passos de configuração para atualizar a definição do servidor DNS para a rede virtual em que tiver ativado os Serviços de Domínio do Azure AD.
+Execute os seguintes passos de configuração para atualizar a definição do servidor DNS para a rede virtual em que tiver ativado o Azure AD Domain Services.
 
 1. Navegue para o **Portal Clássico do Azure** ([https://manage.windowsazure.com](https://manage.windowsazure.com)).
 
@@ -42,11 +42,11 @@ Execute os seguintes passos de configuração para atualizar a definição do se
 
 6. Certifique-se de que introduz os endereços IP que foram apresentados na secção **Serviços de Domínio** no separador **Configurar** do seu diretório.
 
-7. Clique em **Guardar** no painel de tarefas na parte inferior da página para guardar as definições do servidor DNS para esta rede virtual.
+7. Para guardar as definições do servidor DNS desta rede virtual, clique em **Guardar** no painel da tarefa, na parte inferior da página.
 
    ![Atualize as definições do servidor DNS para a rede virtual.](./media/active-directory-domain-services-getting-started/update-dns.png)
 
-> [AZURE.NOTE] Depois de atualizar as definições do servidor DNS para a rede virtual, poderá demorar algum tempo para as máquinas virtuais na rede obterem a configuração de DNS atualizada. Se uma máquina virtual não consegue ligar ao domínio, pode esvaziar a cache DNS (ex. 'ipconfig /flushdns') na máquina virtual, para forçar uma atualização das definições de DNS na máquina virtual.
+> [AZURE.NOTE] Depois de atualizar as definições do servidor DNS para a rede virtual, poderá demorar algum tempo para as máquinas virtuais na rede obterem a configuração de DNS atualizada. Se uma máquina virtual não consegue ligar ao domínio, pode esvaziar a cache DNS (ex. “ipconfig /flushdns”) na mesma. Este comando força uma atualização das definições de DNS na máquina virtual.
 
 
 ## Tarefa 5 – Ativar a sincronização de palavras-passe para os Serviços de Domínio do Azure AD
@@ -54,6 +54,6 @@ A próxima tarefa de configuração é [ativar a sincronização de palavras-pas
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 

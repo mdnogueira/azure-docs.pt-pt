@@ -28,7 +28,7 @@ As secções seguintes irão fornecer orientação sobre como determinar cada um
 
 ## O que estou a tentar proteger?
 
-Para determinar a solução de autenticação multifator correta, primeiro é necessário responder à pergunta sobre o que está a tentar proteger com um segundo método de autenticação.  É uma aplicação que está no Azure?  Ou é um sistema de acesso remoto, por exemplo.  Ao determinar o que estamos a tentar proteger, respondemos à pergunta sobre onde a autenticação multifator tem de ser ativada.  
+Para determinar a solução de autenticação multifator correta, primeiro é necessário responder à pergunta sobre o que está a tentar proteger com um segundo método de autenticação.  É uma aplicação que está no Azure?  Ou é um sistema de acesso remoto, por exemplo.  Ao determinar o que estamos a tentar proteger, procuramos responder à pergunta sobre onde a autenticação multifator tem de ser ativada.  
 
 
 O que está a tentar proteger| Multi-Factor Authentication na nuvem|Servidor Multi-Factor Authentication
@@ -43,7 +43,7 @@ Acesso remoto, tais como VPN, RDG| |* |
 
 ## Onde estão localizados os utilizadores
 
-Em seguida, consoante onde estão localizados os utilizadores, podemos determinar a solução correta a utilizar, se é autenticação multifator na nuvem ou no local utilizando o Servidor MFA.
+Em seguida, consoante onde estão localizados os utilizadores, podemos determinar a solução correta a utilizar, se é autenticação multifator na nuvem ou no local através do Servidor MFA.
 
 
 
@@ -90,6 +90,6 @@ Agora que determinámos se deve utilizar a autenticação multifator na nuvem ou
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 

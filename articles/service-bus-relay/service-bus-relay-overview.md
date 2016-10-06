@@ -1,39 +1,45 @@
 <properties
-	pageTitle="Service Bus relay overview | Microsoft Azure"
-	description="Overview of Service Bus relay."
-	services="service-bus-relay"
-	documentationCenter=".net"
-	authors="sethmanheim"
-	manager="timlt"
-	editor=""/>
+    pageTitle="Descrição geral do reencaminhamento do Service Bus | Microsoft Azure"
+    description="Descrição geral do reencaminhamento do Service Bus."
+    services="service-bus-relay"
+    documentationCenter=".net"
+    authors="sethmanheim"
+    manager="timlt"
+    editor=""/>
 
 <tags
-	ms.service="service-bus-relay"
-	ms.workload="na"
-	ms.tgt_pltfrm="na"
-	ms.devlang="multiple"
-	ms.topic="get-started-article"
-	ms.date="09/01/2016"
-	ms.author="sethm"/>
+    ms.service="service-bus-relay"
+    ms.workload="na"
+    ms.tgt_pltfrm="na"
+    ms.devlang="multiple"
+    ms.topic="get-started-article"
+    ms.date="09/01/2016"
+    ms.author="sethm"/>
 
 
-# Overview of Service Bus relay
 
-A major component of Service Bus is a centralized (but highly load-balanced) *relay* service that enables you to build hybrid applications that run in both an Azure datacenter and your own on-premises enterprise environment.  The Service Bus relay supports a variety of different transport protocols and web services standards. This includes SOAP, WS-*, and even REST. The relay service facilitates your hybrid applications by enabling you to securely expose Windows Communication Foundation (WCF) services that reside within a corporate enterprise network to the public cloud, without having to open a firewall connection, or require intrusive changes to a corporate network infrastructure. 
+# Descrição geral do reencaminhamento do Service Bus
 
-![Relay Concepts](./media/service-bus-relay-overview/sb-relay-01.png)
+O componente principal do Service Bus é um serviço centralizado de *reencaminhamento* (mas com uma carga muito equilibrada) que lhe permite criar aplicações híbridas que se executam tanto num datacenter do Azure como em ambiente empresariais no local.  O reencaminhamento do Service Bus suporta uma variedade de diferentes protocolos de transporte e padrões de serviços web. Inclui SOAP, WS-* e até REST. O serviço de reencaminhamento facilita as aplicações híbridas, permitindo expor, de forma segura, os serviços Windows Communication Foundation (WCF) que se encontram numa rede empresarial na nuvem pública, sem ter de abrir uma ligação de firewall ou sem ter de fazer alterações intrusivas na infraestrutura da rede empresarial. 
 
-The relay service supports traditional one-way messaging, request/response messaging, and peer-to-peer messaging. It also supports event distribution at internet-scope to enable publish/subscribe scenarios and bi-directional socket communication for increased point-to-point efficiency. 
+![Conceitos de Reencaminhamento](./media/service-bus-relay-overview/sb-relay-01.png)
 
-In the relayed messaging pattern, an on-premises service connects to the relay service through an outbound port and creates a bi-directional socket for communication tied to a particular rendezvous address. The client can then communicate with the on-premises service by sending messages to the relay service targeting the rendezvous address. The relay service will then "relay" messages to the on-premises service through the bi-directional socket already in place. The client does not need a direct connection to the on-premises service, it is not required to know where the service resides, and the on-premises service does not need any inbound ports open on the firewall.
+O serviço de reencaminhamento suporta as tradicionais mensagens unidirecionais, mensagens de pedido/resposta e mensagens de ponto a ponto. Também suporta a distribuição de eventos no âmbito de Internet para permitir cenários de publicação-subscrição e comunicação de socket bidirecional para aumentar a eficiência ponto a ponto. 
 
-You initiate the connection between your on-premise service and the relay service using a suite of WCF "relay" bindings. Behind the scenes, the relay bindings map to new transport binding elements designed to create WCF channel components that integrate with Service Bus in the cloud. 
+No padrão de mensagens retransmitidas, um serviço no local liga-se ao serviço de reencaminhamento através de uma porta de saída e cria um socket bidirecional para comunicação associada a um endereço de encontro específico. Depois, o cliente pode comunicar com o serviço no local enviando mensagens para o serviço de reencaminhamento destinadas ao endereço de encontro. O serviço de reencaminhamento "reencaminhará" as mensagens para o serviço no local através do socket bidirecional existente. O cliente não precisa de uma ligação direta para o serviço local, nem precisa de saber onde reside o serviço e o serviço local não precisa de nenhuma porta de entrada aberta na firewall.
 
-## Next steps
+Deve iniciar a ligação entre o serviço local e o serviço de reencaminhamento, utilizando um conjunto de enlaces de "reencaminhamento" WCF. Em segundo plano, os enlaces de reencaminhamento mapeiam para novos elementos de enlace de transporte concebidos para criar os componentes de canal WCF que se integram ao Service Bus na nuvem. 
 
-For details about the Service Bus relay, see the following topics.
+## Passos seguintes
 
-- [Azure Service Bus Architectural Overview](../service-bus/service-bus-fundamentals-hybrid-solutions.md)
-- [How to use the Service Bus Relay service](../service-bus-relay/service-bus-dotnet-how-to-use-relay.md)
+Para obter detalhes sobre o reencaminhamento do Service Bus, consulte os seguintes tópicos.
+
+- [Descrição Geral da Arquitetura do Service Bus do Azure](../service-bus/service-bus-fundamentals-hybrid-solutions.md)
+- [Como utilizar o serviço de Reencaminhamento do Service Bus](../service-bus-relay/service-bus-dotnet-how-to-use-relay.md)
 
  
+
+
+<!--HONumber=Sep16_HO4-->
+
+

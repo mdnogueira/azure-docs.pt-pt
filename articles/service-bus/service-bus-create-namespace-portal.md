@@ -39,6 +39,6 @@ Veja o nosso [epositório do GitHub](https://github.com/Azure-Samples/azure-serv
 [github-samples]: https://github.com/Azure-Samples/azure-servicebus-messaging-samples
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 

@@ -13,7 +13,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="08/26/2016"
+   ms.date="09/22/2016"
    ms.author="yurid"/>
 
 
@@ -65,7 +65,7 @@ Pode configurar políticas de segurança para cada subscrição ou grupo de recu
 
 9. No painel **Política de Segurança**, clique em **Ativada** para ativar as recomendações de segurança que pretende utilizar nesta subscrição. Clique em **Política de prevenção** para ver opções como as que estão incluídas na seguinte captura de ecrã:
 
-    ![Selecionar as políticas de segurança](./media/security-center-policies/security-center-policies-fig4-ga.png)
+    ![Selecionar as políticas de segurança](./media/security-center-policies/security-center-policies-fig4-ga-new.png)
 
 Utilize a tabela seguinte como uma referência para compreender cada opção:
 
@@ -78,8 +78,9 @@ Utilize a tabela seguinte como uma referência para compreender cada opção:
 | Grupos de segurança de rede | Recomenda que sejam configurados [grupos de segurança de rede](../virtual-network/virtual-networks-nsg.md) para controlar o tráfego de entrada e de saída para VMs que têm pontos finais públicos. Os grupos de segurança de rede configurados para uma sub-rede serão herdados por todas as interfaces de rede de máquina virtual, exceto se for especificado em contrário. Para além de verificar que um grupo de segurança de rede foi configurado, esta política avalia as regras de segurança de entrada para identificar regras que permitam o tráfego de entrada. |
 | Firewall de aplicação Web | Recomenda-se que uma firewall de aplicação Web seja aprovisionada em máquinas virtuais quando uma das seguintes opções for verdadeira:</br></br>O [IP público de nível de instância](../virtual-network/virtual-networks-instance-level-public-ip.md) (ILPIP) é utilizado e as regras de segurança de entrada para o grupo de segurança de rede associado estão configuradas para permitir o acesso à porta 80/443.</br></br>É utilizado o IP com balanceamento de carga e o balanceamento de carga associado e as regras de tradução (NAT) de endereço de rede de entrada estão configuradas para permitir o acesso à porta 80/443. (Para obter mais informações, veja [Suporte do Azure Resource Manager para o Load Balancer](../load-balancer/load-balancer-arm.md). |
 | Firewall da próxima geração | Expande as proteções de rede para além dos grupos de segurança de rede, que estão incorporados no Azure. O Centro de Segurança irá detetar as implementações para as quais se recomenda uma firewall da próxima geração e permite-lhe aprovisionar uma aplicação virtual. |
-| Auditoria do SQL | Recomenda que a auditoria de acesso às Bases de Dados SQL do Azure esteja ativada para fins de conformidade, deteção avançada e investigação. |
+| Auditoria do SQL e Deteção de Ameaças | Recomenda que a auditoria de acesso à Base de Dados do Azure esteja ativada para fins de conformidade e também para deteção de ameaças avançadas, para propósitos de investigação. |
 | Encriptação de dados transparente SQL | Recomenda que a encriptação inativa seja ativada para a suas bases de dados SQL do Azure, cópias de segurança associadas e ficheiros de registo de transação. Mesmo se existir uma falha dos seus dados, esta poderá não ser legível. |
+| Avaliação de vulnerabilidades | Recomenda-se de que instala uma solução de avaliação de vulnerabilidades na sua VM. |
 
 Assim que configurar todas as opções, clique em **OK** no painel **Política de Segurança** que tem as recomendações e clique em **Guardar** no painel **Política de Segurança** que tem as definições iniciais.
 
@@ -109,6 +110,6 @@ Neste documento, aprendeu a configurar as políticas de segurança no Centro de 
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 

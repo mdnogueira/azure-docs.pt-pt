@@ -189,7 +189,7 @@ Para diferentes tipos de ambientes de compilação, pode obter explicitamente os
 > [AZURE.NOTE] Este tutorial utiliza uma única instância do EventProcessorHost. Para aumentar o débito, recomendamos que execute várias instâncias do EventProcessorHost. Nesses casos, as várias instâncias coordenam-se automaticamente entre si para equilibrarem a carga dos eventos recebidos. Se pretender várias recetores para que cada um processe *todos* os eventos, terá de utilizar o conceito **ConsumerGroup**. Se receber eventos de vários computadores, poderá ser útil especificar os nomes das instâncias do EventProcessorHost com base nos computadores (ou funções) em que estão implementadas.
 
 <!-- Links -->
-[Event Hubs Overview (Descrição Geral dos Event Hubs)]: event-hubs-overview.md
+[Descrição geral dos Event Hubs]: event-hubs-overview.md
 [conta de Armazenamento do Azure]: ../storage/storage-create-storage-account.md
 [Portal Clássico do Azure]: http://manage.windowsazure.com
 [Pacote Maven]: https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-eventhubs-eph%22
@@ -200,6 +200,6 @@ Para diferentes tipos de ambientes de compilação, pode obter explicitamente os
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 

@@ -14,7 +14,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/31/2016"
+   ms.date="09/27/2016"
    ms.author="cherylmc"/>
 
 
@@ -26,12 +26,12 @@
 
 Uma configuração Ponto a Site (P2S) permite-lhe criar uma ligação segura a partir de um computador cliente individual para a sua rede virtual. Uma ligação P2S é útil quando pretende ligar a VNet a partir de uma localização remota, por exemplo, quando está em casa ou numa conferência ou quando tem apenas alguns clientes que precisam de se ligar a uma rede virtual.
 
-Este artigo explica-lhe como criar uma VNet com uma ligação Ponto a Site no **modelo de implementação clássica** através do **portal clássico**. Atualmente, não pode criar esta configuração do princípio ao fim para o modelo de implementação clássica no portal do Azure  Embora possa realizar alguns dos passos no Portal do Azure, o PowerShell ainda é necessário para transferir a configuração do cliente VPN.
+Este artigo explica-lhe como criar uma VNet com uma ligação Ponto a Site no **modelo de implementação clássica** através do **portal clássico**.
 
 As ligações Ponto a Site não precisam de nenhum dispositivo VPN ou endereço IP destinado ao público para funcionar. É estabelecida uma ligação VPN ao iniciar a ligação a partir do computador cliente. Para obter mais informações sobre ligações Ponto a Site, veja [FAQ do Gateway de VPN](vpn-gateway-vpn-faq.md#point-to-site-connections) e [Planeamento e Conceção](vpn-gateway-plan-design.md).
 
 
-**Modelos de implementação e ferramentas para ligações Ponto a Site**
+### Modelos e métodos de implementação para ligações P2S
 
 [AZURE.INCLUDE [vpn-gateway-table-point-to-site](../../includes/vpn-gateway-table-point-to-site-include.md)] 
 
@@ -196,6 +196,6 @@ Se pretender obter mais informações sobre Redes Virtuais, veja a página [Docu
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 

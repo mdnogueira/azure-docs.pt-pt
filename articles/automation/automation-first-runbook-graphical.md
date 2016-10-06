@@ -136,7 +136,7 @@ O runbook deve ter o seguinte aspeto neste momento: <br>![Configuração de aute
 Iremos agora adicionar uma atividade **Start-AzureRmVM** para iniciar uma máquina virtual.  Pode escolher qualquer máquina virtual na sua subscrição do Azure e, por agora, iremos codificar esse nome para o cmdlet.
 
 1. No controlo da Biblioteca, escreva **Start-AzureRm** na caixa de texto de pesquisa.
-2. Adicione **Start-AzureRmVM** à tela e, em seguida, clique e arraste-a para baixo de **Ligar ao Azure**.
+2. Adicione **Start-AzureRmVM** à tela e, em seguida, clique e arraste-a para baixo de **Especificar Id de Subscrição**.
 3. Coloque o cursor sobre **Especificar Id de Subscrição** até aparecer um círculo na parte inferior da forma.  Clique no círculo e arraste a seta para **Start-AzureRmVM**. 
 4.  Selecione **Start-AzureRmVM**.  Clique em **Parâmetros** e, em seguida, em **Conjunto de Parâmetros** para ver os conjuntos de **Start-AzureRmVM**.  Selecione o conjunto de parâmetros **ResourceGroupNameParameterSetName**. Tenha em atenção que existem pontos de exclamação junto a **ResourceGroupName** e **Name**.  Isto indica que são parâmetros obrigatórios.  Tenha também em atenção que ambos esperam valores de cadeia.
 5.  Selecione **Name**.  Selecione **Expressão do PowerShell** para a **Origem de dados** e escreva o nome da máquina virtual entre aspas duplas com a qual iniciaremos este runbook.  Clique em **OK**.<br>![Valor do Parâmetro Name de Start-AzureRmVM](media/automation-first-runbook-graphical/runbook-startvm-nameparameter.png)
@@ -219,6 +219,6 @@ Iremos agora modificar o runbook para que apenas tente iniciar a máquina virtua
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 

@@ -111,9 +111,9 @@ A ligação de aplicações sempre fez parte da criação de soluções completa
 
 Agora que aprendeu as noções básicas sobre o Service Bus do Azure, siga estas ligações para obter mais informação.
 
-- Como utilizar as [filas do Service Bus](service-bus-dotnet-get-started-with-queues.md)
-- Como utilizar os [Tópicos do Service Bus](service-bus-dotnet-how-to-use-topics-subscriptions.md)
-- Como utilizar o [Reencaminhamento do Service Bus](service-bus-dotnet-how-to-use-relay.md)
+- Como utilizar as [filas do Service Bus](../service-bus-messaging/service-bus-dotnet-get-started-with-queues.md)
+- Como utilizar os [Tópicos do Service Bus](../service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions.md)
+- Como utilizar o [Reencaminhamento do Service Bus](../service-bus-relay/service-bus-dotnet-how-to-use-relay.md)
 - [Exemplos de Service Bus](service-bus-samples.md)
 
 [1]: ./media/service-bus-fundamentals-hybrid-solutions/SvcBus_01_architecture.png
@@ -123,6 +123,6 @@ Agora que aprendeu as noções básicas sobre o Service Bus do Azure, siga estas
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 

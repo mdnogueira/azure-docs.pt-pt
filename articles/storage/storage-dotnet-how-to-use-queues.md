@@ -14,7 +14,8 @@
     ms.devlang="dotnet"
     ms.topic="hero-article"
     ms.date="07/26/2016"
-    ms.author="gusapost"/>
+    ms.author="cbrooks;robinsh"/>
+
 
 # Introdução ao Armazenamento de filas do Azure através do .NET
 
@@ -52,7 +53,7 @@ Este tutorial demonstra como escrever código .NET para alguns cenários comuns 
 
 Adicione as seguintes declarações `using` à parte superior do ficheiro `program.cs`:
 
-    using Microsoft.Azure; // Namespace for CloudConfigurationManager 
+    using Microsoft.Azure; // Namespace for CloudConfigurationManager
     using Microsoft.WindowsAzure.Storage; // Namespace for CloudStorageAccount
     using Microsoft.WindowsAzure.Storage.Queue; // Namespace for Queue storage types
 
@@ -280,6 +281,6 @@ Agora que aprendeu as noções básicas do Armazenamento de filas, siga estas li
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

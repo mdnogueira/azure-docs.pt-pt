@@ -2,7 +2,9 @@
 
 Cada registo DNS tem um nome e um tipo. Os registos são organizados em vários tipos de acordo com os dados que contêm. O tipo mais comum é um registo “A”, que mapeia um nome para um endereço IPv4. Outro tipo é um registo “MX”, que mapeia um nome para um servidor de correio.
 
-O DNS do Azure suporta todos os tipos de registo DNS comuns, incluindo A, AAAA, CNAME, MX, NS, SOA, SRV e TXT. Os conjuntos de registos SOA são criados automaticamente com cada zona. Estes não podem ser criados separadamente. Tenha em atenção que os registos SPF devem ser criados com o tipo de registo TXT. Para obter mais informações, veja [esta página](http://tools.ietf.org/html/rfc7208#section-3.1).
+O DNS do Azure suporta todos os tipos de registo DNS comuns, incluindo A, AAAA, CNAME, MX, NS, PTR, SOA, SRV e TXT. Tenha em atenção que:
+- Os conjuntos de registos SOA são criados automaticamente com cada zona; não podem ser criados em separado.
+- Os registos SPF devem ser criados com o tipo de registo TXT. Para obter mais informações, veja [esta página](http://tools.ietf.org/html/rfc7208#section-3.1).
 
 No DNS do Azure, os registos são especificados com nomes relativos. Um nome de domínio “completamente qualificado” (FQDN) inclui o nome da zona, enquanto um nome “relativo” não. Por exemplo, o nome do registo relativo “www” na zona “contoso.com” fornece o nome do registo completamente qualificado www.contoso.com.
 
@@ -30,6 +32,6 @@ Para criar um conjunto de registos de carateres universais, utilize o nome do co
 Os conjuntos de registos CNAME não podem coexistir com outros conjuntos de registos com o mesmo nome. Por exemplo, não pode criar em simultâneo um conjunto de registos CNAME com o nome relativo “www” e um registo A com o nome relativo “www”. Uma vez que o vértice da zona (nome = '@') contém sempre os conjuntos de registos NS e SOA, criados quando a zona foi criada, não pode criar um conjunto de registos CNAME no vértice da zona. Estas restrições derivam das normas DNS e não são limitações do DNS do Azure.
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 

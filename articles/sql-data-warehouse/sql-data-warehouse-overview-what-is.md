@@ -13,8 +13,9 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="07/23/2016"
+   ms.date="09/27/2016"
    ms.author="lodipalm;barbkess;mausher;jrj;sonyama;kevin"/>
+
 
 
 # O que é o Azure SQL Data Warehouse?
@@ -49,7 +50,7 @@ O diagrama seguinte mostra a arquitetura de forma mais detalhada.
 
 **Nós de computação:** os nós de computação servem como o poder por trás do SQL Data Warehouse. São Bases de Dados SQL que armazenam os dados e processam a consulta. Quando adiciona dados, o SQL Data Warehouse distribui as filas entre os nós de computação. Os nós de computação são os trabalhadores que executam as consultas paralelas nos seus dados. Após o processamento, passam os resultados novamente para o nó de controlo. Para concluir a consulta, o nó de controlo agrega os resultados e devolve o resultado final.
 
-**Armazenamento:** os dados são armazenados no Armazenamento de Blobs do Azure. Quando os nós de computação interagem com os seus dados, escrevem e leem diretamente de e para o armazenamento de blobs. Uma vez que o armazenamento do Azure se expande de forma transparente e ilimitada, o SQL Data Warehouse poderá fazer o mesmo. Como a computação e o armazenamento são independentes, o SQL Data Warehouse pode, de forma independente, dimensionar o armazenamento e a computação e vice-versa. O Armazenamento de Blobs do Azure é também totalmente tolerante a falhas e simplifica o processo de cópia de segurança e restauro.
+**Armazenamento:** os dados são armazenados no Armazenamento de Blobs do Azure. Quando os nós de computação interagem com os seus dados, escrevem e leem diretamente de e para o armazenamento de blobs. Uma vez que o armazenamento do Azure se expande de forma transparente e vasta, o SQL Data Warehouse poderá fazer o mesmo. Como a computação e o armazenamento são independentes, o SQL Data Warehouse pode, de forma independente, dimensionar o armazenamento e a computação e vice-versa. O Armazenamento de Blobs do Azure é também totalmente tolerante a falhas e simplifica o processo de cópia de segurança e restauro.
 
 **Serviço de Movimento de Dados:** o Serviço de Movimento de Dados (DMS) move dados entre os nós. O DMS dá aos nós de computação acesso aos dados de que necessitam para associações e agregações. O DMS não é um serviço do Azure. É um serviço do Windows que é executado em conjunto com a Base de Dados SQL em todos os nós. Uma vez que o DMS é executado em segundo plano, não irá interagir com ele diretamente. No entanto, quando consultar planos de consulta, irá reparar que incluem algumas operações do DMS, uma vez que o movimento de dados é necessário para executar cada consulta em paralelo.
 
@@ -134,7 +135,7 @@ O SQL Data Warehouse também integra muitas das ferramentas com que os utilizado
 
 ## Cenários híbridos de origens de dados
 
-Utilizar o SQL Data Warehouse com o PolyBase fornece aos utilizadores uma capacidade inédita para mover dados pelo seu ecossistema ao proporcionar a capacidade de configurar cenários híbridos com origens de dados não relacionais e no local.
+Utilizar o SQL Data Warehouse com o PolyBase dá aos utilizadores uma capacidade inédita para mover dados pelo seu ecossistema, proporcionando a possibilidade de configurar cenários híbridos com origens de dados não relacionais e no local.
 
 O Polybase permite tirar partido dos seus dados de diferentes origens através da utilização de comandos familiares do T-SQL. O Polybase permite fazer consultas em dados não relacionais mantidos no Armazenamento de Blobs do Azure como se se tratasse de uma tabela normal. Utilize o Polybase para consultar dados não relacionais ou para importar dados não relacionais para o SQL Data Warehouse.
 
@@ -142,19 +143,20 @@ O Polybase permite tirar partido dos seus dados de diferentes origens através d
 
 - O Polybase é agnóstico em termos de integração. Expõe as mesmas funções e funcionalidades a todas as origens que suporta. Os dados lidos pelo Polybase podem ter uma variedade de formatos, incluindo ficheiros delimitados ou ficheiros ORC.
 
-- Pode utilizar o PolyBase para aceder ao armazenamento de blobs que também está a ser utilizado como armazenamento para um cluster de HD Insight. Isto dá-lhe acesso aos mesmos dados com ferramentas relacionais e não relacionais.
+- Pode utilizar o PolyBase para aceder ao armazenamento de blobs que também está a ser utilizado como armazenamento para um cluster do HDInsight. Isto dá-lhe acesso aos mesmos dados com ferramentas relacionais e não relacionais.
 
 ## Passos seguintes
 
 Agora que já sabe um pouco sobre o SQL Data Warehouse, saiba como [criar um SQL Data Warehouse][] e [carregar dados de exemplo][] rapidamente. Se não estiver familiarizado com o Azure, poderá achar útil o [Glossário do Azure][] à medida que encontra terminologia nova. Em alternativa, dê uma vista de olhos a alguns destes outros Recursos do SQL Data Warehouse.  
 
+- [Histórias de sucesso de clientes]
 - [Blogues]
-- [Pedidos de Funcionalidades]
+- [Pedidos de funcionalidades]
 - [Vídeos]
-- [Blogues da Equipa CAT]
-- [Criar Pedido de Suporte]
-- [Fórum MSDN]
-- [Fórum Stack Overflow]
+- [Blogues da Equipa Customer Advisory]
+- [Criar pedido de suporte]
+- [Fórum do MSDN]
+- [Fórum do Stack Overflow]
 - [Twitter]
 
 
@@ -162,28 +164,29 @@ Agora que já sabe um pouco sobre o SQL Data Warehouse, saiba como [criar um SQL
 [1]: ./media/sql-data-warehouse-overview-what-is/dwarchitecture.png
 
 <!--Article references-->
-[Criar Pedido de Suporte]: sql-data-warehouse-get-started-create-support-ticket.md
-[carregar dados de exemplo]: sql-data-warehouse-load-sample-databases.md
-[criar um SQL Data Warehouse]: sql-data-warehouse-get-started-provision.md
-[Documentação de migração]: sql-data-warehouse-overview-migrate.md
-[SQL Data Warehouse solution partners (Parceiros de solução do SQL Data Warehouse)]: sql-data-warehouse-partner-business-intelligence.md
-[Integrated tools overview (Descrição geral de ferramentas integradas)]: sql-data-warehouse-overview-integrate.md
-[Backup and restore overview (Descrição geral da cópia de segurança e restauro)]: sql-data-warehouse-restore-database-overview.md
+[Criar pedido de suporte]: ./sql-data-warehouse-get-started-create-support-ticket.md
+[carregar dados de exemplo]: ./sql-data-warehouse-load-sample-databases.md
+[criar um SQL Data Warehouse]: ./sql-data-warehouse-get-started-provision.md
+[Documentação de migração]: ./sql-data-warehouse-overview-migrate.md
+[SQL Data Warehouse solution partners (Parceiros de solução do SQL Data Warehouse)]: ./sql-data-warehouse-partner-business-intelligence.md
+[Integrated tools overview (Descrição geral de ferramentas integradas)]: ./sql-data-warehouse-overview-integrate.md
+[Backup and restore overview (Descrição geral da cópia de segurança e restauro)]: ./sql-data-warehouse-restore-database-overview.md
 [Glossário do Azure]: ../azure-glossary-cloud-terminology.md
 
 <!--MSDN references-->
 
 <!--Other Web references-->
+[Histórias de sucesso de clientes]: https://customers.microsoft.com/search?sq=&ff=story_products_services%26%3EAzure%2FAzure%2FAzure%20SQL%20Data%20Warehouse%26%26story_product_families%26%3EAzure%2FAzure%26%26story_product_categories%26%3EAzure&p=0
 [Blogues]: https://azure.microsoft.com/blog/tag/azure-sql-data-warehouse/
-[Blogues da Equipa CAT]: https://blogs.msdn.microsoft.com/sqlcat/tag/sql-dw/
-[Pedidos de Funcionalidades]: https://feedback.azure.com/forums/307516-sql-data-warehouse
-[Fórum MSDN]: https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=AzureSQLDataWarehouse
-[Fórum Stack Overflow]: http://stackoverflow.com/questions/tagged/azure-sqldw
+[Blogues da Equipa Customer Advisory]: https://blogs.msdn.microsoft.com/sqlcat/tag/sql-dw/
+[Pedidos de funcionalidades]: https://feedback.azure.com/forums/307516-sql-data-warehouse
+[Fórum do MSDN]: https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=AzureSQLDataWarehouse
+[Fórum do Stack Overflow]: http://stackoverflow.com/questions/tagged/azure-sqldw
 [Twitter]: https://twitter.com/hashtag/SQLDW
 [Vídeos]: https://azure.microsoft.com/documentation/videos/index/?services=sql-data-warehouse
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO4-->
 
 

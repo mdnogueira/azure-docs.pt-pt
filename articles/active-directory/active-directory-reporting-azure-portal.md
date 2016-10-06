@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="09/12/2016"
+   ms.date="09/25/2016"
    ms.author="markvi"/>
 
 
@@ -27,7 +27,7 @@ Existem duas áreas principais de relatórios:
 
 - **Atividades de início de sessão** – Informações sobre a utilização de aplicações geridas e atividades de início de sessão do utilizador
 
-- **Atividades de sistema** - Informações de auditoria sobre gestão de utilizadores e de grupos, as suas aplicações geridas e atividades de diretório
+- **Registos de auditoria** - informações de atividades do sistema sobre gestão de utilizadores e de grupos, as suas aplicações geridas e atividades de diretório
 
 Consoante o âmbito dos dados de que está à procura, pode aceder a estes relatórios clicando em **Utilizadores e grupos** ou em **Aplicações empresariais** na lista de serviços no [portal do Azure](https://portal.azure.com).
 
@@ -120,7 +120,7 @@ O método de pesquisa permite-lhe definir o âmbito dos inícios de sessão em t
 
 ![Relatórios](./media/active-directory-reporting-azure-portal/84.png "Reporting")
 
-## Atividades de sistema
+## Registos de auditoria
 
 Os registos de auditoria no Azure Active Directory fornecem registos das atividades de sistema para efeitos de conformidade.
 
@@ -220,6 +220,6 @@ Veja o [Guia dos Relatórios do Azure Active Directory](active-directory-reporti
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 

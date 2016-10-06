@@ -63,28 +63,24 @@ Iremos criar uma aplicação básica com o XCode para demonstrar a integração.
 
     ![][3]
 
-6. Para **XCode 7** – adicione `libxml2.tbd` em vez de `libxml2.dylib`.
-
-7. Volte ao Portal do Azure na página **Informações de Ligação** da aplicação e copie a cadeia de ligação.
+6. Volte ao Portal do Azure na página **Informações de Ligação** da aplicação e copie a cadeia de ligação.
 
     ![][4]
 
-8. Adicione a seguinte linha de código no seu ficheiro **AppDelegate.m**.
+7. Adicione a seguinte linha de código no seu ficheiro **AppDelegate.m**.
 
         #import "EngagementAgent.h"
 
-9. Agora cole a cadeia de ligação no delegado `didFinishLaunchingWithOptions`.
+8. Agora cole a cadeia de ligação no delegado `didFinishLaunchingWithOptions`.
 
         - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
         {
-            [...]
-            //[EngagementAgent setTestLogEnabled:YES];
-   
+            [...]   
             [EngagementAgent init:@"Endpoint={YOUR_APP_COLLECTION.DOMAIN};SdkKey={YOUR_SDK_KEY};AppId={YOUR_APPID}"];
             [...]
         }
 
-10. `setTestLogEnabled` é uma instrução opcional que permite registos do SDK para que identifique problemas. 
+9. `setTestLogEnabled` é uma instrução opcional que permite registos do SDK para que identifique problemas. 
 
 ##<a id="monitor"></a>Ativar a monitorização em tempo real
 
@@ -124,6 +120,7 @@ As secções seguintes configuram a aplicação para as receber.
 1. Novamente no ficheiro **AppDeletegate.m**, importe o módulo de Alcance do Engagement.
 
         #import "AEReachModule.h"
+        #import <UserNotifications/UserNotifications.h>
 
 2. Dentro do método `application:didFinishLaunchingWithOptions`, crie um módulo de Alcance e transmita-o à sua linha de inicialização do Engagement existente:
 
@@ -138,12 +135,19 @@ As secções seguintes configuram a aplicação para as receber.
 
 1. Adicionar a linha seguinte ao método `application:didFinishLaunchingWithOptions`:
 
-        if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
-            [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert) categories:nil]];
+        if (NSFoundationVersionNumber >= NSFoundationVersionNumber_iOS_8_0)
+        {
+            if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_9_x_Max)
+            {
+                [UNUserNotificationCenter.currentNotificationCenter requestAuthorizationWithOptions:(UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert) completionHandler:^(BOOL granted, NSError * _Nullable error) {}];
+            }else
+            {
+                [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert)   categories:nil]];
+            }
             [application registerForRemoteNotifications];
         }
-        else {
-
+        else
+        {
             [application registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
         }
 
@@ -184,6 +188,6 @@ As secções seguintes configuram a aplicação para as receber.
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 

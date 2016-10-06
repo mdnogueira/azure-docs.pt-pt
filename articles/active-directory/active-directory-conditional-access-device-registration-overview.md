@@ -14,16 +14,15 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="06/23/2016"
-    ms.author="femila"/>
+    ms.date="09/27/2016"
+    ms.author="Markvi"/>
+
 
 # Introdução ao Registo de Dispositivos do Azure Active Directory
 
 O Registo de Dispositivos do Azure Active Directory é a base para cenários de acesso condicional baseado no dispositivo. Quando é registado um dispositivo, o Registo de Dispositivos do Azure Active Directory fornece ao dispositivo uma identidade que é utilizada para autenticar o dispositivo quando o utilizador inicia sessão. O dispositivo autenticado e os atributos do dispositivo podem então ser utilizados para aplicar políticas de acesso condicional para aplicações alojadas na nuvem e no local.
 
-Ao serem combinados com uma solução de gestão de dispositivos móveis (MDM), como o Intune, os atributos do dispositivo no Azure Active Directory são atualizados com informações adicionais sobre o dispositivo. Isto permite criar regras de acesso condicional que impõem o acesso a partir de dispositivos para cumprir as normas de segurança e conformidade.
-
-O Registo de Dispositivos do Azure Active Directory está disponível no Azure Active Directory. O serviço inclui suporte para dispositivos iOS, Android e Windows. Os cenários individuais que utilizam o Registo de Dispositivos do Azure Active Directory poderão ter requisitos mais específicos e suporte da plataforma.
+Ao serem combinados com uma solução de gestão de dispositivos móveis (MDM), como o Microsoft Intune, os atributos do dispositivo no Azure Active Directory são atualizados com informações adicionais sobre o dispositivo. Isto permite criar regras de acesso condicional que impõem o acesso a partir de dispositivos para cumprir as normas de segurança e conformidade. Para obter mais informações sobre a inscrição de dispositivos no Microsoft Intune, veja [Inscrever dispositivos para gestão no Intune](https://docs.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune).
 
 ## Cenários ativados pelo Registo de Dispositivos do Azure Active Directory
 
@@ -31,12 +30,15 @@ O Registo de Dispositivos do Azure Active Directory inclui suporte para disposit
 
 - **Acesso condicional a aplicações alojadas no local**: pode utilizar dispositivos registados com políticas de acesso para aplicações configuradas para utilizar o AD FS com Windows Server 2012 R2. Para mais informações sobre como configurar o acesso condicional no local, consulte [Configurar o Acesso Condicional no local com o Registo de Dispositivos do Azure Active Directory](active-directory-conditional-access-on-premises-setup.md).
 
-- **Acesso condicional para aplicações do Office 365 com Microsoft Intune**: os administradores de TI podem aprovisionar políticas de dispositivos de acesso condicional para proteger recursos empresariais, permitindo ao mesmo tempo que os trabalhadores na área da informação em dispositivos compatíveis acedam aos serviços. Para obter mais informações, consulte as Políticas de Dispositivos de Acesso Condicional dos serviços do Office 365.
+- **Acesso condicional para aplicações do Office 365 com Microsoft Intune**: os administradores de TI podem aprovisionar políticas de dispositivos de acesso condicional para proteger recursos empresariais, permitindo ao mesmo tempo que os trabalhadores na área da informação em dispositivos compatíveis acedam aos serviços. Para obter mais informações, veja [Conditional Access Device Policies for Office 365 services (Políticas de Dispositivos de Acesso Condicional para os serviços do Office 365)](active-directory-conditional-access-device-policies.md).
 
 ##Configurar o Registo de Dispositivos do Azure Active Directory
 
 Tem de ativar o Registo de Dispositivos do Azure AD de modo a que os dispositivos móveis possam detetar o serviço, procurando registos DNS conhecidos. Tem de configurar o DNS da sua empresa para que os dispositivos com Windows 10, Windows 8.1, Windows 7, Android e iOS possam ver e utilizar o serviço.
 Pode ver e ativar/desativar dispositivos registados através do Portal do Administrador do Azure Active Directory.
+
+>[AZURE.NOTE]
+ Para obter as instruções mais recentes sobre como configurar o registo de dispositivos automático, veja [How to setup automatic registration of Windows domain joined devices with Azure Active Directory (Como configurar o registo automático de dispositivos Windows associados ao domínio com o Active Directory)](active-directory-conditional-access-automatic-device-registration-setup.md).
 
 ### Ativar o Serviço de Registo de Dispositivos do Azure Active Directory
 
@@ -81,7 +83,7 @@ Por exemplo, se utilizar dois sufixos UPN na organização com o nome @contoso.c
 
 ## Tópicos adicionais
 
-Pode registar os dispositivos Associados a um Domínio Windows 7 e Windows 8.1 com o Registo de Dispositivos do Azure AD. O tópico seguinte fornece mais informações sobre os pré-requisitos e os passos necessários para configurar o registo de dispositivos em dispositivos Windows 7 e Windows 8.1.
+Pode registar os dispositivos Associados a um Domínio Windows 7 e Windows 8.1 com o Registo de Dispositivos do Azure AD. Os tópicos seguintes disponibilizam mais informações sobre os pré-requisitos e os passos necessários para configurar o registo de dispositivos em dispositivos Windows 7 e Windows 8.1.
 
 - [Registo Automático de Dispositivos com o Azure Active Directory para Dispositivos Associados a um Domínio Windows](active-directory-conditional-access-automatic-device-registration.md)
 - [Configurar o registo automático de dispositivos para dispositivos associados a um domínio Windows 7](active-directory-conditional-access-automatic-device-registration-windows7.md)
@@ -90,6 +92,6 @@ Pode registar os dispositivos Associados a um Domínio Windows 7 e Windows 8.1
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Sep16_HO4-->
 
 

@@ -1,6 +1,6 @@
 <properties
-    pageTitle="Subscrever uma oferta e aprovisionar uma VM no Azure Stack (inquilino) | Microsoft Azure"
-    description="Como inquilino, saiba como subscrever uma oferta e aprovisionar uma VM no Azure Stack."
+    pageTitle="Provision a VM in Azure Stack (tenant) | Microsoft Azure"
+    description="As a tenant, learn how to provision a VM in Azure Stack."
     services="azure-stack"
     documentationCenter=""
     authors="ErikjeMS"
@@ -13,40 +13,38 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="08/01/2016"
+    ms.date="09/26/2016"
     ms.author="erikje"/>
 
 
-# Aprovisionar uma máquina virtual
+# Provision a virtual machine
 
-Agora que criou uma subscrição, verifique se os seus inquilinos podem aprovisionar uma máquina virtual.
+Now that you've [created a subscription](azure-stack-subscribe-plan-provision-vm.md), test that your tenants can provision a virtual machine.
 
-1.  Clique em **Novo**, em **Computação** e, em seguida, em **WindowsServer-2012 R2 Datacenter**.  
+1.  On the Azure Stack POC computer, log in to `https://portal.azurestack.local` as [an admin](azure-stack-connect-azure-stack.md#log-in-as-a-service-administrator), and then click **New** > **Virtual machines** > **WindowsServer-2012-R2-Datacenter**.  
 
-    ![](media/azure-stack-subscribe-plan-provision-vm/image5.png)
+    ![](media/azure-stack-provision-vm/image01.png)
 
-2.  No painel **Básico**, introduza um **Nome**, **Nome de utilizador**, **Palavra-passe** e **Grupo de Recursos,** e clique em **OK**.  
+2.  In the **Basics** blade, type a **Name**, **User name**, and **Password**. For **VM disk type**, chose **HDD**. Choose a **Subscription**. Create a new **Resource group**, or select an existing one, and then click **OK**.  
 
-    ![](media/azure-stack-subscribe-plan-provision-vm/image6.png)
+3.  In the **Choose a size** blade, click **A1 Basic**, and then click **Select**.  
 
-3.  No painel **Escolher um tamanho**, clique em **A1 Básico** e, em seguida, em **Selecionar**.  
+4.  In the **Settings** blade, click **Virtual network**. In the **Choose virtual network** blade, click **Create new**. In the **Create virtual network** blade, accept all the defaults and click **OK**. In the **Settings** blade, click **OK** to create the virtual machine.
 
-    ![](media/azure-stack-subscribe-plan-provision-vm/image7.png)
+    ![](media/azure-stack-provision-vm/image04.png)
 
-4.  No painel **Definições**, aceite todas as predefinições e clique em **OK**.  
+5.  In the **Summary** blade, click **OK** to create the virtual machine.  
 
-    ![](media/azure-stack-subscribe-plan-provision-vm/image8.png)
+6. To see your new virtual machine, click **All resources**, then search for the virtual machine and click its name.
 
-5.  No painel **Resumo**, clique em **OK** para criar a máquina virtual.  
+    ![](media/azure-stack-provision-vm/image06.png)
 
-    ![](media/azure-stack-subscribe-plan-provision-vm/image9.png)
+## Next steps
 
-## Passos seguintes
-
-[Contas de armazenamento](azure-stack-provision-storage-account.md)
+[Storage accounts](azure-stack-provision-storage-account.md)
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 
