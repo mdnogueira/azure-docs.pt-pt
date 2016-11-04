@@ -1,44 +1,36 @@
-<properties
-    pageTitle="Adicionar o Application Insights SDK para monitorizar a aplicação Node.js | Microsoft Azure"
-    description="Analise a utilização, a disponibilidade e o desempenho da aplicação Web no local ou do Microsoft Azure com o Application Insights."
-    services="application-insights"
-    documentationCenter=""
-    authors="alancameronwills"
-    manager="douge"/>
+---
+title: Adicionar o Application Insights SDK para monitorizar a aplicação Node.js | Microsoft Docs
+description: Analise a utilização, a disponibilidade e o desempenho da aplicação Web no local ou do Microsoft Azure com o Application Insights.
+services: application-insights
+documentationcenter: ''
+author: alancameronwills
+manager: douge
 
-<tags
-    ms.service="application-insights"
-    ms.workload="tbd"
-    ms.tgt_pltfrm="ibiza"
-    ms.devlang="na"
-    ms.topic="get-started-article"
-    ms.date="08/30/2016"
-    ms.author="awills"/>
+ms.service: application-insights
+ms.workload: tbd
+ms.tgt_pltfrm: ibiza
+ms.devlang: na
+ms.topic: get-started-article
+ms.date: 08/30/2016
+ms.author: awills
 
-
-
+---
 # Adicionar o Application Insights SDK para monitorizar a aplicação Node.js
-
 *O Application Insights está em pré-visualização.*
 
 O [Visual Studio Application Insights](app-insights-overview.md) monitoriza a aplicação em direto para o ajudar a [detetar e diagnosticar problemas de desempenho e exceções](app-insights-detect-triage-diagnose.md), bem como a [detetar como a aplicação é utilizada](app-insights-overview-usage.md). Funciona para as aplicações alojadas nos seus próprios servidores IIS no local ou em VMs do Azure, bem como em aplicações Web do Azure.
-
-
 
 O SDK fornece uma coleção automática de taxas de pedidos de HTTP recebidos e respostas, contadores de desempenho (CPU, memória, RPS) e exceções não processadas. Além disso, pode adicionar chamadas personalizadas para controlar as dependências, as métricas ou outros eventos.
 
 ![Gráficos de exemplo da monitorização do desempenho](./media/app-insights-windows-services/10-perf.png)
 
-
 #### Antes de começar
-
 É necessário:
 
 * Visual Studio 2013 ou posterior. É preferível a versão posterior.
 * Uma subscrição do [Microsoft Azure](http://azure.com). Se a sua equipa ou organização tiver uma subscrição do Azure, o proprietário pode adicioná-lo utilizando a [Conta Microsoft](http://live.com).
 
 ## <a name="add"></a>Criar um recurso do Application Insights
-
 Inicie sessão no [Portal do Azure][portal] e crie um novo recurso do Application Insights. Um [recurso][roles] no Azure é uma instância de um serviço. Este recurso é onde a telemetria da aplicação será analisada e apresentada.
 
 ![Clicar em Novo, Application Insights](./media/app-insights-windows-services/01-new-asp.png)
@@ -46,20 +38,16 @@ Inicie sessão no [Portal do Azure][portal] e crie um novo recurso do Applicatio
 Escolha Outro como o tipo de aplicação. A escolha do tipo de aplicação define o conteúdo predefinido dos painéis de recursos e as propriedades visíveis no [Explorador de Métricas][metrics].
 
 #### Copiar a Chave de Instrumentação
-
 A chave identifica o recurso. Deverá instalá-lo logo no SDK para direcionar os dados para o recurso.
 
 ![Clicar em Propriedades, selecionar a chave e premir Ctrl+C](./media/app-insights-windows-services/02-props-asp.png)
 
-
 ## <a name="sdk"></a> Instalar o SDK na aplicação
-
 ```
 npm install applicationinsights --save
 ```
 
 ## Utilização
-
 Esta operação permitirá monitorizar os pedidos, controlar as exceções não processadas e monitorizar o desempenho do sistema (CPU, memória/RPS).
 
 ```javascript
@@ -72,16 +60,11 @@ Também é pode definir a chave de instrumentação na variável de ambiente APP
 
 Pode experimentar o SDK sem enviar telemetria: defina a chave de instrumentação para uma cadeia não vazia.
 
-
 ## <a name="run"></a> Executar o projeto
-
 Execute e experimente a aplicação: abra páginas diferentes para gerar alguma telemetria.
 
-
 ## <a name="monitor"></a> Ver a telemetria
-
 Volte ao [Portal do Azure](https://portal.azure.com) e navegue para o recurso do Application Insights.
-
 
 Procure dados na página Descrição Geral. Inicialmente, verá apenas um ou dois pontos. Por exemplo:
 
@@ -90,35 +73,25 @@ Procure dados na página Descrição Geral. Inicialmente, verá apenas um ou doi
 Clique em qualquer gráfico para ver métricas mais detalhadas. [Saiba mais sobre as métricas.][perf]
 
 #### Não existem dados?
-
 * Utilize a aplicação, abrindo páginas diferentes, de modo a gerar alguma telemetria.
 * Abra o mosaico [Pesquisa](app-insights-diagnostic-search.md) para ver eventos individuais. Por vezes, os eventos demoram um pouco mais de tempo a chegar ao pipeline de métricas.
 * Aguarde alguns segundos e clique em **Atualizar**. Os gráficos atualizam-se periodicamente, mas pode atualizá-los manualmente se estiver à espera que apareçam alguns dados.
 * Veja [Resolução de Problemas][qna].
 
 ## Publicar a aplicação
-
 Agora, implemente a aplicação no IIS ou no Azure e veja os dados a acumularem.
 
-
 #### Não existem dados depois de publicar no servidor?
-
 Abra estas portas para o tráfego de saída na firewall do servidor:
 
-+ `dc.services.visualstudio.com:443`
-+ `f5.services.visualstudio.com:443`
-
+* `dc.services.visualstudio.com:443`
+* `f5.services.visualstudio.com:443`
 
 #### Problemas no servidor de compilação?
-
 Veja [este item de Resolução de Problemas](app-insights-asp-net-troubleshoot-no-data.md#NuGetBuild).
 
-
-
-## Utilização Personalizada 
-
+## Utilização Personalizada
 ### Desativar a coleção automática
-
 ```javascript
 import appInsights = require("applicationinsights");
 appInsights.setup("<instrumentation_key>")
@@ -130,7 +103,6 @@ appInsights.setup("<instrumentation_key>")
 ```
 
 ### Monitorização personalizada
-
 ```javascript
 import appInsights = require("applicationinsights");
 var client = appInsights.getClient();
@@ -144,7 +116,6 @@ client.trackTrace("trace message");
 [Saiba mais sobre a API de telemetria](app-insights-api-custom-events-metrics.md).
 
 ### Utilizar várias chaves de instrumentação
-
 ```javascript
 import appInsights = require("applicationinsights");
 
@@ -157,9 +128,7 @@ otherClient.trackEvent("custom event");
 ```
 
 ## Exemplos
-
 ### Controlar a dependência
-
 ```javascript
 import appInsights = require("applicationinsights");
 var client = appInsights.getClient();
@@ -176,7 +145,6 @@ client.trackDependency("dependency name", "command name", elapsedTime, success);
 
 
 ### Controlo manual de todos os pedidos “GET”
-
 ```javascript
 var http = require("http");
 var appInsights = require("applicationinsights");
@@ -214,11 +182,8 @@ server.on("listening", () => {
 ```
 
 ## Passos seguintes
-
 * [Monitorizar a telemetria no portal](app-insights-dashboards.md)
 * [Escrever consultas de análise sobre a telemetria](app-insights-analytics-tour.md)
-
-
 
 <!--Link references-->
 

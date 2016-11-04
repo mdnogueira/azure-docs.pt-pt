@@ -1,30 +1,30 @@
-<properties
-   pageTitle="FAQ do cofre dos Serviços de Recuperação | Microsoft Azure"
-   description="Esta versão de FAQ suporta o lançamento da Pré-visualização Pública do serviço do Backup do Azure. Respostas a perguntas mais frequentes sobre o agente da cópia de segurança, a cópia de segurança e a retenção, recuperação, segurança e outras perguntas comuns sobre a solução do Backup do Azure."
-   services="backup"
-   documentationCenter=""
-   authors="markgalioto"
-   manager="jwhit"
-   editor=""
-   keywords="solução de cópia de segurança; serviço de cópia de segurança"/>
+---
+title: FAQ do cofre dos Serviços de Recuperação | Microsoft Docs
+description: Esta versão de FAQ suporta o lançamento da Pré-visualização Pública do serviço do Backup do Azure. Respostas a perguntas mais frequentes sobre o agente da cópia de segurança, a cópia de segurança e a retenção, recuperação, segurança e outras perguntas comuns sobre a solução do Backup do Azure.
+services: backup
+documentationcenter: ''
+author: markgalioto
+manager: jwhit
+editor: ''
+keywords: solução de cópia de segurança; serviço de cópia de segurança
 
-<tags
-   ms.service="backup"
-   ms.workload="storage-backup-recovery"
-     ms.tgt_pltfrm="na"
-     ms.devlang="na"
-     ms.topic="get-started-article"
-     ms.date="08/21/2016"
-     ms.author="trinadhk; markgal; jimpark;"/>
+ms.service: backup
+ms.workload: storage-backup-recovery
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: get-started-article
+ms.date: 08/21/2016
+ms.author: trinadhk; markgal; jimpark;
 
-
+---
 # Cofre dos Serviços de Recuperação – FAQ
+> [!div class="op_single_selector"]
+> * [FAQ da cópia de segurança para o modo clássico](backup-azure-backup-faq.md)
+> * [FAQ da cópia de segurança para o modo do Resource Manager](backup-azure-backup-ibiza-faq.md)
+> 
+> 
 
-> [AZURE.SELECTOR]
-- [FAQ da cópia de segurança para o modo clássico](backup-azure-backup-faq.md)
-- [FAQ da cópia de segurança para o modo do Resource Manager](backup-azure-backup-ibiza-faq.md)
-
-Este artigo indica informações específicas do cofre dos Serviços de Recuperação e complementa o [FAQ do Azure Backup](backup-azure-backup-faq). As FAQ sobre o Backup do Azure fornecem o conjunto completo de perguntas e respostas sobre o serviço de Backup do Azure.  
+Este artigo indica informações específicas do cofre dos Serviços de Recuperação e complementa o [FAQ do Azure Backup](backup-azure-backup-faq.md). As FAQ sobre o Backup do Azure fornecem o conjunto completo de perguntas e respostas sobre o serviço de Backup do Azure.  
 
 Pode colocar perguntas sobre o Backup do Azure na secção Disqus deste artigo ou um artigo relacionado. Também pode publicar perguntas sobre o serviço de Backup do Azure no [fórum de debate](https://social.msdn.microsoft.com/forums/azure/home?forum=windowsazureonlinebackup).
 
@@ -43,8 +43,6 @@ As cópias de segurança de VMs clássicas no cofre de cópia de segurança não
 1. No cofre de cópia de segurança, aceda ao separador **Itens Protegidos** e selecione a VM. Clique em [Parar Proteção](backup-azure-manage-vms-classic.md#stop-protecting-virtual-machines). Deixe a opção *Eliminar dados de cópia de segurança associados* **desmarcada**. 
 2. Migre a máquina virtual do modo clássico para o modo do Resource Manager. Certifique-se de que o armazenamento e a rede correspondentes à máquina virtual também são migrados para o modo do Resource Manager. 
 3. Crie um cofre dos serviços de recuperação e configure a cópia de segurança na máquina virtual migrada utilizando a ação **Cópia de Segurança** no dashboard do cofre. Saiba mais sobre como [ativar a cópia de segurança no cofre dos serviços de recuperação](backup-azure-vms-first-look-arm.md)
-
-
 
 <!--HONumber=Sep16_HO3-->
 

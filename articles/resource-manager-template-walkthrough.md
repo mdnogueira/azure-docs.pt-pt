@@ -1,24 +1,22 @@
-<properties
-   pageTitle="Instruções do Modelo do Azure Resource Manager | Microsoft Azure"
-   description="Instruções passo-a-passo para um modelo do Resource Manager que aprovisiona uma arquitetura IaaS do Azure básica."
-   services="azure-resource-manager"
-   documentationCenter="na"
-   authors="navalev"
-   manager=""
-   editor=""/>
+---
+title: Instruções do Modelo do Azure Resource Manager | Microsoft Docs
+description: Instruções passo-a-passo para um modelo do Resource Manager que aprovisiona uma arquitetura IaaS do Azure básica.
+services: azure-resource-manager
+documentationcenter: na
+author: navalev
+manager: ''
+editor: ''
 
-<tags
-   ms.service="azure-resource-manager"
-   ms.devlang="na"
-   ms.topic="get-started-article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="08/04/2016"
-   ms.author="navale;tomfitz"/>
-   
+ms.service: azure-resource-manager
+ms.devlang: na
+ms.topic: get-started-article
+ms.tgt_pltfrm: na
+ms.workload: na
+ms.date: 08/04/2016
+ms.author: navale;tomfitz
 
+---
 # Instruções do modelo do Resource Manager
-
 Uma das primeiras questões colocadas ao criar um modelo é “como começar?”. Pode começar com um modelo em branco ao seguir a estrutura básica descrita no [artigo sobre Criação de Modelos](resource-group-authoring-templates.md#template-format) e adicionar os recursos e os parâmetros e variáveis adequados. Uma boa alternativa seria começar por aceder à [galeria de início rápido](https://github.com/Azure/azure-quickstart-templates) e procurar cenários semelhantes ao que está a tentar criar. Pode intercalar vários modelos ou editar um já existente de acordo com o seu cenário específico. 
 
 Vamos observar uma infraestrutura comum:
@@ -33,10 +31,12 @@ Este tópico explica os passos de criação de um modelo do Resource Manager par
 
 No entanto, como é muita coisa para compilar ao mesmo tempo, vamos criar primeiro uma conta do Storage e implementá-la. Depois de aprender a criar a conta do Storage, irá adicionar os outros recursos e voltar a implementar o modelo para concluir a infraestrutura.
 
->[AZURE.NOTE] Pode utilizar qualquer tipo de editor ao criar o modelo. O Visual Studio fornece ferramentas que simplificam o desenvolvimento de modelos, mas não é necessário para concluir este tutorial. Para consultar um tutorial sobre como utilizar o Visual Studio para criar uma implementação de aplicação Web e SQL Database, consulte [Criar e implementar grupos de recursos do Azure através do Visual Studio](vs-azure-tools-resource-groups-deployment-projects-create-deploy.md). 
+> [!NOTE]
+> Pode utilizar qualquer tipo de editor ao criar o modelo. O Visual Studio fornece ferramentas que simplificam o desenvolvimento de modelos, mas não é necessário para concluir este tutorial. Para consultar um tutorial sobre como utilizar o Visual Studio para criar uma implementação de aplicação Web e SQL Database, consulte [Criar e implementar grupos de recursos do Azure através do Visual Studio](vs-azure-tools-resource-groups-deployment-projects-create-deploy.md). 
+> 
+> 
 
 ## Criar o modelo do Resource Manager
-
 O modelo é um ficheiro JSON que define todos os recursos que irá implementar. Também permite que defina os parâmetros especificados durante a implementação, as variáveis construídas a partir de outros valores e expressões e as saídas da implementação. 
 
 Vamos começar com o modelo mais simples:
@@ -162,14 +162,15 @@ O valor que especificar para **type** contém o fornecedor de recursos e o tipo 
 ```
 
 Em alternativa, se estiver a utilizar a CLI do Azure, pode executar o seguinte comando:
+
 ```
     azure provider list
 ```
 Tendo em conta que está a criar com contas do Storage, máquinas virtuais e redes virtuais neste tópico, irá trabalhar com:
 
-- Microsoft.Storage
-- Microsoft.Compute
-- Microsoft.Network
+* Microsoft.Storage
+* Microsoft.Compute
+* Microsoft.Network
 
 Para ver os tipos de recursos de um fornecedor específico, execute o seguinte comando do PowerShell:
 
@@ -387,7 +388,7 @@ Consulte a [API REST para interfaces de rede](https://msdn.microsoft.com/library
 Irá criar duas máquinas virtuais, utilizando a função copyIndex(), tal como fez na criação das [interfaces de rede](#network-interface).
 A criação de VM depende da conta do Storage, da interface de rede e do conjunto de disponibilidade. Esta VM será criada a partir de uma imagem do marketplace, tal como definido na propriedade `storageProfile` – `imageReference` é utilizado para definir o publicador de imagem, a oferta, o SKU e a versão. Por último, é configurado um perfil de diagnóstico para ativar os diagnósticos para a VM. 
 
-Para localizar as propriedades relevantes para uma imagem do marketplace, siga os artigos [Selecionar imagens da máquina virtual do Linux](./virtual-machines/virtual-machines-linux-cli-ps-findimage.md) ou [Selecionar imagens da máquina virtual do Windows](./virtual-machines/virtual-machines-windows-cli-ps-findimage.md).
+Para localizar as propriedades relevantes para uma imagem do marketplace, siga os artigos [Selecionar imagens da máquina virtual do Linux](virtual-machines/virtual-machines-linux-cli-ps-findimage.md) ou [Selecionar imagens da máquina virtual do Windows](virtual-machines/virtual-machines-windows-cli-ps-findimage.md).
 
 ```json
 {
@@ -448,12 +449,14 @@ Para localizar as propriedades relevantes para uma imagem do marketplace, siga o
 }
 ```
 
->[AZURE.NOTE] Para imagens publicadas por **fornecedores externos**, terá de especificar outra propriedade com o nome `plan`. Pode encontrar um exemplo [neste modelo](https://github.com/Azure/azure-quickstart-templates/tree/master/checkpoint-single-nic) na galeria de início rápido. 
+> [!NOTE]
+> Para imagens publicadas por **fornecedores externos**, terá de especificar outra propriedade com o nome `plan`. Pode encontrar um exemplo [neste modelo](https://github.com/Azure/azure-quickstart-templates/tree/master/checkpoint-single-nic) na galeria de início rápido. 
+> 
+> 
 
 Terminou de definir os recursos para o modelo.
 
 ## Parâmetros
-
 Na secção de parâmetros, defina os valores que podem ser especificados ao implementar o modelo. Defina parâmetros apenas para os valores que considera que devem ser diversificados durante a implementação. Pode fornecer um valor predefinido para um parâmetro que é utilizado se não for fornecido um valor durante a implementação. Também pode definir os valores permitidos conforme mostrado para o parâmetro **imageSKU**.
 
 ```json
@@ -554,7 +557,6 @@ Na secção de parâmetros, defina os valores que podem ser especificados ao imp
 ```
 
 ## Variáveis
-
 Na secção de variáveis, pode definir valores que são utilizados em mais do que um local no seu modelo ou valores que são construídos a partir de outras expressões ou variáveis. As variáveis são frequentemente utilizadas para simplificar a sintaxe do modelo.
 
 ```json
@@ -577,12 +579,9 @@ Concluiu o modelo! Pode comparar o seu modelo com o modelo completo na [galeria 
 Pode implementar novamente o modelo ao utilizar os mesmos comandos que utilizou durante a implementação da conta do Storage. Não é necessário eliminar a conta do Storage antes de voltar a implementar, pois o Resource Manager irá ignorar a nova criação dos recursos que já existem e não foram alterados.
 
 ## Passos seguintes
-
-- [O Visualizador de Modelos do Azure Resource Manager (ARMViz)](http://armviz.io/#/) é uma ótima ferramenta para visualizar os modelos ARM, dado que estes podem ficar demasiado grandes para compreender apenas ao ler o ficheiro json.
-- Para saber mais sobre a estrutura de um modelo, consulte [Criação de modelos do Azure Resource Manager](resource-group-authoring-templates.md).
-- Para saber mais sobre a implementação de um modelo, consulte [Implementar um Grupo de Recursos com um modelo do Azure Resource Manager](resource-group-template-deploy.md)
-
-
+* [O Visualizador de Modelos do Azure Resource Manager (ARMViz)](http://armviz.io/#/) é uma ótima ferramenta para visualizar os modelos ARM, dado que estes podem ficar demasiado grandes para compreender apenas ao ler o ficheiro json.
+* Para saber mais sobre a estrutura de um modelo, consulte [Criação de modelos do Azure Resource Manager](resource-group-authoring-templates.md).
+* Para saber mais sobre a implementação de um modelo, consulte [Implementar um Grupo de Recursos com um modelo do Azure Resource Manager](resource-group-template-deploy.md)
 
 <!--HONumber=Sep16_HO3-->
 

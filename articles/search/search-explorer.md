@@ -1,27 +1,27 @@
-<properties
-    pageTitle="Consultar o Índice da Azure Search utilizando o Portal do Azure | Microsoft Azure | Serviço de pesquisa na nuvem alojada"
-    description="Emita uma consulta de pesquisa no Explorador de Pesquisa do Portal do Azure."
-    services="search"
-    documentationCenter=""
-    authors="ashmaka"
-/>
+---
+title: Consultar o Índice da Azure Search utilizando o Portal do Azure | Microsoft Docs
+description: Emita uma consulta de pesquisa no Explorador de Pesquisa do Portal do Azure.
+services: search
+documentationcenter: ''
+author: ashmaka
 
-<tags
-    ms.service="search"
-    ms.devlang="NA"
-    ms.workload="search"
-    ms.topic="get-started-article"
-    ms.tgt_pltfrm="na"
-    ms.date="08/29/2016"
-    ms.author="ashmaka"
-/>
+ms.service: search
+ms.devlang: NA
+ms.workload: search
+ms.topic: get-started-article
+ms.tgt_pltfrm: na
+ms.date: 08/29/2016
+ms.author: ashmaka
 
+---
 # Consultar o índice da Azure Search utilizando o Portal do Azure
-> [AZURE.SELECTOR]
-- [Descrição geral](search-query-overview.md)
-- [Portal](search-explorer.md)
-- [.NET](search-query-dotnet.md)
-- [REST](search-query-rest-api.md)
+> [!div class="op_single_selector"]
+> * [Descrição geral](search-query-overview.md)
+> * [Portal](search-explorer.md)
+> * [.NET](search-query-dotnet.md)
+> * [REST](search-query-rest-api.md)
+> 
+> 
 
 Este guia irá mostrar como consultar o índice da Azure Search no Portal do Azure.
 
@@ -41,14 +41,12 @@ Antes de iniciar estas instruções, já deverá ter [criado um índice da Azure
 
 ## III. Inicie a pesquisa
 1. Para pesquisar o índice da Azure Search, comece a digitar no campo "*Cadeia de consulta*" e, em seguida, prima "**Pesquisar**".
- * Ao utilizar o Explorador de Pesquisa, pode especificar qualquer um dos [parâmetros de consulta](https://msdn.microsoft.com/library/dn798927.aspx)
-
+   
+   * Ao utilizar o Explorador de Pesquisa, pode especificar qualquer um dos [parâmetros de consulta](https://msdn.microsoft.com/library/dn798927.aspx)
 2. Na secção "*Resultados*", os resultados da consulta serão apresentados no JSON não processado que receberia num Corpo de Resposta HTTP ao emitir pedidos de pesquisa na API REST da Azure Search.
 3. A cadeia de consulta é analisada automaticamente para o URL de pedido adequado para submeter um pedido HTTP na API REST da Azure Search
 
 ![](./media/search-explorer/search-bar.png)
-
-
 
 <!--HONumber=Sep16_HO3-->
 

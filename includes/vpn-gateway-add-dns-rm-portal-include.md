@@ -4,7 +4,7 @@ Esta definição permite-lhe especificar um servidor DNS que pretende utilizar p
 2. Na página **Servidores DNS**, em **Servidores DNS**, selecione **DNS Personalizado**.
 3. No campo **Servidor DNS primário**, introduza o endereço IP do servidor DNS que pretende utilizar para a resolução de nomes.
 4. Clique em **Guardar** na parte superior do painel para guardar a configuração.
-
+   
     ![DNS Personalizado](./media/vpn-gateway-add-dns-rm-portal/customdns400.png)
 
 <!--HONumber=Sep16_HO3-->

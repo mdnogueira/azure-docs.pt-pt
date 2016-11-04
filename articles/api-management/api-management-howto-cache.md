@@ -1,38 +1,41 @@
-<properties
-    pageTitle="Adicionar a colocação em cache para melhorar o desempenho na API Management do Azure | Microsoft Azure"
-    description="Saiba como melhorar a latência, o consumo de largura de banda e a carga do serviço Web para chamadas de serviço da API Management."
-    services="api-management"
-    documentationCenter=""
-    authors="steved0x"
-    manager="erikre"
-    editor=""/>
+---
+title: Adicionar a colocação em cache para melhorar o desempenho na API Management do Azure | Microsoft Docs
+description: Saiba como melhorar a latência, o consumo de largura de banda e a carga do serviço Web para chamadas de serviço da API Management.
+services: api-management
+documentationcenter: ''
+author: steved0x
+manager: erikre
+editor: ''
 
-<tags
-    ms.service="api-management"
-    ms.workload="mobile"
-    ms.tgt_pltfrm="na"
-    ms.devlang="na"
-    ms.topic="get-started-article"
-    ms.date="08/24/2016"
-    ms.author="sdanie"/>
+ms.service: api-management
+ms.workload: mobile
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: get-started-article
+ms.date: 08/24/2016
+ms.author: sdanie
 
+---
 # Adicionar a colocação em cache para melhorar o desempenho na API Management do Azure
-
 É possível configurar as operações da API Management para colocar as respostas em cache. A colocação de respostas em cache pode reduzir significativamente a latência da API, o consumo de largura de banda e a carga do serviço Web para os dados que não são alterados com frequência.
 
 Este guia mostra como adicionar a colocação de respostas em cache à sua API e configurar políticas para as operações da API Eco de exemplo. Em seguida, pode chamar a operação a partir do portal do programador para ver a colocação em cache em ação.
 
->[AZURE.NOTE] Para obter informações sobre a colocação em cache de itens por chave utilizando expressões de política, consulte [Colocação em cache personalizada na API Management do Azure](api-management-sample-cache-by-key.md).
+> [!NOTE]
+> Para obter informações sobre a colocação em cache de itens por chave utilizando expressões de política, consulte [Colocação em cache personalizada na API Management do Azure](api-management-sample-cache-by-key.md).
+> 
+> 
 
 ## Pré-requisitos
-
-Antes de seguir os passos neste guia, tem de ter uma instância de serviço de API Management com uma API e um produto configurado. Se ainda não criou uma instância de serviço de API Management, consulte [Criar uma instância de serviço deAPI Management][] no tutorial [Introdução à API Management do Azure][].
+Antes de seguir os passos neste guia, tem de ter uma instância de serviço de API Management com uma API e um produto configurado. Se ainda não criou uma instância de serviço de API Management, consulte [Criar uma instância de serviço deAPI Management][Criar uma instância de serviço deAPI Management] no tutorial [Introdução à API Management do Azure][Introdução à API Management do Azure].
 
 ## <a name="configure-caching"> </a>Configurar uma operação para colocação em cache
-
 Neste passo, irá rever as definições de colocação em cache da operação **Recurso GET (em cache)** da API Eco de exemplo.
 
->[AZURE.NOTE] Cada instância de serviço de API Management está pré-configurada com uma API Eco que pode ser utilizada para experimentar e saber mais sobre a API Management. Para obter mais informações, consulte [Introdução à API Management do Azure][].
+> [!NOTE]
+> Cada instância de serviço de API Management está pré-configurada com uma API Eco que pode ser utilizada para experimentar e saber mais sobre a API Management. Para obter mais informações, consulte [Introdução à API Management do Azure][Introdução à API Management do Azure].
+> 
+> 
 
 Para começar, clique em **Gerir** no Portal Clássico do Azure para o seu serviço de API Management. Isto leva-o para o portal do publicador da API Management.
 
@@ -59,7 +62,6 @@ Cada resposta da operação é codificada, com base nos valores dos campos **Var
 Utilizando a configuração de colocação em cache deste exemplo, o primeiro pedido efetuado à operação **Recurso GET (em cache)** devolve uma resposta do serviço de back-end. Esta resposta será colocada em cache, codificada pelos cabeçalhos e pelos parâmetros de cadeia de consulta especificados. Para as chamadas subsequentes à operação que tenham parâmetros correspondentes, será devolvida a resposta em cache, até que o intervalo de duração da cache expire.
 
 ## <a name="caching-policies"> </a>Rever as políticas de colocação em cache
-
 Neste passo, irá rever as definições de colocação em cache da operação **Recurso GET (em cache)** da API Eco de exemplo.
 
 Quando as definições de colocação em cache são configuradas para uma operação no separador **Colocação em cache**, as políticas de colocação em cache são adicionadas para a operação. É possível ver e editar estas políticas no editor de políticas.
@@ -89,10 +91,12 @@ A definição de política para esta operação inclui as políticas que definem
         </outbound>
     </policies>
 
->[AZURE.NOTE] As alterações efetuadas às políticas de colocação em cache no editor de políticas refletir-se-ão no separador **Colocação em cache** de uma operação e vice-versa.
+> [!NOTE]
+> As alterações efetuadas às políticas de colocação em cache no editor de políticas refletir-se-ão no separador **Colocação em cache** de uma operação e vice-versa.
+> 
+> 
 
 ## <a name="test-operation"> </a>Chamar uma operação e testar a colocação em cache
-
 Para ver a colocação em cache em ação, podemos chamar a operação a partir do portal do programador. Clique em **Portal do programador** no menu superior à direita.
 
 ![Portal do programador][api-management-developer-portal-menu]
@@ -101,7 +105,9 @@ Clique em **APIs** no menu superior e, em seguida, selecione **API Eco**.
 
 ![API Eco][api-management-apis-echo-api]
 
->Se tiver apenas uma API configurada ou visível para a sua conta, clicar em APIs leva-o diretamente para as operações dessa API.
+> Se tiver apenas uma API configurada ou visível para a sua conta, clicar em APIs leva-o diretamente para as operações dessa API.
+> 
+> 
 
 Selecione a operação **Recurso GET (em cache)** e, em seguida, clique em **Abrir Consola**.
 
@@ -128,9 +134,8 @@ Introduza **25** no campo **param2** e, em seguida, clique em **HTTP Get**.
 Tenha em atenção que o valor de **sampleheader** na resposta é agora **value2**. Uma vez que os resultados da operação são codificados por cadeia de consulta, a resposta em cache anterior não foi devolvida.
 
 ## <a name="next-steps"> </a>Passos seguintes
-
--   Para obter mais informações sobre as políticas de colocação em cache, consulte [Políticas de colocação em cache][] na [Referência de política da API Management][].
--   Para obter informações sobre a colocação em cache de itens por chave utilizando expressões de política, consulte [Colocação em cache personalizada na API Management do Azure](api-management-sample-cache-by-key.md).
+* Para obter mais informações sobre as políticas de colocação em cache, consulte [Políticas de colocação em cache][Políticas de colocação em cache] na [Referência de política da API Management][Referência de política da API Management].
+* Para obter informações sobre a colocação em cache de itens por chave utilizando expressões de política, consulte [Colocação em cache personalizada na API Management do Azure](api-management-sample-cache-by-key.md).
 
 [api-management-management-console]: ./media/api-management-howto-cache/api-management-management-console.png
 [api-management-echo-api]: ./media/api-management-howto-cache/api-management-echo-api.png

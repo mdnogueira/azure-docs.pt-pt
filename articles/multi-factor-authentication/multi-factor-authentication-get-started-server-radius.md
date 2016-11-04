@@ -1,38 +1,34 @@
-<properties 
-    pageTitle="Autenticação RADIUS e Servidor Multi-Factor Authentication do Azure"
-    description="Esta é a página do Multi-Factor Authentication do Azure que irá ajudar a implementar a Autenticação RADIUS e o Servidor Multi-Factor Authentication do Azure."
-    services="multi-factor-authentication"
-    documentationCenter=""
-    authors="kgremban"
-    manager="femila"
-    editor="curtand"/>
+---
+title: Autenticação RADIUS e Servidor Multi-Factor Authentication do Azure
+description: Esta é a página do Multi-Factor Authentication do Azure que irá ajudar a implementar a Autenticação RADIUS e o Servidor Multi-Factor Authentication do Azure.
+services: multi-factor-authentication
+documentationcenter: ''
+author: kgremban
+manager: femila
+editor: curtand
 
-<tags
-    ms.service="multi-factor-authentication"
-    ms.workload="identity"
-    ms.tgt_pltfrm="na"
-    ms.devlang="na"
-    ms.topic="get-started-article"
-    ms.date="08/15/2016"
-    ms.author="kgremban"/>
+ms.service: multi-factor-authentication
+ms.workload: identity
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: get-started-article
+ms.date: 08/15/2016
+ms.author: kgremban
 
-
-
-
+---
 # Autenticação RADIUS e Servidor Multi-Factor Authentication do Azure
-
 A secção Autenticação RADIUS permite-lhe ativar e configurar a autenticação RADIUS para o Servidor Multi-Factor Authentication do Azure. RADIUS é um protocolo padrão para aceitar pedidos de autenticação e processar esses pedidos. O Servidor Multi-Factor Authentication do Azure funciona como um servidor RADIUS e é inserido entre o cliente RADIUS (por exemplo, a aplicação VPN) e o destino de autenticação, que pode ser o Active Directory (AD), um diretório LDAP ou outro servidor RADIUS, para adicionar o Multi-Factor Authentication do Azure. Para o Multi-Factor Authentication do Azure funcionar, tem de configurar o Servidor Multi-Factor Authentication do Azure para poder comunicar com os servidores cliente e o destino de autenticação. O Servidor Multi-Factor Authentication do Azure aceita os pedidos de um cliente RADIUS, valida as credenciais relativamente ao destino de autenticação, adiciona o Multi-Factor Authentication do Azure e envia uma resposta novamente para o cliente RADIUS. A autenticação completa apenas terá êxito se a autenticação primária e o Multi-Factor Authentication do Azure forem bem-sucedidos.
 
->[AZURE.NOTE]
->O Servidor MFA apenas suporta os protocolos RADIUS PAP (protocolo de autenticação de palavras-passe) e MSCHAPv2 (Challenge Handshake Authentication Protocol da Microsoft) ao atuar como um servidor RADIUS.  Podem ser utilizados outros protocolos, como o EAP (protocolo de autenticação extensível), quando o servidor MFA funciona como um proxy RADIUS para outro servidor RADIUS que suporte esse protocolo, como o Microsoft NPS.
-></br>
->Quando utilizar outros protocolos nesta configuração, os tokens SMS e OATH unidirecionais não funcionarão, uma vez que o Servidor MFA não consegue iniciar uma resposta Challenge RADIUS com êxito utilizando esse protocolo.
-
+> [!NOTE]
+> O Servidor MFA apenas suporta os protocolos RADIUS PAP (protocolo de autenticação de palavras-passe) e MSCHAPv2 (Challenge Handshake Authentication Protocol da Microsoft) ao atuar como um servidor RADIUS.  Podem ser utilizados outros protocolos, como o EAP (protocolo de autenticação extensível), quando o servidor MFA funciona como um proxy RADIUS para outro servidor RADIUS que suporte esse protocolo, como o Microsoft NPS.
+> </br>
+> Quando utilizar outros protocolos nesta configuração, os tokens SMS e OATH unidirecionais não funcionarão, uma vez que o Servidor MFA não consegue iniciar uma resposta Challenge RADIUS com êxito utilizando esse protocolo.
+> 
+> 
 
 ![Autenticação Radius](./media/multi-factor-authentication-get-started-server-rdg/radius.png)
 
 ## Configuração da Autenticação RADIUS
-
 Para configurar a autenticação RADIUS, instale o Servidor Multi-Factor Authentication do Azure num servidor do Windows. Se tiver um ambiente do Active Directory, o servidor deve ser associado ao domínio dentro da rede. Utilize o seguinte procedimento para configurar o Servidor Multi-Factor Authentication do Azure:
 
 1. No Servidor Multi-Factor Authentication do Azure, clique no ícone Autenticação RADIUS no menu esquerdo.
@@ -54,16 +50,12 @@ Para configurar a autenticação RADIUS, instale o Servidor Multi-Factor Authent
 17. É necessário adicionar o Servidor Multi-Factor Authentication do Azure como um cliente RADIUS no outro servidor RADIUS para que processe os pedidos de acesso enviados do Servidor Multi-Factor Authentication do Azure. Tem de utilizar o mesmo segredo partilhado configurado no Servidor Multi-Factor Authentication do Azure.
 18. Pode repetir este passo para adicionar mais servidores RADIUS e configurar a ordem pela qual o Servidor os deve chamar com os botões Mover Para Cima e Mover Para Baixo. Isto conclui a configuração do Servidor Multi-Factor Authentication do Azure. O Servidor está agora a escutar nas portas configuradas para pedidos de acesso RADIUS dos clientes configurados.   
 
-
 ## Configuração do Cliente RADIUS
-
 Para configurar o cliente RADIUS, utilize as diretrizes:
 
-- Configure a sua aplicação/servidor para autenticar através de RADIUS no endereço IP do Servidor Multi-Factor Authentication do Azure, que funcionará como servidor RADIUS.
-- Utilize o mesmo segredo partilhado configurado acima.
-- Configure o tempo limite de RADIUS para 30 a 60 segundos, de modo a existir tempo suficiente para validar as credenciais do utilizador, efetuar a autenticação multifator, receber a respetiva resposta e, em seguida, responder ao pedido de acesso RADIUS.
-
-
+* Configure a sua aplicação/servidor para autenticar através de RADIUS no endereço IP do Servidor Multi-Factor Authentication do Azure, que funcionará como servidor RADIUS.
+* Utilize o mesmo segredo partilhado configurado acima.
+* Configure o tempo limite de RADIUS para 30 a 60 segundos, de modo a existir tempo suficiente para validar as credenciais do utilizador, efetuar a autenticação multifator, receber a respetiva resposta e, em seguida, responder ao pedido de acesso RADIUS.
 
 <!--HONumber=Sep16_HO3-->
 

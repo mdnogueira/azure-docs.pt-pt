@@ -1,55 +1,55 @@
-<properties
-    pageTitle="Lista de conectores geridos pela Microsoft para utilização em aplicações lógicas do Microsoft Azure | Serviço de Aplicações do Microsoft Azure | Microsoft Azure"
-    description="Obtenha uma lista completa dos conectores geridos pela Microsoft que pode utilizar para criar Logic Apps no App Service do Azure"
-    services="logic-apps"
-    documentationCenter=""
-    authors="MSFTMAN"
-    manager="erikre"
-    editor=""
-    tags="connectors"/>
+---
+title: Lista de conectores geridos pela Microsoft para utilização em aplicações lógicas do Microsoft Azure | Microsoft Docs
+description: Obtenha uma lista completa dos conectores geridos pela Microsoft que pode utilizar para criar Logic Apps no App Service do Azure
+services: logic-apps
+documentationcenter: ''
+author: MSFTMAN
+manager: erikre
+editor: ''
+tags: connectors
 
-<tags
-    ms.service="logic-apps"
-    ms.workload="integration"
-    ms.tgt_pltfrm="na"
-    ms.devlang="na"
-    ms.topic="get-started-article"
-    ms.date="09/20/2016"
-    ms.author="deonhe"/>
+ms.service: logic-apps
+ms.workload: integration
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: get-started-article
+ms.date: 09/20/2016
+ms.author: deonhe
 
-
+---
 # Lista de conectores
-
 Selecione um conector para saber como o utilizar para criar fluxos de trabalho rapidamente.
 
 ## Conetores padrão
+| Conectores |  |  |  |
+| --- | --- | --- | --- |
+| [![Ícone da API][API/Web-Appicon]<br/>**API/Aplicação Web**][API/Web-Appdoc] |[![Ícone da API][Azure-Blobicon]<br/>**Azure Blob**][Azure-Blobdoc] |[![Ícone da API][Azure~Functionsicon]<br/>**Funções<br/>do Azure**][Azure~Functionsdoc] |[![Ícone da API][Boxicon]<br/>**Box**][Boxdoc] |
+| [![Ícone da API][CRM-Onlineicon]<br/>**CRM Online**][CRM-Onlinedoc] |[![API Icon][DB2icon]<br/>**DB2**][db2doc] |[![Ícone da API][Delayicon]<br/>**Atraso**][Delaydoc] |[![Ícone da API][Dropboxicon]<br/>**Dropbox**][Dropboxdoc] |
+| [![Ícone da API][Facebookicon]<br/>**Facebook**][Facebookdoc] |[![Ícone da API][FTPicon]<br/>**FTP**][FTPdoc] |[![Ícone da API][GitHubicon]<br/>**GitHub**][GitHubdoc] |[![Ícone da API][Google-Driveicon]<br/>**Google Drive**][Google-Drivedoc] |
+| ![Ícone de API][Google-Sheetsicon]<br/>**Folhas do Google** |![Ícone de API][Google-Tasksicon]<br/>**Tarefas do Google** |![Ícone de API][Google~Calendaricon]<br/>**Calendário<br/>do Google** |[![Ícone da API][HTTPicon]<br/>**HTTP**][HTTPdoc] |
+| [![Ícone da API][HTTP-Swaggericon]<br/>**HTTP Swagger**][HTTP-Swaggerdoc] |[![Ícone da API][HTTP~Requesticon]<br/>**HTTP<br/>Pedido**][HTTP~Requestdoc] |[![Ícone da API][HTTP~Responseicon]<br/>**HTTP<br/>Resposta**][HTTP~Responsedoc] |[![API Icon][Informixicon]<br/>**Informix**][informixdoc] |
+| ![Ícone de API][Instagramicon]<br/>**Instagram** |[![Ícone da API][MailChimpicon]<br/>**MailChimp**][MailChimpdoc] |![Ícone de API][Mandrillicon]<br/>**Mandrill** |[![Ícone da API][Nested~Logic-Appicon]<br/>**Agrupado<br/>Aplicação Lógica**][Nested~Logic-Appdoc] |
+| [![Ícone da API][Office-365~Outlookicon]<br/>**Office 365<br/>Outlook**][Office-365~Outlookdoc] |[![Ícone da API][Office-365~Usersicon]<br/>**Office 365<br/>Utilizadores**][Office-365~Usersdoc] |[![Ícone da API][Office-365~Videoicon]<br/>**Office 365<br/>Vídeo**][Office-365~Videodoc] |[![Ícone da API][OneDriveicon]<br/>**OneDrive**][OneDrivedoc] |
+| [![Ícone da API][OneDrive-for~Businessicon]<br/>**OneDrive para<br/>Empresas**][OneDrive-for~Businessdoc] |[![Ícone da API][Outlookicon]<br/>**Outlook**][Outlookdoc] |[![Ícone da API][Project-Onlineicon]<br/>**Projeto Online**][Project-Onlinedoc] |[![Ícone da API][Queryicon]<br/>**Consulta**][Querydoc] |
+| [![Ícone da API][Recurrenceicon]<br/>**Periodicidade**][Recurrencedoc] |[![Ícone da API][RSSicon]<br/>**RSS**][RSSdoc] |[![Ícone da API][Salesforceicon]<br/>**Salesforce**][Salesforcedoc] |[![Ícone da API][SendGridicon]<br/>**SendGrid**][SendGriddoc] |
+| [![Ícone da API][Service-Busicon]<br/>**Service Bus**][Service-Busdoc] |[![Ícone da API][SFTPicon]<br/>**SFTP**][SFTPdoc] |[![Ícone da API][SharePointicon]<br/>**SharePoint**][SharePointdoc] |[![Ícone da API][Slackicon]<br/>**Slack**][Slackdoc] |
+| [![Ícone da API][SMTPicon]<br/>**SMTP**][SMTPdoc] |![Ícone de API][SparkPosticon]<br/>**SparkPost** |[![Ícone da API][SQLicon]<br/>**SQL**][SQLdoc] |[![Ícone da API][Translatoricon]<br/>**Translator**][Translatordoc] |
+| [![Ícone da API][Trelloicon]<br/>**Trello**][Trellodoc] |[![Ícone da API][Twilioicon]<br/>**Twilio**][Twiliodoc] |[![Ícone da API][Twittericon]<br/>**Twitter**][Twitterdoc] |[![Ícone da API][Webhookicon]<br/>**Webhook**][Webhookdoc] |
+| [![Ícone da API][Wunderlisticon]<br/>**Wunderlist**][Wunderlistdoc] |[![Ícone da API][Yammericon]<br/>**Yammer**][Yammerdoc] |![Ícone de API][YouTubeicon]<br/>**YouTube** | |
 
-|Conectores||||
-|-----------|-----------|-----------|-----------|
-|[![Ícone da API][API/Web-Appicon]<br/>**API/Aplicação Web**][API/Web-Appdoc]|[![Ícone da API][Azure-Blobicon]<br/>**Azure Blob**][Azure-Blobdoc]|[![Ícone da API][Azure~Functionsicon]<br/>**Funções<br/>do Azure**][Azure~Functionsdoc]|[![Ícone da API][Boxicon]<br/>**Box**][Boxdoc]|
-|[![Ícone da API][CRM-Onlineicon]<br/>**CRM Online**][CRM-Onlinedoc]|[![API Icon][DB2icon]<br/>**DB2**][db2doc]|[![Ícone da API][Delayicon]<br/>**Atraso**][Delaydoc]|[![Ícone da API][Dropboxicon]<br/>**Dropbox**][Dropboxdoc]|
-|[![Ícone da API][Facebookicon]<br/>**Facebook**][Facebookdoc]|[![Ícone da API][FTPicon]<br/>**FTP**][FTPdoc]|[![Ícone da API][GitHubicon]<br/>**GitHub**][GitHubdoc]|[![Ícone da API][Google-Driveicon]<br/>**Google Drive**][Google-Drivedoc]|
-|![Ícone de API][Google-Sheetsicon]<br/>**Folhas do Google**|![Ícone de API][Google-Tasksicon]<br/>**Tarefas do Google**|![Ícone de API][Google~Calendaricon]<br/>**Calendário<br/>do Google**|[![Ícone da API][HTTPicon]<br/>**HTTP**][HTTPdoc]|
-|[![Ícone da API][HTTP-Swaggericon]<br/>**HTTP Swagger**][HTTP-Swaggerdoc]|[![Ícone da API][HTTP~Requesticon]<br/>**HTTP<br/>Pedido**][HTTP~Requestdoc]|[![Ícone da API][HTTP~Responseicon]<br/>**HTTP<br/>Resposta**][HTTP~Responsedoc]|[![API Icon][Informixicon]<br/>**Informix**][informixdoc]|
-|![Ícone de API][Instagramicon]<br/>**Instagram**|[![Ícone da API][MailChimpicon]<br/>**MailChimp**][MailChimpdoc]|![Ícone de API][Mandrillicon]<br/>**Mandrill**|[![Ícone da API][Nested~Logic-Appicon]<br/>**Agrupado<br/>Aplicação Lógica**][Nested~Logic-Appdoc]|
-|[![Ícone da API][Office-365~Outlookicon]<br/>**Office 365<br/>Outlook**][Office-365~Outlookdoc]|[![Ícone da API][Office-365~Usersicon]<br/>**Office 365<br/>Utilizadores**][Office-365~Usersdoc]|[![Ícone da API][Office-365~Videoicon]<br/>**Office 365<br/>Vídeo**][Office-365~Videodoc]|[![Ícone da API][OneDriveicon]<br/>**OneDrive**][OneDrivedoc]|
-|[![Ícone da API][OneDrive-for~Businessicon]<br/>**OneDrive para<br/>Empresas**][OneDrive-for~Businessdoc]|[![Ícone da API][Outlookicon]<br/>**Outlook**][Outlookdoc]|[![Ícone da API][Project-Onlineicon]<br/>**Projeto Online**][Project-Onlinedoc]|[![Ícone da API][Queryicon]<br/>**Consulta**][Querydoc]|
-|[![Ícone da API][Recurrenceicon]<br/>**Periodicidade**][Recurrencedoc]|[![Ícone da API][RSSicon]<br/>**RSS**][RSSdoc]|[![Ícone da API][Salesforceicon]<br/>**Salesforce**][Salesforcedoc]|[![Ícone da API][SendGridicon]<br/>**SendGrid**][SendGriddoc]|
-|[![Ícone da API][Service-Busicon]<br/>**Service Bus**][Service-Busdoc]|[![Ícone da API][SFTPicon]<br/>**SFTP**][SFTPdoc]|[![Ícone da API][SharePointicon]<br/>**SharePoint**][SharePointdoc]|[![Ícone da API][Slackicon]<br/>**Slack**][Slackdoc]|
-|[![Ícone da API][SMTPicon]<br/>**SMTP**][SMTPdoc]|![Ícone de API][SparkPosticon]<br/>**SparkPost**|[![Ícone da API][SQLicon]<br/>**SQL**][SQLdoc]|[![Ícone da API][Translatoricon]<br/>**Translator**][Translatordoc]|
-|[![Ícone da API][Trelloicon]<br/>**Trello**][Trellodoc]|[![Ícone da API][Twilioicon]<br/>**Twilio**][Twiliodoc]|[![Ícone da API][Twittericon]<br/>**Twitter**][Twitterdoc]|[![Ícone da API][Webhookicon]<br/>**Webhook**][Webhookdoc]|
-|[![Ícone da API][Wunderlisticon]<br/>**Wunderlist**][Wunderlistdoc]|[![Ícone da API][Yammericon]<br/>**Yammer**][Yammerdoc]|![Ícone de API][YouTubeicon]<br/>**YouTube**||
-
-> [AZURE.NOTE] Se pretende começar com Azure Logic Apps antes de se inscrever para uma conta do Azure, aceda a [Experimentar Aplicação Lógica](https://tryappservice.azure.com/?appservice=logic). Pode criar de imediato uma aplicação lógica de arranque de curta duração no App Service. Sem cartões de crédito; sem compromissos.
+> [!NOTE]
+> Se pretende começar com Azure Logic Apps antes de se inscrever para uma conta do Azure, aceda a [Experimentar Aplicação Lógica](https://tryappservice.azure.com/?appservice=logic). Pode criar de imediato uma aplicação lógica de arranque de curta duração no App Service. Sem cartões de crédito; sem compromissos.
+> 
+> 
 
 ## Conetores do Enterprise Integration Pack (EIP)
 Utilize os conetores EIP para aplicações lógicas para cenários B2B que incluem EAI e EDI.  
- 
-|Conetores EIP ||||
-|-----------|-----------|-----------|-----------|
-|[![Ícone da API][xmlvalidateicon]<br/>**XML <br/>validação**][xmlvalidatedoc]|[![Ícone da API][xmltransformicon]<br/>**XML<br/> transformar**][xmltransformdoc]|[![Ícone da API][flatfileicon]<br/>**Ficheiro simples</br>codificar**][flatfiledoc]|[![Ícone da API][flatfiledecodeicon]<br/>**Ficheiro simples</br>descodificar**][flatfiledecodedoc]|
-|[![Ícone da API][as2icon]<br/>**AS2</br>descodificar**][as2decode]|[![Ícone da API][as2icon]<br/>**AS2</br>codificar**][as2encode]|[![Ícone da API][x12icon]<br/>**X12</br>descodificar**][x12decode]|[![Ícone da API][x12icon]<br/>**X12</br>**][x12encode]|
-|[![Ícone da API][x12icon]<br/>**EDIFACT</br>descodificar**][EDIFACTdecode]|[![Ícone da API][x12icon]<br/>**EDIFACT</br>codificar**][EDIFACTencode]||||
+
+| Conetores EIP |  |  |  |
+| --- | --- | --- | --- |
+| [![Ícone da API][xmlvalidateicon]<br/>**XML <br/>validação**][xmlvalidatedoc] |[![Ícone da API][xmltransformicon]<br/>**XML<br/> transformar**][xmltransformdoc] |[![Ícone da API][flatfileicon]<br/>**Ficheiro simples</br>codificar**][flatfiledoc] |[![Ícone da API][flatfiledecodeicon]<br/>**Ficheiro simples</br>descodificar**][flatfiledecodedoc] |
+| [![Ícone da API][as2icon]<br/>**AS2</br>descodificar**][as2decode] |[![Ícone da API][as2icon]<br/>**AS2</br>codificar**][as2encode] |[![Ícone da API][x12icon]<br/>**X12</br>descodificar**][x12decode] |[![Ícone da API][x12icon]<br/>**X12</br>**][x12encode] |
+| [![Ícone da API][x12icon]<br/>**EDIFACT</br>descodificar**][EDIFACTdecode] |[![Ícone da API][x12icon]<br/>**EDIFACT</br>codificar**][EDIFACTencode] | | |
 
 <!-- TODO: Add Functions, App Service, and Nested Workflow Icons -->
 ### Os conectores podem ser acionadores
@@ -64,10 +64,9 @@ Existem dois tipos de acionadores:
 Os conectores também podem ser utilizados como ações nas aplicações. As ações são úteis para procurar dados que podem ser utilizados na execução da aplicação. Por exemplo, pode precisar de procurar dados de clientes numa SQL Database durante o processamento de uma ordem. Alternativamente, pode ter de escrever, atualizar ou eliminar dados numa tabela de destino. Pode fazê-lo utilizando as ações fornecidas pelos conectores. Mapa de ações para operações que são definidas nos metadados Swagger.
 
 ## Passos Seguintes
-
-- [Compilar uma aplicação lógica agora](../app-service-logic/app-service-logic-create-a-logic-app.md)  
-- [Criar um conetor personalizado](../app-service-logic/app-service-logic-create-api-app.md)
-- [Monitorizar aplicações lógicas](../app-service-logic/app-service-logic-monitor-your-logic-apps.md)
+* [Compilar uma aplicação lógica agora](../app-service-logic/app-service-logic-create-a-logic-app.md)  
+* [Criar um conetor personalizado](../app-service-logic/app-service-logic-create-api-app.md)
+* [Monitorizar aplicações lógicas](../app-service-logic/app-service-logic-monitor-your-logic-apps.md)
 
 <!--Connectors Documentation-->
 [azure-blobdoc]: ./connectors-create-api-azureblobstorage.md "Ligue-se ao blob do Azure para gerir ficheiros no contentor de blob."

@@ -1,23 +1,22 @@
 
-<properties
-    pageTitle="Utilizar o Azure AD Connect Health com o AD DS | Microsoft Azure"
-    description="Esta é a página do Azure AD Connect Health que irá discutir como monitorizar o AD DS."
-    services="active-directory"
-    documentationCenter=""
-    authors="arluca"
-    manager="samueld"
-    editor="curtand"/>
+---
+title: Utilizar o Azure AD Connect Health com o AD DS | Microsoft Docs
+description: Esta é a página do Azure AD Connect Health que irá discutir como monitorizar o AD DS.
+services: active-directory
+documentationcenter: ''
+author: arluca
+manager: samueld
+editor: curtand
 
-<tags
-    ms.service="active-directory"
-    ms.workload="identity"
-    ms.tgt_pltfrm="na"
-    ms.devlang="na"
-    ms.topic="get-started-article"
-    ms.date="07/14/2016"
-    ms.author="arluca"/>
+ms.service: active-directory
+ms.workload: identity
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: get-started-article
+ms.date: 07/14/2016
+ms.author: arluca
 
-
+---
 # Utilizar o Azure AD Connect Health com o AD DS
 A seguinte documentação é específica para monitorizar os Serviços de Domínio do Active Directory com o Azure AD Connect Health. Isto inclui o AD DS instalado no Windows Server 2008 R2, Windows Server 2012 e no Windows Server 2012 R2.
 
@@ -52,7 +51,6 @@ Esta funcionalidade fornece as tendências gráficas de diferentes contadores de
 Por predefinição, podemos pré-selecionar quatro contadores de desempenho. No entanto, pode incluir outros clicando no comando de filtro e selecionando ou desmarcando contadores de desempenho pretendidos. Além disso, se clicar num gráfico de contador de desempenho específico, será aberto um novo painel, que inclui os pontos de dados correspondentes para cada um dos controladores de domínio monitorizados.
 
 ## Ligações relacionadas
-
 * [Azure AD Connect Health](active-directory-aadconnect-health.md)
 * [Instalação do Agente do Azure AD Connect Health](active-directory-aadconnect-health-agent-install.md)
 * [Operações do Azure AD Connect Health](active-directory-aadconnect-health-operations.md)
@@ -60,8 +58,6 @@ Por predefinição, podemos pré-selecionar quatro contadores de desempenho. No 
 * [Utilizar o Azure AD Connect Health para sincronização](active-directory-aadconnect-health-sync.md)
 * [FAQ do Azure AD Connect Health](active-directory-aadconnect-health-faq.md)
 * [Histórico das Versões do Azure AD Connect Health](active-directory-aadconnect-health-version-history.md)
-
-
 
 <!--HONumber=Sep16_HO3-->
 

@@ -1,24 +1,22 @@
-<properties 
-    pageTitle="Atualizar o PhoneFactor Agent para o Servidor Multi-Factor Authentication do Azure"
-    description="Este documento descreve como começar a utilizar o Servidor MFA do Azure e como atualizar a partir de um phonefactor agent mais antigo."
-    services="multi-factor-authentication"
-    documentationCenter=""
-    authors="kgremban"
-    manager="femila"
-    editor="curtland"/>
+---
+title: Atualizar o PhoneFactor Agent para o Servidor Multi-Factor Authentication do Azure
+description: Este documento descreve como começar a utilizar o Servidor MFA do Azure e como atualizar a partir de um phonefactor agent mais antigo.
+services: multi-factor-authentication
+documentationcenter: ''
+author: kgremban
+manager: femila
+editor: curtland
 
-<tags
-    ms.service="multi-factor-authentication"
-    ms.workload="identity"
-    ms.tgt_pltfrm="na"
-    ms.devlang="na"
-    ms.topic="get-started-article"
-    ms.date="08/04/2016"
-    ms.author="kgremban"/>
+ms.service: multi-factor-authentication
+ms.workload: identity
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: get-started-article
+ms.date: 08/04/2016
+ms.author: kgremban
 
-
+---
 # Atualizar o PhoneFactor Agent para o Servidor Multi-Factor Authentication do Azure
-
 Atualizar do PhoneFactor Agent v5.x ou anterior no Servidor Multi-Factor Authentication do Azure requer a desinstalação do PhoneFactor Agent e dos componentes afiliados antes de o Servidor Multi-Factor Authentication e os respetivos componentes afiliados poderem ser instalados.
 
 ## Para atualizar o PhoneFactor Agent para o Servidor Multi-Factor Authentication do Azure
@@ -40,6 +38,7 @@ Atualizar do PhoneFactor Agent v5.x ou anterior no Servidor Multi-Factor Authent
 
 
 <li>Se o Serviço Web da Aplicação Móvel estiver instalado:
+
 <ol>
 <li>Vá para a pasta de instalação e faça uma cópia de segurança do ficheiro web.config. A localização de instalação predefinida é C:\inetpub\wwwroot\PhoneFactorPhoneAppWebService.</li>
 <li>Desinstale o Serviço Web da Aplicação Móvel através dos Programas e Funcionalidades do Windows.</li></ol>
@@ -57,6 +56,7 @@ Atualizar do PhoneFactor Agent v5.x ou anterior no Servidor Multi-Factor Authent
 <li>Se o Portal de Utilizador tiver sido instalado anteriormente no Servidor do PhoneFactor Agent, instale o novo Portal de Utilizador do Multi-Factor Authentication através da Interface de Utilizador do Servidor Multi-Factor Authentication. Tenha em atenção que o nome do diretório virtual predefinido é agora “MultiFactorAuth”, em vez de “PhoneFactor”. Se pretender utilizar o nome anterior, tem de alterar o nome do diretório virtual durante a instalação. Caso contrário, se permitir que a instalação utilize o novo nome predefinido, deve clicar no ícone do Portal de Utilizador no Servidor Multi-Factor Authentication e atualizar o URL do Portal de Utilizador no separador Definições.
 
 <li>Se o Portal de Utilizador e/ou o Serviço Web da Aplicação Móvel tiverem sido instalados anteriormente num servidor diferente do PhoneFactor Agent:
+
 <ol>
 <li>Vá para a localização de instalação (por exemplo, C:\Programas\PhoneFactor) e copie o(s) instalador(es) adequado(s) para o outro servidor. Existem instaladores de 32 e 64 bits para o Portal de Utilizador e o Serviço Web da Aplicação Móvel. São denominados MultiFactorAuthenticationUserPortalSetupXX.msi e MultiFactorAuthenticationMobileAppWebServiceSetupXX.msi, respetivamente.</li>
 <li>Para instalar o Portal de Utilizador no servidor Web, abra uma linha de comandos como administrador e execute MultiFactorAuthenticationUserPortalSetupXX.msi. Tenha em atenção que o nome do diretório virtual predefinido é agora “MultiFactorAuth”, em vez de “PhoneFactor”. Se pretender utilizar o nome anterior, tem de alterar o nome do diretório virtual durante a instalação. Caso contrário, se permitir que a instalação utilize o novo nome predefinido, deve clicar no ícone do Portal de Utilizador no Servidor Multi-Factor Authentication e atualizar o URL do Portal de Utilizador no separador Definições. Os utilizadores existentes terão de ser informados sobre o novo URL.</li>

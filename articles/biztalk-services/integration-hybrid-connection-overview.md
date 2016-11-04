@@ -1,73 +1,67 @@
-<properties
-    pageTitle="Descrição geral das Ligações Híbridas | Microsoft Azure"
-    description="Saiba mais sobre Ligações Híbridas, segurança, portas TCP e configurações suportadas. MABS, WABS."
-    services="biztalk-services"
-    documentationCenter=""
-    authors="MandiOhlinger"
-    manager="erikre"
-    editor=""/>
+---
+title: Descrição geral das Ligações Híbridas | Microsoft Docs
+description: Saiba mais sobre Ligações Híbridas, segurança, portas TCP e configurações suportadas. MABS, WABS.
+services: biztalk-services
+documentationcenter: ''
+author: MandiOhlinger
+manager: erikre
+editor: ''
 
-<tags
-    ms.service="biztalk-services"
-    ms.workload="integration"
-    ms.tgt_pltfrm="na"
-    ms.devlang="na"
-    ms.topic="get-started-article"
-    ms.date="07/26/2016"
-    ms.author="mandia"/>
+ms.service: biztalk-services
+ms.workload: integration
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: get-started-article
+ms.date: 07/26/2016
+ms.author: mandia
 
-
+---
 # Descrição geral das Ligações Híbridas
 A introdução às Ligações Híbridas lista as configurações suportadas e as portas TCP necessárias.
 
-
 ## O que é uma ligação híbrida
-
 As Ligações Híbridas são uma funcionalidade dos BizTalk Services do Azure. As Ligações Híbridas proporcionam uma forma fácil e prática de ligar a funcionalidade Web Apps no Serviço de Aplicações do Azure (anteriormente Web Sites) e a funcionalidade Mobile Apps no Serviço de Aplicações do Azure (anteriormente Mobile Services) a recursos no local atrás da firewall.
 
 ![Ligações Híbridas][HCImage]
 
 Benefícios das Ligações Híbridas:
 
-- As Web Apps e a Mobile Apps podem aceder com segurança a dados e serviços no local existentes.
-- Uma Ligação Híbrida pode ser partilhada por várias Web Apps ou Mobile Apps para acederem a um recurso no local.
-- É preciso um mínimo de portas TCP para aceder à rede.
-- As aplicações que utilizam Ligações Híbridas acedem apenas ao recurso específico no local que é publicado através da Ligação Híbrida.
-- Pode ligar a qualquer recurso no local que utilize uma porta TCP estática, como SQL Server, MySQL, APIs da Web HTTP e a maioria dos Serviços Web personalizados.
-
-    > [AZURE.NOTE] Os serviços baseados em TCP que utilizam portas dinâmicas (como Modo Passivo de FTP ou Modo Passivo Expandido) não são atualmente suportados. O LDAP também não é suportado. O LDAP utiliza uma porta TCP estática mas, pode também utilizar o protocolo UDP. Consequentemente, não é suportado.
-
-- Podem ser utilizadas com todas as estruturas suportadas pelas Web Apps (.NET, PHP, Java, Python, Node.js) e Mobile Apps (Node.js, .NET).
-- As Web Apps e as Mobile Apps podem aceder a recursos no local exatamente da mesma forma como se a Web App ou Mobile App estivesse localizada na sua rede local. Por exemplo, a mesma cadeia de ligação utilizada no local também pode ser utilizada no Azure.
-
+* As Web Apps e a Mobile Apps podem aceder com segurança a dados e serviços no local existentes.
+* Uma Ligação Híbrida pode ser partilhada por várias Web Apps ou Mobile Apps para acederem a um recurso no local.
+* É preciso um mínimo de portas TCP para aceder à rede.
+* As aplicações que utilizam Ligações Híbridas acedem apenas ao recurso específico no local que é publicado através da Ligação Híbrida.
+* Pode ligar a qualquer recurso no local que utilize uma porta TCP estática, como SQL Server, MySQL, APIs da Web HTTP e a maioria dos Serviços Web personalizados.
+  
+  > [!NOTE]
+  > Os serviços baseados em TCP que utilizam portas dinâmicas (como Modo Passivo de FTP ou Modo Passivo Expandido) não são atualmente suportados. O LDAP também não é suportado. O LDAP utiliza uma porta TCP estática mas, pode também utilizar o protocolo UDP. Consequentemente, não é suportado.
+  > 
+  > 
+* Podem ser utilizadas com todas as estruturas suportadas pelas Web Apps (.NET, PHP, Java, Python, Node.js) e Mobile Apps (Node.js, .NET).
+* As Web Apps e as Mobile Apps podem aceder a recursos no local exatamente da mesma forma como se a Web App ou Mobile App estivesse localizada na sua rede local. Por exemplo, a mesma cadeia de ligação utilizada no local também pode ser utilizada no Azure.
 
 As Ligações Híbridas proporcionam também aos administradores da empresa controlo e visibilidade dos recursos da empresa acedidos por aplicações híbridas, incluindo:
 
-- Com as definições da Política de Grupo, os administradores podem permitir Ligações Híbridas na rede e designar também recursos que podem ser acedidos por aplicações híbridas.
-- Os registos de eventos e de auditoria na rede empresarial proporcionam visibilidade dos recursos acedidos pelas Ligações Híbridas.
-
+* Com as definições da Política de Grupo, os administradores podem permitir Ligações Híbridas na rede e designar também recursos que podem ser acedidos por aplicações híbridas.
+* Os registos de eventos e de auditoria na rede empresarial proporcionam visibilidade dos recursos acedidos pelas Ligações Híbridas.
 
 ## Cenários de exemplo
-
 As Ligações Híbridas suportam as seguintes combinações de arquiteturas e aplicações:
 
-- Acesso do .NET Framework ao SQL Server
-- Acesso do .NET Framework aos serviços HTTP/HTTPS com WebClient
-- Acesso do PHP ao SQL Server, MySQL
-- Acesso do Java ao SQL Server, MySQL e Oracle
-- Acesso do Java aos serviços HTTP/HTTPS
+* Acesso do .NET Framework ao SQL Server
+* Acesso do .NET Framework aos serviços HTTP/HTTPS com WebClient
+* Acesso do PHP ao SQL Server, MySQL
+* Acesso do Java ao SQL Server, MySQL e Oracle
+* Acesso do Java aos serviços HTTP/HTTPS
 
 Ao utilizar Ligações Híbridas para aceder ao SQL Server no local, tenha em conta o seguinte:
 
-- As Instâncias Nomeadas do SQL Express têm de ser configuradas para utilizarem portas estáticas. Por predefinição, as instâncias nomeadas do SQL Express utilizam portas dinâmicas.
-- As Instâncias Predefinidas do SQL Express utilizam uma porta estática, mas o TCP tem de estar ativado. Por predefinição, o TCP não está ativado.
-- Ao utilizar o Grupos de Clustering ou de Disponibilidade, o modo `MultiSubnetFailover=true` não é suportado.
-- O `ApplicationIntent=ReadOnly` não é atualmente suportado.
-- Poderá ser necessária a Autenticação SQL como método de autorização ponto a ponto suportado pela aplicação Azure e pelo SQL Server no local.
-
+* As Instâncias Nomeadas do SQL Express têm de ser configuradas para utilizarem portas estáticas. Por predefinição, as instâncias nomeadas do SQL Express utilizam portas dinâmicas.
+* As Instâncias Predefinidas do SQL Express utilizam uma porta estática, mas o TCP tem de estar ativado. Por predefinição, o TCP não está ativado.
+* Ao utilizar o Grupos de Clustering ou de Disponibilidade, o modo `MultiSubnetFailover=true` não é suportado.
+* O `ApplicationIntent=ReadOnly` não é atualmente suportado.
+* Poderá ser necessária a Autenticação SQL como método de autorização ponto a ponto suportado pela aplicação Azure e pelo SQL Server no local.
 
 ## Segurança e portas
-
 As Ligações Híbridas utilizam a autorização de Assinatura de Acesso Partilhado (SAS) para proteger as ligações nas aplicações Azure e no Gestor de Ligações Híbridas no local para a Ligação Híbrida. São criadas chaves de ligação separadas para a aplicação e para o Gestor de Ligações Híbridas no local. Estas chaves de ligação podem ser revertidas e revogadas independentemente.
 
 As Ligações Híbridas proporcionam uma distribuição totalmente integrada e segura das chaves às aplicações e ao Gestor de Ligações Híbridas no local.
@@ -81,24 +75,19 @@ As Ligações Híbridas precisam apenas de conectividade TCP ou HTTP de saída d
 
 As seguintes portas TCP são utilizadas pelas Ligações Híbridas:
 
-Porta | Porque precisa
---- | ---
-9350 – 9354 | Estas portas são utilizadas para a transmissão de dados. O gestor de reencaminhamento do Service Bus sonda a porta 9350 para determinar se a ligação TCP está disponível. Se estiver disponível, presume que a porta 9352 também está disponível. O tráfego de dados passa pela porta 9352. <br/><br/>Permita ligações de saída para estas portas.
-5671 | Quando a porta 9352 é utilizada para o tráfego de dados, a porta 5671 é utilizada como canal de controlo. <br/><br/>Permita ligações de saída para esta porta.
-80, 443 | Estas portas são utilizadas para alguns pedidos de dados ao Azure. Mais ainda, se as portas 9352 e 5671 não estiverem utilizáveis, *significa* que as portas 80 e 443 serão as portas de contingência utilizadas para a transmissão de dados e o canal de controlo.<br/><br/>Permita ligações de saída para estas portas. <br/><br/>**Nota** Não recomendamos a sua utilização como portas de contingência em vez das outras portas TCP. O HTTP/WebSocket é utilizado como protocolo em vez do TCP nativo dos canais de dados. Pode resultar num desempenho inferior.
-
-
+| Porta | Porque precisa |
+| --- | --- |
+| 9350 – 9354 |Estas portas são utilizadas para a transmissão de dados. O gestor de reencaminhamento do Service Bus sonda a porta 9350 para determinar se a ligação TCP está disponível. Se estiver disponível, presume que a porta 9352 também está disponível. O tráfego de dados passa pela porta 9352. <br/><br/>Permita ligações de saída para estas portas. |
+| 5671 |Quando a porta 9352 é utilizada para o tráfego de dados, a porta 5671 é utilizada como canal de controlo. <br/><br/>Permita ligações de saída para esta porta. |
+| 80, 443 |Estas portas são utilizadas para alguns pedidos de dados ao Azure. Mais ainda, se as portas 9352 e 5671 não estiverem utilizáveis, *significa* que as portas 80 e 443 serão as portas de contingência utilizadas para a transmissão de dados e o canal de controlo.<br/><br/>Permita ligações de saída para estas portas. <br/><br/>**Nota** Não recomendamos a sua utilização como portas de contingência em vez das outras portas TCP. O HTTP/WebSocket é utilizado como protocolo em vez do TCP nativo dos canais de dados. Pode resultar num desempenho inferior. |
 
 ## Passos seguintes
-
 [Criar e gerir Ligações Híbridas](integration-hybrid-connection-create-manage.md)<br/>
 [Ligar um site do Azure a um recurso no local](../app-service-web/web-sites-hybrid-connection-get-started.md)<br/>
 [Ligar ao SQL Server no local a partir de uma aplicação Web do Azure](../app-service-web/web-sites-hybrid-connection-connect-on-premises-sql-server.md)<br/>
 [Mobile Services do Azure e Ligações Híbridas](../mobile-services/mobile-services-dotnet-backend-hybrid-connections-get-started.md)
 
-
 ## Veja Também
-
 [API REST para Gerir os BizTalk Services no Microsoft Azure](http://msdn.microsoft.com/library/azure/dn232347.aspx)
 [:BizTalk Services Gráfico de Edições](biztalk-editions-feature-chart.md)<br/>
 [Criar um BizTalk Service com o Portal do Azure](biztalk-provision-services.md)<br/>

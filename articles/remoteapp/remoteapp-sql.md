@@ -1,42 +1,41 @@
-<properties
-   pageTitle="SQL Azure com o Azure RemoteApp | Microsoft Azure"
-   description="Saiba como utilizar o SQL Azure com o Azure RemoteApp."
-   services="remoteapp"
-   documentationCenter=""
-   authors="ericorman"
-   manager="mbaldwin"
-   editor=""/>
+---
+title: SQL Azure com o Azure RemoteApp | Microsoft Docs
+description: Saiba como utilizar o SQL Azure com o Azure RemoteApp.
+services: remoteapp
+documentationcenter: ''
+author: ericorman
+manager: mbaldwin
+editor: ''
 
-<tags
-   ms.service="remoteapp"
-   ms.devlang="na"
-   ms.topic="hero-article"
-   ms.tgt_pltfrm="na"
-   ms.workload="compute"
-   ms.date="08/15/2016"
-   ms.author="elizapo"/>
+ms.service: remoteapp
+ms.devlang: na
+ms.topic: hero-article
+ms.tgt_pltfrm: na
+ms.workload: compute
+ms.date: 08/15/2016
+ms.author: elizapo
 
-
+---
 # SQL Azure com o Azure RemoteApp
-
-> [AZURE.IMPORTANT]
+> [!IMPORTANT]
 > O Azure RemoteApp está a ser descontinuado. Leia o [anúncio](https://go.microsoft.com/fwlink/?linkid=821148) para obter detalhes.
+> 
+> 
 
 Frequentemente, quando os clientes escolhem alojar as aplicações do Windows na nuvem com o Azure RemoteApp, pretendem também migrar os seus dados, tais como os servidores SQL, para a nuvem para uma implementação integralmente na nuvem. Tal permite uma solução integralmente alojada na nuvem que pode ser acedida por qualquer dispositivo, em qualquer altura e local, através do Azure RemoteApp. A seguir encontram-se ligações e referências, bem como orientações para ajudar neste processo.   
 
 ## Migrar os dados SQL
-
 Comece por [Migrar uma base de dados do SQL Server para a SQL Database do Azure](../sql-database/sql-database-cloud-migrate.md). 
 
 ## Configurar o Azure RemoteApp
 Aloje a aplicação do Windows no Azure RemoteApp. A seguir encontra-se uma descrição passo-a-passo muito detalhada:
 
-1.     Crie a [VM do modelo do Azure RemoteApp](remoteapp-imageoptions.md). 
-2.     Instale a aplicação necessária na VM.
-3.     Configure a aplicação para estabelecer ligação à BD SQL e confirme que a mesma está a funcionar.
-4.     Prepare o sistema e encerre a VM. Efetue uma captura do encerramento como imagem para utilização com o Azure. **Nota:** deverá certificar-se de que a aplicação consegue manter a informação da conectividade da BD ao longo do processo de preparação do sistema. Caso a aplicação não consiga manter as informações da ligação da BD, poderá solicitar ao fornecedor da aplicação para verificar como pode ser especificada uma cadeia de ligação. 
-5.     Importe a imagem personalizada para a biblioteca do Azure RemoteApp selecionando a localização geográfica adequada em que reside a implementação do SQL Azure. 
-6.     Implemente uma coleção do RemoteApp no mesmo datacenter da implementação do SQL Azure utilizando o modelo acima e publique a aplicação. A implementação do Azure RemoteApp no mesmo datacenter da implementação do SQL Azure ajuda a garantir as velocidades de ligação mais rápidas e a reduzir a latência. 
+1. Crie a [VM do modelo do Azure RemoteApp](remoteapp-imageoptions.md). 
+2. Instale a aplicação necessária na VM.
+3. Configure a aplicação para estabelecer ligação à BD SQL e confirme que a mesma está a funcionar.
+4. Prepare o sistema e encerre a VM. Efetue uma captura do encerramento como imagem para utilização com o Azure. **Nota:** deverá certificar-se de que a aplicação consegue manter a informação da conectividade da BD ao longo do processo de preparação do sistema. Caso a aplicação não consiga manter as informações da ligação da BD, poderá solicitar ao fornecedor da aplicação para verificar como pode ser especificada uma cadeia de ligação. 
+5. Importe a imagem personalizada para a biblioteca do Azure RemoteApp selecionando a localização geográfica adequada em que reside a implementação do SQL Azure. 
+6. Implemente uma coleção do RemoteApp no mesmo datacenter da implementação do SQL Azure utilizando o modelo acima e publique a aplicação. A implementação do Azure RemoteApp no mesmo datacenter da implementação do SQL Azure ajuda a garantir as velocidades de ligação mais rápidas e a reduzir a latência. 
 
 ## Considerações de configuração da aplicação e do SQL:
 Existem alguns pontos a considerar na utilização do Azure SQL com o RemoteApp:
@@ -50,12 +49,9 @@ Siga as instruções passo-a-passo disponíveis em [Como configurar as definiç�
 ## Resolução de problemas
 Caso a experiência de utilização de uma aplicação cliente alojada no Azure RemoteApp que estabeleça ligação à SQL Database alojada no Azure ou no local seja morosa, poderão existir alguns motivos para tal.  
 
-- A latência de rede do dispositivo para o Azure é alta. Mude para a melhor e mais rápida ligação de rede possível para o melhor desempenho. Utilize o [azurespeed.com](http://azurespeed.com/) como uma ferramenta geral para testar a latência dos dispositivos para o datacenter do Azure.  
-- A aplicação cliente alojada no Azure RemoteApp está em esforço. Selecionar um plano de faturação como, por exemplo, a faturação Premium melhorará o desempenho. Outro truque consiste em monitorizar os recursos que a aplicação está a consumir: durante uma sessão ativa efetue uma sequência de teclas Ctrl-Alt-End que iniciará o ecrã da SAS, selecione Gestor de Tarefas e observe a utilização de recursos da aplicação.
-- O SQL Servidor está em esforço ou não está otimizado. Siga a documentação de orientação do SQL para a resolução de problemas. 
-
-
-
+* A latência de rede do dispositivo para o Azure é alta. Mude para a melhor e mais rápida ligação de rede possível para o melhor desempenho. Utilize o [azurespeed.com](http://azurespeed.com/) como uma ferramenta geral para testar a latência dos dispositivos para o datacenter do Azure.  
+* A aplicação cliente alojada no Azure RemoteApp está em esforço. Selecionar um plano de faturação como, por exemplo, a faturação Premium melhorará o desempenho. Outro truque consiste em monitorizar os recursos que a aplicação está a consumir: durante uma sessão ativa efetue uma sequência de teclas Ctrl-Alt-End que iniciará o ecrã da SAS, selecione Gestor de Tarefas e observe a utilização de recursos da aplicação.
+* O SQL Servidor está em esforço ou não está otimizado. Siga a documentação de orientação do SQL para a resolução de problemas. 
 
 <!--HONumber=Sep16_HO3-->
 

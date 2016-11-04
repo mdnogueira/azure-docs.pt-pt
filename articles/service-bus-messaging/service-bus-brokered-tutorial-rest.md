@@ -1,59 +1,49 @@
-<properties 
-    pageTitle="Tutorial de REST de mensagens mediadas do Service Bus | Microsoft Azure"
-    description="Tutorial de REST de mensagens mediadas."
-    services="service-bus-messaging"
-    documentationCenter="na"
-    authors="sethmanheim"
-    manager="timlt"
-    editor="" />
-<tags 
-    ms.service="service-bus-messaging"
-    ms.devlang="na"
-    ms.topic="get-started-article"
-    ms.tgt_pltfrm="na"
-    ms.workload="na"
-    ms.date="09/27/2016"
-    ms.author="sethm" />
+---
+title: Tutorial de REST de mensagens mediadas do Service Bus | Microsoft Docs
+description: Tutorial de REST de mensagens mediadas.
+services: service-bus-messaging
+documentationcenter: na
+author: sethmanheim
+manager: timlt
+editor: ''
 
+ms.service: service-bus-messaging
+ms.devlang: na
+ms.topic: get-started-article
+ms.tgt_pltfrm: na
+ms.workload: na
+ms.date: 09/27/2016
+ms.author: sethm
 
+---
 # Tutorial de REST de mensagens mediadas do Service Bus
-
 Este tutorial mostra como criar uma fila e um tópico/subscrição básicos do Service Bus do Azure com base no REST.
 
 ## Criar um espaço de nomes
-
 O primeiro passo é criar um espaço de nomes de serviço e obter uma chave de [Assinatura de Acesso Partilhado](../service-bus/service-bus-sas-overview.md) (SAS). Um espaço de nomes fornece um limite de aplicação para cada aplicação exposta através do Service Bus. O sistema gera uma chave SAS automaticamente quando se cria um espaço de nomes de serviço. A combinação do espaço de nomes de serviço e da chave SAS fornece uma credencial do Service Bus para autenticar o acesso a uma aplicação.
 
-[AZURE.INCLUDE [service-bus-create-namespace-portal](../../includes/service-bus-create-namespace-portal.md)]
+[!INCLUDE [service-bus-create-namespace-portal](../../includes/service-bus-create-namespace-portal.md)]
 
 ## Criar um cliente da consola
-
 As filas do Service Bus permitem armazenar mensagens na fila first in, first out. Os tópicos e as subscrições implementam um padrão publicar/subscrever; em primeiro lugar, cria um tópico e, em seguida, uma ou mais subscrições associadas a esse tópico. Quando as mensagens são enviadas para o tópico, são imediatamente enviadas para os subscritores desse tópico.
 
 O código neste tutorial efetua o seguinte.
 
-- Utiliza o espaço de nomes e a chave de [Assinatura de Acesso Partilhado](../service-bus/service-bus-sas-overview.md) (SAS) para obter acesso aos recursos do espaço de nomes do Service Bus.
-
-- Cria uma fila, envia uma mensagem para a fila e lê a mensagem a partir da fila.
-
-- Cria um tópico, uma subscrição para esse tópico, bem como envia e lê a mensagem a partir da subscrição.
-
-- Obtém todas as informações da fila, do tópico e da subscrição, incluindo as regras de subscrição, a partir do Service Bus.
-
-- Elimina os recursos da fila, do tópico e da subscrição.
+* Utiliza o espaço de nomes e a chave de [Assinatura de Acesso Partilhado](../service-bus/service-bus-sas-overview.md) (SAS) para obter acesso aos recursos do espaço de nomes do Service Bus.
+* Cria uma fila, envia uma mensagem para a fila e lê a mensagem a partir da fila.
+* Cria um tópico, uma subscrição para esse tópico, bem como envia e lê a mensagem a partir da subscrição.
+* Obtém todas as informações da fila, do tópico e da subscrição, incluindo as regras de subscrição, a partir do Service Bus.
+* Elimina os recursos da fila, do tópico e da subscrição.
 
 Uma vez que o serviço é um serviço Web de estilo REST, não estão envolvidos tipos especiais, pois a troca integral envolve cadeias. Tal significa que o projeto do Visual Studio não pode fazer referência a nenhuma biblioteca do Service Bus.
 
 Depois de obter o espaço de nomes e as credenciais no primeiro passo, crie, em seguida, uma aplicação básica de consola do Visual Studio.
 
 ### Criar uma aplicação de consola
-
 1. Inicie o Visual Studio como administrador, para tal clique com o botão direito no menu **Iniciar** do programa e, de seguida, clique em **Executar como administrador**.
-
-1. Crie um novo projeto de aplicação de consola. Clique no menu **Ficheiro**, depois em **Novo** e, por fim, em **Projeto**. Na caixa de diálogo **Novo Projeto**, clique em **Visual C#** (caso **Visual C#** não seja apresentado, procure em **Outras Linguagens**), selecione o modelo **Aplicação de Consola** e atribua-lhe o nome **Microsoft.ServiceBus.Samples**. Utilize a Localização predefinida. Clique em **OK** para criar o projeto.
-
-1. Em Program.cs, certifique-se de que as declarações `using` são apresentadas do seguinte modo:
-
+2. Crie um novo projeto de aplicação de consola. Clique no menu **Ficheiro**, depois em **Novo** e, por fim, em **Projeto**. Na caixa de diálogo **Novo Projeto**, clique em **Visual C#** (caso **Visual C#** não seja apresentado, procure em **Outras Linguagens**), selecione o modelo **Aplicação de Consola** e atribua-lhe o nome **Microsoft.ServiceBus.Samples**. Utilize a Localização predefinida. Clique em **OK** para criar o projeto.
+3. Em Program.cs, certifique-se de que as declarações `using` são apresentadas do seguinte modo:
+   
     ```
     using System;
     using System.Globalization;
@@ -63,68 +53,65 @@ Depois de obter o espaço de nomes e as credenciais no primeiro passo, crie, em 
     using System.Text;
     using System.Xml;
     ```
-
-1. Se necessário, mude o nome do espaço de nomes para o programa da predefinição do Visual Studio para `Microsoft.ServiceBus.Samples`.
-
-1. Na classe `Program`, adicione as seguintes variáveis globais:
-    
+4. Se necessário, mude o nome do espaço de nomes para o programa da predefinição do Visual Studio para `Microsoft.ServiceBus.Samples`.
+5. Na classe `Program`, adicione as seguintes variáveis globais:
+   
     ```
     static string serviceNamespace;
     static string baseAddress;
     static string token;
     const string sbHostName = "servicebus.windows.net";
     ```
-
-1. Em `Main()`, cole o seguinte código:
-
+6. Em `Main()`, cole o seguinte código:
+   
     ```
     Console.Write("Enter your service namespace: ");
     serviceNamespace = Console.ReadLine();
-    
+   
     Console.Write("Enter your SAS key: ");
     string SASKey = Console.ReadLine();
-    
+   
     baseAddress = "https://" + serviceNamespace + "." + sbHostName + "/";
     try
     {
         token = GetSASToken("RootManageSharedAccessKey", SASKey);
-    
+   
         string queueName = "Queue" + Guid.NewGuid().ToString();
-    
+   
         // Create and put a message in the queue
         CreateQueue(queueName, token);
         SendMessage(queueName, "msg1");
         string msg = ReceiveAndDeleteMessage(queueName);
-    
+   
         string topicName = "Topic" + Guid.NewGuid().ToString();
         string subscriptionName = "Subscription" + Guid.NewGuid().ToString();
         CreateTopic(topicName);
         CreateSubscription(topicName, subscriptionName);
         SendMessage(topicName, "msg2");
-    
+   
         Console.WriteLine(ReceiveAndDeleteMessage(topicName + "/Subscriptions/" + subscriptionName));
-    
+   
         // Get an Atom feed with all the queues in the namespace
         Console.WriteLine(GetResources("$Resources/Queues"));
-    
+   
         // Get an Atom feed with all the topics in the namespace
         Console.WriteLine(GetResources("$Resources/Topics"));
-    
+   
         // Get an Atom feed with all the subscriptions for the topic we just created
         Console.WriteLine(GetResources(topicName + "/Subscriptions"));
-    
+   
         // Get an Atom feed with all the rules for the topic and subscription we just created
         Console.WriteLine(GetResources(topicName + "/Subscriptions/" + subscriptionName + "/Rules"));
-    
+   
         // Delete the queue we created
         DeleteResource(queueName);
-    
+   
         // Delete the topic we created
         DeleteResource(topicName);
-    
+   
         // Get an Atom feed with all the topics in the namespace, it shouldn't have the one we created now
         Console.WriteLine(GetResources("$Resources/Topics"));
-    
+   
         // Get an Atom feed with all the queues in the namespace, it shouldn't have the one we created now
         Console.WriteLine(GetResources("$Resources/Queues"));
     }
@@ -142,17 +129,15 @@ Depois de obter o espaço de nomes e as credenciais no primeiro passo, crie, em 
             }
         }
     }
-    
+   
     Console.WriteLine("\nPress ENTER to exit.");
     Console.ReadLine();
     ```
 
 ## Criar credenciais de gestão
-
 O passo seguinte é escrever um método que processe o espaço de nomes e a chave SAS introduzidos no passo anterior e devolva um token SAS. Este exemplo cria um token SAS que é válido durante uma hora.
 
 ### Criar um método GetSASToken()
-
 Cole o seguinte código após o método `Main()`, na classe `Program`:
 
 ```
@@ -170,7 +155,6 @@ private static string GetSASToken(string SASKeyName, string SASKeyValue)
 }
 ```
 ## Criar a fila
-
 O passo seguinte é escrever um método que utilize o comando HTTP PUT de estilo REST para criar uma fila.
 
 Cole o seguinte código imediatamente depois do código `GetSASToken()` adicionado no passo anterior:
@@ -199,11 +183,10 @@ private static string CreateQueue(string queueName, string token)
 ```
 
 ## Enviar uma mensagem para a fila
-
 Neste passo, adicione um método que utilize o comando HTTP POST de estilo REST para enviar uma mensagem para a fila criada no passo anterior.
 
 1. Cole o seguinte código imediatamente depois do código `CreateQueue()` adicionado no passo anterior:
-
+   
     ```
     // Sends a message to the "queueName" queue, given the name and the value to enqueue
     // Uses an HTTP POST request.
@@ -213,22 +196,20 @@ Neste passo, adicione um método que utilize o comando HTTP POST de estilo REST 
         Console.WriteLine("\nSending message {0} - to address {1}", body, fullAddress);
         WebClient webClient = new WebClient();
         webClient.Headers[HttpRequestHeader.Authorization] = token;
-    
+   
         webClient.UploadData(fullAddress, "POST", Encoding.UTF8.GetBytes(body));
     }
     ```
-
-1. As propriedades da mensagem mediada padrão são colocadas num cabeçalho de HTTP `BrokerProperties`. As propriedades de mediador devem ser serializadas no formato JSON. Para especificar um valor **TimeToLive** de 30 segundos e para adicionar uma etiqueta de mensagem "M1" à mensagem, adicione o seguinte código imediatamente depois da chamada `webClient.UploadData()` mostrada no exemplo anterior:
-
+2. As propriedades da mensagem mediada padrão são colocadas num cabeçalho de HTTP `BrokerProperties`. As propriedades de mediador devem ser serializadas no formato JSON. Para especificar um valor **TimeToLive** de 30 segundos e para adicionar uma etiqueta de mensagem "M1" à mensagem, adicione o seguinte código imediatamente depois da chamada `webClient.UploadData()` mostrada no exemplo anterior:
+   
     ```
     // Add brokered message properties "TimeToLive" and "Label"
     webClient.Headers.Add("BrokerProperties", "{ \"TimeToLive\":30, \"Label\":\"M1\"}");
     ```
-
+   
     Tenha em atenção que as propriedades da mensagem mediada foram e serão adicionadas. Por conseguinte, o pedido de envio deve especificar uma versão de API que suporte todas as propriedades da mensagem mediada que fazem parte do pedido. Se a versão de API especificada não suportar uma propriedade da mensagem mediada, essa propriedade é ignorada.
-
-1. As propriedades da mensagem personalizada são definidas como um conjunto de pares chave-valor. Cada propriedade personalizada é armazenada no seu próprio cabeçalho TPPT. Para adicionar as propriedades personalizadas "Prioridade" e "Cliente", adicione o seguinte código imediatamente antes da chamada `webClient.UploadData()` mostrada no exemplo anterior:
-
+3. As propriedades da mensagem personalizada são definidas como um conjunto de pares chave-valor. Cada propriedade personalizada é armazenada no seu próprio cabeçalho TPPT. Para adicionar as propriedades personalizadas "Prioridade" e "Cliente", adicione o seguinte código imediatamente antes da chamada `webClient.UploadData()` mostrada no exemplo anterior:
+   
     ```
     // Add custom properties "Priority" and "Customer".
     webClient.Headers.Add("Priority", "High");
@@ -236,7 +217,6 @@ Neste passo, adicione um método que utilize o comando HTTP POST de estilo REST 
     ```
 
 ## Receber e eliminar uma mensagem da fila
-
 O passo seguinte é adicionar um método que utilize o comando HTTP DELETE de estilo REST para receber e eliminar uma mensagem da fila.
 
 Cole o seguinte código imediatamente depois do código `SendMessage()` adicionado no passo anterior:
@@ -260,11 +240,9 @@ private static string ReceiveAndDeleteMessage(string resourceName)
 ```
 
 ## Criar um tópico e uma subscrição
-
 O passo seguinte é escrever um método que utilize o comando HTTP PUT de estilo REST para criar um tópico. Em seguida, escreva um método que crie uma subscrição para esse tópico.
 
 ### Criar um tópico
-
 Cole o seguinte código imediatamente depois do código `ReceiveAndDeleteMessage()` adicionado no passo anterior:
 
 ```
@@ -290,7 +268,6 @@ private static string CreateTopic(string topicName)
 ```
 
 ### Criar uma subscrição
-
 O código seguinte cria uma subscrição para o tópico que criou no passo anterior. Adicione o seguinte código imediatamente após a definição `CreateTopic()`:
 
 ```
@@ -315,11 +292,9 @@ private static string CreateSubscription(string topicName, string subscriptionNa
 ```
 
 ## Obter recursos da mensagem
-
 Neste passo, adicione o código que obtém as propriedades da mensagem e, em seguida, elimina os recursos de mensagens criados nos passos anteriores.
 
 ### Obter um feed Atom com os recursos especificados
-
 Adicione o seguinte código imediatamente depois do método `CreateSubscription()` adicionado no passo anterior:
 
 ```
@@ -334,7 +309,6 @@ private static string GetResources(string resourceAddress)
 ```
 
 ### Eliminar entidades de mensagens
-
 Adicione o seguinte código imediatamente depois do código adicionado no passo anterior:
 
 ```
@@ -351,7 +325,6 @@ private static string DeleteResource(string resourceName)
 ```
 
 ### Formatar o feed Atom
-
 O método `GetResources()` contém uma chamada para o método `FormatXml()` que reformata o feed Atom obtido para ser mais legível. O seguinte é a definição de `FormatXml()`; adicione este código imediatamente depois do código `DeleteResource()` adicionado na secção anterior:
 
 ```
@@ -373,15 +346,12 @@ private static string FormatXml(string inputXml)
 ```
 
 ## Compilar e executar a aplicação
-
 Agora pode compilar e executar a aplicação. No menu **Compilar** do Visual Studio, clique em **Compilar Solução** ou prima **Ctrl+Shift+B**.
 
 ### Executar a aplicação
-
 Se não existirem erros, prima F5 para executar a aplicação. Quando lhe for pedido, introduza o espaço de nomes, o nome da chave SAS e o valor da chave SAS obtido no primeiro passo.
 
 ### Exemplo
-
 O exemplo seguinte consiste no código completo, tal como deveria surgir após serem seguidos todos os passos neste tutorial.
 
 ```
@@ -619,15 +589,11 @@ namespace Microsoft.ServiceBus.Samples
 ```
 
 ## Passos seguintes
-
 Consulte os seguintes artigos para saber mais:
 
-- [Descrição geral de mensagens do Service Bus](service-bus-messaging-overview.md)
-- [Noções básicas do Service Bus do Azure](../service-bus/service-bus-fundamentals-hybrid-solutions.md)
-- [Tutorial de REST de reencaminhamento do Service Bus](../service-bus-relay/service-bus-relay-rest-tutorial.md)
-
-
-
+* [Descrição geral de mensagens do Service Bus](service-bus-messaging-overview.md)
+* [Noções básicas do Service Bus do Azure](../service-bus/service-bus-fundamentals-hybrid-solutions.md)
+* [Tutorial de REST de reencaminhamento do Service Bus](../service-bus-relay/service-bus-relay-rest-tutorial.md)
 
 <!--HONumber=Sep16_HO4-->
 

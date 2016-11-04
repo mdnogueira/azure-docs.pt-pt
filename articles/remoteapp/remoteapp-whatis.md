@@ -1,26 +1,26 @@
-<properties 
-    pageTitle="O que é o Azure RemoteApp? | Microsoft Azure" 
-    description="Saiba como partilhar aplicações e recursos para qualquer dispositivo através do Azure RemoteApp." 
-    services="remoteapp" 
-    documentationCenter="" 
-    authors="lizap" 
-    manager="mbaldwin" 
-    editor=""/>
+---
+title: O que é o Azure RemoteApp? | Microsoft Docs
+description: Saiba como partilhar aplicações e recursos para qualquer dispositivo através do Azure RemoteApp.
+services: remoteapp
+documentationcenter: ''
+author: lizap
+manager: mbaldwin
+editor: ''
 
-<tags 
-    ms.service="remoteapp" 
-    ms.workload="compute" 
-    ms.tgt_pltfrm="na" 
-    ms.devlang="na" 
-    ms.topic="get-started-article" 
-    ms.date="08/15/2016" 
-    ms.author="elizapo"/>
+ms.service: remoteapp
+ms.workload: compute
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: get-started-article
+ms.date: 08/15/2016
+ms.author: elizapo
 
-
+---
 # O que é o Azure RemoteApp?
-
-> [AZURE.IMPORTANT]
+> [!IMPORTANT]
 > O Azure RemoteApp está a ser descontinuado. Leia o [anúncio](https://go.microsoft.com/fwlink/?linkid=821148) para obter detalhes.
+> 
+> 
 
 O Azure RemoteApp traz as funcionalidades do programa Microsoft RemoteApp no local, apoiado pelos Serviços de Ambiente de Trabalho Remoto, para o Azure. O Azure RemoteApp ajuda a fornecer um acesso remoto seguro às aplicações a partir de vários dispositivos de utilizador distintos. O Azure RemoteApp aloja, basicamente, sessões do Servidor de Terminais não persistentes na nuvem que pode utilizar e partilhar com os utilizadores.
 
@@ -37,23 +37,20 @@ O Azure RemoteApp faz parte da [Infraestrutura de Ambiente de Trabalho Virtual d
 ## Coleções do Azure RemoteApp
 Existem dois tipos de [coleções do Azure RemoteApp](remoteapp-collections.md):
 
-
-- Uma **coleção na nuvem** está alojada e armazena dados de programas na nuvem. Os utilizadores podem aceder às aplicações iniciando sessão com a conta Microsoft ou as credenciais da empresa sincronizadas ou federadas com o Azure Active Directory.
-
+* Uma **coleção na nuvem** está alojada e armazena dados de programas na nuvem. Os utilizadores podem aceder às aplicações iniciando sessão com a conta Microsoft ou as credenciais da empresa sincronizadas ou federadas com o Azure Active Directory.
+  
     Escolha uma coleção na nuvem quando a aplicação que pretende partilhar não pedir uma ligação a qualquer recurso da rede privada da sua empresa (por exemplo, através de um dispositivo VPN). Se a aplicação utilizar recursos na Internet, no OneDrive ou no Azure, uma coleção na nuvem será a ideal para si. A sua criação é também a mais rápida.
-
-- Uma **coleção híbrida** está alojada e armazena dados na nuvem do Azure, contudo, também permite aos utilizadores o acesso aos dados e aos recursos armazenados na rede local. Os utilizadores podem aceder às aplicações iniciando sessão com as credenciais da empresa sincronizadas ou federadas com o Azure Active Directory.
-
+* Uma **coleção híbrida** está alojada e armazena dados na nuvem do Azure, contudo, também permite aos utilizadores o acesso aos dados e aos recursos armazenados na rede local. Os utilizadores podem aceder às aplicações iniciando sessão com as credenciais da empresa sincronizadas ou federadas com o Azure Active Directory.
+  
     Escolha uma coleção híbrida caso seja necessária uma ligação aos recursos na rede privada da empresa. Por exemplo, se a aplicação precisar de aceder a um dos seguintes:
-
-    - Servidores de ficheiros localizados na intranet
-    - Quicken
-    - Bases de dados protegidas por uma firewall
-
+  
+  * Servidores de ficheiros localizados na intranet
+  * Quicken
+  * Bases de dados protegidas por uma firewall
+    
     Esta coleção é normalmente mais útil para grandes empresas com muitos recursos nas redes privadas que não podem ser movidos para a nuvem.
 
 As diversas coleções têm opções diferentes, incluindo redes, portanto, determine [qual a coleção](remoteapp-collections.md) mais adequada para si. 
-
 
 ### Atualizar a coleção
 Uma das principais diferenças entre a coleção híbrida e a coleção na nuvem é o modo como as atualizações de software são processadas. Com uma coleção na nuvem que utilize a imagem pré-instalada do Office 365 ProPlus ou do Office 2013, não precisa de se preocupar com as atualizações. O serviço realiza a própria manutenção e lança atualizações de modo contínuo, quer para aplicações quer para o sistema operativo.
@@ -72,18 +69,16 @@ Consulte [Aceder às aplicações no Azure RemoteApp](remoteapp-clients.md) para
 ## Passos seguintes
 Aceda! Experimente! Estes artigos ajudam a começar a utilizar o Azure RemoteApp:
 
-- [Que tipo de coleção precisa para o Azure RemoteApp?](remoteapp-collections.md)
-- [Criar uma imagem do Azure RemoteApp](remoteapp-imageoptions.md)
-- [Como criar uma coleção na nuvem do Azure RemoteApp](remoteapp-create-cloud-deployment.md)
-- [Como criar uma coleção híbrida do Azure RemoteApp](remoteapp-create-hybrid-deployment.md)
-- [Como funciona o licenciamento no Azure RemoteApp?](remoteapp-licensing.md)
-- [As melhores práticas para utilizar o Azure RemoteApp](remoteapp-bestpractices.md)
-- [Perguntas mais frequentes (FAQ) do Azure RemoteApp](remoteapp-faq.md)
- 
+* [Que tipo de coleção precisa para o Azure RemoteApp?](remoteapp-collections.md)
+* [Criar uma imagem do Azure RemoteApp](remoteapp-imageoptions.md)
+* [Como criar uma coleção na nuvem do Azure RemoteApp](remoteapp-create-cloud-deployment.md)
+* [Como criar uma coleção híbrida do Azure RemoteApp](remoteapp-create-hybrid-deployment.md)
+* [Como funciona o licenciamento no Azure RemoteApp?](remoteapp-licensing.md)
+* [As melhores práticas para utilizar o Azure RemoteApp](remoteapp-bestpractices.md)
+* [Perguntas mais frequentes (FAQ) do Azure RemoteApp](remoteapp-faq.md)
 
-### Ajude-nos para o podermos ajudar 
+### Ajude-nos para o podermos ajudar
 Sabia que além de classificar este artigo e deixar um comentário a seguir, pode alterar o próprio artigo? Falta algo? Algo errado? Escrevi algo que é simplesmente confuso? Desloque-se para cima e clique em **Editar no GitHub** ou **Editar** para efetuar alterações – estas serão enviadas para nós para revisão e, em seguida, após serem aceites, as suas alterações e melhorias serão apresentadas aqui.
-
 
 <!--HONumber=Sep16_HO3-->
 

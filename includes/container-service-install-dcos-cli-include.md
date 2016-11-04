@@ -1,25 +1,27 @@
-<properties
-   pageTitle="Instalar o DC/SO CLI | Microsoft Azure"
-   description="Instalar o DC/SO CLI."
-   services="container-service"
-   documentationCenter=""
-   authors="rgardler"
-   manager="timlt"
-   editor=""
-   tags="acs, azure-container-service"
-   keywords="Contentores, Microserviços, DC/OS, Azure"/>
+---
+title: Instalar o DC/SO CLI | Microsoft Docs
+description: Instalar o DC/SO CLI.
+services: container-service
+documentationcenter: ''
+author: rgardler
+manager: timlt
+editor: ''
+tags: acs, azure-container-service
+keywords: Contentores, Microserviços, DC/OS, Azure
 
-<tags
-   ms.service="container-service"
-   ms.devlang="na"
-   ms.topic="get-started-article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="05/10/2016"
-   ms.author="rogardle"/>
+ms.service: container-service
+ms.devlang: na
+ms.topic: get-started-article
+ms.tgt_pltfrm: na
+ms.workload: na
+ms.date: 05/10/2016
+ms.author: rogardle
 
-
->[AZURE.NOTE] Esta ação é para trabalhar com clusters de ACS baseados em DC/SO. Não é necessário efetuar este procedimento para clusters de ACS com base em Swarm.
+---
+> [!NOTE]
+> Esta ação é para trabalhar com clusters de ACS baseados em DC/SO. Não é necessário efetuar este procedimento para clusters de ACS com base em Swarm.
+> 
+> 
 
 Primeiro, [ligue-se ao seu cluster de ACS baseado no DC/SO](../articles/container-service/container-service-connect.md). Depois de ter efetuado esta ação, pode instalar o DC/SO CLI no computador do seu cliente com comandos abaixo:
 

@@ -1,27 +1,27 @@
-<properties
-    pageTitle="Consultar o Índice de Pesquisa do Azure utilizando o SDK .NET | Microsoft Azure | Serviço de pesquisa na nuvem alojado"
-    description="Crie uma consulta de pesquisa na pesquisa do Azure e utilize parâmetros de pesquisa para filtrar e ordenar os resultados da pesquisa."
-    services="search"
-    documentationCenter=""
-    authors="brjohnstmsft"
-/>
+---
+title: Consultar o Índice de Pesquisa do Azure utilizando o SDK .NET | Microsoft Docs
+description: Crie uma consulta de pesquisa na pesquisa do Azure e utilize parâmetros de pesquisa para filtrar e ordenar os resultados da pesquisa.
+services: search
+documentationcenter: ''
+author: brjohnstmsft
 
-<tags
-    ms.service="search"
-    ms.devlang="dotnet"
-    ms.workload="search"
-    ms.topic="get-started-article"
-    ms.tgt_pltfrm="na"
-    ms.date="08/29/2016"
-    ms.author="brjohnst"/>
+ms.service: search
+ms.devlang: dotnet
+ms.workload: search
+ms.topic: get-started-article
+ms.tgt_pltfrm: na
+ms.date: 08/29/2016
+ms.author: brjohnst
 
-
+---
 # Consultar o índice de Pesquisa do Azure utilizando o SDK .NET
-> [AZURE.SELECTOR]
-- [Descrição geral](search-query-overview.md)
-- [Portal](search-explorer.md)
-- [.NET](search-query-dotnet.md)
-- [REST](search-query-rest-api.md)
+> [!div class="op_single_selector"]
+> * [Descrição geral](search-query-overview.md)
+> * [Portal](search-explorer.md)
+> * [.NET](search-query-dotnet.md)
+> * [REST](search-query-rest-api.md)
+> 
+> 
 
 Este artigo mostra como consultar um índice através do [SDK .NET de Pesquisa do Azure](https://msdn.microsoft.com/library/azure/dn951165.aspx).
 
@@ -38,8 +38,8 @@ Agora que criou um índice de Pesquisa do Azure, está quase pronto para emitir 
 
 O seu serviço terá *chaves de administração* e *chaves de consulta*.
 
-  - As suas *chaves de administração* principal e secundária concedem direitos totais para todas as operações, incluindo a capacidade para gerir o serviço, criar e eliminar índices, indexadores e origens de dados. Existem duas chaves para que possa continuar a utilizar a chave secundária caso opte por voltar a gerar a chave principal e vice-versa.
-  - As suas *chaves de consulta* concedem acesso só de leitura para índices e documentos e, normalmente, são distribuídas por aplicações cliente que emitem pedidos de pesquisa.
+* As suas *chaves de administração* principal e secundária concedem direitos totais para todas as operações, incluindo a capacidade para gerir o serviço, criar e eliminar índices, indexadores e origens de dados. Existem duas chaves para que possa continuar a utilizar a chave secundária caso opte por voltar a gerar a chave principal e vice-versa.
+* As suas *chaves de consulta* concedem acesso só de leitura para índices e documentos e, normalmente, são distribuídas por aplicações cliente que emitem pedidos de pesquisa.
 
 Para efeitos de consulta de um índice, pode utilizar uma das chaves de consulta. As chaves de administração também podem ser utilizadas para consultas, contudo, deve utilizar uma chave de consulta no código da aplicação, uma vez que tal segue melhor o [Princípio de menor privilégio](https://en.wikipedia.org/wiki/Principle_of_least_privilege).
 
@@ -61,12 +61,11 @@ SearchIndexClient indexClient = new SearchIndexClient(searchServiceName, "hotels
 A pesquisa com o SDK .NET é tão simples como chamar o método `Documents.Search` no seu `SearchIndexClient`. Este método aceita alguns parâmetros, incluindo o texto de pesquisa, juntamente com um objeto `SearchParameters` que podem ser utilizados para aperfeiçoar ainda mais a consulta.
 
 #### Tipos de consultas
-Os dois principais [tipos de consulta](search-query-overview.md#types-of-queries) que irá utilizar são `search` e `filter`. Uma consulta `search` pesquisa um ou mais termos em todos os campos _pesquisáveis_ no seu índice. Uma consulta `filter` avalia uma expressão booleana através de todos os campos _filtráveis_ num índice.
+Os dois principais [tipos de consulta](search-query-overview.md#types-of-queries) que irá utilizar são `search` e `filter`. Uma consulta `search` pesquisa um ou mais termos em todos os campos *pesquisáveis* no seu índice. Uma consulta `filter` avalia uma expressão booleana através de todos os campos *filtráveis* num índice.
 
 As pesquisas e os filtros são efetuados utilizando o método `Documents.Search`. Uma consulta de pesquisa pode ser transmitida no parâmetro `searchText`, enquanto uma expressão de filtro pode ser transmitida na propriedade `Filter` da classe `SearchParameters`. Para filtrar sem pesquisar, basta passar `"*"` para o parâmetro `searchText` . Para pesquisar sem filtrar, basta deixar a propriedade `Filter` por definir ou não transmitir numa instância `SearchParameters` de todo.
 
 #### Consultas de exemplo
-
 O seguinte código de exemplo mostra algumas formas diferentes de consultar o índice "hotéis" definido em [Criar um índice de Pesquisa do Azure utilizando o SDK .NET](search-create-index-dotnet.md#DefineIndex). Tenha em atenção que os documentos devolvidos com os resultados da pesquisa são instâncias da classe `Hotel`, que foi definida em [Importação de dados na Pesquisa do Azure utilizando o SDK .NET](search-import-data-dotnet.md#HotelClass). O código de exemplo utiliza um método `WriteDocuments` para enviar os resultados da pesquisa para a consola. Este método é descrito na secção seguinte.
 
 ```csharp
@@ -162,8 +161,6 @@ ID: 2   Base rate: 79.99        Description: Cheapest hotel in town     Descript
 ```
 
 O código de exemplo acima utiliza a consola para produzir os resultados da pesquisa. Da mesma forma, terá de apresentar os resultados da pesquisa na sua própria aplicação. Consulte [este exemplo no GitHub](https://github.com/Azure-Samples/search-dotnet-getting-started/tree/master/DotNetSample) para obter um exemplo de como apresentar resultados de pesquisa numa aplicação Web do ASP.NET baseada em MVC.
-
-
 
 <!--HONumber=Sep16_HO3-->
 

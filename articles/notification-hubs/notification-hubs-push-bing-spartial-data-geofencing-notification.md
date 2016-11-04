@@ -1,38 +1,38 @@
-<properties
-    pageTitle="As notificações push de perímetros geográficos e os Notification Hubs do Azure e Dados Geográficos do Bing | Microsoft Azure"
-    description="Neste tutorial, irá aprender como entregar notificações push com base na localização com Notification Hubs do Azure e Dados Geográficos do Bing."
-    services="notification-hubs"
-    documentationCenter="windows"
-    keywords="notificação push, notificação push"
-    authors="dend"
-    manager="yuaxu"
-    editor="dend"/>
+---
+title: As notificações push de perímetros geográficos e os Notification Hubs do Azure e Dados Geográficos do Bing | Microsoft Docs
+description: Neste tutorial, irá aprender como entregar notificações push com base na localização com Notification Hubs do Azure e Dados Geográficos do Bing.
+services: notification-hubs
+documentationcenter: windows
+keywords: notificação push, notificação push
+author: dend
+manager: yuaxu
+editor: dend
 
-<tags
-    ms.service="notification-hubs"
-    ms.workload="mobile"
-    ms.tgt_pltfrm="mobile-windows-phone"
-    ms.devlang="dotnet"
-    ms.topic="hero-article"
-    ms.date="05/31/2016"
-    ms.author="dendeli"/>
-    
+ms.service: notification-hubs
+ms.workload: mobile
+ms.tgt_pltfrm: mobile-windows-phone
+ms.devlang: dotnet
+ms.topic: hero-article
+ms.date: 05/31/2016
+ms.author: dendeli
 
+---
 # Notificações push de perímetro geográfico com Notification Hubs do Azure e Dados Geográficos do Bing
- 
- > [AZURE.NOTE] Para concluir este tutorial, tem de ter uma conta ativa do Azure. Se não tiver uma conta, pode criar uma de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02).
+> [!NOTE]
+> Para concluir este tutorial, tem de ter uma conta ativa do Azure. Se não tiver uma conta, pode criar uma de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02).
+> 
+> 
 
 Neste tutorial, irá aprender a entrega de notificações push com base na localização com Notification Hubs do Azure e Dados Geográficos do Bing, alavancada no seio da aplicação Plataforma Universal do Windows.
 
-##Pré-requisitos
+## Pré-requisitos
 Primeiro e mais importante, terá de se certificar de que tem todos os pré-requisitos de software e serviço:
 
 * [Visual Studio 2015 Update 1](https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx) ou posterior (a [Edição Community](https://go.microsoft.com/fwlink/?LinkId=691978&clcid=0x409) também serve). 
 * Versão mais recente do [Azure SDK](https://azure.microsoft.com/downloads/). 
 * [Conta do Dev Center do Bing Maps](https://www.bingmapsportal.com/) (pode criar uma gratuitamente e associá-la à conta Microsoft). 
 
-##Introdução
-
+## Introdução
 Vamos começar por criar o projeto. No Visual Studio, inicie um novo projeto do tipo **Aplicação em Branco (Universal Windows)**.
 
 ![](./media/notification-hubs-geofence/notification-hubs-create-blank-app.png)
@@ -40,17 +40,16 @@ Vamos começar por criar o projeto. No Visual Studio, inicie um novo projeto do 
 Assim que a criação de projeto estiver concluída, deverá ter o escudo para a aplicação em si. Vamos agora configurar tudo para a infraestrutura de perímetro geográfico. Uma vez que vamos utilizar serviços Bing para isto, existe um ponto de final público da API REST que nos permite molduras consultar molduras de localização específicas:
 
     http://spatial.virtualearth.net/REST/v1/data/
-    
+
 Para a pôr a funcionar, terá de especificar os parâmetros seguintes:
 
 * **ID da Origem de Dados** e **Nome da Origem de Dados** – na API Bing Maps, origens de dados contêm vários metadados agrupados, como localizações e horas de expediente da operação. Pode ler mais acerca deles aqui. 
 * **Nome da Entidade** – a entidade que pretende utilizar como um ponto de referência para a notificação. 
 * **Chave de API do Bing Maps** – esta é a chave que obteve anteriormente quando criou a conta do Dev Center do Bing.
- 
+
 Vamos fazer uma descrição profunda da configuração para cada um dos elementos acima.
 
-##Configurar a origem de dados
-
+## Configurar a origem de dados
 Pode fazê-lo no Dev Center do Bing Maps. Basta clicar em **Origens de Dados** na barra de navegação superior e selecionar **Gerir Origens de Dados**.
 
 ![](./media/notification-hubs-geofence/bing-maps-manage-data.png)
@@ -64,14 +63,17 @@ Poderá estar a perguntar-se – o que é o ficheiro de dados e o que deve estar
     Bing Spatial Data Services, 1.0, TestBoundaries
     EntityID(Edm.String,primaryKey)|Name(Edm.String)|Longitude(Edm.Double)|Latitude(Edm.Double)|Boundary(Edm.Geography)
     1|SanFranciscoPier|||POLYGON ((-122.389825 37.776598,-122.389438 37.773087,-122.381885 37.771849,-122.382186 37.777022,-122.389825 37.776598))
-    
+
 A expressão acima representa esta entidade:
 
 ![](./media/notification-hubs-geofence/bing-maps-geofence.png)
 
 Copie e cole simplesmente a cadeia acima para um novo ficheiro, guarde-o como **NotificationHubsGeofence.pipe** e carregue-o no Dev Center do Bing.
 
->[AZURE.NOTE]Poderá ser-lhe pedido que especifique uma nova chave para a **Chave Mestra** diferente da **Chave de Consulta**. Crie simplesmente uma nova chave através do dashboard e atualize a página de carregamento da origem de dados.
+> [!NOTE]
+> Poderá ser-lhe pedido que especifique uma nova chave para a **Chave Mestra** diferente da **Chave de Consulta**. Crie simplesmente uma nova chave através do dashboard e atualize a página de carregamento da origem de dados.
+> 
+> 
 
 Uma vez carregado o ficheiro de dados, terá de se certificar de que pode publicar a origem de dados. 
 
@@ -101,8 +103,7 @@ Esta resposta só aparece quando o ponto está, de facto, dentro dos limites des
 
 ![](./media/notification-hubs-geofence/bing-maps-nores.png)
 
-##Configurar a aplicação de UWP
-
+## Configurar a aplicação de UWP
 Agora que já temos a origem de dados pronta, podemos começar a trabalhar na aplicação UWP de que fizemos anteriormente o arranque.
 
 Primeiro e mais importante, temos de ativar os serviços de localização para a nossa aplicação. Para tal, faça duplo clique no ficheiro `Package.appxmanifest` no **Explorador de Soluções**.
@@ -199,8 +200,7 @@ A implementação apresenta as coordenadas de localização na janela **Saída**
         });
     }
 
-##Configurar o back-end
-
+## Configurar o back-end
 Transfira o [Exemplo de Back-end do .NET a partir do GitHub](https://github.com/Azure/azure-notificationhubs-samples/tree/master/dotnet/NotifyUsers). Uma vez concluída a transferência, abra a pasta `NotifyUsers` e, subsequentemente, o ficheiro `NotifyUsers.sln`.
 
 Defina o projeto `AppBackend` como **Projeto de Arranque** e inicie-o.
@@ -276,7 +276,10 @@ Crie uma nova classe no projeto denominada `ApiHelper.cs` – utilizá-la-emos p
         }
     }
 
->[AZURE.NOTE] Não se esqueça de substituir o Ponto Final de API com o URL de consulta que obteve anteriormente no Dev Center do Bing (o mesmo se aplica à chave de API). 
+> [!NOTE]
+> Não se esqueça de substituir o Ponto Final de API com o URL de consulta que obteve anteriormente no Dev Center do Bing (o mesmo se aplica à chave de API). 
+> 
+> 
 
 Se não existirem resultados da consulta, isso significa que o ponto especificado está dentro dos limites do perímetro geográfico, voltamos pois a `true`. Se não existirem resultados, o Bing estará a informar-nos que o ponto está fora do intervalo de pesquisa, logo inserimos `false`.
 
@@ -303,8 +306,7 @@ De volta a `NotificationsController.cs`, crie uma verificação mesmo antes da i
 
 Deste modo, a notificação é apenas enviada quando o ponto estiver dentro dos limites.
 
-##Testar notificações push na aplicação UWP
-
+## Testar notificações push na aplicação UWP
 De volta à aplicação UWP, já deveremos poder testar as notificações. N classe `LocationHelper`, crie uma nova função – `SendLocationToBackend`:
 
     public static async Task SendLocationToBackend(string pns, string userTag, string message, string latitude, string longitude)
@@ -326,7 +328,10 @@ De volta à aplicação UWP, já deveremos poder testar as notificações. N cla
         }
     }
 
->[AZURE.NOTE] Troque o `POST_URL` pela localização da aplicação Web implementada que criámos na secção anterior. Para já, é possível executá-la localmente, mas à medida que for trabalhando na implementação de uma versão pública, será necessário alojá-la num fornecedor externo.
+> [!NOTE]
+> Troque o `POST_URL` pela localização da aplicação Web implementada que criámos na secção anterior. Para já, é possível executá-la localmente, mas à medida que for trabalhando na implementação de uma versão pública, será necessário alojá-la num fornecedor externo.
+> 
+> 
 
 Vamos agora garantir que registamos a aplicação UWP para notificações push. No Visual Studio, clique em **Projeto** > **Armazenar** > **Associar a aplicação à loja**.
 
@@ -371,8 +376,7 @@ Como não estamos a transmitir as coordenadas reais (que podem não estar de mom
 
 ![](./media/notification-hubs-geofence/notification-hubs-test-notification.png)
 
-##Passos seguintes?
-
+## Passos seguintes?
 Existem alguns passos que poderá ter de seguir para além dos acima descritos para se certificar de que a solução está pronta para ser produzida.
 
 Primeiro e mais importante, poderá ter de garantir que os perímetros geográficos são dinâmicos. Isto irá necessitar de algum trabalho adicional com a API do Bing para que seja possível carregar novos limites no seio da origem de dados existente. Consulte a [Documentação da API dos Serviços de Dados Geográficos do Bing](https://msdn.microsoft.com/library/ff701734.aspx) para obter mais detalhes sobre o assunto.
@@ -382,8 +386,6 @@ Segundo, à medida que vai trabalhando para garantir que a entrega é efetuada a
 A solução mostrada acima descreve um cenário em que poderá ter uma grande variedade de plataformas de destino, por isso não limitámos o perímetro geográfico para as capacidades específicas do sistema. Dito isto, a Plataforma Universal do Windows oferece capacidades para [detetar perímetros geográficos logo na primeira execução](https://msdn.microsoft.com/windows/uwp/maps-and-location/set-up-a-geofence).
 
 Para obter mais detalhes sobre as capacidades dos Notification Hubs, consulte o nosso [portal de documentação](https://azure.microsoft.com/documentation/services/notification-hubs/).
-
-
 
 <!--HONumber=Sep16_HO3-->
 

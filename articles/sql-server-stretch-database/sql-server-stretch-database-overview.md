@@ -1,24 +1,22 @@
-<properties
-    pageTitle="Descrição geral da Stretch Database | Microsoft Azure"
-    description="Saiba como a Stretch Database migra os seus dados amovíveis de forma transparente e segura para a nuvem do Microsoft Azure."
-    services="sql-server-stretch-database"
-    documentationCenter=""
-    authors="douglaslMS"
-    manager=""
-    editor=""/>
+---
+title: Descrição geral da Stretch Database | Microsoft Docs
+description: Saiba como a Stretch Database migra os seus dados amovíveis de forma transparente e segura para a nuvem do Microsoft Azure.
+services: sql-server-stretch-database
+documentationcenter: ''
+author: douglaslMS
+manager: ''
+editor: ''
 
-<tags
-    ms.service="sql-server-stretch-database"
-    ms.workload="data-management"
-    ms.tgt_pltfrm="na"
-    ms.devlang="na"
-    ms.topic="get-started-article"
-    ms.date="06/27/2016"
-    ms.author="douglasl"/>
+ms.service: sql-server-stretch-database
+ms.workload: data-management
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: get-started-article
+ms.date: 06/27/2016
+ms.author: douglasl
 
-
+---
 # Descrição geral da Stretch Database
-
 A Stretch Database migra os seus dados amovíveis de forma transparente e segura para a nuvem do Microsoft Azure.
 
 Se pretender começar com a Stretch Database imediatamente, consulte [Começar ao executar o Assistente de Ativação de Base de dados para Stretch](sql-server-stretch-database-wizard.md).
@@ -41,9 +39,8 @@ Mantenha a tranquilidade durante a transferência das aplicações mais importan
 ## O que faz a Stretch Database?
 Depois de ativar a Stretch Database para uma instância do SQL Server, uma base de dados e pelo menos uma tabela, a Stretch Database começa automaticamente a migrar os seus dados amovíveis para o Azure.
 
--   Se armazenar dados amovíveis numa tabela em separado, pode migrar a tabela completa.
-
--   Se a tabela contiver dados de acesso frequente e dados amovíveis, pode especificar uma função de filtro para selecionar as linhas a migrar.
+* Se armazenar dados amovíveis numa tabela em separado, pode migrar a tabela completa.
+* Se a tabela contiver dados de acesso frequente e dados amovíveis, pode especificar uma função de filtro para selecionar as linhas a migrar.
 
 **Não tem de alterar as consultas existentes nem as aplicações cliente.** Continua a ter acesso totalmente integrado aos dados locais e remotos, mesmo durante a migração de dados. Existe uma pequena quantidade de latência para consultas remotas, mas esta latência ocorre apenas ao consultar os dados amovíveis.
 
@@ -56,12 +53,12 @@ A **Stretch Database assegura que não existem perdas de dados** se ocorrer uma 
 ## A Stretch Database é adequada para si?
 Caso se identifique com as afirmações que se seguem, a Stretch Database pode ajudá-lo a satisfazer as suas necessidades e a resolver os problemas.
 
-|Se for um decisor|Se for um administrador de bases de dados|
-|------------------------------|-------------------|
-|Tenho de manter os dados transacionais durante muito tempo.|O tamanho das minhas tabelas está a ficar descontrolado.|
-|Por vezes, tenho de consultar os dados amovíveis.|Os meus utilizadores dizem que querem aceder a dados amovíveis, mas utilizam-nos raramente.|
-|Tenho aplicações, incluindo aplicações mais antigas, que não pretendo atualizar.|Tenho de comprar e adicionar mais armazenamento continuamente.|
-|Pretendo encontrar uma forma de poupar dinheiro no armazenamento.|Não consigo criar cópias de segurança ou restaurar tabelas tão grandes dentro do SLA.|
+| Se for um decisor | Se for um administrador de bases de dados |
+| --- | --- |
+| Tenho de manter os dados transacionais durante muito tempo. |O tamanho das minhas tabelas está a ficar descontrolado. |
+| Por vezes, tenho de consultar os dados amovíveis. |Os meus utilizadores dizem que querem aceder a dados amovíveis, mas utilizam-nos raramente. |
+| Tenho aplicações, incluindo aplicações mais antigas, que não pretendo atualizar. |Tenho de comprar e adicionar mais armazenamento continuamente. |
+| Pretendo encontrar uma forma de poupar dinheiro no armazenamento. |Não consigo criar cópias de segurança ou restaurar tabelas tão grandes dentro do SLA. |
 
 ## Que tipo de bases de dados e tabelas são candidatos para a Stretch Database?
 A Stretch Database está orientada para as bases de dados transacionais com grandes quantidades de dados amovíveis, normalmente armazenados num pequeno número de tabelas. Estas tabelas podem conter mais de mil milhões de linhas.

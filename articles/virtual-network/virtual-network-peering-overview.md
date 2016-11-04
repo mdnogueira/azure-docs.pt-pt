@@ -1,41 +1,39 @@
 
-<properties
-   pageTitle="Peering da rede virtual do Azure | Microsoft Azure"
-   description="Saiba mais sobre VNet peering no Azure."
-   services="virtual-network"
-   documentationCenter="na"
-   authors="NarayanAnnamalai"
-   manager="jefco"
-   editor="tysonn" />
-<tags
-   ms.service="virtual-network"
-   ms.devlang="na"
-   ms.topic="get-started-article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="07/28/2016"
-   ms.author="narayan" />
+---
+title: Peering da rede virtual do Azure | Microsoft Docs
+description: Saiba mais sobre VNet peering no Azure.
+services: virtual-network
+documentationcenter: na
+author: NarayanAnnamalai
+manager: jefco
+editor: tysonn
 
+ms.service: virtual-network
+ms.devlang: na
+ms.topic: get-started-article
+ms.tgt_pltfrm: na
+ms.workload: infrastructure-services
+ms.date: 07/28/2016
+ms.author: narayan
 
+---
 # VNet peering
-
 O VNet peering é um mecanismo que liga duas redes virtuais na mesma região através da rede principal do Azure. Uma vez executado o peering, as duas redes virtuais aparecem como uma única para todos os fins de conetividade. Vão continuar a ser geridas como recursos separados, mas as máquinas virtuais nestas redes virtuais podem comunicar diretamente entre si através de endereços IP privados.
 
 O tráfego entre máquinas virtuais nas redes virtuais em modo de peering será encaminhado através da Infraestrutura do Azure, tal como o tráfego é encaminhado entre VMs na mesma rede virtual. Seguem-se algumas das vantagens da utilização de VNet peering:
 
-- Uma ligação de baixa latência e largura de banda alta entre os recursos em redes virtuais diferentes.
-- A capacidade de utilizar recursos, como aparelhos de rede e gateways VPN como pontos de trânsito numa VNet no modo de peering.
-- A capacidade de ligar uma rede virtual que utiliza o modelo do Azure Resource Manager para uma rede virtual que adota o modelo de implementação clássico e permite a conetividade total entre os recursos nestas redes virtuais.
+* Uma ligação de baixa latência e largura de banda alta entre os recursos em redes virtuais diferentes.
+* A capacidade de utilizar recursos, como aparelhos de rede e gateways VPN como pontos de trânsito numa VNet no modo de peering.
+* A capacidade de ligar uma rede virtual que utiliza o modelo do Azure Resource Manager para uma rede virtual que adota o modelo de implementação clássico e permite a conetividade total entre os recursos nestas redes virtuais.
 
 Requisitos e aspetos fundamentais da VNet peering:
 
-- As duas redes virtuais que são colocadas em modo de peering devem estar na mesma região do Azure.
-- As redes virtuais colocadas em modo de peering devem ter espaços de endereços IP não sobrepostos.
-- A VNet peering ocorre entre duas redes virtuais e não existe nenhuma relação transitiva derivada. Por exemplo, se a rede virtual A estiver no modo de peering com a rede virtual B e se a rede virtual B estiver no modo de peering com a rede virtual C, não converte para a rede virtual A que está a ser colocada no modo de peering com a rede virtual C.
-- O peering pode ser estabelecido entre redes virtuais em duas subscrições diferentes, desde que um utilizador com privilégios em ambas as subscrições o autorize e que essas subscrições estejam associadas ao mesmo inquilino do Active Directory. 
-- Uma rede virtual que utiliza o modelo de implementação do Resource Manager pode ser colocado no modo de peering com outra rede virtual que utilize este modelo ou com uma rede virtual que utiliza o modelo de implementação clássico. No entanto, as redes virtuais que utilizam o modelo de implementação clássica não podem ser colocadas no modo de peering entre si.
-- Apesar de a comunicação entre as máquinas virtuais em redes virtuais em modo de peering não ter restrições de largura de banda adicionais, continua a aplicar-se o limite de largura de banda baseado no tamanho das VM.
-
+* As duas redes virtuais que são colocadas em modo de peering devem estar na mesma região do Azure.
+* As redes virtuais colocadas em modo de peering devem ter espaços de endereços IP não sobrepostos.
+* A VNet peering ocorre entre duas redes virtuais e não existe nenhuma relação transitiva derivada. Por exemplo, se a rede virtual A estiver no modo de peering com a rede virtual B e se a rede virtual B estiver no modo de peering com a rede virtual C, não converte para a rede virtual A que está a ser colocada no modo de peering com a rede virtual C.
+* O peering pode ser estabelecido entre redes virtuais em duas subscrições diferentes, desde que um utilizador com privilégios em ambas as subscrições o autorize e que essas subscrições estejam associadas ao mesmo inquilino do Active Directory. 
+* Uma rede virtual que utiliza o modelo de implementação do Resource Manager pode ser colocado no modo de peering com outra rede virtual que utilize este modelo ou com uma rede virtual que utiliza o modelo de implementação clássico. No entanto, as redes virtuais que utilizam o modelo de implementação clássica não podem ser colocadas no modo de peering entre si.
+* Apesar de a comunicação entre as máquinas virtuais em redes virtuais em modo de peering não ter restrições de largura de banda adicionais, continua a aplicar-se o limite de largura de banda baseado no tamanho das VM.
 
 ![VNet peering básico](./media/virtual-networks-peering-overview/figure01.png)
 
@@ -83,13 +81,10 @@ Existem limites em relação ao número de peerings que são permitidos para uma
 ## Preços
 O VNet peering não será cobrado durante o período de avaliação. Uma vez lançado, haverá uma cobrança nominal sobre o tráfego de entrada e saída que utiliza o peering. Para obter mais informações, consulte a [página de preços](https://azure.microsoft.com/pricing/details/virtual-network).
 
-
 ## Passos seguintes
-- [Configurar peering entre redes virtuais](virtual-networks-create-vnetpeering-arm-portal.md).
-- Saiba mais sobre [NSGs](virtual-networks-nsg.md).
-- Saiba mais sobre [rotas definidas pelo utilizador e reencaminhamento IP](virtual-networks-udr-overview.md).
-
-
+* [Configurar peering entre redes virtuais](virtual-networks-create-vnetpeering-arm-portal.md).
+* Saiba mais sobre [NSGs](virtual-networks-nsg.md).
+* Saiba mais sobre [rotas definidas pelo utilizador e reencaminhamento IP](virtual-networks-udr-overview.md).
 
 <!--HONumber=Sep16_HO4-->
 

@@ -1,27 +1,27 @@
-<properties
-    pageTitle="Consultar o Índice da Azure Search através da API REST | Microsoft Azure | Serviço de pesquisa em nuvem alojado"
-    description="Crie uma consulta de pesquisa na pesquisa do Azure e utilize parâmetros de pesquisa para filtrar e ordenar os resultados da pesquisa."
-    services="search"
-    documentationCenter=""
-    authors="ashmaka"
-/>
+---
+title: Consultar o Índice da Azure Search através da API REST | Microsoft Docs
+description: Crie uma consulta de pesquisa na pesquisa do Azure e utilize parâmetros de pesquisa para filtrar e ordenar os resultados da pesquisa.
+services: search
+documentationcenter: ''
+author: ashmaka
 
-<tags
-    ms.service="search"
-    ms.devlang="na"
-    ms.workload="search"
-    ms.topic="get-started-article"
-    ms.tgt_pltfrm="na"
-    ms.date="08/29/2016"
-    ms.author="ashmaka"/>
+ms.service: search
+ms.devlang: na
+ms.workload: search
+ms.topic: get-started-article
+ms.tgt_pltfrm: na
+ms.date: 08/29/2016
+ms.author: ashmaka
 
-
+---
 # Consultar o índice da Azure Search através da API REST
-> [AZURE.SELECTOR]
-- [Descrição geral](search-query-overview.md)
-- [Portal](search-explorer.md)
-- [.NET](search-query-dotnet.md)
-- [REST](search-query-rest-api.md)
+> [!div class="op_single_selector"]
+> * [Descrição geral](search-query-overview.md)
+> * [Portal](search-explorer.md)
+> * [.NET](search-query-dotnet.md)
+> * [REST](search-query-rest-api.md)
+> 
+> 
 
 Este artigo mostra como consultar um índice através da [API REST da Azure Search](https://msdn.microsoft.com/library/azure/dn798935.aspx).
 
@@ -36,8 +36,8 @@ Um elemento-chave de qualquer operação de pesquisa em relação à API REST de
 
 O seu serviço terá *chaves de administração* e *chaves de consulta*.
 
- - As suas *chaves de administração* principal e secundária concedem direitos totais para todas as operações, incluindo a capacidade para gerir o serviço, criar e eliminar índices, indexadores e origens de dados. Existem duas chaves para que possa continuar a utilizar a chave secundária caso opte por voltar a gerar a chave principal e vice-versa.
- - As suas *chaves de consulta* concedem acesso só de leitura para índices e documentos e, normalmente, são distribuídas por aplicações cliente que emitem pedidos de pesquisa.
+* As suas *chaves de administração* principal e secundária concedem direitos totais para todas as operações, incluindo a capacidade para gerir o serviço, criar e eliminar índices, indexadores e origens de dados. Existem duas chaves para que possa continuar a utilizar a chave secundária caso opte por voltar a gerar a chave principal e vice-versa.
+* As suas *chaves de consulta* concedem acesso só de leitura para índices e documentos e, normalmente, são distribuídas por aplicações cliente que emitem pedidos de pesquisa.
 
 Para efeitos de consulta de um índice, pode utilizar uma das chaves de consulta. As chaves de administração também podem ser utilizadas para consultas, contudo, deve utilizar uma chave de consulta no código da aplicação, uma vez que tal segue melhor o [Princípio de menor privilégio](https://en.wikipedia.org/wiki/Principle_of_least_privilege).
 
@@ -50,10 +50,7 @@ Para o POST e o GET, é necessário fornecer o *nome do serviço*, o *nome do í
 
 O formato para o POST é o mesmo, contudo, apenas com a versão de API nos parâmetros de cadeia de consulta.
 
-
-
 #### Consultas de exemplo
-
 Eis algumas consultas de exemplo sobre um índice designado "hotéis". Estas consultas são apresentadas nos formatos GET e POST.
 
 Procure no índice completo o termo "orçamento" e devolva apenas o campo `hotelName`:
@@ -68,7 +65,7 @@ POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-ve
 }
 ```
 
-Aplique um filtro ao índice para localizar hotéis com um preço inferior a 150 $ por noite e devolva `hotelId` e `description`:
+Aplique um filtro ao índice para localizar hotéis com um preço inferior a 150 $ por noite e devolva `hotelId` e `description`:
 
 ```
 GET https://[service name].search.windows.net/indexes/hotels/docs?search=*&$filter=baseRate lt 150&$select=hotelId,description&api-version=2015-02-28
@@ -100,6 +97,7 @@ Agora que formulou a consulta como parte do URL (para o GET) ou do corpo (para o
 
 #### Pedido e Cabeçalhos do Pedido
 Tem de definir dois cabeçalhos do pedido para o GET ou três para o POST:
+
 1. O cabeçalho `api-key` deve ser definido para a chave de consulta indicada no passo I acima. Tenha em atenção que também pode utilizar uma chave de administração como o cabeçalho `api-key`, contudo, recomenda-se a utilização de uma chave de consulta, uma vez que concede exclusivamente acesso só de leitura aos índices e documentos.
 2. O cabeçalho `Accept` deve ser definido para `application/json`.
 3. Para o POST apenas, o cabeçalho `Content-Type` deve ser igualmente definido para `application/json`.
@@ -159,8 +157,6 @@ Um pedido de consulta com êxito resultará num Código de Estado de `200 OK` e 
 ```
 
 Para saber mais, consulte a secção "Resposta" dos [Documentos sobre Pesquisa](https://msdn.microsoft.com/library/azure/dn798927.aspx). Para obter mais informações sobre outros códigos de estado HTTP que possam ser devolvidos em caso de falha, consulte [Códigos de estado HTTP (Pesquisa do Azure)](https://msdn.microsoft.com/library/azure/dn798925.aspx).
-
-
 
 <!--HONumber=Sep16_HO3-->
 

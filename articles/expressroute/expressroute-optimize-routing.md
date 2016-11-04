@@ -1,21 +1,21 @@
-<properties
-   pageTitle="Otimizar o encaminhamento do ExpressRoute | Microsoft Azure"
-   description="Esta página fornece detalhes sobre como otimizar o encaminhamento quando um cliente tiver mais do que um circuito do ExpressRoute a estabelecer ligação entre a Microsoft e a rede empresarial do cliente."
-   documentationCenter="na"
-   services="expressroute"
-   authors="charwen"
-   manager="carmonm"
-   editor=""/>
-<tags
-   ms.service="expressroute"
-   ms.devlang="na"
-   ms.topic="get-started-article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="06/07/2016"
-   ms.author="charwen"/>
+---
+title: Otimizar o encaminhamento do ExpressRoute | Microsoft Docs
+description: Esta página fornece detalhes sobre como otimizar o encaminhamento quando um cliente tiver mais do que um circuito do ExpressRoute a estabelecer ligação entre a Microsoft e a rede empresarial do cliente.
+documentationcenter: na
+services: expressroute
+author: charwen
+manager: carmonm
+editor: ''
 
+ms.service: expressroute
+ms.devlang: na
+ms.topic: get-started-article
+ms.tgt_pltfrm: na
+ms.workload: infrastructure-services
+ms.date: 06/07/2016
+ms.author: charwen
 
+---
 # Otimizar o Encaminhamento do ExpressRoute
 Se tem vários circuitos do ExpressRoute, significa que tem mais do que um caminho para se ligar à Microsoft. Sendo assim, o encaminhamento poderá não ser o ideal, ou seja, o tráfego poderá optar por um caminho mais longo para chegar à Microsoft e da Microsoft à sua rede. Quanto mais longo for o caminho de rede, maior será a latência. A latência tem um impacto direto no desempenho das aplicações e na experiência do utilizador. Este artigo ilustra este problema e explica como otimizar o encaminhamento com as tecnologias de encaminhamento padrão.
 
@@ -39,11 +39,12 @@ Existem duas soluções para o problema. A primeira é simplesmente anunciar o p
 
 A segunda solução é continuar a anunciar ambos os prefixos em ambos os circuitos do ExpressRoute e, além disso, dar-nos uma sugestão de qual é o prefixo que está próximo de qual dos seus escritórios. Uma vez que suportamos a prefixação COMO Caminho do BGP, pode configurá-la para o seu prefixo de modo a influenciar o encaminhamento. Neste exemplo, pode aumentar a prefixação COMO Caminho para 172.2.0.0/31 nos EUA Leste de modo a preferirmos o circuito do ExpressRoute nos EUA Oeste para o tráfego destinado a este prefixo (uma vez que a nossa rede irá considerar o caminho para este prefixo mais curto no Oeste). Pode, do mesmo modo, aumentar a prefixação COMO Caminho para 172.2.0.2/31 nos EUA Oeste, de modo a preferirmos o circuito do ExpressRoute nos EUA Leste. O encaminhamento fica otimizado para ambos os escritórios. Com esta estrutura, se um circuito do ExpressRoute for interrompido, o Exchange Online ainda consegue contactá-lo através de outro circuito do ExpressRoute e da sua WAN. 
 
->[AZURE.IMPORTANT] Removemos os números privados COMO no COMO Caminho para os prefixos recebidos no Peering da Microsoft. Temos de acrescentar números públicos COMO no COMO Caminho de modo a influenciar o encaminhamento para o Peering da Microsoft.
+> [!IMPORTANT]
+> Removemos os números privados COMO no COMO Caminho para os prefixos recebidos no Peering da Microsoft. Temos de acrescentar números públicos COMO no COMO Caminho de modo a influenciar o encaminhamento para o Peering da Microsoft.
+> 
+> 
 
 ![](./media/expressroute-optimize-routing/expressroute-case2-solution.png)
-
-
 
 <!--HONumber=Sep16_HO3-->
 

@@ -1,28 +1,29 @@
-<properties
-    pageTitle="Carregamento de dados na Pesquisa do Azure utilizando uma API Rest | Microsoft Azure | Serviço de pesquisa em nuvem alojado"
-    description="Saiba como carregar dados para um índice na Pesquisa do Azure utilizando a API REST."
-    services="search"
-    documentationCenter=""
-    authors="ashmaka"
-    manager=""
-    editor=""
-    tags=""/>
+---
+title: Carregamento de dados na Pesquisa do Azure utilizando uma API Rest | Microsoft Docs
+description: Saiba como carregar dados para um índice na Pesquisa do Azure utilizando a API REST.
+services: search
+documentationcenter: ''
+author: ashmaka
+manager: ''
+editor: ''
+tags: ''
 
-<tags
-    ms.service="search"
-    ms.devlang="rest-api"
-    ms.workload="search"
-    ms.topic="get-started-article"
-    ms.tgt_pltfrm="na"
-    ms.date="08/29/2016"
-    ms.author="ashmaka"/>
+ms.service: search
+ms.devlang: rest-api
+ms.workload: search
+ms.topic: get-started-article
+ms.tgt_pltfrm: na
+ms.date: 08/29/2016
+ms.author: ashmaka
 
-
+---
 # Importar dados para a Pesquisa do Azure utilizando a API REST
-> [AZURE.SELECTOR]
-- [Descrição geral](search-what-is-data-import.md)
-- [.NET](search-import-data-dotnet.md)
-- [REST](search-import-data-rest-api.md)
+> [!div class="op_single_selector"]
+> * [Descrição geral](search-what-is-data-import.md)
+> * [.NET](search-import-data-dotnet.md)
+> * [REST](search-import-data-rest-api.md)
+> 
+> 
 
 Este artigo irá mostrar como utilizar a [API REST da Pesquisa do Azure](https://msdn.microsoft.com/library/azure/dn798935.aspx) para importar dados para um índice da Pesquisa do Azure.
 
@@ -39,8 +40,8 @@ Quando emitir pedidos de HTTP relativamente ao seu serviço utilizando a API RES
 
 O seu serviço terá *chaves de administração* e *chaves de consulta*.
 
-  - As suas *chaves de administração* principal e secundária concedem direitos totais para todas as operações, incluindo a capacidade para gerir o serviço, criar e eliminar índices, indexadores e origens de dados. Existem duas chaves para que possa continuar a utilizar a chave secundária caso opte por voltar a gerar a chave principal e vice-versa.
-  - As suas *chaves de consulta* concedem acesso só de leitura para índices e documentos e, normalmente, são distribuídas por aplicações cliente que emitem pedidos de pesquisa.
+* As suas *chaves de administração* principal e secundária concedem direitos totais para todas as operações, incluindo a capacidade para gerir o serviço, criar e eliminar índices, indexadores e origens de dados. Existem duas chaves para que possa continuar a utilizar a chave secundária caso opte por voltar a gerar a chave principal e vice-versa.
+* As suas *chaves de consulta* concedem acesso só de leitura para índices e documentos e, normalmente, são distribuídas por aplicações cliente que emitem pedidos de pesquisa.
 
 Para o efeito de importação de dados, pode utilizar tanto a chave de administrador principal como a secundária.
 
@@ -49,12 +50,12 @@ Ao utilizar a API REST, irá emitir pedidos de HTTP POST com corpos de pedido JS
 
 Cada objeto JSON na matriz "valor" representa um documento a ser indexado. Cada um destes objetos contém a chave do documento e especifica a ação de indexação pretendida (carregar, intercalar, eliminar, etc.). Dependendo das ações que escolher abaixo, apenas determinados campos tem de ser incluídos para cada documento:
 
-@search.action | Descrição | Campos necessários para cada documento | Notas
---- | --- | --- | ---
-`upload` | Um ação `upload` é semelhante a um "upsert" onde o documento será inserido se for novo e atualizado/substituído se já existir. | chave, juntamente com quaisquer outros campos que pretende definir | Quando atualizar/substituir um documento existente, qualquer campo que não está especificado no pedido terá o respetivo campo definido como `null`. Isto ocorre mesmo quando o campo foi anteriormente definido para um valor não nulo.
-`merge` | Atualiza um documento existente com os campos especificados. Se o documento não existe no índice, a intercalação irá falhar. | chave, juntamente com quaisquer outros campos que pretende definir | Qualquer campo que especifique numa intercalação irá substituir o campo existente no documento. Isto inclui campos do tipo `Collection(Edm.String)`. Por exemplo, se o documento contém um campo `tags` com o valor `["budget"]` e executar uma intercalação com o valor `["economy", "pool"]` para `tags`, o valor final do campo `tags` será `["economy", "pool"]`. Não será `["budget", "economy", "pool"]`.
-`mergeOrUpload` | Esta ação tem o mesmo comportamento de `merge` caso um documento com a chave especificada já exista no índice. Se o documento não existir, tem um comportamento semelhante `upload` a um novo documento. | chave, juntamente com quaisquer outros campos que pretende definir | -
-`delete` | Remove o documento especificado do índice. | apenas chave | Quaisquer campos que especificar diferentes do campo de chave serão ignorados. Se pretender remover um campo individual de um documento, utilize `merge` em vez disso e simplesmente defina o campo explicitamente como nulo.
+| @search.action | Descrição | Campos necessários para cada documento | Notas |
+| --- | --- | --- | --- |
+| `upload` |Um ação `upload` é semelhante a um "upsert" onde o documento será inserido se for novo e atualizado/substituído se já existir. |chave, juntamente com quaisquer outros campos que pretende definir |Quando atualizar/substituir um documento existente, qualquer campo que não está especificado no pedido terá o respetivo campo definido como `null`. Isto ocorre mesmo quando o campo foi anteriormente definido para um valor não nulo. |
+| `merge` |Atualiza um documento existente com os campos especificados. Se o documento não existe no índice, a intercalação irá falhar. |chave, juntamente com quaisquer outros campos que pretende definir |Qualquer campo que especifique numa intercalação irá substituir o campo existente no documento. Isto inclui campos do tipo `Collection(Edm.String)`. Por exemplo, se o documento contém um campo `tags` com o valor `["budget"]` e executar uma intercalação com o valor `["economy", "pool"]` para `tags`, o valor final do campo `tags` será `["economy", "pool"]`. Não será `["budget", "economy", "pool"]`. |
+| `mergeOrUpload` |Esta ação tem o mesmo comportamento de `merge` caso um documento com a chave especificada já exista no índice. Se o documento não existir, tem um comportamento semelhante `upload` a um novo documento. |chave, juntamente com quaisquer outros campos que pretende definir |- |
+| `delete` |Remove o documento especificado do índice. |apenas chave |Quaisquer campos que especificar diferentes do campo de chave serão ignorados. Se pretender remover um campo individual de um documento, utilize `merge` em vez disso e simplesmente defina o campo explicitamente como nulo. |
 
 ## III. Construir o seu pedido de HTTP e corpo do pedido
 Agora que recolheu os valores de campo necessários para as suas ações de índice, está pronto para construir o pedido de HTTP real e o corpo do pedido JSON para importar os dados.
@@ -67,7 +68,6 @@ No URL, é necessário fornecer o nome do serviço, o nome do índice ("hotéis"
     api-key: [admin key]
 
 #### Corpo do Pedido
-
 ```JSON
 {
     "value": [
@@ -154,7 +154,10 @@ Um código de estado de `207` vai ser devolvido quando pelo menos um item não f
 }
 ```
 
-> [AZURE.NOTE] Muitas vezes, isto significa que a carga no seu serviço de pesquisa está a atingir um ponto onde os pedidos de indexação pedidos irão começar a devolver `503` respostas. Neste caso, recomendamos vivamente que desative o código de cliente e aguarde antes de tentar novamente. Isto irá dar ao sistema algum tempo para recuperar, aumentando a possibilidade de êxito de pedidos futuros. Ao repetir rapidamente os seus pedidos só irá prolongar a situação.
+> [!NOTE]
+> Muitas vezes, isto significa que a carga no seu serviço de pesquisa está a atingir um ponto onde os pedidos de indexação pedidos irão começar a devolver `503` respostas. Neste caso, recomendamos vivamente que desative o código de cliente e aguarde antes de tentar novamente. Isto irá dar ao sistema algum tempo para recuperar, aumentando a possibilidade de êxito de pedidos futuros. Ao repetir rapidamente os seus pedidos só irá prolongar a situação.
+> 
+> 
 
 #### 429
 Um código de estado de `429` será devolvido quando excedeu a quota no número de documentos por índice.
@@ -162,14 +165,15 @@ Um código de estado de `429` será devolvido quando excedeu a quota no número 
 #### 503
 Um código de estado de `503` será devolvido se nenhum dos itens no pedido for indexado com êxito. Este erro significa que o sistema está com muita carga e não é possível processar o pedido neste momento.
 
-> [AZURE.NOTE] Neste caso, recomendamos vivamente que desative o código de cliente e aguarde antes de tentar novamente. Isto irá dar ao sistema algum tempo para recuperar, aumentando a possibilidade de êxito de pedidos futuros. Ao repetir rapidamente os seus pedidos só irá prolongar a situação.
+> [!NOTE]
+> Neste caso, recomendamos vivamente que desative o código de cliente e aguarde antes de tentar novamente. Isto irá dar ao sistema algum tempo para recuperar, aumentando a possibilidade de êxito de pedidos futuros. Ao repetir rapidamente os seus pedidos só irá prolongar a situação.
+> 
+> 
 
 Para obter mais informações sobre ações de documentos e as respostas de erros/com êxito, consulte o artigo [Adicionar, Atualizar ou Eliminar documentos](https://msdn.microsoft.com/library/azure/dn798930.aspx). Para obter mais informações sobre outros códigos de estado HTTP que possam ser devolvidos em caso de falha, consulte [Códigos de estado HTTP (Pesquisa do Azure)](https://msdn.microsoft.com/library/azure/dn798925.aspx).
 
 ## Seguinte
 Depois de preencher o seu índice da Azure Search, estará pronto para começar a emitir consultas para procurar documentos. Consulte o artigo [Consultar o Índice da Azure Search](search-query-overview.md) para obter detalhes.
-
-
 
 <!--HONumber=Sep16_HO3-->
 

@@ -1,45 +1,40 @@
-<properties
-   pageTitle="Repor um VPN Gateway do Azure | Microsoft Azure"
-   description="Este artigo explica como repor o VPN Gateway do Azure. O artigo aplica-se a gateways de VPN criados utilizando o modelo de implementação clássica."
-   services="vpn-gateway"
-   documentationCenter="na"
-   authors="cherylmc"
-   manager="carmonm"
-   editor=""
-   tags="azure-service-management"/>
+---
+title: Repor um VPN Gateway do Azure | Microsoft Docs
+description: Este artigo explica como repor o VPN Gateway do Azure. O artigo aplica-se a gateways de VPN criados utilizando o modelo de implementação clássica.
+services: vpn-gateway
+documentationcenter: na
+author: cherylmc
+manager: carmonm
+editor: ''
+tags: azure-service-management
 
-<tags
-   ms.service="vpn-gateway"
-   ms.devlang="na"
-   ms.topic="hero-article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="08/16/2016"
-   ms.author="cherylmc"/>
+ms.service: vpn-gateway
+ms.devlang: na
+ms.topic: hero-article
+ms.tgt_pltfrm: na
+ms.workload: infrastructure-services
+ms.date: 08/16/2016
+ms.author: cherylmc
 
+---
 # Repor um VPN Gateway do Azure com o PowerShell
-
-
 Este artigo explica como repor o VPN Gateway do Azure com cmdlets PowerShell. Estas instruções aplicam-se ao modelo de implementação clássica. Atualmente, não podem ser repostos gateways de rede virtual criados com o modelo de implementação do Resource Manager.
 
 Repor o VPN Gateway do Azure poderá ser útil se perder a conetividade VPN em vários locais num ou mais túneis VPN S2S. Nesta situação, os dispositivos VPN no local estão todos a funcionar corretamente, mas não podem estabelecer túneis IPsec com os gateways de VPN do Azure. Quando utiliza o cmdlet *Reset-AzureVNetGateway*, este reinicia o gateway e, em seguida, volta a aplicar as configurações em vários locais ao mesmo. O gateway mantém o endereço IP público que já tem, ou seja, não terá de atualizar a configuração do router da VPN com um novo endereço IP público para o VPN Gateway do Azure.  
-
 
 Antes de repor o gateway, verifique os itens principais listados abaixo para cada túnel de rede de VPNs (S2S) do IPsec. Qualquer erro de correspondência nos itens desligará os túneis VPN S2S. A verificação e a correção das configurações do VPN Gateway do Azure e do gateway no local evitam reinícios desnecessários e interrupções para as outras ligações nos gateways a funcionar.
 
 Verifique os itens seguintes antes de repor o gateway.
 
-- Os endereços IP de Internet (VIPs) do VPN Gateway do Azure e do gateway de VPN no local estão corretamente configurados nas políticas de VPN do Azure e no local.
-- A chave pré-partilhada tem de ser igual no VPN Gateway do Azure e no gateway no local.
-- Se aplicar uma configuração IPsec/IKE específica, tal como encriptação, algoritmos hash e PFS (Perfect Forward Secrecy), confirme se o VPN Gateway do Azure e o gateway no local têm as mesmas configurações.
-
+* Os endereços IP de Internet (VIPs) do VPN Gateway do Azure e do gateway de VPN no local estão corretamente configurados nas políticas de VPN do Azure e no local.
+* A chave pré-partilhada tem de ser igual no VPN Gateway do Azure e no gateway no local.
+* Se aplicar uma configuração IPsec/IKE específica, tal como encriptação, algoritmos hash e PFS (Perfect Forward Secrecy), confirme se o VPN Gateway do Azure e o gateway no local têm as mesmas configurações.
 
 ## Repor um VPN Gateway com o PowerShell
-
 O cmdlet PowerShell para repor o VPN Gateway do Azure é *Reset-AzureVNetGateway*. Cada VPN Gateway do Azure é composto por duas instâncias da VM em execução com uma configuração ativa/em modo de espera. Quando o comando é emitido, a instância ativa atual do VPN Gateway do Azure será reiniciada imediatamente. Existirá um intervalo breve durante a ativação pós-falha da instância ativa (que está a ser reiniciada) para a instância no modo de espera. O intervalo deve ser inferior a um minuto. 
 
 O exemplo seguinte repõe o VPN Gateway do Azure para a rede virtual denominada "ContosoVNet".
- 
+
         Reset-AzureVNetGateway –VnetName “ContosoVNet” 
 
         Error          :
@@ -55,16 +50,7 @@ Se a ligação não for restaurada após o primeiro reinício, execute o mesmo c
 Depois de dois reinícios, se ainda ocorrerem problemas de conetividade em vários locais, abra um pedido de suporte no Portal Clássico do Azure para contactar o suporte do Microsoft Azure.
 
 ## Passos seguintes
-    
 Veja a [Referência do PowerShell](https://msdn.microsoft.com/library/azure/mt270366.aspx) para obter mais informações sobre este cmdlet.
-
-
-
-
-
-
-
-
 
 <!--HONumber=ago16_HO4-->
 

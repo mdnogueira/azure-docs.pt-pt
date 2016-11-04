@@ -1,26 +1,24 @@
-<properties
- pageTitle="Soluções Azure para Internet das Coisas | Microsoft Azure"
- description="Uma descrição geral do IoT no Azure, incluindo um exemplo de solução de arquitetura e a forma como se relaciona com o IoT Hub do Azure, SDKs do dispositivo e soluções pré-configuradas."
- services="iot-hub"
- documentationCenter=""
- authors="dominicbetts"
- manager="timlt"
- editor=""/>
+---
+title: Soluções Azure para Internet das Coisas | Microsoft Docs
+description: Uma descrição geral do IoT no Azure, incluindo um exemplo de solução de arquitetura e a forma como se relaciona com o IoT Hub do Azure, SDKs do dispositivo e soluções pré-configuradas.
+services: iot-hub
+documentationcenter: ''
+author: dominicbetts
+manager: timlt
+editor: ''
 
-<tags
- ms.service="iot-hub"
- ms.devlang="na"
- ms.topic="get-started-article"
- ms.tgt_pltfrm="na"
- ms.workload="na"
- ms.date="07/19/2016"
- ms.author="dobett"/>
+ms.service: iot-hub
+ms.devlang: na
+ms.topic: get-started-article
+ms.tgt_pltfrm: na
+ms.workload: na
+ms.date: 07/19/2016
+ms.author: dobett
 
-
-[AZURE.INCLUDE [iot-azure-and-iot](../../includes/iot-azure-and-iot.md)]
+---
+[!INCLUDE [iot-azure-and-iot](../../includes/iot-azure-and-iot.md)]
 
 ## Passos seguintes
-
 O IoT Hub do Azure é um serviço do Azure que permite comunicações bidirecionais seguras e fiáveis entre a sua aplicação de back-end e milhões de dispositivos. Permite à aplicação de back-end receber telemetria à escala dos seus dispositivos, encaminhar esses dados para um processador de fluxo de eventos, receber carregamentos de ficheiros a partir de dispositivos e ainda enviar comandos da nuvem para o dispositivo para dispositivos específicos. Pode utilizar o IoT Hub para implementar a sua própria solução de back-end. Além disso, o IoT Hub inclui um registo de identidade do dispositivo utilizado para aprovisionar dispositivos, as suas credenciais de segurança e os seus direitos de ligação ao Hub. Para saber mais sobre o Hub IoT, veja [O que é o Hub IoT?][Ink-iot-hub].
 
 Para saber como o Hub IoT do Azure permite a gestão de dispositivos de IoT baseada em normas para que possa gerir remotamente, configurar e atualizar os seus dispositivos, veja [Descrição geral da gestão de dispositivos do Hub IoT do Azure][lnk-device-management].

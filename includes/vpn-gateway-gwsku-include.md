@@ -2,9 +2,9 @@ Quando cria um gateway de rede virtual, tem de especificar o SKU de gateway que 
 
 O Gateway de VPN pode utilizar os SKUs seguintes:
 
-- Básica
-- Standard
-- HighPerformance
+* Básica
+* Standard
+* HighPerformance
 
 <!--HONumber=Sep16_HO4-->
 

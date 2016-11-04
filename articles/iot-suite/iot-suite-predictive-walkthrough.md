@@ -1,31 +1,27 @@
-<properties
- pageTitle="Instruções de manutenção preditiva | Microsoft Azure"
- description="Instruções sobre a solução pré-configurada de manutenção preditiva do Azure IoT."
- services=""
- suite="iot-suite"
- documentationCenter=""
- authors="aguilaaj"
- manager="timlt"
- editor=""/>
+---
+title: Instruções de manutenção preditiva | Microsoft Docs
+description: Instruções sobre a solução pré-configurada de manutenção preditiva do Azure IoT.
+services: ''
+suite: iot-suite
+documentationcenter: ''
+author: aguilaaj
+manager: timlt
+editor: ''
 
-<tags
- ms.service="iot-suite"
- ms.devlang="na"
- ms.topic="get-started-article"
- ms.tgt_pltfrm="na"
- ms.workload="na"
- ms.date="08/17/2016"
- ms.author="araguila"/>
+ms.service: iot-suite
+ms.devlang: na
+ms.topic: get-started-article
+ms.tgt_pltfrm: na
+ms.workload: na
+ms.date: 08/17/2016
+ms.author: araguila
 
-
+---
 # Instruções sobre a solução pré-configurada de manutenção preditiva
-
 ## Introdução
-
 A solução pré-configurada de manutenção preditiva do IoT Suite é uma solução ponto-a-ponto para um cenário de negócio que prevê o momento em que poderá ocorrer uma falha. Pode utilizar, de forma pró-ativa, esta solução pré-configurada para atividades como a manutenção de otimização. A solução combina os serviços principais do Azure IoT Suite, incluindo uma área de trabalho [Azure Machine Learning][lnk_machine_learning]. Esta área de trabalho contém experimentações, com base num conjunto de dados de exemplo público, para prever a Vida Útil Remanescente (RUL) de um motor de aeronave. A solução implementa completamente o cenário empresarial IoT como um ponto de partida para que possa planear e implementar uma solução que satisfaça os seus próprios requisitos de negócio.
 
 ## Arquitetura lógica
-
 O diagrama que se segue descreve os componentes lógicos da solução pré-configurada:
 
 ![][img-architecture]
@@ -39,7 +35,6 @@ O item a verde é um dispositivo simulado que representa o motor de uma aeronave
 Os itens a cinzento representam componentes que implementam capacidades de *administração do dispositivo*. A atual versão da solução pré-configurada de manutenção preditiva não aprovisiona estes recursos. Para saber mais sobre a administração do dispositivo, consulte o artigo [solução pré-configurada de monitorização remota][lnk-remote-monitoring].
 
 ## Dispositivos simulados
-
 Na solução pré-configurada, um dispositivo simulado representa o motor de uma aeronave. A solução é aprovisionada com dois motores que mapeiam para uma única aeronave. Cada motor emite quatro tipos de telemetria: Sensor 9, Sensor 11, Sensor 14 e Sensor 15, que fornecem os dados necessários para que o modelo do Machine Learning possa calcular a Vida Útil Remanescente (RUL) desse motor. Cada dispositivo simulado envia as seguintes mensagens de telemetria ao IoT Hub:
 
 *Ciclo de contagem*. Um ciclo representa um voo concluído com duração variável entre 2 e 10 horas, no qual são capturados dados de telemetria a cada meia hora durante o voo.
@@ -49,37 +44,31 @@ Na solução pré-configurada, um dispositivo simulado representa o motor de uma
 Os dispositivos simulados podem processar os seguintes comandos enviados a partir de um IoT Hub:
 
 | Comando | Descrição |
-|---------|-------------|
-| StartTelemetry | Controla o estado da simulação.<br/>Inicia o dispositivo que envia a telemetria     |
-| StopTelemetry  | Controla o estado da simulação.<br/>Para o dispositivo que envia a telemetria |
+| --- | --- |
+| StartTelemetry |Controla o estado da simulação.<br/>Inicia o dispositivo que envia a telemetria |
+| StopTelemetry |Controla o estado da simulação.<br/>Para o dispositivo que envia a telemetria |
 
 O IoT Hub reconhece o comando do dispositivo.
 
 ## Tarefa do Azure Stream Analytics
-
 **Tarefa: Telemetria** intervém no fluxo de telemetria de entrada do dispositivo utilizando duas instruções. A primeira seleciona todas as telemetrias dos dispositivos e envia esses dados ao Blob Storage, onde serão visualizados na aplicação Web. A segunda instrução calcula os valores médios do sensor numa janela deslizante e envia esses dados através do Event Hub a um **processador de eventos**.
 
 ## Processador de eventos
-
 O **processador de eventos** obtém os valores médios do sensor para um ciclo concluído. Transmite esses valores para uma API que expõe o modelo formado do Machine Learning para calcular a RUL de um motor.
 
 ## Azure Machine Learning
-
 Para obter mais informações sobre a criação do modelo a partir do conjunto de dados original, consulte o artigo [Modelo de Manutenção Preditiva do Cortana Intelligence Gallery][lnk-cortana-analytics].
 
 ## Comecemos o nosso percurso
-
 Esta secção explica-lhe os componentes da solução, descreve o caso de utilização prevista e fornece exemplos.
 
 ### Dashboard de Manutenção Preventiva
-
 Esta página na aplicação Web utiliza os controlos do PowerBI JavaScript (consulte o [repositório PoweBI-visuals][Ink powerbi]) para visualizar:
 
-- Os dados de saída das tarefas do Stream Analytics no Blob Storage.
-- A RUL e contagem de ciclo por motor de aeronave.
+* Os dados de saída das tarefas do Stream Analytics no Blob Storage.
+* A RUL e contagem de ciclo por motor de aeronave.
 
 ### Observar o comportamento da solução na nuvem
-
 No Portal do Azure, navegue para o grupo de recursos com o nome da solução que escolheu para ver os recursos aprovisionados.
 
 ![][img-resource-group]
@@ -107,16 +96,14 @@ A simulação é executada através do conjunto de dados completos para 148 cicl
 Pode parar a simulação a qualquer momento mas, se clicar em **Iniciar Simulação**, a simulação partirá novamente do início do conjunto de dados.
 
 ## Passos seguintes
-
 Agora que já executou a solução pré-configurada de manutenção preditiva, poderá querer modificá-la. Para tal, consulte [Orientações sobre a personalização de soluções pré-configuradas][lnk-customize].
 
 A mensagem de blogue [Manutenção Preditiva - Sob Definições Avançadas - IoT Suite](http://social.technet.microsoft.com/wiki/contents/articles/33527.iot-suite-under-the-hood-predictive-maintenance.aspx) de TechNet fornece detalhes adicionais sobre a solução pré-configurada de manutenção preditiva.
 
 Também pode explorar algumas das outras funcionalidades e capacidades das soluções pré-configuradas do IoT Suite:
 
-- [Perguntas mais frequentes sobre o IoT Suite][lnk-faq]
-- [Segurança de IoT a partir do zero][lnk-security-groundup]
-
+* [Perguntas mais frequentes sobre o IoT Suite][lnk-faq]
+* [Segurança de IoT a partir do zero][lnk-security-groundup]
 
 [img-architecture]: media/iot-suite-predictive-walkthrough/architecture.png
 [img-resource-group]: media/iot-suite-predictive-walkthrough/resource-group.png

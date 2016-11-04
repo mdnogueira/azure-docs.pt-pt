@@ -1,21 +1,22 @@
-<properties
-   pageTitle="Microsoft Power BI Embedded – Incorporar um relatório do Power BI com um IFrame"
-   description="Microsoft Power BI Embedded – O código essencial para integrar um relatório na aplicação, como se autenticar com o token de aplicação do Power BI Embedded, como obter relatórios"
-   services="power-bi-embedded"
-   documentationCenter=""
-   authors="minewiskan"
-   manager="NA"
-   editor=""
-   tags=""/>
-<tags
-   ms.service="power-bi-embedded"
-   ms.devlang="NA"
-   ms.topic="get-started-article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="powerbi"
-   ms.date="07/19/2016"
-   ms.author="owend"/>
+---
+title: Microsoft Power BI Embedded – Incorporar um relatório do Power BI com um IFrame
+description: Microsoft Power BI Embedded – O código essencial para integrar um relatório na aplicação, como se autenticar com o token de aplicação do Power BI Embedded, como obter relatórios
+services: power-bi-embedded
+documentationcenter: ''
+author: minewiskan
+manager: NA
+editor: ''
+tags: ''
 
+ms.service: power-bi-embedded
+ms.devlang: NA
+ms.topic: get-started-article
+ms.tgt_pltfrm: NA
+ms.workload: powerbi
+ms.date: 07/19/2016
+ms.author: owend
+
+---
 # Incorporar um relatório do Power BI com um IFrame
 Este artigo mostra-lhe o código essencial para utilizar a API REST do **Power BI Embedded**, tokens de aplicação, um IFrame e JavaScript para integrar ou incorporar um relatório na aplicação.
 
@@ -25,23 +26,23 @@ Neste artigo, vamos percorrer os passos para incorporar um relatório na aplica�
 
 Aqui estão os passos necessários para integrar um relatório:
 
-- Passo 1: [Obter um relatório numa área de trabalho](#GetReport). Neste passo, utiliza-se um fluxo de token de aplicação para obter um token de acesso para chamar a operação REST [Obter Relatórios](https://msdn.microsoft.com/library/mt711510.aspx). Depois de obter um relatório na lista **Obter relatórios**, pode incorporá-lo numa aplicação com um elemento **IFrame**.
-- Passo 2: [Incorporar um relatório numa aplicação](#EmbedReport). Neste passo, utiliza-se um token de incorporação para um relatório, JavaScript e um IFrame para integrar ou incorporar um relatório numa aplicação Web.
+* Passo 1: [Obter um relatório numa área de trabalho](#GetReport). Neste passo, utiliza-se um fluxo de token de aplicação para obter um token de acesso para chamar a operação REST [Obter Relatórios](https://msdn.microsoft.com/library/mt711510.aspx). Depois de obter um relatório na lista **Obter relatórios**, pode incorporá-lo numa aplicação com um elemento **IFrame**.
+* Passo 2: [Incorporar um relatório numa aplicação](#EmbedReport). Neste passo, utiliza-se um token de incorporação para um relatório, JavaScript e um IFrame para integrar ou incorporar um relatório numa aplicação Web.
 
 Se pretender executar o exemplo, transfira o exemplo [Integrar um relatório com um IFrame](https://github.com/Azure-Samples/power-bi-embedded-iframe) no GitHub e configure três definições Web.Config:
 
-- **AccessKey**: utiliza-se um **AccessKey** para gerar um Token Web JSON (JWT) que é utilizado para obter relatórios e incorporar um relatório.
-- **Nome da Coleção da Área de Trabalho**: identifica a área de trabalho.
-- **ID da área de trabalho**: um ID exclusivo para a área de trabalho
+* **AccessKey**: utiliza-se um **AccessKey** para gerar um Token Web JSON (JWT) que é utilizado para obter relatórios e incorporar um relatório.
+* **Nome da Coleção da Área de Trabalho**: identifica a área de trabalho.
+* **ID da área de trabalho**: um ID exclusivo para a área de trabalho
 
 Para saber como obter uma Chave de Acesso, o Nome da Coleção da Área de Trabalho e o ID da Área de Trabalho a partir do Portal do Azure, veja [Get started with Microsoft Power BI Embedded (Introdução ao Microsoft Power BI Embedded)](power-bi-embedded-get-started.md).
 
 <a name="GetReport"/>
-## Obter um relatório numa área de trabalho
 
+## Obter um relatório numa área de trabalho
 Para integrar um relatório numa aplicação, precisa da **ID** e do **embedUrl** do relatório. Para os obter, tem de chamar a operação REST [Obter Relatórios](https://msdn.microsoft.com/library/mt711510.aspx) e escolher um relatório na lista JSON.
 
-### Resposta JSON de Obter relatórios 
+### Resposta JSON de Obter relatórios
 ```
 {
   "@odata.context":"https://api.powerbi.com/v1.0/collections/{WorkspaceName}/workspaces/{WorkspaceId}/$metadata#reports","value":[
@@ -96,13 +97,13 @@ protected void getReportsButton_Click(object sender, EventArgs e)
 ```
 
 <a name="EmbedReport"/>
-## Incorporar um relatório numa aplicação
 
+## Incorporar um relatório numa aplicação
 Antes de poder incorporar um relatório na aplicação, precisa de um token de incorporação para um relatório. Este token é semelhante a um token de aplicação que se utiliza para chamar as operações REST do Power BI Embedded, mas é gerado para um recurso de relatório em vez de um recurso REST. Segue-se o código para obter um token de aplicação para um relatório.
 
 <a name="EmbedReportToken"/>
-### Obter um token de aplicação para um relatório
 
+### Obter um token de aplicação para um relatório
 ```
 protected void getReportAppTokenButton_Click(object sender, EventArgs e)
 {
@@ -120,12 +121,11 @@ protected void getReportAppTokenButton_Click(object sender, EventArgs e)
 ```
 
 <a name="EmbedReportJS"/>
-### Incorporar relatório na aplicação
 
+### Incorporar relatório na aplicação
 Para incorporar um relatório do **Power BI** para a aplicação, utilize um IFrame e código JavaScript. Segue-se um exemplo de IFrame e código JavaScript para incorporar um relatório. Para ver todo o código de exemplo para incorporar um relatório, consulte o artigo de exemplo [Integrar um relatório com um IFrame](https://github.com/Azure-Samples/power-bi-embedded-iframe) em GitHub.
 
-![Iframe](media\power-bi-embedded-integrate-report\Iframe.png)
-
+![Iframe](media\\power-bi-embedded-integrate-report\\Iframe.png)
 
 ```
 window.onload = function () {
@@ -170,9 +170,7 @@ function postActionLoadReport() {
 Quando tiver um relatório incorporado na aplicação, pode filtrar o relatório. A secção seguinte mostra como filtrar um relatório com uma sintaxe de URL.
 
 ## Filtrar um relatório
-
 Pode filtrar um relatório incorporado utilizando uma sintaxe de URL. Para fazê-lo, adicione um parâmetro de cadeia de consulta ao url de src do iFrame com o filtro especificado. Pode **Filtrar por um valor** e **Ocultar o painel de filtro**.
-
 
 **Filtrar por um valor**
 
@@ -190,7 +188,10 @@ Por exemplo, poderia filtrar por uma Cadeia de Armazéns “Lindseys”. A parte
 $filter=Store/Chain%20eq%20'Lindseys'
 ```
 
-> [AZURE.NOTE] {tableName/fieldName} não pode incluir espaços nem carateres especiais. {fieldValue} aceita um valor único de categoria.
+> [!NOTE]
+> {tableName/fieldName} não pode incluir espaços nem carateres especiais. {fieldValue} aceita um valor único de categoria.
+> 
+> 
 
 **Ocultar o Painel de Filtro**
 
@@ -201,18 +202,15 @@ Para ocultar o **painel de filtro**, adicionar **filterPaneEnabled** à cadeia d
 ```
 
 ## Recursos adicionais
-
 Neste artigo, foi apresentado o código para integrar um relatório do **Power BI** na aplicação. Veja também estes exemplos adicionais no GitHub:
 
-- [Exemplo Integrar um relatório com um IFrame](https://github.com/Azure-Samples/power-bi-embedded-iframe)
-- [Aplicação Web do dashboard de exemplo](http://go.microsoft.com/fwlink/?LinkId=761493)
+* [Exemplo Integrar um relatório com um IFrame](https://github.com/Azure-Samples/power-bi-embedded-iframe)
+* [Aplicação Web do dashboard de exemplo](http://go.microsoft.com/fwlink/?LinkId=761493)
 
 ## Consultar Também
-- [System.IdentityModel.Tokens.SigningCredentials](https://msdn.microsoft.com/library/system.identitymodel.tokens.signingcredentials.aspx)
-- [System.IdentityModel.Tokens.JwtSecurityToken](https://msdn.microsoft.com/library/system.identitymodel.tokens.jwtsecuritytoken.aspx)
-- [System.IdentityModel.Tokens.JwtSecurityTokenHandler](https://msdn.microsoft.com/library/system.identitymodel.tokens.signingcredentials.aspx)
-
-
+* [System.IdentityModel.Tokens.SigningCredentials](https://msdn.microsoft.com/library/system.identitymodel.tokens.signingcredentials.aspx)
+* [System.IdentityModel.Tokens.JwtSecurityToken](https://msdn.microsoft.com/library/system.identitymodel.tokens.jwtsecuritytoken.aspx)
+* [System.IdentityModel.Tokens.JwtSecurityTokenHandler](https://msdn.microsoft.com/library/system.identitymodel.tokens.signingcredentials.aspx)
 
 <!--HONumber=Aug16_HO1-->
 

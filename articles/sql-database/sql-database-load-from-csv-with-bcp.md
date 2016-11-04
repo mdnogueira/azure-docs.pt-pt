@@ -1,49 +1,41 @@
-<properties
-   pageTitle="Carregar dados do ficheiro CSV para a Base de Dados SQL do Azure (bcp) | Microsoft Azure"
-   description="Para um tamanho de dados de pequena dimensão, utilize o bcp para importar dados para a Base de Dados SQL do Azure."
-   services="sql-database"
-   documentationCenter="NA"
-   authors="CarlRabeler"
-   manager="jhubbard"
-   editor=""/>
+---
+title: Carregar dados do ficheiro CSV para a Base de Dados SQL do Azure (bcp) | Microsoft Docs
+description: Para um tamanho de dados de pequena dimensão, utilize o bcp para importar dados para a Base de Dados SQL do Azure.
+services: sql-database
+documentationcenter: NA
+author: CarlRabeler
+manager: jhubbard
+editor: ''
 
-<tags
-   ms.service="sql-database"
-   ms.devlang="NA"
-   ms.topic="get-started-article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-services"
-   ms.date="09/13/2016"
-   ms.author="carlrab"/>
+ms.service: sql-database
+ms.devlang: NA
+ms.topic: get-started-article
+ms.tgt_pltfrm: NA
+ms.workload: data-services
+ms.date: 09/13/2016
+ms.author: carlrab
 
-
-
+---
 # Carregar dados do ficheiro CSV para o SQL Data Warehouse (ficheiros simples)
-
 Pode utilizar o utilitário da linha de comandos do bcp para importar dados a partir de um ficheiro CSV para uma Base de Dados SQL do Azure.
 
 ## Antes de começar
-
 ### Pré-requisitos
-
 Para seguir este tutorial, é necessário:
 
-- Uma base de dados e um servidor lógico da Base de Dados SQL do Azure
-- Ter instalado o utilitário bcp de linha de comandos
-- Ter instalado o utilitário sqlcmd de linha de comandos
+* Uma base de dados e um servidor lógico da Base de Dados SQL do Azure
+* Ter instalado o utilitário bcp de linha de comandos
+* Ter instalado o utilitário sqlcmd de linha de comandos
 
-Pode transferir os utilitários bcp e sqlcmd a partir do [Centro de Transferências da Microsoft][].
+Pode transferir os utilitários bcp e sqlcmd a partir do [Centro de Transferências da Microsoft][Centro de Transferências da Microsoft].
 
 ### Dados no formato ASCII ou UTF-16
-
 Se estiver a experimentar este tutorial com os seus dados, estes têm de utilizar a codificação ASCII ou UTF-16, uma vez que o bcp não suporta UTF-8. 
 
 ## 1. Criar uma tabela de destino
-
 Defina uma tabela na Base de Dados SQL como a tabela de destino. As colunas na tabela têm de corresponder aos dados em cada linha do ficheiro de dados.
 
 Para criar uma tabela, abra uma linha de comandos e utilize sqlcmd.exe para executar o seguinte comando:
-
 
 ```sql
 sqlcmd.exe -S <server name> -d <database name> -U <username> -P <password> -I -Q "
@@ -59,7 +51,6 @@ sqlcmd.exe -S <server name> -d <database name> -U <username> -P <password> -I -Q
 
 
 ## 2. Criar um ficheiro de dados de origem
-
 Abra o Bloco de Notas e copie as seguintes linhas de dados para um novo ficheiro de texto e, em seguida, guarde este ficheiro no diretório temporário local, C:\Temp\DimDate2.txt. Estes dados estão no formato ASCII.
 
 ```
@@ -98,24 +89,22 @@ sqlcmd.exe -S <server name> -d <database name> -U <username> -P <password> -I -Q
 
 Os resultados devem ter o seguinte aspeto:
 
-DateId |CalendarQuarter |FiscalQuarter
------------ |--------------- |-------------
-20150101 |1 |3
-20150201 |1 |3
-20150301 |1 |3
-20150401 |2 |4
-20150501 |2 |4
-20150601 |2 |4
-20150701 |3 |1
-20150801 |3 |1
-20150801 |3 |1
-20151001 |4 |2
-20151101 |4 |2
-20151201 |4 |2
-
+| DateId | CalendarQuarter | FiscalQuarter |
+| --- | --- | --- |
+| 20150101 |1 |3 |
+| 20150201 |1 |3 |
+| 20150301 |1 |3 |
+| 20150401 |2 |4 |
+| 20150501 |2 |4 |
+| 20150601 |2 |4 |
+| 20150701 |3 |1 |
+| 20150801 |3 |1 |
+| 20150801 |3 |1 |
+| 20151001 |4 |2 |
+| 20151101 |4 |2 |
+| 20151201 |4 |2 |
 
 ## Passos seguintes
-
 Para migrar uma base de dados do SQL Server, veja [SQL Server database migration (Migração da base de dados do SQL Server)](sql-database-cloud-migrate.md).
 
 <!--MSDN references-->

@@ -1,15 +1,13 @@
 ## Implementar o modelo ARM com o PowerShell
-
 Para implementar o modelo ARM que transferiu com o PowerShell, siga os passos abaixo:
 
 1. Se nunca tiver utilizado o Azure PowerShell, veja [How to Install and Configure Azure PowerShell (Como instalar e configurar o Azure PowerShell)](../articles/powershell-install-configure.md) e siga as instruções até ao fim para iniciar sessão no Azure e selecionar a sua subscrição.
-
-3. Se necessário, execute o cmdlet **`New-AzureRmResourceGroup`** para criar um novo grupo de recursos. O comando abaixo cria um grupo de recursos com o nome *TestRG* na região do Azure *EUA Central*. Para obter mais informações sobre os grupos de recursos, veja [Descrição Geral do Azure Resource Manager](../articles/resource-group-overview.md).
-
+2. Se necessário, execute o cmdlet **`New-AzureRmResourceGroup`** para criar um novo grupo de recursos. O comando abaixo cria um grupo de recursos com o nome *TestRG* na região do Azure *EUA Central*. Para obter mais informações sobre os grupos de recursos, veja [Descrição Geral do Azure Resource Manager](../articles/resource-group-overview.md).
+   
         New-AzureRmResourceGroup -Name TestRG -Location centralus
-        
+   
     O resultado esperado para o comando acima é o seguinte:
-
+   
         ResourceGroupName : TestRG
         Location          : centralus
         ProvisioningState : Succeeded
@@ -19,14 +17,13 @@ Para implementar o modelo ARM que transferiu com o PowerShell, siga os passos ab
                             =======  ==========
                             *
         ResourceId        : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/TestRG
-
-4. Execute o cmdlet **`New-AzureRmResourceGroupDeployment`** para implementar a nova VNet com o modelo e os ficheiros de parâmetros que transferiu e alterou acima.
-
+3. Execute o cmdlet **`New-AzureRmResourceGroupDeployment`** para implementar a nova VNet com o modelo e os ficheiros de parâmetros que transferiu e alterou acima.
+   
         New-AzureRmResourceGroupDeployment -Name TestVNetDeployment -ResourceGroupName TestRG `
             -TemplateFile C:\ARM\azuredeploy.json -TemplateParameterFile C:\ARM\azuredeploy-parameters.json
-            
+   
     O resultado esperado para o comando acima é o seguinte:
-        
+   
         DeploymentName    : TestVNetDeployment
         ResourceGroupName : TestRG
         ProvisioningState : Succeeded
@@ -43,16 +40,14 @@ Para implementar o modelo ARM que transferiu com o PowerShell, siga os passos ab
                             subnet1Name      String                     FrontEnd
                             subnet2Prefix    String                     192.168.2.0/24
                             subnet2Name      String                     BackEnd
-        
+   
         Outputs           :
-
-5. Execute o cmdlet **`Get-AzureRmVirtualNetwork`** para ver as propriedades da nova Vnet, como mostrado abaixo.
-
+4. Execute o cmdlet **`Get-AzureRmVirtualNetwork`** para ver as propriedades da nova Vnet, como mostrado abaixo.
 
         Get-AzureRmVirtualNetwork -ResourceGroupName TestRG -Name TestVNet
-        
+
     O resultado esperado para o comando acima é o seguinte:
-        
+
         Name              : TestVNet
         ResourceGroupName : TestRG
         Location          : centralus
