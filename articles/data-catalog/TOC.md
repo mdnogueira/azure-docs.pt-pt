@@ -1,38 +1,38 @@
-# Overview
-## [What is Data Catalog?](data-catalog-what-is-data-catalog.md)
-## [Common scenarios](data-catalog-common-scenarios.md)
-## [Supported data sources](data-catalog-dsr.md)
-## [What’s new](data-catalog-whats-new.md)
+# Descrição geral
+## [O que é o Catálogo de Dados?](data-catalog-what-is-data-catalog.md)
+## [Cenários comuns](data-catalog-common-scenarios.md)
+## [Origens de dados suportadas](data-catalog-dsr.md)
+## [Novidades](data-catalog-whats-new.md)
 
-# Get Started
-## [Get started with Azure Data Catalog](data-catalog-get-started.md)
-## [Adopting Azure Data Catalog](data-catalog-adopting-data-catalog.md)
-## [Azure Data Catalog prerequisites](data-catalog-prerequisites.md)
-## [Frequently asked questions](data-catalog-frequently-asked-questions.md)
+# Introdução
+## [Introdução ao Catálogo de Dados do Azure](data-catalog-get-started.md)
+## [Adotar o Catálogo de Dados do Azure](data-catalog-adopting-data-catalog.md)
+## [Pré-requisitos do Catálogo de Dados do Azure](data-catalog-prerequisites.md)
+## [Perguntas mais frequentes](data-catalog-frequently-asked-questions.md)
 
-# How To
-## [Register data sources](data-catalog-how-to-register.md)
-## [Discover data sources](data-catalog-how-to-discover.md)
-## [Annotate data sources](data-catalog-how-to-annotate.md)
-## [Document data sources](data-catalog-how-to-documentation.md)
-## [Connect to data sources](data-catalog-how-to-connect.md)
-## [Work with big data sources](data-catalog-how-to-big-data.md)
-## [Data profile data sources](data-catalog-how-to-data-profile.md)
-## [Manage data assets](data-catalog-how-to-manage.md)
-## [Save searches and pin data assets](data-catalog-how-to-save-pin.md)
-## [Set up the business glossary](data-catalog-how-to-business-glossary.md)
+# Procedimento
+## [Registar origens de dados](data-catalog-how-to-register.md)
+## [Detetar origens de dados](data-catalog-how-to-discover.md)
+## [Anotar origens de dados](data-catalog-how-to-annotate.md)
+## [Documentar origens de dados](data-catalog-how-to-documentation.md)
+## [Ligar a origens de dados](data-catalog-how-to-connect.md)
+## [Trabalhar com origens de macrodados](data-catalog-how-to-big-data.md)
+## [Origens de dados de perfis de dados](data-catalog-how-to-data-profile.md)
+## [Gerir recursos de dados](data-catalog-how-to-manage.md)
+## [Guardar pesquisas e afixar recursos de dados](data-catalog-how-to-save-pin.md)
+## [Configurar o glossário comercial](data-catalog-how-to-business-glossary.md)
 
-## Develop
-### [Developer concepts](data-catalog-developer-concepts.md)
-### [Developer samples](data-catalog-samples.md)
+## Programar
+### [Conceitos de programador](data-catalog-developer-concepts.md)
+### [Exemplos de programador](data-catalog-samples.md)
 
-# Reference
-## [Keyboard shortcuts for Azure Data Catalog](data-catalog-keyboard-shortcuts.md)
-## [Terminology](data-catalog-terminology.md)
-## [Release notes](data-catalog-release-notes.md)
+# Referência
+## [Atalhos de teclado do Catálogo de Dados do Azure](data-catalog-keyboard-shortcuts.md)
+## [Terminologia](data-catalog-terminology.md)
+## [Notas de versão](data-catalog-release-notes.md)
 
-# Resources
-## [Pricing](https://azure.microsoft.com/pricing/details/data-catalog/)
+# Recursos
+## [Preços](https://azure.microsoft.com/pricing/details/data-catalog/)
 
 <!--HONumber=Nov16_HO2-->
 

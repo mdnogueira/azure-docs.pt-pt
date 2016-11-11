@@ -1,164 +1,156 @@
-# Overview
-## [What is Application Insights?](app-insights-overview.md)
-## [Detect, triage, and diagnose issues in web apps](app-insights-detect-triage-diagnose.md)
+# Descrição geral
+## [O que é o Application Insights?](app-insights-overview.md)
+## [Como funciona](app-insights-detect-triage-diagnose.md)
 
-# Get Started
-## Azure
-### [Azure web apps](app-insights-azure-web-apps.md)
-### [Azure Cloud Services](app-insights-cloudservices.md)
+# Introdução
+## Monitorizar o Azure
+### [Aplicações Web do Azure](app-insights-azure-web-apps.md)
+### [Serviços em Nuvem do Azure](app-insights-cloudservices.md)
 
-## ASP.NET
-### [Web apps](app-insights-asp-net.md)
-### [Web apps already live](app-insights-monitor-performance-live-website-now.md)
-### [Windows services](app-insights-windows-services.md)
-### [Windows desktop](app-insights-windows-desktop.md)
+## Monitorizar aplicações ASP.NET
+### [Aplicações Web](app-insights-asp-net.md)
+### [Aplicações Web já em direto](app-insights-monitor-performance-live-website-now.md)
+### [Serviços Windows](app-insights-windows-services.md)
+### [Ambiente de trabalho do Windows](app-insights-windows-desktop.md)
 
-## Java
-### [Web apps](app-insights-java-get-started.md)
-### [Web apps - runtime](app-insights-java-live.md)
-### [Docker apps](app-insights-docker.md)
+## Monitorizar aplicações Java
+### [Aplicações Web](app-insights-java-get-started.md)
+### [Aplicações Web – runtime](app-insights-java-live.md)
+### [Aplicações Docker](app-insights-docker.md)
 
-## Web pages
+## Monitorizar páginas Web
 ### [JavaScript](app-insights-javascript.md)
 
-## Other platforms
-### [Node.js apps](app-insights-nodejs.md)
-### [SharePoint sites](app-insights-sharepoint.md)
-### [More platforms](app-insights-platforms.md)
+## Monitorizar outras plataformas
+### [Aplicações Node.js](app-insights-nodejs.md)
+### [Sites do SharePoint](app-insights-sharepoint.md)
+### [Mais plataformas](app-insights-platforms.md)
 
+## [FAQ do ASP.NET](app-insights-troubleshoot-faq.md)
 
-# How To
+# Procedimento
+## Planear e conceber
 
-## Configure
+### [Diagnósticos avançados de aplicações Web e serviços](app-insights-devops.md)
+### [Análise de Programador com o Application Insights e o HockeyApp](app-insights-developer-analytics.md)
+### [Monitorizar o desempenho nas aplicações Web](app-insights-web-monitor-performance.md)
+### [Análise de utilização com o Application Insights](app-insights-overview-usage.md)
+### [Separar recursos do Application Insights](app-insights-separate-resources.md)
+### [Como... no Application Insights?](app-insights-how-do-i.md)
+
+## Configurar
 
 ### Azure
-#### [Diagnostics](app-insights-azure-diagnostics.md)
+#### [Diagnóstico](app-insights-azure-diagnostics.md)
 
 ### ASP.NET
-#### [Collect more telemetry](app-insights-asp-net-more.md)
-#### [Exceptions](app-insights-asp-net-exceptions.md)
-#### [Log traces](app-insights-asp-net-trace-logs.md)
-#### [Performance counters](app-insights-performance-counters.md)
-#### [Dependencies](app-insights-asp-net-dependencies.md)
-#### [Release annotations](app-insights-annotations.md)
+#### [Recolher mais telemetria](app-insights-asp-net-more.md)
+#### [Exceções](app-insights-asp-net-exceptions.md)
+#### [Rastreios de registos](app-insights-asp-net-trace-logs.md)
+#### [Contadores de desempenho](app-insights-performance-counters.md)
+#### [Dependências](app-insights-asp-net-dependencies.md)
+#### [Anotações da versão](app-insights-annotations.md)
 
 
 ### J2EE
-#### [Log traces](app-insights-java-trace-logs.md)
-#### [Unix metrics](app-insights-java-collectd.md)
-#### [Dependencies](app-insights-java-agent.md)
+#### [Rastreios de registos](app-insights-java-trace-logs.md)
+#### [Métricas do Unix](app-insights-java-collectd.md)
+#### [Dependências](app-insights-java-agent.md)
 
-### Alerts
+### Alertas
 
-#### [Availability](app-insights-monitor-web-app-availability.md)
-#### [Metric Alerts](app-insights-alerts.md)
+#### [Disponibilidade](app-insights-monitor-web-app-availability.md)
+#### [Alertas de Métricas](app-insights-alerts.md)
 
-### [Smart detection](app-insights-proactive-diagnostics.md)
-#### [Failure detection](app-insights-proactive-failure-diagnostics.md)
-#### [Anomaly detection](app-insights-proactive-performance-diagnostics.md)
+### [Deteção inteligente](app-insights-proactive-diagnostics.md)
+#### [Deteção de falhas](app-insights-proactive-failure-diagnostics.md)
+#### [Deteção de anomalias](app-insights-proactive-performance-diagnostics.md)
 
-## Analyze
+## Analisar
 
-### Application Insights portal
+### Portal do Application Insights
 
 #### [Dashboards](app-insights-dashboards.md)
-#### [Search](app-insights-diagnostic-search.md)
-#### [Metrics](app-insights-metrics-explorer.md)
-#### Analytics
+#### [Pesquisa](app-insights-diagnostic-search.md)
+#### [Métricas](app-insights-metrics-explorer.md)
+#### Análise
 
-##### [Analytics](app-insights-analytics.md)
-##### [A tour of Analytics](app-insights-analytics-tour.md)
-##### [Using Analytics](app-insights-analytics-using.md)
+##### [Análise](app-insights-analytics.md)
+##### [Uma visita guiada da Análise](app-insights-analytics-tour.md)
+##### [Utilizar a Análise](app-insights-analytics-using.md)
 
-#### [Application Map](app-insights-app-map.md)
-#### [HockeyApp data](app-insights-hockeyapp-bridge-app.md)
-#### [Create a resource](app-insights-create-new-resource.md)
-
-
+#### [Mapeamento de Aplicações](app-insights-app-map.md)
+#### [Dados do HockeyApp](app-insights-hockeyapp-bridge-app.md)
+#### [Criar um grupo de recursos](app-insights-create-new-resource.md)
 
 ### Visual Studio
 
-#### [F5 insights](app-insights-visual-studio.md)
-#### [Trends](app-insights-visual-studio-trends.md)
+#### [Informações do F5](app-insights-visual-studio.md)
+#### [Tendências](app-insights-visual-studio-trends.md)
 #### [CodeLens](app-insights-visual-studio-codelens.md)
 
+## Automatizar
 
-## Automate
-
-### [PowerShell configuration](app-insights-powershell.md)
-### [Create resources](app-insights-powershell-script-create-resource.md)
-### [Set alerts](app-insights-powershell-alerts.md)
-### [Get Azure diagnostics](app-insights-powershell-azure-diagnostics.md)
-
-
-## Integrate
-
-### [Continuous export](app-insights-export-telemetry.md)
-### [Export to Power BI](app-insights-export-power-bi.md)
+### [Configuração do PowerShell](app-insights-powershell.md)
+### [Criar recursos](app-insights-powershell-script-create-resource.md)
+### [Definir alertas](app-insights-powershell-alerts.md)
+### [Obter diagnóstico do Azure](app-insights-powershell-azure-diagnostics.md)
 
 
-## Develop
+## Integrar
 
-### [API for custom events and metrics ](app-insights-api-custom-events-metrics.md)
-### [Filtering and preprocessing telemetry](app-insights-api-filtering-sampling.md)
-### [ASP.NET Core](app-insights-asp-net-core.md)
-
-
-## Plan and design
-
-### [Deep diagnostics for web apps and services](app-insights-devops.md)
-### [Developer Analytics with Application Insights and HockeyApp](app-insights-developer-analytics.md)
-### [Monitor performance in web applications](app-insights-web-monitor-performance.md)
-### [Usage analysis with Application Insights](app-insights-overview-usage.md)
-### [Separating Application Insights resources](app-insights-separate-resources.md)
-### [How do I ... in Application Insights?](app-insights-how-do-i.md)
-
-## Manage
-
-### [Manage pricing and quota](app-insights-pricing.md)
-### [Application Performance Monitoring using Application Insights for SCOM](app-insights-scom.md)
+### [Exportação contínua](app-insights-export-telemetry.md)
+### [Exportar para o Power BI](app-insights-export-power-bi.md)
 
 
-## Secure
+## Programar
 
-### [Data collection, retention and storage](app-insights-data-retention-privacy.md)
-### [Resources, roles, and access control](app-insights-resources-roles-access-control.md)
+### [API de métricas e eventos personalizados](app-insights-api-custom-events-metrics.md)
+### [Filtragem e processamento prévio de telemetria](app-insights-api-filtering-sampling.md)
+### [Núcleo do ASP.NET](app-insights-asp-net-core.md)
 
 
-## Troubleshoot
+## Gerir
 
-### [Troubleshooting no data - Application Insights for .NET](app-insights-asp-net-troubleshoot-no-data.md)
-### [Questions - Application Insights for ASP.NET](app-insights-troubleshoot-faq.md)
-### [Troubleshoot Analytics in Application Insights](app-insights-analytics-troubleshooting.md)
-### [Troubleshooting and Q and A for Application Insights for Java](app-insights-java-troubleshoot.md)
+### [Gerir preços e quotas](app-insights-pricing.md)
+### [Monitorização do Desempenho de Aplicações com o Application Insights para SCOM](app-insights-scom.md)
 
-# Reference
 
-## [Analytics reference](app-insights-analytics-reference.md)
-## [Sampling](app-insights-sampling.md)
-## [IP addresses](app-insights-ip-addresses.md)
+## Proteger
+
+### [Recolha, retenção e armazenamento de dados](app-insights-data-retention-privacy.md)
+### [Recursos, funções e controlo de acesso](app-insights-resources-roles-access-control.md)
+
+
+## Resolução de problemas
+### [Não existem dados para o .NET](app-insights-asp-net-troubleshoot-no-data.md)
+### [Análise](app-insights-analytics-troubleshooting.md)
+### [Java](app-insights-java-troubleshoot.md)
+
+# Referência
+
+## [Análise](app-insights-analytics-reference.md)
+## [Amostragem](app-insights-sampling.md)
+## [Endereços IP](app-insights-ip-addresses.md)
 ## [ApplicationInsights.config](app-insights-configuration-with-applicationinsights-config.md)
-## [Export Data Model](app-insights-export-data-model.md)
-## [REST API](https://dev.applicationinsights.io/)
-## [JavaScript API](https://github.com/Microsoft/ApplicationInsights-JS/blob/master/API-reference.md)
-## [Java SDK API](http://dl.windowsazure.com/applicationinsights/javadoc/)
-## [Migration from Azure Endpoint Monitoring to Availability tests](app-insights-migrate-azure-endpoint-tests.md)
+## [Exportar Modelo de Dados](app-insights-export-data-model.md)
+## [API REST](https://dev.applicationinsights.io/)
+## [API de JavaScript](https://github.com/Microsoft/ApplicationInsights-JS/blob/master/API-reference.md)
+## [API de Java SDK](http://dl.windowsazure.com/applicationinsights/javadoc/)
+## [Migração da Monitorização do Ponto Final do Azure para os Testes de disponibilidade](app-insights-migrate-azure-endpoint-tests.md)
+## [Análise do programador: idiomas, plataformas e integrações](app-insights-platforms.md)
+### [Exemplos e instruções](app-insights-code-samples.md)
 
-### [Samples and walkthroughs](app-insights-code-samples.md)
+#### [Instruções: Ativar a Telemetria para o Microsoft Dynamics CRM Online](app-insights-sample-mscrm.md)
+#### [Instruções: Exportar para o SQL com o Stream Analytics](app-insights-code-sample-export-sql-stream-analytics.md)
+#### [Exemplo de código: analisar dados exportados](app-insights-code-sample-export-telemetry-sql-database.md)
+## [Notas de Versão do SDK do Application Insights para Windows Phone e Loja](app-insights-release-notes-windows.md)
+## [Notas de Versão das Ferramentas de Análise de Programador](app-insights-release-notes-vsix.md)
+## [Notas de Versão do SDK do Application Insights](app-insights-release-notes.md)
 
-#### [Walkthrough: Enabling Telemetry for Microsoft Dynamics CRM Online](app-insights-sample-mscrm.md)
-#### [Walkthrough: Export to SQL using Stream Analytics](app-insights-code-sample-export-sql-stream-analytics.md)
-#### [Code sample: Parse exported data](app-insights-code-sample-export-telemetry-sql-database.md)
+# Recursos
+## [Suporte](app-insights-get-dev-support.md)
 
-
-# Related
-
-# Resources
-## [Developer analytics: languages, platforms, and integrations](app-insights-platforms.md)
-## [How to get technical support from Application Insights development team](app-insights-get-dev-support.md)
-## [Release Notes for Application Insights SDK for Windows Phone and Store](app-insights-release-notes-windows.md)
-## [Release Notes for Developer Analytics Tools](app-insights-release-notes-vsix.md)
-## [SDK Release Notes - Application Insights](app-insights-release-notes.md)
 
 
 <!--HONumber=Nov16_HO2-->

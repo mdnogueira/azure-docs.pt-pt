@@ -1,48 +1,48 @@
-# Overview
-## [What is Azure DNS?](dns-overview.md)
-## [DNS zones and records](dns-zones-records.md)
+# Descrição geral
+## [O que é o DNS do Azure?](dns-overview.md)
+## [Zonas e registos DNS](dns-zones-records.md)
 
-# Get Started
+# Introdução
 
-## [Create a DNS zone](dns-getstarted-create-dnszone-portal.md)
-### [Create a DNS zone (PowerShell)](dns-getstarted-create-dnszone.md)
-### [Create a DNS zone (CLI)](dns-getstarted-create-dnszone-cli.md)
+## [Criar uma zona DNS](dns-getstarted-create-dnszone-portal.md)
+### [Criar uma zona DNS (PowerShell)](dns-getstarted-create-dnszone.md)
+### [Criar uma zona DNS (CLI)](dns-getstarted-create-dnszone-cli.md)
 
-## [Create DNS records](dns-getstarted-create-recordset-portal.md)
-### [Create DNS records (PowerShell)](dns-getstarted-create-recordset.md)
-### [Create DNS records (CLI)](dns-getstarted-create-recordset-cli.md)
+## [Criar registos DNS](dns-getstarted-create-recordset-portal.md)
+### [Criar registos DNS (PowerShell)](dns-getstarted-create-recordset.md)
+### [Criar registos DNS (CLI)](dns-getstarted-create-recordset-cli.md)
 
-## [Delegate your domain to Azure DNS](dns-domain-delegation.md)
+## [Delegar o domínio no DNS do Azure](dns-domain-delegation.md)
 
-# How to
+# Procedimento
 
-## [Manage DNS zones](dns-operations-dnszones.md)
-### [Manage DNS zones (CLI)](dns-operations-dnszones.md)
+## [Gerir zonas DNS](dns-operations-dnszones.md)
+### [Gerir zonas DNS (CLI)](dns-operations-dnszones.md)
 
-## [Manage DNS records](dns-operations-recordsets-portal.md)
-### [Manage DNS records (PowerShell)](dns-operations-recordsets.md)
-### [Manage DNS records (CLI)](dns-operations-recordsets-cli.md)
+## [Gerir registos DNS](dns-operations-recordsets-portal.md)
+### [Gerir registos DNS (PowerShell)](dns-operations-recordsets.md)
+### [Gerir registos DNS (CLI)](dns-operations-recordsets-cli.md)
 
-## [Manage reverse DNS records](dns-reverse-dns-record-operations-ps.md)
-### [Manage reverse DNS records (CLI)](dns-reverse-dns-record-operations-cli.md)
-### [Manage reverse DNS records (Classic PS)](dns-reverse-dns-record-operations-classic-ps.md)
+## [Gerir registos DNS inversos](dns-reverse-dns-record-operations-ps.md)
+### [Gerir registos DNS inversos (CLI)](dns-reverse-dns-record-operations-cli.md)
+### [Gerir registos DNS inversos (Classic PS)](dns-reverse-dns-record-operations-classic-ps.md)
 
-## [Import and export a DNS zone file](dns-import-export.md)
-## [Using Azure DNS with other Azure services](dns-for-azure-services.md)
-## [Protect DNS zones and records](dns-protect-zones-recordsets.md)
-## [Automate DNS operations with the DNS.NET SDK](dns-sdk.md)
+## [Importar e exportar um ficheiro de zona DNS](dns-import-export.md)
+## [Utilizar o DNS do Azure com outros serviços do Azure](dns-for-azure-services.md)
+## [Proteger zonas e registos DNS](dns-protect-zones-recordsets.md)
+## [Automatizar as operações DNS com o SDK do DNS.NET](dns-sdk.md)
 
-# References
-## [PowerShell cmdlets](https://msdn.microsoft.com/en-us/library/azure/mt126288(v=azure.300))
-## [REST APIs](https://msdn.microsoft.com/library/azure/mt163862)
+# Referências
+## [Cmdlets do PowerShell](https://msdn.microsoft.com/en-us/library/azure/mt126288(v=azure.300))
+## [APIs REST](https://msdn.microsoft.com/library/azure/mt163862)
 
-# Related
-## [Application Gateway](/azure/application-gateway/)
-## [Virtual Network](/azure/virtual-network/)
-## [Virtual Machine](/azure/virtual-machines/)
-## [Load Balancer](/azure/load-balancer/)
-## [Traffic Manager](/azure/traffic-manager/)
-## [Web apps](/azure/app-service/web/)
+# Relacionado
+## [Gateway de Aplicação](/azure/application-gateway/)
+## [Rede Virtual](/azure/virtual-network/)
+## [Máquina Virtual](/azure/virtual-machines/)
+## [Balanceador de Carga](/azure/load-balancer/)
+## [Gestor de Tráfego](/azure/traffic-manager/)
+## [Aplicações Web](/azure/app-service/web/)
 
 
 <!--HONumber=Nov16_HO2-->
