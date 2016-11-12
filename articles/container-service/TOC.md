@@ -1,0 +1,35 @@
+# Descrição geral
+## [Introdução ao ACS](container-service-intro.md)
+# Introdução
+
+## [Implementar um cluster ACS](container-service-deployment.md)
+## [Ligar com um cluster ACS](container-service-connect.md)
+## [Dimensionar um cluster ACS](container-service-scale.md)
+
+# Procedimento
+
+## Gerir com o DC/OS
+### [Gestão de contentores – IU da Web do DC/OS](container-service-mesos-marathon-ui.md)
+### [Gestão de contentores - API REST do DC/OS](container-service-mesos-marathon-rest.md)
+### [Conjuntos de agentes do DC/OS](container-service-dcos-agents.md)
+### [Ativar o acesso público do DC/OS](container-service-enable-public-access.md)
+### [Contentores do balanceador de carga no DC/OS](container-service-load-balancing.md)
+### [Orquestrador Específico de Aplicação/Utilizador no DC/OS](container-service-application-specific-marathon.md)
+### [Monitorizar com o Datadog (DC/OS)](container-service-monitoring.md)
+### [Monitorizar com o Sysdig (DC/OS)](container-service-monitoring-sysdig.md)
+## Gerir com Docker Swarm
+### [Descrição Geral do Docker Swarm](container-service-docker-swarm.md)
+
+# Referência
+
+## [API REST](https://go.microsoft.com/fwlink/p/?linkid=833499)
+
+# Recursos
+
+## [Disponibilidade por regiões](https://azure.microsoft.com/regions/services/)
+## [Atualizações de Serviço](https://azure.microsoft.com/en-us/updates/?product=container-service&updatetype=&platform=)
+
+
+<!--HONumber=Nov16_HO2-->
+
+

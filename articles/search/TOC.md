@@ -1,0 +1,83 @@
+# Descrição geral
+## [O que é o Azure Search?](search-what-is-azure-search.md)
+# Introdução
+## [Escolher um SKU](search-sku-tier.md)
+## [Criar um serviço](search-create-service-portal.md)
+## [Criar um índice](search-what-is-an-index.md)
+### [Portal do Azure](search-create-index-portal.md)
+### [.NET](search-create-index-dotnet.md)
+### [REST](search-create-index-rest-api.md)
+## [Adicionar dados](search-what-is-data-import.md)
+### [.NET](search-import-data-dotnet.md)
+### [REST](search-import-data-rest-api.md)
+## [Pesquisar um índice](search-query-overview.md)
+### [Portal do Azure](search-explorer.md)
+### [.NET](search-query-dotnet.md)
+### [REST](search-query-rest-api.md)
+## [Processar os resultados da pesquisa](search-pagination-page-layout.md)
+## Tutoriais
+### [.NET](search-howto-dotnet-sdk.md)
+### [Portal](search-get-started-portal.md)
+### [NodeJS](search-get-started-nodejs.md)
+### [Java](search-get-started-java.md)
+# Procedimento
+## Planear e conceber
+### [Limites do serviço](search-limits-quotas-capacity.md)
+### [Escalabilidade do serviço](search-capacity-planning.md)
+### [Padrões de conceção para multi-inquilinos](search-modeling-multitenant-saas-applications.md)
+## Programar
+### [Atualizar o SDK](search-dotnet-sdk-migration.md)
+### [Modelar tipos de dados complexos](search-howto-complex-data-types.md)
+## Gerir
+### Administrar o Azure Search
+#### [Portal do Azure](search-manage.md)
+#### [REST](search-get-started-management-api.md)
+#### [PowerShell](search-manage-powershell.md)
+### [Monitorizar a utilização e as estatísticas](search-monitor-usage.md)
+### [Procurar análises de tráfego](search-traffic-analytics.md)
+### [Desempenho e otimização](search-performance-optimization.md)
+## Carregar dados
+### [Classificar origens de dados](search-indexer-overview.md)
+#### [Armazenamento de Blobs](search-howto-indexing-azure-blob-storage.md)
+#### [Tabelas do Azure](search-howto-indexing-azure-tables.md)
+#### [Base de Dados SQL](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
+#### [Blobs CSV](search-howto-index-csv-blobs.md)
+### [Configuração da ligação de VM do Azure do SQL Server](search-howto-connecting-azure-sql-iaas-to-azure-search-using-indexers.md)
+### [Mapeamentos de campo nos indexadores](search-indexer-field-mappings.md)
+##  Conceber a experiência de pesquisa
+### [Exemplos de consulta de sintaxe Lucene](search-query-lucene-examples.md)
+### [Perfis de classificação](search-get-started-scoring-profiles.md)
+### [Sugestões](https://azure.microsoft.com/blog/2015/01/20/azure-search-how-to-add-suggestions-auto-complete-to-your-search-applications/)
+### [Priorização baseada em etiquetas](https://azure.microsoft.com/blog/2015/02/05/personalizing-search-results-announcing-tag-boosting-in-azure-search/)
+### [Navegação por facetas](search-faceted-navigation.md)
+### [Analisadores de idiomas](https://msdn.microsoft.com/library/azure/dn879793)
+### [Analisadores personalizados](https://msdn.microsoft.com/library/azure/mt605304)
+### [Pesquisa multilingue](search-language-support.md)
+
+# Referência
+## [SDK do .NET](https://msdn.microsoft.com/library/azure/dn951165)
+## [API REST do Serviço](https://msdn.microsoft.com/library/azure/dn798935)
+## [API REST do Serviço (Versão de pré-visualização)](search-api-2015-02-28-preview.md)
+## [API REST de Gestão](https://msdn.microsoft.com/library/azure/dn832684)
+## [Versões da API](search-api-versions.md)
+## [Sintaxe de consulta Lucene](https://msdn.microsoft.com/library/azure/mt589323)
+## [Sintaxe de consulta simples](https://msdn.microsoft.com/library/azure/dn798920)
+# Recursos
+## Sites de demonstração
+### [Aplicação de listagem de trabalhos](http://aka.ms/azjobsdemo)
+### [Aplicações de demonstração ao vivo](https://searchsamples.azurewebsites.net/)
+## Cursos e tutoriais
+### [Academia virtual](https://mva.microsoft.com/training-courses/using-windows-azure-search-10540?l=ADkxnd97_9304984382)
+### [Vídeos e tutoriais](search-video-demo-tutorial-list.md)
+### [Github do Azure Search](https://github.com/Azure-Samples/?utf8=%E2%9C%93&query=search)
+## Parceiros e comunidade
+### [Modelar dados relacionais](http://blogs.technet.com/b/onsearch/archive/2015/09/08/modeling-the-adventureworks-inventory-database-for-azure-search.aspx)
+### [Facetamento com múltiplos níveis](http://blogs.technet.com/b/onsearch/archive/2015/09/09/multi-level-taxonomy-facets-in-azure-search.aspx)
+### [Fóruns do MSDN](https://social.msdn.microsoft.com/forums/azure/en-US/home?forum=AzureSearch)
+### [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-search)
+### [Github do Azure Search](https://github.com/Azure-Samples/?utf8=%E2%9C%93&query=search)
+
+
+<!--HONumber=Nov16_HO2-->
+
+

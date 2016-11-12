@@ -1,0 +1,40 @@
+# Descrição geral
+## [O que é o Power BI Embedded?](power-bi-embedded-what-is-power-bi-embedded.md)
+## [Novidades do Power BI Embedded](power-bi-embedded-whats-new.md)
+
+# Introdução
+## [Introdução ao Power BI Embedded](power-bi-embedded-get-started.md)
+## [Introdução com um exemplo](power-bi-embedded-get-started-sample.md)
+
+# Procedimento 
+## Planear e conceber
+### [Cenários comuns](power-bi-embedded-scenarios.md)
+
+## Gerir
+### [Ligar a uma origem de dados](power-bi-embedded-connect-datasource.md)
+### [Incorporar um relatório do Power BI com um IFrame](power-bi-embedded-iframe.md)
+### [Interaja com Relatórios](power-bi-embedded-interact-with-reports.md)
+
+## Proteger
+### [Autenticar e autorizar](power-bi-embedded-app-token-flow.md)
+### [Segurança de nível de linhas com o Power BI Embedded](power-bi-embedded-rls.md)
+
+# Referência
+## [Referência de .NET API](https://msdn.microsoft.com/en-us/library/azure/mt669800)
+## [SDK JavaScript](https://github.com/Microsoft/PowerBI-JavaScript)
+## [REST API reference (Referência da API REST)](https://msdn.microsoft.com/en-us/library/azure/mt712303)
+## [Transferência de SDK .NET](https://www.nuget.org/profiles/powerbi)
+
+# Relacionado 
+
+# Recursos
+## [FAQ](power-bi-embedded-faq.md)
+## [Amostras](https://github.com/Azure-Samples/power-bi-embedded-integrate-report-into-web-app/)
+## [Comunidade do Power BI](http://community.powerbi.com/t5/Developer/bd-p/Developer)
+## [Stack Overflow](http://stackoverflow.com/questions/tagged/powerbi)
+
+
+
+<!--HONumber=Nov16_HO2-->
+
+
