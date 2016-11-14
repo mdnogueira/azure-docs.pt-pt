@@ -1,23 +1,27 @@
 ---
-title: Saiba como efetuar cópias de segurança de ficheiros e pastas a partir do Windows para o Azure com o Backup do Azure utilizando o modelo de implementação do Resource Manager | Microsoft Docs
-description: Saiba como criar cópias de segurança dos dados do Windows Server ao criar um cofre, instalar o agente dos Serviços de Recuperação e efetuar uma cópia de segurança dos ficheiros e das pastas para o Azure.
+title: "Saiba como efetuar cópias de segurança de ficheiros e pastas a partir do Windows para o Azure com o Backup do Azure utilizando o modelo de implementação do Resource Manager | Microsoft Docs"
+description: "Saiba como criar cópias de segurança dos dados do Windows Server ao criar um cofre, instalar o agente dos Serviços de Recuperação e efetuar uma cópia de segurança dos ficheiros e das pastas para o Azure."
 services: backup
-documentationcenter: ''
-author: Jim-Parker
-manager: jwhit
-editor: ''
-keywords: como fazer uma cópia de segurança; como fazer cópia de segurança
-
+documentationcenter: 
+author: markgalioto
+manager: cfreeman
+editor: 
+keywords: "como fazer uma cópia de segurança; como fazer cópia de segurança"
+ms.assetid: 5b15ebf1-2214-4722-b937-96e2be8872bb
 ms.service: backup
 ms.workload: storage-backup-recovery
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: hero-article
-ms.date: 06/27/2016
-ms.author: jimpark;
+ms.date: 09/27/2016
+ms.author: markgal;
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: 900967975694a688b6d5054cb351746819b65f16
+
 
 ---
-# Primeiras impressões: efetuar cópias de segurança de ficheiros e pastas com o Backup do Azure utilizando o modelo de implementação do Resource Manager
+# <a name="first-look-back-up-files-and-folders-with-azure-backup-using-the-resource-manager-deployment-model"></a>Primeiras impressões: efetuar cópias de segurança de ficheiros e pastas com o Backup do Azure utilizando o modelo de implementação do Resource Manager
 Este artigo explica como criar uma cópia de segurança dos ficheiros e pastas do Windows Server (ou do cliente Windows) para o Azure com o Backup do Azure através do Resource Manager. É um tutorial que se destina a explicar as noções básicas. Se pretender começar a utilizar o Backup do Azure, está no sítio certo.
 
 Se pretender saber mais sobre o Backup do Azure, leia esta [descrição geral](backup-introduction-to-azure-backup.md).
@@ -32,13 +36,13 @@ A cópia de segurança de ficheiros e pastas para o Azure requer estas atividade
 
 ![Como efetuar uma cópia de segurança da máquina Windows com o Backup do Azure](./media/backup-try-azure-backup-in-10-mins/backup-process.png)
 
-## Passo 1: obtenha uma subscrição do Azure
+## <a name="step-1-get-an-azure-subscription"></a>Passo 1: obtenha uma subscrição do Azure
 Se não tiver uma subscrição do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/) que lhe permite aceder a qualquer serviço do Azure.
 
-## Passo 2: crie um cofre dos Serviços de Recuperação
+## <a name="step-2-create-a-recovery-services-vault"></a>Passo 2: crie um cofre dos Serviços de Recuperação
 Para efetuar uma cópia de segurança de ficheiros e pastas, tem de criar um cofre dos Serviços de Recuperação na região onde pretende armazenar os dados. Também precisa de determinar como pretende que o seu armazenamento seja replicado.
 
-### Para criar um cofre dos Serviços de Recuperação
+### <a name="to-create-a-recovery-services-vault"></a>Para criar um cofre dos Serviços de Recuperação
 1. Se ainda não o fez, inicie sessão no [Portal do Azure](https://portal.azure.com/) através da sua subscrição do Azure.
 2. No menu Hub, clique em **Procurar** e na lista de recursos, escreva **Serviços de Recuperação** e clique em **cofres dos Serviços de Recuperação**.
    
@@ -58,7 +62,7 @@ Para efetuar uma cópia de segurança de ficheiros e pastas, tem de criar um cof
    
     Se não vir o Cofre listado após ter sido concluído, clique em **Atualizar**. Quando atualiza a lista, clique no nome do cofre.
 
-### Para determinar a redundância de armazenamento
+### <a name="to-determine-storage-redundancy"></a>Para determinar a redundância de armazenamento
 Quando cria pela primeira vez um cofre dos Serviços de Recuperação, determina como o armazenamento é replicado.
 
 1. Clique no novo cofre para abrir o dashboard.
@@ -74,7 +78,7 @@ Quando cria pela primeira vez um cofre dos Serviços de Recuperação, determina
 
 Agora que criou um cofre, prepare a infraestrutura para efetuar uma cópia de segurança de ficheiros e pastas ao transferir as credenciais do cofre e o agente dos Serviços de Recuperação do Microsoft Azure.
 
-## Passo 3 – Transferir ficheiros
+## <a name="step-3-download-files"></a>Passo 3 – Transferir ficheiros
 1. Clique em **Definições** no dashboard do cofre dos Serviços de Recuperação.
    
     ![Painel Abrir objetivo de cópia de segurança](./media/backup-try-azure-backup-in-10-mins/settings-button.png)
@@ -87,18 +91,18 @@ Agora que criou um cofre, prepare a infraestrutura para efetuar uma cópia de se
 4. Selecione **No local** no menu Onde está a carga de trabalho em execução?.
 5. Selecione **Ficheiros e pastas** no menu Pretende efetuar uma cópia de segurança de que itens? e clique em **OK**.
 
-### Transferir o agente dos Serviços de Recuperação
+### <a name="download-the-recovery-services-agent"></a>Transferir o agente dos Serviços de Recuperação
 1. Clique em **Transferir Agente para o Windows Server ou um Cliente Windows** no painel **Preparar infraestrutura**.
    
     ![preparar infraestrutura](./media/backup-try-azure-backup-in-10-mins/prepare-infrastructure-short.png)
 2. Clique em **Guardar** no pop-up de transferência. Por predefinição, o ficheiro **MARSagentinstaller.exe** é guardado na pasta Transferências.
 
-### Transferir as credenciais do cofre
+### <a name="download-vault-credentials"></a>Transferir as credenciais do cofre
 1. Clique em **Transferir > Guardar** no painel Preparar infraestrutura.
    
     ![preparar infraestrutura](./media/backup-try-azure-backup-in-10-mins/prepare-infrastructure-download.png)
 
-## Passo 4 – instalar e registar o agente
+## <a name="step-4-install-and-register-the-agent"></a>Passo 4 – instalar e registar o agente
 > [!NOTE]
 > A permissão da cópia de segurança através do portal do Azure estará disponível brevemente. Neste momento, pode utilizar o Agente dos Serviços de Recuperação do Microsoft Azure no local para efetuar uma cópia de segurança dos ficheiros e pastas.
 > 
@@ -120,7 +124,7 @@ Agora que criou um cofre, prepare a infraestrutura para efetuar uma cópia de se
 
 O agente está agora instalado e a máquina está registada no cofre. Está pronto para configurar e agendar a cópia de segurança.
 
-## Passo 5: efetue uma cópia de segurança de ficheiros e pastas
+## <a name="step-5-back-up-your-files-and-folders"></a>Passo 5: efetue uma cópia de segurança de ficheiros e pastas
 A cópia de segurança inicial inclui duas tarefas principais:
 
 * Agendar a cópia de segurança
@@ -128,7 +132,7 @@ A cópia de segurança inicial inclui duas tarefas principais:
 
 Para concluir a cópia de segurança inicial, pode utilizar o agente dos Serviços de Recuperação do Microsoft Azure.
 
-### Para agendar a cópia de segurança
+### <a name="to-schedule-the-backup"></a>Para agendar a cópia de segurança
 1. Abra o agente dos Serviços de Recuperação do Microsoft Azure. Pode encontrá-lo ao pesquisar na máquina por **Cópia de Segurança do Microsoft Azure**.
    
     ![Iniciar o agente dos Serviços de Recuperação do Azure](./media/backup-try-azure-backup-in-10-mins/snap-in-search.png)
@@ -158,7 +162,7 @@ Para concluir a cópia de segurança inicial, pode utilizar o agente dos Serviç
 10. Na página de Confirmação, reveja as informações e, em seguida, clique em **Concluir**.
 11. Depois de o assistente ter criado a agenda da cópia de segurança, clique em **Fechar**.
 
-### Para efetuar a cópia de segurança de ficheiros e pastas pela primeira vez
+### <a name="to-back-up-files-and-folders-for-the-first-time"></a>Para efetuar a cópia de segurança de ficheiros e pastas pela primeira vez
 1. No agente dos Serviços de Recuperação, clique em **Efetuar Cópia de Segurança Agora** para concluir a propagação inicial através da rede.
    
     ![Efetuar a cópia de segurança do Windows Server agora](./media/backup-try-azure-backup-in-10-mins/backup-now.png)
@@ -169,14 +173,17 @@ Depois de concluída a cópia de segurança inicial, o estado **Tarefa concluíd
 
 ![IV concluídos](./media/backup-try-azure-backup-in-10-mins/ircomplete.png)
 
-## Tem dúvidas?
+## <a name="questions"></a>Tem dúvidas?
 Se tiver dúvidas ou se houver alguma funcionalidade que gostaria de ver incluída, [envie-nos comentários](http://aka.ms/azurebackup_feedback).
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 * Obtenha mais detalhes sobre como [efetuar a cópia de segurança das máquinas Windows](backup-configure-vault.md).
 * Agora que criou uma segurança dos seus ficheiros e pastas, pode [gerir os cofres e os servidores](backup-azure-manage-windows-server.md).
 * Se precisar de restaurar uma cópia de segurança, utilize este artigo para [restaurar ficheiros para uma máquina Windows](backup-azure-restore-windows-server.md).
 
-<!--HONumber=Aug16_HO1-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

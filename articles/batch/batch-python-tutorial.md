@@ -1,12 +1,12 @@
 ---
-title: Tutorial - Introdução ao cliente Azure Batch Python | Microsoft Docs
-description: Conheça os conceitos básicos do Azure Batch e como desenvolver o serviço Batch com um cenário simples
+title: "Tutorial - Introdução ao cliente Azure Batch Python | Microsoft Docs"
+description: "Conheça os conceitos básicos do Azure Batch e como desenvolver o serviço Batch com um cenário simples"
 services: batch
 documentationcenter: python
 author: mmacy
 manager: timlt
-editor: ''
-
+editor: 
+ms.assetid: 42cae157-d43d-47f8-88f5-486ccfd334f4
 ms.service: batch
 ms.devlang: python
 ms.topic: hero-article
@@ -14,9 +14,13 @@ ms.tgt_pltfrm: na
 ms.workload: big-compute
 ms.date: 09/27/2016
 ms.author: marsma
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: c0a778c8dc8786f0c084686b3f8722ff15eed78c
+
 
 ---
-# Introdução ao cliente Azure Batch Python
+# <a name="get-started-with-the-azure-batch-python-client"></a>Introdução ao cliente Azure Batch Python
 > [!div class="op_single_selector"]
 > * [.NET](batch-dotnet-get-started.md)
 > * [Python](batch-python-tutorial.md)
@@ -27,24 +31,24 @@ Conheça os princípios básicos do [Azure Batch][azure_batch] e o cliente [Batc
 
 ![Fluxo de trabalho da solução Batch (básico)][11]<br/>
 
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 Este artigo pressupõe que tem um conhecimento de trabalho do Python e familiaridade com o Linux. Também parte do princípio de que consegue satisfazer os requisitos de criação de conta que são especificados abaixo para o Azure e os serviços Batch e Armazenamento.
 
-### Contas
+### <a name="accounts"></a>Contas
 * **Conta do Azure**: se ainda não tiver uma subscrição do Azure, [crie uma conta do Azure gratuita][azure_free_account].
 * **Conta do Batch**: assim que tiver uma subscrição do Azure, [crie uma conta do Azure Batch](batch-account-create-portal.md).
 * **Conta de Armazenamento**: veja [Criar uma conta de armazenamento](../storage/storage-create-storage-account.md#create-a-storage-account) em [Sobre as contas de armazenamento do Azure](../storage/storage-create-storage-account.md).
 
-### Exemplo de código
+### <a name="code-sample"></a>Exemplo de código
 O [exemplo de código][github_article_samples] do tutorial do Python é um dos muito exemplos de código do Batch encontrados no repositório [azure-batch-samples][github_samples] do GitHub. Pode transferir todos os exemplos ao clicar em **Clonar ou transferir > Transferir ZIP** na home page do repositório, ou ao clicar na ligação de transferência direta [azure-batch-samples-master.zip][github_samples_zip]. Assim que tiver extraído o conteúdo do ficheiro ZIP, os dois scripts deste tutorial encontram-se no diretório `article_samples`:
 
 `/azure-batch-samples/Python/Batch/article_samples/python_tutorial_client.py`<br/>
 `/azure-batch-samples/Python/Batch/article_samples/python_tutorial_task.py`
 
-### Ambiente do Python
+### <a name="python-environment"></a>Ambiente do Python
 Para executar o script de exemplo *python_tutorial_client.py* na sua estação de trabalho local, precisa de um **interpretador Python** compatível com a versão **2.7** ou **3.3+**. O script foi testado em Linux e Windows.
 
-### dependências de criptografia
+### <a name="cryptography-dependencies"></a>dependências de criptografia
 Tem de instalar as dependências da biblioteca [criptografia][crypto], de que os pacotes do Python `azure-batch` e `azure-storage` precisam. Execute uma das operações seguintes adequada à sua plataforma ou veja os detalhes da [instalação da criptografia][crypto_install] para obter mais informações.
 
 * Ubuntu
@@ -65,7 +69,7 @@ Tem de instalar as dependências da biblioteca [criptografia][crypto], de que os
 > 
 > 
 
-### Pacotes do Azure
+### <a name="azure-packages"></a>Pacotes do Azure
 Depois, instale os pacotes do Python **Azure Batch** e **Armazenamento do Azure**. Pode fazer isto com o **pip** e o *requirements.txt* encontrados aqui:
 
 `/azure-batch-samples/Python/Batch/requirements.txt`
@@ -84,7 +88,7 @@ Em alternativa, pode instalar manualmente os pacotes do Python [azure-batch][pyp
 > 
 > 
 
-## Exemplo de código do tutorial do Batch Python
+## <a name="batch-python-tutorial-code-sample"></a>Exemplo de código do tutorial do Batch Python
 O exemplo de código do tutorial do Batch Python é constituído por dois scripts Python e alguns ficheiros de dados.
 
 * **python_tutorial_client.py**: interage com os serviços de Batch e Armazenamento para executar uma carga de trabalho paralela em nós de computação (máquinas virtuais). O script *python_tutorial_client.py* é executado na sua estação de trabalho local.
@@ -98,18 +102,18 @@ O diagrama seguinte ilustra as operações primárias que são realizadas pelos 
 [**Passo 1.**](#step-1-create-storage-containers) Criar **contentores** no Armazenamento de Blobs do Azure.<br/>
 [**Passo 2.**](#step-2-upload-task-script-and-data-files) Carregar scripts de tarefas e ficheiros de entrada para contentores.<br/>
 [**Passo 3.**](#step-3-create-batch-pool) Criar um **conjunto** do Batch.<br/>
-  &nbsp;&nbsp;&nbsp;&nbsp;**3a.** O conjunto **StartTask** transfere o script de tarefas (python_tutorial_task.py) para nós, à medida que se associam ao conjunto.<br/>
+ &nbsp;&nbsp;&nbsp;&nbsp;**3a.** O conjunto **StartTask** transfere o script de tarefas (python_tutorial_task.py) para nós, à medida que se associam ao conjunto.<br/>
 [**Passo 4.**](#step-4-create-batch-job) Criar um **trabalho** do Batch.<br/>
-[**Passo 5.**](#step-5-add-tasks-to-job) Adicionar **tarefas** ao trabalho.<br/>
+[**Passo 5.**](#step-5-add-tasks-to-job) Adicione **tarefas** ao trabalho.<br/>
   &nbsp;&nbsp;&nbsp;&nbsp;**5a.** As tarefas estão agendadas para serem executadas em nós.<br/>
     &nbsp;&nbsp;&nbsp;&nbsp;**5b.** Cada tarefa transfere os respetivos dados de entrada a partir do Armazenamento do Azure e, em seguida, começa a execução.<br/>
-[**Passo 6.**](#step-6-monitor-tasks) Monitorizar tarefas.<br/>
+[**Passo 6.**](#step-6-monitor-tasks) Monitorizar tarefas.<br/>
   &nbsp;&nbsp;&nbsp;&nbsp;**6a.** À medida que as tarefas são concluídas, carregam os respetivos dados de saída para o Armazenamento do Azure.<br/>
-[**Passo 7.**](#step-7-download-task-output) Transferir o resultado da tarefa do Armazenamento.
+[**Passo 7.**](#step-7-download-task-output) Transferir o resultado da tarefa do Armazenamento.
 
 Conforme mencionado, nem todas as soluções do Batch efetuam estes passos exatos e podem incluir muitos mais, mas este exemplo demonstra processos comuns encontrados numa solução Batch.
 
-## Preparar o script de cliente
+## <a name="prepare-client-script"></a>Preparar o script de cliente
 Antes de executar o exemplo, adicione as suas credenciais de conta do Batch e Armazenamento ao *python_tutorial_client.py*. Se ainda não o tiver feito, abra o ficheiro no seu editor favorito e atualize as seguintes linhas com as suas credenciais.
 
 ```python
@@ -140,7 +144,7 @@ Navegue para a linha seguinte em **python_tutorial_client.py** para iniciar o Pa
 if __name__ == '__main__':
 ```
 
-## Passo 1: criar contentores de armazenamento
+## <a name="step-1-create-storage-containers"></a>Passo 1: criar contentores de armazenamento
 ![Criar contentores no Armazenamento do Azure][1]
 <br/>
 
@@ -176,7 +180,7 @@ Depois de os contentores estarem criados, a aplicação pode agora carregar os f
 > 
 > 
 
-## Passo 2: carregar o script da tarefa e ficheiros de dados
+## <a name="step-2-upload-task-script-and-data-files"></a>Passo 2: carregar o script da tarefa e ficheiros de dados
 ![Carregar a aplicação de tarefa e os ficheiros de entrada (dados) para contentores][2]
 <br/>
 
@@ -244,7 +248,7 @@ def upload_file_to_container(block_blob_client, container_name, file_path):
                                     blob_source=sas_url)
 ```
 
-### ResourceFiles
+### <a name="resourcefiles"></a>ResourceFiles
 Um [ResourceFile][py_resource_file] fornece tarefas no Batch com o URL para um ficheiro no Armazenamento do Azure que é transferido para um nó de computação antes de essa tarefa ser executada. A propriedade [ResourceFile][py_resource_file].**blob_source** especifica o URL completo do ficheiro, tal como existe no Armazenamento do Azure. O URL também pode incluir uma assinatura de acesso partilhado (SAS) que proporciona acesso seguro ao ficheiro. A maioria dos tipos de tarefas no Batch incluem uma propriedade *ResourceFiles*, incluindo:
 
 * [CloudTask][py_task]
@@ -254,7 +258,7 @@ Um [ResourceFile][py_resource_file] fornece tarefas no Batch com o URL para um f
 
 Este exemplo não utiliza os tipos de tarefas JobPreparationTask ou JobReleaseTask, mas pode ler mais sobre os mesmos em [Executar a preparação de trabalhos e tarefas de conclusão nos nós de computação do Azure Batch](batch-job-prep-release.md).
 
-### Assinatura de acesso partilhado (SAS)
+### <a name="shared-access-signature-sas"></a>Assinatura de acesso partilhado (SAS)
 As assinaturas de acesso partilhado são cadeias que fornecem acesso seguro aos contentores e blobs do Armazenamento do Azure. O script *python_tutorial_client.py* utiliza as assinaturas de acesso partilhado do blob e do contentor, e demonstra como obter estas cadeias de assinatura de acesso partilhado a partir do serviço de Armazenamento.
 
 * **Assinaturas de acesso partilhado do blob**: o StartTask do conjunto utiliza assinaturas de acesso partilhado do blob quando transfere o script de tarefas e os ficheiros de dados de entrada a partir do Armazenamento (veja o [Passo 3](#step-3-create-batch-pool) abaixo). A função `upload_file_to_container` em *python_tutorial_client.py* contém o código que obtém a assinatura de acesso partilhado de cada blob. Isto é feito chamando [BlockBlobService.make_blob_url][py_make_blob_url] no módulo de Armazenamento.
@@ -265,7 +269,7 @@ As assinaturas de acesso partilhado são cadeias que fornecem acesso seguro aos 
 > 
 > 
 
-## Passo 3: criar conjunto do Batch
+## <a name="step-3-create-batch-pool"></a>Passo 3: criar conjunto do Batch
 ![Criar um conjunto do Batch][3]
 <br/>
 
@@ -370,7 +374,7 @@ A utilização de duas variáveis de ambiente na propriedade **command_line** do
 > 
 > 
 
-## Passo 4: criar trabalho do Batch
+## <a name="step-4-create-batch-job"></a>Passo 4: criar trabalho do Batch
 ![Criar trabalho do Batch][4]<br/>
 
 Um **trabalho** do Batch é uma coleção de tarefas e está associado a um conjunto de nós de computação. As tarefas num trabalho são executadas nos nós de computação do conjunto associado.
@@ -404,7 +408,7 @@ def create_job(batch_service_client, job_id, pool_id):
 
 Agora que criou um trabalho, as tarefas são adicionadas para realizar o trabalho.
 
-## Passo 5: adicionar tarefas ao trabalho
+## <a name="step-5-add-tasks-to-job"></a>Passo 5: adicionar tarefas ao trabalho
 ![Adicionar tarefas ao trabalho][5]<br/>
 *(1) As tarefas são adicionadas ao trabalho, (2) as tarefas são agendadas para serem executadas em nós e (3) as tarefas transferem os ficheiros de dados a processar*
 
@@ -477,7 +481,7 @@ blob_client = azureblob.BlockBlobService(account_name=args.storageaccount,
                                          sas_token=args.sastoken)
 ```
 
-## Passo 6: monitorizar tarefas
+## <a name="step-6-monitor-tasks"></a>Passo 6: monitorizar tarefas
 ![Monitorizar tarefas][6]<br/>
 *O script (1) monitoriza as tarefas de estado de conclusão e (2) as tarefas carregam os dados dos resultados para o Armazenamento do Azure*
 
@@ -520,7 +524,7 @@ def wait_for_tasks_to_complete(batch_service_client, job_id, timeout):
                        "timeout period of " + str(timeout))
 ```
 
-## Passo 7: transferir o resultado da tarefa
+## <a name="step-7-download-task-output"></a>Passo 7: transferir o resultado da tarefa
 ![Transferir o resultado da tarefa do Armazenamento][7]<br/>
 
 Agora que o trabalho está concluído, o resultado das tarefas pode ser transferido do Armazenamento do Azure. Isto é feito através de uma chamada para o `download_blobs_from_container` no *python_tutorial_client.py*:
@@ -562,7 +566,7 @@ def download_blobs_from_container(block_blob_client,
 > 
 > 
 
-## Passo 8: eliminar contentores
+## <a name="step-8-delete-containers"></a>Passo 8: eliminar contentores
 Uma vez que os dados que residem no Armazenamento do Azure lhe são cobrados, é sempre boa ideia remover blobs que já não são necessários para as tarefas do Batch. No *python_tutorial_client.py*, isto é feito com três chamadas para [BlockBlobService.delete_container][py_delete_container]:
 
 ```
@@ -573,7 +577,7 @@ blob_client.delete_container(input_container_name)
 blob_client.delete_container(output_container_name)
 ```
 
-## Passo 9: eliminar o trabalho e o conjunto
+## <a name="step-9-delete-the-job-and-the-pool"></a>Passo 9: eliminar o trabalho e o conjunto
 No passo final, é-lhe pedido para eliminar o trabalho e o conjunto que foram criados pelo script *python_tutorial_client.py*. Apesar de os próprios trabalhos e tarefas não lhe serem cobrados, os nós de computação *são* cobrados. Assim, recomendamos que atribua nós apenas conforme necessário. A eliminação de conjuntos não utilizados pode fazer parte do processo de manutenção.
 
 O [JobOperations][py_job] e o [PoolOperations][py_pool] do BatchServiceClient têm métodos de eliminação correspondentes, que são chamados se confirmar a eliminação:
@@ -592,7 +596,7 @@ if query_yes_no('Delete pool?') == 'yes':
 > 
 > 
 
-## Executar a aplicação de exemplo
+## <a name="run-the-sample-script"></a>Executar a aplicação de exemplo
 Quando executa o script *python_tutorial_client.py* a partir do tutorial [exemplo de código][github_article_samples], o resultado da consola é semelhante ao seguinte. Há uma pausa no `Monitoring all tasks for 'Completed' state, timeout in 0:20:00...` enquanto os nós de computação do conjunto são criados, iniciados, e os comandos na tarefa de início do conjunto são executados. Utilize o [portal do Azure][azure_portal] para monitorizar o conjunto, nós de computação, o trabalho e as tarefas durante e após a execução. Utilize o [portal do Azure][azure_portal] ou o [Explorador de Armazenamento do Microsoft Azure][storage_explorer] para ver os recursos de Armazenamento (contentores e blobs) que são criados pela aplicação.
 
 > [!TIP]
@@ -630,7 +634,7 @@ Delete pool? [Y/n]
 Press ENTER to exit...
 ```
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 Pode efetuar alterações em *python_tutorial_client.py* e *python_tutorial_task.py* para testar cenários de computação diferentes. Por exemplo, tente adicionar um atraso de execução a *python_tutorial_task.py* para simular tarefas demoradas e monitorizá-las no portal. Experimente adicionar mais tarefas ou ajustar o número de nós de computação. Adicione lógica para procurar e permitir a utilização de um conjunto existente para acelerar o tempo de execução.
 
 Agora que está familiarizado com o fluxo de trabalho básico de uma solução do Batch, está na altura de aprofundar as funcionalidades adicionais do serviço Batch.
@@ -705,6 +709,6 @@ Agora que está familiarizado com o fluxo de trabalho básico de uma solução d
 
 
 
-<!--HONumber=Sep16_HO4-->
+<!--HONumber=Nov16_HO2-->
 
 
