@@ -1,12 +1,12 @@
 ---
-title: Criar um laboratório no Azure DevTest Labs | Microsoft Docs
-description: Criar um laboratório no Azure DevTest Labs para máquinas virtuais
+title: "Criar um laboratório no Azure DevTest Labs | Microsoft Docs"
+description: "Criar um laboratório no Azure DevTest Labs para máquinas virtuais"
 services: devtest-lab,virtual-machines
 documentationcenter: na
 author: tomarcher
 manager: douge
-editor: ''
-
+editor: 
+ms.assetid: 8b6d3e70-6528-42a4-a2ef-449575d0f928
 ms.service: devtest-lab
 ms.workload: na
 ms.tgt_pltfrm: na
@@ -14,15 +14,19 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 09/12/2016
 ms.author: tarcher
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: f2e607924f17b42bba73672a2d24257e672e1134
+
 
 ---
-# Criar um laboratório no Azure DevTest Labs
-## Pré-requisitos
+# <a name="create-a-lab-in-azure-devtest-labs"></a>Criar um laboratório no Azure DevTest Labs
+## <a name="prerequisites"></a>Pré-requisitos
 Para criar um laboratório, precisa de:
 
 * Uma subscrição do Azure. Para obter informações sobre opções de compra do Azure, consulte [Como comprar o Azure](https://azure.microsoft.com/pricing/purchase-options/) ou [Avaliação gratuita de um mês](https://azure.microsoft.com/pricing/free-trial/). Tem de ser o proprietário da subscrição para criar o laboratório.
 
-## Passos para criar um laboratório no Azure DevTest Labs
+## <a name="steps-to-create-a-lab-in-azure-devtest-labs"></a>Passos para criar um laboratório no Azure DevTest Labs
 Os passos seguintes mostram como utilizar o portal do Azure para criar um laboratório no Azure DevTest Labs. 
 
 1. Inicie sessão no [Portal do Azure](http://go.microsoft.com/fwlink/p/?LinkID=525040).
@@ -43,7 +47,7 @@ Os passos seguintes mostram como utilizar o portal do Azure para criar um labora
 
 [!INCLUDE [devtest-lab-try-it-out](../../includes/devtest-lab-try-it-out.md)]
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 Assim que tiver criado o seu laboratório, seguem-se alguns passos a ter em consideração:
 
 * [Acesso seguro a um laboratório](devtest-lab-add-devtest-user.md).
@@ -52,6 +56,9 @@ Assim que tiver criado o seu laboratório, seguem-se alguns passos a ter em cons
 * [Criar artefactos personalizados para as suas VMs](devtest-lab-artifact-author.md).
 * [Adicionar uma VM com artefactos para um laboratório](devtest-lab-add-vm-with-artifacts.md).
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

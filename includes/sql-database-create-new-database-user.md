@@ -1,6 +1,6 @@
 
 
-## Criar um novo utilizador da base de dados com o SSMS
+## <a name="create-new-database-user-using-ssms"></a>Criar um novo utilizador da base de dados com o SSMS
 Utilize os seguintes passos para criar um novo utilizador da base de dados numa base de dados existente com o SSMS. 
 
 Estes passos presumem que está ligado à SQL Database no Object Explorer com o SSMS e que está ligado ao servidor lógico da SQL Database como um administrador principal ao nível do servidor ou com uma conta de utilizador com permissões para criar um novo utilizador. 
@@ -18,6 +18,8 @@ Estes passos presumem que está ligado à SQL Database no Object Explorer com o 
    
      ![SQL Server Management Studio: Connect to SQL Database server](./media/sql-database-create-new-database-user/sql-database-create-new-database-user-3.png)
 
-<!--HONumber=Sep16_HO3-->
+
+
+<!--HONumber=Nov16_HO2-->
 
 

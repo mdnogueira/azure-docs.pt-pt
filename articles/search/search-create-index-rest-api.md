@@ -1,13 +1,13 @@
 ---
-title: Criar um índice da Azure Search utilizando a API REST | Microsoft Docs
-description: Crie um índice no código utilizando a API REST de HTTP da Azure Search.
+title: "Crie um índice da Azure Search através da API REST | Microsoft Docs"
+description: "Crie um índice no código utilizando a API REST de HTTP da Azure Search."
 services: search
-documentationcenter: ''
+documentationcenter: 
 author: ashmaka
-manager: ''
-editor: ''
+manager: jhubbard
+editor: 
 tags: azure-portal
-
+ms.assetid: ac6c5fba-ad59-492d-b715-d25a7a7ae051
 ms.service: search
 ms.devlang: rest-api
 ms.workload: search
@@ -15,9 +15,13 @@ ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.date: 08/29/2016
 ms.author: ashmaka
+translationtype: Human Translation
+ms.sourcegitcommit: 6ff31940f3a4e7557e0caf3d9d3740590be3bc04
+ms.openlocfilehash: 6d3bbea1a891e1d2f41eedccd9b9a591dfe13855
+
 
 ---
-# Criar um índice da Azure Search utilizando a API REST
+# <a name="create-an-azure-search-index-using-the-rest-api"></a>Criar um índice da Azure Search utilizando a API REST
 > [!div class="op_single_selector"]
 > * [Descrição geral](search-what-is-an-index.md)
 > * [Portal](search-create-index-portal.md)
@@ -32,7 +36,7 @@ Antes de consultar este guia e criar um índice, deverá já ter [criado um serv
 
 Para criar um índice da Azure Search utilizando a API REST, irá emitir um pedido HTTP POST único para o ponto final do URL do seu serviço Azure Search. As suas definições de índice ficarão contidas no corpo do pedido como conteúdo JSON corretamente formado.
 
-## I. Identificar a sua chave de API do administrador do serviço Azure Search
+## <a name="i-identify-your-azure-search-services-admin-apikey"></a>I. Identificar a sua chave de API do administrador do serviço Azure Search
 Agora que aprovisionou um serviço Azure Search, pode emitir pedidos HTTP contra o ponto final do URL do seu serviço utilizando a API REST. No entanto, *todos* os pedidos de API devem incluir a chave de API que foi gerada para o serviço de Pesquisa que aprovisionou. Ter uma chave válida estabelece fidedignidade, numa base por pedido, entre a aplicação a enviar o pedido e o serviço que o processa.
 
 1. Para localizar as chaves de API do seu serviço, tem de iniciar sessão no [Portal do Azure](https://portal.azure.com/)
@@ -46,7 +50,7 @@ O seu serviço terá *chaves de administração* e *chaves de consulta*.
 
 Para o efeito de criação de um índice, pode utilizar tanto a chave de administrador principal como a secundária.
 
-## II. Definir o seu índice da Azure Search utilizando JSON corretamente formado
+## <a name="ii-define-your-azure-search-index-using-wellformed-json"></a>II. Definir o seu índice da Azure Search utilizando JSON corretamente formado
 Um pedido HTTP POST único para o seu serviço criará o seu índice. O corpo do seu pedido de HTTP POST irá conter um único objeto JSON que define o seu índice da Azure Search.
 
 1. A primeira propriedade deste objeto JSON é o nome do seu índice.
@@ -82,7 +86,7 @@ Tenha em atenção que exatamente um campo no seu índice do tipo `Edm.String` d
 
 A definição de índice acima utiliza um analisador de idioma personalizado para o campo `description_fr` porque destina-se ao armazenamento de texto em francês. Consulte [o tópico de suporte de idioma na MSDN](https://msdn.microsoft.com/library/azure/dn879793.aspx), bem como a [mensagem de blogue](https://azure.microsoft.com/blog/language-support-in-azure-search/) correspondente, para obter mais informações sobre analisadores de idiomas.
 
-## III. Emitir o pedido HTTP
+## <a name="iii-issue-the-http-request"></a>III. Emitir o pedido HTTP
 1. Utilize a sua definição de índice, tal como o corpo do pedido, emita um pedido de HTTP POST para o seu URL de ponto final de serviço Azure Search. No URL, não se esqueça de utilizar o seu nome de serviço como nome do anfitrião e colocar a `api-version` adequada como um parâmetro de cadeia de consulta (a versão da API atual é `2015-02-28` no momento da publicação deste documento).
 2. Nos cabeçalhos do pedido, especifique o `Content-Type` como `application/json`. Também terá de fornecer a chave de administrador do seu serviço que identificou no Passo I no cabeçalho `api-key`.
 
@@ -101,9 +105,12 @@ Quando terminar com um índice e pretender eliminá-lo, emita apenas um pedido d
     api-key: [api-key]
 
 
-## Seguinte
+## <a name="next"></a>Seguinte
 Depois de criar um índice da Azure Search, estará pronto para [carregar o conteúdo para o índice](search-what-is-data-import.md) para que possa começar a pesquisar os seus dados.
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

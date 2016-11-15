@@ -1,12 +1,12 @@
 ---
-title: Introdução à Azure Search no NodeJS | Microsoft Docs
-description: Instruções sobre a compilação de uma aplicação de pesquisa num serviço de pesquisa na nuvem alojado no Azure utilizando NodeJS como linguagem de programação.
+title: "Introdução à Azure Search no NodeJS | Microsoft Docs"
+description: "Instruções sobre a compilação de uma aplicação de pesquisa num serviço de pesquisa na nuvem alojado no Azure utilizando NodeJS como linguagem de programação."
 services: search
-documentationcenter: ''
+documentationcenter: 
 author: EvanBoyle
 manager: pablocas
 editor: v-lincan
-
+ms.assetid: 0625dc1b-9db6-40d5-ba9a-4738b75cbe19
 ms.service: search
 ms.devlang: na
 ms.workload: search
@@ -14,9 +14,13 @@ ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.date: 07/14/2016
 ms.author: evboyle
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: 8a66c8f6079671b16c1c60467e6d458ed54be5af
+
 
 ---
-# Introdução à Azure Search no NodeJS
+# <a name="get-started-with-azure-search-in-nodejs"></a>Introdução à Azure Search no NodeJS
 > [!div class="op_single_selector"]
 > * [Portal](search-get-started-portal.md)
 > * [.NET](search-howto-dotnet-sdk.md)
@@ -29,7 +33,7 @@ Utilizamos [NodeJS](https://nodejs.org) e NPM, [Sublime Text 3](http://www.subli
 
 Para executar este exemplo, precisa de um serviço do Azure Search e, para isso, pode inscrever-se no [Portal do Azure](https://portal.azure.com). Consulte [Criar um serviço Azure Search no portal](search-create-service-portal.md) para obter instruções passo a passo.
 
-## Sobre os dados
+## <a name="about-the-data"></a>Sobre os dados
 Esta aplicação de exemplo utiliza dados dos [Serviços Geológicos dos Estados Unidos (USGS)](http://geonames.usgs.gov/domestic/download_data.htm) filtrados no estado de Rhode Island de forma a reduzir o tamanho do conjunto de dados. Utilizaremos estes dados para compilar uma aplicação de pesquisa que devolve edifícios históricos, tais como hospitais e escolas, assim como características geológicas, como rios, lagos e cumes.
 
 Nesta aplicação, o programa **DataIndexer** compila e carrega o índice utilizando uma construção do [Indexador](https://msdn.microsoft.com/library/azure/dn798918.aspx), obtendo o conjunto de dados USGS filtrado a partir de uma Base de Dados SQL pública do Azure. As informações da ligação e das credenciais da fonte de dados online são fornecidas no código do programa. Não é necessária qualquer configuração adicional.
@@ -41,7 +45,7 @@ Nesta aplicação, o programa **DataIndexer** compila e carrega o índice utiliz
 
 <a id="sub-2"></a>
 
-## Localizar o nome de serviço e a chave de API do serviço da Azure Search
+## <a name="find-the-service-name-and-apikey-of-your-azure-search-service"></a>Localizar o nome de serviço e a chave de API do serviço da Azure Search
 Depois de criar o serviço, volte ao portal para obter o URL ou `api-key`. As ligações ao serviço Search requerem que tenha o URL e uma `api-key` para autenticar a chamada.
 
 1. Inicie sessão no [Portal do Azure](https://portal.azure.com).
@@ -49,10 +53,10 @@ Depois de criar o serviço, volte ao portal para obter o URL ou `api-key`. As li
 3. Selecione o serviço que pretende utilizar.
 4. No dashboard do serviço, verá os mosaicos com informações essenciais, bem como o ícone da chave para aceder às chaves de administração.
    
-    ![][3]
+      ![][3]
 5. Copie o URL de serviço, uma chave de administração e uma chave de consulta. Vai precisar dos três mais tarde quando os adicionar ao ficheiro config.js.
 
-## Transferir os ficheiros de exemplo
+## <a name="download-the-sample-files"></a>Transferir os ficheiros de exemplo
 Utilize uma das seguintes abordagens para transferir o exemplo.
 
 1. Aceda a [AzureSearchNodeJSIndexerDemo](https://github.com/AzureSearch/AzureSearchNodeJSIndexerDemo).
@@ -60,7 +64,7 @@ Utilize uma das seguintes abordagens para transferir o exemplo.
 
 Todas as modificações do ficheiro e instruções de execução subsequentes serão realizadas em ficheiros nesta pasta.
 
-## Atualizar o config.js. com o seu URL do serviço Search e a chave de API
+## <a name="update-the-configjs-with-your-search-service-url-and-apikey"></a>Atualizar o config.js. com o seu URL do serviço Search e a chave de API
 Através do URL e da chave de API que copiou anteriormente, especifique o URL, a chave de administração e a chave de consulta no ficheiro de configuração.
 
 As chaves de administração concedem um controlo total sobre as operações de serviço, incluindo criar ou eliminar um índice e carregar documentos. Em contrapartida, as chaves de consulta são para operações só de leitura, normalmente utilizadas por aplicações cliente que se ligam à Azure Search.
@@ -71,7 +75,7 @@ A seguinte captura de ecrã mostra o ficheiro **config.js** aberto num editor de
 
 ![][5]
 
-## Alojar um ambiente de tempo de execução para o exemplo
+## <a name="host-a-runtime-environment-for-the-sample"></a>Alojar um ambiente de tempo de execução para o exemplo
 O exemplo requer um servidor HTTP, que pode instalar globalmente utilizando npm.
 
 Utilize uma janela do PowerShell para os seguintes comandos.
@@ -80,13 +84,13 @@ Utilize uma janela do PowerShell para os seguintes comandos.
 2. Digite `npm install`.
 3. Digite `npm install -g http-server`.
 
-## Compilar o índice e executar a aplicação
+## <a name="build-the-index-and-run-the-application"></a>Compilar o índice e executar a aplicação
 1. Digite `npm run indexDocuments`.
 2. Digite `npm run build`.
 3. Digite `npm run start_server`.
 4. Direcione o seu browser para `http://localhost:8080/index.html`
 
-## Pesquisar nos dados USGS
+## <a name="search-on-usgs-data"></a>Pesquisar nos dados USGS
 O conjunto de dados USGS inclui registos relevantes para o Estado da Rhode Island. Se clicar em **Pesquisar** numa caixa de pesquisa em branco, irá obter as 50 entradas principais, o valor predefinido.
 
 Ao introduzir um termo de pesquisa, o motor de busca terá algo concreto para procurar. Tente introduzir um nome regional. "Roger Williams" foi o primeiro governador de Rhode Island. Existem vários parques, edifícios e escolas com o seu nome.
@@ -99,7 +103,7 @@ Também pode tentar qualquer um destes termos:
 * Pembroke
 * ganso +cabo
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 Este é o primeiro tutorial da Azure Search com base em NodeJS e o conjunto de dados USGS. Ao longo do tempo, iremos irá expandir este tutorial para demonstrar funcionalidades adicionais de pesquisa que pode querer utilizar nas suas soluções personalizadas.
 
 Se já tiver algum conhecimento sobre a Azure Search, pode utilizar este exemplo como ponto de partida para tentar sugestores (escrita antecipada ou consultas de conclusão automática), filtros e navegação por facetas. Também pode melhorar a página de resultados da pesquisa ao adicionar contagens e criação de batches de documentos para que os utilizadores possam percorrer os resultados.
@@ -115,6 +119,6 @@ Novo na Azure Search? Recomendamos que experimente outros tutoriais para desenvo
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

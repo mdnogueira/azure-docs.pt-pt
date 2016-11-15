@@ -1,13 +1,13 @@
 ---
-title: Uma solução preditiva para risco de crédito com Machine Learning | Microsoft Docs
-description: Instruções detalhadas sobre como criar uma solução de análise preditiva para a avaliação de riscos de crédito no Azure Machine Learning Studio.
-keywords: risco de crédito, solução de análise preditiva, avaliação de riscos
+title: "Uma solução preditiva para risco de crédito com Machine Learning | Microsoft Docs"
+description: "Instruções detalhadas sobre como criar uma solução de análise preditiva para a avaliação de riscos de crédito no Azure Machine Learning Studio."
+keywords: "risco de crédito, solução de análise preditiva, avaliação de riscos"
 services: machine-learning
-documentationcenter: ''
+documentationcenter: 
 author: garyericson
 manager: jhubbard
 editor: cgronlun
-
+ms.assetid: 43300854-a14e-4cd2-9bb1-c55c779e0e93
 ms.service: machine-learning
 ms.workload: data-services
 ms.tgt_pltfrm: na
@@ -15,9 +15,13 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 09/16/2016
 ms.author: garye
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: aa64dc7f5bb3e928aac30987b0904435c603829c
+
 
 ---
-# Instruções: desenvolver uma solução de análise preditiva para a avaliação de riscos de crédito no Azure Machine Learning
+# <a name="walkthrough-develop-a-predictive-analytics-solution-for-credit-risk-assessment-in-azure-machine-learning"></a>Instruções: desenvolver uma solução de análise preditiva para a avaliação de riscos de crédito no Azure Machine Learning
 Suponhamos que tem de prever o risco de crédito de um indivíduo com base nas informações fornecidas sobre uma aplicação de crédito.  
 
 A avaliação de riscos de crédito é um problema complexo, obviamente, mas vamos simplificar um pouco os parâmetros da pergunta. Podemos utilizá-la como um exemplo de como pode utilizar o Microsoft Azure Machine Learning com o Machine Learning Studio e o serviço web do Machine Learning para criar uma solução de análise preditiva.  
@@ -44,6 +48,9 @@ Para criar uma solução de avaliação do risco de crédito, teremos de executa
 
 Estas instruções baseiam-se uma versão simplificada da [Classificação do binário: previsão do risco de crédito](http://go.microsoft.com/fwlink/?LinkID=525270) experimentação de exemplo na [Galeria da Cortana Intelligence](http://gallery.cortanaintelligence.com/).
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 
