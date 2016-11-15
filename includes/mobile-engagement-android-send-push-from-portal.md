@@ -1,4 +1,4 @@
-### Conceder ao Mobile Engagement acesso à Chave de API do GCM
+### <a name="grant-mobile-engagement-access-to-your-gcm-api-key"></a>Conceder ao Mobile Engagement acesso à Chave de API do GCM
 Para permitir que o Mobile Engagement envie notificações push em seu nome, tem de lhe conceder acesso à sua Chave de API. Para tal, deve configurar e introduzir a sua chave no portal do Mobile Engagement.
 
 1. No Portal Clássico do Azure, verifique se está na aplicação que estamos a utilizar para este projeto e clique no botão **Iniciar** na parte inferior:
@@ -14,7 +14,7 @@ Para permitir que o Mobile Engagement envie notificações push em seu nome, tem
    
     ![](./media/mobile-engagement-android-send-push/api-key.png)
 
-## <a id="send"></a>Enviar uma notificação à aplicação
+## <a name="a-idsendasend-a-notification-to-your-app"></a><a id="send"></a>Enviar uma notificação à aplicação
 Vamos agora criar uma campanha de notificações push simples para enviar uma notificação push à nossa aplicação.
 
 1. Navegue até ao separador **ALCANCE** no portal do Mobile Engagement.
@@ -42,6 +42,8 @@ Vamos agora criar uma campanha de notificações push simples para enviar uma no
    
     ![](./media/mobile-engagement-android-send-push/campaign-activate.png)
 
-<!--HONumber=Sep16_HO3-->
+
+
+<!--HONumber=Nov16_HO2-->
 
 

@@ -1,13 +1,13 @@
 ---
-title: O que é a Segurança de Automatização do Azure | Microsoft Docs
-description: Este artigo fornece uma descrição geral da segurança de automatização e os métodos de autenticação diferentes disponíveis para as Contas de Automatização na Automatização do Azure.
+title: "O que é a Segurança de Automatização do Azure | Microsoft Docs"
+description: "Este artigo fornece uma descrição geral da segurança de automatização e os métodos de autenticação diferentes disponíveis para as Contas de Automatização na Automatização do Azure."
 services: automation
-documentationcenter: ''
+documentationcenter: 
 author: MGoedtel
 manager: jwhit
 editor: tysonn
-keywords: segurança da automatização, automatização segura
-
+keywords: "segurança da automatização, automatização segura"
+ms.assetid: 4a6bc2f5-c5a2-4dfb-b10d-7950d750dee8
 ms.service: automation
 ms.devlang: na
 ms.topic: get-started-article
@@ -15,13 +15,17 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/29/2016
 ms.author: magoedte
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: 5cd87c888a5e3407da2bad1bc3f2ef10aa75312b
+
 
 ---
-# Segurança da Automatização do Azure
+# <a name="azure-automation-security"></a>Segurança da Automatização do Azure
 A Automatização do Azure permite-lhe automatizar tarefas relativamente aos recursos no Azure, no local e outros fornecedores de serviços em nuvem, tais como os Amazon Web Services (AWS).  Para um runbook efetuar as ações necessárias, tem de ter permissões para aceder de forma segura aos recursos com os direitos mínimos necessários dentro da subscrição.  
 Este artigo irá cobrir os vários cenários de autenticação suportados pela Automatização do Azure e irá mostrar como começar com base no ambiente ou ambientes que tem de gerir.  
 
-## Descrição Geral da Conta de Automatização
+## <a name="automation-account-overview"></a>Descrição Geral da Conta de Automatização
 Quando inicia a Automatização do Azure pela primeira vez, tem de criar pelo menos uma conta de Automatização. As contas de automatização permitem-lhe a isolar os recursos de Automatização (runbooks, recursos, configurações) a partir dos recursos contidos noutras contas de Automatização. Pode utilizar contas de Automatização para separar recursos em ambientes lógicos separados. Por exemplo, poderá utilizar uma conta para o desenvolvimento, outra para a produção e outra para o seu ambiente no local.  Uma conta de automatização do Azure é diferente da sua conta Microsoft ou contas criadas na sua subscrição do Azure.
 
 Os recursos de Automatização para cada conta de Automatização estão associados a uma única região do Azure, mas as contas de Automatização podem gerir os recursos em qualquer região. A razão principal para criar contas de Automatização em diferentes regiões seria se tiver políticas que exigem que os dados e os recursos estejam isolados numa região específica.
@@ -42,7 +46,7 @@ O controlo de acesso baseado em funções está disponível no Azure Resource Ma
 
 Os Runbooks em execução numa Função de Trabalho de Runbook Híbrida no seu datacenter ou em relação a serviços de computação no AWS não podem utilizar o mesmo método que é normalmente utilizado para a autenticação de runbooks nos recursos do Azure.  Isto acontece porque esses recursos estão a ser executados fora do Azure e, como tal, necessitarão das suas próprias credenciais de segurança definidas na Automatização para autenticar em recursos que acedem localmente.  
 
-## Métodos de autenticação
+## <a name="authentication-methods"></a>Métodos de autenticação
 A tabela seguinte resume os métodos de autenticação diferentes para cada ambiente suportado pela Automatização do Azure e o artigo que descreve como configurar a autenticação para os runbooks.
 
 | Método | Ambiente | Artigo |
@@ -53,6 +57,9 @@ A tabela seguinte resume os métodos de autenticação diferentes para cada ambi
 | Autenticação do Windows |Datacenter No Local |[Autenticar Runbooks para Funções de Trabalho de Runbook Híbridas](automation-hybrid-runbook-worker.md) |
 | Credenciais AWS |Amazon Web Services |[Autenticar Runbooks com os Amazon Web Services (AWS)](automation-sec-configure-aws-account.md) |
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

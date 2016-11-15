@@ -1,12 +1,12 @@
 ---
-title: Descrição geral do portal do Microsoft Azure
+title: "Descrição geral do portal do Microsoft Azure"
 description: Saiba como utilizar o portal do Microsoft Azure.
-services: ''
-documentationcenter: ''
+services: 
+documentationcenter: 
 author: davidwrede
 manager: dwrede
 editor: jimbe
-
+ms.assetid: 53cb9df1-c96a-4f4e-b022-18336cd3d697
 ms.service: na
 ms.workload: na
 ms.tgt_pltfrm: na
@@ -14,9 +14,13 @@ ms.devlang: na
 ms.topic: hero-article
 ms.date: 12/16/2015
 ms.author: dwrede
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: 31bea465db1afb5efc22b2280d83d3b50bced329
+
 
 ---
-# Descrição geral do portal do Microsoft Azure
+# <a name="microsoft-azure-portal-overview"></a>Descrição geral do portal do Microsoft Azure
 O portal do Microsoft Azure é um local central onde pode aprovisionar e gerir os recursos do Azure.  Este tutorial irá familiarizá-lo com o portal e mostrar-lhe como utilizar algumas dessas capacidades essenciais:
 
 * Um **mercado abrangente** que lhe permite navegar em milhares de itens da Microsoft e de outros fornecedores que podem ser comprados e/ou aprovisionados.
@@ -26,10 +30,10 @@ O portal do Microsoft Azure é um local central onde pode aprovisionar e gerir o
   
   ![Orientação da IU do Portal do Azure][UIOrientation]
 
-## Antes de começar
+## <a name="before-you-get-started"></a>Antes de começar
 Necessitará de uma subscrição do Azure válida par avançar neste tutorial.  Se não tiver uma, [inscreva-se numa avaliação gratuita](https://azure.microsoft.com/pricing/free-trial/) hoje.  Assim que tiver uma subscrição, pode aceder ao portal em [https://portal.azure.com].
 
-## Como criar um recurso
+## <a name="how-to-create-a-resource"></a>Como criar um recurso
 O Azure tem um mercado com milhares de itens que pode criar a partir de um único local.  Digamos que pretende criar uma nova VM do Windows Server 2012.  O hub +NEW é o seu ponto de entrada para um conjunto organizado de categorias em destaque do mercado.  Cada categoria tem um pequeno conjunto de itens em destaque juntamente com uma ligação para o mercado completo que mostra todas as categorias e a pesquisa. Para criar essa nova VM do Windows Server 2012, execute as seguintes ações:  
 
 1. O Windows Server 2012 está incluído, pelo que o pode selecionar na categoria Computação.  
@@ -40,12 +44,12 @@ O hub de notificações alerta-o quando o recurso tiver sido criado e abre-se um
 
 ![Categorias do Portal][PortalCategories]
 
-## Como encontrar os seus recursos
+## <a name="how-to-find-your-resources"></a>Como encontrar os seus recursos
 Pode sempre afixar ao Startboard os recursos a que acede com frequência, mas é provável que tenha de procurar algo a que não acede frequentemente.  O hub de navegação mostrado abaixo é a forma de aceder a todos os seus recursos.  Pode filtrar por subscrição, escolher/redimensionar colunas e navegar até aos painéis de gestão ao clicar em itens individuais.
 
 ![Hub de Navegação][BrowseHub]
 
-## Como gerir e delegar o acesso a um recurso
+## <a name="how-to-manage-and-delegate-access-to-a-resource"></a>Como gerir e delegar o acesso a um recurso
 A partir deste painel, pode ligar-se à máquina virtual utilizando o ambiente de trabalho remoto, monitorizar métricas de desempenho essenciais, controlar o acesso a esta VM com o acesso baseado em funções (RBAC), configurar a VM e efetuar outras tarefas de gestão importantes.  Delegar o acesso baseado na função é fundamental para a gestão à escala.  Clique [aqui](active-directory/role-based-access-control-configure.md) para saber mais acerca do mesmo. Para delegar o acesso a um recurso, execute as seguintes ações:
 
 1. Navegue até ao recurso.
@@ -56,7 +60,7 @@ A partir deste painel, pode ligar-se à máquina virtual utilizando o ambiente d
 
 ![Gerir um recurso][ManageResource]
 
-## Como personalizar um painel de recursos
+## <a name="how-to-customize-a-resource-blade"></a>Como personalizar um painel de recursos
 O Azure pré-configura os painéis para os seus recursos, mas os mosaicos nestes painéis estão sob o seu controlo.  Pode aceder facilmente ao modo de personalização para adicionar, remover, redimensionar ou reorganizar os mosaicos. Para personalizar um painel, execute as seguintes ações:
 
 1. Navegue até ao recurso.
@@ -66,12 +70,12 @@ O Azure pré-configura os painéis para os seus recursos, mas os mosaicos nestes
 
 ![Personalização de Painéis][CustomizeBlades]
 
-## Como obter ajuda
+## <a name="how-to-get-help"></a>Como obter ajuda
 Se tiver algum problema, estamos à sua disposição.  O portal tem uma página de ajuda e suporte que o pode orientar na direção certa.  Dependendo do seu [plano de suporte](https://azure.microsoft.com/support/plans/), também pode criar pedidos de suporte diretamente no portal.  Depois de criar um pedido de suporte, pode gerir o ciclo de vida do mesmo no portal. Pode aceder à página de ajuda e suporte ao navegar até Procurar -> Ajuda + suporte.  
 
 ![Ajuda e suporte][HelpSupport]
 
-## Resumo
+## <a name="summary"></a>Resumo
 Vamos rever o que aprendeu neste tutorial:
 
 * Aprendeu a inscrever-se, obter uma subscrição e navegar até ao portal
@@ -93,6 +97,6 @@ O portal do Microsoft Azure simplifica de forma radical a criação e a gestão 
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

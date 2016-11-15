@@ -1,4 +1,4 @@
-### Conceder ao Certificado Push acesso ao Mobile Engagement
+### <a name="grant-access-to-your-push-certificate-to-mobile-engagement"></a>Conceder ao Certificado Push acesso ao Mobile Engagement
 Para permitir que o Mobile Engagement envie Notificações Push em seu nome, tem de conceder acesso ao certificado. Para tal, deve configurar e introduzir o certificado no portal de Mobile Engagement. Não se esqueça de obter o certificado .p12 conforme explicado na [Documentação da Apple](https://developer.apple.com/library/prerelease/ios/documentation/IDEs/Conceptual/AppDistributionGuide/AddingCapabilities/AddingCapabilities.html#//apple_ref/doc/uid/TP40012582-CH26-SW6).
 
 1. Navegue até ao portal do Mobile Engagement. Confirme se está no portal correto e clique no botão **Iniciar** na parte inferior:
@@ -11,7 +11,7 @@ Para permitir que o Mobile Engagement envie Notificações Push em seu nome, tem
    
     ![](./media/mobile-engagement-ios-send-push/native-push-settings.png)
 
-## <a id="send"></a>Enviar uma notificação à aplicação
+## <a name="a-idsendasend-a-notification-to-your-app"></a><a id="send"></a>Enviar uma notificação à aplicação
 Vamos agora criar uma campanha de Notificações Push simples para enviar uma notificação push à nossa aplicação:
 
 1. Navegue até ao separador **Alcance** no portal do Mobile Engagement.
@@ -40,6 +40,8 @@ Vamos agora criar uma campanha de Notificações Push simples para enviar uma no
    
     ![](./media/mobile-engagement-ios-send-push/apple-watch.png)
 
-<!--HONumber=Jun16_HO2-->
+
+
+<!--HONumber=Nov16_HO2-->
 
 

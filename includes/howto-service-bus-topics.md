@@ -1,4 +1,4 @@
-## O que são os tópicos e as subscrições do Service Bus?
+## <a name="what-are-service-bus-topics-and-subscriptions"></a>O que são os tópicos e as subscrições do Service Bus?
 Os tópicos e as subscrições do Service Bus suportam um modelo de comunicação de mensagens de *publicação/subscrição*. Ao utilizar tópicos e subscrições, os componentes de uma aplicação distribuída não comunicam diretamente entre si; trocam antes mensagens através de um tópico, que funciona como um intermediário.
 
 ![TopicConcepts](./media/howto-service-bus-topics/sb-topics-01.png)
@@ -9,7 +9,7 @@ Uma subscrição num tópico é semelhante a uma fila virtual que recebe cópias
 
 Os tópicos e as subscrições do Service Bus permitem ao utilizador dimensionar e processar um número muito grande de mensagens entre muito utilizadores e aplicações.
 
-## Criar um espaço de nomes
+## <a name="create-a-namespace"></a>Criar um espaço de nomes
 Para começar a utilizar os tópicos e as subscrições do Service Bus no Azure, deve começar por criar um *espaço de nomes do serviço*. Um espaço de nomes fornece um contentor de âmbito para abordar os recursos do Service Bus na sua aplicação.
 
 Para criar um espaço de nomes:
@@ -25,24 +25,24 @@ Para criar um espaço de nomes:
     ![Criar espaço de nomes][create-namespace]
 8. Clique no botão **Criar**. O sistema cria o espaço de nomes e ativa-o. Poderá ter de aguardar alguns minutos enquanto o sistema aprovisiona recursos para a sua conta.
 
-### Obter as credenciais
+### <a name="obtain-the-credentials"></a>Obter as credenciais
 1. Na lista de espaços de nomes, clique no nome do espaço de nomes criado recentemente.
 2. No painel **Espaço de nomes do Service Bus**, clique em **Políticas de acesso partilhado**.
 3. No painel **Políticas de acesso partilhado**, clique em **RootManageSharedAccessKey**.
    
-    ![informações-ligação][connection-info]
+    ![connection-info][connection-info]
 4. No painel **Política: RootManageSharedAccessKey**, clique no botão de cópia junto a **Cadeia de ligação – chave primária** para copiar a cadeia de ligação para a sua área de transferência e utilizá-la mais tarde.
    
-    ![cadeia-ligação][connection-string]
+    ![connection-string][connection-string]
 
 [Portal do Azure]: https://portal.azure.com
-[criar-espaço de nomes]: ./media/howto-service-bus-topics/create-namespace.png
-[informações-ligação]: ./media/howto-service-bus-topics/connection-info.png
-[cadeia-ligação]: ./media/howto-service-bus-topics/connection-string.png
+[create-namespace]: ./media/howto-service-bus-topics/create-namespace.png
+[connection-info]: ./media/howto-service-bus-topics/connection-info.png
+[connection-string]: ./media/howto-service-bus-topics/connection-string.png
 
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 
