@@ -1,13 +1,13 @@
 ---
-title: Instruções sobre a solução pré-configurada de Monitorização Remota | Microsoft Docs
-description: Uma descrição sobre a solução pré-configurada de monitorização remota e respetiva arquitetura do Azure IoT.
-services: ''
+title: "Instruções sobre a solução pré-configurada de Monitorização Remota | Microsoft Docs"
+description: "Uma descrição sobre a solução pré-configurada de monitorização remota e respetiva arquitetura do Azure IoT."
+services: 
 suite: iot-suite
-documentationcenter: ''
+documentationcenter: 
 author: dominicbetts
 manager: timlt
-editor: ''
-
+editor: 
+ms.assetid: 31fe13af-0482-47be-b4c8-e98e36625855
 ms.service: iot-suite
 ms.devlang: na
 ms.topic: get-started-article
@@ -15,10 +15,14 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/17/2016
 ms.author: dobett
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: 6338750446b33269614c404ecaad8f8192bf1ab2
+
 
 ---
-# Instruções sobre a solução pré-configurada de monitorização remota
-## Introdução
+# <a name="remote-monitoring-preconfigured-solution-walkthrough"></a>Instruções sobre a solução pré-configurada de monitorização remota
+## <a name="introduction"></a>Introdução
 A [solução pré-configurada][lnk-preconfigured-solutions] de monitorização remota do IoT Suite é uma implementação de uma solução de monitorização ponto a ponto para várias máquinas em execução em localizações remotas. A solução combina serviços-chave do Azure para fornecer uma implementação genérica do cenário de negócios e pode utilizá-la como um ponto de partida para a sua própria implementação. Pode [personalizar][lnk-customize] a solução para satisfazer os seus próprios requisitos comerciais.
 
 Este artigo acompanha-o através de alguns dos elementos-chave da solução de monitorização remota para que possa compreender como funciona. Estes conhecimentos ajudam a:
@@ -27,12 +31,12 @@ Este artigo acompanha-o através de alguns dos elementos-chave da solução de m
 * Planear a forma de personalizar a solução para satisfazer os seus próprios requisitos específicos. 
 * Estruturar a sua própria solução de IoT que utiliza os serviços do Azure.
 
-## Arquitetura lógica
+## <a name="logical-architecture"></a>Arquitetura lógica
 O diagrama que se segue descreve os componentes lógicos da solução pré-configurada:
 
 ![Arquitetura lógica](media/iot-suite-remote-monitoring-sample-walkthrough/remote-monitoring-architecture.png)
 
-## Dispositivos simulados
+## <a name="simulated-devices"></a>Dispositivos simulados
 Na solução pré-configurada, o dispositivo simulado representa um dispositivo de arrefecimento (como um aparelho de ar condicionado para edifícios ou unidade de tratamento do ar).  Ao implementar a solução pré-configurada, também aprovisiona automaticamente quatro dispositivos simulados que são executados num [Trabalho Web do Azure][lnk-webjobs]. Os dispositivos simulados permitem-lhe explorar facilmente o comportamento da solução sem a necessidade de implementar quaisquer dispositivos físicos. Para implementar um dispositivo físico real, veja o tutorial [Connect your device to the remote monitoring preconfigured solution (Ligar o seu dispositivo à solução pré-configurada de monitorização remota)][lnk-connect-rm].
 
 Cada dispositivo simulado pode enviar os seguintes tipos de mensagens para o Hub IoT:
@@ -76,10 +80,10 @@ Os dispositivos simulados podem processar os seguintes comandos enviados a parti
 
 A confirmação do comando de dispositivo para o back-end da solução é fornecida através do Hub IoT.
 
-## IoT Hub
+## <a name="iot-hub"></a>IoT Hub
 O [Hub IoT][lnk-iothub] ingere dados enviados a partir dos dispositivos para a nuvem e disponibiliza-os para as tarefas do Azure Stream Analytics (ASA). O Hub IoT envia também comandos para os seus dispositivos em nome do portal do dispositivo. Cada tarefa de transmissão do ASA utiliza um grupo de consumidores do Hub IoT separado para ler a transmissão de mensagens a partir dos seus dispositivos.
 
-## Azure Stream Analytics
+## <a name="azure-stream-analytics"></a>Azure Stream Analytics
 Na solução de monitorização remota, o [Azure Stream Analytics][lnk-asa] (ASA) envia mensagens do dispositivo recebidas pelo Hub IoT para outros componentes de back-end para fins de processamento ou armazenamento. As diferentes tarefas do ASA efetuam funções específicas com base no conteúdo das mensagens.
 
 **Tarefa 1: Informações do dispositivo** filtra as mensagens de informações do dispositivo a partir do fluxo de mensagens de entrada e envia-as para um ponto final do Event Hub. Um dispositivo envia mensagens de informações do dispositivo aquando do arranque e como resposta a um comando **SendDeviceInfo**. Esta tarefa utiliza a definição de consulta seguinte para identificar as mensagens **device-info**:
@@ -176,26 +180,26 @@ GROUP BY
     SlidingWindow (mi, 5)
 ```
 
-## Event Hubs
+## <a name="event-hubs"></a>Event Hubs
 As tarefas do ASA **device info** e **rules** enviam os seus dados para os Hubs de Eventos para que estes os encaminhem de forma fiável para o **Processador de Eventos** em execução no Trabalho Web.
 
-## Storage do Azure
+## <a name="azure-storage"></a>Storage do Azure
 A solução utiliza o armazenamento de blobs do Azure para manter todos os dados de telemetria não processados e resumidos dos dispositivos na solução. O dashboard lê os dados de telemetria do armazenamento de blobs para preencher os gráficos. Para apresentar os alertas, o dashboard lê os dados do armazenamento de blobs que registam quando os valores de telemetria excederam os valores de limiar configurados. A solução também utiliza o armazenamento de blobs para registar os valores de limiar definidos por si no dashboard.
 
-## Trabalhos Web
+## <a name="webjobs"></a>Trabalhos Web
 Para além de alojar simuladores de dispositivo, os Trabalhos Web na solução também alojam o **Processador de Eventos** em execução num Trabalho Web do Azure que processa mensagens de informações do dispositivo e as respostas de comandos. Utiliza:
 
 * Mensagens de informações de dispositivo para atualizar o registo de dispositivos (armazenado na base de dados do DocumentDB) com as atuais informações do dispositivo.
 * Mensagens de resposta de comando para atualizar o histórico de comando do dispositivo (armazenado na base de dados do DocumentDB).
 
-## DocumentDB
+## <a name="documentdb"></a>DocumentDB
 A solução utiliza uma base de dados do DocumentDB para armazenar informações sobre os dispositivos ligados à solução. Estas informações incluem metadados do dispositivo e o histórico dos comandos enviados para os dispositivos a partir do dashboard.
 
-## Web Apps
-### Dashboard de monitorização remota
+## <a name="web-apps"></a>Web Apps
+### <a name="remote-monitoring-dashboard"></a>Dashboard de monitorização remota
 Esta página na aplicação Web utiliza os controlos javascript do PowerBI (consulte [PowerBI-visuals repo](https://www.github.com/Microsoft/PowerBI-visuals)) para visualizar os dados de telemetria dos dispositivos. A solução utiliza a tarefa de telemetria do ASA para escrever dados de telemetria no armazenamento de blobs.
 
-### Portal de administração do dispositivo
+### <a name="device-administration-portal"></a>Portal de administração do dispositivo
 Esta aplicação Web permite-lhe:
 
 * Aprovisionar um novo dispositivo. Esta ação define o ID exclusivo do dispositivo e gera a chave de autenticação. Escreve informações sobre o dispositivo no registo de identidade do Hub IoT e na base de dados do DocumentDB específica da solução.
@@ -204,7 +208,7 @@ Esta aplicação Web permite-lhe:
 * Ver o histórico de comando de um dispositivo.
 * Ativar e desativar dispositivos.
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 As seguintes mensagens de blogue do TechNet fornecem mais detalhes sobre a solução pré-configurada de monitorização remota:
 
 * [IoT Suite - Sob definições avançadas - Monitorização Remota](http://social.technet.microsoft.com/wiki/contents/articles/32941.iot-suite-under-the-hood-remote-monitoring.aspx)
@@ -224,6 +228,7 @@ Pode continuar a introdução ao IoT Suite ao ler os artigos seguintes:
 [lnk-permissions]: iot-suite-permissions.md
 
 
-<!--HONumber=Sep16_HO3-->
+
+<!--HONumber=Nov16_HO2-->
 
 

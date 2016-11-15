@@ -1,13 +1,13 @@
 ---
-title: Introdução às soluções pré-configuradas | Microsoft Docs
-description: Siga este tutorial para saber como implementar uma solução pré-configurada do Azure IoT Suite.
-services: ''
+title: "Introdução às soluções pré-configuradas | Microsoft Docs"
+description: "Siga este tutorial para saber como implementar uma solução pré-configurada do Azure IoT Suite."
+services: 
 suite: iot-suite
-documentationcenter: ''
+documentationcenter: 
 author: dominicbetts
 manager: timlt
-editor: ''
-
+editor: 
+ms.assetid: 6ab38d1a-b564-469e-8a87-e597aa51d0f7
 ms.service: iot-suite
 ms.devlang: na
 ms.topic: hero-article
@@ -15,10 +15,14 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/16/2016
 ms.author: dobett
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: 8ec86ebefccaf74c67cb7917ccf7d538bc95ae07
+
 
 ---
-# Tutorial: Introdução às soluções pré-configuradas
-## Introdução
+# <a name="tutorial-get-started-with-the-preconfigured-solutions"></a>Tutorial: Introdução às soluções pré-configuradas
+## <a name="introduction"></a>Introdução
 As [soluções pré-configuradas][lnk-preconfigured-solutions] do Azure IoT Suite combinam múltiplos serviços do Azure IoT para fornecer soluções ponto-a-ponto que implementam cenários de negócios comuns do IoT. A solução pré-configurada de *monitorização remota* estabelece ligação aos seus dispositivos e monitoriza-os. Pode utilizar a solução para analisar o fluxo de dados dos seus dispositivos e melhorar os resultados de negócios ao fazer com que os processos respondam automaticamente a esse fluxo de dados.
 
 Este tutorial mostra-lhe como aprovisionar a solução pré-configurada de monitorização remota. Também fornece orientações sobre as funcionalidades básicas da solução de monitorização remota. Pode aceder a muitas destas funcionalidades através do dashboard da solução pré-configurada que é implementado juntamente com a mesma:
@@ -34,7 +38,7 @@ Para concluir este tutorial, precisa de uma subscrição ativa do Azure.
 
 [!INCLUDE [iot-suite-provision-remote-monitoring](../../includes/iot-suite-provision-remote-monitoring.md)]
 
-## Ver o dashboard da solução
+## <a name="view-the-solution-dashboard"></a>Ver o dashboard da solução
 O dashboard de solução permite-lhe gerir a solução implementada. Por exemplo, pode ver a telemetria, adicionar dispositivos e configurar regras.
 
 1. Quando o aprovisionamento estiver concluído e o mosaico da sua solução pré-configuradas indicar **Pronto**, clique em **Iniciar** para abrir o seu portal de solução de monitorização remota num novo separador.
@@ -50,7 +54,7 @@ O dashboard apresenta as seguintes informações:
 * O painel **Histórico de Telemetria** rastreia em tempo real a humidade e a telemetria de temperatura de um dispositivo selecionado e mostra os dados agregados, como a humidade máxima, mínima e média.
 * O painel **Histórico de Alarme** mostra eventos de alarme recentes quando um valor de telemetria ultrapassar um limiar. Para além dos exemplos criados pela solução pré-configurada, pode ainda definir os seus próprios alarmes.
 
-## Ver a lista de dispositivos
+## <a name="view-the-device-list"></a>Ver a lista de dispositivos
 A lista de dispositivos mostra todos os dispositivos registados na solução. Pode ver e editar os metadados do dispositivo, adicionar ou remover dispositivos e enviar comandos aos dispositivos.
 
 1. Clique em **Dispositivos** no menu da esquerda para mostra a *lista de dispositivos* para esta solução.
@@ -67,7 +71,7 @@ O painel **Detalhes do Dispositivo** é constituído por três secções:
 * A secção **Propriedades do Dispositivo** lista os metadados do dispositivo. Alguns dos metadados provêm do próprio dispositivo (como o fabricante), sendo alguns gerados pela solução (como a hora de criação). Pode editar os metadados do dispositivo a partir daqui.
 * A secção **Chaves de Autenticação** lista as chaves que o dispositivo pode utilizar para autenticar-se na solução.
 
-## Enviar um comando a um dispositivo
+## <a name="send-a-command-to-a-device"></a>Enviar um comando a um dispositivo
 O painel Detalhes do dispositivo mostra todos os comandos que um dispositivo específico suporta e permite-lhe enviar comandos a um dispositivo. Quando um dispositivo é iniciado pela primeira vez, envia informações sobre os comandos que suporta à solução.
 
 1. Clique em **Comandos** no painel Detalhes do dispositivo para o dispositivo selecionado.
@@ -81,7 +85,7 @@ O painel Detalhes do dispositivo mostra todos os comandos que um dispositivo esp
 
 A solução controla o estado de cada comando que envia. Inicialmente, o resultado é **Pendente**. Quando o dispositivo relata que executou o comando, o resultado é definido para **Êxito**.
 
-## Adicionar um novo dispositivo simulado
+## <a name="add-a-new-simulated-device"></a>Adicionar um novo dispositivo simulado
 Ao implementar a solução pré-configurada, aprovisiona automaticamente os quatro dispositivos de exemplo que pode ver na lista de dispositivos. Estes dispositivos são *dispositivos simulados* em execução num Trabalho Web do Azure. Os dispositivos simulados permitem-lhe testar facilmente a solução pré-configurada sem ser necessário implementar dispositivos físicos reais. Se quiser ligar um dispositivo real à solução, veja o tutorial [Ligar o seu dispositivo à solução pré-configurada de monitorização remota][lnk-connect-rm].
 
 Os seguintes passos mostram como adicionar um dispositivo simulado à solução:
@@ -107,7 +111,7 @@ Os seguintes passos mostram como adicionar um dispositivo simulado à solução:
    
     ![Ver telemetria do novo dispositivo][img-runningnew-2]
 
-## Editar os metadados do dispositivo
+## <a name="edit-the-device-metadata"></a>Editar os metadados do dispositivo
 Quando um dispositivo estabelece ligação à solução pela primeira vez, este envia os respetivos metadados para a solução. Quando edita os metadados do dispositivo através do dashboard da solução, este envia os novos valores de metadados para o dispositivo e armazena os novos valores na base de dados DocumentDB da solução. Para obter mais informações, veja [Registo de identidade do dispositivo e DocumentDB][lnk devicemetadata].
 
 1. Navegue de volta para a lista de dispositivos.
@@ -121,7 +125,7 @@ Quando um dispositivo estabelece ligação à solução pela primeira vez, este 
    
     ![Editar metadados do dispositivo][img-editdevice3]
 
-## Adicionar uma regra para o novo dispositivo
+## <a name="add-a-rule-for-the-new-device"></a>Adicionar uma regra para o novo dispositivo
 Não existem quaisquer regras para o novo dispositivo que acabou de adicionar. Nesta secção, irá adicionar uma regra que aciona um alarme quando a temperatura comunicada pelo novo dispositivo for superior a 47 graus. Antes de começar, tenha em atenção que o histórico de telemetria para o novo dispositivo no dashboard mostra que a temperatura do dispositivo nunca excede 45 graus.
 
 1. Navegue de volta para a lista de dispositivos.
@@ -151,7 +155,7 @@ Não existem quaisquer regras para o novo dispositivo que acabou de adicionar. N
 > 
 > 
 
-## Outras funcionalidades
+## <a name="other-features"></a>Outras funcionalidades
 Através do portal de solução, pode pesquisar dispositivos com características específicas, tais como um número de modelo:
 
 ![Pesquisar um dispositivo][img-search]
@@ -160,7 +164,7 @@ Pode desativar um dispositivo e removê-lo após a desativação:
 
 ![Desativar e remover um dispositivo][img-disable]
 
-## Nos bastidores
+## <a name="behind-the-scenes"></a>Nos bastidores
 Quando implementar uma solução pré-configurada, o processo de implementação cria vários recursos na subscrição do Azure que selecionou. Pode ver estes recursos no [Portal][lnk-portal] do Azure. O processo de implementação cria um **grupo de recursos** com um nome baseado no nome que escolheu para a sua solução pré-configurada:
 
 ![Solução pré-configurada no portal do Azure][img-portal]
@@ -180,7 +184,7 @@ Quando terminar, pode eliminar a solução pré-configurada da sua subscrição 
 > 
 > 
 
-## Passos Seguintes
+## <a name="next-steps"></a>Passos Seguintes
 Agora que implementou uma solução pré-configurada funcional, pode ler os artigos seguintes para continuar a introdução ao IoT Suite:
 
 * [Instruções sobre a solução pré-configurada de monitorização remota][lnk-rm-walkthrough]
@@ -217,7 +221,7 @@ Agora que implementou uma solução pré-configurada funcional, pode ler os arti
 [lnk-logic-apps]: https://azure.microsoft.com/documentation/services/app-service/logic/
 [lnk-portal]: http://portal.azure.com/
 [lnk-rmgithub]: https://github.com/Azure/azure-iot-remote-monitoring
-[lnk devicemetadata]: iot-suite-what-are-preconfigured-solutions.md#device-identity-registry-and-documentdb
+[lnk-devicemetadata]: iot-suite-what-are-preconfigured-solutions.md#device-identity-registry-and-documentdb
 [lnk-logicapptutorial]: iot-suite-logic-apps-tutorial.md
 [lnk-rm-walkthrough]: iot-suite-remote-monitoring-sample-walkthrough.md
 [lnk-connect-rm]: iot-suite-connecting-devices.md
@@ -225,6 +229,6 @@ Agora que implementou uma solução pré-configurada funcional, pode ler os arti
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

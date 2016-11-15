@@ -1,12 +1,12 @@
 ---
-title: Introdução ao Azure Mobile Engagement para implementação do Unity iOS
-description: Saiba como utilizar o Azure Mobile Engagement com Notificações Push e de Análise para implementação de aplicações Unity em dispositivos iOS.
+title: "Introdução ao Azure Mobile Engagement para implementação do Unity iOS"
+description: "Saiba como utilizar o Azure Mobile Engagement com Notificações Push e de Análise para implementação de aplicações Unity em dispositivos iOS."
 services: mobile-engagement
 documentationcenter: unity
 author: piyushjo
-manager: ''
-editor: ''
-
+manager: erikre
+editor: 
+ms.assetid: 7ddfbac3-8d13-4ebe-b061-c865f357297f
 ms.service: mobile-engagement
 ms.workload: mobile
 ms.tgt_pltfrm: mobile-unity-ios
@@ -14,30 +14,34 @@ ms.devlang: dotnet
 ms.topic: hero-article
 ms.date: 08/19/2016
 ms.author: piyushjo
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: c8f50404771965ec636065346ac04e059d264c3d
+
 
 ---
-# Introdução ao Azure Mobile Engagement para implementação do Unity iOS
+# <a name="get-started-with-azure-mobile-engagement-for-unity-ios-deployment"></a>Introdução ao Azure Mobile Engagement para implementação do Unity iOS
 [!INCLUDE [Hero tutorial switcher](../../includes/mobile-engagement-hero-tutorial-switcher.md)]
 
 Este tópico mostra como utilizar o Azure Mobile Engagement para compreender a utilização da aplicação e saber como enviar notificações push para utilizadores segmentados de uma aplicação Unity quando implementar num dispositivo iOS.
 Este tutorial utiliza o tutorial clássico Unity Roll a Ball como ponto de partida. Deve seguir os passos neste [tutorial](mobile-engagement-unity-roll-a-ball.md) antes de continuar com a integração do Mobile Engagement que demonstramos no tutorial abaixo. 
 
-Para este tutorial, necessita do seguinte:
+Neste tutorial necessita do seguinte:
 
 * [Unity Editor](http://unity3d.com/get-unity)
 * [SDK Unity do Mobile Engagement](https://aka.ms/azmeunitysdk)
 * XCode Editor
 
 > [!NOTE]
-> Para concluir este tutorial, tem de ter uma conta ativa do Azure. Se não tiver uma conta, pode criar uma de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fmobile-engagement-unity-ios-get-started).
+> Para concluir este tutorial, tem de ter uma conta ativa do Azure. Se não tiver uma conta, pode criar uma conta de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fmobile-engagement-unity-ios-get-started).
 > 
 > 
 
-## <a id="setup-azme"></a>Configurar o Mobile Engagement para a aplicação iOS
-[!INCLUDE [Create Mobile Engagement App in Portal](../../includes/mobile-engagement-create-app-in-portal.md)]
+## <a name="a-idsetupazmeasetup-mobile-engagement-for-your-ios-app"></a><a id="setup-azme"></a>Configurar o Mobile Engagement para a aplicação iOS
+[!INCLUDE [Create Mobile Engagement App in Portal](../../includes/mobile-engagement-create-app-in-portal-new.md)]
 
-## <a id="connecting-app"></a>Ligar a aplicação ao back-end do Mobile Engagement
-### Importar o pacote Unity
+## <a name="a-idconnectingappaconnect-your-app-to-the-mobile-engagement-backend"></a><a id="connecting-app"></a>Ligar a aplicação ao back-end do Mobile Engagement
+### <a name="import-the-unity-package"></a>Importar o pacote Unity
 1. Transfira o [pacote do Unity do Mobile Engagement](https://aka.ms/azmeunitysdk) e guarde-o no seu computador local. 
 2. Aceda a **Elementos -> Importar Pacote -> Pacote Personalizado** e selecione o pacote que transferiu no passo anterior. 
    
@@ -49,13 +53,13 @@ Para este tutorial, necessita do seguinte:
    
     ![][72] 
 
-### Atualizar o EngagementConfiguration
+### <a name="update-the-engagementconfiguration"></a>Atualizar o EngagementConfiguration
 1. Abra o ficheiro de script **EngagementConfiguration** da pasta SDK e atualize a **IOS\_CONNECTION\_STRING** com a cadeia de ligação que obteve anteriormente a partir do Portal do Azure.  
    
     ![][73]
 2. Guarde o ficheiro. 
 
-### Configurar a aplicação para controlo básico
+### <a name="configure-the-app-for-basic-tracking"></a>Configurar a aplicação para controlo básico
 1. Abra o script **PlayerController** anexado ao objeto Leitor para edição. 
 2. Adicione o seguinte ao utilizar a instrução:
    
@@ -65,7 +69,7 @@ Para este tutorial, necessita do seguinte:
         EngagementAgent.Initialize();
         EngagementAgent.StartActivity("Home");
 
-### Implementar e executar a aplicação
+### <a name="deploy-and-run-the-app"></a>Implementar e executar a aplicação
 1. Ligue um dispositivo iOS ao seu computador. 
 2. Abra **Ficheiro -> Definições de Criação** 
    
@@ -90,10 +94,10 @@ Para este tutorial, necessita do seguinte:
     ![][75]
 9. Agora, execute a aplicação no XCode para que o pacote seja implementado no seu dispositivo ligado e, em seguida, deverá ver o seu jogo Unity no seu telemóvel! 
 
-## <a id="monitor"></a>Ligar a aplicação com a monitorização em tempo real
+## <a name="a-idmonitoraconnect-app-with-realtime-monitoring"></a><a id="monitor"></a>Ligar a aplicação com a monitorização em tempo real
 [!INCLUDE [Connect app with real-time monitoring](../../includes/mobile-engagement-connect-app-with-monitor.md)]
 
-## <a id="integrate-push"></a>Ativar as notificações push e mensagens na aplicação
+## <a name="a-idintegratepushaenable-push-notifications-and-inapp-messaging"></a><a id="integrate-push"></a>Ativar as notificações push e mensagens na aplicação
 O Mobile Engagement permite interagir com os seus utilizadores e ALCANÇAR com notificações push e mensagens na aplicação no contexto das campanhas. Este módulo é designado ALCANCE no portal do Mobile Engagement.
 Não tem de efetuar qualquer configuração adicional na sua aplicação para receber notificações, pois já está configurada para tal.
 
@@ -115,6 +119,6 @@ Não tem de efetuar qualquer configuração adicional na sua aplicação para re
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

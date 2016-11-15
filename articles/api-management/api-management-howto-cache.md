@@ -1,22 +1,26 @@
 ---
-title: Adicionar a colocação em cache para melhorar o desempenho na API Management do Azure | Microsoft Docs
-description: Saiba como melhorar a latência, o consumo de largura de banda e a carga do serviço Web para chamadas de serviço da API Management.
+title: "Adicionar a colocação em cache para melhorar o desempenho na Gestão de API do Azure | Microsoft Docs"
+description: "Saiba como melhorar a latência, o consumo de largura de banda e a carga do serviço Web para chamadas de serviço da API Management."
 services: api-management
-documentationcenter: ''
+documentationcenter: 
 author: steved0x
 manager: erikre
-editor: ''
-
+editor: 
+ms.assetid: 740f6a27-8323-474d-ade2-828ae0c75e7a
 ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 08/24/2016
+ms.date: 10/25/2016
 ms.author: sdanie
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: c8cdb37fceb7b598c92b7b3cd41655c87c74e639
+
 
 ---
-# Adicionar a colocação em cache para melhorar o desempenho na API Management do Azure
+# <a name="add-caching-to-improve-performance-in-azure-api-management"></a>Adicionar a colocação em cache para melhorar o desempenho na API Management do Azure
 É possível configurar as operações da API Management para colocar as respostas em cache. A colocação de respostas em cache pode reduzir significativamente a latência da API, o consumo de largura de banda e a carga do serviço Web para os dados que não são alterados com frequência.
 
 Este guia mostra como adicionar a colocação de respostas em cache à sua API e configurar políticas para as operações da API Eco de exemplo. Em seguida, pode chamar a operação a partir do portal do programador para ver a colocação em cache em ação.
@@ -26,18 +30,18 @@ Este guia mostra como adicionar a colocação de respostas em cache à sua API e
 > 
 > 
 
-## Pré-requisitos
-Antes de seguir os passos neste guia, tem de ter uma instância de serviço de API Management com uma API e um produto configurado. Se ainda não criou uma instância de serviço de API Management, consulte [Criar uma instância de serviço deAPI Management][Criar uma instância de serviço deAPI Management] no tutorial [Introdução à API Management do Azure][Introdução à API Management do Azure].
+## <a name="prerequisites"></a>Pré-requisitos
+Antes de seguir os passos neste guia, tem de ter uma instância de serviço de API Management com uma API e um produto configurado. Se ainda não criou uma instância de serviço de Gestão de API, consulte [Criar uma instância de serviço de Gestão de API][Criar uma instância de serviço de Gestão de API] no tutorial [Introdução à Gestão de API do Azure][Introdução à Gestão de API do Azure].
 
 ## <a name="configure-caching"> </a>Configurar uma operação para colocação em cache
 Neste passo, irá rever as definições de colocação em cache da operação **Recurso GET (em cache)** da API Eco de exemplo.
 
 > [!NOTE]
-> Cada instância de serviço de API Management está pré-configurada com uma API Eco que pode ser utilizada para experimentar e saber mais sobre a API Management. Para obter mais informações, consulte [Introdução à API Management do Azure][Introdução à API Management do Azure].
+> Cada instância de serviço de API Management está pré-configurada com uma API Eco que pode ser utilizada para experimentar e saber mais sobre a API Management. Para obter mais informações, consulte [Introdução à Gestão de API do Azure][Introdução à Gestão de API do Azure].
 > 
 > 
 
-Para começar, clique em **Gerir** no Portal Clássico do Azure para o seu serviço de API Management. Isto leva-o para o portal do publicador da API Management.
+Para começar, clique em **Portal do editor** no Portal do Azure para o seu serviço de Gestão de API. Isto leva-o para o portal do publicador da API Management.
 
 ![Portal do publicador][api-management-management-console]
 
@@ -134,7 +138,7 @@ Introduza **25** no campo **param2** e, em seguida, clique em **HTTP Get**.
 Tenha em atenção que o valor de **sampleheader** na resposta é agora **value2**. Uma vez que os resultados da operação são codificados por cadeia de consulta, a resposta em cache anterior não foi devolvida.
 
 ## <a name="next-steps"> </a>Passos seguintes
-* Para obter mais informações sobre as políticas de colocação em cache, consulte [Políticas de colocação em cache][Políticas de colocação em cache] na [Referência de política da API Management][Referência de política da API Management].
+* Para obter mais informações sobre as políticas de colocação em cache, consulte [Políticas de colocação em cache][Políticas de colocação em cache] na [Referência de política da Gestão de API][Referência de política da Gestão de API].
 * Para obter informações sobre a colocação em cache de itens por chave utilizando expressões de política, consulte [Colocação em cache personalizada na API Management do Azure](api-management-sample-cache-by-key.md).
 
 [api-management-management-console]: ./media/api-management-howto-cache/api-management-management-console.png
@@ -154,20 +158,20 @@ Tenha em atenção que o valor de **sampleheader** na resposta é agora **value2
 [Monitorização e análise]: api-management-monitoring.md
 [Adicionar APIs a um produto]: api-management-howto-add-products.md#add-apis
 [Publicar um produto]: api-management-howto-add-products.md#publish-product
-[Introdução à API Management do Azure]: api-management-get-started.md
+[Introdução à Gestão de API do Azure]: api-management-get-started.md
 
-[Referência de política da API Management]: https://msdn.microsoft.com/library/azure/dn894081.aspx
-[Políticas de colocação em cache]: https://msdn.microsoft.com/library/azure/dn894086.aspx
+[API Management policy reference (Referência de política da Gestão de API)]: https://msdn.microsoft.com/library/azure/dn894081.aspx
+[Caching policies (Políticas de colocação em cache)]: https://msdn.microsoft.com/library/azure/dn894086.aspx
 
-[Criar uma instância de serviço deAPI Management]: api-management-get-started.md#create-service-instance
+[Criar uma instância de serviço de Gestão de API]: api-management-get-started.md#create-service-instance
 
 [Configurar uma operação para colocação em cache]: #configure-caching
 [Rever as políticas de colocação em cache]: #caching-policies
 [Chamar uma operação e testar a colocação em cache]: #test-operation
-[Passos seguintes]: #next-steps
+[Passos seguintes?]: #next-steps
 
 
 
-<!--HONumber=ago16_HO5-->
+<!--HONumber=Nov16_HO2-->
 
 

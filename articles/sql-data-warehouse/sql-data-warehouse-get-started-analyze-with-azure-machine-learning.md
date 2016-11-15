@@ -5,23 +5,28 @@ services: sql-data-warehouse
 documentationcenter: NA
 author: kevinvngo
 manager: barbkess
-editor: ''
-
+editor: 
+ms.assetid: 95635460-150f-4a50-be9c-5ddc5797f8a9
 ms.service: sql-data-warehouse
 ms.devlang: NA
 ms.topic: get-started-article
 ms.tgt_pltfrm: NA
 ms.workload: data-services
-ms.date: 09/14/2016
-ms.author: kevin;barbkess;sonyama
+ms.date: 10/31/2016
+ms.author: kevin;barbkess
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: edc3a915a59d83718d05ce39a1ce2bcd14333da4
+
 
 ---
-# Analisar dados com o Azure Machine Learning
+# <a name="analyze-data-with-azure-machine-learning"></a>Analisar dados com o Azure Machine Learning
 > [!div class="op_single_selector"]
 > * [Power BI](sql-data-warehouse-get-started-visualize-with-power-bi.md)
 > * [Azure Machine Learning](sql-data-warehouse-get-started-analyze-with-azure-machine-learning.md)
 > * [Visual Studio](sql-data-warehouse-query-visual-studio.md)
 > * [sqlcmd](sql-data-warehouse-get-started-connect-sqlcmd.md) 
+> * [SSMS](sql-data-warehouse-query-ssms.md)
 > 
 > 
 
@@ -31,12 +36,12 @@ Este tutorial utiliza o Azure Machine Learning para criar um modelo preditivo de
 > 
 > 
 
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 Para seguir este tutorial, é necessário:
 
 * Um SQL Data Warehouse pré-carregado com dados de exemplo da AdventureWorksDW. Para proceder ao aprovisionamento, consulte [Create a SQL Data Warehouse (Criar um SQL Data Warehouse)][Create a SQL Data Warehouse (Criar um SQL Data Warehouse)] e opte por carregar os dados de exemplo. Se já tiver um armazém de dados, mas não tiver dados de exemplo, pode [carregar dados de exemplo manualmente][carregar dados de exemplo manualmente].
 
-## 1. Obter dados
+## <a name="1-get-data"></a>1. Obter dados
 Os dados encontram-se na vista dbo.vTargetMail na base de dados AdventureWorksDW. Para ler estes dados:
 
 1. Inicie sessão no [Azure Machine Learning studio][Azure Machine Learning studio] e clique em as minhas experimentações.
@@ -72,7 +77,7 @@ Execute experimentação ao clicar em **Executar** na tela de experimentação.
 Depois de a execução da experimentação ser concluída com êxito, clique na porta de saída na parte inferior do módulo Leitor e selecione **Visualizar** para ver os dados importados.
 ![Ver os dados importados][3]
 
-## 2. Limpar os dados
+## <a name="2-clean-the-data"></a>2. Limpar os dados
 Para limpar os dados, remova algumas colunas que não sejam relevantes para o modelo. Para efetuar este procedimento:
 
 1. Arraste o módulo **Colunas do Projeto** para a tela.
@@ -81,7 +86,7 @@ Para limpar os dados, remova algumas colunas que não sejam relevantes para o mo
 3. Exclua duas colunas: CustomerAlternateKey e GeographyKey.
    ![Remover colunas desnecessárias][5]
 
-## 3. Criar o modelo
+## <a name="3-build-the-model"></a>3. Criar o modelo
 Iremos dividir os dados 80-20: 80% para preparar um modelo de machine learning e 20% para testar o modelo. Iremos utilizar os algoritmos das “Duas Classes” para este problema de classificação binária.
 
 1. Arraste o módulo **Dividir** para a tela.
@@ -95,7 +100,7 @@ Iremos dividir os dados 80-20: 80% para preparar um modelo de machine learning e
 5. Selecione a coluna **BikeBuyer** como a coluna a prever.
    ![Selecionar Coluna a prever][8]
 
-## 4. Pontuar o modelo
+## <a name="4-score-the-model"></a>4. Pontuar o modelo
 Agora, iremos testar o desempenho do modelo em dados de teste. Iremos comparar o algoritmo escolhido com um algoritmo diferente, para ver qual tem o melhor desempenho.
 
 1. Arraste o módulo **Pontuar Modelo** para a tela.
@@ -118,7 +123,7 @@ Verá mais duas colunas adicionadas ao conjunto de dados de teste.
 
 Ao comparar a coluna BikeBuyer (real) com as Etiquetas Classificadas (predição), pode ver quão bom foi o desempenho do modelo. Nos passos seguintes, pode utilizar este modelo para fazer predições para clientes novos e publicar este modelo como um serviço Web ou escrever os resultados de volta para o SQL Data Warehouse.
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 Para saber mais sobre como criar modelos preditivos de machine learning, consulte [Introdução ao Machine Learning no Azure][Introdução ao Machine Learning no Azure].
 
 <!--Image references-->
@@ -140,10 +145,10 @@ Para saber mais sobre como criar modelos preditivos de machine learning, consult
 [Azure Machine Learning studio]:https://studio.azureml.net/
 [Introdução ao Machine Learning no Azure]:https://azure.microsoft.com/documentation/articles/machine-learning-what-is-machine-learning/
 [carregar dados de exemplo manualmente]: sql-data-warehouse-load-sample-databases.md
-[Create a SQL Data Warehouse (Criar um SQL Data Warehouse)]: sql-data-warehouse-get-started-provision.md
+[Criar um SQL Data Warehouse]: sql-data-warehouse-get-started-provision.md
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

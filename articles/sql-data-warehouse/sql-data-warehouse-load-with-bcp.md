@@ -1,25 +1,30 @@
 ---
 title: Utilizar o bcp para carregar os dados para o SQL Data Warehouse | Microsoft Docs
-description: Saiba o que é o bcp e como utilizá-lo para cenários de armazenamento de dados.
+description: "Saiba o que é o bcp e como utilizá-lo para cenários de armazenamento de dados."
 services: sql-data-warehouse
 documentationcenter: NA
-author: lodipalm
+author: twounder
 manager: barbkess
-editor: ''
-
+editor: 
+ms.assetid: f9467d11-fcd6-4131-a65a-2022d2c32d24
 ms.service: sql-data-warehouse
 ms.devlang: NA
 ms.topic: get-started-article
 ms.tgt_pltfrm: NA
 ms.workload: data-services
-ms.date: 06/30/2016
-ms.author: mausher;barbkess;sonyama
+ms.date: 10/31/2016
+ms.author: mausher;barbkess
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: 5a0519a0fdbfc428530e5b30a3f8e4e8bcdaa50b
+
 
 ---
-# Carregar dados com o bcp
+# <a name="load-data-with-bcp"></a>Carregar dados com o bcp
 > [!div class="op_single_selector"]
-> * [Data Factory](sql-data-warehouse-get-started-load-with-azure-data-factory.md)
-> * [PolyBase](sql-data-warehouse-get-started-load-with-polybase.md)
+> * [Redgate](sql-data-warehouse-load-with-redgate.md)  
+> * [Data Factory](sql-data-warehouse-get-started-load-with-azure-data-factory.md)  
+> * [PolyBase](sql-data-warehouse-get-started-load-with-polybase.md)  
 > * [BCP](sql-data-warehouse-load-with-bcp.md)
 > 
 > 
@@ -42,7 +47,7 @@ Este tutorial irá mostrar-lhe como:
 > 
 > 
 
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 Para seguir este tutorial, é necessário:
 
 * Uma base de dados SQL Data Warehouse
@@ -54,10 +59,10 @@ Para seguir este tutorial, é necessário:
 > 
 > 
 
-## Importar dados para o SQL Data Warehouse
+## <a name="import-data-into-sql-data-warehouse"></a>Importar dados para o SQL Data Warehouse
 Neste tutorial, irá criar uma tabela no Azure SQL Data Warehouse e importar dados para a tabela.
 
-### Passo 1: criar uma tabela no Azure SQL Data Warehouse
+### <a name="step-1-create-a-table-in-azure-sql-data-warehouse"></a>Passo 1: criar uma tabela no Azure SQL Data Warehouse
 A partir de uma linha de comandos, utilize o sqlcmd para executar a consulta seguinte, para criar uma tabela na sua instância:
 
 ```sql
@@ -81,7 +86,7 @@ sqlcmd.exe -S <server name> -d <database name> -U <username> -P <password> -I -Q
 > 
 > 
 
-### Passo 2: criar um ficheiro de dados de origem
+### <a name="step-2-create-a-source-data-file"></a>Passo 2: criar um ficheiro de dados de origem
 Abra o Bloco de Notas e copie as seguintes linhas de dados para um novo ficheiro de texto e, em seguida, guarde este ficheiro no diretório temporário local, C:\Temp\DimDate2.txt.
 
 ```
@@ -104,7 +109,7 @@ Abra o Bloco de Notas e copie as seguintes linhas de dados para um novo ficheiro
 > 
 > 
 
-### Passo 3: ligar e importar os dados
+### <a name="step-3-connect-and-import-the-data"></a>Passo 3: ligar e importar os dados
 Ao utilizar o bcp, pode ligar e importar os dados com o seguinte comando, substituindo os valores conforme adequado:
 
 ```sql
@@ -134,7 +139,7 @@ Isto deverá devolver os seguintes resultados:
 | 20151101 |4 |2 |
 | 20151201 |4 |2 |
 
-### Passo 4: criar Estatísticas nos dados recentemente carregados
+### <a name="step-4-create-statistics-on-your-newly-loaded-data"></a>Passo 4: criar Estatísticas nos dados recentemente carregados
 O Azure SQL Data Warehouse ainda não suporta a criação ou atualização automática de estatísticas. Para obter o melhor desempenho das consultas, é importante que sejam criadas estatísticas em todas as colunas de todas as tabelas após o primeiro carregamento ou após a ocorrência de quaisquer alterações substanciais nos dados. Para obter uma explicação detalhada das estatísticas, consulte o tópico [Estatísticas][Estatísticas] no grupo de tópicos Desenvolver. Segue-se um breve exemplo de como criar estatísticas para a tabela carregada neste exemplo
 
 Execute as seguintes instruções CREATE STATISTICS a partir de uma linha de comandos sqlcmd:
@@ -147,10 +152,10 @@ sqlcmd.exe -S <server name> -d <database name> -U <username> -P <password> -I -Q
 "
 ```
 
-## Exportar dados do SQL Data Warehouse
+## <a name="export-data-from-sql-data-warehouse"></a>Exportar dados do SQL Data Warehouse
 Neste tutorial, irá criar um ficheiro de dados a partir de uma tabela do SQL Data Warehouse. Vamos exportar os dados que criámos acima para um novo ficheiro de dados denominado DimDate2_export.txt.
 
-### Passo 1: exportar os dados
+### <a name="step-1-export-the-data"></a>Passo 1: exportar os dados
 Ao utilizar o utilitário bcp, pode ligar e exportar dados com o seguinte comando, substituindo os valores conforme adequado:
 
 ```sql
@@ -178,7 +183,7 @@ Pode verificar se os dados foram exportados corretamente ao abrir o novo ficheir
 > 
 > 
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 Para uma descrição geral do carregamento, consulte [Carregar dados para o SQL Data Warehouse][Carregar dados para o SQL Data Warehouse].
 Para mais sugestões de desenvolvimento, consulte [Descrição geral do desenvolvimento no SQL Data Warehouse][Descrição geral do desenvolvimento no SQL Data Warehouse].
 
@@ -187,19 +192,19 @@ Para mais sugestões de desenvolvimento, consulte [Descrição geral do desenvol
 <!--Article references-->
 
 [Carregar dados para o SQL Data Warehouse]: ./sql-data-warehouse-overview-load.md
-[Descrição geral do desenvolvimento no SQL Data Warehouse]: ./sql-data-warehouse-overview-develop.md
+[Descrição geral do desenvolvimento do SQL Data Warehouse]: ./sql-data-warehouse-overview-develop.md
 [Descrição Geral da Tabela]: ./sql-data-warehouse-tables-overview.md
 [Estatísticas]: ./sql-data-warehouse-tables-statistics.md
 
 <!--MSDN references-->
 [bcp]: https://msdn.microsoft.com/library/ms162802.aspx
-[sintaxe CREATE TABLE]: https://msdn.microsoft.com/library/mt203953.aspx
+[Sintaxe CREATE TABLE]: https://msdn.microsoft.com/library/mt203953.aspx
 
 <!--Other Web references-->
 [Centro de Transferências da Microsoft]: https://www.microsoft.com/download/details.aspx?id=36433
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Nov16_HO2-->
 
 

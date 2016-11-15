@@ -1,8 +1,8 @@
-## Receber mensagens com o EventProcessorHost em Java
+## <a name="receive-messages-with-eventprocessorhost-in-java"></a>Receber mensagens com o EventProcessorHost em Java
 O EventProcessorHost é uma classe do Java que simplifica a receção de eventos provenientes dos Hubs de Eventos ao gerir pontos de verificação persistentes e receções em paralelo desses Hubs de Eventos. Se utilizar o EventProcessorHost, pode dividir eventos por vários recetores, mesmo se estiverem alojados em nós diferentes. Este exemplo mostra como utilizar o EventProcessorHost para um recetor único.
 
-### Criar uma conta de armazenamento
-Para utilizar o EventProcessorHost, tem de ter uma [conta de Armazenamento do Azure][conta de Armazenamento do Azure]:
+### <a name="create-a-storage-account"></a>Criar uma conta de armazenamento
+Para utilizar o EventProcessorHost, tem de ter uma [Conta de armazenamento do Azure][Conta de armazenamento do Azure]:
 
 1. Inicie sessão no [Portal Clássico do Azure][Portal Clássico do Azure] e clique em **NOVO** na parte inferior do ecrã.
 2. Clique em **Serviços de Dados**, em **Armazenamento** em **Criação Rápida** e escreva um nome para a sua conta de armazenamento. Selecione a região pretendida e clique em **Criar Conta de Armazenamento**.
@@ -14,7 +14,7 @@ Para utilizar o EventProcessorHost, tem de ter uma [conta de Armazenamento do Az
    
     Copie a chave de acesso primária para a utilizar posteriormente neste tutorial.
 
-### Criar um projeto Java com o EventProcessorHost
+### <a name="create-a-java-project-using-the-eventprocessor-host"></a>Criar um projeto Java com o EventProcessorHost
 A biblioteca de cliente Java para os Hubs de Eventos pode ser utilizada em projetos Maven a partir do [Repositório Central Maven][Pacote Maven], e pode ser referenciada através da seguinte declaração de dependência dentro do ficheiro de projeto Maven:    
 
 ``` XML
@@ -184,8 +184,8 @@ Para diferentes tipos de ambientes de compilação, pode obter explicitamente os
 > 
 
 <!-- Links -->
-[Descrição geral dos Event Hubs]: event-hubs-overview.md
-[conta de Armazenamento do Azure]: ../storage/storage-create-storage-account.md
+[Descrição geral dos Hubs de Eventos]: ../articles/event-hubs/event-hubs-overview.md
+[Conta de Armazenamento do Azure]: ../articles/storage/storage-create-storage-account.md
 [Portal Clássico do Azure]: http://manage.windowsazure.com
 [Pacote Maven]: https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-eventhubs-eph%22
 
@@ -195,6 +195,6 @@ Para diferentes tipos de ambientes de compilação, pode obter explicitamente os
 
 
 
-<!--HONumber=Sep16_HO4-->
+<!--HONumber=Nov16_HO2-->
 
 

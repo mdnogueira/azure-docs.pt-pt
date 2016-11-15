@@ -1,13 +1,13 @@
 ---
-title: Uma experimentação simples no Machine Learning Studio | Microsoft Docs
-description: Este tutorial de machine learning apresenta-lhe uma experimentação de ciência de dados fácil. Vamos prever o preço de um carro através de um algoritmo de regressão.
-keywords: experimentação, regressão linear, algoritmos de machine learning, tutorial de machine learning, técnicas de modelação preditiva, experiência de ciência de dados
+title: "Uma experimentação simples no Machine Learning Studio | Microsoft Docs"
+description: "Este tutorial de machine learning apresenta-lhe uma experimentação de ciência de dados fácil. Vamos prever o preço de um carro através de um algoritmo de regressão."
+keywords: "experimentação, regressão linear, algoritmos de machine learning, tutorial de machine learning, técnicas de modelação preditiva, experiência de ciência de dados"
 services: machine-learning
-documentationcenter: ''
+documentationcenter: 
 author: garyericson
 manager: jhubbard
 editor: cgronlun
-
+ms.assetid: b6176bb2-3bb6-4ebf-84d1-3598ee6e01c6
 ms.service: machine-learning
 ms.workload: data-services
 ms.tgt_pltfrm: na
@@ -15,23 +15,27 @@ ms.devlang: na
 ms.topic: hero-article
 ms.date: 07/14/2016
 ms.author: garye
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: 210e19cbc581ce5fc17898abe184b96c48370e7f
+
 
 ---
-# Tutorial de Machine Learning: crie a sua primeira experimentação de ciência de dados no Azure Machine Learning Studio
+# <a name="machine-learning-tutorial-create-your-first-data-science-experiment-in-azure-machine-learning-studio"></a>Tutorial de Machine Learning: crie a sua primeira experimentação de ciência de dados no Azure Machine Learning Studio
 Este tutorial de machine learning apresenta-lhe uma experimentação de ciência de dados fácil. Vamos criar um modelo de regressão linear que prevê o preço de um automóvel com base em diferentes variáveis, como a marca e as especificações técnicas. Para fazer isto, iremos utilizar o Azure Machine Learning Studio para desenvolver e repetir uma simples experimentação de análise preditiva.
 
 A *análise preditiva* é um tipo de ciência de dados que utiliza dados atuais para prever futuros resultados. Para obter um exemplo muito simples de análise preditiva, veja Dados de Ciência para Principiantes, vídeo 4: [Prever uma resposta com um modelo simples](machine-learning-data-science-for-beginners-predict-an-answer-with-a-simple-model.md) (duração do vídeo: 7:42).
 
 [!INCLUDE [machine-learning-free-trial](../../includes/machine-learning-free-trial.md)]
 
-## Como é que o Machine Learning Studio ajuda?
+## <a name="how-does-machine-learning-studio-help"></a>Como é que o Machine Learning Studio ajuda?
 O Machine Learning Studio facilita a configuração de uma experimentação através de módulos de arrastar e largar pré-programados com técnicas de modelação preditiva. Para executar a sua experimentação e prever uma resposta, irá utilizar o Machine Learning Studio para *criar um modelo*, *treinar o modelo* e *pontuar e testar o modelo*.
 
 Entre no Machine Learning Studio: [https://studio.azureml.net](https://studio.azureml.net). Se já tem sessão iniciada no Machine Learning Studio, clique em **Iniciar sessão aqui**. Caso contrário, clique em **Inscrever-se** e escolha a opção gratuita ou paga.
 
 Para obter informações gerais sobre o Machine Learning Studio, veja [O que é o Machine Learning Studio?](machine-learning-what-is-ml-studio.md)
 
-## Cinco passos para criar uma experimentação
+## <a name="five-steps-to-create-an-experiment"></a>Cinco passos para criar uma experimentação
 Neste tutorial do Machine Learning, terá de executar cinco passos básicos para criar uma experimentação no Machine Learning Studio para poder criar, dar formação e pontuar o seu modelo:
 
 * Criar um modelo
@@ -50,7 +54,7 @@ Neste tutorial do Machine Learning, terá de executar cinco passos básicos para
 [Passo 5: Prever novos preços para automóveis]: #step-5-predict-new-automobile-prices
 
 
-## Passo 1: Obter os dados
+## <a name="step-1-get-data"></a>Passo 1: Obter os dados
 Pode escolher entre vários conjuntos de dados de exemplo incluídos no Machine Learning Studio e pode importar dados a partir de várias origens. Para este exemplo, utilizamos o conjunto de dados de exemplo incluído, os **Dados de preço do automóvel (bruto)**.
 Este conjunto de dados inclui entradas de vários automóveis individuais, incluindo informações como a marca, o modelo, as especificações técnicas e o preço.
 
@@ -72,7 +76,7 @@ As variáveis no conjunto de dados aparecem como colunas e cada instância de um
 
 Feche a janela de visualização, clicando no "**x**" no canto superior direito.
 
-## Passo 2: Processar previamente os dados
+## <a name="step-2-preprocess-data"></a>Passo 2: Processar previamente os dados
 Normalmente, um conjunto de dados requer alguns pré-processamentos antes de poder ser analisado. Poderá ter reparado nos valores em falta presentes nas colunas de várias linhas. Estes valores em falta têm de ser apagados para que o modelo possa analisar os dados corretamente. No nosso caso, iremos remover quaisquer linhas que tenham valores em falta. Além disso, a coluna das **perdas normalizadas** tem uma grande proporção de valores em falta, pelo que recomendamos que exclua totalmente essa coluna do modelo.
 
 > [!TIP]
@@ -113,7 +117,7 @@ Tudo o que efetuou na experimentação até este ponto foi apagar os dados. Se p
 
 Agora que os dados foram apagados, estamos prontos para especificar quais as funcionalidades que vai utilizar no modelo preditivo.
 
-## Passo 3: Definir funcionalidades
+## <a name="step-3-define-features"></a>Passo 3: Definir funcionalidades
 No Machine Learning, as *funcionalidades* são propriedades mensuráveis individuais de algo que lhe interessa. No nosso conjunto de dados, cada linha representa um automóvel e cada coluna é uma funcionalidade desse automóvel.
 
 Encontrar um bom conjunto de funcionalidades para criar um modelo preditivo requer experimentação e conhecimentos sobre o problema que pretende resolver. Algumas funcionalidades são melhores para prever num destino do que outras. Além disso, algumas funcionalidades têm uma correlação forte com outras funcionalidades (por exemplo, cidade-mpg versus autoestrada-mpg) para que estas não adicionem muitas informações novas para o modelo e podem ser removidas.
@@ -138,7 +142,7 @@ Vamos criar um modelo que utiliza um subconjunto das funcionalidades no nosso co
 
 Isto produz o conjunto de dados que vai ser utilizado no algoritmo de aprendizagem nos passos seguintes. Mais tarde, pode voltar e tentar novamente com uma seleção de funcionalidades diferente.
 
-## Passo 4: Escolher e aplicar um algoritmo de aprendizagem
+## <a name="step-4-choose-and-apply-a-learning-algorithm"></a>Passo 4: Escolher e aplicar um algoritmo de aprendizagem
 Agora que os dados estão prontos, construir um modelo preditivo consiste em formar e testar. Utilizaremos os nossos dados para preparar o modelo e, em seguida, testar o modelo para o comparar com os preços previstos. Por agora, não se preocupe com o motivo pelo qual é necessário treinar e, em seguida, testar um modelo.
 
 *Classificação* e *regressão* são dois tipos de técnicas supervisionadas do Machine Learning. A classificação prevê uma resposta a partir de um conjunto definido de categorias, tais como uma cor (vermelho, azul ou verde). A regressão é utilizada para prever um número.
@@ -165,7 +169,7 @@ O resultado é um modelo de regressão treinado que pode ser utilizado para pont
 
 ![Aplicar o algoritmo do Machine Learning][screen8]
 
-## Passo 5: Prever novos preços para automóveis
+## <a name="step-5-predict-new-automobile-prices"></a>Passo 5: Prever novos preços para automóveis
 Agora que experimentámos o modelo, utilizando 75% dos nossos dados, podemos utilizá-lo para pontuar os outros 25% por cento dos dados para ver quão bem funciona o nosso modelo.
 
 1. Localize e arraste o módulo [Modelo de pontuação][modelo de pontuação] para a tela de experimentação e ligue a porta de entrada à esquerda à saída do módulo [Modelo de formação][modelo de formação]. Ligue a porta de entrada à direita à saída de dados de teste (porta direita) do módulo [Dividir dados][dividir].  
@@ -191,7 +195,7 @@ A experimentação final deve ter este aspeto:
 
 ![Tutorial do Machine Learning: concluir a experimentação de regressão linear que utiliza técnicas de modelação preditiva.][screen10]
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 Agora que concluiu o primeiro tutorial do Machine Learning e tem a sua experimentação definida, pode voltar a tentar melhorar o modelo. Por exemplo, pode alterar as funcionalidades que utiliza na sua predição. Ou pode modificar as propriedades do algoritmo [Regressão Linear][regressão linear] ou tentar um algoritmo totalmente diferente. Pode ainda adicionar, de uma só vez, vários algoritmos do Machine Learning à sua experimentação e comparar dois utilizando o módulo [Modelo de avaliação][modelo de avaliação].
 
 > [!TIP]
@@ -199,7 +203,7 @@ Agora que concluiu o primeiro tutorial do Machine Learning e tem a sua experimen
 > 
 > 
 
-[históricoexecuções]: machine-learning-manage-experiment-iterations.md
+[runhistory]: machine-learning-manage-experiment-iterations.md
 
 Quando estiver satisfeito com o seu modelo, pode implementá-lo como um serviço web para ser utilizado para prever preços de automóveis através da utilização de novos dados. Consulte o artigo [Implementar um serviço web do Azure Machine Learning][publicar] para obter mais detalhes.
 
@@ -210,34 +214,34 @@ Para instruções mais extensas e detalhadas sobre as técnicas de modelação p
 [instruções]: machine-learning-walkthrough-develop-predictive-solution.md
 
 <!-- Images -->
-[ecrã1]:./media/machine-learning-create-experiment/screen1.png
-[ecrã1a]:./media/machine-learning-create-experiment/screen1a.png
-[ecrã1b]:./media/machine-learning-create-experiment/screen1b.png
+[screen1]:./media/machine-learning-create-experiment/screen1.png
+[screen1a]:./media/machine-learning-create-experiment/screen1a.png
+[screen1b]:./media/machine-learning-create-experiment/screen1b.png
 [screen1c]: ./media/machine-learning-create-experiment/screen1c.png
-[ecrã2]:./media/machine-learning-create-experiment/screen2.png
-[ecrã3]:./media/machine-learning-create-experiment/screen3.png
-[ecrã4]:./media/machine-learning-create-experiment/screen4.png
-[ecrã4a]:./media/machine-learning-create-experiment/screen4a.png
-[ecrã5]:./media/machine-learning-create-experiment/screen5.png
-[ecrã6]:./media/machine-learning-create-experiment/screen6.png
-[ecrã7]:./media/machine-learning-create-experiment/screen7.png
-[ecrã8]:./media/machine-learning-create-experiment/screen8.png
-[ecrã8a]:./media/machine-learning-create-experiment/screen8a.png
-[ecrã9]:./media/machine-learning-create-experiment/screen9.png
-[ecrã10]:./media/machine-learning-create-experiment/complete-linear-regression-experiment.png
+[screen2]:./media/machine-learning-create-experiment/screen2.png
+[screen3]:./media/machine-learning-create-experiment/screen3.png
+[screen4]:./media/machine-learning-create-experiment/screen4.png
+[screen4a]:./media/machine-learning-create-experiment/screen4a.png
+[screen5]:./media/machine-learning-create-experiment/screen5.png
+[screen6]:./media/machine-learning-create-experiment/screen6.png
+[screen7]:./media/machine-learning-create-experiment/screen7.png
+[screen8]:./media/machine-learning-create-experiment/screen8.png
+[screen8a]:./media/machine-learning-create-experiment/screen8a.png
+[screen9]:./media/machine-learning-create-experiment/screen9.png
+[screen10]:./media/machine-learning-create-experiment/complete-linear-regression-experiment.png
 
 
 <!-- Module References -->
-[modelo de avaliação]: https://msdn.microsoft.com/library/azure/927d65ac-3b50-4694-9903-20f6c1672089/
+[evaluate-model]: https://msdn.microsoft.com/library/azure/927d65ac-3b50-4694-9903-20f6c1672089/
 [regressão linear]: https://msdn.microsoft.com/library/azure/31960a6f-789b-4cf7-88d6-2e1152c0bd1a/
-[apagar dados em falta]: https://msdn.microsoft.com/library/azure/d2c5ca2f-7323-41a3-9b7e-da917c99f0c4/
-[selecionar colunas]: https://msdn.microsoft.com/library/azure/1ec722fa-b623-4e26-a44e-a50c6d726223/
+[clean-missing-data]: https://msdn.microsoft.com/library/azure/d2c5ca2f-7323-41a3-9b7e-da917c99f0c4/
+[select-columns]: https://msdn.microsoft.com/library/azure/1ec722fa-b623-4e26-a44e-a50c6d726223/
 [modelo de pontuação]: https://msdn.microsoft.com/library/azure/401b4f92-e724-4d5a-be81-d5b0ff9bdb33/
 [dividir]: https://msdn.microsoft.com/library/azure/70530644-c97a-4ab6-85f7-88bf30a8be5f/
-[modelo de formação]: https://msdn.microsoft.com/library/azure/5cc7053e-aa30-450d-96c0-dae4be720977/
+[train-model]: https://msdn.microsoft.com/library/azure/5cc7053e-aa30-450d-96c0-dae4be720977/
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

@@ -3,25 +3,30 @@ title: Visualizar dados do SQL Data Warehouse com o Power BI Microsoft Azure
 description: Visualizar dados do SQL Data Warehouse com o Power BI
 services: sql-data-warehouse
 documentationcenter: NA
-author: lodipalm
-manager: barbkess
-editor: ''
-
+author: barbkess
+manager: jhubbard
+editor: 
+ms.assetid: d7fb89d1-da1d-4788-a111-68d0e3fda799
 ms.service: sql-data-warehouse
 ms.devlang: NA
 ms.topic: get-started-article
 ms.tgt_pltfrm: NA
 ms.workload: data-services
-ms.date: 06/16/2016
-ms.author: lodipalm;barbkess;sonyama
+ms.date: 10/31/2016
+ms.author: barbkess
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: f498f4546e8c23f2141d8d30160a360fa0fc2514
+
 
 ---
-# Visualizar dados com o Power BI
+# <a name="visualize-data-with-power-bi"></a>Visualizar dados com o Power BI
 > [!div class="op_single_selector"]
 > * [Power BI](sql-data-warehouse-get-started-visualize-with-power-bi.md)
 > * [Azure Machine Learning](sql-data-warehouse-get-started-analyze-with-azure-machine-learning.md)
 > * [Visual Studio](sql-data-warehouse-query-visual-studio.md)
 > * [sqlcmd](sql-data-warehouse-get-started-connect-sqlcmd.md) 
+> * [SSMS](sql-data-warehouse-query-ssms.md)
 > 
 > 
 
@@ -31,12 +36,12 @@ Este tutorial mostra como utilizar o Power BI para ligar ao SQL Data Warehouse e
 > 
 > 
 
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 Para seguir este tutorial, é necessário:
 
 * Um SQL Data Warehouse pré-carregado com a base de dados da AdventureWorksDW. Para proceder ao aprovisionamento, consulte [Create a SQL Data Warehouse (Criar um SQL Data Warehouse)][Create a SQL Data Warehouse (Criar um SQL Data Warehouse)] e opte por carregar os dados de exemplo. Se já tiver um armazém de dados, mas não tiver dados de exemplo, pode [carregar dados de exemplo manualmente][carregar dados de exemplo manualmente].
 
-## 1. Ligar à base de dados
+## <a name="1-connect-to-your-database"></a>1. Ligar à base de dados
 Para abrir o Power BI e ligar à base de dados AdventureWorksDW:
 
 1. Inicie sessão no [Portal do Azure][Portal do Azure].
@@ -56,7 +61,7 @@ Para abrir o Power BI e ligar à base de dados AdventureWorksDW:
    
     ![No Power BI, abrir AdventureWorksDW][5]
 
-## 2. Criar um relatório
+## <a name="2-create-a-report"></a>2. Criar um relatório
 Está agora pronto para utilizar o Power BI para analisar os dados de exemplo da AdventureWorksDW. Para efetuar a análise, a AdventureWorksDW tem uma vista denominada AggregateSales. Esta vista contém algumas das métricas principais para analisar as vendas da empresa.
 
 1. Para criar um mapa do montante de vendas, de acordo com o código postal, no painel direito de campos, clique na vista AggregateSales para expandi-la. Clique nas colunas PostalCode e SalesAmount para as selecionar.
@@ -83,8 +88,8 @@ Está agora pronto para utilizar o Power BI para analisar os dados de exemplo da
 
 Pode guardar o seu progresso em qualquer altura, clicando em **Ficheiro** e selecionando **Guardar**.
 
-## Passos seguintes
-Agora que lhe demos algum tempo para entender os dados de exemplo, consulte como [programar][programar], [carregar][carregar], ou [migrar][migrar]. Em alternativa, consulte o [site do Power BI][site do Power BI].
+## <a name="next-steps"></a>Passos seguintes
+Agora que lhe demos algum tempo para entender os dados de exemplo, consulte como [programar][programar], [carregar][carregar], [migrar][migrar]. Em alternativa, consulte o [site do Power BI][site do Power BI].
 
 <!--Image references-->
 [1]: media/sql-data-warehouse-get-started-visualize-with-power-bi/pbi-find-database.png
@@ -106,7 +111,7 @@ Agora que lhe demos algum tempo para entender os dados de exemplo, consulte como
 [carregar]: sql-data-warehouse-overview-load.md
 [carregar dados de exemplo manualmente]: sql-data-warehouse-load-sample-databases.md
 [Ligar ao SQL Data Warehouse]: sql-data-warehouse-integrate-power-bi.md
-[Create a SQL Data Warehouse (Criar um SQL Data Warehouse)]: sql-data-warehouse-get-started-provision.md
+[Criar um SQL Data Warehouse]: sql-data-warehouse-get-started-provision.md
 
 <!--Other-->
 [Portal do Azure]: https://portal.azure.com/
@@ -114,6 +119,6 @@ Agora que lhe demos algum tempo para entender os dados de exemplo, consulte como
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

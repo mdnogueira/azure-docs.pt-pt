@@ -1,36 +1,40 @@
 ---
-title: Introdução aos Notification Hubs para aplicações Xamarin Android | Microsoft Docs
-description: Neste tutorial, irá aprender a utilizar os Notification Hubs do Azure para enviar notificações push para uma aplicação Xamarin Android.
-author: wesmc7777
+title: "Introdução aos Hubs de Notificação para aplicações Xamarin Android | Microsoft Docs"
+description: "Neste tutorial, irá aprender a utilizar os Notification Hubs do Azure para enviar notificações push para uma aplicação Xamarin Android."
+author: ysxu
 manager: erikre
-editor: ''
+editor: 
 services: notification-hubs
 documentationcenter: xamarin
-
+ms.assetid: 0be600fe-d5f3-43a5-9e5e-3135c9743e54
 ms.service: notification-hubs
 ms.workload: mobile
 ms.tgt_pltfrm: mobile-xamarin-android
 ms.devlang: dotnet
 ms.topic: hero-article
 ms.date: 06/29/2016
-ms.author: wesmc
+ms.author: yuaxu
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: 5137e0f33497dfe7ee815bb4bc30929364f6df72
+
 
 ---
-# Introdução aos Notification Hubs com Xamarin para Android
+# <a name="get-started-with-notification-hubs-with-xamarin-for-android"></a>Introdução aos Notification Hubs com Xamarin para Android
 [!INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
 
-## Descrição geral
+## <a name="overview"></a>Descrição geral
 Este tutorial mostra como utilizar os Notification Hubs do Azure para enviar notificações push para uma aplicação Xamarin Android.
 Irá criar uma aplicação Xamarin.Android em branco que recebe notificação push através do Google Cloud Messaging (GCM). Quando tiver terminado, poderá utilizar o Notification Hub para difundir notificações push para todos os dispositivos a executar a sua aplicação. O código concluído está disponível no exemplo [aplicação Notification Hubs][GitHub].
 
 Este tutorial demonstra o cenário de difusão simples utilizando Notification Hubs.
 
-## Antes de começar
+## <a name="before-you-begin"></a>Antes de começar
 [!INCLUDE [notification-hubs-hero-slug](../../includes/notification-hubs-hero-slug.md)]
 
 O código de conclusão para este tutorial pode ser encontrado [aqui](https://github.com/Azure/azure-notificationhubs-samples/tree/master/dotnet/Xamarin/GetStartedXamarinAndroid) no GitHub.
 
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 Para este tutorial, necessita do seguinte:
 
 * Visual Studio com Xamarin para Windows ou Xamarin Studio para Mac OS X. Pode consultar as instruções de instalação completas em [Configuração e instalação para Visual Studio e Xamarin](https://msdn.microsoft.com/library/mt613162.aspx).
@@ -41,14 +45,14 @@ Para este tutorial, necessita do seguinte:
 A conclusão deste tutorial é um pré-requisito para todos os outros tutoriais de Notification Hubs para aplicações Xamarin Android.
 
 > [!IMPORTANT]
-> Para concluir este tutorial, tem de ter uma conta ativa do Azure. Se não tiver uma conta, pode criar uma de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A9C9624B5&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fpartner-xamarin-notification-hubs-android-get-started%2F).
+> Para concluir este tutorial, tem de ter uma conta ativa do Azure. Se não tiver uma conta, pode criar uma conta de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A9C9624B5&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fpartner-xamarin-notification-hubs-android-get-started%2F).
 > 
 > 
 
-## Ativar o Google Cloud Messaging
+## <a name="enable-google-cloud-messaging"></a>Ativar o Google Cloud Messaging
 [!INCLUDE [mobile-services-enable-Google-cloud-messaging](../../includes/mobile-services-enable-google-cloud-messaging.md)]
 
-## Configurar o Notification Hub
+## <a name="configure-your-notification-hub"></a>Configurar o Notification Hub
 [!INCLUDE [notification-hubs-portal-create-new-hub](../../includes/notification-hubs-portal-create-new-hub.md)]
 
 <ol start="7">
@@ -60,14 +64,14 @@ A conclusão deste tutorial é um pré-requisito para todos os outros tutoriais 
 
 O Notification Hub está agora configurada para trabalhar com GCM e tem as cadeias de ligação para registar a sua aplicação e para receber notificações e enviar notificações push.
 
-## Ligar a aplicação ao Notification Hub
-### Criar um novo projeto
+## <a name="connect-your-app-to-the-notification-hub"></a>Ligar a aplicação ao Notification Hub
+### <a name="create-a-new-project"></a>Criar um novo projeto
 1. No Xamarin Studio, clique em **Nova Solução**, clique em **Aplicação Android** e, depois, em **Seguinte**.
    
-    ![](./media/partner-xamarin-notification-hubs-android-get-started/notification-hub-create-xamarin-android-project1.png)
+       ![](./media/partner-xamarin-notification-hubs-android-get-started/notification-hub-create-xamarin-android-project1.png)
 2. Introduza o seu **Nome da Aplicação** e **Identificador**. Clique nas **Plataformas de Destino** que pretende suportar e, em seguida, clique em **Seguinte** e **Criar**.
    
-    ![](./media/partner-xamarin-notification-hubs-android-get-started/notification-hub-create-xamarin-android-project2.png)
+       ![](./media/partner-xamarin-notification-hubs-android-get-started/notification-hub-create-xamarin-android-project2.png)
 
     Este processo cria um novo projeto Android.
 
@@ -80,20 +84,20 @@ O Notification Hub está agora configurada para trabalhar com GCM e tem as cadei
    > 
    > 
    
-    ![](./media/partner-xamarin-notification-hubs-android-get-started/notification-hub--xamarin-android-app-options.png)
+       ![](./media/partner-xamarin-notification-hubs-android-get-started/notification-hub--xamarin-android-app-options.png)
 2. Opcionalmente, defina a **Versão mínima do Android** para outro nível da API.
 3. Opcionalmente, defina a **Versão de destino Android** para outra versão da API que pretende utilizar como destino (tem de ser um API de nível 8 ou posterior).
 
 Clique em **OK** e feche a caixa de diálogo Opções do Projeto.
 
-### Adicionar os componentes necessários ao projeto
+### <a name="add-the-required-components-to-your-project"></a>Adicionar os componentes necessários ao projeto
 O Cliente de Google Cloud Messaging disponível no Arquivo de Componentes Xamarin simplifica o processo de suporte das notificações push no Xamarin.Android.
 
 1. Faça duplo clique na pasta Componentes na aplicação Xamarin.Android e escolha **Obter Mais Componentes**.
 2. Pesquise o componente **Mensagens do Azure** e adicione-o ao projeto.
 3. Pesquise o componente **Cliente Google Cloud Messaging** e adicione-o ao projeto.
 
-### Configurar Notification Hubs no seu projeto
+### <a name="set-up-notification-hubs-in-your-project"></a>Configurar Notification Hubs no seu projeto
 1. Recolha as seguintes informações para a sua aplicação Android e Notification Hub:
    
    * **GoogleProjectNumber**: Obtenha este valor de Número do Projeto a partir da descrição geral da sua aplicação no Portal para Programadores da Google. Apontou este valor anteriormente quando criou a aplicação no portal.
@@ -102,8 +106,7 @@ O Cliente de Google Cloud Messaging disponível no Arquivo de Componentes Xamari
      
      Crie uma classe **Constants.cs** para o seu projeto Xamarin e defina os seguintes valores constantes na classe. Substitua os marcadores de posição com os seus valores.
      
-       public static class Constants
-       {
+       Constantes de classe estática pública   {
      
            public const string SenderID = "<GoogleProjectNumber>"; // Google API Project Number
            public const string ListenConnectionString = "<Listen connection string>";
@@ -194,7 +197,7 @@ O Cliente de Google Cloud Messaging disponível no Arquivo de Componentes Xamari
              private NotificationHub Hub { get; set; }
     
              public PushHandlerService() : base(Constants.SenderID)
-             {
+                {
                  Log.Info(MyBroadcastReceiver.TAG, "PushHandlerService() constructor");
              }
          }
@@ -327,7 +330,7 @@ O Cliente de Google Cloud Messaging disponível no Arquivo de Componentes Xamari
             Log.Error(MyBroadcastReceiver.TAG, "GCM Error: " + errorId);
         }
 
-## Executar a sua aplicação no emulador
+## <a name="run-your-app-in-the-emulator"></a>Executar a sua aplicação no emulador
 Se executar esta aplicação no emulador, certifique-se de que utiliza um Dispositivo Virtual Android (AVD) que suporte APIs da Google.
 
 > [!IMPORTANT]
@@ -340,15 +343,15 @@ Se executar esta aplicação no emulador, certifique-se de que utiliza um Dispos
 
 1. A partir de **Ferramentas**, clique em **Abrir o Gestor de Emulador Android**, selecione o seu dispositivo e, em seguida, clique em **Editar**.
    
-    ![][18]
+       ![][18]
 2. Selecione **APIs Google** em **Destino** e, em seguida, clique em **OK**.
    
-    ![][19]
+       ![][19]
 3. Na barra de ferramentas superior, clique em **Executar** e, em seguida, selecione a sua aplicação. Este processo inicia o emulador e executa a aplicação.
    
    A aplicação recupera o *registrationId* de GCM e regista com o Notification Hub.
 
-## Enviar notificações a partir do seu back-end
+## <a name="send-notifications-from-your-backend"></a>Enviar notificações a partir do seu back-end
 Pode testar a receção das notificações na sua aplicação com o envio de notificações no [Portal Clássico do Azure] através do separador depuração no Notification Hub, conforme apresentado no ecrã abaixo.
 
 ![][30]
@@ -363,12 +366,12 @@ Aqui está uma lista de outros tutoriais que pode querer rever sobre o envio de 
 
 Nas subsecções seguintes do tutorial, pode enviar notificações com uma aplicação de consola .NET e utilizando um serviço móvel através de um script de nó.
 
-#### (Opcional) Enviar notificações através de uma aplicação .NET
+#### <a name="optional-send-notifications-by-using-a-net-app"></a>(Opcional) Enviar notificações através de uma aplicação .NET
 Nesta secção, iremos enviar notificações através de uma aplicação da consola .NET
 
 1. Crie uma nova aplicação de consola do Visual c#:
    
-    ![][20]
+       ![][20]
 2. No Visual Studio, clique em **Ferramentas**, clique em **Gestor de Pacotes NuGet** e, em seguida, clique em **Consola do Gestor de Pacotes**.
    
     É apresentada a Consola do Gestor de Pacotes no Visual Studio.
@@ -395,17 +398,17 @@ Nesta secção, iremos enviar notificações através de uma aplicação da cons
          Console.ReadLine();
 7. Prima a tecla F5 para executar a aplicação. Deve receber uma notificação na aplicação.
    
-    ![][21]
+       ![][21]
 
-#### (Opcional) Enviar notificações através de um serviço móvel
+#### <a name="optional-send-notifications-by-using-a-mobile-service"></a>(Opcional) Enviar notificações através de um serviço móvel
 1. Siga [Introdução aos Mobile Services].
 2. Inicie a sessão no [Portal Clássico do Azure] e selecione o seu serviço móvel.
 3. Selecione o separador **Scheduler** na parte superior.
    
-    ![][22]
+       ![][22]
 4. Crie uma nova tarefa agendada, insira um nome e selecione **A pedido**.
    
-    ![][23]
+       ![][23]
 5. Quando a tarefa é criada, clique no nome da tarefa. Em seguida, clique no separador **Script** na barra superior.
 6. Insira o seguinte script dentro da função de agendador. Certifique-se de que substitui os marcadores com o seu nome do Notification Hub e a cadeia de ligação para *DefaultFullSharedAccessSignature* que adquiriu anteriormente. Clique em **Guardar**.
    
@@ -425,16 +428,16 @@ Nesta secção, iremos enviar notificações através de uma aplicação da cons
         );
 7. Clique em **Executar Uma Vez** na barra inferior. Deve receber uma notificação de alerta.
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 Neste exemplo simples, difundiu notificações para todos os seus dispositivos Android. Para abordar utilizadores específicos, consulte o tutorial [Utilizar Notification Hubs para notificações push a utilizadores]. Se pretender segmentar os utilizadores por grupos de interesse, pode ler [Utilizar Notification Hubs para enviar notícias de última hora]. Saiba mais sobre como utilizar Notification Hubs em [Documentação de Orientação dos Notification Hubs] e em [Procedimentos de Notification Hubs para Android].
 
 <!-- Anchors. -->
 [Ativar o Google Cloud Messaging]: #register
-[Configurar o Notification Hub]: #configure-hub
-[Ligar a sua aplicação ao Notification Hub]: #connecting-app
+[Configurar o Hub de Notificação]: #configure-hub
+[Ligar a aplicação ao Hub de Notificação]: #connecting-app
 [Executar a sua aplicação com o emulador]: #run-app
 [Enviar notificações a partir do seu back-end]: #send
-[Passos seguintes]:#next-steps
+[Passos seguintes?]:#next-steps
 
 <!-- Images. -->
 
@@ -458,16 +461,16 @@ Neste exemplo simples, difundiu notificações para todos os seus dispositivos A
 [Submeter uma página da aplicação]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [As Minhas Aplicações]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK para Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
-[Introdução aos Mobile Services]: /develop/mobile/tutorials/get-started-xamarin-android/#create-new-service
+[Introdução aos Serviços Móveis]: /develop/mobile/tutorials/get-started-xamarin-android/#create-new-service
 [JavaScript e HTML]: /develop/mobile/tutorials/get-started-with-push-js
 
 [Portal Clássico do Azure]: https://manage.windowsazure.com/
 [objeto wns]: http://go.microsoft.com/fwlink/p/?LinkId=260591
-[Documentação de Orientação dos Notification Hubs]: http://msdn.microsoft.com/library/jj927170.aspx
-[Procedimentos de Notification Hubs para Android]: http://msdn.microsoft.com/library/dn282661.aspx
+[Orientação dos Hubs de Notificação]: http://msdn.microsoft.com/library/jj927170.aspx
+[Procedimentos de Hubs de Notificação para Android]: http://msdn.microsoft.com/library/dn282661.aspx
 
-[Utilizar Notification Hubs para notificações push a utilizadores]: /manage/services/notification-hubs/notify-users-aspnet
-[Utilizar Notification Hubs para enviar notícias de última hora]: /manage/services/notification-hubs/breaking-news-dotnet
+[Use Notification Hubs to push notifications to users (Utilizar Hubs de Notificação para notificações push a utilizadores)]: /manage/services/notification-hubs/notify-users-aspnet
+[Use Notification Hubs to send breaking news (Utilizar Hubs de Notificação para enviar notícias de última hora)]: /manage/services/notification-hubs/breaking-news-dotnet
 [Página do Componente GCMClient]: http://components.xamarin.com/view/GCMClient
 [Página GitHub do Xamarin.NotificationHub]: https://github.com/SaschaDittmann/Xamarin.NotificationHub
 [GitHub]: http://go.microsoft.com/fwlink/p/?LinkId=331329
@@ -476,6 +479,6 @@ Neste exemplo simples, difundiu notificações para todos os seus dispositivos A
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 
