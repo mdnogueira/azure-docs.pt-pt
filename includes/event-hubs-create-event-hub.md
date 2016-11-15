@@ -1,4 +1,4 @@
-## Criar um Hub de Eventos
+## <a name="create-an-event-hub"></a>Criar um Hub de Eventos
 1. Inicie sessão no [Portal do Azure][Portal do Azure] e clique em **Novo** na parte superior esquerda do ecrã.
 2. Clique em **Recolha e análise de dados**, em seguida, clique em **Hubs de Eventos**.
    
@@ -34,6 +34,6 @@ O Hub de Eventos foi criado e tem as cadeias de ligação necessárias para envi
 
 [Portal do Azure]: https://portal.azure.com/
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

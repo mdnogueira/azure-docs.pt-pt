@@ -1,99 +1,109 @@
 ---
-title: Create an Internet-facing load balancer in Resource Manager using the Azure portal | Microsoft Docs
-description: Learn how to create an Internet-facing load balancer in Resource Manager using the Azure portal
+title: "Criar um balanceador de carga com acesso à Internet no Resource Manager com o Portal do Azure | Microsoft Docs"
+description: "Saiba como criar um balanceador de carga com acesso à Internet no Resource Manager com o Portal do Azure"
 services: load-balancer
 documentationcenter: na
 author: anavinahar
 manager: narayan
-editor: ''
+editor: 
 tags: azure-resource-manager
-
+ms.assetid: aa9d26ca-3d8a-4a99-83b7-c410dd20b9d0
 ms.service: load-balancer
 ms.devlang: na
-ms.topic: article
+ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/14/2016
 ms.author: annahar
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: d9e27ce132a837ec26a92de0c38b3e1c23b706c1
+
 
 ---
-# Creating an Internet-facing load balancer using the Azure portal
+# <a name="creating-an-internetfacing-load-balancer-using-the-azure-portal"></a>Criar um balanceador de carga com acesso à Internet com o portal do Azure
 [!INCLUDE [load-balancer-get-started-internet-arm-selectors-include.md](../../includes/load-balancer-get-started-internet-arm-selectors-include.md)]
 
 [!INCLUDE [load-balancer-get-started-internet-intro-include.md](../../includes/load-balancer-get-started-internet-intro-include.md)]
 
 [!INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)]
 
-This article covers the Resource Manager deployment model. You can also [Learn how to create an Internet-facing load balancer using classic deployment](load-balancer-get-started-internet-classic-portal.md)
+Este artigo abrange o modelo de implementação do Resource Manager. Também pode [saber como criar um balanceador de carga com acesso à Internet com a implementação clássica](load-balancer-get-started-internet-classic-portal.md)
 
 [!INCLUDE [load-balancer-get-started-internet-scenario-include.md](../../includes/load-balancer-get-started-internet-scenario-include.md)]
 
-This covers the sequence of individual tasks it has to be done to create a load balancer and explain in detail what is being done to accomplish the goal.
+Isto inclui a sequência de tarefas individuais que têm de ser feitas para criar um balanceador de carga e explicar detalhadamente o que está a ser feito para cumprir o objetivo.
 
-## What is required to create an Internet-facing load balancer?
-You need to create and configure the following objects to deploy a load balancer.
+## <a name="what-is-required-to-create-an-internetfacing-load-balancer"></a>O que é preciso para criar um balanceador de carga com acesso à Internet?
+Tem de criar e configurar os seguintes objetos para implementar um balanceador de carga.
 
-* Front-end IP configuration - contains public IP addresses for incoming network traffic.
-* Back-end address pool - contains network interfaces (NICs) for the virtual machines to receive network traffic from the load balancer.
-* Load balancing rules - contains rules mapping a public port on the load balancer to port in the back-end address pool.
-* Inbound NAT rules - contains rules mapping a public port on the load balancer to a port for a specific virtual machine in the back-end address pool.
-* Probes - contains health probes used to check availability of virtual machines instances in the back-end address pool.
+* Configuração de IP front-end - contém os endereços IP públicos para o tráfego de rede recebido.
+* Conjunto de endereços de back-end - contém interfaces de rede (NICs) para as máquinas virtuais receberem tráfego de rede do balanceador de carga.
+* Regras de balanceamento de carga - contém as regras que mapeiam uma porta pública no balanceador de carga para a porta no conjunto de endereços de back-end.
+* Regras NAT de entrada - contém as regras que mapeiam uma porta pública no balanceador de carga para uma porta de uma máquina virtual específica no conjunto de endereços de back-end.
+* Sondas - contém sondas utilizadas para verificar a disponibilidade de instâncias das máquinas virtuais no conjunto de endereços de back-end.
 
-You can get more information about load balancer components with Azure Resource Manager at [Azure Resource Manager support for Load Balancer](load-balancer-arm.md).
+Pode obter mais informações sobre os componentes do balanceador de carga com o Azure Resource Manager em [Suporte do Azure Resource Manager para o Load Balancer](load-balancer-arm.md).
 
-## Set up a load balancer in Azure portal
+## <a name="set-up-a-load-balancer-in-azure-portal"></a>Configurar um balanceador de carga no Portal do Azure
 > [!IMPORTANT]
-> This example assumes you have a virtual network called **myVNet**. Refer to [create virtual network](../virtual-network/virtual-networks-create-vnet-arm-pportal.md) to do this. It also assumes there is a subnet within **myVNet** called **LB-Subnet-BE** and two VMs called **web1** and **web2** respectively within the same availability set called **myAvailSet** in **myVNet**. Refer to [this link](../virtual-machines/virtual-machines-windows-hero-tutorial.md) to create VMs.
+> Este exemplo assume que tem uma rede virtual chamada **myVNet**. Consulte [criar rede virtual](../virtual-network/virtual-networks-create-vnet-arm-pportal.md) para o fazer. Assume também que existe uma sub-rede em **myVNet** denominada **LB-Subnet-BE** e duas VMs denominadas **web1** e **web2** respetivamente, no mesmo conjunto de disponibilidade denominado **myAvailSet** no **myVNet**. Consulte [esta ligação](../virtual-machines/virtual-machines-windows-hero-tutorial.md) para criar VMs.
 > 
 > 
 
-1. From a browser navigate to the Azure portal: [http://portal.azure.com](http://portal.azure.com) and login with your Azure account.
-2. On the top left-hand side of the screen select **New** > **Networking** > **Load Balancer.**
-3. In the **Create load balancer** blade, type a name for your load balancer. Here it is called **myLoadBalancer**.
-4. Under **Type**, select **Public**.
-5. Under **Public IP address**, create a new public IP called **myPublicIP**.
-6. Under Resource Group, select **myRG**. Then select an appropriate **Location**, and then click **OK**. The load balancer will then start to deploy and will take a few minutes to successfully complete deployment.
+1. Num browser, navegue para o Portal do Azure: [http://portal.azure.com](http://portal.azure.com) e inicie sessão com a sua conta do Azure.
+2. No canto superior esquerdo do ecrã, selecione **Novo** > **Rede** > **Balanceador de Carga.**
+3. No painel **Criar balanceador de carga**, escreva um nome para o balanceador de carga. Aqui é designado por **myLoadBalancer**.
+4. Em **Tipo**, selecione **Público**.
+5. Em **Endereço IP público**, crie um novo IP público denominado **myPublicIP**.
+6. Em Grupo de Recursos, selecione **myRG**. Em seguida, selecione uma **Localização** adequada e clique em **OK**. O balanceador de carga irá então iniciar a implementação e irá demorar alguns minutos a concluir a implementação com êxito.
 
-![Updating resource group of load balancer](./media/load-balancer-get-started-internet-portal/1-load-balancer.png)
+![A atualizar o grupo de recursos do balanceador de carga](./media/load-balancer-get-started-internet-portal/1-load-balancer.png)
 
-## Create a back-end address pool
-1. Once your load balancer has successfully deployed, select it from within your resources. Under settings, select Backend Pools. Type a name for your backend pool. Then click on the **Add** button toward the top of the blade that shows up.
-2. Click on **Add a virtual machine** in the **Add backend pool** blade.  Select **Choose an availability set** under **Availability set** and select **myAvailSet**. Next, select **Choose the virtual machines** under the Virtual Machines section in the blade and click on **web1** and **web2**, the two VMs created for load balancing. Ensure that both have blue check marks to the left as shown in the image below. Then, click **Select** in that blade followed by OK in the **Choose Virtual machines** blade and then **OK** in the **Add backend pool** blade.
+## <a name="create-a-backend-address-pool"></a>Criar um conjunto de endereços de back-end
+1. Assim que o balanceador de carga for implementado com êxito, selecione-o a partir dos seus recursos. Em definições, selecione Conjuntos de Back-end. Escreva um nome para o conjunto de back-end. Em seguida, clique no botão **Adicionar**, na direção da parte superior do painel apresentado.
+2. Clique em **Adicionar uma máquina virtual**, no painel **Adicionar conjunto de back-end**.  Selecione **Escolher um conjunto de disponibilidade** em **Conjunto de disponibilidade** e selecione **myAvailSet**. Em seguida, selecione **Escolher as máquinas virtuais** na secção Máquinas Virtuais no painel e clique em **web1** e **web2**, as duas VMs criadas para balanceamento de carga. Certifique-se de que ambas têm marcas de verificação azuis à esquerda, conforme mostrado na imagem abaixo. Em seguida, clique em **Selecionar** nesse painel, seguido de OK no painel **Escolher Máquinas virtuais** e, em seguida, **OK** no painel **Adicionar conjunto de back-end**.
    
-    ![Adding to the backend address pool - ](./media/load-balancer-get-started-internet-portal/3-load-balancer-backend-02.png)
-3. Check to make sure your notifications drop down list has an update regarding saving the load balancer backend pool in addition to updating the network interface for both the VMs **web1** and **web2**.
+    ![Adicionar ao conjunto de endereços back-end - ](./media/load-balancer-get-started-internet-portal/3-load-balancer-backend-02.png)
+3. Certifique-se de que as notificações na lista pendente têm uma atualização ao guardar o conjunto de back-end do balanceador de carga, além de atualizarem a interface de rede para ambas as VMs **web1** e **web2**.
 
-## Create a probe, LB rule, and NAT rules
-1. Create a health probe.
+## <a name="create-a-probe-lb-rule-and-nat-rules"></a>Criar uma sonda, regra LB e regras NAT
+1. Crie uma sonda de estado de funcionamento.
    
-    Under Settings of your load balancer, select Probes. Then click **Add** located at the top of the blade.
+    Em Definições do balanceador de carga, selecione Sondas. Em seguida, clique em **Adicionar** na parte superior do painel.
    
-    There are two ways to configure a probe: HTTP or TCP. This example shows HTTP, but TCP can be configured in a similar manner.
-    Update the necessary information. As mentioned, **myLoadBalancer** will load balance traffic on Port 80. The path selected is HealthProbe.aspx, Interval is 15 seconds, and Unhealthy threshold is 2. Once finished, click **OK** to create the probe.
+    Existem duas formas de configurar uma pesquisa: HTTP ou TCP. Este exemplo mostra HTTP, mas o TCP pode ser configurado de forma semelhante.
+    Atualize as informações necessárias. Conforme mencionado, o **myLoadBalancer** irá carregar o tráfego de balanceamento de carga na Porta 80. O caminho selecionado é HealthProbe.aspx, o Intervalo é 15 segundos e o Limiar de mau estado de funcionamento é 2. Assim que estiver concluído, clique em **OK** para criar a sonda.
    
-    Hover your pointer over the ‘i’ icon to learn more about these individual configurations and how they can be changed to cater to your requirements.
+    Faça pairar o ponteiro do rato sobre o ícone "i" para saber mais sobre estas configurações individuais e como podem ser alteradas para cumprirem os seus requisitos.
    
-    ![Adding a probe](./media/load-balancer-get-started-internet-portal/4-load-balancer-probes.png)
-2. Create a load balancer rule.
+    ![Adicionar uma sonda](./media/load-balancer-get-started-internet-portal/4-load-balancer-probes.png)
+2. Crie uma regra de balanceador de carga.
    
-    Click on Load balancing rules in the Settings section of your load balancer. In the new blade, click on **Add**. Name your rule. Here, it is HTTP. Choose the frontend port and Backend port. Here, 80 is chosen for both. Choose **LB-backend** as your Backend pool and the previously created **HealthProbe** as the Probe. Other configurations can be set according to your requirements. Then click OK to save the load balancing rule.
+    Clique em Regras do Balanceador de carga, na secção Definições do seu balanceamento de carga. No novo painel, clique em **Adicionar**. Nomeie a sua regra. Aqui, é HTTP. Escolha a porta de front-end e a porta de Back-end. Aqui, é escolhido 80 para ambas. Escolher **LB-backend** como o conjunto de Back-end e o **HealthProbe** criado anteriormente como a Sonda. Podem ser definidas outras configurações de acordo com os requisitos. Em seguida, clique em OK para guardar a regra de balanceamento de carga.
    
-    ![Adding a load balancing rule](./media/load-balancer-get-started-internet-portal/5-load-balancing-rules.png)
-3. Create inbound NAT rules
+    ![Adicionar uma regra de balanceamento de carga](./media/load-balancer-get-started-internet-portal/5-load-balancing-rules.png)
+3. Criar regras NAT de entrada
    
-    Click on Inbound NAT rules under the settings section of your load balancer. In the new blade that, click **Add**. Then name your inbound NAT rule. Here it is called **inboundNATrule1**. The destination should be the Public IP previously created. Select Custom under Service and select the protocol you would like to use. Here TCP is selected. Enter the port, 3441, and the Target port, in this case, 3389. then click OK to save this rule.
+    Clique em Regras NAT de entrada, na secção definições do seu balanceamento de carga. No novo painel, clique em **Adicionar**. Em seguida, atribua um nome à regra NAT de entrada. Aqui é designado por **inboundNATrule1**. O destino deve ser o IP Público criado anteriormente. Selecione Personalizar, em Serviço e selecione o protocolo que pretende utilizar. Aqui está selecionado o TCP. Introduza a porta, 3441, e a Porta de destino, neste caso, 3389. em seguida, clique em OK para guardar esta regra.
    
-    Once the first rule is created, repeat this step for the second inbound NAT rule called inboundNATrule2 from port 3442 to Target port 3389.
+    Depois da primeira regra estar criada, repita este passo para a segunda regra NAT de entrada, denominada inboundNATrule2 da porta 3442 à porta 3389 de Destino.
    
-    ![Adding an inbound NAT rule](./media/load-balancer-get-started-internet-portal/6-load-balancer-inbound-nat-rules.png)
+    ![Adicionar uma regra NAT de entrada](./media/load-balancer-get-started-internet-portal/6-load-balancer-inbound-nat-rules.png)
 
-## Remove a Load Balancer
-To delete a load balancer, select the load balancer you want to remove. In the *Load Balancer* blade, click on **Delete** located at the stop of the blade. Then select **Yes** when prompted.
+## <a name="remove-a-load-balancer"></a>Remover um Balanceador de Carga
+Para eliminar um balanceador de carga, selecione o balanceador de carga que pretende remover. No painel *Balanceador de Carga*, clique em **Eliminar**, que se encontra na parte superior do painel. Em seguida, selecione **Sim** quando lhe for pedido.
 
-## Next steps
-[Get started configuring an internal load balancer](load-balancer-get-started-ilb-arm-cli.md)
+## <a name="next-steps"></a>Passos seguintes
+[Começar a configurar um balanceador de carga interno](load-balancer-get-started-ilb-arm-cli.md)
 
-[Configure a load balancer distribution mode](load-balancer-distribution-mode.md)
+[Configurar um modo de distribuição de balanceador de carga](load-balancer-distribution-mode.md)
 
-[Configure idle TCP timeout settings for your load balancer](load-balancer-tcp-idle-timeout.md)
+[Configurar definições de tempo limite TCP inativo para o balanceador de carga](load-balancer-tcp-idle-timeout.md)
+
+
+
+
+<!--HONumber=Nov16_HO2-->
+
 

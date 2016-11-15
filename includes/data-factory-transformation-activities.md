@@ -17,6 +17,8 @@ O Azure Data Factory suporta as seguintes atividades de transformação, que pod
 > 
 > 
 
-<!--HONumber=Sep16_HO4-->
+
+
+<!--HONumber=Nov16_HO2-->
 
 

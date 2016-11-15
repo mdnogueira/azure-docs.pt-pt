@@ -1,25 +1,29 @@
 ---
-title: Guia de Resolução de Problemas do Centro de Segurança do Azure | Microsoft Docs
-description: Este documento ajuda a resolver problemas no Centro de Segurança do Azure.
+title: "Guia de Resolução de Problemas do Centro de Segurança do Azure | Microsoft Docs"
+description: "Este documento ajuda a resolver problemas no Centro de Segurança do Azure."
 services: security-center
 documentationcenter: na
 author: YuriDio
 manager: swadhwa
-editor: ''
-
+editor: 
+ms.assetid: 44462de6-2cc5-4672-b1d3-dbb4749a28cd
 ms.service: security-center
 ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 07/21/2016
+ms.date: 10/18/2016
 ms.author: yurid
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: 0413d5c87d6df4d07b0e3197599aad154b589bb2
+
 
 ---
-# Guia de Resolução de Problemas do Centro de Segurança do Azure
+# <a name="azure-security-center-troubleshooting-guide"></a>Guia de Resolução de Problemas do Centro de Segurança do Azure
 Este guia destina-se a profissionais de tecnologias da informação (TI), analistas de segurança de informações e administradores de nuvem cujas organizações utilizam o Centro de Segurança do Azure e que precisam de resolver problemas relacionados com o Centro de Segurança.
 
-## Guia de resolução de problemas
+## <a name="troubleshooting-guide"></a>Guia de resolução de problemas
 Este guia explica como resolver problemas relacionados com o Centro de Segurança. A maior parte da resolução de problemas feita no Centro de Segurança será realizada ao consultar primeiro os [Registos de Auditoria](https://azure.microsoft.com/updates/audit-logs-in-azure-preview-portal/) quanto ao componente que falhou. Os registos de auditoria permitem-lhe determinar:
 
 * As operações que foram executadas
@@ -30,7 +34,7 @@ Este guia explica como resolver problemas relacionados com o Centro de Seguranç
 
 O registo de auditoria contém todas as operações de escrita (PUT, POST, DELETE) efetuadas nos seus recursos, no entanto, não inclui as operações de leitura (GET).
 
-## Resolução de problemas da instalação do agente de monitorização no Windows
+## <a name="troubleshooting-monitoring-agent-installation-in-windows"></a>Resolução de problemas da instalação do agente de monitorização no Windows
 O agente de monitorização do Centro de Segurança é utilizado para efetuar a recolha de dados. Assim que a recolha de dados estiver ativa e o agente estiver corretamente instalado no computador de destino, os processos em execução devem ser:
 
 * ASMAgentLauncher.exe - Agente de Monitorização do Azure 
@@ -50,7 +54,7 @@ Também pode obter mais informações sobre o processo de instalação ao ler os
 > 
 > 
 
-## Resolução de problemas da instalação do agente de monitorização no Linux
+## <a name="troubleshooting-monitoring-agent-installation-in-linux"></a>Resolução de problemas da instalação do agente de monitorização no Linux
 Quando resolver problemas de instalação do Agente da VM num sistema Linux, confirme que a extensão foi transferida para /var/lib/waagent/. Pode executar o comando abaixo para verificar se foi instalada:
 
 `cat /var/log/waagent.log` 
@@ -64,12 +68,12 @@ Num sistema funcional, deverá ver uma ligação ao processo mdsd na TCP 29130. 
 
 `netstat -plantu | grep 29130`
 
-## Contactar o Suporte da Microsoft
+## <a name="contacting-microsoft-support"></a>Contactar o Suporte da Microsoft
 Alguns problemas podem ser identificados através das diretrizes fornecidas neste artigo, ao passo que outros estão também documentados no [Fórum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureSecurityCenter) público do Centro de Segurança. Contudo, se tiver de resolver mais problemas, pode abrir um novo pedido de suporte através do Portal do Azure, conforme mostrado abaixo: 
 
 ![Suporte da Microsoft](./media/security-center-troubleshooting-guide/security-center-troubleshooting-guide-fig2.png)
 
-## Consultar também
+## <a name="see-also"></a>Consultar também
 Neste documento, aprendeu a configurar as políticas de segurança no Centro de Segurança do Azure. Para saber mais acerca do Centro de Segurança do Azure, consulte o seguinte:
 
 * [Guia de Operações e Planeamento do Centro de Segurança do Azure](security-center-planning-and-operations-guide.md) – Saiba como planear e compreender as considerações de conceção para adoção do Centro de Segurança do Azure.
@@ -79,6 +83,9 @@ Neste documento, aprendeu a configurar as políticas de segurança no Centro de 
 * [Azure Security Center FAQ (FAQ do Centro de Segurança do Azure)](security-center-faq.md) – Encontre as perguntas mais frequentes acerca de como utilizar o serviço
 * [Blogue de Segurança do Azure](http://blogs.msdn.com/b/azuresecurity/) – Encontre mensagens do blogue acerca da segurança e conformidade do Azure
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

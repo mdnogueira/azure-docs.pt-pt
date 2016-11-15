@@ -1,10 +1,11 @@
 ---
-title: Consultar o Índice da Azure Search através da API REST | Microsoft Docs
-description: Crie uma consulta de pesquisa na pesquisa do Azure e utilize parâmetros de pesquisa para filtrar e ordenar os resultados da pesquisa.
+title: "Consultar o Índice da Azure Search através da API REST | Microsoft Docs"
+description: "Crie uma consulta de pesquisa na pesquisa do Azure e utilize parâmetros de pesquisa para filtrar e ordenar os resultados da pesquisa."
 services: search
-documentationcenter: ''
+documentationcenter: 
+manager: jhubbard
 author: ashmaka
-
+ms.assetid: 8b3ca890-2f5f-44b6-a140-6cb676fc2c9c
 ms.service: search
 ms.devlang: na
 ms.workload: search
@@ -12,9 +13,13 @@ ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.date: 08/29/2016
 ms.author: ashmaka
+translationtype: Human Translation
+ms.sourcegitcommit: 6ff31940f3a4e7557e0caf3d9d3740590be3bc04
+ms.openlocfilehash: ab769e5cd6abe27d6793d1aad816c4f4d10ff078
+
 
 ---
-# Consultar o índice da Azure Search através da API REST
+# <a name="query-your-azure-search-index-using-the-rest-api"></a>Consultar o índice da Azure Search através da API REST
 > [!div class="op_single_selector"]
 > * [Descrição geral](search-query-overview.md)
 > * [Portal](search-explorer.md)
@@ -27,7 +32,7 @@ Este artigo mostra como consultar um índice através da [API REST da Azure Sear
 
 Antes de iniciar estas instruções, já deverá ter [criado um índice de Pesquisa do Azure](search-what-is-an-index.md) e [preenchido este com dados](search-what-is-data-import.md).
 
-## I. Identificar a sua chave de API de consulta do serviço Azure Search
+## <a name="i-identify-your-azure-search-services-query-apikey"></a>I. Identificar a sua chave de API de consulta do serviço Azure Search
 Um elemento-chave de qualquer operação de pesquisa em relação à API REST de Azure Search é a *chave de API* gerada para o serviço prestado por si. Ter uma chave válida estabelece fidedignidade, numa base por pedido, entre a aplicação a enviar o pedido e o serviço que o processa.
 
 1. Para localizar as chaves de API do seu serviço, tem de iniciar sessão no [Portal do Azure](https://portal.azure.com/)
@@ -41,7 +46,7 @@ O seu serviço terá *chaves de administração* e *chaves de consulta*.
 
 Para efeitos de consulta de um índice, pode utilizar uma das chaves de consulta. As chaves de administração também podem ser utilizadas para consultas, contudo, deve utilizar uma chave de consulta no código da aplicação, uma vez que tal segue melhor o [Princípio de menor privilégio](https://en.wikipedia.org/wiki/Principle_of_least_privilege).
 
-## II. Formular a consulta
+## <a name="ii-formulate-your-query"></a>II. Formular a consulta
 Existem duas formas de [pesquisar o índice através da API REST](https://msdn.microsoft.com/library/azure/dn798927.aspx). Uma forma consiste em emitir um pedido de HTTP POST em que os parâmetros da sua consulta serão definidos num objeto JSON no corpo do pedido. A outra forma consiste em emitir um pedido de HTTP GET em que os parâmetros da sua consulta serão definidos no URL do pedido. Tenha em atenção que o POST tem [limites mais flexíveis](https://msdn.microsoft.com/library/azure/dn798927.aspx) em relação ao tamanho dos parâmetros de consulta do que o GET. Por este motivo, recomendamos a utilização do POST, salvo se tiver circunstâncias especiais em que a utilização do GET seja mais conveniente.
 
 Para o POST e o GET, é necessário fornecer o *nome do serviço*, o *nome do índice* e a *versão de API* correta (no momento de publicação deste documento a versão de API atual é `2015-02-28`) no URL do pedido. Para o GET, a *cadeia de consulta* no final do URL será onde fornece os parâmetros de consulta. Veja a seguir o formato URL:
@@ -50,7 +55,7 @@ Para o POST e o GET, é necessário fornecer o *nome do serviço*, o *nome do í
 
 O formato para o POST é o mesmo, contudo, apenas com a versão de API nos parâmetros de cadeia de consulta.
 
-#### Consultas de exemplo
+#### <a name="example-queries"></a>Consultas de exemplo
 Eis algumas consultas de exemplo sobre um índice designado "hotéis". Estas consultas são apresentadas nos formatos GET e POST.
 
 Procure no índice completo o termo "orçamento" e devolva apenas o campo `hotelName`:
@@ -65,7 +70,7 @@ POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-ve
 }
 ```
 
-Aplique um filtro ao índice para localizar hotéis com um preço inferior a 150 $ por noite e devolva `hotelId` e `description`:
+Aplique um filtro ao índice para localizar hotéis com um preço inferior a 150 $ por noite e devolva `hotelId` e `description`:
 
 ```
 GET https://[service name].search.windows.net/indexes/hotels/docs?search=*&$filter=baseRate lt 150&$select=hotelId,description&api-version=2015-02-28
@@ -92,10 +97,10 @@ POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-ve
 }
 ```
 
-## III. Submeter o pedido de HTTP
+## <a name="iii-submit-your-http-request"></a>III. Submeter o pedido de HTTP
 Agora que formulou a consulta como parte do URL (para o GET) ou do corpo (para o POST) do pedido de HTTP, pode definir os cabeçalhos do pedido e submeter a consulta.
 
-#### Pedido e Cabeçalhos do Pedido
+#### <a name="request-and-request-headers"></a>Pedido e Cabeçalhos do Pedido
 Tem de definir dois cabeçalhos do pedido para o GET ou três para o POST:
 
 1. O cabeçalho `api-key` deve ser definido para a chave de consulta indicada no passo I acima. Tenha em atenção que também pode utilizar uma chave de administração como o cabeçalho `api-key`, contudo, recomenda-se a utilização de uma chave de consulta, uma vez que concede exclusivamente acesso só de leitura aos índices e documentos.
@@ -158,6 +163,9 @@ Um pedido de consulta com êxito resultará num Código de Estado de `200 OK` e 
 
 Para saber mais, consulte a secção "Resposta" dos [Documentos sobre Pesquisa](https://msdn.microsoft.com/library/azure/dn798927.aspx). Para obter mais informações sobre outros códigos de estado HTTP que possam ser devolvidos em caso de falha, consulte [Códigos de estado HTTP (Pesquisa do Azure)](https://msdn.microsoft.com/library/azure/dn798925.aspx).
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

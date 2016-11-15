@@ -1,4 +1,4 @@
-## Resultado típico
+## <a name="typical-output"></a>Resultado típico
 Segue-se um exemplo do resultado escrito no ficheiro de registo pelo exemplo Olá Mundo. Foram adicionados carateres de Nova linha e Tabulação para melhorar a legibilidade:
 
 ```
@@ -29,10 +29,10 @@ Segue-se um exemplo do resultado escrito no ficheiro de registo pelo exemplo Ol�
 }]
 ```
 
-## Fragmentos de código
+## <a name="code-snippets"></a>Fragmentos de código
 Esta secção descreve algumas partes principais do código no exemplo Olá Mundo.
 
-### Criação do gateway
+### <a name="gateway-creation"></a>Criação do gateway
 O programador deve escrever o *processo do gateway*. Este programa cria a infraestrutura interna (o mediador), carrega os módulos e configura tudo para que funcione corretamente. O SDK fornece a função **Gateway_Create_From_JSON** para permitir o arranque de um gateway a partir de um ficheiro JSON. Para utilizar a função **Gateway_Create_From_JSON**, deve introduzir o caminho para um ficheiro JSON que especifique os módulos a carregar. 
 
 Pode encontrar o código para o processo de gateway no exemplo Olá Mundo no ficheiro [main.c][lnk-main-c]. Para melhorar a legibilidade, o fragmento abaixo mostra uma versão abreviada do código de processo do gateway. Este programa cria um gateway e, em seguida, aguarda que o utilizador prima a tecla **ENTER** antes de fechar o gateway. 
@@ -77,12 +77,16 @@ O exemplo seguinte mostra o ficheiro de definições JSON utilizado para configu
     [ 
         {
             "module name" : "logger",
-            "module path" : "./modules/logger/liblogger_hl.so",
+            "loading args": {
+              "module path" : "./modules/logger/liblogger_hl.so"
+            },
             "args" : {"filename":"log.txt"}
         },
         {
             "module name" : "hello_world",
-            "module path" : "./modules/hello_world/libhello_world_hl.so",
+            "loading args": {
+              "module path" : "./modules/hello_world/libhello_world_hl.so"
+            },
             "args" : null
         }
     ],
@@ -96,7 +100,7 @@ O exemplo seguinte mostra o ficheiro de definições JSON utilizado para configu
 }
 ```
 
-### Publicação de mensagens do módulo Olá Mundo
+### <a name="hello-world-module-message-publishing"></a>Publicação de mensagens do módulo Olá Mundo
 Pode encontrar o código utilizado pelo módulo "Olá Mundo" para publicar mensagens no ficheiro ["hello_world.c"][lnk-helloworld-c]. O fragmento abaixo mostra uma versão modificada com comentários adicionais e algum código de processamento de erros removido para melhorar a legibilidade:
 
 ```
@@ -145,7 +149,7 @@ int helloWorldThread(void *param)
 }
 ```
 
-### Processamento de mensagens do módulo Olá Mundo
+### <a name="hello-world-module-message-processing"></a>Processamento de mensagens do módulo Olá Mundo
 O módulo Olá Mundo não tem necessidade de processar mensagens publicadas por outros módulos no mediador. Isto torna a implementação da chamada de retorno da mensagem no módulo Olá Mundo uma função sem operações.
 
 ```
@@ -155,7 +159,7 @@ static void HelloWorld_Receive(MODULE_HANDLE moduleHandle, MESSAGE_HANDLE messag
 }
 ```
 
-### Processamento e publicação de mensagens do módulo de registo
+### <a name="logger-module-message-publishing-and-processing"></a>Processamento e publicação de mensagens do módulo de registo
 O módulo Logger recebe mensagens do mediador e escreve-as num ficheiro. Nunca publica mensagens. Por conseguinte, o código do módulo Logger nunca chama a função **Broker_Publish**.
 
 A função **Logger_Recieve** no ficheiro [logger.c][lnk-logger-c] é a chamada de retorno que o mediador invoca para a entrega de mensagens ao módulo Logger. O fragmento abaixo mostra uma versão modificada com comentários adicionais e algum código de processamento de erros removido para melhorar a legibilidade:
@@ -199,8 +203,8 @@ static void Logger_Receive(MODULE_HANDLE moduleHandle, MESSAGE_HANDLE messageHan
 }
 ```
 
-## Passos seguintes
-Para saber mais sobre como utilizar o SDK do Gateway, veja o seguinte:
+## <a name="next-steps"></a>Passos seguintes
+Para saber mais sobre como utilizar o SDK do Gateway de IoT, veja o seguinte:
 
 * [SDK do Gateway de IoT – enviar mensagens dispositivo-nuvem com um dispositivo simulado com Linux][lnk-gateway-simulated].
 * [SDK do Gateway do Azure IoT][lnk-gateway-sdk] no GitHub.
@@ -212,6 +216,6 @@ Para saber mais sobre como utilizar o SDK do Gateway, veja o seguinte:
 [lnk-gateway-sdk]: https://github.com/Azure/azure-iot-gateway-sdk/
 [lnk-gateway-simulated]: ../articles/iot-hub/iot-hub-linux-gateway-sdk-simulated-device.md
 
-<!--HONumber=Sep16_HO4-->
+<!--HONumber=Nov16_HO2-->
 
 

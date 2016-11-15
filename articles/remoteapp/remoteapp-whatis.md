@@ -1,12 +1,12 @@
 ---
-title: O que é o Azure RemoteApp? | Microsoft Docs
-description: Saiba como partilhar aplicações e recursos para qualquer dispositivo através do Azure RemoteApp.
+title: "O que é o Azure RemoteApp? | Microsoft Docs"
+description: "Saiba como partilhar aplicações e recursos para qualquer dispositivo através do Azure RemoteApp."
 services: remoteapp
-documentationcenter: ''
+documentationcenter: 
 author: lizap
 manager: mbaldwin
-editor: ''
-
+editor: 
+ms.assetid: d7a8a311-e70a-4463-ac85-c7f62c500921
 ms.service: remoteapp
 ms.workload: compute
 ms.tgt_pltfrm: na
@@ -14,9 +14,13 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 08/15/2016
 ms.author: elizapo
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: 95b4e6914de787bb2c25527ce9635f872b4746a6
+
 
 ---
-# O que é o Azure RemoteApp?
+# <a name="what-is-azure-remoteapp"></a>O que é o Azure RemoteApp?
 > [!IMPORTANT]
 > O Azure RemoteApp está a ser descontinuado. Leia o [anúncio](https://go.microsoft.com/fwlink/?linkid=821148) para obter detalhes.
 > 
@@ -34,7 +38,7 @@ O Azure RemoteApp faz parte da [Infraestrutura de Ambiente de Trabalho Virtual d
 
 **Novo!** Pretende saber mais sobre o Azure RemoteApp? Ou está preparado para validar o Azure RemoteApp em dimensionamento?  Participe no nosso [seminário virtual de perguntas para especialistas](https://azureinfo.microsoft.com/AzureRemoteAppAskTheExperts-Registration-Page.html?ls=Website) semanal.
 
-## Coleções do Azure RemoteApp
+## <a name="azure-remoteapp-collections"></a>Coleções do Azure RemoteApp
 Existem dois tipos de [coleções do Azure RemoteApp](remoteapp-collections.md):
 
 * Uma **coleção na nuvem** está alojada e armazena dados de programas na nuvem. Os utilizadores podem aceder às aplicações iniciando sessão com a conta Microsoft ou as credenciais da empresa sincronizadas ou federadas com o Azure Active Directory.
@@ -52,7 +56,7 @@ Existem dois tipos de [coleções do Azure RemoteApp](remoteapp-collections.md):
 
 As diversas coleções têm opções diferentes, incluindo redes, portanto, determine [qual a coleção](remoteapp-collections.md) mais adequada para si. 
 
-### Atualizar a coleção
+### <a name="updating-your-collection"></a>Atualizar a coleção
 Uma das principais diferenças entre a coleção híbrida e a coleção na nuvem é o modo como as atualizações de software são processadas. Com uma coleção na nuvem que utilize a imagem pré-instalada do Office 365 ProPlus ou do Office 2013, não precisa de se preocupar com as atualizações. O serviço realiza a própria manutenção e lança atualizações de modo contínuo, quer para aplicações quer para o sistema operativo.
 
 Para coleções híbridas e para coleções na nuvem que utilizam uma imagem de modelo personalizada, o utilizador é responsável pela manutenção da imagem e das aplicações. Para imagens associadas a um domínio, pode controlar as atualizações através de ferramentas como o Windows Update, a Política de Grupo ou o System Center.
@@ -61,12 +65,12 @@ Após atualizar a imagem de modelo personalizada, carrega a nova imagem para a n
 
 Consulte [Atualizar a coleção](remoteapp-update.md) para obter mais informações.
 
-## Clientes suportados do RemoteApp
+## <a name="supported-remoteapp-clients"></a>Clientes suportados do RemoteApp
 O Azure RemoteApp é suportado nas aplicações de cliente RemoteApp para Windows e Windows RT, bem como nas aplicações de Ambiente de Trabalho Remoto da Microsoft para Mac, iOS e Android. Os utilizadores podem utilizar essas aplicações nos dispositivos móveis ou de computação para aceder aos programas do novo Azure RemoteApp. 
 
 Consulte [Aceder às aplicações no Azure RemoteApp](remoteapp-clients.md) para obter mais informações sobre os clientes.
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 Aceda! Experimente! Estes artigos ajudam a começar a utilizar o Azure RemoteApp:
 
 * [Que tipo de coleção precisa para o Azure RemoteApp?](remoteapp-collections.md)
@@ -77,9 +81,12 @@ Aceda! Experimente! Estes artigos ajudam a começar a utilizar o Azure RemoteApp
 * [As melhores práticas para utilizar o Azure RemoteApp](remoteapp-bestpractices.md)
 * [Perguntas mais frequentes (FAQ) do Azure RemoteApp](remoteapp-faq.md)
 
-### Ajude-nos para o podermos ajudar
+### <a name="help-us-help-you"></a>Ajude-nos para o podermos ajudar
 Sabia que além de classificar este artigo e deixar um comentário a seguir, pode alterar o próprio artigo? Falta algo? Algo errado? Escrevi algo que é simplesmente confuso? Desloque-se para cima e clique em **Editar no GitHub** ou **Editar** para efetuar alterações – estas serão enviadas para nós para revisão e, em seguida, após serem aceites, as suas alterações e melhorias serão apresentadas aqui.
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

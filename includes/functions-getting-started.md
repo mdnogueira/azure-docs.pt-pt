@@ -2,6 +2,8 @@ As Funções do Azure são uma experiência de computação a pedido condicionad
 
 Este vídeo de introdução mostra como criar uma aplicação de função, modificar o código e como interagir com os acionadores e os enlaces.
 
-<!--HONumber=Sep16_HO3-->
+
+
+<!--HONumber=Nov16_HO2-->
 
 

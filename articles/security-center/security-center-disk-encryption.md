@@ -1,12 +1,12 @@
 ---
-title: Encriptar uma Máquina Virtual do Azure | Microsoft Docs
-description: Este documento ajuda-o a encriptar uma Máquina Virtual do Azure depois de receber um alerta a partir do Centro de Segurança do Azure.
+title: "Encriptar uma Máquina Virtual do Azure | Microsoft Docs"
+description: "Este documento ajuda-o a encriptar uma Máquina Virtual do Azure depois de receber um alerta a partir do Centro de Segurança do Azure."
 services: security, security-center
 documentationcenter: na
 author: TomShinder
 manager: swadhwa
-editor: ''
-
+editor: 
+ms.assetid: f6c28bc4-1f79-4352-89d0-03659b2fa2f5
 ms.service: security
 ms.devlang: na
 ms.topic: hero-article
@@ -14,9 +14,13 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/27/2016
 ms.author: tomsh
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: 65d586405bc79ccf0d5e27c09d750818e5f3dd24
+
 
 ---
-# Encriptar uma Máquina Virtual do Azure
+# <a name="encrypt-an-azure-virtual-machine"></a>Encriptar uma Máquina Virtual do Azure
 O Centro de Segurança do Azure alerta-o se tiver máquinas virtuais que não estão encriptadas. Estes alertas serão apresentados como de Gravidade Alta e a recomendação é de encriptar estas máquinas virtuais.
 
 ![Recomendação de encriptação de disco](./media/security-center-disk-encryption\\security-center-disk-encryption-fig1.png)
@@ -42,10 +46,10 @@ Existem várias abordagens que podem ser utilizadas para configurar os pré-requ
 > 
 > 
 
-## Instalar e configurar o Azure PowerShell
+## <a name="install-and-configure-azure-powershell"></a>Instalar e configurar o Azure PowerShell
 Precisa da versão 1.2.1 ou superior do Azure PowerShell instalada no seu computador. O artigo [Como instalar e configurar o Azure PowerShell](../powershell-install-configure.md) contém todos os passos necessários para aprovisionar o computador de modo a trabalhar com o Azure PowerShell. A abordagem mais direta consiste em utilizar a abordagem de instalação do Instalador de Plataforma Web mencionada nesse artigo. Mesmo que já tenha instalado Azure PowerShell, instale-o novamente ao utilizar a abordagem do Instalador de Plataforma Web para que tenha a versão mais recente do Azure PowerShell.
 
-## Obter e executar o script de configuração de pré-requisitos do Azure Disk Encryption
+## <a name="obtain-and-run-the-azure-disk-encryption-prerequisites-configuration-script"></a>Obter e executar o script de configuração de pré-requisitos do Azure Disk Encryption
 O Script de Configuração de Pré-requisitos do Azure Disk Encryption irá configurar todos os pré-requisitos necessários para encriptar as suas Virtual Machines do Azure.
 
 1. Aceda à página do GitHub que possui o [Script de Configuração de Pré-requisitos do Azure Disk Encryption](https://github.com/Azure/azure-powershell/blob/dev/src/ResourceManager/Compute/Commands.Compute/Extension/AzureDiskEncryption/Scripts/AzureDiskEncryptionPreRequisiteSetup.ps1).
@@ -70,7 +74,7 @@ Deverá agora verá algo semelhante à figura abaixo.
 
 O painel superior é designado por “painel de script” e o painel inferior é designado por “consola”. Utilizaremos estes termos posteriormente neste artigo.
 
-## Executar o comando do PowerShell de pré-requisitos do Azure Disk Encryption
+## <a name="run-the-azure-disk-encryption-prerequisites-powershell-command"></a>Executar o comando do PowerShell de pré-requisitos do Azure Disk Encryption
 O script de Pré-requisitos do Azure Disk Encryption irá pedir-lhe as seguintes informações depois de iniciar o script:
 
 * **Nome do Grupo de Recursos** – Nome do Grupo de Recursos no qual pretende colocar o Cofre de Chaves.  Será criado um novo Grupo de Recursos com o nome que introduziu se não existir já um com esse nome criado. Se já tiver um Grupo de Recursos que pretende utilizar nesta subscrição, introduza o nome desse Grupo de Recursos.
@@ -108,7 +112,7 @@ O resultado do script deve ter um aspeto semelhante ao do ecrã abaixo:
 
 ![Saída do PowerShell](./media/security-center-disk-encryption\\security-center-disk-encryption-fig5.png)
 
-## Encriptar a máquina virtual do Azure
+## <a name="encrypt-the-azure-virtual-machine"></a>Encriptar a máquina virtual do Azure
 Agora está pronto para encriptar a sua máquina virtual. Se a máquina virtual está localizada no mesmo Grupo de Recursos como o seu Cofre de Chaves, pode mover-se para a secção de passos de encriptação. No entanto, se a máquina virtual não está no mesmo Grupo de Recursos como o seu Cofre de Chaves, terá de introduzir o seguinte na consola no ISE do PowerShell:
 
 **$resourceGroupName = <’Virtual_Machine_RG’>**
@@ -122,7 +126,7 @@ Prima **ENTER**. Deverá ver o nome do Grupo de Recursos em que as máquinas vir
 
 ![Saída do PowerShell](./media/security-center-disk-encryption\\security-center-disk-encryption-fig6.png)
 
-### Passos de encriptação
+### <a name="encryption-steps"></a>Passos de encriptação
 Primeiro, tem de facultar ao PowerShell o nome da máquina virtual que pretende encriptar. Na consola, escreva:
 
 **$vmName = <’your_vm_name’>**
@@ -167,7 +171,7 @@ No painel **Discos**, verá que **Encriptação** está **Ativada**.
 
 ![Propriedades do disco](./media/security-center-disk-encryption\\security-center-disk-encryption-fig12.png)
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 Neste documento, aprendeu a encriptar uma Máquina Virtual do Azure. Para saber mais acerca do Centro de Segurança do Azure, consulte o seguinte:
 
 * [Monitorização do estado de funcionamento de segurança no Centro de Segurança do Azure](security-center-monitoring.md) – Saiba como monitorizar o estado de funcionamento dos seus recursos do Azure
@@ -175,6 +179,9 @@ Neste documento, aprendeu a encriptar uma Máquina Virtual do Azure. Para saber 
 * [FAQ do Centro de Segurança do Azure](security-center-faq.md) – Encontre as perguntas mais frequentes acerca de como utilizar o serviço
 * [Blogue de Segurança do Azure](http://blogs.msdn.com/b/azuresecurity/) – Encontre mensagens do blogue acerca da segurança e conformidade do Azure
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

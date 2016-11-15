@@ -1,23 +1,27 @@
 ---
 title: 'Experimentar a Base de Dados SQL: utilizar C# para criar uma base de dados SQL | Microsoft Docs'
-description: Experimente a Base de Dados SQL para desenvolver aplicações SQL e C#, e crie uma Base de Dados SQL do Azure com C# utilizando a Biblioteca da Base de Dados SQL para .NET.
+description: "Experimente a Base de Dados SQL para desenvolver aplicações SQL e C#, e crie uma Base de Dados SQL do Azure com C# utilizando a Biblioteca da Base de Dados SQL para .NET."
 keywords: experimentar sql, sql c#
 services: sql-database
-documentationcenter: ''
+documentationcenter: 
 author: stevestein
 manager: jhubbard
 editor: cgronlun
-
+ms.assetid: cfff2299-a474-4054-8d99-759af1ae5188
 ms.service: sql-database
 ms.devlang: NA
 ms.topic: hero-article
 ms.tgt_pltfrm: csharp
 ms.workload: data-management
-ms.date: 09/14/2016
+ms.date: 10/04/2016
 ms.author: sstein
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: 0ffe433d9899610d5ff83c66b6cdaaecd16e9c57
+
 
 ---
-# Experimentar a Base de Dados SQL: utilizar C# para criar uma base de dados SQL com a Biblioteca da Base de Dados SQL para .NET
+# <a name="try-sql-database-use-c-to-create-a-sql-database-with-the-sql-database-library-for-net"></a>Experimentar a Base de Dados SQL: utilizar C# para criar uma base de dados SQL com a Biblioteca da Base de Dados SQL para .NET
 > [!div class="op_single_selector"]
 > * [Portal do Azure](sql-database-get-started.md)
 > * [C#](sql-database-get-started-csharp.md)
@@ -25,12 +29,12 @@ ms.author: sstein
 > 
 > 
 
-Saiba como utilizar o C# para criar uma base de dados SQL do Azure com a [Biblioteca da Base de Dados SQL do Azure para .NET](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql). Este artigo descreve como criar uma base de dados única com o SQL Server e o C#. Para criar conjuntos de bases de dados elásticas, consulte o artigo [Criar um conjunto de bases de dados elásticas](sql-database-elastic-pool-create-csharp.md).
+Saiba como utilizar o C# para criar uma base de dados SQL do Azure com a [Biblioteca de Gestão da Base de Dados SQL do Microsoft Azure para .NET](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql). Este artigo descreve como criar uma base de dados única com o SQL Server e o C#. Para criar conjuntos de bases de dados elásticas, consulte o artigo [Criar um conjunto de bases de dados elásticas](sql-database-elastic-pool-create-csharp.md).
 
-A Biblioteca da Base de Dados SQL do Azure para .NET fornece uma API baseada no [Azure Resource Manager](../resource-group-overview.md) que encapsula num wrapper a [API REST da Base de Dados SQL baseada no Resource Manager](https://msdn.microsoft.com/library/azure/mt163571.aspx).
+A Biblioteca de Gestão da Base de Dados SQL do Azure para .NET fornece uma API baseada no [Azure Resource Manager](../azure-resource-manager/resource-group-overview.md) que encapsula num wrapper a [API REST da Base de Dados SQL baseada no Resource Manager](https://msdn.microsoft.com/library/azure/mt163571.aspx).
 
 > [!NOTE]
-> A Biblioteca da Base de Dados SQL para .NET encontra-se atualmente em pré-visualização.
+> Muitas funcionalidades novas da Base de Dados SQL só são suportadas quando utilizar o [Modelo de implementação Azure Resource Manager](../azure-resource-manager/resource-group-overview.md). Assim, deverá sempre utilizar a mais recente **Biblioteca de Gestão da Base de Dados SQL do Azure para .NET ([docs](https://msdn.microsoft.com/library/azure/mt349017.aspx) | [Pacote NuGet](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql))**. O antigo [modelo de implementação clássica baseado em bibliotecas](https://www.nuget.org/packages/Microsoft.WindowsAzure.Management.Sql) é apenas suportado para a retrocompatibilidade. Assim, recomendamos a utilização das bibliotecas mais recentes baseadas no Resource Manager.
 > 
 > 
 
@@ -39,7 +43,12 @@ Para executar os passos descritos neste artigo é necessário o seguinte:
 * Uma subscrição do Azure. Se precisar de uma subscrição do Azure, basta clicar em ** GRATUITA** no início desta página e, em seguida, voltar para terminar este artigo.
 * Visual Studio. Para obter uma cópia gratuita do Visual Studio, consulte a página [Visual Studio Downloads](https://www.visualstudio.com/downloads/download-visual-studio-vs).
 
-## Criar uma aplicação de consola e instale as bibliotecas necessárias
+> [!NOTE]
+> Este artigo cria uma nova base de dados SQL em branco. Modifique o método *CreateOrUpdateDatabase(...)* no exemplo seguinte para copiar bases de dados, dimensionar bases de dados, criar uma base de dados num conjunto, etc. Para obter mais informações, veja as classes [DatabaseCreateMode](https://msdn.microsoft.com/library/microsoft.azure.management.sql.models.databasecreatemode.aspx) e [DatabaseProperties](https://msdn.microsoft.com/library/microsoft.azure.management.sql.models.databaseproperties.aspx).
+> 
+> 
+
+## <a name="create-a-console-app-and-install-the-required-libraries"></a>Criar uma aplicação de consola e instale as bibliotecas necessárias
 1. Inicie o Visual Studio.
 2. Clique em **Ficheiro** > **ovo** > **Projeto**.
 3. Crie uma **Aplicação de Consola** #C e nomeie-a: *SqlDbConsoleApp*
@@ -47,7 +56,7 @@ Para executar os passos descritos neste artigo é necessário o seguinte:
 Para criar uma base de dados do SQL com o C#, carregue as bibliotecas de gestão necessárias (utilizando a [consola do gestor de pacote](http://docs.nuget.org/Consume/Package-Manager-Console)):
 
 1. clique em **Ferramentas** > **Gestor de Pacotes NuGet** > **Consola de Gestor de Pacotes**.
-2. Escreva `Install-Package Microsoft.Azure.Management.Sql –Pre` para instalar a [Biblioteca de Gestão do Microsoft Azure SQL](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql).
+2. Escreva `Install-Package Microsoft.Azure.Management.Sql –Pre` para instalar a [Biblioteca de Gestão da Base de Dados SQL do Microsoft Azure](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql) mais recente.
 3. Escreva `Install-Package Microsoft.Azure.Management.ResourceManager –Pre` para instalar a [Biblioteca do Microsoft Azure Resource Manager](https://www.nuget.org/packages/Microsoft.Azure.Management.ResourceManager).
 4. Escreva `Install-Package Microsoft.Azure.Common.Authentication –Pre` para instalar a [Biblioteca de Autenticação Comum do Microsoft Azure](https://www.nuget.org/packages/Microsoft.Azure.Common.Authentication). 
 
@@ -56,7 +65,7 @@ Para criar uma base de dados do SQL com o C#, carregue as bibliotecas de gestão
 > 
 > 
 
-## Criar uma Base de dados SQL, uma regra de firewall e uma base de dados do SQL – exemplo #C
+## <a name="create-a-sql-database-server-firewall-rule-and-sql-database-c-example"></a>Criar uma Base de dados SQL, uma regra de firewall e uma base de dados do SQL – exemplo #C
 O exemplo seguinte cria um grupo de recursos, um servidor, uma regra de firewall e uma base de dados SQL. Consulte, [Criar um principal de serviço para aceder aos recursos](#create-a-service-principal-to-access-resources) para obter as `_subscriptionId, _tenantId, _applicationId, and _applicationSecret` variáveis.
 
 Substituir o conteúdo de **Program.cs** com o seguinte e atualizar as `{variables}` com os valores de aplicação (não incluir `{}`).
@@ -218,7 +227,7 @@ Substituir o conteúdo de **Program.cs** com o seguinte e atualizar as `{variabl
 
 
 
-## Criar um principal de serviço para aceder aos recursos
+## <a name="create-a-service-principal-to-access-resources"></a>Criar um principal de serviço para aceder aos recursos
 O seguinte script do PowerShell cria a aplicação do Active Directory (AD) e o principal de serviço que é necessário para autenticar a nossa aplicação C#. O script produz os valores de necessários para a amostra do C# precedente. Para obter informações detalhadas, consulte [Utilize o Azure PowerShell para criar um principal de serviço para aceder aos recursos](../resource-group-authenticate-service-principal.md).
 
     # Sign in to Azure.
@@ -261,14 +270,14 @@ O seguinte script do PowerShell cria a aplicação do Active Directory (AD) e o 
 
 
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 Agora que já experimentou a Base de Dados SQL e configurou uma base de dados com C#, está pronto para os seguintes artigos:
 
 * [Ligar à Base de Dados SQL com o SQL Server Management Studio e executar uma consulta T-SQL de exemplo](sql-database-connect-query-ssms.md)
 
-## Recursos Adicionais
+## <a name="additional-resources"></a>Recursos Adicionais
 * [Base de Dados SQL](https://azure.microsoft.com/documentation/services/sql-database/)
-* [Classe de Base de dados](https://msdn.microsoft.com/library/azure/microsoft.azure.management.sql.models.database.aspx)
+* [Classe de Base de Dados](https://msdn.microsoft.com/library/azure/microsoft.azure.management.sql.models.database.aspx)
 
 <!--Image references-->
 [1]: ./media/sql-database-get-started-csharp/aad.png
@@ -283,6 +292,6 @@ Agora que já experimentou a Base de Dados SQL e configurou uma base de dados co
 
 
 
-<!--HONumber=Sep16_HO4-->
+<!--HONumber=Nov16_HO2-->
 
 

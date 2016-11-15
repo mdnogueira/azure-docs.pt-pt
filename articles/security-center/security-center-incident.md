@@ -1,30 +1,34 @@
 ---
-title: Lidar com Incidentes de Segurança no Centro de Segurança do Azure | Microsoft Docs
-description: Este documento ajuda-o a utilizar as capacidades do Centro de Segurança do Azure para lidar com incidentes de segurança.
+title: "Lidar com Incidentes de Segurança no Centro de Segurança do Azure | Microsoft Docs"
+description: "Este documento ajuda-o a utilizar as capacidades do Centro de Segurança do Azure para lidar com incidentes de segurança."
 services: security-center
 documentationcenter: na
 author: YuriDio
 manager: swadhwa
-editor: ''
-
+editor: 
+ms.assetid: e8feb669-8f30-49eb-ba38-046edf3f9656
 ms.service: security-center
 ms.topic: hero-article
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 08/03/2016
+ms.date: 10/18/2016
 ms.author: yurid
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: 9aeb08f0e4b4446fe8a4fc9ef7f4670ea08eacaa
+
 
 ---
-# Lidar com Incidentes de Segurança no Centro de Segurança do Azure
+# <a name="handling-security-incident-in-azure-security-center"></a>Lidar com Incidentes de Segurança no Centro de Segurança do Azure
 A triagem e a investigação dos alertas de segurança pode ser algo moroso, mesmo para analistas de segurança mais qualificados, e, para muitos, é até difícil saber por onde começar. Através da utilização de [análises](security-center-detection-capabilities.md) para ligar as informações entre [alertas de segurança](security-center-managing-and-responding-alerts.md) distintos, o Centro de Segurança pode fornecer-lhe uma vista única de uma campanha de ataque e todos os alertas relacionados. Deste modo, pode perceber rapidamente quais as ações realizadas pelo atacante e que recursos foram afetados.
 
 Este documento explica como utilizar a capacidade de alerta de segurança no Centro de Segurança para o ajudar a lidar com os incidentes de segurança.
 
-## O que é um incidente de segurança?
+## <a name="what-is-a-security-incident"></a>O que é um incidente de segurança?
 No Centro de Segurança, um incidente de segurança é uma agregação de todos os alertas de um recurso que se alinham com padrões de [cadeia de ataque](https://blogs.technet.microsoft.com/office365security/addressing-your-cxos-top-five-cloud-security-concerns/). Os incidentes surgem no mosaico e no painel [Alertas de Segurança](security-center-managing-and-responding-alerts.md). Um Incidente apresenta a lista de alertas relacionados, o que lhe permitir obter mais informações sobre cada ocorrência.
 
-## Gerir incidentes de segurança
+## <a name="managing-security-incidents"></a>Gerir incidentes de segurança
 Pode rever os incidentes de segurança atuais ao observar o mosaico Alertas de segurança. Aceda ao Portal do Azure e siga os passos abaixo para ver mais detalhes sobre cada incidente de segurança:
 
 1. No dashboard do Centro de Segurança, verá o mosaico **Alertas de segurança**.
@@ -46,16 +50,19 @@ As informações neste painel irão variar de acordo com o alerta. Para obter ma
 * O mesmo alerta pode existir como parte de um incidente (se aplicável), assim como pode estar visível como um alerta autónomo. 
 * Dispensar um incidente não dispensa os alertas relacionados.
 
-## Consultar também
+## <a name="see-also"></a>Consultar também
 Neste documento, aprendeu a utilizar a capacidade de incidentes de segurança no Centro de Segurança. Para saber mais acerca do Centro de Segurança, consulte o seguinte:
 
-* [Gerir e responder a alertas de segurança no Centro de Segurança do Azure](security-center-managing-and-responding-alerts.md)
-* [Capacidades de deteção do Centro de Segurança do Azure](security-center-detection-capabilities.md)
+* [Gerir e responder a alertas de segurança no Centro de Segurança do Azure](security-center-managing-and-responding-alerts.md).
+* [Capacidades de Deteção do Centro de Segurança do Azure](security-center-detection-capabilities.md)
 * [Guia de Operações e Planeamento do Centro de Segurança do Azure](security-center-planning-and-operations-guide.md)
-* [Gerir e responder a alertas de segurança no Centro de Segurança do Azure](security-center-managing-and-responding-alerts.md)
+* [Gerir e responder a alertas de segurança no Centro de Segurança do Azure](security-center-managing-and-responding-alerts.md).
 * [FAQ do Centro de Segurança do Azure](security-center-faq.md) – Encontre as perguntas mais frequentes acerca de como utilizar o serviço.
 * [Blogue de Segurança do Azure](http://blogs.msdn.com/b/azuresecurity/) – Encontre mensagens do blogue acerca da segurança e conformidade do Azure.
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

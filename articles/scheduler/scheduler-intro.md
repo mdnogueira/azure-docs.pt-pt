@@ -1,22 +1,26 @@
 ---
-title: O que é o Agendador do Azure? | Microsoft Docs
-description: O Agendador do Azure permite-lhe descrever detalhamente as ações a executar na nuvem. Então agenda e executa essas ações automaticamente.
+title: "O que é o Agendador do Azure? | Microsoft Docs"
+description: "O Agendador do Azure permite-lhe descrever detalhamente as ações a executar na nuvem. Então agenda e executa essas ações automaticamente."
 services: scheduler
 documentationcenter: .NET
-author: krisragh
-manager: dwrede
-editor: ''
-
+author: derek1ee
+manager: kevinlam1
+editor: 
+ms.assetid: 52aa6ae1-4c3d-43fb-81b0-6792c84bcfae
 ms.service: scheduler
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: hero-article
 ms.date: 08/18/2016
-ms.author: krisragh
+ms.author: deli
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: f2b21e24a5f692fa315db7b58d2d2824f7145729
+
 
 ---
-# O que é o Agendador do Azure?
+# <a name="what-is-azure-scheduler"></a>O que é o Agendador do Azure?
 O Agendador do Azure permite-lhe descrever detalhamente as ações a executar na nuvem. Então agenda e executa essas ações automaticamente.  O Agendador pode fazê-lo através do [Portal do Azure](scheduler-get-started-portal.md), POR código, [API REST](https://msdn.microsoft.com/library/mt629143.aspx) ou do Azure PowerShell.
 
 O Agendador cria, mantém e convoca trabalho agendado.  O Agendador não aloja quaisquer cargas de trabalho ou executa nenhum código. Apenas *invoca* código alojado noutro local, como no Azure, no local, ou noutro fornecedor. Invoca através de HTTP, HTTPS, uma fila de armazenamento, uma fila do barramento de serviço ou de um tópico de barramento de serviço.
@@ -30,25 +34,28 @@ Existem vários cenários que se devem à utilização do Agendador. Por exemplo
 
 O Agendador permite-lhe criar, atualizar, eliminar, ver e gerir tarefas e [recolher tarefas](scheduler-concepts-terms.md) de forma programática utilizando scripts e através do portal.
 
-## Consultar também
- [Conceitos, terminologia e hierarquia de entidades do Agendador do Azure](scheduler-concepts-terms.md)
+## <a name="see-also"></a>Consultar também
+ [Conceitos, terminologia e hierarquia de entidades do Azure Scheduler](scheduler-concepts-terms.md)
 
- [Começar a utilizar o Agendador no portal do Azure](scheduler-get-started-portal.md)
+ [Começar a utilizar o Scheduler no portal do Azure](scheduler-get-started-portal.md)
 
- [Planos e faturação no Agendador do Azure](scheduler-plans-billing.md)
+ [Planos e faturação no Azure Scheduler](scheduler-plans-billing.md)
 
- [Como criar agendas complexas e periodicidade avançada com o Agendador do Azure](scheduler-advanced-complexity.md)
+ [Como criar agendas complexas e periodicidade avançada com o Azure Scheduler](scheduler-advanced-complexity.md)
 
- [Referência da API REST do Agendador do Azure](https://msdn.microsoft.com/library/mt629143)
+ [Referência da API REST do Azure Scheduler](https://msdn.microsoft.com/library/mt629143)
 
- [Referência de cmdlets do PowerShell do Agendador do Azure](scheduler-powershell-reference.md)
+ [Referência de cmdlets do PowerShell do Azure Scheduler](scheduler-powershell-reference.md)
 
- [Elevada disponibilidade e fiabilidade do Agendador do Azure](scheduler-high-availability-reliability.md)
+ [Elevada disponibilidade e fiabilidade do Azure Scheduler](scheduler-high-availability-reliability.md)
 
- [Limites, predefinições e códigos de erro do Agendador do Azure](scheduler-limits-defaults-errors.md)
+ [Limites, predefinições e códigos de erro do Azure Scheduler](scheduler-limits-defaults-errors.md)
 
- [Autenticação de saída do Agendador do Azure](scheduler-outbound-authentication.md)
+ [Autenticação de saída do Azure Scheduler](scheduler-outbound-authentication.md)
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

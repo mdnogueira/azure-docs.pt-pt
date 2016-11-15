@@ -3,38 +3,43 @@ title: Consultar o Azure SQL Data Warehouse (Visual Studio) | Microsoft Docs
 description: Consultar o SQL Data Warehouse com o Visual Studio.
 services: sql-data-warehouse
 documentationcenter: NA
-author: sonyam
-manager: barbkess
-editor: ''
-
+author: barbkess
+manager: jhubbard
+editor: 
+ms.assetid: daace889-95e5-4826-b2fc-047eac9d6d95
 ms.service: sql-data-warehouse
 ms.devlang: NA
 ms.topic: get-started-article
 ms.tgt_pltfrm: NA
 ms.workload: data-services
-ms.date: 06/16/2016
-ms.author: sonyama;barbkess
+ms.date: 10/31/2016
+ms.author: barbkess
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: 5e97fefdf3cc13f2fd3e060da901e90ef5ef9a29
+
 
 ---
-# Consultar o Azure SQL Data Warehouse (Visual Studio)
+# <a name="query-azure-sql-data-warehouse-visual-studio"></a>Consultar o Azure SQL Data Warehouse (Visual Studio)
 > [!div class="op_single_selector"]
 > * [Power BI](sql-data-warehouse-get-started-visualize-with-power-bi.md)
 > * [Azure Machine Learning](sql-data-warehouse-get-started-analyze-with-azure-machine-learning.md)
 > * [Visual Studio](sql-data-warehouse-query-visual-studio.md)
 > * [sqlcmd](sql-data-warehouse-get-started-connect-sqlcmd.md) 
+> * [SSMS](sql-data-warehouse-query-ssms.md)
 > 
 > 
 
 Utilize o Visual Studio para consultar o Azure SQL Data Warehouse em apenas alguns minutos. Este método utiliza a extensão SQL Server Data Tools (SSDT) no Visual Studio. 
 
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 Para utilizar este tutorial, precisa do seguinte:
 
 * Um SQL Data Warehouse existente. Para criar um, consulte [Criar um SQL Data Warehouse][Criar um SQL Data Warehouse].
 * SSDT para Visual Studio. Se tiver o Visual Studio, provavelmente já os tem. Para instruções e opções de instalação, consulte [Instalar o Visual Studio e SSDT][Instalar o Visual Studio e SSDT].
 * O nome de servidor SQL completamente qualificado. Para o descobrir, veja [Ligar ao SQL Data Warehouse][Ligar ao SQL Data Warehouse].
 
-## 1. Ligar ao seu SQL Data Warehouse
+## <a name="1-connect-to-your-sql-data-warehouse"></a>1. Ligar ao seu SQL Data Warehouse
 1. Abra o Visual Studio 2013 ou 2015.
 2. Abra o SQL Server Object Explorer. Para tal, selecione **Vista** > **SQL Server Object Explorer**.
    
@@ -54,7 +59,7 @@ Para utilizar este tutorial, precisa do seguinte:
    
     ![Explorar AdventureWorksDW][4]
 
-## 2. Executar uma consulta de exemplo
+## <a name="2-run-a-sample-query"></a>2. Executar uma consulta de exemplo
 Agora que foi estabelecida uma ligação à base de dados, vamos escrever uma consulta.
 
 1. Clique com o botão direito do rato na base de dados no SQL Server Object Explorer.
@@ -73,7 +78,7 @@ Agora que foi estabelecida uma ligação à base de dados, vamos escrever uma co
    
     ![Resultados da consulta][7]
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 Agora que pode ligar e efetuar consultas, experimente [visualizar os dados com o PowerBI][visualizar os dados com o PowerBI].
 
 Para configurar o ambiente para a autenticação do Azure Active Directory, veja [Authenticate to SQL Data Warehouse (Autenticação no SQL Data Warehouse)][Authenticate to SQL Data Warehouse (Autenticação no SQL Data Warehouse)].
@@ -100,6 +105,6 @@ Para configurar o ambiente para a autenticação do Azure Active Directory, veja
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Nov16_HO2-->
 
 

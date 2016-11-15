@@ -1,28 +1,32 @@
 ---
 title: Como utilizar a Cache de Redis do Azure com o Node.js | Microsoft Docs
-description: Introdução à Cache de Redis do Azure com o Node.js e o node_redis.
+description: "Introdução à Cache de Redis do Azure com o Node.js e o node_redis."
 services: redis-cache
-documentationcenter: ''
+documentationcenter: 
 author: steved0x
 manager: douge
 editor: v-lincan
-
+ms.assetid: 06fddc95-8029-4a8d-83f5-ebd5016891d9
 ms.service: cache
 ms.devlang: nodejs
 ms.topic: hero-article
 ms.tgt_pltfrm: cache-redis
 ms.workload: tbd
-ms.date: 08/16/2016
+ms.date: 10/25/2016
 ms.author: sdanie
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: 66188b904d9f573e88bc99f185cd1275de31b0c1
+
 
 ---
-# Como utilizar a Cache de Redis do Azure com o Node.js
+# <a name="how-to-use-azure-redis-cache-with-nodejs"></a>Como utilizar a Cache de Redis do Azure com o Node.js
 > [!div class="op_single_selector"]
 > * [.NET](cache-dotnet-how-to-use-azure-redis-cache.md)
 > * [ASP.NET](cache-web-app-howto.md)
 > * [Node.js](cache-nodejs-get-started.md)
 > * [Java](cache-java-get-started.md)
-> * [Python](cache-python-get-started.md)
+> * [python](cache-python-get-started.md)
 > 
 > 
 
@@ -30,20 +34,20 @@ A Cache de Redis do Azure permite-lhe aceder a uma cache de Redis segura, dedica
 
 Este tópico mostra-lhe como começar com a Cache de Redis do Azure com o Node.js. Para obter outro exemplo de utilização da Cache de Redis do Azure com o Node.js, veja [Build a Node.js Chat Application with Socket.IO on an Azure Website (Criar uma Aplicação de Chat do Node.js com Socket.IO num Site do Azure)](../app-service-web/web-sites-nodejs-chat-app-socketio.md).
 
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 Instale o [node_redis](https://github.com/mranney/node_redis):
 
     npm install redis
 
 Este tutorial utiliza o [node_redis](https://github.com/mranney/node_redis). Para obter exemplos de utilização de outros clientes Node.js, consulte a documentação individual para os clientes Node.js listados em [Clientes Node.js Redis](http://redis.io/clients#nodejs).
 
-## Criar uma cache de Redis no Azure
+## <a name="create-a-redis-cache-on-azure"></a>Criar uma cache de Redis no Azure
 [!INCLUDE [redis-cache-create](../../includes/redis-cache-create.md)]
 
-## Obter as chaves de acesso e o nome de anfitrião
+## <a name="retrieve-the-host-name-and-access-keys"></a>Obter as chaves de acesso e o nome de anfitrião
 [!INCLUDE [redis-cache-create](../../includes/redis-cache-access-keys.md)]
 
-## Ligar à cache de forma segura através de SSL
+## <a name="connect-to-the-cache-securely-using-ssl"></a>Ligar à cache de forma segura através de SSL
 As versões mais recentes do [node_redis](https://github.com/mranney/node_redis) fornecem suporte para ligar a Cache de Redis do Azure através de SSL. O seguinte exemplo mostra como ligar a Cache de Redis do Azure com o ponto final de SSL de 6380. Substitua `<name>` pelo nome da sua cache e `<key>` pela sua chave primária ou secundária, conforme descrito na secção anterior, [Obter as chaves de acesso e o nome de anfitrião](#retrieve-the-host-name-and-access-keys).
 
      var redis = require("redis");
@@ -52,7 +56,7 @@ As versões mais recentes do [node_redis](https://github.com/mranney/node_redis)
     var client = redis.createClient(6380,'<name>.redis.cache.windows.net', {auth_pass: '<key>', tls: {servername: '<name>.redis.cache.windows.net'}});
 
 
-## Adicionar um elemento à cache e recuperá-lo
+## <a name="add-something-to-the-cache-and-retrieve-it"></a>Adicionar um elemento à cache e recuperá-lo
 O seguinte exemplo mostra como ligar a uma instância da Cache de Redis do Azure, bem como armazenar e recuperar um item da cache. Para obter mais exemplos de utilização de Redis com o cliente [node_redis](https://github.com/mranney/node_redis), aceda a [http://redis.js.org/](http://redis.js.org/).
 
      var redis = require("redis");
@@ -74,10 +78,13 @@ Saída:
     value
 
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 * [Ativar o diagnóstico da cache](cache-how-to-monitor.md#enable-cache-diagnostics) para poder [monitorizar](cache-how-to-monitor.md) o estado de funcionamento da cache.
 * Leia a [Documentação Redis](http://redis.io/documentation) oficial.
 
-<!--HONumber=ago16_HO4-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

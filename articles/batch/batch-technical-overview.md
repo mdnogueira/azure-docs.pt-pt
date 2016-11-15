@@ -1,12 +1,12 @@
 ---
-title: Noções básicas do serviço Azure Batch | Microsoft Docs
-description: Saiba como utilizar o serviço Azure Batch para cargas de trabalho em larga e escala e de HPC
+title: "Noções básicas do serviço Azure Batch | Microsoft Docs"
+description: "Saiba como utilizar o serviço Azure Batch para cargas de trabalho em larga e escala e de HPC"
 services: batch
-documentationcenter: ''
+documentationcenter: 
 author: mmacy
 manager: timlt
-editor: ''
-
+editor: 
+ms.assetid: 93e37d44-7585-495e-8491-312ed584ab79
 ms.service: batch
 ms.workload: big-compute
 ms.tgt_pltfrm: na
@@ -14,14 +14,18 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 08/22/2016
 ms.author: marsma
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: 2559aae752f319805c2c9f87a2e2a81d9b37e4b2
+
 
 ---
-# Noções básicas do Azure Batch
+# <a name="basics-of-azure-batch"></a>Noções básicas do Azure Batch
 O Azure Batch permite-lhe executar aplicações de computação de alto desempenho (HPC) e paralelas em larga escala, de forma eficaz na nuvem. É um serviço de plataforma que agenda trabalho de computação intensivo para ser executado numa coleção gerida de máquinas virtuais, e pode dimensionar automaticamente recursos de computação para satisfazer as necessidades das suas tarefas.
 
 Com o serviço Batch, define os recursos de computação do Azure para executar as aplicações em paralelo e com dimensionamento. Pode executar tarefas a pedido ou agendadas e não precisa de criar, configurar e gerir at manualmente um cluster HPC, máquinas virtuais individuais, redes virtuais ou uma tarefa complexa e a infraestrutura de agendamento de tarefas.
 
-## Casos de utilização do Batch
+## <a name="use-cases-for-batch"></a>Casos de utilização do Batch
 O Batch é um serviço gerido do Azure, que é utilizado para *processamento em lotes* ou *computação em batch*, executando um grande volume de tarefas semelhantes para obter o resultado pretendido. A computação em batch é utilizada frequentemente por organizações que processam, transformam e analisam regularmente grandes volumes de dados.
 
 O Batch funciona bem com aplicações e cargas de trabalho intrinsecamente paralelas (também conhecidas como constrangedoramente paralelas). As cargas de trabalho intrinsecamente paralelas são facilmente divididas em várias tarefas que realizam tarefas simultaneamente em vários computadores.
@@ -42,7 +46,7 @@ O Batch também pode efetuar cálculos paralelos com um passo reduzido no final 
 
 Para uma comparação entre o Batch e outras opções de solução HPC no Azure, veja [Batch e soluções HPC](batch-hpc-solutions.md).
 
-## Programar com o Batch
+## <a name="developing-with-batch"></a>Programar com o Batch
 O processamento de cargas de trabalho paralelas com o Batch é geralmente realizado através de programação, utilizando uma das [APIs do Batch](#batch-development-apis). Com as APIs do Batch, pode criar e gerir conjuntos de nós de computação (máquinas virtuais) e agendar trabalhos e tarefas a executar nesses nós. Uma aplicação ou serviço de cliente criada por si, que utiliza APIs do Batch para comunicar com o serviço Batch.
 
 Pode processar de forma eficaz cargas de trabalho em grande escala para a sua organização ou fornecer um front-end de serviço aos seus clientes para que eles possam executar tarefas — a pedido ou com base numa agenda — em um, centenas ou mesmo em milhares de nós. Também pode utilizar o Batch como parte de um fluxo de trabalho maior, gerido por ferramentas como o [Azure Data Factory](../data-factory/data-factory-data-processing-using-batch.md).
@@ -52,14 +56,14 @@ Pode processar de forma eficaz cargas de trabalho em grande escala para a sua or
 > 
 > 
 
-### As contas do Azure de que irá precisar
+### <a name="azure-accounts-youll-need"></a>As contas do Azure de que irá precisar
 Quando desenvolver soluções Batch, irá utilizar as seguintes contas no Microsoft Azure.
 
 * **Conta e subscrição do Azure** - se ainda não tiver uma subscrição do Azure, pode ativar o seu [benefício de subscritor do MSDN][msdn_benefits] ou inscrever-se numa [conta gratuita do Azure][free_account]. Quando cria uma conta, é criada uma subscrição predefinida para si.
 * **Conta do Batch** - quando as aplicações interagem com o serviço Batch, o nome da conta, o URL da conta e uma tecla de acesso são utilizados como credenciais. Todos os recursos do Batch, como conjuntos, nós de computação, trabalhos e tarefas estão associados a uma conta do Batch. Pode [criar uma conta do Batch](batch-account-create-portal.md) no portal do Azure.
 * **Conta de armazenamento** - o Batch inclui suporte incorporado para trabalhar com ficheiros no [Armazenamento do Azure][azure_storage]. Quase todos os cenários do Batch utilizam o Armazenamento do Azure para testar os programas que as tarefas executam e os dados que processam, e para o armazenamento de dados de saída por elas gerados. Para criar uma conta de Armazenamento, veja [Acerca de contas de armazenamento do Azure](../storage/storage-create-storage-account.md).
 
-### APIs de programação do Batch
+### <a name="batch-development-apis"></a>APIs de programação do Batch
 As suas aplicações e serviços podem emitir chamadas diretas de API REST, utilize uma ou mais das seguintes bibliotecas de cliente ou uma combinação das duas para gerir recursos de computação e executar cargas de trabalho paralelas com dimensionamento, com o serviço Batch.
 
 | API | Referência da API | Transferência | Exemplos de código |
@@ -70,21 +74,21 @@ As suas aplicações e serviços podem emitir chamadas diretas de API REST, util
 | **Batch Node.js** |[github.io][api_nodejs] |[npm][api_nodejs_npm] |- |
 | **Batch Java** (pré-visualização) |[github.io][api_java] |[Maven][api_java_jar] |[GitHub][api_sample_java] |
 
-### Gestão de recursos do Batch
+### <a name="batch-resource-management"></a>Gestão de recursos do Batch
 Além das APIs de cliente, também pode utilizar o seguinte procedimento para gerir os recursos na sua conta do Batch.
 
 * [Cmdlets do Batch PowerShell][batch_ps]: os cmdlets do Azure Batch no módulo [Azure PowerShell](../powershell-install-configure.md) permitem-lhe gerir recursos do Batch com o PowerShell.
 * [CLI do Azure](../xplat-cli-install.md): a Interface de Linha de Comandos do Azure (CLI do Azure) é um conjunto de ferramentas de várias plataformas que fornece comandos shell para interagir com vários serviços do Azure, incluindo o Batch.
 * Biblioteca de cliente [Batch Management .NET](batch-management-dotnet.md): também disponível através de [NuGet][api_net_mgmt_nuget], pode utilizar a biblioteca de cliente .NET de Gestão do Batch para gerir contas do Batch, quotas e pacotes de aplicações, através de programação. A referência para a biblioteca de gestão está em [MSDN][api_net_mgmt].
 
-### Ferramentas do Batch
+### <a name="batch-tools"></a>Ferramentas do Batch
 Embora não sejam necessárias para criar soluções com o Batch, existem algumas ferramentas valiosas a utilizar durante a criação e a depuração das suas aplicações e serviços Batch.
 
 * [Portal do Azure][portal]: pode criar, monitorizar e eliminar conjuntos, trabalhos e tarefas do Batch nos painéis Batch do portal do Azure. Pode ver as informações de estado para estes e outros recursos ao executar os trabalhos, e até mesmo transferir os ficheiros de nós de computação nos seus conjuntos (por exemplo, transferir o `stderr.txt` de uma tarefa falhada durante a resolução de problemas). Também pode transferir ficheiros de Ambiente de Trabalho Remoto (RDP) que pode utilizar para iniciar sessão em nós de computação.
 * [Azure Batch Explorer][batch_explorer]: o Batch Explorer fornece uma funcionalidade de gestão de recursos do Batch semelhante à do portal do Azure, mas numa aplicação autónoma de cliente do Windows Presentation Foundation (WPF). Uma das aplicações Batch .NET de exemplo disponível no [GitHub][github_samples], que pode criar com o Visual Studio 2015 ou superior e utilizá-la para procurar e gerir os recursos na sua conta do Batch enquanto desenvolve e depura soluções Batch. Veja o trabalho, o conjunto e os detalhes da tarefa, transfira ficheiros a partir de nós de computação e ligue a nós remotamente, com ficheiros de Ambiente de Trabalho Remoto (RDP) que pode transferir com o Explorador do Batch.
 * [Explorador de Armazenamento do Microsoft Azure][storage_explorer]: embora não seja estritamente uma ferramenta do Azure Batch, o Explorador de Armazenamento é outra ferramenta valiosa a ter enquanto estiver a desenvolver e a depurar as soluções do Batch.
 
-## Cenário: aumentar horizontalmente uma carga de trabalho paralela
+## <a name="scenario-scale-out-a-parallel-workload"></a>Cenário: aumentar horizontalmente uma carga de trabalho paralela
 Uma solução comum que utiliza as APIs do Batch para interagir com o serviço Batch envolve aumentar horizontalmente o trabalho intrinsecamente paralelo - como a composição de imagens de cenas 3D - num conjunto de nós de computação. Este conjunto de nós de computação pode ser o "farm de composição" que fornece dezenas, centenas ou mesmo milhares de núcleos para a tarefa de composição, por exemplo.
 
 O diagrama seguinte mostra um fluxo de trabalho comum do Batch, com uma aplicação de cliente ou serviço alojado, utilizando o Batch para executar uma carga de trabalho paralela.
@@ -105,7 +109,7 @@ Neste cenário comum, a aplicação ou o serviço processa uma carga de trabalho
 
 Tenha em atenção que esta é apenas uma forma de utilizar o Batch, e este cenário descreve apenas algumas das funcionalidades disponíveis. Por exemplo, pode executar [várias tarefas em paralelo](batch-parallel-node-tasks.md) em cada nó de computação, e pode utilizar a [ preparação de trabalhos e tarefas de conclusão](batch-job-prep-release.md) para preparar nós para os trabalhos e limpar posteriormente.
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 Agora que tem um elevado nível de descrição geral do serviço Batch, está na altura de aprofundar para saber como pode utilizá-lo para processar cargas de trabalho de computação intensivas e paralelas.
 
 * Leia a [Descrição geral da funcionalidade Batch para programadores](batch-api-basics.md), com informações essenciais para todos os utilizadores que se preparam para utilizar o Batch. O artigo contém informações mais detalhadas sobre recursos do serviço Batch, como conjuntos, nós, trabalhos e tarefas, e as várias funcionalidades de API que pode utilizar ao criar a sua aplicação Batch.
@@ -142,6 +146,6 @@ Agora que tem um elevado nível de descrição geral do serviço Batch, está na
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

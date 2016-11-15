@@ -1,22 +1,26 @@
 ---
-title: 'Criar um conjunto de bases de dados elásticas com o #C | Microsoft Docs'
-description: Utilize técnicas de programação de base de dados C# para criar um conjunto de bases de dados elásticas dimensionáveis na Base de Dados SQL do Azure, para poder partilhar recursos em muitas bases de dados.
+title: "Criar um conjunto de bases de dados elásticas com o #C | Microsoft Docs"
+description: "Utilize técnicas de programação de base de dados C# para criar um conjunto de bases de dados elásticas dimensionáveis na Base de Dados SQL do Azure, para poder partilhar recursos em muitas bases de dados."
 services: sql-database
-documentationcenter: ''
+documentationcenter: 
 author: stevestein
 manager: jhubbard
-editor: ''
-
+editor: 
+ms.assetid: 2dedddbb-618d-462b-80dd-e4a57857c737
 ms.service: sql-database
 ms.devlang: NA
 ms.topic: get-started-article
 ms.tgt_pltfrm: csharp
 ms.workload: data-management
-ms.date: 09/14/2016
+ms.date: 10/04/2016
 ms.author: sstein
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: 28f792cd5afd194445666aeb1d17d5fbf27a835d
+
 
 ---
-# Criar um conjunto de bases de dados elásticas com C&#x23;
+# <a name="create-an-elastic-database-pool-with-cx23"></a>Criar um conjunto de bases de dados elásticas com C&#x23;
 > [!div class="op_single_selector"]
 > * [Portal do Azure](sql-database-elastic-pool-create-portal.md)
 > * [PowerShell](sql-database-elastic-pool-create-powershell.md)
@@ -26,10 +30,10 @@ ms.author: sstein
 
 Este artigo descreve como utilizar o C# para criar um conjunto de bases de dados elásticas do SQL Azure com a [Biblioteca da Base de Dados SQL do Azure para .NET](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql). Para criar uma base de dados SQL autónoma, veja [Utilizar o C# para criar uma base de dados SQL com a Biblioteca da Base de Dados SQL para .NET](sql-database-get-started-csharp.md).
 
-A Biblioteca da Base de Dados SQL do Azure para .NET fornece uma API baseada no [Azure Resource Manager](../resource-group-overview.md) que encapsula num wrapper a [API REST da Base de Dados SQL baseada no Resource Manager](https://msdn.microsoft.com/library/azure/mt163571.aspx).
+A Biblioteca da Base de Dados SQL do Azure para .NET fornece uma API baseada no [Azure Resource Manager](../azure-resource-manager/resource-group-overview.md) que encapsula num wrapper a [API REST da Base de Dados SQL baseada no Resource Manager](https://msdn.microsoft.com/library/azure/mt163571.aspx).
 
 > [!NOTE]
-> A Biblioteca da Base de Dados SQL para .NET encontra-se atualmente em pré-visualização.
+> Muitas funcionalidades novas da Base de Dados SQL só são suportadas quando utilizar o [Modelo de implementação Azure Resource Manager](../azure-resource-manager/resource-group-overview.md). Assim, deverá sempre utilizar a mais recente **Biblioteca de Gestão da Base de Dados SQL do Azure para .NET ([docs](https://msdn.microsoft.com/library/azure/mt349017.aspx) | [Pacote NuGet](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql))**. O antigo [modelo de implementação clássica baseado em bibliotecas](https://www.nuget.org/packages/Microsoft.WindowsAzure.Management.Sql) é apenas suportado para a retrocompatibilidade. Assim, recomendamos a utilização das bibliotecas mais recentes baseadas no Resource Manager.
 > 
 > 
 
@@ -38,7 +42,7 @@ Para executar os passos descritos neste artigo é necessário o seguinte:
 * Uma subscrição do Azure. Se precisar de uma subscrição do Azure, basta clicar em ** GRATUITA** no início desta página e, em seguida, voltar para terminar este artigo.
 * Visual Studio. Para obter uma cópia gratuita do Visual Studio, consulte a página [Visual Studio Downloads](https://www.visualstudio.com/downloads/download-visual-studio-vs).
 
-## Criar uma aplicação de consola e instale as bibliotecas necessárias
+## <a name="create-a-console-app-and-install-the-required-libraries"></a>Criar uma aplicação de consola e instale as bibliotecas necessárias
 1. Inicie o Visual Studio.
 2. Clique em **Ficheiro** > **ovo** > **Projeto**.
 3. Crie uma **Aplicação de Consola** do C# e dê-lhe o nome: *SqlElasticPoolConsoleApp*
@@ -55,7 +59,7 @@ Para criar uma base de dados do SQL com o C#, carregue as bibliotecas de gestão
 > 
 > 
 
-## Criar um conjunto de bases de dados elásticas SQL - exemplo do C
+## <a name="create-a-sql-elastic-database-pool-c-example"></a>Criar um conjunto de bases de dados elásticas SQL - exemplo do C#
 O exemplo seguinte cria um grupo de recursos, um servidor, uma regra de firewall, um conjunto elástico e, em seguida, cria uma base de dados SQL no conjunto. Consulte, [Criar um principal de serviço para aceder aos recursos](#create-a-service-principal-to-access-resources) para obter as `_subscriptionId, _tenantId, _applicationId, and _applicationSecret` variáveis.
 
 Substituir o conteúdo de **Program.cs** com o seguinte e atualizar as `{variables}` com os valores de aplicação (não incluir `{}`).
@@ -254,7 +258,7 @@ namespace SqlElasticPoolConsoleApp
 
 
 
-## Criar um principal de serviço para aceder aos recursos
+## <a name="create-a-service-principal-to-access-resources"></a>Criar um principal de serviço para aceder aos recursos
 O seguinte script do PowerShell cria a aplicação do Active Directory (AD) e o principal de serviço que é necessário para autenticar a nossa aplicação C#. O script produz os valores de necessários para a amostra do C# precedente. Para obter informações detalhadas, consulte [Utilize o Azure PowerShell para criar um principal de serviço para aceder aos recursos](../resource-group-authenticate-service-principal.md).
 
     # Sign in to Azure.
@@ -298,15 +302,18 @@ O seguinte script do PowerShell cria a aplicação do Active Directory (AD) e o 
 
 
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 * [Gerir o conjunto](sql-database-elastic-pool-manage-csharp.md)
 * [Criar tarefas elásticas](sql-database-elastic-jobs-overview.md): as tarefas elásticas permitem executar scripts T-SQL em qualquer número de bases de dados num conjunto.
 * [Aumentar horizontalmente com a Base de Dados SQL do Azure](sql-database-elastic-scale-introduction.md): utilize ferramentas de base de dados elástica para aumentar horizontalmente.
 
-## Recursos Adicionais
+## <a name="additional-resources"></a>Recursos Adicionais
 * [Base de Dados SQL](https://azure.microsoft.com/documentation/services/sql-database/)
 * [APIs de Gestão de Recursos do Azure](https://msdn.microsoft.com/library/azure/dn948464.aspx)
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

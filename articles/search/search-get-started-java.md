@@ -1,12 +1,12 @@
 ---
-title: Introdução à Azure Search em Java | Microsoft Docs
-description: Como compilar uma aplicação de pesquisa na nuvem alojada no Azure utilizando Java como linguagem de programação.
+title: "Introdução à Azure Search em Java | Microsoft Docs"
+description: "Como compilar uma aplicação de pesquisa na nuvem alojada no Azure utilizando Java como linguagem de programação."
 services: search
-documentationcenter: ''
+documentationcenter: 
 author: EvanBoyle
 manager: pablocas
 editor: v-lincan
-
+ms.assetid: 8b4df3c9-3ae5-4e3a-b4bb-74b516a91c8e
 ms.service: search
 ms.devlang: na
 ms.workload: search
@@ -14,9 +14,13 @@ ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.date: 07/14/2016
 ms.author: evboyle
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: 6ecc365fd90ba955efb977c4e598eae6746916f0
+
 
 ---
-# Introdução à Azure Search em Java
+# <a name="get-started-with-azure-search-in-java"></a>Introdução à Azure Search em Java
 > [!div class="op_single_selector"]
 > * [Portal](search-get-started-portal.md)
 > * [.NET](search-howto-dotnet-sdk.md)
@@ -33,7 +37,7 @@ O seguinte software é utilizado para compilar e testar este exemplo:
 * [JDK 8u40](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 * [Apache Tomcat 8.0](http://tomcat.apache.org/download-80.cgi)
 
-## Sobre os dados
+## <a name="about-the-data"></a>Sobre os dados
 Esta aplicação de exemplo utiliza dados dos [Serviços Geológicos dos Estados Unidos (USGS)](http://geonames.usgs.gov/domestic/download_data.htm) filtrados no estado de Rhode Island de forma a reduzir o tamanho do conjunto de dados. Utilizaremos estes dados para compilar uma aplicação de pesquisa que devolve edifícios históricos, tais como hospitais e escolas, assim como características geológicas, como rios, lagos e cumes.
 
 Nesta aplicação, o programa **SearchServlet.java** compila e carrega o índice utilizando uma construção do [Indexador](https://msdn.microsoft.com/library/azure/dn798918.aspx), obtendo o conjunto de dados USGS filtrado a partir de uma Base de Dados SQL pública do Azure. As credenciais predefinidas e as informações da ligação da origem de dados online são fornecidas no código do programa. Em termos de acesso a dados, não é necessária qualquer configuração adicional.
@@ -43,7 +47,7 @@ Nesta aplicação, o programa **SearchServlet.java** compila e carrega o índice
 > 
 > 
 
-## Sobre os ficheiros de programa
+## <a name="about-the-program-files"></a>Sobre os ficheiros de programa
 A lista seguinte descreve os ficheiros relevantes para este exemplo.
 
 * Search.jsp: Fornece a interface de utilizador
@@ -56,7 +60,7 @@ A lista seguinte descreve os ficheiros relevantes para este exemplo.
 
 <a id="sub-2"></a>
 
-## Localizar o nome de serviço e a chave de API do serviço da Azure Search
+## <a name="find-the-service-name-and-apikey-of-your-azure-search-service"></a>Localizar o nome de serviço e a chave de API do serviço da Azure Search
 Todas as chamadas da API REST na Azure Search requerem que forneça o URL do serviço e uma chave de API. 
 
 1. Inicie sessão no [Portal do Azure](https://portal.azure.com).
@@ -64,17 +68,17 @@ Todas as chamadas da API REST na Azure Search requerem que forneça o URL do ser
 3. Selecione o serviço que pretende utilizar.
 4. No dashboard do serviço, verá os mosaicos com informações essenciais, bem como o ícone da chave para aceder às chaves de administração.
    
-    ![][3]
+      ![][3]
 5. Copie o URL de serviço e uma chave de administração. Vai precisar deles mais tarde, quando os adicionar ao ficheiro **config.properties**.
 
-## Transferir os ficheiros de exemplo
+## <a name="download-the-sample-files"></a>Transferir os ficheiros de exemplo
 1. Aceda a [AzureSearchJavaDemo](https://github.com/AzureSearch/AzureSearchJavaIndexerDemo) no Github.
 2. Clique em **Transferir ZIP**, guarde o ficheiro .zip no disco e, em seguida, extraia todos os ficheiros nele contidos. Considere extrair os ficheiros para a sua área de trabalho Java para tornar mais fácil localizar o projeto mais tarde.
 3. Os ficheiros de exemplo são só de leitura. Clique com o botão direito nas propriedades da pasta e desmarque o atributo só de leitura.
 
 Todas as modificações do ficheiro e instruções de execução subsequentes serão realizadas em ficheiros nesta pasta.  
 
-## Importar projeto
+## <a name="import-project"></a>Importar projeto
 1. No Eclipse, selecione **Ficheiro** > **Importar** > **Geral** > **Projetos Existentes na Área de Trabalho**.
    
     ![][4]
@@ -84,14 +88,14 @@ Todas as modificações do ficheiro e instruções de execução subsequentes se
 3. Clique em **Concluir**.
 4. Utilize o **Explorador de Projeto** para ver e editar os ficheiros. Se ainda não estiver aberto, clique em **Janela** > **Mostrar Vista** > **Explorador do Projeto** ou utilize o atalho para abri-lo.
 
-## Configurar o URL do serviço e a chave de API
+## <a name="configure-the-service-url-and-apikey"></a>Configurar o URL do serviço e a chave de API
 1. No **Explorador do Projeto**, faça duplo clique no ficheiro **config.properties** para editar as definições de configuração que contêm o nome do servidor e a chave de API.
 2. Consulte os passos descritos anteriormente neste artigo para localizar o URL do serviço e a chave de API no [Portal do Azure](https://portal.azure.com) e obter os valores que irá agora introduzir no ficheiro **config.properties**.
 3. Em **config.properties**, substitua "Chave de API" pela chave de API para o serviço. Em seguida, o nome do serviço (o primeiro componente do URL http://servicename.search.windows.net) substitui o "nome do serviço" no mesmo ficheiro.
    
     ![][5]
 
-## Configurar os ambientes de tempo de execução, compilação e projeto
+## <a name="configure-the-project-build-and-runtime-environments"></a>Configurar os ambientes de tempo de execução, compilação e projeto
 1. No Eclipse, no Explorador de Projeto, clique com o botão direito no projeto > **Propriedades** > **Facetas do Projeto**.
 2. Selecione **Módulo Dinâmico Web**, **Java** e **JavaScript**.
    
@@ -117,7 +121,7 @@ Todas as modificações do ficheiro e instruções de execução subsequentes se
 
 Agora concluiu as tarefas de configuração. Em seguida, terá de compilar e executar o projeto.
 
-## Compilar o projeto
+## <a name="build-the-project"></a>Compilar o projeto
 1. No Explorador de Projeto, clique com o botão direito no nome do projeto e selecione **Executar Como** > **Compilação Maven…** para configurar o projeto.
    
     ![][10]
@@ -125,7 +129,7 @@ Agora concluiu as tarefas de configuração. Em seguida, terá de compilar e exe
 
 As mensagens de estado são enviadas para a janela da consola. Deverá ver COMPILAÇÃO COM ÊXITO, o que indica que o projeto foi compilado sem erros.
 
-## Executar a aplicação
+## <a name="run-the-app"></a>Executar a aplicação
 Neste último passo, irá executar a aplicação num ambiente de tempo de execução de servidor local.
 
 Se ainda não especificou um ambiente de tempo de tempo de execução de servidor no Eclipse, terá de fazer isso primeiro.
@@ -142,7 +146,7 @@ Quando executa a aplicação, deverá ver uma janela do browser com uma caixa de
 
 Aguarde cerca de um minuto antes de clicar em **Pesquisar** para dar tempo ao serviço para criar e carregar o índice. Se obtiver um erro HTTP 404, apenas terá de aguardar um pouco mais antes de tentar novamente.
 
-## Pesquisar nos dados USGS
+## <a name="search-on-usgs-data"></a>Pesquisar nos dados USGS
 O conjunto de dados USGS inclui registos relevantes para o Estado da Rhode Island. Se clicar em **Pesquisar** numa caixa de pesquisa em branco, irá obter as 50 entradas principais, o valor predefinido.
 
 Ao introduzir um termo de pesquisa, o motor de busca terá algo concreto para procurar. Tente introduzir um nome regional. "Roger Williams" foi o primeiro governador de Rhode Island. Existem vários parques, edifícios e escolas com o seu nome.
@@ -155,7 +159,7 @@ Também pode tentar qualquer um destes termos:
 * Pembroke
 * ganso +cabo
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 Este é o primeiro tutorial da Azure Search com base em Java e o conjunto de dados USGS. Ao longo do tempo, iremos irá expandir este tutorial para demonstrar funcionalidades adicionais de pesquisa que pode querer utilizar nas suas soluções personalizadas.
 
 Se já tiver algum conhecimento sobre a Azure Search, pode utilizar este exemplo como ponto de partida para uma experimentação adicional, talvez aumentar a [página de pesquisa](search-pagination-page-layout.md) ou implementar a [navegação por facetas](search-faceted-navigation.md). Também pode melhorar a página de resultados da pesquisa ao adicionar contagens e criação de batches de documentos para que os utilizadores possam percorrer os resultados.
@@ -178,6 +182,6 @@ Novo na Azure Search? Recomendamos que experimente outros tutoriais para desenvo
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

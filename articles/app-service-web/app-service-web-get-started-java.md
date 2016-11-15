@@ -1,22 +1,26 @@
 ---
-title: Implementar a primeira aplicação Web Java no Azure em cinco minutos | Microsoft Docs
-description: Saiba como é fácil executar aplicações Web no Serviço de Aplicações ao implementar uma aplicação de exemplo. Comece a programar verdadeiramente em pouco tempo e a ver resultados imediatos.
+title: "Implementar a primeira aplicação Web Java no Azure em cinco minutos | Microsoft Docs"
+description: "Saiba como é fácil executar aplicações Web no Serviço de Aplicações ao implementar uma aplicação de exemplo. Comece a programar verdadeiramente em pouco tempo e a ver resultados imediatos."
 services: app-service\web
-documentationcenter: ''
+documentationcenter: 
 author: cephalin
 manager: wpickett
-editor: ''
-
+editor: 
+ms.assetid: 8bacfe3e-7f0b-4394-959a-a88618cb31e1
 ms.service: app-service-web
 ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: hero-article
-ms.date: 09/16/2016
+ms.date: 10/13/2016
 ms.author: cephalin
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: 9c59def4fd3fbc9d94d922bc2e7a7c077a465b21
+
 
 ---
-# Implementar a primeira aplicação Web Java no Azure em cinco minutos
+# <a name="deploy-your-first-java-web-app-to-azure-in-five-minutes"></a>Implementar a primeira aplicação Web Java no Azure em cinco minutos
 Este tutorial ajuda-o a implementar uma aplicação Web Java simples no [Serviço de Aplicações do Azure](../app-service/app-service-value-prop-what-is.md).
 Pode utilizar o Serviço de Aplicações para criar aplicações, [back-ends de aplicações móveis](/documentation/learning-paths/appservice-mobileapps/) e [aplicações API](../app-service-api/app-service-api-apps-why-best-platform.md).
 
@@ -26,7 +30,7 @@ Irá:
 * Implementar uma aplicação Java de exemplo.
 * Ver o seu código em execução em direto na produção.
 
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 * Obter um cliente FTP/FTPS, como o [FileZilla](https://filezilla-project.org/).
 * Obter uma conta do Microsoft Azure. Se não tiver uma conta, pode [inscrever-se numa avaliação gratuita](/pricing/free-trial/?WT.mc_id=A261C142F) ou [ativar os benefícios de subscritor do Visual Studio](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F).
 
@@ -37,7 +41,7 @@ Irá:
 
 <a name="create"></a>
 
-## Criar uma aplicação Web
+## <a name="create-a-web-app"></a>Criar uma aplicação Web
 1. Inicie sessão no [portal do Azure](https://portal.azure.com) com a sua conta do Azure.
 2. No menu à esquerda, clique em **Novo** > **Web + Móvel** > **Aplicação Web**.
    
@@ -61,7 +65,7 @@ Irá:
    
     ![](./media/app-service-web-get-started-languages/create-web-app-resource.png)
 
-## Implementar uma aplicação Java na aplicação Web
+## <a name="deploy-a-java-app-to-your-web-app"></a>Implementar uma aplicação Java na aplicação Web
 Agora, vamos implementar uma aplicação Java no Azure através de FTPS.
 
 1. No painel da aplicação Web, desloque-se até às **Definições da aplicação** ou procure-as e, em seguida, clique na opção. 
@@ -100,19 +104,22 @@ Agora, vamos implementar uma aplicação Java no Azure através de FTPS.
 
 Já está! A aplicação Java já está em execução em direto no Azure. No seu browser, navegue para http://*&lt;nomeaplic>*.azurewebsites.net para vê-lo em ação. 
 
-## Efetuar atualizações à sua aplicação
+## <a name="make-updates-to-your-app"></a>Efetuar atualizações à sua aplicação
 Sempre que precisar de fazer uma atualização, basta carregar o novo ficheiro WAR para o mesmo diretório remoto com o seu cliente FTP/FTPS.
 
-## Passos seguintes
-[Crie uma aplicação Web Java a partir de um modelo no Azure Marketplace](app-service-web-java-get-started.md#marketplace). Pode obter o seu próprio contentor Tomcat totalmente personalizável e obter a IU de Gestor que já conhece. 
+## <a name="next-steps"></a>Passos seguintes
+[Crie uma aplicação Web Java a partir de um modelo no Azure Marketplace](web-sites-java-get-started.md#marketplace). Pode obter o seu próprio contentor Tomcat totalmente personalizável e obter a IU de Gestor que já conhece. 
 
 Depure a sua aplicação Web do Azure diretamente no [IntelliJ](app-service-web-debug-java-web-app-in-intellij.md) ou [Eclipse](app-service-web-debug-java-web-app-in-eclipse.md).
 
 Em alternativa, faça mais com a sua primeira aplicação Web. Por exemplo:
 
-* Experimente [outras formas de implementar o seu código no Azure](web-sites-deploy.md). Por exemplo, para implementar a partir de um dos seus repositórios do GitHub, só tem de selecionar **GitHub** em vez de **Repositório de Git Local** nas **Opções de implementação**.
+* Experimente [outras formas de implementar o seu código no Azure](web-sites-deploy.md). 
 * Eleve a sua aplicação do Azure ao nível seguinte. Autentique os seus utilizadores. Dimensione-a com base no pedido. Configure alguns alertas de desempenho. Tudo com apenas alguns cliques. Consulte [Adicionar funcionalidades à sua primeira aplicação Web](app-service-web-get-started-2.md).
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

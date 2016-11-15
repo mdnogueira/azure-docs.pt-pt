@@ -1,25 +1,29 @@
 ---
-title: Descrição geral das Ligações Híbridas | Microsoft Docs
-description: Saiba mais sobre Ligações Híbridas, segurança, portas TCP e configurações suportadas. MABS, WABS.
+title: "Descrição geral das Ligações Híbridas | Microsoft Docs"
+description: "Saiba mais sobre Ligações Híbridas, segurança, portas TCP e configurações suportadas. MABS, WABS."
 services: biztalk-services
-documentationcenter: ''
+documentationcenter: 
 author: MandiOhlinger
 manager: erikre
-editor: ''
-
+editor: 
+ms.assetid: 216e4927-6863-46e7-aa7c-77fec575c8a6
 ms.service: biztalk-services
 ms.workload: integration
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 07/26/2016
-ms.author: mandia
+ms.date: 10/18/2016
+ms.author: ccompy
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: 397a922bf3bf4c39c89f5f69015de4942bda0af9
+
 
 ---
-# Descrição geral das Ligações Híbridas
+# <a name="hybrid-connections-overview"></a>Descrição geral das Ligações Híbridas
 A introdução às Ligações Híbridas lista as configurações suportadas e as portas TCP necessárias.
 
-## O que é uma ligação híbrida
+## <a name="what-is-a-hybrid-connection"></a>O que é uma ligação híbrida
 As Ligações Híbridas são uma funcionalidade dos BizTalk Services do Azure. As Ligações Híbridas proporcionam uma forma fácil e prática de ligar a funcionalidade Web Apps no Serviço de Aplicações do Azure (anteriormente Web Sites) e a funcionalidade Mobile Apps no Serviço de Aplicações do Azure (anteriormente Mobile Services) a recursos no local atrás da firewall.
 
 ![Ligações Híbridas][HCImage]
@@ -44,7 +48,7 @@ As Ligações Híbridas proporcionam também aos administradores da empresa cont
 * Com as definições da Política de Grupo, os administradores podem permitir Ligações Híbridas na rede e designar também recursos que podem ser acedidos por aplicações híbridas.
 * Os registos de eventos e de auditoria na rede empresarial proporcionam visibilidade dos recursos acedidos pelas Ligações Híbridas.
 
-## Cenários de exemplo
+## <a name="example-scenarios"></a>Cenários de exemplo
 As Ligações Híbridas suportam as seguintes combinações de arquiteturas e aplicações:
 
 * Acesso do .NET Framework ao SQL Server
@@ -61,7 +65,7 @@ Ao utilizar Ligações Híbridas para aceder ao SQL Server no local, tenha em co
 * O `ApplicationIntent=ReadOnly` não é atualmente suportado.
 * Poderá ser necessária a Autenticação SQL como método de autorização ponto a ponto suportado pela aplicação Azure e pelo SQL Server no local.
 
-## Segurança e portas
+## <a name="security-and-ports"></a>Segurança e portas
 As Ligações Híbridas utilizam a autorização de Assinatura de Acesso Partilhado (SAS) para proteger as ligações nas aplicações Azure e no Gestor de Ligações Híbridas no local para a Ligação Híbrida. São criadas chaves de ligação separadas para a aplicação e para o Gestor de Ligações Híbridas no local. Estas chaves de ligação podem ser revertidas e revogadas independentemente.
 
 As Ligações Híbridas proporcionam uma distribuição totalmente integrada e segura das chaves às aplicações e ao Gestor de Ligações Híbridas no local.
@@ -70,7 +74,7 @@ Veja [Criar e Gerir Ligações Híbridas](integration-hybrid-connection-create-m
 
 *A autorização da aplicação é separada da Ligação Híbrida*. Pode ser utilizado qualquer método de autorização adequado. O método de autorização depende dos métodos de autorização ponto a ponto suportados na nuvem do Azure e nos componentes no local. Por exemplo, a aplicação Azure acede a um SQL Server no local. Neste cenário, a Autorização SQL poderá ser o método de autorização que é suportado ponto a ponto.
 
-#### Portas TCP
+#### <a name="tcp-ports"></a>Portas TCP
 As Ligações Híbridas precisam apenas de conectividade TCP ou HTTP de saída da sua rede privada. Não precisa abrir portas de firewall ou alterar a configuração de perímetro da sua rede para permitir qualquer conectividade de entrada na rede.
 
 As seguintes portas TCP são utilizadas pelas Ligações Híbridas:
@@ -81,17 +85,16 @@ As seguintes portas TCP são utilizadas pelas Ligações Híbridas:
 | 5671 |Quando a porta 9352 é utilizada para o tráfego de dados, a porta 5671 é utilizada como canal de controlo. <br/><br/>Permita ligações de saída para esta porta. |
 | 80, 443 |Estas portas são utilizadas para alguns pedidos de dados ao Azure. Mais ainda, se as portas 9352 e 5671 não estiverem utilizáveis, *significa* que as portas 80 e 443 serão as portas de contingência utilizadas para a transmissão de dados e o canal de controlo.<br/><br/>Permita ligações de saída para estas portas. <br/><br/>**Nota** Não recomendamos a sua utilização como portas de contingência em vez das outras portas TCP. O HTTP/WebSocket é utilizado como protocolo em vez do TCP nativo dos canais de dados. Pode resultar num desempenho inferior. |
 
-## Passos seguintes
-[Criar e gerir Ligações Híbridas](integration-hybrid-connection-create-manage.md)<br/>
-[Ligar um site do Azure a um recurso no local](../app-service-web/web-sites-hybrid-connection-get-started.md)<br/>
+## <a name="next-steps"></a>Passos seguintes
+[Criar e Gerir Ligações Híbridas](integration-hybrid-connection-create-manage.md)<br/>
+[Ligar Aplicações Web do Azure a um Recurso no Local](../app-service-web/web-sites-hybrid-connection-get-started.md)<br/>
 [Ligar ao SQL Server no local a partir de uma aplicação Web do Azure](../app-service-web/web-sites-hybrid-connection-connect-on-premises-sql-server.md)<br/>
-[Mobile Services do Azure e Ligações Híbridas](../mobile-services/mobile-services-dotnet-backend-hybrid-connections-get-started.md)
 
-## Veja Também
+## <a name="see-also"></a>Veja também
 [API REST para Gerir os BizTalk Services no Microsoft Azure](http://msdn.microsoft.com/library/azure/dn232347.aspx)
 [:BizTalk Services Gráfico de Edições](biztalk-editions-feature-chart.md)<br/>
 [Criar um BizTalk Service com o Portal do Azure](biztalk-provision-services.md)<br/>
-[BizTalk Services: separadores Dashboard, Monitorizar e Dimensionar](biztalk-dashboard-monitor-scale-tabs.md)<br/>
+[Serviços BizTalk: separadores Dashboard, Monitorizar e Dimensionar](biztalk-dashboard-monitor-scale-tabs.md)<br/>
 
 [HCImage]: ./media/integration-hybrid-connection-overview/WABS_HybridConnectionImage.png
 [HybridConnectionTab]: ./media/integration-hybrid-connection-overview/WABS_HybridConnectionTab.png
@@ -100,6 +103,6 @@ As seguintes portas TCP são utilizadas pelas Ligações Híbridas:
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Nov16_HO2-->
 
 

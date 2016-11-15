@@ -1,22 +1,26 @@
 ---
-title: Criar uma aplicação Web Node.js no App Service do Azure | Microsoft Docs
-description: Saiba como implementar uma aplicação Node.js numa aplicação Web no App Service do Azure.
+title: "Criar uma aplicação Web Node.js no Serviço de Aplicações do Azure | Microsoft Docs"
+description: "Saiba como implementar uma aplicação Node.js numa aplicação Web no App Service do Azure."
 services: app-service\web
 documentationcenter: nodejs
 author: rmcmurray
-manager: wpickett
-editor: ''
-
+manager: erikre
+editor: 
+ms.assetid: 85af23df-54af-4430-8d77-a1f97e2f5b10
 ms.service: app-service-web
 ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: nodejs
 ms.topic: hero-article
-ms.date: 08/11/2016
+ms.date: 11/01/2016
 ms.author: robmcm
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: c63b2b59143b57d6666910e701d8810bd517a42d
+
 
 ---
-# Criar uma aplicação Web Node.js no App Service do Azure
+# <a name="create-a-nodejs-web-app-in-azure-app-service"></a>Criar uma aplicação Web Node.js no App Service do Azure
 > [!div class="op_single_selector"]
 > * [.Net](web-sites-dotnet-get-started.md)
 > * [Node.js](web-sites-nodejs-develop-deploy-mac.md)
@@ -47,7 +51,7 @@ Para tutoriais e código de exemplo com aplicações Node.js mais complexas ou p
 > 
 > 
 
-## Criar uma aplicação Web e ativar a publicação de Git
+## <a name="create-a-web-app-and-enable-git-publishing"></a>Criar uma aplicação Web e ativar a publicação de Git
 Siga estes passos para criar uma aplicação Web no App Service do Azure e ativar a publicação de Git. 
 
 O [Git](http://git-scm.com/) é um sistema de controlo de versão distribuída que pode utilizar para implementar o seu Web site do Azure. Irá armazenar o código de escrita para a sua aplicação Web num repositório de Git local e implementar o código para o Azure ao enviar para um repositório remoto. Este método de implementação é uma funcionalidade das Web Apps do App Service.  
@@ -63,7 +67,7 @@ O [Git](http://git-scm.com/) é um sistema de controlo de versão distribuída q
 5. Selecione uma **Subscrição**.
 6. Selecione um **Grupo de Recursos** ou crie um novo.
    
-    Para mais informações sobre grupos de recursos, veja [Descrição Geral do Azure Resource Manager](../resource-group-overview.md).
+    Para mais informações sobre grupos de recursos, veja [Descrição Geral do Azure Resource Manager](../azure-resource-manager/resource-group-overview.md).
 7. Selecione um **Plano do App Service/Localização** ou crie um novo.
    
     Para obter mais informações sobre os planos do App Service, consulte [Descrição geral dos planos do App Service do Azure](../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md)
@@ -97,7 +101,7 @@ O [Git](http://git-scm.com/) é um sistema de controlo de versão distribuída q
     
     ![][git-url]
 
-## Criar e testar a aplicação localmente
+## <a name="build-and-test-your-application-locally"></a>Criar e testar a aplicação localmente
 Nesta secção, irá criar um ficheiro **server.js** que contém uma versão ligeiramente modificada do exemplo de "Olá, mundo" de [nodejs.org]. O código adiciona process.env.PORT como a porta a escutar ao executar numa aplicação Web do Azure.
 
 1. Criar um diretório com o nome *olámundo*.
@@ -119,7 +123,7 @@ Nesta secção, irá criar um ficheiro **server.js** que contém uma versão lig
    
     ![Um browser a apresentar a mensagem “Olá, Mundo”.][helloworld-localhost]
 
-## Publicar a aplicação
+## <a name="publish-your-application"></a>Publicar a aplicação
 1. Instale o Git se ainda não o tiver feito.
    
     Para obter instruções de instalação para a sua plataforma, consulte a [página de transferência do Git](http://git-scm.com/download).
@@ -158,7 +162,7 @@ Nesta secção, irá criar um ficheiro **server.js** que contém uma versão lig
    
     ![Olá, mundo no Azure](./media/web-sites-nodejs-develop-deploy-mac/helloworldazure.png)
 
-## Publicar as alterações à aplicação
+## <a name="publish-changes-to-your-application"></a>Publicar as alterações à aplicação
 1. Abra o ficheiro **server.js** num editor de texto e altere “Olá, Mundo\n” para “Olá, Azure\n”. 
 2. Guarde o ficheiro.
 3. Na linha de comandos, altere os diretórios para o diretório **olámundo** e execute os seguintes comandos:
@@ -172,10 +176,10 @@ Nesta secção, irá criar um ficheiro **server.js** que contém uma versão lig
    
     ![Uma página Web a apresentar “Olá, Azure”][helloworld-completed]
 
-## Reverter uma implementação
+## <a name="roll-back-a-deployment"></a>Reverter uma implementação
 A partir do painel **Aplicação Web** pode clicar em **Definições > Implementação Contínua** para ver o histórico de implementação no painel **Implementações**. Se precisar de reverter para uma implementação anterior, pode selecioná-la e, em seguida, clicar em **Reimplementar** no painel **Detalhes da Implementação**.
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 Implementou uma aplicação Node.js numa aplicação Web no App Service do Azure. Para saber mais sobre como as Web Apps do App Service executam aplicações Node.js, consulte o artigo [Web Apps do App Service do Azure: Node.js](http://blogs.msdn.com/b/silverlining/archive/2012/06/14/windows-azure-websites-node-js.aspx) e [Especificar uma versão do Node.js numa aplicação Azure](../nodejs-specify-node-version-azure-apps.md).
 
 O Node.js fornece um ecossistema rico de módulos que podem ser utilizados pelas suas aplicações. Para saber como as Web Apps funcionam com módulos, consulte o artigo [Utilizar módulos do Node.js com aplicações Azure](../nodejs-use-node-modules-azure-apps.md).
@@ -198,6 +202,6 @@ Para obter mais informações sobre como desenvolver aplicações Node.js no Azu
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Nov16_HO2-->
 
 

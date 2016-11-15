@@ -1,12 +1,12 @@
 ---
-title: Introdução ao Azure Mobile Engagement para Xamarin.iOS
-description: Saiba como utilizar o Azure Mobile Engagement com Notificações Push e de Análise para Aplicações Xamarin.iOS.
+title: "Introdução ao Azure Mobile Engagement para Xamarin.iOS"
+description: "Saiba como utilizar o Azure Mobile Engagement com Notificações Push e de Análise para Aplicações Xamarin.iOS."
 services: mobile-engagement
 documentationcenter: xamarin
 author: piyushjo
-manager: ''
-editor: ''
-
+manager: erikre
+editor: 
+ms.assetid: 0448209e-fff6-47bd-985c-2cf074bac12f
 ms.service: mobile-engagement
 ms.workload: mobile
 ms.tgt_pltfrm: mobile-xamarin-ios
@@ -14,9 +14,13 @@ ms.devlang: dotnet
 ms.topic: hero-article
 ms.date: 08/19/2016
 ms.author: piyushjo
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: 300403fb483818e5eb1851968ef7f36ff0507fb8
+
 
 ---
-# Introdução ao Azure Mobile Engagement para Aplicações Xamarin.iOS
+# <a name="get-started-with-azure-mobile-engagement-for-xamarinios-apps"></a>Introdução ao Azure Mobile Engagement para Aplicações Xamarin.iOS
 [!INCLUDE [Hero tutorial switcher](../../includes/mobile-engagement-hero-tutorial-switcher.md)]
 
 Este tópico mostra como utilizar o Azure Mobile Engagement para compreender a utilização da aplicação e o envio de notificações push para utilizadores segmentados numa aplicação Xamarin.iOS.
@@ -28,19 +32,19 @@ Neste tutorial necessita do seguinte:
 * [SDK Xamarin do Mobile Engagement](https://www.nuget.org/packages/Microsoft.Azure.Engagement.Xamarin/)
 
 > [!NOTE]
-> Para concluir este tutorial, tem de ter uma conta ativa do Azure. Se não tiver uma conta, pode criar uma de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fmobile-engagement-xamarin-ios-get-started).
+> Para concluir este tutorial, tem de ter uma conta ativa do Azure. Se não tiver uma conta, pode criar uma conta de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fmobile-engagement-xamarin-ios-get-started).
 > 
 > 
 
-## <a id="setup-azme"></a>Configurar o Mobile Engagement para a aplicação iOS
-[!INCLUDE [Create Mobile Engagement App in Portal](../../includes/mobile-engagement-create-app-in-portal.md)]
+## <a name="a-idsetupazmeasetup-mobile-engagement-for-your-ios-app"></a><a id="setup-azme"></a>Configurar o Mobile Engagement para a aplicação iOS
+[!INCLUDE [Create Mobile Engagement App in Portal](../../includes/mobile-engagement-create-app-in-portal-new.md)]
 
-## <a id="connecting-app"></a>Ligar a aplicação ao back-end do Mobile Engagement
+## <a name="a-idconnectingappaconnect-your-app-to-the-mobile-engagement-backend"></a><a id="connecting-app"></a>Ligar a aplicação ao back-end do Mobile Engagement
 Este tutorial apresenta uma “integração básica”, o conjunto mínimo necessário para recolher dados e enviar uma notificação push.
 
 Iremos criar uma aplicação básica com o Xamarin para demonstrar a integração:
 
-### Criar um novo projeto Xamarin.iOS
+### <a name="create-a-new-xamarinios-project"></a>Criar um novo projeto Xamarin.iOS
 1. Execute o Xamarin Studio. Aceda a **Ficheiro** -> **Novo** -> **Solução** 
    
     ![][1]
@@ -61,7 +65,7 @@ Iremos criar uma aplicação básica com o Xamarin para demonstrar a integraçã
 
 O Xamarin Studio criará a aplicação de demonstração na qual iremos integrar o Mobile Engagement. 
 
-### Ligar a aplicação ao back-end do Mobile Engagement
+### <a name="connect-your-app-to-mobile-engagement-backend"></a>Ligar a aplicação ao back-end do Mobile Engagement
 1. Clique com o botão direito do rato na pasta **Pacotes** nas janelas Solução e selecione **Adicionar Pacotes...**
    
     ![][5]
@@ -79,7 +83,7 @@ O Xamarin Studio criará a aplicação de demonstração na qual iremos integrar
                     };
         EngagementAgent.Init (config);
 
-## <a id="monitor"></a>Ativar a monitorização em tempo real
+## <a name="a-idmonitoraenabling-realtime-monitoring"></a><a id="monitor"></a>Ativar a monitorização em tempo real
 Para iniciar o envio de dados e garantir que os utilizadores estão ativos, terá de enviar, pelo menos, um ecrã para o back-end do Mobile Engagement.
 
 1. Abra **ViewController.cs** e adicione o seguinte ao utilizar a instrução:
@@ -87,14 +91,14 @@ Para iniciar o envio de dados e garantir que os utilizadores estão ativos, ter�
         using Microsoft.Azure.Engagement.Xamarin;
 2. Substitua a classe a partir da qual `ViewController` herda de `UIViewController` para `EngagementViewController`. 
 
-## <a id="monitor"></a>Ligar a aplicação com a monitorização em tempo real
+## <a name="a-idmonitoraconnect-app-with-realtime-monitoring"></a><a id="monitor"></a>Ligar a aplicação com a monitorização em tempo real
 [!INCLUDE [Connect app with real-time monitoring](../../includes/mobile-engagement-connect-app-with-monitor.md)]
 
-## <a id="integrate-push"></a>Ativar as notificações push e mensagens na aplicação
+## <a name="a-idintegratepushaenable-push-notifications-and-inapp-messaging"></a><a id="integrate-push"></a>Ativar as notificações push e mensagens na aplicação
 O Mobile Engagement permite interagir com os seus utilizadores e ALCANÇAR com notificações push e mensagens na aplicação no contexto das campanhas. Este módulo é designado ALCANCE no portal do Mobile Engagement.
 As secções seguintes configuram a aplicação para as receber.
 
-### Modificar o seu Delegado de Aplicação
+### <a name="modify-your-application-delegate"></a>Modificar o seu Delegado de Aplicação
 1. Abra o **AppDelegate.cs** e adicione o seguinte ao utilizar a instrução:
    
         using System; 
@@ -140,7 +144,7 @@ As secções seguintes configuram a aplicação para as receber.
     ![][7]
 5. No mesmo ficheiro **Info.plist**, certifique-se de que assinalou as opções **Ativar Modos de Segundo Plano** e **Notificações Remotas**. 
    
-    ![][8]
+     ![][8]
 6. Execute a aplicação no dispositivo que tiver associado a este perfil de publicação. 
 
 [!INCLUDE [mobile-engagement-ios-send-push-push](../../includes/mobile-engagement-ios-send-push.md)]
@@ -157,6 +161,6 @@ As secções seguintes configuram a aplicação para as receber.
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 
