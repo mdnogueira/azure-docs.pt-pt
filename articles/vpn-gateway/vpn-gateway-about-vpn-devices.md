@@ -1,13 +1,13 @@
 ---
-title: Acerca dos Dispositivos VPN para as ligações de Gateway de Rede de VPNs das Redes Virtuais do Azure | Microsoft Docs
-description: Este artigo fala sobre dispositivos VPN e parâmetros IPsec para ligações de Gateway de VPN S2S e contém hiperligações para instruções de configuração e exemplos.
+title: "Acerca dos Dispositivos VPN para as ligações de Gateway de Rede de VPNs das Redes Virtuais do Azure | Microsoft Docs"
+description: "Este artigo fala sobre dispositivos VPN e parâmetros IPsec para ligações de Gateway de VPN S2S e contém hiperligações para instruções de configuração e exemplos."
 services: vpn-gateway
 documentationcenter: na
 author: yushwang
 manager: rossort
-editor: ''
+editor: 
 tags: azure-resource-manager, azure-service-management
-
+ms.assetid: ba449333-2716-4b7f-9889-ecc521e4d616
 ms.service: vpn-gateway
 ms.devlang: na
 ms.topic: get-started-article
@@ -15,9 +15,13 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/13/2016
 ms.author: yushwang;cherylmc
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: 019395d76a1e2d8e75b4ac1474abe45ce1b8aeb1
+
 
 ---
-# Acerca dos dispositivos de VPN para ligações de Gateway de Rede de VPNs
+# <a name="about-vpn-devices-for-sitetosite-vpn-gateway-connections"></a>Acerca dos dispositivos de VPN para ligações de Gateway de Rede de VPNs
 Precisa de um dispositivo VPN para configurar uma ligação de rede de VPNs (S2S). As ligações Site a Site podem ser utilizadas para criar uma solução híbrida ou sempre que pretender uma ligação segura entre a rede no local e a rede virtual. Este artigo aborda os dispositivos VPN compatíveis e os parâmetros de configuração. 
 
 > [!NOTE]
@@ -34,7 +38,7 @@ Se o dispositivo não aparecer na tabela de [Dispositivos VPN Validados](#device
   * Encaminhamento Dinâmico = RouteBased
 * As especificações para o gateway de VPN de Elevado Desempenho e para o gateway de VPN RouteBased são as mesmas, salvo indicação em contrário. Por exemplo, os dispositivos VPN validados compatíveis com os gateways de VPN RouteBased também são compatíveis com o gateway de VPN de Elevado Desempenho do Azure. 
 
-## <a name="devicetable"></a>Dispositivos VPN validados
+## <a name="a-namedevicetableavalidated-vpn-devices"></a><a name="devicetable"></a>Dispositivos VPN validados
 Validámos uma série de dispositivos VPN padrão em parceria com os fornecedores dos dispositivos. Todos os dispositivos nas famílias de dispositivos contidas na lista seguinte deverão funcionar com gateways de VPN do Azure. Veja o artigo [Acerca do VPN Gateway](vpn-gateway-about-vpngateways.md) para verificar o tipo de gateway que tem de criar para a solução que pretende configurar. 
 
 Para obter ajuda na configuração do seu dispositivo VPN, veja as ligações que correspondem à família de dispositivos adequada. Para obter suporte para dispositivos VPN, contacte o fabricante do dispositivo.
@@ -66,10 +70,10 @@ Para obter ajuda na configuração do seu dispositivo VPN, veja as ligações qu
 
 (*) Os routers da série ISR 7200 só suportam VPNs PolicyBased.
 
-## <a name="additionaldevices"></a>Dispositivos VPN não validados
+## <a name="a-nameadditionaldevicesanonvalidated-vpn-devices"></a><a name="additionaldevices"></a>Dispositivos VPN não validados
 Se não vir o seu dispositivo listado na tabela de Dispositivos VPN Validados, poderá, mesmo assim, funcionar com uma ligação Site a Site. Verifique se o seu dispositivo VPN cumpre os requisitos mínimos descritos na secção Requisitos de Gateway do artigo [Acerca dos Gateways de VPN](vpn-gateway-about-vpngateways.md#gateway-requirements). Os dispositivos que cumprem os requisitos mínimos devem também funcionar bem com os gateways de VPN. Contacte o fabricante do dispositivo para obter instruções adicionais de suporte e de configuração.
 
-## Editar os exemplos de configuração do dispositivo
+## <a name="editing-device-configuration-samples"></a>Editar os exemplos de configuração do dispositivo
 Depois de transferir o exemplo de configuração do dispositivo VPN fornecido, terá de substituir alguns dos valores para que reflitam as definições do seu ambiente. 
 
 **Para editar um exemplo:**
@@ -91,36 +95,36 @@ Depois de transferir o exemplo de configuração do dispositivo VPN fornecido, t
 | &lt;SP_AzureGatewayIpAddress&gt; |Esta informação é específica da sua rede virtual e encontra-se no Portal de Gestão como **Endereço IP do Gateway**. |
 | &lt;SP_PresharedKey&gt; |Esta informação é específicas da sua rede virtual e encontra-se no Portal de Gestão como Gerir Chave. |
 
-## Parâmetros IPsec
+## <a name="ipsec-parameters"></a>Parâmetros IPsec
 > [!NOTE]
 > Apesar de os valores apresentados na tabela seguinte serem suportados pelo VPN Gateway do Azure, não há atualmente um modo de especificar ou de selecionar uma combinação específica no VPN Gateway do Azure. Tem de especificar as eventuais restrições no dispositivo VPN no local. Além disso, tem de fixar MSS em 1350.
 > 
 > 
 
-### Configuração da Fase 1 do IKE
+### <a name="ike-phase-1-setup"></a>Configuração da Fase 1 do IKE
 | **Propriedade** | **PolicyBased** | **Gateway de VPN Standard ou de Elevado Desempenho e RouteBased** |
 | --- | --- | --- |
 | Versão do IKE |IKEv1 |IKEv2 |
-| Grupo Diffie-Hellman |Grupo 2 (1024 bits) |Grupo 2 (1024 bits) |
+| Grupo Diffie-Hellman |Grupo 2 (1024 bits) |Grupo 2 (1024 bits) |
 | Método de Autenticação |Chave Pré-partilhada |Chave Pré-partilhada |
 | Algoritmos de Encriptação |AES256 AES128 3DES |AES256 3DES |
 | Algoritmo Hash |SHA1(SHA128) |SHA1(SHA128), SHA2(SHA256) |
-| Duração (Tempo) da Associação de Segurança (SA) da Fase 1 |28 800 segundos |10 800 segundos |
+| Duração (Tempo) da Associação de Segurança (SA) da Fase 1 |28 800 segundos |10 800 segundos |
 
-### Configuração da Fase 2 do IKE
+### <a name="ike-phase-2-setup"></a>Configuração da Fase 2 do IKE
 | **Propriedade** | **PolicyBased** | **Gateway de VPN Standard ou de Elevado Desempenho e RouteBased** |
 | --- | --- | --- |
 | Versão do IKE |IKEv1 |IKEv2 |
 | Algoritmo Hash |SHA1(SHA128) |SHA1(SHA128) |
-| Duração (Tempo) da Associação de Segurança (SA) da Fase 2 |3600 segundos |3600 segundos |
-| Duração (Débito) da Associação de Segurança (SA) da Fase 2 |102 400 000 KB |- |
+| Duração (Tempo) da Associação de Segurança (SA) da Fase 2 |3600 segundos |3600 segundos |
+| Duração (Débito) da Associação de Segurança (SA) da Fase 2 |102 400 000 KB |- |
 | Ofertas de Encriptação e de Autenticação de SA de IPsec (por ordem de preferência) |1. ESP-AES256 2. ESP-AES128 3. ESP-3DES 4. N/D |Veja *Ofertas de Associação de Segurança (SA) de IPsec do Gateway RouteBased* (abaixo) |
 | Perfect Forward Secrecy (PFS) |Não |Não (*) |
 | Deteção de Elemento Inutilizado |Não suportado |Suportado |
 
 (*) O Gateway do Azure como dispositivo de resposta IKE pode aceitar o Grupo PFS DH 1, 2, 5, 14, 24.
 
-### Ofertas de Associação de Segurança (SA) de IPsec do Gateway RouteBased
+### <a name="routebased-gateway-ipsec-security-association-sa-offers"></a>Ofertas de Associação de Segurança (SA) de IPsec do Gateway RouteBased
 A tabela seguinte apresenta uma lista de Ofertas de Encriptação e Autenticação de SA de IPsec. As ofertas estão listadas pela ordem de preferência com que a oferta é apresentada ou aceite.
 
 | **Ofertas de Encriptação e Autenticação de SA de IPsec** | **Gateway do Azure como iniciador** | **Gateway do Azure como dispositivo de resposta** |
@@ -147,6 +151,9 @@ A tabela seguinte apresenta uma lista de Ofertas de Encriptação e Autenticaç�
 * Pode especificar a encriptação IPsec ESP NULL com gateways de VPN de Elevado Desempenho e RouteBased. A encriptação baseada em Nulo não proporciona proteção aos dados em trânsito e só deve ser utilizada quando é preciso ter débito máximo e latência mínima.  Os clientes podem optar por utilizar esta opção em cenários de comunicação de VNet a VNet ou quando a encriptação está a ser aplicada noutro ponto da solução.
 * Para a conectividade em vários locais através da Internet, utilize as predefinições do gateway de VPN do Azure com a encriptação e os algoritmos hash listados nas tabelas acima, para garantir a segurança da sua comunicação crítica.
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

@@ -1,76 +1,80 @@
 ---
-title: Create an internal load balancer using the Azure CLI in the classic deployment model | Microsoft Docs
-description: Learn how to create an internal load balancer using the Azure CLI in the classic deployment model
+title: "Criar um balanceador de carga interno com a CLI do Azure no modelo de implementação clássica | Microsoft Docs"
+description: "Saiba como criar um balanceador de carga interno com a CLI do Azure no modelo de implementação clássica"
 services: load-balancer
 documentationcenter: na
 author: sdwheeler
 manager: carmonm
-editor: ''
+editor: 
 tags: azure-service-management
-
+ms.assetid: becbbbde-a118-4269-9444-d3153f00bf34
 ms.service: load-balancer
 ms.devlang: na
-ms.topic: article
+ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/09/2016
 ms.author: sewhee
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: 4364d3bcdffd278bef35b224a8e22062814ca490
+
 
 ---
-# Get started creating an internal load balancer (classic) using the Azure CLI
+# <a name="get-started-creating-an-internal-load-balancer-classic-using-the-azure-cli"></a>Introdução à criação de um balanceador de carga interno (modo clássico) com a CLI do Azure
 [!INCLUDE [load-balancer-get-started-ilb-classic-selectors-include.md](../../includes/load-balancer-get-started-ilb-classic-selectors-include.md)]
 
 [!INCLUDE [load-balancer-get-started-ilb-intro-include.md](../../includes/load-balancer-get-started-ilb-intro-include.md)]
 
 [!INCLUDE [azure-arm-classic-important-include](../../includes/learn-about-deployment-models-classic-include.md)]
 
-Learn how to [perform these steps using the Resource Manager model](load-balancer-get-started-ilb-arm-cli.md).
+Saiba como [executar estes passos com o modelo do Resource Manager](load-balancer-get-started-ilb-arm-cli.md).
 
 [!INCLUDE [load-balancer-get-started-ilb-scenario-include.md](../../includes/load-balancer-get-started-ilb-scenario-include.md)]
 
-## To create an internal load balancer set for virtual machines
-To create an internal load balancer set and the servers that will send their traffic to it, you must do the following:
+## <a name="to-create-an-internal-load-balancer-set-for-virtual-machines"></a>Para criar um conjunto de balanceadores de carga internos para máquinas virtuais
+Para criar um conjunto de balanceadores de carga internos e os servidores que irão enviar o tráfego para o mesmo, tem de efetuar o seguinte:
 
-1. Create an instance of Internal Load Balancing that will be the endpoint of incoming traffic to be load balanced across the servers of a load-balanced set.
-2. Add endpoints corresponding to the virtual machines that will be receiving the incoming traffic.
-3. Configure the servers that will be sending the traffic to be load balanced to send their traffic to the virtual IP (VIP) address of the Internal Load Balancing instance.
+1. Crie uma instância Balanceamento de Carga Interno que será o ponto final do tráfego de entrada para balanceamento de carga nos servidores de um conjunto com balanceamento de carga.
+2. Adicione os pontos finais correspondentes às máquinas virtuais que irão receber o tráfego de entrada.
+3. Configure os servidores que irão enviar o tráfego para balanceamento de carga para enviar o tráfego para o endereço IP virtual (VIP) da instância de Balanceamento de Carga Interno.
 
-## Step by step creating an internal load balancer using CLI
-This guide shows how to create an internal load balancer based on the scenario above.
+## <a name="step-by-step-creating-an-internal-load-balancer-using-cli"></a>Criação passo a passo de um balanceador de carga interno com a CLI
+Este guia mostra como criar um balanceador de carga interno com base no cenário acima.
 
-1. If you have never used Azure CLI, see [Install and Configure the Azure CLI](../xplat-cli-install.md) and follow the instructions up to the point where you select your Azure account and subscription.
-2. Run the **azure config mode** command to switch to classic mode, as shown below.
+1. Se nunca tiver utilizado a CLI do Azure, veja [Install and Configure the Azure CLI (Instalar e Configurar a CLI do Azure)](../xplat-cli-install.md) e siga as instruções até ao ponto onde poderá selecionar a sua conta e subscrição do Azure.
+2. Execute o comando **azure config mode** para mudar para o modo clássico, como mostrado abaixo.
    
         azure config mode asm
    
-    Expected output:
+    Resultado esperado:
    
         info:    New mode is asm
 
-## Create endpoint and load balancer set
-The scenario assumes the virtual machines "DB1" and "DB2" in a cloud service called "mytestcloud". Both virtual machines are using a virtual network called my "testvnet" with subnet "subnet-1".
+## <a name="create-endpoint-and-load-balancer-set"></a>Criar o ponto final e o conjunto de balanceadores de carga
+O cenário assume as máquinas virtuais "DB1" e "DB2" num serviço em nuvem denominado "mytestcloud". Ambas as máquinas virtuais estão a utilizar uma rede virtual denominada "mytestvnet" com a sub-rede "subnet-1".
 
-This guide will create an internal load balancer set using port 1433 as private port and 1433 as local port.
+Este guia irá criar um conjunto de balanceadores de carga internos através da porta 1433 como porta privada e a porta 1433 como porta local.
 
-This is a common scenario where you have SQL virtual machines on the back end using an internal load balancer to guarantee the database servers won't be exposed directly using a public IP address.
+Este é um cenário comum em que tem máquinas virtuais SQL no back-end com um balanceador de carga interno para garantir que os servidores de base de dados não são expostos diretamente através de um endereço IP público.
 
-### Step 1
-Create an internal load balancer set using `azure network service internal-load-balancer add`.
+### <a name="step-1"></a>Passo 1
+Criar um conjunto de balanceadores de carga internos com `azure network service internal-load-balancer add`.
 
      azure service internal-load-balancer add -r mytestcloud -n ilbset -t subnet-1 -a 192.168.2.7
 
-Parameters used:
+Parâmetros utilizados:
 
-**-r** - cloud service name<BR>
-**-n** - internal load balancer name<BR>
-**-t** - subnet name ( same subnet by the virtual machines you will add to the internal load balancer)<BR>
-**-a** - (optional) add a static private IP address<BR>
+**-r** – nome do serviço em nuvem<BR>
+**-n** – nome do balanceador de carga interno<BR>
+**-t** – nome da sub-rede (a mesma sub-rede das máquinas virtuais que serão adicionadas ao balanceador de carga interno)<BR>
+**-a** – (opcional) adicionar um endereço IP privado estático<BR>
 
-Check out `azure service internal-load-balancer --help` for more information.
+Veja `azure service internal-load-balancer --help` para obter mais informações.
 
-You can check the internal load balancer properties using the command `azure service internal-load-balancer list` *cloud service name*.
+Pode verificar as propriedades do balanceador de carga interno através do comando `azure service internal-load-balancer list` *nome do serviço em nuvem*.
 
-Here follows an example of the output:
+Segue-se um exemplo do resultado:
 
     azure service internal-load-balancer list my-testcloud
     info:    Executing command service internal-load-balancer list
@@ -81,26 +85,26 @@ Here follows an example of the output:
     info:    service internal-load-balancer list command OK
 
 
-## Step 2
-You configure the internal load balancer set when you add the first endpoint. You will associate the endpoint, virtual machine and probe port to the internal load balancer set in this step.
+## <a name="step-2"></a>Passo 2
+Configure o conjunto de balanceadores de carga internos quando adicionar o primeiro ponto final. Associe o ponto final, a máquina virtual e a porta de sonda ao conjunto de balanceadores de carga internos neste passo.
 
     azure vm endpoint create db1 1433 -k 1433 tcp -t 1433 -r tcp -e 300 -f 600 -i ilbset
 
-Parameters used:
+Parâmetros utilizados:
 
-**-k** - local virtual machine port<BR>
-**-t** - probe port<BR>
-**-r** - probe protocol<BR>
-**-e** - probe interval in seconds<BR>
-**-f** - timeout interval in seconds <BR>
-**-i** - internal load balancer name <BR>
+**-k** – porta da máquina virtual local<BR>
+**-t** – porta de sonda<BR>
+**-r** – protocolo de sonda<BR>
+**-e** – intervalo de sonda em segundos<BR>
+**-f** – intervalo do tempo limite em segundos <BR>
+**-i** – nome do balanceador de carga interno <BR>
 
-## Step 3
-Verify the load balancer configuration using `azure vm show` *virtual machine name*
+## <a name="step-3"></a>Passo 3
+Verifique a configuração do balanceador de carga através de `azure vm show` *nome da máquina virtual*
 
     azure vm show DB1
 
-The output will be:
+O resultado será:
 
         azure vm show DB1
     info:    Executing command vm show
@@ -150,24 +154,30 @@ The output will be:
     info:    vm show command OK
 
 
-## Create a remote desktop endpoint for a virtual machine
-You can create a remote desktop endpoint to forward network traffic from a public port to a local port for a specific virtual machine using `azure vm endpoint create`.
+## <a name="create-a-remote-desktop-endpoint-for-a-virtual-machine"></a>Criar um ponto final de ambiente de trabalho remoto para uma máquina virtual
+Pode criar um ponto final de ambiente de trabalho remoto para reencaminhar o tráfego de rede de uma porta pública para uma porta local de uma máquina virtual específica através de `azure vm endpoint create`.
 
     azure vm endpoint create web1 54580 -k 3389
 
 
-## Remove virtual machine from load balancer
-You can remove a virtual machine from an internal load balancer set by deleting the associated endpoint. Once the endpoint is removed, the virtual machine won't belong to the load balancer set anymore.
+## <a name="remove-virtual-machine-from-load-balancer"></a>Remover uma máquina virtual do balanceador de carga
+Pode remover uma máquina virtual de um conjunto de balanceadores de carga internos ao eliminar o ponto final associado. Após a remoção do ponto final, a máquina virtual já não pertence ao conjunto de balanceadores de carga.
 
- Using the example above, you can remove the endpoint created for virtual machine "DB1" from internal load balancer "ilbset" by using the command `azure vm endpoint delete`.
+ Através do exemplo acima, pode remover o ponto final criado para a máquina virtual "DB1" do balanceador de carga interno "ilbset" com o comando `azure vm endpoint delete`.
 
     azure vm endpoint delete DB1 tcp-1433-1433
 
 
-Check out `azure vm endpoint --help` for more information.
+Veja `azure vm endpoint --help` para obter mais informações.
 
-## Next steps
-[Configure a load balancer distribution mode using source IP affinity](load-balancer-distribution-mode.md)
+## <a name="next-steps"></a>Passos seguintes
+[Configurar um modo de distribuição de balanceador de carga com a afinidade do IP de origem](load-balancer-distribution-mode.md)
 
-[Configure idle TCP timeout settings for your load balancer](load-balancer-tcp-idle-timeout.md)
+[Configurar definições de tempo limite TCP inativo para o balanceador de carga](load-balancer-tcp-idle-timeout.md)
+
+
+
+
+<!--HONumber=Nov16_HO2-->
+
 

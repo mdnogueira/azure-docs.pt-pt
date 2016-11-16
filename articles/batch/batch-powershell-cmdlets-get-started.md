@@ -1,80 +1,85 @@
 ---
-title: Introdução ao Azure Batch PowerShell | Microsoft Docs
-description: Obtenha uma introdução rápida aos cmdlets do Azure PowerShell que pode utilizar para gerir o serviço Azure Batch
+title: "Introdução ao Azure Batch PowerShell | Microsoft Docs"
+description: "Obtenha uma introdução rápida aos cmdlets do Azure PowerShell que pode utilizar para gerir o serviço Azure Batch"
 services: batch
-documentationcenter: ''
-author: dlepow
+documentationcenter: 
+author: mmacy
 manager: timlt
-editor: ''
-
+editor: 
+ms.assetid: f9ad62c5-27bf-4e6b-a5bf-c5f5914e6199
 ms.service: batch
 ms.devlang: NA
 ms.topic: get-started-article
 ms.tgt_pltfrm: powershell
 ms.workload: big-compute
-ms.date: 07/28/2016
-ms.author: danlep
+ms.date: 10/20/2016
+ms.author: marsma
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: 9aa49ecfa151b8ab56c0560db47c3b0eb80647a2
+
 
 ---
-# Introdução aos cmdlets do Azure Batch PowerShell
-Com os cmdlets do Azure Batch PowerShell, pode efetuar e encriptar muitas das mesmas tarefas que desempenha com as APIs do lote, o portal do Azure e a Interface de Linha de Comandos do Azure (CLI). Isto é uma introdução rápida aos cmdlets que pode utilizar para gerir as contas do Batch e trabalhar com os recursos do Batch, como conjuntos e tarefas. Este artigo baseia-se nos cmdlets do Azure PowerShell versão 1.6.0.
+# <a name="get-started-with-azure-batch-powershell-cmdlets"></a>Introdução aos cmdlets do Azure Batch PowerShell
+Com os cmdlets do Azure Batch PowerShell, pode efetuar e encriptar muitas das mesmas tarefas que desempenha com as APIs do lote, o portal do Azure e a Interface de Linha de Comandos do Azure (CLI). Isto é uma introdução rápida aos cmdlets que pode utilizar para gerir as contas do Batch e trabalhar com os recursos do Batch, como conjuntos e tarefas.
 
-Para obter uma lista completa de cmdlets do Batch e a sintaxe detalhada dos cmdlets, veja a [Referência de cmdlets do Azure Batch](https://msdn.microsoft.com/library/azure/mt125957.aspx). 
+Para obter uma lista completa de cmdlets do Batch e a sintaxe detalhada dos cmdlets, veja a [Referência de cmdlets do Azure Batch](https://msdn.microsoft.com/library/azure/mt125957.aspx).
 
-## Pré-requisitos
-* **Azure PowerShell** - Consulte [Como instalar e configurar o Azure PowerShell](../powershell-install-configure.md) para obter instruções para transferir e instalar o Azure PowerShell. 
+Este artigo baseia-se nos cmdlets do Azure PowerShell versão 3.0.0. Recomendamos que atualize frequentemente o Azure PowerShell para tirar partido das atualizações e melhoramentos do serviço.
+
+## <a name="prerequisites"></a>Pré-requisitos
+Efetue as seguintes operações para utilizar o Azure PowerShell para gerir os recursos do Batch.
+
+* [Instale e configure o Azure PowerShell](../powershell-install-configure.md).
+* Execute o cmdlet **Login-AzureRmAccount** para ligar à sua subscrição (os cmdlets do Azure Batch enviados no módulo do Azure Resource Manager):
   
-  * Uma vez que os cmdlets do Azure Batch são enviados no módulo Azure Resource Manager, terá de executar o cmdlet **Login-AzureRmAccount** para ligar à sua subscrição. 
-  * Recomendamos que atualize frequentemente o Azure PowerShell para tirar partido das atualizações e melhoramentos do serviço. 
-* **Registar no espaço de nomes do fornecedor do Batch (operação única)** - Antes de trabalhar com as suas contas do Batch, tem de registar no espaço de nomes do fornecedor do Batch. Esta operação só tem de ser efetuada uma vez por subscrição. Execute o seguinte cmdlet:
+    `Login-AzureRmAccount`
+* **Registe no espaço de nomes do fornecedor do Batch**. Esta operação só tem de ser efetuada **uma vez por subscrição**.
   
-        Register-AzureRMResourceProvider -ProviderNamespace Microsoft.Batch
+    `Register-AzureRMResourceProvider -ProviderNamespace Microsoft.Batch`
 
-## Gerir contas e chaves do Batch
-### Criar uma conta do Batch
-**New-AzureRmBatchAccount** cria uma nova conta do Batch num grupo de recursos especificado. Caso ainda não tenha um grupo de recursos, crie um executando o cmdlet [New-AzureRmResourceGroup](https://msdn.microsoft.com/library/azure/mt603739.aspx), especificando uma das regiões do Azure no parâmetro **Localização**, por exemplo, "E.U.A. Central". Por exemplo:
+## <a name="manage-batch-accounts-and-keys"></a>Gerir contas e chaves do Batch
+### <a name="create-a-batch-account"></a>Criar uma conta do Batch
+**New-AzureRmBatchAccount** cria uma conta do Batch num grupo de recursos especificado. Caso ainda não tenha um grupo de recursos, crie um ao executar o cmdlet [New-AzureRmResourceGroup](https://msdn.microsoft.com/library/azure/mt603739.aspx). Especifique uma das regiões do Azure no parâmetro **Localização**, por exemplo, “EUA Central”. Por exemplo:
 
     New-AzureRmResourceGroup –Name MyBatchResourceGroup –location "Central US"
 
+Em seguida, crie uma conta do Batch no grupo de recursos ao especificar um nome de conta em <*nome_de_conta*> e a localização e o nome do grupo de recursos. Criar a conta do Batch pode demorar algum tempo a concluir. Por exemplo:
 
-Em seguida, crie uma nova conta do Batch no grupo de recursos, especificando um nome de conta em <*nome_conta*> e a localização e o nome do seu grupo de recursos. Criar a conta do Batch pode demorar algum tempo a concluir. Por exemplo:
-
-    New-AzureRmBatchAccount –AccountName <account_name> –Location "Central US" –ResourceGroupName MyBatchResourceGroup
+    New-AzureRmBatchAccount –AccountName <account_name> –Location "Central US" –ResourceGroupName <res_group_name>
 
 > [!NOTE]
 > O nome da conta do Batch tem de ser exclusivo para a região do Azure do grupo de recursos, conter entre 3 e 24 carateres e utilizar apenas letras minúsculas e números.
 > 
 > 
 
-### Obter chaves de acesso à conta
+### <a name="get-account-access-keys"></a>Obter chaves de acesso à conta
 **Get-AzureRmBatchAccountKeys** mostra as chaves de acesso associadas a uma conta do Azure Batch. Por exemplo, execute o seguinte para obter as chaves primária e secundária da conta que criou.
 
-    $Account = Get-AzureRmBatchAccountKeys –AccountName <accountname>
+    $Account = Get-AzureRmBatchAccountKeys –AccountName <account_name>
 
     $Account.PrimaryAccountKey
 
     $Account.SecondaryAccountKey
 
-
-### Gerar uma nova chave de acesso
+### <a name="generate-a-new-access-key"></a>Gerar uma nova chave de acesso
 **New-AzureRmBatchAccountKey** gera uma nova chave de conta primária ou secundária para uma conta do Azure Batch. Por exemplo, para gerar uma nova chave primária para a conta do Batch, escreva:
 
     New-AzureRmBatchAccountKey -AccountName <account_name> -KeyType Primary
-
 
 > [!NOTE]
 > Para gerar uma nova chave secundária, especifique "Secondary" para o parâmetro **KeyType**. Tem de regenerar as chaves primária e secundária em separado.
 > 
 > 
 
-### Eliminar uma conta do Batch
+### <a name="delete-a-batch-account"></a>Eliminar uma conta do Batch
 **Remove-AzureRmBatchAccount** elimina uma conta do Batch. Por exemplo:
 
     Remove-AzureRmBatchAccount -AccountName <account_name>
 
 Quando lhe for perguntado, confirme que pretende remover a conta. A remoção da conta pode demorar algum tempo a concluir.
 
-## Criar um objeto BatchAccountContext
+## <a name="create-a-batchaccountcontext-object"></a>Criar um objeto BatchAccountContext
 Para efetuar a autenticação utilizando os cmdlets do Batch PowerShell quando criar e gerir agrupamentos, tarefas e outros recursos do Batch, primeiro crie um objeto BatchAccountContext para armazenar o nome e as chaves da conta:
 
     $context = Get-AzureRmBatchAccountKeys -AccountName <account_name>
@@ -86,65 +91,155 @@ O objeto BatchAccountContext é transmitido aos cmdlets que utilizam o parâmetr
 > 
 > 
 
-## Criar e modificar recursos do Batch
-Utilize cmdlets como **New-AzureBatchPool**, **New-AzureBatchJob** e **New-AzureBatchTask** para criar recursos numa conta do Batch. Existem cmdlets **Get-** e **Set-** correspondentes para atualizar as propriedades dos recursos existentes e cmdlets **Remove-** para remover recursos numa conta do Batch. 
+## <a name="create-and-modify-batch-resources"></a>Criar e modificar recursos do Batch
+Utilize cmdlets como **New-AzureBatchPool**, **New-AzureBatchJob** e **New-AzureBatchTask** para criar recursos numa conta do Batch. Existem cmdlets **Get-** e **Set-** correspondentes para atualizar as propriedades dos recursos existentes e cmdlets **Remove-** para remover recursos numa conta do Batch.
 
 Quando utiliza muitos destes cmdlets, além de transmitir um objeto de BatchContext, terá de criar ou passar objetos que contêm definições detalhadas de recursos, conforme mostrado no exemplo seguinte. Consulte a ajuda detalhada de cada cmdlet para obter exemplos adicionais.
 
-### Criar um conjunto do Batch
-Quando criar ou atualizar um conjunto de Batch, selecione uma configuração de serviço na nuvem ou uma configuração de máquina virtual para o sistema operativo nos nós de computação (veja [Descrição geral da funcionalidade do Batch](batch-api-basics.md#pool)). A sua escolha determina se os nós de computação são instalados com uma das [versões do SO Convidado do Azure](../cloud-services/cloud-services-guestos-update-matrix.md#releases) ou com uma das imagens suportadas do Linux ou VM do Windows no Azure Marketplace. 
+### <a name="create-a-batch-pool"></a>Criar um conjunto do Batch
+Quando criar ou atualizar um conjunto de Batch, selecione uma configuração de serviço na nuvem ou uma configuração de máquina virtual para o sistema operativo nos nós de computação (veja [Descrição geral da funcionalidade do Batch](batch-api-basics.md#pool)). A sua escolha determina se os nós de computação são instalados com uma das [versões do SO Convidado do Azure](../cloud-services/cloud-services-guestos-update-matrix.md#releases) ou com uma das imagens suportadas do Linux ou VM do Windows no Azure Marketplace.
 
 Quando executa o **New-AzureBatchPool**, introduza as definições do sistema operativo num objeto PSCloudServiceConfiguration ou PSVirtualMachineConfiguration. Por exemplo, o seguinte cmdlet cria um novo conjunto do Batch com nós de computação pequenos na configuração de serviço na nuvem, instalados com a versão mais recente do sistema operativo da família 3 (Windows Server 2012). Neste caso, o parâmetro **CloudServiceConfiguration** especifica a variável *$configuration* como o objeto PSCloudServiceConfiguration. O parâmetro **BatchContext** especifica uma variável *$context* definida anteriormente como objeto BatchAccountContext.
 
-    $configuration = New-Object -TypeName "Microsoft.Azure.Commands.Batch.Models.PSCloudServiceConfiguration" -ArgumentList @(3,"*")
+    $configuration = New-Object -TypeName "Microsoft.Azure.Commands.Batch.Models.PSCloudServiceConfiguration" -ArgumentList @(4,"*")
 
     New-AzureBatchPool -Id "AutoScalePool" -VirtualMachineSize "Small" -CloudServiceConfiguration $configuration -AutoScaleFormula '$TargetDedicated=4;' -BatchContext $context
 
-O número de destino dos nós de computação do novo conjunto é determinado por uma fórmula de dimensionamento automático. Neste caso, a fórmula é simplesmente **$TargetDedicated=4**, que indica que o número de nós de computação no conjunto é, no máximo, 4. 
+O número de destino dos nós de computação do novo conjunto é determinado por uma fórmula de dimensionamento automático. Neste caso, a fórmula é simplesmente **$TargetDedicated=4**, que indica que o número de nós de computação no conjunto é, no máximo, 4.
 
-## Consulta para conjuntos, tarefas e outros detalhes
+## <a name="query-for-pools-jobs-tasks-and-other-details"></a>Consulta para conjuntos, tarefas e outros detalhes
 Utilize cmdlets, como **Get-AzureBatchPool**, **Get-AzureBatchJob** e **Get-AzureBatchTask** para consultar entidades criadas numa conta do Batch.
 
-### Consulta de dados
+### <a name="query-for-data"></a>Consulta de dados
 Por exemplo, utilize **Get-AzureBatchPools** para localizar os seus agrupamentos. Por predefinição, isto consulta todos os agrupamentos na sua conta, assumindo que já armazenou o objeto BatchAccountContext em *$context*:
 
     Get-AzureBatchPool -BatchContext $context
 
-### Utilizar um filtro OData
+### <a name="use-an-odata-filter"></a>Utilizar um filtro OData
 Pode fornecer um filtro OData utilizando o parâmetro **Filter** para localizar apenas os objetos que lhe interessam. Por exemplo, pode localizar todos os agrupamentos com ids começados por "myPool":
 
     $filter = "startswith(id,'myPool')"
 
     Get-AzureBatchPool -Filter $filter -BatchContext $context
 
-
 Este método não é tão flexível como se utilizasse "Where-Object" num pipeline local. No entanto, a consulta é enviada diretamente para o serviço Batch para que todas as filtragens ocorram no lado do servidor, poupando a largura de banda da Internet.
 
-### Utilizar o parâmetro Id
+### <a name="use-the-id-parameter"></a>Utilizar o parâmetro Id
 Uma alternativa a um filtro OData é a utilização do parâmetro **Id**. Para consultar um agrupamento específico com o id "myPool":
 
     Get-AzureBatchPool -Id "myPool" -BatchContext $context
 
-
 O parâmetro **Id** suporta apenas a pesquisa de ids completos e não carateres universais ou filtros de estilo OData.
 
-### Utilizar o parâmetro MaxCount
+### <a name="use-the-maxcount-parameter"></a>Utilizar o parâmetro MaxCount
 Por predefinição, cada cmdlet devolve um máximo de 1000 objetos. Se atingir este limite, refine o filtro para obter menos objetos ou defina explicitamente um limite máximo utilizando o parâmetro **MaxCount**. Por exemplo:
 
     Get-AzureBatchTask -MaxCount 2500 -BatchContext $context
 
 Para remover o limite superior, defina **MaxCount** como 0 ou menos.
 
-### Utilizar o pipeline
-Os cmdlets do Batch podem tirar partido do pipeline do PowerShell para enviar dados entre cmdlets. Isto tem o mesmo efeito que especificar um parâmetro, mas facilita a listagem de várias entidades. Por exemplo, o seguinte localiza todas as tarefas na sua conta:
+### <a name="use-the-powershell-pipeline"></a>Utilizar o pipeline do PowerShell
+Os cmdlets do Batch podem tirar partido do pipeline do PowerShell para enviar dados entre cmdlets. Este procedimento tem o mesmo efeito que especificar um parâmetro, mas facilita o trabalho com várias entidades.
+
+Por exemplo, localizar e apresentar todas as tarefas na sua conta:
 
     Get-AzureBatchJob -BatchContext $context | Get-AzureBatchTask -BatchContext $context
 
+Reinicie todos os nós de computação num conjunto:
 
-## Passos seguintes
+    Get-AzureBatchComputeNode -PoolId "myPool" -BatchContext $context | Restart-AzureBatchComputeNode -BatchContext $context
+
+## <a name="application-package-management"></a>Gestão de pacotes de aplicações
+Os pacotes de aplicações proporcionam uma forma simplificada para implementar aplicações nos nós de computação nos seus conjuntos. Com os cmdlets do PowerShell do Batch, pode carregar e gerir pacotes de aplicações na sua conta do Batch e implementar versões de pacotes em nós de computação.
+
+**Criar** uma aplicação:
+
+    New-AzureRmBatchApplication -AccountName <account_name> -ResourceGroupName <res_group_name> -ApplicationId "MyBatchApplication"
+
+**Adicionar** um pacote de aplicações:
+
+    New-AzureRmBatchApplicationPackage -AccountName <account_name> -ResourceGroupName <res_group_name> -ApplicationId "MyBatchApplication" -ApplicationVersion "1.0" -Format zip -FilePath package001.zip
+
+Definir a **versão predefinida** da aplicação:
+
+    Set-AzureRmBatchApplication -AccountName <account_name> -ResourceGroupName <res_group_name> -ApplicationId "MyBatchApplication" -DefaultVersion "1.0"
+
+**Listar** os pacotes de uma aplicação
+
+    $application = Get-AzureRmBatchApplication -AccountName <account_name> -ResourceGroupName <res_group_name> -ApplicationId "MyBatchApplication"
+
+    $application.ApplicationPackages
+
+**Eliminar** um pacote de aplicação
+
+    Remove-AzureRmBatchApplicationPackage -AccountName <account_name> -ResourceGroupName <res_group_name> -ApplicationId "MyBatchApplication" -ApplicationVersion "1.0"
+
+**Eliminar** uma aplicação
+
+    Remove-AzureRmBatchApplication -AccountName <account_name> -ResourceGroupName <res_group_name> -ApplicationId "MyBatchApplication"
+
+> [!NOTE]
+> Tem de eliminar todas as versões dos pacotes de aplicações de uma aplicação antes de eliminá-la. Se tentar eliminar uma aplicação que possua atualmente pacotes de aplicações, receberá um erro de “Conflito”.
+> 
+> 
+
+### <a name="deploy-an-application-package"></a>Implementar um pacote de aplicações
+Quando cria um conjunto, pode especificar um ou mais pacotes de aplicações para implementação. Quando especifica um pacote durante a criação de conjuntos, é implementado em cada nó no momento em que o nó é associado ao conjunto. Os pacotes também são implementados quando um nó é reiniciado ou recriado.
+
+Especifique a opção `-ApplicationPackageReference` quando criar um conjunto para implementar pacotes de aplicações nos nós do conjunto à medida que são adicionados ao mesmo. Primeiro, crie um objeto **PSApplicationPackageReference** e configure-o com o ID da aplicação e a versão do pacote que pretende implementar nos nós de computação do conjunto:
+
+    $appPackageReference = New-Object Microsoft.Azure.Commands.Batch.Models.PSApplicationPackageReference
+
+    $appPackageReference.ApplicationId = "MyBatchApplication"
+
+    $appPackageReference.Version = "1.0"
+
+Em seguida, crie o conjunto e especifique o objeto de referência do pacote como argumento para a opção `ApplicationPackageReferences`:
+
+    New-AzureBatchPool -Id "PoolWithAppPackage" -VirtualMachineSize "Small" -CloudServiceConfiguration $configuration -BatchContext $context -ApplicationPackageReferences $appPackageReference
+
+Pode obter mais informações sobre os pacotes de aplicações em [Application deployment with Azure Batch application packages (Implementação de aplicações com pacotes de aplicações do Azure Batch)](batch-application-packages.md).
+
+> [!IMPORTANT]
+> Tem de [associar uma conta de armazenamento do Azure](#linked-storage-account-autostorage) à sua conta do Batch para utilizar pacotes de aplicações.
+> 
+> 
+
+### <a name="update-a-pools-application-packages"></a>Atualizar os pacotes de aplicações de um conjunto
+Para atualizar as aplicações atribuídas a um conjunto existente, primeiro, crie um objeto PSApplicationPackageReference com as propriedades pretendidas (ID da aplicação e versão do pacote):
+
+    $appPackageReference = New-Object Microsoft.Azure.Commands.Batch.Models.PSApplicationPackageReference
+
+    $appPackageReference.ApplicationId = "MyBatchApplication"
+
+    $appPackageReference.Version = "2.0"
+
+Em seguida, obtenha o conjunto do Batch, retire quaisquer pacotes existentes, adicione a nossa nova referência do pacote e atualize o serviço Batch com as novas definições do conjunto:
+
+    $pool = Get-AzureBatchPool -BatchContext $context -Id "PoolWithAppPackage"
+
+    $pool.ApplicationPackageReferences.Clear()
+
+    $pool.ApplicationPackageReferences.Add($appPackageReference)
+
+    Set-AzureBatchPool -BatchContext $context -Pool $pool
+
+Atualizou as propriedades do conjunto no serviço Batch. Contudo, para implementar realmente o pacote de aplicação novo nos nós de computação no conjunto, tem de reiniciar ou recriar as imagens destes nós. Pode reiniciar todos os nós num conjunto com este comando:
+
+    Get-AzureBatchComputeNode -PoolId "PoolWithAppPackage" -BatchContext $context | Restart-AzureBatchComputeNode -BatchContext $context
+
+> [!TIP]
+> Pode implementar vários pacotes de aplicações nos nós de computação num conjunto. Se pretender *adicionar* um pacote de aplicação ao invés de substituir os pacotes implementados atualmente, omita a linha `$pool.ApplicationPackageReferences.Clear()` acima.
+> 
+> 
+
+## <a name="next-steps"></a>Passos seguintes
 * Para obter exemplos e a sintaxe detalhada dos cmdlets, veja a [Referência de cmdlets do Azure Batch](https://msdn.microsoft.com/library/azure/mt125957.aspx).
-* Veja [Consultar o serviço Batch de forma eficiente](batch-efficient-list-queries.md) para obter mais informações sobre a redução do número de itens e o tipo de informação devolvido para as consultas ao Batch. 
+* Pode obter mais informações sobre as aplicações e os pacotes de aplicações no Batch, veja [Application deployment with Azure Batch application packages (Implementação de aplicações com pacotes de aplicações do Azure Batch)](batch-application-packages.md).
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

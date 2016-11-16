@@ -1,41 +1,45 @@
 ---
 title: Tutorial de .NET de mensagens mediadas do e Service Bus | Microsoft Docs
 description: Tutorial de .NET de mensagens mediadas.
-services: service-bus-messaging
+services: service-bus
 documentationcenter: na
 author: sethmanheim
 manager: timlt
-editor: ''
-
-ms.service: service-bus-messaging
+editor: 
+ms.assetid: 964e019a-8abe-42f3-8314-867010cb2608
+ms.service: service-bus
 ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/27/2016
 ms.author: sethm
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: 3127a84f4d4cd9881de56a6d199cfb1780cd8189
+
 
 ---
-# Tutorial de .NET de mensagens mediadas do Service Bus
-O Service Bus do Azure fornece duas soluções de mensagens abrangentes – uma através de um serviço de "reencaminhamento" centralizado em execução na nuvem que suporta uma variedade de diferentes protocolos de transporte e padrões de serviços Web, incluindo SOAP, WS-* e REST. O cliente não precisa de uma ligação direta para o serviço no local, nem precisa de saber onde reside o serviço, e o serviço no local não precisa de nenhuma porta de entrada aberta na firewall.
+# <a name="service-bus-brokered-messaging-net-tutorial"></a>Tutorial de .NET de mensagens mediadas do Service Bus
+O Service Bus do Azure fornece duas soluções de mensagens abrangentes – uma através de um serviço de “reencaminhamento” centralizado em execução na nuvem que suporta uma variedade de diferentes protocolos de transporte e padrões de serviços Web, incluindo SOAP, WS-* e REST. O cliente não precisa de uma ligação direta para o serviço no local, nem precisa de saber onde reside o serviço, e o serviço no local não precisa de nenhuma porta de entrada aberta na firewall.
 
-A segunda solução de mensagens permite capacidades de mensagens "mediadas". Estas podem ser consideradas assíncronas ou funcionalidades de mensagens desacopladas que suportam cenários de publicação-subscrição, desacoplamento temporal e balanceamento de carga através da infraestrutura de mensagens do Service Bus. A comunicação desacoplada tem muitas vantagens; por exemplo, os clientes e os servidores podem ligar-se conforme necessário e efetuar as operações de forma assíncrona.
+A segunda solução de mensagens permite capacidades de mensagens “mediadas”. Estas podem ser consideradas assíncronas ou funcionalidades de mensagens desacopladas que suportam cenários de publicação-subscrição, desacoplamento temporal e balanceamento de carga através da infraestrutura de mensagens do Service Bus. A comunicação desacoplada tem muitas vantagens; por exemplo, os clientes e os servidores podem ligar-se conforme necessário e efetuar as operações de forma assíncrona.
 
-Este tutorial destina-se a fornecer uma descrição geral e uma experiência prática com as filas, um dos principais componentes das mensagens mediadas do Service Bus. Após completar a sequência de tópicos deste tutorial, terá uma aplicação que preenche uma lista de mensagens, cria uma fila e envia mensagens para essa fila. Por fim, a aplicação recebe e apresenta as mensagens a partir da fila e, em seguida, limpa os respetivos recursos e sai. Para um tutorial correspondente que descreve como criar uma aplicação que utiliza o Reencaminhamento do Service Bus, veja o [Service Bus relayed messaging tutorial (Tutorial das mensagens retransmitidas do Service Bus)](../service-bus-relay/service-bus-relay-tutorial.md).
+Este tutorial destina-se a fornecer uma descrição geral e uma experiência prática com as filas, um dos principais componentes das mensagens mediadas do Service Bus. Após completar a sequência de tópicos deste tutorial, terá uma aplicação que preenche uma lista de mensagens, cria uma fila e envia mensagens para essa fila. Por fim, a aplicação recebe e apresenta as mensagens a partir da fila e, em seguida, limpa os respetivos recursos e sai. Para um tutorial correspondente que descreve como criar uma aplicação que utiliza o Reencaminhamento de WCF do Service Bus, veja o [Service Bus relayed messaging tutorial (Tutorial das mensagens retransmitidas do Service Bus)](../service-bus-relay/service-bus-relay-tutorial.md).
 
-## Introdução e pré-requisitos
+## <a name="introduction-and-prerequisites"></a>Introdução e pré-requisitos
 As filas oferecem uma entrega de mensagem primeiro a entrar, primeiro a sair (FIFO) para um ou mais consumidores concorrentes. FIFO significa que, normalmente, espera-se que as mensagens sejam recebidas e processadas pelos recetores na ordem temporal em que foram colocadas em fila e cada mensagem será recebida e processada por apenas um consumidor de mensagens. Uma vantagem principal de utilizar as filas é obter o *desacoplamento temporal* dos componentes da aplicação: por outras palavras, os produtores e os consumidores não precisam de enviar e receber mensagens ao mesmo tempo, uma vez que as mensagens são armazenadas de forma duradoura na fila. Uma vantagem relacionada é o *nivelamento de carga*, que permite aos produtores e aos consumidores enviar e receber mensagens a taxas diferentes.
 
 Seguem-se alguns passos administrativos e pré-requisitos que deverá seguir antes de iniciar o tutorial. O primeiro passo é criar um espaço de nomes de serviço e obter uma chave de assinatura de acesso partilhado (SAS). Um espaço de nomes proporciona um limite de aplicação para cada aplicação exposta através do Service Bus. O sistema gera uma chave SAS automaticamente quando se cria um espaço de nomes de serviço. A combinação do espaço de nomes de serviço e da chave SAS fornece uma credencial com a qual o Service Bus autentica o acesso a uma aplicação.
 
-### Criar um espaço de nomes de serviço e obter uma chave SAS
-O primeiro passo é criar um espaço de nomes de serviço e obter uma chave de [Assinatura de Acesso Partilhado](../service-bus/service-bus-sas-overview.md) (SAS). Um espaço de nomes fornece um limite de aplicação para cada aplicação exposta através do Service Bus. O sistema gera uma chave SAS automaticamente quando se cria um espaço de nomes de serviço. A combinação do espaço de nomes de serviço e da chave SAS fornece uma credencial do Service Bus para autenticar o acesso a uma aplicação.
+### <a name="create-a-service-namespace-and-obtain-a-sas-key"></a>Criar um espaço de nomes de serviço e obter uma chave SAS
+O primeiro passo é criar um espaço de nomes de serviço e obter uma chave de [Assinatura de Acesso Partilhado](service-bus-sas-overview.md) (SAS). Um espaço de nomes fornece um limite de aplicação para cada aplicação exposta através do Service Bus. O sistema gera uma chave SAS automaticamente quando se cria um espaço de nomes de serviço. A combinação do espaço de nomes de serviço e da chave SAS fornece uma credencial do Service Bus para autenticar o acesso a uma aplicação.
 
 [!INCLUDE [service-bus-create-namespace-portal](../../includes/service-bus-create-namespace-portal.md)]
 
 O passo seguinte consiste em criar um projeto do Visual Studio e escrever duas funções de programa auxiliar que carregam uma lista delimitada por vírgulas num objeto [Lista](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx) [BrokeredMessage](https://msdn.microsoft.com/library/6sh2ey19.aspx) de .NET de tipo seguro.
 
-### Criar um projeto do Visual Studio
+### <a name="create-a-visual-studio-project"></a>Criar um projeto do Visual Studio
 1. Abra o Visual Studio como administrador, para tal clique com o botão direito no menu Iniciar e clique em **Executar como administrador**.
 2. Crie um novo projeto de aplicação de consola. Clique no menu **Ficheiro**, selecione **Novo** e clique em **Projeto**. Na caixa de diálogo **Novo Projeto**, clique em **Visual C#** (caso **Visual C#** não seja apresentado, procure em **Outras Linguagens**), clique no modelo **Aplicação de Consola** e atribua-lhe o nome **QueueSample**. Utilize a **Localização** predefinida. Clique em **OK** para criar o projeto.
 3. Utilize o gestor de pacote NuGet para adicionar as bibliotecas do Service Bus ao seu projeto:
@@ -86,7 +90,7 @@ O passo seguinte consiste em criar um projeto do Visual Studio e escrever duas f
 7. No Explorador de Soluções, clique com o botão direito no nome do projeto (neste exemplo, **QueueSample**), clique em **Adicionar** e em **Item Existente**.
 8. Navegue para o ficheiro Data.csv criado no passo 6. Clique no ficheiro e, em seguida, clique em **Adicionar**. Certifique-se de que a opção **Todos os ficheiros (*.*)** está selecionada na lista de tipos de ficheiro.
 
-### Criar um método de análise de uma lista de mensagens
+### <a name="create-a-method-that-parses-a-list-of-messages"></a>Criar um método de análise de uma lista de mensagens
 1. Na classe `Program` antes do método `Main()`, declare duas variáveis: uma do tipo **DataTable** para conter a lista de mensagens em Data.csv. A outra deverá ser do tipo objeto Lista, vivamente introduzida para [BrokeredMessage](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx). Esta última opção é a lista de mensagens mediadas utilizada nos passos subsequentes no tutorial.
    
     ```
@@ -146,7 +150,7 @@ O passo seguinte consiste em criar um projeto do Visual Studio e escrever duas f
     }
     ```
 
-### Criar um método de carregamento da lista de mensagens
+### <a name="create-a-method-that-loads-the-list-of-messages"></a>Criar um método de carregamento da lista de mensagens
 1. Fora de `Main()`, defina um método `GenerateMessages()` que tenha em conta o objeto **DataTable** devolvido por `ParseCSVFile()` e carregue a tabela numa lista de tipo seguro de mensagens mediadas. O método devolve o objeto **Lista**, como no exemplo seguinte. 
    
     ```
@@ -180,7 +184,7 @@ O passo seguinte consiste em criar um projeto do Visual Studio e escrever duas f
     }
     ```
 
-### Obter credenciais de utilizador
+### <a name="obtain-user-credentials"></a>Obter credenciais de utilizador
 1. Em primeiro lugar, crie três variáveis de cadeia globais para armazenar estes valores. Declare essas variáveis imediatamente após as declarações de variáveis anteriores; por exemplo:
    
     ```
@@ -227,10 +231,10 @@ O passo seguinte consiste em criar um projeto do Visual Studio e escrever duas f
     }
     ```
 
-### Compilar a solução
+### <a name="build-the-solution"></a>Compilar a solução
 No menu **Compilar** no Visual Studio, pode clicar em **Compilar Solução** ou premir **Ctrl+Shift+B** para confirmar a precisão do seu trabalho até ao momento.
 
-## Criar credenciais de gestão
+## <a name="create-management-credentials"></a>Criar credenciais de gestão
 Neste passo, defina as opções de gestão que utilizará para criar credenciais de assinatura de acesso partilhado (SAS) com as quais autorizará a sua aplicação.
 
 1. Para efeitos de clareza, este tutorial coloca todas as operações em fila num método separado. Crie um método `Queue()` assíncrono na classe `Program` após o método `Main()`. Por exemplo:
@@ -259,7 +263,7 @@ Neste passo, defina as opções de gestão que utilizará para criar credenciais
     NamespaceManager namespaceClient = new NamespaceManager(ServiceBusEnvironment.CreateServiceUri("sb", "<yourNamespace>", string.Empty), credentials);
     ```
 
-### Exemplo
+### <a name="example"></a>Exemplo
 Neste momento, o código deverá ter um aspeto semelhante ao seguinte:
 
 ```
@@ -366,10 +370,10 @@ namespace Microsoft.ServiceBus.Samples
 }
 ```
 
-## Enviar mensagens para a fila
+## <a name="send-messages-to-the-queue"></a>Enviar mensagens para a fila
 Neste passo, cria uma fila e, em seguida, envia as mensagens contidas na lista de mensagens mediadas para essa fila.
 
-### Criar uma fila e enviar mensagens para a fila
+### <a name="create-queue-and-send-messages-to-the-queue"></a>Criar uma fila e enviar mensagens para a fila
 1. Em primeiro lugar, crie a fila. Por exemplo, atribua o nome `myQueue` e declare a mesma imediatamente após as operações de gestão adicionadas no método `Queue()` no último passo:
    
     ```
@@ -406,10 +410,10 @@ Neste passo, cria uma fila e, em seguida, envia as mensagens contidas na lista d
     }
     ```
 
-## Receber mensagens da fila
+## <a name="receive-messages-from-the-queue"></a>Receber mensagens da fila
 Neste passo, obtenha a lista de mensagens da fila criada no passo anterior.
 
-### Criar um recetor e receber mensagens da fila
+### <a name="create-a-receiver-and-receive-messages-from-the-queue"></a>Criar um recetor e receber mensagens da fila
 No método `Queue()`, itere através da fila e receba as mensagens utilizando o método [QueueClient.ReceiveAsync](https://msdn.microsoft.com/library/azure/dn130423.aspx), imprimindo cada mensagem para a consola. Adicione o seguinte código imediatamente depois do código adicionado no passo anterior:
 
 ```
@@ -427,7 +431,7 @@ while ((message = await myQueueClient.ReceiveAsync(new TimeSpan(hours: 0, minute
 
 Tenha em atenção que `Thread.Sleep` é apenas utilizado para simular o processamento de mensagens e, provavelmente, não será necessário numa aplicação de mensagens real.
 
-### Concluir o método Fila e limpar os recursos
+### <a name="end-the-queue-method-and-clean-up-resources"></a>Concluir o método Fila e limpar os recursos
 Diretamente depois do código anterior, adicione o código seguinte para limpar a fábrica de mensagens e os recursos da fila:
 
 ```
@@ -436,7 +440,7 @@ myQueueClient.Close();
 namespaceClient.DeleteQueue("IssueTrackingQueue");
 ```
 
-### Chamar o método Fila
+### <a name="call-the-queue-method"></a>Chamar o método Fila
 O último passo consiste em adicionar uma instrução que chame o método `Queue()` a partir de `Main()`. Adicione a seguinte linha de código realçada no final de Main():
 
 ```
@@ -454,7 +458,7 @@ public static void Main(string[] args)
 }
 ```
 
-### Exemplo
+### <a name="example"></a>Exemplo
 O código seguinte contém a aplicação **QueueSample** completa.
 
 ```
@@ -604,21 +608,24 @@ namespace Microsoft.ServiceBus.Samples
 }
 ```
 
-## Compilar e executar a aplicação QueueSample
+## <a name="build-and-run-the-queuesample-application"></a>Compilar e executar a aplicação QueueSample
 Agora que concluiu os passos anteriores, pode compilar e executar a aplicação **QueueSample**.
 
-### Compilar a aplicação QueueSample
+### <a name="build-the-queuesample-application"></a>Compilar a aplicação QueueSample
 No Visual Studio, a partir do menu **Compilar**, clique em **Compilar Solução** ou prima **Ctrl+Shift+B**. Se encontrar erros, verifique se o código está correto com base no exemplo completo apresentado no final do passo anterior.
 
-## Passos seguintes
-Este tutorial mostrou como criar um serviço e uma aplicação cliente do Service Bus, utilizando as capacidades de mensagens mediadas do Service Bus. Para um tutorial semelhante que utiliza o [Reencaminhamento](service-bus-messaging-overview.md#Relayed-messaging) do Service Bus, veja o [Service Bus relayed messaging tutorial (Tutorial das mensagens retransmitidas do Service Bus)](../service-bus-relay/service-bus-relay-tutorial.md).
+## <a name="next-steps"></a>Passos seguintes
+Este tutorial mostrou como criar um serviço e uma aplicação cliente do Service Bus, utilizando as capacidades de mensagens mediadas do Service Bus. Para um tutorial semelhante que utiliza o [Reencaminhamento de WCF](service-bus-messaging-overview.md#Relayed-messaging) do Service Bus, veja o [Service Bus relayed messaging tutorial (Tutorial das mensagens retransmitidas do Service Bus)](../service-bus-relay/service-bus-relay-tutorial.md).
 
 Para obter mais informações sobre o [Service Bus](https://azure.microsoft.com/services/service-bus/), consulte os seguintes tópicos.
 
-* [Descrição geral de mensagens do Service Bus](service-bus-messaging-overview.md)
-* [Noções básicas sobre o Service Bus](../service-bus/service-bus-fundamentals-hybrid-solutions.md)
-* [Arquitetura do Service Bus](../service-bus/service-bus-architecture.md)
+* [Descrição geral das mensagens do Service Bus](service-bus-messaging-overview.md)
+* [Noções básicas sobre o Service Bus](service-bus-fundamentals-hybrid-solutions.md)
+* [Arquitetura do Service Bus](service-bus-architecture.md)
 
-<!--HONumber=Sep16_HO4-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

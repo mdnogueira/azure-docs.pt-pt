@@ -1,22 +1,26 @@
 ---
-title: Introdução ao Azure Active Directory Premium
-description: Um tópico que explica como se inscrever na edição Premium do Azure Active Directory através do site Licenciamento em Volume.
+title: "Introdução ao Azure Active Directory Premium"
+description: "Um tópico que explica como se inscrever na edição Premium do Azure Active Directory através do site Licenciamento em Volume."
 services: active-directory
-documentationcenter: ''
-author: markusvi
+documentationcenter: 
+author: MarkusVi
 manager: femila
-editor: ''
-
+editor: 
+ms.assetid: 391764e5-c4eb-4ae6-b8a9-3d09f0de04a6
 ms.service: active-directory
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 08/16/2016
+ms.date: 10/31/2016
 ms.author: markvi
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: 4f5341ecd0256d6268b9247ef5ec391809b7071a
+
 
 ---
-# Introdução ao Azure Active Directory Premium
+# <a name="getting-started-with-azure-active-directory-premium"></a>Introdução ao Azure Active Directory Premium
 Tem várias opções para se inscrever no Active Directory Premium: 
 
 **Azure ou Office 365** – na qualidade de subscritor do Azure ou do Office 365, pode comprar o Active Directory Premium online. Para obter os passos detalhados, consulte [Como Comprar o Azure Active Directory Premium – Clientes Existentes](https://channel9.msdn.com/Series/Azure-Active-Directory-Videos-Demos/How-to-Purchase-Azure-Active-Directory-Premium-Existing-Customer) ou [Como Comprar o Azure Active Directory Premium – Novos Clientes](https://channel9.msdn.com/Series/Azure-Active-Directory-Videos-Demos/How-to-Purchase-Azure-Active-Directory-Premium-New-Customers).  
@@ -32,10 +36,10 @@ Este tópico mostra como começar com o Azure Active Directory Premium que adqui
 > 
 > 
 
-## Passo 1: Inscrever-se no Active Directory Premium
+## <a name="step-1-sign-up-for-active-directory-premium"></a>Passo 1: Inscrever-se no Active Directory Premium
 Para se inscrever, consulte [Como comprar através do Licenciamento em Volume](http://www.microsoft.com/en-us/licensing/how-to-buy/how-to-buy.aspx).
 
-## Passo 2: Ativar o plano de licenciamento
+## <a name="step-2-activate-your-license-plan"></a>Passo 2: Ativar o plano de licenciamento
 Esta é a sua primeira compra de plano através do programa de Licenciamento em Volume para Empresas da Microsoft?
 Neste caso, receberá um e-mail de confirmação quando a compra for concluída.
 Esse e-mail será necessário para ativar o primeiro plano de licenciamento.
@@ -58,7 +62,7 @@ Quando tiver terminado, aparece a seguinte caixa de diálogo como confirmação 
 
 ![Confirmação][3]
 
-## Passo 3: Ativar o acesso ao Azure Active Directory
+## <a name="step-3-activate-your-azure-active-directory-access"></a>Passo 3: Ativar o acesso ao Azure Active Directory
 Se já tiver utilizado o Microsoft Azure, pode avançar para o [Passo 4](#step-4-assign-license-to-user-accounts). 
 
 Ser-lhe-á enviado um **e-mail de boas-vindas** quando forem aprovisionadas licenças ao diretório. O e-mail confirma que pode começar a gerir as licenças e funcionalidades do Azure Active Directory Premium ou do Enterprise Mobility Suite. 
@@ -92,7 +96,7 @@ Neste caso, o acesso ao Azure está limitado ao Azure Active Directory.
 
 ![Capacidades do Azure][8]
 
-## Passo 4: Atribuir licenças a contas de utilizador
+## <a name="step-4-assign-license-to-user-accounts"></a>Passo 4: Atribuir licenças a contas de utilizador
 Antes de começar a utilizar o plano que comprou, terá de atribuir manualmente licenças às contas de utilizador da sua organização para que possam utilizar as funcionalidades avançadas disponibilizadas pela conta Premium. Utilize os seguintes passos para atribuir licenças aos utilizadores para que possam utilizar as funcionalidades do Azure Active Directory Premium.
 
 **Para atribuir licenças aos utilizadores, execute os seguintes passos:**
@@ -106,18 +110,18 @@ Antes de começar a utilizar o plano que comprou, terá de atribuir manualmente 
    
     ![Atribuir licenças][11]
 
-### Restrições de licença
+### <a name="license-restrictions"></a>Restrições de licença
 Alguns planos de licença são subconjuntos ou conjuntos mais amplos de outros planos de licença. Normalmente, não é possível atribuir uma licença que já tenha sido atribuída ao utilizador. Se pretender atribuir um plano de licença que for um conjunto mais amplo, terá primeiro de remover o plano de licença do conjunto mais amplo.
 
-### Requisitos de licença
+### <a name="license-requirements"></a>Requisitos de licença
 Quando atribui uma licença a um utilizador, pode especificar uma localização principal de utilização nas propriedades da respetiva conta. Se não for especificada uma localização de utilização, a localização do inquilino é automaticamente atribuída ao utilizador.
 
 ![Localização do utilizador][12]
 
 A disponibilidade dos serviços e funcionalidades para um serviço em nuvem da Microsoft varia consoante o país ou a região. Um serviço, como o Voice over Internet Protocol (VoIP), poderá estar disponível num país ou numa região e não estar disponível noutro. Por motivos legais, as funcionalidades dentro de um serviço poderão ser restringidas em determinados países ou regiões. Para ver se um serviço ou funcionalidade está disponível com ou sem restrições, procure o seu país ou a sua região no site de restrições de licença de um serviço.
 
-## Passos seguintes
-* [Adicionar a imagem corporativa às páginas Iniciar Sessão e Painel de Acesso](active-directory-add-company-branding.md)
+## <a name="whats-next"></a>Passos seguintes
+* [Adicionar a imagem corporativa às suas páginas de Início de Sessão e Painel de Acesso](active-directory-add-company-branding.md)
 * [Ver os relatórios de acesso e utilização](active-directory-view-access-usage-reports.md)
 
 <!--Image references-->
@@ -136,6 +140,6 @@ A disponibilidade dos serviços e funcionalidades para um serviço em nuvem da M
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

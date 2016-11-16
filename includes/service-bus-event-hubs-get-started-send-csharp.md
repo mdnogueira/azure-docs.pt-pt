@@ -1,4 +1,4 @@
-## Enviar mensagens para os Event Hubs
+## <a name="send-messages-to-event-hubs"></a>Enviar mensagens para os Event Hubs
 Nesta secção, irá escrever uma aplicação de consola do Windows para enviar eventos para o seu Hub de Eventos.
 
 1. No Visual Studio, crie um novo projeto de Aplicação de Ambiente de Trabalho do Visual C# com o modelo de projeto **Aplicação de Consola**. Dê ao projeto o nome **Remetente**.
@@ -48,7 +48,7 @@ Nesta secção, irá escrever uma aplicação de consola do Windows para enviar 
     }
     ```
    
-    Este método envia continuamente eventos para o Event Hub com um atraso de 200 ms.
+    Este método envia continuamente eventos para o Event Hub com um atraso de 200 ms.
 7. Por fim, adicione as seguintes linhas ao método **Main**:
    
     ```
@@ -58,6 +58,8 @@ Nesta secção, irá escrever uma aplicação de consola do Windows para enviar 
     SendingRandomMessages();
     ```
 
-<!--HONumber=Sep16_HO3-->
+
+
+<!--HONumber=Nov16_HO2-->
 
 

@@ -1,12 +1,12 @@
 ---
-title: Executar qualquer aplicação do Windows em qualquer dispositivo com o Azure RemoteApp | Microsoft Docs
-description: Saiba como partilhar qualquer aplicação do Windows com os seus utilizadores através do Azure RemoteApp.
+title: "Executar qualquer aplicação do Windows em qualquer dispositivo com o Azure RemoteApp | Microsoft Docs"
+description: "Saiba como partilhar qualquer aplicação do Windows com os seus utilizadores através do Azure RemoteApp."
 services: remoteapp
-documentationcenter: ''
+documentationcenter: 
 author: lizap
 manager: mbaldwin
-editor: ''
-
+editor: 
+ms.assetid: 961d40ca-9673-4977-aa54-d6b22fc61ce1
 ms.service: remoteapp
 ms.devlang: na
 ms.topic: hero-article
@@ -14,9 +14,13 @@ ms.tgt_pltfrm: na
 ms.workload: compute
 ms.date: 08/15/2016
 ms.author: elizapo
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: d46e4de6f8e1491671d4d5dfb73bacecefa2b118
+
 
 ---
-# Executar qualquer aplicação do Windows em qualquer dispositivo com o Azure RemoteApp
+# <a name="run-any-windows-app-on-any-device-with-azure-remoteapp"></a>Executar qualquer aplicação do Windows em qualquer dispositivo com o Azure RemoteApp
 > [!IMPORTANT]
 > O Azure RemoteApp está a ser descontinuado. Leia o [anúncio](https://go.microsoft.com/fwlink/?linkid=821148) para obter detalhes.
 > 
@@ -40,7 +44,7 @@ Como o Access é uma base de dados e queremos que a base de dados seja útil, va
 > 
 > 
 
-## Criar uma coleção no RemoteApp
+## <a name="create-a-collection-in-remoteapp"></a>Criar uma coleção no RemoteApp
 Comece por criar uma coleção. A coleção funciona como um contentor para as aplicações e os utilizadores. Cada coleção baseia-se numa imagem – pode criar as suas ou utilizar uma fornecida com a sua subscrição. Para este tutorial, estamos a utilizar a imagem de avaliação do Office 2013 – ela contém a aplicação que pretendemos partilhar.
 
 1. No Portal do Azure, desloque-se para baixo na árvore de navegação da esquerda até ver RemoteApp. Abra essa página.
@@ -57,7 +61,7 @@ Esta ação inicia a criação da coleção, mas pode levar uma hora.
 
 Agora está pronto para adicionar os seus utilizadores.
 
-## Partilhar a aplicação com os utilizadores
+## <a name="share-the-app-with-users"></a>Partilhar a aplicação com os utilizadores
 Assim que a coleção foi criada com êxito, está na altura de publicar Access aos utilizadores e adicionar os utilizadores devem ter acesso a esta aplicação.
 
 Se se tiver afastado do nó de Azure RemoteApp enquanto estava a criar a coleção, comece por regressar ao mesmo a partir da home page do Azure.
@@ -75,7 +79,7 @@ Se se tiver afastado do nó de Azure RemoteApp enquanto estava a criar a coleç�
 1. Agora, está na altura de informar os utilizadores sobre estas novas aplicações e indicar-lhes como aceder às mesmas. Para fazer isto, envie aos utilizadores uma mensagem de email que os aponte para o URL de transferência do cliente do Ambiente de Trabalho Remoto.
    ![O URL de transferência de cliente para RemoteApp](./media/remoteapp-anyapp/ra-anyappurl.png)
 
-## Configurar o acesso ao Access
+## <a name="configure-access-to-access"></a>Configurar o acesso ao Access
 Algumas aplicações necessitam de uma configuração adicional depois implementá-las através do RemoteApp. Em particular, para o Access, vamos criar uma partilha de ficheiros no Azure à qual pode aceder qualquer utilizador. (Se não quiser fazê-lo, pode criar uma [coleção híbrida](remoteapp-create-hybrid-deployment.md) [em vez da nossa coleção na nuvem] que permita aos utilizadores aceder a ficheiros e informações na sua rede local.) Em seguida, temos de pedir aos nossos utilizadores para mapear uma unidade local nos respetivos computadores para o sistema de ficheiros de Azure.
 
 Na primeira parte tem que fazer como administrador. Em seguida, temos alguns passos que os utilizadores devem seguir.
@@ -83,9 +87,9 @@ Na primeira parte tem que fazer como administrador. Em seguida, temos alguns pas
 1. Comece por publicar a interface de linha de comandos (cmd.exe). No separador **Publicação** , selecione **cmd**, e, em seguida, clique em **Publicar > Publicar programa utilizando caminho**.
 2. Introduza o nome da aplicação e o caminho. Para o nosso objetivo, utilize "Explorador de Ficheiros" como nome e "% SYSTEMDRIVE%\windows\explorer.exe" como caminho.
    ![Publique o ficheiro cmd.exe.](./media/remoteapp-anyapp/ra-publishcmd.png)
-3. Agora tem de criar uma [Conta do Storage](../storage/storage-create-storage-account.md) de Azure. Chamámos à nossa "accessstorage", por isso, escolha um nome que faça sentido. (Citando incorretamente Highlander, só pode haver uma "accessstorage.") ![Nossa conta do Storage de Azure](./media/remoteapp-anyapp/ra-anyappazurestorage.png)
+3. Agora tem de criar uma [Conta do Storage](../storage/storage-create-storage-account.md) de Azure. Chamámos à nossa "accessstorage", por isso, escolha um nome que faça sentido. (Citando incorretamente Highlander, só pode haver uma "accessstorage.") ![A nossa conta de armazenamento do Azure](./media/remoteapp-anyapp/ra-anyappazurestorage.png)
 4. Agora, regresse ao seu dashboard para obter o caminho para o armazenamento (localização de ponto final). Voltará a utilizá-lo dentro de pouco, por isso, certifique-se de que o copie para algum lado.
-   ![O caminho da conta do Storage](./media/remoteapp-anyapp/ra-anyappstoragelocation.png)
+   ![O caminho da conta de armazenamento](./media/remoteapp-anyapp/ra-anyappstoragelocation.png)
 5. Em seguida, uma vez criada a conta do Storage, precisa da chave de acesso primária. Clique em **Gerir teclas de acesso** e depois copie a chave de acesso primária.
 6. Agora, configure o contexto da conta do Storage e crie uma nova partilha de ficheiros para Access. Execute os cmdlets seguintes numa janela elevada do Windows PowerShell:
    
@@ -113,7 +117,7 @@ Agora, é a vez do utilizador. Primeiro, faça com que os utilizadores instalem 
 Agora pode utilizar o Access em qualquer um dos seus dispositivos – basta certificar-se de que instala um cliente RemoteApp.
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 Agora que já aprendeu a criar uma coleção, experimente criar uma [coleção que utiliza o Office 365](remoteapp-tutorial-o365anywhere.md). Ou antes, pode criar uma [coleção híbrida ](remoteapp-create-hybrid-deployment.md)que pode aceder à sua rede local.
 
 <!--Image references-->
@@ -121,6 +125,6 @@ Agora que já aprendeu a criar uma coleção, experimente criar uma [coleção q
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

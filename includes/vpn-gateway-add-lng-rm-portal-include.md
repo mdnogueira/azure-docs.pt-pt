@@ -1,4 +1,4 @@
-1. No portal, navegue até **Novo** > **Redes** > **Gateway de rede local**.
+1. No portal, em **Todos os recursos**, clique em **+Adicionar**. Na caixa de pesquisa do painel **Tudo**, escreva **Gateway de rede Local** e, em seguida, clique para procurar. Isto irá devolver uma lista. Clique em **Gateway de rede Local** para abrir o painel e, em seguida, clique em **Criar** para abrir o painel **Criar gateway de rede local**.
    
     ![criar gateway de rede local](./media/vpn-gateway-add-lng-rm-portal-include/addlng250.png)
 2. No painel **Criar gateway de rede local**, especifique um **Nome** para o objeto do gateway de rede local.
@@ -9,6 +9,8 @@
 7. Para **Localização**, selecione a localização em que este objeto será criado. Poderá selecionar a mesma localização em que a VNet se encontra, mas não tem obrigatoriamente de o fazer.
 8. Clique em **Criar** para criar o gateway da rede local.
 
-<!--HONumber=Sep16_HO3-->
+
+
+<!--HONumber=Nov16_HO2-->
 
 

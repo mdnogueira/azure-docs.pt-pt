@@ -1,12 +1,12 @@
 ---
 title: Utilizar o Azure CDN | Microsoft Docs
-description: Este tópico mostra como ativar a Rede de Entrega de Conteúdos (CDN) para o Azure. O tutorial explica a criação de um novo perfil e ponto final da CDN.
+description: "Este tópico mostra como ativar a Rede de Entrega de Conteúdos (CDN) para o Azure. O tutorial explica a criação de um novo perfil e ponto final da CDN."
 services: cdn
-documentationcenter: ''
+documentationcenter: 
 author: camsoper
 manager: erikre
-editor: ''
-
+editor: 
+ms.assetid: 4ca51224-5423-419b-98cf-89860ef516d2
 ms.service: cdn
 ms.workload: media
 ms.tgt_pltfrm: na
@@ -14,9 +14,13 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 07/28/2016
 ms.author: casoper
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: e5568503541e773fa11bcde530da09befc51b2ad
+
 
 ---
-# Utilizar a CDN do Azure
+# <a name="using-azure-cdn"></a>Utilizar a CDN do Azure
 Este tópico explica a ativação da CDN do Azure através da criação de um novo perfil e ponto final da CDN.
 
 > [!IMPORTANT]
@@ -24,7 +28,7 @@ Este tópico explica a ativação da CDN do Azure através da criação de um no
 > 
 > 
 
-## Criar um novo perfil da CDN
+## <a name="create-a-new-cdn-profile"></a>Criar um novo perfil da CDN
 Um perfil da CDN é uma coleção de pontos finais da CDN.  Cada perfil contém um ou mais pontos finais da CDN.  Pode pretender utilizar vários perfis para organizar os seus pontos finais da CDN por domínio de Internet, aplicação Web ou alguns outros critérios.
 
 > [!NOTE]
@@ -36,7 +40,7 @@ Um perfil da CDN é uma coleção de pontos finais da CDN.  Cada perfil contém 
 
 [!INCLUDE [cdn-create-profile](../../includes/cdn-create-profile.md)]
 
-## Criar um novo ponto final da CDN
+## <a name="create-a-new-cdn-endpoint"></a>Criar um novo ponto final da CDN
 **Para criar um novo ponto final da CDN**
 
 1. No [Portal do Azure](https://portal.azure.com), navegue para o seu perfil da CDN.  É possível que o tenha afixado ao dashboard no passo anterior.  Se não o tiver feito, pode encontrá-lo ao clicar em **Procurar** e, em seguida, **Perfis da CDN** e clicar no perfil ao qual planeia adicionar o seu ponto final.
@@ -88,7 +92,7 @@ Um perfil da CDN é uma coleção de pontos finais da CDN.  Cada perfil contém 
     > 
     > 
 
-## Consultar Também
+## <a name="see-also"></a>Veja também
 * [Controlar o comportamento de colocação em cache de pedidos com cadeias de consulta](cdn-query-string.md)
 * [Como Mapear Conteúdo da CDN para um Domínio Personalizado](cdn-map-content-to-custom-domain.md)
 * [Pré-carregar recursos num ponto final da CDN do Azure](cdn-preload-endpoint.md)
@@ -102,6 +106,6 @@ Um perfil da CDN é uma coleção de pontos finais da CDN.  Cada perfil contém 
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

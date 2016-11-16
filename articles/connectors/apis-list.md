@@ -1,13 +1,13 @@
 ---
-title: Lista de conectores geridos pela Microsoft para utilização em aplicações lógicas do Microsoft Azure | Microsoft Docs
+title: "Lista de conectores geridos pela Microsoft para utilização do Microsoft Azure Logic Apps | Microsoft Docs"
 description: Obtenha uma lista completa dos conectores geridos pela Microsoft que pode utilizar para criar Logic Apps no App Service do Azure
 services: logic-apps
-documentationcenter: ''
+documentationcenter: 
 author: MSFTMAN
 manager: erikre
-editor: ''
+editor: 
 tags: connectors
-
+ms.assetid: f1f1fd50-b7f9-4d13-824a-39678619aa7a
 ms.service: logic-apps
 ms.workload: integration
 ms.tgt_pltfrm: na
@@ -15,18 +15,22 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 09/20/2016
 ms.author: deonhe
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: e9134998ba7fadeb6a5e36d37b77fc8d6892c2b8
+
 
 ---
-# Lista de conectores
+# <a name="list-of-connectors"></a>Lista de conectores
 Selecione um conector para saber como o utilizar para criar fluxos de trabalho rapidamente.
 
-## Conetores padrão
+## <a name="standard-connectors"></a>Conetores padrão
 | Conectores |  |  |  |
 | --- | --- | --- | --- |
 | [![Ícone da API][API/Web-Appicon]<br/>**API/Aplicação Web**][API/Web-Appdoc] |[![Ícone da API][Azure-Blobicon]<br/>**Azure Blob**][Azure-Blobdoc] |[![Ícone da API][Azure~Functionsicon]<br/>**Funções<br/>do Azure**][Azure~Functionsdoc] |[![Ícone da API][Boxicon]<br/>**Box**][Boxdoc] |
 | [![Ícone da API][CRM-Onlineicon]<br/>**CRM Online**][CRM-Onlinedoc] |[![API Icon][DB2icon]<br/>**DB2**][db2doc] |[![Ícone da API][Delayicon]<br/>**Atraso**][Delaydoc] |[![Ícone da API][Dropboxicon]<br/>**Dropbox**][Dropboxdoc] |
 | [![Ícone da API][Facebookicon]<br/>**Facebook**][Facebookdoc] |[![Ícone da API][FTPicon]<br/>**FTP**][FTPdoc] |[![Ícone da API][GitHubicon]<br/>**GitHub**][GitHubdoc] |[![Ícone da API][Google-Driveicon]<br/>**Google Drive**][Google-Drivedoc] |
-| ![Ícone de API][Google-Sheetsicon]<br/>**Folhas do Google** |![Ícone de API][Google-Tasksicon]<br/>**Tarefas do Google** |![Ícone de API][Google~Calendaricon]<br/>**Calendário<br/>do Google** |[![Ícone da API][HTTPicon]<br/>**HTTP**][HTTPdoc] |
+| ![Ícone de API][Google-Sheetsicon]<br/>**Folhas do Google** |![Ícone de API][Google-Tasksicon]<br/>**Tarefas do Google** |![Ícone de API][Google~Calendaricon]<br/>**Calendário do <br/>Google** |[![Ícone da API][HTTPicon]<br/>**HTTP**][HTTPdoc] |
 | [![Ícone da API][HTTP-Swaggericon]<br/>**HTTP Swagger**][HTTP-Swaggerdoc] |[![Ícone da API][HTTP~Requesticon]<br/>**HTTP<br/>Pedido**][HTTP~Requestdoc] |[![Ícone da API][HTTP~Responseicon]<br/>**HTTP<br/>Resposta**][HTTP~Responsedoc] |[![API Icon][Informixicon]<br/>**Informix**][informixdoc] |
 | ![Ícone de API][Instagramicon]<br/>**Instagram** |[![Ícone da API][MailChimpicon]<br/>**MailChimp**][MailChimpdoc] |![Ícone de API][Mandrillicon]<br/>**Mandrill** |[![Ícone da API][Nested~Logic-Appicon]<br/>**Agrupado<br/>Aplicação Lógica**][Nested~Logic-Appdoc] |
 | [![Ícone da API][Office-365~Outlookicon]<br/>**Office 365<br/>Outlook**][Office-365~Outlookdoc] |[![Ícone da API][Office-365~Usersicon]<br/>**Office 365<br/>Utilizadores**][Office-365~Usersdoc] |[![Ícone da API][Office-365~Videoicon]<br/>**Office 365<br/>Vídeo**][Office-365~Videodoc] |[![Ícone da API][OneDriveicon]<br/>**OneDrive**][OneDrivedoc] |
@@ -42,7 +46,7 @@ Selecione um conector para saber como o utilizar para criar fluxos de trabalho r
 > 
 > 
 
-## Conetores do Enterprise Integration Pack (EIP)
+## <a name="enterprise-integration-pack-eip-connectors"></a>Conetores do Enterprise Integration Pack (EIP)
 Utilize os conetores EIP para aplicações lógicas para cenários B2B que incluem EAI e EDI.  
 
 | Conetores EIP |  |  |  |
@@ -52,7 +56,7 @@ Utilize os conetores EIP para aplicações lógicas para cenários B2B que inclu
 | [![Ícone da API][x12icon]<br/>**EDIFACT</br>descodificar**][EDIFACTdecode] |[![Ícone da API][x12icon]<br/>**EDIFACT</br>codificar**][EDIFACTencode] | | |
 
 <!-- TODO: Add Functions, App Service, and Nested Workflow Icons -->
-### Os conectores podem ser acionadores
+### <a name="connectors-can-be-triggers"></a>Os conectores podem ser acionadores
 Vários conectores fornecem acionadores que podem notificar a sua aplicação quando ocorrem eventos específicos. Por exemplo, o conector FTP tem o acionador OnUpdatedFile. Pode compilar uma Aplicação lógica, PowerApp ou Fluxo que fica à escuta deste acionador e efetua uma ação sempre que este é acionado.
 
 Existem dois tipos de acionadores:  
@@ -60,13 +64,13 @@ Existem dois tipos de acionadores:
 * Acionadores de Consultas: estes acionadores consultam o serviço a uma frequência especificada para verificar se existem novos dados. Quando estão disponíveis novos dados, é executada uma nova instância da aplicação com a entrada desses dados. Para impedir que os mesmos dados sejam consumidos várias vezes, o acionador pode limpar os dados que foram lidos e transmitidos para a aplicação.
 * Acionadores Push: estes acionadores estão à escuta de dados num ponto final ou da ocorrência de um evento e, em seguida, acionam uma nova ocorrência da sua aplicação. O conector do Twitter é um exemplo desse tipo.
 
-### Os conectores podem ser ações
+### <a name="connectors-can-be-actions"></a>Os conectores podem ser ações
 Os conectores também podem ser utilizados como ações nas aplicações. As ações são úteis para procurar dados que podem ser utilizados na execução da aplicação. Por exemplo, pode precisar de procurar dados de clientes numa SQL Database durante o processamento de uma ordem. Alternativamente, pode ter de escrever, atualizar ou eliminar dados numa tabela de destino. Pode fazê-lo utilizando as ações fornecidas pelos conectores. Mapa de ações para operações que são definidas nos metadados Swagger.
 
-## Passos Seguintes
+## <a name="next-steps"></a>Passos Seguintes
 * [Compilar uma aplicação lógica agora](../app-service-logic/app-service-logic-create-a-logic-app.md)  
 * [Criar um conetor personalizado](../app-service-logic/app-service-logic-create-api-app.md)
-* [Monitorizar aplicações lógicas](../app-service-logic/app-service-logic-monitor-your-logic-apps.md)
+* [Monitorizar as aplicações lógicas](../app-service-logic/app-service-logic-monitor-your-logic-apps.md)
 
 <!--Connectors Documentation-->
 [azure-blobdoc]: ./connectors-create-api-azureblobstorage.md "Ligue-se ao blob do Azure para gerir ficheiros no contentor de blob."
@@ -196,6 +200,6 @@ Os conectores também podem ser utilizados como ações nas aplicações. As aç
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

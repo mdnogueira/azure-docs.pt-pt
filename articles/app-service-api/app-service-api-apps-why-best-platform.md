@@ -1,12 +1,12 @@
 ---
-title: Introdução às API Apps | Microsoft Docs
+title: "Introdução às API Apps | Microsoft Docs"
 description: Saiba como o App Service do Azure o pode ajudar a desenvolver, alojar e consumir APIs RESTful.
 services: app-service\api
 documentationcenter: .net
 author: tdykstra
 manager: wpickett
-editor: ''
-
+editor: 
+ms.assetid: 60049a16-8159-47aa-a34b-110be0d8dab6
 ms.service: app-service-api
 ms.workload: web
 ms.tgt_pltfrm: na
@@ -14,16 +14,20 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 08/23/2016
 ms.author: rachelap
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: eda73900ded4c587bacfa3b4d4e8465c1de5a5ed
+
 
 ---
-# Descrição geral de API Apps
+# <a name="api-apps-overview"></a>Descrição geral de API Apps
 As API Apps no App Service do Azure oferecem funcionalidades que tornam mais fácil desenvolver, alojar e consumir APIs na nuvem e no local. Com as API Apps obtém segurança de nível empresarial, controlo de acesso simples, conectividade híbrida, geração automática do SDK e integração otimizada com as [Logic Apps](../app-service-logic/app-service-logic-what-are-logic-apps.md).
 
 O [App Service do Azure](../app-service/app-service-value-prop-what-is.md) é uma plataforma completamente gerida para cenários Web, móveis e de integração. As API Apps é um dos quatro tipos de aplicação fornecidos pelo [App Service do Azure](../app-service/app-service-value-prop-what-is.md).
 
 ![Tipos de aplicação no App Service do Azure](./media/app-service-api-apps-why-best-platform/appservicesuite.png)
 
-## Porquê utilizar API Apps?
+## <a name="why-use-api-apps"></a>Porquê utilizar API Apps?
 Seguem-se algumas funcionalidades-chave das API Apps:
 
 * **Colocar a sua API existente como está** - não é necessário alterar qualquer um dos códigos na suas APIs existentes para tirar partido das API Apps – basta implementar o seu código numa aplicação API. A API pode utilizar qualquer linguagem ou arquitetura suportada pelo App Service, incluindo ASP.NET e c#, Java, PHP, Node.js e Python.
@@ -34,7 +38,7 @@ Seguem-se algumas funcionalidades-chave das API Apps:
 
 Além disso, uma aplicação API pode tirar partido das funcionalidades oferecidas pelas [Web Apps](../app-service-web/app-service-web-overview.md) e [Aplicações Móveis](../app-service-mobile/app-service-mobile-value-prop.md). Também se aplica a reversão: se utilizar uma aplicação Web ou aplicação móvel para alojar uma API, pode tirar partido das funcionalidades das API Apps, tais como, os metadados Swagger para geração de código do cliente e o CORS para acesso ao browser entre domínios. A única diferença entre os três tipos de aplicações (API, Web, móvel) é o nome e o ícone utilizado para as mesmos no Portal do Azure.
 
-## Qual é a diferença entre as API Apps e a API Management do Azure?
+## <a name="whats-the-difference-between-api-apps-and-azure-api-management"></a>Qual é a diferença entre as API Apps e a API Management do Azure?
 As API Apps e a [API Management do Azure](../api-management/api-management-key-concepts.md) são serviços complementares:
 
 * A API Management está relacionada com a gestão de APIs. Coloca um front-end de API Management numa API para monitorizar e limitar a utilização, manipular a entrada e saída, consolidar várias APIs num ponto final e assim sucessivamente. As APIs que estão a ser geridas podem ser alojadas em qualquer lugar.
@@ -46,7 +50,7 @@ Vejamos um diagrama que ilustra a API Management utilizada para APIs alojadas na
 
 Algumas funcionalidades da API Management e das API Apps tem funções semelhantes.  Por exemplo, ambas podem automatizar o suporte CORS. Quando utiliza os dois serviços em conjunto, teria de utilizar a API Management para CORS, uma vez que funciona como front-end para as suas API Apps. 
 
-## Introdução
+## <a name="getting-started"></a>Introdução
 Para começar a utilizar as API Apps ao implementar o código de exemplo para um, consulte o tutorial para qualquer arquitetura que preferir:
 
 * [ASP.NET](app-service-api-dotnet-get-started.md) 
@@ -55,6 +59,9 @@ Para começar a utilizar as API Apps ao implementar o código de exemplo para um
 
 Para colocar questões sobre API Apps, inicie um thread no [Fórum das API Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureAPIApps). 
 
-<!--HONumber=ago16_HO4-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

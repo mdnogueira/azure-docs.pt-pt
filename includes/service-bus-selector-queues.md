@@ -3,11 +3,14 @@
 > * [Java](../articles/service-bus-messaging/service-bus-java-how-to-use-queues.md)
 > * [Node.js](../articles/service-bus-messaging/service-bus-nodejs-how-to-use-queues.md)
 > * [PHP](../articles/service-bus-messaging/service-bus-php-how-to-use-queues.md)
-> * [Python](../articles/service-bus-messaging/service-bus-python-how-to-use-queues.md)
+> * [python](../articles/service-bus-messaging/service-bus-python-how-to-use-queues.md)
 > * [Ruby](../articles/service-bus-messaging/service-bus-ruby-how-to-use-queues.md)
+> * [REST](../articles/service-bus-messaging/service-bus-brokered-tutorial-rest.md)
 > 
 > 
 
-<!--HONumber=Sep16_HO3-->
+
+
+<!--HONumber=Nov16_HO2-->
 
 

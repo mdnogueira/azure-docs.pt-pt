@@ -1,8 +1,12 @@
-An Azure load balancer is a Layer-4 (TCP, UDP) load balancer. The load balancer provides high availability by distributing incoming traffic among healthy service instances in cloud services or virtual machines in a load balancer set. Azure Load Balancer can also present those services on multiple ports, multiple IP addresses, or both.
+Um balanceador de carga do Azure é um balanceador de carga de Camada 4 (TCP, UDP). O balanceador de carga fornece elevada disponibilidade, ao distribuir o tráfego de entrada entre instâncias de serviço com bom estado de funcionamento nos serviços cloud ou máquinas virtuais num conjunto de balanceador de carga. O Balanceador de Carga do Azure pode também apresentar esses serviços em várias portas, vários endereços IP ou ambos.
 
-You can configure a load balancer to:
+Pode configurar um balanceador de carga para:
 
-* Load balance incoming Internet traffic to virtual machines (VMs). We refer to a load balancer in this scenario as an [Internet-facing load balancer](../articles/load-balancer/load-balancer-internet-overview.md).
-* Load balance traffic between VMs in a virtual network (VNet), between VMs in cloud services, or between on-premises computers and VMs in a cross-premises virtual network. We refer to a load balancer in this scenario as an [internal load balancer (ILB)](../articles/load-balancer/load-balancer-internal-overview.md).
-* Forward external traffic to a specific VM instance.
+* Balancear a carga do tráfego de entrada da Internet para máquinas virtuais (VMs). Referimos um balanceador de carga neste cenário como um [Balanceador de carga com acesso à Internet](../articles/load-balancer/load-balancer-internet-overview.md).
+* Efetue o balanceamento de carga do tráfego entre VMs numa rede virtual (VNet), entre VMs nos serviços cloud ou entre computadores e VMs no local numa rede virtual entre locais. Referimos um balanceador de carga neste cenário como um [balanceador de carga interno (ILB)](../articles/load-balancer/load-balancer-internal-overview.md).
+* Reencaminhe tráfego externo para uma instância específica da VM.
+
+
+<!--HONumber=Nov16_HO2-->
+
 

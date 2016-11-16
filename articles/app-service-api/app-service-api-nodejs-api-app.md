@@ -1,12 +1,12 @@
 ---
-title: Aplicação API Node.js no App Service do Azure | Microsoft Docs
-description: Saiba como criar uma API RESTful Node.js e implementá-la numa aplicação API no App Service do Azure.
+title: "Aplicação API Node.js no Serviço de Aplicações do Azure | Microsoft Docs"
+description: "Saiba como criar uma API RESTful Node.js e implementá-la numa aplicação API no App Service do Azure."
 services: app-service\api
 documentationcenter: node
 author: bradygaster
 manager: wpickett
-editor: ''
-
+editor: 
+ms.assetid: a820e400-06af-4852-8627-12b3db4a8e70
 ms.service: app-service-api
 ms.workload: web
 ms.tgt_pltfrm: na
@@ -14,14 +14,18 @@ ms.devlang: node
 ms.topic: get-started-article
 ms.date: 05/26/2016
 ms.author: rachelap
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: e8a1ac3df5225fdcfe2717c2cf50bfc5b7cfda36
+
 
 ---
-# Criar uma API RESTful Node.js e implementá-la numa aplicação API no Azure
+# <a name="build-a-nodejs-restful-api-and-deploy-it-to-an-api-app-in-azure"></a>Criar uma API RESTful Node.js e implementá-la numa aplicação API no Azure
 [!INCLUDE [app-service-api-get-started-selector](../../includes/app-service-api-get-started-selector.md)]
 
 Este tutorial mostra como criar uma simples API [Node.js](http://nodejs.org) e implementá-la numa [aplicação API](app-service-api-apps-why-best-platform.md) no [App Service do Azure](../app-service/app-service-value-prop-what-is.md) utilizando o [Git](http://git-scm.com). Pode utilizar qualquer sistema operativo que execute Node.js e irá fazer todo o seu trabalho através de ferramentas de linha de comandos como cmd.exe ou bash.
 
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 1. Conta Microsoft Azure ([abrir uma conta gratuita aqui](https://azure.microsoft.com/pricing/free-trial/))
 2. [Node.js](http://nodejs.org) instalado (este exemplo pressupõe que tem a versão 4.2.2 do Node.js)
 3. [Git](https://git-scm.com/) instalado
@@ -29,7 +33,7 @@ Este tutorial mostra como criar uma simples API [Node.js](http://nodejs.org) e i
 
 Embora o App Service suporte várias formas de implementar o seu código numa aplicação API, este tutorial mostra o método Git e pressupõe que tem conhecimentos básicos para trabalhar com o Git. Para obter informações sobre outros métodos de implementação, consulte o artigo [Implementar a aplicação no App Service do Azure](../app-service-web/web-sites-deploy.md).
 
-## Obter o código de exemplo
+## <a name="get-the-sample-code"></a>Obter o código de exemplo
 1. Abra uma interface de linha de comandos que execute comandos Node.js e Git.
 2. Navegue para uma pasta que possa utilizar para um repositório local do Git e clone o [repositório GitHub que contém o código de exemplo](https://github.com/Azure-Samples/app-service-api-node-contact-list).
    
@@ -37,7 +41,7 @@ Embora o App Service suporte várias formas de implementar o seu código numa ap
    
     A API de amostra fornece dois pontos finais: um pedido Get para `/contacts` devolve uma lista de nomes e endereços de correio eletrónico no formato JSON, enquanto `/contacts/{id}` devolve apenas o contacto selecionado.
 
-## Estruturar (gerar automaticamente) o código Node.js com base nos metadados Swagger
+## <a name="scaffold-autogenerate-nodejs-code-based-on-swagger-metadata"></a>Estruturar (gerar automaticamente) o código Node.js com base nos metadados Swagger
 [Swagger](http://swagger.io/) é um formato de ficheiro de metadados que descreve uma API RESTful. O App Service do Azure possui [suporte incorporado para metadados Swagger](app-service-api-metadata.md). Esta secção do tutorial exemplifica o fluxo de trabalho de desenvolvimento de uma API na qual cria primeiro metadados Swagger e utiliza para estruturar (gerar automaticamente) o código do servidor para a API. 
 
 > [!NOTE]
@@ -45,14 +49,14 @@ Embora o App Service suporte várias formas de implementar o seu código numa ap
 > 
 > 
 
-### Instalar e executar o Swaggerize
+### <a name="install-and-execute-swaggerize"></a>Instalar e executar o Swaggerize
 1. Execute os seguintes comandos para instalar os módulos NPM **yo** e **generator-swaggerize** globalmente.
    
         npm install -g yo
         npm install -g generator-swaggerize
    
     O Swaggerize é uma ferramenta que gera o código do servidor para uma API descrita através de um ficheiro de metadados Swagger. O ficheiro Swagger que irá utilizar tem o nome *api.json* e está localizado na pasta *Iniciar* do repositório que clonou.
-2. Navegue para a pasta *Iniciar* pasta e, em seguida, execute o comando `yo swaggerize`. O Swaggerize irá fazer uma série de perguntas.  Para **o que chamar a este projeto**, introduza "contactlist", para **caminho para o documento swagger**, introduza "api.json" e para **Express, Hapi ou Restify**, introduza "express".
+2. Navegue para a pasta *Iniciar* pasta e, em seguida, execute o comando `yo swaggerize`. O Swaggerize irá fazer uma série de perguntas.  Em **o que chamar a este projeto**, introduza “ContactList”, em **caminho para o documento swagger**, introduza “api.json” e em **Express, Hapi ou Restify**, introduza “express”.
    
         yo swaggerize
    
@@ -63,8 +67,8 @@ Embora o App Service suporte várias formas de implementar o seu código numa ap
     O Swaggerize cria uma pasta de aplicação, estrutura processadores e ficheiros de configuração e gera um ficheiro **package.json**. O motor de vista express é utilizado para gerar a página de ajuda Swagger.  
 3. Se o comando `swaggerize` falha com um "token inesperado" ou um erro de "sequência de escape inválida", corrija a causa do erro editando o ficheiro *package.json* gerado. Na linha `regenerate` em `scripts`, altere a barra invertida que precede *api.json* para uma barra, para que a linha tenha um aspeto semelhante ao seguinte exemplo:
    
-        "regenerate": "yo swaggerize --only=handlers,models,tests --framework express --apiPath config/api.json"
-4. Navegue para a pasta que contém o código estruturado (neste caso, a subpasta *ContactList*).
+         "regenerate": "yo swaggerize --only=handlers,models,tests --framework express --apiPath config/api.json"
+4. Navegue até à pasta que contém o código estruturado (neste caso, a subpasta */start/ContactList*).
 5. Execute `npm install`.
    
         npm install
@@ -79,7 +83,7 @@ Embora o App Service suporte várias formas de implementar o seu código numa ap
    
     ![Instalação da IU do Swaggerize](media/app-service-api-nodejs-api-app/swaggerize-ui-install.png)
 
-### Personalizar o código estruturado
+### <a name="customize-the-scaffolded-code"></a>Personalizar o código estruturado
 1. Copie a pasta **lib** a partir da pasta **Iniciar** para a pasta **ContactList** criada pelo estruturador. 
 2. Substitua o código no ficheiro **handlers/contacts.js** pelo código seguinte. 
    
@@ -140,7 +144,7 @@ Embora o App Service suporte várias formas de implementar o seu código numa ap
         server.listen(port, function () { // fifth and final change
         });
 
-### Testar com a API em execução localmente
+### <a name="test-with-the-api-running-locally"></a>Testar com a API em execução localmente
 1. Ative o servidor utilizando o executável da linha de comandos Node.js. 
    
         node server.js
@@ -157,7 +161,7 @@ Embora o App Service suporte várias formas de implementar o seu código numa ap
    
     ![IU do Swagger](media/app-service-api-nodejs-api-app/swagger-ui.png)
 
-## <a id="createapiapp"></a> Criar uma nova Aplicação API
+## <a name="a-idcreateapiappa-create-a-new-api-app"></a><a id="createapiapp"></a> Criar uma nova Aplicação API
 Nesta secção irá utilizar o Portal do Azure para criar uma nova Aplicação API no Azure. Esta aplicação API representa os recursos de computação que o Azure irá fornecer para executar o código. Nas secções posteriores vai implementar o código na nova aplicação API.
 
 1. Navegue para o [Portal do Azure](https://portal.azure.com/). 
@@ -171,7 +175,7 @@ Nesta secção irá utilizar o Portal do Azure para criar uma nova Aplicação A
     Se introduzir um nome que outra pessoa já tenha utilizado, verá um ponto de exclamação vermelho à direita.
 4. No menu pendente **Grupo de Recursos**, clique em **Novo** e, em seguida, em **Novo nome do grupo de recursos** introduza "NodejsAPIAppGroup" ou outro nome se preferir. 
    
-    Um [grupo de recursos](../resource-group-overview.md) é uma coleção de recursos do Azure, tais como API Apps, bases de dados e VMs. Para este tutorial, é melhor criar um novo grupo de recursos porque torna mais fácil eliminar num único passo todos os recursos do Azure que criar para o tutorial.
+    Um [grupo de recursos](../azure-resource-manager/resource-group-overview.md) é uma coleção de recursos do Azure, tais como aplicações API, bases de dados e VMs. Para este tutorial, é melhor criar um novo grupo de recursos porque torna mais fácil eliminar num único passo todos os recursos do Azure que criar para o tutorial.
 5. Clique em **Plano do App Service/Localização** e, em seguida, clique em **Criar Novo**.
    
     ![Criar plano do App Service](./media/app-service-api-nodejs-api-app/newappserviceplan.png)
@@ -189,7 +193,7 @@ Nesta secção irá utilizar o Portal do Azure para criar uma nova Aplicação A
 9. No painel **Plano do App Service**, clique em **OK**.
 10. No painel **Aplicação API**, clique em **Criar**.
 
-## Configurar a nova aplicação API para a implementação do Git
+## <a name="set-up-your-new-api-app-for-git-deployment"></a>Configurar a nova aplicação API para a implementação do Git
 Irá implementar o código para a aplicação API ao emitir consolidações para um repositório do Git no App Service do Azure. Nesta secção do tutorial, vai criar crie as credenciais e o repositório do Git no Azure que irá utilizar para a implementação.  
 
 1. Depois de criada a aplicação API, clique em **Serviços de Aplicações > {a aplicação API}** a partir da home page do portal. 
@@ -217,7 +221,7 @@ Irá implementar o código para a aplicação API ao emitir consolidações para
 
 Agora que tem uma Aplicação API com um repositório de Git guardado como cópia de segurança, pode emitir o código para o repositório para implementar o código na aplicação API. 
 
-## Implementar o código API no Azure
+## <a name="deploy-your-api-code-to-azure"></a>Implementar o código API no Azure
 Nesta secção, vai criar um repositório de Git local que contém o código de servidor para a API e, em seguida, emitir o código desse repositório para o repositório no Azure que criou anteriormente.
 
 1. Copie a pasta `ContactList` para uma localização que pode utilizar para um novo repositório de Git local. Se realizou a primeira parte do tutorial, copie `ContactList` a partir da pasta `start`; caso contrário, copie `ContactList` a partir da pasta `end`.
@@ -252,7 +256,7 @@ Nesta secção, vai criar um repositório de Git local que contém o código de 
    
     Depois de concluída a implementação, o painel **Implementações** reflete a implementação com êxito das alterações de código para a sua aplicação API. 
 
-## Testar com a API em execução no Azure
+## <a name="test-with-the-api-running-in-azure"></a>Testar com a API em execução no Azure
 1. Copie o **URL** na secção **Princípios Básicos** do painel Aplicação API. 
    
     ![Implementação Concluída](media/app-service-api-nodejs-api-app/deployment-completed.png)
@@ -265,9 +269,12 @@ Nesta secção, vai criar um repositório de Git local que contém o código de 
 
 Agora que tem a distribuição contínua a funcionar, pode fazer alterações ao código e implementá-las no Azure, bastando emitir consolidações para o repositório de Git do Azure.
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 Neste momento, já criou com êxito uma aplicação API e implementou o código API do Node.js à mesma. O próximo tutorial mostra como [consumir API Apps a partir de clientes JavaScript, utilizando a CORS](app-service-api-cors-consume-javascript.md).
 
-<!--HONumber=Aug16_HO1-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

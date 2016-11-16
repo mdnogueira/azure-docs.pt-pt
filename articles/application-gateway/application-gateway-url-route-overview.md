@@ -1,90 +1,106 @@
 ---
-title: URL-based content routing overview | Microsoft Docs
-description: This page provides an overview of the Application Gateway URL-based content routing, UrlPathMap configuration and PathBasedRouting rule .
+title: "Descrição geral do encaminhamento de conteúdo baseado em URL | Microsoft Docs"
+description: "Esta página fornece uma descrição geral do encaminhamento de conteúdo baseado em URL do Gateway de Aplicação, da configuração UrlPathMap e da regra PathBasedRouting."
 documentationcenter: na
 services: application-gateway
 author: georgewallace
 manager: carmonm
 editor: tysonn
-
+ms.assetid: 4409159b-e22d-4c9a-a103-f5d32465d163
 ms.service: application-gateway
 ms.devlang: na
-ms.topic: article
+ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 09/16/2016
+ms.date: 10/25/2016
 ms.author: gwallace
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: ea30057b62bdf926d6e39c170c4ad32afb202aef
+
 
 ---
-# URL Path Based Routing overview
-URL Path Based Routing allows you to route traffic to back-end server pools based on URL Paths of the request. One of the scenarios is to route requests for different content types to different backend server pools.
-In the following example, Application Gateway is serving traffic for contoso.com from three back-end server pools for example: VideoServerPool, ImageServerPool, and DefaultServerPool.
+# <a name="url-path-based-routing-overview"></a>Descrição geral do Encaminhamento Baseado no Caminho do URL
+O Encaminhamento Baseado no Caminho do URL permite-lhe encaminhar o tráfego para agrupamentos de servidores de back-end com base nos Caminhos de URL. Um dos cenários consiste em encaminhar pedidos de diferentes tipos de conteúdo para diversos agrupamentos de servidores de back-end.
+No exemplo seguinte, o Gateway de Aplicação está a enviar tráfego para contoso.com a partir de três agrupamentos de servidores de back-end, como, por exemplo: VideoServerPool, ImageServerPool e DefaultServerPool.
 
 ![imageURLroute](./media/application-gateway-url-route-overview/figure1.png)
 
-Requests for http://contoso.com/video* are routed to VideoServerPool, and http://contoso.com/images* are routed to ImageServerPool. DefaultServerPool is selected if none of the path patterns match.
+Os pedidos enviados para http://contoso.com/video* são encaminhados para VideoServerPool, enquanto os pedidos para http://contoso.com/images* são encaminhados para ImageServerPool. É selecionado o DefaultServerPool se nenhum dos padrões de caminho corresponder.
 
-## UrlPathMap configuration element
-UrlPathMap element is used to specify Path patterns to back-end server pool mappings. The following code example is the snippet of urlPathMap element from template file.
+## <a name="urlpathmap-configuration-element"></a>Elemento de configuração UrlPathMap
+O elemento UrlPathMap é utilizado para especificar padrões de Caminho para mapeamentos de agrupamentos de servidores de back-end. O seguinte exemplo de código é o fragmento do elemento UrlPathMap do ficheiro de modelo.
 
-    "urlPathMaps": [
-    {
-    "name": "<urlPathMapName>",
-    "id": "/subscriptions/<subscriptionId>/../microsoft.network/applicationGateways/<gatewayName>/ urlPathMaps/<urlPathMapName>",
-    "properties": {
-        "defaultBackendAddressPool": {
-            "id": "/subscriptions/<subscriptionId>/../microsoft.network/applicationGateways/<gatewayName>/backendAddressPools/<poolName>"
-        },
-        "defaultBackendHttpSettings": {
-            "id": "/subscriptions/<subscriptionId>/../microsoft.network/applicationGateways/<gatewayName>/backendHttpSettingsList/<settingsName>"
-        },
-        "pathRules": [
-            {
-                "paths": [
-                    <pathPattern>
-                ],
-                "backendAddressPool": {
-                    "id": "/subscriptions/<subscriptionId>/../microsoft.network/applicationGateways/<gatewayName>/backendAddressPools/<poolName2>"
-                },
-                "backendHttpsettings": {
-                    "id": "/subscriptions/<subscriptionId>/../microsoft.network/applicationGateways/<gatewayName>/backendHttpsettingsList/<settingsName2>"
-                },
-
+```json
+"urlPathMaps": [
+{
+"name": "<urlPathMapName>",
+"id": "/subscriptions/<subscriptionId>/../microsoft.network/applicationGateways/<gatewayName>/ urlPathMaps/<urlPathMapName>",
+"properties": {
+    "defaultBackendAddressPool": {
+        "id": "/subscriptions/<subscriptionId>/../microsoft.network/applicationGateways/<gatewayName>/backendAddressPools/<poolName>"
+    },
+    "defaultBackendHttpSettings": {
+        "id": "/subscriptions/<subscriptionId>/../microsoft.network/applicationGateways/<gatewayName>/backendHttpSettingsList/<settingsName>"
+    },
+    "pathRules": [
+        {
+            "paths": [
+                <pathPattern>
+            ],
+            "backendAddressPool": {
+                "id": "/subscriptions/<subscriptionId>/../microsoft.network/applicationGateways/<gatewayName>/backendAddressPools/<poolName2>"
+            },
+            "backendHttpsettings": {
+                "id": "/subscriptions/<subscriptionId>/../microsoft.network/applicationGateways/<gatewayName>/backendHttpsettingsList/<settingsName2>"
             },
 
-        ],
+        },
 
-    }
-    }
+    ],
 
+}
+}
+]
+```
 
 > [!NOTE]
-> PathPattern: This setting is a list of path patterns to match. Each must start with / and the only place a "*" is allowed is at the end following a "/". The string fed to the path matcher does not include any text after the first? or #, and those chars are not allowed here. 
+> PathPattern: esta definição é uma lista de padrões de caminho para fazer correspondências. Cada um deles tem de começar com / e o único local onde "*" é permitido é no fim depois de "/". A cadeia introduzida na ferramenta de correspondência de caminhos não inclui texto depois do primeiro ? ou #, sendo que esses carateres não são aqui permitidos. 
 > 
 > 
 
-You can check out a [Resource Manager template using URL-based routing](https://azure.microsoft.com/documentation/templates/201-application-gateway-url-path-based-routing) for more information.
+Pode dar saída a um [modelo do Resource Manager através do encaminhamento baseado em URL](https://azure.microsoft.com/documentation/templates/201-application-gateway-url-path-based-routing) para obter mais informações.
 
-## PathBasedRouting rule
-RequestRoutingRule of type PathBasedRouting is used to bind a listener to a urlPathMap. All requests that are received for this listener are routed based on policy specified in urlPathMap.
-Snippet of PathBasedRouting rule:
+## <a name="pathbasedrouting-rule"></a>Regra PathBasedRouting
+A RequestRoutingRule do tipo PathBasedRouting é utilizada para vincular um serviço de escuta a um UrlPathMap. Todos os pedidos que são recebidos para este serviço de escuta são encaminhados com base na política especificada no urlPathMap.
+Fragmento da regra PathBasedRouting:
 
-    "requestRoutingRules": [
-      {
+```json
+"requestRoutingRules": [
+    {
 
-    "name": "<ruleName>",
-    "id": "/subscriptions/<subscriptionId>/../microsoft.network/applicationGateways/<gatewayName>/requestRoutingRules/<ruleName>",
-    "properties": {
-        "ruleType": "PathBasedRouting",
-        "httpListener": {
-            "id": "/subscriptions/<subscriptionId>/../microsoft.network/applicationGateways/<gatewayName>/httpListeners/<listenerName>"
-        },
-        "urlPathMap": {
-            "id": "/subscriptions/<subscriptionId>/../microsoft.network/applicationGateways/<gatewayName>/ urlPathMaps/<urlPathMapName>"
-        },
+"name": "<ruleName>",
+"id": "/subscriptions/<subscriptionId>/../microsoft.network/applicationGateways/<gatewayName>/requestRoutingRules/<ruleName>",
+"properties": {
+    "ruleType": "PathBasedRouting",
+    "httpListener": {
+        "id": "/subscriptions/<subscriptionId>/../microsoft.network/applicationGateways/<gatewayName>/httpListeners/<listenerName>"
+    },
+    "urlPathMap": {
+        "id": "/subscriptions/<subscriptionId>/../microsoft.network/applicationGateways/<gatewayName>/ urlPathMaps/<urlPathMapName>"
+    },
 
+}
     }
+]
+```
 
-## Next steps
-After learning about URL-based content routing, go to [create an application gateway using URL-based routing](application-gateway-create-url-route-portal.md) to create an application gateway with URL routing rules.
+## <a name="next-steps"></a>Passos seguintes
+Depois de saber mais sobre o encaminhamento de conteúdo baseado em URL, aceda a [Criar um gateway de aplicação com encaminhamento baseado em URL](application-gateway-create-url-route-portal.md) para criar um gateway de aplicação com regras de encaminhamento do URL.
+
+
+
+
+<!--HONumber=Nov16_HO2-->
+
 

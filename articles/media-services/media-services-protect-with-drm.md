@@ -1,12 +1,12 @@
 ---
-title: Utilizar a encriptação comum dinâmica com PlayReady e/ou Widevine | Microsoft Docs
-description: Os Media Services do Microsoft Azure permitem entregar MPEG-DASH, Transmissão em Fluxo Uniforme e transmissões em fluxo Http-Live-Streaming (HLS) protegidas com o Microsoft PlayReady DRM. Também permite entregar DASH encriptado com Widevine DRM Este tópico mostra como encriptar de forma dinâmica com PlayReady e Widevine DRM.
+title: "Utilizar a encriptação comum dinâmica com PlayReady e/ou Widevine | Microsoft Docs"
+description: "Os Media Services do Microsoft Azure permitem entregar MPEG-DASH, Transmissão em Fluxo Uniforme e transmissões em fluxo Http-Live-Streaming (HLS) protegidas com o Microsoft PlayReady DRM. Também permite entregar DASH encriptado com Widevine DRM Este tópico mostra como encriptar de forma dinâmica com PlayReady e Widevine DRM."
 services: media-services
-documentationcenter: ''
+documentationcenter: 
 author: juliako
 manager: erikre
-editor: ''
-
+editor: 
+ms.assetid: 548d1a12-e2cb-45fe-9307-4ec0320567a2
 ms.service: media-services
 ms.workload: media
 ms.tgt_pltfrm: na
@@ -14,9 +14,13 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 09/27/2016
 ms.author: juliako
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: 59c0b46015b3d112d17dd79a2a4bfd3b3165dfba
+
 
 ---
-# Utilizar a encriptação comum dinâmica com PlayReady e/ou Widevine
+# <a name="using-playready-andor-widevine-dynamic-common-encryption"></a>Utilizar a encriptação comum dinâmica com PlayReady e/ou Widevine
 > [!div class="op_single_selector"]
 > * [.NET](media-services-protect-with-drm.md)
 > * [Java](https://github.com/southworkscom/azure-sdk-for-media-services-java-samples)
@@ -41,10 +45,10 @@ Este tópico seria útil para os programadores que funcionam em aplicações que
 > 
 > 
 
-## Transferir exemplo
+## <a name="download-sample"></a>Transferir exemplo
 Pode transferir a amostra descrita neste artigo [aqui](https://github.com/Azure-Samples/media-services-dotnet-dynamic-encryption-with-drm).
 
-## Configurar a Encriptação Comum Dinâmica e os Serviços de Entrega de Licença DRM
+## <a name="configuring-dynamic-common-encryption-and-drm-license-delivery-services"></a>Configurar a Encriptação Comum Dinâmica e os Serviços de Entrega de Licença DRM
 A seguir são apresentados os passos gerais que precisa de realizar ao proteger os seus elementos com PlayReady, através do serviço de entrega de licença de Media Services e também da encriptação dinâmica.
 
 1. Crie um elemento e carregue ficheiros no elemento.
@@ -68,32 +72,32 @@ A imagem seguinte demonstra o fluxo de trabalho descrito acima. Aqui, o token é
 
 O resto deste tópico fornece explicações detalhadas, exemplos de códigos e ligações para tópicos que mostram como atingir as tarefas descritas acima.
 
-## Limitações atuais
+## <a name="current-limitations"></a>Limitações atuais
 Se adicionar ou atualizar uma política de entrega de elemento, tem de eliminar o localizador associado (se aplicável) e criar um novo localizador.
 
 Limitação ao encriptar com Widevine com os Media Services do Azure: atualmente, não são suportados várias chaves de conteúdo.
 
-## Criar um elemento e carregar ficheiros no elemento.
+## <a name="create-an-asset-and-upload-files-into-the-asset"></a>Criar um elemento e carregar ficheiros no elemento.
 Para poder gerir, codificar e transmitir em fluxo os seus vídeos, primeiro tem de carregar o conteúdo para os Media Services do Microsoft Azure. Assim que seja carregado, o seu conteúdo é armazenado em segurança na nuvem para processamento adicional e a transmissão em fluxo.
 
 Para obter informações detalhadas, consulte [Carregar Ficheiros para uma conta de Media Services](media-services-dotnet-upload-files.md).
 
-## Codificar o elemento que contém o ficheiro para o MP4 de velocidade de transmissão adaptável definido
+## <a name="encode-the-asset-containing-the-file-to-the-adaptive-bitrate-mp4-set"></a>Codificar o elemento que contém o ficheiro para o MP4 de velocidade de transmissão adaptável definido
 Com a encriptação dinâmica, apenas tem de criar um elemento que contenha um conjunto de ficheiros MP4 com velocidade de transmissão múltipla ou ficheiros de origem de Transmissão em Fluxo Uniforme de múltipla transmissão. Em seguida, com base no formato especificado no manifesto e pedido de fragmento, o servidor de Transmissão em Fluxo a Pedido irá garantir que recebe a transmissão em fluxo no protocolo que escolheu. Como resultado, só tem de armazenar e pagar pelos ficheiros num único formato de armazenamento e os Media Services irão compilar e disponibilizar a resposta adequada com base nos pedidos de um cliente. Para obter mais informações, consulte o tópico [Descrição Geral de Empacotamento Dinâmico](media-services-dynamic-packaging-overview.md).
 
 Para obter instruções sobre como codificar, consulte [Como codificar um elemento utilizando um Codificador de Multimédia Standard](media-services-dotnet-encode-with-media-encoder-standard.md).
 
-## <a id="create_contentkey"></a>Criar uma chave de conteúdo e associe-a com elemento codificado
+## <a name="a-idcreatecontentkeyacreate-a-content-key-and-associate-it-with-the-encoded-asset"></a><a id="create_contentkey"></a>Criar uma chave de conteúdo e associe-a com elemento codificado
 Nos Media Services, a chave de conteúdo contém a chave na qual pretende encriptar um elemento.
 
 Para obter informações detalhadas, consulte [Criar chave de conteúdo](media-services-dotnet-create-contentkey.md).
 
-## <a id="configure_key_auth_policy"></a>Configurar a política de autorização da chave de conteúdo
+## <a name="a-idconfigurekeyauthpolicyaconfigure-the-content-keys-authorization-policy"></a><a id="configure_key_auth_policy"></a>Configure a política de autorização da chave de conteúdo
 Os Media Services suportam várias formas de autenticar utilizadores que efetuam pedidos de chave. A política de autorização da chave de conteúdo tem de ser configurada por si e cumprida pelo cliente (leitor) para que a chave seja entregue ao cliente. A política de autorização da chave de conteúdo pode ter uma ou mais restrições de autorização: aberto ou token restrito.
 
 Para obter informações detalhadas, consulte [Configurar a Política de Autorização da Chave de Conteúdo](media-services-dotnet-configure-content-key-auth-policy.md#playready-dynamic-encryption).
 
-## <a id="configure_asset_delivery_policy"></a>Configurar a política de entrega de elemento
+## <a name="a-idconfigureassetdeliverypolicyaconfigure-asset-delivery-policy"></a><a id="configure_asset_delivery_policy"></a>Configurar a política de entrega de elemento
 Configure a política de entrega para o seu elemento. Alguns dos aspetos da configuração de política de entrega de elementos incluem:
 
 * O URL de aquisição da licença da DRM. 
@@ -102,7 +106,7 @@ Configure a política de entrega para o seu elemento. Alguns dos aspetos da conf
 
 Para obter informações detalhadas, consulte [Configurar a política de entrega de elemento](media-services-rest-configure-asset-delivery-policy.md).
 
-## <a id="create_locator"></a>Criar um localizador de transmissão em fluxo OnDemand para obter um URL de transmissão em fluxo
+## <a name="a-idcreatelocatoracreate-an-ondemand-streaming-locator-in-order-to-get-a-streaming-url"></a><a id="create_locator"></a>Criar um localizador de transmissão em fluxo OnDemand para obter um URL de transmissão em fluxo
 Terá de fornecer aos seus utilizadores o URL de transmissão em fluxo Uniforme, DASH ou HLS.
 
 > [!NOTE]
@@ -112,7 +116,7 @@ Terá de fornecer aos seus utilizadores o URL de transmissão em fluxo Uniforme,
 
 Para obter instruções sobre como publicar um elemento e compilar um URL de transmissão em fluxo, consulte [Compilar um URL de transmissão em fluxo](media-services-deliver-streaming-content.md).
 
-## Obter um token de teste
+## <a name="get-a-test-token"></a>Obter um token de teste
 Obtenha um token de teste baseado na restrição de token que foi utilizada para a política de autorização de chave.
 
     // Deserializes a string containing an Xml representation of a TokenRestrictionTemplate
@@ -129,7 +133,7 @@ Obtenha um token de teste baseado na restrição de token que foi utilizada para
 
 Pode utilizar o [Leitor AMS](http://amsplayer.azurewebsites.net/azuremediaplayer.html) para testar a sua transmissão em fluxo.
 
-## <a id="example"></a>Exemplo
+## <a name="a-idexampleaexample"></a><a id="example"></a>Exemplo
 O exemplo seguinte demonstra a funcionalidade que foi introduzida no SDK de Media Services do Azure para .Net-versão 3.5.2 (especificamente, a capacidade de definir um modelo de licença Widevine e pedir uma licença Widevine a partir dos Media Services do Azure). O seguinte comando do pacote Nuget foi utilizado para instalar o pacote:
 
     PM> Install-Package windowsazure.mediaservices -Version 3.5.2
@@ -306,7 +310,7 @@ O exemplo seguinte demonstra a funcionalidade que foi introduzida no SDK de Medi
 
                     ITask encodeTask = job.Tasks.AddNew("Encoding", latestMediaProcessor, encodingPreset, TaskOptions.None);
                     encodeTask.InputAssets.Add(inputAsset);
-                    encodeTask.OutputAssets.AddNew(String.Format("{0} as {1}", inputAsset.Name, encodingPreset),    AssetCreationOptions.StorageEncrypted);
+                    encodeTask.OutputAssets.AddNew(String.Format("{0} as {1}", inputAsset.Name, encodingPreset),     AssetCreationOptions.StorageEncrypted);
 
                     job.StateChanged += new EventHandler<JobStateChangedEventArgs>(JobStateChanged);
                     job.Submit();
@@ -600,21 +604,24 @@ O exemplo seguinte demonstra a funcionalidade que foi introduzida no SDK de Medi
         }
 
 
-## Passo seguinte
+## <a name="next-step"></a>Passo seguinte
 Rever os percursos de aprendizagem dos Serviços de Multimédia
 
 [!INCLUDE [media-services-learning-paths-include](../../includes/media-services-learning-paths-include.md)]
 
-## Enviar comentários
+## <a name="provide-feedback"></a>Enviar comentários
 [!INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-## Consultar também
+## <a name="see-also"></a>Consultar também
 [CENC com Múltipla DRM e Controlo de Acesso](media-services-cenc-with-multidrm-access-control.md)
 
 [Configurar empacotamento Widevine com AMS](http://mingfeiy.com/how-to-configure-widevine-packaging-with-azure-media-services)
 
-[Anunciar os serviços de entrega de licença Widevine da Google nos Media Services do Azure](https://azure.microsoft.com/blog/announcing-general-availability-of-google-widevine-license-services/)
+[Anunciar os serviços de entrega de licença Widevine da Google nos Serviços de Multimédia do Azure](https://azure.microsoft.com/blog/announcing-general-availability-of-google-widevine-license-services/)
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

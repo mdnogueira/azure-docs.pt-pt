@@ -1,22 +1,26 @@
 ---
-title: Introdução à distribuição de conteúdo a pedido com o .NET | Microsoft Docs
-description: Este tutorial vai ajudá-lo a implementar uma aplicação de distribuição de conteúdos a pedido com os Media Services do Azure utilizando o .NET.
+title: "Introdução à entrega de conteúdo a pedido com o .NET | Microsoft Docs"
+description: "Este tutorial vai ajudá-lo a implementar uma aplicação de distribuição de conteúdos a pedido com os Media Services do Azure utilizando o .NET."
 services: media-services
-documentationcenter: ''
+documentationcenter: 
 author: Juliako
 manager: erikre
-editor: ''
-
+editor: 
+ms.assetid: 388b8928-9aa9-46b1-b60a-a918da75bd7b
 ms.service: media-services
 ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: hero-article
-ms.date: 08/17/2016
+ms.date: 10/17/2016
 ms.author: juliako
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: 80606d9fd08a4d5b5845af8ed43fdcef050e47e9
+
 
 ---
-# Introdução à distribuição de conteúdos a pedido utilizando o SDK do .NET
+# <a name="get-started-with-delivering-content-on-demand-using-net-sdk"></a>Introdução à distribuição de conteúdos a pedido utilizando o SDK do .NET
 [!INCLUDE [media-services-selector-get-started](../../includes/media-services-selector-get-started.md)]
 
 > [!NOTE]
@@ -24,16 +28,16 @@ ms.author: juliako
 > 
 > 
 
-## Descrição geral
+## <a name="overview"></a>Descrição geral
 Este tutorial vai ajudá-lo a implementar uma aplicação de distribuição de conteúdos de Vídeo a Pedido (VoD) utilizando o SDK do .NET dos Media Services do Azure (AMS).
 
 O tutorial apresenta o fluxo de trabalho básico dos Media Services, os objetos de programação mais comuns e as tarefas necessárias para o desenvolvimento dos Media Services. No final do tutorial, será capaz de transmitir ou transferir progressivamente um ficheiro de multimédia de exemplo que carregou, codificou e transferiu.
 
-## O que irá aprender
+## <a name="what-youll-learn"></a>O que irá aprender
 O tutorial mostra como realizar as seguintes tarefas:
 
-1. Criar uma conta dos Media Services (utilizando o Portal Clássico do Azure).
-2. Configurar o ponto final de transmissão em fluxo (utilizando o portal).
+1. Criar uma conta dos Serviços de Multimédia (com o Portal do Azure).
+2. Configurar o ponto final de transmissão em fluxo (com o Portal do Azure).
 3. Criar e configurar um projeto de Visual Studio.
 4. Ligar à conta de Media Services.
 5. Criar um novo elemento e carregar um ficheiro de vídeo.
@@ -41,74 +45,79 @@ O tutorial mostra como realizar as seguintes tarefas:
 7. Publicar o elemento e obter os URLs para transmissão em fluxo e transferência progressiva.
 8. Testar com a reprodução do seu conteúdo.
 
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 O seguinte é necessário para concluir o tutorial.
 
 * Para concluir este tutorial, precisa de uma conta do Azure. 
   
-    Se não tiver uma conta, pode criar uma de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](/pricing/free-trial/?WT.mc_id=A261C142F). Recebe créditos que podem ser utilizados para experimentar os serviços pagos do Azure. Mesmo depois de gastar todos os créditos, pode manter a conta e utilizar os serviços e recursos gratuitos do Azure, tal como a funcionalidade Web Apps no App Service do Azure.
+    Se não tiver uma conta, pode criar uma conta de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](/pricing/free-trial/?WT.mc_id=A261C142F). Recebe créditos que podem ser utilizados para experimentar os serviços pagos do Azure. Mesmo depois de gastar todos os créditos, pode manter a conta e utilizar os serviços e recursos gratuitos do Azure, tal como a funcionalidade Web Apps no App Service do Azure.
 * Sistemas operativos: Windows 8 ou posterior, Windows 2008 R2, Windows 7.
 * .NET framework 4.0 ou posterior
 * Visual Studio 2010 SP1 (Professional, Premium, Ultimate ou Express) ou versões posteriores.
 
-## Transferir exemplo
+## <a name="download-sample"></a>Transferir exemplo
 Obtenha e execute um exemplo [aqui](https://azure.microsoft.com/documentation/samples/media-services-dotnet-on-demand-encoding-with-media-encoder-standard/).
 
-## Criar uma conta de Media Services utilizando o portal
-1. No Portal Clássico do Azure, clique em **Novo**, **Serviço de Multimédia** e, depois, **Criação Rápida**.
+## <a name="create-an-azure-media-services-account-using-the-azure-portal"></a>Criar uma conta dos Serviços de Multimédia do Azure com o Portal do Azure
+Os passos nesta secção explicam como criar uma conta dos AMS.
+
+1. Inicie sessão no [Portal do Azure](https://portal.azure.com/).
+2. Clique em **+Novo** > **Multimédia + CDN** > **Serviços de Multimédia**.
    
-    ![Criação Rápida dos Media Services](./media/media-services-dotnet-get-started/wams-QuickCreate.png)
-2. Em **NOME**, introduza o nome da nova conta. Um nome de conta dos Media Services é composto por números ou letras minúsculas sem espaços, com 3-24 carateres de comprimento.
-3. Em **REGIÃO**, selecione a região geográfica que será utilizada para armazenar os registos de metadados da conta dos Media Services. Apenas as regiões dos Media Services disponíveis são apresentadas na lista pendente.
-4. Em **CONTA DO STORAGE**, selecione uma conta do Storage para fornecer o Blob Storage do conteúdo de multimédia da conta de Media Services. Pode selecionar uma conta do Storage existente na mesma região geográfica da conta dos Media Services ou pode criar uma nova conta do Storage. É criada uma nova conta do Storage na mesma região.
-5. Se tiver criado uma nova conta do Storage, em **NOVO NOME DA CONTA DO STORAGE**, introduza um nome para a conta do Storage. As regras para os nomes da conta do Storage são iguais às das contas dos Media Services.
-6. Clique em **Criação Rápida** na parte inferior do formulário.
+    ![Criar Media Services](./media/media-services-portal-vod-get-started/media-services-new1.png)
+3. Em **CRIAR CONTA DE MEDIA SERVICES**, Introduza os valores necessários.
+   
+    ![Criar Media Services](./media/media-services-portal-vod-get-started/media-services-new3.png)
+   
+   1. Em **Nome da Conta**, introduza o nome da nova conta de AMS. Um nome de conta dos Media Services é composto por números ou letras minúsculas sem espaços, com 3 a 24 carateres de comprimento.
+   2. Na subscrição, selecione entre as diferentes subscrições do Azure disponíveis para si.
+   3. Em **Grupo de Recursos**, selecione o recurso novo ou existente.  Um grupo de recursos é uma coleção de recursos que partilham o ciclo de vida, as permissões e as políticas. Sabia mais [aqui](../azure-resource-manager/resource-group-overview.md#resource-groups).
+   4. Em **Localização**, selecione a região geográfica que é utilizada para armazenar os registos de multimédia e metadados da conta dos Media Services. Esta região é utilizada para processar e transmitir em fluxo os seus conteúdos multimédia. Apenas as regiões dos Media Services disponíveis são apresentadas na caixa de lista pendente. 
+   5. Em **Conta do Storage**, selecione uma conta do Storage para fornecer o Blob Storage do conteúdo de multimédia da conta de Media Services. Pode selecionar uma conta de armazenamento existente na mesma região geográfica da conta dos Serviços de Multimédia ou pode criar uma conta de armazenamento. É criada uma nova conta do Storage na mesma região. As regras para os nomes da conta do Storage são iguais às das contas dos Media Services.
+      
+       Saiba mais sobre armazenamento [aqui](../storage/storage-introduction.md).
+   6. Selecione **Afixar no dashboard** para ver o progresso da implementação da conta.
+4. Clique em **Criar** na parte inferior do formulário.
+   
+    Após criar a conta com êxito, o estado é alterado para **Em Execução**. 
+   
+    ![Definições dos Media Services](./media/media-services-portal-vod-get-started/media-services-settings.png)
+   
+    Para gerir a sua conta de AMS (por exemplo, carregar vídeos, codificar elementos, monitorizar o progresso da tarefa) utilize a janela **Definições**.
 
-Pode monitorizar o estado do processo na área de mensagens na parte inferior da janela.
+## <a name="configure-streaming-endpoints-using-the-azure-portal"></a>Configurar os pontos finais de transmissão em fluxo com o Portal do Azure
+Ao trabalhar com os Azure Media Services, uma das situações mais comuns é a entrega de vídeo através de transmissão em fluxo de velocidade de transmissão adaptável para os seus clientes. Os Media Services suportam as seguintes tecnologias de transmissão em fluxo de velocidade de transmissão adaptável: HTTP Live Streaming (HLS), transmissão em Fluxo Uniforme, MPEG DASH e HDS (para detentores de licença do Adobe PrimeTime/acesso apenas).
 
-Após a criação com êxito da sua conta, o estado é alterado para **Ativo**.
-
-Na parte inferior da página, o botão **GERIR CHAVES** aparece. Ao clicar neste botão, é apresentada uma caixa de diálogo com o nome da conta dos Media Services e as chaves primárias e secundárias. Serão necessários o nome da conta e as informações da chave primária para aceder através de programação à conta dos Media Services.
-
-![Página Media Services](./media/media-services-dotnet-get-started/wams-mediaservices-page.png)
-
-Por predefinição, quando faz duplo clique no nome da conta, a página **Início Rápido** é apresentada. Esta página permite-lhe realizar algumas tarefas de gestão que também estão disponíveis noutras páginas do portal. Por exemplo, pode carregar um ficheiro de vídeo a partir desta página ou fazê-lo a partir da página CONTEÚDO.
-
-## Configurar o ponto final de transmissão em fluxo utilizando o portal
-Ao trabalhar com os Media Services do Azure, uma das situações mais comuns é a distribuição de transmissão em fluxo de velocidade de transmissão adaptável para os seus clientes. Com a transmissão em fluxo de velocidade de transmissão adaptável, o cliente pode mudar para uma velocidade de transmissão superior ou inferior enquanto o vídeo é apresentado, consoante a largura de banda de rede atual, a utilização da CPU, entre outros fatores. Os Media Services suportam as seguintes tecnologias de transmissão em fluxo de velocidade de transmissão adaptável: HTTP Live Streaming (HLS), transmissão em Fluxo Uniforme, MPEG DASH e HDS (para detentores de licença do Adobe PrimeTime/acesso apenas).
-
-Os Media Services fornecem um empacotamento dinâmico, permitindo a distribuição do seu conteúdo codificado por Transmissão em Fluxo Uniforme ou MP4 de velocidade de transmissão adaptável em formatos de transmissão em fluxo suportados pelos Media Services (MPEG DASH, HLS, Transmissão em Fluxo Uniforme, HDS) sem ter de voltar a criar o pacote para estes formatos de transmissão em fluxo.
+Os Media Services fornecem um empacotamento dinâmico, permitindo a entrega dos seus conteúdos codificados em MP4 de velocidade de transmissão adaptável em formatos de transmissão em fluxo suportados pelos Media Services (MPEG DASH, HLS, Transmissão em Fluxo Uniforme, HDS) just-in-time, sem ter de voltar a armazenar versões pré-empacotadas de cada um destes formatos de transmissão em fluxo.
 
 Para tirar partido do empacotamento dinâmico, tem de fazer o seguinte:
 
-* Codificar ou transcodificar o ficheiro (origem) mezanino para um conjunto de ficheiros MP4 de velocidade de transmissão adaptável ou ficheiros de Transmissão em Fluxo Uniforme de velocidade de transmissão adaptável (os passos da codificação são demonstrados mais à frente neste tutorial).
-* Obter, pelo menos, uma unidade de transmissão em fluxo para o **ponto final de transmissão em fluxo** a partir do qual planeia distribuir o conteúdo.
+* Codificar o ficheiro (origem) mezanino para um conjunto de ficheiros MP4 de velocidade de transmissão adaptável (os passos da codificação são demonstrados mais à frente neste tutorial).  
+* Criar, pelo menos, uma unidade de transmissão em fluxo para o *ponto final de transmissão em fluxo* a partir do qual planeia entregar o conteúdo. Os passos abaixo mostram como alterar o número de unidades de transmissão em fluxo.
 
-Com o empacotamento dinâmico, só tem de armazenar e pagar pelos ficheiros num único formato de armazenamento, os Media Services irão compilar e disponibilizar a resposta adequada com base nos pedidos de um cliente.
+Com o empacotamento dinâmico, só tem de armazenar e pagar os ficheiros num único formato de armazenamento, e os Media Services compilam e disponibilizam a resposta adequada com base nos pedidos de um cliente.
 
-Para alterar o número de unidades reservadas de transmissão em fluxo, faça o seguinte:
+Para criar e alterar o número de unidades reservadas para transmissão em fluxo, faça o seguinte:
 
-1. No [portal](https://manage.windowsazure.com/), clique em **Media Services**. Em seguida, clique no nome do serviço de multimédia.
-2. Selecione a página PONTOS FINAIS DE TRANSMISSÃO EM FLUXO. Em seguida, clique no ponto final de transmissão em fluxo que pretende modificar.
-3. Para especificar o número de unidades de transmissão em fluxo, clique no separador ESCALA e, em seguida, mova o **controlo de deslize de capacidade de reserva**.
+1. Na janela **Definições**, clique em **Pontos finais de transmissão em fluxo**. 
+2. Clique no ponto final de transmissão em fluxo predefinido. 
    
-    ![Página Escala](./media/media-services-dotnet-get-started/media-services-origin-scale.png)
-4. Prima **GUARDAR** para guardar as alterações.
+    A janela **DETALHES DO PONTO FINAL DE TRANSMISSÃO EM FLUXO PREDEFINIDO** é apresentada.
+3. Para especificar o número de unidades de transmissão em fluxo, deslize o controlo de deslize **Unidades de transmissão em fluxo**.
+   
+    ![Unidades de transmissão em fluxo](./media/media-services-portal-vod-get-started/media-services-streaming-units.png)
+4. Clique no botão **Guardar** para guardar as alterações.
+   
+   > [!NOTE]
+   > A alocação de quaisquer novas unidades pode demorar até 20 minutos a concluir.
+   > 
+   > 
 
-A alocação de quaisquer novas unidades demora cerca de 20 minutos a concluir.
-
-> [!NOTE]
-> Atualmente, a passagem de um valor positivo para nenhum das unidades de transmissão em fluxo pode desativar a transmissão em fluxo até perto de uma hora.
-> 
-> O maior número de unidades especificadas para o período de 24 horas é utilizado para calcular o custo. Para obter informações sobre os detalhes de preços, consulte [Detalhes de preços dos Media Services](http://go.microsoft.com/fwlink/?LinkId=275107).
-> 
-> 
-
-## Criar e configurar um projeto de Visual Studio
+## <a name="create-and-configure-a-visual-studio-project"></a>Criar e configurar um projeto de Visual Studio
 1. Crie uma nova Aplicação de Consola C# no Visual Studio 2013, Visual Studio 2012 ou Visual Studio 2010 SP1. Introduza o **Nome**, **Localização** e **Nome da solução** e, em seguida, clique em **OK**.
-2. Utilize o pacote Nuget [windowsazure.mediaservices.extensions](https://www.nuget.org/packages/windowsazure.mediaservices.extensions) para o instalar **Extensões do SDK do .NET dos Media Services do Azure**.  As Extensões do SDK do .NET dos Media Services são um conjunto de métodos de extensão e funções de programa auxiliar que irão simplificar o seu código e facilitar o desenvolvimento com os Media Services. Ao instalar este pacote, também é instalado o **SDK do .NET dos Media Services** e são adicionadas todas as outras dependências necessárias.
+2. Utilize o pacote NuGet [windowsazure.mediaservices.extensions](https://www.nuget.org/packages/windowsazure.mediaservices.extensions) para instalar **Extensões do SDK do .NET dos Serviços de Multimédia do Azure**.  As Extensões do SDK do .NET dos Media Services são um conjunto de métodos de extensão e funções de programa auxiliar que irão simplificar o seu código e facilitar o desenvolvimento com os Media Services. Ao instalar este pacote, também é instalado o **SDK do .NET dos Media Services** e são adicionadas todas as outras dependências necessárias.
 3. Adicione uma referência à assemblagem System.Configuration. Esta assemblagem contém a classe **System.Configuration.ConfigurationManager** que é utilizada para aceder aos ficheiros de configuração, por exemplo, App.config.
-4. Abra o ficheiro App.config (adicione o ficheiro ao seu projeto caso não tenha sido adicionado por predefinição) e adicione uma secção *appSettings* ao ficheiro. Configure os valores do nome de conta e a chave de conta da sua conta de Media Services do Azure, conforme mostrado no exemplo seguinte. Para obter o nome da conta e informações da chave, abra o Portal Clássico do Azure, selecione a sua conta de Media Services e, em seguida, clique no botão **GERIR CHAVES**.
+4. Abra o ficheiro App.config (adicione o ficheiro ao seu projeto caso não tenha sido adicionado por predefinição) e adicione uma secção *appSettings* ao ficheiro. Configure os valores do nome de conta e a chave de conta da sua conta de Media Services do Azure, conforme mostrado no exemplo seguinte. Para obter o nome de conta e as informações da chave, aceda ao [portal do Azure](https://portal.azure.com/) e selecione a sua conta AMS. Em seguida, selecione **Definições** > **Chaves**. A janela Gerir chaves mostra o nome da conta e as chaves primária e secundária são apresentadas.
    
         <configuration>
         ...
@@ -131,7 +140,7 @@ A alocação de quaisquer novas unidades demora cerca de 20 minutos a concluir.
         using Microsoft.WindowsAzure.MediaServices.Client;
 6. Crie uma nova pasta no diretório dos projetos e copie um ficheiro .mp4 ou .wmv que pretende codificar e transmitir ou transferir progressivamente. Neste exemplo, é utilizado o caminho "C:\VideoFiles".
 
-## Ligar à conta de Media Services
+## <a name="connect-to-the-media-services-account"></a>Ligar à conta de Media Services
 Quando utilizar os Media Services com .NET, deve utilizar a classe **CloudMediaContext** na maioria das tarefas de programação dos Media Services: ligar à conta de Media Services; criar, atualizar, aceder e eliminar os seguintes objetos: elementos, ficheiros de elementos, tarefas, políticas de acesso, localizadores, etc.
 
 Substitua a classe Program predefinida com o seguinte código. O código demonstra como ler os valores de ligação a partir do ficheiro App.config e como criar o objeto **CloudMediaContext** para se ligar aos Media Services. Para obter mais informações sobre como se ligar aos Media Services, consulte [Ligar aos Media Services com o SDK do .NET dos Media Services](http://msdn.microsoft.com/library/azure/jj129571.aspx).
@@ -185,7 +194,7 @@ Os métodos de chamadas de função **Main** que serão definidos posteriormente
             }
         }
 
-## Criar um novo elemento e carregar um ficheiro de vídeo
+## <a name="create-a-new-asset-and-upload-a-video-file"></a>Criar um novo elemento e carregar um ficheiro de vídeo
 Nos Media Services, pode carregar (ou inserir) os seus ficheiros digitais num elemento. A entidade **Elemento** pode conter ficheiros de vídeo, áudio, imagens, coleções de miniaturas, pistas de texto e legendas (e os metadados relativos a esses ficheiros).  Assim que os ficheiros são carregados, o seu conteúdo é armazenado em segurança na nuvem para processamento adicional e a transmissão em fluxo. Os ficheiros no elemento são denominados **Ficheiros de Elemento**.
 
 O método **UploadFile** definido abaixo chama **CreateFromFile** (definido nas Extensões do SDK do .NET). **CreateFromFile** cria um novo elemento no qual o ficheiro de origem especificado é carregado.
@@ -220,8 +229,8 @@ Adicione o seguinte método à classe Program.
     }
 
 
-## Codificar o ficheiro de origem para um conjunto de ficheiros MP4 de velocidade de transmissão adaptável
-Após a inserção dos elementos nos Media Services, a multimédia pode ser codificada, formatada, receber uma marca de água digital e assim sucessivamente, antes de ser distribuída aos clientes. Estas atividades são agendadas e executadas em várias instâncias de função de segundo plano para assegurar um elevado desempenho e disponibilidade. Estas atividades são denominadas Tarefas, cada uma é composta por Tarefas atómica que fazem o trabalho real no ficheiro do elemento.
+## <a name="encode-the-source-file-into-a-set-of-adaptive-bitrate-mp4-files"></a>Codificar o ficheiro de origem para um conjunto de ficheiros MP4 de velocidade de transmissão adaptável
+Após a inserção dos elementos nos Media Services, a multimédia pode ser codificada, formatada, receber uma marca de água digital e assim sucessivamente, antes de ser distribuída aos clientes. Estas atividades são agendadas e executadas em várias instâncias de função de segundo plano para assegurar um elevado desempenho e disponibilidade. Estas atividades são denominadas Tarefas, cada uma é composta por Tarefas atómicas que fazem o trabalho real no Ficheiro de elemento.
 
 Tal como mencionado anteriormente, ao trabalhar com os Media Services do Azure, uma das situações mais comuns é a distribuição de transmissão em fluxo de velocidade de transmissão adaptável para os seus clientes. Os Media Services podem empacotar dinamicamente um conjunto de ficheiro MP4 de velocidade de transmissão adaptável num dos seguintes formatos: HTTP Live Streaming (HLS), transmissão em Fluxo Uniforme, MPEG DASH e HDS (para detentores de licença do Adobe PrimeTime/acesso apenas).
 
@@ -271,7 +280,7 @@ Adicione o seguinte método à classe Program.
         return outputAsset;
     }
 
-## Publicar o elemento e obter os URLs para transmissão em fluxo e transferência progressiva
+## <a name="publish-the-asset-and-get-urls-for-streaming-and-progressive-download"></a>Publicar o elemento e obter os URLs para transmissão em fluxo e transferência progressiva
 Para transmitir ou transferir um elemento, primeiro tem de o "publicar" através da criação de um localizador. Os localizadores fornecem acesso aos ficheiros contidos no elemento. Os Media Services suportam dois tipos de localizadores: localizadores OnDemandOrigin, utilizados para transmitir multimédia (por exemplo, MPEG DASH, HLS ou Transmissão em Fluxo Uniforme) e localizadores de Assinatura de Acesso (SAS), utilizados para transferir ficheiros de multimédia.
 
 Depois de criar os localizadores, pode criar os URLs que são utilizados para transmitir ou transferir os seus ficheiros.
@@ -363,7 +372,7 @@ Adicione o seguinte método à classe Program.
         Console.WriteLine("Output asset files available at '{0}'.", Path.GetFullPath(outputFolder));
     }
 
-## Testar com a reprodução do seu conteúdo
+## <a name="test-by-playing-your-content"></a>Testar com a reprodução do seu conteúdo
 Depois de executar o programa definido na secção anterior, os URLs semelhantes ao seguinte serão apresentados na janela da consola.
 
 URLs de transmissão em fluxo adaptável:
@@ -403,14 +412,14 @@ Para transmitir o seu vídeo, utilize o [Leitor dos Media Services do Azure](htt
 
 Para testar as transferências progressivas, cole um URL num browser (por exemplo, Internet Explorer, Chrome ou Safari).
 
-## Passos Seguintes: percursos de aprendizagem dos Media Services
+## <a name="next-steps-media-services-learning-paths"></a>Passos Seguintes: percursos de aprendizagem dos Media Services
 [!INCLUDE [media-services-learning-paths-include](../../includes/media-services-learning-paths-include.md)]
 
-## Enviar comentários
+## <a name="provide-feedback"></a>Enviar comentários
 [!INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-### Está à procura de outra coisa?
-Se este tópico não continha o que pretendia, algo está em falta ou não correspondeu de alguma forma às suas necessidades, envie-nos os seus comentários utilizando o thread Disqus abaixo.
+### <a name="looking-for-something-else"></a>Está à procura de outra coisa?
+Se este tópico não continha o que pretendia, algo está em falta ou não correspondeu de alguma forma às suas necessidades, envie-nos os seus comentários através do thread Disqus abaixo.
 
 <!-- Anchors. -->
 
@@ -421,6 +430,6 @@ Se este tópico não continha o que pretendia, algo está em falta ou não corre
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Nov16_HO2-->
 
 

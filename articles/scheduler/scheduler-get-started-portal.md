@@ -1,25 +1,29 @@
 ---
-title: Introdução ao Agendador do Azure no portal do Azure | Microsoft Docs
-description: Introdução ao Agendador do Azure no portal do Azure
+title: "Introdução ao Azure Scheduler no portal do Azure | Microsoft Docs"
+description: "Introdução ao Agendador do Azure no portal do Azure"
 services: scheduler
 documentationcenter: .NET
-author: krisragh
-manager: dwrede
-editor: ''
-
+author: derek1ee
+manager: kevinlam1
+editor: 
+ms.assetid: e69542ec-d10f-4f17-9b7a-2ee441ee7d68
 ms.service: scheduler
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: hero-article
 ms.date: 08/10/2016
-ms.author: krisragh
+ms.author: deli
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: 85e0f59bdaae76f6feb03e66a7bbf96c29b45dec
+
 
 ---
-# Introdução ao Agendador do Azure no portal do Azure
+# <a name="get-started-with-azure-scheduler-in-azure-portal"></a>Introdução ao Agendador do Azure no portal do Azure
 É fácil criar tarefas agendadas no Agendador do Azure. Neste tutorial, ficará a saber como criar uma tarefa. Também irá aprender capacidades de monitorização e gestão do Agendador.
 
-## Criar uma tarefa
+## <a name="create-a-job"></a>Criar uma tarefa
 1. Inicie sessão no [portal do Azure](https://portal.azure.com/).  
 2. Clique em **+novo** > escreva *Agendador* na caixa de pesquisa > selecione **Agendador** nos resultados > clique **Criar**.
    
@@ -46,7 +50,7 @@ ms.author: krisragh
       ![][recurrence-schedule]
 6. Clique em **Criar**.
 
-## Gerir e monitorizar tarefas
+## <a name="manage-and-monitor-jobs"></a>Gerir e monitorizar tarefas
 Quando é criada uma tarefa, a mesma aparece no dashboard principal do Azure. Clique na tarefa e abre-se uma nova janela com as seguintes abas:
 
 1. Propriedades  
@@ -57,12 +61,12 @@ Quando é criada uma tarefa, a mesma aparece no dashboard principal do Azure. Cl
    
    ![][job-overview]
 
-### Propriedades
+### <a name="properties"></a>Propriedades
 Estas propriedades só de leitura descrevem os metadados de gestão para a tarefa do Agendador.
 
    ![][job-properties]
 
-### Definições de ação
+### <a name="action-settings"></a>Definições de ação
 Clicar numa tarefa no ecrã **Tarefas** permite-lhe configurar essa tarefa. Isto permite-lhe fazer configurações avançadas, caso não as tenha feito no assistente de criação rápida.
 
 Para todos os tipos de ação, pode alterar a política de repetição e a ação de erro.
@@ -75,7 +79,7 @@ Para os tipos de ação de barramento de serviço, pode alterar o espaço de nom
 
    ![][job-action-settings]
 
-### Agenda
+### <a name="schedule"></a>Agenda
 Isto permite-lhe reconfigurar a agenda, caso gostaria de alterar a agenda que criou no assistente de criação rápida.
 
 Trata-se de uma oportunidade para criar [agendas complexas e periodicidade avançada na tarefa](scheduler-advanced-complexity.md)
@@ -84,7 +88,7 @@ Pode alterar a data e hora de início, a agenda de periodicidade e a data e hora
 
    ![][job-schedule]
 
-### Histórico
+### <a name="history"></a>Histórico
 O separador **Histórico** exibe as métricas selecionadas para todas as execuções de tarefa no sistema para a tarefa selecionada. Estas métricas fornecem valores em tempo real sobre o estado de funcionamento do seu Agendador:
 
 1. Estado  
@@ -100,27 +104,27 @@ Pode clicar numa execução para visualizar os seus **Detalhes de Histórico**, 
 
    ![][job-history-details]
 
-### Utilizadores
+### <a name="users"></a>Utilizadores
 O Controlo de Acesso Baseado em Funções (RBAC) do Azure permite uma gestão pormenorizada de acesso ao Agendador do Azure. Para saber como utilizar o separador de Utilizadores, consulte o [Controlo de Acesso Baseado em Funções do Azure](../active-directory/role-based-access-control-configure.md)
 
-## Consultar também
- [O que é o Agendador?](scheduler-intro.md)
+## <a name="see-also"></a>Consultar também
+ [O que é o Scheduler?](scheduler-intro.md)
 
- [Conceitos, terminologia e hierarquia de entidades do Agendador](scheduler-concepts-terms.md)
+ [Conceitos, terminologia e hierarquia de entidades do Scheduler](scheduler-concepts-terms.md)
 
- [Planos e faturação no Agendador do Azure](scheduler-plans-billing.md)
+ [Planos e faturação no Azure Scheduler](scheduler-plans-billing.md)
 
- [Como criar agendas complexas e periodicidade avançada com o Agendador do Azure](scheduler-advanced-complexity.md)
+ [Como criar agendas complexas e periodicidade avançada com o Azure Scheduler](scheduler-advanced-complexity.md)
 
- [Referência da API REST do Agendador](https://msdn.microsoft.com/library/mt629143)
+ [Referência da API REST do Scheduler](https://msdn.microsoft.com/library/mt629143)
 
- [Referência de cmdlets do PowerShell do Agendador](scheduler-powershell-reference.md)
+ [Referência de cmdlets do PowerShell do Scheduler](scheduler-powershell-reference.md)
 
- [Elevada disponibilidade e fiabilidade do Agendador](scheduler-high-availability-reliability.md)
+ [Elevada disponibilidade e fiabilidade do Scheduler](scheduler-high-availability-reliability.md)
 
  [Limites, predefinições e códigos de erro do Scheduler](scheduler-limits-defaults-errors.md)
 
- [Autenticação de saída do Agendador](scheduler-outbound-authentication.md)
+ [Autenticação de saída do Scheduler](scheduler-outbound-authentication.md)
 
 [marketplace-create]: ./media/scheduler-get-started-portal/scheduler-v2-portal-marketplace-create.png
 [action-settings]: ./media/scheduler-get-started-portal/scheduler-v2-portal-action-settings.png
@@ -151,6 +155,6 @@ O Controlo de Acesso Baseado em Funções (RBAC) do Azure permite uma gestão po
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

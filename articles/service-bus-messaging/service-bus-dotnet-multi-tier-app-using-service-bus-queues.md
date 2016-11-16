@@ -1,23 +1,27 @@
 ---
-title: Aplicação .NET multicamadas | Microsoft Docs
-description: Um tutorial de .NET que ajuda a desenvolver uma aplicação multicamadas no Azure que utiliza as filas do Service Bus para comunicar entre camadas.
-services: service-bus-messaging
+title: "Aplicação .NET multicamadas | Microsoft Docs"
+description: "Um tutorial de .NET que ajuda a desenvolver uma aplicação multicamadas no Azure que utiliza as filas do Service Bus para comunicar entre camadas."
+services: service-bus
 documentationcenter: .net
 author: sethmanheim
 manager: timlt
-editor: ''
-
-ms.service: service-bus-messaging
+editor: 
+ms.assetid: 1b8608ca-aa5a-4700-b400-54d65b02615c
+ms.service: service-bus
 ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: get-started-article
 ms.date: 09/01/2016
 ms.author: sethm
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: 60ed71eac1a233a08414edb8c89b196401895cd8
+
 
 ---
-# Aplicação .NET multicamadas que utiliza as filas do Service Bus do Azure
-## Introdução
+# <a name="net-multitier-application-using-azure-service-bus-queues"></a>Aplicação .NET multicamadas que utiliza as filas do Service Bus do Azure
+## <a name="introduction"></a>Introdução
 O desenvolvimento para o Microsoft Azure é fácil através do Visual Studio e do Azure SDK gratuito para o .NET. Este tutorial explica os passos para criar uma aplicação que utiliza vários recursos do Azure em execução no ambiente local. Os passos partem do princípio de que não tem qualquer experiência na utilização do Azure.
 
 Aprenderá o seguinte:
@@ -35,7 +39,7 @@ A seguinte captura de ecrã mostra a aplicação concluída.
 
 ![][0]
 
-## Descrição geral do cenário: comunicação entre funções
+## <a name="scenario-overview-interrole-communication"></a>Descrição geral do cenário: comunicação entre funções
 Para submeter um pedido para processamento, o componente de IU do front-end, em execução na função da Web, deve interagir com a lógica da camada média em execução na função de trabalho. Este exemplo utiliza mensagens mediadas do Service Bus para a comunicação entre as camadas.
 
 A utilização de mensagens mediadas entre as camadas média e da Web desacopla os dois componentes. Contrariamente às mensagens diretas (ou seja, TCP ou HTTP), a camada da Web não estabelece diretamente ligação à camada média; em vez disso, emite unidades de trabalho, tais como mensagens, para o Service Bus que, de forma fiável, mantém as mesmas até a camada média estar preparada para o respetivo consumo e processamento.
@@ -54,7 +58,7 @@ Este mecanismo de comunicação tem várias vantagens em relação às mensagens
 
 As secções seguintes abordam o código que implementa esta arquitetura.
 
-## Configurar o ambiente de desenvolvimento
+## <a name="set-up-the-development-environment"></a>Configurar o ambiente de desenvolvimento
 Antes de poder começar a desenvolver aplicações do Azure, obtenha as ferramentas e configure o ambiente de desenvolvimento.
 
 1. Instale o Azure SDK para o .NET a partir de [Obter Ferramentas e SDK][Obter Ferramentas e SDK].
@@ -63,16 +67,16 @@ Antes de poder começar a desenvolver aplicações do Azure, obtenha as ferramen
 4. No **Instalador de Plataforma Web**, clique em **Instalar** e continue com a instalação.
 5. Após a conclusão da instalação, terá tudo o que é necessário para começar a desenvolver a aplicação. O SDK inclui ferramentas que permitem desenvolver facilmente aplicações do Azure no Visual Studio. Caso não tenha o Visual Studio instalado, o SDK também instala o Visual Studio Express gratuito.
 
-## Criar um espaço de nomes
+## <a name="create-a-namespace"></a>Criar um espaço de nomes
 O passo seguinte consiste em criar um espaço de nomes de serviço e obter uma chave de Assinatura de Acesso Partilhado (SAS). Um espaço de nomes fornece um limite de aplicação para cada aplicação exposta através do Service Bus. O sistema gera uma chave SAS quando um espaço de nomes é criado. A combinação do espaço de nomes e da chave SAS fornece as credenciais do Service Bus para autenticar o acesso a uma aplicação.
 
 [!INCLUDE [service-bus-create-namespace-portal](../../includes/service-bus-create-namespace-portal.md)]
 
-## Criar uma função da Web
+## <a name="create-a-web-role"></a>Criar uma função da Web
 Nesta secção, compile o front-end da sua aplicação. Em primeiro ligar, crie as páginas a serem apresentadas pela aplicação.
 Em seguida, adicione o código que submete itens para a fila do Service Bus e mostra as informações de estado sobre a fila.
 
-### Criar o projeto
+### <a name="create-the-project"></a>Criar o projeto
 1. Inicie o Microsoft Visual Studio com privilégios de administrador. Para iniciar o Visual Studio com privilégios de administrador, clique com o botão direito no ícone do programa **Visual Studio** e, em seguida, clique em **Executar como administrador**. O emulador de computação do Azure, abordado posteriormente neste artigo, necessita que o Visual Studio seja iniciado com privilégios de administrador.
    
    No Visual Studio, no menu **Ficheiro**, clique em **Novo** e, de seguida, em **Projeto**.
@@ -100,7 +104,7 @@ Em seguida, adicione o código que submete itens para a fila do Service Bus e mo
    Tenha em atenção que os conjuntos de clientes necessários estão agora referenciados e foram adicionados alguns ficheiros de código novos.
 10. No **Explorador de Soluções**, clique com o botão direito em **Modelos**, clique em **Adicionar** e, de seguida, em **Classe**. Na caixa **Nome**, escreva o nome **OnlineOrder.cs**. Em seguida, clique em **Adicionar**.
 
-### Escrever o código para a função da Web
+### <a name="write-the-code-for-your-web-role"></a>Escrever o código para a função da Web
 Nesta secção, crie as várias páginas a serem apresentadas pela aplicação.
 
 1. No ficheiro OnlineOrder.cs no Visual Studio, substitua a definição de espaço de nomes existente pelo código seguinte:
@@ -196,7 +200,7 @@ Nesta secção, crie as várias páginas a serem apresentadas pela aplicação.
     
     ![][17]
 
-### Escrever o código para submeter itens para uma fila do Service Bus
+### <a name="write-the-code-for-submitting-items-to-a-service-bus-queue"></a>Escrever o código para submeter itens para uma fila do Service Bus
 Agora adicione o código para submeter itens para uma fila. Em primeiro lugar, crie uma classe com as informações de ligação da fila do Service Bus. Em seguida, inicialize a ligação a partir de Global.aspx.cs. Por fim, atualize o código de submissão criado anteriormente em HomeController.cs para submeter, de facto, itens para uma fila do Service Bus.
 
 1. No **Explorador de Soluções**, clique com o botão direito em **FrontendWebRole** (clique com o botão direito no projeto e não na função). Clique em **Adicionar** e, de seguida, em **Classe**.
@@ -309,7 +313,7 @@ Agora adicione o código para submeter itens para uma fila. Em primeiro lugar, c
    
    ![][18]
 
-## Criar a função de trabalho
+## <a name="create-the-worker-role"></a>Criar a função de trabalho
 Agora criará a função de trabalho que processa as submissões de pedidos. Este exemplo utiliza o modelo de projeto **Função de Trabalho com Fila do Service Bus** do Visual Studio. Já obteve as credenciais necessárias a partir do portal.
 
 1. Certifique-se de que ligou o Visual Studio à sua conta do Azure.
@@ -354,7 +358,7 @@ Agora criará a função de trabalho que processa as submissões de pedidos. Est
     
     ![][20]
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 Para obter mais informações sobre o Service Bus, consulte os seguintes recursos:  
 
 * [Service Bus do Azure][sbmsdn]  
@@ -371,9 +375,9 @@ Para obter mais informações sobre os cenários de multicamadas, consulte:
 [Obter Ferramentas e SDK]: http://go.microsoft.com/fwlink/?LinkId=271920
 
 
-[ObterDefinição]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.cloudconfigurationmanager.getsetting.aspx
+[GetSetting]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.cloudconfigurationmanager.getsetting.aspx
 [Microsoft.WindowsAzure.Configuration.CloudConfigurationManager]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.cloudconfigurationmanager.aspx
-[NamespaceManager]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.namespacemanager.aspx
+[NamespaceMananger]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.namespacemanager.aspx
 
 [QueueClient]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.queueclient.aspx
 
@@ -406,6 +410,6 @@ Para obter mais informações sobre os cenários de multicamadas, consulte:
 
 
 
-<!--HONumber=Sep16_HO4-->
+<!--HONumber=Nov16_HO2-->
 
 

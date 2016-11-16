@@ -1,42 +1,46 @@
 ---
-title: Gestão de contentores do Serviço de Contentor do Azure através da IU da Web | Microsoft Docs
-description: Implemente contentores num serviço de cluster do Serviço de Contentor do Azure utilizando a IU da Web do Marathon.
+title: "Gestão de contentores do Azure Container Service através da IU da Web | Microsoft Docs"
+description: "Implemente contentores num serviço de cluster do Serviço de Contentor do Azure utilizando a IU da Web do Marathon."
 services: container-service
-documentationcenter: ''
+documentationcenter: 
 author: neilpeterson
 manager: timlt
-editor: ''
+editor: 
 tags: acs, azure-container-service
-keywords: Docker, Contentores, Microserviços, Mesos, Azure
-
+keywords: "Docker, Contentores, Microserviços, Mesos, Azure"
+ms.assetid: d148ed1e-b582-4d51-944f-1ac7ae3c4fd6
 ms.service: container-service
 ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/19/2016
-ms.author: nepeters
+ms.author: timlt
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: ae2945b0025da3bc933a1e4a8f10f21fd35cb51c
+
 
 ---
-# Gestão de contentores através da IU da Web
+# <a name="container-management-through-the-web-ui"></a>Gestão de contentores através da IU da Web
 O DC/OS fornece um ambiente para implementação e dimensionamento de cargas de trabalho em cluster, abstraindo o hardware subjacente. Na parte superior do DC/OS, existe uma estrutura que gere o agendamento e a execução de cargas de trabalho de computação.
 
 Apesar de as estruturas estarem disponíveis para muitas cargas de trabalho populares, este documento descreve como pode criar e dimensionar as implementações de contentores com o Marathon. Para poder trabalhar com estes exemplos, necessita de um cluster do DC/OS configurado num Serviço de Contentor do Azure. Também necessita de conectividade remota a este cluster. Para obter mais informações sobre estes itens, consulte os artigos seguintes:
 
-* [Implementar um cluster do Serviço de Contentor do Azure](container-service-deployment.md)
-* [Ligar a um cluster do Serviço de Contentor Azure](container-service-connect.md)
+* [Implementar um cluster do Azure Container Service](container-service-deployment.md)
+* [Ligar a um cluster do Azure Container Service](container-service-connect.md)
 
-## Explorar a IU do DC/OS
+## <a name="explore-the-dcos-ui"></a>Explorar a IU do DC/OS
 Com um túnel do Secure Shell (SSH) estabelecido, aceda a http://localhost/. Este procedimento permite carregar a IU da Web do DC/OS e mostrar as informações sobre o cluster, tais como recursos utilizados, agentes ativos e serviços em execução.
 
 ![IU do DC/OS](media/dcos/dcos2.png)
 
-## Explorar a IU do Marathon
+## <a name="explore-the-marathon-ui"></a>Explorar a IU do Marathon
 Para ver a IU do Marathon, aceda a http://localhost/Marathon. Neste ecrã, pode iniciar um novo contentor ou outra aplicação no cluster do DC/OS do Serviço de Contentor do Azure. Também pode ver informações sobre contentores e aplicações em execução.  
 
 ![IU do Marathon](media/dcos/dcos3.png)
 
-## Implementar um contentor formatado para Docker
+## <a name="deploy-a-dockerformatted-container"></a>Implementar um contentor formatado para Docker
 Para implementar um novo contentor utilizando o Marathon, clique no botão **Criar Aplicação** e introduza as seguintes informações no formulário:
 
 | Campo | Valor |
@@ -77,7 +81,7 @@ Também pode ver que o nó de cluster que a tarefa está a executar.
 
 ![IU da Web do DC/OS – nó de cluster da tarefa](media/dcos/dcos9.png)
 
-## Dimensionar os contentores
+## <a name="scale-your-containers"></a>Dimensionar os contentores
 Pode utilizar a IU do Marathon para dimensionar a contagem de instâncias de um contentor. Para tal, navegue até à página do **Marathon**, selecione o contentor que pretende dimensionar e clique no botão **Dimensionar**. Na caixa de diálogo **Dimensionar Aplicação**, introduza o número de instâncias do contentor que pretende e selecione **Dimensionar Aplicação**.
 
 ![IU do Marathon – caixa de diálogo Dimensionar Aplicação](media/dcos/dcos10.png)
@@ -88,15 +92,18 @@ Depois de concluída a operação de dimensionamento, verá várias instâncias 
 
 ![IU da Web do DC/OS – nós](media/dcos/dcos12.png)
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 * [Trabalhar com o DC/OS e a API do Marathon](container-service-mesos-marathon-rest.md)
 
 Descrição aprofundada sobre o Azure Container Service com Mesos
 
-> [AZURE.VIDEO] azurecon-2015-deep-dive-on-the-azure-container-service-with-mesos]
+> [!VIDEO https://channel9.msdn.com/Events/Microsoft-Azure/AzureCon-2015/ACON203/player]
 > 
 > 
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

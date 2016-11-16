@@ -1,22 +1,26 @@
 ---
-title: Criar uma aplicação Web WordPress no App Service do Azure | Microsoft Docs
-description: Saiba como criar uma nova aplicação Web do Azure para um blogue do WordPress através do Portal do Azure.
+title: "Criar uma aplicação Web WordPress no Serviço de Aplicações do Azure | Microsoft Docs"
+description: "Saiba como criar uma nova aplicação Web do Azure para um blogue do WordPress através do Portal do Azure."
 services: app-service\web
 documentationcenter: php
 author: rmcmurray
-manager: wpickett
-editor: ''
-
+manager: erikre
+editor: 
+ms.assetid: 193ae094-0d7c-4749-a09b-ff4b1240149e
 ms.service: app-service-web
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: PHP
 ms.topic: hero-article
-ms.date: 08/11/2016
+ms.date: 11/01/2016
 ms.author: robmcm
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: 0bb3fcf1963819b5e8787c042fa895348dc69e12
+
 
 ---
-# Criar uma aplicação Web WordPress no App Service do Azure
+# <a name="create-a-wordpress-web-app-in-azure-app-service"></a>Criar uma aplicação Web WordPress no App Service do Azure
 [!INCLUDE [tabs](../../includes/app-service-web-get-started-nav-tabs.md)]
 
 Este tutorial mostra como implementar um site do blogue do WordPress a partir do Azure Marketplace.
@@ -42,7 +46,7 @@ O site do WordPress que implementa neste tutorial utiliza o MySQL para a base de
 > 
 > 
 
-## Selecionar o WordPress e configurar para o App Service do Azure
+## <a name="select-wordpress-and-configure-for-azure-app-service"></a>Selecionar o WordPress e configurar para o App Service do Azure
 1. Inicie sessão no [Portal do Azure](https://portal.azure.com/).
 2. Clique em **Novo**.
    
@@ -59,10 +63,10 @@ O site do WordPress que implementa neste tutorial utiliza o MySQL para a base de
 6. Se tiver mais do que uma subscrição, escolha a que pretende utilizar. 
 7. Selecione um **Grupo de Recursos** ou crie um novo.
    
-    Para mais informações sobre grupos de recursos, veja [Descrição Geral do Azure Resource Manager](../resource-group-overview.md).
+    Para mais informações sobre grupos de recursos, veja [Descrição Geral do Azure Resource Manager](../azure-resource-manager/resource-group-overview.md).
 8. Selecione um **Plano do App Service/Localização** ou crie um novo.
    
-    Para obter mais informações sobre os planos do App Service, consulte [Descrição geral dos planos do App Service do Azure](../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md) 
+    Para obter mais informações sobre os planos do App Service, consulte [Descrição geral dos planos do App Service do Azure](../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md)    
 9. Clique em **Base de Dados** e, em seguida, no painel **Nova Base de Dados MySQL**, forneça os valores necessários para configurar a base de dados MySQL.
    
     a. Introduza um novo nome ou deixe o nome predefinido.
@@ -81,7 +85,7 @@ O site do WordPress que implementa neste tutorial utiliza o MySQL para a base de
     
      ![Indicador de progresso](./media/web-sites-php-web-site-gallery/progress.png)
 
-## Iniciar e gerir a aplicação Web do WordPress
+## <a name="launch-and-manage-your-wordpress-web-app"></a>Iniciar e gerir a aplicação Web do WordPress
 1. Quando a criação da aplicação Web estiver concluída, navegue no Portal do Azure para o grupo de recursos no qual criou a aplicação para poder ver a aplicação Web e a base de dados.
    
     O recurso adicional com o ícone de lâmpada é o [Application Insights](/services/application-insights/), que fornece serviços de monitorização para a aplicação Web.
@@ -99,12 +103,12 @@ O site do WordPress que implementa neste tutorial utiliza o MySQL para a base de
    
     ![Site do WordPress](./media/web-sites-php-web-site-gallery/wpdashboard.png)
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 Aprendeu a criar e implementar uma aplicação Web PHP a partir da galeria. Para obter mais informações sobre como utilizar o PHP no Azure, consulte o [Centro de Programadores do PHP](/develop/php/).
 
 Para obter mais informações sobre como trabalhar com as Web Apps do App Service, consulte as ligações no lado esquerdo da página (para browsers com janelas largas) ou na parte superior da página (para browsers com janelas estreitas). 
 
-## O que mudou
+## <a name="whats-changed"></a>O que mudou
 * Para obter um guia da alteração de Web sites para o App Service, consulte [App Service do Azure e o respetivo impacto nos Serviços do Azure Existentes](http://go.microsoft.com/fwlink/?LinkId=529714).
 
 [5]: ./media/web-sites-php-web-site-gallery/startmarketplace.png
@@ -113,6 +117,6 @@ Para obter mais informações sobre como trabalhar com as Web Apps do App Servic
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

@@ -1,12 +1,12 @@
 ---
-title: Introdução às API Apps e ASP.NET no App Service | Microsoft Docs
-description: Saiba como criar, implementar e consumir uma aplicação API do ASP.NET no App Service do Azure, utilizando o Visual Studio 2015.
+title: "Introdução às API Apps e ASP.NET no App Service | Microsoft Docs"
+description: "Saiba como criar, implementar e consumir uma aplicação API do ASP.NET no App Service do Azure, utilizando o Visual Studio 2015."
 services: app-service\api
 documentationcenter: .net
 author: tdykstra
 manager: wpickett
-editor: ''
-
+editor: 
+ms.assetid: ddc028b2-cde0-4567-a6ee-32cb264a830a
 ms.service: app-service-api
 ms.workload: na
 ms.tgt_pltfrm: dotnet
@@ -14,9 +14,13 @@ ms.devlang: na
 ms.topic: hero-article
 ms.date: 09/20/2016
 ms.author: rachelap
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: 45e8331e0953dd646f132478741394a5b4907a9e
+
 
 ---
-# Introdução às API Apps, ASP.NET e Swagger no App Service do Azure
+# <a name="get-started-with-api-apps-aspnet-and-swagger-in-azure-app-service"></a>Introdução às API Apps, ASP.NET e Swagger no App Service do Azure
 [!INCLUDE [selector](../../includes/app-service-api-get-started-selector.md)]
 
 Este é o primeiro de uma série de tutoriais que mostram como utilizar as funcionalidades do App Service do Azure que são úteis para desenvolver e o alojar as APIs RESTful.  Este tutorial abrange o suporte para os metadados de API no formato Swagger.
@@ -27,7 +31,7 @@ Irá aprender:
 * Como automatizar a deteção de API utilizando o pacote Swashbuckle NuGet para gerar dinamicamente metadados de API do Swagger.
 * Como utilizar os metadados de API do Swagger para gerar automaticamente o código de cliente para uma aplicação API.
 
-## Descrição geral da aplicação de exemplo
+## <a name="sample-application-overview"></a>Descrição geral da aplicação de exemplo
 Neste tutorial, vai trabalhar com uma aplicação de exemplo da lista de tarefas simples. A aplicação tem um front-end da aplicação de página única (SPA), uma camada de média de API Web do ASP.NET e uma camada de dados da API Web do ASP.NET.
 
 ![Diagrama de aplicações de exemplo de API Apps](./media/app-service-api-dotnet-get-started/noauthdiagram.png)
@@ -50,14 +54,14 @@ Ao concluir neste tutorial, terá os dois projetos API Web em total execução n
 
 O próximo tutorial da série implementa o front-end SPA na nuvem.
 
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 * Web API do ASP.NET – as instruções do tutorial partem do princípio de que tem conhecimentos básicos sobre como trabalhar com a [API Web 2](http://www.asp.net/web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api) do ASP.NET no Visual Studio.
 * Conta do Azure – Pode [Abrir uma conta do Azure gratuitamente](/pricing/free-trial/?WT.mc_id=A261C142F) ou [Ativar os benefícios de subscritor do Visual Studio](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F).
   
     Se pretender começar com o App Service do Azure antes de se inscrever numa conta do Azure, aceda a [Experimentar o App Service](http://go.microsoft.com/fwlink/?LinkId=523751). Aqui, pode criar imediatamente uma aplicação de arranque de curta duração no Serviço de Aplicações — **sem cartões de crédito** e sem compromissos.
 * Visual Studio 2015 com o [Azure SDK para .NET](https://azure.microsoft.com/downloads/archive-net-downloads/) – o SDK instala o Visual Studio 2015 automaticamente se ainda não o tiver.
   
-  * No Visual Studio, clique em Ajuda -> Acerca do Microsoft Visual Studio e verifique se tem as “Ferramentas do Serviço de Aplicações do Azure v2.9.1” ou superior instaladas.
+  * No Visual Studio, clique em Ajuda -> Acerca do Microsoft Visual Studio e verifique se tem as “Ferramentas do Serviço de Aplicações do Azure v2.9.1” ou superior instaladas.
     
     ![Versão das Ferramentas da Aplicação do Azure](./media/app-service-api-dotnet-get-started/apiversion.png)
     
@@ -66,19 +70,19 @@ O próximo tutorial da série implementa o front-end SPA na nuvem.
     > 
     > 
 
-## Transferir a aplicação de exemplo
+## <a name="download-the-sample-application"></a>Transferir a aplicação de exemplo
 1. Transfira o repositório [Azure-Samples/app-service-api-dotnet-to-do-list](https://github.com/Azure-Samples/app-service-api-dotnet-todo-list).
    
     Pode clicar no botão **Transferir ZIP** ou clonar o repositório no seu computador local.
 2. Abra a solução ToDoList no Visual Studio 2015 ou 2013.
    
    1. Terá de confiar em cada solução.
-        ![Aviso de Segurança](./media/app-service-api-dotnet-get-started/securitywarning.png)
+         ![Aviso de Segurança](./media/app-service-api-dotnet-get-started/securitywarning.png)
 3. Crie a solução (CTRL + SHIFT + B) para restaurar os pacotes NuGet.
    
     Se pretender ver a aplicação a funcionar antes de implementá-la, pode executá-la localmente. Confira que ToDoListDataAPI é o seu projeto de arranque e execute a solução. Deverá ver um erro HTTP 403 no browser.
 
-## Utilizar metadados e IU da API do Swagger
+## <a name="use-swagger-api-metadata-and-ui"></a>Utilizar metadados e IU da API do Swagger
 O suporte para metadados da API do [Swagger](http://swagger.io/) 2.0 está incorporado no App Service do Azure. Cada aplicação API pode especificar um ponto final do URL que devolve metadados para a API no formato Swagger JSON. Os metadados devolvidos por esse ponto final podem ser utilizados para gerar código de cliente.
 
 Um projeto API Web do ASP.NET pode gerar dinamicamente metadados do Swagger utilizando o pacote [Swashbuckle](https://www.nuget.org/packages/Swashbuckle) NuGet. O pacote Swashbuckle NuGet já está instalado nos projetos ToDoListDataAPI e ToDoListAPI que transferiu.
@@ -194,7 +198,7 @@ O Swashbuckle funciona com qualquer projeto API Web do ASP.NET. Se pretender adi
 > 
 > 
 
-## <a id="createapiapp"></a> Criar uma aplicação API no Azure e implementar código na mesma
+## <a name="a-idcreateapiappa-create-an-api-app-in-azure-and-deploy-code-to-it"></a><a id="createapiapp"></a> Criar uma aplicação API no Azure e implementar código na mesma
 Nesta secção, irá utilizar as ferramentas do Azure que estão integradas no assistente **Publicar Web** do Visual Studio para criar uma nova aplicação API no Azure. Em seguida, implemente o projeto ToDoListDataAPI na nova aplicação API e chame a API executando a IU do Swagger.
 
 1. No **Explorador de Soluções**, clique com o botão direito do rato no projeto ToDoListDataAPI e, em seguida, clique em **Publicar**.
@@ -220,9 +224,9 @@ Nesta secção, irá utilizar as ferramentas do Azure que estão integradas no a
     O URL da aplicação API será `{API app name}.azurewebsites.net`.
 6. No menu pendente **Grupo de Recursos**, clique em **Novo**, e, em seguida, introduza “ToDoListGroup” ou outro nome, se preferir.
    
-    Um grupo de recursos é uma coleção de recursos do Azure, tais como API Apps, bases de dados, VMs e por aí adiante. Para este tutorial, é melhor criar um novo grupo de recursos porque torna mais fácil eliminar num único passo todos os recursos do Azure que criar para o tutorial.
+    Um grupo de recursos é uma coleção de recursos do Azure, tais como API Apps, bases de dados, VMs e por aí adiante.    Para este tutorial, é melhor criar um novo grupo de recursos porque torna mais fácil eliminar num único passo todos os recursos do Azure que criar para o tutorial.
    
-    Esta caixa permite-lhe selecionar um [grupo de recursos](../resource-group-overview.md) existente ou criar um novo ao escrever um nome diferente a partir de qualquer grupo de recursos existente na sua subscrição.
+    Esta caixa permite-lhe selecionar um [grupo de recursos](../azure-resource-manager/resource-group-overview.md) existente ou criar um novo ao escrever um nome diferente a partir de qualquer grupo de recursos existente na sua subscrição.
 7. Clique no botão **Novo** junto ao menu pendente **Plano do App Service**.
    
     A captura de ecrã mostra os valores de exemplo para **Nome da aplicação API**, **Subscrição**, e **Grupo de Recursos** – os seus valores serão diferentes.
@@ -298,12 +302,12 @@ Nesta secção, irá utilizar as ferramentas do Azure que estão integradas no a
     
     Quando seleciona uma aplicação API para gerar o código de cliente para a mesma, o Visual Studio obtém os metadados a partir deste URL.
 
-## <a id="codegen"></a> Gerar código de cliente para a camada de dados
+## <a name="a-idcodegena-generate-client-code-for-the-data-tier"></a><a id="codegen"></a> Gerar código de cliente para a camada de dados
 Uma das vantagens de integrar o Swagger em API Apps do Azure é a geração automática de código. As classes de cliente geradas tornam mais fácil escrever código que chama uma aplicação API.
 
 O projeto ToDoListAPI já tem o código de cliente gerado, mas nos passos seguintes irá eliminá-lo e voltar a gerá-lo para ver como efetuar a geração de código.
 
-1. No **Explorador de Soluções** do Visual Studio, no projeto ToDoListAPI, elimine a pasta *ToDoListDataAPI*. **Atenção: Elimine apenas a pasta, não o projeto ToDoListDataAPI.**
+1. No **Explorador de Soluções** do Visual Studio, no projeto ToDoListAPI, elimine a pasta *ToDoListDataAPI*. **Atenção: elimine apenas a pasta, não o projeto ToDoListDataAPI.**
    
     ![Eliminar o código de cliente gerado](./media/app-service-api-dotnet-get-started/deletecodegen.png)
    
@@ -369,7 +373,7 @@ para este:
             var client = new ToDoListDataAPI071316(new Uri(ConfigurationManager.AppSettings["toDoListDataAPIURL"]));
 
 
-## Criar uma aplicação API para alojar a camada média
+## <a name="create-an-api-app-to-host-the-middle-tier"></a>Criar uma aplicação API para alojar a camada média
 Anteriormente, [criou a aplicação API de camada de dados e implementou código na mesma](#createapiapp).  Agora, vai seguir o mesmo procedimento para a aplicação API de camada média.
 
 1. No **Explorador de Soluções**, clique com o botão direito do rato no projeto ToDoListAPI de camada média (e não na ToDoListDataAPI de camada de dados) e, em seguida, clique com o botão direito em **Publicar**.
@@ -388,7 +392,7 @@ Anteriormente, [criou a aplicação API de camada de dados e implementou código
    
    O Visual Studio implementa o projeto ToDoListAPI na nova aplicação API e abre um browser para o URL da aplicação API. É apresentada a página “criada com êxito”.
 
-## Configurar a camada média para chamar a camada de dados
+## <a name="configure-the-middle-tier-to-call-the-data-tier"></a>Configurar a camada média para chamar a camada de dados
 Se chamar a aplicação API de camada média agora, tentaria chamar a camada de dados utilizando o URL de localhost que ainda se encontra no ficheiro Web.config. Nesta secção, vai introduzir o URL da aplicação API de camada de dados numa definição do ambiente na aplicação API de camada média. Como o código na aplicação API de camada média recupera a definição do URL da camada de dados, a definição do ambiente irá substituir o que estiver no ficheiro Web.config.
 
 1. Aceda ao [Portal do Azure](https://portal.azure.com/), e, em seguida, navegue para o painel **Aplicação API** da aplicação API que criou para alojar o projeto TodoListAPI (camada média).
@@ -405,7 +409,7 @@ Se chamar a aplicação API de camada média agora, tentaria chamar a camada de 
    
     Quando o código é executado no Azure, este valor irá substituir o URL de localhost que se encontra no ficheiro Web.config.
 
-## Teste
+## <a name="test"></a>Teste
 1. Numa janela do browser, navegue para o URL da nova aplicação API de camada média que acabou de criar para ToDoListAPI. Pode aceder à mesma clicando no URL no painel principal da aplicação API no portal.
 2. Adicione “swagger” ao URL na barra de endereço do browser e, em seguida, prima Enter. (O URL é `http://{apiappname}.azurewebsites.net/swagger`.)
    
@@ -414,7 +418,7 @@ Se chamar a aplicação API de camada média agora, tentaria chamar a camada de 
    
     ![Método Get da IU do Swagger](./media/app-service-api-dotnet-get-started/midtierget.png)
 
-## Resolução de problemas
+## <a name="troubleshooting"></a>Resolução de problemas
 Caso se depare com um problema à medida que percorre este tutorial, aqui estão algumas ideias de resolução de problemas.
 
 * Certifique-se de que está a utilizar a versão mais recente do [Azure SDK para .NET](http://go.microsoft.com/fwlink/?linkid=518003).
@@ -424,7 +428,7 @@ Caso se depare com um problema à medida que percorre este tutorial, aqui estão
 
 Depois de ter a aplicação API do ASP.NET em execução no App Service do Azure, pode querer saber mais sobre as funcionalidades do Visual Studio que simplificam a resolução de problemas. Para obter informações sobre o registo, depuração remota e muito mais, consulte o artigo [Resolver problemas de aplicações do App Service do Azure no Visual Studio](../app-service-web/web-sites-dotnet-troubleshoot-visual-studio.md).
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 Vimos como implementar projetos de API Web existentes em API Apps, gerar código de cliente para API Apps e consumir API Apps de clientes .NET. O próximo tutorial nesta série mostra como [utilizar a CORS para consumir API Apps a partir de clientes JavaScript](app-service-api-cors-consume-javascript.md).
 
 Para mais informações sobre a geração de código de cliente, consulte o repositório [Azure/AutoRest](https://github.com/azure/autorest) no GitHub.com. Para obter ajuda com problemas com o cliente gerado, abra um [problema no repositório AutoRest](https://github.com/azure/autorest/issues).
@@ -435,6 +439,9 @@ Se pretender criar novos projetos de aplicação API do início, utilize o model
 
 O modelo do projeto **Aplicação API do Azure** é equivalente a escolher o modelo ASP.NET 4.5.2 **Empty**, clicando na caixa de verificação para adicionar suporte da API Web e instalar o pacote Swashbuckle NuGet. Além disso, o modelo adiciona algum código de configuração do Swashbuckle concebido para impedir a criação de IDs de operação do Swagger duplicadas. Depois de criar um projeto Aplicação API, pode implementá-lo numa aplicação API da mesma forma que vimos neste tutorial.
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

@@ -2,7 +2,7 @@ A [Biblioteca do Gestor de Configuração do Microsoft Azure para .NET](https://
 
 Para mencionar o pacote CloudConfigurationManager, adicione a seguinte instrução `using` à classe:
 
-    using Microsoft.Azure;  //Namespace for CloudConfigurationManager
+    using Microsoft.Azure;    //Namespace for CloudConfigurationManager
 
 Eis um exemplo que mostra como obter uma cadeia de ligação a partir de um ficheiro de configuração:
 
@@ -12,6 +12,8 @@ Eis um exemplo que mostra como obter uma cadeia de ligação a partir de um fich
 
 A utilização do Gestor de Configuração do Azure é opcional. Pode também utilizar uma API,como a [classe ConfigurationManager](https://msdn.microsoft.com/library/system.configuration.configurationmanager.aspx) do .NET Framework.
 
-<!--HONumber=Sep16_HO3-->
+
+
+<!--HONumber=Nov16_HO2-->
 
 

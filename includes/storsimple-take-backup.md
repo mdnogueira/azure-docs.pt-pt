@@ -1,6 +1,6 @@
 <!--author=alkohli last changed: 9/17/15-->
 
-### Para efetuar uma cópia de segurança
+### <a name="to-take-a-backup"></a>Para efetuar uma cópia de segurança
 1. Na página **Início Rápido** do dispositivo, clique em **Adicionar uma política de cópia de segurança**. Esta ação irá iniciar o assistente Adicionar Política de Cópia de Segurança. 
 2. Na página **Definir a política de cópia de segurança**:
    
@@ -28,6 +28,8 @@ Concluiu a configuração do dispositivo.
 
 Para ver um vídeo que demonstra como fazer uma cópia de segurança do StorSimple, clique [aqui](https://azure.microsoft.com/documentation/videos/take-a-storsimple-backup/).
 
-<!--HONumber=Sep16_HO3-->
+
+
+<!--HONumber=Nov16_HO2-->
 
 

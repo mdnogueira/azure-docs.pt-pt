@@ -1,6 +1,6 @@
 <!--author=alkohli last changed: 08/16/2016-->
 
-#### Para criar um volume
+#### <a name="to-create-a-volume"></a>Para criar um volume
 1. Na página **Guia de Introdução** do dispositivo, clique em **Adicionar um volume** para iniciar o assistente Adicionar um volume.
 2. No assistente Adicionar um volume, em **Definições Básicas**:
    
@@ -39,6 +39,8 @@
       ![Adicionar volume](./media/storsimple-create-volume-u2/AddVolumeAdditionalSettings1.png)
 4. Clique no ícone de verificação ![ícone de verificação](./media/storsimple-create-volume-u2/HCS_CheckIcon-include.png). É criado um volume com as definições especificadas.
 
-<!--HONumber=Sep16_HO3-->
+
+
+<!--HONumber=Nov16_HO2-->
 
 

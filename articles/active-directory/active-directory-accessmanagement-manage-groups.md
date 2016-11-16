@@ -1,22 +1,33 @@
 ---
-title: Managing groups in Azure Active Directory | Microsoft Docs
-description: How to create and manage groups to manage Azure users using Azure Active Directory.
+title: Gerir grupos no Azure Active Directory | Microsoft Docs
+description: Como criar e administrar grupos para gerir utilizadores do Azure com o Azure Active Directory.
 services: active-directory
-documentationcenter: ''
+documentationcenter: 
 author: curtand
 manager: femila
-editor: ''
-
+editor: 
+ms.assetid: d1f5451c-3807-423c-8bac-2822d27b893f
 ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 09/22/2016
+ms.date: 09/29/2016
 ms.author: curtand
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: da1841d4ff9e5b4b53f5d766065acc1024d1eb3a
+
 
 ---
-# Gerir grupos no Azure Active Directory
+# <a name="managing-groups-in-azure-active-directory"></a>Gerir grupos no Azure Active Directory
+> [!div class="op_single_selector"]
+> * [Portal do Azure](active-directory-groups-create-azure-portal.md)
+> * [Portal Clássico do Azure](active-directory-accessmanagement-manage-groups.md)
+> * [PowerShell](active-directory-accessmanagement-groups-settings-v2-cmdlets.md)
+> 
+> 
+
 Uma das funcionalidades da gestão de utilizadores do Azure Active Directory (Azure AD) é a capacidade de criar grupos de utilizadores. Pode utilizar um grupo para efetuar tarefas de gestão, tais como atribuir licenças ou permissões a vários utilizadores em simultâneo. Pode também utilizar grupos para atribuir permissão de acesso a
 
 * Recursos como objetos no diretório
@@ -24,7 +35,7 @@ Uma das funcionalidades da gestão de utilizadores do Azure Active Directory (Az
 
 Além disso, um proprietário de recursos também pode atribuir acesso de um recurso a um grupo do Azure AD de outra pessoa. Esta atribuição concede aos membros desse grupo acesso ao recurso. O proprietário do grupo gere, então, a filiação no grupo. Efetivamente, o proprietário do recurso delega no proprietário do grupo a permissão de atribuir utilizadores ao seu recurso.
 
-## Como crio um grupo?
+## <a name="how-do-i-create-a-group"></a>Como crio um grupo?
 Dependendo dos serviços para os quais a sua organização tiver subscrito, pode criar um grupo utilizando um dos seguintes procedimentos:
 
 * Portal clássico do Azure
@@ -38,7 +49,7 @@ Vamos descrever as tarefas, tal como foram executadas no portal clássico do Azu
 3. Selecione **Adicionar Grupo**.
 4. Na janela **Adicionar Grupo**, especifique o nome e a descrição de um grupo.
 
-## Como é que adiciono ou removo utilizadores individuais num grupo de segurança?
+## <a name="how-do-i-add-or-remove-individual-users-in-a-security-group"></a>Como é que adiciono ou removo utilizadores individuais num grupo de segurança?
 **Para adicionar um utilizador individual a um grupo**
 
 1. No [Portal clássico do Azure](https://manage.windowsazure.com), selecione **Active Directory** e, em seguida, selecione o nome do diretório da sua organização.
@@ -55,7 +66,7 @@ Vamos descrever as tarefas, tal como foram executadas no portal clássico do Azu
 4. Selecione o separador**Membros**, selecione o nome do membro que pretende remover deste grupo e clique em **Remover**.
 5. Confirme na linha de comandos que pretende remover este membro do grupo.
 
-## Como posso gerir dinamicamente a filiação de um grupo?
+## <a name="how-can-i-manage-the-membership-of-a-group-dynamically"></a>Como posso gerir dinamicamente a filiação de um grupo?
 No Azure AD, pode configurar muito facilmente uma regra simples para determinar que utilizadores são membros do grupo. Uma regra simples é aquela que faz apenas uma única comparação. Por exemplo, se um grupo for atribuído a uma aplicação SaaS, pode configurar uma regra para adicionar utilizadores que tenham um cargo de "Representante de Vendas" Esta regra, em seguida, concede acesso a esta aplicação SaaS a todos os utilizadores com esse cargo no seu diretório.
 
 Quando os atributos de um utilizador mudam, o sistema avalia todas as regras de grupos dinâmicos num diretório para ver se a alteração do atributo do utilizador acionará adições ou remoções no grupo. Se um utilizador cumprir uma regra num grupo, é adicionado como membro a esse grupo. Se deixar de cumprir a regra de um grupo do qual é membro, o utilizador é removido do mesmo.
@@ -70,7 +81,7 @@ Quando os atributos de um utilizador mudam, o sistema avalia todas as regras de 
 > 
 > 
 
-**Para ativar a filiação dinâmica num grupo**
+**Para ativar a associação de grupo dinâmica num grupo**
 
 1. No [Portal clássico do Azure](https://manage.windowsazure.com), selecione **Active Directory** e, em seguida, selecione o nome do diretório da sua organização.
 2. Selecione o separador **Grupos** e abra o grupo que pretende editar.
@@ -81,7 +92,7 @@ Quando os atributos de um utilizador mudam, o sistema avalia todas as regras de 
 
 Para saber mais sobre como criar regras *avançadas* (regras que podem conter várias comparações) para filiação dinâmica em grupos, consulte o artigo [Utilizar atributos para criar regras avançadas](active-directory-accessmanagement-groups-with-advanced-rules.md).
 
-## Informações adicionais
+## <a name="additional-information"></a>Informações adicionais
 Estes artigos fornecem informações adicionais acerca do Azure Active Directory.
 
 * [Gerir o acesso aos recursos com grupos do Azure Active Directory](active-directory-manage-groups.md)
@@ -90,6 +101,9 @@ Estes artigos fornecem informações adicionais acerca do Azure Active Directory
 * [O que é o Azure Active Directory?](active-directory-whatis.md)
 * [Integrar as identidades no local ao Azure Active Directory](active-directory-aadconnect.md)
 
-<!--HONumber=Sep16_HO4-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

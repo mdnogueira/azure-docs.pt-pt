@@ -1,8 +1,7 @@
-|  | **Implementação Clássica** | **Implementação Resource Manager** |
-| --- | --- | --- |
-| **Portal Clássico** |[Artigo (1)](../articles/vpn-gateway/vpn-gateway-site-to-site-create.md) |Não Suportado |
-| **Portal do Azure** |Suportado (2) |[Artigo](../articles/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md) |
-| **PowerShell** |[Artigo+](../articles/vpn-gateway/vpn-gateway-multi-site.md) |[Artigo](../articles/vpn-gateway/vpn-gateway-create-site-to-site-rm-powershell.md) |
+| **Modelo/Método de Implementação** | **Portal do Azure** | **Portal Clássico** | **PowerShell** |
+| --- | --- | --- | --- |
+| **Resource Manager** |[Artigo](../articles/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md) |Não suportado |[Artigo](../articles/vpn-gateway/vpn-gateway-create-site-to-site-rm-powershell.md) |
+| **Clássico** |Suportado (2) |[Artigo*](../articles/vpn-gateway/vpn-gateway-site-to-site-create.md) |[Artigo+](../articles/vpn-gateway/vpn-gateway-multi-site.md) |
 
 (*) indica que o portal clássico pode apenas suportar a criação de uma ligação VPN S2S.
 
@@ -10,6 +9,8 @@
 
 (+) indica que este artigo foi escrito para ligações multilocal.
 
-<!--HONumber=Sep16_HO3-->
+
+
+<!--HONumber=Nov16_HO2-->
 
 

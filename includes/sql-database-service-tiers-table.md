@@ -1,4 +1,4 @@
-### Camada de serviços básicos
+### <a name="basic-service-tier"></a>Camada de serviços básicos
 |  |  |
 | --- | --- |
 | Máximo de DTUs |5 |
@@ -10,7 +10,7 @@
 | Restauro para um ponto anterior no tempo |Qualquer ponto nos últimos 7 dias |
 | Recuperação após desastre |Georreplicação Ativa |
 
-### Camada de serviços padrão
+### <a name="standard-service-tier"></a>Camada de serviços padrão
 |  |  |
 | --- |:---:|
 | **S0** &nbsp;&nbsp;&nbsp;&nbsp; **S1** &nbsp;&nbsp;&nbsp;&nbsp; **S2** &nbsp;&nbsp;&nbsp; **S3** | |
@@ -23,7 +23,7 @@
 | Restauro para um ponto anterior no tempo |Qualquer ponto nos últimos 35 dias |
 | Recuperação após desastre |Georreplicação Ativa |
 
-### Camada de serviços premium
+### <a name="premium-service-tier"></a>Camada de serviços premium
 |  |  |
 | --- |:---:|
 | **P1** &nbsp;&nbsp;&nbsp;&nbsp; **P2** &nbsp;&nbsp;&nbsp;&nbsp; **P4** &nbsp;&nbsp;&nbsp; **P6/P3** &nbsp;&nbsp; **P11** &nbsp;&nbsp; **P15** | |
@@ -36,6 +36,8 @@
 | Restauro para um ponto anterior no tempo |Qualquer ponto nos últimos 35 dias |
 | Recuperação após desastre |Georreplicação Ativa |
 
-<!--HONumber=Sep16_HO3-->
+
+
+<!--HONumber=Nov16_HO2-->
 
 

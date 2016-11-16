@@ -1,23 +1,27 @@
 ---
-title: 'Serviços de Domínio do Azure AD: Ativar os Serviços de Domínio do Azure AD | Microsoft Docs'
-description: Introdução aos Serviços de Domínio do Azure Active Directory
+title: "Serviços de Domínio do Azure AD: Ativar os Serviços de Domínio do Azure AD | Microsoft Docs"
+description: "Introdução aos Serviços de Domínio do Azure Active Directory"
 services: active-directory-ds
-documentationcenter: ''
+documentationcenter: 
 author: mahesh-unnikrishnan
 manager: stevenpo
 editor: curtand
-
+ms.assetid: c659da59-f4b5-4edd-b702-1727a8ccb36f
 ms.service: active-directory-ds
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 09/21/2016
+ms.date: 10/19/2016
 ms.author: maheshu
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: 553b93c2c379b961e793033ab2b5c76b107cda10
+
 
 ---
-# Ativar o Azure AD Domain Services
-## Tarefa 3: Ativar os Serviços de Domínio do Azure AD
+# <a name="enable-azure-ad-domain-services"></a>Ativar o Azure AD Domain Services
+## <a name="task-3-enable-azure-ad-domain-services"></a>Tarefa 3: Ativar os Serviços de Domínio do Azure AD
 Nesta tarefa, vai ativar o Azure AD Domain Services no seu diretório. Execute os seguintes passos de configuração para ativar o Azure AD Domain Services no seu diretório.
 
 1. Navegue para o **Portal Clássico do Azure** ([https://manage.windowsazure.com](https://manage.windowsazure.com)).
@@ -43,23 +47,23 @@ Nesta tarefa, vai ativar o Azure AD Domain Services no seu diretório. Execute o
    
    * O nome de domínio predefinido do diretório (ou seja, que termina com o sufixo de domínio **. onmicrosoft.com**) é selecionado por predefinição.
    * A lista contém todos os domínios que foram configurados para o diretório do Azure AD – incluindo domínios verificados e não verificados que configura no separador 'Domínios'.
-   * Além disso, também pode adicionar um nome de domínio personalizado a esta lista escrevendo o mesmo. Neste exemplo, introduzimos um nome de domínio personalizado 'contoso100.com'
+   * Além disso, também pode escrever um nome de domínio personalizado. Neste exemplo, introduzimos um nome de domínio personalizado 'contoso100.com'.
      
      > [!WARNING]
      > Confirme que o prefixo de domínio do nome de domínio que especificar (por exemplo, “contoso100” no nome de domínio “contoso100.com”) tem menos de 15 carateres. Não é possível criar um domínio de Serviços de Domínio do Azure AD com um prefixo de domínio com mais de 15 carateres.
      > 
      > 
-8. O passo seguinte consiste em selecionar uma rede virtual na qual gostaria de disponibilizar os Serviços de Domínio do Azure AD. Selecione a rede virtual que criou na lista pendente com o nome **Ligar serviços de domínio a esta rede virtual**.
-   
-   * Certifique-se de que a rede virtual que especificou pertence a uma região do Azure suportada pelos Serviços de Domínio do Azure AD.
-   * Veja a página [Serviços do Azure por região](https://azure.microsoft.com/regions/#services/) para saber em que regiões do Azure está disponível o Azure AD Domain Services.
-   * As redes virtuais pertencentes a uma região que não suporte o Azure AD Domain Services não aparecem na lista pendente.
-   * Da mesma forma, as redes virtuais que foram criadas com o Azure Resource Manager não aparecem na lista pendente. O Azure AD Domain Services não suporta redes virtuais baseadas no ARM atualmente.
-9. Certifique-se de que o nome de domínio DNS que escolheu para o domínio gerido ainda não existe na rede virtual. Em particular, verifique se:
+8. Certifique-se de que o nome de domínio DNS que escolheu para o domínio gerido ainda não existe na rede virtual. Em particular, verifique se:
    
    * Já tem um domínio com o mesmo nome de domínio DNS na rede virtual.
    * A rede virtual que selecionou tem uma ligação VPN à sua rede no local e se tem um domínio com o mesmo nome de domínio DNS na sua rede no local.
    * Tem um serviço em nuvem existente com este nome na rede virtual.
+9. O passo seguinte consiste em selecionar uma rede virtual na qual gostaria de disponibilizar os Serviços de Domínio do Azure AD. Selecione a rede virtual e a sub-rede dedicada criadas na lista pendente com o nome **Ligar serviços de domínio a esta rede virtual**.
+   
+   * Certifique-se de que a rede virtual que especificou pertence a uma região do Azure suportada pelos Serviços de Domínio do Azure AD. Veja a página [Serviços do Azure por região](https://azure.microsoft.com/regions/#services/) para saber em que regiões do Azure está disponível o Azure AD Domain Services.
+   * As redes virtuais pertencentes a uma região que não suporte o Azure AD Domain Services não aparecem na lista pendente.
+   * Utilize uma sub-rede dedicada na rede virtual para os Serviços de Domínio do Azure AD. Certifique-se de que não selecionou a sub-rede do gateway. Veja [considerações de redes](active-directory-ds-networking.md). 
+   * Da mesma forma, as redes virtuais que foram criadas com o Azure Resource Manager não aparecem na lista pendente. O Azure AD Domain Services não suporta redes virtuais baseadas no ARM atualmente.
 10. Para ativar o Azure AD Domain Services, clique em **Guardar** no painel da tarefa, na parte inferior da página.
 11. A página apresenta o estado “Pendente...” enquanto os Serviços de Domínio do Azure AD estiverem a ser ativados para o seu diretório.
     
@@ -72,20 +76,23 @@ Nesta tarefa, vai ativar o Azure AD Domain Services no seu diretório. Execute o
 12. Depois de cerca de 20 a 30 minutos, verá o primeiro endereço IP no qual o Domain Services está disponível na sua rede virtual no campo **Endereço IP**, na página **Configurar**.
     
     ![Serviços de Domínio ativados - primeiro IP aprovisionado](./media/active-directory-domain-services-getting-started/domain-services-enabled-firstdc-available.png)
-13. Quando a elevada disponibilidade estiver operacional no seu domínio, verá dois endereços IP apresentados na página. Estes são os endereços IP nos quais o Azure AD Domain Services está disponível na sua rede virtual selecionada. Tome nota dos endereços IP, de modo a que possa atualizar as definições de DNS da sua rede virtual. Este passo ativa máquinas virtuais na rede virtual para ligar ao domínio para operações como associação a um domínio.
+13. Quando a elevada disponibilidade estiver operacional no seu domínio, verá dois endereços IP apresentados na página. O domínio gerido está disponível na rede virtual selecionada nestes dois endereços IP. Tome nota dos endereços IP, de modo a que possa atualizar as definições de DNS da sua rede virtual. Este passo ativa máquinas virtuais na rede virtual para ligar ao domínio para operações como associação a um domínio.
     
     ![Serviços de Domínio ativados – ambos os IPs aprovisionados](./media/active-directory-domain-services-getting-started/domain-services-enabled-bothdcs-available.png)
 
 > [!NOTE]
-> Consoante o tamanho do seu inquilino do Azure AD (número de utilizadores, grupos, etc.), demora algum tempo para que os conteúdos do inquilino fiquem disponíveis no Azure AD Domain Services. Este processo de sincronização ocorre em segundo plano. Em inquilinos grandes com dezenas de milhares de objetos, pode demorar um dia ou dois para que todos os utilizadores, associações a grupos e credenciais fiquem disponíveis no Azure AD Domain Services.
+> Dependendo do tamanho do inquilino do Azure AD (número de utilizadores, grupos, etc.), a sincronização para o seu domínio gerido é demorada. Este processo de sincronização ocorre em segundo plano. Em inquilinos grandes com dezenas de milhares de objetos, pode demorar um dia ou dois para que todos os utilizadores, associações a grupos e credenciais a sincronizar.
 > 
 > 
 
 <br>
 
-## Tarefa 4 - Atualizar as definições de DNS para a Azure Virtual Network
+## <a name="task-4-update-dns-settings-for-the-azure-virtual-network"></a>Tarefa 4 - Atualizar as definições de DNS para a Azure Virtual Network
 A próxima tarefa de configuração é [atualizar as definições de DNS para a Azure Virtual Network](active-directory-ds-getting-started-dns.md).
 
-<!--HONumber=Sep16_HO4-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

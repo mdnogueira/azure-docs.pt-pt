@@ -1,28 +1,32 @@
 ---
-title: Introdução ao Storage do Azure em cinco minutos| Microsoft Docs
-description: De forma rápida, conhecer melhor os Blobs do Microsoft Azure, as Tabelas e as Filas através dos Inícios Rápidos do Storage do Azure, do Visual Studio e do emulador do Storage do Azure. Execute a sua primeira aplicação do Storage do Azure em cinco minutos.
+title: "Introdução ao Armazenamento do Azure em cinco minutos| Microsoft Docs"
+description: "De forma rápida, conhecer melhor os Blobs do Microsoft Azure, as Tabelas e as Filas através dos Inícios Rápidos do Storage do Azure, do Visual Studio e do emulador do Storage do Azure. Execute a sua primeira aplicação do Storage do Azure em cinco minutos."
 services: storage
 documentationcenter: .net
 author: tamram
 manager: carmonm
 editor: tysonn
-
+ms.assetid: 582f76f8-c814-4a69-8a5c-1fd0e0d5d8f2
 ms.service: storage
 ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: get-started-article
-ms.date: 09/20/2016
-ms.author: dineshm;tamram
+ms.date: 10/18/2016
+ms.author: tamram
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: 369e45ed8303735976813c1224ce74842f886536
+
 
 ---
-# Introdução ao Storage do Azure em cinco minutos
-## Descrição geral
+# <a name="get-started-with-azure-storage-in-five-minutes"></a>Introdução ao Storage do Azure em cinco minutos
+## <a name="overview"></a>Descrição geral
 É fácil começar a programar com o Storage do Azure. Este tutorial demonstra como colocar uma aplicação do Storage do Azure em funcionamento rapidamente. Irá utilizar os modelos de Início Rápido incluídos com o Azure SDK para o .NET. Estes Inícios Rápidos contêm código pronto para execução que demonstra alguns cenários de programação básicos com o Storage do Azure.
 
 Para saber mais sobre o Storage do Azure antes de explorar o código, consulte o artigo [Passos Seguintes](#next-steps).
 
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 Terá de seguir os seguintes pré-requisitos seguintes antes de começar:
 
 1. Para compilar e criar a aplicação, precisará de uma versão do [Visual Studio](https://www.visualstudio.com/) instalado no seu computador.
@@ -35,7 +39,7 @@ Terá de seguir os seguintes pré-requisitos seguintes antes de começar:
    * Para obter uma subscrição do Azure, consulte [Versão de Avaliação Gratuita](https://azure.microsoft.com/pricing/free-trial/), [Opções de Compra](https://azure.microsoft.com/pricing/purchase-options/) e [Ofertas de Membros](https://azure.microsoft.com/pricing/member-offers/) (para os membros da MSDN, Microsoft Partner Network, BizSpark e outros programas Microsoft).
    * Para criar uma conta do Storage no Azure, consulte o artigo [Como criar uma conta do Storage](storage-create-storage-account.md#create-a-storage-account).
 
-## Executar a sua primeira aplicação do Storage do Azure relativamente ao Storage do Azure na nuvem
+## <a name="run-your-first-azure-storage-application-against-azure-storage-in-the-cloud"></a>Executar a sua primeira aplicação do Storage do Azure relativamente ao Storage do Azure na nuvem
 Assim que tiver uma conta, pode criar uma aplicação do Storage do Azure simples utilizando um dos projetos de exemplo de Inícios Rápidos do Azure no Visual Studio. Este tutorial centra-se nos projetos de exemplo para o Storage do Azure: **Storage do Azure: Blobs**, **Storage do Azure: Ficheiros**, **Storage do Azure: Filas** e **Storage do Azure: Tabelas**:
 
 1. Inicie o Visual Studio.
@@ -62,7 +66,7 @@ Em seguida, execute a aplicação de exemplo:
 4. No menu **Construir**, clique em **Construir Solução**.
 5. No menu **Depuração**, prima **F11** para executar a solução passo-a-passo ou prima **F5** para executar a solução.
 
-## Executar a sua primeira aplicação do Storage do Azure localmente relativamente ao Emulador do Storage do Azure
+## <a name="run-your-first-azure-storage-application-locally-against-the-azure-storage-emulator"></a>Executar a sua primeira aplicação do Storage do Azure localmente relativamente ao Emulador do Storage do Azure
 O [Emulador do Storage do Azure](storage-use-emulator.md) fornece um ambiente local que emula os serviços Tabela, Fila e Blob do Azure para fins de desenvolvimento. Pode utilizar o emulador de armazenamento para testar a sua aplicação de armazenamento localmente, sem criar uma subscrição do Azure ou uma conta do Storage e sem incorrer em qualquer custo.
 
 Para o tentar, vamos criar uma aplicação do Storage do Azure simples utilizando um dos projetos de exemplo de Inícios Rápidos do Azure no Visual Studio. Este tutorial centra-se nos projetos de exemplo **Blob Storage do Azure**, **Table Storage do Azure** e **Armazenamento de Filas do Azure**:
@@ -87,24 +91,24 @@ Em seguida, execute o exemplo de aplicação no Emulador do Storage do Azure:
 2. No Visual Studio, clique em **Construir Solução** no menu **Construir**.
 3. No menu **Depuração**, prima **F11** para executar a solução passo-a-passo ou prima **F5** para executar a solução do início ao fim.
 
-## Passos Seguintes
+## <a name="next-steps"></a>Passos Seguintes
 Consulte estes recursos para saber mais sobre o Storage do Azure:
 
-* [Introdução ao Storage do Microsoft Azure](storage-introduction.md)
+* [Introdução ao Armazenamento do Microsoft Azure](storage-introduction.md)
 * [Introdução ao Explorador do Armazenamento do Azure](../vs-azure-tools-storage-manage-with-storage-explorer.md)
-* [Introdução ao Blob Storage do Azure através do .NET](storage-dotnet-how-to-use-blobs.md)
-* [Introdução ao Table Storage do Azure através do .NET](storage-dotnet-how-to-use-tables.md)
+* [Introdução ao armazenamento de Blobs do Azure através do .NET](storage-dotnet-how-to-use-blobs.md)
+* [Introdução ao armazenamento de Tabelas do Azure através do .NET](storage-dotnet-how-to-use-tables.md)
 * [Introdução ao Armazenamento de Filas do Azure através do .NET](storage-dotnet-how-to-use-queues.md)
-* [Introdução ao File Storage do Azure no Windows](storage-dotnet-how-to-use-files.md)
+* [Introdução ao Armazenamento de Ficheiros do Azure no Windows](storage-dotnet-how-to-use-files.md)
 * [Transferir dados com o Utilitário de Linha de Comandos AzCopy](storage-use-azcopy.md)
-* [Documentação do Storage do Azure](https://azure.microsoft.com/documentation/services/storage/)
-* [Biblioteca de Clientes do Storage do Microsoft Azure para o .NET](https://msdn.microsoft.com/library/azure/dn261237.aspx)
-* [API REST dos Serviços do Storage do Azure](https://msdn.microsoft.com/library/azure/dd179355.aspx)
+* [Documentação do Armazenamento do Azure](https://azure.microsoft.com/documentation/services/storage/)
+* [Biblioteca de Clientes do Armazenamento do Microsoft Azure para o .NET](https://msdn.microsoft.com/library/azure/dn261237.aspx)
+* [API REST dos Serviços do Armazenamento do Azure](https://msdn.microsoft.com/library/azure/dd179355.aspx)
 
 [Image1]: ./media/storage-getting-started-guide/QuickStart.png
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

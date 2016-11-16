@@ -1,67 +1,71 @@
 ---
-title: Introdução à Azure Search | Microsoft Docs
-description: Crie a sua primeira solução da Azure Search através das instruções do tutorial. Saiba como criar um índice da Azure Search utilizando dados de DocumentDB. Este é um exercício baseado no portal sem código através do assistente para Importar Dados.
+title: "Introdução à Azure Search | Microsoft Docs"
+description: "Saiba como criar o seu primeiro índice do Azure Search com as instruções deste tutorial e os dados de exemplo do DocumentDB. Baseado no portal e sem código, este exercício utiliza o Assistente para Importar Dados."
 services: search
-documentationcenter: ''
+documentationcenter: 
 author: HeidiSteen
 manager: jhubbard
-editor: ''
+editor: 
 tags: azure-portal
-
+ms.assetid: 21adc351-69bb-4a39-bc59-598c60c8f958
 ms.service: search
 ms.devlang: na
 ms.workload: search
 ms.topic: hero-article
 ms.tgt_pltfrm: na
-ms.date: 08/29/2016
+ms.date: 10/03/2016
 ms.author: heidist
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: dddbcbcd82900d7537c2d60631cc1753554d9486
+
 
 ---
-# Introdução à Azure Search no portal
+# <a name="get-started-with-azure-search-in-the-portal"></a>Introdução à Azure Search no portal
 Esta introdução sem código ajuda-o a trabalhar com a Pesquisa do Microsoft Azure utilizando as funcionalidades integradas diretamente no portal. 
 
 O tutorial assume uma [base de dados de DocumentDB do Azure de exemplo](#apdx-sampledata) fácil de criar utilizando os nossos dados e instruções, mas também pode adaptar estes passos aos seus dados existentes no DocumentDB ou na Base de Dados SQL.
 
 > [!NOTE]
-> Este Tutorial de introdução requer uma [Subscrição do Azure](../../includes/free-trial-note.md) e um [Serviço Azure Search](search-create-service-portal.md). 
+> Este Tutorial de introdução requer uma [Subscrição do Azure](/pricing/free-trial/?WT.mc_id=A261C142F) e um [Serviço Azure Search](search-create-service-portal.md). 
 > 
 > 
 
-## Encontrar o seu serviço
+## <a name="find-your-service"></a>Encontrar o seu serviço
 1. Inicie sessão no [Portal do Azure](https://portal.azure.com).
 2. Abra o dashboard de serviço do seu serviço da Azure Search. Seguem-se algumas formas de localizar o dashboard.
    
-   * Na barra de índice, clique em **Procurar serviços**. A barra lista todos os serviços aprovisionados na sua subscrição. Se tiver sido definido um serviço de pesquisa, verá **Procurar serviços** na lista.
+   * Na barra de índice, clique em **Procurar serviços**. A barra lista todos os serviços aprovisionados na sua subscrição. Se tiver sido definido um serviço de pesquisa, verá **Serviços de pesquisa** na lista.
    * Na barra de índice, clique em **Procurar** e, em seguida, digite "pesquisar" na caixa de pesquisa para produzir uma lista de todos os serviços de pesquisa criados nas suas subscrições.
 
-## Verificar o espaço
-Muitos clientes começam com o serviço gratuito. Esta versão está limitada a três índices, três origens de dados e três indexadores. Certifique-se de que tem espaço para itens adicionais antes de começar. Estas instruções irão criar um de cada objeto.
+## <a name="check-for-space"></a>Verificar o espaço
+Muitos clientes começam com o serviço gratuito. Esta versão está limitada a três índices, três origens de dados e três indexadores. Certifique-se de que tem espaço para itens adicionais antes de começar. Estas instruções criam um de cada objeto.
 
-## Criar um índice e carregar dados
-As consultas de pesquisas iteram sobre um *índice* que contém dados pesquisáveis, metadados e construções utilizadas para otimizar determinados comportamentos de pesquisa. Como primeiro passo, terá de definir e preencher um índice.
+## <a name="create-an-index-and-load-data"></a>Criar um índice e carregar dados
+As consultas de pesquisas iteram sobre um *índice* que contém dados pesquisáveis, metadados e construções utilizadas para otimizar determinados comportamentos de pesquisa. Como primeiro passo, defina e preencha um índice.
 
 Existem várias formas de criar um índice. Se os seus dados estiverem num arquivo que a Azure Search possa pesquisar, tal como a Base de Dados SQL do Azure, o SQL Server num VM do Azure ou DocumentDB, pode criar e preencher um índice muito facilmente recorrendo a um *indexador*.
 
-Para manter esta tarefa com base no portal, iremos assumir dados do DocumentDB que podem ser pesquisados utilizando um indexador através do assistente para **Importar dados**. 
+Para manter esta tarefa com base no portal, utilizamos dados do DocumentDB que podem ser pesquisados com um indexador através do Assistente para **Importar Dados**. 
 
 Antes de continuar, crie uma [base de dados do DocumentDB de exemplo](#apdx-sampledata) para utilizar com este tutorial e, em seguida, regresse a esta secção para concluir os passos abaixo.
 
 <a id="defineDS"></a>
 
-#### Passo 1: Definir a origem de dados
+#### <a name="step-1-define-the-data-source"></a>Passo 1: Definir a origem de dados
 1. No seu dashboard do serviço Azure Search, clique em **Importar dados** na barra de comando para iniciar um assistente que cria e preenche um índice.
    
-   ![][7]
+    ![][7]
 2. No assistente, clique em **Origem de Dados** > **DocumentDB** > **Nome**, digite um nome para a origem de dados. Uma origem de dados é um objeto de ligação na Azure Search que pode ser utilizado com outros indexadores. Uma vez criada, esta fica disponível como uma "origem de dados existente" no seu serviço.
-3. Escolha a sua conta do DocumentDB existente, a base de dados e a coleção. Se estiver a utilizar os dados de exemplo que fornecemos, a sua definição da origem de dados terá este aspeto:
+3. Escolha a sua conta do DocumentDB existente, a base de dados e a coleção. Se estiver a utilizar os dados de exemplo que nós fornecemos, a sua definição da origem de dados terá este aspeto:
    
-   ![][2]
+    ![][2]
 
 Repare que estamos a ignorar a consulta. Isto deve-se ao facto de não estarmos a implementar um registo de alterações no nosso conjunto de dados. Se o seu conjunto de dados inclui um campo que monitoriza quando um registo é atualizado, pode configurar um indexador de Azure Search para utilizar o controlo de alterações para atualizações seletivas ao seu índice.
 
 Clique em **OK** para concluir este passo do assistente.
 
-#### Passo 2: Definir o índice
+#### <a name="step-2-define-the-index"></a>Passo 2: Definir o índice
 Ainda no assistente, clique em **Índice** e observe a superfície do design utilizada para criar um índice da Azure Search. No mínimo, um índice necessita de um nome e uma coleção de campos, com um campo marcado como a chave do documento. Uma vez que estamos a utilizar um conjunto de dados DocumentDB, os campos são automaticamente detetados pelo assistente e o índice é pré-carregado com campos e atribuições do tipo de dados. 
 
   ![][3]
@@ -96,7 +100,7 @@ Como ponto de comparação, a seguinte captura de ecrã é uma ilustração de u
 
 Clique em **OK** para concluir este passo do assistente.
 
-#### Passo 3: Definir o indexador
+#### <a name="step-3-define-the-indexer"></a>Passo 3: Definir o indexador
 Ainda no assistente para **Importar dados**, clique em **Indexador** > **Nome**, digite um nome para o indexador e utilize as predefinições para todos os outros valores. Este objeto define um processo executável. Depois de o ter criado, pode colocá-lo na agenda recorrente, mas, por agora, utilize a opção predefinida para executar o indexador uma vez, de imediato, quando clicar em **OK**. 
 
 As suas entradas de dados importados devem estar todas preenchidas e prontas a utilizar.
@@ -105,12 +109,12 @@ As suas entradas de dados importados devem estar todas preenchidas e prontas a u
 
 Para executar o assistente, clique em **OK** para começar a importação e fechar o assistente.
 
-## Verificar progresso
+## <a name="check-progress"></a>Verificar progresso
 Para verificar o progresso, aceda ao dashboard do serviço, desloque-se para baixo e faça duplo clique no mosaico **Indexadores** para abrir a lista de indexadores. Deve ver o indexador que acabou de criar na lista, assim como o estado que indica "em curso" ou com êxito, juntamente com o número de documentos indexados numa Azure Search.
 
   ![][6]
 
-## Consultar o índice
+## <a name="query-the-index"></a>Consultar o índice
 Tem agora um índice de pesquisa pronto para consulta. 
 
 O **Explorador de pesquisa** é uma ferramenta de consulta incorporada no portal. Esta fornece uma caixa de pesquisa para que possa verificar se uma introdução de pesquisa devolve os dados esperados. 
@@ -121,7 +125,7 @@ O **Explorador de pesquisa** é uma ferramenta de consulta incorporada no portal
 4. Introduza algumas consultas de pesquisa em texto completo. Pode rever os resultados da sua pesquisa com carateres universais para se familiarizar com artistas, álbuns e géneros a consultar.
 5. Experimente outra sintaxe de consulta utilizando os [exemplos fornecidos no final deste artigo](https://msdn.microsoft.com/library/azure/dn798927.aspx) para ideias, modificar a sua consulta para utilizar cadeias de pesquisa que provavelmente encontrará no seu índice.
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 Depois de executar o assistente uma vez, pode voltar atrás e ver ou modificar componentes individuais: índice, indexador ou origem de dados. Algumas edições, tal como a alteração do tipo de dados de campo, não são permitidas no índice, mas a maioria das propriedades e das definições são modificáveis. Para ver componentes individuais, clique nos mosaicos **Índice**, **Indexador** ou **Origens de Dados** no seu dashboard para apresentar uma lista de objetos existentes.
 
 Para obter mais informações sobre outras funcionalidades mencionadas neste artigo, visite estas ligações:
@@ -134,35 +138,35 @@ Para obter mais informações sobre outras funcionalidades mencionadas neste art
 Pode tentar este mesmo fluxo de trabalho, utilizando o assistente para Importar dados para outras origens de dados, tal como a Base de Dados SQL do Azure ou do SQL Server em máquinas virtuais do Azure.
 
 > [!NOTE]
-> Foi recentemente comunicada a funcionalidade de suporte de indexadores para pesquisa do Blob Storage do Azure, contudo, esta função está em pré-visualização e ainda não é uma opção do portal. Para experimentar esse indexador, terá de escrever código. Consulte [Indexar o Blob Storage do Azure na Azure Search](search-howto-indexing-azure-blob-storage.md) para obter mais informações.
+> Foi recentemente comunicada a funcionalidade de suporte de indexadores para pesquisa do Blob Storage do Azure, contudo, esta função está em pré-visualização e ainda não é uma opção do portal. Para experimentar esse indexador, tem de escrever código. Consulte [Indexar o Blob Storage do Azure na Azure Search](search-howto-indexing-azure-blob-storage.md) para obter mais informações.
 > <a id="apdx-sampledata"></a>
 > 
 > 
 
-## Apêndice: Criar dados de exemplo no DocumentDB
+## <a name="appendix-create-sample-data-in-documentdb"></a>Apêndice: Criar dados de exemplo no DocumentDB
 Esta secção cria uma base de dados pequena no DocumentDB que pode ser utilizada para concluir as tarefas neste tutorial.
 
-As instruções seguintes dão-lhe orientações gerais, mas não são exaustivas. Se precisar de mais ajuda com as tarefas e navegação do portal DocumentDB, consulte a documentação do DocumentDB, mas a maioria dos comandos que precisará estão na barra de comando de serviço, na parte superior do dashboard, ou no painel da base de dados. 
+As instruções seguintes dão-lhe orientações gerais, mas não são exaustivas. Se precisar de mais ajuda com as tarefas e a navegação do portal do DocumentDB, veja a documentação do DocumentDB, mas a maioria dos comandos de que precisa estão na barra de comandos de serviço, na parte superior do dashboard, ou no painel da base de dados. 
 
   ![][1]
 
-### Criar musicstoredb para este tutorial
+### <a name="create-musicstoredb-for-this-tutorial"></a>Criar musicstoredb para este tutorial
 1. [Clique aqui](https://github.com/HeidiSteen/azure-search-get-started-sample-data) para transferir um ficheiro ZIP com os ficheiros de dados JSON da loja de música. Fornecemos 246 documentos JSON para este conjunto de dados.
 2. Adicione DocumentDB à sua subscrição e, em seguida, abra o dashboard de serviço.
-3. Clique em **Adicionar Base de Dados** para criar uma nova base de dados com um ID de `musicstoredb`. Esta aparecerá no mosaico da base de dados mais baixo na página depois de criada.
+3. Clique em **Adicionar Base de Dados** para criar uma nova base de dados com um ID de `musicstoredb`. Esta aparece no mosaico da base de dados mais abaixo na página, depois de criada.
 4. Clique no nome da base de dados para abrir o painel da base de dados.
 5. Clique em **Adicionar Coleção** para criar uma coleção com um ID de `musicstorecoll`.
 6. Clique em **Explorador de Documentos**.
 7. Clique em **Carregar**.
 8. Em **Carregar Documento**, navegue até à pasta local que contém os ficheiros JSON que transferiu anteriormente. Selecione ficheiros JSON em lotes de 100 ou menos.
-   * 1. json
+   * 386. json
    * 387.json
    * . . .
    * 486.json
 9. Repita para obter o lote seguinte de ficheiros até carregar o último, 669.json.
 10. Clique em **Explorador de Consulta** para verificar que os dados foram carregados de forma a cumprir os requisitos de carregamento do Explorador de Documentos.
 
-Uma forma fácil de o fazer consiste em utilizar a consulta predefinida, mas também pode modificar a consulta predefinida para que esta seleciona os 300 primeiros (este conjunto de dados tem menos de 300 itens).
+Uma forma fácil de o fazer consiste em utilizar a consulta predefinida, mas também pode modificar esta consulta para que selecione os 300 primeiros (este conjunto de dados tem menos de 300 itens).
 
 Deve regressar à saída JSON, começando pelo documento 386 e terminando no documento 669. Assim que os dados sejam carregados, pode [regressar aos passos destas instruções](#defineDS) para criar um índice utilizando o **Assistente para importar dados**.
 
@@ -177,6 +181,6 @@ Deve regressar à saída JSON, começando pelo documento 386 e terminando no doc
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

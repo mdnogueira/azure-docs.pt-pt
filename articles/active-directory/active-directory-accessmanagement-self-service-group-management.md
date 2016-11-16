@@ -1,22 +1,26 @@
 ---
-title: Configurar o Azure Active Directory para gestão personalizada de acesso à aplicação| Microsoft Docs
-description: A gestão de grupo personalizada permite aos utilizadores criarem e gerirem grupos do Office 365 no Azure Active Directory ou grupos de segurança e oferece aos utilizadores a possibilidade de solicitar filiação num grupo de segurança ou em grupos do Office 365
+title: "Configurar o Azure Active Directory para gestão personalizada de acesso à aplicação|Microsoft Docs"
+description: "A gestão de grupo personalizada permite aos utilizadores criarem e gerirem grupos do Office 365 no Azure Active Directory ou grupos de segurança e oferece aos utilizadores a possibilidade de solicitar filiação num grupo de segurança ou em grupos do Office 365"
 services: active-directory
-documentationcenter: ''
+documentationcenter: 
 author: curtand
 manager: femila
-editor: ''
-
+editor: 
+ms.assetid: 904d5c70-c34a-46c4-a9a7-d1efecf4821c
 ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 08/10/2016
+ms.date: 11/01/2016
 ms.author: curtand
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: 255670335151443445e5ea4a87614b904915e76f
+
 
 ---
-# Configurar o Azure Active Directory para gestão de grupo personalizada
+# <a name="setting-up-azure-active-directory-for-selfservice-group-management"></a>Configurar o Azure Active Directory para gestão de grupo personalizada
 A gestão de grupo personalizada permite aos utilizadores criar e gerir grupos de segurança ou grupos do Office 365 no Azure Active Directory (Azure AD). Os utilizadores também podem pedir um grupo de segurança ou as associações de grupos do Office 365 e, em seguida, o proprietário do grupo pode aceitar ou recusar a associação. Deste modo, o controlo diário da filiação no grupo pode ser delegado a quem entenda o contexto empresarial dessa filiação. As funcionalidades de gestão de grupo personalizada estão disponíveis apenas para grupos de segurança e grupos do Office 365, mas não para grupos de segurança com capacidade de e-mail correio ou listas de distribuição.
 
 A gestão de grupo personalizada inclui atualmente dois cenários essenciais: gestão de grupo delegada e gestão de grupo personalizada.
@@ -26,7 +30,7 @@ A gestão de grupo personalizada inclui atualmente dois cenários essenciais: ge
 * **Gestão de grupo personalizada**
    Um exemplo deste cenário são dois utilizadores com sites do SharePoint Online que configuraram independentemente. Pretendem conceder acesso às equipas uns dos outros com os respetivos sites. Para o conseguirem, podem criar um grupo no Azure AD e no SharePoint Online cada um deles seleciona esse grupo para fornecer acesso aos respetivos sites. Quando alguém quiser ter acesso, pode solicitá-lo no Painel de Acesso e, após a aprovação, obtém automaticamente acesso a ambos os sites do SharePoint Online. Posteriormente, um deles decide que todas as pessoas que acedem ao site devem também ter acesso a uma determinada aplicação SaaS. O administrador da aplicação SaaS pode adicionar direitos de acesso da aplicação ao site do SharePoint Online. A partir daí, quaisquer pedidos que ele aprove concedem acesso aos dois sites SharePoint Online e também a esta aplicação SaaS.
 
-## Disponibilizar um grupo para personalização por utilizadores finais
+## <a name="making-a-group-available-for-end-user-selfservice"></a>Disponibilizar um grupo para personalização por utilizadores finais
 1. No [portal clássico do Azure](https://manage.windowsazure.com), abra o diretório do Azure AD.
 2. No separador **Configurar**, defina **Gestão de grupo delegada** como Ativado.
 3. Defina **Os utilizadores podem criar grupos de segurança** ou **Os utilizadores podem criar grupos do Office** como Ativado.
@@ -37,7 +41,7 @@ Pode também utilizar **Os utilizadores podem utilizar Personalização em grupo
 
 Também pode utilizar a caixa **Grupo que pode utilizar personalização para grupos de segurança** para especificar um nome personalizado para um grupo cujos membros podem utilizar a gestão personalizada.
 
-## Informações adicionais
+## <a name="additional-information"></a>Informações adicionais
 Estes artigos fornecem informações adicionais acerca do Azure Active Directory.
 
 * [Gerir o acesso aos recursos com grupos do Azure Active Directory](active-directory-manage-groups.md)
@@ -46,6 +50,9 @@ Estes artigos fornecem informações adicionais acerca do Azure Active Directory
 * [O que é o Azure Active Directory?](active-directory-whatis.md)
 * [Integrar as identidades no local ao Azure Active Directory](active-directory-aadconnect.md)
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

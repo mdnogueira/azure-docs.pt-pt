@@ -1,4 +1,4 @@
-### Para verificar a sua ligação com o PowerShell
+### <a name="to-verify-your-connection-by-using-powershell"></a>Para verificar a sua ligação com o PowerShell
 Pode verificar se a sua ligação foi concluída com êxito com o cmdlet`Get-AzureRmVirtualNetworkGatewayConnection`, com ou sem `-Debug`. 
 
 1. Utilize o seguinte exemplo de cmdlet, configurando os valores para corresponder aos seus. Se lhe for pedido, selecione "A" para executar "Todos". No exemplo, `-Name` refere-se para o nome da ligação que criou e quer testar.
@@ -32,17 +32,17 @@ Pode verificar se a sua ligação foi concluída com êxito com o cmdlet`Get-Azu
             "egressBytesTransferred": 4142431
           }
 
-### Para verificar a ligação com o Portal do Azure
-No portal do Azure, pode ver o estado da ligação ao navegar pela mesma. Existem múltiplas formas de efetuar este procedimento. Abaixo encontra-se uma forma para navegar para a ligação.
+### <a name="to-verify-your-connection-by-using-the-azure-portal"></a>Para verificar a ligação com o Portal do Azure
+No portal do Azure, pode ver o estado da ligação ao navegar pela mesma. Existem múltiplas formas de efetuar este procedimento. Os passos seguintes mostram uma forma de navegar para a ligação e realizar uma verificação.
 
-1. No [portal do Azure,](http://portal.azure.com), navegue para **Gateways de rede virtual**. Clique no nome do seu gateway.
-2. No painel, em **Definições**, clique em **Ligações**. Pode ver o estado de cada ligação.
-3. Para obter mais informações sobre a ligação, clique no nome da ligação. Na página Informações Básicas da sua ligação, observe com atenção o **Estado da Ligação**. Quando efetuar uma ligação com êxito o estado será alterado para "Com Êxito" e "Ligado". Pode verificar o movimento dos dados ao consultar os campos **Entrada de dados** e **Saída de dados**.
+1. No [Portal do Azure](http://portal.azure.com), clique em **Todos os recursos** e navegue para o gateway de rede virtual.
+2. No painel do gateway de rede virtual, clique em **Ligações**. Pode ver o estado de cada ligação.
+3. Clique no nome da ligação que pretende verificar para abrir o **Essentials**. No Essentials, pode ver mais informações sobre a ligação. Quando efetuar uma ligação com êxito o **Estado** é alterado para "Com Êxito" e "Ligado".
    
-    No exemplo abaixo, o **Estado da Ligação** é "Não ligado". 
-   
-    ![Verificar ligação](./media/vpn-gateway-verify-connection-rm-include/connectionverify450.png)
+    ![Verificar ligação](./media/vpn-gateway-verify-connection-rm-include/connectionsucceeded.png)
 
-<!--HONumber=Sep16_HO3-->
+
+
+<!--HONumber=Nov16_HO2-->
 
 

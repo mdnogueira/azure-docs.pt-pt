@@ -1,4 +1,4 @@
-### Configurar uma Etiqueta de DNS para o endereço IP público
+### <a name="configure-a-dns-label-for-the-public-ip-address"></a>Configurar uma Etiqueta de DNS para o endereço IP público
 Para ligar ao Motor de Base de Dados do SQL Server a partir da Internet, configure primeiro uma Etiqueta de DNS para o seu endereço IP público.
 
 > [!NOTE]
@@ -17,7 +17,7 @@ Para criar uma Etiqueta de DNS, comece por selecionar **Máquinas virtuais** no 
    
     ![etiqueta de DNS](./media/virtual-machines-sql-server-connection-steps/rm-dns-label.png)
 
-### Ligar ao Motor da Base de Dados a partir de outro computador
+### <a name="connect-to-the-database-engine-from-another-computer"></a>Ligar ao Motor da Base de Dados a partir de outro computador
 1. Num computador ligado à Internet, abra o SQL Server Management Studio (SSMS).
 2. Na caixa de diálogo **Ligar ao Servidor** ou **Ligar ao Motor de Base de Dados**, edite o valor **Nome do servidor**. Introduza o nome DNS completo da máquina virtual (determinado na tarefa anterior).
 3. Na caixa **Autenticação**, selecione **Autenticação do SQL Server**.
@@ -27,6 +27,8 @@ Para criar uma Etiqueta de DNS, comece por selecionar **Máquinas virtuais** no 
    
     ![ligação SSMS](./media/virtual-machines-sql-server-connection-steps/rm-ssms-connect.png)
 
-<!--HONumber=Sep16_HO3-->
+
+
+<!--HONumber=Nov16_HO2-->
 
 

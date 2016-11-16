@@ -1,6 +1,6 @@
 <!--author=SharS last changed: 9/17/15-->
 
-#### Para ligar através da consola de série
+#### <a name="to-connect-through-the-serial-console"></a>Para ligar através da consola de série
 1. Ligue o cabo de série ao dispositivo (diretamente ou através de um adaptador USB de série).
 2. Abra o **Painel de Controlo** e, em seguida, abra o **Gestor de Dispositivos**.
 3. Identifique a porta COM, como mostrado na ilustração seguinte.
@@ -26,6 +26,8 @@
      > 
 7. Clique em **Abrir** para iniciar uma sessão de série.
 
-<!--HONumber=Sep16_HO3-->
+
+
+<!--HONumber=Nov16_HO2-->
 
 

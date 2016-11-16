@@ -2,12 +2,12 @@
 title: Criar VNet Peering com modelos do Resource Manager | Microsoft Docs
 description: Saiba como criar peering de uma rede virtual com os modelos no Resource Manager.
 services: virtual-network
-documentationcenter: ''
+documentationcenter: 
 author: narayanannamalai
 manager: jefco
-editor: ''
+editor: 
 tags: azure-resource-manager
-
+ms.assetid: 75f8d10e-23e8-44bd-9972-aab74048cf38
 ms.service: virtual-network
 ms.devlang: na
 ms.topic: hero-article
@@ -15,9 +15,13 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/14/2016
 ms.author: narayanannamalai;annahar
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: 5af02963f139648d9f1b662f2da913ffa0d6f128
+
 
 ---
-# Criar VNet Peering com modelos do Resource Manager
+# <a name="create-vnet-peering-using-resource-manager-templates"></a>Criar VNet Peering com modelos do Resource Manager
 [!INCLUDE [virtual-networks-create-vnet-selectors-arm-include](../../includes/virtual-networks-create-vnetpeering-selectors-arm-include.md)]
 
 [!INCLUDE [virtual-networks-create-vnet-intro](../../includes/virtual-networks-create-vnetpeering-intro-include.md)]
@@ -29,7 +33,7 @@ Para criar um VNet peering com os modelos do Resource Manager, siga os passos ab
 1. Se nunca tiver utilizado o Azure PowerShell, veja [How to Install and Configure Azure PowerShell (Como instalar e configurar o Azure PowerShell)](../powershell-install-configure.md) e siga as instruções até ao fim para iniciar sessão no Azure e selecionar a sua subscrição.
    
    > [!NOTE]
-   > O cmdlet PowerShell para gerir o VNet Peering é fornecido com o [Azure PowerShell 1.6.](http://www.powershellgallery.com/packages/Azure/1.6.0)
+   > O cmdlet PowerShell para gerir o VNet Peering é fornecido com o [Azure PowerShell 1.6.](http://www.powershellgallery.com/packages/Azure/1.6.0)
    > 
    > 
 2. O texto abaixo mostra a definição da ligação de VNet peering da VNet1 para a VNet2, com base no cenário acima. Copie o conteúdo abaixo e guarde-o num ficheiro chamado VNetPeeringVNet1.json.
@@ -112,28 +116,28 @@ Para criar um VNet peering com os modelos do Resource Manager, siga os passos ab
    
     O resultado indica:
    
-        DeploymentName      : VNetPeeringVNet1
-        ResourceGroupName   : VNet101
-        ProvisioningState       : Succeeded
-        Timestamp           : 7/26/2016 9:05:03 AM
+        DeploymentName        : VNetPeeringVNet1
+        ResourceGroupName    : VNet101
+        ProvisioningState        : Succeeded
+        Timestamp            : 7/26/2016 9:05:03 AM
         Mode            : Incremental
         TemplateLink        :
-        Parameters          :
-        Outputs         :
+        Parameters            :
+        Outputs            :
         DeploymentDebugLogLevel : RequestContent, ResponseContent
    
         New-AzureRmResourceGroupDeployment -ResourceGroupName VNet101 -TemplateFile .\VNetPeeringVNet2.json -DeploymentDebugLogLevel all
    
     O resultado indica:
    
-        DeploymentName      : VNetPeeringVNet2
-        ResourceGroupName   : VNet101
-        ProvisioningState       : Succeeded
-        Timestamp           : 7/26/2016 9:07:22 AM
+        DeploymentName        : VNetPeeringVNet2
+        ResourceGroupName    : VNet101
+        ProvisioningState        : Succeeded
+        Timestamp            : 7/26/2016 9:07:22 AM
         Mode            : Incremental
         TemplateLink        :
-        Parameters          :
-        Outputs         :
+        Parameters            :
+        Outputs            :
         DeploymentDebugLogLevel : RequestContent, ResponseContent
 5. Após a conclusão da implementação, pode executar o cmdlet abaixo para ver o estado do peering:
    
@@ -142,15 +146,15 @@ Para criar um VNet peering com os modelos do Resource Manager, siga os passos ab
     O resultado indica:
    
         Name            : LinkToVNet2
-        Id              : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/VNet101/providers/Microsoft.Network/virtualNetworks/VNet1/virtualNetworkPeerings/LinkToVNet2
+        Id                : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/VNet101/providers/Microsoft.Network/virtualNetworks/VNet1/virtualNetworkPeerings/LinkToVNet2
         Etag            : W/"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-        ResourceGroupName   : VNet101
-        VirtualNetworkName  : VNet1
-        ProvisioningState       : Succeeded
+        ResourceGroupName    : VNet101
+        VirtualNetworkName    : VNet1
+        ProvisioningState        : Succeeded
         RemoteVirtualNetwork    : {
                                             "Id": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/VNet101/providers/Microsoft.Network/virtualNetworks/VNet2"
                                         }
-        AllowVirtualNetworkAccess   : True
+        AllowVirtualNetworkAccess    : True
         AllowForwardedTraffic            : False
         AllowGatewayTransit              : False
         UseRemoteGateways                : False
@@ -234,7 +238,7 @@ Para criar um VNet peering entre subscrições, siga os passos abaixo:
         ]
         }
    
-    Uma vez estabelecido o peering neste cenário, deverá conseguir iniciar as ligações a partir de qualquer máquina virtual para qualquer outra máquina virtual de ambas as VNets em subscrições diferentes.
+     Uma vez estabelecido o peering neste cenário, deverá conseguir iniciar as ligações a partir de qualquer máquina virtual para qualquer outra máquina virtual de ambas as VNets em subscrições diferentes.
 
 [!INCLUDE [virtual-networks-create-vnet-scenario-transit-include](../../includes/virtual-networks-create-vnetpeering-scenario-transit-include.md)]
 
@@ -305,7 +309,25 @@ Para criar um peering entre redes virtuais a partir de modelos de implementaçã
    
     Confirme que coloca o seu ID de subscrição com o local onde se encontra a rede virtual clássica ou VNET2 e altere MyResouceGroup para o nome do grupo de recursos adequado.
    
-    {  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",  "contentVersion": "1.0.0.0",  "parameters": {  },  "variables": {  },  "resources": [      {      "apiVersion": "2016-06-01",      "type": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings",      "name": "VNET1/LinkToVNET2",      "location": "[resourceGroup().location]",      "properties": {      "allowVirtualNetworkAccess": true,      "allowForwardedTraffic": false,      "allowGatewayTransit": false,      "useRemoteGateways": false,          "remoteVirtualNetwork": {          "id": "[resourceId('Microsoft.ClassicNetwork/virtualNetworks', 'VNET2')]"  }      }      }  ]  }
+    {  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",  "contentVersion": "1.0.0.0",  "parameters": {  },  "variables": {  },  "resources": [
+   
+        {
+        "apiVersion": "2016-06-01",
+        "type": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings",
+        "name": "VNET1/LinkToVNET2",
+        "location": "[resourceGroup().location]",
+        "properties": {
+        "allowVirtualNetworkAccess": true,
+        "allowForwardedTraffic": false,
+        "allowGatewayTransit": false,
+        "useRemoteGateways": false,
+            "remoteVirtualNetwork": {
+            "id": "[resourceId('Microsoft.ClassicNetwork/virtualNetworks', 'VNET2')]"
+    }
+   
+        }
+        }
+    ]  }
 2. Para implementar o ficheiro de modelo, execute o cmdlet seguinte para criar ou atualizar a implementação.
    
         New-AzureRmResourceGroupDeployment -ResourceGroupName MyResourceGroup -TemplateFile .\VnetPeering.json -DeploymentDebugLogLevel all
@@ -349,6 +371,9 @@ Para criar um peering entre redes virtuais a partir de modelos de implementaçã
 
 Depois de ter estabelecido o peering entre uma VNet clássica e uma VNet do Resource Manage, deverá poder iniciar as ligações a partir de qualquer máquina virtual na VNET1 para qualquer máquina virtual na VNET2 e vice-versa.
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

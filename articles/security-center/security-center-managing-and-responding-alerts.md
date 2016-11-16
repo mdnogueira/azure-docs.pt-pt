@@ -1,30 +1,34 @@
 ---
-title: Gerir e responder a alertas de segurança no Centro de Segurança do Azure | Microsoft Docs
-description: Este documento ajuda-o a utilizar as capacidades de Centro de Segurança do Azure para gerir e responder a alertas de segurança.
+title: "Gerir e responder a alertas de segurança no Centro de Segurança do Azure | WCF Relay service"
+description: "Este documento ajuda-o a utilizar as capacidades de Centro de Segurança do Azure para gerir e responder a alertas de segurança."
 services: security-center
 documentationcenter: na
 author: YuriDio
 manager: swadhwa
-editor: ''
-
+editor: 
+ms.assetid: b88a8df7-6979-479b-8039-04da1b8737a7
 ms.service: security-center
 ms.topic: hero-article
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/19/2016
+ms.date: 10/17/2016
 ms.author: yurid
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: 8bf0ca0768939cbc99947191eab80a789f551363
+
 
 ---
-# Gerir e responder a alertas de segurança no Centro de Segurança do Azure
+# <a name="managing-and-responding-to-security-alerts-in-azure-security-center"></a>Gerir e responder a alertas de segurança no Centro de Segurança do Azure
 Este documento ajuda-o a utilizar o Centro de Segurança do Azure para gerir e responder a alertas de segurança.
 
 > [!NOTE]
-> Para ativar as deteções avançadas, atualize para o Centro de Segurança do Azure Standard. Está disponível uma avaliação gratuita de 90 dias. Para atualizar, selecione Escalão de Preço na [Política de Segurança](security-center-policies.md). Veja a [página de preços](https://azure.microsoft.com/pricing/details/security-center/) para saber mais.
+> Para ativar as deteções avançadas, atualize para o Centro de Segurança do Azure Standard. Está disponível uma avaliação gratuita de 90 dias. Para atualizar, selecione Escalão de Preço na [Política de Segurança](security-center-policies.md). Veja [Preços do Centro de Segurança do Azure](security-center-pricing.md) para saber mais.
 > 
 > 
 
-## O que são alertas de segurança?
+## <a name="what-are-security-alerts"></a>O que são alertas de segurança?
 O Centro de Segurança recolhe, analisa e integra automaticamente dados de registo a partir dos seus recursos do Azure, da rede e soluções de parceiros ligadas, tal como soluções de proteção de ponto final e firewall, para detetar ameaças reais e reduzir os falsos positivos. Uma lista de alertas de segurança prioritários é apresentada no Centro de Segurança juntamente com as informações necessárias para investigar rapidamente o problema e fornecer recomendações sobre como remediar um ataque. O Centro de segurança do Azure também agrega alertas alinhados com padrões de cadeia de ataque em [Incidentes](security-center-incident.md). 
 
 > [!NOTE]
@@ -32,7 +36,7 @@ O Centro de Segurança recolhe, analisa e integra automaticamente dados de regis
 > 
 > 
 
-## Gerir alertas de segurança
+## <a name="managing-security-alerts"></a>Gerir alertas de segurança
 Pode rever os alertas atuais ao observar o mosaico **Alertas de segurança**. Abra o Portal do Azure e siga os passos abaixo para ver mais detalhes sobre cada alerta:
 
 1. No dashboard do Centro de Segurança, verá o mosaico **Alertas de segurança**.
@@ -54,7 +58,7 @@ Na parte inferior deste painel encontram-se os detalhes de cada alerta. Para ord
   * **Dispensado**: o alerta de segurança foi dispensado pelo utilizador. Este estado é normalmente utilizado para os alertas que tenham sido investigados, mas que foram mitigados ou considerados como não sendo um ataque real.
 * **Gravidade**: o nível de gravidade, que pode ser alta, média ou baixa.
 
-### Filtragem de alertas
+### <a name="filtering-alerts"></a>Filtragem de alertas
 Pode filtrar os alertas com base na data, no estado e na gravidade. A filtragem de alertas pode ser útil para cenários onde necessita de limitar o âmbito dos alertas de segurança mostrados. Por exemplo, pode pretender resolver alertas de segurança que ocorreram nas últimas 24 horas, porque está a investigar uma potencial violação no sistema.
 
 1. Clique em **Filtrar** no painel **Alertas de Segurança**. O painel **Filtro** abre-se e o utilizador seleciona os valores de data, de estado e de gravidade que pretende ver.
@@ -64,7 +68,7 @@ Pode filtrar os alertas com base na data, no estado e na gravidade. A filtragem 
    
    ![Dispensar alertas no Centro de Segurança](./media/security-center-managing-and-responding-alerts/security-center-managing-and-responding-alerts-fig4-ga.png)
 
-### Responder a alertas de segurança
+### <a name="respond-to-security-alerts"></a>Responder a alertas de segurança
 Selecione um alerta de segurança para obter mais informações sobre o(s) evento(s) que acionaram o alerta e quais os passos (se existirem) necessários para remediar um ataque. Os alertas de segurança estão agrupados por tipo e data. Ao clicar num alerta de segurança abre-se um painel que contém uma lista dos alertas agrupados.
 
 ![Responder a alertas de segurança no Centro de Segurança do Azure](./media/security-center-managing-and-responding-alerts/security-center-managing-and-responding-alerts-fig5-ga.png)
@@ -82,15 +86,18 @@ A remediação sugerida pelo Centro de Segurança irá variar de acordo com o al
 > 
 > 
 
-## Consultar também
+## <a name="see-also"></a>Consultar também
 Neste documento, aprendeu a configurar as políticas de segurança no Centro de Segurança. Para saber mais acerca do Centro de Segurança, consulte o seguinte:
 
 * [Lidar com Incidentes de Segurança no Centro de Segurança do Azure](security-center-incident.md)
-* [Capacidades de deteção do Centro de Segurança do Azure](security-center-detection-capabilities.md)
+* [Capacidades de Deteção do Centro de Segurança do Azure](security-center-detection-capabilities.md)
 * [Guia de Operações e Planeamento do Centro de Segurança do Azure](security-center-planning-and-operations-guide.md)
 * [Azure Security Center FAQ (FAQ do Centro de Segurança do Azure)](security-center-faq.md) – Encontre as perguntas mais frequentes acerca de como utilizar o serviço.
 * [Blogue de Segurança do Azure](http://blogs.msdn.com/b/azuresecurity/) – Encontre mensagens do blogue acerca da segurança e conformidade do Azure.
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

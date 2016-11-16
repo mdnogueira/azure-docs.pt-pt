@@ -1,46 +1,48 @@
 ---
-title: Criar uma aplicação Android nas Aplicações Móveis do App Service do Azure | Microsoft Docs
-description: Siga este tutorial para começar a utilizar back-ends de aplicações móveis do Azure para desenvolvimento do Android
+title: "Criar uma aplicação Android nas Aplicações Móveis do Serviço de Aplicações do Azure | Microsoft Docs"
+description: "Siga este tutorial para começar a utilizar back-ends de aplicações móveis do Azure para desenvolvimento do Android"
 services: app-service\mobile
 documentationcenter: android
-author: RickSaling
+author: ysxu
 manager: erikre
-editor: ''
-
+editor: 
+ms.assetid: 355f0959-aa7f-472c-a6c7-9eecea3a34a9
 ms.service: app-service-mobile
 ms.workload: na
 ms.tgt_pltfrm: mobile-android
 ms.devlang: java
 ms.topic: hero-article
-ms.date: 08/17/2016
-ms.author: ricksal
+ms.date: 10/01/2016
+ms.author: yuaxu
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: e4aa29329242a7397fdb5939fa7b5b04340b53c5
+
 
 ---
-# Criar uma aplicação Android
+# <a name="create-an-android-app"></a>Criar uma aplicação Android
 [!INCLUDE [app-service-mobile-selector-get-started](../../includes/app-service-mobile-selector-get-started.md)]
 
-## Descrição geral
+## <a name="overview"></a>Descrição geral
 Este tutorial mostra como adicionar um serviço de back-end baseado na nuvem a uma aplicação móvel Android utilizando um back-end da aplicação móvel do Azure.  Poderá criar tanto um novo back-end da aplicação móvel como uma simples aplicação Android de uma *Lista de tarefas* que armazena dados da aplicação no Azure.
 
 A conclusão deste tutorial é um pré-requisito para todos os outros tutoriais Android referentes à utilização da funcionalidade Aplicações Móveis no App Service do Azure.
 
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 Para concluir este tutorial, precisa do seguinte:
 
 * [Ferramentas de Programador Android](https://developer.android.com/sdk/index.html), que inclui o ambiente de desenvolvimento integrado do Android Studio e a plataforma Android mais recente.
 * SDK Móvel do Azure para Android, referenciado automaticamente como parte do projeto de início rápido que pode transferir.
 * Uma [conta ativa do Azure](https://azure.microsoft.com/pricing/free-trial/).
 
-## Criar um novo back-end da aplicação móvel do Azure
+## <a name="create-a-new-azure-mobile-app-backend"></a>Criar um novo back-end da aplicação móvel do Azure
 [!INCLUDE [app-service-mobile-dotnet-backend-create-new-service](../../includes/app-service-mobile-dotnet-backend-create-new-service.md)]
 
-## Configurar o projeto de servidor
+## <a name="configure-the-server-project"></a>Configurar o projeto de servidor
 [!INCLUDE [app-service-mobile-configure-new-backend.md](../../includes/app-service-mobile-configure-new-backend.md)]
 
-## Transferir e executar a aplicação Android
+## <a name="download-and-run-the-android-app"></a>Transferir e executar a aplicação Android
 [!INCLUDE [app-service-mobile-android-run-app](../../includes/app-service-mobile-android-run-app.md)]
-
-<!-- Images. -->
 
 <!-- URLs -->
 [Portal do Azure]: https://portal.azure.com/
@@ -48,6 +50,6 @@ Para concluir este tutorial, precisa do seguinte:
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Nov16_HO2-->
 
 

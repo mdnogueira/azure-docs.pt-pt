@@ -1,7 +1,7 @@
-## Configurar o ambiente de desenvolvimento
+## <a name="set-up-your-development-environment"></a>Configurar o ambiente de desenvolvimento
 Em seguida, configure o ambiente de desenvolvimento no Visual Studio, para estar pronto para experimentar os exemplos de código fornecidos neste guia.
 
-### Criar um projeto de aplicação de consola do Windows
+### <a name="create-a-windows-console-application-project"></a>Criar um projeto de aplicação de consola do Windows
 No Visual Studio, crie uma nova aplicação de consola do Windows do seguinte modo:
 
 ![Criar uma aplicação de consola do Windows](./media/storage-development-environment-include/storage-development-environment-include-1.png)
@@ -10,7 +10,7 @@ Todos os exemplos de código deste tutorial podem ser adicionados ao método **M
 
 Nota: pode utilizar a Biblioteca de Clientes de Armazenamento do Azure a partir de qualquer tipo de aplicações .NET, incluindo serviço em nuvem do Azure, aplicação Web do Azure, aplicação de ambiente de trabalho ou aplicação móvel. Neste guia, utilizamos uma aplicação de consola pela simplicidade.
 
-### Utilizar o NuGet para instalar os pacotes necessários
+### <a name="use-nuget-to-install-the-required-packages"></a>Utilizar o NuGet para instalar os pacotes necessários
 Há dois pacotes que terá de instalar no projeto para concluir este tutorial:
 
 * [Biblioteca de Clientes de Armazenamento do Microsoft Azure para .NET](https://www.nuget.org/packages/WindowsAzure.Storage/): este pacote fornece acesso programático a recursos de dados na sua conta de armazenamento.
@@ -29,7 +29,7 @@ Pode utilizar o NuGet para obter ambos os pacotes. Siga estes passos.
 > 
 > 
 
-### Determinar o ambiente de destino
+### <a name="determine-your-target-environment"></a>Determinar o ambiente de destino
 Tem duas opções de ambiente para executar os exemplos neste guia:
 
 * Pode executar o código numa conta de armazenamento do Azure na nuvem. 
@@ -42,7 +42,7 @@ Se estiver a filtrar uma conta de armazenamento na nuvem, copie a chave de acess
 > 
 > 
 
-### Configurar a cadeia de ligação de armazenamento
+### <a name="configure-your-storage-connection-string"></a>Configurar a cadeia de ligação de armazenamento
 A Biblioteca de Clientes de Armazenamento do Azure para .NET suporta a utilização de uma cadeia de ligação de armazenamento para configurar pontos finais e credenciais para aceder aos serviços de armazenamento. A melhor forma para manter a cadeia de ligação de armazenamento é num ficheiro de configuração. 
 
 Para obter mais informações sobre as cadeias de ligação, veja [Configurar uma Cadeia de Ligação para o Storage do Azure](../articles/storage/storage-configure-connection-string.md).
@@ -58,9 +58,9 @@ Para configurar a cadeia de ligação, abra o ficheiro `app.config` a partir do 
         <startup> 
             <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5.2" />
         </startup>
-        <appSettings>
+          <appSettings>
             <add key="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=account-name;AccountKey=account-key" />
-        </appSettings>
+          </appSettings>
     </configuration>
 
 Por exemplo, a definição de configuração será semelhante a:
@@ -73,6 +73,6 @@ Para filtrar o emulador de armazenamento, pode utilizar um atalho que mapeia par
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

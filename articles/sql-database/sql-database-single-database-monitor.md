@@ -1,13 +1,13 @@
 ---
 title: Monitorizar o desempenho de base de dados na Base de Dados SQL do Azure | Microsoft Docs
-description: Saiba mais sobre as opções para monitorizar a base de dados com ferramentas do Azure e vistas de gestão dinâmica.
-keywords: monitorização de base de dados, desempenho de base de dados em nuvem
+description: "Saiba mais sobre as opções para monitorizar a base de dados com ferramentas do Azure e vistas de gestão dinâmica."
+keywords: "monitorização de base de dados, desempenho de base de dados em nuvem"
 services: sql-database
-documentationcenter: ''
+documentationcenter: 
 author: CarlRabeler
 manager: jhubbard
-editor: ''
-
+editor: 
+ms.assetid: a2e47475-c955-4a8d-a65c-cbef9a6d9b9f
 ms.service: sql-database
 ms.devlang: na
 ms.topic: get-started-article
@@ -15,12 +15,16 @@ ms.tgt_pltfrm: na
 ms.workload: data-management
 ms.date: 09/27/2016
 ms.author: carlrab
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: f5fa586bd8902af2129a7157f0549c337ae00d00
+
 
 ---
-# Monitorizar o desempenho de base de dados na Base de Dados SQL do Azure
+# <a name="monitoring-database-performance-in-azure-sql-database"></a>Monitorizar o desempenho de base de dados na Base de Dados SQL do Azure
 A monitorização do desempenho de uma base de dados SQL do Azure é iniciada com a monitorização da utilização de recursos em relação ao nível de desempenho de base de dados que escolher. A monitorização ajuda-o a determinar se a base de dados tem excesso de capacidade ou está a ter problemas porque os recursos estão a ser excessivamente utilizados e a decidir se está na altura de ajustar o nível de desempenho e a [camada de serviços](sql-database-service-tiers.md) da base de dados. Pode monitorizar a base de dados com as ferramentas gráficas no [portal do Azure](https://portal.azure.com) ou através de [vistas de gestão dinâmica](https://msdn.microsoft.com/library/ms188754.aspx) do SQL.
 
-## Monitorizar bases de dados com o portal do Azure
+## <a name="monitor-databases-using-the-azure-portal"></a>Monitorizar bases de dados com o portal do Azure
 No [portal do Azure](https://portal.azure.com/), pode monitorizar a utilização de uma base de dados individual, selecionando a base de dados e clicando no gráfico **Monitorização**. É apresentada a janela **Métricas** que pode alterar ao clicar no botão **Editar gráfico**. Adicione as métricas seguintes:
 
 * Percentagem de CPU
@@ -38,7 +42,7 @@ Por exemplo, se espera que a carga de trabalho na sua base de dados aumente, pod
 
 As métricas de desempenho também podem ajudar a determinar se é possível mudar para um nível de desempenho inferior. Parta do princípio de que está a utilizar uma base de dados Standard S2 e que todas as métricas de desempenho mostram que, em média, a base de dados não utiliza mais de 10% em qualquer momento. É provável que a base de dados funcione corretamente no Standard S1. No entanto, esteja atento às cargas de trabalho que aumentam ou flutuam, antes de efetuar a decisão de passar para um nível de desempenho inferior.
 
-## Monitorizar bases de dados do monitor com DMVs
+## <a name="monitor-databases-using-dmvs"></a>Monitorizar bases de dados do monitor com DMVs
 As mesmas métricas que estão expostas no portal também estão disponíveis nas vistas de sistema: [sys.resource_stats](https://msdn.microsoft.com/library/dn269979.aspx)da base de dados **mestra** lógica do seu servidor, e em [sys.dm_db_resource_stats](https://msdn.microsoft.com/library/dn800981.aspx) da base de dados de utilizador. Utilize **sys.resource_stats**, se precisar de monitorizar dados menos granulares ao longo de um período de tempo. Utilize **sys.dm_db_resource_stats**, se precisar de monitorizar dados mais granulares num período de tempo mais pequeno. Para mais informações, consulte [Guia de Desempenho da Base de Dados SQL do Azure](sql-database-performance-guidance.md#monitoring-resource-use-with-sysresourcestats).
 
 > [!NOTE]
@@ -48,6 +52,9 @@ As mesmas métricas que estão expostas no portal também estão disponíveis na
 
 Para conjuntos de bases de dados elásticas, pode monitorizar bases de dados individuais no conjunto, com as técnicas descritas nesta secção. Mas também é possível monitorizar o conjunto como um todo. Para informações, consulte [Monitorizar e gerir um conjunto de bases de dados elásticas](sql-database-elastic-pool-manage-portal.md).
 
-<!--HONumber=Sep16_HO4-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

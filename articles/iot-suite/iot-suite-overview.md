@@ -1,13 +1,13 @@
 ---
-title: Descrição geral do Microsoft Azure IoT Suite | Microsoft Docs
-description: Descrição geral de como o Azure IoT Suite fornece soluções pré-configuradas de Internet das Coisas para recolher, analisar e armazenar dados, fornecer visualizações e integrá-las noutros sistemas.
-services: ''
+title: "Descrição geral do Microsoft Azure IoT Suite | Microsoft Docs"
+description: "Descrição geral de como o Azure IoT Suite fornece soluções pré-configuradas de Internet das Coisas para recolher, analisar e armazenar dados, fornecer visualizações e integrá-las noutros sistemas."
+services: 
 suite: iot-suite
-documentationcenter: ''
+documentationcenter: 
 author: dominicbetts
 manager: timlt
-editor: ''
-
+editor: 
+ms.assetid: 2d38d08a-4133-4e5c-8b28-f93cadb5df05
 ms.service: iot-suite
 ms.devlang: na
 ms.topic: get-started-article
@@ -15,9 +15,13 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/09/2016
 ms.author: dobett
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: 7b0df1fc79e82a99ea65296a4e09bdb48fde9451
+
 
 ---
-# O que é o Azure IoT Suite?
+# <a name="what-is-azure-iot-suite"></a>O que é o Azure IoT Suite?
 Os serviços Internet das Coisas (IoT) do Azure oferecem uma vasta gama de capacidades. Estes serviços de nível empresarial permitem-lhe:
 
 * Recolher dados de dispositivos
@@ -34,7 +38,7 @@ O vídeo que se segue fornece uma introdução ao Azure IoT Suite:
 > 
 > 
 
-## Serviços do Azure IoT no Azure IoT Suite
+## <a name="azure-iot-services-in-azure-iot-suite"></a>Serviços do Azure IoT no Azure IoT Suite
 Geralmente, as soluções pré-configuradas utilizam os seguintes serviços:
 
 * Núcleo para o Azure IoT Suite é o serviço do [Azure IoT Hub][lnk-iot-hub]. Este serviço fornece funcionalidades de mensagens do dispositivo para a nuvem e da nuvem para o dispositivo e funciona como gateway para a nuvem e outros serviços essenciais do IoT Suite. O serviço permite-lhe receber mensagens dos seus dispositivos de escala e enviar comandos aos seus dispositivos.
@@ -44,10 +48,10 @@ Geralmente, as soluções pré-configuradas utilizam os seguintes serviços:
 
 Para uma descrição geral da arquitetura de uma solução IoT típica, consulte o artigo [Microsoft Azure e a Internet das coisas (IoT)][iot-suite-what-is-azure-iot].
 
-## Soluções pré-configuradas
+## <a name="preconfigured-solutions"></a>Soluções pré-configuradas
 O IoT Suite inclui soluções pré-configuradas que lhe permitem começar rapidamente e explorar os cenários comuns do IoT, tais como a *Monitorização remota* e a *Manutenção preditiva*, que o Azure IoT Suite torna possível. Pode implementar estas soluções à sua subscrição do Azure e, em seguida, executar um cenário ponto-a-ponto completo do IoT.
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 Agora que tem uma ideia geral sobre o que o IoT Suite pode fazer e quais são os seus principais componentes, pode obter mais informações sobre as soluções pré-configuradas no IoT Suite. Para tal, veja [Quais são as soluções pré-configuradas do Azure IoT?][lnk-what-are-preconfig]
 
 [lnk-sdks]: https://azure.microsoft.com/documentation/articles/iot-hub-sdks-summary/
@@ -62,6 +66,6 @@ Agora que tem uma ideia geral sobre o que o IoT Suite pode fazer e quais são os
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

@@ -1,38 +1,42 @@
 ---
-title: Como realizar a transmissão em fluxo em direto através dos Serviços de Multimédia do Azure para criar transmissões com velocidade de transmissão múltipla com o .NET | Microsoft Docs
-description: Este tutorial explica-lhe os passos da criação de um canal que recebe uma transmissão em fluxo em direto com uma velocidade de transmissão única e a codifica para uma transmissão com velocidade de transmissão múltipla utilizando o SDK .NET.
+title: "Como realizar a transmissão em fluxo em direto através dos Serviços de Multimédia do Azure para criar transmissões com velocidade de transmissão múltipla com o .NET | Microsoft Docs"
+description: "Este tutorial explica-lhe os passos da criação de um canal que recebe uma transmissão em fluxo em direto com uma velocidade de transmissão única e a codifica para uma transmissão com velocidade de transmissão múltipla utilizando o SDK .NET."
 services: media-services
-documentationcenter: ''
+documentationcenter: 
 author: anilmur
 manager: erikre
-editor: ''
-
+editor: 
+ms.assetid: 4df5e690-ff63-47cc-879b-9c57cb8ec240
 ms.service: media-services
 ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 09/15/2016
+ms.date: 10/12/2016
 ms.author: juliako;anilmur
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: 98498da5a8aaf10e37c355f05d6f6d83fd4df584
+
 
 ---
-# Como realizar uma transmissão em fluxo em direto utilizando os Media Services do Azure para criar transmissões com velocidade de transmissão múltipla com .NET
+# <a name="how-to-perform-live-streaming-using-azure-media-services-to-create-multibitrate-streams-with-net"></a>Como realizar uma transmissão em fluxo em direto utilizando os Media Services do Azure para criar transmissões com velocidade de transmissão múltipla com .NET
 > [!div class="op_single_selector"]
 > * [Portal](media-services-portal-creating-live-encoder-enabled-channel.md)
 > * [.NET](media-services-dotnet-creating-live-encoder-enabled-channel.md)
 > * [API REST](https://msdn.microsoft.com/library/azure/dn783458.aspx)
 > 
 > [!NOTE]
-> Para concluir este tutorial, precisa de uma conta do Azure. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](/pricing/free-trial/?WT.mc_id=A261C142F). 
+> Para concluir este tutorial, precisa de uma conta do Azure. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](/pricing/free-trial/?WT.mc_id=A261C142F).
 > 
 > 
 
-## Descrição geral
+## <a name="overview"></a>Descrição geral
 Este tutorial explica-lhe os passos da criação de um **Canal** que recebe uma transmissão em fluxo em direto com uma velocidade de transmissão única e a codifica para uma transmissão com velocidade de transmissão múltipla.
 
 Para obter mais informações conceptuais relacionadas com Canais ativados para Live Encoding, consulte [Transmissão em fluxo em direto através dos Media Services do Azure para criar transmissões com velocidade de transmissão múltipla](media-services-manage-live-encoder-enabled-channels.md).
 
-## Cenário Comum de Transmissão em Fluxo em Direto
+## <a name="common-live-streaming-scenario"></a>Cenário Comum de Transmissão em Fluxo em Direto
 Os passos seguintes descrevem as tarefas envolvidas na criação de aplicações comuns de transmissão em fluxo em direto.
 
 > [!NOTE]
@@ -41,30 +45,34 @@ Os passos seguintes descrevem as tarefas envolvidas na criação de aplicações
 > 
 
 1. Ligue uma câmara de vídeo a um computador. Inicie e configure um codificador em direto no local que possa enviar uma transmissão de velocidade de transmissão única através de um dos seguintes protocolos: RTMP, Transmissão em Fluxo Uniforme ou RTP (MPEG-TS). Para obter mais informações, consulte [Suporte RTMP dos Media Services do Azure e Codificadores em Direto](http://go.microsoft.com/fwlink/?LinkId=532824).
-   
-    Este passo também pode ser realizado depois de criar o Canal.
-2. Crie e inicie um Canal.
-3. Obtenha o URL de inserção do Canal.
-   
-    O URL de inserção é utilizado pelo codificador em direto para enviar a transmissão para o Canal.
-4. Obtenha o URL de pré-visualização do Canal.
-   
-    Utilize este URL para verificar se o canal está a receber corretamente a transmissão em fluxo em direto.
-5. Crie um elemento.
-6. Se pretender que o elemento seja encriptado dinamicamente durante a reprodução, faça o seguinte:
-7. Crie uma chave de conteúdo.
-8. Configure a política de autorização da chave de conteúdo.
-9. Configure a política de entrega de elementos (utilizada pelo empacotamento dinâmico e a encriptação dinâmica).
-10. Crie um programa e especifique a utilização do elemento que criou.
-11. Publique o elemento associado ao programa através da criação de um localizador OnDemand.
-    
-     Certifique-se de que tem, pelo menos, uma unidade reservada para transmissão em fluxo no ponto final da transmissão a partir do qual pretende transmitir o conteúdo.
-12. Inicie o programa quando estiver pronto para começar a transmissão em fluxo e o arquivamento.
-13. Opcionalmente, o codificador em direto pode ser indicado para iniciar um anúncio. O anúncio é inserido na transmissão de saída.
-14. Pare o programa sempre que pretender interromper a transmissão e arquivar o evento.
-15. Elimine o Programa (e, opcionalmente, elimine o elemento).
 
-## O que irá aprender
+Este passo também pode ser realizado depois de criar o Canal.
+
+1. Crie e inicie um Canal.
+2. Obtenha o URL de inserção do Canal.
+
+O URL de inserção é utilizado pelo codificador em direto para enviar a transmissão para o Canal.
+
+1. Obtenha o URL de pré-visualização do Canal.
+
+Utilize este URL para verificar se o canal está a receber corretamente a transmissão em fluxo em direto.
+
+1. Crie um elemento.
+2. Se pretender que o elemento seja encriptado dinamicamente durante a reprodução, faça o seguinte:
+3. Crie uma chave de conteúdo.
+4. Configure a política de autorização da chave de conteúdo.
+5. Configure a política de entrega de elementos (utilizada pelo empacotamento dinâmico e a encriptação dinâmica).
+6. Crie um programa e especifique a utilização do elemento que criou.
+7. Publique o elemento associado ao programa através da criação de um localizador OnDemand.
+
+Certifique-se de que tem, pelo menos, uma unidade reservada para transmissão em fluxo no ponto final da transmissão a partir do qual pretende transmitir o conteúdo.
+
+1. Inicie o programa quando estiver pronto para começar a transmissão em fluxo e o arquivamento.
+2. Opcionalmente, o codificador em direto pode ser indicado para iniciar um anúncio. O anúncio é inserido na transmissão de saída.
+3. Pare o programa sempre que pretender interromper a transmissão e arquivar o evento.
+4. Elimine o Programa (e, opcionalmente, elimine o elemento).
+
+## <a name="what-youll-learn"></a>O que irá aprender
 Este tópico mostra como realizar operações diferentes em canais e programas que utilizam o SDK .NET dos Media Services. Como muitas operações são de execução longa, são utilizadas APIs .NET que gerem operações de execução longa .
 
 O tópico mostra como fazer o seguinte:
@@ -78,33 +86,34 @@ O tópico mostra como fazer o seguinte:
 7. Mostre e oculte imagens fixas. Inicie e pare os anúncios. São utilizadas APIs de execução longa.
 8. Limpe o canal e todos os recursos associados.
 
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 O seguinte é necessário para concluir o tutorial.
 
-* Para concluir este tutorial, precisa de uma conta do Azure. 
-  
-    Se não tiver uma conta, pode criar uma de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](/pricing/free-trial/?WT.mc_id=A261C142F). Recebe créditos que podem ser utilizados para experimentar os serviços pagos do Azure. Mesmo depois de gastar todos os créditos, pode manter a conta e utilizar os serviços e recursos gratuitos do Azure, tal como a funcionalidade Web Apps no App Service do Azure.
-* Uma conta dos Media Services. Para criar uma conta dos Media Services, consulte [Criar Conta](media-services-create-account.md).
+* Para concluir este tutorial, precisa de uma conta do Azure.
+
+Se não tiver uma conta, pode criar uma conta de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](/pricing/free-trial/?WT.mc_id=A261C142F). Recebe créditos que podem ser utilizados para experimentar os serviços pagos do Azure. Mesmo depois de gastar todos os créditos, pode manter a conta e utilizar os serviços e recursos gratuitos do Azure, tal como a funcionalidade Web Apps no App Service do Azure.
+
+* Uma conta dos Media Services. Para criar uma conta dos Media Services, consulte [Criar Conta](media-services-portal-create-account.md).
 * Visual Studio 2010 SP1 (Professional, Premium, Ultimate ou Express) ou versões posteriores.
 * Tem de utilizar a versão 3.2.0.0 ou mais recente do SDK .NET dos Media Services.
 * Uma câmara Web e um codificador que possa enviar uma transmissão de velocidade de transmissão única.
 
-## Considerações
+## <a name="considerations"></a>Considerações
 * Atualmente, a duração máxima recomendada de um evento em direto é de 8 horas. Contacte amslived através de Microsoft.com se tiver de executar um Canal durante períodos de tempo mais longos.
 * Certifique-se de que tem, pelo menos, uma unidade reservada para transmissão em fluxo no ponto final da transmissão a partir do qual pretende transmitir o conteúdo.
 
-## Transferir exemplo
+## <a name="download-sample"></a>Transferir exemplo
 Obtenha e execute um exemplo [aqui](https://azure.microsoft.com/documentation/samples/media-services-dotnet-encode-live-stream-with-ams-clear/).
 
-## Configurar o desenvolvimento com o SDK .NET dos Media Services
+## <a name="set-up-for-development-with-media-services-sdk-for-net"></a>Configurar o desenvolvimento com o SDK .NET dos Media Services
 1. Criar uma aplicação da consola utilizando o Visual Studio.
 2. Adicione o SDK .NET dos Media Services à aplicação da consola utilizando o pacote NuGet dos Media Services.
 
-## Ligar aos Media Services
+## <a name="connect-to-media-services"></a>Ligar aos Media Services
 Como melhor prática, deve utilizar um ficheiro app.config para armazenar a chave da conta e o nome dos Media Services.
 
 > [!NOTE]
-> Para localizar os valores do Nome e da Chave, aceda ao Portal Clássico do Azure, selecione a conta Serviço de Multimédia e clique no ícone “GERIR CHAVES” na parte inferior da janela do portal. Clicar no ícone junto a cada caixa de texto copia o valor para a área de transferência do sistema.
+> Para localizar os valores Nome e Chave, aceda ao Portal do Azure e selecione a sua conta. A janela Definições aparece à direita. Na janela Definições, selecione Chaves. Clicar no ícone junto a cada caixa de texto copia o valor para a área de transferência do sistema.
 > 
 > 
 
@@ -119,7 +128,7 @@ Adicione a secção appSettings ao ficheiro app.config e configure os valores da
     </configuration>
 
 
-## Exemplo de código
+## <a name="code-example"></a>Exemplo de código
     using System;
     using System.Collections.Generic;
     using System.Configuration;
@@ -336,7 +345,7 @@ Adicione a secção appSettings ao ficheiro app.config e configure os valores da
             /// <returns></returns>
             public static ILocator CreateLocatorForAsset(IAsset asset, TimeSpan ArchiveWindowLength)
             {
-                // You cannot create a streaming locator using an AccessPolicy that includes write or delete permissions.            
+                 // You cannot create a streaming locator using an AccessPolicy that includes write or delete permissions.            
                 var locator = _context.Locators.CreateLocator
                     (
                         LocatorType.OnDemandOrigin,
@@ -504,20 +513,23 @@ Adicione a secção appSettings ao ficheiro app.config e configure os valores da
                     operationId ?? string.Empty);
             }
         }
-    }   
+    }    
 
 
-## Passo seguinte
+## <a name="next-step"></a>Passo seguinte
 Rever os percursos de aprendizagem dos Serviços de Multimédia
 
 [!INCLUDE [media-services-learning-paths-include](../../includes/media-services-learning-paths-include.md)]
 
-## Enviar comentários
+## <a name="provide-feedback"></a>Enviar comentários
 [!INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-### Está à procura de outra coisa?
+### <a name="looking-for-something-else"></a>Está à procura de outra coisa?
 Se este tópico não continha o que pretendia, algo está em falta ou não correspondeu de alguma forma às suas necessidades, envie-nos os seus comentários utilizando o thread Disqus abaixo.
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

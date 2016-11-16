@@ -3,19 +3,21 @@
    
     Anote o caminho do SDK, para utilização num passo posterior. 
    
-    ![](./media/notification-hubs-android-studio-add-google-play-services/notification-hubs-android-studio-sdk-manager.png)
+       ![](./media/notification-hubs-android-studio-add-google-play-services/notification-hubs-android-studio-sdk-manager.png)
 3. Abra o ficheiro **build.gradle** no diretório da aplicação.
    
     ![](./media/notification-hubs-android-studio-add-google-play-services/notification-hubs-android-studio-add-google-play-dependency.png)
 4. Adicione esta linha sob *dependências*: 
    
-        compile 'com.google.android.gms:play-services-gcm:9.2.0'
+           compile 'com.google.android.gms:play-services-gcm:9.2.0'
 5. Clique no ícone **Sincronizar Projeto com os Ficheiros Gradle** na barra de ferramentas.
 6. Abra **AndroidManifest.xml** e adicione esta etiqueta à etiqueta *aplicação*.
    
         <meta-data android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-<!--HONumber=Sep16_HO3-->
+
+
+<!--HONumber=Nov16_HO2-->
 
 

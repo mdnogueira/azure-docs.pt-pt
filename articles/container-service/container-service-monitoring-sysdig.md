@@ -2,13 +2,13 @@
 title: Monitorizar um cluster do Azure Container Service com o Sysdig | Microsoft Docs
 description: Monitorizar um cluster do Azure Container Service com o Sysdig.
 services: container-service
-documentationcenter: ''
+documentationcenter: 
 author: rbitia
 manager: timlt
-editor: ''
+editor: 
 tags: acs, azure-container-service
 keywords: Contentores, DC/OS, Azure
-
+ms.assetid: 91d9a28a-3a52-4194-879e-30f2fa3d946b
 ms.service: container-service
 ms.devlang: na
 ms.topic: get-started-article
@@ -16,20 +16,24 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/08/2016
 ms.author: t-ribhat
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: 4407bc49bf11cada012015f340a9995a26374d00
+
 
 ---
-# Monitorizar um cluster do Azure Container Service com o Sysdig
+# <a name="monitor-an-azure-container-service-cluster-with-sysdig"></a>Monitorizar um cluster do Azure Container Service com o Sysdig
 Neste artigo, vamos implementar agentes do Sysdig em todos os nós de agentes no seu cluster do Azure Container Service. Para esta configuração, é necessária uma conta do Sysdig. 
 
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 [Implemente](container-service-deployment.md) e [ligue](container-service-connect.md) um cluster configurado pelo Azure Container Service. Explore a [IU do Marathon](container-service-mesos-marathon-ui.md). Aceda a [http://app.sysdigcloud.com](http://app.sysdigcloud.com) para configurar uma conta do Sysdig na nuvem. 
 
-## Sysdig
+## <a name="sysdig"></a>Sysdig
 O Sysdig é um serviço de monitorização que lhe permite monitorizar os seus contentores no cluster. O Sysdig é conhecido por ajudá-lo em resolução de problemas, mas também tem as suas métricas de monitorização básicas para CPU, Redes, Memória e I/O. O Sysdig torna mais fácil ver que contentores se esforçam mais ou utilizam mais memória e CPU. Esta vista encontra-se na secção "Descrição Geral", que atualmente se encontra em fase beta. 
 
 ![IU do Sysdig](./media/container-service-monitoring-sysdig/sysdig6.png) 
 
-## Configurar uma implementação do Sysdig com o Marathon
+## <a name="configure-a-sysdig-deployment-with-marathon"></a>Configurar uma implementação do Sysdig com o Marathon
 Estes passos mostram-lhe como configurar e implementar aplicações do Sysdig no seu cluster com o Marathon. 
 
 Aceda à sua IU DC/OS através de [http://localhost:80/](http://localhost:80/) Após aceder à IU DC/OS, navegue para "Universe", que se encontra no canto inferior esquerdo e, em seguida, procure "Sysdig".
@@ -50,6 +54,9 @@ Agora, defina as ocorrências para 10000000. Assim, sempre que um novo nó for a
 
 Após instalar o pacote, regresse à IU do Sysdig e poderá explorar as diferentes métricas de utilização para contentores no seu cluster. 
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

@@ -1,27 +1,31 @@
 ---
 title: FAQ do Azure Active Directory | Microsoft Docs
-description: As FAQ do Azure Active Directory fornecem respostas a perguntas, juntamente com o acesso ao Azure e Azure Active Directory, gestão de palavras-passe e acesso à aplicação.
+description: "As FAQ do Azure Active Directory fornecem respostas a perguntas, juntamente com o acesso ao Azure e Azure Active Directory, gestão de palavras-passe e acesso à aplicação."
 services: active-directory
-documentationcenter: ''
-author: markusvi
+documentationcenter: 
+author: MarkusVi
 manager: femila
-editor: ''
-
+editor: 
+ms.assetid: b8207760-9714-4871-93d5-f9893de31c8f
 ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 08/16/2016
+ms.date: 10/31/2016
 ms.author: markusvi
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: 0f7070d9d691e2471978a2986025ebfdafbeaa7c
+
 
 ---
-# FAQ do Azure Active Directory
+# <a name="azure-active-directory-faq"></a>FAQ do Azure Active Directory
 O Azure Active Directory é uma solução Identidade como um Serviço (IDaaS) completa que abrange todos os aspetos relativos à identidade, gestão de acesso e segurança.
 
 Para obter mais detalhes, consulte [O que é o Azure Active Directory?](active-directory-whatis.md).
 
-## Aceder ao Azure e Azure Active Directory
+## <a name="accessing-azure-and-azure-active-directory"></a>Aceder ao Azure e Azure Active Directory
 **P: Por que motivo recebo “Não foram encontradas subscrições” ao tentar aceder ao Azure AD no Portal Clássico do Azure (https://manage.windowsazure.com)?**
 
 **R:** O acesso ao Portal Clássico do Azure requer que cada utilizador tenha permissões numa subscrição do Azure. Se tiver uma subscrição paga do Office 365 ou do Azure AD, vá para [http://aka.ms/accessAAD](http://aka.ms/accessAAD) para uma ativação única. Caso contrário, terá de ativar uma [versão de avaliação do Azure](https://azure.microsoft.com/pricing/free-trial/) completa ou uma subscrição paga. 
@@ -41,7 +45,7 @@ Na realidade, todos os utilizadores que tiver ativado para os serviços online d
 Além disso, os serviços pagos do Azure AD (por exemplo, Azure AD Basic, Premium, EMS, etc.) completam outros serviços online, como o Office 365 e o Microsoft Azure com soluções abrangentes de gestão empresarial e de segurança.
 
 - - -
-## Introdução ao Azure AD Híbrido
+## <a name="getting-started-with-hybrid-azure-ad"></a>Introdução ao Azure AD Híbrido
 **P: Como ligar o meu diretório no local ao Azure AD?**
 
 **R:** Pode ligar o diretório no local ao Azure AD com o **Azure AD Connect**. 
@@ -72,7 +76,7 @@ Para mais informações, consulte [Introdução ao Painel de Acesso](active-dire
 Para obter mais detalhes, consulte [Monitorizar os serviços de infraestrutura de identidade no local e sincronização na nuvem](active-directory-aadconnect-health.md).  
 
 - - -
-## Gestão de palavras-passe
+## <a name="password-management"></a>Gestão de palavras-passe
 **P: Posso utilizar a repetição de escrita de palavras-passe do Azure AD sem sincronizar a palavra-passe? (ou seja, gostaria de utilizar Azure AD SSPR com repetição de escrita de palavras-passe, mas não desejo as minhas palavras-passe armazenadas na nuvem.)**
 
 **R:** Não tem de sincronizar as palavras-passe do AD no Azure AD para ativar a repetição de escrita de palavras-passe. Num ambiente federado, o SSO do Azure AD depende do diretório no local para autenticar o utilizador. Este cenário não requer que a palavra-passe no local seja controlada no Azure AD.
@@ -85,14 +89,14 @@ Para obter mais detalhes, consulte [Monitorizar os serviços de infraestrutura d
 Para obter mais detalhes, consulte [Introdução à Gestão de Palavras-passe](active-directory-passwords-getting-started.md) 
 
 - - -
-**P: posse utilizar a repetição de palavras-passe com palavras-passe geridas por um administrador?**
+**P: Posso utilizar a repetição de palavras-passe com palavras-passe geridas por um administrador?**
 
 **R:** Sim, se tiver ativado a repetição de palavras-passe, as operações de palavras-passe feitas por um administrador são repetidas no ambiente local.  
 
 Para obter mais respostas a perguntas relacionadas com palavras-passe, consulte [Perguntas Mais Frequentes da Gestão de Palavras-passe](active-directory-passwords-faq.md).
 
 - - -
-## Acesso à aplicação
+## <a name="application-access"></a>Acesso à aplicação
 **P: Onde posso encontrar uma lista das aplicações previamente integradas ao Azure AD e as respetivas funcionalidades?**
 
 **R:** O Azure AD tem mais de 2600 aplicações previamente integradas da Microsoft, de fornecedores de serviços de aplicações ou de parceiros. Todas as aplicações previamente integradas suportam o SSO. O SSO permite-lhe utilizar as credenciais organizacionais para aceder às suas aplicações. Algumas das aplicações também suportam o aprovisionamento e cancelamento de aprovisionamento automatizados.
@@ -124,7 +128,7 @@ Para mais informações, consulte [Implementar aplicações integradas ao Azure 
 - - -
 **P: Quais são as várias formas de autenticação e início de sessão único do Azure Active Directory das aplicações?**
 
-**R:** O Azure Active Directory suporta vários protocolos normalizados para a autenticação e autorização, tais como SAML 2.0, OpenID Connect, OAuth 2.0 e WS-Federation. O Azure AD também suporta cofres de palavras-passe e as capacidades de início de sessão automatizado para aplicações que apenas suportam autenticação baseada em formulários.  
+**R:** O Azure Active Directory suporta vários protocolos normalizados para a autenticação e autorização, tais como SAML 2.0, OpenID Connect, OAuth 2.0 e WS-Federation. O Azure AD também suporta cofres de palavras-passe e as capacidades de início de sessão automatizado para aplicações que apenas suportam autenticação baseada em formulários.  
 
 Para obter mais informações, consulte:
 
@@ -154,6 +158,9 @@ Para mais detalhes, consulte [Proteger o acesso ao Office 365 e a outras aplica�
 Para obter mais informações, consulte[Automatizar o Aprovisionamento do Utilizador e Cancelar o Aprovisionamento a Aplicações SaaS com o Azure Active Directory ](active-directory-saas-app-provisioning.md)
 
 - - -
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 
