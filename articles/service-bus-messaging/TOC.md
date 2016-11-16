@@ -53,10 +53,10 @@
 # Referência
 ## [Detalhes dos preços](service-bus-pricing-billing.md)
 ## [Amostras](service-bus-samples.md)
-## [Referência de .NET API](https://msdn.microsoft.com/library/azure/jj933424)
-## [REST API reference (Referência da API REST)](https://msdn.microsoft.com/library/azure/hh780717)
 ## [Exceções](service-bus-messaging-exceptions.md)
 ## [Quotas](service-bus-quotas.md)
+## [.NET](/dotnet/api/)
+## [REST](/rest/api/servicebus/)
 
 # Recursos
 ## [Blogue](https://blogs.msdn.microsoft.com/servicebus/)
@@ -65,6 +65,8 @@
 ## [Preços](https://azure.microsoft.com/pricing/details/service-bus/)
 ## [Percurso de aprendizagem](https://azure.microsoft.com/documentation/learning-paths/service-bus/)
 ## [Explorador do Service Bus](https://github.com/paolosalvatori/ServiceBusExplorer)
+## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=service-bus)
+## [Vídeos](https://azure.microsoft.com/documentation/videos/index/?services=service-bus)
 
 
 <!--HONumber=Nov16_HO2-->

@@ -1,5 +1,5 @@
 # Descrição geral
-## [Descrição Geral do Gestor de Recursos](resource-group-overview.md)
+## [O que é o Resource Manager?](resource-group-overview.md)
 ## [Serviços, regiões e versões de API suportados](../resource-manager-supported-services.md?toc=%2fazure%2fazure-resource-manager%2ftoc.json)
 ## [Compreender a implementação Clássica e a implementação Resource Manager](../resource-manager-deployment-model.md?toc=%2fazure%2fazure-resource-manager%2ftoc.json)
 ## [Governação de subscrições prescritiva](../resource-manager-subscription-governance.md?toc=%2fazure%2fazure-resource-manager%2ftoc.json)
@@ -11,7 +11,7 @@
 ## [Código VS com o Resource Manager](../resource-manager-vs-code.md?toc=%2fazure%2fazure-resource-manager%2ftoc.json)
 
 # Procedimento
-## Modelos
+## Criar modelos
 ### [Melhores práticas de modelos](../resource-manager-template-best-practices.md?toc=%2fazure%2fazure-resource-manager%2ftoc.json)
 ### [Criar modelos](../resource-group-authoring-templates.md?toc=%2fazure%2fazure-resource-manager%2ftoc.json)
 ### [Funções de modelos](../resource-group-template-functions.md?toc=%2fazure%2fazure-resource-manager%2ftoc.json)
@@ -52,12 +52,21 @@
 ### [Ver as operações de implementação com a CLI do Azure](../resource-manager-troubleshoot-deployments-cli.md?toc=%2fazure%2fazure-resource-manager%2ftoc.json)
 ### [Ver as operações de implementação com a API REST](../resource-manager-troubleshoot-deployments-rest.md?toc=%2fazure%2fazure-resource-manager%2ftoc.json)
 # Referência
+## [Cmdlets do PowerShell](/powershell/azureps-cmdlets-docs/)
+## [CLI do Azure](/cli/azure)
+## [Java](/java/api)
+## [API .NET](/dotnet/api)
 ## [Esquemas dos modelos](https://github.com/Azure/azure-resource-manager-schemas)
-## [Cmdlets do PowerShell para o Resource Manager](https://msdn.microsoft.com/library/dn757692(v=azure.200).aspx)
-## [API REST para o Resource Manager](https://msdn.microsoft.com/en-us/library/azure/dn790568)
-## [Biblioteca de clientes .NET para o Resource Manager](https://msdn.microsoft.com/en-us/library/azure/mt418626)
+## [Cmdlets do PowerShell para o Resource Manager](/powershell/resourcemanager/azurerm.resources/v3.2.0/azurerm.resources)
+## [API REST para o Resource Manager](/rest/api/resources/)
+## [Biblioteca de clientes .NET para o Resource Manager](/dotnet/api/microsoft.azure.management.resourcemanager)
 ## [Limitar pedidos](../resource-manager-request-limits.md?toc=%2fazure%2fazure-resource-manager%2ftoc.json)
+## [REST](/rest/api/resources/)
 
+# Recursos
+## [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-resource-manager)
+## [Vídeos](https://azure.microsoft.com/documentation/videos/index/?services=azure-resource-manager)
+## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=azure-resource-manager) 
 
 <!--HONumber=Nov16_HO2-->
 

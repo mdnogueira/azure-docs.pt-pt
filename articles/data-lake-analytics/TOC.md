@@ -3,8 +3,8 @@
 
 # Introdução
 ## [Utilizar o Portal](data-lake-analytics-get-started-portal.md)
-## [Com o PowerShell](data-lake-analytics-get-started-powershell.md)
-## [Com o .NET SDK](data-lake-analytics-get-started-net-sdk.md)
+## [Utilizar o PowerShell](data-lake-analytics-get-started-powershell.md)
+## [Utilizar o SDK .NET](data-lake-analytics-get-started-net-sdk.md)
 ## [Com o .Java SDK](data-lake-analytics-get-started-java-sdk.md)
 ## [Com o Visual Studio](data-lake-analytics-data-lake-tools-get-started.md)
 ## [Com a CLI](data-lake-analytics-get-started-cli.md)
@@ -37,15 +37,17 @@
 ### [Utilizar a Vista de Execução do Vértice](data-lake-analytics-data-lake-tools-use-vertex-execution-view.md)
 
 # Referência
-## [SDK do .NET](https://msdn.microsoft.com/library/azure/mt572197(Azure.100).aspx)
-## [Cmdlets do PowerShell](https://msdn.microsoft.com/library/azure/mt607124.aspx)
-## [Referência de Idioma do U-SQL](https://msdn.microsoft.com/library/azure/mt591959(Azure.100).aspx)
-## [Node.js](https://www.npmjs.com/package/azure-arm-datalake-analytics)
 
+## [PowerShell](/powershell/resourcemanager/)
+## [Java](/java/api/)
+## [.NET](https://docs.microsoft.com/dotnet/api)
+## [U-SQL](https://msdn.microsoft.com/library/azure/mt591959(Azure.100))
+## [Node.js](https://www.npmjs.com/package/azure-arm-datalake-analytics)
+## [REST](/rest/api/datalakeanalytics/)
 
 # Recursos
 ## [Fórum do MSDN](https://social.msdn.microsoft.com/Forums/home?forum=AzureDataLake)
-## [Fórum Stack Overflow](http://stackoverflow.com/questions/tagged/azure-data-lake)
+## [Fórum do Stack Overflow](http://stackoverflow.com/questions/tagged/azure-data-lake)
 ## [Enviar comentários sobre o UserVoice](https://feedback.azure.com/forums/327234-data-lake)
 ## [Blogue do Azure Data Lake](https://blogs.msdn.microsoft.com/azuredatalake/)
 

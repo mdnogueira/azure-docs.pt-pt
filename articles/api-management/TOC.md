@@ -40,11 +40,11 @@
 ### [Gerir a utilização da automatização](automation-manage-api-management.md)
 ### [Configurar com o Git](api-management-configuration-repository-git.md)
 #Referência
-## [Modelos](https://msdn.microsoft.com/en-us/library/azure/mt697540)
-## [Referência do cmdlet do Powershell de implementação do serviço](https://msdn.microsoft.com/en-us/library/azure/mt619282)
+## [Cmdlet do PowerShell de Gestão de Recursos]/powershell/resourcemanager()
+## [Referência do cmdlet do Powershell de implementação clássica](https://msdn.microsoft.com/en-us/library/azure/mt613507)
+## [API REST](/rest/api/apimanagement/)
 ## [Políticas](https://msdn.microsoft.com/en-us/library/azure/dn894081)
-## [API REST](https://msdn.microsoft.com/en-us/library/azure/dn776326)
-## [Cmdlet do Powershell de gestão do serviço](https://msdn.microsoft.com/en-us/library/azure/mt613507)
+## [Modelos](https://msdn.microsoft.com/en-us/library/azure/mt697540)
 #Recursos
 ## [Preços](https://azure.microsoft.com/pricing/details/api-management/)
 ## [Documento técnico: Gestão de API Baseada em Nuvem](http://j.mp/ms-apim-whitepaper)

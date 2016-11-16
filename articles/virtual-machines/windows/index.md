@@ -1,9 +1,13 @@
 ---
 layout: LandingPage
----
-#Windows Virtual Machines Documentation
+translationtype: Human Translation
+ms.sourcegitcommit: d737a8b14000e157d4f70c9e23cc9d40697d2b50
+ms.openlocfilehash: 0d9510cc32e4d3e0ed4b61f47cb4749180c1b830
 
-Azure Virtual Machines (VM) is one of several types of on-demand scalable computing resources that Azure offers. Typically, you choose a VM when you need more control over the computing environment than the other choices offer. An Azure VM gives you the flexibility of virtualization without having to buy and maintain the physical hardware that runs it. And, you keep control of configuration, patching, and installing the software that runs on the VM.
+---
+#<a name="windows-virtual-machines-documentation"></a>Documentação de Máquinas Virtuais do Windows
+
+As Máquinas Virtuais (VMs) do Azure são um dos vários tipos de recursos informáticos a pedido, dimensionáveis que o Azure oferece. Normalmente, escolher uma VM, se precisar de mais controlo sobre o ambiente informático que as outras opções oferecem. Uma VM do Azure fornece-lhe a flexibilidade de virtualização sem ter de comprar e manter o hardware físico que executa a VM. E mantém o controlo da configuração, aplicação de patches e instalação do software que é executado na VM.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -13,11 +17,11 @@ Azure Virtual Machines (VM) is one of several types of on-demand scalable comput
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="media/index/virtualmachine.svg" alt="" />
+                            <img src="media/index/virtual-machine.svg" alt="" />
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Learn about Windows Virtual Machines</h3>
+                        <h3>Saiba mais sobre as Máquinas Virtuais do Windows</h3>
                     </div>
                 </div>
             </div>
@@ -31,11 +35,11 @@ Azure Virtual Machines (VM) is one of several types of on-demand scalable comput
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="media/index/virtualmachine.svg" alt="" />
+                            <img src="media/index/video-library.svg" alt="" />
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Virtual Machines Video Library</h3>
+                        <h3>Biblioteca de Vídeo de Máquinas Virtuais</h3>
                     </div>
                 </div>
             </div>
@@ -49,11 +53,11 @@ Azure Virtual Machines (VM) is one of several types of on-demand scalable comput
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="media/index/virtualmachine.svg" alt="" />
+                            <img src="media/index/portal.svg" alt="" />
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Create your first Windows virtual machine in the Azure portal</h3>
+                        <h3>Criar a sua primeira máquina virtual do Windows no Portal do Azure</h3>
                     </div>
                 </div>
             </div>
@@ -67,11 +71,11 @@ Azure Virtual Machines (VM) is one of several types of on-demand scalable comput
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="media/index/virtualmachine.svg" alt="" />
+                            <img src="media/index/powershell.svg" alt="" />
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Create a VM with PowerShell</h3>
+                        <h3>Criar uma VM com o PowerShell</h3>
                     </div>
                 </div>
             </div>
@@ -85,11 +89,11 @@ Azure Virtual Machines (VM) is one of several types of on-demand scalable comput
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="media/index/virtualmachine.svg" alt="" />
+                            <img src="media/index/tutorial.svg" alt="" />
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Create a VM using a Resource Manager Template</h3>
+                        <h3>Crie uma VM com um Modelo do Gestor de Recursos</h3>
                     </div>
                 </div>
             </div>
@@ -100,37 +104,42 @@ Azure Virtual Machines (VM) is one of several types of on-demand scalable comput
 
 ---
 
-##Reference
+##<a name="reference"></a>Referência
 
-###PowerShell
+###<a name="powershell"></a>PowerShell
 [Azure PowerShell](/powershell/)
 
-###Azure CLI
-[Azure CLI](/cli/azure/vm)
+###<a name="azure-cli"></a>CLI do Azure
+[CLI do Azure](/cli/azure/vm)
 
-###.NET
-[Managed Reference API](/dotnet/api/)
+###<a name="net"></a>.NET
+[API de Referência Gerida](/dotnet/api/)
 
-###Java SDK
-[Java Reference](/java/api/)
+###<a name="java-sdk"></a>SDK Java
+[Referência Java](/java/api/)
 
-###Rest (Compute)
-[Compute REST API Reference](/rest/api/compute)
+###<a name="rest-compute"></a>REST (Computação)
+[Referência da API REST da Computação](/rest/api/compute)
 
-###REST (Network)
-[Network REST API Reference for Network](https://msdn.microsoft.com/library/mt163658.aspx)
+###<a name="rest-network"></a>REST (Rede)
+[Referência da API REST de Rede para a Rede](https://msdn.microsoft.com/library/mt163658.aspx)
 
-###REST (Storage)
-[Storage REST API Reference](https://msdn.microsoft.com/library/azure/dd179355.aspx)
+###<a name="rest-storage"></a>REST (Armazenamento)
+[Referência da API REST do Armazenamento](https://msdn.microsoft.com/library/azure/dd179355.aspx)
 
-###REST (VM Scale Sets)
-[Virtual Machine Scale Sets REST API Reference](https://msdn.microsoft.com/library/azure/mt705635.aspx)
+###<a name="rest-vm-scale-sets"></a>REST (Conjuntos de Dimensionamento de VMs)
+[Referência da API REST dos Conjuntos de Dimensionamento de Máquinas Virtuais](https://msdn.microsoft.com/library/azure/mt705635.aspx)
 
 <div class="downloadHolder">
     <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/virtual-machines/windows.pdf">
         <div class="img"></div>
         <div class="text">
-            Download Windows Virtual Machine Documentation
-        </div>
+Transferir a Documentação da Máquina Virtual do Windows </div>
     </a>
 </div>
+
+
+
+<!--HONumber=Nov16_HO2-->
+
+

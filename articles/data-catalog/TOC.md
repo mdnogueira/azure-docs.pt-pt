@@ -30,9 +30,11 @@
 ## [Atalhos de teclado do Catálogo de Dados do Azure](data-catalog-keyboard-shortcuts.md)
 ## [Terminologia](data-catalog-terminology.md)
 ## [Notas de versão](data-catalog-release-notes.md)
+## [REST](https://docs.microsoft.com/rest/api/datacatalog/)
 
 # Recursos
 ## [Preços](https://azure.microsoft.com/pricing/details/data-catalog/)
+
 
 <!--HONumber=Nov16_HO2-->
 

@@ -1,7 +1,7 @@
 # Descrição geral
-## [Noções básicas do Batch](batch-technical-overview.md)
-## [Descrição geral da funcionalidade do Batch](batch-api-basics.md)
-## [Quotas e limites do Batch](batch-quota-limit.md)
+## [O que é o Azure Batch](batch-technical-overview.md)
+## [Descrição geral das funcionalidades](batch-api-basics.md)
+## [Quotas e limites](batch-quota-limit.md)
 # Introdução
 ## [Criar uma conta do Batch](batch-account-create-portal.md)
 ## [Tutorial .NET do Batch](batch-dotnet-get-started.md)
@@ -20,26 +20,32 @@
 ### [Dependências de tarefas](batch-task-dependencies.md)
 ### [Modelos de projetos do Visual Studio para o Batch](batch-visual-studio-templates.md)
 ## Gerir
-### [CLI do Batch](batch-cli-get-started.md)
 ### [Cmdlets do PowerShell do Batch](batch-powershell-cmdlets-get-started.md)
+### [CLI do Azure](batch-cli-get-started.md)
 ### [Registos de diagnóstico do Batch](batch-diagnostics.md)
+
 # Referência
-## [Referência da API REST do Batch](https://go.microsoft.com/fwlink/p/?linkid=833492)
-## [Referência .NET do Batch](https://go.microsoft.com/fwlink/p/?linkid=833494)
-## [Referência Python do Batch](https://go.microsoft.com/fwlink/p/?linkid=833496)
-## [Referência Node.js do Batch](https://go.microsoft.com/fwlink/p/?linkid=833544)
-## [Referência Java do Batch](https://go.microsoft.com/fwlink/p/?linkid=833497)
-## [Referência .NET da Gestão do Batch](https://go.microsoft.com/fwlink/p/?linkid=833498)
-## [Referência PowerShell do Batch](https://go.microsoft.com/fwlink/p/?linkid=833500)
+## [Cmdlets do PowerShell](https://docs.microsoft.com/en-us/powershell/azureps-cmdlets-docs/)
+## [Java](https://docs.microsoft.com/java/api)
+## [API .NET](https://docs.microsoft.com/dotnet/api)
+## [Python SDK](https://go.microsoft.com/fwlink/p/?linkid=833496)
+## [Node.js](https://go.microsoft.com/fwlink/p/?linkid=833544)
+## [REST](https://docs.microsoft.com/rest/api/batchservice/)
+
 # Relacionado
+## [Batch Shipyard](https://github.com/Azure/batch-shipyard)
 ## [Soluções Batch e HPC na nuvem do Azure](batch-hpc-solutions.md)
 ## [Big Compute no Azure: recursos técnicos](big-compute-resources.md)
+
 # Recursos
-## [Atualizações de Serviço](https://azure.microsoft.com/updates/?product=batch&updatetype=&platform=))
-## [Fórum do MSDN](https://social.msdn.microsoft.com/Forums/home?forum=azurebatch)
+## [Preços](https://azure.microsoft.com/pricing/details/batch/)
+## [Fórum do MSDN](https://social.msdn.microsoft.com/Forums/en-us/home?forum=azurebatch)
+## [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-batch)
+## [Vídeos](https://azure.microsoft.com/documentation/videos/index/?services=batch)
+## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=batch&updatetype=&platform=)
 ## [Exemplos de código C# do Batch](https://github.com/Azure/azure-batch-samples/tree/master/CSharp/)
 ## [Exemplos de código Python do Batch](https://github.com/Azure/azure-batch-samples/tree/master/Python/Batch)
-## [Batch Shipyard](https://github.com/Azure/batch-shipyard)
+
 
 
 <!--HONumber=Nov16_HO2-->

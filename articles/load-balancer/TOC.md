@@ -32,18 +32,25 @@
 ## [Configurar vários VIPs para o serviço cloud](load-balancer-multivip.md)
 ## [Log Analytics para o Balanceador de Carga do Azure](load-balancer-monitor-log.md)
 ## [Configurar DHCPv6 para VMs do Linux](load-balancer-ipv6-for-linux.md)
+
 # Referência
+## [PowerShell](https://go.microsoft.com/fwlink/p/?LinkId=536407)
+## [.NET](https://docs.microsoft.com/dotnet/api/)
 ## [API do Resource Manager](https://go.microsoft.com/fwlink/p/?LinkId=536405)
-## [Cmdlets do PowerShell do Resource Manager](https://go.microsoft.com/fwlink/p/?LinkId=536407)
 ## [Utilizar Recursos de Rede](https://go.microsoft.com/fwlink/p/?LinkId=536403)
+
 # Relacionado
-## [Gateway de Aplicação](https://azure.microsoft.com/documentation/services/application-gateway/)
-## [Express Route](https://azure.microsoft.com/documentation/services/expressroute/)
-## [Rede Virtual](https://azure.microsoft.com/documentation/services/virtual-network/)
-## [Gateway de VPN](https://azure.microsoft.com/documentation/services/vpn-gateway/)
-## [Máquina Virtual](https://azure.microsoft.com/documentation/services/virtual-machines/)
-## [Gestor de Tráfego](https://azure.microsoft.com/documentation/services/traffic-manager/)
-## [DNS](https://azure.microsoft.com/documentation/services/dns/)
+## [Gateway de Aplicação](/azure/application-gateway/)
+## [Express Route](/azure/expressroute/)
+## [Rede Virtual](/azure/virtual-network/)
+## [Gateway de VPN](/azure/vpn-gateway/)
+## [Máquina Virtual](/azure/virtual-machines/)
+## [Gestor de Tráfego](/azure/traffic-manager/)
+## [DNS](/azure/dns/)
+
+# Recursos
+## [Preços](https://azure.microsoft.com/pricing/details/load-balancer/) 
+## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=load-balancer) 
 
 
 <!--HONumber=Nov16_HO2-->

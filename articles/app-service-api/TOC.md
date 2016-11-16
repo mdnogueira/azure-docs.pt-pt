@@ -57,7 +57,7 @@
 
 ### Ambiente do Serviço de Aplicações
 #### [Criar uma aplicação Web num Ambiente de Serviço de Aplicações](../app-service-web/app-service-web-how-to-create-a-web-app-in-an-ase.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
-#### [Como Criar um ASE do ILB com os Modelos do Azure Resource Manager](../app-service-web/app-service-app-service-environment-create-ilb-ase-resourcemanager.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
+#### [Como Criar um ASE do ILB Utilizando Modelos do Azure Resource Manager](../app-service-web/app-service-app-service-environment-create-ilb-ase-resourcemanager.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
 #### [Utilizar um Balanceador de Carga Interno](../app-service-web/app-service-environment-with-internal-load-balancer.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
 
 ## [Implementar](../app-service/app-service-deployment-readme.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
@@ -66,12 +66,12 @@
 ### [Implementação contínua](../app-service-web/app-service-continuous-deployment.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
 ### [Ambientes de teste](../app-service-web/web-sites-staged-publishing.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
 ### [Implementação do Git local](../app-service-web/app-service-deploy-local-git.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
-### [Implementar WebJobs com o Visual Studio](../app-service-web/websites-dotnet-deploy-webjobs.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
+### [Implementar o WebJobs com o Visual Studio](../app-service-web/websites-dotnet-deploy-webjobs.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
 
-## [Dimensionar](../app-service/app-service-scale-readme.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
+## [Dimensionamento](../app-service/app-service-scale-readme.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
 ### [Aumentar verticalmente uma aplicação](../app-service-web/web-sites-scale.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
 ### [Ambiente do Serviço de Aplicações](../app-service/app-service-app-service-environments-readme.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
-#### [Escala Distribuída Geograficamente com Ambientes de Serviço de Aplicações](../app-service-web/app-service-app-service-environment-geo-distributed-scale.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
+#### [Dimensionamento Distribuído Geograficamente com Ambientes de Serviço de Aplicações](../app-service-web/app-service-app-service-environment-geo-distributed-scale.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
 #### [Dimensionar aplicações num Ambiente de Serviço de Aplicações](../app-service-web/app-service-web-scale-a-web-app-in-an-app-service-environment.md)
 #### [Dimensionar automaticamente num Ambiente de Serviço de Aplicações](../app-service/app-service-environment-auto-scale.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
 
@@ -79,7 +79,7 @@
 ### [Configurar](../app-service-web/web-sites-configure.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
 ### Domínios personalizados
 #### [Comprar e configurar domínios personalizados](../app-service-web/custom-dns-web-site-buydomains-web-app.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
-#### [Mapear o domínio personalizado](../app-service-web/web-sites-custom-domain-name.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
+#### [Mapear o seu domínio personalizado](../app-service-web/web-sites-custom-domain-name.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
 #### [Configurar domínios da GoDaddy](../app-service-web/web-sites-godaddy-custom-domain-name.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
 #### [Domínios personalizados com o Gestor de Tráfego](../app-service-web/web-sites-traffic-manager-custom-domain-name.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
 
@@ -89,7 +89,7 @@
 ### [Configuração avançada](../app-service-web/web-sites-transform-extend.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
 ### [Grupos de recursos](../app-service-web/app-service-move-resources.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
 ### [WebJobs](../app-service/app-service-webjobs-readme.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
-#### [Executar tarefas em Segundo Plano com WebJobs](../app-service-web/web-sites-create-web-jobs.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
+#### [Executar tarefas em Segundo Plano com o WebJobs](../app-service-web/web-sites-create-web-jobs.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
 
 ### [Ambiente do Serviço de Aplicações](../app-service/app-service-app-service-environments-readme.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
 #### [Configurar](../app-service-web/app-service-web-configure-an-app-service-environment.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
@@ -112,17 +112,17 @@
 ### [Autenticação com o Active Directory no local](../app-service-web/web-sites-authentication-authorization.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
 
 ### HTTPS
-#### [Configurar a Autenticação Mútua de TLS ](../app-service-web/app-service-web-configure-tls-mutual-auth.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
+#### [Configurar a Autenticação Mútua de TLS](../app-service-web/app-service-web-configure-tls-mutual-auth.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
 #### [Comprar um certificado SSL no Azure](../app-service-web/web-sites-purchase-ssl-web-site.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
 #### [Utilizar um certificado SSL obtido noutro local](../app-service-web/web-sites-configure-ssl-certificate.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
 
 ### Proteger um Ambiente do Serviço de Aplicações
-#### [Configurar uma firewall de aplicação Web](../app-service-web/app-service-app-service-environment-web-application-firewall.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
+#### [Configurar uma firewall de aplicações Web](../app-service-web/app-service-app-service-environment-web-application-firewall.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
 #### [Implementar uma arquitetura de segurança em camadas](../app-service-web/app-service-app-service-environment-layered-security.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
 #### [Ligar a Recursos Back-end com Segurança](../app-service-web/app-service-app-service-environment-securely-connecting-to-backend-resources.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
 
 ## Cópia de segurança
-### [Fazer cópia de segurança da aplicação no Azure](../app-service-web/web-sites-backup.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
+### [Fazer backup da sua aplicação no Azure](../app-service-web/web-sites-backup.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
 ### [Restaurar uma aplicação no Azure](../app-service-web/web-sites-restore.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
 ### [Utilizar o REST para fazer a cópia de segurança e restaurar aplicações do Serviço de Aplicações](../app-service-web/websites-csm-backup.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
 
@@ -137,8 +137,8 @@
 #### [Web + SQL](../app-service-web/app-service-web-arm-with-sql-database-provision.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
 #### [MSDeploy com nome de anfitrião personalizado e certificado SSL](../app-service-web/app-service-web-arm-with-msdeploy-provision.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
 ### PowerShell
-#### [Automatizar cópia de segurança e restauro](../app-service/app-service-powershell-backup.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
-#### [Clonagem de aplicações](../app-service-web/app-service-web-app-cloning.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
+#### [Automatizar backup e restauro](../app-service/app-service-powershell-backup.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
+#### [Clonagem de aplicação](../app-service-web/app-service-web-app-cloning.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
 #### [Enlace de Certificado SSL](../app-service-web/app-service-web-app-powershell-ssl-binding.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
 #### [Utilizar o Azure Resource Manager com o PowerShell](../app-service-web/app-service-web-app-azure-resource-manager-powershell.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
 ### [Gerir aplicações com a Automatização do Azure](../app-service-web/automation-manage-web-app.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
@@ -149,7 +149,7 @@
 
 ## Resolução de problemas
 ### [Ativar o registo de diagnósticos](../app-service-web/web-sites-enable-diagnostic-log.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
-### [Registos de transmissão e a consola](../app-service-web/web-sites-streaming-logs-and-console.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
+### [Transmissão em fluxo de registos e a consola](../app-service-web/web-sites-streaming-logs-and-console.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
 ### [Resolver problemas com o Visual Studio](../app-service-web/web-sites-dotnet-troubleshoot-visual-studio.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
 
 # Referência

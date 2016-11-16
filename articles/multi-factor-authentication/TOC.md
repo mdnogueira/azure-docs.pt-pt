@@ -38,7 +38,7 @@
 ### [Aplicações Web do IIS](multi-factor-authentication-get-started-server-iis.md)
 ### [Gateway de Ambiente de Trabalho Remoto](multi-factor-authentication-get-started-server-rdg.md)
 
-## Programar aplicações
+## Programar 
 ### [Transformar em Aplicações Personalizadas (SDK)](multi-factor-authentication-sdk.md)
 
 ## Resolução de problemas

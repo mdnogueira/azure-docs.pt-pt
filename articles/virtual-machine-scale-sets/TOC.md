@@ -26,11 +26,12 @@
 ### [Resolução de problemas do dimensionamento automático](virtual-machine-scale-sets-troubleshoot.md)
 
 # Referência
+## [PowerShell](/powershell/azureps-cmdlets-docs/)
 ## [CLI do Azure](../virtual-machines/azure-cli-arm-commands.md)
-## [API REST do conjunto de dimensionamento](/rest/api/compute/virtualmachinescalesets)
-## [API REST das VMs do conjunto de dimensionamento](/rest/api/compute/virtualmachinescalesetvms)
-## [Azure PowerShell](/powershell/resourcemanager/)
-## [Modelos do Azure](https://azure.microsoft.com/documentation/templates/?term=vmss)
+## [REST](/rest/api/compute/)
+
+# Recursos
+## [Preços](https://azure.microsoft.com/pricing/details/virtual-machine-scale-sets/linux/)
 
 
 <!--HONumber=Nov16_HO2-->

@@ -1,5 +1,6 @@
-# [Descrição geral](app-service-how-works-readme.md)
+# Descrição geral
 ## [O que é o Serviço de Aplicações](app-service-value-prop-what-is.md)
+## [Como funciona](app-service-how-works-readme.md)
 ## [Planos do Serviço de Aplicações](azure-web-sites-web-hosting-plans-in-depth-overview.md)
 
 # Introdução
@@ -149,15 +150,14 @@
 ## [Referência do Serviço de Aplicações](../app-service-web/app-service-changes-existing-services.md?toc=%2fazure%2fapp-service%2ftoc.json)
 ## [Melhores práticas](../app-service-web/app-service-best-practices.md?toc=%2fazure%2fapp-service%2ftoc.json)
 ## [Recursos de WebJob](../app-service-web/websites-webjobs-resources.md?toc=%2fazure%2fapp-service%2ftoc.json)
-
-# Relacionado
 ## [SDK de WebJobs](../app-service-web/websites-dotnet-webjobs-sdk-get-started.md?toc=%2fazure%2fapp-service%2ftoc.json)
+## [REST](https://docs.microsoft.com/rest/api/appservice/)
 
-
-
-
-
-
+# Recursos
+## [Preços](https://azure.microsoft.com/pricing/details/app-service/)  
+## [Fórum do MSDN](https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=windowsazurewebsitespreview)  
+## [Vídeos](https://azure.microsoft.com/documentation/videos/index/?services=app-service) 
+## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=app-service) 
 
 <!--HONumber=Nov16_HO2-->
 

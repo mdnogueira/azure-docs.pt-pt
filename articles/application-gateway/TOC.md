@@ -37,23 +37,27 @@
 ### [Portal](application-gateway-create-probe-portal.md)
 ### [PowerShell](application-gateway-create-probe-ps.md)
 ### [PowerShell (Clássico)](application-gateway-create-probe-classic-ps.md)
-### Gerir
+## Gerir
 ### [Diagnóstico](application-gateway-diagnostics.md)
 ### [Resolução de problemas](application-gateway-troubleshooting-502.md)
 # Referência
-## [APIs do Resource Manager](https://msdn.microsoft.com/library/azure/mt684941)
-## [APIs de Gestão de Serviço](https://msdn.microsoft.com/library/azure/mt299393)
-## [Cmdlets do PowerShell](https://go.microsoft.com/fwlink/p/?LinkId=536407)
+## [Cmdlets do PowerShell](https://docs.microsoft.com/powershell/resourcemanager)
+## [REST](https://msdn.microsoft.com/library/mt684941)
+## [REST clássico](https://msdn.microsoft.com/library/azure/mt299393)
+
 # Relacionado
-## [ExpressRoute](https://azure.microsoft.com/documentation/services/expressroute/)
-## [Rede virtual](https://azure.microsoft.com/documentation/services/virtual-network/)
-## [Gateway de VPN](https://azure.microsoft.com/documentation/services/vpn-gateway/)
-## [Máquinas virtuais](https://azure.microsoft.com/documentation/services/virtual-machines/)
-## [Balanceador de carga](https://azure.microsoft.com/documentation/services/load-balancer/)
-## [Gestor de Tráfego](https://azure.microsoft.com/documentation/services/traffic-manager/)
+## [ExpressRoute](/azure/expressroute/)
+## [Rede virtual](/azure/virtual-network/)
+## [Gateway de VPN](/azure/vpn-gateway/)
+## [Máquinas virtuais](/azure/virtual-machines/)
+## [Balanceador de carga](/azure/load-balancer/)
+## [Gestor de Tráfego](/azure/traffic-manager/)
 # Recursos
 ## [Preços](https://azure.microsoft.com/pricing/details/application-gateway/)
+## [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-application-gateway)  
+## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=application-gateway)
 ## [SLA](https://azure.microsoft.com/support/legal/sla/)
+
 
 <!--HONumber=Nov16_HO2-->
 

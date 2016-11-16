@@ -36,7 +36,7 @@
 ### [Expirar dados automaticamente](documentdb-time-to-live.md)
 ### [Personalizar os índices](documentdb-indexing-policies.md)
 ### [Proteger o acesso a dados](documentdb-secure-access-to-data.md)
-### [Cópia de segurança e restauro](documentdb-online-backup-and-restore.md)
+### [Criar cópias de segurança e restauro](documentdb-online-backup-and-restore.md)
 ### [Níveis de desempenho](documentdb-performance-levels.md)
 ### [Quotas de recursos](documentdb-limits.md)
 ### [Aumentar as quotas](documentdb-increase-limits.md)
@@ -96,8 +96,10 @@
 
 # Recursos
 ## [Preços](https://azure.microsoft.com/pricing/details/documentdb/)
-## [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-documentdb)
 ## [Fóruns do MSDN](https://social.msdn.microsoft.com/forums/azure/en-US/home?forum=AzureDocumentDB)
+## [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-documentdb)
+## [Vídeos](https://azure.microsoft.com/documentation/videos/index/?services=documentdb) 
+## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=documentdb) 
 ## [Pergunte ao DocumentDB](documentdb-community.md#contact-the-team)
 ## [Portal da comunidade](documentdb-community.md)
 ## [Eventos e gravações](documentdb-community.md#events-and-recordings)

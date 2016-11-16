@@ -1,17 +1,14 @@
 # Descrição geral
 ## [O que é o Centro de Segurança do Azure?](security-center-intro.md)
-## [Descrição geral do serviço](https://azure.microsoft.com/services/security-center/)
-## [Preços](security-center-pricing.md)
-## [FAQ](security-center-faq.md)
 ## [Obter informações com o Power BI](security-center-powerbi.md)
 ## [Segurança de dados](security-center-data-security.md)
-## Cenários comuns
+## Cenários
 ### [Resposta a incidentes](security-center-incident-response.md)
 
 # Introdução
 ## [Início rápido](security-center-get-started.md)
 ## [Planeamento e operações](security-center-planning-and-operations-guide.md)
-## [Centro de Segurança e Base de Dados SQL](security-center-sql-database.md)
+## [FAQ](security-center-faq.md)
 
 # Procedimento
 
@@ -59,10 +56,14 @@
 ## [API REST](https://msdn.microsoft.com/en-US/library/mt704034(Azure.100).aspx)
 
 # Relacionado
-## [Informação de Segurança do Azure](../security/azure-security-getting-started.md)
+## [Azure Security](/azure/security/)
 
 # Recursos
 ## [Blogue sobre Segurança, Privacidade e Conformidade do Azure](http://blogs.msdn.com/b/azuresecurity/)
+## [Preços](security-center-pricing.md)
+## [Descrição geral do serviço](https://azure.microsoft.com/services/security-center/)
+## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=security-center)
+## [Vídeos](https://azure.microsoft.com/documentation/videos/index/?services=security-center)
 
 
 <!--HONumber=Nov16_HO2-->
