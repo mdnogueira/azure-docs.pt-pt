@@ -1,12 +1,12 @@
 ---
 title: Atualizar o PhoneFactor Agent para o Servidor Multi-Factor Authentication do Azure
-description: Este documento descreve como começar a utilizar o Servidor MFA do Azure e como atualizar a partir de um phonefactor agent mais antigo.
+description: "Este documento descreve como começar a utilizar o Servidor MFA do Azure e como atualizar a partir de um phonefactor agent mais antigo."
 services: multi-factor-authentication
-documentationcenter: ''
+documentationcenter: 
 author: kgremban
 manager: femila
 editor: curtland
-
+ms.assetid: 42838ff7-bdf2-4d06-bacc-b3839a00cd76
 ms.service: multi-factor-authentication
 ms.workload: identity
 ms.tgt_pltfrm: na
@@ -14,12 +14,16 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 08/04/2016
 ms.author: kgremban
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: 1cd92121b150461698674b8acd4369d09c9b9920
+
 
 ---
-# Atualizar o PhoneFactor Agent para o Servidor Multi-Factor Authentication do Azure
+# <a name="upgrading-the-phonefactor-agent-to-azure-multifactor-authentication-server"></a>Atualizar o PhoneFactor Agent para o Servidor Multi-Factor Authentication do Azure
 Atualizar do PhoneFactor Agent v5.x ou anterior no Servidor Multi-Factor Authentication do Azure requer a desinstalação do PhoneFactor Agent e dos componentes afiliados antes de o Servidor Multi-Factor Authentication e os respetivos componentes afiliados poderem ser instalados.
 
-## Para atualizar o PhoneFactor Agent para o Servidor Multi-Factor Authentication do Azure
+## <a name="to-upgrade-the-phonefactor-agent-to-azure-multifactor-authentication-server"></a>Para atualizar o PhoneFactor Agent para o Servidor Multi-Factor Authentication do Azure
 <ol>
 <li>Primeiro, faça uma cópia de segurança do ficheiro de dados do PhoneFactor. A localização de instalação predefinida é C:\Programas\PhoneFactor\Data\Phonefactor.pfdata.
 
@@ -66,6 +70,6 @@ Atualizar do PhoneFactor Agent v5.x ou anterior no Servidor Multi-Factor Authent
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

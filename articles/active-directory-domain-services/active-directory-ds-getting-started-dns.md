@@ -1,12 +1,12 @@
 ---
-title: 'Serviços de domínio do Azure AD: Atualizar as definições de DNS para a Azure Virtual Network | Microsoft Docs'
-description: Introdução aos Serviços de Domínio do Azure Active Directory
+title: "Serviços de domínio do Azure AD: Atualizar as definições de DNS para a Azure Virtual Network | Microsoft Docs"
+description: "Introdução aos Serviços de Domínio do Azure Active Directory"
 services: active-directory-ds
-documentationcenter: ''
+documentationcenter: 
 author: mahesh-unnikrishnan
 manager: stevenpo
 editor: curtand
-
+ms.assetid: d4f3e82c-6807-4690-b298-4eabad2b7927
 ms.service: active-directory-ds
 ms.workload: identity
 ms.tgt_pltfrm: na
@@ -14,10 +14,14 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 09/21/2016
 ms.author: maheshu
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: 81c0564390c57c7ee001ce5a574ab670faf898b4
+
 
 ---
-# Azure AD Domain Services - atualizar as definições de DNS para a rede virtual do Azure
-## Tarefa 4: Atualizar as definições de DNS para a Azure Virtual Network
+# <a name="azure-ad-domain-services-update-dns-settings-for-the-azure-virtual-network"></a>Azure AD Domain Services - atualizar as definições de DNS para a rede virtual do Azure
+## <a name="task-4-update-dns-settings-for-the-azure-virtual-network"></a>Tarefa 4: Atualizar as definições de DNS para a Azure Virtual Network
 Nas tarefas de configuração anteriores, ativou com êxito o Azure AD Domain Services no seu diretório. A tarefa seguinte é garantir que os computadores na rede virtual se conseguem ligar e consumir esses serviços. Atualize as definições do servidor DNS da sua rede virtual para que apontem para os dois endereços IP nos quais o Azure AD Domain Services está disponível na rede virtual.
 
 > [!NOTE]
@@ -46,9 +50,12 @@ Execute os seguintes passos de configuração para atualizar a definição do se
 > 
 > 
 
-## Tarefa 5 – Ativar a sincronização de palavras-passe para os Serviços de Domínio do Azure AD
+## <a name="task-5-enable-password-synchronization-to-azure-ad-domain-services"></a>Tarefa 5 – Ativar a sincronização de palavras-passe para os Serviços de Domínio do Azure AD
 A próxima tarefa de configuração é [ativar a sincronização de palavras-passe para os Serviços de Domínio do Azure AD](active-directory-ds-getting-started-password-sync.md).
 
-<!--HONumber=Sep16_HO4-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

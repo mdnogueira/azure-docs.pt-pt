@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial de Base de Dados SQL: criar uma base de dados SQL | Microsoft Docs'
-description: Saiba como configurar um servidor lógico de Base de dados SQL, uma regra de firewall do servidor, uma base de dados SQL e dados de exemplo. Além disso, saiba como ligar-se com ferramentas de cliente, configurar utilizadores e como configurar uma regra de firewall de base de dados.
+description: "Saiba como configurar um servidor lógico de Base de dados SQL, uma regra de firewall do servidor, uma base de dados SQL e dados de exemplo. Além disso, saiba como ligar-se com ferramentas de cliente, configurar utilizadores e como configurar uma regra de firewall de base de dados."
 keywords: tutorial de base de dados sql, criar uma base de dados sql
 services: sql-database
-documentationcenter: ''
+documentationcenter: 
 author: CarlRabeler
 manager: jhubbard
-editor: ''
-
+editor: 
+ms.assetid: aeb8c4c3-6ae2-45f7-b2c3-fa13e3752eed
 ms.service: sql-database
 ms.workload: data-management
 ms.tgt_pltfrm: na
@@ -15,9 +15,13 @@ ms.devlang: na
 ms.topic: hero-article
 ms.date: 09/07/2016
 ms.author: carlrab
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: 914d5f7e6b8e9165fc8ba9021e1030b865ba5fb2
+
 
 ---
-# Tutorial de Base de Dados SQL: criar uma base de dados SQL em minutos utilizando o portal do Azure
+# <a name="sql-database-tutorial-create-a-sql-database-in-minutes-by-using-the-azure-portal"></a>Tutorial de Base de Dados SQL: criar uma base de dados SQL em minutos utilizando o portal do Azure
 > [!div class="op_single_selector"]
 > * [Portal do Azure](sql-database-get-started.md)
 > * [C#](sql-database-get-started-csharp.md)
@@ -36,7 +40,7 @@ Pode efetuar estas mesmas tarefas utilizando o [C#](sql-database-get-started-csh
 
 <a name="create-logical-server-bk"></a>
 
-## Criar a sua primeira base de dados SQL do Azure
+## <a name="create-your-first-azure-sql-database"></a>Criar a sua primeira base de dados SQL do Azure
 1. Se não estiver atualmente ligado, ligue-se ao [Portal do Azure](http://portal.azure.com).
 2. Clique em **Novo**, clique em **Dados + Armazenamento** e, em seguida, localize **Base de Dados SQL**.
    
@@ -101,7 +105,7 @@ Pode efetuar estas mesmas tarefas utilizando o [C#](sql-database-get-started-csh
 
 [!INCLUDE [Create server firewall rule](../../includes/sql-database-create-new-server-firewall-portal.md)]
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 Agora que concluiu este tutorial de Base de Dados SQL e criou uma base de dados com alguns dados de exemplo, está pronto para explorar, utilizando as suas ferramentas favoritas.
 
 * Se estiver familiarizado com o Transact-SQL e o SQL Server Management Studio (SSMS), saiba como [Ligar e consultar uma base de dados SQL com SSMS](sql-database-connect-query-ssms.md).
@@ -111,9 +115,12 @@ Agora que concluiu este tutorial de Base de Dados SQL e criou uma base de dados 
 * Se pretender carregar alguns dados para uma nova tabela a partir de um ficheiro CSV utilizando a ferramenta de linha de comandos BCP, veja [Carregar dados para a Base de Dados SQL a partir de um ficheiro CSV com o BCP](sql-database-load-from-csv-with-bcp.md).
 * Se quiser começar a explorar a segurança da Base de Dados SQL do Azure, veja o artigo [Introdução à segurança](sql-database-get-started-security.md)
 
-## Recursos adicionais
+## <a name="additional-resources"></a>Recursos adicionais
 [O que é a Base de Dados SQL?](sql-database-technical-overview.md)
 
-<!----HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

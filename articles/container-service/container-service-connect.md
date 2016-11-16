@@ -1,14 +1,14 @@
 ---
-title: Ligar a um cluster do Serviço de Contentor Azure | Microsoft Docs
-description: Ligar a um cluster do Serviço de Contentor Azure utilizando um túnel SSH.
+title: Ligar a um cluster do Azure Container Service | Microsoft Docs
+description: "Ligar a um cluster do Serviço de Contentor Azure utilizando um túnel SSH."
 services: container-service
-documentationcenter: ''
+documentationcenter: 
 author: rgardler
 manager: timlt
-editor: ''
+editor: 
 tags: acs, azure-container-service
-keywords: Docker, Contentores, Microserviços, DC/OS, Azure
-
+keywords: "Docker, Contentores, Microserviços, DC/OS, Azure"
+ms.assetid: ff8d9e32-20d2-4658-829f-590dec89603d
 ms.service: container-service
 ms.devlang: na
 ms.topic: get-started-article
@@ -16,18 +16,22 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/13/2016
 ms.author: rogardle
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: 97f74f845e19ae99cf6c5abbb9f076c7c5171993
+
 
 ---
-# Ligar a um cluster do Serviço de Contentor Azure
-Os clusters DC/OS e do Docker Swarm que são implementados pelo Serviço de Contentor do Azure expõem pontos finais REST. No entanto, estes pontos finais não estão abertos ao mundo externo. Para gerir estes pontos finais, tem de criar um túnel Secure Shell (SSH). Depois de estabelecer um túnel SSH, pode executar comandos nos pontos finais de cluster e ver a IU do cluster através de um browser no seu próprio sistema. Este documento explica-lhe como criar um túnel SSH no Linux, OS X e Windows.
+# <a name="connect-to-an-azure-container-service-cluster"></a>Ligar a um cluster do Serviço de Contentor Azure
+Os clusters DC/OS e do Docker Swarm que são implementados pelo Serviço de Contentor do Azure expõem pontos finais REST. No entanto, estes pontos finais não estão abertos ao mundo externo. Para gerir estes pontos finais, tem de criar um túnel Secure Shell (SSH). Depois de estabelecer um túnel SSH, pode executar comandos nos pontos finais de cluster e ver a IU do cluster através de um browser no seu próprio sistema. Este documento explica-lhe como criar um túnel SSH no Linux, OS X e Windows.
 
 > [!NOTE]
 > Pode criar uma sessão SSH com um sistema de gestão de clusters. No entanto, não é recomendável. Trabalhar diretamente num sistema de gestão expõe o risco de alterações de configuração inadvertidas.   
 > 
 > 
 
-## Criar um túnel SSH no Linux ou OS X
-A primeira coisa que faz quando cria um túnel SSH no Linux ou OS X é localizar o nome DNS público dos modelos de estrutura mestres com balanceamento de carga. Para fazer isto, expanda o grupo de recursos, de modo a que cada recurso seja apresentado. Localize e selecione o endereço IP público do modelo de estrutura mestre. Esta ação abre um painel que contém informações sobre o endereço IP público, que inclui o nome DNS. Guarde este nome para utilização posterior. <br />
+## <a name="create-an-ssh-tunnel-on-linux-or-os-x"></a>Criar um túnel SSH no Linux ou OS X
+A primeira coisa que faz quando cria um túnel SSH no Linux ou OS X é localizar o nome DNS público dos modelos de estrutura mestres com balanceamento de carga. Para fazer isto, expanda o grupo de recursos, de modo a que cada recurso seja apresentado. Localize e selecione o endereço IP público do modelo de estrutura mestre. Esta ação abre um painel que contém informações sobre o endereço IP público, que inclui o nome DNS. Guarde este nome para utilização posterior. <br />
 
 ![Nome DNS público](media/pubdns.png)
 
@@ -46,7 +50,7 @@ ssh -L PORT:localhost:PORT -f -N [USERNAME]@[DNSPREFIX]mgmt.[REGION].cloudapp.az
 > 
 > 
 
-## Túnel do DC/OS
+## <a name="dcos-tunnel"></a>Túnel do DC/OS
 Para abrir um túnel para os pontos finais relacionados ao DC/OS, execute um comando semelhante ao seguinte:
 
 ```bash
@@ -61,7 +65,7 @@ Agora, pode aceder aos pontos finais relacionados ao DC/OS em:
 
 Da mesma forma, pode aceder ao resto das APIs de cada aplicação através deste túnel.
 
-## Túnel do Swarm
+## <a name="swarm-tunnel"></a>Túnel do Swarm
 Para abrir um túnel para o ponto final Swarm, execute um comando semelhante ao seguinte:
 
 ```bash
@@ -74,7 +78,7 @@ Agora pode definir a variável de ambiente de DOCKER_HOST da seguinte forma. Pod
 export DOCKER_HOST=:2375
 ```
 
-## Criar um túnel SSH no Windows
+## <a name="create-an-ssh-tunnel-on-windows"></a>Criar um túnel SSH no Windows
 Existem várias opções para criar túneis SSH no Windows. Este documento descreve como utilizar o PuTTY para efetuar este procedimento.
 
 Transfira o PuTTY para o sistema Windows e execute a aplicação.
@@ -113,12 +117,15 @@ Quando tiver configurado o túnel para DC/OS, pode aceder ao ponto final relacio
 
 Quando tiver configurado o túnel para Docker Swarm, pode aceder ao cluster Swarm através da CLI do Docker. Primeiro terá de configurar uma variável de ambiente do Windows com o nome `DOCKER_HOST` com um valor de ` :2375`.
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 Implementar e gerir contentores com DC/OS ou Swarm:
 
-* [Trabalhar com o Serviço de Contentor do Azure e o DC/OS](container-service-mesos-marathon-rest.md)
-* [Trabalhar com o Serviço de Contentor do Azure e o Docker Swarm](container-service-docker-swarm.md)
+* [Trabalhar com o Azure Container Service e o DC/OS](container-service-mesos-marathon-rest.md)
+* [Trabalhar com o Azure Container Service e o Docker Swarm](container-service-docker-swarm.md)
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

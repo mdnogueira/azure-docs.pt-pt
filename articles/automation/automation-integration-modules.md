@@ -1,12 +1,12 @@
 ---
-title: Criar um Módulo de Integração da Automatização do Azure | Microsoft Docs
-description: Tutorial que o orienta através da criação, teste e exemplo de utilização dos módulos de integração na Automatização do Azure.
+title: "Criar um Módulo de Integração da Automatização do Azure | Microsoft Docs"
+description: "Tutorial que o orienta através da criação, teste e exemplo de utilização dos módulos de integração na Automatização do Azure."
 services: automation
-documentationcenter: ''
+documentationcenter: 
 author: mgoedtel
 manager: jwhit
-editor: ''
-
+editor: 
+ms.assetid: 27798efb-08b9-45d9-9b41-5ad91a3df41e
 ms.service: automation
 ms.workload: tbd
 ms.tgt_pltfrm: na
@@ -14,15 +14,19 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 09/12/2016
 ms.author: magoedte
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: ca2343c8915690184e63396afa4e45a22a16ec2b
+
 
 ---
-# Módulos de Integração da Automatização do Azure
+# <a name="azure-automation-integration-modules"></a>Módulos de Integração da Automatização do Azure
 O PowerShell é a tecnologia fundamental por trás da Automatização do Azure. Uma vez que a Automatização do Azure é baseada no PowerShell, os módulos do PowerShell são essenciais para a extensibilidade da Automatização do Azure. Neste artigo, descrevemos as especificações da utilização da Automatização do Azure de módulos do PowerShell, referidos como "Módulos de Integração", e as melhores práticas para criar os seus módulos do PowerShell para se certificar de que funcionam como Módulos de Integração na Automatização do Azure. 
 
-## O que é um Módulo do PowerShell?
+## <a name="what-is-a-powershell-module"></a>O que é um Módulo do PowerShell?
 Um módulo do PowerShell é um grupo de cmdlets do PowerShell como **Get-Data** ou **Copy-Item**, que pode ser utilizado a partir da consola do PowerShell, scripts, fluxos de trabalho, runbooks e recursos do PowerShell DSC como WindowsFeature ou um Ficheiro, que podem ser utilizados a partir de configurações do PowerShell DSC. Todas as funcionalidades do PowerShell estão expostas através de cmdlets e recursos do DSC e todos os recursos do DSC/cmdlets estão protegido por um módulo do PowerShell, muitos dos quais são enviados juntamente com o PowerShell. Por exemplo, o cmdlet **Get-Date** faz parte do módulo do PowerShell Microsoft.PowerShell.Utility, o cmdlet **Copy-Item** faz parte do módulo do PowerShell Microsoft.PowerShell.Management e o recurso do Pacote DSC faz parte do módulo do PowerShell PSDesiredStateConfiguration. Ambos estes módulos são enviados com o PowerShell. Porém, muitos módulos do PowerShell não são enviados como parte do PowerShell e, em vez disso, são distribuídos com produtos proprietários ou de terceiros como o System Center 2012 Configuration Manager ou pela grande comunidade do PowerShell em locais como a Galeria do PowerShell.  Os módulos são úteis porque tornam as tarefas complexas mais simples através da funcionalidade encapsulada.  Pode saber mais sobre os [módulos do PowerShell no MSDN](https://msdn.microsoft.com/library/dd878324%28v=vs.85%29.aspx). 
 
-## O que é um Módulo de Integração da Automatização do Azure?
+## <a name="what-is-an-azure-automation-integration-module"></a>O que é um Módulo de Integração da Automatização do Azure?
 Um Módulo de Integração não é muito diferente de um módulo do PowerShell. É apenas um módulo do PowerShell que, opcionalmente, contém um ficheiro adicional - um ficheiro de metadados que especifica um tipo de ligação da Automatização do Azure que será utilizado com os cmdlets do módulo em runbooks. Um ficheiro opcional ou não, estes módulos do PowerShell podem ser importados para a Automatização do Azure para tornar os seus cmdlets disponíveis para utilização nos runbooks e os respetivos recursos de DSC disponíveis para utilização nas configurações de DSC. Nos bastidores, a Automatização do Azure armazena estes módulos e no tempo de execução da tarefa de compilação de DSC e da tarefa de runbook e carrega-os para as sandboxes da Automatização do Azure, onde os runbooks são executados e as configurações de DSC são compiladas.  Quaisquer recursos de DSC nos módulos também são automaticamente colocados no servidor de solicitação do Automation DSC para que possam ser solicitados pelas máquinas que tentam aplicar configurações de DSC.  Enviamos um número de módulos do Azure PowerShell na Automatização do Azure para que possa utilizar e começar imediatamente a automatizar a gestão do Azure, mas pode importar facilmente módulos do PowerShell para qualquer Sistema, serviço ou ferramenta com o qual pretende integrar. 
 
 > [!NOTE]
@@ -62,7 +66,7 @@ Se o módulo tiver um tipo de ligação da Automatização do Azure, também tem
 
 Se tiver implementado o Service Management Automation e criado pacotes de Módulos de Integração para os runbooks de automatização, isto deve ter um aspeto familiar. 
 
-## Melhores Práticas de Criação
+## <a name="authoring-best-practices"></a>Melhores Práticas de Criação
 Apesar de os Módulos de Integração serem essencialmente módulos do PowerShell, não significa que não temos um conjunto de práticas para a sua criação. Há um número de elementos que recomendamos que considere ao criar um módulo do PowerShell para o tornar mais útil na Automatização do Azure. Alguns deles são específicos da Automatização do Azure e alguns deles são úteis apenas para que os módulos funcionem bem no Fluxo de Trabalho do PowerShell, quer esteja ou não a utilizar a Automatização. 
 
 1. Inclua um resumo, uma descrição e um URI de ajuda para cada cmdlet no módulo. No PowerShell, pode definir determinadas informações de ajuda para os cmdlets para permitir ao utilizador receber ajuda sobre a utilização dos mesmos com o cmdlet **Get-Help**. Por exemplo, eis como pode definir um resumo e um URI de ajuda para um módulo do PowerShell escrito num ficheiro .psm1.<br>  
@@ -101,8 +105,7 @@ Apesar de os Módulos de Integração serem essencialmente módulos do PowerShel
     $response.TwilioResponse.IncomingPhoneNumbers.IncomingPhoneNumber
     }
     ```
-   <br> 
-   Fornecer estas informações não só apresentará esta ajuda para a utilização do cmdlet **Get-Help** na consola do PowerShell, como também expõe esta funcionalidade de ajuda dentro da Automatização do Azure, por exemplo, ao inserir atividades durante a criação de runbooks. Ao clicar em "Ver ajuda detalhada", abre o URI de ajuda noutro separador do browser que estiver a utilizar para aceder à Automatização do Azure.<br>![Ajuda do Módulo de Integração](media/automation-integration-modules/automation-integration-module-activitydesc.png)
+   <br> Fornecer estas informações não só apresentará esta ajuda para a utilização do cmdlet **Get-Help** na consola do PowerShell, como também expõe esta funcionalidade de ajuda dentro da Automatização do Azure, por exemplo, ao inserir atividades durante a criação de runbooks. Ao clicar em "Ver ajuda detalhada", abre o URI de ajuda noutro separador do browser que estiver a utilizar para aceder à Automatização do Azure.<br>![Ajuda do Módulo de Integração](media/automation-integration-modules/automation-integration-module-activitydesc.png)
 2. Se o módulo for executado relativamente a um sistema remoto, a. Deve conter um ficheiro de metadados do Módulo de Integração que defina as informações necessárias para estabelecer ligação a esse sistema remoto, ou seja, o tipo de ligação. b. Cada cmdlet no módulo deve ser capaz de considerar um objeto de ligação (uma instância desse tipo de ligação) como um parâmetro.  
     Os cmdlets no módulo tornam-se mais fáceis de utilizar na Automatização do Azure se permitir a passagem de um objeto com os campos do tipo de ligação como um parâmetro para o cmdlet. Deste modo, os utilizadores não têm de mapear os parâmetros do recurso de ligação para os parâmetros correspondentes do cmdlet sempre que chamarem um cmdlet. Com base no exemplo de runbook acima, utiliza um recurso de ligação do Twilio denominado CorpTwilio para aceder ao Twilio e devolver todos os números de telefone na conta.  Repara como se mapeia os campos da ligação para os parâmetros do cmdlet?<br>
    
@@ -200,10 +203,13 @@ Apesar de os Módulos de Integração serem essencialmente módulos do PowerShel
    <br>
 6. O módulo deve estar totalmente incluído num pacote compatível com Xcopy. Uma vez que os módulos da Automatização do Azure estão distribuídos nas sandboxes da Automatização quando os runbooks precisam de executar, têm de funcionar independentemente do anfitrião no qual estão a ser executados. Isto significa que deve ser capaz de zipar o pacote do módulo, movê-lo para qualquer outro anfitrião com uma versão do PowerShell igual ou mais recente e pô-lo a funcionar normalmente aquando da importação para o ambiente de PowerShell desse anfitrião. Para que isso aconteça, o módulo não deve depender de quaisquer ficheiros fora da pasta do módulo (a pasta que é zipada ao importar para a Automatização do Azure) ou de qualquer definição de registo única num anfitrião, como as definidas pela instalação de um produto. Se não forem seguida esta melhor prática, o módulo não será utilizável na Automatização do Azure.  
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 * Para começar com runbooks do fluxo de trabalho do PowerShell, consulte o artigo [O meu primeiro runbook do fluxo de trabalho do PowerShell](automation-first-runbook-textual.md)
 * Para saber mais sobre a criação de Módulos do PowerShell, veja o artigo [Escrever um Módulo do Windows PowerShell](https://msdn.microsoft.com/library/dd878310%28v=vs.85%29.aspx)
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

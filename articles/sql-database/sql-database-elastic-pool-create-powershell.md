@@ -1,12 +1,12 @@
 ---
-title: Criar um novo conjunto de bases de dados elásticas com o PowerShell | Microsoft Docs
-description: Saiba como utilizar o PowerShell para aumentar horizontalmente recursos da Base de Dados SQL do Azure, criando um conjunto de bases de dados elásticas dimensionável para gerir várias bases de dados.
+title: "Criar um novo conjunto de bases de dados elásticas com o PowerShell | Microsoft Docs"
+description: "Saiba como utilizar o PowerShell para aumentar horizontalmente recursos da Base de Dados SQL do Azure, criando um conjunto de bases de dados elásticas dimensionável para gerir várias bases de dados."
 services: sql-database
-documentationcenter: ''
+documentationcenter: 
 author: srinia
 manager: jhubbard
-editor: ''
-
+editor: 
+ms.assetid: 37a707ee-9223-43ae-8c35-1ccafde8b83e
 ms.service: sql-database
 ms.devlang: NA
 ms.topic: get-started-article
@@ -14,9 +14,13 @@ ms.tgt_pltfrm: powershell
 ms.workload: data-management
 ms.date: 05/27/2016
 ms.author: srinia
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: daf8bd6421ae563e542b0874a6e7748a3ca52738
+
 
 ---
-# Criar um novo conjunto de bases de dados elásticas com o PowerShell
+# <a name="create-a-new-elastic-database-pool-with-powershell"></a>Criar um novo conjunto de bases de dados elásticas com o PowerShell
 > [!div class="op_single_selector"]
 > * [Portal do Azure](sql-database-elastic-pool-create-portal.md)
 > * [PowerShell](sql-database-elastic-pool-create-powershell.md)
@@ -35,21 +39,21 @@ Para códigos de erro comuns, consulte [Códigos de erro de SQL para aplicaçõe
 
 Tem de estar a executar o Azure PowerShell 1.0 ou superior. Para informações detalhadas, consulte [Como instalar e configurar o Azure PowerShell](../powershell-install-configure.md).
 
-## Criar um novo conjunto
-O cmdlet [New-AzureRmSqlElasticPool](https://msdn.microsoft.com/library/azure/mt619378.aspx) cria um novo conjunto. Os valores de eDTU por conjunto e das Dtus mínimas e máximas estão restritos pelo valor da camada de serviço (básica, standard ou premium). Consulte [eDTU e limites de armazenamento para conjuntos elásticos e bases de dados elásticas](sql-database-elastic-pool.md#eDTU-and-storage-limits-for-elastic-pools-and-elastic-databases).
+## <a name="create-a-new-pool"></a>Criar um novo conjunto
+O cmdlet [New-AzureRmSqlElasticPool](https://msdn.microsoft.com/library/azure/mt619378\(v=azure.300\).aspx) cria um novo conjunto. Os valores de eDTU por conjunto e das Dtus mínimas e máximas estão restritos pelo valor da camada de serviço (básica, standard ou premium). Consulte [eDTU e limites de armazenamento para conjuntos elásticos e bases de dados elásticas](sql-database-elastic-pool.md#eDTU-and-storage-limits-for-elastic-pools-and-elastic-databases).
 
     New-AzureRmSqlElasticPool -ResourceGroupName "resourcegroup1" -ServerName "server1" -ElasticPoolName "elasticpool1" -Edition "Standard" -Dtu 400 -DatabaseDtuMin 10 -DatabaseDtuMax 100
 
 
-## Criar uma nova base de dados elástica num conjunto
-Utilize o cmdlet [New-AzureRmSqlDatabase](https://msdn.microsoft.com/library/azure/mt619339.aspx) e defina o parâmetro **ElasticPoolName** para o conjunto de destino. Para mover uma base de dados existente para um conjunto, consulte [Mover uma base de dados para um conjunto elástico](sql-database-elastic-pool-manage-powershell.md#Move-a-database-into-an-elastic-pool).
+## <a name="create-a-new-elastic-database-in-a-pool"></a>Criar uma nova base de dados elástica num conjunto
+Utilize o cmdlet [New-AzureRmSqlDatabase](https://msdn.microsoft.com/library/azure/mt619339\(v=azure.300\).aspx) e defina o parâmetro **ElasticPoolName** para o conjunto de destino. Para mover uma base de dados existente para um conjunto, consulte [Mover uma base de dados para um conjunto elástico](sql-database-elastic-pool-manage-powershell.md#Move-a-database-into-an-elastic-pool).
 
     New-AzureRmSqlDatabase -ResourceGroupName "resourcegroup1" -ServerName "server1" -DatabaseName "database1" -ElasticPoolName "elasticpool1"
 
-## Criar um conjunto e preenchê-lo com várias bases de dados novas
+## <a name="create-a-pool-and-populate-it-with-multiple-new-databases"></a>Criar um conjunto e preenchê-lo com várias bases de dados novas
 A criação de um grande número de bases de dados num agrupamento pode demorar a ser concluída ao utilizar o portal ou cmdlets do PowerShell que criam apenas uma base de dados de cada vez. Para automatizar a criação de um novo conjunto, consulte [CreateOrUpdateElasticPoolAndPopulate ](https://gist.github.com/billgib/d80c7687b17355d3c2ec8042323819ae).   
 
-## Exemplo: criar um conjunto com o PowerShell
+## <a name="example-create-a-pool-using-powershell"></a>Exemplo: criar um conjunto com o PowerShell
 Este script cria um novo grupo de recursos e um novo servidor do Azure. Quando lhe for pedido, forneça um nome de utilizador administrador e a palavra-passe para o novo servidor (não as credenciais do Azure).
 
     $subscriptionId = '<your Azure subscription id>'
@@ -72,11 +76,14 @@ Este script cria um novo grupo de recursos e um novo servidor do Azure. Quando l
 
 
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 * [Gerir o conjunto](sql-database-elastic-pool-manage-powershell.md)
 * [Criar tarefas elásticas](sql-database-elastic-jobs-overview.md) As tarefas elásticas permitem executar scripts T-SQL em qualquer número de bases de dados no conjunto.
 * [Aumentar horizontalmente com a Base de Dados SQL do Azure](sql-database-elastic-scale-introduction.md): utilize ferramentas de base de dados elástica para aumentar horizontalmente.
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

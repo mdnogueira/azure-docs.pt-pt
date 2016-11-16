@@ -1,13 +1,13 @@
 
-### Atualizar ficheiro de manifesto para ativar notificações
+### <a name="update-manifest-file-to-enable-notifications"></a>Atualizar ficheiro de manifesto para ativar notificações
 Copie os recursos de mensagens na aplicação abaixo para o Manifest.xml entre as etiquetas `<application>` e `</application>`.
 
         <activity android:name="com.microsoft.azure.engagement.reach.activity.EngagementTextAnnouncementActivity" android:theme="@android:style/Theme.Light" android:exported="false">
-            <intent-filter>
+              <intent-filter>
                 <action android:name="com.microsoft.azure.engagement.reach.intent.action.ANNOUNCEMENT"/>
                 <category android:name="android.intent.category.DEFAULT" />
                 <data android:mimeType="text/plain" />
-            </intent-filter>
+              </intent-filter>
         </activity>
         <activity android:name="com.microsoft.azure.engagement.reach.activity.EngagementWebAnnouncementActivity" android:theme="@android:style/Theme.Light" android:exported="false">
             <intent-filter>
@@ -44,7 +44,7 @@ Copie os recursos de mensagens na aplicação abaixo para o Manifest.xml entre a
             </intent-filter>
         </receiver>
 
-### Especificar um ícone para as notificações
+### <a name="specify-an-icon-for-notifications"></a>Especificar um ícone para as notificações
 Cole o seguinte fragmento XML no Manifest.xml entre as etiquetas `<application>` e `</application>`.
 
         <meta-data android:name="engagement:reach:notification:icon" android:value="engagement_close"/>
@@ -66,8 +66,8 @@ Para aplicações reais, pode utilizar um ícone que seja adequado para as notif
 > 
 > 
 
-### Permitir que a aplicação receba notificações push do GCM
-1. Cole o seguinte no Manifest.xml entre as etiquetas `<application>` e `</application>`, depois de substituir o `project number` obtido na consola do Google Play. O \n é intencional. Por isso, confirme que termina o número do projeto com ele.
+### <a name="enable-your-app-to-receive-gcm-push-notifications"></a>Permitir que a aplicação receba notificações push do GCM
+1. Cole o seguinte no Manifest.xml entre as etiquetas `<application>` e `</application>`, depois de substituir a **ID do Remetente** obtida na consola do projeto Firebase. O \n é intencional. Por isso, confirme que termina o número do projeto com ele.
    
         <meta-data android:name="engagement:gcm:sender" android:value="************\n" />
 2. Cole o código abaixo no Manifest.xml entre as etiquetas `<application>` e `</application>`. Substitua o nome do pacote <Your package name>.
@@ -92,6 +92,8 @@ Para aplicações reais, pode utilizar um ícone que seja adequado para as notif
         <uses-permission android:name="<Your package name>.permission.C2D_MESSAGE" />
         <permission android:name="<Your package name>.permission.C2D_MESSAGE" android:protectionLevel="signature" />
 
-<!--HONumber=Sep16_HO3-->
+
+
+<!--HONumber=Nov16_HO2-->
 
 

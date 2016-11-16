@@ -1,12 +1,12 @@
 ---
-title: Introdução à implementação e atualização de aplicações no seu cluster local | Microsoft Docs
-description: Configurar um cluster Service Fabric local, implementar nele uma aplicação existente e atualizar essa aplicação.
+title: "Introdução à implementação e atualização de aplicações no seu cluster local | Microsoft Docs"
+description: "Configurar um cluster Service Fabric local, implementar nele uma aplicação existente e atualizar essa aplicação."
 services: service-fabric
 documentationcenter: .net
 author: rwike77
 manager: timlt
-editor: ''
-
+editor: 
+ms.assetid: 60a1f6a5-5478-46c0-80a8-18fe62da17a8
 ms.service: service-fabric
 ms.devlang: dotNet
 ms.topic: get-started-article
@@ -14,9 +14,13 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 09/09/2016
 ms.author: ryanwi;mikhegn
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: 515daddf2c118f26721a557b0caf5d5415cb22c5
+
 
 ---
-# Introdução à implementação e atualização de aplicações no seu cluster local
+# <a name="get-started-with-deploying-and-upgrading-applications-on-your-local-cluster"></a>Introdução à implementação e atualização de aplicações no seu cluster local
 O SDK de Service Fabric de Azure inclui um ambiente de desenvolvimento local completo que pode utilizar para rapidamente começar a implementar e gerir aplicações num cluster local. Neste artigo, cria um cluster local, implementa nele uma aplicação existente e atualiza essa aplicação para uma nova versão, tudo a partir do Windows PowerShell.
 
 > [!NOTE]
@@ -24,7 +28,7 @@ O SDK de Service Fabric de Azure inclui um ambiente de desenvolvimento local com
 > 
 > 
 
-## Criar um cluster local
+## <a name="create-a-local-cluster"></a>Criar um cluster local
 Um cluster de Service Fabric representa um conjunto de recursos de hardware em que pode implementar aplicações. Normalmente, um cluster é constituído por qualquer número a partir de cinco até muitos milhares de máquinas. No entanto, o SDK de Service Fabric inclui uma configuração de cluster que pode ser executada num único computador.
 
 É importante compreender que o cluster local de Service Fabric não é um emulador ou simulador. Executa o mesmo código de plataforma que se encontra nos clusters de várias máquinas. A única diferença é que executa numa única máquina os processos de plataforma que normalmente estão dispersos por cinco máquinas.
@@ -49,7 +53,7 @@ O SDK fornece duas formas de configurar um cluster local: um script do Windows P
    
     Agora está pronto para tentar implementar uma aplicação no cluster.
 
-## Implementar uma aplicação
+## <a name="deploy-an-application"></a>Implementar uma aplicação
 O SDK de Service Fabric inclui um vasto conjunto de estruturas e ferramentas para programadores para a criação de aplicações. Se estiver interessado em aprender a criar aplicações no Visual Studio, consulte o artigo [Criar a primeira aplicação de Service Fabric no Visual Studio](service-fabric-create-your-first-application-in-visual-studio.md).
 
 Neste tutorial, utilizaremos uma aplicação de exemplo existente (denominada WordCount) para que possamos concentrar-nos nos aspetos de gestão da plataforma que incluem a implementação, a monitorização e a atualização.
@@ -89,7 +93,7 @@ Neste tutorial, utilizaremos uma aplicação de exemplo existente (denominada Wo
    
     A aplicação que foi implementada contém quatro partições. Deste modo, as palavras que começam de A a G são armazenadas na primeira partição, as palavras de H a N são armazenadas na segunda partição e assim sucessivamente.
 
-## Ver detalhes e estado da aplicação
+## <a name="view-application-details-and-status"></a>Ver detalhes e estado da aplicação
 Agora que implementámos a aplicação, vamos ver alguns dos detalhes da aplicação no PowerShell.
 
 1. Consulte todas as aplicações implementadas no cluster:
@@ -129,7 +133,7 @@ Agora que implementámos a aplicação, vamos ver alguns dos detalhes da aplica�
    > 
    > 
 
-## Atualizar uma aplicação
+## <a name="upgrade-an-application"></a>Atualizar uma aplicação
 O Service Fabric fornece atualizações sem tempo de indisponibilidade através da monitorização do estado da aplicação à medida que se implementa no cluster. Vamos efetuar uma atualização simples da aplicação WordCount.
 
 A nova versão da aplicação conta agora apenas as palavras que começam por uma vogal. À medida que a atualização é efetuada, vemos duas alterações de comportamento da aplicação. Em primeiro lugar, a taxa de aumento na contagem torna-se mais lenta, uma vez que estão a ser contadas menos palavras. Em segundo lugar, uma vez que a primeira partição tem duas vogais (A e E) e restantes partições contêm apenas uma, a contagem deverá finalmente deve começar a ultrapassar as outras.
@@ -162,7 +166,7 @@ A nova versão da aplicação conta agora apenas as palavras que começam por um
    
     ![Ver a nova versão da aplicação no navegador][deployed-app-ui-v2]
 
-## Limpeza
+## <a name="cleaning-up"></a>Limpeza
 Antes de concluir, é importante lembrar-se de que o cluster local é real. As aplicações continuam a ser executadas em segundo plano até serem removidas.  Dependendo da natureza das suas aplicações, uma aplicação em execução pode consumir recursos significativos no seu computador. Tem várias opções para gerir as aplicações e o cluster:
 
 1. Para remover uma aplicação individual e todos os seus dados, execute o seguinte:
@@ -185,7 +189,7 @@ Antes de concluir, é importante lembrar-se de que o cluster local é real. As a
 3. Para encerrar o cluster, mas manter os dados de aplicação e o rastreio, clique em **Parar Cluster Local** na aplicação de tabuleiro do sistema.
 4. Para eliminar o cluster totalmente, clique em **Remover Cluster Local** na aplicação de tabuleiro do sistema. Esta opção resultará noutra implementação lenta da próxima vez que premir F5 no Visual Studio. Remova o cluster local apenas se não pretender utilizá-lo durante algum tempo ou se precisar de recuperar recursos.
 
-## Modo do cluster de 1 Nó e de 5 Nós
+## <a name="1-node-and-5-node-cluster-mode"></a>Modo do cluster de 1 Nó e de 5 Nós
 Ao trabalhar com o cluster local para desenvolver aplicações, irá frequentemente fazer iterações rápidas de escrita de código, depuração, alteração de código, depuração, etc. Para ajudar a otimizar este processo, pode executar o cluster local em dois modos: 1 Nó ou 5 Nós. Ambos os modos de cluster têm as suas vantagens.
 O modo de cluster de 5 Nós permite-lhe trabalhar com um cluster real. Pode testar cenários de ativação pós-falha, trabalhar com mais instâncias e réplicas dos seus serviços.
 O modo de cluster de 1 Nó foi otimizado para implementações e registos rápidos dos serviços, com vista a ajudá-lo a validar rapidamente o código através do runtime do Service Fabric.
@@ -193,7 +197,7 @@ O modo de cluster de 1 Nó foi otimizado para implementações e registos rápid
 Nenhum dos modos de cluster de 1 e 5 Nós é um emulador ou um simulador. Executa o mesmo código de plataforma que se encontra nos clusters de várias máquinas.
 
 > [!NOTE]
-> Esta funcionalidade está disponível na versão 5.2 e superior do SDK.
+> Esta funcionalidade está disponível na versão 5.2 e superior do SDK.
 > 
 > 
 
@@ -219,7 +223,7 @@ Se estiver a utilizar o Gestor de Clusters Locais do Service Fabric:
 > 
 > 
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 * Agora que implementou e atualizou algumas aplicações pré-criadas, pode [tentar criar a sua no Visual Studio](service-fabric-create-your-first-application-in-visual-studio.md).
 * Todas as ações executadas no cluster local neste artigo também podem ser realizadas num [cluster do Azure](service-fabric-cluster-creation-via-portal.md).
 * A atualização que efetuámos neste artigo foi básica. Consulte a [documentação de atualização](service-fabric-application-upgrade.md) para saber mais sobre a capacidade e a flexibilidade das atualizações do Service Fabric.
@@ -246,6 +250,6 @@ Se estiver a utilizar o Gestor de Clusters Locais do Service Fabric:
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

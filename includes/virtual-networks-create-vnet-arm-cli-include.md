@@ -1,4 +1,4 @@
-## Como criar uma VNet com a CLI do Azure
+## <a name="how-to-create-a-vnet-using-the-azure-cli"></a>Como criar uma VNet com a CLI do Azure
 Pode utilizar a CLI do Azure para gerir os seus recursos do Azure na linha de comandos a partir de qualquer computador com Windows, Linux ou OSX. Para criar uma VNet com a CLI do Azure, siga os passos abaixo.
 
 1. Se nunca tiver utilizado a CLI do Azure, veja [Install and Configure the Azure CLI (Instalar e Configurar a CLI do Azure)](../articles/xplat-cli-install.md) e siga as instruções até ao ponto onde poderá selecionar a sua conta e subscrição do Azure.
@@ -9,7 +9,7 @@ Pode utilizar a CLI do Azure para gerir os seus recursos do Azure na linha de co
     O resultado esperado para o comando acima é o seguinte:
    
         info:    New mode is arm
-3. Se necessário, execute **azure group create** para criar um novo grupo de recursos, como mostrado abaixo. Repare no resultado do comando. A lista apresentada depois do resultado explica os parâmetros utilizados. Para obter mais informações sobre os grupos de recursos, visite [Descrição geral do Azure Resource Manager](../articles/resource-group-overview.md#resource-groups).
+3. Se necessário, execute **azure group create** para criar um novo grupo de recursos, como mostrado abaixo. Repare no resultado do comando. A lista apresentada depois do resultado explica os parâmetros utilizados. Para obter mais informações sobre os grupos de recursos, visite [Descrição geral do Azure Resource Manager](../articles/azure-resource-manager/resource-group-overview.md#resource-groups).
    
         azure group create -n TestRG -l centralus
    
@@ -73,7 +73,7 @@ Pode utilizar a CLI do Azure para gerir os seus recursos do Azure na linha de co
    * **-e (ou --vnet-name**. Nome da VNet onde a sub-rede será criada. Para o nosso cenário *TestVNet*.
    * **-n (ou --name)**. Nome da nova sub-rede. Para o nosso cenário *FrontEnd*.
    * **-a (or --address-prefix)**. Bloco CIDR da sub-rede. Para o nosso cenário, *192.168.1.0/24*.
-6. Repita o passo 5 acima para criar outras sub-redes, se necessário. Para o nosso cenário, execute o comando abaixo para criar a sub-rede do *Back-end*.
+6. Repita o passo 5 acima para criar outras sub-redes, se necessário. Para o nosso cenário, execute o comando abaixo para criar a sub-rede do *Back-end*.
    
         azure network vnet subnet create -g TestRG -e TestVNet -n BackEnd -a 192.168.2.0/24
 7. Execute o comando **azure network vnet show** para ver as propriedades da nova VNet, como mostrado abaixo.
@@ -100,6 +100,8 @@ Pode utilizar a CLI do Azure para gerir os seus recursos do Azure na linha de co
         data:
         info:    network vnet show command OK
 
-<!--HONumber=Sep16_HO3-->
+
+
+<!--HONumber=Nov16_HO2-->
 
 

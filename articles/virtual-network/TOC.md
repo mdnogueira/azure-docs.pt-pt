@@ -1,16 +1,15 @@
 # Descrição geral
 ## [Redes virtuais](virtual-networks-overview.md)
-## [Grupos de segurança de rede](virtual-networks-nsg.md)
 ## [Rotas definidas pelo utilizador e reencaminhamento IP](virtual-networks-udr-overview.md)
+## [Peering de rede virtual](virtual-network-peering-overview.md)
+## [Continuidade do negócio](virtual-network-disaster-recovery-guidance.md)
+## [FAQ](virtual-networks-faq.md)
 ## Endereçamento IP
 ### [Resource Manager](virtual-network-ip-addresses-overview-arm.md)
 ### [Clássico](virtual-network-ip-addresses-overview-classic.md)
-## [Peering de rede virtual](virtual-network-peering-overview.md)
 ## Máquinas virtuais
 ### [Interfaces de rede](virtual-network-network-interface-overview.md)
 ### [Resolução de nomes](virtual-networks-name-resolution-for-vms-and-role-instances.md)
-## [Continuidade do negócio](virtual-network-disaster-recovery-guidance.md)
-## [Preços](https://azure.microsoft.com/pricing/details/virtual-network)
 
 # Introdução
 ## [Criar uma rede virtual](virtual-networks-create-vnet-arm-pportal.md)
@@ -32,7 +31,7 @@
 #### [CLI (Clássica)](virtual-networks-create-vnet-classic-cli.md)
 
 ### Grupos de segurança de rede
-#### [Portal](virtual-networks-create-nsg-arm-portal.md)
+#### [Portal](virtual-networks-create-nsg-arm-pportal.md)
 #### [PowerShell](virtual-networks-create-nsg-arm-ps.md)
 #### [CLI](virtual-networks-create-nsg-arm-cli.md)
 #### [Modelo](virtual-networks-create-nsg-arm-template.md)
@@ -75,7 +74,9 @@
 ##### [PowerShell (Clássico)](virtual-network-deploy-multinic-classic-ps.md)
 ##### [CLI (Clássica)](virtual-network-deploy-multinic-classic-cli.md)
 
-#### [Vários endereços IP](virtual-network-multiple-ip-addresses-powershell.md)
+#### Vários endereços IP
+##### [Portal do Azure](virtual-network-multiple-ip-addresses-portal.md)
+##### [PowerShell](virtual-network-multiple-ip-addresses-powershell.md)
 
 ### Cenários de conectividade
 #### [Rede virtual (VNet) para VNet](../vpn-gateway/vpn-gateway-vnet-vnet-rm-ps.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
@@ -92,6 +93,14 @@
 ##### [DMZ com firewall e NSGs](virtual-networks-dmz-nsg-fw-asm.md)
 ##### [DMZ com firewall, UDR e NSGs](virtual-networks-dmz-nsg-fw-udr-asm.md)
 ##### [Aplicação de exemplo](virtual-networks-sample-app.md)
+
+## Configurar
+### Redes aceleradas
+#### [Portal do Azure](virtual-network-accelerated-networking-portal.md)
+#### [PowerShell](virtual-network-accelerated-networking-powershell.md)
+### Lista de controlo de acesso
+#### [Portal clássico](virtual-networks-acl.md)
+#### [PowerShell](virtual-networks-acl-powershell.md)
 
 ## Gerir
 ### Grupos de segurança de rede
@@ -110,22 +119,28 @@
 #### [Mover uma VM para outra sub-rede](virtual-networks-move-vm-role-to-subnet.md)
 
 # Referência
-## [Cmdlets do PowerShell (Resource Manager)](https://msdn.microsoft.com/library/mt163510(v=azure.300))
-## [Cmdlets do PowerShell (Clássico)](https://msdn.microsoft.com/library/mt270335(v=azure.300))
-## [APIs (Resource Manager)](https://msdn.microsoft.com/library/mt163658.aspx)
-## [APIs (Clássica)](https://msdn.microsoft.com/library/jj157182.aspx)
-## [Blogue das redes](http://azure.microsoft.com/blog/topics/networking)
-## [Perguntas mais frequentes](virtual-networks-faq.md)
+## [PowerShell (Resource manager)](https://msdn.microsoft.com/library/mt163510(v=azure.300))
+## [PowerShell (Clássico)](https://msdn.microsoft.com/library/mt270335(v=azure.300))
+## [CLI do Azure](/cli/azure/)
+## [Java](/java/api/)
+## [REST (Resource Manager)](https://msdn.microsoft.com/library/mt163658.aspx)
+## [REST (Clássico)](https://msdn.microsoft.com/library/jj157182.aspx)
+
 
 # Relacionado
-## [Máquinas Virtuais](https://azure.microsoft.com/documentation/services/virtual-machines)
-## [Gateway de Aplicação](https://azure.microsoft.com/documentation/services/application-gateway)
-## [DNS do Azure](https://azure.microsoft.com/documentation/services/dns)
-## [Gestor de Tráfego](https://azure.microsoft.com/documentation/services/traffic-manager)
-## [Balanceador de Carga](https://azure.microsoft.com/documentation/services/load-balancer)
-## [Gateway de VPN](https://azure.microsoft.com/documentation/services/vpn-gateway)
-## [ExpressRoute](https://azure.microsoft.com/documentation/services/expressroute)
+## [Máquinas Virtuais](/azure/virtual-machines/)
+## [Gateway de Aplicação](/azure/application-gateway/)
+## [DNS do Azure](/azure/dns/)
+## [Gestor de Tráfego](/azure/traffic-manager/)
+## [Balanceador de Carga](/azure/load-balancer/)
+## [Gateway de VPN](/azure/vpn-gateway/)
+## [ExpressRoute](/azure/expressroute/)
 
+# Recursos
+## [Blogue das redes](http://azure.microsoft.com/blog/topics/networking)
+## [Fórum de redes](https://social.msdn.microsoft.com/Forums/azure/home?forum=WAVirtualMachinesVirtualNetwork)
+## [Preços](https://azure.microsoft.com/pricing/details/virtual-network)
+## [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-virtual-network)
 
 
 <!--HONumber=Nov16_HO2-->

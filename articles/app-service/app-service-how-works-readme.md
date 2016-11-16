@@ -1,13 +1,13 @@
 ---
-title: Como funciona o App Service do Azure
+title: "Como funciona o Serviço de Aplicações do Azure"
 description: Saiba como funciona o App Service
-keywords: serviço de aplicações, serviço de aplicações do azure, dimensionar, dimensionável, plano do serviço de aplicações, custo do serviço de aplicações
+keywords: "serviço de aplicações, serviço de aplicações do azure, dimensionar, dimensionável, plano do serviço de aplicações, custo do serviço de aplicações"
 services: app-service
-documentationcenter: ''
+documentationcenter: 
 author: yochay
 manager: wpickett
-editor: ''
-
+editor: 
+ms.assetid: ae74fc32-969e-4580-8d61-02c922f1f184
 ms.service: app-service
 ms.workload: na
 ms.tgt_pltfrm: na
@@ -15,30 +15,44 @@ ms.devlang: na
 ms.topic: hero-article
 ms.date: 02/10/2016
 ms.author: yochay
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: 3e5c425daf83962ca0b49035784c3804e0c17b2c
+
 
 ---
-# Como funciona o App Service
-O Serviço de Aplicações do Azure é um serviço em nuvem concebido para resolver os problemas práticos com que se deparam atualmente os engenheiros. O App Service concentra-se em fornecer uma produtividade de programador superior sem comprometer a necessidade de fornecer aplicações à escala da nuvem. O Serviço de Aplicações também fornece as funcionalidades e estruturas necessárias para compor aplicações de Linha de Negócio empresariais ao mesmo tempo que fornece suporte aos programadores com as linguagens de programação mais conhecidas (.NET, Java, PHP, Node.JS e Python).
-Com o App Service, os programadores podem:
+# <a name="how-app-service-works"></a>Como funciona o Serviço de Aplicações
+O Serviço de Aplicações do Azure é um serviço em nuvem concebido para resolver os problemas práticos com que os engenheiros se deparam atualmente.
+O Serviço de Aplicações concentra-se em fornecer uma produtividade de programador superior sem comprometer a necessidade de entregar aplicações à escala da nuvem.
 
-* Criar Aplicações Web verdadeiramente dimensionáveis
-* Criar rapidamente backs-ends de Aplicação Móvel com um conjunto de funcionalidades móveis fáceis de utilizar, tais como, back-ends de dados, autenticação de utilizadores e notificações push com as Aplicações Móveis. 
-* Implementar e publicar APIs com API Apps
+O Serviço de Aplicações também fornece as funcionalidades e estruturas necessárias para criar aplicações de linha de negócio empresariais ao mesmo tempo que fornece suporte aos programadores com as linguagens de programação mais conhecidas (tais como Microsoft .NET, Java, PHP, Node.js e Python).
+Com o Serviço de Aplicações, os programadores podem:
+
+* Criar aplicações Web altamente dimensionáveis.
+* Criar rapidamente backs-ends de Aplicações Móveis com um conjunto de funcionalidades móveis fáceis de utilizar, tais como back-ends de dados, autenticação de utilizadores e notificações push.
+* Implementar e publicar APIs com Aplicações API.
 * Junte aplicações empresariais em conjunto com fluxos de trabalho e transforme dados com Aplicações Lógicas.
 
-Todos os tipos de Aplicações baseiam-se na plataforma de Aplicação Web dimensionável e flexível que permite aos programadores uma experiência otimizada do ciclo de vida completo do design da Aplicação à manutenção da Aplicação. As capacidades do ciclo de vida permitem:
+> [!INCLUDE [app-service-linux](../../includes/app-service-linux.md)]
+> 
+> 
 
-* Criação da Aplicação Rápida – comece do zero ou selecione um pacote de OSS do Azure Marketplace. 
-* Implementação contínua – implemente automaticamente o novo código de soluções de controlo de origem populares, como o conteúdo do TFS, GitHub e BitBucket e sincronize a partir de serviços de armazenamento online como o OneDrive e o DropBox.
-* Testar na Produção – crie facilmente ambientes de pré-produção e faça a gestão do tráfego de acesso aos mesmos. Faça a depuração na nuvem quando for necessário e reverta se forem encontrados problemas.
-* Executar tarefas assíncronas e tarefas em lote – execute código num processo em segundo plano ou ative o seu código com base em eventos (tais como mensagens de destino numa Fila de Armazenamento do Azure) e horas agendadas (CRON).
-* Dimensionar a aplicação – utilize uma das muitas opções para dimensionar o serviço horizontal e verticalmente de maneira automática com base na utilização de tráfego e de recursos. Configurar ambientes privados dedicados às suas Aplicações   
-* Manutenção da aplicação – tire partido das muitas funcionalidades de depuração e diagnóstico para se antecipar aos problemas e resolvê-los de forma eficiente em tempo real (com funcionalidades como recuperação automática e a depuração direta) ou depois de analisar registos e informações de memória
+Todos os tipos de aplicações baseiam-se na plataforma de Aplicações Web dimensionável e flexível, que permite que os programadores tenham uma experiência otimizada do ciclo de vida completo desde a conceção da aplicação até à manutenção da aplicação. As capacidades de ciclo de vida permitem o seguinte:
 
-Em conjunto, as capacidades do App Service permitem aos programadores focarem-se no respetivo código e atingir rapidamente um estado estável e altamente dimensionável de produção. Com as funcionalidades de API e Aplicação Lógica, os programadores podem criar aplicações empresariais reais estabelecendo a ponte entre soluções de negócio, bem como no local para integração em nuvem.  
+* **Criação rápida de aplicações**. Comece do zero ou escolha um pacote de sistema de suporte operacional (OSS) no Azure Marketplace.
+* **Implementação contínua**. Implemente automaticamente o novo código de soluções de controlo de origem populares, tais como TFS, GitHub e Bitbucket, e sincronize conteúdo de serviços de armazenamento online como o OneDrive e o Dropbox.
+* **Testar na produção**. Crie facilmente ambientes de pré-produção e faça a gestão do tráfego que entra nos mesmos. Faça a depuração na nuvem quando for necessário e reverta se forem encontrados problemas.
+* **Executar tarefas assíncronas e tarefas de lote**. Execute código num processo em segundo plano ou ative o seu código com base em eventos (tal como mensagens de destino numa fila de Armazenamento do Azure) e horas agendadas (CRON).
+* **Dimensionar a aplicação**. Utilize uma das muitas opções para dimensionar automaticamente o serviço horizontal e verticalmente com base no tráfego e na utilização de recursos. Configurar ambientes privados dedicados às suas aplicações.   
+* **Manter a aplicação**. Utiliza muitas das funcionalidades de depuração e diagnóstico para se manter adiantado face aos problemas e para resolvê-los de forma eficiente em tempo real (com funcionalidades como recuperação automática e depuração dinâmica) ou após o facto ao analisar registos e informações do estado da memória.
+
+Em conjunto, as capacidades do Serviço de Aplicações permitem aos programadores focarem-se no respetivo código e atingir rapidamente um estado estável e altamente dimensionável de produção. Com as funcionalidades de Aplicações API e Aplicações Lógicas, os programadores podem criar aplicações empresariais reais que estabelecem a ponte entre soluções de negócio, bem como a integração de soluções no local na nuvem.  
 
 [!INCLUDE [app-service-blueprint-how-app-service-works](../../includes/app-service-blueprint-how-app-service-works.md)]
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

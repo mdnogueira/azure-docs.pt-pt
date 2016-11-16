@@ -1,12 +1,12 @@
 ---
-title: Estado da sessão com a cache de Redis do Azure no App Service do Azure
-description: Saiba como utilizar o Serviço Azure Cache para suportar a colocação em cache do estado de sessão do ASP.NET.
+title: "Estado da sessão com a cache de Redis do Azure no App Service do Azure"
+description: "Saiba como utilizar o Serviço Azure Cache para suportar a colocação em cache do estado de sessão do ASP.NET."
 services: app-service\web
 documentationcenter: .net
 author: Rick-Anderson
 manager: wpickett
 editor: none
-
+ms.assetid: 4f98d289-2698-464d-85cd-99ec40fad1f2
 ms.service: app-service-web
 ms.workload: na
 ms.tgt_pltfrm: na
@@ -14,19 +14,23 @@ ms.devlang: dotnet
 ms.topic: get-started-article
 ms.date: 06/27/2016
 ms.author: riande
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: 7ac0fde19d61a9c3a9f54b42982c7096434cb965
+
 
 ---
-# Estado da sessão com a cache de Redis do Azure no App Service do Azure
+# <a name="session-state-with-azure-redis-cache-in-azure-app-service"></a>Estado da sessão com a cache de Redis do Azure no App Service do Azure
 Este tópico explica como utilizar o Serviço Cache de Redis do Azure para o estado da sessão.
 
 Se a sua aplicação Web do ASP.NET utiliza o estado de sessão, terá de configurar um fornecedor de estado de sessão externo (o Serviço Cache de Redis ou um fornecedor de estado de sessão do SQL Server). Se utilizar o estado de sessão e não utilizar um fornecedor externo, vai estar limitado a uma instância da sua aplicação Web. O Serviço Cache de Redis é o mais rápido e mais simples para ativar.
 
 [!INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
-## <a id="createcache"></a>Criar a Cache
+## <a name="a-idcreatecacheacreate-the-cache"></a><a id="createcache"></a>Criar a cache
 Siga [estas indicações](../redis-cache/cache-dotnet-how-to-use-azure-redis-cache.md#create-cache) para criar a cache.
 
-## <a id="configureproject"></a>Adicionar o pacote RedisSessionStateProvider NuGet à sua aplicação Web
+## <a name="a-idconfigureprojectaadd-the-redissessionstateprovider-nuget-package-to-your-web-app"></a><a id="configureproject"></a>Adicionar o pacote RedisSessionStateProvider NuGet à sua aplicação Web
 Instale o pacote NuGet `RedisSessionStateProvider`.  Utilize o seguinte comando para instalar a partir da consola do gestor de pacotes (**Ferramentas** > **Gestor de Pacotes NuGet** > **Consola do Gestor de Pacotes**):
 
   `PM> Install-Package Microsoft.Web.RedisSessionStateProvider`
@@ -35,7 +39,7 @@ Para instalar a partir de **Ferramentas** > **Gestor de Pacotes NuGet** > **Geri
 
 Para mais informações, consulte a [página NuGet RedisSessionStateProvider](http://www.nuget.org/packages/Microsoft.Web.RedisSessionStateProvider/) e [Configurar o cliente de cache](../redis-cache/cache-dotnet-how-to-use-azure-redis-cache.md#NuGet).
 
-## <a id="configurewebconfig"></a>Modificar o ficheiro Web.Config
+## <a name="a-idconfigurewebconfigamodify-the-webconfig-file"></a><a id="configurewebconfig"></a>Modificar o ficheiro Web.Config
 Para além de fazer referências de assemblagem para a Cache, o pacote NuGet adiciona entradas stub ao ficheiro *web.config*. 
 
 1. Abra o *web.config* e localize o elemento **sessionState**.
@@ -69,7 +73,7 @@ Para além de fazer referências de assemblagem para a Cache, o pacote NuGet adi
             </sessionState>;
           </system.web>;
 
-## <a id="usesessionobject"></a> Utilizar o Objeto de Sessão no Código
+## <a name="a-idusesessionobjecta-use-the-session-object-in-code"></a><a id="usesessionobject"></a>Utilizar o Objeto de Sessão no Código
 O passo final consiste em começar a utilizar o Objeto de Sessão no seu código ASP.NET. Adicione objetos ao estado de sessão através do método **Session.Add**. Este método utiliza pares chave-valor para armazenar itens na cache do estado de sessão.
 
     string strValue = "yourvalue";
@@ -79,17 +83,17 @@ O código seguinte obtém este valor do estado de sessão.
 
     object objValue = Session["yourkey"];
     if (objValue != null)
-       strValue = (string)objValue; 
+       strValue = (string)objValue;    
 
 Também pode utilizar a Cache de Redis para colocar objetos na cache na sua aplicação Web. Para obter mais informações, consulte [Aplicação de filmes do MVC com a Cache de Redis do Azure em 15 minutos](https://azure.microsoft.com/blog/2014/06/05/mvc-movie-app-with-azure-redis-cache-in-15-minutes/).
-Para obter mais detalhes sobre como utilizar o estado de sessão do ASP.NET, consulte o artigo [Descrição Geral do Estado de Sessão do ASP.NET][Descrição Geral do Estado de Sessão do ASP.NET].
+Para obter mais detalhes sobre como utilizar o estado de sessão do ASP.NET, veja [Descrição Geral do Estado de Sessão do ASP.NET][Descrição Geral do Estado de Sessão do ASP.NET].
 
 > [!NOTE]
 > Se pretender começar a utilizar o App Service do Azure antes de se inscrever numa conta do Azure, aceda a [Experimentar o App Service](http://go.microsoft.com/fwlink/?LinkId=523751), onde pode criar de imediato uma aplicação Web de arranque de curta duração no App Service. Sem cartões de crédito; sem compromissos.
 > 
 > 
 
-## O que mudou
+## <a name="whats-changed"></a>O que mudou
 * Para obter um guia da alteração de Web sites para o App Service, consulte: [App Service do Azure e o Respetivo Impacto nos Serviços do Azure Existentes](http://go.microsoft.com/fwlink/?LinkId=529714)
   
   *De [Rick Anderson](https://twitter.com/RickAndMSFT)*
@@ -109,6 +113,6 @@ Para obter mais detalhes sobre como utilizar o estado de sessão do ASP.NET, con
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Nov16_HO2-->
 
 

@@ -1,4 +1,4 @@
-## Encadeamento de Serviços – Trânsito através de VNet em modo de peering
+## <a name="service-chaining-transit-through-peered-vnet"></a>Encadeamento de Serviços – Trânsito através de VNet em modo de peering
 Embora a utilização das rotas de sistema facilita o tráfego automaticamente para a implementação, há casos em que pretende controlar o encaminhamento de pacotes através de uma aplicação virtual.
 Neste cenário, existem duas VNets numa subscrição, HubVNet e VNet1, como se descreve no diagrama abaixo. Implementa a Aplicação Virtual de Rede (NVA) na VNet HubVNet. Depois de estabelecer o VNet peering entre HubVNet e VNet1, pode configurar Rotas Definidas pelo Utilizador e especificar o salto seguinte para NVA na HubVNet.
 
@@ -11,6 +11,8 @@ Neste cenário, existem duas VNets numa subscrição, HubVNet e VNet1, como se d
 
 A propriedade-chave para ativar o encaminhamento do Trânsito é o parâmetro “Permitir Tráfego Reencaminhado”. Desta forma, é possível aceitar e enviar tráfego de/para a NVA na VNet em modo de peering.  
 
-<!--HONumber=Sep16_HO4-->
+
+
+<!--HONumber=Nov16_HO2-->
 
 

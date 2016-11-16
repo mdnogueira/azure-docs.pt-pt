@@ -1,44 +1,48 @@
 ---
-title: Create an internal load balancer using PowerShell in the classic deployment model | Microsoft Docs
-description: Learn how to create an internal load balancer using PowerShell in the classic deployment model
+title: "Criar um balanceador de carga interno com o PowerShell no modelo de implementação clássica | Microsoft Docs"
+description: "Saiba como criar um balanceador de carga interno com o PowerShell no modelo de implementação clássica"
 services: load-balancer
 documentationcenter: na
 author: sdwheeler
 manager: carmonm
-editor: ''
+editor: 
 tags: azure-service-management
-
+ms.assetid: 3be93168-3787-45a5-a194-9124fe386493
 ms.service: load-balancer
 ms.devlang: na
-ms.topic: article
+ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/09/2016
 ms.author: sewhee
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: ed28a11420d4bcc732801aea8d6217dbf14389d4
+
 
 ---
-# Get started creating an internal load balancer (classic) using PowerShell
+# <a name="get-started-creating-an-internal-load-balancer-classic-using-powershell"></a>Introdução à criação de um balanceador de carga interno (modo clássico) com o PowerShell
 [!INCLUDE [load-balancer-get-started-ilb-classic-selectors-include.md](../../includes/load-balancer-get-started-ilb-classic-selectors-include.md)]
 
 [!INCLUDE [load-balancer-get-started-ilb-intro-include.md](../../includes/load-balancer-get-started-ilb-intro-include.md)]
 
 [!INCLUDE [azure-arm-classic-important-include](../../includes/learn-about-deployment-models-classic-include.md)]
 
-Learn how to [perform these steps using the Resource Manager model](load-balancer-get-started-ilb-arm-ps.md).
+Saiba como [executar estes passos com o modelo do Resource Manager](load-balancer-get-started-ilb-arm-ps.md).
 
 [!INCLUDE [load-balancer-get-started-ilb-scenario-include.md](../../includes/load-balancer-get-started-ilb-scenario-include.md)]
 
 [!INCLUDE [azure-ps-prerequisites-include.md](../../includes/azure-ps-prerequisites-include.md)]
 
-## Create an internal load balancer set for virtual machines
-To create an internal load balancer set and the servers that will send their traffic to it, you have to do the following:
+## <a name="create-an-internal-load-balancer-set-for-virtual-machines"></a>Criar um conjunto de balanceadores de carga internos para máquinas virtuais
+Para criar um conjunto de balanceadores de carga internos e os servidores que irão enviar o tráfego para o mesmo, tem de efetuar o seguinte:
 
-1. Create an instance of Internal Load Balancing that will be the endpoint of incoming traffic to be load balanced across the servers of a load-balanced set.
-2. Add endpoints corresponding to the virtual machines that will be receiving the incoming traffic.
-3. Configure the servers that will be sending the traffic to be load balanced to send their traffic to the virtual IP (VIP) address of the Internal Load Balancing instance.
+1. Crie uma instância Balanceamento de Carga Interno que será o ponto final do tráfego de entrada para balanceamento de carga nos servidores de um conjunto com balanceamento de carga.
+2. Adicione os pontos finais correspondentes às máquinas virtuais que irão receber o tráfego de entrada.
+3. Configure os servidores que irão enviar o tráfego para balanceamento de carga para enviar o tráfego para o endereço IP virtual (VIP) da instância de Balanceamento de Carga Interno.
 
-### Step 1: Create an Internal Load Balancing instance
-For an existing cloud service or a cloud service deployed under a regional virtual network, you can create an Internal Load Balancing instance with the following Windows PowerShell commands:
+### <a name="step-1-create-an-internal-load-balancing-instance"></a>Passo 1: Criar uma instância de Balanceamento de Carga Interno
+Para um serviço em nuvem existente ou um serviço em nuvem implementado numa rede virtual regional, pode criar uma instância de Balanceamento de Carga Interno com os seguintes comandos do Windows PowerShell:
 
     $svc="<Cloud Service Name>"
     $ilb="<Name of your ILB instance>"
@@ -48,10 +52,10 @@ For an existing cloud service or a cloud service deployed under a regional virtu
     Add-AzureInternalLoadBalancer -ServiceName $svc -InternalLoadBalancerName $ilb –SubnetName $subnet –StaticVNetIPAddress $IP
 
 
-Note that this use of the [Add-AzureEndpoint](https://msdn.microsoft.com/library/dn495300.aspx) Windows PowerShell cmdlet uses the DefaultProbe parameter set. For more information on additional parameter sets, see [Add-AzureEndpoint](https://msdn.microsoft.com/library/dn495300.aspx).
+Tenha em atenção que esta utilização do cmdlet do Windows PowerShell [Add-AzureEndpoint](https://msdn.microsoft.com/library/dn495300.aspx) utiliza o conjunto de parâmetros DefaultProbe. Para obter mais informações sobre conjuntos de parâmetros adicionais, veja [Add-AzureEndpoint](https://msdn.microsoft.com/library/dn495300.aspx).
 
-### Step 2: Add endpoints to the Internal Load Balancing instance
-Here is an example:
+### <a name="step-2-add-endpoints-to-the-internal-load-balancing-instance"></a>Passo 2: Adicionar pontos finais à instância de Balanceamento de Carga Interno
+Segue-se um exemplo:
 
     $svc="mytestcloud"
     $vmname="DB1"
@@ -64,45 +68,45 @@ Here is an example:
     Get-AzureVM –ServiceName $svc –Name $vmname | Add-AzureEndpoint -Name $epname -Lbset $lbsetname -Protocol $prot -LocalPort $locport -PublicPort $pubport –DefaultProbe -InternalLoadBalancerName $ilb | Update-AzureVM
 
 
-### Step 3: Configure your servers to send their traffic to the new Internal Load Balancing endpoint
-You have to  configure the servers whose traffic is going to be load balanced to use the new IP address (the VIP) of the Internal Load Balancing instance. This is the address on which the Internal Load Balancing instance is listening. In most cases, you need to just add or modify a DNS record for the VIP of the Internal Load Balancing instance.
+### <a name="step-3-configure-your-servers-to-send-their-traffic-to-the-new-internal-load-balancing-endpoint"></a>Passo 3: Configurar os servidores para enviar o tráfego para o novo ponto de final de Balanceamento de Carga Interno
+Tem de configurar os servidores para cujo tráfego será efetuado o balanceamento de carga para utilizar o novo endereço IP (VIP) da instância de Balanceamento de Carga Interno. Este é o endereço no qual a instância de Balanceamento de Carga Interno está à escuta. Na maioria dos casos, apenas tem de adicionar ou modificar um registo DNS para o VIP da instância de Balanceamento de Carga Interno.
 
-If you specified the IP address during the creation of the Internal Load Balancing instance, you already have the VIP. Otherwise, you can see the VIP from the following commands:
+Se especificou o endereço IP durante a criação da instância de Balanceamento de Carga Interno, já tem o VIP. Caso contrário, pode ver o VIP a partir dos seguintes comandos:
 
     $svc="<Cloud Service Name>"
     Get-AzureService -ServiceName $svc | Get-AzureInternalLoadBalancer
 
 
 
-To use these commands, fill in the values and remove the < and >. Here is an example:
+Para utilizar estes comandos, preencha os valores e remova < e >. Segue-se um exemplo:
 
     $svc="mytestcloud"
     Get-AzureService -ServiceName $svc | Get-AzureInternalLoadBalancer
 
 
-From the display of the Get-AzureInternalLoadBalancer command, note the IP address and make the necessary changes to your servers or DNS records to ensure that traffic gets sent to the VIP.
+A partir do ecrã do comando Get-AzureInternalLoadBalancer, anote o endereço IP e efetue as alterações necessárias aos seus servidores ou registos DNS para garantir que o tráfego é enviado para o VIP.
 
 > [!NOTE]
-> The Microsoft Azure platform uses a static, publicly routable IPv4 address for a variety of administrative scenarios. The IP address is 168.63.129.16. This IP address should not be blocked by any firewalls, because it can cause unexpected behavior.
-> With respect to Azure Internal Load Balancing, this IP address is used by monitoring probes from the load balancer to determine the health state for virtual machines in a load balanced set. If a Network Security Group is used to restrict traffic to Azure virtual machines in an internally load-balanced set or is applied to a Virtual Network Subnet, ensure that a Network Security Rule is added to allow traffic from 168.63.129.16.
+> A plataforma Microsoft Azure utiliza um endereço IPv4 estático encaminhável publicamente para uma grande variedade de cenários administrativos. O endereço IP é 168.63.129.16. Este endereço IP não deve ser bloqueado por nenhuma firewall, porque pode causar comportamentos inesperados.
+> No que respeita ao Balanceamento de Carga Interno do Azure, este endereço IP é utilizado pelas sondas de monitorização do balanceador de carga para determinar o estado de funcionamento das máquinas virtuais num conjunto com balanceamento de carga. Se for utilizado um Grupo de Segurança de Rede para restringir o tráfego para as máquinas virtuais do Azure num conjunto com balanceamento de carga interno ou se for aplicado a uma Sub-rede de Rede Virtual, certifique-se de que é adicionada uma Regra de Segurança de Rede ao permitir tráfego a partir de 168.63.129.16.
 > 
 > 
 
-## Example of internal load balancing
-To step you through the end-to end process of creating a load-balanced set for two example configurations, see the following sections.
+## <a name="example-of-internal-load-balancing"></a>Exemplo de balanceamento de carga interno
+Para percorrer o processo de criação de um conjunto com balanceamento de carga para duas configurações de exemplo, veja as secções seguintes.
 
-### An Internet facing, multi-tier application
-You want to provide a load balanced database service for  a set of Internet-facing web servers. Both sets of servers are hosted in a single Azure cloud service. Web server traffic to TCP port 1433 must be distributed among two virtual machines in the database tier. Figure 1 shows the configuration.
+### <a name="an-internet-facing-multitier-application"></a>Uma aplicação de várias camadas com acesso à Internet
+Pretende fornecer um serviço de base de dados com balanceamento de carga para um conjunto de servidores Web com acesso à Internet. Os dois conjuntos de servidores estão alojados num único serviço em nuvem do Azure. O tráfego de servidor Web para a porta TCP 1433 tem de ser distribuído entre duas máquinas virtuais na camada de base de dados. A Figura 1 mostra a configuração.
 
-![Internal load-balanced set for the database tier](./media/load-balancer-internal-getstarted/IC736321.png)
+![Conjunto com balanceamento de carga interno para a camada de base de dados](./media/load-balancer-internal-getstarted/IC736321.png)
 
-The configuration consists of the following:
+A configuração inclui o seguinte:
 
-* The existing cloud service hosting the virtual machines is named mytestcloud.
-* The two existing database servers are named DB1, DB2.
-* Web servers in the web tier connect to the database servers in the database tier by using the private IP address. Another option is to use your own DNS for the virtual network and manually register an A record for the internal load balancer set.
+* O serviço em nuvem existente que está a alojar as máquinas virtuais é denominado mytestcloud.
+* Os dois servidores de base de dados existentes são denominados DB1 e DB2.
+* Os servidores Web na camada Web ligam aos servidores de base de dados na camada de base de dados através do endereço IP privado. Outra opção consiste em utilizar o seu próprio DNS para a rede virtual e registar manualmente um registo A para o conjunto de balanceadores de carga internos.
 
-The following commands configure a new Internal Load Balancing instance named **ILBset** and add endpoints to the virtual machines corresponding to the two database servers:
+Os comandos seguintes configuram uma nova instância de Balanceamento de Carga Interno com o nome **ILBset** e adicionam pontos finais às máquinas virtuais correspondentes aos dois servidores de base de dados:
 
     $svc="mytestcloud"
     $ilb="ilbset"
@@ -120,47 +124,53 @@ The following commands configure a new Internal Load Balancing instance named **
     Get-AzureVM –ServiceName $svc –Name $vmname | Add-AzureEndpoint -Name $epname -LbSetName $lbsetname -Protocol $prot -LocalPort $locport -PublicPort $pubport –DefaultProbe -InternalLoadBalancerName $ilb | Update-AzureVM
 
 
-## Remove an Internal Load Balancing configuration
-To remove a virtual machine as an endpoint from an internal load balancer instance, use the following commands:
+## <a name="remove-an-internal-load-balancing-configuration"></a>Remover uma configuração de Balanceamento de Carga Interno
+Para remover uma máquina virtual como um ponto final de uma instância de balanceador de carga interno, utilize os seguintes comandos:
 
     $svc="<Cloud service name>"
     $vmname="<Name of the VM>"
     $epname="<Name of the endpoint>"
     Get-AzureVM -ServiceName $svc -Name $vmname | Remove-AzureEndpoint -Name $epname | Update-AzureVM
 
-To use these commands, fill in the values, removing the < and >.
+Para utilizar estes comandos, preencha os valores e remova < e >.
 
-Here is an example:
+Segue-se um exemplo:
 
     $svc="mytestcloud"
     $vmname="DB1"
     $epname="TCP-1433-1433"
     Get-AzureVM -ServiceName $svc -Name $vmname | Remove-AzureEndpoint -Name $epname | Update-AzureVM
 
-To remove an internal load balancer instance from a cloud service, use the following commands:
+Para remover uma instância de balanceador de carga interno de um serviço em nuvem, utilize os seguintes comandos:
 
     $svc="<Cloud service name>"
     Remove-AzureInternalLoadBalancer -ServiceName $svc
 
-To use these commands, fill in the value and remove the < and >.
+Para utilizar estes comandos, preencha o valor e remova < e >.
 
-Here is an example:
+Segue-se um exemplo:
 
     $svc="mytestcloud"
     Remove-AzureInternalLoadBalancer -ServiceName $svc
 
 
 
-## Additional information about internal load balancer cmdlets
-To obtain additional information about Internal Load Balancing cmdlets, run the following commands at a Windows PowerShell prompt:
+## <a name="additional-information-about-internal-load-balancer-cmdlets"></a>Informações adicionais sobre os cmdlets do balanceador de carga interno
+Para obter informações adicionais sobre os cmdlets de Balanceamento de Carga Interno, execute os seguintes comandos numa linha de comandos do Windows PowerShell:
 
 * Get-help New-AzureInternalLoadBalancerConfig -full
 * Get-help Add-AzureInternalLoadBalancer -full
 * Get-help Get-AzureInternalLoadbalancer -full
 * Get-help Remove-AzureInternalLoadBalancer -full
 
-## Next steps
-[Configure a load balancer distribution mode using source IP affinity](load-balancer-distribution-mode.md)
+## <a name="next-steps"></a>Passos seguintes
+[Configurar um modo de distribuição de balanceador de carga com a afinidade do IP de origem](load-balancer-distribution-mode.md)
 
-[Configure idle TCP timeout settings for your load balancer](load-balancer-tcp-idle-timeout.md)
+[Configurar definições de tempo limite TCP inativo para o balanceador de carga](load-balancer-tcp-idle-timeout.md)
+
+
+
+
+<!--HONumber=Nov16_HO2-->
+
 

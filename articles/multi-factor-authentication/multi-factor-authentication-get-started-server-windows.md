@@ -1,12 +1,12 @@
 ---
-title: Autenticação do Windows e Servidor Multi-Factor Authentication do Azure
-description: Esta é a página do Multi-Factor Authentication do Azure que irá ajudar a implementar a Autenticação do Windows e o Servidor Multi-Factor Authentication do Azure.
+title: "Autenticação do Windows e Servidor Multi-Factor Authentication do Azure"
+description: "Esta é a página do Multi-Factor Authentication do Azure que irá ajudar a implementar a Autenticação do Windows e o Servidor Multi-Factor Authentication do Azure."
 services: multi-factor-authentication
-documentationcenter: ''
+documentationcenter: 
 author: kgremban
 manager: femila
 editor: curtand
-
+ms.assetid: 19a4043f-c4ce-43c0-80e7-2548ee92cb74
 ms.service: multi-factor-authentication
 ms.workload: identity
 ms.tgt_pltfrm: na
@@ -14,9 +14,13 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 08/04/2016
 ms.author: kgremban
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: 1952e103c574f83c2c6285e32c59144816749348
+
 
 ---
-# Autenticação do Windows e Servidor Multi-Factor Authentication do Azure
+# <a name="windows-authentication-and-azure-multifactor-authentication-server"></a>Autenticação do Windows e Servidor Multi-Factor Authentication do Azure
 A secção Autenticação do Windows permite ao administrador ativar e configurar a autenticação do Windows para uma ou mais aplicações.  Segue-se uma lista do que deve ter em conta antes de configurar a Autenticação do Windows.
 
 * É necessário reiniciar para aplicar o Multi-Factor Authentication do Azure aos Serviços de Terminal.
@@ -28,7 +32,7 @@ A secção Autenticação do Windows permite ao administrador ativar e configura
 > 
 > 
 
-## Para proteger uma aplicação com a Autenticação do Windows, utilize o procedimento seguinte.
+## <a name="to-secure-an-application-with-windows-authentication-use-the-following-procedure"></a>Para proteger uma aplicação com a Autenticação do Windows, utilize o procedimento seguinte.
 1. No Servidor Multi-Factor Authentication do Azure, clique no ícone Autenticação do Windows.
    ![Autenticação do Windows](./media/multi-factor-authentication-get-started-server-windows/windowsauth.png)
 2. Selecione a caixa de verificação Ativar autenticação do Windows. Por predefinição, esta caixa está desmarcada.
@@ -42,6 +46,9 @@ A secção Autenticação do Windows permite ao administrador ativar e configura
 10. Selecione Sub-rede se pretende especificar um intervalo de IPs utilizando a notação de sub-rede. Introduza o IP inicial da sub-rede e escolha a máscara de rede adequada na lista pendente.
 11. Clique no botão OK.
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

@@ -1,12 +1,12 @@
 ---
-title: Publicar aplicações com o Proxy da Aplicação do Azure AD | Microsoft Docs
-description: Publicar aplicações no local para a nuvem com o Proxy da Aplicação do Azure AD.
+title: "Publicar aplicações com o Proxy da Aplicação do Azure AD | Microsoft Docs"
+description: "Publicar aplicações no local para a nuvem com o Proxy da Aplicação do Azure AD."
 services: active-directory
-documentationcenter: ''
+documentationcenter: 
 author: kgremban
 manager: femila
-editor: ''
-
+editor: 
+ms.assetid: d94ac3f4-cd33-4c51-9d19-544a528637d4
 ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
@@ -14,9 +14,13 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 07/19/2016
 ms.author: kgremban
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: 0ba28b2708045a216e1b9fdd7601010b2b554737
+
 
 ---
-# Publicar aplicações com o Proxy da Aplicação do Azure AD
+# <a name="publish-applications-using-azure-ad-application-proxy"></a>Publicar aplicações com o Proxy da Aplicação do Azure AD
 A Proxy de Aplicação do Azure AD ajuda-o a fornecer suporte a funcionários remotos através da publicação de aplicações no local para que sejam acedidas através da Internet. Nesta altura, já deve ter [ativado a Proxy de Aplicação no portal clássico do Azure](active-directory-application-proxy-enable.md). Este artigo explica os passos para publicar aplicações que estão a ser executadas na sua rede local e fornecem acesso remoto seguro fora da rede. Depois de concluir este artigo, estará pronto para configurar a aplicação com informação personalizada ou requisitos de segurança.
 
 > [!NOTE]
@@ -24,7 +28,7 @@ A Proxy de Aplicação do Azure AD ajuda-o a fornecer suporte a funcionários re
 > 
 > 
 
-## Publicar uma aplicação com o assistente
+## <a name="publish-an-app-using-the-wizard"></a>Publicar uma aplicação com o assistente
 1. Inicie sessão como administrador no [Portal Clássico do Azure](https://manage.windowsazure.com/).
 2. Aceda ao Active Directory e selecione o diretório onde ativou o Proxy da Aplicação.
    
@@ -52,7 +56,7 @@ A Proxy de Aplicação do Azure AD ajuda-o a fornecer suporte a funcionários re
      ![Propriedades da aplicação](./media/active-directory-application-proxy-publish/aad_appproxy_appproperties.png)  
 6. Para concluir o assistente, clique na marca de verificação na parte inferior do ecrã. A aplicação está agora definida no Azure AD.
 
-## Atribuir utilizadores e grupos à aplicação
+## <a name="assign-users-and-groups-to-the-application"></a>Atribuir utilizadores e grupos à aplicação
 Para que os utilizadores possam aceder à aplicação que publicou, terá de os atribuir individualmente ou em grupos. (Lembre-se de atribuir também acesso a si.) Isto requer que cada utilizador tenha uma licença para o Azure básico ou superior. Pode atribuir licenças individualmente ou a grupos. Veja o artigo [Atribuir utilizadores a uma aplicação](active-directory-applications-guiding-developers-assigning-users.md) para obter mais detalhes. 
 
 Para aplicações que requerem pré-autenticação, esta ação garante permissões para utilizar a aplicação. Para aplicações que não necessitam de pré-autenticação, os utilizadores podem continuar a ser atribuídos à aplicação para que esta seja apresentada na lista de aplicações, como MyApps.
@@ -62,7 +66,7 @@ Para aplicações que requerem pré-autenticação, esta ação garante permiss�
     ![Início rápido do Proxy da Aplicação para atribuir utilizadores – captura de ecrã](./media/active-directory-application-proxy-publish/aad_appproxy_usersgroups.png)
 2. Procure grupos específicos no diretório ou veja todos os utilizadores. Para visualizar os resultados de pesquisa, clique na marca de verificação.
    
-    ![Procurar grupos ou utilizadores - captura de ecrã](./media/active-directory-application-proxy-publish/aad_appproxy_search.png)
+      ![Procurar grupos ou utilizadores - captura de ecrã](./media/active-directory-application-proxy-publish/aad_appproxy_search.png)
 3. Selecione cada utilizador ou grupo que pretende atribuir a esta aplicação e clique em **Atribuir**. Ser-lhe-á pedido para confirmar esta ação.
 
 > [!NOTE]
@@ -70,10 +74,10 @@ Para aplicações que requerem pré-autenticação, esta ação garante permiss�
 > 
 > 
 
-## Testar a aplicação publicada
+## <a name="test-your-published-application"></a>Testar a aplicação publicada
 Assim que tiver publicado a aplicação, pode testá-la navegando para o URL que publicou. Verifique se consegue aceder à aplicação, se compõe corretamente e se tudo funciona conforme esperado. Se tiver dificuldade ou aparecer uma mensagem de erro, experimente o [guia de resolução de problemas](active-directory-application-proxy-troubleshoot.md).
 
-## Configurar a aplicação
+## <a name="configure-your-application"></a>Configurar a aplicação
 Pode modificar as aplicações publicadas ou configurar opções avançadas na página Configurar. Nesta página, pode personalizar a aplicação ao alterar o nome ou ao carregar um logótipo. Pode ainda gerir as regras de acesso, como o método de pré-autenticação ou a autenticação multifator.
 
 ![Configuração avançada](./media/active-directory-application-proxy-publish/aad_appproxy_configure.png)
@@ -86,7 +90,7 @@ Para ver uma aplicação e certificar-se de que é acessível, faça duplo cliqu
 
 Para eliminar uma aplicação, selecione-a na lista e clique em **Eliminar**.
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 * [Publicar aplicações com o seu próprio nome de domínio](active-directory-application-proxy-custom-domains.md)
 * [Ativar o início de sessão único](active-directory-application-proxy-sso-using-kcd.md)
 * [Ativar o acesso condicional](active-directory-application-proxy-conditional-access.md)
@@ -94,6 +98,9 @@ Para eliminar uma aplicação, selecione-a na lista e clique em **Eliminar**.
 
 Para obter as notícias e atualizações mais recentes, consulte o [blogue do Proxy da Aplicação](http://blogs.technet.com/b/applicationproxyblog/)
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

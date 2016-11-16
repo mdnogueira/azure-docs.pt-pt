@@ -1,22 +1,26 @@
 ---
-title: Proteger a sua API com a API Management do Azure | Microsoft Docs
-description: Saiba como proteger a sua API com quotas e políticas de limitação (limitação de taxas).
+title: "Proteger a sua API com a Gestão de API do Azure | Microsoft Docs"
+description: "Saiba como proteger a sua API com quotas e políticas de limitação (limitação de taxas)."
 services: api-management
-documentationcenter: ''
+documentationcenter: 
 author: steved0x
 manager: erikre
-editor: ''
-
+editor: 
+ms.assetid: 450dc368-d005-401d-ae64-3e1a2229b12f
 ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 08/24/2016
+ms.date: 10/25/2016
 ms.author: sdanie
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: 5050b99039da511ed3e6179b5b4ca2d04de527f7
+
 
 ---
-# Proteger a sua API com limites de taxa utilizando a API Management do Azure
+# <a name="protect-your-api-with-rate-limits-using-azure-api-management"></a>Proteger a sua API com limites de taxa utilizando a API Management do Azure
 Este guia mostra como é fácil adicionar proteção para a sua API de back-end através da configuração de políticas de limite de taxa e quota com a API Management do Azure.
 
 Neste tutorial, irá criar um produto de API de “Avaliação gratuita” que permite aos programadores efetuar até 10 chamadas por minuto e até um máximo de 200 chamadas por semana para a sua API utilizando as políticas [Limitar taxa de chamadas por subscrição](https://msdn.microsoft.com/library/azure/dn894078.aspx#LimitCallRate) e [Definir quota de utilização por subscrição](https://msdn.microsoft.com/library/azure/dn894078.aspx#SetUsageQuota). Em seguida, irá publicar a API e testar a política de limite de taxa.
@@ -31,11 +35,11 @@ Neste passo, irá criar um produto de Avaliação Gratuita que não necessita de
 > 
 > 
 
-Para começar, clique em **Gerir** no Portal Clássico do Azure para o seu serviço de API Management. Isto leva-o para o portal do publicador da API Management.
+Para começar, clique em **Portal do editor** no Portal do Azure para o seu serviço de Gestão de API.
 
 ![Portal do publicador][api-management-management-console]
 
-> Se ainda não criou uma instância de serviço de API Management, consulte [Criar uma instância de serviço de API Management][Criar uma instância de serviço de API Management] no tutorial [Gerir a sua primeira API na API Management do Azure][Gerir a sua primeira API na API Management do Azure].
+> Se ainda não criou uma instância de serviço de Gestão de API, consulte [Criar uma instância de serviço de Gestão de API][Criar uma instância de serviço de Gestão de API] no tutorial [Gerir a sua primeira API na Gestão de API do Azure][Gerir a sua primeira API na Gestão de API do Azure].
 > 
 > 
 
@@ -63,7 +67,7 @@ Depois de serem introduzidos todos os valores, clique em **Guardar** para criar 
 
 Por predefinição, os novos produtos são visíveis para os utilizadores no grupo **Administradores**. Vamos adicionar o grupo **Programadores**. Clique em **Avaliação Gratuita** e, em seguida, clique no separador **Visibilidade**.
 
-> Na API Management, os grupos são utilizados para gerir a visibilidade dos produtos para os programadores. Os produtos concedem visibilidade aos grupos e os programadores podem ver e subscrever os produtos que estão visíveis para os grupos a que pertencem. Para obter mais informações, consulte [Como criar e utilizar grupos na API Management do Azure][Como criar e utilizar grupos na API Management do Azure].
+> Na API Management, os grupos são utilizados para gerir a visibilidade dos produtos para os programadores. Os produtos concedem visibilidade aos grupos e os programadores podem ver e subscrever os produtos que estão visíveis para os grupos a que pertencem. Para obter mais informações, consulte [How to create and use groups in Azure API Management (Como criar e utilizar grupos na Gestão de API do Azure)][How to create and use groups in Azure API Management (Como criar e utilizar grupos na Gestão de API do Azure)].
 > 
 > 
 
@@ -74,7 +78,7 @@ Selecione a caixa de verificação **Programadores** e, em seguida, clique em **
 ## <a name="add-api"> </a>Para adicionar uma API ao produto
 Neste passo do tutorial, iremos adicionar a API Eco ao novo produto de Avaliação Gratuita.
 
-> Cada instância de serviço de API Management está pré-configurada com uma API Eco que pode ser utilizada para experimentar e saber mais sobre a API Management. Para obter mais informações, consulte [Gerir a sua primeira API na API Management do Azure][Gerir a sua primeira API na API Management do Azure].
+> Cada instância de serviço de API Management está pré-configurada com uma API Eco que pode ser utilizada para experimentar e saber mais sobre a API Management. Para obter mais informações, consulte [Manage your first API in Azure API Management (Gerir a sua primeira API na Gestão de API do Azure)][Manage your first API in Azure API Management (Gerir a sua primeira API na Gestão de API do Azure)].
 > 
 > 
 
@@ -287,12 +291,12 @@ Quando a política de limite de taxa de 10 chamadas por minuto estiver em vigor,
 [Monitorização e análise]: ../api-management-monitoring.md
 [Adicionar APIs a um produto]: api-management-howto-add-products.md#add-apis
 [Publicar um produto]: api-management-howto-add-products.md#publish-product
-[Gerir a sua primeira API na API Management do Azure]: api-management-get-started.md
-[Como criar e utilizar grupos na API Management do Azure]: api-management-howto-create-groups.md
+[Gerir a sua primeira API na Gestão de API do Azure]: api-management-get-started.md
+[Como criar e utilizar grupos na Gestão de API do Azure]: api-management-howto-create-groups.md
 [Ver os subscritores de um produto]: api-management-howto-add-products.md#view-subscribers
-[Introdução à API Management do Azure]: api-management-get-started.md
-[Criar uma instância de serviço de API Management]: api-management-get-started.md#create-service-instance
-[Passos seguintes]: #next-steps
+[Introdução à Gestão de API do Azure]: api-management-get-started.md
+[Criar uma instância de serviço de Gestão de API]: api-management-get-started.md#create-service-instance
+[Passos seguintes?]: #next-steps
 
 [Criar um produto]: #create-product
 [Configurar políticas de limite de taxa de chamadas e quota]: #policies
@@ -306,6 +310,6 @@ Quando a política de limite de taxa de 10 chamadas por minuto estiver em vigor,
 
 
 
-<!--HONumber=ago16_HO5-->
+<!--HONumber=Nov16_HO2-->
 
 

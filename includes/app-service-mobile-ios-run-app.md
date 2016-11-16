@@ -3,12 +3,11 @@
 2. Prima o botão **Executar** para criar o projeto e iniciar a aplicação no simulador do iOS.
 3. Na aplicação, digite um texto significativo, tal como *Concluir o tutorial*, e clique no ícone de mais (**+**). Esta ação envia um pedido POST ao back-end do Azure que implementou anteriormente. Os dados de inserções de back-end do pedido encontram-se na tabela TodoItem SQL e devolve informações sobre os itens recentemente armazenados na aplicação móvel. A aplicação móvel apresenta estes dados na lista. 
    
-    ![](./media/mobile-services-ios-run-app/mobile-quickstart-startup-ios.png)
+       ![](./media/app-service-mobile-ios-quickstart/mobile-quickstart-startup-ios.png)
 
 [Portal do Azure]: https://portal.azure.com/
 
 
-
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Nov16_HO2-->
 
 

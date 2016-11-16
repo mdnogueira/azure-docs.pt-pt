@@ -1,4 +1,4 @@
-## Definir uma política de cópia de segurança
+## <a name="defining-a-backup-policy"></a>Definir uma política de cópia de segurança
 Uma política de cópia de segurança define uma matriz de quando os instantâneos de dados são executados e quanto tempo os instantâneos são retidos. Ao definir uma política para a cópia de segurança de uma VM, pode acionar uma tarefa de cópia de segurança *uma vez por dia*. Quando cria uma nova política, esta é aplicada ao cofre. A interface da política de cópia de segurança tem o seguinte aspeto:
 
 ![Política de cópia de segurança](./media/backup-create-policy-for-vms/backup-policy.png)
@@ -26,6 +26,8 @@ Para criar uma política:
    
     A nova política é imediatamente aplicada ao cofre.
 
-<!--HONumber=Sep16_HO3-->
+
+
+<!--HONumber=Nov16_HO2-->
 
 

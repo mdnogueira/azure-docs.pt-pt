@@ -1,10 +1,14 @@
 ---
 layout: LandingPage
 toc_rel: breadcrumb.json
----
-#Virtual Machines Documentation
+translationtype: Human Translation
+ms.sourcegitcommit: 4d6fd9344eaee31de4ee1e614ae558ce159c9245
+ms.openlocfilehash: ca5d39641a251dcbc650907d08ce11c6c7124f66
 
-An Azure virtual machine gives you the flexibility of virtualization without having to buy and maintain the physical hardware that runs the virtual machine. However, you still need to maintain the virtual machine&mdash;configuring, patching, and maintaining the software that runs on the virtual machine.
+---
+#<a name="virtual-machines-documentation"></a>Documentação de Máquinas Virtuais
+
+Uma máquina virtual do Azure fornece-lhe a flexibilidade de virtualização sem ter de comprar e manter o hardware físico que executa a máquina virtual. No entanto, ainda tem de manter a máquina virtual&mdash;configurar, aplicar patches e manter o software que é executado na máquina virtual.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -18,7 +22,7 @@ An Azure virtual machine gives you the flexibility of virtualization without hav
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Getting started with Windows Virtual Machines</h3>
+                        <h3>Introdução às Máquinas Virtuais Windows</h3>
                     </div>
                 </div>
             </div>
@@ -36,7 +40,7 @@ An Azure virtual machine gives you the flexibility of virtualization without hav
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Getting started with Linux Virtual Machines</h3>
+                        <h3>Introdução às Máquinas Virtuais Linux</h3>
                     </div>
                 </div>
             </div>
@@ -47,25 +51,30 @@ An Azure virtual machine gives you the flexibility of virtualization without hav
 
 ---
 
-##Reference
+##<a name="reference"></a>Referência
 
-###.NET 
-[Virtual Machines Managed Reference API](/dotnet/api/) 
+###<a name="net"></a>.NET 
+[API de Referência Gerida das Máquinas Virtuais](/dotnet/api/) 
 
-###REST 
-[Virtual Machine REST API Reference](/rest/api/) 
+###<a name="rest"></a>REST 
+[Referência de API REST de Máquinas Virtuais](/rest/api/) 
 
-###Azure CLI 
-[Azure CLI for Virtual Machines](/cli/azure/)
+###<a name="azure-cli"></a>CLI do Azure 
+[CLI do Azure para Máquinas Virtuais](/cli/azure/)
 
-###Java 
-[Virtual Machines PowerShell Cmdlet](/java/api/)
+###<a name="java"></a>Java 
+[Cmdlet do PowerShell de Máquinas Virtuais](/java/api/)
 
 <div class="downloadHolder">
     <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/virtual-machines.pdf">
         <div class="img"></div>
         <div class="text">
-            Download Virtual Machine Documentation
-        </div>
+Transferir a Documentação de Máquinas Virtuais </div>
     </a>
 </div>
+
+
+
+<!--HONumber=Nov16_HO2-->
+
+

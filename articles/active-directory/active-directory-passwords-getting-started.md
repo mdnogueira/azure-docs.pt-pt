@@ -1,23 +1,27 @@
 ---
-title: 'Introdução: Gestão de Palavras-passe do Azure AD | Microsoft Docs'
-description: Permita que os utilizadores reponham as suas próprias palavras-passe, conheçam os pré-requisitos para a reposição de palavra-passe e ativem a Repetição de Escrita de Palavras-passe para gerir no local as palavras-passe no Active Directory.
+title: "Introdução: Gestão de Palavras-passe do Azure AD | Microsoft Docs"
+description: "Permita que os utilizadores reponham as suas próprias palavras-passe, conheçam os pré-requisitos para a reposição de palavra-passe e ativem a repetição de escrita de palavras-passe para gerir no local as palavras-passe no Active Directory."
 services: active-directory
-keywords: Gestão de palavra-passe do Active Directory, gestão de palavra-passe, repor a palavra-passe do Azure AD
-documentationcenter: ''
+keywords: "Gestão de palavra-passe do Active Directory, gestão de palavra-passe, repor a palavra-passe do Azure AD"
+documentationcenter: 
 author: asteen
 manager: femila
 editor: curtand
-
+ms.assetid: bde8799f-0b42-446a-ad95-7ebb374c3bec
 ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 07/12/2016
+ms.date: 10/05/2016
 ms.author: asteen
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: 77ca34a56a827e8a69ab9a2b60d14cc7c7a71bfc
+
 
 ---
-# Introdução à Gestão de Palavras-passe
+# <a name="getting-started-with-password-management"></a>Introdução à Gestão de Palavras-passe
 > [!IMPORTANT]
 > **Está aqui porque está a ter problemas em iniciar sessão?** Se assim for, [Eis como pode alterar e repor a sua própria palavra-passe](active-directory-passwords-update-your-own-password.md).
 > 
@@ -28,7 +32,7 @@ Para permitir que os utilizadores façam a gestão das suas próprias palavras-p
 * [**Como permitir que os utilizadores reponham as respetivas palavras-passe do Azure Active Directory na nuvem**](#enable-users-to-reset-their-azure-ad-passwords)
   * [Pré-requisitos da reposição personalizada de palavra-passe](#prerequisites)
   * [Passo 1: Configurar a política de reposição de palavra-passe](#step-1-configure-password-reset-policy)
-  * [Passo 2: Adicionar os dados de contacto do utilizador de teste](#step-2-add-contact-data-for-your-test-user)
+  * [Passo 2: Adicionar dados de contacto do utilizador de teste](#step-2-add-contact-data-for-your-test-user)
   * [Passo 3: Repor a palavra-passe como utilizador](#step-3-reset-your-azure-ad-password-as-a-user)
 * [**Como permitir que os utilizadores reponham ou alterem as respetivas palavras-passe do Active Directory no local**](#enable-users-to-reset-or-change-their-ad-passwords)
   * [Pré-requisitos da Repetição de Escrita de Palavras-passe](#writeback-prerequisites)
@@ -38,34 +42,34 @@ Para permitir que os utilizadores façam a gestão das suas próprias palavras-p
   * [Passo 4: Configurar as permissões adequadas](#step-4-set-up-the-appropriate-active-directory-permissions)
   * [Passo 5: Repor a palavra-passe do AD como utilizador e verificar](#step-5-reset-your-ad-password-as-a-user)
 
-## Permitir que os utilizadores reponham as respetivas palavras-passe do Azure AD
+## <a name="enable-users-to-reset-their-azure-ad-passwords"></a>Permitir que os utilizadores reponham as respetivas palavras-passe do Azure AD
 Esta secção explica como ativar a reposição personalizada de palavra-passe para o diretório na nuvem do AAD, como registar os utilizadores para a reposição personalizada de palavra-passe e como executar uma reposição personalizada de palavra-passe de teste como utilizador.
 
 * [Pré-requisitos da reposição personalizada de palavra-passe](#prerequisites)
 * [Passo 1: Configurar a política de reposição de palavra-passe](#step-1-configure-password-reset-policy)
-* [Passo 2: Adicionar os dados de contacto do utilizador de teste](#step-2-add-contact-data-for-your-test-user)
+* [Passo 2: Adicionar dados de contacto do utilizador de teste](#step-2-add-contact-data-for-your-test-user)
 * [Passo 3: Repor a palavra-passe como utilizador](#step-3-reset-your-azure-ad-password-as-a-user)
 
-### Pré-requisitos
+### <a name="prerequisites"></a>Pré-requisitos
 Para ativar e utilizar a reposição personalizada de palavra-passe, terá de cumprir os seguintes pré-requisitos:
 
 * Criar um inquilino do AAD. Para obter mais informações, consulte [ Introdução ao Azure AD](https://azure.microsoft.com/trial/get-started-active-directory/)
 * Obter uma subscrição do Azure. Para obter mais informações, consulte [O que é um inquilino do Azure AD?](active-directory-administer.md#what-is-an-azure-ad-tenant)
 * Associar o inquilino do AAD à subscrição do Azure. Para obter mais informações, consulte [Como associar as subscrições do Azure ao Azure AD](https://msdn.microsoft.com/library/azure/dn629581.aspx).
-* Atualizar para o Azure AD Premium, Basic ou utilizar uma licença do Office 365 paga. Para obter mais informações, consulte [Edições do Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory/).
+* Atualizar para o Azure AD Premium, Basic ou utilizar uma licença do Office 365 paga. Para obter mais informações, consulte [Edições do Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory/).
   
   > [!NOTE]
-  > Para ativar a reposição personalizada de palavra-passe para os utilizadores da nuvem, tem de atualizar a versão para o Azure AD Premium, Azure AD Basic ou uma licença paga do Office 365.  Para ativar a reposição personalizada de palavra-passe para os utilizadores no local, tem de atualizar a versão para o Azure AD Premium. Para obter mais informações, consulte [Edições do Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory/). Estas informações incluem instruções detalhadas sobre como inscrever-se no Azure AD Premium ou Basic, como ativar o plano de licenciamento e o acesso do Azure AD e como atribuir acesso a contas de administrador e de utilizador.
+  > Para ativar a reposição personalizada de palavra-passe para os utilizadores da nuvem, tem de atualizar a versão para o Azure AD Premium, Azure AD Basic ou uma licença paga do Office 365.  Para ativar a reposição personalizada de palavra-passe para os utilizadores no local, tem de atualizar a versão para o Azure AD Premium. Para obter mais informações, consulte [Edições do Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory/). Estas informações incluem instruções detalhadas sobre como inscrever-se no Azure AD Premium ou Basic, como ativar o plano de licenciamento e o acesso do Azure AD e como atribuir acesso a contas de administrador e de utilizador.
   > 
   > 
 * Crie, pelo menos, uma conta de administrador e uma conta de utilizador no diretório do AAD.
-* Atribua uma licença do AAD Premium ou Basic ou uma licença paga do Office 365 à conta de administrador e de utilizador que criou.
+* Atribua uma licença do AAD Premium ou Basic ou uma licença paga do Office 365 à conta de administrador e de utilizador que criou.
 
-### Passo 1: Configurar a política de reposição de palavra-passe
+### <a name="step-1-configure-password-reset-policy"></a>Passo 1: Configurar a política de reposição de palavra-passe
 Para configurar a política de reposição de palavra-passe do utilizador, conclua os passos seguintes:
 
-1. Abra um browser da sua preferência e aceda ao [Portal de Gestão do Azure](https://manage.windowsazure.com).
-2. No [Portal de Gestão do Azure](https://manage.windowsazure.com), localize a **extensão do Active Directory** na barra de navegação no lado esquerdo.
+1. Abra um browser da sua preferência e aceda ao [Portal clássico do Azure](https://manage.windowsazure.com).
+2. No [Portal clássico do Azure](https://manage.windowsazure.com), localize a **extensão do Active Directory** na barra de navegação no lado esquerdo.
    
    ![Gestão de Palavras-passe no Azure AD][001]
 3. No separador **Diretório**, clique no diretório onde pretende configurar a política de reposição de palavra-passe do utilizador, por exemplo, no diretório Wingtip Toys.
@@ -94,10 +98,10 @@ Para configurar a política de reposição de palavra-passe do utilizador, concl
    
    ![][006]
 
-### Passo 2: Adicionar os dados de contacto do utilizador de teste
+### <a name="step-2-add-contact-data-for-your-test-user"></a>Passo 2: Adicionar os dados de contacto do utilizador de teste
 Tem várias opções sobre como especificar os dados dos utilizadores na organização que serão utilizados para a reposição de palavra-passe.
 
-* Editar utilizadores no [Portal de Gestão do Azure](https://manage.windowsazure.com) ou [Portal de Administração do Office 365](https://portal.microsoftonline.com)
+* Editar utilizadores no [Portal clássico do Azure](https://manage.windowsazure.com) ou [Portal de Administração do Office 365](https://portal.microsoftonline.com)
 * Utilizar o AAD Connect para sincronizar as propriedades do utilizador com o Azure AD a partir de um domínio do Active Directory no local
 * Utilizar o Windows PowerShell para editar as propriedades do utilizador
 * Permitir que os utilizadores registem os seus próprios dados, indicando-lhes o portal de registo em [http://aka.ms/ssprsetup](http://aka.ms/ssprsetup)
@@ -105,7 +109,7 @@ Tem várias opções sobre como especificar os dados dos utilizadores na organiz
 
 Se pretender saber mais sobre os dados que são utilizados pela reposição de palavra-passe, bem como quaisquer requisitos de formatação destes dados, consulte [Quais os dados utilizados pela reposição de palavra-passe?](active-directory-passwords-learn-more.md#what-data-is-used-by-password-reset)
 
-#### Para adicionar dados de contacto do utilizador através do Portal de Registo do Utilizador
+#### <a name="to-add-user-contact-data-via-the-user-registration-portal"></a>Para adicionar dados de contacto do utilizador através do Portal de Registo do Utilizador
 1. Para utilizar o portal de registo de reposição de palavra-passe, tem de fornecer aos utilizadores da organização uma ligação para esta página ([http://aka.ms/ssprsetup](http://aka.ms/ssprsetup)) ou ativar a opção que exige que os utilizadores se registem automaticamente.  Depois de clicarem nesta ligação, é-lhes pedido para iniciar sessão com a respetiva conta profissional.  Depois de fazê-lo, verão a página seguinte:
    
    ![][007]
@@ -119,10 +123,10 @@ Se pretender saber mais sobre os dados que são utilizados pela reposição de p
    
    ![][010]
 
-### Passo 3: Repor a palavra-passe do Azure AD como utilizador
+### <a name="step-3-reset-your-azure-ad-password-as-a-user"></a>Passo 3: Repor a palavra-passe do Azure AD como utilizador
 Agora que configurou a política de reposição do utilizador e especificou os respetivos detalhes de contacto, o utilizador pode efetuar uma reposição personalizada de palavra-passe.
 
-#### Para efetuar uma reposição personalizada de palavra-passe
+#### <a name="to-perform-a-selfservice-password-reset"></a>Para efetuar uma reposição personalizada de palavra-passe
 1. Se aceder a um site como [**portal.microsoftonline.com**](http://portal.microsoftonline.com), verá um ecrã de início de sessão como o seguinte.  Clique na ligação **Não consegue aceder à sua conta?** para testar a interface de utilizador da reposição de palavra-passe.
    
    ![][011]
@@ -154,7 +158,7 @@ Agora que configurou a política de reposição do utilizador e especificou os r
     
     ![][020]
 
-## Permitir que os utilizadores reponham ou alterem as respetivas Palavras-passe do AD
+## <a name="enable-users-to-reset-or-change-their-ad-passwords"></a>Permitir que os utilizadores reponham ou alterem as respetivas Palavras-passe do AD
 Esta secção explica como configurar a reposição da palavra-passe para repetir a escrita de palavras-passe no Active Directory no local.
 
 * [Pré-requisitos da Repetição de Escrita de Palavras-passe](#writeback-prerequisites)
@@ -164,7 +168,7 @@ Esta secção explica como configurar a reposição da palavra-passe para repeti
 * [Passo 4: Configurar as permissões adequadas](#step-4-set-up-the-appropriate-active-directory-permissions)
 * [Passo 5: Repor a palavra-passe do AD como utilizador e verificar](#step-5-reset-your-ad-password-as-a-user)
 
-### Pré-requisitos da Repetição de Escrita
+### <a name="writeback-prerequisites"></a>Pré-requisitos da Repetição de Escrita
 Para poder ativar e utilizar a Repetição de Escrita de Palavras-passe, tem de concluir os seguintes pré-requisitos:
 
 * Ter um inquilino do Azure AD com o Azure AD Premium ativado.  Para obter mais informações, consulte [Edições do Azure Active Directory](active-directory-editions.md).
@@ -175,10 +179,10 @@ Para poder ativar e utilizar a Repetição de Escrita de Palavras-passe, tem de 
   > Certifique-se de que a conta de administrador que utilizou para ativar a Repetição de Escrita de Palavras-passe é uma conta de administrador de nuvem (criada no Azure AD), não uma conta federada (criada no AD no local e sincronizada com o Azure AD).
   > 
   > 
-* Ter uma implementação no local do AD de floresta única ou de várias florestas com o Windows Server 2008, Windows Server 2008 R2, Windows Server 2012 ou Windows Server 2012 R2 com os mais recentes service packs instalados.
+* Ter uma implementação no local do AD de floresta única ou de várias florestas com o Windows Server 2008, Windows Server 2008 R2, Windows Server 2012 ou Windows Server 2012 R2 com os mais recentes service packs instalados.
   
   > [!NOTE]
-  > Se estiver a executar uma versão anterior do Windows Server 2008 ou 2008 R2, pode continuar a utilizar esta funcionalidade, mas será necessário [transferir e instalar o KB 2386717](https://support.microsoft.com/kb/2386717) para poder aplicar a política de palavra-passe local do AD na nuvem.
+  > Se estiver a executar uma versão anterior do Windows Server 2008 ou 2008 R2, pode continuar a utilizar esta funcionalidade, mas será necessário [transferir e instalar o KB 2386717](https://support.microsoft.com/kb/2386717) para poder aplicar a política de palavra-passe local do AD na nuvem.
   > 
   > 
 * Ter instalada a ferramenta do Azure AD Connect e preparado o ambiente do AD para a sincronização com a nuvem.  Para obter mais informações, consulte [Utilizar a infraestrutura de identidade no local na nuvem](active-directory-aadconnect.md).
@@ -187,17 +191,17 @@ Para poder ativar e utilizar a Repetição de Escrita de Palavras-passe, tem de 
   > Antes de testar a repetição de escrita de palavras-passe, certifique-se de que efetua primeiro uma importação completa e uma sincronização completa do AD e do Azure AD no Azure AD Connect.
   > 
   > 
-* Se estiver a utilizar o Azure AD Sync ou o Azure AD Connect, o **TCP 443** de saída (e, em alguns casos, o **TCP 9350-9354**) tem de estar aberto.  Consulte [Passo 3: Configurar a firewall](#step-3-configure-your-firewall) para obter mais informações. A utilização do DirSync para este cenário já não é suportada.  Se ainda estiver a utilizar o DirSync, atualize para a versão mais recente do Azure AD Connect antes de implementar a repetição de escrita de palavras-passe.
+* Se estiver a utilizar o Azure AD Sync ou o Azure AD Connect, o **TCP 443** de saída (e, em alguns casos, o **TCP 9350-9354**) tem de estar aberto.  Consulte [Passo 3: Configurar a firewall](#step-3-configure-your-firewall) para obter mais informações. A utilização do DirSync para este cenário já não é suportada.  Se ainda estiver a utilizar o DirSync, atualize para a versão mais recente do Azure AD Connect antes de implementar a repetição de escrita de palavras-passe.
   
   > [!NOTE]
   > Recomendamos vivamente que todos os utilizadores quem estiverem a utilizar as ferramentas Azure AD Sync ou DirSync atualizem para a versão mais recente do Azure AD Connect para garantir a melhor experiência possível e obter novas funcionalidades à medida que são lançadas.
   > 
   > 
 
-### Passo 1: Transferir a versão mais recente do Azure AD Connect
+### <a name="step-1-download-the-latest-version-of-azure-ad-connect"></a>Passo 1: Transferir a versão mais recente do Azure AD Connect
 A Repetição de Escrita de Palavras-passe está disponível nas versões do Azure AD Connect ou na ferramenta Azure AD Sync com o número de versão **1.0.0419.0911** ou superior.  A Repetição de Escrita de Palavras-passe com desbloqueio automático da conta está disponível nas versões do Azure AD Connect ou na ferramenta Azure AD Sync com o número de versão **1.0.0485.0222** ou superior. Se estiver a executar uma versão anterior, atualize para, pelo menos, esta versão antes de continuar. [Clique aqui para transferir a versão mais recente do Azure AD Connect](active-directory-aadconnect.md#install-azure-ad-connect).
 
-#### Para verificar a versão do Azure AD Sync
+#### <a name="to-check-the-version-of-azure-ad-sync"></a>Para verificar a versão do Azure AD Sync
 1. Navegue para **%ProgramFiles%\Azure Active Directory Sync\**.
 2. Localize o executável **ConfigWizard.exe**.
 3. Clique com o botão direito do rato no executável e selecione a opção **Propriedades** no menu de contexto.
@@ -209,14 +213,14 @@ A Repetição de Escrita de Palavras-passe está disponível nas versões do Azu
 Se este número for maior ou igual a **1.0.0419.0911** ou se estiver a instalar o Azure AD Connect, poderá avançar para o [Passo 2: Ativar a Repetição de Escrita de Palavras-passe no Azure AD Connect através da IU ou do PowerShell e verificar](#step-2-enable-password-writeback-in-azure-ad-connect).
 
 > [!NOTE]
-> Se esta for a primeira vez que instala a ferramenta do Azure AD Connect, recomenda-se que siga alguns procedimentos para preparar o ambiente para sincronização de diretórios.  Antes de instalar a ferramenta do Azure AD Connect, tem de ativar a sincronização de diretórios no [Portal de Administração do Office 365](https://portal.microsoftonline.com) ou no [Portal de Gestão do Azure](https://manage.windowsazure.com).  Para obter mais informações, consulte [Gerir o Azure AD Connect](active-directory-aadconnect-whats-next.md).
+> Se esta for a primeira vez que instala a ferramenta do Azure AD Connect, recomenda-se que siga alguns procedimentos para preparar o ambiente para sincronização de diretórios.  Antes de instalar a ferramenta do Azure AD Connect, tem de ativar a sincronização de diretórios no [Portal de Administração do Office 365](https://portal.microsoftonline.com) ou no [Portal clássico do Azure](https://manage.windowsazure.com).  Para obter mais informações, consulte [Gerir o Azure AD Connect](active-directory-aadconnect-whats-next.md).
 > 
 > 
 
-### Passo 2: Ativar a Repetição de Escrita de Palavras-passe no Azure AD Connect
+### <a name="step-2-enable-password-writeback-in-azure-ad-connect"></a>Passo 2: Ativar a repetição de escrita de palavras-passe no Azure AD Connect
 Agora que já transferiu a ferramenta do Azure AD Connect, está pronto para ativar a Repetição de Escrita de Palavras-passe.  Pode fazê-lo de duas maneiras.  Pode ativar a Repetição de Escrita de Palavras-passe no ecrã de funcionalidades opcionais do assistente de configuração do Azure AD Connect ou pode ativá-la através do Windows PowerShell.
 
-#### Para ativar a Repetição de Escrita de Palavras-passe no assistente de configuração
+#### <a name="to-enable-password-writeback-in-the-configuration-wizard"></a>Para ativar a Repetição de Escrita de Palavras-passe no assistente de configuração
 1. No **computador do Directory Sync**, abra o assistente de configuração do **Azure AD Connect**.
 2. Clique nos diferentes passos até chegar ao ecrã de configuração das **funcionalidades opcionais** .
 3. Marque a opção **Repetição de escrita de palavras-passe**.
@@ -225,33 +229,33 @@ Agora que já transferiu a ferramenta do Azure AD Connect, está pronto para ati
 4. Conclua o assistente, a página final resumirá as alterações e incluirá a alteração da configuração da Repetição de Escrita de Palavras-passe.
 
 > [!NOTE]
-> Pode desativar a Repetição de Escrita de Palavras-passe em qualquer altura executando novamente este assistente e desmarcando a funcionalidade ou definindo **Repetir Escrita de Palavras-passe no Diretório no Local** para **Não** na secção **Política de Reposição de Palavra-passe do Utilizador** do separador **Configurar** do diretório no [Portal de Gestão do Azure](https://manage.windowsazure.com).  Para obter mais informações sobre como personalizar a palavra-passe de reposição de teste, consulte [Personalizar: Gestão de Palavra-passe do Azure AD](active-directory-passwords-customize.md).
+> Pode desativar a Repetição de Escrita de Palavras-passe em qualquer altura executando novamente este assistente e desmarcando a funcionalidade ou definindo **Repetir Escrita de Palavras-passe no Diretório no Local** para **Não** na secção **Política de Reposição de Palavra-passe do Utilizador** do separador **Configurar** do diretório no [Portal clássico do Azure](https://manage.windowsazure.com).  Para obter mais informações sobre como personalizar a palavra-passe de reposição de teste, consulte [Personalizar: Gestão de Palavra-passe do Azure AD](active-directory-passwords-customize.md).
 > 
 > 
 
-#### Para ativar a Repetição de Escrita de Palavras-passe com o Windows PowerShell
+#### <a name="to-enable-password-writeback-using-windows-powershell"></a>Para ativar a Repetição de Escrita de Palavras-passe com o Windows PowerShell
 1. No **computador de Sincronização de Diretórios**, abra uma nova **janela elevada do Windows PowerShell**.
-2. Se o módulo ainda não estiver carregado, escreva o comando `Import-Module ADSync` para carregar os cmdlets do Azure AD Connect para a sessão atual.
-3. Obtenha a lista dos Conectores do AAD no sistema executando o cmdlet `Get-ADSyncConnector` e armazenando os resultados em `$aadConnectorName`
-4. Para obter o estado atual da repetição de escrita do conector atual, execute o seguinte cmdlet: `Get-ADSyncAADPasswordResetConfiguration –Connector $aadConnectorName`
-5. Ative a Repetição de Escrita de Palavras-passe executando o cmdlet: `Set-ADSyncAADPasswordResetConfiguration –Connector $aadConnectorName –Enable $true`
+2. Se o módulo ainda não estiver carregado, escreva o comando `import-module ADSync` para carregar os cmdlets do Azure AD Connect para a sessão atual.
+3. Obtenha a lista dos Conectores do Azure AD no sistema ao executar o cmdlet `Get-ADSyncConnector` e ao armazenar os resultados em `$aadConnectorName`, como `$connectors = ADSyncConnector|where-object {$\_.name -like "\*AAD"}`
+4. Para obter o estado atual da repetição de escrita do conector atual, execute o seguinte cmdlet: `Get-ADSyncAADPasswordResetConfiguration –Connector $aadConnectorName.name`
+5. Ative a Repetição de Escrita de Palavras-passe ao executar o cmdlet: `Set-ADSyncAADPasswordResetConfiguration –Connector $aadConnectorName.name –Enable $true`
 
 > [!NOTE]
 > Se lhe for pedida uma credencial, certifique-se de que a conta de administrador que especificou para AzureADCredential é uma **conta de administrador na nuvem (criada no Azure AD)** e não uma conta federada (criada no AD no local e sincronizada com o Azure AD).
 > 
 > [!NOTE]
-> Pode desativar a Repetição de Escrita de Palavras-passe através do PowerShell repetindo as mesmas instruções acima mas indicando `$false` no passo ou definindo a **Repetição de Escrita de Palavras-passe no Diretório no Local** para **Não** na secção **Política de Reposição de Palavra-passe do Utilizador** do separador **Configurar** do diretório no [Portal de Gestão do Azure](https://manage.windowsazure.com).
+> Pode desativar a Repetição de Escrita de Palavras-passe através do PowerShell repetindo as mesmas instruções acima mas indicando `$false` no passo ou definindo a **Repetição de Escrita de Palavras-passe no Diretório no Local** para **Não** na secção **Política de Reposição de Palavra-passe do Utilizador** do separador **Configurar** do diretório no [Portal clássico do Azure](https://manage.windowsazure.com).
 > 
 > 
 
-#### Verificar se a configuração foi concluída com êxito
+#### <a name="verify-that-the-configuration-was-successful"></a>Verificar se a configuração foi concluída com êxito
 Se a configuração tiver sido bem sucedida, verá a mensagem “O write-back de reposição de palavras-passe está ativado” na janela do Windows PowerShell ou uma mensagem de êxito na interface de utilizador de configuração.
 
 Também poderá verificar se o serviço foi instalado corretamente se abrir o Visualizador de Eventos, navegar para o registo de eventos da aplicação e procurar o evento **31005 – OnboardingEventSuccess** no **PasswordResetService** de origem.
 
   ![][023]
 
-### Passo 3: Configurar a firewall
+### <a name="step-3-configure-your-firewall"></a>Passo 3: Configurar a firewall
 Após ter ativado a Repetição de Escrita de Palavras-passe na ferramenta do Azure AD Connect, terá de certificar-se de que o serviço se pode ligar à nuvem.
 
 1. Após a conclusão da instalação, se estiver a bloquear ligações de saída desconhecidas no ambiente, também precisará de adicionar as seguintes regras à firewall. Reinicie o computador do AAD Connect após efetuar estas alterações:
@@ -259,7 +263,7 @@ Após ter ativado a Repetição de Escrita de Palavras-passe na ferramenta do Az
    * Permita ligações de saída para https://ssprsbprodncu-sb.accesscontrol.windows.net/
    * Ao utilizar um proxy ou quando existirem problemas de conectividade, permita ligações de saída através do TCP da porta 9350-9354 e TCP da porta 5671
 
-### Passo 4: Configurar as permissões adequadas do Active Directory
+### <a name="step-4-set-up-the-appropriate-active-directory-permissions"></a>Passo 4: Configurar as permissões adequadas do Active Directory
 Para cada floresta que contenha utilizadores cujas palavras-passe serão repostas, se X for a conta especificada para essa floresta no assistente de configuração (durante a configuração inicial), devem ser concedidos a X os direitos expandidos **Repor Palavra-passe**, **Alterar Palavra-passe**, **Permissões de Escrita** em `lockoutTime` e **Permissões de Escrita** em `pwdLastSet` no objeto raiz de cada domínio dessa floresta. O direito deve ser marcado como herdado por todos os objetos de utilizador.  
 
 Se não tiver a certeza sobre a conta a que nos referimos acima, abra a IU de configuração do Azure Active Directory Connect e clique na opção **Rever a sua Solução**.  A conta para a qual tem de adicionar permissão está sublinhada a vermelho na captura de ecrã abaixo.
@@ -275,7 +279,7 @@ Se não tiver a certeza sobre a conta a que nos referimos acima, abra a IU de co
 > 
 > 
 
-#### Para configurar as permissões corretas para a repetição de escrita
+#### <a name="to-set-up-the-right-permissions-for-writeback-to-occur"></a>Para configurar as permissões corretas para a repetição de escrita
 1. Abra **Utilizadores e Computadores do Active Directory** com uma conta que possua as permissões de administração de domínio apropriadas.
 2. Na opção **Menu Ver**, verifique se a opção **Funcionalidades Avançadas** está ativada.
 3. No painel esquerdo, clique com o botão direito do rato no objeto que representa a raiz do domínio.
@@ -295,10 +299,10 @@ Se não tiver a certeza sobre a conta a que nos referimos acima, abra a IU de co
    ![][028]
 10. Em seguida, clique em **Aplicar/OK** em todas as caixas de diálogo abertas.
 
-### Passo 5: Repor a palavra-passe do AD como utilizador
+### <a name="step-5-reset-your-ad-password-as-a-user"></a>Passo 5: Repor a palavra-passe do AD como utilizador
 Agora que a Repetição de Escrita de Palavras-passe foi ativada, pode testar se funciona ao repor a palavra-passe de um utilizador cuja conta tenha sido sincronizada com o inquilino de nuvem.
 
-#### Para verificar se a Repetição de Escrita de Palavras-passe está a funcionar corretamente
+#### <a name="to-verify-password-writeback-is-working-properly"></a>Para verificar se a Repetição de Escrita de Palavras-passe está a funcionar corretamente
 1. Navegue até [https://passwordreset.microsoftonline.com](https://passwordreset.microsoftonline.com) ou aceda a qualquer ecrã de início de sessão de ID organizacional e clique na ligação **Não consegue aceder à sua conta?**
    
    ![][029]
@@ -314,7 +318,7 @@ Agora que a Repetição de Escrita de Palavras-passe foi ativada, pode testar se
 <br/>
 <br/>
 
-## Ligações para a documentação de reposição de palavra-passe
+## <a name="links-to-password-reset-documentation"></a>Ligações para a documentação de reposição de palavra-passe
 Veja-se abaixo as ligações para todas as páginas da documentação de reposição de palavra-passe do Azure AD:
 
 * **Está aqui porque está a ter problemas em iniciar sessão?** Se assim for, [Eis como pode alterar e repor a sua própria palavra-passe](active-directory-passwords-update-your-own-password.md).
@@ -361,6 +365,6 @@ Veja-se abaixo as ligações para todas as páginas da documentação de reposi�
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

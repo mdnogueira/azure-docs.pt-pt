@@ -1,22 +1,26 @@
 ---
-title: Implementar a aplicação Web Node.js no Azure em cinco minutos | Microsoft Docs
-description: Saiba como é fácil executar aplicações Web no Serviço de Aplicações ao implementar uma aplicação de exemplo. Comece a programar verdadeiramente em pouco tempo e a ver resultados imediatos.
+title: "Implementar a aplicação Web Node.js no Azure em cinco minutos | Microsoft Docs"
+description: "Saiba como é fácil executar aplicações Web no Serviço de Aplicações ao implementar uma aplicação de exemplo. Comece a programar verdadeiramente em pouco tempo e a ver resultados imediatos."
 services: app-service\web
-documentationcenter: ''
+documentationcenter: 
 author: cephalin
 manager: wpickett
-editor: ''
-
+editor: 
+ms.assetid: 412cc786-5bf3-4e1b-b696-6a08cf46501e
 ms.service: app-service-web
 ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: hero-article
-ms.date: 09/16/2016
+ms.date: 10/13/2016
 ms.author: cephalin
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: 2c1bb801d098893fa4e4860ebdd2444bb53cde1b
+
 
 ---
-# Implementar a primeira aplicação Web Node.js no Azure em cinco minutos
+# <a name="deploy-your-first-nodejs-web-app-to-azure-in-five-minutes"></a>Implementar a primeira aplicação Web Node.js no Azure em cinco minutos
 Este tutorial ajuda-o a implementar a sua primeira aplicação Web Node.js no [Serviço de Aplicações do Azure](../app-service/app-service-value-prop-what-is.md).
 Pode utilizar o Serviço de Aplicações para criar aplicações, [back-ends de aplicações móveis](/documentation/learning-paths/appservice-mobileapps/) e [aplicações API](../app-service-api/app-service-api-apps-why-best-platform.md).
 
@@ -27,86 +31,71 @@ Irá:
 * Ver o seu código em execução em direto na produção.
 * Atualizar a sua aplicação Web da mesma forma que [emitiria consolidações do Git](https://git-scm.com/docs/git-push).
 
-## Pré-requisitos
-* [Instalar o Git](http://www.git-scm.com/downloads). Executar o `git --version` a partir de uma nova linha de comandos do Windows, uma janela do PowerShell, uma shell do Linux ou um terminal OS X para se certificar de que a instalação é realizada com êxito.
-* Obter uma conta do Microsoft Azure. Se não tiver uma conta, pode [inscrever-se numa avaliação gratuita](/pricing/free-trial/?WT.mc_id=A261C142F) ou [ativar os benefícios de subscritor do Visual Studio](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F).
+## <a name="prerequisites"></a>Pré-requisitos
+* [Git](http://www.git-scm.com/downloads).
+* [CLI do Azure](../xplat-cli-install.md).
+* Uma conta do Microsoft Azure. Se não tiver uma conta, pode [inscrever-se numa avaliação gratuita](/pricing/free-trial/?WT.mc_id=A261C142F) ou [ativar os benefícios de subscritor do Visual Studio](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F).
 
 > [!NOTE]
 > Pode [Experimentar o Serviço de Aplicações](http://go.microsoft.com/fwlink/?LinkId=523751) sem uma conta do Azure. Crie uma aplicação de introdução e experimente-a durante uma hora, sem cartão de crédito nem compromissos.
 > 
 > 
 
-<a name="create"></a>
-
-## Criar uma aplicação Web
-1. Inicie sessão no [portal do Azure](https://portal.azure.com) com a sua conta do Azure.
-2. No menu à esquerda, clique em **Novo** > **Web + Móvel** > **Aplicação Web**.
+## <a name="deploy-a-nodejs-web-app"></a>Implementar uma aplicação Web em Node.js
+1. Abra uma nova linha de comandos do Windows, uma janela do PowerShell, uma shell do Linux ou um terminal do OS X. Execute `git --version` e `azure --version` para verificar se o Git e a CLI do Azure estão instalados no sua máquina.
    
-    ![](./media/app-service-web-get-started-languages/create-web-app-portal.png)
-3. No painel de criação da aplicação, utilize as seguintes definições para a sua nova aplicação:
+    ![Testar a instalação das ferramentas da CLI para a sua primeira aplicação Web no Azure](./media/app-service-web-get-started/1-test-tools.png)
    
-   * **Nome da aplicação**: escreva um nome exclusivo.
-   * **Grupo de recursos**: selecione **Criar novo** e dê um nome ao grupo de recursos.
-   * **Plano do Serviço de Aplicações/Localização**: clique nele para configurar e, em seguida, clique em **Criar Novo** para definir o nome, a localização e o escalão de preço do plano do Serviço de Aplicações. Pode utilizar o escalão de preço **Gratuito**.
-     
-     Quando tiver terminado, o painel de criação da aplicação deverá este aspeto:
-     
-     ![](./media/app-service-web-get-started-languages/create-web-app-settings.png)
-4. Clique em **Criar** na parte inferior. Pode clicar no ícone de **Notificação** na parte superior para ver o progresso.
+    Se não tiver instalado as ferramentas, consulte [Pré-requisitos](#Prerequisites) para obter as ligações para as transferências.
+2. Inicie sessão no Azure desta forma:
    
-    ![](./media/app-service-web-get-started-languages/create-web-app-started.png)
-5. Quando a implementação estiver concluída, deverá ver esta mensagem de notificação. Clique na mensagem para abrir o painel da implementação.
+        azure login
    
-    ![](./media/app-service-web-get-started-languages/create-web-app-finished.png)
-6. No painel **Implementação concluída com êxito**, clique na ligação **Recurso** para abrir o painel da sua nova aplicação Web.
+    Siga a mensagem de ajuda para continuar o processo de início de sessão.
    
-    ![](./media/app-service-web-get-started-languages/create-web-app-resource.png)
-
-## Implementar código para a sua aplicação Web
-Agora, vamos implementar algum código no Azure através do Git.
-
-1. No painel da aplicação Web, desloque-se para baixo até às **Opções de implementação** ou procure as mesmas e, em seguida, clique nestas. 
+    ![Iniciar sessão no Azure para criar a sua primeira aplicação Web](./media/app-service-web-get-started/3-azure-login.png)
+3. Altere a CLI do Azure para o modo ASM e defina o utilizador da implementação do Serviço de Aplicações. Irá implementar código com as credenciais mais tarde.
    
-    ![](./media/app-service-web-get-started-languages/deploy-web-app-deployment-options.png)
-2. Clique em **Escolher Origem** > **Repositório de Git Local** > **OK**.
-3. Novamente no painel da aplicação Web, clique em **Credenciais de implementação**.
-4. Defina as suas credenciais de implementação e clique em **Guardar**.
-5. Novamente no painel da aplicação Web, desloque-se até às **Propriedades** ou procure as mesmas e, em seguida, clique nestas. Junto ao **URL do Git**, clique no botão **Copiar**.
-   
-    ![](./media/app-service-web-get-started-languages/deploy-web-app-properties.png)
-   
-    Agora, está pronto para implementar código com o Git.
-6. No terminal da linha de comandos, mude para um diretório de trabalho (`CD`) e clone a aplicação de exemplo desta forma:
+        azure config mode asm
+        azure site deployment user set --username <username> --pass <password>
+4. Mude para um diretório de trabalho (`CD`) e clone a aplicação de exemplo desta forma:
    
         git clone https://github.com/Azure-Samples/app-service-web-nodejs-get-started.git
-   
-    ![Clonar o código de exemplo de aplicação para a sua primeira aplicação Web no Azure](./media/app-service-web-get-started-languages/node-git-clone.png)
-   
-    Para *&lt;github_sample_url>*, utilize um dos seguintes URLs, consoante a arquitetura da sua preferência:
-7. Altere para o repositório da sua aplicação de exemplo. Por exemplo, 
+5. Altere para o repositório da sua aplicação de exemplo.
    
         cd app-service-web-nodejs-get-started
-8. Configure o Git remoto para a sua aplicação Azure com o respetivo URL do Git, que copiou do Portal há alguns passos.
+6. Crie o recurso de aplicação Serviço de Aplicações no Azure com um nome de aplicação exclusivo e o utilizador de implementação configurado anteriormente. Quando lhe for pedido, especifique o número da região pretendida.
    
-        git remote add azure <giturlfromportal>
-9. Implemente o código de exemplo na sua aplicação do Azure tal como emitiria qualquer código com o Git:
+        azure site create <app_name> --git --gitusername <username>
+   
+    ![Criar o recurso do Azure para a sua primeira aplicação Web no Azure](./media/app-service-web-get-started-languages/node-site-create.png)
+   
+    Agora, a sua aplicação está criada no Azure. Além disso, o seu diretório atual é inicializado pelo Git e ligado à nova aplicação do App Service como um Git remoto.
+    Pode navegar para o URL da aplicação (http://&lt;app_name>.azurewebsites.net) e ver a fantástica página HTML predefinida, mas o mais importante agora é introduzir o seu código.
+7. Implemente o código de exemplo na sua aplicação do Azure, tal como emitiria qualquer código com o Git. Quando lhe for pedido, utilize a palavra-passe que configurou anteriormente.
    
         git push azure master
    
-    ![Emitir código para a sua primeira aplicação Web no Azure](./media/app-service-web-get-started-languages/node-git-push.png)    
+    ![Emitir código para a sua primeira aplicação Web no Azure](./media/app-service-web-get-started-languages/node-git-push.png)
    
-    Se utilizou uma das arquiteturas de linguagem, será apresentado um resultado diferente. Tal deve-se ao facto de que `git push` não só coloca código no Azure, como também aciona tarefas de implementação no motor de implementação. Se tiver algum package.json na raiz do projeto (repositório), o script de implementação restaura os pacotes necessários por si. 
+    O `git push` não só coloca código no Azure, como também aciona tarefas de implementação no motor de implementação. 
+    Se tiver um package.json na raiz do projeto (repositório), o script de implementação restaura os pacotes necessários por si. 
 
-Já está! O código já está em execução em direto no Azure. No seu browser, navegue para http://*&lt;nomeaplic>*.azurewebsites.net para vê-lo em ação. 
+Parabéns! Implementou a sua aplicação no App Service do Azure.
 
-## Efetuar atualizações à sua aplicação
+## <a name="see-your-app-running-live"></a>Ver a sua aplicação em execução
+Para ver a sua aplicação em execução no Azure, execute este comando a partir de qualquer diretório no seu repositório:
+
+    azure site browse
+
+## <a name="make-updates-to-your-app"></a>Efetuar atualizações à sua aplicação
 Agora, pode utilizar o Git para emitir a partir da raiz do projeto (repositório) em qualquer altura para efetuar uma atualização ao site online. Pode fazê-lo tal como quando implementou o seu código pela primeira vez. Por exemplo, sempre que pretender emitir uma nova alteração que tenha testado localmente, basta executar os seguintes comandos a partir da raiz do projeto (repositório):
 
     git add .
     git commit -m "<your_message>"
     git push azure master
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 [Crie, configure e implemente uma aplicação Web Express Node.js no Azure](app-service-web-nodejs-get-started.md). Este tutorial irá permitir-lhe obter as competências básicas de que necessita para executar qualquer aplicação Web Node.js no Azure, tais como:
 
 * Criar e configurar aplicações no Azure a partir do PowerShell/Bash.
@@ -120,6 +109,9 @@ Em alternativa, faça mais com a sua primeira aplicação Web. Por exemplo:
 * Experimente [outras formas de implementar o seu código no Azure](web-sites-deploy.md). Por exemplo, para implementar a partir de um dos seus repositórios do GitHub, só tem de selecionar **GitHub** em vez de **Repositório de Git Local** nas **Opções de implementação**.
 * Eleve a sua aplicação do Azure ao nível seguinte. Autentique os seus utilizadores. Dimensione-a com base no pedido. Configure alguns alertas de desempenho. Tudo com apenas alguns cliques. Consulte [Adicionar funcionalidades à sua primeira aplicação Web](app-service-web-get-started-2.md).
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

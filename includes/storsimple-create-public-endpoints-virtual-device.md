@@ -1,4 +1,4 @@
-#### Para criar pontos finais públicos no dispositivo virtual
+#### <a name="to-create-public-endpoints-on-the-virtual-device"></a>Para criar pontos finais públicos no dispositivo virtual
 1. Inicie sessão no Portal Clássico do Azure.
 
 * Clique em **Virtual Machines** e selecione a máquina virtual que está a ser utilizada como o seu dispositivo virtual.
@@ -12,6 +12,8 @@
 
 Uma vez criado o ponto final, pode ver os respetivos detalhes para determinar o endereço IP Virtual Público (VIP). Registe esse endereço.
 
-<!--HONumber=Sep16_HO3-->
+
+
+<!--HONumber=Nov16_HO2-->
 
 

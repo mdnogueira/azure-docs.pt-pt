@@ -20,10 +20,12 @@
         <array>
         <string>remote-notification</string>
         </array>
-7. Se estiver a utilizar o **Xcode 7+** e o **iOS 9+**:
+7. Se estiver a utilizar o **Xcode 7+** e o **iOS 9+**:
    
    * Ative **Notificações Push** em Destinos > Nome do Destino > Capacidades.
 
-<!--HONumber=Jun16_HO2-->
+
+
+<!--HONumber=Nov16_HO2-->
 
 

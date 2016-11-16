@@ -1,13 +1,13 @@
 ---
-title: Instalar aplicações do Hadoop no HDInsight | Microsoft Docs
-description: Saiba como instalar aplicações do HDInsight em aplicações do HDInsight.
+title: "Instalar aplicações do Hadoop no HDInsight | Microsoft Docs"
+description: "Saiba como instalar aplicações do HDInsight em aplicações do HDInsight."
 services: hdinsight
-documentationcenter: ''
+documentationcenter: 
 author: mumian
 manager: jhubbard
 editor: cgronlun
 tags: azure-portal
-
+ms.assetid: eaf5904d-41e2-4a5f-8bec-9dde069039c2
 ms.service: hdinsight
 ms.devlang: na
 ms.topic: hero-article
@@ -15,9 +15,13 @@ ms.tgt_pltfrm: na
 ms.workload: big-data
 ms.date: 09/14/2016
 ms.author: jgao
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: b53d8c78817e94ec30bd7cb3becf0c7d4accbd23
+
 
 ---
-# Instalar aplicações do HDInsight
+# <a name="install-hdinsight-applications"></a>Instalar aplicações do HDInsight
 Uma aplicação HDInsight é uma aplicação que os utilizadores podem instalar num cluster do HDInsight baseado em Linux. Estas aplicações podem ser desenvolvidas pela Microsoft, por fornecedores independentes de software (ISV) ou por si. Neste artigo, vai ficar a saber como instalar uma aplicação publicada. Para instalar a sua própria aplicação, veja [Instalar aplicações do HDInsight personalizadas](hdinsight-apps-install-custom-applications.md). 
 
 Atualmente, existe uma aplicação publicada:
@@ -31,10 +35,10 @@ Atualmente, existe uma aplicação publicada:
 
 As instruções fornecidas neste artigo utilizam o portal do Azure. Também pode exportar o modelo do Azure Resource Manager a partir do portal ou obter uma cópia do modelo do Resouce Manager junto de fornecedores e utilizar o Azure PowerShell e a CLI do Azure para implementar o modelo.  Veja [Create Linux-based Hadoop clusters in HDInsight using Resource Manager templates (Criar clusters Hadoop baseados em Linux no HDInsight com modelos do Resource Manager)](hdinsight-hadoop-create-linux-clusters-arm-templates.md).
 
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 Se pretender instalar aplicações do HDInsight num cluster do HDInsight existente, tem de ter um cluster do HDInsight. Para criar um, consulte [Criar clusters](hdinsight-hadoop-linux-tutorial-get-started.md#create-cluster). Também pode instalar aplicações do HDInsight ao criar um cluster do HDInsight.
 
-## Instalar aplicações em clusters existentes
+## <a name="install-applications-to-existing-clusters"></a>Instalar aplicações em clusters existentes
 O procedimento seguinte mostra-lhe como instalar aplicações do HDInsight num cluster HDInsight existente.
 
 **Para instalar uma aplicação do HDInsight**
@@ -56,7 +60,7 @@ O procedimento seguinte mostra-lhe como instalar aplicações do HDInsight num c
 
 Pode verificar o estado da instalação nas notificações do portal (clique no ícone de sino na parte superior do portal). Depois de instalada, a aplicação aparece no painel Aplicações Instaladas.
 
-## Instalar aplicações durante a criação do cluster
+## <a name="install-applications-during-cluster-creation"></a>Instalar aplicações durante a criação do cluster
 Tem a opção de instalar aplicações do HDInsight quando cria um cluster. Durante o processo, as aplicações do HDInsight são instaladas depois de o cluster ser criado e estar no estado Em Execução. O procedimento seguinte mostra-lhe como instalar aplicações do HDInsight quando cria um cluster.
 
 **Para instalar uma aplicação do HDInsight**
@@ -77,7 +81,7 @@ Tem a opção de instalar aplicações do HDInsight quando cria um cluster. Dura
 9. Clique em **Grupo de Recursos** para ver um grupo de recursos existente ou clique em **Novo** para criar um novo.
 10. No painel **Novo Cluster HDInsight**, confirme que **Afixar ao Startboard** está selecionado e, em seguida, clique em **Criar**. 
 
-## Apresentar as aplicações do HDInsight instaladas e propriedades
+## <a name="list-installed-hdinsight-apps-and-properties"></a>Apresentar as aplicações do HDInsight instaladas e propriedades
 O portal mostra uma lista das aplicações do HDInsight instaladas relativas a um cluster e as propriedades de cada uma dessas aplicações.
 
 **Para apresentar as aplicações do HDInsight e as respetivas propriedades**
@@ -97,15 +101,15 @@ O portal mostra uma lista das aplicações do HDInsight instaladas relativas a u
    * Ponto final de SSH: pode utilizar o [SSH](hdinsight-hadoop-linux-use-ssh-unix.md) para ligar ao nó de extremidade. As credenciais de SSH são as mesmas que as credenciais de utilizador de SSH que configurou para o cluster.
 6. Para eliminar uma aplicação, clique com o botão direito do rato na mesma e, em seguida, clique em **Eliminar**, no menu de contexto.
 
-## Ligar ao nó de extremidade
+## <a name="connect-to-the-edge-node"></a>Ligar ao nó de extremidade
 Pode ligar ao nó de extremidade com HTTP e SSH. Pode encontrar as informações relativas ao ponto final no [portal](#list-installed-hdinsight-apps-and-properties). Para obter mais informações sobre como utilizar o SSH, veja [Utilizar o SSH com o Hadoop baseado em Linux no HDInsight a partir do Linux, Unix ou OS X](hdinsight-hadoop-linux-use-ssh-unix.md). 
 
 As credenciais do ponto final de HTTP são as credenciais de utilizador HTTP que configurou para o cluster HDInsight; as credenciais do ponto final de SSH são as credenciais de SSH que configurou para o cluster HDInsight.
 
-## Resolução de problemas
+## <a name="troubleshoot"></a>Resolução de problemas
 Veja [Troubleshoot the installation (Resolver problemas de instalação)](hdinsight-apps-install-custom-applications.md#troubleshoot-the-installation).
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 * [Instalar aplicações HDInsight personalizadas](hdinsight-apps-install-custom-applications.md): saiba como implementar uma aplicação HDInsight não publicada no HDInsight.
 * [Publicar aplicações do HDInsight](hdinsight-apps-publish-applications.md): Saiba como publicar as suas aplicações do HDInsight personalizadas no Azure Marketplace.
 * [MSDN: Instalar uma aplicação do HDInsight](https://msdn.microsoft.com/library/mt706515.aspx): Saiba como definir aplicações do HDInsight.
@@ -113,6 +117,9 @@ Veja [Troubleshoot the installation (Resolver problemas de instalação)](hdinsi
 * [Create Linux-based Hadoop clusters in HDInsight using Resource Manager templates (Criar clusters Hadoop baseados em Linux no HDInsight com modelos do Resource Manager)](hdinsight-hadoop-create-linux-clusters-arm-templates.md): saiba como chamar modelos do Resource Manager para criar clusters HDInsight.
 * [Utilizar nós de extremidade vazios no HDInsight](hdinsight-apps-use-edge-node.md): saiba como utilizar um nó de extremidade vazio para aceder ao cluster do HDInsight, testar aplicações do HDInsight e alojar aplicações do HDInsight.
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

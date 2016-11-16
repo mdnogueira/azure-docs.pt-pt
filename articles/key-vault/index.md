@@ -1,9 +1,13 @@
 ---
 layout: LandingPage
----
-# Key Vault Documentation
+translationtype: Human Translation
+ms.sourcegitcommit: d6059070f8cb8765986763a2ae52068ab692d41d
+ms.openlocfilehash: 9614778d6c7502f16639d2ccb2f259a98be5b0c9
 
-Azure Key Vault helps safeguard cryptographic keys and secrets used by cloud applications and services. By using Key Vault, you can encrypt keys and secrets (such as authentication keys, storage account keys, data encryption keys, .PFX files, and passwords) by using keys that are protected by hardware security modules (HSMs). For added assurance, you can import or generate keys in HSMs.
+---
+# <a name="key-vault-documentation"></a>Documentação do Cofre de Chaves
+
+O Cofre de Chaves do Azure ajuda a salvaguardar as chaves criptográficas e os segredos utilizados pelas aplicações em nuvem e pelos serviços. Ao utilizar o cofre de chave do Azure, pode encriptar chaves e segredos (tal como chaves de autenticação, chaves de conta de armazenamento, chaves de encriptação de dados, ficheiros .PFX e palavras-passe) utilizando as teclas que estão protegidas por módulos de segurança de hardware (HSM). Para maior segurança, pode importar ou gerar chaves nos HSMs.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -17,7 +21,7 @@ Azure Key Vault helps safeguard cryptographic keys and secrets used by cloud app
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Learn about Key Vault</h3>
+                        <h3>Saiba mais sobre o Cofre de Chaves</h3>
                     </div>
                 </div>
             </div>
@@ -35,7 +39,7 @@ Azure Key Vault helps safeguard cryptographic keys and secrets used by cloud app
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Key Vault Video Library</h3>
+                        <h3>Biblioteca de Vídeo de Cofre de Chaves</h3>
                     </div>
                 </div>
             </div>
@@ -53,7 +57,7 @@ Azure Key Vault helps safeguard cryptographic keys and secrets used by cloud app
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Get Started with Key Vault</h3>
+                        <h3>Introdução ao Cofre de Chaves</h3>
                     </div>
                 </div>
             </div>
@@ -71,7 +75,7 @@ Azure Key Vault helps safeguard cryptographic keys and secrets used by cloud app
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Get Started with Key Vault from a Web Application</h3>
+                        <h3>Introdução ao Cofre de Chaves a partir de uma Aplicação Web</h3>
                     </div>
                 </div>
             </div>
@@ -89,7 +93,7 @@ Azure Key Vault helps safeguard cryptographic keys and secrets used by cloud app
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Set up Azure Key Vault with end-to-end key rotation and auditing</h3>
+                        <h3>Configurar o Cofre de Chaves do Azure com auditoria e rotação de ponto a ponto</h3>
                     </div>
                 </div>
             </div>
@@ -100,22 +104,22 @@ Azure Key Vault helps safeguard cryptographic keys and secrets used by cloud app
 
 ---
 
-## Reference
+## <a name="reference"></a>Referência
 
-### PowerShell
-[Azure PowerShell Reference](/PowerShell/azureps-cmdlets-docs)
+### <a name="powershell"></a>PowerShell
+[Referência do Azure PowerShell](/PowerShell/azureps-cmdlets-docs)
 
-### Azure CLI 
-[Key Vault using Azure CLI](/cli/azure/keyvault)
+### <a name="azure-cli"></a>CLI do Azure 
+[Cofre de Chaves com o CLI do Azure](/cli/azure/keyvault)
 
-### Java 
-[Key Vault in Java Reference](/java/api/)
+### <a name="java"></a>Java 
+[Referência do Cofre de Chaves em Java](/java/api/)
 
-### .NET 
-[Key Vault Managed Reference API](/dotnet/api/) 
+### <a name="net"></a>.NET 
+[API de Referência Gerida do Cofre de Chaves](/dotnet/api/) 
 
-### REST 
-[Key Vault REST API Reference](/rest/api/keyvault) 
+### <a name="rest"></a>REST 
+[Referência da API REST do Cofre de Chaves](/rest/api/keyvault) 
 
 ---
 
@@ -123,7 +127,12 @@ Azure Key Vault helps safeguard cryptographic keys and secrets used by cloud app
     <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/key-vault.pdf">
         <div class="img"></div>
         <div class="text">
-            Download Key Vault Documentation
-        </div>
+Transferir Documentação do Cofre de Chaves </div>
     </a>
 </div>
+
+
+
+<!--HONumber=Nov16_HO2-->
+
+

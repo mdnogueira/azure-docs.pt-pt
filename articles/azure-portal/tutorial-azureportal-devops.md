@@ -1,12 +1,12 @@
 ---
 title: 'Tutorial: DevOps com o Portal do Azure | Microsoft Docs'
-description: Conheça os vários fluxos de trabalho do DevOps no Portal do Azure.
+description: "Conheça os vários fluxos de trabalho do DevOps no Portal do Azure."
 services: azure-portal
-documentationcenter: ''
+documentationcenter: 
 author: mlearned
 manager: douge
 editor: mlearned
-
+ms.assetid: 4f1c5bc1-c732-4d35-b5df-0fd68e547d38
 ms.service: multiple
 ms.workload: na
 ms.tgt_pltfrm: na
@@ -14,9 +14,13 @@ ms.devlang: na
 ms.topic: hero-article
 ms.date: 06/05/2016
 ms.author: mlearned
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: b3ef77cc1b3b13a1603f1ca7c6d4a000b69453e0
+
 
 ---
-# Tutorial: DevOps com o Portal do Azure
+# <a name="tutorial-devops-with-the-azure-portal"></a>Tutorial: DevOps com o Portal do Azure
 A plataforma do Azure está cheia de fluxos de trabalho flexíveis do DevOps. Neste tutorial, irá aprender a tirar partido das funcionalidades do Portal do Azure para desenvolver, testar, implementar, resolver problemas, monitorizar e gerir aplicações em execução. Este tutorial concentra-se no seguinte:
 
 1. Criar uma aplicação Web e ativar a implementação contínua
@@ -24,13 +28,13 @@ A plataforma do Azure está cheia de fluxos de trabalho flexíveis do DevOps. Ne
 3. Monitorizar e a Resolver Problemas de uma aplicação
 4. Tarefas de gestão de aplicações gerais
 
-## Criar uma aplicação Web e ativar a implementação contínua
+## <a name="creating-a-web-app-and-enabling-continuous-deployment"></a>Criar uma aplicação Web e ativar a implementação contínua
 Criar uma aplicação Web com o [Serviço de Aplicações do Azure](https://azure.microsoft.com/services/app-service/), que irá utilizar o resto deste tutorial. Inicialmente, irá ativar a implementação contínua do seu repositório de código de origem no nosso ambiente do Azure em execução.
 
 1. Inicie sessão no Portal do Azure
 2. Selecione **Serviços Aplicacionais** &gt; **ícone Adicionar** e introduza um nome, escolha a sua subscrição e crie um novo grupo de recursos para servir como contentor para o serviço.
    
-   Os grupos de recursos permitem-lhe gerir vários aspetos da solução como a faturação, implementações e a monitorização de tudo como um único grupo através do [Azure Resource Manager](https://azure.microsoft.com/documentation/articles/resource-group-overview/).
+   Os grupos de recursos permitem-lhe gerir vários aspetos da solução como a faturação, implementações e a monitorização de tudo como um único grupo através do [Azure Resource Manager](../azure-resource-manager/resource-group-overview.md).
    
    ![image1][image1]
 3. Após alguns instantes, o seu serviço de aplicações é criado. Dispense alguns minutos para explorar as várias opções de menu para o serviço no portal.
@@ -79,7 +83,7 @@ Criar uma aplicação Web com o [Serviço de Aplicações do Azure](https://azur
     
     Ativar a implementação contínua com o Portal do Azure é uma experiência simples. Também pode criar pipelines de versão mais complexos e utilizar muitas outras técnicas com controlo de origem existente e sistemas de integração contínua para implementar para o Azure, tal como tirar partido da criação automatizada e sistemas de gestão de versões.
 
-## Desenvolver e testar uma aplicação
+## <a name="develop-and-test-an-app"></a>Desenvolver e testar uma aplicação
 Em seguida, faça algumas alterações ao código de base e implemente rapidamente essas alterações. Irá também configurar alguns testes de desempenho da aplicação Web.
 
 1. No Portal do Azure escolha Serviços Aplicacionais no painel de navegação e localize o seu Serviço de Aplicações.
@@ -145,7 +149,7 @@ Em seguida, faça algumas alterações ao código de base e implemente rapidamen
     
     ![image36][image36]
 
-## Monitorizar e a resolver problemas de uma aplicação
+## <a name="monitoring-and-troubleshooting-an-app"></a>Monitorizar e a resolver problemas de uma aplicação
 O Azure oferece muitas funcionalidades de monitorização e resolução de problemas de aplicações em execução.
 
 1. No Portal do Azure para a nossa aplicação Web, escolha Ferramentas.
@@ -176,7 +180,7 @@ O Azure oferece muitas funcionalidades de monitorização e resolução de probl
    ![image44][image44]
 7. Desloque para baixo para a categoria de funcionalidades e escolha os registos de Diagnóstico.
    
-    ![image45][image45]
+      ![image45][image45]
 8. Observe as várias opções de registo. Ative o registo de servidor Web e clique em guardar.
    
    ![image46][image46]
@@ -208,7 +212,7 @@ O Azure oferece muitas funcionalidades de monitorização e resolução de probl
     
     O Portal do Azure ajuda-o a oferecer experiências de ferramentas fantásticas e familiares, para o ajudar a monitorizar e resolver problemas das nossas aplicações em execução. Também pode agir rapidamente ao realizar tarefas, como reciclar processos, ativar e desativar várias coleções de dados e até mesmo integrar com o suporte profissional da Microsoft.
 
-## Gestão de Aplicações Gerais
+## <a name="general-application-management"></a>Gestão de Aplicações Gerais
 Ao gerir aplicações, muitas vezes, terá de realizar uma grande variedade de atividades, como a configuração de estratégias de cópia de segurança, a implementação e gestão de fornecedores de identidades e a configuração do controlo de acesso baseado em Funções. Tal como acontece com outras experiências de DevOps, a plataforma do Azure integra estas tarefas diretamente no portal.
 
 1. Para se certificar de que impede que a Aplicação Web perca dados, tem de configurar cópias de segurança. Navegue para a área de Definições para a sua Aplicação Web.
@@ -254,11 +258,11 @@ Ao gerir aplicações, muitas vezes, terá de realizar uma grande variedade de a
     
      ![image69][image69]
 
-## Resumo
+## <a name="summary"></a>Resumo
 Este tutorial demonstrou algumas das vantagens da plataforma do Azure, ao ativar rapidamente a implementação contínua para uma aplicação Web, efetuar várias atividades de desenvolvimento e teste, monitorizar e resolver problemas de uma aplicação em tempo real e, por último, gerir estratégias fundamentais, como a recuperação após desastre, de identidade e de controlo de acesso baseado em funções. A plataforma do Azure permite uma experiência integrada para estes fluxos de trabalho do DevOps e pode trabalhar de forma eficaz, permanecendo no contexto da tarefa em execução.
 
-## Passos seguintes
-* O Azure Resource Manager é importante para ativar DevOps na plataforma do Azure.  Para saber mais, visite [Descrição geral do Azure Resource Manager](../resource-group-overview.md).
+## <a name="next-steps"></a>Passos seguintes
+* O Azure Resource Manager é importante para ativar DevOps na plataforma do Azure.  Para saber mais, visite [Descrição geral do Azure Resource Manager](../azure-resource-manager/resource-group-overview.md).
 * Para saber mais sobre a implementação do Serviço de Aplicações do Azure, visite [Implemente a sua aplicação no Serviço de Aplicações do Azure](../app-service-web/web-sites-deploy.md)
 
 [image1]: ./media/tutorial-azureportal-devops/image1.png
@@ -333,6 +337,6 @@ Este tutorial demonstrou algumas das vantagens da plataforma do Azure, ao ativar
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Nov16_HO2-->
 
 

@@ -3,20 +3,24 @@ title: Criar SQL Data Warehouse com o PowerShell | Microsoft Docs
 description: Criar SQL Data Warehouse com o PowerShell
 services: sql-data-warehouse
 documentationcenter: NA
-author: lodipalm
-manager: barbkess
-editor: ''
-
+author: barbkess
+manager: jhubbard
+editor: 
+ms.assetid: 97434863-7938-4129-8949-5a119f5949e3
 ms.service: sql-data-warehouse
 ms.devlang: NA
 ms.topic: get-started-article
 ms.tgt_pltfrm: NA
 ms.workload: data-services
-ms.date: 08/25/2016
-ms.author: lodipalm;barbkess;sonyama
+ms.date: 10/31/2016
+ms.author: barbkess
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: 3d13d4a0dd1d6e0b7361a57e167b06f0b717bfb4
+
 
 ---
-# Criar SQL Data Warehouse com o PowerShell
+# <a name="create-sql-data-warehouse-using-powershell"></a>Criar SQL Data Warehouse com o PowerShell
 > [!div class="op_single_selector"]
 > * [Portal do Azure](sql-data-warehouse-get-started-provision.md)
 > * [TSQL](sql-data-warehouse-get-started-create-database-tsql.md)
@@ -26,20 +30,20 @@ ms.author: lodipalm;barbkess;sonyama
 
 Este artigo mostra-lhe como criar um SQL Data Warehouse com o PowerShell.
 
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 Para começar, precisa do seguinte:
 
-* **Conta Azure**: aceda a [Versão de Avaliação Gratuita do Azure][Versão de Avaliação Gratuita do Azure] ou [Créditos do MSDN Azure][Créditos do MSDN Azure] para criar uma conta.
-* **Azure SQL Server**: consulte [Create an Azure SQL Database logical server with the Azure Portal (Criar um servidor lógico de Base de Dados SQL do Azure com o Portal do Azure)][Create an Azure SQL Database logical server with the Azure Portal (Criar um servidor lógico de Base de Dados SQL do Azure com o Portal do Azure)] ou [Create an Azure SQL Database logical server with PowerShell (Criar um servidor lógico de Base de Dados SQL do Azure com o PowerShell)][Create an Azure SQL Database logical server with PowerShell (Criar um servidor lógico de Base de Dados SQL do Azure com o PowerShell)] para obter mais detalhes.
+* **Conta Azure**: aceda a [Versão de Avaliação Gratuita do Azure][Versão de Avaliação Gratuita do Azure] ou [Créditos do Azure MSDN][Créditos do Azure MSDN] para criar uma conta.
+* **Azure SQL Server**: veja [Criar um servidor lógico de Base de Dados SQL do Azure com o Portal do Azure][Criar um servidor lógico de Base de Dados SQL do Azure com o Portal do Azure] ou [Criar um servidor lógico de Base de Dados SQL do Azure com o PowerShell][Criar um servidor lógico de Base de Dados SQL do Azure com o PowerShell] para obter mais detalhes.
 * **Grupo de recursos**: utilize o mesmo grupo de recursos do Azure SQL Server ou veja [como criar um grupo de recursos][como criar um grupo de recursos].
-* **PowerShell, versão 1.0.3 ou superior**: pode verificar a sua versão, executando **Get-Module -ListAvailable -Name Azure**.  A versão mais recente pode ser instalada a partir do [Instalador de Plataforma Web da Microsoft][Instalador de Plataforma Web da Microsoft].  Para mais informações sobre como instalar a versão mais recente, consulte [Como instalar e configurar o Azure PowerShell][Como instalar e configurar o Azure PowerShell].
+* **PowerShell, versão 1.0.3 ou superior**: pode verificar a sua versão, executando **Get-Module -ListAvailable -Name Azure**.  A versão mais recente pode ser instalada a partir do [Instalador de Plataforma Web da Microsoft][Instalador de Plataforma Web da Microsoft].  Para obter mais informações sobre como instalar a versão mais recente, veja [Como instalar e configurar o Azure PowerShell][Como instalar e configurar o Azure PowerShell].
 
 > [!NOTE]
-> A criação de um SQL Data Warehouse poderá resultar num novo serviço sujeito a faturação.  Consulte [Preços do SQL Data Warehouse][Preços do SQL Data Warehouse], para mais detalhes sobre preços.
+> A criação de um SQL Data Warehouse poderá resultar num novo serviço sujeito a faturação.  Veja [Preços do SQL Data Warehouse][Preços do SQL Data Warehouse], para obter mais detalhes sobre preços.
 > 
 > 
 
-## Criar um SQL Data Warehouse
+## <a name="create-a-sql-data-warehouse"></a>Criar um SQL Data Warehouse
 1. Abra o Windows PowerShell.
 2. Execute este cmdlet para iniciar sessão no Azure Resource Manager.
    
@@ -49,7 +53,7 @@ Para começar, precisa do seguinte:
 3. Selecione a subscrição que pretende utilizar para a sua sessão atual.
    
     ```Powershell
-    Get-AzureRmSubscription -SubscriptionName "MySubscription" | Select-AzureRmSubscription
+    Get-AzureRmSubscription    -SubscriptionName "MySubscription" | Select-AzureRmSubscription
     ```
 4. Crie a base de dados. Este exemplo cria uma base de dados com o nome "mynewsqldw", com o nível de objetivo de serviço "DW400", para o servidor com o nome "sqldwserver1" que está no grupo de recursos chamado "mywesteuroperesgp1".
    
@@ -72,8 +76,8 @@ Os parâmetros opcionais são:
 
 Para obter mais detalhes sobre as opções de parâmetros, veja [New-AzureRmSqlDatabase][New-AzureRmSqlDatabase] e [Criar Base de Dados (Azure SQL Data Warehouse)][Criar Base de Dados (Azure SQL Data Warehouse)].
 
-## Passos seguintes
-Após terminar o aprovisionamento do SQL Data Warehouse, poderá querer experimentar [carregar dados de exemplo][carregar dados de exemplo] ou verificar como [programar][programar], [carregar][carregar], ou [migrar][migrar].
+## <a name="next-steps"></a>Passos seguintes
+Após terminar o aprovisionamento do SQL Data Warehouse, poderá querer experimentar [carregar os dados de exemplo][carregar os dados de exemplo] ou verificar como [programar][programar], [carregar][carregar], ou [migrar][migrar].
 
 Se estiver interessado em obter mais informações sobre como gerir o SQL Data Warehouse através de programação, consulte o nosso artigo sobre como utilizar [Cmdlets do PowerShell e APIs REST][Cmdlets do PowerShell e APIs REST].
 
@@ -88,13 +92,13 @@ Se estiver interessado em obter mais informações sobre como gerir o SQL Data W
 [Cmdlets do PowerShell e APIs REST]: ./sql-data-warehouse-reference-powershell-cmdlets.md
 [regras de firewall]: ../sql-database-configure-firewall-settings.md
 
-[Como instalar e configurar o Azure PowerShell]: ../powershell/powershell-install-configure.md
-[Como criar um SQL Data Warehouse a partir do Portal do Azure]: ./sql-data-warehouse-get-started-provision.md
+[Como instalar e configurar o Azure PowerShell]: ../powershell-install-configure.md
+[como criar um SQL Data Warehouse a partir do Portal do Azure]: ./sql-data-warehouse-get-started-provision.md
 [Create an Azure SQL Database logical server with the Azure Portal (Criar um servidor lógico de Base de Dados SQL do Azure com o Portal do Azure)]: ../sql-database/sql-database-get-started.md#create-an-azure-sql-database-logical-server
 [Create an Azure SQL Database logical server with PowerShell (Criar um servidor lógico de Base de Dados SQL do Azure com o PowerShell)]: ../sql-database/sql-database-get-started-powershell.md#database-setup-create-a-resource-group-server-and-firewall-rule
 [como criar um grupo de recursos]: ../resource-group-template-deploy-portal.md#create-resource-group
 
-<!--MSDN references--> 
+<!--MSDN references-->
 [MSDN]: https://msdn.microsoft.com/library/azure/dn546722.aspx
 [New-AzureRmSqlDatabase]: https://msdn.microsoft.com/library/mt619339.aspx
 [Criar Base de Dados (Azure SQL Data Warehouse)]: https://msdn.microsoft.com/library/mt204021.aspx
@@ -107,6 +111,6 @@ Se estiver interessado em obter mais informações sobre como gerir o SQL Data W
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

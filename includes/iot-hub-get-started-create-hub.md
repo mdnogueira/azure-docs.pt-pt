@@ -1,4 +1,4 @@
-## Criar um hub IoT
+## <a name="create-an-iot-hub"></a>Criar um hub IoT
 Crie um hub IoT para ligação do dispositivo simulado. Os passos que se seguem mostram como concluir esta tarefa com o Portal do Azure.
 
 1. Inicie sessão no [Portal do Azure][lnk-portal].
@@ -16,10 +16,10 @@ Crie um hub IoT para ligação do dispositivo simulado. Os passos que se seguem 
 4. Quando tiver escolhido as opções de configuração do hub IoT, clique em **Criar**.  O Azure poderá demorar alguns minutos a criar o hub IoT. Para verificar o estado, pode monitorizar o progresso no Startboard ou no painel Notificações.
    
     ![Estado do novo hub IoT][3]
-5. Quando o hub IoT tiver sido criado com êxito, clique no novo mosaico do hub IoT no portal para abrir o painel do novo hub IoT. Anote o **Nome de anfitrião** e, em seguida, clique em **Políticas de acesso partilhado**.
+5. Quando o hub IoT tiver sido criado com êxito, clique no novo mosaico do hub IoT no portal do Azure para abrir o painel do novo hub IoT. Anote o **Nome de anfitrião** e, em seguida, clique em **Políticas de acesso partilhado**.
    
     ![Novo painel do hub IoT][4]
-6. No painel **Políticas de acesso partilhado**, clique na política **iothubowner** e copie e anote a cadeia de ligação no painel **iothubowner**. Para obter mais informações, veja [Controlo de acesso][Ink-access-control] no “Guia do programador do IoT Hub do Azure”.
+6. No painel **Políticas de acesso partilhado**, clique na política **iothubowner** e copie e anote a cadeia de ligação no painel **iothubowner**. Para obter mais informações, veja [Controlo de acesso][lnk-access-control] no “Guia do programador do IoT Hub do Azure”.
    
     ![Painel das políticas de acesso partilhado][5]
 
@@ -34,9 +34,9 @@ Crie um hub IoT para ligação do dispositivo simulado. Os passos que se seguem 
 [lnk-resource-groups]: ../articles/azure-portal/resource-group-portal.md
 [lnk-portal]: https://portal.azure.com/
 [lnk-princing]: https://azure.microsoft.com/pricing/details/iot-hub/
-[Ink-access-control]: ../articles/iot-hub/iot-hub-devguide.md#accesscontrol
+[lnk-access-control]: ../articles/iot-hub/iot-hub-devguide-security.md
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

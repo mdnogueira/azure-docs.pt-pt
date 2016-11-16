@@ -1,5 +1,5 @@
 
-### Limites do conjunto elástico básico
+### <a name="basic-elastic-pool-limits"></a>Limites do conjunto elástico básico
 |  |  |
 | --- |:---:|
 | Máximo de eDTUs por conjunto |&nbsp;100 &nbsp;&nbsp;&nbsp; 200 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 400 &nbsp;&nbsp;&nbsp;&nbsp; 800 &nbsp;&nbsp;&nbsp;&nbsp; 1200 |
@@ -20,7 +20,7 @@
 
 ** A base de dados elástica partilha o armazenamento do conjunto, pelo que o armazenamento da base de dados é limitado ao armazenamento mais pequeno do conjunto restante ou ao armazenamento máximo por base de dados
 
-### Limites do conjunto elástico padrão
+### <a name="standard-elastic-pool-limits"></a>Limites do conjunto elástico padrão
 |  |  |
 | --- |:---:|
 | Máximo de eDTUs por conjunto |&nbsp;100 &nbsp;&nbsp;&nbsp; 200 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 400 &nbsp;&nbsp;&nbsp;&nbsp; 800 &nbsp;&nbsp;&nbsp;&nbsp; 1200 |
@@ -41,7 +41,7 @@
 
 ** A base de dados elástica partilha o armazenamento do conjunto, pelo que o armazenamento da base de dados é limitado ao armazenamento mais pequeno do conjunto restante ou ao armazenamento máximo por base de dados
 
-### Limites do conjunto elástico premium
+### <a name="premium-elastic-pool-limits"></a>Limites do conjunto elástico premium
 |  |  |
 | --- |:---:|
 | Máximo de eDTUs por conjunto |125 &nbsp;&nbsp;&nbsp; 250 &nbsp;&nbsp;&nbsp; 500 &nbsp;&nbsp;&nbsp; 1000 &nbsp;&nbsp;&nbsp; &nbsp;1500 |
@@ -62,6 +62,8 @@
 
 ** A base de dados elástica partilha o armazenamento do conjunto, pelo que o armazenamento da base de dados é limitado ao armazenamento mais pequeno do conjunto restante ou ao armazenamento máximo por base de dados
 
-<!--HONumber=Sep16_HO3-->
+
+
+<!--HONumber=Nov16_HO2-->
 
 

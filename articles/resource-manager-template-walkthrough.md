@@ -1,12 +1,12 @@
 ---
-title: Instruções do Modelo do Azure Resource Manager | Microsoft Docs
-description: Instruções passo-a-passo para um modelo do Resource Manager que aprovisiona uma arquitetura IaaS do Azure básica.
+title: "Instruções do Modelo do Azure Resource Manager | Microsoft Docs"
+description: "Instruções passo-a-passo para um modelo do Resource Manager que aprovisiona uma arquitetura IaaS do Azure básica."
 services: azure-resource-manager
 documentationcenter: na
 author: navalev
-manager: ''
-editor: ''
-
+manager: timlt
+editor: 
+ms.assetid: f1cfd704-f6e1-47d5-8094-b439c279c13f
 ms.service: azure-resource-manager
 ms.devlang: na
 ms.topic: get-started-article
@@ -14,9 +14,13 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/04/2016
 ms.author: navale;tomfitz
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: 8dcfe27b87cd76ea7b8f75c3c36f0115131eb6ae
+
 
 ---
-# Instruções do modelo do Resource Manager
+# <a name="resource-manager-template-walkthrough"></a>Instruções do modelo do Resource Manager
 Uma das primeiras questões colocadas ao criar um modelo é “como começar?”. Pode começar com um modelo em branco ao seguir a estrutura básica descrita no [artigo sobre Criação de Modelos](resource-group-authoring-templates.md#template-format) e adicionar os recursos e os parâmetros e variáveis adequados. Uma boa alternativa seria começar por aceder à [galeria de início rápido](https://github.com/Azure/azure-quickstart-templates) e procurar cenários semelhantes ao que está a tentar criar. Pode intercalar vários modelos ou editar um já existente de acordo com o seu cenário específico. 
 
 Vamos observar uma infraestrutura comum:
@@ -36,7 +40,7 @@ No entanto, como é muita coisa para compilar ao mesmo tempo, vamos criar primei
 > 
 > 
 
-## Criar o modelo do Resource Manager
+## <a name="create-the-resource-manager-template"></a>Criar o modelo do Resource Manager
 O modelo é um ficheiro JSON que define todos os recursos que irá implementar. Também permite que defina os parâmetros especificados durante a implementação, as variáveis construídas a partir de outros valores e expressões e as saídas da implementação. 
 
 Vamos começar com o modelo mais simples:
@@ -54,7 +58,7 @@ Vamos começar com o modelo mais simples:
 
 Guarde este ficheiro como **azuredeploy.json** (tenha em atenção que o modelo pode ter qualquer nome, mas deve ser sempre um ficheiro json).
 
-## Criar uma conta do Storage
+## <a name="create-a-storage-account"></a>Criar uma conta do Storage
 Na secção **recursos**, adicione um objeto que defina a conta do Storage, conforme mostrado abaixo. 
 
 ```json
@@ -89,7 +93,7 @@ Vamos voltar agora à secção **parâmetros** e ver como definir o nome da cont
 ```
 Aqui, definiu um parâmetro do tipo de cadeia que irá conter o nome da conta do Storage. O valor para este parâmetro será fornecido durante a implementação do modelo.
 
-## Implementar o modelo
+## <a name="deploying-the-template"></a>Implementar o modelo
 Temos um modelo completo para criar uma nova conta do Storage. Como se recorda, o modelo foi guardado no ficheiro **azuredeploy.json**:
 
 ```json
@@ -125,12 +129,13 @@ Existem várias formas de implementar um modelo, tal como pode ver no [artigo so
 New-AzureRmResourceGroup -Name ExampleResourceGroup -Location "West Europe"
 
 # deploy the template to the resource group
-New-AzureRmResourceGroupDeployment -Name ExampleDeployment -ResourceGroupName ExampleResourceGroup -TemplateFile azuredeploy.json
+New-AzureRmResourceGroupDeployment -Name ExampleDeployment -ResourceGroupName ExampleResourceGroup `
+  -TemplateFile azuredeploy.json
 ```
 
 Em alternativa, para implementar o modelo com a CLI do Azure, utilize:
 
-```
+```azurecli
 azure group create -n ExampleResourceGroup -l "West Europe"
 
 azure group deployment create -f azuredeploy.json -g ExampleResourceGroup -n ExampleDeployment
@@ -140,7 +145,7 @@ Agora é o orgulhoso proprietário de uma conta do Storage!
 
 Os passos seguintes consistirão em adicionar todos os recursos necessários para implementar a arquitetura descrita no início deste tutorial. Irá adicionar estes recursos no mesmo modelo em que tem estado a trabalhar.
 
-## Conjunto de Disponibilidade
+## <a name="availability-set"></a>Conjunto de Disponibilidade
 Após a definição da conta do Storage, adicione um conjunto de disponibilidade para as máquinas virtuais. Neste caso, não são necessárias propriedades adicionais, pelo que a definição é bastante simples. Consulte a [API REST para criar um Conjunto de Disponibilidade](https://msdn.microsoft.com/library/azure/mt163607.aspx) para ver a secção de propriedades completa, caso pretenda definir os valores da contagem de domínios de atualização e de domínios de falha.
 
 ```json
@@ -163,7 +168,7 @@ O valor que especificar para **type** contém o fornecedor de recursos e o tipo 
 
 Em alternativa, se estiver a utilizar a CLI do Azure, pode executar o seguinte comando:
 
-```
+```azurecli
     azure provider list
 ```
 Tendo em conta que está a criar com contas do Storage, máquinas virtuais e redes virtuais neste tópico, irá trabalhar com:
@@ -180,13 +185,13 @@ Para ver os tipos de recursos de um fornecedor específico, execute o seguinte c
 
 Em alternativa, para a CLI do Azure, o comando seguinte irá devolver os tipos disponíveis no formato JSON e guardá-los num ficheiro.
 
-```
+```azurecli
     azure provider show Microsoft.Compute --json > c:\temp.json
 ```
 
 Deverá ver **availabilitySets** como um dos tipos em **Microsoft.Compute**. O nome completo do tipo é **Microsoft.Compute/availabilitySets**. Pode determinar o nome do tipo de recurso para qualquer um dos recursos no modelo.
 
-## IP público
+## <a name="public-ip"></a>IP público
 Defina um endereço IP público. Mais uma vez, consulte a [API REST para endereços IP públicos](https://msdn.microsoft.com/library/azure/mt163590.aspx) para obter as propriedades a definir.
 
 ```json
@@ -221,7 +226,7 @@ Para ver as versões da API com a CLI do Azure, execute o mesmo comando **azure 
 
 Ao criar um novo modelo, escolha a versão mais recente da API.
 
-## Rede virtual e sub-rede
+## <a name="virtual-network-and-subnet"></a>Rede virtual e sub-rede
 Crie uma rede virtual com uma sub-rede. Consulte a [API REST para redes virtuais](https://msdn.microsoft.com/library/azure/mt163661.aspx) para obter todas as propriedades a definir.
 
 ```json
@@ -248,7 +253,7 @@ Crie uma rede virtual com uma sub-rede. Consulte a [API REST para redes virtuais
 }
 ```
 
-## Load balancer
+## <a name="load-balancer"></a>Load balancer
 Agora, irá criar um load balancer com acesso externo. Como este load balancer utiliza o endereço IP público, tem de declarar uma dependência no endereço IP público na secção **dependsOn**. Isto significa que o load balancer só será implementado quando a implementação do endereço IP público for concluída. Se não definir esta dependência, receberá um erro, uma vez que o Resource Manager tentará implementar os recursos paralelamente e tentará definir o load balancer para o endereço IP público que ainda não existe. 
 
 Também irá criar um conjunto de endereços de back-end, algumas regras NAT de entrada para o RDP nas VMs e uma regra de balanceamento de carga com uma sonda tcp na porta 80 nesta definição do recurso. Consulte a [API REST para o load balancer](https://msdn.microsoft.com/library/azure/mt163574.aspx) para obter todas as propriedades.
@@ -340,7 +345,7 @@ Também irá criar um conjunto de endereços de back-end, algumas regras NAT de 
 }
 ```
 
-## Interface de rede
+## <a name="network-interface"></a>Interface de rede
 Irá criar duas interfaces de rede, uma para cada VM. Em vez de ter de incluir entradas duplicadas para as interfaces de rede, pode utilizar a [função copyIndex()](resource-group-create-multiple.md) para iterar através do ciclo de cópia (denominado nicLoop) e criar o número de interfaces de rede conforme definido nas variáveis `numberOfInstances`. A interface de rede depende da criação da rede virtual e do load balancer. Esta utiliza a sub-rede definida durante a criação da rede virtual e o ID do load balancer para configurar o conjunto de endereços do load balancer e as regras NAT de entrada.
 Consulte a [API REST para interfaces de rede](https://msdn.microsoft.com/library/azure/mt163668.aspx) para obter todas as propriedades.
 
@@ -384,7 +389,7 @@ Consulte a [API REST para interfaces de rede](https://msdn.microsoft.com/library
 }
 ```
 
-## Máquina virtual
+## <a name="virtual-machine"></a>Máquina virtual
 Irá criar duas máquinas virtuais, utilizando a função copyIndex(), tal como fez na criação das [interfaces de rede](#network-interface).
 A criação de VM depende da conta do Storage, da interface de rede e do conjunto de disponibilidade. Esta VM será criada a partir de uma imagem do marketplace, tal como definido na propriedade `storageProfile` – `imageReference` é utilizado para definir o publicador de imagem, a oferta, o SKU e a versão. Por último, é configurado um perfil de diagnóstico para ativar os diagnósticos para a VM. 
 
@@ -456,7 +461,7 @@ Para localizar as propriedades relevantes para uma imagem do marketplace, siga o
 
 Terminou de definir os recursos para o modelo.
 
-## Parâmetros
+## <a name="parameters"></a>Parâmetros
 Na secção de parâmetros, defina os valores que podem ser especificados ao implementar o modelo. Defina parâmetros apenas para os valores que considera que devem ser diversificados durante a implementação. Pode fornecer um valor predefinido para um parâmetro que é utilizado se não for fornecido um valor durante a implementação. Também pode definir os valores permitidos conforme mostrado para o parâmetro **imageSKU**.
 
 ```json
@@ -556,7 +561,7 @@ Na secção de parâmetros, defina os valores que podem ser especificados ao imp
   }
 ```
 
-## Variáveis
+## <a name="variables"></a>Variáveis
 Na secção de variáveis, pode definir valores que são utilizados em mais do que um local no seu modelo ou valores que são construídos a partir de outras expressões ou variáveis. As variáveis são frequentemente utilizadas para simplificar a sintaxe do modelo.
 
 ```json
@@ -578,11 +583,15 @@ Concluiu o modelo! Pode comparar o seu modelo com o modelo completo na [galeria 
 
 Pode implementar novamente o modelo ao utilizar os mesmos comandos que utilizou durante a implementação da conta do Storage. Não é necessário eliminar a conta do Storage antes de voltar a implementar, pois o Resource Manager irá ignorar a nova criação dos recursos que já existem e não foram alterados.
 
-## Passos seguintes
-* [O Visualizador de Modelos do Azure Resource Manager (ARMViz)](http://armviz.io/#/) é uma ótima ferramenta para visualizar os modelos ARM, dado que estes podem ficar demasiado grandes para compreender apenas ao ler o ficheiro json.
+## <a name="next-steps"></a>Passos seguintes
+* [O Visualizador de Modelos do Azure Resource Manager](http://armviz.io/#/) é uma ótima ferramenta para visualizar os modelos do Resource Manager, dado que estes podem ficar demasiado grandes para compreender apenas ao ler o ficheiro json.
 * Para saber mais sobre a estrutura de um modelo, consulte [Criação de modelos do Azure Resource Manager](resource-group-authoring-templates.md).
 * Para saber mais sobre a implementação de um modelo, consulte [Implementar um Grupo de Recursos com um modelo do Azure Resource Manager](resource-group-template-deploy.md)
+* Para uma série de quatro partes sobre automatizar a implementação, consulte [Automating application deployments to Azure Virtual Machines (Automatizar implementações de aplicações para Máquinas Virtuais do Azure)](virtual-machines/virtual-machines-windows-dotnet-core-1-landing.md). Esta série abrange arquitetura de aplicação, acesso e segurança, disponibilidade e dimensionamento, e implementação de aplicação.
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

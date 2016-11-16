@@ -1,11 +1,11 @@
 <!--author=SharS last changed: 02/04/2016-->
 
-#### Para criar um volume
+#### <a name="to-create-a-volume"></a>Para criar um volume
 1. Na página **Início Rápido** do dispositivo, clique em **Adicionar um volume**. Esta ação inicia o assistente Adicionar um volume.
 2. No assistente Adicionar um volume, em **Definições Básicas**, faça o seguinte:
    
    1. Forneça um **Nome** para o volume.
-   2. Especifique a **Capacidade Aprovisionada** para o volume em GB ou TB. A capacidade do volume tem de estar entre 1 GB e 64 TB para um dispositivo físico.
+   2. Especifique a **Capacidade Aprovisionada** para o volume em GB ou TB. A capacidade do volume tem de estar entre 1 GB e 64 TB para um dispositivo físico.
    3. Na lista pendente, selecione o **Tipo de Utilização** do volume. 
    4. Se estiver a utilizar este volume de dados de arquivo, selecione a caixa de verificação **Utilizar este volume para dados de arquivo acedidos com menos frequência**. Para todos os outros casos de utilização selecione simplesmente **Volume em Camadas**. (Os volumes em camadas chamavam-se anteriormente volumes principais).
       
@@ -30,6 +30,8 @@
 
 Para ver um vídeo que demonstra como criar um volume do StorSimple, clique [aqui](https://azure.microsoft.com/documentation/videos/create-a-storsimple-volume/).
 
-<!--HONumber=Jun16_HO2-->
+
+
+<!--HONumber=Nov16_HO2-->
 
 

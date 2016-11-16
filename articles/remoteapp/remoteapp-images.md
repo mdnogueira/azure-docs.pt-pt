@@ -1,11 +1,11 @@
 ---
 title: O que existe nas imagens de modelo do Azure RemoteApp? | Microsoft Docs
-description: Saiba mais sobre as imagens de modelo incluídas no Azure RemoteApp.
+description: "Saiba mais sobre as imagens de modelo incluídas no Azure RemoteApp."
 services: remoteapp
-documentationcenter: ''
+documentationcenter: 
 author: lizap
 manager: mbaldwin
-
+ms.assetid: 7f8442b2-81da-421e-a453-aa53ba2066b7
 ms.service: remoteapp
 ms.workload: compute
 ms.tgt_pltfrm: na
@@ -13,9 +13,13 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 08/15/2016
 ms.author: elizapo
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: b589fb3b1cdbf1f14ece6adf43e1eb0313ff09df
+
 
 ---
-# O que existe nas imagens de modelo do Azure RemoteApp?
+# <a name="what-is-in-the-azure-remoteapp-template-images"></a>O que existe nas imagens de modelo do Azure RemoteApp?
 > [!IMPORTANT]
 > O Azure RemoteApp está a ser descontinuado. Leia o [anúncio](https://go.microsoft.com/fwlink/?linkid=821148) para obter detalhes.
 > 
@@ -28,7 +32,7 @@ A sua subscrição do Azure RemoteApp inclui três imagens de modelo:
 * Microsoft Office 2013 Professional Plus (versão de avaliação apenas)
 
 > [!IMPORTANT]
-> A sua subscrição do Azure RemoteApp concede-lhe o acesso ao software nas imagens, exceto o Office 365 ProPlus, que necessita de uma subscrição separada, e o Office 2013, que não pode ser utilizado em produção. Tal significa que pode partilhar os programas ou as aplicações nas imagens de modelo com os seus utilizadores. Por exemplo, se criar uma coleção que utilize a imagem do Windows Server 2012 R2, pode publicar o System Center Endpoint Protection para que os utilizadores acedam através do RemoteApp.
+> A sua subscrição do Azure RemoteApp concede-lhe o acesso ao software nas imagens, exceto o Office 365 ProPlus, que necessita de uma subscrição separada, e o Office 2013, que não pode ser utilizado em produção. Tal significa que pode partilhar os programas ou as aplicações nas imagens de modelo com os seus utilizadores. Por exemplo, se criar uma coleção que utilize a imagem do Windows Server 2012 R2, pode publicar o System Center Endpoint Protection para que os utilizadores acedam através do RemoteApp.
 > 
 > Para obter mais informações, consulte os [detalhes de licenciamento do RemoteApp](remoteapp-licensing.md). Consulte também [Utilizar o Office com o Azure RemoteApp](remoteapp-o365.md) para obter as informações de licenciamento do Office.
 > 
@@ -36,15 +40,15 @@ A sua subscrição do Azure RemoteApp inclui três imagens de modelo:
 
 Continue a ler para obter detalhes sobre o conteúdo de cada imagem.
 
-## Windows Server 2012 R2 (“a imagem clássica”)
-Esta imagem baseia-se no sistema operativo Microsoft Windows Server 2012 R2 Datacenter e tem as seguintes funções e funcionalidades instaladas para cumprir os requisitos das imagens de modelo do Azure RemoteApp:
+## <a name="windows-server-2012-r2-the-vanilla-image"></a>Windows Server 2012 R2 (“a imagem clássica”)
+Esta imagem baseia-se no sistema operativo Microsoft Windows Server 2012 R2 Datacenter e tem as seguintes funções e funcionalidades instaladas para cumprir os requisitos das imagens de modelo do Azure RemoteApp:
 
 * .NET Framework 4.5, 3.5.1, 3.5
 * Experiência de Utilização do Computador
 * Serviços de Tinta Digital e Escrita Manual
 * Media Foundation
 * Anfitrião de Sessões de Ambiente de Trabalho Remoto
-* Windows PowerShell 4.0
+* Windows PowerShell 4.0
 * ISE do Windows PowerShell
 * Suporte WoW64
 
@@ -55,10 +59,10 @@ Esta imagem tem também as seguintes aplicações instaladas:
 * Microsoft System Center 2012 Endpoint Protection
 * Microsoft Windows Media Player
 
-## Microsoft Office 365 ProPlus (é necessária uma subscrição)
+## <a name="microsoft-office-365-proplus-subscription-required"></a>Microsoft Office 365 ProPlus (é necessária uma subscrição)
 O Office 365 é a aplicação mais solicitada, pelo que criámos uma imagem “personalizada” para poder trabalhar com ela.
 
-Esta imagem é uma extensão da imagem clássica e tem os seguintes componentes do Microsoft Office 365 ProPlus instalados além dos componentes descritos na imagem do Windows Server 2012 R2:
+Esta imagem é uma extensão da imagem clássica e tem os seguintes componentes do Microsoft Office 365 ProPlus instalados além dos componentes descritos na imagem do Windows Server 2012 R2:
 
 * Access
 * Excel
@@ -86,10 +90,10 @@ A funcionalidade completa das aplicações do Office 365 ProPlus está apenas di
 
 Tenha em atenção de que precisa de uma licença separada para o Office 365 ProPlus, o Visio Pro e o Project Pro, cada um tem a sua própria licença.
 
-## Microsoft Office 2013 Professional Plus (versão de avaliação apenas)
+## <a name="microsoft-office-2013-professional-plus-trial-only"></a>Microsoft Office 2013 Professional Plus (versão de avaliação apenas)
 Durante o período de avaliação gratuita, pode testar o serviço com a imagem do Office 2013.
 
-Esta imagem é uma extensão da imagem clássica e tem os seguintes componentes do Microsoft Office 2013 Professional Plus instalados além dos componentes descritos na imagem do Windows Server 2012 R2:
+Esta imagem é uma extensão da imagem clássica e tem os seguintes componentes do Microsoft Office 2013 Professional Plus instalados além dos componentes descritos na imagem do Windows Server 2012 R2:
 
 * Access
 * Excel
@@ -108,6 +112,9 @@ Esta imagem é uma extensão da imagem clássica e tem os seguintes componentes 
 > 
 > 
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

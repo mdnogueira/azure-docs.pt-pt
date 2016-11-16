@@ -1,26 +1,30 @@
 ---
-title: Gerir a sua primeira API na API Management do Azure | Microsoft Docs
-description: Saiba como criar APIs, adicionar operações e começar a utilizar a API Management.
+title: Gerir a sua primeira API na API -anagement do Azure | Microsoft Docs
+description: "Saiba como criar APIs, adicionar operações e começar a utilizar a API Management."
 services: api-management
-documentationcenter: ''
+documentationcenter: 
 author: steved0x
 manager: erikre
-editor: ''
-
+editor: 
+ms.assetid: 51b7df8b-1c43-43c6-90c9-0aa24f48206b
 ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: hero-article
-ms.date: 08/24/2016
+ms.date: 10/25/2016
 ms.author: sdanie
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: 587c7346bcb8e6549febd3904c8d0a9e46cbc50a
+
 
 ---
-# Gerir a sua primeira API na API Management do Azure
+# <a name="manage-your-first-api-in-azure-api-management"></a>Gerir a sua primeira API na API Management do Azure
 ## <a name="overview"> </a>Descrição geral
 Este guia mostra como começar a utilizar rapidamente a API Management do Azure e efetuar a primeira chamada à API.
 
-## <a name="concepts"> </a>O que é a API Management do Azure?
+## <a name="concepts"> </a>O que é a Gestão de API do Azure?
 Pode utilizar a API Management do Azure para iniciar um programa de API totalmente funcional baseado em qualquer back-end.
 
 Os cenários comuns incluem:
@@ -53,39 +57,37 @@ O sistema é constituído pelos seguintes componentes:
   * Criar uma conta e subscrever para obter chaves de API.
   * Aceder a análises sobre a sua própria utilização.
 
-## <a name="create-service-instance"> </a>Criar uma instância da API Management
+## <a name="create-service-instance"> </a>Criar uma instância da Gestão de API
 > [!NOTE]
 > Para concluir este tutorial, precisa de uma conta do Azure. Se não tiver uma conta, pode criar uma conta gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure][Avaliação Gratuita do Azure].
 > 
 > 
 
-O primeiro passo para trabalhar com a API Management consiste em criar uma instância de serviço. Inicie sessão no [Portal Clássico do Azure][Portal Clássico do Azure] e clique em **Novo**, **Serviços Aplicacionais**, **API Management**, **Criar**.
+O primeiro passo para trabalhar com a API Management consiste em criar uma instância de serviço. Inicie sessão no [Portal do Azure][Portal do Azure] e clique em **Novo**, **Web + Móvel**, **Gestão de API**.
 
 ![Nova instância da API Management][api-management-create-instance-menu]
 
-Para **URL**, especifique um nome de subdomínio exclusivo a utilizar para o URL do serviço.
+Para **Nome**, especifique um nome de subdomínio exclusivo a utilizar para o URL do serviço.
 
-Selecione a **Subscrição** e a **Região** pretendidas para a sua instância de serviço. Depois de efetuar as seleções, clique no botão **Seguinte**.
-
-![Novo serviço da API Management][api-management-create-instance-step1]
+Selecione a **Subscrição** pretendida, o **Grupo de recursos** e a **Localização** para a sua instância de serviço.
 
 Introduza **Contoso Lda.** para o **Nome da Organização** e introduza o seu endereço de e-mail no campo **E-mail do Administrador**.
 
 > [!NOTE]
-> Este endereço de e-mail é utilizado para notificações do sistema da API Management. Para obter mais informações, consulte [Como configurar notificações e modelos de e-mail na API Management do Azure][Como configurar notificações e modelos de e-mail na API Management do Azure].
+> Este endereço de e-mail é utilizado para notificações do sistema da API Management. Para obter mais informações, consulte [How to configure notifications and email templates in Azure API Management (Como configurar as notificações e modelos e-mail na Gestão de API do Azure)][How to configure notifications and email templates in Azure API Management (Como configurar as notificações e modelos e-mail na Gestão de API do Azure)].
 > 
 > 
 
-![Novo serviço da API Management][api-management-create-instance-step2]
+![Novo serviço da API Management][api-management-create-instance-step1]
 
-As instâncias do serviço de API Management estão disponíveis em três camadas: Programador, Standard e Premium. Por predefinição, as novas instâncias de serviço de API Management são criadas na camada de Programador. Para selecionar a camada Standard ou Premium, marque a caixa de verificação **Definições avançadas** e selecione a camada pretendida no ecrã seguinte.
+As instâncias do serviço de API Management estão disponíveis em três camadas: Programador, Standard e Premium.
 
 > [!NOTE]
-> A camada de Programador destina-se a programas de API de desenvolvimento, teste e piloto em que a elevada disponibilidade não é uma preocupação. Nas camadas Standard e Premium, pode dimensionar a contagem de unidades reservadas para processar mais tráfego. As camadas Standard e Premium fornecem ao serviço de API Management a maior potência de processamento e o melhor desempenho. Pode concluir este tutorial utilizando qualquer camada. Para obter mais informações sobre as camadas de API Management, consulte [Preços da API Management][Preços da API Management].
+> A camada de Programador destina-se a programas de API de desenvolvimento, teste e piloto em que a elevada disponibilidade não é uma preocupação. Nas camadas Standard e Premium, pode dimensionar a contagem de unidades reservadas para processar mais tráfego. As camadas Standard e Premium fornecem ao serviço de API Management a maior potência de processamento e o melhor desempenho. Pode concluir este tutorial utilizando qualquer camada. Para obter mais informações sobre as camadas de Gestão de API, consulte [Preços da Gestão de API][Preços da Gestão de API].
 > 
 > 
 
-Clique na caixa de verificação para criar a instância de serviço.
+Clique em **Criar** para iniciar o aprovisionamento da sua instância do serviço.
 
 ![Novo serviço da API Management][api-management-instance-created]
 
@@ -101,7 +103,7 @@ Pode criar APIs (e adicionar operações) manualmente ou pode importá-las. Nest
 > 
 > 
 
-As APIs são configuradas a partir do portal do publicador, que é acedido através do Portal Clássico do Azure. Para aceder ao portal do publicador, clique em **Gerir** no Portal Clássico do Azure para o seu serviço de API Management.
+As APIs são configuradas a partir do portal do publicador. Para o alcançar, clique em **Portal do publicador** na barra de ferramentas de serviço.
 
 ![Portal do publicador][api-management-management-console]
 
@@ -197,26 +199,26 @@ A secção **Análise** tem os seguintes quatro separadores:
 ## <a name="next-steps"> </a>Passos seguintes
 * Saiba como [Proteger a sua API com limites de velocidade](api-management-howto-product-with-rules.md).
 
-[Avaliação Gratuita do Azure]: http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=api_management_hero_a
+[Versão de Avaliação Gratuita do Azure]: http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=api_management_hero_a
 
-[Criar uma instância da API Management]: #create-service-instance
+[Criar uma instância da Gestão de API]: #create-service-instance
 [Criar uma API]: #create-api
 [Adicionar uma operação]: #add-operation
 [Adicionar a nova API a um produto]: #add-api-to-product
 [Subscrever o produto que contém a API]: #subscribe
 [Chamar uma operação a partir do Portal do Programador]: #call-operation
 [Ver análise]: #view-analytics
-[Passos seguintes]: #next-steps
+[Passos seguintes?]: #next-steps
 
 
-[Como gerir contas de programador na API Management do Azure]: api-management-howto-create-or-invite-developers.md
+[Como gerir contas de programador na Gestão de API do Azure]: api-management-howto-create-or-invite-developers.md
 [Configurar definições de API]: api-management-howto-create-apis.md#configure-api-settings
-[Como configurar notificações e modelos de e-mail na API Management do Azure]: api-management-howto-configure-notifications.md
+[Como configurar notificações e modelos de e-mail na Gestão de API do Azure]: api-management-howto-configure-notifications.md
 [Respostas]: api-management-howto-add-operations.md#responses
 [Como criar e publicar um produto]: api-management-howto-add-products.md
-[Preços da API Management]: http://azure.microsoft.com/pricing/details/api-management/
+[Preços da Gestão de API]: http://azure.microsoft.com/pricing/details/api-management/
 
-[Portal Clássico do Azure]: https://manage.windowsazure.com/
+[Portal do Azure]: https://portal.azure.com/
 
 [api-management-management-console]: ./media/api-management-get-started/api-management-management-console.png
 [api-management-create-instance-menu]: ./media/api-management-get-started/api-management-create-instance-menu.png
@@ -255,6 +257,6 @@ A secção **Análise** tem os seguintes quatro separadores:
 
 
 
-<!--HONumber=ago16_HO5-->
+<!--HONumber=Nov16_HO2-->
 
 

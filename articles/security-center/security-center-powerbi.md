@@ -1,12 +1,12 @@
 ---
-title: Obter informações a partir de dados do Centro de Segurança do Azure com Power BI| Microsoft Docs
-description: O pacote de conteúdo do Power BI do Centro de Segurança do Azure faz com que seja mais fácil encontrar alertas de segurança, recomendações, recursos atacados e tendências, com base num conjunto de dados que tenha sido criado para o seu relatório.
+title: "Obter informações a partir de dados do Centro de Segurança do Azure com Power BI| Microsoft Docs"
+description: "O pacote de conteúdo do Power BI do Centro de Segurança do Azure faz com que seja mais fácil encontrar alertas de segurança, recomendações, recursos atacados e tendências, com base num conjunto de dados que tenha sido criado para o seu relatório."
 services: security-center
 documentationcenter: na
 author: YuriDio
 manager: swadhwa
-editor: ''
-
+editor: 
+ms.assetid: 0ded6bc7-52e8-43b4-8940-0bee137526e3
 ms.service: security-center
 ms.devlang: na
 ms.topic: hero-article
@@ -14,14 +14,18 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/22/2016
 ms.author: yurid
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: f085631264439062f6fccff4cdae535d7f80bbe3
+
 
 ---
-# Obter informações a partir de dados do Centro de Segurança do Azure com Power BI
+# <a name="get-insights-from-azure-security-center-data-with-power-bi"></a>Obter informações a partir de dados do Centro de Segurança do Azure com Power BI
 O [Dashboard do Power BI](http://aka.ms/azure-security-center-power-bi) para o Centro de Segurança do Azure permite-lhe visualizar, analisar e filtrar recomendações e alertas de segurança a partir de qualquer lugar, incluindo o seu dispositivo móvel. Utilize o dashboard do Power BI para revelar as tendências e padrões de ataques – veja alertas de segurança por recurso ou endereço IP de origem e riscos de segurança não abordados por recurso ou idade. 
 
 Também pode misturar recomendações e alertas de segurança do Centro de Segurança com outros dados de formas interessantes, por exemplo, utilizando dados dos [Registos de Auditoria do Azure](https://powerbi.microsoft.com/blog/monitor-azure-audit-logs-with-power-bi/) e da [Auditoria da Base de Dados SQL do Azure](https://powerbi.microsoft.com/blog/monitor-your-azure-sql-database-auditing-activity-with-power-bi/). Ambos oferecem Dashboards do Power BI e também pode exportar estes dados para o Excel para elaborar facilmente relatórios sobre o estado de segurança dos seus recursos de nuvem.
 
-## Utilizar o dashboard do Centro de Segurança do Azure para aceder ao Power BI
+## <a name="using-azure-security-center-dashboard-to-access-power-bi"></a>Utilizar o dashboard do Centro de Segurança do Azure para aceder ao Power BI
 Também pode utilizar o dashboard do Centro de Segurança do Azure para aceder aos relatórios do Power BI. Siga os passos para realizar esta tarefa: 
 
 1. No dashboard do **Centro de Segurança do Azure**, clique no botão **Explorar no Power BI**.
@@ -80,7 +84,7 @@ Neste momento também pode guardar uma cópia deste relatório, imprimi-la ou pu
 
 ![Menu Ficheiro](./media/security-center-powerbi/security-center-powerbi-fig8.png)
 
-## Explorar os dados do Centro de Segurança do Azure com os serviços Power BI
+## <a name="exploring-your-azure-security-center-data-with-power-bi-services"></a>Explorar os dados do Centro de Segurança do Azure com os serviços Power BI
 Ligue-se aos [Serviços do Pacote de Conteúdo do Power BI](https://msit.powerbi.com/groups/me/getdata/services) no Power BI e execute os seguintes passos:
 
 1. Na janela **Pacote de conteúdo do Power BI** verá duas opções conforme é mostrado abaixo.
@@ -107,7 +111,7 @@ Ligue-se aos [Serviços do Pacote de Conteúdo do Power BI](https://msit.powerbi
    
     ![Dashboard de Gestão de Políticas](./media/security-center-powerbi/security-center-powerbi-fig1-new9.png)
 
-## Consultar também
+## <a name="see-also"></a>Consultar também
 Neste documento, aprendeu a utilizar o Power BI no Centro de Segurança do Azure. Para saber mais acerca do Centro de Segurança do Azure, consulte o seguinte:
 
 * [Guia de Operações e Planeamento do Centro de Segurança do Azure](security-center-planning-and-operations-guide.md) – Saiba como planear a adoção do Centro de Segurança do Azure.
@@ -116,6 +120,9 @@ Neste documento, aprendeu a utilizar o Power BI no Centro de Segurança do Azure
 * [Azure Security Center FAQ (FAQ do Centro de Segurança do Azure)](security-center-faq.md) – Encontre as perguntas mais frequentes acerca de como utilizar o serviço
 * [Blogue de Segurança do Azure](http://blogs.msdn.com/b/azuresecurity/) – Encontre mensagens do blogue acerca da segurança e conformidade do Azure
 
-<!--HONumber=Sep16_HO4-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

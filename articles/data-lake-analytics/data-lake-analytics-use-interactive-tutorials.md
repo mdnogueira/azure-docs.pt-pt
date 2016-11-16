@@ -1,12 +1,12 @@
 ---
-title: Conhecer o Data Lake Analytics e U-SQL através dos tutoriais interativos do Portal do Azure | Microsoft Docs
-description: 'Início rápido com aprendizagem do Data Lake Analytics e U-SQL. '
+title: "Conhecer o Data Lake Analytics e U-SQL através dos tutoriais interativos do Portal do Azure | Microsoft Docs"
+description: "Início rápido com aprendizagem do Data Lake Analytics e U-SQL. "
 services: data-lake-analytics
-documentationcenter: ''
+documentationcenter: 
 author: edmacauley
 manager: jhubbard
 editor: cgronlun
-
+ms.assetid: 31399d47-e937-4c43-ab0a-6aea8875378d
 ms.service: data-lake-analytics
 ms.devlang: na
 ms.topic: get-started-article
@@ -14,9 +14,13 @@ ms.tgt_pltfrm: na
 ms.workload: big-data
 ms.date: 05/16/2016
 ms.author: edmaca
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: c2a9bd7f78afc77f72236d0204f39798f0388362
+
 
 ---
-# Utilizar tutoriais interativos do Azure Data Lake Analytics
+# <a name="use-azure-data-lake-analytics-interactive-tutorials"></a>Utilizar tutoriais interativos do Azure Data Lake Analytics
 O Portal do Azure fornece um tutorial interativo para começar a utilizar o Data Lake Analytics . Este artigo mostra como seguir o tutorial para analisar os registos de sites.
 
 > [!NOTE]
@@ -29,8 +33,8 @@ Para outros tutoriais, veja:
 
 * [Introdução ao Data Lake Analytics com o Portal do Azure](data-lake-analytics-get-started-portal.md)
 * [Introdução ao Data Lake Analytics com o Azure PowerShell](data-lake-analytics-get-started-powershell.md)
-* [Introdução ao Data Lake Analytics com o SDK .NET](data-lake-analytics-get-started-net-sdk.md)
-* [Desenvolver scripts U-SQL com as Ferramentas do Data Lake para Visual Studio | Azure](data-lake-analytics-data-lake-tools-get-started.md) 
+* [Introdução ao Data Lake Analytics com o SDK do .NET](data-lake-analytics-get-started-net-sdk.md)
+* [Desenvolver scripts U-SQL com as Ferramentas do Data Lake para Visual Studio](data-lake-analytics-data-lake-tools-get-started.md) 
 
 **Pré-requisitos**
 
@@ -38,12 +42,12 @@ Antes de começar este tutorial, tem de ter o seguinte:
 
 * **Conta do Data Lake Analytics**.  Veja [Introdução à Análise do Azure Data Lake com o Portal do Azure](data-lake-analytics-get-started-portal.md).
 
-## Criar conta do Data Lake Analytics
+## <a name="create-data-lake-analytics-account"></a>Criar conta do Data Lake Analytics 
 Tem de ter uma conta do Data Lake Analytics antes de poder executar quaisquer tarefas.
 
 Cada conta de Data Lake Analytics tem uma dependência de conta de [Arquivo Azure Data Lake](../data-lake-store/data-lake-store-overview.md).  Esta conta é referida como a conta predefinida do Data Lake Store.  Pode criar a conta do Data Lake Store previamente ou quando criar a conta do Data Lake Analytics . Neste tutorial, irá criar a conta do Data Lake Store com a conta do Data Lake Analytics 
 
-**Para criar uma conta do Data Lake Analytics **
+**Para criar uma conta do Data Lake Analytics**
 
 1. Inicie sessão no [Portal do Azure](https://portal.azure.com/signin/index/?Microsoft_Azure_Kona=true&Microsoft_Azure_DataLake=true&hubsExtension_ItemHideKey=AzureDataLake_BigStorage%2cAzureKona_BigCompute).
 2. Clique em **Microsoft Azure** no canto superior esquerdo para abrir o StartBoard.
@@ -58,15 +62,15 @@ Cada conta de Data Lake Analytics tem uma dependência de conta de [Arquivo Azur
    * **Nome**: atribua um nome à conta da Análise.
    * **Data Lake Store**: cada conta do Data Lake Analytics tem uma conta do Data Lake Store dependente. A conta do Data Lake Analytics e a conta do Data Lake Store dependente têm de estar localizadas no centro de dados do Azure. Siga as instruções para criar uma nova conta do Data Lake Store ou selecione uma conta existente.
    * **Subscrição**: selecione a subscrição do Azure utilizada para a conta da Análise.
-   * **Grupo de Recursos**. Selecione um Grupo de Recursos do Azure existente ou crie um novo. As aplicações são geralmente constituídas por diversos componentes, por exemplo, uma aplicação Web, base de dados, servidor de base de dados, armazenamento e serviços de terceiros. O Azure Resource Manager (ARM) permite trabalhar com os recursos na sua aplicação como um grupo, referido como um Grupo de Recursos do Azure. Pode implementar, atualizar, monitorizar ou eliminar todos os recursos da sua aplicação numa operação única e coordenada. Utiliza um modelo para a implementação e esse modelo pode funcionar para ambientes diferentes, como de teste e produção. Pode clarificar a faturação da sua organização ao visualizar os custos agregados do grupo inteiro. Para obter mais informações, veja [Descrição geral do Azure Resource Manager](../resource-group-overview.md). 
+   * **Grupo de Recursos**. Selecione um Grupo de Recursos do Azure existente ou crie um novo. As aplicações são geralmente constituídas por diversos componentes, por exemplo, uma aplicação Web, base de dados, servidor de base de dados, armazenamento e serviços de terceiros. O Azure Resource Manager (ARM) permite trabalhar com os recursos na sua aplicação como um grupo, referido como um Grupo de Recursos do Azure. Pode implementar, atualizar, monitorizar ou eliminar todos os recursos da sua aplicação numa operação única e coordenada. Utiliza um modelo para a implementação e esse modelo pode funcionar para ambientes diferentes, como de teste e produção. Pode clarificar a faturação da sua organização ao visualizar os custos agregados do grupo inteiro. Para obter mais informações, veja [Descrição geral do Azure Resource Manager](../azure-resource-manager/resource-group-overview.md). 
    * **Localização**. Selecione um centro de dados do Azure para a conta do Data Lake Analytics. 
 8. Selecione **Afixar ao StartBoard**. Esta ação é necessária para seguir este tutorial.
 9. Clique em **Criar**. Esta ação leva-o para o StartBoard do portal. Um novo mosaico é adicionado à home page com a etiqueta que indica "A implementar a Análise do Azure Data Lake". A criação de uma conta da Data Lake Analytics demora alguns instantes. Quando a conta estiver criada, o portal abre a conta num novo painel.
    
     ![Painel do portal da Análise do Azure Data Lake](./media/data-lake-analytics-get-started-portal/data-lake-analytics-portal-blade.png)
 
-## Executar o tutorial interativo da Website Log Analytics
-**Para abrir o tutorial interativo do Website Log Analytics**
+## <a name="run-website-log-analysis-interactive-tutorial"></a>Executar o tutorial interativo da Website Log Analytics
+**Para abrir o tutorial interativo do site Log Analytics**
 
 1. A partir do Portal, clique em **Microsoft Azure** no menu à esquerda para abrir o StartBoard.
 2. Clique no mosaico associado à sua conta da Data Lake Analytics .
@@ -77,13 +81,16 @@ Cada conta de Data Lake Analytics tem uma dependência de conta de [Arquivo Azur
 5. A partir do painel **Tutoriais Interativos**, clique em **Website Log Analytics**. O portal abre o tutorial num novo painel do portal.
 6. Clique em **1 Introdução** e, em seguida, siga as instruções
 
-## Consultar também
+## <a name="see-also"></a>Consultar também
 * [Descrição geral do Microsoft Azure Data Lake Analytics](data-lake-analytics-overview.md)
 * [Introdução ao Data Lake Analytics com o Portal do Azure](data-lake-analytics-get-started-portal.md)
 * [Introdução ao Data Lake Analytics com o Azure PowerShell](data-lake-analytics-get-started-powershell.md)
-* [Desenvolver scripts U-SQL com as Ferramentas do Data Lake para Visual Studio | Azure](data-lake-analytics-data-lake-tools-get-started.md)
-* [Analisar registos de sites com o Azure Data Lake Analytics](data-lake-analytics-analyze-weblogs.md)
+* [Desenvolver scripts U-SQL com as Ferramentas do Data Lake para Visual Studio](data-lake-analytics-data-lake-tools-get-started.md)
+* [Analyze Website logs using Azure Data Lake Analytics (Analisar registos de sites com o Azure Data Lake Analytics)](data-lake-analytics-analyze-weblogs.md)
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

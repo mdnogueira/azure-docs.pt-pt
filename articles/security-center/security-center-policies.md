@@ -1,12 +1,12 @@
 ---
-title: Definir políticas de segurança no Centro de Segurança do Azure | Microsoft Docs
-description: Este documento ajuda-o a configurar as políticas de segurança no Centro de Segurança do Azure.
+title: "Definir políticas de segurança no Centro de Segurança do Azure | Microsoft Docs"
+description: "Este documento ajuda-o a configurar as políticas de segurança no Centro de Segurança do Azure."
 services: security-center
 documentationcenter: na
 author: YuriDio
 manager: swadhwa
-editor: ''
-
+editor: 
+ms.assetid: 3b9e1c15-3cdb-4820-b678-157e455ceeba
 ms.service: security-center
 ms.devlang: na
 ms.topic: hero-article
@@ -14,17 +14,21 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/22/2016
 ms.author: yurid
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: 7fba0338f6a61998b1c103210cd60c1d37eeffd5
+
 
 ---
-# Definir políticas de segurança no Centro de Segurança do Azure
+# <a name="set-security-policies-in-azure-security-center"></a>Definir políticas de segurança no Centro de Segurança do Azure
 Este documento ajuda-o a configurar as políticas de segurança no Centro de Segurança, ao servir de orientação pelos passos necessários para realizar esta tarefa.
 
-## O que são políticas de segurança?
+## <a name="what-are-security-policies"></a>O que são políticas de segurança?
 Uma política de segurança define o conjunto de controlos que são recomendados para recursos dentro da subscrição especificada ou do grupo de recursos. No Centro de Segurança, é possível definir políticas para as suas subscrições ou grupo de recursos do Azure, de acordo com as necessidades de segurança da empresa e do tipo de aplicações ou sensibilidade dos dados em cada subscrição.
 
 Por exemplo, os recursos que são utilizados para programação ou testes podem ter requisitos de segurança diferentes dos que são utilizados para aplicações de produção. Da mesma forma, as aplicações que utilizam dados regulados como informação identificativa podem exigir um nível mais elevado de segurança. As políticas de segurança que são ativadas no Centro de Segurança do Azure aplicam recomendações de segurança e monitorização para o ajudar a identificar potenciais vulnerabilidades e a mitigar ameaças. Leia o [Guia de Operações e Planeamento do Centro de Segurança do Azure](security-center-planning-and-operations-guide.md) para obter mais informações sobre como determinar a opção mais adequada para si.
 
-## Definir políticas de segurança para subscrições
+## <a name="set-security-policies-for-subscriptions"></a>Definir políticas de segurança para subscrições
 Pode configurar políticas de segurança para cada subscrição ou grupo de recursos. Para modificar uma política de segurança, tem de ser um proprietário ou contribuinte dessa subscrição. Inicie sessão no portal do Azure e siga os passos subsequentes para configurar as políticas de segurança no Centro de Segurança:
 
 1. Clique no mosaico **Política** no dashboard do Centro de Segurança.
@@ -80,7 +84,7 @@ Utilize a tabela seguinte como uma referência para compreender cada opção:
 
 Assim que configurar todas as opções, clique em **OK** no painel **Política de Segurança** que tem as recomendações e clique em **Guardar** no painel **Política de Segurança** que tem as definições iniciais.
 
-## Definir políticas de segurança para grupos de recursos
+## <a name="set-security-policies-for-resource-groups"></a>Definir políticas de segurança para grupos de recursos
 Se preferir configurar as políticas de segurança por grupo de recursos, os passos são semelhantes aos que utiliza para a configuração de políticas de segurança para subscrições. A diferença principal é que será necessário expandir o nome da subscrição e selecionar o grupo de recursos no qual pretende configurar a política de segurança exclusiva:
 
 ![Seleção de grupos de recursos](./media/security-center-policies/security-center-policies-fig5-ga.png)
@@ -94,7 +98,7 @@ Depois de selecionar o grupo de recursos, o painel **Política de segurança** a
 > 
 > 
 
-## Consultar também
+## <a name="see-also"></a>Consultar também
 Neste documento, aprendeu a configurar as políticas de segurança no Centro de Segurança do Azure. Para saber mais acerca do Centro de Segurança do Azure, consulte o seguinte:
 
 * [Guia de operações e planeamento do Centro de Segurança do Azure](security-center-planning-and-operations-guide.md). Saiba como planear e compreender as considerações de conceção para adoção do Centro de Segurança do Azure.
@@ -104,6 +108,9 @@ Neste documento, aprendeu a configurar as políticas de segurança no Centro de 
 * [Centro de Segurança do Azure FAQ (FAQ do Centro de Segurança do Azure)](security-center-faq.md). Encontre as perguntas mais frequentes acerca de como utilizar o serviço.
 * [Blogue de Segurança do Azure](http://blogs.msdn.com/b/azuresecurity/). Encontre mensagens do blogue acerca da segurança e conformidade do Azure.
 
-<!--HONumber=Sep16_HO4-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

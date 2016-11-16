@@ -11,6 +11,8 @@ Apresentamos a seguir uma lista de outros tutoriais que pode querer rever acerca
 
 Na secção seguinte do tutorial, irá aprender a utilizar a [Interface REST dos Notification Hubs](http://msdn.microsoft.com/library/windowsazure/dn223264.aspx) para enviar a mensagem de notificação diretamente na aplicação. Todos os dispositivos registados recebem a notificação enviada por qualquer dispositivo.  
 
-<!--HONumber=Sep16_HO3-->
+
+
+<!--HONumber=Nov16_HO2-->
 
 

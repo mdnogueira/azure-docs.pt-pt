@@ -6,28 +6,28 @@
 6. No campo **Grupo de recursos**, selecione um grupo de recursos existente em que o espaço de nomes será colocado ou crie um novo.      
 7. Em **Localização**, selecione o país ou a região em que o espaço de nomes deverá ser alojado.
    
-    ![Criar espaço de nomes][create-namespace]
+    ![Create namespace][create-namespace]
 8. Clique em **Criar**. O sistema cria o espaço de nomes e ativa-o. Poderá ter de aguardar alguns minutos enquanto o sistema aprovisiona recursos para a sua conta.
 
-### Obter as credenciais de gestão
+### <a name="obtain-the-management-credentials"></a>Obter as credenciais de gestão
 1. Na lista de espaços de nomes, clique no nome do espaço de nomes criado recentemente.
 2. No painel de espaço de nomes clique em **Políticas de Acesso Partilhado**.
 3. No painel **Políticas de acesso partilhado**, clique em **RootManageSharedAccessKey**.
    
-    ![informações-ligação][connection-info]
+    ![connection-info][connection-info]
 4. No painel **Política: RootManageSharedAccessKey**, clique no botão de cópia junto a **Cadeia de ligação – chave primária** para copiar a cadeia de ligação para a sua área de transferência e utilizá-la mais tarde. Cole este valor no Bloco de Notas ou noutra localização temporária.
    
-    ![cadeia-ligação][connection-string]
+    ![connection-string][connection-string]
 
 <!--Image references-->
 
-[criar-espaço de nomes]: ./media/service-bus-create-namespace-portal/create-namespace.png
-[informações-ligação]: ./media/service-bus-create-namespace-portal/connection-info.png
-[cadeia-ligação]: ./media/service-bus-create-namespace-portal/connection-string.png
+[create-namespace]: ./media/service-bus-create-namespace-portal/create-namespace.png
+[connection-info]: ./media/service-bus-create-namespace-portal/connection-info.png
+[connection-string]: ./media/service-bus-create-namespace-portal/connection-string.png
 
 <!--Reference style links - using these makes the source content way more readable than using inline links-->
 [Portal do Azure]: https://portal.azure.com
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

@@ -23,10 +23,10 @@
    ![Captura de ecrã do painel Nível de Consistência – Consistência da Sessão](./media/documentdb-create-dbaccount/create-nosql-db-databases-json-tutorial-7.png)  
 
 [Como: criar uma conta do DocumentDB]: #Howto
-[Passos seguintes]: #NextSteps
+[Passos seguintes?]: #NextSteps
 [documentdb-gerir]:../articles/documentdb/documentdb-manage.md
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

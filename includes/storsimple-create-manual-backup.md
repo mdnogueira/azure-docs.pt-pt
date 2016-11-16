@@ -2,7 +2,7 @@
 <!--author=SharS last changed: 9/15/15-->
 
 
-#### Para criar uma cópia de segurança manual
+#### <a name="to-create-a-manual-backup"></a>Para criar uma cópia de segurança manual
 1. Na página **Dispositivos**, aceda ao separador **Políticas de Cópia de Segurança**. Este separador lista todas as políticas de cópia de segurança em formato tabular, incluindo a política do volume do qual pretende criar cópias de segurança.
 2. Selecione a política clicando em qualquer parte na linha correspondente, exceto na primeira coluna. Na parte inferior da página, clique em **Criar cópia de segurança**. O botão será expandido para mostrar as opções de cópia de segurança: instantâneo local e instantâneo na nuvem. 
 3. Ao escolher uma destas opções, ser-lhe-á solicitada a confirmação. Clique em **Sim**. 
@@ -18,6 +18,8 @@
    
    A cópia de segurança deverá aparecer na lista de conjuntos de cópias de segurança que é apresentada no catálogo.
 
-<!--HONumber=Sep16_HO3-->
+
+
+<!--HONumber=Nov16_HO2-->
 
 

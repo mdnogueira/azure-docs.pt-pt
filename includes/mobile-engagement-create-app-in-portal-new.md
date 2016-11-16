@@ -1,3 +1,4 @@
+
 1. Inicie sessão no [Portal do Azure](https://portal.azure.com).
 2. Clique em **Novo**, depois, **Web + Móvel** e, em seguida, **Mobile Engagement**.
    
@@ -9,7 +10,7 @@
    * **Nome**: o nome da sua *coleção de aplicações* 
    * **Plataformas**: selecione as plataformas de destino para a sua aplicação no painel Plataformas que será apresentado. Por exemplo, se pretender uma aplicação para iOS e Android, selecione ambas as plataformas e serão criadas duas aplicações nesta coleção de aplicações. 
      
-     ![](./media/mobile-engagement-create-app-in-portal-new/choose-platform.png)
+      ![](./media/mobile-engagement-create-app-in-portal-new/choose-platform.png)
    * **Subscrição**: selecione a subscrição do Azure. 
    * **Grupo de recursos**: selecione o Grupo de recursos do Azure no qual pretende este recurso do Azure (Coleção de Aplicações do Mobile Engagement). Pode optar por criar um novo.  
    * **Localização**: região onde serão armazenados os dados desta coleção de aplicações e aplicação.
@@ -29,6 +30,8 @@
    
     ![](./media/mobile-engagement-create-app-in-portal-new/app-connection-info.png)
 
-<!--HONumber=Sep16_HO3-->
+
+
+<!--HONumber=Nov16_HO2-->
 
 

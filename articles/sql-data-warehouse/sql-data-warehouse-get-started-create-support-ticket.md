@@ -3,23 +3,27 @@ title: Como criar um pedido de suporte para o SQL Data Warehouse | Microsoft Doc
 description: Como criar um pedido de suporte no Azure SQL Data Warehouse.
 services: sql-data-warehouse
 documentationcenter: NA
-author: sonyam
-manager: barbkess
-editor: ''
-
+author: barbkess
+manager: jhubbard
+editor: 
+ms.assetid: a91d1f53-03cb-464b-9d5b-4a9c1a194ed3
 ms.service: sql-data-warehouse
 ms.devlang: NA
 ms.topic: get-started-article
 ms.tgt_pltfrm: NA
 ms.workload: data-services
-ms.date: 09/01/2016
-ms.author: sonyama;barbkess
+ms.date: 10/31/2016
+ms.author: barbkess
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: ede330870f451bd1e0ed6805fa937e74438fd644
+
 
 ---
-# Como criar um pedido de suporte para o SQL Data Warehouse
+# <a name="how-to-create-a-support-ticket-for-sql-data-warehouse"></a>Como criar um pedido de suporte para o SQL Data Warehouse
 Se tiver problemas com o SQL Data Warehouse, crie um pedido de suporte para que a nossa equipa de engenharia possa ajudá-lo.
 
-## Criar um pedido de suporte
+## <a name="create-a-support-ticket"></a>Criar um pedido de suporte
 1. Abra o [Portal do Azure][Portal do Azure].
 2. No ecrã principal, clique no mosaico **Ajuda + suporte**.
    
@@ -63,12 +67,12 @@ Se tiver problemas com o SQL Data Warehouse, crie um pedido de suporte para que 
     ![Informações de contacto](./media/sql-data-warehouse-get-started-create-support-ticket/contact-info.png)
 11. Clique em **Criar** para submeter o pedido de suporte.
 
-## Monitorizar um pedido de suporte
+## <a name="monitor-a-support-ticket"></a>Monitorizar um pedido de suporte
 Depois de ter submetido o pedido de suporte, a equipa de suporte do Azure irá contactá-lo. Para verificar o estado e os detalhes do pedido, clique em **Gerir pedidos de suporte** no dashboard.
 
 ![Verificar o estado](./media/sql-data-warehouse-get-started-create-support-ticket/check-status.png)
 
-## Outros Recursos
+## <a name="other-resources"></a>Outros Recursos
 Além disso, pode ligar-se à comunidade do SQL Data Warehouse no [Stack Overflow][Stack Overflow] ou no [Fórum MSDN do Azure SQL Data Warehouse][Fórum MSDN do Azure SQL Data Warehouse].
 
 <!--Image references--> 
@@ -93,6 +97,6 @@ Além disso, pode ligar-se à comunidade do SQL Data Warehouse no [Stack Overflo
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

@@ -1,23 +1,27 @@
 ---
 title: Como configurar o encaminhamento para um circuito ExpressRoute | Microsoft Docs
-description: Este artigo explica-lhe os passos para criar e aprovisionar o peering privado, público e da Microsoft de um circuito ExpressRoute. Este artigo também mostra como verificar o estado, atualizar ou eliminar peerings no seu circuito.
+description: "Este artigo explica-lhe os passos para criar e aprovisionar o peering privado, público e da Microsoft de um circuito ExpressRoute. Este artigo também mostra como verificar o estado, atualizar ou eliminar peerings no seu circuito."
 documentationcenter: na
 services: expressroute
 author: ganesr
 manager: carmonm
-editor: ''
+editor: 
 tags: azure-resource-manager
-
+ms.assetid: 0a036d51-77ae-4fee-9ddb-35f040fbdcdf
 ms.service: expressroute
 ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 06/29/2016
+ms.date: 10/05/2016
 ms.author: ganesr
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: 45c0646f6eb1067f49bc185f1592cd1c94fc9470
+
 
 ---
-# Criar e modificar o encaminhamento de um circuito ExpressRoute
+# <a name="create-and-modify-routing-for-an-expressroute-circuit"></a>Criar e modificar o encaminhamento de um circuito ExpressRoute
 > [!div class="op_single_selector"]
 > [Portal do Azure – Resource Manager](expressroute-howto-routing-portal-resource-manager.md)
 > [PowerShell – Resource Manager](expressroute-howto-routing-arm.md)
@@ -31,7 +35,7 @@ Este artigo vai orientá-lo nos passos para criar e gerir a configuração de en
 
 [!INCLUDE [vpn-gateway-clasic-rm](../../includes/vpn-gateway-classic-rm-include.md)]
 
-## Pré-requisitos da configuração
+## <a name="configuration-prerequisites"></a>Pré-requisitos da configuração
 * Vai precisar da versão mais recente dos módulos do Azure PowerShell, versão 1.0 ou posterior. 
 * Confirme que reviu as páginas [pré-requisitos](expressroute-prerequisites.md), [requisitos de encaminhamento](expressroute-routing.md) página e [fluxos de trabalho](expressroute-workflows.md) antes de iniciar a configuração.
 * Deve ter um circuito ExpressRoute ativo. Siga as instruções para [Criar um circuito ExpressRoute](expressroute-howto-circuit-arm.md) e solicite ao seu fornecedor de conectividade para ativar o circuito antes de continuar. O circuito ExpressRoute tem de estar num estado aprovisionado e ativado para que seja capaz de executar os cmdlets descritos abaixo.
@@ -45,13 +49,13 @@ Estas instruções aplicam-se apenas aos circuitos criados com fornecedores de s
 
 Pode configurar um, dois ou todos os três peerings (Azure privado, Azure público e Microsoft) para um circuito ExpressRoute. Pode configurar peerings em qualquer ordem que escolha. No entanto, tem de confirmar que conclui a configuração de cada peering, um de cada vez. 
 
-## Peering privado do Azure
+## <a name="azure-private-peering"></a>Peering privado do Azure
 Esta secção fornece instruções sobre como criar, obter, atualizar e eliminar a configuração do peering privado do Azure para um circuito ExpressRoute. 
 
-### Para criar um peering privado do Azure
+### <a name="to-create-azure-private-peering"></a>Para criar um peering privado do Azure
 1. Importe o módulo do PowerShell para ExpressRoute.
    
-    Instale o programa de instalação mais recente do PowerShell a partir da [Galeria do PowerShell](http://www.powershellgallery.com/) e importe os módulos do Azure Resource Manager para a sessão do PowerShell para poder começar a utilizar os cmdlets ExpressRoute. Terá de executar o PowerShell como Administrador.
+     Instale o programa de instalação mais recente do PowerShell a partir da [Galeria do PowerShell](http://www.powershellgallery.com/) e importe os módulos do Azure Resource Manager para a sessão do PowerShell para poder começar a utilizar os cmdlets ExpressRoute. Terá de executar o PowerShell como Administrador.
    
         Install-Module AzureRM
    
@@ -133,15 +137,15 @@ Esta secção fornece instruções sobre como criar, obter, atualizar e eliminar
      > 
      > 
 
-### Para ver os detalhes do peering privado do Azure
+### <a name="to-view-azure-private-peering-details"></a>Para ver os detalhes do peering privado do Azure
 Pode obter os detalhes de configuração com o cmdlet seguinte
 
         $ckt = Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
 
-        Get-AzureRmExpressRouteCircuitPeeringConfig -Name "AzurePrivatePeering" -Circuit $ckt   
+        Get-AzureRmExpressRouteCircuitPeeringConfig -Name "AzurePrivatePeering" -Circuit $ckt    
 
 
-### Para atualizar a configuração do peering privado do Azure
+### <a name="to-update-azure-private-peering-configuration"></a>Para atualizar a configuração do peering privado do Azure
 Pode atualizar qualquer parte da configuração com o cmdlet seguinte. No exemplo abaixo, o ID de VLAN do circuito está a ser atualizado de 100 para 500.
 
     Set-AzureRmExpressRouteCircuitPeeringConfig -Name "AzurePrivatePeering" -ExpressRouteCircuit $ckt -PeeringType AzurePrivatePeering -PeerASN 100 -PrimaryPeerAddressPrefix "10.0.0.0/30" -SecondaryPeerAddressPrefix "10.0.0.4/30" -VlanId 200
@@ -149,7 +153,7 @@ Pode atualizar qualquer parte da configuração com o cmdlet seguinte. No exempl
     Set-AzureRmExpressRouteCircuit -ExpressRouteCircuit $ckt
 
 
-### Para eliminar um peering privado do Azure
+### <a name="to-delete-azure-private-peering"></a>Para eliminar um peering privado do Azure
 Pode remover a sua configuração de peering executando o cmdlet seguinte.
 
 > [!WARNING]
@@ -157,18 +161,18 @@ Pode remover a sua configuração de peering executando o cmdlet seguinte.
 > 
 > 
 
-    Remove-AzureRmExpressRouteCircuitPeeringConfig -Name "AzurePrivatePeering" -Circuit $ckt
+    Remove-AzureRmExpressRouteCircuitPeeringConfig -Name "AzurePrivatePeering" -ExpressRouteCircuit $ckt
     Set-AzureRmExpressRouteCircuit -ExpressRouteCircuit $ckt
 
 
 
-## Peering público do Azure
+## <a name="azure-public-peering"></a>Peering público do Azure
 Esta secção fornece instruções sobre como criar, obter, atualizar e eliminar a configuração do peering público do Azure para um circuito ExpressRoute.
 
-### Para criar um peering público do Azure
+### <a name="to-create-azure-public-peering"></a>Para criar um peering público do Azure
 1. Importe o módulo do PowerShell para ExpressRoute.
    
-    Instale o programa de instalação mais recente do PowerShell a partir da [Galeria do PowerShell](http://www.powershellgallery.com/) e importe os módulos do Azure Resource Manager para a sessão do PowerShell para poder começar a utilizar os cmdlets ExpressRoute. Terá de executar o PowerShell como Administrador.
+     Instale o programa de instalação mais recente do PowerShell a partir da [Galeria do PowerShell](http://www.powershellgallery.com/) e importe os módulos do Azure Resource Manager para a sessão do PowerShell para poder começar a utilizar os cmdlets ExpressRoute. Terá de executar o PowerShell como Administrador.
    
         Install-Module AzureRM
    
@@ -222,7 +226,7 @@ Esta secção fornece instruções sobre como criar, obter, atualizar e eliminar
                                              "BandwidthInMbps": 200
                                            }
         ServiceKey                       : **************************************
-        Peerings                         : []   
+        Peerings                         : []    
 4. Configure o peering público do Azure para o circuito.
    
     Assegure que tem as seguintes informações antes de prosseguir.
@@ -235,19 +239,19 @@ Esta secção fornece instruções sobre como criar, obter, atualizar e eliminar
      
      Pode executar o cmdlet seguinte para configurar o peering público do Azure para o seu circuito
      
-       Add-AzureRmExpressRouteCircuitPeeringConfig -Name "AzurePublicPeering" -Circuit $ckt -PeeringType AzurePublicPeering -PeerASN 100 -PrimaryPeerAddressPrefix "12.0.0.0/30" -SecondaryPeerAddressPrefix "12.0.0.4/30" -VlanId 100
+       Add-AzureRmExpressRouteCircuitPeeringConfig -Name "AzurePublicPeering" -ExpressRouteCircuit $ckt -PeeringType AzurePublicPeering -PeerASN 100 -PrimaryPeerAddressPrefix "12.0.0.0/30" -SecondaryPeerAddressPrefix "12.0.0.4/30" -VlanId 100
      
        Set-AzureRmExpressRouteCircuit -ExpressRouteCircuit $ckt
      
      Pode utilizar o cmdlet abaixo se optar por utilizar um hash MD5
      
-       Add-AzureRmExpressRouteCircuitPeeringConfig -Name "AzurePublicPeering" -Circuit $ckt -PeeringType AzurePublicPeering -PeerASN 100 -PrimaryPeerAddressPrefix "12.0.0.0/30" -SecondaryPeerAddressPrefix "12.0.0.4/30" -VlanId 100  -SharedKey "A1B2C3D4"
+       Add-AzureRmExpressRouteCircuitPeeringConfig -Name "AzurePublicPeering" -ExpressRouteCircuit $ckt -PeeringType AzurePublicPeering -PeerASN 100 -PrimaryPeerAddressPrefix "12.0.0.0/30" -SecondaryPeerAddressPrefix "12.0.0.4/30" -VlanId 100  -SharedKey "A1B2C3D4"
      
        Set-AzureRmExpressRouteCircuit -ExpressRouteCircuit $ckt
 
     >[AZURE.IMPORTANT] Assegure que especifica o seu número AS como ASN de peering e não cliente ASN.
 
-### Para ver os detalhes do peering público do Azure
+### <a name="to-view-azure-public-peering-details"></a>Para ver os detalhes do peering público do Azure
 Pode obter os detalhes de configuração com o cmdlet seguinte
 
         $ckt = Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
@@ -255,28 +259,28 @@ Pode obter os detalhes de configuração com o cmdlet seguinte
         Get-AzureRmExpressRouteCircuitPeeringConfig -Name "AzurePublicPeering" -Circuit $ckt
 
 
-### Para atualizar a configuração do peering público do Azure
+### <a name="to-update-azure-public-peering-configuration"></a>Para atualizar a configuração do peering público do Azure
 Pode atualizar qualquer parte da configuração com o cmdlet seguinte
 
-    Set-AzureRmExpressRouteCircuitPeeringConfig  -Name "MicrosoftPeering" -Circuit $ckt -PeeringType MicrosoftPeering -PeerASN 100 -PrimaryPeerAddressPrefix "123.0.0.0/30" -SecondaryPeerAddressPrefix "123.0.0.4/30" -VlanId 600 
+    Set-AzureRmExpressRouteCircuitPeeringConfig  -Name "MicrosoftPeering" -ExpressRouteCircuit $ckt -PeeringType MicrosoftPeering -PeerASN 100 -PrimaryPeerAddressPrefix "123.0.0.0/30" -SecondaryPeerAddressPrefix "123.0.0.4/30" -VlanId 600 
 
     Set-AzureRmExpressRouteCircuit -ExpressRouteCircuit $ckt
 
 O ID de VLAN do circuito está a ser atualizado de 200 para 600, no exemplo acima.
 
-### Para eliminar um peering público do Azure
+### <a name="to-delete-azure-public-peering"></a>Para eliminar um peering público do Azure
 Pode remover a sua configuração de peering executando o cmdlet seguinte
 
-    Remove-AzureRmExpressRouteCircuitPeeringConfig -Name "AzurePublicPeering" -Circuit $ckt
+    Remove-AzureRmExpressRouteCircuitPeeringConfig -Name "AzurePublicPeering" -ExpressRouteCircuit $ckt
     Set-AzureRmExpressRouteCircuit -ExpressRouteCircuit $ckt
 
-## Peering da Microsoft
+## <a name="microsoft-peering"></a>Peering da Microsoft
 Esta secção fornece instruções sobre como criar, obter, atualizar e eliminar a configuração do peering da Microsoft para um circuito ExpressRoute. 
 
-### Para criar peering da Microsoft
+### <a name="to-create-microsoft-peering"></a>Para criar peering da Microsoft
 1. Importe o módulo do PowerShell para ExpressRoute.
    
-    Instale o programa de instalação mais recente do PowerShell a partir da [Galeria do PowerShell](http://www.powershellgallery.com/) e importe os módulos do Azure Resource Manager para a sessão do PowerShell para poder começar a utilizar os cmdlets ExpressRoute. Terá de executar o PowerShell como Administrador.
+     Instale o programa de instalação mais recente do PowerShell a partir da [Galeria do PowerShell](http://www.powershellgallery.com/) e importe os módulos do Azure Resource Manager para a sessão do PowerShell para poder começar a utilizar os cmdlets ExpressRoute. Terá de executar o PowerShell como Administrador.
    
         Install-Module AzureRM
    
@@ -330,7 +334,7 @@ Esta secção fornece instruções sobre como criar, obter, atualizar e eliminar
                                              "BandwidthInMbps": 200
                                            }
         ServiceKey                       : **************************************
-        Peerings                         : []   
+        Peerings                         : []    
 4. Configure o peering da Microsoft para o circuito.
    
     Confirme que tem as seguintes informações antes de continuar.
@@ -346,40 +350,43 @@ Esta secção fornece instruções sobre como criar, obter, atualizar e eliminar
      
      Pode executar o cmdlet seguinte para configurar o peering da Microsoft para o seu circuito
      
-       Add-AzureRmExpressRouteCircuitPeeringConfig -Name "MicrosoftPeering" -Circuit $ckt -PeeringType MicrosoftPeering -PeerASN 100 -PrimaryPeerAddressPrefix "123.0.0.0/30" -SecondaryPeerAddressPrefix "123.0.0.4/30" -VlanId 300 -MicrosoftConfigAdvertisedPublicPrefixes "123.1.0.0/24" -MicrosoftConfigCustomerAsn 23 -MicrosoftConfigRoutingRegistryName "ARIN"
+       Add-AzureRmExpressRouteCircuitPeeringConfig -Name "MicrosoftPeering" -ExpressRouteCircuit $ckt -PeeringType MicrosoftPeering -PeerASN 100 -PrimaryPeerAddressPrefix "123.0.0.0/30" -SecondaryPeerAddressPrefix "123.0.0.4/30" -VlanId 300 -MicrosoftConfigAdvertisedPublicPrefixes "123.1.0.0/24" -MicrosoftConfigCustomerAsn 23 -MicrosoftConfigRoutingRegistryName "ARIN"
      
        Set-AzureRmExpressRouteCircuit -ExpressRouteCircuit $ckt
 
-### Para obter os detalhes do peering da Microsoft
+### <a name="to-get-microsoft-peering-details"></a>Para obter os detalhes do peering da Microsoft
 Pode obter os detalhes de configuração com o cmdlet seguinte.
 
         $ckt = Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
 
-        Get-AzureRmExpressRouteCircuitPeeringConfig -Name "MicrosoftPeering" -Circuit $ckt
+        Get-AzureRmExpressRouteCircuitPeeringConfig -Name "MicrosoftPeering" -ExpressRouteCircuit $ckt
 
 
-### Para atualizar a configuração do peering da Microsoft
+### <a name="to-update-microsoft-peering-configuration"></a>Para atualizar a configuração do peering da Microsoft
 Pode atualizar qualquer parte da configuração com o cmdlet seguinte.
 
-        Set-AzureRmExpressRouteCircuitPeeringConfig  -Name "MicrosoftPeering" -Circuit $ckt -PeeringType MicrosoftPeering -PeerASN 100 -PrimaryPeerAddressPrefix "123.0.0.0/30" -SecondaryPeerAddressPrefix "123.0.0.4/30" -VlanId 300 -MicrosoftConfigAdvertisedPublicPrefixes "124.1.0.0/24" -MicrosoftConfigCustomerAsn 23 -MicrosoftConfigRoutingRegistryName "ARIN"
+        Set-AzureRmExpressRouteCircuitPeeringConfig  -Name "MicrosoftPeering" -ExpressRouteCircuit $ckt -PeeringType MicrosoftPeering -PeerASN 100 -PrimaryPeerAddressPrefix "123.0.0.0/30" -SecondaryPeerAddressPrefix "123.0.0.4/30" -VlanId 300 -MicrosoftConfigAdvertisedPublicPrefixes "124.1.0.0/24" -MicrosoftConfigCustomerAsn 23 -MicrosoftConfigRoutingRegistryName "ARIN"
 
         Set-AzureRmExpressRouteCircuit -ExpressRouteCircuit $ckt
 
 
-### Para eliminar o peering da Microsoft
+### <a name="to-delete-microsoft-peering"></a>Para eliminar o peering da Microsoft
 Pode remover a sua configuração de peering executando o cmdlet seguinte.
 
-    Remove-AzureRmExpressRouteCircuitPeeringConfig -Name "MicrosoftPeering" -Circuit $ckt
+    Remove-AzureRmExpressRouteCircuitPeeringConfig -Name "MicrosoftPeering" -ExpressRouteCircuit $ckt
 
     Set-AzureRmExpressRouteCircuit -ExpressRouteCircuit $ckt
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 Passo seguinte, [Ligar uma VNet a um circuito ExpressRoute](expressroute-howto-linkvnet-arm.md).
 
 * Para obter mais informações sobre o fluxo de trabalho do ExpressRoute, veja [Fluxos de trabalho do ExpressRoute](expressroute-workflows.md).
 * Para obter mais informações sobre peering do circuito, veja [Circuitos ExpressRoute e domínios de encaminhamento](expressroute-circuit-peerings.md).
 * Para obter mais informações sobre como trabalhar com redes virtuais, veja [Descrição geral da rede virtual](../virtual-network/virtual-networks-overview.md).
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

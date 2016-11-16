@@ -1,13 +1,13 @@
 ---
-title: Criar um web hook ou a Função de Azure API | Microsoft Docs
-description: Utilize as Funções do Azure para criar uma função que é invocada por uma chamada WebHook ou API.
+title: "Criar um web hook ou a Função de Azure API | Microsoft Docs"
+description: "Utilize as Funções do Azure para criar uma função que é invocada por uma chamada WebHook ou API."
 services: azure-functions
 documentationcenter: na
 author: ggailey777
 manager: erikre
-editor: ''
-tags: ''
-
+editor: 
+tags: 
+ms.assetid: 36ef34b8-3729-4940-86d2-cb8e176fcc06
 ms.service: functions
 ms.devlang: multiple
 ms.topic: get-started-article
@@ -15,20 +15,25 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 08/30/2016
 ms.author: glenga
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: 9484a637a1876f2cae644e43986bd5ef3201da1e
+
 
 ---
-# Criar um webhook ou uma Função Azure API
+# <a name="create-a-webhook-or-api-azure-function"></a>Criar um webhook ou uma Função Azure API
 As Funções do Azure são uma experiência baseada em eventos, de cálculo a pedido que lhe permite criar unidades agendadas ou acionadas de código implementado em várias linguagens de programação. Para saber mais acerca das Funções do Azure, veja a [Descrição Geral das Funções do Azure](functions-overview.md).
 
 Este tópico mostra-lhe como criar uma nova função Node.js, que é invocada por um webhook do GitHub. A nova função é criada com base num modelo predefinido no portal Funções do Azure. Também pode ver um breve vídeo para verificar como estes passos são efetuados no portal.
 
-## Ver o vídeo
+## <a name="watch-the-video"></a>Ver o vídeo
 O vídeo seguinte mostra como efetuar os passos básicos neste tutorial 
 
-[!VIDEO https://channel9.msdn.com/Series/Windows-Azure-Web-Sites-Tutorials/Create-a-Web-Hook-or-API-Azure-Function/player]
+>[!VIDEO https://channel9.msdn.com/Series/Windows-Azure-Web-Sites-Tutorials/Create-a-Web-Hook-or-API-Azure-Function/player]
+>
+>
 
-
-## Criar uma função acionada por webhook a partir do modelo
+## <a name="create-a-webhooktriggered-function-from-the-template"></a>Criar uma função acionada por webhook a partir do modelo
 Uma aplicação de função aloja a execução das suas funções no Azure. Antes de poder criar uma função, tem de ter uma conta do Azure ativa. Se ainda não tiver uma conta do Azure, [estão disponíveis contas gratuitas](https://azure.microsoft.com/free/). 
 
 1. Aceda ao [portal das Funções do Azure](https://functions.azure.com/signin) e inicie sessão com a sua conta do Azure.
@@ -47,7 +52,7 @@ Uma aplicação de função aloja a execução das suas funções no Azure. Ante
 
 Em seguida, crie o webhook no repositório do GitHub.
 
-## Configurar o webhook
+## <a name="configure-the-webhook"></a>Configurar o webhook
 1. No GitHub, navegue para um repositório de que é o proprietário. Isto inclui quaisquer repositórios que tenha escolhido.
 2. Clique em **Definições** > **Webhooks e serviços** > **Adicionar webhook**.
    
@@ -59,12 +64,12 @@ Em seguida, crie o webhook no repositório do GitHub.
 Neste momento, o webhook GitHub está configurado para acionar a função quando é adicionado um novo comentário de problema.  
 Agora, está na altura de testá-lo.
 
-## Testar a função
+## <a name="test-the-function"></a>Testar a função
 1. No seu repositório do GitHub, abra o separador **Problemas** numa nova janela do browser, clique em **Novo problema**, escreva um título e, em seguida, clique em **Submeter novo problema**. Também pode abrir um problema existente.
 2. No problema, introduza um comentário e clique em **Comentário**. Neste momento, pode voltar para o novo webhook no GitHub e, em **Entregas Recentes** verifique se foi enviado um pedido de webhook e que o corpo da resposta é `New GitHub comment: <Your issue comment text>`.
 3. De novo no portal de Funções, desloque para baixo para os registos e verifique se a função foi acionada e o valor `New GitHub comment: <Your issue comment text>` é escrito nos registos de transmissão em fluxo.
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 Veja os seguintes tópicos para obter mais informações sobre o Funções do Azure.
 
 * [Referência para programadores das Funções do Azure](functions-reference.md)  
@@ -76,6 +81,9 @@ Veja os seguintes tópicos para obter mais informações sobre o Funções do Az
 
 [!INCLUDE [Getting Started Note](../../includes/functions-get-help.md)]
 
-<!--HONumber=Sep16_HO4-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

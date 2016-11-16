@@ -15,9 +15,10 @@
 
 # Referência
 ## [Amostras](service-bus-relay-samples.md)
-## [Referência da API .NET](https://msdn.microsoft.com/library/azure/jj933424)
 ## [Exceções](../service-bus-messaging/service-bus-messaging-exceptions.md?toc=%2fazure%2fservice-bus-relay%2ftoc.json)
 ## [Quotas](../service-bus-messaging/service-bus-quotas.md?toc=%2fazure%2fservice-bus-relay%2ftoc.json)
+## [.NET](/dotnet/api/)
+## [REST](/rest/api/servicebus/)
 
 # Recursos
 ## [Blogue](https://blogs.msdn.microsoft.com/servicebus/)
@@ -25,6 +26,8 @@
 ## [Fóruns do MSDN](https://social.msdn.microsoft.com/forums/home?forum=servbus)
 ## [Preços](https://azure.microsoft.com/pricing/details/service-bus/)
 ## [Percurso de aprendizagem](https://azure.microsoft.com/documentation/learning-paths/service-bus/)
+## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=service-bus)
+## [Vídeos](https://azure.microsoft.com/documentation/videos/index/?services=service-bus)
 
 
 <!--HONumber=Nov16_HO2-->

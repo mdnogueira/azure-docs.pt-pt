@@ -1,12 +1,12 @@
 ---
-title: Integração de diretórios entre o Multi-Factor Authentication do Azure e o Active Directory
-description: Esta é a página do Multi-Factor Authentication do Azure, que descreve como integrar o Servidor Multi-Factor Authentication do Azure com o Active Directory para que possa sincronizar os diretórios.
+title: "Integração de diretórios entre o Multi-Factor Authentication do Azure e o Active Directory"
+description: "Esta é a página do Multi-Factor Authentication do Azure, que descreve como integrar o Servidor Multi-Factor Authentication do Azure com o Active Directory para que possa sincronizar os diretórios."
 services: multi-factor-authentication
-documentationcenter: ''
+documentationcenter: 
 author: kgremban
 manager: femila
 editor: curtand
-
+ms.assetid: def7a534-cfb2-492a-9124-87fb1148ab1f
 ms.service: multi-factor-authentication
 ms.workload: identity
 ms.tgt_pltfrm: na
@@ -14,12 +14,16 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 08/04/2016
 ms.author: kgremban
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: da64189de722b5ee3552530bb1276539e5c6c323
+
 
 ---
-# Integração de diretórios entre o Servidor MFA do Azure e o Active Directory
+# <a name="directory-integration-between-azure-mfa-server-and-active-directory"></a>Integração de diretórios entre o Servidor MFA do Azure e o Active Directory
 A secção Integração de Diretórios permite-lhe configurar o servidor para integrar com o Active Directory ou outro diretório LDAP.  Permite-lhe configurar atributos para fazer corresponder o esquema de diretório e configurar a sincronização automática de utilizadores.
 
-## Definições
+## <a name="settings"></a>Definições
 Por predefinição, o Servidor Multi-Factor Authentication do Azure está configurado para importar ou sincronizar os utilizadores do Active Directory.  O separador permite substituir o comportamento predefinido e vincular a um diretório LDAP diferente, a um diretório de ADAM ou a um controlador de domínio do Active Directory específico.  Também prevê a utilização de Autenticação LDAP para o LDAP do proxy ou para o Enlace de LDAP como um destino RADIUS, pré-autenticação para Autenticação do IIS ou autenticação primária para o Portal de Utilizador.  A tabela seguinte descreve as definições individuais.
 
 ![Definições](./media/multi-factor-authentication-get-started-server-dirint/dirint.png)
@@ -45,7 +49,7 @@ A tabela seguinte descreve as definições de configuração de LDAP.
 | Tamanho limite da consulta |Especifique o tamanho limite para o número máximo de utilizadores que uma pesquisa de diretório irá devolver.  Este limite deve corresponder à configuração no diretório LDAP.  Para grandes pesquisas onde a paginação não é suportada, a importação e a sincronização tentarão obter utilizadores em lotes.  Se o tamanho limite aqui especificado for maior do que o limite configurado no diretório LDAP, alguns utilizadores podem ser omitidos. |
 | Botão Testar |Clique no botão Testar para testar o enlace ao servidor LDAP.  <br><br> Nota: a opção Utilizar LDAP não precisa de ser selecionada para testar o enlace.  Isto permite que o enlace seja testado antes de utilizar a configuração de LDAP. |
 
-## Filtros
+## <a name="filters"></a>Filtros
 Os filtros permitem definir critérios para qualificar registos ao realizar uma pesquisa de diretório.  Ao definir o filtro, pode determinar o âmbito dos objetos que quer sincronizar.  
 
 ![Filtros](./media/multi-factor-authentication-get-started-server-dirint/dirint2.png)
@@ -56,7 +60,7 @@ O Multi-Factor Authentication do Azure tem as três opções seguintes.
 * **Filtro de grupos de segurança** - Especifique os critérios de filtro utilizados para qualificar registos de grupos de segurança ao realizar uma pesquisa de diretório.  Para o Active Directory e ADAM, é geralmente utilizado (&(objectCategory=group)(groupType:1.2.840.113556.1.4.804:=-2147483648)).  Para outros diretórios LDAP, devem ser utilizados critérios de filtro que qualifiquem cada tipo de objeto de grupo de segurança, consoante o esquema do diretório.  <br>Nota: se for deixado em branco, será utilizado (&(objectCategory=group)(groupType:1.2.840.113556.1.4.804:=-2147483648)) por predefinição.
 * **Filtro de utilizador** - Especifique os critérios de filtro utilizados para qualificar registos de utilizadores ao realizar uma pesquisa de diretório.  Para o Active Directory e ADAM, é geralmente utilizado (&(objectClass=user)(objectCategory=person)).  Para outros diretórios LDAP, deve ser utilizado (objectClass=inetOrgPerson) ou algo semelhante, consoante o esquema do diretório. <br>Nota: se for deixado em branco, será utilizado (&(objectCategory=person)(objectClass=user)) por predefinição.
 
-## Atributos
+## <a name="attributes"></a>Atributos
 Os atributos podem ser personalizados conforme necessário para um diretório específico.  Isto permite-lhe adicionar atributos personalizados e ajustar a sincronização para apenas os atributos de que precisa.  O valor para cada campo de atributo deve corresponder ao nome do atributo, tal como definido no esquema do diretório.  Utilize a tabela abaixo para obter informações adicionais.
 
 ![Atributos](./media/multi-factor-authentication-get-started-server-dirint/dirint3.png)
@@ -96,7 +100,7 @@ Para editar atributos, basta clicar no botão Editar no separador Atributos.  Se
 
 ![Editar Atributos](./media/multi-factor-authentication-get-started-server-dirint/dirint4.png)
 
-## Sincronização
+## <a name="synchronization"></a>Sincronização
 A sincronização mantém a base de dados de utilizador do Multi-Factor do Azure sincronizada com os utilizadores do Active Directory ou de outro diretório de protocolo LDAP (Lightweight Directory Access Protocol).  O processo é semelhante à importação manual de utilizadores do Active Directory, mas, periodicamente, consulta alterações ao grupo de segurança e ao utilizador do Active Directory para processar.  Também prevê a desativação ou a remoção de utilizadores removidos de um contentor ou grupo de segurança ou a remoção de utilizadores eliminados do Active Directory.
 
 O serviço ADSync do Multi-Factor Auth é um serviço Windows que executa a consulta periódica do Active Directory.  Não deve ser confundido com o Azure AD Sync ou o Azure AD Connect.  O ADSync do Multi-Factor Auth, embora incorporado numa base de código semelhante, é específico do Servidor Multi-Factor Authentication do Azure.  É instalado num estado parado e é iniciado pelo serviço do Servidor Multi-Factor Auth quando configurado para execução.  Se tiver uma configuração de Servidor Multi-Factor Auth multisservidor, o ADSync do Multi-Factor Auth só pode ser executado num único servidor.
@@ -135,11 +139,14 @@ Os botões Mover para cima e Mover para baixo permitem ao administrador alterar 
 > 
 > 
 
-## Servidores Multi-Factor Auth
+## <a name="multifactor-auth-servers"></a>Servidores Multi-Factor Auth
 Podem ser configurados Servidores Multi-Factor Auth adicionais para funcionarem como cópia de segurança do proxy RADIUS, do proxy LDAP ou para Autenticação do IIS. A configuração da Sincronização será partilhada entre todos os agentes. No entanto, apenas um destes agentes poderá ter o serviço Servidor Multi-Factor Auth em execução. Este separador permite selecionar o Servidor Multi-Factor Auth que deve estar ativado para sincronização.
 
 ![Servidores Multi-Factor-Auth](./media/multi-factor-authentication-get-started-server-dirint/dirint6.png)
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

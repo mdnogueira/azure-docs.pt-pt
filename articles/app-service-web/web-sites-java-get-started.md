@@ -1,22 +1,26 @@
 ---
-title: Criar uma aplicação Web Java no App Service do Azure | Microsoft Docs
-description: Este tutorial mostra-lhe como implementar uma aplicação Web Java no App Service do Azure.
+title: "Criar uma aplicação Web Java no Serviço de Aplicações do Azure | Microsoft Docs"
+description: "Este tutorial mostra-lhe como implementar uma aplicação Web Java no App Service do Azure."
 services: app-service\web
 documentationcenter: java
 author: rmcmurray
-manager: wpickett
-editor: ''
-
+manager: erikre
+editor: 
+ms.assetid: d6e73cc3-8b71-4742-a197-3edeabc6a289
 ms.service: app-service-web
 ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: Java
 ms.topic: get-started-article
-ms.date: 08/11/2016
+ms.date: 11/01/2016
 ms.author: robmcm
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: acacfbead6cf0d68ccfeb5e818a2b04f2be9b902
+
 
 ---
-# Criar uma aplicação Web Java no App Service do Azure
+# <a name="create-a-java-web-app-in-azure-app-service"></a>Criar uma aplicação Web Java no App Service do Azure
 [!INCLUDE [tabs](../../includes/app-service-web-get-started-nav-tabs.md)]
 
 Este tutorial mostra como criar uma [aplicação Web Java no App Service do Azure] utilizando o [Portal do Azure]. O Portal do Azure é uma interface Web que pode utilizar para gerir os recursos do Azure.
@@ -28,7 +32,7 @@ Este tutorial mostra como criar uma [aplicação Web Java no App Service do Azur
 > 
 > 
 
-## Opções da aplicação Java
+## <a name="java-application-options"></a>Opções da aplicação Java
 Existem várias formas através das quais pode configurar uma aplicação Java numa aplicação Web do App Service. 
 
 1. Crie uma aplicação e, em seguida, configure **Definições da aplicação**.
@@ -48,7 +52,7 @@ Existem várias formas através das quais pode configurar uma aplicação Java n
      
      Nestes casos, pode criar uma aplicação utilizando o Portal do Azure e, em seguida, fornecer os ficheiros de runtime adequados manualmente. Neste caso, os ficheiros serão contados face às quotas de espaço de armazenamento no seu plano do App Service. Para obter mais informações, consulte [Carregar uma aplicação Web Java personalizada para o Azure].
 
-## <a name="portal"></a> Criar e configurar uma aplicação Web Java
+## <a name="a-nameportala-create-and-configure-a-java-web-app"></a><a name="portal"></a> Criar e configurar uma aplicação Web Java
 Esta secção mostra como criar uma aplicação Web e configurá-la para Java utilizando o painel **Definições da aplicação** do portal.
 
 1. Inicie sessão no [Portal do Azure].
@@ -85,7 +89,7 @@ Esta secção mostra como criar uma aplicação Web e configurá-la para Java ut
     
     A página Web confirma que criou uma aplicação Web baseada em Java.
 
-## <a name="marketplace"></a> Utilizar um modelo Java do Azure Marketplace
+## <a name="a-namemarketplacea-use-a-java-template-from-the-azure-marketplace"></a><a name="marketplace"></a> Utilizar um modelo Java do Azure Marketplace
 Esta secção mostra como utilizar o Azure Marketplace para criar uma aplicação Web de Java. O mesmo fluxo geral também pode ser utilizado para criar uma aplicação API ou móvel baseada em Java. 
 
 1. Inicie sessão no [Portal do Azure]
@@ -131,7 +135,7 @@ Esta secção mostra como utilizar o Azure Marketplace para criar uma aplicaçã
 
 Agora que criou a aplicação Web com um contentor aplicacional, consulte a secção [Passos seguintes](#next-steps) para obter informações sobre como carregar a aplicação na aplicação Web.
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 Neste momento, tem um servidor de aplicações Java em execução na sua aplicação Web no App Service do Azure. Para implementar o seu próprio código na aplicação Web, consulte o artigo [Adicionar uma aplicação ou página Web à sua aplicação Web Java].
 
 Para obter mais informações sobre a programação de aplicações Java no Azure, consulte o [Centro de Programadores do Java].
@@ -139,12 +143,12 @@ Para obter mais informações sobre a programação de aplicações Java no Azur
 <!-- URL List -->
 
 [Adicionar uma aplicação ou página Web à sua aplicação Web Java]: ./web-sites-java-add-app.md
-[Descrição geral dos planos do App Service do Azure]: ../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md
+[Descrição geral dos planos do Serviço de Aplicações do Azure]: ../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md
 [Portal do Azure]: https://portal.azure.com/
 [ativar os benefícios de subscritor do Visual Studio]: http://go.microsoft.com/fwlink/?LinkId=623901
 [inscrever-se numa avaliação gratuita]: http://go.microsoft.com/fwlink/?LinkId=623901
-[Experimentar o App Service]: http://go.microsoft.com/fwlink/?LinkId=523751
-[aplicação Web Java no App Service do Azure]: http://go.microsoft.com/fwlink/?LinkId=529714
+[Experimentar o Serviço de Aplicações]: http://go.microsoft.com/fwlink/?LinkId=523751
+[aplicação Web Java no Serviço de Aplicações do Azure]: http://go.microsoft.com/fwlink/?LinkId=529714
 [Centro de Programadores do Java]: /develop/java/
 [Utilizar o Portal do Azure para gerir os recursos do Azure]: ../azure-portal/resource-group-portal.md
 [Carregar uma aplicação Web Java personalizada para o Azure]: ./web-sites-java-custom-upload.md
@@ -154,7 +158,7 @@ Para obter mais informações sobre a programação de aplicações Java no Azur
 [newwebapp]: ./media/web-sites-java-get-started/newwebapp.png
 [newwebapp2]: ./media/web-sites-java-get-started/newwebapp2.png
 [selectwebapp]: ./media/web-sites-java-get-started/selectwebapp.png
-[versions]: ./media/web-sites-java-get-started/versions.png
+[versões]: ./media/web-sites-java-get-started/versions.png
 [newmarketplace]: ./media/web-sites-java-get-started/newmarketplace.png
 [webmobilejetty]: ./media/web-sites-java-get-started/webmobilejetty.png
 [jettyblade]: ./media/web-sites-java-get-started/jettyblade.png
@@ -165,6 +169,6 @@ Para obter mais informações sobre a programação de aplicações Java no Azur
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Nov16_HO2-->
 
 

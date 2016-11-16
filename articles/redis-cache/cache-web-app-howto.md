@@ -1,55 +1,59 @@
 ---
-title: Como criar uma aplicação Web com a Cache de Redis | Microsoft Docs
-description: Saiba como criar uma aplicação Web com a Cache de Redis
+title: "Como criar uma aplicação Web com a Cache de Redis | Microsoft Docs"
+description: "Saiba como criar uma aplicação Web com a Cache de Redis"
 services: redis-cache
-documentationcenter: ''
+documentationcenter: 
 author: steved0x
 manager: douge
-editor: ''
-
+editor: 
+ms.assetid: 454e23d7-a99b-4e6e-8dd7-156451d2da7c
 ms.service: cache
 ms.workload: tbd
 ms.tgt_pltfrm: cache-redis
 ms.devlang: na
 ms.topic: hero-article
-ms.date: 07/22/2016
+ms.date: 10/11/2016
 ms.author: sdanie
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: 425729dde12d8477b7b8ecd6394b31b7c5a5e92b
+
 
 ---
-# Como criar uma aplicação Web com a Cache de Redis
+# <a name="how-to-create-a-web-app-with-redis-cache"></a>Como criar uma aplicação Web com a Cache de Redis
 > [!div class="op_single_selector"]
 > * [.NET](cache-dotnet-how-to-use-azure-redis-cache.md)
 > * [ASP.NET](cache-web-app-howto.md)
 > * [Node.js](cache-nodejs-get-started.md)
 > * [Java](cache-java-get-started.md)
-> * [Python](cache-python-get-started.md)
+> * [python](cache-python-get-started.md)
 > 
 > 
 
-Este tutorial mostra como criar e implementar uma aplicação Web ASP.NET numa aplicação Web no Serviço de Aplicações do Azure com o Visual Studio 2015. A aplicação de exemplo mostra uma lista de estatísticas de equipa de uma base de dados e mostra-lhe diversas formas de utilizar a Cache de Redis do Azure para armazenar e recuperar dados da cache. Quando concluir o tutorial, terá uma aplicação Web em execução que lê e escreve numa base de dados, otimizada com a Cache de Redis do Azure e alojada no Azure.
+Este tutorial mostra como criar e implementar uma aplicação Web ASP.NET numa aplicação Web no App Service do Azure com o Visual Studio 2015. A aplicação de exemplo mostra uma lista de estatísticas de equipa de uma base de dados e mostra-lhe diversas formas de utilizar a Cache de Redis do Azure para armazenar e recuperar dados da cache. Quando concluir o tutorial, terá uma aplicação Web em execução que lê e escreve numa base de dados, otimizada com a Cache de Redis do Azure e alojada no Azure.
 
 Irá aprender:
 
-* Como criar uma aplicação Web ASP.NET MVC 5 no Visual Studio.
+* Como criar uma aplicação Web ASP.NET MVC 5 no Visual Studio.
 * Como aceder a dados a partir de uma base de dados com o Entity Framework.
 * Como melhorar o débito de dados e reduzir a carga da base de dados ao armazenar e obter dados com a Cache de Redis do Azure.
-* Como utilizar um conjunto ordenado de Redis para as 5 melhores equipas.
-* Como aprovisionar os recursos do Azure para a aplicação com um modelo ARM.
+* Como utilizar um conjunto ordenado de Redis para obter as cinco melhores equipas.
+* Como aprovisionar os recursos do Azure para a aplicação utilizando um modelo do Resource Manager.
 * Como publicar a aplicação no Azure com o Visual Studio.
 
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 Para concluir o tutorial, deve ter os seguintes pré-requisitos.
 
 * [Conta do Azure](#azure-account)
 * [Visual Studio 2015 com o Azure SDK para .NET](#visual-studio-2015-with-the-azure-sdk-for-net)
 
-### Conta do Azure
+### <a name="azure-account"></a>Conta do Azure
 Para concluir o tutorial, precisa de uma conta do Azure. Pode:
 
 * [Criar uma conta do Azure gratuitamente](/pricing/free-trial/?WT.mc_id=redis_cache_hero). Receberá créditos que podem ser utilizados para experimentar os serviços pagos do Azure. Mesmo depois de gastar todos os créditos, pode manter a conta e utilizar os serviços e recursos gratuitos do Azure.
 * [Ativar os benefícios de subscritor do Visual Studio](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=redis_cache_hero). A sua subscrição do MSDN dá-lhe créditos todos os meses que pode utilizar em serviços pagos do Azure.
 
-### Visual Studio 2015 com o Azure SDK para .NET
+### <a name="visual-studio-2015-with-the-azure-sdk-for-net"></a>Visual Studio 2015 com o Azure SDK para .NET
 O tutorial foi escrito para o Visual Studio 2015 com o [Azure SDK para .NET](../dotnet-sdk.md) 2.8.2 ou posterior. [Transfira aqui o Azure SDK mais recente para o Visual Studio 2015](http://go.microsoft.com/fwlink/?linkid=518003). O Visual Studio é instalado automaticamente com o SDK se ainda não o tiver.
 
 Se tiver o Visual Studio 2013, pode [transferir o Azure SDK mais recente para o Visual Studio 2013](http://go.microsoft.com/fwlink/?LinkID=324322). Alguns ecrãs podem parecer diferentes das ilustrações mostradas neste tutorial.
@@ -59,31 +63,31 @@ Se tiver o Visual Studio 2013, pode [transferir o Azure SDK mais recente para o 
 > 
 > 
 
-## Criar o projeto do Visual Studio
+## <a name="create-the-visual-studio-project"></a>Criar o projeto do Visual Studio
 1. Abra o Visual Studio e clique em **Ficheiro**, **Novo**, **Projeto**.
 2. Expanda o nó **Visual C#** na lista de **Modelos**, selecione **Nuvem** e clique em **Aplicação Web ASP.NET**. Verifique se o **.NET Framework 4.5.2** está selecionado.  Escreva **ContosoTeamStats** na caixa de texto **Nome** e clique em **OK**.
    
     ![Criar o projeto][cache-create-project]
-3. Selecione **MVC** como tipo de projeto. Limpe a caixa de verificação **Anfitrião na nuvem**. Nos passos subsequentes do tutorial, vai [aprovisionar os recursos do Azure](#provision-the-azure-resources) e [publicar a aplicação no Azure](#publish-the-application-to-azure). Para obter um exemplo de aprovisionamento de uma aplicação Web do App Service a partir do Visual Studio com a opção **Anfitrião na nuvem** marcada, veja [Introdução às Web Apps no Serviço de Aplicações do Azure com o ASP.NET e o Visual Studio](../app-service-web/web-sites-dotnet-get-started.md).
+3. Selecione **MVC** como tipo de projeto. Limpe a caixa de verificação **Alojar na nuvem**. Vai [aprovisionar os recursos do Azure](#provision-the-azure-resources) e [publicar a aplicação no Azure](#publish-the-application-to-azure) nos passos subsequentes do tutorial. Para obter um exemplo de aprovisionamento de uma aplicação Web do App Service a partir do Visual Studio com a opção **Alojar na nuvem** marcada, veja [Introdução às Aplicações Web no App Service do Azure com o ASP.NET e o Visual Studio](../app-service-web/web-sites-dotnet-get-started.md).
    
     ![Selecionar o modelo de projeto][cache-select-template]
 4. Clique em **OK** para criar o projeto.
 
-## Criar a aplicação ASP.NET MVC
+## <a name="create-the-aspnet-mvc-application"></a>Criar a aplicação ASP.NET MVC
 Nesta secção do tutorial, vai criar a aplicação básica para ler e apresentar estatísticas da equipa a partir de uma base de dados.
 
 * [Adicionar o modelo](#add-the-model)
 * [Adicionar o controlador](#add-the-controller)
 * [Configurar as vistas](#configure-the-views)
 
-### Adicionar o modelo
+### <a name="add-the-model"></a>Adicionar o modelo
 1. Clique com o botão direito do rato em **Modelos** no **Explorador de Soluções** e escolha **Adicionar**, **Classe**. 
    
     ![Adicionar o modelo][cache-model-add-class]
 2. Introduza `Team` para o nome de classe e clique em **Adicionar**.
    
     ![Adicionar a classe de modelo][cache-model-add-class-dialog]
-3. Substitua as instruções `using` na parte superior do ficheiro `Team.cs` pelas seguintes instruções de utilização.
+3. Substitua as instruções `using` na parte superior do ficheiro `Team.cs` pelas seguintes instruções “using”.
 
         using System;
         using System.Collections.Generic;
@@ -91,7 +95,7 @@ Nesta secção do tutorial, vai criar a aplicação básica para ler e apresenta
         using System.Data.Entity.SqlServer;
 
 
-1. Substitua a definição da classe `Team` pelo seguinte fragmento de código que contém uma definição da classe `Team` atualizada, bem como outras classes do programa auxiliar do Entity Framework. Para obter mais informações sobre a primeira abordagem de código do Entity Framework utilizado neste tutorial, veja [Code first to a new database (Primeiro código para uma nova base de dados)](https://msdn.microsoft.com/data/jj193542).
+1. Substitua a definição da classe `Team` pelo seguinte fragmento de código que contém uma definição da classe `Team` atualizada, bem como outras classes do programa auxiliar do Entity Framework. Para obter mais informações sobre a abordagem Code First para o Entity Framework utilizado neste tutorial, veja [Code first to a new database (Code First para criar uma nova base de dados)](https://msdn.microsoft.com/data/jj193542).
 
         public class Team
         {
@@ -174,24 +178,24 @@ Nesta secção do tutorial, vai criar a aplicação básica para ler e apresenta
         <connectionStrings>
             <add name="DefaultConnection" connectionString="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-ContosoTeamStats-20160216120918.mdf;Initial Catalog=aspnet-ContosoTeamStats-20160216120918;Integrated Security=True"
                 providerName="System.Data.SqlClient" />
-            <add name="TeamContext" connectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Teams.mdf;Integrated Security=True"  providerName="System.Data.SqlClient" />
+            <add name="TeamContext" connectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Teams.mdf;Integrated Security=True"     providerName="System.Data.SqlClient" />
         </connectionStrings>
 
-### Adicionar o controlador
+### <a name="add-the-controller"></a>Adicionar o controlador
 1. Prima **F6** para criar o projeto. 
 2. No **Explorador de Soluções**, clique com o botão direito do rato na pasta **Controladores** e escolha **Adicionar**, **Controlador**.
    
     ![Adicionar o controlador][cache-add-controller]
-3. Escolha **Controlador MVC 5 com vistas utilizando o Entity Framework** e clique em **Adicionar**. Se for apresentado um erro depois de clicar em **Adicionar**, confirme que criou primeiro o projeto.
+3. Escolha **Controlador MVC 5 com vistas através do Entity Framework** e clique em **Adicionar**. Se for apresentado um erro depois de clicar em **Adicionar**, confirme que criou primeiro o projeto.
    
     ![Adicionar a classe de controlador][cache-add-controller-class]
-4. Selecione **Equipa (ContosoTeamStats.Models)** na lista pendente **Classe de modelo**. Selecione **TeamContext (ContosoTeamStats.Models)** na lista pendente **Classe de contexto de dados**. Introduza `TeamsController` na caixa de texto **Nome do controlador** (se não for automaticamente povoado). Clique em **Adicionar** para criar a classe de controlador e adicionar vistas predefinidas.
+4. Selecione **Team (ContosoTeamStats.Models)** na lista pendente **Classe de modelo**. Selecione **TeamContext (ContosoTeamStats.Models)** na lista pendente **Classe de contexto de dados**. Introduza `TeamsController` na caixa de texto **Nome do controlador** (se não for automaticamente povoado). Clique em **Adicionar** para criar a classe de controlador e adicionar vistas predefinidas.
    
     ![Configurar o controlador][cache-configure-controller]
 5. No **Explorador de Soluções**, expanda **Global.asax** e faça duplo clique em **Global.asax.cs** para abri-lo.
    
     ![Global.asax.cs][cache-global-asax]
-6. Adicione as duas instruções de utilização que se seguem na parte superior do ficheiro, sob as outras declarações de utilização.
+6. Adicione as duas instruções “using” seguintes na parte superior do ficheiro, sob as outras declarações “using”.
 
         using System.Data.Entity;
         using ContosoTeamStats.Models;
@@ -214,7 +218,7 @@ Nesta secção do tutorial, vai criar a aplicação básica para ler e apresenta
         );
 
 
-### Configurar as vistas
+### <a name="configure-the-views"></a>Configurar as vistas
 1. No **Explorador de Soluções**, expanda a pasta **Vistas**, em seguida, a pasta **Partilhado** e faça duplo clique em **_Layout.cshtml**. 
    
     ![_Layout.cshtml][cache-layout-cshtml]
@@ -229,19 +233,19 @@ Nesta secção do tutorial, vai criar a aplicação básica para ler e apresenta
    * Depois: `@Html.ActionLink("Contoso Team Stats", "Index", "Teams", new { area = "" }, new { @class = "navbar-brand" })`
      
      ![Alterações do código][cache-layout-cshtml-code]
-2. Prima **Ctrl+F5** para criar e executar a aplicação. Esta versão da aplicação lê os resultados diretamente na base de dados. Tenha em atenção que as ações **Criar Nova**, **Editar**, **Detalhes** e **Eliminar** foram automaticamente adicionadas à aplicação pelo andaime do **Controlador 5 MVC com vistas, utilizando o Entity Framework**. Na secção seguinte do tutorial, vai adicionar a Cache de Redis para otimizar o acesso aos dados e fornecer funcionalidades adicionais à aplicação.
+2. Prima **Ctrl+F5** para criar e executar a aplicação. Esta versão da aplicação lê os resultados diretamente na base de dados. Tenha em atenção que as ações **Criar Nova**, **Editar**, **Detalhes** e **Eliminar** foram automaticamente adicionadas à aplicação pela estrutura do **Controlador 5 MVC com vistas através do Entity Framework**. Na secção seguinte do tutorial, vai adicionar a Cache de Redis para otimizar o acesso aos dados e fornecer funcionalidades adicionais à aplicação.
 
 ![Aplicação de arranque][cache-starter-application]
 
-## Configurar a aplicação para utilizar a Cache de Redis
+## <a name="configure-the-application-to-use-redis-cache"></a>Configurar a aplicação para utilizar a Cache de Redis
 Nesta secção do tutorial, vai configurar a aplicação de exemplo para armazenar e obter as estatísticas da equipa da Contoso a partir de uma instância da Cache de Redis do Azure, com o cliente de cache [StackExchange.Redis](https://github.com/StackExchange/StackExchange.Redis).
 
 * [Configurar a aplicação para utilizar o StackExchange.Redis](#configure-the-application-to-use-stackexchangeredis)
 * [Atualizar a classe TeamsController para devolver resultados da cache ou da base de dados](#update-the-teamscontroller-class-to-return-results-from-the-cache-or-the-database)
 * [Atualizar os métodos Criar, Editar e Eliminar para trabalhar com a cache](#update-the-create-edit-and-delete-methods-to-work-with-the-cache)
-* [Atualize a vista Índice de Equipas para trabalhar com a cache](#update-the-teams-index-view-to-work-with-the-cache)
+* [Atualizar a vista Índice de Equipas para trabalhar com a cache](#update-the-teams-index-view-to-work-with-the-cache)
 
-### Configurar a aplicação para utilizar o StackExchange.Redis
+### <a name="configure-the-application-to-use-stackexchangeredis"></a>Configurar a aplicação para utilizar o StackExchange.Redis
 1. Para configurar uma aplicação cliente no Visual Studio com o pacote NuGet StackExchange.Redis, clique com o botão direito do rato no projeto em **Explorador de Soluções** e escolha **Gerir Pacotes NuGet**. 
    
     ![Gerir pacotes NuGet][redis-cache-manage-nuget-menu]
@@ -253,7 +257,7 @@ Nesta secção do tutorial, vai configurar a aplicação de exemplo para armazen
 3. No **Explorador de Soluções**, expanda a pasta **Controladores** e faça duplo clique em **TeamsController.cs** para abri-la.
    
     ![Controlador de equipas][cache-teamscontroller]
-4. Adicione as duas instruções de utilização seguintes ao **TeamsController.cs**.
+4. Adicione as duas instruções “using” seguintes ao **TeamsController.cs**.
    
         using System.Configuration;
         using StackExchange.Redis;
@@ -290,17 +294,17 @@ Nesta secção do tutorial, vai configurar a aplicação de exemplo para armazen
    * Antes: `<appSettings>`
    * Depois: ` <appSettings file="C:\AppSecrets\WebAppPlusCacheAppSecrets.config">`
      
-     O tempo de execução do ASP.NET une o conteúdo do ficheiro externo e a marcação no elemento `<appSettings>`. O tempo de execução ignora o atributo de ficheiro se não for possível localizar o ficheiro especificado. Os segredos (a cadeia de ligação para a cache) não são incluídos como parte do código fonte da aplicação. Quando implementa a aplicação no Azure, o ficheiro `WebAppPlusCacheAppSecrests.config` não será implementado (tal como pretendido). Existem várias formas para especificar estes segredos no Azure e, neste tutorial, são automaticamente configurados quando [aprovisiona os recursos do Azure](#provision-the-azure-resources) num passo subsequente do tutorial. Para obter mais informações sobre como trabalhar com segredos no Azure, veja [Best practices for deploying passwords and other sensitive data to ASP.NET and Azure App Service (As melhores práticas para implementar palavras-passe e outros dados confidenciais no ASP.NET e no Serviço de Aplicações do Azure)](http://www.asp.net/identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure).
+     O tempo de execução do ASP.NET une o conteúdo do ficheiro externo e a marcação no elemento `<appSettings>`. O tempo de execução ignora o atributo de ficheiro se não for possível localizar o ficheiro especificado. Os segredos (a cadeia de ligação para a cache) não são incluídos como parte do código fonte da aplicação. Quando implementa a aplicação no Azure, o ficheiro `WebAppPlusCacheAppSecrests.config` não será implementado (tal como pretendido). Existem várias formas para especificar estes segredos no Azure e, neste tutorial, são automaticamente configurados quando [aprovisiona os recursos do Azure](#provision-the-azure-resources) num passo subsequente do tutorial. Para obter mais informações sobre como trabalhar com segredos no Azure, veja [Best practices for deploying passwords and other sensitive data to ASP.NET and Azure App Service (As melhores práticas para implementar palavras-passe e outros dados confidenciais no ASP.NET e no App Service do Azure)](http://www.asp.net/identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure).
 
-### Atualizar a classe TeamsController para devolver resultados da cache ou da base de dados
-Neste exemplo, as estatísticas da equipa podem ser obtidas a partir da base de dados ou da cache. As estatísticas da equipa são armazenadas na cache como uma `List<Team>` serializada e também como um conjunto ordenado que utiliza tipos de dados de Redis. Ao obter itens de um conjunto ordenado, poderá obter alguns, todos ou consultar determinados itens. Neste exemplo, vai consultar o conjunto ordenado para obter as 5 melhores equipas classificadas por número de vitórias.
+### <a name="update-the-teamscontroller-class-to-return-results-from-the-cache-or-the-database"></a>Atualizar a classe TeamsController para devolver resultados da cache ou da base de dados
+Neste exemplo, as estatísticas da equipa podem ser obtidas a partir da base de dados ou da cache. As estatísticas da equipa são armazenadas na cache como uma `List<Team>` serializada e também como um conjunto ordenado que utiliza tipos de dados de Redis. Ao obter itens de um conjunto ordenado, poderá obter alguns, todos ou consultar determinados itens. Neste exemplo, vai consultar o conjunto ordenado para obter as cinco melhores equipas classificadas por número de vitórias.
 
 > [!NOTE]
 > Não é necessário armazenar as estatísticas da equipa em vários formatos na cache para poder utilizar a Cache de Redis do Azure. Este tutorial utiliza vários formatos para demonstrar as diferentes formas e os diferentes tipos de dados que pode utilizar para colocar dados em cache.
 > 
 > 
 
-1. Adicione as seguintes instruções de utilização na parte superior do ficheiro `TeamsController.cs`, juntamente com as outras instruções de utilização.
+1. Adicione as seguintes instruções “using” na parte superior do ficheiro `TeamsController.cs`, juntamente com as outras instruções “using”.
    
         using System.Diagnostics;
         using Newtonsoft.Json;
@@ -483,7 +487,7 @@ Neste exemplo, as estatísticas da equipa podem ser obtidas a partir da base de 
         }
 
 
-    O método `GetFromSortedSetTop5` lê as 5 melhores equipas a partir do conjunto ordenado em cache. Começa por verificar se a chave `teamsSortedSet` existe na cache. Se esta chave não estiver presente, o método `GetFromSortedSet` é chamado para ler as estatísticas da equipa e para armazená-las na cache. Em seguida, o conjunto ordenado em cache é consultado relativamente às 5 melhores equipas que são devolvidas.
+    O método `GetFromSortedSetTop5` lê as cinco melhores equipas a partir do conjunto ordenado em cache. Começa por verificar se a chave `teamsSortedSet` existe na cache. Se esta chave não estiver presente, o método `GetFromSortedSet` é chamado para ler as estatísticas da equipa e para armazená-las na cache. Em seguida, o conjunto ordenado em cache é consultado relativamente às cinco melhores equipas que são devolvidas.
 
 
         List<Team> GetFromSortedSetTop5()
@@ -513,8 +517,8 @@ Neste exemplo, as estatísticas da equipa podem ser obtidas a partir da base de 
         }
 
 
-### Atualizar os métodos Criar, Editar e Eliminar para trabalhar com a cache
-O código do andaime gerado como parte deste exemplo inclui métodos para adicionar, editar e eliminar equipas. Sempre que uma equipa é adicionada, editada ou removida, os dados na cache ficam desatualizados. Nesta secção, vai modificar estes três métodos para limpar as equipas em cache para que a cache não fique dessincronizada relativamente à base de dados.
+### <a name="update-the-create-edit-and-delete-methods-to-work-with-the-cache"></a>Atualizar os métodos Criar, Editar e Eliminar para trabalhar com a cache
+O código da estrtura gerado como parte deste exemplo inclui métodos para adicionar, editar e eliminar equipas. Sempre que uma equipa é adicionada, editada ou removida, os dados na cache ficam desatualizados. Nesta secção, vai modificar estes três métodos para limpar as equipas em cache para que a cache não fique dessincronizada relativamente à base de dados.
 
 1. Navegue para o método `Create(Team team)`, na classe `TeamsController`. Adicione uma chamada ao método `ClearCachedTeams`, conforme mostrado no seguinte exemplo.
 
@@ -578,7 +582,7 @@ O código do andaime gerado como parte deste exemplo inclui métodos para adicio
         }
 
 
-### Atualize a vista Índice de Equipas para trabalhar com a cache
+### <a name="update-the-teams-index-view-to-work-with-the-cache"></a>Atualizar a vista Índice de Equipas para trabalhar com a cache
 1. No **Explorador de Soluções**, expanda a pasta **Vistas**, em seguida, a pasta **Equipas** e faça duplo clique em **Index.cshtml**.
    
     ![Index.cshtml][cache-views-teams-index-cshtml]
@@ -627,11 +631,11 @@ O código do andaime gerado como parte deste exemplo inclui métodos para adicio
     ![Mensagem de estado][cache-status-message]
 2. Prima **F6** para criar o projeto.
 
-## Aprovisionar os recursos do Azure
+## <a name="provision-the-azure-resources"></a>Aprovisionar os recursos do Azure
 Para alojar a aplicação no Azure, deve primeiro aprovisionar os serviços do Azure que a sua aplicação requer. Neste tutorial, a aplicação de exemplo utiliza os seguintes serviços do Azure.
 
 * Cache de Redis do Azure
-* App Service do Serviço de Aplicações
+* Applicação Web do App Service
 * SQL Database
 
 Para implementar estes serviços num grupo de recursos novo ou existente à sua escolha, clique no botão **Implementar no Azure** seguinte.
@@ -650,7 +654,7 @@ Ao clicar no botão **Implementar no Azure**, será encaminhado para o Portal do
 ![Implementar no Azure][cache-deploy-to-azure-step-1]
 
 1. No painel **Implementação personalizada**, selecione a subscrição do Azure a utilizar, selecione um grupo de recursos existente ou crie um novo e especifique a localização do grupo de recursos.
-2. No painel **Parâmetros**, especifique um nome de conta de administrador (**ADMINISTRATORLOGIN** – não utilize **admin**), a palavra-passe de início de sessão de administrador (**ADMINISTRATORLOGINPASSWORD**) e o nome da base de dados (**DATABASENAME**). Os outros parâmetros estão configurados para um plano de alojamento do Serviço de Aplicações Gratuito e para as opções de custo reduzido da SQL Database e da Cache de Redis do Azure, que não são fornecidos com o escalão gratuito.
+2. No painel **Parâmetros**, especifique um nome de conta de administrador (**ADMINISTRATORLOGIN** – não utilize **admin**), a palavra-passe de início de sessão de administrador (**ADMINISTRATORLOGINPASSWORD**) e o nome da base de dados (**DATABASENAME**). Os outros parâmetros estão configurados para um plano de alojamento gratuito do App Service e para as opções de custo mais reduzido da SQL Database e da Cache de Redis do Azure, que não são fornecidos com o escalão gratuito.
 3. Altere qualquer das outras definições, se assim o desejar, ou mantenha as predefinições e clique em **OK**.
 
 ![Implementar no Azure][cache-deploy-to-azure-step-2]
@@ -670,17 +674,17 @@ Pode ver o estado da implementação no painel **Microsoft.Template**.
 Quando o aprovisionamento estiver concluído, pode publicar a aplicação no Azure a partir do Visual Studio.
 
 > [!NOTE]
-> Quaisquer erros que possam ocorrer durante o processo de aprovisionamento são apresentados no painel **Microsoft.Template**. Os erros comuns prendem-se a existência de demasiados SQL Servers ou demasiados planos de alojamento do Serviço de Aplicações Gratuito por subscrição. Resolva os eventuais erros e reinicie o processo clicando em **Reimplementar** no painel **Microsoft.Template** ou no botão **Implementar no Azure** deste tutorial.
+> Quaisquer erros que possam ocorrer durante o processo de aprovisionamento são apresentados no painel **Microsoft.Template**. Os erros comuns prendem-se a existência de demasiados SQL Servers ou demasiados planos de alojamento do App Service Gratuito por subscrição. Resolva os eventuais erros e reinicie o processo clicando em **Reimplementar** no painel **Microsoft.Template** ou no botão **Implementar no Azure** deste tutorial.
 > 
 > 
 
-## Publicar a aplicação no Azure
+## <a name="publish-the-application-to-azure"></a>Publicar a aplicação no Azure
 Neste passo do tutorial, vai publicar a aplicação no Azure e executá-la na nuvem.
 
 1. Clique com o botão direito do rato no projeto **ContosoTeamStats** do Visual Studio e escolha **Publicar**.
    
     ![Publicar][cache-publish-app]
-2. Clique em **Serviço de Aplicações do Microsoft Azure**.
+2. Clique em **App Service do Microsoft Azure**.
    
     ![Publicar][cache-publish-to-app-service]
 3. Selecione a subscrição utilizada durante a criação dos recursos do Azure, expanda o grupo de recursos que contém os recursos, selecione a Aplicação Web pretendida e clique em **OK**. Se utilizou o botão **Implementar no Azure**, o nome da Aplicação Web começará por **webSite**, seguido por alguns carateres adicionais.
@@ -694,7 +698,7 @@ Neste passo do tutorial, vai publicar a aplicação no Azure e executá-la na nu
    
     ![Cache adicionada][cache-added-to-application]
 
-A descreve seguinte tabela cada ligação de ação da aplicação de exemplo.
+A tabela seguinte descreve cada ligação de ação da aplicação de exemplo.
 
 | Ação | Descrição |
 | --- | --- |
@@ -703,14 +707,14 @@ A descreve seguinte tabela cada ligação de ação da aplicação de exemplo.
 | Limpar Cache |Limpe as estatísticas da equipa na cache. |
 | Lista na Cache |Obtenha as estatísticas da equipa a partir da cache. Se existir uma falha de acerto na cache, carregue as estatísticas da base de dados e guarde-as na cache para a próxima utilização. |
 | Conjunto Ordenado na Cache |Obtenha as estatísticas da equipa a partir da cache com um conjunto ordenado. Se existir uma falha de acerto na cache, carregue as estatísticas da base de dados e guarde-as na cache utilizando um conjunto ordenado. |
-| 5 Melhores Equipas na Cache |Obtenha as 5 melhores equipas a partir da cache com um conjunto ordenado. Se existir uma falha de acerto na cache, carregue as estatísticas da base de dados e guarde-as na cache utilizando um conjunto ordenado. |
+| Cinco Melhores Equipas na Cache |Obtenha as cinco melhores equipas a partir da cache com um conjunto ordenado. Se existir uma falha de acerto na cache, carregue as estatísticas da base de dados e guarde-as na cache utilizando um conjunto ordenado. |
 | Carregar da Base de Dados |Obtenha as estatísticas da equipa a partir da base de dados. |
 | Recriar Base de Dados |Recrie a base de dados e volte a carregá-la com os dados da equipa de exemplo. |
 | Editar/Detalhes/Eliminar |Edite uma equipa, veja os detalhes de uma equipa, elimine uma equipa. |
 
 Clique em algumas das ações e experimente obter os dados a partir de diferentes fontes. Repare nas diferenças existentes no tempo de obtenção dos dados a partir da base de dados e da cache.
 
-## Eliminar os recursos quando terminar a aplicação
+## <a name="delete-the-resources-when-you-are-finished-with-the-application"></a>Eliminar os recursos quando terminar a aplicação
 Quando tiver terminado o tutorial da aplicação de exemplo, poderá eliminar os recursos do Azure utilizados para conservar os custos e os recursos. Se utilizar o botão **Implementar no Azure** na secção [Aprovisionar os recursos do Azure](#provision-the-azure-resources) e se todos os seus recursos estiverem no mesmo grupo de recursos, poderá eliminá-los numa única operação ao eliminar o grupo de recursos.
 
 1. Inicie sessão no [Portal do Azure](https://portal.azure.com) e clique em **Grupos de recursos**.
@@ -730,7 +734,7 @@ Após alguns instantes, o grupo de recursos e todos os recursos nele contidos se
 > 
 > 
 
-## Executar a aplicação de exemplo no computador local
+## <a name="run-the-sample-application-on-your-local-machine"></a>Executar a aplicação de exemplo no computador local
 Para executar a aplicação localmente no computador, precisa de uma instância da Cache de Redis do Azure para colocar os dados em cache. 
 
 * Se tiver publicado a aplicação no Azure conforme descrito na secção anterior, pode utilizar a instância da Cache de Redis do Azure aprovisionada durante esse passo.
@@ -754,18 +758,18 @@ Assim que tiver selecionado ou criado a cache a utilizar, navegue para a cache n
 > 
 > 
 
-## Passos seguintes
-* Para obter mais informações, veja [Getting Started with ASP.NET MVC 5 (Introdução ao ASP.NET MVC 5)](http://www.asp.net/mvc/overview/getting-started/introduction/getting-started) no site [ASP.NET](http://asp.net/).
+## <a name="next-steps"></a>Passos seguintes
+* Para obter mais informações, veja [Getting Started with ASP.NET MVC 5 (Introdução ao ASP.NET MVC 5)](http://www.asp.net/mvc/overview/getting-started/introduction/getting-started) no site [ASP.NET](http://asp.net/).
 * Para obter mais exemplos de criação de uma Aplicação Web ASP.NET no Serviço de Aplicações, veja [Create and deploy an ASP.NET web app in Azure App Service (Criar e implementar uma aplicação Web ASP.NET no Serviço de Aplicações do Azure)](https://github.com/Microsoft/HealthClinic.biz/wiki/Create-and-deploy-an-ASP.NET-web-app-in-Azure-App-Service) da [demonstração](https://blogs.msdn.microsoft.com/visualstudio/2015/12/08/connectdemos-2015-healthclinic-biz/) de [HealthClinic.biz](https://github.com/Microsoft/HealthClinic.biz) 2015 Connect.
   * Para obter mais inícios rápidos da demonstração de HealthClinic.biz, veja [Azure Developer Tools Quickstarts (Inícios Rápidos de Ferramentas de Programador do Azure)](https://github.com/Microsoft/HealthClinic.biz/wiki/Azure-Developer-Tools-Quickstarts).
 * Saiba mais sobre a abordagem [Code first to a new database (Primeiro código para uma nova base de dados)](https://msdn.microsoft.com/data/jj193542) para o Entity Framework utilizado neste tutorial.
-* Saiba mais sobre as [Aplicações Web do Serviço de Aplicações do Azure](../app-service-web/app-service-web-overview.md).
+* Saiba mais sobre as [Aplicações Web do App Service do Azure](../app-service-web/app-service-web-overview.md).
 * Saiba como [monitorizar](cache-how-to-monitor.md) a sua cache no Portal do Azure.
 * Explorar as funcionalidades da Cache de Redis do Azure Premium
   
   * [Como configurar a persistência para uma Cache de Redis do Azure Premium](cache-how-to-premium-persistence.md)
   * [Como configurar o clustering para uma Cache de Redis do Azure Premium](cache-how-to-premium-clustering.md)
-  * [Como configurar o suporte da Virtual Network para uma Cache de Redis do Azure Premium](cache-how-to-premium-vnet.md)
+  * [Como configurar o suporte da Rede Virtual para uma Cache de Redis do Azure Premium](cache-how-to-premium-vnet.md)
   * Veja as [Azure Redis Cache FAQ (FAQ sobre a Cache de Redis do Azure)](cache-faq.md#what-redis-cache-offering-and-size-should-i-use) para obter mais detalhes sobre o tamanho, o débito e a largura de banda com caches Premium.
 
 <!-- IMAGES -->
@@ -804,6 +808,6 @@ Assim que tiver selecionado ou criado a cache a utilizar, navegue para a cache n
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

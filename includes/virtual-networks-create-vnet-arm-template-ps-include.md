@@ -1,8 +1,8 @@
-## Implementar o modelo ARM com o PowerShell
+## <a name="deploy-the-arm-template-by-using-powershell"></a>Implementar o modelo ARM com o PowerShell
 Para implementar o modelo ARM que transferiu com o PowerShell, siga os passos abaixo:
 
 1. Se nunca tiver utilizado o Azure PowerShell, veja [How to Install and Configure Azure PowerShell (Como instalar e configurar o Azure PowerShell)](../articles/powershell-install-configure.md) e siga as instruções até ao fim para iniciar sessão no Azure e selecionar a sua subscrição.
-2. Se necessário, execute o cmdlet **`New-AzureRmResourceGroup`** para criar um novo grupo de recursos. O comando abaixo cria um grupo de recursos com o nome *TestRG* na região do Azure *EUA Central*. Para obter mais informações sobre os grupos de recursos, veja [Descrição Geral do Azure Resource Manager](../articles/resource-group-overview.md).
+2. Se necessário, execute o cmdlet **`New-AzureRmResourceGroup`** para criar um novo grupo de recursos. O comando abaixo cria um grupo de recursos com o nome *TestRG* na região do Azure *EUA Central*. Para obter mais informações sobre os grupos de recursos, veja [Descrição Geral do Azure Resource Manager](../articles/azure-resource-manager/resource-group-overview.md).
    
         New-AzureRmResourceGroup -Name TestRG -Location centralus
    
@@ -87,7 +87,6 @@ Para implementar o modelo ARM que transferiu com o PowerShell, siga os passos ab
                               }
                             ]
 
-
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Nov16_HO2-->
 
 

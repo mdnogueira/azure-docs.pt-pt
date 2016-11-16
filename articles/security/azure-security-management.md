@@ -1,12 +1,12 @@
 ---
-title: Gestão de Segurança no Azure | Microsoft Docs
+title: "Gestão de Segurança no Azure | Microsoft Docs"
 description: " Este artigo aborda os passos para melhorar a segurança da gestão remota ao administrar ambientes do Microsoft Azure, incluindo serviço em nuvem, Virtual Machines e aplicações personalizadas."
 services: security
 documentationcenter: na
 author: TerryLanfear
 manager: StevenPo
 editor: TomSh
-
+ms.assetid: 2431feba-3364-4a63-8e66-858926061dd3
 ms.service: security
 ms.devlang: na
 ms.topic: get-started-article
@@ -14,9 +14,13 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/25/2016
 ms.author: terrylan
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: 83d13b9b104ae19c6d49103d6a2ffdc6e57dd956
+
 
 ---
-# Gestão de segurança no Azure
+# <a name="security-management-in-azure"></a>Gestão de segurança no Azure
 Os subscritores do Azure poderão gerir os respetivos ambientes de nuvem a partir de vários dispositivos, incluindo estações de trabalho de gestão, PCs de programadores e, até mesmo, dispositivos de utilizador final com privilégios que tenham permissões específicas de tarefas. Em alguns casos, as funções administrativas são efetuadas através das consolas baseadas na Web, como o [Portal do Azure](https://azure.microsoft.com/features/azure-portal/). Noutros casos, poderão existir ligações diretas para o Azure a partir de sistemas no local através de Redes Privadas Virtuais (VPNs), Serviços de Terminal, protocolos de aplicações cliente ou (através de programação) a API de Gestão de Serviço do Azure (SMAPI). Além disso, os pontos finais de cliente podem ser um domínio associado ou isolado e não gerido, como tablets ou smartphones.
 
 Apesar de estas diversas capacidades de gestão e acesso fornecerem um conjunto avançado de opções, esta variabilidade pode acarretar um risco significativo para uma implementação de nuvem. Pode ser difícil gerir, controlar e auditar as ações administrativas. Este variabilidade também poderá acarretar ameaças de segurança através do acesso não regulado para os pontos finais de cliente que são utilizados para gerir os Cloud Services. A utilização das estações de trabalho gerais ou pessoais para desenvolver e gerir a infraestrutura abre vetores de ameaças imprevisíveis, como navegação na Web (por exemplo, ataques de tipo “watering hole”) ou e-mail (engenharia social e phishing).
@@ -25,7 +29,7 @@ Apesar de estas diversas capacidades de gestão e acesso fornecerem um conjunto 
 
 A possibilidade de ataques aumenta neste tipo de ambiente, porque é difícil construir políticas de segurança e mecanismos para gerir adequadamente o acesso às interfaces do Azure (por exemplo, SMAPI) a partir de pontos finais bastante diversos.
 
-### Ameaças da gestão remota
+### <a name="remote-management-threats"></a>Ameaças da gestão remota
 Os atacantes frequentemente tentam obter acesso privilegiado comprometendo as credenciais da conta (por exemplo, através de ataque de força bruta às palavras-passe, phishing e recolha de credenciais) ou ludibriando os utilizadores na execução de código prejudicial (por exemplo, em sites prejudiciais conduzidos através de transferências ou em anexos de e-mail prejudiciais). Num ambiente de nuvem gerido remotamente, as falhas da conta podem levar a um maior risco devido a um acesso em qualquer lugar e em qualquer altura.
 
 Mesmo com controlos apertados em contas de administrador principais, podem ser utilizadas contas de utilizador de nível inferior para explorar as fraquezas na estratégia de segurança de cada um. A falta de formação apropriada em segurança também pode levar a falhas através de divulgação ou exposição acidental das informações da conta.
@@ -34,7 +38,7 @@ Quando uma estação de trabalho do utilizador também é utilizada para tarefas
 
 Em geral, a maior parte dos ataques direcionados que resultam em falhas de dados pode dever-se a explorações do browser, plug-ins (por exemplo, Flash, PDF, Java) e spear phishing (e-mail) em computadores. Nestes computadores poderão ter permissões de nível administrativo ou nível de serviço para aceder aos servidores em direto ou aos dispositivos de rede de operações, quando utilizados para a programação ou para a gestão de outros recursos.
 
-### Noções básicas da segurança operacional
+### <a name="operational-security-fundamentals"></a>Noções básicas da segurança operacional
 Para operações e uma gestão mais seguras, pode minimizar a superfície de ataque de um cliente reduzindo o número de pontos de entrada possíveis. Isto pode ser feito através dos princípios de segurança: “separação de funções” e “segregação dos ambientes”.
 
 Isole as funções sensíveis umas das outras para diminuir a probabilidade de um erro num nível conduzir a uma violação noutro. Exemplos:
@@ -57,7 +61,7 @@ Os sistemas de cliente que têm acesso de administrador aos componentes da infra
 
 Consolidar os recursos de acesso e eliminar os pontos finais não geridos também simplifica as tarefas de gestão.
 
-### Fornecer segurança para gestão remota do Azure
+### <a name="providing-security-for-azure-remote-management"></a>Fornecer segurança para gestão remota do Azure
 O Azure oferece mecanismos de segurança para ajudar os administradores que gerem Virtual Machines e Cloud Services do Azure. Estes mecanismos incluem:
 
 * Autenticação e [controlo de acesso baseado em funções](../active-directory/role-based-access-control-configure.md).
@@ -73,7 +77,7 @@ Em combinação com a configuração da segurança do lado do cliente e a implem
 > 
 > 
 
-## Estação de trabalho protegida para gestão
+## <a name="hardened-workstation-for-management"></a>Estação de trabalho protegida para gestão
 O objetivo da proteção de uma estação de trabalho consiste em eliminar todas as funções, exceto as mais críticas, necessárias para que funcione, tornando a possível superfície de ataque tão reduzida quanto possível. A proteção do sistema inclui minimizar o número de aplicações e serviços instalados, limitar a execução das aplicações, restringir o acesso à rede apenas ao necessário e manter o sistema sempre atualizado. Além disso, utilizar uma estação de trabalho para gestão protegida segrega as ferramentas e as atividades administrativas de outras tarefas do utilizador final.
 
 Num ambiente de empresa no local, pode limitar a superfície de ataque da sua infraestrutura física através de redes de gestão dedicadas, salas de servidores com acesso por cartão e estações de trabalho executadas em áreas protegidas da rede. Num modelo de TI híbrido ou na nuvem, ser diligente relativamente aos serviços de gestão protegidos pode ser mais complexo devido à falta de acesso físico aos recursos de TI. Implementar soluções de proteção requer uma cuidada configuração do software, processos centrados na segurança e políticas abrangentes.
@@ -90,14 +94,14 @@ Numa estação de trabalho protegida, o administrador executa uma conta de utili
 
 Pode impor tudo isto utilizando [Objetos de Política de Grupo](https://www.microsoft.com/download/details.aspx?id=2612) (GPOs) nos Serviços de Domínio do Active Directory (AD DS) e aplicá-los através do seu domínio de gestão (local) a todas as contas de gestão.
 
-### Gerir serviços, aplicações e dados
+### <a name="managing-services-applications-and-data"></a>Gerir serviços, aplicações e dados
 A configuração dos Cloud Services do Azure é efetuada através do Portal do Azure ou do SMAPI, através da interface de linha de comandos do Windows PowerShell ou de uma aplicação personalizada que tira partido destas interfaces RESTful. Os serviços com estes mecanismos incluem o Azure Active Directory (Azure AD), o Storage do Azure, os Web Sites do Azure, a Azure Virtual Network, entre outros.
 
 Máquina Virtual: as aplicações implementadas fornecem as suas próprias ferramentas e interfaces conforme necessário, como, por exemplo, a Consola de Gestão da Microsoft (MMC), uma consola de gestão Empresarial (tal como o Microsoft System Center ou o Windows Intune) ou outra aplicação de gestão, por exemplo, Microsoft SQL Server Management Studio. Estas ferramentas normalmente residem num ambiente empresarial ou numa rede do cliente e podem depender de protocolos de rede específicos, como o protocolo RDP (Remote Desktop Protocol), que necessitam de ligações diretas com monitorização de estado. Algumas poderão ter interfaces Web que não devem ser acessíveis através da Internet ou publicadas abertamente.
 
 Pode restringir o acesso à gestão dos serviços de infraestrutura e plataforma no Azure através da utilização de [autenticação multifator](../multi-factor-authentication/multi-factor-authentication.md), [certificados de gestão X.509](https://blogs.msdn.microsoft.com/azuresecurity/2015/07/13/certificate-management-in-azure-dos-and-donts/) e regras de firewall. O Portal do Azure e o SMAPI requerem TLS (Transport Layer Security). No entanto, os serviços e as aplicações que implementa no Azure exigem que tome as medidas de proteção adequadas com base na sua aplicação. Estes mecanismos podem ser ativados frequentemente de modo mais fácil através de uma configuração da estação de trabalho protegida normalizada.
 
-### Gateway de gestão
+### <a name="management-gateway"></a>Gateway de gestão
 Para centralizar todo o acesso administrativo e simplificar a monitorização e o registo, pode implementar um servidor dedicado do [Gateway de Ambiente de Trabalho Remoto](https://technet.microsoft.com/library/dd560672) (Gateway de RD) na rede no local, ligado ao ambiente do Azure.
 
 Um Gateway de ambiente de trabalho remoto é um serviço proxy baseado na política RDP que impõe requisitos de segurança. Implementar o Gateway de RD juntamente com o Windows Server Network Access Protection (NAP) ajuda a garantir que apenas os clientes que cumprem os critérios de estado de funcionamento de segurança específicos estabelecidos pelo Objetos de Política de Grupo (GPOs) dos Serviços de Domínio do Active Directory (AD DS) podem ligar-se. Além disso:
@@ -109,27 +113,27 @@ Um Gateway de ambiente de trabalho remoto é um serviço proxy baseado na polít
 * Ative o Multi-Factor Authentication (através do [Azure Multi-Factor Authentication](../multi-factor-authentication/multi-factor-authentication.md)) ou a autenticação por smart card para administradores que iniciem sessão através do Gateway de RD.
 * Configure as [restrições de endereço IP](http://azure.microsoft.com/blog/2013/08/27/confirming-dynamic-ip-address-restrictions-in-windows-azure-web-sites/) da origem ou o [Grupos de Segurança de Rede](../virtual-network/virtual-networks-nsg.md) no Azure para minimizar o número de pontos finais de gestão permitidos.
 
-## Diretrizes de segurança
+## <a name="security-guidelines"></a>Diretrizes de segurança
 Em geral, ajudar a proteger estações de trabalho do administrador para utilização com a nuvem é muito semelhante às práticas utilizadas para qualquer estação de trabalho no local, por exemplo, compilação minimizada e permissões restritivas. Alguns aspetos exclusivos da gestão de nuvem são mais comparáveis à gestão empresarial remota ou sem rede IP. Estes incluem a utilização e auditoria de credenciais, acesso remoto com segurança avançada e deteção de ameaças e resposta.
 
-### Autenticação
+### <a name="authentication"></a>Autenticação
 Pode utilizar as restrições de início de sessão do Azure para restringir os endereços IP de origem de acederem às ferramentas administrativas e aos pedidos de acesso de auditoria. Para ajudar o Azure a identificar os clientes de gestão (estações de trabalho e/ou aplicações), pode configurar o SMAPI (através de ferramentas desenvolvidas por clientes, tais como os cmdlets Windows PowerShell) e o portal de gestão do Azure para exigir a instalação de certificados de gestão do lado do cliente, para além dos certificados SSL. Recomendamos também que o acesso de administrador exija uma autenticação multifator.
 
 Algumas aplicações ou serviços que implementa no Azure podem ter os seus próprios mecanismos de autenticação para acesso de administrador e de utilizador final, enquanto que outros tiram o máximo partido do Azure AD. Dependendo se está a utilizar credenciais de federação através doa Serviços de Federação do Active Directory (AD FS), a utilizar a sincronização de diretórios ou a gerir contas de utilizador apenas na nuvem, utilizar o [Microsoft Identity Manager](https://technet.microsoft.com/library/mt218776.aspx) (parte do Azure AD Premium) ajuda-o a gerir os ciclos de tempo de identidade entre os recursos.
 
-### Conectividade
+### <a name="connectivity"></a>Conectividade
 Estão disponíveis diversos mecanismos para o ajudar a efetuar ligações de cliente seguras às suas Azure Virtual Networks. Dois destes mecanismos, a [ede de VPNs](https://channel9.msdn.com/series/Azure-Site-to-Site-VPN) (S2S) e a [VPN ponto a site](../vpn-gateway/vpn-gateway-point-to-site-create.md) (P2S), permitem a utilização do padrão de indústria IPsec (S2S) ou o [Secure Socket Tunneling Protocol](https://technet.microsoft.com/magazine/2007.06.cableguy.aspx) (SSTP) (P2S) para encriptação e túnel. Quando o Azure está a ligar à gestão de serviços do Azure destinado ao público, como o portal de gestão do Azure, o Azure requer HTTPS (Hypertext Transfer Protocol Secure).
 
 Uma estação de trabalho autónoma protegida que não se ligar ao Azure através de um Gateway de RD deve utilizar a VPN ponto a site baseada em SSTP para criar a ligação inicial à Rede Virtual do Azure e, em seguida, estabelecer a ligação RDP a máquinas virtuais individuais a partir do túnel VPN.
 
-### Auditoria de gestão versus aplicação de políticas
+### <a name="management-auditing-vs-policy-enforcement"></a>Auditoria de gestão versus aplicação de políticas
 Normalmente, existem duas abordagens para ajudar a proteger os processos de gestão: a auditoria e a aplicação de políticas. Utilizar as duas abordagens fornece um controlo abrangente, mas pode não ser possível em todas as situações. Além disso, cada abordagem tem diferentes níveis de risco, custos e esforços associados à gestão da segurança, especialmente porque estão relacionados ao nível de confiança colocados nos indivíduos e nas arquiteturas do sistema.
 
 A monitorização, o registo e a auditoria fornecem uma base para controlar e compreender as atividades administrativas, mas podem nem sempre ser viáveis para auditar todas as ações em detalhe devido à quantidade de dados gerados. A auditoria da eficácia das políticas de gestão é a melhor prática.
 
 A aplicação de políticas que inclui os controlos de acesso restritos estabelece os mecanismos programáticos que podem reger as ações do administrador e ajuda a garantir que todas as medidas de proteção possíveis estão a ser utilizadas. O registo fornece uma prova da aplicação, para além de um registo de quem fez o quê, a partir de onde e quando. O registo também permite auditar e verificar as informações sobre a forma como os administradores seguem as políticas, além de fornecer uma evidência das atividades
 
-## Configuração do cliente
+## <a name="client-configuration"></a>Configuração do cliente
 Recomendamos três configurações primárias para uma estação de trabalho protegida. Os maiores diferenciadores entre essas configurações são o custo, a utilização e a acessibilidade, embora mantendo um perfil de segurança semelhante em todas as opções. A tabela seguinte fornece uma breve análise dos benefícios e riscos de cada uma. (Tenha em atenção que “PC empresarial” refere-se a uma configuração padrão do PC de secretária que seria implementada para todos os utilizadores do domínio, independentemente das funções.)
 
 | Configuração | Benefícios | Contras |
@@ -149,14 +153,14 @@ Pode segregar mais as funções administrativas através de imagens dedicadas do
 
 Para ambientes de TI que não tenham nenhuma infraestrutura no local (por exemplo, sem acesso a uma instância local do AD DS para GPOs, porque todos os servidores estão na nuvem), um serviço como o [Microsoft Intune](https://technet.microsoft.com/library/jj676587.aspx) pode simplificar a implementação e a gestão das configurações das estação de trabalho.
 
-### Estação de trabalho autónoma protegida para gestão
+### <a name="standalone-hardened-workstation-for-management"></a>Estação de trabalho autónoma protegida para gestão
 Com uma estação de trabalho autónoma protegida, os administradores têm um PC ou portátil que podem utilizar para as tarefas administrativas e outro PC ou portátil separado para as tarefas não administrativas. Uma estação de trabalho dedicada para gerir os serviços do Azure não necessita de outras aplicações instaladas. Além disso, utilizar estações de trabalho que suportam um [Trusted Platform Module](https://technet.microsoft.com/library/cc766159) (TPM) ou tecnologia de criptografia ao nível do hardware semelhante ajuda na autenticação dos dispositivos e na prevenção de determinados ataques. O TPM também pode suportar proteção de volume completo da unidade do sistema ao utilizar a [Encriptação de Unidade BitLocker](https://technet.microsoft.com/library/cc732774.aspx).
 
 No cenário de estação de trabalho autónoma protegida (mostrado abaixo), a instância local do Firewall do Windows (ou uma firewall para cliente que não seja da Microsoft) está configurada para bloquear as ligações de entrada, tais como RDP. O administrador pode iniciar sessão na estação de trabalho protegida e iniciar uma sessão do RDP que liga ao Azure depois de estabelecer uma ligação VPN com uma Azure Virtual Network, mas não pode iniciar sessão num PC empresarial e utilizar o RDP para ligar à estação de trabalho protegida.
 
 ![][2]
 
-### PC empresarial como máquina virtual
+### <a name="corporate-pc-as-virtual-machine"></a>PC empresarial como máquina virtual
 Nos casos em que uma estação de trabalho autónoma protegida separada tem custos proibitivos ou impraticáveis, a estação de trabalho protegida pode alojar uma máquina virtual para efetuar as tarefas não administrativas.
 
 ![][3]
@@ -165,7 +169,7 @@ Para evitar várias riscos de segurança que podem surgir da utilização de uma
 
 A máquina virtual do PC empresarial é executada num espaço protegido e fornece as aplicações de utilizador. O anfitrião continua a ser uma “origem limpa” e aplica as políticas de rede restritas no sistema operativo raiz (por exemplo, bloqueio do acesso RDP a partir da máquina virtual).
 
-### Windows To Go
+### <a name="windows-to-go"></a>Windows To Go
 Outra alternativa à necessidade de uma estação de trabalho autónoma protegida consiste em utilizar uma unidade [Windows To Go](https://technet.microsoft.com/library/hh831833.aspx), uma funcionalidade que suporta uma capacidade de arranque USB do lado do cliente. O Windows To Go permite aos utilizadores iniciarem um PC compatível numa imagem do sistema isolada executada a partir de uma pen USB encriptada. Esta fornece controlos adicionais para pontos finais de administração remota, porque a imagem pode ser totalmente gerida por um grupo TI empresarial, com as políticas de segurança restritas, uma compilação do SO mínima e suporte do TPM.
 
 Na ilustração abaixo, a imagem dos portáteis é um sistema associado a um domínio pré-configurado para se ligar apenas ao Azure, requer o Multi-Factor Authentication e bloqueia todo o tráfego não relacionado à gestão. Se um utilizador iniciar o mesmo PC na imagem padrão da empresa e tentar aceder ao Gateway de RD das ferramentas de gestão do Azure, a sessão será bloqueada. O Windows To Go torna-se o sistema operativo de nível raiz, e não serão necessárias camadas adicionais (sistema operativo anfitrião, hipervisor, máquina virtual), as quais podem ser mais vulneráveis a ataques exteriores.
@@ -174,10 +178,10 @@ Na ilustração abaixo, a imagem dos portáteis é um sistema associado a um dom
 
 É importante ter em conta que as pens USB perdem-se mais facilmente do que um PC de secretária. A utilização do BitLocker para encriptar todo o volume, juntamente com uma palavra-passe segura, tornará menos provável que um atacante possa utilizar a imagem da unidade para efeitos prejudiciais. Além disso, se perder a pen USB, com a revogação e [emissão de um novo certificado de gestão](https://technet.microsoft.com/library/hh831574.aspx), juntamente com a reposição de palavra-passe rápida, pode reduzir a exposição. Os registos de auditoria administrativos residem no Azure, não no cliente, reduzindo ainda mais uma potencial perda de dados.
 
-## Melhores práticas
+## <a name="best-practices"></a>Melhores práticas
 Considere as seguintes diretrizes adicionais quando estiver a gerir aplicações e dados no Azure.
 
-### O que deve fazer e o que não deve fazer
+### <a name="dos-and-donts"></a>O que deve fazer e o que não deve fazer
 Não parta do princípio que, pelo facto de uma estação de trabalho estar bloqueada, os outros requisitos de segurança comuns não precisam de ser aplicados. O risco potencial é superior devido aos níveis de acesso elevados que geralmente as contas de administrador possuem. Os exemplos de riscos e as respetivas práticas de segurança alternativas são apresentados na tabela abaixo.
 
 | O que não deve fazer | O que deve fazer |
@@ -192,14 +196,14 @@ Não parta do princípio que, pelo facto de uma estação de trabalho estar bloq
 | Não exponha as portas de gestão à Internet. |Bloqueie as portas e os endereços IP do Azure para restringir o acesso de gestão. Para obter mais informações, consulte o documento técnico [Segurança de Rede do Azure](http://download.microsoft.com/download/4/3/9/43902EC9-410E-4875-8800-0788BE146A3D/Windows%20Azure%20Network%20Security%20Whitepaper%20-%20FINAL.docx). |
 | Utilize firewalls, VPNs e NAP para todas as ligações de gestão. | |
 
-## Operações do Azure
+## <a name="azure-operations"></a>Operações do Azure
 Na operação do Microsoft Azure, os engenheiros de operações e o pessoal do suporte que acedem aos sistemas de produção do Azure utilizam [PCs de secretária protegidos com VMs](#stand-alone-hardened-workstation-for-management) com aprovisionamento para o acesso à rede empresarial interna e às respetivas aplicações (como e-mail, intranet, etc.). Todos os computadores da estação de trabalho de gestão têm TPMs, a unidade de arranque do anfitrião é encriptada com BitLocker e estão associados a uma unidade organizacional (UO) especial no domínio empresarial principal da Microsoft.
 
 A proteção do sistema é aplicada através da Política de Grupo, com a atualização de software centralizada. Para auditoria e análise, os registos de eventos (por exemplo, segurança e AppLocker) são recolhidos a partir das estações de trabalho de gestão e guardados numa localização central.
 
 Além disso, as caixas de atalhos dedicadas na rede da Microsoft que necessitam da autenticação de dois fatores são utilizadas para ligar à rede de produção do Azure.
 
-## Lista de verificação de segurança do Azure
+## <a name="azure-security-checklist"></a>Lista de verificação de segurança do Azure
 Minimizar o número de tarefas que os administradores podem efetuar numa estação de trabalho protegida ajudará a minimizar a superfície de ataque no ambiente de gestão e desenvolvimento. Utilize as seguintes tecnologias para ajudar a proteger a estação de trabalho protegida:
 
 * Proteção do IE. O browser Internet Explorer (ou qualquer browser para esse fim) é um ponto de entrada chave para código prejudicial devido às suas interações extensas com servidores externos. Reveja as suas políticas de cliente e aplique a execução no modo protegido, desativando os suplementos, desativando as transferências de ficheiros e utilizando a filtragem [Microsoft SmartScreen](https://technet.microsoft.com/library/jj618329.aspx). Certifique-se de que os avisos de segurança são apresentados. Tire partido das zonas de Internet e crie uma lista de sites fidedignos para os quais configurou uma proteção razoável. Bloqueie todos os outros sites e códigos no browser, tal como ActiveX e Java.
@@ -212,10 +216,10 @@ Minimizar o número de tarefas que os administradores podem efetuar numa estaç�
 * Encriptação. Certifique-se de que as estações de trabalho de gestão têm um TPM para ativar de forma mais segura o [Sistema de Encriptação de Ficheiros](https://technet.microsoft.com/library/cc700811.aspx) (EFS) e o BitLocker. Se estiver a utilizar o Windows To Go, utilize apenas chaves USB encriptadas juntamente com o BitLocker.
 * Governação. Utilize os GPOs do AD DS para controlar todas as interfaces Windows dos administradores, tal como a partilha de ficheiros. Inclua estações de trabalho de gestão nos processos de auditoria, monitorização e de registo. Controle todos os acessos e utilizações de administrador e programador.
 
-## Resumo
+## <a name="summary"></a>Resumo
 Utilizar uma configuração de estação de trabalho protegida para administrar os Cloud Services, as Virtual Machines e as aplicações do Azure pode ajudar a evitar vários riscos e ameaças que podem resultar da gestão remota de uma infraestrutura de TI crítica. Tanto o Azure como o Windows fornecem mecanismos que pode utilizar para ajudar a proteger e controlar as comunicações, a autenticação e o comportamento do cliente.
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 Os recursos seguintes estão disponíveis para fornecer informações mais gerais acerca do Azure e dos serviços relacionados da Microsoft, para além de itens específicos referenciados neste documento:
 
 * [Proteger o Acesso Privilegiado](https://technet.microsoft.com/library/mt631194.aspx) – obtenha os detalhes técnicos para estruturação e criação de uma estação de trabalho administrativa segura para gestão do Azure
@@ -231,6 +235,6 @@ Os recursos seguintes estão disponíveis para fornecer informações mais gerai
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

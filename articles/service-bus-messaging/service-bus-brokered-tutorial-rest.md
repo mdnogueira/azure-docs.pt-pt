@@ -1,35 +1,41 @@
 ---
 title: Tutorial de REST de mensagens mediadas do Service Bus | Microsoft Docs
 description: Tutorial de REST de mensagens mediadas.
-services: service-bus-messaging
+services: service-bus
 documentationcenter: na
 author: sethmanheim
 manager: timlt
-editor: ''
-
-ms.service: service-bus-messaging
+editor: 
+ms.assetid: 9b7a8147-a1b1-42fc-b30e-f52e79a902b5
+ms.service: service-bus
 ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/27/2016
 ms.author: sethm
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: 45b72037e2de01b9201edf3e4ebee7e80d996383
+
 
 ---
-# Tutorial de REST de mensagens mediadas do Service Bus
+# <a name="service-bus-brokered-messaging-rest-tutorial"></a>Tutorial de REST de mensagens mediadas do Service Bus
+[!INCLUDE [service-bus-selector-queues](../../includes/service-bus-selector-queues.md)]
+
 Este tutorial mostra como criar uma fila e um tópico/subscrição básicos do Service Bus do Azure com base no REST.
 
-## Criar um espaço de nomes
-O primeiro passo é criar um espaço de nomes de serviço e obter uma chave de [Assinatura de Acesso Partilhado](../service-bus/service-bus-sas-overview.md) (SAS). Um espaço de nomes fornece um limite de aplicação para cada aplicação exposta através do Service Bus. O sistema gera uma chave SAS automaticamente quando se cria um espaço de nomes de serviço. A combinação do espaço de nomes de serviço e da chave SAS fornece uma credencial do Service Bus para autenticar o acesso a uma aplicação.
+## <a name="create-a-namespace"></a>Criar um espaço de nomes
+O primeiro passo é criar um espaço de nomes de serviço e obter uma chave de [Assinatura de Acesso Partilhado](service-bus-sas-overview.md) (SAS). Um espaço de nomes fornece um limite de aplicação para cada aplicação exposta através do Service Bus. O sistema gera uma chave SAS automaticamente quando se cria um espaço de nomes de serviço. A combinação do espaço de nomes de serviço e da chave SAS fornece uma credencial do Service Bus para autenticar o acesso a uma aplicação.
 
 [!INCLUDE [service-bus-create-namespace-portal](../../includes/service-bus-create-namespace-portal.md)]
 
-## Criar um cliente da consola
+## <a name="create-a-console-client"></a>Criar um cliente da consola
 As filas do Service Bus permitem armazenar mensagens na fila first in, first out. Os tópicos e as subscrições implementam um padrão publicar/subscrever; em primeiro lugar, cria um tópico e, em seguida, uma ou mais subscrições associadas a esse tópico. Quando as mensagens são enviadas para o tópico, são imediatamente enviadas para os subscritores desse tópico.
 
 O código neste tutorial efetua o seguinte.
 
-* Utiliza o espaço de nomes e a chave de [Assinatura de Acesso Partilhado](../service-bus/service-bus-sas-overview.md) (SAS) para obter acesso aos recursos do espaço de nomes do Service Bus.
+* Utiliza o espaço de nomes e a chave de [Assinatura de Acesso Partilhado](service-bus-sas-overview.md) (SAS) para obter acesso aos recursos do espaço de nomes do Service Bus.
 * Cria uma fila, envia uma mensagem para a fila e lê a mensagem a partir da fila.
 * Cria um tópico, uma subscrição para esse tópico, bem como envia e lê a mensagem a partir da subscrição.
 * Obtém todas as informações da fila, do tópico e da subscrição, incluindo as regras de subscrição, a partir do Service Bus.
@@ -39,7 +45,7 @@ Uma vez que o serviço é um serviço Web de estilo REST, não estão envolvidos
 
 Depois de obter o espaço de nomes e as credenciais no primeiro passo, crie, em seguida, uma aplicação básica de consola do Visual Studio.
 
-### Criar uma aplicação de consola
+### <a name="create-a-console-application"></a>Criar uma aplicação de consola
 1. Inicie o Visual Studio como administrador, para tal clique com o botão direito no menu **Iniciar** do programa e, de seguida, clique em **Executar como administrador**.
 2. Crie um novo projeto de aplicação de consola. Clique no menu **Ficheiro**, depois em **Novo** e, por fim, em **Projeto**. Na caixa de diálogo **Novo Projeto**, clique em **Visual C#** (caso **Visual C#** não seja apresentado, procure em **Outras Linguagens**), selecione o modelo **Aplicação de Consola** e atribua-lhe o nome **Microsoft.ServiceBus.Samples**. Utilize a Localização predefinida. Clique em **OK** para criar o projeto.
 3. Em Program.cs, certifique-se de que as declarações `using` são apresentadas do seguinte modo:
@@ -134,10 +140,10 @@ Depois de obter o espaço de nomes e as credenciais no primeiro passo, crie, em 
     Console.ReadLine();
     ```
 
-## Criar credenciais de gestão
+## <a name="create-management-credentials"></a>Criar credenciais de gestão
 O passo seguinte é escrever um método que processe o espaço de nomes e a chave SAS introduzidos no passo anterior e devolva um token SAS. Este exemplo cria um token SAS que é válido durante uma hora.
 
-### Criar um método GetSASToken()
+### <a name="create-a-getsastoken-method"></a>Criar um método GetSASToken()
 Cole o seguinte código após o método `Main()`, na classe `Program`:
 
 ```
@@ -154,7 +160,7 @@ private static string GetSASToken(string SASKeyName, string SASKeyValue)
   return sasToken;
 }
 ```
-## Criar a fila
+## <a name="create-the-queue"></a>Criar a fila
 O passo seguinte é escrever um método que utilize o comando HTTP PUT de estilo REST para criar uma fila.
 
 Cole o seguinte código imediatamente depois do código `GetSASToken()` adicionado no passo anterior:
@@ -182,7 +188,7 @@ private static string CreateQueue(string queueName, string token)
 }
 ```
 
-## Enviar uma mensagem para a fila
+## <a name="send-a-message-to-the-queue"></a>Enviar uma mensagem para a fila
 Neste passo, adicione um método que utilize o comando HTTP POST de estilo REST para enviar uma mensagem para a fila criada no passo anterior.
 
 1. Cole o seguinte código imediatamente depois do código `CreateQueue()` adicionado no passo anterior:
@@ -216,7 +222,7 @@ Neste passo, adicione um método que utilize o comando HTTP POST de estilo REST 
     webClient.Headers.Add("Customer", "12345");
     ```
 
-## Receber e eliminar uma mensagem da fila
+## <a name="receive-and-delete-a-message-from-the-queue"></a>Receber e eliminar uma mensagem da fila
 O passo seguinte é adicionar um método que utilize o comando HTTP DELETE de estilo REST para receber e eliminar uma mensagem da fila.
 
 Cole o seguinte código imediatamente depois do código `SendMessage()` adicionado no passo anterior:
@@ -239,10 +245,10 @@ private static string ReceiveAndDeleteMessage(string resourceName)
 }
 ```
 
-## Criar um tópico e uma subscrição
+## <a name="create-a-topic-and-subscription"></a>Criar um tópico e uma subscrição
 O passo seguinte é escrever um método que utilize o comando HTTP PUT de estilo REST para criar um tópico. Em seguida, escreva um método que crie uma subscrição para esse tópico.
 
-### Criar um tópico
+### <a name="create-a-topic"></a>Criar um tópico
 Cole o seguinte código imediatamente depois do código `ReceiveAndDeleteMessage()` adicionado no passo anterior:
 
 ```
@@ -267,7 +273,7 @@ private static string CreateTopic(string topicName)
 }
 ```
 
-### Criar uma subscrição
+### <a name="create-a-subscription"></a>Criar uma subscrição
 O código seguinte cria uma subscrição para o tópico que criou no passo anterior. Adicione o seguinte código imediatamente após a definição `CreateTopic()`:
 
 ```
@@ -291,10 +297,10 @@ private static string CreateSubscription(string topicName, string subscriptionNa
 }
 ```
 
-## Obter recursos da mensagem
+## <a name="retrieve-message-resources"></a>Obter recursos da mensagem
 Neste passo, adicione o código que obtém as propriedades da mensagem e, em seguida, elimina os recursos de mensagens criados nos passos anteriores.
 
-### Obter um feed Atom com os recursos especificados
+### <a name="retrieve-an-atom-feed-with-the-specified-resources"></a>Obter um feed Atom com os recursos especificados
 Adicione o seguinte código imediatamente depois do método `CreateSubscription()` adicionado no passo anterior:
 
 ```
@@ -308,7 +314,7 @@ private static string GetResources(string resourceAddress)
 }
 ```
 
-### Eliminar entidades de mensagens
+### <a name="delete-messaging-entities"></a>Eliminar entidades de mensagens
 Adicione o seguinte código imediatamente depois do código adicionado no passo anterior:
 
 ```
@@ -324,7 +330,7 @@ private static string DeleteResource(string resourceName)
 }
 ```
 
-### Formatar o feed Atom
+### <a name="format-the-atom-feed"></a>Formatar o feed Atom
 O método `GetResources()` contém uma chamada para o método `FormatXml()` que reformata o feed Atom obtido para ser mais legível. O seguinte é a definição de `FormatXml()`; adicione este código imediatamente depois do código `DeleteResource()` adicionado na secção anterior:
 
 ```
@@ -345,13 +351,13 @@ private static string FormatXml(string inputXml)
 }
 ```
 
-## Compilar e executar a aplicação
+## <a name="build-and-run-the-application"></a>Compilar e executar a aplicação
 Agora pode compilar e executar a aplicação. No menu **Compilar** do Visual Studio, clique em **Compilar Solução** ou prima **Ctrl+Shift+B**.
 
-### Executar a aplicação
+### <a name="run-the-application"></a>Executar a aplicação
 Se não existirem erros, prima F5 para executar a aplicação. Quando lhe for pedido, introduza o espaço de nomes, o nome da chave SAS e o valor da chave SAS obtido no primeiro passo.
 
-### Exemplo
+### <a name="example"></a>Exemplo
 O exemplo seguinte consiste no código completo, tal como deveria surgir após serem seguidos todos os passos neste tutorial.
 
 ```
@@ -588,13 +594,16 @@ namespace Microsoft.ServiceBus.Samples
 }
 ```
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 Consulte os seguintes artigos para saber mais:
 
-* [Descrição geral de mensagens do Service Bus](service-bus-messaging-overview.md)
-* [Noções básicas do Service Bus do Azure](../service-bus/service-bus-fundamentals-hybrid-solutions.md)
-* [Tutorial de REST de reencaminhamento do Service Bus](../service-bus-relay/service-bus-relay-rest-tutorial.md)
+* [Descrição geral das mensagens do Service Bus](service-bus-messaging-overview.md)
+* [Noções básicas sobre o Azure Service Bus](service-bus-fundamentals-hybrid-solutions.md)
+* [Tutorial de REST de Reencaminhamento do Service Bus](../service-bus-relay/service-bus-relay-rest-tutorial.md)
 
-<!--HONumber=Sep16_HO4-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

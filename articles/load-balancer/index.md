@@ -1,9 +1,13 @@
 ---
 layout: LandingPage
----
-#Load Balancer Documentation
+translationtype: Human Translation
+ms.sourcegitcommit: 4d6fd9344eaee31de4ee1e614ae558ce159c9245
+ms.openlocfilehash: 926beb8579ccdb1b0ed502ecb1892063ba976025
 
-Azure Load Balancer delivers high availability and network performance to your applications.  Load Balancer can be configured to load balance incoming Internet traffic to virtual machines, traffic between cloud resources, traffic in a cross-premises virtual network, or external traffic to a specific virtual machine.
+---
+#<a name="load-balancer-documentation"></a>Documentação do Load Balancer
+
+O Balanceador de Carga do Azure oferece disponibilidade e desempenho da rede das suas aplicações.  O Balanceador de Carga pode ser configurado para efetuar o balanceamento de carga de tráfego de entrada da Internet para máquinas virtuais, tráfego entre recursos de nuvem, tráfego numa rede virtual entre locais ou tráfego externo para uma máquina virtual específica.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -17,7 +21,7 @@ Azure Load Balancer delivers high availability and network performance to your a
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Learn about Load Balancer</h3>
+                        <h3>Saiba mais sobre o Balanceador de Carga</h3>
                     </div>
                 </div>
             </div>
@@ -35,7 +39,7 @@ Azure Load Balancer delivers high availability and network performance to your a
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Load Balancer Video Library</h3>
+                        <h3>Biblioteca de Vídeo do Balanceador de Carga</h3>
                     </div>
                 </div>
             </div>
@@ -53,7 +57,7 @@ Azure Load Balancer delivers high availability and network performance to your a
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Get started with an Internet-facing load balancer</h3>
+                        <h3>Introdução ao balanceador de carga com acesso à Internet</h3>
                     </div>
                 </div>
             </div>
@@ -71,7 +75,7 @@ Azure Load Balancer delivers high availability and network performance to your a
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Get started with an internal-facing load balancer</h3>
+                        <h3>Introdução ao balanceador de carga com acesso interno</h3>
                     </div>
                 </div>
             </div>
@@ -82,29 +86,34 @@ Azure Load Balancer delivers high availability and network performance to your a
 
 ---
 
-##Reference
+##<a name="reference"></a>Referência
 
-###PowerShell
-[Load Balancer PowerShell Reference](/powershell/azureps-cmdlets-doc)
+###<a name="powershell"></a>PowerShell
+[Referência do PowerShell do Balanceador de Carga](/powershell/azureps-cmdlets-doc)
 
-###Azure CLI
-[Load Balancer Azure CLI] (/cli/azure/network/lb)
+###<a name="azure-cli"></a>CLI do Azure
+[CLI do Azure do Balanceador de Carga] (/cli/azure/rede/lb)
 
-###.NET
-[.NET API Reference](/dotnet/api)
+###<a name="net"></a>.NET
+[Referência da API .NET](/dotnet/api)
 
-###Java
-[Java API Reference](/java/api)
+###<a name="java"></a>Java
+[Referência de Java API](/java/api)
 
-###REST
-[Load Balancer REST API Reference](https://msdn.microsoft.com/library/azure/mt163651.aspx)
+###<a name="rest"></a>REST
+[Referência da API REST do Balanceador de Carga](https://msdn.microsoft.com/library/azure/mt163651.aspx)
 
 
 <div class="downloadHolder">
     <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/load-balancer.pdf">
         <div class="img"></div>
         <div class="text">
-            Download Load Balancer Documentation
-        </div>
+Transferir a Documentação do Load Balancer </div>
     </a>
 </div>
+
+
+
+<!--HONumber=Nov16_HO2-->
+
+

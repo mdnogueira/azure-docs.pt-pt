@@ -1,28 +1,32 @@
 ---
-title: Personalizar o portal do programador na API Management do Azure | Microsoft Docs
+title: "Personalizar o portal do programador na Gestão de API do Azure | Microsoft Docs"
 description: Saiba como personalizar o portal do programador na API Management do Azure.
 services: api-management
-documentationcenter: ''
+documentationcenter: 
 author: steved0x
 manager: erikre
-editor: ''
-
+editor: 
+ms.assetid: 186128fe-41c0-4efb-9efe-2478ad4d103f
 ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 08/24/2016
+ms.date: 10/25/2016
 ms.author: sdanie
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: 398b845a6549341d6afba101acec9eefd146d810
+
 
 ---
-# Personalizar o portal do programador na API Management do Azure
+# <a name="customize-the-developer-portal-in-azure-api-management"></a>Personalizar o portal do programador na API Management do Azure
 Este guia mostra como modificar o aspeto e a funcionalidade do portal do programador na API Management do Azure para manter a consistência com a sua marca.
 
 ## <a name="change-page-headers"> </a>Alterar o texto ou logótipo no cabeçalho da página
 Um dos aspetos fundamentais da personalização do portal é substituir o texto na parte superior de todas as páginas pelo nome ou logótipo da sua empresa.
 
-O conteúdo do portal do programador é modificado através do portal do publicador, que é acedido através do Portal Clássico do Azure. Para aceder ao portal do publicador da API, clique em **Gerir** no Portal Clássico do Azure do seu serviço da API Management.
+O conteúdo do portal do programador é modificado através do portal do publicador, que é acedido a partir do Portal do Azure. Para o alcançar, clique em **Portal do publicador** na barra de ferramentas de serviço da sua instância de Gestão de API.
 
 ![Portal do publicador][api-management-management-console]
 
@@ -55,7 +59,7 @@ Cada regra representa uma propriedade de estilo do elemento selecionado. Por exe
 > 
 > 
 
-Vamos alterar a cor do texto do cabeçalho. Selecione a entrada no campo **@headings-color** e escreva **#000000**. Este é o código hexadecimal para a cor preta. Ao fazê-lo, verá que é apresentado um indicador de cor quadrado no final da caixa de texto. Se clicar neste indicador, um seletor de cores permite-lhe selecionar uma cor.
+Vamos alterar a cor do texto do cabeçalho. Selecione a entrada no campo **@headings-color** e tipo **#000000**. Este é o código hexadecimal para a cor preta. Ao fazê-lo, verá que é apresentado um indicador de cor quadrado no final da caixa de texto. Se clicar neste indicador, um seletor de cores permite-lhe selecionar uma cor.
 
 ![Seletor de cores][api-management-customization-toolbar-color-picker]
 
@@ -86,7 +90,7 @@ Clique na página **Bem-vindo** para editar o que é apresentado na home page do
 [Alterar o texto/logótipo nos cabeçalhos de página]: #change-page-headers
 [Alterar o estilo dos cabeçalhos]: #change-headers-styling
 [Editar o conteúdo de uma página]: #edit-page-contents
-[Passos seguintes]: #next-steps
+[Passos seguintes?]: #next-steps
 
 [Portal Clássico do Azure]: https://manage.windowsazure.com/
 
@@ -99,10 +103,10 @@ Clique na página **Bem-vindo** para editar o que é apresentado na home page do
 
 
 [bootstrap]: http://getbootstrap.com/
-[variáveis LESS]: http://getbootstrap.com/css/
+[Variáveis LESS]: http://getbootstrap.com/css/
 
 
 
-<!--HONumber=ago16_HO5-->
+<!--HONumber=Nov16_HO2-->
 
 

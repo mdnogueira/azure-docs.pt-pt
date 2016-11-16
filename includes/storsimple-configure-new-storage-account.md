@@ -1,6 +1,6 @@
 <!--author=SharS last changed: 9/17/15-->
 
-#### Para adicionar uma nova conta de armazenamento na versão de Lançamento (GA) do StorSimple
+#### <a name="to-add-a-new-storage-account-in-storsimple-release-version-ga"></a>Para adicionar uma nova conta de armazenamento na versão de Lançamento (GA) do StorSimple
 1. Na página de destino do serviço StorSimple Manager, selecione o seu serviço e faça duplo clique para aceder à página **Início Rápido**. Selecione a página **Configurar**.
 2. Clique em **Adicionar/editar conta de armazenamento**.
 3. Na caixa de diálogo **Adicionar/editar conta de armazenamento**, faça o seguinte:
@@ -14,6 +14,8 @@
       ![Adicionar conta de armazenamento](./media/storsimple-configure-new-storage-account/HCS_AddStorageAccount-include.png)
 4. A conta de armazenamento recentemente criada será apresentada na página **Configurar** em **Contas de armazenamento**. Clique em **Guardar** para guardar a conta de armazenamento recentemente criada. Clique em **OK** quando lhe for pedida a confirmação.
 
-<!--HONumber=Sep16_HO3-->
+
+
+<!--HONumber=Nov16_HO2-->
 
 

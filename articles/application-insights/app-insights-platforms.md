@@ -1,11 +1,11 @@
 ---
-title: 'Application Insights: linguagens, plataformas e integrações | Microsoft Docs'
-description: Linguagens, plataformas e integrações disponíveis para o Application Insights
+title: "Application Insights: linguagens, plataformas e integrações | Microsoft Docs"
+description: "Linguagens, plataformas e integrações disponíveis para o Application Insights"
 services: application-insights
-documentationcenter: ''
+documentationcenter: 
 author: OlegAnaniev-MSFT
 manager: douge
-
+ms.assetid: 974db106-54ff-4318-9f8b-f7b3a869e536
 ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
@@ -13,26 +13,30 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 09/01/2016
 ms.author: awills
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: fa0fe7ee7b0a24b679b86dece2a3294004b57815
+
 
 ---
-# Análise do programador: idiomas, plataformas e integrações
+# <a name="developer-analytics-languages-platforms-and-integrations"></a>Análise do programador: idiomas, plataformas e integrações
 Estes itens são implementações do [Application Insights](app-insights-overview.md) que já conhecemos, incluindo alguns de terceiros.
 
-## Linguagens
+## <a name="languages"></a>Linguagens
 * [C#|VB (.NET)](app-insights-asp-net.md)
 * [Java](app-insights-java-get-started.md)
 * [Páginas Web JavaScript](app-insights-web-track-usage.md)
 * [Objective-C](https://github.com/Microsoft/ApplicationInsights-iOS)
 * [PHP](https://github.com/Microsoft/ApplicationInsights-PHP)
-* [Python](https://pypi.python.org/pypi/applicationinsights/0.1.0)
+* [python](https://pypi.python.org/pypi/applicationinsights/0.1.0)
 * [Ruby](https://rubygems.org/gems/application_insights)
 * [Tudo o resto](#projects)
 
-## Plataformas e estruturas
+## <a name="platforms-and-frameworks"></a>Plataformas e estruturas
 * [Angular](https://www.npmjs.com/package/angular-applicationinsights)
 * [ASP.NET](app-insights-asp-net.md)
 * [ASP.NET – para aplicações que já estão em direto](app-insights-monitor-performance-live-website-now.md)
-* [ASP.NET 5](app-insights-asp-net-core.md)
+* [ASP.NET 5](app-insights-asp-net-core.md)
 * [Android](https://github.com/Microsoft/ApplicationInsights-Android) (HockeyApp)
 * [Aplicações Web do Azure e VMs](app-insights-azure-web-apps.md)
 * [Cloud Services do Azure](app-insights-cloudservices.md): incluindo funções Web e funções de trabalho
@@ -53,13 +57,14 @@ Estes itens são implementações do [Application Insights](app-insights-overvie
 * [Aplicações de ambiente de trabalho, serviços e funções de trabalho do Windows](app-insights-windows-desktop.md)
 * [Tudo o resto](#projects)
 
-## Arquiteturas de registo
+## <a name="logging-frameworks"></a>Arquiteturas de registo
 * [Log4Net, NLog ou System.Diagnostics.Trace](app-insights-diagnostic-search.md)
 * [Java, Log4J ou Logback](app-insights-java-trace-logs.md)
 * [Semantic Logging (SLAB)](https://github.com/fidmor89/SLAB_AppInsights): integra-se ao [Semantic Logging Application Block](https://msdn.microsoft.com/library/dn440729.aspx)
 * [Teste de carga baseado na nuvem](http://blogs.msdn.com/b/visualstudioalm/archive/2015/07/30/getting-application-insights-counters-with-cloud-based-load-testing.aspx)
+* [Plug-in do LogStash](https://github.com/Azure/azure-diagnostics-tools/tree/master/Logstash/logstash-output-applicationinsights)
 
-## Sistemas de Gestão de Conteúdo
+## <a name="content-management-systems"></a>Sistemas de Gestão de Conteúdo
 * [Concrete](https://github.com/fidmor89/appInsights-Concrete)
 * [Drupal](https://github.com/fidmor89/AppInsights-Drupal)
 * [Joomla](https://github.com/fidmor89/AppInsights-Joomla)
@@ -67,14 +72,17 @@ Estes itens são implementações do [Application Insights](app-insights-overvie
 * [SharePoint](app-insights-sharepoint.md)
 * [WordPress](https://wordpress.org/plugins/application-insights/)
 
-## Análise de Dados e Exportação
+## <a name="export-and-data-analysis"></a>Análise de Dados e Exportação
 * [Alooma](https://www.alooma.com/blog/application-insights-amazon-redshift)
 * [Power BI](http://blogs.msdn.com/b/powerbi/archive/2015/11/04/explore-your-application-insights-data-with-power-bi.aspx)
 * [Stream Analytics](app-insights-export-power-bi.md)
 
-## <a name="projects"></a> Criar o seu próprio SDK
+## <a name="a-nameprojectsa-build-your-own-sdk"></a><a name="projects"></a> Criar o seu próprio SDK
 Se ainda não tem um SDK para o seu idioma ou plataforma, gostaria de criar um? Observe o código dos SDKs existentes listados no [Projeto Application Insights SDK no GitHub](https://github.com/Microsoft/AppInsights-Home).
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

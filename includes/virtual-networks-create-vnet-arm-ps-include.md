@@ -1,8 +1,8 @@
-## Como criar uma VNet com o PowerShell
+## <a name="how-to-create-a-vnet-using-powershell"></a>Como criar uma VNet com o PowerShell
 Para criar uma VNet com o PowerShell, siga os passos abaixo.
 
 1. Se nunca tiver utilizado o Azure PowerShell, veja [How to Install and Configure Azure PowerShell (Como instalar e configurar o Azure PowerShell)](../articles/powershell-install-configure.md) e siga as instruções até ao fim para iniciar sessão no Azure e selecionar a sua subscrição.
-2. Se necessário, crie um novo grupo de recursos, conforme mostrado abaixo. Para o nosso cenário, crie um grupo de recursos com o nome *TestRG*. Para obter mais informações sobre os grupos de recursos, veja [Descrição Geral do Azure Resource Manager](../articles/resource-group-overview.md).
+2. Se necessário, crie um novo grupo de recursos, conforme mostrado abaixo. Para o nosso cenário, crie um grupo de recursos com o nome *TestRG*. Para obter mais informações sobre os grupos de recursos, veja [Descrição Geral do Azure Resource Manager](../articles/azure-resource-manager/resource-group-overview.md).
    
         New-AzureRmResourceGroup -Name TestRG -Location centralus
    
@@ -12,36 +12,29 @@ Para criar uma VNet com o PowerShell, siga os passos abaixo.
         Location          : centralus
         ProvisioningState : Succeeded
         Tags              :
-        Permissions       :
-                            Actions  NotActions
-                            =======  ==========
-                            *
-   
-        ResourceId        : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/TestRG   
+        ResourceId        : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/TestRG    
 3. Crie uma nova VNet com o nome *TestVNet*, como mostrado abaixo.
    
         New-AzureRmVirtualNetwork -ResourceGroupName TestRG -Name TestVNet `
-            -AddressPrefix 192.168.0.0/16 -Location centralus   
+            -AddressPrefix 192.168.0.0/16 -Location centralus    
    
     Resultado esperado:
    
-        Name              : TestVNet
-        ResourceGroupName : TestRG
-        Location          : centralus
-        Id                : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/TestRG/providers/Microsoft.Network/virtualNetworks/TestVNet
-        Etag              : W/"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-        ProvisioningState : Succeeded
-        Tags              :
-        AddressSpace      : {
-                              "AddressPrefixes": [
-                                "192.168.0.0/16"
-                              ]
-                            }
-        DhcpOptions       : {
-                              "DnsServers": null
-                            }
-        NetworkInterfaces : null
-        Subnets           : []
+        Name                  : TestVNet
+        ResourceGroupName     : TestRG
+        Location              : centralus
+        Id                    : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/TestRG/providers/Microsoft.Network/virtualNetworks/TestVNet
+        Etag                   : W/"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+        ProvisioningState          : Succeeded
+        Tags                       : 
+        AddressSpace               : {
+                                   "AddressPrefixes": [
+                                     "192.168.0.0/16"
+                                   ]
+                                  }
+        DhcpOptions                : {}
+        Subnets                    : []
+        VirtualNetworkPeerings     : []
 4. Armazene o objeto da rede virtual numa variável, como mostrado abaixo.
    
         $vnet = Get-AzureRmVirtualNetwork -ResourceGroupName TestRG -Name TestVNet
@@ -57,83 +50,73 @@ Para criar uma VNet com o PowerShell, siga os passos abaixo.
    
     Resultado esperado:
    
-        Name              : TestVNet
-        ResourceGroupName : TestRG
-        Location          : centralus
-        Id                : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/TestRG/providers/Microsoft.Network/virtualNetworks/TestVNet
-        Etag              : W/"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-        ProvisioningState : Succeeded
-        Tags              :
-        AddressSpace      : {
-                              "AddressPrefixes": [
-                                "192.168.0.0/16"
-                              ]
-                            }
-        DhcpOptions       : {
-                              "DnsServers": null
-                            }
-        NetworkInterfaces : null
-        Subnets           : [
-                              {
-                                "Name": "FrontEnd",
-                                "Etag": null,
-                                "Id": null,
-                                "AddressPrefix": "192.168.1.0/24",
-                                "IpConfigurations": null,
-                                "NetworkSecurityGroup": null,
-                                "RouteTable": null,
-                                "ProvisioningState": null
-                              }
-                            ]
+        Name                  : TestVNet
+        ResourceGroupName     : TestRG
+        Location              : centralus
+        Id                    : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/TestRG/providers/Microsoft.Network/virtualNetworks/TestVNet
+        Etag                  : W/"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+        ProvisioningState     : Succeeded
+        Tags                  :
+        AddressSpace          : {
+                                  "AddressPrefixes": [
+                                    "192.168.0.0/16"
+                                  ]
+                                }
+        DhcpOptions           : {}
+        Subnets             : [
+                                  {
+                                    "Name": "FrontEnd",
+                                    "AddressPrefix": "192.168.1.0/24"
+                                  }
+                                ]
+        VirtualNetworkPeerings     : []
 6. Repita o passo 5 acima para cada sub-rede que pretende criar. O comando abaixo cria a sub-rede do *Back-end* para o nosso cenário.
    
         Add-AzureRmVirtualNetworkSubnetConfig -Name BackEnd `
             -VirtualNetwork $vnet -AddressPrefix 192.168.2.0/24
-7. Embora crie sub-redes, elas atualmente só existem na variável local utilizada para obter a VNet que criou no passo 4 acima. Para guardar as alterações no Azure, execute o cmdlet **Set-AzureRmVirtualNetwork**, como mostrado abaixo.
+7. Embora crie sub-redes, elas atualmente só existem na variável local utilizada para obter a VNet que criou no passo 4 acima. Para guardar as alterações no Azure, execute o cmdlet **Set-AzureRmVirtualNetwork**, como mostrado abaixo.
    
-        Set-AzureRmVirtualNetwork -VirtualNetwork $vnet 
+        Set-AzureRmVirtualNetwork -VirtualNetwork $vnet    
    
     Resultado esperado:
    
-        Name              : TestVNet
-        ResourceGroupName : TestRG
-        Location          : centralus
-        Id                : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/TestRG/providers/Microsoft.Network/virtualNetworks/TestVNet
-        Etag              : W/"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-        ProvisioningState : Succeeded
-        Tags              :
-        AddressSpace      : {
-                              "AddressPrefixes": [
-                                "192.168.0.0/16"
-                              ]
-                            }
-        DhcpOptions       : {
-                              "DnsServers": []
-                            }
-        NetworkInterfaces : null
-        Subnets           : [
-                              {
-                                "Name": "FrontEnd",
-                                "Etag": "W/\"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"",
-                                "Id": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/TestRG/providers/Microsoft.Network/virtualNetworks/TestVNet/subnets/FrontEnd",
-                                "AddressPrefix": "192.168.1.0/24",
-                                "IpConfigurations": [],
-                                "NetworkSecurityGroup": null,
-                                "RouteTable": null,
-                                "ProvisioningState": "Succeeded"
-                              },
-                              {
-                                "Name": "BackEnd",
-                                "Etag": "W/\"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"",
-                                "Id": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/TestRG/providers/Microsoft.Network/virtualNetworks/TestVNet/subnets/BackEnd",
-                                "AddressPrefix": "192.168.2.0/24",
-                                "IpConfigurations": [],
-                                "NetworkSecurityGroup": null,
-                                "RouteTable": null,
-                                "ProvisioningState": "Succeeded"
-                              }
-                            ]
+        Name                  : TestVNet
+        ResourceGroupName     : TestRG
+        Location              : centralus
+        Id                    : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/TestRG/providers/Microsoft.Network/virtualNetworks/TestVNet
+        Etag                  : W/"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+        ProvisioningState     : Succeeded
+        Tags                  :
+        AddressSpace          : {
+                                  "AddressPrefixes": [
+                                    "192.168.0.0/16"
+                                  ]
+                                }
+        DhcpOptions           : {
+                                  "DnsServers": []
+                                }
+        Subnets               : [
+                                  {
+                                    "Name": "FrontEnd",
+                                    "Etag": "W/\"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"",
+                                    "Id": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/TestRG/providers/Microsoft.Network/virtualNetworks/TestVNet/subnets/FrontEnd",
+                                    "AddressPrefix": "192.168.1.0/24",
+                                    "IpConfigurations": [],
+                                    "ProvisioningState": "Succeeded"
+                                  },
+                                  {
+                                    "Name": "BackEnd",
+                                    "Etag": "W/\"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"",
+                                    "Id": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/TestRG/providers/Microsoft.Network/virtualNetworks/TestVNet/subnets/BackEnd",
+                                    "AddressPrefix": "192.168.2.0/24",
+                                    "IpConfigurations": [],
+                                    "ProvisioningState": "Succeeded"
+                                  }
+                                ]
+        VirtualNetworkPeerings : []
 
-<!--HONumber=Jun16_HO2-->
+
+
+<!--HONumber=Nov16_HO2-->
 
 

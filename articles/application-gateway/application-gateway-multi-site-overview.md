@@ -1,41 +1,45 @@
 ---
-title: Hosting multiple sites on Application Gateway | Microsoft Docs
-description: This page provides an overview of the Application Gateway multi-site support.
+title: "Alojar vários sites no Gateway de Aplicação | Microsoft Docs"
+description: "Esta página fornece uma descrição geral do suporte para vários sites do Gateway de Aplicação."
 documentationcenter: na
 services: application-gateway
 author: amsriva
 manager: rossort
 editor: amsriva
-
+ms.assetid: 49993fd2-87e5-4a66-b386-8d22056a616d
 ms.service: application-gateway
 ms.devlang: na
-ms.topic: article
+ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 07/07/2016
+ms.date: 10/25/2016
 ms.author: amsriva
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: 85fc1315f32811873c577fe75d88eb08a2bbac26
+
 
 ---
-# Application Gateway multiple site hosting
-Multiple site hosting enables you to configure more than one web application on the same application gateway instance. This feature allows you to configure more efficient topology for your deployments by packing up to 20 websites to one application gateway. Each website could be directed to its own backend pool. In the following example, application gateway is serving traffic for contoso.com and fabrikam.com from two back-end server pools called ContosoServerPool and FabrikamServerPool.
+# <a name="application-gateway-multiple-site-hosting"></a>Alojamento de vários sites do Gateway de Aplicação
+O alojamento de vários sites permite-lhe configurar mais do que uma aplicação Web na mesma instância do gateway de aplicação. Esta funcionalidade permite-lhe configurar uma topologia mais eficiente para as suas implementações ao adicionar até 20 sites a um gateway de aplicação. Cada site pode ser direcionado para o seu próprio agrupamento de back-end. No exemplo seguinte, o gateway de aplicação está a enviar tráfego para contoso.com e fabrikam.com a partir de dois agrupamentos de servidores de back-end com o nome ContosoServerPool e FabrikamServerPool.
 
 ![imageURLroute](./media/application-gateway-multi-site-overview/multisite.png)
 
-Requests for http://contoso.com are routed to ContosoServerPool, and http://fabrikam.com are routed to FabrikamServerPool. 
+Os pedidos enviados para http://contoso.com são encaminhados para ContosoServerPool, enquanto os pedidos para http://fabrikam.com são encaminhados para FabrikamServerPool.
 
-Similarly two subdomains of the same parent domain can be hosted on the same application gateway deployment. Examples of using sub-domains could include http://blog.contoso.com and http://app.contoso.com hosted on a single application gateway deployment.
+Da mesma forma, dois subdomínios do mesmo domínio principal podem ser alojados na mesma implementação do gateway de aplicação. Os exemplos de como utilizar subdomínios podem incluir o http://blog.contoso.com e o http://app.contoso.com alojados numa única implementação do gateway de aplicação.
 
-## Host headers and Server Name Indication (SNI)
-There are three common mechanisms for enabling multiple site hosting on the same infrastructure. 
+## <a name="host-headers-and-server-name-indication-sni"></a>Cabeçalhos de anfitrião e Indicação do Nome de Servidor (SNI)
+Existem três mecanismos comuns que permitem alojar vários sites na mesma infraestrutura.
 
-1. Host multiple web applications each on a unique IP address.
-2. Use host name to host multiple web applications on the same IP address.
-3. Use different ports to host multiple web application on the same IP address.
+1. Aloje várias aplicações Web, cada uma num endereço IP exclusivo.
+2. Utilize o nome do anfitrião para alojar várias aplicações Web no mesmo endereço IP.
+3. Utilize portas diferentes para alojar várias aplicações Web no mesmo endereço IP.
 
-Currently an application gateway gets a single public IP address on which it listens for traffic. Therefore supporting multiple applications, each with its own IP address, is currently not supported. Application Gateway supports hosting multiple application each listening on different ports but this scenario would require the applications to accept traffic on non-standard ports and is often not a desired configuration. Application Gateway relies on HTTP 1.1 host headers to host more than one website on the same public IP address and port. The sites hosted on application gateway can also support SSL offload with Server Name Indication (SNI) TLS extension. This scenario means that the client browser and backend web farm must support HTTP/1.1 and TLS extension as defined in RFC 6066.
+De momento, um gateway de aplicação obtém um endereço IP público exclusivo no qual escuta tráfego. Por conseguinte, atualmente, não é possível suportar várias aplicações, cada uma com o seu próprio endereço IP. O Gateway de Aplicação suporta o alojamento de várias aplicações, cada uma a escutar em portas diferentes. No entanto, este cenário requer que as aplicações aceitem tráfego em portas não padrão, o que, normalmente, não é uma configuração desejada. O Gateway de Aplicação conta com os cabeçalhos de anfitrião HTTP 1.1 para alojar mais do que um site no mesmo endereço IP público e porta. Os sites alojados no gateway de aplicação também podem suportar descarga de SSL com a extensão TLS da Indicação do Nome de Servidor (SNI). Neste cenário, o browser cliente e o web farm de back-end têm de suportar HTTP/1.1 e a extensão TLS conforme definido em RFC 6066.
 
-## Listener configuration element
-Existing HTTPListener configuration element is enhanced to support host name and server name indication elements, which is used by application gateway to route traffic to appropriate backend pool. The following code example is the snippet of HttpListeners element from template file.
+## <a name="listener-configuration-element"></a>Elemento de configuração do serviço de escuta
+O elemento de configuração HTTPListener existente foi melhorado para suportar elementos de nome de anfitrião e de indicação do nome de servidor, os quais são utilizados pelo gateway de aplicação para encaminhar tráfego para o agrupamento de back-end adequado. O seguinte exemplo de código é o fragmento do elemento HttpListeners do ficheiro de modelo.
 
     "httpListeners": [
                 {
@@ -74,10 +78,10 @@ Existing HTTPListener configuration element is enhanced to support host name and
 
 
 
-You can check out [Resource Manager template using multiple site hosting](https://github.com/Azure/azure-quickstart-templates/blob/master/201-application-gateway-multihosting) for an end to end template-based deployment.
+Pode visitar o [modelo do Resource Manager através do alojamento de vários sites](https://github.com/Azure/azure-quickstart-templates/blob/master/201-application-gateway-multihosting) para obter uma implementação baseada num modelo ponto a ponto.
 
-## Routing rule
-There is no change required in routing rule. Routing rule 'Basic' should continue to be chosen to tie the appropriate site listener to the corresponding backend address pool.
+## <a name="routing-rule"></a>Regra de encaminhamento
+Não há qualquer alteração obrigatória na regra de encaminhamento. Deve continuar a escolher a regra de encaminhamento “Básica” para associar o serviço de escuta de sites ao conjunto de endereços de back-end correspondente.
 
     "requestRoutingRules": [
     {
@@ -114,6 +118,12 @@ There is no change required in routing rule. Routing rule 'Basic' should continu
     }
     ]
 
-## Next steps
-After learning about multiple site hosting, go to [create an application gateway using multiple site hosting](application-gateway-create-multisite-azureresourcemanager-powershell.md) to create an application gateway with ability to support more than one web application.
+## <a name="next-steps"></a>Passos seguintes
+Depois de saber mais sobre o alojamento de vários sites, veja o artigo [Criar um gateway de aplicação através do alojamento de vários sites](application-gateway-create-multisite-azureresourcemanager-powershell.md) para criar um gateway de aplicação com capacidade para suportar mais do que uma aplicação Web.
+
+
+
+
+<!--HONumber=Nov16_HO2-->
+
 

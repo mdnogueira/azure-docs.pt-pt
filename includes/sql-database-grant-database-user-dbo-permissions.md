@@ -1,6 +1,6 @@
 
 
-## Conceder permissões db_owner a um novo utilizador da base de dados
+## <a name="grant-new-database-user-dbowner-permissions"></a>Conceder permissões db_owner a um novo utilizador da base de dados
 Utilize os seguintes passos para conceder permissões db_owner a um utilizador existente da base de dados
 
 Estes passos presumem que está ligado à SQL Database no Object Explorer no SSMS e que está ligado ao servidor lógico da SQL Database como um administrador principal ao nível do servidor ou com uma conta de utilizador com permissões para conceder permissões a utilizadores. 
@@ -18,6 +18,8 @@ Estes passos presumem que está ligado à SQL Database no Object Explorer no SSM
    
      ![SQL Server Management Studio: Connect to SQL Database server](./media/sql-database-grant-database-user-dbo-permissions/sql-database-grant-database-user-dbo-permissions-1.png)
 
-<!--HONumber=Sep16_HO3-->
+
+
+<!--HONumber=Nov16_HO2-->
 
 

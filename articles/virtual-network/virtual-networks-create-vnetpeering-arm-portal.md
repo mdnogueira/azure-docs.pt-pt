@@ -1,13 +1,13 @@
 ---
-title: Criar VNet Peering através do Portal do Azure | Microsoft Docs
+title: "Criar VNet Peering através do Portal do Azure | Microsoft Docs"
 description: Saiba como criar uma rede virtual com o portal do Azure no Resource Manager.
 services: virtual-network
-documentationcenter: ''
+documentationcenter: 
 author: NarayanAnnamalai
 manager: jefco
-editor: ''
+editor: 
 tags: azure-resource-manager
-
+ms.assetid: 026bca75-2946-4c03-b4f6-9f3c5809c69a
 ms.service: virtual-network
 ms.devlang: na
 ms.topic: hero-article
@@ -15,9 +15,13 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/14/2016
 ms.author: narayanannamalai;annahar
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: 688fed72b32767f33010b9e8f17921b16320072d
+
 
 ---
-# Criar um peering de rede virtual com o portal do Azure
+# <a name="create-a-virtual-network-peering-using-the-azure-portal"></a>Criar um peering de rede virtual com o portal do Azure
 [!INCLUDE [virtual-networks-create-vnet-selectors-arm-include](../../includes/virtual-networks-create-vnetpeering-selectors-arm-include.md)]
 
 [!INCLUDE [virtual-networks-create-vnet-intro](../../includes/virtual-networks-create-vnetpeering-intro-include.md)]
@@ -62,7 +66,7 @@ Existem algumas propriedades configuráveis para cada ligação:
 | Opção | Descrição | Predefinição |
 |:--- |:--- |:--- |
 | AllowVirtualNetworkAccess |Se o espaço de endereços da VNet em modo de peering vai ser incluído como parte da Etiqueta Virtual_network |Sim |
-| AllowForwardedTraffic |Permite que o tráfego que não provém da VNet em modo de peering seja aceite ou removido |Não |
+| AllowForwardedTraffic |Se o tráfego que não provém de uma VNet em modo de peering seja aceite ou removido |Não |
 | AllowGatewayTransit |Permite que a VNet em modo de peering utilize o seu gateway de VNet |Não |
 | UseRemoteGateways |Utilize o gateway da VNet em modo de peering. A VNet em modo de peering tem de ter um gateway configurado e AllowGatewayTransit deve estar selecionado. Não pode utilizar esta opção se tiver um gateway configurado |Não |
 
@@ -90,7 +94,7 @@ Cada ligação no VNet peering tem um conjunto das propriedades acima indicadas.
    > 
 6. Inicie sessão no portal como UserA, navegue para o painel VNET3, clique em Peering, marque a caixa de verificação “Sei o ID de recurso” e escreva o ID do recurso para a VNET5 no formato abaixo.
    
-    /subscriptions/<Subscription- ID>/resourceGroups/<ResourceGroupName>/providers/Microsoft.Network/VirtualNetwork/<VNET name>
+    /subscriptions/{SubscriptionID}/resourceGroups/{ResourceGroupName}/providers/Microsoft.Network/VirtualNetwork/{VNETname}
    
     ![ID do Recurso](./media/virtual-networks-create-vnetpeering-arm-portal/figure12.png)
 7. Inicie sessão no portal como UserB e siga os passos acima para criar a ligação peering da VNET5 para a VNet3.
@@ -121,7 +125,7 @@ Cada ligação no VNet peering tem um conjunto das propriedades acima indicadas.
    
     ![Verificar a ligação de peering](./media/virtual-networks-create-vnetpeering-arm-portal/figure19.png)
 
-## Remover VNet Peering
+## <a name="remove-vnet-peering"></a>Remover VNet Peering
 1. Num browser, navegue para http://portal.azure.com e, se necessário, inicie sessão com a sua conta do Azure.
 2. Aceda ao painel Rede Virtual, clique em Peerings, clique na Ligação que pretende remover e clique no botão Eliminar.
    
@@ -131,6 +135,9 @@ Cada ligação no VNet peering tem um conjunto das propriedades acima indicadas.
     ![Delete2](./media/virtual-networks-create-vnetpeering-arm-portal/figure16.png)
 4. Neste estado, não é possível recriar a ligação até que o estado da ligação de peering mude para Iniciado. Recomendamos que remova ambas as ligações antes de recriar o VNET peering.
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

@@ -1,12 +1,12 @@
 ---
-title: Definir a sua estratégia de Mobile Engagement | Microsoft Docs
-description: Saiba como integrar e otimizar o seu Mobile Engagement com notificações push e de análise.
+title: "Definir a sua estratégia de Mobile Engagement | Microsoft Docs"
+description: "Saiba como integrar e otimizar o seu Mobile Engagement com notificações push e de análise."
 services: mobile-engagement
 documentationcenter: Mobile
 author: piyushjo
 manager: dwrede
-editor: ''
-
+editor: 
+ms.assetid: 7533e318-81b9-4360-aace-b7be8225985b
 ms.service: mobile-engagement
 ms.workload: mobile
 ms.tgt_pltfrm: na
@@ -14,9 +14,13 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 08/19/2016
 ms.author: piyushjo
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: 8cb91a8cdc6d16070034c79515731be7b820d389
+
 
 ---
-# Definir a sua estratégia de Mobile Engagement
+# <a name="define-your-mobile-engagement-strategy"></a>Definir a sua estratégia de Mobile Engagement
 *Escreveu a aplicação por um motivo: para que os seus utilizadores a utilizem!*
 
 Acreditamos que certamente dedicou um elevado grau de esforço para torná-la uma aplicação excelente que os utilizadores vão adorar. Provavelmente também investiu uma parte significativa do orçamento em marketing para obter utilizadores. Mas após o pico inicial entusiasmante de utilizadores, é possível que lentamente deixem de utilizar a aplicação. *A essência do Azure Mobile Engagement reside precisamente aqui!*: fazer com que os utilizadores continuem ativos e permitir que melhore gradualmente a aplicação através de testes e processos de aprendizagem.
@@ -25,7 +29,7 @@ A nossa abordagem para a melhoria da retenção e da utilização é baseada no 
 
 Mas para isso será necessário começar por *compreender os seus utilizadores* e então criar grupos com base naquilo que fizeram ou nas respetivas caraterísticas (aquilo a que chamamos segmentos) e, em seguida, criar comunicações relevantes para cada segmento.
 
-## O Mobile Engagement serve os seus objetivos
+## <a name="mobile-engagement-serves-your-objectives"></a>O Mobile Engagement serve os seus objetivos
 *Falamos sobre retenção e utilização, mas para quê?*
 
 A criação da sua estratégia de Mobile Engagement exige que comece por analisar os objetivos e os indicadores chave de desempenho (KPIs) da sua aplicação.
@@ -45,14 +49,14 @@ Assim que os casos de utilização e o segmento estejam definidos, fornece uma d
 
 Com base na integração, assim que as aplicações são publicadas, na qualidade de comerciante, conseguirá ver as suas análises em tempo real, segmentar o seu público-alvo e, em seguida, começar a enviar notificações push inteligentemente segmentadas para envolver os utilizadores finais dentro ou fora da aplicação.
 
-### Casos de utilização para começar
+### <a name="usecases-to-get-started"></a>Casos de utilização para começar
 1. Estratégia de boas-vindas: crie várias campanhas de notificações push baseadas no comportamento do utilizador final no momento da execução da aplicação para um novo envolvimento em D+2/5/10/15 após a primeira sessão e aumentar a retenção na primeira execução.
 2. Promova um novo conteúdo (funcionalidade, artigo/vídeo ou produto) com base no comportamento do utilizador final para enviar as informações apenas aos utilizadores finais que têm maior probabilidade de interagir.
 3. Classificar a aplicação: segmente menos de 1 por cento da sua base de utilizadores que tem maior probabilidade de classificar a avaliação com 5 estrelas na loja.
 4. Impulsionar as subscrições: promova conteúdos importantes para os utilizadores finais que ainda não tenham contribuído para o aumento das subscrições.
 5. Tutorial: acabaram os tutoriais obrigatórios para toda a gente. Porque não criar tutoriais excelentes na aplicação e, em seguida, acioná-los através de mensagens na aplicação apenas se o utilizador parecer não utilizar a aplicação ou tiver dificuldade em utilizar uma funcionalidade?
 
-## Por que motivo precisa de análises para o envolvimento?
+## <a name="why-do-you-need-analytics-to-engage"></a>Por que motivo precisa de análises para o envolvimento?
 Como se pode ter apercebido neste momento, efetuar apenas uma notificação push de difusão não é suficiente. O conceito central do Mobile Engagement é ajudar os comerciantes e os programadores no envolvimento com o utilizador final certo, no momento certo e no local certo. Para conhecer estes três conceitos principais, é essencial recolher análises da sua aplicação e, em seguida, utilizá-las para segmentar o seu público-alvo. Isto também é ainda mais poderoso quando os segmentos de comportamento complementam os dados da sua outra base de dados ou CRM ou a partir de um canal cruzado. O Mobile Engagement permite a obtenção de dados a partir de qualquer lugar e utiliza-os para segmentar o público-alvo adequado.
 
 Para ser o mais contextual possível no envolvimento com o seu público-alvo, é fundamental ter conhecimentos sobre o comportamento dos utilizadores finais e conhecer o respetivo estado em tempo real. A recolha de dados permite que os comerciantes se concentrem naquilo que realmente interessa para reproduzir casos de utilização e alcançar os seus objetivos de estratégia de Mobile Engagement. Alcançar os objetivos definidos anteriormente é também o motivo pelo qual a melhor prática não é na realidade recolher todos e quaisquer dados nas análises, mas apenas os dados que lhe permitem focar-se naquilo que pretende saber e nos casos de utilização. Este é a forma ideal para começar, experimentar, testar e aprender a utilizar a solução e endereçar a notificação push inteligente e aumentar a retenção de uma aplicação para colocá-la ao nível de uma história de sucesso.
@@ -62,42 +66,42 @@ Para ser o mais contextual possível no envolvimento com o seu público-alvo, é
 > 
 > 
 
-### Casos de utilização e melhores práticas
+### <a name="usecases-and-best-practices"></a>Casos de utilização e melhores práticas
 Nas secções seguintes são brevemente discutidos alguns casos de utilização chave de clientes com os quais nos temos deparado para o ajudar a começar.
 
-#### Meios de comunicação social
+#### <a name="media"></a>Meios de comunicação social
 Recolha o tipo de conteúdo que é consumido pelo utilizador final e, em seguida, segmente o público-alvo com base neste comportamento para visar tipos específicos de conteúdo apenas para um público-alvo que terá maior probabilidade de consumir. Assim, evita-se o envio de spam a uma base de utilizadores completa e garante-se uma melhor retenção.
 
-#### Comércio móvel
+#### <a name="mcommerce"></a>Comércio móvel
 Recolha as categorias de produtos mais visitadas dentro da aplicação e segmente público-alvo para promover um desconto ou um novo produto da categoria que será mais provavelmente comprada pelo utilizador final. Procura aumentar as receitas. Mais uma vez, o objetivo é não enviar spam!
 
-#### Jogos
+#### <a name="gaming"></a>Jogos
 Recolha o nível de jogo para um utilizador final e o tempo despendido num determinado período para segmentar o público-alvo que poderia ficar parado e teria maior probabilidade de passar a um nível seguinte com uma oferta de bónus.
 
 Comunique eventos específicos com um incentivo aos utilizadores que já não joguem há algum tempo para tentar encorajá-los a regressar.
 
-#### Retalho
+#### <a name="retail"></a>Retalho
 Recolha os produtos ou marcas com maior probabilidade de serem consumidos por um público-alvo com base nos favoritos ou no comportamento, e atraia o público-alvo para a sua loja de modo a aumentar as receitas de compras.
 
-#### Banca
+#### <a name="banking"></a>Banca
 Recolha dados de utilizadores finais que tenham criado uma conta na primeira execução da aplicação. Procure implementar uma estratégia de boas-vindas com uma notificação push segmentada e aumentar o número de subscrições de conta.
 
-### Como criar um plano de etiquetas excelente?
+### <a name="how-to-create-a-great-tag-plan"></a>Como criar um plano de etiquetas excelente?
 Um plano de etiquetas tem de ser como uma descrição do caminho de utilizador ou um tipo de fluxo de trabalho da aplicação, que forneça todas as etiquetas (dados) necessárias que têm de ser recolhidas para ter análises suficientes para compreender o comportamento dos utilizadores e segmentar adequadamente a base de utilizadores. Este não é um processo técnico. Por conseguinte, os comerciantes são capazes de especificar os dados que pretendem recolher com base na respetiva estratégia de Mobile Engagement.
 
 O mínimo é etiquetar todos os ecrãs (denominados *atividades* no Mobile Engagement) de uma aplicação. Isto ajuda a determinar o caminho do utilizador.
 
 Uma atividade pode incorporar *eventos* que recolhem informações de ações como clicar num botão. Isto possibilita a recolha de interações dentro da aplicação. Por conseguinte, os comerciantes são capazes de saber o que os utilizadores de ecrã estão a visitar e o que estão a fazer.
 
-`Jobs` são ações com uma duração. Isto é muito útil para os comerciantes compreenderem quanto tempo um utilizador demora a criar uma conta ou a iniciar sessão, por exemplo. Isto também pode ser útil para os programadores monitorizarem quanto tempo demora para ligar a um serviço Web.
+`Jobs`são ações com uma duração. Isto é muito útil para os comerciantes compreenderem quanto tempo um utilizador demora a criar uma conta ou a iniciar sessão, por exemplo. Isto também pode ser útil para os programadores monitorizarem quanto tempo demora para ligar a um serviço Web.
 
-`Errors` também podem ser monitorizados para saber se os utilizadores estão a ter problemas na aplicação. Por exemplo, problemas de ligação frequentes.
+`Errors`também podem ser monitorizados para saber se os utilizadores estão a ter problemas na aplicação. Por exemplo, problemas de ligação frequentes.
 
 Todos estes tipos de dados podem ser aumentados com parâmetros (*informações adicionais* no Mobile Engagement), o que lhe permite recolher dados dinâmicos a partir da aplicação. Isto é importante para permitir uma segmentação detalhada. Por exemplo, os comerciantes podem segmentar um utilizador com base no tipo de conteúdo que tenha consumido. O tipo de conteúdo será as informações dinâmicas de uma atividade ou um evento.
 
 *Informações da aplicações* são dados que lhe permitem confirmar o estado da aplicação ou do utilizador em tempo real. Isto também ajuda a categorizar uma base de público-alvo e a segmentá-la rapidamente. Por exemplo, pode utilizar um estado verdadeiro/falso se o utilizador está a iniciar sessão ou não, ou a data de expiração da respetiva subscrição.
 
-#### Exemplo de etiquetas
+#### <a name="example-of-tags"></a>Exemplo de etiquetas
 *Caso de utilização: segmente o comportamento do público-alvo para visar o utilizador final adequada com o conteúdo de notificações push adequado*
 
 1. Enviar notificações push para promover uma categoria de produto: recolha dados de comportamento para segmentar público-alvo com base na categoria do produto que visitou x vezes num determinado período ou um item específico que tenha adicionado num carrinho. Os dados recolhidos vão permitir-lhe segmentar e, em seguida, enviar uma notificação push ao público-alvo adequado.
@@ -111,7 +115,7 @@ Todos estes tipos de dados podem ser aumentados com parâmetros (*informações 
 2. Segmente o público-alvo com base no estado de início de sessão. Recolha dados para saber se um utilizador está ligado ou se criou uma conta. Ajuda a segmentar os utilizadores finais que ainda não iniciaram sessão e envia uma notificação push para incentivar o utilizador final a converter.
    ![][2]
 
-### Passos seguintes
+### <a name="next-steps"></a>Passos seguintes
 * Visite [Conceitos do Mobile Engagement] para saber mais sobre os conceitos básicos do Mobile Engagement.
 * Visite [Criar uma Aplicação de Mobile Engagement](mobile-engagement-create.md) para criar uma nova Coleção de Aplicações de Mobile Engagement no Azure e começar a gerir as suas aplicações com o portal de Mobile Engagement.
 * Visite [Melhores práticas](mobile-engagement-getting-started-best-practices.md) para entrar em detalhes.
@@ -130,6 +134,6 @@ Todos estes tipos de dados podem ser aumentados com parâmetros (*informações 
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Nov16_HO2-->
 
 

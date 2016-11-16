@@ -1,27 +1,31 @@
 ---
-title: Como criar, gerir ou eliminar uma conta do Storage no Portal Clássico do Azure | Microsoft Docs
-description: Crie uma nova conta do Storage, efetue a gestão das chaves de acesso da conta ou elimine uma conta do Storage no Portal do Azure. Saiba mais sobre contas do Storage standard e premium.
+title: "Como criar, gerir ou eliminar uma conta do Storage no Portal Clássico do Azure | Microsoft Docs"
+description: "Crie uma nova conta do Storage, efetue a gestão das chaves de acesso da conta ou elimine uma conta do Storage no Portal do Azure. Saiba mais sobre contas do Storage standard e premium."
 services: storage
-documentationcenter: ''
+documentationcenter: 
 author: robinsh
 manager: carmonm
 editor: tysonn
-
+ms.assetid: 5e4f4360-3f81-4d63-a0b1-e7771b67af11
 ms.service: storage
 ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
 ms.date: 07/26/2016
-ms.author: micurd;robinsh
+ms.author: robinsh
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: 90e9fcf933173b5609eff70fa1ce4bfa027fee3d
+
 
 ---
-# Acerca das contas do Storage do Azure
+# <a name="about-azure-storage-accounts"></a>Acerca das contas do Storage do Azure
 [!INCLUDE [storage-selector-portal-create-storage-account](../../includes/storage-selector-portal-create-storage-account.md)]
 
 [!INCLUDE [storage-try-azure-tools](../../includes/storage-try-azure-tools.md)]
 
-## Descrição geral
+## <a name="overview"></a>Descrição geral
 Uma conta do Storage do Azure dá-lhe acesso aos serviços Blob, Fila, Tabela e Ficheiro do Azure no Storage do Azure. A conta do Storage fornece o espaço de nomes exclusivo para os seus objetos de dados do Storage do Azure. Por predefinição, os dados na sua conta só estão disponíveis para si, o proprietário da conta.
 
 Existem dois tipos de contas do Storage:
@@ -29,7 +33,7 @@ Existem dois tipos de contas do Storage:
 * Uma conta do Storage standard inclui o armazenamento de Blob, Tabela, Fila e Ficheiro.
 * Uma conta de Premium Storage suporta atualmente apenas discos de máquinas virtuais do Azure. Consulte [Premium Storage: Armazenamento de Elevado Desempenho para Cargas de Trabalho de Virtual Machines do Azure](storage-premium-storage.md) para obter uma descrição geral aprofundada do Premium Storage.
 
-## Faturação da conta do Storage
+## <a name="storage-account-billing"></a>Faturação da conta do Storage
 A utilização do Storage do Azure é-lhe cobrada com base na sua conta do Storage. Os custos de armazenamento dependem de quatro fatores: capacidade de armazenamento, esquema de replicação, transações de armazenamento e saída de dados.
 
 * A capacidade de armazenamento refere-se à quantidade da alocação da sua conta do Storage que está a utilizar para armazenar dados. O custo de armazenar simplesmente os dados é determinado pela quantidade de dados armazenados e pela forma como estes são replicados.
@@ -46,7 +50,7 @@ Para obter informações sobre a capacidade das contas do Storage e as metas de 
 > 
 > 
 
-## Criar uma conta do Storage
+## <a name="create-a-storage-account"></a>Criar uma conta do Storage
 1. Inicie sessão no [Portal Clássico do Azure](https://manage.windowsazure.com).
 2. Clique em **Novo** na barra de tarefas na parte inferior da página. Escolha **Serviços de Dados** | **Storage** e, em seguida, clique em **Criação Rápida**.
    
@@ -79,7 +83,7 @@ Para obter informações sobre a capacidade das contas do Storage e as metas de 
 
 ![StoragePage](./media/storage-create-storage-account-classic-portal/Storage_StoragePage.png)
 
-### Pontos finais da conta do Storage
+### <a name="storage-account-endpoints"></a>Pontos finais da conta do Storage
 Todos os objetos que armazena no Storage do Azure têm um endereço de URL exclusivo. O nome da conta do Storage compõe o subdomínio desse endereço. A combinação de nome de domínio e subdomínio, que é específica para cada serviço, forma um *ponto final* para a sua conta do Storage.
 
 Por exemplo, se a sua conta do Storage tiver o nome *mystorageaccount*, os pontos finais predefinidos para a mesma são:
@@ -95,7 +99,7 @@ O URL para aceder a um objeto numa conta do Storage é criado ao acrescentar a l
 
 Também pode configurar um nome de domínio personalizado para utilizar com a sua conta do Storage. Consulte [Configurar um nome de domínio personalizado para o ponto final do Blob Storage](storage-custom-domain-name.md) para obter detalhes.
 
-### Colocalização de serviços com um grupo de afinidades
+### <a name="service-colocation-with-an-affinity-group"></a>Colocalização de serviços com um grupo de afinidades
 Um *grupo de afinidades* consiste num agrupamento geográfico dos seus serviços e VMs do Azure com a sua conta do Storage do Azure. Um grupo de afinidades pode melhorar o desempenho do serviço ao localizar cargas de trabalho do computador no mesmo datacenter ou perto do público-alvo de utilizadores. Além disso, não são cobradas taxas de saída quando os dados numa conta do Storage são acedidos a partir de outro serviço que faz parte do mesmo grupo de afinidades.
 
 > [!NOTE]
@@ -103,7 +107,7 @@ Um *grupo de afinidades* consiste num agrupamento geográfico dos seus serviços
 > 
 > 
 
-## Ver, copiar e voltar a gerar chaves de acesso ao armazenamento
+## <a name="view-copy-and-regenerate-storage-access-keys"></a>Ver, copiar e voltar a gerar chaves de acesso ao armazenamento
 Quando cria uma conta do Storage, o Azure gera duas chaves de acesso ao armazenamento de 512 bits, que são utilizadas para autenticação quando a conta do Storage é acedida. Ao fornecer duas chaves de acesso ao armazenamento, o Azure permite que volte a gerar as chaves sem quaisquer interrupções ao seu serviço de armazenamento ou ao acesso a esse serviço.
 
 > [!NOTE]
@@ -113,18 +117,18 @@ Quando cria uma conta do Storage, o Azure gera duas chaves de acesso ao armazena
 
 No [Portal Clássico do Azure](https://manage.windowsazure.com), utilize **Gerir Chaves** no dashboard ou a página **Armazenamento** para ver, copiar e voltar a gerar as chaves de acesso ao armazenamento utilizadas para aceder aos serviços Blob, Tabela e Fila.
 
-### Copiar uma chave de acesso ao armazenamento
+### <a name="copy-a-storage-access-key"></a>Copiar uma chave de acesso ao armazenamento
 Pode utilizar **Gerir Chaves** para copiar uma chave de acesso ao armazenamento para utilizar numa cadeia de ligação. A cadeia de ligação requer o nome da conta do Storage e uma chave para utilizar na autenticação. Para obter informações sobre como configurar as cadeias de ligação para aceder aos serviços do Storage do Azure, consulte [Configurar Cadeias de Ligação do Storage do Azure](storage-configure-connection-string.md).
 
 1. No [Portal Clássico do Azure](https://manage.windowsazure.com), clique em **Armazenamento** e, em seguida, clique no nome da conta do Storage para abrir o dashboard.
 2. Clique em **Gerir Chaves**.
    
-    **Gerir Chaves de Acesso** é aberto.
+     **Gerir Chaves de Acesso** é aberto.
    
     ![Managekeys](./media/storage-create-storage-account-classic-portal/Storage_ManageKeys.png)
 3. Para copiar uma chave de acesso ao armazenamento, selecione o texto da chave. Em seguida, clique com o botão direito do rato e clique em **Copiar**.
 
-### Voltar a gerar chaves de acesso ao armazenamento
+### <a name="regenerate-storage-access-keys"></a>Voltar a gerar chaves de acesso ao armazenamento
 Recomendamos que altere periodicamente as chaves de acesso da sua conta do Storage para ajudar a manter as ligações de armazenamento seguras. São atribuídas duas chaves de acesso, para que possa manter as ligações à conta do Storage com uma chave de acesso enquanto volta a gerar a outra.
 
 > [!WARNING]
@@ -145,7 +149,7 @@ Eis o processo para rodar as chaves de acesso ao armazenamento:
 3. Atualize as cadeias de ligação no código para fazer referência à nova chave de acesso primária.
 4. Volte a gerar a chave de acesso secundária.
 
-## Eliminar uma conta do Storage
+## <a name="delete-a-storage-account"></a>Eliminar uma conta do Storage
 Para remover uma conta do Storage que já não está a utilizar, utilize **Eliminar** no dashboard ou na página **Configurar**. A opção **Eliminar** elimina toda a conta do Storage, incluindo todos os blobs, tabelas e filas na mesma.
 
 > [!WARNING]
@@ -163,11 +167,14 @@ Para remover uma conta do Storage que já não está a utilizar, utilize **Elimi
     Clique no nome da conta do Storage para abrir o dashboard e, em seguida, clique em **Eliminar**.
 3. Clique em **Sim** para confirmar que pretende eliminar a conta do Storage.
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 * Para saber mais sobre o Storage do Azure, consulte a [documentação do Storage do Azure](https://azure.microsoft.com/documentation/services/storage/).
 * Aceda ao [Blogue da Equipa do Storage do Azure](http://blogs.msdn.com/b/windowsazurestorage/).
 * [Transferir dados com o Utilitário de Linha de Comandos AzCopy](storage-use-azcopy.md)
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

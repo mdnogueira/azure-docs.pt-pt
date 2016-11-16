@@ -1,4 +1,4 @@
-## Ligar à SQL Database do Azure como um utilizador
+## <a name="connect-to-azure-sql-database-as-a-user"></a>Ligar à SQL Database do Azure como um utilizador
 Utilize os passos seguintes para ligar à SQL Database do Azure com o SSMS como um utilizador.
 
 1. Escreva “Microsoft SQL Server Management Studio” na caixa de pesquisa do Windows e clique na aplicação de ambiente de trabalho para iniciar o SSMS.
@@ -11,7 +11,7 @@ Utilize os passos seguintes para ligar à SQL Database do Azure com o SSMS como 
   * **Nome de utilizador**: se tiver selecionado Autenticação SQL ou Autenticação por Palavra-passe do Active Directory, introduza o nome de um utilizador com acesso a uma base de dados no servidor.
   * **Palavra-passe**: se tiver selecionado Autenticação SQL ou Autenticação por Palavra-passe do Active Directory, introduza a palavra-passe para o utilizador especificado.
     
-       ![SQL Server Management Studio: Connect to SQL Database server](./media/sql-database-sql-server-management-studio-connect-user/connect-user-1.png)
+       ![SQL Server Management Studio: ligar ao servidor da SQL Database](./media/sql-database-sql-server-management-studio-connect-user/connect-user-1.png)
 
 1. Clique em **Opções** para especificar a base de dados à qual pretende ligar.
    
@@ -27,9 +27,11 @@ Utilize os passos seguintes para ligar à SQL Database do Azure com o SSMS como 
    
       ![SQL Server Management Studio: ligar ao servidor da SQL Database](./media/sql-database-sql-server-management-studio-connect-user/connect-user-5.png)
 
-## Resolver problemas relacionados com falhas de ligação
+## <a name="troubleshoot-connection-failures"></a>Resolver problemas relacionados com falhas de ligação
 A razão mais comum para as falhas de ligação prende-se com erros no nome do servidor (não se esqueça, <*nomedoservidor*> é o nome do servidor lógico, não da base de dados), no nome de utilizador ou na palavra-passe, bem como o servidor não permitir ligações por motivos de segurança. 
 
-<!--HONumber=Sep16_HO3-->
+
+
+<!--HONumber=Nov16_HO2-->
 
 

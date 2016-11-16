@@ -1,12 +1,12 @@
 ---
-title: Implementar uma aplicação ASP.NET no     App Service do Azure com o Visual Studio | Microsoft Docs
-description: Saiba como implementar um projeto Web do ASP.NET numa nova aplicação Web no App Service do Azure, utilizando o Visual Studio.
+title: "Implementar uma aplicação ASP.NET no 	Serviço de Aplicações do Azure com o Visual Studio | Microsoft Docs"
+description: "Saiba como implementar um projeto Web do ASP.NET numa nova aplicação Web no App Service do Azure, utilizando o Visual Studio."
 services: app-service\web
 documentationcenter: .net
 author: tdykstra
 manager: wpickett
-editor: ''
-
+editor: 
+ms.assetid: 69759e3c-384c-4afb-9278-db6724f6cb74
 ms.service: app-service-web
 ms.workload: web
 ms.tgt_pltfrm: na
@@ -14,12 +14,16 @@ ms.devlang: dotnet
 ms.topic: get-started-article
 ms.date: 07/22/2016
 ms.author: rachelap
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: 4f6bb074a607bd8a6bd201d71973993759860937
+
 
 ---
-# Implementar uma aplicação Web ASP.NET no App Service do Azure com o Visual Studio
+# <a name="deploy-an-aspnet-web-app-to-azure-app-service-using-visual-studio"></a>Implementar uma aplicação Web ASP.NET no App Service do Azure com o Visual Studio
 [!INCLUDE [tabs](../../includes/app-service-web-get-started-nav-tabs.md)]
 
-## Descrição geral
+## <a name="overview"></a>Descrição geral
 Este tutorial mostra como implementar uma aplicação Web ASP.NET numa [aplicação Web no App Service do Azure do Azure](app-service-web-overview.md) utilizando o Visual Studio 2015.
 
 O tutorial parte do princípio que é um programador do ASP.NET sem experiência prévia com a utilização do Azure. Quando tiver terminado, terá uma aplicação Web simples em execução na nuvem.
@@ -39,13 +43,13 @@ Uma vez que este é um tutorial de introdução, o projeto Web que mostra como i
 
 Além do tempo necessário para instalar o Azure SDK para o .NET, este tutorial irá demorar cerca de 10 a 15 minutos para concluir.
 
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 * O tutorial assume que já trabalhou com ASP.NET MVC e o Visual Studio. Se precisar de uma introdução, consulte o artigo [Introdução ao ASP.NET MVC 5](http://www.asp.net/mvc/overview/getting-started/introduction/getting-started).
 * Precisa de uma conta do Azure. Pode [abrir uma conta do Azure gratuita](/pricing/free-trial/?WT.mc_id=A261C142F) ou [Ativar as vantagens de subscritor do Visual Studio](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F). 
   
     Se pretender começar com o App Service do Azure antes de se inscrever numa conta do Azure, aceda a [Experimentar o App Service](http://go.microsoft.com/fwlink/?LinkId=523751). Aqui, pode criar uma aplicação de arranque de curta duração no App Service — sem cartões de crédito, sem compromissos.
 
-## <a name="setupdevenv"></a>Configurar o ambiente de desenvolvimento
+## <a name="a-namesetupdevenvaset-up-the-development-environment"></a><a name="setupdevenv"></a>Configurar o ambiente de desenvolvimento
 O tutorial foi escrito para o Visual Studio 2015 com o [Azure SDK para .NET](../dotnet-sdk.md) 2.9 ou posterior. 
 
 * [Transfira o Azure SDK mais recente para o Visual Studio 2015](http://go.microsoft.com/fwlink/?linkid=518003). O SDK instala o Visual Studio 2015, se ainda não o tiver.
@@ -57,7 +61,7 @@ O tutorial foi escrito para o Visual Studio 2015 com o [Azure SDK para .NET](../
 
 Se tiver o Visual Studio 2013 e preferir utilizá-lo, pode [transferir o Azure SDK mais recente para o Visual Studio 2013](http://go.microsoft.com/fwlink/?LinkID=324322). Alguns ecrãs podem parecer diferentes das ilustrações.
 
-## Configurar um novo projeto Web
+## <a name="configure-a-new-web-project"></a>Configurar um novo projeto Web
 O próximo passo é criar um projeto Web no Visual Studio e uma aplicação Web no App Service do Azure. Nesta secção do tutorial, configura o novo projeto Web. 
 
 1. Abra o Visual Studio 2015.
@@ -85,7 +89,7 @@ O próximo passo é criar um projeto Web no Visual Studio e uma aplicação Web 
     Estas definições direcionam o Visual Studio para criar uma aplicação Web do Azure para o seu projeto Web.
 10. Clique em **OK**
 
-## Configurar recursos do Azure para uma nova aplicação Web
+## <a name="configure-azure-resources-for-a-new-web-app"></a>Configurar recursos do Azure para uma nova aplicação Web
 Agora, indique ao Visual Studio os recursos do Azure que pretende que criar.
 
 1. Na caixa de diálogo **Criar Serviços de Aplicações**, clique em **Adicionar uma conta** e, em seguida, inicie sessão no Azure com o ID e palavra-passe da conta que utiliza para gerir a sua subscrição Azure.
@@ -104,7 +108,7 @@ Agora, indique ao Visual Studio os recursos do Azure que pretende que criar.
    
     ![Caixa de diálogo Criar App Service](./media/web-sites-dotnet-get-started/rgcreate.png)
    
-    Um grupo de recursos é uma coleção de recursos do Azure, tais como Web Apps, bases de dados e VMs. Para um tutorial, geralmente, é melhor criar um novo grupo de recursos porque torna mais fácil eliminar num único passo todos os recursos do Azure que criar para o tutorial. Para obter mais informações, consulte o artigo [Descrição geral do Azure Resource Manager](../resource-group-overview.md).
+    Um grupo de recursos é uma coleção de recursos do Azure, tais como Web Apps, bases de dados e VMs. Para um tutorial, geralmente, é melhor criar um novo grupo de recursos porque torna mais fácil eliminar num único passo todos os recursos do Azure que criar para o tutorial. Para obter mais informações, veja [Descrição geral do Azure Resource Manager](../azure-resource-manager/resource-group-overview.md).
 4. Clique no botão **Novo** junto ao menu pendente **Plano do App Service**.
    
     ![Caixa de diálogo Criar App Service](./media/web-sites-dotnet-get-started/createasplan.png)
@@ -124,7 +128,7 @@ Agora, indique ao Visual Studio os recursos do Azure que pretende que criar.
 8. Na caixa de diálogo **Configurar Plano do App Service**, clique em **OK**.
 9. Na caixa de diálogo **Criar App Service**, clique em **Criar**.
 
-## O Visual Studio cria o projeto e a aplicação Web
+## <a name="visual-studio-creates-the-project-and-web-app"></a>O Visual Studio cria o projeto e a aplicação Web
 Num curto período de tempo, normalmente, menos do que um minuto, o Visual Studio cria o projeto Web e a aplicação Web.  
 
 A janela **Explorador de Soluções** mostra os ficheiros e as pastas no projeto novo.
@@ -139,7 +143,7 @@ A janela **Cloud Explorer** permite-lhe ver e gerir recursos do Azure, incluindo
 
 ![Aplicação Web criada no Cloud Explorer](./media/web-sites-dotnet-get-started/siteinse.png)
 
-## Implementar o projeto Web na aplicação Web do Azure
+## <a name="deploy-the-web-project-to-the-azure-web-app"></a>Implementar o projeto Web na aplicação Web do Azure
 Nesta secção, é possível implementar o projeto Web na aplicação Web.
 
 1. No **Explorador de Soluções**, clique com o botão direito do rato no projeto e selecione **Publicar**.
@@ -179,14 +183,14 @@ Nesta secção, é possível implementar o projeto Web na aplicação Web.
    > 
    > 
 
-## Resolução de problemas
+## <a name="troubleshooting"></a>Resolução de problemas
 Se tiver um problema à medida que revê este tutorial, certifique-se de que está a utilizar a versão mais recente do Azure SDK para o .NET. A forma mais fácil para o fazer é [transferir o Azure SDK para o Visual Studio 2015](http://go.microsoft.com/fwlink/?linkid=518003). Se tiver a versão atual instalada, o Instalador de Plataforma Web permite-lhe saber que não é necessária qualquer instalação.
 
 Caso se encontre numa rede empresarial e esteja a tentar implementar no App Service do Azure através de uma firewall, certifique-se de que as portas 443 e 8172 estão abertas para Web Deploy. Se não for possível abrir essas portas, consulte a secção Passos seguintes para obter outras opções de implementação.
 
 Depois de ter a aplicação Web do ASP.NET em execução no App Service do Azure, pode querer saber mais sobre as funcionalidades do Visual Studio que simplificam a resolução de problemas. Para obter informações sobre o registo, a depuração remota e muito mais, consulte o artigo [Resolução de problemas com as Web Apps do Azure no Visual Studio](web-sites-dotnet-troubleshoot-visual-studio.md).
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 Neste tutorial, aprendeu a criar uma aplicação Web simples e a implementá-la numa aplicação Web do Azure. Eis alguns tópicos relacionados e recursos para aprender mais sobre o App Service do Azure:
 
 * Monitorizar e gerir a sua aplicação Web no [Portal do Azure](https://portal.azure.com/). 
@@ -205,13 +209,16 @@ Neste tutorial, aprendeu a criar uma aplicação Web simples e a implementá-la 
   
     Para obter informações sobre como utilizar o SSL e o seu próprio domínio (por exemplo, www.contoso.com em vez de contoso.azurewebsites.net), consulte os seguintes recursos:
   
-  * [Configurar um nome de domínio personalizado no App Service do Azure](web-sites-custom-domain-name.md)
+  * [Configurar um nome de domínio personalizado no Serviço de Aplicações do Azure](web-sites-custom-domain-name.md)
   * [Ativar HTTPS para um Web site do Azure](web-sites-configure-ssl-certificate.md)
 * Elimine o grupo de recursos que contém a aplicação Web e quaisquer recursos relacionados do Azure quando tiver terminado com os mesmos.
   
     Para obter informações sobre como trabalhar com grupos de recursos no Portal do Azure, veja [Implementar recursos com modelos do Resource Manager e com o portal do Azure](../resource-group-template-deploy-portal.md).   
 * Para obter mais exemplos de criação de uma Aplicação Web ASP.NET no Serviço de Aplicações, veja [Create and deploy an ASP.NET web app in Azure App Service (Criar e implementar uma aplicação Web ASP.NET no Serviço de Aplicações do Azure)](https://github.com/Microsoft/HealthClinic.biz/wiki/Create-and-deploy-an-ASP.NET-web-app-in-Azure-App-Service) e [Create and deploy a mobile app in Azure App Service (Criar e implementar uma aplicação móvel no Serviço de Aplicações do Azure)](https://github.com/Microsoft/HealthClinic.biz/wiki/Create-and-deploy-a-mobile-app-in-Azure-App-Service) da [demonstração](https://blogs.msdn.microsoft.com/visualstudio/2015/12/08/connectdemos-2015-healthclinic-biz/) de [HealthClinic.biz](https://github.com/Microsoft/HealthClinic.biz) 2015 Connect. Para obter mais inícios rápidos a partir da demonstração de HealthClinic.biz, veja [Inícios Rápidos de Ferramentas de Programador do Azure](https://github.com/Microsoft/HealthClinic.biz/wiki/Azure-Developer-Tools-Quickstarts).
 
-<!--HONumber=Aug16_HO1-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

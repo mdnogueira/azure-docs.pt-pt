@@ -17,7 +17,6 @@
 ## [FAQ](../virtual-machines-linux-faq.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 
 # Introdução
-## [Conta gratuita](https://azure.microsoft.com/pricing/free-trial/)
 ## [Criar uma VM com o portal](../virtual-machines-linux-quick-create-portal.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 ## [Criar chaves SSH em Linux e Mac](../virtual-machines-linux-mac-create-ssh-keys.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 ## [Diferentes formas de criar uma VM](../virtual-machines-linux-creation-choices.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
@@ -48,7 +47,7 @@
 ### [Utilizar o Docker Compose com o Azure](../virtual-machines-linux-docker-compose-quickstart.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 ### [Implementar o Seu Próprio Registo Privado do Docker no Azure](../virtual-machines-linux-docker-registry-in-blob-storage.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 
-## [Armazenamento](../virtual-machines-linux-azure-vm-storage-overview.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+## Utilizar o Armazenamento
 ### [Discos e VHDs](../virtual-machines-linux-about-disks-vhds.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 ### [Encriptação de discos](../virtual-machines-linux-encrypt-disks.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 ### [Configurar o RAID de software](../virtual-machines-linux-configure-raid.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
@@ -67,22 +66,21 @@
 ### [Ligar VNets Clássicas a VNets do Resource Manager](../../vpn-gateway/vpn-gateway-connect-different-deployment-models-portal.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 ### [Opções de resolução de nome DNS](../virtual-machines-linux-azure-dns.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 
-## Imagens
-### [Imagens aprovadas pelo Azure](../virtual-machines-linux-endorsed-distros.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-### [Imagens personalizadas](../virtual-machines-linux-create-upload-generic.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-### [Carregar uma imagem de VM com a CLI](../virtual-machines-linux-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-### [Agente Linux do Azure](../virtual-machines-linux-agent-user-guide.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-### [CentOS](../virtual-machines-linux-create-upload-centos.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-### [Ubuntu](../virtual-machines-linux-create-upload-ubuntu.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-### [Debian](../virtual-machines-linux-debian-create-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-### [RedHat](../virtual-machines-linux-redhat-create-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-### [Implementar arquiteturas de aplicações a partir de um modelo](../virtual-machines-linux-app-frameworks.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-### [Preparar uma VM do Oracle em Linux para o Azure](../virtual-machines-linux-oracle-create-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-
 ## Implementação
 ### [Copiar uma VM](../virtual-machines-linux-copy-vm.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 ### [Capturar uma VM](../virtual-machines-linux-capture-image.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 ### [Utilizar um modelo para criar uma VM](../virtual-machines-linux-cli-deploy-templates.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+### Imagens
+#### [Imagens aprovadas pelo Azure](../virtual-machines-linux-endorsed-distros.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+#### [Imagens personalizadas](../virtual-machines-linux-create-upload-generic.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+#### [Carregar uma imagem de VM com a CLI](../virtual-machines-linux-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+#### [Agente Linux do Azure](../virtual-machines-linux-agent-user-guide.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+#### [CentOS](../virtual-machines-linux-create-upload-centos.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+#### [Ubuntu](../virtual-machines-linux-create-upload-ubuntu.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+#### [Debian](../virtual-machines-linux-debian-create-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+#### [RedHat](../virtual-machines-linux-redhat-create-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+#### [Implementar arquiteturas de aplicações a partir de um modelo](../virtual-machines-linux-app-frameworks.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+#### [Preparar uma VM do Oracle em Linux para o Azure](../virtual-machines-linux-oracle-create-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 
 ## Configurar
 ### [Mover uma VM entre subscrições](../virtual-machines-linux-move-vm.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
@@ -95,7 +93,7 @@
 ### [Utilizar privilégios de raiz](../virtual-machines-linux-use-root-privileges.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 ### [Adicionar um utilizador a uma VM do Azure](../virtual-machines-linux-add-user.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 ### [Como selecionar nomes de utilizador](../virtual-machines-linux-usernames.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-### [Criar uma identidade profissional ou escolar no Azure Active Directory](../virtual-machines-linux-create-aad-work-id.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+### [Criar uma identidade profissional ou escolar no Azure AD](../virtual-machines-linux-create-aad-work-id.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 ### [Gerir o acesso](../../active-directory/active-directory-accessmanagement-groups-with-advanced-rules.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 ### [Aplicar políticas às VMs](../virtual-machines-linux-policy.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 ### [Configurar o Cofre de Chaves](../virtual-machines-linux-key-vault-setup.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
@@ -122,10 +120,8 @@
 ### [Migrar com a CLI](../virtual-machines-linux-cli-migration-classic-resource-manager.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 ### [Erros comuns de migração](../virtual-machines-migration-errors.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 
-## Melhores práticas
-### [Executar VMs Únicas](../../guidance/guidance-compute-single-vm-linux.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-
 ## Planear
+### [Executar as melhores práticas das VMs](../../guidance/guidance-compute-single-vm-linux.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 ### [Diretrizes de infraestruturas](../virtual-machines-linux-infrastructure-virtual-machine-guidelines.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 ### [Subscrições e contas](../virtual-machines-linux-infrastructure-subscription-accounts-guidelines.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 ### [Atribuição de nomes](../virtual-machines-linux-infrastructure-naming-guidelines.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
@@ -137,7 +133,7 @@
 ### [Manutenção planeada do Azure](../virtual-machines-linux-planned-maintenance.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 #### [Agenda](../virtual-machines-linux-planned-maintenance-schedule.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 
-## Cargas de trabalho
+## Gerir as cargas de trabalho
 ### [Introdução ao SAP](../virtual-machines-linux-sap-get-started.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 ### [Planear para o SAP](../virtual-machines-linux-sap-planning-guide.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 ### [Implementar o SAP](../virtual-machines-linux-sap-deployment-guide.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
@@ -152,33 +148,35 @@
 ### [Computação de Alto Desempenho (HPC)](../virtual-machines-linux-hpcpack-cluster-options.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 #### [Executar NAMD com pacote HPC da Microsoft](../virtual-machines-linux-classic-hpcpack-cluster-namd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 
-## Aplicações
+## Executar aplicações
 ### [Implementar uma aplicação Node.js](../../virtual-machines-linux-nodejs-deploy.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 ### [Aplicação Web Django](../virtual-machines-linux-python-django-web-app.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 ### [Bloco de Notas do Jupyter](../virtual-machines-linux-jupyter-notebook.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 
 ## Resolução de problemas
-### [Resolver problemas de ligações Secure Shell (SSH) numa VM baseada em Linux](../virtual-machines-linux-troubleshoot-ssh-connection.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-#### [Passos detalhados de resolução de problemas do Secure Shell (SSH)](../virtual-machines-linux-detailed-troubleshoot-ssh-connection.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+### [Resolver Problemas de ligações do Secure Shell](../virtual-machines-linux-troubleshoot-ssh-connection.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+#### [Passos de resolução de problemas detalhados](../virtual-machines-linux-detailed-troubleshoot-ssh-connection.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 ### [Resolver problemas de acesso às aplicações](../virtual-machines-linux-troubleshoot-app-connection.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 ### [Resolver problemas de falhas de alocação](../virtual-machines-linux-allocation-failure.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 ### [Resolver problemas de implementação](../virtual-machines-linux-troubleshoot-deployment-new-vm.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 ### [Reimplementar VM para um novo nó do Azure](../virtual-machines-linux-redeploy-to-new-node.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 
 # Referência
+## [CLI do Azure](/cli/azure/vm)
+## [Java](/java/api/)
 ## [Criar modelos do Resource Manager](../../resource-group-authoring-templates.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-## [CLI do Azure](../azure-cli-arm-commands.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-## [SDK Java](https://azure.microsoft.com/develop/java/)
-## [Node.js SDK](https://azure.microsoft.com/develop/nodejs/)
-## [Python SDK](https://azure.microsoft.com/develop/python/)
-## [API REST de Computação](https://msdn.microsoft.com/library/azure/mt163647)
-## [API REST de Rede](https://msdn.microsoft.com/library/azure/mt163658)
-## [API REST de Armazenamento](https://msdn.microsoft.com/library/azure/dd179355)
 ## [Modelos da comunidade](https://azure.microsoft.com/documentation/templates/)
+## [REST de Computação](/rest/api/compute/)
+## [REST de Rede](/rest/api/)
+## [REST de Armazenamento](/rest/api/storageservices/)
+
+
 
 # Recursos
 ## [Preços](https://azure.microsoft.com/pricing/details/#Linux)
 ## [Disponibilidade regional](https://azure.microsoft.com/regions/services/)
+## [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-virtual-machine)
+## [Vídeos](https://azure.microsoft.com/documentation/videos/index/?services=virtual-machines)
 
 
 <!--HONumber=Nov16_HO2-->

@@ -1,116 +1,120 @@
 ---
-title: Virtual Machine Scale Sets Overview | Microsoft Docs
-description: Learn more about Virtual Machine Scale Sets
+title: "Descrição Geral dos Conjuntos de Dimensionamento de Máquinas Virtuais | Microsoft Docs"
+description: "Saiba mais sobre os Conjuntos de Dimensionamento de Máquinas Virtuais"
 services: virtual-machine-scale-sets
-documentationcenter: ''
+documentationcenter: 
 author: gbowerman
 manager: timlt
-editor: ''
+editor: 
 tags: azure-resource-manager
-
+ms.assetid: 76ac7fd7-2e05-4762-88ca-3b499e87906e
 ms.service: virtual-machine-scale-sets
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: get-started-article
 ms.date: 09/13/2016
 ms.author: guybo
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: 7d833b7aaab8680d555f6503ec27994134a2519d
+
 
 ---
-# Virtual Machine Scale Sets Overview
-Virtual machine scale sets are an Azure Compute resource you can use to deploy and manage a set of identical VMs. With all VMs configured the same, VM scale sets are designed to support true autoscale – no pre-provisioning of VMs is required – and as such makes it easier to build large-scale services targeting big compute, big data, and containerized workloads.
+# <a name="virtual-machine-scale-sets-overview"></a>Descrição Geral dos Conjuntos de Dimensionamento de Máquinas Virtuais
+Os conjuntos de dimensionamento de máquinas virtuais são um recurso de computação do Azure que pode ser utilizado para implementar e gerir um conjunto de VMs idênticas. Com todas as VMs configuradas da mesma forma, os conjuntos de dimensionamento de VMs foram concebidos para suportar um verdadeiro dimensionamento automático – não é necessário fazer o aprovisionamento prévio das VMs –, pelo que facilitam a criação de serviços de grande escala destinados a Big Compute, macrodados e cargas de trabalho em contentores.
 
-For applications that need to scale compute resources out and in, scale operations are implicitly balanced across fault and update domains. For an introduction to VM scale sets refer to the [Azure blog announcement](https://azure.microsoft.com/blog/azure-virtual-machine-scale-sets-ga/).
+Para aplicações que têm de aumentar e reduzir verticalmente os recursos de computação, as operações em escala são balanceadas, implicitamente, entre domínios de falha e de atualização. Para obter uma introdução aos conjuntos de dimensionamento de VMs, veja o [anúncio no blogue do Azure](https://azure.microsoft.com/blog/azure-virtual-machine-scale-sets-ga/). 
 
-Take a look at these videos for more about VM scale sets:
+Veja estes vídeos para saber mais sobre os conjuntos de dimensionamento de VMs:
 
-* [Mark Russinovich talks Azure Scale Sets](https://channel9.msdn.com/Blogs/Regular-IT-Guy/Mark-Russinovich-Talks-Azure-Scale-Sets/)  
-* [Virtual Machine Scale Sets with Guy Bowerman](https://channel9.msdn.com/Shows/Cloud+Cover/Episode-191-Virtual-Machine-Scale-Sets-with-Guy-Bowerman)
+* [Mark Russinovich talks Azure Scale Sets (Mark Russinovich fala sobre os Conjuntos de Dimensionamento do Azure)](https://channel9.msdn.com/Blogs/Regular-IT-Guy/Mark-Russinovich-Talks-Azure-Scale-Sets/)  
+* [Virtual Machine Scale Sets with Guy Bowerman (Conjuntos de Dimensionamento de Máquinas Virtuais, com Guy Bowerman)](https://channel9.msdn.com/Shows/Cloud+Cover/Episode-191-Virtual-Machine-Scale-Sets-with-Guy-Bowerman)
 
-## Creating and managing VM scale sets
-You can create a VM Scale Set in the [Azure portal](https://portal.azure.com) by selecting *new* and typing in "scale" in the search bar. You will see "Virtual machine scale set" in the results. From there you can fill in the required fields to customize and deploy your scale set. 
+## <a name="creating-and-managing-vm-scale-sets"></a>Criar e gerir conjuntos de dimensionamento de VMs
+Pode criar um conjunto de dimensionamento de VMs no [portal do Azure](https://portal.azure.com) ao selecionar *novo* e escrever "dimensionamento" na barra de pesquisa. Verá “Conjunto de dimensionamento de máquinas virtuais” nos resultados. A partir daí, pode preencher os campos necessários para personalizar e implementar o seu conjunto de dimensionamento. 
 
-VM scale sets can also be defined and deployed using JSON templates and [REST APIs](https://msdn.microsoft.com/library/mt589023.aspx) just like individual Azure Resource Manager VMs. Therefore, any standard Azure Resource Manager deployment methods can be used. For more information about templates, see [Authoring Azure Resource Manager templates](../resource-group-authoring-templates.md).
+Os conjuntos de dimensionamento de VMs também podem ser definidos e implementados com modelos JSON e [APIs REST](https://msdn.microsoft.com/library/mt589023.aspx), tal como as VMs do Azure Resource Manager individuais. Por conseguinte, pode ser utilizado qualquer método de implementação Azure Resource Manager padrão. Para obter mais informações sobre os modelos, veja [Authoring Azure Resource Manager templates (Criar modelos do Azure Resource Manager)](../resource-group-authoring-templates.md).
 
-A set of example templates for VM scale sets can be found in the Azure Quickstart templates GitHub repository [here.](https://github.com/Azure/azure-quickstart-templates) (look for templates with *vmss* in the title)
+Está disponível um conjunto de modelos de exemplo de conjuntos de dimensionamento de VMs no repositório GitHub dos modelos de Início Rápido do Azure, [aqui](https://github.com/Azure/azure-quickstart-templates). (procure os modelos que tenham *vmss* no título)
 
-In the detail pages for these templates you'll see a button that links to the portal deployment feature. To deploy the VM scale set, click on the button and then fill in any parameters that are required in the portal. If you're not sure whether a resource supports upper or mixed case it is safer to always use lower case parameter values. There is also a handy video dissection of a VM scale set template here:
+Nas páginas de detalhes dos modelos, verá um botão que liga à funcionalidade de implementação do portal. Para implementar o conjunto de dimensionamento de VMs, clique no botão e preencha os parâmetros obrigatórios no portal. Se não souber ao certo se um recurso suporta letras maiúsculas ou uma combinação de maiúsculas e minúsculas, é mais seguro utilizar valores de parâmetros sempre em minúsculas. Também está disponível um vídeo útil a dissecar um modelo de conjunto de dimensionamento de VMs:
 
-[VM Scale Set Template Dissection](https://channel9.msdn.com/Blogs/Windows-Azure/VM-Scale-Set-Template-Dissection/player)
+[VM Scale Set Template Dissection (Dissecação de Modelo de Conjunto de Dimensionamento de VMs)](https://channel9.msdn.com/Blogs/Windows-Azure/VM-Scale-Set-Template-Dissection/player)
 
-## Scaling a VM scale set out and in
-To increase or decrease the number of virtual machines in a VM scale set, simply change the *capacity* property and redeploy the template. This simplicity makes it easy to write your own custom scaling layer if you want to define custom scale events that are not supported by Azure autoscale.
+## <a name="scaling-a-vm-scale-set-out-and-in"></a>Aumentar e reduzir verticalmente um conjunto de dimensionamento de VMs
+Para aumentar ou reduzir o número de máquinas virtuais num conjunto de dimensionamento de VMs, basta alterar a propriedade *capacidade* e reimplementar o modelo. Esta simplicidade permite escrever mais facilmente a sua própria camada de dimensionamento personalizada, se quiser definir eventos de dimensionamento personalizados que não são suportados pelo dimensionamento automático do Azure.
 
-If you are redeploying a template to change the capacity, you could define a much smaller template which only includes the SKU and the updated capacity. An example of this is shown [here.](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-scale-existing)
+Se estiver a reimplementar um modelo para alterar a capacidade, pode definir um modelo muito mais pequeno que inclua apenas o SKU e a capacidade atualizada. Pode ver um exemplo [aqui](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-scale-existing).
 
-To walk through the steps that create a scale set that is automatically scaled, see [Automatically Scale Machines in a Virtual Machine Scale Set](virtual-machine-scale-sets-windows-autoscale.md)
+Para percorrer os passos que criam um conjunto de dimensionamento que se dimensiona automaticamente, veja [Automatically Scale Machines in a Virtual Machine Scale Set (Dimensionar Automaticamente Máquinas num Conjunto de Dimensionamento de Máquinas Virtuais)](virtual-machine-scale-sets-windows-autoscale.md).
 
-## Monitoring your VM scale set
-The [Azure portal](https://portal.azure.com) lists scale sets and shows basic properties, as well as listing VMs in the set. For more detail you can use the [Azure Resource Explorer](https://resources.azure.com) to view VM scale sets. VM scale sets are a resource under Microsoft.Compute, so from this site you can see them by expanding the following links:
+## <a name="monitoring-your-vm-scale-set"></a>Monitorizar o conjunto de dimensionamento de VMs
+O [portal do Azure](https://portal.azure.com) lista os conjuntos de dimensionamento e mostra propriedades básicas, bem como as VMs no conjunto. Para obter mais detalhes, pode utilizar o [Explorador de Recursos do Azure](https://resources.azure.com) para ver os conjuntos de dimensionamento de VMs. Os conjuntos de dimensionamento de VMs são um recurso de Microsoft.Compute, pelo que os pode ver a partir deste site, ao expandir as ligações seguintes:
 
     subscriptions -> your subscription -> resourceGroups -> providers -> Microsoft.Compute -> virtualMachineScaleSets -> your VM scale set -> etc.
 
-## VM scale set scenarios
-This section lists some typical VM scale set scenarios. Some higher level Azure services (like Batch, Service Fabric, Azure Container Service) will use these scenarios.
+## <a name="vm-scale-set-scenarios"></a>Cenários de conjuntos de dimensionamento de VMs
+Esta secção lista alguns cenários comuns de conjuntos de dimensionamento de VMs. Alguns serviços de nível superior do Azure (como o Batch, o Service Fabric e o Azure Container Service) vão utilizar estes cenários.
 
-* **RDP / SSH to VM scale set instances** - A VM scale set is created inside a VNET and individual VMs in the scale set are not allocated public IP addresses. This is a good thing because you don't generally want the expense and management overhead of allocating separate public IP addresses to all the stateless resources in your compute grid, and you can easily connect to these VMs from other resources in your VNET including ones which have public IP addresses like load balancers or standalone virtual machines.
-* **Connect to VMs using NAT rules** - You can create a public IP address, assign it to a load balancer, and define inbound NAT rules which map a port on the IP address to a port on a VM in the VM scale set. For example:
+* **Aceder através de RDP / SSH a instâncias de conjuntos de dimensionamento de VMs** - é criado um conjunto de dimensionamento de VMs dentro de uma VNET e não são alocados endereços IP públicos às VMs individuais no conjunto de dimensionamento. Este comportamento é útil porque, geralmente, é melhor evitar os custos e a sobrecarga de gestão inerentes à alocação de endereços IP públicos separados para todos os recursos sem monitorização de estado na sua grelha de computação e porque pode ligar facilmente a estas VMs a partir de outros recursos da VNET, incluindo recursos que tenham endereços IP públicos, como balanceadores de carga ou máquinas virtuais autónomas.
+* **Ligar a VMs com regras NAT** - pode criar um endereço IP público, atribuí-lo a um balanceador de carga e definir regras NAT de entrada que mapeiem uma porta no endereço IP para uma porta numa VM do conjunto de dimensionamento de VMs. Por exemplo:
   
-  | Source | Source Port | Destination | Destination Port |
+  | Origem | Porta de origem | Destino | Porta de destino |
   | --- | --- | --- | --- |
-  |  Public IP |Port 50000 |vmss\_0 |Port 22 |
-  |  Public IP |Port 50001 |vmss\_1 |Port 22 |
-  |  Public IP |Port 50002 |vmss\_2 |Port 22 |
+  |  IP público |Porta 50.000 |vmss\_0 |Porta 22 |
+  |  IP público |Porta 50.001 |vmss\_1 |Porta 22 |
+  |  IP público |Porta 50.002 |vmss\_2 |Porta 22 |
   
-   Here's an example of creating a VM scale set which uses NAT rules to enable SSH connection to every VM in a scale set using a single public IP: [https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-linux-nat](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-linux-nat)
+   Eis um exemplo de criação de um conjunto de dimensionamento de VMs que utiliza regras NAT para ativar a ligação SSH a todas as VMs no conjunto de dimensionamento com um endereço IP público individual: [https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-linux-nat](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-linux-nat)
   
-   Here's an example of doing the same with RDP and Windows: [https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-windows-nat](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-windows-nat)
-* **Connect to VMs using a "jumpbox"** - If you create a VM scale set and a standalone VM in the same VNET, the standalone VM and the VM scale set VMs can connect to one another using their internal IP addresses as defined by the VNET/Subnet. If you create a public IP address and assign it to the standalone VM you can RDP or SSH to the standalone VM and then connect from that machine to your VM scale set instances. You may notice at this point that a simple VM scale set is inherently more secure than a simple standalone VM with a public IP address in its default configuration.
+   Eis um exemplo do mesmo, agora com RDP e Windows: [https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-windows-nat](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-windows-nat)
+* **Ligar a VMs com um "jumpbox"** - se criar um conjunto de dimensionamento de VMs e uma VM autónoma na mesma VNET, a VM autónoma e as VMs do conjunto de dimensionamento podem ligar-se uma à outra através dos endereços IP internos, conforme definido pela VNET/Sub-rede. Se criar um endereço IP público e o atribuir à VM autónoma, pode aceder por RDP ou SSH à VM autónoma e, depois, ligar desta às instâncias do conjunto de dimensionamento de VMs. Nesta fase, poderá reparar que um conjunto de dimensionamento de VMs simples é, inerentemente, mais seguro do que uma VM autónoma simples com um endereço IP público na respetiva configuração predefinida.
   
-   [For an example of this approach, this template creates a simple Mesos cluster consisting of a standalone Master VM which manages a VM scale-set based cluster of VMs.](https://github.com/gbowerman/azure-myriad/blob/master/mesos-vmss-simple-cluster.json)
-* **Load balancing to VM scale set instances** - If you want to deliver work to a compute cluster of VMs using a "round-robin" approach, you can configure an Azure load balancer with load-balancing rules accordingly. You can define probes to verify your application is running by pinging ports with a specified protocol, interval and request path. The Azure [Application Gateway](https://azure.microsoft.com/services/application-gateway/) also supports scale sets, along with more sophisticated load balancing scenarios.
+   [Para dar um exemplo desta abordagem, este modelo cria um cluster Mesos simples que consiste numa VM Mestre autónoma que gere um cluster de VMs baseado no conjunto de dimensionamento de VMs.](https://github.com/gbowerman/azure-myriad/blob/master/mesos-vmss-simple-cluster.json)
+* **Balanceamento de carga para instâncias de conjunto de dimensionamento de VMs** - se quiser enviar trabalhos para um cluster de computação de VMs através da abordagem “round robin”, pode configurar um balanceador de carga com regras de balanceamento de carga consonantes. Pode definir sondas para verificar se a sua aplicação está a ser executada ao enviar pings para as portas com um protocolo, um intervalo e um caminho de pedido especificados. O [Gateway da Aplicação](https://azure.microsoft.com/services/application-gateway/) do Azure também suporta conjuntos de dimensionamento, juntamente com cenários de balanceamento de carga mais sofisticados.
   
-   [Here is an example which creates a VM scale set of VMs running IIS web server, and uses a load balancer to balance the load that each VM receives. It also uses the HTTP protocol to ping a specific URL on each VM.](https://github.com/gbowerman/azure-myriad/blob/master/vmss-win-iis-vnet-storage-lb.json) (look at the Microsoft.Network/loadBalancers resource type and the networkProfile and extensionProfile in the virtualMachineScaleSet)
-* **Deploying a VM scale set as a compute cluster in a PaaS cluster manager** - VM scale sets are sometimes described as a next-generation worker role. It's a valid description but it also runs the risk of confusing scale set features with PaaS v1 Worker role features. In a sense VM scale sets provide a true "worker role" or worker resource, in that they provide a generalized compute resource which is platform/runtime independent, customizable and integrates into Azure Resource Manager IaaS.
+   [Eis um exemplo que cria um conjunto de dimensionamento de VMs que executam o servidor Web IIS, que utiliza um balanceador de carga para balancear a carga que cada VM recebe. Também utiliza o protocolo HTTP para enviar um ping a um URL específico em cada VM.](https://github.com/gbowerman/azure-myriad/blob/master/vmss-win-iis-vnet-storage-lb.json) (repare no tipo de recurso Microsoft.Network/loadBalancers e no networkProfile e no extensionProfile em virtualMachineScaleSet)
+* **Implementar um conjunto de dimensionamento de VMs como um cluster de computação num gestor de clusters de PaaS** - por vezes, os conjuntos de dimensionamento são descritos como uma função de trabalho de próxima geração. É uma descrição válida, mas também corre o risco de confundir as funcionalidades dos conjuntos de dimensionamento com as funcionalidades de Funções de trabalho de PaaS v1. De certa forma, os conjuntos de dimensionamento de VMs proporcionam uma verdadeira “função de trabalho” ou recurso de trabalho, no sentido em que disponibilizam um recurso de computação que não depende de plataformas/runtime, que é personalizável e que se integra no Azure Resource Manager IaaS.
   
-   A PaaS v1 worker role, while limited in terms of platform/runtime support (Windows platform images only) also includes services such as VIP swap, configurable upgrade settings, runtime/app deployment specific settings which are either not *yet* available in VM scale sets, or will be delivered by other higher level PaaS services like Service Fabric. With this in mind you can look at VM scale sets as an infrastructure which supports PaaS. I.e. PaaS solutions like Service Fabric or cluster managers like Mesos can build on top of VM scale sets as a scalable compute layer.
+   As funções de trabalho de PaaS v2, embora sejam limitadas em termos de suporte de plataformas/runtime (só suportam imagens da plataforma Windows), também incluem serviços como troca de VIP, definições de atualização configuráveis, definições específicas de implementação de runtime/aplicações, que *ainda* não estão disponíveis nos conjuntos de dimensionamento de VMs ou que serão disponibilizadas por outros serviços PaaS de alto nível, como o Service Fabric. Tendo isto presente, pode considerar os conjuntos de dimensionamento de VMs como sendo uma infraestrutura que suporta PaaS. Ou seja, as soluções de PaaS, como o Service Fabric ou os gestores de clusters como o Mesos, podem ser criadas com base nos conjuntos de dimensionamento de VMs como camadas de computação dimensionáveis.
   
-   [For an example of this approach, this template creates a simple Mesos cluster consisting of a standalone Master VM which manages a VM scale-set based cluster of VMs.](https://github.com/gbowerman/azure-myriad/blob/master/mesos-vmss-simple-cluster.json) Future versions of the [Azure Container Service](https://azure.microsoft.com/blog/azure-container-service-now-and-the-future/) will deploy more complex/hardened versions of this scenario based on VM scale sets.
+   [Para dar um exemplo desta abordagem, este modelo cria um cluster Mesos simples que consiste numa VM Mestre autónoma que gere um cluster de VMs baseado no conjunto de dimensionamento de VMs.](https://github.com/gbowerman/azure-myriad/blob/master/mesos-vmss-simple-cluster.json) Versões futuras do [Azure Container Service](https://azure.microsoft.com/blog/azure-container-service-now-and-the-future/) vão implementar versões mais complexas/protegidas deste cenário com base em conjuntos de dimensionamento de VMs.
 
-## VM scale set performance and scale guidance
-* Do not create more than 500 VMs in multiple VM Scale Sets at a time.
-* Plan for no more than 20 VMs per storage account (unless you set the *overprovision* property to "false", in which case you can go up to 40).
-* Spread out the first letters of storage account names as much as possible.  The example VMSS templates in [Azure Quickstart templates](https://github.com/Azure/azure-quickstart-templates/) provide examples of how to do this.
-* If using custom VMs, plan for no more than 40 VMs per VM scale set, in a single storage account.  You will need the image pre-copied into the storage account before you can begin VM scale set deployment. See the FAQ for more information.
-* Plan for no more than 4096 VMs per VNET.
-* The number of VMs you can create is limited by the core quota in the region in which you are deploying. You may need to contact Customer Support to increase your Compute quota limit increased even if you have a high limit of cores for use with cloud services or IaaS v1 today. To query your quota you can run the following Azure CLI command: `azure vm list-usage`, and the following PowerShell command: `Get-AzureRmVMUsage` (if using a version of PowerShell below 1.0 use `Get-AzureVMUsage`).
+## <a name="vm-scale-set-performance-and-scale-guidance"></a>Guia de desempenho e dimensionamento dos conjuntos de dimensionamento de VMs
+* Não crie mais de 500 VMs em vários conjuntos de dimensionamento de VMs ao mesmo tempo.
+* Não planeie mais de 20 VMs por conta de armazenamento (a não ser que defina a propriedade *sobreaprovisionamento* como “falso”, caso em que pode planear até um máximo de 40).
+* Utilize nomes com as letras iniciais o mais afastadas possível para as contas de armazenamento.  Os modelos de VMSS de exemplo nos [modelos de Início Rápido do Azure](https://github.com/Azure/azure-quickstart-templates/) mostram exemplos de como o fazer.
+* Se utilizar VMs personalizadas, não planeie mais de 40 VMs por conjunto de dimensionamento numa conta de armazenamento individual.  Antes de poder iniciar a implementação do conjunto de dimensionamento de VMs, precisa de ter a cópia prévia da imagem na conta de armazenamento. Veja as FAQ para obter mais informações.
+* Não planeie mais de 4096 VMs por VNET.
+* O número de VMs que pode criar é limitado pela quota de núcleos da região em que está a implementar. Poderá ter de contactar o Suporte ao Cliente para aumentar o limite da quota de Computação, mesmo que tenha um limite elevado de núcleos para utilizar com os serviços em nuvem ou com IaaS v1 atualmente. Para consultar a quota, pode executar o comando da CLI do Azure `azure vm list-usage` e o comando do PowerShell `Get-AzureRmVMUsage` (se estiver a utilizar uma versão do PowerShell inferior a 1.0, execute `Get-AzureVMUsage`).
 
-## VM scale set frequently asked questions
-**Q.** How many VMs can you have in a VM scale set?
+## <a name="vm-scale-set-frequently-asked-questions"></a>Perguntas mais frequentes sobre os conjuntos de dimensionamento de VMs
+**P.** Quantas VMs pode ter num conjunto de dimensionamento de VMs?
 
-**A.** 100 if you use platform images which can be distributed across multiple storage accounts. If you use custom images, up to 40 (if the *overprovision* property is set to "false", 20 by default), since custom images are currently limited to a single storage account.
+**R.** Cem, se utilizar imagens de plataformas que possam ser distribuídas em várias contas de armazenamento. Se utilizar imagens personalizadas, até 40 (se a propriedade *sobreaprovisionamento* estiver definida como “falso”; a predefinição são 20), uma vez que as imagens personalizadas estão, atualmente, limitadas a uma única conta de armazenamento.
 
-**Q** What other resource limits exist for VM scale sets?
+**P.** Que outros limites de recursos existem para os conjuntos de dimensionamento de VMs?
 
-**A.** You are limited to creating no more than 500 VMs in multiple scale sets per region during a 10 minute period. The existing [Azure Subscription Service Limits/](../azure-subscription-service-limits.md) apply.
+**R.** Está limitado à criação de um máximo de 500 VMs em vários conjuntos de dimensionamento por região durante um período de dez minutos. Aplicam-se os [Limites do Serviço de Subscrição do Azure](../azure-subscription-service-limits.md) atuais.
 
-**Q.** Are Data Disks Supported within VM scale sets?
+**P.** Os conjuntos de dimensionamento de VMs suportam Discos de Dados?
 
-**A.** Not in the initial release. Your options for storing data are:
+**R.** Não na versão inicial. As opções para armazenar dados são:
 
-* Azure files (SMB shared drives)
-* OS drive
-* Temp drive (local, not backed by Azure storage)
-* Azure data service (e.g. Azure tables, Azure blobs)
-* External data service (e.g. remote DB)
+* Ficheiros do Azure (unidades SMB partilhadas)
+* Unidade do sistema Operativo
+* Unidade temporária (local, sem o suporte do armazenamento do Azure)
+* Serviço de dados do Azure (por exemplo tabelas do Azure e blobs do Azure)
+* Serviço de dados externos (por exemplo, BD remota)
 
-**Q.** Which Azure regions support VM scale sets?
+**P.** Que regiões do Azure suportam os conjuntos de dimensionamento de VMs?
 
-**A.** Any region which supports Azure Resource Manager supports VM Scale Sets.
+**R.** Qualquer região que suporte o Azure Resource Manager suporta os conjuntos de dimensionamento de VMs.
 
-**Q.** How do you create a VM scale set using a custom image?
+**P.** Como criar uma escala VM definir utilizando uma imagem personalizada?
 
-**A.** Leave the vhdContainers property blank, for example:
+**R.** Deixe a propriedade vhdContainers em branco; por exemplo:
 
     "storageProfile": {
         "osDisk": {
@@ -125,19 +129,25 @@ This section lists some typical VM scale set scenarios. Some higher level Azure 
     },
 
 
-**Q.** If I reduce my VM scale set capacity from 20 to 15, which VMs will be removed?
+**P.** Se reduzir a capacidade do conjunto de dimensionamento de VMs de 20 para 15, que VMs vão ser removidas?
 
-**A.** Virtual machines are removed from the scale set evenly across upgrade domains and fault domains to maximize availability. VMs with the highest id's are removed first.
+**R.** As máquinas virtuais são removidas do conjunto de dimensionamento de forma uniforme entre domínios de atualização e domínios de falha, para maximizar a disponibilidade. São removidas primeiro as VMs com os IDs mais altos.
 
-**Q.** How about it if I then increase the capacity from 15 to 18?
+**P.** E se depois aumentar a capacidade de 15 para 18?
 
-**A.** If you increase capacity to 18, then 3 new VMs will be created. Each time the VM instance id will be incremented from the previous highest value (e.g. 20, 21, 22). VMs are balanced across FDs and UDs.
+**R.** Se aumentar a capacidade para 18, então, são criadas três VMs novas. Sempre que isso acontecer, o ID da instância da VM é aumentado a partir do valor mais alto anterior (por exemplo, 20, 21, 22). As VMs são balanceadas entre domínios de falha e domínios de atualização.
 
-**Q.** When using multiple extensions in a VM scale set, can I enforce an execution sequence?
+**P.** Se utilizar várias extensões num conjunto de dimensionamento de VMs, posso forçar uma sequência de execução?
 
-**A.** Not directly, but for the customScript extension, your script could wait for another extension to complete ([for example by monitoring the extension log](https://github.com/Azure/azure-quickstart-templates/blob/master/201-vmss-lapstack-autoscale/install_lap.sh)). Additional guidance on extension sequencing can be found in this blog post: [Extension Sequencing in Azure VM Scale Sets](https://msftstack.wordpress.com/2016/05/12/extension-sequencing-in-azure-vm-scale-sets/).
+**R.** Não diretamente, mas, relativamente à extensão customScript, o script pode aguardar pela conclusão de outra extensão ([por exemplo, ao monitorizar o registo da extensão](https://github.com/Azure/azure-quickstart-templates/blob/master/201-vmss-lapstack-autoscale/install_lap.sh)). Estão disponíveis orientações adicionais sobre a sequenciação de extensões nesta mensagem do blogue: [Extension Sequencing in Azure VM Scale Sets (Sequenciação de Extensões em Conjuntos de Dimensionamento de VMs do Azure)](https://msftstack.wordpress.com/2016/05/12/extension-sequencing-in-azure-vm-scale-sets/).
 
-**Q.** Do VM scale sets work with Azure availability sets?
+**P.** Os conjuntos de dimensionamento de VMs funcionam com os conjuntos de disponibilidade do Azure?
 
-**A.** Yes. A VM scale set is an implicit availability set with 5 FDs and 5 UDs. You don't need to configure anything under virtualMachineProfile. In future releases, VM scale sets are likely to span multiple tenants but for now a scale set is a single availability set.
+**R.** Sim. Um conjunto de dimensionamento de VMs é um conjunto de disponibilidade implícito com cinco domínios de falha e cinco domínios de atualização. Não tem de configurar nada em virtualMachineProfile. Em versões futuras, é provável que os conjuntos de dimensionamento de VMs abranjam vários inquilinos, mas, por agora, são um único conjunto de disponibilidade.
+
+
+
+
+<!--HONumber=Nov16_HO2-->
+
 

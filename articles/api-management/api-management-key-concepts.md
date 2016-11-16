@@ -1,22 +1,26 @@
 ---
 title: Conceitos-chave da API Management
-description: Saiba mais sobre APIs, produtos, funções, grupos e outros conceitos-chave da API Management.
+description: "Saiba mais sobre APIs, produtos, funções, grupos e outros conceitos-chave da API Management."
 services: api-management
-documentationcenter: ''
+documentationcenter: 
 author: steved0x
 manager: erikre
-editor: ''
-
+editor: 
+ms.assetid: e71da405-835a-48f3-956f-45c1a85698d7
 ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: hero-article
-ms.date: 08/09/2016
+ms.date: 10/25/2016
 ms.author: sdanie
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: dcff834c9d4aff82e8319e6c23a74c2e49902a8c
+
 
 ---
-# O que é a API Management?
+# <a name="what-is-api-management"></a>O que é a API Management?
 A API Management ajuda as organizações a publicar APIs para programadores externos, parceiros e internos, de modo a que estes possam explorar ao máximo o potencial dos seus dados e serviços. Um pouco por todo o lado, as empresas procuram expandir as suas operações como uma plataforma digital, criando novos canais, encontrando novos clientes e promovendo um envolvimento mais profundo com os clientes existentes. A API Management fornece as competências essenciais para garantir um programa de API bem-sucedido através do envolvimento dos programadores, das informações de negócio, da análise, da segurança e da proteção.
 
 Veja o seguinte vídeo para obter uma descrição geral da API Management do Azure e saiba como utilizar a API Management para adicionar várias funcionalidades à sua API, incluindo controlo de acesso, limitação de taxa, monitorização, registo de eventos e colocação de respostas em cache, com o mínimo de trabalho da sua parte.
@@ -86,7 +90,7 @@ As expressões de política podem ser utilizadas como valores de atributo ou val
 > 
 > 
 
-Para obter uma lista completa das políticas de API Management, consulte [Referência de política][Referência de política]. Para obter mais informações sobre como utilizar e configurar as políticas, consulte [Políticas de API Management][Políticas de API Management]. Para consultar um tutorial sobre a criação de um produto com políticas de limite de taxa e quota, consulte [Como criar e configurar definições de produto avançadas][Como criar e configurar definições de produto avançadas]. Para obter uma demonstração, veja o vídeo seguinte.
+Para obter uma lista completa das políticas de Gestão de API, consulte [Referência de política][Referência de política]. Para obter mais informações sobre como utilizar e configurar as políticas, consulte [Políticas de Gestão de API][Políticas de Gestão de API]. Para consultar um tutorial sobre a criação de um produto com políticas de limite de taxa e quota, consulte [Como criar e configurar definições de produto avançadas][Como criar e configurar definições de produto avançadas]. Para obter uma demonstração, veja o vídeo seguinte.
 
 > [!VIDEO https://channel9.msdn.com/Blogs/AzureApiMgmt/Rate-Limits-and-Quotas/player]
 > 
@@ -97,7 +101,7 @@ O portal do programador é o local onde os programadores podem saber mais sobre 
 
 Pode personalizar o aspeto e a funcionalidade do portal do programador ao adicionar conteúdo personalizado, personalizar os estilos e adicionar a sua imagem corporativa.
 
-## API Management e a economia da API
+## <a name="api-management-and-the-api-economy"></a>API Management e a economia da API
 Para obter mais informações sobre a API Management, veja a seguinte apresentação da conferência Microsoft Ignite 2015.
 
 > [!VIDEO https://channel9.msdn.com/Events/Ignite/2015/BRK3708/player]
@@ -118,9 +122,9 @@ Para obter mais informações sobre a API Management, veja a seguinte apresenta�
 [Como associar grupos a programadores]: api-management-howto-create-groups.md#associate-group-developer
 [Como criar e configurar definições de produto avançadas]: api-management-howto-product-with-rules.md
 [Como criar ou convidar programadores]: api-management-howto-create-or-invite-developers.md
-[Referência de política]: api-management-policy-reference.md
-[Políticas de API Management]: api-management-howto-policies.md
-[Criar uma instância de serviço de API Management]: api-management-get-started.md#create-service-instance
+[Referência de políticas]: api-management-policy-reference.md
+[Políticas de Gestão de API]: api-management-howto-policies.md
+[Criar uma instância de serviço de Gestão de API]: api-management-get-started.md#create-service-instance
 
 
 
@@ -128,6 +132,6 @@ Para obter mais informações sobre a API Management, veja a seguinte apresenta�
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

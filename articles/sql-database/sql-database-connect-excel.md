@@ -1,13 +1,13 @@
 ---
-title: Ligar o Excel à Base de Dados SQL | Microsoft Docs
-description: Saiba como ligar o Microsoft Excel à base de dados SQL do Azure na nuvem. Importe dados para o Excel para criação de relatórios e exploração de dados.
+title: "Ligar o Excel à Base de Dados SQL | Microsoft Docs"
+description: "Saiba como ligar o Microsoft Excel à base de dados SQL do Azure na nuvem. Importe dados para o Excel para criação de relatórios e exploração de dados."
 services: sql-database
 keywords: ligar o excel ao sql, importar dados para o excel
-documentationcenter: ''
+documentationcenter: 
 author: joseidz
 manager: jhubbard
-editor: ''
-
+editor: 
+ms.assetid: 906924bc-2707-48d3-bac6-397976a0409d
 ms.service: sql-database
 ms.workload: data-management
 ms.tgt_pltfrm: na
@@ -15,9 +15,13 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 07/05/2016
 ms.author: joseidz
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: 3a0f9501760ba3ea97341d30cd706c971c826430
+
 
 ---
-# Tutorial de Base de Dados SQL: ligar o Excel a uma base de dados SQL do Azure e criar um relatório
+# <a name="sql-database-tutorial-connect-excel-to-an-azure-sql-database-and-create-a-report"></a>Tutorial de Base de Dados SQL: ligar o Excel a uma base de dados SQL do Azure e criar um relatório
 > [!div class="op_single_selector"]
 > * [Visual Studio](sql-database-connect-query.md)
 > * [SSMS](sql-database-connect-query-ssms.md)
@@ -31,7 +35,7 @@ Precisa de uma base de dados SQL no Azure antes de começar. Se não tiver uma, 
 
 Irá também precisar de uma cópia do Excel. Este artigo utiliza o [Microsoft Excel 2016](https://products.office.com/en-US/).
 
-## Ligar o Excel a uma base de dados SQL e criar um ficheiro odc
+## <a name="connect-excel-to-a-sql-database-and-create-an-odc-file"></a>Ligar o Excel a uma base de dados SQL e criar um ficheiro odc
 1. Para ligar o Excel à base de dados SQL, abra o Excel e, em seguida, crie um novo livro ou abra um livro do Excel existente.
 2. Na barra de menus na parte superior da página, clique em **Dados**, clique em **De Outras Origens**, e, em seguida, clique em **A Partir do SQL Server**.
    
@@ -58,7 +62,7 @@ Irá também precisar de uma cópia do Excel. Este artigo utiliza o [Microsoft E
    
     A caixa de diálogo **Importar dados** é apresentada.
 
-## Importar os dados para o Excel e criar um gráfico dinâmico
+## <a name="import-the-data-into-excel-and-create-a-pivot-chart"></a>Importar os dados para o Excel e criar um gráfico dinâmico
 Agora que estabeleceu a ligação e criou o ficheiro com os dados e as informações sobre a ligação, está pronto para importar os dados.
 
 1. Na caixa de diálogo **Importar Dados**, clique na opção que pretende para apresentar os dados na folha de cálculo e, em seguida, clique em **OK**. Vamos escolher **PivotChart**. Também pode optar por criar uma **Nova folha de cálculo** ou **Adicionar estes dados ao Modelo de Dados**. Para mais informações sobre Modelos de Dados, consulte [Criar um modelo de dados no Excel](https://support.office.com/article/Create-a-Data-Model-in-Excel-87E7A54C-87DC-488E-9410-5C75DBCB0F7B). Clique em **Propriedades** para explorar as informações sobre o ficheiro odc que criou no passo anterior e para escolher as opções de atualização dos dados.
@@ -76,11 +80,14 @@ Agora que estabeleceu a ligação e criou o ficheiro com os dados e as informaç
 > 
 > 
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 * Saiba como [Ligar a Base de Dados SQL com o SQL Server Management Studio](sql-database-connect-query-ssms.md) para consulta e análise avançadas.
 * Saiba mais sobre as vantagens dos [conjuntos elásticos](sql-database-elastic-pool.md).
 * Saiba como [criar uma aplicação Web que estabelece ligação à Base de Dados SQL no back-end](../app-service-web/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database.md).
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

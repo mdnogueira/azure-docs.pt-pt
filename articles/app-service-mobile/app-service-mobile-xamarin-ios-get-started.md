@@ -1,58 +1,62 @@
 ---
-title: Introdução às Mobile Apps do App Service do Azure para aplicações Xamarin.iOS | Microsoft Docs
-description: Siga este tutorial para começar a utilizar Mobile Apps para o desenvolvimento do Xamarin.iOS
+title: "Introdução às Aplicações Móveis do Serviço de Aplicações do Azure para aplicações Xamarin.iOS | Microsoft Docs"
+description: "Siga este tutorial para começar a utilizar Mobile Apps para o desenvolvimento do Xamarin.iOS"
 services: app-service\mobile
 documentationcenter: xamarin
-author: wesmc7777
+author: adrianhall
 manager: dwrede
-editor: ''
-
+editor: 
+ms.assetid: 14428794-52ad-4b51-956c-deb296cafa34
 ms.service: app-service-mobile
 ms.workload: na
 ms.tgt_pltfrm: mobile-xamarin-ios
 ms.devlang: dotnet
 ms.topic: hero-article
-ms.date: 08/04/2016
-ms.author: normesta
+ms.date: 10/01/2016
+ms.author: adrianha
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: cf8f9a06c4d720dade11ea67fc1befe07a56cf85
+
 
 ---
-# Criar uma aplicação Xamarin.iOS
+# <a name="create-a-xamarinios-app"></a>Criar uma aplicação Xamarin.iOS
 [!INCLUDE [app-service-mobile-selector-get-started](../../includes/app-service-mobile-selector-get-started.md)]
 
-## Descrição geral
-Este tutorial mostra como adicionar um serviço de back-end baseado na nuvem a uma aplicação móvel Xamarin.iOS utilizando um back-end da aplicação móvel do Azure.  Poderá criar tanto um novo back-end da aplicação móvel assim como uma simples aplicação Xamarin.iOS de uma *Lista de tarefas* que armazena dados da aplicação no Azure.
+## <a name="overview"></a>Descrição geral
+Este tutorial mostra como adicionar um serviço de back-end baseado na nuvem a uma aplicação móvel Xamarin.iOS utilizando um back-end da aplicação móvel do Azure.  Pode criar tanto um novo back-end da aplicação móvel assim como uma simples aplicação Xamarin.iOS de uma *Lista de tarefas* que armazena dados da aplicação no Azure.
 
 A conclusão deste tutorial é um pré-requisito para todos os outros tutoriais do Xamarin.iOS referentes à utilização da funcionalidade Mobile Apps no App Service do Azure.
 
-## Pré-requisitos
-Para concluir este tutorial, precisa do seguinte:
+## <a name="prerequisites"></a>Pré-requisitos
+Para concluir este tutorial, precisa dos seguintes pré-requisitos:
 
-* Uma conta ativa do Azure. Se não tiver uma conta, pode inscrever-se para uma versão de avaliação do Azure e obter até 10 Mobile Apps gratuitas, que pode continuar a utilizar mesmo após o final do período de avaliação. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/).
+* Uma conta ativa do Azure. Se não tiver uma conta, inscreva-se para uma versão de avaliação do Azure e obtenha até 10 aplicações móveis gratuitas, que pode continuar a utilizar mesmo após o final do período de avaliação. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/).
 * Visual Studio com Xamarin. Para obter instruções, consulte [Configuração e instalação do Visual Studio e Xamarin](https://msdn.microsoft.com/library/mt613162.aspx).
 * Um Mac com Xcode v7.0 ou posterior e Xamarin Studio Community instalado. Consulte [Configuração e instalação do Visual Studio e Xamarin](https://msdn.microsoft.com/library/mt613162.aspx) e [Configuração, instalação e verificações para utilizadores Mac](https://msdn.microsoft.com/library/mt488770.aspx) (MSDN).
 
 > [!NOTE]
-> Se pretender começar com o App Service do Azure antes de se inscrever numa conta do Azure, aceda a [Experimentar o App Service](https://tryappservice.azure.com/?appServiceName=mobile). Aqui, pode criar imediatamente uma aplicação móvel de arranque de curta duração no App Service: sem cartões de crédito, sem compromissos.
+> Se pretender começar com o App Service do Azure antes de se inscrever numa conta do Azure, aceda a [Experimentar o App Service](https://tryappservice.azure.com/?appServiceName=mobile). Pode criar imediatamente uma aplicação móvel de arranque de curta duração no Serviço de Aplicações: sem cartões de crédito, sem compromissos.
 > 
 > 
 
-## Criar um novo back-end da Aplicação Móvel do Azure
-Siga estes passos para criar um novo back-end da Aplicação Móvel.
+## <a name="create-an-azure-mobile-app-backend"></a>Criar um back-end da Aplicação Móvel do Azure
+Siga estes passos para criar um back-end da Aplicação Móvel.
 
 [!INCLUDE [app-service-mobile-dotnet-backend-create-new-service](../../includes/app-service-mobile-dotnet-backend-create-new-service.md)]
 
-## Configurar o projeto de servidor
-Acabou de aprovisionar um back-end da Aplicação Móvel do Azure que pode ser utilizado pelas suas aplicações cliente móveis. Em seguida, deve transferir um projeto de servidor para um back-end simples de uma “lista de tarefas” e publicá-lo no Azure.
+## <a name="configure-the-server-project"></a>Configurar o projeto de servidor
+Acabou de aprovisionar um back-end da Aplicação Móvel do Azure que pode ser utilizado pelas suas aplicações cliente móveis. Em seguida, transfira um projeto de servidor para um back-end simples de uma “lista de tarefas” e publique-o no Azure.
 
-Siga os passos abaixo para configurar o projeto de servidor para utilizar o back-end Node.js ou .NET.
+Siga os passos seguintes para configurar o projeto de servidor para utilizar o back-end Node.js ou .NET.
 
 [!INCLUDE [app-service-mobile-configure-new-backend](../../includes/app-service-mobile-configure-new-backend.md)]
 
-## Transferir e executar a aplicação Xamarin.iOS
+## <a name="download-and-run-the-xamarinios-app"></a>Transferir e executar a aplicação Xamarin.iOS
 1. Abra o [Portal do Azure] numa janela do browser.
 2. No painel de definições da Aplicação Móvel, clique em **Introdução** > **Xamarin.iOS**. No passo 3, clique em **Criar uma nova aplicação**, se a opção ainda não estiver selecionada.  Em seguida, clique no botão **Transferir**.
    
-    Este processo transfere um projeto que contém uma aplicação cliente que está ligada à sua aplicação móvel. Guarde o ficheiro de projeto comprimido no computador local e tome nota do local onde o guardou.
+      Será transferida uma aplicação cliente que liga ao back-end móvel. Guarde o ficheiro de projeto comprimido no computador local e tome nota do local onde o guardou.
 3. Extraia o projeto que transferiu e, em seguida, abra-o no Xamarin Studio (ou Visual Studio).
    
     ![][9]
@@ -63,25 +67,23 @@ Siga os passos abaixo para configurar o projeto de servidor para utilizar o back
    
     ![][10]
    
-    Esta ação permite enviar um pedido POST para o novo back-end da aplicação móvel alojado no Azure. Os dados do pedido são inseridos na tabela Item da Lista de Tarefas. Os itens armazenados na tabela são devolvidos pelo back-end da aplicação móvel e os dados são apresentados na lista.
+    Os dados do pedido são inseridos na tabela TodoItem. Os itens armazenados na tabela são devolvidos pelo back-end da aplicação móvel e os dados são apresentados na lista.
 
 > [!NOTE]
 > Pode rever o código que acede ao seu back-end da aplicação móvel para consultar e inserir dados no ficheiro QSTodoService.cs C#.
 > 
 > 
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
+* [Adicionar Sincronização Offline à sua aplicação](app-service-mobile-xamarin-ios-get-started-offline-data.md)
 * [Adicionar autenticação à aplicação ](app-service-mobile-xamarin-ios-get-started-users.md)
-  <br/>Saiba como autenticar os utilizadores da aplicação utilizando um fornecedor de identidade.
-* [Adicionar notificações push à aplicação](app-service-mobile-xamarin-ios-get-started-push.md)
-  <br/>Saiba como enviar uma notificação push muito básica para a sua aplicação.
+* [Adicionar notificações push à aplicação Xamarin.Android](app-service-mobile-xamarin-ios-get-started-push.md)
+* [Como utilizar o cliente gerido para Mobile Apps do Azure](app-service-mobile-dotnet-how-to-use-client-library.md)
 
 <!-- Anchors. -->
-[Introdução aos back-ends de Mobile Apps]:#getting-started
+[Introdução aos back-ends da apliação móvel]:#getting-started
 [Criar um novo back-end da aplicação móvel]:#create-new-service
 [Passos Seguintes]:#next-steps
-
-
 
 <!-- Images. -->
 [6]: ./media/app-service-mobile-xamarin-ios-get-started/xamarin-ios-quickstart.png
@@ -94,6 +96,6 @@ Siga os passos abaixo para configurar o projeto de servidor para utilizar o back
 
 
 
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Nov16_HO2-->
 
 

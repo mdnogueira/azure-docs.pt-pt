@@ -1,12 +1,12 @@
 ---
-title: Introdução ao SDK do Gateway do Hub IoT | Microsoft Docs
-description: Instruções do SDK do Gateway do Hub IoT do Azure que utilizam o Linux para ilustrar os conceitos-chave que deve compreender ao utilizar o SDK do Gateway do Hub IoT do Azure.
+title: "Introdução ao SDK do Gateway do Hub IoT | Microsoft Docs"
+description: "Estas instruções do SDK do Gateway do Azure IoT utilizam o Linux para ilustrar os conceitos-chave que deve compreender ao utilizar o SDK do Gateway do Azure IoT."
 services: iot-hub
-documentationcenter: ''
+documentationcenter: 
 author: chipalost
 manager: timlt
-editor: ''
-
+editor: 
+ms.assetid: cf537bdd-2352-4bb1-96cd-a283fcd3d6cf
 ms.service: iot-hub
 ms.devlang: cpp
 ms.topic: get-started-article
@@ -14,12 +14,16 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/25/2016
 ms.author: andbuc
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: 23176a9251a90a985a5d2fbce23ceeb9d0925234
+
 
 ---
-# SDK do Gateway de IoT (beta) – Introdução à utilização do Linux
+# <a name="azure-iot-gateway-sdk-beta-get-started-using-linux"></a>SDK do Gateway do Azure IoT (beta) – Introdução à utilização do Linux
 [!INCLUDE [iot-hub-gateway-sdk-getstarted-selector](../../includes/iot-hub-gateway-sdk-getstarted-selector.md)]
 
-## Como criar o exemplo
+## <a name="how-to-build-the-sample"></a>Como criar o exemplo
 Antes de começar, tem de [configurar o seu ambiente de desenvolvimento][lnk-setupdevbox] para trabalhar com o SDK no Linux.
 
 1. Abra uma shell.
@@ -31,7 +35,7 @@ Antes de começar, tem de [configurar o seu ambiente de desenvolvimento][lnk-set
 > 
 > 
 
-## Como executar o exemplo
+## <a name="how-to-run-the-sample"></a>Como executar o exemplo
 1. O script **build.sh** gera o respetivo resultado na pasta **build** na sua cópia local do repositório **azure-iot-gateway-sdk**. Isto inclui os dois módulos utilizados neste exemplo.
    
     O script build coloca **liblogger_hl.so** na pasta **build/modules/logger/** e **libhello_world_hl.so** na pasta **build/modules/hello_world/**. Utilize estes caminhos para o valor **caminho do módulo**, conforme mostrado no ficheiro de definições JSON abaixo.
@@ -46,7 +50,9 @@ Antes de começar, tem de [configurar o seu ambiente de desenvolvimento][lnk-set
       [ 
         {
           "module name" : "logger_hl",
-          "module path" : "./build/modules/logger/liblogger_hl.so",
+          "loading args": {
+            "module path" : "./build/modules/logger/liblogger_hl.so"
+          },
           "args" : 
           {
             "filename":"./log.txt"
@@ -54,7 +60,9 @@ Antes de começar, tem de [configurar o seu ambiente de desenvolvimento][lnk-set
         },
         {
           "module name" : "hello_world",
-          "module path" : "./build/modules/hello_world/libhello_world_hl.so",
+          "loading args": {
+            "module path" : "./build/modules/hello_world/libhello_world_hl.so"
+          },
           "args" : null
         }
       ],
@@ -81,6 +89,6 @@ Antes de começar, tem de [configurar o seu ambiente de desenvolvimento][lnk-set
 
 
 
-<!--HONumber=Sep16_HO4-->
+<!--HONumber=Nov16_HO2-->
 
 

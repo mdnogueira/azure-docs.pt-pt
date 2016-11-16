@@ -1,13 +1,13 @@
 ---
 title: Azure AD Connect no Microsoft Cloud Alemanha
-description: O Azure AD Connect irá integrar os diretórios no local ao Azure Active Directory. Isto permite-lhe fornecer uma identidade comum para as aplicações do Office 365, do Azure e do SaaS integradas com o Azure AD.
-keywords: introdução ao Azure AD Connect, descrição geral do Azure AD Connect, o que é o Azure AD Connect, instalar o Active Directory, Alemanha, Floresta Negra
+description: "O Azure AD Connect irá integrar os diretórios no local ao Azure Active Directory. Isto permite-lhe fornecer uma identidade comum para as aplicações do Office 365, do Azure e do SaaS integradas com o Azure AD."
+keywords: "introdução ao Azure AD Connect, descrição geral do Azure AD Connect, o que é o Azure AD Connect, instalar o Active Directory, Alemanha, Floresta Negra"
 services: active-directory
-documentationcenter: ''
+documentationcenter: 
 author: billmath
 manager: femila
-editor: ''
-
+editor: 
+ms.assetid: 2bcb0caf-5d97-46cb-8c32-bda66cc22dad
 ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
@@ -15,10 +15,14 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 09/08/2016
 ms.author: billmath
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: 32feb93bf6b6b77d0b14206802c776da3a8eac91
+
 
 ---
-# Azure AD Connect no Microsoft Cloud Alemanha - Pré-visualização Pública
-## Introdução
+# <a name="azure-ad-connect-in-microsoft-cloud-germany-public-preview"></a>Azure AD Connect no Microsoft Cloud Alemanha - Pré-visualização Pública
+## <a name="introduction"></a>Introdução
 O Azure AD Connect fornece sincronização entre o Active Directory no local e o Azure Active Directory.
 Atualmente, muitos dos cenários no [Microsoft Cloud Alemanha](https://www.microsoft.com/de-de/cloud/deutschland/default.aspx) têm de ser executados pelo operador. Ao utilizar o Microsoft Cloud Alemanha, tem de ter em atenção o seguinte:
 
@@ -33,10 +37,10 @@ Atualmente, muitos dos cenários no [Microsoft Cloud Alemanha](https://www.micro
   * Atualizações automáticas
   * Repetição de escrita de palavras-passe
 
-## Transferência
+## <a name="download"></a>Transferência
 Pode transferir o Azure AD Connect a partir do painel do Azure AD Connect no portal.  Utilize as instruções abaixo para localizar o painel do Azure AD Connect.
 
-### O Painel do Azure AD Connect
+### <a name="the-azure-ad-connect-blade"></a>O Painel do Azure AD Connect
 Depois de iniciar sessão no portal do Azure, faça o seguinte:
 
 1. Vá para Procurar
@@ -55,12 +59,15 @@ A tabela seguinte descreve as funcionalidades apresentadas no painel.
 | ÚLTIMA SINCRONIZAÇÃO |A última vez que uma sincronização bem-sucedida foi concluída. |
 | DOMÍNIOS FEDERADOS |Mostra o número de domínios federados atualmente configurados. |
 
-## Instalação
+## <a name="installation"></a>Instalação
 Para instalar o Azure AD Connect, pode utilizar a documentação [aqui](active-directory-aadconnect.md#install-azure-ad-connect).
 
-## Funcionalidades avançadas e Informações Adicionais
+## <a name="advanced-features-and-additional-information"></a>Funcionalidades avançadas e Informações Adicionais
 Para obter informações adicionais e orientações sobre definições personalizadas ou configurações avançadas, comece por [Integrar as identidades no local no Azure Active Directory](active-directory-aadconnect.md).  Esta página fornece informações e hiperligações para orientações adicionais.
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

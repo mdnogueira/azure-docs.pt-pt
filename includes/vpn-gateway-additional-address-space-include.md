@@ -1,16 +1,20 @@
-### Para adicionar espaço de endereços
-1. Para adicionar espaço de endereços adicionais, clique em **Todas as definições** para abrir o painel **Definições**. 
-2. No painel **Definições**, clique em **Espaço de endereços** para abrir o painel Espaço de endereços. Adicione o espaço de endereços adicional neste painel e clique em **Guardar** na parte superior do painel.
+### <a name="to-add-address-space"></a>Para adicionar espaço de endereços
+1. Para adicionar mais espaços de endereços, na secção **Definições** do painel de rede virtual, clique em **Espaço de endereços** para abrir o painel do Espaço de endereços.
+2. Adicione o espaço de endereços adicional e, em seguida, clique em **Guardar** na parte superior do painel.
    
-    ![Adicionar espaço de endereços](./media/vpn-gateway-additional-address-space-include/address400.png)
+    ![Adicionar espaço de endereços](./media/vpn-gateway-additional-address-space-include/address_space.png)
 
-### Para adicionar sub-redes
-1. Para adicionar sub-redes adicionais aos espaços de endereços, no painel **Definições**, clique em **Sub-redes** para abrir o painel **Sub-redes**. 
-2. No painel Sub-redes, clique em **Adicionar** para expandir o painel **Adicionar sub-rede**. Dê um nome à nova sub-rede, especifique o intervalo de endereços e clique em **OK** na parte inferior do painel. Assim que uma sub-rede tiver sido criada, pode utilizar o painel Sub-redes para ver todas as sub-redes de uma VNet.
+### <a name="to-create-subnets"></a>Para criar sub-redes
+1. Para criar sub-redes, na secção **Definições** do painel de rede virtual, clique em **Sub-redes** para abrir o painel **Sub-redes**. 
+2. No painel Sub-redes, clique em **+Sub-rede** para abrir o painel **Adicionar sub-rede**. Atribua um nome à nova sub-rede e especifique o intervalo de endereços.
+   
+    ![Definições da sub-rede](./media/vpn-gateway-additional-address-space-include/add_subnet.png)        
+3. Clique em **OK** na parte inferior do painel para guardar as alterações.
+   
+    ![Definições da sub-rede](./media/vpn-gateway-additional-address-space-include/ok.png)
 
-    ![Definições da sub-rede](./media/vpn-gateway-additional-address-space-include/addsubnet250.png)       
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 

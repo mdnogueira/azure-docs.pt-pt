@@ -1,16 +1,16 @@
 # [Descrição geral](media-services-overview.md)
 ## [Conceitos](media-services-concepts.md)
-## [Preços](https://azure.microsoft.com/pricing/details/media-services/)
-## [Notas de versão](media-services-release-notes.md)
+
+
 # Introdução
 ## [Criar e gerir a conta](media-services-portal-create-account.md)
 ## [Configurar o ambiente de desenvolvimento](media-services-set-up-computer.md)
-## Vídeo a pedido
+## Entregar vídeo a pedido
 ### [Portal](media-services-portal-vod-get-started.md)
 ### [SDK do .NET](media-services-dotnet-get-started.md)
 ### [Java](media-services-java-how-to-use.md)
 ### [REST](media-services-rest-get-started.md)
-## Transmissão em direto
+## Realizar transmissão em direto
 ### [Portal](media-services-portal-live-passthrough-get-started.md)
 ### [.NET](media-services-dotnet-live-encode-with-onpremises-encoders.md)
 
@@ -166,12 +166,14 @@
 ###[Repetir a lógica](media-services-retry-logic-in-dotnet-sdk.md)
 
 # Referência
-## [SDK .NET dos Serviços de Multimédia](media-services-dotnet-how-to-use.md)
-## [API REST dos Serviços de Multimédia](media-services-rest-how-to-use.md)
+## [Notas de versão](media-services-release-notes.md)
+## [.NET](media-services-dotnet-how-to-use.md)
+## [REST](media-services-rest-how-to-use.md)
 ## [Formatos e Codecs de Fluxo de Trabalho Premium do Codificador de Multimédia](media-services-premium-workflow-encoder-formats.md)
 ## [Formatos e Codecs do Media Encoder Standard](media-services-media-encoder-standard-formats.md)
 
-# Relacionado
+# Recursos
+## [Preços](https://azure.microsoft.com/pricing/details/media-services/)
 ## [Comunidade dos Serviços de Multimédia do Azure](media-services-community.md)
 
 

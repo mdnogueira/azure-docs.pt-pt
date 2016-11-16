@@ -1,6 +1,6 @@
 
 
-## Ligar à Base de dados SQL do Azure utilizando a Autenticação do SQL Server
+## <a name="connect-to-azure-sql-database-using-sql-server-authentication"></a>Ligar à Base de dados SQL do Azure utilizando a Autenticação do SQL Server
 Os passos seguintes mostram como ligar a um servidor SQL do Azure e a base de dados com SSMS. Se não tiver um servidor e uma base de dados, consulte o artigo [Criar uma base de dados SQL em minutos](../articles/sql-database/sql-database-get-started.md) para criar uma.
 
 1. Inicie SSMS introduzindo **Microsoft SQL Server Management Studio** na caixa de pesquisa do Windows e clique na aplicação de ambiente de trabalho.
@@ -12,7 +12,7 @@ Os passos seguintes mostram como ligar a um servidor SQL do Azure e a base de da
    * **Nome de utilizador**: introduza o nome de um utilizador com acesso a uma base de dados no servidor (por exemplo, o *administrador do servidor* que configurou ao criar o servidor). 
    * **Palavra-passe**: introduza a palavra-passe do utilizador especificado (por exemplo, a *palavra-passe* que configurou ao criar o servidor).
      
-       ![SQL Server Management Studio: Connect to SQL Database server](./media/sql-database-sql-server-management-studio-connect-server-principal/connect.png)
+       ![SQL Server Management Studio: ligar ao servidor da SQL Database](./media/sql-database-sql-server-management-studio-connect-server-principal/connect.png)
 3. Clique em **Ligar**.
 4. Por predefinição, os novos servidores não têm [regras de firewall](../articles/sql-database/sql-database-firewall-configure.md) definidas, por isso os clientes são impedidos de estabelecer ligação. Se o servidor ainda não tiver uma regra de firewall que permite a ligação do seu endereço IP, SSMS solicita-lhe para criar uma regra de firewall ao nível do servidor.
    
@@ -23,7 +23,7 @@ Os passos seguintes mostram como ligar a um servidor SQL do Azure e a base de da
    
      ![nova firewall ao nível do servidor](./media/sql-database-sql-server-management-studio-connect-server-principal/connect-server-principal-5.png)
 
-## Resolver problemas relacionados com falhas de ligação
+## <a name="troubleshoot-connection-failures"></a>Resolver problemas relacionados com falhas de ligação
 As razões mais comuns de falhas de ligação são erros no nome do servidor e problemas de conetividade de rede. Tenha em atenção que <*servername*> é o nome do servidor, não da base de dados, e terá de fornecer o nome de servidor totalmente qualificado: `<servername>.database.windows.net`
 
 Além disso, verifique se o nome de utilizador e a palavra-passe não contêm quaisquer erros de digitação ou espaços adicionais (os nomes de utilizador não são sensíveis a maiúsculas e minúsculas, mas as palavras-passe são). 
@@ -32,6 +32,10 @@ Pode também definir explicitamente o número do protocolo e da porta com o nome
 
 Os problemas de conetividade de rede também podem causar erros de ligação e tempos limite. Repetir a ligação (quando souber que o nome do servidor, as credenciais e as regras de firewall estão corretas) é suficiente para ser bem sucedido.
 
-<!--HONumber=Sep16_HO3-->
+Para obter detalhes e mais informações sobre problemas de conectividade, veja [Troubleshoot, diagnose, and prevent SQL connection errors and transient errors for SQL Database (Resolver problemas, diagnosticar e impedir erros de ligação do SQL e erros transitórios da Base de Dados SQL)](../articles/sql-database/sql-database-connectivity-issues.md).
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

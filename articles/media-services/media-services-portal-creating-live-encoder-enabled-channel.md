@@ -1,22 +1,26 @@
 ---
-title: Como realizar uma transmissão em fluxo em direto utilizando os Serviços de Multimédia do Azure para criar transmissões em fluxo com velocidade de transmissão múltipla com o Portal do Azure | Microsoft Docs
-description: Este tutorial explica-lhe os passos da criação de um canal que recebe uma transmissão em fluxo em direto com uma velocidade de transmissão única e a codifica para uma transmissão em fluxo com velocidade de transmissão múltipla utilizando o Portal do Azure.
+title: "Como realizar uma transmissão em fluxo em direto utilizando os Serviços de Multimédia do Azure para criar transmissões em fluxo com velocidade de transmissão múltipla com o Portal do Azure | Microsoft Docs"
+description: "Este tutorial explica-lhe os passos da criação de um canal que recebe uma transmissão em fluxo em direto com uma velocidade de transmissão única e a codifica para uma transmissão em fluxo com velocidade de transmissão múltipla utilizando o Portal do Azure."
 services: media-services
-documentationcenter: ''
+documentationcenter: 
 author: anilmur
 manager: erikre
-editor: ''
-
+editor: 
+ms.assetid: 504f74c2-3103-42a0-897b-9ff52f279e23
 ms.service: media-services
 ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 09/06/2016
-ms.author: juliako;juliako
+ms.date: 10/24/2016
+ms.author: juliako
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: d8c63c3b8ff853986129403f83b14575fd63264c
+
 
 ---
-# Como realizar uma transmissão em fluxo em direto utilizando os Serviços de Multimédia do Azure para criar transmissões em fluxo com velocidade de transmissão múltipla com o Portal do Azure
+# <a name="how-to-perform-live-streaming-using-azure-media-services-to-create-multibitrate-streams-with-the-azure-portal"></a>Como realizar uma transmissão em fluxo em direto utilizando os Serviços de Multimédia do Azure para criar transmissões em fluxo com velocidade de transmissão múltipla com o Portal do Azure
 > [!div class="op_single_selector"]
 > * [Portal](media-services-portal-creating-live-encoder-enabled-channel.md)
 > * [.NET](media-services-dotnet-creating-live-encoder-enabled-channel.md)
@@ -31,7 +35,7 @@ Este tutorial explica-lhe os passos da criação de um **Canal** que recebe uma 
 > 
 > 
 
-## Cenário Comum de Transmissão em Fluxo em Direto
+## <a name="common-live-streaming-scenario"></a>Cenário Comum de Transmissão em Fluxo em Direto
 Os seguintes são passos gerais referentes à criação de aplicações comuns de transmissão em fluxo em direto.
 
 > [!NOTE]
@@ -58,7 +62,7 @@ Os seguintes são passos gerais referentes à criação de aplicações comuns d
 9. Pare o evento sempre que pretender interromper a transmissão em fluxo e arquivar o evento.
 10. Elimine o evento (e, opcionalmente, elimine o elemento).   
 
-## Neste tutorial
+## <a name="in-this-tutorial"></a>Neste tutorial
 Neste tutorial, o Portal do Azure é utilizado para realizar as seguintes tarefas: 
 
 1. Configurar os pontos finais de transmissão em fluxo.
@@ -69,21 +73,22 @@ Neste tutorial, o Portal do Azure é utilizado para realizar as seguintes tarefa
 6. Reproduza o seu conteúdo 
 7. Limpeza
 
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 O seguinte é necessário para concluir o tutorial.
 
-* Para concluir este tutorial, precisa de uma conta do Azure. Se não tiver uma conta, pode criar uma de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/).
-* Uma conta dos Media Services. Para criar uma conta dos Media Services, consulte [Criar Conta](media-services-create-account.md).
+* Para concluir este tutorial, precisa de uma conta do Azure. Se não tiver uma conta, pode criar uma conta de avaliação gratuita em apenas alguns minutos. 
+  Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/).
+* Uma conta dos Media Services. Para criar uma conta dos Media Services, consulte [Criar Conta](media-services-portal-create-account.md).
 * Uma câmara Web e um codificador que possa enviar uma transmissão de velocidade de transmissão única.
 
-## Configurar os pontos finais de transmissão em fluxo
+## <a name="configure-streaming-endpoints"></a>Configurar os pontos finais de transmissão em fluxo
 Os Media Services fornecem um empacotamento dinâmico, permitindo a entrega dos seus MP4s com várias velocidades nos seguintes formatos de transmissão em fluxo: MPEG DASH, HLS, Transmissão em Fluxo Uniforme ou HDS, sem ter de voltar a criar o pacote para estes formatos de transmissão em fluxo. Com o empacotamento dinâmico só tem de armazenar e pagar pelos ficheiros num único formato de armazenamento, os Media Services irão compilar e disponibilizar a resposta adequada com base nos pedidos de um cliente.
 
 Para tirar partido do empacotamento dinâmico, precisa de, pelo menos, uma unidade de transmissão em fluxo para o ponto final de transmissão em fluxo a partir do qual planeia distribuir o conteúdo.  
 
 Para criar e alterar o número de unidades reservadas para transmissão em fluxo, faça o seguinte:
 
-1. Inicie sessão no [Portal do Azure](https://portal.azure.com/).
+1. Inicie sessão no [portal do Azure](https://portal.azure.com/) e selecione a sua conta AMS.
 2. Na janela **Definições**, clique em **Pontos finais de transmissão em fluxo**. 
 3. Clique no ponto final de transmissão em fluxo predefinido. 
    
@@ -98,8 +103,8 @@ Para criar e alterar o número de unidades reservadas para transmissão em fluxo
    > 
    > 
 
-## Criar um CANAL
-1. No [Portal do Azure](https://portal.azure.com/), clique em Serviços de Multimédia e, em seguida, clique no nome da conta de Serviços de Multimédia.
+## <a name="create-a-channel"></a>Criar um CANAL
+1. No [portal do Azure](https://portal.azure.com/), selecione os Serviços de Multimédia e, em seguida, clique no nome da sua conta dos Serviços de Multimédia.
 2. Selecione **Transmissão em Direto**.
 3. Selecione **Criação personalizada**. Esta opção permitir-lhe-á criar um canal que está ativado para codificação em direto.
    
@@ -139,13 +144,13 @@ Uma vez criado o Canal, pode clicar no canal e selecionar **Definições** onde 
 
 Para obter mais informações, consulte [Transmissão em fluxo em direto utilizando os Media Services do Azure para criar transmissões em fluxo com velocidade de transmissão múltipla](media-services-manage-live-encoder-enabled-channels.md).
 
-## Obter URLs de inserção
+## <a name="get-ingest-urls"></a>Obter URLs de inserção
 Assim que o canal seja criado, pode obter os URLs de inserção que fornecerá ao codificador em direto. O codificador utiliza estes URLs para exibir uma transmissão um fluxo direto.
 
 ![ingesturls](./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-ingest-urls.png)
 
-## Criar e gerir eventos
-### Descrição geral
+## <a name="create-and-manage-events"></a>Criar e gerir eventos
+### <a name="overview"></a>Descrição geral
 Um canal está associado a eventos/programas que permitem controlar a publicação e armazenamento de segmentos numa transmissão em fluxo em direto. Os canais gerem eventos/programas. A relação entre o Canal e o Programa é muito semelhante à multimédia tradicional onde um canal tem uma transmissão em fluxo constante de conteúdo e um programa está confinado a alguns eventos temporizados nesse canal.
 
 Pode especificar o número de horas que pretenda manter o conteúdo gravado para o evento através da configuração da duração da **Janela de Arquivo**. Este valor pode ser definido a partir de um mínimo de 5 minutos até um máximo de 25 horas. A duração da janela de arquivo dita também o tempo máximo que os clientes podem recuar a partir da posição atual em direto. Os eventos podem ser executados durante o período de tempo especificado, contudo, o conteúdo que não respeitar essa duração da janela é continuamente descartado. O valor desta propriedade também determina durante quanto tempo os manifestos dos clientes podem aumentar.
@@ -164,7 +169,7 @@ Mesmo depois de parar e eliminar o evento, os utilizadores conseguirão transmit
 
 Se pretende manter o conteúdo arquivado, mas não o quer manter disponível para transmissão em fluxo, elimine o localizador de transmissão em fluxo.
 
-### Criar/iniciar/parar eventos
+### <a name="createstartstop-events"></a>Criar/iniciar/parar eventos
 Assim que a transmissão em fluxo esteja a ser enviada para o Canal, pode começar o evento de transmissão em fluxo através da criação de um Elemento, Programa e Localizador de Transmissão em Fluxo. Isto irá arquivar a transmissão em fluxo e torná-la disponível para os espetadores através do Ponto Final de Transmissão em Fluxo. 
 
 Existem duas formas de iniciar o evento: 
@@ -188,39 +193,42 @@ Pode ver o evento publicado a partir da página **Evento em direto**.
 
 Se clicar em **Off Air**, parará todos os eventos em direto. 
 
-## Ver o evento
+## <a name="watch-the-event"></a>Ver o evento
 Para ver o evento, clique em **Ver** no Portal do Azure ou copie o URL de transmissão em fluxo e utilize um leitor da sua preferência. 
 
 ![Criado](./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-play-event.png)
 
 O evento em direto converte automaticamente os eventos para conteúdo a pedido quando parado.
 
-## Limpeza
+## <a name="clean-up"></a>Limpeza
 Se terminar a transmissão em fluxo de eventos e pretende limpar os recursos aprovisionados anteriormente, siga o procedimento seguinte.
 
 * Termine o envio da transmissão em fluxo do codificador.
 * Pare o canal. Assim que o Canal esteja parado, não será cobrado qualquer custo. Quando quiser reiniciar a transmissão, esta terá o mesmo URL de inserção, desta forma, não terá de reconfigurar o codificador.
 * Pode parar o seu Ponto Final de Transmissão em Fluxo, a menos que pretenda continuar a fornecer o arquivo do seu evento em direto como uma transmissão em fluxo a pedido. Se o canal estiver num estado parado, não será cobrado qualquer custo.
 
-## Ver conteúdo arquivado
+## <a name="view-archived-content"></a>Ver conteúdo arquivado
 Mesmo depois de parar e eliminar o evento, os utilizadores conseguirão transmitir o seu conteúdo arquivado como um vídeo a pedido, desde que não elimine o elemento. Não é possível eliminar um elemento se este é utilizado por um evento; o evento deve ser eliminado primeiro. 
 
 Para gerir os seus elementos, selecione **Definição** e clique em **Elementos**.
 
 ![Elementos](./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-assets.png)
 
-## Considerações
+## <a name="considerations"></a>Considerações
 * Atualmente, a duração máxima recomendada de um evento em direto é de 8 horas. Contacte amslived através de Microsoft.com se tiver de executar um Canal durante períodos de tempo mais longos.
 * Certifique-se de que tem, pelo menos, uma unidade reservada para transmissão em fluxo no ponto final da transmissão a partir do qual pretende transmitir o conteúdo.
 
-## Passo seguinte
+## <a name="next-step"></a>Passo seguinte
 Rever os percursos de aprendizagem dos Serviços de Multimédia
 
 [!INCLUDE [media-services-learning-paths-include](../../includes/media-services-learning-paths-include.md)]
 
-## Enviar comentários
+## <a name="provide-feedback"></a>Enviar comentários
 [!INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

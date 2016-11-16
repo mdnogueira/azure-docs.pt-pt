@@ -1,10 +1,10 @@
-## Transferir e entender o modelo ARM
+## <a name="download-and-understand-the-arm-template"></a>Transferir e entender o modelo ARM
 Pode transferir o modelo ARM existente para criar uma VNet e duas sub-redes a partir do github, efetuar as alterações que pretender e reutilizá-lo. Para tal, siga os passos abaixo.
 
 1. Navegue até à [página do modelo de exemplo](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vnet-two-subnets).
 2. Clique em **azuredeploy.json** e em **RAW**.
 3. Guarde o ficheiro numa pasta local do computador.
-4. Se estiver familiarizado com os modelos ARM, avance para o passo 7.
+4. Se estiver familiarizado com os modelos ARM, avance para o passo 7.
 5. Abra o ficheiro que guardou e observe o conteúdo em **parâmetros**, na linha 5. Os parâmetros do modelo ARM fornecem um marcador de posição para valores que podem ser preenchidos durante a implementação.
    
    | Parâmetro | Descrição |
@@ -56,6 +56,8 @@ Pode transferir o modelo ARM existente para criar uma VNet e duas sub-redes a pa
         }
 11. Guarde o ficheiro.
 
-<!--HONumber=Sep16_HO3-->
+
+
+<!--HONumber=Nov16_HO2-->
 
 

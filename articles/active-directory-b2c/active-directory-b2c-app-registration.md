@@ -1,12 +1,12 @@
 ---
-title: 'Azure Active Directory B2C: Registo de aplicação | Microsoft Docs'
-description: Como registar a aplicação com o Azure Active Directory B2C
+title: "Azure Active Directory B2C: Registo de aplicação | Microsoft Docs"
+description: "Como registar a aplicação com o Azure Active Directory B2C"
 services: active-directory-b2c
-documentationcenter: ''
+documentationcenter: 
 author: swkrish
 manager: mbaldwin
 editor: bryanla
-
+ms.assetid: 20e92275-b25d-45dd-9090-181a60c99f69
 ms.service: active-directory-b2c
 ms.workload: identity
 ms.tgt_pltfrm: na
@@ -14,15 +14,19 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 08/30/2016
 ms.author: swkrish
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: 9078d36789c3cc653b298b7a4eaee1cbe888b85f
+
 
 ---
-# Azure Active Directory B2C : Registar a aplicação
-## Pré-requisito
+# <a name="azure-active-directory-b2c-register-your-application"></a>Azure Active Directory B2C : Registar a aplicação
+## <a name="prerequisite"></a>Pré-requisito
 Para criar uma aplicação que aceite a inscrição e o início de sessão do consumidor, terá primeiro de registar a aplicação com um inquilino do Azure Active Directory B2C. Obtenha o seu inquilino, utilizando os passos descritos em [Criar um inquilino do Azure AD B2C](active-directory-b2c-get-started.md). Depois de seguir todos os passos do respetivo artigo, terá o painel de funcionalidades do B2C afixado no seu Startboard.
 
 [!INCLUDE [active-directory-b2c-devquickstarts-v2-apps](../../includes/active-directory-b2c-devquickstarts-v2-apps.md)]
 
-## Navegar para o painel de funcionalidades do B2C
+## <a name="navigate-to-the-b2c-features-blade"></a>Navegar para o painel de funcionalidades do B2C
 Se tiver o painel de funcionalidades do B2C afixado no seu Startboard, irá vê-lo assim que iniciar sessão no [Portal do Azure](https://portal.azure.com/) como Administrador Global do inquilino do B2C.
 
 Também pode aceder ao painel ao clicar em **Procurar** e depois em **Azure AD B2C** no painel de navegação à esquerda no [Portal do Azure](https://portal.azure.com/).
@@ -32,7 +36,7 @@ Também pode aceder ao painel ao clicar em **Procurar** e depois em **Azure AD B
 > 
 > 
 
-## Registar uma aplicação
+## <a name="register-an-application"></a>Registar uma aplicação
 1. No painel de funcionalidades do B2C no Portal do Azure, clique em **Aplicações**.
 2. Clique em **+ Adicionar** na parte superior do painel.
 3. Introduza um **Nome** para a aplicação que irá descrever a aplicação para os consumidores. Por exemplo, pode introduzir “Contoso B2C app”.
@@ -51,11 +55,14 @@ Também pode aceder ao painel ao clicar em **Procurar** e depois em **Azure AD B
 > 
 > 
 
-## Criar uma Aplicação de Início Rápido
+## <a name="build-a-quick-start-application"></a>Criar uma Aplicação de Início Rápido
 Agora que tem uma aplicação registada no Azure AD B2C, pode concluir um dos nossos tutoriais de início rápido para começar a trabalhar. Seguem-se algumas recomendações:
 
 [!INCLUDE [active-directory-v2-quickstart-table](../../includes/active-directory-b2c-quickstart-table.md)]
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

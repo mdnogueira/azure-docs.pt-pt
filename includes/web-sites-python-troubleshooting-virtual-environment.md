@@ -4,10 +4,10 @@ Em determinadas situações, poderá querer forçar a eliminação desse ambient
 
 Existem algumas opções para gerir o ambiente virtual existente no Azure:
 
-### Opção 1: utilizar o FTP
+### <a name="option-1-use-ftp"></a>Opção 1: utilizar o FTP
 Com um cliente FTP, ligue-se ao servidor para poder eliminar a pasta env.  Tenha em atenção que alguns clientes FTP (por exemplo, browsers) podem ser só de leitura e não lhe permitem eliminar pastas, pelo que deverá garantir que utiliza um cliente FTP com essa capacidade.  O nome de anfitrião do FTP e o utilizador são apresentados no painel da aplicação Web no [Portal do Azure](https://portal.azure.com).
 
-### Opção 2: ativar/desativar o runtime
+### <a name="option-2-toggle-runtime"></a>Opção 2: ativar/desativar o runtime
 Esta é uma alternativa que tira partido do facto de o script de implementação eliminar a pasta env quando não corresponder à versão pretendida do Python.  Deste modo, elimina de forma eficaz o ambiente existente e cria um novo.
 
 1. Mude para uma versão diferente do Python (através do runtime.txt ou do painel **Definições da Aplicação** no Portal do Azure)
@@ -15,9 +15,11 @@ Esta é uma alternativa que tira partido do facto de o script de implementação
 3. Regresse à versão inicial do Python
 4. Emita consolidações de git de algumas alterações novamente
 
-### Opção 3: personalizar o script de implementação
+### <a name="option-3-customize-deployment-script"></a>Opção 3: personalizar o script de implementação
 Se tiver personalizado o script de implementação, pode alterar o código no deploy.cmd para forçá-lo a eliminar a pasta env.
 
-<!--HONumber=Sep16_HO3-->
+
+
+<!--HONumber=Nov16_HO2-->
 
 

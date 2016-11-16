@@ -1,27 +1,31 @@
 ---
-title: Introdução ao Azure Batch CLI | Microsoft Docs
-description: Obtenha uma introdução rápida aos comandos do Batch na CLI do Azure para gerir recursos do serviço Azure Batch
+title: "Introdução ao Azure Batch CLI | Microsoft Docs"
+description: "Obtenha uma introdução rápida aos comandos do Batch na CLI do Azure para gerir recursos do serviço Azure Batch"
 services: batch
-documentationcenter: ''
+documentationcenter: 
 author: mmacy
 manager: timlt
-editor: ''
-
+editor: 
+ms.assetid: fcd76587-1827-4bc8-a84d-bba1cd980d85
 ms.service: batch
 ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: multiple
 ms.workload: big-compute
-ms.date: 09/06/2016
+ms.date: 09/30/2016
 ms.author: marsma
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: a874623c7ab24478af14e6cf4391dcc29052590f
+
 
 ---
-# Introdução ao Azure Batch CLI
+# <a name="get-started-with-azure-batch-cli"></a>Introdução ao Azure Batch CLI
 A Interface de linha de comandos para várias plataformas do Azure (CLI do Azure) permite-lhe gerir as suas contas e recursos do Batch, como conjuntos, trabalhos e tarefas em shells de comando do Linux, Mac e Windows. Com a CLI do Azure, pode efetuar e encriptar muitas das mesmas tarefas que desempenha com as APIs do Batch, o portal do Azure e as cdmlets da Batch PowerShell.
 
-Este artigo é baseado na CLI do Azure, versão 0.10.3.
+Este artigo é baseado na CLI do Azure, versão 0.10.5.
 
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 * [Instalar a CLI do Azure](../xplat-cli-install.md)
 * [Ligar a CLI do Azure à sua subscrição do Azure](../xplat-cli-connect.md)
 * Mude para o **modo Resource Manager**: `azure config mode arm`
@@ -31,7 +35,7 @@ Este artigo é baseado na CLI do Azure, versão 0.10.3.
 > 
 > 
 
-## Ajuda do comando
+## <a name="command-help"></a>Ajuda do comando
 Pode apresentar o texto de ajuda para cada comando na CLI do Azure, acrescentando `-h` como a única opção após o comando. Por exemplo:
 
 * Para obter ajuda para o comando `azure`, introduza: `azure -h`
@@ -40,7 +44,7 @@ Pode apresentar o texto de ajuda para cada comando na CLI do Azure, acrescentand
 
 Em caso de dúvida, utilize a opção da linha de comandos `-h` para obter ajuda sobre qualquer comando da CLI do Azure.
 
-## Criar uma conta do Batch
+## <a name="create-a-batch-account"></a>Criar uma conta do Batch
 Utilização:
 
     azure batch account create [options] <name>
@@ -58,7 +62,7 @@ Cria uma nova conta do Batch com os parâmetros especificados. Tem de especifica
 > 
 > 
 
-### Conta de armazenamento ligada (armazenamento automático)
+### <a name="linked-storage-account-autostorage"></a>Conta de armazenamento ligada (armazenamento automático)
 Quando a criar, pode (opcionalmente) ligar uma conta de Armazenamento **para fins gerais** à conta do Batch. A funcionalidade de [pacotes de aplicações](batch-application-packages.md) do Batch utiliza o armazenamento de blobs numa conta de Armazenamento para Fins Gerais, tal como o faz a biblioteca [.NET de Convenções de Ficheiros do Batch](batch-task-output.md). Estas funcionalidades opcionais ajudam-no a implementar as aplicações nas quais as suas tarefas do Batch são executadas e a manter os dados que aquelas produzem.
 
 Para ligar uma conta de armazenamento do Azure existente a uma nova conta do Batch quando a criar, especifique a opção `--autostorage-account-id`. Esta opção necessita do ID de recurso completamente qualificado da conta de armazenamento.
@@ -71,7 +75,7 @@ Em seguida, utilize o valor de **Url** para a opção `--autostorage-account-id`
 
     azure batch account create --location "West US"  --resource-group "resgroup001" --autostorage-account-id "/subscriptions/8ffffff8-4444-4444-bfbf-8ffffff84444/resourceGroups/resgroup001/providers/Microsoft.Storage/storageAccounts/storageaccount001" "batchaccount001"
 
-## Eliminar uma conta do Batch
+## <a name="delete-a-batch-account"></a>Eliminar uma conta do Batch
 Utilização:
 
     azure batch account delete [options] <name>
@@ -82,10 +86,10 @@ Exemplo:
 
 Elimina a conta do Batch especificada. Quando lhe for perguntado, confirme se pretende remover a conta (a remoção de conta pode demorar algum tempo a concluir).
 
-## Gerir chaves de acesso à conta
+## <a name="manage-account-access-keys"></a>Gerir chaves de acesso à conta
 Necessita de uma chave de acesso para [criar e modificar os recursos](#create-and-modify-batch-resources) na sua conta do Batch.
 
-### Listar chaves de acesso
+### <a name="list-access-keys"></a>Listar chaves de acesso
 Utilização:
 
     azure batch account keys list [options] <name>
@@ -96,7 +100,7 @@ Exemplo:
 
 Lista as chaves de conta para a conta do Batch especificada.
 
-### Gerar uma nova chave de acesso
+### <a name="generate-a-new-access-key"></a>Gerar uma nova chave de acesso
 Utilização:
 
     azure batch account keys renew [options] --<primary|secondary> <name>
@@ -107,10 +111,10 @@ Exemplo:
 
 Volta a gerar a chave de conta especificada para a conta do Batch especificada.
 
-## Criar e modificar recursos do Batch
+## <a name="create-and-modify-batch-resources"></a>Criar e modificar recursos do Batch
 Pode utilizar a CLI do Azure para criar, ler, atualizar e eliminar (CRUD) recursos do Batch como conjuntos, tarefas, nós de computação trabalhos e tarefas. Estas operações CRUD requerem o nome da conta do Batch, a chave de acesso e o ponto final. Pode especificá-los com as opções `-a`, `-k` e `-u` ou definir [variáveis de ambiente](#credential-environment-variables) que a CLI utiliza automaticamente (caso estejam preenchidas).
 
-### Variáveis de ambiente de credencial
+### <a name="credential-environment-variables"></a>Variáveis de ambiente de credencial
 Pode definir as variáveis de ambiente `AZURE_BATCH_ACCOUNT`, `AZURE_BATCH_ACCESS_KEY` e `AZURE_BATCH_ENDPOINT` em vez de especificar as opções `-a`, `-k` e `-u` na linha de comandos de cada comando que executar. A CLI do Batch utiliza estas variáveis (caso estejam definidas), pelo que pode omitir as opções `-a`, `-k`, e `-u`. O resto deste artigo pressupõe a utilização destas variáveis de ambiente.
 
 > [!TIP]
@@ -118,7 +122,7 @@ Pode definir as variáveis de ambiente `AZURE_BATCH_ACCOUNT`, `AZURE_BATCH_ACCES
 > 
 > 
 
-### Ficheiros JSON
+### <a name="json-files"></a>Ficheiros JSON
 Ao criar recursos do Batch como conjuntos e tarefas, pode especificar um ficheiro JSON que contenha a configuração do novo recurso em vez de transmitir os respetivos parâmetros como opções de linha de comandos. Por exemplo:
 
 `azure batch pool create my_batch_pool.json`
@@ -132,7 +136,7 @@ Para localizar o JSON necessário para criar um recurso, veja a documentação [
 > 
 > 
 
-## Criar um conjunto
+## <a name="create-a-pool"></a>Criar um conjunto
 Utilização:
 
     azure batch pool create [options] [json-file]
@@ -160,7 +164,7 @@ Elimine um conjunto com:
 > 
 > 
 
-## Criar uma tarefa
+## <a name="create-a-job"></a>Criar uma tarefa
 Utilização:
 
     azure batch job create [options] [json-file]
@@ -175,13 +179,13 @@ Elimine uma tarefa com:
 
     azure batch job delete [job-id]
 
-## Listar conjuntos, trabalhos, tarefas e outros recursos
+## <a name="list-pools-jobs-tasks-and-other-resources"></a>Listar conjuntos, trabalhos, tarefas e outros recursos
 Cada tipo de recurso do Batch suporta um comando `list` que consulta a sua conta do Batch e apresenta uma lista de recursos desse tipo. Por exemplo, pode listar os conjuntos na sua conta e as tarefas num trabalho:
 
     azure batch pool list
     azure batch task list --job-id "job001"
 
-### Fazer uma lista de recursos de forma eficiente
+### <a name="listing-resources-efficiently"></a>Fazer uma lista de recursos de forma eficiente
 Para consultas mais rápidas, pode especificar as opções de cláusulas **selecionar**, **filtrar** e **expandir** para operações `list`. Utilize estas opções para limitar a quantidade de dados devolvidos pelo serviço Batch. Uma vez que todas as filtragens ocorrem do lado do servidor, somente são apresentados os dados que lhe interessam. Utilize estas cláusulas para poupar largura de banda (e, por conseguinte, tempo) ao executar operações de lista.
 
 Por exemplo, isto irá devolver apenas os conjuntos cujos ids começam por "renderTask":
@@ -190,13 +194,13 @@ Por exemplo, isto irá devolver apenas os conjuntos cujos ids começam por "rend
 
 A CLI do Batch suporta as três cláusulas suportadas pelo serviço Batch:
 
-* `--select-clause [select-clause]`  Devolve um subconjunto de propriedades para cada entidade
-* `--filter-clause [filter-clause]`  Devolve apenas as entidades que correspondem à expressão OData especificada
-* `--expand-clause [expand-clause]`  Obtem as informações da entidade numa única chamada REST subjacente. A cláusula de expansão só suporta a propriedade `stats` neste momento.
+* `--select-clause [select-clause]` Devolve um subconjunto de propriedades para cada entidade
+* `--filter-clause [filter-clause]` Devolve apenas as entidades que correspondem à expressão OData especificada
+* `--expand-clause [expand-clause]` Obtém as informações da entidade numa única chamada REST subjacente. A cláusula de expansão só suporta a propriedade `stats` neste momento.
 
 Para obter detalhes sobre as três cláusulas e a execução de consultas de lista com as mesmas, veja o artigo [Consultar o serviço Azure Batch de forma eficiente](batch-efficient-list-queries.md).
 
-## Gestão de pacotes de aplicações
+## <a name="application-package-management"></a>Gestão de pacotes de aplicações
 Os pacotes de aplicações proporcionam uma forma simplificada para implementar aplicações nos nós de computação nos seus conjuntos. Com a CLI do Azure, pode carregar pacotes de aplicações, gerir versões de pacotes e eliminar pacotes.
 
 Para criar uma nova aplicação e adicionar uma versão de pacote:
@@ -211,23 +215,45 @@ Para criar uma nova aplicação e adicionar uma versão de pacote:
 
 **Ativar** o pacote:
 
-    azure batch application package activate "resgroup002" "azbatch002" "MyTaskApplication" "1.10-beta3" zip
+    azure batch application package activate "resgroup001" "batchaccount001" "MyTaskApplication" "1.10-beta3" zip
 
-### Implementar um pacote de aplicações
+Definir a **versão predefinida** da aplicação:
+
+    azure batch application set "resgroup001" "batchaccount001" "MyTaskApplication" --default-version "1.10-beta3"
+
+### <a name="deploy-an-application-package"></a>Implementar um pacote de aplicações
 Quando cria um novo conjunto, pode especificar um ou mais pacotes de aplicações para implementação. Quando especifica um pacote durante a criação de conjuntos, é implementado em cada nó no momento em que o nó é associado ao conjunto. Os pacotes também são implementados quando um nó é reiniciado ou recriado.
 
-Este comando especifica um pacote durante a criação do conjunto e é implementado quando cada nó é associado ao novo conjunto:
+Especifique a opção `--app-package-ref` quando criar um conjunto para implementar pacotes de aplicações nos nós do conjunto à medida que são adicionados ao mesmo. A opção `--app-package-ref` aceita listas delimitadas por ponto e vírgula de IDs de aplicações a implementar nos nós de computação.
 
-    azure batch pool create --id "pool001" --target-dedicated 1 --vm-size "small" --os-family "4" --app-package-ref "MyTaskApplication"
+    azure batch pool create --pool-id "pool001" --target-dedicated 1 --vm-size "small" --os-family "4" --app-package-ref "MyTaskApplication"
 
-De momento, não é possível especificar a versão do pacote que é implementada utilizando opções da linha de comandos. Tem de definir primeiro uma versão predefinida para a aplicação utilizando o portal do Azure para poder atribuí-lo a um conjunto. Veja como definir uma versão predefinida em [Implementação de aplicações com pacotes de aplicações do Azure Batch](batch-application-packages.md). No entanto, pode especificar uma versão predefinida se utilizar um [ficheiro JSON](#json-files) em vez de opções de linha de comandos quando criar um conjunto.
+Quando utiliza as opções da linha de comandos para criar um conjunto, não pode, atualmente, especificar *qual* a versão do pacote de aplicações a implementar nos nós de computação, como, por exemplo, "1.10-beta3". Por esse motivo, tem, primeiro, de especificar uma versão predefinida para a aplicação com `azure batch application set [options] --default-version <version-id>` antes de criar o conjunto (veja a secção anterior). No entanto, pode especificar uma versão de pacote para o conjunto se utilizar um [ficheiro JSON](#json-files) em vez das opções da linha de comandos quando o cria.
+
+Pode obter mais informações sobre os pacotes de aplicações em [Application deployment with Azure Batch application packages (Implementação de aplicações com pacotes de aplicações do Azure Batch)](batch-application-packages.md).
 
 > [!IMPORTANT]
 > Tem de [associar uma conta de armazenamento do Azure](#linked-storage-account-autostorage) à sua conta do Batch para utilizar pacotes de aplicações.
 > 
 > 
 
-## Sugestões de resolução de problemas
+### <a name="update-a-pools-application-packages"></a>Atualizar os pacotes de aplicações de um conjunto
+Para atualizar as aplicações atribuídas a um conjunto existente, emita o comando `azure batch pool set` com a opção `--app-package-ref`:
+
+    azure batch pool set --pool-id "pool001" --app-package-ref "MyTaskApplication2"
+
+Para implementar o pacote de aplicação novo nos nós de computação já presentes num conjunto existente, tem de reiniciar ou recriar as imagens destes nós:
+
+    azure batch node reboot --pool-id "pool001" --node-id "tvm-3105992504_1-20160930t164509z"
+
+> [!TIP]
+> Pode obter uma lista dos nós de um conjunto, juntamente com os IDs dos nós, com `azure batch node list`.
+> 
+> 
+
+Tenha em atenção que é necessário que a aplicação já tenha sido configurada com uma versão predefinida antes da implementação (`azure batch application set [options] --default-version <version-id>`).
+
+## <a name="troubleshooting-tips"></a>Sugestões de resolução de problemas
 Esta secção destina-se a fornecer-lhe recursos para utilizar na resolução de problemas da CLI do Azure. Isto não irá necessariamente resolver todos os problemas, mas pode ajudar a restringir as causas e direcioná-lo para recursos de ajuda.
 
 * Utilize `-h` para obter o **texto da ajuda** de qualquer comando da CLI
@@ -236,7 +262,7 @@ Esta secção destina-se a fornecer-lhe recursos para utilizar na resolução de
 * O [Fórum do Batch no MSDN][batch_forum] é um excelente recurso de ajuda e está a ser monitorizado de perto pelos membros da equipa do Batch. Certifique-se de que publica as suas perguntas caso se depare com problemas ou se quiser obter ajuda para uma operação específica.
 * Nem todas as operações de recursos do Batch são suportadas pela CLI do Azure. Por exemplo, não pode especificar uma *versão* do pacote de aplicação para um conjunto, apenas o ID do pacote. Nestes casos, pode ser necessário fornecer um `--json-file` para o comando em vez de utilizar opções da linha de comandos. Certifique-se de que se mantém atualizado com a versão mais recente da CLI para obter melhoramentos futuros.
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 * Veja o artigo [Implementação de aplicações com pacotes de aplicações do Azure Batch](batch-application-packages.md) para saber como utilizar esta funcionalidade para gerir e implementar as aplicações que executa em nós de computação do Batch.
 * Veja [Consultar o serviço Batch de forma eficiente](batch-efficient-list-queries.md) para obter mais informações sobre a redução do número de itens e o tipo de informação devolvido para as consultas ao Batch.
 
@@ -246,6 +272,7 @@ Esta secção destina-se a fornecer-lhe recursos para utilizar na resolução de
 [rest_add_pool]: https://msdn.microsoft.com/library/azure/dn820174.aspx
 
 
-<!--HONumber=Sep16_HO3-->
+
+<!--HONumber=Nov16_HO2-->
 
 

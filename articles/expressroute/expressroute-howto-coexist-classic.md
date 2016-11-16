@@ -1,26 +1,30 @@
 ---
-title: Configurar as ligações de Rede de VPNs e ExpressRoute que podem coexistir | Microsoft Docs
-description: Este artigo explica-lhe como configurar o ExpressRoute e uma ligação de Rede de VPNs que pode coexistir para o modelo de implementação clássica.
+title: "Configurar as ligações de Rede de VPNs e ExpressRoute que podem coexistir | Microsoft Docs"
+description: "Este artigo explica-lhe como configurar o ExpressRoute e uma ligação de Rede de VPNs que pode coexistir para o modelo de implementação clássica."
 documentationcenter: na
 services: expressroute
 author: charwen
 manager: carmonm
-editor: ''
+editor: 
 tags: azure-service-management
-
+ms.assetid: dcf1a5af-a289-466a-b812-0bfedbd2bda0
 ms.service: expressroute
 ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 07/19/2016
+ms.date: 10/10/2016
 ms.author: charwen
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: f03701746cb36838c7db7055f5dd98f77e1adfbd
+
 
 ---
-# Configurar as ligações ExpressRoute e de Site a Site coexistentes para o modelo de implementação clássica
+# <a name="configure-expressroute-and-sitetosite-coexisting-connections-for-the-classic-deployment-model"></a>Configurar as ligações ExpressRoute e de Site a Site coexistentes para o modelo de implementação clássica
 > [!div class="op_single_selector"]
 > * [PowerShell – Resource Manager](expressroute-howto-coexist-resource-manager.md)
-> * [PowerShell – Clássico](expressroute-howto-coexist-classic.md)
+> * [PowerShell – Clássica](expressroute-howto-coexist-classic.md)
 > 
 > 
 
@@ -35,22 +39,22 @@ A capacidade de configurar o ExpressRoute e a Rede de VPNs tem várias vantagens
 > 
 > 
 
-## Limites e limitações
-* **O encaminhamento de tráfego não é suportado:** não pode criar um encaminhamento (através do Azure) entre a sua rede local ligada através da Rede de VPNs e a sua rede local ligada por ExpressRoute.
-* **Ponto a site não é suportado:** não pode ativar ligações VPN de ponto a site para a mesma VNet que está ligada ao ExpressRoute. VPN ponto a site e ExpressRoute não podem coexistir na mesma VNet.
-* **Não pode ativar a imposição do túnel no gateway da Rede de VPNs:** pode apenas “forçar” todo o tráfego da Internet a voltar à sua rede no local através do ExpressRoute. 
-* **Apenas gateways standard ou de elevado desempenho:** tem de utilizar um gateway standard ou de elevado desempenho para o gateway ExpressRoute e o gateway de Rede de VPNs. Veja [SKUs de Gateway](../vpn-gateway/vpn-gateway-about-vpngateways.md) para obter informações sobre SKUs de gateway.
-* **Apenas gateways de VPN baseados em rota:** tem de utilizar um gateway de VPN baseado na rota. Veja [VPN Gateway](../vpn-gateway/vpn-gateway-about-vpngateways.md) para obter informações sobre o gateway de VPN baseado na rota.
-* **Requisito da rota estática:** se a sua rede local está ligada ao ExpressRoute e a uma Rede de VPNs, tem de ter uma rota estática configurada na sua rede local para encaminhar a ligação de Rede de VPNs para a Internet pública.
-* **O gateway do ExpressRoute tem de ser configurado primeiro:** tem de criar primeiro o gateway do ExpressRoute antes de adicionar o gateway de Rede de VPNs.
+## <a name="limits-and-limitations"></a>Limites e limitações
+* **Encaminhamento de tráfego não suportado.** Não pode encaminhar (através do Azure) entre a sua rede local ligada através da Rede de VPNs e a sua rede local ligada através do ExpressRoute.
+* **Ligação ponto a site não suportada.** Não pode ativar ligações VPN ponto a site para a mesma VNet que está ligada ao ExpressRoute. VPN ponto a site e ExpressRoute não podem coexistir na mesma VNet.
+* **Não pode ativar o túnel forçado no Gateway de Rede de VPNs.** Pode apenas “forçar” todo o tráfego da Internet a voltar à sua rede no local através do ExpressRoute.
+* **Gateway do SKU Básico não suportado.** Tem de utilizar um gateway do SKU não Básico para o [Gateway do ExpressRoute](expressroute-about-virtual-network-gateways.md) e para o [Gateway de VPN](../vpn-gateway/vpn-gateway-about-vpngateways.md).
+* **É apenas suportado o Gateway de VPN baseado na rota.** Tem de utilizar um [Gateway de VPN](../vpn-gateway/vpn-gateway-about-vpngateways.md) baseado na rota.
+* **A rota estática deve ser configurada para o seu Gateway de VPN.** Se a sua rede local estiver ligada ao ExpressRoute e a uma Rede de VPNs, terá de ter uma rota estática configurada na rede local para encaminhar a ligação de Rede de VPNs para a Internet pública.
+* **O gateway do ExpressRoute tem de ser configurado primeiro.** Tem de criar primeiro o Gateway do ExpressRoute antes de adicionar o Gateway de Rede de VPNs.
 
-## Estruturas de configuração
-### Configurar uma Rede de VPNs como um caminho de ativação pós-falha para o ExpressRoute
+## <a name="configuration-designs"></a>Estruturas de configuração
+### <a name="configure-a-sitetosite-vpn-as-a-failover-path-for-expressroute"></a>Configurar uma Rede de VPNs como um caminho de ativação pós-falha para o ExpressRoute
 Pode configurar uma ligação de Rede de VPNs como uma cópia de segurança para o ExpressRoute. Isto aplica-se apenas às redes virtuais ligadas ao caminho de peering privado do Azure. Não existe qualquer solução de ativação pós-falha baseada em VPN para os serviços acessíveis através dos peerings público do Azure e da Microsoft. O circuito ExpressRoute é sempre a ligação primária. Os dados percorrerão o caminho da Rede de VPNs apenas se o circuito ExpressRoute falhar. 
 
 ![Coexistir](media/expressroute-howto-coexist-classic/scenario1.jpg)
 
-### Configurar uma Rede de VPNs para se ligar a sites não ligados através do ExpressRoute
+### <a name="configure-a-sitetosite-vpn-to-connect-to-sites-not-connected-through-expressroute"></a>Configurar uma Rede de VPNs para se ligar a sites não ligados através do ExpressRoute
 Pode configurar a sua rede para um local no qual alguns sites se ligam diretamente ao Azure através da Rede de VPNs e alguns sites estabelecem ligação através do ExpressRoute. 
 
 ![Coexistir](media/expressroute-howto-coexist-classic/scenario2.jpg)
@@ -60,7 +64,7 @@ Pode configurar a sua rede para um local no qual alguns sites se ligam diretamen
 > 
 > 
 
-## Selecionar os passos a utilizar
+## <a name="selecting-the-steps-to-use"></a>Selecionar os passos a utilizar
 Existem dois conjuntos diferentes de procedimentos à sua escolha para configurar ligações que podem coexistir. O procedimento de configuração que selecionou dependerá do facto de pretender ligar-se a uma rede virtual já existente ou criar uma nova rede virtual.
 
 * Não tenho uma VNet e preciso de criar uma.
@@ -72,7 +76,7 @@ Existem dois conjuntos diferentes de procedimentos à sua escolha para configura
   
     Neste procedimento, a criação de ligações coexistentes implicará eliminar o seu gateway e, em seguida, configurar os novos gateways. Isto significa que terá período de inatividade para as suas ligações entre locais enquanto elimina e recria o seu gateway e as suas ligações, mas não terá de migrar qualquer uma das suas VMs ou serviços para uma nova rede virtual. As VMs e os serviços continuarão a poder comunicar através do balanceador de carga enquanto configura o seu gateway, se estiverem configurados para tal.
 
-## <a name="new"></a>Para criar uma nova rede virtual e ligações coexistentes
+## <a name="a-namenewato-create-a-new-virtual-network-and-coexisting-connections"></a><a name="new"></a>Para criar uma nova rede virtual e ligações coexistentes
 Este procedimento irá explicar-lhe como criar uma VNet e criar ligações coexistentes ExpressRoute e de Rede de VPNs.
 
 1. Terá de instalar a versão mais recente dos cmdlets do Azure PowerShell. Veja [Como instalar e configurar o Azure PowerShell](../powershell-install-configure.md) para obter mais informações sobre como instalar os cmdlets PowerShell. Tenha em atenção que os cmdlets que irá utilizar para esta configuração podem ser ligeiramente diferentes do que poderá estar familiarizado. Confirme que utiliza os cmdlets especificados nestas instruções. 
@@ -108,7 +112,7 @@ Este procedimento irá explicar-lhe como criar uma VNet e criar ligações coexi
     Utilize o seguinte cmdlet para carregar o seu ficheiro, substituindo o valor com o seu próprio.
    
         Set-AzureVNetConfig -ConfigurationPath 'C:\NetworkConfig.xml'
-4. <a name="gw"></a>Crie um gateway ExpressRoute. Confirme que especifica o GatewaySKU como *Standard* ou *HighPerformance* e GatewayType como *DynamicRouting*.
+4. <a name="gw"></a>Crie um Gateway do ExpressRoute. Verifique se especifica o GatewaySKU como *Standard*, *HighPerformance* ou *UltraPerformance* e o GatewayType como *DynamicRouting*.
    
     Utilize o exemplo seguinte, substituindo os valores pelos seus próprios.
    
@@ -116,7 +120,7 @@ Este procedimento irá explicar-lhe como criar uma VNet e criar ligações coexi
 5. Ligue o gateway ExpressRoute ao circuito ExpressRoute. Quando tiver concluído este passo, a ligação entre a sua rede no local e do Azure, através do ExpressRoute, é estabelecida.
    
         New-AzureDedicatedCircuitLink -ServiceKey <service-key> -VNetName MyAzureVNET
-6. <a name="vpngw"></a>Em seguida, crie o gateway de Rede de VPNs. O GatewaySKU tem de ser *Standard* ou *HighPerformance* e o GatewayType como *DynamicRouting*.
+6. <a name="vpngw"></a>Em seguida, crie o Gateway de Rede de VPNs. O GatewaySKU tem de ser *Standard*, *HighPerformance* ou *UltraPerformance* e o GatewayType tem de ser *DynamicRouting*.
    
         New-AzureVirtualNetworkGateway -VNetName MyAzureVNET -GatewayName S2SVPN -GatewayType DynamicRouting -GatewaySKU  HighPerformance
    
@@ -178,7 +182,7 @@ Este procedimento irá explicar-lhe como criar uma VNet e criar ligações coexi
 
         New-AzureVirtualNetworkGatewayConnection -connectedEntityId <local-network-gateway-id> -gatewayConnectionName Azure2Local -gatewayConnectionType IPsec -sharedKey abc123 -virtualNetworkGatewayId <azure-s2s-vpn-gateway-id>
 
-## <a name="add"></a>Para configurar ligações coexistentes a uma VNet já existente
+## <a name="a-nameaddato-configure-coexsiting-connections-for-an-already-existing-vnet"></a><a name="add"></a>Para configurar ligações coexistentes para uma VNet já existente
 Se tiver uma rede virtual existente, verifique o tamanho da sub-rede do gateway. Se a sub-rede do gateway é /28 ou /29, tem primeiro de eliminar o gateway da rede virtual e aumentar o tamanho da sub-rede do gateway. Os passos nesta secção mostrarão como o fazer.
 
 Se a sub-rede do gateway é /27 ou superior e a rede virtual está ligada através do ExpressRoute, pode ignorar os passos abaixo e avançar para [“Passo 6 – Criar um gateway de Rede de VPNs”](#vpngw) na secção anterior.
@@ -216,9 +220,12 @@ Se a sub-rede do gateway é /27 ou superior e a rede virtual está ligada atrav�
                 </Gateway>
 6. Neste momento, terá uma VNet sem quaisquer gateways. Para criar gateways novos e concluir as suas ligações, pode continuar com [Passo 4 – Criar um gateway ExpressRoute](#gw), presente no conjunto de passos anterior.
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 Para obter mais informações acerca do ExpressRoute, veja as [FAQs do ExpressRoute](expressroute-faqs.md)
 
-<!--HONumber=Aug16_HO1-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

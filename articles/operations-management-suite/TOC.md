@@ -15,26 +15,27 @@
 ### [Segurança de dados](oms-security-data-security.md)
 
 # Procedimento
-## Insight & analytics
+## Analisar
 ### [Log Analytics](../log-analytics/log-analytics-overview.md?toc=%2fazure%2foperations-management-suite%2ftoc.json)
 ### [Monitorização de comparação de produtos](operations-management-suite-monitoring-product-comparison.md)
 ### [Gerir alertas](operations-management-suite-monitoring-alerts.md)
-## Automation & control
+## Gerir
+### [Planear e implementar](operations-management-suite-solutions-creating.md)
+### [Recursos de automatização](operations-management-suite-solutions-resources-automation.md)
+### [Vistas](operations-management-suite-solutions-resources-views.md)
+## Automatizar
 ### [Descrição geral da Automatização do Azure](../automation/automation-intro.md?toc=%2fazure%2foperations-management-suite%2ftoc.json)
-## Protection & recovery
+## Cópia de segurança
 ### [Descrição geral da Cópia de Segurança](../backup/backup-introduction-to-azure-backup.md?toc=%2fazure%2foperations-management-suite%2ftoc.json)
 ### [Descrição geral do Site Recovery](../site-recovery/site-recovery-overview.md?toc=%2fazure%2foperations-management-suite%2ftoc.json)
-## Security & Compliance
+## Proteger
 ### [Monitorizar recursos](oms-security-monitoring-resources.md)
 ### [Responder a alertas de segurança](oms-security-responding-alerts.md)
 ### [Avaliação da linha de base](oms-security-baseline.md)
 ### [Avaliação de software maligno](../log-analytics/log-analytics-malware.md?toc=%2fazure%2foperations-management-suite%2ftoc.json)
 ### [Avaliação de atualizações do sistema](../log-analytics/log-analytics-system-update.md?toc=%2fazure%2foperations-management-suite%2ftoc.json)
 ## [Integrar no OMS](operations-management-suite-integration.md)
-## Soluções de gestão
-### [Planear e implementar](operations-management-suite-solutions-creating.md)
-### [Recursos de automatização](operations-management-suite-solutions-resources-automation.md)
-### [Vistas](operations-management-suite-solutions-resources-views.md)
+
 
 # Referência
 ## [SDK](operations-management-suite-sdk.md)
@@ -60,6 +61,7 @@
 #### [Gestão de Atualizações](oms-solution-update-management.md)
 ### Security & Compliance
 #### [Avaliação de Antimalware](../log-analytics/log-analytics-malware.md?toc=%2fazure%2foperations-management-suite%2ftoc.json)
+
 
 
 <!--HONumber=Nov16_HO2-->

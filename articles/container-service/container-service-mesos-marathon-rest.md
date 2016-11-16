@@ -1,34 +1,38 @@
 ---
-title: Gestão de contentores do Serviço de Contentor do Azure através da API REST | Microsoft Docs
-description: Implemente contentores num cluster Mesos do Serviço de Contentor do Azure utilizando a API REST do Marathon.
+title: "Gestão de contentores do Azure Container Service através da API REST | Microsoft Docs"
+description: "Implemente contentores num cluster Mesos do Serviço de Contentor do Azure utilizando a API REST do Marathon."
 services: container-service
-documentationcenter: ''
+documentationcenter: 
 author: neilpeterson
 manager: timlt
-editor: ''
+editor: 
 tags: acs, azure-container-service
-keywords: Docker, Contentores, Microserviços, Mesos, Azure
-
+keywords: "Docker, Contentores, Microserviços, Mesos, Azure"
+ms.assetid: c7175446-4507-4a33-a7a2-63583e5996e3
 ms.service: container-service
 ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/13/2016
-ms.author: nepeters
+ms.author: timlt
+translationtype: Human Translation
+ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
+ms.openlocfilehash: 7b9358183d884dfeda3d200ef5ae8beb60d3957e
+
 
 ---
-# Gestão de contentores através da API REST
+# <a name="container-management-through-the-rest-api"></a>Gestão de contentores através da API REST
 O DC/OS fornece um ambiente para implementação e dimensionamento de cargas de trabalho em cluster, abstraindo o hardware subjacente. Na parte superior do DC/OS, existe uma estrutura que gere o agendamento e a execução de cargas de trabalho de computação.
 
 Embora as estruturas estejam disponíveis para muitas cargas de trabalho populares, este documento descreve como pode criar e dimensionar implementações de contentores utilizando o Marathon. Antes de avançarmos, necessita de um cluster DC/OS configurado no Serviço de Contentor do Azure. Também necessita de conectividade remota a este cluster. Para obter mais informações sobre estes itens, consulte os artigos seguintes:
 
-* [Implementar um cluster do Serviço de Contentor do Azure](container-service-deployment.md)
-* [Ligar a um cluster do Serviço de Contentor do Azure](container-service-connect.md)
+* [Implementar um cluster do Azure Container Service](container-service-deployment.md)
+* [Ligar a um cluster do Azure Container Service](container-service-connect.md)
 
 Depois de ligar ao cluster do Serviço de Contentor do Azure, pode aceder ao DC/OS e às APIs REST relacionadas através de http://localhost:local-port. Os exemplos neste documento partem do princípio de que está a utilizar um túnel na porta 80. Por exemplo, o ponto final do Marathon pode ser obtido em `http://localhost/marathon/v2/`. Para obter mais informações sobre as diversas APIs, consulte a documentação do Mesosphere da [API do Marathon](https://mesosphere.github.io/marathon/docs/rest-api.html) e da [API do Chronos](https://mesos.github.io/chronos/docs/api.html), bem como a documentação do Apache da [API do Mesos Scheduler](http://mesos.apache.org/documentation/latest/scheduler-http-api/).
 
-## Reunir informações do DC/OS e do Marathon
+## <a name="gather-information-from-dcos-and-marathon"></a>Reunir informações do DC/OS e do Marathon
 Antes de implementar os contentores no cluster DC/OS, recolha algumas informações sobre o cluster DC/OS, tais como os nomes e o estado atual dos agentes DC/OS. Para tal, consulte o ponto final `master/slaves` da API REST do DC/OS. Se tudo correr bem, verá uma lista de agentes DC/OS e as diversas propriedades de cada um.
 
 ```bash
@@ -43,7 +47,7 @@ curl localhost/marathon/v2/apps
 {"apps":[]}
 ```
 
-## Implementar um contentor formatado para Docker
+## <a name="deploy-a-dockerformatted-container"></a>Implementar um contentor formatado para Docker
 Os contentores formatados para Docker são implementados através do Marathon utilizando um ficheiro JSON que descreve a implementação pretendida. O exemplo seguinte implementa o contentor Nginx, a porta de enlace 80 do agente DC/OS para a porta 80 do contentor. Note também que a propriedade “acceptedResourceRoles” está definida para “slave_public”. Isto permite implementar o contentor num agente no conjunto de dimensionamento do agente destinado ao público.
 
 ```json
@@ -86,7 +90,7 @@ Agora, se consultar o Marathon quanto a aplicações, esta nova aplicação ser�
 curl localhost/marathon/v2/apps
 ```
 
-## Dimensionar os contentores
+## <a name="scale-your-containers"></a>Dimensionar os contentores
 Também pode utilizar a API do Marathon para aumentar ou reduzir horizontalmente em implementações de aplicações. No exemplo anterior, foi implementada uma instância de uma aplicação. Vamos aumentar horizontalmente para três instâncias de uma aplicação. Para tal, crie um ficheiro JSON utilizando o seguinte texto JSON e armazene-o numa localização acessível.
 
 ```json
@@ -110,7 +114,7 @@ Por fim, consulte o ponto final do Marathon quanto a aplicações. Verá que exi
 curl localhost/marathon/v2/apps
 ```
 
-## Utilizar o PowerShell para este exercício: interação da API REST do Marathon com o PowerShell
+## <a name="use-powershell-for-this-exercise-marathon-rest-api-interaction-with-powershell"></a>Utilizar o PowerShell para este exercício: interação da API REST do Marathon com o PowerShell
 Pode efetuar estas mesmas ações utilizando comandos do PowerShell num sistema Windows.
 
 Para recolher informações sobre o cluster DC/OS, tais como os nomes de agente e o estado do agente, execute o comando seguinte.
@@ -163,10 +167,13 @@ Execute o comando seguinte para aumentar horizontalmente a aplicação.
 Invoke-WebRequest -Method Put -Uri http://localhost/marathon/v2/apps/nginx -ContentType application/json -InFile 'c:\scale.json'
 ```
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 * [Saiba mais sobre os pontos finais de HTTP do Mesos](http://mesos.apache.org/documentation/latest/endpoints/).
 * [Saiba mais sobre a API REST do Marathon](https://mesosphere.github.io/marathon/docs/rest-api.html).
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

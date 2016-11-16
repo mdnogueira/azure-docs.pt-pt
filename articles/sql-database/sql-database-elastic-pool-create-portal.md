@@ -1,13 +1,13 @@
 ---
-title: Criar um novo conjunto elástico com o portal do Azure | Microsoft Docs
-description: Como adicionar um conjunto de bases de dados elásticas dimensionável à sua configuração de base de dados SQL para uma administração e partilha de recursos mais fácil entre muitas bases de dados.
-keywords: base de dados dimensionável, configuração de base de dados
+title: "Criar um novo conjunto elástico com o portal do Azure | Microsoft Docs"
+description: "Como adicionar um conjunto de bases de dados elásticas dimensionável à sua configuração de base de dados SQL para uma administração e partilha de recursos mais fácil entre muitas bases de dados."
+keywords: "base de dados dimensionável, configuração de base de dados"
 services: sql-database
-documentationcenter: ''
+documentationcenter: 
 author: ninarn
 manager: jhubbard
-editor: ''
-
+editor: 
+ms.assetid: bf12594b-d258-40e6-a9fc-d8a8710c2d65
 ms.service: sql-database
 ms.devlang: NA
 ms.date: 07/20/2016
@@ -15,9 +15,13 @@ ms.author: ninarn
 ms.workload: data-management
 ms.topic: get-started-article
 ms.tgt_pltfrm: NA
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: f83e1aa30cfee86137c13c3a15c0e989558c0df8
+
 
 ---
-# Criar um novo conjunto de bases de dados elásticas com o portal do Azure
+# <a name="create-a-new-elastic-database-pool-with-the-azure-portal"></a>Criar um novo conjunto de bases de dados elásticas com o portal do Azure
 > [!div class="op_single_selector"]
 > * [Portal do Azure](sql-database-elastic-pool-create-portal.md)
 > * [PowerShell](sql-database-elastic-pool-create-powershell.md)
@@ -30,11 +34,11 @@ Este artigo mostra como criar um [conjunto de bases de dados elásticas](sql-dat
 Pode adicionar vários conjuntos a um servidor, mas não pode adicionar bases de dados de diferentes servidores ao mesmo conjunto. Para criar um conjunto, é necessário, pelo menos, uma base de dados num servidor V12. Se não tiver uma, consulte o artigo [Criar a primeira base de dados SQL do Azure](sql-database-get-started.md). Pode criar um conjunto com apenas uma base de dados, mas os conjuntos só são rentáveis com várias bases de dados. Consulte o artigo [Considerações sobre preço e desempenho para um conjunto de bases de dados elásticas](sql-database-elastic-pool-guidance.md).
 
 > [!NOTE]
-> Os conjuntos elásticos estão em disponibilidade geral (GA) em todas as regiões do Azure, exceto na Índia Ocidental, onde se encontra, de momento, em pré-visualização.  A GA dos conjuntos elásticos nesta região vai ocorrer assim que possível. Além disso, os conjuntos elásticos não suportam atualmente as bases de dados que utilizam [OLTP dentro da memória ou análise dentro da memória](sql-database-in-memory.md).
+> Os conjuntos elásticos estão em disponibilidade geral (GA) em todas as regiões do Azure, exceto na Índia Ocidental, onde se encontra, de momento, em pré-visualização.  A GA dos conjuntos elásticos nesta região vai ocorrer assim que possível. 
 > 
 > 
 
-## Passo 1: criar um novo conjunto
+## <a name="step-1-create-a-new-pool"></a>Passo 1: criar um novo conjunto
 Este artigo mostra como criar um novo conjunto a partir de um painel do **servidor** existente no portal, que é a forma mais fácil de mover bases de dados existentes para um conjunto. 
 
 > [!NOTE]
@@ -58,7 +62,7 @@ Este artigo mostra como criar um novo conjunto a partir de um painel do **servid
     ![Configurar o conjunto elástico](./media/sql-database-elastic-pool-create-portal/configure-elastic-pool.png)
 3. Especifique um nome para o conjunto elástico ou mantenha o nome predefinido.
 
-## Passo 2: escolher um escalão de preço
+## <a name="step-2-choose-a-pricing-tier"></a>Passo 2: escolher um escalão de preço
 O escalão de preço do conjunto determina as funcionalidades disponíveis para as bases de dados elásticas no conjunto, o número máximo de eDTUs (eDTU MÁXIMA) e o armazenamento (GBs) disponível para cada base de dados. Para obter detalhes, consulte o Escalões de serviços.
 
 Para alterar o escalão de preço do conjunto, clique em **Escalão de preço**, clique no escalão de preço pretendido e, em seguida, clique em **Selecionar**.
@@ -70,7 +74,7 @@ Para alterar o escalão de preço do conjunto, clique em **Escalão de preço**,
 
 ![Selecionar um escalão de preço](./media/sql-database-elastic-pool-create-portal/pricing-tier.png)
 
-## Passo 3: configurar o conjunto
+## <a name="step-3-configure-the-pool"></a>Passo 3: configurar o conjunto
 Depois de definir o escalão de preço, clique em Configurar conjunto, onde pode adicionar bases de dados, definir as eDTUs e o armazenamento (GBs do conjunto) do conjunto, e definir o número máximo e mínimo de eDTUs para as bases de dados elásticas no conjunto.
 
 1. Clique em **Configurar conjunto**
@@ -86,7 +90,7 @@ Depois de definir o escalão de preço, clique em Configurar conjunto, onde pode
 4. Clique em **Selecionar** no painel **Configurar conjunto** depois de alterar as definições.
 5. Clique em **OK** para criar o conjunto.
 
-## Compreender as recomendações de conjunto
+## <a name="understand-pool-recommendations"></a>Compreender as recomendações de conjunto
 O serviço Base de Dados SQL avalia o histórico de utilização e recomenda um ou mais conjuntos quando é mais rentável do que utilizar bases de dados individuais. Cada recomendação está configurada com um subconjunto exclusivo das bases de dados do servidor que melhor se adequam ao conjunto.
 
 ![conjunto recomendado](./media/sql-database-elastic-pool-create-portal/recommended-pool.png)  
@@ -102,17 +106,20 @@ O serviço tem em conta os últimos 30 dias de telemetria quando recomenda conju
 
 O serviço avalia as necessidades de recursos e a relação custo-eficácia da movimentação das bases de dados individuais em cada escalão de serviço para conjuntos do mesmo escalão. Por exemplo, todas as bases de dados Standard num servidor são avaliadas para determinar a respetiva adequação a um Conjunto Elástico Standard. Isto significa que o serviço não faz recomendações entre escalões, tal como mover uma base de dados Standard para um conjunto Premium.
 
-### Recomendações dinâmicas
+### <a name="dynamic-recommendations"></a>Recomendações dinâmicas
 Depois de adicionar as bases de dados ao conjunto, as recomendações serão geradas dinamicamente com base no histórico de utilização das bases de dados que selecionou. Estas recomendações serão apresentadas no gráfico de utilização de eDTUs e GBs, bem como numa faixa de recomendação no topo do painel **Configurar conjunto**. Estas recomendações visam ajudá-lo a criar um conjunto otimizado para as suas bases de dados específicas.
 
 ![recomendações dinâmicas](./media/sql-database-elastic-pool-create-portal/dynamic-recommendation.png)
 
-## Recursos adicionais
+## <a name="additional-resources"></a>Recursos adicionais
 * [Gerir um conjunto elástico da Base de Dados SQL com o portal](sql-database-elastic-pool-manage-portal.md)
 * [Gerir um conjunto elástico da Base de Dados SQL com o PowerShell](sql-database-elastic-pool-manage-powershell.md)
 * [Gerir um conjunto elástico da Base de Dados SQL com C#](sql-database-elastic-pool-manage-csharp.md)
 * [Aumentar horizontalmente com a Base de Dados SQL do Azure](sql-database-elastic-scale-introduction.md) 
 
-<!--HONumber=Sep16_HO4-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

@@ -1,4 +1,4 @@
-## Implementar o modelo ARM com a função clique para implementar
+## <a name="deploy-the-arm-template-by-using-click-to-deploy"></a>Implementar o modelo ARM com a função clique para implementar
 Pode reutilizar um carregamento predefinido de modelos ARM para um repositório github mantido pela Microsoft e abri-lo à comunidade. Estes modelos podem ser implementados diretamente do github ou transferidos e modificados para atender às suas necessidades. Para implementar um modelo que cria uma VNet com duas sub-redes, siga os passos abaixo.
 
 1. Num browser, navegue para [https://github.com/Azure/azure-quickstart-templates](https://github.com/Azure/azure-quickstart-templates).
@@ -22,6 +22,8 @@ Pode reutilizar um carregamento predefinido de modelos ARM para um repositório 
     
      ![Criar a VNet no portal de pré-visualização](./media/virtual-networks-create-vnet-arm-template-click-include/figure5.gif)
 
-<!--HONumber=Sep16_HO3-->
+
+
+<!--HONumber=Nov16_HO2-->
 
 

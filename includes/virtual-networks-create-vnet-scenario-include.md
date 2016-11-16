@@ -1,4 +1,4 @@
-## Cenário
+## <a name="scenario"></a>Cenário
 Para ilustrar melhor como criar uma VNet e as sub-redes, este documento utilizará o cenário abaixo.
 
 ![Cenário de VNet](./media/virtual-networks-create-vnet-scenario-include/vnet-scenario.png)
@@ -8,6 +8,8 @@ Neste cenário, vai criar uma VNet com o nome **TestVNet** com um bloco CIDR res
 * **Front-end**, utilizando **192.168.1.0/24** como bloco CIDR.
 * **Back-end**, utilizando **192.168.2.0/24** como bloco CIDR.
 
-<!--HONumber=Sep16_HO3-->
+
+
+<!--HONumber=Nov16_HO2-->
 
 

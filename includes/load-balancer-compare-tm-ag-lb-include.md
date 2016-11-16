@@ -1,28 +1,33 @@
-## Load Balancer differences
-There are different options to distribute network traffic using Microsoft Azure. These options work differently from each other, having a different feature set and support different scenarios. They can each be used in isolation, or combining them.
+## <a name="load-balancer-differences"></a>Diferenças do Balanceador de Carga
 
-* **Azure Load Balancer** works at the transport layer (Layer 4 in the OSI network reference stack). It provides network-level distribution of traffic across instances of an application running in the same Azure data center.
-* **Application Gateway** works at the application layer (Layer 7 in the OSI network reference stack). It acts as a reverse-proxy service, terminating the client connection and forwarding requests to back-end endpoints.
-* **Traffic Manager** works at the DNS level.  It uses DNS responses to direct end-user traffic to globally distributed endpoints. Clients then connect to those endpoints directly.
+Existem diferentes opções para distribuir o tráfego de rede com o Microsoft Azure. Estas opções funcionam de forma diferente entre si, tendo um conjunto de funcionalidades diferente e suportando diferentes cenários. Podem todos ser utilizados em isolamento ou em conjunto.
 
-The following table summarizes the features offered by each service:
+* O **Balanceador de Carga do Azure** funciona na camada de transporte (Camada 4 na pilha de referência de rede OSI). Este fornece distribuição de tráfego ao nível da rede em várias instâncias de uma aplicação em execução no mesmo Centro de dados do Azure.
+* O **Gateway de Aplicação** funciona na camada da aplicação (Camada 7 na pilha de referência de rede OSI). Atua como um serviço de proxy de reversão, terminando a ligação de cliente e reencaminhando pedidos de pontos finais de back-end.
+* O **Gestor de Tráfego** funciona ao nível do DNS.  Utiliza as respostas de DNS para direcionar o tráfego de utilizador final para pontos finais distribuídos globalmente. Em seguida, os clientes podem ligar diretamente a esses pontos finais.
 
-| Service | Azure Load Balancer | Application Gateway | Traffic Manager |
+A tabela seguinte resume as funcionalidades oferecidas por cada serviço:
+
+| Serviço | Azure Load Balancer | Gateway de Aplicação | Gestor de Tráfego |
 | --- | --- | --- | --- |
-| Technology |Transport level (Layer 4) |Application level (Layer 7) |DNS level |
-| Application protocols supported |Any |HTTP and HTTPS |Any (An HTTP endpoint is required for endpoint monitoring) |
-| Endpoints |Azure VMs and Cloud Services role instances |Any Azure Internal IP address or public internet IP address |Azure VMs, Cloud Services, Azure Web Apps, and external endpoints |
-| Vnet support |Can be used for both Internet facing and internal (Vnet) applications |Can be used for both Internet facing and internal (Vnet) applications |Only supports Internet-facing applications |
-| Endpoint Monitoring |Supported via probes |Supported via probes |Supported via HTTP/HTTPS GET |
+| Tecnologia |Nível de transporte (Camada 4) |Nível de aplicação (Camada 7) |Nível de DNS |
+| Protocolos de aplicação suportados |Qualquer |HTTP e HTTPS |Qualquer (É preciso um ponto final HTTP para a monitorização de ponto final) |
+| Pontos Finais |Instâncias da função de VMs do Azure e Serviços Cloud |Qualquer endereço IP Interno do Azure ou endereço IP da internet público |VMs do Azure, Serviços Cloud, Aplicações Web do Azure e os pontos finais externos |
+| Suporte de Vnet |Serve para ambas as aplicações (Vnet) internas e com acesso à Internet |Serve para ambas as aplicações (Vnet) internas e com acesso à Internet |Suporta apenas aplicações de acesso à Internet |
+| Monitorização de Pontos Finais |Suportado através de sondas |Suportado através de sondas |Suportado através de HTTP/HTTPS GET |
 
-Azure Load Balancer and Application Gateway route network traffic to endpoints but they have different usage scenarios to which traffic to handle. The following table helps understanding the difference between the two load balancers:
+O Balanceador de Carga do Azure e o Gateway de Aplicação encaminham tráfego de rede para pontos finais, mas têm cenários de utilização diferentes para processar o tráfego. A tabela seguinte ajuda-o a compreender a diferença entre dois balanceadores de carga:
 
-| Type | Azure Load Balancer | Application Gateway |
+| Tipo | Azure Load Balancer | Gateway de Aplicação |
 | --- | --- | --- |
-| Protocols |UDP/TCP |HTTP/ HTTPS |
-| IP reservation |Supported |Not supported |
-| Load balancing mode |5-tuple(source IP, source port, destination IP, destination port, protocol type) |Round Robin<br>Routing based on URL |
-| Load balancing mode (source IP /sticky sessions) |2-tuple (source IP and destination IP), 3-tuple (source IP, destination IP, and port). Can scale up or down based on the number of virtual machines |Cookie-based affinity<br>Routing based on URL |
-| Health probes |Default: probe interval - 15 secs. Taken out of rotation: 2 Continuous failures. Supports user-defined probes |Idle probe interval 30 secs. Taken out after 5 consecutive live traffic failures or a single probe failure in idle mode. Supports user-defined probes |
-| SSL offloading |Not supported |Supported |
+| Protocolos |UDP/TCP |HTTP/ HTTPS |
+| Reserva de IP |Suportado |Não suportado |
+| Modo de balanceamento de carga |5 cadeias de identificação (IP de origem, porta de origem, IP de destino, porta de destino, tipo de protocolo) |Round Robin<br>Encaminhamento com base no URL |
+| Modo de balanceamento de carga (IP de origem/sessões temporárias) |duas cadeias de identificação (IP de origem e destino IP),três cadeias de identificação (IP de origem, IP de destino e porta). Pode aumentar ou reduzir verticalmente, com base no número de máquinas virtuais |Afinidade com base no cookie<br>Encaminhamento com base no URL |
+| Sondas do estado de funcionamento |Predefinido: intervalo da sonda - 15 seg. Retiradas da rotação: duas falhas contínuas. Suporta sondas definidas pelo utilizador |Intervalo da sonda inativo 30 seg. Retirado depois de cinco falhas consecutivas de tráfego em direto ou uma falha de sonda única no modo inativo. Suporta sondas definidas pelo utilizador |
+| Descarga de SSL |Não suportado |Suportado |
+
+
+<!--HONumber=Nov16_HO2-->
+
 

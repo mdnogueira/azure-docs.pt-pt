@@ -1,33 +1,37 @@
 ---
-title: Gestão de contentores do Serviço de Contentor do Azure com o Docker Swarm | Microsoft Docs
-description: Implementar contentores num Docker Swarm no Serviço de Contentor do Azure
+title: "Gestão de contentores do Azure Container Service com o Docker Swarm | Microsoft Docs"
+description: "Implementar contentores num Docker Swarm no Serviço de Contentor do Azure"
 services: container-service
-documentationcenter: ''
+documentationcenter: 
 author: neilpeterson
 manager: timlt
-editor: ''
+editor: 
 tags: acs, azure-container-service
-keywords: Docker, Contentores, Microserviços, Mesos, Azure
-
+keywords: "Docker, Contentores, Microserviços, Mesos, Azure"
+ms.assetid: af8f6fb2-13dc-429c-b82a-24a741168d42
 ms.service: container-service
 ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/13/2016
-ms.author: nepeters
+ms.author: timlt
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: 99953be1a9d99cc1fdd5cd46522ccd262c09e25b
+
 
 ---
-# Gestão de contentores com o Docker Swarm
+# <a name="container-management-with-docker-swarm"></a>Gestão de contentores com o Docker Swarm
 O Docker Swarm fornece um ambiente para a implementação de cargas de trabalho de conteúdo através de um conjunto agrupado de anfitriões de Docker. O Docker Swarm utiliza a API do Docker nativa. O fluxo de trabalho para gerir contentores num Docker Swarm é quase idêntico ao que de um anfitrião de contentor único. Este documento fornece exemplos simples de implementação de cargas de trabalho de conteúdo numa instância de Serviço de Contentor do Azure do Docker Swarm. Para obter documentação mais detalhada sobre o Docker Swarm, consulte [Docker Swarm em Docker.com](https://docs.docker.com/swarm/).
 
 Pré-requisitos para os exercícios deste documento:
 
-[Criar um cluster Swarm no Serviço de Contentor do Azure](container-service-deployment.md)
+[Criar um cluster Swarm no Azure Container Service](container-service-deployment.md)
 
-[Ligar com o cluster Swarm no Serviço de Contentor do Azure](container-service-connect.md)
+[Ligar ao cluster Swarm no Azure Container Service](container-service-connect.md)
 
-## Implementar um novo contentor
+## <a name="deploy-a-new-container"></a>Implementar um novo contentor
 Para criar um novo contentor no Docker Swarm, utilize o comando `docker run` (certificando-se de que tem aberto um túnel SSH para os principais, de acordo com os pré-requisitos acima). Este exemplo cria um contentor a partir da imagem `yeasy/simple-web`:
 
 ```bash
@@ -51,7 +55,7 @@ Agora pode aceder à aplicação que está em execução neste contentor atravé
 
 Por predefinição, o Balanceador de Carga tem as portas 80, 8080 e 443 abertas. Se pretender ligar-se a outra porta terá de abrir essa porta no Balanceador de Carga do Azure para o Agrupamento de Agentes.
 
-## Implementar vários contentores
+## <a name="deploy-multiple-containers"></a>Implementar vários contentores
 Como os vários contentores são iniciados, executando "docker run" várias vezes, pode utilizar o comando `docker ps` para ver em que os anfitriões os contentores estão em execução. No exemplo abaixo, três contentores são distribuídos uniformemente por três agentes Swarm:  
 
 ```bash
@@ -63,7 +67,7 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 4298d397b9ab        yeasy/simple-web    "/bin/sh -c 'python i"   2 minutes ago       Up 2 minutes        10.0.0.5:80->80/tcp   swarm-agent-34A73819-1/happy_allen
 ```  
 
-## Implementar contentores utilizando o Docker Compose
+## <a name="deploy-containers-by-using-docker-compose"></a>Implementar contentores utilizando o Docker Compose
 Pode utilizar o Docker Compose para automatizar a implementação e a configuração de vários contentores. Para tal, certifique-se de que foi criado um túnel Secure Shell (SSH) e que a variável DOCKER_HOST foi definida (ver os pré-requisitos acima).
 
 Crie um ficheiro docker-compose.yml no sistema local. Para tal, utilize este [exemplo](https://raw.githubusercontent.com/rgardler/AzureDevTestDeploy/master/docker-compose.yml).
@@ -109,9 +113,12 @@ caf185d221b7        adtd/web:0.1        "apache2-foreground"   2 minutes ago    
 
 Naturalmente, pode utilizar `docker-compose ps` para examinar apenas os contentores definidos noficheiro `compose.yml`.
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 [Saiba mais sobre o Docker Swarm](https://docs.docker.com/swarm/)
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

@@ -1,43 +1,56 @@
 ---
-title: Enabling SSL Policy and end to end SSL on Application Gateway | Microsoft Docs
-description: This page provides an overview of the Application Gateway end to end SSL support.
+title: "Ativar a Política de SSL e o SSL de ponta a ponta no Gateway de Aplicação | Microsoft Docs"
+description: "Esta página fornece uma descrição geral do suporte de SSL de ponta a ponta do Gateway de Aplicação."
 documentationcenter: na
 services: application-gateway
 author: amsriva
 manager: rossort
 editor: amsriva
-
+ms.assetid: 3976399b-25ad-45eb-8eb3-fdb736a598c5
 ms.service: application-gateway
 ms.devlang: na
-ms.topic: article
+ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 09/26/2016
+ms.date: 11/10/2016
 ms.author: amsriva
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: 9642ea16bff4b0cd4bf3e88d7530765d4c7bfbc5
+
 
 ---
-# Enabling SSL Policy and end to end SSL on Application Gateway
-## Overview
-Application gateway supports SSL termination at the gateway, after which traffic typically flows unencrypted to the backend servers. This allows web servers to be unburdened from costly encryption/decryption overhead. However for some customers unencrypted communication to the backend servers is not an acceptable option. This could be due to security/compliance requirements or the application may only accept secure connection. For such applications, application gateway now supports end to end SSL encryption.
+# <a name="enabling-ssl-policy-and-end-to-end-ssl-on-application-gateway"></a>Ativar a Política de SSL e o SSL de ponta a ponta no Gateway de Aplicação
+## <a name="overview"></a>Descrição geral
+O Gateway de Aplicação suporta a terminação de SSL no gateway, após o qual o tráfego normalmente flui desencriptado para os servidores de back-end. Esta ação permite que os servidores Web estejam livres de sobrecarga de encriptação/desencriptação dispendiosa. No entanto, para alguns clientes, a comunicação sem encriptação para os servidores de back-end não é uma opção aceitável. Tal pode dever-se aos requisitos de segurança/conformidade ou a aplicação pode aceitar apenas a ligação segura. Para essas aplicações, o gateway de aplicação suporta agora a encriptação SSL de ponta a ponta.
 
-End to end SSL allows you to securely transmit sensitive data to the backend encrypted while availing benefits of Layer 7 load balancing features which application gateway provides, such as cookie affinity, URL-based routing, support for routing based on sites or ability to inject X-Forwarded-* headers.
+O SSL de ponto a ponto permite-lhe transmitir dados confidenciais de forma segura para o back-end encriptado e tirar partido dos benefícios das funcionalidades de balanceamento de carga da Camada 7 que o gateway de aplicação proporciona, tais como a afinidade por cookies, o encaminhamento baseado em URL, suporte para encaminhamento baseado em sites ou capacidade para injetar cabeçalhos X-Forwarded-*.
 
-When configured with end to end SSL communication mode, application gateway terminates user SSL sessions at the gateway and decrypts user traffic. It then applies the configured rules to select an appropriate backend pool instance to route traffic to. Application gateway then initiates a new SSL connection to the backend server and re-encrypts data using backend server's public key certificate before transmitting request to the backend. End to end SSL is enabled by setting protocol setting in BackendHTTPSetting to Https, which is then applied to a backend pool. Each backend server in the backend pool with end to end SSL enabled must be configured with a certificate to allow secure communication.
+Quando configurado com o modo de comunicação SSL de ponta a ponta, o gateway de aplicação termina sessões de SSL de utilizador no gateway e desencripta o tráfego de utilizador. Em seguida, aplica as regras configuradas para selecionar uma instância de conjunto de back-end adequada para encaminhar o tráfego. O gateway de aplicação, em seguida, inicia uma nova ligação SSL ao servidor de back-end e encripta novamente os dados com o certificado de chave pública do servidor de back-end antes de transmitir o pedido para o back-end. O SSL de ponta a ponta é ativado ao configurar a definição do protocolo no BackendHTTPSetting como Https que, em seguida, é aplicado a um conjunto de back-end. Cada servidor de back-end no conjunto de back-end com SSL de ponta a ponta ativado deve ser configurado com um certificado, para permitir a comunicação segura.
 
-![imageURLroute](./media/application-gateway-multi-site-overview/multisite.png)
+![cenário de SSL ponto a ponto][1]
 
-In this example, requests for https://contoso.com can be routed to ContosoServerPool over HTTP, and https://fabrikam.com will be routed to FabrikamServerPool over HTTPS using end to end SSL.
+Neste exemplo, os pedidos que utilizam o TLS1.2 são encaminhados para servidores de back-end no Pool1 através do SSL ponto a ponto.
 
-## End to end SSL and white listing of certificates
-Application gateway only communicates with known backend instances, which have whitelisted their certificate with the application gateway. To enable whitelisting of certificates, you must upload the public key of backend server certificates to the application gateway. Only connections to known and white listed backend is then allowed and remaining result in a gateway error. Self-signed certificates are for test purposes only and not recommended for production workloads. Such certificates must also be white listed with the application gateway as described above before they can be used.
+## <a name="end-to-end-ssl-and-whitelisting-of-certificates"></a>SSL ponto a ponto e lista de certificados permitidos
+O gateway de aplicação comunica apenas com instâncias de back-end conhecidas que colocaram o respetivo certificado na lista de permissões com o gateway de aplicação. Para ativar a lista de certificados permitidos, tem de carregar a chave pública dos certificados de servidor de back-end para o gateway de aplicação (e não o certificado de raiz). Apenas são permitidas ligações a back-ends conhecidos e na lista de permissões. Os restantes back-ends resultam num erro de gateway. Os certificados autoassinados são apenas para fins de teste e não são recomendados para cargas de trabalho de produção. Esses certificados também têm de estar na lista de permissões com o gateway de aplicação, conforme descrito nos passos anteriores, para poderem ser utilizados.
 
-## Application Gateway SSL Policy
-Application gateway also supports user configurable SSL negotiation policies, which allow customers finer grained control over SSL connections at the application gateway.
+## <a name="application-gateway-ssl-policy"></a>Política SSL do Gateway de Aplicação
+O gateway de aplicação suporta políticas de negociação SSL configuráveis pelo utilizador, o que permite aos clientes um maior controlo sobre ligações SSL no gateway de aplicação.
 
-1. SSL 2.0 and 3.0 are forced disabled for all Application Gateways. They are not configurable at all.
-2. SSL policy definition gives you option to disable any of the following 3 protocols - TLSv1_0, TLSv1_1, TLSv1_2.
-3. If no SSL policy is defined all three (TLSv1_0, TLSv1_1, TLSv1_2) would be enabled.
+1. Por predefinição, o SSL 2.0 e 3.0 estão desativados para todos os Gateways de Aplicação. Não são configuráveis em qualquer altura.
+2. A definição da política SSL dá-lhe a opção de desativar qualquer um dos seguintes três protocolos – TLSv1\_0, TLSv1\_1, TLSv1\_2.
+3. Se não for definida uma política SSL, as três (TLSv1\_0, TLSv1\_1, TLSv1_2) serão ativadas.
 
-## Next steps
-After learning about end to end SSL and SSL policy, go to [enable end to end SSL on application gateway](application-gateway-end-to-end-ssl-powershell.md) to create an application gateway with ability to send traffic to backend in encrypted form.
+## <a name="next-steps"></a>Passos seguintes
+Após ter obtido informações sobre o SSL ponto a ponto e a política SSL, aceda a [ativar SSL ponto a ponto no gateway de aplicação](application-gateway-end-to-end-ssl-powershell.md) para criar um gateway de aplicação com capacidade para enviar o tráfego para back-ends no formato encriptado.
+
+<!--Image references-->
+
+[1]: ./media/application-gateway-backend-ssl/scenario.png
+
+
+
+<!--HONumber=Nov16_HO2-->
+
 

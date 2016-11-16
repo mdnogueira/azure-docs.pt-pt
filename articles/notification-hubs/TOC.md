@@ -1,4 +1,5 @@
-# [Descrição geral](notification-hubs-push-notification-overview.md)
+# Descrição geral
+## [O que são os Hubs de Notificação do Azure](notification-hubs-push-notification-overview.md)
 # Introdução
 ## [Android (FCM)](notification-hubs-android-push-notification-google-fcm-get-started.md)
 ## [Baidu](notification-hubs-baidu-china-android-notifications-get-started.md)
@@ -9,9 +10,9 @@
 ## [Windows Phone](notification-hubs-windows-mobile-push-notifications-mpns.md)
 ## [Xamarin.Android](xamarin-notification-hubs-push-notifications-android-gcm.md)
 ## [Xamarin.iOS](xamarin-notification-hubs-ios-push-notification-apns-get-started.md)
+## [Perguntas Mais Frequentes](notification-hubs-push-notification-faq.md)
 
 # Procedimento
-
 ## Planear e conceber
 ### [Orientação de arquitetura das notificações push empresariais](notification-hubs-enterprise-push-notification-architecture.md)
 
@@ -48,24 +49,26 @@
 ### Push seguro
 #### [Android](notification-hubs-aspnet-backend-android-secure-google-gcm-push-notification.md)
 #### [iOS](notification-hubs-aspnet-backend-ios-push-apple-apns-secure-notification.md)
-#### [Windowsh](notification-hubs-aspnet-backend-windows-dotnet-wns-secure-push-notification.md)
-
-
+#### [Windows](notification-hubs-aspnet-backend-windows-dotnet-wns-secure-push-notification.md)
 
 ## Automatizar
 ### [Implementar e Gerir Hubs de Notificação com o PowerShell](notification-hubs-deploy-and-manage-powershell.md)
 ### [Enviar notificações agendadas](notification-hubs-send-push-notifications-scheduled.md)
 
-
 ## Resolução de problemas
 ### [Diretrizes de diagnóstico](notification-hubs-push-notification-fixer.md)
 
 # Referência
-
-# Relacionado
+## [Cmdlets do PowerShell](/powershell/resourcemanager/)
+## [.NET](/dotnet/api/)
+## [REST](/rest/api/notificationhubs/)
 
 # Recursos
-## [Perguntas Mais Frequentes](notification-hubs-push-notification-faq.md)
+## [Preços](https://azure.microsoft.com/pricing/details/notification-hubs/)
+## [Fórum do MSDN](https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=notificationhubs)
+## [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-notificationhub)
+## [Vídeos](https://azure.microsoft.com/documentation/videos/index/?services=notification-hubs)
+## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=notification-hubs)
 
 
 <!--HONumber=Nov16_HO2-->

@@ -1,13 +1,13 @@
 ---
-title: Criar uma função de processamento de eventos | Microsoft Docs
-description: Utilize funções do Azure para criar uma função de C# que seja executada com base num temporizador de eventos.
+title: "Criar uma função de processamento de eventos | Microsoft Docs"
+description: "Utilize funções do Azure para criar uma função de C# que seja executada com base num temporizador de eventos."
 services: functions
 documentationcenter: na
 author: ggailey777
 manager: erikre
-editor: ''
-tags: ''
-
+editor: 
+tags: 
+ms.assetid: 84bd0373-65e2-4022-bcca-2b9cd9e696f5
 ms.service: functions
 ms.devlang: multiple
 ms.topic: get-started-article
@@ -15,17 +15,21 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 09/25/2016
 ms.author: glenga
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: 2381b04e32a6d65075dadf04f717f4946ba4d464
+
 
 ---
-# Criar uma Função do Azure de processamento de eventos
+# <a name="create-an-event-processing-azure-function"></a>Criar uma Função do Azure de processamento de eventos
 As Funções do Azure são uma experiência baseada em eventos, de cálculo a pedido que lhe permite criar unidades agendadas ou acionadas de código implementado em várias linguagens de programação. Para saber mais acerca das Funções do Azure, veja a [Descrição Geral das Funções do Azure](functions-overview.md).
 
 Este tópico mostra-lhe como criar uma nova função em C# que é executada com base num temporizador de eventos para adicionar mensagens a uma fila de armazenamento. 
 
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 Antes de poder criar uma função, tem de ter uma conta do Azure ativa. Se ainda não tiver uma conta do Azure, [estão disponíveis contas gratuitas](https://azure.microsoft.com/free/).
 
-## Criar uma função acionada por temporizador a partir do modelo
+## <a name="create-a-timertriggered-function-from-the-template"></a>Criar uma função acionada por temporizador a partir do modelo
 Uma aplicação de função aloja a execução das suas funções no Azure. Antes de poder criar uma função, tem de ter uma conta do Azure ativa. Se ainda não tiver uma conta do Azure, [estão disponíveis contas gratuitas](https://azure.microsoft.com/free/). 
 
 1. Aceda ao [portal das Funções do Azure](https://functions.azure.com/signin) e inicie sessão com a sua conta do Azure.
@@ -40,17 +44,18 @@ Uma aplicação de função aloja a execução das suas funções no Azure. Ante
    
     ![Criar uma nova função de acionada por temporizador](./media/functions-create-an-event-processing-function/functions-create-storage-queue-output-binding-2.png)
 6. De novo no separador **Desenvolver**, substitua o script do C# existente na janela **Código** com o código seguinte:
-   
-        using System;
-   
-        public static void Run(TimerInfo myTimer, out string outputQueueItem, TraceWriter log)
-        {
-            // Add a new scheduled message to the queue.
-            outputQueueItem = $"Ping message added to the queue at: {DateTime.Now}.";
-   
-            // Also write the message to the logs.
-            log.Info(outputQueueItem);
-        }
+    ```cs   
+    using System;
+
+    public static void Run(TimerInfo myTimer, out string outputQueueItem, TraceWriter log)
+    {
+        // Add a new scheduled message to the queue.
+        outputQueueItem = $"Ping message added to the queue at: {DateTime.Now}.";
+
+        // Also write the message to the logs.
+        log.Info(outputQueueItem);
+    }
+    ```
    
     Este código adiciona uma nova mensagem à fila com a data e hora atuais quando a função for executada.
 7. Clique em **Guardar** e veja as janelas **Registos** para a execução de função seguinte.
@@ -59,7 +64,7 @@ Uma aplicação de função aloja a execução das suas funções no Azure. Ante
 
 Isto é um exemplo muito simplificado de um acionador de temporizador e de um vínculo de saída da fila de armazenamento. Para obter mais informações, veja os tópicos [Acionador do temporizador de Funções do Azure](functions-bindings-timer.md) e [Acionadores de Funções do Azure e vínculos para Armazenamento do Azure](functions-bindings-storage.md).
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 Veja os seguintes tópicos para obter mais informações sobre o Funções do Azure.
 
 * [Referência para programadores das Funções do Azure](functions-reference.md)  
@@ -71,6 +76,9 @@ Veja os seguintes tópicos para obter mais informações sobre o Funções do Az
 
 [!INCLUDE [Getting Started Note](../../includes/functions-get-help.md)]
 
-<!--HONumber=Sep16_HO4-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

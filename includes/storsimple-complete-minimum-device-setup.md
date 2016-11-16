@@ -1,6 +1,6 @@
 <!--author=alkohli last changed: 9/17/15-->
 
-#### Para concluir a configuração mínima do dispositivo StorSimple
+#### <a name="to-complete-the-minimum-storsimple-device-setup"></a>Para concluir a configuração mínima do dispositivo StorSimple
 1. Na página **Dispositivos**, selecione o dispositivo, clique na seta junto ao nome do dispositivo para ir para a página específica do dispositivo. 
    
     ![Página de dispositivos com o dispositivo online](./media/storsimple-complete-minimum-device-setup/HCS_DevicesPageM-include.png) 
@@ -13,14 +13,13 @@
    2. Defina o **fuso horário** com base na localização geográfica onde o dispositivo está a ser implementado. O dispositivo utiliza este fuso horário para todas as operações agendadas.
    3. Em **Definições de DNS**, forneça um endereço para o **Servidor DNS Secundário**. Se estiver a utilizar IPv6, o campo será preenchido com base no prefixo IPv6 fornecido na interface do Windows PowerShell. 
       Se o servidor DNS secundário não estiver configurado, não lhe será permitido guardar a configuração do dispositivo.
-   4. Nas interfaces preparadas para iSCSI, ative, pelo menos, uma rede para iSCSI. Tem de haver, no mínimo, uma interface de rede preparada para a nuvem e uma interface preparada para iSCSI. DATA 0 é automaticamente ativado para a nuvem.
+   4. Nas interfaces preparadas para iSCSI, ative, pelo menos, uma rede para iSCSI. Tem de haver, no mínimo, uma interface de rede preparada para a nuvem e uma interface preparada para iSCSI. DATA 0 é automaticamente ativado para a nuvem.
       
       ![Definições básicas para a configuração mínima do dispositivo StorSimple](./media/storsimple-complete-minimum-device-setup/HCS_MinDeviceSetupBasicSettings1-include.png)
 4. Clique no ícone de seta. ![Ícone de seta do StorSimple](./media/storsimple-complete-minimum-device-setup/HCS_ArrowIcon-include.png)
-5. Na página **Interfaces de Rede**, forneça os endereços IP fixos para o Controlador 0 e o Controlador 1. Se a interface DATA 0 tiver sido configurada para IPv4, os endereços IP fixos têm de ser fornecidos no formato IPv4. Se tiver indicado um prefixo para a configuração IPv6, os endereços IP fixos serão preenchidos automaticamente nestes campos.
+5. Na página **Interfaces de Rede**, forneça os endereços IP fixos para o Controlador 0 e o Controlador 1. Se a interface DATA 0 tiver sido configurada para IPv4, os endereços IP fixos têm de ser fornecidos no formato IPv4. Se tiver indicado um prefixo para a configuração IPv6, os endereços IP fixos serão preenchidos automaticamente nestes campos.
 
-    > [AZURE.NOTE] 
-    > 
+    > [!NOTE] 
     > - Os endereços IP fixos do controlador têm de ser IPs livres na sub-rede acessível pelo endereço IP do dispositivo.
     > - Os endereços IP fixos do controlador são utilizados para a manutenção de atualizações do dispositivo e, por conseguinte, os IPs fixos têm de ser encaminháveis e conseguir estabelecer ligação à Internet.
 
@@ -38,6 +37,8 @@
 
 Para ver um vídeo que demonstra como concluir a configuração mínima do dispositivo, clique [aqui](https://azure.microsoft.com/documentation/videos/minimum-storsimple-device-setup/).
 
-<!--HONumber=Sep16_HO3-->
+
+
+<!--HONumber=Nov16_HO2-->
 
 

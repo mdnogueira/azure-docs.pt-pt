@@ -1,40 +1,44 @@
 ---
-title: Aplicação híbrida no local/nuvem (.NET) | Microsoft Docs
-description: Saiba como criar uma aplicação .NET híbrida no local/nuvem utilizando o reencaminhamento do Service Bus do Azure.
-services: service-bus-relay
+title: "Aplicação híbrida no local/nuvem (.NET) | Microsoft Docs"
+description: "Saiba como criar uma aplicação .NET híbrida no local/nuvem utilizando o reencaminhamento do Service Bus do Azure."
+services: service-bus
 documentationcenter: .net
 author: sethmanheim
 manager: timlt
-editor: ''
-
-ms.service: service-bus-relay
+editor: 
+ms.assetid: 9ed02f7c-ebfb-4f39-9c97-b7dc15bcb4c1
+ms.service: service-bus
 ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: hero-article
 ms.date: 09/16/2016
 ms.author: sethm
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: 3c9d542edf04c119f5d97f80eacdfd0521acd77d
+
 
 ---
-# Aplicação .NET híbrida no local/nuvem com o Reencaminhamento do Azure Service Bus
-## Introdução
+# <a name="net-onpremisescloud-hybrid-application-using-azure-service-bus-wcf-relay"></a>Aplicação .NET híbrida no local/nuvem com o Reencaminhamento de WCF do Azure Service Bus
+## <a name="introduction"></a>Introdução
 Este artigo descreve como compilar uma aplicação híbrida na nuvem com o Microsoft Azure e o Visual Studio. O tutorial parte do princípio de que não tem experiência anterior na utilização do Azure. Em menos de 30 minutos, terá uma aplicação que utiliza vários recursos do Azure instalados e em execução na nuvem.
 
 Aprenderá:
 
 * Como criar ou adaptar um serviço Web existente para consumo por uma solução Web.
-* Como utilizar o serviço de Reencaminhamento do Azure Service Bus para partilhar dados entre uma aplicação do Azure e um serviço Web alojado noutro local.
+* Como utilizar o serviço de Reencaminhamento de WCF do Azure Service Bus para partilhar dados entre uma aplicação do Azure e um serviço Web alojado noutro local.
 
 [!INCLUDE [create-account-note](../../includes/create-account-note.md)]
 
-## Como o reencaminhamento do Service Bus ajuda com soluções híbridas
+## <a name="how-the-service-bus-relay-helps-with-hybrid-solutions"></a>Como o reencaminhamento do Service Bus ajuda com soluções híbridas
 As soluções de negócio são normalmente compostas por um código personalizado escrito para lidar com requisitos comerciais novos e únicos e com funcionalidades existentes fornecidas por soluções e sistemas já aplicados.
 
 Os arquitetos de soluções estão a começar a utilizar a nuvem para um processamento mais fácil de requisitos de escala e custos operacionais inferiores. Deste modo, descobriram que os elementos de serviço existentes que gostariam de utilizar como blocos modulares para as suas soluções encontram-se na firewall da empresa e longe do fácil acesso pela solução em nuvem. Muitos serviços internos não são compilados ou alojados de modo a poderem ser facilmente expostos na margem da rede empresarial.
 
-O reencaminhamento do Service Bus foi concebido para o caso de utilização de processar serviços Web do Windows Communication Foundation (WCF) e tornar esses serviços acessíveis de forma segura para soluções que residem fora do perímetro empresarial sem exigir alterações intrusivas na infraestrutura da rede empresarial. Esses serviços de reencaminhamento do Service Bus continuam a ser alojados no seu ambiente existente, contudo, delegam a escuta de sessões e pedidos de entrada para o Service Bus alojado na nuvem. O Service Bus também protege esses serviços de acesso não autorizado utilizando a autenticação por [Assinatura de Acesso Partilhado](../service-bus/service-bus-sas-overview.md) (SAS).
+O reencaminhamento do Service Bus foi concebido para o caso de utilização de processar serviços Web do Windows Communication Foundation (WCF) e tornar esses serviços acessíveis de forma segura para soluções que residem fora do perímetro empresarial sem exigir alterações intrusivas na infraestrutura da rede empresarial. Esses serviços de reencaminhamento do Service Bus continuam a ser alojados no seu ambiente existente, contudo, delegam a escuta de sessões e pedidos de entrada para o Service Bus alojado na nuvem. O Service Bus também protege esses serviços de acesso não autorizado utilizando a autenticação por [Assinatura de Acesso Partilhado](../service-bus-messaging/service-bus-sas-overview.md) (SAS).
 
-## Cenário de solução
+## <a name="solution-scenario"></a>Cenário de solução
 Neste tutorial, criará um Web site ASP.NET que permite ver uma lista de produtos na página de inventário de produtos.
 
 ![][0]
@@ -45,7 +49,7 @@ Segue-se uma captura de ecrã da página inicial da aplicação Web completa.
 
 ![][1]
 
-## Configurar o ambiente de desenvolvimento
+## <a name="set-up-the-development-environment"></a>Configurar o ambiente de desenvolvimento
 Antes de poder começar a desenvolver aplicações do Azure, obtenha as ferramentas e configure o ambiente de desenvolvimento.
 
 1. Instale o Azure SDK para o .NET a partir da página [Obter Ferramentas e SDK][Obter Ferramentas e SDK].
@@ -54,17 +58,17 @@ Antes de poder começar a desenvolver aplicações do Azure, obtenha as ferramen
 4. No **Instalador de Plataforma Web**, clique em **Instalar** e continue com a instalação.
 5. Após a conclusão da instalação, terá tudo o que é necessário para começar a desenvolver a aplicação. O SDK inclui ferramentas que permitem desenvolver facilmente aplicações do Azure no Visual Studio. Caso não tenha o Visual Studio instalado, o SDK também instala o Visual Studio Express gratuito.
 
-## Criar um espaço de nomes
+## <a name="create-a-namespace"></a>Criar um espaço de nomes
 Para começar a utilizar as funcionalidades do Service Bus no Azure, deve criar, em primeiro lugar, um espaço de nomes de serviço. Um espaço de nomes fornece um contentor de âmbito para abordar os recursos do Service Bus na sua aplicação.
 
 [!INCLUDE [service-bus-create-namespace-portal](../../includes/service-bus-create-namespace-portal.md)]
 
-## Criar um servidor no local
+## <a name="create-an-onpremises-server"></a>Criar um servidor no local
 Em primeiro lugar, compilará um sistema de catálogo de produtos no local (mock). Tal será bastante simples; pode vê-lo como representando um sistema de catálogo de produtos no local real com uma superfície de serviço completo que estamos a tentar integrar.
 
 Este projeto é uma aplicação de consola do Visual Studio e utiliza o [Pacote NuGet do Service Bus do Azure](https://www.nuget.org/packages/WindowsAzure.ServiceBus/) para incluir as bibliotecas e as definições de configuração do Service Bus.
 
-### Criar o projeto
+### <a name="create-the-project"></a>Criar o projeto
 1. Inicie o Microsoft Visual Studio com privilégios de administrador. Para iniciar o Visual Studio com privilégios de administrador, clique com o botão direito no ícone do programa **Visual Studio** e, em seguida, clique em **Executar como administrador**.
 2. No Visual Studio, no menu **Ficheiro**, clique em **Novo** e, de seguida, em **Projeto**.
 3. A partir de **Modelos Instalados**, no **Visual C#**, clique em **Aplicação de Consola**. Na caixa **Nome**, escreva o nome **ProductsServer**:
@@ -197,17 +201,17 @@ Este projeto é uma aplicação de consola do Visual Studio e utiliza o [Pacote 
     
     ```
     <appSettings>
-    <!-- Service Bus specific app settings for messaging connections -->
-    <add key="Microsoft.ServiceBus.ConnectionString"
+       <!-- Service Bus specific app settings for messaging connections -->
+       <add key="Microsoft.ServiceBus.ConnectionString"
            value="Endpoint=sb://yourNamespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=yourKey"/>
     </appSettings>
     ```
 14. Prima **Ctrl+Shift+B** ou a partir do menu **Compilar**, clique em **Compilar Solução** para compilar a aplicação e verificar a precisão do seu trabalho até ao momento.
 
-## Criar uma aplicação ASP.NET
+## <a name="create-an-aspnet-application"></a>Criar uma aplicação ASP.NET
 Nesta secção, compilará uma aplicação ASP.NET simples que apresenta dados obtidos a partir do serviço de produtos.
 
-### Criar o projeto
+### <a name="create-the-project"></a>Criar o projeto
 1. Certifique-se de que o Visual Studio está em execução com privilégios de administrador.
 2. No Visual Studio, no menu **Ficheiro**, clique em **Novo** e, de seguida, em **Projeto**.
 3. A partir de **Modelos Instalados**, no **Visual C#**, clique em **Aplicação Web ASP.NET**. Atribua o nome **ProductsPortal** ao projeto. Em seguida, clique em **OK**.
@@ -229,12 +233,12 @@ Nesta secção, compilará uma aplicação ASP.NET simples que apresenta dados o
     
     ![][17]
 
-### Modificar a aplicação Web
+### <a name="modify-the-web-application"></a>Modificar a aplicação Web
 1. No ficheiro Product.cs no Visual Studio, substitua a definição de espaço de nomes existente pelo código seguinte.
    
    ```
    // Declare properties for the products inventory.
-   namespace ProductsWeb.Models
+    namespace ProductsWeb.Models
    {
        public class Product
        {
@@ -278,38 +282,38 @@ Nesta secção, compilará uma aplicação ASP.NET simples que apresenta dados o
    @model IEnumerable<ProductsWeb.Models.Product>
    
    @{
-           ViewBag.Title = "Index";
+            ViewBag.Title = "Index";
    }
    
    <h2>Prod Inventory</h2>
    
    <table>
-           <tr>
-               <th>
-                   @Html.DisplayNameFor(model => model.Name)
-               </th>
+             <tr>
+                 <th>
+                     @Html.DisplayNameFor(model => model.Name)
+                 </th>
                  <th></th>
-               <th>
-                   @Html.DisplayNameFor(model => model.Quantity)
-               </th>
-           </tr>
+                 <th>
+                     @Html.DisplayNameFor(model => model.Quantity)
+                 </th>
+             </tr>
    
    @foreach (var item in Model) {
-           <tr>
-               <td>
-                   @Html.DisplayFor(modelItem => item.Name)
-               </td>
-               <td>
-                   @Html.DisplayFor(modelItem => item.Quantity)
-               </td>
-           </tr>
+             <tr>
+                 <td>
+                     @Html.DisplayFor(modelItem => item.Name)
+                 </td>
+                 <td>
+                     @Html.DisplayFor(modelItem => item.Quantity)
+                 </td>
+             </tr>
    }
    
    </table>
    ```
 8. Para verificar a precisão do seu trabalho até ao momento, pode premir **Ctrl+Shift+B** para compilar o projeto.
 
-### Executar a aplicação localmente
+### <a name="run-the-app-locally"></a>Executar a aplicação localmente
 Execute a aplicação para verificar se funciona.
 
 1. Certifique-se de que o **ProductsPortal** é o projeto ativo. Clique com o botão direito no nome do projeto no Explorador de Soluções e selecione **Configurar como Projeto de Arranque**.
@@ -318,7 +322,7 @@ Execute a aplicação para verificar se funciona.
    
    ![][21]
 
-## Juntar as peças
+## <a name="put-the-pieces-together"></a>Juntar as peças
 O passo seguinte consiste em ligar o servidor de produtos no local à aplicação ASP.NET.
 
 1. Caso não esteja ainda aberto, no Visual Studio, reabra o projeto **ProductsPortal** criado na secção [Criar uma aplicação ASP.NET](#create-an-aspnet-application).
@@ -382,7 +386,7 @@ O passo seguinte consiste em ligar o servidor de produtos no local à aplicaçã
     ![][26]
 14. Clique em **OK** na caixa de diálogo **Páginas de Propriedades**.
 
-## Executar localmente o projeto
+## <a name="run-the-project-locally"></a>Executar localmente o projeto
 Para testar a aplicação localmente, prima **F5** no Visual Studio. O servidor no local (**ProductsServer**) deverá iniciar primeiro e, em seguida, a aplicação **ProductsPortal** deverá iniciar numa janela do browser. Neste momento, verá que o inventário de produtos lista os dados obtidos a partir do sistema de serviço de produtos no local.
 
 ![][10]
@@ -391,7 +395,7 @@ Prima **Atualizar** na página **ProductsPortal**. Sempre que atualizar a págin
 
 Feche ambas as aplicações antes de prosseguir para o passo seguinte.
 
-## Implementar o projeto ProductsPortal numa aplicação Web do Azure
+## <a name="deploy-the-productsportal-project-to-an-azure-web-app"></a>Implementar o projeto ProductsPortal numa aplicação Web do Azure
 O passo seguinte consiste em converter o front-end **ProductsPortal** para uma aplicação Web do Azure. Em primeiro lugar, implemente o projeto **ProductsPortal**, seguindo todos os passos na secção [Implementar o projeto Web na aplicação Web do Azure](../app-service-web/web-sites-dotnet-get-started.md#deploy-the-web-project-to-the-azure-web-app). Após a conclusão da implementação, regresse a este tutorial e continue para o passo seguinte.
 
 > [!NOTE]
@@ -403,7 +407,7 @@ Copie o URL da aplicação Web implementada, uma vez que necessitará do URL par
 
 ![][9] 
 
-### Configurar o ProductsPortal como uma aplicação Web
+### <a name="set-productsportal-as-web-app"></a>Configurar o ProductsPortal como uma aplicação Web
 Antes de executar a aplicação na nuvem, deve garantir que o **ProductsPortal** é executado a partir do Visual Studio como uma aplicação Web.
 
 1. No Visual Studio, clique com o botão direito no projeto **ProjectsPortal** e, em seguida, clique em **Propriedades**.
@@ -414,7 +418,7 @@ Antes de executar a aplicação na nuvem, deve garantir que o **ProductsPortal**
 4. A partir do menu **Ficheiro** no Visual Studio, clique em **Guardar Tudo**.
 5. A partir do menu Compilar no Visual Studio, clique em **Reconstruir Solução**.
 
-## Executar a aplicação
+## <a name="run-the-application"></a>Executar a aplicação
 1. Prima F5 para compilar e executar a aplicação. O servidor no local (a aplicação de consola **ProductsServer**) deverá iniciar primeiro e, em seguida, a aplicação **ProductsPortal** deverá iniciar numa janela do browser, conforme mostrado na captura de ecrã seguinte. Tenha novamente em atenção que o inventário de produtos lista os dados obtidos a partir do sistema de serviço de produtos no local e apresenta esses dados na aplicação Web. Verifique o URL para certificar-se de que o **ProductsPortal** está em execução na nuvem, como uma aplicação Web do Azure. 
    
    ![][1]
@@ -429,7 +433,7 @@ Antes de executar a aplicação na nuvem, deve garantir que o **ProductsPortal**
    
     ![][38]
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 Para obter mais informações sobre o Service Bus, consulte os seguintes recursos:  
 
 * [Service Bus do Azure][sbwacom]  
@@ -469,6 +473,6 @@ Para obter mais informações sobre o Service Bus, consulte os seguintes recurso
 
 
 
-<!--HONumber=Sep16_HO4-->
+<!--HONumber=Nov16_HO2-->
 
 

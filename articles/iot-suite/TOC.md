@@ -2,7 +2,7 @@
 ## [Azure e IoT](iot-suite-what-is-azure-iot.md)
 ## [O que é o IoT Suite?](iot-suite-overview.md)
 ## [O que são as soluções pré-configuradas?](iot-suite-what-are-preconfigured-solutions.md)
-## [Percurso de aprendizagem do IoT Suite](https://azure.microsoft.com/documentation/learning-paths/iot-suite/)
+
 
 # Introdução
 ## [Introdução às soluções pré-configuradas](iot-suite-getstarted-preconfigured-solutions.md)
@@ -28,13 +28,14 @@
 ## [Segurança desde o início](securing-iot-ground-up.md)
 
 # Relacionado
-## [Stream Analytics](https://azure.microsoft.com/services/stream-analytics/)
-## [Hubs de Eventos](https://azure.microsoft.com/services/event-hubs/)
-## [Hub IoT](https://azure.microsoft.com/services/iot-hub/)
-## [Machine Learning](https://azure.microsoft.com/services/machine-learning/)
+## [Stream Analytics](/azure/stream-analytics/)
+## [Hubs de Eventos](/azure/event-hubs/)
+## [Hub IoT](/azure/iot-hub/)
+## [Machine Learning](/azure/machine-learning/)
 
 # Recursos
 ## [FAQ](iot-suite-faq.md)
+## [Percurso de aprendizagem do IoT Suite](https://azure.microsoft.com/documentation/learning-paths/iot-suite/)
 
 
 

@@ -1,6 +1,6 @@
 <!--author=alkohli last changed: 9/17/15-->
 
-#### Para obter a chave de registo do serviço StorSimple
+#### <a name="to-get-the-storsimple-service-registration-key"></a>Para obter a chave de registo do serviço StorSimple
 1. Na página **Serviço StorSimple Manager**, clique no serviço que criou, para aceder à página **Início Rápido**. (Pode clicar no ícone de início rápido ![Ícone de Início Rápido do StorSimple ](./media/storsimple-get-service-registration-key/HCS_QuickStartIcon-include.png) para aceder à página **Início Rápido** em qualquer altura.)
    
      ![Página Início Rápido do StorSimple](./media/storsimple-get-service-registration-key/HCS_ServiceQuickStart-include.png)
@@ -20,6 +20,8 @@
 
 Para ver um vídeo que demonstra como obter a chave de registo do serviço, clique [aqui](https://azure.microsoft.com/documentation/videos/get-the-service-registration-key/).
 
-<!--HONumber=Sep16_HO3-->
+
+
+<!--HONumber=Nov16_HO2-->
 
 

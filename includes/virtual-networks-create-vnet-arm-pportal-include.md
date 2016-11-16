@@ -1,4 +1,4 @@
-## Como criar uma VNet no Portal do Azure
+## <a name="how-to-create-a-vnet-in-the-azure-portal"></a>Como criar uma VNet no Portal do Azure
 Para criar uma VNet com base no cenário acima com o Portal de Pré-Visualização do Azure, siga os passos abaixo.
 
 1. Num browser, navegue para http://portal.azure.com e, se necessário, inicie sessão com a sua conta do Azure.
@@ -8,7 +8,7 @@ Para criar uma VNet com base no cenário acima com o Portal de Pré-Visualizaç�
 3. No painel **Criar rede virtual**, configure as definições da VNet, como mostrado na imagem abaixo.
    
     ![Painel Criar rede virtual](./media/virtual-networks-create-vnet-arm-pportal-include/vnet-create-arm-pportal-figure2.png)
-4. Clique em **Grupo de recursos** e selecione um grupo de recursos a qual deve adicionar a VNet ou clique em **Criar novo** para adicionar a VNet a um novo grupo de recursos. A ilustração abaixo mostra as definições do grupo de recursos para um novo grupo de recursos chamado **TestRG**. Para obter mais informações sobre os grupos de recursos, visite [Descrição geral do Azure Resource Manager](../articles/resource-group-overview.md#resource-groups).
+4. Clique em **Grupo de recursos** e selecione um grupo de recursos a qual deve adicionar a VNet ou clique em **Criar novo** para adicionar a VNet a um novo grupo de recursos. A ilustração abaixo mostra as definições do grupo de recursos para um novo grupo de recursos chamado **TestRG**. Para obter mais informações sobre os grupos de recursos, visite [Descrição geral do Azure Resource Manager](../articles/azure-resource-manager/resource-group-overview.md#resource-groups).
    
     ![Grupo de recursos](./media/virtual-networks-create-vnet-arm-pportal-include/vnet-create-arm-pportal-figure3.png)
 5. Se necessário, altere as definições da **Subscrição** e da **Localização** para a sua VNet. 
@@ -26,6 +26,8 @@ Para criar uma VNet com base no cenário acima com o Portal de Pré-Visualizaç�
     
     ![Lista de sub-redes na VNet](./media/virtual-networks-create-vnet-arm-pportal-include/vnet-create-arm-pportal-figure7.png)
 
-<!--HONumber=Sep16_HO3-->
+
+
+<!--HONumber=Nov16_HO2-->
 
 

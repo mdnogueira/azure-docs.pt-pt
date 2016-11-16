@@ -12,6 +12,8 @@ Clique em **Definições** ou em **Todas as definições** para ver e configurar
 
 ![Todas as Definições da Cache de Redis](media/redis-cache-browse/redis-cache-blade.png)
 
-<!--HONumber=Sep16_HO3-->
+
+
+<!--HONumber=Nov16_HO2-->
 
 

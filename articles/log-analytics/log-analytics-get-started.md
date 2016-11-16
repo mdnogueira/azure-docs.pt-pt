@@ -1,137 +1,153 @@
 ---
-title: Get started with Log Analytics | Microsoft Docs
-description: You can get up and running with Log Analytics in the Microsoft Operations Management Suite (OMS) in minutes.
+title: "Introdução ao Log Analytics | Microsoft Docs"
+description: Pode ficar operacional com o Log Analytics no Microsoft Operations Management Suite (OMS) em apenas alguns minutos.
 services: log-analytics
-documentationcenter: ''
+documentationcenter: 
 author: bandersmsft
 manager: jwhit
-editor: ''
-
+editor: 
+ms.assetid: 508716de-72d3-4c06-9218-1ede631f23a6
 ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 08/09/2016
+ms.date: 10/10/2016
 ms.author: banders
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: 2f8defce183e61825d9df3397ea1082dbdb4b11a
+
 
 ---
-# Get started with Log Analytics
-You can get up and running with Log Analytics in the Microsoft Operations Management Suite (OMS) in minutes. You have two options when choosing how to create an OMS workspace, which is similar to an account:
+# <a name="get-started-with-log-analytics"></a>Introdução ao Log Analytics
+Pode ficar operacional com o Log Analytics no Microsoft Operations Management Suite (OMS) em apenas alguns minutos. Tem duas opções ao escolher como criar uma área de trabalho do OMS, que é semelhante a uma conta:
 
-* Microsoft Operations Management Suite website
-* Microsoft Azure subscription
+* Site do Microsoft Operations Management Suite
+* Subscrição do Microsoft Azure
 
-You can create an free OMS workspace using the OMS website. Or, you can use a Microsoft Azure subscription to create an OMS workspace. Both workspaces are functionally equivalent, except that a free OMS workspace can only send 500 MB of data daily to the OMS service. If you use an Azure subscription, you can also use that subscription to access other Azure services. Regardless of the method that you use to create the workspace, you'll create the workspace with either a Microsoft account or organizational account.
+Pode criar uma área de trabalho do OMS gratuita através do site do OMS. Em alternativa, pode utilizar uma subscrição do Microsoft Azure para criar uma área de trabalho do OMS. Ambas as áreas de trabalho são funcionalmente equivalentes, com a exceção de que uma área de trabalho do OMS gratuita pode enviar apenas 500 MB de dados diariamente para o serviço OMS. Se utilizar uma subscrição do Azure, também pode utilizar a mesma para aceder a outros serviços do Azure. Independentemente do método que utilizar para criar a área de trabalho, terá de criar a mesma com uma conta Microsoft ou uma conta organizacional.
 
-Here's a look at the process:
+Eis o processo:
 
-![onboarding diagram](./media/log-analytics-get-started/oms-onboard-diagram.png)
+![diagrama de integração](./media/log-analytics-get-started/oms-onboard-diagram.png)
 
-## Log Analytics prerequisites and deployment considerations
-* You need a paid Microsoft Azure subscription to fully use Log Analytics. If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/free/) that lets you access any Azure service. Or, you can create a free OMS account at the [Operations Management Suite](http://microsoft.com/oms) website and click **Try for free**.
-* An OMS workspace
-* Each Windows computer that you want to gather data from must run Windows Server 2008 SP1, or above
-* [Firewall](log-analytics-proxy-firewall.md) access to the OMS web service's addresses
-* An [OMS Log Analytics Forwarder](https://blogs.technet.microsoft.com/msoms/2016/03/17/oms-log-analytics-forwarder) (Gateway) server to forward traffic from servers to OMS, if Internet access is not available from computers
-* If you use Operations Manager, Log Analytics supports Operations Manager 2012 SP1 UR6 and above and Operations Manager 2012 R2 UR2 and above. Proxy support was added in Operations Manager 2012 SP1 UR7 and Operations Manager 2012 R2 UR3. Determine how it will be integrated with OMS.
-* Determine if your computers have direct Internet access. If not, they require a gateway server to access the OMS web service sites. All access is via HTTPS.
-* Determine which technologies and servers will send data to OMS. For example, domain controllers, SQL Server, etc.
-* Grant permission to users in OMS and Azure.
-* If you're concerned about data usage, deploy each solution individually and test the performance impact before adding additional solutions.
-* Review your data usage and performance as you add solutions and features to Log Analytics. This includes event collection, log collection, performance data collection, etc. It is better to start with minimal collection until data usage or performance impact has been identified.
-* Verify that Windows agents are not also managed using Operations Manager, otherwise duplicate data will result. This also applies to Azure-based-agents that have Azure Diagnostics enabled.
-* After you install agents, verify that the agent is working properly. If not, check to ensure that Cryptography API: Next Generation (CNG) Key Isolation is not disabled using Group Policy.
-* Some Log Analytics solutions have additional requirements
+## <a name="log-analytics-prerequisites-and-deployment-considerations"></a>Pré-requisitos e considerações de implementação do Log Analytics
+* Precisa de uma subscrição paga do Microsoft Azure para utilizar integralmente o Log Analytics. Se não tiver uma subscrição do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/) que lhe permite aceder a qualquer serviço do Azure. Em alternativa, pode criar uma conta gratuita do OMS no site do [Operations Management Suite ](http://microsoft.com/oms) e clicar em **Experimentar gratuitamente**.
+* Uma área de trabalho do OMS
+* Cada computador Windows de que queira recolher dados tem de executar o Windows Server 2008 SP1 ou versão superior
+* Acesso de [firewall](log-analytics-proxy-firewall.md) aos endereços do serviço Web do OMS
+* Um servidor de [Reencaminhador do Log Analytics OMS](https://blogs.technet.microsoft.com/msoms/2016/03/17/oms-log-analytics-forwarder) (Gateway) para reencaminhar tráfego dos servidores para o OMS, caso o acesso à Internet não esteja disponível a partir dos computadores
+* Se utilizar o Operations Manager, o Log Analytics suporta o Operations Manager 2012 SP1 UR6 e versões superiores e o Operations Manager 2012 R2 UR2 e versões superiores. Foi adicionado suporte de proxy ao Operations Manager 2012 SP1 UR7 e ao Operations Manager 2012 R2 UR3. Determine a forma como o Operations Manager será integrado com o OMS.
+* Determine se os computadores têm acesso direto à Internet. Se não tiverem, precisarão de um servidor de gateway para aceder aos sites do serviço Web do OMS. Todo o acesso é através de HTTPS.
+* Determine que tecnologias e servidores enviarão dados para o OMS. Por exemplo, controladores de domínio, SQL Server, etc.
+* Conceda aos utilizadores permissão no OMS e no Azure.
+* Se está preocupado com a utilização de dados, implemente cada solução individualmente e teste o impacto no desempenho antes de adicionar mais soluções.
+* Reveja o desempenho e a utilização dos dados à medida que adiciona funcionalidades e soluções ao Log Analytics. Isto inclui a recolha de eventos, recolha de registos, recolha de dados de desempenho, etc. É melhor começar com uma recolha mínima até que a utilização de dados ou o impacto no desempenho terem sido identificados.
+* Certifique-se de que os agentes do Windows não são também geridos com o Operations Manager, pois, se forem, serão criados dados duplicados. Isto também se aplica aos agentes baseados no Azure que tenham o Diagnóstico do Azure ativado.
+* Depois de instalar agentes, certifique-se de que o agente está a funcionar corretamente. Se não estiver, certifique-se de que o Isolamento da Chave da API Cryptography Next Generation (CNG) não está desativado através da Política de Grupo.
+* Algumas soluções do Log Analytics têm requisitos adicionais
 
-## Sign up in 3 steps using the Operations Management Suite
-1. Go to the [Operations Management Suite](http://microsoft.com/oms) website and click **Try for free**. Sign in with your Microsoft account such as Outlook.com, or with an organizational account provided by your company or educational institution to use with Office 365 or other Microsoft services.
-2. Provide a unique workspace name. A workspace is a logical container where your management data is stored. It provides you a way to partition data between different teams in your organization, as the data is exclusive to its workspace. Specify an email address and the region where you want to have your data stored.  
-    ![create workspace and link subscription](./media/log-analytics-get-started/oms-onboard-create-workspace-link01.png)
-3. Next, you can create a new Azure subscription or link to an existing Azure subscription. If you would like to proceed using the Free Trial, click **Not Now**.  
-   ![create workspace and link subscription](./media/log-analytics-get-started/oms-onboard-create-workspace-link02.png)
+## <a name="sign-up-in-3-steps-using-the-operations-management-suite"></a>Inscrição em 3 passos através do Operations Management Suite
+1. Aceda ao site do [Operations Management Suite](http://microsoft.com/oms) e clique em **Experimentar gratuitamente**. Inicie sessão com a sua conta Microsoft, como o Outlook.com, ou com uma conta organizacional fornecida pela sua empresa ou instituição de ensino para utilizar com o Office 365 ou outros serviços Microsoft.
+2. Forneça um nome de área de trabalho exclusivo. Uma área de trabalho é um contentor lógico em que são armazenados os seus dados de gestão. Esta permite-lhe organizar os seus dados em partições entre diferentes equipas na sua organização, pois os dados são exclusivos à área de trabalho. Especifique um endereço de e-mail e a região onde quer os seus dados armazenados.  
+    ![criar a área de trabalho e uma ligação de subscrição](./media/log-analytics-get-started/oms-onboard-create-workspace-link01.png)
+3. Em seguida, pode criar uma nova subscrição do Azure ou ligar a uma subscrição do Azure existente. Se quiser continuar com a Avaliação Gratuita, clique em **Agora Não**.  
+   ![criar a área de trabalho e ligar à subscrição](./media/log-analytics-get-started/oms-onboard-create-workspace-link02.png)
 
-You're ready to get started with the Operations Management Suite portal.
+Está pronto para começar a utilizar o portal do Operations Management Suite.
 
-You can learn more about setting up your workspace and linking existing Azure accounts to workspaces created with the Operations Management Suite at [Manage access to Log Analytics](log-analytics-manage-access.md).
+Para saber mais sobre como configurar a sua área de trabalho e ligar contas do Azure existentes a áreas de trabalho criadas com o Operations Management Suite, veja o artigo [Gerir o acesso ao Log Analytics](log-analytics-manage-access.md).
 
-## Sign up quickly using Microsoft Azure
-1. Go to the [Azure portal](https://portal.azure.com) and sign in, browse the list of services, and then select **Log Analytics (OMS)**.  
-    ![Azure portal](./media/log-analytics-get-started/oms-onboard-azure-portal.png)
-2. Click **Add**, then select choices for the following items:
-   * **OMS Workspace** name
-   * **Subscription** - If you have multiple subscriptions, choose the one you want to associate with the new workspace.
-   * **Resource group**
-   * **Location**
-   * **Pricing tier**  
-       ![quick create](./media/log-analytics-get-started/oms-onboard-quick-create.png)
-3. Click **Create** and you'll see the workspace details in the Azure portal.       
-    ![workspace details](./media/log-analytics-get-started/oms-onboard-workspace-details.png)         
-4. Click the **OMS Portal** link to open the Operations Management Suite website with your new workspace.
+## <a name="sign-up-quickly-using-microsoft-azure"></a>Inscrição rápida através do Microsoft Azure
+1. Aceda ao [portal do Azure](https://portal.azure.com) e inicie sessão, navegue na lista de serviços e, em seguida, selecione **Log Analytics (OMS)**.  
+    ![Portal do Azure](./media/log-analytics-get-started/oms-onboard-azure-portal.png)
+2. Clique em **Adicionar** e selecione opções para os seguintes itens:
+   * Nome da **Área de Trabalho do OMS**
+   * **Subscrição** - Se tiver várias subscrições, selecione a que quer associar à nova área de trabalho.
+   * **Grupo de recursos**
+   * **Localização**
+   * **Escalão de preço**  
+       ![criação rápida](./media/log-analytics-get-started/oms-onboard-quick-create.png)
+3. Clique em **Criar** e verá os detalhes da área de trabalho no portal do Azure.       
+    ![detalhes da área de trabalho](./media/log-analytics-get-started/oms-onboard-workspace-details.png)         
+4. Clique na ligação do **Portal do OMS** para abrir o site do Operations Management Suite com a nova área de trabalho.
 
-You're ready to start using the Operations Management Suite portal.
+Está pronto para começar a utilizar o portal do Operations Management Suite.
 
-You can learn more about setting up your workspace and linking existing workspaces that you created with the Operations Management Suite to Azure subscriptions at [Manage access to Log Analytics](log-analytics-manage-access.md).
+Para saber mais sobre como configurar a sua área de trabalho e ligar áreas de trabalho existentes criadas com o Operations Management Suite a subscrições do Azure, veja o artigo [Gerir o acesso ao Log Analytics](log-analytics-manage-access.md).
 
-## Get started with the Operations Management Suite portal
-To choose solutions and connect the servers that you want to manage, click the **Settings** tile and follow the steps in this section.  
+## <a name="get-started-with-the-operations-management-suite-portal"></a>Introdução ao portal do Operations Management Suite
+Para escolher soluções e ligar os servidores que quer gerir, clique no mosaico **Definições** e siga os passos nesta secção.  
 
-![get started](./media/log-analytics-get-started/oms-onboard-get-started.png)  
+![introdução](./media/log-analytics-get-started/oms-onboard-get-started.png)  
 
-* **Add Solutions** - Select the solutions you would like to use and then click **Add selected Solutions**.  
-    ![solutions](./media/log-analytics-get-started/oms-onboard-solutions.png)
-* **Connect a data source** - Choose how you would like to connect to your server environment to gather data:
-  * Connect any Windows Server or client directly by installing an agent.
-  * Use System Center Operations Manager to attach your management groups or your entire Operations Manager deployment.
-  * Use an Azure storage account configured with the Windows or Linux Azure diagnostic VM extension.
-      ![data sources](./media/log-analytics-get-started/oms-onboard-data-sources.png)    
-* **Add logs** Configure at least one data source to populate your data and then select **Save**. For event logs, you can specify the type of messages including error, warning, and information to monitor.    
-  
-    ![logs](./media/log-analytics-get-started/oms-onboard-logs.png)    
+1. **Adicionar Soluções** - Ver as soluções instaladas.  
+    ![soluções](./media/log-analytics-get-started/oms-onboard-solutions.png)  
+    Clique em **Visitar a Galeria** para adicionar mais soluções.  
+    ![soluções](./media/log-analytics-get-started/oms-onboard-solutions02.png)  
+    Selecione uma solução e clique em **Adicionar**.
+2. **Ligar uma origem** - Escolha como quer ligar ao seu ambiente de servidor para recolher dados:
+   
+   * Ligue a qualquer cliente ou Windows Server diretamente ao instalar um agente.
+   * Ligar servidores Linux com o Agente OMS para Linux.
+   * Utilize uma conta de armazenamento do Azure configurada com a extensão VM de diagnóstico do Azure para Windows ou Linux.
+   * Utilize o System Center Operations Manager para anexar os seus grupos de gestão ou toda a sua implementação do Operations Manager.
+   * Ative a Telemetria do Windows para utilizar o Upgrade Analytics.
+       ![origens ligadas](./media/log-analytics-get-started/oms-onboard-data-sources.png)    
+3. **Recolher dados** Configure pelo menos uma origem de dados para preencher dados na sua área de trabalho. Quando terminar, clique em **Guardar**.    
+   
+    ![recolher dados](./media/log-analytics-get-started/oms-onboard-logs.png)    
 
-## Optionally, connect servers directly to the Operations Management Suite by installing an agent
-1. Click the **Settings** tile, click the **Connected Sources** tab, and then click **Download Windows Agent** for the architecture of the computer where you want to install. You can only install the agent on Windows Server 2008 SP 1 or later or on Windows 7 SP1 or later.
-2. Install the agent on one or more servers. You can install agents one-by-one, or using a more automated method with a [custom script](log-analytics-windows-agents.md), or you can use an existing software distribution solution that you might have.
-3. After you agree to the license agreement and you choose your installation folder, select **Connect the agent to Microsoft Azure Operational Insights**. (OMS was previously called Operational Insights).  
-    ![agent setup](./media/log-analytics-get-started/oms-onboard-agent.png)
-4. On the next page, you are asked for your Workspace ID and Workspace Key. Your Workspace ID and key are displayed on the screen where you downloaded the agent file.  
-    ![agent keys](./media/log-analytics-get-started/oms-onboard-mma-keys.png)
-    ![attach servers](./media/log-analytics-get-started/oms-onboard-key.png)
-5. During installation, you can click **Advanced** to optionally set up your proxy server and provide authentication information. Click the **Next** button to return to the workspace information screen.
-6. Click **Next** to validate your Workspace ID and Key. If any errors are found, you can click **Back** to make corrections. When your Workspace ID and Key are validated, click **Install** to complete the agent installation.
-7. Log back in to the Operations Management Suite portal, and click the **Settings** tile on the Overview page. A green check mark icon will appear when the agents communicate with the Operations Management Suite service. Initially, this takes about 5-10 minutes.
+## <a name="optionally-connect-servers-directly-to-the-operations-management-suite-by-installing-an-agent"></a>Em alternativa, instalar um agente para ligar servidores diretamente ao Operations Management Suite
+O exemplo seguinte mostra como instalar um agente do Windows.
+
+1. Clique no mosaico **Definições**, clique no separador **Origens Ligadas**, clique num separador para o tipo de origem que pretende adicionar e transfira um agente ou saiba mais sobre como ativar um agente. Por exemplo, clique em **Transferir o Agente do Windows (64 bits)**. Para agentes do Windows, só pode instalar o agente no Windows Server 2008 SP 1 ou versão posterior ou no Windows 7 SP1 ou versão posterior.
+2. Instale o agente num ou mais servidores. Pode instalar agentes um de cada vez ou através de um método mais automatizado com um [script personalizado](log-analytics-windows-agents.md), ou pode utilizar uma solução de distribuição de software existente que possa ter.
+3. Depois de aceitar o contrato de licença e de escolher a pasta de instalação, selecione **Ligar o agente ao Azure Log Analytics (OMS)**.   
+    ![configuração do agente](./media/log-analytics-get-started/oms-onboard-agent.png)
+4. Na página seguinte, são-lhe pedidos o ID da Área de Trabalho e a Chave da Área de Trabalho. Os seus ID e chave da Área de Trabalho são apresentados no ecrã onde transferiu o ficheiro do agente.  
+    ![chaves do agente](./media/log-analytics-get-started/oms-onboard-mma-keys.png)  
+   
+    ![ligar servidores](./media/log-analytics-get-started/oms-onboard-key.png)
+5. Durante a instalação, pode clicar em **Avançadas** para, em alternativa, configurar o seu servidor proxy e fornecer informações de autenticação. Clique no botão **Seguinte** para voltar ao ecrã de informações da área de trabalho.
+6. Clique em **Seguinte** para validar os seus ID e Chave da Área de Trabalho. Se ocorrerem erros, pode clicar em **Anterior** para fazer correções. Quando os seus ID e Chave da Área de Trabalho são validados, clique em **Instalar** para concluir a instalação do agente.
+7. No Painel de Controlo, clique em Microsoft Monitoring Agent > separador Azure Log Analytics (OMS). É apresentado um ícone de marca de verificação verde quando os agentes comunicarem com o serviço do Operations Management Suite. Inicialmente, esta ação demora cerca de 5 a 10 minutos.
 
 > [!NOTE]
-> The capacity management and configuration assessment solutions are not currently supported by servers connected directly to the Operations Management Suite.
+> De momento, as soluções de gestão da capacidade e de avaliação da configuração não são suportadas pelos servidores ligados diretamente ao Operations Management Suite.
 > 
 > 
 
-You can also connect the agent to System Center Operations Manager 2012 SP1 and later. To do so, select **Connect the agent to System Center Operations Manager**. When you choose that option, you send data to the service without requiring additional hardware or load on your management groups.
+Também pode ligar o agente ao System Center Operations Manager 2012 SP1 e versões posteriores. Para tal, selecione **Ligar o agente ao System Center Operations Manager**. Se escolher esta opção, envia dados para o serviço sem necessidade de hardware ou carga adicionais nos seus grupos de gestão.
 
-You can read more about connecting agents to the Operations Management Suite at [Connect Windows computers to Log Analytics](log-analytics-windows-agents.md).
+Para saber mais sobre como ligar agentes ao Operations Management Suite, veja o artigo [Ligar computadores Windows ao Log Analytics](log-analytics-windows-agents.md).
 
-## Optionally, connect servers using System Center Operations Manager
-1. In the Operations Manager console, select **Administration**.
-2. Expand the **Operational Insights** node and select **Operational Insights Connection**.
+## <a name="optionally-connect-servers-using-system-center-operations-manager"></a>Em alternativa, ligar servidores com o System Center Operations Manager
+1. Na consola do Operations Manager, selecione **Administração**.
+2. Expanda o nó das **Informações Operacionais** e selecione **Ligação das Informações Operacionais**.
    
    > [!NOTE]
-   > Depending on what Update Rollup of SCOM you are using, you may see a node for *System Center Advisor*, *Operational Insights*, or *Operations Management Suite*.
+   > Consoante o Update Rollup do SCOM que estiver a utilizar, poderá ver um nó para o *System Center Advisor*, as * Informações Operacionais* ou o *Operations Management Suite*.
    > 
    > 
-3. Click the **Register to Operational Insights** link towards the top right and follow the instructions.
-4. After completing the registration wizard, click the **Add a Computer/Group** link.
-5. In the **Computer Search** dialog box you can search for computers or groups monitored by Operations Manager. Select computers or groups to onboard them to Log Analytics, click **Add**, and then click **OK**. You can verify that the OMS service is receiving data by going to the **Usage** tile in the Operations Management Suite portal. Data should appear in about 5-10 minutes.
+3. Clique na ligação **Registar nas Informações Operacionais** no canto superior direito e siga as instruções.
+4. Depois de concluir o assistente de registo, clique na ligação **Adicionar um Computador/Grupo**.
+5. Na caixa de diálogo **Pesquisa no Computador**, pode procurar computadores ou grupos monitorizados pelo Operations Manager. Selecione computadores ou grupos para carregá-los para o Log Analytics, clique em **Adicionar** e, em seguida, clique em **OK**. Para verificar se o serviço OMS está a receber dados, aceda ao mosaico **Utilização** no portal do Operations Management Suite. Os dados deverão aparecer em cerca de 5 a 10 minutos.
 
-You can read more about connecting Operations Manager to the Operations Management Suite at [Connect Operations Manager to  Log Analytics](log-analytics-om-agents.md).
+Para saber mais sobre como ligar o Operations Manager ao Operations Management Suite, veja o artigo [Ligar o Operations Manager ao Log Analytics](log-analytics-om-agents.md).
 
-## Optionally, analyze data from cloud services in Microsoft Azure
-With the Operations Management Suite, you can quickly search event and IIS logs for cloud services and virtual machines by enabling diagnostics for Azure Cloud Services. You can also receive additional insights for your Azure virtual machines by installing the Microsoft Monitoring Agent. You can read more about how to configure your Azure environment to use the Operations Management Suite at [Connect Azure storage to Log Analytics](log-analytics-azure-storage.md).
+## <a name="optionally-analyze-data-from-cloud-services-in-microsoft-azure"></a>Em alternativa, analisar dados dos serviços cloud no Microsoft Azure
+Com o Operations Management Suite, pode procurar rapidamente registos de eventos e de IIS de serviços cloud e máquinas virtuais ao ativar os diagnósticos dos Serviços em Nuvem do Azure. Também pode receber informações adicionais sobre as suas máquinas virtuais do Azure ao instalar o Agente de Monitorização da Microsoft. Para saber mais sobre como configurar o seu ambiente do Azure para utilizar o Operations Management Suite, veja o artigo [Ligar o armazenamento do Azure ao Log Analytics](log-analytics-azure-storage.md).
 
-## Next steps
-* [Add Log Analytics solutions from the Solutions Gallery](log-analytics-add-solutions.md) to add functionality and gather data.
-* Get familiar with [log searches](log-analytics-log-searches.md) to view detailed information gathered by solutions.
-* Use [dashboards](log-analytics-dashboards.md) to save and display your own custom searches.
+## <a name="next-steps"></a>Passos seguintes
+* [Adicionar soluções do Log Analytics a partir da Galeria de Soluções](log-analytics-add-solutions.md) para adicionar funcionalidade e recolher dados.
+* Familiarize-se com as [pesquisas de registos](log-analytics-log-searches.md) para ver informações detalhadas recolhidas pelas soluções.
+* Utilize [dashboards](log-analytics-dashboards.md) para guardar e apresentar as suas próprias pesquisas personalizadas.
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

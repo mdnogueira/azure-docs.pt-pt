@@ -1,38 +1,42 @@
 ---
-title: Introdução à entrega de conteúdo a pedido com o Java | Microsoft Docs
-description: Descreve como utilizar Media Services do Azure para executar tarefas comuns, incluindo codificação, encriptação e recursos de transmissão em fluxo.
+title: "Introdução à entrega de conteúdo a pedido com o Java | Microsoft Docs"
+description: "Descreve como utilizar Media Services do Azure para executar tarefas comuns, incluindo codificação, encriptação e recursos de transmissão em fluxo."
 services: media-services
 documentationcenter: java
-author: rmcmurray
-manager: wpickett
-editor: jimbe
-
+author: juliako
+manager: erikre
+editor: 
+ms.assetid: b884bd61-dbdb-42ea-b170-8fb02e7fded7
 ms.service: media-services
 ms.workload: media
 ms.tgt_pltfrm: na
-ms.devlang: na
+ms.devlang: java
 ms.topic: get-started-article
-ms.date: 08/17/2016
-ms.author: robmcm
+ms.date: 10/19/2016
+ms.author: juliako
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: 97af28a2f225fa7f5db2086687c38c64e03ebc8f
+
 
 ---
-# Introdução à distribuição de conteúdo a pedido com o Java
+# <a name="get-started-with-delivering-content-on-demand-using-java"></a>Introdução à distribuição de conteúdo a pedido com o Java
 [!INCLUDE [media-services-selector-get-started](../../includes/media-services-selector-get-started.md)]
 
-## Configurar uma Conta do Azure para os Media Services
-Para configurar a conta dos Media Services, utilize o Portal Clássico do Azure. Consulte o tópico [Como Criar uma Conta dos Media Services](media-services-create-account.md). Depois de criar a conta no Portal Clássico do Azure, está pronto para configurar o computador para o desenvolvimento de Media Services.
+## <a name="setting-up-an-azure-account-for-media-services"></a>Configurar uma Conta do Azure para os Media Services
+Para configurar a conta dos Media Services, utilize o Portal Clássico do Azure. Consulte o tópico [Como Criar uma Conta dos Media Services](media-services-portal-create-account.md). Depois de criar a conta no Portal Clássico do Azure, está pronto para configurar o computador para o desenvolvimento de Media Services.
 
-## Configurar para o desenvolvimento de Media Services
+## <a name="setting-up-for-media-services-development"></a>Configurar para o desenvolvimento de Media Services
 Esta secção contém pré-requisitos gerais para o desenvolvimento de Media Services utilizando o SDK de Media Services para Java.
 
-### Pré-requisitos
-* Uma conta dos Media Services numa subscrição Azure nova ou existente. Consulte o tópico [Como Criar uma Conta dos Media Services](media-services-create-account.md).
+### <a name="prerequisites"></a>Pré-requisitos
+* Uma conta dos Media Services numa subscrição Azure nova ou existente. Consulte o tópico [Como Criar uma Conta dos Media Services](media-services-portal-create-account.md).
 * As bibliotecas do Azure para Java, as quais pode instalar a partir do [Centro de Programadores Java do Azure][Centro de Programadores Java do Azure].
 
-## Como: utilizar os Media Services com Java
+## <a name="how-to-use-media-services-with-java"></a>Como: utilizar os Media Services com Java
 O código seguinte mostra como criar um elemento, carregar um ficheiro de multimédia para o elemento, executar uma função com uma tarefa para transformar o elemento e criar um localizador para transmitir o vídeo.
 
-Para utilizar este código, terá de configurar uma conta dos Media Services. Para obter informações sobre como configurar uma conta, consulte [Como Criar uma Conta dos Media Services](media-services-create-account.md).
+Para utilizar este código, terá de configurar uma conta dos Media Services. Para obter informações sobre como configurar uma conta, consulte [Como Criar uma Conta dos Media Services](media-services-portal-create-account.md).
 
 Substitua os valores pelas variáveis “clientId” e “clientSecret”. O código também depende de um ficheiro armazenado localmente. Terá de fornecer o seu próprio ficheiro a utilizar.
 
@@ -63,7 +67,6 @@ Substitua os valores pelas variáveis “clientId” e “clientSecret”. O có
     import com.microsoft.windowsazure.services.media.models.MediaProcessor;
     import com.microsoft.windowsazure.services.media.models.MediaProcessorInfo;
     import com.microsoft.windowsazure.services.media.models.Task;
-
 
     public class HelloMediaServices
     {
@@ -250,25 +253,23 @@ Substitua os valores pelas variáveis “clientId” e “clientSecret”. O có
     }
 
 
-## Percursos de aprendizagem dos Media Services
+## <a name="media-services-learning-paths"></a>Percursos de aprendizagem dos Media Services
 [!INCLUDE [media-services-learning-paths-include](../../includes/media-services-learning-paths-include.md)]
 
-## Enviar comentários
+## <a name="provide-feedback"></a>Enviar comentários
 [!INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-## Recursos Adicionais
+## <a name="additional-resources"></a>Recursos Adicionais
 Para obter documentação Javadoc de Media Services, consulte a [Documentação das Bibliotecas do Azure para Java][Documentação das Bibliotecas do Azure para Java].
 
 <!-- URLs. -->
 
 [Centro de Programadores Java do Azure]: http://azure.microsoft.com/develop/java/
 [Documentação das Bibliotecas do Azure para Java]: http://dl.windowsazure.com/javadoc/
-[Desenvolvimento do Cliente de Media Services]: http://msdn.microsoft.com/library/windowsazure/dn223283.aspx
+[Desenvolvimento do Cliente dos Serviços de Multimédia]: http://msdn.microsoft.com/library/windowsazure/dn223283.aspx
 
 
 
-
-
-<!--HONumber=ago16_HO4-->
+<!--HONumber=Nov16_HO2-->
 
 

@@ -5,7 +5,7 @@
 > 
 > 
 
-## Introdução
+## <a name="introduction"></a>Introdução
 O IoT Hub do Azure é um serviço completamente gerido que permite comunicações fiáveis e bidirecionais entre milhões de dispositivos Internet das Coisas (IoT) e uma solução de back-end. Um dos maiores desafios de projetos IoT consiste na ligação segura e fiável de dispositivos à solução de back-end. Para abordar este desafio, o IoT Hub:
 
 * Oferece um serviço de mensagens de hiper escala fiável dispositivo para nuvem e nuvem para dispositivo.
@@ -18,6 +18,8 @@ Este tutorial mostrar-lhe como:
 * Criar uma identidade de dispositivo no seu IoT Hub.
 * Criar um dispositivo simulado que envia telemetria à sua back-end em nuvem, e recebe comandos da sua back-end em nuvem.
 
-<!--HONumber=Sep16_HO3-->
+
+
+<!--HONumber=Nov16_HO2-->
 
 

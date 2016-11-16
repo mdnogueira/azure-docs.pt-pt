@@ -1,12 +1,12 @@
 ---
-title: O que são Conectores e API Apps BizTalk
+title: "O que são Conectores e API Apps BizTalk"
 description: Saiba mais sobre API Apps, Conectores e API Apps BizTalk
 services: logic-apps
-documentationcenter: ''
+documentationcenter: 
 author: MandiOhlinger
 manager: erikre
-editor: ''
-
+editor: 
+ms.assetid: 1295ea9c-30e0-4b5c-931e-51aefae2d4fe
 ms.service: logic-apps
 ms.workload: integration
 ms.tgt_pltfrm: na
@@ -14,9 +14,13 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 09/01/2016
 ms.author: mandia
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: c89b0714a5c6e606cf8517a40be62cc856d5959c
+
 
 ---
-# O que são Conectores e API Apps BizTalk
+# <a name="what-are-connectors-and-biztalk-api-apps"></a>O que são Conectores e API Apps BizTalk
 [!INCLUDE [app-service-logic-version-message](../../includes/app-service-logic-version-message.md)]
 
 Um *Conector* é um tipo de Aplicação API que se centra na conectividade. Os conectores, tal como qualquer outra Aplicação API, são utilizados nas Web Apps, Aplicações Móveis e Logic Apps. Os Conectores facilitam a ligação a serviços existentes e ajudam a gerir a autenticação, fornecer monitorização, análise, entre outros.
@@ -31,23 +35,23 @@ Estão disponíveis diferentes “Escalões” de Serviços. Todos os Escalões 
 
 Os [Preços dos Serviços de Aplicações](https://azure.microsoft.com/pricing/details/app-service/) descrevem estes Escalões de Serviços e listam também o que está incluído nesses escalões. As secções seguintes descrevem as várias categorias dos Conectores e API Apps BizTalk.
 
-## Conectores Híbridos
+## <a name="hybrid-connectors"></a>Conectores Híbridos
 Os conetores híbridos expandem ainda mais o alcance na empresa com a conetividade com [DB2](app-service-logic-connector-db2.md), [Informix](app-service-logic-connector-informix.md) e WebSphere MQ. 
-
-## Serviços EAI e EDI
-Compilar aplicações críticas de negócios exige mais do que apenas conectividade. Com base na criação da plataforma de integração da Microsoft líder do setor (BizTalk Server), as API Apps BizTalk fornecem capacidades de integração avançadas que podem ser facilmente encaixadas nas suas Web Apps, Móveis e Lógicas. Algumas destas capacidades de integração incluem [Validar](app-service-logic-xml-validator.md), [Extrair](app-service-logic-xpath-extract.md), [Transformar](app-service-logic-transform-xml-documents.md), [Codificadores](app-service-logic-connector-jsonencoder.md), [Gestão de Parceiros Comerciais](app-service-logic-connector-tpm.md) e suporte para formatos EDI, tal como [X12](app-service-logic-connector-x12.md), [EDIFACT](app-service-logic-connector-edifact.md) e [AS2](app-service-logic-connector-as2.md).
 
 Recursos adicionais: [conectores empresa-empresa e API Apps](app-service-logic-b2b-connectors.md)  
 [Criar um processo B2B](app-service-logic-create-a-b2b-process.md)  
 [Criar um contrato de parceiro comercial](app-service-logic-create-a-trading-partner-agreement.md)  
 [Controlar as mensagens B2B](app-service-logic-track-b2b-messages.md)  
 
-## Regras
+## <a name="rules"></a>Regras
 As regras de negócios encapsulam as políticas e decisões que controlam os processos empresariais. Normalmente, as regras são dinâmicas e alteram ao longo do tempo por diferentes motivos, incluindo planos de negócios, regulamentos, entre muitos outros motivos. As [Regras de BizTalk](app-service-logic-use-biztalk-rules.md) permitem dissociar essas políticas do seu código de aplicação e tornar o processo de alteração mais simples e rápido.
 
-## Lista de Conectores e API Apps
+## <a name="connector-and-api-app-list"></a>Lista de Conectores e API Apps
 Consulte [Lista de Conectores e API Apps](app-service-logic-connectors-list.md) para obter uma lista completa de conectores e API Apps incluídos em cada categoria, incluindo os Conectores Standard, BizTalk EAI, Conectores Premium, entre outros.
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

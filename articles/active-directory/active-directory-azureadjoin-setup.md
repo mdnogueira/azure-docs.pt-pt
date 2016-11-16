@@ -1,13 +1,13 @@
 ---
-title: Configurar a Associação do Azure AD dos utilizadores| Microsoft Docs
-description: Explica como os administradores podem configurar a Associação do Azure AD para o diretório no local e registo de dispositivos.
+title: "Configurar a Associação do Azure AD dos utilizadores| Microsoft Docs"
+description: "Explica como os administradores podem configurar a Associação do Azure AD para o diretório no local e registo de dispositivos."
 services: active-directory
-documentationcenter: ''
+documentationcenter: 
 author: femila
 manager: swadhwa
-editor: ''
+editor: 
 tags: azure-classic-portal
-
+ms.assetid: bfc5d415-c918-4d8b-afee-b3f41cc28469
 ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
@@ -15,16 +15,20 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 09/27/2016
 ms.author: femila
+translationtype: Human Translation
+ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
+ms.openlocfilehash: aaa52cdecc09adb3b7ca53e0c0283d4203b21810
+
 
 ---
-# Configurar a Associação do Azure AD na sua
+# <a name="setting-up-azure-ad-join-in-your-organization"></a>Configurar a Associação do Azure AD na sua 
 Antes de configurar a Associação do Azure Active Directory (Associação do Azure AD), terá da sincronizar o diretório de utilizadores no local para a nuvem ou criar manualmente contas geridas no Azure AD.
 
 Encontrará instruções detalhadas para sincronizar os utilizadores no local com o Azure AD em [Integrar as identidades no local ao Azure Active Directory](active-directory-aadconnect.md).
 
 Para criar e gerir manualmente utilizadores no Azure AD, consulte [Gestão de utilizadores no Azure AD](https://msdn.microsoft.com/library/azure/hh967609.aspx).
 
-## Configurar o registo do dispositivo
+## <a name="set-up-device-registration"></a>Configurar o registo do dispositivo
 1. Inicie sessão no Portal do Azure como administrador.
 2. No painel esquerdo, selecione **Active Directory**.
 3. No separador **Diretório** selecione o diretório.
@@ -46,13 +50,16 @@ Apresentamos a seguir os três cenários que pode utilizar para permitir aos seu
 * Os utilizadores associam um domínio de um dispositivo da empresa ao Active Directory no local e, em seguida, expandem o dispositivo ao Azure AD.
 * Os utilizadores adicionam contas escolares ou profissionais no Windows, num dispositivo pessoal
 
-## Informações adicionais
-* [Windows 10 para a empresa: formas de utilizar os dispositivos para o trabalho](active-directory-azureadjoin-windows10-devices-overview.md)
-* [Aumentar as capacidades de nuvem para dispositivos com Windows 10 através da Associação do Azure Active Directory](active-directory-azureadjoin-user-upgrade.md)
+## <a name="additional-information"></a>Informações adicionais
+* [Windows 10 para a empresa: formas de utilizar os dispositivos para o trabalho](active-directory-azureadjoin-windows10-devices-overview.md)
+* [Aumentar as capacidades de nuvem para dispositivos com Windows 10 através da Associação do Azure Active Directory](active-directory-azureadjoin-user-upgrade.md)
 * [Saiba mais sobre os cenários de utilização da Associação do Azure AD](active-directory-azureadjoin-deployment-aadjoindirect.md)
-* [Ligar a dispositivos associados a um domínio ao Azure AD para experiências com o Windows 10](active-directory-azureadjoin-devices-group-policy.md)
+* [Ligar a dispositivos associados a um domínio ao Azure AD para experiências com o Windows 10](active-directory-azureadjoin-devices-group-policy.md)
 * [Configurar a Associação do Azure AD](active-directory-azureadjoin-setup.md)
 
-<!--HONumber=Sep16_HO4-->
+
+
+
+<!--HONumber=Nov16_HO2-->
 
 

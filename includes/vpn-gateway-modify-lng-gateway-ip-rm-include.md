@@ -1,6 +1,6 @@
 Para alterar o endereço IP do gateway, utilize o cmdlet `New-AzureRmVirtualNetworkGatewayConnection`. Desde que mantenha o nome do gateway de rede local exatamente igual ao existente, as definições serão substituídas. Neste momento, o cmdlet "Set" não suporta a modificação do endereço IP do gateway.
 
-### <a name="gwipnoconnection"></a>Como modificar o endereço IP do gateway sem uma ligação de gateway
+### <a name="a-namegwipnoconnectionahow-to-modify-the-gateway-ip-address-no-gateway-connection"></a><a name="gwipnoconnection"></a>Como modificar o endereço IP do gateway sem uma ligação de gateway
 Para atualizar o endereço IP do gateway de rede local ainda sem uma ligação, utilize o exemplo abaixo. Também pode atualizar os prefixos de endereços em simultâneo. As definições que especificar irão substituir as definições existentes. Certifique-se de que utiliza o nome existente do seu gateway de rede local. Se não o fizer, será criado um novo gateway de rede local, sem substituir o existente.
 
 Utilize o exemplo seguinte, substituindo os valores pelos seus próprios.
@@ -10,7 +10,7 @@ Utilize o exemplo seguinte, substituindo os valores pelos seus próprios.
     -GatewayIpAddress "5.4.3.2" -ResourceGroupName MyRGName
 
 
-### <a name="gwipwithconnection"></a>Como modificar o endereço IP do gateway com uma ligação de gateway existente
+### <a name="a-namegwipwithconnectionahow-to-modify-the-gateway-ip-address-existing-gateway-connection"></a><a name="gwipwithconnection"></a>Como modificar o endereço IP do gateway com uma ligação de gateway existente
 Se já existir uma ligação de gateway, terá primeiro de remover a ligação. Em seguida, pode modificar o endereço IP do gateway e recriar uma nova ligação. Este procedimento resultará num período de indisponibilidade da ligação VPN.
 
 > [!IMPORTANT]
@@ -42,6 +42,8 @@ Se já existir uma ligação de gateway, terá primeiro de remover a ligação. 
         -LocalNetworkGateway2 $local `
         -ConnectionType IPsec -RoutingWeight 10 -SharedKey 'abc123'
 
-<!--HONumber=Sep16_HO3-->
+
+
+<!--HONumber=Nov16_HO2-->
 
 
