@@ -79,6 +79,6 @@ O Site Recovery fornece replicação com suporte para aplicações para que as c
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!---HONumber=Nov16_HO2-->
 
 

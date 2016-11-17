@@ -102,7 +102,7 @@ Neste documento, foram-lhe apresentados os componentes de monitorização de seg
 * [FAQ do Centro de Segurança do Azure](security-center-faq.md) – Encontre as perguntas mais frequentes acerca de como utilizar o serviço.
 * [Blogue de Segurança do Azure](http://blogs.msdn.com/b/azuresecurity/) – Obtenha as notícias e informações mais recentes de segurança do Azure.
 
-<!--Image references-->
+<!---Image references-->
 [1]: ./media/security-center-get-started/security-tile.png
 [2]: ./media/security-center-get-started/pin-blade.png
 [3]: ./media/security-center-get-started/security-center.png
@@ -116,6 +116,6 @@ Neste documento, foram-lhe apresentados os componentes de monitorização de seg
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!---HONumber=Jun16_HO2-->
 
 
