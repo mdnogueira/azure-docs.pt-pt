@@ -15,8 +15,8 @@ ms.topic: hero-article
 ms.date: 10/12/2016
 ms.author: robinsh
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 18af1ce4f6ebb235e66e17d99dc5ae6156b84a59
+ms.sourcegitcommit: 1c6ccbeef1fb40ce4f7242bb2cc4ee958659bd3c
+ms.openlocfilehash: 02ad118a175b66b3958adb413f5f48ef156695ef
 
 ---
 
@@ -152,7 +152,7 @@ Pode alterar os conteúdos de uma mensagem no local na fila de espera. Se a mens
         MessageUpdateFields.Content | MessageUpdateFields.Visibility);
 ```
 
-## <a name="dequeue-the-next-message"></a>Remover a mensagem seguinte da fila
+## <a name="de-queue-the-next-message"></a>Remover a mensagem seguinte da fila
 O código remove uma mensagem da fila em dois passos. Quando chamar **GetMessage**, obterá a seguinte mensagem numa fila. Uma mensagem devolvida por **GetMessage** torna-se invisível para quaisquer outras mensagens de leitura de código desta fila. Por predefinição, esta mensagem permanece invisível durante 30 segundos. Para acabar de remover a mensagem da fila, também tem de chamar **DeleteMessage**. Este processo de dois passos da remoção de uma mensagem garante que se o código não conseguir processar uma mensagem devido a uma falha de hardware ou software, outra instância do seu código poderá obter a mesma mensagem e tentar novamente. O seu código chama **DeleteMessage** imediatamente após a mensagem ser processada.
 
 ```csharp
@@ -173,7 +173,7 @@ O código remove uma mensagem da fila em dois passos. Quando chamar **GetMessage
     queue.DeleteMessage(retrievedMessage);
 ```
 
-## <a name="use-asyncawait-pattern-with-common-queue-storage-apis"></a>Utilizar o padrão Async-Await com APIs de Armazenamento de filas comuns
+## <a name="use-async-await-pattern-with-common-queue-storage-apis"></a>Utilizar o padrão Async-Await com APIs de Armazenamento de filas comuns
 Este exemplo mostra como utilizar o padrão Async-Await com APIs de Armazenamento de filas comuns. O exemplo chama a versão assíncrona de cada um dos métodos em questão, conforme indicado pelo sufixo *Async* de cada método. Quando é utilizado um método assíncrono, o padrão async-await suspende a execução local, até que a chamada seja concluída. Este comportamento permite que o thread atual efetue outro trabalho, o que ajuda a evitar congestionamentos de desempenho e melhora a capacidade de resposta global da sua aplicação. Para obter mais detalhes sobre como utilizar o padrão Async-Await no .NET, consulte [Async-Await (C# e Visual Basic)](https://msdn.microsoft.com/library/hh191443.aspx)
 
 ```csharp
@@ -203,7 +203,7 @@ Este exemplo mostra como utilizar o padrão Async-Await com APIs de Armazenament
     Console.WriteLine("Deleted message");
 ```
     
-## <a name="leverage-additional-options-for-dequeuing-messages"></a>Tirar maior partido das opções adicionais para remover as mensagens da fila
+## <a name="leverage-additional-options-for-de-queuing-messages"></a>Tirar maior partido das opções adicionais para remover as mensagens da fila
 Existem duas formas através das quais pode personalizar a obtenção de mensagens a partir de uma fila.
 Em primeiro lugar, pode obter um lote de mensagens (até 32). Em segundo lugar, pode definir um tempo limite de invisibilidade superior ou inferior, dando mais ou menos tempo ao código para processar totalmente cada mensagem. O seguinte código de exemplo utiliza o método **GetMessages** para obter 20 mensagens numa chamada. Em seguida, processa cada mensagem através de um ciclo **foreach**. Define também o tempo limite de invisibilidade para cinco minutos para cada mensagem. Tenha em atenção que os 5 minutos começam para todas as mensagens ao mesmo tempo, como tal, 5 minutos após a chamada para **GetMessages**, as mensagens que não tenham sido eliminadas ficarão visíveis novamente.
 

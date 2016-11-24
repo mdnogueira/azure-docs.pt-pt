@@ -16,23 +16,27 @@ ms.workload: infrastructure-services
 ms.date: 02/09/2016
 ms.author: sewhee
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 4364d3bcdffd278bef35b224a8e22062814ca490
-
+ms.sourcegitcommit: cf1eafc7bca5bddeb32f1e1e05e660d6877ed805
+ms.openlocfilehash: 5d1d0f59080827bde2ba9cdd825ba8c498f33751
 
 ---
+
 # <a name="get-started-creating-an-internal-load-balancer-classic-using-the-azure-cli"></a>Introdução à criação de um balanceador de carga interno (modo clássico) com a CLI do Azure
-[!INCLUDE [load-balancer-get-started-ilb-classic-selectors-include.md](../../includes/load-balancer-get-started-ilb-classic-selectors-include.md)]
+
+> [!div class="op_single_selector"]
+> * [PowerShell](../load-balancer/load-balancer-get-started-ilb-classic-ps.md)
+> * [CLI do Azure](../load-balancer/load-balancer-get-started-ilb-classic-cli.md)
+> * [Serviços cloud](../load-balancer/load-balancer-get-started-ilb-classic-cloud.md)
 
 [!INCLUDE [load-balancer-get-started-ilb-intro-include.md](../../includes/load-balancer-get-started-ilb-intro-include.md)]
 
-[!INCLUDE [azure-arm-classic-important-include](../../includes/learn-about-deployment-models-classic-include.md)]
-
-Saiba como [executar estes passos com o modelo do Resource Manager](load-balancer-get-started-ilb-arm-cli.md).
+> [!IMPORTANT]
+> O Azure tem dois modelos de implementação diferentes para criar e trabalhar com os recursos: [Resource Manager e clássico](../resource-manager-deployment-model.md).  Este artigo cobre a utilização do modelo de implementação clássica. A Microsoft recomenda que as implementações mais novas utilizem o modelo Resource Manager. Saiba como [executar estes passos com o modelo do Resource Manager](load-balancer-get-started-ilb-arm-cli.md).
 
 [!INCLUDE [load-balancer-get-started-ilb-scenario-include.md](../../includes/load-balancer-get-started-ilb-scenario-include.md)]
 
 ## <a name="to-create-an-internal-load-balancer-set-for-virtual-machines"></a>Para criar um conjunto de balanceadores de carga internos para máquinas virtuais
+
 Para criar um conjunto de balanceadores de carga internos e os servidores que irão enviar o tráfego para o mesmo, tem de efetuar o seguinte:
 
 1. Crie uma instância Balanceamento de Carga Interno que será o ponto final do tráfego de entrada para balanceamento de carga nos servidores de um conjunto com balanceamento de carga.
@@ -40,18 +44,22 @@ Para criar um conjunto de balanceadores de carga internos e os servidores que ir
 3. Configure os servidores que irão enviar o tráfego para balanceamento de carga para enviar o tráfego para o endereço IP virtual (VIP) da instância de Balanceamento de Carga Interno.
 
 ## <a name="step-by-step-creating-an-internal-load-balancer-using-cli"></a>Criação passo a passo de um balanceador de carga interno com a CLI
+
 Este guia mostra como criar um balanceador de carga interno com base no cenário acima.
 
 1. Se nunca tiver utilizado a CLI do Azure, veja [Install and Configure the Azure CLI (Instalar e Configurar a CLI do Azure)](../xplat-cli-install.md) e siga as instruções até ao ponto onde poderá selecionar a sua conta e subscrição do Azure.
 2. Execute o comando **azure config mode** para mudar para o modo clássico, como mostrado abaixo.
-   
-        azure config mode asm
-   
+
+    ```azurecli
+    azure config mode asm
+    ```
+
     Resultado esperado:
-   
+
         info:    New mode is asm
 
 ## <a name="create-endpoint-and-load-balancer-set"></a>Criar o ponto final e o conjunto de balanceadores de carga
+
 O cenário assume as máquinas virtuais "DB1" e "DB2" num serviço em nuvem denominado "mytestcloud". Ambas as máquinas virtuais estão a utilizar uma rede virtual denominada "mytestvnet" com a sub-rede "subnet-1".
 
 Este guia irá criar um conjunto de balanceadores de carga internos através da porta 1433 como porta privada e a porta 1433 como porta local.
@@ -59,16 +67,12 @@ Este guia irá criar um conjunto de balanceadores de carga internos através da 
 Este é um cenário comum em que tem máquinas virtuais SQL no back-end com um balanceador de carga interno para garantir que os servidores de base de dados não são expostos diretamente através de um endereço IP público.
 
 ### <a name="step-1"></a>Passo 1
+
 Criar um conjunto de balanceadores de carga internos com `azure network service internal-load-balancer add`.
 
-     azure service internal-load-balancer add -r mytestcloud -n ilbset -t subnet-1 -a 192.168.2.7
-
-Parâmetros utilizados:
-
-**-r** – nome do serviço em nuvem<BR>
-**-n** – nome do balanceador de carga interno<BR>
-**-t** – nome da sub-rede (a mesma sub-rede das máquinas virtuais que serão adicionadas ao balanceador de carga interno)<BR>
-**-a** – (opcional) adicionar um endereço IP privado estático<BR>
+```azurecli
+azure service internal-load-balancer add --serviceName mytestcloud --internalLBName ilbset --subnet-name subnet-1 --static-virtualnetwork-ipaddress 192.168.2.7
+```
 
 Veja `azure service internal-load-balancer --help` para obter mais informações.
 
@@ -86,27 +90,24 @@ Segue-se um exemplo do resultado:
 
 
 ## <a name="step-2"></a>Passo 2
+
 Configure o conjunto de balanceadores de carga internos quando adicionar o primeiro ponto final. Associe o ponto final, a máquina virtual e a porta de sonda ao conjunto de balanceadores de carga internos neste passo.
 
-    azure vm endpoint create db1 1433 -k 1433 tcp -t 1433 -r tcp -e 300 -f 600 -i ilbset
-
-Parâmetros utilizados:
-
-**-k** – porta da máquina virtual local<BR>
-**-t** – porta de sonda<BR>
-**-r** – protocolo de sonda<BR>
-**-e** – intervalo de sonda em segundos<BR>
-**-f** – intervalo do tempo limite em segundos <BR>
-**-i** – nome do balanceador de carga interno <BR>
+```azurecli
+azure vm endpoint create db1 1433 --local-port 1433 --protocol tcp --probe-port 1433 --probe-protocol tcp --probe-interval 300 --probe-timeout 600 --internal-load-balancer-name ilbset
+```
 
 ## <a name="step-3"></a>Passo 3
+
 Verifique a configuração do balanceador de carga através de `azure vm show` *nome da máquina virtual*
 
-    azure vm show DB1
+```azurecli
+azure vm show DB1
+```
 
 O resultado será:
 
-        azure vm show DB1
+    azure vm show DB1
     info:    Executing command vm show
     + Getting virtual machines
     data:    DNSName "mytestcloud.cloudapp.net"
@@ -153,31 +154,34 @@ O resultado será:
     data:    Network Endpoints 2 loadBalancerName "ilbset"
     info:    vm show command OK
 
-
 ## <a name="create-a-remote-desktop-endpoint-for-a-virtual-machine"></a>Criar um ponto final de ambiente de trabalho remoto para uma máquina virtual
+
 Pode criar um ponto final de ambiente de trabalho remoto para reencaminhar o tráfego de rede de uma porta pública para uma porta local de uma máquina virtual específica através de `azure vm endpoint create`.
 
-    azure vm endpoint create web1 54580 -k 3389
-
+```azurecli
+azure vm endpoint create web1 54580 -k 3389
+```
 
 ## <a name="remove-virtual-machine-from-load-balancer"></a>Remover uma máquina virtual do balanceador de carga
+
 Pode remover uma máquina virtual de um conjunto de balanceadores de carga internos ao eliminar o ponto final associado. Após a remoção do ponto final, a máquina virtual já não pertence ao conjunto de balanceadores de carga.
 
- Através do exemplo acima, pode remover o ponto final criado para a máquina virtual "DB1" do balanceador de carga interno "ilbset" com o comando `azure vm endpoint delete`.
+Através do exemplo acima, pode remover o ponto final criado para a máquina virtual "DB1" do balanceador de carga interno "ilbset" com o comando `azure vm endpoint delete`.
 
-    azure vm endpoint delete DB1 tcp-1433-1433
-
+```azurecli
+azure vm endpoint delete DB1 tcp-1433-1433
+```
 
 Veja `azure vm endpoint --help` para obter mais informações.
 
 ## <a name="next-steps"></a>Passos seguintes
+
 [Configurar um modo de distribuição de balanceador de carga com a afinidade do IP de origem](load-balancer-distribution-mode.md)
 
 [Configurar definições de tempo limite TCP inativo para o balanceador de carga](load-balancer-tcp-idle-timeout.md)
 
 
 
-
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO3-->
 
 

@@ -15,8 +15,8 @@ ms.workload: infrastructure-services
 ms.date: 10/10/2016
 ms.author: cherylmc
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: d16326340f668285e185a6e8adb1a8316d8bd0eb
+ms.sourcegitcommit: 371c76ed36cd9d21026a5a49c6ef86a0cd3cc816
+ms.openlocfilehash: 8fd8b4b9611adb15df7e436a00f8ec35ea1e9614
 
 
 ---
@@ -45,7 +45,7 @@ O caminho de peering da Microsoft permite-lhe ligar aos serviços em nuvem da Mi
 
 ![](./media/expressroute-nat/expressroute-nat-microsoft.png) 
 
-#### <a name="traffic-originating-from-your-network-destined-to-microsoft"></a>Tráfego com origem na sua rede destinado à Microsoft
+### <a name="traffic-originating-from-your-network-destined-to-microsoft"></a>Tráfego com origem na sua rede destinado à Microsoft
 * Deve garantir que o tráfego está a entrar no caminho de peering da Microsoft com um endereço IPv4 público válido. A Microsoft deve conseguir validar o proprietário do conjunto de endereços IPv4 NAT num registo de Internet de encaminhamento regional (RIR) ou num registo de encaminhamento de Internet (IRR). Será efetuada uma verificação com base no número AS com o qual está a ser emparelhado e os endereços IP utilizados para o NAT. Veja a página [Requisitos do encaminhamento do ExpressRoute](expressroute-routing.md) para obter informações sobre os registos do encaminhamento.
 * Os endereços IP utilizados para a configuração do peering público Azure e outros circuitos ExpressRoute não devem ser anunciados à Microsoft através da sessão do BGP. Não existe qualquer restrição ao comprimento do prefixo do IP do NAT anunciado através deste peering.
   
@@ -54,7 +54,7 @@ O caminho de peering da Microsoft permite-lhe ligar aos serviços em nuvem da Mi
   > 
   > 
 
-#### <a name="traffic-originating-from-microsoft-destined-to-your-network"></a>Tráfego com origem na Microsoft destinado à sua rede
+### <a name="traffic-originating-from-microsoft-destined-to-your-network"></a>Tráfego com origem na Microsoft destinado à sua rede
 * Determinados cenários requerem que a Microsoft inicie a conectividade com pontos finais de serviço alojados na sua rede. Um exemplo típico desse cenário seria conectividade com servidores ADFS alojados na sua rede a partir do Office 365. Nestes casos, deve fornecer prefixos apropriados da sua rede para o peering da Microsoft. 
 * Deve realizar o SNAT do tráfego destinado a endereços IP na sua rede da Microsoft. 
 
@@ -70,6 +70,6 @@ O caminho de peering da Microsoft permite-lhe ligar aos serviços em nuvem da Mi
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO3-->
 
 

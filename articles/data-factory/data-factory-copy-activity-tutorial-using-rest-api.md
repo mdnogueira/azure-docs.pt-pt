@@ -15,8 +15,8 @@ ms.topic: get-started-article
 ms.date: 09/16/2016
 ms.author: spelluru
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: e3c045d652c04a8a03525753d9c18c3017c04f08
+ms.sourcegitcommit: 7b55f6730c6a2bf8637f312c452fe552f82dbaeb
+ms.openlocfilehash: 69b333b0c43d2e3e4d62168650123322a79579ba
 
 
 ---
@@ -84,7 +84,7 @@ Crie os seguintes ficheiros JSON na pasta onde está localizado curl.exe.
 
 ### <a name="azurestoragelinkedservicejson"></a>azurestoragelinkedservice.json
 > [!IMPORTANT]
-> Substitua **accountname** e **accountkey** pelo nome e chave da sua conta de armazenamento do Azure. Para saber como obter a chave de acesso ao armazenamento, veja [Ver, copiar e regenerar as chaves de acesso ao armazenamento](../storage/storage-create-storage-account.md#view-copy-and-regenerate-storage-access-keys).
+> Substitua **accountname** e **accountkey** pelo nome e chave da sua conta de armazenamento do Azure. Para saber como obter a chave de acesso ao armazenamento, veja [Ver, copiar e regenerar as chaves de acesso ao armazenamento](../storage/storage-create-storage-account.md#manage-your-storage-access-keys).
 > 
 > 
 
@@ -272,7 +272,7 @@ Se não especificar valor da propriedade **end**, esta é calculada como “**in
 Existem 24 setores de dados no exemplo, uma vez que estes são produzidos de hora a hora.
 
 > [!NOTE]
-> Veja [Anatomy of a Pipeline (Anatomia de um Pipeline)](data-factory-create-pipelines.md#anatomy-of-a-pipeline) para obter detalhes sobre as propriedades de JSON utilizadas no exemplo anterior.
+> Veja [Anatomy of a Pipeline (Anatomia de um Pipeline)](data-factory-create-pipelines.md) para obter detalhes sobre as propriedades de JSON utilizadas no exemplo anterior.
 > 
 > 
 

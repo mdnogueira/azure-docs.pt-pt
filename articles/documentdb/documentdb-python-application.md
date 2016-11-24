@@ -13,11 +13,11 @@ ms.workload: data-management
 ms.tgt_pltfrm: na
 ms.devlang: python
 ms.topic: hero-article
-ms.date: 08/25/2016
+ms.date: 11/16/2016
 ms.author: syamk
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: b55d61071dac6d173f37bdde7f9b60e53ae2485f
+ms.sourcegitcommit: bf07b8a10dd7e5ee9259c6fab9da886578504fe7
+ms.openlocfilehash: a652dcd2427d579db42e963ad54ac3078cba6857
 
 
 ---
@@ -47,6 +47,10 @@ Ao seguir este tutorial, irá criar uma aplicação de voto simples que lhe perm
 Antes de seguir as instruções deste artigo, deve certificar-se de que os seguintes elementos estão instalados:
 
 * Uma conta ativa do Azure. Se não tiver uma conta, pode criar uma conta de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/).
+ 
+    OU 
+
+    Uma instalação local do [Emulador do Azure DocumentDB](documentdb-nosql-local-emulator.md).
 * [Visual Studio 2013](http://www.visualstudio.com/) ou superior, ou [Visual Studio Express](), que é a versão gratuita. As instruções deste tutorial foram especificamente redigidas para o Visual Studio 2015. 
 * Ferramentas do Python para Visual Studio a partir do [GitHub](http://microsoft.github.io/PTVS/). Este tutorial utiliza as Ferramentas do Python para a VS 2015. 
 * Azure SDK Python para Visual Studio, versão 2.4 ou superior disponível a partir do [azure.com](https://azure.microsoft.com/downloads/). Utilizámos o SDK do Microsoft Azure para Python 2.7.
@@ -62,7 +66,7 @@ Antes de seguir as instruções deste artigo, deve certificar-se de que os segui
 * Compilador do Microsoft Visual C++ para Python 2.7 a partir do [Centro de Transferências da Microsoft][3].
 
 ## <a name="step-1-create-a-documentdb-database-account"></a>Passo 1: Criar uma conta de base de dados no DocumentDB
-Comecemos por criar uma conta DocumentDB. Se já tiver uma conta, pode avançar para o [Passo 2: Criar uma nova aplicação Web Python Flask](#step-2:-create-a-new-python-flask-web-application).
+Comecemos por criar uma conta do DocumentDB. Se já tiver uma conta ou se estiver a utilizar o Emulador do DocumentDB para este tutorial, pode avançar para o [Passo 2: Criar uma nova aplicação Web Python Flask](#step-2:-create-a-new-python-flask-web-application).
 
 [!INCLUDE [documentdb-create-dbaccount](../../includes/documentdb-create-dbaccount.md)]
 
@@ -409,6 +413,6 @@ Para tutoriais adicionais do Python Flask, consulte o artigo [Mega Tutorial Flas
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO3-->
 
 

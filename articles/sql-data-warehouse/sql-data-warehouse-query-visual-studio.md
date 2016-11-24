@@ -1,5 +1,5 @@
 ---
-title: Consultar o Azure SQL Data Warehouse (Visual Studio) | Microsoft Docs
+title: Ligar ao Azure SQL Data Warehouse - VSTS| Microsoft Docs
 description: Consultar o SQL Data Warehouse com o Visual Studio.
 services: sql-data-warehouse
 documentationcenter: NA
@@ -15,12 +15,12 @@ ms.workload: data-services
 ms.date: 10/31/2016
 ms.author: barbkess
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 5e97fefdf3cc13f2fd3e060da901e90ef5ef9a29
+ms.sourcegitcommit: 77474214c6fafe7f591030d30f6a46c66fbc5c09
+ms.openlocfilehash: 71a56d0e99308d3f7f514283792a2155a05a7172
 
 
 ---
-# <a name="query-azure-sql-data-warehouse-visual-studio"></a>Consultar o Azure SQL Data Warehouse (Visual Studio)
+# <a name="connect-to-sql-data-warehouse-with-visual-studio-and-ssdt"></a>Ligar ao SQL Data Warehouse com o Visual Studio e o SSDT
 > [!div class="op_single_selector"]
 > * [Power BI](sql-data-warehouse-get-started-visualize-with-power-bi.md)
 > * [Azure Machine Learning](sql-data-warehouse-get-started-analyze-with-azure-machine-learning.md)
@@ -105,6 +105,6 @@ Para configurar o ambiente para a autenticação do Azure Active Directory, veja
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO3-->
 
 

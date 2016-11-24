@@ -1,60 +1,75 @@
-
 ---
-title: Get started creating an Internet facing load balancer in classic deployment model using the Azure classic portal | Microsoft Docs
-description: Learn how to create an Internet facing load balancer in classic deployment model using the Azure classic portal
+title: "Introdução à criação de um balanceador de carga com acesso à Internet no modelo de implementação clássica com o portal clássico do Azure | Microsoft Docs"
+description: "Saiba como criar um balanceador de carga com acesso à Internet num modelo de implementação clássica com o portal clássico do Azure"
 services: load-balancer
 documentationcenter: na
 author: sdwheeler
 manager: carmonm
-editor: ''
+editor: 
 tags: azure-service-management
-
+ms.assetid: fa3e93c0-968a-472d-a17c-65665c050db2
 ms.service: load-balancer
 ms.devlang: na
-ms.topic: article
+ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/31/2016
 ms.author: sewhee
+translationtype: Human Translation
+ms.sourcegitcommit: 7d8eb43fea032eb5aa72f448a7c1022be62a7b81
+ms.openlocfilehash: bf71746d3c23fd69902f1a7af6cbab2ad1a65df4
 
 ---
-# Get started creating an Internet facing load balancer (classic) in the Azure classic portal
-[!INCLUDE [load-balancer-get-started-internet-classic-selectors-include.md](../../includes/load-balancer-get-started-internet-classic-selectors-include.md)]
+
+# <a name="get-started-creating-an-internet-facing-load-balancer-classic-in-the-azure-classic-portal"></a>Introdução à criação de um balanceador de carga com acesso à Internet (modo clássico) no portal clássico do Azure
+
+> [!div class="op_single_selector"]
+> * [Portal Clássico do Azure](../load-balancer/load-balancer-get-started-internet-classic-portal.md)
+> * [PowerShell](../load-balancer/load-balancer-get-started-internet-classic-ps.md)
+> * [CLI do Azure](../load-balancer/load-balancer-get-started-internet-classic-cli.md)
+> * [Serviços em Nuvem do Azure](../load-balancer/load-balancer-get-started-internet-classic-cloud.md)
 
 [!INCLUDE [load-balancer-get-started-internet-intro-include.md](../../includes/load-balancer-get-started-internet-intro-include.md)]
 
-[!INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)]
-
-This article covers the classic deployment model. You can also [Learn how to create an Internet facing load balancer using Azure Resource Manager](load-balancer-get-started-internet-arm-ps.md).
+> [!IMPORTANT]
+> Para trabalhar com recursos do Azure, é importante compreender que o Azure tem atualmente dois modelos de implementação: o Azure Resource Manager e a implementação clássica. Confirme que compreende os [modelos e ferramentas de implementação](../azure-classic-rm.md) antes de trabalhar com qualquer recurso do Azure. Pode ver a documentação de diversas ferramentas clicando nos separadores na parte superior deste artigo. Este artigo abrange o modelo de implementação clássica. Também pode [saber como criar um balanceador de carga com acesso à Internet com o Azure Resource Manager](load-balancer-get-started-internet-arm-ps.md).
 
 [!INCLUDE [load-balancer-get-started-internet-scenario-include.md](../../includes/load-balancer-get-started-internet-scenario-include.md)]
 
-## Set up an Internet-facing load balancer for virtual machines
-In order to load balance network traffic from the Internet across the virtual machines of a cloud service, you must create a load-balanced set. This procedure assumes that you have already created the virtual machines and that they are all within the same cloud service.
+## <a name="set-up-an-internet-facing-load-balancer-for-virtual-machines"></a>Configurar um balanceador de carga com acesso à Internet para máquinas virtuais
 
-**To configure a load-balanced set for virtual machines**
+Para efetuar o balanceamento de carga do tráfego de rede a partir da Internet nas máquinas virtuais de um serviço em nuvem, tem de criar um conjunto com balanceamento de carga. Este procedimento assume que já criou as máquinas virtuais e que estão todas no mesmo serviço em nuvem.
 
-1. In the Azure classic portal, click **Virtual Machines**, and then click the name of a virtual machine in the load-balanced set.
-2. Click **Endpoints**, and then click **Add**.
-3. On the **Add an endpoint to a virtual machine** page, click the right arrow.
-4. On the **Specify the details of the endpoint** page:
-   
-   * In **Name**, type a name for the endpoint or select the name from the list of predefined endpoints for common protocols.
-   * In **Protocol**, select the protocol required by the type of endpoint, either TCP or UDP, as needed.
-   * In **Public Port and Private Port**, type the port numbers that you want the virtual machine to use, as needed. You can use the private port and firewall rules on the virtual machine to redirect traffic in a way that is appropriate for your application. The private port can be the same as the public port. For example, for an endpoint for web (HTTP) traffic, you could assign port 80 to both the public and private port.
-5. Select **Create a load-balanced set**, and then click the right arrow.
-6. On the **Configure the load-balanced set** page, type a name for the load-balanced set, and then assign the values for probe behavior of the Azure Load Balancer. The Load Balancer uses probes to determine if the virtual machines in the load-balanced set are available to receive incoming traffic.
-7. Click the check mark to create the load-balanced endpoint. You will see **Yes** in the **Load-balanced set name** column of the **Endpoints** page for the virtual machine.
-8. In the portal, click **Virtual Machines**, click the name of an additional virtual machine in the load-balanced set, click **Endpoints**, and then click **Add**.
-9. On the **Add an endpoint to a virtual machine** page, click **Add endpoint to an existing load-balanced set**, select the name of the load-balanced set, and then click the right arrow.
-10. On the **Specify the details of the endpoint** page, type a name for the endpoint, and then click the check mark.
+**Para configurar um conjunto com balanceamento de carga para máquinas virtuais**
 
-For the additional virtual machines in the load-balanced set, repeat steps 8-10.
+1. No portal clássico do Azure, clique em **Máquinas Virtuais** e, em seguida, clique no nome de uma máquina virtual no conjunto com balanceamento de carga.
+2. Clique em **Pontos finais** e, em seguida, clique em **Adicionar**.
+3. Na página **Adicionar um ponto final a uma máquina virtual**, clique na seta para a direita.
+4. Na página **Especificar os detalhes do ponto final**:
 
-## Next steps
-[Get started configuring an internal load balancer](load-balancer-get-started-ilb-arm-ps.md)
+   * Em **Nome**, escreva um nome para o ponto final ou selecione o nome na lista de pontos finais predefinidos para protocolos comuns.
+   * Em **Protocolo**, selecione o protocolo necessário para o tipo de ponto final, TCP ou UDP, conforme necessário.
+   * Em **Porta Pública e Porta Privada**, escreva os números de porta que pretende que a máquina virtual utilize, conforme necessário. Pode utilizar a porta privada e as regras de firewall na máquina virtual para redirecionar o tráfego de uma forma que seja adequada para a sua aplicação. A porta privada pode ser a mesma que a porta pública. Por exemplo, para um ponto final para tráfego Web (HTTP), pode atribuir a porta 80 à porta pública e privada.
 
-[Configure a load balancer distribution mode](load-balancer-distribution-mode.md)
+5. Selecione **Criar um conjunto com balanceamento de carga** e, em seguida, clique na seta para a direita.
+6. Na página **Configurar o conjunto com balanceamento de carga**, escreva um nome para o conjunto com balanceamento de carga e, em seguida, atribua os valores para o comportamento de sonda do Balanceador de Carga do Azure. O Balanceador de Carga utiliza sondas para determinar se as máquinas virtuais no conjunto com balanceamento de carga estão disponíveis para receber o tráfego de entrada.
+7. Clique na marca de verificação para criar o ponto final com balanceamento de carga. Verá **Sim** na coluna **Nome do conjunto com balanceamento de carga** da página **Pontos finais** da máquina virtual.
+8. No portal, clique em **Máquinas Virtuais**, clique no nome de uma máquina virtual adicional no conjunto com balanceamento de carga, clique em **Pontos finais** e, em seguida, clique em **Adicionar**.
+9. Na página **Adicionar um ponto final a uma máquina virtual**, clique em **Adicionar ponto final a um conjunto com balanceamento de carga existente**, selecione o nome do conjunto com balanceamento de carga e, em seguida, clique na seta para a direita.
+10. Na página **Especificar os detalhes do ponto final**, escreva um nome para o ponto final e, em seguida, clique na marca de verificação.
 
-[Configure idle TCP timeout settings for your load balancer](load-balancer-tcp-idle-timeout.md)
+Para as máquinas virtuais adicionais no conjunto com balanceamento de carga, repita os passos 8 a 10.
+
+## <a name="next-steps"></a>Passos seguintes
+
+[Começar a configurar um balanceador de carga interno](load-balancer-get-started-ilb-arm-ps.md)
+
+[Configurar um modo de distribuição de balanceador de carga](load-balancer-distribution-mode.md)
+
+[Configurar definições de tempo limite TCP inativo para o balanceador de carga](load-balancer-tcp-idle-timeout.md)
+
+
+
+<!--HONumber=Nov16_HO2-->
+
 

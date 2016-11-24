@@ -15,8 +15,8 @@ ms.topic: hero-article
 ms.date: 07/22/2016
 ms.author: dastrock
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 370978187cffa2e5a9544bf99e6a15e13f97ac53
+ms.sourcegitcommit: a977cb509fb64d7c986e2e0f7e2b5e4e3e45dec0
+ms.openlocfilehash: afc0249def57095e58e4d57230faee01daf7bb52
 
 
 ---
@@ -34,11 +34,11 @@ Em seguida, precisa de criar uma aplicação no diretório do B2C. Isto proporci
 * Incluir uma **aplicação web** ou uma **API Web ** na aplicação.
 * Utilizar o **Uniform Resource Identifier de redirecionamento ** `https://localhost:44316/` para a aplicação web. Esta é a localização predefinida da aplicação Web cliente para este exemplo de código.
 * Copiar a **ID da aplicação** atribuída à aplicação. Precisará dela mais tarde.
-  
+
   [!INCLUDE [active-directory-b2c-devquickstarts-v2-apps](../../includes/active-directory-b2c-devquickstarts-v2-apps.md)]
 
 ## <a name="create-your-policies"></a>Criar as políticas
-No Azure AD B2C, cada experiência de utilizador é definida por uma [política](active-directory-b2c-reference-policies.md). O cliente neste exemplo de código contém três experiências de identidade: inscrever-se, iniciar sessão e editar perfil. Precisa de criar uma política de cada tipo, conforme descrito no [artigo de referência de política](active-directory-b2c-reference-policies.md#how-to-create-a-sign-up-policy). Quando criar as três políticas, não se esqueça de:
+No Azure AD B2C, cada experiência de utilizador é definida por uma [política](active-directory-b2c-reference-policies.md). O cliente neste exemplo de código contém três experiências de identidade: inscrever-se, iniciar sessão e editar perfil. Precisa de criar uma política de cada tipo, conforme descrito no [artigo de referência de política](active-directory-b2c-reference-policies.md#create-a-sign-up-policy). Quando criar as três políticas, não se esqueça de:
 
 * Escolher a **Inscrição de ID de utilizador** ou **Inscrição de email ** no painel de fornecedores de identidade.
 * Escolher o **Nome a apresentar** e outros atributos de inscrição na sua política de inscrição.

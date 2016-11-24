@@ -16,16 +16,16 @@ ms.workload: infrastructure-services
 ms.date: 10/05/2016
 ms.author: ganesr
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 45c0646f6eb1067f49bc185f1592cd1c94fc9470
+ms.sourcegitcommit: 5da660fc36ac0ebef26ed815da6dbba6668643d3
+ms.openlocfilehash: 57e8ee6f067a61c1262a8902dd56393e4803c3c6
 
 
 ---
 # <a name="create-and-modify-routing-for-an-expressroute-circuit"></a>Criar e modificar o encaminhamento de um circuito ExpressRoute
 > [!div class="op_single_selector"]
-> [Portal do Azure – Resource Manager](expressroute-howto-routing-portal-resource-manager.md)
-> [PowerShell – Resource Manager](expressroute-howto-routing-arm.md)
-> [PowerShell – Clássica](expressroute-howto-routing-classic.md)
+> * [Portal do Azure - Resource Manager](expressroute-howto-routing-portal-resource-manager.md)
+> * [PowerShell – Resource Manager](expressroute-howto-routing-arm.md)
+> * [PowerShell – Clássica](expressroute-howto-routing-classic.md)
 > 
 > 
 
@@ -249,7 +249,9 @@ Esta secção fornece instruções sobre como criar, obter, atualizar e eliminar
      
        Set-AzureRmExpressRouteCircuit -ExpressRouteCircuit $ckt
 
-    >[AZURE.IMPORTANT] Assegure que especifica o seu número AS como ASN de peering e não cliente ASN.
+    > [!IMPORTANT]
+    > Assegure que especifica o seu número AS como ASN de peering, não cliente ASN.
+
 
 ### <a name="to-view-azure-public-peering-details"></a>Para ver os detalhes do peering público do Azure
 Pode obter os detalhes de configuração com o cmdlet seguinte
@@ -387,6 +389,6 @@ Passo seguinte, [Ligar uma VNet a um circuito ExpressRoute](expressroute-howto-l
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO3-->
 
 

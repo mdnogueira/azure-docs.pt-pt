@@ -13,11 +13,11 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 09/13/2016
+ms.date: 11/16/2016
 ms.author: mimig
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 23a6be60d7bf8fa47589fffb5132a09994d33d4c
+ms.sourcegitcommit: 2d833a559b72569983340972ba3b905b9e42e61d
+ms.openlocfilehash: cb1fd606fa03650980a02325b82774ce9ef8cf77
 
 
 ---
@@ -46,7 +46,7 @@ O Azure DocumentDB oferece as principais capacidades e vantagens seguintes:
 * **Abrir por conceção:** Comece a trabalhar rapidamente utilizando as competências e ferramentas existentes. A programação do DocumentDB é simples, acessível e não requer a utilização de novas ferramentas ou a adesão a extensões personalizadas para o JSON ou o JavaScript. Pode aceder a todas as funcionalidades da base de dados, incluindo CRUD, consulta e processamento de JavaScript através de uma interface RESTful HTTP simples. O DocumentDB engloba formatos, idiomas e normas existentes, oferecendo capacidades de base de dados de elevado valor.
 * **Indexação automática:** por predefinição, o DocumentDB [indexa automaticamente](documentdb-indexing.md) todos os documentos na base de dados e não espera nem exige nenhum esquema ou criação de índices secundários. Não pretende indexar tudo? Não se preocupe, também pode [optar por excluir caminhos nos seus ficheiros JSON](documentdb-indexing-policies.md).
 
-## <a name="a-namedatamanagementahow-does-documentdb-manage-data"></a><a name="data-management"></a>Como é que o DocumentDB gere dados?
+## <a name="a-namedata-managementahow-does-documentdb-manage-data"></a><a name="data-management"></a>Como é que o DocumentDB gere dados?
 O Azure DocumentDB gere dados JSON através de recursos de bases de dados bem definidos. Estes recursos são replicados para elevada disponibilidade, sendo exclusivamente endereçáveis pelo respetivo URI lógico. O DocumentDB oferece um modelo de programação HTTP simples com base na RESTful para todos os recursos. 
 
 A conta da base de dados do DocumentDB é um espaço de nomes único que lhe dá acesso ao Azure DocumentDB. Antes de poder criar uma conta de base de dados, terá de ter uma subscrição do Azure, que lhe permitirá aceder a vários serviços do Azure. 
@@ -71,6 +71,8 @@ O Azure DocumentDB expõe recursos através de uma API REST que pode ser chamada
 | n/d |[SDK JavaScript do lado do servidor](http://azure.github.io/azure-documentdb-js-server/) |
 | [Python SDK](https://pypi.python.org/pypi/pydocumentdb) |[Biblioteca Python](http://azure.github.io/azure-documentdb-python/) |
 
+Ao utilizar o [Emulador do Azure DocumentDB](documentdb-nosql-local-emulator.md), pode programar e testar a sua aplicação localmente, sem criar uma subscrição do Azure ou incorrer em custos. Quando estiver satisfeito com o funcionamento da sua aplicação no Emulador do DocumentDB, pode mudar e começar a utilizar uma conta do Azure DocumentDB na cloud.
+
 Para além das operações básicas de criação, leitura, atualização e eliminação, o DocumentDB fornece uma interface de consulta avançada do SQL para obter documentos JSON e suporte do lado do servidor para a execução transacional da lógica de aplicação do JavaScript. As interfaces de execução de consulta e script estão disponíveis através de todas as bibliotecas de plataforma, bem como as APIs REST. 
 
 ### <a name="sql-query"></a>Consulta SQL
@@ -92,6 +94,7 @@ Não tem uma conta do Azure? Pode:
 
 * Inscrever-se numa [avaliação gratuita do Azure](https://azure.microsoft.com/free/), que lhe oferece 30 dias e $200 para experimentar todos os serviços do Azure. 
 * Se tiver uma subscrição do MSDN, poderá beneficiar de [$150 em créditos mensais gratuitos do Azure](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) para utilizar em qualquer serviço Azure. 
+* Transfira o [Emulador do Azure DocumentDB](documentdb-nosql-local-emulator.md) para programar a sua aplicação localmente.
 
 Em seguida, quando estiver pronto para saber mais, aceda ao nosso [percurso de aprendizagem](https://azure.microsoft.com/documentation/learning-paths/documentdb/) para percorrer todos os recursos de aprendizagem disponíveis para si. 
 
@@ -100,6 +103,6 @@ Em seguida, quando estiver pronto para saber mais, aceda ao nosso [percurso de a
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO3-->
 
 

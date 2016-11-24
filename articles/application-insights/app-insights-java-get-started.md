@@ -1,9 +1,9 @@
 ---
 title: "Análise de aplicação Web em Java com o Application Insights | Microsoft Docs"
-description: "Monitorize o desempenho e a utilização do seu site em Java com o Application Insights. "
+description: "Monitorização do Desempenho de Aplicações para aplicações Web Java com o Application Insights. "
 services: application-insights
 documentationcenter: java
-author: alancameronwills
+author: harelbr
 manager: douge
 ms.assetid: 051d4285-f38a-45d8-ad8a-45c3be828d91
 ms.service: application-insights
@@ -14,13 +14,13 @@ ms.topic: get-started-article
 ms.date: 08/17/2016
 ms.author: awills
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: cc0167ef78eb3ca84e959599473af5935e5da0d0
+ms.sourcegitcommit: 7a9c40081f52b2ffe918f4612f790f7fd08acc5a
+ms.openlocfilehash: 2c3c0c79e62631a42249ea6dc3865e59f26cad53
 
 
 ---
 # <a name="get-started-with-application-insights-in-a-java-web-project"></a>Introdução ao Application Insights num projeto Web em Java
-*O Application Insights está em Pré-visualização.*
+
 
 O [Application Insights](https://azure.microsoft.com/services/application-insights/) é um serviço de análise extensível para programadores Web que os ajudam a compreender o desempenho e a utilização da aplicação em direto. Utilize-o para [detetar e a diagnosticar problemas de desempenho e exceções](app-insights-detect-triage-diagnose.md), e [escrever código][api] para controlar o que os utilizadores fazem com a sua aplicação.
 
@@ -182,7 +182,7 @@ Para obter resultados mais exatos, o filtro deve ser mapeado antes de todos os o
     </filter-mapping>
 
 #### <a name="if-youre-using-spring-web-mvc-31-or-later"></a>Se estiver a utilizar o Spring Web MVC 3.1 ou posterior
-Edite estes elementos para incluir o pacote do Application Insights:
+Edite estes elementos em *-servlet.xml para incluir o pacote do Application Insights:
 
     <context:component-scan base-package=" com.springapp.mvc, com.microsoft.applicationinsights.web.spring"/>
 
@@ -244,11 +244,15 @@ Agora publique a aplicação no servidor, permita que as pessoas a utilizem e ve
   
   * dc.services.visualstudio.com:443
   * f5.services.visualstudio.com:443
+
+* Se o tráfego de saída tiver de ser encaminhado através de uma firewall, defina as propriedades do sistema `http.proxyHost` e `http.proxyPort`. 
+
 * Nos servidores do Windows, instale:
   
   * [Microsoft Visual C++ Redistributable](http://www.microsoft.com/download/details.aspx?id=40784)
     
     (Este componente ativa os contadores de desempenho.)
+
 
 ## <a name="exceptions-and-request-failures"></a>Exceções e falhas de pedido
 As exceções não processadas são recolhidas automaticamente:
@@ -358,15 +362,15 @@ Irá obter gráficos de tempos de resposta e notificações por e-mail, se o seu
 
 [api]: app-insights-api-custom-events-metrics.md
 [apiexceptions]: app-insights-api-custom-events-metrics.md#track-exception
-[availability]: app-insights-monitor-web-app-availability.md
-[diagnostic]: app-insights-diagnostic-search.md
+[disponibilidade]: app-insights-monitor-web-app-availability.md
+[diagnóstico]: app-insights-diagnostic-search.md
 [eclipse]: app-insights-java-eclipse.md
 [javalogs]: app-insights-java-trace-logs.md
-[metrics]: app-insights-metrics-explorer.md
-[usage]: app-insights-web-track-usage.md
+[métricas]: app-insights-metrics-explorer.md
+[utilização]: app-insights-web-track-usage.md
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO3-->
 
 

@@ -16,8 +16,8 @@ ms.workload: data-catalog
 ms.date: 10/11/2016
 ms.author: maroche
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 6299c6eaab1e62281e23d2dd43c14fbb9769a316
+ms.sourcegitcommit: c2350ae447ccebf1a6b85a563e7fa1d7c12b16d7
+ms.openlocfilehash: 4c6a07c4b3597e357c520bcafde501bc0850e685
 
 
 ---
@@ -102,8 +102,8 @@ Os **Consumidores de Dados** são as pessoas com conhecimentos sobre a utilizaç
 
 Um dos problemas empresariais que o **Catálogo de Dados do Azure** aborda é ligar **Produtores de Dados** a **Consumidores de Dados**. Consegue-o servindo como um repositório central para informações sobre origens de dados empresariais. Com o Catálogo de Dados, o David regista origens de dados do Adventure Works e do SQL Server. Ao utilizar crowdsourcing, qualquer utilizador que detetar esta origem de dados pode partilhar as opiniões dele sobre os dados, além de utilizar os dados que foram detetados. Por exemplo, a Teresa deteta as origens de dados ao pesquisar o catálogo e partilha os conhecimentos especializados sobre os dados.  Agora, as outras pessoas na organização beneficiam do conhecimento partilhado ao pesquisarem o catálogo de dados.
 
-* Para saber mais sobre como registar origens de dados, veja [Registar origens de dados](data-catalog-get-started.md#exercise-2-registering-data-sources).
-* Para saber mais sobre como detetar origens de dados, veja [Pesquisar origens de dados](data-catalog-get-started.md#exercise-3-discovering-registered-data-assets).
+* Para saber mais sobre como registar origens de dados, veja [Registar origens de dados](data-catalog-get-started.md).
+* Para saber mais sobre como detetar origens de dados, veja [Pesquisar origens de dados](data-catalog-get-started.md).
 
 ### <a name="start-small-and-focused"></a>Comece por algo pequeno e mantenha-se focado
 Para a maioria dos projetos piloto empresariais, deve fazer o seeding do catálogo com origens de dados de elevado valor, para que os utilizadores empresariais possam ver rapidamente o valor do Catálogo de Dados. As TI são um bom local para começar a identificar as origens de dados comuns que seriam de interesse para a sua equipa piloto. Para origens de dados suportadas, como o SQL Server, recomendamos que utilize a ferramenta de registo de origem de dados do **Catálogo de Dados do Azure**. Com a ferramenta de registo de origem de dados, pode registar uma vasta gama de origens de dados, incluindo bases de dados SQL Server e Oracle, e relatórios do SQL Server Reporting Services. Para obter uma lista completa das origens de dados atuais, veja [Origens de dados suportadas pelo Catálogo de Dados do Azure](data-catalog-dsr.md).
@@ -123,8 +123,8 @@ Como parte do projeto piloto, a equipa da Teresa também utiliza origens de dado
 
 > [!NOTE]
 > Escrevemos uma ferramenta de exemplo que utiliza a API do **Catálogo de Dados do Azure** para migrar um livro do Excel para o Catálogo de Dados. Para obter mais informações sobre a API do Catálogo de Dados e a ferramenta de exemplo, pode [Transferir o exemplo de código do livro Ad Hoc](https://azure.microsoft.com/documentation/samples/data-catalog-dotnet-excel-register-data-assets/), e ver a documentação [API REST do Catálogo de Dados do Azure](https://msdn.microsoft.com/library/azure/mt267593.aspx).
-> 
-> 
+>
+>
 
 Depois de o projeto piloto estar implementado, está na altura de executar o seu plano de adoção do Catálogo de Dados.
 
@@ -142,9 +142,9 @@ Eis algumas sugestões para começar:
 Antes de a equipa piloto passar para a utilização do Catálogo de Dados, convoque uma reunião inicial para discutir expetativas para o projeto piloto e forneça formação inicial.
 
 ### <a name="set-expectations"></a>Definir expetativas
-A definição de expetativas e objetivos ajuda os utilizadores empresariais a concentrarem-se em resultados específicos. Para manter o projeto controlado, atribua trabalhos de casa regulares (talvez diária ou semanalmente com base no âmbito e na duração do projeto piloto). Uma das capacidades mais importantes do Catálogo de Dados é o crowdsourcing de recursos de dados, para que os utilizadores empresariais possam beneficiar do conhecimento dos dados empresariais. Um excelente trabalho de casa a atribuir é que cada membro da equipa piloto registe ou anote pelo menos uma origem de dados que utilizou. Veja [Registar uma origem de dados](data-catalog-get-started.md#exercise-2-registering-data-sources) e [Como anotar origens de dados](data-catalog-get-started.md#exercise-4-annotating-registered-data-sources).
+A definição de expetativas e objetivos ajuda os utilizadores empresariais a concentrarem-se em resultados específicos. Para manter o projeto controlado, atribua trabalhos de casa regulares (talvez diária ou semanalmente com base no âmbito e na duração do projeto piloto). Uma das capacidades mais importantes do Catálogo de Dados é o crowdsourcing de recursos de dados, para que os utilizadores empresariais possam beneficiar do conhecimento dos dados empresariais. Um excelente trabalho de casa a atribuir é que cada membro da equipa piloto registe ou anote pelo menos uma origem de dados que utilizou. Veja [Registar uma origem de dados](data-catalog-get-started.md) e [Como anotar origens de dados](data-catalog-get-started.md).
 
-Reúna regularmente com a equipa para rever algumas das anotações. As boas anotações sobre origens de dados estão no centro de uma adoção do Catálogo de Dados com êxito, pois fornecem informações significativas sobre origens de dados, numa localização central. Sem boa anotações, o conhecimento sobre origens de dados permanece disperso por toda a empresa. Veja [Como anotar origens de dados](data-catalog-get-started.md#exercise-4-annotating-registered-data-sources).
+Reúna regularmente com a equipa para rever algumas das anotações. As boas anotações sobre origens de dados estão no centro de uma adoção do Catálogo de Dados com êxito, pois fornecem informações significativas sobre origens de dados, numa localização central. Sem boa anotações, o conhecimento sobre origens de dados permanece disperso por toda a empresa. Veja [Como anotar origens de dados](data-catalog-get-started.md).
 
 E, obviamente, o derradeiro teste do projeto é se os utilizadores conseguem detetar e compreender as origens de dados que têm de utilizar. Os utilizadores piloto devem testar o catálogo regularmente para assegurar que as origens de dados que utilizam para o trabalho diário são relevantes. Quando uma origem de dados necessária está em falta ou não foi corretamente anotada, tal deverá servir como um lembrete para registar origens de dados adicionais ou para fornecer anotações adicionais. Esta prática não só adiciona valor ao esforço do piloto, como também cria hábitos eficazes que vão ser transferidos para outras equipas depois de o projeto piloto estar concluído.
 
@@ -162,11 +162,10 @@ Este artigo informou-o sobre como introduzir o **Catálogo de Dados do Azure** n
 * [Página de produto do Catálogo de Dados do Azure](https://azure.microsoft.com/services/data-catalog/)
 * [Documentação do Catálogo de Dados do Azure](https://azure.microsoft.com/documentation/services/data-catalog/)
 * [Cenários comuns do Catálogo de Dados do Azure](data-catalog-common-scenarios.md)
-* [Registar origens de dados](data-catalog-get-started.md#exercise-2-registering-data-sources)
-* [Pesquisar origens de dados](data-catalog-get-started.md#exercise-3-discovering-registered-data-assets)
-* [Anotar origens de dados](data-catalog-get-started.md#exercise-4-annotating-registered-data-sources)
-* [Crowdsourcing de metadados](data-catalog-get-started.md#exercise-5-crowdsourcing-metadata)
-
+* [Registar origens de dados](data-catalog-get-started.md)
+* [Pesquisar origens de dados](data-catalog-get-started.md)
+* [Anotar origens de dados](data-catalog-get-started.md)
+* [Crowdsourcing de metadados](data-catalog-get-started.md)
 
 
 

@@ -12,11 +12,11 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: hero-article
-ms.date: 10/17/2016
+ms.date: 11/07/2016
 ms.author: juliako
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 80606d9fd08a4d5b5845af8ed43fdcef050e47e9
+ms.sourcegitcommit: 0d9d87d0dc26d2fcaa3886a9f8c0849b71b26847
+ms.openlocfilehash: 61ea806ec3ad620d454e2de0910fa2b49de66493
 
 
 ---
@@ -114,10 +114,17 @@ Para criar e alterar o número de unidades reservadas para transmissão em fluxo
    > 
 
 ## <a name="create-and-configure-a-visual-studio-project"></a>Criar e configurar um projeto de Visual Studio
+
 1. Crie uma nova Aplicação de Consola C# no Visual Studio 2013, Visual Studio 2012 ou Visual Studio 2010 SP1. Introduza o **Nome**, **Localização** e **Nome da solução** e, em seguida, clique em **OK**.
 2. Utilize o pacote NuGet [windowsazure.mediaservices.extensions](https://www.nuget.org/packages/windowsazure.mediaservices.extensions) para instalar **Extensões do SDK do .NET dos Serviços de Multimédia do Azure**.  As Extensões do SDK do .NET dos Media Services são um conjunto de métodos de extensão e funções de programa auxiliar que irão simplificar o seu código e facilitar o desenvolvimento com os Media Services. Ao instalar este pacote, também é instalado o **SDK do .NET dos Media Services** e são adicionadas todas as outras dependências necessárias.
+
+    Para adicionar referências com o NuGet, faça o seguinte: no Explorador de Soluções, clique com o botão direito do rato no nome do projeto e selecione **Gerir pacotes NuGet**. Em seguida, procure **windowsazure.mediaservices.extensions** e clique em **Instalar**.
+
 3. Adicione uma referência à assemblagem System.Configuration. Esta assemblagem contém a classe **System.Configuration.ConfigurationManager** que é utilizada para aceder aos ficheiros de configuração, por exemplo, App.config.
-4. Abra o ficheiro App.config (adicione o ficheiro ao seu projeto caso não tenha sido adicionado por predefinição) e adicione uma secção *appSettings* ao ficheiro. Configure os valores do nome de conta e a chave de conta da sua conta de Media Services do Azure, conforme mostrado no exemplo seguinte. Para obter o nome de conta e as informações da chave, aceda ao [portal do Azure](https://portal.azure.com/) e selecione a sua conta AMS. Em seguida, selecione **Definições** > **Chaves**. A janela Gerir chaves mostra o nome da conta e as chaves primária e secundária são apresentadas.
+
+    Para adicionar uma referência, faça o seguinte: no Explorador de Soluções, clique com o botão direito do rato no nome do projeto, selecione **Adicionar** > **Referência...** e escreva “configuração” na caixa de pesquisa. 
+
+4. Abra o ficheiro App.config (adicione o ficheiro ao seu projeto caso não tenha sido adicionado por predefinição) e adicione uma secção *appSettings* ao ficheiro. Configure os valores do nome de conta e a chave de conta da sua conta de Media Services do Azure, conforme mostrado no exemplo seguinte. Para obter o nome de conta e as informações da chave, aceda ao [portal do Azure](https://portal.azure.com/) e selecione a sua conta AMS. Em seguida, selecione **Definições** > **Chaves**. A janela Gerir chaves mostra o nome da conta e as chaves primária e secundária são apresentadas. Copie os valores do nome da conta e a chave primária.
    
         <configuration>
         ...
@@ -141,11 +148,16 @@ Para criar e alterar o número de unidades reservadas para transmissão em fluxo
 6. Crie uma nova pasta no diretório dos projetos e copie um ficheiro .mp4 ou .wmv que pretende codificar e transmitir ou transferir progressivamente. Neste exemplo, é utilizado o caminho "C:\VideoFiles".
 
 ## <a name="connect-to-the-media-services-account"></a>Ligar à conta de Media Services
+
 Quando utilizar os Media Services com .NET, deve utilizar a classe **CloudMediaContext** na maioria das tarefas de programação dos Media Services: ligar à conta de Media Services; criar, atualizar, aceder e eliminar os seguintes objetos: elementos, ficheiros de elementos, tarefas, políticas de acesso, localizadores, etc.
 
 Substitua a classe Program predefinida com o seguinte código. O código demonstra como ler os valores de ligação a partir do ficheiro App.config e como criar o objeto **CloudMediaContext** para se ligar aos Media Services. Para obter mais informações sobre como se ligar aos Media Services, consulte [Ligar aos Media Services com o SDK do .NET dos Media Services](http://msdn.microsoft.com/library/azure/jj129571.aspx).
 
+
 Os métodos de chamadas de função **Main** que serão definidos posteriormente nesta secção.
+
+> [!NOTE]
+> Receberá erros de compilação até adicionar definições para todas as funções.
 
     class Program
     {
@@ -193,8 +205,10 @@ Os métodos de chamadas de função **Main** que serão definidos posteriormente
                 Console.ReadLine();
             }
         }
+    }
 
 ## <a name="create-a-new-asset-and-upload-a-video-file"></a>Criar um novo elemento e carregar um ficheiro de vídeo
+
 Nos Media Services, pode carregar (ou inserir) os seus ficheiros digitais num elemento. A entidade **Elemento** pode conter ficheiros de vídeo, áudio, imagens, coleções de miniaturas, pistas de texto e legendas (e os metadados relativos a esses ficheiros).  Assim que os ficheiros são carregados, o seu conteúdo é armazenado em segurança na nuvem para processamento adicional e a transmissão em fluxo. Os ficheiros no elemento são denominados **Ficheiros de Elemento**.
 
 O método **UploadFile** definido abaixo chama **CreateFromFile** (definido nas Extensões do SDK do .NET). **CreateFromFile** cria um novo elemento no qual o ficheiro de origem especificado é carregado.
@@ -281,7 +295,8 @@ Adicione o seguinte método à classe Program.
     }
 
 ## <a name="publish-the-asset-and-get-urls-for-streaming-and-progressive-download"></a>Publicar o elemento e obter os URLs para transmissão em fluxo e transferência progressiva
-Para transmitir ou transferir um elemento, primeiro tem de o "publicar" através da criação de um localizador. Os localizadores fornecem acesso aos ficheiros contidos no elemento. Os Media Services suportam dois tipos de localizadores: localizadores OnDemandOrigin, utilizados para transmitir multimédia (por exemplo, MPEG DASH, HLS ou Transmissão em Fluxo Uniforme) e localizadores de Assinatura de Acesso (SAS), utilizados para transferir ficheiros de multimédia.
+
+Para transmitir ou transferir um elemento, primeiro tem de o "publicar" através da criação de um localizador. Os localizadores fornecem acesso aos ficheiros contidos no elemento. Os Serviços de Multimédia suportam dois tipos de localizadores: localizadores OnDemandOrigin, utilizados para transmitir multimédia (por exemplo, MPEG DASH, HLS ou Smooth Streaming) e localizadores de Assinatura de Acesso (SAS), utilizados para transferir ficheiros de multimédia (para obter mais informações sobre os localizadores de SAD, veja [este](http://southworks.com/blog/2015/05/27/reusing-azure-media-services-locators-to-avoid-facing-the-5-shared-access-policy-limitation/) blogue).
 
 Depois de criar os localizadores, pode criar os URLs que são utilizados para transmitir ou transferir os seus ficheiros.
 

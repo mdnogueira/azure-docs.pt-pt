@@ -1,22 +1,22 @@
 ---
 title: "Introdução às Ligações Híbridas de Reencaminhamento | Microsoft Docs"
 description: "Como escrever uma aplicação de consola C# para Ligações Híbridas"
-services: service-bus
+services: service-bus-relay
 documentationcenter: .net
 author: jtaubensee
 manager: timlt
 editor: 
 ms.assetid: d1386900-b942-4abf-acfc-38d2ef826253
-ms.service: service-bus
+ms.service: service-bus-relay
 ms.devlang: tbd
 ms.topic: get-started-article
 ms.tgt_pltfrm: dotnet
 ms.workload: na
 ms.date: 10/28/2016
-ms.author: jotaub
+ms.author: jotaub,sethm
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 92d7935596ab1dede6dc1d613cb635c32d52e3ab
+ms.sourcegitcommit: 849d7995e9c74bc929c4f791ae9155ca18ddb77b
+ms.openlocfilehash: 3ab92ba4e5c19d4b713ceb2da30835542f343d68
 
 
 ---
@@ -42,8 +42,8 @@ Se já tiver criado um espaço de nomes de Reencaminhamento, avance para a secç
 
 [!INCLUDE [relay-create-namespace-portal](../../includes/relay-create-namespace-portal.md)]
 
-## <a name="2-create-a-hybrid-connection-using-the-azure-portal"></a>2. Criar uma Ligação Híbrida através do Portal do Azure
-Se já tiver uma Ligação Híbrida criada, salte para a secção [Criar uma aplicação de servidor](#3-create-a-server-application-listener).
+## <a name="2-create-a-hybrid-connection-using-the-azure-portal"></a>2. Criar uma Ligação Híbrida com o Portal do Azure
+Se já tiver uma Ligação Híbrida criada, avance para a secção [Criar uma aplicação de servidor](#3-create-a-server-application-listener).
 
 [!INCLUDE [relay-create-hybrid-connection-portal](../../includes/relay-create-hybrid-connection-portal.md)]
 
@@ -59,12 +59,12 @@ Para enviar mensagens para o Reencaminhamento, vamos criar uma aplicação de co
 
 ## <a name="5-run-the-applications"></a>5. Executar as aplicações
 1. Execute a aplicação de servidor.
-2. Execute a aplicação de cliente e introduza algum texto.
-3. Certifique-se de que a consola da aplicação do servidor produz o texto que foi introduzido na aplicação de cliente.
+2. Execute a aplicação cliente e introduza algum texto.
+3. Certifique-se de que a consola da aplicação de servidor produz o texto que foi introduzido na aplicação cliente.
 
 ![running-applications](./media/relay-hybrid-connections-dotnet-get-started/running-applications.png)
 
-Parabéns, criou uma aplicação de Ligações Híbridas de ponto a ponto.
+Parabéns, criou uma aplicação de Ligações Híbridas ponto a ponto.
 
 ## <a name="next-steps"></a>Passos seguintes:
 * [FAQ de Reencaminhamento](relay-faq.md)
@@ -74,6 +74,6 @@ Parabéns, criou uma aplicação de Ligações Híbridas de ponto a ponto.
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO3-->
 
 

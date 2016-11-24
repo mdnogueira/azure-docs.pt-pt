@@ -13,11 +13,11 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: nodejs
 ms.topic: hero-article
-ms.date: 08/25/2016
+ms.date: 11/16/2016
 ms.author: syamk
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: d0297a529c9f921465ec365f10964f7d11160612
+ms.sourcegitcommit: 82da4d7324db83d71b21741f51ebe4e364c5a8f7
+ms.openlocfilehash: bde5635ddb43271920e6258c5df46d6ae6b41985
 
 
 ---
@@ -57,13 +57,17 @@ Não tem tempo para concluir o tutorial e apenas pretende ver a solução comple
 
 Antes de seguir as instruções deste artigo, deve certificar-se de que tem o seguinte:
 
-* Uma conta ativa do Azure. Se não tiver uma conta, pode criar uma conta de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/).
+* Uma conta ativa do Azure. Se não tiver uma conta, pode criar uma conta de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, veja [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/).
+
+   OU
+
+   Uma instalação local do [Emulador do Azure DocumentDB](documentdb-nosql-local-emulator.md).
 * Versão [Node.js][Node.js] v0.10.29 ou superior.
 * [Express generator](http://www.expressjs.com/starter/generator.html) (pode instalá-lo através de `npm install express-generator -g`)
 * [Git][Git].
 
 ## <a name="a-nametoc395637761astep-1-create-a-documentdb-database-account"></a><a name="_Toc395637761"></a>Passo 1: criar uma conta de base de dados no DocumentDB
-Comecemos por criar uma conta do DocumentDB. Se já tiver uma conta, pode avançar para o [Passo 2: Criar uma nova aplicação Node.js](#_Toc395783178).
+Comecemos por criar uma conta do DocumentDB. Se já tiver uma conta ou se estiver a utilizar o Emulador do DocumentDB para este tutorial, pode avançar para o [Passo 2: Criar uma aplicação Node.js](#_Toc395783178).
 
 [!INCLUDE [documentdb-create-dbaccount](../../includes/documentdb-create-dbaccount.md)]
 
@@ -83,7 +87,7 @@ Agora, vamos aprender a criar um projeto básico Olá, Mundo Node.js com a arqui
 4. Execute a sua nova aplicação.
    
         npm start
-5. Pode ver a sua nova aplicação ao navegar para [http://localhost:3000](http://localhost:3000) no seu browser.
+5. Pode ver a sua aplicação nova ao navegar para [http://localhost:3000](http://localhost:3000) no browser.
    
     ![Saiba Node.js - Captura de ecrã da aplicação Olá, Mundo numa janela do browser](./media/documentdb-nodejs-application/image12.png)
 
@@ -542,6 +546,6 @@ Para obter mais informações, consulte o [Centro para Programadores do Node.js]
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO3-->
 
 

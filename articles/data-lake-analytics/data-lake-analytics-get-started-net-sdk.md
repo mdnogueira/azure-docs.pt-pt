@@ -1,6 +1,6 @@
 ---
 title: "Introdução ao Azure Data Lake Analytics ao utilizar o SDK do .NET | Microsoft Docs"
-description: 'Saiba como utilizar o SDK do .NET para criar contas de Data Lake Store, criar tarefas de Data Lake Analytics e submeter tarefas escritas em U-SQL. '
+description: 'Saiba como utilizar o .NET SDK para criar contas de Data Lake Analytics, criar trabalhos do Data Lake Analytics e submeter trabalhos escritos em U-SQL. '
 services: data-lake-analytics
 documentationcenter: 
 author: edmacauley
@@ -15,8 +15,8 @@ ms.workload: big-data
 ms.date: 10/26/2016
 ms.author: edmaca
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 60deb681b1090444f5c178fb0c9b0458ea83f73d
+ms.sourcegitcommit: 8e092e30c9c4186e4687efeacf9ea1f6b4bf431c
+ms.openlocfilehash: f617d997bc34d39f7635a87c4e5c88b1ebdc0ff8
 
 
 ---
@@ -196,7 +196,6 @@ Tem de utilizar caminhos absolutos para aceder aos ficheiros em contas de Armaze
                     Console.WriteLine(nextAction);
             }
 
-
             // List all Data Lake Analytics accounts within the subscription
             public static List<DataLakeAnalyticsAccount> ListADLAAccounts()
             {
@@ -217,6 +216,7 @@ Tem de utilizar caminhos absolutos para aceder aos ficheiros em contas de Armaze
 
                 return accounts;
             }
+
             public static Guid SubmitJobByPath(string scriptPath, string jobName)
             {
                 var script = File.ReadAllText(scriptPath);
@@ -241,10 +241,10 @@ Tem de utilizar caminhos absolutos para aceder aos ficheiros em contas de Armaze
           }
         }
 
-1. Prima **F5** para executar a aplicação. O resultado é semelhante a:
+5. Prima **F5** para executar a aplicação. O resultado é semelhante a:
    
     ![Saída U-SQL .NET SDK de tarefa do Azure Data Lake Analytics](./media/data-lake-analytics-get-started-net-sdk/data-lake-analytics-dotnet-job-output.png)
-2. Veja o ficheiro de saída.  O caminho predefinido e o nome do ficheiro é c:\Temp\SearchLog-from-Data-Lake.csv. 
+6. Veja o ficheiro de saída.  O caminho predefinido e o nome do ficheiro é c:\Temp\SearchLog-from-Data-Lake.csv. 
 
 ## <a name="see-also"></a>Consultar também
 * Para ver o mesmo tutorial, utilizando outras ferramentas, clique nos seletores de separador no topo da página.
@@ -257,6 +257,6 @@ Tem de utilizar caminhos absolutos para aceder aos ficheiros em contas de Armaze
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO3-->
 
 

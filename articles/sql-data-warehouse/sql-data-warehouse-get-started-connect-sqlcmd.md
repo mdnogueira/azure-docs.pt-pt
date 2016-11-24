@@ -1,6 +1,6 @@
 ---
-title: Consulta do Azure SQL Data Warehouse (sqlcmd) | Microsoft Docs
-description: "Consultar o Azure SQL Data Warehouse com o Utilitário de Linha de Comandos sqlcmd."
+title: Ligar ao Azure SQL Data Warehouse sqlcmd | Microsoft Docs
+description: "Utilize o utilitário de linha de comandos [sqlcmd][sqlcmd] para ligar e consultar um Azure SQL Data Warehouse."
 services: sql-data-warehouse
 documentationcenter: NA
 author: barbkess
@@ -15,12 +15,12 @@ ms.workload: data-services
 ms.date: 10/31/2016
 ms.author: barbkess
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 1f2cf8003e46a1df30810a2594bc1d380bc13bcf
+ms.sourcegitcommit: 77474214c6fafe7f591030d30f6a46c66fbc5c09
+ms.openlocfilehash: 1cd3bd8cab4e74da820f844d2ba96243cc6ccdcd
 
 
 ---
-# <a name="query-azure-sql-data-warehouse-sqlcmd"></a>Consulta do Azure SQL Data Warehouse (sqlcmd)
+# <a name="connect-to-sql-data-warehouse-with-sqlcmd"></a>Ligar ao SQL Data Warehouse com sqlcmd
 > [!div class="op_single_selector"]
 > * [Power BI](sql-data-warehouse-get-started-visualize-with-power-bi.md)
 > * [Azure Machine Learning](sql-data-warehouse-get-started-analyze-with-azure-machine-learning.md)
@@ -30,7 +30,7 @@ ms.openlocfilehash: 1f2cf8003e46a1df30810a2594bc1d380bc13bcf
 > 
 > 
 
-Estas instruções utilizam o utilitário de linha de comandos [sqlcmd][sqlcmd] para consultar um Azure SQL Data Warehouse.  
+Utilize o utilitário de linha de comandos [sqlcmd][sqlcmd] para ligar e consultar um Azure SQL Data Warehouse.  
 
 ## <a name="1-connect"></a>1. Ligar
 Para começar a utilizar o [sqlcmd][sqlcmd], abra a linha de comandos e escreva **sqlcmd**, seguido da cadeia de ligação da sua base de dados SQL Data Warehouse. A cadeia de ligação requer os parâmetros seguintes:
@@ -100,6 +100,6 @@ Veja a [documentação do sqlcmd][sqlcmd] para obter mais detalhes sobre as opç
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO3-->
 
 

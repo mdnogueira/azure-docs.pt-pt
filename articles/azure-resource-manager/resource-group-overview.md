@@ -12,11 +12,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/01/2016
+ms.date: 11/14/2016
 ms.author: tomfitz
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: c122d9ecb4f43c4288cc00c24eca499ac6bb51dc
+ms.sourcegitcommit: 9c9b36f380064ceb07802dde768725ac5870049b
+ms.openlocfilehash: fe0e4e2d1884df89a6608faecfa35696ead6c11f
 
 
 ---
@@ -153,13 +153,13 @@ Se imaginar as suas camadas com ciclos de vida separados, pode implementar as tr
 
 Para obter mais sugestões sobre a criação dos seus modelos, veja [Padrões para criar modelos do Azure Resource Manager](../best-practices-resource-manager-design-templates.md). Para obter mais informações sobre modelos aninhados, veja [Utilizar modelos ligados com o Azure Resource Manager](../resource-group-linked-templates.md).
 
-Para uma série de quatro partes sobre automatizar a implementação, consulte [Automating application deployments to Azure Virtual Machines (Automatizar implementações de aplicações para Máquinas Virtuais do Azure)](../virtual-machines/virtual-machines-windows-dotnet-core-1-landing.md). Esta série abrange arquitetura de aplicação, acesso e segurança, disponibilidade e dimensionamento, e implementação de aplicação.
+Para uma série de quatro partes sobre automatizar a implementação, consulte [Automating application deployments to Azure Virtual Machines (Automatizar implementações de aplicações para Máquinas Virtuais do Azure)](../virtual-machines/virtual-machines-windows-dotnet-core-1-landing.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). Esta série abrange arquitetura de aplicação, acesso e segurança, disponibilidade e dimensionamento, e implementação de aplicação.
 
 O Azure Resource Manager analisa as dependências para garantir que os recursos são criados pela ordem correta. Se um recurso depende de um valor de outro recurso (como uma máquina virtual necessita de uma conta de armazenamento para discos), pode definir uma dependência. Para obter mais informações, consulte [Definir dependências nos modelos do Azure Resource Manager](../resource-group-define-dependencies.md).
 
 Também pode utilizar o modelo para atualizar a infraestrutura. Por exemplo, pode adicionar um recurso à solução e adicionar regras de configuração para os recursos que já estão implementados. Se o modelo especificar a criação de um novo mas esse recurso já existir, o Azure Resource Manager efetua uma atualização em vez de criar um novo recurso. O Azure Resource Manager atualiza o recurso existente para o mesmo estado que teria como novo.  
 
-O Resource Manager fornece extensões para cenários em que necessita de operações adicionais como a instalação de software específico que não está incluído na configuração. Se já estiver a utilizar um serviço de gestão de configuração, como o DSC, Chef ou Puppet, pode continuar a trabalhar com esse serviço ao utilizar extensões. Para obter informações sobre as extensões de máquina virtual, consulte [About virtual machine extensions and features (Sobre extensões e funcionalidades da máquina virtual)](../virtual-machines/virtual-machines-windows-extensions-features.md). 
+O Resource Manager fornece extensões para cenários em que necessita de operações adicionais como a instalação de software específico que não está incluído na configuração. Se já estiver a utilizar um serviço de gestão de configuração, como o DSC, Chef ou Puppet, pode continuar a trabalhar com esse serviço ao utilizar extensões. Para obter informações sobre as extensões de máquina virtual, consulte [About virtual machine extensions and features (Sobre extensões e funcionalidades da máquina virtual)](../virtual-machines/virtual-machines-windows-extensions-features.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). 
 
 Por último, o modelo torna-se parte do código fonte da sua aplicação. Pode verificá-lo no repositório de código fonte e atualizá-lo à medida que a aplicação evolui. Pode editar o modelo através do Visual Studio.
 
@@ -276,7 +276,7 @@ Aqui estão os nossos repositórios de SDKs Open Source. Agradecemos o envio de 
 [.NET](https://github.com/Azure/azure-sdk-for-net) | [Java](https://github.com/Azure/azure-sdk-for-java) | [Node.js](https://github.com/Azure/azure-sdk-for-node) | [PHP](https://github.com/Azure/azure-sdk-for-php) | [Python](https://github.com/Azure/azure-sdk-for-python) | [Ruby](https://github.com/Azure/azure-sdk-ruby)
 
 > [!NOTE]
-> Se o SDK não fornecer a funcionalidade necessária, também pode ligar para a [API de REST do Azure](https://msdn.microsoft.com/library/azure/dn790568.aspx) diretamente.
+> Se o SDK não fornecer a funcionalidade necessária, também pode ligar para a [API de REST do Azure](https://docs.microsoft.com/rest/api/resources/) diretamente.
 > 
 > 
 
@@ -315,13 +315,13 @@ Para além estes exemplos, pode procurar nos exemplos da galeria.
 
 Eis uma demonstração em vídeo desta descrição geral:
 
-[!VIDEO https://channel9.msdn.com/Blogs/Azure-Documentation-Shorts/Azure-Resource-Manager-Overview/player]
+>[!VIDEO https://channel9.msdn.com/Blogs/Azure-Documentation-Shorts/Azure-Resource-Manager-Overview/player]
 
 
-[powershellref]: https://msdn.microsoft.com/library/azure/dn757692(v=azure.200).aspx
+[powershellref]: https://docs.microsoft.com/powershell/resourcemanager/azurerm.resources/v3.2.0/azurerm.resources
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO3-->
 
 

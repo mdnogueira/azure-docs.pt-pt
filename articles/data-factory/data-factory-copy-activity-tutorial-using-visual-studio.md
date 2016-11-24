@@ -15,8 +15,8 @@ ms.topic: get-started-article
 ms.date: 10/17/2016
 ms.author: spelluru
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: b3381396ce198fbcaf13d63510ef12b225735a49
+ms.sourcegitcommit: 2a5905c5dcb36777e7b88d6ac44877fdec72e7a5
+ms.openlocfilehash: 3f078e5b5a76e1a6bc840890d2cd90f60a163384
 
 
 ---
@@ -66,7 +66,7 @@ Veja a seguir os passos que deve executar como parte deste tutorial:
     ![Explorador de Soluções](./media/data-factory-copy-activity-tutorial-using-visual-studio/solution-explorer.png)    
 
 ## <a name="create-linked-services"></a>Criar serviços ligados
-Os serviços ligados ligam os arquivos de dados ou serviços de computação a um Azure Data Factory. Veja [Arquivos de dados suportados](data-factory-data-movement-activities.md##supported-data-stores-and-formats) relativamente a todas as origens e sinks que a Atividade de Cópia suporta. Veja [Compute linked services (Serviços ligados de computação)](data-factory-compute-linked-services.md) para obter a lista dos serviços de computação que o Data Factory suporta. Neste tutorial, não é utilizado nenhum serviço de computação. 
+Os serviços ligados ligam os arquivos de dados ou serviços de computação a um Azure Data Factory. Veja [Arquivos de dados suportados](data-factory-data-movement-activities.md#supported-data-stores-and-formats) relativamente a todas as origens e sinks que a Atividade de Cópia suporta. Veja [Compute linked services (Serviços ligados de computação)](data-factory-compute-linked-services.md) para obter a lista dos serviços de computação que o Data Factory suporta. Neste tutorial, não é utilizado nenhum serviço de computação. 
 
 Neste passo, irá criar dois serviços ligados: **AzureStorageLinkedService1** e **AzureSqlLinkedService1**. O serviço ligado AzureStorageLinkedService1 liga uma Conta de Armazenamento do Azure e o AzureSqlLinkedService liga uma base de dados SQL do Azure à fábrica de dados: **ADFTutorialDataFactory**. 
 

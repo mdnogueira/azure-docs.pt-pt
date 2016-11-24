@@ -16,8 +16,8 @@ ms.topic: get-started-article
 ms.date: 10/21/2016
 ms.author: davidmu
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 6a78e83d84df9bdd4fedd9c90aa02dc26e9d94c9
+ms.sourcegitcommit: 5919c477502767a32c535ace4ae4e9dffae4f44b
+ms.openlocfilehash: 87f62d99ae8671fb3732806d8cd8bd7d9aa101e1
 
 
 ---
@@ -114,7 +114,7 @@ Agora que tem todas as peças no local, é a altura de criar a máquina virtual.
     $myVm = New-AzureRmVMConfig -VMName "myVM" -VMSize "Standard_DS1_v2"
     ```
    
-    Consulte o artigo [Tamanhos de máquinas virtuais no Azure](virtual-machines-windows-sizes.md) para obter uma lista de tamanhos disponíveis para uma máquina virtual.
+    Consulte o artigo [Tamanhos de máquinas virtuais no Azure](virtual-machines-windows-sizes.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) para obter uma lista de tamanhos disponíveis para uma máquina virtual.
 3. Configure definições do sistema operativo para a VM. Este comando define o nome do computador, o tipo de sistema operativo e as credenciais da conta para a VM.
    
     ```powershell
@@ -128,7 +128,7 @@ Agora que tem todas as peças no local, é a altura de criar a máquina virtual.
         -Offer "WindowsServer" -Skus "2012-R2-Datacenter" -Version "latest"
     ```
    
-    Para obter mais informações acerca da seleção de imagens a utilizar, veja [Navigate and select Windows virtual machine images in Azure with PowerShell or the CLI (Navegar e selecionar imagens de máquinas virtuais do Windows no Azure com o PowerShell ou a CLI)](virtual-machines-windows-cli-ps-findimage.md).
+    Para obter mais informações acerca da seleção de imagens a utilizar, veja [Navigate and select Windows virtual machine images in Azure with PowerShell or the CLI (Navegar e selecionar imagens de máquinas virtuais do Windows no Azure com o PowerShell ou a CLI)](virtual-machines-windows-cli-ps-findimage.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 5. Adicione a interface de rede que criou à configuração.
    
     ```powershell
@@ -153,8 +153,8 @@ Agora que tem todas as peças no local, é a altura de criar a máquina virtual.
 
 ## <a name="next-steps"></a>Passos Seguintes
 * Se ocorreram problemas com a implementação, um passo seguinte será ver [Troubleshooting resource group deployments with Azure portal (Resolução de problemas com implementações do grupo de recursos com o portal do Azure)](../resource-manager-troubleshoot-deployments-portal.md)
-* Saiba como gerir a máquina virtual que criar ao rever [Manage virtual machines using Azure Resource Manager and PowerShell (Gerir máquinas virtuais com o Azure Resource Manager e o PowerShell)](virtual-machines-windows-ps-manage.md).
-* Tire partido da utilização de um modelo para criar uma máquina virtual, utilizando as informações em [Criar uma máquina virtual do Windows com um modelo do Resource Manager](virtual-machines-windows-ps-template.md)
+* Saiba como gerir a máquina virtual que criar ao rever [Manage virtual machines using Azure Resource Manager and PowerShell (Gerir máquinas virtuais com o Azure Resource Manager e o PowerShell)](virtual-machines-windows-ps-manage.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
+* Tire partido da utilização de um modelo para criar uma máquina virtual, utilizando as informações em [Criar uma máquina virtual do Windows com um modelo do Resource Manager](virtual-machines-windows-ps-template.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
 
 
 

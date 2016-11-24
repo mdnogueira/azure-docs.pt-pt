@@ -14,15 +14,15 @@ ms.topic: get-started-article
 ms.date: 10/24/2016
 ms.author: awills
 translationtype: Human Translation
-ms.sourcegitcommit: b70c8baab03703bc00b75c2c611f69e3b71d6cd7
-ms.openlocfilehash: 5159e7fc47d320d52eb7b94b5775158a3f09c769
+ms.sourcegitcommit: dea21a59b189d1d3d474cbc5e67f64df485a1981
+ms.openlocfilehash: 79819619ff7f25ba1097fe12f2da7453a1fcb4f1
 
 
 ---
 # <a name="instrument-web-apps-at-runtime-with-application-insights"></a>Instrumentar aplicações Web no tempo de execução com o Application Insights
-*O Application Insights está em pré-visualização.*
 
-Pode instrumentar uma aplicação Web em direto com o Visual Studio Application Insights, sem ter de modificar ou voltar a implementar o seu código. Nas suas aplicações, alojadas por um servidor IIS no local, pode instalar o Monitor de Estado. Se serem aplicações Web do Azure ou forem executadas numa VM do Azure, pode instalar a extensão do Application Insights. (Existem artigos separados sobre instrumentação de [aplicações Web J2EE em direto](app-insights-java-live.md) e [Serviços Cloud do Azure](app-insights-cloudservices.md).)
+
+Pode instrumentar uma aplicação Web em direto com o Azure Application Insights, sem ter de modificar ou voltar a implementar o seu código. Nas suas aplicações, alojadas por um servidor IIS no local, pode instalar o Monitor de Estado. Se serem aplicações Web do Azure ou forem executadas numa VM do Azure, pode instalar a extensão do Application Insights. (Existem artigos separados sobre instrumentação de [aplicações Web J2EE em direto](app-insights-java-live.md) e [Serviços Cloud do Azure](app-insights-cloudservices.md).)
 
 ![gráficos de exemplo](./media/app-insights-monitor-performance-live-website-now/10-intro.png)
 
@@ -38,8 +38,8 @@ Segue-se um resumo do que pode usufruir:
 | --- | --- | --- |
 | Pedidos e exceções |Sim |Sim |
 | [Exceções mais detalhadas](app-insights-asp-net-exceptions.md) | |Sim |
-| [Diagnóstico de dependências](app-insights-asp-net-dependencies.md) |No .NET 4.6+ |Sim |
-| [Contadores de desempenho do sistema](app-insights-performance-counters.md) | |Serviço na nuvem IIS ou do Azure, não é aplicação Web do Azure |
+| [Diagnóstico de dependências](app-insights-asp-net-dependencies.md) |Em .NET 4.6+, mas com menos detalhe |Sim, detalhe completo: códigos de resultado, texto do comando do SQL, HTTP  Verbo|
+| [Contadores de desempenho do sistema](app-insights-performance-counters.md) | |IIS ou serviço cloud do Azure, mas não aplicação Web do Azure |
 | [API para telemetria personalizada][api] |Sim | |
 | [Integração de registos de rastreio](app-insights-asp-net-trace-logs.md) |Sim | |
 | [Dados de utilizador e vista de página](app-insights-javascript.md) |Sim | |
@@ -232,6 +232,6 @@ Descubra que aplicações estão a ser monitorizadas:
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO3-->
 
 

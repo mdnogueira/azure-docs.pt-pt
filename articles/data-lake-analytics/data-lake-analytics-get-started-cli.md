@@ -1,6 +1,6 @@
 ---
 title: "Introdução ao Azure Data Lake Analytics, utilizando a Interface de Linha de Comandos do Azure | Microsoft Docs"
-description: 'Saiba como utilizar a Interface de Linha de Comandos do Azure para criar uma conta de Data Lake Store, criar uma tarefa de Data Lake Analytics, utilizando U-SQL, e submeter a tarefa. '
+description: 'Saiba como utilizar a Interface de Linha de Comandos do Azure para criar uma conta do Data Lake Analytics, criar um trabalho do Data Lake Analytics com U-SQL e submeter o trabalho. '
 services: data-lake-analytics
 documentationcenter: 
 author: edmacauley
@@ -15,12 +15,12 @@ ms.workload: big-data
 ms.date: 05/16/2016
 ms.author: edmaca
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 8b38c62ae1a60728d08643990238e2cc69cb6447
+ms.sourcegitcommit: c9440e26a563ed9315225b34709b009d01e065d7
+ms.openlocfilehash: ff9b0d9e098fd8c6cde7c63c005c8f1906c6e0f2
 
 
 ---
-# <a name="tutorial-get-started-with-azure-data-lake-analytics-using-azure-commandline-interface-cli"></a>Tutorial: introdução à Análise do Azure Data Lake, utilizando a Interface de Linha de Comandos do Azure (CLI)
+# <a name="tutorial-get-started-with-azure-data-lake-analytics-using-azure-command-line-interface-cli"></a>Tutorial: introdução à Análise do Azure Data Lake, utilizando a Interface de Linha de Comandos do Azure (CLI)
 [!INCLUDE [get-started-selector](../../includes/data-lake-analytics-selector-get-started.md)]
 
 Saiba como utilizar a CLI do Azure para criar contas de Análise do Azure Data Lake, definir as tarefas de Data Lake Analytics em [U-SQL](data-lake-analytics-u-sql-get-started.md) e submeter as tarefas para contas de Data Lake Analytics. Para mais informações sobre a Data Lake Analytics, consulte [Descrição geral da Análise do Azure Data Lake](data-lake-analytics-overview.md).
@@ -165,6 +165,6 @@ Depois de a tarefa ser concluída, pode utilizar os seguintes cmdlets para lista
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO3-->
 
 

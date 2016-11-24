@@ -16,15 +16,15 @@ ms.workload: infrastructure-services
 ms.date: 09/21/2016
 ms.author: jroth
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 842b6e0b69661a91ebb997346b34da00576378c2
+ms.sourcegitcommit: 5919c477502767a32c535ace4ae4e9dffae4f44b
+ms.openlocfilehash: 4ad4c6cf0aca7ac5f1d179eb3d91ecb5846319b4
 
 
 ---
 # <a name="provision-a-sql-server-virtual-machine-in-the-azure-portal"></a>Aprovisionar uma máquina virtual do SQL Server no Portal do Azure
 > [!div class="op_single_selector"]
-> * [Portal](virtual-machines-windows-portal-sql-server-provision.md)
-> * [PowerShell](virtual-machines-windows-ps-sql-create.md)
+> * [Portal](virtual-machines-windows-portal-sql-server-provision.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
+> * [PowerShell](virtual-machines-windows-ps-sql-create.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
 > 
 > 
 
@@ -57,7 +57,7 @@ Neste tutorial, irá:
 6. Cada modelo identifica uma versão do SQL Server e um sistema operativo. Selecione uma destas imagens na lista. Em seguida, reveja o painel de detalhes que fornece uma descrição da imagem da máquina virtual.
    
    > [!NOTE]
-   > As imagens da VM do SQL incluem os custos de licenciamento para o SQL Server nos preços por minuto da VM que cria. Há outra opção que consiste em trazer a sua própria licença (BYOL) e pagar apenas a própria VM. Aos nomes dessas imagem é adicionado o prefixo {BYOL}. Para obter mais informações sobre esta opção, veja [Introdução ao SQL Server em Máquinas Virtuais do Azure](virtual-machines-windows-sql-server-iaas-overview.md).
+   > As imagens da VM do SQL incluem os custos de licenciamento para o SQL Server nos preços por minuto da VM que cria. Há outra opção que consiste em trazer a sua própria licença (BYOL) e pagar apenas a própria VM. Aos nomes dessas imagem é adicionado o prefixo {BYOL}. Para obter mais informações sobre esta opção, veja [Introdução ao SQL Server em Máquinas Virtuais do Azure](virtual-machines-windows-sql-server-iaas-overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
    > 
    > 
 7. Em **Selecionar um modelo de implementação**, confirme se **Resource Manager** está selecionado. O modelo de implementação recomendado para máquinas virtuais novas é o Resource Manager. Clique em **Criar**.
@@ -101,7 +101,7 @@ No passo **Tamanho**, escolha um tamanho da máquina virtual no painel **Escolhe
 Para cargas de trabalho de produção, recomendamos que selecione um tamanho da máquina virtual que suporte o [Premium Storage](../storage/storage-premium-storage.md). Se não necessitar desse nível de desempenho, utilize o botão **Ver todas**, que mostra todas as opções de tamanho da máquina. Por exemplo, poderá utilizar um tamanho mais pequeno da máquina para um ambiente de teste ou de desenvolvimento.
 
 > [!NOTE]
-> Para obter mais informações sobre os tamanhos da máquina virtual, consulte [Tamanhos das Virtual Machines](virtual-machines-windows-sizes.md). Para considerações acerca dos tamanhos da VM do SQL Server, consulte [Práticas recomendadas do SQL Server em Virtual Machines do Azure](virtual-machines-windows-sql-performance.md).
+> Para obter mais informações sobre os tamanhos da máquina virtual, consulte [Tamanhos das Virtual Machines](virtual-machines-windows-sizes.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). Para considerações acerca dos tamanhos da VM do SQL Server, consulte [Práticas recomendadas do SQL Server em Virtual Machines do Azure](virtual-machines-windows-sql-performance.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 > 
 > 
 
@@ -120,7 +120,7 @@ No painel **Definições**, configure o Storage do Azure, as redes e a monitoriz
 * Em **Conta do Storage**, pode aceitar o nome da conta do Storage automaticamente aprovisionado. Também pode clicar em **Conta do Storage** para escolher uma conta existente e configurar o tipo de conta do Storage. Por predefinição, o Azure cria uma nova conta do Storage com o armazenamento localmente redundante. Para mais informações sobre as opções de armazenamento, consulte o artigo [Replicação do Storage do Azure](../storage/storage-redundancy.md).
 * Em **Rede**, pode aceitar os valores automaticamente preenchidos. Também pode clicar em cada funcionalidade para configurar manualmente a **Virtual Network**, a **Sub-rede**, o **Endereço IP público** e o **Grupo de Segurança de Rede**. Para efeitos deste tutorial, mantenha os valores predefinidos.
 * O Azure ativa a **Monitorização** por predefinição com a mesma conta do Storage designada para a VM. Pode alterar estas definições aqui.
-* Em **Conjunto de Disponibilidade**, especifique um conjunto de disponibilidade. Para efeitos deste tutorial, pode selecionar **Nenhum**. Se planear configurar Grupos de Disponibilidade AlwaysOn do SQL Server, configure a disponibilidade para evitar recriar a máquina virtual.  Para obter mais informações, consulte o artigo [Gerir a Disponibilidade das Virtual Machines](virtual-machines-windows-manage-availability.md).
+* Em **Conjunto de Disponibilidade**, especifique um conjunto de disponibilidade. Para efeitos deste tutorial, pode selecionar **Nenhum**. Se planear configurar Grupos de Disponibilidade AlwaysOn do SQL Server, configure a disponibilidade para evitar recriar a máquina virtual.  Para obter mais informações, consulte o artigo [Gerir a Disponibilidade das Virtual Machines](virtual-machines-windows-manage-availability.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 
 Quando tiver terminado de configurar estas definições, clique em **OK**.
 
@@ -162,7 +162,7 @@ Se preferir não ativar ligações para o Motor de Base de dados através da Int
 Em geral, melhore a segurança, selecionando a conectividade mais restritiva que permite o seu cenário. Mas todas as opções têm capacidade de segurança através das regras do Grupo de Segurança de Rede e Autenticação do SQL/Windows.
 
 A predefinição da **Porta** é 1433. Pode especificar um número de porta diferente.
-Para obter mais informações, consulte o artigo [Ligar a uma Máquina Virtual do SQL Server (Resource Manager) | Microsoft Azure](virtual-machines-windows-sql-connect.md).
+Para obter mais informações, consulte o artigo [Ligar a uma Máquina Virtual do SQL Server (Resource Manager) | Microsoft Azure](virtual-machines-windows-sql-connect.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 
 ### <a name="authentication"></a>Autenticação
 Se necessitar da Autenticação do SQL Server, clique em **Ativar** em **Autenticação do SQL**.
@@ -206,7 +206,7 @@ A **Aplicação de patches automatizada** está ativada por predefinição. A Ap
 
 ![Aplicação de Patches Automatizada do SQL](./media/virtual-machines-windows-portal-sql-server-provision/azure-sql-arm-patching.png)
 
-Para obter mais informações, consulte o artigo [Aplicação de Patches Automatizada para o SQL Server nas Virtual Machines do Azure](virtual-machines-windows-sql-automated-patching.md).
+Para obter mais informações, consulte o artigo [Aplicação de Patches Automatizada para o SQL Server nas Virtual Machines do Azure](virtual-machines-windows-sql-automated-patching.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 
 ### <a name="automated-backup"></a>Cópia de segurança automatizada
 Ative as cópias de segurança de bases de dados automáticas em **Cópia de segurança automatizada**. A cópia de segurança automatizada está desativada por predefinição.
@@ -221,7 +221,7 @@ Para encriptar a cópia de segurança, clique em **Ativar**. Em seguida, especif
 
 ![Cópia de Segurança Automatizada do SQL](./media/virtual-machines-windows-portal-sql-server-provision/azure-sql-arm-autobackup.png)
 
- Para obter mais informações, consulte o artigo [Cópia de Segurança Automatizada para o SQL Server nas Virtual Machines do Azure](virtual-machines-windows-sql-automated-backup.md).
+ Para obter mais informações, consulte o artigo [Cópia de Segurança Automatizada para o SQL Server nas Virtual Machines do Azure](virtual-machines-windows-sql-automated-backup.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 
 ### <a name="azure-key-vault-integration"></a>Integração do Cofre de Chaves do Azure
 Para armazenar segredos de segurança no Azure para a encriptação, clique em **Integração do cofre de chaves do Azure** e clique em **Ativar**.
@@ -237,7 +237,7 @@ A tabela seguinte lista os parâmetros necessários para configurar a Integraç�
 | **Segredo principal** |Segredo principal do serviço Azure Active Directory. Este segredo também é referido como o Segredo do Cliente. |9VTJSQwzlFepD8XODnzy8n2V01Jd8dAjwm/azF1XDKM= |
 | **Nome da credencial** |**Nome da credencial**: a Integração AKV cria uma credencial dentro do SQL Server, permitindo que a VM tenha acesso ao cofre de chaves. Escolha um nome para esta credencial. |mycred1 |
 
-Para obter mais informações, consulte o artigo [Configurar a Integração do Cofre de Chaves do Azure para o SQL Server em VMs do Azure](virtual-machines-windows-ps-sql-keyvault.md).
+Para obter mais informações, consulte o artigo [Configurar a Integração do Cofre de Chaves do Azure para o SQL Server em VMs do Azure](virtual-machines-windows-ps-sql-keyvault.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 
 Quando tiver terminado de configurar as definições do SQL Server, clique em **OK**.
 
@@ -282,7 +282,7 @@ O acesso ao computador permite-lhe alterar diretamente as definições do SQL Se
 Neste tutorial, selecionamos o acesso **Público** para a máquina virtual e a **Autenticação do SQL Server**. Estas definições configuraram automaticamente a máquina virtual para permitir ligações ao SQL Server a partir de qualquer cliente através da Internet (partindo do princípio de que tem o início de sessão SQL correto).
 
 > [!NOTE]
-> Se não tiver selecionado a opção Público durante o aprovisionamento, são necessários passos adicionais para aceder à sua instância do SQL Server através da Internet. Para obter mais informações, consulte o artigo [Ligar a uma Máquina Virtual do SQL Server](virtual-machines-windows-sql-connect.md).
+> Se não tiver selecionado a opção Público durante o aprovisionamento, são necessários passos adicionais para aceder à sua instância do SQL Server através da Internet. Para obter mais informações, consulte o artigo [Ligar a uma Máquina Virtual do SQL Server](virtual-machines-windows-sql-connect.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 > 
 > 
 
@@ -293,7 +293,7 @@ As secções seguintes mostram como ligar à sua instância do SQL Server na VM 
 > 
 
 ## <a name="next-steps"></a>Passos Seguintes
-Para outras informações sobre como utilizar o SQL Server no Azure, consulte o artigo [SQL Server em Virtual Machines do Azure](virtual-machines-windows-sql-server-iaas-overview.md) e as [Perguntas Mais Frequentes](virtual-machines-windows-sql-server-iaas-faq.md).
+Para outras informações sobre como utilizar o SQL Server no Azure, consulte o artigo [SQL Server em Virtual Machines do Azure](virtual-machines-windows-sql-server-iaas-overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) e as [Perguntas Mais Frequentes](virtual-machines-windows-sql-server-iaas-faq.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 
 Para obter uma descrição geral do vídeo do SQL Server em Virtual Machines do Azure, veja [A VM do Azure é a melhor plataforma para o SQL Server 2016](https://channel9.msdn.com/Events/DataDriven/SQLServer2016/Azure-VM-is-the-best-platform-for-SQL-Server-2016).
 

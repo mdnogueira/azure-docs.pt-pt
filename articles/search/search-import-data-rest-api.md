@@ -13,21 +13,22 @@ ms.devlang: rest-api
 ms.workload: search
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
-ms.date: 08/29/2016
+ms.date: 10/27/2016
 ms.author: ashmaka
 translationtype: Human Translation
-ms.sourcegitcommit: 6ff31940f3a4e7557e0caf3d9d3740590be3bc04
-ms.openlocfilehash: 340287e4a3331eba441bce7feb957f27aca38b2b
-
+ms.sourcegitcommit: fc2f30569acc49dd383ba230271989eca8a14423
+ms.openlocfilehash: 02eebb8517183abbdbd500820d8c8beb57865ac5
 
 ---
+
 # <a name="upload-data-to-azure-search-using-the-rest-api"></a>Importar dados para a Pesquisa do Azure utilizando a API REST
 > [!div class="op_single_selector"]
+>
 > * [Descrição geral](search-what-is-data-import.md)
 > * [.NET](search-import-data-dotnet.md)
 > * [REST](search-import-data-rest-api.md)
-> 
-> 
+>
+>
 
 Este artigo irá mostrar como utilizar a [API REST da Pesquisa do Azure](https://msdn.microsoft.com/library/azure/dn798935.aspx) para importar dados para um índice da Pesquisa do Azure.
 
@@ -35,7 +36,7 @@ Antes de iniciar estas instruções, já deverá ter [criado um índice de Pesqu
 
 Para enviar documentos para o índice utilizando a API REST, irá emitir um pedido de HTTP POST ao ponto final do URL do seu índice. O corpo do corpo do pedido de HTTP é um objeto JSON que contém os documentos a serem adicionados, modificados ou eliminados.
 
-## <a name="i-identify-your-azure-search-services-admin-apikey"></a>I. Identificar a sua chave de API do administrador do serviço Azure Search
+## <a name="i-identify-your-azure-search-services-admin-api-key"></a>I. Identificar a sua chave de API do administrador do serviço Azure Search
 Quando emitir pedidos de HTTP relativamente ao seu serviço utilizando a API REST *cada* pedido da API tem de incluir a chave de API que foi gerada para o serviço de Pesquisa que aprovisionou. Ter uma chave válida estabelece fidedignidade, numa base por pedido, entre a aplicação a enviar o pedido e o serviço que o processa.
 
 1. Para localizar as chaves de API do seu serviço, tem de iniciar sessão no [Portal do Azure](https://portal.azure.com/)
@@ -65,9 +66,9 @@ Cada objeto JSON na matriz "valor" representa um documento a ser indexado. Cada 
 Agora que recolheu os valores de campo necessários para as suas ações de índice, está pronto para construir o pedido de HTTP real e o corpo do pedido JSON para importar os dados.
 
 #### <a name="request-and-request-headers"></a>Pedido e Cabeçalhos do Pedido
-No URL, é necessário fornecer o nome do serviço, o nome do índice ("hotéis", bem como a versão de API correta (no momento de publicação deste documento a versão de API atual é `2015-02-28`. Terá de definir o `Content-Type` e os cabeçalhos de pedido `api-key`. Para esta última opção, utilize uma das chaves de administração do seu serviço.
+No URL, é necessário fornecer o nome do serviço, o nome do índice ("hotéis", bem como a versão de API correta (no momento de publicação deste documento a versão de API atual é `2016-09-01`. Terá de definir o `Content-Type` e os cabeçalhos de pedido `api-key`. Para esta última opção, utilize uma das chaves de administração do seu serviço.
 
-    POST https://[search service].search.windows.net/indexes/hotels/docs/index?api-version=2015-02-28
+    POST https://[search service].search.windows.net/indexes/hotels/docs/index?api-version=2016-09-01
     Content-Type: application/json
     api-key: [admin key]
 
@@ -160,8 +161,8 @@ Um código de estado de `207` vai ser devolvido quando pelo menos um item não f
 
 > [!NOTE]
 > Muitas vezes, isto significa que a carga no seu serviço de pesquisa está a atingir um ponto onde os pedidos de indexação pedidos irão começar a devolver `503` respostas. Neste caso, recomendamos vivamente que desative o código de cliente e aguarde antes de tentar novamente. Isto irá dar ao sistema algum tempo para recuperar, aumentando a possibilidade de êxito de pedidos futuros. Ao repetir rapidamente os seus pedidos só irá prolongar a situação.
-> 
-> 
+>
+>
 
 #### <a name="429"></a>429
 Um código de estado de `429` será devolvido quando excedeu a quota no número de documentos por índice.
@@ -171,8 +172,8 @@ Um código de estado de `503` será devolvido se nenhum dos itens no pedido for 
 
 > [!NOTE]
 > Neste caso, recomendamos vivamente que desative o código de cliente e aguarde antes de tentar novamente. Isto irá dar ao sistema algum tempo para recuperar, aumentando a possibilidade de êxito de pedidos futuros. Ao repetir rapidamente os seus pedidos só irá prolongar a situação.
-> 
-> 
+>
+>
 
 Para obter mais informações sobre ações de documentos e as respostas de erros/com êxito, consulte o artigo [Adicionar, Atualizar ou Eliminar documentos](https://msdn.microsoft.com/library/azure/dn798930.aspx). Para obter mais informações sobre outros códigos de estado HTTP que possam ser devolvidos em caso de falha, consulte [Códigos de estado HTTP (Pesquisa do Azure)](https://msdn.microsoft.com/library/azure/dn798925.aspx).
 
@@ -181,7 +182,6 @@ Depois de preencher o seu índice da Azure Search, estará pronto para começar 
 
 
 
-
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO3-->
 
 

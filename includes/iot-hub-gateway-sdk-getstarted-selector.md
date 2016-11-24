@@ -72,6 +72,6 @@ A figura acima mostra a arquitetura do exemplo Olá Mundo e os caminhos relativo
 [lnk-helloworld-sample]: https://github.com/Azure/azure-iot-gateway-sdk/tree/master/samples/hello_world
 [lnk-gateway-sdk]: https://github.com/Azure/azure-iot-gateway-sdk
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO3-->
 
 

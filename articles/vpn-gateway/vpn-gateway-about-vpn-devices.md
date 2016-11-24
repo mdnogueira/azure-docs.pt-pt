@@ -16,18 +16,18 @@ ms.workload: infrastructure-services
 ms.date: 09/13/2016
 ms.author: yushwang;cherylmc
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 019395d76a1e2d8e75b4ac1474abe45ce1b8aeb1
+ms.sourcegitcommit: b8bb16b9557006e894deca76e4274d93a5a27144
+ms.openlocfilehash: 770356c0e334f4efc46f0d5f41433ff93c5046f5
 
 
 ---
-# <a name="about-vpn-devices-for-sitetosite-vpn-gateway-connections"></a>Acerca dos dispositivos de VPN para ligações de Gateway de Rede de VPNs
-Precisa de um dispositivo VPN para configurar uma ligação de rede de VPNs (S2S). As ligações Site a Site podem ser utilizadas para criar uma solução híbrida ou sempre que pretender uma ligação segura entre a rede no local e a rede virtual. Este artigo aborda os dispositivos VPN compatíveis e os parâmetros de configuração. 
+# <a name="about-vpn-devices-for-site-to-site-vpn-gateway-connections"></a>Acerca dos dispositivos de VPN para ligações de Gateway de Rede de VPNs
+Precisa de um dispositivo VPN para configurar uma ligação de rede de VPNs (S2S). As ligações Site a Site podem ser utilizadas para criar uma solução híbrida ou sempre que pretender uma ligação segura entre a rede no local e a rede virtual. Este artigo aborda os dispositivos VPN compatíveis e os parâmetros de configuração.
 
 > [!NOTE]
 > Ao configurar uma ligação Site a Site, é preciso um endereço IP IPv4 destinado ao público para o dispositivo VPN.                                                                                                                                                                               
-> 
-> 
+>
+>
 
 Se o dispositivo não aparecer na tabela de [Dispositivos VPN Validados](#devicetable), veja a secção [Dispositivos VPN Não Validados](#additionaldevices) deste artigo. É possível que o seu dispositivo funcione com o Azure. Para obter suporte para dispositivos VPN, contacte o fabricante do dispositivo.
 
@@ -36,10 +36,10 @@ Se o dispositivo não aparecer na tabela de [Dispositivos VPN Validados](#device
 * A terminologia para o encaminhamento estático e dinâmico foi alterada. Encontrará provavelmente os dois termos. Não há nenhuma alteração de funcionalidade, só os nomes estão a mudar.
   * Encaminhamento Estático = PolicyBased
   * Encaminhamento Dinâmico = RouteBased
-* As especificações para o gateway de VPN de Elevado Desempenho e para o gateway de VPN RouteBased são as mesmas, salvo indicação em contrário. Por exemplo, os dispositivos VPN validados compatíveis com os gateways de VPN RouteBased também são compatíveis com o gateway de VPN de Elevado Desempenho do Azure. 
+* As especificações para o gateway de VPN de Elevado Desempenho e para o gateway de VPN RouteBased são as mesmas, salvo indicação em contrário. Por exemplo, os dispositivos VPN validados compatíveis com os gateways de VPN RouteBased também são compatíveis com o gateway de VPN de Elevado Desempenho do Azure.
 
 ## <a name="a-namedevicetableavalidated-vpn-devices"></a><a name="devicetable"></a>Dispositivos VPN validados
-Validámos uma série de dispositivos VPN padrão em parceria com os fornecedores dos dispositivos. Todos os dispositivos nas famílias de dispositivos contidas na lista seguinte deverão funcionar com gateways de VPN do Azure. Veja o artigo [Acerca do VPN Gateway](vpn-gateway-about-vpngateways.md) para verificar o tipo de gateway que tem de criar para a solução que pretende configurar. 
+Validámos uma série de dispositivos VPN padrão em parceria com os fornecedores dos dispositivos. Todos os dispositivos nas famílias de dispositivos contidas na lista seguinte deverão funcionar com gateways de VPN do Azure. Veja o artigo [Acerca do VPN Gateway](vpn-gateway-about-vpngateways.md) para verificar o tipo de gateway que tem de criar para a solução que pretende configurar.
 
 Para obter ajuda na configuração do seu dispositivo VPN, veja as ligações que correspondem à família de dispositivos adequada. Para obter suporte para dispositivos VPN, contacte o fabricante do dispositivo.
 
@@ -70,15 +70,15 @@ Para obter ajuda na configuração do seu dispositivo VPN, veja as ligações qu
 
 (*) Os routers da série ISR 7200 só suportam VPNs PolicyBased.
 
-## <a name="a-nameadditionaldevicesanonvalidated-vpn-devices"></a><a name="additionaldevices"></a>Dispositivos VPN não validados
-Se não vir o seu dispositivo listado na tabela de Dispositivos VPN Validados, poderá, mesmo assim, funcionar com uma ligação Site a Site. Verifique se o seu dispositivo VPN cumpre os requisitos mínimos descritos na secção Requisitos de Gateway do artigo [Acerca dos Gateways de VPN](vpn-gateway-about-vpngateways.md#gateway-requirements). Os dispositivos que cumprem os requisitos mínimos devem também funcionar bem com os gateways de VPN. Contacte o fabricante do dispositivo para obter instruções adicionais de suporte e de configuração.
+## <a name="a-nameadditionaldevicesanon-validated-vpn-devices"></a><a name="additionaldevices"></a>Dispositivos VPN não validados
+Se não vir o seu dispositivo listado na tabela de Dispositivos VPN Validados, poderá, mesmo assim, funcionar com uma ligação Site a Site. Verifique se o seu dispositivo VPN cumpre os requisitos mínimos descritos na secção Requisitos de Gateway do artigo [Acerca dos Gateways de VPN](vpn-gateway-about-vpngateways.md). Os dispositivos que cumprem os requisitos mínimos devem também funcionar bem com os gateways de VPN. Contacte o fabricante do dispositivo para obter instruções adicionais de suporte e de configuração.
 
 ## <a name="editing-device-configuration-samples"></a>Editar os exemplos de configuração do dispositivo
-Depois de transferir o exemplo de configuração do dispositivo VPN fornecido, terá de substituir alguns dos valores para que reflitam as definições do seu ambiente. 
+Depois de transferir o exemplo de configuração do dispositivo VPN fornecido, terá de substituir alguns dos valores para que reflitam as definições do seu ambiente.
 
 **Para editar um exemplo:**
 
-1. Abra o exemplo com o Bloco de Notas. 
+1. Abra o exemplo com o Bloco de Notas.
 2. Procure e substitua todas as cadeias <*texto*> pelos valores que dizem respeito ao seu ambiente. Não se esqueça de incluir < e >. O nome especificado deve ser exclusivo. Se um comando não funcionar, consulte a documentação do fabricante do dispositivo.
 
 | **Texto de exemplo** | **Alterar para** |
@@ -98,8 +98,8 @@ Depois de transferir o exemplo de configuração do dispositivo VPN fornecido, t
 ## <a name="ipsec-parameters"></a>Parâmetros IPsec
 > [!NOTE]
 > Apesar de os valores apresentados na tabela seguinte serem suportados pelo VPN Gateway do Azure, não há atualmente um modo de especificar ou de selecionar uma combinação específica no VPN Gateway do Azure. Tem de especificar as eventuais restrições no dispositivo VPN no local. Além disso, tem de fixar MSS em 1350.
-> 
-> 
+>
+>
 
 ### <a name="ike-phase-1-setup"></a>Configuração da Fase 1 do IKE
 | **Propriedade** | **PolicyBased** | **Gateway de VPN Standard ou de Elevado Desempenho e RouteBased** |
@@ -150,7 +150,6 @@ A tabela seguinte apresenta uma lista de Ofertas de Encriptação e Autenticaç�
 
 * Pode especificar a encriptação IPsec ESP NULL com gateways de VPN de Elevado Desempenho e RouteBased. A encriptação baseada em Nulo não proporciona proteção aos dados em trânsito e só deve ser utilizada quando é preciso ter débito máximo e latência mínima.  Os clientes podem optar por utilizar esta opção em cenários de comunicação de VNet a VNet ou quando a encriptação está a ser aplicada noutro ponto da solução.
 * Para a conectividade em vários locais através da Internet, utilize as predefinições do gateway de VPN do Azure com a encriptação e os algoritmos hash listados nas tabelas acima, para garantir a segurança da sua comunicação crítica.
-
 
 
 

@@ -54,25 +54,31 @@ Para obter mais informações sobre as cadeias de ligação, veja [Configurar um
 
 Para configurar a cadeia de ligação, abra o ficheiro `app.config` a partir do Explorador de Soluções no Visual Studio. Adicione o conteúdo do elemento `<appSettings>` mostrado abaixo. Substitua `account-name` pelo nome da sua conta de armazenamento e `account-key` pela chave de acesso da conta.
 
-    <configuration>
-        <startup> 
-            <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5.2" />
-        </startup>
-          <appSettings>
-            <add key="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=account-name;AccountKey=account-key" />
-          </appSettings>
-    </configuration>
+```xml
+<configuration>
+    <startup> 
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5.2" />
+    </startup>
+      <appSettings>
+        <add key="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=account-name;AccountKey=account-key" />
+      </appSettings>
+</configuration>
+```
 
 Por exemplo, a definição de configuração será semelhante a:
 
-    <add key="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=storagesample;AccountKey=nYV0gln6fT7mvY+rxu2iWAEyzPKITGkhM88J8HUoyofvK7C6fHcZc2kRZp6cKgYRUM74lHI84L50Iau1+9hPjB==" />
+```xml
+<add key="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=storagesample;AccountKey=nYV0gln6fT7mvY+rxu2iWAEyzPKITGkhM88J8HUoyofvK7C6fHcZc2kRZp6cKgYRUM74lHI84L50Iau1+9hPjB==" />
+```
 
 Para filtrar o emulador de armazenamento, pode utilizar um atalho que mapeia para o nome de conta e chave bem conhecidas. Nesse caso, a definição da cadeia de ligação será:
 
-    <add key="StorageConnectionString" value="UseDevelopmentStorage=true;" />
+```xml
+<add key="StorageConnectionString" value="UseDevelopmentStorage=true;" />
+```
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO3-->
 
 

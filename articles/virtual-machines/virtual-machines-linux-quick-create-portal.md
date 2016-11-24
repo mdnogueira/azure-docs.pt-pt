@@ -16,8 +16,8 @@ ms.topic: hero-article
 ms.date: 10/28/2016
 ms.author: v-livech
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: b1446cd8892e14988ff428eaa03233f8e9aefb8a
+ms.sourcegitcommit: 63cf1a5476a205da2f804fb2f408f4d35860835f
+ms.openlocfilehash: 3ad64861bc4c3b0a938c75990fc516ef634943ef
 
 
 ---
@@ -27,7 +27,7 @@ Este artigo mostra-lhe como utilizar o [Portal do Azure](https://portal.azure.co
 Os requisitos são:
 
 * [uma conta do Azure](https://azure.microsoft.com/pricing/free-trial/)
-* [Ficheiros de chaves públicas e privadas SSH](virtual-machines-linux-mac-create-ssh-keys.md)
+* [Ficheiros de chaves públicas e privadas SSH](virtual-machines-linux-mac-create-ssh-keys.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 
 ## <a name="sign-in"></a>Iniciar sessão
 Após iniciar sessão no Portal do Azure com a sua identidade da conta do Azure, clique em **+ Novo** no canto superior esquerdo:
@@ -80,7 +80,7 @@ Abrir o menu de Endereços IP públicos nas definições da NIC
 ## <a name="ssh-to-the-vm"></a>SSH para a VM
 SSH para o IP público utilizando a chave pública SSH.  A partir de uma estação de trabalho Mac ou Linux, pode encaminhar o SSH diretamente a partir do Terminal. Se tiver uma estação de trabalho do Windows, tem de utilizar o PuTTY, o MobaXTerm ou o Cygwin para encaminhar o SSH para o Linux.  Se ainda não tiver, eis um documento que obtém a estação de trabalho do Windows preparado para encaminhar o SSH para o Linux.
 
-[Como Utilizar chaves SSH com Windows no Azure](virtual-machines-linux-ssh-from-windows.md)
+[Como Utilizar chaves SSH com Windows no Azure](virtual-machines-linux-ssh-from-windows.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 
 ```
 ssh -i ~/.ssh/azure_id_rsa ubuntu@13.91.99.206
@@ -89,9 +89,9 @@ ssh -i ~/.ssh/azure_id_rsa ubuntu@13.91.99.206
 ## <a name="next-steps"></a>Passos Seguintes
 Acabou de criar uma VM com Linux rapidamente para fins de teste ou de demonstração. Para criar uma VM Linux personalizada de acordo com a sua infraestrutura, pode seguir qualquer um destes artigos.
 
-* [Criar uma VM do Linux no Azure utilizando Modelos](virtual-machines-linux-cli-deploy-templates.md)
-* [Criar uma VM do Linux Protegida por SSH no Azure através de Modelos](virtual-machines-linux-create-ssh-secured-vm-from-template.md)
-* [Criar uma VM do Linux através da CLI do Azure](virtual-machines-linux-create-cli-complete.md)
+* [Criar uma VM do Linux no Azure utilizando Modelos](virtual-machines-linux-cli-deploy-templates.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+* [Criar uma VM do Linux Protegida por SSH no Azure através de Modelos](virtual-machines-linux-create-ssh-secured-vm-from-template.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+* [Criar uma VM do Linux através da CLI do Azure](virtual-machines-linux-create-cli-complete.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 
 
 

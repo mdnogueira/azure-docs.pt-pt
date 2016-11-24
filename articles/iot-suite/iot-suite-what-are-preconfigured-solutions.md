@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 08/09/2016
+ms.date: 11/16/2016
 ms.author: dobett
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 597043b17993ebddc9cf730ddce849e1d6ff3bc9
+ms.sourcegitcommit: 1a6dd35278f0a4a4f972642c40a0976986dd79ae
+ms.openlocfilehash: 25be292144e31c6f34ff1e015362aee31e242619
 
 
 ---
@@ -73,14 +73,14 @@ Pode adicionar mais dispositivos simulados à solução que emite a mesma teleme
 ## <a name="iot-hub"></a>IoT Hub
 Nesta solução pré-configurada, a instância IoT Hub corresponde ao *Gateway na Nuvem* numa [Arquitetura de solução IoT][lnk-what-is-azure-iot] típica.
 
-Um IoT Hub recebe a telemetria dos dispositivos num ponto final único. Um IoT Hub mantém ainda os pontos finais do dispositivo onde cada dispositivo pode obter os comandos que lhe são enviados.
+Um IoT Hub recebe a telemetria dos dispositivos num ponto final único. Mantém ainda os pontos finais do dispositivo onde cada dispositivo pode obter os comandos que lhe são enviados.
 
 O IoT Hub disponibiliza a telemetria recebida através do ponto final de leitura de telemetria do lado do serviço.
 
 ## <a name="azure-stream-analytics"></a>Azure Stream Analytics
 A solução pré-configurada utiliza três tarefas do [Azure Stream Analytics][lnk-asa] (ASA) para filtrar o fluxo de telemetria dos dispositivos:
 
-* *Tarefa DeviceInfo* - produz dados para Event Hub que redireciona as mensagens de registo específicas do dispositivo, enviadas aquando da primeira ligação de um dispositivo ou em resposta a um comando **Alterar estado do dispositivo** na solução de registo do dispositivo (uma base de dados do DocumentDB). 
+* *Tarefa DeviceInfo* - produz dados para um hub de Eventos que redireciona as mensagens de registo específicas do dispositivo, enviadas aquando da primeira ligação de um dispositivo ou em resposta a um comando **Alterar estado do dispositivo**, para a solução de registo do dispositivo (uma base de dados do DocumentDB). 
 * *Tarefa de telemetria* - envia telemetria não processada ao Blob Storage do Azure para um armazenamento de frio e calcula as agregações de telemetria apresentadas no dashboard de solução.
 * *Tarefa de regras* - filtra o fluxo de telemetria para valores que excedem quaisquer limiares de regra e produz os dados para um Event Hub. Quando é acionada uma regra, a vista do dashboard do portal de solução mostra este evento como uma nova linha na tabela de histórico de alarme e aciona uma ação baseada nas definições definidas nas vistas Regras e Ações do portal de solução.
 
@@ -89,7 +89,7 @@ Nesta solução pré-configurada, as tarefas ASA fazem parte da **solução de b
 ## <a name="event-processor"></a>Processador de eventos
 Nesta solução pré-configurada, o processador de eventos faz parte da **solução de back-end do IoT** numa [arquitetura de solução IoT][lnk-what-is-azure-iot] típica.
 
-As tarefas ASA **DeviceInfo** e **Regras** enviam o respetivo resultado ao Event Hubs para que seja transmitido a outros serviços de back-end. A solução utiliza uma instância [EventPocessorHost][lnk-event-processor] executada numa [WebJob][lnk-web-job] para ler as mensagens a partir desses Event Hubs. O **EventProcessorHost** utiliza os dados do **DeviceInfo** para atualizar os dados do dispositivo na base de dados do DocumentDB e utiliza os dados **Regras** para invocar a aplicação lógica e atualizar os alertas apresentados no portal de solução.
+As tarefas ASA **DeviceInfo** e **Regras** enviam o respetivo resultado aos Hubs de Eventos para que seja transmitido a outros serviços de back-end. A solução utiliza uma instância [EventPocessorHost][lnk-event-processor] executada numa [WebJob][lnk-web-job] para ler as mensagens a partir desses Event Hubs. O **EventProcessorHost** utiliza os dados do **DeviceInfo** para atualizar os dados do dispositivo na base de dados do DocumentDB e utiliza os dados **Regras** para invocar a aplicação lógica e atualizar os alertas apresentados no portal de solução.
 
 ## <a name="device-identity-registry-and-documentdb"></a>Registo de identidade do dispositivo e DocumentDB
 Cada IoT Hub inclui um [registo de identidade do dispositivo][lnk-identity-registry] que armazena as chaves de dispositivo. O IoT Hub utiliza essas informações para autenticar dispositivos - um dispositivo deve estar registado e ter uma chave válida antes de estabelecer a ligação ao hub.
@@ -130,6 +130,6 @@ Agora que sabe o que é uma solução pré-configurada, pode começar por implem
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO3-->
 
 

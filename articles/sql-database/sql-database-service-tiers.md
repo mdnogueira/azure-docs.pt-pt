@@ -13,16 +13,18 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: data-management
-ms.date: 08/10/2016
+ms.date: 11/08/2016
 ms.author: carlrab
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 9ecbee74bc0559aa632304b0a0428abb36606597
+ms.sourcegitcommit: c7d253dfca8f399527d193f14af12c166157d39d
+ms.openlocfilehash: eaadd5c8d30a522fc05d214620600331d7485485
 
 
 ---
 # <a name="sql-database-options-and-performance-understand-whats-available-in-each-service-tier"></a>Opções e desempenho da Base de Dados SQL: compreender o que está disponível em cada camada de serviço
-A [Base de Dados SQL do Azure](sql-database-technical-overview.md) oferece três camadas de serviço com vários níveis de desempenho para processar diferentes cargas de trabalho. Cada nível de desempenho fornece um conjunto cada vez maior de recursos concebidos para proporcionar um débito cada vez mais elevado. Pode gerir cada base de dados na sua própria [camada de serviço](sql-database-service-tiers.md#standalone-database-service-tiers-and-performance-levels) com o seu próprio nível de desempenho. Também pode gerir várias bases de dados num [conjunto elástico](sql-database-service-tiers.md#elastic-pool-service-tiers-and-performance-in-edtus) com um conjunto partilhado de recursos. Os recursos disponíveis para bases de dados autónomas são expressos em termos de Unidades de Transação da Base de Dados (DTUs) e para conjuntos elásticos em termos de DTUs elásticas ou eDTUs. Para obter mais informações sobre DTUs e eDTUs, veja [O que é uma DTU](sql-database-what-is-a-dtu.md). 
+A [Base de Dados SQL do Azure](sql-database-technical-overview.md) oferece três camadas de serviço com vários níveis de desempenho para processar diferentes cargas de trabalho. Os níveis de desempenho superiores oferecem um conjunto cada vez maior de recursos concebidos para proporcionar um débito cada vez mais elevado. Pode alterar os escalões de serviço e os níveis de desempenho dinamicamente. Consulte [Alterar Camadas de Serviços de Bases de Dados e Níveis de Desempenho](sql-database-scale-up.md), para detalhes.
+
+Pode gerir cada base de dados na sua própria [camada de serviço](sql-database-service-tiers.md#standalone-database-service-tiers-and-performance-levels) com o seu próprio nível de desempenho. Também pode gerir várias bases de dados num [conjunto elástico](sql-database-service-tiers.md#elastic-pool-service-tiers-and-performance-in-edtus) com um conjunto partilhado de recursos. Os recursos disponíveis para bases de dados autónomas são expressos em termos de Unidades de Transação da Base de Dados (DTUs) e para conjuntos elásticos em termos de DTUs elásticas ou eDTUs. Para obter mais informações sobre DTUs e eDTUs, veja [O que é uma DTU](sql-database-what-is-a-dtu.md). 
 
 Em ambos os casos, as camadas de serviço incluem **Básico**, **Standard** e **Premium**. As opções de base de dados nestas camadas são semelhantes às de bases de dados autónomas e conjuntos elásticos, mas existem considerações adicionais para os conjuntos elásticos. Este artigo fornece detalhes sobre camadas de serviços para bases de dados autónomas e conjuntos elásticos.
 

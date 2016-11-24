@@ -12,11 +12,11 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: big-data
-ms.date: 11/02/2016
+ms.date: 11/15/2016
 ms.author: nitinme
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 658671199cf3454428cc7102566093f7c2b42ae8
+ms.sourcegitcommit: 408a5fb25ef7b285a76e8f5b65890dc625574437
+ms.openlocfilehash: fba738575ee9a60cc930adfb68b7c34323bbe747
 
 
 ---
@@ -58,8 +58,8 @@ Veja os vídeos seguintes para começar a utilizar o Data Lake Store.
    * **Localização**: selecione uma localização onde pretende criar a conta do Data Lake Store.
    * **Definições de Encriptação**. Pode escolher se pretende encriptar a sua conta do Data Lake Store. Se optar por encriptar, também pode especificar como gerir a chave de encriptação mestra que pretende utilizar para encriptar os dados da sua conta.
      
-     * (Predefinição) Selecione **Não ative a encriptação** na lista pendente para optar por não ativar a encriptação.
-     * (Opcional) Selecione **Utilize as chaves geridas pelo Azure Data Lake** se pretender que o Azure Data Lake Store faça a gestão das suas chaves de encriptação.
+     * (Opcional) Selecione **Não ativar a encriptação**, no menu pendente, para não ativar a encriptação.
+     * (Predefinição) Selecione **Utilizar as chaves geridas pelo Azure Data Lake** se quiser que o Azure Data Lake Store faça a gestão das suas chaves de encriptação.
        
          ![Encriptação do Data Lake Store](./media/data-lake-store-get-started-portal/adls-encryption-1.png "Data Lake Store encryption")
      * (Opcional) Selecione **Escolha as chaves a partir do Cofre de Chaves do Azure** se pretender utilizar as suas próprias chaves presentes no Cofre de Chaves do Azure. Com esta opção, também pode criar uma conta e chaves do Cofre de Chaves se ainda não tiver uma.
@@ -136,6 +136,6 @@ Para eliminar uma conta do Azure Data Lake Store, a partir do painel Data Lake S
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO3-->
 
 

@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 10/17/2016
 ms.author: cherylmc
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 487a006050bdb77f03db19b87a98dd3f4c64a738
+ms.sourcegitcommit: f6fa6511c8d54e191de27fda73aad9feb734191f
+ms.openlocfilehash: 1065ad38f5c3627e4afd441fcd4540db01632373
 
 
 ---
-# <a name="configure-a-pointtosite-connection-to-a-vnet-using-the-classic-portal"></a>Configurar uma ligação de Ponto a Site a uma VNet através do portal clássico
+# <a name="configure-a-point-to-site-connection-to-a-vnet-using-the-classic-portal"></a>Configurar uma ligação de Ponto a Site a uma VNet através do portal clássico
 > [!div class="op_single_selector"]
 > * [Resource Manager - Portal do Azure](vpn-gateway-howto-point-to-site-resource-manager-portal.md)
 > * [Resource Manager – PowerShell](vpn-gateway-howto-point-to-site-rm-ps.md)
@@ -55,9 +55,9 @@ A configuração de uma ligação Ponto a Site é apresentada em quatro secçõe
 * **Secção 3** Exportar e instalar os certificados de cliente.
 * **Secção 4** Configurar o cliente VPN.
 
-## <a name="a-namevnetvpnasection-1-create-a-virtual-network-and-a-vpn-gateway"></a><a name="vnetvpn"></a>Secção 1 - Criar uma rede virtual e um gateway de VPN
+## <a name="a-namevnetvpnasection-1---create-a-virtual-network-and-a-vpn-gateway"></a><a name="vnetvpn"></a>Secção 1 - Criar uma rede virtual e um gateway de VPN
 ### <a name="part-1-create-a-virtual-network"></a>Parte 1: criar uma rede virtual
-1. Inicie sessão no [Portal Clássico do Azure](https://manage.windowsazure.com/). Estes passos utilizam o portal clássico e não o portal do Azure. Atualmente, não é possível criar uma ligação P2S através do portal do Azure.
+1. Inicie sessão no [Portal Clássico do Azure](https://manage.windowsazure.com). Estes passos utilizam o portal clássico e não o portal do Azure. Atualmente, não é possível criar uma ligação P2S através do portal do Azure.
 2. No canto inferior esquerdo do ecrã, clique em **Novo**. No painel de navegação, clique em **Serviços de Rede** e em **Rede Virtual**. Clique em **Criação Personalizada** para iniciar o assistente de configuração.
 3. Na página **Detalhes da Rede Virtual**, introduza as seguintes informações e clique na seta seguinte na parte inferior direita.
    
@@ -86,7 +86,7 @@ O tipo de gateway tem de ser configurado como dinâmico. Os gateways de encaminh
 1. No Portal Clássico do Azure, na página **Redes**, clique na rede virtual que criou e navegue até à página **Dashboard**.
 2. Clique em **Criar Gateway**, localizado na parte inferior da página **Dashboard**. É apresentada uma mensagem a perguntar **Pretende criar um gateway para a rede virtual “VNet1”**. Clique em **Sim** para começar a criar o gateway. A criação do gateway pode demorar cerca de 15 minutos.
 
-## <a name="a-namegenerateasection-2-generate-and-upload-certificates"></a><a name="generate"></a>Secção 2 - Gerar e carregar certificados
+## <a name="a-namegenerateasection-2---generate-and-upload-certificates"></a><a name="generate"></a>Secção 2 - Gerar e carregar certificados
 Os certificados são utilizados para autenticar clientes VPN para as VPNs Ponto a Site. Pode utilizar um certificado de raiz gerado por uma solução de certificados de empresa ou pode utilizar um certificado autoassinado. Pode carregar até 20 certificados de raiz para o Azure. Depois do ficheiro .cer ser carregado, o Azure pode utilizar as informações contidas no mesmo para autenticar clientes que tenham um certificado de cliente instalado. O certificado de cliente tem de ser gerado a partir do mesmo certificado que o ficheiro .cer representa.
 
 Nesta secção irá efetuar o seguinte:
@@ -112,14 +112,14 @@ Em seguida, gere certificados de cliente. Pode optar por gerar um certificado ex
 * Se estiver a utilizar uma solução de certificado de empresa, gere um certificado de cliente com o formato do valor de nome comum 'name@yourdomain.com',, em vez do formato “DOMÍNIO/nomedeutilizaodor” do NetBIOS. 
 * Se estiver a utilizar um certificado de raiz autoassinado, consulte [Trabalhar com certificados de raiz autoassinados para configurações de Ponto a Site](vpn-gateway-certificates-point-to-site.md), para gerar um certificado de cliente.
 
-## <a name="a-nameinstallclientcertasection-3-export-and-install-the-client-certificate"></a><a name="installclientcert"></a>Secção 3 - Exportar e instalar o certificado de cliente
+## <a name="a-nameinstallclientcertasection-3---export-and-install-the-client-certificate"></a><a name="installclientcert"></a>Secção 3 - Exportar e instalar o certificado de cliente
 Instale um certificado de cliente em cada computador que pretende ligar à rede virtual. É necessário um certificado de cliente para a autenticação. Pode automatizar a instalação do certificado de cliente ou pode instalar manualmente. Os passos seguintes descrevem como exportar e instalar manualmente o certificado de cliente.
 
 1. Para exportar um certificado de cliente, pode utilizar *certmgr.msc*. Clique com o botão direito do rato no certificado de cliente que pretende exportar, clique em **todas as tarefas** e, em seguida, em **exportar**.
 2. Exporte o certificado de cliente com a chave privada. Este é um ficheiro *.pfx*. Certifique-se de que regista ou memoriza a palavra-passe (chave) que define para este certificado.
 3. Copie o ficheiro *.pfx* para o computador cliente. No computador cliente, faça duplo clique no ficheiro *.pfx* para o instalar. Introduza a palavra-passe, quando solicitado. Não modifique a localização da instalação.
 
-## <a name="a-namevpnclientconfigasection-4-configure-your-vpn-client"></a><a name="vpnclientconfig"></a>Secção 4 - Configurar o cliente VPN
+## <a name="a-namevpnclientconfigasection-4---configure-your-vpn-client"></a><a name="vpnclientconfig"></a>Secção 4 - Configurar o cliente VPN
 Para ligar à rede virtual, também tem de configurar um cliente VPN. O cliente exige um certificado de cliente e a configuração adequada do cliente VPN para se ligar. Para configurar um cliente VPN, execute os passos seguintes, por ordem.
 
 ### <a name="part-1-create-the-vpn-client-configuration-package"></a>Parte 1: criar o pacote de configuração do cliente VPN
@@ -164,13 +164,14 @@ Exemplo:
         NetBIOS over Tcpip..............: Enabled
 
 ## <a name="next-steps"></a>Passos seguintes
-Pode adicionar máquinas virtuais à rede virtual. Veja [Como criar uma máquina virtual personalizada](../virtual-machines/virtual-machines-windows-classic-createportal.md).
 
-Se pretender obter mais informações sobre Redes Virtuais, veja a página [Documentação das Redes Virtuais](https://azure.microsoft.com/documentation/services/virtual-network/).
+Assim que a ligação estiver concluída, pode adicionar máquinas virtuais às redes virtuais. Para obter mais informações, veja [Máquinas Virtuais](https://docs.microsoft.com/azure/#pivot=services&panel=Compute).
+
+Se pretender obter mais informações sobre Redes Virtuais, veja a página [Documentação das Redes Virtuais](/azure/virtual-network).
 
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO3-->
 
 
