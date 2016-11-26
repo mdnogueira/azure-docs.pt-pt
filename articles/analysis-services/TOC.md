@@ -14,6 +14,6 @@
 # Referências
 ##[Ligações de origem de dados](analysis-services-datasource.md)
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO4-->
 
 

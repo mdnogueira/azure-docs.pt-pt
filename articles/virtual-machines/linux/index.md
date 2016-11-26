@@ -1,8 +1,8 @@
 ---
 layout: LandingPage
 translationtype: Human Translation
-ms.sourcegitcommit: 8125aca5030c869476499a07b17c8e21fcb76ef6
-ms.openlocfilehash: e5640566e8781441713ca5491abee1d9334b3970
+ms.sourcegitcommit: c5ed66f3a060dcd1bac9c04c70c493dcebcf9df8
+ms.openlocfilehash: 7b5078165e008819baed1c1e38d1c1a677648955
 
 ---
 #<a name="linux-virtual-machine-documentation"></a>Documentação da Máquina Virtual do Linux
@@ -11,7 +11,43 @@ Utilize as Máquinas Virtuais do Azure para criar e executar máquinas virtuais 
 
 <ul class="panelContent cardsFTitle">
     <li>
-        <a href="/azure/virtual-machines/virtual-machines-linux-azure-overview">
+        <a href="/azure/virtual-machines/virtual-machines-linux-quick-create-cli?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="media/index/cli.svg" alt="" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Criar uma VM do Linux com a CLI do Azure 2.0 (Pré-visualização)</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+    <li>
+        <a href="/azure/virtual-machines/virtual-machines-linux-quick-create-portal?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="media/index/portal.svg" alt="" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Criar uma VM com o Portal</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+    <li>
+        <a href="/azure/virtual-machines/virtual-machines-linux-azure-overview?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
@@ -46,18 +82,21 @@ Utilize as Máquinas Virtuais do Azure para criar e executar máquinas virtuais 
         </div>
         </a>
     </li>
+</ul>
+
+---
+
+##<a name="reference"></a>Referência
+
+<ul class="panelContent cardsW">
     <li>
-        <a href="/azure/virtual-machines/virtual-machines-linux-quick-create-portal">
+        <a href="/powershell/azureps-cmdlets-docs">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="media/index/portal.svg" alt="" />
-                        </div>
-                    </div>
                     <div class="cardText">
-                        <h3>Criar uma VM com o Portal</h3>
+                        <h3>PowerShell</h3>
+                        <p>Cmdlets do PowerShell</p>
                     </div>
                 </div>
             </div>
@@ -65,17 +104,13 @@ Utilize as Máquinas Virtuais do Azure para criar e executar máquinas virtuais 
         </a>
     </li>
     <li>
-        <a href="/azure/virtual-machines/virtual-machines-linux-mac-create-ssh-keys">
+        <a href="/cli/azure/install-az-cli2">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="media/index/tutorial.svg" alt="" />
-                        </div>
-                    </div>
                     <div class="cardText">
-                        <h3>Criar chaves SSH no Linux e Mac para VMs com Linux no Azure</h3>
+                        <h3>CLI do Azure</h3>
+                        <p>Instalar a CLI do Azure</p>
                     </div>
                 </div>
             </div>
@@ -83,17 +118,13 @@ Utilize as Máquinas Virtuais do Azure para criar e executar máquinas virtuais 
         </a>
     </li>
     <li>
-        <a href="/azure/xplat-cli-install">
+        <a href="/dotnet/api">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="media/index/cli.svg" alt="" />
-                        </div>
-                    </div>
                     <div class="cardText">
-                        <h3>Instalar a CLI do Azure</h3>
+                        <h3>.NET</h3>
+                        <p>API de Referência Gerida do .NET</p>
                     </div>
                 </div>
             </div>
@@ -101,17 +132,55 @@ Utilize as Máquinas Virtuais do Azure para criar e executar máquinas virtuais 
         </a>
     </li>
     <li>
-        <a href="/azure/virtual-machines/virtual-machines-linux-quick-create-cli">
+        <a href="/java/api">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="media/index/cli.svg" alt="" />
-                        </div>
-                    </div>
                     <div class="cardText">
-                        <h3>Criar uma VM com Linux no Azure com a CLI</h3>
+                        <h3>SDK Java</h3>
+                        <p>Referência de Java API</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+    <li>
+        <a href="/rest/api/compute">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>REST (Computação)</h3>
+                        <p>Referência da API REST da Computação</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+    <li>
+        <a href="https://msdn.microsoft.com/library/mt163658">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>REST (Rede)</h3>
+                        <p>Referência da API REST da Rede</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+    <li>
+        <a href="/rest/api/storage">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>REST (Armazenamento)</h3>
+                        <p>Referência da API REST do Armazenamento</p>
                     </div>
                 </div>
             </div>
@@ -119,28 +188,7 @@ Utilize as Máquinas Virtuais do Azure para criar e executar máquinas virtuais 
         </a>
     </li>
 </ul>
-
----
-
-##<a name="reference"></a>Referência
-
-###<a name="azure-cli"></a>CLI do Azure
-[CLI do Azure](/cli/azure/vm)
-
-###<a name="net"></a>.NET
-[Referência da API Gerida do Azure](/dotnet/api/)
-
-###<a name="java-sdk"></a>SDK Java
-[Java](/java/api/)
-
-###<a name="rest-compute"></a>REST (Computação)
-[Referência da API REST da Computação](/rest/api/compute)
-
-###<a name="rest-network"></a>REST (Rede)
-[Referência da API REST da Rede](https://msdn.microsoft.com/library/mt163658.aspx)
-
-###<a name="rest-storage"></a>REST (Armazenamento)
-[Referência da API REST do Armazenamento](https://msdn.microsoft.com/library/azure/dd179355.aspx)
+    
 
 <div class="downloadHolder">
     <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/virtual-machines/linux.pdf">
@@ -152,6 +200,6 @@ Transferir a Documentação da Máquina Virtual do Linux </div>
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO4-->
 
 

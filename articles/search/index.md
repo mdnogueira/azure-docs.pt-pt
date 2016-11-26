@@ -1,13 +1,13 @@
 ---
 layout: LandingPage
 translationtype: Human Translation
-ms.sourcegitcommit: cdfe04908d68292d07eeb9c20a4772d11fa30eff
-ms.openlocfilehash: d3ef28f2cb1459410ec90982fff94fbbced55f72
+ms.sourcegitcommit: 3273e748265fa23efadd010bb5f0bc9ce43223b6
+ms.openlocfilehash: dae331e93ab1682741a34758172d7c8cdb38aec5
 
 ---
 # <a name="azure-search-documentation"></a>Documentação do Azure Search
 
-O Azure Search é uma solução de pesquisa como serviço na nuvem que delega a gestão de infraestruturas e de servidores à Microsoft, deixando-o com um serviço pronto a utilizar que poderá preencher com os seus dados e, em seguida, utilizar para adicionar pesquisa à sua aplicação Web ou móvel. O Azure Search permite-lhe adicionar facilmente uma experiência de pesquisa robusta para as aplicações com uma API REST simples ou SDK .NET, sem gerir a infraestrutura de pesquisa ou tornar-se um perito em pesquisa.
+O Azure Search é um serviço de pesquisa na cloud gerido que o ajuda a criar uma poderosa experiência de pesquisa em aplicações personalizadas e, depois, a monitorizar o serviço, a indexar e a consultar as atividades através de vistas de portal. As principais funcionalidades incluem a pesquisa de texto completo dimensionável em vários idiomas, a pesquisa geoespacial, a filtragem e a navegação por facetas, as consultas de escrita antecipada, o detetor de ocorrências e os analisadores personalizados.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -47,7 +47,7 @@ O Azure Search é uma solução de pesquisa como serviço na nuvem que delega a 
         </a>
     </li>
     <li>
-        <a href="/azure/search/search-create-service">
+        <a href="/azure/search/search-create-service-portal">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
@@ -82,6 +82,42 @@ O Azure Search é uma solução de pesquisa como serviço na nuvem que delega a 
         </div>
         </a>
     </li>
+    <li>
+        <a href="/azure/search/search-query-overview">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="media/index/tutorial.svg" alt="" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Consultar um índice do Azure Search</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+    <li>
+        <a href="/azure/search/search-howto-dotnet-sdk">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="media/index/tutorial.svg" alt="" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Utilizar o Azure Search em .NET</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
 </ul>
 
 
@@ -89,11 +125,64 @@ O Azure Search é uma solução de pesquisa como serviço na nuvem que delega a 
 
 ## <a name="reference"></a>Referência
 
-### <a name="net"></a>.NET 
-[API de Referência Gerida do .NET](/dotnet/api/) 
-
-### <a name="rest"></a>REST 
-[Referência da API REST do Search](/rest/api/searchmanagement/) 
+<ul class="panelContent cardsW">
+    <li>
+        <a href="/dotnet/api/microsoft.azure.search">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>.NET</h3>
+                        <p>.NET API de Serviço</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+    <li>
+        <a href="/dotnet/api/microsoft.azure.management.search">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>.NET</h3>
+                        <p>.NET API de Gestão</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+    <li>
+        <a href="/rest/api/searchservice/">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>REST</h3>
+                        <p>API REST do serviço</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+    <li>
+        <a href="/rest/api/searchmanagement/">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>REST</h3>
+                        <p>API REST de Gestão</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+<ul>
 
 <div class="downloadHolder">
     <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/search.pdf">
@@ -105,6 +194,6 @@ Transferir a Documentação do Azure Search </div>
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO4-->
 
 

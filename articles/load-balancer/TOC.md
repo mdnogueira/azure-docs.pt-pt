@@ -6,38 +6,49 @@
 ## [Suporte para o Azure Resource Manager](load-balancer-arm.md)
 ## [Suporte para IPv6](load-balancer-ipv6-overview.md)
 ## [Vários VIPs](load-balancer-multivip-overview.md)
+## [Compreender as ligações de saída](load-balancer-outbound-connections.md)
+
 # Introdução
+
 ## [Configurar o Balanceador de Carga Interno](load-balancer-get-started-ilb-arm-portal.md)
 ### [Configurar o Balanceador de Carga Interno (PowerShell)](load-balancer-get-started-ilb-arm-ps.md)
 ### [Configurar o Balanceador de Carga Interno (CLI)](load-balancer-get-started-ilb-arm-cli.md)
 ### [Configurar o Balanceador de Carga Interno (Modelo)](load-balancer-get-started-ilb-arm-template.md)
+
 ## [Configurar o Balanceador de Carga Interno para Serviços Cloud](load-balancer-get-started-ilb-classic-cloud.md)
 ### [Configurar o Balanceador de Carga Interno para Serviços Cloud (PowerShell)](load-balancer-get-started-ilb-classic-ps.md)
 ### [Configurar o Balanceador de Carga Interno para Serviços Cloud (CLI)](load-balancer-get-started-ilb-classic-cli.md)
+
 ## [Configurar o Balanceador de Carga com Acesso à Internet](load-balancer-get-started-internet-portal.md)
 ### [Configurar o Balanceador de Carga com acesso à Internet (PowerShell)](load-balancer-get-started-internet-arm-ps.md)
 ### [Configurar o Balanceador de Carga com acesso à Internet (CLI)](load-balancer-get-started-internet-arm-cli.md)
 ### [Configurar o Balanceador de Carga com acesso à Internet (Modelo)](load-balancer-get-started-internet-arm-template.md)
+
 ## [Configurar o Balanceador de Carga com acesso à Internet (Portal Clássico)](load-balancer-get-started-internet-classic-portal.md)
 ### [Configurar o Balanceador de Carga com acesso à Internet (Nuvem Clássica)](load-balancer-get-started-internet-classic-cloud.md)
 ### [Configurar o Balanceador de Carga com acesso à Internet (PS Clássico)](load-balancer-get-started-internet-classic-ps.md)
 ### [Configurar o Balanceador de Carga com acesso à Internet (CLI Clássica)](load-balancer-get-started-internet-classic-cli.md)
+
 ## [Criar um balanceador de carga com acesso à Internet com IPv6](load-balancer-ipv6-internet-ps.md)
 ### [Criar um balanceador de carga com acesso à Internet com IPv6 (CLI)](load-balancer-ipv6-internet-cli.md)
 ### [Criar um balanceador de carga com acesso à Internet com IPv6 (Modelo)](load-balancer-ipv6-internet-template.md)
+
 # Procedimento
 ## [Configurar o tempo limite de inatividade de TCP para o Balanceador de Carga](load-balancer-tcp-idle-timeout.md)
 ## [Configurar o Modo de distribuição do Balanceador de Carga](load-balancer-distribution-mode.md)
 ## [Configurar o Balanceador de Carga Interno para o SQL AlwaysOn](load-balancer-configure-sqlao.md)
 ## [Configurar vários VIPs para o serviço cloud](load-balancer-multivip.md)
+## [Combinar serviços de balanceamento de carga](../traffic-manager/traffic-manager-load-balancing-azure.md?toc=%2fazure%2fload-balancer%2ftoc.json)
+## [Utilizar várias configurações de IP](load-balancer-multiple-ip.md)
 ## [Log Analytics para o Balanceador de Carga do Azure](load-balancer-monitor-log.md)
 ## [Configurar DHCPv6 para VMs do Linux](load-balancer-ipv6-for-linux.md)
 
 # Referência
-## [PowerShell](https://go.microsoft.com/fwlink/p/?LinkId=536407)
-## [.NET](https://docs.microsoft.com/dotnet/api/)
-## [API do Resource Manager](https://go.microsoft.com/fwlink/p/?LinkId=536405)
-## [Utilizar Recursos de Rede](https://go.microsoft.com/fwlink/p/?LinkId=536403)
+## [PowerShell](/powershell/azureps-cmdlets-docs)
+## [CLI do Azure](/cli/azure/network/lb)
+## [Java](/java/api)
+## [.NET](/dotnet/api)
+## [REST](https://msdn.microsoft.com/library/azure/mt163651.aspx)
 
 # Relacionado
 ## [Gateway de Aplicação](/azure/application-gateway/)
@@ -49,10 +60,10 @@
 ## [DNS](/azure/dns/)
 
 # Recursos
-## [Preços](https://azure.microsoft.com/pricing/details/load-balancer/) 
-## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=load-balancer) 
+## [Preços](https://azure.microsoft.com/pricing/details/load-balancer/)
+## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=load-balancer)
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO4-->
 
 

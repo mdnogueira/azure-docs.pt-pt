@@ -1,8 +1,8 @@
 ---
 layout: LandingPage
 translationtype: Human Translation
-ms.sourcegitcommit: 76bc79f1a256b3d4487eecf03a966ff5e094600e
-ms.openlocfilehash: e45fbe593e6e80c6ac758d122d12792b03df4310
+ms.sourcegitcommit: 87b9d22ec066108adb282606305315919b901ea0
+ms.openlocfilehash: 5cf17ad514127f97319130c4f3f78cdfa1eed052
 
 ---
 #<a name="stream-analytics-documentation"></a>Documentação do Stream Analytics
@@ -122,20 +122,66 @@ O Azure Stream Analytics é um motor de processamento de eventos totalmente geri
 
 ---
 
-##<a name="reference"></a>Referência
+## <a name="reference"></a>Referência
 
-###<a name="powershell"></a>PowerShell
-[Referência do Azure PowerShell](/powershell/azureps-cmdlets-docs)
-
-###<a name="net"></a>.NET
-[Referência Gerida do .NET](/dotnet/api)
-
-###<a name="query-language"></a>Linguagem da Consulta
-[Referência da Linguagem de Consulta do Stream Analytics](https://msdn.microsoft.com/library/azure/dn834998)
-
-###<a name="rest"></a>REST
-[Referência da API REST do Stream Analytics](/rest/api/streamanalytics)
-
+<ul class="panelContent cardsW">
+    <li>
+        <a href="/powershell/azureps-cmdlets-docs">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>PowerShell</h3>
+                        <p>Referência do Azure PowerShell</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+    <li>
+        <a href="/dotnet/api">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>.NET</h3>
+                        <p>Referência Gerida do .NET</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+    <li>
+        <a href="https://msdn.microsoft.com/library/azure/dn834998">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>Linguagem da Consulta</h3>
+                        <p>Referência da Linguagem de Consulta do Stream Analytics</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+    <li>
+        <a href="/rest/api/streamanalytics">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>REST</h3>
+                        <p>Referência da API REST do Stream Analytics</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+</ul>   
 
 <div class="downloadHolder">
     <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/stream-analytics.pdf">
@@ -147,6 +193,6 @@ Transferir a Documentação do Stream Analytics </div>
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO4-->
 
 

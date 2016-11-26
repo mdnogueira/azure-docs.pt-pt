@@ -1,8 +1,8 @@
 ---
 layout: LandingPage
 translationtype: Human Translation
-ms.sourcegitcommit: d737a8b14000e157d4f70c9e23cc9d40697d2b50
-ms.openlocfilehash: 0d9510cc32e4d3e0ed4b61f47cb4749180c1b830
+ms.sourcegitcommit: c5ed66f3a060dcd1bac9c04c70c493dcebcf9df8
+ms.openlocfilehash: f8d6ab10622ac6daacaf66551f18eaecd1448dee
 
 ---
 #<a name="windows-virtual-machines-documentation"></a>Documentação de Máquinas Virtuais do Windows
@@ -11,7 +11,7 @@ As Máquinas Virtuais (VMs) do Azure são um dos vários tipos de recursos infor
 
 <ul class="panelContent cardsFTitle">
     <li>
-        <a href="/azure/virtual-machines/virtual-machines-windows-overview">
+        <a href="/azure/virtual-machines/virtual-machines-windows-overview?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
@@ -47,17 +47,17 @@ As Máquinas Virtuais (VMs) do Azure são um dos vários tipos de recursos infor
         </a>
     </li>
     <li>
-        <a href="/azure/virtual-machines/virtual-machines-windows-hero-tutorial">
+        <a href="/azure/virtual-machines/virtual-machines-windows-hero-tutorial?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="media/index/portal.svg" alt="" />
+                            <img src="../media/index/get-started.svg" alt="" />
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Criar a sua primeira máquina virtual do Windows no Portal do Azure</h3>
+                        <h3>Introdução às VMs do Windows com o portal do Azure</h3>
                     </div>
                 </div>
             </div>
@@ -65,17 +65,17 @@ As Máquinas Virtuais (VMs) do Azure são um dos vários tipos de recursos infor
         </a>
     </li>
     <li>
-        <a href="/azure/virtual-machines/virtual-machines-windows-ps-create">
+        <a href="/azure/virtual-machines/virtual-machines-windows-ps-create?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="media/index/powershell.svg" alt="" />
+                            <img src="../media/index/get-started.svg" alt="" />
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Criar uma VM com o PowerShell</h3>
+                        <h3>Introdução às VMs do Windows com o PowerShell</h3>
                     </div>
                 </div>
             </div>
@@ -83,17 +83,17 @@ As Máquinas Virtuais (VMs) do Azure são um dos vários tipos de recursos infor
         </a>
     </li>
     <li>
-        <a href="/azure/resource-manager-template-walkthrough">
+        <a href="/azure/resource-manager-template-walkthrough?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="media/index/tutorial.svg" alt="" />
+                            <img src="../media/index/get-started.svg" alt="" />
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Crie uma VM com um Modelo do Gestor de Recursos</h3>
+                        <h3>Introdução às VMs do Windows com um Modelo do Resource Manager</h3>
                     </div>
                 </div>
             </div>
@@ -106,29 +106,106 @@ As Máquinas Virtuais (VMs) do Azure são um dos vários tipos de recursos infor
 
 ##<a name="reference"></a>Referência
 
-###<a name="powershell"></a>PowerShell
-[Azure PowerShell](/powershell/)
-
-###<a name="azure-cli"></a>CLI do Azure
-[CLI do Azure](/cli/azure/vm)
-
-###<a name="net"></a>.NET
-[API de Referência Gerida](/dotnet/api/)
-
-###<a name="java-sdk"></a>SDK Java
-[Referência Java](/java/api/)
-
-###<a name="rest-compute"></a>REST (Computação)
-[Referência da API REST da Computação](/rest/api/compute)
-
-###<a name="rest-network"></a>REST (Rede)
-[Referência da API REST de Rede para a Rede](https://msdn.microsoft.com/library/mt163658.aspx)
-
-###<a name="rest-storage"></a>REST (Armazenamento)
-[Referência da API REST do Armazenamento](https://msdn.microsoft.com/library/azure/dd179355.aspx)
-
-###<a name="rest-vm-scale-sets"></a>REST (Conjuntos de Dimensionamento de VMs)
-[Referência da API REST dos Conjuntos de Dimensionamento de Máquinas Virtuais](https://msdn.microsoft.com/library/azure/mt705635.aspx)
+<ul class="panelContent cardsW">
+    <li>
+        <a href="/powershell/azureps-cmdlets-docs">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>PowerShell</h3>
+                        <p>Cmdlets do PowerShell</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+    <li>
+        <a href="/cli/azure/install-az-cli2">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>CLI do Azure</h3>
+                        <p>Instalar a CLI do Azure</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+    <li>
+        <a href="/dotnet/api">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>.NET</h3>
+                        <p>API de Referência Gerida do .NET</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+    <li>
+        <a href="/java/api">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>SDK Java</h3>
+                        <p>Referência de Java API</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+    <li>
+        <a href="/rest/api/compute">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>REST (Computação)</h3>
+                        <p>Referência da API REST da Computação</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+    <li>
+        <a href="https://msdn.microsoft.com/library/mt163658">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>REST (Rede)</h3>
+                        <p>Referência da API REST da Rede</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+    <li>
+        <a href="/rest/api/storage">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>REST (Armazenamento)</h3>
+                        <p>Referência da API REST do Armazenamento</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+</ul>
 
 <div class="downloadHolder">
     <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/virtual-machines/windows.pdf">
@@ -140,6 +217,6 @@ Transferir a Documentação da Máquina Virtual do Windows </div>
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO4-->
 
 

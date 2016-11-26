@@ -1,24 +1,27 @@
 # Descrição geral
-## [O que é o Reencaminhamento?](service-bus-relay-overview.md)
-## [FAQ](../service-bus-messaging/service-bus-faq.md?toc=%2fazure%2fservice-bus-relay%2ftoc.json)
+## [O que é o Reencaminhamento?](relay-what-is-it.md)
+## [FAQ](relay-faq.md)
 
 # Introdução
-## [Como utilizar o Reencaminhamento](service-bus-dotnet-how-to-use-relay.md)
+## [Criar um espaço de nomes](relay-create-namespace-portal.md)
+## [Introdução às Ligações Híbridas](relay-hybrid-connections-dotnet-get-started.md)
+## [Introdução ao Reencaminhamento WCF](service-bus-dotnet-how-to-use-relay.md)
 ## [Assinaturas de Acesso Partilhado](../service-bus-messaging/service-bus-sas-overview.md?toc=%2fazure%2fservice-bus-relay%2ftoc.json)
-## [Criar aplicações híbridas com Reencaminhamento do Service Bus](service-bus-dotnet-hybrid-app-using-service-bus-relay.md)
-## [Tutorial .NET do Reencaminhamento](service-bus-relay-tutorial.md)
-## [Tutorial REST do Reencaminhamento](service-bus-relay-rest-tutorial.md)
+## [Tutorial híbrido do Reencaminhamento WCF](service-bus-dotnet-hybrid-app-using-service-bus-relay.md)
+## [Tutorial .NET do Reencaminhamento WCF](service-bus-relay-tutorial.md)
+## [Tutorial REST do Reencaminhamento WCF](service-bus-relay-rest-tutorial.md)
 
 # Procedimento
 ## [Autenticar e autorizar](../service-bus-messaging/service-bus-authentication-and-authorization.md?toc=%2fazure%2fservice-bus-relay%2ftoc.json)
 ## [Planear interrupções e desastres](../service-bus-messaging/service-bus-outages-disasters.md?toc=%2fazure%2fservice-bus-relay%2ftoc.json)
+## [Protocolo das Ligações Híbridas](relay-hybrid-connections-protocol.md)
+## [Exceções comuns](relay-exceptions.md)
 
 # Referência
 ## [Amostras](service-bus-relay-samples.md)
-## [Exceções](../service-bus-messaging/service-bus-messaging-exceptions.md?toc=%2fazure%2fservice-bus-relay%2ftoc.json)
-## [Quotas](../service-bus-messaging/service-bus-quotas.md?toc=%2fazure%2fservice-bus-relay%2ftoc.json)
-## [.NET](/dotnet/api/)
-## [REST](/rest/api/servicebus/)
+## [.NET API do Protocolo das Ligações Híbridas](/dotnet/api/microsoft.servicebus)
+## [Tutorial .NET API do Reencaminhamento WCF](/dotnet/api/microsoft.servicebus)
+
 
 # Recursos
 ## [Blogue](https://blogs.msdn.microsoft.com/servicebus/)
@@ -30,6 +33,6 @@
 ## [Vídeos](https://azure.microsoft.com/documentation/videos/index/?services=service-bus)
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO4-->
 
 

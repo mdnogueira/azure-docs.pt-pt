@@ -1,9 +1,13 @@
 ---
 layout: LandingPage
----
-#SQL Server Stretch Database Documentation
+translationtype: Human Translation
+ms.sourcegitcommit: d237f5116f81d0977a96a325ee66f2e7c3ee5c41
+ms.openlocfilehash: bf45461eafbb010d99b61f2f67a763e25f374b30
 
-SQL Server Stretch Database migrates your cold data transparently and securely to the Microsoft Azure cloud. SQL Server Stretch Database provides cost-effective availability for data you do not use regularly, doesn't require changes to your queries or applications, and keeps your data secure even during migration. Stretch Database targets transactional databases with large amounts of infrequently used data, which are typically stored in a small number of tables.
+---
+#<a name="sql-server-stretch-database-documentation"></a>Documentação do SQL Server Stretch Database
+
+O SQL Server Stretch Database migra os seus dados amovíveis de forma transparente e segura para a cloud do Microsoft Azure. O SQL Server Stretch Database mantém os dados que não utiliza regularmente disponíveis de forma rentável, não requer alterações às consultas ou aplicações e mantém os dados seguros até mesmo durante a migração. A Stretch Database está orientada para as bases de dados transacionais com grandes quantidades de dados utilizados com pouca frequência, que estão normalmente armazenados num pequeno número de tabelas.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -17,7 +21,7 @@ SQL Server Stretch Database migrates your cold data transparently and securely t
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Learn about Azure SQL Server Stretch Database</h3>
+                        <h3>Saiba mais sobre o Azure SQL Server Stretch Database</h3>
                     </div>
                 </div>
             </div>
@@ -35,7 +39,7 @@ SQL Server Stretch Database migrates your cold data transparently and securely t
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Azure SQL Server Stretch Database Video Library</h3>
+                        <h3>Biblioteca de Vídeo do Azure SQL Server Stretch Database</h3>
                     </div>
                 </div>
             </div>
@@ -43,7 +47,7 @@ SQL Server Stretch Database migrates your cold data transparently and securely t
         </a>
     </li>
     <li>
-        <a href="/azure/sql-server-stretch-database/sql-server-stretch-database-identify-databases/">
+        <a href="/azure/sql-server-stretch-database/sql-server-stretch-database-identify-databases">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
@@ -53,7 +57,7 @@ SQL Server Stretch Database migrates your cold data transparently and securely t
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Get started with SQL Server Stretch Database</h3>
+                        <h3>Introdução ao SQL Server Stretch Database</h3>
                     </div>
                 </div>
             </div>
@@ -67,11 +71,11 @@ SQL Server Stretch Database migrates your cold data transparently and securely t
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="media/index/tutorial.svg" alt="" />
+                            <img src="media/index/get-started.svg" alt="" />
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Create and enable a SQL Server Stretch Database</h3>
+                        <h3>Introdução ao assistente do SQL Server Stretch Database</h3>
                     </div>
                 </div>
             </div>
@@ -82,12 +86,16 @@ SQL Server Stretch Database migrates your cold data transparently and securely t
 
 ---
 
-
 <div class="downloadHolder">
     <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/sql-server-stretch-database.pdf">
         <div class="img"></div>
         <div class="text">
-            Download SQL Server Stretch Database Documentation
-        </div>
+Transferir a Documentação do SQL Server Stretch Database </div>
     </a>
 </div>
+
+
+
+<!--HONumber=Nov16_HO4-->
+
+

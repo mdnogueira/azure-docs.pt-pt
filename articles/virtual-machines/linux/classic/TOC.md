@@ -66,22 +66,23 @@
 ### [Reiniciar ou redimensionar uma VM](../../virtual-machines-linux-classic-restart-resize-error-troubleshooting.md?toc=%2fazure%2fvirtual-machines%2flinux%2fclassic%2ftoc.json)
 
 # Referência
+## [PowerShell](/powershell/azureps-cmdlets-docs)
 ## [CLI do Azure](/cli/azure/vm)
-## [Java](/java/api/)
+## [Java](/java/api)
 ## [Criar modelos do Resource Manager](../../../resource-group-authoring-templates.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-## [Modelos da comunidade](https://azure.microsoft.com/documentation/templates/)
-## [REST de Computação](/rest/api/compute/)
-## [REST de Rede](/rest/api/)
-## [REST de Armazenamento](/rest/api/storageservices/)
+## [Modelos da comunidade](https://azure.microsoft.com/documentation/templates)
+## [REST de Computação](/rest/api/compute)
+## [REST de Rede](/rest/api)
+## [REST de Armazenamento](/rest/api/storageservices)
 
 
 # Recursos
 ## [Preços](https://azure.microsoft.com/pricing/details/virtual-machines/#Linux)
-## [Disponibilidade regional](https://azure.microsoft.com/regions/services/)
+## [Disponibilidade regional](https://azure.microsoft.com/regions/services)
 ## [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-virtual-machine)
 ## [Vídeos](https://azure.microsoft.com/documentation/videos/index/?services=virtual-machines)
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO4-->
 
 

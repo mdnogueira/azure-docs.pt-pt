@@ -176,13 +176,15 @@
 ### [Reimplementar uma VM](../virtual-machines-windows-redeploy-to-new-node.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
 
 # Referência
+## [PowerShell](/powershell/azureps-cmdlets-docs)
 ## [CLI do Azure](/cli/azure/vm)
-## [Java](/java/api/)
+## [Java](/java/api)
+## [.NET](/dotnet/api/microsoft.azure.management.compute)
 ## [Criar modelos do Resource Manager](../../resource-group-authoring-templates.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-## [Modelos da comunidade](https://azure.microsoft.com/documentation/templates/)
-## [REST de Computação](/rest/api/compute/)
-## [REST de Rede](/rest/api/)
-## [REST de Armazenamento](/rest/api/storageservices/)
+## [Modelos da comunidade](https://azure.microsoft.com/documentation/templates)
+## [REST de Computação](/rest/api/compute)
+## [REST de Rede](/rest/api)
+## [REST de Armazenamento](/rest/api/storageservices)
 
 # Recursos
 ## [Preços](https://azure.microsoft.com/pricing/details/#Windows)
@@ -191,6 +193,6 @@
 ## [Vídeos](https://azure.microsoft.com/documentation/videos/index/?services=virtual-machines)
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO4-->
 
 

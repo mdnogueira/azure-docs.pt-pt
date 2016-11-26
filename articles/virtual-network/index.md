@@ -1,9 +1,14 @@
 ---
 layout: LandingPage
----
-#Virtual Network Documentation
++toc_rel: breadcrumb.json
+translationtype: Human Translation
+ms.sourcegitcommit: 87b9d22ec066108adb282606305315919b901ea0
+ms.openlocfilehash: f03b3e68dd62cdf429162d3fe7d2342bbf254b52
 
-An Azure Virtual Network (VNet) is a logical representation of your own network in the cloud.  With VNet you can fully control elements of the network and segment your VNet into subnets and use it to launch Azure Virtual Machines or Cloud Services.  Additionally, you can connect the VNet to you on-premises network using one of the connectivity options available in Azure, expanding your network to the cloud while keeping control over resources.
+---
+#<a name="virtual-network-documentation"></a>Documentação da Rede Virtual
+
+Uma Rede Virtual do Azure (VNet) é uma representação lógica da sua própria rede na cloud.  Com uma VNet, pode controlar completamente os elementos da rede, bem como segmentar a sua VNet em sub-redes e utilizá-la para iniciar Máquinas Virtuais do Azure ou Serviços Cloud.  Além disso, pode ligar a VNet à rede no local através de uma das opções de conectividade disponíveis no Azure, o que lhe permite expandir a sua rede para a cloud enquanto mantém o controlo sobre os recursos.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -17,25 +22,7 @@ An Azure Virtual Network (VNet) is a logical representation of your own network 
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Learn about Virtual Network</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </a>
-    </li>
-    <li>
-        <a href="/azure/Virtual-Network/">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="media/index/get-started.svg" alt="" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Get started with Virtual Network</h3>
+                        <h3>Saiba mais sobre a Rede Virtual</h3>
                     </div>
                 </div>
             </div>
@@ -53,7 +40,7 @@ An Azure Virtual Network (VNet) is a logical representation of your own network 
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Virtual Network Video Library</h3>
+                        <h3>Biblioteca de Vídeo da Rede Virtual</h3>
                     </div>
                 </div>
             </div>
@@ -61,7 +48,7 @@ An Azure Virtual Network (VNet) is a logical representation of your own network 
         </a>
     </li>
     <li>
-        <a href="/azure/Virtual-Network/virtual-networks-create-vnet-arm-portal">
+        <a href="/azure/Virtual-Network/virtual-networks-create-vnet-arm-pportal">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
@@ -71,7 +58,7 @@ An Azure Virtual Network (VNet) is a logical representation of your own network 
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Create a virtual network using the Azure portal</h3>
+                        <h3>Introdução à Rede Virtual com o Portal do Azure</h3>
                     </div>
                 </div>
             </div>
@@ -89,7 +76,7 @@ An Azure Virtual Network (VNet) is a logical representation of your own network 
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Create a virtual network using PowerShell</h3>
+                        <h3>Introdução à Rede Virtual com o PowerShell</h3>
                     </div>
                 </div>
             </div>
@@ -107,7 +94,7 @@ An Azure Virtual Network (VNet) is a logical representation of your own network 
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Create a virtual network using the Azure CLI</h3>
+                        <h3>Introdução à Rede Virtual com a CLI do Azure</h3>
                     </div>
                 </div>
             </div>
@@ -118,29 +105,92 @@ An Azure Virtual Network (VNet) is a logical representation of your own network 
 
 ---
 
-##Reference
+## <a name="reference"></a>Referência
 
-###PowerShell
-[Virtual Network PowerShell Reference](/powershell/azureps-cmdlets-doc)
-
-###Azure CLI
-[Virtual Network Azure CLI] (/cli/azure/network/vnet)
-
-###.NET
-[.NET API Reference](/dotnet/api)
-
-###Java
-[Java API Reference](/java/api)
-
-###REST
-[Virtual Network REST API Reference](https://msdn.microsoft.com/library/azure/mt163658.aspx)
+<ul class="panelContent cardsW">
+    <li>
+        <a href="/powershell/azureps-cmdlets-doc">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>PowerShell</h3>
+                        <p>Referência ao Azure PowerShell</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+    <li>
+        <a href="/cli/azure/network/vnet">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>CLI do Azure</h3>
+                        <p>CLI do Azure da Rede Virtual</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+    <li>
+        <a href="/dotnet/api">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>.NET</h3>
+                        <p>Referência da API .NET</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>   
+    <li>
+        <a href="/java/api">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>Java</h3>
+                        <p>Referência de Java API</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+    <li>
+        <a href="https://msdn.microsoft.com/library/azure/mt163658">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>REST</h3>
+                        <p>Referência da API REST da Rede Virtual</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+</ul>
 
 
 <div class="downloadHolder">
     <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/virtual-network.pdf">
         <div class="img"></div>
         <div class="text">
-            Download Virtual Network Documentation
-        </div>
+Transferir a Documentação da Rede Virtual </div>
     </a>
 </div>
+
+
+
+<!--HONumber=Nov16_HO4-->
+
+

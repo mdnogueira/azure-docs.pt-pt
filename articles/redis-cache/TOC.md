@@ -46,7 +46,7 @@
 ###[Utilizar o cluster de Redis para reduzir/aumentar horizontalmente](cache-how-to-premium-clustering.md)
 
 #Referência
-## [PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs/)
+## [PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)
 ## [CLI do Azure](https://docs.microsoft.com/cli/azure/)
 ## [Java](https://docs.microsoft.com/java/api/)
 ## [.NET](https://docs.microsoft.com/dotnet/api/)
@@ -60,6 +60,6 @@
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO4-->
 
 
