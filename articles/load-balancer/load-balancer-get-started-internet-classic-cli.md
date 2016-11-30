@@ -3,8 +3,8 @@ title: "Introdução à criação de um balanceador de carga com acesso à Inter
 description: "Saiba como criar um balanceador de carga com acesso à Internet num modelo de implementação clássica com a CLI do Azure"
 services: load-balancer
 documentationcenter: na
-author: sdwheeler
-manager: carmonm
+author: kumudd
+manager: timlt
 tags: azure-service-management
 ms.assetid: e433a824-4a8a-44d2-8765-a74f52d4e584
 ms.service: load-balancer
@@ -13,7 +13,7 @@ ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/09/2016
-ms.author: sewhee
+ms.author: kumud
 translationtype: Human Translation
 ms.sourcegitcommit: cf1eafc7bca5bddeb32f1e1e05e660d6877ed805
 ms.openlocfilehash: 337399d1f832830665be92a97a8458b7a959845b
@@ -55,7 +55,7 @@ Este guia mostra como criar um balanceador de carga com acesso à Internet com b
 O cenário pressupõe que foram criadas as máquinas virtuais "web1" e "web2".
 Este guia irá criar um conjunto de balanceadores de carga através da porta 80 como porta pública e a porta 80 como porta local. Uma porta de sonda também é configurada na porta 80 e é atribuído ao conjunto de balanceadores de carga o nome "lbset".
 
-### <a name="step-1"></a>Passo 1
+### <a name="step-1"></a>Passo 1
 
 Crie o primeiro ponto final e carregue o conjunto de balanceadores de carga através de `azure network vm endpoint create` para a máquina virtual "web1".
 
@@ -63,7 +63,7 @@ Crie o primeiro ponto final e carregue o conjunto de balanceadores de carga atra
 azure vm endpoint create web1 80 --local-port 80 --protocol tcp --probe-port 80 --load-balanced-set-name lbset
 ```
 
-## <a name="step-2"></a>Passo 2
+## <a name="step-2"></a>Passo 2
 
 Adicione uma segunda máquina virtual "web2" para o conjunto de balanceadores de carga.
 
@@ -71,7 +71,7 @@ Adicione uma segunda máquina virtual "web2" para o conjunto de balanceadores de
 azure vm endpoint create web2 80 --local-port 80 --protocol tcp --probe-port 80 --load-balanced-set-name lbset
 ```
 
-## <a name="step-3"></a>Passo 3
+## <a name="step-3"></a>Passo 3
 
 Verifique a configuração do balanceador de carga através de `azure vm show` .
 

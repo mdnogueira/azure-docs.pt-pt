@@ -3,8 +3,8 @@ title: "Introdução à criação de um balanceador de carga com acesso à Inter
 description: "Saiba como criar um balanceador de carga com acesso à Internet no modo clássico com o PowerShell"
 services: load-balancer
 documentationcenter: na
-author: sdwheeler
-manager: carmonm
+author: kumudd
+manager: timlt
 tags: azure-service-management
 ms.assetid: 73e8bfa4-8086-4ef0-9e35-9e00b24be319
 ms.service: load-balancer
@@ -13,7 +13,7 @@ ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/05/2016
-ms.author: sewhee
+ms.author: kumud
 translationtype: Human Translation
 ms.sourcegitcommit: cf1eafc7bca5bddeb32f1e1e05e660d6877ed805
 ms.openlocfilehash: 16ebe82b866565f676fb33bfa915465c08a5ea89
@@ -44,7 +44,7 @@ Para configurar um balanceador de carga com o PowerShell, siga os passos abaixo:
 
 No exemplo seguinte, irá adicionar um conjunto de balanceadores de carga denominado "webfarm" ao serviço em nuvem "mytestcloud" (ou myctestcloud.cloudapp.net) ao adicionar os pontos finais do balanceador de carga às máquinas virtuais com o nome "web1" e "web2". O balanceador de carga recebe o tráfego de rede na porta 80 e efetua o balanceamento de carga entre as máquinas virtuais definidas pelo ponto final local (neste caso, a porta 80) através de TCP.
 
-### <a name="step-1"></a>Passo 1
+### <a name="step-1"></a>Passo 1
 
 Criar um ponto final com balanceamento de carga para a primeira VM "web1"
 
@@ -52,7 +52,7 @@ Criar um ponto final com balanceamento de carga para a primeira VM "web1"
 Get-AzureVM -ServiceName "mytestcloud" -Name "web1" | Add-AzureEndpoint -Name "HttpIn" -Protocol "tcp" -PublicPort 80 -LocalPort 80 -LBSetName "WebFarm" -ProbePort 80 -ProbeProtocol "http" -ProbePath '/' | Update-AzureVM
 ```
 
-### <a name="step-2"></a>Passo 2
+### <a name="step-2"></a>Passo 2
 
 Criar outro ponto final para a segunda VM "web2" com o mesmo nome de conjunto de balanceadores de carga
 
