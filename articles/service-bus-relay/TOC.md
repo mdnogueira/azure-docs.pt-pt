@@ -21,7 +21,7 @@
 ## [Amostras](service-bus-relay-samples.md)
 ## [.NET API do Protocolo das Ligações Híbridas](/dotnet/api/microsoft.servicebus)
 ## [Tutorial .NET API do Reencaminhamento WCF](/dotnet/api/microsoft.servicebus)
-
+## [Definições de porta](service-bus-relay-port-settings.md)
 
 # Recursos
 ## [Blogue](https://blogs.msdn.microsoft.com/servicebus/)
@@ -33,6 +33,6 @@
 ## [Vídeos](https://azure.microsoft.com/documentation/videos/index/?services=service-bus)
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Nov16_HO5-->
 
 

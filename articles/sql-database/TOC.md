@@ -111,7 +111,7 @@
 ### Saiba mais
 #### [Descrição geral](sql-database-business-continuity.md)
 #### [Cópias de segurança de bases de dados](sql-database-automated-backups.md)
-#### [Retenção de longa duração](sql-database-long-term-retention.md) 
+#### [Retenção de longa duração](sql-database-long-term-retention.md)
 #### [Recuperação de bases de dados com a utilização de cópias de segurança](sql-database-recovery-using-backups.md)
 #### [Requisitos de autenticação para a recuperação após desastre](sql-database-geo-replication-security-config.md)
 #### [Cenários de design de continuidade de negócio](sql-database-designing-cloud-solutions-for-disaster-recovery.md)
@@ -210,7 +210,7 @@
 #### [Dividir e intercalar a configuração de segurança](sql-database-elastic-scale-split-merge-security-configuration.md)
 #### [Trabalhar com o Dapper](sql-database-elastic-scale-working-with-dapper.md)
 #### [Utilizar o Entity Framework](sql-database-elastic-scale-use-entity-framework-applications-visual-studio.md)
-#### [Encaminhamento dependente de dados](sql-database-elastic-scale-data-dependent-routing.md)
+#### [ncaminhamento Dependente de Dados](sql-database-elastic-scale-data-dependent-routing.md)
 #### [Segurança ao nível de linha multi-inquilino](sql-database-elastic-tools-multi-tenant-row-level-security.md)
 #### [Gerir credenciais](sql-database-elastic-scale-manage-credentials.md)
 #### [Implementar um serviço de divisão/intercalação](sql-database-elastic-scale-configure-deploy-split-and-merge.md)
@@ -358,8 +358,6 @@
 ## [BCP](https://msdn.microsoft.com/library/ms162802.aspx)
 ## [SQLCMD](https://msdn.microsoft.com/library/ms162773.aspx)
 ## [SqlPackage](https://msdn.microsoft.com/hh550080.aspx)
-
-
 
 
 <!--HONumber=Nov16_HO4-->

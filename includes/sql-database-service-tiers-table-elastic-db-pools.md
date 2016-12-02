@@ -1,72 +1,72 @@
 
 ### <a name="basic-elastic-pool-limits"></a>Limites do conjunto elástico básico
 
-|   |  |
-|---|:---:|
-| Máximo de eDTUs por conjunto | &nbsp;100 &nbsp;&nbsp;&nbsp; 200 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 400 &nbsp;&nbsp;&nbsp;&nbsp; 800 &nbsp;&nbsp;&nbsp;&nbsp; 1200 |
-| Armazenamento máximo por conjunto (GB)*| &nbsp;&nbsp;&nbsp;&nbsp;10 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;39 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;73 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;117 |
-| Número máximo de bases de dados por conjunto | &nbsp;&nbsp;&nbsp;200 &nbsp;&nbsp;&nbsp;&nbsp;400 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;400 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;400 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;400 |
-| Armazenamento OLTP máximo em memória (GB) por conjunto| N/D |
-| Máximo de trabalhadores simultâneos por conjunto | &nbsp;&nbsp;&nbsp;200 &nbsp;&nbsp; 400 &nbsp;&nbsp;&nbsp;&nbsp; 800 &nbsp;&nbsp;&nbsp; 1600 &nbsp;&nbsp;&nbsp;&nbsp;2400 |
-| Máximo de inícios de sessão simultâneos por conjunto | &nbsp;&nbsp;&nbsp;200 &nbsp;&nbsp; 400 &nbsp;&nbsp;&nbsp;&nbsp; 800 &nbsp;&nbsp;&nbsp; 1600 &nbsp;&nbsp;&nbsp;&nbsp;2400 |
-| Máximo de sessões simultâneas por conjunto | 4800 &nbsp;9600 &nbsp; 19200 &nbsp; 28800 &nbsp; 28800 |
-| Máximo de eDTUs por base de dados* | 5 |
-| Mínimo de eDTUs por base de dados* | 0,5 |
-| Armazenamento máximo por base de dados (GB)** | 2 |
-| Restauro para um ponto anterior no tempo | Qualquer ponto nos últimos 7 dias |
-| Recuperação após desastre | Georreplicação Ativa |
-|||
-
-* O número máximo e mínimo de eDTUs por base de dados pode ser definido como qualquer um dos valores listados, desde que o tamanho da DTU do conjunto selecionado seja, pelo menos, igual ao máximo de eDTUs por DB 
-
-** A base de dados elástica partilha o armazenamento do conjunto, pelo que o armazenamento da base de dados é limitado ao armazenamento mais pequeno do conjunto restante ou ao armazenamento máximo por base de dados
-
+| Tamanho do conjunto (eDTUs)  | **50** | **100** | **200** | **300** | **400** | **800** | **1200** | **1600** |
+|:---|---:|---:|---:| ---: | ---: | ---: | ---: | ---: |
+| Armazenamento máximo por conjunto* | 5 GB| 10 GB| 20 GB| 29 GB| 39 GB| 78 GB| 117 GB| 156 GB|
+| Número de DBs máximo por conjunto | 100 | 200 | 500 | 500 | 500 | 500 | 500 | 500 |
+| Máximo de trabalhadores simultâneos por conjunto | 100 | 200 | 400 | 600 | 800 | 1600 | 2400 | 3200 |
+| Máximo de inícios de sessão simultâneos por conjunto | 100 | 200 | 400 | 600 | 800 | 1600 | 2400 | 3200 |
+| Máximo de sessões simultâneas por conjunto | 30000 | 30000 | 30000 | 30000 |30000 | 30000 | 30000 | 30000 |
+| Mínimo de eDTUs por base de dados | {0, 5} | {0, 5} | {0, 5} | {0, 5} | {0, 5} | {0, 5} | {0, 5} | {0, 5} | {0, 5} |
+| Máximo de eDTUs por base de dados | {5} | {5} | {5} | {5} | {5} | {5} | {5} | {5} | {5} |
+||||||||
 
 ### <a name="standard-elastic-pool-limits"></a>Limites do conjunto elástico padrão
 
-|   |  |
-|---|:---:|
-| Máximo de eDTUs por conjunto | &nbsp;100 &nbsp;&nbsp;&nbsp; 200 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 400 &nbsp;&nbsp;&nbsp;&nbsp; 800 &nbsp;&nbsp;&nbsp;&nbsp; 1200 |
-| Armazenamento máximo por conjunto (GB)*| &nbsp;100 &nbsp;&nbsp;&nbsp; 200 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 400 &nbsp;&nbsp;&nbsp;&nbsp; 800 &nbsp;&nbsp;&nbsp;&nbsp; 1200 |
-| Número máximo de bases de dados por conjunto | &nbsp;200 &nbsp;&nbsp;&nbsp;&nbsp;400 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;400 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;400 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;400 |
-| Armazenamento OLTP máximo em memória (GB) por conjunto| N/D |
-| Máximo de trabalhadores simultâneos por conjunto | &nbsp;&nbsp;200 &nbsp;&nbsp;&nbsp; 400 &nbsp;&nbsp;&nbsp; 800 &nbsp;&nbsp; 1600 &nbsp;&nbsp;&nbsp; 2400 |
-| Máximo de inícios de sessão simultâneos por conjunto | &nbsp;&nbsp;200 &nbsp;&nbsp;&nbsp; 400 &nbsp;&nbsp;&nbsp; 800 &nbsp;&nbsp; 1600 &nbsp;&nbsp;&nbsp; 2400 |
-| Máximo de sessões simultâneas por conjunto | 4800 &nbsp; 9600 &nbsp;19200 &nbsp;28800 &nbsp;&nbsp; 28800 |
-| Máximo de eDTUs por base de dados* | 10, 20, 50, 100 |
-| Mínimo de eDTUs por base de dados* | 0, 10, 20, 50, 100 |
-| Armazenamento máximo por base de dados (GB)** | 250 |
-| Restauro para um ponto anterior no tempo | Qualquer ponto nos últimos 35 dias |
-| Recuperação após desastre | Georreplicação Ativa |
-|||
+| Tamanho do conjunto (eDTUs)  | **50** | **100** | **200** | **300** | **400** | **800** | 
+|:---|---:|---:|---:| ---: | ---: | ---: | ---: |---: |---: |---: |---: |
+| Armazenamento máximo por conjunto* | 50 GB| 100 GB| 200 GB | 300 GB| 400 GB | 800 GB | 
+| Número de DBs máximo por conjunto | 100 | 200 | 500 | 500 | 500 | 500 | 
+| Máximo de trabalhadores simultâneos por conjunto | 100 | 200 | 400 | 600 |  800 | 1600 |
+| Máximo de inícios de sessão simultâneos por conjunto | 100 | 200 | 400 | 600 |  800 | 1600 |
+| Máximo de sessões simultâneas por conjunto | 30000 | 30000 | 30000 | 30000 | 30000 | 30000 |
+| Mínimo de eDTUs por base de dados | {0,10,20,<br>50} | {0,10,20,<br>50,100} | {0,10,20,<br>50,100} | {0,10,20,<br>50,100} | {0,10,20,<br>50,100} | {0,10,20,<br>50,100} |
+| Máximo de eDTUs por base de dados | {10,20,<br>50} | {10,20,<br>50,100} | {10,20,<br>50,100} | {10,20,<br>50,100} | {10,20,<br>50,100} | {10,20,<br>50,100} | 
+||||||||
 
-* O número máximo e mínimo de eDTUs por base de dados pode ser definido como qualquer um dos valores listados, desde que o tamanho da DTU do conjunto selecionado seja, pelo menos, igual ao máximo de eDTUs por DB 
+### <a name="standard-elastic-pool-limits-continued"></a>Limites do conjunto elástico standard (continuação)
 
-** A base de dados elástica partilha o armazenamento do conjunto, pelo que o armazenamento da base de dados é limitado ao armazenamento mais pequeno do conjunto restante ou ao armazenamento máximo por base de dados
+| Tamanho do conjunto (eDTUs)  |  **1200** | **1600** | **2000** | **2500** | 
+|:---|---:|---:|---:| ---: | ---: | ---: | ---: |---: |---: |---: |
+| Armazenamento máximo por conjunto* | 1.2 TB | 1.6 TB | 2 TB | 2.4 TB | 
+| Número de DBs máximo por conjunto | 500 | 500 | 500 | 500 | 500 | 
+| Máximo de trabalhadores simultâneos por conjunto |  2400 | 3200 | 4000 | 5000 |
+| Máximo de inícios de sessão simultâneos por conjunto |  2400 | 3200 | 4000 | 5000 | 
+| Máximo de sessões simultâneas por conjunto | 30000 | 30000 | 30000 | 30000 |30000 | 
+| Mínimo de eDTUs por base de dados | {0,10,20,<br>50,100} | {0,10,20,<br>50,100} | {0,10,20,<br>50,100} | {0,10,20,<br>50,100} | {0,10,20,<br>50,100} |
+| Máximo de eDTUs por base de dados | {10,20,<br>50,100} | {10,20,<br>50,100} | {10,20,<br>50,100} | {10,20,<br>50,100} | {10,20,<br>50,100} | 
+||||||||
 
 ### <a name="premium-elastic-pool-limits"></a>Limites do conjunto elástico premium
 
-|   |  |
-|---|:---:|
-| Máximo de eDTUs por conjunto | 125 &nbsp;&nbsp;&nbsp; 250 &nbsp;&nbsp;&nbsp; 500 &nbsp;&nbsp;&nbsp; 1000 &nbsp;&nbsp;&nbsp; &nbsp;1500 |
-| Armazenamento máximo por conjunto (GB)*| 250 &nbsp;&nbsp;&nbsp; 500 &nbsp;&nbsp;&nbsp; 750 &nbsp;&nbsp;&nbsp;&nbsp; 750 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 750 |
-| Número máximo de bases de dados por conjunto | 50 |
-| Armazenamento OLTP máximo em memória (GB) por conjunto| &nbsp;&nbsp; 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;12 |
-| Máximo de trabalhadores simultâneos por conjunto | &nbsp;&nbsp;200 &nbsp;&nbsp;&nbsp; 400 &nbsp;&nbsp;&nbsp; 800 &nbsp;&nbsp; 1600 &nbsp;&nbsp;&nbsp; 2400 |
-| Máximo de inícios de sessão simultâneos por conjunto | &nbsp;&nbsp;200 &nbsp;&nbsp;&nbsp; 400 &nbsp;&nbsp;&nbsp; 800 &nbsp;&nbsp; 1600 &nbsp;&nbsp;&nbsp; 2400 |
-| Máximo de sessões simultâneas por conjunto | 4800 &nbsp; 9600 &nbsp;19200 &nbsp;28800 &nbsp;&nbsp; 28800 |
-| Máximo de eDTUs por base de dados* | 125, 250, 500, 1000 |
-| Mínimo de eDTUs por base de dados* | 0, 125, 250, 500, 1000 |
-| Armazenamento máximo por base de dados (GB)** | 500 |
-| Restauro para um ponto anterior no tempo | Qualquer ponto nos últimos 35 dias |
-| Recuperação após desastre | Georreplicação Ativa |
-|||
+| Tamanho do conjunto (eDTUs)  | **125** | **250** | **500** | **1000** | **1500** | 
+|:---|---:|---:|---:| ---: | ---: | ---: | ---: |---: |---: |---: |
+| Armazenamento máximo por conjunto* | 250 GB| 500 GB| 750 GB| 750 GB| 750 GB| 
+| Número de DBs máximo por conjunto | 50 | 100 | 100 | 100 | 100 |  
+| Máximo de trabalhadores simultâneos por conjunto | 200 | 400 | 800 | 1600 |  2400 | 
+| Máximo de inícios de sessão simultâneos por conjunto | 200 | 400 | 800 | 1600 |  2400 |
+| Máximo de sessões simultâneas por conjunto | 30000 | 30000 | 30000 | 30000 | 30000 | 
+| Mínimo de eDTUs por base de dados | {0,25,50,75,<br>125} | {0,25,50,75,<br>125,250} | {0,25,50,75,<br>125,250,500} | {0,25,50,75,<br>125,250,500,<br>1000} | {0,25,50,75,<br>125,250,500,<br>1000} | 
+| Máximo de eDTUs por base de dados | {25,50,75,<br>125} | {25,50,75,<br>125,250} | {25,50,75,<br>125,250,500} | {25,50,75,<br>125,250,500,<br>1000} | {25,50,75,<br>125,250,500,<br>1000} |  
+||||||||
 
-* O número máximo e mínimo de eDTUs por base de dados pode ser definido como qualquer um dos valores listados, desde que o tamanho da DTU do conjunto selecionado seja, pelo menos, igual ao máximo de eDTUs por DB 
+### <a name="premium-elastic-pool-limits-continued"></a>Limites do conjunto elástico premium (continuação)
 
-** A base de dados elástica partilha o armazenamento do conjunto, pelo que o armazenamento da base de dados é limitado ao armazenamento mais pequeno do conjunto restante ou ao armazenamento máximo por base de dados
+| Tamanho do conjunto (eDTUs)  |  **2000** | **2500** | **3000** | **3500** | 
+|:---|---:|---:|---:| ---: | ---: | ---: | ---: |---: |---: |---: |
+| Armazenamento máximo por conjunto* | 750 GB| 750 GB| 750 GB| 750 GB| 
+| Número de DBs máximo por conjunto | 100 | 100 | 100 | 100 | 100 | 
+| Máximo de trabalhadores simultâneos por conjunto |  3200 | 4000 | 4800 | 5600 | 
+| Máximo de inícios de sessão simultâneos por conjunto |  3200 | 4000 | 4800 | 5600 | 
+| Máximo de sessões simultâneas por conjunto | 30000 | 30000 | 30000 | 30000 | 30000 | 
+| Mínimo de eDTUs por base de dados | {0,25,50,75,<br>125,250,500,<br>1000,1750} | {0,25,50,75,<br>125,250,500,<br>1000,1750} | {0,25,50,75,<br>125,250,500,<br>1000,1750} | {0,25,50,75,<br>125,250,500,<br>1000,1750} | 
+| Máximo de eDTUs por base de dados | {25,50,75,<br>125,250,500,<br>1000,1750} | {25,50,75,<br>125,250,500,<br>1000,1750} | {25,50,75,<br>125,250,500,<br>1000,1750} | {25,50,75,<br>125,250,500,<br>1000,1750} | 
+||||||||
+
+\* A base de dados elástica partilha o armazenamento do conjunto, pelo que o armazenamento da base de dados é limitado ao armazenamento mais pequeno do conjunto restante ou ao armazenamento máximo por base de dados
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO5-->
 
 

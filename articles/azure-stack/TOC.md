@@ -79,7 +79,6 @@
 
 # Resolução de problemas
 ## [Resolver problemas do Azure Stack](azure-stack-troubleshooting.md)
-## [Fornecedor de Recursos de Aplicações Web](azure-stack-webapps-troubleshoot-known-issues.md)
 
 # Recursos
 ## [Ferramentas](azure-stack-tools-paas-services.md)

@@ -13,7 +13,7 @@
 ### [Importar uma definição de API](api-management-howto-import-api.md)
 ## Proteger o back-end
 ### [Proteger o back-end da API Web com AAD](api-management-howto-protect-backend-with-aad.md)
-### [Ligar via VPN ou ExpressRoute](api-management-howto-setup-vpn.md)
+### [Ligar a uma rede virtual](api-management-using-with-vnet.md)
 ### [Autenticação de Certificados Mútuos](api-management-howto-mutual-certificates.md)
 ## Configure Políticas
 ### [Colocação em cache personalizada](api-management-sample-cache-by-key.md)
@@ -63,6 +63,6 @@
 
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Nov16_HO5-->
 
 
