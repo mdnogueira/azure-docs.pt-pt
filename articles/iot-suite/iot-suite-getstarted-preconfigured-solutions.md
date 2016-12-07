@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 08/16/2016
+ms.date: 11/16/2016
 ms.author: dobett
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 8ec86ebefccaf74c67cb7917ccf7d538bc95ae07
+ms.sourcegitcommit: 1a6dd35278f0a4a4f972642c40a0976986dd79ae
+ms.openlocfilehash: 79c9f2d8c683be493160fffe40992006b039f60f
 
 
 ---
@@ -112,7 +112,7 @@ Os seguintes passos mostram como adicionar um dispositivo simulado à solução:
     ![Ver telemetria do novo dispositivo][img-runningnew-2]
 
 ## <a name="edit-the-device-metadata"></a>Editar os metadados do dispositivo
-Quando um dispositivo estabelece ligação à solução pela primeira vez, este envia os respetivos metadados para a solução. Quando edita os metadados do dispositivo através do dashboard da solução, este envia os novos valores de metadados para o dispositivo e armazena os novos valores na base de dados DocumentDB da solução. Para obter mais informações, veja [Registo de identidade do dispositivo e DocumentDB][lnk devicemetadata].
+Quando um dispositivo estabelece ligação à solução pela primeira vez, este envia os respetivos metadados para a solução. Quando edita os metadados do dispositivo através do dashboard da solução, este envia os novos valores de metadados para o dispositivo e armazena os novos valores na base de dados DocumentDB da solução. Para obter mais informações, veja [Registo de identidade do dispositivo e DocumentDB][lnk-devicemetadata].
 
 1. Navegue de volta para a lista de dispositivos.
 2. Selecione o novo dispositivo na **Lista de Dispositivos** e, em seguida, clique em **Editar** para editar as **Propriedades do Dispositivo**:
@@ -180,7 +180,7 @@ Pode ainda ver o código de origem para a solução pré-configurada. Encontrar�
 Quando terminar, pode eliminar a solução pré-configurada da sua subscrição do Azure no site [azureiotsuite.com][lnk-azureiotsuite]. Este site permite-lhe eliminar facilmente todos os recursos que foram aprovisionados quando criou a solução pré-configurada.
 
 > [!NOTE]
-> Para garantir que elimina tudo o que está relacionado com a solução pré-configurada, elimine no site [azureiotsuite.com][lnk-azureiotsuite] em vez de eliminar o grupo de recursos no portal.
+> Para garantir que elimina tudo o que está relacionado com a solução pré-configurada, elimine-a no site [azureiotsuite.com][lnk-azureiotsuite] e não elimine o grupo de recursos no portal.
 > 
 > 
 
@@ -229,6 +229,6 @@ Agora que implementou uma solução pré-configurada funcional, pode ler os arti
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO3-->
 
 

@@ -3,9 +3,8 @@ title: "Introdução à criação de um balanceador de carga com acesso à Inter
 description: "Saiba como criar um balanceador de carga com acesso à Internet num modelo de implementação clássica com a CLI do Azure"
 services: load-balancer
 documentationcenter: na
-author: sdwheeler
-manager: carmonm
-editor: 
+author: kumudd
+manager: timlt
 tags: azure-service-management
 ms.assetid: e433a824-4a8a-44d2-8765-a74f52d4e584
 ms.service: load-balancer
@@ -14,61 +13,71 @@ ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/09/2016
-ms.author: sewhee
+ms.author: kumud
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: e8a346c1b2d430eceb4aa1b8bc94fbbe89394556
-
+ms.sourcegitcommit: cf1eafc7bca5bddeb32f1e1e05e660d6877ed805
+ms.openlocfilehash: 337399d1f832830665be92a97a8458b7a959845b
 
 ---
+
 # <a name="get-started-creating-an-internet-facing-load-balancer-classic-in-the-azure-cli"></a>Introdução à criação de um balanceador de carga com acesso à Internet (modo clássico) na CLI do Azure
-[!INCLUDE [load-balancer-get-started-internet-classic-selectors-include.md](../../includes/load-balancer-get-started-internet-classic-selectors-include.md)]
+
+> [!div class="op_single_selector"]
+> * [Portal Clássico do Azure](../load-balancer/load-balancer-get-started-internet-classic-portal.md)
+> * [PowerShell](../load-balancer/load-balancer-get-started-internet-classic-ps.md)
+> * [CLI do Azure](../load-balancer/load-balancer-get-started-internet-classic-cli.md)
+> * [Serviços em Nuvem do Azure](../load-balancer/load-balancer-get-started-internet-classic-cloud.md)
 
 [!INCLUDE [load-balancer-get-started-internet-intro-include.md](../../includes/load-balancer-get-started-internet-intro-include.md)]
 
-[!INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)]
-
-Este artigo abrange o modelo de implementação clássica. Também pode [saber como criar um balanceador de carga com acesso à Internet com o Azure Resource Manager](load-balancer-get-started-internet-arm-ps.md).
+> [!IMPORTANT]
+> Para trabalhar com recursos do Azure, é importante compreender que o Azure tem atualmente dois modelos de implementação: o Azure Resource Manager e a implementação clássica. Confirme que compreende os [modelos e ferramentas de implementação](../azure-classic-rm.md) antes de trabalhar com qualquer recurso do Azure. Pode ver a documentação de diversas ferramentas clicando nos separadores na parte superior deste artigo. Este artigo abrange o modelo de implementação clássica. Também pode [saber como criar um balanceador de carga com acesso à Internet com o Azure Resource Manager](load-balancer-get-started-internet-arm-ps.md).
 
 [!INCLUDE [load-balancer-get-started-internet-scenario-include.md](../../includes/load-balancer-get-started-internet-scenario-include.md)]
 
 ## <a name="step-by-step-creating-an-internet-facing-load-balancer-using-cli"></a>Criação passo a passo de um balanceador de carga com acesso à Internet com a CLI
+
 Este guia mostra como criar um balanceador de carga com acesso à Internet com base no cenário acima.
 
 1. Se nunca tiver utilizado a CLI do Azure, veja [Install and Configure the Azure CLI (Instalar e Configurar a CLI do Azure)](../xplat-cli-install.md) e siga as instruções até ao ponto onde poderá selecionar a sua conta e subscrição do Azure.
 2. Execute o comando **azure config mode** para mudar para o modo clássico, como mostrado abaixo.
-   
-        azure config mode asm
-   
+
+    ```azurecli
+    azure config mode asm
+    ```
+
     Resultado esperado:
-   
+
         info:    New mode is asm
 
 ## <a name="create-endpoint-and-load-balancer-set"></a>Criar o ponto final e o conjunto de balanceadores de carga
+
 O cenário pressupõe que foram criadas as máquinas virtuais "web1" e "web2".
 Este guia irá criar um conjunto de balanceadores de carga através da porta 80 como porta pública e a porta 80 como porta local. Uma porta de sonda também é configurada na porta 80 e é atribuído ao conjunto de balanceadores de carga o nome "lbset".
 
-### <a name="step-1"></a>Passo 1
+### <a name="step-1"></a>Passo 1
+
 Crie o primeiro ponto final e carregue o conjunto de balanceadores de carga através de `azure network vm endpoint create` para a máquina virtual "web1".
 
-    azure vm endpoint create web1 80 -k 80 -o tcp -t 80 -b lbset
+```azurecli
+azure vm endpoint create web1 80 --local-port 80 --protocol tcp --probe-port 80 --load-balanced-set-name lbset
+```
 
-Parâmetros utilizados:
+## <a name="step-2"></a>Passo 2
 
-**-k** – porta da máquina virtual local<br>
-**-o** – protocolo<BR>
-**-t** – porta de sonda<BR>
-**-b** – nome do balanceador de carga<BR>
-
-## <a name="step-2"></a>Passo 2
 Adicione uma segunda máquina virtual "web2" para o conjunto de balanceadores de carga.
 
-    azure vm endpoint create web2 80 -k 80 -o tcp -t 80 -b lbset
+```azurecli
+azure vm endpoint create web2 80 --local-port 80 --protocol tcp --probe-port 80 --load-balanced-set-name lbset
+```
 
-## <a name="step-3"></a>Passo 3
+## <a name="step-3"></a>Passo 3
+
 Verifique a configuração do balanceador de carga através de `azure vm show` .
 
-    azure vm show web1
+```azurecli
+azure vm show web1
+```
 
 O resultado será:
 
@@ -115,25 +124,28 @@ O resultado será:
     info:    vm show command OK
 
 ## <a name="create-a-remote-desktop-endpoint-for-a-virtual-machine"></a>Criar um ponto final de ambiente de trabalho remoto para uma máquina virtual
+
 Pode criar um ponto final de ambiente de trabalho remoto para reencaminhar o tráfego de rede de uma porta pública para uma porta local de uma máquina virtual específica através de `azure vm endpoint create`.
 
-    azure vm endpoint create web1 54580 -k 3389
-
+```azurecli
+azure vm endpoint create web1 54580 -k 3389
+```
 
 ## <a name="remove-virtual-machine-from-load-balancer"></a>Remover uma máquina virtual do balanceador de carga
+
 Tem de eliminar o ponto final associado ao conjunto de balanceadores de carga da máquina virtual. Após a remoção do ponto final, a máquina virtual já não pertence ao conjunto de balanceadores de carga.
 
- Através do exemplo acima, pode remover o ponto final criado para a máquina virtual "web1" do balanceador de carga "lbset" com o comando `azure vm endpoint delete`.
+Através do exemplo acima, pode remover o ponto final criado para a máquina virtual "web1" do balanceador de carga "lbset" com o comando `azure vm endpoint delete`.
 
-    azure vm endpoint delete web1 tcp-80-80
-
+```azurecli
+azure vm endpoint delete web1 tcp-80-80
+```
 
 > [!NOTE]
 > Pode explorar mais opções para gerir pontos finais com o comando `azure vm endpoint --help`
-> 
-> 
 
 ## <a name="next-steps"></a>Passos seguintes
+
 [Começar a configurar um balanceador de carga interno](load-balancer-get-started-ilb-arm-ps.md)
 
 [Configurar um modo de distribuição de balanceador de carga](load-balancer-distribution-mode.md)
@@ -142,7 +154,6 @@ Tem de eliminar o ponto final associado ao conjunto de balanceadores de carga da
 
 
 
-
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO3-->
 
 

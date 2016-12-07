@@ -1,5 +1,5 @@
 ---
-title: "Funções da Web e de trabalho do Python com Visual Studio | Microsoft Docs"
+title: "Introdução a Python e aos Serviços Cloud do Azure | Microsoft Docs"
 description: "Descrição geral da utilização das Ferramentas do Python para Visual Studio para a criação de Cloud Services do Azure, incluindo funções da Web e funções de trabalho."
 services: cloud-services
 documentationcenter: python
@@ -12,15 +12,21 @@ ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.devlang: python
 ms.topic: hero-article
-ms.date: 08/03/2016
+ms.date: 11/16/2016
 ms.author: adegeo
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: d951e05a9a0ae59adb64d53726e9898d95424d80
+ms.sourcegitcommit: 712c62ed3d5ff21847e2431df3530e7d39c6aae2
+ms.openlocfilehash: 53f7c17d8404bb02ab8bb2be9018ba2b179f1b08
 
 
 ---
 # <a name="python-web-and-worker-roles-with-python-tools-for-visual-studio"></a>Funções da Web e de trabalho do Python com Ferramentas de Python para Visual Studio
+
+> [!div class="op_single_selector"]
+> * [.NET](cloud-services-dotnet-get-started.md)
+> * [Node.js](cloud-services-nodejs-develop-deploy-app.md)
+> * [python](cloud-services-python-ptvs.md)
+
 Este artigo fornece uma descrição geral da utilização de funções da Web e de trabalho do Python através das [Ferramentas do Python para Visual Studio][Ferramentas do Python para Visual Studio]. Ficará a saber como utilizar o Visual Studio para criar e implementar um Serviço em Nuvem básico que utiliza o Python.
 
 ## <a name="prerequisites"></a>Pré-requisitos
@@ -166,7 +172,7 @@ As variáveis **PYTHON2** e **PYPATH** têm de ser adicionadas à tarefa de arra
 Em seguida, crie os ficheiros **PrepPython.ps1** e **PipInstaller.ps1** na pasta **. /bin** da sua função.
 
 #### <a name="preppythonps1"></a>PrepPython.ps1
-Este script instala o Python. Se a variável do ambiente **PYTHON2** estiver definida como **Ligado**, o Python 2.7 será instalado, caso contrário será instalado o Python 3.5.
+Este script instala o Python. Se a variável do ambiente **PYTHON2** estiver definida como **Ligado**, o Python 2.7 será instalado; caso contrário, será instalado o Python 3.5.
 
 ```powershell
 $is_emulated = $env:EMULATED -eq "true"
@@ -212,7 +218,7 @@ if (-not $is_emulated){
 ```
 
 #### <a name="pipinstallerps1"></a>PipInstaller.ps1
-Este script chama o pip e instala todas as dependências no ficheiro **requirements.txt**. Se a variável do ambiente **PYTHON2** estiver definida como **Ligado**, o Python 2.7 será utilizado, caso contrário será utilizado o Python 3.5.
+Este script chama o pip e instala todas as dependências no ficheiro **requirements.txt**. Se a variável do ambiente **PYTHON2** estiver definida como **Ligado**, o Python 2.7 será utilizado; caso contrário, será utilizado o Python 3.5.
 
 ```powershell
 $is_emulated = $env:EMULATED -eq "true"
@@ -247,7 +253,7 @@ if (-not $is_emulated){
 
 O **bin\LaunchWorker.ps1** foi criado originalmente para muito trabalho de preparação, mas realmente não funciona. Substitua o conteúdo nesse ficheiro pelo seguinte script.
 
-Este script chama o ficheiro **worker.py** a partir do seu projeto de Python. Se a variável do ambiente **PYTHON2** estiver definida como **Ligado**, o Python 2.7 será utilizado, caso contrário será utilizado o Python 3.5.
+Este script chama o ficheiro **worker.py** a partir do seu projeto de Python. Se a variável do ambiente **PYTHON2** estiver definida como **Ligado**, o Python 2.7 será utilizado; caso contrário, será utilizado o Python 3.5.
 
 ```powershell
 $is_emulated = $env:EMULATED -eq "true"
@@ -341,30 +347,30 @@ Para obter mais detalhes sobre a utilização de serviços do Azure a partir das
 <!--Link references-->
 
 [O que é um Serviço em Nuvem?]: cloud-services-choose-me.md
-[modelo de execução-Web sites]: ../app-service-web/app-service-web-overview.md
-[modelo de execução-vms]: ../virtual-machines/virtual-machines-windows-about.md
-[modelo de execução-serviços em nuvem]: cloud-services-choose-me.md
+[modelo de execução-Web Sites]: ../app-service-web/app-service-web-overview.md
+[vms do modelo de execução]: ../virtual-machines/virtual-machines-windows-about.md
+[Cloud Services do modelo de execução]: cloud-services-choose-me.md
 [Centro para Programadores do Python]: /develop/python/
 
 [Serviço Blob]: ../storage/storage-python-how-to-use-blob-storage.md
 [Serviço Fila]: ../storage/storage-python-how-to-use-queue-storage.md
 [Serviço Tabela]: ../storage/storage-python-how-to-use-table-storage.md
-[Filas do Service Bus]: ../service-bus-messaging/service-bus-python-how-to-use-queues.md
-[Tópicos do Service Bus]: ../service-bus-messaging/service-bus-python-how-to-use-topics-subscriptions.md
+[Filas de Service Bus]: ../service-bus-messaging/service-bus-python-how-to-use-queues.md
+[Tópicos de Service Bus]: ../service-bus-messaging/service-bus-python-how-to-use-topics-subscriptions.md
 
 
 <!--External Link references-->
 
 [Ferramentas do Python para Visual Studio]: http://aka.ms/ptvs
 [Documentação das Ferramentas do Python para Visual Studio]: http://aka.ms/ptvsdocs
-[Projetos do Serviço em Nuvem]: http://go.microsoft.com/fwlink/?LinkId=624028
-[Ferramentas do Azure SDK para VS 2013]: http://go.microsoft.com/fwlink/?LinkId=323510
-[Ferramentas do Azure SDK para VS 2015]: http://go.microsoft.com/fwlink/?LinkId=518003
-[Python 2.7 de 32 bits]: https://www.python.org/downloads/
-[Python 3.5 de 32 bits]: https://www.python.org/downloads/
+[Projetos de Serviço Cloud]: http://go.microsoft.com/fwlink/?LinkId=624028
+[Ferramentas SDK do Azure para VS 2013]: http://go.microsoft.com/fwlink/?LinkId=323510
+[Ferramentas SDK do Azure para VS 2015]: http://go.microsoft.com/fwlink/?LinkId=518003
+[Python 2.7 32 bits]: https://www.python.org/downloads/
+[Python 3.5 32 bits]: https://www.python.org/downloads/
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO3-->
 
 

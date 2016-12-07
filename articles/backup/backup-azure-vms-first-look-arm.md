@@ -13,11 +13,11 @@ ms.workload: storage-backup-recovery
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: hero-article
-ms.date: 10/13/2016
+ms.date: 11/10/2016
 ms.author: markgal; jimpark
 translationtype: Human Translation
-ms.sourcegitcommit: e29891dc03f8a864ecacc893fd1cc0d3cc1436cb
-ms.openlocfilehash: 3fe4d985c62b8476bd3b3f923fa17e7f364f9352
+ms.sourcegitcommit: 85b291e3916d1274fefc71bc0c1f12cac2920bb4
+ms.openlocfilehash: 77b4f6e5ee18cb3772487820bc72d7794f82162f
 
 
 ---
@@ -45,6 +45,36 @@ Para obter informações adicionais sobre a proteção de VMs do Armazenamento P
 
 [!INCLUDE [learn-about-Azure-Backup-deployment-models](../../includes/backup-deployment-models.md)]
 
+Com base no n.º de VMs que quer proteger, pode começar em pontos de início diferentes. Se quiser criar cópias de segurança de várias máquinas virtuais numa única operação, aceda ao cofre dos Serviços de Recuperação e inicie a cópia de segurança a partir do dashboard do cofre. Se tiver só uma VM e quiser criar uma cópia de segurança da mesma, pode fazê-lo diretamente no painel de gestão da VM.
+
+## <a name="configure-backup-from-vm-management-blade"></a>Configurar a Cópia de Segurança no painel de gestão da VM
+1. Inicie sessão no [Portal do Azure](https://portal.azure.com/).
+2. No menu Hub, clique em **Mais Serviços** e, na lista de recursos, escreva **Máquinas virtuais**.  É apresentada a lista de máquinas virtuais. Na lista de máquinas virtuais, selecione uma máquina virtual da qual pretende criar uma cópia de segurança. É aberto o painel de gestão da máquina virtual. 
+ ![Painel de gestão da VM](./media/backup-azure-vms-first-look-arm/vm-management-blade.png)
+ 
+3. No painel de gestão da VM, clique na opção “Cópia de Segurança”, presente no lado esquerdo, em Definições.
+![Opção Cópia de Segurança no painel de gestão da VM](./media/backup-azure-vms-first-look-arm/backup-option-vm-management-blade.png)
+
+4. É aberto o painel Ativar Cópia de Segurança. Este painel espera duas entradas: o cofre dos Serviços de Recuperação - um recurso do Azure Backup, que é utilizado para armazenar as cópias de segurança das VMs; uma política de cópias de segurança - a política de cópias de segurança especifica o agendamento das cópias de segurança e durante quanto tempo devem ser retidas. Este painel inclui opções predefinidas. Pode personalizá-las de acordo com os requisitos de cópias de segurança. 
+![Assistente para Ativar Cópia de Segurança](./media/backup-azure-vms-first-look-arm/vm-blade-enable-backup.png)
+
+5. No cofre dos Serviços de Recuperação, pode selecionar um cofre existente ou criar um novo. Se criar um cofre novo, este é criado no mesmo Grupo de Recursos que a máquina virtual e a localização é a mesma da máquina virtual. Se quiser criar um cofre dos Serviços de Recuperação com outros valores, [crie um cofre dos Serviços de Recuperação](backup-azure-vms-first-look-arm.md#create-a-recovery-services-vault-for-a-vm) antes de clicar na opção Cópia de Segurança do passo 3 e selecione o mesmo neste painel. 
+
+6. No painel Política de cópia de segurança, selecione a política de cópia de segurança que pretende aplicar ao cofre e clique em **OK**.
+    ![Selecionar política de cópias de segurança](./media/backup-azure-vms-first-look-arm/setting-rs-backup-policy-new.png)
+
+    Os detalhes da política predefinida são listados nos detalhes. Se pretende criar uma nova política, selecione **Criar Nova** no menu pendente. O menu pendente também disponibiliza uma opção para mudar a hora de quando o instantâneo é tirado. Para obter instruções sobre como definir uma política de cópia de segurança, consulte o artigo [Definir uma política de cópia de segurança](backup-azure-vms-first-look-arm.md#defining-a-backup-policy). Assim que clicar em **OK**, a política de cópias de segurança é associada à máquina virtual.
+    
+7. Clique em "Ativar Cópia de Segurança" para configurar a Cópia de Segurança na máquina virtual. É acionada uma implementação. 
+![Botão Ativar Cópia de Segurança](./media/backup-azure-vms-first-look-arm/vm-management-blade-enable-backup-button.png)
+
+8. Pode controlar o progresso da configuração através de notificações. 
+![Notificação de Ativar Cópia de Segurança](./media/backup-azure-vms-first-look-arm/vm-management-blade-enable-backup-notification.png)
+
+9. Depois de concluída a implementação da Configuração da cópia de segurança, clicar na opção “cópia de segurança” do painel de gestão da VM encaminha-o para o painel Item de Cópia de Segurança que corresponde à VM da qual foi criada uma cópia de segurança.
+![Vista de Item de Cópia de Segurança da VM](./media/backup-azure-vms-first-look-arm/backup-item-view.png)
+
+## <a name="configure-backup-from-recovery-services-vault-view"></a>Configurar a cópia de segurança na Vista de cofre dos Serviços de Recuperação
 A um nível elevado, estes são os passos que deverá concluir.  
 
 1. Crie um cofre dos serviços de recuperação para uma VM.
@@ -187,16 +217,16 @@ Para executar **Efetuar Cópia de Segurança Agora**:
 [!INCLUDE [backup-create-backup-policy-for-vm](../../includes/backup-create-backup-policy-for-vm.md)]
 
 ## <a name="install-the-vm-agent-on-the-virtual-machine"></a>Instalar o Agente da VM na máquina virtual
-Estas informações são fornecidas no caso de serem necessárias. O Agente da VM do Azure tem de estar instalado na máquina virtual do Azure para que a extensão da Cópia de Segurança funcione. Contudo, se a VM foi criada a partir da galeria do Azure, o Agente da VM já se encontra presente na máquina virtual. As VMs que são migradas dos datacenters no local não teriam o Agente da VM instalado. Nesse caso, o Agente da VM tem de ser instalado. Se tiver problemas a efetuar a cópia de segurança da VM do Azure, verifique se o Agente da VM do Azure está corretamente instalado na máquina virtual (consulte a tabela abaixo). Se criar uma VM personalizada, [confirme que a caixa de verificação **Instalar o Agente da VM** está selecionada](../virtual-machines/virtual-machines-windows-classic-agents-and-extensions.md) antes de aprovisionar a máquina virtual.
+Estas informações são fornecidas no caso de serem necessárias. O Agente da VM do Azure tem de estar instalado na máquina virtual do Azure para que a extensão da Cópia de Segurança funcione. Contudo, se a VM foi criada a partir da galeria do Azure, o Agente da VM já se encontra presente na máquina virtual. As VMs que são migradas dos datacenters no local não teriam o Agente da VM instalado. Nesse caso, o Agente da VM tem de ser instalado. Se tiver problemas a efetuar a cópia de segurança da VM do Azure, verifique se o Agente da VM do Azure está corretamente instalado na máquina virtual (consulte a tabela abaixo). Se criar uma VM personalizada, [confirme que a caixa de verificação **Instalar o Agente da VM** está selecionada](../virtual-machines/virtual-machines-windows-classic-agents-and-extensions.md?toc=%2fazure%2fvirtual-machines%2fwindows%2fclassic%2ftoc.json) antes de aprovisionar a máquina virtual.
 
-Saiba mais sobre o [Agente da VM](https://go.microsoft.com/fwLink/?LinkID=390493&clcid=0x409) e [como o instalar](../virtual-machines/virtual-machines-windows-classic-manage-extensions.md).
+Saiba mais sobre o [Agente da VM](https://go.microsoft.com/fwLink/?LinkID=390493&clcid=0x409) e [como o instalar](../virtual-machines/virtual-machines-windows-classic-manage-extensions.md?toc=%2fazure%2fvirtual-machines%2fwindows%2fclassic%2ftoc.json).
 
 A tabela seguinte fornece informações adicionais sobre o Agente da VM para as VMs do Windows e Linux.
 
 | **Operação** | **Windows** | **Linux** |
 | --- | --- | --- |
 | Instalar o Agente da VM |<li>Transfira e instale o [MSI do agente](http://go.microsoft.com/fwlink/?LinkID=394789&clcid=0x409). Precisa de privilégios de Administrador para concluir a instalação. <li>[Atualize a propriedade da VM](http://blogs.msdn.com/b/mast/archive/2014/04/08/install-the-vm-agent-on-an-existing-azure-vm.aspx) para indicar que o agente está instalado. |<li> Instale o [Agente Linux](https://github.com/Azure/WALinuxAgent) a partir do GitHub. Precisa de privilégios de Administrador para concluir a instalação. <li> [Atualize a propriedade da VM](http://blogs.msdn.com/b/mast/archive/2014/04/08/install-the-vm-agent-on-an-existing-azure-vm.aspx) para indicar que o agente está instalado. |
-| Atualizar o Agente da VM |A atualização do Agente da VM é tão simples como reinstalar os [binários do Agente da VM](http://go.microsoft.com/fwlink/?LinkID=394789&clcid=0x409). <br>Certifique-se de que nenhuma operação de cópia de segurança está em execução enquanto o agente da VM está a ser atualizado. |Siga as instruções para [atualizar o Agente da VM do Linux ](../virtual-machines/virtual-machines-linux-update-agent.md). <br>Certifique-se de que nenhuma operação de cópia de segurança está em execução enquanto o Agente da VM está a ser atualizado. |
+| Atualizar o Agente da VM |A atualização do Agente da VM é tão simples como reinstalar os [binários do Agente da VM](http://go.microsoft.com/fwlink/?LinkID=394789&clcid=0x409). <br>Certifique-se de que nenhuma operação de cópia de segurança está em execução enquanto o agente da VM está a ser atualizado. |Siga as instruções para [atualizar o Agente da VM do Linux ](../virtual-machines/virtual-machines-linux-update-agent.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json). <br>Certifique-se de que nenhuma operação de cópia de segurança está em execução enquanto o Agente da VM está a ser atualizado. |
 | A validar a instalação do Agente da VM |<li>Navegue até à pasta *C:\WindowsAzure\Packages* na VM do Azure. <li>Deve encontrar o ficheiro WaAppAgent.exe presente.<li> Clique com o botão direito do rato no ficheiro, aceda a **Propriedades** e, em seguida, selecione o separador **Detalhes**. O campo da Versão do Produto deve ser 2.6.1198.718 ou superior. |N/D |
 
 ### <a name="backup-extension"></a>Extensão da cópia de segurança

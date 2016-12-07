@@ -16,13 +16,17 @@ ms.workload: infrastructure-services
 ms.date: 10/24/2016
 ms.author: sewhee
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 86220eabc2625bf8bf1e4d6fac9c0ae41adc962c
+ms.sourcegitcommit: 7d8eb43fea032eb5aa72f448a7c1022be62a7b81
+ms.openlocfilehash: 1591fba6475ba52b6e187ba7ccb14fd2fdfc63c8
 
 ---
 # <a name="creating-an-internal-load-balancer-using-the-azure-cli"></a>Criar um balanceador de carga interno com a CLI do Azure
 
-[!INCLUDE [load-balancer-get-started-internet-arm-selectors-include.md](../../includes/load-balancer-get-started-internet-arm-selectors-include.md)]
+> [!div class="op_single_selector"]
+> * [Portal](../load-balancer/load-balancer-get-started-internet-portal.md)
+> * [PowerShell](../load-balancer/load-balancer-get-started-internet-arm-ps.md)
+> * [CLI do Azure](../load-balancer/load-balancer-get-started-internet-arm-cli.md)
+> * [Modelo](../load-balancer/load-balancer-get-started-internet-arm-template.md)
 
 [!INCLUDE [load-balancer-get-started-internet-intro-include.md](../../includes/load-balancer-get-started-internet-intro-include.md)]
 
@@ -59,7 +63,7 @@ Para obter mais informações, veja [Suporte do Azure Resource Manager para o Lo
 
         info:    New mode is arm
 
-## <a name="create-a-virtual-network-and-a-public-ip-address-for-the-frontend-ip-pool"></a>Criar uma rede virtual e um endereço IP público para o conjunto IP de front-end
+## <a name="create-a-virtual-network-and-a-public-ip-address-for-the-front-end-ip-pool"></a>Criar uma rede virtual e um endereço IP público para o conjunto IP de front-end
 
 1. Crie uma rede virtual (VNet) com o nome *NRPVnet* na localização E.U.A. Leste através de um grupo de recursos com o nome *NRPRG*.
 
@@ -91,7 +95,7 @@ O seguinte comando cria um balanceador de carga com o nome *NRPlb* no grupo de r
     azure network lb create NRPRG NRPlb eastus
     ```
 
-## <a name="create-a-frontend-ip-pool-and-a-backend-address-pool"></a>Criar um conjunto IP de front-end e um conjunto de endereços de back-end
+## <a name="create-a-front-end-ip-pool-and-a-backend-address-pool"></a>Criar um conjunto IP de front-end e um conjunto de endereços de back-end
 Este exemplo demonstra como criar o conjunto IP de front-end que recebe o tráfego de rede de entrada no balanceador de carga e o conjunto IP de back-end para o qual o conjunto de front-end envia o tráfego de rede com balanceamento de carga.
 
 1. Crie um conjunto IP de front-end ao associar o IP público criado no passo anterior e o balanceador de carga.

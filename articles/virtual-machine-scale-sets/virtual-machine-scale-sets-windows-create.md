@@ -16,8 +16,8 @@ ms.topic: get-started-article
 ms.date: 10/18/2016
 ms.author: davidmu
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 6d70338ebf918a3f9178a4f633dd46a607d72b1c
+ms.sourcegitcommit: 5919c477502767a32c535ace4ae4e9dffae4f44b
+ms.openlocfilehash: 6fa8b353c47091c9b71173e98021117245cc6694
 
 
 ---
@@ -130,7 +130,7 @@ Tem todos os recursos que precisa para a configuração do conjunto de dimension
    
         $vmss = New-AzureRmVmssConfig -Location $locName -SkuCapacity 3 -SkuName "Standard_A0" -UpgradePolicyMode "manual"
    
-    Este exemplo mostra um conjunto de dimensionamento a ser criado com três máquinas virtuais. Consulte [Virtual Machine Scale Sets Overview (Descrição Geral dos Conjuntos de Dimensionamento da Máquina Virtual)](virtual-machine-scale-sets-overview.md), para mais informações sobre a capacidade dos conjuntos de dimensionamento. Este passo também inclui a definição do tamanho (denominado SkuName) das máquinas virtuais no conjunto. Para encontrar um tamanho que satisfaça as suas necessidades, consulte os [Tamanhos das máquinas virtuais](../virtual-machines/virtual-machines-windows-sizes.md).
+    Este exemplo mostra um conjunto de dimensionamento a ser criado com três máquinas virtuais. Consulte [Virtual Machine Scale Sets Overview (Descrição Geral dos Conjuntos de Dimensionamento da Máquina Virtual)](virtual-machine-scale-sets-overview.md), para mais informações sobre a capacidade dos conjuntos de dimensionamento. Este passo também inclui a definição do tamanho (denominado SkuName) das máquinas virtuais no conjunto. Para encontrar um tamanho que satisfaça as suas necessidades, consulte os [Tamanhos das máquinas virtuais](../virtual-machines/virtual-machines-windows-sizes.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 5. Adicione a configuração de interface de rede para a configuração do conjunto de dimensionamento:
    
         Add-AzureRmVmssNetworkInterfaceConfiguration -VirtualMachineScaleSet $vmss -Name $vmssConfig -Primary $true -IPConfiguration $ipConfig
@@ -172,7 +172,7 @@ Tem todos os recursos que precisa para a configuração do conjunto de dimension
         $imageOffer = "WindowsServer"
         $imageSku = "2012-R2-Datacenter"
    
-    Para encontrar as informações sobre outras imagens a utilizar, consulte [Navigate and select Azure virtual machine images with Windows PowerShell and the Azure CLI (Navegue e selecione imagens da máquina virtual do Azure com o Windows PowerShell e o CLI do Azure)](../virtual-machines/virtual-machines-windows-cli-ps-findimage.md).
+    Para encontrar as informações sobre outras imagens a utilizar, consulte [Navigate and select Azure virtual machine images with Windows PowerShell and the Azure CLI (Navegue e selecione imagens da máquina virtual do Azure com o Windows PowerShell e o CLI do Azure)](../virtual-machines/virtual-machines-windows-cli-ps-findimage.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 3. Substitua o valor do **$vhdContainers** por uma lista que contenha os caminhos de onde são armazenados os discos rígidos virtuais, como "https://mystorage.blob.core.windows.net/vhds" e, em seguida, crie a variável:
    
         $vhdContainers = @("https://myst1.blob.core.windows.net/vhds","https://myst2.blob.core.windows.net/vhds","https://myst3.blob.core.windows.net/vhds")

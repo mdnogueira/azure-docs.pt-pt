@@ -16,8 +16,8 @@ ms.workload: NA
 ms.date: 09/06/2016
 ms.author: carlrab
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 91942517a481a252d631af15e532389256b64108
+ms.sourcegitcommit: 5a101aa78dbac4f1a0edb7f414b44c14db392652
+ms.openlocfilehash: e062d55e990faeb0776f643b297788afd87ac1e3
 
 
 ---
@@ -32,7 +32,7 @@ Uma DTU é uma unidade de medida dos recursos cuja disponibilidade é garantida 
 Pode [alterar as camadas de serviços](sql-database-scale-up.md) em qualquer altura, com um período mínimo de indisponibilidade para a aplicação (em média, menos de quatro segundos). Para muitas empresas e aplicações, ser capaz de criar bases de dados e aumentar e reduzir o desempenho de uma base de dados individual a pedido é suficiente, sobretudo se os padrões de utilização forem relativamente previsíveis. No entanto, se tiver padrões de utilização imprevisíveis, pode tornar-se difícil gerir os custos e o seu modelo de negócio. Para este cenário, utilize um conjunto elástico com um determinado número de eDTUs.
 
 ## <a name="what-are-elastic-database-transaction-units-edtus"></a>O que são Unidades de Transação da Base de Dados Elástica (eDTUs)
-Uma eDTU é uma unidade de medida do conjunto de recursos (DTUs) que podem ser partilhados entre um conjunto de bases de dados num servidor SQL do Azure – denominado [conjunto elástico](sql-database-elastic-pool.png). Os conjuntos elásticos fornecem uma solução económica e simples para gerir os objetivos de desempenho de várias bases de dados que tenham padrões de utilização extremamente variáveis e imprevisíveis. Veja [conjuntos elásticos e camadas de serviço](sql-database-service-tiers.md#elastic-pool-service-tiers-and-performance-in-edtus) para obter mais informações.
+Uma eDTU é uma unidade de medida do conjunto de recursos (DTUs) que podem ser partilhados entre um conjunto de bases de dados num servidor SQL do Azure – denominado [conjunto elástico](sql-database-elastic-pool.md). Os conjuntos elásticos fornecem uma solução económica e simples para gerir os objetivos de desempenho de várias bases de dados que tenham padrões de utilização extremamente variáveis e imprevisíveis. Veja [conjuntos elásticos e camadas de serviço](sql-database-service-tiers.md#elastic-pool-service-tiers-and-performance-in-edtus) para obter mais informações.
 
 ![Introdução à Base de Dados SQL: eDTUs por camada e nível](./media/sql-database-what-is-a-dtu/sqldb_elastic_pools.png)
 
@@ -54,7 +54,6 @@ Os níveis de desempenho são calibrados e geridos para fornecerem os recursos n
 * Veja [Limites de recursos da Base de Dados SQL do Azure](sql-database-resource-limits.md) para obter informações sobre o limite dos recursos além da CPU, memória, E/S de dados e E/S de registos de transações.
 * Veja [SQL Database Query Performance Insight (Informações de Desempenho de Consultas de Base de Dados SQL)](sql-database-query-performance.md) para compreender o seu consumo (de DTUs).
 * Veja [Descrição geral de referência da Base de Dados SQL](sql-database-benchmark-overview.md) para compreender a metodologia por detrás da carga de trabalho de referência do OLTP utilizada para determinar a combinação de DTU.
-
 
 
 

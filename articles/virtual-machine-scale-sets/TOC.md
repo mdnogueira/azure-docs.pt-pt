@@ -1,12 +1,13 @@
 # Descrição geral
-## [Sobre os conjuntos de dimensionamento](virtual-machine-scale-sets-overview.md)
-## [Considerações de design para conjuntos de dimensionamento](virtual-machine-scale-sets-design-overview.md)
+## [O que são os conjuntos de dimensionamento de máquinas virtuais?](virtual-machine-scale-sets-overview.md)
 
 # Introdução
 ## [Criar um conjunto de dimensionamento do Windows](virtual-machine-scale-sets-windows-create.md)
 ## [Criar um conjunto de dimensionamento do Linux](virtual-machine-scale-sets-linux-create-cli.md)
 
 # Procedimento
+## Planear e conceber
+### [Considerações de design](virtual-machine-scale-sets-design-overview.md)
 ## Implementação
 ### [Conjunto de dimensionamento com o portal](virtual-machine-scale-sets-portal-create.md)
 ### [Conjunto de dimensionamento com o Visual Studio](virtual-machine-scale-sets-vs-create.md)
@@ -19,21 +20,24 @@
 ### [Dimensionamento automático e conjuntos de dimensionamento](virtual-machine-scale-sets-autoscale-overview.md)
 ### [Dimensionamento vertical num conjunto de dimensionamento](virtual-machine-scale-sets-vertical-scale-reprovision.md)
 ### [Atualizações para conjuntos de dimensionamento](virtual-machine-scale-sets-upgrade-scale-set.md)
-### [Dimensionamento automático avançado](virtual-machine-scale-sets-advanced-autoscale.md)
+### [Dimensionamento automático avançado](../monitoring-and-diagnostics/insights-advanced-autoscale-virtual-machine-scale-sets.md)
 ### [Com o DSC e conjuntos de dimensionamento](virtual-machine-scale-sets-dsc.md)
 
 ## Resolução de problemas
-### [Resolução de problemas do dimensionamento automático](virtual-machine-scale-sets-troubleshoot.md)
+### [Dimensionamento Automático](virtual-machine-scale-sets-troubleshoot.md)
 
 # Referência
-## [PowerShell](/powershell/azureps-cmdlets-docs/)
+## [PowerShell](/powershell/azureps-cmdlets-docs)
 ## [CLI do Azure](../virtual-machines/azure-cli-arm-commands.md)
 ## [REST](/rest/api/compute/)
 
 # Recursos
-## [Preços](https://azure.microsoft.com/pricing/details/virtual-machine-scale-sets/linux/)
+## Preços 
+### [Linux](https://azure.microsoft.com/pricing/details/virtual-machine-scale-sets/linux/)
+### [Windows](https://azure.microsoft.com/pricing/details/virtual-machine-scale-sets/windows/)
+## [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-vm-scale-set)
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO4-->
 
 

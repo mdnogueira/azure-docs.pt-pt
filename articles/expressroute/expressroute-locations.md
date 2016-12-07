@@ -15,8 +15,8 @@ ms.workload: infrastructure-services
 ms.date: 11/02/2016
 ms.author: cherylmc
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 4aa1e62b4758481b40c4b1c8a632c8bb72ab4ce6
+ms.sourcegitcommit: 53a301bd501f223aa8489ba6592c8428c1fcd530
+ms.openlocfilehash: 89ed8b2b51641f2b9754f78dba34cf126c9cb88c
 
 
 ---
@@ -28,7 +28,10 @@ O ExpressRoute é suportado em todas as regiões e localizações do Azure. O ma
 
 ![Mapa de localização][0]
 
-Terá acesso aos serviços do Azure em todas as regiões numa região geopolítica se estiver ligado a, pelo menos, uma localização do ExpressRoute numa região geopolítica. A tabela seguinte fornece um mapa de regiões do Azure para localizações do ExpressRoute numa região geopolítica.
+Terá acesso aos serviços do Azure em todas as regiões numa região geopolítica se estiver ligado a, pelo menos, uma localização do ExpressRoute numa região geopolítica. 
+
+### <a name="azure-regions-to-expressroute-locations-within-a-geopolitical-region"></a>Regiões do Azure para localizações do ExpressRoute numa região geopolítica.
+A tabela seguinte fornece um mapa de regiões do Azure para localizações do ExpressRoute numa região geopolítica.
 
 | **Região geopolítica** | **Regiões do Azure** | **Localizações do ExpressRoute** |
 | --- | --- | --- |
@@ -40,6 +43,7 @@ Terá acesso aos serviços do Azure em todas as regiões numa região geopolíti
 | **Austrália** |Sudeste da Austrália, Leste da Austrália |Melbourne, Sydney |
 | **Índia** |Índia Ocidental, Índia Central, Sul da Índia |Chennai, Mumbai |
 
+### <a name="regions-and-geopolitical-boundaries-for-national-clouds"></a>Regiões e limites geopolíticos para nuvens nacionais
 A tabela abaixo fornece informações sobre regiões e limites geopolíticos para nuvens nacionais.
 
 | **Região geopolítica** | **Regiões do Azure** | **Localizações do ExpressRoute** |
@@ -50,10 +54,10 @@ A tabela abaixo fornece informações sobre regiões e limites geopolíticos par
 
 A conectividade em regiões geopolíticas não é suportada no SKU do ExpressRoute standard. Terá de ativar o suplemento ExpressRoute Premium para suportar a conetividade global. A conectividade com ambientes em nuvem nacionais não é suportada. Pode trabalhar com o seu fornecedor de conectividade, se tal for necessário.
 
-## <a name="connectivity-provider-locations"></a>Localizações do fornecedor de conectividade
+## <a name="a-namelocationsaconnectivity-provider-locations"></a><a name="locations"></a>Localizações dos fornecedores de conectividade
 > [!div class="op_single_selector"]
-> [Localizações por Fornecedor](expressroute-locations.md#connectivity-provider-locations)
-> [Fornecedores por Localização](expressroute-locations-providers.md#connectivity-provider-locations)
+> * [Localizações por Fornecedor](expressroute-locations.md#locations)
+> * [Fornecedores por Localização](expressroute-locations-providers.md#locations)
 > 
 > 
 
@@ -96,12 +100,13 @@ A conectividade em regiões geopolíticas não é suportada no SKU do ExpressRou
 | **[Telstra Corporation](http://www.telstra.com.au/business-enterprise/network-services/networks/cloud-direct-connect/)** |Suportado |Suportado |Melbourne, Sydney |
 | **[Verizon](http://www.verizonenterprise.com/products/networking/secure-cloud-interconnect/)** |Suportado |Suportado |Amesterdão, RAE de Hong Kong, Londres, Silicon Valley, Singapura, Sydney, Tóquio, Washington D.C. |
 | **Vodafone** |Suportado |Não suportado |Londres |
-| **[Zayo Group](http://www.zayo.com/solutions/industries/connect-to-cloud-data-centers/cloud-connectivity/microsoft-expressroute/)** |Suportado |Suportado |Chicago, Los Angeles, Nova Iorque, Silicon Valley, Toronto, Washington D.C. |
+| **[Zayo Group](http://www.zayo.com/solutions/industries/cloud-connectivity/microsoft-expressroute)** |Suportado |Suportado |Chicago, Los Angeles, Nova Iorque, Silicon Valley, Toronto, Washington D.C. |
 
  **+** brevemente disponível
 
-### <a name="national-cloud-environments"></a>Ambientes em nuvem nacionais
-#### <a name="us-government-cloud"></a>Nuvem do Governo dos EUA
+### <a name="national-cloud-environment"></a>Ambientes em nuvens nacionais
+
+### <a name="us-government-cloud"></a>Nuvem do Governo dos EUA
 | **Fornecedor de serviços** | **Microsoft Azure** | **Office 365** | **Localizações** |
 | --- | --- | --- | --- |
 | **[AT&T NetBond](https://www.synaptic.att.com/clouduser/html/productdetail/ATT_NetBond.htm)** |Suportado |Suportado |Chicago, Washington D.C. |
@@ -109,14 +114,14 @@ A conectividade em regiões geopolíticas não é suportada no SKU do ExpressRou
 | **[Level 3 Communications](http://your.level3.com/LP=882?WT.tsrc=02192014LP882AzureVanityAzureText)** |Suportado |Suportado |Chicago, Nova Iorque+, Washington D.C. |
 | **[Verizon](http://news.verizonenterprise.com/2014/04/secure-cloud-interconnect-solutions-enterprise/)** |Suportado |Suportado |Chicago, Dallas, Nova Iorque, Washington D.C. |
 
-#### <a name="china"></a>China
+### <a name="china"></a>China
 | **Fornecedor de serviços** | **Microsoft Azure** | **Office 365** | **Localizações** |
 | --- | --- | --- | --- |
 | **China Telecom** |Suportado |Não suportado |Pequim, Xangai |
 
 Para saber mais, veja [ExpressRoute na China](http://www.windowsazure.cn/home/features/expressroute/).
 
-#### <a name="germany"></a>Alemanha
+### <a name="germany"></a>Alemanha
 | **Fornecedor de serviços** | **Microsoft Azure** | **Office 365** | **Localizações** |
 | --- | --- | --- | --- |
 | **[Colt](http://www.colt.net/uk/en/news/colt-announces-dedicated-cloud-access-for-microsoft-azure-services-en.htm)** |Suportado |Não suportado |Berlim+, Frankfurt |
@@ -168,6 +173,6 @@ A ativação da conectividade privada para atender as suas necessidades pode ser
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO3-->
 
 

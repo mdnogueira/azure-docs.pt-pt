@@ -44,7 +44,7 @@ Este artigo explica como adicionar utilizadores de outros diretórios no Azure A
 > Se a sua organização utilizar mais de um domínio, deverá ser informado dos seguintes problemas quando adicionar uma conta de utilizador:
 > 
 > * Para adicionar contas de utilizador com o mesmo nome principal de utilizador (UPN) entre domínios, **comece** por adicionar, por exemplo, geoffgrisso@contoso.onmicrosoft.com, **, seguido de ** geoffgrisso@contoso.com.
-> * **Não** adicione geoffgrisso@contoso.com, antes de adicionar geoffgrisso@contoso.onmicrosoft.com.. É importante seguir esta ordem uma vez que qualquer anulação poderá ser complicada.
+> * **Não** adicione geoffgrisso@contoso.com, antes de adicionar geoffgrisso@contoso.onmicrosoft.com. É importante seguir esta ordem uma vez que qualquer anulação poderá ser complicada.
 > 
 > 
 
@@ -71,7 +71,7 @@ Se um utilizador for eliminado do respetivo diretório raiz ou se cancelar a res
 * **Portal Clássico do Azure**: permite a um utilizador externo que é administrador de vários diretórios gerir cada um desses diretórios.
 * **SharePoint Online**: se a partilha externa estiver ativada, esta definição permite a um utilizador externo aceder aos recursos autorizados do SharePoint Online.
 * **Dynamics CRM**: se o utilizador for licenciado através do PowerShell, esta definição permite a um utilizador externo aceder a recursos autorizados no Dynamics CRM.
-* **Dynamics AX**: se o utilizador for licenciado através do PowerShell, esta definição permite a um utilizador externo aceder a recursos autorizados no Dynamics AX. As limitações dos [utilizadores externos do Azure AD](#known-limitations-of-azure-ad-external-users) também se aplicam aos utilizadores externos no Dynamics AX.
+* **Dynamics AX**: se o utilizador for licenciado através do PowerShell, esta definição permite a um utilizador externo aceder a recursos autorizados no Dynamics AX. As limitações dos [utilizadores externos do Azure AD](#known-limitations-of-azure-ad-external-users) também se aplicam aos utilizadores externos no Dynamics AX.
 
 ### <a name="known-limitations-of-azure-ad-external-users"></a>Limitações conhecidas dos utilizadores externos do Azure AD
 * Os utilizadores externos que são administradores não podem adicionar utilizadores aos diretórios (colaboração B2B) a partir de empresas associadas, fora dos seus respetivos diretórios raiz

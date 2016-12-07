@@ -15,8 +15,8 @@ ms.topic: hero-article
 ms.date: 08/30/2016
 ms.author: brandwe
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 833ba11df57e27cf1f5e4045d144550bb14ca1c2
+ms.sourcegitcommit: a977cb509fb64d7c986e2e0f7e2b5e4e3e45dec0
+ms.openlocfilehash: 6ac89d753ccbdd188e473b5d13a30b4622ad848d
 
 
 ---
@@ -27,8 +27,8 @@ Com o Azure Active Directory (Azure AD) B2C, pode proteger uma API web utilizand
 
 > [!NOTE]
 > Este exemplo foi escrito para fazer uma ligação utilizando a nossa [aplicação de exemplo B2C para iOS](active-directory-b2c-devquickstarts-ios.md). Primeiro, explore esta passagem e, em seguida, acompanhe com esse exemplo.
-> 
-> 
+>
+>
 
 **Passport** é o middleware de autenticação do Node.js. Flexível e modular, o Passport pode ser instalado discretamente em qualquer aplicação Web baseada no Express ou Restify. Um conjunto abrangente de estratégias suporta a autenticação utilizando um nome de utilizador e palavra-passe, o Facebook, o Twitter e muito mais. Desenvolvemos uma estratégia para o Azure Active Directory (Azure AD). Instale este módulo e, em seguida, adicione o plug-in `passport-azure-ad` do Azure AD.
 
@@ -52,7 +52,7 @@ Em seguida, precisa de criar uma aplicação no seu diretório do B2C que dá ao
 [!INCLUDE [active-directory-b2c-devquickstarts-v2-apps](../../includes/active-directory-b2c-devquickstarts-v2-apps.md)]
 
 ## <a name="create-your-policies"></a>Criar as políticas
-No Azure AD B2C, cada experiência de utilizador é definida por uma [política](active-directory-b2c-reference-policies.md). Esta aplicação contém duas experiências de identidade: registo e início de sessão. Tem de criar uma política de cada tipo, conforme descrito no [artigo de referência de política](active-directory-b2c-reference-policies.md#how-to-create-a-sign-up-policy).  Quando criar as três políticas, não se esqueça de:
+No Azure AD B2C, cada experiência de utilizador é definida por uma [política](active-directory-b2c-reference-policies.md). Esta aplicação contém duas experiências de identidade: registo e início de sessão. Tem de criar uma política de cada tipo, conforme descrito no [artigo de referência de política](active-directory-b2c-reference-policies.md#create-a-sign-up-policy).  Quando criar as três políticas, não se esqueça de:
 
 * Escolher o **Nome a apresentar** e os atributos de inscrição na política de inscrição.
 * Escolher as afirmações de aplicação **Nome a apresentar** e **ID de objeto** em cada política.  Também pode escolher outras afirmações.
@@ -74,7 +74,7 @@ git clone --branch skeleton https://github.com/AzureADQuickStarts/B2C-WebAPI-Nod
 A aplicação concluída está também [disponível como um ficheiro .zip](https://github.com/AzureADQuickStarts/B2C-WebAPI-NodeJS/archive/complete.zip) ou no ramo `complete` do mesmo repositório.
 
 ## <a name="download-nodejs-for-your-platform"></a>Transferir Node.js para a plataforma
-Para utilizar este exemplo com êxito, tem de ter uma instalação do Node.js em execução. 
+Para utilizar este exemplo com êxito, tem de ter uma instalação do Node.js em execução.
 
 Instalar Node.js de [nodejs.org](http://nodejs.org).
 
@@ -85,8 +85,8 @@ Instalar MongoDB de [mongodb.org](http://www.mongodb.org).
 
 > [!NOTE]
 > Esta passagem parte do princípio de que irá utilizar os pontos finais do servidor e a instalação predefinida para o MongoDB, que de momento é `mongodb://localhost`.
-> 
-> 
+>
+>
 
 ## <a name="install-the-restify-modules-in-your-web-api"></a>Instalar os módulos Restify na API Web
 Utilizamos o Restify para criar a API REST. O Restify é uma estrutura de aplicação Node.js mínima e flexível derivada do Express. Tem um conjunto robusto de funcionalidades para a criação de APIs REST por cima do Connect.
@@ -163,13 +163,13 @@ O resultado do comando deve ser semelhante ao texto que se segue:
     ├── pause@0.0.1
     └── pkginfo@0.2.3
 
-## <a name="add-passportazuread-to-your-web-api"></a>Adicionar passport-azuread à API Web 
+## <a name="add-passport-azuread-to-your-web-api"></a>Adicionar passport-azuread à API Web 
 Em seguida, adicione a estratégia de OAuth utilizando `passport-azuread`, um conjunto de estratégias que ligam o Azure AD com o Passport. Utilize esta estratégia para os tokens de portador no exemplo API REST.
 
 > [!NOTE]
 > Embora o OAuth2 forneça uma estrutura onde pode ser emitido qualquer tipo de token conhecido, apenas alguns tipos de tokens passaram a ser amplamente utilizados. Os tokens para proteger os pontos finais são tokens de portador. Estes tipos de tokens são os mais emitidos no OAuth2. Várias implementações partem do princípio de que os tokens de portador são o único tipo de token emitido.
-> 
-> 
+>
+>
 
 Na linha de comandos, altere o diretório para `azuread`, caso ainda não esteja aí.
 
@@ -215,7 +215,7 @@ Instale os módulos no diretório `node_modules`:
 * `npm install bunyan`
 
 ## <a name="create-a-serverjs-file-with-your-dependencies"></a>Crie um ficheiro de server.js com as suas dependências
-O ficheiro `server.js` proporciona a maior parte das funcionalidades do seu servidor de API Web. 
+O ficheiro `server.js` proporciona a maior parte das funcionalidades do seu servidor de API Web.
 
 Na linha de comandos, altere o diretório para `azuread`, caso ainda não esteja aí:
 
@@ -258,7 +258,7 @@ clientID: <your client ID for this Web API you created in the portal>
 mongoose_auth_local: 'mongodb://localhost/tasklist', // Your mongo auth uri goes here
 audience: '<your audience URI>', // the Client ID of the application that is calling your API, usually a web API or native client
 identityMetadata: 'https://login.microsoftonline.com/<tenant name>/.well-known/openid-configuration', // Make sure you add the B2C tenant name in the <tenant name> area
-tenantName:'<tenant name>', 
+tenantName:'<tenant name>',
 policyName:'b2c_1_<sign in policy name>' // This is the policy you'll want to validate against in B2C. Usually this is your Sign-in policy (as users sign in to this API)
 passReqToCallback: false // This is a node.js construct that lets you pass the req all the way back to any upstream caller. We turn this off as there is no upstream caller.
 };
@@ -270,9 +270,9 @@ passReqToCallback: false // This is a node.js construct that lets you pass the r
 ### <a name="required-values"></a>Valores necessários
 `clientID`: o ID de cliente da aplicação API Web.
 
-`IdentityMetadata`: este é o local onde o `passport-azure-ad` vai procurar os seus dados de configuração para o fornecedor de identidade. Também vai procurar aqui as chaves para validar os tokens Web JSON. 
+`IdentityMetadata`: este é o local onde o `passport-azure-ad` vai procurar os seus dados de configuração para o fornecedor de identidade. Também vai procurar aqui as chaves para validar os tokens Web JSON.
 
-`audience`: o URI (Uniform Resource Identifier) do portal que identifica a sua aplicação de chamada. 
+`audience`: o URI (Uniform Resource Identifier) do portal que identifica a sua aplicação de chamada.
 
 `tenantName`: o nome do seu inquilino (por exemplo, **contoso.onmicrosoft.com**).
 
@@ -280,8 +280,8 @@ passReqToCallback: false // This is a node.js construct that lets you pass the r
 
 > [!NOTE]
 > Para a nossa pré-visualização do B2C, utilize as mesmas políticas para configurar o cliente e o servidor. Se já tiver concluído uma passagem e criado estas políticas, não terá de fazê-lo novamente. Uma vez concluída a passagem, não deverá ser necessário configurar novas políticas para passagens de cliente no site.
-> 
-> 
+>
+>
 
 ## <a name="add-configuration-to-your-serverjs-file"></a>Adicionar configuração ao seu ficheiro server.js
 Para ler os valores do ficheiro `config.js` que criou, adicione o ficheiro `.config` como recurso pretendido na sua aplicação e, em seguida, defina as variáveis globais para as existentes no documento `config.js`.
@@ -386,7 +386,7 @@ Crie primeiro o esquema e, em seguida, crie um objeto de modelo que utilizará p
 Agora que tem um modelo de base de dados com o qual trabalhar, adicione as rotas que vai utilizar com o servidor da API REST.
 
 ### <a name="about-routes-in-restify"></a>Sobre rotas no Restify
-As rotas funcionam no Restify da mesma maneira que funcionam quando utilizam a pilha Express. Definem-se rotas utilizando o URI que se espera que as aplicações de cliente chamem. 
+As rotas funcionam no Restify da mesma maneira que funcionam quando utilizam a pilha Express. Definem-se rotas utilizando o URI que se espera que as aplicações de cliente chamem.
 
 Um padrão normal para uma rota do Restify é:
 
@@ -544,7 +544,7 @@ util.inherits(TaskNotFoundError, restify.RestError);
 ## <a name="create-your-server"></a>Criar o seu servidor
 Agora definiu a base de dados e colocou as rotas. A última coisa que tem de fazer consiste em adicionar a instância de servidor que gere as suas chamadas.
 
-O Restify e o Express fornecem personalização avançada para um servidor de API REST, mas nós utilizamos a configuração mais básica. 
+O Restify e o Express fornecem personalização avançada para um servidor de API REST, mas nós utilizamos a configuração mais básica.
 
 ```Javascript
 
@@ -664,7 +664,7 @@ server.listen(serverPort, function() {
 
 });
 
-``` 
+```
 
 ## <a name="add-authentication-to-your-rest-api-server"></a>Adicionar autenticação ao seu servidor de API REST
 Agora que um servidor de API REST está em execução, pode torná-lo útil em relação ao Azure AD.
@@ -673,11 +673,11 @@ Na linha de comandos, altere o diretório para `azuread`, caso ainda não esteja
 
 `cd azuread`
 
-### <a name="use-the-oidcbearerstrategy-that-is-included-with-passportazuread"></a>Utilize o OIDCBearerStrategy que está incluído no passport-azure-ad
+### <a name="use-the-oidcbearerstrategy-that-is-included-with-passport-azure-ad"></a>Utilize o OIDCBearerStrategy que está incluído no passport-azure-ad
 > [!TIP]
 > Quando escreve APIs, deve ligar sempre os dados a algo especial do token que o utilizador não pode falsificar. Quando o servidor armazena itens ToDo, fá-lo com base no **oid** do utilizador no token (chamado de token.oid) que é incluído no campo “proprietário”. Este valor garante que apenas esse utilizador pode aceder aos próprios itens ToDo. Não existe nenhuma exposição na API de “proprietário”, de modo que um utilizador externo pode pedir itens ToDo de outras pessoas, mesmo que estejam autenticados.
-> 
-> 
+>
+>
 
 Em seguida, utilize a estratégia de portador que vem com `passport-azure-ad`.
 
@@ -722,8 +722,8 @@ O Passport utiliza o mesmo padrão para todas as respetivas estratégias. Passe-
 
 > [!IMPORTANT]
 > O código acima aceita qualquer utilizador que se autentique com o seu servidor. Este processo é conhecido como registo automático. Em servidores de produção, não permita que quaisquer utilizadores acedam à API sem passarem primeiro por um processo de registo. Este processo é normalmente o padrão normal que vê nas aplicações de consumidor que lhe permitem fazer o registo através do Facebook, mas que em seguida lhe pedem para preencher informações adicionais. Se este programa não fosse um programa de linha de comandos, poderíamos extrair o e-mail do objeto do token que é devolvido e, em seguida, pedir aos utilizadores para preencher informações adicionais. Uma vez que este é um exemplo, vamos adicioná-los a uma base de dados na memória.
-> 
-> 
+>
+>
 
 ## <a name="run-your-server-application-to-verify-that-it-rejects-you"></a>Execute a aplicação de servidor para verificar se esta o rejeita
 Pode utilizar `curl` para ver se tem agora proteção do OAuth2 em relação aos pontos finais. Os cabeçalhos devolvidos devem ser suficientes para lhe indicar que está no caminho certo.
@@ -760,7 +760,6 @@ Tem implementada uma API REST utilizando o Restify e o OAuth! Tem agora código 
 Agora pode aceder a tópicos mais avançados, como:
 
 [Ligar a uma API Web utilizando o iOS com o B2C](active-directory-b2c-devquickstarts-ios.md)
-
 
 
 

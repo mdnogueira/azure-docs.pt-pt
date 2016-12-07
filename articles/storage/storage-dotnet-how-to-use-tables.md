@@ -15,8 +15,8 @@ ms.topic: hero-article
 ms.date: 10/18/2016
 ms.author: tamram
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 0e6effa1e74a06a99a2a6bea9df3cfc6deedeb0e
+ms.sourcegitcommit: ee390dcdeefbc1ed87317ae2e167b3c054911723
+ms.openlocfilehash: a8149b38872a8d5b5a5e30280712ca38d983f80c
 
 
 ---
@@ -287,7 +287,7 @@ Para atualizar uma entidade, recupere-a do serviço Tabela, modifique o objeto d
     else
        Console.WriteLine("Entity could not be retrieved.");
 ```
-## <a name="insertorreplace-an-entity"></a>Inserir ou substituir uma entidade
+## <a name="insert-or-replace-an-entity"></a>Inserir ou substituir uma entidade
 As operações de **Substituição** irão falhar se a entidade tiver sido alterada desde que foi obtida do servidor.  Além disso, tem de obter primeiro a entidade do servidor para que a operação de **Substituição** seja concluída com êxito.
 Por vezes, no entanto, não sabe se a entidade existe no servidor e os valores atuais armazenados na mesma são irrelevantes. A atualização deve substituí-los a todos.  Para tal, utilizaria uma operação **InsertOrReplace**.  Esta operação insere a entidade se esta não existir ou substitui-a se existir, independentemente de quando foi efetuada a última atualização.  No exemplo de código seguinte, a entidade de cliente para Bernardo Santos ainda é obtida, mas, em seguida, é guardada no servidor através de **InsertOrReplace**.  Todas as atualizações efetuadas à entidade entre as operações de obtenção e atualização serão substituídas.
 ```csharp

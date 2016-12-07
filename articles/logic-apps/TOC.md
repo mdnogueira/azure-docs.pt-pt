@@ -16,6 +16,7 @@
 # Procedimento
 ## Compilação
 ### [Criar um conector](../app-service-logic/app-service-logic-create-api-app.md?toc=%2fazure%2flogic-apps%2ftoc.json)
+### [Utilizar o Conector do Sistema de Ficheiros](../app-service-logic/app-service-logic-use-file-connector.md?toc=%2fazure%2flogic-apps%2ftoc.json)
 ### [Ferramentas do Visual Studio](../app-service-logic/app-service-logic-deploy-from-vs.md?toc=%2fazure%2flogic-apps%2ftoc.json)
 ### [Com as Funções do Azure](../app-service-logic/app-service-logic-azure-functions.md?toc=%2fazure%2flogic-apps%2ftoc.json)
 ### [Aplicações lógicas como pontos finais disponíveis](../app-service-logic/app-service-logic-http-endpoint.md?toc=%2fazure%2flogic-apps%2ftoc.json)
@@ -27,8 +28,8 @@
 ### [Sugestões de resolução de problemas](../app-service-logic/app-service-logic-diagnosing-failures.md?toc=%2fazure%2flogic-apps%2ftoc.json)
 ### [Limites e configuração](../app-service-logic/app-service-logic-limits-and-config.md?toc=%2fazure%2flogic-apps%2ftoc.json)
 
+
 ## Utilizar o Enterprise Integration Pack (EIP)
-### [Enterprise Integration Pack](../app-service-logic/app-service-logic-enterprise-integration-overview.md?toc=%2fazure%2flogic-apps%2ftoc.json)
 ### [Descrição geral das contas de integração](../app-service-logic/app-service-logic-enterprise-integration-create-integration-account.md?toc=%2fazure%2flogic-apps%2ftoc.json)
 ### [Contratos](../app-service-logic/app-service-logic-enterprise-integration-agreements.md?toc=%2fazure%2flogic-apps%2ftoc.json)
 ### [Processamento B2B](../app-service-logic/app-service-logic-enterprise-integration-b2b.md?toc=%2fazure%2flogic-apps%2ftoc.json)
@@ -49,10 +50,7 @@
 ### [Integração de X12](../app-service-logic/app-service-logic-enterprise-integration-x12.md?toc=%2fazure%2flogic-apps%2ftoc.json)
 ### [Codificação de X12](../app-service-logic/app-service-logic-enterprise-integration-x12-encode.md?toc=%2fazure%2flogic-apps%2ftoc.json)
 ### [Descodificação de X12](../app-service-logic/app-service-logic-enterprise-integration-x12-decode.md?toc=%2fazure%2flogic-apps%2ftoc.json)
-### [Controlar B2B](../app-service-logic/app-service-logic-track-b2b-message.md?toc=%2fazure%2flogic-apps%2ftoc.json)
-### [Esquemas de controlo de AS2](../app-service-logic/app-service-logic-track-integration-account-as2-tracking-shemas.md?toc=%2fazure%2flogic-apps%2ftoc.json)
-### [Esquemas de controlo de X12](../app-service-logic/app-service-logic-track-integration-account-x12-tracking-shemas.md?toc=%2fazure%2flogic-apps%2ftoc.json)
-### [Personalizar esquema de controlo](../app-service-logic/app-service-logic-track-integration-account-custom-tracking-shema.md?toc=%2fazure%2flogic-apps%2ftoc.json)
+
 
 ## Utilizar o Gateway
 ### [Ligar no local](../app-service-logic/app-service-logic-gateway-connection.md?toc=%2fazure%2flogic-apps%2ftoc.json)
@@ -64,6 +62,12 @@
 
 ## Gerir
 ### [Monitorizar aplicações lógicas](../app-service-logic/app-service-logic-monitor-your-logic-apps.md?toc=%2fazure%2flogic-apps%2ftoc.json)
+### [Monitorizar mensagens B2B](../app-service-logic/app-service-logic-monitor-b2b-message.md?toc=%2fazure%2flogic-apps%2ftoc.json)
+#### [Esquemas de controlo de AS2](../app-service-logic/app-service-logic-track-integration-account-as2-tracking-shemas.md?toc=%2fazure%2flogic-apps%2ftoc.json)
+#### [Esquemas de controlo de X12](../app-service-logic/app-service-logic-track-integration-account-x12-tracking-shemas.md?toc=%2fazure%2flogic-apps%2ftoc.json)
+#### [Personalizar esquema de controlo](../app-service-logic/app-service-logic-track-integration-account-custom-tracking-shema.md?toc=%2fazure%2flogic-apps%2ftoc.json)
+#### [Monitorizar mensagens B2B](../app-service-logic/app-service-logic-track-b2b-messages-omsportal.md?toc=%2fazure%2flogic-apps%2ftoc.json)
+
 ### [Contas de integração](../app-service-logic/app-service-logic-enterprise-integration-accounts.md?toc=%2fazure%2flogic-apps%2ftoc.json)
 ### [Preços](../app-service-logic/app-service-logic-pricing.md?toc=%2fazure%2flogic-apps%2ftoc.json)
 
@@ -82,12 +86,11 @@
 
 # Recursos
 ## [Preços](https://azure.microsoft.com/pricing/details/logic-apps/)  
-## [Fórum do MSDN](https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=azurelogicapps) 
+## [Fórum do MSDN](https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=azurelogicapps)
 ## [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-logic-apps)
-## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=logic-apps) 
+## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=logic-apps)
 
 
-
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO4-->
 
 

@@ -1,9 +1,13 @@
 ---
 layout: LandingPage
----
-#Application Gateway Documentation
+translationtype: Human Translation
+ms.sourcegitcommit: 87b9d22ec066108adb282606305315919b901ea0
+ms.openlocfilehash: cbe8ab766a97c628dcbf5e3a34ec1fb1b779942c
 
-Azure Application Gateway provides Application Deliver Controller (ADC) as a service.  It allows customers to optimize web farm productivity by offloading CPU-intensive SSL termination to the application geateway.  It is a dedicated virtual appliance for your application with scalability and high availability as well as a rich set of diagnostics and logging for better manageability.
+---
+#<a name="application-gateway-documentation"></a>Documentação do Gateway de Aplicação
+
+O Gateway de Aplicação do Azure disponibiliza o Controlador de Entrega de Aplicações (ADC) como um serviço.  Permite que os clientes otimizem a produtividade do Web farm ao descarregar a terminação de SSL com utilização intensiva da CPU para o gateway de aplicação.  É uma aplicação virtual dedicada para a sua aplicação com escalabilidade e elevada disponibilidade, bem como um conjunto de funcionalidades de diagnóstico e registo avançado para uma melhor capacidade de gestão.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -17,7 +21,7 @@ Azure Application Gateway provides Application Deliver Controller (ADC) as a ser
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Learn about Application Gateway</h3>
+                        <h3>Saiba mais sobre o Gateway de Aplicação</h3>
                     </div>
                 </div>
             </div>
@@ -35,7 +39,7 @@ Azure Application Gateway provides Application Deliver Controller (ADC) as a ser
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Application Gateway Video Library</h3>
+                        <h3>Biblioteca de Vídeo do Gateway de Aplicação</h3>
                     </div>
                 </div>
             </div>
@@ -49,11 +53,11 @@ Azure Application Gateway provides Application Deliver Controller (ADC) as a ser
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="media/index/tutorial.svg" alt="" />
+                            <img src="media/index/get-started.svg" alt="" />
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Create an Application Gateway with the Azure portal</h3>
+                        <h3>Introdução ao Gateway de Aplicação com o Portal do Azure</h3>
                     </div>
                 </div>
             </div>
@@ -67,11 +71,11 @@ Azure Application Gateway provides Application Deliver Controller (ADC) as a ser
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="media/index/tutorial.svg" alt="" />
+                            <img src="media/index/get-started.svg" alt="" />
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Create an Application Gateway with PowerShell</h3>
+                        <h3>Introdução ao Gateway de Aplicação com o PowerShell</h3>
                     </div>
                 </div>
             </div>
@@ -85,11 +89,11 @@ Azure Application Gateway provides Application Deliver Controller (ADC) as a ser
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="media/index/tutorial.svg" alt="" />
+                            <img src="media/index/get-started.svg" alt="" />
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Create an Application Gateway with an Azure Resource Manager template</h3>
+                        <h3>Introdução ao Gateway de Aplicação com um modelo do Resource Manager</h3>
                     </div>
                 </div>
             </div>
@@ -100,28 +104,92 @@ Azure Application Gateway provides Application Deliver Controller (ADC) as a ser
 
 ---
 
-##Reference
+## <a name="reference"></a>Referência
 
-###PowerShell
-[PowerShell Reference](/powershell/azureps-cmdlets-doc)
-
-###Azure CLI
-[Azure CLI](/cli/azure/network/application-gateway)
-
-###.NET
-[.NET API Reference](/dotnet/api)
-
-###Java
-[Java API Reference](/java/api)
-
-###REST
-[REST API Reference](https://msdn.microsoft.com/library/azure/mt684939.aspx)
+<ul class="panelContent cardsW">
+    <li>
+        <a href="/powershell/azureps-cmdlets-doc">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>PowerShell</h3>
+                        <p>Referência ao PowerShell</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+     <li>
+        <a href="/cli/azure/network/application-gateway">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>CLI do Azure</h3>
+                        <p>CLI do Azure</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+     <li>
+        <a href="/dotnet/api">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>.NET</h3>
+                        <p>Referência da API .NET</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+     <li>
+        <a href="/java/api">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>Java</h3>
+                        <p>Referência de Java API</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+     <li>
+        <a href="https://msdn.microsoft.com/library/azure/mt684939.aspx">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>REST</h3>
+                        <p>Referência da API REST</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>   
+    </ul>
+    
 
 <div class="downloadHolder">
     <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/application-gateway.pdf">
         <div class="img"></div>
         <div class="text">
-            Download Application Gateway Documentation
-        </div>
+Transferir a Documentação do Gateway de Aplicação </div>
     </a>
 </div>
+
+
+
+<!--HONumber=Nov16_HO4-->
+
+

@@ -11,28 +11,29 @@ ms.devlang: na
 ms.workload: search
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
-ms.date: 08/29/2016
+ms.date: 10/27/2016
 ms.author: ashmaka
 translationtype: Human Translation
-ms.sourcegitcommit: 6ff31940f3a4e7557e0caf3d9d3740590be3bc04
-ms.openlocfilehash: ab769e5cd6abe27d6793d1aad816c4f4d10ff078
-
+ms.sourcegitcommit: fc2f30569acc49dd383ba230271989eca8a14423
+ms.openlocfilehash: c8e745f7e1385c5ca569a9b8fbc3f5db070f102e
 
 ---
+
 # <a name="query-your-azure-search-index-using-the-rest-api"></a>Consultar o índice da Azure Search através da API REST
 > [!div class="op_single_selector"]
+>
 > * [Descrição geral](search-query-overview.md)
 > * [Portal](search-explorer.md)
 > * [.NET](search-query-dotnet.md)
 > * [REST](search-query-rest-api.md)
-> 
-> 
+>
+>
 
 Este artigo mostra como consultar um índice através da [API REST da Azure Search](https://msdn.microsoft.com/library/azure/dn798935.aspx).
 
 Antes de iniciar estas instruções, já deverá ter [criado um índice de Pesquisa do Azure](search-what-is-an-index.md) e [preenchido este com dados](search-what-is-data-import.md).
 
-## <a name="i-identify-your-azure-search-services-query-apikey"></a>I. Identificar a sua chave de API de consulta do serviço Azure Search
+## <a name="i-identify-your-azure-search-services-query-api-key"></a>I. Identificar a sua chave de API de consulta do serviço Azure Search
 Um elemento-chave de qualquer operação de pesquisa em relação à API REST de Azure Search é a *chave de API* gerada para o serviço prestado por si. Ter uma chave válida estabelece fidedignidade, numa base por pedido, entre a aplicação a enviar o pedido e o serviço que o processa.
 
 1. Para localizar as chaves de API do seu serviço, tem de iniciar sessão no [Portal do Azure](https://portal.azure.com/)
@@ -49,9 +50,9 @@ Para efeitos de consulta de um índice, pode utilizar uma das chaves de consulta
 ## <a name="ii-formulate-your-query"></a>II. Formular a consulta
 Existem duas formas de [pesquisar o índice através da API REST](https://msdn.microsoft.com/library/azure/dn798927.aspx). Uma forma consiste em emitir um pedido de HTTP POST em que os parâmetros da sua consulta serão definidos num objeto JSON no corpo do pedido. A outra forma consiste em emitir um pedido de HTTP GET em que os parâmetros da sua consulta serão definidos no URL do pedido. Tenha em atenção que o POST tem [limites mais flexíveis](https://msdn.microsoft.com/library/azure/dn798927.aspx) em relação ao tamanho dos parâmetros de consulta do que o GET. Por este motivo, recomendamos a utilização do POST, salvo se tiver circunstâncias especiais em que a utilização do GET seja mais conveniente.
 
-Para o POST e o GET, é necessário fornecer o *nome do serviço*, o *nome do índice* e a *versão de API* correta (no momento de publicação deste documento a versão de API atual é `2015-02-28`) no URL do pedido. Para o GET, a *cadeia de consulta* no final do URL será onde fornece os parâmetros de consulta. Veja a seguir o formato URL:
+Para o POST e o GET, é necessário fornecer o *nome do serviço*, o *nome do índice* e a *versão de API* correta (no momento de publicação deste documento a versão de API atual é `2016-09-01`) no URL do pedido. Para o GET, a *cadeia de consulta* no final do URL será onde fornece os parâmetros de consulta. Veja a seguir o formato URL:
 
-    https://[service name].search.windows.net/indexes/[index name]/docs?[query string]&api-version=2015-02-28
+    https://[service name].search.windows.net/indexes/[index name]/docs?[query string]&api-version=2016-09-01
 
 O formato para o POST é o mesmo, contudo, apenas com a versão de API nos parâmetros de cadeia de consulta.
 
@@ -61,9 +62,9 @@ Eis algumas consultas de exemplo sobre um índice designado "hotéis". Estas con
 Procure no índice completo o termo "orçamento" e devolva apenas o campo `hotelName`:
 
 ```
-GET https://[service name].search.windows.net/indexes/hotels/docs?search=budget&$select=hotelName&api-version=2015-02-28
+GET https://[service name].search.windows.net/indexes/hotels/docs?search=budget&$select=hotelName&api-version=2016-09-01
 
-POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-version=2015-02-28
+POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-version=2016-09-01
 {
     "search": "budget",
     "select": "hotelName"
@@ -73,9 +74,9 @@ POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-ve
 Aplique um filtro ao índice para localizar hotéis com um preço inferior a 150 $ por noite e devolva `hotelId` e `description`:
 
 ```
-GET https://[service name].search.windows.net/indexes/hotels/docs?search=*&$filter=baseRate lt 150&$select=hotelId,description&api-version=2015-02-28
+GET https://[service name].search.windows.net/indexes/hotels/docs?search=*&$filter=baseRate lt 150&$select=hotelId,description&api-version=2016-09-01
 
-POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-version=2015-02-28
+POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-version=2016-09-01
 {
     "search": "*",
     "filter": "baseRate lt 150",
@@ -86,9 +87,9 @@ POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-ve
 Procure no índice completo, ordene através de um campo específico (`lastRenovationDate`) por ordem descendente, utilize os dois resultados principais e mostre apenas `hotelName` e `lastRenovationDate`:
 
 ```
-GET https://[service name].search.windows.net/indexes/hotels/docs?search=*&$top=2&$orderby=lastRenovationDate desc&$select=hotelName,lastRenovationDate&api-version=2015-02-28
+GET https://[service name].search.windows.net/indexes/hotels/docs?search=*&$top=2&$orderby=lastRenovationDate desc&$select=hotelName,lastRenovationDate&api-version=2016-09-01
 
-POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-version=2015-02-28
+POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-version=2016-09-01
 {
     "search": "*",
     "orderby": "lastRenovationDate desc",
@@ -110,7 +111,7 @@ Tem de definir dois cabeçalhos do pedido para o GET ou três para o POST:
 Veja a seguir um pedido de HTTP GET para pesquisar o índice "hotéis" através da API REST da Azure Search, utilizando uma consulta simples que procura o termo "hotel":
 
 ```
-GET https://[service name].search.windows.net/indexes/hotels/docs?search=motel&api-version=2015-02-28
+GET https://[service name].search.windows.net/indexes/hotels/docs?search=motel&api-version=2016-09-01
 Accept: application/json
 api-key: [query key]
 ```
@@ -118,7 +119,7 @@ api-key: [query key]
 Eis a mesma consulta de exemplo, desta vez utilizando o HTTP POST:
 
 ```
-POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-version=2015-02-28
+POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-version=2016-09-01
 Content-Type: application/json
 Accept: application/json
 api-key: [query key]
@@ -165,7 +166,6 @@ Para saber mais, consulte a secção "Resposta" dos [Documentos sobre Pesquisa](
 
 
 
-
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO3-->
 
 

@@ -16,8 +16,8 @@ ms.topic: get-started-article
 ms.date: 10/28/2016
 ms.author: nitinme
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 906d78b3177289dc5d2806ec9fbdb868a5bcb6fb
+ms.sourcegitcommit: cc59d7785975e3f9acd574b516d20cd782c22dac
+ms.openlocfilehash: d2109a45249e4e362cd87f730683ef87f1411b86
 
 
 ---
@@ -32,14 +32,14 @@ Saiba como criar um cluster do Apache Spark no HDInsight e, em seguida, utilizar
 * **Uma subscrição do Azure**. Antes de começar este tutorial, tem de ter uma subscrição do Azure. Consulte [Obter uma avaliação gratuita do Azure](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 * **Um cliente Secure Shell (SSH)**: Os sistemas Linux, Unix e OS X fornecem um cliente SSH através do comando `ssh`. Para os sistemas Windows, recomendamos o [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
 * **Chaves Secure Shell (SSH) (opcionais)**: Pode proteger a conta do SSH utilizada para a ligação ao cluster com uma palavra-passe ou uma chave pública. A utilização de uma palavra-passe permite-lhe começar rapidamente, sendo que esta deve ser a sua opção se pretender criar rapidamente um cluster e executar algumas tarefas de teste. A utilização de uma chave é mais segura, contudo, requer uma configuração adicional. Poderá utilizar esta abordagem ao criar um cluster de produção. Neste artigo, utilizamos a abordagem com a palavra-passe. Para obter instruções sobre como criar e utilizar chaves SSH com o HDInsight, consulte os artigos seguintes:
-  
+
   * Num computador com Linux – [Utilizar o SSH com o HDInsight (Hadoop) baseado em Linux a partir do Linux, Unix ou OS X](hdinsight-hadoop-linux-use-ssh-unix.md).
   * Num computador com Windows – [Utilizar o SSH com o HDInsight (Hadoop) baseado em Linux a partir do Windows](hdinsight-hadoop-linux-use-ssh-windows.md).
 
 > [!NOTE]
 > Este artigo utiliza um modelo do Azure Resource Manager para criar um cluster do Spark que utiliza [Blobs de Armazenamento do Azure como o armazenamento do cluster](hdinsight-hadoop-use-blob-storage.md). Também pode criar um cluster Spark que utiliza [Arquivo azure Data Lake](../data-lake-store/data-lake-store-overview.md) como um armazenamento adicional, além de Blobs de armazenamento do Azure como armazenamento de predefinido. Para obter instruções, consulte [Criar um cluster de HDInsight com o Arquivo Data Lake](../data-lake-store/data-lake-store-hdinsight-hadoop-use-portal.md).
-> 
-> 
+>
+>
 
 ### <a name="access-control-requirements"></a>Requisitos do controlo de acesso
 [!INCLUDE [access-control](../../includes/hdinsight-access-control-requirements.md)]
@@ -48,29 +48,29 @@ Saiba como criar um cluster do Apache Spark no HDInsight e, em seguida, utilizar
 Nesta secção, vai criar um cluster do HDInsight versão 3.4 (versão 1.6.1 do Spark) com um modelo do Azure Resource Manager. Para obter informações sobre as versões do HDInsight e os respetivos SLAs, consulte [Controlo de versões de componentes do HDInsight](hdinsight-component-versioning.md). Para obter outros métodos de criação de clusters, consulte [Criar clusters do HDInsight](hdinsight-hadoop-provision-linux-clusters.md).
 
 1. Clique na imagem seguinte para abrir o modelo no Portal do Azure.         
-   
+
     <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fhditutorialdata.blob.core.windows.net%2Farmtemplates%2Fcreate-linux-based-spark-cluster-in-hdinsight.json" target="_blank"><img src="https://acom.azurecomcdn.net/80C57D/cdn/mediahandler/docarticles/dpsmedia-prod/azure.microsoft.com/en-us/documentation/articles/hdinsight-hbase-tutorial-get-started-linux/20160201111850/deploy-to-azure.png" alt="Deploy to Azure"></a>
-   
-    O modelo está localizado num contentor de blobs público, *https://hditutorialdata.blob.core.windows.net/armtemplates/create-linux-based-spark-cluster-in-hdinsight.json*. 
+
+    O modelo está localizado num contentor de blobs público, *https://hditutorialdata.blob.core.windows.net/armtemplates/create-linux-based-spark-cluster-in-hdinsight.json*.
 2. No painel Parâmetros, introduza o seguinte:
-   
+
    * **ClusterName**: introduza um nome para o cluster do Hadoop que irá criar.
    * **Nome e palavra-passe de início de sessão do cluster**: o nome de início de sessão predefinido é admin.
    * **Nome de utilizador e palavra-passe do SSH**.
-     
+
      Anote estes valores.  Serão necessários mais tarde no tutorial.
-     
+
      > [!NOTE]
      > O SSH é utilizado para aceder remotamente ao cluster do HDInsight com uma linha de comandos. O nome de utilizador e a palavra-passe que utilizar aqui são utilizados aquando da ligação ao cluster através de SSH. Além disso, o nome de utilizador do SSH tem de ser exclusivo, pois cria uma conta de utilizador em todos os nós do cluster do HDInsight. Seguem-se alguns dos nomes de conta reservados para utilização pelos serviços do cluster e que não podem ser utilizados como nomes de utilizador do SSH:
-     > 
+     >
      > root, hdiuser, storm, hbase, ubuntu, zookeeper, hdfs, yarn, mapred, hbase, hive, oozie, falcon, sqoop, admin, tez, hcat, hdinsight-zookeeper.
-     > 
+     >
      > Para obter mais informações sobre a utilização do SSH com o HDInsight, consulte um dos seguintes artigos:
-     > 
+     >
      > * [Utilizar o SSH com o Hadoop baseado em Linux no HDInsight a partir do Linux, Unix ou OS X](hdinsight-hadoop-linux-use-ssh-unix.md)
      > * [Utilizar o SSH com o Hadoop baseado em Linux no HDInsight a partir do Windows](hdinsight-hadoop-linux-use-ssh-windows.md)
-     > 
-     > 
+     >
+     >
 
 3.Clique em **OK** para guardar os parâmetros.
 
@@ -86,7 +86,7 @@ Nesta secção, utilizará o bloco de notas do Jupyter para executar consultas d
 * **PySpark** (para aplicações escritas no Python)
 * **Spark** (para aplicações escritas no Scala)
 
-Neste artigo, utilizará o kernel do PySpark. No artigo [Kernels disponíveis nos blocos de notas do Jupyter com clusters do Spark HDInsight](hdinsight-apache-spark-jupyter-notebook-kernels.md#why-should-i-use-the-new-kernels), pode obter detalhes acerca das vantagens da utilização do kernel do PySpark. No entanto, algumas das principais vantagens de utilizar o kernel do PySpark são as seguintes:
+Neste artigo, utilizará o kernel do PySpark. No artigo [Kernels disponíveis nos blocos de notas do Jupyter com clusters do Spark HDInsight](hdinsight-apache-spark-jupyter-notebook-kernels.md#why-should-i-use-the-pyspark-or-spark-kernels), pode obter detalhes acerca das vantagens da utilização do kernel do PySpark. No entanto, algumas das principais vantagens de utilizar o kernel do PySpark são as seguintes:
 
 * Não é necessário definir os contextos para o Spark e o Hive. Estes são definidos automaticamente.
 * Pode utilizar a magia de células, como `%%sql`, para executar diretamente as suas consultas de SQL ou Hive, sem quaisquer fragmentos de código anteriores.
@@ -95,54 +95,54 @@ Neste artigo, utilizará o kernel do PySpark. No artigo [Kernels disponíveis no
 ### <a name="create-jupyter-notebook-with-pyspark-kernel"></a>Criar um bloco de notas do Jupyter com o kernel do PySpark
 1. No [Portal do Azure](https://portal.azure.com/), no startboard, clique no mosaico relativo ao cluster do Spark (se o tiver afixado ao startboard). Também pode navegar até ao cluster em **Procurar Tudo** > **Clusters do HDInsight**.   
 2. No painel do cluster do Spark, clique em **Dashboard de Clusters** e, em seguida, clique em **Bloco de Notas do Jupyter**. Se lhe for solicitado, introduza as credenciais de administrador do cluster.
-   
+
    > [!NOTE]
    > Também pode aceder ao Bloco de Notas do Jupyter para o cluster abrindo o seguinte URL no seu browser. Substitua **CLUSTERNAME** pelo nome do cluster:
-   > 
+   >
    > `https://CLUSTERNAME.azurehdinsight.net/jupyter`
-   > 
-   > 
+   >
+   >
 3. Crie um novo bloco de notas. Clique em **Novo** e, em seguida, clique em **PySpark**.
-   
+
     ![Criar um novo bloco de notas do Jupyter](./media/hdinsight-apache-spark-jupyter-spark-sql/hdispark.note.jupyter.createnotebook.png "Create a new Jupyter notebook")
 4. É criado e aberto um novo bloco de notas com o nome Untitled.pynb. Clique no nome do bloco de notas na parte superior e introduza um nome amigável.
-   
+
     ![Fornecer um nome para o bloco de notas](./media/hdinsight-apache-spark-jupyter-spark-sql/hdispark.note.jupyter.notebook.name.png "Provide a name for the notebook")
 5. Uma vez que criou um bloco de notas com o kernel do PySpark, não é necessário criar quaisquer contextos explicitamente. Os contextos do Spark e do Hive serão criados automaticamente quando executa a primeira célula do código. Pode começar por importar os tipos necessários para este cenário. Para o fazer, cole o seguinte fragmento de código numa célula e prima **SHIFT + ENTER**.
-   
+
         from pyspark.sql.types import *
-   
+
     Sempre que executar uma tarefa no Jupyter, o título da janela do browser apresentará um estado **(Ocupado)** juntamente com o título do bloco de notas. Também verá um círculo sólido junto ao texto do **PySpark** no canto superior direito. Após a conclusão da tarefa, este é alterado para um círculo vazio.
-   
+
      ![Estado de uma tarefa do bloco de notas do Jupyter](./media/hdinsight-apache-spark-jupyter-spark-sql/hdispark.jupyter.job.status.png "Status of a Jupyter notebook job")
 6. Carregue dados de exemplo para uma tabela temporária. Quando cria um cluster do Spark no HDInsight, o ficheiro de dados de exemplo, **hvac.csv**, é copiado para a conta do Storage associada em **\HdiSamples\HdiSamples\SensorSampleData\hvac**.
-   
+
     Numa célula vazia, cole o seguinte exemplo de código e prima **SHIFT + ENTER**. Este exemplo de código regista os dados numa tabela temporária denominada **hvac**.
-   
+
         # Load the data
         hvacText = sc.textFile("wasbs:///HdiSamples/HdiSamples/SensorSampleData/hvac/HVAC.csv")
-   
+
         # Create the schema
         hvacSchema = StructType([StructField("date", StringType(), False),StructField("time", StringType(), False),StructField("targettemp", IntegerType(), False),StructField("actualtemp", IntegerType(), False),StructField("buildingID", StringType(), False)])
-   
+
         # Parse the data in hvacText
         hvac = hvacText.map(lambda s: s.split(",")).filter(lambda s: s[0] != "Date").map(lambda s:(str(s[0]), str(s[1]), int(s[2]), int(s[3]), str(s[6]) ))
-   
+
         # Create a data frame
         hvacdf = sqlContext.createDataFrame(hvac,hvacSchema)
-   
+
         # Register the data fram as a table to run queries against
         hvacdf.registerTempTable("hvac")
-7. Uma vez que está a utilizar um kernel do PySpark, agora, pode executar diretamente uma consulta de SQL na tabela temporária **hvac** que acabou de criar utilizando a magia `%%sql`. Para obter mais informações sobre a magia `%%sql`, bem como sobre outras magias disponíveis com o kernel do PySpark, consulte [Kernels disponíveis nos blocos de notas do Jupyter com clusters do Spark HDInsight](hdinsight-apache-spark-jupyter-notebook-kernels.md#why-should-i-use-the-new-kernels).
-   
+7. Uma vez que está a utilizar um kernel do PySpark, agora, pode executar diretamente uma consulta de SQL na tabela temporária **hvac** que acabou de criar utilizando a magia `%%sql`. Para obter mais informações sobre a magia `%%sql`, bem como sobre outras magias disponíveis com o kernel do PySpark, consulte [Kernels disponíveis nos blocos de notas do Jupyter com clusters do Spark HDInsight](hdinsight-apache-spark-jupyter-notebook-kernels.md#why-should-i-use-the-pyspark-or-spark-kernels).
+
         %%sql
         SELECT buildingID, (targettemp - actualtemp) AS temp_diff, date FROM hvac WHERE date = \"6/1/13\"
 8. Assim que a tarefa for concluída com êxito, é apresentado, por predefinição, o seguinte resultado da tabela.
-   
+
      ![Saída do tabela do resultado da consulta](./media/hdinsight-apache-spark-jupyter-spark-sql/tabular.output.png "Table output of query result")
-   
+
     Também pode ver os resultados noutras visualizações. Por exemplo, um gráfico de área para o mesmo resultado teria o seguinte aspeto.
-   
+
     ![Gráfico de área do resultado da consulta](./media/hdinsight-apache-spark-jupyter-spark-sql/area.output.png "Area graph of query result")
 9. Depois de terminar a execução da aplicação, deve encerrar o bloco de notas para libertar os recursos. Para o fazer, no menu **Ficheiro** do bloco de notas, clique em **Fechar e Parar**. Deste modo, o bloco de notas é encerrado e fechado.
 

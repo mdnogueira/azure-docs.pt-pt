@@ -1,210 +1,132 @@
 ---
-title: Criar uma VM com Linux no Azure com a CLI | Microsoft Docs
-description: Criar uma VM com Linux no Azure com a CLI.
+title: "Criar uma VM do Linux com a CLI do Azure 2.0 (Pré-visualização) | Microsoft Azure"
+description: "Criar uma VM do Linux com a CLI do Azure 2.0 (Pré-visualização)."
 services: virtual-machines-linux
 documentationcenter: 
-author: vlivech
+author: squillace
 manager: timlt
 editor: 
-ms.assetid: facb1115-2b4e-4ef3-9905-330e42beb686
+ms.assetid: 82005a05-053d-4f52-b0c2-9ae2e51f7a7e
 ms.service: virtual-machines-linux
 ms.devlang: NA
 ms.topic: hero-article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 10/27/2016
-ms.author: v-livech
+ms.date: 09/26/2016
+ms.author: rasquill
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: fd75ab9a37dfc75679427a16c3ecb36adb1c9925
+ms.sourcegitcommit: 2bd363e3c22f4cf4daf2e0fa352fd4a131d1675f
+ms.openlocfilehash: 89db2c9f388b8a5496a306ba0a152ab57481ea50
 
 
 ---
-# <a name="create-a-linux-vm-on-azure-by-using-the-cli"></a>Criar uma VM com Linux no Azure com a CLI
-Este artigo mostra como implementar rapidamente uma máquina virtual (VM) com Linux no Azure através do comando `azure vm quick-create` na interface de linha de comandos (CLI) do Azure. O comando `quick-create` implementa uma VM numa infraestrutura básica segura que pode utilizar para criar protótipos ou testar rapidamente um conceito. O artigo requer:
 
-* uma conta do Azure ([obtenha uma avaliação gratuita](https://azure.microsoft.com/pricing/free-trial/)).
-* a [CLI do Azure](../xplat-cli-install.md) com sessão iniciada com `azure login`.
-* a CLI do Azure *tem de estar no* modo Azure Resource Manager`azure config mode arm`.
+# <a name="create-a-linux-vm-using-the-azure-cli-20-preview"></a>Criar uma VM do Linux com a CLI do Azure 2.0 (Pré-visualização)
+Este artigo mostra como implementar rapidamente uma máquina virtual (VM) do Linux no Azure através do comando [az vm create](/cli/azure/vm#create) na CLI do Azure 2.0 (Pré-visualização). 
 
-Também pode implementar rapidamente uma VM com Linux através do [portal do Azure](virtual-machines-linux-quick-create-portal.md).
+> [!NOTE] 
+> A CLI do Azure 2.0 (Pré-visualização) é a nossa CLI multiplataforma de próxima geração. Experimente-a e dê-nos a sua opinião na [página do projeto GibHub](https://github.com/Azure/azure-cli).
+>
+> Os nossos outros documentos utilizam a CLI do Azure existente. Para criar uma VM com a CLI do Azure atual e não com a CLI 2.0 (Pré-visualização), veja [Create a VM with the Azure CLI (Criar uma VM com a CLI do Azure)](virtual-machines-linux-quick-create-cli-nodejs.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
-## <a name="quick-commands"></a>Comandos rápidos
-O exemplo seguinte mostra como implementar uma VM CoreOS e anexar a chave Secure Shell (SSH) (os seus argumentos podem ser diferentes):
+Para criar uma VM, precisa de: 
 
-```azurecli
-azure vm quick-create -M ~/.ssh/id_rsa.pub -Q CoreOS
-```
+* uma conta do Azure ([obter uma avaliação gratuita](https://azure.microsoft.com/pricing/free-trial/))
+* da [CLI do Azure v. 2.0 (Pré-visualização)](https://github.com/Azure/azure-cli#installation) instalada
+* ter sessão iniciada na sua conta do Azure (escreva[az login](/cli/azure/#login))
 
-## <a name="detailed-walkthrough"></a>Instruções detalhadas
-As instruções seguintes têm uma VM UbuntuLTS a ser implementada, passo a passo, com explicações do que cada passo está a fazer.
+Também pode implementar rapidamente uma VM do Linux através do [portal do Azure](virtual-machines-linux-quick-create-portal.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
-## <a name="vm-quickcreate-aliases"></a>Criação rápida de aliases para VM
-Uma forma rápida de escolher uma distribuição consiste em utilizar os aliases da CLI do Azure mapeados para as distribuições de SO mais comuns. A tabela seguinte lista os aliases (a partir da versão 0.10 da CLI do Azure). Todas as implementações que utilizem `quick-create` são predefinidas para VMs apoiadas pelo armazenamento de unidade de estado sólido (SSD), que oferece aprovisionamento mais rápido e acesso ao disco de elevado desempenho. (Estes aliases representam uma parte muito pequena das distribuições disponíveis no Azure. Encontre mais imagens no Azure Marketplace ao [procurar uma imagem no PowerShell](virtual-machines-linux-cli-ps-findimage.md), [na Web](https://azure.microsoft.com/marketplace/virtual-machines/) ou ao [carregar a sua própria imagem personalizada](virtual-machines-linux-create-upload-generic.md).)
+O exemplo seguinte mostra como implementar uma VM Debian e ligar a chave Secure Shell (SSH) (os seus argumentos podem ser diferentes; se quiser outra imagem, pode [procurá-la](virtual-machines-linux-cli-ps-findimage.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)).
 
-| Alias | Publicador | Oferta | SKU | Versão |
-|:--- |:--- |:--- |:--- |:--- |
-| CentOS |OpenLogic |CentOS |7.2 |mais recente |
-| CoreOS |CoreOS |CoreOS |Estável |mais recente |
-| Debian |credativ |Debian |8 |mais recente |
-| openSUSE |SUSE |openSUSE |13.2 |mais recente |
-| RHEL |Red Hat |RHEL |7.2 |mais recente |
-| UbuntuLTS |Canónico |Ubuntu Server |14.04.4-LTS |mais recente |
+## <a name="create-a-resource-group"></a>Criar um grupo de recursos
 
-As secções seguintes utilizam o alias `UbuntuLTS` para a opção **ImageURN** (`-Q`) para implementar um Ubuntu 14.04.4 LTS Server.
-
-O exemplo `quick-create` anterior apenas chamou o sinalizador `-M` para identificar a chave pública SSH para carregar ao mesmo tempo que desativou palavras-passe SSH, pelo que lhe são pedidos os argumentos seguintes:
-
-* o nome do grupo de recursos (normalmente, qualquer cadeia serve para o seu primeiro grupo de recursos do Azure)
-* o nome da VM
-* localização (`westus` ou `westeurope` são boas predefinições)
-* o linux (para que o Azure saiba que SO pretende)
-* o nome de utilizador
-
-O exemplo seguinte especifica todos os valores, para que não sejam necessários mais pedidos. Assim, desde que tenha um `~/.ssh/id_rsa.pub` como um ficheiro de chave pública com o formato ssh-rsa, funciona tal como está:
+Em primeiro lugar, escreva [az resource group create](/cli/azure/resource/group#create) para criar um grupo de recursos que contenha todos os recursos implementados:
 
 ```azurecli
-azure vm quick-create \
-  --resource-group myResourceGroup \
-  --name myVM \
-  --location westus \
-  --os-type Linux \
-  --admin-username myAdminUser \
-  --ssh-public-file ~/.ssh/id_rsa.pub \
-  --image-urn UbuntuLTS
+az resource group create -n myResourceGroup -l westus
 ```
 
-O resultado deverá ser semelhante ao do bloco de saída seguinte:
+O resultado tem um aspeto semelhante ao seguinte (pode escolher outra opção de `--output` se quiser):
+
+```json
+{
+  "id": "/subscriptions/<guid>/resourceGroups/myResourceGroup",
+  "location": "westus",
+  "name": "myResourceGroup",
+  "properties": {
+    "provisioningState": "Succeeded"
+  },
+  "tags": null
+}
+```
+
+## <a name="create-your-vm-using-the-latest-debian-image"></a>Criar a VM com a imagem Debian mais recente
+
+Agora, pode criar a sua VM e o respetivo ambiente. Não se esqueça de substituir o valor de `----public-ip-address-dns-name` por um exclusivo; é possível que o valor abaixo possa já não estar disponível.
 
 ```azurecli
-info:    Executing command vm quick-create
-+ Listing virtual machine sizes available in the location "westus"
-+ Looking up the VM "myVM"
-info:    Verifying the public key SSH file: /Users/ahmet/.ssh/id_rsa.pub
-info:    Using the VM Size "Standard_DS1"
-info:    The [OS, Data] Disk or image configuration requires storage account
-+ Looking up the storage account cli16330708391032639673
-+ Looking up the NIC "examp-westu-1633070839-nic"
-info:    An nic with given name "examp-westu-1633070839-nic" not found, creating a new one
-+ Looking up the virtual network "examp-westu-1633070839-vnet"
-info:    Preparing to create new virtual network and subnet
-/ Creating a new virtual network "examp-westu-1633070839-vnet" [address prefix: "10.0.0.0/16"] with subnet "examp-westu-1633070839-snet" [address prefix: "10.+.1.0/24"]
-+ Looking up the virtual network "examp-westu-1633070839-vnet"
-+ Looking up the subnet "examp-westu-1633070839-snet" under the virtual network "examp-westu-1633070839-vnet"
-info:    Found public ip parameters, trying to setup PublicIP profile
-+ Looking up the public ip "examp-westu-1633070839-pip"
-info:    PublicIP with given name "examp-westu-1633070839-pip" not found, creating a new one
-+ Creating public ip "examp-westu-1633070839-pip"
-+ Looking up the public ip "examp-westu-1633070839-pip"
-+ Creating NIC "examp-westu-1633070839-nic"
-+ Looking up the NIC "examp-westu-1633070839-nic"
-+ Looking up the storage account clisto1710997031examplev
-+ Creating VM "myVM"
-+ Looking up the VM "myVM"
-+ Looking up the NIC "examp-westu-1633070839-nic"
-+ Looking up the public ip "examp-westu-1633070839-pip"
-data:    Id                              :/subscriptions/2<--snip-->d/resourceGroups/exampleResourceGroup/providers/Microsoft.Compute/virtualMachines/exampleVMName
-data:    ProvisioningState               :Succeeded
-data:    Name                            :exampleVMName
-data:    Location                        :westus
-data:    Type                            :Microsoft.Compute/virtualMachines
-data:
-data:    Hardware Profile:
-data:      Size                          :Standard_DS1
-data:
-data:    Storage Profile:
-data:      Image reference:
-data:        Publisher                   :Canonical
-data:        Offer                       :UbuntuServer
-data:        Sku                         :14.04.4-LTS
-data:        Version                     :latest
-data:
-data:      OS Disk:
-data:        OSType                      :Linux
-data:        Name                        :clic7fadb847357e9cf-os-1473374894359
-data:        Caching                     :ReadWrite
-data:        CreateOption                :FromImage
-data:        Vhd:
-data:          Uri                       :https://cli16330708391032639673.blob.core.windows.net/vhds/clic7fadb847357e9cf-os-1473374894359.vhd
-data:
-data:    OS Profile:
-data:      Computer Name                 :myVM
-data:      User Name                     :myAdminUser
-data:      Linux Configuration:
-data:        Disable Password Auth       :true
-data:
-data:    Network Profile:
-data:      Network Interfaces:
-data:        Network Interface #1:
-data:          Primary                   :true
-data:          MAC Address               :00-0D-3A-33-42-FB
-data:          Provisioning State        :Succeeded
-data:          Name                      :examp-westu-1633070839-nic
-data:          Location                  :westus
-data:            Public IP address       :138.91.247.29
-data:            FQDN                    :examp-westu-1633070839-pip.westus.cloudapp.azure.com
-data:
-data:    Diagnostics Profile:
-data:      BootDiagnostics Enabled       :true
-data:      BootDiagnostics StorageUri    :https://clisto1710997031examplev.blob.core.windows.net/
-data:
-data:      Diagnostics Instance View:
-info:    vm quick-create command OK
+az vm create \
+--image credativ:Debian:8:latest \
+--admin-username ops \
+--ssh-key-value ~/.ssh/id_rsa.pub \
+--public-ip-address-dns-name mydns \
+--resource-group myResourceGroup \
+--location westus \
+--name myVM
 ```
 
-## <a name="log-in-to-the-new-vm"></a>Iniciar sessão na nova VM
-Inicie sessão na sua VM com o endereço IP público apresentado no resultado. Também pode utilizar o nome de domínio completamente qualificado (FQDN) apresentado:
+
+O resultado tem o seguinte aspeto. Tenha em atenção os valores `publicIpAddress` ou `fqdn` para **ssh** na sua VM.
+
+
+```json
+{
+  "fqdn": "mydns.westus.cloudapp.azure.com",
+  "id": "/subscriptions/<guid>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM",
+  "macAddress": "00-0D-3A-32-05-07",
+  "privateIpAddress": "10.0.0.4",
+  "publicIpAddress": "40.112.217.29",
+  "resourceGroup": "myResourceGroup"
+}
+```
+
+Inicie sessão na sua VM com o endereço IP público apresentado no resultado. Também pode utilizar o nome de domínio completamente qualificado (FQDN) apresentado.
 
 ```bash
-ssh -i ~/.ssh/id_rsa.pub ahmet@138.91.247.29
+ssh ops@mydns.westus.cloudapp.azure.com
 ```
 
-O processo de início de sessão deve ter um aspeto semelhante ao do bloco de saída:
+Deverá ver algo semelhante ao resultado seguinte, consoante a distribuição que escolheu:
 
-```bash
-Warning: Permanently added '138.91.247.29' (ECDSA) to the list of known hosts.
-Welcome to Ubuntu 14.04.4 LTS (GNU/Linux 3.19.0-65-generic x86_64)
+```
+The authenticity of host 'mydns.westus.cloudapp.azure.com (40.112.217.29)' can't be established.
+RSA key fingerprint is SHA256:xbVC//lciRvKild64lvup2qIRimr/GB8C43j0tSHWnY.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'mydns.westus.cloudapp.azure.com,40.112.217.29' (RSA) to the list of known hosts.
 
- * Documentation:  https://help.ubuntu.com/
-
-  System information as of Thu Sep  8 22:50:57 UTC 2016
-
-  System load: 0.63              Memory usage: 2%   Processes:       81
-  Usage of /:  39.6% of 1.94GB   Swap usage:   0%   Users logged in: 0
-
-  Graph this data and manage this system at:
-    https://landscape.canonical.com/
-
-  Get cloud support with Ubuntu Advantage Cloud Guest:
-    http://www.ubuntu.com/business/services/cloud
-
-0 packages can be updated.
-0 updates are security updates.
-
-
-
-The programs included with the Ubuntu system are free software;
+The programs included with the Debian GNU/Linux system are free software;
 the exact distribution terms for each program are described in the
 individual files in /usr/share/doc/*/copyright.
 
-Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
-applicable law.
-
-myAdminUser@myVM:~$
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+ops@mynewvm:~$ ls /
+bin  boot  dev  etc  home  initrd.img  lib  lib64  lost+found  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var  vmlinuz
 ```
 
 ## <a name="next-steps"></a>Passos seguintes
-O comando `azure vm quick-create` é a forma mais rápida de implementar uma VM para que possa iniciar sessão numa shell bash e começar a trabalhar. No entanto, utilizar o comando `vm quick-create` não lhe dá um controlo extenso nem lhe permite criar um ambiente mais complexo.  Para implementar uma VM com Linux personalizada para a sua infraestrutura, pode seguir qualquer um dos artigos seguintes:
+O comando `az vm create` é a forma mais rápida de implementar uma VM para que possa iniciar sessão numa shell bash e começar a trabalhar. No entanto, utilizar o comando `az vm create` não lhe dá um controlo extenso nem lhe permite criar um ambiente mais complexo.  Para implementar uma VM com Linux personalizada para a sua infraestrutura, pode seguir qualquer um dos artigos seguintes:
 
-* [Utilizar um modelo do Azure Resource Manager para criar uma implementação específica](virtual-machines-linux-cli-deploy-templates.md)
-* [Criar um ambiente personalizado para uma VM com Linux diretamente através dos comandos da CLI do Azure](virtual-machines-linux-create-cli-complete.md)
-* [Criar uma VM com Linux Protegida por SSH no Azure através de modelos](virtual-machines-linux-create-ssh-secured-vm-from-template.md)
+* [Utilizar um modelo do Azure Resource Manager para criar uma implementação específica](virtual-machines-linux-cli-deploy-templates.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+* [Criar um ambiente personalizado para uma VM com Linux diretamente através dos comandos da CLI do Azure](virtual-machines-linux-create-cli-complete.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+* [Criar uma VM com Linux Protegida por SSH no Azure através de modelos](virtual-machines-linux-create-ssh-secured-vm-from-template.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 
-Também pode [utilizar o controlador `docker-machine` do Azure com vários comandos para criar rapidamente uma VM do Linux como anfitrião docker](virtual-machines-linux-docker-machine.md).
-
-
+Também pode [utilizar o controlador `docker-machine` do Azure com vários comandos para criar rapidamente uma VM do Linux como anfitrião docker](virtual-machines-linux-docker-machine.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) e, se estiver a utilizar Java, experimente o método [create()](/java/api/com.microsoft.azure.management.compute._virtual_machine).
 
 
-<!--HONumber=Nov16_HO2-->
+
+
+<!--HONumber=Nov16_HO4-->
 
 

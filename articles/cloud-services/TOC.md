@@ -98,9 +98,9 @@
 ### [FAQ dos Serviços Cloud](cloud-services-faq.md)
 
 # Referência
-## [.NET](https://msdn.microsoft.com/library)
 ## [Esquema XML .csdef](https://msdn.microsoft.com/library/azure/ee758711)
 ## [Esquema XML .cscfg](https://msdn.microsoft.com/library/azure/ee758710)
+## [REST](https://msdn.microsoft.com/library/azure/ee460812)
 ## [Correções do SO convidado](cloud-services-guestos-msrc-releases.md)
 ## Extinção do SO convidado
 ### [Política de extinção](cloud-services-guestos-retirement-policy.md)
@@ -116,6 +116,6 @@
 ## [Percurso de aprendizagem](https://azure.microsoft.com/documentation/learning-paths/cloud-services/)
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO4-->
 
 

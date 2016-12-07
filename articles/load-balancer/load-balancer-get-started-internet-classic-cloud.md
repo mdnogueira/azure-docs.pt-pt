@@ -3,9 +3,8 @@ title: "Introdução à criação de um balanceador de carga com acesso à Inter
 description: "Saiba como criar um balanceador de carga com acesso à Internet no modelo de implementação clássica para serviços em nuvem"
 services: load-balancer
 documentationcenter: na
-author: sdwheeler
-manager: carmonm
-editor: 
+author: kumudd
+manager: timlt
 tags: azure-service-management
 ms.assetid: 0bb16f96-56a6-429f-88f5-0de2d0136756
 ms.service: load-balancer
@@ -14,52 +13,55 @@ ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/17/2016
-ms.author: sewhee
+ms.author: kumud
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 171d5cd41d900b83c22e1db4bc514471a3d4b556
+ms.sourcegitcommit: cf1eafc7bca5bddeb32f1e1e05e660d6877ed805
+ms.openlocfilehash: 6a471050a03c8399b0715c331b54636c68fd71cb
 
 ---
 
 # <a name="get-started-creating-an-internet-facing-load-balancer-for-cloud-services"></a>Introdução à criação de um balanceador de carga com acesso à Internet para serviços em nuvem
 
-[!INCLUDE [load-balancer-get-started-internet-classic-selectors-include.md](../../includes/load-balancer-get-started-internet-classic-selectors-include.md)]
+> [!div class="op_single_selector"]
+> * [Portal Clássico do Azure](../load-balancer/load-balancer-get-started-internet-classic-portal.md)
+> * [PowerShell](../load-balancer/load-balancer-get-started-internet-classic-ps.md)
+> * [CLI do Azure](../load-balancer/load-balancer-get-started-internet-classic-cli.md)
+> * [Serviços em Nuvem do Azure](../load-balancer/load-balancer-get-started-internet-classic-cloud.md)
 
 [!INCLUDE [load-balancer-get-started-internet-intro-include.md](../../includes/load-balancer-get-started-internet-intro-include.md)]
 
-[!INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)]
-
-Este artigo abrange o modelo de implementação clássica. Também pode [saber como criar um balanceador de carga com acesso à Internet com o Azure Resource Manager](load-balancer-get-started-internet-arm-cli.md).
+> [!IMPORTANT]
+> Para trabalhar com recursos do Azure, é importante compreender que o Azure tem atualmente dois modelos de implementação: o Azure Resource Manager e a implementação clássica. Confirme que compreende os [modelos e ferramentas de implementação](../azure-classic-rm.md) antes de trabalhar com qualquer recurso do Azure. Pode ver a documentação de diversas ferramentas clicando nos separadores na parte superior deste artigo. Este artigo abrange o modelo de implementação clássica. Também pode [saber como criar um balanceador de carga com acesso à Internet com o Azure Resource Manager](load-balancer-get-started-internet-arm-ps.md).
 
 Os serviços em nuvem são configurados automaticamente com um balanceador de carga e podem ser personalizados através do modelo de serviço.
 
 ## <a name="create-a-load-balancer-using-the-service-definition-file"></a>Criar um balanceador de carga com o ficheiro de definição do serviço
 
-Pode aproveitar o Azure SDK para .NET 2.5 para atualizar o seu serviço em nuvem. As definições de ponto final para serviços em nuvem são efetuadas no ficheiro .csdef de [definição do serviço](https://msdn.microsoft.com/library/azure/gg557553.aspx).
+Pode aproveitar o Azure SDK para .NET 2.5 para atualizar o seu serviço em nuvem. As definições de ponto final dos serviços cloud são efetuadas no ficheiro .csdef de [definição do serviço](https://msdn.microsoft.com/library/azure/gg557553.aspx).
 
 O exemplo seguinte mostra como um ficheiro servicedefinition.csdef para uma implementação em nuvem está configurado:
 
-Ao verificar o fragmento do ficheiro .csdef gerado por uma implementação em nuvem, pode ver o ponto final externo configurado para utilizar as portas HTTP na porta 10000, 10001 e 10002.
+Ao verificar o fragmento do ficheiro .csdef gerado por uma implementação na cloud, pode ver o ponto final externo configurado para utilizar as portas HTTP na porta 10000, 10001 e 10002.
 
 ```xml
-    <ServiceDefinition name=“Tenant“>
-       <WorkerRole name=“FERole” vmsize=“Small“>
-    <Endpoints>
-        <InputEndpoint name=“FE_External_Http” protocol=“http” port=“10000“ />
-        <InputEndpoint name=“FE_External_Tcp“  protocol=“tcp“  port=“10001“ />
-        <InputEndpoint name=“FE_External_Udp“  protocol=“udp“  port=“10002“ />
+<ServiceDefinition name=“Tenant“>
+    <WorkerRole name=“FERole” vmsize=“Small“>
+<Endpoints>
+    <InputEndpoint name=“FE_External_Http” protocol=“http” port=“10000“ />
+    <InputEndpoint name=“FE_External_Tcp“  protocol=“tcp“  port=“10001“ />
+    <InputEndpoint name=“FE_External_Udp“  protocol=“udp“  port=“10002“ />
 
-        <InputEndpointname=“HTTP_Probe” protocol=“http” port=“80” loadBalancerProbe=“MyProbe“ />
+    <InputEndpointname=“HTTP_Probe” protocol=“http” port=“80” loadBalancerProbe=“MyProbe“ />
 
-        <InstanceInputEndpoint name=“InstanceEP” protocol=“tcp” localPort=“80“>
-           <AllocatePublicPortFrom>
-              <FixedPortRange min=“10110” max=“10120“  />
-           </AllocatePublicPortFrom>
-        </InstanceInputEndpoint>
-        <InternalEndpoint name=“FE_InternalEP_Tcp” protocol=“tcp“ />
-    </Endpoints>
-      </WorkerRole>
-    </ServiceDefinition>
+    <InstanceInputEndpoint name=“InstanceEP” protocol=“tcp” localPort=“80“>
+        <AllocatePublicPortFrom>
+            <FixedPortRange min=“10110” max=“10120“  />
+        </AllocatePublicPortFrom>
+    </InstanceInputEndpoint>
+    <InternalEndpoint name=“FE_InternalEP_Tcp” protocol=“tcp“ />
+</Endpoints>
+    </WorkerRole>
+</ServiceDefinition>
 ```
 
 ## <a name="check-load-balancer-health-status-for-cloud-services"></a>Verificar o estado de funcionamento do balanceador de carga para serviços em nuvem
@@ -67,12 +69,12 @@ Ao verificar o fragmento do ficheiro .csdef gerado por uma implementação em nu
 Segue-se um exemplo de uma sonda de estado de funcionamento:
 
 ```xml
-    <LoadBalancerProbes>
-        <LoadBalancerProbe name=“MyProbe” protocol=“http” path=“Probe.aspx” intervalInSeconds=“5” timeoutInSeconds=“100“ />
-    </LoadBalancerProbes>
+<LoadBalancerProbes>
+    <LoadBalancerProbe name=“MyProbe” protocol=“http” path=“Probe.aspx” intervalInSeconds=“5” timeoutInSeconds=“100“ />
+</LoadBalancerProbes>
 ```
 
-O balanceador de carga combina as informações do ponto final e da sonda para criar um URL com o formato http://{DIP de VM}:80/Probe.aspx que pode ser utilizado para consultar o estado de funcionamento do serviço.
+O balanceador de carga combina as informações do ponto final e da sonda para criar um URL com o formato `http://{DIP of VM}:80/Probe.aspx`, que pode ser utilizado para consultar o estado de funcionamento do serviço.
 
 O serviço deteta as sondas periódicas do mesmo endereço IP. Este é o pedido de sonda do estado de funcionamento proveniente do anfitrião do nó no qual a máquina virtual está a ser executada. O serviço tem de responder com um código de estado HTTP 200 para o balanceador de carga para assumir que o serviço está em bom estado. Qualquer outro código de estado HTTP (por exemplo, 503) retira diretamente a máquina virtual da rotação.
 
@@ -91,6 +93,6 @@ Verifique o esquema de definição do serviço para a [sonda de estado de funcio
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO3-->
 
 

@@ -16,8 +16,8 @@ ms.workload: na
 ms.date: 09/25/2016
 ms.author: glenga
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 2381b04e32a6d65075dadf04f717f4946ba4d464
+ms.sourcegitcommit: 96f253f14395ffaf647645176b81e7dfc4c08935
+ms.openlocfilehash: c7e4d5c0b2602ba8c12184900eba05fee48c4450
 
 
 ---
@@ -29,7 +29,7 @@ Este tópico mostra-lhe como criar uma nova função em C# que é executada com 
 ## <a name="prerequisites"></a>Pré-requisitos
 Antes de poder criar uma função, tem de ter uma conta do Azure ativa. Se ainda não tiver uma conta do Azure, [estão disponíveis contas gratuitas](https://azure.microsoft.com/free/).
 
-## <a name="create-a-timertriggered-function-from-the-template"></a>Criar uma função acionada por temporizador a partir do modelo
+## <a name="create-a-timer-triggered-function-from-the-template"></a>Criar uma função acionada por temporizador a partir do modelo
 Uma aplicação de função aloja a execução das suas funções no Azure. Antes de poder criar uma função, tem de ter uma conta do Azure ativa. Se ainda não tiver uma conta do Azure, [estão disponíveis contas gratuitas](https://azure.microsoft.com/free/). 
 
 1. Aceda ao [portal das Funções do Azure](https://functions.azure.com/signin) e inicie sessão com a sua conta do Azure.

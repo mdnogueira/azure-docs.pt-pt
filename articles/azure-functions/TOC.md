@@ -8,7 +8,7 @@
 # Procedimento
 ## Planear e conceber
 ### [Escolher entre Fluxo, Aplicações Lógicas, Funções e WebJobs](functions-compare-logic-apps-ms-flow-webjobs.md)
-### [Escolher entre Consumo e plano do Serviço de Aplicações](functions-scale.md)
+### [Escolher entre planos de alojamento](functions-scale.md)
 
 ## Programar
 ### [Programar aplicações de função](functions-reference.md)
@@ -21,7 +21,7 @@
 #### [Enlaces de Aplicações Móveis](functions-bindings-mobile-apps.md)
 #### [Vínculo de saída do Hub de notificação](functions-bindings-notification-hubs.md)
 #### [Acionadores e enlaces do Service Bus para filas e tópicos](functions-bindings-service-bus.md)
-#### Armazenamento
+#### Enlaces de armazenamento
 ##### [Enlaces de blobs](functions-bindings-storage-blob.md)
 ##### [Enlaces de filas](functions-bindings-storage-queue.md)
 ##### [Enlaces de tabelas](functions-bindings-storage-table.md)
@@ -30,6 +30,7 @@
 ### [Criar uma função a partir do portal do Azure](functions-create-first-azure-function-azure-portal.md)
 ### [Testar as Funções do Azure](functions-test-a-function.md)
 ### [Desenvolver e depurar localmente](functions-run-local.md)
+### [Best Practices for Azure Functions (Melhores Práticas para as Funções do Azure)](functions-best-practices.md)
 ### [Utilize as Funções do Azure para efetuar uma tarefa agendada de limpeza](functions-scenario-database-table-cleanup.md)
 
 ## Gerir
@@ -38,8 +39,8 @@
 ## Implementação
 ### [Implementação contínua para Funções do Azure](functions-continuous-deployment.md)
 
-# Referência
-## [API .NET](https://msdn.microsoft.com/library/azure/dn961176.aspx)
+## Monitorizar
+### [Monitorizar as Funções do Azure](functions-monitoring.md)
 
 # Recursos
 ## [Preços](https://azure.microsoft.com/pricing/details/functions/)  
@@ -48,6 +49,6 @@
 ## [Atualizações de serviço](https://azure.microsoft.com/en-us/updates/?product=functions&updatetype=&platform=)
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO4-->
 
 

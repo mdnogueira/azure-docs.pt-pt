@@ -15,8 +15,8 @@ ms.topic: hero-article
 ms.date: 08/25/2016
 ms.author: yuaxu
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 38735f7c0154388e8698edc5bac931c5a079a865
+ms.sourcegitcommit: 830eb6627cae71f358b9790791b1d86f7c82c566
+ms.openlocfilehash: 005d2fb2bce7e42d1ce961b90610b16f299abfd0
 
 
 ---
@@ -68,7 +68,7 @@ As notificações push são uma das funcionalidades mais pedidas aos serviços e
 
 * **Dependência de plataformas.** Para enviar notificações para dispositivos em diferentes plataformas, é preciso codificar múltiplas plataformas no back-end. Não são só os detalhes de baixo nível que diferem, a própria apresentação da notificação (mosaico, alerta ou destaque) também depende da plataforma. Estas diferenças podem levar a um código de back-end complexo e difícil manter.
 * **Dimensionamento.** O dimensionamento desta infraestrutura tem dois aspetos:
-  
+
   * De acordo com as diretrizes PNS, os tokens de dispositivo têm de ser atualizados sempre que a aplicação é iniciada. Esta situação origina uma grande quantidade de tráfego (e consequente acesso às da base de dados) só para manter atualizados os tokens de dispositivo. Quando aumenta o número de dispositivos (possivelmente para milhões), o custo de criar e manter esta infraestrutura deixa de ser negligenciável.
   * A maioria dos PNSs não suporta a difusão para vários dispositivos. Consequentemente, a difusão para milhões de dispositivos resulta em milhões de chamadas para os PNSs. A capacidade de dimensionar estes pedidos é importante, porque, normalmente, os programadores de aplicações preferem manter a latência total reduzida. Por exemplo, o último dispositivo a receber a mensagem não deverá receber a notificação 30 minutos depois do envio, uma vez que, em muitos casos, isso iria contra o objetivo das notificações push.
 * **Encaminhamento.** Os PNSs proporcionam um modo de enviar uma mensagem para um dispositivo. No entanto, na maioria das aplicações as notificações destinam-se a utilizadores e/ou grupos de interesses (por exemplo, todos os funcionários atribuídos a uma determinada conta de cliente). Sendo assim, para encaminhar as notificações para os dispositivos corretos, o back-end da aplicação tem de manter um registo que associa os grupos de interesses a tokens de dispositivo. Esta sobrecarga soma-se ao tempo total de comercialização e aos custos de manutenção de uma aplicação.
@@ -81,19 +81,19 @@ Os Notification Hubs acabam com a complexidade: não terá de gerir os desafios 
 Os Notification Hubs fornecem uma infraestrutura de notificação push pronta a utilizar com as seguintes vantagens:
 
 * **Várias plataformas.**
-  
+
   * Suporte para todas as principais plataformas móveis. Os Notification Hubs podem enviar notificações push para aplicações da Loja Windows, iOS, Android e Windows Phone.
   * Os Notification Hubs constituem uma interface comum para enviar notificações para todas as plataformas suportadas. Não são necessários protocolos específicos da plataforma. O back-end da aplicação pode enviar notificações em formatos específicos da plataforma ou independentes da plataforma. A aplicação comunica apenas com os Notification Hubs.
   * Gestão de identificadores do dispositivo. Os Notification Hubs mantêm o registo dos identificadores e a resposta dos PNSs.
 * **Funciona com qualquer back-end**: na nuvem ou no local, .NET, PHP, Java, Nó, etc.
 * **Dimensionamento.** Dimensionamento dos Notification Hubs para milhões de dispositivos sem a necessidade de nova arquitetura ou de partições horizontais.
 * **Conjunto completo de padrões de entrega**:
-  
+
   * *Difusão*: permite a difusão quase simultânea para milhões de dispositivos com uma única chamada de API.
   * *Unicast/Multicast*: emite via push para etiquetas que representam utilizadores individuais, incluindo todos os respetivos dispositivos; ou um grupo mais amplo; por exemplo, fatores de forma separados (tablet vs. telefone).
   * *Segmentação*: emite via push para segmentação complexa definida pelas expressões de etiqueta (por exemplo, dispositivos em Nova Iorque que seguem os Yankees).
-    
-    Cada dispositivo, ao enviar o respetivo identificador a um Notification Hub, pode especificar uma ou mais *etiquetas*. Para obter mais informações, consulte [etiquetas]. As etiquetas não têm de ser previamente aprovisionadas nem eliminadas. As etiquetas proporcionam uma forma simples de enviar notificações para utilizadores ou grupos de interesses. Uma vez que as etiquetas podem conter qualquer identificador específico de uma aplicação (por exemplo, IDs de utilizadores ou de grupos), a sua utilização retira ao back-end da aplicação o fardo de ter de armazenar e gerir os identificadores dos dispositivos.
+
+    Cada dispositivo, ao enviar o respetivo identificador a um Notification Hub, pode especificar uma ou mais *etiquetas*. Para obter mais informações, consulte [etiquetas](http://msdn.microsoft.com/library/azure/dn530749.aspx). As etiquetas não têm de ser previamente aprovisionadas nem eliminadas. As etiquetas proporcionam uma forma simples de enviar notificações para utilizadores ou grupos de interesses. Uma vez que as etiquetas podem conter qualquer identificador específico de uma aplicação (por exemplo, IDs de utilizadores ou de grupos), a sua utilização retira ao back-end da aplicação o fardo de ter de armazenar e gerir os identificadores dos dispositivos.
 * **Personalização**: cada dispositivo pode ter um ou mais modelos, para alcançar a localização por dispositivo e personalizar sem afetar o código do back-end.
 * **Segurança**: Segredo de Acesso Partilhado (SAS) ou autenticação federada.
 * **Telemetria completa**: disponível no portal e através de programação.
@@ -111,7 +111,7 @@ Os programadores de Mobile Apps podem utilizar Notification Hubs com o fluxo de 
 Aqui estão algumas das conveniências que esta integração proporciona a programadores:
 
 * **SDKs Cliente das Aplicações Móveis.** Estes SDKs multiplataforma fornecem APIs simples para registar e falar com o Notification Hub ligado automaticamente à aplicação móvel. Os programadores não precisam de analisar a fundo as credenciais dos Notification Hubs e trabalham com um serviço adicional.
-  
+
   * Os SDKs etiquetam automaticamente o dispositivo especificado com ID de utilizador autenticado de Mobile Apps para ativar o push para o cenário do utilizador.
   * Os SDKs utilizam automaticamente o ID de Instalação das Mobile Apps como GUID para se registarem nos Notification Hubs, poupando aos programadores o trabalho de manterem GUIDs para vários serviços.
 * **Modelo de instalação.** As Mobile Apps funcionam com o modelo push mais recente dos Notification Hubs para representar todas as propriedades push associadas a um dispositivo numa instalação JSON que se alinha com os Serviço de Notificações Push e é fácil de utilizar.

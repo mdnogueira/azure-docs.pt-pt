@@ -1,8 +1,8 @@
 ---
 layout: LandingPage
 translationtype: Human Translation
-ms.sourcegitcommit: d6f53d51a2ceb6d499209b874c79d3d3ccb1758f
-ms.openlocfilehash: b36299b17809bafb0956818d346063e89b86b7c6
+ms.sourcegitcommit: 87b9d22ec066108adb282606305315919b901ea0
+ms.openlocfilehash: a561ca44e25eb1fe229397aca2cdb049e9c0575c
 
 ---
 # <a name="automation-documentation"></a>Documentação da Automatização
@@ -125,14 +125,50 @@ A Automatização do Azure fornece uma forma de os utilizadores automatizarem as
 
 ## <a name="reference"></a>Referência
 
-### <a name="powershell"></a>PowerShell
-[Referência do Azure PowerShell](/powershell/azureps-cmdlets-docs)
-
-### <a name="net"></a>.NET
-[API de Referência Gerida do Azure](/dotnet/api)
-
-### <a name="rest"></a>REST
-[Referência da API REST da Automatização](https://msdn.microsoft.com/en-us/library/azure/mt662285)
+<ul class="panelContent cardsW">
+    <li>
+        <a href="/powershell/azureps-cmdlets-docs">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>PowerShell</h3>
+                        <p>Referência ao Azure PowerShell</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+     <li>
+        <a href="/dotnet/api">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>.NET</h3>
+                        <p>API de Referência Gerida do Azure</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+     <li>
+        <a href="https://msdn.microsoft.com/en-us/library/azure/mt662285">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>REST</h3>
+                        <p>Referência da API REST da Automatização</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+    </ul>
 
 
 <div class="downloadHolder">
@@ -145,6 +181,6 @@ Transferir a Documentação da Automatização </div>
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO4-->
 
 

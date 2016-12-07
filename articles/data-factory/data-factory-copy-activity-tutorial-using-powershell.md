@@ -15,8 +15,8 @@ ms.topic: get-started-article
 ms.date: 09/16/2016
 ms.author: spelluru
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 3247a5004198eedcf40cb3aa38de767a08e545a8
+ms.sourcegitcommit: a4121f8857fa9eaeb1cf1bca70e29666f6a04f63
+ms.openlocfilehash: 457a5c758923a0741ab0baeebd2f22c43930f71d
 
 
 ---
@@ -121,16 +121,23 @@ Neste passo, irá criar dois serviços ligados: **StorageLinkedService** e **Azu
 2. No **Azure PowerShell**, mude para a pasta **ADFGetStartedPSH**. 
 3. Pode utilizar o cmdlet **New-AzureRmDataFactoryLinkedService** para criar um serviço ligado. Este cmdlet e os outros cmdlets do Data Factory que utilizar neste tutorial requerem que passe os valores para os parâmetros **ResourceGroupName** e **DataFactoryName**. Em alternativa, pode utilizar **Get-AzureRmDataFactory** para obter um objeto de DataFactory e passar o objeto sem escrever ResourceGroupName e DataFactoryName sempre que executar um cmdlet. Execute o seguinte comando para atribuir a saída do cmdlet **Get-AzureRmDataFactory** a uma variável: **$df**: 
    
-     $df=Get-AzureRmDataFactory -ResourceGroupName ADFTutorialResourceGroup -Name ADFTutorialDataFactoryPSH
+```   
+$df=Get-AzureRmDataFactory -ResourceGroupName ADFTutorialResourceGroup -Name ADFTutorialDataFactoryPSH
+```
+
 4. Agora, execute o cmdlet **New-AzureRmDataFactoryLinkedService** para criar o serviço ligado: **StorageLinkedService**. 
    
-     New-AzureRmDataFactoryLinkedService $df -File .\StorageLinkedService.json
+```
+New-AzureRmDataFactoryLinkedService $df -File .\StorageLinkedService.json
+```
+
+Se não tiver executado o cmdlet **Get-AzureRmDataFactory** e atribuído a saída à variável **$df**, terá de especificar valores para os parâmetros ResourceGroupName e DataFactoryName da seguinte forma.   
    
-   Se não tiver executado o cmdlet **Get-AzureRmDataFactory** e atribuído a saída à variável **$df**, terá de especificar valores para os parâmetros ResourceGroupName e DataFactoryName da seguinte forma.   
-   
-     New-AzureRmDataFactoryLinkedService -ResourceGroupName ADFTutorialResourceGroup -DataFactoryName ADFTutorialDataFactoryPSH -File .\StorageLinkedService.json
-   
-   Se fechar o Azure PowerShell a meio do tutorial, tem de executar o cmdlet Get-AzureRmDataFactory, da próxima vez que iniciar o Azure PowerShell, para concluir o tutorial.
+```
+New-AzureRmDataFactoryLinkedService -ResourceGroupName ADFTutorialResourceGroup -DataFactoryName ADFTutorialDataFactoryPSH -File .\StorageLinkedService.json
+```
+
+Se fechar o Azure PowerShell a meio do tutorial, tem de executar o cmdlet Get-AzureRmDataFactory, da próxima vez que iniciar o Azure PowerShell, para concluir o tutorial.
 
 ### <a name="create-a-linked-service-for-an-azure-sql-database"></a>Criar um serviço ligado para uma SQL Database do Azure
 1. Crie um ficheiro JSON denominado AzureSqlLinkedService.json com o seguinte conteúdo:
@@ -148,8 +155,10 @@ Neste passo, irá criar dois serviços ligados: **StorageLinkedService** e **Azu
    Substitua **servername**, **databasename**, **username@servername** e **password** pelos nomes do seu servidor, base de dados, conta de utilizador e palavra-passe do SQL do Azure.
 2. Execute o seguinte comando para criar um serviço ligado: 
    
-     New-AzureRmDataFactoryLinkedService $df -File .\AzureSqlLinkedService.json
-   
+```
+New-AzureRmDataFactoryLinkedService $df -File .\AzureSqlLinkedService.json
+```
+
    Confirme que a definição **Permitir acesso aos serviços do Azure** está ativada para o seu servidor SQL do Azure. Para verificar e ativá-la, siga os seguintes passos:
    
    1. Clique no hub **PROCURAR** à esquerda e clique em **servidores SQL**.
@@ -257,10 +266,12 @@ Uma tabela é um conjunto de dados retangular com um esquema. Neste passo, irá 
              { "name": "Hour", "value": { "type": "DateTime", "date": "SliceStart", "format": "hh" } } 
          ],
    
-   Veja [Referência de Processamento de Scripts JSON](http://go.microsoft.com/fwlink/?LinkId=516971) para obter mais detalhes sobre as propriedades de JSON.
+   Veja [Referência de Processamento de Scripts JSON](data-factory-data-movement-activities.md) para obter mais detalhes sobre as propriedades de JSON.
 2. Execute o seguinte comando para criar o conjunto de dados do Data Factory.
    
-     New-AzureRmDataFactoryDataset $df -File .\EmpBlobTable.json
+```  
+New-AzureRmDataFactoryDataset $df -File .\EmpBlobTable.json
+```
 
 ### <a name="create-output-dataset"></a>Criar conjunto de dados de saída
 Neste passo, irá criar um conjunto de dados de saída com o nome **EmpSQLTable**. Este conjunto de dados aponta para uma tabela SQL (**emp**) na base de dados SQL do Azure, representada por **AzureSqlLinkedService**. O pipeline copia dados do blob de entrada para a tabela **emp**. 
@@ -300,8 +311,10 @@ Neste passo, irá criar um conjunto de dados de saída com o nome **EmpSQLTable*
    * Existem três colunas – **ID**, **FirstName**, e **LastName** – na tabela emp da base de dados. O ID é uma coluna de identidade, por isso terá de especificar apenas **FirstName** e **LastName** aqui.
    * A **disponibilidade** está definida como **de hora a hora** (**frequência** definida como **hora** e **intervalo** definido como **1**).  O serviço Data Factory gera um setor de dados de saída a cada hora na tabela **emp** da base de dados SQL do Azure.
 2. Execute o seguinte comando para criar o conjunto de dados do Data Factory. 
-   
-     New-AzureRmDataFactoryDataset $df -File .\EmpSQLTable.json
+
+```   
+New-AzureRmDataFactoryDataset $df -File .\EmpSQLTable.json
+```
 
 ## <a name="create-pipeline"></a>Criar pipeline
 Neste passo, cria um pipeline com uma **Atividade de Cópia** que utiliza **EmpTableFromBlob** como entrada e **EmpSQLTable** como saída.
@@ -362,10 +375,12 @@ Neste passo, cria um pipeline com uma **Atividade de Cópia** que utiliza **EmpT
    
    Existem 24 setores de dados no exemplo, uma vez que estes são produzidos de hora a hora.
    
-   Veja [Referência de Processamento de Scripts JSON](http://go.microsoft.com/fwlink/?LinkId=516971) para obter mais detalhes sobre as propriedades de JSON.
+   Veja [Referência de Processamento de Scripts JSON](data-factory-data-movement-activities.md) para obter mais detalhes sobre as propriedades de JSON.
 2. Execute o seguinte comando para criar a tabela do Data Factory. 
-   
-     New-AzureRmDataFactoryPipeline $df -File .\ADFTutorialPipeline.json
+
+```   
+New-AzureRmDataFactoryPipeline $df -File .\ADFTutorialPipeline.json
+```
 
 **Parabéns!** Criou um Azure Data Factory, serviços ligados, tabelas e um pipeline com êxito e agendou o pipeline.
 
@@ -373,26 +388,61 @@ Neste passo, cria um pipeline com uma **Atividade de Cópia** que utiliza **EmpT
 Neste passo, irá utilizar o Azure PowerShell para monitorizar os acontecimentos de uma fábrica de dados do Azure.
 
 1. Execute **Get-AzureRmDataFactory** e atribua o resultado a uma variável $df.
-   
-     $df=Get-AzureRmDataFactory -ResourceGroupName ADFTutorialResourceGroup -Name ADFTutorialDataFactoryPSH
+
+```  
+$df=Get-AzureRmDataFactory -ResourceGroupName ADFTutorialResourceGroup -Name ADFTutorialDataFactoryPSH
+```
+
 2. Execute **Get-AzureRmDataFactorySlice** para obter detalhes sobre todos os setores do **EmpSQLTable**, que é a tabela de saída do pipeline.  
-   
-     Get-AzureRmDataFactorySlice $df -DatasetName EmpSQLTable -StartDateTime 2016-08-09T00:00:00
-   
+
+```   
+Get-AzureRmDataFactorySlice $df -DatasetName EmpSQLTable -StartDateTime 2016-08-09T00:00:00
+```
+
    Substitua o ano, mês e parte da data do parâmetro **StartDateTime** com a data, o mês e ano atuais. Esta definição deve corresponder ao valor **Start** no JSON do pipeline. 
    
    Deve ver 24 setores, um para cada hora, desde as 12:00 do dia atual até as 12:00 do dia seguinte. 
    
    **Resultado do exemplo:**
-   
-     ResourceGroupName : ADFTutorialResourceGroup   DataFactoryName   : ADFTutorialDataFactoryPSH   TableName         : EmpSQLTable   Start             : 8/9/2016 12:00:00 AM   End               : 8/9/2016 1:00:00 AM   RetryCount        : 0   Status            : Waiting   LatencyStatus     :   LongRetryCount    : 0
+
+```   
+     ResourceGroupName : ADFTutorialResourceGroup
+     DataFactoryName   : ADFTutorialDataFactoryPSH
+     TableName         : EmpSQLTable
+     Start             : 8/9/2016 12:00:00 AM
+     End               : 8/9/2016 1:00:00 AM
+     RetryCount        : 0
+     Status            : Waiting
+     LatencyStatus     :
+     LongRetryCount    : 0
+```
 3. Execute **Get-AzureRmDataFactoryRun** para obter os detalhes das execuções de um setor **específico** da atividade. Altere o valor do parâmetro **StartDateTime** para corresponder ao tempo **Start** do setor da saída. O valor de **StartDateTime** tem de estar no [formato ISO](http://en.wikipedia.org/wiki/ISO_8601). 
-   
-     Get-AzureRmDataFactoryRun $df -DatasetName EmpSQLTable -StartDateTime 2016-08-09T00:00:00
-   
+
+```  
+Get-AzureRmDataFactoryRun $df -DatasetName EmpSQLTable -StartDateTime 2016-08-09T00:00:00
+```
+
    Deverá ver um resultado semelhante ao seguinte:
-   
-     Id                  : 3404c187-c889-4f88-933b-2a2f5cd84e90_635614488000000000_635614524000000000_EmpSQLTable   ResourceGroupName   : ADFTutorialResourceGroup   DataFactoryName     : ADFTutorialDataFactoryPSH   TableName           : EmpSQLTable   ProcessingStartTime : 8/9/2016 11:03:28 PM   ProcessingEndTime   : 8/9/2016 11:04:36 PM   PercentComplete     : 100   DataSliceStart      : 8/9/2016 10:00:00 PM   DataSliceEnd        : 8/9/2016 11:00:00 PM   Status              : Succeeded   Timestamp           : 8/9/2016 11:03:28 PM   RetryAttempt        : 0   Properties          : {}   ErrorMessage        :   ActivityName        : CopyFromBlobToSQL   PipelineName        : ADFTutorialPipeline   Type                : Copy
+
+```   
+     Id                  : 3404c187-c889-4f88-933b-2a2f5cd84e90_635614488000000000_635614524000000000_EmpSQLTable
+     ResourceGroupName   : ADFTutorialResourceGroup
+     DataFactoryName     : ADFTutorialDataFactoryPSH
+     TableName           : EmpSQLTable
+     ProcessingStartTime : 8/9/2016 11:03:28 PM
+     ProcessingEndTime   : 8/9/2016 11:04:36 PM
+     PercentComplete     : 100
+     DataSliceStart      : 8/9/2016 10:00:00 PM
+     DataSliceEnd        : 8/9/2016 11:00:00 PM
+     Status              : Succeeded
+     Timestamp           : 8/9/2016 11:03:28 PM
+     RetryAttempt        : 0
+     Properties          : {}
+     ErrorMessage        :
+     ActivityName        : CopyFromBlobToSQL
+     PipelineName        : ADFTutorialPipeline
+     Type                : Copy
+```
 
 Veja [Referência Cmdlets do Data Factory][cmdlet-reference] para obter a documentação completa sobre os cmdlets do Data Factory. 
 

@@ -1,6 +1,6 @@
 ---
 title: "Introdução ao Azure Data Lake Analytics com o Azure PowerShell | Microsoft Docs"
-description: 'Saiba como utilizar o Azure PowerShell para criar uma conta de Data Lake Store, criar uma tarefa de Data Lake Analytics, utilizando U-SQL, e submeter a tarefa. '
+description: 'Saiba como utilizar o Azure PowerShell para criar uma conta do Data Lake Analytics, criar um trabalho do Data Lake Analytics com U-SQL e submeter o trabalho. '
 services: data-lake-analytics
 documentationcenter: 
 author: edmacauley
@@ -15,8 +15,8 @@ ms.workload: big-data
 ms.date: 09/21/2016
 ms.author: edmaca
 translationtype: Human Translation
-ms.sourcegitcommit: 73d3e5577d0702a93b7f4edf3bf4e29f55a053ed
-ms.openlocfilehash: 59efa050944059c737654a3f039a058c50865ea6
+ms.sourcegitcommit: c9440e26a563ed9315225b34709b009d01e065d7
+ms.openlocfilehash: 57c52a8c28e5a87a63fded3db7d0a2a785e47a53
 
 
 ---
@@ -209,6 +209,6 @@ Depois de a tarefa ser concluída, pode utilizar os seguintes cmdlets para lista
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO3-->
 
 

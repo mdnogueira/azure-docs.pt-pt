@@ -1,9 +1,13 @@
 ---
 layout: LandingPage
----
-#Traffic Manager Documentation
+translationtype: Human Translation
+ms.sourcegitcommit: 9e86ae23b3fe3b8134f4725035c03837425cc0c4
+ms.openlocfilehash: 9a05d78edbf2c186d4a4d84f38eb6deff0cdafc5
 
-Azure Traffic Manager allows you to control the distribution of user traffic for service endpoints in different datacenters.  Traffic Manager uses the Domain Name System (DNS) to direct client requests to the most appropriate endpoint based on a traffic-routing method and the health of the endpoints, giving your application the availability and responsiveness a large-scale application needs.
+---
+#<a name="traffic-manager-documentation"></a>Documentação do Gestor de Tráfego
+
+O Gestor de Tráfego do Azure permite-lhe controlar a distribuição do tráfego de utilizador para pontos finais de serviço em regiões diferentes. O Gestor de Tráfego utiliza o Sistema de Nomes de Domínio (DNS) para direcionar os pedidos de cliente para o ponto final mais adequado, consoante o método de encaminhamento de tráfego selecionado e o estado de funcionamento dos pontos finais, o que proporciona à sua aplicação maior disponibilidade e capacidade de resposta.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -17,7 +21,7 @@ Azure Traffic Manager allows you to control the distribution of user traffic for
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Learn about Traffic Manager</h3>
+                        <h3>Saiba mais sobre o Gestor de Tráfego</h3>
                     </div>
                 </div>
             </div>
@@ -35,7 +39,7 @@ Azure Traffic Manager allows you to control the distribution of user traffic for
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Azure Traffic Manager Video Library</h3>
+                        <h3>Biblioteca de Vídeo do Gestor de Tráfego do Azure</h3>
                     </div>
                 </div>
             </div>
@@ -53,7 +57,7 @@ Azure Traffic Manager allows you to control the distribution of user traffic for
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Get Started with Azure Traffic Manager</h3>
+                        <h3>Introdução ao Gestor de Tráfego do Azure</h3>
                     </div>
                 </div>
             </div>
@@ -67,11 +71,11 @@ Azure Traffic Manager allows you to control the distribution of user traffic for
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="media/index/tutorial.svg" alt="" />
+                            <img src="media/index/get-started.svg" alt="" />
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Create a Traffic Manager endpoint</h3>
+                        <h3>Introdução à gestão de pontos finais do Gestor de Tráfego com o portal do Azure</h3>
                     </div>
                 </div>
             </div>
@@ -82,20 +86,49 @@ Azure Traffic Manager allows you to control the distribution of user traffic for
 
 ---
 
-##Reference
+## <a name="reference"></a>Referência
 
-###PowerShell
-[Azure PowerShell](/powershell/azurepd-cmdlets-docs)
-
-###REST
-[Traffic Manager REST API Reference](https://msdn.microsoft.com/library/azure/mt163667)
-
+<ul class="panelContent cardsW">
+    <li>
+        <a href="/powershell/azureps-cmdlets-docs">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>PowerShell</h3>
+                        <p>Azure PowerShell</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+    <li>
+        <a href="https://msdn.microsoft.com/library/azure/mt163667">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>REST</h3>
+                        <p>Referência da API REST do Gestor de Tráfego</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+</ul>
 
 <div class="downloadHolder">
     <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/traffic-manager.pdf">
         <div class="img"></div>
         <div class="text">
-            Download Service Fabric Documentation
-        </div>
+Transferir a Documentação do Gestor de Tráfego </div>
     </a>
 </div>
+
+
+
+<!--HONumber=Nov16_HO4-->
+
+

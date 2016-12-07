@@ -47,7 +47,7 @@ Para efetuar a cópia de segurança de uma VM, existem cinco passos principais:
 >
 >
 
-## <a name="step-1-create-a-backup-vault-for-a-vm"></a>Passo 1 - criar um cofre de cópia de segurança para uma VM
+## <a name="step-1---create-a-backup-vault-for-a-vm"></a>Passo 1 - criar um cofre de cópia de segurança para uma VM
 Um cofre de cópia de segurança é uma entidade que armazena todas as cópias de segurança e os pontos de recuperação que foram criados ao longo do tempo. O cofre de cópia de segurança também contém as políticas de cópia de segurança que são aplicadas às máquinas virtuais cuja cópia de segurança está a ser criada.
 
 1. Inicie sessão no [Portal Clássico do Azure](http://manage.windowsazure.com/).
@@ -86,7 +86,7 @@ Um cofre de cópia de segurança é uma entidade que armazena todas as cópias d
 
 Após escolher a opção de armazenamento para o cofre, está pronto para associar a VM com o cofre. Para começar a associação, detete e registe as máquinas virtuais do Azure.
 
-## <a name="step-2-discover-and-register-azure-virtual-machines"></a>Passo 2 – detetar e registar máquinas virtuais do Azure
+## <a name="step-2---discover-and-register-azure-virtual-machines"></a>Passo 2 – detetar e registar máquinas virtuais do Azure
 Antes de registar a VM com um cofre, execute o processo de deteção para identificar VMs novas. Deste modo, devolve uma lista de máquinas virtuais na subscrição, juntamente com informações adicionais, como a região e o nome do serviço em nuvem.
 
 1. Inicie sessão no [Portal Clássico do Azure](http://manage.windowsazure.com/)
@@ -133,12 +133,12 @@ Antes de registar a VM com um cofre, execute o processo de deteção para identi
 
     ![Estado do registo 2](./media/backup-azure-vms/register-status02.png)
 
-## <a name="step-3-install-the-vm-agent-on-the-virtual-machine"></a>Passo 3 – instalar o Agente da VM na máquina virtual
+## <a name="step-3---install-the-vm-agent-on-the-virtual-machine"></a>Passo 3 – instalar o Agente da VM na máquina virtual
 O Agente da VM do Azure tem de estar instalado na máquina virtual do Azure para que a extensão da Cópia de Segurança funcione. Se a VM foi criada a partir da galeria do Azure, o Agente da VM já se encontra presente na VM. Pode avançar para [proteger as suas VMs](backup-azure-vms-first-look.md#step-4---create-the-backup-policy).
 
 Se a VM migrou a partir de um datacenter no local, a VM, provavelmente, não tem o Agente da VM instalado. Tem de instalar o Agente da VM na máquina virtual antes de prosseguir para a proteção da VM. Para obter passos detalhados sobre como instalar o Agente da VM, consulte a [secção Agente da VM do artigo VMs de Cópia de Segurança](backup-azure-vms-prepare.md#vm-agent).
 
-## <a name="step-4-create-the-backup-policy"></a>Passo 4 - criar a política de cópia de segurança
+## <a name="step-4---create-the-backup-policy"></a>Passo 4 - criar a política de cópia de segurança
 Antes de acionar a tarefa de cópia de segurança inicial, defina a agenda quando forem tirados instantâneos da cópia de segurança. A agenda quando são tirados instantâneos de cópia de segurança e o período de tempo no qual estes instantâneos são mantidos, são a política de cópia de segurança. As informações de retenção baseiam-se no esquema de rotação de cópia de segurança Avô-pai-filho.
 
 1. Navegue para o cofre de cópia de segurança em **Serviços de Recuperação** no portal Clássico do Azure e clique em **Itens Registados**.
@@ -175,7 +175,7 @@ Antes de acionar a tarefa de cópia de segurança inicial, defina a agenda quand
 
     Agora que estabeleceu a política, vá para o passo seguinte e execute a cópia de segurança inicial.
 
-## <a name="step-5-initial-backup"></a>Passo 5 - cópia de segurança inicial
+## <a name="step-5---initial-backup"></a>Passo 5 - cópia de segurança inicial
 Após uma máquina virtual ter sido protegida com uma política, pode ver essa relação no separador **Itens Protegidos**. Enquanto a cópia de segurança inicial não ocorrer, o **Estado de Proteção** é **Protegido - (cópia de segurança inicial pendente)**. Por predefinição, a primeira cópia de segurança agendada é a *cópia de segurança inicial*.
 
 ![Cópia de segurança pendente](./media/backup-azure-vms-first-look/protection-pending-border.png)

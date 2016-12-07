@@ -13,11 +13,11 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 09/13/2016
+ms.date: 11/15/2016
 ms.author: guybo
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 7d833b7aaab8680d555f6503ec27994134a2519d
+ms.sourcegitcommit: 3ed7c49603891b9719819143003d27888f800a95
+ms.openlocfilehash: 21a7feb9eb2588643ffc67408de9f8e60aff7798
 
 
 ---
@@ -50,9 +50,9 @@ Se estiver a reimplementar um modelo para alterar a capacidade, pode definir um 
 Para percorrer os passos que criam um conjunto de dimensionamento que se dimensiona automaticamente, veja [Automatically Scale Machines in a Virtual Machine Scale Set (Dimensionar Automaticamente Máquinas num Conjunto de Dimensionamento de Máquinas Virtuais)](virtual-machine-scale-sets-windows-autoscale.md).
 
 ## <a name="monitoring-your-vm-scale-set"></a>Monitorizar o conjunto de dimensionamento de VMs
-O [portal do Azure](https://portal.azure.com) lista os conjuntos de dimensionamento e mostra propriedades básicas, bem como as VMs no conjunto. Para obter mais detalhes, pode utilizar o [Explorador de Recursos do Azure](https://resources.azure.com) para ver os conjuntos de dimensionamento de VMs. Os conjuntos de dimensionamento de VMs são um recurso de Microsoft.Compute, pelo que os pode ver a partir deste site, ao expandir as ligações seguintes:
+O [portal do Azure](https://portal.azure.com) lista os conjuntos de dimensionamento e mostra as propriedades e as operações básicas, incluindo a apresentação das VMs no conjunto e um gráfico de utilização dos recursos. Para obter mais detalhes, pode utilizar o [Explorador de Recursos do Azure](https://resources.azure.com) para ver os conjuntos de dimensionamento de VMs. Os conjuntos de dimensionamento de VMs são um recurso de Microsoft.Compute, pelo que os pode ver a partir deste site, ao expandir as ligações seguintes:
 
-    subscriptions -> your subscription -> resourceGroups -> providers -> Microsoft.Compute -> virtualMachineScaleSets -> your VM scale set -> etc.
+**Subscrições -> a sua subscrição -> resourceGroups -> fornecedores -> Microsoft.Compute -> virtualMachineScaleSets -> o seu conjunto de dimensionamento de VMs -> etc.**
 
 ## <a name="vm-scale-set-scenarios"></a>Cenários de conjuntos de dimensionamento de VMs
 Esta secção lista alguns cenários comuns de conjuntos de dimensionamento de VMs. Alguns serviços de nível superior do Azure (como o Batch, o Service Fabric e o Azure Container Service) vão utilizar estes cenários.
@@ -71,15 +71,15 @@ Esta secção lista alguns cenários comuns de conjuntos de dimensionamento de V
    Eis um exemplo do mesmo, agora com RDP e Windows: [https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-windows-nat](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-windows-nat)
 * **Ligar a VMs com um "jumpbox"** - se criar um conjunto de dimensionamento de VMs e uma VM autónoma na mesma VNET, a VM autónoma e as VMs do conjunto de dimensionamento podem ligar-se uma à outra através dos endereços IP internos, conforme definido pela VNET/Sub-rede. Se criar um endereço IP público e o atribuir à VM autónoma, pode aceder por RDP ou SSH à VM autónoma e, depois, ligar desta às instâncias do conjunto de dimensionamento de VMs. Nesta fase, poderá reparar que um conjunto de dimensionamento de VMs simples é, inerentemente, mais seguro do que uma VM autónoma simples com um endereço IP público na respetiva configuração predefinida.
   
-   [Para dar um exemplo desta abordagem, este modelo cria um cluster Mesos simples que consiste numa VM Mestre autónoma que gere um cluster de VMs baseado no conjunto de dimensionamento de VMs.](https://github.com/gbowerman/azure-myriad/blob/master/mesos-vmss-simple-cluster.json)
+   Por exemplo, este modelo implementa um conjunto de dimensionamento simples com uma VM autónoma: [https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-linux-jumpbox](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-linux-jumpbox)
 * **Balanceamento de carga para instâncias de conjunto de dimensionamento de VMs** - se quiser enviar trabalhos para um cluster de computação de VMs através da abordagem “round robin”, pode configurar um balanceador de carga com regras de balanceamento de carga consonantes. Pode definir sondas para verificar se a sua aplicação está a ser executada ao enviar pings para as portas com um protocolo, um intervalo e um caminho de pedido especificados. O [Gateway da Aplicação](https://azure.microsoft.com/services/application-gateway/) do Azure também suporta conjuntos de dimensionamento, juntamente com cenários de balanceamento de carga mais sofisticados.
   
-   [Eis um exemplo que cria um conjunto de dimensionamento de VMs que executam o servidor Web IIS, que utiliza um balanceador de carga para balancear a carga que cada VM recebe. Também utiliza o protocolo HTTP para enviar um ping a um URL específico em cada VM.](https://github.com/gbowerman/azure-myriad/blob/master/vmss-win-iis-vnet-storage-lb.json) (repare no tipo de recurso Microsoft.Network/loadBalancers e no networkProfile e no extensionProfile em virtualMachineScaleSet)
-* **Implementar um conjunto de dimensionamento de VMs como um cluster de computação num gestor de clusters de PaaS** - por vezes, os conjuntos de dimensionamento são descritos como uma função de trabalho de próxima geração. É uma descrição válida, mas também corre o risco de confundir as funcionalidades dos conjuntos de dimensionamento com as funcionalidades de Funções de trabalho de PaaS v1. De certa forma, os conjuntos de dimensionamento de VMs proporcionam uma verdadeira “função de trabalho” ou recurso de trabalho, no sentido em que disponibilizam um recurso de computação que não depende de plataformas/runtime, que é personalizável e que se integra no Azure Resource Manager IaaS.
+   Eis um exemplo que cria um Conjunto de Dimensionamento de VMs em execução em servidores Web Apache e que utiliza um balanceador de carga para balancear a carga que cada VM recebe: [https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-ubuntu-web-ssl](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-ubuntu-web-ssl) (observe o tipo de recurso Microsoft.Network/loadBalancers e o networkProfile e o extensionProfile no virtualMachineScaleSet)
+* **Implementar um conjunto de dimensionamento de VMs como um cluster de computação num gestor de clusters de PaaS** - por vezes, os conjuntos de dimensionamento são descritos como uma função de trabalho de próxima geração. É uma descrição válida, mas corre o risco de confundir as funcionalidades dos conjuntos de dimensionamento com as funcionalidades de Funções de trabalho de PaaS v1. De certa forma, os conjuntos de dimensionamento de VMs proporcionam uma verdadeira “função de trabalho” ou recurso de trabalho, no sentido em que disponibilizam um recurso de computação que não depende de plataformas/runtime, que é personalizável e que se integra no Azure Resource Manager IaaS.
   
    As funções de trabalho de PaaS v2, embora sejam limitadas em termos de suporte de plataformas/runtime (só suportam imagens da plataforma Windows), também incluem serviços como troca de VIP, definições de atualização configuráveis, definições específicas de implementação de runtime/aplicações, que *ainda* não estão disponíveis nos conjuntos de dimensionamento de VMs ou que serão disponibilizadas por outros serviços PaaS de alto nível, como o Service Fabric. Tendo isto presente, pode considerar os conjuntos de dimensionamento de VMs como sendo uma infraestrutura que suporta PaaS. Ou seja, as soluções de PaaS, como o Service Fabric ou os gestores de clusters como o Mesos, podem ser criadas com base nos conjuntos de dimensionamento de VMs como camadas de computação dimensionáveis.
   
-   [Para dar um exemplo desta abordagem, este modelo cria um cluster Mesos simples que consiste numa VM Mestre autónoma que gere um cluster de VMs baseado no conjunto de dimensionamento de VMs.](https://github.com/gbowerman/azure-myriad/blob/master/mesos-vmss-simple-cluster.json) Versões futuras do [Azure Container Service](https://azure.microsoft.com/blog/azure-container-service-now-and-the-future/) vão implementar versões mais complexas/protegidas deste cenário com base em conjuntos de dimensionamento de VMs.
+   Para obter um exemplo desta abordagem, o Azure Container Service implementa um cluster com base em conjuntos de dimensionamento com um orquestrador de contentores: [https://github.com/Azure/azure-quickstart-templates/tree/master/101-acs-dcos](https://github.com/Azure/azure-quickstart-templates/tree/master/101-acs-dcos).
 
 ## <a name="vm-scale-set-performance-and-scale-guidance"></a>Guia de desempenho e dimensionamento dos conjuntos de dimensionamento de VMs
 * Não crie mais de 500 VMs em vários conjuntos de dimensionamento de VMs ao mesmo tempo.
@@ -100,7 +100,7 @@ Esta secção lista alguns cenários comuns de conjuntos de dimensionamento de V
 
 **P.** Os conjuntos de dimensionamento de VMs suportam Discos de Dados?
 
-**R.** Não na versão inicial. As opções para armazenar dados são:
+**R.** Não na versão inicial (apesar de os discos de dados estarem atualmente disponíveis em pré-visualização). As opções para armazenar dados são:
 
 * Ficheiros do Azure (unidades SMB partilhadas)
 * Unidade do sistema Operativo
@@ -148,6 +148,6 @@ Esta secção lista alguns cenários comuns de conjuntos de dimensionamento de V
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO3-->
 
 

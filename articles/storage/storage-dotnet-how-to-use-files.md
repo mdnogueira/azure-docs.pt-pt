@@ -15,8 +15,8 @@ ms.topic: hero-article
 ms.date: 10/18/2016
 ms.author: minet
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: af7b1c3d302282920ce9b347a7686903d1c6fe03
+ms.sourcegitcommit: 5919c477502767a32c535ace4ae4e9dffae4f44b
+ms.openlocfilehash: bf8acbd37f717c0e055facde781966665ca67d2d
 
 
 ---
@@ -210,8 +210,8 @@ Quando um cliente acede ao Armazenamento de ficheiros, a versão do SMB utilizad
 ### <a name="mount-the-file-share-from-an-azure-virtual-machine-running-windows"></a>Montar a partilha de ficheiros a partir de uma máquina virtual do Azure em execução no Windows
 Para demonstrar como montar uma partilha de ficheiros do Azure, vamos agora criar uma máquina virtual do Azure a executar o Windows e aceder remotamente ao mesmo para montar a partilha.
 
-1. Primeiro, crie uma nova máquina virtual do Azure, seguindo as instruções em [Criar uma máquina virtual do Windows no Portal do Azure](../virtual-machines/virtual-machines-windows-hero-tutorial.md).
-2. Em seguida, siga as instruções em [Iniciar sessão numa máquina virtual do Windows através do Portal do Azure](../virtual-machines/virtual-machines-windows-connect-logon.md) para aceder remotamente à máquina virtual.
+1. Primeiro, crie uma nova máquina virtual do Azure, seguindo as instruções em [Criar uma máquina virtual do Windows no Portal do Azure](../virtual-machines/virtual-machines-windows-hero-tutorial.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
+2. Em seguida, siga as instruções em [Iniciar sessão numa máquina virtual do Windows através do Portal do Azure](../virtual-machines/virtual-machines-windows-connect-logon.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) para aceder remotamente à máquina virtual.
 3. Abra uma janela do PowerShell na máquina virtual.
 
 ### <a name="persist-your-storage-account-credentials-for-the-virtual-machine"></a>Manter as suas credenciais da conta de armazenamento para a máquina
@@ -242,7 +242,7 @@ Agora, pode trabalhar com a partilha do File Storage a partir da máquina virtua
 
 De igual modo, pode montar a partilha de ficheiros a partir de uma função executada num serviço em nuvem do Azure ao aceder remotamente à função.
 
-### <a name="mount-the-file-share-from-an-onpremises-client-running-windows"></a>Montar a partilha de ficheiros a partir de um cliente no local a executar o Windows
+### <a name="mount-the-file-share-from-an-on-premises-client-running-windows"></a>Montar a partilha de ficheiros a partir de um cliente no local a executar o Windows
 Para montar a partilha de ficheiros a partir de um cliente no local, primeiro tem de seguir estes passos:
 
 * Instalar a versão do Windows que suporta o SMB 3.0. O Windows irá tirar partido da encriptação do SMB 3.0 para transferir de forma segura os dados entre o cliente no local e a partilha de ficheiros do Azure na nuvem.

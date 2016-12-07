@@ -15,8 +15,8 @@ ms.topic: get-started-article
 ms.date: 10/05/2016
 ms.author: raynew
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 94250becb238adad7983d4b45939eb988411fca3
+ms.sourcegitcommit: 5614c39d914d5ae6fde2de9c0d9941e7b93fc10f
+ms.openlocfilehash: ef9a7da86e7528d3052f89dbe1eaac6fbb90527c
 
 
 ---
@@ -94,7 +94,7 @@ Eis o que necessita:
 * [Saiba mais](site-recovery-failback-azure-to-vmware.md) sobre a reativação pós-falha no Portal do Azure.
 * [Saiba mais](site-recovery-failback-azure-to-vmware-classic.md) sobre a reativação pós-falha no portal clássico.
 
-## <a name="replicate-to-azure-hyperv-vms-not-managed-by-vmm"></a>Replicar para o Azure: VMs de Hyper-V não geridas pelo VMM
+## <a name="replicate-to-azure-hyper-v-vms-not-managed-by-vmm"></a>Replicar para o Azure: VMs de Hyper-V não geridas pelo VMM
 Pode replicar VMs de Hyper-V que não são geridas pelo System Center VMM para o Azure com a Recuperação de Sites ao proceder da seguinte forma:
 
 * **Utilizar o Portal do Azure** – Quando implementar a Recuperação de Sites no Portal do Azure, pode efetuar uma ativação pós-falha das VMs para o armazenamento clássico ou o Resource Manager. [Saiba mais](site-recovery-hyper-v-site-to-azure.md).
@@ -120,7 +120,7 @@ Eis o que necessita:
 * [Saiba mais](site-recovery-hyper-v-site-to-azure.md#azure-prerequisites) sobre os requisitos de implementação no Portal do Azure.
 * [Saiba mais](site-recovery-hyper-v-site-to-azure-classic.md#azure-prerequisites) sobre os requisitos para a implementação no portal clássico.
 
-## <a name="replicate-to-azure-hyperv-vms-managed-by-vmm"></a>Replicar para o Azure: VMs de Hyper-V geridas pelo VMM
+## <a name="replicate-to-azure-hyper-v-vms-managed-by-vmm"></a>Replicar para o Azure: VMs de Hyper-V geridas pelo VMM
 Pode replicar VMs de Hyper-V nas nuvens do VMM para o Azure com a Recuperação de Sites ao proceder da seguinte forma:
 
 * **Utilizar o Portal do Azure** – Quando implementar a Recuperação de Sites no Portal do Azure, pode efetuar uma ativação pós-falha das VMs para o armazenamento clássico ou o Resource Manager. [Saiba mais](site-recovery-vmm-to-azure.md).
@@ -144,8 +144,8 @@ Eis o que necessita:
 
 ![VMM para o Azure](./media/site-recovery-components/arch-onprem-onprem-azure-vmm.png)
 
-* [Saiba mais](site-recovery-vmm-to-azure.md#azure-requirements) sobre os requisitos de implementação no Portal do Azure.
-* [Saiba mais](site-recovery-vmm-to-azure-classic.md#before-you-start) sobre os requisitos para a implementação no portal clássico.
+* [Saiba mais](site-recovery-vmm-to-azure.md#azure-prerequisites) sobre os requisitos de implementação no Portal do Azure.
+* [Saiba mais](site-recovery-vmm-to-azure-classic.md) sobre os requisitos para a implementação no portal clássico.
 
 ## <a name="replicate-to-a-secondary-site-vmware-virtual-machines-or-physical-servers"></a>Replicar num site secundário: máquinas virtuais VMware ou servidores físicos
 Para replicar as VMs de VMware ou os servidores físicos para um site secundário, transfira o InMage Scout que está incluído na subscrição do Azure Site Recovery. Pode transferi-lo a partir do Portal do Azure ou do Portal Clássico do Azure.
@@ -167,7 +167,7 @@ Eis o que necessita:
 
 ![VMware para VMware](./media/site-recovery-components/vmware-to-vmware.png)
 
-## <a name="replicate-to-a-secondary-site-hyperv-vms-managed-by-vmm"></a>Replicar para um site secundário: VMs Hyper-V geridas pelo VMM
+## <a name="replicate-to-a-secondary-site-hyper-v-vms-managed-by-vmm"></a>Replicar para um site secundário: VMs Hyper-V geridas pelo VMM
 Pode replicar VMs de Hyper-V geridas pelo System Center VMM para um datacenter secundário com a Recuperação de Sites da seguinte forma:
 
 * **Utilizar o Portal do Azure** – Quando implementar a Recuperação de Sites no portal do Azure. [Saiba mais](site-recovery-hyper-v-site-to-azure.md).
@@ -193,7 +193,7 @@ Eis o que necessita:
 * [Saiba mais](site-recovery-vmm-to-vmm.md#azure-prerequisites) sobre os requisitos de implementação no Portal do Azure.
 * * [Saiba mais](site-recovery-vmm-to-vmm-classic.md#before-you-start) sobre os requisitos de implementação no Portal Clássico do Azure.
 
-## <a name="replicate-to-a-secondary-site-with-san-replication-hyperv-vms-managed-by-vmm"></a>Replicar para um site secundário com uma replicação SAN: VMs de Hyper-V geridas pelo VMM
+## <a name="replicate-to-a-secondary-site-with-san-replication-hyper-v-vms-managed-by-vmm"></a>Replicar para um site secundário com uma replicação SAN: VMs de Hyper-V geridas pelo VMM
 Pode replicar VMs de Hyper-V geridas nas nuvens VMM para um site secundário através da replicação SAN com o Portal Clássico do Azure. Este cenário não é atualmente suportado no novo Portal do Azure.
 
 Para implementar este cenário, durante a implementação do Azure Site Recovery, instalará o Fornecedor do Azure Site Recovery nos servidores VMM. O Fornecedor coordena e orquestra a replicação com o serviço de Recuperação de Sites através da Internet. Os dados são replicados entre as matrizes de armazenamento primário e secundário utilizando a replicação SAN síncrona.
@@ -213,8 +213,8 @@ Eis o que necessita:
 
 [Saiba mais](site-recovery-vmm-san.md#before-you-start) sobre os requisitos de implementação.
 
-### <a name="onpremises"></a>Local
-## <a name="hyperv-protection-lifecycle"></a>Ciclo de vida de proteção do Hyper-V
+### <a name="on-premises"></a>Local
+## <a name="hyper-v-protection-lifecycle"></a>Ciclo de vida de proteção do Hyper-V
 Este fluxo de trabalho mostra o processo para proteger, replicar e efetuar a ativação pós-falha de máquinas virtuais Hyper-V.
 
 1. **Ativar proteção**: configure o cofre de Recuperação de Sites, configure as definições de replicação para uma nuvem VMM ou para o site Hyper-V, e ative a proteção para as VMs. É iniciada uma tarefa denominada **Ativar Proteção** que pode ser monitorizada no separador **Tarefas**. A tarefa verifica se a máquina está em conformidade com os pré-requisitos e, em seguida, invoca o método [CreateReplicationRelationship](https://msdn.microsoft.com/library/hh850036.aspx) que configura a replicação para o Azure com as definições que configurou. A tarefa **Ativar proteção** também invoca o método [StartReplication](https://msdn.microsoft.com/library/hh850303.aspx) para inicializar uma replicação completa de VM.
@@ -229,7 +229,6 @@ Este fluxo de trabalho mostra o processo para proteger, replicar e efetuar a ati
 
 ## <a name="next-steps"></a>Passos seguintes
 [Preparar para a implementação](site-recovery-best-practices.md)
-
 
 
 

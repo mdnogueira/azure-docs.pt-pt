@@ -1,8 +1,8 @@
 ---
 layout: LandingPage
 translationtype: Human Translation
-ms.sourcegitcommit: bfc1bf3d78099ba04a2621bcec9f870f7f88b122
-ms.openlocfilehash: 3eadd4b9bdb7621965057271f0e1b5e034bdcbf8
+ms.sourcegitcommit: 98fdd8ee3dc1b90aae349652e471a218ef44a44e
+ms.openlocfilehash: 618c677ea675e6dc8f9dfb41f8e00b66f3f31886
 
 ---
 #<a name="service-bus-documentation"></a>Documentação do Service Bus
@@ -196,14 +196,50 @@ O Service Bus fornece comunicação com capacidade de nuvem com um sistema de me
 
 ## <a name="reference"></a>Referência
 
-### <a name="powershell"></a>PowerShell
-[Referência do Azure PowerShell](/powershell/azureps-cmdlets-docs)
-
-### <a name="net"></a>.NET
-[API de Referência Gerida do .NET](/dotnet/api/) 
-
-### <a name="rest"></a>REST 
-[Referência da API REST do Service Bus](/rest/api/servicebus)  
+<ul class="panelContent cardsW">
+    <li>
+        <a href="/powershell/azureps-cmdlets-docs">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>PowerShell</h3>
+                        <p>Referência ao Azure PowerShell</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+    <li>
+        <a href="/dotnet/api/">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>.NET</h3>
+                        <p>API de Referência Gerida do .NET</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+    <li>
+        <a href="/rest/api/servicebus">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>REST</h3>
+                        <p>Referência da API REST do Service Bus</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+<ul>
 
 <div class="downloadHolder">
     <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/service-bus.pdf">
@@ -215,6 +251,6 @@ Transferir a Documentação do Service Bus </div>
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO4-->
 
 

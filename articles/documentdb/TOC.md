@@ -1,34 +1,34 @@
 # Descrição geral
 ## [O que é o DocumentDB?](documentdb-introduction.md)
 ## [Conceitos-chave](documentdb-resources.md)
-## [Armazenamento e desempenho](documentdb-manage.md)
-## [Criar partições e dimensionar](documentdb-partition-data.md)
 ## [Distribuição global](documentdb-distribute-data-globally.md)
-## [Consistência](documentdb-consistency-levels.md)
-## [Consulta SQL](documentdb-sql-query.md)
-## [NoSQL vs SQL](documentdb-nosql-vs-sql.md)
 ## Cenários
 ### [Casos de utilização comuns](documentdb-use-cases.md)
 ### [Socializar com o DocumentDB](documentdb-social-media-apps.md)
-### [Multi-inquilinos](http://blogs.msdn.com/b/documentdb/archive/2014/12/03/scaling-a-multi-tenant-application-with-azure-documentdb.aspx)
-
 
 # Introdução
 ## Escrever a sua primeira aplicação
 ### [Aplicação da consola .NET](documentdb-get-started.md)
-### [Aplicação da consola Node.js](documentdb-nodejs-get-started.md)
+### [Aplicação de consola .NET Core](documentdb-dotnetcore-get-started.md)
+### [Aplicação de consola Node.js](documentdb-nodejs-get-started.md)
+### [Aplicação de consola C++](documentdb-cpp-get-started.md)
 ## Criar uma aplicação Web
 ### [Aplicação Web .NET](documentdb-dotnet-application.md)
 ### [Aplicação Web Node.Js](documentdb-nodejs-application.md)
 ### [Aplicação Web Java](documentdb-java-application.md)
 ### [Aplicação Web Python Flask](documentdb-python-application.md)
+## [Programar localmente](documentdb-nosql-local-emulator.md)
 ## [FAQ](documentdb-faq.md)
-
-
 
 # Procedimento
 
-## Gerir 
+## Planear
+### [Armazenamento e desempenho](documentdb-manage.md)
+### [Criar partições e dimensionar](documentdb-partition-data.md)
+### [Consistência](documentdb-consistency-levels.md)
+### [NoSQL vs SQL](documentdb-nosql-vs-sql.md)
+
+## Gerir
 ### [Importar dados](documentdb-import-data.md)
 ### [Modelar os dados](documentdb-modeling-data.md)
 ### [Utilizar dados geoespaciais](documentdb-geospatial.md)
@@ -46,17 +46,18 @@
 ### [Sobrecarregar a sua conta](documentdb-supercharge-your-account.md)
 
 ## Programar
+### [Consulta SQL](documentdb-sql-query.md)
 ### [Procedimentos armazenados, acionadores e UDFs](documentdb-programming.md)
 ### [Teste de desempenho](documentdb-performance-testing.md)
 ### [Sugestões de desempenho](documentdb-performance-tips.md)
 ### DocumentDB para programadores de MongoDB
-#### [O que é o protocolo de suporte para o MongoDB?](documentdb-protocol-mongodb.md)
+#### [Suporte de protocolo para o MongoDB](documentdb-protocol-mongodb.md)
 #### [Criar conta](documentdb-create-mongodb-account.md)
 #### [Ligar à sua conta](documentdb-connect-mongodb-account.md)
 #### [Utilizar MongoChef](documentdb-mongodb-mongochef.md)
 #### [Exemplos de suporte de protocolos](documentdb-mongodb-samples.md)
 
-## Utilizar o portal 
+## Utilizar o portal
 ### [Criar uma conta de base de dados](documentdb-create-account.md)
 ### [Criar uma coleção](documentdb-create-collection.md)
 ### [Adicionar replicação global](documentdb-portal-global-replication.md)
@@ -75,34 +76,33 @@
 ### [Analisar dados com o Hadoop](documentdb-run-hadoop-with-hdinsight.md)
 ### [Integrar no Azure Search](documentdb-search-indexer.md)
 ### [Mover dados com o Azure Data Factory](../data-factory/data-factory-azure-documentdb-connector.md)
-### [Analisar dados em tempo real com o Azure Stream Analytics](../stream-analytics/stream-analytics-define-outputs.md#documentdb.md)
+### [Analisar dados em tempo real com o Azure Stream Analytics](../stream-analytics/stream-analytics-define-outputs.md#documentdb)
 ### [Receber notificações com as Logic Apps](documentdb-change-notification.md)
 ### [Processar dados de sensores em tempo real](../hdinsight/hdinsight-storm-iot-eventhub-documentdb.md)
 ### [Ver os seus dados com o Power BI](documentdb-powerbi-visualize.md)
 
 
 # Referência
-## [SDK do .NET](documentdb-sdk-dotnet.md)
-## [Exemplos .NET](documentdb-dotnet-samples.md)
 ## [SDK Java](documentdb-sdk-java.md)
-## [SDK Node.js](documentdb-sdk-node.md)
+## [SDK do .NET](documentdb-sdk-dotnet.md)
+## [SDK .NET Core](documentdb-sdk-dotnet-core.md)
+## [Exemplos .NET](documentdb-dotnet-samples.md)
+## [Node.js SDK](documentdb-sdk-node.md)
 ## [Amostras de Node.js](documentdb-nodejs-samples.md)
-## [Python](documentdb-sdk-python.md)
+## [Python SDK](documentdb-sdk-python.md)
 ## [Amostras de Python](documentdb-python-samples.md)
-## [REST](https://msdn.microsoft.com/library/azure/dn781481.aspx) 
 ## [SQL](https://msdn.microsoft.com/library/azure/dn782250.aspx)
 ## [Referência rápida de gramática do SQL](documentdb-sql-query-cheat-sheet.md)
-
+## [REST](/rest/api/documentdb/)
+## [Fornecedor de Recursos REST](/rest/api/documentdbresourceprovider/)
 
 # Recursos
 ## [Preços](https://azure.microsoft.com/pricing/details/documentdb/)
-## [Fóruns do MSDN](https://social.msdn.microsoft.com/forums/azure/en-US/home?forum=AzureDocumentDB)
+## [Fórum do MSDN](https://social.msdn.microsoft.com/forums/azure/en-US/home?forum=AzureDocumentDB)
 ## [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-documentdb)
-## [Vídeos](https://azure.microsoft.com/documentation/videos/index/?services=documentdb) 
-## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=documentdb) 
-## [Pergunte ao DocumentDB](documentdb-community.md#contact-the-team)
+## [Vídeos](https://azure.microsoft.com/documentation/videos/index/?services=documentdb)
+## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=documentdb)
 ## [Portal da comunidade](documentdb-community.md)
-## [Eventos e gravações](documentdb-community.md#events-and-recordings)
 ## [Recreio de Consultas](https://www.documentdb.com/sql/demo)
 ## [Documento de indexação de esquema desconhecido](http://www.vldb.org/pvldb/vol8/p1668-shukla.pdf)
 ## [Consistência dos dados explicada através do basebol](http://research.microsoft.com/apps/pubs/default.aspx?id=206913)
@@ -110,23 +110,6 @@
 ## [Percurso de aprendizagem](https://azure.microsoft.com/documentation/learning-paths/documentdb/)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO4-->
 
 

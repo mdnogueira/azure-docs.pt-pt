@@ -15,8 +15,8 @@ ms.workload: infrastructure-services
 ms.date: 11/02/2016
 ms.author: cherylmc
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 86b7d396307761acb8baee5761f08a3e1120cddc
+ms.sourcegitcommit: 53a301bd501f223aa8489ba6592c8428c1fcd530
+ms.openlocfilehash: 877a70c162f23ced4606ee8a5c51db5e4eeaa89a
 
 
 ---
@@ -28,7 +28,10 @@ O ExpressRoute é suportado em todas as regiões e localizações do Azure. O ma
 
 ![Mapa de localização][0]
 
-Terá acesso aos serviços do Azure em todas as regiões numa região geopolítica se estiver ligado a, pelo menos, uma localização do ExpressRoute numa região geopolítica. A tabela seguinte fornece um mapa de regiões do Azure para localizações do ExpressRoute numa região geopolítica.
+Terá acesso aos serviços do Azure em todas as regiões numa região geopolítica se estiver ligado a, pelo menos, uma localização do ExpressRoute numa região geopolítica. 
+
+### <a name="azure-regions-to-expressroute-locations-within-a-geopolitical-region"></a>Regiões do Azure para localizações do ExpressRoute numa região geopolítica
+A tabela seguinte fornece um mapa de regiões do Azure para localizações do ExpressRoute numa região geopolítica.
 
 | **Região geopolítica** | **Regiões do Azure** | **Localizações do ExpressRoute** |
 | --- | --- | --- |
@@ -40,6 +43,7 @@ Terá acesso aos serviços do Azure em todas as regiões numa região geopolíti
 | **Austrália** |Sudeste da Austrália, Leste da Austrália |Melbourne, Sydney |
 | **Índia** |Índia Ocidental, Índia Central, Sul da Índia |Chennai, Mumbai |
 
+### <a name="regions-and-geopolitical-boundaries-for-national-clouds"></a>Regiões e limites geopolíticos para nuvens nacionais
 A tabela abaixo fornece informações sobre regiões e limites geopolíticos para nuvens nacionais.
 
 | **Região geopolítica** | **Regiões do Azure** | **Localizações do ExpressRoute** |
@@ -50,10 +54,10 @@ A tabela abaixo fornece informações sobre regiões e limites geopolíticos par
 
 A conectividade em regiões geopolíticas não é suportada no SKU do ExpressRoute standard. Terá de ativar o suplemento ExpressRoute Premium para suportar a conetividade global. A conectividade com ambientes em nuvem nacionais não é suportada. Pode trabalhar com o seu fornecedor de conectividade, se tal for necessário.
 
-## <a name="connectivity-provider-locations"></a>Localizações do fornecedor de conectividade
+## <a name="a-namelocationsaconnectivity-provider-locations"></a><a name="locations"></a>Localizações dos fornecedores de conectividade
 > [!div class="op_single_selector"]
-> [Localizações por Fornecedor](expressroute-locations.md#connectivity-provider-locations)
-> [Fornecedores por Localização](expressroute-locations-providers.md#connectivity-provider-locations)
+> * [Localizações por Fornecedor](expressroute-locations.md#locations)
+> * [Fornecedores por Localização](expressroute-locations-providers.md#locations)
 > 
 > 
 
@@ -89,7 +93,8 @@ A conectividade em regiões geopolíticas não é suportada no SKU do ExpressRou
  **+** brevemente disponível
 
 ### <a name="national-cloud-environments"></a>Ambientes em nuvem nacionais
-#### <a name="us-government-cloud"></a>Nuvem do Governo dos EUA
+
+### <a name="us-government-cloud"></a>Nuvem do Governo dos EUA
 | **Localização** | **Fornecedores de Serviços** |
 | --- | --- |
 | **Chicago** |AT&T NetBond, Equinix, Level 3 Communications, Verizon |
@@ -97,7 +102,7 @@ A conectividade em regiões geopolíticas não é suportada no SKU do ExpressRou
 | **Nova Iorque** |Equinix, Level 3 Communications+, Verizon |
 | **Washington D.C.** |AT&T NetBond, Equinix, Level 3 Communications, Verizon |
 
-#### <a name="china"></a>China
+### <a name="china"></a>China
 | **Localização** | **Fornecedores de Serviços** |
 | --- | --- |
 | **Pequim** |China Telecom |
@@ -105,7 +110,7 @@ A conectividade em regiões geopolíticas não é suportada no SKU do ExpressRou
 
 Para saber mais, veja [ExpressRoute na China](http://www.windowsazure.cn/home/features/expressroute/)
 
-#### <a name="germany"></a>Alemanha
+### <a name="germany"></a>Alemanha
 | **Localização** | **Fornecedores de Serviços** |
 | --- | --- |
 | **Berlim** |Colt+, e-shelter |
@@ -153,6 +158,6 @@ A ativação da conectividade privada para atender as suas necessidades pode ser
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO3-->
 
 

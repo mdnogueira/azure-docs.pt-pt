@@ -15,8 +15,8 @@ ms.workload: data-management
 ms.date: 05/27/2016
 ms.author: srinia
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: daf8bd6421ae563e542b0874a6e7748a3ca52738
+ms.sourcegitcommit: 5a101aa78dbac4f1a0edb7f414b44c14db392652
+ms.openlocfilehash: 14c34627623f3b0371a8ad3c3f8eb46af9ed4847
 
 
 ---
@@ -25,28 +25,28 @@ ms.openlocfilehash: daf8bd6421ae563e542b0874a6e7748a3ca52738
 > * [Portal do Azure](sql-database-elastic-pool-create-portal.md)
 > * [PowerShell](sql-database-elastic-pool-create-powershell.md)
 > * [C#](sql-database-elastic-pool-create-csharp.md)
-> 
-> 
+>
+>
 
-Saiba como criar um [conjunto de bases de dados elásticas](sql-database-elastic-pool.md), utilizando cmdlets do PowerShell. 
+Saiba como criar um [conjunto de bases de dados elásticas](sql-database-elastic-pool.md), utilizando cmdlets do PowerShell.
 
 Para códigos de erro comuns, consulte [Códigos de erro de SQL para aplicações de clientes de Base de Dados SQL: erro de ligação à base de dados e outros problemas](sql-database-develop-error-messages.md).
 
 > [!NOTE]
 > Os conjuntos elásticos estão geralmente disponível (GA) em todas as regiões Azure exceto nos E.U.A. Centro-Norte e na Índia Ocidental onde se encontra, de momento, em pré-visualização.  O GA dos conjuntos elásticos nestas regiões será fornecido assim que possível. Além disso, os conjuntos elásticos não suportam atualmente as bases de dados que utilizam [OLTP dentro da memória ou análise dentro da memória](sql-database-in-memory.md).
-> 
-> 
+>
+>
 
 Tem de estar a executar o Azure PowerShell 1.0 ou superior. Para informações detalhadas, consulte [Como instalar e configurar o Azure PowerShell](../powershell-install-configure.md).
 
 ## <a name="create-a-new-pool"></a>Criar um novo conjunto
-O cmdlet [New-AzureRmSqlElasticPool](https://msdn.microsoft.com/library/azure/mt619378\(v=azure.300\).aspx) cria um novo conjunto. Os valores de eDTU por conjunto e das Dtus mínimas e máximas estão restritos pelo valor da camada de serviço (básica, standard ou premium). Consulte [eDTU e limites de armazenamento para conjuntos elásticos e bases de dados elásticas](sql-database-elastic-pool.md#eDTU-and-storage-limits-for-elastic-pools-and-elastic-databases).
+O cmdlet [New-AzureRmSqlElasticPool](https://msdn.microsoft.com/library/azure/mt619378\(v=azure.300\).aspx) cria um novo conjunto. Os valores de eDTU por conjunto e das Dtus mínimas e máximas estão restritos pelo valor da camada de serviço (básica, standard ou premium). Consulte [eDTU e limites de armazenamento para conjuntos elásticos e bases de dados elásticas](sql-database-elastic-pool.md#edtu-and-storage-limits-for-elastic-pools-and-elastic-databases).
 
     New-AzureRmSqlElasticPool -ResourceGroupName "resourcegroup1" -ServerName "server1" -ElasticPoolName "elasticpool1" -Edition "Standard" -Dtu 400 -DatabaseDtuMin 10 -DatabaseDtuMax 100
 
 
 ## <a name="create-a-new-elastic-database-in-a-pool"></a>Criar uma nova base de dados elástica num conjunto
-Utilize o cmdlet [New-AzureRmSqlDatabase](https://msdn.microsoft.com/library/azure/mt619339\(v=azure.300\).aspx) e defina o parâmetro **ElasticPoolName** para o conjunto de destino. Para mover uma base de dados existente para um conjunto, consulte [Mover uma base de dados para um conjunto elástico](sql-database-elastic-pool-manage-powershell.md#Move-a-database-into-an-elastic-pool).
+Utilize o cmdlet [New-AzureRmSqlDatabase](https://msdn.microsoft.com/library/azure/mt619339\(v=azure.300\).aspx) e defina o parâmetro **ElasticPoolName** para o conjunto de destino. Para mover uma base de dados existente para um conjunto, consulte [Mover uma base de dados para um conjunto elástico](sql-database-elastic-pool-manage-powershell.md#move-a-database-into-an-elastic-pool).
 
     New-AzureRmSqlDatabase -ResourceGroupName "resourcegroup1" -ServerName "server1" -DatabaseName "database1" -ElasticPoolName "elasticpool1"
 
@@ -80,7 +80,6 @@ Este script cria um novo grupo de recursos e um novo servidor do Azure. Quando l
 * [Gerir o conjunto](sql-database-elastic-pool-manage-powershell.md)
 * [Criar tarefas elásticas](sql-database-elastic-jobs-overview.md) As tarefas elásticas permitem executar scripts T-SQL em qualquer número de bases de dados no conjunto.
 * [Aumentar horizontalmente com a Base de Dados SQL do Azure](sql-database-elastic-scale-introduction.md): utilize ferramentas de base de dados elástica para aumentar horizontalmente.
-
 
 
 

@@ -39,7 +39,7 @@ Adicione utilizadores para povoar o diretório. Este artigo explica como adicion
 > Se a sua organização utilizar mais de um domínio, deverá ser informado dos seguintes problemas quando adicionar uma conta de utilizador:
 > 
 > * Para adicionar contas de utilizador com o mesmo nome principal de utilizador (UPN) entre domínios, **comece** por adicionar, por exemplo, geoffgrisso@contoso.onmicrosoft.com, **, seguido de ** geoffgrisso@contoso.com.
-> * **Não** adicione geoffgrisso@contoso.com, antes de adicionar geoffgrisso@contoso.onmicrosoft.com.. É importante seguir esta ordem uma vez que qualquer anulação poderá ser complicada.
+> * **Não** adicione geoffgrisso@contoso.com, antes de adicionar geoffgrisso@contoso.onmicrosoft.com. É importante seguir esta ordem uma vez que qualquer anulação poderá ser complicada.
 > 
 > 
 

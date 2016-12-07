@@ -13,11 +13,11 @@ ms.devlang: multiple
 ms.topic: hero-article
 ms.tgt_pltfrm: multiple
 ms.workload: na
-ms.date: 09/08/2016
+ms.date: 11/14/2016
 ms.author: glenga
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: e446766c0f3d19a8cce585d708e8e7a809593408
+ms.sourcegitcommit: d40304cd4f7ede4e37d32f66330ac712d325f898
+ms.openlocfilehash: ea7d8acec83103c981bad279507dd7ead5f72370
 
 
 ---
@@ -28,14 +28,14 @@ As Funções do Azure são uma experiência de computação a pedido condicionad
 Este tópico mostra como utilizar o início rápido das Funções do Azure no portal para criar uma função Node.js "olá, mundo" simples invocada por um acionador de HTTP. Também pode ver um breve vídeo para verificar como estes passos são efetuados no portal.
 
 ## <a name="watch-the-video"></a>Ver o vídeo
-O vídeo seguinte mostra como efetuar os passos básicos neste tutorial. 
+O vídeo seguinte mostra como realizar os passos básicos neste tutorial. 
 
 > [!VIDEO https://channel9.msdn.com/Series/Windows-Azure-Web-Sites-Tutorials/Create-your-first-Azure-Function-simple/player]
 > 
 > 
 
 ## <a name="create-a-function-from-the-quickstart"></a>Criar uma função a partir do início rápido
-Uma aplicação de função aloja a execução das suas funções no Azure. Siga estes passos para criar uma nova aplicação de função, bem como a nova função. A nova Function App é criada com uma configuração predefinida. Para obter um exemplo de como criar explicitamente a sua Function App, veja [o outro tutorial de início rápido das Funções do Azure](functions-create-first-azure-function-azure-portal.md).
+Uma aplicação de função aloja a execução das suas funções no Azure. Siga estes passos para criar uma aplicação de função com a função nova. A aplicação de função é criada com uma configuração predefinida. Para obter um exemplo de como criar explicitamente a sua Function App, veja [o outro tutorial de início rápido das Funções do Azure](functions-create-first-azure-function-azure-portal.md).
 
 Antes de poder criar a sua primeira função, tem de ter uma conta do Azure ativa. Se ainda não tiver uma conta do Azure, [estão disponíveis contas gratuitas](https://azure.microsoft.com/free/).
 
@@ -44,34 +44,39 @@ Antes de poder criar a sua primeira função, tem de ter uma conta do Azure ativ
 3. No separador **Início Rápido**, clique em **WebHook + API** e **JavaScript** e, em seguida, clique em **Criar uma função**. É criada uma nova função Node.js predefinida. 
    
     ![](./media/functions-create-first-azure-function/function-app-quickstart-node-webhook.png)
-4. (Opcional) Neste momento no início rápido, pode optar por fazer uma visita guiada das funcionalidades das Funções do Azure no portal.    Depois de concluir ou ignorar a visita guiada, pode testar a sua nova função com o acionador de HTTP.
+4. (Opcional) Neste momento no início rápido, pode optar por fazer uma visita guiada das funcionalidades das Funções do Azure no portal. Depois de concluir ou ignorar a visita guiada, pode testar a sua nova função com o acionador de HTTP.
 
 ## <a name="test-the-function"></a>Testar a função
 Uma vez que os inícios rápidos das Funções do Azure contêm código funcional, pode testar a nova função imediatamente.
 
 1. No separador **Desenvolver**, reveja a janela **Código** e tenha em atenção que este código Node.js espera um pedido HTTP com um valor *nome* transmitido no corpo da mensagem ou numa cadeia de consulta. Quando a função é executada, este valor é devolvido na mensagem de resposta.
    
+2. Clique em **Testar** para apresentar o painel de pedido de teste HTTP da função.
+ 
     ![](./media/functions-create-first-azure-function/function-app-develop-tab-testing.png)
-2. Desloque para baixo para a caixa de texto **Corpo do pedido**, altere o valor da propriedade *nome* para o seu nome e clique em **Executar**. Verá que a execução é acionada por um pedido HTTP de teste, as informações são escritas nos registos de transmissão em fluxo e a resposta "olá" é apresentada no **Resultado**. 
-3. Para acionar a execução da mesma função a partir de outra janela ou separador do browser, copie o valor **URL da Função** do separador **Desenvolver** e cole-o numa barra de endereço do browser, em seguida, acrescente o valor da cadeia de consulta `&name=yourname` e prima Enter. As mesmas informações são escritas nos registos e o browser apresenta a resposta "olá" como anteriormente.
+
+2. Na caixa de texto **Corpo do pedido**, altere o valor da propriedade *nome* para o seu nome e clique em **Executar**. Verá que a execução é acionada por um pedido HTTP de teste, as informações são escritas nos registos de transmissão em fluxo e a resposta "olá" é apresentada no **Resultado**.
+ 
+3. Para acionar a execução da mesma função a partir de outra janela ou separador do browser, copie o valor **URL da Função** do separador **Desenvolver** e cole-o numa barra de endereço do browser. Acrescente o valor da cadeia de consulta `&name=yourname` ao URL e prima Enter. As mesmas informações são escritas nos registos e o browser apresenta a resposta "olá" como anteriormente.
 
 ## <a name="next-steps"></a>Passos seguintes
-Este início rápido demonstra uma execução muito simples de uma função acionada por HTTP básico. Veja estes tópicos para obter mais informações sobre como tirar partido do poder das Funções do Azure nas suas aplicações.
+Este início rápido demonstra uma execução simples de uma função básica acionada por HTTP. Para saber mais sobre como utilizar as Funções de Azure nas suas aplicações, veja os tópicos seguintes:
 
+* [Best Practices for Azure Functions (Melhores Práticas para as Funções do Azure)](functions-best-practices.md)
 * [Referência para programadores das Funções do Azure](functions-reference.md)  
   Referência para programadores para codificar funções e definir acionadores e enlaces.
 * [Testar as Funções do Azure](functions-test-a-function.md)  
   Descreve várias ferramentas e técnicas para testar as suas funções.
 * [Como dimensionar as Funções do Azure](functions-scale.md)  
-  Aborda os planos de serviço disponíveis com as Funções do Azure, incluindo o plano de serviço Dinâmico e como escolher o plano adequado. 
+  Aborda os planos de serviço disponíveis com as Funções do Azure, incluindo o plano de serviço dinâmico e como escolher o plano adequado. 
 * [O que é o Serviço de Aplicações do Azure?](../app-service/app-service-value-prop-what-is.md)  
-  Funções do Azure melhora a plataforma do Azure App Service para funcionalidades essenciais como implementações, variáveis de ambiente e diagnósticos. 
+  As Funções do Azure utilizam a plataforma do Serviço de Aplicações do Azure para funcionalidades essenciais como implementações, variáveis de ambiente e diagnósticos. 
 
 [!INCLUDE [Getting Started Note](../../includes/functions-get-help.md)]
 
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO3-->
 
 

@@ -1,8 +1,8 @@
 ---
 layout: LandingPage
 translationtype: Human Translation
-ms.sourcegitcommit: d6059070f8cb8765986763a2ae52068ab692d41d
-ms.openlocfilehash: 9614778d6c7502f16639d2ccb2f259a98be5b0c9
+ms.sourcegitcommit: 98fdd8ee3dc1b90aae349652e471a218ef44a44e
+ms.openlocfilehash: ac0840ad98cc34d190d69b4e317a2c446a3d64d1
 
 ---
 # <a name="key-vault-documentation"></a>Documentação do Cofre de Chaves
@@ -106,21 +106,82 @@ O Cofre de Chaves do Azure ajuda a salvaguardar as chaves criptográficas e os s
 
 ## <a name="reference"></a>Referência
 
-### <a name="powershell"></a>PowerShell
-[Referência do Azure PowerShell](/PowerShell/azureps-cmdlets-docs)
+<ul class="panelContent cardsW">
+    <li>
+        <a href="/PowerShell/azureps-cmdlets-docs">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>PowerShell</h3>
+                        <p>Referência ao Azure PowerShell</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
 
-### <a name="azure-cli"></a>CLI do Azure 
-[Cofre de Chaves com o CLI do Azure](/cli/azure/keyvault)
+<li>
+        <a href="/cli/azure/keyvault">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>CLI do Azure</h3>
+                        <p>Cofre de Chaves com a CLI do Azure</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
 
-### <a name="java"></a>Java 
-[Referência do Cofre de Chaves em Java](/java/api/)
+<li>
+        <a href="/java/api/">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>Java</h3>
+                        <p>Referência do Cofre de Chaves em Java</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
 
-### <a name="net"></a>.NET 
-[API de Referência Gerida do Cofre de Chaves](/dotnet/api/) 
+<li>
+        <a href="/dotnet/api/">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>.NET</h3>
+                        <p>API de Referência Gerida do Cofre de Chaves</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
 
-### <a name="rest"></a>REST 
-[Referência da API REST do Cofre de Chaves](/rest/api/keyvault) 
-
+<li>
+        <a href="/rest/api/keyvault">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>REST</h3>
+                        <p>Referência da API REST do Cofre de Chaves</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+</ul>
 ---
 
 <div class="downloadHolder">
@@ -133,6 +194,6 @@ Transferir Documentação do Cofre de Chaves </div>
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO4-->
 
 

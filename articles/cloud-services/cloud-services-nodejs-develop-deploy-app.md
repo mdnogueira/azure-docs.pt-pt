@@ -15,17 +15,17 @@ ms.topic: hero-article
 ms.date: 11/01/2016
 ms.author: robmcm
 translationtype: Human Translation
-ms.sourcegitcommit: e7d3c82e235d691c4ab329be3b168dcccc19774f
-ms.openlocfilehash: 2809b7f5367a333a7aac99db890d0aee3bc6667a
+ms.sourcegitcommit: 79a3ba8f0daee5c20f7a05e20e473cfbea384acc
+ms.openlocfilehash: c941628ece0daffba7cb9bfd79fa0ffdda4ecfba
 
 
 ---
 # <a name="build-and-deploy-a-nodejs-application-to-an-azure-cloud-service"></a>Compilar e implementar uma aplicação Node.js num Serviço em Nuvem do Azure
+
 > [!div class="op_single_selector"]
-> * [Node.js](cloud-services-nodejs-develop-deploy-app.md)
 > * [.NET](cloud-services-dotnet-get-started.md)
->
->
+> * [Node.js](cloud-services-nodejs-develop-deploy-app.md)
+> * [python](cloud-services-python-ptvs.md)
 
 Este tutorial mostra como criar uma aplicação Node.js simples para execução num Serviço em Nuvem do Azure. Os Cloud Services são os blocos modulares de aplicações em nuvem dimensionáveis no Azure. Permitem a separação, bem como a gestão e ampliação independentes de componentes front-end e back-end da aplicação.  Os Cloud Services fornecem uma máquina virtual dedicada robusta para alojar cada função de forma fiável.
 
@@ -175,14 +175,14 @@ Para obter mais informações, consulte o [Centro para Programadores do Node.js]
 
 <!-- URL List -->
 
-[Azure Websites, Cloud Services and Virtual Machines comparison (Comparação de Web Sites, Serviços Cloud e Máquinas Virtuais do Azure)]: ../app-service-web/choose-web-site-cloud-service-vm.md
+[Comparação de Web Sites, Cloud Services e Virtual Machines do Azure]: ../app-service-web/choose-web-site-cloud-service-vm.md
 [utilização de uma aplicação Web simples]: ../app-service-web/web-sites-nodejs-develop-deploy-mac.md
 [Azure PowerShell]: ../powershell-install-configure.md
-[Azure SDK para .NET 2.7]: http://www.microsoft.com/en-us/download/details.aspx?id=48178
+[Azure SDK para .NET 2.7]: http://www.microsoft.com/en-us/download/details.aspx?id=48178
 [Ligue o PowerShell]: ../powershell-install-configure.md#step-3-connect
 [nodejs.org]: http://nodejs.org/
 [Descrição Geral da Criação de um Serviço Alojado do Azure]: https://azure.microsoft.com/documentation/services/cloud-services/
-[Centro de Programadores do Node.js]: https://azure.microsoft.com/develop/nodejs/
+[Centro para Programadores do Node.js]: https://azure.microsoft.com/develop/nodejs/
 
 <!-- IMG List -->
 
@@ -196,6 +196,6 @@ Para obter mais informações, consulte o [Centro para Programadores do Node.js]
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO3-->
 
 

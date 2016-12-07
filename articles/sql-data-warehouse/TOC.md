@@ -28,10 +28,9 @@
 
 ### [Descrição geral](sql-data-warehouse-connect-overview.md)
 ### [Cadeias de ligação](sql-data-warehouse-connection-strings.md)
-### Consulta
-#### [sqlcmd](sql-data-warehouse-get-started-connect-sqlcmd.md)
-#### [SSMS](sql-data-warehouse-query-ssms.md)
-#### [Visual Studio](sql-data-warehouse-query-visual-studio.md)
+### [sqlcmd](sql-data-warehouse-get-started-connect-sqlcmd.md)
+### [SSMS](sql-data-warehouse-query-ssms.md)
+### [Visual Studio](sql-data-warehouse-query-visual-studio.md)
 ### [Instalar o Visual Studio](sql-data-warehouse-install-visual-studio.md)
 
 ## Programar
@@ -82,8 +81,7 @@
 ### [AZCopy](sql-data-warehouse-load-from-sql-server-with-azcopy.md)
 ### [BCP](sql-data-warehouse-load-with-bcp.md)
 ### [BCP a partir do SQL Server](sql-data-warehouse-load-from-sql-server-with-bcp.md)
-### [Data Factory](sql-data-warehouse-get-started-load-with-azure-data-factory.md)
-### [Data Factory a partir do armazenamento de blobs](sql-data-warehouse-load-from-azure-blob-storage-with-data-factory.md)
+### [Data Factory](sql-data-warehouse-load-with-data-factory.md)
 ### [PolyBase](sql-data-warehouse-get-started-load-with-polybase.md)
 ### [Documentação de orientação de PolyBase](sql-data-warehouse-load-polybase-guide.md)
 ### [PolyBase a partir do armazenamento de blobs](sql-data-warehouse-load-from-azure-blob-storage-with-polybase.md)
@@ -111,6 +109,7 @@
 ## Desempenho
 
 ### [Descrição geral](sql-data-warehouse-overview-manage-user-queries.md)
+### [Compressão Columnstore](sql-data-warehouse-memory-optimizations-for-columnstore-compression.md)
 ### [Consultas](sql-data-warehouse-manage-monitor.md)
 ### [Carga de trabalho](sql-data-warehouse-develop-concurrency.md)
 ### [Resolução de problemas](sql-data-warehouse-troubleshoot.md)
@@ -146,6 +145,6 @@
 ### [Gestão de dados](sql-data-warehouse-partner-data-management.md)
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO4-->
 
 

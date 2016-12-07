@@ -13,22 +13,17 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 10/25/2016
+ms.date: 11/14/2016
 ms.author: v-livech
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 689445bc656b5cdebc7689f7fec6e2ea2683576e
+ms.sourcegitcommit: b80fb49929ce53f33b9a4064ba6ad14d0108d690
+ms.openlocfilehash: c879231fac37ae3c69bac4d201b01469ca18240c
 
 
 ---
 # <a name="create-ssh-keys-on-linux-and-mac-for-linux-vms-in-azure"></a>Criar chaves SSH no Linux e Mac para VMs com Linux no Azure
-Com um par de chaves SSH pode criar Máquinas Virtuais no Azure que estão predefinidas para utilizar chaves SSH para autenticação, eliminando a necessidade de palavras-passe para iniciar sessão.  As palavras-passe podem ser adivinhadas e abrir as VMs até as tentativas de força bruta excessiva desvendarem a sua palavra-passe. As VMs criadas com Modelos do Azure ou a `azure-cli` podem incluir a sua chave pública do SSH como parte da implementação, removendo uma configuração de pós-implementação.  Se estiver a ligar a uma VM do Linux a partir do Windows, veja [este documento.](virtual-machines-linux-ssh-from-windows.md)
+Com um par de chaves SSH pode criar Máquinas Virtuais no Azure que estão predefinidas para utilizar chaves SSH para autenticação, eliminando a necessidade de palavras-passe para iniciar sessão.  As palavras-passe podem ser adivinhadas e abrir as VMs até as tentativas de força bruta excessiva desvendarem a sua palavra-passe. As VMs criadas com Modelos do Azure ou a `azure-cli` podem incluir a sua chave pública do SSH como parte da implementação, removendo uma configuração de pós-implementação.  Se estiver a ligar a uma VM do Linux a partir do Windows, veja [Create SSH keys on Windows (Criar chaves SSH no Windows).](virtual-machines-linux-ssh-from-windows.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 
-O artigo requer:
-
-* uma conta do Azure ([obtenha uma avaliação gratuita](https://azure.microsoft.com/pricing/free-trial/)).
-* a [CLI do Azure](../xplat-cli-install.md) com sessão iniciada`azure login`
-* a CLI do Azure *tem de estar no* modo Azure Resource Manager`azure config mode arm`
 
 ## <a name="quick-commands"></a>Comandos Rápidos
 Nos seguintes comandos, substitua os exemplos pelas suas escolhas.
@@ -92,7 +87,7 @@ Este artigo cria ficheiros de chave com o formato *ssh-rsa*, que são recomendad
 ## <a name="create-the-ssh-keys"></a>Criar as chaves SSH
 O Azure requer, pelo menos, 2048 bits e chaves públicas e privadas com o formato ssh-rsa. Para criar as chaves, utilize `ssh-keygen`, que coloca uma série de perguntas e, em seguida, cria uma chave privada e uma chave pública correspondente. Quando é criada uma VM do Azure, a chave pública é copiada para `~/.ssh/authorized_keys`.  As chaves SSH no `~/.ssh/authorized_keys` são utilizadas para desafiar o cliente para corresponder a chave privada correspondente numa ligação de início de sessão SSH.
 
-## <a name="using-sshkeygen"></a>Utilizar o ssh-keygen
+## <a name="using-ssh-keygen"></a>Utilizar o ssh-keygen
 Este comando cria um par de chaves SSH protegidas por palavra-passe (encriptado) através de uma RSA com 2048 bits e será inserido um comentário para uma fácil identificação.  
 
 Comece por alterar os diretórios para que todas as chaves SSH sejam criadas nesse diretório.
@@ -126,7 +121,7 @@ Para criar uma chave formatada PEM a partir de uma chave pública SSH existente:
 ssh-keygen -f ~/.ssh/id_rsa.pub -e > ~/.ssh/id_ssh2.pem
 ```
 
-## <a name="example-of-sshkeygen"></a>Exemplo de ssh-keygen
+## <a name="example-of-ssh-keygen"></a>Exemplo de ssh-keygen
 ```bash
 ssh-keygen -t rsa -b 2048 -C "myusername@myserver"
 Generating public/private rsa key pair.
@@ -170,7 +165,7 @@ Palavra-passe da chave:
 
 `ssh-keygen` refere-se a uma palavra-passe como "uma frase de acesso".  Recomenda-se *vivamente* que adicione uma palavra-passe aos seus pares de chaves. Sem uma palavra-passe a proteger o par de chaves, qualquer pessoa com o ficheiro de chave privada pode utilizá-la para iniciar sessão em qualquer servidor com a chave pública correspondente. Adicionar uma palavra-passe oferece uma maior proteção no caso de alguém conseguir obter acesso ao seu ficheiro de chave privada, dando-lhe tempo para alterar as chaves utilizadas para o autenticar.
 
-## <a name="using-sshagent-to-store-your-private-key-password"></a>Utilizar o ssh-agent para armazenar a palavra-passe da chave privada
+## <a name="using-ssh-agent-to-store-your-private-key-password"></a>Utilizar o ssh-agent para armazenar a palavra-passe da chave privada
 Para evitar escrever a palavra-passe do ficheiro de chave privada com cada início de sessão SSH, pode utilizar `ssh-agent` para colocar em cache a palavra-passe do ficheiro de chave privada. Se estiver a utilizar um Mac, a keychain armazena as palavras-passe das chaves privadas em segurança quando invocar `ssh-agent`.
 
 Primeiro, certifique-se de que `ssh-agent` está em execução
@@ -247,13 +242,12 @@ Quando `ssh fedora22` é executado, o SSH primeiro localiza e carrega todas as d
 ## <a name="next-steps"></a>Passos Seguintes
 O passo seguinte consiste na criação de VMs com Linux do Azure utilizando a nova chave pública SSH.  As VMs do Azure criadas com uma chave pública SSH como início de sessão estão mais protegidas do que as criadas com as palavras-passe, o método de início de sessão predefinido.  As VMs do Azure criadas com chaves SSH são, por predefinição, configuradas com as palavras-passe desativadas, evitando tentativas de adivinhação forçadas.
 
-* [Criar uma VM do Linux segura com um modelo do Azure](virtual-machines-linux-create-ssh-secured-vm-from-template.md)
-* [Criar uma VM do Linux segura com o portal do Azure](virtual-machines-linux-quick-create-portal.md)
-* [Criar uma VM do Linux segura com a CLI do Azure](virtual-machines-linux-quick-create-cli.md)
+* [Criar uma VM do Linux segura com um modelo do Azure](virtual-machines-linux-create-ssh-secured-vm-from-template.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+* [Criar uma VM do Linux segura com o portal do Azure](virtual-machines-linux-quick-create-portal.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+* [Criar uma VM do Linux segura com a CLI do Azure](virtual-machines-linux-quick-create-cli.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 
 
 
-
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO3-->
 
 

@@ -2,14 +2,14 @@
 <!--
 includes/sql-database-create-new-server-firewall-portal.md
 
-Latest Freshness check:  2016-08-01 , rickbyh.
+Latest Freshness check:  2016-11-28 , rickbyh.
 
 As of circa 2016-04-11, the following topics might include this include:
 articles/sql-database/sql-database-get-started-tutorial.md
 articles/sql-database/sql-database-configure-firewall-settings
 
 -->
-## <a name="create-a-new-azure-sql-serverlevel-firewall"></a>Criar uma nova firewall ao nível do servidor do Azure SQL
+## <a name="create-a-new-azure-sql-server-level-firewall"></a>Criar uma nova firewall ao nível do servidor do Azure SQL
 Utilize os seguintes passos no portal do Azure para criar uma regra de firewall ao nível do servidor para permitir ligações a partir de um endereço IP individual (o computador cliente) ou de todo um intervalo de endereços IP a um servidor lógico da Base de Dados SQL.
 
 1. Se não estiver atualmente ligado, ligue-se ao [Portal do Azure](http://portal.azure.com).
@@ -19,18 +19,15 @@ Utilize os seguintes passos no portal do Azure para criar uma regra de firewall 
 3. No painel **SQL servers**, clique no servidor em que pretende criar a regra de firewall.
    
      ![Nova firewall do servidor](./media/sql-database-create-new-server-firewall-portal/sql-database-create-new-server-firewall-portal-2.png)
-4. Reveja as propriedades do servidor.
+4. Reveja as propriedades do servidor e, em seguida, clique em **Firewall**.
    
      ![Nova firewall do servidor](./media/sql-database-create-new-server-firewall-portal/sql-database-create-new-server-firewall-portal-3.png)
-5. No painel **Definições**, clique em **Firewall**.
-   
-     ![Nova firewall do servidor](./media/sql-database-create-new-server-firewall-portal/sql-database-create-new-server-firewall-portal-4.png)
    
    > [!NOTE]
    > Pode ainda aceder ao painel **Definições da firewall** ao nível do servidor a partir da barra de ferramentas do painel **Base de dados**.
-   > 
-   > 
-6. Clique em **Adicionar IP do cliente** para que o Azure crie uma regra para o endereço IP do cliente.
+    
+    
+6. Clique em **Adicionar IP de cliente** para que o Azure preencha automaticamente o seu endereço IP para as caixas de regra.
    
       ![Nova firewall do servidor](./media/sql-database-create-new-server-firewall-portal/sql-database-create-new-server-firewall-portal-5.png)
 7. Opcionalmente, para adicionar acesso a um intervalo de endereços IP, clique no endereço IP que foi adicionado ao editar o endereço de firewall.
@@ -47,6 +44,6 @@ Utilize os seguintes passos no portal do Azure para criar uma regra de firewall 
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO5-->
 
 

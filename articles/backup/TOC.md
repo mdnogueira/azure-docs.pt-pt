@@ -1,10 +1,10 @@
 # Descrição geral
 ## [O que é o Backup do Azure?](backup-introduction-to-azure-backup.md)
 # Introdução
-## [FAQ](backup-azure-backup-faq.md)
 ## [Fazer uma cópia de segurança de ficheiros e pastas](backup-try-azure-backup-in-10-mins.md)
 ## [Fazer uma cópia de segurança de máquinas virtuais do Azure](backup-azure-vms-first-look.md)
 ## [Proteger VMs do Azure](backup-azure-vms-first-look-arm.md)
+## [FAQ](backup-azure-backup-faq.md)
 # Procedimento
 ## Automatizar a Cópia de Segurança com o PowerShell
 ### [VMs do Azure no Portal do Azure](backup-azure-vms-automation.md)
@@ -52,7 +52,13 @@
 ### [Falha na Cópia de Segurança de VM do Azure: não foi possível comunicar com o agente da VM relativamente ao estado do instantâneo - o tempo limite da subtarefa de instantâneo da VM foi excedido](backup-azure-troubleshoot-vm-backup-fails-snapshot-timeout.md)
 ### [Problemas relacionados com cópias de segurança lentas de ficheiros e pastas no Azure Backup](backup-azure-troubleshoot-slow-backup-performance-issue.md)
 
+# Recursos
+## [Preços](https://azure.microsoft.com/pricing/details/backup/)
+## [Fórum do MSDN](https://social.msdn.microsoft.com/Forums/en-US/home?forum=windowsazureonlinebackup) 
+## [Vídeos](https://azure.microsoft.com/documentation/videos/index/?services=backup) 
+## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=backup)
 
-<!--HONumber=Nov16_HO2-->
+
+<!--HONumber=Nov16_HO4-->
 
 
