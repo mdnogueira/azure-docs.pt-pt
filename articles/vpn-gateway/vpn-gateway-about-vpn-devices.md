@@ -16,8 +16,8 @@ ms.workload: infrastructure-services
 ms.date: 09/13/2016
 ms.author: yushwang;cherylmc
 translationtype: Human Translation
-ms.sourcegitcommit: b8bb16b9557006e894deca76e4274d93a5a27144
-ms.openlocfilehash: 770356c0e334f4efc46f0d5f41433ff93c5046f5
+ms.sourcegitcommit: d269d9a76ff4ccd973eee70d2d5b54a7262383ef
+ms.openlocfilehash: 63d31ae31703a8d43bf2ffec2e6ccdc5da3a46a3
 
 
 ---
@@ -66,7 +66,7 @@ Para obter ajuda na configuração do seu dispositivo VPN, veja as ligações qu
 | Open Systems AG |Gateway de Segurança do Controlo da Missão |N/D |[Guia de instalação](https://www.open.ch/_pdf/Azure/AzureVPNSetup_Installation_Guide.pdf) |[Guia de instalação](https://www.open.ch/_pdf/Azure/AzureVPNSetup_Installation_Guide.pdf) |
 | Openswan |Openswan |2.6.32 |(Brevemente) |Não compatível |
 | Palo Alto Networks |Todos os dispositivos com o PAN-OS |PAN-OS 6.1.5 ou posterior (PolicyBased), PAN-OS 7.0.5 ou posterior (RouteBased) |[Instruções de configuração](https://live.paloaltonetworks.com/t5/Configuration-Articles/How-to-Configure-VPN-Tunnel-Between-a-Palo-Alto-Networks/ta-p/59065) |[Instruções de configuração](https://live.paloaltonetworks.com/t5/Integration-Articles/Configuring-IKEv2-VPN-for-Microsoft-Azure-Environment/ta-p/60340) |
-| WatchGuard |Todos |Fireware XTM v11.x |[Instruções de configuração](http://customers.watchguard.com/articles/Article/Configure-a-VPN-connection-to-a-Windows-Azure-virtual-network/) |Não compatível |
+| WatchGuard |Todos |Fireware XTM v11.x |[Instruções de configuração](http://customers.watchguard.com/articles/Article/Configure-a-VPN-connection-to-a-Windows-Azure-virtual-network) |Não compatível |
 
 (*) Os routers da série ISR 7200 só suportam VPNs PolicyBased.
 
@@ -153,6 +153,6 @@ A tabela seguinte apresenta uma lista de Ofertas de Encriptação e Autenticaç�
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO4-->
 
 

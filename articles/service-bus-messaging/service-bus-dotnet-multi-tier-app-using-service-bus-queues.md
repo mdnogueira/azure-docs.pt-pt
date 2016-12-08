@@ -1,13 +1,13 @@
 ---
 title: "Aplicação .NET multicamadas | Microsoft Docs"
 description: "Um tutorial de .NET que ajuda a desenvolver uma aplicação multicamadas no Azure que utiliza as filas do Service Bus para comunicar entre camadas."
-services: service-bus
+services: service-bus-messaging
 documentationcenter: .net
 author: sethmanheim
 manager: timlt
 editor: 
 ms.assetid: 1b8608ca-aa5a-4700-b400-54d65b02615c
-ms.service: service-bus
+ms.service: service-bus-messaging
 ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
@@ -15,12 +15,12 @@ ms.topic: get-started-article
 ms.date: 09/01/2016
 ms.author: sethm
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 60ed71eac1a233a08414edb8c89b196401895cd8
+ms.sourcegitcommit: 9ace119de3676bcda45d524961ebea27ab093415
+ms.openlocfilehash: c90454109c2fcfe69d512b84d411e4fd4e810f65
 
 
 ---
-# <a name="net-multitier-application-using-azure-service-bus-queues"></a>Aplicação .NET multicamadas que utiliza as filas do Service Bus do Azure
+# <a name="net-multi-tier-application-using-azure-service-bus-queues"></a>Aplicação .NET multicamadas que utiliza as filas do Service Bus do Azure
 ## <a name="introduction"></a>Introdução
 O desenvolvimento para o Microsoft Azure é fácil através do Visual Studio e do Azure SDK gratuito para o .NET. Este tutorial explica os passos para criar uma aplicação que utiliza vários recursos do Azure em execução no ambiente local. Os passos partem do princípio de que não tem qualquer experiência na utilização do Azure.
 
@@ -39,7 +39,7 @@ A seguinte captura de ecrã mostra a aplicação concluída.
 
 ![][0]
 
-## <a name="scenario-overview-interrole-communication"></a>Descrição geral do cenário: comunicação entre funções
+## <a name="scenario-overview-inter-role-communication"></a>Descrição geral do cenário: comunicação entre funções
 Para submeter um pedido para processamento, o componente de IU do front-end, em execução na função da Web, deve interagir com a lógica da camada média em execução na função de trabalho. Este exemplo utiliza mensagens mediadas do Service Bus para a comunicação entre as camadas.
 
 A utilização de mensagens mediadas entre as camadas média e da Web desacopla os dois componentes. Contrariamente às mensagens diretas (ou seja, TCP ou HTTP), a camada da Web não estabelece diretamente ligação à camada média; em vez disso, emite unidades de trabalho, tais como mensagens, para o Service Bus que, de forma fiável, mantém as mesmas até a camada média estar preparada para o respetivo consumo e processamento.
@@ -410,6 +410,6 @@ Para obter mais informações sobre os cenários de multicamadas, consulte:
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO3-->
 
 

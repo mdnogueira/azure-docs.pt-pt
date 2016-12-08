@@ -12,11 +12,11 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: big-data
-ms.date: 10/04/2016
+ms.date: 11/21/2016
 ms.author: nitinme
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 0c70eff85416b6b41eb455edc430a66b588dec41
+ms.sourcegitcommit: c157da7bf53e2d0762624e8e71e56e956db04a24
+ms.openlocfilehash: 7663670bc4fe0612b9a22545f0fc036add1c48cd
 
 
 ---
@@ -29,7 +29,8 @@ ms.openlocfilehash: 0c70eff85416b6b41eb455edc430a66b588dec41
 > * [API REST](data-lake-store-get-started-rest-api.md)
 > * [CLI do Azure](data-lake-store-get-started-cli.md)
 > * [Node.js](data-lake-store-manage-use-nodejs.md)
-> 
+> * [python](data-lake-store-get-started-python.md)
+>
 > 
 
 Aprenda a utilizar o Azure PowerShell para criar uma conta do Azure Data Lake Store e executar operações básicas, tais como criar pastas, carregar e transferir ficheiros de dados, eliminar a conta, entre outras. Para obter mais informações sobre o Data Lake Store, veja [Descrição geral do Data Lake Store](data-lake-store-overview.md).
@@ -132,6 +133,6 @@ Quando lhe for pedido, introduza **S** para eliminar a conta.
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO4-->
 
 

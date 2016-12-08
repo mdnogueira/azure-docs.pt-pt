@@ -15,8 +15,8 @@ ms.topic: get-started-article
 ms.date: 07/26/2016
 ms.author: robinsh
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: d5b24b28f82c53b880e025dc43169aaad49e8434
+ms.sourcegitcommit: 7455d6f99ed8ceb401224f98105f7b651f55c724
+ms.openlocfilehash: fd5ca2dfb12b7527f49d32d9642a91df9e590b14
 
 
 ---
@@ -68,7 +68,7 @@ Também pode configurar um nome de domínio personalizado para utilizar com a su
    > O nome da sua conta do Storage tem de ser exclusivo no Azure. O portal do Azure indica se o nome da conta de armazenamento que selecionou já está a ser utilizado.
    > 
    > 
-4. Especifique o modelo de implementação a utilizar: **Resource Manager** ou **Clássico**. O modelo de implementação recomendado é **Resource Manager**. Para obter mais informações, consulte [Compreender a implementação do Resource Manager e a implementação clássica](../resource-manager-deployment-model.md).
+4. Especifique o modelo de implementação a utilizar: **Resource Manager** ou **Clássico**. O modelo de implementação recomendado é **Resource Manager**. Para obter mais informações, consulte [Compreender a implementação do Resource Manager e a implementação clássica](../azure-resource-manager/resource-manager-deployment-model.md).
    
    > [!NOTE]
    > Só é possível criar contas do Blob Storage ao utilizar o modelo de implementação Resource Manager.
@@ -162,6 +162,6 @@ Para obter mais informações, consulte a [documentação de Virtual Machines do
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO4-->
 
 

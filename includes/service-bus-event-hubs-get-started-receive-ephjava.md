@@ -17,7 +17,7 @@ Para utilizar o EventProcessorHost, tem de ter uma [Conta de armazenamento do Az
 ### <a name="create-a-java-project-using-the-eventprocessor-host"></a>Criar um projeto Java com o EventProcessorHost
 A biblioteca de cliente Java para os Hubs de Eventos pode ser utilizada em projetos Maven a partir do [Repositório Central Maven][Pacote Maven], e pode ser referenciada através da seguinte declaração de dependência dentro do ficheiro de projeto Maven:    
 
-``` XML
+```XML
 <dependency>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>azure-eventhubs</artifactId>
@@ -34,7 +34,7 @@ Para diferentes tipos de ambientes de compilação, pode obter explicitamente os
 
 1. Para o exemplo que se segue, comece por criar um novo projeto Maven para uma consola/aplicação shell no seu ambiente de desenvolvimento Java favorito. A classe será designada ```ErrorNotificationHandler```.     
    
-    ``` Java
+    ```Java
     import java.util.function.Consumer;
     import com.microsoft.azure.eventprocessorhost.ExceptionReceivedEventArgs;
    
@@ -167,7 +167,7 @@ Para diferentes tipos de ambientes de compilação, pode obter explicitamente os
     ```
 4. Substitua os seguintes campos pelos valores utilizados aquando da criação do Hub de Eventos e da conta de armazenamento.
    
-    ``` Java
+    ```Java
     final String namespaceName = "----ServiceBusNamespaceName-----";
     final String eventHubName = "----EventHubName-----";
    
@@ -184,8 +184,8 @@ Para diferentes tipos de ambientes de compilação, pode obter explicitamente os
 > 
 
 <!-- Links -->
-[Descrição geral dos Hubs de Eventos]: ../articles/event-hubs/event-hubs-overview.md
-[Conta de Armazenamento do Azure]: ../articles/storage/storage-create-storage-account.md
+[Event Hubs Overview (Descrição Geral dos Hubs de Eventos)]: ../articles/event-hubs/event-hubs-overview.md
+[Conta de armazenamento do Azure]: ../articles/storage/storage-create-storage-account.md
 [Portal Clássico do Azure]: http://manage.windowsazure.com
 [Pacote Maven]: https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-eventhubs-eph%22
 
@@ -195,6 +195,6 @@ Para diferentes tipos de ambientes de compilação, pode obter explicitamente os
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO4-->
 
 

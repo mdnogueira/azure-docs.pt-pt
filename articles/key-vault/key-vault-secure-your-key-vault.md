@@ -15,8 +15,8 @@ ms.topic: hero-article
 ms.date: 10/07/2016
 ms.author: ambapat
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 5d58210a155666642cec8c180249c4e43b69fb9c
+ms.sourcegitcommit: a31a1b7909ea7440780c9a7af4cb908c9aa6a449
+ms.openlocfilehash: 5557dbef45d8599010a909635eebf399a5bcd2c8
 
 
 ---
@@ -71,7 +71,7 @@ Os controlos de acesso do plano de gestão e do plano de dados funcionam de form
 ## <a name="management-plane-access-control"></a>Controlo de acesso do plano de gestão
 O plano de gestão consiste em operações que afetam o próprio cofre de chaves. Por exemplo, pode criar ou eliminar um cofre de chaves. Pode ver uma lista dos cofres numa subscrição. Pode obter as propriedades do cofre de chaves (como o SKU e as etiquetas) e definir políticas de acesso do cofre de chaves que controlem os utilizadores e aplicações que podem aceder a chaves e segredos do cofre de chaves. O controlo de acesso do plano de gestão utiliza o RBAC. Veja a lista completa das operações de cofres de chaves que podem ser feitas através do plano de gestão na tabela da secção anterior. 
 
-### <a name="rolebased-access-control-rbac"></a>Controlo de Acesso Baseado em Funções (RBAC)
+### <a name="role-based-access-control-rbac"></a>Controlo de Acesso Baseado em Funções (RBAC)
 Cada subscrição do Azure tem um Azure Active Directory. Os utilizadores, grupos e aplicações deste diretório podem receber acesso para gerir recursos na subscrição do Azure que utilizem o modelo de implementação Azure Resource Manager. Este tipo de controlo de acesso tem o nome de Controlo de Acesso Baseado em Funções (Role-Based Access Control, RBAC). Para gerir este acesso, pode utilizar o [portal do Azure](https://portal.azure.com/), as [ferramentas da CLI do Azure](../xplat-cli-install.md), o [PowerShell](../powershell-install-configure.md) ou as [APIs REST do Azure Resource Manager](https://msdn.microsoft.com/library/azure/dn906885.aspx).
 
 Com o modelo Azure Resource Manager, o cofre de chaves é criado num grupo de recursos e o acesso ao plano de gestão desse cofre é controlado com o Azure Active Directory. Por exemplo, pode conceder a utilizadores ou grupos a capacidade de gerir cofres de chave num grupo de recursos específico.
@@ -210,7 +210,7 @@ Este exemplo mostra um cenário simples. Os cenários da vida real podem ser mai
 * [RBAC: Funções Incorporadas](../active-directory/role-based-access-built-in-roles.md)
   
   Este artigo mostra todas as funções incorporadas disponíveis no RBAC.
-* [Compreender a implementação do Resource Manager e a implementação clássica](../resource-manager-deployment-model.md)
+* [Compreender a implementação do Resource Manager e a implementação clássica](../azure-resource-manager/resource-manager-deployment-model.md)
   
   Este artigo explica os modelos de implementação Resource Manager e de implementação clássica e explica as vantagens de utilizar o Resource Manager e os grupos de recursos.
 * [Gerir o Controlo de Acesso Baseado em Funções com o Azure PowerShell](../active-directory/role-based-access-control-manage-access-powershell.md)
@@ -253,6 +253,6 @@ Se tiver perguntas sobre o Cofre de Chaves, visite os [Fóruns do Cofre de Chave
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO4-->
 
 

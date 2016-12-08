@@ -13,11 +13,11 @@ ms.workload: big-data
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 10/19/2016
+ms.date: 11/23/2016
 ms.author: jgao
 translationtype: Human Translation
-ms.sourcegitcommit: 9cf1faabe3ea12af0ee5fd8a825975e30947b03a
-ms.openlocfilehash: bf4e77ab2678d3cb74373fd3b3cfd2a5f69d7292
+ms.sourcegitcommit: 2c7b46521c5da3290af244652b5ac20d4c309d5d
+ms.openlocfilehash: 5ec4b260ce82ec78b614ae442d3f14063ce590b5
 
 
 ---
@@ -74,7 +74,7 @@ Para a maioria das pessoas, os dados são apresentados no formato de tabela:
 
 No HBase que é uma implementação do BigTable, os mesmos dados tem este aspeto:
 
-![HDInsight HBase bigtable data][img-hbase-sample-data-bigtable]
+![HDInsight HBase BigTable data][img-hbase-sample-data-bigtable]
 
 Depois de concluir o procedimento a seguir, isto fará mais sentido.  
 
@@ -95,7 +95,7 @@ Depois de concluir o procedimento a seguir, isto fará mais sentido.
         put 'Contacts', '1000', 'Office:Address', '1111 San Gabriel Dr.'
         scan 'Contacts'
    
-    ![hdinsight hadoop hbase shell][img-hbase-shell]
+    ![HDInsight Hadoop HBase shell][img-hbase-shell]
 4. Obter uma única linha
    
         get 'Contacts', '1000'
@@ -142,10 +142,18 @@ Pode criar um ficheiro de texto e carregar o ficheiro para a sua própria conta 
 ## <a name="use-hive-to-query-hbase"></a>Utilizar Hive para consultar o HBase
 Pode consultar dados nas tabelas HBase através do Hive. Esta secção cria uma tabela de Hive que mapeia para a tabela HBase e utiliza-a para consultar os dados na tabela HBase.
 
+> [!NOTE]
+> Se o Hive e o HBase estiverem em diferentes cluters no mesmo VNet, deve passar o quórum zookeeper ao invocar a Hive shell:
+>
+>       hive --hiveconf hbase.zookeeper.quorum=zk0-xxxx.xxxxxxxxxxxxxxxxxxxxxxx.cx.internal.cloudapp.net,zk1-xxxx.xxxxxxxxxxxxxxxxxxxxxxx.cx.internal.cloudapp.net,zk2-xxxx.xxxxxxxxxxxxxxxxxxxxxxx.cx.internal.cloudapp.net --hiveconf zookeeper.znode.parent=/hbase-unsecure  
+>
+>
+
 1. Abrir **PuTTY** e ligar ao cluster.  Consulte as instruções no procedimento anterior.
 2. Abra a shell do Hive.
    
        hive
+       
 3. Execute o seguinte script de HiveQL para criar uma tabela de Hive que mapeia para a tabela HBase. Certifique-se de que criou a tabela de exemplo referida anteriormente neste tutorial, utilizando a shell de HBase antes de executar esta instrução.
    
         CREATE EXTERNAL TABLE hbasecontacts(rowkey STRING, name STRING, homephone STRING, officephone STRING, officeaddress STRING)
@@ -221,53 +229,21 @@ Para mais informações sobre o HBase Rest, veja [Guia de Referência do HBase A
 ## <a name="check-cluster-status"></a>Verificar o estado do cluster
 O HBase em HDInsight é fornecido com uma interface de utilizador da Web para monitorização de clusters. Utilizando a interface de utilizador da Web, pode pedir estatísticas ou informações sobre regiões.
 
-É possível utilizar o SSH para criar um túnel entre os pedidos locais, como os pedidos Web, e o cluster do HDInsight. O pedido será encaminhado para o recurso solicitado como se tivesse tido origem no nó principal do cluster do HDInsight. Para obter mais informações, consulte o artigo [Utilizar o SSH com o Hadoop baseado em Linux no HDInsight a partir do Windows](hdinsight-hadoop-linux-use-ssh-windows.md#tunnel).
+**Para aceder à IU Principal do HBase**
 
-**Estabelecer um túnel de sessão SSH**
+1. Abrir a IU da Web Ambari em https://&lt;Clustername>.azurehdinsight.net.
+2. Clique em **HBase** no menu à esquerda.
+3. Clique em **Ligações rápidas** no topo da página, aponte para a ligação de nó ativa do Zookeeper e, em seguida, clique em **IU Principal do HBase**.  A IU é aberta noutro separador do browser:
 
-1. Abra o **PuTTY**.  
-2. Se forneceu uma chave SSH quando criou a conta de utilizador durante o processo de criação, tem de executar o passo seguinte para selecionar a chave privada a utilizar durante a autenticação no cluster:
-   
-    Em **Categoria**, expanda **Ligação**, expanda **SSH** e selecione **Autenticação**. Por último, clique em **Procurar** e selecione o ficheiro .ppk que contém a chave privada.
-3. Em **Categoria**, clique em **Sessão**.
-4. Das opções básicas para o ecrã de sessão PuTTY, introduza os seguintes valores:
-   
-   * **Nome do Anfitrião**: o endereço SSH do servidor HDInsight no campo nome de anfitrião (ou endereço IP). O endereço SSH é o nome de cluster, em seguida, **-ssh.azurehdinsight.net**. Por exemplo, *mycluster-ssh.azurehdinsight.net*.
-   * **Porta**: 22. A porta ssh no nó principal primário é 22.  
-5. Na secção**Categoria** à esquerda da caixa de diálogo, expanda **Ligação**, expanda **SSH** e em seguida, clique em **Túneis**.
-6. Forneça as seguintes informações no formulário de Opções de controlo de reencaminhamento da porta SSH:
-   
-   * **Porta de origem** - A porta no cliente que pretende reencaminhar. Por exemplo, 9876.
-   * **Dinâmico** - Ativa encaminhamento proxy de SOCKS dinâmico.
-7. Clique em **Adicionar** para adicionar as definições.
-8. Clique em **Abrir** na parte inferior da caixa de diálogo para abrir uma ligação SSH.
-9. Quando lhe for solicitado, inicie sessão no servidor com uma conta SSH. Esta ação estabelecerá uma sessão SSH e ativará o túnel.
+  ![IU HDInsight HBase HMaster](./media/hdinsight-hbase-tutorial-get-started-linux/hdinsight-hbase-hmaster-ui.png)
 
-**Localizar o FQDN do zookeepers utilizando Ambari**
+  A IU Principal do HBase contém as seguintes secções:
 
-1. Navegue para https://<ClusterName>.azurehdinsight.net/.
-2. Introduza as credenciais de conta de utilizador do cluster duas vezes.
-3. No menu à esquerda, clique em **zookeeper**.
-4. Clique em uma das três ligações de **Servidor ZooKeeper** na lista de Resumo.
-5. Copie **Hostname**. Por exemplo, zk0-CLUSTERNAME.xxxxxxxxxxxxxxxxxxxx.cx.internal.cloudapp.net.
-
-**Configurar um programa de cliente (Firefox) e verificar o estado do cluster**
-
-1. Abra o Firefox.
-2. Clique no botão **Abrir Menu**.
-3. Clique em **Opções**.
-4. Clique em **Avançado**, clique em **Rede** e em seguida, clique em **Definições**.
-5. Selecione **Configuração manual do proxy**.
-6. Introduza os seguintes valores:
-   
-   * **Host de Socks**: localhost
-   * **Porta**: utilize a mesma porta configurada no túnel SSH do Putty.  Por exemplo, 9876.
-   * **SOCKS v5**: (selecionado)
-   * **DNS remoto**: (selecionado)
-7. Clique em **OK** para guardar as alterações.
-8. Navegar para http://&lt;o FQDN de um ZooKeeper>:60010/master-status.
-
-Num cluster de elevada disponibilidade, encontrará uma ligação para o nó mestre HBase atualmente ativo que está a alojar a interface de utilizador na Web.
+  - servidores de região
+  - principais cópias de segurança
+  - tabelas
+  - tarefas
+  - atributos de software
 
 ## <a name="delete-the-cluster"></a>Eliminar o cluster
 Para evitar inconsistências, recomendamos que desative as tabelas do HBase antes de eliminar o cluster.
@@ -310,6 +286,6 @@ Para saber mais, consulte:
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Nov16_HO4-->
 
 

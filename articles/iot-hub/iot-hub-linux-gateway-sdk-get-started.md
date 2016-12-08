@@ -12,15 +12,15 @@ ms.devlang: cpp
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 08/25/2016
+ms.date: 11/23/2016
 ms.author: andbuc
 translationtype: Human Translation
-ms.sourcegitcommit: fb085ca229beba1757efa100ffca1e42089aedfa
-ms.openlocfilehash: 827ecc587dabfba58e87d192001c2714a1d7ce4a
+ms.sourcegitcommit: a76320718f0cefa015728cb79df944e0d34bbf74
+ms.openlocfilehash: cbb909adc2d29f9b80a4c97d06176fe74b64a75a
 
 
 ---
-# <a name="azure-iot-gateway-sdk-beta---get-started-using-linux"></a>SDK do Gateway do Azure IoT (beta) – Introdução à utilização do Linux
+# <a name="azure-iot-gateway-sdk---get-started-using-linux"></a>SDK do Gateway do Azure IoT – Introdução à utilização do Linux
 [!INCLUDE [iot-hub-gateway-sdk-getstarted-selector](../../includes/iot-hub-gateway-sdk-getstarted-selector.md)]
 
 ## <a name="how-to-build-the-sample"></a>Como criar o exemplo
@@ -46,33 +46,36 @@ Antes de começar, tem de [configurar o seu ambiente de desenvolvimento][lnk-set
    
     ```
     {
-      "modules" :
-      [ 
-        {
-          "module name" : "logger",
-          "loading args": {
-            "module path" : "./build/modules/logger/liblogger.so"
-          },
-          "args" : 
-          {
-            "filename":"log.txt"
-          }
-        },
-        {
-          "module name" : "hello_world",
-          "loading args": {
-            "module path" : "./build/modules/hello_world/libhello_world.so"
-          },
-          "args" : null
-        }
-      ],
-      "links" :
-      [
-        {
-          "source": "hello_world",
-          "sink": "logger"
-        }
-      ]
+        "modules" :
+        [
+            {
+              "name" : "logger",
+              "loader": {
+                "name": "native",
+                "entrypoint": {
+                  "module.path": "./modules/logger/liblogger.so"
+                }
+              },
+              "args" : {"filename":"log.txt"}
+            },
+            {
+                "name" : "hello_world",
+              "loader": {
+                "name": "native",
+                "entrypoint": {
+                  "module.path": "./modules/hello_world/libhello_world.so"
+                }
+              },
+                "args" : null
+            }
+        ],
+        "links": 
+        [
+            {
+                "source": "hello_world",
+                "sink": "logger"
+            }
+        ]
     }
     ```
 3. Navegue para a pasta **azure-iot-gateway-sdk**.
@@ -89,6 +92,6 @@ Antes de começar, tem de [configurar o seu ambiente de desenvolvimento][lnk-set
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Nov16_HO4-->
 
 

@@ -15,8 +15,8 @@ ms.workload: na
 ms.date: 09/22/2016
 ms.author: yurid
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 73510d618f414ebedd7cd1df979397e0b00570b8
+ms.sourcegitcommit: a31a1b7909ea7440780c9a7af4cb908c9aa6a449
+ms.openlocfilehash: 5852808ad0f5cf02908df7ff969ab2106d9f5abd
 
 
 ---
@@ -192,7 +192,7 @@ Quando clica na base de dados para abordar esta recomendação, o painel **Dete�
 Para ativar a auditoria, selecione **ATIVAR**, na opção **Auditoria**.
 
 ### <a name="monitor-applications"></a>Monitorizar aplicações
-Se a carga de trabalho do Azure tiver aplicações localizadas nas [máquinas virtuais (criadas através do Azure Resource Manager)](../resource-manager-deployment-model.md) com portas Web expostas (as portas TCP 80 e 443), o Centro de Segurança poderá monitorizá-las para identificar potenciais problemas de segurança e recomendar passos de remediação. Quando clica no mosaico **Aplicações**, o painel **Aplicações** abre-se com uma série de recomendações apresentadas na secção **Passos de prevenção**. De igual modo, mostra a divisão das aplicações por anfitrião/IP virtual, conforme mostrado na seguinte captura de ecrã.
+Se a carga de trabalho do Azure tiver aplicações localizadas nas [máquinas virtuais (criadas através do Azure Resource Manager)](../azure-resource-manager/resource-manager-deployment-model.md) com portas Web expostas (as portas TCP 80 e 443), o Centro de Segurança poderá monitorizá-las para identificar potenciais problemas de segurança e recomendar passos de remediação. Quando clica no mosaico **Aplicações**, o painel **Aplicações** abre-se com uma série de recomendações apresentadas na secção **Passos de prevenção**. De igual modo, mostra a divisão das aplicações por anfitrião/IP virtual, conforme mostrado na seguinte captura de ecrã.
 
 ![Estado de funcionamento da segurança de aplicações](./media/security-center-monitoring/security-center-monitoring-fig16-ga.png)
 
@@ -216,6 +216,6 @@ Neste artigo, aprendeu a utilizar as capacidades de monitorização no Centro de
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO4-->
 
 

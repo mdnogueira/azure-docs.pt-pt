@@ -9,6 +9,7 @@ manager: jhubbard
 editor: cgronlun
 ms.assetid: c561f600-a292-4e3b-b1d4-8ab89b81db48
 ms.service: sql-database
+ms.custom: overview
 ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
@@ -16,8 +17,8 @@ ms.workload: data-management
 ms.date: 11/08/2016
 ms.author: shkurhek
 translationtype: Human Translation
-ms.sourcegitcommit: 9fc8295aaa68a0d41a34f714b34642585b13b67d
-ms.openlocfilehash: 37da0020c8fc51a422ce6c70fed26329863a90f0
+ms.sourcegitcommit: 1c603d37735bbbfdfaaf4a191e2ad1ce6ff5b2b7
+ms.openlocfilehash: 67f3e923680a9a2f399c0839d2ec11ef4615da00
 
 
 ---
@@ -37,12 +38,12 @@ Para muitas empresas e aplicações, ser capaz de criar bases de dados e aumenta
 
 Os [conjuntos elásticos](sql-database-elastic-pool.md) na Base de Dados SQL resolvem este problema. O conceito é simples. O utilizador aloca o desempenho a um conjunto e paga pelo desempenho coletivo do conjunto em vez do desempenho de bases de dados individuais. Não precisa de aumentar ou reduzir o desempenho da base de dados. As bases de dados no conjunto, denominadas *bases de dados elásticas*, aumentam e reduzem verticalmente de forma automática para responder à procura. As bases de dados elásticas consomem, mas não excedem os limites do conjunto, pelo que os seus custos mantêm-se previsíveis, mesmo que a utilização das bases de dados não. Além disso, pode [adicionar e remover bases de dados do conjunto](sql-database-elastic-pool-manage-portal.md), dimensionando a sua aplicação de um punhado de bases de dados para milhares, tudo dentro de um orçamento controlado por si. Para saber mais sobre os padrões de estrutura de aplicações SaaS que utilizam conjuntos elásticos, consulte o artigo [Padrões de Estrutura de Aplicações SaaS Multi-inquilino com a Base de Dados SQL do Azure](sql-database-design-patterns-multi-tenancy-saas-applications.md).
 
-Seja qual for a sua opção —individual ou elástica — não fica preso a ela. Pode misturar bases de dados individuais com conjuntos de bases de dados elásticas e alterar os escalões de serviço de bases de dados individuais e conjuntos para criar estruturas inovadoras. Além disso, com a capacidade e a o alcance do Azure, pode combinar os serviços do Azure com a Base de Dados SQL para satisfazer as necessidades de design da sua aplicação moderna e única, aumentar as eficiências de custos e recursos, e conseguir novas oportunidades de negócio.
+Seja qual for a sua opção —individual ou elástica — não fica preso a ela. Pode misturar bases de dados individuais com conjuntos de bases de dados elásticas e alterar os escalões de serviço de bases de dados individuais e conjuntos rapidamente e facilmente adaptá-los à sua situação. Além disso, com a capacidade e a o alcance do Azure, pode combinar outros serviços do Azure com a Base de Dados SQL para satisfazer as necessidades de design da sua aplicação única, aumentar as eficiências de custos e recursos e conseguir novas oportunidades de negócio.
 
-Mas como pode comparar o desempenho relativo de bases de dados e conjuntos de bases de dados? Como pode saber qual é o ponto de paragem certo quando aumenta ou reduz verticalmente o desempenho? A resposta é a Unidade de Transação de Base de Dados (DTU) para bases de dados individuais e a DTU elástica (eDTU) para bases de dados elásticas e conjuntos de bases de dados. Consulte o artigo [Opções e desempenho da Base de Dados SQL: compreender o que está disponível em casa escalão de serviço](sql-database-service-tiers.md) para obter mais detalhes.
+Mas como pode comparar o desempenho relativo de bases de dados e conjuntos de bases de dados? Como pode saber qual é o ponto de paragem certo quando aumenta ou reduz verticalmente o desempenho? A resposta situa-se na monitorização de desempenho incorporado e nas ferramentas de alerta, combinadas com as classificações de desempenho com base em Unidades de Transação de Base de dados (DTUs) para bases de dados únicas e DTUs elásticas (eDTUs) para bases de dados elásticas e conjuntos de base de dados, que lhe permitem avaliar rapidamente o impacto de dimensionamento para cima ou para baixo com base no atual ou nas necessidades de desempenho do projeto. Consulte o artigo [Opções e desempenho da Base de Dados SQL: compreender o que está disponível em casa escalão de serviço](sql-database-service-tiers.md) para obter mais detalhes.
 
 ## <a name="keep-your-app-and-business-running"></a>Mantenha a sua aplicação e o seu negócio operacionais
-O contrato de nível de serviço [(SLA)](http://azure.microsoft.com/support/legal/sla/) do Azure líder da indústria, que garante 99,99% de disponibilidade, com tecnologia de uma rede global de datacenters geridos pela Microsoft, ajuda a manter a sua aplicação operacional 24 horas por dia, sete dias por semana. Com todas as bases de dados SQL, pode tirar partido da proteção de dados e tolerância a falhas incorporadas que, de outra forma, teria de conceber, comprar, criar e gerir. Ainda assim, consoante as exigências do seu negócio, poderá precisar de camadas adicionais de proteção para garantir a recuperação rápida da sua aplicação e do seu negócio em caso de desastre, erro ou outro incidente. Com a Base de Dados SQL, cada escalão de serviço oferece um menu diferente de funcionalidades que pode utilizar para ficar operacional e manter-se dessa forma. Pode utilizar o restauro para um ponto anterior no tempo para repor um estado anterior de uma base de dados, até 35 dias. Além disso, se o datacenter que aloja as bases de dados sofrer um período de indisponibilidade, pode efetuar a ativação pós-falha para réplicas de bases de dados numa região diferente. Em alternativa, pode utilizar réplicas para atualizações ou reposicionamento para regiões diferentes.
+O contrato de nível de serviço [(SLA)](http://azure.microsoft.com/support/legal/sla/) do Azure líder da indústria, que garante 99,99% de disponibilidade, com tecnologia de uma rede global de datacenters geridos pela Microsoft, ajuda a manter a sua aplicação operacional 24 horas por dia, sete dias por semana. Com todas as bases de dados SQL, pode tirar partido da segurança e tolerância a falhas incorporadas que, de outra forma, teria de comprar ou conceber, criar e gerir. Ainda assim, consoante as exigências do seu negócio, poderá precisar de camadas adicionais de proteção para garantir a recuperação rápida da sua aplicação e do seu negócio em caso de desastre, erro ou outra perturbação. Com Base de dados SQL, cada camada de serviço oferece um conjunto completo de funcionalidades de continuidade de negócio e as opções que pode utilizar para aceder e executar e manter-se dessa forma. Pode utilizar o restauro para um ponto anterior no tempo para repor um estado anterior de uma base de dados, até 35 dias. Além disso, se o datacenter que aloja as bases de dados sofrer um período de indisponibilidade, pode restaurar bases de dados de cópias geograficamente redundantes de cópias de segurança recentes ou efetuar a ativação pós-falha para réplicas de bases de dados numa região diferente. Também pode utilizar réplicas para atualizações ou reposicionamento para regiões diferentes.
 
 ![Georreplicação da Base de Dados SQL](./media/sql-database-technical-overview/azure_sqldb_map.png)
 
@@ -59,11 +60,9 @@ Agora que já leu uma introdução à Base de Dados SQL e respondeu à pergunta 
 * Começar por [criar a sua primeira base de dados](sql-database-get-started.md).
 * [Ligar e consultar com SSMS](sql-database-connect-query-ssms.md)
 * Criar a sua primeira aplicação em C#, Java, Node.js, PHP, Python ou Ruby: [Bibliotecas de ligações para a Base de Dados SQL e o SQL Server](sql-database-libraries.md)
-* Ver um índice de títulos e descrições de [Todos os tópicos do serviço Base de Dados SQL do Azure](sql-database-index-all-articles.md).
 
 
 
-
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO5-->
 
 
