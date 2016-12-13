@@ -5,7 +5,8 @@ ms.sourcegitcommit: a6c333ae45868d5c29ce2f2587f1417fa9fafc0b
 ms.openlocfilehash: 27fd664b69ca4467daa2b0abc6e53c9cece221ae
 
 ---
-#<a name="storage-documentation"></a>Documentação do Armazenamento
+
+# <a name="storage-documentation"></a>Documentação do Armazenamento
 
 O Azure Storage é a solução de armazenamento na cloud para aplicações modernas que dependem da durabilidade, da disponibilidade e da escalabilidade para satisfazer as necessidades dos seus clientes.  É altamente dimensionável, elástico, globalmente acessível e faz o balanceamento de carga automaticamente dos seus dados com base no tráfego.  O Armazenamento do Azure oferece os quatro serviços seguintes para satisfazer as necessidades das aplicações: Armazenamento de blobs, Armazenamento de tabelas, Armazenamento de filas e Armazenamento de ficheiros.
 
@@ -102,7 +103,7 @@ O Azure Storage é a solução de armazenamento na cloud para aplicações moder
         </div>
     </li>
     <li>
-        <div class="cardSize"><p />
+        <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
@@ -123,7 +124,7 @@ O Azure Storage é a solução de armazenamento na cloud para aplicações moder
         </div>
     </li>
     <li>
-        <div class="cardSize"><p />
+        <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">

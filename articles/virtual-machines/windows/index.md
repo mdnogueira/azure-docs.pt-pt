@@ -120,7 +120,7 @@ As Máquinas Virtuais (VMs) do Azure são um dos vários tipos de recursos infor
         </div>
     </li>
     <li>
-        <div class="cardSize"><p />
+        <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
@@ -135,7 +135,7 @@ As Máquinas Virtuais (VMs) do Azure são um dos vários tipos de recursos infor
         </div>
     </li>
     <li>
-        <div class="cardSize"><p />
+        <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">

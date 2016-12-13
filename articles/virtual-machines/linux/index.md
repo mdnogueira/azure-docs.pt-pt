@@ -102,7 +102,7 @@ Utilize as Máquinas Virtuais do Azure para criar e executar máquinas virtuais 
         </div>
     </li>
     <li>
-        <div class="cardSize"><p />
+        <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
@@ -117,7 +117,7 @@ Utilize as Máquinas Virtuais do Azure para criar e executar máquinas virtuais 
         </div>
     </li>
     <li>
-        <div class="cardSize"><p />
+        <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
