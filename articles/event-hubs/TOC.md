@@ -24,14 +24,14 @@
 ### [Utilizar Python para ativar o Arquivo dos Hubs de Eventos](event-hubs-archive-python.md)
 
 # Referência
-## [Quotas e limites](event-hubs-quotas.md)
-## [Exceções de mensagens](event-hubs-messaging-exceptions.md)
-## [Java](/java/api)
-## [.NET](/dotnet/api)
-## [Guia do protocolo AMQP1.0](../service-bus-messaging/service-bus-amqp-protocol-guide.md)
+## [.NET](/dotnet/api/microsoft.azure.eventhubs)
+## [Java](/java/api/com.microsoft.azure.eventhubs)
 ## [REST](/rest/api/eventhub)
 
 # Recursos
+## [Quotas e limites](event-hubs-quotas.md)
+## [Exceções de mensagens](event-hubs-messaging-exceptions.md)
+## [Guia do protocolo AMQP1.0](../service-bus-messaging/service-bus-amqp-protocol-guide.md)
 ## [Preços](https://azure.microsoft.com/en-us/pricing/details/event-hubs/)
 ## [Percurso de aprendizagem](https://azure.microsoft.com/documentation/learning-paths/event-hubs/)
 ## [Explorador do Service Bus](https://code.msdn.microsoft.com/Service-Bus-Explorer-f2abca5a)
@@ -40,6 +40,6 @@
 ## [Vídeos](https://azure.microsoft.com/documentation/videos/index/?services=event-hubs)
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Dec16_HO1-->
 
 

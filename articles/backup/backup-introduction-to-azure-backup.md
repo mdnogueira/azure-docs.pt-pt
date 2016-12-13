@@ -1,11 +1,11 @@
 ---
 title: "O que é o Backup do Azure? | Microsoft Docs"
-description: "Ao utilizar os Serviços de Recuperação e o Backup do Azure, pode criar cópias de segurança e restaurar dados e aplicações a partir de Servidores Windows, computadores cliente do Windows, servidores do System Center DPM e máquinas virtuais do Azure."
+description: "Com os Serviços de Recuperação e o Backup do Azure, pode fazer cópias de segurança e restaurar dados e aplicações a partir de Servidores Windows, computadores cliente do Windows, servidores do System Center DPM e máquinas virtuais do Azure."
 services: backup
 documentationcenter: 
 author: markgalioto
 manager: cfreeman
-editor: tysonn
+editor: 
 keywords: "cópia de segurança e restauro; serviços de recuperação; soluções de cópia de segurança"
 ms.assetid: 0d2a7f08-8ade-443a-93af-440cbf7c36c4
 ms.service: backup
@@ -13,11 +13,11 @@ ms.workload: storage-backup-recovery
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 10/31/2016
+ms.date: 12/6/2016
 ms.author: jimpark; trinadhk
 translationtype: Human Translation
-ms.sourcegitcommit: cf3930f209e84ee9b14b56566ca19d31382946aa
-ms.openlocfilehash: cefb405b4f30ca5fe20f6acfaee5ebba2690990b
+ms.sourcegitcommit: b9737c3da308aecf25d5f18088f96c319edeafd5
+ms.openlocfilehash: 76ec51a75240710b24c0e91042d6229e60eeada9
 
 
 ---
@@ -52,8 +52,8 @@ Se não tiver a certeza qual é componente do Azure Backup que funciona para as 
 | Componente | Benefícios | Limites | O que está protegido? | Onde estão armazenadas as cópias de segurança? |
 | --- | --- | --- | --- | --- |
 | Agente do Backup do Azure (MARS) |<li>Os ficheiros e as pastas de cópia de segurança no SO Windows físico ou virtual (as VMs podem estar no local ou no Azure)<li>Nenhum servidor de cópia de segurança separado necessário. |<li>Criar cópias de segurança 3 vezes por dia <li>Sem deteção de aplicações; restauro apenas ao nível do ficheiro, pasta e volume, <li>  Sem suporte para Linux. |<li>Ficheiros, <li>Pastas |Cofre do Backup do Azure |
-| System Center DPM |<li>Instantâneos da deteção de aplicações (VSS)<li>Total flexibilidade para quando efetuar cópias de segurança<li>Granularidade de recuperação (tudo)<li>Pode utilizar o cofre do Backup do Azure<li>Apoio técnico para Linux (se alojado no Hyper-V) <li>Proteger VMs do VMware com o DPM 2012 R2 |Não suporta a criação de cópias de segurança de cargas de trabalho Oracle. |<li>Ficheiros, <li>Pastas,<li> Volumes, <li>VMs,<li> Aplicações,<li> Cargas de trabalho |<li>Cofre do Backup do Azure,<li> Disco ligado localmente,<li>  Banda (apenas no local) |
-| Servidor do Backup do Azure |<li>Instantâneos da deteção de aplicações (VSS)<li>Total flexibilidade para quando efetuar cópias de segurança<li>Granularidade de recuperação (tudo)<li>Pode utilizar o cofre do Backup do Azure<li>Apoio técnico para Linux (se alojado no Hyper-V)<li>Não necessita de uma licença do System Center |<li>Falta de suporte heterogéneo (cópia de segurança da VM de VMware, cópia de segurança da carga de trabalho do Oracle).<li>Requer sempre a subscrição do Azure em direto<li>Sem suporte para cópia de segurança em fila |<li>Ficheiros, <li>Pastas,<li> Volumes, <li>VMs,<li> Aplicações,<li> Cargas de trabalho |<li>Cofre do Backup do Azure,<li> Disco ligado localmente |
+| System Center DPM |<li>Instantâneos da deteção de aplicações (VSS)<li>Total flexibilidade para quando efetuar cópias de segurança<li>Granularidade de recuperação (tudo)<li>Pode utilizar o cofre do Backup do Azure<li>Apoio técnico para Linux para VMs de Hyper-V e VMware <li>Proteger VMs do VMware com o DPM 2012 R2 |Não é possível fazer cópias de segurança da carga de trabalho do Oracle.|<li>Ficheiros, <li>Pastas,<li> Volumes, <li>VMs,<li> Aplicações,<li> Cargas de trabalho |<li>Cofre do Backup do Azure,<li> Disco ligado localmente,<li>  Banda (apenas no local) |
+| Servidor do Backup do Azure |<li>Instantâneos da deteção de aplicações (VSS)<li>Total flexibilidade para quando efetuar cópias de segurança<li>Granularidade de recuperação (tudo)<li>Pode utilizar o cofre do Backup do Azure<li>Apoio técnico para Linux (se alojado no Hyper-V)<li>Proteger VMs do VMware com o DPM 2012 R2<li>Não necessita de uma licença do System Center |<li>Não é possível fazer cópias de segurança da carga de trabalho do Oracle.<li>Requer sempre a subscrição do Azure em direto<li>Sem suporte para cópia de segurança em fila |<li>Ficheiros, <li>Pastas,<li> Volumes, <li>VMs,<li> Aplicações,<li> Cargas de trabalho |<li>Cofre do Backup do Azure,<li> Disco ligado localmente |
 | Cópia de segurança da VM do IaaS do Azure |<li>Cópias de segurança nativas para o Windows/Linux<li>Não é necessária qualquer instalação do agente específico<li>Cópia de segurança ao nível dos recursos de infraestrutura sem ser necessária qualquer infraestrutura de cópia de segurança |<li>Criar cópia de segurança de VMs uma vez por dia <li>Restaurar VMs apenas ao nível do disco<li>Não é possível efetuar a cópia de segurança no local |<li>VMs, <li>Todos os discos (com o PowerShell) |<p>Cofre do Backup do Azure</p> |
 
 ## <a name="what-are-the-deployment-scenarios-for-each-component"></a>Quais são os cenários de implementação para cada componente?
@@ -95,7 +95,7 @@ A tabela seguinte mostra os componentes do Azure Backup com suporte para Linux.
 O Azure Backup protege VMs de Armazenamento Premium. O Armazenamento Premium do Azure é o armazenamento baseado numa unidade de estado sólido (SSD), concebido para suportar cargas de trabalho de E/S intensivas. O Armazenamento Premium é apelativo para cargas de trabalho de máquina virtual (VM). Para mais informações sobre o Armazenamento Premium, veja o artigo [Armazenamento Premium: Armazenamento de Elevado Desempenho para Cargas de Trabalho de Máquinas Virtuais do Azure](../storage/storage-premium-storage.md)
 
 ### <a name="back-up-premium-storage-vms"></a>Criar cópia de segurança das VMs do Premium Storage
-Durante a cópia de segurança das VMs do Premium Storage, o serviço de Cópia de Segurança cria uma localização de transição temporária na conta do Premium Storage. A localização de transição, com o nome "AzureBackup-", é igual ao tamanho total dos dados dos discos premium ligados à VM.
+Durante a cópia de segurança das VMs do Premium Storage, o serviço de Cópia de Segurança cria uma localização de transição temporária na conta do Premium Storage. A localização de transição, com o nome "AzureBackup-", é igual ao tamanho total dos dados dos discos premium ligados à VM. Verifique se existe espaço livre suficiente para uma localização de transição temporária na conta de armazenamento. Para obter informações adicionais, veja o artigo [limitações do armazenamento premium](../storage/storage-premium-storage.md#premium-storage-scalability-and-performance-targets).
 
 > [!NOTE]
 > Não modifique ou edite a localização de transição.
@@ -175,13 +175,16 @@ Se estiver a criar uma cópia de segurança dos seus dados para um System Center
 O agente do Azure Backup fornece limitação de rede, o que lhe permite controlar como a largura de banda de rede é utilizada durante a transferência de dados. A limitação pode ser útil se precisar de efetuar uma cópia de segurança dos dados durante as horas de trabalho, mas não pretende que o processo de cópia de segurança interfira com outro tráfego de Internet. A limitação para a transferência de dados aplica-se às atividades de cópia de segurança e de restauro.
 
 ### <a name="backup-and-retention"></a>Cópia de segurança e retenção
+
+O Azure Backup tem um limite de 9999 pontos de recuperação, também conhecidos como cópias de segurança ou instantâneos de cópia de segurança, por cofre do Backup. A tabela seguinte mostra a frequência de cópia de segurança máxima (para o cofre) de cada componente. A sua configuração de política de cópias de segurança determina quão rapidamente pode consumir os pontos de recuperação. Por exemplo, se criar um ponto de recuperação por dia, pode manter os pontos de recuperação durante 27 anos antes de os esgotar. Se criar um ponto de recuperação por mês, pode manter os pontos de recuperação durante 833 anos antes de os esgotar. O serviço do Backup não define um limite de tempo de expiração para um ponto de recuperação.
+
 |  | Agente do Backup do Azure | System Center DPM | Servidor do Backup do Azure | Cópia de segurança da VM do IaaS do Azure |
 | --- | --- | --- | --- | --- |
 | Frequência de cópia de segurança<br/> (para o cofre do Backup) |Três cópias de segurança por dia |Duas cópias de segurança por dia |Duas cópias de segurança por dia |Uma cópia de segurança por dia |
 | Frequência de cópia de segurança<br/> (para o disco) |Não aplicável |<li>A cada 15 minutos para o SQL Server <li>A cada hora para outras cargas de trabalho |<li>A cada 15 minutos para o SQL Server <li>A cada hora para outras cargas de trabalho</p> |Não aplicável |
 | Opções de retenção |Diariamente, semanalmente, mensalmente, anualmente |Diariamente, semanalmente, mensalmente, anualmente |Diariamente, semanalmente, mensalmente, anualmente |Diariamente, semanalmente, mensalmente, anualmente |
-| Período de retenção |Até 99 anos |Até 99 anos |Até 99 anos |Até 99 anos |
-| Pontos de recuperação no Cofre de cópia de segurança |Ilimitado |Ilimitado |Ilimitado |Ilimitado |
+| Número máximo de pontos de recuperação por servidor |9999|9999|9999|9999|
+| Período de retenção máximo |Depende da frequência da cópia de segurança |Depende da frequência da cópia de segurança |Depende da frequência da cópia de segurança |Depende da frequência da cópia de segurança |
 | Pontos de recuperação no disco local |Não aplicável |<li>64 para Servidores de Ficheiros<li>448 para Servidores de Aplicações |<li>64 para Servidores de Ficheiros<li>448 para Servidores de Aplicações |Não aplicável |
 | Pontos de recuperação em banda |Não aplicável |Ilimitado |Não aplicável |Não aplicável |
 
@@ -215,12 +218,12 @@ Para obter detalhes sobre como proteger outras cargas de trabalho, veja um dos s
 * [Fazer uma cópia de segurança de cargas de trabalho de aplicações](backup-azure-microsoft-azure-backup.md)
 * [Cópia de segurança das VMs IaaS do Azure](backup-azure-vms-prepare.md)
 
-[verde]: ./media/backup-introduction-to-azure-backup/green.png
-[amarelo]: ./media/backup-introduction-to-azure-backup/yellow.png
-[vermelho]: ./media/backup-introduction-to-azure-backup/red.png
+[green]: ./media/backup-introduction-to-azure-backup/green.png
+[yellow]: ./media/backup-introduction-to-azure-backup/yellow.png
+[red]: ./media/backup-introduction-to-azure-backup/red.png
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

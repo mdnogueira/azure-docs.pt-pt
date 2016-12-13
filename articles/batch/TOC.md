@@ -25,16 +25,16 @@
 ### [Registos de diagnóstico do Batch](batch-diagnostics.md)
 
 # Referência
-## [Cmdlets do PowerShell](https://docs.microsoft.com/en-us/powershell/azureps-cmdlets-docs)
-## [Java](https://docs.microsoft.com/java/api)
-## [API .NET](https://docs.microsoft.com/dotnet/api)
-## [Python SDK](https://go.microsoft.com/fwlink/p/?linkid=833496)
-## [Node.js](https://go.microsoft.com/fwlink/p/?linkid=833544)
-## [REST](https://docs.microsoft.com/rest/api/batchservice/)
+## [PowerShell](/powershell/resourcemanager/azurerm.batch/v2.3.0/azurerm.batch)
+## [.NET](/dotnet/api/microsoft.azure.batch)
+## [Java](/java/api/com.microsoft.azure.batch)
+## [Node.js](http://azure.github.io/azure-sdk-for-node/azure-batch/latest)
+## [Python SDK](http://azure-sdk-for-python.readthedocs.io/en/latest/ref/azure.batch)
+## [REST](/rest/api/batchservice)
 
 # Relacionado
 ## [Batch Shipyard](https://github.com/Azure/batch-shipyard)
-## [Soluções Batch e HPC na nuvem do Azure](batch-hpc-solutions.md)
+## [Soluções Batch e HPC na cloud do Azure](batch-hpc-solutions.md)
 ## [Big Compute no Azure: recursos técnicos](big-compute-resources.md)
 
 # Recursos
@@ -48,6 +48,6 @@
 
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Dec16_HO1-->
 
 

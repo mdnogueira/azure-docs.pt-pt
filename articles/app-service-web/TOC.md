@@ -117,7 +117,7 @@
 
 ## [Implementar](../app-service/app-service-deployment-readme.md?toc=%2fazure%2fapp-service-web%2ftoc.json)
 ### [Implementar no Serviço de Aplicações](web-sites-deploy.md)
-### [Implementação de sincronização da nuvem](app-service-deploy-content-sync.md)
+### [Implementação de sincronização da cloud](app-service-deploy-content-sync.md)
 ### [Implementação contínua](app-service-continuous-deployment.md)
 ### [Aplicação Web compatível com dispositivos móveis](web-sites-dotnet-deploy-aspnet-mvc-mobile-app.md)
 ### [Ambientes de teste](web-sites-staged-publishing.md)
@@ -247,9 +247,9 @@
 ### [Resolver problemas de desempenho da aplicação Web](app-service-web-troubleshoot-performance-degradation.md)
 
 # Referência
-## [CLI do Azure](/cli/azure/)
-## [Java](/java/api/)
+## [Pré-visualização da CLI 2.0 do Azure](/cli/azure/appservice)
 ## [.NET](/dotnet/api)
+## [Java](/java/api/)
 ## [REST](/rest/api/appservice)
 
 # Relacionado
@@ -266,6 +266,6 @@
 
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Dec16_HO1-->
 
 

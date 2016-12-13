@@ -22,6 +22,7 @@
 ## Segurança
 ### [Centro de Segurança do Azure para a Base de Dados SQL do Azure](https://azure.microsoft.com/documentation/articles/security-center-sql-database/)
 ### [Centro de Segurança do SQL](https://msdn.microsoft.com/library/azure/bb510589)
+
 # Introdução
 ## Bases de dados e servidores
 ### Bases de dados individuais
@@ -44,11 +45,11 @@
 #### Saiba mais
 ##### [Aumentar horizontalmente](sql-database-elastic-scale-introduction.md)
 ##### [Dimensionamento elástico](sql-database-elastic-scale-get-started.md)
-##### [Criar bases de dados de nuvem dimensionáveis](sql-database-elastic-database-client-library.md)
+##### [Criar bases de dados de cloud dimensionáveis](sql-database-elastic-database-client-library.md)
 ##### [Tarefas em várias bases de dados](sql-database-elastic-jobs-overview.md)
 ##### [FAQ das ferramentas elásticas](sql-database-elastic-scale-faq.md)
 ##### [Glossário das ferramentas das bases de dados elásticas](sql-database-elastic-scale-glossary.md)
-##### [Mover dados entre bases de dados de nuvem aumentadas horizontalmente](sql-database-elastic-scale-overview-split-and-merge.md)
+##### [Mover dados entre bases de dados de cloud aumentadas horizontalmente](sql-database-elastic-scale-overview-split-and-merge.md)
 #### O que deve fazer
 ##### [Tarefas elásticas](sql-database-elastic-jobs-getting-started.md)
 ##### [Relatórios em várias bases de dados](sql-database-elastic-query-getting-started.md)
@@ -189,6 +190,7 @@
 #### [Atualizar com o portal do Azure](sql-database-upgrade-server-portal.md)
 #### [Atualizar com o PowerShell](sql-database-upgrade-server-powershell.md)
 #### [Recomendações de escalão de preços](sql-database-service-tier-advisor.md)
+
 # Procedimento
 ## Criar e gerir
 ### Servidores e bases de dados
@@ -210,7 +212,7 @@
 #### [Dividir e intercalar a configuração de segurança](sql-database-elastic-scale-split-merge-security-configuration.md)
 #### [Trabalhar com o Dapper](sql-database-elastic-scale-working-with-dapper.md)
 #### [Utilizar o Entity Framework](sql-database-elastic-scale-use-entity-framework-applications-visual-studio.md)
-#### [ncaminhamento Dependente de Dados](sql-database-elastic-scale-data-dependent-routing.md)
+#### [Encaminhamento Dependente de Dados](sql-database-elastic-scale-data-dependent-routing.md)
 #### [Segurança ao nível de linha multi-inquilino](sql-database-elastic-tools-multi-tenant-row-level-security.md)
 #### [Gerir credenciais](sql-database-elastic-scale-manage-credentials.md)
 #### [Implementar um serviço de divisão/intercalação](sql-database-elastic-scale-configure-deploy-split-and-merge.md)
@@ -284,7 +286,7 @@
 #### [SQL Server Management Studio](sql-database-cloud-migrate-compatible-import-bacpac-ssms.md)
 #### [Utilitário Pacote de SQL](sql-database-cloud-migrate-compatible-import-bacpac-sqlpackage.md)
 ### [Carregar a partir do ficheiro CSV com o BCP](sql-database-load-from-csv-with-bcp.md)
-### [Mover dados entre bases de dados de nuvem aumentadas horizontalmente](sql-database-elastic-scale-overview-split-and-merge.md)
+### [Mover dados entre bases de dados de cloud aumentadas horizontalmente](sql-database-elastic-scale-overview-split-and-merge.md)
 ## Consulta
 ### [SQL Server Management Studio](sql-database-connect-query-ssms.md)
 ### [Consultas em várias partições horizontais](sql-database-elastic-scale-multishard-querying.md)
@@ -292,7 +294,7 @@
 #### [Descrição geral](sql-database-elastic-query-overview.md)
 #### [Consultas em várias bases de dados com diferentes esquemas](sql-database-elastic-query-vertical-partitioning.md)
 #### [Relatórios em várias bases de dados](sql-database-elastic-query-horizontal-partitioning.md)
-#### [Transações distribuídas entre bases de dados de nuvem](sql-database-elastic-transactions-overview.md)
+#### [Transações distribuídas entre bases de dados de cloud](sql-database-elastic-transactions-overview.md)
 ## Restauro
 ### Restaurar uma base de dados eliminada
 #### [Portal do Azure](sql-database-restore-deleted-database-portal.md)
@@ -315,7 +317,6 @@
 #### [Portal do Azure](sql-database-geo-replication-failover-portal.md)
 #### [PowerShell](sql-database-geo-replication-failover-powershell.md)
 #### [T-SQL](sql-database-geo-replication-failover-transact-sql.md)
-
 ## Resolução de problemas
 ### [Problemas de ligação](sql-database-troubleshoot-common-connection-issues.md)
 ### [Erro de ligação transitório](sql-database-troubleshoot-connection.md)
@@ -325,26 +326,26 @@
 
 
 # Referência
-## [PowerShell](/powershell/azureps-cmdlets-docs/)
-## [PowerShell clássico](/powershell/servicemanagement/)
-## [Java](/java/api/)
-## [.NET](/dotnet/api/)
+## [PowerShell](/powershell/resourcemanager/azurerm.sql/v2.3.0/azurerm.sql)
+## [PowerShell (DB Elástica)](/powershell/elasticdatabasejobs/v0.8.33/elasticdatabasejobs)
+## [.NET](https://docs.microsoft.com)
+## [Java](/java/api/com.microsoft.azure.management.sql)
+## [Node.js](https://msdn.microsoft.com/library/mt652093.aspx)
+## [Python](https://msdn.microsoft.com/library/mt652092.aspx)
+## [Ruby](https://msdn.microsoft.com/library/mt691981.aspx)
+## [PHP](https://msdn.microsoft.com/library/dn865013.aspx)
 ## [T-SQL](https://msdn.microsoft.com/library/azure/bb510741.aspx)
-## [Cmdlets da Base de Dados SQL do Azure](/powershell/resourcemanager/AzureRM.Sql/v1.0.12/AzureRM.Sql)
-## [Cmdlets do SQL Server](https://msdn.microsoft.com/library/mt740629.aspx)
 ## [REST](/rest/api/sql/)
 
-## Biblioteca de Gestão de Bases de Dados SQL
-### [Referência da Biblioteca de Gestão de Bases de Dados SQL](https://msdn.microsoft.com/library/azure/mt349017.aspx)
-### [Obter o pacote de Biblioteca de Gestão de Bases de Dados SQL](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql)
+# Relacionado
+## Biblioteca de Gestão de Base de Dados SQL
+### [Obter o pacote de Biblioteca de Gestão de Base de Dados SQL](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql)
 ## [Controladores do SQL Server](https://msdn.microsoft.com/library/mt654049.aspx)
 ### [ADO.NET](https://msdn.microsoft.com/library/mt657768.aspx)
 ### [JDBC](https://msdn.microsoft.com/library/mt484311.aspx)
-### [Node.js](https://msdn.microsoft.com/library/mt652093.aspx)
+
 ### [ODBC](https://msdn.microsoft.com/library/mt654048.aspx)
-### [PHP](https://msdn.microsoft.com/library/dn865013.aspx)
-### [python](https://msdn.microsoft.com/library/mt652092.aspx)
-### [Ruby](https://msdn.microsoft.com/library/mt691981.aspx)
+
 
 # Recursos
 ## [Preços](https://azure.microsoft.com/pricing/details/sql-database/)
@@ -360,6 +361,6 @@
 ## [SqlPackage](https://msdn.microsoft.com/hh550080.aspx)
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -4,8 +4,8 @@ hide_bc: true
 title: "Documentação do Microsoft Azure | Microsoft Docs"
 description: "Saiba como criar e gerir aplicações poderosas com os serviços cloud do Microsoft Azure. Obtenha documentação, código de exemplo, tutoriais e muito mais."
 translationtype: Human Translation
-ms.sourcegitcommit: 392db4d8261f6e927aa5ea4b2f6b30e244bfec50
-ms.openlocfilehash: d602295648e523276528d738d54078e2dc07b8a5
+ms.sourcegitcommit: b6c08febd8c95c1aa6a2af4563ed4fdee8ee022f
+ms.openlocfilehash: 0261823171ab55b2242e34c27c40385f56503a0d
 
 ---
 <div id="main" class="v2">
@@ -237,7 +237,7 @@ ms.openlocfilehash: d602295648e523276528d738d54078e2dc07b8a5
                                         <li>
                                             <a href="/azure/load-balancer/">
                                                 <img src="media/index/LoadBalancer.svg" alt="" />
-                                                <p>Load balancer</p>
+                                                <p>Balanceador de Carga</p>
                                             </a>
                                         </li>
                                         <li>
@@ -264,12 +264,12 @@ ms.openlocfilehash: d602295648e523276528d738d54078e2dc07b8a5
                                                 <p>CDN</p>
                                             </a>
                                         </li>
-                                        <li>
+                                        <!-- <li>
                                         <a href="/azure/traffic-manager/">
                                                 <img src="media/index/TrafficManager.svg" alt="" />
-                                                <p>Gestor de Tráfego</p>
+                                                <p>Traffic Manager</p>
                                             </a>
-                                        </li>
+                                        </li> -->
                                         <li>
                                             <a href="/azure/expressroute/">
                                                 <img src="media/index/ExpressRoute.svg" alt="" />
@@ -499,12 +499,12 @@ ms.openlocfilehash: d602295648e523276528d738d54078e2dc07b8a5
                                                 <p>Scheduler</p>
                                             </a>
                                         </li>
-                                        <li>
+                                        <!-- <li>
                                             <a href="/azure/traffic-manager/">
                                                 <img src="media/index/TrafficManager.svg" alt="" />
-                                                <p>Gestor de Tráfego</p>
+                                                <p>Traffic Manager</p>
                                             </a>
-                                        </li>
+                                        </li> -->
                                         <li>
                                             <a href="/azure/monitoring-and-diagnostics/">
                                                 <img src="media/index/AzureMonitoring.svg" alt="" />
@@ -872,7 +872,7 @@ ms.openlocfilehash: d602295648e523276528d738d54078e2dc07b8a5
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Load balancer</h3>
+                                                    <h3>Balanceador de Carga</h3>
                                                     <p>Aumente a disponibilidade e o desempenho da rede das suas aplicações</p>
                                                 </div>
                                             </div>
@@ -956,7 +956,7 @@ ms.openlocfilehash: d602295648e523276528d738d54078e2dc07b8a5
                                     </div>
                                 </a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="/azure/traffic-manager/">
                                     <div class="cardSize">
                                         <div class="cardPadding">
@@ -967,14 +967,14 @@ ms.openlocfilehash: d602295648e523276528d738d54078e2dc07b8a5
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Gestor de Tráfego</h3>
-                                                    <p>Encaminhar tráfego recebido para usufruir de desempenho e disponibilidade elevados</p>
+                                                    <h3>Traffic Manager</h3>
+                                                    <p>Route incoming traffic for high performance and availability</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </a>
-                            </li>
+                            </li> -->
                             <li>
                                 <a href="/azure/expressroute/">
                                     <div class="cardSize">
@@ -1011,7 +1011,7 @@ ms.openlocfilehash: d602295648e523276528d738d54078e2dc07b8a5
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Armazenamento</h3>
-                                                    <p>Armazenamento na nuvem durável, de elevada disponibilidade e extremamente dimensionável</p>
+                                                    <p>Armazenamento na cloud durável, de elevada disponibilidade e extremamente dimensionável</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -1049,7 +1049,7 @@ ms.openlocfilehash: d602295648e523276528d738d54078e2dc07b8a5
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>StorSimple</h3>
-                                                    <p>O armazenamento híbrido na nuvem para empresas que melhora a segurança dos dados</p>
+                                                    <p>O armazenamento híbrido na cloud para empresas que melhora a segurança dos dados</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -1068,7 +1068,7 @@ ms.openlocfilehash: d602295648e523276528d738d54078e2dc07b8a5
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Cópia de segurança</h3>
-                                                    <p>Backup do servidor simples e fiável para a nuvem</p>
+                                                    <p>Backup do servidor simples e fiável para a cloud</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -1168,7 +1168,7 @@ ms.openlocfilehash: d602295648e523276528d738d54078e2dc07b8a5
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Aplicações API</h3>
-                                                    <p>Crie e consuma facilmente API de Nuvem</p>
+                                                    <p>Crie e consuma facilmente API de Cloud</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -1425,7 +1425,7 @@ ms.openlocfilehash: d602295648e523276528d738d54078e2dc07b8a5
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>HDInsight</h3>
-                                                    <p>Aprovisione clusters do Hadoop, Spark, R Server, Hbase e Storm na nuvem</p>
+                                                    <p>Aprovisione clusters do Hadoop, Spark, R Server, Hbase e Storm na cloud</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -1576,7 +1576,7 @@ ms.openlocfilehash: d602295648e523276528d738d54078e2dc07b8a5
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Power BI Incorporado</h3>
+                                                    <h3>Power BI Embedded</h3>
                                                     <p>Incorpore visualizações de dados espetaculares e totalmente interativas nas suas aplicações</p>
                                                 </div>
                                             </div>
@@ -1796,7 +1796,7 @@ ms.openlocfilehash: d602295648e523276528d738d54078e2dc07b8a5
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Serviços Biztalk</h3>
-                                                    <p>Integre com facilidade a empresa e a nuvem</p>
+                                                    <p>Integre com facilidade a empresa e a cloud</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -1815,7 +1815,7 @@ ms.openlocfilehash: d602295648e523276528d738d54078e2dc07b8a5
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Service Bus</h3>
-                                                    <p>Ligue-se em ambientes de nuvem privados e públicos</p>
+                                                    <p>Ligue-se em ambientes de cloud privados e públicos</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -1853,7 +1853,7 @@ ms.openlocfilehash: d602295648e523276528d738d54078e2dc07b8a5
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>StorSimple</h3>
-                                                    <p>O armazenamento híbrido na nuvem para empresas que melhora a segurança dos dados</p>
+                                                    <p>O armazenamento híbrido na cloud para empresas que melhora a segurança dos dados</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -1972,7 +1972,7 @@ ms.openlocfilehash: d602295648e523276528d738d54078e2dc07b8a5
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Azure Active Directory B2C</h3>
-                                                    <p>Gestão de identidades e acessos do consumidor para a nuvem</p>
+                                                    <p>Gestão de identidades e acessos do consumidor para a cloud</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -2029,7 +2029,7 @@ ms.openlocfilehash: d602295648e523276528d738d54078e2dc07b8a5
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Informação de Segurança</h3>
-                                                    <p>Saiba como o Azure fornece uma infraestrutura segura para construir soluções em nuvem</p>
+                                                    <p>Saiba como o Azure fornece uma infraestrutura segura para construir soluções em cloud</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -2191,7 +2191,7 @@ ms.openlocfilehash: d602295648e523276528d738d54078e2dc07b8a5
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Automatização</h3>
-                                                    <p>Simplifique a gestão em nuvem com a automatização de processos</p>
+                                                    <p>Simplifique a gestão em cloud com a automatização de processos</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -2210,7 +2210,7 @@ ms.openlocfilehash: d602295648e523276528d738d54078e2dc07b8a5
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Cópia de segurança</h3>
-                                                    <p>Backup do servidor simples e fiável para a nuvem</p>
+                                                    <p>Backup do servidor simples e fiável para a cloud</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -2255,7 +2255,7 @@ ms.openlocfilehash: d602295648e523276528d738d54078e2dc07b8a5
                                     </div>
                                 </a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="/azure/traffic-manager/">
                                     <div class="cardSize">
                                         <div class="cardPadding">
@@ -2266,14 +2266,14 @@ ms.openlocfilehash: d602295648e523276528d738d54078e2dc07b8a5
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Gestor de Tráfego</h3>
-                                                    <p>Encaminhar tráfego recebido para usufruir de desempenho e disponibilidade elevados</p>
+                                                    <h3>Traffic Manager</h3>
+                                                    <p>Route incoming traffic for high performance and availability</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </a>
-                            </li>
+                            </li> -->
                             <li>
                                 <a href="/azure/monitoring-and-diagnostics/">
                                     <div class="cardSize">
@@ -2355,11 +2355,11 @@ ms.openlocfilehash: d602295648e523276528d738d54078e2dc07b8a5
                 </ul>
             </li>
             <li>
-                <a href="#sdktools">SDK/Tools</a>
-                <ul id="sdktools">
+                <a href="#sdkstools">SDKs/Ferramentas</a>
+                <ul id="sdkstools">
                     <li>
-                        <a href="#sdktools-all">tudo</a>
-                        <ul id="sdktools-all" class="cardsF">
+                        <a href="#sdkstools-all">tudo</a>
+                        <ul id="sdkstools-all" class="cardsF">
                             <li>
                                 <div class="container">
                                     <h1>Linguagens &amp; Arquiteturas</h1>
@@ -2376,16 +2376,19 @@ ms.openlocfilehash: d602295648e523276528d738d54078e2dc07b8a5
                                             </div>
                                             <div class="cardText">
                                                 <h3>
-                                                    <a href="https://www.nuget.org/packages/Microsoft.Azure.Management.Fluent/1.0.0-beta3">Obter o SDK .NET</a>
+                                                    <a href="https://www.nuget.org/packages/Microsoft.Azure.Management.Fluent">Obter o SDK .NET</a>
                                                 </h3>
                                                 <p>
-                                                    <a href="https://azure.microsoft.com/develop/net/">Introdução</a>
+                                                    <a href="https://docs.microsoft.com/dotnet/api/">Introdução</a>
                                                 </p>
                                                 <p>
                                                     <a href="/dotnet/api">Referência da API</a>
                                                 </p>
                                                 <p>
-                                                    <a href="https://azure.microsoft.com/documentation/samples/?platform=dotnet">Exemplos</a>
+                                                    <a href="https://azure.microsoft.com/documentation/samples/?platform=dotnet">Obter exemplos</a>
+                                                </p>
+                                                <p>
+                                                    <a href="https://azure.microsoft.com/develop/net/">Saiba mais</a>
                                                 </p>
                                             </div>
                                         </div>
@@ -2403,16 +2406,19 @@ ms.openlocfilehash: d602295648e523276528d738d54078e2dc07b8a5
                                             </div>
                                             <div class="cardText">
                                                 <h3>
-                                                    <a href="https://azure.microsoft.com/develop/python">Obter o SDK Python</a>
+                                                    <a href="https://pypi.python.org/pypi/azure">Obter o SDK Python</a>
                                                 </h3>
                                                 <p>
-                                                    <a href="https://azure.microsoft.com/develop/python">Introdução</a>
+                                                    <a href="http://azure-sdk-for-python.readthedocs.io/en/latest/">Introdução</a>
                                                 </p>
                                                 <p>
                                                     <a href="http://azure-sdk-for-python.readthedocs.io/en/latest/">Referência da API</a>
                                                 </p>
                                                 <p>
-                                                    <a href="https://azure.microsoft.com/resources/samples/?platform=python">Exemplos</a>
+                                                    <a href="https://azure.microsoft.com/resources/samples/?platform=python">Obter exemplos</a>
+                                                </p>
+                                                <p>
+                                                    <a href="https://azure.microsoft.com/develop/python">Saiba mais</a>
                                                 </p>
                                             </div>
                                         </div>
@@ -2430,16 +2436,19 @@ ms.openlocfilehash: d602295648e523276528d738d54078e2dc07b8a5
                                             </div>
                                             <div class="cardText">
                                                 <h3>
-                                                    <a href="https://azure.microsoft.com/develop/nodejs/">Obter o SDK Node.js</a>
+                                                    <a href="https://www.npmjs.com/package/azure">Obter o SDK Node.js</a>
                                                 </h3>
                                                 <p>
-                                                    <a href="https://azure.microsoft.com/develop/nodejs">Introdução</a>
+                                                    <a href="http://azure.github.io/azure-sdk-for-node/">Introdução</a>
                                                 </p>
                                                 <p>
                                                     <a href="http://azure.github.io/azure-storage-node/index.html">Referência da API</a>
                                                 </p>
                                                 <p>
                                                     <a href="https://azure.microsoft.com/documentation/samples/?platform=nodejs">Obter exemplos</a>
+                                                </p>
+                                                <p>
+                                                    <a href="https://azure.microsoft.com/develop/nodejs">Saiba mais</a>
                                                 </p>
                                             </div>
                                         </div>
@@ -2457,16 +2466,19 @@ ms.openlocfilehash: d602295648e523276528d738d54078e2dc07b8a5
                                             </div>
                                             <div class="cardText">
                                                 <h3>
-                                                    <a href="http://search.maven.org/remotecontent?filepath=com/microsoft/azure/azure-parent/1.0.0-beta3/azure-parent-1.0.0-beta3.pom">Obter o SDK Java</a>
+                                                    <a href="https://github.com/Azure/azure-sdk-for-java#download">Obter o SDK Java</a>
                                                 </h3>
                                                 <p>
-                                                    <a href="https://azure.microsoft.com/develop/java/">Introdução</a>
+                                                    <a href="https://docs.microsoft.com/java/api/">Introdução</a>
                                                 </p>
                                                 <p>
                                                     <a href="/java/api/">Referência da API</a>
                                                 </p>
                                                 <p>
-                                                    <a href="https://azure.microsoft.com/documentation/samples/?platform=java">Exemplos</a>
+                                                    <a href="https://azure.microsoft.com/documentation/samples/?platform=java">Obter exemplos</a>
+                                                </p>
+                                                <p>
+                                                    <a href="https://azure.microsoft.com/develop/java/">Saiba mais</a>
                                                 </p>
                                             </div>
                                         </div>
@@ -2484,16 +2496,19 @@ ms.openlocfilehash: d602295648e523276528d738d54078e2dc07b8a5
                                             </div>
                                             <div class="cardText">
                                                 <h3>
-                                                    <a href="https://azure.microsoft.com/downloads/">Obter o SDK Ruby</a>
+                                                    <a href="https://rubygems.org/gems/azure">Obter o SDK Ruby</a>
                                                 </h3>
                                                 <p>
-                                                    <a href="https://azure.microsoft.com/develop/ruby/">Introdução</a>
+                                                    <a href="https://github.com/Azure/azure-sdk-for-ruby/blob/master/README.md">Introdução</a>
                                                 </p>
                                                 <p>
                                                     <a href="https://github.com/Azure/azure-sdk-for-ruby/blob/master/README.md">Referência da API</a>
                                                 </p>
                                                 <p>
-                                                    <a href="https://azure.microsoft.com/documentation/samples/?platform=ruby">Exemplos</a>
+                                                    <a href="https://azure.microsoft.com/documentation/samples/?platform=ruby">Obter exemplos</a>
+                                                </p>
+                                                <p>
+                                                    <a href="https://azure.microsoft.com/develop/ruby/">Saiba mais</a>
                                                 </p>
                                             </div>
                                         </div>
@@ -2511,13 +2526,13 @@ ms.openlocfilehash: d602295648e523276528d738d54078e2dc07b8a5
                                             </div>
                                             <div class="cardText">
                                                 <h3>
-                                                    <a href="">Introdução ao REST</a>
+                                                    <a href="https://docs.microsoft.com/rest/api/">Introdução ao REST</a>
                                                 </h3>
                                                 <p>
                                                     <a href="/rest/api">Referência</a>
                                                 </p>
                                                 <p>
-                                                    <a href="https://azure.microsoft.com/documentation/samples/?platform=rest">Exemplos</a>
+                                                    <a href="https://azure.microsoft.com/documentation/samples/?platform=rest">Obter exemplos</a>
                                                 </p>
                                             </div>
                                         </div>
@@ -2569,7 +2584,7 @@ ms.openlocfilehash: d602295648e523276528d738d54078e2dc07b8a5
                                                     <a href="/azure/powershell-install-configure">Introdução</a>
                                                 </p>
                                                 <p>
-                                                    <a href="https://github.com/PowerShell/PowerShell/blob/master/docs/installation/">Transferir o Powershell</a>
+                                                    <a href="https://github.com/PowerShell/PowerShell/blob/master/docs/installation/">Transferir o PowerShell</a>
                                                 </p>
                                                 <p>
                                                     <a href="/powershell/">Referência</a>
@@ -2753,7 +2768,7 @@ ms.openlocfilehash: d602295648e523276528d738d54078e2dc07b8a5
                         <ul id="architecture1" class="cardsC">
                             <li>
                                 <div class="container intro">
-                                    <p>Um conjunto de arquiteturas recomendado para aplicações em nuvem. Cada arquitetura inclui práticas recomendadas, passos prescritivos e um componente executável que incorpora as recomendações.</p>
+                                    <p>Um conjunto de arquiteturas recomendado para aplicações em cloud. Cada arquitetura inclui práticas recomendadas, passos prescritivos e um componente executável que incorpora as recomendações.</p>
                                 </div>
                             </li>
                             <li>
@@ -2767,8 +2782,8 @@ ms.openlocfilehash: d602295648e523276528d738d54078e2dc07b8a5
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Noções Básicas da Nuvem</h3>
-                                                    <p>Conhecimento fundamental para ser bem-sucedido na nuvem. Se não estiver familiarizado com a nuvem ou o Azure, comece aqui.</p>
+                                                    <h3>Noções Básicas da Cloud</h3>
+                                                    <p>Conhecimento fundamental para ser bem-sucedido na cloud. Se não estiver familiarizado com a cloud ou o Azure, comece aqui.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -2787,7 +2802,7 @@ ms.openlocfilehash: d602295648e523276528d738d54078e2dc07b8a5
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Arquiteturas de Referência</h3>
-                                                    <p>Um conjunto de arquiteturas recomendado para a nuvem. Cada arquitetura inclui as melhores práticas, passos prescritivos e uma solução implementável.</p>
+                                                    <p>Um conjunto de arquiteturas recomendado para a cloud. Cada arquitetura inclui as melhores práticas, passos prescritivos e uma solução implementável.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -2805,8 +2820,8 @@ ms.openlocfilehash: d602295648e523276528d738d54078e2dc07b8a5
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Padrões de Conceção de Nuvem</h3>
-                                                    <p>Padrões de conceção para a nuvem. Cada padrão descreve um problema, um padrão que corrige o problema e um exemplo com base no Azure.</p>
+                                                    <h3>Padrões de Conceção de Cloud</h3>
+                                                    <p>Padrões de conceção para a cloud. Cada padrão descreve um problema, um padrão que corrige o problema e um exemplo com base no Azure.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -2824,8 +2839,8 @@ ms.openlocfilehash: d602295648e523276528d738d54078e2dc07b8a5
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Melhores práticas para Aplicações na Nuvem</h3>
-                                                    <p>Um conjunto de melhores práticas para aplicações na nuvem, que abrange aspetos como o dimensionamento automático, a colocação em cache, a criação de partições de dados, o design de API e a monitorização.</p>
+                                                    <h3>Melhores práticas para Aplicações na Cloud</h3>
+                                                    <p>Um conjunto de melhores práticas para aplicações na cloud, que abrange aspetos como o dimensionamento automático, a colocação em cache, a criação de partições de dados, o design de API e a monitorização.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -2844,7 +2859,7 @@ ms.openlocfilehash: d602295648e523276528d738d54078e2dc07b8a5
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Guias do Cenário</h3>
-                                                    <p>Documentação de orientação para vários cenários de aplicações ponto a ponto na nuvem. Inclui documentação de orientação escrita e implementações de referência.</p>
+                                                    <p>Documentação de orientação para vários cenários de aplicações ponto a ponto na cloud. Inclui documentação de orientação escrita e implementações de referência.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -2861,6 +2876,6 @@ ms.openlocfilehash: d602295648e523276528d738d54078e2dc07b8a5
 
 
 
-<!--HONumber=Nov16_HO5-->
+<!--HONumber=Dec16_HO1-->
 
 

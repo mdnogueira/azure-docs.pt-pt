@@ -1,8 +1,8 @@
 ---
 layout: LandingPage
 translationtype: Human Translation
-ms.sourcegitcommit: 87b9d22ec066108adb282606305315919b901ea0
-ms.openlocfilehash: f0ec0a2dff2e9bcea133dd1de0a92979d937580a
+ms.sourcegitcommit: 3752a677351518195773a86c3824078a5aff6d03
+ms.openlocfilehash: b5e9c3193e41320fa97a6a0246faaac622f2822a
 
 ---
 #<a name="event-hubs-documentation"></a>Documentação dos Hubs de Eventos
@@ -126,7 +126,7 @@ Os Event Hubs são um serviço de entrada de dados altamente dimensionável, que
                 <div class="card">
                     <div class="cardText">
                         <h3>REST</h3>
-                        <p>Referência da API REST dos Hubs de Eventos</p>
+                        <p>API REST dos Hubs de Eventos</p>
                     </div>
                 </div>
             </div>
@@ -145,6 +145,6 @@ Transferir a Documentação dos Hubs de Eventos </div>
 
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Dec16_HO1-->
 
 

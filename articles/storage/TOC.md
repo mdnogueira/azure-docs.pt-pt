@@ -43,33 +43,25 @@
 ### [C++](storage-c-plus-plus-how-to-use-files.md)
 ### [python](storage-python-how-to-use-file-storage.md)
 
-
-
 # Procedimento
-
 ## [Criar uma conta de armazenamento](storage-create-storage-account.md)
-
 ## Utilizar blobs
 ### [Descrição geral do serviço](https://msdn.microsoft.com/library/dd179376.aspx)
 ### [Escalão de dados frequentemente acedidos e pouco acedidos](storage-blob-storage-tiers.md)
 ### [Domínios personalizados](storage-custom-domain-name.md)
 ### [Acesso anónimo para blobs](storage-manage-access-to-resources.md)
 ### [Amostras](https://azure.microsoft.com/documentation/samples/?service=storage&term=blob)
-
 ## Utilizar as filas
 ### [Conceitos](https://msdn.microsoft.com/library/dd179353.aspx)
 ### [Amostras](https://azure.microsoft.com/documentation/samples/?service=storage&term=queue)
-
 ## Utilizar tabelas
 ### [Descrição geral](https://msdn.microsoft.com/library/dd179463.aspx)
 ### [Guia de conceção de tabelas](storage-table-design-guide.md)
 ### [Amostras](https://azure.microsoft.com/documentation/samples/?service=storage&term=table)
-
 ## Utilizar ficheiros
 ### [Descrição geral](https://msdn.microsoft.com/en-us/library/dn166972.aspx)
 ### [Resolução de problemas de Ficheiros do Azure](storage-troubleshoot-file-connection-problems.md)
 ### [Amostras](https://azure.microsoft.com/documentation/samples/?service=storage&term=file)
-
 ## Utilizar Discos da Máquina Virtual
 ### Armazenamento Premium
 #### [Armazenamento de elevado desempenho para cargas de trabalho de VM](storage-premium-storage.md)
@@ -77,24 +69,20 @@
 #### [Conceber o elevado desempenho](storage-premium-storage-performance.md)
 ### Armazenamento Standard
 #### [Criar cópias de segurança de discos da VM com instantâneos incrementais](storage-incremental-snapshots.md)
-
 ## Planear e conceber
 ### [Replicação](storage-redundancy.md)
 ### [Metas de escalabilidade e desempenho](storage-scalability-targets.md)
 ### [Lista de verificação de desempenho e escalabilidade](storage-performance-checklist.md)
 ### [Simultaneidade](storage-concurrency.md)
-
 ## Programar
 ### [Amostras](storage-samples.md)
 ### [Configurar cadeias de ligação](storage-configure-connection-string.md)
 ### [Utilizar o Emulador do Armazenamento do Azure](storage-use-emulator.md)
 ### [Definir e obter propriedades e metadados](storage-properties-metadata.md)
-
 ## Gerir
 ### [PowerShell](storage-powershell-guide-full.md)
 ### [CLI do Azure](storage-azure-cli.md)
 ### [Automatização do Azure](automation-manage-storage.md)
-
 ## Proteger
 ### [Guia de segurança](storage-security-guide.md)
 ### [Encriptação de dados inativos](storage-service-encryption.md)
@@ -105,7 +93,6 @@
 #### [.NET](storage-client-side-encryption.md)
 #### [Java](storage-client-side-encryption-java.md)
 #### [python](storage-client-side-encryption-python.md)
-
 ## Monitorizar e resolver problemas
 ### Métricas e registo
 #### [Análise de Armazenamento](storage-analytics.md)
@@ -117,29 +104,29 @@
 #### [Numa implementação clássica](storage-cannot-delete-storage-account-container-vhd.md)
 ### [Resolver problemas de Armazenamento de ficheiros](storage-troubleshoot-file-connection-problems.md)
 ### [Documentação de orientação da recuperação após desastre](storage-disaster-recovery-guidance.md)
-
 ## Transferir Dados
 ### [Mover dados de e para o Armazenamento](storage-moving-data.md)
 ### [Utilitário de linha de comandos do AzCopy](storage-use-azcopy.md)
 ### [Serviço de Importação/Exportação para o Armazenamento de Blobs](storage-import-export-service.md)
 
-
-
 # Referência
-## [PowerShell](/powershell/storage/)
+## [PowerShell](/powershell/storage)
 ## [CLI do Azure](/cli/azure/storage)
-## [Java](/java/api/)
-
 ## .NET
-### [Blob, fila, tabela e ficheiro](https://msdn.microsoft.com/library/azure/mt347887.aspx)
-### [Fornecedor de recursos](/dotnet/api/)
-### [Movimento de dados](/dotnet/api/)
-
-## REST
-### [Blob, fila, tabela e ficheiro](/rest/api/storageservices/fileservices/azure-storage-services-rest-api-reference)
-### [Fornecedor de recursos](/rest/api/storagerp/)
+### [Gestor de recursos](/dotnet/api/microsoft.azure.management.storage)
+### [Movimento de dados)](https://msdn.microsoft.com/en-us/library/azure/mt684990.aspx)
+### [Blobs, Filas, Tabelas e Ficheiros](https://msdn.microsoft.com/library/azure/mt347887.aspx)
+## [Java](/java/api/)
+## [Node.js](http://azure.github.io/azure-storage-node)
+## [Ruby](http://azure.github.io/azure-storage-ruby)
+## [Python](https://azure-storage.readthedocs.io/en/latest/index.html)
+## [C++](http://azure.github.io/azure-storage-cpp)
+## [iOS](https://github.com/Azure/azure-storage-ios)
+## [Android](http://azure.github.io/azure-storage-android)
+## [REST]
+### [Blobs, Filas, Tabelas e Ficheiros](/rest/api/storageservices/importexport/storage-import-export-service-rest-api-reference)
+### [Fornecedor de recursos](/rest/api/storagerp)
 ### [Importação/exportação](/rest/api/storageservices/importexport/storage-import-export-service-rest-api-reference)
-
 
 # Relacionado
 ## Portal Clássico
@@ -147,8 +134,6 @@
 ### [Ativar e ver métricas](storage-enable-and-view-metrics-classic-portal.md)
 ### [Monitorizar, diagnosticar e resolver problemas](storage-monitoring-diagnosing-troubleshooting-classic-portal.md)
 ### [Tutorial de resolução de problemas](storage-e2e-troubleshooting-classic-portal.md)
-
-
 
 # Recursos
 ## [Preços](https://azure.microsoft.com/pricing/details/storage/blobs/)
@@ -181,6 +166,6 @@
 ### [iOS](https://github.com/Azure/azure-storage-ios)
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Dec16_HO1-->
 
 

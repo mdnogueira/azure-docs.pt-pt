@@ -25,7 +25,7 @@
 ### [Configurar o Balanceador de Carga com acesso à Internet (Modelo)](load-balancer-get-started-internet-arm-template.md)
 
 ## [Configurar o Balanceador de Carga com acesso à Internet (Portal Clássico)](load-balancer-get-started-internet-classic-portal.md)
-### [Configurar o Balanceador de Carga com acesso à Internet (Nuvem Clássica)](load-balancer-get-started-internet-classic-cloud.md)
+### [Configurar o Balanceador de Carga com acesso à Internet (Cloud Clássica)](load-balancer-get-started-internet-classic-cloud.md)
 ### [Configurar o Balanceador de Carga com acesso à Internet (PS Clássico)](load-balancer-get-started-internet-classic-ps.md)
 ### [Configurar o Balanceador de Carga com acesso à Internet (CLI Clássica)](load-balancer-get-started-internet-classic-cli.md)
 
@@ -44,10 +44,13 @@
 ## [Configurar DHCPv6 para VMs do Linux](load-balancer-ipv6-for-linux.md)
 
 # Referência
-## [PowerShell](/powershell/azureps-cmdlets-docs)
-## [CLI do Azure](/cli/azure/network/lb)
-## [Java](/java/api)
-## [.NET](/dotnet/api)
+## [PowerShell](/powershell/resourcemanager/azurerm.network/v3.1.0/azurerm.network)
+## [CLI 2.0 do Azure (Pré-visualização)](/cli/azure/network/lb)
+## [.NET](/dotnet/api/microsoft.azure.management.network.models)
+## [Java](/java/api/com.microsoft.azure.management.network)
+## [Node.js](http://azure.github.io/azure-sdk-for-node/azure-arm-network/latest/LoadBalancers.html)
+## [Ruby](http://www.rubydoc.info/gems/azure_mgmt_network/Azure/ARM/Network/LoadBalancers)
+## [Python](http://azure-sdk-for-python.readthedocs.io/en/latest/ref/azure.mgmt.network.operations.html#azure.mgmt.network.operations.LoadBalancersOperations)
 ## [REST](https://msdn.microsoft.com/library/azure/mt163651.aspx)
 
 # Relacionado
@@ -64,6 +67,6 @@
 ## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=load-balancer)
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Dec16_HO1-->
 
 

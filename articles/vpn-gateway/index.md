@@ -1,11 +1,11 @@
 ---
 layout: LandingPage
 translationtype: Human Translation
-ms.sourcegitcommit: dca0fb0b2de4943b9a031d2759756654a0c7280f
-ms.openlocfilehash: 6a72b28f95338ebe04e764d7f83e8db3e3e91b78
+ms.sourcegitcommit: 3752a677351518195773a86c3824078a5aff6d03
+ms.openlocfilehash: 844a2bb0bc702cf8e81684267677db8a8803208f
 
 ---
-#<a name="vpn-gateway-documentation"></a>Documentação do VPN Gateway
+#<a name="vpn-gateway-documentation"></a>Documentação do Gateway de VPN
 
 O Gateway de VPN do Azure é um gateway de VPN (rede privada virtual) utilizado para enviar tráfego de rede entre redes virtuais do Azure e localizações no local, assim como entre redes virtuais dentro do Azure (VNet a VNet).  
 
@@ -188,7 +188,7 @@ O Gateway de VPN do Azure é um gateway de VPN (rede privada virtual) utilizado 
                 <div class="card">
                     <div class="cardText">
                         <h3>REST</h3>
-                        <p>Referência da API REST do Gateway de VPN</p>
+                        <p>API REST do Gateway de VPN</p>
                     </div>
                 </div>
             </div>
@@ -207,6 +207,6 @@ Transferir a Documentação do Gateway de VPN do Azure </div>
 
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Dec16_HO1-->
 
 

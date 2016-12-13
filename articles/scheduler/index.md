@@ -1,13 +1,13 @@
 ---
 layout: LandingPage
 translationtype: Human Translation
-ms.sourcegitcommit: 87b9d22ec066108adb282606305315919b901ea0
-ms.openlocfilehash: 4d856b71ced1f1b9c6c1469bee4f23b84865c7d1
+ms.sourcegitcommit: 3752a677351518195773a86c3824078a5aff6d03
+ms.openlocfilehash: 7ab6ecc4f1193245e9778d8a92bb2a5591edfff5
 
 ---
 # <a name="scheduler-documentation"></a>Documentação do Scheduler
 
-O Azure Scheduler permite-lhe descrever detalhamente as ações a executar na nuvem.  Depois, agenda e executa essas ações automaticamente.  De seguida, o Scheduler mantém um histórico dos resultados das execuções de trabalhos que podem ser revistos.
+O Azure Scheduler permite-lhe descrever detalhadamente as ações a executar na cloud.  Depois, agenda e executa essas ações automaticamente.  De seguida, o Scheduler mantém um histórico dos resultados das execuções de trabalhos que podem ser revistos.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -106,7 +106,7 @@ O Azure Scheduler permite-lhe descrever detalhamente as ações a executar na nu
                 <div class="card">
                     <div class="cardText">
                         <h3>REST</h3>
-                        <p>Referência da API REST do Scheduler</p>
+                        <p>API REST do Scheduler</p>
                     </div>
                 </div>
             </div>
@@ -124,6 +124,6 @@ Transferir a Documentação do Scheduler </div>
 </div>
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Dec16_HO1-->
 
 
