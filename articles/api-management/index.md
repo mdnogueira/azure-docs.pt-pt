@@ -29,7 +29,7 @@ A Gestão de API ajuda as organizações a publicar APIs para programadores exte
         </a>
     </li>
     <li>
-        <a href="https://azure.microsoft.com/en-us/documentation/videos/index/?services=api-management">
+        <a href="https://azure.microsoft.com/documentation/videos/index/?services=api-management">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
@@ -102,7 +102,7 @@ A Gestão de API ajuda as organizações a publicar APIs para programadores exte
         </div>
     </li>
     <li>
-        <div class="cardSize"><p />
+        <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
@@ -115,7 +115,7 @@ A Gestão de API ajuda as organizações a publicar APIs para programadores exte
         </div>
     </li>
     <li>
-        <div class="cardSize"><p />
+        <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">

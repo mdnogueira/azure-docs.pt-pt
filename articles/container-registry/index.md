@@ -84,7 +84,7 @@ O Registo de Contentores do Azure (pré-visualização) é um registo privado pa
         </div>
     </li>
     <li>
-        <div class="cardSize"><p />
+        <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">

@@ -119,7 +119,7 @@ O Azure IoT Hub é um serviço completamente gerido que permite comunicações b
         </div>
     </li>
     <li>
-        <div class="cardSize"><p />
+        <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
@@ -136,7 +136,7 @@ O Azure IoT Hub é um serviço completamente gerido que permite comunicações b
         </div>
     </li>
     <li>
-        <div class="cardSize"><p />
+        <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">

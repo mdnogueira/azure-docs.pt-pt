@@ -12,7 +12,7 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/27/2016
+ms.date: 12/12/2016
 ms.author: sethm
 translationtype: Human Translation
 ms.sourcegitcommit: 9ace119de3676bcda45d524961ebea27ab093415
@@ -50,7 +50,7 @@ Depois de obter o espaço de nomes e as credenciais no primeiro passo, crie, em 
 2. Crie um novo projeto de aplicação de consola. Clique no menu **Ficheiro**, depois em **Novo** e, por fim, em **Projeto**. Na caixa de diálogo **Novo Projeto**, clique em **Visual C#** (caso **Visual C#** não seja apresentado, procure em **Outras Linguagens**), selecione o modelo **Aplicação de Consola** e atribua-lhe o nome **Microsoft.ServiceBus.Samples**. Utilize a Localização predefinida. Clique em **OK** para criar o projeto.
 3. Em Program.cs, certifique-se de que as declarações `using` são apresentadas do seguinte modo:
    
-    ```
+    ```csharp
     using System;
     using System.Globalization;
     using System.IO;
@@ -62,7 +62,7 @@ Depois de obter o espaço de nomes e as credenciais no primeiro passo, crie, em 
 4. Se necessário, mude o nome do espaço de nomes para o programa da predefinição do Visual Studio para `Microsoft.ServiceBus.Samples`.
 5. Na classe `Program`, adicione as seguintes variáveis globais:
    
-    ```
+    ```csharp
     static string serviceNamespace;
     static string baseAddress;
     static string token;
@@ -70,7 +70,7 @@ Depois de obter o espaço de nomes e as credenciais no primeiro passo, crie, em 
     ```
 6. Em `Main()`, cole o seguinte código:
    
-    ```
+    ```csharp
     Console.Write("Enter your service namespace: ");
     serviceNamespace = Console.ReadLine();
    
@@ -146,7 +146,7 @@ O passo seguinte é escrever um método que processe o espaço de nomes e a chav
 ### <a name="create-a-getsastoken-method"></a>Criar um método GetSASToken()
 Cole o seguinte código após o método `Main()`, na classe `Program`:
 
-```
+```csharp
 private static string GetSASToken(string SASKeyName, string SASKeyValue)
 {
   TimeSpan fromEpochStart = DateTime.UtcNow - new DateTime(1970, 1, 1);
@@ -165,7 +165,7 @@ O passo seguinte é escrever um método que utilize o comando HTTP PUT de estilo
 
 Cole o seguinte código imediatamente depois do código `GetSASToken()` adicionado no passo anterior:
 
-```
+```csharp
 // Uses HTTP PUT to create the queue
 private static string CreateQueue(string queueName, string token)
 {
@@ -193,7 +193,7 @@ Neste passo, adicione um método que utilize o comando HTTP POST de estilo REST 
 
 1. Cole o seguinte código imediatamente depois do código `CreateQueue()` adicionado no passo anterior:
    
-    ```
+    ```csharp
     // Sends a message to the "queueName" queue, given the name and the value to enqueue
     // Uses an HTTP POST request.
     private static void SendMessage(string queueName, string body)
@@ -208,7 +208,7 @@ Neste passo, adicione um método que utilize o comando HTTP POST de estilo REST 
     ```
 2. As propriedades da mensagem mediada padrão são colocadas num cabeçalho de HTTP `BrokerProperties`. As propriedades de mediador devem ser serializadas no formato JSON. Para especificar um valor **TimeToLive** de 30 segundos e para adicionar uma etiqueta de mensagem "M1" à mensagem, adicione o seguinte código imediatamente depois da chamada `webClient.UploadData()` mostrada no exemplo anterior:
    
-    ```
+    ```csharp
     // Add brokered message properties "TimeToLive" and "Label"
     webClient.Headers.Add("BrokerProperties", "{ \"TimeToLive\":30, \"Label\":\"M1\"}");
     ```
@@ -216,7 +216,7 @@ Neste passo, adicione um método que utilize o comando HTTP POST de estilo REST 
     Tenha em atenção que as propriedades da mensagem mediada foram e serão adicionadas. Por conseguinte, o pedido de envio deve especificar uma versão de API que suporte todas as propriedades da mensagem mediada que fazem parte do pedido. Se a versão de API especificada não suportar uma propriedade da mensagem mediada, essa propriedade é ignorada.
 3. As propriedades da mensagem personalizada são definidas como um conjunto de pares chave-valor. Cada propriedade personalizada é armazenada no seu próprio cabeçalho TPPT. Para adicionar as propriedades personalizadas "Prioridade" e "Cliente", adicione o seguinte código imediatamente antes da chamada `webClient.UploadData()` mostrada no exemplo anterior:
    
-    ```
+    ```csharp
     // Add custom properties "Priority" and "Customer".
     webClient.Headers.Add("Priority", "High");
     webClient.Headers.Add("Customer", "12345");
@@ -227,7 +227,7 @@ O passo seguinte é adicionar um método que utilize o comando HTTP DELETE de es
 
 Cole o seguinte código imediatamente depois do código `SendMessage()` adicionado no passo anterior:
 
-```
+```csharp
 // Receives and deletes the next message from the given resource (queue, topic, or subscription)
 // using the resourceName and an HTTP DELETE request
 private static string ReceiveAndDeleteMessage(string resourceName)
@@ -251,7 +251,7 @@ O passo seguinte é escrever um método que utilize o comando HTTP PUT de estilo
 ### <a name="create-a-topic"></a>Criar um tópico
 Cole o seguinte código imediatamente depois do código `ReceiveAndDeleteMessage()` adicionado no passo anterior:
 
-```
+```csharp
 // Using an HTTP PUT request.
 private static string CreateTopic(string topicName)
 {
@@ -276,7 +276,7 @@ private static string CreateTopic(string topicName)
 ### <a name="create-a-subscription"></a>Criar uma subscrição
 O código seguinte cria uma subscrição para o tópico que criou no passo anterior. Adicione o seguinte código imediatamente após a definição `CreateTopic()`:
 
-```
+```csharp
 private static string CreateSubscription(string topicName, string subscriptionName)
 {
     var subscriptionAddress = baseAddress + topicName + "/Subscriptions/" + subscriptionName;
@@ -303,7 +303,7 @@ Neste passo, adicione o código que obtém as propriedades da mensagem e, em seg
 ### <a name="retrieve-an-atom-feed-with-the-specified-resources"></a>Obter um feed Atom com os recursos especificados
 Adicione o seguinte código imediatamente depois do método `CreateSubscription()` adicionado no passo anterior:
 
-```
+```csharp
 private static string GetResources(string resourceAddress)
 {
     string fullAddress = baseAddress + resourceAddress;
@@ -317,7 +317,7 @@ private static string GetResources(string resourceAddress)
 ### <a name="delete-messaging-entities"></a>Eliminar entidades de mensagens
 Adicione o seguinte código imediatamente depois do código adicionado no passo anterior:
 
-```
+```csharp
 private static string DeleteResource(string resourceName)
 {
     string fullAddress = baseAddress + resourceName;
@@ -333,7 +333,7 @@ private static string DeleteResource(string resourceName)
 ### <a name="format-the-atom-feed"></a>Formatar o feed Atom
 O método `GetResources()` contém uma chamada para o método `FormatXml()` que reformata o feed Atom obtido para ser mais legível. O seguinte é a definição de `FormatXml()`; adicione este código imediatamente depois do código `DeleteResource()` adicionado na secção anterior:
 
-```
+```csharp
 // Formats the XML string to be more human-readable; intended for display purposes
 private static string FormatXml(string inputXml)
 {
@@ -360,7 +360,7 @@ Se não existirem erros, prima F5 para executar a aplicação. Quando lhe for pe
 ### <a name="example"></a>Exemplo
 O exemplo seguinte consiste no código completo, tal como deveria surgir após serem seguidos todos os passos neste tutorial.
 
-```
+```csharp
 using System;
 using System.Globalization;
 using System.IO;

@@ -29,7 +29,7 @@ O Application Insights é um serviço de Gestão de Desempenho de Aplicações (
         </a>
     </li>
     <li>
-        <a href="https://azure.microsoft.com/en-us/documentation/videos/index/?services=application-insights">
+        <a href="https://azure.microsoft.com/documentation/videos/index/?services=application-insights">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
@@ -131,7 +131,7 @@ O Application Insights é um serviço de Gestão de Desempenho de Aplicações (
                     <div class="cardText">
                         <h3>Linguagens</h3>
                         <p><a href="/dotnet/api/microsoft.applicationinsights">.NET</a></p>
-                        <p><a href="http://dl.windowsazure.com/applicationinsights/javadoc/">Java</a></p>
+                        <p><a href="/java/api/com.microsoft.applicationinsights">Java</a></p>
                         <p><a href="https://github.com/Microsoft/ApplicationInsights-JS/blob/master/API-reference.md">JavaScript</a></p>
                         <p><a href="/azure/application-insights/app-insights-analytics-reference">Referência do Analytics</a></p>
                     </div>
@@ -140,7 +140,7 @@ O Application Insights é um serviço de Gestão de Desempenho de Aplicações (
         </div>
     </li>
     <li>
-        <div class="cardSize"><p />
+        <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">

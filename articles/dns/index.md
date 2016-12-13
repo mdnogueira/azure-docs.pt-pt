@@ -88,7 +88,8 @@ O Azure DNS (Domain Name System) é um serviço para domínios DNS que fornece r
 
 <h2>Referência</h2>
 <ul class="panelContent cardsW">
-<li><div class="cardSize">
+<li>
+    <div class="cardSize"><p />
         <div class="cardPadding">
             <div class="card">
                 <div class="cardText">
@@ -101,7 +102,7 @@ O Azure DNS (Domain Name System) é um serviço para domínios DNS que fornece r
     </div>
 </li>
 <li>
-    <div class="cardSize"><p />
+    <div class="cardSize">
         <div class="cardPadding">
             <div class="card">
                 <div class="cardText">
@@ -117,7 +118,7 @@ O Azure DNS (Domain Name System) é um serviço para domínios DNS que fornece r
     </div>
 </li>
 <li>
-    <div class="cardSize"><p />
+    <div class="cardSize">
         <div class="cardPadding">
             <div class="card">
                 <div class="cardText">
