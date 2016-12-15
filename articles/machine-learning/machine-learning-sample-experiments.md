@@ -15,8 +15,8 @@ ms.topic: get-started-article
 ms.date: 11/11/2016
 ms.author: cgronlun;olgali
 translationtype: Human Translation
-ms.sourcegitcommit: 35579eda8b92a481525ad987e99e7d9c9ed6b942
-ms.openlocfilehash: 7c712cb20d9e008c74436fc602326afa00250c63
+ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
+ms.openlocfilehash: 9c710e6f959afd8a4f4b965931ed4868d94c6d25
 
 
 ---
@@ -42,8 +42,8 @@ Para procurar todas as experimentações:
 2. Em **Refinar por**, selecione **Experimentação** para ver todas as experimentações na Galeria.
 3. Pode encontrar experimentações que cumprem os requisitos de duas formas diferentes:
    * **Selecione filtros no lado esquerdo.** Por exemplo, para procurar experimentações que utilizem um algoritmo de deteção de anomalias baseado em PCA, selecione **Experimentação** em **Categorias** e **Deteção de Anomalias com Base em PCA** em **Algoritmos Utilizados**. (Se não vir esse algoritmo, clique em **Mostrar tudo** na parte inferior da lista.)<br></br>
-     ![](./media/machine-learning-sample-experiments/refine-the-view.png)
-   * **Utilize a caixa de pesquisa.** Por exemplo, para procurar experimentações que tenham feito parte da Microsoft e estejam relacionadas com o reconhecimento de dígitos que utilizam um algoritmo da máquina de vetor com suporte de classe dois, introduza "reconhecimento de dígitos" na caixa de pesquisa. Em seguida, selecione os filtros **Experimentação**, **Apenas conteúdos da Microsoft** e **Máquina de Vetor com Suporte de Classe Dois**: ![](./media/machine-learning-sample-experiments/search-for-experiments.png)
+     ![Selecionar filtros](./media/machine-learning-sample-experiments/refine-the-view.png)
+   * **Utilize a caixa de pesquisa.** Por exemplo, para procurar experimentações que tenham feito parte da Microsoft e estejam relacionadas com o reconhecimento de dígitos que utilizam um algoritmo da máquina de vetor com suporte de classe dois, introduza "reconhecimento de dígitos" na caixa de pesquisa. Em seguida, selecione os filtros **Experimentação**, **Apenas conteúdos da Microsoft** e **Máquina de Vetor com Suporte de Classe Dois**: ![Utilizar a caixa de pesquisa](./media/machine-learning-sample-experiments/search-for-experiments.png)
 4. Clique numa experimentação para saber mais acerca da mesma.
 5. Para executar e/ou modificar a experimentação, clique em **Abrir no Studio** na página de experimentação.
 
@@ -52,7 +52,7 @@ Para procurar todas as experimentações:
    >
    >
 
-    ![](./media/machine-learning-sample-experiments/example-experiment.png)
+    ![Experimentação de exemplo](./media/machine-learning-sample-experiments/example-experiment.png)
 
 ## <a name="use-a-template-in-machine-learning-studio"></a>Utilizar um modelo no Machine Learning Studio
 Também pode criar uma nova experimentação no Machine Learning Studio, utilizando um exemplo da galeria como um modelo.
@@ -70,6 +70,6 @@ Também pode criar uma nova experimentação no Machine Learning Studio, utiliza
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

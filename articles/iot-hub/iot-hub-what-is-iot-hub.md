@@ -1,6 +1,6 @@
 ---
 title: "Descrição geral do Hub IoT do Azure | Microsoft Docs"
-description: "Descrição geral do serviço de IoT Hub do Azure: o que a conectividade do dispositivo IoT Hub, os padrões de comunicação da Internet das Coisas e o padrão de comunicação auxiliado"
+description: "Descrição geral do serviço de Hub IoT do Azure: o que a conectividade do dispositivo Hub IoT, os padrões de comunicação da Internet das Coisas, os gateways e o padrão de comunicação auxiliado"
 services: iot-hub
 documentationcenter: 
 author: dominicbetts
@@ -15,8 +15,8 @@ ms.workload: na
 ms.date: 11/23/2016
 ms.author: dobett
 translationtype: Human Translation
-ms.sourcegitcommit: 00746fa67292fa6858980e364c88921d60b29460
-ms.openlocfilehash: b00aab7ea1eac8d34b9b535db2056c7b0ec41354
+ms.sourcegitcommit: e223d0613cd48994315451da87e6b7066585bdb6
+ms.openlocfilehash: 42774f83dc4c53dc8f090acb922b5aae6e8b4bed
 
 
 ---
@@ -77,7 +77,7 @@ Uma solução pode incluir os gateways de protocolo e de campo.
 O Hub IoT do Azure implementa a norma de [comunicação auxiliada][lnk-service-assisted-pattern] para mediar as interações entre os seus dispositivos e a sua solução de back-end. O objetivo da comunicação auxiliada consiste em estabelecer percursos de comunicação fidedignos e bidirecionais entre um sistema de controlo, como o IoT Hub e dispositivos com objetivos especiais implementados num espaço físico não fidedigno. O padrão estabelece os seguintes princípios:
 
 * A segurança tem precedência sobre todas as outras funcionalidades.
-* Os dispositivos não aceitam informações da rede não solicitadas. Um dispositivo estabelece todas as ligações e rotas de uma forma apenas de saída. Para que um dispositivo receba um comando do back-end, deverá frequentemente iniciar uma ligação para verificar se devem ser processados quaisquer comandos pendentes.
+* Os dispositivos não aceitam informações da rede não solicitadas. Um dispositivo estabelece todas as ligações e rotas de uma forma apenas de saída. Para que um dispositivo receba um comando da solução de back-end, deverá frequentemente iniciar uma ligação para verificar se devem ser processados quaisquer comandos pendentes.
 * Os dispositivos apenas devem estabelecer a ligação ou rotas a serviços bem conhecidos com os quais estão emparelhados, como o IoT Hub.
 * O caminho de comunicação entre o dispositivo e o serviço ou entre o dispositivo e o gateway é protegido na camada de protocolo da aplicação.
 * A autorização e autenticação ao nível do sistema assentam em identidades por dispositivo. As credenciais e permissões de acesso são quase instantaneamente revogáveis.
@@ -91,7 +91,7 @@ O Hub IoT é suportado ao longo do caminho de peering público do ExpressRoute.
 ## <a name="next-steps"></a>Passos seguintes
 Para saber como o Hub IoT do Azure permite a gestão de dispositivos baseada em normas para que possa gerir remotamente, configurar e atualizar os seus dispositivos, veja [Descrição geral da gestão de dispositivos com o Hub IoT][lnk-device-management].
 
-Para implementar aplicações de cliente em várias plataformas de hardware e sistemas operativos para dispositivos, pode utilizar os Azure IoT Device SDKs. Os Device SDKs incluem bibliotecas que facilitam o envio de telemetria para um Hub IoT e a receção de comandos da cloud para o dispositivo. Quando utiliza os Device SDKs, pode escolher entre vários protocolos de rede para comunicar com o Hub IoT. Para saber mais, veja as [informações sobre os Device SDKs][lnk-device-sdks].
+Para implementar aplicações de cliente em várias plataformas de hardware e sistemas operativos para dispositivos, pode utilizar os Azure IoT Device SDKs. Os SDKs do dispositivo incluem bibliotecas que facilitam o envio de telemetria para um Hub IoT e a receção de mensagens da cloud para o dispositivo. Quando utiliza os Device SDKs, pode escolher entre vários protocolos de rede para comunicar com o Hub IoT. Para saber mais, veja as [informações sobre os Device SDKs][lnk-device-sdks].
 
 Para começar a escrever código e executar alguns exemplos, veja o tutorial [Introdução ao Hub IoT][lnk-get-started].
 
@@ -121,6 +121,6 @@ Para começar a escrever código e executar alguns exemplos, veja o tutorial [In
 [lnk-security-ground-up]: iot-hub-security-ground-up.md
 
 
-<!--HONumber=Nov16_HO5-->
+<!--HONumber=Dec16_HO1-->
 
 

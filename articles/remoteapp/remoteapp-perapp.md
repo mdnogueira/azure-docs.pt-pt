@@ -12,11 +12,11 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: compute
-ms.date: 08/15/2016
+ms.date: 11/23/2016
 ms.author: piotrci
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 07cadd332edc4c55d87ca76aabeaba824d1e2673
+ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
+ms.openlocfilehash: 6dcadbfb99d4d111ab9ddde9d74db65b5542a8f5
 
 
 ---
@@ -26,9 +26,9 @@ ms.openlocfilehash: 07cadd332edc4c55d87ca76aabeaba824d1e2673
 > 
 > 
 
-Este artigo explica como publicar aplicações para utilizadores individuais numa coleção do Azure RemoteApp. Esta é uma nova funcionalidade do Azure RemoteApp, atualmente em “pré-visualização privada” e disponível apenas para selecionar adotantes iniciais para efeitos de avaliação.
+Este artigo explica como publicar aplicações para utilizadores individuais numa coleção do Azure RemoteApp. Esta é uma nova funcionalidade do Azure RemoteApp, atualmente em pré-visualização privada e disponível apenas para selecionar adotantes iniciais para efeitos de avaliação.
 
-Inicialmente, o Azure RemoteApp permitia apenas uma forma de “publicar” aplicações: o administrador publicava as aplicações a partir da imagem e estas ficavam visíveis para todos os utilizadores na coleção.
+Inicialmente, o Azure RemoteApp permitia apenas uma forma de publicar aplicações: o administrador publicava as aplicações a partir da imagem e estas ficavam visíveis para todos os utilizadores na coleção.
 
 Um cenário comum é incluir muitas aplicações numa única imagem e implementar uma coleção para reduzir os custos de gestão. Frequentemente, nem todas as aplicações são relevantes para todos os utilizadores – os administradores prefeririam publicar aplicações para utilizadores individuais, de modo a não serem apresentadas aplicações desnecessárias no feed de aplicações.
 
@@ -36,8 +36,8 @@ Tal é agora possível no Azure RemoteApp – atualmente como uma funcionalidade
 
 1. Uma coleção pode ser definida num de dois modos:
    
-   * o “modo de coleção” original, em que todos os utilizadores numa coleção podem ver todas as aplicações publicadas. Este é o modo predefinido.
-   * o novo “modo de aplicação”, em que os utilizadores veem apenas as aplicações que lhes foram explicitamente atribuídas.
+   * o modo de coleção original, em que todos os utilizadores numa coleção podem ver todas as aplicações publicadas. Este é o modo predefinido.
+   * o novo modo de aplicação, em que os utilizadores veem apenas as aplicações que lhes foram explicitamente atribuídas
 2. Neste momento, o modo de aplicação apenas pode ser ativado através de cmdlets do Azure RemoteApp PowerShell.
    
    * Quando definida no modo de aplicação, a atribuição de utilizadores na coleção não pode ser gerida através do Portal do Azure. A atribuição de utilizadores tem de ser gerida através de cmdlets do PowerShell.
@@ -49,7 +49,7 @@ Tal é agora possível no Azure RemoteApp – atualmente como uma funcionalidade
 ## <a name="how-to-get-azure-remoteapp-powershell-cmdlets"></a>Como obter cmdlets do Azure RemoteApp PowerShell
 Para experimentar a nova funcionalidade de pré-visualização, deverá utilizar cmdlets do Azure PowerShell. Atualmente não é possível utilizar o portal de Gestão do Azure para ativar o novo modo de publicação de aplicação.
 
-Em primeiro lugar, certifique-se de que o [módulo Azure PowerShell](../powershell-install-configure.md) está instalado.
+Em primeiro lugar, certifique-se de que o [módulo Azure PowerShell](/powershell/azureps-cmdlets-docs) está instalado.
 
 Em seguida, inicie a consola do PowerShell no modo de administração e execute o seguinte cmdlet:
 
@@ -106,6 +106,6 @@ Caso ainda não tenha participado na pré-visualização, utilize este [inquéri
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 

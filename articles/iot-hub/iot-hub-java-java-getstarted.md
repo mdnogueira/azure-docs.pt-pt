@@ -1,6 +1,6 @@
 ---
-title: "Hub IoT do Azure para uma introdução ao Java | Microsoft Docs"
-description: "IoT Hub do Azure com tutorial de introdução ao Java. Utilize o Hub IoT do Azure e Java com os SDKs do Azure IoT para implementar uma solução de Internet das Coisas."
+title: "Introdução ao Hub IoT do Azure (Java) | Microsoft Docs"
+description: "Como enviar mensagens do dispositivo para a cloud a partir de um dispositivo para um hub IoT do Azure com os SDKs do Azure IoT para Java. Cria uma aplicação de dispositivo simulada para enviar mensagens, uma aplicação de serviço para registar o seu dispositivo no registo de identidade e uma aplicação de serviço para ler as mensagens do dispositivo para a cloud a partir do hub IoT."
 services: iot-hub
 documentationcenter: java
 author: dominicbetts
@@ -15,12 +15,12 @@ ms.workload: na
 ms.date: 11/23/2016
 ms.author: dobett
 translationtype: Human Translation
-ms.sourcegitcommit: ce514e19370d2b42fb16b4e96b66f212d5fa999c
-ms.openlocfilehash: ae4727b27281be62a79f9387715eccd6b61e8e12
+ms.sourcegitcommit: a243e4f64b6cd0bf7b0776e938150a352d424ad1
+ms.openlocfilehash: 4054831b19b91145788a0d1b4dbb09d4795df459
 
 
 ---
-# <a name="get-started-with-azure-iot-hub-for-java"></a>Introdução ao IoT Hub do Azure para Java
+# <a name="get-started-with-azure-iot-hub-java"></a>Introdução ao Hub IoT do Azure (Java)
 [!INCLUDE [iot-hub-selector-get-started](../../includes/iot-hub-selector-get-started.md)]
 
 No final deste tutorial, terá três aplicações de consola Java:
@@ -49,7 +49,7 @@ Como passo final, anote o valor da **Chave primária** e, em seguida, clique em 
 Criou o seu Hub IoT e tem agora o nome de anfitrião, a cadeia de ligação e a Chave Primária do Hub IoT, assim como o nome e o ponto final compatível com o Hub de Eventos de que precisa para concluir este tutorial.
 
 ## <a name="create-a-device-identity"></a>Criar uma identidade de dispositivo
-Nesta secção, vai criar uma aplicação de consola Java que cria uma identidade de dispositivo no registo de identidade do seu Hub IoT. Não é possível ligar um dispositivo ao hub IoT, exceto se tiver uma entrada no registo de identidade. Para obter mais informações, veja a secção **Identity Registry (Registo de Identidades)** do [Hub IoT Developer Guide (Guia do Programador do Hub IoT)][lnk-devguide-identity]. Ao executar esta aplicação de consola, será gerado um ID de dispositivo único e uma chave que o seu dispositivo pode utilizar para identificar-se quando enviar mensagens do dispositivo para a nuvem ao IoT Hub.
+Nesta secção, vai criar uma aplicação de consola Java que cria uma identidade de dispositivo no registo de identidade do seu Hub IoT. Não é possível ligar um dispositivo ao hub IoT, exceto se tiver uma entrada no registo de identidade. Para obter mais informações, veja a secção **Identity Registry (Registo de Identidades)** do [Hub IoT developer guide (Guia do programador do Hub IoT)][lnk-devguide-identity]. Ao executar esta aplicação de consola, será gerado um ID de dispositivo único e uma chave que o seu dispositivo pode utilizar para identificar-se quando enviar mensagens do dispositivo para a nuvem ao IoT Hub.
 
 1. Crie uma pasta vazia com o nome iot-java-get-started. Na pasta iot-java-get-started, crie um projeto Maven designado **create-device-identity** com o seguinte comando na linha de comandos. Tenha em atenção que se trata de um comando único, por extenso:
    
@@ -105,7 +105,7 @@ Nesta secção, vai criar uma aplicação de consola Java que cria uma identidad
         iotf.printStackTrace();
       }
     }
-    System.out.println("Device id: " + device.getDeviceId());
+    System.out.println("Device ID: " + device.getDeviceId());
     System.out.println("Device key: " + device.getPrimaryKey());
     ```
 10. Guarde e feche o ficheiro App.java.
@@ -119,10 +119,10 @@ Nesta secção, vai criar uma aplicação de consola Java que cria uma identidad
     ```
     mvn exec:java -Dexec.mainClass="com.mycompany.app.App"
     ```
-13. Tome note do **ID do Dispositivo** e da **Chave do Dispositivo**. Vai precisar destes valores mais tarde quando criar uma aplicação que liga ao Hub IoT como um dispositivo.
+13. Tome note do **ID do Dispositivo** e da **Chave do dispositivo**. Vai precisar destes valores mais tarde quando criar uma aplicação que liga ao Hub IoT como um dispositivo.
 
 > [!NOTE]
-> O registo de identidade do Hub IoT apenas armazena identidades de dispositivos para permitir um acesso seguro ao Hub IoT. Armazena os IDs do dispositivo e as chaves a utilizar como credenciais de segurança e um sinalizador ativado/desativado que pode utilizar para desativar o acesso de um dispositivo individual. Se a sua aplicação tiver de armazenar outros metadados específicos do dispositivo, deverá utilizar um armazenamento específico da aplicação. Para obter mais informações, veja o [IoT Hub Developer Guide (Guia do Programador do Hub IoT)][lnk-devguide-identity].
+> O registo de identidade do Hub IoT apenas armazena identidades de dispositivos para permitir um acesso seguro ao Hub IoT. Armazena os IDs do dispositivo e as chaves a utilizar como credenciais de segurança e um sinalizador ativado/desativado que pode utilizar para desativar o acesso de um dispositivo individual. Se a sua aplicação tiver de armazenar outros metadados específicos do dispositivo, deverá utilizar um armazenamento específico da aplicação. Para obter mais informações, veja o [IoT Hub developer guide (Guia do programador do Hub IoT)][lnk-devguide-identity].
 > 
 > 
 
@@ -134,7 +134,7 @@ Nesta secção, irá criar uma aplicação de consola do Java que lê mensagens 
 > 
 > 
 
-1. Na pasta iot-java-get-started que criou na secção *Criar uma identidade do dispositivo*, crie um projeto Maven designado **read-d2c-messages** com o seguinte comando na linha de comandos. Tenha em atenção que se trata de um comando único, por extenso:
+1. Na pasta iot-java-get-started que criou na secção *Create a device identity (Criar uma identidade do dispositivo)*, crie um projeto Maven designado **read-d2c-messages** com o seguinte comando na linha de comandos. Tenha em atenção que se trata de um comando único, por extenso:
    
     ```
     mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=read-d2c-messages -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
@@ -419,20 +419,20 @@ Nesta secção, irá criar uma aplicação de consola do Java que simula um disp
 ## <a name="run-the-apps"></a>Executar as aplicações
 Já está pronto para executar as aplicações.
 
-1. Numa linha de comandos da pasta read-d2c, execute o seguinte comando para começar a monitorizar a primeira partição no seu IoT Hub:
+1. Numa linha de comandos da pasta read-d2c, execute o seguinte comando para começar a monitorizar a primeira partição no seu Hub IoT:
    
     ```
     mvn exec:java -Dexec.mainClass="com.mycompany.app.App"
     ```
    
-    ![Aplicação cliente do serviço Hub IoT Java para monitorizar mensagens do dispositivo para a cloud][7]
-2. Numa linha de comandos da pasta simulated-device, execute o seguinte comando para começar a enviar dados de telemetria ao seu IoT Hub:
+    ![Aplicação do serviço Hub IoT Java para monitorizar mensagens do dispositivo para a cloud][7]
+2. Numa linha de comandos da pasta simulated-device, execute o seguinte comando para começar a enviar dados de telemetria ao seu Hub IoT:
    
     ```
     mvn exec:java -Dexec.mainClass="com.mycompany.app.App" 
     ```
    
-    ![Aplicação cliente do serviço Hub IoT Java para enviar mensagens do dispositivo para a cloud][8]
+    ![Aplicação do dispositivo Hub IoT Java para enviar mensagens do dispositivo para a cloud][8]
 3. O mosaico **Utilização** no [portal do Azure][lnk-portal] mostra o número de mensagens enviadas ao Hub IoT:
    
     ![Mosaico “Utilização do portal do Azure”, que mostra o número de mensagens enviadas para o Hub IoT][43]
@@ -474,6 +474,6 @@ Para saber como expandir a sua solução de IoT e processar mensagens do disposi
 
 
 
-<!--HONumber=Nov16_HO5-->
+<!--HONumber=Dec16_HO1-->
 
 

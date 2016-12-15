@@ -15,13 +15,13 @@ ms.workload: na
 ms.date: 02/29/2016
 ms.author: cfowler
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: f0321c71655f1b023862aeeef4615544135adb5a
+ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
+ms.openlocfilehash: d8a177074d6b7671fe04081c5547665ec892f244
 
 
 ---
 # <a name="connect-a-web-app-in-azure-app-service-to-redis-cache-via-the-memcache-protocol"></a>Ligar uma aplicação Web no App Service do Azure para a Cache de Redis através do protocolo Memcache
-Neste artigo, irá aprender como ligar uma aplicação Web WordPress no [App Service do Azure](http://go.microsoft.com/fwlink/?LinkId=529714) para [a Cache de Redis do Azure][12] através do protocolo [Memcache][13]. Se tiver uma aplicação Web existente que utiliza um servidor Memcached para colocar em cache dentro da memória, pode migrá-la para o App Service do Azure e utilizar a solução de colocação em cache originais no Microsoft Azure com pouca ou nenhuma alteração para o código da aplicação. Além disso, pode utilizar os seus conhecimentos de Memcache existentes para criar aplicações distribuídas e altamente dimensionáveis no App Service do Azure com a Cache de Redis do Azure para colocar em cache dentro da memória, ao utilizar as estruturas de aplicações populares, tais como .NET, PHP, Node.js, Java e Python.  
+Neste artigo, irá aprender como ligar uma aplicação Web WordPress no [Serviço de Aplicações do Azure](http://go.microsoft.com/fwlink/?LinkId=529714) para [a Cache de Redis do Azure][12] através do protocolo [Memcache][13]. Se tiver uma aplicação Web existente que utiliza um servidor Memcached para colocar em cache dentro da memória, pode migrá-la para o App Service do Azure e utilizar a solução de colocação em cache originais no Microsoft Azure com pouca ou nenhuma alteração para o código da aplicação. Além disso, pode utilizar os seus conhecimentos de Memcache existentes para criar aplicações distribuídas e altamente dimensionáveis no App Service do Azure com a Cache de Redis do Azure para colocar em cache dentro da memória, ao utilizar as estruturas de aplicações populares, tais como .NET, PHP, Node.js, Java e Python.  
 
 As Web Apps do App Service permitem este cenário de aplicação com o shim de Memcache das Web Apps, que é um servidor Memcached local que age como um proxy Memcache para colocar em cache as chamadas para a Cache de Redis do Azure. Isto permite que qualquer aplicação que comunica utilizando o protocolo de Memcache coloque os dados em cache com a Cache de Redis. Este shim de Memcache funciona ao nível do protocolo, pelo que pode ser utilizado por qualquer aplicação ou estrutura da aplicação, desde que comunique utilizando o protocolo de Memcache.
 
@@ -136,7 +136,7 @@ Agora que o ficheiro **objeto cache.php** está na pasta **wp-content**, a Cache
 ## <a name="verify-the-memcache-object-cache-plugin-is-functioning"></a>Verificar se o plug-in de Cache de Objeto Memcache está a funcionar
 Todos os passos para ativar o shim de Memcache das Web Apps estão agora concluídos. Só falta verificar se os dados estão a preencher a instância da Cache de Redis.
 
-### <a name="enable-the-nonssl-port-support-in-azure-redis-cache"></a>Ativar o suporte da porta não SSL na Cache de Redis do Azure
+### <a name="enable-the-non-ssl-port-support-in-azure-redis-cache"></a>Ativar o suporte da porta não SSL na Cache de Redis do Azure
 > [!NOTE]
 > No momento da escrita deste artigo, a CLI de Redis não suporta a conectividade SSL, por conseguinte, os seguintes passos são necessários.
 > 
@@ -158,7 +158,7 @@ Verá que a porta não SSL está agora definida. Clique em **Guardar**.
 
 ![Portal de Acesso Redis Não SSL na Cache de Redis do Azure](./media/web-sites-connect-to-redis-using-memcache-protocol/18-azure-redis-cache-access-port-non-ssl.png)
 
-### <a name="connect-to-azure-redis-cache-from-rediscli"></a>Ligar para a Cache de Redis do Azure a partir de redis-cli
+### <a name="connect-to-azure-redis-cache-from-redis-cli"></a>Ligar para a Cache de Redis do Azure a partir de redis-cli
 > [!NOTE]
 > Este passo parte do princípio que o redis está instalado localmente na sua máquina de desenvolvimento. [Instalar Redis localmente utilizando estas instruções][9].
 > 
@@ -191,7 +191,7 @@ Parabéns! A aplicação WordPress centralizou a cache de memória interna para 
 [1]: http://bit.ly/1t0KxBQ
 [2]: http://manage.windowsazure.com
 [3]: http://portal.azure.com
-[4]: ../powershell-install-configure.md
+[4]: /powershell/azureps-cmdlets-docs
 [5]: /downloads
 [6]: http://pecl.php.net
 [7]: http://pecl.php.net/package/memcache
@@ -204,6 +204,6 @@ Parabéns! A aplicação WordPress centralizou a cache de memória interna para 
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -16,8 +16,8 @@ ms.workload: na
 ms.date: 10/31/2016
 ms.author: araguila
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 2d44af03b8e16a2bd936fc805ed4f0c4e6c5fbfc
+ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
+ms.openlocfilehash: 32da7abc3263e1d76f3f08ccae7ce159ead58bee
 
 
 ---
@@ -41,16 +41,16 @@ Ao prever o momento em que é necessária a manutenção, a Fabrikam pode otimiz
 Para compreender como [Azure IoT Suite][lnk_iot_suite] fornece as capacidades de que os clientes precisam para realizar o potencial da manutenção preditiva, reveja este [gráfico informativo][lnk_infographic].
 
 ## <a name="how-the-predictive-maintenance-solution-is-built"></a>Como é criada a solução de manutenção preditiva
-A solução tira partido de um modelo existente do Azure Machine Learning, disponível como um modelo para mostrar estas capacidades de trabalhar a partir da telemetria do dispositivo recolhida através dos serviços do IoT Suite. A Microsoft criou um [modelo de regressão][lnk_regression_model] de um motor de aeronave e publicou o modelo completo, os dados<sup>\[1\]</sup> e as orientações passo a passo sobre a utilização do modelo.
+A solução tira partido de um modelo existente do Azure Machine Learning, disponível como um modelo para mostrar estas capacidades de trabalhar a partir da telemetria do dispositivo recolhida através dos serviços do IoT Suite. A Microsoft criou um [modelo de regressão][lnk_regression_model] de um motor de aeronave e publicou o modelo completo, os dados<sup>\[1\]</sup> e a documentação de orientação passo a passo sobre a utilização do modelo.
 
 A solução pré-configurada de manutenção preditiva do Azure IoT utiliza o modelo de regressão criado a partir desse modelo; é implementada na sua subscrição do Azure e exposta através de uma API gerada automaticamente. A solução inclui um subconjunto dos dados de teste que representam 4 (em 100, no total) motores e os 4 (em 21, no total) fluxos de dados do sensor que fornecem um resultado preciso do modelo de preparação.
 
 *\[1\] A. Saxena e K. Goebel (2008). "Turbofan Engine Degradation Simulation Data Set", NASA Ames Prognostics Data Repository (http://ti.arc.nasa.gov/tech/dash/pcoe/prognostic-data-repository/), NASA Ames Research Center, Moffett Field, CA*
 
 ## <a name="next-steps"></a>Passos seguintes
-Para saber mais sobre como o Azure IoT permite cenários de manutenção preditiva, leia o artigo [Valor de captura da Internet das Coisas][lnk_capture_value].
+Para saber mais sobre como o Azure IoT permite cenários de manutenção preditiva, leia o artigo [Capture value from the Internet of Things (Valor de captura da Internet das Coisas)][lnk_capture_value].
 
-Siga as [instruções][lnk-predictive-walkthrough] da solução pré-configurada da manutenção preditiva.
+Siga as [instruções][lnk-predictive-walkthrough] sobre a solução pré-configurada de manutenção preditiva.
 
 [lnk-predictive-walkthrough]: iot-suite-predictive-walkthrough.md
 [lnk_preconfigured_solutions]: iot-suite-what-are-preconfigured-solutions.md
@@ -63,13 +63,13 @@ Siga as [instruções][lnk-predictive-walkthrough] da solução pré-configurada
 Também pode explorar algumas das outras funcionalidades e capacidades das soluções pré-configuradas do IoT Suite:
 
 * [Perguntas mais frequentes sobre o IoT Suite][lnk-faq]
-* [Segurança de IoT a partir do zero][lnk-security-groundup]
+* [Segurança de IoT desde o início][lnk-security-groundup]
 
 [lnk-faq]: iot-suite-faq.md
 [lnk-security-groundup]: securing-iot-ground-up.md
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -16,8 +16,8 @@ ms.topic: get-started-article
 ms.date: 10/26/2016
 ms.author: garye
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 36fd6b01dae6aa9a48985a252766d3f2d0b19342
+ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
+ms.openlocfilehash: fd0e8f5bd41fcf105571f76aab2f192c2f6dd21d
 
 
 ---
@@ -101,7 +101,7 @@ Para conjuntos de dados superiores a alguns GB, deverá carregar os dados para o
 
 **Posso ler dados do Amazon S3?**
 
-Se tiver uma pequena quantidade de dados e quiser expô-la através de um URL de http, pode utilizar o módulo [Importar dados][importar dados]. Para maiores quantidades de dados que pretenda transferir primeiro para o Storage do Azure e depois utilizar o módulo [Importar dados][importar dados] para o incluir na sua experiência.
+Se tiver uma pequena quantidade de dados e quiser expô-la através de um URL de http, pode utilizar o módulo [Importar Dados][import-data]. Para maiores quantidades de dados que pretenda transferir primeiro para o Storage do Azure e depois utilizar o módulo [Importar dados][import-data] para o incluir na sua experiência.
 <!--
 
 <SEE CLOUD DS PROCESS>
@@ -109,7 +109,7 @@ Se tiver uma pequena quantidade de dados e quiser expô-la através de um URL de
 
 **Existe uma capacidade de entrada de imagem incorporada?**
 
-Pode saber mais sobre a capacidade de entrada de imagem na referência [Importar imagens][imagem-leitor].
+Pode saber mais sobre a capacidade de entrada de imagem na referência [Importar imagens][image-reader].
 
 ### <a name="modules"></a>Módulos
 **O algoritmo, a origem de dados, o formato de dados ou a operação de transformação de dados que procuro não está no Azure Machine Learning Studio. Quais são as minhas opções?**
@@ -140,7 +140,7 @@ Uma vez que os dados estão a ser transmitidos para o browser e podem ser de gra
 ### <a name="algorithms"></a>Algoritmos
 **Que algoritmos existentes são suportados no Machine Learning Studio?**
 
-O Machine Learning Studio dispõe de algoritmos avançados, como Árvores de Decisão Escaláveis, Sistemas de Recomendação Bayesianos, Redes Neurais Profundas e Selvas de Decisão desenvolvidas junto da Microsoft Research. Estão também incluídos os pacotes open-source do Machine Learning como o Adalberto como o Vowpal Wabbit. O Machine Learning Studio suporta algoritmos de machine learning para classificação de várias classes e binária, regressão e clustering. Consulte a lista completa de [Módulos do Machine Learning][módulos de machine learning].
+O Machine Learning Studio dispõe de algoritmos avançados, como Árvores de Decisão Escaláveis, Sistemas de Recomendação Bayesianos, Redes Neurais Profundas e Selvas de Decisão desenvolvidas junto da Microsoft Research. Estão também incluídos os pacotes open-source do Machine Learning como o Adalberto como o Vowpal Wabbit. O Machine Learning Studio suporta algoritmos de machine learning para classificação de várias classes e binária, regressão e clustering. Consulte a lista completa de [Módulos do Machine Learning][machine-learning-modules].
 
 **Sugere automaticamente o algoritmo correto do Machine Learning a utilizar com os meus dados?**
 
@@ -224,7 +224,7 @@ Depois de ter sido implementado um modelo preditivo, poderá monitorizá-lo a pa
 
 **Existe um local onde posso ver a saída da minha RRS/BES?**
 
-Para RRS, vê normalmente o resultado na resposta do serviço Web. Também pode escrevê-lo para o Blob Storage do Azure. Para BES, o resultado é escrito num blob por predefinição. Também pode escrever a saída numa base de dados ou tabela, utilizando o módulo [Exportar dados][exportar dados].
+Para RRS, vê normalmente o resultado na resposta do serviço Web. Também pode escrevê-lo para o Blob Storage do Azure. Para BES, o resultado é escrito num blob por predefinição. Também pode escrever a saída numa base de dados ou tabela, utilizando o módulo [Exportar dados][export-data].
 
 **Posso criar serviços Web apenas a partir de modelos criados no Machine Learning Studio?**
 
@@ -245,7 +245,7 @@ Não.
 
 **Que quantidade de dados posso utilizar para formação?**
 
-Os módulos no Machine Learning Studio suportam conjuntos de dados até 10 GB de dados numéricos em casos de utilização comum. Se um módulo precisar mais do que uma entrada de dados, 10 GB é o tamanho total de todas as entradas de dados. Também pode apresentar exemplos dos conjuntos de dados de maiores dimensões através de consultas no Hive ou na SQL Database do Azure ou do pré-processamento com os módulos [Aprender com as contagens][contas] módulos antes da ingestão.  
+Os módulos no Machine Learning Studio suportam conjuntos de dados até 10 GB de dados numéricos em casos de utilização comum. Se um módulo precisar mais do que uma entrada de dados, 10 GB é o tamanho total de todas as entradas de dados. Também pode apresentar exemplos dos conjuntos de dados de maiores dimensões através de consultas no Hive ou na Base de Dados SQL do Azure ou do pré-processamento com os módulos [Aprender com as contagens][counts] módulos antes da ingestão.  
 
 Os seguintes tipos de dados podem ser expandidos para conjuntos de dados de maiores dimensões durante a normalização da funcionalidade, estando limitados a menos de 10 GB:
 
@@ -332,7 +332,7 @@ Para obter informações adicionais sobre faturação e preços, consulte [Preç
 
  O Azure Machine Learning tem uma opção de subscrição gratuita (veja [Preços de Machine Learning](https://azure.microsoft.com/pricing/details/machine-learning/) para obter detalhes), ao passo que o Machine Learning Studio disponibiliza uma versão de avaliação rápida de 8 horas (inicie sessão no [Machine Learning Studio](https://studio.azureml.net/?selectAccess=true&o=2) para obter esta versão de avaliação).
 
- Além disso, quando se inscreve numa versão de avaliação gratuita do Azure, pode experimentar todos os serviços do Azure durante um mês. Para obter mais informações sobre a versão de avaliação gratuita do Azure, visite [Perguntas mais frequentes sobre a versão de avaliação gratuita do Azure](/pricing/free-trial-faq/).
+ Além disso, quando se inscreve numa versão de avaliação gratuita do Azure, pode experimentar todos os serviços do Azure durante um mês. Para obter mais informações sobre a versão de avaliação gratuita do Azure, visite [Perguntas mais frequentes sobre a versão de avaliação gratuita do Azure](https://azure.microsoft.com/pricing/free-trial-faq/).
 
 **O que é uma transação?**
 
@@ -432,7 +432,7 @@ Os novos planos de faturação estão disponíveis nas três regiões de produç
 
 Sim. Os preços dos planos variam consoante a região. Quando implementa um serviço Web noutra região, tem de lhe atribuir um plano específico para essa região.
 
-### <a name="new-web-services-overages"></a>Novos Serviços Web – Utilização excedida
+### <a name="new-web-services---overages"></a>Novos Serviços Web – Utilização excedida
 **Como posso ver se a utilização do meu serviço Web foi excedida?**
 
 Pode ver a utilização de todos os seus planos na página Planos do portal dos Serviços Web Azure Machine Learning. Inicie sessão no portal e clique na opção de menu Planos.
@@ -534,17 +534,17 @@ O Acesso de Convidado é uma experimentação de avaliação restrita que lhe pe
 
 <!-- Module References -->
 [image-reader]: https://msdn.microsoft.com/library/azure/893f8c57-1d36-456d-a47b-d29ae67f5d84/
-[aderir]: https://msdn.microsoft.com/library/azure/124865f7-e901-4656-adac-f4cb08248099/
+[join]: https://msdn.microsoft.com/library/azure/124865f7-e901-4656-adac-f4cb08248099/
 [machine-learning-modules]: https://msdn.microsoft.com/library/azure/6d9e2516-1343-4859-a3dc-9673ccec9edc/
 [partition-and-sample]: https://msdn.microsoft.com/library/azure/a8726e34-1b3e-4515-b59a-3e4a475654b8/
 [import-data]: https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/
 [export-data]: https://msdn.microsoft.com/library/azure/7A391181-B6A7-4AD4-B82D-E419C0D6522C
-[dividir]: https://msdn.microsoft.com/library/azure/70530644-c97a-4ab6-85f7-88bf30a8be5f/
+[split]: https://msdn.microsoft.com/library/azure/70530644-c97a-4ab6-85f7-88bf30a8be5f/
 [python]: https://msdn.microsoft.com/library/azure/CDB56F95-7F4C-404D-BDE7-5BB972E6F232
-[contagens]: https://msdn.microsoft.com/library/azure/dn913056.aspx
+[counts]: https://msdn.microsoft.com/library/azure/dn913056.aspx
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 

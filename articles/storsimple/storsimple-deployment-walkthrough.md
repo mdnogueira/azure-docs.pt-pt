@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 08/17/2016
 ms.author: alkohli
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: d9e5f3b177f6b91abe48d3bb6d49a2d3195e6f79
+ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
+ms.openlocfilehash: a14be6bf8135cdfc7e5b9eb3b6d7af3bdd4561a7
 
 
 ---
-# <a name="deploy-your-onpremises-storsimple-device"></a>Implementar o dispositivo StorSimple no local
+# <a name="deploy-your-on-premises-storsimple-device"></a>Implementar o dispositivo StorSimple no local
 > [!div class="op_single_selector"]
 > * [Atualização 2](storsimple-deployment-walkthrough-u2.md)
 > * [Atualização 1](storsimple-deployment-walkthrough-u1.md)
@@ -146,7 +146,7 @@ Antes de começar, certifique-se de que:
 |  | | |
 | **Registo** |Verifique se as portas TCP de saída 443, 80, 9354 estão abertas. |`Test-NetConnection -Port   443 -InformationLevel Detailed`</br>[Mais informações do cmdlet Test-NetConnection](https://technet.microsoft.com/library/dn372891.aspx) |
 
-## <a name="stepbystep-deployment"></a>Implementação passo-a-passo
+## <a name="step-by-step-deployment"></a>Implementação passo-a-passo
 Siga as seguintes instruções passo-a-passo para implementar o dispositivo StorSimple no datacenter.
 
 ## <a name="step-1-create-a-new-service"></a>Passo 1: Criar um novo serviço
@@ -286,6 +286,6 @@ Execute os seguintes passos no Portal Clássico do Azure para criar uma cópia d
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 

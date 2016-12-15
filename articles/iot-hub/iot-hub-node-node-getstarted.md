@@ -1,6 +1,6 @@
 ---
-title: "Hub IoT do Azure para uma introdução ao Node.js | Microsoft Docs"
-description: "IoT Hub do Azure com tutorial de introdução ao Node.js. Utilize o Hub IoT do Azure e o Node.js com os SDKs IoT do Azure para implementar uma solução de Internet das Coisas."
+title: "Introdução ao Hub IoT do Azure (Node) | Microsoft Docs"
+description: "Como enviar mensagens do dispositivo para a cloud a partir de um dispositivo para um hub IoT do Azure com os SDKs do Azure IoT para Node.js. Cria uma aplicação de dispositivo simulada para enviar mensagens, uma aplicação de serviço para registar o seu dispositivo no registo de identidade e uma aplicação de serviço para ler as mensagens do dispositivo para a cloud a partir do hub IoT."
 services: iot-hub
 documentationcenter: nodejs
 author: dominicbetts
@@ -15,12 +15,12 @@ ms.workload: na
 ms.date: 09/12/2016
 ms.author: dobett
 translationtype: Human Translation
-ms.sourcegitcommit: 00746fa67292fa6858980e364c88921d60b29460
-ms.openlocfilehash: 91794776d0faf9dd5b7385e00ca907f13b493908
+ms.sourcegitcommit: a243e4f64b6cd0bf7b0776e938150a352d424ad1
+ms.openlocfilehash: 6a4275b7fb7501fec4e98f87b09e20b2114b556b
 
 
 ---
-# <a name="get-started-with-azure-iot-hub-for-nodejs"></a>Introdução ao IoT Hub do Azure para Node.js
+# <a name="get-started-with-azure-iot-hub-node"></a>Introdução ao Hub IoT do Azure (Node)
 [!INCLUDE [iot-hub-selector-get-started](../../includes/iot-hub-selector-get-started.md)]
 
 No final deste tutorial, tem três aplicações de consola do Node.js:
@@ -44,7 +44,7 @@ Para concluir este tutorial, precisa do seguinte:
 Criou o seu hub IoT. Tem o nome de anfitrião e a cadeia de ligação do Hub IoT de que precisa para concluir o resto deste tutorial.
 
 ## <a name="create-a-device-identity"></a>Criar uma identidade de dispositivo
-Nesta secção, vai criar uma aplicação de consola do Node.js que cria uma identidade de dispositivo no registo de identidade do seu hub IoT. Não é possível ligar um dispositivo ao hub IoT, exceto se tiver uma entrada no registo de identidade. Para obter mais informações, veja a secção **Registo de Identidades (Identity Registry)** do [IoT Hub Developer Guide (Guia do Programador do Hub IoT)][lnk-devguide-identity]. Ao executar esta aplicação de consola, é gerado um ID de dispositivo exclusivo e uma chave que o seu dispositivo pode utilizar para se identificar quando enviar mensagens do dispositivo para a nuvem ao Hub IoT.
+Nesta secção, vai criar uma aplicação de consola do Node.js que cria uma identidade de dispositivo no registo de identidade do seu hub IoT. Não é possível ligar um dispositivo ao hub IoT, exceto se tiver uma entrada no registo de identidade. Para obter mais informações, veja a secção **Registo de Identidades (Identity Registry)** do [IoT Hub developer guide (Guia do programador do Hub IoT)][lnk-devguide-identity]. Ao executar esta aplicação de consola, será gerado um ID de dispositivo único e uma chave que o seu dispositivo pode utilizar para identificar-se quando enviar mensagens do dispositivo para a nuvem ao IoT Hub.
 
 1. Criar uma nova pasta designada **createdeviceidentity**. Na pasta **createdeviceidentity**, crie um ficheiro package.json com o seguinte comando na sua linha de comandos. Aceite todas as predefinições:
    
@@ -64,14 +64,14 @@ Nesta secção, vai criar uma aplicação de consola do Node.js que cria uma ide
    
     var iothub = require('azure-iothub');
     ```
-5. Adicione o seguinte código ao ficheiro **CreateDeviceIdentity.js** e substitua o valor do marcador de posição pela cadeia de ligação para o Hub IoT que criou na secção anterior: 
+5. Adicione o seguinte código ao ficheiro **CreateDeviceIdentity.js** e substitua o valor do marcador de posição pela cadeia de ligação do Hub IoT para o hub que criou na secção anterior: 
    
     ```
     var connectionString = '{iothub connection string}';
    
     var registry = iothub.Registry.fromConnectionString(connectionString);
     ```
-6. Adicione o seguinte código para criar uma definição de dispositivo no registo de identidade do dispositivo do seu hub IoT. Este código cria um dispositivo se o id de dispositivo não existir no registo. Caso contrário, irá devolver a chave do dispositivo existente:
+6. Adicione o seguinte código para criar uma definição de dispositivo no registo de identidade do dispositivo do seu hub IoT. Este código cria um dispositivo se o ID de dispositivo não existir no registo de identidade. Caso contrário, irá devolver a chave do dispositivo existente:
    
     ```
     var device = new iothub.Device(null);
@@ -87,7 +87,7 @@ Nesta secção, vai criar uma aplicação de consola do Node.js que cria uma ide
    
     function printDeviceInfo(err, deviceInfo, res) {
       if (deviceInfo) {
-        console.log('Device id: ' + deviceInfo.deviceId);
+        console.log('Device ID: ' + deviceInfo.deviceId);
         console.log('Device key: ' + deviceInfo.authentication.symmetricKey.primaryKey);
       }
     }
@@ -98,10 +98,10 @@ Nesta secção, vai criar uma aplicação de consola do Node.js que cria uma ide
     ```
     node CreateDeviceIdentity.js 
     ```
-9. Tome note do **Id do Dispositivo** e da **Chave do Dispositivo**. Vai precisar destes valores mais tarde quando criar uma aplicação que liga ao Hub IoT como um dispositivo.
+9. Tome note do **ID do Dispositivo** e da **Chave do dispositivo**. Vai precisar destes valores mais tarde quando criar uma aplicação que liga ao Hub IoT como um dispositivo.
 
 > [!NOTE]
-> O registo de identidade do Hub IoT apenas armazena identidades de dispositivos para permitir um acesso seguro ao Hub IoT. Armazena os IDs do dispositivo e as chaves a utilizar como credenciais de segurança e um sinalizador ativado/desativado que pode utilizar para desativar o acesso de um dispositivo individual. Se a sua aplicação tiver de armazenar outros metadados específicos do dispositivo, deverá utilizar um armazenamento específico da aplicação.  Para obter mais informações, veja o [IoT Hub Developer Guide (Guia do Programador do Hub IoT)][lnk-devguide-identity].
+> O registo de identidade do Hub IoT apenas armazena identidades de dispositivos para permitir um acesso seguro ao Hub IoT. Armazena os IDs do dispositivo e as chaves a utilizar como credenciais de segurança e um sinalizador ativado/desativado que pode utilizar para desativar o acesso de um dispositivo individual. Se a sua aplicação tiver de armazenar outros metadados específicos do dispositivo, deverá utilizar um armazenamento específico da aplicação.  Para obter mais informações, veja o [IoT Hub developer guide (Guia do programador do Hub IoT)][lnk-devguide-identity].
 > 
 > 
 
@@ -131,7 +131,7 @@ Nesta secção, vai criar uma aplicação de consola do Node.js que lê mensagen
    
     var EventHubClient = require('azure-event-hubs').Client;
     ```
-5. Adicione a seguinte declaração de variável e substitua o valor do marcador pela cadeia de ligação para o seu hub IoT:
+5. Adicione a seguinte declaração de variável e substitua o valor do marcador pela cadeia de ligação do Hub IoT para o seu hub:
    
     ```
     var connectionString = '{iothub connection string}';
@@ -190,7 +190,7 @@ Nesta secção, vai criar uma aplicação de consola do Node.js que simula um di
     var clientFromConnectionString = require('azure-iot-device-amqp').clientFromConnectionString;
     var Message = require('azure-iot-device').Message;
     ```
-5. Adicione uma variável **connectionString** e utilize-a para criar um cliente do dispositivo. Substitua **{oseunomedeanfitriãoiot}** pelo nome do hub IoT que criou na secção *Criar um Hub IoT*. Substitua **{asuachavededispositivo}** pelo valor da chave do dispositivo que gerou na secção *Criar uma identidade de dispositivo*:
+5. Adicione uma variável **connectionString** e utilize-a para criar uma instância do **Cliente**. Substitua **{oseunomedeanfitriãoiot}** pelo nome do hub IoT que criou na secção *Criar um Hub IoT*. Substitua **{asuachavededispositivo}** pelo valor da chave do dispositivo que gerou na secção *Criar uma identidade de dispositivo*:
    
     ```
     var connectionString = 'HostName={youriothostname};DeviceId=myFirstNodeDevice;SharedAccessKey={yourdevicekey}';
@@ -242,20 +242,20 @@ Nesta secção, vai criar uma aplicação de consola do Node.js que simula um di
 ## <a name="run-the-apps"></a>Executar as aplicações
 Já está pronto para executar as aplicações.
 
-1. Numa linha de comandos da pasta **readdevicetocloudmessages**, execute o seguinte comando para começar a monitorizar o seu IoT Hub:
+1. Numa linha de comandos da pasta **readdevicetocloudmessages**, execute o seguinte comando para começar a monitorizar o seu Hub IoT:
    
     ```
     node ReadDeviceToCloudMessages.js 
     ```
    
-    ![Aplicação cliente do serviço Hub IoT Node.js para monitorizar mensagens do dispositivo para a nuvem][7]
-2. Numa linha de comandos da pasta **simulateddevice**, execute o seguinte comando para começar a enviar dados de telemetria ao seu IoT Hub:
+    ![Aplicação do serviço Hub IoT Node.js para monitorizar mensagens do dispositivo para a cloud][7]
+2. Numa linha de comandos da pasta **simulateddevice**, execute o seguinte comando para começar a enviar dados de telemetria ao seu Hub IoT:
    
     ```
     node SimulatedDevice.js
     ```
    
-    ![Aplicação cliente do serviço Hub IoT Node.js para enviar mensagens do dispositivo para a nuvem][8]
+    ![Aplicação do dispositivo Hub IoT Node.js para enviar mensagens do dispositivo para a cloud][8]
 3. O mosaico **Utilização** no [portal do Azure][lnk-portal] mostra o número de mensagens enviadas ao Hub IoT:
    
     ![Mosaico “Utilização do portal do Azure”, que mostra o número de mensagens enviadas para o Hub IoT][43]
@@ -296,6 +296,6 @@ Para saber como expandir a sua solução de IoT e processar mensagens do disposi
 
 
 
-<!--HONumber=Nov16_HO5-->
+<!--HONumber=Dec16_HO1-->
 
 

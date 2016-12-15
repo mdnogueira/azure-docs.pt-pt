@@ -15,12 +15,12 @@ ms.topic: get-started-article
 ms.date: 10/17/2016
 ms.author: kgremban
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: d7d909184eb129e46ffc350505101e68c1426c46
+ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
+ms.openlocfilehash: c6fe00b72d95a3eb40d91f6f7989b7163518c46f
 
 
 ---
-# <a name="getting-started-with-azure-multifactor-authentication-in-the-cloud"></a>Introdução ao Multi-Factor Authentication do Azure na nuvem
+# <a name="getting-started-with-azure-multi-factor-authentication-in-the-cloud"></a>Introdução ao Multi-Factor Authentication do Azure na nuvem
 Este artigo descreve como começar a utilizar o Multi-Factor Authentication do Azure na nuvem.
 
 > [!NOTE]
@@ -41,12 +41,12 @@ São necessários os seguintes pré-requisitos antes de poder ativar o Multi-Fac
 > 
 > 
 
-## <a name="turn-on-twostep-verification-for-users"></a>Ativar a verificação de dois passos para os utilizadores
+## <a name="turn-on-two-step-verification-for-users"></a>Ativar a verificação de dois passos para os utilizadores
 Para começar a exigir a verificação de dois passos a um utilizador, altere o estado do utilizador de desativado para ativado.  Para obter mais informações sobre os estados do utilizador, veja [User States in Azure Multi-Factor Authentication (Estados do Utilizador no Multi-Factor Authentication do Azure)](multi-factor-authentication-get-started-user-states.md)
 
 Utilize o procedimento seguinte para ativar o MFA para os utilizadores.
 
-### <a name="to-turn-on-multifactor-authentication"></a>Para ativar a autenticação multifator
+### <a name="to-turn-on-multi-factor-authentication"></a>Para ativar a autenticação multifator
 1. Inicie sessão no [portal clássico do Azure](https://manage.windowsazure.com) como administrador.
 2. No lado esquerdo, clique em **Active Directory**.
 3. Em Diretório, selecione o diretório do utilizador que pretende ativar.
@@ -66,8 +66,8 @@ Utilize o procedimento seguinte para ativar o MFA para os utilizadores.
 
 Depois de ter ativado os utilizadores, deverá notificá-los por e-mail. Da próxima vez que tentarem iniciar sessão, estes serão solicitados a inscrever a respetiva conta para a verificação de dois passos. Assim que começarem a utilizar a verificação de dois passos, também terão de configurar as palavras-passe das aplicações para evitarem ficar com o acesso bloqueado a aplicações fora do browser.
 
-## <a name="use-powershell-to-automate-turning-on-twostep-verification"></a>Utilizar o PowerShell para automatizar a ativação da verificação de dois passos
-Para alterar o [estado](multi-factor-authentication-whats-next.md) através do [Azure AD PowerShell](../powershell-install-configure.md), pode utilizar o seguinte.  Pode alterar `$st.State` para ser igual a um dos seguintes estados:
+## <a name="use-powershell-to-automate-turning-on-two-step-verification"></a>Utilizar o PowerShell para automatizar a ativação da verificação de dois passos
+Para alterar o [estado](multi-factor-authentication-whats-next.md) através do [Azure AD PowerShell](/powershell/azureps-cmdlets-docs), pode utilizar o seguinte.  Pode alterar `$st.State` para ser igual a um dos seguintes estados:
 
 * Ativado
 * Imposto
@@ -107,6 +107,6 @@ Agora que configurou o Multi-Factor Authentication do Azure na nuvem, pode confi
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 

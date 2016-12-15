@@ -1,7 +1,7 @@
 Certifique-se que já criou um espaço de nomes do Service Bus, como mostrado [aqui][namespace-how-to].
 
 1. Inicie sessão no [Portal do Azure][azure-portal].
-2. No painel de navegação esquerdo do portal, clique em **Service Bus**.
+2. No painel de navegação à esquerda do portal, clique em **Service Bus** (se não vir **Service Bus**, clique em **Mais serviços**).
 3. Selecione o espaço de nomes no qual gostaria de criar a fila. Neste caso, é **nstest1**.
    
     ![Criar uma fila][createqueue1]
@@ -21,6 +21,6 @@ Certifique-se que já criou um espaço de nomes do Service Bus, como mostrado [a
 [azure-portal]: https://portal.azure.com
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 

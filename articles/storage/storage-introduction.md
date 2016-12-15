@@ -15,8 +15,8 @@ ms.topic: get-started-article
 ms.date: 11/17/2016
 ms.author: tamram
 translationtype: Human Translation
-ms.sourcegitcommit: 1a6d1497dee72a49705e15bd2907a42f744bd3b5
-ms.openlocfilehash: 3149797c078764fa54c488e8498790ea91d1a1b1
+ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
+ms.openlocfilehash: ac0044da9cf804dabd9d71e3380782120728a55a
 
 
 ---
@@ -200,7 +200,7 @@ O serviço de Importação/Exportação do Azure fornece uma forma de importar o
 * [Ferramentas de Cliente do Armazenamento do Azure](storage-explorers.md)
 * [Azure SDKs e Ferramentas](https://azure.microsoft.com/tools/)
 * [Emulador de Armazenamento do Azure](http://www.microsoft.com/download/details.aspx?id=43709)
-* [Azure PowerShell](../powershell-install-configure.md)
+* [Azure PowerShell](/powershell/azureps-cmdlets-docs)
 * [Utilitário da Linha de Comandos do AzCopy](http://aka.ms/downloadazcopy)
 
 ## <a name="next-steps"></a>Passos Seguintes
@@ -252,6 +252,6 @@ Para saber mais sobre o Storage do Azure, explore estes recursos:
 * [Introdução ao Storage do Azure em cinco minutos](storage-getting-started-guide.md)
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Dec16_HO1-->
 
 

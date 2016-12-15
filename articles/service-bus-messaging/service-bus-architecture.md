@@ -12,16 +12,16 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 07/11/2016
+ms.date: 11/30/2016
 ms.author: sethm
 translationtype: Human Translation
-ms.sourcegitcommit: 9ace119de3676bcda45d524961ebea27ab093415
-ms.openlocfilehash: 09ad9bb1fee50d6063b9a179377cbe4f1c3c7ab2
+ms.sourcegitcommit: 0b1f6f7ec47e47f39407cdbfd5efef2a18944ecc
+ms.openlocfilehash: 6a2e59f9366e411d322b8560f03b115638619966
 
 
 ---
 # <a name="service-bus-architecture"></a>Arquitetura do Service Bus
-Este artigo descreve a arquitetura de processamento de mensagens e do reencaminhamento do Azure Service Bus.
+Este artigo descreve a arquitetura de processamento de mensagens do Service Bus do Azure.
 
 ## <a name="service-bus-scale-units"></a>Unidades de escala do Service Bus
 O Service Bus está organizado por *unidades de escala*. Uma unidade de escala é uma unidade de implementação e contém todos os componentes necessários para executar o serviço. Cada região implementa uma ou mais unidades de escala do Service Bus.
@@ -49,7 +49,7 @@ Quando a ligação de reencaminhamento é estabelecida, os clientes podem trocar
 ![Processamento de Pedidos de Reencaminhamento de WCF Recebidos](./media/service-bus-architecture/IC690645.png)
 
 ## <a name="next-steps"></a>Passos seguintes
-Agora que já leu uma descrição geral da arquitetura do Service Bus, visite as seguintes ligações para começar:
+Agora que já leu uma descrição geral da arquitetura do Service Bus, visite as seguintes ligações para obter mais informações:
 
 * [Descrição geral das mensagens do Service Bus](service-bus-messaging-overview.md)
 * [Noções básicas sobre o Service Bus](service-bus-fundamentals-hybrid-solutions.md)
@@ -58,6 +58,6 @@ Agora que já leu uma descrição geral da arquitetura do Service Bus, visite as
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

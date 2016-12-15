@@ -15,12 +15,12 @@ ms.topic: get-started-article
 ms.date: 09/30/2016
 ms.author: curtand
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: d173847a9d96e5524eae5283fb63857f02e39f10
+ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
+ms.openlocfilehash: 98c8352152b6cd1817d32c6418597c566d94d44f
 
 
 ---
-# <a name="add-company-branding-to-your-signin-and-access-panel-pages"></a>Adicionar a imagem corporativa às suas páginas de início de sessão e Painel de Acesso
+# <a name="add-company-branding-to-your-sign-in-and-access-panel-pages"></a>Adicionar a imagem corporativa às suas páginas de início de sessão e Painel de Acesso
 Para evitar confusões, muitas empresas pretendem aplicar um aspeto e funcionalidade consistentes em todos os Web sites e serviços que gerem. O Azure Active Directory fornece esta capacidade ao permitir-lhe personalizar o aspeto das seguintes páginas web com o logótipo da sua empresa e esquemas de cores personalizados:
 
 * **Página de início de sessão** - Esta é a página que aparece quando inicia sessão Office 365 ou outras aplicações baseadas na web que estão a utilizar o Azure AD como o seu fornecedor de identidade. Interage com esta página durante uma Deteção de Realm Inicial ou ao introduzir as suas credenciais. A Deteção de Realm Inicial permite ao sistema redirecionar utilizadores federados para as respetivas STS no local (por exemplo, o AD FS).
@@ -34,7 +34,7 @@ Este tópico explica como pode personalizar a página de início de sessão e a 
 > 
 > 
 
-## <a name="customizing-the-signin-page"></a>Personalizar a página de início de sessão
+## <a name="customizing-the-sign-in-page"></a>Personalizar a página de início de sessão
 Normalmente, se precisa de acesso baseado em browser para as suas aplicações e serviços na nuvem que a sua organização subscreve, utiliza a página de início de sessão.
 
 Se tiver efetuado alterações na sua página de início de sessão, pode demorar até uma hora para que estas apareçam.
@@ -224,6 +224,6 @@ Alguns elementos personalizáveis no Azure AD tem vários casos de utilização.
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 

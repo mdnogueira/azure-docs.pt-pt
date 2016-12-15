@@ -12,11 +12,11 @@ ms.topic: hero-article
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/28/2016
+ms.date: 12/01/2016
 ms.author: yurid
 translationtype: Human Translation
-ms.sourcegitcommit: 0c946ce6a96f2e3644b9890dad5d60a35ad4bcb7
-ms.openlocfilehash: 10184c52d532eb56e66212fafdea3d059b0c43e3
+ms.sourcegitcommit: 5001cd47b6ee51967d1286414ccefedd8e7e7813
+ms.openlocfilehash: 095b5c9d1a888a4061450234f80c52c5834fbf53
 
 
 ---
@@ -45,25 +45,21 @@ Ao longo do tempo, o Centro de Segurança irá expandir o número de parceiros d
 
 ## <a name="how-to-deploy-a-partner-solution"></a>Como implementar uma solução de parceiro?
 
-As soluções de parceiros que já foram implementadas no Centro de Segurança podem ser facilmente acedidas a partir do mosaico de Solução de parceiro, no dashboard principal do Centro de Segurança:
+Com base na configuração do seu ambiente do Azure e a política de segurança que definiu, o Centro de Segurança poderá recomendar que uma solução de parceiro seja implementada. A recomendação irá guiá-lo ao longo do processo de seleção e instalação de uma solução de parceiro. A experiência de implementação geral nesta altura pode variar de acordo com o tipo de solução e parceiro. Veja as ligações abaixo para obter mais informações:
+
+- [Adicionar uma firewall de aplicação Web](security-center-add-web-application-firewall.md)
+- [Adicionar uma Firewall da Próxima Geração](security-center-add-next-generation-firewall.md)
+- [Instalar o Endpoint Protection](security-center-install-endpoint-protection.md)
+- [Avaliação de vulnerabilidades não instalada](security-center-vulnerability-assessment-recommendations.md)
+
+## <a name="how-to-manage-partner-solutions"></a>Como gerir soluções de parceiros?
+
+Assim que tiver sido implementada uma solução de parceiro, pode ver informações sobre o estado de funcionamento da solução e efetuar tarefas de gestão básicas a partir do mosaico de solução do Parceiro no dashboard do Centro de Segurança principal. Para obter mais informações sobre como gerir soluções de parceiros no Centro de Segurança, leia [Monitoring partner solutions with Azure Security Center (Monitorizar soluções de parceiros com o Centro de Segurança do Azure)](security-center-partner-solutions.md).
 
 ![Integração de Parceiros](./media/security-center-partner-integration/security-center-partner-integration-fig1.png)
 
-Para implementar uma nova solução de parceiro com base numa recomendação do Centro de Segurança, execute os passos seguintes:
 
-> [!NOTE]
-> Os passos no exemplo seguinte partem do princípio de que tem uma carga de trabalho e quer protegê-la com uma firewall de aplicação web.
-
-1. No dashboard do Centro de Segurança, clique no mosaico **Recomendações**.
-2. No painel **Recomendações**, clique em **Adicionar firewall de aplicação Web**.
-3. Clique no nome da aplicação, no painel **Adicionar uma firewall de aplicação Web**.
-4. No painel **Adicionar uma Firewall de Aplicação Web**, clique em **Criar Nova**.
-5. O painel **Criar uma Firewall de Aplicação Web nova** mostra uma lista dos parceiros que oferecem, atualmente, a capacidade de firewall de aplicações Web.
-6. Selecione a solução de parceiro adequada e siga os passos (que podem variar, consoante o parceiro).
-
-A experiência de implementação geral nesta altura pode variar de acordo com o parceiro. Para obter mais informações sobre como gerir soluções de parceiros no Centro de Segurança, leia [Monitorizar soluções de parceiros](security-center-partner-solutions.md) com o Centro de Segurança do Azure.
-
-## <a name="see-also"></a>Consultar também
+## <a name="see-also"></a>Consulte também
 Neste documento, aprendeu a integrar soluções de parceiros no Centro de Segurança do Azure. Para saber mais acerca do Centro de Segurança, consulte o seguinte:
 
 * [Guia de Operações e Planeamento do Centro de Segurança do Azure](security-center-planning-and-operations-guide.md)
@@ -76,6 +72,6 @@ Neste documento, aprendeu a integrar soluções de parceiros no Centro de Segura
 
 
 
-<!--HONumber=Nov16_HO5-->
+<!--HONumber=Dec16_HO1-->
 
 

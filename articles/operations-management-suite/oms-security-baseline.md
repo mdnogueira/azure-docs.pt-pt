@@ -8,15 +8,16 @@ manager: swadhwa
 editor: 
 ms.assetid: 17837c8b-3e79-47c0-9b83-a51c6ca44ca6
 ms.service: operations-management-suite
+ms.custom: oms-security
 ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/08/2016
+ms.date: 12/05/2016
 ms.author: yurid
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 1c3e2cf86a33f9bbe6b34f4f52b82a078b91661f
+ms.sourcegitcommit: f0a512fb0684b1db25353bf4bbd35bdf2a07e1b2
+ms.openlocfilehash: f29b20ba11b030d98a7a5574f816ea132edc3f6d
 
 
 ---
@@ -75,7 +76,7 @@ Neste resultado de registo pode ver o tipo de regra de linha de base que falhou,
 > 
 
 ### <a name="accessing-computers-missing-baseline-assessment"></a>Aceder a computadores com avaliação da linha de base em falta
-O OMS suporta a linha da base de membro de domínio no Windows Server 2008 R2 para Windows Server 2012 R2. A linha de base do Windows Server 2016 ainda não é final e será adicionada assim que for publicada. Todos os outros sistemas operativos analisados através da avaliação da linha de base de Segurança e Auditoria do OMS aparecem na secção **Computadores com avaliação da linha de base em falta**.
+O OMS suporta o perfil da linha da base do Controlador de Domínio e do membro de domínio no Windows Server 2008 R2 até ao Windows Server 2012 R2. A linha de base do Windows Server 2016 ainda não é final e será adicionada assim que for publicada. Todos os outros sistemas operativos analisados através da avaliação da linha de base de Segurança e Auditoria do OMS aparecem na secção **Computadores com avaliação da linha de base em falta**.
 
 ## <a name="see-also"></a>Consultar também
 Neste documento, aprendeu sobre a avaliação da linha de base de Segurança e Auditoria do OMS. Para saber mais sobre a Segurança do OMS, veja os artigos seguintes:
@@ -87,6 +88,6 @@ Neste documento, aprendeu sobre a avaliação da linha de base de Segurança e A
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 

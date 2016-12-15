@@ -16,8 +16,8 @@ ms.topic: hero-article
 ms.date: 11/21/2016
 ms.author: garye
 translationtype: Human Translation
-ms.sourcegitcommit: 60e47e8fd0933ecd25b3bca6085edcd5785dc580
-ms.openlocfilehash: 69561ef82ce6d63bd8a90c871b5bc0cfe03e86ae
+ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
+ms.openlocfilehash: dd3e982ba908e542ce0b536699e37e2bc95e6706
 
 
 ---
@@ -180,7 +180,7 @@ Primeiro, adicionamos um módulo que remove a coluna **normalized-losses** compl
 > [!TIP]
 > Porque é que executámos a experimentação agora? Ao executar a experimentação, as definições das colunas dos nossos dados passam do conjunto de dados para o módulo [Select Columns in Dataset][select-columns] e para o módulo [Clean Missing Data][clean-missing-data]. Isto significa que qualquer módulo que liguemos a [Clean Missing Data][clean-missing-data] também terá estas informações.
 
-Tudo o que fizemos na experimentação até este ponto foi limpar os dados. Se pretender ver o conjunto de dados limpo, clique na porta saída à esquerda do módulo [Clean Missing Data][clean-missing-data] e selecione **Visualize**. Repare que a coluna **perdas normalizadas** já não está mais incluída e não existem valores em falta.
+Tudo o que fizemos na experimentação até este ponto foi limpar os dados. Se pretender ver o conjunto de dados limpo, clique na porta de saída à esquerda do módulo [Clean Missing Data][clean-missing-data] e selecione **Visualize**. Repare que a coluna **perdas normalizadas** já não está mais incluída e não existem valores em falta.
 
 Agora que os dados foram apagados, estamos prontos para especificar quais as funcionalidades que vai utilizar no modelo preditivo.
 
@@ -233,9 +233,9 @@ Para preparar o modelo, damos-lhe um conjunto de dados que incluem o preço. O m
 
 Vamos utilizar os dados quer para preparar o modelo, quer para testá-lo, dividindo-os em conjuntos de dados de preparação e teste separados.
 
-1. Selecione e arraste o módulo [Split Data (Dividir Dados)][dividir] para a tela da experimentação e ligue-o ao último módulo [Select Columns in Dataset][select-columns].
+1. Selecione e arraste o módulo [Split Data (Dividir Dados)][split] para a tela da experimentação e ligue-o ao último módulo [Select Columns in Dataset][select-columns].
 
-2. Clique no módulo [Split Data][dividir] para selecioná-lo. Localize **Fraction of rows in the first output dataset (Fração de linhas no primeiro conjunto de dados de saída)** (no painel **Properties (Propriedades)**, no lado direito da tela) e defina-a como 0,75. Desta forma, vamos utilizar 75% dos dados para preparar o modelo e reter 25% para fins de teste (pode experimentar outras percentagens mais tarde).
+2. Clique no módulo [Split Data][split] para selecioná-lo. Localize **Fraction of rows in the first output dataset (Fração de linhas no primeiro conjunto de dados de saída)** (no painel **Properties (Propriedades)**, no lado direito da tela) e defina-a como 0,75. Desta forma, vamos utilizar 75% dos dados para preparar o modelo e reter 25% para fins de teste (pode experimentar outras percentagens mais tarde).
 
     ![Defina a fração de divisão do módulo "Split Data" como 0,75][set-split-data-percentage]
     <br/>
@@ -244,12 +244,12 @@ Vamos utilizar os dados quer para preparar o modelo, quer para testá-lo, dividi
     > [!TIP]
     > Ao alterar o parâmetro **Seed aleatório**, pode produzir diferentes amostras aleatórias para formação e testar. Este parâmetro controla a propagação do gerador de número pseudo-aleatório.
 
-2. Execute a experimentação. Quando a experimentação é executada, os módulos [Select Columns in Dataset][select-columns] e [Split Data][dividir] passam as definições das colunas para os módulos que vamos adicionar em seguida.  
+2. Execute a experimentação. Quando a experimentação é executada, os módulos [Select Columns in Dataset][select-columns] e [Split Data][split] passam as definições das colunas para os módulos que vamos adicionar em seguida.  
 
-3. Para selecionar o algoritmo do Learning, expanda a categoria **Machine Learning** na paleta do módulo para a esquerda da tela e, em seguida, expanda **Inicializar modelo**. Isto apresenta várias categorias de módulos que podem ser utilizadas para inicializar algoritmos do Machine Learning. Nesta experimentação, selecione o módulo [Linear Regression (Regressão Linear)][regressão linear], na categoria **Regression (Regressão)** e arraste-o para a tela da experimentação.
+3. Para selecionar o algoritmo do Learning, expanda a categoria **Machine Learning** na paleta do módulo para a esquerda da tela e, em seguida, expanda **Inicializar modelo**. Isto apresenta várias categorias de módulos que podem ser utilizadas para inicializar algoritmos do Machine Learning. Nesta experimentação, selecione o módulo [Linear Regression (Regressão Linear)][linear-regression], na categoria **Regression (Regressão)** e arraste-o para a tela da experimentação.
 (Para encontrar o módulo, também pode escrever “linear regression” na caixa Pesquisa da paleta.)
 
-4. Localize e arraste o módulo [Modelo de formação][train-model] para a tela de experimentação. Ligue a saída do módulo [Linear Regression][regressão linear] à entrada da esquerda do módulo [Train Model (Preparar Modelo)][train-model] e ligue a saída de dados de preparação (porta da esquerda) do módulo [Split Data][dividir] à entrada da direita do módulo [Train Model][train-model].
+4. Localize e arraste o módulo [Modelo de formação][train-model] para a tela de experimentação. Ligue a saída do módulo [Linear Regression][linear-regression] à entrada da esquerda do módulo [Train Model][train-model] e ligue a saída de dados de preparação (porta da esquerda) do módulo [Split Data][split] à entrada da direita do módulo [Train Model][train-model].
 
     ![Ligue o módulo “Train Module” aos módulos “Linear Regression” e “Split Data”][connect-train-model]
     <br/>
@@ -275,26 +275,26 @@ Temos agora um modelo de regressão preparado que pode ser utilizado para classi
 
 Agora que experimentámos o modelo, utilizando 75% dos nossos dados, podemos utilizá-lo para pontuar os outros 25% por cento dos dados para ver quão bem funciona o nosso modelo.
 
-1. Localize e arraste o módulo [Score Model (Classificar Modelo)][modelo de pontuação] para a tela da experimentação. Ligue a saída do módulo [Train Model][train-model] à porta de entrada da esquerda de [Score Model][modelo de pontuação]. Ligue a saída de dados de teste (porta da direita) do módulo [Split Data][dividir] à porta de entrada da direita de [Score Model][modelo de pontuação].
+1. Localize e arraste o módulo [Score Model (Classificar Modelo)][score-model] para a tela da experimentação. Ligue a saída do módulo [Train Model][train-model] à porta de entrada da esquerda de [Score Model][score-model]. Ligue a saída de dados de teste (porta da direita) do módulo [Split Data][split] à porta de entrada da direita de [Score Model][score-model].
 
     ![Ligue o módulo "Score Model" aos módulos "Train Model" e "Split Data"][connect-score-model]
     <br/>
     ***Ligue o módulo "Score Model" aos módulos "Train Model" e "Split Data"***
 
-2. Execute a experimentação e veja a saída do módulo [Score Model][modelo de pontuação] (clique na porta de saída de [Score Model][modelo de pontuação] e selecione **Visualize**). O resultado mostra os valores previstos para os preços e os valores conhecidos dos dados do teste.  
+2. Execute a experimentação e veja a saída do módulo [Score Model][score-model] (clique na porta de saída de [Score Model][score-model] e selecione **Visualize**). O resultado mostra os valores previstos para os preços e os valores conhecidos dos dados do teste.  
 
     ![Saída do módulo “Score Model”][score-model-output]
     <br/>
     ***Saída do módulo “Score Model”***
 
-3. Por fim, vamos testar a qualidade dos resultados. Selecione e arraste o módulo [Evaluate Model (Avaliar Modelo)][evaluate-model] para a tela da experimentação e ligue a saída do módulo [Score Model][modelo de pontuação] à entrada da esquerda de [Evaluate Model][evaluate-model].
+3. Por fim, vamos testar a qualidade dos resultados. Selecione e arraste o módulo [Evaluate Model (Avaliar Modelo)][evaluate-model] para a tela da experimentação e ligue a saída do módulo [Score Model][score-model] à entrada da esquerda de [Evaluate Model][evaluate-model].
 
     > [!TIP]
     > Existem duas portas de entrada no módulo [Evaluate Model][evaluate-model], porque este pode ser utilizado para comparar dois modelos lado a lado. Posteriormente, pode adicionar outro algoritmo à experimentação e utilizar [Evaluate Model][evaluate-model] para ver qual dos dois dá melhores resultados.
 
 4. Execute a experimentação.
 
-Para ver o resultado do módulo [Modelo de avaliação][evaluate-model], clique na porta de saída e, em seguida, selecione **Visualizar**.
+Para ver o resultado do módulo [Evaluate Model][evaluate-model], clique na porta de saída e, em seguida, selecione **Visualize**.
 
 ![Resultados da avaliação da experimentação][evaluation-results]
 <br/>
@@ -322,7 +322,7 @@ A experimentação final deve ter este aspeto:
 
 Agora que concluiu o primeiro tutorial de machine learning e que a sua experimentação está configurada, pode continuar a melhorar o modelo e, depois, implementá-lo como um serviço Web preditivo.
 
-- **Repetir, para tentar melhorar o modelo** - por exemplo, pode alterar as características utilizadas na predição. Ou pode modificar as propriedades do algoritmo [Regressão Linear][regressão linear] ou tentar um algoritmo totalmente diferente. Pode, inclusivamente adicionar, de uma só vez, vários algoritmos de machine learning à sua experimentação e comparar dois deles com o módulo [Evaluate Model][evaluate-model].
+- **Repetir, para tentar melhorar o modelo** - por exemplo, pode alterar as características utilizadas na predição. Em alternativa, pode modificar as propriedades do algoritmo [Linear Regression][linear-regression] ou tentar um algoritmo totalmente diferente. Pode, inclusivamente adicionar, de uma só vez, vários algoritmos de machine learning à sua experimentação e comparar dois deles com o módulo [Evaluate Model][evaluate-model].
 Para obter um exemplo de como comparar vários modelos numa experimentação individual, veja [Compare Regressors (Comparar Regressores)](https://gallery.cortanaintelligence.com/Experiment/Compare-Regressors-5), na [Cortana Intelligence Gallery](https://gallery.cortanaintelligence.com).
 
     > [!TIP]
@@ -330,13 +330,13 @@ Para obter um exemplo de como comparar vários modelos numa experimentação ind
 
 [runhistory]: machine-learning-manage-experiment-iterations.md
 
-- **Implementar o modelo como um serviço Web preditivo** - quando estiver satisfeito com o seu modelo, pode implementá-lo como um serviço Web e utilizá-lo para prever preços de automóveis com dados novos. Para obter mais detalhes, veja [Deploy an Azure Machine Learning web service (Implementar um serviço Web do Azure Machine Learning)][publicar].
+- **Implementar o modelo como um serviço Web preditivo** - quando estiver satisfeito com o seu modelo, pode implementá-lo como um serviço Web e utilizá-lo para prever preços de automóveis com dados novos. Para obter mais detalhes, veja [Deploy an Azure Machine Learning web service (Implementar um serviço Web do Azure Machine Learning)][publish].
 
-[publicar]: machine-learning-publish-a-machine-learning-web-service.md
+[publish]: machine-learning-publish-a-machine-learning-web-service.md
 
-Quer saber mais? Para obter instruções mais extensas e detalhadas sobre o processo de criação, preparação, classificação e implementação de modelos, veja [Desenvolver uma solução preditiva com o Azure Machine Learning][instruções].
+Quer saber mais? Para obter instruções mais extensas e detalhadas sobre o processo de criação, preparação, classificação e implementação de um modelo, veja [Desenvolver uma solução preditiva com o Azure Machine Learning][walkthrough].
 
-[instruções]: machine-learning-walkthrough-develop-predictive-solution.md
+[walkthrough]: machine-learning-walkthrough-develop-predictive-solution.md
 
 <!-- Images -->
 [sign-in-to-studio]: ./media/machine-learning-create-experiment/sign-in-to-studio.png
@@ -368,15 +368,15 @@ Quer saber mais? Para obter instruções mais extensas e detalhadas sobre o proc
 
 <!-- Module References -->
 [evaluate-model]: https://msdn.microsoft.com/library/azure/927d65ac-3b50-4694-9903-20f6c1672089/
-[regressão linear]: https://msdn.microsoft.com/library/azure/31960a6f-789b-4cf7-88d6-2e1152c0bd1a/
+[linear-regression]: https://msdn.microsoft.com/library/azure/31960a6f-789b-4cf7-88d6-2e1152c0bd1a/
 [clean-missing-data]: https://msdn.microsoft.com/library/azure/d2c5ca2f-7323-41a3-9b7e-da917c99f0c4/
 [select-columns]: https://msdn.microsoft.com/library/azure/1ec722fa-b623-4e26-a44e-a50c6d726223/
-[modelo de pontuação]: https://msdn.microsoft.com/library/azure/401b4f92-e724-4d5a-be81-d5b0ff9bdb33/
-[dividir]: https://msdn.microsoft.com/library/azure/70530644-c97a-4ab6-85f7-88bf30a8be5f/
+[score-model]: https://msdn.microsoft.com/library/azure/401b4f92-e724-4d5a-be81-d5b0ff9bdb33/
+[split]: https://msdn.microsoft.com/library/azure/70530644-c97a-4ab6-85f7-88bf30a8be5f/
 [train-model]: https://msdn.microsoft.com/library/azure/5cc7053e-aa30-450d-96c0-dae4be720977/
 
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Dec16_HO1-->
 
 

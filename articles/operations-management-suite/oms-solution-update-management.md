@@ -12,15 +12,15 @@ ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 10/14/2016
+ms.date: 12/06/2016
 ms.author: magoedte
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 4bd1e84fd9af1273f95f70d941c3a4535984c8a9
+ms.sourcegitcommit: 705bbd78970c6e3c20ef7214704194f722da09a6
+ms.openlocfilehash: 0f00d5a3b8116864d9e66c18d535f319b31b9f9c
 
 
 ---
-# <a name="update-management-solution-in-omsmediaomssolutionupdatemanagementupdatemanagementsolutioniconpng-update-management-solution-in-oms"></a>![Solução de Gestão de Atualizações no OMS](./media/oms-solution-update-management/update-management-solution-icon.png) Solução de Gestão de Atualizações no OMS
+# <a name="update-management-solution-in-oms"></a>Solução de Gestão de Atualizações no OMS
 A solução de Gestão de Atualizações no OMS permite-lhe gerir atualizações para os seus computadores Windows e Linux.  Pode rapidamente avaliar o estado das atualizações disponíveis em todos os computadores agente e iniciar o processo de instalação de atualizações necessárias para os servidores. 
 
 ## <a name="prerequisites"></a>Pré-requisitos
@@ -33,7 +33,10 @@ A solução de Gestão de Atualizações no OMS permite-lhe gerir atualizações
 * Os agentes do Linux têm de ter acesso a um repositório de atualização.  O agente do OMS para Linux pode ser transferido a partir do [GitHub](https://github.com/microsoft/oms-agent-for-linux). 
 
 ## <a name="configuration"></a>Configuração
-Execute os seguintes passos para adicionar a solução de Gestão de Atualizações à sua área de trabalho do OMS e adicionar agentes do Linux.  Os agentes do Windows são adicionados automaticamente, sem configurações adicionais.
+Execute os seguintes passos para adicionar a solução de Gestão de Atualizações à sua área de trabalho do OMS e adicionar agentes do Linux. Os agentes do Windows são adicionados automaticamente, sem configurações adicionais.
+
+> [!NOTE]
+> Atualmente se ativar esta solução, qualquer computador com o Windows ligado à sua área de trabalho do OMS será automaticamente configurado como uma Função de Trabalho de Runbook Híbrida para suportar os runbooks que fazem parte desta solução.  No entanto, não está registado com quaisquer grupos de Função de Trabalho Híbrida que criou na sua conta de Automatização, e não pode adicioná-los a um grupo de Função de Trabalho Híbrida para executar os seus próprios runbooks.  Se um computador com Windows já estiver designado como uma Função de Trabalho de Runbook Híbrida e ligado à área de trabalho do OMS, terá de o remover da área de trabalho do OMS antes de adicionar a solução para impedir que os runbooks deixem de funcionar conforme esperado.  
 
 1. Adicione a solução de Gestão de Atualizações à sua área de trabalho do OMS através do processo descrito em [Add OMS solutions (Adicionar soluções do OMS)](../log-analytics/log-analytics-add-solutions.md), na Galeria de Soluções.  
 2. No portal do OMS, selecione **Definições** e, em seguida, **Origens Ligadas**.  Tenha em atenção o **ID da Área de Trabalho** e a **Chave Primária** ou a **Chave Secundária**.
@@ -41,11 +44,13 @@ Execute os seguintes passos para adicionar a solução de Gestão de Atualizaç�
    
    a.    Execute os comandos seguintes para instalar a versão mais recente do agente do OMS para Linux.  Substitua <Workspace ID> pelo ID da Área de Trabalho e <Key> pela Chave Primária ou pela Chave Secundária.
    
-     cd ~   wget https://github.com/Microsoft/OMS-Agent-for-Linux/releases/download/v1.2.0-75/omsagent-1.2.0-75.universal.x64.sh   sudo bash omsagent-1.2.0-75.universal.x64.sh --upgrade -w <Workspace ID> -s <Key>
-   
+        cd ~
+        wget https://github.com/Microsoft/OMS-Agent-for-Linux/releases/download/v1.2.0-75/omsagent-1.2.0-75.universal.x64.sh  
+        sudo bash omsagent-1.2.0-75.universal.x64.sh --upgrade -w <Workspace ID> -s <Key>
+
    b. Para remover o agente, execute o seguinte comando.
    
-     sudo bash omsagent-1.2.0-75.universal.x64.sh --purge
+        sudo bash omsagent-1.2.0-75.universal.x64.sh --purge
 
 ## <a name="management-packs"></a>Pacotes de gestão
 Se o seu grupo de gestão do System Center Configuration Manager estiver ligado à sua área de trabalho do OMS, os seguintes pacotes de gestão serão instalados no Operations Manager quando adicionar esta solução. Estes pacotes de gestão não precisam de configurações nem de manutenção. 
@@ -242,6 +247,6 @@ A tabela seguinte disponibiliza pesquisas de registos de exemplo para registos d
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 

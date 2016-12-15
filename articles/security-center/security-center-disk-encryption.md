@@ -15,8 +15,8 @@ ms.workload: na
 ms.date: 05/27/2016
 ms.author: tomsh
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 65d586405bc79ccf0d5e27c09d750818e5f3dd24
+ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
+ms.openlocfilehash: 83e277fe261338aed960dea8e2ab15cbff3c895e
 
 
 ---
@@ -47,7 +47,7 @@ Existem várias abordagens que podem ser utilizadas para configurar os pré-requ
 > 
 
 ## <a name="install-and-configure-azure-powershell"></a>Instalar e configurar o Azure PowerShell
-Precisa da versão 1.2.1 ou superior do Azure PowerShell instalada no seu computador. O artigo [Como instalar e configurar o Azure PowerShell](../powershell-install-configure.md) contém todos os passos necessários para aprovisionar o computador de modo a trabalhar com o Azure PowerShell. A abordagem mais direta consiste em utilizar a abordagem de instalação do Instalador de Plataforma Web mencionada nesse artigo. Mesmo que já tenha instalado Azure PowerShell, instale-o novamente ao utilizar a abordagem do Instalador de Plataforma Web para que tenha a versão mais recente do Azure PowerShell.
+Precisa da versão 1.2.1 ou superior do Azure PowerShell instalada no seu computador. O artigo [Como instalar e configurar o Azure PowerShell](/powershell/azureps-cmdlets-docs) contém todos os passos necessários para aprovisionar o computador de modo a trabalhar com o Azure PowerShell. A abordagem mais direta consiste em utilizar a abordagem de instalação do Instalador de Plataforma Web mencionada nesse artigo. Mesmo que já tenha instalado Azure PowerShell, instale-o novamente ao utilizar a abordagem do Instalador de Plataforma Web para que tenha a versão mais recente do Azure PowerShell.
 
 ## <a name="obtain-and-run-the-azure-disk-encryption-prerequisites-configuration-script"></a>Obter e executar o script de configuração de pré-requisitos do Azure Disk Encryption
 O Script de Configuração de Pré-requisitos do Azure Disk Encryption irá configurar todos os pré-requisitos necessários para encriptar as suas Virtual Machines do Azure.
@@ -182,6 +182,6 @@ Neste documento, aprendeu a encriptar uma Máquina Virtual do Azure. Para saber 
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 

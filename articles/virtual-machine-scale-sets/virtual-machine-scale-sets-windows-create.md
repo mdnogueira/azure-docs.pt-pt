@@ -16,8 +16,8 @@ ms.topic: get-started-article
 ms.date: 10/18/2016
 ms.author: davidmu
 translationtype: Human Translation
-ms.sourcegitcommit: 5919c477502767a32c535ace4ae4e9dffae4f44b
-ms.openlocfilehash: 6fa8b353c47091c9b71173e98021117245cc6694
+ms.sourcegitcommit: 550db52c2b77ad651b4edad2922faf0f951df617
+ms.openlocfilehash: 5abaa31828e624f77b6a9efb4496327977b483e4
 
 
 ---
@@ -27,7 +27,7 @@ Estes passos seguem uma abordagem completa para criar um conjunto de dimensionam
 Deve demorar cerca de 30 minutos para realizar os passos neste artigo.
 
 ## <a name="step-1-install-azure-powershell"></a>Passo 1: instalar o Azure PowerShell
-Veja [How to install and configure Azure PowerShell (Como instalar e configurar o Azure PowerShell)](../powershell-install-configure.md) para obter informações sobre como instalar a versão mais recente do Azure PowerShell, selecionar a subscrição que quer utilizar e iniciar sessão na sua conta do Azure.
+Veja [How to install and configure Azure PowerShell (Como instalar e configurar o Azure PowerShell)](/powershell/azureps-cmdlets-docs) para obter informações sobre como instalar a versão mais recente do Azure PowerShell, selecionar a subscrição que quer utilizar e iniciar sessão na sua conta do Azure.
 
 ## <a name="step-2-create-resources"></a>Passo 2: Criar recursos
 Crie os recursos que são necessários para o novo conjunto de dimensionamento.
@@ -225,6 +225,6 @@ Utilize estes recursos para explorar o conjunto de dimensionamento da máquina v
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -4,7 +4,7 @@ description: "Crie uma nova conta do Storage, efetue a gestão das chaves de ace
 services: storage
 documentationcenter: 
 author: robinsh
-manager: carmonm
+manager: timlt
 editor: tysonn
 ms.assetid: 5e4f4360-3f81-4d63-a0b1-e7771b67af11
 ms.service: storage
@@ -12,11 +12,11 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 07/26/2016
+ms.date: 12/08/2016
 ms.author: robinsh
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 90e9fcf933173b5609eff70fa1ce4bfa027fee3d
+ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
+ms.openlocfilehash: 879e199f0c712a46b89a686d6a3dd8dd877821e4
 
 
 ---
@@ -99,7 +99,7 @@ O URL para aceder a um objeto numa conta do Storage é criado ao acrescentar a l
 
 Também pode configurar um nome de domínio personalizado para utilizar com a sua conta do Storage. Consulte [Configurar um nome de domínio personalizado para o ponto final do Blob Storage](storage-custom-domain-name.md) para obter detalhes.
 
-### <a name="service-colocation-with-an-affinity-group"></a>Colocalização de serviços com um grupo de afinidades
+### <a name="service-co-location-with-an-affinity-group"></a>Colocalização de serviços com um grupo de afinidades
 Um *grupo de afinidades* consiste num agrupamento geográfico dos seus serviços e VMs do Azure com a sua conta do Storage do Azure. Um grupo de afinidades pode melhorar o desempenho do serviço ao localizar cargas de trabalho do computador no mesmo datacenter ou perto do público-alvo de utilizadores. Além disso, não são cobradas taxas de saída quando os dados numa conta do Storage são acedidos a partir de outro serviço que faz parte do mesmo grupo de afinidades.
 
 > [!NOTE]
@@ -175,6 +175,6 @@ Para remover uma conta do Storage que já não está a utilizar, utilize **Elimi
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 

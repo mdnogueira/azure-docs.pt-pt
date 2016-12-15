@@ -4,12 +4,20 @@ Se ainda não o fez, pode obter uma [Versão de avaliação gratuita da subscri�
 azure config mode arm
 ```
 
-Agora, utilize o comando `azure vmss quick-create` para criar o conjunto de dimensionamento. O exemplo seguinte cria um conjunto de dimensionamento com o nome `myVMSS`, com cinco instâncias de VM no grupo de recursos com o nome `myResourceGroup`:
+Agora, utilize o comando `azure vmss quick-create` para criar o conjunto de dimensionamento. O exemplo seguinte cria um conjunto de dimensionamento do Linux com o nome `myVMSS`, com cinco instâncias de VM no grupo de recursos com o nome `myResourceGroup`:
 
 ```azurecli
 azure vmss quick-create -n myVMSS -g myResourceGroup -l westus \
     -u ops -p P@ssw0rd! \
-    -C 5 -Q Canonical:UbuntuServer:14.04.4-LTS:latest
+    -C 5 -Q Canonical:UbuntuServer:16.04.0-LTS:latest
+```
+
+O exemplo seguinte cria um conjunto de dimensionamento do Windows definido com a mesma configuração:
+
+```azurecli
+azure vmss quick-create -n myVMSS -g myResourceGroup -l westus \
+    -u ops -p P@ssw0rd! \
+    -C 5 -Q MicrosoftWindowsServer:WindowsServer:2016-Datacenter:latest
 ```
 
 Se pretender personalizar a localização ou a imagem_urn, veja os comandos `azure location list` e `azure vm image {list-publishers|list-offers|list-skus|list|show}`.
@@ -56,6 +64,6 @@ FQDN=${split_line[3]}
 ssh -p 50000 negat@$FQDN
 ```
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 
