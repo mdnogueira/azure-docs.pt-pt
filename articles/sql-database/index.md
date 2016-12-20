@@ -1,13 +1,13 @@
 ---
 layout: LandingPage
 translationtype: Human Translation
-ms.sourcegitcommit: 87b9d22ec066108adb282606305315919b901ea0
-ms.openlocfilehash: b63022d6bfc74dca56cc117913d4288d0ed7fe20
+ms.sourcegitcommit: 3752a677351518195773a86c3824078a5aff6d03
+ms.openlocfilehash: 64e7a12fea6e6ae837d7ae0aacf3ac7426605707
 
 ---
 #<a name="sql-database-documentation"></a>Documentação da Base de Dados SQL
 
-A Base de Dados SQL do Azure é um serviço de base de dados relacional na nuvem baseado no motor Microsoft SQL Server líder de mercado, com capacidades fundamentais. Esta proporciona um desempenho previsível, escalabilidade sem períodos de indisponibilidade, continuidade do negócio e proteção de dados - tudo com muito pouca administração. Como se baseia no motor do SQL Server, a Base de Dados SQL suporta as ferramentas, bibliotecas e APIs existentes do SQL Server, facilitando a transição e a expansão para a nuvem.
+A Base de Dados SQL do Azure é um serviço de base de dados relacional na cloud baseado no motor Microsoft SQL Server líder de mercado, com capacidades fundamentais. Esta proporciona um desempenho previsível, escalabilidade sem períodos de indisponibilidade, continuidade do negócio e proteção de dados - tudo com muito pouca administração. Como se baseia no motor do SQL Server, a Base de Dados SQL suporta as ferramentas, bibliotecas e APIs existentes do SQL Server, facilitando a transição e a expansão para a cloud.
 
 <ul class="panelContent cardsFTitle">
      <li>
@@ -156,7 +156,7 @@ A Base de Dados SQL do Azure é um serviço de base de dados relacional na nuvem
                 <div class="card">
                     <div class="cardText">
                         <h3>REST</h3>
-                        <p>Referência da API REST da Base de Dados SQL</p>
+                        <p>API REST da Base de Dados SQL</p>
                     </div>
                 </div>
             </div>
@@ -189,6 +189,6 @@ Transferir a Documentação da Base de Dados SQL </div>
 
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Dec16_HO1-->
 
 

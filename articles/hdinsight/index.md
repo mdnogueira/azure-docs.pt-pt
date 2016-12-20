@@ -1,13 +1,13 @@
 ---
 layout: LandingPage
 translationtype: Human Translation
-ms.sourcegitcommit: 87b9d22ec066108adb282606305315919b901ea0
-ms.openlocfilehash: 1513c4d2b658efff20095a293cec2a9687ebeabf
+ms.sourcegitcommit: 3752a677351518195773a86c3824078a5aff6d03
+ms.openlocfilehash: 28b6ebfae16a5c2e119fc4f1af0dcee6a348d47f
 
 ---
 #<a name="azure-hdinsight-documentation"></a>Documentação do Azure HDInsight
 
-O Azure HDInsight é uma distribuição do Apache Hadoop com tecnologia de nuvem.  O Azure HDInsight disponibiliza os componentes do Hadoop da distribuição Hortonworks Data Platform (HDP) na nuvem e implementa e aprovisiona os clusters geridos com fiabilidade e disponibilidade.  O Azure HDInsight fornece configurações de cluster para Apache Hadoop, Spark, HBase e Storm.  Também pode personalizar clusters com ações de script.  
+O Azure HDInsight é uma distribuição do Apache Hadoop com tecnologia de cloud.  O Azure HDInsight disponibiliza os componentes do Hadoop da distribuição Hortonworks Data Platform (HDP) na cloud e implementa e aprovisiona os clusters geridos com fiabilidade e disponibilidade.  O Azure HDInsight fornece configurações de cluster para Apache Hadoop, Spark, HBase e Storm.  Também pode personalizar clusters com ações de script.  
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -122,64 +122,47 @@ O Azure HDInsight é uma distribuição do Apache Hadoop com tecnologia de nuvem
 </ul>
 
 ---
-
-## <a name="reference"></a>Referência
-
+ 
+<h2>Referência</h2>
 <ul class="panelContent cardsW">
     <li>
-        <a href="/powershell/azureps-cmdlets-docs">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-                        <h3>PowerShell</h3>
-                        <p>Referência ao Azure PowerShell</p>
+                        <h3>Linha de Comandos</h3>
+                        <p><a href="/powershell/resourcemanager/azurerm.hdinsight/v2.3.0/azurerm.hdinsight">PowerShell</a></p>
                     </div>
                 </div>
             </div>
         </div>
-        </a>
     </li>
-
- <li>
-        <a href="/rest/api/hdinsight">
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>Linguagens</h3>
+                        <p><a href="https://msdn.microsoft.com/library/mt271028.aspx">.NET (Hadoop)</a></p>
+                        <p><a href="https://www.nuget.org/packages/Microsoft.HBase.Client/">.NET (HBase)</a></p>
+                        <p><a href="https://hadoopsdk.codeplex.com/wikipage?title=Avro%20Library">.NET (Avro)</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
                         <h3>REST</h3>
-                        <p>Referência da API REST do HDInsight</p>
+                        <p><a href="/rest/api/hdinsight/">API REST</a></p>
+                        <p><a href="/rest/api/hdinsightspark/">API REST (Spark)</a></p>
                     </div>
                 </div>
             </div>
         </div>
-        </a>
-         <a href="/rest/api/hdinsightspark">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <p>Referência da API REST do Spark para HDInsight</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </a>
-    </li>
-
-    <li>
-        <a href="https://msdn.microsoft.com/library/azure/mt271028">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3>.NET</h3>
-                        <p>Referência Gerida do HDInsight</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </a>
     </li>
 </ul>
 
@@ -193,6 +176,6 @@ Transferir a Documentação do HDInsight </div>
 
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Dec16_HO1-->
 
 

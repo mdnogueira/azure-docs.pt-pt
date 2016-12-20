@@ -1,13 +1,13 @@
 ---
 layout: LandingPage
 translationtype: Human Translation
-ms.sourcegitcommit: c6d2e90a58359c809a2b01a97cb25c12f7600008
-ms.openlocfilehash: 798d728c163df6647fb2607e14decf880f43b053
+ms.sourcegitcommit: 3752a677351518195773a86c3824078a5aff6d03
+ms.openlocfilehash: 2ec806d0d00f8db624820fac72083f3e53b89dfa
 
 ---
 #<a name="service-fabric-documentation"></a>Documentação do Service Fabric
 
-O Azure Service Fabric é uma plataforma de sistemas distribuídos que facilita o empacotamento, a implementação e a gestão de microsserviços dimensionáveis e fiáveis. O Service Fabric também faz face aos desafios significativos no desenvolvimento e na gestão de aplicações na nuvem. Permite, assim, que os programadores e administradores evitem problemas complexos de infraestrutura e se concentrem na implementação de cargas de trabalho exigentes e fundamentais que sejam dimensionáveis, fiáveis e geríveis. 
+O Azure Service Fabric é uma plataforma de sistemas distribuídos que facilita o empacotamento, a implementação e a gestão de microsserviços dimensionáveis e fiáveis. O Service Fabric também faz face aos desafios significativos no desenvolvimento e na gestão de aplicações na cloud. Permite, assim, que os programadores e administradores evitem problemas complexos de infraestrutura e se concentrem na implementação de cargas de trabalho exigentes e fundamentais que sejam dimensionáveis, fiáveis e geríveis. 
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -158,7 +158,7 @@ O Azure Service Fabric é uma plataforma de sistemas distribuídos que facilita 
                 <div class="card">
                     <div class="cardText">
                         <h3>REST</h3>
-                        <p>Referência da API REST do Service Fabric</p>
+                        <p>API REST do Service Fabric</p>
                     </div>
                 </div>
             </div>
@@ -178,6 +178,6 @@ Transferir a Documentação do Service Fabric </div>
 
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Dec16_HO1-->
 
 

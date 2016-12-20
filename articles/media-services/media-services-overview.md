@@ -15,8 +15,8 @@ ms.topic: hero-article
 ms.date: 10/12/2016
 ms.author: juliako;anilmur
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 2a4395385ab0e6e71e5139883a544add0a081cf2
+ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
+ms.openlocfilehash: 1a680f20bc9ceee8efd943cd71312372fe56a878
 
 
 ---
@@ -62,12 +62,12 @@ Para saber mais sobre os conceitos de Media Services do Azure, consulte [Conceit
 
 Para obter um conjunto de procedimentos que apresente todos os componentes principais dos Media Services do Azure, consulte [Tutorial Passo-a-Passo dos Media Services do Azure](https://docs.com/fukushima-shigeyuki/3439/english-azure-media-services-step-by-step-series). Este conjunto possui uma excelente descrição geral dos conceitos e utiliza a ferramenta AMSE para demonstrar as tarefas AMS. Tenha em atenção que a ferramenta AMSE é uma ferramenta do Windows. Esta ferramenta suporta a maioria das tarefas que pode realizar através de programação com [o SDK do AMS para .NET](https://github.com/Azure/azure-sdk-for-media-services), [Azure SDK para Java](https://github.com/Azure/azure-sdk-for-java) ou [SDK do PHP do Azure](https://github.com/Azure/azure-sdk-for-php).
 
-## <a name="a-idvodscenariosadelivering-media-ondemand-with-azure-media-services-common-scenarios-and-tasks"></a><a id="vod_scenarios"></a>Fornecer Multimédia a Pedido com os Serviços de Multimédia do Azure: cenários e tarefas comuns
+## <a name="a-idvodscenariosadelivering-media-on-demand-with-azure-media-services-common-scenarios-and-tasks"></a><a id="vod_scenarios"></a>Fornecer Multimédia a Pedido com os Serviços de Multimédia do Azure: cenários e tarefas comuns
 Esta secção descreve cenários comuns e fornece ligações para tópicos relevantes. O diagrama seguinte mostra as principais partes da plataforma dos Media Services envolvidas na distribuição de conteúdos a pedido. 
 
 ![Fluxo de trabalho do VoD](./media/media-services-video-on-demand-workflow/media-services-video-on-demand.png)
 
-### <a name="protect-content-in-storage-and-deliver-streaming-media-in-the-clear-nonencrypted"></a>Proteger conteúdos em armazenamento e distribuir multimédia de transmissão em fluxo em segurança (não encriptadas)
+### <a name="protect-content-in-storage-and-deliver-streaming-media-in-the-clear-non-encrypted"></a>Proteger conteúdos em armazenamento e distribuir multimédia de transmissão em fluxo em segurança (não encriptadas)
 1. Carregue um ficheiro mezanino de alta qualidade para um elemento.
    
     É recomendado aplicar uma opção de encriptação de armazenamento ao seu elemento para proteger os seus conteúdos durante o carregamento e enquanto estes permanecem inativos em armazenamento.
@@ -142,13 +142,13 @@ Um **Canal** representa um pipeline de processamento de conteúdos de transmiss�
 * Um codificador em direto no local envia um **RTMP** ou uma **Transmissão em Fluxo Uniforme** com velocidade de transmissão múltipla (MP4 fragmentado) para o Canal configurado para distribuição **pass-through**. A distribuição **pass-through** ocorre quando as transmissões em fluxo inseridas passam pelos **Canais** sem qualquer processamento adicional. Pode utilizar os seguintes codificadores em direto que transmitam uma Transmissão em Fluxo Uniforme com velocidade de transmissão múltipla: Elementar, Envivio, Cisco.  Os seguintes codificadores em direito transmitem RTMP: transcodificadores Tricaster, Telestream Wirecast e Adobe Flash Live.  Um codificador em direto pode também enviar uma transmissão em fluxo de velocidade de transmissão única para um canal, que não está ativado para live encoding, mas tal não é recomendado. Quando solicitado, os Media Services disponibilizam a transmissão em fluxo para os clientes.
 
 > [!NOTE]
-> A utilização de um método pass-through é a forma mais económica de realizar uma transmissão em fluxo em direto quando estiver a realizar vários eventos durante um longo período de tempo e já investiu em codificadores no local. Consulte os detalhes dos [preços](/pricing/details/media-services/).
+> A utilização de um método pass-through é a forma mais económica de realizar uma transmissão em fluxo em direto quando estiver a realizar vários eventos durante um longo período de tempo e já investiu em codificadores no local. Consulte os detalhes dos [preços](https://azure.microsoft.com/pricing/details/media-services/).
 > 
 > 
 
 * Um codificador em direto no local envia uma transmissão fluxo de velocidade única para o Canal ativado para realizar live encoding com os Media Services num dos seguintes formatos: RTP (MPEG-TS), RTMP ou Transmissão em Fluxo Uniforme (MP4 fragmentado). O Canal, em seguida, realiza live encoding da transmissão em fluxo de velocidade de transmissão única de entrada para uma transmissão em fluxo de vídeo com várias velocidades (adaptável). Quando solicitado, os Media Services disponibilizam a transmissão em fluxo para os clientes.
 
-### <a name="working-with-channels-that-receive-multibitrate-live-stream-from-onpremises-encoders-passthrough"></a>Trabalhar com Canais que recebem transmissões em fluxo em direto com velocidade de transmissão múltipla a partir de codificadores no local (pass-through)
+### <a name="working-with-channels-that-receive-multi-bitrate-live-stream-from-on-premises-encoders-pass-through"></a>Trabalhar com Canais que recebem transmissões em fluxo em direto com velocidade de transmissão múltipla a partir de codificadores no local (pass-through)
 O diagrama seguinte mostra as principais partes da plataforma de AMS envolvidas no fluxo de trabalho de **pass-through**.
 
 ![Fluxo de trabalho em direto][live-overview2]
@@ -201,6 +201,6 @@ Para obter mais informações, consulte [SLA do Microsoft Azure](https://azure.m
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 

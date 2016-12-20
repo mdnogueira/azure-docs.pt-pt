@@ -15,17 +15,12 @@ ms.topic: hero-article
 ms.date: 11/01/2016
 ms.author: robmcm
 translationtype: Human Translation
-ms.sourcegitcommit: 79a3ba8f0daee5c20f7a05e20e473cfbea384acc
-ms.openlocfilehash: c941628ece0daffba7cb9bfd79fa0ffdda4ecfba
+ms.sourcegitcommit: 9ad2f55c7db53459c17299ba5015783781c7cd63
+ms.openlocfilehash: 5a6b743d69e1716ae3f48ddf0dfcb0f042133f5c
 
 
 ---
 # <a name="build-and-deploy-a-nodejs-application-to-an-azure-cloud-service"></a>Compilar e implementar uma aplicação Node.js num Serviço em Nuvem do Azure
-
-> [!div class="op_single_selector"]
-> * [.NET](cloud-services-dotnet-get-started.md)
-> * [Node.js](cloud-services-nodejs-develop-deploy-app.md)
-> * [python](cloud-services-python-ptvs.md)
 
 Este tutorial mostra como criar uma aplicação Node.js simples para execução num Serviço em Nuvem do Azure. Os Cloud Services são os blocos modulares de aplicações em nuvem dimensionáveis no Azure. Permitem a separação, bem como a gestão e ampliação independentes de componentes front-end e back-end da aplicação.  Os Cloud Services fornecem uma máquina virtual dedicada robusta para alojar cada função de forma fiável.
 

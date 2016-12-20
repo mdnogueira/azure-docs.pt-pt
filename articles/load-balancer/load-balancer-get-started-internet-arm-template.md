@@ -15,8 +15,8 @@ ms.workload: infrastructure-services
 ms.date: 10/24/2016
 ms.author: kumud
 translationtype: Human Translation
-ms.sourcegitcommit: cf1eafc7bca5bddeb32f1e1e05e660d6877ed805
-ms.openlocfilehash: 9200174563523f40e425d4f6570e97f732d84129
+ms.sourcegitcommit: c40545833da86426d3e71955b8eb8627db3c1e4b
+ms.openlocfilehash: 47a057a5ff7fc893a2f82d762db499ec10a8db8e
 
 ---
 
@@ -44,7 +44,7 @@ O modelo de exemplo disponível no repositório público utiliza um ficheiro de 
 
 Para implementar o modelo que transferiu com o PowerShell, siga os passos abaixo.
 
-1. Se nunca tiver utilizado o Azure PowerShell, veja [How to Install and Configure Azure PowerShell (Como instalar e configurar o Azure PowerShell)](../powershell-install-configure.md) e siga as instruções até ao fim para iniciar sessão no Azure e selecionar a sua subscrição.
+1. Se nunca tiver utilizado o Azure PowerShell, veja [How to Install and Configure Azure PowerShell (Como instalar e configurar o Azure PowerShell)](/powershell/azureps-cmdlets-docs) e siga as instruções até ao fim para iniciar sessão no Azure e selecionar a sua subscrição.
 2. Execute o cmdlet **New-AzureRmResourceGroupDeployment** para criar um grupo de recursos com o modelo.
 
     ```powershell
@@ -85,6 +85,6 @@ Para implementar o modelo com a CLI do Azure, siga os passos abaixo.
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

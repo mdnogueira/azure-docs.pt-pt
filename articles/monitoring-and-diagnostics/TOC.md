@@ -40,12 +40,15 @@
 
 
 # Referência
-## [PowerShell](../monitoring-and-diagnostics/insights-powershell-samples.md)
-## [CLI do Azure](../monitoring-and-diagnostics/insights-cli-samples.md)
+## [PowerShell](/powershell/resourcemanager/azurerm.insights/v1.0.12/azurerm.insights?redirectedfrom=msdn#40v=azure.200#41)
 ## [.NET](https://msdn.microsoft.com/library/azure/dn802153)
-## [Lista de Métricas Suportadas](../monitoring-and-diagnostics/monitoring-supported-metrics.md)
-## [API REST](https://msdn.microsoft.com/library/azure/dn931943)
+## [REST](/rest/api/monitor/)
 
-<!--HONumber=Nov16_HO4-->
+# Recursos
+## [Exemplos do PowerShell](../monitoring-and-diagnostics/insights-powershell-samples.md)
+## [Exemplos da CLI 2.0 do Azure (Pré-visualização)](../monitoring-and-diagnostics/insights-cli-samples.md)
+## [Lista de Métricas Suportadas](../monitoring-and-diagnostics/monitoring-supported-metrics.md)
+
+<!--HONumber=Dec16_HO1-->
 
 

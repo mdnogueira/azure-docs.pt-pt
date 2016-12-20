@@ -15,8 +15,8 @@ ms.workload: na
 ms.date: 09/20/2016
 ms.author: yurid
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 4ddc691f4f3d53dbff2e55b7a97446427b93a8a4
+ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
+ms.openlocfilehash: bdd7d3d6e532efe7c3ed8225dd29a895725f2ff9
 
 
 ---
@@ -171,7 +171,7 @@ Este alerta dá-informações que lhe permitem identificar o recurso que foi uti
 
 [AZURE.NOTE] Os endereços IP em direto foram removidos desta captura de ecrã por motivos de privacidade.
 
-### <a name="possible-outgoing-denialofservice-attack-detected"></a>Possível ataque denial-of-service de saída detetado
+### <a name="possible-outgoing-denial-of-service-attack-detected"></a>Possível ataque denial-of-service de saída detetado
 O tráfego de rede anómalo proveniente de uma máquina virtual pode fazer com que o Centro de Segurança acione um potencial tipo de ataque denial-of-service.
 
 Este é um exemplo deste tipo de alerta:
@@ -214,6 +214,6 @@ Neste documento, tive conhecimento dos vários tipos de alertas de segurança no
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 

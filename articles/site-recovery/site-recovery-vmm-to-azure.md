@@ -1,6 +1,6 @@
 ---
 title: "Replicar máquinas virtuais de Hyper-V em nuvens do VMM no Azure com o portal do Azure | Microsoft Docs"
-description: "Descreve como implementar o Azure Site Recovery para orquestrar a replicação, a ativação pós-falha e a recuperação de VMs de Hyper-V em nuvens do VMM para o Azure com o Portal do Azure"
+description: "Descreve como implementar o Site Recovery para orquestrar a replicação, a ativação pós-falha e a recuperação de VMs de Hyper-V em clouds do VMM para o Azure."
 services: site-recovery
 documentationcenter: 
 author: rayne-wiselman
@@ -12,16 +12,15 @@ ms.workload: backup-recovery
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: hero-article
-ms.date: 10/31/2016
+ms.date: 11/23/2016
 ms.author: raynew
 translationtype: Human Translation
-ms.sourcegitcommit: 5614c39d914d5ae6fde2de9c0d9941e7b93fc10f
-ms.openlocfilehash: 9968ac8e139b3f08fe0d59180e51fe9c19241dd5
+ms.sourcegitcommit: b7cccd1638bfbc79322c88f10d515a282bdb1ad3
+ms.openlocfilehash: 473ed9aa5a744d39befe5dfcb9ed04b6c88c9e26
 
 
 ---
 # <a name="replicate-hyper-v-virtual-machines-in-vmm-clouds-to-azure-using-the-azure-portal"></a>Replicar máquinas virtuais de Hyper-V em nuvens do VMM para o Azure com o portal do Azure
-> [!div class="op_single_selector"]
 > * [Portal do Azure](site-recovery-vmm-to-azure.md)
 > * [Azure clássico](site-recovery-vmm-to-azure-classic.md)
 > * [PowerShell Resource Manager](site-recovery-vmm-to-azure-powershell-resource-manager.md)
@@ -35,10 +34,10 @@ O Site Recovery é um serviço do Azure que contribui para a sua estratégia de 
 
 Este artigo descreve como replicar máquinas virtuais de Hyper-V no local geridas em nuvens do System Center VMM para o Azure ao utilizar o Azure Site Recovery no portal do Azure.
 
-Depois de ler este artigo, publique quaisquer comentários na parte inferior dos comentários do Disqus. Coloque questões técnicas no [Fórum de Serviços de Recuperação do Azure](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr).
+Depois de ler este artigo, publique quaisquer comentários na parte inferior. Coloque questões técnicas no [Fórum de Serviços de Recuperação do Azure](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr).
 
 ## <a name="quick-reference"></a>Referência rápida
-Para uma implementação completa, recomendamos vivamente que siga todos os passos do artigo. Contudo, se não tiver muito tempo, segue-se um breve resumo com ligações para mais informações.
+Para uma implementação completa, recomendamos vivamente que siga todos os passos do artigo. Mas se tiver pouco tempo, eis um resumo rápido.
 
 | **Área** | **Detalhes** |
 | --- | --- |
@@ -47,26 +46,21 @@ Para uma implementação completa, recomendamos vivamente que siga todos os pass
 | **Limitações no local** |O proxy baseado em HTTPS não é suportado |
 | **Fornecedor/agente** |As VMs replicadas precisam do Azure Site Recovery Provider.<br/><br/> Os anfitriões de Hyper-V precisam do agente dos Serviços de Recuperação.<br/><br/> São instalados durante a implementação. |
 |  **Requisitos do Azure** |Conta do Azure<br/><br/> Cofre dos serviços de recuperação<br/><br/> Conta de armazenamento LRS ou GRS na região do cofre<br/><br/> Conta de armazenamento standard<br/><br/> Rede virtual do Azure na região do cofre [Ver os detalhes completos](#azure-prerequisites). |
-|  **Limitações do Azure** |Se utilizar GRS, precisa de outra conta LRS para registo<br/><br/> As contas de armazenamento criadas no portal do Azure não podem ser movidas entre grupos de recursos.<br/><br/> Não há suporte para o armazenamento Premium. |
-|  **Replicação de VMs** |As VMs têm de estar em conformidade com os pré-requisitos do Azure](site-recovery-best-practices.md#azure-virtual-machine-requirements)<br/><br/> |
+|  **Limitações do Azure** |Se utilizar GRS, precisa de outra conta LRS para registo<br/><br/> As contas de armazenamento criadas no portal do Azure não podem ser movidas entre grupos de recursos nas mesmas ou em diferentes subscrições. <br/><br/> Não há suporte para o armazenamento Premium.<br/><br/> As redes Azure utilizadas para o Site Recovery não podem ser movidas entre grupos de recursos nas mesmas ou em diferentes subscrições. |
+|  **Replicação de VMs** |[As VMs devem estar em conformidade com os pré-requisitos do Azure](site-recovery-best-practices.md#azure-virtual-machine-requirements)<br/><br/> |
 |  **Limitações da replicação** |Não pode replicar VMs que executem Linux com um endereço IP estático.<br/><br/> Não pode excluir discos específicos da replicação. |
 | **Passos da implementação** |1) Preparar o Azure (subscrição, armazenamento, rede) -> 2) Preparar no local (VMM e mapeamento de rede) -> 3) Criar cofre dos Serviços de Recuperação -> 4) Configurar o VMM e os anfitriões de Hyper-V -> 5) Configurar as definições da replicação -> 6) Ativar a replicação -> 7) Testar a replicação e a ativação pós-falha. |
 
-## <a name="site-recovery-in-the-azure-portal"></a>Site Recovery no Portal do Azure
-O Azure tem dois [modelos de implementação diferentes](../resource-manager-deployment-model
+## <a name="site-recovery-in-the-azure-portal"></a>Recuperação de Sites no Portal do Azure
 
-> ) para criar e trabalhar com recursos – Azure Resource Manager e clássica. Também tem dois portais, o portal clássico do Azure e o portal do Azure. Este artigo descreve como implementar no portal do Azure.
->
->
+O Azure tem dois [modelos de implementação](../resource-manager-deployment-model.md) diferentes para criar e trabalhar com recursos – o Azure Resource Manager e o clássico. Também tem dois portais, o portal clássico do Azure e o portal do Azure. Este artigo descreve como implementar no portal do Azure.
 
-O Site Recovery no portal do Azure inclui duas funcionalidades novas:
 
-* Os serviços Azure Backup e Azure Site Recovery são combinados num único cofre dos Serviços de Recuperação, para que possa configurar e gerir a continuidade do negócio e a recuperação após desastre (BCDR) a partir de uma única localização. Um dashboard unificado permite-lhe monitorizar e gerir operações em todos os sites no local e na cloud pública do Azure.
-* Os utilizadores com subscrições do Azure aprovisionadas com o programa de Fornecedor de Solução da Nuvem (CSP) já podem gerir as operações de Recuperação de Sites no Portal do Azure.
-* No portal do Azure, pode replicar máquinas para contas de armazenamento do Azure Resource Manager. Na ativação pós-falha, a Recuperação de Sites cria VMs baseadas no Resource Manager no Azure.
-* A Recuperação de Sites continua a suportar a replicação para contas de armazenamento clássicas. Na ativação pós-falha, a Recuperação de Sites cria VMs utilizando o modelo clássico.
+Este artigo descreve como implementar no portal do Azure, fornecendo uma experiência de implementação otimizada. O portal clássico pode ser utilizado para manter cofres existentes. Não é possível criar novos cofres através do portal clássico.
+
 
 ## <a name="site-recovery-in-your-business"></a>Site Recovery na sua empresa
+
 As organizações precisam de uma estratégia de BCDR que determine como as aplicações e os dados continuam em execução e disponíveis durante os períodos de indisponibilidade planeados e imprevistos e como retomar as condições de trabalho normais com a maior brevidade possível. Eis o que o Site Recovery pode fazer:
 
 * Proteção fora do local para aplicações empresariais em execução em VMs de Hyper-V.
@@ -100,12 +94,12 @@ Eis o que precisa no ambiente no local
 | --- | --- |
 | **VMM** |Um ou mais servidores VMM em execução no System Center 2012 R2. Cada servidor VMM deve ter uma ou mais nuvens configuradas. Uma nuvem deve conter:<br/><br/> Um ou mais grupos de anfitriões VMM.<br/><br/> Um ou mais servidores anfitrião Hyper-V ou clusters em cada grupo anfitrião.<br/><br/>[Saiba mais](http://social.technet.microsoft.com/wiki/contents/articles/2729.how-to-create-a-cloud-in-vmm-2012.aspx) sobre como configurar as nuvens do VMM. |
 | **Hyper-V** |Os servidores anfitriões Hyper-V tem de ser executados, pelo menos, no **Windows Server 2012 R2** com a função Hyper-V ou no **Microsoft Hyper-V Server 2012 R2** com as atualizações mais recentes instaladas.<br/><br/> Um servidor Hyper-V deve conter uma ou mais VMs.<br/><br/> Um servidor de anfitrião Hyper-V ou cluster que inclui VMs que pretende replicar tem de ser gerido numa nuvem VMM.<br/><br/>Os servidores Hyper-V devem estar ligados à Internet, diretamente ou através de um proxy.<br/><br/>Os servidores Hyper-V devem ter instaladas as correções mencionadas no artigo [2961977](https://support.microsoft.com/kb/2961977).<br/><br/>Os servidores anfitrião Hyper-V tem de ter acesso à Internet para replicação de dados no Azure. |
-| **Fornecedor e agente** |Durante a implementação do Azure Site Recovery, instale o Azure Site Recovery Provider no servidor VMM e o agente dos Serviços de Recuperação nos anfitriões de Hyper-V. O Provider e o agente têm de se ligar ao Azure através da Internet diretamente ou de um proxy. Os proxies baseados em HTTPS não são suportados. O servidor de proxy no servidor VMM e anfitriões Hyper-V deve permitir acesso a: <br/><br/> ``*.hypervrecoverymanager.windowsazure.com`` <br/><br/> ``*.accesscontrol.windows.net``<br/><br/> ``*.backup.windowsazure.com``<br/><br/> ``*.blob.core.windows.net``<br/><br/> ``*.store.core.windows.net``<br/><br/> Se tiver regras de firewall baseadas no endereço IP no servidor VMM, verifique que as regras permitem a comunicação com o Azure. Terá de permitir os [Intervalos de IP do Datacenter do Azure](https://www.microsoft.com/download/confirmation.aspx?id=41653) e a porta HTTPS (443).<br/><br/> Permitir intervalos de endereços IP para a região do Azure da sua subscrição e para EUA Oeste.<br/><br/> Além disso, o servidor proxy no servidor VMM tem de aceder a ``https://www.msftncsi.com/ncsi.txt`` |
+| **Fornecedor e agente** |Durante a implementação do Azure Site Recovery, instale o Azure Site Recovery Provider no servidor VMM e o agente dos Serviços de Recuperação nos anfitriões de Hyper-V. O Provider e o agente têm de se ligar ao Azure através da Internet diretamente ou de um proxy. Os proxies baseados em HTTPS não são suportados. O servidor de proxy no servidor VMM e anfitriões Hyper-V deve permitir acesso a: <br/><br/> ``*.accesscontrol.windows.net``<br/><br/> ``*.backup.windowsazure.com``<br/><br/> ``*.hypervrecoverymanager.windowsazure.com``<br/><br/> ``*.store.core.windows.net``<br/><br/> ``*.blob.core.windows.net``<br/><br/> ``https://www.msftncsi.com/ncsi.txt``<br/><br/> ``time.windows.com``<br/><br/> ``time.nist.gov``<br/><br/> Se tiver regras de firewall baseadas no endereço IP no servidor VMM, verifique que as regras permitem a comunicação com o Azure.<br/><br/> Permita [Intervalos de IP do Datacenter do Azure](https://www.microsoft.com/download/confirmation.aspx?id=41653) e a porta HTTPS (443).<br/><br/> Permitir intervalos de endereços IP para a região do Azure da sua subscrição e para EUA Oeste.<br/><br/> |
 
 ## <a name="protected-machine-prerequisites"></a>Pré-requisitos do computador protegido
 | **Pré-requisito** | **Detalhes** |
 | --- | --- |
-| **VMs protegidas** |Antes da ativação pós-falha numa VM, terá de certificar-se de que o nome que será atribuído à VM do Azure está em conformidade com os [Pré-requisitos do Azure](site-recovery-best-practices.md#azure-virtual-machine-requirements). Pode modificar o nome depois de ter ativado a replicação para a VM. <br/><br/> A capacidade de disco individual nas máquinas protegidas não deve ser superior a 1023 GB. Uma VM pode ter até 16 discos (portanto, até 16 TB).<br/><br/> Os clusters de disco partilhado convidado não são suportados.<br/><br/> Não é suportada a interface UEFI (Unified Extensible Firmware Interface), nem o arranque da interface EFI (Extensible Firmware Interface) <br/><br/> Se a VM de origem tem o agrupamento NIC, este é convertido para um único NIC após a ativação pós-falha para o Azure.<br/><br/>Não é suportada a proteção de VMs que executam Linux com um endereço IP estático. |
+| **VMs protegidas** |Antes da ativação pós-falha numa VM, terá de certificar-se de que o nome que será atribuído à VM do Azure está em conformidade com os [Pré-requisitos do Azure](site-recovery-best-practices.md#azure-virtual-machine-requirements). Pode modificar o nome depois de ter ativado a replicação para a VM. <br/><br/> A capacidade de disco individual nas máquinas protegidas não deve ser superior a 1023 GB. Uma VM pode ter até 64 discos (portanto, 64 TB).<br/><br/> Os clusters de disco partilhado convidado não são suportados.<br/><br/> Não é suportada a interface UEFI (Unified Extensible Firmware Interface), nem o arranque da interface EFI (Extensible Firmware Interface) <br/><br/> Se a VM de origem tem o agrupamento NIC, este é convertido para um único NIC após a ativação pós-falha para o Azure.<br/><br/>Não é suportada a proteção de VMs Hyper-V que executam Linux com um endereço IP estático. |
 
 ## <a name="prepare-for-deployment"></a>Preparar para a implementação
 Para se preparar para a implementação, é necessário:
@@ -121,21 +115,13 @@ Necessita de uma rede do Azure à qual as VMs do Azure criadas depois da ativaç
 * A rede deve estar mesma localização que o cofre dos Serviços de Recuperação.
 * Consoante o modelo de recursos que pretende utilizar nas VMs do Azure com ativação pós-falha, configure a rede Azure no [modo Resource Manager](../virtual-network/virtual-networks-create-vnet-arm-pportal.md) ou no [modo clássico](../virtual-network/virtual-networks-create-vnet-classic-pportal.md).
 * Recomendamos que configure uma rede antes de começar. Caso contrário, terá de fazê-lo durante a implementação da Recuperação de Sites.
-
-> [!NOTE]
-> A [migração de redes](../resource-group-move-resources.md) através de grupos de recursos na mesma subscrição ou em várias subscrições não é suportada em redes utilizadas para implementar o Site Recovery.
->
->
+Tenha em consideração que as redes Azure utilizadas do Site Recovery não podem ser [movidas](../resource-group-move-resources.md) dentro de grupos de recursos nas mesmas ou em diferentes subscrições.
 
 ### <a name="set-up-an-azure-storage-account"></a>Configurar uma conta de armazenamento do Azure
 * Precisa de uma conta de armazenamento standard do Azure para armazenar dados replicados para o Azure. A conta tem de ser na mesma região que o cofre de Serviços de Recuperação.
 * Consoante o modelo de recursos que pretende utilizar para efetuar a ativação pós-falha nas VMs do Azure, configure uma conta no [modo Resource Manager](../storage/storage-create-storage-account.md) ou no [modo clássico](../storage/storage-create-storage-account-classic-portal.md).
 * Recomendamos que configure uma conta antes de começar. Caso contrário, terá de fazê-lo durante a implementação da Recuperação de Sites.
-
-> [!NOTE]
-> A [migração de contas de armazenamento](../resource-group-move-resources.md) através de grupos de recursos na mesma subscrição ou em várias subscrições não é suportada em contas de armazenamento utilizadas para implementar o Site Recovery.
->
->
+- Tenha em consideração que as contas de armazenamento utilizadas do Site Recovery não podem ser [movidas](../resource-group-move-resources.md) dentro de grupos de recursos nas mesmas ou em diferentes subscrições.
 
 ### <a name="prepare-the-vmm-server"></a>Preparar o servidor VMM
 * Certifique-se de que o servidor VMM está em conformidade com os [pré-requisitos](#on-premises-prerequisites).
@@ -165,10 +151,11 @@ Tem de configurar o mapeamento da rede durante a implementação da Recuperaçã
 
 O novo cofre é apresentado em **Dashboard** > **Todos os recursos** e no painel principal **Cofres dos Serviços de Recuperação**.
 
-## <a name="getting-started"></a>Introdução
+## <a name="get-started"></a>Introdução
+
 A Recuperação de Sites fornece uma introdução à experiência que o ajuda a implementar o mais rapidamente possível. A Introdução verifica os pré-requisitos e orienta-o durante os passos de implementação do Site Recovery na ordem correta.
 
-Na Introdução, seleciona o tipo de máquinas que pretende replicar e o local onde quer que sejam replicadas. Você configura os servidores no local, contas de armazenamento do Azure e as redes. Pode criar políticas de replicação e efetuar o planeamento da capacidade. Quando a infraestrutura estiver pronta, pode ativar a replicação para as VMs. Pode executar as ativações pós-falha para máquinas específicas ou criar o plano de recuperação para efetuar a ativação pós-falha de várias máquinas.
+Selecione o tipo de máquinas que pretende replicar e o local onde quer que sejam replicadas. Você configura os servidores no local, contas de armazenamento do Azure e as redes. Pode criar políticas de replicação e efetuar o planeamento da capacidade. Quando a infraestrutura estiver pronta, pode ativar a replicação para as VMs. Pode executar as ativações pós-falha para máquinas específicas ou criar o plano de recuperação para efetuar a ativação pós-falha de várias máquinas.
 
 Comece a Introdução com a escolha de como pretende implementar a Recuperação de Sites. O fluxo da Introdução muda ligeiramente dependendo dos seus requisitos de replicação.
 
@@ -281,11 +268,13 @@ O agente dos Serviços de Recuperação em execução em anfitriões Hyper-V tem
 ## <a name="step-3-set-up-the-target-environment"></a>Passo 3: Configurar o ambiente de origem
 Especifique a conta de armazenamento do Azure a ser utilizada para replicação e a rede Azure ao qual as VMs do Azure estabelecerão ligação após a ativação pós-falha.
 
-1. Clique em **Preparar a infraestrutura** > **Destino** e selecione a subscrição do Azure que pretende utilizar.
-2. Especifique o modelo de implementação que pretende utilizar para as VMs após a ativação pós-falha.
-3. A Recuperação de Sites verifica que tem uma ou mais contas de armazenamento e redes do Azure compatíveis.
+1. Clique em **Preparar infraestrutura** > **Destino**, selecione a subscrição e o grupo de recursos em que pretende criar máquinas virtuais de ativação pós-falha. Selecione o modelo de implementação que pretende utilizar no Azure (clássica ou gestão de recursos) para a máquinas virtuais de ativação pós-falha.
 
-   ![Armazenamento](./media/site-recovery-vmm-to-azure/compatible-storage.png)
+    ![Armazenamento](./media/site-recovery-vmm-to-azure/enablerep3.png)
+
+2. A Recuperação de Sites verifica que tem uma ou mais contas de armazenamento e redes do Azure compatíveis.
+    ![Armazenamento](./media/site-recovery-vmm-to-azure/compatible-storage.png)
+
 4. Se ainda não criou uma conta de armazenamento e quiser criar uma com o Resource Manager, clique em **+Conta de armazenamento**, para fazê-lo inline.  No painel **Criar conta de armazenamento**, especifique um nome de conta, o tipo, a subscrição e a localização. A conta tem de ter a mesma localização que o cofre de Serviços de Recuperação.
 
    ![Armazenamento](./media/site-recovery-vmm-to-azure/gs-createstorage.png)
@@ -507,6 +496,6 @@ Depois da implementação estar instalada e em execução, [saiba mais](site-rec
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO5-->
 
 

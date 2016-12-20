@@ -12,11 +12,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: big-data
-ms.date: 09/27/2016
+ms.date: 11/21/2016
 ms.author: nitinme
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 6001c89804f7443e21e6e2eeecf3f1d3b682be9a
+ms.sourcegitcommit: c157da7bf53e2d0762624e8e71e56e956db04a24
+ms.openlocfilehash: 57af74321c453733daadc1b295dd3df95d0fd052
 
 
 ---
@@ -29,7 +29,8 @@ ms.openlocfilehash: 6001c89804f7443e21e6e2eeecf3f1d3b682be9a
 > * [API REST](data-lake-store-get-started-rest-api.md)
 > * [CLI do Azure](data-lake-store-get-started-cli.md)
 > * [Node.js](data-lake-store-manage-use-nodejs.md)
-> 
+> * [python](data-lake-store-get-started-python.md)
+>
 > 
 
 Neste artigo, irá aprender a utilizar APIs REST WebHDFS e APIs REST do Data Lake Store para efetuar a gestão de contas, bem como operações do sistema de ficheiros no Azure Data Lake Store. O Azure Data Lake Store expõe as suas próprias APIs REST para as operações de gestão de contas. No entanto, uma vez que o Data Lake Store é compatível com o ecossistema HDFS e Hadoop, suporta a utilização de APIs REST WebHDFS para operações do sistema de ficheiros.
@@ -47,7 +48,7 @@ Neste artigo, irá aprender a utilizar APIs REST WebHDFS e APIs REST do Data Lak
 ## <a name="how-do-i-authenticate-using-azure-active-directory"></a>Como posso autenticar com o Azure Active Directory?
 Pode utilizar duas abordagens para autenticar com o Azure Active Directory.
 
-### <a name="enduser-authentication-interactive"></a>Autenticação de utilizador final (interativa)
+### <a name="end-user-authentication-interactive"></a>Autenticação de utilizador final (interativa)
 Neste cenário, a aplicação pede ao utilizador para iniciar sessão e todas as operações são efetuadas no contexto do utilizador. Execute os passos seguintes para a autenticação interativa.
 
 1. Através da sua aplicação, redirecione o utilizador para o seguinte URL:
@@ -88,7 +89,7 @@ Neste cenário, a aplicação pede ao utilizador para iniciar sessão e todas as
 
 Para obter mais informações sobre a autenticação de utilizador interativa, veja [Fluxo de concessão de códigos de autorização](https://msdn.microsoft.com/library/azure/dn645542.aspx).
 
-### <a name="servicetoservice-authentication-noninteractive"></a>Autenticação serviço a serviço (não interativa)
+### <a name="service-to-service-authentication-non-interactive"></a>Autenticação serviço a serviço (não interativa)
 Neste cenário, a aplicação fornece as suas próprias credenciais para efetuar as operações. Para tal, tem de emitir um pedido POST, como o mostrado abaixo. 
 
     curl -X POST https://login.microsoftonline.com/<TENANT-ID>/oauth2/token  \
@@ -263,6 +264,6 @@ Deve ver um resultado como o seguinte:
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO4-->
 
 

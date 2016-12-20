@@ -12,11 +12,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 11/02/2016
+ms.date: 11/28/2016
 ms.author: cherylmc
 translationtype: Human Translation
-ms.sourcegitcommit: 53a301bd501f223aa8489ba6592c8428c1fcd530
-ms.openlocfilehash: 877a70c162f23ced4606ee8a5c51db5e4eeaa89a
+ms.sourcegitcommit: eb618aea1ee5aba24cebd4d8518e9c7f546f5f4f
+ms.openlocfilehash: ae1e750a5f97325df064a02ed156610b4576f1d3
 
 
 ---
@@ -87,7 +87,7 @@ A conectividade em regiões geopolíticas não é suportada no SKU do ExpressRou
 | **Singapura** |Aryaka Networks, AT&T NetBond, British Telecom, Equinix, InterCloud, Megaport, NTT Communications, Orange, SingTel, Tata Communications, Verizon |
 | **Sydney** |AARNet, AT&T NetBond, British Telecom, Equinix, Megaport, NEXTDC, Orange, Telstra Corporation, Verizon |
 | **Tóquio** |Aryaka Networks, British Telecom, Colt, Equinix, Internet Initiative Japan Inc. - IIJ, NTT Communications, Softbank, Verizon |
-| **Toronto** |Cologix, Equinix, Zayo Group |
+| **Toronto** |Cologix, Equinix, Megaport, Zayo Group |
 | **Washington D.C.** |Aryaka Networks, AT&T NetBond, British Telecom, Comcast, Equinix, InterCloud, Level 3 Communications, Megaport, NTT Communications, Orange, Tata Communications, Verizon, Zayo Group |
 
  **+** brevemente disponível
@@ -120,13 +120,13 @@ Para saber mais, veja [ExpressRoute na China](http://www.windowsazure.cn/home/fe
 Se o seu fornecedor de conectividade não está listado nas secções anteriores, pode criar na mesma uma ligação.
 
 * Consulte o seu fornecedor de conectividade para saber se este está ligado a alguma das trocas na tabela acima. Pode verificar as ligações seguintes para recolher mais informações sobre os serviços disponibilizados pelos fornecedores de troca. Vários fornecedores de conectividade já estão ligados às trocas de Ethernet.
-  
+  * [Cologix](http://www.cologix.com/)
+  * [CoreSite](http://www.coresite.com/)
   * [Equinix Cloud Exchange](http://www.equinix.com/services/interconnection-connectivity/cloud-exchange/)
-  * [TeleCity CloudIX](http://www.telecitygroup.com/colocation-services/cloud-ix.htm)
   * [Interxion](http://www.interxion.com/)
   * [NextDC](http://www.nextdc.com/)
-  * [CoreSite](http://www.coresite.com/)
-  * [Cologix](http://www.cologix.com/)
+  * [Megaport](https://www.megaport.com/services/microsoft-expressroute/)
+  * [TeleCity CloudIX](http://www.telecitygroup.com/colocation-services/cloud-ix.htm)
 * Solicite ao seu fornecedor de conectividade para expandir a sua rede para a localização de peering que pretende.
   * Certifique-se de que o fornecedor de conectividade expande a sua conectividade para um estado de elevada disponibilidade, de forma a não existirem pontos únicos de falha.
 * Organize um circuito ExpressRoute com a troca como o seu fornecedor de conectividade para se ligar à Microsoft.
@@ -158,6 +158,6 @@ A ativação da conectividade privada para atender as suas necessidades pode ser
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Nov16_HO5-->
 
 

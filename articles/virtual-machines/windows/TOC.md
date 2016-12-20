@@ -48,6 +48,8 @@
 ### [Criar um balanceador de carga](../../load-balancer/load-balancer-get-started-internet-portal.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
 ### [Criar um IP público estático](../../virtual-network/virtual-network-deploy-static-pip-arm-portal.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
 ### [Ligar VNets Clássicas a VNets do Resource Manager](../../vpn-gateway/vpn-gateway-connect-different-deployment-models-portal.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
+### [Utilizar o DNS do Azure com VMs](../../dns/dns-for-azure-services.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
+### [Utilizar o Gestor de Tráfego do Azure com VMs](../../traffic-manager/traffic-manager-endpoint-types.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
 
 ## Implementação
 ### [Utilizar o Licenciamento do Software Assurance](../virtual-machines-windows-hybrid-use-benefit-licensing.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
@@ -113,6 +115,7 @@
 ### [Descrição geral da migração](../virtual-machines-windows-migration-classic-resource-manager.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
 ### [Planear a migração](../virtual-machines-windows-migration-classic-resource-manager-deep-dive.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
 ### [Migrar com o PowerShell](../virtual-machines-windows-ps-migration-classic-resource-manager.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
+### [Erros comuns de migração](../virtual-machines-migration-errors.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
 ### [Ferramentas da comunidade para migração](../virtual-machines-windows-migration-scripts.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
 
 ## Planear
@@ -162,8 +165,8 @@
 
 ### [SAP](../virtual-machines-windows-sap-get-started.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
 ### [SharePoint](../virtual-machines-windows-sharepoint-farm.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
-###[Configurar uma aplicação LOB baseada na Web numa nuvem híbrida para fins de teste](../virtual-machines-windows-ps-hybrid-cloud-test-env-lob.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
-###[Configurar um ambiente de nuvem híbrido simulado para fins de teste](../virtual-machines-windows-ps-hybrid-cloud-test-env-sim.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
+###[Configurar uma aplicação LOB baseada na Web numa cloud híbrida para fins de teste](../virtual-machines-windows-ps-hybrid-cloud-test-env-lob.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
+###[Configurar um ambiente de cloud híbrido simulado para fins de teste](../virtual-machines-windows-ps-hybrid-cloud-test-env-sim.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
 
 ## Resolução de problemas
 ### [Resolver problemas de ligações do Ambiente de Trabalho Remoto](../virtual-machines-windows-troubleshoot-rdp-connection.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
@@ -177,22 +180,22 @@
 
 # Referência
 ## [PowerShell](/powershell/azureps-cmdlets-docs)
-## [CLI do Azure](/cli/azure/vm)
-## [Java](/java/api)
+## [CLI 2.0 do Azure (Pré-visualização)](/cli/azure/vm)
 ## [.NET](/dotnet/api/microsoft.azure.management.compute)
-## [Criar modelos do Resource Manager](../../resource-group-authoring-templates.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-## [Modelos da comunidade](https://azure.microsoft.com/documentation/templates)
+## [Java](/java/api)
+## [Node.js](https://azure.microsoft.com/en-us/develop/nodejs/#azure-sdk)
+## [Python](http://azure-sdk-for-python.readthedocs.io/en/latest/ref/azure.mgmt.compute.html)
 ## [REST de Computação](/rest/api/compute)
-## [REST de Rede](/rest/api)
-## [REST de Armazenamento](/rest/api/storageservices)
 
 # Recursos
+## [Criar modelos do Resource Manager](../../resource-group-authoring-templates.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+## [Modelos da comunidade](https://azure.microsoft.com/documentation/templates)
 ## [Preços](https://azure.microsoft.com/pricing/details/#Windows)
 ## [Disponibilidade regional](https://azure.microsoft.com/regions/services/)
 ## [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-virtual-machine)
 ## [Vídeos](https://azure.microsoft.com/documentation/videos/index/?services=virtual-machines)
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Dec16_HO1-->
 
 

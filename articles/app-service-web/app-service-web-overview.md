@@ -15,8 +15,8 @@ ms.topic: get-started-article
 ms.date: 10/28/2016
 ms.author: cephalin
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: d366fc36e2731be34d70fd4e4fa082370c452d63
+ms.sourcegitcommit: 4edd2696c9a5709ded6e2a3e352090775335f0d2
+ms.openlocfilehash: 69f3bd4759e879c6f3b55d8126f34e8ebf4be52d
 
 
 ---
@@ -46,7 +46,7 @@ Para obter exemplos de cenários típicos de aplicações para os quais possa ut
 Apresentamos a seguir algumas das principais funcionalidades do App Service que se aplicam às Web Apps:
 
 * **Várias linguagens e arquiteturas** – o App Service tem suporte de primeira classe para ASP.NET, Node.js, Java, PHP e Python. Também pode executar o [PowerShell e outros scripts ou executáveis](web-sites-create-web-jobs.md) em VMs do App Service.
-* **Otimização de DevOps** – configure [a integração e a implementação contínuas](app-service-continuous-deployment.md) com os Visual Studio Team Services, o GitHub ou o BitBucket. Promova atualizações através de [ambientes de teste](web-sites-staged-publishing.md). Realize [testes A/B](app-service-web-test-in-production-get-start.md). Faça a gestão das suas aplicações no App Service utilizando o [Azure PowerShell](../powershell-install-configure.md) ou a [interface de linha de comandos (CLI) de várias plataformas](../xplat-cli-install.md).
+* **Otimização de DevOps** – configure [a integração e a implementação contínuas](app-service-continuous-deployment.md) com os Visual Studio Team Services, o GitHub ou o BitBucket. Promova atualizações através de [ambientes de teste](web-sites-staged-publishing.md). Realize [testes A/B](app-service-web-test-in-production-get-start.md). Faça a gestão das suas aplicações no App Service utilizando o [Azure PowerShell](/powershell/azureps-cmdlets-docs) ou a [interface de linha de comandos (CLI) de várias plataformas](../xplat-cli-install.md).
 * **Dimensionamento global com elevada disponibilidade** – aumente [verticalmente](web-sites-scale.md) ou [horizontalmente](../monitoring-and-diagnostics/insights-how-to-scale.md) de forma manual ou automática. Aloje as aplicações em qualquer lugar da infraestrutura do datacenter global da Microsoft e o App Service [SLA](https://azure.microsoft.com/support/legal/sla/app-service/) promete elevada disponibilidade.
 * **Ligações a plataformas SaaS e dados no local** – escolha entre mais de 50 [conectores](../connectors/apis-list.md) para sistemas empresariais (como SAP, Siebel e Oracle), serviços SaaS (como o Salesforce e o Office 365) e serviços Internet (como o Facebook e o Twitter). Aceda a dados no local ao utilizar [Ligações Híbridas](../biztalk-services/integration-hybrid-connection-overview.md) e [Azure Virtual Networks](web-sites-integrate-with-vnet.md).
 * **Segurança e conformidade** – o App Service está [em conformidade com ISO, SOC e PCI](https://www.microsoft.com/TrustCenter/).
@@ -65,6 +65,6 @@ Se pretender começar a utilizar o App Service do Azure antes de se inscrever nu
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 

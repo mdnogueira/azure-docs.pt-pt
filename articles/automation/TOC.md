@@ -1,14 +1,11 @@
 # Descrição geral
 ## [O que é a Automatização do Azure?](automation-intro.md)
 ## [Segurança na Automatização do Azure](automation-security-overview.md)
-
 # Introdução
 ## [Criar runbook](automation-first-runbook-graphical.md)
 ## [Criar runbook do PowerShell](automation-first-runbook-textual-powershell.md)
 ## [Runbook do Fluxo de Trabalho do PowerShell](automation-first-runbook-textual.md)
 ## [Gerir controlo de acesso baseado em funções](automation-role-based-access-control.md)
-
-
 # Procedimento
 ## Criar runbooks
 ### [Tipos de runbooks](automation-runbook-types.md)
@@ -55,26 +52,22 @@
 ### [Iniciar/parar VM com Etiquetas JSON](automation-scenario-start-stop-vm-wjson-tags.md)
 ### [Remover Grupo de Recursos](automation-scenario-remove-resourcegroup.md)
 ### [Iniciar/parar VMs durante horas de inatividade](automation-solution-vm-management.md)
-
+### [Integração do Controlo de Origem com o GitHub Enterprise](automation-scenario-source-control-integration-with-github-ent.md)
 ## [Monitorizar](automation-manage-send-joblogs-log-analytics.md)
-
 ## Migrar
 ### [Migrar do Orchestrator](automation-orchestrator-migration.md)
 ### [Mover Conta de Automatização](automation-migrate-account-subscription.md)
-
 ## Resolução de problemas
 ### [Resolver erros comuns](automation-troubleshooting-automation-errors.md)
 ### [Tarefa de runbook suspensa](automation-troubleshooting-hrw-runbook-terminates-suspended.md)
-
 # Referência
-## [PowerShell](/powershell/azureps-cmdlets-docs)
-## [PowerShell Clássico](/powershell/servicemanagement)
-## [.NET](/dotnet/api)
+## [PowerShell](/powershell/resourcemanager/azurerm.automation/v2.3.0/azurerm.automation)
+## [PowerShell (Clássico)](/powershell/servicemanagement/azure.automation/v3.1.0/azure.automation)
+## [.NET](/dotnet/api/microsoft.azure.management.automation)
 ## [REST](https://msdn.microsoft.com/library/azure/mt662285.aspx)
-## [REST clássico](https://msdn.microsoft.com/library/azure/mt163781)
-## [Notas de versão](https://azure.microsoft.com/updates/?product=automation)
-
+## [REST (Clássico)](https://msdn.microsoft.com/library/azure/mt163781)
 # Recursos
+## [Notas de versão](https://azure.microsoft.com/updates/?product=automation)
 ## [Preços](https://azure.microsoft.com/pricing/details/automation/)  
 ## [Fórum do MSDN](https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=azureautomation)  
 ## [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-automation)
@@ -85,6 +78,6 @@
 ## [Vídeo de introdução à automatização](https://azure.microsoft.com/documentation/videos/azure-automation-101-with-powershell-and-eamon-o-reilly/)
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -1,8 +1,8 @@
 ---
 layout: LandingPage
 translationtype: Human Translation
-ms.sourcegitcommit: 87b9d22ec066108adb282606305315919b901ea0
-ms.openlocfilehash: 316f20972fc4d231ef0a6a9e132110dfc6c1a59a
+ms.sourcegitcommit: 3752a677351518195773a86c3824078a5aff6d03
+ms.openlocfilehash: 54bebbed74b344ff854a83b2b6c4abdb5ba68321
 
 ---
 #<a name="notification-hubs-documentation"></a>Documentação dos Hubs de Notificação
@@ -77,7 +77,7 @@ Com os Hubs de Notificação, pode enviar facilmente notificações push persona
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Introdução aos Notification Hubs utilizando o Baidu</h3>
+                        <h3>Introdução aos Hubs de Notificação utilizando o Baidu</h3>
                     </div>
                 </div>
             </div>
@@ -198,7 +198,7 @@ Com os Hubs de Notificação, pode enviar facilmente notificações push persona
                 <div class="card">
                     <div class="cardText">
                         <h3>REST</h3>
-                        <p>Referência da API REST dos Hubs de Notificação</p>
+                        <p>API REST dos Hubs de Notificação</p>
                     </div>
                 </div>
             </div>
@@ -219,6 +219,6 @@ Transferir a Documentação dos Hubs de Notificação </div>
 
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Dec16_HO1-->
 
 

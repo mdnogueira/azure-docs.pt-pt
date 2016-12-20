@@ -64,6 +64,13 @@
 #### [Portal clássico](cloud-services-how-to-scale.md)
 ### [Utilizar Python para gerir os Recursos do Azure](cloud-services-python-how-to-use-service-management.md)
 
+### [Correções do SO convidado](cloud-services-guestos-msrc-releases.md)
+### Extinção do SO convidado
+#### [Política de extinção](cloud-services-guestos-retirement-policy.md)
+#### [Aviso de extinção da Família 1](cloud-services-guestos-family1-retirement.md)
+### [Notícias de lançamento do SO Convidado](cloud-services-guestos-update-matrix.md)
+### [Notas de XPath para Configuração de Função dos Serviços Cloud](cloud-services-role-config-xpath.md)
+
 ## Gerir certificados
 ### [Serviços Cloud em e gestão de certificados](cloud-services-certs-create.md)
 ### Configurar o SSL 
@@ -101,12 +108,6 @@
 ## [Esquema XML .csdef](https://msdn.microsoft.com/library/azure/ee758711)
 ## [Esquema XML .cscfg](https://msdn.microsoft.com/library/azure/ee758710)
 ## [REST](https://msdn.microsoft.com/library/azure/ee460812)
-## [Correções do SO convidado](cloud-services-guestos-msrc-releases.md)
-## Extinção do SO convidado
-### [Política de extinção](cloud-services-guestos-retirement-policy.md)
-### [Aviso de extinção da Família 1](cloud-services-guestos-family1-retirement.md)
-## [Notícias de lançamento do SO Convidado](cloud-services-guestos-update-matrix.md)
-## [Notas de XPath para Configuração de Função dos Serviços Cloud](cloud-services-role-config-xpath.md)
 
 # Recursos
 ## [Preços](https://azure.microsoft.com/pricing/details/cloud-services/)
@@ -116,6 +117,6 @@
 ## [Percurso de aprendizagem](https://azure.microsoft.com/documentation/learning-paths/cloud-services/)
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -15,8 +15,8 @@ ms.topic: hero-article
 ms.date: 10/12/2016
 ms.author: robinsh
 translationtype: Human Translation
-ms.sourcegitcommit: 1c6ccbeef1fb40ce4f7242bb2cc4ee958659bd3c
-ms.openlocfilehash: 02ad118a175b66b3958adb413f5f48ef156695ef
+ms.sourcegitcommit: bc97472a07ac4c27c60fbe2cb803f2360a3362c4
+ms.openlocfilehash: 93c1d5261e7826258250c4547e4e287bc7e13d1e
 
 ---
 
@@ -52,9 +52,9 @@ Este tutorial demonstra como escrever código .NET para alguns cenários comuns 
 Adicione as seguintes declarações `using` à parte superior do ficheiro `program.cs`:
 
 ```csharp
-    using Microsoft.Azure; // Namespace for CloudConfigurationManager
-    using Microsoft.WindowsAzure.Storage; // Namespace for CloudStorageAccount
-    using Microsoft.WindowsAzure.Storage.Queue; // Namespace for Queue storage types
+using Microsoft.Azure; // Namespace for CloudConfigurationManager
+using Microsoft.WindowsAzure.Storage; // Namespace for CloudStorageAccount
+using Microsoft.WindowsAzure.Storage.Queue; // Namespace for Queue storage types
 ```
 
 ### <a name="parse-the-connection-string"></a>Analisar a cadeia de ligação
@@ -64,7 +64,7 @@ Adicione as seguintes declarações `using` à parte superior do ficheiro `progr
 A classe **CloudQueueClient** permite-lhe obter filas armazenadas no Armazenamento de filas. Eis uma forma de criar o cliente do serviço:
 
 ```csharp
-    CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
+CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
 ```
     
 Agora, está pronto para escrever código que lê dados de e escreve dados para o Armazenamento de filas.
@@ -73,134 +73,134 @@ Agora, está pronto para escrever código que lê dados de e escreve dados para 
 Este exemplo mostra como criar uma fila se ainda não existir:
 
 ```csharp
-    // Retrieve storage account from connection string.
-    CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
-        CloudConfigurationManager.GetSetting("StorageConnectionString"));
+// Retrieve storage account from connection string.
+CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
+    CloudConfigurationManager.GetSetting("StorageConnectionString"));
 
-    // Create the queue client.
-    CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
+// Create the queue client.
+CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
 
-    // Retrieve a reference to a container.
-    CloudQueue queue = queueClient.GetQueueReference("myqueue");
+// Retrieve a reference to a container.
+CloudQueue queue = queueClient.GetQueueReference("myqueue");
 
-    // Create the queue if it doesn't already exist
-    queue.CreateIfNotExists();
+// Create the queue if it doesn't already exist
+queue.CreateIfNotExists();
 ```
 
 ## <a name="insert-a-message-into-a-queue"></a>Introduzir uma mensagem numa fila
 Para introduzir uma mensagem numa fila existente, primeiro crie um novo **CloudQueueMessage**. Em seguida, chame o método **AddMessage**. É possível criar uma **CloudQueueMessage** a partir de uma cadeia (no formato UTF-8) ou uma matriz de **bytes**. Eis o código que cria uma fila (se não existir) e introduz a mensagem "Olá, Mundo":
 
 ```csharp
-    // Retrieve storage account from connection string.
-    CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
-        CloudConfigurationManager.GetSetting("StorageConnectionString"));
+// Retrieve storage account from connection string.
+CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
+    CloudConfigurationManager.GetSetting("StorageConnectionString"));
 
-    // Create the queue client.
-    CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
+// Create the queue client.
+CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
 
-    // Retrieve a reference to a queue.
-    CloudQueue queue = queueClient.GetQueueReference("myqueue");
+// Retrieve a reference to a queue.
+CloudQueue queue = queueClient.GetQueueReference("myqueue");
 
-    // Create the queue if it doesn't already exist.
-    queue.CreateIfNotExists();
+// Create the queue if it doesn't already exist.
+queue.CreateIfNotExists();
 
-    // Create a message and add it to the queue.
-    CloudQueueMessage message = new CloudQueueMessage("Hello, World");
-    queue.AddMessage(message);
+// Create a message and add it to the queue.
+CloudQueueMessage message = new CloudQueueMessage("Hello, World");
+queue.AddMessage(message);
 ```
 
 ## <a name="peek-at-the-next-message"></a>Pré-visualização da mensagem seguinte
 Pode pré-visualizar a mensagem no início de um fila sem a remover da fila ao chamar o método **PeekMessage**.
 
 ```csharp
-    // Retrieve storage account from connection string
-    CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
-        CloudConfigurationManager.GetSetting("StorageConnectionString"));
+// Retrieve storage account from connection string
+CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
+    CloudConfigurationManager.GetSetting("StorageConnectionString"));
 
-    // Create the queue client
-    CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
+// Create the queue client
+CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
 
-    // Retrieve a reference to a queue
-    CloudQueue queue = queueClient.GetQueueReference("myqueue");
+// Retrieve a reference to a queue
+CloudQueue queue = queueClient.GetQueueReference("myqueue");
 
-    // Peek at the next message
-    CloudQueueMessage peekedMessage = queue.PeekMessage();
+// Peek at the next message
+CloudQueueMessage peekedMessage = queue.PeekMessage();
 
-    // Display message.
-    Console.WriteLine(peekedMessage.AsString);
+// Display message.
+Console.WriteLine(peekedMessage.AsString);
 ```
 
 ## <a name="change-the-contents-of-a-queued-message"></a>Alterar os conteúdos de uma mensagem em fila
 Pode alterar os conteúdos de uma mensagem no local na fila de espera. Se a mensagem representa uma tarefa de trabalho, pode utilizar esta funcionalidade para atualizar o estado da tarefa de trabalho. O seguinte código atualiza a mensagem de filas com novos conteúdos e expande o tempo limite de visibilidade em 60 segundos. Isto guarda o estado do trabalho associado à mensagem e atribui ao cliente outro minuto para continuar a trabalhar na mensagem. Pode utilizar esta técnica para controlar fluxos de trabalho de vários passos em mensagens de filas, sem ser necessário recomeçar do início se falhar um passo de processamento devido a uma falha de hardware ou software. Normalmente, também manteria uma contagem de tentativas e se a mensagem for repetida mais do que *n* vezes, deveria eliminá-la. Esta ação protege contra uma mensagem que aciona um erro da aplicação sempre que é processada.
 
 ```csharp
-    // Retrieve storage account from connection string.
-    CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
-        CloudConfigurationManager.GetSetting("StorageConnectionString"));
+// Retrieve storage account from connection string.
+CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
+    CloudConfigurationManager.GetSetting("StorageConnectionString"));
 
-    // Create the queue client.
-    CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
+// Create the queue client.
+CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
 
-    // Retrieve a reference to a queue.
-    CloudQueue queue = queueClient.GetQueueReference("myqueue");
+// Retrieve a reference to a queue.
+CloudQueue queue = queueClient.GetQueueReference("myqueue");
 
-    // Get the message from the queue and update the message contents.
-    CloudQueueMessage message = queue.GetMessage();
-    message.SetMessageContent("Updated contents.");
-    queue.UpdateMessage(message,
-        TimeSpan.FromSeconds(60.0),  // Make it visible for another 60 seconds.
-        MessageUpdateFields.Content | MessageUpdateFields.Visibility);
+// Get the message from the queue and update the message contents.
+CloudQueueMessage message = queue.GetMessage();
+message.SetMessageContent("Updated contents.");
+queue.UpdateMessage(message,
+    TimeSpan.FromSeconds(60.0),  // Make it visible for another 60 seconds.
+    MessageUpdateFields.Content | MessageUpdateFields.Visibility);
 ```
 
 ## <a name="de-queue-the-next-message"></a>Remover a mensagem seguinte da fila
 O código remove uma mensagem da fila em dois passos. Quando chamar **GetMessage**, obterá a seguinte mensagem numa fila. Uma mensagem devolvida por **GetMessage** torna-se invisível para quaisquer outras mensagens de leitura de código desta fila. Por predefinição, esta mensagem permanece invisível durante 30 segundos. Para acabar de remover a mensagem da fila, também tem de chamar **DeleteMessage**. Este processo de dois passos da remoção de uma mensagem garante que se o código não conseguir processar uma mensagem devido a uma falha de hardware ou software, outra instância do seu código poderá obter a mesma mensagem e tentar novamente. O seu código chama **DeleteMessage** imediatamente após a mensagem ser processada.
 
 ```csharp
-    // Retrieve storage account from connection string
-    CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
-        CloudConfigurationManager.GetSetting("StorageConnectionString"));
+// Retrieve storage account from connection string
+CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
+    CloudConfigurationManager.GetSetting("StorageConnectionString"));
 
-    // Create the queue client
-    CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
+// Create the queue client
+CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
 
-    // Retrieve a reference to a queue
-    CloudQueue queue = queueClient.GetQueueReference("myqueue");
+// Retrieve a reference to a queue
+CloudQueue queue = queueClient.GetQueueReference("myqueue");
 
-    // Get the next message
-    CloudQueueMessage retrievedMessage = queue.GetMessage();
+// Get the next message
+CloudQueueMessage retrievedMessage = queue.GetMessage();
 
-    //Process the message in less than 30 seconds, and then delete the message
-    queue.DeleteMessage(retrievedMessage);
+//Process the message in less than 30 seconds, and then delete the message
+queue.DeleteMessage(retrievedMessage);
 ```
 
 ## <a name="use-async-await-pattern-with-common-queue-storage-apis"></a>Utilizar o padrão Async-Await com APIs de Armazenamento de filas comuns
 Este exemplo mostra como utilizar o padrão Async-Await com APIs de Armazenamento de filas comuns. O exemplo chama a versão assíncrona de cada um dos métodos em questão, conforme indicado pelo sufixo *Async* de cada método. Quando é utilizado um método assíncrono, o padrão async-await suspende a execução local, até que a chamada seja concluída. Este comportamento permite que o thread atual efetue outro trabalho, o que ajuda a evitar congestionamentos de desempenho e melhora a capacidade de resposta global da sua aplicação. Para obter mais detalhes sobre como utilizar o padrão Async-Await no .NET, consulte [Async-Await (C# e Visual Basic)](https://msdn.microsoft.com/library/hh191443.aspx)
 
 ```csharp
-    // Create the queue if it doesn't already exist
-    if(await queue.CreateIfNotExistsAsync())
-    {
-        Console.WriteLine("Queue '{0}' Created", queue.Name);
-    }
-    else
-    {
-        Console.WriteLine("Queue '{0}' Exists", queue.Name);
-    }
+// Create the queue if it doesn't already exist
+if(await queue.CreateIfNotExistsAsync())
+{
+    Console.WriteLine("Queue '{0}' Created", queue.Name);
+}
+else
+{
+    Console.WriteLine("Queue '{0}' Exists", queue.Name);
+}
 
-    // Create a message to put in the queue
-    CloudQueueMessage cloudQueueMessage = new CloudQueueMessage("My message");
+// Create a message to put in the queue
+CloudQueueMessage cloudQueueMessage = new CloudQueueMessage("My message");
 
-    // Async enqueue the message
-    await queue.AddMessageAsync(cloudQueueMessage);
-    Console.WriteLine("Message added");
+// Async enqueue the message
+await queue.AddMessageAsync(cloudQueueMessage);
+Console.WriteLine("Message added");
 
-    // Async dequeue the message
-    CloudQueueMessage retrievedMessage = await queue.GetMessageAsync();
-    Console.WriteLine("Retrieved message with content '{0}'", retrievedMessage.AsString);
+// Async dequeue the message
+CloudQueueMessage retrievedMessage = await queue.GetMessageAsync();
+Console.WriteLine("Retrieved message with content '{0}'", retrievedMessage.AsString);
 
-    // Async delete the message
-    await queue.DeleteMessageAsync(retrievedMessage);
-    Console.WriteLine("Deleted message");
+// Async delete the message
+await queue.DeleteMessageAsync(retrievedMessage);
+Console.WriteLine("Deleted message");
 ```
     
 ## <a name="leverage-additional-options-for-de-queuing-messages"></a>Tirar maior partido das opções adicionais para remover as mensagens da fila
@@ -208,63 +208,63 @@ Existem duas formas através das quais pode personalizar a obtenção de mensage
 Em primeiro lugar, pode obter um lote de mensagens (até 32). Em segundo lugar, pode definir um tempo limite de invisibilidade superior ou inferior, dando mais ou menos tempo ao código para processar totalmente cada mensagem. O seguinte código de exemplo utiliza o método **GetMessages** para obter 20 mensagens numa chamada. Em seguida, processa cada mensagem através de um ciclo **foreach**. Define também o tempo limite de invisibilidade para cinco minutos para cada mensagem. Tenha em atenção que os 5 minutos começam para todas as mensagens ao mesmo tempo, como tal, 5 minutos após a chamada para **GetMessages**, as mensagens que não tenham sido eliminadas ficarão visíveis novamente.
 
 ```csharp
-    // Retrieve storage account from connection string.
-    CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
-        CloudConfigurationManager.GetSetting("StorageConnectionString"));
+// Retrieve storage account from connection string.
+CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
+    CloudConfigurationManager.GetSetting("StorageConnectionString"));
 
-    // Create the queue client.
-    CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
+// Create the queue client.
+CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
 
-    // Retrieve a reference to a queue.
-    CloudQueue queue = queueClient.GetQueueReference("myqueue");
+// Retrieve a reference to a queue.
+CloudQueue queue = queueClient.GetQueueReference("myqueue");
 
-    foreach (CloudQueueMessage message in queue.GetMessages(20, TimeSpan.FromMinutes(5)))
-    {
-        // Process all messages in less than 5 minutes, deleting each message after processing.
-        queue.DeleteMessage(message);
-    }
+foreach (CloudQueueMessage message in queue.GetMessages(20, TimeSpan.FromMinutes(5)))
+{
+    // Process all messages in less than 5 minutes, deleting each message after processing.
+    queue.DeleteMessage(message);
+}
 ```
 
 ## <a name="get-the-queue-length"></a>Obter o comprimento da fila
 Pode obter uma estimativa do número de mensagens numa fila. O método **FetchAttributes** pede ao serviço Fila que devolva os atributos de fila, incluindo a contagem de mensagens. A propriedade **ApproximateMessageCount** devolve o último valor obtido pelo método **FetchAttributes**, sem chamar o serviço Fila.
 
 ```csharp
-    // Retrieve storage account from connection string.
-    CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
-        CloudConfigurationManager.GetSetting("StorageConnectionString"));
+// Retrieve storage account from connection string.
+CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
+    CloudConfigurationManager.GetSetting("StorageConnectionString"));
 
-    // Create the queue client.
-    CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
+// Create the queue client.
+CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
 
-    // Retrieve a reference to a queue.
-    CloudQueue queue = queueClient.GetQueueReference("myqueue");
+// Retrieve a reference to a queue.
+CloudQueue queue = queueClient.GetQueueReference("myqueue");
 
-    // Fetch the queue attributes.
-    queue.FetchAttributes();
+// Fetch the queue attributes.
+queue.FetchAttributes();
 
-    // Retrieve the cached approximate message count.
-    int? cachedMessageCount = queue.ApproximateMessageCount;
+// Retrieve the cached approximate message count.
+int? cachedMessageCount = queue.ApproximateMessageCount;
 
-    // Display number of messages.
-    Console.WriteLine("Number of messages in queue: " + cachedMessageCount);
+// Display number of messages.
+Console.WriteLine("Number of messages in queue: " + cachedMessageCount);
 ```
 
 ## <a name="delete-a-queue"></a>Eliminar uma fila
 Para eliminar uma fila e todas as mensagens nela contidas, chame o método **Eliminar** no objeto de fila.
 
 ```csharp
-    // Retrieve storage account from connection string.
-    CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
-        CloudConfigurationManager.GetSetting("StorageConnectionString"));
+// Retrieve storage account from connection string.
+CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
+    CloudConfigurationManager.GetSetting("StorageConnectionString"));
 
-    // Create the queue client.
-    CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
+// Create the queue client.
+CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
 
-    // Retrieve a reference to a queue.
-    CloudQueue queue = queueClient.GetQueueReference("myqueue");
+// Retrieve a reference to a queue.
+CloudQueue queue = queueClient.GetQueueReference("myqueue");
 
-    // Delete the queue.
-    queue.Delete();
+// Delete the queue.
+queue.Delete();
 ```
     
 
@@ -289,7 +289,6 @@ Agora que aprendeu as noções básicas do Armazenamento de filas, siga estas li
 [Spatial]: http://nuget.org/packages/System.Spatial/5.0.2
 
 
-
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO4-->
 
 

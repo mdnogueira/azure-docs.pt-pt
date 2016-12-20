@@ -15,8 +15,8 @@ ms.topic: get-started-article
 ms.date: 08/19/2016
 ms.author: piyushjo
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 8cb91a8cdc6d16070034c79515731be7b820d389
+ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
+ms.openlocfilehash: e3d6caee50a57648f4f775029a2e381cee0f1e72
 
 
 ---
@@ -49,7 +49,7 @@ Assim que os casos de utilização e o segmento estejam definidos, fornece uma d
 
 Com base na integração, assim que as aplicações são publicadas, na qualidade de comerciante, conseguirá ver as suas análises em tempo real, segmentar o seu público-alvo e, em seguida, começar a enviar notificações push inteligentemente segmentadas para envolver os utilizadores finais dentro ou fora da aplicação.
 
-### <a name="usecases-to-get-started"></a>Casos de utilização para começar
+### <a name="use-cases-to-get-started"></a>Casos de utilização para começar
 1. Estratégia de boas-vindas: crie várias campanhas de notificações push baseadas no comportamento do utilizador final no momento da execução da aplicação para um novo envolvimento em D+2/5/10/15 após a primeira sessão e aumentar a retenção na primeira execução.
 2. Promova um novo conteúdo (funcionalidade, artigo/vídeo ou produto) com base no comportamento do utilizador final para enviar as informações apenas aos utilizadores finais que têm maior probabilidade de interagir.
 3. Classificar a aplicação: segmente menos de 1 por cento da sua base de utilizadores que tem maior probabilidade de classificar a avaliação com 5 estrelas na loja.
@@ -66,13 +66,13 @@ Para ser o mais contextual possível no envolvimento com o seu público-alvo, é
 > 
 > 
 
-### <a name="usecases-and-best-practices"></a>Casos de utilização e melhores práticas
+### <a name="use-cases-and-best-practices"></a>Casos de utilização e melhores práticas
 Nas secções seguintes são brevemente discutidos alguns casos de utilização chave de clientes com os quais nos temos deparado para o ajudar a começar.
 
 #### <a name="media"></a>Meios de comunicação social
 Recolha o tipo de conteúdo que é consumido pelo utilizador final e, em seguida, segmente o público-alvo com base neste comportamento para visar tipos específicos de conteúdo apenas para um público-alvo que terá maior probabilidade de consumir. Assim, evita-se o envio de spam a uma base de utilizadores completa e garante-se uma melhor retenção.
 
-#### <a name="mcommerce"></a>Comércio móvel
+#### <a name="m-commerce"></a>Comércio móvel
 Recolha as categorias de produtos mais visitadas dentro da aplicação e segmente público-alvo para promover um desconto ou um novo produto da categoria que será mais provavelmente comprada pelo utilizador final. Procura aumentar as receitas. Mais uma vez, o objetivo é não enviar spam!
 
 #### <a name="gaming"></a>Jogos
@@ -134,6 +134,6 @@ Todos estes tipos de dados podem ser aumentados com parâmetros (*informações 
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 

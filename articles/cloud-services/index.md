@@ -1,11 +1,11 @@
 ---
 layout: LandingPage
 translationtype: Human Translation
-ms.sourcegitcommit: 87b9d22ec066108adb282606305315919b901ea0
-ms.openlocfilehash: af0eb3ce49e509992ab582558a342933f950afdb
+ms.sourcegitcommit: 3752a677351518195773a86c3824078a5aff6d03
+ms.openlocfilehash: 4985185ad8cb4a21e05d4668458e82411cd88ee0
 
 ---
-#<a name="cloud-services-documentation"></a>Documentação dos Serviços Cloud
+# <a name="cloud-services-documentation"></a>Documentação dos Serviços Cloud
 
 Os Serviços Cloud são um exemplo de uma implementação PaaS (Plataforma como Serviço). Foram concebidos para suportar aplicações dimensionáveis, fiáveis e rentáveis do ponto de vista da operação. Com os Serviços Cloud, além da vantagem da virtualização, também tem controlo sobre a máquina virtual para configurar, corrigir e instalar software.  
 
@@ -86,48 +86,32 @@ Os Serviços Cloud são um exemplo de uma implementação PaaS (Plataforma como 
 
 ---
 
-## <a name="reference"></a>Referência
-
+<h2>Referência</h2>
 <ul class="panelContent cardsW">
     <li>
-        <a href="https://msdn.microsoft.com/library/azure/ee460812">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>Linguagens</h3>
+                        <p><a href="https://msdn.microsoft.com/library/azure/ee758711">Esquema XML .csdef</a></p>
+                        <p><a href="https://msdn.microsoft.com/library/azure/ee758710">Esquema XML .cscfg</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
                         <h3>REST</h3>
-                        <p>Referência da API REST dos Serviços Cloud</p>
+                        <p><a href="https://msdn.microsoft.com/library/azure/ee460812">API REST</a></p>
                     </div>
                 </div>
             </div>
         </div>
-        </a>
-    </li>
-
-    <li>
-        <a href="https://msdn.microsoft.com/en-us/library/azure/ee758711">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3>Esquemas</h3>
-                        <p>Esquema de Definição dos Serviços Cloud</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </a>
-        <a href="https://msdn.microsoft.com/en-us/library/azure/ee758710">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <p>Esquema de Configuração dos Serviços Cloud</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </a>
     </li>
 </ul>
 
@@ -141,6 +125,6 @@ Transferir a Documentação dos Serviços Cloud </div>
 
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -12,11 +12,11 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: big-data
-ms.date: 11/15/2016
+ms.date: 11/21/2016
 ms.author: nitinme
 translationtype: Human Translation
-ms.sourcegitcommit: 408a5fb25ef7b285a76e8f5b65890dc625574437
-ms.openlocfilehash: fba738575ee9a60cc930adfb68b7c34323bbe747
+ms.sourcegitcommit: 7d02b9fd741310a39aaadee0358af6c7b5990cf2
+ms.openlocfilehash: dfa7a41c7acd71eca39ac1360b1699bed9309e09
 
 
 ---
@@ -29,7 +29,8 @@ ms.openlocfilehash: fba738575ee9a60cc930adfb68b7c34323bbe747
 > * [API REST](data-lake-store-get-started-rest-api.md)
 > * [CLI do Azure](data-lake-store-get-started-cli.md)
 > * [Node.js](data-lake-store-manage-use-nodejs.md)
-> 
+> * [python](data-lake-store-get-started-python.md)
+>
 > 
 
 Aprenda a utilizar o Portal do Azure para criar uma conta do Azure Data Lake Store e executar operações básicas, tais como criar pastas, carregar e transferir ficheiros de dados, eliminar a conta, entre outras. Para obter mais informações sobre o Data Lake Store, veja [Descrição geral do Azure Data Lake Store](data-lake-store-overview.md).
@@ -136,6 +137,6 @@ Para eliminar uma conta do Azure Data Lake Store, a partir do painel Data Lake S
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Nov16_HO4-->
 
 

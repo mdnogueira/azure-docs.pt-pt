@@ -13,7 +13,7 @@ O diagrama seguinte mostra uma arquitetura da solução de IoT típica. O diagra
 ![Arquitetura da solução de IoT][img-solution-architecture]
 
 > [!NOTE]
-> Para um debate aprofundado da arquitetura do IoT, consulte [Arquitetura de Referência do IoT do Microsoft Azure][Ink refarch].
+> Para um debate aprofundado da arquitetura do IoT, veja [Microsoft Azure IoT Reference Architecture (Arquitetura de Referência do Microsoft Azure IoT)][lnk-refarch].
 > 
 > 
 
@@ -30,7 +30,7 @@ Um dos maiores desafios de projetos IoT consiste na ligação fiável e segura d
 * Podem ter de utilizar protocolos de aplicação proprietários, personalizados ou específicos da indústria.
 * Podem ser criados utilizando um grande conjunto de plataformas de hardware e software populares.
 
-Para além dos requisitos identificados acima, qualquer solução de IoT deverá também proporcionar dimensionamento, segurança e fiabilidade. A implementação do conjunto de requisitos de conectividade resultante com tecnologias tradicionais, como contentores Web e mediadores de mensagens, é difícil e morosa. O Hub IoT do Azure e o Azure IoT Device SDK facilitam a implementação das soluções que cumpram estes requisitos.
+Para além dos requisitos identificados acima, qualquer solução de IoT deverá também proporcionar dimensionamento, segurança e fiabilidade. A implementação do conjunto de requisitos de conectividade resultante com tecnologias tradicionais, como contentores Web e mediadores de mensagens, é difícil e morosa. O Hub IoT do Azure e o Azure IoT device SDKs facilitam a implementação das soluções que cumpram estes requisitos.
 
 Um dispositivo pode comunicar diretamente com um ponto final de gateway de nuvem ou, se não puder utilizar os protocolos de comunicações que o gateway de nuvem suporta, pode ligar-se através de um gateway intermédio. Por exemplo, o [gateway de protocolo do Azure IoT][lnk-protocol-gateway] pode efetuar a tradução do protocolo se os dispositivos não puderem utilizar qualquer um dos protocolos que o Hub IoT suporta.
 
@@ -60,6 +60,6 @@ A camada de apresentação e conectividade empresarial permite aos utilizadores 
 [lnk-refarch]: http://download.microsoft.com/download/A/4/D/A4DAD253-BC21-41D3-B9D9-87D2AE6F0719/Microsoft_Azure_IoT_Reference_Architecture.pdf
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO5-->
 
 

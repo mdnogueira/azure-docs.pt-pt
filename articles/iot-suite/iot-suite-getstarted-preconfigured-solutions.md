@@ -16,8 +16,8 @@ ms.workload: na
 ms.date: 11/16/2016
 ms.author: dobett
 translationtype: Human Translation
-ms.sourcegitcommit: 1a6dd35278f0a4a4f972642c40a0976986dd79ae
-ms.openlocfilehash: 79c9f2d8c683be493160fffe40992006b039f60f
+ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
+ms.openlocfilehash: f86a70a5207f19063e9992325c8f8d696ca7823e
 
 
 ---
@@ -32,7 +32,7 @@ Este tutorial mostra-lhe como aprovisionar a solução pré-configurada de monit
 Para concluir este tutorial, precisa de uma subscrição ativa do Azure.
 
 > [!NOTE]
-> Se não tiver uma conta, pode criar uma de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure][lnk_free_trial].
+> Se não tiver uma conta, pode criar uma de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Azure Free Trial (Avaliação Gratuita do Azure)][lnk_free_trial].
 > 
 > 
 
@@ -86,7 +86,7 @@ O painel Detalhes do dispositivo mostra todos os comandos que um dispositivo esp
 A solução controla o estado de cada comando que envia. Inicialmente, o resultado é **Pendente**. Quando o dispositivo relata que executou o comando, o resultado é definido para **Êxito**.
 
 ## <a name="add-a-new-simulated-device"></a>Adicionar um novo dispositivo simulado
-Ao implementar a solução pré-configurada, aprovisiona automaticamente os quatro dispositivos de exemplo que pode ver na lista de dispositivos. Estes dispositivos são *dispositivos simulados* em execução num Trabalho Web do Azure. Os dispositivos simulados permitem-lhe testar facilmente a solução pré-configurada sem ser necessário implementar dispositivos físicos reais. Se quiser ligar um dispositivo real à solução, veja o tutorial [Ligar o seu dispositivo à solução pré-configurada de monitorização remota][lnk-connect-rm].
+Ao implementar a solução pré-configurada, aprovisiona automaticamente os quatro dispositivos de exemplo que pode ver na lista de dispositivos. Estes dispositivos são *dispositivos simulados* em execução num Trabalho Web do Azure. Os dispositivos simulados permitem-lhe testar facilmente a solução pré-configurada sem ser necessário implementar dispositivos físicos reais. Se quiser ligar um dispositivo real à solução, veja o tutorial [Connect your device to the remote monitoring preconfigured solution (Ligar o seu dispositivo à solução pré-configurada de monitorização remota)][lnk-connect-rm].
 
 Os seguintes passos mostram como adicionar um dispositivo simulado à solução:
 
@@ -98,7 +98,7 @@ Os seguintes passos mostram como adicionar um dispositivo simulado à solução:
    
    ![Definir novos detalhes de dispositivos no dashboard][img-addnew]
    
-   Para além de criar um novo dispositivo simulado, pode ainda adicionar um dispositivo físico se optar por criar um **Dispositivo Personalizado**. Para saber mais sobre a ligação de dispositivos físicos à solução, consulte [Ligar o seu dispositivo à solução pré-configurada de monitorização remota do IoT Suite][lnk-connect-rm].
+   Para além de criar um novo dispositivo simulado, pode ainda adicionar um dispositivo físico se optar por criar um **Dispositivo Personalizado**. Para saber mais sobre a ligação de dispositivos físicos à solução, consulte [Connect your device to the IoT Suite remote monitoring preconfigured solution (Ligar o seu dispositivo à solução pré-configurada de monitorização remota do IoT Suite)][lnk-connect-rm].
 4. Selecione **Autorizar-me a definir o meu próprio ID do Dispositivo** e introduza um nome de ID único para o dispositivo, como **mydevice_01**.
 5. Clique em **Criar**.
    
@@ -112,7 +112,7 @@ Os seguintes passos mostram como adicionar um dispositivo simulado à solução:
     ![Ver telemetria do novo dispositivo][img-runningnew-2]
 
 ## <a name="edit-the-device-metadata"></a>Editar os metadados do dispositivo
-Quando um dispositivo estabelece ligação à solução pela primeira vez, este envia os respetivos metadados para a solução. Quando edita os metadados do dispositivo através do dashboard da solução, este envia os novos valores de metadados para o dispositivo e armazena os novos valores na base de dados DocumentDB da solução. Para obter mais informações, veja [Registo de identidade do dispositivo e DocumentDB][lnk-devicemetadata].
+Quando um dispositivo estabelece ligação à solução pela primeira vez, este envia os respetivos metadados para a solução. Quando edita os metadados do dispositivo através do dashboard da solução, este envia os novos valores de metadados para o dispositivo e armazena os novos valores na base de dados DocumentDB da solução. Para obter mais informações, veja [Device identity registry and DocumentDB (Registo de identidade do dispositivo e DocumentDB)][lnk-devicemetadata].
 
 1. Navegue de volta para a lista de dispositivos.
 2. Selecione o novo dispositivo na **Lista de Dispositivos** e, em seguida, clique em **Editar** para editar as **Propriedades do Dispositivo**:
@@ -189,7 +189,7 @@ Agora que implementou uma solução pré-configurada funcional, pode ler os arti
 
 * [Instruções sobre a solução pré-configurada de monitorização remota][lnk-rm-walkthrough]
 * [Connect your device to the remote monitoring preconfigured solution (Ligar o seu dispositivo à solução pré-configurada de monitorização remota)][lnk-connect-rm]
-* [Permissions on the azureiotsuite.com site (Permissões no site azureiotsuite.com)][lnk-permissions]
+* [Permissões no site azureiotsuite.com][lnk-permissions]
 
 [img-launch-solution]: media/iot-suite-getstarted-preconfigured-solutions/launch.png
 [img-dashboard]: media/iot-suite-getstarted-preconfigured-solutions/dashboard.png
@@ -229,6 +229,6 @@ Agora que implementou uma solução pré-configurada funcional, pode ler os arti
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

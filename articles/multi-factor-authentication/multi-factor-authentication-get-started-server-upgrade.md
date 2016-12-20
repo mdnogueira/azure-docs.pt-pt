@@ -15,15 +15,15 @@ ms.topic: get-started-article
 ms.date: 08/04/2016
 ms.author: kgremban
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 1cd92121b150461698674b8acd4369d09c9b9920
+ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
+ms.openlocfilehash: 683ad119250704bdebfb9b54bd3a4ee24bf3d418
 
 
 ---
-# <a name="upgrading-the-phonefactor-agent-to-azure-multifactor-authentication-server"></a>Atualizar o PhoneFactor Agent para o Servidor Multi-Factor Authentication do Azure
+# <a name="upgrading-the-phonefactor-agent-to-azure-multi-factor-authentication-server"></a>Atualizar o PhoneFactor Agent para o Servidor Multi-Factor Authentication do Azure
 Atualizar do PhoneFactor Agent v5.x ou anterior no Servidor Multi-Factor Authentication do Azure requer a desinstalação do PhoneFactor Agent e dos componentes afiliados antes de o Servidor Multi-Factor Authentication e os respetivos componentes afiliados poderem ser instalados.
 
-## <a name="to-upgrade-the-phonefactor-agent-to-azure-multifactor-authentication-server"></a>Para atualizar o PhoneFactor Agent para o Servidor Multi-Factor Authentication do Azure
+## <a name="to-upgrade-the-phonefactor-agent-to-azure-multi-factor-authentication-server"></a>Para atualizar o PhoneFactor Agent para o Servidor Multi-Factor Authentication do Azure
 <ol>
 <li>Primeiro, faça uma cópia de segurança do ficheiro de dados do PhoneFactor. A localização de instalação predefinida é C:\Programas\PhoneFactor\Data\Phonefactor.pfdata.
 
@@ -70,6 +70,6 @@ Atualizar do PhoneFactor Agent v5.x ou anterior no Servidor Multi-Factor Authent
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 

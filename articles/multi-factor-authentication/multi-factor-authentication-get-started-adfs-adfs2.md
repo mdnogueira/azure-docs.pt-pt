@@ -15,12 +15,12 @@ ms.topic: get-started-article
 ms.date: 10/14/2016
 ms.author: kgremban
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 639f11856fcb0828db2375e428d9f7efe640b5d7
+ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
+ms.openlocfilehash: 7ad06e9086d6532b3de2ba060b37424051f022c2
 
 
 ---
-# <a name="secure-cloud-and-onpremises-resources-using-azure-multifactor-authentication-server-with-ad-fs-20"></a>Proteger recursos na nuvem e no local utilizando o Servidor Multi-Factor Authentication do Azure com o AD FS 2.0
+# <a name="secure-cloud-and-on-premises-resources-using-azure-multi-factor-authentication-server-with-ad-fs-20"></a>Proteger recursos na nuvem e no local utilizando o Servidor Multi-Factor Authentication do Azure com o AD FS 2.0
 Este artigo destina-se a organizações federadas com o Azure Active Directory e que pretendem proteger recursos que estão no local ou na nuvem. Proteja os seus recursos através do Servidor Multi-Factor Authentication do Azure e configure-o para funcionar com o AD FS, para que a verificação em dois passos seja acionada para pontos finais de elevado valor.
 
 Esta documentação abrange a utilização do Servidor Multi-Factor Authentication do Azure com o AD FS 2.0.  Obtenha mais informações em [Proteger recursos na nuvem e no local através do Servidor Multi-Factor Authentication do Azure com o AD FS no Windows Server 2012 R2](multi-factor-authentication-get-started-adfs-w2k12.md).
@@ -102,6 +102,6 @@ Os IPs Fidedignos permitem aos utilizadores ignorar o Multi-Factor Authenticatio
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -16,8 +16,8 @@ ms.workload: na
 ms.date: 11/14/2016
 ms.author: glenga
 translationtype: Human Translation
-ms.sourcegitcommit: d40304cd4f7ede4e37d32f66330ac712d325f898
-ms.openlocfilehash: ea7d8acec83103c981bad279507dd7ead5f72370
+ms.sourcegitcommit: ae5837b4fce52aad4c8b39434c27c450aafc1310
+ms.openlocfilehash: 6f42f79abed80df12148463e25935893a4bbdcde
 
 
 ---
@@ -68,7 +68,7 @@ Este início rápido demonstra uma execução simples de uma função básica ac
 * [Testar as Funções do Azure](functions-test-a-function.md)  
   Descreve várias ferramentas e técnicas para testar as suas funções.
 * [Como dimensionar as Funções do Azure](functions-scale.md)  
-  Aborda os planos de serviço disponíveis com as Funções do Azure, incluindo o plano de serviço dinâmico e como escolher o plano adequado. 
+  Aborda os planos de serviço disponíveis com as Funções do Azure, incluindo o plano de alojamento de Consumo e como escolher o plano adequado. 
 * [O que é o Serviço de Aplicações do Azure?](../app-service/app-service-value-prop-what-is.md)  
   As Funções do Azure utilizam a plataforma do Serviço de Aplicações do Azure para funcionalidades essenciais como implementações, variáveis de ambiente e diagnósticos. 
 
@@ -77,6 +77,6 @@ Este início rápido demonstra uma execução simples de uma função básica ac
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Nov16_HO4-->
 
 

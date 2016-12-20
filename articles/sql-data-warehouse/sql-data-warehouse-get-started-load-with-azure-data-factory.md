@@ -1,4 +1,5 @@
 ---
+redirect_url: /azure/sql-data-warehouse/sql-data-warehouse-load-with-data-factory
 title: Carregar dados com o Azure Data Factory | Microsoft Docs
 description: Saiba como carregar dados com o Azure Data Factory
 services: sql-data-warehouse
@@ -16,8 +17,8 @@ ms.workload: data-services
 ms.date: 10/31/2016
 ms.author: mausher;barbkess
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 960225117a1c9b0802004455353fb9015a80b07b
+ms.sourcegitcommit: 3d41671920d40335e3e0931599a434f9d5f58bba
+ms.openlocfilehash: 0fcbd492f1f26efb67dec90a5ba25ba27172065c
 
 
 ---
@@ -216,20 +217,20 @@ Estes tópicos fornecem informações detalhadas sobre o Azure Data Factory. Abr
 [Introdução ao Azure Data Factory (Data Factory Editor)]: ../data-factory/data-factory-build-your-first-pipeline-using-editor.md
 [Introdução ao Azure Data Factory]: ../data-factory/data-factory-introduction.md
 [Carregar dados de exemplo para o SQL Data Warehouse]: sql-data-warehouse-load-sample-databases.md
-[Mover dados para e do Azure SQL Data Warehouse com o Azure Data Factory]: ../data-factory/data-factory-azure-sql-data-warehouse-connector.md
+[Mover dados para e do Azure SQL Data Warehouse, utilizando o Azure Data Factory]: ../data-factory/data-factory-azure-sql-data-warehouse-connector.md
 [PolyBase]: sql-data-warehouse-get-started-load-with-polybase.md
-[Tutorial: copiar dados do Azure Storage Blob para a Base de Dados SQL do Azure]: ../data-factory/data-factory-copy-data-from-azure-blob-storage-to-sql-database.md
-[Tutorial: introdução ao Azure Data Factory]: ../data-factory/data-factory-build-your-first-pipeline.md
+[Tutorial: Copiar dados do Azure Storage Blob para a Base de Dados SQL do Azure]: ../data-factory/data-factory-copy-data-from-azure-blob-storage-to-sql-database.md
+[Tutorial: Introdução ao Azure Data Factory]: ../data-factory/data-factory-build-your-first-pipeline.md
 
 <!--MSDN references-->
 
 <!--Other Web references-->
 [Percurso de aprendizagem do Azure Data Factory]: https://azure.microsoft.com/documentation/learning-paths/data-factory
 [Portal do Azure]: https://portal.azure.com
-[Transferir os dados de exemplo]: https://migrhoststorage.blob.core.windows.net/adfsample/FactInternetSales.csv
+[Transferir dados de exemplo]: https://migrhoststorage.blob.core.windows.net/adfsample/FactInternetSales.csv
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO4-->
 
 

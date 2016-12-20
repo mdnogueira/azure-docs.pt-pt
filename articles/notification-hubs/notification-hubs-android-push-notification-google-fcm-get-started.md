@@ -70,7 +70,7 @@ Pode transferir o código completo para este tutorial [aqui](https://github.com/
 
 O hub de notificação está agora configurado para trabalhar com o Firebase Cloud Messaging e tem as cadeias de ligação para registar a sua aplicação para receber e enviar notificações push.
 
-## <a name="a-idconnectingappaconnect-your-app-to-the-notification-hub"></a><a id="connecting-app"></a>Ligar a aplicação ao hub de notificação
+## <a name="a-idconnecting-appaconnect-your-app-to-the-notification-hub"></a><a id="connecting-app"></a>Ligar a aplicação ao hub de notificação
 ### <a name="add-google-play-services-to-the-project"></a>Adicionar serviços do Google Play para o projeto
 [!INCLUDE [Add Play Services](../../includes/notification-hubs-android-studio-add-google-play-services.md)]
 
@@ -673,9 +673,9 @@ Para obter informações mais gerais sobre os Notification Hubs, consulte as nos
 [SDK Android dos Serviços Móveis]: https://go.microsoft.com/fwLink/?LinkID=280126&clcid=0x409
 [Referenciar um projeto de biblioteca]: http://go.microsoft.com/fwlink/?LinkId=389800
 [Portal Clássico do Azure]: https://manage.windowsazure.com/
-[Orientação dos Hubs de Notificação]: notification-hubs-push-notification-overview.md
-[Use Notification Hubs to push notifications to users (Utilizar Hubs de Notificação para notificações push a utilizadores)]: notification-hubs-aspnet-backend-gcm-android-push-to-user-google-notification.md
-[Use Notification Hubs to send breaking news (Utilizar Hubs de Notificação para enviar notícias de última hora)]: notification-hubs-aspnet-backend-android-xplat-segmented-gcm-push-notification.md
+[Documentação de Orientação dos Notification Hubs]: notification-hubs-push-notification-overview.md
+[Utilizar Notification Hubs para notificações push a utilizadores]: notification-hubs-aspnet-backend-gcm-android-push-to-user-google-notification.md
+[Utilizar Notification Hubs para enviar notícias de última hora]: notification-hubs-aspnet-backend-android-xplat-segmented-gcm-push-notification.md
 [Portal do Azure]: https://portal.azure.com
 
 

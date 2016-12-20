@@ -12,11 +12,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: big-data
-ms.date: 10/17/2016
+ms.date: 11/21/2016
 ms.author: nitinme
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 255e8def5179e544a4fb919774f3b18148566898
+ms.sourcegitcommit: c157da7bf53e2d0762624e8e71e56e956db04a24
+ms.openlocfilehash: a80da95328a6f3c47edf6e9be9e786437a8c316e
 
 
 ---
@@ -29,7 +29,8 @@ ms.openlocfilehash: 255e8def5179e544a4fb919774f3b18148566898
 > * [API REST](data-lake-store-get-started-rest-api.md)
 > * [CLI do Azure](data-lake-store-get-started-cli.md)
 > * [Node.js](data-lake-store-manage-use-nodejs.md)
-> 
+> * [python](data-lake-store-get-started-python.md)
+>
 > 
 
 Saiba como utilizar o SDK Java do Azure Data Lake Store para executar operações básicas, como criar pastas, carregar e transferir ficheiros de dados, etc. Para obter mais informações sobre o Data Lake, veja [Azure Data Lake Store](data-lake-store-overview.md).
@@ -148,6 +149,6 @@ Tenha em atenção que os ficheiros são lidos e escritos com fluxos de Java pad
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO4-->
 
 

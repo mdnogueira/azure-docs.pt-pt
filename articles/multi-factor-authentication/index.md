@@ -29,7 +29,7 @@ A Azure Multi-Factor Authentication (MFA) é uma solução de verificação em d
         </a>
     </li>
     <li>
-        <a href="https://azure.microsoft.com/en-us/documentation/videos/index/?services=multi-factor-authentication">
+        <a href="https://azure.microsoft.com/documentation/videos/index/?services=multi-factor-authentication">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">

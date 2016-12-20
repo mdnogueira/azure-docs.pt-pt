@@ -16,8 +16,8 @@ ms.topic: get-started-article
 ms.date: 10/21/2016
 ms.author: davidmu
 translationtype: Human Translation
-ms.sourcegitcommit: 5919c477502767a32c535ace4ae4e9dffae4f44b
-ms.openlocfilehash: 87f62d99ae8671fb3732806d8cd8bd7d9aa101e1
+ms.sourcegitcommit: edeee13457c1098eb1b44efaa97e9a84d29e88e7
+ms.openlocfilehash: 12903dc79ac6349da9f4897cdb0db5cb62f67b22
 
 
 ---
@@ -134,7 +134,7 @@ Agora que tem todas as peças no local, é a altura de criar a máquina virtual.
     ```powershell
     $myVM = Add-AzureRmVMNetworkInterface -VM $myVM -Id $myNIC.Id
     ```
-6. Defina o nome e a localização do disco rígido da VM. O ficheiro de disco rígido virtual está armazenado num contentor. Este comando cria o disco num contentor com o nome **vhds/WindowsVMosDisk.vhd** na conta de armazenamento que criou.
+6. Defina o nome e a localização do disco rígido da VM. O ficheiro de disco rígido virtual está armazenado num contentor. Este comando cria o disco num contentor com o nome **vhds/myOsDisk1.vhd** na conta de armazenamento que criou.
    
     ```powershell
     $blobPath = "vhds/myOsDisk1.vhd"
@@ -143,7 +143,7 @@ Agora que tem todas as peças no local, é a altura de criar a máquina virtual.
 7. Adicione as informações de disco do sistema operativo à configuração da VM. Substitua o valor de **$diskName** por um nome para o disco do sistema operativo. Crie a variável e adicione as informações do disco à configuração.
    
     ```powershell
-    $vm = Set-AzureRmVMOSDisk -VM $myVM -Name "myOsDisk1" -VhdUri $osDiskUri -CreateOption fromImage
+    $myVM = Set-AzureRmVMOSDisk -VM $myVM -Name "myOsDisk1" -VhdUri $osDiskUri -CreateOption fromImage
     ```
 8. Por fim, crie a máquina virtual.
    
@@ -159,6 +159,6 @@ Agora que tem todas as peças no local, é a altura de criar a máquina virtual.
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO5-->
 
 

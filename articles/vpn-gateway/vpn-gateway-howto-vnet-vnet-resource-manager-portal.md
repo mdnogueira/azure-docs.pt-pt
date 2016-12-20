@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 10/25/2016
 ms.author: cherylmc
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 7dbfcbc27d7a071027055bc52d96e423c37abd2d
+ms.sourcegitcommit: 28d81fe312195b9a9094e1ed066f5cba57c76933
+ms.openlocfilehash: b85017913316a450fe19f1760abff6a86f933e2e
 
 
 ---
-# <a name="configure-a-vnettovnet-connection-using-the-azure-portal"></a>Configurar uma ligação de VNet a VNet com o Portal do Azure
+# <a name="configure-a-vnet-to-vnet-connection-using-the-azure-portal"></a>Configurar uma ligação de VNet a VNet com o Portal do Azure
 > [!div class="op_single_selector"]
 > * [Resource Manager - Portal do Azure](vpn-gateway-howto-vnet-vnet-resource-manager-portal.md)
 > * [Resource Manager – PowerShell](vpn-gateway-vnet-vnet-rm-ps.md)
@@ -35,17 +35,18 @@ Quando utilizar o Portal do Azure para ligar redes virtuais, as VNets têm de es
 
 ![Diagrama v2v](./media/vpn-gateway-howto-vnet-vnet-resource-manager-portal/v2vrmps.png)
 
-### <a name="deployment-models-and-methods-for-vnettovnet-connections"></a>Modelos de implementação e métodos para ligações VNet a VNet
+### <a name="deployment-models-and-methods-for-vnet-to-vnet-connections"></a>Modelos de implementação e métodos para ligações VNet a VNet
 [!INCLUDE [deployment models](../../includes/vpn-gateway-deployment-models-include.md)]
 
 A tabela seguinte mostra os modelos e métodos de implementação atualmente disponíveis para configurações VNet a VNet. Quando estiver disponível um artigo com passos de configuração, criamos uma ligação direta para o mesmo nesta tabela.
 
 [!INCLUDE [vpn-gateway-table-vnet-vnet](../../includes/vpn-gateway-table-vnet-to-vnet-include.md)]
 
-#### <a name="vnet-peering"></a>VNet peering
+**VNet peering**
+
 [!INCLUDE [vpn-gateway-vnetpeeringlink](../../includes/vpn-gateway-vnetpeeringlink-include.md)]
 
-## <a name="about-vnettovnet-connections"></a>Acerca das ligações VNet a VNet
+## <a name="about-vnet-to-vnet-connections"></a>Acerca das ligações VNet a VNet
 A ligação de uma rede virtual a outra rede virtual (VNet a VNet) é semelhante à ligação de uma VNet a uma localização do site no local. Ambos os tipos de conetividade utilizam um gateway de VPN do Azure para fornecer um túnel seguro através de IPsec/IKE. As VNets que liga podem ser em regiões diferentes ou em diferentes subscrições.
 
 Pode, inclusive, combinar uma comunicação VNet a VNet com configurações multilocal. Desta forma, pode estabelecer topologias de rede que combinam uma conectividade em vários locais com uma conectividade de rede intervirtual, conforme mostrado no diagrama seguinte:
@@ -122,6 +123,7 @@ Se já tiver uma VNet, certifique-se de que as definições são compatíveis co
 
 ## <a name="a-namesubnetsa2-add-additional-address-space-and-create-subnets"></a><a name="subnets"></a>2. Adicionar espaços de endereços adicionais e criar sub-redes
 Pode adicionar espaços de endereços adicionais e criar sub-redes assim que a VNet tiver sido criada.
+
 [!INCLUDE [vpn-gateway-additional-address-space](../../includes/vpn-gateway-additional-address-space-include.md)]
 
 ## <a name="a-namegatewaysubneta3-create-a-gateway-subnet"></a><a name="gatewaysubnet"></a>3. Criar uma sub-rede do gateway
@@ -187,17 +189,16 @@ Pode fazer duplo clique em cada ligação em separado para ver mais informaçõe
 
 ![Essentials](./media/vpn-gateway-howto-vnet-vnet-resource-manager-portal/essentials.png "Essentials")
 
-## <a name="a-namefaqavnettovnet-faq"></a><a name="faq"></a>FAQ da ligação VNet a VNet
+## <a name="a-namefaqavnet-to-vnet-faq"></a><a name="faq"></a>FAQ da ligação VNet a VNet
 Veja os detalhes das FAQ para obter informações adicionais sobre ligações VNet a VNet.
 
 [!INCLUDE [vpn-gateway-vnet-vnet-faq](../../includes/vpn-gateway-vnet-vnet-faq-include.md)]
 
 ## <a name="next-steps"></a>Passos seguintes
-Assim que a ligação estiver concluída, pode adicionar máquinas virtuais às redes virtuais. Veja [Criar uma Máquina Virtual](../virtual-machines/virtual-machines-windows-hero-tutorial.md) para obter os passos.
+Assim que a ligação estiver concluída, pode adicionar máquinas virtuais às redes virtuais. Veja a documentação das [Máquinas Virtuais](https://docs.microsoft.com/azure/#pivot=services&panel=Compute) para obter mais informações.
 
 
 
-
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO4-->
 
 

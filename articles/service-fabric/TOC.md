@@ -3,6 +3,7 @@
 ## [Compreender os microsserviços](service-fabric-overview-microservices.md)
 ## [Cenários de aplicações](service-fabric-application-scenarios.md)
 ## [Arquitetura](service-fabric-architecture.md)
+## [Terminologia](service-fabric-technical-overview.md)
 
 # Introdução
 ## Configurar o ambiente de desenvolvimento
@@ -71,7 +72,7 @@
 #### [Implementar o contentor do Windows](service-fabric-deploy-container.md)
 #### [Implementar o contentor do Docker](service-fabric-deploy-container-linux.md)
 
-## Migrar a partir dos Serviços em Nuvem
+## Migrar a partir dos Serviços Cloud
 ### [Comparar os Serviços Cloud com o Service Fabric](service-fabric-cloud-services-migration-differences.md)
 ### [Migrar para o Service Fabric](service-fabric-cloud-services-migration-worker-role-stateless-service.md)
 
@@ -176,21 +177,13 @@
 ### [Teste de carga da sua aplicação](service-fabric-vso-load-test.md)
 
 # Referência
-## [Terminologia](service-fabric-technical-overview.md)
-## [Reliable Actors](https://go.microsoft.com/fwlink/p/?linkid=833398)
-## [Reliable Actors WCF](https://go.microsoft.com/fwlink/p/?linkid=833401)
-## [Reliable Services](https://go.microsoft.com/fwlink/p/?linkid=833402)
-## [Reliable Services WCF](https://go.microsoft.com/fwlink/p/?linkid=833403)
-## [Dados](https://go.microsoft.com/fwlink/p/?linkid=833404)
-## [Interfaces de dados](https://go.microsoft.com/fwlink/p/?linkid=833406)
-## [Sistema](https://go.microsoft.com/fwlink/p/?linkid=833407)
-## [Código de exemplo](http://aka.ms/servicefabricsamples)
-## [PowerShell](/powershell/servicefabric/vlatest/servicefabric)
-## [API de Java](https://go.microsoft.com/fwlink/p/?linkid=833410)
-## [.NET](/dotnet/api)
-## [REST](/rest/api/servicefabric/)
+## [PowerShell](//powershell/servicefabric/vlatest/servicefabric)
+## [API de Java](/java/api/microsoft.servicefabric.services)
+## [.NET](/dotnet/api/microsoft.servicefabric.services)
+## [REST](/rest/api/servicefabric)
 
 # Recursos
+## [Código de exemplo](http://aka.ms/servicefabricsamples)
 ## [Percurso de aprendizagem](https://azure.microsoft.com/documentation/learning-paths/service-fabric/)
 ## [Preços](https://azure.microsoft.com/pricing/details/service-fabric/)
 ## [Atualizações de Serviço](https://azure.microsoft.com/updates/?product=service-fabric)
@@ -198,6 +191,6 @@
 ## [Vídeos](https://azure.microsoft.com/documentation/videos/index/?services=service-fabric)
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Dec16_HO1-->
 
 

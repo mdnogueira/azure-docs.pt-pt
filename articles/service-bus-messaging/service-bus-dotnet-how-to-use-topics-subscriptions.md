@@ -1,13 +1,13 @@
 ---
 title: "Utilizar os tópicos do Service Bus com o .NET | Microsoft Docs"
 description: "Saiba como utilizar os tópicos e as subscrições do Service Bus com o .NET no Azure. Os exemplos de código são escritos para aplicações .NET."
-services: service-bus
+services: service-bus-messaging
 documentationcenter: .net
 author: sethmanheim
 manager: timlt
 editor: 
 ms.assetid: 31d0bc29-6524-4b1b-9c7f-aa15d5a9d3b4
-ms.service: service-bus
+ms.service: service-bus-messaging
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
@@ -15,8 +15,8 @@ ms.topic: get-started-article
 ms.date: 09/16/2016
 ms.author: sethm
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: b90d2b49807b39bb7a71315877a8e84550efc9cc
+ms.sourcegitcommit: 9ace119de3676bcda45d524961ebea27ab093415
+ms.openlocfilehash: 71d0049c831b9bbcdef548bc129d6e15256a25b4
 
 
 ---
@@ -308,10 +308,10 @@ namespaceManager.DeleteSubscription("TestTopic", "HighMessages");
 Agora que aprendeu as noções básicas dos tópicos e das subscrições do Service Bus, siga estas hiperligações para saber mais.
 
 * [Filas, tópicos e subscrições][Filas, tópicos e subscrições].
-* [Exemplo de filtros de tópico][Exemplo de filtros de tópico]
+* [Exemplo de filtros de tópicos][Exemplo de filtros de tópicos]
 * Referência da API para [SqlFilter][SqlFilter].
 * Compile uma aplicação de trabalho que envie e receba mensagens para/de uma fila do Service Bus: [Tutorial de .NET de mensagens mediadas do Service Bus][Tutorial de .NET de mensagens mediadas do Service Bus].
-* Exemplos do Service Bus: transfira a partir dos [exemplos do Azure][exemplos do Azure] ou consulte a [descrição geral](service-bus-samples.md).
+* Exemplos do Service Bus: transfira a partir dos [Exemplos do Azure][Exemplos do Azure] ou consulte a [descrição geral](service-bus-samples.md).
 
 [Portal do Azure]: https://portal.azure.com
 
@@ -326,6 +326,6 @@ Agora que aprendeu as noções básicas dos tópicos e das subscrições do Serv
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO3-->
 
 

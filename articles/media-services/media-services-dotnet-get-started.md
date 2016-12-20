@@ -15,8 +15,8 @@ ms.topic: hero-article
 ms.date: 11/07/2016
 ms.author: juliako
 translationtype: Human Translation
-ms.sourcegitcommit: 0d9d87d0dc26d2fcaa3886a9f8c0849b71b26847
-ms.openlocfilehash: 61ea806ec3ad620d454e2de0910fa2b49de66493
+ms.sourcegitcommit: 4fc33ba185122496661f7bc49d14f7522d6ee522
+ms.openlocfilehash: 645fa2574efb9501da173f8ac8aea146d1e79ff8
 
 
 ---
@@ -24,7 +24,7 @@ ms.openlocfilehash: 61ea806ec3ad620d454e2de0910fa2b49de66493
 [!INCLUDE [media-services-selector-get-started](../../includes/media-services-selector-get-started.md)]
 
 > [!NOTE]
-> Para concluir este tutorial, precisa de uma conta do Azure. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](/pricing/free-trial/?WT.mc_id=A261C142F). 
+> Para concluir este tutorial, precisa de uma conta do Azure. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F). 
 > 
 > 
 
@@ -50,7 +50,7 @@ O seguinte é necessário para concluir o tutorial.
 
 * Para concluir este tutorial, precisa de uma conta do Azure. 
   
-    Se não tiver uma conta, pode criar uma conta de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](/pricing/free-trial/?WT.mc_id=A261C142F). Recebe créditos que podem ser utilizados para experimentar os serviços pagos do Azure. Mesmo depois de gastar todos os créditos, pode manter a conta e utilizar os serviços e recursos gratuitos do Azure, tal como a funcionalidade Web Apps no App Service do Azure.
+    Se não tiver uma conta, pode criar uma conta de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F). Recebe créditos que podem ser utilizados para experimentar os serviços pagos do Azure. Mesmo depois de gastar todos os créditos, pode manter a conta e utilizar os serviços e recursos gratuitos do Azure, tal como a funcionalidade Web Apps no App Service do Azure.
 * Sistemas operativos: Windows 8 ou posterior, Windows 2008 R2, Windows 7.
 * .NET framework 4.0 ou posterior
 * Visual Studio 2010 SP1 (Professional, Premium, Ultimate ou Express) ou versões posteriores.
@@ -440,11 +440,11 @@ Se este tópico não continha o que pretendia, algo está em falta ou não corre
 
 
 <!-- URLs. -->
-[Instalador de Plataforma Web]: http://go.microsoft.com/fwlink/?linkid=255386
+[Web Platform Installer]: http://go.microsoft.com/fwlink/?linkid=255386
 [Portal]: http://manage.windowsazure.com/
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 
