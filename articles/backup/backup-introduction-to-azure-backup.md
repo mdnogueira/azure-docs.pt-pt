@@ -13,11 +13,11 @@ ms.workload: storage-backup-recovery
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 12/6/2016
+ms.date: 12/7/2016
 ms.author: jimpark; trinadhk
 translationtype: Human Translation
-ms.sourcegitcommit: b9737c3da308aecf25d5f18088f96c319edeafd5
-ms.openlocfilehash: 76ec51a75240710b24c0e91042d6229e60eeada9
+ms.sourcegitcommit: 9de8032bc69b054d5d13857159ff994f505497a6
+ms.openlocfilehash: 08e7d4402ad52835d193b2083e3c9b2776e0332e
 
 
 ---
@@ -33,10 +33,11 @@ As soluções de cópia de segurança tradicionais evoluíram para tratar a nuve
 
 **Dimensionamento ilimitado** - o Azure Backup utiliza o poder subjacente e o dimensionamento ilimitado da nuvem do Azure para fornecer elevada disponibilidade - sem qualquer overhead de manutenção ou monitorização. Pode configurar alertas para fornecer informações sobre eventos, mas não precisa de se preocupar com a elevada disponibilidade dos seus dados na nuvem.
 
-**Várias opções de armazenamento** - um aspeto de elevada disponibilidade é a replicação do armazenamento. O Azure Backup oferece dois tipos de replicação: [armazenamento localmente redundante](../storage/storage-redundancy.md#locally-redundant-storage) e [armazenamento georreplicado](../storage/storage-redundancy.md#geo-redundant-storage). Escolha a opção de armazenamento de cópia de segurança com base na necessidade:
+**Várias opções de armazenamento** - um aspeto de elevada disponibilidade é a replicação do armazenamento. O Azure Backup oferece dois tipos de replicação: [armazenamento localmente redundante](../storage/storage-redundancy.md#locally-redundant-storage) e [armazenamento georredundante](../storage/storage-redundancy.md#geo-redundant-storage). Escolha a opção de armazenamento de cópia de segurança com base na necessidade:
 
-* O armazenamento localmente redundante (LRS) replica os seus dados três vezes (cria três cópias dos dados) num datacenter emparelhado na mesma região. O LRS é uma opção de baixo custo e é ideal para clientes conscientes do preço, uma vez que protege os dados contra falhas locais de hardware.
-* O armazenamento de georreplicação (GRS) replica os dados para uma região secundária (a centenas de quilómetros da localização primária da origem dos dados). O GRS custa mais do que o LRS, mas proporciona um nível mais elevado de durabilidade aos seus dados, mesmo se ocorrer uma indisponibilidade regional.
+* O armazenamento localmente redundante (LRS) replica os seus dados três vezes (cria três cópias dos dados) num datacenter emparelhado na mesma região. O LRS é uma opção de baixo custo para proteger os dados contra falhas de hardware locais.
+
+* O armazenamento georredundante(GRS) replica os dados para uma região secundária (a centenas de quilómetros da localização primária da origem dos dados). O GRS custa mais do que o LRS, mas o GRS proporciona um nível mais elevado de durabilidade aos seus dados, mesmo se ocorrer uma indisponibilidade regional.
 
 **Transferência de dados ilimitada** - o Azure Backup não limita a quantidade de dados de entrada ou saída que transfere. O Azure Backup também não cobra por dados que sejam transferidos. No entanto, se utilizar o serviço Importar/Exportar do Azure para importar grandes quantidades de dados, existe um custo associado aos dados de entrada. Para mais informações sobre este custo, veja [Fluxo de trabalho de cópia de segurança offline no Azure Backup](backup-azure-backup-import-export.md). Os dados de saída são os dados transferidos a partir de um cofre do Backup durante uma operação de restauro.
 
@@ -62,7 +63,7 @@ Se não tiver a certeza qual é componente do Azure Backup que funciona para as 
 | Agente do Backup do Azure (MARS) |<p>**Sim**</p> <p>O agente do Backup do Azure pode ser implementado em qualquer VM do Windows Server que é executada no Azure.</p> |<p>**Sim**</p> <p>O agente de Cópia de Segurança pode ser implementado em qualquer máquina física ou VM do Windows Server.</p> |<p>Cofre do Backup do Azure</p> |
 | System Center DPM |<p>**Sim**</p><p>Saiba mais sobre [como proteger cargas de trabalho no Azure utilizando o System Center DPM](backup-azure-dpm-introduction.md).</p> |<p>**Sim**</p> <p>Saiba mais sobre [como proteger cargas de trabalho e VMs no datacenter](https://technet.microsoft.com/en-us/system-center-docs/dpm/data-protection-manager).</p> |<p>Disco ligado localmente,</p> <p>Cofre do Backup do Azure,</p> <p>banda (apenas no local)</p> |
 | Servidor do Backup do Azure |<p>**Sim**</p><p>Saiba mais sobre [como proteger cargas de trabalho no Azure utilizando o Servidor do Backup do Azure](backup-azure-microsoft-azure-backup.md).</p> |<p>**Sim**</p> <p>Saiba mais sobre [como proteger cargas de trabalho no Azure utilizando o Servidor do Backup do Azure](backup-azure-microsoft-azure-backup.md).</p> |<p>Disco ligado localmente,</p> <p>Cofre do Backup do Azure</p> |
-| Cópia de segurança da VM do IaaS do Azure |<p>**Sim**</p><p>Parte dos recursos de infraestrutura do Azure </p><p>Especializada para a [cópia de segurança da infraestrutura do Azure como máquinas virtuais do serviço (IaaS)](backup-azure-vms-introduction.md).</p> |<p>**Não**</p> <p>Utilize o System Center DPM para efetuar a cópia de segurança das máquinas virtuais no datacenter.</p> |<p>Cofre do Backup do Azure</p> |
+| Cópia de segurança da VM do IaaS do Azure |<p>**Sim**</p><p>Parte dos recursos de infraestrutura do Azure</p><p>Especializada para a [cópia de segurança da infraestrutura do Azure como máquinas virtuais do serviço (IaaS)](backup-azure-vms-introduction.md).</p> |<p>**Não**</p> <p>Utilize o System Center DPM para efetuar a cópia de segurança das máquinas virtuais no datacenter.</p> |<p>Cofre do Backup do Azure</p> |
 
 ## <a name="which-applications-and-workloads-can-be-backed-up"></a>Podem ser efetuadas cópias de segurança a que aplicações e cargas de trabalho?
 A tabela seguinte fornece uma matriz dos dados e cargas de trabalho que podem ser protegidos com o Azure Backup. A coluna de solução do Azure Backup tem ligações para a documentação de implementação dessa solução. Cada componente do Azure Backup pode ser implementado num ambiente de modelo Clássico (Gestor de Serviços-implementação) ou de Gestor de Recursos-implementação.
@@ -176,17 +177,26 @@ O agente do Azure Backup fornece limitação de rede, o que lhe permite controla
 
 ### <a name="backup-and-retention"></a>Cópia de segurança e retenção
 
-O Azure Backup tem um limite de 9999 pontos de recuperação, também conhecidos como cópias de segurança ou instantâneos de cópia de segurança, por cofre do Backup. A tabela seguinte mostra a frequência de cópia de segurança máxima (para o cofre) de cada componente. A sua configuração de política de cópias de segurança determina quão rapidamente pode consumir os pontos de recuperação. Por exemplo, se criar um ponto de recuperação por dia, pode manter os pontos de recuperação durante 27 anos antes de os esgotar. Se criar um ponto de recuperação por mês, pode manter os pontos de recuperação durante 833 anos antes de os esgotar. O serviço do Backup não define um limite de tempo de expiração para um ponto de recuperação.
+O Azure Backup tem um limite de 9999 pontos de recuperação, também conhecidos como cópias de segurança ou instantâneos de cópia de segurança, por *nstância protegida*. Uma instância protegida é um computador, servidor (físico ou virtual) ou carga de trabalho configurados para criar cópias de segurança para o Azure. Para obter mais informações, veja a secção [O que é uma instância protegida](backup-introduction-to-azure-backup.md#what-is-a-protected-instance). Uma instância está protegida depois de uma cópia de segurança de dados ter sido guardada. A cópia de segurança de dados é a proteção. Se a origem de dados fosse perdida ou tivesse sido danificada, a cópia de segurança poderia restaurar os dados de origem. A tabela seguinte mostra a frequência de cópia de segurança máxima de cada componente. A sua configuração de política de cópias de segurança determina quão rapidamente pode consumir os pontos de recuperação. Por exemplo, se criar um ponto de recuperação por dia, pode manter os pontos de recuperação durante 27 anos antes de os esgotar. Se criar um ponto de recuperação por mês, pode manter os pontos de recuperação durante 833 anos antes de os esgotar. O serviço do Backup não define um limite de tempo de expiração para um ponto de recuperação.
 
 |  | Agente do Backup do Azure | System Center DPM | Servidor do Backup do Azure | Cópia de segurança da VM do IaaS do Azure |
 | --- | --- | --- | --- | --- |
 | Frequência de cópia de segurança<br/> (para o cofre do Backup) |Três cópias de segurança por dia |Duas cópias de segurança por dia |Duas cópias de segurança por dia |Uma cópia de segurança por dia |
 | Frequência de cópia de segurança<br/> (para o disco) |Não aplicável |<li>A cada 15 minutos para o SQL Server <li>A cada hora para outras cargas de trabalho |<li>A cada 15 minutos para o SQL Server <li>A cada hora para outras cargas de trabalho</p> |Não aplicável |
 | Opções de retenção |Diariamente, semanalmente, mensalmente, anualmente |Diariamente, semanalmente, mensalmente, anualmente |Diariamente, semanalmente, mensalmente, anualmente |Diariamente, semanalmente, mensalmente, anualmente |
-| Número máximo de pontos de recuperação por servidor |9999|9999|9999|9999|
+| Número máximo de pontos de recuperação por instância protegida |9999|9999|9999|9999|
 | Período de retenção máximo |Depende da frequência da cópia de segurança |Depende da frequência da cópia de segurança |Depende da frequência da cópia de segurança |Depende da frequência da cópia de segurança |
 | Pontos de recuperação no disco local |Não aplicável |<li>64 para Servidores de Ficheiros<li>448 para Servidores de Aplicações |<li>64 para Servidores de Ficheiros<li>448 para Servidores de Aplicações |Não aplicável |
 | Pontos de recuperação em banda |Não aplicável |Ilimitado |Não aplicável |Não aplicável |
+
+## <a name="what-is-a-protected-instance"></a>O que é uma instância protegida
+Uma instância protegida é uma referência genérica para um computador com o Windows, um servidor (físico ou virtual) ou uma base de dados SQL que tenham sido configurados para cópias de segurança para o Azure. Uma instância está protegida depois de configurar uma política de cópias de segurança para o computador, servidor ou base de dados e depois de criar uma cópia de segurança dos dados. As cópias subsequentes dos dados de cópia de segurança para essa instância protegida (chamados pontos de recuperação), aumentam a quantidade de armazenamento consumido. Pode criar até 9999 pontos de recuperação para uma instância protegida. Se eliminar um ponto de recuperação a partir do armazenamento, não conta em relação ao total de pontos de recuperação de 9999.
+Alguns exemplos comuns de instâncias protegidas são máquinas virtuais, servidores de aplicações, bases de dados e computadores pessoais com o sistema operativo Windows. Por exemplo:
+
+* Uma máquina virtual a executar recursos de infraestrutura hipervisores do Hyper-V ou do IaaS do Azure. Os sistemas operativos convidados para a máquina virtual podem ser Windows Server ou Linux.
+* Um servidor de aplicações: o servidor de aplicações pode ser uma máquina física ou virtual a executar o Windows Server e cargas de trabalho com dados em relação aos quais deve ser efetuada uma cópia de segurança. Cargas de trabalho comuns são o Microsoft SQL Server, o Microsoft Exchange server, o Microsoft SharePoint server, o Microsoft Dynamics e a função do Servidor de Ficheiros no Windows Server. Para efetuar a cópia de segurança destas cargas de trabalho necessita do System Center Data Protection Manager (DPM) ou do Azure Backup Server.
+* Um computador pessoal ou portátil com o sistema operativo Windows.
+
 
 ## <a name="what-is-the-vault-credential-file"></a>O que é o ficheiro de credenciais do cofre?
 O ficheiro de credenciais do cofre é um certificado gerado pelo portal para cada cofre do Backup. O portal, em seguida, carrega a chave pública para o Access Control Service (ACS). A chave privada é fornecida ao transferir as credenciais. Utilize-a para registar os computadores que está a proteger. A chave privada é o que lhe permite autenticar servidores ou computadores para enviar dados de cópia de segurança para um cofre do Backup específico.
@@ -224,6 +234,6 @@ Para obter detalhes sobre como proteger outras cargas de trabalho, veja um dos s
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

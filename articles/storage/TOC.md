@@ -114,7 +114,7 @@
 ## [CLI do Azure](/cli/azure/storage)
 ## .NET
 ### [Gestor de recursos](/dotnet/api/microsoft.azure.management.storage)
-### [Movimento de dados)](https://msdn.microsoft.com/en-us/library/azure/mt684990.aspx)
+### [Movimento de dados](https://msdn.microsoft.com/en-us/library/azure/mt684990.aspx)
 ### [Blobs, Filas, Tabelas e Ficheiros](https://msdn.microsoft.com/library/azure/mt347887.aspx)
 ## [Java](/java/api/)
 ## [Node.js](http://azure.github.io/azure-storage-node)
@@ -123,7 +123,7 @@
 ## [C++](http://azure.github.io/azure-storage-cpp)
 ## [iOS](https://github.com/Azure/azure-storage-ios)
 ## [Android](http://azure.github.io/azure-storage-android)
-## [REST]
+## REST
 ### [Blobs, Filas, Tabelas e Ficheiros](/rest/api/storageservices/importexport/storage-import-export-service-rest-api-reference)
 ### [Fornecedor de recursos](/rest/api/storagerp)
 ### [Importação/exportação](/rest/api/storageservices/importexport/storage-import-export-service-rest-api-reference)
@@ -166,6 +166,6 @@
 ### [iOS](https://github.com/Azure/azure-storage-ios)
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

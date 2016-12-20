@@ -1,8 +1,8 @@
 ---
 layout: LandingPage
 translationtype: Human Translation
-ms.sourcegitcommit: 3752a677351518195773a86c3824078a5aff6d03
-ms.openlocfilehash: 3bf27e3ba3e53aa2f06a078b81fff18fc449bc1c
+ms.sourcegitcommit: 95b54199c307efea21666c774525a9a539472131
+ms.openlocfilehash: e81571dc2d0d52f8b04c7ff99a76d92c784c259e
 
 ---
 #<a name="application-gateway-documentation"></a>Documentação do Gateway de Aplicação
@@ -29,7 +29,7 @@ O Gateway de Aplicação do Azure disponibiliza o Controlador de Entrega de Apli
         </a>
     </li>
     <li>
-        <a href="https://azure.microsoft.com/en-us/documentation/videos/index/?services=application-gateway">
+        <a href="https://azure.microsoft.com/documentation/videos/index/?services=application-gateway">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
@@ -112,15 +112,15 @@ O Gateway de Aplicação do Azure disponibiliza o Controlador de Entrega de Apli
                 <div class="card">
                     <div class="cardText">
                         <h3>Linha de Comandos</h3>
-                        <p><a href="/powershell/resourcemanager">Cmdlets do PowerShell</a></p>
-                        <p><a href="/cli/azure/network/application-gateway">CLI do Azure</a></p>
+                        <p><a href="/powershell/resourcemanager">PowerShell</a></p>
+                        <p><a href="/cli/azure/network/application-gateway">Pré-visualização do CLI do Azure 2.0</a></p>
                     </div>
                 </div>
             </div>
         </div>
     </li>
     <li>
-        <div class="cardSize"><p />
+        <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
@@ -136,13 +136,13 @@ O Gateway de Aplicação do Azure disponibiliza o Controlador de Entrega de Apli
         </div>
     </li>
     <li>
-        <div class="cardSize"><p />
+        <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
                         <h3>REST</h3>
-                        <p><a href="https://msdn.microsoft.com/library/mt684941">API REST</a></p>
-                        <p><a href="https://msdn.microsoft.com/library/azure/mt299393">API REST clássica</a></p>
+                        <p><a href="https://msdn.microsoft.com/library/mt684941">Referência da API REST</a></p>
+                        <p><a href="https://msdn.microsoft.com/library/azure/mt299393">Referência da API REST Clássica</a></p>
                     </div>
                 </div>
             </div>
@@ -160,6 +160,6 @@ Transferir a Documentação do Gateway de Aplicação </div>
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

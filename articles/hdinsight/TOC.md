@@ -15,6 +15,7 @@
 ## [Começar com o Spark](hdinsight-apache-spark-jupyter-spark-sql.md)
 ## [Começar com o HBase e o NoSQL](hdinsight-hbase-tutorial-get-started-linux.md)
 ## [Começar com o Storm](hdinsight-apache-storm-tutorial-get-started-linux.md)
+## [Começar com a pré-visualização do Interactive Hive](hdinsight-hadoop-use-interactive-hive.md)
 ## [Começar com a pré-visualização de Kafka](hdinsight-apache-kafka-get-started.md)
 ## [Sandbox do Hadoop](hdinsight-hadoop-emulator-get-started.md)
 ## [Ferramentas do Data Lake com a Sandbox da Hortonworks](hdinsight-hadoop-emulator-visual-studio.md)
@@ -224,6 +225,6 @@
 ## [Percurso de aprendizagem](https://azure.microsoft.com/documentation/learning-paths/hdinsight-self-guided-hadoop-training/)
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

@@ -9,7 +9,7 @@ manager: jhubbard
 editor: 
 ms.assetid: aeb8c4c3-6ae2-45f7-b2c3-fa13e3752eed
 ms.service: sql-database
-ms.custom: overview
+ms.custom: single databases
 ms.workload: data-management
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -17,8 +17,8 @@ ms.topic: hero-article
 ms.date: 11/23/2016
 ms.author: carlrab
 translationtype: Human Translation
-ms.sourcegitcommit: d772dabf84fc3b6c061c0f4607c989aabf9dd272
-ms.openlocfilehash: 6d15839ce4084a808d9ecd5900a39a4f67dec822
+ms.sourcegitcommit: 145cdc5b686692b44d2c3593a128689a56812610
+ms.openlocfilehash: 6b016384339f0dc943237a88787c2c86debd9016
 
 
 ---
@@ -30,15 +30,15 @@ Neste tutorial de introdução irá aprender a utilizar o portal do Azure para:
 * Criar um servidor lógico do SQL do Azure
 * Ver as propriedades do servidor lógico do SQL do Azure
 * Criar uma regra de firewall ao nível do servidor
-* Criar a base de dados de exemplo do Adventure Works LT
+* Criar a base de dados de exemplo do Adventure Works LT como base de dados autónoma
 * Ver as propriedades da base de dados de exemplo do Adventure Works LT no Azure
 
 Neste tutorial também utilizará a versão mais recente do SQL Server Management Studio para:
 
 * Ligar ao servidor lógico e à respetiva base de dados mestra
-* Ver as propriedades da base de dados mestra
+* Consultar a base de dados mestra
 * Ligar à base de dados de exemplo
-* Ver as propriedades da base de dados de utilizador
+* Consultar a base de dados de amostra
 
 Quando terminar este tutorial, terá uma base de dados de exemplo e uma base de dados vazia em execução num grupo de recursos do Azure e ligadas a um servidor lógico. Também terá uma regra de firewall ao nível do servidor configurada para permitir que o principal ao nível de servidor inicie sessão no servidor a partir de um endereço IP especificado (ou um intervalo de endereços IP). 
 
@@ -208,7 +208,7 @@ Com a [subscrição existente](https://account.windowsazure.com/Home/Index), sig
     ![credenciais do servidor](./media/sql-database-get-started/server-credentials.png)
 
     > [!NOTE]
-    > Quando adiciona uma base de dados a um servidor, a mesma pode ser adicionada como base de dados individual (a predefinição) ou adicionada a um conjunto elástico de SQL. Para obter mais informações sobre conjuntos elásticos, veja o artigo [Conjuntos elásticos](sql-database-elastic-pool.md).
+    > Quando adiciona uma base de dados a um servidor, a mesma pode ser adicionada como base de dados autónoma (a predefinição) ou adicionada a um conjunto elástico. Para obter mais informações sobre conjuntos elásticos, veja o artigo [Conjuntos elásticos](sql-database-elastic-pool.md).
     >
 
 7. Em Escalão de preço, altere o escalão de preço para **Básico** (pode aumentar o escalão de preço mais tarde se assim o desejar, mas, para efeitos de aprendizagem, recomendamos que utilize o escalão de custo mais baixo).
@@ -304,6 +304,6 @@ Agora que concluiu este tutorial, existem alguns tutoriais adicionais que poder�
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 
