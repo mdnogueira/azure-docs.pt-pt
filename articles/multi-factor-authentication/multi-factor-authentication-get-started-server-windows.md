@@ -15,12 +15,12 @@ ms.topic: get-started-article
 ms.date: 08/04/2016
 ms.author: kgremban
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 1952e103c574f83c2c6285e32c59144816749348
+ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
+ms.openlocfilehash: 84b6df0b45548d3797528c3723f02bd1a124454f
 
 
 ---
-# <a name="windows-authentication-and-azure-multifactor-authentication-server"></a>Autenticação do Windows e Servidor Multi-Factor Authentication do Azure
+# <a name="windows-authentication-and-azure-multi-factor-authentication-server"></a>Autenticação do Windows e Servidor Multi-Factor Authentication do Azure
 A secção Autenticação do Windows permite ao administrador ativar e configurar a autenticação do Windows para uma ou mais aplicações.  Segue-se uma lista do que deve ter em conta antes de configurar a Autenticação do Windows.
 
 * É necessário reiniciar para aplicar o Multi-Factor Authentication do Azure aos Serviços de Terminal.
@@ -49,6 +49,6 @@ A secção Autenticação do Windows permite ao administrador ativar e configura
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 

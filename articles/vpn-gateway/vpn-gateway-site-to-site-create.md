@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 10/14/2016
 ms.author: cherylmc
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: cc377f80fa6b9df41081b13a51ff15482b2ba8bc
+ms.sourcegitcommit: d269d9a76ff4ccd973eee70d2d5b54a7262383ef
+ms.openlocfilehash: b45801d4e6deb25ca8c6af5c3b46de741d4993e0
 
 
 ---
-# <a name="create-a-vnet-with-a-sitetosite-connection-using-the-azure-classic-portal"></a>Criar uma VNet com uma ligação de Rede de VPNs no portal clássico do Azure
+# <a name="create-a-vnet-with-a-site-to-site-connection-using-the-azure-classic-portal"></a>Criar uma VNet com uma ligação de Rede de VPNs no portal clássico do Azure
 > [!div class="op_single_selector"]
 > * [Resource Manager - Portal do Azure](vpn-gateway-howto-site-to-site-resource-manager-portal.md)
 > * [Resource Manager – PowerShell](vpn-gateway-create-site-to-site-rm-powershell.md)
@@ -33,7 +33,7 @@ Este artigo explica-lhe como criar uma rede virtual e uma ligação de gateway d
 
 ![Diagrama Site a Site](./media/vpn-gateway-site-to-site-create/site2site.png "site-to-site")
 
-### <a name="deployment-models-and-methods-for-sitetosite-connections"></a>Modelos de implementação e métodos para ligações Site a Site
+### <a name="deployment-models-and-methods-for-site-to-site-connections"></a>Modelos de implementação e métodos para ligações Site a Site
 [!INCLUDE [deployment models](../../includes/vpn-gateway-deployment-models-include.md)]
 
 A tabela seguinte mostra os modelos e métodos de implementação atualmente disponíveis para configurações Site a Site. Quando estiver disponível um artigo com passos de configuração, criamos uma ligação direta para o mesmo nesta tabela.
@@ -48,7 +48,7 @@ Antes de iniciar a configuração, verifique se tem os seguintes itens.
 
 * Um dispositivo VPN compatível e alguém que consiga configurá-lo. Veja [Acerca dos Dispositivos VPN](vpn-gateway-about-vpn-devices.md). Se não estiver familiarizado com a configuração do dispositivo VPN ou com os intervalos de endereços IP localizados na configuração da rede no local, tem de se coordenar com alguém que consiga fornecer esses detalhes.
 * Um endereço IP público com acesso exterior para o dispositivo VPN. Este endereço IP não pode estar localizado atrás de um NAT.
-* Uma subscrição do Azure. Se ainda não tiver uma subscrição do Azure, pode ativar os [Benefícios de subscritor do MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) ou inscrever-se numa [conta gratuita](https://azure.microsoft.com/pricing/free-trial/).
+* Uma subscrição do Azure. Se ainda não tiver uma subscrição do Azure, pode ativar os [Benefícios de subscritor do MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details) ou inscrever-se numa [conta gratuita](https://azure.microsoft.com/pricing/free-trial).
 
 ## <a name="a-namecreatevnetacreate-your-virtual-network"></a><a name="CreateVNet"></a>Criar a rede virtual
 1. Inicie sessão no [Portal Clássico do Azure](https://manage.windowsazure.com/).
@@ -68,7 +68,7 @@ Introduza as seguintes informações e clique na seta na parte inferior direita.
 * **Configurar Rede de VPNs**: selecione a caixa de verificação **Configurar uma rede de VPNs**.
 * **Rede Local**: a rede local representa a sua localização física no local. Pode selecionar uma rede local criada anteriormente ou pode criar uma nova. No entanto, se optar por utilizar uma rede local criada anteriormente, aceda à página de configuração **Redes Locais** e certifique-se de que o endereço IP do Dispositivo VPN (endereço IPv4 destinado ao público) do dispositivo VPN está correto.
 
-## <a name="a-nameconnectivityasitetosite-connectivity-page"></a><a name="Connectivity"></a>Página de conetividade site a site
+## <a name="a-nameconnectivityasite-to-site-connectivity-page"></a><a name="Connectivity"></a>Página de conetividade site a site
 Se estiver a criar uma nova rede local, verá a página **Conetividade Site a Site**. Se pretender utilizar uma rede local criada anteriormente, esta página não aparecerá no assistente e poderá avançar para a secção seguinte.
 
 Introduza as seguintes informações e clique na seta seguinte.
@@ -97,11 +97,11 @@ Clique na marca de verificação na parte inferior da página para a rede virtua
 Configure o gateway da rede virtual para criar uma ligação site a site segura. Veja [Configurar um gateway da rede virtual no Portal Clássico do Azure](vpn-gateway-configure-vpn-gateway-mp.md).
 
 ## <a name="next-steps"></a>Passos seguintes
-Assim que a ligação estiver concluída, pode adicionar máquinas virtuais às redes virtuais. Veja a documentação das [Máquinas Virtuais](https://azure.microsoft.com/documentation/services/virtual-machines/) para obter mais detalhes.
+ Assim que a ligação estiver concluída, pode adicionar máquinas virtuais às redes virtuais. Para obter mais informações, veja [Máquinas Virtuais](https://docs.microsoft.com/azure/#pivot=services&panel=Compute).
 
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO4-->
 
 

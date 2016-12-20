@@ -16,8 +16,8 @@ ms.topic: get-started-article
 ms.date: 10/10/2016
 ms.author: markvi
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 20f38ef90d9f3793c0bb0814e6fd5d67aa550209
+ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
+ms.openlocfilehash: 001ffc0f9c7465552392a9848ef1487a4c0eafce
 
 
 ---
@@ -66,7 +66,7 @@ Se ainda não tiver uma subscrição do serviço em nuvem da Microsoft, utilize 
 * [Office 365](http://products.office.com/business/compare-office-365-for-business-plans/)
 * [Microsoft Intune](https://account.manage.microsoft.com/Signup/MainSignUp.aspx?OfferId=40BE278A-DFD1-470a-9EF7-9F2596EA7FF9&ali=1)
 
-### <a name="manage-an-azureprovisioned-default-directory"></a>Gerir um diretório Predefinido aprovisionado pelo Azure
+### <a name="manage-an-azure-provisioned-default-directory"></a>Gerir um diretório Predefinido aprovisionado pelo Azure
 Hoje em dia, um diretório é automaticamente criado quando se inscreve no Azure, sendo a subscrição associada a esse diretório. No entanto, não foi automaticamente criado nenhum diretório se se inscreveu no Azure antes de outubro de 2013. Nesse caso, o Azure pode ter “preenchido” a sua conta, facultando um diretório Predefinido. Em seguida, a subscrição foi associada a esse diretório Predefinido.
 
 O preenchimento dos diretórios foi realizado em outubro de 2013, como parte de uma melhoria geral do modelo de segurança do Azure. Isso ajuda a oferecer funcionalidades de identidade organizacional a todos os clientes do Azure, garantindo ainda que todos os recursos do Azure são acedidos no contexto de um utilizador no diretório. Não pode utilizar o Azure sem um diretório. Para tal, qualquer utilizador que se tenha inscrito antes do 7 de julho de 2013 e não possui um diretório, terá de criar um. Se já tiver criado um diretório, a subscrição foi associada a esse diretório.
@@ -150,6 +150,6 @@ Verificam-se as seguintes condições:
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 

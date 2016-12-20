@@ -1,14 +1,14 @@
 ---
 layout: LandingPage
 translationtype: Human Translation
-ms.sourcegitcommit: 086574639b31ee82ab72efbc93d58af735524a1b
-ms.openlocfilehash: b03565feb98f18d2a90d72e154901baf0dd89df0
+ms.sourcegitcommit: 3752a677351518195773a86c3824078a5aff6d03
+ms.openlocfilehash: f5cf41dc2362afa365c491e47fb7708d8a9667ba
 
 ---
 
 # <a name="monitoring-and-diagnostics-documentation"></a>Documentação da Monitorização e Diagnóstico
 
-A Monitorização e Diagnóstico é uma plataforma de sistemas distribuídos que facilita o empacotamento, a implementação e a gestão de microsserviços dimensionáveis e fiáveis, além de fazer face aos desafios significativos no desenvolvimento e na gestão de aplicações na nuvem.  A Monitorização e Diagnóstico representa a plataforma middleware da próxima geração para criar e gerir estas aplicações empresariais de Escalão 1 na nuvem.
+A Monitorização e Diagnóstico é uma plataforma de sistemas distribuídos que facilita o empacotamento, a implementação e a gestão de microsserviços dimensionáveis e fiáveis, além de fazer face aos desafios significativos no desenvolvimento e na gestão de aplicações na cloud.  A Monitorização e Diagnóstico representa a plataforma middleware da próxima geração para criar e gerir estas aplicações empresariais de Escalão 1 na cloud.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -157,7 +157,7 @@ A Monitorização e Diagnóstico é uma plataforma de sistemas distribuídos que
                 <div class="card">
                     <div class="cardText">
                         <h3>REST</h3>
-                        <p>Referência da API REST da Monitorização e Diagnóstico</p>
+                        <p>API REST da Monitorização e Diagnóstico</p>
                     </div>
                 </div>
             </div>
@@ -175,6 +175,6 @@ Transferir a Documentação da Monitorização e Diagnóstico </div>
 </div>
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -28,17 +28,15 @@
 ## Indústrias verticais
 ### [Criar soluções seguras na área da saúde](security-health-care-solution.md)
 ## [Arquitetura de segurança](azure-security-architecture-overview.md)
-### [Classificação de dados para preparação da nuvem](azure-security-data-classification.md)
+### [Classificação de dados para preparação da cloud](azure-security-data-classification.md)
 ### [Arquitetura de aplicações no Azure](security-application-architecture-on-azure.md)
 ### [Melhores práticas e padrões de segurança](security-best-practices-and-patterns.md)
 ### [Arquitetar aplicações resilientes](../resiliency/resiliency-disaster-recovery-high-availability-azure-applications.md?toc=%2fazure%2fsecurity%2ftoc.json)
 
-# Referência
+# Relacionado
 ## [Centro de Fidedignidade](security-microsoft-trust-center.md)
 ## [Microsoft Security Response Center](azure-security-response-center.md)
 ## [Testes de intrusão](azure-security-pen-testing.md)
-
-# Relacionado
 ## [Centro de Segurança](../security-center/security-center-intro.md?toc=%2fazure%2fsecurity-center%2ftoc.json)
 ## [Cofre de Chaves](../key-vault/key-vault-whatis.md)
 ## [Log Analytics](../log-analytics/log-analytics-overview.md)
@@ -52,6 +50,7 @@
 ## [Cursos de segurança da Virtual Academy](security-microsoft-virtual-academy.md)
 ## [Vídeos de segurança no Canal 9](security-channel-nine.md)
 
-<!--HONumber=Nov16_HO4-->
+
+<!--HONumber=Dec16_HO1-->
 
 

@@ -1,8 +1,8 @@
 ---
 layout: LandingPage
 translationtype: Human Translation
-ms.sourcegitcommit: 87b9d22ec066108adb282606305315919b901ea0
-ms.openlocfilehash: 5cf17ad514127f97319130c4f3f78cdfa1eed052
+ms.sourcegitcommit: 3752a677351518195773a86c3824078a5aff6d03
+ms.openlocfilehash: c75352e633f069597e7bc62650205f3c389b6909
 
 ---
 #<a name="stream-analytics-documentation"></a>Documentação do Stream Analytics
@@ -132,7 +132,7 @@ O Azure Stream Analytics é um motor de processamento de eventos totalmente geri
                 <div class="card">
                     <div class="cardText">
                         <h3>PowerShell</h3>
-                        <p>Referência do Azure PowerShell</p>
+                        <p>Referência ao Azure PowerShell</p>
                     </div>
                 </div>
             </div>
@@ -174,7 +174,7 @@ O Azure Stream Analytics é um motor de processamento de eventos totalmente geri
                 <div class="card">
                     <div class="cardText">
                         <h3>REST</h3>
-                        <p>Referência da API REST do Stream Analytics</p>
+                        <p>API REST do Stream Analytics</p>
                     </div>
                 </div>
             </div>
@@ -193,6 +193,6 @@ Transferir a Documentação do Stream Analytics </div>
 
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Dec16_HO1-->
 
 

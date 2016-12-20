@@ -15,8 +15,8 @@ ms.workload: infrastructure-services
 ms.date: 04/05/2016
 ms.author: kumud
 translationtype: Human Translation
-ms.sourcegitcommit: cf1eafc7bca5bddeb32f1e1e05e660d6877ed805
-ms.openlocfilehash: 16ebe82b866565f676fb33bfa915465c08a5ea89
+ms.sourcegitcommit: c40545833da86426d3e71955b8eb8627db3c1e4b
+ms.openlocfilehash: 3855b32c8ff13f73cf91ea8973ed40a34a062224
 
 ---
 
@@ -39,12 +39,12 @@ ms.openlocfilehash: 16ebe82b866565f676fb33bfa915465c08a5ea89
 
 Para configurar um balanceador de carga com o PowerShell, siga os passos abaixo:
 
-1. Se nunca tiver utilizado o Azure PowerShell, veja [How to Install and Configure Azure PowerShell (Como instalar e configurar o Azure PowerShell)](../powershell-install-configure.md) e siga as instruções até ao fim para iniciar sessão no Azure e selecionar a sua subscrição.
+1. Se nunca tiver utilizado o Azure PowerShell, veja [How to Install and Configure Azure PowerShell (Como instalar e configurar o Azure PowerShell)](/powershell/azureps-cmdlets-docs) e siga as instruções até ao fim para iniciar sessão no Azure e selecionar a sua subscrição.
 2. Depois de criar uma máquina virtual, pode utilizar os cmdlets do PowerShell para adicionar um balanceador de carga a uma máquina virtual no mesmo serviço em nuvem.
 
 No exemplo seguinte, irá adicionar um conjunto de balanceadores de carga denominado "webfarm" ao serviço em nuvem "mytestcloud" (ou myctestcloud.cloudapp.net) ao adicionar os pontos finais do balanceador de carga às máquinas virtuais com o nome "web1" e "web2". O balanceador de carga recebe o tráfego de rede na porta 80 e efetua o balanceamento de carga entre as máquinas virtuais definidas pelo ponto final local (neste caso, a porta 80) através de TCP.
 
-### <a name="step-1"></a>Passo 1
+### <a name="step-1"></a>Passo 1
 
 Criar um ponto final com balanceamento de carga para a primeira VM "web1"
 
@@ -52,7 +52,7 @@ Criar um ponto final com balanceamento de carga para a primeira VM "web1"
 Get-AzureVM -ServiceName "mytestcloud" -Name "web1" | Add-AzureEndpoint -Name "HttpIn" -Protocol "tcp" -PublicPort 80 -LocalPort 80 -LBSetName "WebFarm" -ProbePort 80 -ProbeProtocol "http" -ProbePath '/' | Update-AzureVM
 ```
 
-### <a name="step-2"></a>Passo 2
+### <a name="step-2"></a>Passo 2
 
 Criar outro ponto final para a segunda VM "web2" com o mesmo nome de conjunto de balanceadores de carga
 
@@ -76,6 +76,6 @@ Se a sua aplicação precisar de manter as ligações ativas para os servidores 
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

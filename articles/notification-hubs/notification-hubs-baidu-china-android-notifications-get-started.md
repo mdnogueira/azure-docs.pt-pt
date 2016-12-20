@@ -15,8 +15,8 @@ ms.workload: mobile
 ms.date: 08/19/2016
 ms.author: yuaxu
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 9e6af9016318f9e31a143c6cf1329a7ab2c8acd6
+ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
+ms.openlocfilehash: ec2a69ff5a7f1f3a954eae70f1cd776242b0b7f4
 
 
 ---
@@ -31,7 +31,7 @@ Neste tutorial necessita do seguinte:
 
 * SDK Android (partimos do princípio que utiliza o Eclipse), que pode transferir a partir do <a href="http://go.microsoft.com/fwlink/?LinkId=389797">site do Android</a>
 * [SDK Android dos Serviços Móveis]
-* [SDK Android do Baidu Push]
+* [Android SDK do Baidu Push]
 
 > [!NOTE]
 > Para concluir este tutorial, tem de ter uma conta ativa do Azure. Se não tiver uma conta, pode criar uma conta de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fnotification-hubs-baidu-get-started%2F).
@@ -443,12 +443,12 @@ Para enviar uma notificação de teste, pode utilizar o separador de depuração
 
 <!-- URLs. -->
 [SDK Android dos Serviços Móveis]: https://go.microsoft.com/fwLink/?LinkID=280126&clcid=0x409
-[SDK Android do Baidu Push]: http://developer.baidu.com/wiki/index.php?title=docs/cplat/push/sdk/clientsdk
+[Android SDK do Baidu Push]: http://developer.baidu.com/wiki/index.php?title=docs/cplat/push/sdk/clientsdk
 [Portal Clássico do Azure]: https://manage.windowsazure.com/
 [Portal do Baidu]: http://www.baidu.com/
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -16,8 +16,8 @@ ms.workload: na
 ms.date: 10/31/2016
 ms.author: araguila
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: ba48381f2c16a56e2e3f187017fbdbae09544e77
+ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
+ms.openlocfilehash: 6d80f266730701dc4e678f4365a2166be72c9143
 
 
 ---
@@ -36,14 +36,14 @@ Alguns recursos não estão disponíveis nas regiões onde aprovisiona a soluç�
 
 O item a verde é um dispositivo simulado que representa o motor de uma aeronave. Pode saber mais sobre estes dispositivos simulados na secção seguinte.
 
-Os itens a cinzento representam componentes que implementam capacidades de *administração do dispositivo*. A atual versão da solução pré-configurada de manutenção preditiva não aprovisiona estes recursos. Para saber mais sobre a administração do dispositivo, consulte o artigo [solução pré-configurada de monitorização remota][lnk-remote-monitoring].
+Os itens a cinzento representam componentes que implementam capacidades de *administração do dispositivo*. A atual versão da solução pré-configurada de manutenção preditiva não aprovisiona estes recursos. Para saber mais sobre a administração do dispositivo, consulte o artigo [remote monitoring pre-configured solution (solução pré-configurada de monitorização remota)][lnk-remote-monitoring].
 
 ## <a name="simulated-devices"></a>Dispositivos simulados
 Na solução pré-configurada, um dispositivo simulado representa o motor de uma aeronave. A solução é aprovisionada com dois motores que mapeiam para uma única aeronave. Cada motor emite quatro tipos de telemetria: Sensor 9, Sensor 11, Sensor 14 e Sensor 15, que fornecem os dados necessários para que o modelo do Machine Learning possa calcular a Vida Útil Remanescente (RUL) desse motor. Cada dispositivo simulado envia as seguintes mensagens de telemetria ao IoT Hub:
 
 *Ciclo de contagem*. Um ciclo representa um voo concluído com duração variável entre 2 e 10 horas, no qual são capturados dados de telemetria a cada meia hora durante o voo.
 
-*Telemetria*. Existem quatro sensores que representam os atributos do motor. Os sensores são geralmente denominados Sensor 9, Sensor 11, Sensor 14 e Sensor 15. Estes 4 sensores representam a telemetria suficiente para obter resultados úteis do modelo do Machine Learning para a RUL. Este modelo é criado a partir de um conjunto de dados públicos, que inclui dados do sensor do motor. Para obter mais informações sobre a criação do modelo a partir do conjunto de dados original, consulte o artigo [Modelo de Manutenção Preditiva do Cortana Intelligence Gallery][lnk-cortana-analytics].
+*Telemetria*. Existem quatro sensores que representam os atributos do motor. Os sensores são geralmente denominados Sensor 9, Sensor 11, Sensor 14 e Sensor 15. Estes 4 sensores representam a telemetria suficiente para obter resultados úteis do modelo do Machine Learning para a RUL. Este modelo é criado a partir de um conjunto de dados públicos, que inclui dados do sensor do motor. Para obter mais informações sobre a criação do modelo a partir do conjunto de dados original, consulte o artigo [Cortana Intelligence Gallery Predictive Maintenance Template (Modelo de Manutenção Preditiva do Cortana Intelligence Gallery)][lnk-cortana-analytics].
 
 Os dispositivos simulados podem processar os seguintes comandos enviados a partir de um IoT Hub:
 
@@ -61,13 +61,13 @@ O IoT Hub reconhece o comando do dispositivo.
 O **processador de eventos** obtém os valores médios do sensor para um ciclo concluído. Transmite esses valores para uma API que expõe o modelo formado do Machine Learning para calcular a RUL de um motor.
 
 ## <a name="azure-machine-learning"></a>Azure Machine Learning
-Para obter mais informações sobre a criação do modelo a partir do conjunto de dados original, consulte o artigo [Modelo de Manutenção Preditiva do Cortana Intelligence Gallery][lnk-cortana-analytics].
+Para obter mais informações sobre a criação do modelo a partir do conjunto de dados original, consulte o artigo [Cortana Intelligence Gallery Predictive Maintenance Template (Modelo de Manutenção Preditiva do Cortana Intelligence Gallery)][lnk-cortana-analytics].
 
 ## <a name="lets-start-walking"></a>Comecemos o nosso percurso
 Esta secção explica-lhe os componentes da solução, descreve o caso de utilização prevista e fornece exemplos.
 
 ### <a name="predictive-maintenance-dashboard"></a>Dashboard de Manutenção Preventiva
-Esta página na aplicação Web utiliza os controlos do PowerBI JavaScript (consulte o [repositório PoweBI-visuals][Ink powerbi]) para visualizar:
+Esta página na aplicação Web utiliza os controlos do PowerBI JavaScript (consulte o [repositório PowerBI-visuals][lnk-powerbi]) para visualizar:
 
 * Os dados de saída das tarefas do Stream Analytics no Blob Storage.
 * A RUL e contagem de ciclo por motor de aeronave.
@@ -100,14 +100,14 @@ A simulação é executada através do conjunto de dados completos para 148 cicl
 Pode parar a simulação a qualquer momento mas, se clicar em **Iniciar Simulação**, a simulação partirá novamente do início do conjunto de dados.
 
 ## <a name="next-steps"></a>Passos seguintes
-Agora que já executou a solução pré-configurada de manutenção preditiva, poderá querer modificá-la. Para tal, consulte [Orientações sobre a personalização de soluções pré-configuradas][lnk-customize].
+Agora que já executou a solução pré-configurada de manutenção preditiva, poderá querer modificá-la. Para tal, consulte [Guidance on customizing preconfigured solutions (Documentação de orientação sobre a personalização de soluções pré-configuradas)][lnk-customize].
 
 A mensagem de blogue [Manutenção Preditiva - Sob Definições Avançadas - IoT Suite](http://social.technet.microsoft.com/wiki/contents/articles/33527.iot-suite-under-the-hood-predictive-maintenance.aspx) de TechNet fornece detalhes adicionais sobre a solução pré-configurada de manutenção preditiva.
 
 Também pode explorar algumas das outras funcionalidades e capacidades das soluções pré-configuradas do IoT Suite:
 
 * [Perguntas mais frequentes sobre o IoT Suite][lnk-faq]
-* [Segurança de IoT a partir do zero][lnk-security-groundup]
+* [Segurança de IoT desde o início][lnk-security-groundup]
 
 [img-architecture]: media/iot-suite-predictive-walkthrough/architecture.png
 [img-resource-group]: media/iot-suite-predictive-walkthrough/resource-group.png
@@ -127,6 +127,6 @@ Também pode explorar algumas das outras funcionalidades e capacidades das solu�
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 

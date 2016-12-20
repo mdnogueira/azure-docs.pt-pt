@@ -26,6 +26,10 @@
 ### [3: Fazer a pergunta certa](machine-learning-data-science-for-beginners-ask-a-question-you-can-answer-with-data.md)
 ### [4: Prever uma resposta](machine-learning-data-science-for-beginners-predict-an-answer-with-a-simple-model.md)
 ### [5: Copiar o trabalho de outras pessoas](machine-learning-data-science-for-beginners-copy-other-peoples-work-to-do-data-science.md)
+
+## [Início rápido do R](machine-learning-r-quickstart.md)
+
+
 # Procedimento
 ## Configurar ferramentas e utilitários
 ### [Configurar ambientes](machine-learning-data-science-environment-setup.md)
@@ -167,14 +171,15 @@
 #### [Normal Distribution Suite](machine-learning-r-csharp-normal-distribution.md)
 #### [Binomial Distribution Suite](machine-learning-r-csharp-binomial-distribution.md)
 #### [FAQ do Marketplace](machine-learning-marketplace-faq.md)
+
 # Referência
-## [PowerShell](/powershell/azureps-cmdlets-docs)
+## [PowerShell](/azure/machine-learning/machine-learning-powershell-module)
 ## [Módulo do PowerShell para Machine Learning](machine-learning-powershell-module.md)
-## [Referência do algoritmo](https://msdn.microsoft.com/library/azure/dn905974.aspx)
-## [Início rápido do R](machine-learning-r-quickstart.md)
-## [Linguagem das Redes Neurais Net#](machine-learning-azure-ml-netsharp-reference-guide.md)
-## [APIs REST de Gestão](/rest/api/machinelearning/index)
+## [Referência de Algoritmos e Módulos](https://msdn.microsoft.com/library/azure/dn905974.aspx)
+## [REST](/rest/api/machinelearning)
+
 # Relacionado
+
 ## Galeria do Cortana Intelligence
 ### [Descrição geral](machine-learning-gallery-how-to-use-contribute-publish.md)
 ### [Setores](machine-learning-gallery-industries.md)
@@ -205,7 +210,10 @@
 ##### [Descrição geral](cortana-analytics-playbook-vehicle-telemetry.md)
 ##### [Playbook](cortana-analytics-playbook-vehicle-telemetry-deep-dive.md)
 ##### [Configurar](cortana-analytics-playbook-vehicle-telemetry-powerbi.md)
+
 # Recursos
+## [Códigos de Erro REST de Machine Learning](/machine-learning/machine-learning-web-service-error-codes)
+## [Linguagem das Redes Neurais Net#](machine-learning-azure-ml-netsharp-reference-guide.md)
 ## [Preços](https://azure.microsoft.com/pricing/details/machine-learning/)
 ## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=machine-learning)
 ## [Blogue](http://blogs.technet.com/b/machinelearning/)
@@ -214,6 +222,7 @@
 ## [Vídeos](https://azure.microsoft.com/resources/videos/index/?services=machine-learning)
 ## [Obter ajuda a partir do chat em direto](machine-learning-live-chat.md)
 
-<!--HONumber=Nov16_HO4-->
+
+<!--HONumber=Dec16_HO1-->
 
 

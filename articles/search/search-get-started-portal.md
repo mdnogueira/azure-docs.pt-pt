@@ -16,8 +16,8 @@ ms.tgt_pltfrm: na
 ms.date: 10/03/2016
 ms.author: heidist
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: dddbcbcd82900d7537c2d60631cc1753554d9486
+ms.sourcegitcommit: 4fc33ba185122496661f7bc49d14f7522d6ee522
+ms.openlocfilehash: 02623fc3d663a674e2184380915d651dff5760bc
 
 
 ---
@@ -27,7 +27,7 @@ Esta introdução sem código ajuda-o a trabalhar com a Pesquisa do Microsoft Az
 O tutorial assume uma [base de dados de DocumentDB do Azure de exemplo](#apdx-sampledata) fácil de criar utilizando os nossos dados e instruções, mas também pode adaptar estes passos aos seus dados existentes no DocumentDB ou na Base de Dados SQL.
 
 > [!NOTE]
-> Este Tutorial de introdução requer uma [Subscrição do Azure](/pricing/free-trial/?WT.mc_id=A261C142F) e um [Serviço Azure Search](search-create-service-portal.md). 
+> Este Tutorial de introdução requer uma [Subscrição do Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F) e um [Serviço Azure Search](search-create-service-portal.md). 
 > 
 > 
 
@@ -159,7 +159,7 @@ As instruções seguintes dão-lhe orientações gerais, mas não são exaustiva
 6. Clique em **Explorador de Documentos**.
 7. Clique em **Carregar**.
 8. Em **Carregar Documento**, navegue até à pasta local que contém os ficheiros JSON que transferiu anteriormente. Selecione ficheiros JSON em lotes de 100 ou menos.
-   * 386. json
+   * 386.json
    * 387.json
    * . . .
    * 486.json
@@ -181,6 +181,6 @@ Deve regressar à saída JSON, começando pelo documento 386 e terminando no doc
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 

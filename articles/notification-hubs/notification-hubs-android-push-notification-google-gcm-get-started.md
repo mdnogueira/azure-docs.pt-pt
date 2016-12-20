@@ -59,7 +59,7 @@ A conclusão deste tutorial é um pré-requisito para todos os outros tutoriais 
 
 O Notification Hub está agora configurado para trabalhar com o GCM e tem as cadeias de ligação para registar a sua aplicação para receber e enviar notificações push.
 
-## <a name="a-idconnectingappaconnect-your-app-to-the-notification-hub"></a><a id="connecting-app"></a>Ligar a aplicação ao hub de notificação
+## <a name="a-idconnecting-appaconnect-your-app-to-the-notification-hub"></a><a id="connecting-app"></a>Ligar a aplicação ao hub de notificação
 ### <a name="create-a-new-android-project"></a>Criar um novo projeto Android
 1. No Android Studio, inicie um novo projeto de Android Studio.
    
@@ -664,9 +664,9 @@ Para obter informações mais gerais sobre os Notification Hubs, consulte as nos
 [SDK Android dos Serviços Móveis]: https://go.microsoft.com/fwLink/?LinkID=280126&clcid=0x409
 [Referenciar um projeto de biblioteca]: http://go.microsoft.com/fwlink/?LinkId=389800
 [Portal Clássico do Azure]: https://manage.windowsazure.com/
-[Orientação dos Hubs de Notificação]: http://msdn.microsoft.com/library/jj927170.aspx
-[Use Notification Hubs to push notifications to users (Utilizar Hubs de Notificação para notificações push a utilizadores)]: notification-hubs-aspnet-backend-gcm-android-push-to-user-google-notification.md
-[Use Notification Hubs to send breaking news (Utilizar Hubs de Notificação para enviar notícias de última hora)]: notification-hubs-aspnet-backend-android-xplat-segmented-gcm-push-notification.md
+[Documentação de Orientação dos Notification Hubs]: http://msdn.microsoft.com/library/jj927170.aspx
+[Utilizar Notification Hubs para notificações push a utilizadores]: notification-hubs-aspnet-backend-gcm-android-push-to-user-google-notification.md
+[Utilizar Notification Hubs para enviar notícias de última hora]: notification-hubs-aspnet-backend-android-xplat-segmented-gcm-push-notification.md
 [Portal do Azure]: https://portal.azure.com
 
 

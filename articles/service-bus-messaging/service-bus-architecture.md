@@ -1,27 +1,27 @@
 ---
 title: Arquitetura do Service Bus | Microsoft Docs
 description: Descreve a arquitetura de processamento de mensagens e do reencaminhamento do Azure Service Bus.
-services: service-bus
+services: service-bus-messaging
 documentationcenter: na
 author: sethmanheim
 manager: timlt
 editor: 
 ms.assetid: baf94c2d-0e58-4d5d-a588-767f996ccf7f
-ms.service: service-bus
+ms.service: service-bus-messaging
 ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 07/11/2016
+ms.date: 11/30/2016
 ms.author: sethm
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 3c69783341eaed67ac29ab63d2127a4038bc0f6d
+ms.sourcegitcommit: 0b1f6f7ec47e47f39407cdbfd5efef2a18944ecc
+ms.openlocfilehash: 6a2e59f9366e411d322b8560f03b115638619966
 
 
 ---
 # <a name="service-bus-architecture"></a>Arquitetura do Service Bus
-Este artigo descreve a arquitetura de processamento de mensagens e do reencaminhamento do Azure Service Bus.
+Este artigo descreve a arquitetura de processamento de mensagens do Service Bus do Azure.
 
 ## <a name="service-bus-scale-units"></a>Unidades de escala do Service Bus
 O Service Bus está organizado por *unidades de escala*. Uma unidade de escala é uma unidade de implementação e contém todos os componentes necessários para executar o serviço. Cada região implementa uma ou mais unidades de escala do Service Bus.
@@ -49,7 +49,7 @@ Quando a ligação de reencaminhamento é estabelecida, os clientes podem trocar
 ![Processamento de Pedidos de Reencaminhamento de WCF Recebidos](./media/service-bus-architecture/IC690645.png)
 
 ## <a name="next-steps"></a>Passos seguintes
-Agora que já leu uma descrição geral da arquitetura do Service Bus, visite as seguintes ligações para começar:
+Agora que já leu uma descrição geral da arquitetura do Service Bus, visite as seguintes ligações para obter mais informações:
 
 * [Descrição geral das mensagens do Service Bus](service-bus-messaging-overview.md)
 * [Noções básicas sobre o Service Bus](service-bus-fundamentals-hybrid-solutions.md)
@@ -58,6 +58,6 @@ Agora que já leu uma descrição geral da arquitetura do Service Bus, visite as
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -17,12 +17,52 @@ ms.workload: na
 ms.date: 09/13/2016
 ms.author: rogardle
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 97f74f845e19ae99cf6c5abbb9f076c7c5171993
+ms.sourcegitcommit: a4882b6fcd75ecaa826cdda3e25ee690b85a0670
+ms.openlocfilehash: 34450e25941e0be97b72c1ba30ee348d73f4bc67
 
 
 ---
 # <a name="connect-to-an-azure-container-service-cluster"></a>Ligar a um cluster do Serviço de Contentor Azure
+Os clusters DC/OS, Kubernetes e do Docker Swarm que são implementados pelo Azure Container Service expõem todos pontos finais REST.  Para os Kubernetes, este ponto final é exposto de forma segura na Internet e pode aceder-lhe diretamente a partir de qualquer computador ligado à Internet. Para DC/SO e Docker Swarm é necessário criar um túnel SSH para ligar de forma segura ao ponto final do REST. Cada uma destas ligações é descrita abaixo.
+
+## <a name="connecting-to-a-kubernetes-cluster"></a>Ligar a um cluster do Kubernetes.
+Para ligar a um cluster do Kubernetes, deve ter a linha de comandos `kubectl` instalada.  A forma mais fácil para instalar esta ferramenta é utilizar ferramenta de linha de comandos `az` do Azure 2.0 .
+
+```console
+az acs kubernetes install cli [--install-location=/some/directory]
+```
+
+Em alternativa, pode transferir o cliente diretamente a partir da [página de lançamentos](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG.md#downloads-for-v146)
+
+Assim que tiver o `kubectl` instalado, deve copiar as credenciais de cluster para a máquina.  A forma mais fácil de fazê-lo é utilizar a ferramenta de linha de comandos `az`:
+
+```console
+az acs kubernetes get-credentials --dns-prefix=<some-prefix> --location=<some-location>
+```
+
+Esta ação irá transferir as credenciais de cluster para `$HOME/.kube/config`, onde `kubectl` espera ser localizado.
+
+Em alternativa, pode utilizar `scp` para copiar de forma segura o ficheiro a partir de `$HOME/.kube/config` na VM principal da máquina local.
+
+```console
+mkdir $HOME/.kube/config
+scp azureuser@<master-dns-name>:.kube/config $HOME/.kube/config
+```
+
+Se estiver no Windows, terá de utilizar o Bash no Ubuntu no Windows ou a ferramenta "pscp" Putty .
+
+Assim que tiver o `kubectl` configurado, pode testá-lo com:
+
+```console
+kubectl get nodes
+```
+
+que deve mostrar-lhe os nós do cluster.
+
+Para mais instruções pode ver o [Guia de Introdução do Kubernetes](http://kubernetes.io/docs/user-guide/quick-start/)
+
+## <a name="connecting-to-a-dcos-or-swarm-cluster"></a>Ligar a um cluster de DC/SO ou Swarm
+
 Os clusters DC/OS e do Docker Swarm que são implementados pelo Serviço de Contentor do Azure expõem pontos finais REST. No entanto, estes pontos finais não estão abertos ao mundo externo. Para gerir estes pontos finais, tem de criar um túnel Secure Shell (SSH). Depois de estabelecer um túnel SSH, pode executar comandos nos pontos finais de cluster e ver a IU do cluster através de um browser no seu próprio sistema. Este documento explica-lhe como criar um túnel SSH no Linux, OS X e Windows.
 
 > [!NOTE]
@@ -126,6 +166,6 @@ Implementar e gerir contentores com DC/OS ou Swarm:
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO4-->
 
 

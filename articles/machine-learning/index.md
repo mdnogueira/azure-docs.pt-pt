@@ -1,8 +1,8 @@
 ---
 layout: LandingPage
 translationtype: Human Translation
-ms.sourcegitcommit: 2b15ee71010c4c2aa66621e9ac84c0b90c19ca51
-ms.openlocfilehash: 2ab86738ccbc48c39b6357c62b73de3053d13c75
+ms.sourcegitcommit: 3752a677351518195773a86c3824078a5aff6d03
+ms.openlocfilehash: 2328b831e3d04b2d974dbc1520f79dcbdcd80128
 
 ---
 #<a name="azure-machine-learning-documentation"></a>Documentação do Azure Machine Learning
@@ -110,7 +110,7 @@ O Azure Machine Learning proporciona ferramentas para modelar análises preditiv
                 <div class="card">
                     <div class="cardText">
                         <h3>REST</h3>
-                        <p>Referência da API REST do Machine Learning</p>
+                        <p>API REST do Machine Learning</p>
                     </div>
                 </div>
             </div>
@@ -143,6 +143,6 @@ Transferir a Documentação do Machine Learning </div>
 
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Dec16_HO1-->
 
 

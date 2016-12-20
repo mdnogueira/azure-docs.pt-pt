@@ -15,12 +15,12 @@ ms.workload: mobile
 ms.date: 10/04/2016
 ms.author: wesmc;ricksal
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 7be266a6f8b3e18f2f6a27908ad75b5c19d3d862
+ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
+ms.openlocfilehash: 0cb54f6c4b84597fbc21fa691f88f6f7a37beedd
 
 
 ---
-# <a name="azure-mobile-engagement-getting-started-guide-with-best-practices"></a>Azure Mobile Engagement – Guia de Introdução com Melhores Práticas
+# <a name="azure-mobile-engagement---getting-started-guide-with-best-practices"></a>Azure Mobile Engagement – Guia de Introdução com Melhores Práticas
 ## <a name="overview"></a>Descrição geral
 **O ecrã de um dispositivo móvel é um espaço muito movimentado:** em 2013, um estudo concluiu que um dispositivo móvel tinha em média 27 aplicações instaladas. Em geral, os utilizadores gastaram 30 horas por mês nas suas aplicações. A maior parte deste período de tempo foi despendida nas redes sociais e em jogos (cerca de 20 horas). Em 2014, o mercado Android tinha cerca de 1,5 milhões de aplicações ao dispor dos utilizadores. A Apple Store continha aproximadamente 1,2 milhões de aplicações. A utilização de aplicações móveis continua a aumentar, à medida que os programadores competem neste mercado em crescimento. 
 
@@ -105,7 +105,7 @@ Criar um dashboard de KPI que contém as informações indicadas abaixo
 3. Onde estão localizados estes dados para a minha aplicação (ou seja, ecrã, definições, sistema...)?
 4. Posso reproduzir uma sequência de Envolvimento para este KPI?
 
-Pode utilizar a folha de cálculo **Criador de KPI** no nosso [Modelo do Manual de Comunicação Social][Ligação do Manual de Comunicação Social] para obter exemplos e orientação.
+Pode utilizar a folha de cálculo **Criador de KPI** no nosso [Modelo do Manual de Comunicação Social][Media Playbook link] para obter exemplos e orientação.
 
 ## <a name="step-2-your-engagement-program"></a>Passo 2: o Seu Programa de Envolvimento
 Um programa Mobile Engagement excelente deve ser considerado um componente essencial da sua aplicação. Isto deve sem dúvida incluir um programa de boas-vindas excelente que seja executado para um utilizador durante os primeiros dias de utilização da aplicação. Isto tende a ter um efeito muito positivo no envolvimento e na retenção da sua aplicação. Existem estudos que demonstraram que a maioria dos utilizadores deixa de utilizar uma aplicação nos primeiros dias após a instalação. Deve esforçar-se para atingir ou exceder as expetativas dos clientes ao despertar o interesse numa fase inicial enquanto o utilizador ainda está concentrado na sua aplicação. Certifique-se de que apresenta o valor e as vantagens principais da sua aplicação aos seus clientes. 
@@ -209,13 +209,13 @@ O Azure Mobile Engagement proporciona duas formas de ajudar a evitar que as suas
 #### <a name="playbook-exercise-2-create-your-engagement-program"></a>Exercício 2 do Manual: criar o seu programa de envolvimento
 Passe algum tempo a resumir os seus objetivos e a definir as campanhas que espera realizar ao utilizar sequências específicas. Certifique-se de que aplica a abordagem dos 3Q às notificações nas suas campanhas. 
 
-Utilize a folha de cálculo **Programa de Envolvimento** no [Modelo do Manual de Comunicação Social][Ligação do Manual de Comunicação Social] para obter exemplos e orientação.
+Utilize a folha de cálculo **Programa de Envolvimento** no [Modelo do Manual de Comunicação Social][Media Playbook link] para obter exemplos e orientação.
 
 ## <a name="step-3-app-integration"></a>Passo 3: integração de aplicações
 #### <a name="create-a-tag-plan"></a>Criar um plano de etiquetas
 Para integrar o Azure Mobile Engagement na sua aplicação, terá de criar um plano de etiquetas. O plano de etiquetas é a pedra angular do projeto. Define a relação entre as especificações de marketing, o fluxo de trabalho da aplicação e os dados de etiquetas reais recolhidos na aplicação para medir os KPIs. Indica que análises poderá ver no portal. Também o ajuda a definir segmentos de utilizadores e a enviar notificações push direcionadas para o envolvimento dos utilizadores finais. Assim que tiver o plano de etiquetas definido, é simples adicionar o código para integrá-lo na aplicação através do SDK do Azure Mobile Engagement.
 
-Um plano de etiquetas não deve etiquetar tudo numa aplicação. Deve incluir apenas dados de etiquetas que façam parte da sua estratégia Mobile Engagement. Provavelmente, isto será diferente consoante as aplicações. O [Modelo do Manual de Comunicação Social][Ligação do Manual de Comunicação Social] fornecido pelo Azure Mobile Engagement ajuda-o a criar um plano de etiquetas com um determinado método. Utilize a folha de cálculo **Plano de Etiquetas** como um guia para a criação do seu plano de etiquetas.
+Um plano de etiquetas não deve etiquetar tudo numa aplicação. Deve incluir apenas dados de etiquetas que façam parte da sua estratégia Mobile Engagement. Provavelmente, isto será diferente consoante as aplicações. O [Modelo do Manual de Comunicação Social][Media Playbook link] fornecido pelo Azure Mobile Engagement ajuda-o a criar um plano de etiquetas com um determinado método. Utilize a folha de cálculo **Plano de Etiquetas** como um guia para a criação do seu plano de etiquetas.
 
 Quando definir uma secção de etiquetas na folha de cálculo, seja muito específico. Isto é muito importante para evitar confusões. Detalhe cada cenário esperado no qual cada etiqueta será enviada. Inclua o nome da atividade em que cada etiqueta é incorporada. Tudo isto deve constar da parte **Informativo** da folha de cálculo. A folha de cálculo do plano de etiquetas deve ser a referência principal para a verificação de teste. 
 
@@ -322,10 +322,10 @@ Depois de ter programado alguma experiência, pode considerar adicionar o seguin
 
 
 <!--Link references-->
-[Ligação do Manual de Comunicação Social]: https://github.com/Azure/azure-mobile-engagement-samples/tree/master/Playbooks
+[Media Playbook link]: https://github.com/Azure/azure-mobile-engagement-samples/tree/master/Playbooks
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 

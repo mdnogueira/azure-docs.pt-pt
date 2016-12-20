@@ -1,13 +1,13 @@
 ---
 title: "Aplicação híbrida no local/nuvem (.NET) | Microsoft Docs"
-description: "Saiba como criar uma aplicação .NET híbrida no local/nuvem utilizando o reencaminhamento do Service Bus do Azure."
-services: service-bus
+description: "Saiba como criar uma aplicação .NET híbrida no local/cloud utilizando o Reencaminhamento WCF do Azure."
+services: service-bus-relay
 documentationcenter: .net
 author: sethmanheim
 manager: timlt
 editor: 
 ms.assetid: 9ed02f7c-ebfb-4f39-9c97-b7dc15bcb4c1
-ms.service: service-bus
+ms.service: service-bus-relay
 ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
@@ -15,35 +15,35 @@ ms.topic: hero-article
 ms.date: 09/16/2016
 ms.author: sethm
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 3c9d542edf04c119f5d97f80eacdfd0521acd77d
+ms.sourcegitcommit: 29ede770e6e63a50ba398cfb0bc8035cacdea392
+ms.openlocfilehash: 2b00b8206189dbed02e03807658c53f81171b111
 
 
 ---
-# <a name="net-onpremisescloud-hybrid-application-using-azure-service-bus-wcf-relay"></a>Aplicação .NET híbrida no local/nuvem com o Reencaminhamento de WCF do Azure Service Bus
+# <a name="net-on-premisescloud-hybrid-application-using-azure-wcf-relay"></a>Aplicação .NET híbrida no local/cloud com o Reencaminhamento de WCF do Azure
 ## <a name="introduction"></a>Introdução
 Este artigo descreve como compilar uma aplicação híbrida na nuvem com o Microsoft Azure e o Visual Studio. O tutorial parte do princípio de que não tem experiência anterior na utilização do Azure. Em menos de 30 minutos, terá uma aplicação que utiliza vários recursos do Azure instalados e em execução na nuvem.
 
 Aprenderá:
 
 * Como criar ou adaptar um serviço Web existente para consumo por uma solução Web.
-* Como utilizar o serviço de Reencaminhamento de WCF do Azure Service Bus para partilhar dados entre uma aplicação do Azure e um serviço Web alojado noutro local.
+* Como utilizar o serviço de Reencaminhamento de WCF do Azure para partilhar dados entre uma aplicação do Azure e um serviço Web alojado noutro local.
 
 [!INCLUDE [create-account-note](../../includes/create-account-note.md)]
 
-## <a name="how-the-service-bus-relay-helps-with-hybrid-solutions"></a>Como o reencaminhamento do Service Bus ajuda com soluções híbridas
+## <a name="how-azure-relay-helps-with-hybrid-solutions"></a>Como o Reencaminhamento do Azure ajuda com soluções híbridas
 As soluções de negócio são normalmente compostas por um código personalizado escrito para lidar com requisitos comerciais novos e únicos e com funcionalidades existentes fornecidas por soluções e sistemas já aplicados.
 
 Os arquitetos de soluções estão a começar a utilizar a nuvem para um processamento mais fácil de requisitos de escala e custos operacionais inferiores. Deste modo, descobriram que os elementos de serviço existentes que gostariam de utilizar como blocos modulares para as suas soluções encontram-se na firewall da empresa e longe do fácil acesso pela solução em nuvem. Muitos serviços internos não são compilados ou alojados de modo a poderem ser facilmente expostos na margem da rede empresarial.
 
-O reencaminhamento do Service Bus foi concebido para o caso de utilização de processar serviços Web do Windows Communication Foundation (WCF) e tornar esses serviços acessíveis de forma segura para soluções que residem fora do perímetro empresarial sem exigir alterações intrusivas na infraestrutura da rede empresarial. Esses serviços de reencaminhamento do Service Bus continuam a ser alojados no seu ambiente existente, contudo, delegam a escuta de sessões e pedidos de entrada para o Service Bus alojado na nuvem. O Service Bus também protege esses serviços de acesso não autorizado utilizando a autenticação por [Assinatura de Acesso Partilhado](../service-bus-messaging/service-bus-sas-overview.md) (SAS).
+O Reencaminhamento do Azure foi concebido para o caso de utilização de processar serviços Web do Windows Communication Foundation (WCF) e tornar esses serviços acessíveis de forma segura para soluções que residem fora do perímetro empresarial sem exigir alterações intrusivas na infraestrutura da rede empresarial. Esses serviços de reencaminhamento continuam a ser alojados no seu ambiente existente, contudo, delegam a escuta de sessões e pedidos de entrada para o serviço de reencaminhamento alojado na cloud. O Reencaminhamento do Azure também protege esses serviços de acesso não autorizado utilizando a autenticação por [Assinatura de Acesso Partilhado](../service-bus-messaging/service-bus-sas-overview.md) (SAS).
 
 ## <a name="solution-scenario"></a>Cenário de solução
 Neste tutorial, criará um Web site ASP.NET que permite ver uma lista de produtos na página de inventário de produtos.
 
 ![][0]
 
-O tutorial parte do princípio de que tem informações do produto num sistema no local existente e utiliza o reencaminhamento do Service Bus para chegar a esse sistema. Tal é simulado por um serviço Web executado numa aplicação de consola simples e está associado a um conjunto de produtos dentro da memória. Poderá executar esta aplicação de consola no seu próprio computador e implementar a função da Web no Azure. Deste modo, verá como a função da Web em execução no datacenter do Azure chamará, de facto, o seu computador, apesar de o computador encontrar-se muito certamente protegido por, no mínimo, uma firewall e uma camada de tradução de endereços de rede (NAT).
+O tutorial parte do princípio de que tem informações do produto num sistema no local existente e utiliza o Reencaminhamento do Azure para chegar a esse sistema. Tal é simulado por um serviço Web executado numa aplicação de consola simples e está associado a um conjunto de produtos dentro da memória. Poderá executar esta aplicação de consola no seu próprio computador e implementar a função da Web no Azure. Deste modo, verá como a função da Web em execução no datacenter do Azure chamará, de facto, o seu computador, apesar de o computador encontrar-se muito certamente protegido por, no mínimo, uma firewall e uma camada de tradução de endereços de rede (NAT).
 
 Segue-se uma captura de ecrã da página inicial da aplicação Web completa.
 
@@ -59,11 +59,11 @@ Antes de poder começar a desenvolver aplicações do Azure, obtenha as ferramen
 5. Após a conclusão da instalação, terá tudo o que é necessário para começar a desenvolver a aplicação. O SDK inclui ferramentas que permitem desenvolver facilmente aplicações do Azure no Visual Studio. Caso não tenha o Visual Studio instalado, o SDK também instala o Visual Studio Express gratuito.
 
 ## <a name="create-a-namespace"></a>Criar um espaço de nomes
-Para começar a utilizar as funcionalidades do Service Bus no Azure, deve criar, em primeiro lugar, um espaço de nomes de serviço. Um espaço de nomes fornece um contentor de âmbito para abordar os recursos do Service Bus na sua aplicação.
+Para começar a utilizar as funcionalidades do reencaminhamento no Azure, deve criar, em primeiro lugar, um espaço de nomes de serviço. Um espaço de nomes fornece um contentor de âmbito para abordar os recursos do Azure na sua aplicação.
 
 [!INCLUDE [service-bus-create-namespace-portal](../../includes/service-bus-create-namespace-portal.md)]
 
-## <a name="create-an-onpremises-server"></a>Criar um servidor no local
+## <a name="create-an-on-premises-server"></a>Criar um servidor no local
 Em primeiro lugar, compilará um sistema de catálogo de produtos no local (mock). Tal será bastante simples; pode vê-lo como representando um sistema de catálogo de produtos no local real com uma superfície de serviço completo que estamos a tentar integrar.
 
 Este projeto é uma aplicação de consola do Visual Studio e utiliza o [Pacote NuGet do Service Bus do Azure](https://www.nuget.org/packages/WindowsAzure.ServiceBus/) para incluir as bibliotecas e as definições de configuração do Service Bus.
@@ -434,10 +434,10 @@ Antes de executar a aplicação na nuvem, deve garantir que o **ProductsPortal**
     ![][38]
 
 ## <a name="next-steps"></a>Passos seguintes
-Para obter mais informações sobre o Service Bus, consulte os seguintes recursos:  
+Para obter mais informações sobre o Reencaminhamento do Azure, veja os seguintes recursos:  
 
-* [Service Bus do Azure][sbwacom]  
-* [Como Utilizar as Filas do Service Bus][sbwacomqhowto]  
+* [O que é o Reencaminhamento do Azure?](relay-what-is-it.md)  
+* [Como utilizar o Reencaminhamento](service-bus-dotnet-how-to-use-relay.md)  
 
 [0]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/hybrid.png
 [1]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/App2.png
@@ -467,12 +467,8 @@ Para obter mais informações sobre o Service Bus, consulte os seguintes recurso
 [43]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/getting-started-hybrid-43.png
 
 
-[sbwacom]: /documentation/services/service-bus/  
-[sbwacomqhowto]: ../service-bus-messaging/service-bus-dotnet-get-started-with-queues.md
 
 
-
-
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO3-->
 
 

@@ -12,11 +12,11 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: compute
-ms.date: 08/15/2016
-ms.author: elizapo
+ms.date: 11/23/2016
+ms.author: mbaldwin
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: cfd3da08a8c8674e686ae2933db331809fb0e34d
+ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
+ms.openlocfilehash: 52edc23e0f677567beeb33c47b14f6ea66989890
 
 
 ---
@@ -44,9 +44,9 @@ Aloje a aplicação do Windows no Azure RemoteApp. A seguir encontra-se uma desc
 ## <a name="app-and-sql-configuration-considerations"></a>Considerações de configuração da aplicação e do SQL:
 Existem alguns pontos a considerar na utilização do Azure SQL com o RemoteApp:
 
-Saiba [como configurar uma firewall da SQL Database do Azure](../sql-database/sql-database-firewall-configure.md). Um excerto do artigo refere: “Inicialmente, qualquer acesso ao servidor da SQL Database do Azure é bloqueado pela firewall. De modo a começar a utilizar o servidor da SQL Database do Azure, tem de aceder ao Portal Clássico e especificar uma ou mais regras de firewall ao nível do servidor que ativam o acesso ao servidor da SQL Database do Azure. Utilize as regras de firewall para especificar quais os intervalos de endereços IP da Internet permitidos e se as aplicações do Azure podem ou não tentar estabelecer ligação ao servidor da SQL Database do Azure.”
+Saiba [como configurar uma firewall da SQL Database do Azure](../sql-database/sql-database-firewall-configure.md). Um excerto do artigo refere: "Inicialmente, qualquer acesso ao servidor da Base de Dados SQL do Azure é bloqueado pela firewall. De modo a começar a utilizar o servidor da SQL Database do Azure, tem de aceder ao Portal Clássico e especificar uma ou mais regras de firewall ao nível do servidor que ativam o acesso ao servidor da SQL Database do Azure. Utilize as regras de firewall para especificar quais os intervalos de endereços IP da Internet permitidos e se as aplicações do Azure podem ou não tentar estabelecer ligação ao servidor da Base de Dados SQL do Azure."
 
-Além disso, quando um computador tenta estabelecer ligação ao servidor da base de dados a partir da Internet, a firewall verifica o endereço IP de origem do pedido em relação ao conjunto completo de regras de firewall ao nível do servidor e da base de dados (se necessário). “Se o endereço IP do pedido estiver dentro dos intervalos especificados nas regras de firewall ao nível do servidor, a ligação é concedida pelo servidor da SQL Database do Azure.” Por conseguinte, podem ser utilizados Intervalos de IP e não apenas endereços IP de fontes individuais.
+Além disso, quando um computador tenta estabelecer ligação ao servidor da base de dados a partir da Internet, a firewall verifica o endereço IP de origem do pedido em relação ao conjunto completo de regras de firewall ao nível do servidor e da base de dados (se necessário). "Se o endereço IP do pedido estiver dentro dos intervalos especificados nas regras de firewall ao nível do servidor, a ligação é concedida pelo servidor da Base de Dados SQL do Azure." Por conseguinte, podem ser utilizados Intervalos de IP e não apenas endereços IP de fontes individuais.
 
 Siga as instruções passo-a-passo disponíveis em [Como configurar as definições de firewall da SQL Database através do Portal do Azure](../sql-database/sql-database-configure-firewall-settings.md) para especificar o intervalo de IP. Durante a configuração das regras da Firewall do SQL, forneça o intervalo IP da sub-rede que está especificado para a coleção do Azure RemoteApp. Tal deve permitir que os servidores do ARA estabeleçam ligação à BD SQL apesar de terem Endereços IP atribuídos dinamicamente.
 
@@ -60,6 +60,6 @@ Caso a experiência de utilização de uma aplicação cliente alojada no Azure 
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 

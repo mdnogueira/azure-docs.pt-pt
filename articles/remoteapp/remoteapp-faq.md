@@ -3,7 +3,7 @@ title: Perguntas mais frequentes (FAQ) do Azure RemoteApp | Microsoft Docs
 description: "Conheças as respostas às perguntas mais frequentes sobre o Azure RemoteApp."
 services: remoteapp
 documentationcenter: 
-author: lizap
+author: msmbaldwin
 manager: swadhwa
 editor: 
 ms.assetid: bad66603-91f9-437f-8a70-236405d2a27f
@@ -12,11 +12,11 @@ ms.workload: compute
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 08/15/2016
-ms.author: elizapo
+ms.date: 11/23/2016
+ms.author: mbaldwin
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: f3a2927164a01dd4b76e264cd1b7152f170f79cb
+ms.sourcegitcommit: fcc53e4073a6957fae263cfb5d38023ed9710d21
+ms.openlocfilehash: 31df73e3fc4142ba8c3634ac9d2b6fea4cc1b2d9
 
 
 ---
@@ -45,7 +45,7 @@ Se não consegue encontrar as informações que procura ou tem uma pergunta adic
 * **Qual é o custo do RemoteApp?** Consulte os [Detalhes dos Preços do Azure RemoteApp ](https://azure.microsoft.com/pricing/details/remoteapp/).
 * **O custo de um tipo de coleção é superior ao outro?** Sim, poderá ser superior, dependendo dos requisitos da coleção. Uma coleção híbrida requer uma ligação do Azure RemoteApp à sua rede no local. Caso utilize uma VNET/Express Route, não existe qualquer custo adicional. No entanto, se utilizar uma nova VNET do Azure e um gateway ou ExpressRoute, ser-lh-á cobrado um montante pelo [Gateway de VPN](https://azure.microsoft.com/pricing/details/vpn-gateway) ou o [ExpressRoute](https://azure.microsoft.com/pricing/details/expressroute/). Esse custo (detalhado nas ligações) reflete-se no custo mensal do Azure RemoteApp.
 
-## <a name="collections-whats-supported-which-should-you-use-and-others"></a>Coleções – o que é suportado e qual deverá utilizar, entre outros
+## <a name="collections---whats-supported-which-should-you-use-and-others"></a>Coleções – o que é suportado e qual deverá utilizar, entre outros
 * **São suportadas aplicações de linha de negócio (LOB) personalizadas?** Sim. Para utilizar uma aplicação personalizada no Azure RemoteApp, crie uma [imagem de modelo personalizada](remoteapp-create-custom-image.md) e, em seguida, carregue a mesma para a coleção do RemoteApp.
 * **A minha aplicação LOB personalizada funcionará no Azure RemoteApp?** A melhor forma de descobrir é efetuando um teste. Consulte o [Centro de Compatibilidade de RD](http://www.rdcompatibility.com/compatibility/default.aspx).
 * **Qual é o método de implementação (na nuvem ou híbrida) mais adequado para a minha empresa?** As coleções híbridas proporcionam a experiência mais completa caso pretenda uma integração completa com o início de sessão único (SSO) e uma conectividade de rede no local segura. As coleções na nuvem proporcionam uma forma célere e simples de isolar a implementação através de múltiplos métodos de autenticação. Saiba mais acerca das [opções de implementação](remoteapp-whatis.md).
@@ -69,7 +69,7 @@ Se não consegue encontrar as informações que procura ou tem uma pergunta adic
 
 * **Por que motivo não posso conceder acesso à minha conta do Azure Active Directory?** Os utilizadores do Azure Active Directory devem pertencer ao diretório associado à sua subscrição. Pode ver ou modificar o diretório no separador Definições no portal. Consulte [Alterar o inquilino do Azure Active Directory utilizado pelo RemoteApp](remoteapp-changetenant.md) para obter mais informações.
 
-## <a name="clients-what-device-can-i-use-to-access-azure-remoteapp"></a>Clientes – que dispositivo posso utilizar para aceder ao Azure RemoteApp?
+## <a name="clients---what-device-can-i-use-to-access-azure-remoteapp"></a>Clientes – que dispositivo posso utilizar para aceder ao Azure RemoteApp?
 Pode encontrar boas informações de cliente, incluindo passos para a instalação de diferentes clientes, em [Aceder às aplicações no Azure RemoteApp](remoteapp-clients.md).
 
 * **Quais são os dispositivos e os sistemas operativos suportados pelas aplicações cliente?**
@@ -126,6 +126,6 @@ Sabia que além de classificar este artigo e deixar um comentário a seguir, pod
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 

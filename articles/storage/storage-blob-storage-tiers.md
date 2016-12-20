@@ -15,8 +15,8 @@ ms.topic: get-started-article
 ms.date: 10/18/2016
 ms.author: mihauss
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 31af2d1ade0c24a8d76e98d95fda287320552eea
+ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
+ms.openlocfilehash: 998e95611bca6778de601239bcf9c81246dead83
 
 
 ---
@@ -248,7 +248,7 @@ Para que possa estimar os custos de transação para contas do Armazenamento de 
 
 Para estimar os custos de transação para contas de armazenamento para fins gerais, é necessário agregar todas as transações, independentemente da operação/API.
 
-##### <a name="data-access-and-georeplication-data-transfer-costs"></a>Custos de acesso a dados e custos de transferência de dados de georreplicação
+##### <a name="data-access-and-geo-replication-data-transfer-costs"></a>Custos de acesso a dados e custos de transferência de dados de georreplicação
 Embora a análise de armazenamento não forneça a quantidade de dados lidos e escritos numa conta de armazenamento, esta pode ser aproximadamente estimada ao consultar a tabela de métricas de transação.
 A soma de *'TotalIngress'* de todas as entradas de uma API na tabela de métricas de transação indica a quantidade total de dados de entrada em bytes para essa API específica.
 Do mesmo modo, a soma de *'TotalEgress'* indica a quantidade total de dados de saída, em bytes.
@@ -345,6 +345,6 @@ Para obter mais detalhes, consulte [Introdução ao Blob Storage do Azure](stora
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 

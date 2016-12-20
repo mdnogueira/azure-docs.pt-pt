@@ -92,8 +92,8 @@
 
 ## [Transmissão em direto](media-services-manage-channels-overview.md)
 ### [Codificadores no local](media-services-live-streaming-with-onprem-encoders.md)
-### [Transmissão em direto com codificador em nuvem](media-services-manage-live-encoder-enabled-channels.md)
-### Tutoriais do codificador de nuvem
+### [Transmissão em direto com codificador em cloud](media-services-manage-live-encoder-enabled-channels.md)
+### Tutoriais do codificador de cloud
 #### [Portal](media-services-portal-creating-live-encoder-enabled-channel.md)
 #### [.NET](media-services-dotnet-creating-live-encoder-enabled-channel.md)
 ### [Configurar codificadores no local para utilização com codificadores em cloud](media-services-live-encoders-overview.md)
@@ -129,7 +129,7 @@
 
 ## [Analisar](media-services-analytics-overview.md)
 ### [Analisar multimédia através do portal](media-services-portal-analyze.md)
-### [Processar com o Indexador 2](media-services-process-content-with-indexer2.md)
+### [Processar com o Indexador 2](media-services-process-content-with-indexer2.md)
 ### [Processar com o Indexador](media-services-index-content.md)
 ### [Processar com o Hyperlapse](media-services-hyperlapse-content.md)
 ### [Processar com o Detetor de Rostos](media-services-face-and-emotion-detection.md)
@@ -195,16 +195,18 @@
 ### [Repetir a lógica](media-services-retry-logic-in-dotnet-sdk.md)
 
 # Referência
-## [Notas de versão](media-services-release-notes.md)
-## [.NET](media-services-dotnet-how-to-use.md)
-## [REST](media-services-rest-how-to-use.md)
+## [PowerShell (Resource Manager)](/powershell/resourcemanager/azurerm.media/v0.3.1/azurerm.media)
+## [PowerShell (Gestão de Serviços)](/powershell/servicemanagement/azure.compute/v3.1.0/azure.compute)
+## [.NET](/dotnet/api/microsoft.windowsazure.mediaservices.client)
+## [REST](/rest/api/media)
 
 # Recursos
+## [Notas de versão](media-services-release-notes.md)
 ## [Preços](https://azure.microsoft.com/pricing/details/media-services/)
 ## [Comunidade dos Serviços de Multimédia do Azure](media-services-community.md)
 ## [Vídeos](https://azure.microsoft.com/resources/videos/index/?services=media-services)
 
 
-<!--HONumber=Nov16_HO5-->
+<!--HONumber=Dec16_HO1-->
 
 

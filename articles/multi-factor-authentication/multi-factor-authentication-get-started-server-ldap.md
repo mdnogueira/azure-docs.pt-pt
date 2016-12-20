@@ -15,12 +15,12 @@ ms.topic: get-started-article
 ms.date: 08/04/2016
 ms.author: kgremban
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 1c57047f9a7eefcc0c4dbf08e705c3193e89f9a7
+ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
+ms.openlocfilehash: 0cafcd1d21e12a3e8dfd020d1e59ee99d8c4d370
 
 
 ---
-# <a name="ldap-authentication-and-azure-multifactor-authentication-server"></a>Autenticação LDAP e Servidor Multi-Factor Authentication do Azure
+# <a name="ldap-authentication-and-azure-multi-factor-authentication-server"></a>Autenticação LDAP e Servidor Multi-Factor Authentication do Azure
 Por predefinição, o Servidor Multi-Factor Authentication do Azure está configurado para importar ou sincronizar os utilizadores do Active Directory. No entanto, pode ser configurado para ser vinculado a diferentes diretórios LDAP, como um diretório do ADAM ou controlador de domínio específico do Active Directory. Quando configurado para ligar a um diretório através de LDAP, o Servidor Multi-Factor Authentication do Azure pode ser configurado para atuar como um proxy LDAP para efetuar as autenticações. Também permite a utilização do enlace de LDAP como um destino RADIUS para pré-autenticação de utilizadores ao utilizar a Autenticação do IIS ou para autenticação primária no Portal de Utilizador do Multi-Factor Authentication do Azure.
 
 Quando utilizar o Multi-Factor Authentication do Azure como um proxy LDAP, o Servidor Multi-Factor Authentication do Azure é inserido entre o cliente LDAP (por exemplo, a aplicação VPN) e o servidor de diretório LDAP para poder adicionar a autenticação multifator. Para o Multi-Factor Authentication do Azure funcionar, o Servidor Multi-Factor Authentication do Azure tem de ser configurado para comunicar com os servidores cliente e o diretório LDAP. Nesta configuração, o Servidor Multi-Factor Authentication do Azure aceita os pedidos LDAP das aplicações e dos servidores cliente e reencaminha-os para o servidor de diretório LDAP de destino para validar as credenciais principais. Se a resposta do diretório LDAP mostrar que as credenciais principais são válidas, o Multi-Factor Authentication do Azure efetua a autenticação de segundo fator e envia uma resposta de volta para o cliente LDAP. A autenticação completa apenas terá êxito se a autenticação no servidor LDAP e a autenticação multifator forem bem-sucedidas.
@@ -61,6 +61,6 @@ Para configurar o cliente LDAP, utilize as diretrizes:
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 
