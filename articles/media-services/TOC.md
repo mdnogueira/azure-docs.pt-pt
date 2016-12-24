@@ -44,7 +44,7 @@
 ##### [Esquema Media Encoder Standard](media-services-mes-schema.md)
 ##### [Metadados de entrada](media-services-input-metadata-schema.md)
 ##### [Metadados de saída](media-services-output-metadata-schema.md)
-#### Predefinições MES 
+#### [Predefinições MES](media-services-mes-presets-overview.md) 
 ##### [H264 Taxas de Bits Múltiplas 1080p Audio 5.1](media-services-mes-preset-H264-Multiple-Bitrate-1080p-Audio-5.1.md)
 ##### [H264 Taxas de Bits Múltiplas 1080p](media-services-mes-preset-H264-Multiple-Bitrate-1080p.md)
 ##### [H264 Taxas de Bits Múltiplas 16x9 SD Audio 5.1](media-services-mes-preset-H264-Multiple-Bitrate-16x9-SD-Audio-5.1.md)
@@ -134,8 +134,8 @@
 ### [Processar com o Hyperlapse](media-services-hyperlapse-content.md)
 ### [Processar com o Detetor de Rostos](media-services-face-and-emotion-detection.md)
 ### [Processar com o Detetor de Movimento](media-services-motion-detection.md)
-### [Processar com a Redação de rostos](media-services-face-redaction.md)
-#### [Instruções de redação de rostos](media-services-redactor-walkthrough.md)
+### [Processar com o Editor de Rostos](media-services-face-redaction.md)
+#### [Instruções de Redação de Rostos](media-services-redactor-walkthrough.md)
 ### [Processar com miniaturas de vídeos](media-services-video-summarization.md)
 ### [Processar com o OCR](media-services-video-optical-character-recognition.md)
 
@@ -207,6 +207,6 @@
 ## [Vídeos](https://azure.microsoft.com/resources/videos/index/?services=media-services)
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

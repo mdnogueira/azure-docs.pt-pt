@@ -1,13 +1,14 @@
 ---
 layout: LandingPage
+description: "Saiba como compreender a faturação do Azure, bem como gerir e monitorizar utilização e custos. Tutoriais, FAQs, referências de API e outra documentação."
 translationtype: Human Translation
-ms.sourcegitcommit: 95b54199c307efea21666c774525a9a539472131
-ms.openlocfilehash: c67a65aa1053a3acb6059625877ec1c515d49258
+ms.sourcegitcommit: 640915b6305b2865b21937e19c324e8e7f1ba0a7
+ms.openlocfilehash: 401406bccbb6e6e7b92b431efe57e49d6745e8c2
 
 ---
 # <a name="azure-billing-documentation"></a>Documentação da Faturação do Azure
 
-Os clientes e parceiros precisam da capacidade de prever e gerir com precisão os seus custos relacionados com o Azure. À medida que fazem a transição de um modelo Capex para um modelo Opex, precisam também da capacidade de fazer uma análise de custo versus estorno, bem como proporcionar fidelidade de modo nas estimativas e na faturação, em especial para implementações da cloud de grandes dimensões.
+Saiba como compreender a faturação do Azure e monitorizar utilização e custos. Tutoriais, FAQs, referências de API e outra documentação mostram-lhe como gerir a conta.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -109,6 +110,7 @@ Transferir a Documentação da Faturação </div>
 </div>
 
 
-<!--HONumber=Dec16_HO2-->
+
+<!--HONumber=Dec16_HO3-->
 
 

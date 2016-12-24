@@ -1,13 +1,14 @@
 ---
 layout: LandingPage
+description: "Saiba como implementar um controlador de entrega de aplicações na cloud. A documentação mostra como configurar o encaminhamento ao nível da aplicação e para um balanceamento de carga para um front-end da Web."
 translationtype: Human Translation
-ms.sourcegitcommit: 95b54199c307efea21666c774525a9a539472131
-ms.openlocfilehash: e81571dc2d0d52f8b04c7ff99a76d92c784c259e
+ms.sourcegitcommit: 8f9b8cee583b9bc12df14bf5161cab1952e3e022
+ms.openlocfilehash: 5e7843adfb31fcfc56986cce44fc5d59ee558d58
 
 ---
 #<a name="application-gateway-documentation"></a>Documentação do Gateway de Aplicação
 
-O Gateway de Aplicação do Azure disponibiliza o Controlador de Entrega de Aplicações (ADC) como um serviço.  Permite que os clientes otimizem a produtividade do Web farm ao descarregar a terminação de SSL com utilização intensiva da CPU para o gateway de aplicação.  É uma aplicação virtual dedicada para a sua aplicação com escalabilidade e elevada disponibilidade, bem como um conjunto de funcionalidades de diagnóstico e registo avançado para uma melhor capacidade de gestão.
+Saiba como implementar o Gateway de Aplicação um controlador de entrega de aplicações (ADC) como um serviço. Tutoriais, referências de API e outra documentação mostram-lhe como configurar serviços de balanceamento de carga e encaminhamento ao nível da aplicação que lhe permitem criar um front-end Web dimensionável e de elevada disponibilidade.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -160,6 +161,6 @@ Transferir a Documentação do Gateway de Aplicação </div>
 
 
 
-<!--HONumber=Dec16_HO2-->
+<!--HONumber=Dec16_HO3-->
 
 

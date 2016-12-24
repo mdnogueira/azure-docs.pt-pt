@@ -17,8 +17,8 @@ ms.topic: hero-article
 ms.date: 11/23/2016
 ms.author: carlrab
 translationtype: Human Translation
-ms.sourcegitcommit: 145cdc5b686692b44d2c3593a128689a56812610
-ms.openlocfilehash: 6b016384339f0dc943237a88787c2c86debd9016
+ms.sourcegitcommit: c2252fc81f97019391ca2ba957f8402c4e97a9c2
+ms.openlocfilehash: f9b17c1cc77918fb1989b94b5bb359a697ceea7c
 
 
 ---
@@ -30,7 +30,7 @@ Neste tutorial de introdução irá aprender a utilizar o portal do Azure para:
 * Criar um servidor lógico do SQL do Azure
 * Ver as propriedades do servidor lógico do SQL do Azure
 * Criar uma regra de firewall ao nível do servidor
-* Criar a base de dados de exemplo do Adventure Works LT como base de dados autónoma
+* Criar a base de dados de exemplo do Adventure Works LT como base de dados única
 * Ver as propriedades da base de dados de exemplo do Adventure Works LT no Azure
 
 Neste tutorial também utilizará a versão mais recente do SQL Server Management Studio para:
@@ -208,7 +208,7 @@ Com a [subscrição existente](https://account.windowsazure.com/Home/Index), sig
     ![credenciais do servidor](./media/sql-database-get-started/server-credentials.png)
 
     > [!NOTE]
-    > Quando adiciona uma base de dados a um servidor, a mesma pode ser adicionada como base de dados autónoma (a predefinição) ou adicionada a um conjunto elástico. Para obter mais informações sobre conjuntos elásticos, veja o artigo [Conjuntos elásticos](sql-database-elastic-pool.md).
+    > Quando adiciona uma base de dados a um servidor, a mesma pode ser adicionada como base de dados única (a predefinição) ou adicionada a um conjunto elástico. Para obter mais informações sobre conjuntos elásticos, veja o artigo [Conjuntos elásticos](sql-database-elastic-pool.md).
     >
 
 7. Em Escalão de preço, altere o escalão de preço para **Básico** (pode aumentar o escalão de preço mais tarde se assim o desejar, mas, para efeitos de aprendizagem, recomendamos que utilize o escalão de custo mais baixo).
@@ -299,11 +299,13 @@ Agora que concluiu este tutorial, existem alguns tutoriais adicionais que poder�
 * Se quiser começar a criar tabelas e outros objetos, veja o tópico "Para criar uma tabela" no artigo [Criar uma tabela](https://msdn.microsoft.com/library/ms365315.aspx).
 
 ## <a name="additional-resources"></a>Recursos adicionais
-[O que é a Base de Dados SQL?](sql-database-technical-overview.md)
+
+- Para uma descrição geral técnica veja [O que é a Base de Dados SQL?](sql-database-technical-overview.md).
+- Para informações sobre preços, veja [preços Base de Dados SQL do Azure](https://azure.microsoft.com/pricing/details/sql-database/).
 
 
 
 
-<!--HONumber=Dec16_HO2-->
+<!--HONumber=Dec16_HO3-->
 
 

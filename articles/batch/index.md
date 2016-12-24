@@ -1,13 +1,14 @@
 ---
 layout: LandingPage
+description: "Saiba como utilizar o Batch para executar aplicações de computação de alto desempenho e paralelas em larga escala, de forma eficaz. Tutoriais, referências de API e outra documentação."
 translationtype: Human Translation
-ms.sourcegitcommit: e48fea077e09518ab5005518c8e8a413df458b93
-ms.openlocfilehash: a661fc1e3946709058e0d2f32122732ba8a32b41
+ms.sourcegitcommit: aafd374ff1d72df90bd09479e18ac7ce83715cef
+ms.openlocfilehash: daf72b1a473e3940e889cd6caf78b709e08428c6
 
 ---
 #<a name="batch-documentation"></a>Documentação do Batch
 
-O Azure Batch permite-lhe executar aplicações de computação de alto desempenho (HPC) e paralelas em larga escala, de forma eficaz na cloud. Com o serviço Batch, define os recursos de computação do Azure para executar as aplicações em paralelo e com dimensionamento. Pode executar tarefas a pedido ou agendadas, sem ter de se preocupar em criar ou gerir manualmente a infraestrutura.
+Saiba como utilizar o Batch para executar aplicações de computação de alto desempenho e paralelas em larga escala, de forma eficaz na cloud. Tutoriais, referências de API e outra documentação mostram-lhe como definir os recursos de computação do Azure ao executar aplicações em paralelo ou ao dimensionar sem configurar de forma manual ou gerir a infraestrutura.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -112,34 +113,34 @@ O Azure Batch permite-lhe executar aplicações de computação de alto desempen
                 <div class="card">
                     <div class="cardText">
                         <h3>Linha de Comandos</h3>
-                        <p><a href="/powershell/resourcemanager/azurerm.batch/v2.3.0/azurerm.batch">Cmdlets do PowerShell</a></p>
+                        <p><a href="/powershell/resourcemanager/azurerm.batch/v2.3.0/azurerm.batch">PowerShell</a></p>
                     </div>
                 </div>
             </div>
         </div>
     </li>
     <li>
-        <div class="cardSize"><p />
+        <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
                         <h3>Linguagens</h3>
-                        <p><a href="/dotnet/api/microsoft.azure.batch">API .NET</a></p>
+                        <p><a href="/dotnet/api/microsoft.azure.batch">.NET</a></p>
                         <p><a href="/java/api/com.microsoft.azure.batch">Java</a></p>
                         <p><a href="http://azure.github.io/azure-sdk-for-node/azure-batch/latest.azure.batch">Node.js</a></p>
-                        <p><a href="http://azure-sdk-for-python.readthedocs.io/en/latest/ref/azure.batch">SDK Python</a></p>
+                        <p><a href="http://azure-sdk-for-python.readthedocs.io/en/latest/ref/azure.batch">Python</a></p>
                     </div>
                 </div>
             </div>
         </div>
     </li>
     <li>
-        <div class="cardSize"><p />
+        <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
                         <h3>REST</h3>
-                        <p><a href="/rest/api/batchservice">API REST</a></p>
+                        <p><a href="/rest/api/batchservice">Referência da API REST</a></p>
                     </div>
                 </div>
             </div>
@@ -157,6 +158,6 @@ Transferir a Documentação do Azure Batch </div>
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 
