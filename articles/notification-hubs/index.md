@@ -1,15 +1,14 @@
 ---
 layout: LandingPage
+description: "Saiba como enviar notificações push de qualquer back-end para todos os dispositivos móveis com Hubs de Notificação. Tutoriais, referências de API e outra documentação."
 translationtype: Human Translation
-ms.sourcegitcommit: 3752a677351518195773a86c3824078a5aff6d03
-ms.openlocfilehash: 54bebbed74b344ff854a83b2b6c4abdb5ba68321
+ms.sourcegitcommit: 0d46d0e04550578a81c636aa118dc02c08428838
+ms.openlocfilehash: 8a4712af44c474cea93f04bf598e6595ba0dadee
 
 ---
 #<a name="notification-hubs-documentation"></a>Documentação dos Hubs de Notificação
 
-Os Hubs de Notificação do Azure proporcionam uma infraestrutura push ampliada multiplataformas de fácil utilização, que lhe permite enviar notificações push móveis a partir de qualquer back-end (na cloud ou no local) para qualquer plataforma móvel.
-
-Com os Hubs de Notificação, pode enviar facilmente notificações push personalizadas para várias plataformas, abstraindo os detalhes dos sistemas de notificação das várias plataformas (PNS, Platform Notification Systems). Com uma única chamada API, pode visar utilizadores individuais ou segmentos de audiência inteiros contendo milhões de utilizadores, em todos os respetivos dispositivos.
+Saiba como utilizar Hubs de Notificação, um motor multi-plataformas de notificações push dimensionáveis para enviar rapidamente milhões de mensagens. Tutoriais, referências de API e outra documentação mostram-lhe como configurar e enviar notificações push de qualquer back-end para todos os dispositivos móveis. 
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -31,7 +30,7 @@ Com os Hubs de Notificação, pode enviar facilmente notificações push persona
         </a>
     </li>
     <li>
-        <a href="https://azure.microsoft.com/en-us/documentation/videos/index/?services=notification-hubs">
+        <a href="https://azure.microsoft.com/documentation/videos/index/?services=notification-hubs">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
@@ -160,52 +159,45 @@ Com os Hubs de Notificação, pode enviar facilmente notificações push persona
 
 ---
 
-## <a name="reference"></a>Referência
-
+<h2>Referência</h2>
 <ul class="panelContent cardsW">
     <li>
-        <a href="/powershell/resourcemanager/">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-                        <h3>PowerShell</h3>
-                        <p>Cmdlets do PowerShell dos Hubs de Notificação</p>
+                        <h3>Linha de Comandos</h3>
+                        <p><a href="/powershell/resourcemanager/azurerm.notificationhubs/v2.3.0/azurerm.notificationhubs">PowerShell</a></p>
                     </div>
                 </div>
             </div>
         </div>
-        </a>
     </li>
     <li>
-        <a href="/dotnet/api/">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-                        <h3>.NET</h3>
-                        <p>Referência da API .NET dos Hubs de Notificação</p>
-                    </div>
+                        <h3>Linguagens</h3>
+                        <p><a href="/dotnet/api/microsoft.azure.notificationhubs">.NET</a></p>
+                   </div>
                 </div>
             </div>
         </div>
-        </a>
     </li>
     <li>
-        <a href="/rest/api/notificationhubs/">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
                         <h3>REST</h3>
-                        <p>API REST dos Hubs de Notificação</p>
+                        <p><a href="/rest/api/notificationhubs">Referência da API REST</a></p>
                     </div>
                 </div>
             </div>
         </div>
-        </a>
     </li>
-<ul>
+</ul>
 
 ---
 
@@ -219,6 +211,6 @@ Transferir a Documentação dos Hubs de Notificação </div>
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

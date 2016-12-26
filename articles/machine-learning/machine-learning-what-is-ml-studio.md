@@ -13,11 +13,11 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 09/09/2016
+ms.date: 12/12/2016
 ms.author: garye
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 2a5bcc177d298aecd9fd474bd15fc0331b26e887
+ms.sourcegitcommit: 9e738c4e5f43ae6c939f7c6da90c258498943e73
+ms.openlocfilehash: b8115f1fb72b0ba89fd0c8afa3358878a0fab92b
 
 
 ---
@@ -33,25 +33,30 @@ Para desenvolver um modelo de análise preditiva, utiliza normalmente dados a pa
 
 O **Azure Machine Learning Studio** fornece uma área de trabalho interativa e visual para facilmente criar, testar e iterar um modelo de análise preditiva. Pode arrastar e largar ***conjuntos de dados*** e ***módulos*** de análise em telas interativas, ligá-las entre si para formar uma ***experimentação***, que executa no Machine Learning Studio. Para iterar o design do modelo, edite a experimentação, guarde uma cópia se assim pretender e execute-a novamente. Quando estiver pronto, pode converter a ***experimentação de preparação*** numa ***experimentação preditiva*** e, em seguida, publicá-la como um ***serviço Web*** para que o modelo possa ser acedido por outras pessoas.
 
+Não existe nenhuma programação necessária, basta ligar visualmente os conjuntos de dados e módulos para construir o seu modelo de análise preditiva.
+
 > [!TIP]
 > Para transferir e imprimir um diagrama da descrição geral das funcionalidades do Machine Learning Studio, consulte o artigo [Diagrama da descrição geral das funcionalidades do Azure Machine Learning Studio](machine-learning-studio-overview-diagram.md).
 > 
 > 
-
-Não existe nenhuma programação necessária, basta ligar visualmente os conjuntos de dados e módulos para construir o seu modelo de análise preditiva.
 
 ![Diagrama do Azure ML Studio: criar experimentações, ler os dados de várias origens, escrever dados classificados, escrever modelos.][ml-studio-overview]
 
 ## <a name="get-started-with-machine-learning-studio"></a>Introdução ao Machine Learning Studio
 Quando entrar pela primeira vez no[Machine Learning Studio](https://studio.azureml.net), verá a página **inicial**. A partir daqui, pode ver a documentação, vídeos, webinars e localizar outros recursos importantes.
 
-Existem três separadores na parte superior: **Página inicial** (onde deve começar), **Studio** e **Galeria**.
+Clique no menu do canto superior esquerdo ![Menu](media/machine-learning-what-is-ml-studio/menu.png) e verá várias opções.
 
-### <a name="studio"></a>Studio
-Clique no separador **Studio** e ser-lhe-á pedido para iniciar sessão com a sua conta Microsoft ou a sua conta escolar ou profissional. Depois de iniciar sessão, irá ver os seguintes separadores no lado esquerdo:
+### <a name="cortana-intelligence"></a>Cortana Intelligence
+Clique em **Cortana Intelligence** e será direcionado para a home page do [Cortana Intelligence Suite](https://www.microsoft.com/cloud-platform/cortana-intelligence-suite). O Cortana Intelligence Suite é um conjunto de aplicações totalmente geridas de macrodados e de análises avançadas para transformar os seus dados em ações inteligentes. Consulte a home page do Suite para ver a documentação completa, incluindo histórias dos clientes.
+
+### <a name="azure-machine-learning"></a>Azure Machine Learning
+Existem duas opções aqui, **Página Principal**, a página de início, e **Studio**.
+
+Clique em **Studio** e será direcionado para o **Azure Machine Learning Studio**. Em primeiro lugar, ser-lhe-á pedido para iniciar sessão com a sua conta Microsoft ou a sua conta escolar ou profissional. Depois de iniciar sessão, irá ver os seguintes separadores no lado esquerdo:
 
 * **PROJETOS** - Coleções de experimentações, conjuntos de dados, blocos de notas e outros recursos que representam um único projeto
-* **EXPERIMENTAÇÕES** - As experimentações que foram criadas, executadas e guardadas como rascunhos
+* **EXPERIMENTAÇÕES** - As experimentações que foram criadas ou guardadas como rascunhos
 * **SERVIÇOS WEB** - Os serviços web que foram implementados a partir das suas experimentações
 * **BLOCOS DE NOTAS** - Blocos de notas Jupyter que criou
 * **CONJUNTOS DE DADOS** - Conjuntos de dados que carregou para o Studio
@@ -59,7 +64,7 @@ Clique no separador **Studio** e ser-lhe-á pedido para iniciar sessão com a su
 * **DEFINIÇÕES** - Uma coleção de definições que pode utilizar para configurar a sua conta e recursos.
 
 ### <a name="gallery"></a>Galeria
-Clique no separador **Galeria** e será direcionado para a Galeria da Cortana Intelligence. A Galeria é um local onde uma comunidade de cientistas de dados e programadores podem partilhar as soluções criadas com componentes do Cortana Intelligence Suite.
+Clique em **Galeria** e será direcionado para a **[Galeria do Cortana Intelligence](http://gallery.cortanaintelligence.com/)**. A Galeria é um local onde uma comunidade de cientistas de dados e programadores partilham as soluções criadas com componentes do Cortana Intelligence Suite.
 
 Para mais informações sobre a Galeria, consulte o artigo [Partilhar e detetar soluções na galeria da Cortana Intelligence](machine-learning-gallery-how-to-use-contribute-publish.md).
 
@@ -92,10 +97,10 @@ Para obter uma lista de conjuntos de dados de exemplo incluídos no Machine Lear
 ### <a name="modules"></a>Módulos
 Um módulo é um algoritmo que pode utilizar nos seus dados. O Machine Learning Studio tem um número de módulos que se situa entre funções de entrada de dados para formação, classificação e processos de validação. Seguem-se alguns exemplos de módulos incluídos:
 
-* [Converter em ARFF][converter em arff] - converte um conjunto de dados .NET em série para o formato de ficheiro de relação de atributo (ARFF).
-* [Calcular estatísticas básicas][estatísticas básicas] - calcula estatísticas básicas como a média, o desvio padrão, etc.
-* [Regressão linear][regressão linear] - cria um modelo de regressão linear online descendente.
-* [Modelo de pontuação][modelo de pontuação] - Pontua um modelo de classificação ou regressão preparado.
+* [Converter em ARFF][convert-to-arff] - converte um conjunto de dados .NET em série para o formato de ficheiro de relação de atributo (ARFF).
+* [Calcular estatísticas básicas][elementary-statistics] - calcula estatísticas básicas como a média, o desvio padrão, etc.
+* [Regressão linear][linear-regression] - cria um modelo de regressão linear online descendente.
+* [Modelo de pontuação][score-model] - Pontua um modelo de classificação ou regressão preparado.
 
 À medida que cria uma experimentação, pode escolher a partir de uma lista de módulos disponíveis à esquerda da tela.  
 
@@ -109,13 +114,13 @@ Assim que o modelo de análise preditiva estiver pronto, pode implementá-lo com
 [ml-studio-overview]:./media/machine-learning-what-is-ml-studio/azure-ml-studio-diagram.jpg
 
 <!-- Module References -->
-[converter em arff]: https://msdn.microsoft.com/library/azure/62d2cece-d832-4a7a-a0bd-f01f03af0960/
-[estatísticas básicas]: https://msdn.microsoft.com/library/azure/3086b8d4-c895-45ba-8aa9-34f0c944d4d3/
-[regressão linear]: https://msdn.microsoft.com/library/azure/31960a6f-789b-4cf7-88d6-2e1152c0bd1a/
-[modelo de pontuação]: https://msdn.microsoft.com/library/azure/401b4f92-e724-4d5a-be81-d5b0ff9bdb33/
+[convert-to-arff]: https://msdn.microsoft.com/library/azure/62d2cece-d832-4a7a-a0bd-f01f03af0960/
+[elementary-statistics]: https://msdn.microsoft.com/library/azure/3086b8d4-c895-45ba-8aa9-34f0c944d4d3/
+[linear-regression]: https://msdn.microsoft.com/library/azure/31960a6f-789b-4cf7-88d6-2e1152c0bd1a/
+[score-model]: https://msdn.microsoft.com/library/azure/401b4f92-e724-4d5a-be81-d5b0ff9bdb33/
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO2-->
 
 
