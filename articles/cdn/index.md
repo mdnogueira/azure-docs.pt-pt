@@ -1,13 +1,14 @@
 ---
 layout: LandingPage
+description: "Saiba como utilizar a Rede de Entrega de Conteúdos (CDN) para fornecer conteúdo a partir de centros de dados globais para qualquer dispositivo. Tutoriais, referências de API e outra documentação."
 translationtype: Human Translation
-ms.sourcegitcommit: 3752a677351518195773a86c3824078a5aff6d03
-ms.openlocfilehash: 3042d17ac3ebfc22cc6e35430d0829a6bc22e0e2
+ms.sourcegitcommit: 565971021beec4afde15c17737ee82b812ba894d
+ms.openlocfilehash: fe5c35945f14c5023f070f25fd76e47d7952ce54
 
 ---
-#<a name="cdn-documentation"></a>Documentação do CDN
+# <a name="cdn-documentation"></a>Documentação do CDN
 
-A Rede de Entrega de Conteúdos do Azure (CDN) fornece aos programadores uma solução global para o fornecimento de conteúdo de largura de banda elevada que está alojada no Azure ou em qualquer outra localização.  Com o CDN pode colocar em cache objetos disponíveis carregados publicamente a partir do armazenamento de blobs do Azure, uma aplicação Web, máquina virtual, pasta de aplicação ou outra localização de HTTP/HTTPS.  O CDN é normalmente utilizado para fornecer conteúdo estático, como imagens, folhas de estilo, documentos, ficheiros, scripts do lado do cliente e páginas HTML.
+Saiba como utilizar a Rede de Entrega de Conteúdos (CDN) para fornecer conteúdo de largura de banda alta alojada no Azure ou noutro local. Tutoriais, referências de API e outra documentação mostram-lhe como utilizar a CDN para fornecer conteúdo a partir de centros de dados globais em qualquer dispositivo.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -67,37 +68,44 @@ A Rede de Entrega de Conteúdos do Azure (CDN) fornece aos programadores uma sol
 
 ---
 
-## <a name="reference"></a>Referência
-
+<h2>Referência</h2>
 <ul class="panelContent cardsW">
     <li>
-        <a href="/powershell/azureps-cmdlets-docs">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-                        <h3>PowerShell</h3>
-                        <p>Azure PowerShell</p>
+                        <h3>Linha de Comandos</h3>
+                        <p><a href="/powershell/resourcemanager/azurerm.cdn/v2.3.0/azurerm.cdn">PowerShell</a></p>
                     </div>
                 </div>
             </div>
         </div>
-        </a>
     </li>
-
     <li>
-        <a href="/rest/api/CDN">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>Linguagens</h3>
+                        <p><a href="/dotnet/api/microsoft.azure.management.cdn">.NET</a></p>
+                        <p><a href="/java/api/com.microsoft.azure.management.cdn">Java</a></p>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
                         <h3>REST</h3>
-                        <p>API REST</p>
+                        <p><a href="/rest/api/cdn/">Referência da API REST</a></p>
                     </div>
                 </div>
             </div>
         </div>
-        </a>
     </li>
 </ul>
 
@@ -112,6 +120,6 @@ Transferir a Documentação do Azure CDN </div>
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

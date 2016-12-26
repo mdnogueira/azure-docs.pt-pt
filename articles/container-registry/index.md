@@ -1,14 +1,15 @@
 ---
 layout: LandingPage
+description: "Saiba como criar e manter registos de contentor para armazenar as imagens de implementação com um serviço de registo Docker gerido. Tutoriais, referência de API e muito mais."
 translationtype: Human Translation
-ms.sourcegitcommit: 3752a677351518195773a86c3824078a5aff6d03
-ms.openlocfilehash: 2e77ba043efd03ecffd3e5e786046dedbed58877
+ms.sourcegitcommit: ab80e1ef9771caa4369863c0aff1cee2c3055830
+ms.openlocfilehash: c42d5fe49d099fed7b5df9901c313832d966e340
 
 ---
 
 # <a name="azure-container-registry-documentation"></a>Documentação do Registo de Contentores do Azure
 
-O Registo de Contentores do Azure (pré-visualização) é um registo privado para alojar imagens de contentor. Com o Registo de Contentores do Azure, pode armazenar imagens com formatação Docker para todos os tipos de implementações de contentor. O Registo de Contentores do Azure integra-se perfeitamente com os orquestradores alojados no Azure Container Service, incluindo Docker Swarm, DC/OS e Kubernetes. 
+Saiba como utilizar o Registo de Contentores para armazenar e gerir imagens de todos os tipos de implementações de contentor. Tutoriais, referência da REST API e outra documentação mostram-lhe como criar e manter registos de contentor com este serviço de registo Docker gerido.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -98,6 +99,7 @@ O Registo de Contentores do Azure (pré-visualização) é um registo privado pa
 </ul>
 
 
-<!--HONumber=Dec16_HO1-->
+
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,13 +1,14 @@
 ---
 layout: LandingPage
+description: "Saiba como utilizar o DocumentDB, uma base de dados de documentos NoSQL sem esquema. Os tutoriais mostram como integrar com aplicações e utilizar consultas de SQL em documentos JSON."
 translationtype: Human Translation
-ms.sourcegitcommit: 3752a677351518195773a86c3824078a5aff6d03
-ms.openlocfilehash: c0911518e954131f1c8de783d71fb17a9eea1945
+ms.sourcegitcommit: 14e5e2f2bdf3708ab339eff7eb58bbf87cb1a10c
+ms.openlocfilehash: 261d2d5410603fe3352c0bcfabcc15058f3f7c94
 
 ---
 #<a name="documentdb-documentation"></a>Documentação do DocumentDB
 
-O Azure DocumentDB é um serviço de base de dados NoSQL completamente gerido criado para um desempenho previsível e rápido, elevada disponibilidade, dimensionamento elástico, distribuição global e facilidade de desenvolvimento. Como uma base de dados NoSQL sem esquemas, o DocumentDB fornece capacidades de consulta SQL avançadas e familiares com baixas latências consistentes em dados JSON.
+Saiba como utilizar o DocumentDB em aplicações de elevado desempenho para a Web, móvel, jogos e IoT. Tutoriais e outra documentação mostram-lhe como pode armazenar dados JSON e executar consultas SQL através de um esquema flexível neste serviço de base de dados NoSQL.
 
 <ul class="panelContent cardsFTitle">
      <li>
@@ -221,6 +222,6 @@ Transferir a Documentação do DocumentDB </div>
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -107,8 +107,43 @@
 ## Transferir Dados
 ### [Mover dados de e para o Armazenamento](storage-moving-data.md)
 ### [Utilitário de linha de comandos do AzCopy](storage-use-azcopy.md)
-### [Serviço de Importação/Exportação para o Armazenamento de Blobs](storage-import-export-service.md)
-
+### [Utilização do serviço de Importação-Exportação](storage-import-export-service.md)
+### [Utilização da Ferramenta de Importação-Exportação](storage-import-export-tool-how-to.md)
+#### [Configuração da Ferramenta de Importação-Exportação](storage-import-export-tool-setup.md)
+#### [Preparar as unidades de disco rígido para uma tarefa de importação](storage-import-export-tool-preparing-hard-drives-import.md)
+##### [Definição de Propriedades e Metadados durante o processo de importação](storage-import-export-tool-setting-properties-metadata-import.md)
+##### [Fluxo de trabalho de amostra para preparar unidades de disco rígido para uma tarefa de importação](storage-import-export-tool-sample-preparing-hard-drives-import-job-workflow.md)
+##### [Referência rápida para comandos utilizados com frequência para tarefas de importação](storage-import-export-tool-quick-reference.md)
+#### [Pré-visualização da utilização da unidade para uma tarefa de exportação](storage-import-export-tool-previewing-drive-usage-export-v1.md)
+#### [Revisão do estado da tarefa com ficheiros de registo de cópia](storage-import-export-tool-reviewing-job-status-v1.md)
+#### [Reparação de uma tarefa de importação](storage-import-export-tool-repairing-an-import-job-v1.md)
+#### [Reparação de uma tarefa de exportação](storage-import-export-tool-repairing-an-export-job-v1.md)
+#### [Resolver problemas da Ferramenta de Importação-Exportação](storage-import-export-tool-troubleshooting-v1.md)
+#### [Formato de Ficheiro de Manifesto do Serviço de Importação-Exportação](storage-import-export-file-format-manifest.md)
+#### [Formato de Ficheiro dos Metadados e Propriedades do Serviço de Importação-Exportação](storage-import-export-file-format-metadata-and-properties.md)
+#### [Formato de Ficheiro de Registo do Serviço de Importação-Exportação](storage-import-export-file-format-log.md)
+### [Utilização da Ferramenta de Importação-Exportação (v1)](storage-import-export-tool-how-to-v1.md)
+#### [Configuração da Ferramenta de Importação-Exportação](storage-import-export-tool-setup-v1.md)
+#### [Preparar as unidades de disco rígido para uma tarefa de importação](storage-import-export-tool-preparing-hard-drives-import-v1.md)
+##### [Definição de Propriedades e Metadados durante o processo de importação](storage-import-export-tool-setting-properties-metadata-import-v1.md)
+##### [Fluxo de trabalho de amostra para preparar unidades de disco rígido para uma tarefa de importação](storage-import-export-tool-sample-preparing-hard-drives-import-job-workflow-v1.md)
+##### [Referência rápida para comandos utilizados com frequência para tarefas de importação](storage-import-export-tool-quick-reference-v1.md)
+#### [Pré-visualização da utilização da unidade para uma tarefa de exportação](storage-import-export-tool-previewing-drive-usage-export-v1.md)
+#### [Revisão do estado da tarefa com ficheiros de registo de cópia](storage-import-export-tool-reviewing-job-status-v1.md)
+#### [Reparação de uma tarefa de importação](storage-import-export-tool-repairing-an-import-job-v1.md)
+#### [Reparação de uma tarefa de exportação](storage-import-export-tool-repairing-an-export-job-v1.md)
+#### [Resolver problemas da Ferramenta de Importação-Exportação](storage-import-export-tool-troubleshooting-v1.md)
+#### [Formato de Ficheiro de Manifesto do Serviço de Importação-Exportação](storage-import-export-file-format-manifest.md)
+#### [Formato de Ficheiro dos Metadados e Propriedades do Serviço de Importação-Exportação](storage-import-export-file-format-metadata-and-properties.md)
+#### [Formato de Ficheiro de Registo do Serviço de Importação-Exportação](storage-import-export-file-format-log.md)
+### [Utilização da API REST do Serviço de Importação-Exportação do Azure](storage-import-export-using-the-rest-api.md)
+#### [Criação de uma tarefa de importação](storage-import-export-creating-an-import-job.md)
+#### [Criação de uma tarefa de exportação](storage-import-export-creating-an-export-job.md)
+#### [Obter informações de estado para uma tarefa](storage-import-export-retrieving-state-info-for-a-job.md)
+#### [Enumerar tarefas](storage-import-export-enumerating-jobs.md)
+#### [Cancelar e eliminar tarefas](storage-import-export-cancelling-and-deleting-jobs.md)
+#### [Efetuar Cópia de Segurança de Manifestos de Unidade](storage-import-export-backing-up-drive-manifests.md)
+#### [Recuperação de Diagnósticos e Erros para tarefas de Importação-Exportação](storage-import-export-diagnostics-and-error-recovery.md)
 # Referência
 ## [PowerShell](/powershell/storage)
 ## [CLI do Azure](/cli/azure/storage)
@@ -166,6 +201,6 @@
 ### [iOS](https://github.com/Azure/azure-storage-ios)
 
 
-<!--HONumber=Dec16_HO2-->
+<!--HONumber=Dec16_HO3-->
 
 

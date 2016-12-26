@@ -1,13 +1,14 @@
 ---
 layout: LandingPage
+description: "Saiba como obter informações sobre a utilização de aplicações móveis e segmentação de utilizador em tempo real e como ativar as notificações push com reconhecimento de contexto e mensagens na aplicação."
 translationtype: Human Translation
-ms.sourcegitcommit: 95b54199c307efea21666c774525a9a539472131
-ms.openlocfilehash: c9f8493eb39f0c519825cdaa1c06bbb24b0f478f
+ms.sourcegitcommit: 2dbe8c3bf665249af4a1626e38f6465d2db32a0b
+ms.openlocfilehash: fed0048ab3a7101c4461ffa14511a26ecd7a36eb
 
 ---
 # <a name="mobile-engagement-documentation"></a>Documentação do Mobile Engagement
 
-O Azure Mobile Engagement é uma plataforma SaaS (software como serviço) de envolvimento do utilizador que faculta informações aprofundadas condicionadas por dados acerca da utilização de aplicações e da segmentação de utilizadores, além de permitir o envio de mensagens na aplicação e notificações push.
+Saiba como aumentar a utilização, a retenção e a monetização de aplicações móveis com o Mobile Engagement. Os tutoriais, SDKs e outra documentação mostram-lhe como obter informações sobre a utilização de aplicações e segmentação de utilizador em tempo real e como ativar as notificações push com reconhecimento de contexto e mensagens na aplicação.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -205,6 +206,6 @@ Transferir a Documentação do Azure Mobile Engagement </div>
 
 
 
-<!--HONumber=Dec16_HO2-->
+<!--HONumber=Dec16_HO3-->
 
 
