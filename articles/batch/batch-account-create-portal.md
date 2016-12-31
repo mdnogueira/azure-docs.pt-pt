@@ -3,7 +3,7 @@ title: Criar uma conta do Azure Batch | Microsoft Docs
 description: Saiba como criar uma conta do Azure Batch no portal do Azure a executar cargas de trabalho paralelas em grande escala na nuvem
 services: batch
 documentationcenter: 
-author: mmacy
+author: tamram
 manager: timlt
 editor: 
 ms.assetid: 3fbae545-245f-4c66-aee2-e25d7d5d36db
@@ -13,10 +13,10 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
 ms.date: 09/21/2016
-ms.author: marsma
+ms.author: tamram
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 1a4e242c2d179d9aaf869d6f95af96ff754adf93
+ms.sourcegitcommit: dfcf1e1d54a0c04cacffb50eca4afd39c6f6a1b1
+ms.openlocfilehash: 8875c5e91a2a1ae848ebf725ca00bd43ec667dce
 
 
 ---
@@ -30,7 +30,7 @@ ms.openlocfilehash: 1a4e242c2d179d9aaf869d6f95af96ff754adf93
 Saiba como criar uma conta do Azure Batch no [portal do Azure][azure_portal] e onde encontrar propriedades importantes da conta, como chaves de acesso e URLs da conta. Também abordamos os preços do Batch e mostramos como associar uma conta do Armazenamento do Azure à sua conta do Batch, para que possa utilizar [pacotes de aplicações](batch-application-packages.md) e [manter resultados de trabalhos e tarefas](batch-task-output.md).
 
 ## <a name="create-a-batch-account"></a>Criar uma conta do Batch
-1. Inicie sessão no [portal do Azure][azure_portal].
+1. Inicie sessão no [Portal do Azure][azure_portal].
 2. Clique em **Novo** > **Computação** > **Serviço Batch**.
    
     ![Batch no Marketplace][marketplace_portal]
@@ -124,6 +124,6 @@ Para além do portal do Azure, também pode criar e gerir contas do Batch com o 
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO2-->
 
 

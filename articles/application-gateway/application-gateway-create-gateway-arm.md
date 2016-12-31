@@ -4,7 +4,7 @@ description: "Esta página fornece instruções para criar, configurar, iniciar 
 documentationcenter: na
 services: application-gateway
 author: georgewallace
-manager: carmonm
+manager: timlt
 editor: tysonn
 ms.assetid: 866e9b5f-0222-4b6a-a95f-77bc3d31d17b
 ms.service: application-gateway
@@ -12,11 +12,11 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 11/16/2016
+ms.date: 12/12/2016
 ms.author: gwallace
 translationtype: Human Translation
-ms.sourcegitcommit: ee8cfffdbf054b4251ed269745f6b9ee5a5e6c64
-ms.openlocfilehash: f4648ea78c07d501164b44389302cedf717b28bd
+ms.sourcegitcommit: cb2b7bc626294e12c6e19647c1e787e1f671595b
+ms.openlocfilehash: 5da4b087131b0adef49f7019297db834d7bb9416
 
 
 ---
@@ -28,8 +28,6 @@ ms.openlocfilehash: f4648ea78c07d501164b44389302cedf717b28bd
 > * [Azure Classic PowerShell](application-gateway-create-gateway.md)
 > * [Modelo do Azure Resource Manager](application-gateway-create-gateway-arm-template.md)
 > * [CLI do Azure](application-gateway-create-gateway-cli.md)
-> 
-> 
 
 O Application Gateway do Azure é um balanceador de carga de 7 camadas. Fornece ativação pós-falha, pedidos HTTP de encaminhamento de desempenho entre diversos servidores, quer estejam na nuvem ou no local. O Gateway de Aplicação proporciona muitas funcionalidades de Controlador de Entrega de Aplicação (ADC), incluindo o balanceamento de carga HTTP, afinidade por sessões com base em cookies, descarga do SSL (Secure Sockets Layer), sondas de estado de funcionamento personalizadas, suporte multilocal e muitas outras. Para encontrar uma lista completa das funcionalidades suportadas, visite [Descrição geral do Gateway de Aplicação](application-gateway-introduction.md)
 
@@ -37,8 +35,6 @@ Este artigo descreve os passos para criar, configurar, iniciar e eliminar um gat
 
 > [!IMPORTANT]
 > Antes de trabalhar com recursos do Azure, é importante compreender que o Azure tem atualmente dois modelos de implementação: Resource Manager e clássico. Certifique-se de que compreende os [modelos e ferramentas de implementação](../azure-classic-rm.md) antes de trabalhar com qualquer recurso do Azure. Pode ver a documentação de diversas ferramentas clicando nos separadores na parte superior deste artigo. Este documento aborda a criação de um gateway de aplicação com o Azure Resource Manager. Para utilizar a versão clássica, aceda a [Create an application gateway classic deployment by using PowerShell (Criar uma implementação clássica do gateway de aplicação com o PowerShell)](application-gateway-create-gateway.md).
-> 
-> 
 
 ## <a name="before-you-begin"></a>Antes de começar
 
@@ -106,8 +102,6 @@ No exemplo acima, criámos um grupo de recursos denominado **appgw-RG** e a loca
 
 > [!NOTE]
 > Se tiver de configurar uma sonda personalizada para o gateway de aplicação, veja [Create an application gateway with custom probes by using PowerShell (Criar um gateway de aplicação com sondas personalizadas com o PowerShell)](application-gateway-create-probe-ps.md). Veja [monitorização das sondas personalizadas e do estado de funcionamento](application-gateway-probe-overview.md) para obter mais informações.
-> 
-> 
 
 ## <a name="create-a-virtual-network-and-a-subnet-for-the-application-gateway"></a>Criar uma rede virtual e uma sub-rede para o gateway de aplicação
 
@@ -145,7 +139,7 @@ Crie um recurso de IP público **publicIP01** no grupo de recursos **appgw-rg** 
 $publicip = New-AzureRmPublicIpAddress -ResourceGroupName appgw-rg -name publicIP01 -location "West US" -AllocationMethod Dynamic
 ```
 
-## <a name="create-an-application-gateway-configuration-object"></a>Criar um objeto de configuração do gateway de aplicação
+## <a name="create-the-application-gateway-configuration-objects"></a>Criar os objetos de configuração do gateway de aplicação
 
 Tem de configurar todos os itens de configuração antes de criar o gateway de aplicação. Com os seguintes passos, irá criar os itens de configuração necessários para um recurso do gateway de aplicação.
 
@@ -215,8 +209,6 @@ $sku = New-AzureRmApplicationGatewaySku -Name Standard_Small -Tier Standard -Cap
 
 > [!NOTE]
 > O valor predefinido para **InstanceCount** é 2, com um valor máximo de 10. O valor predefinido para **GatewaySize** é Médio. Pode escolher entre **Standard_Small**, **Standard_Medium** e **Standard_Large**.
-> 
-> 
 
 ## <a name="create-an-application-gateway-by-using-new-azurermapplicationgateway"></a>Criar um gateway de aplicação com New-AzureRmApplicationGateway
 
@@ -225,8 +217,6 @@ Crie um gateway de aplicação com todos os itens de configuração indicados no
 ```powershell
 $appgw = New-AzureRmApplicationGateway -Name appgwtest -ResourceGroupName appgw-rg -Location "West US" -BackendAddressPools $pool -BackendHttpSettingsCollection $poolSetting -FrontendIpConfigurations $fipconfig  -GatewayIpConfigurations $gipconfig -FrontendPorts $fp -HttpListeners $listener -RequestRoutingRules $rule -Sku $sku
 ```
-
-### <a name="step-9"></a>Passo 9
 
 Obter os detalhes de DNS e VIP do gateway da aplicação do recurso de IP público anexado ao gateway de aplicação.
 
@@ -262,8 +252,6 @@ Remove-AzureRmApplicationGateway -Name $appgwtest -ResourceGroupName appgw-rg -F
 
 > [!NOTE]
 > Pode utilizar o comutador **-force** para eliminar a mensagem de confirmação de remoção.
-> 
-> 
 
 Para verificar se o serviço foi removido, pode utilizar o cmdlet `Get-AzureRmApplicationGateway`. Este passo não é necessário.
 
@@ -315,6 +303,6 @@ Se pretender obter mais informações sobre as opções de balanceamento de carg
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

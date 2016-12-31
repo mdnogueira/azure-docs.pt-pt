@@ -12,11 +12,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 11/22/2016
+ms.date: 12/14/2016
 ms.author: cherylmc
 translationtype: Human Translation
-ms.sourcegitcommit: 5081c38bae56cf6f2ed260eabb895453d7603cfd
-ms.openlocfilehash: b982274cc7dcf1ffbe1dd4c3d7f833f97704d931
+ms.sourcegitcommit: 9095cf61feaed43ac194a990bb5e387bb54fc00c
+ms.openlocfilehash: 9431df5553666a8725bd840a5cea62b0b5e35653
 
 
 ---
@@ -37,7 +37,7 @@ A tabela seguinte fornece um mapa de regiões do Azure para localizações do Ex
 | --- | --- | --- |
 | **América do Norte** |EUA Leste, EUA Oeste, EUA Leste 2, EUA Central, EUA Centro-Sul, EUA Centro-Norte, Canadá Central, Canadá Leste |Atlanta, Chicago, Dallas, Las Vegas, Los Angeles, Nova Iorque, Seattle, Silicon Valley, Washington D.C., Montreal+, Cidade do Quebeque+, Toronto |
 | **América do Sul** |Sul do Brasil |São Paulo |
-| **Europa** |Europa do Norte, Europa Ocidental, Reino Unido Oeste, Reino Unido Sul |Amesterdão, Dublin, Londres, Newport (País de Gales)+, Paris |
+| **Europa** |Europa do Norte, Europa Ocidental, Reino Unido Oeste, Reino Unido Sul |Amesterdão, Dublin, Londres, Newport (País de Gales), Paris |
 | **Ásia** |Ásia Oriental, Sudeste Asiático |RAE de Hong Kong, Singapura |
 | **Japão** |Oeste do Japão, Leste do Japão |Osaka, Tóquio |
 | **Austrália** |Sudeste da Austrália, Leste da Austrália |Melbourne, Sydney |
@@ -85,12 +85,12 @@ A conectividade em regiões geopolíticas não é suportada no SKU do ExpressRou
 | **[Level 3 Communications](http://your.level3.com/LP=882?WT.tsrc=02192014LP882AzureVanityAzureText)** |Suportado |Suportado |Amesterdão, Chicago, Dallas, Las Vegas+, Londres, Seattle, Silicon Valley, Washington D.C. |
 | **[Megaport](https://www.megaport.com/services/microsoft-expressroute/)** |Suportado |Suportado |Dallas, Hong Kong, Las Vegas, Los Angeles, Melbourne, Nova Iorque, Seattle, Singapura, Sydney, Toronto, Washington D.C. |
 | **MTN** |Suportado |Suportado |Londres |
-| **Next Generation Data** |Brevemente |Brevemente |Newport (Gales)+ |
+| **[Next Generation Data](http://www.nextgenerationdata.co.uk/ngd-cloud-gateway/)** |Suportado |Brevemente |Newport (País de Gales) |
 | **NEXTDC** |Suportado |Suportado |Melbourne, Sydney |
 | **NTT Communications** |Suportado |Suportado |Londres, Los Angeles, Osaca, Singapura, Tóquio, Washington DC |
 | **[Orange](http://www.orange-business.com/en/products/business-vpn-galerie)** |Suportado |Suportado |Amesterdão, Hong Kong, Londres, Silicon Valley, Singapura, Sydney, Washington D.C. |
 | **PCCW Global Limited** |Suportado |Suportado |RAE de Hong Kong |
-| **SIFY** |Suportado |Suportado |Chennai |
+| **[SIFY](http://telecom.sify.com/azure-expressroute.html)** |Suportado |Suportado |Chennai |
 | **[SingTel](http://info.singtel.com/about-us/news-releases/singtel-provide-secure-private-access-microsoft-azure-public-cloud)** |Suportado |Suportado |Singapura |
 | **Softbank** |Suportado |Suportado |Osaka, Tóquio |
 | **[Tata Communications](http://www.tatacommunications.com/lp/izo/azure/azure_index.html)** |Suportado |Suportado |Amesterdão, Chennai, RAE de Hong Kong, Londres, Mumbai, Silicon Valley, Singapura, Washington D.C. |
@@ -148,8 +148,11 @@ Se o seu fornecedor de conectividade não está listado nas secções anteriores
 | **Fornecedor de conectividade** | **Exchange** | **Localizações** |
 | --- | --- | --- |
 | **[1CLOUDSTAR](http://www.1cloudstar.com/service/cloudconnect-azure-expressroute/)** |Equinix |Singapura |
-| **Alaska Communications** |Equinix |Seattle |
+| **[Alaska Communications](http://www.alaskacommunications.com/For-Your-Business/Direct-Cloud-Service)** |Equinix |Seattle |
+| **[Exponential E](http://www.exponential-e.com/services/connectivity-services/cloud-connect-exchange)** | Equinix | Londres |
 | **[Lightower](http://www.lightower.com/network-solutions/cloud-connect/#microsoft-azure)** |Equinix |Nova Iorque, Washington D.C. |
+| **[Macquarie](https://macquariegovernment.com/secure-cloud/secure-cloud-exchange/)** | Megaport | Sydney |
+| **[Masergy](https://www.masergy.com/solutions/hybrid-networking/cloud-marketplace/microsoft-azure)** | Equinix | Washington DC |
 | **[XO Communications](http://www.xo.com/)** |Equinix |Silicon Valley |
 
 ## <a name="expressroute-system-integrators"></a>Integradores de sistemas ExpressRoute
@@ -164,6 +167,7 @@ A ativação da conectividade privada para atender as suas necessidades pode ser
 | **[Perficient](http://www.perficient.com/Partners/Microsoft/Cloud/Azure-ExpressRoute)** |EUA |
 | **[Project Leadership](http://www.projectleadership.net/azure)** |EUA |
 
+
 ## <a name="next-steps"></a>Passos seguintes
 * Para obter mais informações acerca do ExpressRoute, veja as [FAQs do ExpressRoute](expressroute-faqs.md).
 * Confirme que todos os pré-requisitos são cumpridos. Veja os [Pré-requisitos do ExpressRoute](expressroute-prerequisites.md).
@@ -173,6 +177,6 @@ A ativação da conectividade privada para atender as suas necessidades pode ser
 
 
 
-<!--HONumber=Nov16_HO5-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -3,8 +3,8 @@ title: "Introdução ao Armazenamento do Azure em cinco minutos| Microsoft Docs"
 description: "De forma rápida, conhecer melhor os Blobs do Microsoft Azure, as Tabelas e as Filas através dos Inícios Rápidos do Storage do Azure, do Visual Studio e do emulador do Storage do Azure. Execute a sua primeira aplicação do Storage do Azure em cinco minutos."
 services: storage
 documentationcenter: .net
-author: tamram
-manager: carmonm
+author: mmacy
+manager: timlt
 editor: tysonn
 ms.assetid: 582f76f8-c814-4a69-8a5c-1fd0e0d5d8f2
 ms.service: storage
@@ -12,11 +12,11 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: get-started-article
-ms.date: 11/17/2016
-ms.author: tamram
+ms.date: 12/08/2016
+ms.author: marsma
 translationtype: Human Translation
-ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
-ms.openlocfilehash: a8f90f07a4402c0d2fb9ffc3bd35de18e2a39927
+ms.sourcegitcommit: 12ce6b6bccf3ea2aa2945ddd775716f29cf01e1f
+ms.openlocfilehash: 47b2623eb3b83220ef8e3cfafde06dab3ac3d22e
 
 
 ---
@@ -32,10 +32,10 @@ Terá de seguir os seguintes pré-requisitos seguintes antes de começar:
 1. Para compilar e criar a aplicação, precisará de uma versão do [Visual Studio](https://www.visualstudio.com/) instalado no seu computador.
 2. Instale a versão mais recente do [Azure SDK para .NET](https://azure.microsoft.com/downloads/). O SDK inclui os projetos de exemplo de Início Rápido do Azure, o emulador do Storage do Azure e a [Biblioteca de Clientes do Storage do Azure para .NET](https://msdn.microsoft.com/library/azure/dn261237.aspx).
 3. Certifique-se de que tem o [.NET Framework 4.5](http://www.microsoft.com/download/details.aspx?id=30653) instalado no seu computador, uma vez que é necessário pelos projetos de exemplo de Início Rápido do Azure que iremos utilizar neste tutorial.
-   
+
     Se não tem a certeza de qual é a versão do .NET Framework que está instalada no seu computador, consulte o artigo [Como: Determinar Que Versões do .NET Framework Estão Instaladas](https://msdn.microsoft.com/vstudio/hh925568.aspx). Em alternativa, prima o botão **Iniciar** ou a tecla Windows e escreva **Painel de Controlo**. Em seguida, clique em **Programas** > **Programas e Funcionalidades** e verifique se o .NET Framework 4.5 está listado entre os programas instalados.
 4. Precisa de uma subscrição do Azure e uma conta do Storage do Azure.
-   
+
    * Para obter uma subscrição do Azure, consulte [Versão de Avaliação Gratuita](https://azure.microsoft.com/pricing/free-trial/), [Opções de Compra](https://azure.microsoft.com/pricing/purchase-options/) e [Ofertas de Membros](https://azure.microsoft.com/pricing/member-offers/) (para os membros da MSDN, Microsoft Partner Network, BizSpark e outros programas Microsoft).
    * Para criar uma conta do Storage no Azure, consulte o artigo [Como criar uma conta do Storage](storage-create-storage-account.md#create-a-storage-account).
 
@@ -48,7 +48,7 @@ Assim que tiver uma conta, pode criar uma aplicação do Storage do Azure simple
     a. Escolha um dos seguintes modelos: **Storage do Azure: Blobs**, **Storage do Azure: Ficheiros**, **Storage do Azure: Filas** ou **Storage do Azure: Tabelas**.
     b. Certifique-se de que **.NET Framework 4.5** é selecionada como o framework de destino.
     c. Especifique um nome para o seu projeto e crie a nova solução do Visual Studio, conforme mostrado:
-     
+
     ![Inícios Rápidos do Azure][Image1]
 
 Poderá pretender rever o código fonte antes de executar a aplicação. Para rever o código, selecione **Explorador de Soluções** no menu **Vista** no Visual Studio. Em seguida, faça duplo clique no ficheiro Program.cs.
@@ -56,13 +56,13 @@ Poderá pretender rever o código fonte antes de executar a aplicação. Para re
 Em seguida, execute a aplicação de exemplo:
 
 1. No Visual Studio, selecione **Explorador de Soluções** no menu **Vista**. Abra o ficheiro App.config e comente a cadeia de ligação para o emulador do Storage do Azure:
-   
+
    `<!--<add key="StorageConnectionString" value = "UseDevelopmentStorage=true;"/>-->`
 
 2. Anule os comentários da cadeia de ligação para o Serviço do Storage do Azure e forneça a chave de acesso e o nome da conta de armazenamento no ficheiro App.config:
-   
+
    `<add key="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=[AccountName];AccountKey=[AccountKey]"`
-   
+
    Para obter a sua chave de acesso da conta do Storage, consulte o artigo [Gerir as chaves de acesso de armazenamento](storage-create-storage-account.md#manage-your-storage-access-keys).
 3. Depois de fornecer a chave de acesso e o nome da conta do Storage no ficheiro App.config, no menu **Ficheiro**, clique em **Guardar Tudo** para guardar todos os ficheiros do projeto.
 4. No menu **Construir**, clique em **Construir Solução**.
@@ -79,11 +79,11 @@ Para o tentar, vamos criar uma aplicação do Storage do Azure simples utilizand
     a. Escolha um dos seguintes modelos: **Storage do Azure: Blobs**, **Storage do Azure: Ficheiros**, **Storage do Azure: Filas** ou **Storage do Azure: Tabelas**.
     b. Certifique-se de que **.NET Framework 4.5** é selecionada como o framework de destino.
     c. Especifique um nome para o seu projeto e crie a nova solução do Visual Studio, conforme mostrado:
-   
+
     ![Inícios Rápidos do Azure][Image1]
 
-4. No Visual Studio, selecione **Explorador de Soluções** no menu **Vista**. Abra o ficheiro App.config e comente a cadeia de ligação para a conta do Storage do Azure, se já tiver adicionado uma. Em seguida, anule os comentários da cadeia de ligação para o emulador do Storage do Azure:
-   
+4. No Visual Studio, selecione **Explorador de Soluções** no menu **Vista**. Abra o ficheiro App.config e comente a cadeia de ligação para a conta de armazenamento do Azure, se já tiver adicionado uma. Em seguida, anule os comentários da cadeia de ligação para o emulador do Storage do Azure:
+
    `<add key="StorageConnectionString" value = "UseDevelopmentStorage=true;"/>`
 
 Poderá pretender rever o código fonte antes de executar a aplicação. Para rever o código, selecione **Explorador de Soluções** no menu **Vista** no Visual Studio. Em seguida, faça duplo clique no ficheiro Program.cs.
@@ -112,6 +112,6 @@ Consulte estes recursos para saber mais sobre o Storage do Azure:
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

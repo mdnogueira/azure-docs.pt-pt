@@ -12,11 +12,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/14/2016
+ms.date: 12/12/2016
 ms.author: tomfitz
 translationtype: Human Translation
-ms.sourcegitcommit: 4f541e34e7c0696e4074613c4ab0734a096c6d12
-ms.openlocfilehash: 21ebc8083113238ef70f57dae2381ebcf102c39d
+ms.sourcegitcommit: dabe7d9796ab24a257ea904bc5d978cb71d7e149
+ms.openlocfilehash: 1733edf961c2ce1297fc148d3a844ce141f5d7c2
 
 
 ---
@@ -81,6 +81,10 @@ Ao criar um grupo de recursos, deve fornecer uma localização para esse grupo d
 Cada fornecedor de recursos oferece um conjunto de recursos e operações para trabalhar com a um serviço do Azure. Por exemplo, se pretende armazenar chaves e segredos, trabalha com o fornecedor de recursos **Microsoft.KeyVault**. Este fornecedor de recursos oferece um tipo de recurso denominado **vaults** para criar o cofre de chaves e um tipo de recurso denominado **vaults/secrets** para criar um segredo no cofre de chaves. 
 
 Antes de começar com a implementação de recursos, deve tomar conhecimento dos fornecedores de recursos disponíveis. Saber os nomes dos recursos e os fornecedores de recursos ajuda-o a definir os recursos que pretende implementar no Azure.
+
+Pode ver todos os fornecedores de recursos através do portal. No painel da sua subscrição, selecione **Fornecedores de recursos**:
+
+![veja fornecedores de recursos](./media/resource-group-overview/view-resource-providers.png)
 
 Pode obter todos os fornecedores de recursos com o seguinte cmdlet do PowerShell:
 
@@ -322,6 +326,6 @@ Eis uma demonstração em vídeo desta descrição geral:
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 
