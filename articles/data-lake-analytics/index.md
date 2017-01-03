@@ -1,13 +1,14 @@
 ---
 layout: LandingPage
+description: "Saiba como fazer análises de macrodados com o Data Lake Analytics. Tutoriais mostram-lhe como executar análises em lote, em tempo real e interativas e como escrever consultas U-SQL."
 translationtype: Human Translation
-ms.sourcegitcommit: 3752a677351518195773a86c3824078a5aff6d03
-ms.openlocfilehash: 4a9b9a0aef993055e0c5400a15918a05491509eb
+ms.sourcegitcommit: 84b03eb578df1a4122b18a01c0ffba8558adc088
+ms.openlocfilehash: f36a830ede202a7519d46fa9f12299dcec4c8130
 
 ---
 # <a name="data-lake-analytics-documentation"></a>Documentação do Data Lake Analytics
 
-O Azure Data Lake Analytics é um novo serviço incorporado para facilitar a análise de macrodados. Este serviço permite-lhe concentrar-se na escrita, execução e gestão de tarefas, em vez de na infraestrutura distribuída em funcionamento. Em vez de implementar, configurar e otimizar hardware, escreve consultas para transformar os dados e extrair informações valiosas. O serviço de análise pode processar tarefas de qualquer dimensionamento instantaneamente definindo simplesmente a quantidade de potência necessária. Apenas paga a tarefa quando estiver a ser executada, tornando-a económica. O serviço de análise suporta o Azure Active Directory permitindo-lhe gerir simplesmente o acesso e as funções e está integrado no sistema de identidades no local. Também inclui U-SQL, uma linguagem que unifica os benefícios do SQL com o poder expressivo do código de utilizador. O runtime escalável distribuído de U-SQL permite-lhe analisar eficazmente os dados no arquivo e nos SQL Servers no Azure, Base de Dados SQL do Azure e Azure SQL Data Warehouse.
+Saiba como utilizar o Data Lake Analytics para executar tarefas de análises de macrodados que abrangem conjuntos de dados muito grandes. Tutoriais e outra documentação mostram-lhe como criar e gerir tarefas de análise em lote, em tempo real e interativas e como consultar utilizando a linguagem U-SQL.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -231,6 +232,6 @@ Transferir a Documentação do Data Lake Analytics </div>
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO5-->
 
 

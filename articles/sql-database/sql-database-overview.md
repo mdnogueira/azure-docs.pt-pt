@@ -16,8 +16,8 @@ ms.workload: data-management
 ms.date: 11/28/2016
 ms.author: carlrab
 translationtype: Human Translation
-ms.sourcegitcommit: 145cdc5b686692b44d2c3593a128689a56812610
-ms.openlocfilehash: 6d5f4640556f98f9601139c318ffc578e9df2539
+ms.sourcegitcommit: 3ba16154857f8e7b59a1013b736d6131a4161185
+ms.openlocfilehash: 3d45ec5a6636de4213c6c02dca0e5288ec3aa0e3
 
 
 ---
@@ -27,7 +27,7 @@ Este tópico fornece uma descrição geral das bases de dados SQL do Azure. Para
 ## <a name="what-is-azure-sql-database"></a>O que é a base de dados SQL do Azure?
 Cada base de dados na Base de Dados SQL do Azure está associada a um servidor lógico. A base de dados pode ser:
 
-- Uma base de dados autónoma com um [conjunto próprio de recursos](sql-database-what-is-a-dtu.md#what-are-database-transaction-units-dtus) (DTUs)
+- Uma base de dados individual com um [conjunto próprio de recursos](sql-database-what-is-a-dtu.md#what-are-database-transaction-units-dtus) (DTUs)
 - Parte de um [conjunto elástico](sql-database-elastic-pool.md) que [partilha um conjunto de recursos](sql-database-what-is-a-dtu.md#what-are-elastic-database-transaction-units-edtus) (eDTUs)
 - Parte de um [conjunto aumentado horizontalmente de bases de dados partilhadas](sql-database-elastic-scale-introduction.md#horizontal-and-vertical-scaling), que podem ser bases de dados individuais ou agrupadas
 - Parte de um conjunto de bases de dados que participam num [padrão de estrutura de SaaS multi-inquilino](sql-database-design-patterns-multi-tenancy-saas-applications.md), e cujas bases de dados podem ser individuais ou agrupadas (ou ambas) 
@@ -71,6 +71,6 @@ Pode gerir os servidores lógicos da Base de Dados SQL do Azure através de vár
 
 
 
-<!--HONumber=Dec16_HO2-->
+<!--HONumber=Dec16_HO3-->
 
 

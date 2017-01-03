@@ -1,13 +1,14 @@
 ---
 layout: LandingPage
+description: "Saiba como gerir o tráfego de entrada para um desempenho de aplicações ideal. A documentação mostra como distribuir o tráfego para o Azure ou pontos finais de serviço externos."
 translationtype: Human Translation
-ms.sourcegitcommit: 3752a677351518195773a86c3824078a5aff6d03
-ms.openlocfilehash: 07d7e13862c252db61136110e04559e51a53e4b7
+ms.sourcegitcommit: 3123dc992bb821e79edceef01d2654aaff2468c1
+ms.openlocfilehash: a10c68140066de5be6690f30c89f4f6f2fad0825
 
 ---
 #<a name="traffic-manager-documentation"></a>Documentação do Gestor de Tráfego
 
-O Gestor de Tráfego do Azure permite-lhe controlar a distribuição do tráfego de utilizador para pontos finais de serviço em regiões diferentes. O Gestor de Tráfego utiliza o Sistema de Nomes de Domínio (DNS) para direcionar os pedidos de cliente para o ponto final mais adequado, consoante o método de encaminhamento de tráfego selecionado e o estado de funcionamento dos pontos finais, o que proporciona à sua aplicação maior disponibilidade e capacidade de resposta.
+Saiba como utilizar o Gestor de Tráfego para encaminhar o tráfego de entrada para um desempenho e fiabilidade de aplicação ideais. Tutoriais, referências de API e outra documentação mostram como gerir o tráfego para o Azure ou pontos finais de serviço externos.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -129,6 +130,6 @@ Transferir a Documentação do Gestor de Tráfego </div>
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO5-->
 
 

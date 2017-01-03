@@ -17,8 +17,8 @@ ms.workload: data-management
 ms.topic: get-started-article
 ms.tgt_pltfrm: NA
 translationtype: Human Translation
-ms.sourcegitcommit: 145cdc5b686692b44d2c3593a128689a56812610
-ms.openlocfilehash: 2c0ee201e719c542cf801372e6a270a7b88598fb
+ms.sourcegitcommit: 75bf523679c8d8ad6fbe4a8aa8a561d03008e59b
+ms.openlocfilehash: c3757dadb09ba070b30820a46007a9c82490d8f2
 
 
 ---
@@ -37,9 +37,9 @@ Um padrão de aplicação SaaS comum é o modelo de base de dados de inquilino �
 >
 >
 
-Na Base de Dados SQL, a medida relativa da capacidade de uma base de dados de gerir exigências de recursos é expressa em Unidades de Transação de Base de Dados (DTUs) para bases de dados autónomas e DTUs elásticas (eDTUs) para bases de dados elásticas num conjunto elástico. Veja [Introdução à Base de Dados SQL](sql-database-technical-overview.md) para saber mais sobre DTUs e eDTUs.
+Na Base de Dados SQL, a medida relativa da capacidade de uma base de dados de gerir exigências de recursos é expressa em Unidades de Transação de Base de Dados (DTUs) para bases de dados individuais e DTUs elásticas (eDTUs) para bases de dados elásticas num conjunto elástico. Veja [Introdução à Base de Dados SQL](sql-database-technical-overview.md) para saber mais sobre DTUs e eDTUs.
 
-A um conjunto é atribuído um número definido de eDTUs, por um preço definido. Dentro do conjunto, é dada às bases de dados individuais a flexibilidade para se dimensionarem automaticamente dentro de parâmetros definidos. Uma base de dados sobrecarregada pode consumir mais eDTUs para responder às necessidades. As bases de dados sujeitas a cargas mais leves consomem menos e as bases de dados que não estão sujeitas a qualquer carga não consomem eDTUs. O aprovisionamento de recursos para o conjunto completo e não para bases de dados autónomas simplifica as tarefas de gestão. Além disso, tem um orçamento previsível para o conjunto.
+A um conjunto é atribuído um número definido de eDTUs, por um preço definido. Dentro do conjunto, é dada às bases de dados individuais a flexibilidade para se dimensionarem automaticamente dentro de parâmetros definidos. Uma base de dados sobrecarregada pode consumir mais eDTUs para responder às necessidades. As bases de dados sujeitas a cargas mais leves consomem menos e as bases de dados que não estão sujeitas a qualquer carga não consomem eDTUs. O aprovisionamento de recursos para o conjunto completo e não para bases de dados individuais simplifica as tarefas de gestão. Além disso, tem um orçamento previsível para o conjunto.
 
 Podem ser adicionais mais eDTUs a um conjunto existente sem qualquer período de indisponibilidade da base de dados ou sem impacto nas bases de dados do conjunto elástico. Do mesmo modo, se as eDTUs adicionais já não forem necessárias, podem ser removidas de um conjunto existente em qualquer momento.
 
@@ -48,7 +48,7 @@ Além disso, pode adicionar ou subtrair bases de dados ao conjunto. Se uma base 
 ## <a name="which-databases-go-in-a-pool"></a>Que bases de dados são adequadas a um conjunto?
 ![Bases de dados SQL que partilham eDTUs num conjunto elástico.][1]
 
-As bases de dados que são excelentes candidatos para conjuntos elásticos têm, normalmente, períodos de atividade e outros períodos de inatividade. No exemplo acima, pode ver a atividade de uma base de dados autónoma, 4 bases de dados e, por último, um conjunto elástico com 20 bases de dados. As bases de dados com atividade variável ao longo do tempo são excelentes candidatas para conjuntos elásticos, porque não estão todas ativas ao mesmo tempo e podem partilhar eDTUs. Nem todas as bases de dados se enquadram neste padrão. As bases de dados com uma exigência de recursos mais constante adequam-se melhor aos escalões de serviço Básico, Standard e Premium, onde os recursos são atribuídos individualmente.
+As bases de dados que são excelentes candidatos para conjuntos elásticos têm, normalmente, períodos de atividade e outros períodos de inatividade. No exemplo acima, pode ver a atividade de uma base de dados individual, 4 bases de dados e, por último, um conjunto elástico com 20 bases de dados. As bases de dados com atividade variável ao longo do tempo são excelentes candidatas para conjuntos elásticos, porque não estão todas ativas ao mesmo tempo e podem partilhar eDTUs. Nem todas as bases de dados se enquadram neste padrão. As bases de dados com uma exigência de recursos mais constante adequam-se melhor aos escalões de serviço Básico, Standard e Premium, onde os recursos são atribuídos individualmente.
 
 [Considerações sobre preço e desempenho de um conjunto elástico](sql-database-elastic-pool-guidance.md).
 
@@ -88,7 +88,7 @@ Com um conjunto, as tarefas de gestão são simplificadas através da execução
 Para obter mais informações sobre outras ferramentas de base de dados elástica, veja [Aumentar horizontalmente com a Base de Dados SQL do Azure](sql-database-elastic-scale-introduction.md).
 
 ## <a name="business-continuity-features-for-databases-in-a-pool"></a>Funcionalidades de continuidade de negócio para bases de dados num conjunto
-As bases de dados elásticas suportam geralmente as mesmas [funcionalidades de continuidade de negócio](sql-database-business-continuity.md) que estão disponíveis para as bases de dados autónomas.
+As bases de dados elásticas suportam geralmente as mesmas [funcionalidades de continuidade de negócio](sql-database-business-continuity.md) que estão disponíveis para as bases de dados únicas.
 
 ### <a name="point-in-time-restore"></a>Restauro para um ponto anterior no tempo
 O Restauro para um ponto anterior no tempo utiliza cópias de segurança automáticas da base de dados para recuperar uma base de dados num conjunto para um ponto específico no tempo. Veja [Restauro para um ponto anterior no tempo](sql-database-recovery-using-backups.md#point-in-time-restore)
@@ -107,6 +107,6 @@ Para aplicações que têm requisitos de recuperação mais agressivos do que aq
 
 
 
-<!--HONumber=Dec16_HO2-->
+<!--HONumber=Dec16_HO5-->
 
 
