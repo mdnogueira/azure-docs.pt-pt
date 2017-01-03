@@ -12,11 +12,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 11/28/2016
+ms.date: 12/08/2016
 ms.author: cherylmc
 translationtype: Human Translation
-ms.sourcegitcommit: eb618aea1ee5aba24cebd4d8518e9c7f546f5f4f
-ms.openlocfilehash: ae1e750a5f97325df064a02ed156610b4576f1d3
+ms.sourcegitcommit: cbbc9f29fc4dea49807f1093b673bebac628314b
+ms.openlocfilehash: e886f9c1984003d1bd1391012b26eea39d4a0b76
 
 
 ---
@@ -37,7 +37,7 @@ A tabela seguinte fornece um mapa de regiões do Azure para localizações do Ex
 | --- | --- | --- |
 | **América do Norte** |EUA Leste, EUA Oeste, EUA Leste 2, EUA Central, EUA Centro-Sul, EUA Centro-Norte, Canadá Central, Canadá Leste |Atlanta, Chicago, Dallas, Las Vegas, Los Angeles, Nova Iorque, Seattle, Silicon Valley, Washington D.C., Montreal+, Cidade do Quebeque+, Toronto |
 | **América do Sul** |Sul do Brasil |São Paulo |
-| **Europa** |Europa do Norte, Europa Ocidental, Reino Unido Oeste, Reino Unido Sul |Amesterdão, Dublin, Londres, Newport (País de Gales)+, Paris |
+| **Europa** |Europa do Norte, Europa Ocidental, Reino Unido Oeste, Reino Unido Sul |Amesterdão, Dublin, Londres, Newport (País de Gales), Paris |
 | **Ásia** |Ásia Oriental, Sudeste Asiático |RAE de Hong Kong, Singapura |
 | **Japão** |Oeste do Japão, Leste do Japão |Osaka, Tóquio |
 | **Austrália** |Sudeste da Austrália, Leste da Austrália |Melbourne, Sydney |
@@ -76,7 +76,7 @@ A conectividade em regiões geopolíticas não é suportada no SKU do ExpressRou
 | **Los Angeles** |CoreSite, Equinix, Megaport, NTT, Zayo Group |
 | **Melbourne** |AARNet, Equinix, Megaport, NEXTDC, Telstra Corporation |
 | **Nova Iorque** |Equinix, Megaport, Zayo Group |
-| **Newport (Gales)+** |Next Generation Data+ |
+| **Newport (País de Gales)** |Next Generation Data |
 | **Montreal** |Cologix+ |
 | **Mumbai** |Tata Communications |
 | **Osaca** |Equinix, Internet Initiative Japan Inc. - IIJ, NTT Communications, Softbank |
@@ -134,11 +134,13 @@ Se o seu fornecedor de conectividade não está listado nas secções anteriores
 
 | **Localização** | **Exchange** | **Fornecedores de Conetividade** |
 | --- | --- | --- |
+| **Londres** | Equinix | Exponential E |
 | **Nova Iorque** |Equinix |Lightower |
 | **Seattle** |Equinix |Alaska Communications |
 | **Silicon Valley** |Equinix |XO Communications |
 | **Singapura** |Equinix |1CLOUDSTAR |
-| **Washington D.C.** |Equinix |Lightower |
+| **Sydney** | Megaport | Macquarie |
+| **Washington D.C.** |Equinix | Lightower, Masergy |
 
 ## <a name="expressroute-system-integrators"></a>Integradores de sistemas ExpressRoute
 A ativação da conectividade privada para atender as suas necessidades pode ser um desafio, com base na escala da sua rede. Pode trabalhar com qualquer um dos integradores de sistemas listados na seguinte tabela para ajudá-lo com a integração do ExpressRoute.
@@ -158,6 +160,6 @@ A ativação da conectividade privada para atender as suas necessidades pode ser
 
 
 
-<!--HONumber=Nov16_HO5-->
+<!--HONumber=Dec16_HO2-->
 
 

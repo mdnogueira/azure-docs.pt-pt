@@ -16,8 +16,8 @@ ms.topic: get-started-article
 ms.date: 10/05/2016
 ms.author: asteen
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 77ca34a56a827e8a69ab9a2b60d14cc7c7a71bfc
+ms.sourcegitcommit: 48821a3b2b7da4646c4569cc540d867f02a4a32f
+ms.openlocfilehash: 6dc23714a4a052c7bf0bb5162fe1568ec272b5e3
 
 
 ---
@@ -126,7 +126,7 @@ Se pretender saber mais sobre os dados que são utilizados pela reposição de p
 ### <a name="step-3-reset-your-azure-ad-password-as-a-user"></a>Passo 3: Repor a palavra-passe do Azure AD como utilizador
 Agora que configurou a política de reposição do utilizador e especificou os respetivos detalhes de contacto, o utilizador pode efetuar uma reposição personalizada de palavra-passe.
 
-#### <a name="to-perform-a-selfservice-password-reset"></a>Para efetuar uma reposição personalizada de palavra-passe
+#### <a name="to-perform-a-self-service-password-reset"></a>Para efetuar uma reposição personalizada de palavra-passe
 1. Se aceder a um site como [**portal.microsoftonline.com**](http://portal.microsoftonline.com), verá um ecrã de início de sessão como o seguinte.  Clique na ligação **Não consegue aceder à sua conta?** para testar a interface de utilizador da reposição de palavra-passe.
    
    ![][011]
@@ -256,12 +256,40 @@ Também poderá verificar se o serviço foi instalado corretamente se abrir o Vi
   ![][023]
 
 ### <a name="step-3-configure-your-firewall"></a>Passo 3: Configurar a firewall
-Após ter ativado a Repetição de Escrita de Palavras-passe na ferramenta do Azure AD Connect, terá de certificar-se de que o serviço se pode ligar à nuvem.
+Depois de ter ativado a Repetição de Escrita de Palavras-passe, tem de certificar-se de que a máquina com o Azure AD Connect consegue aceder aos serviços cloud da Microsoft, para receber pedidos de repetição de escrita da palavra-passe. Este passo envolve atualizar as regras de ligação nos seus dispositivos de rede (servidores proxy, firewalls, etc.) para permitir ligações de saída para determinados URLs pertencentes à Microsoft e endereços IP nas portas de rede específicas. Estas alterações podem variar consoante a versão da ferramenta do Azure AD Connect. Para obter mais contexto, pode ler mais sobre [como funciona a repetição de escrita de palavras-passe](active-directory-passwords-learn-more.md#how-password-writeback-works) e [o modelo de segurança de repetição de escrita de palavras-passe](active-directory-passwords-learn-more.md#password-writeback-security-model).
 
-1. Após a conclusão da instalação, se estiver a bloquear ligações de saída desconhecidas no ambiente, também precisará de adicionar as seguintes regras à firewall. Reinicie o computador do AAD Connect após efetuar estas alterações:
-   * Permita ligações de saída através do TCP da porta 443
-   * Permita ligações de saída para https://ssprsbprodncu-sb.accesscontrol.windows.net/
-   * Ao utilizar um proxy ou quando existirem problemas de conectividade, permita ligações de saída através do TCP da porta 9350-9354 e TCP da porta 5671
+#### <a name="why-do-i-need-to-do-this"></a>Por que motivo é necessário fazê-lo?
+
+Para a Repetição de Escrita de Palavras-passe funcionar corretamente, a máquina com o Azure AD Connect tem de conseguir estabelecer ligações HTTPS de saída para **.servicebus.windows.net* e endereço IP específico utilizado pelo Azure, tal como definido na [lista de Intervalos IP do Datacenter do Microsoft Azure](https://www.microsoft.com/download/details.aspx?id=41653).
+
+Para versões da ferramenta do Azure AD Connect 1.0.8667.0 e versões posteriores:
+
+- **Opção 1:** permitir todas as ligações HTTPS de saída através da porta 443 (com o URL ou endereço IP).
+    - Quando utilizá-los:
+        - Utilize esta opção se pretender que a configuração mais simples que não precisa de ser atualizada como alteração de intervalos IP do Datacenter do Azure seja alterada ao longo do tempo.
+    - Passos necessários:
+        - Permitir todas as ligações HTTPS de saída através da porta 443 com o URL ou endereço IP.
+<br><br>
+- **Opção 2:** permitir que as ligações HTTPS de saída especifiquem intervalos IP e URLs
+    - Quando utilizá-los:
+        - Utilize esta opção se estiver num ambiente de rede limitado ou, caso contrário, se não se sentir confortável em permitir ligações de saída.
+        - Nesta configuração, para a repetição de escrita de palavras-passe continuar a trabalhar, terá de se certificar que os dispositivos de rede se mantêm atualizados semanalmente com os IPs mais recentes a partir da lista de Intervalos de IP do Datacenter do Microsoft Azure. Estes intervalos IP estão disponíveis como um ficheiro XML que é atualizado a cada quarta-feira (Hora do Pacífico) e entra em vigor na seguinte segunda-feira (Hora do Pacífico).
+    - Passos necessários:
+        - Permitir todas as ligações HTTPS de saída para o *.servicebus.windows.net
+        - Permitir todas as ligações HTTPS de saída para todos os IPs na lista de Intervalos IP do Datacenter do Microsoft Azure e manter esta configuração atualizada semanalmente.
+
+> [!NOTE]
+> Se tiver configurado a Repetição de Escrita de Palavras-passe seguindo as instruções descritas acima e não vir erros no registo de eventos do Azure AD Connect, mas está a receber erros de conetividade ao testar, então poderá dever-se a um dispositivo de rede no seu ambiente estar a bloquear ligações HTTPS para endereços IP. Por exemplo, apesar de uma ligação para *https://*.servicebus.windows.net* ser permitida, pode estar bloqueada uma ligação para um endereço IP específico dentro do intervalo. Para resolver este problema, deve configurar o ambiente de rede para permitir todas as ligações HTTPS de saída através da porta 443 para qualquer URL ou endereço IP (Opção 1 acima) ou trabalhar com a sua equipa de rede para permitir explicitamente ligações HTTPS para endereços IP específicos (Opção 2 acima).
+
+**Para versões mais antigas:**
+
+- Permita ligações de saída TCP através da porta 443, 9350-9354 e da porta 5671 
+- Permita ligações de saída para *https://ssprsbprodncu-sb.accesscontrol.windows.net/*
+
+> [!NOTE]
+> Se tiver uma versão do Azure AD Connect anterior à 1.0.8667.0, a Microsoft recomenda vivamente que atualize para a [versão mais recente do Azure AD Connect](https://www.microsoft.com/download/details.aspx?id=47594), que inclui uma série de melhorias de rede de repetição de escrita, para facilitar a configuração de rede.
+
+Assim que os dispositivos de rede estiverem configurados, reinicie a máquina que executa a ferramenta do Azure AD Connect.
 
 ### <a name="step-4-set-up-the-appropriate-active-directory-permissions"></a>Passo 4: Configurar as permissões adequadas do Active Directory
 Para cada floresta que contenha utilizadores cujas palavras-passe serão repostas, se X for a conta especificada para essa floresta no assistente de configuração (durante a configuração inicial), devem ser concedidos a X os direitos expandidos **Repor Palavra-passe**, **Alterar Palavra-passe**, **Permissões de Escrita** em `lockoutTime` e **Permissões de Escrita** em `pwdLastSet` no objeto raiz de cada domínio dessa floresta. O direito deve ser marcado como herdado por todos os objetos de utilizador.  
@@ -365,6 +393,6 @@ Veja-se abaixo as ligações para todas as páginas da documentação de reposi�
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO2-->
 
 

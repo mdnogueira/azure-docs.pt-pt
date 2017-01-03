@@ -12,11 +12,11 @@ ms.devlang: dotNet
 ms.topic: get-started-article
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 10/26/2016
-ms.author: ryanwi
+ms.date: 12/15/2016
+ms.author: ryanwi, mikhegn
 translationtype: Human Translation
-ms.sourcegitcommit: 7e33e00a676f4aa7143cede3380adb58ba1d11e4
-ms.openlocfilehash: 2c4a92fadaa845fc0d14e5101a87aabe8f8d2891
+ms.sourcegitcommit: d9050347434a22fa79f5e751c676f77bf025d176
+ms.openlocfilehash: e2919b07b8fc6e9dff6823cb6995f52106612b8a
 
 
 ---
@@ -28,7 +28,7 @@ ms.openlocfilehash: 2c4a92fadaa845fc0d14e5101a87aabe8f8d2891
 > 
 > 
 
- Para compilar e executar [Aplicações do Service Fabric do Azure][1] no computador de desenvolvimento, tem de instalar o runtime, o SDK e as ferramentas. Também precisa de ativar a execução dos scripts do Windows PowerShell incluídos no SDK.
+ Para compilar e executar [aplicações do Service Fabric do Azure][1] no computador de desenvolvimento, tem de instalar o runtime, o SDK e as ferramentas. Também precisa de ativar a execução dos scripts do Windows PowerShell incluídos no SDK.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 ### <a name="supported-operating-system-versions"></a>Versões de sistema operativo com suporte
@@ -37,6 +37,7 @@ As seguintes versões do sistema operativo são suportadas para desenvolvimento:
 * Windows 7
 * Windows 8/Windows 8.1
 * Windows Server 2012 R2
+* Windows Server 2016
 * Windows 10
 
 > [!NOTE]
@@ -44,11 +45,35 @@ As seguintes versões do sistema operativo são suportadas para desenvolvimento:
 > 
 > 
 
-## <a name="install-the-runtime-sdk-and-tools"></a>Instalar o runtime, o SDK e as ferramentas
-O Instalador de Plataforma Web oferece duas configurações para desenvolvimento do Service Fabric:
+## <a name="install-the-sdk-and-tools"></a>Instalar o SDK e as ferramentas
+### <a name="to-use-visual-studio-2017-rc"></a>Utilizar o Visual Studio 2017 RC
+As Ferramentas do Service Fabric fazem parte da carga de trabalho de Desenvolvimento e de Gestão do Azure no Visual Studio 2017 RC. Deve ativar esta carga de trabalho como parte da instalação do Visual Studio.
+Para além disso, deve instalar o Microsoft Azure Service Fabric SDK, utilizando o Instalador de Plataforma Web.
 
-* [Instalar o runtime Service Fabric, o SDK e as ferramentas do Visual Studio 2015 (Requer o Visual Studio 2015 Update 2 ou posterior)][full-bundle-vs2015]
-* [Instalar apenas o runtime e o SDK do Service Fabric (sem as ferramentas do Visual Studio)][core-sdk]
+* [Instalar o SDK do Microsoft Azure Service Fabric][core-sdk]
+
+### <a name="to-use-visual-studio-2015-requires-visual-studio-2015-update-2-or-later"></a>Utilizar Visual Studio 2015 (requer a Atualização 2 do Visual Studio 2015 ou posterior)
+Para o Visual Studio 2015, as ferramentas do Service Fabric são instaladas juntamente com o SDK, utilizando o Instalador de Plataforma Web:
+
+* [Instalar o SDK e as Ferramentas do Microsoft Azure Service Fabric][full-bundle-vs2015]
+
+### <a name="sdk-installation-only"></a>Apenas instalação do SDK
+Se apenas precisa do SDK, pode instalar este pacote:
+* [Instalar o SDK do Microsoft Azure Service Fabric][core-sdk]
+
+> [!WARNING]
+> Os clientes comunicaram erros durante a instalação ao utilizar estas ligações de início, ou quando estas ligações eram utilizadas no browser do Chrome. Estes são problemas conhecidos no Instalador da Plataforma Web que estão a ser resolvidos.  Como solução, tente o seguinte:
+>- Inicie as ligações acima nos browsers do Internet Explorer ou do Edge, ou
+>- Inicie o Instalador de Plataforma Web a partir do menu Iniciar, procure o "Service Fabric" e instale o SDK
+> 
+> Pedimos desculpa pelo inconveniente. 
+
+As versões atuais são:
+* SDK do Service Fabric 2.4.145
+* Runtime do Service Fabric 5.4.145
+* Ferramentas do Visual Studio 2015 1.4.41209
+
+Para obter uma lista das versões suportadas, consulte [Service Fabric support (Suporte do Service Fabric)](service-fabric-support.md)
 
 ## <a name="enable-powershell-script-execution"></a>Ativar a execução do script do PowerShell
 O Service Fabric utiliza scripts do Windows PowerShell para criar um cluster de desenvolvimento local e para implementação de aplicações do Visual Studio. Por predefinição, o Windows bloqueará a execução destes scripts. Para ativá-los, tem de modificar a política de execução do PowerShell. Abra o PowerShell como administrador e introduza o seguinte comando:
@@ -66,16 +91,17 @@ Agora que o ambiente de desenvolvimento está configurado, pode começar a criar
 * [Veja exemplos de códigos do Service Fabric em GitHub](https://aka.ms/servicefabricsamples)
 * [Visualizar o cluster através do Service Fabric Explorer](service-fabric-visualizing-your-cluster.md)
 * [Seguir o percurso de aprendizagem do Service Fabric para obter uma introdução abrangente da plataforma](https://azure.microsoft.com/documentation/learning-paths/service-fabric/)
+* Saiba mais sobre as [opções de suporte do Service Fabric](service-fabric-support.md)
 
 [1]: http://azure.microsoft.com/en-us/campaigns/service-fabric/ "Página da campanha do Service Fabric"
 [2]: http://go.microsoft.com/fwlink/?LinkId=517106 "VS RC"
-[full-bundle-vs2015]:http://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=MicrosoftAzure-ServiceFabric-VS2015 "Link VS 2015 WebPI"
-[full-bundle-dev15]:http://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=MicrosoftAzure-ServiceFabric-Dev15 "Link Dev15 WebPI"
-[core-sdk]:http://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=MicrosoftAzure-ServiceFabric-CoreSDK "Link Core SDK WebPI"
+[full-bundle-vs2015]:http://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=MicrosoftAzure-ServiceFabric-VS2015 "Ligação VS 2015 WebPI"
+[full-bundle-dev15]:http://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=MicrosoftAzure-ServiceFabric-Dev15 "Ligação Dev15 WebPI"
+[core-sdk]:http://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=MicrosoftAzure-ServiceFabric-CoreSDK "Ligação Core SDK WebPI"
 [powershell5-download]:https://www.microsoft.com/en-us/download/details.aspx?id=50395
 
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Dec16_HO5-->
 
 

@@ -3,7 +3,7 @@ title: "Tutorial – Introdução à biblioteca do Azure Batch .NET | Microsoft 
 description: "Conheça os conceitos básicos do Azure Batch e como desenvolver para o serviço Batch com um cenário de exemplo."
 services: batch
 documentationcenter: .net
-author: mmacy
+author: tamram
 manager: timlt
 editor: 
 ms.assetid: 76cb9807-cbc1-405a-8136-d1e53e66e82b
@@ -13,10 +13,10 @@ ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: big-compute
 ms.date: 11/22/2016
-ms.author: marsma
+ms.author: tamram
 translationtype: Human Translation
-ms.sourcegitcommit: 58189daa7dd80e9ecb074a935e3e53fe75637643
-ms.openlocfilehash: 8bac99e393dd0ccca9eaa6097dc87872e306dc5c
+ms.sourcegitcommit: dfcf1e1d54a0c04cacffb50eca4afd39c6f6a1b1
+ms.openlocfilehash: 8243e2304d846e02ecf0114b79be73c0016941df
 
 
 ---
@@ -27,7 +27,7 @@ ms.openlocfilehash: 8bac99e393dd0ccca9eaa6097dc87872e306dc5c
 >
 >
 
-Conheça as informações básicas do [Azure Batch][azure_batch] e da biblioteca [Batch .NET][net_api] neste artigo à medida que debatemos um exemplo de aplicação C# passo a passo. Observamos como o exemplo de aplicação tira partido do serviço Batch para processar uma carga de trabalho paralela na cloud e de que forma interage com o [Armazenamento do Azure](../storage/storage-introduction.md) para teste e obtenção de ficheiros. Irá conhecer um fluxo de trabalho de aplicações Batch comuns e obter uma compreensão base dos componentes principais do Batch, como trabalhos, conjuntos e nós de computação.
+Conheça as informações básicas do [Azure Batch][azure_batch] e da biblioteca [Batch .NET][net_api] neste artigo, à medida que debatemos um exemplo de aplicação C# passo a passo. Observamos como o exemplo de aplicação tira partido do serviço Batch para processar uma carga de trabalho paralela na cloud e de que forma interage com o [Armazenamento do Azure](../storage/storage-introduction.md) para teste e obtenção de ficheiros. Irá conhecer um fluxo de trabalho de aplicações Batch comuns e obter uma compreensão base dos componentes principais do Batch, como trabalhos, conjuntos e nós de computação.
 
 ![Fluxo de trabalho da solução Batch (básico)][11]<br/>
 
@@ -48,7 +48,7 @@ Este artigo parte do princípio de que tem um conhecimento prático do C# e do V
 Tem de ter o **Visual Studio 2015** para compilar o projeto de exemplo. Pode encontrar versões de avaliação e gratuitas do Visual Studio na [descrição geral dos produtos Visual Studio 2015][visual_studio].
 
 ### <a name="dotnettutorial-code-sample"></a>Exemplo de código *DotNetTutorial*
-A amostra [DotNetTutorial][github_dotnettutorial] é um dos muitos exemplos de código Batch encontrados no repositório [azure-batch-samples][github_samples] do GitHub. Pode transferir todos os exemplos ao clicar em **Clonar ou transferir > Transferir ZIP** na home page do repositório, ou ao clicar na ligação de transferência direta [azure-batch-samples-master.zip][github_samples_zip]. Assim que extrair o conteúdo do ficheiro ZIP, pode encontrar a solução na seguinte pasta:
+A amostra [DotNetTutorial][github_dotnettutorial] é um dos muito exemplos de código Batch encontrados no repositório [azure-batch-samples][github_samples] do GitHub. Pode transferir todos os exemplos ao clicar em **Clonar ou transferir > Transferir ZIP** na home page do repositório ou ao clicar na ligação de transferência direta [azure-batch-samples-master.zip][github_samples_zip]. Assim que extrair o conteúdo do ficheiro ZIP, pode encontrar a solução na seguinte pasta:
 
 `\azure-batch-samples\CSharp\ArticleProjects\DotNetTutorial`
 
@@ -305,7 +305,7 @@ using (BatchClient batchClient = BatchClient.Open(cred))
     ...
 ```
 
-Em seguida, é criado um conjunto de nós de computação na conta do Batch, com uma chamada para `CreatePoolAsync`. `CreatePoolAsync`utiliza o método [BatchClient.PoolOperations.CreatePool][net_pool_create] para criar efetivamente um conjunto no serviço Batch.
+Em seguida, é criado um conjunto de nós de computação na conta do Batch, com uma chamada para `CreatePoolAsync`. `CreatePoolAsync` utiliza o método [BatchClient.PoolOperations.CreatePool][net_pool_create] para criar efetivamente um conjunto no serviço Batch.
 
 ```csharp
 private static async Task CreatePoolAsync(
@@ -357,7 +357,7 @@ Quando cria um conjunto com [CreatePool][net_pool_create], especifica vários pa
 
 Juntamente com estas propriedades de nó físico, também pode especificar um [StartTask][net_pool_starttask] para o conjunto. O StartTask é executado em cada nó à medida que esse nó se associa ao conjunto, e sempre que um nó for reiniciado. O StartTask é especialmente útil para instalar aplicações em nós de computação antes da execução das tarefas. Por exemplo, se as suas tarefas processarem dados com scripts do Python, pode utilizar um StartTask para instalar o Python nos nós de computação.
 
-Nesta aplicação de exemplo, o StartTask copia os ficheiros que transfere do Armazenamento (que são especificados através da propriedade [StartTask][net_starttask].[ResourceFiles][net_starttask_resourcefiles]) a partir do diretório de trabalho do StartTask para o diretório partilhado ao qual *todas* as tarefas em execução no nó podem aceder. Essencialmente, esta ação copia `TaskApplication.exe` e as respetivas dependências para o diretório partilhado em cada nó, à medida que o nó se associa ao conjunto, para que quaisquer tarefas executadas no nó possam aceder ao mesmo.
+Neste exemplo de aplicação, o StartTask copia os ficheiros que transfere do Armazenamento (que são especificados através da propriedade [StartTask][net_starttask].[ResourceFiles][net_starttask_resourcefiles]) do StartTask, a partir do diretório de trabalho do StartTask para o diretório partilhado ao qual *todas* as tarefas em execução no nó podem aceder. Essencialmente, esta ação copia `TaskApplication.exe` e as respetivas dependências para o diretório partilhado em cada nó, à medida que o nó se associa ao conjunto, para que quaisquer tarefas executadas no nó possam aceder ao mesmo.
 
 > [!TIP]
 > A funcionalidade **pacotes de aplicações** do Azure Batch proporciona outra forma de colocar a sua aplicação nos nós de computação num conjunto. Veja [Implementação de aplicações com pacotes de aplicações do Azure Batch](batch-application-packages.md) para obter mais informações.
@@ -664,7 +664,7 @@ private static async Task DeleteContainerAsync(
 ## <a name="step-9-delete-the-job-and-the-pool"></a>Passo 9: eliminar o trabalho e o conjunto
 No último passo, é-lhe pedido que elimine o trabalho e o conjunto que foram criados pela aplicação DotNetTutorial. Apesar de os próprios trabalhos e tarefas não lhe serem cobrados, os nós de computação *são* cobrados. Assim, recomendamos que atribua nós apenas conforme necessário. A eliminação de conjuntos não utilizados pode fazer parte do processo de manutenção.
 
-O [JobOperations][net_joboperations] e o [PoolOperations][net_pooloperations] do BatchClient têm métodos de eliminação correspondentes, que são chamados se o utilizador confirmar a eliminação:
+O [JobOperations][net_joboperations] e o [PoolOperations][net_pooloperations] do BatchClient têm métodos de eliminação correspondentes, que são chamados se confirmar a eliminação:
 
 ```csharp
 // Clean up the resources we've created in the Batch account if the user so chooses
@@ -732,7 +732,7 @@ Agora que está familiarizado com o fluxo de trabalho básico de uma solução d
 
 * Reveja o artigo [Descrição geral das funcionalidades do Azure Batch](batch-api-basics.md), que recomendamos se não estiver familiarizado com o serviço.
 * Comece pelos outros artigos de desenvolvimento do Batch em **Desenvolvimento aprofundado** no [percurso de aprendizagem do Batch][batch_learning_path].
-* Veja uma implementação diferente para processar a carga de trabalho "N palavras principais" através do Batch no exemplo [TopNWords][github_topnwords].
+* Veja uma implementação diferente de processamento da carga de trabalho "N palavras principais" através do Batch no exemplo [TopNWords][github_topnwords].
 
 [azure_batch]: https://azure.microsoft.com/services/batch/
 [azure_free_account]: https://azure.microsoft.com/free/
@@ -783,7 +783,7 @@ Agora que está familiarizado com o fluxo de trabalho básico de uma solução d
 
 [1]: ./media/batch-dotnet-get-started/batch_workflow_01_sm.png "Criar contentores no Armazenamento do Azure"
 [2]: ./media/batch-dotnet-get-started/batch_workflow_02_sm.png "Carregar a aplicação de tarefa e os ficheiros de entrada (dados) para contentores"
-[3]: ./media/batch-dotnet-get-started/batch_workflow_03_sm.png "Criar conjunto do Batch"
+[3]: ./media/batch-dotnet-get-started/batch_workflow_03_sm.png "Criar um conjunto do Batch"
 [4]: ./media/batch-dotnet-get-started/batch_workflow_04_sm.png "Criar um trabalho do Batch"
 [5]: ./media/batch-dotnet-get-started/batch_workflow_05_sm.png "Adicionar tarefas ao trabalho"
 [6]: ./media/batch-dotnet-get-started/batch_workflow_06_sm.png "Monitorizar tarefas"
@@ -795,6 +795,6 @@ Agora que está familiarizado com o fluxo de trabalho básico de uma solução d
 
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Dec16_HO2-->
 
 

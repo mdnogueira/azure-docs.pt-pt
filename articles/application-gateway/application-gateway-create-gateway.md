@@ -4,7 +4,7 @@ description: "Esta página fornece instruções para criar, configurar, iniciar 
 documentationcenter: na
 services: application-gateway
 author: georgewallace
-manager: carmonm
+manager: timlt
 editor: tysonn
 ms.assetid: 577054ca-8368-4fbf-8d53-a813f29dc3bc
 ms.service: application-gateway
@@ -12,11 +12,11 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 11/16/2016
+ms.date: 12/12/2016
 ms.author: gwallace
 translationtype: Human Translation
-ms.sourcegitcommit: ee8cfffdbf054b4251ed269745f6b9ee5a5e6c64
-ms.openlocfilehash: 2a06e9c7bb6b9f2aacc1544ba4b85a90bb57f01c
+ms.sourcegitcommit: e20f7349f30c309059c2867d7473fa6fdefa9b61
+ms.openlocfilehash: b78d8167ec5aacee34ed235637bc396f9b869a39
 
 
 ---
@@ -28,8 +28,6 @@ ms.openlocfilehash: 2a06e9c7bb6b9f2aacc1544ba4b85a90bb57f01c
 > * [Azure Classic PowerShell](application-gateway-create-gateway.md)
 > * [Modelo do Azure Resource Manager](application-gateway-create-gateway-arm-template.md)
 > * [CLI do Azure](application-gateway-create-gateway-cli.md)
-> 
-> 
 
 O Application Gateway do Azure é um balanceador de carga de 7 camadas. Fornece ativação pós-falha, pedidos HTTP de encaminhamento de desempenho entre diversos servidores, quer estejam na nuvem ou no local. O Gateway de Aplicação proporciona muitas funcionalidades de Controlador de Entrega de Aplicação (ADC), incluindo o balanceamento de carga HTTP, afinidade por sessões com base em cookies, descarga do SSL (Secure Sockets Layer), sondas de estado de funcionamento personalizadas, suporte multilocal e muitas outras. Para encontrar uma lista completa das funcionalidades suportadas, visite [Descrição geral do Gateway de Aplicação](application-gateway-introduction.md)
 
@@ -43,6 +41,7 @@ Este artigo descreve os passos para criar, configurar, iniciar e eliminar um gat
 4. Os servidores que vai configurar para utilizar o gateway de aplicação devem existir. Caso contrário, os respetivos pontos finais terão de ser criados na rede virtual ou com um IP/VIP público atribuído.
 
 ## <a name="what-is-required-to-create-an-application-gateway"></a>O que é necessário para criar um gateway de aplicação?
+
 Quando utiliza o comando `New-AzureApplicationGateway` para criar o gateway de aplicação, nenhuma configuração é definida nesta fase, pelo que o recurso recém-criado terá de ser configurado com o XML ou um objeto de configuração.
 
 Os valores são:
@@ -63,8 +62,6 @@ Para criar um gateway de aplicação:
 
 > [!NOTE]
 > Se tiver de configurar uma sonda personalizada para o gateway de aplicação, veja [Create an application gateway with custom probes by using PowerShell (Criar um gateway de aplicação com sondas personalizadas com o PowerShell)](application-gateway-create-probe-classic-ps.md). Veja [monitorização das sondas personalizadas e do estado de funcionamento](application-gateway-probe-overview.md) para obter mais informações.
-> 
-> 
 
 ![Exemplo de cenário][scenario]
 
@@ -72,7 +69,7 @@ Para criar um gateway de aplicação:
 
 Para criar o gateway, utilize o cmdlet `New-AzureApplicationGateway`, substituindo os valores pelos seus próprios valores. Neste ponto, ainda não é contabilizada a faturação do gateway. A faturação passará a ser contabilizada num passo posterior, quando o gateway tiver sido iniciado com êxito.
 
-O exemplo que se segue cria um gateway de aplicação com uma rede virtual denominada “testvnet1” e uma sub-rede denominada “subnet-1”.
+O exemplo que se segue cria um gateway de aplicação com uma rede virtual denominada “testvnet1” e uma sub-rede denominada “subnet-1”:
 
 ```powershell
 New-AzureApplicationGateway -Name AppGwTest -VnetName testvnet1 -Subnets @("Subnet-1")
@@ -100,8 +97,6 @@ DnsName       :
 
 > [!NOTE]
 > O valor predefinido para *InstanceCount* é 2, com um valor máximo de 10. O valor predefinido para *GatewaySize* é Médio. Pode escolher entre Pequeno, Médio e Grande.
-> 
-> 
 
 *VirtualIPs* e *DnsName* são apresentados em branco, porque o gateway ainda não foi iniciado. Estes valores são criados assim que o gateway estiver em execução.
 
@@ -166,8 +161,6 @@ Edite os valores entre parêntesis dos itens de configuração. Guarde o ficheir
 
 > [!IMPORTANT]
 > O item do protocolo Http ou Https é sensível às maiúsculas e minúsculas.
-> 
-> 
 
 O exemplo que se segue mostra como utilizar um ficheiro de configuração para configurar o gateway de aplicação. O exemplo faz o balanceamento de carga do tráfego HTTP na porta pública 80 e envia o tráfego de rede para a porta de back-end 80 entre dois endereços IP.
 
@@ -229,9 +222,7 @@ Set-AzureApplicationGatewayConfig -Name AppGwTest -ConfigFile "D:\config.xml"
 O exemplo que se segue mostra como configurar o gateway de aplicação com objetos de configuração. Todos os itens de configuração devem ser configurados individualmente e, em seguida, adicionados a um objeto de configuração do gateway de aplicação. Depois de criar o objeto de configuração, utilize o comando `Set-AzureApplicationGateway` para consolidar a configuração no recurso de gateway de aplicação criado anteriormente.
 
 > [!NOTE]
-> Antes de atribuir um valor a cada objeto de configuração, tem de indicar qual o tipo de objeto utilizado pelo PowerShell para o armazenamento. A primeira linha para criar os itens individuais define qual o **Microsoft.WindowsAzure.Commands.ServiceManagement.Network.ApplicationGateway.Model (nome do objeto)** que será utilizado.
-> 
-> 
+> Antes de atribuir um valor a cada objeto de configuração, tem de indicar qual o tipo de objeto utilizado pelo PowerShell para o armazenamento. A primeira linha para criar os itens individuais define que `Microsoft.WindowsAzure.Commands.ServiceManagement.Network.ApplicationGateway.Model(object name)` são utilizados.
 
 ### <a name="step-1"></a>Passo 1
 
@@ -363,8 +354,6 @@ Depois de configurar o gateway, utilize o cmdlet `Start-AzureApplicationGateway`
 
 > [!NOTE]
 > O cmdlet `Start-AzureApplicationGateway` poderá demorar até 15-20 minutos a concluir.
-> 
-> 
 
 ```powershell
 Start-AzureApplicationGateway AppGwTest
@@ -454,10 +443,10 @@ Se pretender obter mais informações sobre as opções de balanceamento de carg
 * [Azure Load Balancer](https://azure.microsoft.com/documentation/services/load-balancer/)
 * [Gestor de Tráfego do Azure](https://azure.microsoft.com/documentation/services/traffic-manager/)
 
-[cenário]: ./media/application-gateway-create-gateway/scenario.png
+[scenario]: ./media/application-gateway-create-gateway/scenario.png
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

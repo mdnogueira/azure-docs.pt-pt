@@ -12,11 +12,11 @@ ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: get-started-article
-ms.date: 07/22/2016
+ms.date: 12/16/2016
 ms.author: rachelap
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 4f6bb074a607bd8a6bd201d71973993759860937
+ms.sourcegitcommit: 03b74607227aed68c6df01e80e4bb87e906ecf31
+ms.openlocfilehash: 48531201029bf09f30cb22852aaf5d3ad0b328fc
 
 
 ---
@@ -45,7 +45,7 @@ Além do tempo necessário para instalar o Azure SDK para o .NET, este tutorial 
 
 ## <a name="prerequisites"></a>Pré-requisitos
 * O tutorial assume que já trabalhou com ASP.NET MVC e o Visual Studio. Se precisar de uma introdução, consulte o artigo [Introdução ao ASP.NET MVC 5](http://www.asp.net/mvc/overview/getting-started/introduction/getting-started).
-* Precisa de uma conta do Azure. Pode [abrir uma conta do Azure gratuita](/pricing/free-trial/?WT.mc_id=A261C142F) ou [Ativar as vantagens de subscritor do Visual Studio](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F). 
+* Precisa de uma conta do Azure. Pode [abrir uma conta do Azure gratuita](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F) ou [Ativar as vantagens de subscritor do Visual Studio](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F). 
   
     Se pretender começar com o App Service do Azure antes de se inscrever numa conta do Azure, aceda a [Experimentar o App Service](http://go.microsoft.com/fwlink/?LinkId=523751). Aqui, pode criar uma aplicação de arranque de curta duração no App Service — sem cartões de crédito, sem compromissos.
 
@@ -61,8 +61,8 @@ O tutorial foi escrito para o Visual Studio 2015 com o [Azure SDK para .NET](../
 
 Se tiver o Visual Studio 2013 e preferir utilizá-lo, pode [transferir o Azure SDK mais recente para o Visual Studio 2013](http://go.microsoft.com/fwlink/?LinkID=324322). Alguns ecrãs podem parecer diferentes das ilustrações.
 
-## <a name="configure-a-new-web-project"></a>Configurar um novo projeto Web
-O próximo passo é criar um projeto Web no Visual Studio e uma aplicação Web no App Service do Azure. Nesta secção do tutorial, configura o novo projeto Web. 
+## <a name="create-a-web-application"></a>Criar uma aplicação Web
+O próximo passo é criar um projeto de aplicação Web no Visual Studio e uma aplicação Web no Serviço de Aplicações do Azure. Nesta secção do tutorial, configura o novo projeto Web. 
 
 1. Abra o Visual Studio 2015.
 2. Clique em **Ficheiro > Novo > Projeto**.
@@ -89,7 +89,7 @@ O próximo passo é criar um projeto Web no Visual Studio e uma aplicação Web 
     Estas definições direcionam o Visual Studio para criar uma aplicação Web do Azure para o seu projeto Web.
 10. Clique em **OK**
 
-## <a name="configure-azure-resources-for-a-new-web-app"></a>Configurar recursos do Azure para uma nova aplicação Web
+## <a name="create-the-azure-resources"></a>Criar recursos do Azure
 Agora, indique ao Visual Studio os recursos do Azure que pretende que criar.
 
 1. Na caixa de diálogo **Criar Serviços de Aplicações**, clique em **Adicionar uma conta** e, em seguida, inicie sessão no Azure com o ID e palavra-passe da conta que utiliza para gerir a sua subscrição Azure.
@@ -128,14 +128,14 @@ Agora, indique ao Visual Studio os recursos do Azure que pretende que criar.
 8. Na caixa de diálogo **Configurar Plano do App Service**, clique em **OK**.
 9. Na caixa de diálogo **Criar App Service**, clique em **Criar**.
 
-## <a name="visual-studio-creates-the-project-and-web-app"></a>O Visual Studio cria o projeto e a aplicação Web
+## <a name="inspect-the-azure-resources-in-visual-studio"></a>Inspecionar os recursos do Azure no Visual Studio
 Num curto período de tempo, normalmente, menos do que um minuto, o Visual Studio cria o projeto Web e a aplicação Web.  
 
 A janela **Explorador de Soluções** mostra os ficheiros e as pastas no projeto novo.
 
 ![Explorador de Soluções](./media/web-sites-dotnet-get-started/solutionexplorer.png)
 
-A janela **Atividade do App Service do Azure** mostra que a aplicação Web foi criada.
+A janela **Atividade do Serviço de Aplicações do Azure** mostra que os recursos do Serviço de Aplicações foi criado no Azure. Pode clicar na ligação aqui para iniciar imediatamente a publicar onovo projeto. Mais tarde, no entanto, o tutorial mostra-lhe como publicar os ficheiros em qualquer altura.
 
 ![Aplicação Web criada na janela de Atividade do App Service do Azure](./media/web-sites-dotnet-get-started/GS13sitecreated1.png)
 
@@ -143,8 +143,8 @@ A janela **Cloud Explorer** permite-lhe ver e gerir recursos do Azure, incluindo
 
 ![Aplicação Web criada no Cloud Explorer](./media/web-sites-dotnet-get-started/siteinse.png)
 
-## <a name="deploy-the-web-project-to-the-azure-web-app"></a>Implementar o projeto Web na aplicação Web do Azure
-Nesta secção, é possível implementar o projeto Web na aplicação Web.
+## <a name="deploy-the-web-project-to-azure"></a>Implementar o projeto Web no Azure
+Nesta secção, é possível implementar o projeto Web para o recurso de aplicação Web que criou no Serviço de Aplicações do Azure.
 
 1. No **Explorador de Soluções**, clique com o botão direito do rato no projeto e selecione **Publicar**.
    
@@ -152,7 +152,10 @@ Nesta secção, é possível implementar o projeto Web na aplicação Web.
    
     Em alguns segundos, é apresentado o assistente **Publicar Web**. O Assistente abre num *perfil de publicação* que tem definições para implementar o projeto Web na nova aplicação Web.
    
-    O perfil de publicação inclui um nome de utilizador e a palavra-passe para a implementação.  Estas credenciais foram geradas para si e não tem de as introduzir. A palavra-passe está encriptada num ficheiro oculto específico do utilizador na pasta `Properties\PublishProfiles`.
+    > [!TIP] 
+    > O perfil de publicação inclui um nome de utilizador e a palavra-passe para a implementação.  Estas credenciais foram geradas para si e não tem de as introduzir. A palavra-passe está encriptada num ficheiro oculto específico do utilizador na pasta `Properties\PublishProfiles`.
+    >
+    >
 2. No separador **Ligação** do assistente **Publicar Web**, clique em **Seguinte**.
    
     ![Clicar em Seguinte no separador Ligação do assistente Publicar Web](./media/web-sites-dotnet-get-started/GS13ValidateConnection.png)
@@ -219,6 +222,6 @@ Neste tutorial, aprendeu a criar uma aplicação Web simples e a implementá-la 
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO3-->
 
 

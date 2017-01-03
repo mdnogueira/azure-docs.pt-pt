@@ -3,8 +3,8 @@ title: "Introdução ao Armazenamento de Blobs do Azure (armazenamento de objeto
 description: "Armazene dados não estruturados na nuvem com o Blob Storage do Azure (armazenamento de objetos)."
 services: storage
 documentationcenter: .net
-author: tamram
-manager: carmonm
+author: mmacy
+manager: timlt
 editor: tysonn
 ms.assetid: d18a8fc8-97cb-4d37-a408-a6f8107ea8b3
 ms.service: storage
@@ -12,11 +12,11 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: hero-article
-ms.date: 11/17/2016
-ms.author: tamram
+ms.date: 12/08/2016
+ms.author: marsma
 translationtype: Human Translation
-ms.sourcegitcommit: fe4b9c356e5f7d56cb7e1fa62344095353d0b699
-ms.openlocfilehash: d2d1a5aae3e1965e7010b11218b6b1aa27ec524d
+ms.sourcegitcommit: 12ce6b6bccf3ea2aa2945ddd775716f29cf01e1f
+ms.openlocfilehash: 24b23c412ae4e092427b4e68b16df0369f9e9f0e
 
 ---
 
@@ -33,7 +33,7 @@ Este tutorial demonstra como escrever código .NET para alguns cenários comuns 
 
 **Pré-requisitos:**
 
-* [Microsoft Visual Studio](https://www.visualstudio.com/en-us/visual-studio-homepage-vs.aspx)
+* [Microsoft Visual Studio](https://www.visualstudio.com/visual-studio-homepage-vs.aspx)
 * [Biblioteca de Clientes do Armazenamento do Azure para .NET](https://www.nuget.org/packages/WindowsAzure.Storage/)
 * [Gestor de Configuração do Azure para .NET](https://www.nuget.org/packages/Microsoft.WindowsAzure.ConfigurationManager/)
 * Uma [Conta do Storage do Azure](storage-create-storage-account.md#create-a-storage-account)
@@ -403,13 +403,13 @@ Agora que aprendeu as noções básicas do Blob Storage, siga estas ligações p
 [Blob8]: ./media/storage-dotnet-how-to-use-blobs/blob8.png
 [Blob9]: ./media/storage-dotnet-how-to-use-blobs/blob9.png
 
-[Blogue da Equipa de Armazenamento do Azure]: http://blogs.msdn.com/b/windowsazurestorage/
-[Configurar Cadeias de Ligação]: http://msdn.microsoft.com/library/azure/ee758697.aspx
-[.NET client library reference (Referência da biblioteca de clientes do .NET)]: http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409
-[Referência da API REST]: http://msdn.microsoft.com/library/azure/dd179355
+[Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
+[Configuring Connection Strings]: http://msdn.microsoft.com/library/azure/ee758697.aspx
+[.NET client library reference]: http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409
+[REST API reference]: http://msdn.microsoft.com/library/azure/dd179355
 
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Dec16_HO2-->
 
 

@@ -17,8 +17,8 @@ ms.workload: na
 ms.date: 09/13/2016
 ms.author: rogardle
 translationtype: Human Translation
-ms.sourcegitcommit: a7d957fd4be4c823077b1220dfb8ed91070a0e97
-ms.openlocfilehash: d056b9489eba1f97e8fb87f231b03d104c4cab66
+ms.sourcegitcommit: 52f158fd50ee8427cf567889d584e342ea42abb3
+ms.openlocfilehash: b52f7b36a28a345e8693ecbafd3771c27c683a37
 
 
 ---
@@ -58,8 +58,7 @@ Clique em **OK** quando estiver pronto para continuar.
 
 ![Criar implementação 4](media/acs-portal4-new.png)  <br />
 
-Se o **Kubernetes** estiver selecionado na lista pendente, deverá introduzir o id de cliente do principal de serviço e o segredo do cliente do principal de serviço.
-Para saber mais sobre como criar uma principal de serviço viste [esta](https://github.com/Azure/acs-engine/blob/master/docs/serviceprincipal.md) página 
+Se o **Kubernetes** estiver selecionado na lista pendente, deverá introduzir um id de cliente do principal de serviço e o segredo do cliente do principal de serviço. Para obter mais informações, veja [About the service principal for a Kubernetes cluster (Sobre o principal de serviço para um cluster de Kubernetes)](container-service-kubernetes-service-principal.md). 
 
 ![Criar implementação 4.5](media/acs-portal10.PNG)  <br />
 
@@ -197,6 +196,6 @@ Agora que tem um cluster a funcionar, veja estes documentos para obter os detalh
 
 
 
-<!--HONumber=Nov16_HO5-->
+<!--HONumber=Dec16_HO3-->
 
 

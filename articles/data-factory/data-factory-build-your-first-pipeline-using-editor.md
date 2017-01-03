@@ -12,11 +12,11 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: hero-article
-ms.date: 09/14/2016
+ms.date: 12/06/2016
 ms.author: spelluru
 translationtype: Human Translation
-ms.sourcegitcommit: 2759ce1fd8fd02a94256e0ba8f455608157ffbd0
-ms.openlocfilehash: 4033630dbbe065072cc58e642fce51f4860b82b6
+ms.sourcegitcommit: b2dc4feb5cee28c051010f7d86c99f49c56da219
+ms.openlocfilehash: 7b5ed6a9e16de5a5978a40331a41708dc5615aa2
 
 
 ---
@@ -92,7 +92,8 @@ Neste passo, vai ligar a sua conta de Armazenamento do Azure à fábrica de dado
     ![Botão Implementar](./media/data-factory-build-your-first-pipeline-using-editor/deploy-button.png)
 
    Depois de implementar o serviço ligado com êxito, a janela **Rascunho-1** deve desaparecer e verá **AzureStorageLinkedService** na vista de árvore à esquerda.
-    ![Serviço Ligado do Armazenamento no menu](./media/data-factory-build-your-first-pipeline-using-editor/StorageLinkedServiceInTree.png)    
+
+    ![Serviço Ligado do Storage no menu](./media/data-factory-build-your-first-pipeline-using-editor/StorageLinkedServiceInTree.png)    
 
 ### <a name="create-azure-hdinsight-linked-service"></a>Criar o serviço ligado do Azure HDInsight
 Neste passo, irá ligar um cluster do HDInsight a pedido à sua fábrica de dados. O cluster do HDInsight é criado automaticamente no tempo de execução e eliminado depois de ter sido processado e ficado inativo pelo período de tempo especificado.
@@ -102,18 +103,20 @@ Neste passo, irá ligar um cluster do HDInsight a pedido à sua fábrica de dado
     ![Nova computação](./media/data-factory-build-your-first-pipeline-using-editor/new-compute-menu.png)
 2. Copie e cole o fragmento seguinte na janela **Rascunho-1**. O fragmento JSON descreve as propriedades que são utilizadas para criar o cluster HDInsight a pedido.
 
-        {
-          "name": "HDInsightOnDemandLinkedService",
-          "properties": {
-            "type": "HDInsightOnDemand",
-            "typeProperties": {
-              "version": "3.2",
-              "clusterSize": 1,
-              "timeToLive": "00:30:00",
-              "linkedServiceName": "AzureStorageLinkedService"
-            }
-          }
+    ```JSON
+    {
+      "name": "HDInsightOnDemandLinkedService",
+      "properties": {
+        "type": "HDInsightOnDemand",
+        "typeProperties": {
+          "version": "3.2",
+          "clusterSize": 1,
+          "timeToLive": "00:30:00",
+          "linkedServiceName": "AzureStorageLinkedService"
         }
+      }
+    }
+    ```
 
     A tabela que se segue fornece descrições para as propriedades JSON utilizadas no fragmento:
 
@@ -149,28 +152,29 @@ Neste passo, vai criar conjuntos de dados para representar os dados de entrada e
     ![Novo conjunto de dados](./media/data-factory-build-your-first-pipeline-using-editor/new-data-set.png)
 2. Copie e cole o fragmento seguinte na janela Rascunho-1. No fragmento JSON, está a criar um conjunto de dados denominado **AzureBlobInput**, que representa os dados de entrada de uma atividade no pipeline. Além disso, especifica que os dados de entrada estão localizados no contentor do blob denominado **adfgetstarted** e na pasta denominada **inputdata**.
 
-        {
-            "name": "AzureBlobInput",
-            "properties": {
-                "type": "AzureBlob",
-                "linkedServiceName": "AzureStorageLinkedService",
-                "typeProperties": {
-                    "fileName": "input.log",
-                    "folderPath": "adfgetstarted/inputdata",
-                    "format": {
-                        "type": "TextFormat",
-                        "columnDelimiter": ","
-                    }
-                },
-                "availability": {
-                    "frequency": "Month",
-                    "interval": 1
-                },
-                "external": true,
-                "policy": {}
-            }
+    ```JSON
+    {
+        "name": "AzureBlobInput",
+        "properties": {
+            "type": "AzureBlob",
+            "linkedServiceName": "AzureStorageLinkedService",
+            "typeProperties": {
+                "fileName": "input.log",
+                "folderPath": "adfgetstarted/inputdata",
+                "format": {
+                    "type": "TextFormat",
+                    "columnDelimiter": ","
+                }
+            },
+            "availability": {
+                "frequency": "Month",
+                "interval": 1
+            },
+            "external": true,
+            "policy": {}
         }
-
+    }
+    ```
     A tabela que se segue fornece descrições para as propriedades JSON utilizadas no fragmento:
 
    | Propriedade | Descrição |
@@ -190,25 +194,26 @@ Agora, irá criar o conjunto de dados de saída para representar os dados de sa�
 1. No **Data Factory Editor**, clique em **... Mais**, na barra de comandos, clique em **Novo conjunto de dados** e selecione **Armazenamento de Blobs do Azure**.  
 2. Copie e cole o fragmento seguinte na janela Rascunho-1. No fragmento JSON, está a criar um conjunto de dados denominado **AzureBlobOutput** e a especificar a estrutura dos dados que são produzidos pelo script de Hive. Além disso, especifica que os resultados são armazenados no contentor do blob denominado **adfgetstarted** e na pasta denominada **partitioneddata**. A secção **disponibilidade** especifica que o conjunto de dados de saída é produzido mensalmente.
 
-        {
-          "name": "AzureBlobOutput",
-          "properties": {
-            "type": "AzureBlob",
-            "linkedServiceName": "AzureStorageLinkedService",
-            "typeProperties": {
-              "folderPath": "adfgetstarted/partitioneddata",
-              "format": {
-                "type": "TextFormat",
-                "columnDelimiter": ","
-              }
-            },
-            "availability": {
-              "frequency": "Month",
-              "interval": 1
-            }
+    ```JSON
+    {
+      "name": "AzureBlobOutput",
+      "properties": {
+        "type": "AzureBlob",
+        "linkedServiceName": "AzureStorageLinkedService",
+        "typeProperties": {
+          "folderPath": "adfgetstarted/partitioneddata",
+          "format": {
+            "type": "TextFormat",
+            "columnDelimiter": ","
           }
+        },
+        "availability": {
+          "frequency": "Month",
+          "interval": 1
         }
-
+      }
+    }
+    ```
     Veja a secção **Criar o conjunto de dados de entrada** para obter as descrições destas propriedades. Não defina a propriedade externa num conjunto de dados de saída, uma vez que o conjunto de dados é produzido pelo serviço Data Factory.
 3. Clique em **Implementar** na barra de comandos para implementar o conjunto de dados recentemente criado.
 4. Verifique se o conjunto de dados foi criado com êxito.
@@ -228,48 +233,50 @@ Neste passo, irá criar o seu primeiro pipeline com uma atividade **HDInsightHiv
    >
    >
 
-        {
-            "name": "MyFirstPipeline",
-            "properties": {
-                "description": "My first Azure Data Factory pipeline",
-                "activities": [
-                    {
-                        "type": "HDInsightHive",
-                        "typeProperties": {
-                            "scriptPath": "adfgetstarted/script/partitionweblogs.hql",
-                            "scriptLinkedService": "AzureStorageLinkedService",
-                            "defines": {
-                                "inputtable": "wasb://adfgetstarted@<storageaccountname>.blob.core.windows.net/inputdata",
-                                "partitionedtable": "wasb://adfgetstarted@<storageaccountname>.blob.core.windows.net/partitioneddata"
-                            }
-                        },
-                        "inputs": [
-                            {
-                                "name": "AzureBlobInput"
-                            }
-                        ],
-                        "outputs": [
-                            {
-                                "name": "AzureBlobOutput"
-                            }
-                        ],
-                        "policy": {
-                            "concurrency": 1,
-                            "retry": 3
-                        },
-                        "scheduler": {
-                            "frequency": "Month",
-                            "interval": 1
-                        },
-                        "name": "RunSampleHiveActivity",
-                        "linkedServiceName": "HDInsightOnDemandLinkedService"
-                    }
-                ],
-                "start": "2016-04-01T00:00:00Z",
-                "end": "2016-04-02T00:00:00Z",
-                "isPaused": false
-            }
+    ```JSON
+    {
+        "name": "MyFirstPipeline",
+        "properties": {
+            "description": "My first Azure Data Factory pipeline",
+            "activities": [
+                {
+                    "type": "HDInsightHive",
+                    "typeProperties": {
+                        "scriptPath": "adfgetstarted/script/partitionweblogs.hql",
+                        "scriptLinkedService": "AzureStorageLinkedService",
+                        "defines": {
+                            "inputtable": "wasb://adfgetstarted@<storageaccountname>.blob.core.windows.net/inputdata",
+                            "partitionedtable": "wasb://adfgetstarted@<storageaccountname>.blob.core.windows.net/partitioneddata"
+                        }
+                    },
+                    "inputs": [
+                        {
+                            "name": "AzureBlobInput"
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "AzureBlobOutput"
+                        }
+                    ],
+                    "policy": {
+                        "concurrency": 1,
+                        "retry": 3
+                    },
+                    "scheduler": {
+                        "frequency": "Month",
+                        "interval": 1
+                    },
+                    "name": "RunSampleHiveActivity",
+                    "linkedServiceName": "HDInsightOnDemandLinkedService"
+                }
+            ],
+            "start": "2016-04-01T00:00:00Z",
+            "end": "2016-04-02T00:00:00Z",
+            "isPaused": false
         }
+    }
+    ```
 
     No fragmento JSON, está a criar um pipeline que consiste numa única atividade que utiliza o Ramo de Registo para processar Dados num cluster do HDInsight.
 
@@ -321,20 +328,20 @@ Neste passo, irá criar o seu primeiro pipeline com uma atividade **HDInsightHiv
    ![Conjunto de dados](./media/data-factory-build-your-first-pipeline-using-editor/dataset-blade.png)
 8. Quando o processamento terminar, verá o setor no estado **Pronto**.
 
-> [!IMPORTANT]
-> A criação de um cluster do HDInsight a pedido demora, por norma, algum tempo (cerca de 20 minutos). Assim, prevê-se que o pipeline demore **aproximadamente 30 minutos** a processar o setor.    
->
->
+   ![Conjunto de dados](./media/data-factory-build-your-first-pipeline-using-editor/dataset-slice-ready.png)  
 
-    ![Dataset](./media/data-factory-build-your-first-pipeline-using-editor/dataset-slice-ready.png)    
+   > [!IMPORTANT]
+   > A criação de um cluster do HDInsight a pedido demora, por norma, algum tempo (cerca de 20 minutos). Assim, prevê-se que o pipeline demore **aproximadamente 30 minutos** a processar o setor.
+   >
+   >
 
-1. Quando o setor estiver no estado **Pronto**, verifique a pasta **partitioneddata** no contentor **adfgetstarted** do seu armazenamento de blobs para os dados de saída.  
+9. Quando o setor estiver no estado **Pronto**, verifique a pasta **partitioneddata** no contentor **adfgetstarted** do seu armazenamento de blobs para os dados de saída.  
 
    ![dados de saída](./media/data-factory-build-your-first-pipeline-using-editor/three-ouptut-files.png)
-2. Clique no setor para ver os respetivos detalhes no painel **Setor de dados**.
+10. Clique no setor para ver os respetivos detalhes no painel **Setor de dados**.
 
    ![Detalhes do setor de dados](./media/data-factory-build-your-first-pipeline-using-editor/data-slice-details.png)  
-3. Clique numa atividade em execução na **Lista de execuções de atividades** para ver detalhes sobre a execução de uma atividade (atividade do Hive no nosso cenário) numa janela **Detalhes de execução da atividade**.   
+11. Clique numa atividade em execução na **Lista de execuções de atividades** para ver detalhes sobre a execução de uma atividade (atividade do Hive no nosso cenário) numa janela **Detalhes de execução da atividade**.   
 
    ![Detalhes da execução da atividade](./media/data-factory-build-your-first-pipeline-using-editor/activity-window-blade.png)    
 
@@ -346,7 +353,7 @@ Neste passo, irá criar o seu primeiro pipeline com uma atividade **HDInsightHiv
 >
 >
 
-### <a name="monitor-pipeline-using-monitor-manage-app"></a>Monitorizar o pipeline com a Aplicação de Monitorização e Gestão
+### <a name="monitor-pipeline-using-monitor--manage-app"></a>Monitorizar o pipeline com a Aplicação de Monitorização e Gestão
 Pode ainda utilizar a aplicação de Monitorização e Gestão para monitorizar os seus pipelines. Para obter detalhes sobre a utilização desta aplicação, veja [Monitor and manage Azure Data Factory pipelines using Monitoring and Management App (Monitorizar e gerir pipelines do Azure Data Factory com a Aplicação de Monitorização e Gestão)](data-factory-monitor-manage-app.md).
 
 1. Clique no mosaico **Monitorizar e Gerir** na home page do data factory.
@@ -356,6 +363,7 @@ Pode ainda utilizar a aplicação de Monitorização e Gestão para monitorizar 
 
     ![Aplicação Monitorizar e Gerir](./media/data-factory-build-your-first-pipeline-using-editor/monitor-and-manage-app.png)
 3. Selecione uma janela de atividade na lista **Janelas de Atividade** para ver os respetivos detalhes.
+
     ![Detalhes da janela de atividade](./media/data-factory-build-your-first-pipeline-using-editor/activity-window-details.png)
 
 ## <a name="summary"></a>Resumo
@@ -382,6 +390,6 @@ Neste artigo, criou um pipeline com uma atividade de transformação (Atividade 
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO5-->
 
 

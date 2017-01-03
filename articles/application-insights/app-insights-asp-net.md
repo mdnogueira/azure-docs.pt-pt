@@ -14,8 +14,8 @@ ms.topic: get-started-article
 ms.date: 10/13/2016
 ms.author: awills
 translationtype: Human Translation
-ms.sourcegitcommit: dea21a59b189d1d3d474cbc5e67f64df485a1981
-ms.openlocfilehash: a97e20b208d92e03bd4458605aaa48ef7c389e32
+ms.sourcegitcommit: dc95c922b71d18cf791ea98f4ab1a02d2bac2c3b
+ms.openlocfilehash: 5103c28047e6d5e7be5f4f3b7933196de7045eeb
 
 
 ---
@@ -59,7 +59,9 @@ Abra a janela do Application Insights no Visual Studio: clique no botão Applica
 
 ![No Visual Studio, o botão do Application Insights é apresentado durante a depuração.](./media/app-insights-asp-net/55.png)
 
-Esta vista mostra a telemetria gerada do lado do servidor da sua aplicação. Experimente os filtros e clique em qualquer evento para ver mais detalhes.
+Esta vista ("Dados da sessão de depuração") mostra a telemetria gerada do lado do servidor da sua aplicação. Experimente os filtros e clique em qualquer evento para ver mais detalhes.
+
+* *Não existem dados? Certifique-se do que intervalo de tempo está correto e clique no ícone de pesquisa.*
 
 [Saiba mais sobre as ferramentas do Application Insights no Visual Studio](app-insights-visual-studio.md).
 
@@ -70,15 +72,34 @@ A não ser que tenha escolhido *Instalar apenas SDK*, também pode ver a telemet
 
 O portal tem mais gráficos, ferramentas de análise e dashboards que o Visual Studio. 
 
-Abra o recurso do Application Insights no [portal do Azure](https://portal.azure.com/).
+Abra o recurso do Application Insights - inicie sessão no [portal do Azure](https://portal.azure.com/) e encontre-o aí ou clique com o botão direito no projeto no Visual Studio e permita que o mesmo o redirecione.
 
 ![Clique com o botão direito do rato no projeto e abra o portal do Azure](./media/app-insights-asp-net/appinsights-04-openPortal.png)
 
-O portal é aberto numa vista de telemetria na sua aplicação: ![](./media/app-insights-asp-net/66.png)
+* *Erro de acesso? Se tiver mais do que um conjunto de credenciais da Microsoft, a sessão poderá ser iniciada com o conjunto de errado. No portal, termine a sessão e inicie sessão novamente.*
 
-* A primeira telemetria é apresentada no [Live Metrics Stream](app-insights-metrics-explorer.md#live-metrics-stream).
-* Os eventos individuais são apresentados em **Pesquisar** (1). Podem ser necessários alguns minutos para que os dados sejam apresentados. Clique em qualquer evento para ver as respetivas propriedades. 
-* As métricas agregadas são apresentadas nos gráficos (2). Poderá demorar um ou dois minutos para os dados serem apresentados aqui. Clique em qualquer gráfico para abrir um painel com mais detalhes.
+O portal é aberto numa vista de telemetria na sua aplicação: ![página de Descrição Geral do Application Insights](./media/app-insights-asp-net/66.png)
+
+Clique em qualquer gráfico ou mosaico para ver mais detalhes.
+
+### <a name="more-detail-in-the-portal"></a>Mais detalhe no portal
+
+* O [**Fluxo de métricas do Live** ](app-insights-metrics-explorer.md#live-metrics-stream) apresenta telemetria quase instantaneamente.
+
+    ![No painel de Descrição geral, clique em Live Stream](./media/app-insights-asp-net/livestream.png)
+
+    Abrir o Live Stream ao mesmo tempo que a aplicação está em execução, para permitir que os mesmos se liguem.
+
+    O Live Stream só mostra telemetria durante um minuto após ter sido enviada. Para mais investigações históricas, utilize a Pesquisa, o Explorador de Métricas e o Analytics. Podem ser necessários alguns minutos para que os dados sejam apresentados nestes locais.
+
+* A [**Pesquisa**](app-insights-diagnostic-search.md) mostra eventos individuais, tais como pedidos, exceções e vistas de página. Pode filtrar por tipo de evento, correspondência de termos e valores de propriedade. Clique em qualquer evento para ver as respetivas propriedades e eventos relacionados. 
+
+    ![No painel de Descrição geral, clique em Pesquisa](./media/app-insights-asp-net/search.png)
+
+ * No modo de desenvolvimento, poderá ver uma grande quantidade de eventos de dependência (AJAX). Estas são as sincronizações entre o browser e o emulador de servidor. Para ocultá-las, clique no filtro Dependência.
+* [**Métricas agregadas** ](app-insights-metrics-explorer.md) como taxas de pedido e de falha são apresentadas nos gráficos. Clique em qualquer gráfico para abrir um painel com mais detalhes. Clique na etiqueta **Editar** de qualquer gráfico para definir filtros, tamanho e assim sucessivamente.
+    
+    ![No painel Descrição geral, clique em qualquer gráfico](./media/app-insights-asp-net/metrics.png)
 
 [Saiba mais sobre como utilizar o Application Insights no portal do Azure](app-insights-dashboards.md).
 
@@ -175,6 +196,6 @@ Se utilizar o Visual Studio Team Services, poderá [obter um marcador de anotaç
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Dec16_HO5-->
 
 

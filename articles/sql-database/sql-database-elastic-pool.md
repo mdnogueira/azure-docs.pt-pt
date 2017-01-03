@@ -1,92 +1,112 @@
 ---
-title: What is an Azure elastic pool? | Microsoft Docs
-description: Manage hundreds or thousands of databases using a pool. One price for a set of performance units can be distributed over the pool. Move databases in or out at will.
-keywords: elastic database,sql databases
+title: "O que é um conjunto elástico do Azure? | Microsoft Docs"
+description: "Gerir centenas ou milhares de bases de dados com um conjunto. Um preço de um conjunto de unidades de desempenho pode ser distribuído por um conjunto. Mover bases de dados para dentro ou para fora à vontade."
+keywords: "base de dados elástica, bases de dados sql"
 services: sql-database
-documentationcenter: ''
+documentationcenter: 
 author: CarlRabeler
 manager: jhubbard
-editor: cgronlun
-
+editor: 
+ms.assetid: b46e7fdc-2238-4b3b-a944-8ab36c5bdb8e
 ms.service: sql-database
+ms.custom: multiple databases
 ms.devlang: NA
-ms.date: 07/12/2016
+ms.date: 12/14/2016
 ms.author: CarlRabeler
 ms.workload: data-management
-ms.topic: article
+ms.topic: get-started-article
 ms.tgt_pltfrm: NA
+translationtype: Human Translation
+ms.sourcegitcommit: 75bf523679c8d8ad6fbe4a8aa8a561d03008e59b
+ms.openlocfilehash: c3757dadb09ba070b30820a46007a9c82490d8f2
+
 
 ---
-# What is an Azure elastic pool?
-SQL DB elastic pools provide a simple cost effective solution to manage the performance goals for multiple databases that have widely varying and unpredictable usage patterns.
+# <a name="what-is-an-azure-elastic-pool"></a>O que é um conjunto elástico do Azure?
+Os conjuntos elásticos de bases de dados SQL fornecem uma solução económica e simples para gerir os objetivos de desempenho de várias bases de dados que tenham padrões de utilização extremamente variáveis e imprevisíveis.
 
 > [!NOTE]
-> Elastic pools are generally available (GA) in all Azure regions except West India where it is currently in preview.  GA of elastic pools in this region will occur as soon as possible.
-> 
-> 
+> Os conjuntos elásticos estão em disponibilidade geral (GA) em todas as regiões do Azure, exceto na Índia Ocidental, onde se encontra, de momento, em pré-visualização.  A GA dos conjuntos elásticos nesta região vai ocorrer assim que possível.
+>
+>
 
-## How it works
-A common SaaS application pattern is the single-tenant database model: each customer is given their own database. Each customer (database) has unpredictable resource requirements for memory, IO, and CPU. With these peaks and valleys of demand, how do you allocate resources efficiently and cost-effectively? Traditionally, you had two options: (1) over-provision resources based on peak usage and over pay, or (2) under-provision to save cost, at the expense of performance and customer satisfaction during peaks. Elastic pools solve this problem by ensuring that databases get the performance resources they need and when they need it. They provide a simple resource allocation mechanism within a predictable budget. To learn more about design patterns for SaaS applications using elastic pools, see [Design Patterns for Multi-tenant SaaS Applications with Azure SQL Database](sql-database-design-patterns-multi-tenancy-saas-applications.md).
+## <a name="how-it-works"></a>Como funciona
+Um padrão de aplicação SaaS comum é o modelo de base de dados de inquilino único: a cada cliente é atribuída a sua própria base de dados. Cada cliente (base de dados) tem requisitos de recursos imprevisíveis em termos de memória, E/S e CPU. Com estes altos e baixos de procura, como pode atribuir recursos de forma eficiente e rentável? Tradicionalmente, tem duas opções: (1) aprovisionar excessivamente recursos com base na utilização máxima e pagar em excesso ou (2) aprovisionar insuficientemente para economizar custos, em detrimento do desempenho e da satisfação do cliente durante os picos. Os conjuntos elásticos resolvem este problema ao garantir que as bases de dados recebem os recursos de desempenho de que precisam e quando precisam. Fornecem um mecanismo de alocação de recursos simples dentro de um orçamento previsível. Para saber mais sobre os padrões de estrutura de aplicações SaaS que utilizam conjuntos elásticos, consulte o artigo [Padrões de Estrutura de Aplicações SaaS Multi-inquilino com a Base de Dados SQL do Azure](sql-database-design-patterns-multi-tenancy-saas-applications.md).
 
 > [!VIDEO https://channel9.msdn.com/Blogs/Windows-Azure/Elastic-databases-helps-SaaS-developers-tame-explosive-growth/player]
-> 
-> 
+>
+>
 
-In SQL Database, the relative measure of a database's ability to handle resource demands is expressed in Database Transaction Units (DTUs) for single databases and elastic DTUs (eDTUs) for elastic databases in an elastic pool. See the [Introduction to SQL Database](sql-database-technical-overview.md#understand-dtus) to learn more about DTUs and eDTUs.
+Na Base de Dados SQL, a medida relativa da capacidade de uma base de dados de gerir exigências de recursos é expressa em Unidades de Transação de Base de Dados (DTUs) para bases de dados individuais e DTUs elásticas (eDTUs) para bases de dados elásticas num conjunto elástico. Veja [Introdução à Base de Dados SQL](sql-database-technical-overview.md) para saber mais sobre DTUs e eDTUs.
 
-A pool is given a set number of eDTUs, for a set price. Within the pool, individual databases are given the flexibility to auto-scale within set parameters. Under heavy load, a database can consume more eDTUs to meet demand. Databases under light loads consume less, and databases under no load consume no eDTUs. Provisioning resources for the entire pool rather than for single databases simplifies your management tasks. Plus you have a predictable budget for the pool.
+A um conjunto é atribuído um número definido de eDTUs, por um preço definido. Dentro do conjunto, é dada às bases de dados individuais a flexibilidade para se dimensionarem automaticamente dentro de parâmetros definidos. Uma base de dados sobrecarregada pode consumir mais eDTUs para responder às necessidades. As bases de dados sujeitas a cargas mais leves consomem menos e as bases de dados que não estão sujeitas a qualquer carga não consomem eDTUs. O aprovisionamento de recursos para o conjunto completo e não para bases de dados individuais simplifica as tarefas de gestão. Além disso, tem um orçamento previsível para o conjunto.
 
-Additional eDTUs can be added to an existing pool with no database downtime or no impact on the databases in the elastic pool. Similarly, if extra eDTUs are no longer needed they can be removed from an existing pool at any point in time.
+Podem ser adicionais mais eDTUs a um conjunto existente sem qualquer período de indisponibilidade da base de dados ou sem impacto nas bases de dados do conjunto elástico. Do mesmo modo, se as eDTUs adicionais já não forem necessárias, podem ser removidas de um conjunto existente em qualquer momento.
 
-And you can add or subtract databases to the pool. If a database is predictably under-utilizing resources, move it out.
+Além disso, pode adicionar ou subtrair bases de dados ao conjunto. Se uma base de dados estiver a subutilizar recursos de forma previsível, remova-a.
 
-## Which databases go in a pool?
-![SQL databases sharing eDTUs in an elastic database pool.][1]
+## <a name="which-databases-go-in-a-pool"></a>Que bases de dados são adequadas a um conjunto?
+![Bases de dados SQL que partilham eDTUs num conjunto elástico.][1]
 
-Databases that are great candidates for elastic pools typically have periods of activity and other periods of inactivity. In the example above you see the activity of a single database, 4 databases, and finally an elastic pool with 20 databases. Databases with varying activity over time are great candidates for elastic pools because they are not all active at the same time and can share eDTUs. Not all databases fit this pattern. Databases that have a more constant resource demand are better suited to the Basic, Standard, and Premium service tiers where resources are individually assigned.
+As bases de dados que são excelentes candidatos para conjuntos elásticos têm, normalmente, períodos de atividade e outros períodos de inatividade. No exemplo acima, pode ver a atividade de uma base de dados individual, 4 bases de dados e, por último, um conjunto elástico com 20 bases de dados. As bases de dados com atividade variável ao longo do tempo são excelentes candidatas para conjuntos elásticos, porque não estão todas ativas ao mesmo tempo e podem partilhar eDTUs. Nem todas as bases de dados se enquadram neste padrão. As bases de dados com uma exigência de recursos mais constante adequam-se melhor aos escalões de serviço Básico, Standard e Premium, onde os recursos são atribuídos individualmente.
 
-[Price and performance considerations for an elastic pool](sql-database-elastic-pool-guidance.md).
+[Considerações sobre preço e desempenho de um conjunto elástico](sql-database-elastic-pool-guidance.md).
 
-## eDTU and storage limits for elastic pools and elastic databases.
+## <a name="edtu-and-storage-limits-for-elastic-pools-and-elastic-databases"></a>eDTU e limites de armazenamento para conjuntos elásticos e bases de dados elásticas
+
+A tabela seguinte descreve as caraterísticas dos conjuntos elásticos Básico, Standard e Premium.
+
 [!INCLUDE [SQL DB service tiers table for elastic databases](../../includes/sql-database-service-tiers-table-elastic-db-pools.md)]
 
-If all DTUs of an elastic pool are used, then each database in the pool receives an equal amount of resources to process queries.  The SQL Database service provides resource sharing fairness between databases by ensuring equal slices of compute time. Elastic pool resource sharing fairness is in addition to any amount of resource otherwise guaranteed to each database when the DTU min per database is set to a non-zero value.
+Se todas as DTUs de um conjunto elástico forem utilizadas, cada base de dados no conjunto recebe uma quantidade igual de recursos para processar consultas.  O serviço Base de Dados SQL fornece equidade de partilha de recursos entre bases de dados, garantindo frações iguais de tempo de computação. A equidade de partilha de recursos de um conjunto elástico é adicional a qualquer quantidade de recursos garantido de outro modo a cada base de dados quando o mínimo de DTUs por base de dados está definido como um valor diferente de zero.
 
-## Elastic pool and elastic database properties
-### Limits for elastic pools
-| Property | Description |
+## <a name="elastic-pool-and-elastic-database-properties"></a>Propriedades de conjuntos elásticos e de bases de dados elásticas
+
+As tabelas seguintes descrevem os limites dos conjuntos elásticos e das bases de dados elásticas.
+
+### <a name="limits-for-elastic-pools"></a>Limites para conjuntos elásticos
+| Propriedade | Descrição |
 |:--- |:--- |
-| Service tier |Basic, Standard, or Premium. The service tier determines the range in performance and storage limits that can be configured as well as business continuity choices. Every database within a pool has the same service tier as the pool. “Service tier” is also referred to as “edition.” |
-| eDTUs per pool |The maximum number of eDTUs that can be shared by databases in the pool. The total eDTUs used by databases in the pool cannot exceed this limit at the same point in time. |
-| Max storage per pool (GB) |The maximum amount of storage in GBs that can be shared by databases in the pool. The total storage used by databases in the pool cannot exceed this limit. This limit is determined by the eDTUs per pool. If this limit is exceeded, all databases become read-only. |
-| Max number of databases per pool |The maximum number of databases allowed per pool. |
-| Max concurrent workers per pool |The maximum number of concurrent workers (requests) available for all databases in the pool. |
-| Max concurrent logins per pool |The maximum number of concurrent logins for all databases in the pool. |
-| Max concurrent sessions per pool |The maximum number of sessions available for all databases in the pool. |
+| Camada de serviços |Básico, Standard ou Premium. A camada de serviço determina o intervalo nos limites de desempenho e armazenamento que podem ser configurados, bem como opções de continuidade do negócio. Cada base de dados de um conjunto tem a mesma camada de serviço que o conjunto. "Camada de serviço" é também referida como "edição". |
+| eDTUs por conjunto |O número máximo de eDTUs que podem ser partilhadas pelas bases de dados no conjunto. O total de eDTUs utilizadas pelas bases de dados no conjunto não pode exceder este limite no mesmo ponto no tempo. |
+| Armazenamento máximo por conjunto (GB) |A quantidade máxima de armazenamento em GBs que pode ser partilhada pelas bases de dados no conjunto. O armazenamento total utilizado pelas bases de dados no conjunto não pode exceder este limite. Este limite é determinado pelas eDTUs por conjunto. Se este limite for excedido, todas as bases de dados passam a ser só de leitura. |
+| Número máximo de bases de dados por conjunto |O número máximo de bases de dados permitidas por conjunto. |
+| Máximo de trabalhadores simultâneos por conjunto |O número máximo de trabalhos simultâneos (pedidos) disponíveis para todas as bases de dados no conjunto. |
+| Máximo de inícios de sessão simultâneos por conjunto |O número máximo de inícios de sessão simultâneos para todas as bases de dados no conjunto. |
+| Máximo de sessões simultâneas por conjunto |O número máximo de sessões disponíveis para todas as bases de dados no conjunto. |
 
-### Limits for elastic databases
-| Property | Description |
+### <a name="limits-for-elastic-databases"></a>Limites para bases de dados elásticas
+| Propriedade | Descrição |
 |:--- |:--- |
-| Max eDTUs per database |The maximum number of eDTUs that any database in the pool may use, if available based on utilization by other databases in the pool.  Max eDTU per database is not a resource guarantee for a database.  This setting is a global setting that applies to all databases in the pool. Set max eDTUs per database high enough to handle peaks in database utilization. Some degree of overcommitting is expected since the pool generally assumes hot and cold usage patterns for databases where all databases are not simultaneously peaking. For example, suppose the peak utilization per database is 20 eDTUs and only 20% of the 100 databases in the pool are peak at the same time.  If the eDTU max per database is set to 20 eDTUs, then it is reasonable to overcommit the pool by 5 times, and set the eDTUs per pool to 400. |
-| Min eDTUs per database |The minimum number of eDTUs that any database in the pool is guaranteed.  This setting is a global setting that applies to all databases in the pool. The min eDTU per database may be set to 0, and is also the default value. This property is set to anywhere between 0 and the average eDTU utilization per database. The product of the number of databases in the pool and the min eDTUs per database cannot exceed the eDTUs per pool.  For example, if a pool has 20 databases and the eDTU min per database set to 10 eDTUs, then the eDTUs per pool must be at least as large as 200 eDTUs. |
-| Max storage per database (GB) |The maximum storage for a database in a pool. Elastic databases share pool storage, so database storage is limited to the smaller of remaining pool storage and max storage per database. |
+| Máximo de eDTUs por base de dados |O número máximo de eDTUs que qualquer base de dados no conjunto pode utilizar, caso estejam disponíveis com base na utilização por outras bases de dados no conjunto.  O número máximo de eDTUs por base de dados não é uma garantia de recurso para uma base de dados.  Esta definição é uma definição global que se aplica a todas as bases de dados no conjunto. Defina um número máximo de eDTUs suficientemente elevado para processar picos na utilização de base de dados. É esperado algum grau de consolidação excessiva, uma vez que, geralmente, o conjunto assume padrões de utilização a frio e a quente para bases de dados em que todas as bases de dados não atingem o pico em simultâneo. Por exemplo, suponha que o pico de utilização por base de dados é 20 eDTUs e apenas 20% das 100 bases de dados no conjunto atingem o pico ao mesmo tempo.  Se o número máximo de eDTUs por base de dados estiver definido como 20 eDTUs, é razoável sobreconsolidar o conjunto em 5 vezes e definir o número de eDTUs por conjunto como 400. |
+| Mínimo de eDTUs por base de dados |O número mínimo de eDTUs que é garantido a qualquer base de dados no conjunto.  Esta definição é uma definição global que se aplica a todas as bases de dados no conjunto. O mínimo de eDTUs por base de dados pode ser definido como 0, que é também o valor predefinido. Esta propriedade é definida como qualquer valor entre 0 e a utilização média de eDTUs por base de dados. O produto do número de bases de dados no conjunto e o número mínimo de eDTUs por base de dados não pode exceder as eDTUs por conjunto.  Por exemplo, se um conjunto tiver 20 bases de dados e o número mínimo de eDTUs por base de dados definido como 10 eDTUs, as eDTUs por conjunto têm de ser, pelo menos, 200 eDTUs. |
+| Armazenamento máximo por base de dados (GB) |O armazenamento máximo para uma base de dados num conjunto. As bases de dados elásticas partilham o armazenamento do conjunto, pelo que o armazenamento da base de dados é limitado ao armazenamento mais pequeno do conjunto restante e ao armazenamento máximo por base de dados. |
 
-## Elastic database jobs
-With a pool, management tasks are simplified by running scripts in **[elastic jobs](sql-database-elastic-jobs-overview.md)**. An elastic database job eliminates most of tedium associated with large numbers of databases. To begin, see [Getting started with Elastic Database jobs](sql-database-elastic-jobs-getting-started.md).
+## <a name="elastic-database-jobs"></a>Tarefas de base de dados elástica
+Com um conjunto, as tarefas de gestão são simplificadas através da execução de scripts em **[tarefas elásticas](sql-database-elastic-jobs-overview.md)**. Uma tarefa de base de dados elástica elimina a maior parte da monotonia associada a grandes números de bases de dados. Para começar, veja [Introdução às tarefas de Base de Dados Elástica](sql-database-elastic-jobs-getting-started.md).
 
-For more information about other tools, see the [Elastic database tools learning map](https://azure.microsoft.com/documentation/learning-paths/sql-database-elastic-scale/).
+Para obter mais informações sobre outras ferramentas de base de dados elástica, veja [Aumentar horizontalmente com a Base de Dados SQL do Azure](sql-database-elastic-scale-introduction.md).
 
-## Business continuity features for databases in a pool
-Elastic databases generally support the same [business continuity features](sql-database-business-continuity.md) that are available to single databases in V12 servers.
+## <a name="business-continuity-features-for-databases-in-a-pool"></a>Funcionalidades de continuidade de negócio para bases de dados num conjunto
+As bases de dados elásticas suportam geralmente as mesmas [funcionalidades de continuidade de negócio](sql-database-business-continuity.md) que estão disponíveis para as bases de dados únicas.
 
-### Point in time restore
-Point-in-time-restore uses automatic database backups to recover a database in a pool to a specific point in time. See [Point-In-Time Restore](sql-database-recovery-using-backups.md#point-in-time-restore)
+### <a name="point-in-time-restore"></a>Restauro para um ponto anterior no tempo
+O Restauro para um ponto anterior no tempo utiliza cópias de segurança automáticas da base de dados para recuperar uma base de dados num conjunto para um ponto específico no tempo. Veja [Restauro para um ponto anterior no tempo](sql-database-recovery-using-backups.md#point-in-time-restore)
 
-### Geo-Restore
-Geo-Restore provides the default recovery option when a database is unavailable because of an incident in the region where the database is hosted. See [Restore an Azure SQL Database or failover to a secondary](sql-database-disaster-recovery.md) 
+### <a name="geo-restore"></a>Restauro geográfico
+O Restauro geográfico fornece a opção de recuperação predefinida quando uma base de dados está indisponível devido a um incidente na região onde a base de dados está alojada. Veja [Restaurar uma Base de Dados SQL do Azure ou fazer a ativação pós-falha para uma secundária](sql-database-disaster-recovery.md)
 
-### Active Geo-Replication
-For applications that have more aggressive recovery requirements than Geo-Restore can offer, configure Active Geo-Replication using the [Azure portal](sql-database-geo-replication-portal.md), [PowerShell](sql-database-geo-replication-powershell.md), or [Transact-SQL](sql-database-geo-replication-transact-sql.md).
+### <a name="active-geo-replication"></a>Georreplicação Ativa
+Para aplicações que têm requisitos de recuperação mais agressivos do que aqueles que o Restauro geográfico pode oferecer, configure a Georreplicação ativa com o [portal do Azure](sql-database-geo-replication-portal.md), o [PowerShell](sql-database-geo-replication-powershell.md) ou o [Transact-SQL](sql-database-geo-replication-transact-sql.md).
+
+## <a name="additional-resources"></a>Recursos adicionais
+* [Curso de vídeo da Microsoft Virtual Academy sobre as capacidades das bases de dados elásticas](https://mva.microsoft.com/en-US/training-courses/elastic-database-capabilities-with-azure-sql-db-16554)
 
 <!--Image references-->
 [1]: ./media/sql-database-elastic-pool/databases.png
+
+
+
+<!--HONumber=Dec16_HO5-->
+
+

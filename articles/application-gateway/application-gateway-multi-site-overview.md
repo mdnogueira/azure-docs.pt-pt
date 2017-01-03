@@ -12,15 +12,16 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 10/25/2016
+ms.date: 12/14/2016
 ms.author: amsriva
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 85fc1315f32811873c577fe75d88eb08a2bbac26
+ms.sourcegitcommit: 09aeb63d4c2e68f22ec02f8c08f5a30c32d879dc
+ms.openlocfilehash: 68e88483e3dc7c22968d701d9b79364bb55fb896
 
 
 ---
 # <a name="application-gateway-multiple-site-hosting"></a>Alojamento de vários sites do Gateway de Aplicação
+
 O alojamento de vários sites permite-lhe configurar mais do que uma aplicação Web na mesma instância do gateway de aplicação. Esta funcionalidade permite-lhe configurar uma topologia mais eficiente para as suas implementações ao adicionar até 20 sites a um gateway de aplicação. Cada site pode ser direcionado para o seu próprio agrupamento de back-end. No exemplo seguinte, o gateway de aplicação está a enviar tráfego para contoso.com e fabrikam.com a partir de dois agrupamentos de servidores de back-end com o nome ContosoServerPool e FabrikamServerPool.
 
 ![imageURLroute](./media/application-gateway-multi-site-overview/multisite.png)
@@ -30,6 +31,7 @@ Os pedidos enviados para http://contoso.com são encaminhados para ContosoServer
 Da mesma forma, dois subdomínios do mesmo domínio principal podem ser alojados na mesma implementação do gateway de aplicação. Os exemplos de como utilizar subdomínios podem incluir o http://blog.contoso.com e o http://app.contoso.com alojados numa única implementação do gateway de aplicação.
 
 ## <a name="host-headers-and-server-name-indication-sni"></a>Cabeçalhos de anfitrião e Indicação do Nome de Servidor (SNI)
+
 Existem três mecanismos comuns que permitem alojar vários sites na mesma infraestrutura.
 
 1. Aloje várias aplicações Web, cada uma num endereço IP exclusivo.
@@ -39,91 +41,95 @@ Existem três mecanismos comuns que permitem alojar vários sites na mesma infra
 De momento, um gateway de aplicação obtém um endereço IP público exclusivo no qual escuta tráfego. Por conseguinte, atualmente, não é possível suportar várias aplicações, cada uma com o seu próprio endereço IP. O Gateway de Aplicação suporta o alojamento de várias aplicações, cada uma a escutar em portas diferentes. No entanto, este cenário requer que as aplicações aceitem tráfego em portas não padrão, o que, normalmente, não é uma configuração desejada. O Gateway de Aplicação conta com os cabeçalhos de anfitrião HTTP 1.1 para alojar mais do que um site no mesmo endereço IP público e porta. Os sites alojados no gateway de aplicação também podem suportar descarga de SSL com a extensão TLS da Indicação do Nome de Servidor (SNI). Neste cenário, o browser cliente e o web farm de back-end têm de suportar HTTP/1.1 e a extensão TLS conforme definido em RFC 6066.
 
 ## <a name="listener-configuration-element"></a>Elemento de configuração do serviço de escuta
+
 O elemento de configuração HTTPListener existente foi melhorado para suportar elementos de nome de anfitrião e de indicação do nome de servidor, os quais são utilizados pelo gateway de aplicação para encaminhar tráfego para o agrupamento de back-end adequado. O seguinte exemplo de código é o fragmento do elemento HttpListeners do ficheiro de modelo.
 
-    "httpListeners": [
-                {
-                    "name": "appGatewayHttpsListener1",
-                    "properties": {
-                        "FrontendIPConfiguration": {
-                            "Id": "/subscriptions/<subid>/resourceGroups/<rgName>/providers/Microsoft.Network/applicationGateways/applicationGateway1/frontendIPConfigurations/DefaultFrontendPublicIP"
-                        },
-                        "FrontendPort": {
-                            "Id": "/subscriptions/<subid>/resourceGroups/<rgName>/providers/Microsoft.Network/applicationGateways/applicationGateway1/frontendPorts/appGatewayFrontendPort443'"
-                        },
-                        "Protocol": "Https",
-                        "SslCertificate": {
-                            "Id": "/subscriptions/<subid>/resourceGroups/<rgName>/providers/Microsoft.Network/applicationGateways/applicationGateway1/sslCertificates/appGatewaySslCert1'"
-                        },
-                        "HostName": "contoso.com",
-                        "RequireServerNameIndication": "true"
-                    }
-                },
-                {
-                    "name": "appGatewayHttpListener2",
-                    "properties": {
-                        "FrontendIPConfiguration": {
-                            "Id": "/subscriptions/<subid>/resourceGroups/<rgName>/providers/Microsoft.Network/applicationGateways/applicationGateway1/frontendIPConfigurations/appGatewayFrontendIP'"
-                        },
-                        "FrontendPort": {
-                            "Id": "/subscriptions/<subid>/resourceGroups/<rgName>/providers/Microsoft.Network/applicationGateways/applicationGateway1/frontendPorts/appGatewayFrontendPort80'"
-                        },
-                        "Protocol": "Http",
-                        "HostName": "fabrikam.com",
-                        "RequireServerNameIndication": "false"
-                    }
-                }
-            ],
-
-
-
+```json
+"httpListeners": [
+    {
+        "name": "appGatewayHttpsListener1",
+        "properties": {
+            "FrontendIPConfiguration": {
+                "Id": "/subscriptions/<subid>/resourceGroups/<rgName>/providers/Microsoft.Network/applicationGateways/applicationGateway1/frontendIPConfigurations/DefaultFrontendPublicIP"
+            },
+            "FrontendPort": {
+                "Id": "/subscriptions/<subid>/resourceGroups/<rgName>/providers/Microsoft.Network/applicationGateways/applicationGateway1/frontendPorts/appGatewayFrontendPort443'"
+            },
+            "Protocol": "Https",
+            "SslCertificate": {
+                "Id": "/subscriptions/<subid>/resourceGroups/<rgName>/providers/Microsoft.Network/applicationGateways/applicationGateway1/sslCertificates/appGatewaySslCert1'"
+            },
+            "HostName": "contoso.com",
+            "RequireServerNameIndication": "true"
+        }
+    },
+    {
+        "name": "appGatewayHttpListener2",
+        "properties": {
+            "FrontendIPConfiguration": {
+                "Id": "/subscriptions/<subid>/resourceGroups/<rgName>/providers/Microsoft.Network/applicationGateways/applicationGateway1/frontendIPConfigurations/appGatewayFrontendIP'"
+            },
+            "FrontendPort": {
+                "Id": "/subscriptions/<subid>/resourceGroups/<rgName>/providers/Microsoft.Network/applicationGateways/applicationGateway1/frontendPorts/appGatewayFrontendPort80'"
+            },
+            "Protocol": "Http",
+            "HostName": "fabrikam.com",
+            "RequireServerNameIndication": "false"
+        }
+    }
+],
+```
 
 Pode visitar o [modelo do Resource Manager através do alojamento de vários sites](https://github.com/Azure/azure-quickstart-templates/blob/master/201-application-gateway-multihosting) para obter uma implementação baseada num modelo ponto a ponto.
 
 ## <a name="routing-rule"></a>Regra de encaminhamento
+
 Não há qualquer alteração obrigatória na regra de encaminhamento. Deve continuar a escolher a regra de encaminhamento “Básica” para associar o serviço de escuta de sites ao conjunto de endereços de back-end correspondente.
 
-    "requestRoutingRules": [
-    {
-        "name": "<ruleName1>",
-        "properties": {
-            "RuleType": "Basic",
-            "httpListener": {
-                "id": "/subscriptions/<subid>/resourceGroups/<rgName>/providers/Microsoft.Network/applicationGateways/applicationGateway1/httpListeners/appGatewayHttpsListener1')]"
-            },
-            "backendAddressPool": {
-                "id": "/subscriptions/<subid>/resourceGroups/<rgName>/providers/Microsoft.Network/applicationGateways/applicationGateway1/backendAddressPools/ContosoServerPool')]"
-            },
-            "backendHttpSettings": {
-                "id": "/subscriptions/<subid>/resourceGroups/<rgName>/providers/Microsoft.Network/applicationGateways/applicationGateway1/backendHttpSettingsCollection/appGatewayBackendHttpSettings')]"
-            }
+```json
+"requestRoutingRules": [
+{
+    "name": "<ruleName1>",
+    "properties": {
+        "RuleType": "Basic",
+        "httpListener": {
+            "id": "/subscriptions/<subid>/resourceGroups/<rgName>/providers/Microsoft.Network/applicationGateways/applicationGateway1/httpListeners/appGatewayHttpsListener1')]"
+        },
+        "backendAddressPool": {
+            "id": "/subscriptions/<subid>/resourceGroups/<rgName>/providers/Microsoft.Network/applicationGateways/applicationGateway1/backendAddressPools/ContosoServerPool')]"
+        },
+        "backendHttpSettings": {
+            "id": "/subscriptions/<subid>/resourceGroups/<rgName>/providers/Microsoft.Network/applicationGateways/applicationGateway1/backendHttpSettingsCollection/appGatewayBackendHttpSettings')]"
         }
-
-    },
-    {
-        "name": "<ruleName2>",
-        "properties": {
-            "RuleType": "Basic",
-            "httpListener": {
-                "id": "/subscriptions/<subid>/resourceGroups/<rgName>/providers/Microsoft.Network/applicationGateways/applicationGateway1/httpListeners/appGatewayHttpListener2')]"
-            },
-            "backendAddressPool": {
-                "id": "/subscriptions/<subid>/resourceGroups/<rgName>/providers/Microsoft.Network/applicationGateways/applicationGateway1/backendAddressPools/FabrikamServerPool')]"
-            },
-            "backendHttpSettings": {
-                "id": "/subscriptions/<subid>/resourceGroups/<rgName>/providers/Microsoft.Network/applicationGateways/applicationGateway1/backendHttpSettingsCollection/appGatewayBackendHttpSettings')]"
-            }
-        }
-
     }
-    ]
+
+},
+{
+    "name": "<ruleName2>",
+    "properties": {
+        "RuleType": "Basic",
+        "httpListener": {
+            "id": "/subscriptions/<subid>/resourceGroups/<rgName>/providers/Microsoft.Network/applicationGateways/applicationGateway1/httpListeners/appGatewayHttpListener2')]"
+        },
+        "backendAddressPool": {
+            "id": "/subscriptions/<subid>/resourceGroups/<rgName>/providers/Microsoft.Network/applicationGateways/applicationGateway1/backendAddressPools/FabrikamServerPool')]"
+        },
+        "backendHttpSettings": {
+            "id": "/subscriptions/<subid>/resourceGroups/<rgName>/providers/Microsoft.Network/applicationGateways/applicationGateway1/backendHttpSettingsCollection/appGatewayBackendHttpSettings')]"
+        }
+    }
+
+}
+]
+```
 
 ## <a name="next-steps"></a>Passos seguintes
+
 Depois de saber mais sobre o alojamento de vários sites, veja o artigo [Criar um gateway de aplicação através do alojamento de vários sites](application-gateway-create-multisite-azureresourcemanager-powershell.md) para criar um gateway de aplicação com capacidade para suportar mais do que uma aplicação Web.
 
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO5-->
 
 

@@ -13,11 +13,11 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: hero-article
-ms.date: 11/16/2016
+ms.date: 12/09/2016
 ms.author: arramac
 translationtype: Human Translation
-ms.sourcegitcommit: 86c0258cca0a4ffa507ac30da12a7a62d3e4f853
-ms.openlocfilehash: 2150deb06732985db634e23472fa075c743e19c8
+ms.sourcegitcommit: 269d0a0c72d6509b91d7cc8fcffb6641006026f4
+ms.openlocfilehash: 9323eb95ec014a1cc57daa8433e87f9d68b949f5
 
 
 ---
@@ -44,7 +44,7 @@ Iremos abranger:
 * Eliminar um documento
 * Eliminar a base de dados
 
-Não tem tempo? Não se preocupe! A solução completa está disponível em [GitHub](https://github.com/arramac/documentdb-dotnet-core-getting-started). Avance para a [secção Obter a solução completa](#GetSolution) para instruções rápidas.
+Não tem tempo? Não se preocupe! A solução completa está disponível em [GitHub](https://github.com/Azure-Samples/documentdb-dotnet-core-getting-started). Avance para a [secção Obter a solução completa](#GetSolution) para instruções rápidas.
 
 De seguida, utiliza os botões de voto na parte superior ou inferior desta página para enviar os seus comentários. Se preferir que entremos diretamente em contacto consigo, não hesite em indicar o seu endereço de e-mail nos seus comentários.
 
@@ -77,7 +77,7 @@ Criemos uma conta DocumentDB. Se já tiver uma conta que pretende utilizar, pode
 7. Nos resultados, localize **Microsoft.Azure.DocumentDB.Core** e clique em **Instalar**.
    O ID de pacote da biblioteca de cliente do DocumentDB é [Microsoft.Azure.DocumentDB.Core](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core)
 
-Ótimo! Agora que concluímos a configuração, comecemos a escrever certos códigos. Pode encontrar um projeto de código completo deste tutorial em [GitHub](https://github.com/arramac/documentdb-dotnet-core-getting-started).
+Ótimo! Agora que concluímos a configuração, comecemos a escrever certos códigos. Pode encontrar um projeto de código completo deste tutorial em [GitHub](https://github.com/Azure-Samples/documentdb-dotnet-core-getting-started).
 
 ## <a name="a-idconnectastep-3-connect-to-a-documentdb-account"></a><a id="Connect"></a>Passo 3: Ligar a uma conta do DocumentDB
 Primeiro, adicione estas referências ao início da sua aplicação C#, no ficheiro Program.cs:
@@ -173,32 +173,6 @@ Copie e cole o método **WriteToConsoleAndPromptToContinue** por baixo do métod
 
 Pode criar a sua [base de dados](documentdb-resources.md#databases) do DocumentDB utilizando o método [CreateDatabaseAsync](https://msdn.microsoft.com/library/microsoft.azure.documents.client.documentclient.createdatabaseasync.aspx) da classe **DocumentClient**. Uma base de dados é o contentor lógico do armazenamento de documentos JSON particionado em coleções.
 
-Copie e cole o método **CreateDatabaseIfNotExists** por baixo do método **WriteToConsoleAndPromptToContinue**.
-
-    // ADD THIS PART TO YOUR CODE
-    private async Task CreateDatabaseIfNotExists(string databaseName)
-    {
-            // Check to verify a database with the id=FamilyDB does not exist
-            try
-            {
-                    await this.client.ReadDatabaseAsync(UriFactory.CreateDatabaseUri(databaseName));
-                    this.WriteToConsoleAndPromptToContinue("Found {0}", databaseName);
-            }
-            catch (DocumentClientException de)
-            {
-                    // If the database does not exist, create a new database
-                    if (de.StatusCode == HttpStatusCode.NotFound)
-                    {
-                            await this.client.CreateDatabaseAsync(new Database { Id = databaseName });
-                            this.WriteToConsoleAndPromptToContinue("Created {0}", databaseName);
-                    }
-                    else
-                    {
-                            throw;
-                    }
-            }
-    }
-
 Copie e cole o seguinte código no seu método **GetStartedDemo**, por baixo da criação de cliente. Esta ação irá criar uma base de dados designada *FamilyDB*.
 
     private async Task GetStartedDemo()
@@ -206,7 +180,7 @@ Copie e cole o seguinte código no seu método **GetStartedDemo**, por baixo da 
         this.client = new DocumentClient(new Uri(EndpointUri), PrimaryKey);
 
         // ADD THIS PART TO YOUR CODE
-        await this.CreateDatabaseIfNotExists("FamilyDB_oa");
+        await this.client.CreateDatabaseIfNotExistsAsync(new Database { Id = "FamilyDB_oa" });
 
 Prima **F5** para executar a sua aplicação.
 
@@ -219,42 +193,6 @@ Parabéns! Criou uma base de dados DocumentDB com êxito.
 > 
 
 Pode criar uma [coleção](documentdb-resources.md#collections) utilizando o método [CreateDocumentCollectionAsync](https://msdn.microsoft.com/library/microsoft.azure.documents.client.documentclient.createdocumentcollectionasync.aspx) da classe **DocumentClient**. Uma coleção é um contentor de documentos JSON e a lógica da aplicação associada JavaScript.
-
-Copie e cole o método **CreateDocumentCollectionIfNotExists** por baixo do seu método **CreateDatabaseIfNotExists**.
-
-    // ADD THIS PART TO YOUR CODE
-    private async Task CreateDocumentCollectionIfNotExists(string databaseName, string collectionName)
-    {
-        try
-        {
-            await this.client.ReadDocumentCollectionAsync(UriFactory.CreateDocumentCollectionUri(databaseName, collectionName));
-            this.WriteToConsoleAndPromptToContinue("Found {0}", collectionName);
-        }
-        catch (DocumentClientException de)
-        {
-            // If the document collection does not exist, create a new collection
-            if (de.StatusCode == HttpStatusCode.NotFound)
-            {
-                DocumentCollection collectionInfo = new DocumentCollection();
-                collectionInfo.Id = collectionName;
-
-                // Configure collections for maximum query flexibility including string range queries.
-                collectionInfo.IndexingPolicy = new IndexingPolicy(new RangeIndex(DataType.String) { Precision = -1 });
-
-                // Here we create a collection with 400 RU/s.
-                await this.client.CreateDocumentCollectionAsync(
-                    UriFactory.CreateDatabaseUri(databaseName),
-                    collectionInfo,
-                    new RequestOptions { OfferThroughput = 400 });
-
-                this.WriteToConsoleAndPromptToContinue("Created {0}", collectionName);
-            }
-            else
-            {
-                throw;
-            }
-        }
-    }
 
 Copie e cole o seguinte código no seu método **GetStartedDemo**, por baixo da criação da base de dados. Desta forma, é criada uma coleção de documentos com o nome *FamilyCollection_oa*.
 
@@ -604,8 +542,8 @@ Parabéns! Concluiu este tutorial NoSQL e a sua aplicação de consola C# está 
 Para criar a solução GetStarted que contém todos os exemplos deste artigo, deverá ter o seguinte:
 
 * Uma conta ativa do Azure. Se não tiver uma, pode inscrever-se numa [conta gratuita](https://azure.microsoft.com/free/).
-* Uma [conta DocumentDB][documentdb-criar-conta].
-* A solução [GetStarted](https://github.com/arramac/documentdb-dotnet-core-getting-started) está disponível no GitHub.
+* Uma [conta do DocumentDB][documentdb-create-account].
+* A solução [GetStarted](https://github.com/Azure-Samples/documentdb-dotnet-core-getting-started) está disponível no GitHub.
 
 Para restaurar as referências ao SDK do DocumentDB para .NET Core no Visual Studio, clique com o botão direito do rato na solução **GetStarted**, no Explorador de Soluções, e clique em **Ativar Restauro do Pacote NuGet**. Em seguida, no ficheiro Program.cs, atualize os valores EndpointUrl e AuthorizationKey, conforme descrito em [Ligar a uma conta do DocumentDB](#Connect).
 
@@ -616,12 +554,12 @@ Para restaurar as referências ao SDK do DocumentDB para .NET Core no Visual Stu
 * Execute consultas no nosso conjunto de dados de exemplo no [Query Playground](https://www.documentdb.com/sql/demo).
 * Saiba mais sobre o modelo de programação na secção Desenvolver da [página de documentação do DocumentDB](https://azure.microsoft.com/documentation/services/documentdb/).
 
-[documentdb-criar-conta]: documentdb-create-account.md
-[documentdb-gerir]: documentdb-manage.md
-[chaves]: media/documentdb-get-started/nosql-tutorial-keys.png
+[documentdb-create-account]: documentdb-create-account.md
+[documentdb-manage]: documentdb-manage.md
+[keys]: media/documentdb-get-started/nosql-tutorial-keys.png
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

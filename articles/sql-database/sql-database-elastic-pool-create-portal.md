@@ -1,6 +1,6 @@
 ---
 title: "Criar um novo conjunto elástico com o portal do Azure | Microsoft Docs"
-description: "Como adicionar um conjunto de bases de dados elásticas dimensionável à sua configuração de base de dados SQL para uma administração e partilha de recursos mais fácil entre muitas bases de dados."
+description: "Como adicionar um conjunto elástico dimensionável à sua configuração de base de dados SQL para uma administração e partilha de recursos mais fácil entre muitas bases de dados."
 keywords: "base de dados dimensionável, configuração de base de dados"
 services: sql-database
 documentationcenter: 
@@ -9,20 +9,20 @@ manager: jhubbard
 editor: 
 ms.assetid: bf12594b-d258-40e6-a9fc-d8a8710c2d65
 ms.service: sql-database
-ms.custom: sharded databases pool
+ms.custom: multiple databases
 ms.devlang: NA
 ms.date: 11/17/2016
 ms.author: ninarn
 ms.workload: data-management
-ms.topic: hero-article
+ms.topic: get-started-article
 ms.tgt_pltfrm: NA
 translationtype: Human Translation
-ms.sourcegitcommit: 1a0b8609acd99ec188f92a32ed4cb44a68edc3b2
-ms.openlocfilehash: 54deca0518d82de59a58e02fc38693179c486b64
+ms.sourcegitcommit: 145cdc5b686692b44d2c3593a128689a56812610
+ms.openlocfilehash: 230a203cca2eaab197236557482cd4cedcfb9c53
 
 
 ---
-# <a name="create-a-new-elastic-database-pool-with-the-azure-portal"></a>Criar um novo conjunto de bases de dados elásticas com o portal do Azure
+# <a name="create-a-new-elastic-pool-with-the-azure-portal"></a>Criar um novo conjunto elástico com o portal do Azure
 > [!div class="op_single_selector"]
 > * [Portal do Azure](sql-database-elastic-pool-create-portal.md)
 > * [PowerShell](sql-database-elastic-pool-create-powershell.md)
@@ -31,7 +31,7 @@ ms.openlocfilehash: 54deca0518d82de59a58e02fc38693179c486b64
 
 Este artigo mostra como criar um [conjunto elástico](sql-database-elastic-pool.md) dimensionável com o [portal do Azure](https://portal.azure.com/). Existem duas formas de criar um conjunto. Pode fazê-lo a partir do zero se souber qual é a configuração de conjunto que pretende ou começar com uma recomendação do serviço. A Base de Dados SQL é dotada de inteligência incorporada que recomenda uma configuração de conjunto se for mais rentável para si, com base na telemetria de utilização passada, para as suas bases de dados.
 
-Pode adicionar vários conjuntos a um servidor, mas não pode adicionar bases de dados de diferentes servidores ao mesmo conjunto. Para criar um conjunto, é necessário, pelo menos, uma base de dados num servidor V12. Se não tiver uma, consulte o artigo [Criar a primeira base de dados SQL do Azure](sql-database-get-started.md). Pode criar um conjunto com apenas uma base de dados, mas os conjuntos só são rentáveis com várias bases de dados. Consulte o artigo [Considerações sobre preço e desempenho para um conjunto de bases de dados elásticas](sql-database-elastic-pool-guidance.md).
+Pode adicionar vários conjuntos a um servidor, mas não pode adicionar bases de dados de diferentes servidores ao mesmo conjunto. Para criar um conjunto, é necessário, pelo menos, uma base de dados num servidor V12. Se não tiver uma, consulte o artigo [Criar a primeira base de dados SQL do Azure](sql-database-get-started.md). Pode criar um conjunto com apenas uma base de dados, mas os conjuntos só são rentáveis com várias bases de dados. Consulte [Price and performance considerations for an elastic pool (Considerações sobre preço e desempenho de um conjunto elástico)](sql-database-elastic-pool-guidance.md).
 
 > [!NOTE]
 > Os conjuntos elásticos estão em disponibilidade geral (GA) em todas as regiões do Azure, exceto na Índia Ocidental, onde se encontra, de momento, em pré-visualização.  A GA dos conjuntos elásticos nesta região vai ocorrer assim que possível.
@@ -58,7 +58,7 @@ Este artigo mostra como criar um novo conjunto a partir de um painel do **servid
 
     ![conjunto recomendado](./media/sql-database-elastic-pool-create-portal/recommended-pool.png)
 
-3. O painel **Conjunto de bases de dados elásticas** é apresentado e é aqui que irá especificar as configurações para o conjunto. Se clicou em **Novo conjunto** no passo anterior, o escalão de preço será **Standard** por predefinição e ainda não haverão bases de dados selecionadas. Pode criar um conjunto vazio ou especificar um conjunto de bases de dados existente a partir desse servidor para mover para o conjunto. Se estiver a criar um conjunto recomendado, o escalão de preço recomendado, as definições de desempenho e a lista de bases de dados serão pré-povoados, mas ainda poderá alterá-los.
+3. O painel **conjunto elástico** é apresentado e é aqui que irá especificar as configurações para o conjunto. Se clicou em **Novo conjunto** no passo anterior, o escalão de preço será **Standard** por predefinição e ainda não haverão bases de dados selecionadas. Pode criar um conjunto vazio ou especificar um conjunto de bases de dados existente a partir desse servidor para mover para o conjunto. Se estiver a criar um conjunto recomendado, o escalão de preço recomendado, as definições de desempenho e a lista de bases de dados serão pré-povoados, mas ainda poderá alterá-los.
 
     ![Configurar o conjunto elástico](./media/sql-database-elastic-pool-create-portal/configure-elastic-pool.png)
 
@@ -89,7 +89,7 @@ Depois de definir o escalão de preço, clique em Configurar conjunto, onde pode
 
     Se as bases de dados com que está a trabalhar tiverem telemetria de histórico de utilização suficiente, o gráfico **Utilização de GB e eDTU estimada** e o gráfico de barras **Utilização de eDTU real** são atualizados para o ajudar a tomar decisões de configuração. Além disso, o serviço poderá apresentar uma mensagem de recomendação para o ajudar a dimensionar corretamente o conjunto. Consulte a secção [Recomendações Dinâmicas](#dynamic-recommendations).
 
-3. Utilize os controlos na página **Configurar conjunto** para explorar as definições e configurar o conjunto. Consulte [Limites dos conjuntos elásticos](sql-database-elastic-pool.md#edtu-and-storage-limits-for-elastic-pools-and-elastic-databases) para obter mais detalhes sobre os limites de cada escalão de serviço e consulte [Considerações sobre preço e desempenho para conjuntos de bases de dados elásticas](sql-database-elastic-pool-guidance.md) para obter instruções detalhadas sobre como dimensionar corretamente um conjunto. Para obter mais detalhes sobre as definições do conjunto, consulte [Propriedades do conjunto elástico](sql-database-elastic-pool.md#elastic-pool-and-elastic-database-properties).
+3. Utilize os controlos na página **Configurar conjunto** para explorar as definições e configurar o conjunto. Consulte [Limites dos conjuntos elásticos](sql-database-elastic-pool.md#edtu-and-storage-limits-for-elastic-pools-and-elastic-databases) para obter mais detalhes sobre os limites de cada escalão de serviço e consulte [Considerações sobre preço e desempenho para conjuntos elásticos](sql-database-elastic-pool-guidance.md) para obter instruções detalhadas sobre como dimensionar corretamente um conjunto. Para obter mais detalhes sobre as definições do conjunto, consulte [Propriedades do conjunto elástico](sql-database-elastic-pool.md#elastic-pool-and-elastic-database-properties).
 
     ![Configurar o Conjunto Elástico](./media/sql-database-elastic-pool-create-portal/configure-performance.png)
 
@@ -99,7 +99,7 @@ Depois de definir o escalão de preço, clique em Configurar conjunto, onde pode
 
 ## <a name="understand-pool-recommendations"></a>Compreender as recomendações de conjunto
 
-O serviço Base de Dados SQL avalia o histórico de utilização e recomenda um ou mais conjuntos quando é mais rentável do que utilizar bases de dados individuais. Cada recomendação está configurada com um subconjunto exclusivo das bases de dados do servidor que melhor se adequam ao conjunto.
+O serviço Base de Dados SQL avalia o histórico de utilização e recomenda um ou mais conjuntos quando é mais rentável do que utilizar bases de dados autónomas. Cada recomendação está configurada com um subconjunto exclusivo das bases de dados do servidor que melhor se adequam ao conjunto.
 
 ![conjunto recomendado](./media/sql-database-elastic-pool-create-portal/recommended-pool.png)  
 
@@ -110,9 +110,9 @@ A recomendação de conjunto é composta por:
 - O **número máximo de eDTUs** e o **número mínimo de eDTUs** por base de dados
 - A lista de bases de dados recomendadas para o conjunto
 
-O serviço tem em conta os últimos 30 dias de telemetria quando recomenda conjuntos. Para uma base de dados ser considerada candidata para um conjunto de bases de dados elásticas, tem de existir durante, pelo menos, 7 dias. As bases de dados que já estão num conjunto de bases de dados elásticas não são consideradas candidatas para recomendações de conjunto de bases de dados elásticas.
+O serviço tem em conta os últimos 30 dias de telemetria quando recomenda conjuntos. Para uma base de dados ser considerada candidata para um conjunto elástico, tem de existir durante, pelo menos, 7 dias. As bases de dados que já estão num conjunto elástico não são consideradas candidatas para recomendações de conjunto elástico.
 
-O serviço avalia as necessidades de recursos e a relação custo-eficácia da movimentação das bases de dados individuais em cada escalão de serviço para conjuntos do mesmo escalão. Por exemplo, todas as bases de dados Standard num servidor são avaliadas para determinar a respetiva adequação a um Conjunto Elástico Standard. Isto significa que o serviço não faz recomendações entre escalões, tal como mover uma base de dados Standard para um conjunto Premium.
+O serviço avalia as necessidades de recursos e a relação custo-eficácia da movimentação das bases de dados autónomas em cada escalão de serviço para conjuntos do mesmo escalão. Por exemplo, todas as bases de dados Standard num servidor são avaliadas para determinar a respetiva adequação a um Conjunto Elástico Standard. Isto significa que o serviço não faz recomendações entre escalões, tal como mover uma base de dados Standard para um conjunto Premium.
 
 ### <a name="dynamic-recommendations"></a>Recomendações dinâmicas
 
@@ -129,6 +129,6 @@ Depois de adicionar as bases de dados ao conjunto, as recomendações serão ger
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 
