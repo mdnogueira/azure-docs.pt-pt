@@ -12,11 +12,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/23/2016
+ms.date: 12/12/2016
 ms.author: dobett
 translationtype: Human Translation
-ms.sourcegitcommit: e223d0613cd48994315451da87e6b7066585bdb6
-ms.openlocfilehash: 42774f83dc4c53dc8f090acb922b5aae6e8b4bed
+ms.sourcegitcommit: f01a5e7ec081b1c989fc8784c845d6e639b1d73b
+ms.openlocfilehash: 92c5e8c50b281fe1dc7e296dcdf8a6822b187ce3
 
 
 ---
@@ -24,7 +24,8 @@ ms.openlocfilehash: 42774f83dc4c53dc8f090acb922b5aae6e8b4bed
 Bem-vindo ao IoT Hub do Azure. Este artigo fornece uma descrição geral do IoT Hub do Azure e descreve porque deve utilizar este serviço para implementar uma solução de Internet das Coisas (IoT). O IoT Hub do Azure é um serviço completamente gerido que permite comunicações bidirecionais fiáveis e seguras entre milhões de dispositivos IoT e uma solução de back-end. IoT Hub do Azure:
 
 * Oferece várias opções de comunicação dispositivo para a cloud e cloud para o dispositivo, incluindo mensagens unilaterais, transferência de ficheiros e métodos de pedido-resposta.
-* Disponibiliza um armazenamento consultável para metadados de dispositivos e informações de estado sincronizadas.
+* Fornece encaminhamento de mensagens declarativas incorporadas para outros serviços do Azure.
+* Disponibiliza uma loja consultável para metadados de dispositivos e informações de estado sincronizadas.
 * Permite comunicações seguras e controlo de acesso através de chaves de segurança por dispositivo ou de certificados X.509.
 * Fornece monitorização exaustiva da conectividade do dispositivo e dos eventos de gestão de identidade do dispositivo.
 * Inclui bibliotecas de dispositivo para os idiomas e plataformas mais populares.
@@ -58,6 +59,7 @@ Para além de um avançado conjunto de opções de comunicação [dispositivo pa
 
 * **Dispositivos duplos**. Ao utilizar [Dispositivos duplos][lnk-twins], pode armazenar, sincronizar e consultar metadados e informações de estado de dispositivos. Os dispositivos duplos são documentos JSON que armazenam informações de estado dos dispositivos (metadados, configurações e condições). O Hub IoT cria um dispositivo duplo para cada dispositivo que ligar ao serviço. 
 * **Através da autenticação do dispositivo e da conectividade segura**. Pode aprovisionar cada dispositivo com a respetiva [chave de segurança][lnk-devguide-security], para que aqueles possam ligar ao Hub IoT. O [registo de identidade do Hub IoT][lnk-devguide-identityregistry] armazena identidades e chaves dos dispositivos numa solução. Um back-end da solução pode adicionar dispositivos individuais para permitir ou recusar listas, possibilitando o controlo total do acesso dos dispositivos.
+* **Encaminhar mensagens do dispositivo para a cloud para serviços do Azure com base nas regras declarativas**. O Hub IoT permite-lhe definir as rotas das mensagens com base nas regras das mensagens, para controlar onde o seu hub envia mensagens do dispositivo para a cloud. As regras das mensagens não necessitam de escrever qualquer código e podem substituir os despachantes da mensagem de pós-ingestão personalizada.
 * **Monitorização de operações de conectividade do dispositivo**. Pode receber registos detalhados de operações sobre a gestão de identidade do dispositivo e eventos de conectividade do dispositivo. Esta funcionalidade de monitorização permite à sua solução de IoT detetar problemas de conectividade, como dispositivos que se tentam ligar com credenciais incorretas, enviar mensagens com uma frequência excessiva ou rejeitar todas as mensagens da nuvem para o dispositivo.
 * **Um vasto conjunto de bibliotecas do dispositivo**. Os [Azure IoT Device SDKs][lnk-device-sdks] estão disponíveis e suportam vários idiomas e plataformas -- C para várias distribuições Linux, Windows e sistemas operativos em tempo real. Os SDKs do Azure IoT Device suportam ainda idiomas geridos, como o C#, Java e JavaScript.
 * **Protocolos e extensibilidade do IoT**. Se a solução não conseguir utilizar as bibliotecas do dispositivo, o IoT Hub expõe um protocolo público que permite aos dispositivos utilizarem de forma nativa os protocolos MQTT v3.1.1, HTTP 1.1 ou AMQP 1.0.  Pode ainda expandir o seu IoT Hub para que suporte protocolos personalizados ao:
@@ -89,7 +91,9 @@ A indústria móvel utilizou a norma de comunicação auxiliada a uma grande esc
 O Hub IoT é suportado ao longo do caminho de peering público do ExpressRoute.
 
 ## <a name="next-steps"></a>Passos seguintes
-Para saber como o Hub IoT do Azure permite a gestão de dispositivos baseada em normas para que possa gerir remotamente, configurar e atualizar os seus dispositivos, veja [Descrição geral da gestão de dispositivos com o Hub IoT][lnk-device-management].
+Para saber como enviar mensagens a partir de um dispositivo e recebê-las a partir do Hub IoT, bem como configurar rotas de mensagens para o seu hub IoT, consulte [Send and receive messages with IoT Hub (Enviar e receber mensagens do Hub IoT)][lnk-send-messages].
+
+Para saber como o Hub IoT permite a gestão de dispositivos baseada em normas para que possa gerir remotamente, configurar e atualizar os seus dispositivos, veja [Descrição geral da gestão de dispositivos com o Hub IoT][lnk-device-management].
 
 Para implementar aplicações de cliente em várias plataformas de hardware e sistemas operativos para dispositivos, pode utilizar os Azure IoT Device SDKs. Os SDKs do dispositivo incluem bibliotecas que facilitam o envio de telemetria para um Hub IoT e a receção de mensagens da cloud para o dispositivo. Quando utiliza os Device SDKs, pode escolher entre vários protocolos de rede para comunicar com o Hub IoT. Para saber mais, veja as [informações sobre os Device SDKs][lnk-device-sdks].
 
@@ -112,6 +116,7 @@ Para começar a escrever código e executar alguns exemplos, veja o tutorial [In
 [lnk-device-sdks]: https://github.com/Azure/azure-iot-sdks
 [lnk-refarch]: http://download.microsoft.com/download/A/4/D/A4DAD253-BC21-41D3-B9D9-87D2AE6F0719/Microsoft_Azure_IoT_Reference_Architecture.pdf
 [lnk-gateway-sdk]: https://github.com/Azure/azure-iot-gateway-sdk
+[lnk-send-messages]: iot-hub-devguide-messaging.md
 [lnk-device-management]: iot-hub-device-management-overview.md
 
 [lnk-twins]: iot-hub-devguide-device-twins.md
@@ -121,6 +126,7 @@ Para começar a escrever código e executar alguns exemplos, veja o tutorial [In
 [lnk-security-ground-up]: iot-hub-security-ground-up.md
 
 
-<!--HONumber=Dec16_HO1-->
+
+<!--HONumber=Dec16_HO2-->
 
 

@@ -13,11 +13,11 @@ ms.devlang: NA
 ms.topic: hero-article
 ms.tgt_pltfrm: NA
 ms.workload: powerbi
-ms.date: 10/04/2016
+ms.date: 12/19/2016
 ms.author: asaxton
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: b8748ffac2159661d9496b7033b510e6e584fe0f
+ms.sourcegitcommit: f1b3464526b99cad1beb8f7604887a4cc32b0706
+ms.openlocfilehash: a8d787acb4bc3f6f8a7cd408d6f5ac4313a2121f
 
 
 ---
@@ -70,7 +70,10 @@ Embora sejam apresentadas duas chaves, apenas é necessária uma de cada vez. A 
 Agora que tem uma instância do Power BI para a aplicação e as **Chaves de Acesso**, pode importar um relatório para a própria aplicação. Antes de saber como importar um relatório, a secção a seguir descreve como criar conjuntos de dados do Power BI e relatórios para incorporar numa aplicação.
 
 ## <a name="create-power-bi-datasets-and-reports-to-embed-into-an-app"></a>Criar conjuntos de dados e relatórios do Power BI para incorporar numa aplicação
-Agora que já criou uma instância do Power BI para a aplicação e tem **chaves de acesso**, terá de criar os conjuntos de dados do Power BI e os relatórios que pretende incorporar. Conjuntos de dados e relatórios podem ser criados utilizando o **Power BI Desktop**. Pode transferir o [Power BI Desktop gratuitamente](https://powerbi.microsoft.com/documentation/powerbi-desktop-get-the-desktop/). Em alternativa, para começar rapidamente, pode transferir o [PBIX de exemplo de análise de revenda](http://go.microsoft.com/fwlink/?LinkID=780547). Para saber mais sobre como utilizar **Power BI Desktop**, consulte o artigo [Introdução ao Power BI Desktop](https://powerbi.microsoft.com/en-us/guided-learning/powerbi-learning-0-2-get-started-power-bi-desktop).
+Agora que já criou uma instância do Power BI para a aplicação e tem **chaves de acesso**, terá de criar os conjuntos de dados do Power BI e os relatórios que pretende incorporar. Conjuntos de dados e relatórios podem ser criados utilizando o **Power BI Desktop**. Pode transferir o [Power BI Desktop gratuitamente](https://go.microsoft.com/fwlink/?LinkId=521662). Em alternativa, para começar rapidamente, pode transferir o [PBIX de exemplo de análise de revenda](http://go.microsoft.com/fwlink/?LinkID=780547).
+
+> [!NOTE]
+> Para saber mais sobre como utilizar **Power BI Desktop**, consulte o artigo [Introdução ao Power BI Desktop](https://powerbi.microsoft.com/en-us/guided-learning/powerbi-learning-0-2-get-started-power-bi-desktop).
 
 Com o **Power BI Desktop** liga-se à fonte dos dados através da importação de uma cópia dos dados no **Power BI Desktop** ou ligando diretamente para a fonte de dados utilizando **DirectQuery**.
 
@@ -86,14 +89,11 @@ Depois de guardar o trabalho no **Power BI Desktop**, é criado um ficheiro PBIX
 
 > [!NOTE]
 > O **Power BI Embedded ** inclui APIs adicionais para alterar o servidor e a base de dados para a qual o conjunto de dados está a apontar, e para definir uma credencial de conta de serviço que o conjunto de dados utilizará para ligar à base de dados. Consulte o artigo [Post SetAllConnections](https://msdn.microsoft.com/library/mt711505.aspx) e [Patch Gateway Datasource](https://msdn.microsoft.com/library/mt711498.aspx) (Correção de fonte de dados do Gateway).
-> 
-> 
 
 ## <a name="next-steps"></a>Passos Seguintes
 Nos passos anteriores, criou uma coleção de áreas de trabalho e o primeiro relatório e conjunto de dados. Agora está na altura de aprender a escrever código para **Power BI Embedded**. Para o ajudar a começar, criámos uma aplicação Web de exemplo: [Introdução com exemplo](power-bi-embedded-get-started-sample.md). O exemplo mostra-lhe como:
 
 * Aprovisionar conteúdo
-  
   * Criar uma área de trabalho
   * Importar um ficheiro PBIX
   * Atualizar as cadeias de ligação e definir credenciais para os conjuntos de dados.
@@ -104,9 +104,11 @@ Nos passos anteriores, criou uma coleção de áreas de trabalho e o primeiro re
 * [Autenticação e autorização com o Power BI Embedded](power-bi-embedded-app-token-flow.md)
 * [Power BI Desktop](https://powerbi.microsoft.com/documentation/powerbi-desktop-get-the-desktop/)
 
+Mais perguntas? [Tente a Comunidade do Power BI](http://community.powerbi.com/)
 
 
 
-<!--HONumber=Nov16_HO2-->
+
+<!--HONumber=Dec16_HO5-->
 
 

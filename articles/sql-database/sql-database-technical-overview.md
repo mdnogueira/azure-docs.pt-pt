@@ -11,34 +11,34 @@ ms.assetid: c561f600-a292-4e3b-b1d4-8ab89b81db48
 ms.service: sql-database
 ms.custom: overview
 ms.devlang: na
-ms.topic: get-started-article
+ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: data-management
 ms.date: 11/08/2016
 ms.author: shkurhek
 translationtype: Human Translation
-ms.sourcegitcommit: 1c603d37735bbbfdfaaf4a191e2ad1ce6ff5b2b7
-ms.openlocfilehash: 67f3e923680a9a2f399c0839d2ec11ef4615da00
+ms.sourcegitcommit: 3ba16154857f8e7b59a1013b736d6131a4161185
+ms.openlocfilehash: 2d0792046bf55d691df21e26f2df23235318665c
 
 
 ---
 # <a name="what-is-sql-database-introduction-to-sql-database"></a>O que é a Base de Dados SQL? Introdução à Base de Dados SQL
 A Base de Dados SQL é um serviço de base de dados relacional na nuvem baseado no motor Microsoft SQL Server líder de mercado, com capacidades fundamentais. A Base de Dados SQL proporciona um desempenho previsível, escalabilidade sem períodos de indisponibilidade, continuidade do negócio e proteção de dados — tudo quase sem administração. Pode concentrar-se no desenvolvimento rápido de aplicações e acelerar o seu tempo de colocação no mercado, em vez de gerir máquinas virtuais e infraestruturas. Como se baseia no motor do [SQL Server](https://msdn.microsoft.com/library/bb545450.aspx), a Base de Dados SQL suporta as ferramentas, bibliotecas e APIs existentes do SQL Server, o que facilita a transição e a expansão para a nuvem.
 
-Este artigo é uma introdução aos conceitos e às funcionalidades essenciais da Base de Dados SQL relacionados com desempenho, escalabilidade e capacidade de gestão, com ligações para explorar detalhes. Se estiver pronto para começar, pode [Criar a sua primeira base de dados SQL](sql-database-get-started.md) ou [Criar um conjunto de bases de dados elásticas](sql-database-elastic-pool-create-portal.md) em minutos. Se pretender uma descrição mais aprofundada, veja este vídeo de 30 minutos.
+Este artigo é uma introdução aos conceitos e às funcionalidades essenciais da Base de Dados SQL relacionados com desempenho, escalabilidade e capacidade de gestão, com ligações para explorar detalhes. Se estiver pronto para começar, pode [Criar a sua primeira base de dados SQL](sql-database-get-started.md) ou [Criar um conjunto elástico](sql-database-elastic-pool-create-portal.md) em minutos. Se pretender uma descrição mais aprofundada, veja este vídeo de 30 minutos.
 
-> [!VIDEO https://channel9.msdn.com/Events/Microsoft-Azure/AzureCon-2015/ACON326/player]
+> [!VIDEO https://channel9.msdn.com/Blogs/Windows-Azure/Azure-SQL-Database-create-DBs-in-seconds/player]
 > 
 > 
 
 ## <a name="adjust-performance-and-scale-without-downtime"></a>Ajuste o desempenho e dimensione a capacidade sem períodos de indisponibilidade
 As bases de dados SQL estão disponíveis nos *escalões de serviço* Básico, Standard e Premium. Cada escalão de serviço oferece [diferentes níveis de desempenho e capacidades](sql-database-service-tiers.md) para suportar desde cargas de trabalho leves até pesadas. Pode criar a primeira aplicação numa base de dados pequena por alguns euros por mês e, em seguida, [alterar o escalão de serviço](sql-database-scale-up.md) manualmente ou programaticamente em qualquer altura à medida que a sua aplicação se torna viral em todo o mundo, sem períodos de indisponibilidade para a sua aplicação ou para os seus clientes.
 
-Para muitas empresas e aplicações, ser capaz de criar bases de dados e aumentar e reduzir o desempenho de uma base de dados individual a pedido é suficiente, sobretudo se os padrões de utilização forem relativamente previsíveis. No entanto, se tiver padrões de utilização imprevisíveis, pode tornar-se difícil gerir os custos e o seu modelo de negócio.
+Para muitas empresas e aplicações, ser capaz de criar bases de dados únicas e aumentar e reduzir o desempenho a pedido é suficiente, sobretudo se os padrões de utilização forem relativamente previsíveis. No entanto, se tiver padrões de utilização imprevisíveis, pode tornar-se difícil gerir os custos e o seu modelo de negócio.
 
 Os [conjuntos elásticos](sql-database-elastic-pool.md) na Base de Dados SQL resolvem este problema. O conceito é simples. O utilizador aloca o desempenho a um conjunto e paga pelo desempenho coletivo do conjunto em vez do desempenho de bases de dados individuais. Não precisa de aumentar ou reduzir o desempenho da base de dados. As bases de dados no conjunto, denominadas *bases de dados elásticas*, aumentam e reduzem verticalmente de forma automática para responder à procura. As bases de dados elásticas consomem, mas não excedem os limites do conjunto, pelo que os seus custos mantêm-se previsíveis, mesmo que a utilização das bases de dados não. Além disso, pode [adicionar e remover bases de dados do conjunto](sql-database-elastic-pool-manage-portal.md), dimensionando a sua aplicação de um punhado de bases de dados para milhares, tudo dentro de um orçamento controlado por si. Para saber mais sobre os padrões de estrutura de aplicações SaaS que utilizam conjuntos elásticos, consulte o artigo [Padrões de Estrutura de Aplicações SaaS Multi-inquilino com a Base de Dados SQL do Azure](sql-database-design-patterns-multi-tenancy-saas-applications.md).
 
-Seja qual for a sua opção —individual ou elástica — não fica preso a ela. Pode misturar bases de dados individuais com conjuntos de bases de dados elásticas e alterar os escalões de serviço de bases de dados individuais e conjuntos rapidamente e facilmente adaptá-los à sua situação. Além disso, com a capacidade e a o alcance do Azure, pode combinar outros serviços do Azure com a Base de Dados SQL para satisfazer as necessidades de design da sua aplicação única, aumentar as eficiências de custos e recursos e conseguir novas oportunidades de negócio.
+Seja qual for a sua opção —individual ou elástica — não fica preso a ela. Pode misturar bases de dados individuais com conjuntos elásticos e alterar os escalões de serviço de bases de dados individuais e conjuntos rapidamente e facilmente adaptá-los à sua situação. Além disso, com a capacidade e a o alcance do Azure, pode combinar outros serviços do Azure com a Base de Dados SQL para satisfazer as necessidades de design da sua aplicação única, aumentar as eficiências de custos e recursos e conseguir novas oportunidades de negócio.
 
 Mas como pode comparar o desempenho relativo de bases de dados e conjuntos de bases de dados? Como pode saber qual é o ponto de paragem certo quando aumenta ou reduz verticalmente o desempenho? A resposta situa-se na monitorização de desempenho incorporado e nas ferramentas de alerta, combinadas com as classificações de desempenho com base em Unidades de Transação de Base de dados (DTUs) para bases de dados únicas e DTUs elásticas (eDTUs) para bases de dados elásticas e conjuntos de base de dados, que lhe permitem avaliar rapidamente o impacto de dimensionamento para cima ou para baixo com base no atual ou nas necessidades de desempenho do projeto. Consulte o artigo [Opções e desempenho da Base de Dados SQL: compreender o que está disponível em casa escalão de serviço](sql-database-service-tiers.md) para obter mais detalhes.
 
@@ -55,7 +55,7 @@ O SQL Server tem um tradição de segurança de dados sólida, que a Base de Dad
 ## <a name="next-steps"></a>Passos seguintes
 Agora que já leu uma introdução à Base de Dados SQL e respondeu à pergunta "O que é a Base de Dados SQL?", está pronto para:
 
-* Consultar a [página de preços](https://azure.microsoft.com/pricing/details/sql-database/) para ver comparações de preços e calculadoras de bases de dados individuais e bases de dados elásticas.
+* Consultar a [página de preços](https://azure.microsoft.com/pricing/details/sql-database/) para ver comparações de preços e calculadoras de bases de dados individuais e conjuntos elásticos.
 * Saber mais sobre [conjuntos elásticos](sql-database-elastic-pool.md).
 * Começar por [criar a sua primeira base de dados](sql-database-get-started.md).
 * [Ligar e consultar com SSMS](sql-database-connect-query-ssms.md)
@@ -63,6 +63,6 @@ Agora que já leu uma introdução à Base de Dados SQL e respondeu à pergunta 
 
 
 
-<!--HONumber=Nov16_HO5-->
+<!--HONumber=Dec16_HO3-->
 
 

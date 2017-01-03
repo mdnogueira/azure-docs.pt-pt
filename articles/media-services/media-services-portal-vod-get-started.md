@@ -15,8 +15,8 @@ ms.topic: get-started-article
 ms.date: 08/30/2016
 ms.author: juliako
 translationtype: Human Translation
-ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
-ms.openlocfilehash: 473ca94a4b081aee69fa06718790acd61a8b51b3
+ms.sourcegitcommit: ff663f40507547ba561053b5c9a7a8ce93fbf213
+ms.openlocfilehash: 70071f8d1b70d062aec1ea4fd35b8acb3512bab6
 
 
 ---
@@ -80,9 +80,9 @@ Necessita do nome da conta e das informações da chave primária para aceder pr
     ![Chaves dos Media Services](./media/media-services-portal-vod-get-started/media-services-keys.png)
 
 ## <a name="configure-streaming-endpoints"></a>Configurar os pontos finais de transmissão em fluxo
-Ao trabalhar com os Azure Media Services, uma das situações mais comuns é a entrega de vídeo através de transmissão em fluxo de velocidade de transmissão adaptável para os seus clientes. Os Media Services suportam as seguintes tecnologias de transmissão em fluxo de velocidade de transmissão adaptável: HTTP Live Streaming (HLS), transmissão em Fluxo Uniforme, MPEG DASH e HDS (para detentores de licença do Adobe PrimeTime/acesso apenas).
+Ao trabalhar com os Azure Media Services, uma das situações mais comuns é a entrega de vídeo através de transmissão em fluxo de velocidade de transmissão adaptável para os seus clientes. Os Serviços de Multimédia suportam as seguintes tecnologias de transmissão em fluxo de velocidade de transmissão adaptável: HTTP Live Streaming (HLS), Smooth Streaming, MPEG DASH.
 
-Os Media Services fornecem um empacotamento dinâmico, permitindo a entrega dos seus conteúdos codificados em MP4 de velocidade de transmissão adaptável em formatos de transmissão em fluxo suportados pelos Media Services (MPEG DASH, HLS, Transmissão em Fluxo Uniforme, HDS) just-in-time, sem ter de voltar a armazenar versões pré-empacotadas de cada um destes formatos de transmissão em fluxo.
+Os Serviços de Multimédia fornecem um empacotamento dinâmico, permitindo a entrega dos seus conteúdos codificados em MP4 de velocidade de transmissão adaptável em formatos de transmissão em fluxo suportados pelos Serviços de Multimédia (MPEG DASH, HLS, Smooth Streaming) just-in-time, sem ter de voltar a armazenar versões pré-empacotadas de cada um destes formatos de transmissão em fluxo.
 
 Para tirar partido do empacotamento dinâmico, tem de fazer o seguinte:
 
@@ -128,9 +128,9 @@ Para transmitir vídeos em fluxo através dos Serviços de Multimédia do Azure,
 Após a conclusão do carregamento, verá o novo elemento listado na janela **Elementos**. 
 
 ## <a name="encode-assets"></a>Codificar elementos
-Ao trabalhar com os Azure Media Services, uma das situações mais comuns é a distribuição de transmissão em fluxo de velocidade de transmissão adaptável para os seus clientes. Os Media Services suportam as seguintes tecnologias de transmissão em fluxo de velocidade de transmissão adaptável: HTTP Live Streaming (HLS), transmissão em Fluxo Uniforme, MPEG DASH e HDS (para detentores de licença do Adobe PrimeTime/acesso apenas). Para preparar os seus vídeos para transmissão em fluxo de velocidade de transmissão adaptável, terá de codificar o seu vídeo de origem para ficheiros de múltiplas velocidades de transmissão. Deve utilizar o **Codificador de Multimédia Standard** para codificar seus vídeos.  
+Ao trabalhar com os Azure Media Services, uma das situações mais comuns é a distribuição de transmissão em fluxo de velocidade de transmissão adaptável para os seus clientes. Os Serviços de Multimédia suportam as seguintes tecnologias de transmissão em fluxo de velocidade de transmissão adaptável: HTTP Live Streaming (HLS), Smooth Streaming, MPEG DASH. Para preparar os seus vídeos para transmissão em fluxo de velocidade de transmissão adaptável, terá de codificar o seu vídeo de origem para ficheiros de múltiplas velocidades de transmissão. Deve utilizar o **Codificador de Multimédia Standard** para codificar seus vídeos.  
 
-Os Serviços de Multimédia também fornecem um empacotamento dinâmico, permitindo a entrega dos conteúdos codificados por Transmissão em Fluxo Uniforme ou MP4s de velocidade de transmissão adaptável nos formatos de transmissão em fluxo MPEG DASH, HLS, Smooth Streaming, ou HDS, sem ter de voltar a criar o pacote para estes formatos de transmissão em fluxo. Com o empacotamento dinâmico, só tem de armazenar e pagar os ficheiros num único formato de armazenamento, e os Media Services compilam e disponibilizam a resposta adequada com base nos pedidos de um cliente.
+Os Serviços de Multimédia também fornecem um empacotamento dinâmico, permitindo a entrega dos conteúdos codificados por Transmissão em Fluxo Uniforme ou MP4s de velocidade de transmissão múltipla nos formatos de transmissão em fluxo MPEG DASH, HLS, Smooth Streaming, sem ter de voltar a criar o pacote para estes formatos de transmissão em fluxo. Com o empacotamento dinâmico, só tem de armazenar e pagar os ficheiros num único formato de armazenamento, e os Media Services compilam e disponibilizam a resposta adequada com base nos pedidos de um cliente.
 
 Para tirar partido do empacotamento dinâmico, tem de fazer o seguinte:
 
@@ -221,6 +221,6 @@ Rever os percursos de aprendizagem dos Serviços de Multimédia
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

@@ -1,13 +1,15 @@
 ---
 layout: LandingPage
+description: "Saiba como executar análises de IoT na cloud com o processamento de eventos completamente gerido. Analise dados em tempo real de aplicações, sensores, dispositivos e mais."
 translationtype: Human Translation
-ms.sourcegitcommit: 3752a677351518195773a86c3824078a5aff6d03
-ms.openlocfilehash: c75352e633f069597e7bc62650205f3c389b6909
+ms.sourcegitcommit: 5fbbb4ad21bbc4c4206d051e9585cd5d9888a545
+ms.openlocfilehash: 7d19b3b972bf5fdd9545f87f48eb924da8333ff7
 
 ---
-#<a name="stream-analytics-documentation"></a>Documentação do Stream Analytics
 
-O Azure Stream Analytics é um motor de processamento de eventos totalmente gerido em tempo real, que o ajuda a desbloquear os conhecimentos aprofundados sobre os dados.  O Stream Analytics facilita a configuração das computações analíticas em tempo real da transmissão de dados a partir de dispositivos, sensores, Web sites, redes sociais, aplicações, sistema de infraestrutura e muito mais.
+# <a name="stream-analytics-documentation"></a>Documentação do Stream Analytics
+
+Saiba como executar análises de Internet das Coisas (IoT) na cloud com o Stream Analytics, um motor processamento de eventos completamente gerido. Tutoriais e outra documentação mostram-lhe como analisar dados em tempo real a partir de aplicações, sensores, dispositivos, redes sociais e mais. 
 
 <ul class="panelContent cardsFTitle">
      <li>
@@ -122,66 +124,43 @@ O Azure Stream Analytics é um motor de processamento de eventos totalmente geri
 
 ---
 
-## <a name="reference"></a>Referência
-
+<h2>Referência</h2>
 <ul class="panelContent cardsW">
     <li>
-        <a href="/powershell/azureps-cmdlets-docs">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
-                    <div class="cardText">
-                        <h3>PowerShell</h3>
-                        <p>Referência ao Azure PowerShell</p>
+                    <div class="Command-Line</h3>
+                        <p><a href="/powershell/resourcemanager/azurerm.streamanalytics/v2.3.0/azurerm.streamanalytics">PowerShell</a></p>
                     </div>
                 </div>
             </div>
         </div>
-        </a>
     </li>
     <li>
-        <a href="/dotnet/api">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
-                    <div class="cardText">
-                        <h3>.NET</h3>
-                        <p>Referência Gerida do .NET</p>
+                    <div class="Languages</h3>
+                        <p><a href="/dotnet/api/streamanalytics.tests.operationtests">.NET</a></p>
+                        <p><a href="https://msdn.microsoft.com/library/azure/dn834998">Linguagem da consulta</a></p>
                     </div>
                 </div>
             </div>
         </div>
-        </a>
     </li>
     <li>
-        <a href="https://msdn.microsoft.com/library/azure/dn834998">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
-                    <div class="cardText">
-                        <h3>Linguagem da Consulta</h3>
-                        <p>Referência da Linguagem de Consulta do Stream Analytics</p>
+                    <div class="REST</h3>
+                        <p><a href="/rest/api/streamanalytics">Referência da API REST</a></p>
                     </div>
                 </div>
             </div>
         </div>
-        </a>
     </li>
-    <li>
-        <a href="/rest/api/streamanalytics">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3>REST</h3>
-                        <p>API REST do Stream Analytics</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </a>
-    </li>
-</ul>   
+</ul>
 
 <div class="downloadHolder">
     <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/stream-analytics.pdf">
@@ -193,6 +172,6 @@ Transferir a Documentação do Stream Analytics </div>
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO5-->
 
 

@@ -11,11 +11,11 @@ ms.devlang: na
 ms.workload: search
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
-ms.date: 10/27/2016
+ms.date: 12/08/2016
 ms.author: ashmaka
 translationtype: Human Translation
-ms.sourcegitcommit: fc2f30569acc49dd383ba230271989eca8a14423
-ms.openlocfilehash: c8e745f7e1385c5ca569a9b8fbc3f5db070f102e
+ms.sourcegitcommit: 455c4847893175c1091ae21fa22215fd1dd10c53
+ms.openlocfilehash: 96e8177f57977f88c5a4a1ec0b9243b5b348f078
 
 ---
 
@@ -29,14 +29,14 @@ ms.openlocfilehash: c8e745f7e1385c5ca569a9b8fbc3f5db070f102e
 >
 >
 
-Este artigo mostra como consultar um índice através da [API REST da Azure Search](https://msdn.microsoft.com/library/azure/dn798935.aspx).
+Este artigo mostra como consultar um índice através da [API REST da Azure Search](https://docs.microsoft.com/rest/api/searchservice/).
 
 Antes de iniciar estas instruções, já deverá ter [criado um índice de Pesquisa do Azure](search-what-is-an-index.md) e [preenchido este com dados](search-what-is-data-import.md).
 
 ## <a name="i-identify-your-azure-search-services-query-api-key"></a>I. Identificar a sua chave de API de consulta do serviço Azure Search
 Um elemento-chave de qualquer operação de pesquisa em relação à API REST de Azure Search é a *chave de API* gerada para o serviço prestado por si. Ter uma chave válida estabelece fidedignidade, numa base por pedido, entre a aplicação a enviar o pedido e o serviço que o processa.
 
-1. Para localizar as chaves de API do seu serviço, tem de iniciar sessão no [Portal do Azure](https://portal.azure.com/)
+1. Para localizar as chaves de API do seu serviço, tem de iniciar sessão no [portal do Azure](https://portal.azure.com/)
 2. Aceda ao painel do seu serviço Azure Search
 3. Clique no ícone "Chaves"
 
@@ -48,7 +48,7 @@ O seu serviço terá *chaves de administração* e *chaves de consulta*.
 Para efeitos de consulta de um índice, pode utilizar uma das chaves de consulta. As chaves de administração também podem ser utilizadas para consultas, contudo, deve utilizar uma chave de consulta no código da aplicação, uma vez que tal segue melhor o [Princípio de menor privilégio](https://en.wikipedia.org/wiki/Principle_of_least_privilege).
 
 ## <a name="ii-formulate-your-query"></a>II. Formular a consulta
-Existem duas formas de [pesquisar o índice através da API REST](https://msdn.microsoft.com/library/azure/dn798927.aspx). Uma forma consiste em emitir um pedido de HTTP POST em que os parâmetros da sua consulta serão definidos num objeto JSON no corpo do pedido. A outra forma consiste em emitir um pedido de HTTP GET em que os parâmetros da sua consulta serão definidos no URL do pedido. Tenha em atenção que o POST tem [limites mais flexíveis](https://msdn.microsoft.com/library/azure/dn798927.aspx) em relação ao tamanho dos parâmetros de consulta do que o GET. Por este motivo, recomendamos a utilização do POST, salvo se tiver circunstâncias especiais em que a utilização do GET seja mais conveniente.
+Existem duas formas de [pesquisar o índice através da API REST](https://docs.microsoft.com/rest/api/searchservice/Search-Documents). Uma forma consiste em emitir um pedido de HTTP POST em que os parâmetros da sua consulta serão definidos num objeto JSON no corpo do pedido. A outra forma consiste em emitir um pedido de HTTP GET em que os parâmetros da sua consulta serão definidos no URL do pedido. Tenha em atenção que o POST tem [limites mais flexíveis](https://docs.microsoft.com/rest/api/searchservice/Search-Documents) em relação ao tamanho dos parâmetros de consulta do que o GET. Por este motivo, recomendamos a utilização do POST, salvo se tiver circunstâncias especiais em que a utilização do GET seja mais conveniente.
 
 Para o POST e o GET, é necessário fornecer o *nome do serviço*, o *nome do índice* e a *versão de API* correta (no momento de publicação deste documento a versão de API atual é `2016-09-01`) no URL do pedido. Para o GET, a *cadeia de consulta* no final do URL será onde fornece os parâmetros de consulta. Veja a seguir o formato URL:
 
@@ -71,7 +71,7 @@ POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-ve
 }
 ```
 
-Aplique um filtro ao índice para localizar hotéis com um preço inferior a 150 $ por noite e devolva `hotelId` e `description`:
+Aplique um filtro ao índice para localizar hotéis com um preço inferior a 150 $ por noite e devolva `hotelId` e `description`:
 
 ```
 GET https://[service name].search.windows.net/indexes/hotels/docs?search=*&$filter=baseRate lt 150&$select=hotelId,description&api-version=2016-09-01
@@ -162,10 +162,10 @@ Um pedido de consulta com êxito resultará num Código de Estado de `200 OK` e 
 }
 ```
 
-Para saber mais, consulte a secção "Resposta" dos [Documentos sobre Pesquisa](https://msdn.microsoft.com/library/azure/dn798927.aspx). Para obter mais informações sobre outros códigos de estado HTTP que possam ser devolvidos em caso de falha, consulte [Códigos de estado HTTP (Pesquisa do Azure)](https://msdn.microsoft.com/library/azure/dn798925.aspx).
+Para saber mais, consulte a secção "Resposta" dos [Documentos sobre Pesquisa](https://docs.microsoft.com/rest/api/searchservice/Search-Documents). Para obter mais informações sobre outros códigos de estado HTTP que possam ser devolvidos em caso de falha, consulte [Códigos de estado HTTP (Pesquisa do Azure)](https://docs.microsoft.com/rest/api/searchservice/HTTP-status-codes).
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

@@ -4,7 +4,7 @@ description: "Esta página oferece uma descrição geral sobre o serviço de Gat
 documentationcenter: na
 services: application-gateway
 author: georgewallace
-manager: carmonm
+manager: timlt
 editor: tysonn
 ms.assetid: b37a2473-4f0e-496b-95e7-c0594e96f83e
 ms.service: application-gateway
@@ -12,11 +12,11 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 11/16/2016
+ms.date: 12/14/2016
 ms.author: gwallace
 translationtype: Human Translation
-ms.sourcegitcommit: 93dab7804e03ba55ed17c3160420f2aec029c9ef
-ms.openlocfilehash: e3d36b50ed1253e40dc7a40f0611b840bb5498be
+ms.sourcegitcommit: e982d29f76d521720eea7cbb56c5084572f4a542
+ms.openlocfilehash: 1982b7ec7b7322366382e250b7f27f3da6448aa0
 
 
 ---
@@ -75,9 +75,7 @@ A tabela seguinte mostra um débito de desempenho médio para cada instância de
 | 100K |35 Mbps |100 Mbps |200 Mbps |
 
 > [!NOTE]
-> Estes valores são valores aproximados para um débito de gateway de aplicação. O débito real depende de vários detalhes de ambiente, como o tamanho médio da página, a localização das instâncias de back-end e o tempo de processamento para servir uma página. Para números de desempenho exatos, deve executar os seus próprios testes, estes valores são fornecidos apenas para a documentação de orientação de planeamento de capacidade.
->
->
+> Estes valores são valores aproximados para um débito de gateway de aplicação. O débito real depende de vários detalhes de ambiente, como o tamanho médio da página, a localização das instâncias de back-end e o tempo de processamento para servir uma página. Para números de desempenho exatos, deve executar o seus próprios testes. Estes valores são fornecidos apenas para a capacidade orientação de planeamento.
 
 ## <a name="health-monitoring"></a>Monitorização do estado de funcionamento
 
@@ -97,6 +95,6 @@ Para saber como criar um gateway de aplicação com encaminhamento de conteúdo 
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Dec16_HO5-->
 
 

@@ -15,8 +15,8 @@ ms.topic: hero-article
 ms.date: 09/16/2016
 ms.author: sethm
 translationtype: Human Translation
-ms.sourcegitcommit: 29ede770e6e63a50ba398cfb0bc8035cacdea392
-ms.openlocfilehash: 2b00b8206189dbed02e03807658c53f81171b111
+ms.sourcegitcommit: 385eb87ec32f5f605b28cc8c76b1c89c7e90bfec
+ms.openlocfilehash: 0288b0dda9139c28da28fedfe39c4e9156c6c938
 
 
 ---
@@ -52,7 +52,7 @@ Segue-se uma captura de ecrã da página inicial da aplicação Web completa.
 ## <a name="set-up-the-development-environment"></a>Configurar o ambiente de desenvolvimento
 Antes de poder começar a desenvolver aplicações do Azure, obtenha as ferramentas e configure o ambiente de desenvolvimento.
 
-1. Instale o Azure SDK para o .NET a partir da página [Obter Ferramentas e SDK][Obter Ferramentas e SDK].
+1. Instale o Azure SDK para o .NET a partir da página [Obter Ferramentas e SDK][Get Tools and SDK].
 2. Clique em **Instalar o SDK** para a versão do Visual Studio que está a utilizar. Os passos neste tutorial utilizam o Visual Studio 2015.
 3. Quando lhe for pedido para executar ou guardar o instalador, clique em **Executar**.
 4. No **Instalador de Plataforma Web**, clique em **Instalar** e continue com a instalação.
@@ -72,27 +72,27 @@ Este projeto é uma aplicação de consola do Visual Studio e utiliza o [Pacote 
 1. Inicie o Microsoft Visual Studio com privilégios de administrador. Para iniciar o Visual Studio com privilégios de administrador, clique com o botão direito no ícone do programa **Visual Studio** e, em seguida, clique em **Executar como administrador**.
 2. No Visual Studio, no menu **Ficheiro**, clique em **Novo** e, de seguida, em **Projeto**.
 3. A partir de **Modelos Instalados**, no **Visual C#**, clique em **Aplicação de Consola**. Na caixa **Nome**, escreva o nome **ProductsServer**:
-   
+
    ![][11]
 4. Clique em **OK** para criar o projeto **ProductsServer**.
 5. Caso já tenha instalado o gestor de pacotes NuGet para o Visual Studio, avance para o passo seguinte. Caso contrário, aceda a [NuGet][NuGet] e clique em [Instalar NuGet](http://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c). Siga as instruções para instalar o gestor de pacotes NuGet e, em seguida, reinicie o Visual Studio.
 6. No Explorador de Soluções, clique com o botão direito no projeto **ProductsServer** e, em seguida, clique em **Gerir Pacotes NuGet**.
 7. Clique no separador **Procurar** e, em seguida, procure `Microsoft Azure Service Bus`. Clique em **Instalar** e aceite os termos de utilização.
-   
+
    ![][13]
-   
+
    Tenha em atenção que os conjuntos de clientes necessários estão agora referenciados.
 8. Adicione uma nova classe para o contrato de produto.  No Explorador de Soluções, clique no projeto **ProductsServer** e, em seguida, clique em **Adicionar** e, em seguida, em **Classe**.
 9. Na caixa **Nome**, escreva o nome **ProductsContract.cs**. Em seguida, clique em **Adicionar**.
 10. No **ProductsContract.cs**, substitua a definição de espaço de nomes pelo código seguinte, que define o contrato para o serviço.
-    
+
     ```
     namespace ProductsServer
     {
         using System.Collections.Generic;
         using System.Runtime.Serialization;
         using System.ServiceModel;
-    
+
         // Define the data contract for the service
         [DataContract]
         // Declare the serializable properties.
@@ -105,23 +105,23 @@ Este projeto é uma aplicação de consola do Visual Studio e utiliza o [Pacote 
             [DataMember]
             public string Quantity { get; set; }
         }
-    
+
         // Define the service contract.
         [ServiceContract]
         interface IProducts
         {
             [OperationContract]
             IList<ProductData> GetProducts();
-    
+
         }
-    
+
         interface IProductsChannel : IProducts, IClientChannel
         {
         }
     }
     ```
 11. Em Program.cs, substitua a definição de espaço de nomes pelo código seguinte, que adiciona o serviço de perfil e o respetivo anfitrião.
-    
+
     ```
     namespace ProductsServer
     {
@@ -129,11 +129,11 @@ Este projeto é uma aplicação de consola do Visual Studio e utiliza o [Pacote 
         using System.Linq;
         using System.Collections.Generic;
         using System.ServiceModel;
-    
+
         // Implement the IProducts interface.
         class ProductsService : IProducts
         {
-    
+
             // Populate array of products for display on website
             ProductData[] products =
                 new []
@@ -147,7 +147,7 @@ Este projeto é uma aplicação de consola do Visual Studio e utiliza o [Pacote 
                         new ProductData{ Id = "4", Name = "Well",
                                          Quantity = "2500"},
                     };
-    
+
             // Display a message in the service console application
             // when the list of products is retrieved.
             public IList<ProductData> GetProducts()
@@ -155,9 +155,9 @@ Este projeto é uma aplicação de consola do Visual Studio e utiliza o [Pacote 
                 Console.WriteLine("GetProducts called.");
                 return products;
             }
-    
+
         }
-    
+
         class Program
         {
             // Define the Main() function in the service application.
@@ -165,17 +165,17 @@ Este projeto é uma aplicação de consola do Visual Studio e utiliza o [Pacote 
             {
                 var sh = new ServiceHost(typeof(ProductsService));
                 sh.Open();
-    
+
                 Console.WriteLine("Press ENTER to close");
                 Console.ReadLine();
-    
+
                 sh.Close();
             }
         }
     }
     ```
 12. No Explorador de Soluções, faça duplo clique no ficheiro **App.config** para abri-lo no editor do Visual Studio. Na parte inferior do elemento **&lt;system.ServiceModel&gt;** (contudo, ainda no &lt;system.ServiceModel&gt;), adicione o seguinte código XML. Certifique-se de que substitui *yourServiceNamespace* pelo nome do espaço de nomes e *yourKey* pela chave SAS obtida anteriormente a partir do portal:
-    
+
     ```
     <system.serviceModel>
     ...
@@ -197,8 +197,8 @@ Este projeto é uma aplicação de consola do Visual Studio e utiliza o [Pacote 
       </behaviors>
     </system.serviceModel>
     ```
-13. Ainda em App.config, no elemento **&lt;appSettings&gt;**, substitua o valor da cadeia de ligação pela cadeia de ligação previamente obtida no portal. 
-    
+13. Ainda em App.config, no elemento **&lt;appSettings&gt;**, substitua o valor da cadeia de ligação pela cadeia de ligação previamente obtida no portal.
+
     ```
     <appSettings>
        <!-- Service Bus specific app settings for messaging connections -->
@@ -215,27 +215,27 @@ Nesta secção, compilará uma aplicação ASP.NET simples que apresenta dados o
 1. Certifique-se de que o Visual Studio está em execução com privilégios de administrador.
 2. No Visual Studio, no menu **Ficheiro**, clique em **Novo** e, de seguida, em **Projeto**.
 3. A partir de **Modelos Instalados**, no **Visual C#**, clique em **Aplicação Web ASP.NET**. Atribua o nome **ProductsPortal** ao projeto. Em seguida, clique em **OK**.
-   
+
    ![][15]
-4. A partir da lista **Selecionar um modelo**, clique em **MVC**. 
+4. A partir da lista **Selecionar um modelo**, clique em **MVC**.
 5. Selecione a caixa para **Anfitrião na nuvem**.
-   
+
    ![][16]
 6. Clique no botão **Alterar Autenticação**. Na caixa de diálogo **Alterar Autenticação**, clique em **Sem Autenticação** e, de seguida, em **OK**. Para este tutorial, está a implementar uma aplicação que não necessita de um início de sessão do utilizador.
-   
+
     ![][18]
 7. Na secção **Microsoft Azure** da caixa de diálogo **Novo Projeto ASP.NET**, certifique-se de que **Anfitrião na nuvem** está selecionado e que **App Service** está selecionado na lista pendente.
-   
+
    ![][19]
-8. Clique em **OK**. 
-9. Deve agora configurar recursos do Azure para uma nova aplicação Web. Siga todos os passos na secção [Configurar recursos do Azure para uma nova aplicação Web](../app-service-web/web-sites-dotnet-get-started.md#configure-azure-resources-for-a-new-web-app). Em seguida, regresse a este tutorial e continue para o passo seguinte.
+8. Clique em **OK**.
+9. Deve agora configurar recursos do Azure para uma nova aplicação Web. Siga todos os passos em [Create a web application (Criar uma aplicação Web)](../app-service-web/web-sites-dotnet-get-started.md#create-a-web-application) e [(Create the Azure resources) Criar os recursos Azure](../app-service-web/web-sites-dotnet-get-started.md#create-the-azure-resources). Em seguida, regresse a este tutorial e continue para o passo seguinte.
 10. No Explorador de Soluções, clique com o botão direito do rato em **Modelos** e, em seguida, em **Adicionar** e em **Classe**. Na caixa **Nome**, escreva o nome **Product.cs**. Em seguida, clique em **Adicionar**.
-    
+
     ![][17]
 
 ### <a name="modify-the-web-application"></a>Modificar a aplicação Web
 1. No ficheiro Product.cs no Visual Studio, substitua a definição de espaço de nomes existente pelo código seguinte.
-   
+
    ```
    // Declare properties for the products inventory.
     namespace ProductsWeb.Models
@@ -250,14 +250,14 @@ Nesta secção, compilará uma aplicação ASP.NET simples que apresenta dados o
    ```
 2. No Explorador de Soluções, expanda a pasta **Controllers** e, em seguida, faça duplo clique no ficheiro **HomeController.cs** para abri-lo no Visual Studio.
 3. No **HomeController.cs**, substitua a definição de espaço de nomes existente pelo código seguinte.
-   
+
     ```
     namespace ProductsWeb.Controllers
     {
         using System.Collections.Generic;
         using System.Web.Mvc;
         using Models;
-   
+
         public class HomeController : Controller
         {
             // Return a view of the products inventory.
@@ -273,20 +273,20 @@ Nesta secção, compilará uma aplicação ASP.NET simples que apresenta dados o
 4. No Explorador de Soluções, expanda a pasta Views\Shared e, em seguida, faça duplo clique em **_Layout.cshtml** para abri-lo no editor do Visual Studio.
 5. Altere todas as ocorrências de **A Minha Aplicação ASP.NET** para **Produtos da LITWARE**.
 6. Remova as hiperligações **Home**, **Sobre** e **Contacto**. No exemplo seguinte, elimine o código realçado.
-   
+
     ![][41]
 7. No Explorador de Soluções, expanda a pasta Views\Home e, em seguida, faça duplo clique em **Index.cshtml** para abri-lo no editor do Visual Studio.
    Substitua os conteúdos integrais do ficheiro pelo seguinte código.
-   
+
    ```
    @model IEnumerable<ProductsWeb.Models.Product>
-   
+
    @{
             ViewBag.Title = "Index";
    }
-   
+
    <h2>Prod Inventory</h2>
-   
+
    <table>
              <tr>
                  <th>
@@ -297,7 +297,7 @@ Nesta secção, compilará uma aplicação ASP.NET simples que apresenta dados o
                      @Html.DisplayNameFor(model => model.Quantity)
                  </th>
              </tr>
-   
+
    @foreach (var item in Model) {
              <tr>
                  <td>
@@ -308,7 +308,7 @@ Nesta secção, compilará uma aplicação ASP.NET simples que apresenta dados o
                  </td>
              </tr>
    }
-   
+
    </table>
    ```
 8. Para verificar a precisão do seu trabalho até ao momento, pode premir **Ctrl+Shift+B** para compilar o projeto.
@@ -319,7 +319,7 @@ Execute a aplicação para verificar se funciona.
 1. Certifique-se de que o **ProductsPortal** é o projeto ativo. Clique com o botão direito no nome do projeto no Explorador de Soluções e selecione **Configurar como Projeto de Arranque**.
 2. No Visual Studio, prima F5.
 3. A aplicação deverá aparecer em execução num browser.
-   
+
    ![][21]
 
 ## <a name="put-the-pieces-together"></a>Juntar as peças
@@ -330,10 +330,10 @@ O passo seguinte consiste em ligar o servidor de produtos no local à aplicaçã
 3. Localize "Service Bus" e selecione o item **Service Bus do Microsoft Azure**. Em seguida, conclua a instalação e feche esta caixa de diálogo.
 4. No Explorador de Soluções, clique no projeto **ProductsPortal** e, em seguida, clique em **Adicionar** e em **Item Existente**.
 5. Navegue para o ficheiro **ProductsContract.cs** a partir do projeto de consola **ProductsServer**. Clique para realçar ProductsContract.cs. Clique na seta para baixo junto de **Adicionar** e, em seguida, clique em **Adicionar como Hiperligação**.
-   
+
    ![][24]
 6. Agora abra o ficheiro **HomeController.cs** no editor do Visual Studio e substitua a definição do espaço de nomes pelo código seguinte. Certifique-se de que substitui *yourServiceNamespace* pelo nome do espaço de nomes de serviço e *yourKey* pela chave SAS. Tal permitirá ao cliente chamar o serviço no local, devolvendo o resultado da chamada.
-   
+
    ```
    namespace ProductsWeb.Controllers
    {
@@ -343,12 +343,12 @@ O passo seguinte consiste em ligar o servidor de produtos no local à aplicaçã
        using Microsoft.ServiceBus;
        using Models;
        using ProductsServer;
-   
+
        public class HomeController : Controller
        {
            // Declare the channel factory.
            static ChannelFactory<IProductsChannel> channelFactory;
-   
+
            static HomeController()
            {
                // Create shared access signature token credentials for authentication.
@@ -358,7 +358,7 @@ O passo seguinte consiste em ligar o servidor de produtos no local à aplicaçã
                    TokenProvider = TokenProvider.CreateSharedAccessSignatureTokenProvider(
                        "RootManageSharedAccessKey", "yourKey") });
            }
-   
+
            public ActionResult Index()
            {
                using (IProductsChannel channel = channelFactory.CreateChannel())
@@ -377,12 +377,12 @@ O passo seguinte consiste em ligar o servidor de produtos no local à aplicaçã
 8. Navegue para o projeto **ProductsServer** e, em seguida, faça duplo clique no ficheiro de solução **ProductsServer.csproj** para adicioná-lo.
 9. O **ProductsServer** deve estar em execução para apresentar os dados no **ProductsPortal**. No Explorador de Soluções, clique com o botão direito na solução **ProductsPortal** e clique em **Propriedades**. É apresentada a caixa de diálogo **Páginas de Propriedades**.
 10. No lado esquerdo, clique em **Projeto de Arranque**. No lado direito, clique em **Vários projetos de arranque**. Certifique-se de que o **ProductsServer** e o **ProductsPortal** são apresentados, nessa ordem, com **Iniciar** definido como a ação para ambos.
-    
+
       ![][25]
 11. Ainda na caixa de diálogo **Propriedades**, clique em **Dependências de Projeto** no lado esquerdo.
 12. Na lista **Projetos**, clique em **ProductsServer**. Certifique-se de que o **ProductsPortal** **não** está selecionado.
-13. Na lista **Projetos**, clique em **ProductsPortal**. Certifique-se de que o **ProductsServer** está selecionado. 
-    
+13. Na lista **Projetos**, clique em **ProductsPortal**. Certifique-se de que o **ProductsServer** está selecionado.
+
     ![][26]
 14. Clique em **OK** na caixa de diálogo **Páginas de Propriedades**.
 
@@ -396,16 +396,16 @@ Prima **Atualizar** na página **ProductsPortal**. Sempre que atualizar a págin
 Feche ambas as aplicações antes de prosseguir para o passo seguinte.
 
 ## <a name="deploy-the-productsportal-project-to-an-azure-web-app"></a>Implementar o projeto ProductsPortal numa aplicação Web do Azure
-O passo seguinte consiste em converter o front-end **ProductsPortal** para uma aplicação Web do Azure. Em primeiro lugar, implemente o projeto **ProductsPortal**, seguindo todos os passos na secção [Implementar o projeto Web na aplicação Web do Azure](../app-service-web/web-sites-dotnet-get-started.md#deploy-the-web-project-to-the-azure-web-app). Após a conclusão da implementação, regresse a este tutorial e continue para o passo seguinte.
+O passo seguinte consiste em converter o front-end **ProductsPortal** para uma aplicação Web do Azure. Em primeiro lugar, implemente o projeto **ProductsPortal**, seguindo todos os passos na secção [Implementar o projeto Web no Azure](../app-service-web/web-sites-dotnet-get-started.md#deploy-the-web-project-to-azure). Após a conclusão da implementação, regresse a este tutorial e continue para o passo seguinte.
 
 > [!NOTE]
 > Poderá ver uma mensagem de erro na janela do browser quando o projeto Web **ProductsPortal** for executado automaticamente após a implementação. Tal é esperado e ocorre dado que a aplicação **ProductsServer** ainda não está em execução.
-> 
-> 
+>
+>
 
 Copie o URL da aplicação Web implementada, uma vez que necessitará do URL para o passo seguinte. Também pode obter esse URL a partir da janela Atividade do App Service do Azure no Visual Studio:
 
-![][9] 
+![][9]
 
 ### <a name="set-productsportal-as-web-app"></a>Configurar o ProductsPortal como uma aplicação Web
 Antes de executar a aplicação na nuvem, deve garantir que o **ProductsPortal** é executado a partir do Visual Studio como uma aplicação Web.
@@ -413,24 +413,24 @@ Antes de executar a aplicação na nuvem, deve garantir que o **ProductsPortal**
 1. No Visual Studio, clique com o botão direito no projeto **ProjectsPortal** e, em seguida, clique em **Propriedades**.
 2. Na coluna do lado esquerdo, clique em **Web**.
 3. Na secção **Ação de Início**, clique no botão **URL de Início** e na caixa de texto introduza o URL para a aplicação Web anteriormente implementada; por exemplo, `http://productsportal1234567890.azurewebsites.net/`.
-   
+
     ![][27]
 4. A partir do menu **Ficheiro** no Visual Studio, clique em **Guardar Tudo**.
 5. A partir do menu Compilar no Visual Studio, clique em **Reconstruir Solução**.
 
 ## <a name="run-the-application"></a>Executar a aplicação
-1. Prima F5 para compilar e executar a aplicação. O servidor no local (a aplicação de consola **ProductsServer**) deverá iniciar primeiro e, em seguida, a aplicação **ProductsPortal** deverá iniciar numa janela do browser, conforme mostrado na captura de ecrã seguinte. Tenha novamente em atenção que o inventário de produtos lista os dados obtidos a partir do sistema de serviço de produtos no local e apresenta esses dados na aplicação Web. Verifique o URL para certificar-se de que o **ProductsPortal** está em execução na nuvem, como uma aplicação Web do Azure. 
-   
+1. Prima F5 para compilar e executar a aplicação. O servidor no local (a aplicação de consola **ProductsServer**) deverá iniciar primeiro e, em seguida, a aplicação **ProductsPortal** deverá iniciar numa janela do browser, conforme mostrado na captura de ecrã seguinte. Tenha novamente em atenção que o inventário de produtos lista os dados obtidos a partir do sistema de serviço de produtos no local e apresenta esses dados na aplicação Web. Verifique o URL para certificar-se de que o **ProductsPortal** está em execução na nuvem, como uma aplicação Web do Azure.
+
    ![][1]
-   
+
    > [!IMPORTANT]
    > A consola de aplicação **ProductsServer** deve estar em execução e conseguir servir os dados para a aplicação **ProductsPortal**. Caso o browser apresente um erro, aguarde mais alguns segundos para que o **ProductsServer** carregue e apresente a mensagem seguinte. Em seguida, prima **Atualizar** no browser.
-   > 
-   > 
-   
+   >
+   >
+
    ![][37]
 2. Novamente no browser, prima **Atualizar** na página **ProductsPortal**. Sempre que atualizar a página, verá que a aplicação de servidor apresenta uma mensagem quando `GetProducts()` é chamado a partir do **ProductsServer**.
-   
+
     ![][38]
 
 ## <a name="next-steps"></a>Passos seguintes
@@ -441,7 +441,7 @@ Para obter mais informações sobre o Reencaminhamento do Azure, veja os seguint
 
 [0]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/hybrid.png
 [1]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/App2.png
-[Obter Ferramentas e SDK]: http://go.microsoft.com/fwlink/?LinkId=271920
+[Get Tools and SDK]: http://go.microsoft.com/fwlink/?LinkId=271920
 [NuGet]: http://nuget.org
 
 [11]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/hy-con-1.png
@@ -468,7 +468,6 @@ Para obter mais informações sobre o Reencaminhamento do Azure, veja os seguint
 
 
 
-
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Dec16_HO5-->
 
 

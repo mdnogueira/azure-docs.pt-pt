@@ -12,11 +12,11 @@ ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: hero-article
-ms.date: 10/25/2016
+ms.date: 12/15/2016
 ms.author: sdanie
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 587c7346bcb8e6549febd3904c8d0a9e46cbc50a
+ms.sourcegitcommit: 30ec6f45da114b6c7bc081f8a2df46f037de61fd
+ms.openlocfilehash: 6376faa50613288a797e2c0683a0890fa21879e1
 
 
 ---
@@ -59,11 +59,11 @@ O sistema é constituído pelos seguintes componentes:
 
 ## <a name="create-service-instance"> </a>Criar uma instância da Gestão de API
 > [!NOTE]
-> Para concluir este tutorial, precisa de uma conta do Azure. Se não tiver uma conta, pode criar uma conta gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure][Avaliação Gratuita do Azure].
+> Para concluir este tutorial, precisa de uma conta do Azure. Se não tiver uma conta, pode criar uma conta gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Azure Free Trial (Avaliação Gratuita do Azure)][Azure Free Trial].
 > 
 > 
 
-O primeiro passo para trabalhar com a API Management consiste em criar uma instância de serviço. Inicie sessão no [Portal do Azure][Portal do Azure] e clique em **Novo**, **Web + Móvel**, **Gestão de API**.
+O primeiro passo para trabalhar com a API Management consiste em criar uma instância de serviço. Inicie sessão no [Portal do Azure][Azure Portal] e clique em **Novo**, **Web + Móvel**, **Gestão de API**.
 
 ![Nova instância da API Management][api-management-create-instance-menu]
 
@@ -74,7 +74,7 @@ Selecione a **Subscrição** pretendida, o **Grupo de recursos** e a **Localiza�
 Introduza **Contoso Lda.** para o **Nome da Organização** e introduza o seu endereço de e-mail no campo **E-mail do Administrador**.
 
 > [!NOTE]
-> Este endereço de e-mail é utilizado para notificações do sistema da API Management. Para obter mais informações, consulte [How to configure notifications and email templates in Azure API Management (Como configurar as notificações e modelos e-mail na Gestão de API do Azure)][How to configure notifications and email templates in Azure API Management (Como configurar as notificações e modelos e-mail na Gestão de API do Azure)].
+> Este endereço de e-mail é utilizado para notificações do sistema da API Management. Para obter mais informações, consulte [Como configurar notificações e modelos de e-mail na Gestão de API do Azure][How to configure notifications and email templates in Azure API Management].
 > 
 > 
 
@@ -83,7 +83,7 @@ Introduza **Contoso Lda.** para o **Nome da Organização** e introduza o seu en
 As instâncias do serviço de API Management estão disponíveis em três camadas: Programador, Standard e Premium.
 
 > [!NOTE]
-> A camada de Programador destina-se a programas de API de desenvolvimento, teste e piloto em que a elevada disponibilidade não é uma preocupação. Nas camadas Standard e Premium, pode dimensionar a contagem de unidades reservadas para processar mais tráfego. As camadas Standard e Premium fornecem ao serviço de API Management a maior potência de processamento e o melhor desempenho. Pode concluir este tutorial utilizando qualquer camada. Para obter mais informações sobre as camadas de Gestão de API, consulte [Preços da Gestão de API][Preços da Gestão de API].
+> A camada de Programador destina-se a programas de API de desenvolvimento, teste e piloto em que a elevada disponibilidade não é uma preocupação. Nas camadas Standard e Premium, pode dimensionar a contagem de unidades reservadas para processar mais tráfego. As camadas Standard e Premium fornecem ao serviço de API Management a maior potência de processamento e o melhor desempenho. Pode concluir este tutorial utilizando qualquer camada. Para obter mais informações sobre as camadas de Gestão de API, consulte [Preços da Gestão de API][API Management pricing].
 > 
 > 
 
@@ -199,26 +199,26 @@ A secção **Análise** tem os seguintes quatro separadores:
 ## <a name="next-steps"> </a>Passos seguintes
 * Saiba como [Proteger a sua API com limites de velocidade](api-management-howto-product-with-rules.md).
 
-[Versão de Avaliação Gratuita do Azure]: http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=api_management_hero_a
+[Azure Free Trial]: http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=api_management_hero_a
 
-[Criar uma instância da Gestão de API]: #create-service-instance
-[Criar uma API]: #create-api
-[Adicionar uma operação]: #add-operation
-[Adicionar a nova API a um produto]: #add-api-to-product
-[Subscrever o produto que contém a API]: #subscribe
-[Chamar uma operação a partir do Portal do Programador]: #call-operation
-[Ver análise]: #view-analytics
-[Passos seguintes?]: #next-steps
+[Create an API Management instance]: #create-service-instance
+[Create an API]: #create-api
+[Add an operation]: #add-operation
+[Add the new API to a product]: #add-api-to-product
+[Subscribe to the product that contains the API]: #subscribe
+[Call an operation from the Developer Portal]: #call-operation
+[View analytics]: #view-analytics
+[Next steps]: #next-steps
 
 
-[Como gerir contas de programador na Gestão de API do Azure]: api-management-howto-create-or-invite-developers.md
-[Configurar definições de API]: api-management-howto-create-apis.md#configure-api-settings
-[Como configurar notificações e modelos de e-mail na Gestão de API do Azure]: api-management-howto-configure-notifications.md
-[Respostas]: api-management-howto-add-operations.md#responses
-[Como criar e publicar um produto]: api-management-howto-add-products.md
-[Preços da Gestão de API]: http://azure.microsoft.com/pricing/details/api-management/
+[How to manage developer accounts in Azure API Management]: api-management-howto-create-or-invite-developers.md
+[Configure API settings]: api-management-howto-create-apis.md#configure-api-settings
+[How to configure notifications and email templates in Azure API Management]: api-management-howto-configure-notifications.md
+[Responses]: api-management-howto-add-operations.md#responses
+[How create and publish a product]: api-management-howto-add-products.md
+[API Management pricing]: http://azure.microsoft.com/pricing/details/api-management/
 
-[Portal do Azure]: https://portal.azure.com/
+[Azure Portal]: https://portal.azure.com/
 
 [api-management-management-console]: ./media/api-management-get-started/api-management-management-console.png
 [api-management-create-instance-menu]: ./media/api-management-get-started/api-management-create-instance-menu.png
@@ -257,6 +257,6 @@ A secção **Análise** tem os seguintes quatro separadores:
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO5-->
 
 

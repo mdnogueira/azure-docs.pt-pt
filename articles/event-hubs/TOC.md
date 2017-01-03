@@ -2,7 +2,7 @@
 
 ## [O que são os Hubs de Eventos?](event-hubs-what-is-event-hubs.md)
 ## [Descrição geral dos Hubs de Eventos](event-hubs-overview.md)
-## [Event Hubs API overview (Descrição geral da API dos Hubs de Eventos)](event-hubs-api-overview.md)
+## [Descrição geral da API dos Hubs de Eventos](event-hubs-api-overview.md)
 ## [Descrição geral do modelo de autenticação e segurança](event-hubs-authentication-and-security-model-overview.md)
 
 
