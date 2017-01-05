@@ -66,6 +66,6 @@ O dashboard **Utilização do Log Analytics** apresenta as informações seguint
 
 
 
-<!--HONumber=Dec16_HO5-->
+<!--HONumber=Dec16_HO1-->
 
 

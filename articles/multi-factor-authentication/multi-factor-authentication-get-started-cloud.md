@@ -12,7 +12,7 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 10/17/2016
+ms.date: 01/04/2017
 ms.author: kgremban
 translationtype: Human Translation
 ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
@@ -25,8 +25,6 @@ Este artigo descreve como começar a utilizar o Multi-Factor Authentication do A
 
 > [!NOTE]
 > A seguinte documentação fornece informações sobre como ativar utilizadores através do **Portal Clássico do Azure**. Se estiver à procura de informações sobre como configurar o Multi-Factor Authentication do Azure para utilizadores do O365, veja [Configurar a autenticação multifator para o Office 365](https://support.office.com/article/Set-up-multi-factor-authentication-for-Office-365-users-8f0454b2-f51a-4d9c-bcde-2c48e41621c6?ui=en-US&rs=en-US&ad=US).
-> 
-> 
 
 ![MFA na Nuvem](./media/multi-factor-authentication-get-started-cloud/mfa_in_cloud.png)
 
@@ -38,8 +36,6 @@ São necessários os seguintes pré-requisitos antes de poder ativar o Multi-Fac
 
 > [!NOTE]
 > As licenças estão disponíveis para os utilizadores que têm o MFA do Azure, o Azure AD Premium ou o Enterprise Mobility Suite (EMS).  O MFA está incluído no Azure AD Premium e no EMS. Se tiver licenças suficientes, não é necessário criar um Fornecedor de Autenticação.
-> 
-> 
 
 ## <a name="turn-on-two-step-verification-for-users"></a>Ativar a verificação de dois passos para os utilizadores
 Para começar a exigir a verificação de dois passos a um utilizador, altere o estado do utilizador de desativado para ativado.  Para obter mais informações sobre os estados do utilizador, veja [User States in Azure Multi-Factor Authentication (Estados do Utilizador no Multi-Factor Authentication do Azure)](multi-factor-authentication-get-started-user-states.md)
@@ -75,13 +71,11 @@ Para alterar o [estado](multi-factor-authentication-whats-next.md) através do [
 
 > [!IMPORTANT]
 > Não aconselhamos uma alteração direta dos utilizadores do estado Desativado para o estado Imposto. As aplicações não baseadas no browser deixarão de funcionar porque o utilizador não realizou o registo do MFA nem obteve uma [palavra-passe de aplicação](multi-factor-authentication-whats-next.md#app-passwords). Se tiver aplicações não baseadas no browser e precisar de palavras-passe de aplicação, recomenda-se alterar o estado de Desativado para Ativado. Esta alteração permite aos utilizadores registarem e obterem as respetivas palavras-passe de aplicação. Depois disso, pode movê-los para Imposto.
-> 
-> 
 
 Utilizar o PowerShell é uma opção para ativar utilizadores em massa. Atualmente, não existe nenhuma funcionalidade de ativação em massa no portal do Azure e tem de selecionar cada utilizador individualmente. Se tiver muitos utilizadores, este procedimento poderá ser uma tarefa demorada. Ao criar um script do PowerShell com o procedimento seguinte, poderá percorrer uma lista de utilizadores e ativá-los.
 
         $st = New-Object -TypeName Microsoft.Online.Administration.StrongAuthenticationRequirement
-        $st.RelyingParty = "\*"
+        $st.RelyingParty = "*"
         $st.State = “Enabled”
         $sta = @($st)
         Set-MsolUser -UserPrincipalName bsimon@contoso.com -StrongAuthenticationRequirements $sta
@@ -92,7 +86,7 @@ Segue-se um exemplo:
     foreach ($user in $users)
     {
         $st = New-Object -TypeName Microsoft.Online.Administration.StrongAuthenticationRequirement
-        $st.RelyingParty = "\*"
+        $st.RelyingParty = "*"
         $st.State = “Enabled”
         $sta = @($st)
         Set-MsolUser -UserPrincipalName $user -StrongAuthenticationRequirements $sta

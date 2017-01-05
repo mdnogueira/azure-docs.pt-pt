@@ -181,6 +181,6 @@ Neste documento, aprendeu a encriptar uma Máquina Virtual do Azure. Para saber 
 
 
 
-<!--HONumber=Dec16_HO5-->
+<!--HONumber=Dec16_HO1-->
 
 
