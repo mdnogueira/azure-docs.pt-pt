@@ -15,8 +15,8 @@ ms.workload: NA
 ms.date: 11/16/2016
 ms.author: alkohli
 translationtype: Human Translation
-ms.sourcegitcommit: 5d3bcc3c1434b16279778573ccf3034f9ac28a4d
-ms.openlocfilehash: 40ae0d242968db83c4d4d04452fbfd93559af31e
+ms.sourcegitcommit: ccf25aab4d6454e27a57f9a18305ef752421896f
+ms.openlocfilehash: 6e4af8f21a3ec9613d9dc36ebceb710c0d8c9906
 
 
 ---
@@ -103,7 +103,7 @@ Antes de aprovisionar o dispositivo virtual, terá de efetuar os seguintes prepa
 Efetue as seguintes atualizações no serviço Azure StorSimple antes de criar um dispositivo virtual:
 
 * Adicionar [registos de controlo de acesso](storsimple-manage-acrs.md) para as VMs que serão servidores de anfitrião para o dispositivo virtual.
-* Utilizar uma [Conta do Storage](storsimple-manage-storage-accounts.md#add-a-storage-account) na mesma região que o dispositivo virtual. As contas do Storage em regiões diferentes poderão ter um fraco desempenho. Pode utilizar uma conta Standard ou Premium com o dispositivo virtual. Mais informações sobre como criar uma [conta de Armazenamento Standard]((../storage/storage-create-storage-account.md) ou uma [conta de Armazenamento Premium](../storage/storage-premium-storage.md#quick-start-create-and-use-a-premium-storage-account-for-a-virtual-machine-data-disk)
+* Utilizar uma [Conta do Storage](storsimple-manage-storage-accounts.md#add-a-storage-account) na mesma região que o dispositivo virtual. As contas do Storage em regiões diferentes poderão ter um fraco desempenho. Pode utilizar uma conta Standard ou Premium com o dispositivo virtual. Pode obter mais informações sobre como criar uma [Conta do Storage Standard](../storage/storage-create-storage-account.md) ou uma [conta do Premium Storage](../storage/storage-premium-storage.md#quick-start-create-and-use-a-premium-storage-account-for-a-virtual-machine-data-disk)
 * Utilize uma conta do Storage diferente para a criação do dispositivo virtual a partir da conta utilizada para os seus dados. Com a mesma conta do Storage, poderá obter um fraco desempenho.
 
 Certifique-se de que tem as seguintes informações antes de começar:
@@ -259,6 +259,6 @@ Durante a criação de um dispositivo virtual, se não existir conectividade à 
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Jan17_HO1-->
 
 

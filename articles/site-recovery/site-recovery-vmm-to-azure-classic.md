@@ -15,8 +15,8 @@ ms.topic: hero-article
 ms.date: 11/01/2016
 ms.author: raynew
 translationtype: Human Translation
-ms.sourcegitcommit: 5614c39d914d5ae6fde2de9c0d9941e7b93fc10f
-ms.openlocfilehash: cab275a71c7ae1048dd6bc315ed1114e0cf81e8b
+ms.sourcegitcommit: 27df1166a23e3ed89fdc86f861353c80a4a467ad
+ms.openlocfilehash: 28c41f08bf8eaf7e6679040bb8fbab2e134d08fb
 
 
 ---
@@ -184,7 +184,7 @@ Onde os parâmetros são os seguintes:
     ![Conta de armazenamento](./media/site-recovery-vmm-to-azure-classic/storage.png)
 
 > [!NOTE]
-> A [migração de contas de armazenamento](../resource-group-move-resources.md) através de grupos de recursos na mesma subscrição ou em várias subscrições não é suportada em contas de armazenamento utilizadas para implementar o Site Recovery.
+> A [migração de contas de armazenamento](../azure-resource-manager/resource-group-move-resources.md) através de grupos de recursos na mesma subscrição ou em várias subscrições não é suportada em contas de armazenamento utilizadas para implementar o Site Recovery.
 >
 >
 
@@ -246,7 +246,7 @@ Depois de guardar as definições, é iniciada uma tarefa para controlar o progr
 Tenha em atenção que se a rede de destino tiver várias sub-redes e uma dessas sub-redes tiver o mesmo nome que a sub-rede onde está localizada a máquina virtual de origem, a máquina virtual de réplica será ligada a essa sub-rede de destino após a ativação pós-falha. Se não existir nenhuma sub-rede de destino com um nome correspondente, a máquina virtual será ligada à primeira sub-rede da rede.
 
 > [!NOTE]
-> A [migração de redes](../resource-group-move-resources.md) através de grupos de recursos na mesma subscrição ou em várias subscrições não é suportada em redes utilizadas para implementar o Site Recovery.
+> A [migração de redes](../azure-resource-manager/resource-group-move-resources.md) através de grupos de recursos na mesma subscrição ou em várias subscrições não é suportada em redes utilizadas para implementar o Site Recovery.
 >
 >
 
@@ -345,13 +345,12 @@ Para executar um teste de ativação pós-falha, efetue o seguinte:
    * Clique em **A ativação pós-falha de teste está concluída**. Limpe o ambiente de teste para se desligar automaticamente e eliminar as máquinas virtuais de teste.
    * Clique em **Notas** para registar e guardar todas as observações associadas à ativação pós-falha de teste.
 
->
 
 ## <a name="next-steps"></a>Passos seguintes
 Saiba mais sobre como [Configurar planos de recuperação](site-recovery-create-recovery-plans.md) e [Ativação pós-falha](site-recovery-failover.md).
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO4-->
 
 

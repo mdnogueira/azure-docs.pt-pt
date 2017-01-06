@@ -1,6 +1,6 @@
 ---
-title: "Criar um conjunto de bases de dados elásticas com o #C | Microsoft Docs"
-description: "Utilize técnicas de programação de base de dados C# para criar um conjunto de bases de dados elásticas dimensionáveis na Base de Dados SQL do Azure, para poder partilhar recursos em muitas bases de dados."
+title: "Criar um conjunto elástico com o C# | Microsoft Docs"
+description: "Utilize técnicas de programação de base de dados C# para criar um conjunto elástico dimensionável na Base de Dados SQL do Azure, para poder partilhar recursos em muitas bases de dados."
 services: sql-database
 documentationcenter: 
 author: stevestein
@@ -8,6 +8,7 @@ manager: jhubbard
 editor: 
 ms.assetid: 2dedddbb-618d-462b-80dd-e4a57857c737
 ms.service: sql-database
+ms.custom: multiple databases
 ms.devlang: NA
 ms.topic: get-started-article
 ms.tgt_pltfrm: csharp
@@ -15,12 +16,12 @@ ms.workload: data-management
 ms.date: 10/04/2016
 ms.author: sstein
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 28f792cd5afd194445666aeb1d17d5fbf27a835d
+ms.sourcegitcommit: 6fb71859d0ba2e0f2b39d71edd6d518b7a03bfe9
+ms.openlocfilehash: 1d92c9a2dfae4a209ea95a33facd4b8e058fd866
 
 
 ---
-# <a name="create-an-elastic-database-pool-with-cx23"></a>Criar um conjunto de bases de dados elásticas com C&#x23;
+# <a name="create-an-elastic-pool-with-cx23"></a>Criar um conjunto elástico com C&#x23;
 > [!div class="op_single_selector"]
 > * [Portal do Azure](sql-database-elastic-pool-create-portal.md)
 > * [PowerShell](sql-database-elastic-pool-create-powershell.md)
@@ -28,7 +29,7 @@ ms.openlocfilehash: 28f792cd5afd194445666aeb1d17d5fbf27a835d
 > 
 > 
 
-Este artigo descreve como utilizar o C# para criar um conjunto de bases de dados elásticas do SQL Azure com a [Biblioteca da Base de Dados SQL do Azure para .NET](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql). Para criar uma base de dados SQL autónoma, veja [Utilizar o C# para criar uma base de dados SQL com a Biblioteca da Base de Dados SQL para .NET](sql-database-get-started-csharp.md).
+Este artigo descreve como utilizar o C# para criar um conjunto elástico do SQL Azure com a [Biblioteca da Base de Dados SQL do Azure para .NET](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql). Para criar uma base de dados SQL autónoma, veja [Utilizar o C# para criar uma base de dados SQL com a Biblioteca da Base de Dados SQL para .NET](sql-database-get-started-csharp.md).
 
 A Biblioteca da Base de Dados SQL do Azure para .NET fornece uma API baseada no [Azure Resource Manager](../azure-resource-manager/resource-group-overview.md) que encapsula num wrapper a [API REST da Base de Dados SQL baseada no Resource Manager](https://msdn.microsoft.com/library/azure/mt163571.aspx).
 
@@ -59,7 +60,7 @@ Para criar uma base de dados do SQL com o C#, carregue as bibliotecas de gestão
 > 
 > 
 
-## <a name="create-a-sql-elastic-database-pool-c-example"></a>Criar um conjunto de bases de dados elásticas SQL - exemplo do C#
+## <a name="create-a-sql-elastic-pool---c-example"></a>Criar um conjunto elástico SQL - exemplo do C#
 O exemplo seguinte cria um grupo de recursos, um servidor, uma regra de firewall, um conjunto elástico e, em seguida, cria uma base de dados SQL no conjunto. Consulte, [Criar um principal de serviço para aceder aos recursos](#create-a-service-principal-to-access-resources) para obter as `_subscriptionId, _tenantId, _applicationId, and _applicationSecret` variáveis.
 
 Substituir o conteúdo de **Program.cs** com o seguinte e atualizar as `{variables}` com os valores de aplicação (não incluir `{}`).
@@ -259,7 +260,7 @@ namespace SqlElasticPoolConsoleApp
 
 
 ## <a name="create-a-service-principal-to-access-resources"></a>Criar um principal de serviço para aceder aos recursos
-O seguinte script do PowerShell cria a aplicação do Active Directory (AD) e o principal de serviço que é necessário para autenticar a nossa aplicação C#. O script produz os valores de necessários para a amostra do C# precedente. Para obter informações detalhadas, consulte [Utilize o Azure PowerShell para criar um principal de serviço para aceder aos recursos](../resource-group-authenticate-service-principal.md).
+O seguinte script do PowerShell cria a aplicação do Active Directory (AD) e o principal de serviço que é necessário para autenticar a nossa aplicação C#. O script produz os valores de necessários para a amostra do C# precedente. Para obter informações detalhadas, consulte [Utilize o Azure PowerShell para criar um principal de serviço para aceder aos recursos](../azure-resource-manager/resource-group-authenticate-service-principal.md).
 
     # Sign in to Azure.
     Add-AzureRmAccount
@@ -314,6 +315,6 @@ O seguinte script do PowerShell cria a aplicação do Active Directory (AD) e o 
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO4-->
 
 

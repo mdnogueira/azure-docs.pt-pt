@@ -15,8 +15,8 @@ ms.workload: big-data
 ms.date: 11/29/2016
 ms.author: nitinme
 translationtype: Human Translation
-ms.sourcegitcommit: 8be210664540fc8294ea70271f037d168b328c9d
-ms.openlocfilehash: dc604f98eacec8d52c2849452bc3df34ef7634af
+ms.sourcegitcommit: f29f36effd858f164f7b6fee8e5dab18211528b3
+ms.openlocfilehash: 6f724576badb7cf3625a139c416860b7e43ed036
 
 
 ---
@@ -47,7 +47,7 @@ Saiba como utilizar o Python SDK para o Azure e o Azure Data Lake Store para faz
 
 ## <a name="install-the-modules"></a>Instalar os módulos
 
-Para utilizar Python para trabalhar com o Data Lake Store, tem de instalar dois módulos.
+Para trabalhar no Data Lake Store com Python, tem de instalar três módulos.
 
 * O módulo `azure-mgmt-resource`. Inclui módulos do Azure para o Active Directory, etc...
 * O módulo `azure-mgmt-datalake-store`. Inclui operações de gestão de contas do Azure Data Lake Store. Para obter mais informações sobre este módulo, veja [Azure Data Lake Store Management module reference (Referência ao módulo de Gestão do Azure Data Lake Store)](http://azure-sdk-for-python.readthedocs.io/en/latest/sample_azure-mgmt-datalake-store.html).
@@ -207,6 +207,6 @@ O fragmento que se segue cria, primeiro, o cliente de conta do Data Lake Store. 
 
 
 
-<!--HONumber=Nov16_HO5-->
+<!--HONumber=Jan17_HO1-->
 
 
