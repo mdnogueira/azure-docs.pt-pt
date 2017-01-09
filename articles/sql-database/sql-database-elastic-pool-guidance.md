@@ -16,8 +16,8 @@ ms.workload: data-management
 ms.topic: get-started-article
 ms.tgt_pltfrm: NA
 translationtype: Human Translation
-ms.sourcegitcommit: 9a330c88f89205c9a69afc749ba884c9585dbc07
-ms.openlocfilehash: cd044199e7b407d35a87fcd2def12a6bd5b8f36e
+ms.sourcegitcommit: 6c8420a154d998aa95c0220049ee54b3039a872b
+ms.openlocfilehash: a79b78a4e8e683afe5b41a41911e7d5f020eff88
 
 
 ---
@@ -28,8 +28,8 @@ Avalie se a relação de custo-eficiência da utilização de um conjunto elást
 
 > [!NOTE]
 > Os conjuntos elásticos estão em disponibilidade geral (GA) em todas as regiões do Azure, exceto na Índia Ocidental, onde se encontra, de momento, em pré-visualização. A GA (Disponibilidade Geral) dos conjuntos elásticos nesta região será lançada o mais depressa possível.
-> 
-> 
+>
+>
 
 ## <a name="elastic-pools"></a>Conjuntos elásticos
 Os programadores de SaaS criam as aplicações sobre camadas de dados de grande escala, que consistem em várias bases de dados. Um padrão de aplicação comum é aprovisionar uma base de dados individual para cada cliente. Contudo, muitas vezes, os padrões de cada cliente são distintos e imprevisíveis, sendo difícil prever os requisitos de recursos de cada utilizador de bases de dados individual. Por isso, os programadores podem sobreaprovisionar recursos, com custos consideráveis, para garantir débito e tempos de resposta favoráveis para todas as bases de dados. Ou podem diminuir os custos e arriscar numa experiência de mau desempenho para os clientes. Para saber mais sobre os padrões de estrutura de aplicações SaaS que utilizam conjuntos elásticos, consulte o artigo [Padrões de Estrutura de Aplicações SaaS Multi-inquilino com a Base de Dados SQL do Azure](sql-database-design-patterns-multi-tenancy-saas-applications.md).
@@ -71,7 +71,7 @@ O preço de um conjunto é uma função das eDTUs do conjunto. Embora o preço u
 As regras básicas seguintes relacionadas com a contagem e a utilização de bases de dados ajudam a garantir que os conjuntos oferecem custos reduzidos quando comparados com a utilização de níveis de desempenho para bases de dados individuais.
 
 ### <a name="minimum-number-of-databases"></a>Número mínimo de bases de dados
-Se a soma das DTUs dos níveis de desempenho para bases de dados individuais for superior a 1,5 vezes as eDTUs necessárias para o conjunto, a utilização de um conjunto elástico apresenta a melhor relação de custo-eficiência. Para obter os tamanhos disponíveis, veja [eDTU and storage limits for elastic pools and elastic databases (eDTUs e limites de armazenamento dos conjuntos elásticos e das bases de dados elásticas)](sql-database-elastic-pool.md#edtu-and-storage-limits-for-elastic-pools-and-elastic-databases).
+Se a soma das DTUs dos níveis de desempenho para bases de dados individuais for superior a 1,5 vezes as eDTUs necessárias para o conjunto, a utilização de um conjunto elástico apresenta a melhor relação de custo-eficiência. Para obter os tamanhos disponíveis, veja [eDTU and storage limits for elastic pools and elastic databases (eDTUs e limites de armazenamento dos conjuntos elásticos e das bases de dados elásticas)](sql-database-elastic-pool.md#edtu-and-storage-limits-for-elastic-pools).
 
 ***Exemplo***<br>
 Para que a relação de custo-eficácia de um conjunto de 100 eDTUs seja superior à utilização de níveis de desempenho para bases de dados individuais, são necessárias, pelo menos, duas bases de dados S3 ou 15 bases de dados S0.
@@ -80,7 +80,7 @@ Para que a relação de custo-eficácia de um conjunto de 100 eDTUs seja superio
 Ao partilhar eDTUs, nem todas as bases de dados de um conjunto podem utilizá-las ao mesmo tempo até ao limite disponível de quando são utilizados níveis de desempenho para bases de dados individuais. Quanta menos bases de dados tiverem picos em simultâneo, menor será a definição de eDTUs do conjunto e maior será a relação de custo-eficiência do mesmo. Em geral, não mais do que 2/3 (ou 67%) das bases de dados do conjunto devem atingir o limite de eDTUs em simultâneo.
 
 ***Exemplo***<br>
-Para reduzir os custos de três bases de dados S3 num conjunto de 200 eDTU, duas bases de dados, no máximo, podem ter o pico de utilização ao mesmo tempo. Caso contrário, se mais de duas destas quatro bases de dados S3 tiverem o pico em simultâneo, o conjunto terá de ser dimensionado para mais de 200 eDTUs. Se o conjunto for redimensionado para mais de 200 eDTUs, será necessário adicionar mais bases de dados S3 ao conjunto, de modo a manter os custos inferiores aos dos níveis de desempenho para bases de dados individuais. 
+Para reduzir os custos de três bases de dados S3 num conjunto de 200 eDTU, duas bases de dados, no máximo, podem ter o pico de utilização ao mesmo tempo. Caso contrário, se mais de duas destas quatro bases de dados S3 tiverem o pico em simultâneo, o conjunto terá de ser dimensionado para mais de 200 eDTUs. Se o conjunto for redimensionado para mais de 200 eDTUs, será necessário adicionar mais bases de dados S3 ao conjunto, de modo a manter os custos inferiores aos dos níveis de desempenho para bases de dados individuais.
 
 Tenha em conta que este exemplo não considera a utilização de outras bases de dados do conjunto. Se todas as bases de dados tiverem alguma utilização num determinado momento, menos de 2/3 (67%) das bases de dados podem ter o pico em simultâneo.
 
@@ -96,7 +96,7 @@ O melhor tamanho para um conjunto depende das eDTUs agregadas e dos recursos de 
 * DTUs máximas utilizadas por todas as bases de dados do conjunto.
 * Bytes de armazenamento máximos utilizados por todas as bases de dados do conjunto.
 
-Para obter os tamanhos disponíveis, veja [eDTU and storage limits for elastic pools and elastic databases (eDTUs e limites de armazenamento dos conjuntos elásticos e das bases de dados elásticas)](sql-database-elastic-pool.md#edtu-and-storage-limits-for-elastic-pools-and-elastic-databases).
+Para obter os tamanhos disponíveis, veja [eDTU and storage limits for elastic pools and elastic databases (eDTUs e limites de armazenamento dos conjuntos elásticos e das bases de dados elásticas)](sql-database-elastic-pool.md#edtu-and-storage-limits-for-elastic-pools).
 
 A Base de Dados SQL avalia automaticamente o histórico de utilização de recursos de bases de dados num servidor de Base de Dados SQL existente e recomenda a configuração de conjunto adequada no portal do Azure. Para além das recomendações, uma experiência incorporada prevê a utilização de eDTUs para um grupo personalizado de bases de dados no servidor. Desta forma, pode fazer uma análise de hipóteses ao adicionar, interativamente, bases de dados ao conjunto e removê-las para ver uma análise da utilização de recursos e obter conselhos de dimensionamento antes de consolidar as alterações. Para obter as instruções, veja [Monitor, manage, and size an elastic pool (Monitorizar, gerir e dimensionar conjuntos elásticos)](sql-database-elastic-pool-manage-portal.md).
 
@@ -114,10 +114,10 @@ Para obter avaliações de utilização de recursos mais flexíveis que permitem
 Nos casos em que não pode utilizar as ferramentas, as instruções passo a passo seguintes podem ajudá-lo a prever se um conjunto tem uma relação de custo-eficácia melhor do que as bases de dados individuais.
 
 1. Estime as eDTUs necessárias para o conjunto da seguinte forma:
-   
+
    Máx. (<*Número Total de DBs* X *utilização média de DTUs por DB*>,<br>
    <*Número de DBs com pico em simultâneo* X *utilização de pico de DTUs por DB*)
-2. Calcule o espaço de armazenamento necessário para o conjunto ao adicionar o número de bytes de que todas as bases de dados do conjunto precisam. Em seguida, determine o tamanho do conjunto de eDTUs que disponibiliza esta quantidade de armazenamento. Para obter os limites de armazenamento dos conjuntos com base no tamanho do conjunto de eDTUs, veja [eDTU and storage limits for elastic pools and elastic databases (eDTUs e limites de armazenamento dos conjuntos elásticos e das bases de dados elásticas)](sql-database-elastic-pool.md#edtu-and-storage-limits-for-elastic-pools-and-elastic-databases).
+2. Calcule o espaço de armazenamento necessário para o conjunto ao adicionar o número de bytes de que todas as bases de dados do conjunto precisam. Em seguida, determine o tamanho do conjunto de eDTUs que disponibiliza esta quantidade de armazenamento. Para obter os limites de armazenamento dos conjuntos com base no tamanho do conjunto de eDTUs, veja [eDTU and storage limits for elastic pools and elastic databases (eDTUs e limites de armazenamento dos conjuntos elásticos e das bases de dados elásticas)](sql-database-elastic-pool.md#edtu-and-storage-limits-for-elastic-pools).
 3. Escolha a estimativa de eDTUs maior de entre os passos 1 e 2.
 4. Veja a [página de preços da Base de Dados SQL](https://azure.microsoft.com/pricing/details/sql-database/) e encontre o tamanho de conjunto de eDTU mais pequeno e que seja superior à estimativa do Passo 3.
 5. Compare o preço do conjunto do Passo 5 com o preço de utilizar os níveis de desempenho adequado para bases de dados individuais.
@@ -133,7 +133,6 @@ Nem todas as bases de dados individuais são candidatos ideais para conjuntos. A
 
 
 
-
-<!--HONumber=Dec16_HO5-->
+<!--HONumber=Jan17_HO1-->
 
 

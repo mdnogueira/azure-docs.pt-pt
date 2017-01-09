@@ -19,6 +19,6 @@ Após concluir o registo e a configuração, o dispositivo ficará online. (Pode
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 

@@ -14,7 +14,7 @@ Para começar a utilizar os tópicos e as subscrições do Service Bus no Azure,
 
 Para criar um espaço de nomes:
 
-1. Inicie sessão no [Portal do Azure][Portal do Azure].
+1. Inicie sessão no [Portal do Azure][Azure portal].
 2. No painel de navegação à esquerda do portal, clique em **Novo** e, em seguida, clique em **Integração do Enterprise** e em **Service Bus**.
 3. Na caixa de diálogo **Criar espaço de nomes**, introduza um nome de espaço de nomes. O sistema verifica imediatamente a disponibilidade do nome.
 4. Após se certificar de que o espaço de nomes está disponível, selecione o escalão de preço (Básico, Standard ou Premium).
@@ -35,7 +35,7 @@ Para criar um espaço de nomes:
    
     ![connection-string][connection-string]
 
-[Portal do Azure]: https://portal.azure.com
+[Azure portal]: https://portal.azure.com
 [create-namespace]: ./media/howto-service-bus-topics/create-namespace.png
 [connection-info]: ./media/howto-service-bus-topics/connection-info.png
 [connection-string]: ./media/howto-service-bus-topics/connection-string.png
@@ -43,6 +43,6 @@ Para criar um espaço de nomes:
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Jan17_HO1-->
 
 

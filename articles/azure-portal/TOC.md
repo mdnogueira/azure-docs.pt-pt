@@ -2,18 +2,18 @@
 ## [Azure Resource Manager](../azure-resource-manager/resource-group-overview.md)
 
 # Introdução
-## [Implementar com o modelo do Resource Manager](../resource-group-template-deploy.md)
+## [Implementar com o modelo do Resource Manager](../azure-resource-manager/resource-group-template-deploy.md)
 
 # Procedimento
 ## Implementação
-### [Create Azure Resource Manager templates (Criar modelos do Azure Resource Manager)](../resource-group-authoring-templates.md)
+### [Create Azure Resource Manager templates (Criar modelos do Azure Resource Manager)](../azure-resource-manager/resource-group-authoring-templates.md)
 
 ## Gerir
-### [Utilizar o portal de pré-visualização para gerir recursos](resource-group-portal.md)
+### [Utilizar o portal de pré-visualização para gerir recursos](../azure-resource-manager/resource-group-portal.md)
 ### [Gerir o acesso com RBAC](../active-directory/role-based-access-control-configure.md)
-### [Utilizar etiquetas para organizar recursos](../resource-group-using-tags.md)
+### [Utilizar etiquetas para organizar recursos](../azure-resource-manager/resource-group-using-tags.md)
 ### [Dimensionar os recursos](../monitoring-and-diagnostics/insights-how-to-scale.md)
-### [Criar novo principal de serviço do Azure](../resource-group-create-service-principal-portal.md)
+### [Criar novo principal de serviço do Azure](../azure-resource-manager/resource-group-create-service-principal-portal.md)
 ## Monitorizar
 ### [Monitorizar as métricas de serviço](../monitoring-and-diagnostics/insights-how-to-customize-monitoring.md)
 ### [Ativar a monitorização e o diagnóstico](../monitoring-and-diagnostics/insights-how-to-use-diagnostics.md)
@@ -23,7 +23,7 @@
 ### [Receber notificações de alerta](../monitoring-and-diagnostics/insights-receive-alert-notifications.md)
 
 # Relacionado
-## [Funções do modelo do Azure Resource Manager](../resource-group-template-functions.md)
+## [Funções do modelo do Azure Resource Manager](../azure-resource-manager/resource-group-template-functions.md)
 ## [Melhores práticas do Dimensionamento Automático](../monitoring-and-diagnostics/insights-autoscale-best-practices.md)
 ## [Métricas comuns do Dimensionamento Automático](../monitoring-and-diagnostics/insights-autoscale-common-metrics.md)
 ## [Webhooks para notificações do Dimensionamento Automático](../monitoring-and-diagnostics/insights-autoscale-to-webhook-email.md)
@@ -42,6 +42,6 @@
 
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Jan17_HO1-->
 
 

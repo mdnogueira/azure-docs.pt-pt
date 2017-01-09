@@ -13,21 +13,22 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: hero-article
-ms.date: 11/16/2016
+ms.date: 12/25/2016
 ms.author: syamk
 translationtype: Human Translation
-ms.sourcegitcommit: bf07b8a10dd7e5ee9259c6fab9da886578504fe7
-ms.openlocfilehash: 3b756b11ce762cbbc56650ea9d49715d899bfbdb
+ms.sourcegitcommit: 16bff1b5708652a75ea603f596c864901b12a88d
+ms.openlocfilehash: 9b24fe8139d50b7c37a380fcc52b7ac302f5ee5d
 
 
 ---
 # <a name="a-nametoc395809351aaspnet-mvc-tutorial-web-application-development-with-documentdb"></a><a name="_Toc395809351"></a>Tutorial ASP.NET MVC: Desenvolvimento de aplicações Web com DocumentDB
 > [!div class="op_single_selector"]
-> * [.NET](documentdb-dotnet-application.md)
-> * [Node.js](documentdb-nodejs-application.md)
-> * [Java](documentdb-java-application.md)
-> * [Python](documentdb-python-application.md) 
-> 
+> * [.NET](documentdb-get-started.md)
+> * [.NET Core](documentdb-dotnetcore-get-started.md)
+> * [Java](documentdb-java-get-started.md)
+> * [Node.js](documentdb-nodejs-get-started.md)
+> * [C++](documentdb-cpp-get-started.md)
+>  
 > 
 
 Para realçar como pode de forma eficiente tirar partido do Azure DocumentDB para armazenar e consultar documentos JSON, este artigo serve de orientação ponto a ponto e mostra-lhe como criar uma aplicação de tarefas através do Azure DocumentDB. As tarefas serão armazenadas como documentos JSON no Azure DocumentDB.
@@ -50,7 +51,7 @@ Antes de seguir as instruções deste artigo, deve certificar-se de que tem o se
 
     Uma instalação local do [Emulador do Azure DocumentDB](documentdb-nosql-local-emulator.md).
 * [Visual Studio 2015](http://www.visualstudio.com/) ou Visual Studio 2013 Atualização 4 ou superior. Se utilizar o Visual Studio 2013, terá de instalar o [pacote nuget Microsoft.Net.Compilers](https://www.nuget.org/packages/Microsoft.Net.Compilers/) para adicionar suporte para C# 6.0. 
-* O Azure SDK para o .NET versão 2.5.1 ou superior, disponível através do [Instalador de Plataforma Web da Microsoft][Instalador de Plataforma Web da Microsoft].
+* O Azure SDK para o .NET versão 2.5.1 ou superior, disponível através do [Instalador de Plataforma Web da Microsoft][Microsoft Web Platform Installer].
 
 Todas as capturas de ecrã neste artigo foram executadas com o Visual Studio 2013 com a Atualização 4 aplicada e o Azure SDK para .NET versão 2.5.1. Se o sistema estiver configurado com versões diferentes, é possível que as suas opções e ecrãs não coincidam na totalidade, mas se cumpre os pré-requisitos acima, esta solução deverá funcionar.
 
@@ -430,9 +431,9 @@ Vamos adicionar algum código a DocumentDBRepository e a ItemController para man
    
     Este código liga-se ao DocumentDBRepository e utiliza o método CreateItemAsync para manter o novo item de tarefa na base de dados. 
    
-    **Nota de Segurança**: o atributo **ValidateAntiForgeryToken** é utilizado aqui para ajudar a proteger esta aplicação contra ataques de falsificação de pedidos entre sites. Não basta apenas adicionar este atributo, as suas vistas também têm de trabalhar com este token antifalsificação. Para obter mais informações sobre o assunto e exemplos sobre como implementar este atributo corretamente, veja [Prevenir Falsificação de Pedidos Entre Sites][Prevenir Falsificação de Pedidos Entre Sites]. O código de origem fornecido no [GitHub][GitHub] tem a implementação completa no local.
+    **Nota de Segurança**: o atributo **ValidateAntiForgeryToken** é utilizado aqui para ajudar a proteger esta aplicação contra ataques de falsificação de pedidos entre sites. Não basta apenas adicionar este atributo, as suas vistas também têm de trabalhar com este token antifalsificação. Para obter mais informações sobre o assunto e exemplos sobre como implementar este atributo corretamente, veja [Preventing Cross-Site Request Forgery (Prevenir Falsificação de Pedidos Entre Sites)][Preventing Cross-Site Request Forgery]. O código de origem fornecido no [GitHub][GitHub] tem a implementação completa no local.
    
-    **Nota de Segurança**: também utilizamos o atributo **Vincular** no parâmetro do método para ajudar a proteger contra ataques de publicação excessiva. Para obter mais detalhes, veja [Operações CRUD Básicas no ASP.NET MVC][Operações CRUD Básicas no ASP.NET MVC].
+    **Nota de Segurança**: também utilizamos o atributo **Vincular** no parâmetro do método para ajudar a proteger contra ataques de publicação excessiva. Para obter mais detalhes, veja [Basic CRUD Operations in ASP.NET MVC (Operações CRUD Básicas no ASP.NET MVC)][Basic CRUD Operations in ASP.NET MVC].
 
 Assim concluímos o código necessário para adicionar novos Itens à nossa base de dados.
 
@@ -563,19 +564,19 @@ Se receber o erro "Ocorreu um erro ao processar o pedido" ao tentar implementar 
 
 
 ## <a name="a-nametoc395637775anext-steps"></a><a name="_Toc395637775"></a>Passos seguintes
-Parabéns! Acabou de criar a sua primeira aplicação Web ASP.NET MVC com o Azure DocumentDB e de a publicar nos Web sites Azure. É possível transferir ou clonar a partir do [GitHub][GitHub] o código fonte da aplicação completa, incluindo as funcionalidades de detalhe e eliminação que não foram incluídas neste tutorial. Por isso, se estiver interessado em adicioná-la à sua aplicação, copie o código e adicione-o a esta aplicação.
+Parabéns! Acabou de criar a sua primeira aplicação Web ASP.NET MVC com o Azure DocumentDB e de a publicar nos Web sites Azure. Pode transferir ou clonar a partir do [GitHub][GitHub] o código fonte da aplicação completa, incluindo as funcionalidades de detalhe e eliminação que não foram incluídas neste tutorial. Por isso, se estiver interessado em adicioná-la à sua aplicação, copie o código e adicione-o a esta aplicação.
 
 Para adicionar mais funcionalidades à sua aplicação, reveja as APIs disponíveis na [Biblioteca do DocumentDB .NET](https://msdn.microsoft.com/library/azure/dn948556.aspx) e esteja à vontade para contribuir para a Biblioteca do DocumentDB .NET no [GitHub][GitHub]. 
 
 [\*]: https://microsoft.sharepoint.com/teams/DocDB/Shared%20Documents/Documentation/Docs.LatestVersions/PicExportError
 [Visual Studio Express]: http://www.visualstudio.com/products/visual-studio-express-vs.aspx
-[Instalador de Plataforma Web da Microsoft]: http://www.microsoft.com/web/downloads/platform.aspx
-[Prevenir Falsificação de Pedidos Entre Sites]: http://go.microsoft.com/fwlink/?LinkID=517254
-[Operações CRUD Básicas no ASP.NET MVC]: http://go.microsoft.com/fwlink/?LinkId=317598
+[Microsoft Web Platform Installer]: http://www.microsoft.com/web/downloads/platform.aspx
+[Preventing Cross-Site Request Forgery]: http://go.microsoft.com/fwlink/?LinkID=517254
+[Basic CRUD Operations in ASP.NET MVC]: http://go.microsoft.com/fwlink/?LinkId=317598
 [GitHub]: https://github.com/Azure-Samples/documentdb-net-todo-app
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 

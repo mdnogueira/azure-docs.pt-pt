@@ -23,6 +23,6 @@ Por exemplo, imagine que já criou um registo "www" A na zona "contoso.com", a a
 
 Os tipos de registos SOA e CNAME são exceções. As normas DNS não permitirem vários registos com o mesmo nome para estes tipos, por conseguinte, estes conjuntos de registos só podem conter um único registo.
 
-<!--HONumber=Dec16_HO5-->
+<!--HONumber=Jan17_HO1-->
 
 

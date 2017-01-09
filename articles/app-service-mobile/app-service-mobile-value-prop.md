@@ -80,9 +80,9 @@ Para obter mais informações sobre a plataforma do App Service do Azure, consul
 
 <!-- URLs. -->
 [Migre o seu Serviço Móvel para o Serviço de Aplicações]: app-service-mobile-migrating-from-mobile-services.md
-[Serviço de Aplicações do Azure]: ../app-service/app-service-value-prop-what-is.md
+[App Service do Azure]: ../app-service/app-service-value-prop-what-is.md
 [Introdução]: app-service-mobile-ios-get-started.md
-[Armazenamento de Tabelas do Azure]: ../storage/storage-getting-started-guide.md
+[Table Storage do Azure]: ../storage/storage-getting-started-guide.md
 [DocumentDB]: ../documentdb/documentdb-get-started.md
 [funcionalidades de autenticação]: ./app-service-mobile-auth.md
 [funcionalidades de dados]: ./app-service-mobile-offline-data-sync.md
@@ -99,7 +99,7 @@ Para obter mais informações sobre a plataforma do App Service do Azure, consul
 [ligações híbridas]: ../app-service-web/web-sites-hybrid-connection-get-started.md
 [redes virtuais]: ../app-service-web/web-sites-integrate-with-vnet.md
 [ExpressRoute]: ../app-service-web/app-service-app-service-environment-network-configuration-expressroute.md
-[Ambientes do Serviço de Aplicações]: ../app-service-web/app-service-app-service-environment-intro.md
+[Ambientes do App Service]: ../app-service-web/app-service-app-service-environment-intro.md
 [mapa de aprendizagem]: https://azure.microsoft.com/en-us/documentation/learning-paths/appservice-mobileapps/
 
 

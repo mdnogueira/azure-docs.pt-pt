@@ -15,8 +15,8 @@ ms.topic: hero-article
 ms.date: 11/23/2016
 ms.author: raynew
 translationtype: Human Translation
-ms.sourcegitcommit: b7cccd1638bfbc79322c88f10d515a282bdb1ad3
-ms.openlocfilehash: 473ed9aa5a744d39befe5dfcb9ed04b6c88c9e26
+ms.sourcegitcommit: 6fb71859d0ba2e0f2b39d71edd6d518b7a03bfe9
+ms.openlocfilehash: 8de917236d1dcbfdf0c1232380879a33d9425291
 
 
 ---
@@ -46,9 +46,9 @@ Para uma implementação completa, recomendamos vivamente que siga todos os pass
 | **Limitações no local** |O proxy baseado em HTTPS não é suportado |
 | **Fornecedor/agente** |As VMs replicadas precisam do Azure Site Recovery Provider.<br/><br/> Os anfitriões de Hyper-V precisam do agente dos Serviços de Recuperação.<br/><br/> São instalados durante a implementação. |
 |  **Requisitos do Azure** |Conta do Azure<br/><br/> Cofre dos serviços de recuperação<br/><br/> Conta de armazenamento LRS ou GRS na região do cofre<br/><br/> Conta de armazenamento standard<br/><br/> Rede virtual do Azure na região do cofre [Ver os detalhes completos](#azure-prerequisites). |
-|  **Limitações do Azure** |Se utilizar GRS, precisa de outra conta LRS para registo<br/><br/> As contas de armazenamento criadas no portal do Azure não podem ser movidas entre grupos de recursos nas mesmas ou em diferentes subscrições. <br/><br/> Não há suporte para o armazenamento Premium.<br/><br/> As redes Azure utilizadas para o Site Recovery não podem ser movidas entre grupos de recursos nas mesmas ou em diferentes subscrições. |
-|  **Replicação de VMs** |[As VMs devem estar em conformidade com os pré-requisitos do Azure](site-recovery-best-practices.md#azure-virtual-machine-requirements)<br/><br/> |
-|  **Limitações da replicação** |Não pode replicar VMs que executem Linux com um endereço IP estático.<br/><br/> Não pode excluir discos específicos da replicação. |
+|  **Limitações do Azure** |Se utilizar GRS, precisa de outra conta LRS para registo<br/><br/> As contas de armazenamento criadas no portal do Azure não podem ser movidas entre grupos de recursos nas mesmas ou em diferentes subscrições. <br/><br/> Não há suporte para o armazenamento Premium.<br/><br/> As redes Azure utilizadas para o Site Recovery não podem ser movidas entre grupos de recursos nas mesmas ou em diferentes subscrições. 
+|  **Replicação de VMs** |[As VMs devem estar em conformidade com os pré-requisitos do Azure](site-recovery-best-practices.md#azure-virtual-machine-requirements)<br/><br/>
+|  **Limitações da replicação** |Não pode replicar VMs que executem Linux com um endereço IP estático.<br/><br/> Pode excluir discos específicos da replicação, mas não pode excluir discos do SO.
 | **Passos da implementação** |1) Preparar o Azure (subscrição, armazenamento, rede) -> 2) Preparar no local (VMM e mapeamento de rede) -> 3) Criar cofre dos Serviços de Recuperação -> 4) Configurar o VMM e os anfitriões de Hyper-V -> 5) Configurar as definições da replicação -> 6) Ativar a replicação -> 7) Testar a replicação e a ativação pós-falha. |
 
 ## <a name="site-recovery-in-the-azure-portal"></a>Recuperação de Sites no Portal do Azure
@@ -115,13 +115,13 @@ Necessita de uma rede do Azure à qual as VMs do Azure criadas depois da ativaç
 * A rede deve estar mesma localização que o cofre dos Serviços de Recuperação.
 * Consoante o modelo de recursos que pretende utilizar nas VMs do Azure com ativação pós-falha, configure a rede Azure no [modo Resource Manager](../virtual-network/virtual-networks-create-vnet-arm-pportal.md) ou no [modo clássico](../virtual-network/virtual-networks-create-vnet-classic-pportal.md).
 * Recomendamos que configure uma rede antes de começar. Caso contrário, terá de fazê-lo durante a implementação da Recuperação de Sites.
-Tenha em consideração que as redes Azure utilizadas do Site Recovery não podem ser [movidas](../resource-group-move-resources.md) dentro de grupos de recursos nas mesmas ou em diferentes subscrições.
+Tenha em consideração que as redes Azure utilizadas do Site Recovery não podem ser [movidas](../azure-resource-manager/resource-group-move-resources.md) dentro de grupos de recursos nas mesmas ou em diferentes subscrições.
 
 ### <a name="set-up-an-azure-storage-account"></a>Configurar uma conta de armazenamento do Azure
 * Precisa de uma conta de armazenamento standard do Azure para armazenar dados replicados para o Azure. A conta tem de ser na mesma região que o cofre de Serviços de Recuperação.
 * Consoante o modelo de recursos que pretende utilizar para efetuar a ativação pós-falha nas VMs do Azure, configure uma conta no [modo Resource Manager](../storage/storage-create-storage-account.md) ou no [modo clássico](../storage/storage-create-storage-account-classic-portal.md).
 * Recomendamos que configure uma conta antes de começar. Caso contrário, terá de fazê-lo durante a implementação da Recuperação de Sites.
-- Tenha em consideração que as contas de armazenamento utilizadas do Site Recovery não podem ser [movidas](../resource-group-move-resources.md) dentro de grupos de recursos nas mesmas ou em diferentes subscrições.
+- Tenha em consideração que as contas de armazenamento utilizadas do Site Recovery não podem ser [movidas](../azure-resource-manager/resource-group-move-resources.md) dentro de grupos de recursos nas mesmas ou em diferentes subscrições.
 
 ### <a name="prepare-the-vmm-server"></a>Preparar o servidor VMM
 * Certifique-se de que o servidor VMM está em conformidade com os [pré-requisitos](#on-premises-prerequisites).
@@ -144,7 +144,7 @@ Tem de configurar o mapeamento da rede durante a implementação da Recuperaçã
 
     ![Novo cofre](./media/site-recovery-vmm-to-azure/new-vault3.png)
 3. Em **Nome**, especifique um nome amigável para identificar o cofre. Se tiver mais do que uma subscrição, selecione uma delas.
-4. [Crie um grupo de recursos](../resource-group-template-deploy-portal.md) ou selecione um existente. Selecione uma região do Azure. As máquinas serão replicadas para esta região. Para verificar as regiões suportadas veja Disponibilidade Geográfica em [Detalhes dos Preços do Azure Site Recovery](https://azure.microsoft.com/pricing/details/site-recovery/).
+4. [Crie um grupo de recursos](../azure-resource-manager/resource-group-template-deploy-portal.md) ou selecione um existente. Selecione uma região do Azure. As máquinas serão replicadas para esta região. Para verificar as regiões suportadas veja Disponibilidade Geográfica em [Detalhes dos Preços do Azure Site Recovery](https://azure.microsoft.com/pricing/details/site-recovery/).
 5. Se pretender aceder rapidamente ao cofre a partir do Dashboard, clique em **Afixar ao dashboard** > **Criar cofre**.
 
     ![Novo cofre](./media/site-recovery-vmm-to-azure/new-vault-settings.png)
@@ -372,6 +372,7 @@ O valor de registo **UploadThreadsPerVM** controla o número de processos utiliz
 2. O valor predefinido é 4. Numa rede “sobreaprovisionada”, os valores predefinidos destas chaves de registo devem ser alterados. O valor máximo é 32. Monitorize o tráfego para otimizar o valor.
 
 ## <a name="step-6-enable-replication"></a>Passo 6: Ativar a replicação
+
 Agora, ative a replicação da seguinte forma:
 
 1. Clique em **Passo 2: Replicar aplicação** > **Origem**. Depois de ativar a replicação pela primeira vez, clique em **+Replicar**, no cofre, para ativar a replicação em máquinas adicionais.
@@ -388,9 +389,20 @@ Agora, ative a replicação da seguinte forma:
 6. Em **Máquinas Virtuais** > **Selecionar máquinas virtuais**, clique e selecione cada máquina que pretende replicar. Só pode selecionar máquinas para as quais a replicação pode ser ativada. Em seguida, clique em **OK**.
 
     ![Ativar a replicação](./media/site-recovery-vmm-to-azure/enable-replication5.png)
-7. Em **Propriedades** > **Configurar propriedades**, selecione o sistema operativo para as VMs selecionadas e o disco do sistema operativo. Em seguida, clique em **OK**. Pode definir as propriedades adicionais mais tarde.
+7. Em **Propriedades** > **Configurar propriedades**, selecione o sistema operativo para as VMs selecionadas e o disco do sistema operativo. Por predefinição são selecionados todos os discos da VM para replicação. Deverá excluir disco(s) da replicação para reduzir o consumo de largura de banda, ao replicar dados desnecessários para o Azure. Por exemplo, não deverá replicar discos com dados temporários, ou dados que são atualizados sempre que uma máquina ou aplicação reinicia (por exemplo, pagefile.sys ou Microsoft SQL Server tempdbr). Pode impedir que o disco seja replicado ao desmarcá-lo. Certifique-se de que o nome da VM do Azure (nome de destino) está em conformidade com os [requisitos da máquina virtual do Azure](site-recovery-best-practices.md#azure-virtual-machine-requirements) e modifique-o se for necessário. Em seguida, clique em **OK**. Pode definir as propriedades adicionais mais tarde.
 
-    ![Ativar a replicação](./media/site-recovery-vmm-to-azure/enable-replication6.png)
+    ![Ativar a replicação](./media/site-recovery-vmm-to-azure/enable-replication6-with-exclude-disk.png)
+    
+    >[!NOTE]
+    > 
+    > * Apenas os discos básicos podem ser excluídos da replicação. Não pode excluir o disco do SO e não recomendamos excluir discos dinâmicos. O ASR não consegue identificar que disco VHD é básico ou dinâmico no interior da VM do convidado.  Se todos os discos de volume dinâmico dependente não forem excluídos, o disco dinâmico protegido será tratado como um disco com falha na VM de ativação pós-falha e os dados desse disco não estarão acessíveis.   
+    > * Após a replicação estar ativada, não pode adicionar ou remover discos para replicação. Se pretende adicionar ou excluir um disco, terá de desativar a proteção da VM e, em seguida, reativar.
+    > * Se excluir um disco necessário para o funcionamento de uma aplicação, após a ativação pós-falha do Azure, terá de criá-lo manualmente no Azure, para que a aplicação replicada possa ser executada. Em alternativa, pode integrar a automatização do Azure num plano de recuperação para criar o disco durante a ativação pós-falha da máquina.
+    > * Os discos que criar manualmente no Azure não poderão realizar a ativação pós-falha novamente. Por exemplo, se realizar a ativação pós-falha de três discos e criar dois diretamente na VM do Azure, apenas três discos em que foi realizada a ativação pós falha realizarão a reativação pós-falha do Azure para o Hyper-V. Não pode incluir discos criados manualmente na reativação pós-falha ou em replicação inversa do Hyper-V para o Azure.
+    >
+    >
+    
+
 8. Em **Definições de replicação** > **Configurar as definições de replicação**, selecione a política de replicação que pretende aplicar para as máquinas virtuais protegidas. Em seguida, clique em **OK**. Pode modificar a política de replicação em **Definições** > **Políticas de replicação** > nome da política > **Editar Definições**. As alterações que aplicar são utilizadas para as máquinas que já estão a replicar e para as novas máquinas.
 
    ![Ativar a replicação](./media/site-recovery-vmm-to-azure/enable-replication7.png)
@@ -426,6 +438,7 @@ Para testar a implementação pode executar uma ativação pós-falha de teste p
 * Para executar uma ativação pós-falha de teste, recomenda-se que crie uma rede do Azure nova que esteja isolada da sua rede de produção do Azure. Este é o comportamento predefinido quando cria uma rede nova no Azure. [Saiba mais](site-recovery-failover.md#run-a-test-failover) sobre como executar as ativações pós-falha de teste.
 * Para obter o melhor desempenho quando houver uma ativação pós-falha para o Azure, instale o Agente do Azure na máquina protegida. Este torna o arranque mais rápido e ajuda na resolução de problemas. Instale o agente de [Linux](https://github.com/Azure/WALinuxAgent) ou de [Windows](http://go.microsoft.com/fwlink/?LinkID=394789).
 * Para testar totalmente a implementação, precisa de uma infraestrutura para a máquina replicada funcionar conforme esperado. Se quiser testar o Active Directory e o DNS, pode criar uma máquina virtual como controlador de domínio com o DNS e replicá-la no Azure com o Azure Site Recovery. Leia mais em [Considerações de ativação pós-falha de teste para o Active Directory](site-recovery-active-directory.md#test-failover-considerations).
+* Se tiver excluído discos da replicação, poderá ter de criar esses discos manualmente no Azure depois da ativação pós-falha, para que a aplicação seja executada como esperado.
 * Se quiser executar uma ativação pós-falha não planeada em vez de uma ativação pós-falha de teste, tenha em atenção que:
 
   * Se for possível, deve encerrar as máquinas primárias antes de executar uma ativação pós-falha não planeada. Isto garante que não tenha as máquinas de origem e de réplica em execução ao mesmo tempo.
@@ -496,6 +509,6 @@ Depois da implementação estar instalada e em execução, [saiba mais](site-rec
 
 
 
-<!--HONumber=Nov16_HO5-->
+<!--HONumber=Dec16_HO4-->
 
 

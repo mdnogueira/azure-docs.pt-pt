@@ -17,13 +17,13 @@ ms.workload: na
 ms.date: 05/18/2016
 ms.author: vybavar
 translationtype: Human Translation
-ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
-ms.openlocfilehash: 9bc7cc00e9aa9aab982f0b2f08f8befb7c02f46d
+ms.sourcegitcommit: a9b48f149427e5ceb69bcaa97b1bf08519499b6f
+ms.openlocfilehash: 01657619cbe579c6818a790cc3ab95a33936a565
 
 
 ---
 # <a name="get-started-with-private-templates-on-the-azure-portal"></a>Introdução ao Modelos privados no Portal do Azure
-Um modelo do [Azure Resource Manager](../resource-group-authoring-templates.md) é um modelo declarativo utilizado para definir a implementação. Pode definir os recursos a implementar para uma solução e especificar os parâmetros e as variáveis que permitem introduzir os valores para vários ambientes. O modelo é constituído por JSON e expressões que pode utilizar para construir valores para a implementação.
+Um modelo do [Azure Resource Manager](../azure-resource-manager/resource-group-authoring-templates.md) é um modelo declarativo utilizado para definir a implementação. Pode definir os recursos a implementar para uma solução e especificar os parâmetros e as variáveis que permitem introduzir os valores para vários ambientes. O modelo é constituído por JSON e expressões que pode utilizar para construir valores para a implementação.
 
 Pode utilizar a nova capacidade **Modelos** no [Portal do Azure](https://portal.azure.com), juntamente com o fornecedor de recursos **Microsoft.Gallery** como uma extensão do [Azure Marketplace](https://azure.microsoft.com/marketplace/), para permitir que os utilizadores criem, giram e implementem modelos privados a partir de uma biblioteca pessoal.
 
@@ -35,16 +35,16 @@ As seguintes sugestões ajudá-lo-ão a tirar o máximo partido dos **Modelos** 
 * Um **Modelo** é um recurso encapsulado que contém um modelo do Resource Manager e metadados adicionais. Este comporta-se de uma forma muito semelhante a um item no Marketplace. A principal diferença é que é um item privado em vez de um item público do Marketplace.
 * A biblioteca de **Modelos** funciona bem para utilizadores que necessitam de personalizar as respetivas implementações.
 * Os **Modelos** funcionam bem para utilizadores que necessitam de um repositório simples no Azure.
-* Comece com um modelo do Resource Manager existente. Encontre modelos no [github](https://github.com/Azure/azure-quickstart-templates) ou escolha a opção [Exportar modelo](../resource-manager-export-template.md) a partir de um grupo de recursos existente.
+* Comece com um modelo do Resource Manager existente. Encontre modelos no [github](https://github.com/Azure/azure-quickstart-templates) ou escolha a opção [Exportar modelo](../azure-resource-manager/resource-manager-export-template.md) a partir de um grupo de recursos existente.
 * Os **Modelos** estão ligados ao utilizador que os publica. O nome do publicador é visível para todas as pessoas que têm acesso de leitura ao mesmo.
 * Os **Modelos** são recursos do Resource Manager e não é possível mudar o nome uma vez publicado.
 
 ## <a name="add-a-template-resource"></a>Adicionar um recurso de Modelo
 Existem duas formas de criar um recurso de **Modelo** no Portal do Azure.
 
-### <a name="method-1-create-a-new-template-resource-from-a-running-resource-group"></a>Método 1: Criar um novo recurso de Modelo a partir de um grupo de recursos em execução
+### <a name="method-1--create-a-new-template-resource-from-a-running-resource-group"></a>Método 1: Criar um novo recurso de Modelo a partir de um grupo de recursos em execução
 1. Navegue para um grupo de recursos existente no Portal do Azure. Selecione **Exportar modelo** em **Definições**.
-2. Assim que o modelo do Resource Manager seja exportado, utilize o botão **Guardar Modelo** para guardá-lo no repositório de **Modelos**. Encontre detalhes completos sobre a Exportação do modelo [aqui](../resource-manager-export-template.md).
+2. Assim que o modelo do Resource Manager seja exportado, utilize o botão **Guardar Modelo** para guardá-lo no repositório de **Modelos**. Encontre detalhes completos sobre a Exportação do modelo [aqui](../azure-resource-manager/resource-manager-export-template.md).
    <br /><br />
    ![Exportar grupo de recursos](media/rg-export-portal1.PNG)  <br />
 3. Selecione o botão de comando **Guardar para modelo**.
@@ -62,7 +62,7 @@ Existem duas formas de criar um recurso de **Modelo** no Portal do Azure.
    > 
    > 
 
-### <a name="b-method-2-add-a-new-template-resource-from-browse"></a>B. Método 2: Adicionar um novo recurso de Modelo por pesquisa
+### <a name="method-2--add-a-new-template-resource-from-browse"></a>Método 2: Adicionar um novo recurso de Modelo por pesquisa
 Também pode adicionar um novo **Modelo** em branco utilizando o botão de comando +Adicionar em **Procurar > Modelos**. Terá de fornecer um Nome, Descrição e o modelo do Resource Manager JSON.
 
 ![Adicionar Modelo](media/add-template-portal1.PNG)  <br />
@@ -129,13 +129,13 @@ Clique em **Selecionar** e **Ok**. Agora, pode ver os utilizadores ou grupos que
 > 
 
 ## <a name="next-steps"></a>Passos seguintes
-* Para saber mais sobre como criar modelo do Resource Manager, consulte [Autorizar modelos](../resource-group-authoring-templates.md).
-* Para compreender as funções que pode utilizar num modelo do Resource Manager, consulte [Funções de modelo](../resource-group-template-functions.md)
-* Para obter orientações sobre a conceção dos seus modelos, consulte [Melhores práticas para criar modelos do Azure Resource Manager](../best-practices-resource-manager-design-templates.md)
+* Para saber mais sobre como criar modelo do Resource Manager, consulte [Autorizar modelos](../azure-resource-manager/resource-group-authoring-templates.md).
+* Para compreender as funções que pode utilizar num modelo do Resource Manager, consulte [Funções de modelo](../azure-resource-manager/resource-group-template-functions.md)
+* Para obter orientações sobre a conceção dos seus modelos, consulte [Melhores práticas para criar modelos do Azure Resource Manager](../azure-resource-manager/best-practices-resource-manager-design-templates.md)
 
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Jan17_HO1-->
 
 

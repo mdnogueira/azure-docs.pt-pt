@@ -16,8 +16,8 @@ ms.workload: infrastructure-services
 ms.date: 11/8/2016
 ms.author: jdial
 translationtype: Human Translation
-ms.sourcegitcommit: 6e96471c4f61e1ebe15c23f87ac646001d8e30ee
-ms.openlocfilehash: d68f6a7e935f530630ee33f48cfad1b9e01e66a8
+ms.sourcegitcommit: ba7a67b8ae57da165f45bd3552a3dfac5f4ef64b
+ms.openlocfilehash: c7257faad9a41174fb1d65e04c99cd96a8af3ea9
 
 
 ---
@@ -25,7 +25,7 @@ ms.openlocfilehash: d68f6a7e935f530630ee33f48cfad1b9e01e66a8
 
 [!INCLUDE [virtual-networks-create-vnet-intro](../../includes/virtual-networks-create-vnet-intro-include.md)]
 
-O Azure tem dois modelos de implementação: a implementação do Azure Resource Manager e a implementação clássica. A Microsoft recomenda a criação de recursos com o modelo de implementação Resource Manager. Para saber mais sobre as diferenças entre os dois modelos, veja o artigo [Understand Azure deployment models (Compreender os modelos de implementação do Azure)](../resource-manager-deployment-model.md).
+O Azure tem dois modelos de implementação: a implementação do Azure Resource Manager e a implementação clássica. A Microsoft recomenda a criação de recursos com o modelo de implementação Resource Manager. Para saber mais sobre as diferenças entre os dois modelos, veja o artigo [Understand Azure deployment models (Compreender os modelos de implementação do Azure)](../azure-resource-manager/resource-manager-deployment-model.md).
  
 Este artigo explica como criar uma VNet através do modelo de implementação Resource Manager no portal do Azure. Também pode criar uma VNet através do Resource Manager com outras ferramentas ou criá-la através do modelo de implementação clássica, ao selecionar outra opção na lista seguinte:
 
@@ -83,6 +83,6 @@ Saiba como ligar:
 - A rede virtual a uma rede no local através de uma rede privada virtual (VPN) site a site ou de um circuito do ExpressRoute. Leia os artigos [Connect a VNet to an on-premises network using a site-to-site VPN (Ligar uma VNet a uma rede no local com uma VPN site a site)](../vpn-gateway/vpn-gateway-howto-multi-site-to-site-resource-manager-portal.md) e [Link a VNet to an ExpressRoute circuit (Ligar uma VNet a um circuito do ExpressRoute)](../expressroute/expressroute-howto-linkvnet-portal-resource-manager.md) para saber como.
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 
