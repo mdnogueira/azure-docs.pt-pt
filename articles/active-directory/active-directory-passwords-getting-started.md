@@ -16,8 +16,8 @@ ms.topic: get-started-article
 ms.date: 10/05/2016
 ms.author: asteen
 translationtype: Human Translation
-ms.sourcegitcommit: 48821a3b2b7da4646c4569cc540d867f02a4a32f
-ms.openlocfilehash: 6dc23714a4a052c7bf0bb5162fe1568ec272b5e3
+ms.sourcegitcommit: e2e5c302d04a41386bfc98dd4e3f8546265dd9f3
+ms.openlocfilehash: e686952a7363e4758f8a3532b54cf5e7f05ce865
 
 
 ---
@@ -185,7 +185,7 @@ Para poder ativar e utilizar a Repetição de Escrita de Palavras-passe, tem de 
   > Se estiver a executar uma versão anterior do Windows Server 2008 ou 2008 R2, pode continuar a utilizar esta funcionalidade, mas será necessário [transferir e instalar o KB 2386717](https://support.microsoft.com/kb/2386717) para poder aplicar a política de palavra-passe local do AD na nuvem.
   > 
   > 
-* Ter instalada a ferramenta do Azure AD Connect e preparado o ambiente do AD para a sincronização com a nuvem.  Para obter mais informações, consulte [Utilizar a infraestrutura de identidade no local na nuvem](active-directory-aadconnect.md).
+* Ter instalada a ferramenta do Azure AD Connect e preparado o ambiente do AD para a sincronização com a nuvem.  Para obter mais informações, consulte [Utilizar a infraestrutura de identidade no local na nuvem](connect/active-directory-aadconnect.md).
   
   > [!NOTE]
   > Antes de testar a repetição de escrita de palavras-passe, certifique-se de que efetua primeiro uma importação completa e uma sincronização completa do AD e do Azure AD no Azure AD Connect.
@@ -199,7 +199,7 @@ Para poder ativar e utilizar a Repetição de Escrita de Palavras-passe, tem de 
   > 
 
 ### <a name="step-1-download-the-latest-version-of-azure-ad-connect"></a>Passo 1: Transferir a versão mais recente do Azure AD Connect
-A Repetição de Escrita de Palavras-passe está disponível nas versões do Azure AD Connect ou na ferramenta Azure AD Sync com o número de versão **1.0.0419.0911** ou superior.  A Repetição de Escrita de Palavras-passe com desbloqueio automático da conta está disponível nas versões do Azure AD Connect ou na ferramenta Azure AD Sync com o número de versão **1.0.0485.0222** ou superior. Se estiver a executar uma versão anterior, atualize para, pelo menos, esta versão antes de continuar. [Clique aqui para transferir a versão mais recente do Azure AD Connect](active-directory-aadconnect.md#install-azure-ad-connect).
+A Repetição de Escrita de Palavras-passe está disponível nas versões do Azure AD Connect ou na ferramenta Azure AD Sync com o número de versão **1.0.0419.0911** ou superior.  A Repetição de Escrita de Palavras-passe com desbloqueio automático da conta está disponível nas versões do Azure AD Connect ou na ferramenta Azure AD Sync com o número de versão **1.0.0485.0222** ou superior. Se estiver a executar uma versão anterior, atualize para, pelo menos, esta versão antes de continuar. [Clique aqui para transferir a versão mais recente do Azure AD Connect](connect/active-directory-aadconnect.md#install-azure-ad-connect).
 
 #### <a name="to-check-the-version-of-azure-ad-sync"></a>Para verificar a versão do Azure AD Sync
 1. Navegue para **%ProgramFiles%\Azure Active Directory Sync\**.
@@ -236,7 +236,7 @@ Agora que já transferiu a ferramenta do Azure AD Connect, está pronto para ati
 #### <a name="to-enable-password-writeback-using-windows-powershell"></a>Para ativar a Repetição de Escrita de Palavras-passe com o Windows PowerShell
 1. No **computador de Sincronização de Diretórios**, abra uma nova **janela elevada do Windows PowerShell**.
 2. Se o módulo ainda não estiver carregado, escreva o comando `import-module ADSync` para carregar os cmdlets do Azure AD Connect para a sessão atual.
-3. Obtenha a lista dos Conectores do Azure AD no sistema ao executar o cmdlet `Get-ADSyncConnector` e ao armazenar os resultados em `$aadConnectorName`, como `$connectors = ADSyncConnector|where-object {$\_.name -like "\*AAD"}`
+3. Obtenha a lista dos Conectores do Azure AD no sistema ao executar o cmdlet `Get-ADSyncConnector` e ao armazenar os resultados em `$aadConnectorName`, como `$connectors = Get-ADSyncConnector|where-object {$\_.name -like "\*AAD"}`
 4. Para obter o estado atual da repetição de escrita do conector atual, execute o seguinte cmdlet: `Get-ADSyncAADPasswordResetConfiguration –Connector $aadConnectorName.name`
 5. Ative a Repetição de Escrita de Palavras-passe ao executar o cmdlet: `Set-ADSyncAADPasswordResetConfiguration –Connector $aadConnectorName.name –Enable $true`
 
@@ -393,6 +393,6 @@ Veja-se abaixo as ligações para todas as páginas da documentação de reposi�
 
 
 
-<!--HONumber=Dec16_HO2-->
+<!--HONumber=Jan17_HO1-->
 
 

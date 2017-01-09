@@ -16,8 +16,8 @@ ms.workload: big-data
 ms.date: 12/16/2016
 ms.author: jgao
 translationtype: Human Translation
-ms.sourcegitcommit: e37e9aa4419929e91664ec1d70c9610de33e3b45
-ms.openlocfilehash: 4ee5a7df3398924f7f40e7cd0467a08c55f299e8
+ms.sourcegitcommit: 938abf03191dec10da8d2fabf27c5db2415d6bc5
+ms.openlocfilehash: 2863bfb48d0fed706fbd3c3f14dfb6a8d77eb9ea
 
 
 ---
@@ -42,7 +42,7 @@ Antes de começar este tutorial, tem de ter os seguintes elementos:
 
 ## <a name="create-cluster"></a>Criar cluster
 
-A maioria das tarefas do Hadoop são tarefas de lote. Cria um cluster, executa algumas tarefas e, em seguida, elimina o cluster. Nesta secção, vai criar um cluster do Hadoop baseado em Linux no HDInsight com um [modelo do Azure Resource Manager](../resource-group-template-deploy.md). O modelo do Resource Manager é totalmente personalizável; desta forma, é fácil criar recursos do Azure como o HDInsight. Não precisa de ter experiência no modelo do Resource Manager para seguir este tutorial. Para conhecer outros métodos de criação de clusters e compreender as propriedades utilizadas neste tutorial, consulte [Criar clusters do HDInsight](hdinsight-hadoop-provision-linux-clusters.md). Utilize o seletor no topo da página para escolher as suas opções de criação do cluster.
+A maioria das tarefas do Hadoop são tarefas de lote. Cria um cluster, executa algumas tarefas e, em seguida, elimina o cluster. Nesta secção, vai criar um cluster do Hadoop baseado em Linux no HDInsight com um [modelo do Azure Resource Manager](../azure-resource-manager/resource-group-template-deploy.md). O modelo do Resource Manager é totalmente personalizável; desta forma, é fácil criar recursos do Azure como o HDInsight. Não precisa de ter experiência no modelo do Resource Manager para seguir este tutorial. Para conhecer outros métodos de criação de clusters e compreender as propriedades utilizadas neste tutorial, consulte [Criar clusters do HDInsight](hdinsight-hadoop-provision-linux-clusters.md). Utilize o seletor no topo da página para escolher as suas opções de criação do cluster.
 
 O modelo do Resource Manager utilizado neste tutorial está localizado no [Github](https://azure.microsoft.com/resources/templates/101-hdinsight-linux-ssh-password/). 
 
@@ -175,6 +175,6 @@ Se gostaria de saber mais sobre como criar ou gerir um cluster do HDInsight, con
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Dec16_HO4-->
 
 

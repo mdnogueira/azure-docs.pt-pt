@@ -16,6 +16,6 @@ Se tiver várias subscrições, utilize o cmdlet [**Set-AzureRmContext**](https:
     Set-AzureRmContext -SubscriptionId '4cac86b0-1e56-bbbb-aaaa-000000000000'
 
 
-<!--HONumber=Dec16_HO5-->
+<!--HONumber=Jan17_HO1-->
 
 

@@ -16,8 +16,8 @@ ms.topic: get-started-article
 ms.date: 11/15/2016
 ms.author: guybo
 translationtype: Human Translation
-ms.sourcegitcommit: 3ed7c49603891b9719819143003d27888f800a95
-ms.openlocfilehash: 21a7feb9eb2588643ffc67408de9f8e60aff7798
+ms.sourcegitcommit: 6fb71859d0ba2e0f2b39d71edd6d518b7a03bfe9
+ms.openlocfilehash: 4a2cd02f6f9b6ac51c32314ce892e572e569eb7c
 
 
 ---
@@ -34,7 +34,7 @@ Veja estes vídeos para saber mais sobre os conjuntos de dimensionamento de VMs:
 ## <a name="creating-and-managing-vm-scale-sets"></a>Criar e gerir conjuntos de dimensionamento de VMs
 Pode criar um conjunto de dimensionamento de VMs no [portal do Azure](https://portal.azure.com) ao selecionar *novo* e escrever "dimensionamento" na barra de pesquisa. Verá “Conjunto de dimensionamento de máquinas virtuais” nos resultados. A partir daí, pode preencher os campos necessários para personalizar e implementar o seu conjunto de dimensionamento. 
 
-Os conjuntos de dimensionamento de VMs também podem ser definidos e implementados com modelos JSON e [APIs REST](https://msdn.microsoft.com/library/mt589023.aspx), tal como as VMs do Azure Resource Manager individuais. Por conseguinte, pode ser utilizado qualquer método de implementação Azure Resource Manager padrão. Para obter mais informações sobre os modelos, veja [Authoring Azure Resource Manager templates (Criar modelos do Azure Resource Manager)](../resource-group-authoring-templates.md).
+Os conjuntos de dimensionamento de VMs também podem ser definidos e implementados com modelos JSON e [APIs REST](https://msdn.microsoft.com/library/mt589023.aspx), tal como as VMs do Azure Resource Manager individuais. Por conseguinte, pode ser utilizado qualquer método de implementação Azure Resource Manager padrão. Para obter mais informações sobre os modelos, veja [Authoring Azure Resource Manager templates (Criar modelos do Azure Resource Manager)](../azure-resource-manager/resource-group-authoring-templates.md).
 
 Está disponível um conjunto de modelos de exemplo de conjuntos de dimensionamento de VMs no repositório GitHub dos modelos de Início Rápido do Azure, [aqui](https://github.com/Azure/azure-quickstart-templates). (procure os modelos que tenham *vmss* no título)
 
@@ -148,6 +148,6 @@ Esta secção lista alguns cenários comuns de conjuntos de dimensionamento de V
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Dec16_HO4-->
 
 

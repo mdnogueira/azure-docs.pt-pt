@@ -30,7 +30,7 @@
 ### [Configurar o webhook num alerta do registo de atividades](../monitoring-and-diagnostics/insights-auditlog-to-webhook-email.md)
 ### [Arquivar o registo de atividades](../monitoring-and-diagnostics/monitoring-archive-activity-log.md)
 ### [Transmitir o registo de atividades para os Hubs de Eventos](../monitoring-and-diagnostics/monitoring-stream-activity-logs-event-hubs.md)
-### [Auditar operações com o Resource Manager](../resource-group-audit.md)
+### [Auditar operações com o Resource Manager](../azure-resource-manager/resource-group-audit.md)
 ## Gerir registos de diagnóstico
 ### [Arquivo](../monitoring-and-diagnostics/monitoring-archive-diagnostic-logs.md)
 ### [Transmitir em Fluxo nos Hubs de Eventos](../monitoring-and-diagnostics/monitoring-stream-diagnostic-logs-to-event-hubs.md)
@@ -49,6 +49,6 @@
 ## [Exemplos da CLI 2.0 do Azure (Pré-visualização)](../monitoring-and-diagnostics/insights-cli-samples.md)
 ## [Lista de Métricas Suportadas](../monitoring-and-diagnostics/monitoring-supported-metrics.md)
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Jan17_HO1-->
 
 

@@ -1,6 +1,6 @@
 ---
-title: "Criar um novo conjunto de bases de dados elásticas com o PowerShell | Microsoft Docs"
-description: "Saiba como utilizar o PowerShell para aumentar horizontalmente recursos da Base de Dados SQL do Azure, criando um conjunto de bases de dados elásticas dimensionável para gerir várias bases de dados."
+title: "Criar um novo conjunto elástico com o PowerShell | Microsoft Docs"
+description: "Saiba como utilizar o PowerShell para aumentar horizontalmente recursos da Base de Dados SQL do Azure, criando um conjunto elástico dimensionável para gerir várias bases de dados."
 services: sql-database
 documentationcenter: 
 author: srinia
@@ -8,6 +8,7 @@ manager: jhubbard
 editor: 
 ms.assetid: 37a707ee-9223-43ae-8c35-1ccafde8b83e
 ms.service: sql-database
+ms.custom: multiple databases
 ms.devlang: NA
 ms.topic: get-started-article
 ms.tgt_pltfrm: powershell
@@ -15,12 +16,12 @@ ms.workload: data-management
 ms.date: 05/27/2016
 ms.author: srinia
 translationtype: Human Translation
-ms.sourcegitcommit: 5a101aa78dbac4f1a0edb7f414b44c14db392652
-ms.openlocfilehash: 14c34627623f3b0371a8ad3c3f8eb46af9ed4847
+ms.sourcegitcommit: 6c8420a154d998aa95c0220049ee54b3039a872b
+ms.openlocfilehash: 679cdacc3782f667635a586df4cd77a9af7884d9
 
 
 ---
-# <a name="create-a-new-elastic-database-pool-with-powershell"></a>Criar um novo conjunto de bases de dados elásticas com o PowerShell
+# <a name="create-a-new-elastic-pool-with-powershell"></a>Criar um novo conjunto elástico com o PowerShell
 > [!div class="op_single_selector"]
 > * [Portal do Azure](sql-database-elastic-pool-create-portal.md)
 > * [PowerShell](sql-database-elastic-pool-create-powershell.md)
@@ -28,7 +29,7 @@ ms.openlocfilehash: 14c34627623f3b0371a8ad3c3f8eb46af9ed4847
 >
 >
 
-Saiba como criar um [conjunto de bases de dados elásticas](sql-database-elastic-pool.md), utilizando cmdlets do PowerShell.
+Saiba como criar um [conjunto elástico](sql-database-elastic-pool.md) com cmdlets do PowerShell.
 
 Para códigos de erro comuns, consulte [Códigos de erro de SQL para aplicações de clientes de Base de Dados SQL: erro de ligação à base de dados e outros problemas](sql-database-develop-error-messages.md).
 
@@ -37,10 +38,10 @@ Para códigos de erro comuns, consulte [Códigos de erro de SQL para aplicaçõe
 >
 >
 
-Tem de estar a executar o Azure PowerShell 1.0 ou superior. Para informações detalhadas, consulte [Como instalar e configurar o Azure PowerShell](../powershell-install-configure.md).
+Tem de estar a executar o Azure PowerShell 1.0 ou superior. Para informações detalhadas, consulte [Como instalar e configurar o Azure PowerShell](/powershell/azureps-cmdlets-docs).
 
 ## <a name="create-a-new-pool"></a>Criar um novo conjunto
-O cmdlet [New-AzureRmSqlElasticPool](https://msdn.microsoft.com/library/azure/mt619378\(v=azure.300\).aspx) cria um novo conjunto. Os valores de eDTU por conjunto e das Dtus mínimas e máximas estão restritos pelo valor da camada de serviço (básica, standard ou premium). Consulte [eDTU e limites de armazenamento para conjuntos elásticos e bases de dados elásticas](sql-database-elastic-pool.md#edtu-and-storage-limits-for-elastic-pools-and-elastic-databases).
+O cmdlet [New-AzureRmSqlElasticPool](https://msdn.microsoft.com/library/azure/mt619378\(v=azure.300\).aspx) cria um novo conjunto. Os valores de eDTU por conjunto e das Dtus mínimas e máximas estão restritos pelo valor da camada de serviço (básica, standard ou premium). Consulte [eDTU e limites de armazenamento para conjuntos elásticos e bases de dados elásticas](sql-database-elastic-pool.md#edtu-and-storage-limits-for-elastic-pools).
 
     New-AzureRmSqlElasticPool -ResourceGroupName "resourcegroup1" -ServerName "server1" -ElasticPoolName "elasticpool1" -Edition "Standard" -Dtu 400 -DatabaseDtuMin 10 -DatabaseDtuMax 100
 
@@ -83,6 +84,6 @@ Este script cria um novo grupo de recursos e um novo servidor do Azure. Quando l
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Jan17_HO1-->
 
 
