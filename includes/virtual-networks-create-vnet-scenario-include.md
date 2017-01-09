@@ -10,6 +10,6 @@ Neste cenário, vai criar uma VNet com o nome **TestVNet** com um bloco CIDR res
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Jan17_HO1-->
 
 

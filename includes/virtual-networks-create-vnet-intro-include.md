@@ -2,6 +2,6 @@ Uma rede virtual do Azure (VNet) é uma representação da sua própria rede na 
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Jan17_HO1-->
 
 

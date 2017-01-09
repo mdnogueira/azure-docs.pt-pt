@@ -1,13 +1,18 @@
-Uma zona DNS serve para alojar os registos DNS para um determinado domínio. Para iniciar o alojamento do seu domínio, terá de criar uma zona DNS. Qualquer registo DNS criado para um determinado domínio ficará dentro de uma zona DNS do domínio.
+Uma zona DNS é utilizada para alojar os registos DNS para um determinado domínio. Para começar a alojar o seu domínio no DNS do Azure, tem de criar uma zona DNS para esse nome de domínio. Cada registo DNS para o seu domínio é então criado no interior desta zona DNS.
 
-Por exemplo, o domínio “contoso.com” pode conter vários registos DNS, como “mail.contoso.com” (para um servidor de e-mail) e “www.contoso.com” (para um site).
+Por exemplo, o domínio “contoso.com” pode conter vários registos DNS, como “mail.contoso.com” (para um servidor de e-mail) e “www.contoso.com” (para um Web site).
 
-## <a name="a-namenamesaabout-dns-zone-names"></a><a name="names"></a>Sobre os nomes das zonas DNS
-* O nome da zona deve ser exclusivo dentro do grupo de recursos e a zona não pode já existir. Caso contrário, a operação falhará.
+Ao criar uma zona DNS no Azure DNS:
+
+* O nome da zona deve ser exclusivo dentro do grupo de recursos e a zona não pode já existir. Caso contrário, a operação falha.
 * O mesmo nome de zona pode ser reutilizado num grupo de recursos diferente ou numa subscrição diferente do Azure.
-* Quando várias zonas partilham o mesmo nome, cada instância receberá endereços de servidor de nomes diferentes e apenas uma instância pode ser delegada do domínio principal. Para obter mais informações, veja [Delegar um domínio ao DNS do Azure](../articles/dns/dns-domain-delegation.md).
+* Onde as várias zonas partilham o mesmo nome, cada instância é atribuída a diferentes endereços do servidor do nome. Apenas um conjunto de endereços pode ser configurado com a entidade de registo de nome de domínio.
 
+> [!NOTE]
+> Não é necessário possuir um nome de domínio para criar uma zona DNS com esse nome de domínio no DNS do Azure. No entanto, tem de ser o proprietário do domínio para configurar os servidores de nomes DNS do Azure como os servidores de nomes corretos para o nome de domínio com a entidade de registo do nome de domínio.
+> 
+> Para obter mais informações, veja [Delegar um domínio ao DNS do Azure](../articles/dns/dns-domain-delegation.md).
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Jan17_HO1-->
 
 

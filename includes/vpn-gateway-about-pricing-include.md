@@ -10,6 +10,6 @@ Vai pagar por duas coisas -- os custos de computação à hora do gateway de red
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Jan17_HO1-->
 
 
