@@ -13,11 +13,11 @@ ms.devlang: NA
 ms.workload: search
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
-ms.date: 08/29/2016
+ms.date: 12/09/2016
 ms.author: ashmaka
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 2ebe71b3456420f29ffe06bc15471d3fd2121f8c
+ms.sourcegitcommit: 72cc0d9ff35ff656a6134b52812b64c39a295a6f
+ms.openlocfilehash: 53786d60d9971d9f976bf0f3ef4e40346c3101f4
 
 
 ---
@@ -34,23 +34,23 @@ Existem duas formas de preencher o índice da Azure Search com os seus dados. A 
 
 Este guia abrange apenas as instruções sobre a utilização do modelo de envio de carregamento de dados (suportado apenas na [API REST](search-import-data-rest-api.md) e no [SDK .NET](search-import-data-dotnet.md)), contudo, também pode saber mais acerca do modelo de extração a seguir. 
 
-### <a name="push-data-to-an-index"></a>Enviar dados para um índice
+## <a name="push-data-to-an-index"></a>Enviar dados para um índice
 Esta abordagem diz respeito ao envio através de programas dos seus dados para a Azure Search para os tornar disponíveis para pesquisa. Para aplicações com requisitos de latência muito baixos (por exemplo, caso sejam necessárias operações de pesquisa para estar sincronizado com bases de dados de inventário dinâmicas), o modelo de envio é a única opção.
 
-Pode utilizar a [API REST](https://msdn.microsoft.com/library/azure/dn798930.aspx) ou o [SDK .NET](search-import-data-dotnet.md) para enviar dados para um índice. Atualmente não existe qualquer suporte de ferramentas para o envio de dados através do portal.
+Pode utilizar a [API REST](https://docs.microsoft.com/rest/api/searchservice/AddUpdate-or-Delete-Documents) ou o [SDK .NET](search-import-data-dotnet.md) para enviar dados para um índice. Atualmente não existe qualquer suporte de ferramentas para o envio de dados através do portal.
 
 Esta abordagem é mais flexível do que o modelo de extração, pois pode carregar documentos individualmente ou em lotes (até 1000 por lote ou 16 MB, consoante o limite que ocorrer primeiro). O modelo de envio também permite carregar documentos para a Azure Search independentemente do local de armazenamento dos dados.
 
-### <a name="pull-data-into-an-index"></a>Extrair dados para um índice
+## <a name="pull-data-into-an-index"></a>Extrair dados para um índice
 O modelo de extração pesquisa uma origem de dados suportada e carrega automaticamente os dados para o índice da Azure Search. Os indexadores, através do registo de alterações e eliminações aos documentos existentes, além do reconhecimento de novos documentos, suprimem a gestão ativa dos dados no índice.
 
 Na Azure Search, esta função é implementada através de *indexadores*, atualmente disponíveis para [Blob Storage (pré-visualização)](search-howto-indexing-azure-blob-storage.md), [DocumentDB](http://aka.ms/documentdb-search-indexer), [SQL Database do Azure e SQL Server em VMs do Azure](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md).
 
-A funcionalidade de indexador está exposta no [Portal do Azure](search-import-data-portal.md) e na [API REST](https://msdn.microsoft.com/library/azure/dn946891.aspx).
+A funcionalidade de indexador está exposta no [portal do Azure](search-import-data-portal.md) e na [API REST](https://docs.microsoft.com/rest/api/searchservice/Indexer-operations).
 
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO2-->
 
 

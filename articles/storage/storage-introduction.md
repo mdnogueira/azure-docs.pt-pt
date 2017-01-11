@@ -3,8 +3,8 @@ title: "Introdução ao Storage | Microsoft Docs"
 description: "Uma descrição geral do Storage do Azure, o armazenamento de dados online da Microsoft na nuvem. Saiba como utilizar a melhor solução de armazenamento na nuvem disponível nas aplicações."
 services: storage
 documentationcenter: 
-author: tamram
-manager: carmonm
+author: mmacy
+manager: timlt
 editor: tysonn
 ms.assetid: a4a1bc58-ea14-4bf5-b040-f85114edc1f1
 ms.service: storage
@@ -12,11 +12,11 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 11/17/2016
-ms.author: tamram
+ms.date: 12/08/2016
+ms.author: marsma
 translationtype: Human Translation
-ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
-ms.openlocfilehash: ac0044da9cf804dabd9d71e3380782120728a55a
+ms.sourcegitcommit: 931503f56b32ce9d1b11283dff7224d7e2f015ae
+ms.openlocfilehash: 40ab7632f47de4d4eef277f4c4071ce2d4de1eed
 
 
 ---
@@ -75,7 +75,7 @@ Para os utilizadores com grandes quantidades de dados de objetos não estruturad
 * Dados de configuração para aplicações em nuvem
 * Macrodados, tais como registos e outros grandes conjuntos de dados
 
-Cada blob está organizado num contentor. Os contentores também fornecem uma forma útil de atribuir políticas de segurança a grupos de objetos. Uma conta do Storage pode conter qualquer número de contentores e um contentor pode conter qualquer número de blobs, até ao limite de capacidade de 500 TB da conta do Storage.  
+Cada blob está organizado num contentor. Os contentores também fornecem uma forma útil de atribuir políticas de segurança a grupos de objetos. Uma conta do Storage pode conter qualquer número de contentores e um contentor pode conter qualquer número de blobs, até ao limite de capacidade de 500 TB da conta do Storage.
 
 O Blob Storage oferece três tipos de blobs: blobs de blocos, blobs de acréscimo e blobs de página (discos).
 
@@ -128,32 +128,32 @@ Veja [Utilizar Assinaturas de Acesso Partilhado (SAS)](storage-dotnet-shared-acc
 ## <a name="replication-for-durability-and-high-availability"></a>Replicação para Durabilidade e Elevada Disponibilidade
 Os dados na sua conta de armazenamento do Microsoft Azure são sempre replicados para garantir a durabilidade e a elevada disponibilidade. A replicação copia os dados, no mesmo centro de dados ou para um segundo centro de dados, consoante a opção de replicação que escolher. A replicação protege os dados e preserva o tempo ativo da sua aplicação em caso de falhas de hardware transitórias. Se os dados são replicados para um segundo centro de dados, esta ação também protege os dados contra uma falha catastrófica na localização primária.
 
-A replicação garante que a sua conta de armazenamento cumpre o [Contrato de Nível de Serviço (SLA) para o Armazenamento](https://azure.microsoft.com/support/legal/sla/storage/) mesmo em caso de falhas. Leia o SLA para obter mais informações sobre as garantias do Armazenamento do Azure quanto à durabilidade e à disponibilidade. 
+A replicação garante que a sua conta de armazenamento cumpre o [Contrato de Nível de Serviço (SLA) para o Armazenamento](https://azure.microsoft.com/support/legal/sla/storage/) mesmo em caso de falhas. Leia o SLA para obter mais informações sobre as garantias do Armazenamento do Azure quanto à durabilidade e à disponibilidade.
 
-Quando cria uma conta de armazenamento, tem de selecionar uma das seguintes opções de replicação:  
+Quando cria uma conta de armazenamento, tem de selecionar uma das seguintes opções de replicação:
 
-* **Armazenamento localmente redundante (LRS).** O Armazenamento localmente redundante mantém três cópias dos seus dados. O LRS é replicado três vezes num único centro de dados numa única região. O LRS protege os dados de falhas normais de hardware, mas não da falha de um único centro de dados.  
-  
+* **Armazenamento localmente redundante (LRS).** O Armazenamento localmente redundante mantém três cópias dos seus dados. O LRS é replicado três vezes num único centro de dados numa única região. O LRS protege os dados de falhas normais de hardware, mas não da falha de um único centro de dados.
+
     O LRS é oferecido com um desconto. Para a máxima durabilidade, recomendamos que utilize o armazenamento georredundante, descrito abaixo.
-* **Armazenamento com redundância de zona (ZRS).** O Armazenamento com redundância de zona mantém três cópias dos seus dados. O ZRS é replicado três vezes em dois ou três locais, numa única região ou em três regiões, fornecendo uma durabilidade superior ao LRS. O ZRS garante que os seus dados são duráveis numa única região.  
-  
-    O ZRS fornece um nível mais elevado de durabilidade do que o LRS. No entanto, para uma durabilidade máxima, recomendamos que utilize o armazenamento georredundante, descrito abaixo.  
-  
+* **Armazenamento com redundância de zona (ZRS).** O Armazenamento com redundância de zona mantém três cópias dos seus dados. O ZRS é replicado três vezes em dois ou três locais, numa única região ou em três regiões, fornecendo uma durabilidade superior ao LRS. O ZRS garante que os seus dados são duráveis numa única região.
+
+    O ZRS fornece um nível mais elevado de durabilidade do que o LRS. No entanto, para uma durabilidade máxima, recomendamos que utilize o armazenamento georredundante, descrito abaixo.
+
   > [!NOTE]
   > Atualmente, o ZRS só está disponível para blobs de blocos e só é suportado para as versões de 14/02/2014 e posteriores.
-  > 
+  >
   > Depois de criar a sua conta do Storage e selecionado o ZRS, não é possível convertê-lo para utilizar qualquer outro tipo de replicação ou vice-versa.
-  > 
-  > 
+  >
+  >
 * **Armazenamento georredundante (GRS)**. O GRS mantém seis cópias dos seus dados. Com a GRS, os dados são replicados três vezes numa região principal e também são replicados três vezes numa região secundária a centenas de quilómetros de distância da região primária, fornecendo o nível mais elevado de durabilidade. Se ocorrer uma falha na região primária, o Storage do Azure terá uma ativação pós-falha para a região secundária. O GRS garante que os seus dados são duráveis em duas regiões separadas.
-  
+
     Para obter informações sobre emparelhamentos primários e secundários por região, veja [Regiões do Azure](https://azure.microsoft.com/regions/).
-* **Armazenamento georredundante com acesso de leitura (RA-GRS)**. O Armazenamento georredundante com acesso de leitura replica os dados para uma localização geográfica secundária e também proporciona acesso de leitura aos seus dados na localização secundária. O Armazenamento georredundante com acesso de leitura permite-lhe aceder aos seus dados a partir da localização principal ou secundária, no caso de uma localização ficar indisponível. O Armazenamento georredundante com acesso de leitura é a opção predefinida para a sua conta de armazenamento por predefinição aquando da respetiva criação. 
-  
+* **Armazenamento georredundante com acesso de leitura (RA-GRS)**. O Armazenamento georredundante com acesso de leitura replica os dados para uma localização geográfica secundária e também proporciona acesso de leitura aos seus dados na localização secundária. O Armazenamento georredundante com acesso de leitura permite-lhe aceder aos seus dados a partir da localização principal ou secundária, no caso de uma localização ficar indisponível. O Armazenamento georredundante com acesso de leitura é a opção predefinida para a sua conta de armazenamento por predefinição aquando da respetiva criação.
+
   > [!IMPORTANT]
   > Pode alterar como os dados são replicados depois de criar a sua conta do Storage, a menos que tenha especificado o ZRS quando criou a conta. No entanto, tenha em atenção que pode ser cobrado um custo único adicional relativo à transferência de dados se mudar do LRS para o GRS ou o RA-GRS.
-  > 
-  > 
+  >
+  >
 
 Consulte o artigo [Replicação do Storage do Azure](storage-redundancy.md) para obter detalhes adicionais sobre as opções de replicação do armazenamento.
 
@@ -252,6 +252,6 @@ Para saber mais sobre o Storage do Azure, explore estes recursos:
 * [Introdução ao Storage do Azure em cinco minutos](storage-getting-started-guide.md)
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 
