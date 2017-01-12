@@ -12,11 +12,11 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: hero-article
-ms.date: 07/22/2016
+ms.date: 12/06/2016
 ms.author: dastrock
 translationtype: Human Translation
-ms.sourcegitcommit: a977cb509fb64d7c986e2e0f7e2b5e4e3e45dec0
-ms.openlocfilehash: a7c95f9219920932d56487c0e9b96499cc963af0
+ms.sourcegitcommit: 4b13c040a15bef2f04d2cd2126e2270d061898bd
+ms.openlocfilehash: 7d582960e615962a3952dd2f58c74ed91e5c450d
 
 
 ---
@@ -122,9 +122,6 @@ Neste fluxo, a aplicação executa [políticas](active-directory-b2c-reference-p
 ## <a name="current-limitations"></a>Limitações atuais
 O Azure AD B2C não suporta atualmente os seguintes tipos de aplicações, mas estão no plano. As limitações e restrições relacionadas com o Azure AD B2C estão descritas em [Limitações e restrições](active-directory-b2c-limitations.md).
 
-### <a name="single-page-apps-javascript"></a>Aplicações de página única (JavaScript)
-Muitas aplicações modernas têm uma aplicação de página única escrita principalmente em JavaScript. Geralmente utilizam uma estrutura como AngularJS, Ember.js ou Durandal. O serviço Azure AD geralmente disponível suporta estas aplicações, utilizando o fluxo implícito de OAuth 2.0. No entanto, este fluxo ainda não está disponível no Azure AD B2C.
-
 ### <a name="daemonsserver-side-apps"></a>Aplicações daemons /do lado do servidor
 As aplicações que contêm processos de execução longa ou que não funcionam sem a presença de um utilizador também necessitam de uma maneira para aceder a recursos protegidos, como as APIs web. Estas aplicações podem autenticar e obter os tokens utilizando a identidade da aplicação (em vez da identidade delegada de um utilizador) e utilizando o fluxo de credenciais do cliente OAuth 2.0.
 
@@ -137,6 +134,6 @@ Este cenário de API web em cadeia pode ser suportado utilizando a concessão de
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO4-->
 
 
