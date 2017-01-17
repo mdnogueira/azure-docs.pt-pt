@@ -13,11 +13,11 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 09/21/2016
+ms.date: 12/16/2016
 ms.author: haining;garye
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 23954b17c96fd33159892b6f9254b4ae9d02ecf9
+ms.sourcegitcommit: 5e9aa39ccf91f98336e5db179b532930f7e83313
+ms.openlocfilehash: 35bf8b41288afd31ba7e6f861beb7a7bf2a36d94
 
 
 ---
@@ -27,7 +27,7 @@ O diagrama da **Descrição geral das funcionalidades do Microsoft Azure Machine
 O [Azure Machine Learning Studio](https://studio.azureml.net/) tem disponível um grande número de algoritmos de Machine Learning, juntamente com módulos que ajudam na introdução, saída, preparação e visualização dos dados. Utilizando estes componentes, pode desenvolver uma experimentação da análise preditiva, repeti-la e usá-la para preparar o seu modelo.
 Em seguida, com um clique, pode operacionalizar o seu modelo na nuvem do Azure para que possa ser utilizado para pontuar novos dados.
 
-Este diagrama mostra como todas essas peças encaixam.
+Este diagrama demonstra como todas essas peças encaixam.
 
 > [!NOTE]
 > Consulte o artigo [Folha de referência do algoritmo do Machine Learning para o Microsoft Azure Machine Learning Studio](machine-learning-algorithm-cheat-sheet.md) para obter ajuda adicional na navegação e para escolher os algoritmos do Machine Learning disponíveis no Machine Learning Studio.
@@ -41,7 +41,7 @@ Transfira o diagrama da **Descrição geral das funcionalidades do Microsoft Azu
 
 ![Descrição geral das funcionalidades do Microsoft Azure Machine Learning Studio][studio-overview]
 
-[descrição geral do studio]: ./media/machine-learning-studio-overview-diagram/ml_studio_overview_v1.1.png
+[studio-overview]: ./media/machine-learning-studio-overview-diagram/ml_studio_overview_v1.1.png
 
 
 ## <a name="more-help-with-machine-learning-studio"></a>Mais ajuda no Machine Learning Studio
@@ -54,6 +54,6 @@ Transfira o diagrama da **Descrição geral das funcionalidades do Microsoft Azu
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO3-->
 
 
