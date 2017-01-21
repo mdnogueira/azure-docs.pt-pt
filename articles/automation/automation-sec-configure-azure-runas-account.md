@@ -13,11 +13,11 @@ ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 08/17/2016
+ms.date: 01/05/2017
 ms.author: magoedte
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 1e7529de2968b2745b42001cc16b54d70b2a5b86
+ms.sourcegitcommit: aec8fd057bd31fc933d19996567437b2a897623b
+ms.openlocfilehash: 889c9a53e3ce454ee9ac9fc0f24b2ff8244e87c6
 
 
 ---
@@ -54,7 +54,7 @@ Antes de o fazermos, há alguns aspetos que deve compreender e considerar antes 
 Nesta secção, é necessário executar os seguintes passos para criar uma nova conta de Automatização do Azure a partir do portal do Azure.  Esta ação cria a conta Run As e conta Run As clássica.  
 
 > [!NOTE]
-> O utilizador que efetua estes passos *tem* de ser membro da função de Administradores da Subscrição e o coadministrador da subscrição que está a conceder acesso à subscrição para o utilizador.  O utilizador tem também de ser adicionado como Utilizador para esse Active Directory predefinido das subscrições; a conta não necessita de ser atribuídos a uma função com privilégios.
+> O utilizador que executa estes passos tem de ser membro da função Administradores de Serviços ou o coadministrador da subscrição que está a conceder acesso à subscrição para o utilizador. O utilizador tem também de ser adicionado como Utilizador para esse Active Directory predefinido das subscrições; a conta não necessita de ser atribuídos a uma função com privilégios. Os utilizadores que não são membros do Active Directory da Subscrição antes de serem adicionados à função Coadministrador da subscrição serão adicionados ao Active Directory como Convidados e irão ver o aviso "Não tem permissões para criar..." no painel **Adicionar uma Conta de Automatização**. Os utilizadores que foram adicionados primeiro à função de coadministrador podem ser removidos das subscrições do Active Directory e adicionados novamente para que se tornem num Utilizador completo no Active Directory. Esta situação pode ser verificada a partir do painel **Azure Active Directory** no portal do Azure ao selecionar **Utilizadores e grupos**. Selecione **Todos os utilizadores** e depois de selecionar o utilizador específico, selecione **Perfil**.  O valor do atributo **Tipo de utilizador** sob o perfil de utilizadores não deve ser igual a **Convidado**.  
 > 
 > 
 
@@ -137,7 +137,7 @@ Antes de continuar, verifique o seguinte:
 
 1. Transferiu e instalou [Windows Management Framework (WMF) 4.0](https://www.microsoft.com/download/details.aspx?id=40855) se estiver a executar o Windows 7.   
     Se estiver a executar o Windows Server 2012 R2, Windows Server 2012, Windows 2008 R2, Windows 8.1 e Windows 7 SP1, o [Windows Management Framework 5.0](https://www.microsoft.com/download/details.aspx?id=50395) está disponível para instalação.
-2. Azure PowerShell 1.0. Para obter informações sobre esta versão e como a instalar, consulte o artigo [Como instalar e configurar o Azure PowerShell](../powershell-install-configure.md).
+2. Azure PowerShell 1.0. Para obter informações sobre esta versão e como a instalar, consulte o artigo [Como instalar e configurar o Azure PowerShell](/powershell/azureps-cmdlets-docs).
 3. Criou uma conta de automatização.  Esta conta vai ser referenciada como valor para os parâmetros - AutomationAccountName e ApplicationDisplayName - em ambos os scripts abaixo.
 
 Para obter os valores de *SubscriptionID*, *ResourceGroup*, e *AutomationAccountName*, que são os parâmetros necessários para os scripts, no portal do Azure selecione a sua conta de automatização do painel **Conta de automatização** e selecione **Todas as definições**.  A partir do painel **Todas as definições**, em **Definições da Conta** selecione **Propriedades**.  No painel **Propriedades**, pode ter em atenção estes valores.<br> ![Propriedades da Conta de Automatização](media/automation-sec-configure-azure-runas-account/automation-account-properties.png)  
@@ -394,6 +394,6 @@ Pode utilizar o código de exemplo atualizado abaixo, retirado do runbook de exe
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Jan17_HO1-->
 
 
