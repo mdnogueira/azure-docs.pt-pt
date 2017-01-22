@@ -16,12 +16,12 @@ ms.workload: big-data
 ms.date: 10/11/2016
 ms.author: larryfr
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: e2fa11046adf828497b142e1043ac1c2a15443ef
+ms.sourcegitcommit: bccec1e4078c38e1cc9205a36d3a5df579df35b6
+ms.openlocfilehash: d5ff397e947a7edc8310da59ff9fe8896829e35d
 
 
 ---
-# <a name="introduction-to-apache-storm-on-hdinsight-realtime-analytics-for-hadoop"></a>Introdução ao Apache Storm no HDInsight: Análise em tempo real para o Hadoop
+# <a name="introduction-to-apache-storm-on-hdinsight-real-time-analytics-for-hadoop"></a>Introdução ao Apache Storm no HDInsight: Análise em tempo real para o Hadoop
 O Apache Storm no HDInsight permite-lhe criar soluções de análise em tempo real, distribuídas no ambiente do Azure, utilizando o [Apache Hadoop](http://hadoop.apache.org).
 
 ## <a name="what-is-apache-storm"></a>O que é Apache Storm?
@@ -36,8 +36,9 @@ O Apache Storm no HDInsight é um cluster gerido, integrado no ambiente do Azure
   * Suporta a mistura de linguagens de programação: ler os dados utilizando Java e em seguida, processá-los utilizando C#
     
     > [!NOTE]
-    > As topologias de C# só são suportadas em clusters do HDInsight baseados no Windows.
+    > Para utilizar uma topologia C# com um cluster baseado em Linux, tem de atualizar o pacote NuGet Microsoft.SCP.Net.SDK utilizado pelo seu projeto para a versão 0.10.0.6 ou superior. A versão do pacote também tem de corresponder à versão principal do Storm instalada no HDInsight. Por exemplo, o Storm nas versões 3.3 e 3.4 do HDInsight utilizam a versão 0.10.x do Storm, enquanto o HDInsight 3.5 utiliza o Storm 1.0.x.
     > 
+    > As topologias C# em clusters baseados em Linux têm de utilizar o .NET 4.5 e utilizar o Mono para serem executadas no cluster do HDInsight. A maioria dos elementos irá funcionar; contudo, deverá verificar o documento [Mono Compatibility](http://www.mono-project.com/docs/about-mono/compatibility/) quanto a potenciais incompatibilidades.
     > 
   * Utilize a interface **Trident** de Java para criar topologias Storm que suportam o processamento de mensagens "exatamente uma vez", persistência do arquivo de dados "transacional" e um conjunto de operações de análise de fluxo comuns
 * Inclui funcionalidades integradas de escala vertical e redução vertical: Escalar um cluster do HDInsight sem afetar a execução de topologias Storm
@@ -47,13 +48,13 @@ O Apache Storm no HDInsight é um cluster gerido, integrado no ambiente do Azure
 
 Para obter uma lista de empresas que utiliza o Apache Storm como solução de análise em tempo real, consulte o artigo [Empresas que Utilizam o Apache Storm](https://storm.apache.org/documentation/Powered-By.html).
 
-Para começar a utilizar o Storm, consulte o artigo [Introdução ao Storm no HDInsight][gettingstarted].
+Para começar a utilizar o Storm, consulte o artigo [Get started with Storm on HDInsight (Introdução ao Storm no HDInsight)][gettingstarted].
 
 ### <a name="ease-of-provisioning"></a>Facilidade de aprovisionamento
 Pode aprovisionar um novo Storm no cluster do HDInsight em minutos. Especifique o nome do cluster, tamanho, conta de administrador e conta do Storage. O Azure criará o cluster, incluindo as topologias de exemplo e um dashboard de gestão Web.
 
 > [!NOTE]
-> Também pode aprovisionar de clusters de Storm através do [CLI do Azure ](../xplat-cli-install.md) ou [Azure PowerShell](../powershell-install-configure.md).
+> Também pode aprovisionar de clusters de Storm através do [CLI do Azure ](../xplat-cli-install.md) ou [Azure PowerShell](/powershell/azureps-cmdlets-docs).
 > 
 > 
 
@@ -107,7 +108,7 @@ Embora possa especificar o número de nós do cluster durante a criação, pode 
 ### <a name="support"></a>Suporte
 Storm no HDInsight vem com suporte completo de nível empresarial 24 horas por dia, 7 dias por semana. Storm no HDInsight tem também um SLA de 99,9%. Isto significa que podemos garantir que o cluster terá conectividade externa, pelo menos, 99,9% do tempo.
 
-## <a name="common-use-cases-for-realtime-analytics"></a>Casos de utilização comuns para análise em tempo real
+## <a name="common-use-cases-for-real-time-analytics"></a>Casos de utilização comuns para análise em tempo real
 Seguem-se alguns cenários comuns nos quais poderá utilizar o Apache Storm no HDInsight. Para obter informações sobre cenários no mundo real, leia o artigo [Como empresas estão a utilizar o Storm](https://storm.apache.org/documentation/Powered-By.html).
 
 * Internet das Coisas (IoT)
@@ -138,7 +139,7 @@ O Apache Storm executa **topologias** em vez dos trabalhos de MapReduce com que 
   
   * **Nimbus** é um serviço Thrift e uma **topologia** é uma definição de Thrift, por isso, é possível desenvolver topologias através de uma variedade de linguagens de programação.
 
-Para obter mais informações sobre os componentes Storm, consulte o [Tutorial Storm][apachetutorial] em apache.org.
+Para obter mais informações sobre os componentes Storm, consulte o [Storm tutorial (Tutorial Storm)][apachetutorial] em apache.org.
 
 ## <a name="what-programming-languages-can-i-use"></a>Que linguagens de programação posso utilizar?
 O Storm num cluster do HDInsight fornece suporte para C#, Java e Python.
@@ -206,6 +207,6 @@ Saiba mais sobre as soluções de análise em tempo real com Apache Storm no HDI
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Jan17_HO1-->
 
 

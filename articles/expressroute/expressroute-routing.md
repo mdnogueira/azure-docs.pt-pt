@@ -12,11 +12,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 12/12/2016
+ms.date: 01/03/2017
 ms.author: osamam
 translationtype: Human Translation
-ms.sourcegitcommit: 6adb1dd25c24b18b834dd921c2586ef29d56dc81
-ms.openlocfilehash: e04763fa711eed4c699f2bc3f20834849dfe52e0
+ms.sourcegitcommit: 4f67c67639eaf33bb1f2aa236164e98030f5b555
+ms.openlocfilehash: c76471f4c0f4e1b751d623f691578d354008d863
 
 
 ---
@@ -126,9 +126,7 @@ Por exemplo, se ligar à Microsoft em Amesterdão através do ExpressRoute, ter�
 
 Veja a página [Parceiros e localizações de peering do ExpressRoute ](expressroute-locations.md) para obter uma lista detalhada das regiões geopolíticas, das regiões do Azure associadas e das localizações de peering do ExpressRoute correspondentes.
 
-Pode comprar mais do que um circuito do ExpressRoute por região geopolítica. Ter várias ligações oferece vantagens significativas de elevada disponibilidade, devido à georredundância. Caso tenha vários circuitos do ExpressRoute, receberá o mesmo conjunto de prefixos anunciados da Microsoft nos caminhos do peering público e do peering da Microsoft, o que significa que terá vários caminhos da sua rede para a Microsoft. Esta situação pode, potencialmente, levar a decisões de encaminhamento inferiores às ideais na sua rede. Sendo assim, poderá ter experiências de conectividade aos diferentes serviços inferiores às ideais. 
-
-A Microsoft irá marcar prefixos anunciados através do peering público e do peering da Microsoft com os valores das comunidades de BGP adequados, que indiquem a região onde os prefixos estão alojados. Também pode utilizar os valores das comunidades para tomar decisões de encaminhamento adequadas para oferecer [encaminhamento ideal aos clientes](expressroute-optimize-routing.md).
+Pode comprar mais do que um circuito do ExpressRoute por região geopolítica. Ter várias ligações oferece vantagens significativas de elevada disponibilidade, devido à georredundância. Caso tenha vários circuitos do ExpressRoute, receberá o mesmo conjunto de prefixos anunciados da Microsoft nos caminhos do peering público e do peering da Microsoft, o que significa que terá vários caminhos da sua rede para a Microsoft. Esta situação pode, potencialmente, levar a decisões de encaminhamento inferiores às ideais na sua rede. Sendo assim, poderá ter experiências de conectividade aos diferentes serviços inferiores às ideais. Também pode utilizar os valores das comunidades para tomar decisões de encaminhamento adequadas para oferecer [encaminhamento ideal aos utilizadores](expressroute-optimize-routing.md).
 
 | **Região do Microsoft Azure** | **Valor da comunidade BGP** |
 | --- | --- |
@@ -214,6 +212,6 @@ Para além do que foi dito acima, a Microsoft também marcará prefixos baseados
 
 
 
-<!--HONumber=Dec16_HO2-->
+<!--HONumber=Jan17_HO1-->
 
 

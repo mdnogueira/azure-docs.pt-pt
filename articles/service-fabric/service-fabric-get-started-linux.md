@@ -15,8 +15,8 @@ ms.workload: NA
 ms.date: 09/26/2016
 ms.author: seanmck
 translationtype: Human Translation
-ms.sourcegitcommit: 7e33e00a676f4aa7143cede3380adb58ba1d11e4
-ms.openlocfilehash: c27b92d4a1a1bd96ad0bdc46363b8066abc72edd
+ms.sourcegitcommit: 206b958b4c266b9977a9beb8ffb6a0576f068a9a
+ms.openlocfilehash: cc4fbb67baf14f4a104a5de6dbf11ad195a42d15
 
 
 ---
@@ -31,10 +31,11 @@ ms.openlocfilehash: c27b92d4a1a1bd96ad0bdc46363b8066abc72edd
  Para implementar e executar [aplicações do Azure Service Fabric](service-fabric-application-model.md) no seu computador de desenvolvimento Linux, instale o runtime e o SDK comum. Também pode instalar SDKs opcionais para Java e .NET Core.
 
 ## <a name="prerequisites"></a>Pré-requisitos
+
 ### <a name="supported-operating-system-versions"></a>Versões de sistema operativo com suporte
 As seguintes versões do sistema operativo são suportadas para desenvolvimento:
 
-* Ubuntu 16.04 (Xenial Xerus)
+* Ubuntu 16.04 ("Xenial Xerus")
 
 ## <a name="update-your-apt-sources"></a>Atualizar as origens de apt
 Para instalar o SDK e o pacote de runtime associado através de apt-get, primeiro tem de atualizar as origens de apt.
@@ -59,7 +60,7 @@ Para instalar o SDK e o pacote de runtime associado através de apt-get, primeir
 ## <a name="install-and-set-up-the-sdk"></a>Instalar e configurar o SDK
 Assim que as origens forem atualizadas, pode instalar o SDK.
 
-1. Instale o pacote do SDK do Service Fabric. Ser-lhe-á pedido para confirmar a instalação e aceitar um contrato de licença.
+1. Instale o pacote do SDK do Service Fabric. É-lhe pedido para confirmar a instalação e aceitar um contrato de licença.
    
     ```bash
     sudo apt-get install servicefabricsdkcommon
@@ -70,8 +71,9 @@ Assim que as origens forem atualizadas, pode instalar o SDK.
     sudo /opt/microsoft/sdk/servicefabric/common/sdkcommonsetup.sh
     ```
 
+
 ## <a name="set-up-the-azure-cross-platform-cli"></a>Configurar a CLI do Azure de várias plataformas
-A [CLI do Azure de várias plataformas][azure-xplat-cli-github] inclui comandos para interagir com entidades do Service Fabric, incluindo clusters e aplicações. Baseia-se em Node.js, pelo que deve [confirmar que tem o Node instalado][install-node] antes de avançar para as instruções abaixo.
+A [CLI do Azure de várias plataformas][azure-xplat-cli-github] inclui comandos para interagir com entidades do Service Fabric, incluindo clusters e aplicações. Baseia-se em Node.js, pelo que deve [confirmar que tem o Node instalado][install-node] antes de avançar para as instruções seguintes:
 
 1. Clone o repositório do github para o computador de desenvolvimento.
    
@@ -109,7 +111,13 @@ Se tudo tiver sido instalado corretamente, deverá conseguir iniciar um cluster 
    
     ![Service Fabric Explorer no Linux][sfx-linux]
 
-Nesta fase, pode implementar pacotes de aplicações do Service Fabric pré-configurados ou novos com base em contentores convidados ou em executáveis convidados. Para criar novos serviços através de SDKs Java ou .NET Core, siga os passos de configuração opcionais abaixo.
+Nesta fase, pode implementar pacotes de aplicações do Service Fabric pré-configurados ou novos com base em contentores convidados ou em executáveis convidados. Para criar novos serviços com os SDKs Java ou .NET Core, siga os passos de configuração opcionais apresentados nas secções seguintes.
+
+
+> [!NOTE]
+> Não são suportados clusters autónomos em Linux - na pré-visualização, apenas são suportados clusters de uma caixa e clusters de vários computadores Azure Linux.
+> 
+> 
 
 ## <a name="install-the-java-sdk-and-eclipse-neon-plugin-optional"></a>Instalar o Java SDK e o plug-in Eclipse Neon (opcional)
 O Java SDK fornece as bibliotecas e modelos necessários para criar serviços do Service Fabric com Java.
@@ -141,18 +149,32 @@ O NET Core SDK fornece as bibliotecas e modelos necessários para criar serviço
 
 1. Instale o pacote do NET Core SDK.
    
-    ```bash
-    sudo apt-get install servicefabricsdkcsharp
-    ```
+   ```bash
+   sudo apt-get install servicefabricsdkcsharp
+   ```
+
 2. Execute o script de configuração do SDK.
    
-    ```bash
-    sudo /opt/microsoft/sdk/servicefabric/csharp/sdkcsharpsetup.sh
-    ```
+   ```bash
+   sudo /opt/microsoft/sdk/servicefabric/csharp/sdkcsharpsetup.sh
+   ```
+
+## <a name="updating-the-sdk-and-runtime"></a>Atualizar o SDK e o Runtime
+
+Para atualizar para a versão mais recente do SDK e do runtime, execute os seguintes passos (remova os SDKs da lista que não pretende atualizar ou instalar):
+
+   ```bash
+   sudo apt-get update
+   sudo apt-get install servicefabric, servicefabricsdkcommon, servicefabricsdkcsharp, servicefabricsdkjava
+   ```
+
+Para atualizar a CLI, navegue para o diretório onde clonou a CLI e execute `git pull` para atualizar. 
 
 ## <a name="next-steps"></a>Passos seguintes
 * [Create your first Java application on Linux (Criar a sua primeira aplicação Java no Linux)](service-fabric-create-your-first-linux-application-with-java.md)
+* [Create your first CSharp application on Linux (Criar a sua primeira aplicação CSharp no Linux)](service-fabric-create-your-first-linux-application-with-csharp.md)
 * [Prepare your development environment on OSX (Preparar o ambiente de desenvolvimento no OSX)](service-fabric-get-started-mac.md)
+* [Use the Azure CLI to manage your Service Fabric applications (Utilizar a CLI do Azure para gerir as aplicações do Service Fabric)](service-fabric-azure-cli.md)
 
 <!-- Links -->
 
@@ -167,6 +189,6 @@ O NET Core SDK fornece as bibliotecas e modelos necessários para criar serviço
 
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Jan17_HO1-->
 
 
