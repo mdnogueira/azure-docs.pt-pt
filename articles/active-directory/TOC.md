@@ -66,7 +66,6 @@
 
 #### [Eventos de auditoria](active-directory-reporting-audit-events.md)
 #### [Retenção](active-directory-reporting-retention.md)
-#### [Preenchimento](active-directory-reporting-backfill.md)
 #### [Latências](active-directory-reporting-latencies.md)
 #### [Notificações](active-directory-reporting-notifications.md)
 ### Compreender relatórios
@@ -297,6 +296,6 @@
 ## [Fórum de comentários do Azure](https://feedback.azure.com/forums/169401-azure-active-directory)
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Dec16_HO2-->
 
 

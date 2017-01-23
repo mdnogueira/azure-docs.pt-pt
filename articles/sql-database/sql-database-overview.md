@@ -16,8 +16,8 @@ ms.workload: data-management
 ms.date: 11/28/2016
 ms.author: carlrab
 translationtype: Human Translation
-ms.sourcegitcommit: 3ba16154857f8e7b59a1013b736d6131a4161185
-ms.openlocfilehash: 3d45ec5a6636de4213c6c02dca0e5288ec3aa0e3
+ms.sourcegitcommit: e5b5751facb68ae4a62e3071fe4dfefc02434a9f
+ms.openlocfilehash: 315fb49ba25c46afaa6571d9249ecd1c8da13e91
 
 
 ---
@@ -65,12 +65,12 @@ Pode gerir os servidores lógicos da Base de Dados SQL do Azure através de vár
 - Para obter uma descrição geral dos servidores lógicos do SQL Azure, veja [Descrição geral do servidor lógico da Base de Dados SQL](sql-database-server-overview.md)
 - Para obter informações sobre o suporte de Transact-SQL e as diferenças, veja [Diferenças do Transact-SQL da Base de Dados SQL do Azure](sql-database-transact-sql-information.md).
 - Para obter informações sobre quotas e limitações de recursos específicas com base na sua **camada de serviços**. Para obter uma descrição geral de camadas de serviços, veja [Camadas de serviços da Base de Dados SQL](sql-database-service-tiers.md).
-- Para obter diretrizes relacionadas com segurança, veja [Diretrizes e Limitações de Segurança da Base de Dados SQL do Azure](sql-database-security-guidelines.md).
+- Para obter uma descrição geral da segurança, veja [Descrição Geral da Segurança da Base de Dados SQL do Azure](sql-database-security-overview.md).
 - Para obter informações sobre a disponibilidade de controlador e o suporte da Base de Dados SQL, veja [Bibliotecas de Ligação para a Base de Dados SQL e o SQL Server](sql-database-libraries.md).
 
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Dec16_HO4-->
 
 

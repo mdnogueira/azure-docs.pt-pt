@@ -1,5 +1,5 @@
 ---
-title: Diferentes formas para criar uma VM com Linux | Microsoft Docs
+title: Diferentes formas de criar uma VM do Linux no Azure| Microsoft Azure
 description: "Conheça as diferentes formas de criar uma máquina virtual do Linux no Azure, incluindo ligações para ferramentas e tutoriais para cada método."
 services: virtual-machines-linux
 documentationcenter: 
@@ -13,46 +13,70 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 09/27/2016
+ms.date: 01/03/2016
 ms.author: iainfou
 translationtype: Human Translation
-ms.sourcegitcommit: 8835427415e8e01e851796eaf323bce7d1918c8c
-ms.openlocfilehash: 8c7ea2e7131f69bc43f2e82b816efdfbda59e85d
+ms.sourcegitcommit: 44c46fff9ccf9c7dba9ee380faf5f8213b58e3c3
+ms.openlocfilehash: 4397d84ef4d97bdee387777a193ec0b969f2d5e1
 
 
 ---
-# <a name="different-ways-to-create-a-linux-virtual-machine-in-azure"></a>Diferentes formas de criar uma máquina virtual do Linux no Azure
+# <a name="different-ways-to-create-a-linux-vm-including-azure-cli-20-preview"></a>Diferentes formas de criar uma VM do Linux incluindo o Azure CLI 2.0 (Pré-visualização)
 No Azure, tem a flexibilidade de criar máquinas virtuais (VMs) do Linux com ferramentas e fluxos de trabalho com os quais se sente confortável. Este artigo resume estas diferenças e mostra exemplos para criar as suas VMs do Linux.
 
 ## <a name="azure-cli"></a>CLI do Azure
-A CLI do Azure está disponível para todas as plataformas através de um pacote npm, pacotes fornecidos pela distro ou contentor Docker. Pode ler mais sobre [como instalar e configurar a CLI do Azure](../xplat-cli-install.md). Os tutoriais seguintes fornecem exemplos sobre como utilizar a CLI do Azure. Leia cada artigo para obter mais detalhes sobre os comandos de início rápido da CLI mostrados:
 
-* [Criar uma VM do Linux a partir da CLI do Azure para desenvolvimento e teste](virtual-machines-linux-quick-create-cli.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+Pode concluir a tarefa utilizando uma das seguintes versões CLI:
+
+- Azure CLI 1.0 – CLI para os modelos de implementação de gestão clássica e de recursos
+- [Azure CLI 2.0 (Pré-visualização)](../xplat-cli-install.md) - CLI de próxima geração para o modelo de implementação de gestão de recursos
+
+O Azure CLI 2.0 (Pré-visualização) está disponível para todas as plataformas através de um pacote npm, pacotes fornecidos pela distro ou contentor Docker. Certifique-se de que tem sessão iniciada, utilizando **az login**.
+
+Os tutoriais seguintes fornecem exemplos sobre a utilização do Azure CLI 2.0 (Pré-visualização). Leia cada artigo para obter mais detalhes sobre os comandos apresentados:
+
+* [Criar uma VM do Linux com o Azure CLI 2.0 (Pré-visualização)](virtual-machines-linux-quick-create-cli.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
   
-  * O exemplo seguinte cria uma VM CoreOS com uma chave pública com o nome `azure_id_rsa.pub`:
+  * Este exemplo cria um grupo de recursos com o nome myResourceGroup: 
     
     ```azurecli
-    azure vm quick-create -ssh-publickey-file ~/.ssh/azure_id_rsa.pub \
-      --image-urn CoreOS
+    az group create -n myResourceGroup -l westus
     ```
+
+  * Este exemplo cria uma VM no novo grupo de recursos com a imagem Debian mais recente com uma chave pública denominada `id_rsa.pub`:
+
+    ```azurecli
+    az vm create \
+    --image credativ:Debian:8:latest \
+    --admin-username ops \
+    --ssh-key-value ~/.ssh/id_rsa.pub \
+    --public-ip-address-dns-name mydns \
+    --resource-group myResourceGroup \
+    --location westus \
+    --name myVM
+    ```
+
 * [Criar uma VM do Linux protegida com um modelo do Azure](virtual-machines-linux-create-ssh-secured-vm-from-template.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
   
   * O exemplo seguinte cria uma VM ao utilizar um modelo armazenado no GitHub:
     
     ```azurecli
-    azure group create --name myResourceGroup --location WestUS 
-      --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-sshkey/azuredeploy.json
+    az group deployment create -g myResourceGroup \ 
+      --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-sshkey/azuredeploy.json \
+      --parameters @myparameters.json
     ```
+    
 * [Criar um ambiente completo do Linux com a CLI do Azure](virtual-machines-linux-create-cli-complete.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
   
   * Inclui a criação de um balanceador de carga e várias VMs num conjunto de disponibilidade.
+
 * [Adicionar um disco a uma VM do Linux](virtual-machines-linux-add-disk.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
   
-  * O exemplo seguinte adiciona um disco de 5 GB a uma VM existente com o nome `TestVM`:
+  * O exemplo seguinte adiciona um disco de 5 GB a uma VM existente com o nome `myVM`:
     
     ```azurecli
-    azure vm disk attach-new --resource-group myResourceGroup  --vm-name myVM \
-      --size-in-GB 5
+    az vm disk attach-new --resource-group myResourceGroup --vm-name myVM \
+      --disk-size 5 --vhd https://myStorage.blob.core.windows.net/vhds/myDataDisk1.vhd
     ```
 
 ## <a name="azure-portal"></a>Portal do Azure
@@ -65,35 +89,35 @@ O [portal do Azure](https://portal.azure.com) permite-lhe criar rapidamente uma 
 Quando cria uma VM; escolhe uma imagem com base no sistema operativo que pretende executar. O Azure e os respetivos parceiros oferecem várias imagens, algumas das quais incluem aplicações e ferramentas pré-instaladas. Ou então, carregue uma das suas próprias imagens (veja [a secção seguinte](#use-your-own-image)).
 
 ### <a name="azure-images"></a>Imagens do Azure
-Utilize os comandos da CLI `azure vm image` para ver o que está disponível por publicador, versão distro e compilações.
+Utilize os comandos da CLI `az vm image` para ver o que está disponível por publicador, versão distro e compilações.
 
-Liste os publicadores disponíveis da seguinte forma:
+Listar publicadores disponíveis:
 
 ```azurecli
-azure vm image list-publishers --location WestUS
+az vm image list-publishers -l WestUS
 ```
 
-Liste os produtos disponíveis (ofertas) de um determinado publicador da seguinte forma:
+Listar produtos disponíveis (ofertas) para um determinado publicador:
 
 ```azurecli
-azure vm image list-offers --location WestUS --publisher Canonical
+az vm image list-offers --publisher-name Canonical -l WestUS
 ```
 
-Liste os SKUs disponíveis (versões distro) de uma determinada oferta da seguinte forma:
+Listar SKUs disponíveis (versões distro) de uma determinada oferta:
 
 ```azurecli
-azure vm image list-skus --location WestUS --publisher Canonical --offer UbuntuServer
+az vm image list-skus --publisher-name Canonical --offer UbuntuServer -l WestUS
 ```
 
-Liste todas as imagens disponíveis para uma determinada versão da seguinte forma:
+Listar todas as imagens disponíveis para uma determinada versão:
 
 ```azurecli
-azure vm image list --location WestUS --publisher Canonical --offer UbuntuServer --sku 16.04.0-LTS
+az vm image list --publisher Canonical --offer UbuntuServer --sku 16.04.0-LTS -l WestUS
 ```
 
 Para obter mais exemplos da navegação e utilização de imagens disponíveis, veja [Navigate and select Azure virtual machine images with the Azure CLI (Navegar e selecionar imagens de máquinas virtuais do Azure com a CLI do Azure)](virtual-machines-linux-cli-ps-findimage.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
-Os comandos `azure vm quick-create` e `azure vm create` também têm aliases que pode utilizar para aceder rapidamente a distros mais comuns e às respetivas versões mais recentes. Muitas vezes, é mais rápido utilizar aliases do que especificar o publicador, a oferta, o SKU e a versão sempre que cria uma VM:
+O comando `az vm create` tem aliases que pode utilizar para aceder rapidamente a distros mais comuns e às respetivas versões mais recentes. Muitas vezes, é mais rápido utilizar aliases do que especificar o publicador, a oferta, o SKU e a versão sempre que cria uma VM:
 
 | Alias | Publicador | Oferta | SKU | Versão |
 |:--- |:--- |:--- |:--- |:--- |
@@ -110,15 +134,14 @@ Se precisar de personalizações específicas, pode utilizar uma imagem com base
 
 * [Distribuições aprovadas pelo Azure](virtual-machines-linux-endorsed-distros.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 * [Informações sobre distribuições não aprovadas](virtual-machines-linux-create-upload-generic.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-* [Carregar e criar uma VM Linux a partir da imagem de disco personalizada](virtual-machines-linux-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 * [Como capturar uma máquina virtual com Linux como um modelo do Resource Manager](virtual-machines-linux-capture-image.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
   
   * Comandos de exemplo de início rápido para capturar uma VM existente:
     
     ```azurecli
-    azure vm deallocate --resource-group myResourceGroup --vm-name myVM
-    azure vm generalize --resource-group myResourceGroup --vm-name myVM
-    azure vm capture --resource-group myResourceGroup --vm-name myVM --vhd-name-prefix myCapturedVM
+    az vm deallocate -g myResourceGroup -n myVM
+    az vm generalize -g myResourceGroup -n myVM
+    az vm capture -g myResourceGroup -n myVM --vhd-name-prefix myCapturedVM
     ```
 
 ## <a name="next-steps"></a>Passos seguintes
@@ -129,6 +152,6 @@ Se precisar de personalizações específicas, pode utilizar uma imagem com base
 
 
 
-<!--HONumber=Dec16_HO5-->
+<!--HONumber=Jan17_HO1-->
 
 

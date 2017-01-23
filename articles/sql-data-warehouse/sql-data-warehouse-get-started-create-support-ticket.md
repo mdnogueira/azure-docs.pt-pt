@@ -15,16 +15,20 @@ ms.workload: data-services
 ms.date: 10/31/2016
 ms.author: barbkess
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: ede330870f451bd1e0ed6805fa937e74438fd644
+ms.sourcegitcommit: bd85b9eae0e1cb281116748edcad6643b1ec537f
+ms.openlocfilehash: 6ad20a246fce996e6a11ce6fa4715c0d734c4323
 
 
 ---
 # <a name="how-to-create-a-support-ticket-for-sql-data-warehouse"></a>Como criar um pedido de suporte para o SQL Data Warehouse
-Se tiver problemas com o SQL Data Warehouse, crie um pedido de suporte para que a nossa equipa de engenharia possa ajudá-lo.
+Se estiver a ter problemas com o SQL Data Warehouse, crie um pedido de suporte para que a nossa equipa técnica possa ajudá-lo.
+
+> [!NOTE] 
+> A partir de 20/12/2016, a verificação de estado de funcionamento de recurso no portal do Azure não é exata. Estamos a trabalhar ativamente para corrigir este problema. 
+
 
 ## <a name="create-a-support-ticket"></a>Criar um pedido de suporte
-1. Abra o [Portal do Azure][Portal do Azure].
+1. Abra o [portal do Azure][Azure portal].
 2. No ecrã principal, clique no mosaico **Ajuda + suporte**.
    
     ![Ajuda + suporte](./media/sql-data-warehouse-get-started-create-support-ticket/help-support.png)
@@ -47,13 +51,13 @@ Se tiver problemas com o SQL Data Warehouse, crie um pedido de suporte para que 
 6. Selecione **SQL Data Warehouse** como o Recurso.
    
     ![Recurso](./media/sql-data-warehouse-get-started-create-support-ticket/resource.png)
-7. Selecione o seu [Plano de suporte do Azure][Plano de suporte do Azure].
+7. Selecione o seu [plano de suporte do Azure][Azure support plan].
    
    * O suporte relativo à **faturação, quota e gestão de subscrições** está disponível em todos os níveis de suporte.
-   * O suporte de **Break-fix** é fornecido através de suporte para [Programador][Programador], [Standard][Standard], [Suporte Direto Profissional][Suporte Direto Profissional] ou [Premier][Premier]. Os problemas de Break-fix são problemas encontrados pelos clientes ao utilizarem o Azure, onde existe uma expetativa razoável de que a Microsoft causou o problema.
-   * A **orientação para programadores** e os **serviços de aconselhamento** estão disponíveis nos níveis de [Suporte Direto Profissional][Suporte Direto Profissional] e [Premier][Premier]. 
+   * O suporte **com garantia de reparação e assistência** é fornecido através de suporte de [Programador][Developer], [Standard][Standard], [Suporte Direto Profissional][Professional Direct] ou [Premier][Premier]. Os problemas de Break-fix são problemas encontrados pelos clientes ao utilizarem o Azure, onde existe uma expetativa razoável de que a Microsoft causou o problema.
+   * A **orientação para programadores** e os **serviços de aconselhamento** estão disponíveis nos níveis de [Suporte Direto Profissional][Professional Direct] e [Premier][Premier]. 
      
-     Se tiver um plano de suporte Premier, também pode comunicar problemas relacionados com o SQL Data Warehouse no [Portal online do Microsoft Premier][Portal online do Microsoft Premier].  Consulte os [Planos de suporte do Azure][Plano de suporte do Azure] para saber mais sobre os vários planos de suporte, incluindo o âmbito, os tempos de resposta, os preços, etc.  Para perguntas mais frequentes sobre o suporte do Azure, consulte [Azure support FAQs (Perguntas frequentes do suporte do Azure)][Azure support FAQs (Perguntas frequentes do suporte do Azure)].  
+     Se tiver um plano de suporte Premier, também pode comunicar problemas relacionados com o SQL Data Warehouse no [Portal online do Microsoft Premier][Microsoft Premier online portal].  Veja os [Planos de suporte do Azure][Azure support plan] para saber mais sobre os vários planos de suporte, incluindo o âmbito, os tempos de resposta, os preços, etc.  Para perguntas mais frequentes sobre o suporte do Azure, veja [FAQ do Suporte do Azure][Azure support FAQs].  
      
      ![Plano de suporte](./media/sql-data-warehouse-get-started-create-support-ticket/support-plan.png)
 8. Selecione o **Tipo de Problema** e a **Categoria**.
@@ -73,7 +77,7 @@ Depois de ter submetido o pedido de suporte, a equipa de suporte do Azure irá c
 ![Verificar o estado](./media/sql-data-warehouse-get-started-create-support-ticket/check-status.png)
 
 ## <a name="other-resources"></a>Outros Recursos
-Além disso, pode ligar-se à comunidade do SQL Data Warehouse no [Stack Overflow][Stack Overflow] ou no [Fórum MSDN do Azure SQL Data Warehouse][Fórum MSDN do Azure SQL Data Warehouse].
+Além disso, pode ligar-se à comunidade do SQL Data Warehouse no [Stack Overflow][Stack Overflow] ou no [Fórum MSDN do Azure SQL Data Warehouse][Azure SQL Data Warehouse MSDN forum].
 
 <!--Image references--> 
 
@@ -83,20 +87,20 @@ Além disso, pode ligar-se à comunidade do SQL Data Warehouse no [Stack Overflo
 <!--MSDN references--> 
 
 <!--Other web references--> 
-[Portal do Azure]: https://portal.azure.com/
-[Plano de suporte do Azure]: https://azure.microsoft.com/support/plans/?WT.mc_id=Support_Plan_510979/  
-[Programador]: https://azure.microsoft.com/support/plans/developer/  
+[Azure portal]: https://portal.azure.com/
+[Azure support plan]: https://azure.microsoft.com/support/plans/?WT.mc_id=Support_Plan_510979/  
+[Developer]: https://azure.microsoft.com/support/plans/developer/  
 [Standard]: https://azure.microsoft.com/support/plans/standard/  
-[Suporte Direto Profissional]: https://azure.microsoft.com/support/plans/prodirect/  
+[Professional Direct]: https://azure.microsoft.com/support/plans/prodirect/  
 [Premier]: https://azure.microsoft.com/support/plans/premier/  
-[Azure support FAQs (Perguntas frequentes do suporte do Azure)]: https://azure.microsoft.com/support/faq/
-[Portal online do Microsoft Premier]: https://premier.microsoft.com/
+[Azure support FAQs]: https://azure.microsoft.com/support/faq/
+[Microsoft Premier online portal]: https://premier.microsoft.com/
 [Stack Overflow]: https://stackoverflow.com/questions/tagged/azure-sqldw/
-[Fórum MSDN do Azure SQL Data Warehouse]: https://social.msdn.microsoft.com/Forums/home?forum=AzureSQLDataWarehouse/
+[Azure SQL Data Warehouse MSDN forum]: https://social.msdn.microsoft.com/Forums/home?forum=AzureSQLDataWarehouse/
 
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO3-->
 
 

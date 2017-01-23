@@ -12,11 +12,11 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/22/2016
+ms.date: 01/03/2017
 ms.author: yurid
 translationtype: Human Translation
-ms.sourcegitcommit: aac0354a8fbfb73bab3e7b5da7d9aefa69c9eb16
-ms.openlocfilehash: 5251ab851dd2934050747cd3ad7b2c4f0b9e98bb
+ms.sourcegitcommit: 7f074883c2330c5814eef415f193e1775caec432
+ms.openlocfilehash: ddb38f99adef288958fd3828cb685912bf35f218
 
 
 ---
@@ -35,7 +35,7 @@ No mosaico **Estado de funcionamento da segurança dos recursos**, pode monitori
 
 ![Mosaico de estado de funcionamento da segurança dos recursos](./media/security-center-monitoring/security-center-monitoring-fig1-new4.png)
 
-Se o Centro de Segurança identificar uma vulnerabilidade que necessita de ser tratada, tal como uma máquina virtual com atualizações de segurança em falta ou uma sub-rede sem um [grupo de segurança de rede](../virtual-network/virtual-networks-nsg.md), a vulnerabilidade será listada aqui.
+Se o Centro de Segurança identificar uma vulnerabilidade que necessita de ser tratada, tal como uma máquina virtual com atualizações de segurança em falta ou uma sub-rede sem um [grupo de segurança de rede](/virtual-network/virtual-networks-nsg.md), a vulnerabilidade será listada aqui.
 
 ### <a name="monitor-virtual-machines"></a>Monitorizar máquinas virtuais
 Quando clica em **Máquinas Virtuais** no mosaico **Estado de funcionamento da segurança dos recursos**, o painel **Máquinas Virtuais** abre-se com mais detalhes sobre a integração e passos de prevenção, bem como uma lista de todas as máquinas virtuais que são monitorizadas pelo Centro de Segurança, conforme mostrado na seguinte captura de ecrã.
@@ -162,22 +162,22 @@ Esta tabela está ordenada (máquinas virtuais e sub-redes) por gravidade:
 * Cor de laranja: prioridade média e deve ser resolvido com a maior brevidade possível
 * Verde (por último): bom estado de funcionamento
 
-Nesta vista de topologia, o primeiro nível tem [máquinas virtuais](../virtual-network/virtual-networks-overview.md), [gateways da rede virtual](../vpn-gateway/vpn-gateway-site-to-site-create.md) e [redes virtuais (clássicas)](../virtual-network/virtual-networks-create-vnet-classic-pportal.md). O segundo nível tem sub-redes e o terceiro nível tem as máquinas virtuais que pertencem a essas sub-redes. A coluna da direita tem o estado atual do grupo de segurança de rede para esses recursos, conforme mostrado no exemplo seguinte:
+Nesta vista de topologia, o primeiro nível tem [máquinas virtuais](../virtual-network/virtual-networks-overview.md), [gateways da rede virtual](/vpn-gateway/vpn-gateway-site-to-site-create.md) e [redes virtuais (clássicas)](/virtual-network/virtual-networks-create-vnet-classic-pportal.md). O segundo nível tem sub-redes e o terceiro nível tem as máquinas virtuais que pertencem a essas sub-redes. A coluna da direita tem o estado atual do grupo de segurança de rede para esses recursos, conforme mostrado no exemplo seguinte:
 
 ![Estado do grupo de segurança de rede na secção Topologia de redes](./media/security-center-monitoring/security-center-monitoring-fig12-ga.png)
 
 A parte inferior deste painel tem as recomendações para esta máquina virtual, semelhantes ao que foi descrito anteriormente. Pode clicar numa recomendação para obter mais informações ou aplicar a configuração ou o controlo de segurança necessário.
 
 ### <a name="monitor-data"></a>Monitorizar dados
-Quando clica em **Dados** no mosaico **Estado de funcionamento da segurança dos recursos**, o painel **SQL** abre-se com recomendações para problemas como auditoria e encriptação de dados transparente não ativada. Também tem [recomendações](security-center-sql-service-recommendations.md) para o estado de funcionamento geral da base de dados.
+Quando clica em **Dados** no mosaico **Estado de funcionamento de segurança de recursos**, o painel **Recursos de Dados** abre-se com recomendações para SQL e Armazenamento. Também tem [recomendações](security-center-sql-service-recommendations.md) para o estado de funcionamento geral da base de dados. Para obter mais informações sobre a encriptação de armazenamento, leia Ativar a encriptação para a conta de armazenamento do Azure no Centro de segurança do Azure.
 
-![Estado de funcionamento do recurso SQL](./media/security-center-monitoring/security-center-monitoring-fig13-ga.png)
+![Recursos de Dados](./media/security-center-monitoring/security-center-monitoring-fig13-ga-new.png)
 
-Pode clicar em qualquer recomendação e obter mais detalhes sobre mais ações para resolver um problema. O exemplo abaixo mostra a expansão da recomendação **Auditoria de Base de Dados não ativada**.
+Em **Recomendações SQL**, pode clicar em qualquer recomendação e obter mais detalhes sobre mais ações para resolver um problema. O exemplo seguinte mostra a expansão da recomendação **Auditoria de Base de Dados e Deteção de ameaças em bases de dados SQL**.
 
-![Detalhes sobre uma recomendação de SQL](./media/security-center-monitoring/security-center-monitoring-fig14-ga.png)
+![Detalhes sobre uma recomendação de SQL](./media/security-center-monitoring/security-center-monitoring-fig14-ga-new.png)
 
-O painel **Ativar Auditoria nas bases de dados SQL** tem as seguintes informações:
+O painel **Ativar Auditoria e Deteção de ameaças nas bases de dados SQL** contém as seguintes informações:
 
 * Uma lista de bases de dados SQL
 * O servidor no qual estão localizadas
@@ -185,13 +185,14 @@ O painel **Ativar Auditoria nas bases de dados SQL** tem as seguintes informaç�
 * O estado atual
 * A gravidade do problema
 
-Quando clica na base de dados para abordar esta recomendação, o painel **Deteção de Ameaças e Auditoria** abre-se conforme mostrado na seguinte captura de ecrã.
+Quando clica na base de dados para abordar esta recomendação, o painel **Deteção de Ameaças e Auditoria** abre-se conforme mostrado no ecrã seguinte.
 
 ![Painel Deteção de Ameaças e Auditoria](./media/security-center-monitoring/security-center-monitoring-fig15-ga.png)
 
 Para ativar a auditoria, selecione **ATIVAR**, na opção **Auditoria**.
 
 ### <a name="monitor-applications"></a>Monitorizar aplicações
+
 Se a carga de trabalho do Azure tiver aplicações localizadas nas [máquinas virtuais (criadas através do Azure Resource Manager)](../azure-resource-manager/resource-manager-deployment-model.md) com portas Web expostas (as portas TCP 80 e 443), o Centro de Segurança poderá monitorizá-las para identificar potenciais problemas de segurança e recomendar passos de remediação. Quando clica no mosaico **Aplicações**, o painel **Aplicações** abre-se com uma série de recomendações apresentadas na secção **Recomendações da aplicação**. De igual modo, mostra a divisão das aplicações por anfitrião/IP virtual, conforme mostrado na seguinte captura de ecrã.
 
 ![Estado de funcionamento da segurança de aplicações](./media/security-center-monitoring/security-center-monitoring-fig16-ga.png)
@@ -216,6 +217,6 @@ Neste artigo, aprendeu a utilizar as capacidades de monitorização no Centro de
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Jan17_HO1-->
 
 

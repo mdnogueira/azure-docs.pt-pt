@@ -12,11 +12,11 @@ ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: java
 ms.topic: get-started-article
-ms.date: 10/19/2016
+ms.date: 12/22/2016
 ms.author: rachelap;robmcm
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: b073958fd41fec05b473594b23b586d561e996f3
+ms.sourcegitcommit: ff60ebaddd3a7888cee612f387bd0c50799496ac
+ms.openlocfilehash: 26f2fba953870564292ef3e986a3151373f6babf
 
 
 ---
@@ -168,13 +168,11 @@ Nesta secção, irá substituir a implementação do lado do servidor do código
         package io.swagger.api.impl;
    
         import io.swagger.api.*;
-        import io.swagger.model.*;
+        
         import io.swagger.model.Contact;
         import java.util.*;
         import io.swagger.api.NotFoundException;
-        import java.io.InputStream;
-        import com.sun.jersey.core.header.FormDataContentDisposition;
-        import com.sun.jersey.multipart.FormDataParam;
+               
         import javax.ws.rs.core.Response;
         import javax.ws.rs.core.SecurityContext;
    
@@ -271,7 +269,7 @@ Nesta secção irá aprender como criar uma nova aplicação API através do Por
     ![Utilizar a API REST dos Contactos do Java em direto no Azure][postman-calling-azure-contacts]
 
 ## <a name="next-steps"></a>Passos seguintes
-Neste artigo, conseguiu iniciar com um ficheiro Swagger JSON e algum código Java estruturado obtido a partir do editor Swagger.io. A partir daí, as suas alterações simples e um processo de implementação de Git resultou numa aplicação API funcional escrita em Java. O próximo tutorial mostra como [consumir API Apps a partir de clientes JavaScript, utilizando a CORS][CORS da API do App Service]. Tutoriais posteriores na série mostram como implementar a autenticação e a autorização.
+Neste artigo, conseguiu iniciar com um ficheiro Swagger JSON e algum código Java estruturado obtido a partir do editor Swagger.io. A partir daí, as suas alterações simples e um processo de implementação de Git resultou numa aplicação API funcional escrita em Java. O próximo tutorial mostra como [consumir aplicações API a partir de clientes JavaScript, utilizando a CORS][App Service API CORS]. Tutoriais posteriores na série mostram como implementar a autenticação e a autorização.
 
 Para criar esta amostra, pode saber mais sobre o [SDK de Armazenamento para Java] para blobs JSON. Ou, pode utilizar o [Document DB Java SDK] para guardar os seus dados de contacto no Azure Document DB. 
 
@@ -282,12 +280,12 @@ Para obter mais informações sobre como utilizar o Azure com o Java, veja o [Ce
 
 <!-- URL List -->
 
-[CORS da API do App Service]: app-service-api-cors-consume-javascript.md
+[App Service API CORS]: app-service-api-cors-consume-javascript.md
 [Portal do Azure]: https://portal.azure.com/
 [Document DB Java SDK]: ../documentdb/documentdb-java-application.md
 [avaliação gratuita]: https://azure.microsoft.com/pricing/free-trial/
 [Git]: http://www.git-scm.com/
-[Centro de Programadores Java do Azure]: /develop/java/
+[Centro de Programadores do Java do Azure]: /develop/java/
 [Kit de Programação Java 8]: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 [Jax-RS]: https://jax-rs-spec.java.net/
 [Maven]: https://maven.apache.org/
@@ -319,6 +317,6 @@ Para obter mais informações sobre como utilizar o Azure com o Java, veja o [Ce
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Jan17_HO1-->
 
 

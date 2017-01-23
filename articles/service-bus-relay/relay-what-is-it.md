@@ -15,8 +15,8 @@ ms.topic: get-started-article
 ms.date: 11/16/2016
 ms.author: babanisa,sethm
 translationtype: Human Translation
-ms.sourcegitcommit: 8ba8baa1b6500b3300e0bfc1c6b9f00f214f0179
-ms.openlocfilehash: 4329e0f99828f5a0651e6b03be0813d9e68debaa
+ms.sourcegitcommit: 14a5c029eef714134079b960109e58d821d0a609
+ms.openlocfilehash: 34b54d54b20d9aec69486c5ef98c97beee21bd94
 
 
 ---
@@ -25,7 +25,7 @@ O serviço de Reencaminhamento do Azure facilita as aplicações híbridas, perm
 
 O serviço de Reencaminhamento suporta o tradicional tráfego unidirecional, pedido/resposta e ponto a ponto. Também suporta a distribuição de eventos no âmbito de Internet para permitir cenários de publicação-subscrição e comunicação de socket bidirecional para aumentar a eficiência ponto a ponto. 
 
-No padrão de transferências de dados reencaminhadas, um serviço no local liga-se ao serviço de reencaminhamento através de uma porta de saída e cria um socket bidirecional para comunicação associada a um endereço de encontro específico. Depois, o cliente pode comunicar com o serviço no local ao enviar tráfego para o serviço de reencaminhamento destinado ao endereço de encontro. O serviço de Reencaminhamento reencaminhará, então, os dados para o serviço no local através de um socket bidirecional dedicado a cada cliente. O cliente não precisa de uma ligação direta para o serviço local, nem precisa de saber onde reside o serviço e o serviço local não precisa de nenhuma porta de entrada aberta na firewall.
+No padrão de transferências de dados reencaminhadas, um serviço no local liga-se ao serviço de reencaminhamento através de uma porta de saída e cria um socket bidirecional para comunicação associada a um endereço de encontro específico. Depois, o cliente pode comunicar com o serviço no local ao enviar tráfego para o serviço de reencaminhamento destinado ao endereço de encontro. O serviço de reencaminhamento reencaminhará, em seguida, os dados para o serviço no local através de um socket bidirecional dedicado a cada cliente. O cliente não precisa de uma ligação direta para o serviço local, nem precisa de saber onde reside o serviço e o serviço local não precisa de nenhuma porta de entrada aberta na firewall.
 
 Os elementos de capacidades-chave disponibilizados pelo Reencaminhamento são comunicações bidirecionais não registadas em limites de redes com limitação do tipo TCP, deteção de pontos finais, estado da conectividade e segurança de pontos finais sobrepostos. As capacidades do reencaminhamento são diferentes das tecnologias de integração ao nível da rede, como as VPNs, no sentido de que o reencaminhamento pode visar um único ponto final de aplicação num computador individual, ao passo que a tecnologia de VPN é bastante mais intrusiva, pois baseia-se na alteração do ambiente de rede.
 
@@ -40,7 +40,7 @@ Tanto as Ligações Híbridas, como os Reencaminhamentos do WCF, permitem ligaç
 | --- |:---:|:---:|
 | **WCF** |x | |
 | **.NET Core** | |x |
-| **.NET Framework** |x |
+| **.NET Framework** |x |x |
 | **JavaScript/NodeJS*** | |x |
 | **Java*** | |x |
 | **Standards-Based Open Protocol (Protocolo Aberto Baseado em Normas)** | |x |
@@ -55,7 +55,7 @@ A capacidade de [Ligações Híbridas do Reencaminhamento do Azure](relay-hybrid
 O Reencaminhamento do WCF funciona para o .NET Framework (NETFX) completo e para o WCF. A ligação entre o serviço no local e o serviço de reencaminhamento é iniciada através de um conjunto de enlaces de "reencaminhamento" do WCF. Em segundo plano, os enlaces de reencaminhamento mapeiam para novos elementos de enlace de transporte concebidos para criar os componentes de canal WCF que se integram ao Service Bus na nuvem.
 
 ## <a name="service-history"></a>Histórico do Serviço
-As Ligações Híbridas superam a funcionalidade anterior igualmente chamada “Serviços BizTalk” que foi criada com base no Reencaminhamento do WCF do Azure Service Bus. A nova capacidade de Ligações Híbridas complementa o Reencaminhamento do WCF existente e estas duas capacidades do serviço coexistirão lado a lado no serviço de Reencaminhamento num futuro próximo; partilham um gateway, mas, de resto, são implementações diferentes.
+As Ligações Híbridas superam a funcionalidade anterior, igualmente chamada “Serviços BizTalk”, que foi criada com base no Reencaminhamento do WCF do Azure Service Bus. A nova capacidade de Ligações Híbridas complementa a funcionalidade de Reencaminhamento do WCF existente e estas duas capacidades do serviço coexistem lado a lado no serviço de Reencaminhamento num futuro próximo. Partilham um gateway comum, mas, de resto, são implementações diferentes.
 
 ## <a name="next-steps"></a>Passos seguintes:
 * [FAQ de Reencaminhamento](relay-faq.md)
@@ -66,6 +66,6 @@ As Ligações Híbridas superam a funcionalidade anterior igualmente chamada “
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 

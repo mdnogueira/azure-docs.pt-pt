@@ -17,8 +17,8 @@ ms.topic: hero-article
 ms.date: 12/08/2016
 ms.author: carlrab
 translationtype: Human Translation
-ms.sourcegitcommit: 145cdc5b686692b44d2c3593a128689a56812610
-ms.openlocfilehash: bc36f38c0089940e8f4f53a0abb13d9bb756eb1e
+ms.sourcegitcommit: 7f26cd0f6c5f9c7a2fe692bfcdc6ef60d1b2200f
+ms.openlocfilehash: d4ea089ed4b5d29c261b25e95f4d304611f9a857
 
 
 ---
@@ -104,11 +104,10 @@ Neste tutorial de introdução irá aprender a utilizar o portal do Azure para:
 
 * Concluiu a [Introdução aos servidores, bases de dados e regras de firewall da Base de Dados SQL do Azure através do portal do Azure e do SQL Server Management Studio](sql-database-get-started.md) ou a [versão do PowerShell](sql-database-get-started-powershell.md) equivalente deste tutorial. Se não o tiver feito, conclua este tutorial de pré-requisitos ou execute o script do PowerShell no final da [versão do PowerShell](sql-database-get-started-powershell.md) deste tutorial antes de continuar.
 
-<!------------------
+
 > [!TIP]
-> You can perform these same tasks in a getting started tutorial by using either [C#](sql-database-get-started-csharp.md) or [PowerShell](sql-database-get-started-powershell.md).
->
--------------------->
+> Pode realizar estas mesmas tarefas num tutorial de introdução utilizando o [PowerShell](sql-database-get-started-backup-recovery-powershell.md).
+
 
 ## <a name="sign-in-by-using-your-existing-account"></a>Iniciar sessão com a conta existente
 Com a [subscrição existente](https://account.windowsazure.com/Home/Index), siga estes passos para se ligar ao portal do Azure.
@@ -179,6 +178,11 @@ Nesta secção do tutorial irá restaure a base de dados para uma nova base de d
 ## <a name="configure-long-term-retention-of-automated-backups-in-an-azure-recovery-services-vault"></a>Configurar a retenção de longa duração das cópias de segurança automáticas num cofre dos Serviços de Recuperação do Azure 
 
 Nesta secção do tutorial, irá [configurar um cofre dos Serviços de Recuperação do Azure para reter cópias de segurança automáticas](sql-database-long-term-retention.md) durante um período maior do que o período de retenção para a camada de serviços. 
+
+
+> [!TIP]
+> Para eliminar cópias de segurança, veja [Eliminar cópias de segurança de retenção de longa duração](sql-database-long-term-retention-delete.md).
+
 
 1. Abra o painel **SQL Server** do seu servidor, **sqldbtutorialserver**.
 
@@ -299,12 +303,12 @@ Nesta secção do tutorial, irá restaurar a base de dados para uma nova base de
 
 ## <a name="next-steps"></a>Passos seguintes
 
-- Para saber mais sobre cópias de segurança automáticas geradas pelo serviço, veja [cópias de segurança automáticas](: https://azure.microsoft.com/en-us/documentation/articles/)sql-database-automated-backups.MD)
+- Para saber mais sobre cópias de segurança automáticas geradas pelo serviço, veja [cópias de segurança automáticas](sql-database-automated-backups.md)
 - Para saber mais sobre a retenção de longa duração de cópia de segurança, veja [retenção de longa duração de cópia de segurança](sql-database-long-term-retention.md)
 - Para saber mais sobre o restauro de cópias de segurança, veja [restaurar a partir de cópia de segurança](sql-database-recovery-using-backups.md)
 
 
 
-<!--HONumber=Dec16_HO2-->
+<!--HONumber=Dec16_HO4-->
 
 

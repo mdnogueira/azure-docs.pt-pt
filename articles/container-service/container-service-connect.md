@@ -17,13 +17,17 @@ ms.workload: na
 ms.date: 09/13/2016
 ms.author: rogardle
 translationtype: Human Translation
-ms.sourcegitcommit: a4882b6fcd75ecaa826cdda3e25ee690b85a0670
-ms.openlocfilehash: 34450e25941e0be97b72c1ba30ee348d73f4bc67
+ms.sourcegitcommit: bcc2d3468c8a560105aa2c2feb0d969ec3cccdcb
+ms.openlocfilehash: 5296586b9266f432042f847f4dff9e6ff62ebc8b
 
 
 ---
 # <a name="connect-to-an-azure-container-service-cluster"></a>Ligar a um cluster do Serviço de Contentor Azure
-Os clusters DC/OS, Kubernetes e do Docker Swarm que são implementados pelo Azure Container Service expõem todos pontos finais REST.  Para os Kubernetes, este ponto final é exposto de forma segura na Internet e pode aceder-lhe diretamente a partir de qualquer computador ligado à Internet. Para DC/SO e Docker Swarm é necessário criar um túnel SSH para ligar de forma segura ao ponto final do REST. Cada uma destas ligações é descrita abaixo.
+Os clusters DC/OS, Kubernetes e Docker Swarm que são implementados pelo Azure Container Service expõem todos pontos finais REST.  Para os Kubernetes, este ponto final é exposto de forma segura na Internet e pode aceder-lhe diretamente a partir de qualquer computador ligado à Internet. Para DC/SO e Docker Swarm é necessário criar um túnel SSH para ligar de forma segura ao ponto final do REST. Cada uma destas ligações é descrita abaixo.
+
+> [!NOTE]
+> O suporte de Kubernetes no Azure Container Service está atualmente em pré-visualização.
+>
 
 ## <a name="connecting-to-a-kubernetes-cluster"></a>Ligar a um cluster do Kubernetes.
 Para ligar a um cluster do Kubernetes, deve ter a linha de comandos `kubectl` instalada.  A forma mais fácil para instalar esta ferramenta é utilizar ferramenta de linha de comandos `az` do Azure 2.0 .
@@ -51,13 +55,19 @@ scp azureuser@<master-dns-name>:.kube/config $HOME/.kube/config
 
 Se estiver no Windows, terá de utilizar o Bash no Ubuntu no Windows ou a ferramenta "pscp" Putty .
 
-Assim que tiver o `kubectl` configurado, pode testá-lo com:
+Assim que tiver configurado o `kubectl`, pode testar ao listar os nós do cluster:
 
 ```console
 kubectl get nodes
 ```
 
-que deve mostrar-lhe os nós do cluster.
+Por fim, pode ver o Dashboard de Kubernetes. Em primeiro lugar, execute:
+
+```console
+kubectl proxy
+```
+
+A IU de Kubernetes está agora disponível em: http://localhost:8001/ui
 
 Para mais instruções pode ver o [Guia de Introdução do Kubernetes](http://kubernetes.io/docs/user-guide/quick-start/)
 
@@ -166,6 +176,6 @@ Implementar e gerir contentores com DC/OS ou Swarm:
 
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Dec16_HO3-->
 
 

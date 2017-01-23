@@ -16,8 +16,8 @@ ms.workload: big-data
 ms.date: 11/18/2016
 ms.author: larryfr
 translationtype: Human Translation
-ms.sourcegitcommit: 09f5ba954dd712d71f41397b2243b6d3f3f0ca42
-ms.openlocfilehash: a70fe33047bc47096f7964d93dce411da9e0da9c
+ms.sourcegitcommit: b9fda8b5f4ffa6679cc8ca9696a4c51084c80645
+ms.openlocfilehash: 7c3d73ca6f4f567247ec9796199e68f764a52808
 
 
 ---
@@ -52,7 +52,7 @@ Nesta secção, vai criar um cluster do HDInsight versão 3.5 (versão 1.0.1 do 
 
 1. Clique na imagem seguinte para abrir o modelo no portal do Azure.         
    
-    <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fhditutorialdata.blob.core.windows.net%2Farmtemplates%2Fcreate-linux-based-storm-cluster-in-hdinsight-35.json" target="_blank"><img src="https://acom.azurecomcdn.net/80C57D/cdn/mediahandler/docarticles/dpsmedia-prod/azure.microsoft.com/en-us/documentation/articles/hdinsight-hbase-tutorial-get-started-linux/20160201111850/deploy-to-azure.png" alt="Deploy to Azure"></a>
+    <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fhditutorialdata.blob.core.windows.net%2Farmtemplates%2Fcreate-linux-based-storm-cluster-in-hdinsight-35.json" target="_blank"><img src="./media/hdinsight-apache-storm-tutorial-get-started-linux/deploy-to-azure.png" alt="Deploy to Azure"></a>
    
     O modelo está localizado num contentor de blobs público, *https://hditutorialdata.blob.core.windows.net/armtemplates/create-linux-based-storm-cluster-in-hdinsight.json*. 
 
@@ -80,7 +80,7 @@ Nesta secção, vai criar um cluster do HDInsight versão 3.5 (versão 1.0.1 do 
      > * [Utilizar o SSH com o Hadoop baseado em Linux no HDInsight](hdinsight-hadoop-linux-use-ssh-unix.md)
      > * [Utilizar o SSH (PuTTY) com o Hadoop baseado em Linux no HDInsight a partir do Windows](hdinsight-hadoop-linux-use-ssh-windows.md)
 
-3. Selecione __Concordo com os termos e condições indicados acima__**OK** e, em seguida, selecione __Afixar ao dashboard__
+3. Selecione __Aceito os termos e condições acima apresentados__, clique em **OK** e, em seguida, selecione __Afixar ao dashboard__
 
 6. Clique em **Comprar**. Verá um novo mosaico intitulado Submeter a implementação para a implementação do Modelo. A criação de um cluster demora cerca de 20 minutos.
 
@@ -216,6 +216,6 @@ Para obter topologias de exemplo que podem ser utilizadas com Storm no HDInsight
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 

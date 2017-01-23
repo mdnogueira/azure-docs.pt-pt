@@ -58,6 +58,6 @@
 ## [Vídeos](https://azure.microsoft.com/documentation/videos/index/?services=stream-analytics)
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Jan17_HO3-->
 
 
