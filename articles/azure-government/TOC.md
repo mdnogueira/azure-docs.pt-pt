@@ -27,12 +27,13 @@
 ### [Redes](documentation-government-networking.md)
 ### [Segurança + identidade](documentation-government-services-securityandidentity.md)
 ### [Monitorização + gestão](documentation-government-services-monitoringandmanagement.md)
+### [Web + móvel](documentation-government-services-webandmobile.md)
 
 # Recursos
 ## [Preços](https://azure.microsoft.com/pricing/)
 ## [Avaliação](https://azuregov.microsoft.com/trial/azuregovtrial)
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Dec16_HO2-->
 
 
