@@ -1,22 +1,25 @@
-
 ---
 title: Experimentar o Azure RemoteApp no dispositivo em 3 minutos ou menos | Microsoft Docs
-description: Experimente a funcionalidade do Azure RemoteApp sem instalar o serviço.
+description: "Experimente a funcionalidade do Azure RemoteApp sem instalar o serviço."
 services: remoteapp
-documentationcenter: ''
-author: lizap
+documentationcenter: 
+author: msmbaldwin
 manager: mbaldwin
-
+ms.assetid: 95e9fb49-78bb-4797-8d66-aeb42d00f208
 ms.service: remoteapp
 ms.workload: compute
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: hero-article
-ms.date: 08/15/2016
+ms.date: 11/23/2016
 ms.author: mbaldwin
+translationtype: Human Translation
+ms.sourcegitcommit: e4d94d3f9736378d93e93be6645ed04ade763ca3
+ms.openlocfilehash: ccbae83898ec8ea3bd7bca0beae7f78b2b535562
+
 
 ---
-# Experimentar o Azure RemoteApp no dispositivo em 3 minutos ou menos
+# <a name="try-azure-remoteapp-on-your-device-in-3-minutes-or-less"></a>Experimentar o Azure RemoteApp no dispositivo em 3 minutos ou menos
 > [!IMPORTANT]
 > O Azure RemoteApp está a ser descontinuado. Leia o [anúncio](https://go.microsoft.com/fwlink/?linkid=821148) para obter detalhes.
 > 
@@ -40,6 +43,9 @@ A sua opinião é importante. No final de cada sessão, será apresentada uma ca
 > 
 > 
 
-<!--HONumber=Sep16_HO3-->
+
+
+
+<!--HONumber=Dec16_HO2-->
 
 

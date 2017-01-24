@@ -15,8 +15,8 @@ ms.topic: hero-article
 ms.date: 12/16/2015
 ms.author: dwrede
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 31bea465db1afb5efc22b2280d83d3b50bced329
+ms.sourcegitcommit: 6ab02779d65dfc1519b457486678ace5fafc9fb5
+ms.openlocfilehash: 60733f973e7b88389816c1ea7cc15532ba967693
 
 
 ---
@@ -60,16 +60,6 @@ A partir deste painel, pode ligar-se à máquina virtual utilizando o ambiente d
 
 ![Gerir um recurso][ManageResource]
 
-## <a name="how-to-customize-a-resource-blade"></a>Como personalizar um painel de recursos
-O Azure pré-configura os painéis para os seus recursos, mas os mosaicos nestes painéis estão sob o seu controlo.  Pode aceder facilmente ao modo de personalização para adicionar, remover, redimensionar ou reorganizar os mosaicos. Para personalizar um painel, execute as seguintes ações:
-
-1. Navegue até ao recurso.
-2. Clique em “...” na parte superior do painel que pretende personalizar.
-3. Clique em “Adicionar partes”.
-4. Comece a arrastar e a largar as partes.  
-
-![Personalização de Painéis][CustomizeBlades]
-
 ## <a name="how-to-get-help"></a>Como obter ajuda
 Se tiver algum problema, estamos à sua disposição.  O portal tem uma página de ajuda e suporte que o pode orientar na direção certa.  Dependendo do seu [plano de suporte](https://azure.microsoft.com/support/plans/), também pode criar pedidos de suporte diretamente no portal.  Depois de criar um pedido de suporte, pode gerir o ciclo de vida do mesmo no portal. Pode aceder à página de ajuda e suporte ao navegar até Procurar -> Ajuda + suporte.  
 
@@ -97,6 +87,6 @@ O portal do Microsoft Azure simplifica de forma radical a criação e a gestão 
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO2-->
 
 

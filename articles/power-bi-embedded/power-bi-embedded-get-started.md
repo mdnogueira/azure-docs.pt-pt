@@ -1,6 +1,6 @@
 ---
 title: "Introdução ao Microsoft Power BI Embedded"
-description: "Power BI Embedded, adicione relatórios interativos do Power BI à aplicação de business intelligence"
+description: "Power BI Embedded, adicionar relatórios interativos do Power BI à aplicação de business intelligence"
 services: power-bi-embedded
 documentationcenter: 
 author: guyinacube
@@ -13,11 +13,11 @@ ms.devlang: NA
 ms.topic: hero-article
 ms.tgt_pltfrm: NA
 ms.workload: powerbi
-ms.date: 12/19/2016
+ms.date: 01/06/2017
 ms.author: asaxton
 translationtype: Human Translation
-ms.sourcegitcommit: f1b3464526b99cad1beb8f7604887a4cc32b0706
-ms.openlocfilehash: a8d787acb4bc3f6f8a7cd408d6f5ac4313a2121f
+ms.sourcegitcommit: 7db56a4c0efb208591bb15aa03a4c0dbf833d22e
+ms.openlocfilehash: cedf69c6e50470e9d16d8e1e361bb51eb8abed72
 
 
 ---
@@ -26,7 +26,7 @@ O **Power BI Embedded** é um serviço do Azure que permite aos programadores de
 
 Os recursos para o **Microsoft Power BI Embedded** são aprovisionados através das [APIs ARM do Azure](https://msdn.microsoft.com/library/mt712306.aspx). Neste caso, o recurso que aprovisiona é uma **Coleção de Áreas de Trabalho do Power BI**.
 
-![](media\\power-bi-embedded-get-started\\introduction.png)
+![](media/power-bi-embedded-get-started/introduction.png)
 
 ## <a name="create-a-workspace-collection"></a>Criar uma coleção de área de trabalho
 Uma **Coleção de Área de Trabalho** é o recurso mais superior do Azure e um contentor para o conteúdo que será incorporado na aplicação. Uma **Coleção de Área de Trabalho** pode ser criada de duas formas:
@@ -39,16 +39,16 @@ Vamos guiá-lo pelos passos para criar uma **Coleção de Área de Trabalho** at
 1. Abra e inicie sessão no **Portal do Azure **: [http://portal.azure.com](http://portal.azure.com).
 2. Clique em **+ Novo** no painel superior.
    
-   ![](media\\power-bi-embedded-get-started\\create-workspace-1.png)
+   ![](media/power-bi-embedded-get-started/create-workspace-1.png)
 3. Em **Dados + Análise** clique **Power BI Embedded**.
 4. No **Painel de Criação**, introduza as informações necessárias. Para **Preços**, consulte o artigo [Preços do Power BI Embedded](http://go.microsoft.com/fwlink/?LinkID=760527).
    
-   ![](media\\power-bi-embedded-get-started\\create-workspace-2.png)
+   ![](media/power-bi-embedded-get-started/create-workspace-2.png)
 5. Clique em **Criar**.
 
 A **Coleção de Área de Trabalho** levará alguns minutos para aprovisionar. Quando concluída, será direcionado para o **Painel de Coleção de Área de Trabalho**.
 
-   ![](media\\power-bi-embedded-get-started\\create-workspace-3.png)
+   ![](media/power-bi-embedded-get-started/create-workspace-3.png)
 
 O **Painel de Criação** contém as informações de que precisa para chamar as APIs que criam áreas de trabalho e implementam conteúdo nas mesmas.
 
@@ -57,11 +57,11 @@ O **Painel de Criação** contém as informações de que precisa para chamar as
 ## <a name="view-power-bi-api-access-keys"></a>Visualizar Chaves de Acesso da API do Power BI
 Uma das informações mais importantes necessárias para chamar as APIs REST do Power BI é são as **Teclas de Acesso**. Estas são utilizadas para gerar os **tokens de aplicação** utilizados para autenticar os pedidos de API. Para ver as suas **Teclas de Acesso**, clique em **Teclas de Acesso** no **Painel de Definições**. Para obter mais informações sobre **tokens de aplicação**, veja [Authenticating and authorizing with Power BI Embedded (Autenticação e autorização com Power BI Embedded)](power-bi-embedded-app-token-flow.md).
 
-   ![](media\\power-bi-embedded-get-started\\access-keys.png)
+   ![](media/power-bi-embedded-get-started/access-keys.png)
 
 Vai notar que tem duas chaves.
 
-   ![](media\\power-bi-embedded-get-started\\access-keys-2.png)
+   ![](media/power-bi-embedded-get-started/access-keys-2.png)
 
 Copie estas chaves e armazene-as de forma segura na aplicação. É muito importante que trate estas chaves como se fossem uma palavra-passe, porque dão acesso a todo o conteúdo na **Coleção de Área de Trabalho**.
 
@@ -109,6 +109,6 @@ Mais perguntas? [Tente a Comunidade do Power BI](http://community.powerbi.com/)
 
 
 
-<!--HONumber=Dec16_HO5-->
+<!--HONumber=Jan17_HO1-->
 
 

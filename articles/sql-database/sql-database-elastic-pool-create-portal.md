@@ -17,8 +17,8 @@ ms.workload: data-management
 ms.topic: get-started-article
 ms.tgt_pltfrm: NA
 translationtype: Human Translation
-ms.sourcegitcommit: 145cdc5b686692b44d2c3593a128689a56812610
-ms.openlocfilehash: 230a203cca2eaab197236557482cd4cedcfb9c53
+ms.sourcegitcommit: 6c8420a154d998aa95c0220049ee54b3039a872b
+ms.openlocfilehash: 4be8e4f81965fa4d872e29fdb9aaa45909d18c37
 
 
 ---
@@ -89,7 +89,7 @@ Depois de definir o escalão de preço, clique em Configurar conjunto, onde pode
 
     Se as bases de dados com que está a trabalhar tiverem telemetria de histórico de utilização suficiente, o gráfico **Utilização de GB e eDTU estimada** e o gráfico de barras **Utilização de eDTU real** são atualizados para o ajudar a tomar decisões de configuração. Além disso, o serviço poderá apresentar uma mensagem de recomendação para o ajudar a dimensionar corretamente o conjunto. Consulte a secção [Recomendações Dinâmicas](#dynamic-recommendations).
 
-3. Utilize os controlos na página **Configurar conjunto** para explorar as definições e configurar o conjunto. Consulte [Limites dos conjuntos elásticos](sql-database-elastic-pool.md#edtu-and-storage-limits-for-elastic-pools-and-elastic-databases) para obter mais detalhes sobre os limites de cada escalão de serviço e consulte [Considerações sobre preço e desempenho para conjuntos elásticos](sql-database-elastic-pool-guidance.md) para obter instruções detalhadas sobre como dimensionar corretamente um conjunto. Para obter mais detalhes sobre as definições do conjunto, consulte [Propriedades do conjunto elástico](sql-database-elastic-pool.md#elastic-pool-and-elastic-database-properties).
+3. Utilize os controlos na página **Configurar conjunto** para explorar as definições e configurar o conjunto. Consulte [Limites dos conjuntos elásticos](sql-database-elastic-pool.md#edtu-and-storage-limits-for-elastic-pools) para obter mais detalhes sobre os limites de cada escalão de serviço e consulte [Considerações sobre preço e desempenho para conjuntos elásticos](sql-database-elastic-pool-guidance.md) para obter instruções detalhadas sobre como dimensionar corretamente um conjunto. Para obter mais detalhes sobre as definições do conjunto, consulte [Propriedades do conjunto elástico](sql-database-elastic-pool.md#elastic-pool-properties).
 
     ![Configurar o Conjunto Elástico](./media/sql-database-elastic-pool-create-portal/configure-performance.png)
 
@@ -99,7 +99,7 @@ Depois de definir o escalão de preço, clique em Configurar conjunto, onde pode
 
 ## <a name="understand-pool-recommendations"></a>Compreender as recomendações de conjunto
 
-O serviço Base de Dados SQL avalia o histórico de utilização e recomenda um ou mais conjuntos quando é mais rentável do que utilizar bases de dados autónomas. Cada recomendação está configurada com um subconjunto exclusivo das bases de dados do servidor que melhor se adequam ao conjunto.
+O serviço Base de Dados SQL avalia o histórico de utilização e recomenda um ou mais conjuntos quando é mais rentável do que utilizar bases de dados individuais. Cada recomendação está configurada com um subconjunto exclusivo das bases de dados do servidor que melhor se adequam ao conjunto.
 
 ![conjunto recomendado](./media/sql-database-elastic-pool-create-portal/recommended-pool.png)  
 
@@ -112,7 +112,7 @@ A recomendação de conjunto é composta por:
 
 O serviço tem em conta os últimos 30 dias de telemetria quando recomenda conjuntos. Para uma base de dados ser considerada candidata para um conjunto elástico, tem de existir durante, pelo menos, 7 dias. As bases de dados que já estão num conjunto elástico não são consideradas candidatas para recomendações de conjunto elástico.
 
-O serviço avalia as necessidades de recursos e a relação custo-eficácia da movimentação das bases de dados autónomas em cada escalão de serviço para conjuntos do mesmo escalão. Por exemplo, todas as bases de dados Standard num servidor são avaliadas para determinar a respetiva adequação a um Conjunto Elástico Standard. Isto significa que o serviço não faz recomendações entre escalões, tal como mover uma base de dados Standard para um conjunto Premium.
+O serviço avalia as necessidades de recursos e a relação custo-eficácia da movimentação das bases de dados individuais em cada escalão de serviço para conjuntos do mesmo escalão. Por exemplo, todas as bases de dados Standard num servidor são avaliadas para determinar a respetiva adequação a um Conjunto Elástico Standard. Isto significa que o serviço não faz recomendações entre escalões, tal como mover uma base de dados Standard para um conjunto Premium.
 
 ### <a name="dynamic-recommendations"></a>Recomendações dinâmicas
 
@@ -129,6 +129,6 @@ Depois de adicionar as bases de dados ao conjunto, as recomendações serão ger
 
 
 
-<!--HONumber=Dec16_HO2-->
+<!--HONumber=Jan17_HO1-->
 
 

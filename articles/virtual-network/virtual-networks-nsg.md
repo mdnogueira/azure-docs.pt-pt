@@ -1,6 +1,6 @@
 ---
-title: "O que é um Grupo de Segurança de Rede (NSG)"
-description: "Saiba mais sobre a firewall distribuída no Azure através de Grupos de Segurança de Rede (NSGs) e como utilizar os NSGs para isolar e controlar o fluxo de tráfego nas redes virtuais (VNets)."
+title: "Grupos de Segurança de Rede | Microsoft Docs"
+description: "Saiba como isolar e controlar o fluxo de tráfego nas suas redes virtuais com a firewall distribuída no Azure através dos Grupos de Segurança de Rede."
 services: virtual-network
 documentationcenter: na
 author: jimdial
@@ -15,13 +15,17 @@ ms.workload: infrastructure-services
 ms.date: 02/11/2016
 ms.author: jdial
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 92ba745915c4b496ac6b0ff3b3e25f6611f5707c
+ms.sourcegitcommit: 1de0827c01c772a4298b7b568363e89f08910ff7
+ms.openlocfilehash: 46dce57f509872580c57bb1d8d93af51623211ac
 
 
 ---
-# <a name="what-is-a-network-security-group-nsg"></a>O que é um Grupo de Segurança de Rede (NSG)?
-O Grupo de Segurança de Rede (NSG) contém uma lista de regras da Lista de Controlo de Acesso (ACL) que permitem ou negam o tráfego de rede para as instâncias de VM numa Rede Virtual. Os NSGs podem ser associados a sub-redes ou a instâncias de VM individuais dentro dessa sub-rede. Quando um NSG é associado a uma sub-rede, as regras da ACL são aplicadas a todas as instâncias de VM nessa sub-rede. Além disso, o tráfego para uma VM individual pode ser mais restringido ao associar um NSG diretamente a essa VM.
+# <a name="network-security-groups"></a>Grupos de segurança de rede
+
+Os grupos de segurança de rede (NSG) contêm uma lista de regras da lista de controlo de acesso (ACL) que permitem ou negam o tráfego de rede para as instâncias da sua VM numa Rede Virtual. Os NSGs podem ser associados a sub-redes ou a instâncias de VM individuais dentro dessa sub-rede. Quando um NSG é associado a uma sub-rede, as regras da ACL são aplicadas a todas as instâncias de VM nessa sub-rede. Além disso, o tráfego para uma VM individual pode ser mais restringido ao associar um NSG diretamente a essa VM.
+
+> [!NOTE]
+> O Azure tem dois modelos de implementação diferentes para criar e trabalhar com os recursos: [Resource Manager e clássico](../resource-manager-deployment-model.md). Este artigo inclui os dois modelos, mas a Microsoft recomenda que a maioria das implementações novas utilizem o modelo Resource Manager.
 
 ## <a name="nsg-resource"></a>Recurso NSG
 Os NSGs contêm as seguintes propriedades.
@@ -36,10 +40,9 @@ Os NSGs contêm as seguintes propriedades.
 > [!NOTE]
 > As ACLs baseadas em ponto final e os grupos de segurança de rede não são suportados na mesma instância de VM. Se pretender utilizar um NSG e ter uma ACL de ponto final já implementada, remova primeiro a ACL de ponto final. Para obter informações sobre como fazê-lo, consulte o artigo [Gerir Listas de Controlo de Acesso (ACL) para Pontos Finais utilizando o PowerShell](virtual-networks-acl-powershell.md).
 > 
-> 
 
 ### <a name="nsg-rules"></a>Regras do NSG
-As regras do NSG contêm as seguintes propriedades.
+As regras do NSG contêm as seguintes propriedades:
 
 | Propriedade | Descrição | Restrições | Considerações |
 | --- | --- | --- | --- |
@@ -90,55 +93,41 @@ Conforme ilustrado pelas regras predefinidas abaixo, o tráfego que tem origem e
 ## <a name="associating-nsgs"></a>Associar NSGs
 Pode associar um NSG a VMs, NICs e sub-redes, dependendo do modelo de implementação que estiver a utilizar.
 
-[!INCLUDE [learn-about-deployment-models-both-include.md](../../includes/learn-about-deployment-models-both-include.md)]
-
 * **Associar um NSG a uma VM (apenas implementações clássicas).** Quando associa um NSG a uma VM, as regras de acesso à rede no NSG são aplicadas a todo o tráfego destinado à VM e que sai da VM. 
 * **Associar um NSG a um NIC (apenas implementações do Resource Manager).** Quando associa um NSG a um NIC, as regras de acesso à rede no NSG só são aplicadas a esse NIC. Isto significa que numa VM de vários NICs, se um NSG é aplicado a um único NIC, não afeta a tráfego vinculado a outros NICs. 
 * **Associar um NSG a uma sub-rede (todas as implementações)**. Quando associa um NSG a uma sub-rede, as regras de acesso à rede no NSG são aplicadas a todos os recursos IaaS e PaaS na sub-rede. 
 
 Pode associar NSGs diferentes a uma VM (ou NIC, consoante o modelo de implementação) e à sub-rede à qual um NIC ou uma VM está vinculada. Quando isso acontece, todas as regras de acesso à rede são aplicadas ao tráfego, por prioridade em cada NSG, pela seguinte ordem:
 
-* **Tráfego de entrada**
-  
-  1. NSG aplicado a sub-rede. 
-     
-     Se o NSG da sub-rede tiver uma regra correspondente para negar o tráfego, o pacote será largado aqui.
-  2. NSG aplicado a NIC (Resource Manager) ou VM (clássica). 
-     
-     Se o NSG de VM\NIC tiver uma regra correspondente para negar o tráfego, o pacote será largado em VM\NIC, apesar de o NSG da sub-rede ter uma regra correspondente para permitir tráfego.
-* **Tráfego de saída**
-  
-  1. NSG aplicado a NIC (Resource Manager) ou VM (clássica). 
-     
-     Se o NSG de VM\NIC tiver uma regra correspondente para negar o tráfego, o pacote será largado aqui.
-  2. NSG aplicado a sub-rede.
-     
-     Se o NSG da sub-rede tiver uma regra correspondente para negar o tráfego, o pacote será largado aqui, apesar de o NSG de VM\NIC ter uma regra correspondente para permitir tráfego.
-     
-      ![ACLs do NSG](./media/virtual-network-nsg-overview/figure2.png)
+- **Tráfego de entrada**
+
+  1. **NSG aplicado à sub-rede:** se um NSG de sub-rede tiver uma regra correspondente para recusar tráfego, o pacote é largado.
+
+  2. **NSG aplicado ao NIC** (Resource Manager) ou à VM (clássico): se o NSG de VM/NIC tiver uma regra correspondente para negar o tráfego, o pacote será largado em VM\NIC, apesar de o NSG da sub-rede ter uma regra correspondente para permitir tráfego.
+
+- **Tráfego de saída**
+
+  1. **NSG aplicado ao NIC** (Resource Manager) ou à VM (clássico): se o NSG de VM/NIC tiver uma regra correspondente para recusar tráfego, o pacote é largado.
+
+  2. **NSG aplicado à sub-rede:** se o NSG de sub-rede tiver uma regra correspondente para recusar tráfego, o pacote é largado aqui, apesar de o NSG de VM/NIC ter uma regra correspondente para permitir tráfego.
 
 > [!NOTE]
 > Embora só possa associar um único NSG a uma sub-rede, VM ou NIC, pode associar o mesmo NSG à quantidade de recursos que pretender.
-> 
-> 
+>
 
 ## <a name="implementation"></a>Implementação
 Pode implementar NSGs nos modelos de implementação clássica e do Resource Manager com as diferentes ferramentas indicadas abaixo.
 
 | Ferramenta de implementação | Clássica | Resource Manager |
 | --- | --- | --- |
-| Portal clássico |![Não](./media/virtual-network-nsg-overview/red.png) |![Não](./media/virtual-network-nsg-overview/red.png) |
-| Portal do Azure |![Sim](./media/virtual-network-nsg-overview/green.png) |[![Sim][verde]](virtual-networks-create-nsg-arm-pportal.md) |
-| PowerShell |[![Sim][verde]](virtual-networks-create-nsg-classic-ps.md) |[![Sim][verde]](virtual-networks-create-nsg-arm-ps.md) |
-| CLI do Azure |[![Sim][verde]](virtual-networks-create-nsg-classic-cli.md) |[![Sim][verde]](virtual-networks-create-nsg-arm-cli.md) |
-| Modelo ARM |![Não](./media/virtual-network-nsg-overview/red.png) |[![Sim][verde]](virtual-networks-create-nsg-arm-template.md) |
-
-| **Chave** | ![Sim](./media/virtual-network-nsg-overview/green.png) Suportado. | ![Não](./media/virtual-network-nsg-overview/red.png) Não suportado. |
-| --- | --- | --- |
-|  | | |
+| Portal clássico | Não  | Não |
+| Portal do Azure   | Sim | [Sim](virtual-networks-create-nsg-arm-pportal.md) |
+| PowerShell     | [Sim](virtual-networks-create-nsg-classic-ps.md) | [Sim](virtual-networks-create-nsg-arm-ps.md) |
+| CLI do Azure      | [Sim](virtual-networks-create-nsg-classic-cli.md) | [Sim](virtual-networks-create-nsg-arm-cli.md) |
+| Modelo ARM   | Não  | [Sim](virtual-networks-create-nsg-arm-template.md) |
 
 ## <a name="planning"></a>Planeamento
-Antes de implementar os NSGs, terá de responder às perguntas abaixo:    
+Antes de implementar os NSGs, tem de responder às perguntas seguintes:
 
 1. Para e a partir de que tipos de recursos pretende filtrar o tráfego (NICs na mesma VM, VMs ou outros recursos, tais como serviços em nuvem ou ambientes de serviço de aplicação ligados à mesma sub-rede ou entre recursos ligados a sub-redes diferentes)?
 2. Os recursos para e a partir dos quais pretende filtrar o tráfego estão ligados a sub-redes em VNets existentes ou serão ligados a novas VNets ou sub-redes?
@@ -270,12 +259,8 @@ Uma vez que alguns dos NSGs acima têm de ser associados a NICs individuais, tem
 * [Implementar NSGs no Resource Manager](virtual-networks-create-nsg-arm-pportal.md).
 * [Gerir registos de NSG](virtual-network-nsg-manage-log.md).
 
-[verde]: ./media/virtual-network-nsg-overview/green.png
-[amarelo]: ./media/virtual-network-nsg-overview/yellow.png
-[vermelho]: ./media/virtual-network-nsg-overview/red.png
 
 
-
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Jan17_HO1-->
 
 

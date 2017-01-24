@@ -138,6 +138,9 @@
 ##### [Utilizar ações de MMC no Snapshot Manager do StorSimple](storsimple-snapshot-manager-mmc-menu.md)
 
 ### Criar soluções
+#### [StorSimple com Veeam](storsimple-configure-backup-target-veeam.md)
+#### [StorSimple com Exec de Cópia de segurança Veritas](storsimple-configure-backup-target-using-backup-exec.md)
+#### [StorSimple com NetBackup Veritas](storsimple-configure-backuptarget-netbackup.md)
 #### [Automatizar DR de servidor de ficheiros para o Azure](storsimple-disaster-recovery-using-azure-site-recovery.md)
 #### [StorSimple com o Express Route](https://gallery.technet.microsoft.com/STORESIMPLE-CONFIGURATION-86c04c3b/view/Discussions#content)
 #### [StorSimple com VMware](https://gallery.technet.microsoft.com/VMWARE-DEPLOYMENT-WITH-2921b463)
@@ -178,8 +181,8 @@
 ## Notas de versão
 ### [Atualização 3 - atual](storsimple-update3-release-notes.md)
 ### [Atualização 2.2](storsimple-update21-release-notes.md)
-### [Atualização 2](storsimple-update2-release-notes.md)
-### [Atualização 1](storsimple-update1-release-notes.md)
+### [Atualização 2](storsimple-update2-release-notes.md)
+### [Atualização 1](storsimple-update1-release-notes.md)
 ### [Atualização 0.3](storsimple-february-2015-release-notes.md)
 ### [Atualização 0.2](storsimple-january-2015-release-notes.md)
 ### [Atualização 0.1](storsimple-october-2014-release-notes.md)
@@ -217,6 +220,6 @@
 
 
 
-<!--HONumber=Nov16_HO5-->
+<!--HONumber=Dec16_HO2-->
 
 

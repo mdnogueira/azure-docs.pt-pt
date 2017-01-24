@@ -13,11 +13,11 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: hero-article
-ms.date: 11/21/2016
+ms.date: 12/14/2016
 ms.author: garye
 translationtype: Human Translation
-ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
-ms.openlocfilehash: dd3e982ba908e542ce0b536699e37e2bc95e6706
+ms.sourcegitcommit: de2c52f8db5445e3e2eee62f673109f6d38cffa0
+ms.openlocfilehash: c58ee1c07e454a711ab0d6365a5cd432b0d939c8
 
 
 ---
@@ -95,7 +95,9 @@ Eis como obter o conjunto de dados na sua experimentação.
 
 1. Crie uma experimentação nova ao clicar em **+NOVA**, na parte inferior da janela Machine Learning Studio, selecione **EXPERIMENTAÇÃO** e, em seguida, selecione **Experimentação em Branco**.
 
-2. É dado um nome predefinido à experimentação, que pode ver na parte superior da tela. Selecione este texto e mude o nome para algo significativo, como, por exemplo, **Previsão de preços de automóveis**.
+2. É dado um nome predefinido à experimentação, que pode ver na parte superior da tela. Selecione este texto e mude o nome para algo significativo, como, por exemplo, **Previsão de preços de automóveis**. O nome não tem de ser exclusivo.
+
+    ![Mude o nome da experimentação][rename-experiment]
 
 2. À esquerda da tela da experimentação existe uma paleta de conjuntos de dados e módulos. Digite **automóvel** na caixa de pesquisa na parte superior desta paleta para localizar o conjunto de dados denominado **Dados de preços de automóveis (não processados)**. Arraste este conjunto de dados para a tela da experimentação.
 
@@ -111,7 +113,7 @@ Para ver a aparência destes dados, clique na porta exterior da parte inferior d
 
 > [!TIP]
 > Os conjuntos de dados e os módulos têm portas de entrada e de saída, representadas por pequenos círculos. As portas de entrada estão em cima e as de saída estão em baixo.
-Para criar um fluxo de dados através da experimentação, vai ligar estas portas entre si.
+Para criar um fluxo de dados através da experimentação, ligue uma porta de saída de um módulo a uma porta de entrada de outro.
 Pode, em qualquer altura, clicar na porta de saída de um conjunto de dados ou de um módulo para ver o aspeto dos dados nessa fase do fluxo de dados.
 
 Neste conjunto de dados de exemplo, cada instância de um automóvel aparece como uma linha e as variáveis associadas a cada um destes aparecem como colunas. Tendo em conta as variáveis de um automóvel específico, vamos tentar prever o preço na coluna mais à direita (coluna 26, com o nome “preço”).
@@ -169,7 +171,7 @@ Primeiro, adicionamos um módulo que remove a coluna **normalized-losses** compl
     <br/>
     ***Defina o modo de limpeza como “Remove entire row” no módulo “Clean Missing Data”***
 
-4. Execute a experimentação ao clicar em **EXECUTAR** na tela de experimentação.
+4. Execute a experimentação clicando em **EXECUTAR** na parte inferior da página.
 
     Quando a execução da experimentação estiver concluída, todos os módulos têm uma marca de verificação a verde para indicar que foram concluídos com êxito. Repare também no estado **Execução terminada** no canto superior direito.
 
@@ -326,7 +328,7 @@ Agora que concluiu o primeiro tutorial de machine learning e que a sua experimen
 Para obter um exemplo de como comparar vários modelos numa experimentação individual, veja [Compare Regressors (Comparar Regressores)](https://gallery.cortanaintelligence.com/Experiment/Compare-Regressors-5), na [Cortana Intelligence Gallery](https://gallery.cortanaintelligence.com).
 
     > [!TIP]
-    > Para copiar uma repetição da experimentação, utilize o botão **SAVE AS (GUARDAR COMO)**, na tela de experimentação. Pode ver todas as iterações da sua experimentação, clicando em **VER HISTÓRICO DE EXECUÇÕES** por baixo da tela. Para obter mais detalhes, veja [Manage experiment iterations in Azure Machine Learning Studio (Gerir iterações de experimentações no Azure Machine Learning Studio)][runhistory].
+    > Para copiar uma repetição da experimentação, utilize o botão **SAVE AS (GUARDAR COMO)**, na parte inferior da página. Pode ver todas as iterações da sua experimentação, clicando em **VER HISTÓRICO DE EXECUÇÕES** na parte inferior da página. Para obter mais detalhes, veja [Manage experiment iterations in Azure Machine Learning Studio (Gerir iterações de experimentações no Azure Machine Learning Studio)][runhistory].
 
 [runhistory]: machine-learning-manage-experiment-iterations.md
 
@@ -340,6 +342,7 @@ Quer saber mais? Para obter instruções mais extensas e detalhadas sobre o proc
 
 <!-- Images -->
 [sign-in-to-studio]: ./media/machine-learning-create-experiment/sign-in-to-studio.png
+[rename-experiment]: ./media/machine-learning-create-experiment/rename-experiment.png
 [visualize-auto-data]:./media/machine-learning-create-experiment/visualize-auto-data.png
 [select-visualize]: ./media/machine-learning-create-experiment/select-visualize.png
 [showing-excluded-column]:./media/machine-learning-create-experiment/showing-excluded-column.png
@@ -377,6 +380,6 @@ Quer saber mais? Para obter instruções mais extensas e detalhadas sobre o proc
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

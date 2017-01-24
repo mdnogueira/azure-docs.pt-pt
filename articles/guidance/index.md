@@ -157,6 +157,6 @@ Estes tópicos descrevem como desenhar aplicações resilientes a falhas num amb
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Jan17_HO3-->
 
 
