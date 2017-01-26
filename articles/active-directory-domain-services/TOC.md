@@ -3,6 +3,8 @@
 ## [É o mais adequado para si?](active-directory-ds-comparison.md)
 ## [Funcionalidades](active-directory-ds-features.md)
 ## [Cenários](active-directory-ds-scenarios.md)
+## [Como funciona a sincronização](active-directory-ds-synchronization.md)
+## [Software compatível de terceiros](active-directory-ds-compatible-software.md)
 
 # Introdução
 ## [Criar grupo administrativo](active-directory-ds-getting-started.md)
@@ -21,8 +23,8 @@
 ## [Administrar o DNS num domínio gerido](active-directory-ds-admin-guide-administer-dns.md)
 ## [Configurar o LDAP seguro para um domínio gerido](active-directory-ds-admin-guide-configure-secure-ldap.md)
 ## [Criar uma UO num domínio gerido](active-directory-ds-admin-guide-create-ou.md)
+## [Administrar política de grupo num domínio gerido](active-directory-ds-admin-guide-administer-group-policy.md)
 ## [Selecionar uma rede virtual](active-directory-ds-networking.md)
-## [Sincronizar com o seu diretório no local](active-directory-ds-synchronization.md)
 
 ## Resolução de problemas
 ### [FAQs](active-directory-ds-faqs.md)
@@ -33,13 +35,13 @@
 ## [Azure Active Directory B2C](../active-directory-b2c/active-directory-b2c-overview.md)
 ## [Multi-Factor Authentication](../multi-factor-authentication/multi-factor-authentication.md)
 
-# Recursos 
+# Recursos
 ## [Preços](https://azure.microsoft.com/pricing/details/active-directory-ds/)
-## [Fórum de comentários do Azure](https://feedback.azure.com/forums/169401-azure-active-directory)
+## [Fórum de comentários do Azure AD](https://feedback.azure.com/forums/169401-azure-active-directory)
 ## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=active-directory-ds)
 ## [Contacte-nos](active-directory-ds-contact-us.md)
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Jan17_HO3-->
 
 

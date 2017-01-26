@@ -1,9 +1,10 @@
 # Descrição geral
-## [O que são as Mensagens do Service Bus?](service-bus-queues-topics-subscriptions.md)
-## [Comparar Filas do Azure e filas do Service Bus](service-bus-azure-and-service-bus-queues-compared-contrasted.md)
+## [O que são as Mensagens do Service Bus?](service-bus-messaging-overview.md)
+## [Noções básicas sobre o Service Bus](service-bus-fundamentals-hybrid-solutions.md)
 ## [FAQ](service-bus-faq.md)
 
 # Introdução
+## [Criar uma aplicação do Service Bus de multicamadas](service-bus-dotnet-multi-tier-app-using-service-bus-queues.md)
 ## [Criar um espaço de nomes](service-bus-create-namespace-portal.md)
 ## Utilizar as filas
 ### [.NET](service-bus-dotnet-get-started-with-queues.md)
@@ -24,11 +25,13 @@
 
 # Procedimento
 ## Planear e conceber
+### [Comparar Filas do Azure e filas do Service Bus](service-bus-azure-and-service-bus-queues-compared-contrasted.md)
 ### [Otimizar o desempenho](service-bus-performance-improvements.md)
 ### [Mensagens assíncronas e elevada disponibilidade](service-bus-async-messaging.md)
 ### [Lidar com interrupções e desastres](service-bus-outages-disasters.md)
 
 ## Programar
+### [Filas, tópicos e subscrições](service-bus-queues-topics-subscriptions.md)
 ### [Aplicações que utilizam as filas](service-bus-create-queues.md)
 ### [Aplicações que utilizam tópicos/subscrições](service-bus-create-topics-subscriptions.md)
 ### [Autenticação e autorização](service-bus-authentication-and-authorization.md)
@@ -46,7 +49,9 @@
 ### [Utilizar o AMQP com filas e tópicos particionados](service-bus-partitioned-queues-and-topics-amqp-overview.md)
 ### [Espaços de nomes emparelhados](service-bus-paired-namespaces.md)
 ### [Encadear entidades com o reencaminhamento automático](service-bus-auto-forwarding.md)
+
 ## Gerir
+### [Bibliotecas de gestão do Service Bus](service-bus-management-libraries.md)
 ### [Utilizar modelos do Azure Resource Manager](service-bus-resource-manager-overview.md)
 ### [Utilizar o PowerShell para aprovisionar entidades](service-bus-powershell-how-to-provision.md)
 
@@ -75,6 +80,6 @@
 ## [Vídeos](https://azure.microsoft.com/documentation/videos/index/?services=service-bus)
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Jan17_HO3-->
 
 
