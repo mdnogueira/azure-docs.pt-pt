@@ -16,8 +16,8 @@ ms.topic: hero-article
 ms.date: 02/19/2016
 ms.author: huvalo
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 7fbe958a20099f829f2c4c38344969372217e634
+ms.sourcegitcommit: b1a633a86bd1b5997d5cbf66b16ec351f1043901
+ms.openlocfilehash: c6679cf7a6b059ee7c28e1754c54afa6414d633a
 
 
 ---
@@ -29,7 +29,7 @@ Irá criar uma aplicação utilizando a estrutura Web Django (ver versões alter
 [!INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
 > [!NOTE]
-> Se pretender começar a utilizar o App Service do Azure antes de se inscrever numa conta do Azure, aceda a [Experimentar o App Service](http://go.microsoft.com/fwlink/?LinkId=523751), onde pode criar de imediato uma aplicação Web de arranque de curta duração no App Service. Sem cartões de crédito; sem compromissos.
+> Se pretender começar a utilizar o App Service do Azure antes de se inscrever numa conta do Azure, aceda a [Experimentar o App Service](https://azure.microsoft.com/try/app-service/), onde pode criar de imediato uma aplicação Web de arranque de curta duração no App Service. Sem cartões de crédito; sem compromissos.
 > 
 > 
 
@@ -112,10 +112,10 @@ Pacotes externos necessários para esta aplicação. O script de implementação
 
 Ficheiros de configuração do IIS. O script de implementação irá utilizar o web.x.y.config adequado e copiá-lo como web.config.
 
-### <a name="optional-files-customizing-deployment"></a>Ficheiros opcionais - personalizar a implementação
+### <a name="optional-files---customizing-deployment"></a>Ficheiros opcionais - personalizar a implementação
 [!INCLUDE [web-sites-python-django-customizing-deployment](../../includes/web-sites-python-django-customizing-deployment.md)]
 
-### <a name="optional-files-python-runtime"></a>Ficheiros opcionais - runtime do Python
+### <a name="optional-files---python-runtime"></a>Ficheiros opcionais - runtime do Python
 [!INCLUDE [web-sites-python-customizing-runtime](../../includes/web-sites-python-customizing-runtime.md)]
 
 ### <a name="additional-files-on-server"></a>Ficheiros adicionais no servidor
@@ -135,7 +135,7 @@ As 3 secções seguintes descrevem como continuar com o desenvolvimento de Web A
 * Windows, com linha de comandos
 * Mac/Linux, com linha de comandos
 
-## <a name="web-app-development-windows-python-tools-for-visual-studio"></a>Desenvolvimento de Web Apps – Windows – Ferramentas do Python para Visual Studio
+## <a name="web-app-development---windows---python-tools-for-visual-studio"></a>Desenvolvimento de Web Apps – Windows – Ferramentas do Python para Visual Studio
 ### <a name="clone-the-repository"></a>Clonar o repositório
 Em primeiro lugar, clone o repositório utilizando o URL fornecido no Portal do Azure. Para saber mais, veja o artigo [Implementação de Git Local para o Serviço de Aplicações do Azure](app-service-deploy-local-git.md).
 
@@ -201,7 +201,7 @@ O Visual Studio não mostra o progresso da implementação. Se pretende rever os
 
 Navegue até ao URL do Azure para ver as suas alterações.
 
-## <a name="web-app-development-windows-command-line"></a>Implementação da aplicação Web – Windows – linha de comandos
+## <a name="web-app-development---windows---command-line"></a>Implementação da aplicação Web – Windows – linha de comandos
 ### <a name="clone-the-repository"></a>Clonar o repositório
 Em primeiro lugar, clone o repositório utilizando o URL fornecido no Portal do Azure e adicione o repositório do Azure como um remoto. Para saber mais, veja o artigo [Implementação de Git Local para o Serviço de Aplicações do Azure](app-service-deploy-local-git.md).
 
@@ -281,7 +281,7 @@ Verá os resultados do script de implementação, incluindo a criação do ambie
 
 Navegue até ao URL do Azure para ver as suas alterações.
 
-## <a name="web-app-development-maclinux-command-line"></a>Implementação da aplicação Web – Mac/Linux – linha de comandos
+## <a name="web-app-development---maclinux---command-line"></a>Implementação da aplicação Web – Mac/Linux – linha de comandos
 ### <a name="clone-the-repository"></a>Clonar o repositório
 Em primeiro lugar, clone o repositório utilizando o URL fornecido no Portal do Azure e adicione o repositório do Azure como um remoto. Para saber mais, veja o artigo [Implementação de Git Local para o Serviço de Aplicações do Azure](app-service-deploy-local-git.md).
 
@@ -365,13 +365,13 @@ Verá os resultados do script de implementação, incluindo a criação do ambie
 
 Navegue até ao URL do Azure para ver as suas alterações.
 
-## <a name="troubleshooting-package-installation"></a>Resolução de problemas - Instalação do Pacote
+## <a name="troubleshooting---package-installation"></a>Resolução de problemas - Instalação do Pacote
 [!INCLUDE [web-sites-python-troubleshooting-package-installation](../../includes/web-sites-python-troubleshooting-package-installation.md)]
 
-## <a name="troubleshooting-virtual-environment"></a>Resolução de problemas - Ambiente Virtual
+## <a name="troubleshooting---virtual-environment"></a>Resolução de problemas - Ambiente Virtual
 [!INCLUDE [web-sites-python-troubleshooting-virtual-environment](../../includes/web-sites-python-troubleshooting-virtual-environment.md)]
 
-## <a name="troubleshooting-static-files"></a>Resolução de problemas - Ficheiros Estáticos
+## <a name="troubleshooting---static-files"></a>Resolução de problemas - Ficheiros Estáticos
 O Django tem o conceito de recolha de ficheiros estáticos. Esta ação copia todos os ficheiros estáticos da sua respetiva localização original para uma única pasta. Para esta aplicação, são copiados para `/static`.
 
 Isto é feito porque os ficheiros estáticos podem ser provenientes de “aplicações” do Django diferentes. Por exemplo, os ficheiros estáticos das interfaces de administração do Django estão localizados numa subpasta da biblioteca do Django no ambiente virtual. Os ficheiros estáticos definidos por esta aplicação estão localizados em `/app/static`. À medida que utiliza mais “aplicações” do Django, terá ficheiros estáticos localizados em vários locais.
@@ -392,7 +392,7 @@ Terá de fazer a recolha manualmente na sua máquina local:
 
 Em seguida, remova a pasta `\static` de `.gitignore` e adicione-a ao repositório de Git.
 
-## <a name="troubleshooting-settings"></a>Resolução de Problemas – Definições
+## <a name="troubleshooting---settings"></a>Resolução de Problemas – Definições
 Várias definições para a aplicação podem ser alteradas em `DjangoWebProject/settings.py`.
 
 Para a comodidade do programador, o modo de depuração está ativado. Um efeito secundário positivo é que poderá ver imagens e outros conteúdos estáticos ao executar localmente, sem ter de recolher ficheiros estáticos.
@@ -450,7 +450,7 @@ Para obter mais informações, consulte o [Centro para Programadores do Python](
 <!--Link references-->
 [O Django e o MySQL no Azure com Ferramentas do Python para Visual Studio]: web-sites-python-ptvs-django-mysql.md
 [O Django e a Base de Dados SQL no Azure com Ferramentas do Python para Visual Studio]: web-sites-python-ptvs-django-sql.md
-[Base de Dados SQL]: web-sites-python-ptvs-django-sql.md
+[SQL Database]: web-sites-python-ptvs-django-sql.md
 [MySQL]: web-sites-python-ptvs-django-mysql.md
 
 <!--External Link references-->
@@ -467,6 +467,6 @@ Para obter mais informações, consulte o [Centro para Programadores do Python](
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Jan17_HO3-->
 
 
