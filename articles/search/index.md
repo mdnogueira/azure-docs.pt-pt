@@ -1,13 +1,14 @@
 ---
 layout: LandingPage
+description: "Saiba como adicionar funcionalidades de pesquisa robusta, incluindo monitorização de atividade, para aplicações móveis ou Web personalizadas. Referências de API e outra documentação."
 translationtype: Human Translation
-ms.sourcegitcommit: 3273e748265fa23efadd010bb5f0bc9ce43223b6
-ms.openlocfilehash: dae331e93ab1682741a34758172d7c8cdb38aec5
+ms.sourcegitcommit: b4080529e9ff4500cef20e1dd735765051f6ce1f
+ms.openlocfilehash: c99d4b8d8db7739f615d566afa4617221b1c34a0
 
 ---
 # <a name="azure-search-documentation"></a>Documentação do Azure Search
 
-O Azure Search é um serviço de pesquisa na cloud gerido que o ajuda a criar uma poderosa experiência de pesquisa em aplicações personalizadas e, depois, a monitorizar o serviço, a indexar e a consultar as atividades através de vistas de portal. As principais funcionalidades incluem a pesquisa de texto completo dimensionável em vários idiomas, a pesquisa geoespacial, a filtragem e a navegação por facetas, as consultas de escrita antecipada, o detetor de ocorrências e os analisadores personalizados.
+Saiba como adicionar funcionalidades de pesquisa às aplicações móveis ou Web personalizadas utilizando o Azure Search, um serviço de pesquisa na cloud gerido. Tutoriais, referências de API e outra documentação mostra-lhe como adicionar pesquisa de texto completo dimensionável em vários idiomas, a pesquisa geoespacial, a filtragem e a navegação por facetas, as consultas de escrita antecipada, o detetor de ocorrências e os analisadores personalizados.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -29,7 +30,7 @@ O Azure Search é um serviço de pesquisa na cloud gerido que o ajuda a criar um
         </a>
     </li>
     <li>
-        <a href="https://azure.microsoft.com/en-us/documentation/videos/index/?services=search">
+        <a href="https://azure.microsoft.com/documentation/videos/index/?services=search">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
@@ -120,80 +121,43 @@ O Azure Search é um serviço de pesquisa na cloud gerido que o ajuda a criar um
     </li>
 </ul>
 
-
 ---
 
-## <a name="reference"></a>Referência
-
+<h2>Referência</h2>
 <ul class="panelContent cardsW">
     <li>
-        <a href="/dotnet/api/microsoft.azure.search">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-                        <h3>.NET</h3>
-                        <p>.NET API de Serviço</p>
-                    </div>
+                        <h3>Linguagens</h3>
+                        <p><a href="/dotnet/api/microsoft.azure.search">.NET</a></p>
+                        <p><a href="/dotnet/api/microsoft.azure.management.search">.NET (Gestão)</a></p>
+                        <p><a href="http://azure-sdk-for-python.readthedocs.io/en/latest/ref/azure.mgmt.search.html">Python (Gestão)</a></p>
+                   </div>
                 </div>
             </div>
         </div>
-        </a>
     </li>
     <li>
-        <a href="/dotnet/api/microsoft.azure.management.search">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3>.NET</h3>
-                        <p>.NET API de Gestão</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </a>
-    </li>
-    <li>
-        <a href="/rest/api/searchservice/">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
                         <h3>REST</h3>
-                        <p>API REST do serviço</p>
+                        <p><a href="/rest/api/searchservice">Referência da API REST</a></p>
+                        <p><a href="/rest/api/searchmanagement">Referência da API REST (Gestão)</a></p>
                     </div>
                 </div>
             </div>
         </div>
-        </a>
     </li>
-    <li>
-        <a href="/rest/api/searchmanagement/">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3>REST</h3>
-                        <p>API REST de Gestão</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </a>
-    </li>
-<ul>
-
-<div class="downloadHolder">
-    <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/search.pdf">
-        <div class="img"></div>
-        <div class="text">
-Transferir a Documentação do Azure Search </div>
-    </a>
-</div>
+</ul>
 
 
 
-<!--HONumber=Nov16_HO4-->
+
+
+<!--HONumber=Jan17_HO3-->
 
 

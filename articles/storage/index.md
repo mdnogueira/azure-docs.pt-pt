@@ -2,8 +2,8 @@
 layout: LandingPage
 description: "Saiba como utilizar o Armazenamento do Azure - Armazenamento de Blob, Tabela, Fila, Ficheiro e Fisco da Máquina Virtual na cloud. Tutoriais, referências de API e outra documentação."
 translationtype: Human Translation
-ms.sourcegitcommit: c0493bb88e768493c141075a00695b5c030e1b15
-ms.openlocfilehash: 94d2d4a01767fd8aabec9200623e4bdd68edbf35
+ms.sourcegitcommit: b4080529e9ff4500cef20e1dd735765051f6ce1f
+ms.openlocfilehash: 1e9cc940d681893abbc351ef440c90f579e6c40a
 
 ---
 
@@ -132,7 +132,7 @@ Saiba como utilizar o Armazenamento do Azure, um serviço de armazenamento na cl
                         <h3>REST</h3>
                         <p><a href="/rest/api/storageservices/fileservices/azure-storage-services-rest-api-reference">Blobs, Filas, Tabelas e Ficheiros</a></p>
                         <p><a href="/rest/api/storagerp">Fornecedor de recursos</a></p>
-                        <p><a href="/rest/api/storageimportexport">Importar/exportar</a></p>
+                        <p><a href="/rest/api/storageimportexport">Importação/exportação</a></p>
                    </div>
                 </div>
             </div>
@@ -140,13 +140,7 @@ Saiba como utilizar o Armazenamento do Azure, um serviço de armazenamento na cl
     </li>
 </ul>
 
-<div class="downloadHolder">
-    <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/storage.pdf">
-        <div class="img"></div>
-        <div class="text">
-Transferir a Documentação do Armazenamento </div>
-    </a>
-</div>
+
 
 
 

@@ -240,12 +240,12 @@
 ## Proteger as suas identidades
 ### [Azure AD Identity Protection](active-directory-identityprotection.md)
 #### [Ativar](active-directory-identityprotection-enable.md)
-#### [Experiência de início de sessão](active-directory-identityprotection-flows.md)
-#### [Desbloquear utilizadores](active-directory-identityprotection-unblock-howto.md)
 #### [Detetar vulnerabilidades](active-directory-identityprotection-vulnerabilities.md)
-#### [Tipos de eventos de risco](active-directory-identityprotection-risk-events-types.md)
-#### [Simular eventos de risco](active-directory-identityprotection-playbook.md)
+#### [Eventos de risco](active-directory-identity-protection-risk-events.md)
 #### [Notificações](active-directory-identityprotection-notifications.md)
+#### [Experiência de início de sessão](active-directory-identityprotection-flows.md)
+#### [Simular eventos de risco](active-directory-identityprotection-playbook.md)
+#### [Desbloquear utilizadores](active-directory-identityprotection-unblock-howto.md)
 #### [Glossário](active-directory-identityprotection-glossary.md)
 #### [Microsoft Graph](active-directory-identityprotection-graph-getting-started.md)
 ### [Privileged Identity Management](./privileged-identity-management/active-directory-securing-privileged-access.md)
@@ -301,6 +301,6 @@
 ## [Fórum de comentários do Azure](https://feedback.azure.com/forums/169401-azure-active-directory)
 
 
-<!--HONumber=Jan17_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 

@@ -39,16 +39,32 @@
 ### [Gerir contas de utilizador](api-management-howto-create-or-invite-developers.md)
 ### [Gerir a utilização da automatização](automation-manage-api-management.md)
 ### [Configurar com o Git](api-management-configuration-repository-git.md)
-
 # Referência
 ## [PowerShell](/powershell/azureps-cmdlets-docs)
 ## [REST](/rest/api/apimanagement/)
-## [REST (original)](/rest/api/apimanagement/ApiManagementREST/API-Management-REST)
-
-
+## [REST (original)](/rest/api/apimanagement/ApiManagementREST/api-management-REST)
+## [Políticas](api-management-policies.md)
+### Referência de política
+#### [Políticas de restrição de acesso](api-management-access-restriction-policies.md)
+#### [Políticas avançadas](api-management-advanced-policies.md)
+#### [Políticas de autenticação](api-management-authentication-policies.md)
+#### [Caching policies (Políticas de colocação em cache)](api-management-caching-policies.md)
+#### [Políticas entre domínios](api-management-cross-domain-policies.md)
+#### [Políticas de transformação](api-management-transformation-policies.md)
+### [Processamento de erros](api-management-error-handling-policies.md)
+### [Expressões de política](api-management-policy-expressions.md)
+## [Modelos](api-management-developer-portal-templates-reference.md)
+### Referência de modelo
+#### [APIs](api-management-api-templates.md)
+#### [Produtos](api-management-product-templates.md)
+#### [Aplicações](api-management-application-templates.md)
+#### [Problemas](api-management-issue-templates.md)
+#### [Perfil do utilizador](api-management-user-profile-templates.md)
+#### [Páginas](api-management-page-templates.md)
+### [Referência de modelo de dados](api-management-template-data-model-reference.md)
+### [Controlos de página](api-management-page-controls.md)
+### [Recursos de modelo](api-management-template-resources.md)
 # Recursos
-## [Políticas](https://msdn.microsoft.com/library/azure/dn894081)
-## [Modelos](https://msdn.microsoft.com/library/azure/mt697540)
 ## [Preços](https://azure.microsoft.com/pricing/details/api-management/)
 ## [Fórum do MSDN](https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=azureapimgmt)
 ## [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-api-management)

@@ -1,13 +1,14 @@
 ---
 layout: LandingPage
+description: "Aprender sobre o Hadoop no HDInsight. Documentação que lhe mostram como utilizar o Hadoop, o Spark, o HBase, o R-Server e mais na cloud com o Azure, para processar, analisar e obter informações de macrodados."
 translationtype: Human Translation
-ms.sourcegitcommit: 3752a677351518195773a86c3824078a5aff6d03
-ms.openlocfilehash: 28b6ebfae16a5c2e119fc4f1af0dcee6a348d47f
+ms.sourcegitcommit: b4080529e9ff4500cef20e1dd735765051f6ce1f
+ms.openlocfilehash: d78d12c6844e88da8b5d8b7cd99a38d6f4d36774
 
 ---
 #<a name="azure-hdinsight-documentation"></a>Documentação do Azure HDInsight
 
-O Azure HDInsight é uma distribuição do Apache Hadoop com tecnologia de cloud.  O Azure HDInsight disponibiliza os componentes do Hadoop da distribuição Hortonworks Data Platform (HDP) na cloud e implementa e aprovisiona os clusters geridos com fiabilidade e disponibilidade.  O Azure HDInsight fornece configurações de cluster para Apache Hadoop, Spark, HBase e Storm.  Também pode personalizar clusters com ações de script.  
+Saiba como utilizar o Hadoop na cloud no HDInsight para analisar dados históricos ou transmissão em fluxo. Tutoriais e outra documentação mostram-lhe como criar clusters, processo e analisar macrodados e desenvolver soluções com o Hadoop, Spark, HBase, R-Server, Storm e outras tecnologias do ecossistema Hadoop.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -166,16 +167,10 @@ O Azure HDInsight é uma distribuição do Apache Hadoop com tecnologia de cloud
     </li>
 </ul>
 
-<div class="downloadHolder">
-    <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/hdinsight.pdf">
-        <div class="img"></div>
-        <div class="text">
-Transferir a Documentação do HDInsight </div>
-    </a>
-</div>
 
 
 
-<!--HONumber=Dec16_HO1-->
+
+<!--HONumber=Jan17_HO3-->
 
 

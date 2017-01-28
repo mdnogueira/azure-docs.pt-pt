@@ -36,6 +36,7 @@
 ## [Preços](https://azure.microsoft.com/pricing/)
 ## [Avaliação](https://azuregov.microsoft.com/trial/azuregovtrial)
 ## [Blogue](https://blogs.msdn.microsoft.com/azuregov/)
+## [Site do Azure Government](https://azure.microsoft.com/overview/clouds/government/)
 
 
 <!--HONumber=Jan17_HO3-->
