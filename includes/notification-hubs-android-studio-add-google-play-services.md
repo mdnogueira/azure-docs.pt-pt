@@ -3,7 +3,7 @@
    
     Anote o caminho do SDK, para utilização num passo posterior. 
    
-       ![](./media/notification-hubs-android-studio-add-google-play-services/notification-hubs-android-studio-sdk-manager.png)
+    ![](./media/notification-hubs-android-studio-add-google-play-services/notification-hubs-android-studio-sdk-manager.png)
 3. Abra o ficheiro **build.gradle** no diretório da aplicação.
    
     ![](./media/notification-hubs-android-studio-add-google-play-services/notification-hubs-android-studio-add-google-play-dependency.png)
