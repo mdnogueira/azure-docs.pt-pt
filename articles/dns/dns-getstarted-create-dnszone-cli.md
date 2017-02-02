@@ -123,6 +123,6 @@ Depois de criar uma zona DNS, [crie conjuntos de registos e registos DNS](dns-ge
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 

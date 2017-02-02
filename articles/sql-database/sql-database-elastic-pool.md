@@ -11,14 +11,14 @@ ms.assetid: b46e7fdc-2238-4b3b-a944-8ab36c5bdb8e
 ms.service: sql-database
 ms.custom: multiple databases
 ms.devlang: NA
-ms.date: 01/04/2017
+ms.date: 01/11/2017
 ms.author: CarlRabeler
 ms.workload: data-management
 ms.topic: get-started-article
 ms.tgt_pltfrm: NA
 translationtype: Human Translation
-ms.sourcegitcommit: ce30d47075636d3b64215d50b81acc09e7ed72f1
-ms.openlocfilehash: d74be42963206c82218bc82ea1bf12e5c0cdb0f3
+ms.sourcegitcommit: 2681dd3792a351fecc0c72eb7fe546113a451d24
+ms.openlocfilehash: 412c3f9c34e399ecdffd939b5b72e687a847b8e1
 
 
 ---
@@ -33,7 +33,7 @@ Os conjuntos elásticos de bases de dados SQL fornecem uma solução económica 
 ## <a name="how-it-works"></a>Como funciona
 Um padrão de aplicação SaaS comum é o modelo de base de dados de inquilino único: a cada cliente é atribuída a sua própria base de dados. Cada cliente (base de dados) tem requisitos de recursos imprevisíveis em termos de memória, E/S e CPU. Com estes altos e baixos de procura, como pode atribuir recursos de forma eficiente e rentável? Tradicionalmente, tem duas opções: (1) aprovisionar excessivamente recursos com base na utilização máxima e pagar em excesso ou (2) aprovisionar insuficientemente para economizar custos, em detrimento do desempenho e da satisfação do cliente durante os picos. Os conjuntos elásticos resolvem este problema ao garantir que as bases de dados recebem os recursos de desempenho de que precisam e quando precisam. Fornecem um mecanismo de alocação de recursos simples dentro de um orçamento previsível. Para saber mais sobre os padrões de estrutura de aplicações SaaS que utilizam conjuntos elásticos, consulte o artigo [Padrões de Estrutura de Aplicações SaaS Multi-inquilino com a Base de Dados SQL do Azure](sql-database-design-patterns-multi-tenancy-saas-applications.md).
 
-> [!VIDEO https://channel9.msdn.com/Blogs/Windows-Azure/Elastic-databases-helps-SaaS-developers-tame-explosive-growth/player]
+> [!VIDEO https://channel9.msdn.com/Blogs/Azure/Elastic-databases-helps-SaaS-developers-tame-explosive-growth/player]
 >
 
 Na Base de Dados SQL, a medida relativa da capacidade de uma base de dados de gerir exigências de recursos é expressa em Unidades de Transação de Base de Dados (DTUs) para bases de dados individuais e DTUs elásticas (eDTUs) para bases de dados num conjunto elástico. Veja [Introdução à Base de Dados SQL](sql-database-technical-overview.md) para saber mais sobre DTUs e eDTUs.
@@ -106,6 +106,6 @@ Para aplicações que têm requisitos de recuperação mais agressivos do que aq
 
 
 
-<!--HONumber=Jan17_HO1-->
+<!--HONumber=Jan17_HO2-->
 
 

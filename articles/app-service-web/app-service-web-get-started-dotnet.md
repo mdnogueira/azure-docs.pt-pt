@@ -1,6 +1,6 @@
 ---
-title: "Implementar a primeira aplicação Web .NET no Azure em cinco minutos | Microsoft Docs"
-description: "Saiba como é fácil executar aplicações Web no Serviço de Aplicações ao implementar uma aplicação de exemplo. Comece a programar verdadeiramente em pouco tempo e a ver resultados imediatos."
+title: "Implementar a sua primeira aplicação Web ASP.NET no Azure em cinco minutos (CLI 2.0 [Pré-visualização]) | Microsoft Docs"
+description: "Saiba como é fácil executar aplicações Web no Serviço de Aplicações mediante a implementação de uma aplicação ASP.NET de exemplo. Comece a programar verdadeiramente em pouco tempo e a ver resultados imediatos."
 services: app-service\web
 documentationcenter: 
 author: cephalin
@@ -12,16 +12,27 @@ ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: hero-article
-ms.date: 10/13/2016
+ms.date: 01/04/2017
 ms.author: cephalin
 translationtype: Human Translation
-ms.sourcegitcommit: 4fc33ba185122496661f7bc49d14f7522d6ee522
-ms.openlocfilehash: 331ada90e979cd0032907d80e8535d1872e90797
+ms.sourcegitcommit: b1a633a86bd1b5997d5cbf66b16ec351f1043901
+ms.openlocfilehash: 5ce3d205ebdf5fa7e52ebe0a6402400556da0f64
 
 
 ---
-# <a name="deploy-your-first-net-web-app-to-azure-in-five-minutes"></a>Implementar a primeira aplicação Web .NET no Azure em cinco minutos
-Este tutorial ajuda-o a implementar uma aplicação Web .NET simples no [Serviço de Aplicações do Azure](../app-service/app-service-value-prop-what-is.md).
+# <a name="deploy-your-first-aspnet-web-app-to-azure-in-five-minutes-cli-20-preview"></a>Implementar a sua primeira aplicação Web ASP.NET no Azure em cinco minutos (CLI 2.0 [Pré-visualização)]
+
+> [!div class="op_single_selector"]
+> * [Primeiro site HTML](app-service-web-get-started-html.md)
+> * [Primeira aplicação .NET](app-service-web-get-started-dotnet.md)
+> * [Primeira aplicação PHP](app-service-web-get-started-php.md)
+> * [Primeira aplicação Node.js](app-service-web-get-started-nodejs.md)
+> * [Primeira aplicação Python](app-service-web-get-started-python.md)
+> * [Primeira aplicação Java](app-service-web-get-started-java.md)
+> 
+> 
+
+Este tutorial ajuda-o a implementar uma aplicação Web ASP.NET simples no [Serviço de Aplicações do Azure](../app-service/app-service-value-prop-what-is.md).
 Pode utilizar o Serviço de Aplicações para criar aplicações, [back-ends de aplicações móveis](/documentation/learning-paths/appservice-mobileapps/) e [aplicações API](../app-service-api/app-service-api-apps-why-best-platform.md).
 
 Irá: 
@@ -31,47 +42,79 @@ Irá:
 * Ver o seu código em execução em direto na produção.
 * Atualizar a sua aplicação Web da mesma forma que [emitiria consolidações do Git](https://git-scm.com/docs/git-push).
 
+[!INCLUDE [app-service-linux](../../includes/app-service-linux.md)]
+
+## <a name="cli-versions-to-complete-the-task"></a>Versões CLI para concluir a tarefa
+
+Pode concluir a tarefa utilizando uma das seguintes versões CLI:
+
+- [Azure CLI 1.0](app-service-web-get-started-dotnet-cli-nodejs.md) – CLI para os modelos de implementação de gestão clássica e de recursos
+- [Azure CLI 2.0 (Pré-visualização)](app-service-web-get-started-dotnet.md) - CLI de próxima geração para o modelo de implementação de gestão de recursos
+
 ## <a name="prerequisites"></a>Pré-requisitos
 * [Git](http://www.git-scm.com/downloads).
-* [CLI do Azure](../xplat-cli-install.md).
+* [Pré-visualização da CLI 2.0 do Azure](/cli/azure/install-az-cli2).
 * Uma conta do Microsoft Azure. Se não tiver uma conta, pode [inscrever-se numa avaliação gratuita](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F) ou [ativar os benefícios de subscritor do Visual Studio](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F).
 
 > [!NOTE]
-> Pode [Experimentar o Serviço de Aplicações](http://go.microsoft.com/fwlink/?LinkId=523751) sem uma conta do Azure. Crie uma aplicação de introdução e experimente-a durante uma hora, sem cartão de crédito nem compromissos.
+> Pode [Experimentar o Serviço de Aplicações](https://azure.microsoft.com/try/app-service/) sem uma conta do Azure. Crie uma aplicação de introdução e experimente-a durante uma hora, sem cartão de crédito nem compromissos.
 > 
 > 
 
-## <a name="deploy-an-net-web-app"></a>Implementar uma aplicação Web em .NET
+## <a name="deploy-an-aspnet-web-app"></a>Implementar uma aplicação Web ASP.NET
 1. Abra uma nova linha de comandos do Windows, uma janela do PowerShell, uma shell do Linux ou um terminal do OS X. Execute `git --version` e `azure --version` para verificar se o Git e a CLI do Azure estão instalados no sua máquina.
    
-    ![Testar a instalação das ferramentas da CLI para a sua primeira aplicação Web no Azure](./media/app-service-web-get-started/1-test-tools.png)
+    ![Testar a instalação das ferramentas da CLI para a sua primeira aplicação Web no Azure](./media/app-service-web-get-started-languages/1-test-tools-2.0.png)
    
     Se não tiver instalado as ferramentas, consulte [Pré-requisitos](#Prerequisites) para obter as ligações para as transferências.
 2. Inicie sessão no Azure desta forma:
    
-        azure login
+        az login
    
     Siga a mensagem de ajuda para continuar o processo de início de sessão.
    
-    ![Iniciar sessão no Azure para criar a sua primeira aplicação Web](./media/app-service-web-get-started/3-azure-login.png)
-3. Altere a CLI do Azure para o modo ASM e defina o utilizador da implementação do Serviço de Aplicações. Irá implementar código com as credenciais mais tarde.
+    ![Iniciar sessão no Azure para criar a sua primeira aplicação Web](./media/app-service-web-get-started-languages/3-azure-login-2.0.png)
+
+3. Defina o utilizador de implementação do Serviço de Aplicações. Irá implementar código com estas credenciais mais tarde.
    
-        azure config mode asm
-        azure site deployment user set --username <username> --pass <password>
-4. Mude para um diretório de trabalho (`CD`) e clone a aplicação de exemplo.
+        az appservice web deployment user set --user-name <username> --password <password>
+
+3. Criar um novo [grupo de recursos](../azure-resource-manager/resource-group-overview.md). Para este primeiro tutorial de Serviço de Aplicações, não é realmente necessário saber o que é.
+
+        az group create --location "<location>" --name my-first-app-group
+
+    Para ver os possíveis valores que pode utilizar para `<location>`, utilize o comando CLI `az appservice list-locations`.
+
+3. Crie um novo [plano do Serviço de Aplicações](../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md) "GRATUITO". Para este primeiro tutorial do Serviço de Aplicações, basta fica a saber que não será cobrado para aplicações Web neste plano.
+
+        az appservice plan create --name my-free-appservice-plan --resource-group my-first-app-group --sku FREE
+
+4. Crie uma nova aplicação Web com um nome exclusivo em `<app_name>`.
+
+        az appservice web create --name <app_name> --resource-group my-first-app-group --plan my-free-appservice-plan
+
+4. Em seguida, obtém o código ASP.NET de exemplo que pretende implementar. Mude para um diretório de trabalho (`CD`) e clone a aplicação de exemplo desta forma:
    
+        cd <working_directory>
         git clone https://github.com/Azure-Samples/app-service-web-dotnet-get-started.git
+
 5. Altere para o repositório da sua aplicação de exemplo. 
    
         cd app-service-web-dotnet-get-started
-6. Crie o recurso de aplicação Serviço de Aplicações no Azure com um nome de aplicação exclusivo e o utilizador de implementação configurado anteriormente. Quando lhe for pedido, especifique o número da região pretendida.
+5. Configure a implementação de Git local para a aplicação Web do Serviço de Aplicações com o seguinte comando:
+
+        az appservice web source-control config-local-git --name <app_name> --resource-group my-first-app-group
+
+    Obterá uma saída JSON como esta, que significa que o repositório de Git remoto está configurado:
+
+        {
+        "url": "https://<deployment_user>@<app_name>.scm.azurewebsites.net/<app_name>.git"
+        }
+
+6. Adicionar o URL no JSON como um Git remoto para o repositório local (denominado `azure` para simplicidade).
+
+        git remote add azure https://<deployment_user>@<app_name>.scm.azurewebsites.net/<app_name>.git
    
-        azure site create <app_name> --git --gitusername <username>
-   
-    ![Criar o recurso do Azure para a sua primeira aplicação Web no Azure](./media/app-service-web-get-started-languages/dotnet-site-create.png)
-   
-    Agora, a sua aplicação está criada no Azure. Além disso, o seu diretório atual é inicializado pelo Git e ligado à nova aplicação do App Service como um Git remoto.
-    Pode navegar para o URL da aplicação (http://&lt;app_name>.azurewebsites.net) e ver a fantástica página HTML predefinida, mas o mais importante agora é introduzir o seu código.
 7. Implemente o código de exemplo na sua aplicação do Azure, tal como emitiria qualquer código com o Git. Quando lhe for pedido, utilize a palavra-passe que configurou anteriormente.
    
         git push azure master
@@ -106,6 +149,6 @@ Em alternativa, faça mais com a sua primeira aplicação Web. Por exemplo:
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Jan17_HO3-->
 
 

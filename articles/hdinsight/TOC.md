@@ -10,7 +10,6 @@
 
 # Introdução
 ## [Começar com o Hadoop](hdinsight-hadoop-linux-tutorial-get-started.md)
-## [Começar com a pré-visualização do Interactive Hive](hdinsight-hadoop-use-interactive-hive.md)
 ## [Começar com R Server](hdinsight-hadoop-r-server-get-started.md)
 ## [Começar com o Spark](hdinsight-apache-spark-jupyter-spark-sql.md)
 ## [Começar com o HBase e o NoSQL](hdinsight-hbase-tutorial-get-started-linux.md)
@@ -62,10 +61,13 @@
 ### [Prever o desempenho de HVAC](hdinsight-apache-spark-ipython-notebook-machine-learning.md)
 ### [Prever resultados de inspeções alimentares](hdinsight-apache-spark-machine-learning-mllib-ipython.md)
 ### [Analisar registos de Web sites](hdinsight-apache-spark-custom-library-website-log-analysis.md)
+### [Utilizar blocos de notas do Zeppelin](hdinsight-apache-spark-zeppelin-notebook.md)
 ### [Kernel de bloco de notas Jupyter](hdinsight-apache-spark-jupyter-notebook-kernels.md)
-### [Pacotes para blocos de notas Jupyter](hdinsight-apache-spark-jupyter-notebook-use-external-packages.md)
+### [Utilizar pacotes externos com magia de células do Jupyter](hdinsight-apache-spark-jupyter-notebook-use-external-packages.md)
+### [Utilizar pacotes externos com ações de script do Jupyter](hdinsight-apache-spark-python-package-installation.md)
 ### [Utilizar um bloco de notas Jupyter local](hdinsight-apache-spark-jupyter-notebook-install-locally.md)
 ### [Tarefas remotas com Livy](hdinsight-apache-spark-livy-rest-interface.md)
+### [Programar aplicações com o Eclipse](hdinsight-apache-spark-eclipse-tool-plugin.md)
 ### [Programar aplicações com o IntelliJ](hdinsight-apache-spark-intellij-tool-plugin.md)
 ### [Depurar remotamente com o IntelliJ](hdinsight-apache-spark-intellij-tool-plugin-debug-jobs-remotely.md)
 ### [Gerir recursos](hdinsight-apache-spark-resource-manager.md)
@@ -157,6 +159,7 @@
 #### [Utilizar a CLI do Azure](hdinsight-administer-use-command-line.md)
 ### [Gerir clusters com a IU Web do Ambari](hdinsight-hadoop-manage-ambari.md)
 #### [Utilizar a API REST Ambari](hdinsight-hadoop-manage-ambari-rest-api.md)
+### [Adicionar contas de armazenamento](hdinsight-hadoop-add-storage.md)
 ### [Carregar dados de tarefas do Hadoop](hdinsight-upload-data.md)
 ### [Importar e exportar dados com Sqoop](hdinsight-use-sqoop.md)
 #### [Ligar com SSH](hdinsight-use-sqoop-mac-linux.md)
@@ -225,6 +228,6 @@
 ## [Percurso de aprendizagem](https://azure.microsoft.com/documentation/learning-paths/hdinsight-self-guided-hadoop-training/)
 
 
-<!--HONumber=Dec16_HO2-->
+<!--HONumber=Jan17_HO3-->
 
 

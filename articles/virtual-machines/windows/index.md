@@ -1,13 +1,26 @@
 ---
 layout: LandingPage
+description: "Saiba como criar máquinas virtuais do Windows. A documentação ajuda-o a planear, implementar e gerir um ambiente de computação de máquina virtual na cloud."
+title: "Máquinas Virtuais do Azure para Windows Documentação, Tutoriais e Referência da API | Microsoft Docs"
+services: virtual-machines
+author: carolz
+manager: carolz
+ms.assetid: 
+ms.service: virtual-machines
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: landing-page
+ms.date: 01/23/2017
+ms.author: carolz
 translationtype: Human Translation
-ms.sourcegitcommit: cd8dfa8b436cd165b3438a1823a571feebb0f4f4
-ms.openlocfilehash: 0a2b4c08e5da4d9c16e12f33c5f1a3f9ae863498
+ms.sourcegitcommit: c3b5f79fe9ee312b5f45eff460b43224b9c254fe
+ms.openlocfilehash: 927fb368a7d0e0c7c996a591dfe8536ea3509164
+
 
 ---
-#<a name="windows-virtual-machines-documentation"></a>Documentação de Máquinas Virtuais do Windows
+# <a name="windows-virtual-machines-documentation"></a>Documentação de Máquinas Virtuais do Windows
 
-As Máquinas Virtuais (VMs) do Azure são um dos vários tipos de recursos informáticos a pedido, dimensionáveis que o Azure oferece. Normalmente, escolher uma VM, se precisar de mais controlo sobre o ambiente informático que as outras opções oferecem. Uma VM do Azure fornece-lhe a flexibilidade de virtualização sem ter de comprar e manter o hardware físico que executa a VM. E mantém o controlo da configuração, aplicação de patches e instalação do software que é executado na VM.
+Saiba como criar máquinas virtuais do Windows. Tutoriais, referências de API e outra documentação ajuda-o a planear, implementar e gerir um ambiente de computação de máquina virtual na cloud.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -148,16 +161,10 @@ As Máquinas Virtuais (VMs) do Azure são um dos vários tipos de recursos infor
     </li>
 </ul>
 
-<div class="downloadHolder">
-    <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/virtual-machines/windows.pdf">
-        <div class="img"></div>
-        <div class="text">
-Transferir a Documentação da Máquina Virtual do Windows </div>
-    </a>
-</div>
 
 
 
-<!--HONumber=Dec16_HO1-->
+
+<!--HONumber=Jan17_HO4-->
 
 

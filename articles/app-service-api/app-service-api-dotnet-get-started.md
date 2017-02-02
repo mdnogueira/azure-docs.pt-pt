@@ -15,8 +15,8 @@ ms.topic: hero-article
 ms.date: 09/20/2016
 ms.author: rachelap
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 45e8331e0953dd646f132478741394a5b4907a9e
+ms.sourcegitcommit: b1a633a86bd1b5997d5cbf66b16ec351f1043901
+ms.openlocfilehash: c7b4e39e01ae335c3e6a5cf9cb1efe8a64490e35
 
 
 ---
@@ -56,9 +56,9 @@ O próximo tutorial da série implementa o front-end SPA na nuvem.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 * Web API do ASP.NET – as instruções do tutorial partem do princípio de que tem conhecimentos básicos sobre como trabalhar com a [API Web 2](http://www.asp.net/web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api) do ASP.NET no Visual Studio.
-* Conta do Azure – Pode [Abrir uma conta do Azure gratuitamente](/pricing/free-trial/?WT.mc_id=A261C142F) ou [Ativar os benefícios de subscritor do Visual Studio](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F).
+* Conta do Azure – Pode [Abrir uma conta do Azure gratuitamente](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) ou [Ativar os benefícios de subscritor do Visual Studio](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F).
   
-    Se pretender começar com o App Service do Azure antes de se inscrever numa conta do Azure, aceda a [Experimentar o App Service](http://go.microsoft.com/fwlink/?LinkId=523751). Aqui, pode criar imediatamente uma aplicação de arranque de curta duração no Serviço de Aplicações — **sem cartões de crédito** e sem compromissos.
+    Se pretender começar com o App Service do Azure antes de se inscrever numa conta do Azure, aceda a [Experimentar o App Service](https://azure.microsoft.com/try/app-service/). Aqui, pode criar imediatamente uma aplicação de arranque de curta duração no Serviço de Aplicações — **sem cartões de crédito** e sem compromissos.
 * Visual Studio 2015 com o [Azure SDK para .NET](https://azure.microsoft.com/downloads/archive-net-downloads/) – o SDK instala o Visual Studio 2015 automaticamente se ainda não o tiver.
   
   * No Visual Studio, clique em Ajuda -> Acerca do Microsoft Visual Studio e verifique se tem as “Ferramentas do Serviço de Aplicações do Azure v2.9.1” ou superior instaladas.
@@ -442,6 +442,6 @@ O modelo do projeto **Aplicação API do Azure** é equivalente a escolher o mod
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Jan17_HO3-->
 
 

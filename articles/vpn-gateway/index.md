@@ -1,13 +1,26 @@
 ---
+title: "Documentação do Gateway de VPN - Tutoriais e Referência da API | Microsoft Docs"
+description: "Saiba como configurar gateways da rede privada virtual (VPN) para gerir o tráfego entre redes virtuais na cloud e no local, ou entre VNets na cloud."
+services: vpn-gateway
+author: carolz
+manager: carolz
 layout: LandingPage
+ms.assetid: 
+ms.service: vpn-gateway
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: landing-page
+ms.date: 01/23/2017
+ms.author: carolz
 translationtype: Human Translation
-ms.sourcegitcommit: 3752a677351518195773a86c3824078a5aff6d03
-ms.openlocfilehash: 844a2bb0bc702cf8e81684267677db8a8803208f
+ms.sourcegitcommit: 2e7486833ae23cdfed037aa1afb930997586a158
+ms.openlocfilehash: e3179c060380c07dde9058597b0d77861d14d848
+
 
 ---
-#<a name="vpn-gateway-documentation"></a>Documentação do Gateway de VPN
+# <a name="vpn-gateway-documentation"></a>Documentação do Gateway de VPN
 
-O Gateway de VPN do Azure é um gateway de VPN (rede privada virtual) utilizado para enviar tráfego de rede entre redes virtuais do Azure e localizações no local, assim como entre redes virtuais dentro do Azure (VNet a VNet).  
+Saiba como configurar o Gateway de VPN, um gateway de rede privada virtual. A documentação mostra-lhe como enviar tráfego de rede entre redes virtuais do Azure e localizações no local ou outras redes virtuais do Azure (VNets).
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -122,91 +135,40 @@ O Gateway de VPN do Azure é um gateway de VPN (rede privada virtual) utilizado 
  
 ---
 
-## <a name="reference"></a>Referência
-
+<h2>Referência</h2>
 <ul class="panelContent cardsW">
     <li>
-        <a href="/powershell/azureps-cmdlets-docs">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-                        <h3>PowerShell</h3>
-                        <p>Referência ao PowerShell</p>
+                        <h3>Linha de Comandos</h3>
+                        <p><a href="https://msdn.microsoft.com/library/mt163510(v=azure.300)">PowerShell (Resource manager)</a></p>
+                        <p><a href="https://msdn.microsoft.com/library/mt270335(v=azure.300)">PowerShell (clássico)</a></p>
                     </div>
                 </div>
             </div>
         </div>
-        </a>
     </li>
     <li>
-        <a href="/cli/azure/network/vpn-gateway">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3>CLI do Azure</h3>
-                        <p>Gateway de VPN com a CLI do Azure</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </a>
-    </li>
-    <li>
-        <a href="/dotnet/api">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3>.NET</h3>
-                        <p>Referência Gerida do .NET</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </a>
-    </li>
-    <li>
-        <a href="/java/api">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3>Java</h3>
-                        <p>Referência a Java SDK</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </a>
-    </li>
-    <li>
-        <a href="https://msdn.microsoft.com/library/mt163859">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
                         <h3>REST</h3>
-                        <p>API REST do Gateway de VPN</p>
+                        <p><a href="https://msdn.microsoft.com/library/mt163859">REST (gestor de recursos)</a></p>
+                        <p><a href="https://msdn.microsoft.com/library/jj154113">REST (clássico)</a></p>
                     </div>
                 </div>
             </div>
         </div>
-        </a>
     </li>
 </ul>
 
-<div class="downloadHolder">
-    <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/vpn-gateway.pdf">
-        <div class="img"></div>
-        <div class="text">
-Transferir a Documentação do Gateway de VPN do Azure </div>
-    </a>
-</div>
 
 
 
-<!--HONumber=Dec16_HO1-->
+
+<!--HONumber=Jan17_HO4-->
 
 

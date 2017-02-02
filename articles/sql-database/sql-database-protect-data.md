@@ -116,12 +116,12 @@ A Deteção de Ameaças da Base de Dados SQL proporciona uma camada adicional de
 ## <a name="compliance"></a>Conformidade
 Para além das funcionalidades anteriores que podem ajudar a sua aplicação a cumprir os diversos requisitos de compatibilidade de segurança, a Base de Dados SQL do Azure também participa em auditorias regulares e tem certificação de uma série de normas de conformidade. Para obter mais informações, veja o [Centro de Fidedignidade do Microsoft Azure](https://azure.microsoft.com/support/trust-center/), onde pode encontrar a lista mais recente de [certificações de conformidade da Base de Dados SQL](https://azure.microsoft.com/support/trust-center/services/).
 
+
 ## <a name="next-steps"></a>Passos seguintes
 
 - Para obter uma descrição geral de todas as funcionalidades de segurança da Base de Dados SQL, veja [Descrição geral da segurança de SQL](sql-database-security-overview.md).
 - Para ver um debate da utilização das funcionalidades de controlo de acesso na Base de Dados SQL, veja [Controlar o acesso](sql-database-control-access.md).
 - Para ver um debate sobre a monitorização proativa, veja [Get started with SQL Database Auditing (Introdução à Auditoria da Base de Dados SQL)](sql-database-auditing-get-started.md) e [Get started with SQL Database Threat Detection (Introdução à Deteção de Ameaças da Base de Dados SQL)](sql-database-threat-detection-get-started.md).
-
 
 
 

@@ -65,8 +65,8 @@ Para criar a VM local que contenha um cluster do Service Fabric de cinco nós, e
   
    Este passo transfere a imagem da VM pré-configurada, arranca-a localmente e, depois, configura um cluster do Service Fabric local na mesma. Esta operação pode demorar alguns minutos. Se a configuração for concluída com êxito, verá uma mensagem no resultado que indica que o cluster está a ser iniciado.
    
-
     ![Início da configuração do cluster a seguir ao aprovisionamento da VM][cluster-setup-script]
+    
 5. Teste se o cluster foi configurado corretamente ao navegar para o Service Fabric Explorer, em http://192.168.50.50:19080/Explorer (partindo do princípio de que manteve o IP de rede privado predefinido).
 
     ![Service Fabric Explorer visto no Mac anfitrião][sfx-mac]

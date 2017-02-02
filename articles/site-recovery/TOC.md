@@ -17,14 +17,16 @@
 ### [Mapeamento da rede (VMM)](site-recovery-network-mapping.md)
 ### [Mapeamento de armazenamento entre sites no local](site-recovery-storage-mapping.md)
 ## Replicar
-### [VMs e servidores do VMWare para o Azure](site-recovery-vmware-to-azure.md)
-### [VMs e servidores do VMWare para site secundário](site-recovery-vmware-to-vmware.md)
+### [VMs VMWare e servidores físicos para o Azure](site-recovery-vmware-to-azure.md)
+### [VMs VMware e servidores físicos para site secundário](site-recovery-vmware-to-vmware.md)
+### [VMs VMware com suporte multi-inquilino para o Azure com o programa CSP](site-recovery-multi-tenant-support-vmware-using-csp.md)
 ### [VMs do Hyper-V para o Azure (com VMM)](site-recovery-vmm-to-azure.md)
 ### [VMs do Hyper-V para o Azure (sem VMM)](site-recovery-hyper-v-site-to-azure.md)
 ### [VMs Hyper-V para site secundário](site-recovery-vmm-to-vmm.md)
 ### [VMs Hyper-V para site secundário com SAN](site-recovery-vmm-san.md)
 ### [VMs do Hyper-V com servidor VMM único](site-recovery-single-vmm.md)
 ## Migrar
+### [Migrar para o Azure](site-recovery-migrate-to-azure.md)
 ### [Migrar entre regiões do Azure](site-recovery-migrate-azure-to-azure.md)
 ### [Instâncias do Windows AWS para o Azure](site-recovery-migrate-aws-to-azure.md)
 ## Cargas de trabalho
@@ -64,6 +66,6 @@
 ## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=site-recovery)
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Jan17_HO3-->
 
 

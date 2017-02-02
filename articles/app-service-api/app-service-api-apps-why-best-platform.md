@@ -15,13 +15,13 @@ ms.topic: get-started-article
 ms.date: 08/23/2016
 ms.author: rachelap
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: eda73900ded4c587bacfa3b4d4e8465c1de5a5ed
+ms.sourcegitcommit: 66fc8f7e1da55dbe6bb1dd8b8d6a535c498c1cf7
+ms.openlocfilehash: 62b1541414543fc947886374424dadee09759323
 
 
 ---
 # <a name="api-apps-overview"></a>Descrição geral de API Apps
-As API Apps no App Service do Azure oferecem funcionalidades que tornam mais fácil desenvolver, alojar e consumir APIs na nuvem e no local. Com as API Apps obtém segurança de nível empresarial, controlo de acesso simples, conectividade híbrida, geração automática do SDK e integração otimizada com as [Logic Apps](../app-service-logic/app-service-logic-what-are-logic-apps.md).
+As API Apps no App Service do Azure oferecem funcionalidades que tornam mais fácil desenvolver, alojar e consumir APIs na nuvem e no local. Com as API Apps obtém segurança de nível empresarial, controlo de acesso simples, conectividade híbrida, geração automática do SDK e integração otimizada com as [Logic Apps](../logic-apps/logic-apps-what-are-logic-apps.md).
 
 O [App Service do Azure](../app-service/app-service-value-prop-what-is.md) é uma plataforma completamente gerida para cenários Web, móveis e de integração. As API Apps é um dos quatro tipos de aplicação fornecidos pelo [App Service do Azure](../app-service/app-service-value-prop-what-is.md).
 
@@ -33,8 +33,8 @@ Seguem-se algumas funcionalidades-chave das API Apps:
 * **Colocar a sua API existente como está** - não é necessário alterar qualquer um dos códigos na suas APIs existentes para tirar partido das API Apps – basta implementar o seu código numa aplicação API. A API pode utilizar qualquer linguagem ou arquitetura suportada pelo App Service, incluindo ASP.NET e c#, Java, PHP, Node.js e Python.
 * **Consumo fácil** – o suporte integrado para [metadados API Swagger](http://swagger.io/) torna as suas APIs facilmente consumíveis por uma variedade de clientes.  Gere automaticamente o código de cliente para as suas APIs em diversas linguagens, incluindo c#, Java e Javascript. Configure facilmente [CORS](app-service-api-cors-consume-javascript.md) sem alterar o seu código. Para obter mais informações, consulte o artigo [Metadados de API Apps do App Service para geração de código e deteção de API](app-service-api-metadata.md) e [Consumir uma aplicação API da JavaScript utilizando CORS](app-service-api-cors-consume-javascript.md). 
 * **Controlo de acesso simples** - proteja uma aplicação API contra o acesso não autenticado sem alterações do seu código. Os serviços de autenticação incorporados protegem as APIs do acesso por outros serviços ou por clientes que representam os utilizadores. Os fornecedores de identidade suportados incluem o Azure Active Directory, Facebook, Twitter, Google e Conta Microsoft. Os clientes podem utilizar a Biblioteca de Autenticação do Active Directory (ADAL) ou o SDK de aplicações móveis. Para obter mais informações, consulte o artigo [Autenticação e autorização para API Apps no App Service do Azure](app-service-api-authentication.md).
-* **Integração do Visual Studio** – as ferramentas dedicadas do Visual Studio simplificam o trabalho de criar, implementar, consumir, depurar e gerir API Apps. Para obter mais informações, consulte o artigo [Anúncio do Azure SDK 2.8.1 para .NET](/blog/announcing-azure-sdk-2-8-1-for-net/).
-* **Integração com Logic Apps** – as API Apps que criar podem ser consumidas pelas [Logic Apps do App Service](../app-service-logic/app-service-logic-what-are-logic-apps.md).  Para obter mais informações, consulte o artigo [Utilizar a API personalizada alojada no App Service com as Logic Apps](../app-service-logic/app-service-logic-custom-hosted-api.md) e [Nova versão do esquema de pré-visualização 2015-08-01](../app-service-logic/app-service-logic-schema-2015-08-01.md).
+* **Integração do Visual Studio** – as ferramentas dedicadas do Visual Studio simplificam o trabalho de criar, implementar, consumir, depurar e gerir API Apps. Para obter mais informações, consulte o artigo [Anúncio do Azure SDK 2.8.1 para .NET](https://azure.microsoft.com/blog/announcing-azure-sdk-2-8-1-for-net/).
+* **Integração com Logic Apps** – as API Apps que criar podem ser consumidas pelas [Logic Apps do App Service](../logic-apps/logic-apps-what-are-logic-apps.md).  Para obter mais informações, consulte o artigo [Utilizar a API personalizada alojada no App Service com as Logic Apps](../logic-apps/logic-apps-custom-hosted-api.md) e [Nova versão do esquema de pré-visualização 2015-08-01](../logic-apps/logic-apps-schema-2015-08-01.md).
 
 Além disso, uma aplicação API pode tirar partido das funcionalidades oferecidas pelas [Web Apps](../app-service-web/app-service-web-overview.md) e [Aplicações Móveis](../app-service-mobile/app-service-mobile-value-prop.md). Também se aplica a reversão: se utilizar uma aplicação Web ou aplicação móvel para alojar uma API, pode tirar partido das funcionalidades das API Apps, tais como, os metadados Swagger para geração de código do cliente e o CORS para acesso ao browser entre domínios. A única diferença entre os três tipos de aplicações (API, Web, móvel) é o nome e o ícone utilizado para as mesmos no Portal do Azure.
 
@@ -62,6 +62,6 @@ Para colocar questões sobre API Apps, inicie um thread no [Fórum das API Apps]
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Jan17_HO3-->
 
 

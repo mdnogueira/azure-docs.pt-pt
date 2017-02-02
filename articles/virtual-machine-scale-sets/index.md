@@ -1,9 +1,20 @@
 ---
 layout: LandingPage
 description: "Saiba como utilizar Conjuntos de Dimensionamento de Máquina Virtual para criar o dimensionamento automático de VMs Windows ou Linux para soluções computação grande, macrodados e de contentor."
+title: "Conjuntos de Dimensionamento de Máquinas Virtuais do Azure para Linux Documentação, Tutoriais e Referência da API | Microsoft Docs"
+services: virtual-machine-scale-sets
+author: carolz
+manager: carolz
+ms.assetid: 
+ms.service: virtual-machine-scale-sets
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: landing-page
+ms.date: 01/23/2017
+ms.author: carolz
 translationtype: Human Translation
-ms.sourcegitcommit: 7fefef291643ba0c640ba3520e7e40d50391220a
-ms.openlocfilehash: a35dcbfa56c03ca264d4c7a7f779672dc6ae7526
+ms.sourcegitcommit: 7b2af8e58e050100b1778d977dabe25538b84cfe
+ms.openlocfilehash: 3bb6307cee24c80cbf8d621a49d2304d9b9b5c99
 
 ---
 #<a name="virtual-machine-scale-sets-documentation"></a>Documentação dos Conjuntos de Dimensionamento de Máquinas Virtuais
@@ -99,16 +110,10 @@ Saiba como utilizar Conjuntos de Dimensionamento de Máquina Virtual para implem
     </li>
 </ul>
 
-<div class="downloadHolder">
-    <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/virtual-machine-scale-sets.pdf">
-        <div class="img"></div>
-        <div class="text">
-Transferir a Documentação dos Conjuntos de Dimensionamento de Máquinas Virtuais </div>
-    </a>
-</div>
 
 
 
-<!--HONumber=Jan17_HO3-->
+
+<!--HONumber=Jan17_HO4-->
 
 

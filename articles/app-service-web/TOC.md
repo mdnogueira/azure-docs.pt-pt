@@ -7,12 +7,13 @@
 # Introdução
 
 ## Aplicações Web
-### [.NET](web-sites-dotnet-get-started.md)
-### [Node.js](app-service-web-nodejs-get-started.md)
-### [python](web-sites-python-ptvs-django-mysql.md)
-### [Java](web-sites-java-get-started.md)
+### [HTML](app-service-web-get-started-html.md)
+### [.NET](app-service-web-get-started-dotnet.md)
+### [Node.js](app-service-web-get-started-nodejs.md)
+### [python](app-service-web-get-started-python.md)
+### [Java](app-service-web-get-started-java.md)
 ### [Aplicação Marketplace](web-sites-php-web-site-gallery.md)
-### [PHP](app-service-web-php-get-started.md)   
+### [PHP](app-service-web-get-started-php.md)   
 
 ## Aplicações API
 ### [.NET](../app-service-api/app-service-api-dotnet-get-started.md)
@@ -60,11 +61,12 @@
 ### [SDK de WebJobs](websites-dotnet-webjobs-sdk-get-started.md)
 
 ### Aplicações ASP.NET
-#### [Implementar a primeira aplicação Web .NET no Azure em cinco minutos](app-service-web-get-started-dotnet.md)
+#### [Criar uma aplicação ASP.NET no Azure com o Visual Studio](web-sites-dotnet-get-started.md)
 #### [Criar um serviço de REST com a API Web do ASP.NET](web-sites-dotnet-rest-service-aspnet-api-sql-database.md)
 #### [Crie uma aplicação Web ASP.NET 5 no Visual Studio Code](web-sites-create-web-app-using-vscode.md)
 
 ### Aplicações em node.js
+#### [Programar em Node.js para o Serviço de Aplicações](app-service-web-nodejs-get-started.md)
 #### [Criar uma aplicação Web em Node.js](web-sites-nodejs-develop-deploy-mac.md)
 #### [Criar uma aplicação de chat em Node.js com Socket.IO](web-sites-nodejs-chat-app-socketio.md)
 #### [Como utilizar o io.js com Aplicações Web](web-sites-nodejs-iojs.md)
@@ -72,14 +74,13 @@
 #### [Criar e implementar com WebMatrix](web-sites-nodejs-use-webmatrix.md)
 
 ### Aplicações PHP
-#### [Implementar a sua primeira aplicação Web PHP no Azure em cinco minutos](app-service-web-get-started-php.md)
+#### [Programar em PHP para o Serviço de Aplicações](app-service-web-php-get-started.md) 
 #### [Criar uma aplicação Web PHP-SQL e implementar com o Git](web-sites-php-sql-database-deploy-use-git.md)
 #### [Criar uma aplicação Web WordPress no Serviço de Aplicações do Azure](web-sites-php-web-site-gallery.md)
 #### [Criar e ligar a uma base de dados MySQL no Azure](../store-php-create-mysql-database.md?toc=%2fazure%2fapp-service-web%2ftoc.json)
 #### [WordPress de classe empresarial no Serviço de Aplicações do Azure](web-sites-php-enterprise-wordpress.md)
 
 ### Aplicações Java
-#### [Implementar a primeira aplicação Web Java no Azure em cinco minutos](web-sites-java-get-started.md)
 #### Criar uma aplicação Olá Mundo
 ##### [Eclipse](app-service-web-eclipse-create-hello-world-web-app.md)
 ##### [IntelliJ](app-service-web-intellij-create-hello-world-web-app.md)
@@ -254,11 +255,11 @@
 
 # Relacionado
 ## [Notas de versão do Azure SDK para .NET](azure-sdk-dotnet-release-notes.md)
-### [Versão 2.9](azure-sdk-dotnet-release-notes-2-9.md)
-### [Versões 2.8.X](azure-sdk-dotnet-release-notes-2-8.md)
-### [Versões 2.7.X](azure-sdk-dotnet-release-notes-2-7.md)
-### [Versão 2.6](azure-sdk-dotnet-release-notes-2-6.md)
-### [Versões 2.5.1](../app-service/app-service-release-notes.md?toc=%2fazure%2fapp-service-web%2ftoc.json)
+### [Versão&2;.9](azure-sdk-dotnet-release-notes-2-9.md)
+### [Versões&2;.8.X](azure-sdk-dotnet-release-notes-2-8.md)
+### [Versões&2;.7.X](azure-sdk-dotnet-release-notes-2-7.md)
+### [Versão&2;.6](azure-sdk-dotnet-release-notes-2-6.md)
+### [Versões&2;.5.1](../app-service/app-service-release-notes.md?toc=%2fazure%2fapp-service-web%2ftoc.json)
 
 # Recursos
 ## [Melhores práticas](app-service-best-practices.md)

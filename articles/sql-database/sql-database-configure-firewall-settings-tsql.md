@@ -1,6 +1,6 @@
 ---
-title: "Azure SQL Database server-level and database-level firewall rules using T-SQL (Regras de firewall ao nível da base de dados e do servidor da Base de Dados SQL do Azure com o T-SQL) | Microsoft Docs"
-description: "Saiba como configurar a firewall para endereços IP que acedem a bases de dados SQL do Azure."
+title: 'T-SQL: Regras de firewall da Base de Dados SQL do Azure | Microsoft Docs'
+description: "Saiba como configurar regras de firewall ao nível do servidor e ao nível da base de dados para endereços IP que acedem a bases de dados SQL do Azure através do Transact-SQL."
 services: sql-database
 documentationcenter: 
 author: BYHAM
@@ -16,8 +16,8 @@ ms.topic: get-started-article
 ms.date: 08/30/2016
 ms.author: rickbyh
 translationtype: Human Translation
-ms.sourcegitcommit: e5b5751facb68ae4a62e3071fe4dfefc02434a9f
-ms.openlocfilehash: a49bc9cd8fb50dcc753fbb04bf7f2d96cf79f3ab
+ms.sourcegitcommit: 2f24c1c43300a3c5035fbb4e90c3d13f73c1bc74
+ms.openlocfilehash: ef51f63984d342422ee5f2a93acfee6357df57ca
 
 
 ---
@@ -76,6 +76,11 @@ Apenas um utilizador de base de dados com a permissão **CONTROLO** na base de d
 
 Para obter mais informações sobre estes procedimentos armazenados, consulte [sp_set_database_firewall_rule](https://msdn.microsoft.com/library/dn270010.aspx) e [sp_delete_database_firewall_rule](https://msdn.microsoft.com/library/dn270030.aspx).
 
+> [!NOTE]
+> Para obter um tutorial que demonstre a utilização de firewalls ao nível da base de dados, veja [SQL Database tutorial: SQL Server authentication, logins and user accounts, database roles, permissions, server-level firewall rules, and database-level firewall rules (Tutorial da Base de Dados SQL: autenticação do SQL Server, inícios de sessão e contas de utilizador, funções de base de dados, permissões, regras de firewall ao nível do servidor e regras de firewall ao nível da base de dados)](sql-database-control-access-sql-authentication-get-started.md).
+>
+
+
 ## <a name="next-steps"></a>Passos seguintes
 Para ler artigos explicativos sobre como criar regras de firewall ao nível do servidor com outros métodos, consulte: 
 
@@ -94,6 +99,6 @@ Para compreender como navegar para as bases de dados, veja [Manage database acce
 
 
 
-<!--HONumber=Dec16_HO4-->
+<!--HONumber=Jan17_HO3-->
 
 

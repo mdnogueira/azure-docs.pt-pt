@@ -62,14 +62,13 @@
 # Referência
 ## [.NET](/dotnet/api/microsoft.azure.search)
 ## [.NET (Gestão)](/dotnet/api/microsoft.azure.management.search)
-## [Java](/java/api/com.microsoft.azure.management.search)
+## [Python (Gestão)](http://azure-sdk-for-python.readthedocs.io/en/latest/ref/azure.mgmt.search.html)
 ## [REST](/rest/api/searchservice)
 ## [REST (Gestão)](/rest/api/searchmanagement)
 
 # Recursos
 ## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=search)
-## Utilizar APIs de Pesquisa
-##X [versões de API](search-api-versions.md)
+## [Versões da API](search-api-versions.md)
 ## [REST do serviço (Pré-visualização)](search-api-2015-02-28-preview.md)
 ## [Preços](https://azure.microsoft.com/pricing/details/search/)
 ## Sites de demonstração
@@ -87,6 +86,6 @@
 ### [Github do Azure Search](https://github.com/Azure-Samples/?utf8=%E2%9C%93&query=search)
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Jan17_HO3-->
 
 

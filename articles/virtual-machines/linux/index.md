@@ -1,13 +1,25 @@
 ---
 layout: LandingPage
+description: "Saiba como criar uma máquina virtual utilizando a distribuição Linux da sua preferência. A documentação apresenta diferentes formas para criar modelos de VM."
+title: "Máquinas Virtuais do Azure para Linux Documentação, Tutoriais e Referência da API | Microsoft Docs"
+services: virtual-machines-linux
+author: carolz
+manager: carolz
+ms.assetid: 
+ms.service: virtual-machines-linux
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: landing-page
+ms.date: 01/23/2017
+ms.author: carolz
 translationtype: Human Translation
-ms.sourcegitcommit: f368f2700bd349e106169d1828af7a148daa5cc2
-ms.openlocfilehash: f87947ed5f072ba4f0927ade1b1d3ec0e1424f3c
+ms.sourcegitcommit: 9bb4fb611c4f936317460040c4fbeff1a01f2c5c
+ms.openlocfilehash: 2728b18011e712d9f23f7645f8c83b053b3cf381
 
 ---
-#<a name="linux-virtual-machine-documentation"></a>Documentação da Máquina Virtual do Linux
+# <a name="linux-virtual-machine-documentation"></a>Documentação da Máquina Virtual do Linux
 
-Utilize as Máquinas Virtuais do Azure para criar e executar máquinas virtuais do Linux na infraestrutura de computação, rede e armazenamento do Azure.  Dimensione implementações ao nível da Internet para milhares de máquinas ou execute uma máquina durante alguns minutos processar uma grande quantidade de dados: obterá velocidade e consistência.
+Saiba como executar Máquinas Virtuais utilizando a distribuição Linux da sua preferência. Documentação, referências de API e exemplos mostram-lhe várias formas de criar e implementar modelos de VM.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -130,16 +142,10 @@ Utilize as Máquinas Virtuais do Azure para criar e executar máquinas virtuais 
     </li>
 </ul>
 
-<div class="downloadHolder">
-    <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/virtual-machines/linux.pdf">
-        <div class="img"></div>
-        <div class="text">
-Transferir a Documentação da Máquina Virtual do Linux </div>
-    </a>
-</div>
 
 
 
-<!--HONumber=Dec16_HO1-->
+
+<!--HONumber=Jan17_HO4-->
 
 
