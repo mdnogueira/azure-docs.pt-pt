@@ -1,5 +1,5 @@
 ---
-title: "Implementar a primeira aplicação Web Java no Azure em cinco minutos | Microsoft Docs"
+title: "Implementar a sua primeira aplicação Web Java no Azure em cinco minutos (CLI 2.0 [Pré-visualização]) | Microsoft Docs"
 description: "Saiba como é fácil executar aplicações Web no Serviço de Aplicações ao implementar uma aplicação de exemplo. Comece a programar verdadeiramente em pouco tempo e a ver resultados imediatos."
 services: app-service\web
 documentationcenter: 
@@ -12,15 +12,26 @@ ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: hero-article
-ms.date: 10/13/2016
+ms.date: 01/04/2017
 ms.author: cephalin
 translationtype: Human Translation
-ms.sourcegitcommit: 4fc33ba185122496661f7bc49d14f7522d6ee522
-ms.openlocfilehash: 90c1099f7970fc490ca01f2d815679f967c46187
+ms.sourcegitcommit: b1a633a86bd1b5997d5cbf66b16ec351f1043901
+ms.openlocfilehash: af27369b0ae8de0ece6da38a78b434e595fbfc4e
 
 
 ---
-# <a name="deploy-your-first-java-web-app-to-azure-in-five-minutes"></a>Implementar a primeira aplicação Web Java no Azure em cinco minutos
+# <a name="deploy-your-first-java-web-app-to-azure-in-five-minutes-cli-20-preview"></a>Implementar a sua primeira aplicação Web Java no Azure em cinco minutos (CLI 2.0 [Pré-visualização])
+
+> [!div class="op_single_selector"]
+> * [Primeiro site HTML](app-service-web-get-started-html-cli-nodejs.md)
+> * [Primeira aplicação .NET](app-service-web-get-started-dotnet-cli-nodejs.md)
+> * [Primeira aplicação PHP](app-service-web-get-started-php-cli-nodejs.md)
+> * [Primeira aplicação Node.js](app-service-web-get-started-nodejs-cli-nodejs.md)
+> * [Primeira aplicação Python](app-service-web-get-started-python-cli-nodejs.md)
+> * [Primeira aplicação Java](app-service-web-get-started-java.md)
+> 
+> 
+
 Este tutorial ajuda-o a implementar uma aplicação Web Java simples no [Serviço de Aplicações do Azure](../app-service/app-service-value-prop-what-is.md).
 Pode utilizar o Serviço de Aplicações para criar aplicações, [back-ends de aplicações móveis](/documentation/learning-paths/appservice-mobileapps/) e [aplicações API](../app-service-api/app-service-api-apps-why-best-platform.md).
 
@@ -35,7 +46,7 @@ Irá:
 * Obter uma conta do Microsoft Azure. Se não tiver uma conta, pode [inscrever-se numa avaliação gratuita](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F) ou [ativar os benefícios de subscritor do Visual Studio](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F).
 
 > [!NOTE]
-> Pode [Experimentar o Serviço de Aplicações](http://go.microsoft.com/fwlink/?LinkId=523751) sem uma conta do Azure. Crie uma aplicação de introdução e experimente-a durante uma hora, sem cartão de crédito nem compromissos.
+> Pode [Experimentar o Serviço de Aplicações](https://azure.microsoft.com/try/app-service/) sem uma conta do Azure. Crie uma aplicação de introdução e experimente-a durante uma hora, sem cartão de crédito nem compromissos.
 > 
 > 
 
@@ -73,7 +84,7 @@ Agora, vamos implementar uma aplicação Java no Azure através de FTPS.
     ![](./media/app-service-web-get-started-languages/set-java-application-settings.png)
 2. Em **Versão Java**, selecione **Java 8** e clique em **Guardar**.
    
-    ![](./media/app-service-web-get-started-languages/set-java-application-settings.png)
+    ![](./media/app-service-web-get-started-languages/set-java.png)
    
     Quando receber a notificação **Definições da aplicação Web atualizadas com êxito**, navegue para http://*&lt;nomedaaplicação>*.azurewebsites.net para ver o servlet JSP predefinido em ação.
 3. Novamente no painel da aplicação Web, desloque-se para baixo até às **Credenciais de implementação** ou procure-as e, em seguida, clique na opção.
@@ -120,6 +131,6 @@ Em alternativa, faça mais com a sua primeira aplicação Web. Por exemplo:
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Jan17_HO3-->
 
 

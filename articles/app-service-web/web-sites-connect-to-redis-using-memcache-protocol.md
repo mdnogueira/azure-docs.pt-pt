@@ -15,8 +15,8 @@ ms.workload: na
 ms.date: 02/29/2016
 ms.author: cfowler
 translationtype: Human Translation
-ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
-ms.openlocfilehash: d8a177074d6b7671fe04081c5547665ec892f244
+ms.sourcegitcommit: b1a633a86bd1b5997d5cbf66b16ec351f1043901
+ms.openlocfilehash: c478b8ba6817dd110bb7bfe3a33b728e5f85cc11
 
 
 ---
@@ -65,7 +65,7 @@ A última definição de aplicação é utilizada para ativar o Shim de Memcache
 
 ![AppSetting MEMCACHESHIM_REDIS_ENABLE da Aplicação Web](./media/web-sites-connect-to-redis-using-memcache-protocol/6-azure-website-appsettings-enable-shim.png)
 
-Depois de terminar de adicionar as 3 (três) definições de aplicação, clique em **Guardar**.
+Depois de terminar de adicionar as&3; (três) definições de aplicação, clique em **Guardar**.
 
 ## <a name="enable-memcache-extension-for-php"></a>Ativar a extensão de Memcache para PHP
 Para que a aplicação fale o protocolo de Memcache, é necessário instalar a extensão de Memcache para PHP - a estrutura de idioma para o seu site WordPress.
@@ -180,7 +180,7 @@ A chamada para listar as chaves deverá devolver um valor. Caso contrário, tent
 Parabéns! A aplicação WordPress centralizou a cache de memória interna para ajudar a aumentar o débito. Lembre-se de que o Shim de Memcache das Web Apps pode ser utilizado com qualquer cliente Memcache, independentemente da linguagem de programação ou estrutura da aplicação. Para fornecer comentários ou fazer perguntas sobre o shim de Memcache das Web Apps, publique nos [Fóruns da MSDN][10] ou [Stackoverflow][11].
 
 > [!NOTE]
-> Se pretender começar a utilizar o App Service do Azure antes de se inscrever numa conta do Azure, aceda a [Experimentar o App Service](http://go.microsoft.com/fwlink/?LinkId=523751), onde pode criar de imediato uma aplicação Web de arranque de curta duração no App Service. Sem cartões de crédito; sem compromissos.
+> Se pretender começar a utilizar o App Service do Azure antes de se inscrever numa conta do Azure, aceda a [Experimentar o App Service](https://azure.microsoft.com/try/app-service/), onde pode criar de imediato uma aplicação Web de arranque de curta duração no App Service. Sem cartões de crédito; sem compromissos.
 > 
 > 
 
@@ -204,6 +204,6 @@ Parabéns! A aplicação WordPress centralizou a cache de memória interna para 
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Jan17_HO3-->
 
 

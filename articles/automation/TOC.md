@@ -19,10 +19,10 @@
 ### [Integração do controlo de origem](automation-source-control-integration.md)
 ## Automatizar runbooks
 ### [Iniciar um runbook](automation-starting-a-runbook.md)
-### [Iniciar um runbook a partir de uma chamada da Web](automation-webhooks.md)
-### [Agendar um runbook](automation-scheduling-a-runbook.md)
+### [Iniciar um runbook a partir de um webhook](automation-webhooks.md)
 ### [Executar runbooks no seu datacenter](automation-hybrid-runbook-worker.md)
 ### [Configurar parâmetros de entrada do runbook](automation-runbook-input-parameters.md)
+### [Erro ao processar em runbooks gráficos](automation-runbook-graphical-error-handling.md)
 ### [Controlar um trabalho de runbook](automation-runbook-execution.md)
 ### [Alterar definições de runbook](automation-runbook-settings.md)
 ### [Gerir os dados da Automatização do Azure](automation-managing-data.md)
@@ -59,7 +59,7 @@
 ### [Mover Conta de Automatização](automation-migrate-account-subscription.md)
 ## Resolução de problemas
 ### [Resolver erros comuns](automation-troubleshooting-automation-errors.md)
-### [Tarefa de runbook suspensa](automation-troubleshooting-hrw-runbook-terminates-suspended.md)
+### [Resolver problemas de Função de Trabalho de Runbook Híbrida](automation-troubleshooting-hybrid-runbook-worker.md)
 # Referência
 ## [PowerShell](/powershell/resourcemanager/azurerm.automation/v2.3.0/azurerm.automation)
 ## [PowerShell (Clássico)](/powershell/servicemanagement/azure.automation/v3.1.0/azure.automation)
@@ -78,6 +78,6 @@
 ## [Vídeo de introdução à automatização](https://azure.microsoft.com/documentation/videos/azure-automation-101-with-powershell-and-eamon-o-reilly/)
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Jan17_HO4-->
 
 

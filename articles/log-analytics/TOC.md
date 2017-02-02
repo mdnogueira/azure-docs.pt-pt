@@ -10,7 +10,7 @@
 ## [FAQ do Log Analytics](log-analytics-faq.md)
 
 # Procedimento
-## Integrar
+## Recolher dados
 ### Origens ligadas
 #### [Agentes do Windows](log-analytics-windows-agents.md)
 #### [Agentes do Linux](log-analytics-linux-agents.md)
@@ -19,7 +19,7 @@
 #### [Operations Manager](log-analytics-om-agents.md)
 #### [Configuration Manager](log-analytics-sccm.md)
 #### [Gateway do OMS](log-analytics-oms-gateway.md)
-### Origens de Dados
+### Origens de dados
 #### [Descrição geral das origens de dados](log-analytics-data-sources.md)
 #### [Eventos do Windows](log-analytics-data-sources-windows-events.md)
 #### [Syslog](log-analytics-data-sources-syslog.md)
@@ -27,11 +27,15 @@
 #### [Registos do IIS](log-analytics-data-sources-iis-logs.md)
 #### [Registos personalizados](log-analytics-data-sources-custom-logs.md)
 #### [Campos personalizados](log-analytics-custom-fields.md)
-## Programar
+## Consultar dados
 ### [Descrição geral das pesquisas de registos](log-analytics-log-searches.md)
 ### [Referência de pesquisa](log-analytics-search-reference.md)
 ### [Grupos de computadores](log-analytics-computer-groups.md)
 ### [Alertas](log-analytics-alerts.md)
+## Analisar dados
+### [Dashboards](log-analytics-dashboards.md)
+### [Estruturador de Vista](log-analytics-view-designer.md)
+### [Power BI](log-analytics-powerbi.md)
 ### Soluções
 #### [Descrição geral das Soluções](log-analytics-add-solutions.md)
 #### [Avaliação do AD](log-analytics-ad-assessment.md)
@@ -46,16 +50,13 @@
 #### [Monitor de Desempenho da Rede](log-analytics-network-performance-monitor.md)
 #### [Auditoria de Segurança](../operations-management-suite/oms-security-getting-started.md?toc=%2fazure%2flog-analytics%2ftoc.json)
 #### [Service Fabric](log-analytics-service-fabric.md)
+#### [Mapa do Serviço](../operations-management-suite/operations-management-suite-service-map.md?toc=%2fazure%2flog-analytics%2ftoc.json)
 #### [Avaliação do SQL](log-analytics-sql-assessment.md)
 #### [Surface Hub](log-analytics-surface-hubs.md)
 #### [VMware](log-analytics-vmware.md)
 #### [Ligar Dados](log-analytics-wire-data.md)
 #### [Avaliação do SCOM](log-analytics-scom-assessment.md)
-## Analisar
-### [Dashboards](log-analytics-dashboards.md)
-### [Estruturador de Vista](log-analytics-view-designer.md)
-### [Power BI](log-analytics-powerbi.md)
-## Automatizar
+## Programar
 ### [API do recoletor de dados](log-analytics-data-collector-api.md)
 ### [Cmdlets do PowerShell](log-analytics-powershell-workspace-configuration.md)
 ### [API de Pesquisas de Registos](log-analytics-log-search-api.md)
@@ -70,6 +71,6 @@
 ## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=log-analytics)
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Jan17_HO3-->
 
 

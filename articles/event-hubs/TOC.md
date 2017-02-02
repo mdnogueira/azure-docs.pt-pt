@@ -16,7 +16,9 @@
 ### [Notificar os utilizadores dos dados recebidos a partir de sensores](event-hubs-sensors-notify-users.md)
 ### [Aplicação de exemplo dos Hubs de Eventos](https://code.msdn.microsoft.com/Service-Bus-Event-Hub-286fd097)
 ### [Aumentar Horizontalmente o Processamento de Eventos com a aplicação dos Hubs de Eventos de exemplo](https://code.msdn.microsoft.com/Service-Bus-Event-Hub-45f43fc3)
+
 ## Gerir
+### [Bibliotecas de gestão dos Hubs de Eventos](event-hubs-management-libraries.md)
 ### [Arquivo dos Hubs de Eventos](event-hubs-archive-overview.md)
 ### [Ativar o Arquivo dos Hubs de Eventos com um modelo](event-hubs-resource-manager-namespace-event-hub-enable-archive.md)
 ### [Transmitir dados do Diagnóstico do Azure em fluxo com os Hubs de Eventos](event-hubs-streaming-azure-diags-data.md)
@@ -40,6 +42,6 @@
 ## [Vídeos](https://azure.microsoft.com/documentation/videos/index/?services=event-hubs)
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Jan17_HO3-->
 
 

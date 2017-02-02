@@ -77,6 +77,8 @@
 #### Vários endereços IP
 ##### [Portal do Azure](virtual-network-multiple-ip-addresses-portal.md)
 ##### [PowerShell](virtual-network-multiple-ip-addresses-powershell.md)
+##### [CLI](virtual-network-multiple-ip-addresses-cli.md)
+##### [Modelo](virtual-network-multiple-ip-addresses-template.md)
 
 ### Cenários de conectividade
 #### [Rede virtual (VNet) para VNet](../vpn-gateway/vpn-gateway-vnet-vnet-rm-ps.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
@@ -108,15 +110,17 @@
 #### [PowerShell](virtual-network-manage-nsg-arm-ps.md)
 #### [CLI](virtual-network-manage-nsg-arm-cli.md)
 #### [Registos](virtual-network-nsg-manage-log.md)
-#### Resolução de problemas
-##### [Portal](virtual-network-nsg-troubleshoot-portal.md)
-##### [PowerShell](virtual-network-nsg-troubleshoot-powershell.md)
-### Resolver problemas das rotas
-#### [Portal](virtual-network-routes-troubleshoot-portal.md)
-#### [PowerShell](virtual-network-routes-troubleshoot-powershell.md)
 ### Máquinas virtuais
 #### [Ver e modificar nomes de anfitriões](virtual-networks-viewing-and-modifying-hostnames.md)
 #### [Mover uma VM para outra sub-rede](virtual-networks-move-vm-role-to-subnet.md)
+
+## Resolução de problemas
+### Grupos de segurança de rede
+#### [Portal](virtual-network-nsg-troubleshoot-portal.md)
+#### [PowerShell](virtual-network-nsg-troubleshoot-powershell.md)
+### Rotas
+#### [Portal](virtual-network-routes-troubleshoot-portal.md)
+#### [PowerShell](virtual-network-routes-troubleshoot-powershell.md)
 
 # Referência
 ## [PowerShell (Resource manager)](https://msdn.microsoft.com/library/mt163510(v=azure.300))
@@ -143,6 +147,6 @@
 ## [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-virtual-network)
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Jan17_HO3-->
 
 

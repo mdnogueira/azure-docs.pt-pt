@@ -12,11 +12,11 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: PHP
 ms.topic: hero-article
-ms.date: 11/01/2016
+ms.date: 12/22/2016
 ms.author: robmcm
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 0bb3fcf1963819b5e8787c042fa895348dc69e12
+ms.sourcegitcommit: b1a633a86bd1b5997d5cbf66b16ec351f1043901
+ms.openlocfilehash: 83ef925a8268873d09c4a1611a1f2341acd92ba7
 
 
 ---
@@ -40,9 +40,9 @@ O Azure Marketplace disponibiliza uma vasta gama de Web Apps populares desenvolv
 O site do WordPress que implementa neste tutorial utiliza o MySQL para a base de dados. Se em vez disso, pretender utilizar a SQL Database para a base de dados, consulte o artigo [Projeto Nami](http://projectnami.org/). O **Projeto Nami** também está disponível através do Marketplace.
 
 > [!NOTE]
-> Para concluir este tutorial, necessita de uma conta do Microsoft Azure. Se não tiver uma conta, pode [ativar os benefícios de subscritor do Visual Studio](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) ou [inscrever-se numa avaliação gratuita](/en-us/pricing/free-trial/?WT.mc_id=A261C142F).
+> Para concluir este tutorial, necessita de uma conta do Microsoft Azure. Se não tiver uma conta, pode [ativar os benefícios de subscritor do Visual Studio](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) ou [inscrever-se numa avaliação gratuita](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F).
 > 
-> Se pretender começar com o App Service do Azure antes de se inscrever numa conta do Azure, aceda a [Experimentar o App Service](http://go.microsoft.com/fwlink/?LinkId=523751). Aqui, pode criar imediatamente uma aplicação Web de arranque de curta duração no App Service — sem cartões de crédito e sem compromissos.
+> Se pretender começar com o App Service do Azure antes de se inscrever numa conta do Azure, aceda a [Experimentar o App Service](https://azure.microsoft.com/try/app-service/). Aqui, pode criar imediatamente uma aplicação Web de arranque de curta duração no App Service — sem cartões de crédito e sem compromissos.
 > 
 > 
 
@@ -113,10 +113,10 @@ Para obter mais informações sobre como trabalhar com as Web Apps do App Servic
 
 [5]: ./media/web-sites-php-web-site-gallery/startmarketplace.png
 [7]: ./media/web-sites-php-web-site-gallery/search-web-app.png
-[procurar]: ./media/web-sites-php-web-site-gallery/browse-web.png
+[browse]: ./media/web-sites-php-web-site-gallery/browse-web.png
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Jan17_HO3-->
 
 

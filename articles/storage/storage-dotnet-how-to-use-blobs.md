@@ -23,7 +23,7 @@ ms.openlocfilehash: 24b23c412ae4e092427b4e68b16df0369f9e9f0e
 # <a name="get-started-with-azure-blob-storage-using-net"></a>Introdução ao Blob Storage do Azure através do .NET
 [!INCLUDE [storage-selector-blob-include](../../includes/storage-selector-blob-include.md)]
 
-[!INCLUDE [storage-try-azure-tools-blobs](../../includes/storage-try-azure-tools-blobs.md)]
+[!INCLUDE [storage-check-out-samples-dotnet](../../includes/storage-check-out-samples-dotnet.md)]
 
 ## <a name="overview"></a>Descrição geral
 O Blob Storage do Azure é um serviço que armazena dados não estruturados na nuvem como objetos/blobs. O Blob Storage pode armazenar qualquer tipo de texto ou de dados binários, tal como um documento, um ficheiro de multimédia ou um instalador da aplicação. O Blob Storage também é referido como um armazenamento de objetos.

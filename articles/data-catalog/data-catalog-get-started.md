@@ -13,11 +13,11 @@ ms.devlang: NA
 ms.topic: get-started-article
 ms.tgt_pltfrm: NA
 ms.workload: data-catalog
-ms.date: 09/20/2016
+ms.date: 01/19/2017
 ms.author: spelluru
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 7a401cb0cd9c13f2ab1779fbc18bee2a61ba5e77
+ms.sourcegitcommit: 2b128e2771ea89d1c0d6b8d52357d1bcc993115a
+ms.openlocfilehash: a9629d0a4bfc44f5d035a29f8e97d76922cc0060
 
 
 ---
@@ -117,7 +117,7 @@ Agora, já pode utilizar o Catálogo de Dados do Azure para registar recursos de
 Neste exercício, vai utilizar a ferramenta de registo para registar recursos de dados da base de dados da Adventure Works no catálogo. O registo é o processo de extrair metadados estruturais chave, por exemplo, nomes, tipos e localizações, a partir da origem de dados e dos recursos que contém e copiar esses metadados para o catálogo. A origem de dados e os recursos de dados permanecem onde estão, mas os metadados são utilizados pelo catálogo para os tornar mais facilmente detetáveis e compreensíveis.
 
 ### <a name="register-a-data-source"></a>Registar origens de dados
-1. Aceda à [home page do Catálogo de Dados do Azure](https://azuredatacatalog.com) e clique em **Publicar Dados**.
+1. Aceda à [home page do Catálogo de Dados do Azure](http://azuredatacatalog.com) e clique em **Publicar Dados**.
    
    ![Catálogo de Dados do Azure – Botão “Publicar Dados”](media/data-catalog-get-started/data-catalog-publish-data.png)
 2. Clique em **Iniciar Aplicação** para transferir, instalar e executar a ferramenta de registo no seu computador.
@@ -366,6 +366,6 @@ Neste tutorial, explorou as capacidades essenciais do Catálogo de Dados do Azur
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Jan17_HO3-->
 
 

@@ -15,8 +15,8 @@ ms.topic: hero-article
 ms.date: 10/01/2016
 ms.author: adrianha
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 94c61f4b204b30b16b424fa0716e370a4f4eb51b
+ms.sourcegitcommit: b1a633a86bd1b5997d5cbf66b16ec351f1043901
+ms.openlocfilehash: 43ad434b21fd358b8d72702445126dea5ce179cb
 
 
 ---
@@ -74,12 +74,12 @@ Para obter mais informações sobre as Mobile Apps do Azure, consulte o nosso [m
 Para obter mais informações sobre a plataforma do App Service do Azure, consulte [App Service do Azure].
 
 > [!NOTE]
-> Se pretender começar a utilizar o App Service do Azure antes de se inscrever numa conta do Azure, aceda a [Experimentar o App Service](https://tryappservice.azure.com/?appServiceName=mobile), onde pode criar de imediato uma aplicação Web de arranque de curta duração no App Service. Sem cartões de crédito; sem compromissos.
+> Se pretender começar a utilizar o App Service do Azure antes de se inscrever numa conta do Azure, aceda a [Experimentar o App Service](https://azure.microsoft.com/try/app-service/mobile/), onde pode criar de imediato uma aplicação Web de arranque de curta duração no App Service. Sem cartões de crédito; sem compromissos.
 > 
 > 
 
 <!-- URLs. -->
-[Migre o seu Serviço Móvel para o Serviço de Aplicações]: app-service-mobile-migrating-from-mobile-services.md
+[Migrate your Mobile Service to App Service]: app-service-mobile-migrating-from-mobile-services.md
 [App Service do Azure]: ../app-service/app-service-value-prop-what-is.md
 [Introdução]: app-service-mobile-ios-get-started.md
 [Table Storage do Azure]: ../storage/storage-getting-started-guide.md
@@ -104,6 +104,6 @@ Para obter mais informações sobre a plataforma do App Service do Azure, consul
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Jan17_HO3-->
 
 

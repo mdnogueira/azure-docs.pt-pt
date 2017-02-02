@@ -1,14 +1,15 @@
 ---
 layout: LandingPage
+description: "Saiba como utilizar o Armazenamento do Azure - Armazenamento de Blob, Tabela, Fila, Ficheiro e Fisco da Máquina Virtual na cloud. Tutoriais, referências de API e outra documentação."
 translationtype: Human Translation
-ms.sourcegitcommit: a6c333ae45868d5c29ce2f2587f1417fa9fafc0b
-ms.openlocfilehash: 27fd664b69ca4467daa2b0abc6e53c9cece221ae
+ms.sourcegitcommit: b4080529e9ff4500cef20e1dd735765051f6ce1f
+ms.openlocfilehash: 1e9cc940d681893abbc351ef440c90f579e6c40a
 
 ---
 
 # <a name="storage-documentation"></a>Documentação do Armazenamento
 
-O Azure Storage é a solução de armazenamento na cloud para aplicações modernas que dependem da durabilidade, da disponibilidade e da escalabilidade para satisfazer as necessidades dos seus clientes.  É altamente dimensionável, elástico, globalmente acessível e faz o balanceamento de carga automaticamente dos seus dados com base no tráfego.  O Armazenamento do Azure oferece os quatro serviços seguintes para satisfazer as necessidades das aplicações: Armazenamento de blobs, Armazenamento de tabelas, Armazenamento de filas e Armazenamento de ficheiros.
+Saiba como utilizar o Armazenamento do Azure, um serviço de armazenamento na cloud que é durável, disponível e dimensionável. Tutoriais, referências de API e outra documentação mostram-lhe como configurar e gerir o armazenamento de Blob, Tabela, Fila, Ficheiros e Disco da Máquina Virtual.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -129,8 +130,9 @@ O Azure Storage é a solução de armazenamento na cloud para aplicações moder
                 <div class="card">
                     <div class="cardText">
                         <h3>REST</h3>
-                        <p><a href="/rest/api/storageservices/importexport/storage-import-export-service-rest-api-reference">REST: Importar/exportar</a></p>
-                        <p><a href="/rest/api/storagerp">REST: Fornecedor de recursos</a></p>
+                        <p><a href="/rest/api/storageservices/fileservices/azure-storage-services-rest-api-reference">Blobs, Filas, Tabelas e Ficheiros</a></p>
+                        <p><a href="/rest/api/storagerp">Fornecedor de recursos</a></p>
+                        <p><a href="/rest/api/storageimportexport">Importação/exportação</a></p>
                    </div>
                 </div>
             </div>
@@ -138,16 +140,10 @@ O Azure Storage é a solução de armazenamento na cloud para aplicações moder
     </li>
 </ul>
 
-<div class="downloadHolder">
-    <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/storage.pdf">
-        <div class="img"></div>
-        <div class="text">
-Transferir a Documentação do Armazenamento </div>
-    </a>
-</div>
 
 
 
-<!--HONumber=Dec16_HO1-->
+
+<!--HONumber=Jan17_HO3-->
 
 
