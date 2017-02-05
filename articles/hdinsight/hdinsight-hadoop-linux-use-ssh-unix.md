@@ -16,8 +16,8 @@ ms.workload: big-data
 ms.date: 09/13/2016
 ms.author: larryfr
 translationtype: Human Translation
-ms.sourcegitcommit: 3c3944118ca986009711aee032b45c302b63e63b
-ms.openlocfilehash: 93bf35edd2173c147f48512d92bc8e4734cd1dbd
+ms.sourcegitcommit: 72ca562c53f813599f19069cfac7ef3ac1957968
+ms.openlocfilehash: f64cca8823a74c1c0f52e5d9112836661dc51d8e
 
 
 ---
@@ -26,14 +26,14 @@ ms.openlocfilehash: 93bf35edd2173c147f48512d92bc8e4734cd1dbd
 > [!div class="op_single_selector"]
 > * [Windows](hdinsight-hadoop-linux-use-ssh-windows.md)
 > * [Linux, Unix, OS X](hdinsight-hadoop-linux-use-ssh-unix.md)
-> 
-> 
+>
+>
 
 O [Secure Shell (SSH)](https://en.wikipedia.org/wiki/Secure_Shell) permite-lhe iniciar sessão num cluster do HDInsight baseado em Linux e executar comandos através de uma interface de linha de comandos. Este documento disponibiliza informações básicas sobre SSH e informações específicas sobre a utilização de SSH com o HDInsight.
 
 ## <a name="what-is-ssh"></a>O que é o SSH?
 
-O SSH é um protocolo de rede criptográfico que lhe permite comunicar em segurança com um servidor remoto através de uma rede não segura. É utilizado para fornecer um início de sessão de linha de comandos a um servidor remoto. Neste caso, os nós principais ou os nós de extremidade de um cluster do HDInsight. 
+O SSH é um protocolo de rede criptográfico que lhe permite comunicar em segurança com um servidor remoto através de uma rede não segura. É utilizado para fornecer um início de sessão de linha de comandos a um servidor remoto. Neste caso, os nós principais ou os nós de extremidade de um cluster do HDInsight.
 
 Também pode utilizar o SSH para fazer o túnel do tráfego de rede do cliente para o cluster do HDInsight. A utilização de um túnel permite-lhe aceder a recursos no cluster do HDInsight que não estão expostos diretamente à Internet. Para obter mais informações sobre como utilizar o túnel de SSH, veja [Use SSH tunneling with HDInsight (Utilizar túnel de SSH com o HDInsight)](hdinsight-linux-ambari-ssh-tunnel.md).
 
@@ -76,7 +76,7 @@ O utilitário `ssh-keygen` é a forma mais fácil de criar um par de chaves púb
 > Se estiver a utilizar um cliente GUI SSH, como MobaXTerm ou puTTY, veja a documentação desse cliente para saber como gerar as chaves.
 
     ssh-keygen -t rsa -b 2048
-   
+
 São-lhe pedidas as informações seguintes:
 
 * A localização do ficheiro. Por predefinição, a localização é `~/.ssh/id_rsa`.
@@ -91,7 +91,7 @@ São-lhe pedidas as informações seguintes:
 Depois de concluído o comando, tem dois ficheiros novos:
 
 * __id\_rsa__: este ficheiro contém a chave privada.
-    
+
     > [!WARNING]
     > Tem de restringir o acesso a este ficheiro para impedir acessos não autorizados a serviços protegidos pela chave pública.
 
@@ -171,29 +171,30 @@ Se autenticar a sua conta de utilizador com uma chave SSH, tem de confirmar que 
 1. Utilizando um editor de texto, abra `~/.ssh/config`. Se este ficheiro não existir, pode criá-lo ao introduzir `touch ~/.ssh/config` na linha de comandos.
 
 2. Adicione o seguinte ao ficheiro. Substitua *CLUSTERNAME* pelo nome do cluster do HDInsight.
-   
+
         Host CLUSTERNAME-ssh.azurehdinsight.net
           ForwardAgent yes
-   
+
     Esta entrada configura o reencaminhamento de agente SSH para o cluster do HDInsight.
 
 3. Teste o reencaminhamento de agente SSH ao utilizar o comando seguinte no terminal:
-   
+
         echo "$SSH_AUTH_SOCK"
-   
+
     Este comando devolve informações semelhantes ao texto seguinte:
-   
+
         /tmp/ssh-rfSUL1ldCldQ/agent.1792
-   
+
     Se não forem devolvidas informações, tal indica que `ssh-agent` não está em execução. Veja as informações de script de arranque do agente em [Using ssh-agent with ssh (http://mah.everybody.org/docs/ssh)](http://mah.everybody.org/docs/ssh) ou consulte a documentação do seu cliente SSH para obter os passos específicos relativos à instalação e configuração de `ssh-agent`.
 
 4. Depois de verificar que o **ssh-agent** está em execução, utilize o seguinte para adicionar a chave privada SSH ao agente:
-   
+
         ssh-add ~/.ssh/id_rsa
-   
+
     Se a chave privada estiver armazenada num ficheiro diferente, substitua `~/.ssh/id_rsa` pelo caminho para o ficheiro.
 
-###<a name="a-iddomainjoineda-domain-joined-hdinsight"></a><a id="domainjoined"></a> HDInsight associado a um domínio
+<a id="domainjoined"></a>
+### <a name="domain-joined-hdinsight"></a>HDInsight associado a um domínio
 
 O [HDInsight associado a um domínio](hdinsight-domain-joined-introduction.md) integra o Kerberos no Hadoop no HDInsight. Uma vez que o utilizador de SSH não é um utilizador de domínio do Active Directory, não pode executar comandos do Hadoop enquanto não se autenticar com o Active Diretory. Utilize os passos seguintes para autenticar a sua sessão SSH com o Active Directory:
 
@@ -232,6 +233,6 @@ Agora que sabe como efetuar a autenticação com uma chave SSH, saiba como utili
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -15,8 +15,8 @@ ms.topic: get-started-article
 ms.date: 08/08/2016
 ms.author: billmath
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 1df15de1c24e80b0692149dfc7cb660f74941886
+ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
+ms.openlocfilehash: 2fb248f3e71b248ce0b5ae02ebeff291bbd28dce
 
 
 ---
@@ -38,7 +38,7 @@ Utilize a seguinte chave para cada uma das tabelas.
 FR = Versão Futura  
 PP = Pré-visualização Pública  
 
-## <a name="onpremises-to-cloud-synchronization"></a>Local para a Sincronização de Nuvem
+## <a name="on-premises-to-cloud-synchronization"></a>Local para a Sincronização de Nuvem
 | Funcionalidade | Azure Active Directory Connect | Serviços de Sincronização do Azure Active Directory (AAD Sync) | Ferramenta de Sincronização do Azure Active Directory (DirSync) | Forefront Identity Manager 2010 R2 (FIM) | Microsoft Identity Manager 2016 (MIM) |
 |:--- |:---:|:---:|:---:|:---:|:---:|
 | Ligar a uma única floresta do AD no local |● |● |● |● |● |
@@ -52,7 +52,7 @@ PP = Pré-visualização Pública
 | Ligar a HR no local (por exemplo, SAP, Oracle eBusiness, PeopleSoft) |FR | | |● |● |
 | Suporta as regras de sincronização do FIM e os conectores para o aprovisionamento para sistemas no local. | | | |● |● |
 
-## <a name="cloud-to-onpremises-synchronization"></a>Nuvem para a Sincronização no Local
+## <a name="cloud-to-on-premises-synchronization"></a>Nuvem para a Sincronização no Local
 | Funcionalidade | Azure Active Directory Connect | Serviços de Sincronização do Azure Active Directory | Ferramenta de Sincronização do Azure Active Directory (DirSync) | Forefront Identity Manager 2010 R2 (FIM) | Microsoft Identity Manager 2016 (MIM) |
 |:--- |:---:|:---:|:---:|:---:|:---:|
 | Repetição de escrita de dispositivos |● | |● | | |
@@ -68,7 +68,7 @@ PP = Pré-visualização Pública
 | Início de Sessão Único com Federação |● |● |● |● |● |
 | Repetição de escrita de palavras-passe (na SSPR e alteração de palavra-passe) |● |● | | | |
 
-## <a name="setup-and-installation"></a>Configuração e Instalação
+## <a name="set-up-and-installation"></a>Configuração e Instalação
 | Funcionalidade | Azure Active Directory Connect | Serviços de Sincronização do Azure Active Directory | Ferramenta de Sincronização do Azure Active Directory (DirSync) | Microsoft Identity Manager 2016 (MIM) |
 |:--- |:---:|:---:|:---:|:---:|
 | Suporta a instalação num Controlador de Domínio |● |● |● | |
@@ -95,6 +95,6 @@ Saiba mais sobre como [Integrar as identidades no local ao Azure Active Director
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 

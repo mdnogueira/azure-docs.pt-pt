@@ -16,18 +16,18 @@ ms.workload: big-data
 ms.date: 10/31/2016
 ms.author: saurinsh
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 40b0d0660f4693d5ebedf847734ffe037c4ec7ca
+ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
+ms.openlocfilehash: ff45fa2abc0f77f133491e9ee9695c69a79eea33
 
 
 ---
-# <a name="an-introduction-to-domainjoined-hdinsight-clusters-preview"></a>Uma introdução aos clusters do HDInsight associados a um domínio (pré-visualização)
+# <a name="an-introduction-to-domain-joined-hdinsight-clusters-preview"></a>Uma introdução aos clusters do HDInsight associados a um domínio (pré-visualização)
 Até hoje, o Azure HDInsight suportava apenas um único administrador local de utilizadores. Isto resultava muito bem para equipas ou departamentos de aplicações mais pequenos. À medida que as cargas de trabalho baseadas no Hadoop ganhavam mais popularidade no setor empresarial, a necessidade de capacidades de nível empresarial, como a autenticação baseada no Active Directory, o suporte de multi-utilizador e o controlo de acesso baseado em funções, tornou-se cada vez mais importante. Através da utilização de clusters do HDInsight associados a um domínio, pode criar um cluster do HDInsight associado a um domínio do Active Directory, configurar uma lista de empregados da empresa que podem autenticar-se através do Azure Active Directory para iniciar sessão no cluster do HDInsight. Qualquer pessoa fora da empresa não pode iniciar sessão nem aceder ao cluster do HDInsight. O administrador da empresa pode configurar o controlo de acesso baseado em funções para a segurança do Hive com o [Apache Ranger](http://hortonworks.com/apache/ranger/), restringindo deste modo o acesso aos dados apenas para a quantidade necessária. Por fim, o administrador pode auditar o acesso aos dados por parte dos empregados e quaisquer alterações efetuadas às políticas de controlo de acesso, alcançando um elevado grau de governação dos recursos empresariais.
 
 > [!NOTE]
-> As novas funcionalidades descritas nesta pré-visualização apenas estão disponíveis em clusters do HDInsight baseados em Linux para cargas de trabalho do Hive. As outras cargas de trabalho, como HBase, Spark, Storm e Kafka, serão ativadas em versões futuras. 
-> 
-> 
+> As novas funcionalidades descritas nesta pré-visualização apenas estão disponíveis em clusters do HDInsight baseados em Linux para cargas de trabalho do Hive. As outras cargas de trabalho, como HBase, Spark, Storm e Kafka, serão ativadas em versões futuras.
+>
+>
 
 ## <a name="benefits"></a>Benefícios
 A Segurança Empresarial contém quatro grandes pilares – Segurança de Perímetro, Autenticação, Autorização e Encriptação.
@@ -53,11 +53,10 @@ A proteção de dados é importante para cumprir os requisitos de segurança e d
 * Para configurar um cluster do HDInsight associado a um domínio, veja [Configurar clusters do HDInsight associados a um domínio](hdinsight-domain-joined-configure.md).
 * Para gerir clusters do HDInsight associados a um domínio, veja [Gerir clusters do HDInsight associados a um domínio](hdinsight-domain-joined-manage.md).
 * Para configurar políticas do Hive e executar consultas do Hive, veja [Configurar políticas do Hive para clusters do HDInsight associados a um domínio](hdinsight-domain-joined-run-hive.md).
-* Para executar consultas do Hive através do SSH em clusters do HDInsight associados a um domínio, veja [Utilizar o SSH com o Hadoop baseado em Linux no HDInsight a partir do Linux, Unix ou OS X](hdinsight-hadoop-linux-use-ssh-unix.md#connect-to-a-domain-joined-hdinsight-cluster).
+* Para executar consultas do Hive através do SSH em clusters do HDInsight associados a um domínio, veja [Utilizar o SSH com o Hadoop baseado em Linux no HDInsight a partir do Linux, Unix ou OS X](hdinsight-hadoop-linux-use-ssh-unix.md#domainjoined).
 
 
 
-
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 
