@@ -15,8 +15,8 @@ ms.topic: get-started-article
 ms.date: 10/01/2016
 ms.author: adrianha
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: a63d15e7b7954fa63d04facc7d440092e24459da
+ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
+ms.openlocfilehash: f3b75c10ed0012d682562eb943cb67fc8176ddbb
 
 
 ---
@@ -44,7 +44,7 @@ No *App Service do Azure*, o código de back-end da *Aplicação Móvel* é exec
 * (Para .NET) Tire partido de qualquer funcionalidade do ASP.NET, incluindo MVC
 * (Para Node.js) Tire partido de qualquer biblioteca JavaScript pura do ecossistema do Nó, incluindo bibliotecas MVC comuns
 
-## <a name="access-onpremises-data-using-vnet"></a>Aceder a dados no local utilizando VNet
+## <a name="access-on-premises-data-using-vnet"></a>Aceder a dados no local utilizando VNet
 Atualmente, os Mobile Services já permitem a utilização de Ligações Híbridas para o acesso a recursos no local. No entanto, existem situações em que uma solução VPN é preferencial. Com o *App Service do Azure* pode utilizar o Azure VNet para o seu código de back-end de Aplicação Móvel.
 
 ## <a name="use-your-favorite-backend-language"></a>Utilizar o idioma de back-end favorito
@@ -67,6 +67,6 @@ Pode começar a tirar partido do *App Service* do seu Serviço Móvel atual atra
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 

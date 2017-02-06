@@ -1,5 +1,5 @@
 ---
-title: "Análise de aplicação Web em Java com o Application Insights | Microsoft Docs"
+title: "Análise de aplicação Web em Java com o Application Insights do Azure | Microsoft Docs"
 description: "Monitorização do Desempenho de Aplicações para aplicações Web Java com o Application Insights. "
 services: application-insights
 documentationcenter: java
@@ -11,11 +11,11 @@ ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 08/17/2016
+ms.date: 12/02/2016
 ms.author: awills
 translationtype: Human Translation
-ms.sourcegitcommit: 7a9c40081f52b2ffe918f4612f790f7fd08acc5a
-ms.openlocfilehash: 2c3c0c79e62631a42249ea6dc3865e59f26cad53
+ms.sourcegitcommit: 75b651bd3e77ac19e22dcc3442870469fe2aaca1
+ms.openlocfilehash: f7dc72299665a5324de7b9320eb9876c61ced123
 
 
 ---
@@ -31,7 +31,7 @@ O Application Insights suporta aplicações em Java em execução no Linux, Unix
 É necessário:
 
 * Oracle JRE 1.6 ou posterior, ou Zulu JRE 1.6 ou posterior
-* Uma subscrição do [Microsoft Azure](https://azure.microsoft.com/). (Poderá começar pela [versão de avaliação gratuita](https://azure.microsoft.com/pricing/free-trial/).)
+* Uma subscrição do [Microsoft Azure](https://azure.microsoft.com/).
 
 *Se tiver uma aplicação Web que já está em direto, pode seguir o procedimento alternativo para [adicionar o SDK no tempo de execução ao servidor Web](app-insights-java-live.md). Essa alternativa evita a reconstrução do código, mas não tem a opção para escrever código de modo a controlar a atividade do utilizador.*
 
@@ -148,7 +148,7 @@ Substitua a chave de instrumentação que recebeu do portal do Azure.
 
 * A chave de instrumentação é enviada juntamente com todos os itens de telemetria e diz ao Application Insights para apresentá-la no seu recurso.
 * O componente de Pedido HTTP é opcional. Envia automaticamente telemetria sobre pedidos e tempos de resposta para o portal.
-* A correlação de eventos é uma adição ao componente de pedido HTTP. Atribui um identificador a cada pedido recebido pelo servidor e adiciona este identificador como uma propriedade a todos os itens de telemetria como a propriedade "Operation.Id". Permite-lhe correlacionar a telemetria associada a cada pedido, definindo um filtro em [pesquisa de diagnóstico][diagnóstico].
+* A correlação de eventos é uma adição ao componente de pedido HTTP. Atribui um identificador a cada pedido recebido pelo servidor e adiciona este identificador como uma propriedade a todos os itens de telemetria como a propriedade "Operation.Id". Permite-lhe correlacionar a telemetria associada a cada pedido, definindo um filtro em [pesquisa de diagnóstico][diagnostic].
 * A chave do Application Insights pode ser transmitida dinamicamente a partir do portal do Azure como uma propriedade de sistema (-DAPPLICATION_INSIGHTS_IKEY=your_ikey). Se não houver uma propriedade definida, verifica a existência de uma variável de ambiente (APPLICATION_INSIGHTS_IKEY) nas Definições de Aplicações do Azure. Se ambas as propriedades não estiverem definidas, a InstrumentationKey predefinida é utilizada a partir do ApplicationInsights.xml. Esta sequência ajuda-o a gerir diferentes InstrumentationKeys para ambientes diferentes de forma dinâmica.
 
 ### <a name="alternative-ways-to-set-the-instrumentation-key"></a>Maneiras alternativas de definir a chave de instrumentação
@@ -213,7 +213,7 @@ Os dados de pedidos HTTP aparecem no painel de descrição geral. (Se não apare
 
 ![dados de exemplo](./media/app-insights-java-get-started/5-results.png)
 
-[Saiba mais sobre as métricas.][métricas]
+[Saiba mais sobre métricas.][metrics]
 
 Clique em qualquer gráfico para ver métricas agregadas mais detalhadas.
 
@@ -313,7 +313,7 @@ Cada [contador de desempenho do Windows](https://msdn.microsoft.com/library/wind
 * counterName – o nome do contador de desempenho.
 * instanceName – o nome da instância da categoria do contador de desempenho ou uma cadeia vazia (""), se a categoria contiver uma única instância. Se o categoryName for Processo e o contador de desempenho que pretende recolher é do processo JVM atual no qual a aplicação está em execução, especifique `"__SELF__"`.
 
-Os contadores de desempenho ficam visíveis como métricas personalizadas no [Explorador de Métricas][métricas].
+Os contadores de desempenho ficam visíveis como métricas personalizadas no [Explorador de Métricas][metrics].
 
 ![](./media/app-insights-java-get-started/12-custom-perfs.png)
 
@@ -323,8 +323,8 @@ Os contadores de desempenho ficam visíveis como métricas personalizadas no [Ex
 ## <a name="get-user-and-session-data"></a>Obter dados de utilizador e de sessão
 OK, está a enviar telemetria a partir do seu servidor Web. Para obter a vista completa em 360 graus da sua aplicação, agora pode adicionar mais monitorização:
 
-* [Adicione a telemetria às suas páginas Web][utilização] para monitorizar vistas de página e métricas de utilizador.
-* [Configure testes Web][disponibilidade] para certificar-se de que a aplicação permanece em direto e reativa.
+* [Adicione a telemetria às suas páginas Web][usage] para monitorizar vistas de página e métricas de utilizador.
+* [Configure testes Web][availability] para certificar-se de que a aplicação permanece em direto e reativa.
 
 ## <a name="capture-log-traces"></a>Capturar rastreios de registo
 Pode utilizar o Application Insights para examinar registos de Log4J, Logback ou outras arquiteturas de registo. Pode correlacionar os registos com pedidos HTTP e outra telemetria. [Saiba como][javalogs].
@@ -333,10 +333,10 @@ Pode utilizar o Application Insights para examinar registos de Log4J, Logback ou
 Agora que instalou o SDK, pode utilizar a API para enviar a sua própria telemetria.
 
 * [Controle eventos personalizados e métricas][api] para saber o que os utilizadores estão a fazer com a sua aplicação.
-* [Pesquise eventos e registos][diagnóstico] para ajudar a diagnosticar problemas.
+* [Pesquise eventos e registos][diagnostic] para ajudar a diagnosticar problemas.
 
 ## <a name="availability-web-tests"></a>Testes Web de disponibilidade
-O Application Insights pode testar o seu site em intervalos regulares para verificar se está a funcionar e a responder bem. [Para configurar a ][disponibilidade], clique em Testes Web.
+O Application Insights pode testar o seu site em intervalos regulares para verificar se está a funcionar e a responder bem. [Para configurar][availability], clique em testes Web.
 
 ![Clique em Testes Web e, em seguida, em Adicionar teste Web](./media/app-insights-java-get-started/31-config-web-test.png)
 
@@ -344,7 +344,7 @@ Irá obter gráficos de tempos de resposta e notificações por e-mail, se o seu
 
 ![Exemplo de teste Web](./media/app-insights-java-get-started/appinsights-10webtestresult.png)
 
-[Saiba mais sobre testes Web de disponibilidade.][disponibilidade] 
+[Saiba mais sobre testes Web de disponibilidade.][availability] 
 
 ## <a name="questions-problems"></a>Tem dúvidas? Problemas?
 [Resolução de problemas de Java](app-insights-java-troubleshoot.md)
@@ -362,15 +362,15 @@ Irá obter gráficos de tempos de resposta e notificações por e-mail, se o seu
 
 [api]: app-insights-api-custom-events-metrics.md
 [apiexceptions]: app-insights-api-custom-events-metrics.md#track-exception
-[disponibilidade]: app-insights-monitor-web-app-availability.md
-[diagnóstico]: app-insights-diagnostic-search.md
+[availability]: app-insights-monitor-web-app-availability.md
+[diagnostic]: app-insights-diagnostic-search.md
 [eclipse]: app-insights-java-eclipse.md
 [javalogs]: app-insights-java-trace-logs.md
-[métricas]: app-insights-metrics-explorer.md
-[utilização]: app-insights-web-track-usage.md
+[metrics]: app-insights-metrics-explorer.md
+[usage]: app-insights-web-track-usage.md
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 
