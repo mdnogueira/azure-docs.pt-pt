@@ -12,11 +12,11 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 09/20/2016
+ms.date: 12/22/2016
 ms.author: robmcm
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 73fafeff227061feae1fbc0a1c50e5056116e3ea
+ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
+ms.openlocfilehash: 00c4336bd5cef4ddc0b92127d0945d39291b9c7f
 
 
 ---
@@ -40,7 +40,7 @@ Para efeitos deste tutorial, irá implementar um site de blogue do WordPress a p
 O site do WordPress que irá implementar neste tutorial utiliza o MySQL para a base de dados. Se, em alternativa, pretender utilizar a SQL Database para a base de dados, consulte [Projeto Nami], que também está disponível através do Azure Marketplace.
 
 > [!NOTE]
-> Para concluir este tutorial, necessita de uma conta do Microsoft Azure. Se não tiver uma conta, pode [ativar os benefícios de subscritor do Visual Studio][ativar] ou [inscrever-se numa avaliação gratuita][avaliação gratuita].
+> Para concluir este tutorial, necessita de uma conta do Microsoft Azure. Se não tiver uma conta, pode [ativar os benefícios de subscritor do Visual Studio][ activate]ou [inscrever-se numa avaliação gratuita][free trial].
 > 
 > Se pretender começar com o App Service do Azure antes de se inscrever numa conta do Azure, aceda a [Experimentar o App Service]. A partir daí, pode criar imediatamente uma aplicação Web de arranque de curta duração no App Service — sem necessidade de cartões de crédito e sem compromissos.
 > 
@@ -72,12 +72,12 @@ O site do WordPress que irá implementar neste tutorial utiliza o MySQL para a b
     ![Configurar a subscrição da aplicação Web][ConfigSubscription]
 4. Selecione um **Grupo de Recursos** ou crie um novo.
    
-    Para obter mais informações sobre grupos de recursos, veja o artigo [Descrição geral do Azure Resource Manager][ResourceGroups].
+    Para mais informações sobre grupos de recursos, veja [Azure Resource Manager overview (Descrição Geral do Azure Resource Manager)][ResourceGroups].
    
     ![Configurar o grupo de recursos da aplicação Web][ConfigResourceGroup]
 5. Selecione um **Plano do App Service/Localização** ou crie um novo.
    
-    Para obter mais informações sobre os planos do App Service, consulte [Descrição geral dos planos do App Service do Azure][AzureAppServicePlans].
+    Para obter mais informações sobre os planos do App Service, consulte [Azure App Service plans overview (Descrição geral dos planos do Serviço de Aplicações do Azure)][AzureAppServicePlans].
    
     ![Configurar o plano de serviço da aplicação Web][ConfigServicePlan]
 6. Clique em **Base de Dados** e, em seguida, no painel **Nova Base de Dados MySQL**, forneça os valores necessários para configurar a base de dados MySQL.
@@ -127,7 +127,7 @@ Neste tutorial, ficou a saber como criar e implementar uma aplicação Web de ex
 
 Para obter mais informações sobre como trabalhar com as Web Apps do App Service, consulte as ligações no lado esquerdo da página (para browsers com janelas largas) ou na parte superior da página (para browsers com janelas estreitas).
 
-Para obter mais informações acerca do desenvolvimento de Web Apps do WordPress, consulte [Desenvolvimento do WordPress no App Service do Azure][WordPressOnAzure].
+Para obter mais informações acerca do desenvolvimento de Web Apps do WordPress, consulte [Desenvolvimento do WordPress no Serviço de Aplicações do Azure][WordPressOnAzure].
 
 <!-- URL List -->
 
@@ -136,14 +136,14 @@ Para obter mais informações acerca do desenvolvimento de Web Apps do WordPress
 [Node.js]: https://azure.microsoft.com/develop/nodejs/
 [Java]: https://azure.microsoft.com/develop/java/
 [Python]: https://azure.microsoft.com/develop/python/
-[ativar]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
-[avaliação gratuita]: https://azure.microsoft.com/pricing/free-trial/
-[Experimentar o Serviço de Aplicações]: http://go.microsoft.com/fwlink/?LinkId=523751
+[activate]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
+[free trial]: https://azure.microsoft.com/pricing/free-trial/
+[Experimentar o App Service]: http://go.microsoft.com/fwlink/?LinkId=523751
 [ResourceGroups]: ../azure-resource-manager/resource-group-overview.md
 [AzureAppServicePlans]: ../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md
 [ApplicationInsights]: https://azure.microsoft.com/services/application-insights/
 [Portal do Azure]: https://portal.azure.com/
-[Project Nami]: http://projectnami.org/
+[Projeto Nami]: http://projectnami.org/
 [WordPressOnAzure]: ./develop-wordpress-on-app-service-web-apps.md
 
 <!-- IMG List -->
@@ -168,6 +168,6 @@ Para obter mais informações acerca do desenvolvimento de Web Apps do WordPress
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 

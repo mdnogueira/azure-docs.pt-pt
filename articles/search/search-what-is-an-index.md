@@ -10,11 +10,11 @@ ms.devlang: na
 ms.workload: search
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
-ms.date: 08/29/2016
+ms.date: 12/08/2016
 ms.author: ashmaka
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 3f2a2b6c82c6c931261036ae1fba733b46a074dc
+ms.sourcegitcommit: 455c4847893175c1091ae21fa22215fd1dd10c53
+ms.openlocfilehash: 7fc45273c0f71c727b7087949cc63bbb4111f866
 
 
 ---
@@ -41,13 +41,13 @@ Na definição do esquema, tem de especificar o nome, o tipo e os atributos de c
 | *Edm.String* |Texto que pode, opcionalmente, ser atomizado para pesquisa em texto completo (separação de palavras, lematização, etc.). |
 | *Collection(Edm.String)* |Uma lista de cadeias que pode, opcionalmente, ser atomizada para pesquisa em texto completo. Não existe um limite superior teórico do número de itens numa coleção, contudo, o limite superior de 16 MB de tamanho de payload aplica-se às coleções. |
 | *Edm.Boolean* |Contém valores verdadeiro/falso. |
-| *Edm.Int32* |Valores inteiros de 32 bits. |
-| *Edm.Int64* |Valores inteiros de 64 bits. |
+| *Edm.Int32* |Valores inteiros de&32; bits. |
+| *Edm.Int64* |Valores inteiros de&64; bits. |
 | *Edm.Double* |Dados numéricos de dupla precisão. |
 | *Edm.DateTimeOffset* |Valores de data/hora representados no formato OData V4 (por ex. `yyyy-MM-ddTHH:mm:ss.fffZ` ou `yyyy-MM-ddTHH:mm:ss.fff[+/-]HH:mm`). |
 | *Edm.GeographyPoint* |Um ponto que representa uma localização geográfica no mundo. |
 
-Pode encontrar mais informações detalhadas sobre os [tipos de dados suportados no MSDN](https://msdn.microsoft.com/library/azure/dn798938.aspx) da Azure Search.
+Pode encontrar mais informações detalhadas sobre os [tipos de dados suportados aqui](https://docs.microsoft.com/rest/api/searchservice/Supported-data-types) do Azure Search.
 
 ### <a name="field-attributes"></a>Atributos do campo
 | Atributo | Descrição |
@@ -59,16 +59,16 @@ Pode encontrar mais informações detalhadas sobre os [tipos de dados suportados
 | *Facetável* |Permite a um campo ser utilizado numa estrutura de [navegação por facetas](search-faceted-navigation.md) para filtragem do utilizador auto-direcionada. Geralmente os campos com valores repetitivos que pode utilizar para agrupar vários documentos (por exemplo, vários documentos que se inserem numa única marca ou categoria de serviço) funcionam melhor como facetas. |
 | *Pesquisável* |Marca o campo como pesquisável no texto completo. |
 
-Pode encontrar mais informações detalhadas sobre os [atributos de índice no MSDN](https://msdn.microsoft.com/library/azure/dn798941.aspx) da Azure Search.
+Pode encontrar mais informações detalhadas sobre os [atributos de índice aqui](https://docs.microsoft.com/rest/api/searchservice/Create-Index) do Azure Search.
 
 ## <a name="guidance-for-defining-an-index-schema"></a>Orientações para definir um esquema de índice
-Na criação do índice, reserve tempo na fase de planeamento para analisar cada decisão. É importante ter em consideração as suas necessidades comerciais e experiência do utilizador de pesquisa quando estiver a criar o seu índice, uma vez que cada campo deve receber os [atributos adequados](https://msdn.microsoft.com/library/azure/dn798941.aspx). A alteração de um índice após a respetiva implementação implica reconstruir e recarregar os dados.
+Na criação do índice, reserve tempo na fase de planeamento para analisar cada decisão. É importante ter em consideração as suas necessidades comerciais e experiência do utilizador de pesquisa quando estiver a criar o seu índice, uma vez que cada campo deve receber os [atributos adequados](https://docs.microsoft.com/rest/api/searchservice/Create-Index). A alteração de um índice após a respetiva implementação implica reconstruir e recarregar os dados.
 
 Caso os requisitos de armazenamento de dados alterem ao longo do tempo, pode aumentar ou diminuir a capacidade adicionando ou removendo partições. Para obter detalhes, consulte [Gerir o serviço de Pesquisa no Azure](search-manage.md) ou [Limites de Serviço](search-limits-quotas-capacity.md).
 
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO2-->
 
 
