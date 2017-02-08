@@ -169,6 +169,6 @@ Saiba como configurar o Gateway de VPN, um gateway de rede privada virtual. A do
 
 
 
-<!--HONumber=Jan17_HO4-->
+<!--HONumber=Feb17_HO1-->
 
 

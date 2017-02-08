@@ -84,6 +84,6 @@ Este script cria um novo grupo de recursos e um novo servidor do Azure. Quando l
 
 
 
-<!--HONumber=Jan17_HO1-->
+<!--HONumber=Feb17_HO1-->
 
 

@@ -4,7 +4,7 @@ description: "Este documento ajuda-o a compreender o tipo de alertas de seguran�
 services: security-center
 documentationcenter: na
 author: YuriDio
-manager: swadhwa
+manager: mbaldwin
 editor: 
 ms.assetid: b3e7b4bc-5ee0-4280-ad78-f49998675af1
 ms.service: security-center
@@ -12,7 +12,7 @@ ms.topic: hero-article
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/20/2016
+ms.date: 02/06/2017
 ms.author: yurid
 translationtype: Human Translation
 ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
@@ -25,8 +25,8 @@ Este documento ajuda-o a compreender os vários tipos de alertas de segurança d
 
 > [!NOTE]
 > Para ativar as deteções avançadas, atualize para o Centro de Segurança do Azure Standard. Está disponível uma avaliação gratuita de 90 dias. Para atualizar, selecione Escalão de Preço na [Política de Segurança](security-center-policies.md). Veja a [página de preços](https://azure.microsoft.com/pricing/details/security-center/) para saber mais.
-> 
-> 
+>
+>
 
 ## <a name="what-type-of-alerts-are-available"></a>Que tipo de alertas estão disponíveis?
 O Centro de Segurança do Azure fornece vários tipos de alertas que são alinhados com as fases da cadeia de eliminação cibernética. A figura abaixo fornece alguns exemplos de vários alertas, porque estão relacionados com algumas destas fases.
@@ -65,8 +65,8 @@ O Centro de Segurança do Azure pode utilizar a análise comportamental para ide
 
 > [!NOTE]
 > Para obter mais informações sobre como funcionam as capacidades de deteção do Centro de Segurança, leia [Capacidades de Deteção do Centro de Segurança do Azure](security-center-detection-capabilities.md).
-> 
-> 
+>
+>
 
 ### <a name="crash-analysis"></a>Análise de falhas
 A análise de memória de informação de falha de memória é um método utilizado para detetar software maligno sofisticado que é capaz de se esconder de soluções de segurança tradicionais. As várias formas de software maligno tentam reduzir a possibilidade de se detetado por produtos de software antivírus, ao nunca escrever no disco ou ao encriptar componentes de software escritas em disco. Isto faz com que o software maligno seja difícil de detetar com soluções contra software maligno tradicionais. No entanto, este software maligno pode ser detetado através da análise de memória, uma vez que este software tem de deixar rastro na memória para funcionar.
@@ -88,7 +88,7 @@ Este alerta fornece o seguinte campo adicional:
 
 Este é um exemplo deste tipo de alerta:
 
-![Alerta de Shellcode](./media/security-center-alerts-type/security-center-alerts-type-fig2.png) 
+![Alerta de Shellcode](./media/security-center-alerts-type/security-center-alerts-type-fig2.png)
 
 ### <a name="module-hijacking-discovered"></a>Módulo de hijacking detetado
 O Windows baseia-se em Dynamic Link Libraries (DLLs) para permitir que o software utilize a funcionalidade do sistema Windows comum. O Hijacking de DLL ocorre quando software maligno altera a ordem de carregamento da DLL para carregar vários payloads maliciosos na memória, podendo ser executado código arbitrário. Este alerta indica que a análise de informação de falha de sistema detetou um módulo com o mesmo nome carregado a partir de dois caminhos diferentes, sendo um dos caminhos carregados proveniente de uma localização binária comum do sistema do Windows.
@@ -104,7 +104,7 @@ Além dos campos comuns descritos na secção “Shellcode Detetado” acima, es
 
 Este é um exemplo deste tipo de alerta:
 
-![Alerta de hijacking do módulo](./media/security-center-alerts-type/security-center-alerts-type-fig3.png) 
+![Alerta de hijacking do módulo](./media/security-center-alerts-type/security-center-alerts-type-fig3.png)
 
 ### <a name="masquerading-windows-module-detected"></a>Módulo do Windows de disfarce detetado
 O software maligno pode utilizar nomes comuns dos binários do sistema Windows (por exemplo, SVCHOST.EXE) ou módulos (por exemplo, NTDLL.DLL) para se infiltrar e ocultar dos administradores de sistema a natureza do software malicioso. Este alerta indica que a análise de informação de falha de sistema detetou que o ficheiro de informação de falha de sistema contém módulos que utilizam nomes de módulos do sistema Windows, mas que não satisfaz outros critérios característicos dos módulos do Windows. Analisar a cópia de disco do módulo de disfarce pode fornecer mais informações sobre a natureza legítima ou maliciosa deste módulo. A análise pode incluir:
@@ -123,7 +123,7 @@ Este alerta também extrai e apresenta determinados campos, do cabeçalho de PE 
 
 Este é um exemplo deste tipo de alerta:
 
-![Alerta de Windows de disfarce](./media/security-center-alerts-type/security-center-alerts-type-fig4.png) 
+![Alerta de Windows de disfarce](./media/security-center-alerts-type/security-center-alerts-type-fig4.png)
 
 ### <a name="modified-system-binary-discovered"></a>Binário de sistema modificado detetado
 O software maligno pode modificar os binários do sistema principal para aceder a dados de maneira dissimulada ou persistir sub-reticiamente num sistema comprometido. Este alerta indica que a análise da informação de falha de sistema detetou que foram modificados binários principais do SO Windows na memória ou no disco.
@@ -136,7 +136,7 @@ Além dos campos comuns descritos na secção “Shellcode Detetados” acima, e
 
 Este é um exemplo deste tipo de alerta:
 
-![Alerta de binário do sistema](./media/security-center-alerts-type/security-center-alerts-type-fig5.png) 
+![Alerta de binário do sistema](./media/security-center-alerts-type/security-center-alerts-type-fig5.png)
 
 ### <a name="suspicious-process-executed"></a>Processos suspeitos executados
 O Centro de Segurança identifica um suspeito processo em execução na máquina virtual de destino e aciona um alerta. A deteção não procura o nome específico, mas sim o respetivo parâmetro. Por conseguinte, mesmo que o atacante altere o executável, o Centro de Segurança continua a conseguir detetá-lo.
@@ -158,7 +158,7 @@ A deteção de ameaças de rede do Centro de Segurança funciona através da rec
 ### <a name="suspicious-outgoing-traffic-detected"></a>Tráfego de saída suspeito detetado
 Os dispositivos de rede podem ser detetados e pode ser criado um perfil dos mesmos de uma forma muito semelhante aos outros tipos de sistemas. Normalmente, os atacantes começam por uma análise de portas/varrimento de portas. No exemplo abaixo, existe tráfego SSH suspeito a partir de uma VM que pode estar a realizar um ataque de força bruta SSH ou de varrimento da portas contra um recurso externo.
 
-![Alerta de tráfego de saída suspeito](./media/security-center-alerts-type/security-center-alerts-type-fig8.png) 
+![Alerta de tráfego de saída suspeito](./media/security-center-alerts-type/security-center-alerts-type-fig8.png)
 
 Este alerta dá-informações que lhe permitem identificar o recurso que foi utilizado para iniciar este ataque, a máquina comprometida, a hora da deteção, o protocolo e a porta que foi utilizada. Este painel também fornece uma lista dos passos de remediação que podem ser seguidos para atenuar este problema.
 
@@ -169,7 +169,10 @@ Ao tirar partido dos feeds de informações sobre ameaças da Microsoft, o Centr
 
 Este alerta dá-informações que lhe permitem identificar o recurso que foi utilizado para iniciar este ataque, o recurso atacado, o IP da vítima, o IP do atacante e a hora da deteção.
 
-[AZURE.NOTE] Os endereços IP em direto foram removidos desta captura de ecrã por motivos de privacidade.
+> [!NOTE]
+> Os endereços IP em direto foram removidos desta captura de ecrã por motivos de privacidade.
+>
+>
 
 ### <a name="possible-outgoing-denial-of-service-attack-detected"></a>Possível ataque denial-of-service de saída detetado
 O tráfego de rede anómalo proveniente de uma máquina virtual pode fazer com que o Centro de Segurança acione um potencial tipo de ataque denial-of-service.
@@ -184,8 +187,8 @@ A análise de recursos do Centro de Segurança concentra-se em serviços de PaaS
 ### <a name="potential-sql-injection"></a>Potencial injeção de SQL
 A injeção de SQL é um ataque no qual é inserido código malicioso nas cadeias que são transmitidas posteriormente para uma instância do SQL Server para análise e execução. Qualquer procedimento que crie instruções SQL deve ser revisto em termos de vulnerabilidades de injeção, uma vez que o SQL Server irá executar todas as consultas sintaticamente válidas que receber. A Deteção de ameaça do SQL Server utiliza machine learning, análise comportamental e deteção de anomalias para determinar eventos suspeitos que poderão estar a ocorrer nas suas Bases de Dados SQL do Azure. Por exemplo:
 
-* Tentativa de acesso à base de dados por um antigo funcionário 
-* Ataques de injeção de SQL 
+* Tentativa de acesso à base de dados por um antigo funcionário
+* Ataques de injeção de SQL
 * Acesso invulgar à base de dados de produção de um utilizador doméstico
 
 ![Potencial alerta de injeção de SQL](./media/security-center-alerts-type/security-center-alerts-type-fig11.png)
@@ -210,7 +213,6 @@ Neste documento, tive conhecimento dos vários tipos de alertas de segurança no
 * [Guia de Operações e Planeamento do Centro de Segurança do Azure](security-center-planning-and-operations-guide.md)
 * [Azure Security Center FAQ (FAQ do Centro de Segurança do Azure)](security-center-faq.md) – Encontre as perguntas mais frequentes acerca de como utilizar o serviço.
 * [Blogue de Segurança do Azure](http://blogs.msdn.com/b/azuresecurity/) – Encontre mensagens do blogue acerca da segurança e conformidade do Azure.
-
 
 
 

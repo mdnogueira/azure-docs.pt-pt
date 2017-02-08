@@ -16,8 +16,8 @@ ms.workload: na
 ms.date: 09/25/2016
 ms.author: glenga
 translationtype: Human Translation
-ms.sourcegitcommit: ae5837b4fce52aad4c8b39434c27c450aafc1310
-ms.openlocfilehash: 466f2e03407a1633c40e96a366f782bf877c0c26
+ms.sourcegitcommit: 44e397c7521ba8f0ba11893c364f51177561bee4
+ms.openlocfilehash: df3d303ee10fcc982552ea9756eb59198c87b650
 
 
 ---
@@ -27,7 +27,7 @@ As Funções do Azure são uma experiência baseada em eventos, de cálculo a pe
 Este tópico mostra-lhe como criar uma nova função em C# que é executada com base num temporizador de eventos para adicionar mensagens a uma fila de armazenamento. 
 
 ## <a name="prerequisites"></a>Pré-requisitos
-Antes de poder criar uma função, tem de ter uma conta do Azure ativa. Se ainda não tiver uma conta do Azure, [estão disponíveis contas gratuitas](https://azure.microsoft.com/free/).
+Uma aplicação de função aloja a execução das suas funções no Azure. Se ainda não tiver uma conta do Azure, veja a experiência [Experimentar Funções](https://functions.azure.com/try) ou [criar uma conta gratuita do Azure](https://azure.microsoft.com/free/). 
 
 ## <a name="create-a-timer-triggered-function-from-the-template"></a>Criar uma função acionada por temporizador a partir do modelo
 Uma aplicação de função aloja a execução das suas funções no Azure. Antes de poder criar uma função, tem de ter uma conta do Azure ativa. Se ainda não tiver uma conta do Azure, [estão disponíveis contas gratuitas](https://azure.microsoft.com/free/). 
@@ -79,6 +79,6 @@ Veja os seguintes tópicos para obter mais informações sobre o Funções do Az
 
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Dec16_HO1-->
 
 

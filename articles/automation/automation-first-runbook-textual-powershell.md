@@ -16,13 +16,17 @@ ms.topic: get-started-article
 ms.date: 07/19/2016
 ms.author: magoedte;sngun
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 483a02e2f59439a278412284b9cf9b18c4ca5ee4
+ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
+ms.openlocfilehash: 0f8c103b2ce0fcd4596d21af33b0a13e03dad54a
 
 
 ---
 # <a name="my-first-powershell-runbook"></a>O meu primeiro runbook do PowerShell
-> [AZURE.SELECTOR] - [Gráfico](automation-first-runbook-graphical.md) - [PowerShell](automation-first-runbook-textual-powershell.md) - [Fluxo de Trabalho do PowerShell](automation-first-runbook-textual.md)  
+
+> [!div class="op_single_selector"]
+> * [Gráficos](automation-first-runbook-graphical.md)
+> * [PowerShell](automation-first-runbook-textual-powershell.md)
+> * [Fluxo de Trabalho do PowerShell](automation-first-runbook-textual.md)
 > 
 > 
 
@@ -35,7 +39,7 @@ Para concluir este tutorial, irá precisar do seguinte.
 * [Conta de automatização](automation-security-overview.md) para manter o runbook e autenticar-se nos recursos do Azure.  Esta conta tem de ter permissão para iniciar e parar a máquina virtual.
 * Uma máquina virtual do Azure. Iremos parar e iniciar esta máquina, pelo que não deve ser de produção.
 
-## <a name="step-1-create-new-runbook"></a>Passo 1 – criar um novo runbook
+## <a name="step-1---create-new-runbook"></a>Passo 1 – criar um novo runbook
 Vamos começar por criar um runbook simples que produz o texto *Olá, Mundo*.
 
 1. No Portal do Azure, abra a sua conta da Automatização.  
@@ -48,7 +52,7 @@ Vamos começar por criar um runbook simples que produz o texto *Olá, Mundo*.
    ![Tipo de Runbook](media/automation-first-runbook-textual-powershell/automation-runbook-type.png)  
 6. Clique em **Criar** para criar o runbook e abra o editor de texto.
 
-## <a name="step-2-add-code-to-the-runbook"></a>Passo 2 - adicionar código ao runbook
+## <a name="step-2---add-code-to-the-runbook"></a>Passo 2 - adicionar código ao runbook
 Pode escrever o código do tipo diretamente no runbook ou pode selecionar os cmdlets, runbooks e recursos no controlo da Biblioteca e adicioná-los ao runbook com quaisquer parâmetros relacionados. Nestas instruções, iremos escrever diretamente no runbook.
 
 1. Atualmente, o nosso runbook está vazio, escreva *Write-Output "Olá, Mundo".*.  
@@ -56,7 +60,7 @@ Pode escrever o código do tipo diretamente no runbook ou pode selecionar os cmd
 2. Guarde o runbook ao clicar em **Guardar**.  
    ![Botão Guardar](media/automation-first-runbook-textual-powershell/automation-save-button.png)  
 
-## <a name="step-3-test-the-runbook"></a>Passo 3 – testar o runbook
+## <a name="step-3---test-the-runbook"></a>Passo 3 – testar o runbook
 Antes de publicarmos o runbook para o disponibilizar na produção, queremos testá-lo para garantir que funciona corretamente. Quando testa um runbook, executa a versão de **Rascunho** e veja o resultado de forma interativa.
 
 1. Clique em **Painel de teste** para abrir o Painel de teste.  
@@ -68,7 +72,7 @@ Antes de publicarmos o runbook para o disponibilizar na produção, queremos tes
    ![Resultado do Painel de Teste](media/automation-first-runbook-textual-powershell/automation-testpane-output.png)  
 5. Feche o painel de Teste para voltar à tela.
 
-## <a name="step-4-publish-and-start-the-runbook"></a>Passo 4 – publicar e iniciar o runbook
+## <a name="step-4---publish-and-start-the-runbook"></a>Passo 4 – publicar e iniciar o runbook
 O runbook que criamos ainda está no modo de Rascunho. Precisamos de o publicar antes de o executarmos na produção. Quando publica um runbook, substitui a versão Publicada existente pela versão de Rascunho. No nosso caso, ainda não temos uma versão Publicada porque acabamos de criar o runbook.
 
 1. Clique em **Publicar** para publicar o runbook e, em seguida, em **Sim** quando lhe for pedido.  
@@ -91,7 +95,7 @@ O runbook que criamos ainda está no modo de Rascunho. Precisamos de o publicar 
     ![Lista de Tarefas](media/automation-first-runbook-textual-powershell/automation-job-list.png)  
 12. Pode clicar nesta tarefa para abrir o mesmo painel Tarefas que visualizamos quando iniciamos o runbook. Isto permite-lhe voltar atrás no tempo e ver os detalhes de qualquer tarefa que foi criada para um determinado runbook.
 
-## <a name="step-5-add-authentication-to-manage-azure-resources"></a>Passo 5 – adicionar autenticação para gerir os recursos do Azure
+## <a name="step-5---add-authentication-to-manage-azure-resources"></a>Passo 5 – adicionar autenticação para gerir os recursos do Azure
 Testamos e publicamos o nosso runbook, mas, até ao momento, não faz nada de útil. Queremos que efetue a gestão dos recursos do Azure. No entanto, não será possível fazê-lo embora, a menos que seja autenticado utilizando as credenciais referidas nos [pré-requisitos](#prerequisites). Fazemos isso com o cmdlet **Add-AzureRmAccount**.
 
 1. Abra o editor de texto clicando em **Editar** no painel MyFirstRunbook-PowerShell.  
@@ -108,7 +112,7 @@ Testamos e publicamos o nosso runbook, mas, até ao momento, não faz nada de ú
 4. Clique em **Painel de teste** para que possamos testar o runbook.
 5. Clique em **Iniciar** para iniciar o teste. Depois de terminar, deverá receber um resultado parecido ao seguinte que mostra informações básicas da sua conta. Isto confirma que a credencial é válida. <br> ![Autenticar](media/automation-first-runbook-textual-powershell/runbook-auth-output.png)
 
-## <a name="step-6-add-code-to-start-a-virtual-machine"></a>Passo 6 – adicionar código para iniciar uma máquina virtual
+## <a name="step-6---add-code-to-start-a-virtual-machine"></a>Passo 6 – adicionar código para iniciar uma máquina virtual
 Agora que o nosso runbook está a autenticar para a nossa subscrição do Azure, podemos gerir os recursos. Adicionaremos um comando para iniciar uma máquina virtual. Pode escolher qualquer máquina virtual na sua subscrição do Azure e, por agora, iremos codificar esse nome para o cmdlet.
 
 1. Depois de *Add-AzureRmAccount*, escreva *Start-AzureRmVM -Name 'VMName' -ResourceGroupName 'NameofResourceGroup'* fornecendo o nome e o nome do Grupo de Recursos da máquina virtual para iniciar.  
@@ -123,7 +127,7 @@ Agora que o nosso runbook está a autenticar para a nossa subscrição do Azure,
 2. Guarde o runbook e, em seguida, clique no **painel de Teste** para que o possamos testar.
 3. Clique em **Iniciar** para iniciar o teste. Depois de terminar, verifique se a máquina virtual foi iniciada.
 
-## <a name="step-7-add-an-input-parameter-to-the-runbook"></a>Passo 7 – adicionar um parâmetro de entrada ao runbook
+## <a name="step-7---add-an-input-parameter-to-the-runbook"></a>Passo 7 – adicionar um parâmetro de entrada ao runbook
 Atualmente, o nosso runbook inicia a virtual máquina que codificamos no runbook, mas seria mais útil se pudéssemos especificar a máquina virtual quando o runbook é iniciado. Iremos agora adicionar parâmetros de entrada ao runbook para fornecer essa funcionalidade.
 
 1. Adicione parâmetros a *VMName* e *ResourceGroupName* ao runbook e utilize estas variáveis com o cmdlet **Start-AzureRmVM** como no exemplo abaixo.  
@@ -164,6 +168,6 @@ Os runbooks do PowerShell têm o mesmo ciclo de vida, capacidades e gestão que 
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 
