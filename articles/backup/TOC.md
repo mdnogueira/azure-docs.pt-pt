@@ -53,8 +53,8 @@
 ### [Problemas relacionados com cópias de segurança lentas de ficheiros e pastas no Azure Backup](backup-azure-troubleshoot-slow-backup-performance-issue.md)
 
 # Referência
-## [PowerShell](/powershell/resourcemanager/azurerm.backup/v2.3.0/azurerm.backup)
-## [.NET](/dotnet/api/microsoft.azure.management.backupservices)
+## [PowerShell](/powershell/resourcemanager/azurerm.recoveryservices.backup/v2.3.0/azurerm.recoveryservices.backup)
+## [.NET](/dotnet/api/microsoft.azure.management.recoveryservices.backup)
 
 # Recursos
 ## [Preços](https://azure.microsoft.com/pricing/details/backup/)
@@ -63,6 +63,6 @@
 ## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=backup)
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

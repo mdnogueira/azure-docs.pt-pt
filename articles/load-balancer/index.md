@@ -1,13 +1,14 @@
 ---
 layout: LandingPage
+description: "Saiba como utilizar o Balanceador de Carga para desempenho de rede de aplicações. Gerir o tráfego de máquinas virtuais e recursos na cloud e em redes virtuais entre locais."
 translationtype: Human Translation
-ms.sourcegitcommit: 95b54199c307efea21666c774525a9a539472131
-ms.openlocfilehash: 8b95ce7f93293a25db4df5858209902ba6347591
+ms.sourcegitcommit: b4080529e9ff4500cef20e1dd735765051f6ce1f
+ms.openlocfilehash: 53a3e534f9c93c73ef6d28696c5a9d6430a7a258
 
 ---
 #<a name="load-balancer-documentation"></a>Documentação do Load Balancer
 
-O Balanceador de Carga do Azure oferece disponibilidade e desempenho da rede das suas aplicações.  O Balanceador de Carga pode ser configurado para efetuar o balanceamento de carga de tráfego de entrada da Internet para máquinas virtuais, tráfego entre recursos de cloud, tráfego numa rede virtual entre locais ou tráfego externo para uma máquina virtual específica.
+Saiba como configurar o Balanceador de Carga do Azure para fornecer disponibilidade e desempenho da rede para aplicações. A documentação mostra-lhe como carregar tráfego de equilibrio para e de recursos na cloud e de máquinas virtuais e em redes virtuais entre locais.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -95,7 +96,7 @@ O Balanceador de Carga do Azure oferece disponibilidade e desempenho da rede das
                     <div class="cardText">
                         <h3>Linha de Comandos</h3>
                         <p><a href="/powershell/resourcemanager/azurerm.network/v3.1.0/azurerm.network">PowerShell</a></p>
-                        <p><a href="/cli/azure/network/lb">CLI do Azure 2.0 (Pré-visualização )</a></p>
+                        <p><a href="/cli/azure/network/lb">CLI 2.0 do Azure (Pré-visualização)</a></p>
                     </div>
                 </div>
             </div>
@@ -131,16 +132,10 @@ O Balanceador de Carga do Azure oferece disponibilidade e desempenho da rede das
     </li>
 </ul>
 
-<div class="downloadHolder">
-    <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/load-balancer.pdf">
-        <div class="img"></div>
-        <div class="text">
-Transferir a Documentação do Load Balancer </div>
-    </a>
-</div>
 
 
 
-<!--HONumber=Dec16_HO2-->
+
+<!--HONumber=Jan17_HO3-->
 
 

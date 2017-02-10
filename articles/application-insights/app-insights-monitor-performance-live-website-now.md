@@ -14,8 +14,8 @@ ms.topic: get-started-article
 ms.date: 10/24/2016
 ms.author: awills
 translationtype: Human Translation
-ms.sourcegitcommit: dea21a59b189d1d3d474cbc5e67f64df485a1981
-ms.openlocfilehash: 79819619ff7f25ba1097fe12f2da7453a1fcb4f1
+ms.sourcegitcommit: ee9ebc23ce805bb4665669077a4d3fddf4c43e32
+ms.openlocfilehash: a190b1990a4ae4e7ad52cc1a7e802c8002522917
 
 
 ---
@@ -28,7 +28,7 @@ Pode instrumentar uma aplicação Web em direto com o Azure Application Insights
 
 Pode escolher entre três formas de aplicar o Application Insights às suas aplicações Web .NET:
 
-* **Tempo de compilação:** [adicione o Application Insights SDK][greenbrown] ao código de aplicação Web.
+* **Tempo de compilação:** [adicione o Application Insights SDK][greenbrown] ao código da sua aplicação Web.
 * **Tempo de execução:** instrumente a sua aplicação Web no servidor, conforme descrito abaixo, sem a reconstruir e implementar novamente o código.
 * **Ambas:** crie o SDK para o seu código de aplicação Web e aplique também as extensões de tempo de execução. Tire o máximo proveito de ambas as opções.
 
@@ -39,7 +39,7 @@ Segue-se um resumo do que pode usufruir:
 | Pedidos e exceções |Sim |Sim |
 | [Exceções mais detalhadas](app-insights-asp-net-exceptions.md) | |Sim |
 | [Diagnóstico de dependências](app-insights-asp-net-dependencies.md) |Em .NET 4.6+, mas com menos detalhe |Sim, detalhe completo: códigos de resultado, texto do comando do SQL, HTTP  Verbo|
-| [Contadores de desempenho do sistema](app-insights-performance-counters.md) | |IIS ou serviço cloud do Azure, mas não aplicação Web do Azure |
+| [Contadores de desempenho do sistema](app-insights-performance-counters.md) |Sim |Sim |
 | [API para telemetria personalizada][api] |Sim | |
 | [Integração de registos de rastreio](app-insights-asp-net-trace-logs.md) |Sim | |
 | [Dados de utilizador e vista de página](app-insights-javascript.md) |Sim | |
@@ -55,29 +55,23 @@ Precisará de uma subscrição do [Microsoft Azure](http://azure.com).
 
 ### <a name="if-your-app-is-hosted-on-your-iis-server"></a>Se a sua aplicação estiver alojada no seu servidor IIS
 1. No seu servidor Web de IIS, inicie sessão com credenciais de administrador.
-2. Transfira e execute o [instalador do Monitor de Estado](http://go.microsoft.com/fwlink/?LinkId=506648).
-3. No assistente de instalação, inicie sessão no Microsoft Azure.
-
-    ![Inicie sessão no Azure com as credenciais da sua conta Microsoft](./media/app-insights-monitor-performance-live-website-now/appinsights-035-signin.png)
-
-    *Erros de ligação? Veja [Resolução de problemas](#troubleshooting).*
-4. Selecione a aplicação Web instalada ou o site que pretende monitorizar e, em seguida, configure o recurso no qual pretende ver os resultados do portal do Application Insights.
+2. Transfira e execute o [instalador do Monitor de Estado](http://go.microsoft.com/fwlink/?LinkId=506648).  
+3. Selecione a aplicação Web instalada ou o site que pretende monitorizar e, em seguida, configure o recurso no qual pretende ver os resultados do portal do Application Insights. Deve ter a sessão iniciada no Microsoft Azure.
 
     ![Escolha uma aplicação e um recurso.](./media/app-insights-monitor-performance-live-website-now/appinsights-036-configAIC.png)
 
     Normalmente, pode optar por configurar um novo recurso e [grupo de recursos][roles].
 
-    Caso contrário, utilize um recurso existente se tiver configurado [testes Web][availability] para o seu site ou a [monitorização de cliente Web][client].
-5. Reinicie o IIS.
+    Caso contrário, utilize um recurso existente se já tiver configurado [testes Web][availability] para o seu site ou a [monitorização de cliente Web][client].
+4. Reinicie o IIS.
 
     ![Escolha Reiniciar na parte superior da caixa de diálogo.](./media/app-insights-monitor-performance-live-website-now/appinsights-036-restart.png)
 
     O serviço Web será interrompido durante um curto período.
-6. Repare que ApplicationInsights.config foi inserido nas aplicações Web que pretende monitorizar.
+5. Repare que ApplicationInsights.config foi inserido nas aplicações Web que pretende monitorizar.
 
     ![Localize o ficheiro .config, juntamente com os ficheiros de código da aplicação Web.](./media/app-insights-monitor-performance-live-website-now/appinsights-034-aiconfig.png)
-
-   Existem também algumas alterações no web.config.
+   
 
 #### <a name="want-to-reconfigure-later"></a>Pretende (re)configurar mais tarde?
 Depois de concluir o assistente, pode reconfigurar o agente sempre que pretender. Também pode utilizá-lo se instalar o agente, mas tiverem surgido alguns problemas na configuração inicial.
@@ -105,7 +99,7 @@ Para segmentar o gráfico por chamadas para diferentes dependências: edite o gr
 ![Dependência](./media/app-insights-monitor-performance-live-website-now/23-dep.png)
 
 ## <a name="performance-counters"></a>Contadores de desempenho
-(Não para aplicações Web do Azure.) Clique em Servidores no painel de descrição geral para ver gráficos dos contadores de desempenho do servidor, como a ocupação da CPU e a utilização de memória.
+Clique em Servidores no painel de descrição geral para ver gráficos dos contadores de desempenho do servidor, como a ocupação da CPU e a utilização de memória.
 
 Se tiver várias instâncias de servidor, pode ser necessário editar os gráficos para agrupar por Instância de função.
 
@@ -137,7 +131,7 @@ Tem de abrir [algumas portas de envio](app-insights-ip-addresses.md#outgoing-por
   * No Gestor de IIS, selecione o conjunto de aplicações, abra **Definições Avançadas**, e, em **Modelo de Processos** tenha em atenção a identidade.
   * No painel de controlo de gestão do Computador, adicione esta identidade ao grupo de Utilizadores do Monitor de Desempenho.
 * Se tiver MMA/SCOM instalado no servidor, algumas versões podem entrar em conflito. Desinstale o SCOM e o Monitor de Estado, e reinstale as versões mais recentes.
-* Veja [Resolução de Problemas][qna].
+* Veja a [Resolução de Problemas][qna].
 
 ## <a name="system-requirements"></a>Requisitos de Sistema
 Suporte de SO para o Monitor de Estado do Application Insights no Servidor:
@@ -146,10 +140,11 @@ Suporte de SO para o Monitor de Estado do Application Insights no Servidor:
 * Windows Server 2008 R2
 * Windows Server 2012
 * Windows Server 2012 R2
+* Windows Server 2016
 
-com SP e .NET Framework 4.0 e 4.5 mais recentes
+com o .NET Framework 4.5 e o SP mais recente
 
-No lado do cliente, Windows 7, 8 e 8.1, novamente com o .NET Framework 4.0 e 4.5
+No lado do cliente, Windows 7, 8, 8.1 e 10, novamente com o .NET Framework 4.5
 
 O Suporte do IIS é: 7, IIS 7.5, 8, 8.5 (o IIS é necessário)
 
@@ -214,9 +209,9 @@ Descubra que aplicações estão a ser monitorizadas:
 * Transfere o SDK mais recente do Application Insights para o servidor.
 
 ## <a name="a-namenextanext-steps"></a><a name="next"></a>Passos seguintes
-* [Criar testes Web][availability] para certificar-se de que mantém o seu site em direto.
+* [Criar testes Web][availability] para se certificar de que mantém o seu site em direto.
 * [Pesquise eventos e registos][diagnostic] para ajudar a diagnosticar problemas.
-* [Adicionar telemetria de cliente Web][usage] para ver as exceções de código de página Web e permitir a inserção de chamadas de rastreio.
+* [Adicionar telemetria de cliente Web][usage] para ver as exceções de código da página Web e permitir a inserção de chamadas de rastreio.
 * [Adicionar o Application Insights SDK ao código do serviço Web][greenbrown] para que possa inserir chamadas de rastreio e de registo no código do servidor.
 
 <!--Link references-->
@@ -232,6 +227,6 @@ Descubra que aplicações estão a ser monitorizadas:
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 

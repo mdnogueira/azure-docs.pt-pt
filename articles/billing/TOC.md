@@ -1,7 +1,5 @@
-# Introdução
-## [Criar conta gratuita](https://azure.microsoft.com/free/)
+# [Introdução](billing-getting-started.md)
 ## [Inscrever-se numa conta do Office 365](../billing-use-existing-office-365-account-azure-subscription.md)
-## [Preços da subscrição](https://azure.microsoft.com/pricing/)
 ## [Países e moedas suportados](../billing-countries-and-currencies.md)
 ## [Limites e quotas](../azure-subscription-service-limits.md)
 ## [Perguntas mais frequentes](../billing-subscription-faq.md)
@@ -17,12 +15,12 @@
 ### [Transferir a propriedade da subscrição](../billing-subscription-transfer.md)
 ### [Reativar subscrição desativada](../billing-subscription-become-disable.md)
 ### [Atualizar a partir da subscrição gratuita](../billing-upgrade-azure-subscription.md)
-### [Mudar para outra subscrição](../billing-how-to-switch-azure-offer.md)
+### [Mudar oferta de subscrição](../billing-how-to-switch-azure-offer.md)
 ### [Cancelar subscrição](../billing-how-to-cancel-azure-subscription.md)
 ## Gerir conta
 ### [Editar perfil](../billing-how-to-change-azure-account-profile.md)
 ### [Atualizar informações de pagamento](../billing-how-to-change-credit-card.md)
-### [Ligar Inquilino do Office 365](../billing-add-office-365-tenant-to-azure-subscription.md)
+### [Ligar inquilino do Office 365](../billing-add-office-365-tenant-to-azure-subscription.md)
 ## Resolução de problemas
 ### [Problemas de inscrição](../billing-troubleshoot-azure-sign-up-issues.md)
 ### [Cartão rejeitado](../billing-credit-card-fails-during-azure-sign-up.md)
@@ -37,6 +35,6 @@
 # Recursos
 ## [Contactar o suporte](../billing-how-to-create-billing-support-ticket.md)
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Jan17_HO1-->
 
 

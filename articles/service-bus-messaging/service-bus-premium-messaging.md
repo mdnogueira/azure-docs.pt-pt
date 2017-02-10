@@ -12,11 +12,11 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 12/21/2016
-ms.author: darosa,sethm
+ms.date: 1/06/2016
+ms.author: darosa,sethm,jotaub
 translationtype: Human Translation
-ms.sourcegitcommit: d36b40444af4ba68b016351f9ff016351e9fe58c
-ms.openlocfilehash: a4ccfdbc079a989477a80af7ac701dc77dce5a4f
+ms.sourcegitcommit: ed1469b7d12af84970d0675ac2af29580e319042
+ms.openlocfilehash: 11bac0e1877fa2c1cacc9a0a6e6d7870a17a44a2
 
 
 ---
@@ -31,9 +31,9 @@ Na tabela seguinte, destacam-se algumas das principais diferenças.
 | --- | --- |
 | Débito elevado |Débito variável |
 | Desempenho previsível |Latência variável |
-| Preços previsíveis |Preços variáveis de utilização  |
-| Possibilidade de aumentar verticalmente e horizontalmente a carga de trabalho |N/D |
-| Tamanho da mensagem > 256 KB |O tamanho da mensagem é 256 KB |
+| Preços fixos |Preços variáveis de utilização  |
+| Possibilidade de aumentar e reduzir verticalmente a carga de trabalho |N/D |
+| Tamanho da mensagem até 1 MB |Tamanho da mensagem até 256 KB |
 
 As **Mensagens Premium do Service Bus** fornecem isolamento de recursos na camada de CPU e memória para que cada carga de trabalho do cliente seja executada de forma isolada. Este contentor de recursos é designado por *unidade de mensagens*. A cada espaço de nomes premium é atribuído, pelo menos, uma unidade de mensagens. Pode comprar 1, 2 ou 4 unidades de mensagens para cada espaço de nomes Premium do Service Bus. Uma única carga de trabalho ou entidade pode abranger várias unidades de mensagens e o número de unidades de mensagens pode ser alterado à vontade, embora a faturação seja realizada com base em tarifas diárias ou de 24 horas. O resultado é um desempenho previsível e repetível da sua solução com base no Service Bus.
 
@@ -43,10 +43,19 @@ Este desempenho não só é mais previsível e repetível, como também mais rá
 A seguir apresentam-se algumas diferenças entre as camadas de mensagens Standard e Premium.
 
 ### <a name="partitioned-queues-and-topics"></a>Filas e tópicos particionados
-As filas e tópicos particionados são suportados nas Mensagens Premium, mas não funcionam da mesma forma que nos escalões de Mensagens Standard e Basic do Service Bus. As Mensagens Premium não utilizam SQL como armazém de dados e já não têm a possível concorrência de recursos associada a uma plataforma partilhada. Como resultado, não é necessário criar partições. Além disso, a quantidade de partições foi alterada de 16 partições nas Mensagens Standard para 2 partições nas Premium. Ter duas partições garante a disponibilidade e é um número mais adequado para o ambiente de tempo de execução Premium. Para mais informações sobre a criação de partições, consulte o artigo [Filas e tópicos particionados](service-bus-partitioning.md).
+As filas e tópicos particionados são suportados nas Mensagens Premium, mas não funcionam da mesma forma que nos escalões de Mensagens Standard e Basic do Service Bus. As Mensagens Premium não utilizam SQL como armazém de dados e já não têm a possível concorrência de recursos associada a uma plataforma partilhada. Como resultado, não é necessário criar partições para assegurar o desempenho. Além disso, a quantidade de partições foi alterada de 16 partições nas Mensagens Standard para 2 partições nas Premium. Ter duas partições garante a disponibilidade e é um número mais adequado para o ambiente de tempo de execução Premium. Para mais informações sobre a criação de partições, consulte o artigo [Filas e tópicos particionados](service-bus-partitioning.md).
 
 ### <a name="express-entities"></a>Entidades expressas
 Uma vez que as mensagens Premium se executam num ambiente de tempo de execução completamente isolado, as entidades expressas deixam de ser suportadas nos espaços de nome Premium. Para obter mais informações sobre a funcionalidade Express, veja a propriedade [QueueDescription.EnableExpress](https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging.queuedescription#Microsoft_ServiceBus_Messaging_QueueDescription_EnableExpress).
+
+## <a name="get-started-with-premium-messaging"></a>Introdução às Mensagens Premium
+
+A Introdução às Mensagens Premium é simples e o processo é semelhante ao das Mensagens Standard. Comece por [criar um espaço de nomes](service-bus-create-namespace-portal.md). Certifique-se de que seleciona *Premium* em “Escalão de preço”.
+
+![create-premium-namespace][create-premium-namespace]
+
+Também pode criar um [espaço de nomes Premium com modelos do Azure Resource Manager](https://azure.microsoft.com/en-us/resources/templates/101-servicebus-pn-ar/).
+
 
 ## <a name="next-steps"></a>Passos seguintes
 Para saber mais sobre Mensagens do Service Bus, veja os tópicos seguintes.
@@ -56,9 +65,12 @@ Para saber mais sobre Mensagens do Service Bus, veja os tópicos seguintes.
 * [Descrição geral de Mensagens do Service Bus](service-bus-messaging-overview.md)
 * [Como utilizar as filas do Service Bus](service-bus-dotnet-get-started-with-queues.md)
 
+<!--Image references-->
+
+[create-premium-namespace]: ./media/service-bus-premium-messaging/select-premium-tier.png
 
 
 
-<!--HONumber=Dec16_HO4-->
+<!--HONumber=Jan17_HO2-->
 
 

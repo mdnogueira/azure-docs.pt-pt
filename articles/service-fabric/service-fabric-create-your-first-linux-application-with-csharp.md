@@ -15,8 +15,8 @@ ms.workload: NA
 ms.date: 10/04/2016
 ms.author: subramar
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 9486fcb56b05b22120aef5a8373c6558b2d88d6c
+ms.sourcegitcommit: 6d8f489ac053db4898741671df73b6abfabeb0dd
+ms.openlocfilehash: e3632d89501c1c25b76e9160f0ad82f2b76327d7
 
 
 ---
@@ -50,7 +50,7 @@ Uma aplicação de Service Fabric pode conter um ou mais serviços, cada um com 
 ## <a name="build-the-application"></a>Criar a aplicação
 Os modelos Yeoman do Service Fabric incluem um script de compilação que pode utilizar para criar a aplicação a partir do terminal (depois de navegar para a pasta da aplicação).
 
-  ```bash
+  ```sh
  cd myapp 
  ./build.sh 
   ```
@@ -60,7 +60,7 @@ Depois de criada a aplicação, pode implementá-la no cluster local com a CLI d
 
 1. Ligue ao cluster do Service Fabric local.
    
-    ```bash
+    ```sh
     azure servicefabric cluster connect
     ```
 2. Utilize o script de instalação fornecido no modelo para copiar o pacote de aplicação para o arquivo de imagens do cluster, registar o tipo de aplicação e criar uma instância da mesma.
@@ -83,11 +83,18 @@ Os projetos de ator não fazem nada só por si. Precisam de outro serviço ou cl
 2. No Service Fabric Explorer, localize o nó que aloja a réplica primária do serviço de ator. Na captura de ecrã, é o nó 3.
    
     ![Localizar a réplica primária no Service Fabric Explorer][sfx-primary]
-3. Clique no nó que localizou no passo anterior e selecione **Desativar (reiniciar)**, no menu Ações. Esta ação reinicia um dos cinco nós no seu cluster local e força uma ativação pós-falha num réplica secundária em execução noutro nó. Quando realizar esta ação, tenha atenção à saída do cliente de teste e repare que o contador continua a aumentar, apesar da ativação pós-falha.
+3. Clique no nó que localizou no passo anterior e selecione **Desativar (reiniciar)**, no menu Ações. Esta ação reinicia um nó no seu cluster local e força uma ativação pós-falha num réplica secundária em execução noutro nó. Quando realizar esta ação, tenha atenção à saída do cliente de teste e repare que o contador continua a aumentar, apesar da ativação pós-falha.
+
+## <a name="adding-more-services-to-an-existing-application"></a>Adicionar mais serviços a uma aplicação existente
+
+Para adicionar outro serviço a uma aplicação já criada com o `yo`, execute os seguintes passos: 
+1. Altere o diretório para a raiz da aplicação existente.  Por exemplo, `cd ~/YeomanSamples/MyApplication`, se `MyApplication` é a aplicação criada por Yeoman.
+2. Execute `yo azuresfcsharp:AddService`
 
 ## <a name="next-steps"></a>Passos seguintes
 * [Saiba mais sobre os Reliable Actors](service-fabric-reliable-actors-introduction.md)
 * [Interagir com os clusters do Service Fabric com a CLI do Azure](service-fabric-azure-cli.md)
+* Saiba mais sobre as [opções de suporte do Service Fabric](service-fabric-support.md)
 
 <!-- Images -->
 [sf-yeoman]: ./media/service-fabric-create-your-first-linux-application-with-csharp/yeoman-csharp.png
@@ -95,6 +102,6 @@ Os projetos de ator não fazem nada só por si. Precisam de outro serviço ou cl
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO2-->
 
 

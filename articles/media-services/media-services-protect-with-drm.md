@@ -12,15 +12,16 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 09/27/2016
+ms.date: 01/05/2017
 ms.author: juliako
 translationtype: Human Translation
-ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
-ms.openlocfilehash: 3600f03c22805789b1f75f892962e0d054e84058
+ms.sourcegitcommit: f6d6b7b1051a22bbc865b237905f8df84e832231
+ms.openlocfilehash: 3309db6a926c3c2a0ff6340f0ade3d73093f6d6b
 
 
 ---
 # <a name="using-playready-andor-widevine-dynamic-common-encryption"></a>Utilizar a encriptação comum dinâmica com PlayReady e/ou Widevine
+
 > [!div class="op_single_selector"]
 > * [.NET](media-services-protect-with-drm.md)
 > * [Java](https://github.com/southworkscom/azure-sdk-for-media-services-java-samples)
@@ -40,15 +41,14 @@ Para tirar partido da encriptação dinâmica, tem de ter um elemento que conten
 
 Este tópico seria útil para os programadores que funcionam em aplicações que entregam multimédia protegida com vários DRMs, tais como PlayReady e Widevine. O tópico mostra como configurar o serviço de entrega de licença PlayReady com políticas de autorização para que apenas os clientes autorizados possam receber licenças PlayReady ou Widevine. Este também mostra como utilizar a encriptação dinâmica com PlayReady ou Widevine DRM sobre DASH.
 
-> [!NOTE]
-> Para começar a utilizar a encriptação dinâmica, tem primeiro de obter, pelo menos, uma unidade de escala (também conhecida como unidade de transmissão em fluxo). Para obter mais informações, veja [How to Scale a Media Service (Como Dimensionar um Serviço de Multimédia)](media-services-portal-manage-streaming-endpoints.md).
->
->
+>[!NOTE]
+>Quando a sua conta AMS é criada, é adicionado um ponto final de transmissão em fluxo **predefinido** à sua conta no estado **Parado**. Para começar a transmitir o seu conteúdo em fluxo e a tirar partido do empacotamento e encriptação dinâmicos, o ponto final de transmissão em fluxo a partir do qual quer transmitir conteúdo tem de estar no estado **Em execução**. 
 
 ## <a name="download-sample"></a>Transferir exemplo
 Pode transferir a amostra descrita neste artigo [aqui](https://github.com/Azure-Samples/media-services-dotnet-dynamic-encryption-with-drm).
 
 ## <a name="configuring-dynamic-common-encryption-and-drm-license-delivery-services"></a>Configurar a Encriptação Comum Dinâmica e os Serviços de Entrega de Licença DRM
+
 A seguir são apresentados os passos gerais que precisa de realizar ao proteger os seus elementos com PlayReady, através do serviço de entrega de licença de Media Services e também da encriptação dinâmica.
 
 1. Crie um elemento e carregue ficheiros no elemento.
@@ -56,13 +56,13 @@ A seguir são apresentados os passos gerais que precisa de realizar ao proteger 
 3. Crie uma chave de conteúdo e associe-a com elemento codificado. Nos Media Services, a chave de conteúdo contém a chave de encriptação do elemento.
 4. Configure a política de autorização da chave de conteúdo. A política de autorização da chave de conteúdo tem de ser configurada por si e cumprida pelo cliente para que a chave de conteúdo seja entregue ao cliente.
 
-Ao criar a política de autorização da chave de conteúdo, tem de especificar o seguinte: método de entrega (PlayReady ou Widevine), restrições (aberto ou token) e informações específicas para o tipo de entrega de chave que define a forma como esta é entregue ao cliente (modelo de licença [PlayReady](media-services-playready-license-template-overview.md) ou [Widevine](media-services-widevine-license-template-overview.md)).
+    Ao criar a política de autorização da chave de conteúdo, tem de especificar o seguinte: método de entrega (PlayReady ou Widevine), restrições (aberto ou token) e informações específicas para o tipo de entrega de chave que define a forma como esta é entregue ao cliente (modelo de licença [PlayReady](media-services-playready-license-template-overview.md) ou [Widevine](media-services-widevine-license-template-overview.md)).
 
-1. Configure a política de entrega para um elemento. A configuração da política de entrega inclui: protocolo entrega (por exemplo, MPEG DASH, HLS, HDS, Transmissão em Fluxo Uniforme ou todos), o tipo de encriptação dinâmica (por exemplo, Encriptação Comum), URL de aquisição de licença PlayReady ou Widevine.
+5. Configure a política de entrega para um elemento. A configuração da política de entrega inclui: protocolo de entrega (por exemplo, MPEG DASH, HLS, Smooth Streaming ou todos), o tipo de encriptação dinâmica (por exemplo, Encriptação Comum), URL de aquisição de licença PlayReady ou Widevine.
 
-Pode aplicar uma política diferente para cada protocolo no mesmo elemento. Por exemplo, pode aplicar encriptação PlayReady para Uniforme/DASH e Envelope AES para HLS. Quaisquer protocolos que não estão definidos numa política de entrega (por exemplo, adicionar uma única política que especifica apenas HLS como o protocolo) serão bloqueados da transmissão em fluxo. A exceção é quando não há qualquer política de entrega de elemento definida. Em seguida, todos os protocolos serão permitidos.
+    Pode aplicar uma política diferente para cada protocolo no mesmo elemento. Por exemplo, pode aplicar encriptação PlayReady para Uniforme/DASH e Envelope AES para HLS. Quaisquer protocolos que não estão definidos numa política de entrega (por exemplo, adicionar uma única política que especifica apenas HLS como o protocolo) serão bloqueados da transmissão em fluxo. A exceção é quando não há qualquer política de entrega de elemento definida. Em seguida, todos os protocolos serão permitidos.
 
-1. Crie um localizador OnDemand para obter um URL de transmissão em fluxo.
+6. Crie um localizador OnDemand para obter um URL de transmissão em fluxo.
 
 Irá encontrar um exemplo .NET concluído no final do tópico.
 
@@ -101,7 +101,7 @@ Para obter informações detalhadas, consulte [Configurar a Política de Autoriz
 Configure a política de entrega para o seu elemento. Alguns dos aspetos da configuração de política de entrega de elementos incluem:
 
 * O URL de aquisição da licença da DRM.
-* O protocolo de entrega do elemento, (por exemplo, MPEG DASH, HLS, HDS, Transmissão em Fluxo Uniforme ou todos).
+* O protocolo de entrega do elemento, (por exemplo, MPEG DASH, HLS, Smooth Streaming ou todos).
 * O tipo de encriptação dinâmica (neste caso, a Encriptação Comum).
 
 Para obter informações detalhadas, consulte [Configurar a política de entrega de elemento](media-services-rest-configure-asset-delivery-policy.md).
@@ -158,8 +158,7 @@ O exemplo seguinte demonstra a funcionalidade que foi introduzida no SDK de Medi
                 <add key="Audience" value="urn:test"/>
               </appSettings>
         </configuration>
-5. Obter, pelo menos, uma unidade de transmissão em fluxo para o ponto final de transmissão em fluxo a partir do qual planeia distribuir o conteúdo. Para obter mais informações, consulte: [configurar pontos finais de transmissão em fluxo](media-services-dotnet-get-started.md#configure-streaming-endpoints-using-the-azure-portal).
-6. Substitua o código no seu ficheiro Program.cs com o código mostrado nesta secção.
+7. Substitua o código no seu ficheiro Program.cs com o código mostrado nesta secção.
 
     Certifique-se de que atualiza as variáveis para apontar para as pastas onde se encontram os seus ficheiros de entrada.
 
@@ -621,6 +620,6 @@ Rever os percursos de aprendizagem dos Serviços de Multimédia
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Jan17_HO2-->
 
 

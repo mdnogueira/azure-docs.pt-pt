@@ -80,6 +80,7 @@
 
 
 # Relacionado
+## [Monitorizar a infraestrutura de identidade no local e os serviços de sincronização na cloud](../connect-health/active-directory-aadconnect-health.md)
 ## [Hybrid Identity Design Guide (Guia de Design da Identidade Híbrida)](https://azure.microsoft.com/documentation/articles/active-directory-hybrid-identity-design-considerations-overview/)
 
 
@@ -88,6 +89,6 @@
 ##[Descontinuação de Deprecation](active-directory-aadconnect-dirsync-deprecated.md)
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Dec16_HO4-->
 
 

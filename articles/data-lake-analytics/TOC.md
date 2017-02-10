@@ -10,12 +10,15 @@
 ## [Visual Studio](data-lake-analytics-data-lake-tools-get-started.md)
 ## [CLI do Azure](data-lake-analytics-get-started-cli.md)
 ## [API REST](data-lake-analytics-get-started-rest-api.md)
+## [Python](data-lake-analytics-get-started-python.md)
 
 # Procedimento
 ## Programar
 ### [U-SQL](data-lake-analytics-u-sql-get-started.md)
 ### [Funções de janela de U-SQL](data-lake-analytics-use-window-functions.md)
 ### [Operadores definidos pelo utilizador de U-SQL](data-lake-analytics-u-sql-develop-user-defined-operators.md)
+### [Extensões Python para U-SQL](data-lake-analytics-u-sql-python-extensions.md)
+### [Capacidades cognitivas para U-SQL](data-lake-analytics-u-sql-cognitive.md)
 
 ## Criar soluções
 ### [Analisar registos de Web sites](data-lake-analytics-analyze-weblogs.md)
@@ -52,6 +55,6 @@
 ## [Blogue do Azure Data Lake](https://blogs.msdn.microsoft.com/azuredatalake/)
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Jan17_HO1-->
 
 

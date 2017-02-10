@@ -71,7 +71,7 @@ POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-ve
 }
 ```
 
-Aplique um filtro ao índice para localizar hotéis com um preço inferior a 150 $ por noite e devolva `hotelId` e `description`:
+Aplique um filtro ao índice para localizar hotéis com um preço inferior a&150; $ por noite e devolva `hotelId` e `description`:
 
 ```
 GET https://[service name].search.windows.net/indexes/hotels/docs?search=*&$filter=baseRate lt 150&$select=hotelId,description&api-version=2016-09-01

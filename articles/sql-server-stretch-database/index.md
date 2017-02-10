@@ -1,13 +1,15 @@
 ---
 layout: LandingPage
+description: "Saiba como utilizar a SQL Server Stretch Database para migrar dados de acesso esporádico em segurança para o Azure sem alterar consultas ou aplicações. Tutoriais e outra documentação."
 translationtype: Human Translation
-ms.sourcegitcommit: d237f5116f81d0977a96a325ee66f2e7c3ee5c41
-ms.openlocfilehash: bf45461eafbb010d99b61f2f67a763e25f374b30
+ms.sourcegitcommit: b4080529e9ff4500cef20e1dd735765051f6ce1f
+ms.openlocfilehash: 3dad35a38c753988615a4c1f2b439de9f95baf0e
 
 ---
 #<a name="sql-server-stretch-database-documentation"></a>Documentação do SQL Server Stretch Database
 
-O SQL Server Stretch Database migra os seus dados amovíveis de forma transparente e segura para a cloud do Microsoft Azure. O SQL Server Stretch Database mantém os dados que não utiliza regularmente disponíveis de forma rentável, não requer alterações às consultas ou aplicações e mantém os dados seguros até mesmo durante a migração. A Stretch Database está orientada para as bases de dados transacionais com grandes quantidades de dados utilizados com pouca frequência, que estão normalmente armazenados num pequeno número de tabelas.
+Saiba como utilizar a SQL Server Stretch Database par migrar dados de acesso esporádico de forma transparente e segura para a cloud do Azure. Os tutoriais e a outra documentação ajudam-no a configurar uma disponibilidade económica para as bases de dados com dados que são utilizados muito poucas vezes sem necessitar de alterações a consultas ou aplicações existentes.
+
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -86,16 +88,10 @@ O SQL Server Stretch Database migra os seus dados amovíveis de forma transparen
 
 ---
 
-<div class="downloadHolder">
-    <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/sql-server-stretch-database.pdf">
-        <div class="img"></div>
-        <div class="text">
-Transferir a Documentação do SQL Server Stretch Database </div>
-    </a>
-</div>
 
 
 
-<!--HONumber=Nov16_HO4-->
+
+<!--HONumber=Jan17_HO3-->
 
 

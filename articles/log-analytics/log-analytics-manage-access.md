@@ -12,11 +12,11 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 01/02/2017
+ms.date: 01/06/2017
 ms.author: banders
 translationtype: Human Translation
-ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
-ms.openlocfilehash: b78199a672528c475f4f299faaf6406089e95d01
+ms.sourcegitcommit: 6862723b774951fe4cca0303ee2a39a0d5f2089d
+ms.openlocfilehash: eec688e33ff55334ebe0c1bc6d08e4753aadb85c
 
 
 ---
@@ -60,7 +60,7 @@ Pode ver detalhes sobre a sua área de trabalho no portal do Azure. Também pode
 
 #### <a name="view-workspace-information-the-azure-portal"></a>Ver informações da área de trabalho no portal do Azure
 
-1. Se ainda não o fez, inicie sessão no [Portal do Azure](https://portal.azure.com) através da sua subscrição do Azure.
+1. Se ainda não o fez, inicie sessão no [portal do Azure](https://portal.azure.com) através da sua subscrição do Azure.
 2. No menu **Hub**, clique em **Mais serviços** e, na lista de recursos, escreva **Log Analytics**. À medida que começa a escrever, irá filtrar a lista com base na sua entrada. Clique em **Log Analytics**.  
     ![Hub do Azure](./media/log-analytics-manage-access/hub.png)  
 3. No painel de subscrições do Log Analytics, selecione uma área de trabalho.
@@ -242,6 +242,24 @@ Se precisar de alterar a subscrição do Azure à qual está ligada a área de t
 6. Quando atualizar a vista no portal do Azure, verá o **Escalão de preço** atualizado com o plano que selecionou.  
     ![plano atualizado](./media/log-analytics-manage-access/manage-access-change-plan04.png)
 
+## <a name="change-how-long-log-analytics-stores-data"></a>Alterar o tempo durante o qual o Log Analytics armazena dados
+
+No escalão de preço Gratuito, o Log Analytics disponibiliza os últimos sete dias de dados.
+No escalão de preço Standard, o Log Analytics disponibiliza os últimos 30 dias de dados.
+No escalão de preço Premium, o Log Analytics disponibiliza os últimos 365 dias de dados.
+Nos escalões de preço Autónomo e OMS, por predefinição, o Log Analytics disponibiliza os últimos 31 dias de dados.
+
+Quando utiliza os escalões de preço Autónomo e OMS, pode manter um máximo de dois anos de dados (730 dias). Os dados armazenados por mais tempo do que a predefinição de 31 dias incorrem numa cobrança de retenção de dados. Para obter mais informações sobre preços, veja o artigo [Custos da utilização excessiva](https://azure.microsoft.com/pricing/details/log-analytics/).
+
+Para alterar o período da retenção de dados:
+
+1. Inicie sessão no [Portal do Azure](http://portal.azure.com).
+2. Procure o **Log Analytics** e selecione-o.
+3. Verá a lista de áreas de trabalho existentes. Selecione uma área de trabalho.  
+4. No painel da área de trabalho, em **Geral**, clique em **Retenção**.  
+5. Utilize o controlo de deslize para aumentar ou diminuir o número de dias do período de retenção e, em seguida, clique em **Guardar**
+![alterar o período de retenção](./media/log-analytics-manage-access/manage-access-change-retention01.png)
+
 ## <a name="change-an-azure-active-directory-organization-for-a-workspace"></a>Alterar uma Organização do Azure Active Directory de uma área de trabalho
 
 Pode alterar a organização do Azure Active Directory de uma área de trabalho. Alterar a Organização do Azure Active Directory permite-lhe adicionar utilizadores e grupos desse diretório à área de trabalho.
@@ -275,6 +293,6 @@ Se for um administrador e existirem vários utilizadores associados à área de 
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Jan17_HO1-->
 
 

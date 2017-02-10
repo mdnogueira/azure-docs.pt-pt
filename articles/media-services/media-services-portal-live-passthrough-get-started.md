@@ -12,15 +12,15 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 10/24/2016
+ms.date: 01/05/2017
 ms.author: juliako
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: ec6bb243872b3d4794050f735122f587a299e978
+ms.sourcegitcommit: f6d6b7b1051a22bbc865b237905f8df84e832231
+ms.openlocfilehash: 158a0a74c7997b28d652c3eed049daa8faf39d94
 
 
 ---
-# <a name="how-to-perform-live-streaming-with-onpremise-encoders-using-the-azure-portal"></a>Como realizar uma transmissão em fluxo em direto com codificadores no local através do Portal do Azure
+# <a name="how-to-perform-live-streaming-with-on-premise-encoders-using-the-azure-portal"></a>Como realizar uma transmissão em fluxo em direto com codificadores no local através do Portal do Azure
 > [!div class="op_single_selector"]
 > * [Portal](media-services-portal-live-passthrough-get-started.md)
 > * [.NET](media-services-dotnet-live-encode-with-onpremises-encoders.md)
@@ -34,7 +34,7 @@ Este tutorial explica os passos para criar um **Canal** configurado para uma ent
 O seguinte é necessário para concluir o tutorial:
 
 * Uma conta do Azure. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/). 
-* Uma conta dos Media Services.    Para criar uma conta dos Media Services, consulte [Como Criar uma Conta de Media Services](media-services-portal-create-account.md).
+* Uma conta dos Media Services. Para criar uma conta dos Media Services, consulte [Como Criar uma Conta de Media Services](media-services-portal-create-account.md).
 * Uma câmara Web. Por exemplo, [codificador Telestream Wirecast](http://www.telestream.net/wirecast/overview.htm).
 
 É altamente recomendado rever os seguintes artigos:
@@ -46,6 +46,9 @@ O seguinte é necessário para concluir o tutorial:
 ## <a name="a-idscenarioacommon-live-streaming-scenario"></a><a id="scenario"></a>Cenário comum de transmissão em fluxo em direto
 Os passos seguintes descrevem as tarefas envolvidas na criação de aplicações de transmissão em fluxo em direto comuns que utilizam canais que estão configurados para entrega pass-through. Este tutorial mostra como criar e gerir um canal pass-through e eventos em direto.
 
+>[!NOTE]
+>Certifique-se de que o ponto final de transmissão em fluxo a partir do qual quer transmitir conteúdo está no estado **Em execução**. 
+    
 1. Ligue uma câmara de vídeo a um computador. Iniciar e configurar um codificador em direto no local que produza um RTMP com velocidade de transmissão múltipla ou uma transmissão em fluxo MP4 fragmentada. Para obter mais informações, consulte [Suporte RTMP dos Media Services do Azure e Codificadores em Direto](http://go.microsoft.com/fwlink/?LinkId=532824).
    
     Este passo também pode ser realizado depois de criar o Canal.
@@ -59,11 +62,7 @@ Os passos seguintes descrevem as tarefas envolvidas na criação de aplicações
 5. Crie um evento/programa em direto. 
    
     Quando utilizar o Portal do Azure, ao criar um evento em direto também cria um elemento. 
-   
-   > [!NOTE]
-   > Certifique-se de que tem, pelo menos, uma unidade reservada para transmissão em fluxo no ponto final da transmissão a partir do qual pretende transmitir o conteúdo.
-   > 
-   > 
+
 6. Inicie o evento/programa quando estiver pronto para começar a transmissão em fluxo e o arquivamento.
 7. Opcionalmente, o codificador em direto pode ser indicado para iniciar um anúncio. O anúncio é inserido na transmissão de saída.
 8. Pare o evento/programa sempre que pretender interromper a transmissão em fluxo e arquivar o evento.
@@ -79,29 +78,7 @@ Se pretende ver as notificações e os erros produzidos pelo Portal do Azure, cl
 
 ![Notificações](./media/media-services-portal-passthrough-get-started/media-services-notifications.png)
 
-## <a name="configure-streaming-endpoints"></a>Configurar os pontos finais de transmissão em fluxo
-Os Serviços de Multimédia fornecem um empacotamento dinâmico, permitindo a entrega dos seus MP4s com várias velocidades nos seguintes formatos de transmissão em fluxo: MPEG DASH, HLS, Smooth Streaming, ou HDS, sem ter de voltar a criar o pacote para estes formatos de transmissão em fluxo. Com o empacotamento dinâmico, só tem de armazenar e pagar os ficheiros num único formato de armazenamento, e os Serviços de Multimédia compilam e disponibilizam a resposta adequada com base nos pedidos de um cliente.
-
-Para tirar partido do empacotamento dinâmico, precisa de, pelo menos, uma unidade de transmissão em fluxo para o ponto final de transmissão em fluxo a partir do qual planeia distribuir o conteúdo.  
-
-Para criar e alterar o número de unidades reservadas para transmissão em fluxo, faça o seguinte:
-
-1. Inicie sessão no [Portal do Azure](https://portal.azure.com/).
-2. Na janela **Definições**, clique em **Pontos finais de transmissão em fluxo**. 
-3. Clique no ponto final de transmissão em fluxo predefinido. 
-   
-    A janela **DETALHES DO PONTO FINAL DE TRANSMISSÃO EM FLUXO PREDEFINIDO** é apresentada.
-4. Para especificar o número de unidades de transmissão em fluxo, deslize o controlo de deslize **Unidades de transmissão em fluxo**.
-   
-    ![Unidades de transmissão em fluxo](./media/media-services-portal-passthrough-get-started/media-services-streaming-units.png)
-5. Clique no botão **Guardar** para guardar as alterações.
-   
-   > [!NOTE]
-   > A alocação de quaisquer novas unidades pode demorar até 20 minutos a concluir.
-   > 
-   > 
-
-## <a name="create-and-start-passthrough-channels-and-events"></a>Criar e iniciar eventos e canais pass-through
+## <a name="create-and-start-pass-through-channels-and-events"></a>Criar e iniciar eventos e canais pass-through
 Um canal está associado a eventos/programas que permitem controlar a publicação e armazenamento de segmentos numa transmissão em fluxo em direto. Os canais gerem eventos. 
 
 Pode especificar o número de horas que pretenda manter o conteúdo gravado para o programa através da configuração da duração da **Janela de Arquivo**. Este valor pode ser definido a partir de um mínimo de 5 minutos até um máximo de 25 horas. A duração da janela de arquivo dita também o tempo máximo que os clientes podem recuar a partir da posição atual em direto. Os eventos podem ser executados durante o período de tempo especificado, contudo, o conteúdo que não respeitar essa duração da janela é continuamente descartado. O valor desta propriedade também determina durante quanto tempo os manifestos dos clientes podem aumentar.
@@ -180,6 +157,6 @@ Rever os percursos de aprendizagem dos Serviços de Multimédia
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Jan17_HO2-->
 
 

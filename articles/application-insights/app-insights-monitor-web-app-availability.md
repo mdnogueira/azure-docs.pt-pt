@@ -178,7 +178,7 @@ Os Plug-ins de Teste Web permitem-lhe parametrizar tempos.
 
     ![Escolher Adicionar Plug-in de Teste Web e selecionar um tipo.](./media/app-insights-monitor-web-app-availability/appinsights-72webtest-plugins.png)
 
-    Neste exemplo, utilizamos duas instâncias do Plug-in Data/Hora. Uma instância para “há 15 minutos” e outra para “agora”.
+    Neste exemplo, utilizamos duas instâncias do Plug-in Data/Hora. Uma instância para “há&15; minutos” e outra para “agora”.
 2. Abra as propriedades de cada plug-in. Atribua um nome e defina-o para utilizar a hora atual. Para uma das propriedades, defina Adicionar Minutos = -15.
 
     ![Definir um nome, Utilizar Hora Atual e Adicionar Minutos.](./media/app-insights-monitor-web-app-availability/appinsights-72webtest-plugin-parameters.png)

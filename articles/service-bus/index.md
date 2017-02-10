@@ -1,13 +1,14 @@
 ---
 layout: LandingPage
+description: "Saiba como configurar mensagens que estabelecem ligação a aplicações e serviços entre ambientes no local e na cloud.  Tutoriais, vídeos, referências de API e muito mais."
 translationtype: Human Translation
-ms.sourcegitcommit: 95b54199c307efea21666c774525a9a539472131
-ms.openlocfilehash: 0ecc51f19240ecfa49852ed1eafcf78d1227af16
+ms.sourcegitcommit: b4080529e9ff4500cef20e1dd735765051f6ce1f
+ms.openlocfilehash: fe4c303bb0e944e5abb26f8baa394d0df71240a5
 
 ---
 #<a name="service-bus-documentation"></a>Documentação do Service Bus
 
-O Service Bus fornece comunicação com capacidade de cloud com um sistema de mensagens empresarial e comunicações reencaminhadas que o ajudam a ligar soluções no local à cloud. 
+Saiba como utilizar o Service Bus para estabelecer a ligação entre ambientes no local e na cloud. Tutoriais, vídeos, referências de API e outra documentação mostram como configurar o serviço de mensagens em cloud entre aplicações e serviços.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -234,16 +235,10 @@ O Service Bus fornece comunicação com capacidade de cloud com um sistema de me
     </li>
 </ul>
 
-<div class="downloadHolder">
-    <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/service-bus.pdf">
-        <div class="img"></div>
-        <div class="text">
-Transferir a Documentação do Service Bus </div>
-    </a>
-</div>
 
 
 
-<!--HONumber=Dec16_HO2-->
+
+<!--HONumber=Jan17_HO3-->
 
 

@@ -12,11 +12,11 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 01/03/2017
+ms.date: 01/10/2017
 ms.author: yurid
 translationtype: Human Translation
-ms.sourcegitcommit: 7f074883c2330c5814eef415f193e1775caec432
-ms.openlocfilehash: ddb38f99adef288958fd3828cb685912bf35f218
+ms.sourcegitcommit: b0694222548e39718f6626c1b1666584445f8398
+ms.openlocfilehash: 246b322378d581f6f263fd0adb96ef32f6962906
 
 
 ---
@@ -33,7 +33,7 @@ Para obter mais informações sobre como aplicar recomendações, leia [Implemen
 
 No mosaico **Estado de funcionamento da segurança dos recursos**, pode monitorizar o estado de segurança dos seus recursos. No exemplo seguinte, pode ver vários problemas com uma gravidade média e alta que necessitam de atenção. As políticas de segurança que estão ativadas terão impacto nos tipos de controlos que são monitorizados.
 
-![Mosaico de estado de funcionamento da segurança dos recursos](./media/security-center-monitoring/security-center-monitoring-fig1-new4.png)
+![Mosaico de estado de funcionamento da segurança dos recursos](./media/security-center-monitoring/security-center-monitoring-fig1-new4-2017.png)
 
 Se o Centro de Segurança identificar uma vulnerabilidade que necessita de ser tratada, tal como uma máquina virtual com atualizações de segurança em falta ou uma sub-rede sem um [grupo de segurança de rede](/virtual-network/virtual-networks-nsg.md), a vulnerabilidade será listada aqui.
 
@@ -169,7 +169,8 @@ Nesta vista de topologia, o primeiro nível tem [máquinas virtuais](../virtual-
 A parte inferior deste painel tem as recomendações para esta máquina virtual, semelhantes ao que foi descrito anteriormente. Pode clicar numa recomendação para obter mais informações ou aplicar a configuração ou o controlo de segurança necessário.
 
 ### <a name="monitor-data"></a>Monitorizar dados
-Quando clica em **Dados** no mosaico **Estado de funcionamento de segurança de recursos**, o painel **Recursos de Dados** abre-se com recomendações para SQL e Armazenamento. Também tem [recomendações](security-center-sql-service-recommendations.md) para o estado de funcionamento geral da base de dados. Para obter mais informações sobre a encriptação de armazenamento, leia Ativar a encriptação para a conta de armazenamento do Azure no Centro de segurança do Azure.
+
+Quando clica em **SQL e Dados** no mosaico **Estado de funcionamento de segurança de recursos**, o painel **Recursos de Dados** abre-se com recomendações para SQL e Armazenamento. Também tem [recomendações](security-center-sql-service-recommendations.md) para o estado de funcionamento geral da base de dados. Para obter mais informações sobre a encriptação de armazenamento, leia o artigo [Ativar a encriptação para a conta de armazenamento do Azure no Centro de Segurança do Azure](security-center-enable-encryption-for-storage-account.md).
 
 ![Recursos de Dados](./media/security-center-monitoring/security-center-monitoring-fig13-ga-new.png)
 
@@ -217,6 +218,6 @@ Neste artigo, aprendeu a utilizar as capacidades de monitorização no Centro de
 
 
 
-<!--HONumber=Jan17_HO1-->
+<!--HONumber=Jan17_HO2-->
 
 

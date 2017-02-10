@@ -1,13 +1,14 @@
 ---
 layout: LandingPage
+description: "Saiba como utilizar Hubs de Eventos para ingerir milhões de eventos por segundo a partir de dispositivos IoT ligados e aplicações num conjunto abrangente de plataformas."
 translationtype: Human Translation
-ms.sourcegitcommit: 95b54199c307efea21666c774525a9a539472131
-ms.openlocfilehash: 8244f410fa3337ae161657fe11ae5db2a2f378cd
+ms.sourcegitcommit: b4080529e9ff4500cef20e1dd735765051f6ce1f
+ms.openlocfilehash: 29d6165596d3e98264285b6471c8f54b66aa2c3a
 
 ---
 #<a name="event-hubs-documentation"></a>Documentação dos Hubs de Eventos
 
-Os Event Hubs são um serviço de entrada de dados altamente dimensionável, que pode ingerir milhões de eventos por segundo para que possa processar e analisar quantidades enormes de dados produzidos pelos dispositivos e aplicações ligados. Os Event Hubs atuam como a “porta de entrada” para um pipeline de eventos. E, quando os dados são recolhidos para um hub de eventos, podem ser transformados e armazenados através de qualquer fornecedor de análise em tempo real ou quaisquer adaptadores de criação de batches ou armazenamento.
+Saiba como utilizar Hubs de Eventos para recolher e gerir milhões de eventos por segundo a partir de aplicações e dispositivos IoT ligados. Tutoriais, referências de API e outra documentação mostram-lhe como configurar a ingestão dimensionável para eventos de um conjunto abrangente de plataformas.
 
 <ul class="panelContent cardsFTitle">
      <li>
@@ -115,16 +116,10 @@ Os Event Hubs são um serviço de entrada de dados altamente dimensionável, que
     </li>
 </ul>
 
-<div class="downloadHolder">
-    <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/event-hubs.pdf">
-        <div class="img"></div>
-        <div class="text">
-Transferir a Documentação dos Hubs de Eventos </div>
-    </a>
-</div>
 
 
 
-<!--HONumber=Dec16_HO2-->
+
+<!--HONumber=Jan17_HO3-->
 
 

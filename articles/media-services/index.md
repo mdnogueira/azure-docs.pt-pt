@@ -1,15 +1,14 @@
 ---
 layout: LandingPage
+description: "Saiba como transmitir em fluxo a pedido ou emitir vídeo de qualidade de emissão de forma segura com os Serviços de Multimédia, uma plataforma na cloud extensível. Tutoriais, referências de API e muito mais."
 translationtype: Human Translation
-ms.sourcegitcommit: 95b54199c307efea21666c774525a9a539472131
-ms.openlocfilehash: 78433e8f6d66d55f7917e4abbbbe1c24e662a400
+ms.sourcegitcommit: b4080529e9ff4500cef20e1dd735765051f6ce1f
+ms.openlocfilehash: 3e029a72b1918636ede33db1445ce0550d40ede6
 
 ---
 # <a name="media-services-documentation"></a>Documentação dos Serviços de Multimédia
 
-Os Serviços de Multimédia do Azure são uma plataforma baseada na cloud extensível que permite aos programadores compilar uma gestão de multimédia dimensionável e aplicações de entrega. Os Serviços de Multimédia são baseados nas APIs REST, que permitem carregar, armazenar, codificar e empacotar de forma segura conteúdos de vídeo ou áudio, para o envio de transmissão em fluxo tanto a pedido como em direto para vários clientes (por exemplo, TV, PC e dispositivos móveis).
-
-Pode compilar fluxos de trabalho ponto-a-ponto utilizando inteiramente os Serviços de Multimédia. Pode também optar por utilizar componentes de terceiros para algumas partes do seu fluxo de trabalho. Por exemplo, pode codificar através de um codificador de terceiros e, em seguida, carregar, proteger, empacotar e fornecer com os Serviços de Multimédia.
+Saiba como transmitir vídeo de qualidade de emissão com os Serviços de Multimédia, uma plataforma na cloud extensível. Tutoriais, referências de API e outra documentação mostram-lhe como fornecer de forma segura transmissões em fluxo de vídeo ou áudio a pedido e live dimensionáveis para milhões de utilizadores.
 
 <ul class="panelContent cardsFTitle">
      <li>
@@ -200,16 +199,9 @@ Pode compilar fluxos de trabalho ponto-a-ponto utilizando inteiramente os Servi�
     </li>
 </ul>
 
-<div class="downloadHolder">
-    <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/media-services.pdf">
-        <div class="img"></div>
-        <div class="text">
-Transferir a Documentação dos Serviços de Multimédia </div>
-    </a>
-</div>
 
 
 
-<!--HONumber=Dec16_HO2-->
+<!--HONumber=Jan17_HO3-->
 
 
