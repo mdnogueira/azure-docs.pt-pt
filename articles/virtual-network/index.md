@@ -1,14 +1,15 @@
 ---
 layout: LandingPage
 +toc_rel: breadcrumb.json
+description: "Saiba como utilizar uma rede virtual na cloud. A documentação mostra como implementar uma VNet, utilizá-lo para iniciar recursos e integrar com uma rede no local."
 translationtype: Human Translation
-ms.sourcegitcommit: 511d15cc48b17bd65bedc2c1cd9602d868ffa724
-ms.openlocfilehash: c285a2be335bed0adada1877f94c7999d7c8b7e5
+ms.sourcegitcommit: b4080529e9ff4500cef20e1dd735765051f6ce1f
+ms.openlocfilehash: 2c3ce9081d456dcedd61ba85f2d023526aa5fa49
 
 ---
 # <a name="virtual-network-documentation"></a>Documentação da Rede Virtual
 
-Uma Rede Virtual do Azure (VNet) é uma representação lógica da sua própria rede na cloud.  Com uma VNet, pode controlar completamente os elementos da rede, bem como segmentar a sua VNet em sub-redes e utilizá-la para iniciar Máquinas Virtuais do Azure ou Serviços Cloud.  Além disso, pode ligar a VNet à rede no local através de uma das opções de conectividade disponíveis no Azure, o que lhe permite expandir a sua rede para a cloud enquanto mantém o controlo sobre os recursos.
+Saiba como utilizar uma Rede Virtual (VNet), uma representação lógica da rede na cloud. A documentação mostra-lhe como configura e gerir uma VNet, utilizá-la para iniciar as Máquinas Virtuais ou Serviços Cloud, ligar a VNet à rede no local e expandir a rede para a cloud enquanto mantém o controlo sobre os recursos.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -148,16 +149,10 @@ Uma Rede Virtual do Azure (VNet) é uma representação lógica da sua própria 
     </li>
 </ul>
 
-<div class="downloadHolder">
-    <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/virtual-network.pdf">
-        <div class="img"></div>
-        <div class="text">
-Transferir a Documentação da Rede Virtual </div>
-    </a>
-</div>
 
 
 
-<!--HONumber=Dec16_HO2-->
+
+<!--HONumber=Jan17_HO3-->
 
 

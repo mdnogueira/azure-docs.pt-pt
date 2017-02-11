@@ -1,13 +1,14 @@
 ---
 layout: LandingPage
+description: "Saiba como utilizar a Cache de Redis do Azure, uma cache de dados mediador de mensagens que lhe dá às aplicações acesso rápido aos dados. Tutoriais, referências de API e muito mais."
 translationtype: Human Translation
-ms.sourcegitcommit: 4cd50960b30990f3220788e6613a2815d8e28612
-ms.openlocfilehash: 026c452cd784da14a901cab8e5aecaafda448418
+ms.sourcegitcommit: b4080529e9ff4500cef20e1dd735765051f6ce1f
+ms.openlocfilehash: 328084918199e162ad0cfa9ac67737a66fa4d021
 
 ---
 #<a name="redis-cache-documentation"></a>Documentação da Cache de Redis
 
-A Cache de Redis do Azure é baseada na popular Cache de Redis em open source. Dá-lhe acesso a uma cache de Redis segura, dedicada, gerida pela Microsoft e acessível a partir de qualquer aplicação no Azure. A Cache de Redis do Azure oferece alto débito, acesso consistente a dados de baixa latência para criar aplicações do Azure rápidas e dimensionáveis.
+Saiba como utilizar a Cache de Redis do Azure, uma cache de dados seguros e mediador de mensagens que fornece débito elevado e baixa latência acesso a dados para aplicações. Tutoriais, referências de API e outra documentação mostram-lhe como utilizar a Cache de Redis a partir de qualquer aplicação no Azure.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -148,7 +149,7 @@ A Cache de Redis do Azure é baseada na popular Cache de Redis em open source. D
                     <div class="cardText">
                         <h3>Linha de Comandos</h3>
                         <p><a href="/powershell/resourcemanager/azurerm.rediscache/v2.3.0/azurerm.rediscache">PowerShell</a></p>
-                        <p><a href="/cli/azure/redis">CLI do Azure 2.0 (Pré-visualização )</a></p>
+                        <p><a href="/cli/azure/redis">CLI 2.0 do Azure (Pré-visualização)</a></p>
                     </div>
                 </div>
             </div>
@@ -163,7 +164,7 @@ A Cache de Redis do Azure é baseada na popular Cache de Redis em open source. D
                         <p><a href="/dotnet/api/microsoft.azure.management.redis">.NET</a></p>
                         <p><a href="/java/api/com.microsoft.azure.management.redis._redis_cache">Java</a></p>
                         <p><a href="http://redis.io/clients">Clientes da Redis</a></p>
-                        <p><a href="http://redis.io/commands#">Comandos da redis</a></p>
+                        <p><a href="http://redis.io/commands#">Comandos da Redis</a></p>
                    </div>
                 </div>
             </div>
@@ -183,16 +184,10 @@ A Cache de Redis do Azure é baseada na popular Cache de Redis em open source. D
     </li>
 </ul>
 
-<div class="downloadHolder">
-    <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/redis-cache.pdf">
-        <div class="img"></div>
-        <div class="text">
-Transferir a Documentação da Cache de Redis </div>
-    </a>
-</div>
 
 
 
-<!--HONumber=Dec16_HO2-->
+
+<!--HONumber=Jan17_HO3-->
 
 

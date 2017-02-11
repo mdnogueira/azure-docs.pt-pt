@@ -1,14 +1,15 @@
 ---
 layout: LandingPage
+description: "Saiba mais sobre a Base de Dados SQL, uma serviço de base de dados na cloud. Tutoriais, vídeos e outra documentação mostram como configurar, ligar e gerir uma base de dados relacional."
 translationtype: Human Translation
-ms.sourcegitcommit: 511d15cc48b17bd65bedc2c1cd9602d868ffa724
-ms.openlocfilehash: 07cbe71fc9330724dd8b92c5321d4fca9ecde512
+ms.sourcegitcommit: b4080529e9ff4500cef20e1dd735765051f6ce1f
+ms.openlocfilehash: 2dfb79cc8f2aa2e2ca63b905666f519e083aa69d
 
 ---
 
 # <a name="sql-database-documentation"></a>Documentação da Base de Dados SQL
 
-A Base de Dados SQL do Azure é um serviço de base de dados relacional na cloud baseado no motor Microsoft SQL Server líder de mercado, com capacidades fundamentais. Esta proporciona um desempenho previsível, escalabilidade sem períodos de indisponibilidade, continuidade do negócio e proteção de dados - tudo com muito pouca administração. Como se baseia no motor do SQL Server, a Base de Dados SQL suporta as ferramentas, bibliotecas e APIs existentes do SQL Server, facilitando a transição e a expansão para a cloud.
+Saiba como utilizar uma Base de dados SQL, uma base de dados que funciona como um serviço na cloud criado no motor do Microsoft SQL Server. Tutoriais, vídeos e outra documentação mostram-lhe como configurar, ligar e gerir uma base de dados SQL.
 
 <ul class="panelContent cardsFTitle">
      <li>
@@ -152,16 +153,10 @@ A Base de Dados SQL do Azure é um serviço de base de dados relacional na cloud
     </li>
 </ul>
 
-<div class="downloadHolder">
-    <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/sql-database.pdf">
-        <div class="img"></div>
-        <div class="text">
-Transferir a Documentação da Base de Dados SQL </div>
-    </a>
-</div>
 
 
 
-<!--HONumber=Dec16_HO2-->
+
+<!--HONumber=Jan17_HO3-->
 
 
