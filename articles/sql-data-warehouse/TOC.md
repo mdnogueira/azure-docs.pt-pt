@@ -6,17 +6,14 @@
 
 # Introdução
 
-## Criar um SQL Data Warehouse
-### [Portal do Azure](sql-data-warehouse-get-started-provision.md)
-### [PowerShell](sql-data-warehouse-get-started-provision-powershell.md)
-### [T-SQL](sql-data-warehouse-get-started-create-database-tsql.md)
+## [Tutorial de principiante](sql-data-warehouse-get-started-tutorial.md)
 ## [Melhores práticas](sql-data-warehouse-best-practices.md)
 ## [Gerir](sql-data-warehouse-overview-manage.md)
 ## [Obter suporte](sql-data-warehouse-get-started-create-support-ticket.md)
 
 # Procedimento
 
-## Criar cópias de segurança e restauro
+## Cópia de segurança e restauro
 
 ### [Descrição Geral da Cópia de Segurança](sql-data-warehouse-backups.md)
 ### [Descrição Geral do Restauro](sql-data-warehouse-restore-database-overview.md)
@@ -32,6 +29,11 @@
 ### [SSMS](sql-data-warehouse-query-ssms.md)
 ### [Visual Studio](sql-data-warehouse-query-visual-studio.md)
 ### [Instalar o Visual Studio](sql-data-warehouse-install-visual-studio.md)
+
+## Criar
+### [Portal do Azure](sql-data-warehouse-get-started-provision.md)
+### [PowerShell](sql-data-warehouse-get-started-provision-powershell.md)
+### [T-SQL](sql-data-warehouse-get-started-create-database-tsql.md)
 
 ## Programar
 
@@ -145,6 +147,6 @@
 ### [Gestão de dados](sql-data-warehouse-partner-data-management.md)
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Jan17_HO4-->
 
 

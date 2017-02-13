@@ -25,6 +25,8 @@
 ## [Criar uma UO num domínio gerido](active-directory-ds-admin-guide-create-ou.md)
 ## [Administrar política de grupo num domínio gerido](active-directory-ds-admin-guide-administer-group-policy.md)
 ## [Selecionar uma rede virtual](active-directory-ds-networking.md)
+## [Configurar o suporte de sincronização de perfis do SharePoint Server](active-directory-ds-enable-sharepoint-profile-sync.md)
+
 
 ## Resolução de problemas
 ### [FAQs](active-directory-ds-faqs.md)
@@ -42,6 +44,6 @@
 ## [Contacte-nos](active-directory-ds-contact-us.md)
 
 
-<!--HONumber=Jan17_HO3-->
+<!--HONumber=Jan17_HO5-->
 
 
