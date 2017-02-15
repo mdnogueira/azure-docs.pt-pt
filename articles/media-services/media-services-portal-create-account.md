@@ -1,5 +1,5 @@
 ---
-title: " Criar uma conta dos Serviços de Multimédia do Azure no portal do Azure | Microsoft Docs"
+title: " Criar uma conta dos Serviços de Multimédia do Azure com o portal do Azure | Microsoft Docss"
 description: "Este tutorial orienta-o ao longo dos passos para criar uma conta dos Serviços de Multimédia do Azure no portal do Azure."
 services: media-services
 documentationcenter: 
@@ -12,11 +12,11 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 10/24/2016
+ms.date: 01/10/2017
 ms.author: juliako
 translationtype: Human Translation
-ms.sourcegitcommit: 312231f395f19fde98431c24b71ce7cec3061eaf
-ms.openlocfilehash: 4a1d5d706cbfb5c42a36fd03033aa361ef3d4d11
+ms.sourcegitcommit: f6d6b7b1051a22bbc865b237905f8df84e832231
+ms.openlocfilehash: 01c1297a6b107f91d8e6e73f17d76499d67849de
 
 
 ---
@@ -54,10 +54,10 @@ Os passos nesta secção explicam como criar uma conta dos AMS.
 1. Inicie sessão no [Portal do Azure](https://portal.azure.com/).
 2. Clique em **+Novo** > **Web + Móvel** > **Serviços de Multimédia**.
    
-    ![Criar Media Services](./media/media-services-portal-vod-get-started/media-services-new1.png)
+    ![Criar Media Services](./media/media-services-create-account/media-services-new1.png)
 3. Em **CRIAR CONTA DE MEDIA SERVICES**, Introduza os valores necessários.
    
-    ![Criar Media Services](./media/media-services-portal-vod-get-started/media-services-new3.png)
+    ![Criar Media Services](./media/media-services-create-account/media-services-new3.png)
    
    1. Em **Nome da Conta**, introduza o nome da nova conta de AMS. Um nome de conta dos Media Services é composto por números ou letras minúsculas sem espaços, com 3 a 24 carateres de comprimento.
    2. Na subscrição, selecione entre as diferentes subscrições do Azure disponíveis para si.
@@ -69,9 +69,12 @@ Os passos nesta secção explicam como criar uma conta dos AMS.
    6. Selecione **Afixar no dashboard** para ver o progresso da implementação da conta.
 4. Clique em **Criar** na parte inferior do formulário.
    
-    Após criar a conta com êxito, o estado é alterado para **Em Execução**. 
+    Depois de criar a conta com êxito, a página de descrição geral é carregada. Na tabela do ponto final de transmissão em fluxo, a conta terá um ponto final de transmissão em fluxo predefinido no estado **Parado**. 
+
+    >[!NOTE]
+    >Quando a sua conta AMS é criada, é adicionado um ponto final de transmissão em fluxo **predefinido** à sua conta no estado **Parado**. Para começar a transmitir o seu conteúdo em fluxo e a tirar partido do empacotamento e encriptação dinâmicos, o ponto final de transmissão em fluxo a partir do qual quer transmitir conteúdo tem de estar no estado **Em execução**. 
    
-    ![Definições dos Media Services](./media/media-services-portal-vod-get-started/media-services-settings.png)
+    ![Definições dos Media Services](./media/media-services-create-account/media-services-settings.png)
    
     Para gerir a sua conta de AMS (por exemplo, carregar vídeos, codificar elementos, monitorizar o progresso da tarefa) utilize a janela **Definições**.
 
@@ -86,7 +89,7 @@ Necessita do nome da conta e das informações da chave primária para aceder pr
     A janela **Gerir chaves** mostra o nome da conta e as chaves primária e secundária são apresentadas. 
 3. Prima o botão Copiar para copiar os valores.
    
-    ![Chaves dos Media Services](./media/media-services-portal-vod-get-started/media-services-keys.png)
+    ![Chaves dos Media Services](./media/media-services-create-account/media-services-keys.png)
 
 ## <a name="next-steps"></a>Passos seguintes
 Agora, pode carregar ficheiros para a sua conta do AMS. Para obter mais informações, veja [Carregar ficheiros](media-services-portal-upload-files.md).
@@ -100,6 +103,6 @@ Agora, pode carregar ficheiros para a sua conta do AMS. Para obter mais informa�
 
 
 
-<!--HONumber=Nov16_HO5-->
+<!--HONumber=Jan17_HO2-->
 
 

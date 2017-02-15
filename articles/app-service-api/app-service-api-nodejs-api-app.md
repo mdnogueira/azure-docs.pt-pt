@@ -15,8 +15,8 @@ ms.topic: get-started-article
 ms.date: 05/26/2016
 ms.author: rachelap
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: e8a1ac3df5225fdcfe2717c2cf50bfc5b7cfda36
+ms.sourcegitcommit: c700bfbd4f50a892e182124eb596159d2eb63feb
+ms.openlocfilehash: b6f97d299b1c100e4bae111d7f95c9619c6c9399
 
 
 ---
@@ -41,7 +41,7 @@ Embora o App Service suporte várias formas de implementar o seu código numa ap
    
     A API de amostra fornece dois pontos finais: um pedido Get para `/contacts` devolve uma lista de nomes e endereços de correio eletrónico no formato JSON, enquanto `/contacts/{id}` devolve apenas o contacto selecionado.
 
-## <a name="scaffold-autogenerate-nodejs-code-based-on-swagger-metadata"></a>Estruturar (gerar automaticamente) o código Node.js com base nos metadados Swagger
+## <a name="scaffold-auto-generate-nodejs-code-based-on-swagger-metadata"></a>Estruturar (gerar automaticamente) o código Node.js com base nos metadados Swagger
 [Swagger](http://swagger.io/) é um formato de ficheiro de metadados que descreve uma API RESTful. O App Service do Azure possui [suporte incorporado para metadados Swagger](app-service-api-metadata.md). Esta secção do tutorial exemplifica o fluxo de trabalho de desenvolvimento de uma API na qual cria primeiro metadados Swagger e utiliza para estruturar (gerar automaticamente) o código do servidor para a API. 
 
 > [!NOTE]
@@ -131,7 +131,7 @@ Embora o App Service suporte várias formas de implementar o seu código numa ap
         app.use(bodyParser.json());
    
         app.use(swaggerize({
-            api: path.resolve('./config/api.json'), // third change
+            api: path.resolve('./config/swagger.json'), // third change
             handlers: path.resolve('./handlers'),
             docspath: '/swagger' // fourth change
         }));
@@ -275,6 +275,6 @@ Neste momento, já criou com êxito uma aplicação API e implementou o código 
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Jan17_HO2-->
 
 

@@ -1,13 +1,14 @@
 ---
 layout: LandingPage
+description: "Saiba como configurar a recuperação após desastre na cloud e a continuidade de negócio para máquinas virtuais e servidores físicos implementando e gerindo a replicação."
 translationtype: Human Translation
-ms.sourcegitcommit: 511d15cc48b17bd65bedc2c1cd9602d868ffa724
-ms.openlocfilehash: e13f18042677dd1cea5913d7f6658f0c5d3e1d98
+ms.sourcegitcommit: b4080529e9ff4500cef20e1dd735765051f6ce1f
+ms.openlocfilehash: b8fe2704e7c68c1fe815d204d424f28fcbdfe75c
 
 ---
 # <a name="site-recovery-documentation"></a>Documentação do Site Recovery
 
-O Azure Site Recovery contribui para a sua estratégia de continuidade do negócio e de recuperação após desastre (BCDR) através da orquestração da replicação de máquinas virtuais e servidores físicos. Pode replicar VMs e servidores a partir do seu datacenter local primário para o Azure ou para um datacenter secundário. Em caso de falhas no local primário, faz-se a ativação pós-falha para o secundário, para manter acessíveis e disponíveis as cargas de trabalho.
+Saiba como utilizar o Site Recovery para continuidade de negócio e a estratégia de recuperação após desastre para nuvens privadas. Tutoriais e outra documentação mostram-lhe como planear, implementar e gerir a orquestração de replicação de máquinas virtuais e servidores físicos no local para a cloud ou para um centro de dados secundário.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -79,16 +80,10 @@ O Azure Site Recovery contribui para a sua estratégia de continuidade do negóc
     </li>
 </ul>
 
-<div class="downloadHolder">
-    <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/site-recovery.pdf">
-        <div class="img"></div>
-        <div class="text">
-Transferir a Documentação do Site Recovery </div>
-    </a>
-</div>
 
 
 
-<!--HONumber=Dec16_HO2-->
+
+<!--HONumber=Jan17_HO3-->
 
 

@@ -1,14 +1,15 @@
 ---
 layout: LandingPage
+description: "Saiba como utilizar serviços de monitorização e diagnósticos para monitorizar o desempenho, manter a segurança e identificar tendências. Referências de API, melhores práticas e mais."
 translationtype: Human Translation
-ms.sourcegitcommit: 3752a677351518195773a86c3824078a5aff6d03
-ms.openlocfilehash: f5cf41dc2362afa365c491e47fb7708d8a9667ba
+ms.sourcegitcommit: b4080529e9ff4500cef20e1dd735765051f6ce1f
+ms.openlocfilehash: e59d88dbd538aad3e21a31fd721361cd9ffd4919
 
 ---
 
 # <a name="monitoring-and-diagnostics-documentation"></a>Documentação da Monitorização e Diagnóstico
 
-A Monitorização e Diagnóstico é uma plataforma de sistemas distribuídos que facilita o empacotamento, a implementação e a gestão de microsserviços dimensionáveis e fiáveis, além de fazer face aos desafios significativos no desenvolvimento e na gestão de aplicações na cloud.  A Monitorização e Diagnóstico representa a plataforma middleware da próxima geração para criar e gerir estas aplicações empresariais de Escalão 1 na cloud.
+Saiba como utilizar serviços de monitorização e diagnósticos do Azure para monitorizar o desempenho, manter a segurança e identificar tendências. Tutoriais, referências de API, melhores práticas e outra documentação ajudam a compreender as utilizações de monitorização e de diagnóstico e de como planear e implementar soluções dimensionáveis e fiáveis.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -105,76 +106,50 @@ A Monitorização e Diagnóstico é uma plataforma de sistemas distribuídos que
 
 ---
 
-## <a name="reference"></a>Referência
-
+<h2>Referência</h2>
 <ul class="panelContent cardsW">
     <li>
-        <a href="https://msdn.microsoft.com/library/azure/mt282452#40v=azure.200#41">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-                        <h3>PowerShell</h3>
-                        <p>Cmdlet do PowerShell de Monitorização e Diagnósticos</p>
+                        <h3>Linha de Comandos</h3>
+                        <p><a href="/powershell/resourcemanager/azurerm.insights/v1.0.12/azurerm.insights?redirectedfrom=msdn#40v=azure.20041">PowerShell</a></p>
                     </div>
                 </div>
             </div>
         </div>
-        </a>
     </li>
     <li>
-        <a href="/cli/azure">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-                        <h3>CLI do Azure</h3>
-                        <p>CLI do Azure de Monitorização e Diagnóstico</p>
+                        <h3>Linguagens</h3>
+                        <p><a href="https://msdn.microsoft.com/library/azure/dn802153">.NET</a></p>
                     </div>
                 </div>
             </div>
         </div>
-        </a>
     </li>
     <li>
-        <a href="https://msdn.microsoft.com/library/azure/mt416943">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3>.NET</h3>
-                        <p>Referência Gerida da Monitorização e Diagnóstico</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </a>
-    </li>
-    <li>
-        <a href="https://msdn.microsoft.com/library/azure/dn931943">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
                         <h3>REST</h3>
-                        <p>API REST da Monitorização e Diagnóstico</p>
+                        <p><a href="/rest/api/monitor/">Referência da API REST</a></p>
                     </div>
                 </div>
             </div>
         </div>
-        </a>
     </li>
-<ul>
-
-<div class="downloadHolder">
-    <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/monitoring-and-diagnostics.pdf">
-        <div class="img"></div>
-        <div class="text">
-Transferir a Documentação da Monitorização e Diagnóstico </div>
-    </a>
-</div>
+</ul>
 
 
-<!--HONumber=Dec16_HO1-->
+
+
+
+<!--HONumber=Jan17_HO3-->
 
 

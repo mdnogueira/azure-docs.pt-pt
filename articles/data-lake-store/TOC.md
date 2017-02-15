@@ -51,7 +51,6 @@
 ## Gerir
 ### [Aceder aos registos de diagnósticos](data-lake-store-diagnostic-logs.md)
 ### [Plano para elevada disponibilidade](data-lake-store-troubleshooting-guidance.md)
-### [Guia de otimização do desempenho](data-lake-store-performance-tuning-guidance.md)
 
 # Referência
 ## [PowerShell](/powershell/resourcemanager/azurerm.datalakestore/v3.1.0/azurerm.datalakestore)

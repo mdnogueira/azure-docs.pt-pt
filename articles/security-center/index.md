@@ -1,13 +1,14 @@
 ---
 layout: LandingPage
+description: "Saiba como configurar a gestão de monitorização e a política de segurança de recursos do Azure. Tutoriais, uma referência de API REST e outra documentação."
 translationtype: Human Translation
-ms.sourcegitcommit: 95b54199c307efea21666c774525a9a539472131
-ms.openlocfilehash: 8091c1c7cbf6617725bf7620fe0c2232e4e47cec
+ms.sourcegitcommit: b4080529e9ff4500cef20e1dd735765051f6ce1f
+ms.openlocfilehash: 5600b20d3c04547e2002a779fde70769bb6a5e59
 
 ---
 # <a name="security-center-documentation"></a>Documentação do Centro de Segurança
 
-O Centro de Segurança ajuda-o a evitar, detetar e responder a ameaças com uma maior visibilidade e controlo sobre a segurança dos seus recursos Azure. Fornece gestão de políticas e monitorização de segurança integrada nas suas subscrições do Azure, ajuda a detetar ameaças que caso contrário podem passar despercebidas e funciona com um ecossistema abrangente de soluções de segurança.
+Saiba como utilizar o Centro de Segurança para obter visibilidade e controlo sobre a segurança dos recursos Azure.  Tutoriais, uma referência da REST API e outra documentação mostram-lhe como configurar a gestão de monitorização e política de segurança que funcionam com uma ecossistema abrangente de soluções de segurança.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -84,15 +85,10 @@ O Centro de Segurança ajuda-o a evitar, detetar e responder a ameaças com uma 
     </li>
 </ul>   
 
-<div class="downloadHolder">
-    <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/security-center.pdf">
-        <div class="img"></div>
-        <div class="text">
-Transferir a Documentação do Centro de Segurança </div>
-    </a>
-</div>
 
 
-<!--HONumber=Dec16_HO2-->
+
+
+<!--HONumber=Jan17_HO3-->
 
 

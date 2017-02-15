@@ -1,14 +1,15 @@
 ---
 layout: LandingPage
+description: "Saiba como utilizar o Log Analytics para recolher e analisar os dados gerados pelos recursos nos ambientes na cloud e no local, independentemente da localização física."
 translationtype: Human Translation
-ms.sourcegitcommit: c086dc37b8665017de0dbbad9c7ac82931932a72
-ms.openlocfilehash: bd819da72cbfdd58323321eb41ab28441e043c84
+ms.sourcegitcommit: b4080529e9ff4500cef20e1dd735765051f6ce1f
+ms.openlocfilehash: ffb5ebc79807a81e53c2bca3fa5672a11e777663
 
 ---
 
 # <a name="log-analytics-documentation"></a>Documentação do Log Analytics
 
-O Log Analytics é um serviço do Operations Management Suite (OMS) que o ajuda a recolher e a analisar dados gerados pelos recursos dos seus ambientes na nuvem e no local. Oferece informações em tempo real através da pesquisa integrada e dos dashboards personalizáveis para analisar, prontamente, milhões de registos de todas as cargas de trabalho e servidores, independentemente da localização física dos mesmos.
+Saiba como utiliza o Log Analytics no Operations Management Suite para recolher e a analisar dados gerados pelos recursos dos seus ambientes na cloud e no local. Tutoriais e outra documentação mostram como obter conhecimentos aprofundados em tempo real ao longo de cargas de trabalho e servidores, independentemente da localização física.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -85,16 +86,10 @@ O Log Analytics é um serviço do Operations Management Suite (OMS) que o ajuda 
     </li>
 </ul>
 
-<div class="downloadHolder">
-    <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/log-analytics.pdf">
-        <div class="img"></div>
-        <div class="text">
-Transferir a Documentação do Log Analytics </div>
-    </a>
-</div>
 
 
 
-<!--HONumber=Dec16_HO2-->
+
+<!--HONumber=Jan17_HO3-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: " Introdução à entrega de conteúdos a pedido com o Portal do Azure | Microsoft Docs"
+title: " Introdução à entrega de conteúdos a pedido com o portal do Azure | Microsoft Docss"
 description: "Este tutorial explica os passos para implementar um serviço básico de entrega de conteúdos de Vídeo a Pedido (VoD) com a aplicação Azure Media Services (AMS) com o Portal do Azure."
 services: media-services
 documentationcenter: 
@@ -12,11 +12,11 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 08/30/2016
+ms.date: 01/05/2017
 ms.author: juliako
 translationtype: Human Translation
-ms.sourcegitcommit: ff663f40507547ba561053b5c9a7a8ce93fbf213
-ms.openlocfilehash: 70071f8d1b70d062aec1ea4fd35b8acb3512bab6
+ms.sourcegitcommit: f6d6b7b1051a22bbc865b237905f8df84e832231
+ms.openlocfilehash: b433c35817a0ba36003e8d506db9d2d6d97f9ff7
 
 
 ---
@@ -33,7 +33,7 @@ Este tutorial explica os passos para implementar um serviço básico de entrega 
 Este tutorial inclui as seguintes tarefas:
 
 1. Criar uma conta dos Azure Media Services.
-2. Configurar o ponto final de transmissão em fluxo.
+2. Iniciar o ponto final de transmissão em fluxo.
 3. Carregar um ficheiro de vídeo.
 4. Codificar o ficheiro de origem para um conjunto de ficheiros MP4 de velocidade de transmissão adaptável.
 5. Publicar o elemento e obter os URLs de transferência progressiva e transmissão em fluxo.  
@@ -60,7 +60,7 @@ Os passos nesta secção explicam como criar uma conta dos AMS.
    6. Selecione **Afixar no dashboard** para ver o progresso da implementação da conta.
 4. Clique em **Criar** na parte inferior do formulário.
    
-    Após criar a conta com êxito, o estado é alterado para **Em Execução**. 
+    Depois de criar a conta com êxito, a página de descrição geral é carregada. Na tabela do ponto final de transmissão em fluxo, a conta terá um ponto final de transmissão em fluxo predefinido no estado **Parado**. O ponto final de transmissão em fluxo a partir do qual quer transmitir o seu conteúdo tem de estar no estado **Em execução**. 
    
     ![Definições dos Media Services](./media/media-services-portal-vod-get-started/media-services-settings.png)
    
@@ -79,33 +79,22 @@ Necessita do nome da conta e das informações da chave primária para aceder pr
    
     ![Chaves dos Media Services](./media/media-services-portal-vod-get-started/media-services-keys.png)
 
-## <a name="configure-streaming-endpoints"></a>Configurar os pontos finais de transmissão em fluxo
-Ao trabalhar com os Azure Media Services, uma das situações mais comuns é a entrega de vídeo através de transmissão em fluxo de velocidade de transmissão adaptável para os seus clientes. Os Serviços de Multimédia suportam as seguintes tecnologias de transmissão em fluxo de velocidade de transmissão adaptável: HTTP Live Streaming (HLS), Smooth Streaming, MPEG DASH.
+## <a name="start-streaming-endpoints"></a>Iniciar pontos finais de transmissão em fluxo 
 
-Os Serviços de Multimédia fornecem um empacotamento dinâmico, permitindo a entrega dos seus conteúdos codificados em MP4 de velocidade de transmissão adaptável em formatos de transmissão em fluxo suportados pelos Serviços de Multimédia (MPEG DASH, HLS, Smooth Streaming) just-in-time, sem ter de voltar a armazenar versões pré-empacotadas de cada um destes formatos de transmissão em fluxo.
+Ao trabalhar com os Serviços de Multimédia do Azure, uma das situações mais comuns é a entrega de vídeo através de transmissão em fluxo de velocidade de transmissão adaptável. Os Serviços de Multimédia fornecem um empacotamento dinâmico, o que lhe permite entregar os seus conteúdos codificados em MP4 de velocidade de transmissão adaptável em formatos de transmissão em fluxo suportados pelos Serviços de Multimédia (MPEG DASH, HLS, Smooth Streaming) just-in-time, sem ter de armazenar versões pré-empacotadas de cada um destes formatos de transmissão em fluxo.
 
-Para tirar partido do empacotamento dinâmico, tem de fazer o seguinte:
+>[!NOTE]
+>Quando a sua conta AMS é criada, é adicionado um ponto final de transmissão em fluxo **predefinido** à sua conta no estado **Parado**. Para começar a transmitir o seu conteúdo em fluxo e a tirar partido do empacotamento e encriptação dinâmicos, o ponto final de transmissão em fluxo a partir do qual quer transmitir conteúdo tem de estar no estado **Em execução**. 
 
-* Codificar o ficheiro (origem) mezanino para um conjunto de ficheiros MP4 de velocidade de transmissão adaptável (os passos da codificação são demonstrados mais à frente neste tutorial).  
-* Criar, pelo menos, uma unidade de transmissão em fluxo para o *ponto final de transmissão em fluxo* a partir do qual planeia entregar o conteúdo. Os passos abaixo mostram como alterar o número de unidades de transmissão em fluxo.
+Para iniciar o ponto final de transmissão em fluxo, faça o seguinte:
 
-Com o empacotamento dinâmico, só tem de armazenar e pagar os ficheiros num único formato de armazenamento, e os Media Services compilam e disponibilizam a resposta adequada com base nos pedidos de um cliente.
-
-Para criar e alterar o número de unidades reservadas para transmissão em fluxo, faça o seguinte:
-
-1. Na janela **Definições**, clique em **Pontos finais de transmissão em fluxo**. 
+1. Na janela Definições, clique em Pontos finais de transmissão em fluxo. 
 2. Clique no ponto final de transmissão em fluxo predefinido. 
-   
-    A janela **DETALHES DO PONTO FINAL DE TRANSMISSÃO EM FLUXO PREDEFINIDO** é apresentada.
-3. Para especificar o número de unidades de transmissão em fluxo, deslize o controlo de deslize **Unidades de transmissão em fluxo**.
-   
-    ![Unidades de transmissão em fluxo](./media/media-services-portal-vod-get-started/media-services-streaming-units.png)
-4. Clique no botão **Guardar** para guardar as alterações.
-   
-   > [!NOTE]
-   > A alocação de quaisquer novas unidades pode demorar até 20 minutos a concluir.
-   > 
-   > 
+
+    A janela DETALHES DO PONTO FINAL DE TRANSMISSÃO EM FLUXO PREDEFINIDO é apresentada.
+
+3. Clique no ícone Início.
+4. Clique no botão Guardar para guardar as alterações.
 
 ## <a name="upload-files"></a>Carregar ficheiros
 Para transmitir vídeos em fluxo através dos Serviços de Multimédia do Azure, tem de carregar os vídeos de origem, codificá-los em múltiplas velocidades de transmissão e publicar o resultado. O primeiro passo é abrangido nesta secção. 
@@ -132,10 +121,7 @@ Ao trabalhar com os Azure Media Services, uma das situações mais comuns é a d
 
 Os Serviços de Multimédia também fornecem um empacotamento dinâmico, permitindo a entrega dos conteúdos codificados por Transmissão em Fluxo Uniforme ou MP4s de velocidade de transmissão múltipla nos formatos de transmissão em fluxo MPEG DASH, HLS, Smooth Streaming, sem ter de voltar a criar o pacote para estes formatos de transmissão em fluxo. Com o empacotamento dinâmico, só tem de armazenar e pagar os ficheiros num único formato de armazenamento, e os Media Services compilam e disponibilizam a resposta adequada com base nos pedidos de um cliente.
 
-Para tirar partido do empacotamento dinâmico, tem de fazer o seguinte:
-
-* Codificar o ficheiro de origem para um conjunto de ficheiros MP4 com velocidade de transmissão múltipla (os passos da codificação são demonstrados mais à frente neste tutorial).
-* Obter, pelo menos, uma unidade de transmissão em fluxo para o ponto final de transmissão em fluxo a partir do qual planeia distribuir o conteúdo. Para obter mais informações, consulte [configurar pontos finais de transmissão em fluxo](media-services-portal-vod-get-started.md#configure-streaming-endpoints). 
+Para tirar partido do empacotamento dinâmico, tem de codificar o ficheiro de origem para um conjunto de ficheiros MP4 com velocidade de transmissão múltipla (os passos da codificação são demonstrados mais à frente nesta secção).
 
 ### <a name="to-use-the-portal-to-encode"></a>Para utilizar o portal para codificar
 Esta secção descreve os passos que pode seguir para codificar o conteúdo com o Codificador de Multimédia Standard.
@@ -221,6 +207,6 @@ Rever os percursos de aprendizagem dos Serviços de Multimédia
 
 
 
-<!--HONumber=Dec16_HO2-->
+<!--HONumber=Jan17_HO2-->
 
 

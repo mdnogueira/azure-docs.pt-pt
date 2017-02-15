@@ -1,13 +1,14 @@
 ---
 layout: LandingPage
+description: "Saiba como utilizar plataforma o middleware do Service Fabric para empacotar e implementar micro-serviços para aplicações de dimensionamento na cloud. Tutoriais, referências de API e códigos de exemplo."
 translationtype: Human Translation
-ms.sourcegitcommit: 6d6459646a269212364822ef6797b5850c2b0c2a
-ms.openlocfilehash: 0598e5ea3dc95853a21a56326241a82854477cbe
+ms.sourcegitcommit: b4080529e9ff4500cef20e1dd735765051f6ce1f
+ms.openlocfilehash: d9b4e3b3df6760b15e151c5eab37c9f534784de8
 
 ---
 #<a name="service-fabric-documentation"></a>Documentação do Service Fabric
 
-O Azure Service Fabric é uma plataforma de sistemas distribuídos que facilita o empacotamento, a implementação e a gestão de microsserviços dimensionáveis e fiáveis. O Service Fabric também faz face aos desafios significativos no desenvolvimento e na gestão de aplicações na cloud. Permite, assim, que os programadores e administradores evitem problemas complexos de infraestrutura e se concentrem na implementação de cargas de trabalho exigentes e fundamentais que sejam dimensionáveis, fiáveis e geríveis. 
+Saiba como utilizar o Service Fabric para empacotar, implementar e gerir micro-serviços dimensionáveis e fiáveis. Tutoriais, referências de API e amostras de código mostram como utilizar esta plataforma middleware para criar e gerir aplicações dimensionáveis na cloud.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -148,16 +149,10 @@ O Azure Service Fabric é uma plataforma de sistemas distribuídos que facilita 
 </ul>   
 
 
-<div class="downloadHolder">
-    <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/service-fabric.pdf">
-        <div class="img"></div>
-        <div class="text">
-Transferir a Documentação do Service Fabric </div>
-    </a>
-</div>
 
 
 
-<!--HONumber=Dec16_HO2-->
+
+<!--HONumber=Jan17_HO3-->
 
 

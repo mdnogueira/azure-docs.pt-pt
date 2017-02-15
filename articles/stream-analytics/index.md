@@ -1,14 +1,15 @@
 ---
 layout: LandingPage
+description: "Saiba como executar análises de IoT na cloud com o processamento de eventos completamente gerido. Analise dados em tempo real de aplicações, sensores, dispositivos e mais."
 translationtype: Human Translation
-ms.sourcegitcommit: 511d15cc48b17bd65bedc2c1cd9602d868ffa724
-ms.openlocfilehash: c57faa7c307420bb92bec2f661e6739a7cfca7ee
+ms.sourcegitcommit: b4080529e9ff4500cef20e1dd735765051f6ce1f
+ms.openlocfilehash: 7095a55d9ea79bfd11b429d4fa53e04c482fbbea
 
 ---
 
 # <a name="stream-analytics-documentation"></a>Documentação do Stream Analytics
 
-O Azure Stream Analytics é um motor de processamento de eventos totalmente gerido em tempo real, que o ajuda a desbloquear os conhecimentos aprofundados sobre os dados.  O Stream Analytics facilita a configuração das computações analíticas em tempo real da transmissão de dados a partir de dispositivos, sensores, Web sites, redes sociais, aplicações, sistema de infraestrutura e muito mais.
+Saiba como executar análises de Internet das Coisas (IoT) na cloud com o Stream Analytics, um motor processamento de eventos completamente gerido. Tutoriais e outra documentação mostram-lhe como analisar dados em tempo real a partir de aplicações, sensores, dispositivos, redes sociais e mais. 
 
 <ul class="panelContent cardsFTitle">
      <li>
@@ -161,16 +162,10 @@ O Azure Stream Analytics é um motor de processamento de eventos totalmente geri
     </li>
 </ul>
 
-<div class="downloadHolder">
-    <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/stream-analytics.pdf">
-        <div class="img"></div>
-        <div class="text">
-Transferir a Documentação do Stream Analytics </div>
-    </a>
-</div>
 
 
 
-<!--HONumber=Dec16_HO2-->
+
+<!--HONumber=Jan17_HO3-->
 
 

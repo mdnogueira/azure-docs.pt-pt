@@ -1,13 +1,14 @@
 ---
 layout: LandingPage
+description: "Saiba como implementar a autenticação multifator com um intervalo de métodos de verificação que fornecem um processo de início de sessão simples. Tutoriais, um SDK e mais."
 translationtype: Human Translation
-ms.sourcegitcommit: defa12cb202ce4861a479ac40782248cd50039d3
-ms.openlocfilehash: 2db76cf5af88cc103b0109eb8ead4d63cbae0a0e
+ms.sourcegitcommit: b4080529e9ff4500cef20e1dd735765051f6ce1f
+ms.openlocfilehash: 6ff0e1c42ad151c56500596d99f63bae200368ed
 
 ---
 # <a name="multi-factor-authentication-documentation"></a>Documentação do Multi-Factor Authentication
 
-A Azure Multi-Factor Authentication (MFA) é uma solução de verificação em dois passos da Microsoft. A Azure MFA ajuda a salvaguardar o acesso a dados e a aplicações, satisfazendo, em simultâneo, a necessidade dos utilizadores de terem um processo de início de sessão simples. Oferece autenticação forte através de vários métodos de verificação, incluindo chamada telefónica, mensagem de texto ou verificação de aplicação móvel.
+Saiba como implementar e gerir o Azure Multi-Factor Authentication, um sistema de verificação de identidade de dois passos. Tutoriais, um SDK e outra documentação mostram-lhe como fornecer autenticação forte com um intervalo de métodos de verificação ao fornecer um processo de início de sessão simples.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -104,15 +105,10 @@ A Azure Multi-Factor Authentication (MFA) é uma solução de verificação em d
 
 ---
 
-<div class="downloadHolder">
-    <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/multi-factor-authentication.pdf">
-        <div class="img"></div>
-        <div class="text">
-Transferir a Documentação da Multi-Factor Authentication </div>
-    </a>
-</div>
 
 
-<!--HONumber=Nov16_HO4-->
+
+
+<!--HONumber=Jan17_HO3-->
 
 

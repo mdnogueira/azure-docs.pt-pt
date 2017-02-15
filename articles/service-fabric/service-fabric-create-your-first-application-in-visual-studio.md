@@ -12,11 +12,11 @@ ms.devlang: dotNet
 ms.topic: hero-article
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 10/26/2016
+ms.date: 12/14/2016
 ms.author: ryanwi
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 037dc010a6dc60eb49ad4fdad2861e8653e36199
+ms.sourcegitcommit: eea184fecef089d14d2c13e4528baea30037b638
+ms.openlocfilehash: 2e5e37b4d009cade5f0a919fa64ec2ec48348571
 
 
 ---
@@ -41,7 +41,7 @@ O vídeo a seguir guia-o pelos passos neste tutorial:
 > 
 
 ## <a name="create-the-application"></a>Criar a aplicação
-Uma aplicação de Service Fabric pode conter um ou mais serviços, cada um com uma função específica no fornecimento de funcionalidade da aplicação. Com o assistente de Novo Projeto, pode criar um projeto de aplicação, juntamente com o seu primeiro projeto de serviço. Pode adicionar mais serviços posteriormente.
+Uma aplicação de Service Fabric pode conter um ou mais serviços, cada um com uma função específica no fornecimento de funcionalidade da aplicação. Crie um projeto de aplicação, juntamente com o seu primeiro projeto de serviço com o assistente de Novo Projeto. Também pode adicionar mais serviços posteriormente, se pretender.
 
 1. Inicie o Visual Studio como administrador.
 2. Clique em **Ficheiro > Novo Projeto > Nuvem > Aplicação de Service Fabric**.
@@ -64,7 +64,7 @@ Uma aplicação de Service Fabric pode conter um ou mais serviços, cada um com 
     O projeto de aplicação não contém qualquer código diretamente. Em vez disso, referencia um conjunto de projetos de serviço. Além disso, contém outros três tipos de conteúdo:
    
    * **Perfis de publicação**: utiliza-se para gerir as preferências de ferramentas para os diferentes ambientes.
-   * **Scripts**: inclui um script de PowerShell para implementar/atualizar a sua aplicação. O Visual Studio utiliza o script em segundo plano do Visual Studio. O script também pode ser invocado diretamente na linha de comandos.
+   * **Scripts**: inclui um script de PowerShell para implementar/atualizar a sua aplicação. O Visual Studio utiliza o script em segundo plano. O script também pode ser invocado diretamente na linha de comandos.
    * **Definição da aplicação**: inclui o manifesto da aplicação em *ApplicationPackageRoot*. Os ficheiros de parâmetro de aplicação associados em *ApplicationParameters*, definem a aplicação e permitem configurá-la especificamente para um determinado ambiente.
      
      Para obter uma descrição geral do conteúdo do projeto de serviço, consulte o artigo [Introdução a Reliable Services](service-fabric-reliable-services-quick-start.md).
@@ -91,7 +91,7 @@ Agora que tem uma aplicação, tente executá-la.
    
     ![Detalhe do visualizador de eventos de diagnóstico][6]
    
-    O cluster local contém cinco nós que estão alojados num único computador. Imita um cluster de cinco nós, no qual os nós estão em máquinas distintas. Vamos desativar um dos nós no cluster local para simular a perda de uma máquina enquanto executamos o depurador do Visual Studio ao mesmo tempo.
+    O cluster local contém cinco nós que estão alojados num único computador. Imita um cluster de cinco nós, no qual os nós estão em máquinas distintas. Para simular a perda de uma máquina enquanto executamos o depurador do Visual Studio ao mesmo tempo, vamos desativar um dos nós no cluster local.
    
    > [!NOTE]
    > Os eventos de diagnóstico de aplicações que são emitidos pelo modelo de projeto utilizam a classe `ServiceEventSource` incluída. Para obter mais informações, consulte o artigo [Como monitorizar e diagnosticar os serviços localmente](service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md).
@@ -100,13 +100,13 @@ Agora que tem uma aplicação, tente executá-la.
 4. Procure a classe no seu serviço de projeto que deriva de StatefulService (por exemplo, MyStatefulService) e defina um ponto de interrupção na primeira linha do método `RunAsync`.
    
     ![Método RunAsync com ponto de interrupção do serviço com estado ][7]
-5. Clique com o botão direito na aplicação de tabuleiro de sistema do Gestor de Clusters Locais e selecione **Gerir Cluster Local** para iniciar o Service Fabric Explorer.
+5. Para iniciar o Service Fabric Explorer, clique com o botão direito na aplicação de tabuleiro de sistema do Gestor de Clusters Locais e selecione **Gerir Cluster Local**.
    
     ![Iniciar o Service Fabric Explorer a partir do Gestor de Clusters Locais][systray-launch-sfx]
    
     O Service Fabric Explorer proporciona uma representação visual de um cluster – incluindo o conjunto de aplicações aí implementadas e o conjunto de nós físicos que o constituem. Para saber mais acerca do Service Fabric Explorer, consulte o artigo [Visualizar o seu cluster](service-fabric-visualizing-your-cluster.md).
 6. No painel da esquerda, expanda **Cluster > Nós** e localizar o nó que está a executar o seu código.
-7. Clique em **Ações > Desativar (Reiniciar)** para simular um reinício do computador. (Tenha em atenção que também pode desativar a partir do menu de contexto na vista de lista de nós no painel esquerdo.)
+7. Clique em **Ações > Desativar (Reiniciar)** para simular um reinício do computador. Em alternativa, desative o nó da vista de lista de nó no painel da esquerda.)
    
     ![Parar um nó no Service Fabric Explorer][sfx-stop-node]
    
@@ -116,14 +116,14 @@ Agora que tem uma aplicação, tente executá-la.
     ![Visualizador de eventos de diagnóstico após falha][diagnostic-events-viewer-detail-post-failover]
 
 ## <a name="switch-cluster-mode"></a>Alternar o modo do cluster
-Por predefinição, o cluster de desenvolvimento local está configurado para ser executado como um cluster de 5 nós, o que é útil na depuração de serviços implementados em vários nós. No entanto, a implementação de uma aplicação no cluster de desenvolvimento de cinco nós pode demorar algum tempo. Se pretender iterar rapidamente alterações de código sem executar a aplicação nos cinco nós, pode alternar o cluster de desenvolvimento para o modo de 1 Nó. Para executar o código num cluster com um nó, clique com o botão direito do rato no Gestor de Clusters Locais na bandeja do sistema e selecione **Alternar Modo do Cluster -> 1 Nó**.  
+Por predefinição, o cluster de desenvolvimento local está configurado para ser executado como um cluster de cinco nós, o que é útil na depuração de serviços implementados em vários nós. No entanto, a implementação de uma aplicação no cluster de desenvolvimento de cinco nós pode demorar algum tempo. Se pretender iterar rapidamente alterações de código sem executar a aplicação nos cinco nós, alterne o cluster de desenvolvimento para o modo de um nó. Para executar o código num cluster com um nó, clique com o botão direito do rato no Gestor de Clusters Locais na bandeja do sistema e selecione **Alternar Modo do Cluster -> 1 Nó**.  
 
 ![Alternar o modo do cluster][switch-cluster-mode]
 
-Quando altera o modo do cluster, o cluster de desenvolvimento é reinicializado e todas as aplicações aprovisionadas ou em execução no cluster são removidas.
+O cluster de desenvolvimento é reinicializado quando altera o modo do cluster e todas as aplicações aprovisionadas ou em execução no cluster são removidas.
 
 ## <a name="cleaning-up"></a>Limpeza
-  Antes de concluir, é importante lembrar-se de que o cluster local é real. Parar o depurador remove a instância da aplicação e anula o registo do tipo de aplicação. Contudo, o cluster continua a ser executado em segundo plano. Tem várias opções para gerir o cluster:
+Antes de concluir, é importante lembrar-se de que o cluster local é real. Parar o depurador remove a instância da aplicação e anula o registo do tipo de aplicação. Contudo, o cluster continua a ser executado em segundo plano. Tem várias opções para gerir o cluster:
 
 1. Para encerrar o cluster, mas manter os dados de aplicação e o rastreio, clique em **Parar Cluster Local** na aplicação de tabuleiro do sistema.
 2. Para eliminar o cluster totalmente, clique em **Remover Cluster Local** na aplicação de tabuleiro do sistema. Esta opção resultará noutra implementação lenta da próxima vez que premir F5 no Visual Studio. Elimine o cluster apenas se não pretender utilizar o cluster local durante algum tempo ou se precisar de recuperar recursos.
@@ -131,8 +131,10 @@ Quando altera o modo do cluster, o cluster de desenvolvimento é reinicializado 
 ## <a name="next-steps"></a>Passos seguintes
 * Saiba como criar um [cluster no Azure](service-fabric-cluster-creation-via-portal.md) ou um [cluster autónomo no Windows](service-fabric-cluster-creation-for-windows-server.md).
 * Experimente criar um serviço com os modelos de programação [Reliable Services](service-fabric-reliable-services-quick-start.md) ou [Reliable Actors](service-fabric-reliable-actors-get-started.md).
-* Saiba como pode expor os seus serviços à Internet com um [front-end do serviço Web](service-fabric-add-a-web-frontend.md).
+* Tente implementar um [contentor do Windows](service-fabric-deploy-container.md) ou uma aplicação existente como [executável convidado](service-fabric-deploy-existing-app.md).
+* Saiba como expor os seus serviços à Internet com um [front-end do serviço Web](service-fabric-add-a-web-frontend.md).
 * Percorra um [laboratório prático](https://msdnshared.blob.core.windows.net/media/2016/07/SF-Lab-Part-I.docx) e crie um serviço sem monitorização de estado, configure relatórios de monitorização e estado de funcionamento e faça uma atualização da aplicação.
+* Saiba mais sobre as [opções de suporte do Service Fabric](service-fabric-support.md)
 
 <!-- Image References -->
 
@@ -151,6 +153,6 @@ Quando altera o modo do cluster, o cluster de desenvolvimento é reinicializado 
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Jan17_HO1-->
 
 

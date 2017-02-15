@@ -12,11 +12,11 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 10/12/2016
+ms.date: 01/05/2017
 ms.author: juliako;anilmur
 translationtype: Human Translation
-ms.sourcegitcommit: 4fc33ba185122496661f7bc49d14f7522d6ee522
-ms.openlocfilehash: d532cb3774e7d98d6c52ffdc40d6ba124d8d3ea3
+ms.sourcegitcommit: f6d6b7b1051a22bbc865b237905f8df84e832231
+ms.openlocfilehash: 1cee92f59f5883b031ccc547a2f67f7dcd4fa3c3
 
 
 ---
@@ -46,31 +46,32 @@ Os passos seguintes descrevem as tarefas envolvidas na criação de aplicações
 
 1. Ligue uma câmara de vídeo a um computador. Inicie e configure um codificador em direto no local que possa enviar uma transmissão de velocidade de transmissão única através de um dos seguintes protocolos: RTMP, Transmissão em Fluxo Uniforme ou RTP (MPEG-TS). Para obter mais informações, consulte [Suporte RTMP dos Media Services do Azure e Codificadores em Direto](http://go.microsoft.com/fwlink/?LinkId=532824).
 
-Este passo também pode ser realizado depois de criar o Canal.
+    Este passo também pode ser realizado depois de criar o Canal.
 
-1. Crie e inicie um Canal.
-2. Obtenha o URL de inserção do Canal.
+2. Crie e inicie um Canal.
+3. Obtenha o URL de inserção do Canal.
 
-O URL de inserção é utilizado pelo codificador em direto para enviar a transmissão para o Canal.
+    O URL de inserção é utilizado pelo codificador em direto para enviar a transmissão para o Canal.
 
-1. Obtenha o URL de pré-visualização do Canal.
+4. Obtenha o URL de pré-visualização do Canal.
 
-Utilize este URL para verificar se o canal está a receber corretamente a transmissão em fluxo em direto.
+    Utilize este URL para verificar se o canal está a receber corretamente a transmissão em fluxo em direto.
 
-1. Crie um elemento.
-2. Se pretender que o elemento seja encriptado dinamicamente durante a reprodução, faça o seguinte:
-3. Crie uma chave de conteúdo.
-4. Configure a política de autorização da chave de conteúdo.
-5. Configure a política de entrega de elementos (utilizada pelo empacotamento dinâmico e a encriptação dinâmica).
-6. Crie um programa e especifique a utilização do elemento que criou.
-7. Publique o elemento associado ao programa através da criação de um localizador OnDemand.
+5. Crie um elemento.
+6. Se pretender que o elemento seja encriptado dinamicamente durante a reprodução, faça o seguinte:
+7. Crie uma chave de conteúdo.
+8. Configure a política de autorização da chave de conteúdo.
+9. Configure a política de entrega de elementos (utilizada pelo empacotamento dinâmico e a encriptação dinâmica).
+10. Crie um programa e especifique a utilização do elemento que criou.
+11. Publique o elemento associado ao programa através da criação de um localizador OnDemand.
 
-Certifique-se de que tem, pelo menos, uma unidade reservada para transmissão em fluxo no ponto final da transmissão a partir do qual pretende transmitir o conteúdo.
+    >[!NOTE]
+    >Quando a sua conta AMS é criada, é adicionado um ponto final de transmissão em fluxo **predefinido** à sua conta no estado **Parado**. O ponto final de transmissão em fluxo a partir do qual quer transmitir conteúdo tem de estar no estado **Em execução**. 
 
-1. Inicie o programa quando estiver pronto para começar a transmissão em fluxo e o arquivamento.
-2. Opcionalmente, o codificador em direto pode ser indicado para iniciar um anúncio. O anúncio é inserido na transmissão de saída.
-3. Pare o programa sempre que pretender interromper a transmissão e arquivar o evento.
-4. Elimine o Programa (e, opcionalmente, elimine o elemento).
+12. Inicie o programa quando estiver pronto para começar a transmissão em fluxo e o arquivamento.
+13. Opcionalmente, o codificador em direto pode ser indicado para iniciar um anúncio. O anúncio é inserido na transmissão de saída.
+14. Pare o programa sempre que pretender interromper a transmissão e arquivar o evento.
+15. Elimine o Programa (e, opcionalmente, elimine o elemento).
 
 ## <a name="what-youll-learn"></a>O que irá aprender
 Este tópico mostra como realizar operações diferentes em canais e programas que utilizam o SDK .NET dos Media Services. Como muitas operações são de execução longa, são utilizadas APIs .NET que gerem operações de execução longa .
@@ -100,7 +101,6 @@ Se não tiver uma conta, pode criar uma conta de avaliação gratuita em apenas 
 
 ## <a name="considerations"></a>Considerações
 * Atualmente, a duração máxima recomendada de um evento em direto é de 8 horas. Contacte amslived através de Microsoft.com se tiver de executar um Canal durante períodos de tempo mais longos.
-* Certifique-se de que tem, pelo menos, uma unidade reservada para transmissão em fluxo no ponto final da transmissão a partir do qual pretende transmitir o conteúdo.
 
 ## <a name="download-sample"></a>Transferir exemplo
 Obtenha e execute um exemplo [aqui](https://azure.microsoft.com/documentation/samples/media-services-dotnet-encode-live-stream-with-ams-clear/).
@@ -524,12 +524,10 @@ Rever os percursos de aprendizagem dos Serviços de Multimédia
 ## <a name="provide-feedback"></a>Enviar comentários
 [!INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-### <a name="looking-for-something-else"></a>Está à procura de outra coisa?
-Se este tópico não continha o que pretendia, algo está em falta ou não correspondeu de alguma forma às suas necessidades, envie-nos os seus comentários utilizando o thread Disqus abaixo.
 
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Jan17_HO2-->
 
 

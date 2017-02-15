@@ -12,11 +12,11 @@ ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 10/28/2016
+ms.date: 01/04/2017
 ms.author: cephalin
 translationtype: Human Translation
-ms.sourcegitcommit: 4edd2696c9a5709ded6e2a3e352090775335f0d2
-ms.openlocfilehash: 69f3bd4759e879c6f3b55d8126f34e8ebf4be52d
+ms.sourcegitcommit: 05e61d2fc751c4239aef4b10ad897765c59fe928
+ms.openlocfilehash: a8fb8f7d338fa2f33b8fe6565f119e0be6419f41
 
 
 ---
@@ -58,13 +58,25 @@ Além disso, uma aplicação Web pode tirar partido das funcionalidades oferecid
 Para além das Web Apps no App Service, o Azure oferece outros serviços que podem ser utilizados para alojar sites e Web Apps. Para a maioria dos cenários, as Web Apps são a melhor escolha.  Para uma arquitetura de microsserviço, considere o [Service Fabric](https://azure.microsoft.com/documentation/services/service-fabric) e, se necessitar de mais controlo sobre as VMs em que o seu código é executado, considere as [Virtual Machines do Azure](https://azure.microsoft.com/documentation/services/virtual-machines/). Para obter mais informações sobre como escolher entre estes serviços do Azure, consulte a [Comparação entre o App Service do Azure, as Virtual Machines, o Service Fabric e os Cloud Services](choose-web-site-cloud-service-vm.md).
 
 ## <a name="getting-started"></a>Introdução
-Para começar a implementar código de exemplo numa nova aplicação Web no App Service, siga o tutorial [Implementar a primeira aplicação Web no Azure em 5 minutos](app-service-web-get-started.md). Necessitará de uma conta do Azure gratuita.
+Para começar ao implementar código de exemplo numa aplicação Web nova no Serviço de Aplicações, siga um dos tutoriais na caixa pendente seguinte. Necessitará de uma conta do Azure gratuita.
 
-Se pretender começar a utilizar o App Service do Azure antes de se inscrever numa conta do Azure, aceda a [Experimentar o App Service](http://go.microsoft.com/fwlink/?LinkId=523751), onde pode criar de imediato uma aplicação Web de arranque de curta duração no App Service. Sem cartões de crédito; sem compromissos.
+> [!div class="op_single_selector"]
+> * [Implementar a sua primeira aplicação Web no Azure em cinco minutos](app-service-web-get-started-html-cli-nodejs.md)
+> * [Implementar a sua primeira aplicação Web ASP.NET no Azure em cinco minutos](app-service-web-get-started-dotnet-cli-nodejs.md)
+> * [Implementar a sua primeira aplicação Web PHP no Azure em cinco minutos](app-service-web-get-started-php-cli-nodejs.md)
+> * [Implementar a sua primeira aplicação Web Node.js no Azure em cinco minutos](app-service-web-get-started-nodejs-cli-nodejs.md)
+> * [Implementar a sua primeira aplicação Web Python no Azure em cinco minutos](app-service-web-get-started-python-cli-nodejs.md)
+> * [Implementar a sua primeira aplicação Web Java no Azure em cinco minutos](app-service-web-get-started-java.md)
+> 
+> 
+
+> [!NOTE]
+> Pode [Experimentar o Serviço de Aplicações](http://go.microsoft.com/fwlink/?LinkId=523751) sem uma conta do Azure. Crie uma aplicação de introdução e experimente-a durante uma hora, sem cartão de crédito nem compromissos.
+> 
+> 
 
 
 
-
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Jan17_HO1-->
 
 

@@ -2,8 +2,8 @@
 layout: LandingPage
 description: "Saiba como obter informações sobre a utilização de aplicações móveis e segmentação de utilizador em tempo real e como ativar as notificações push com reconhecimento de contexto e mensagens na aplicação."
 translationtype: Human Translation
-ms.sourcegitcommit: 2dbe8c3bf665249af4a1626e38f6465d2db32a0b
-ms.openlocfilehash: fed0048ab3a7101c4461ffa14511a26ecd7a36eb
+ms.sourcegitcommit: b4080529e9ff4500cef20e1dd735765051f6ce1f
+ms.openlocfilehash: 37f08d8a03845b86d382d4c0b49b58f633cc1b0c
 
 ---
 # <a name="mobile-engagement-documentation"></a>Documentação do Mobile Engagement
@@ -195,13 +195,6 @@ Saiba como aumentar a utilização, a retenção e a monetização de aplicaçõ
 
 ---
 
-<div class="downloadHolder">
-    <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/mobile-engagement.pdf">
-        <div class="img"></div>
-        <div class="text">
-Transferir a Documentação do Azure Mobile Engagement </div>
-    </a>
-</div>
 
 
 

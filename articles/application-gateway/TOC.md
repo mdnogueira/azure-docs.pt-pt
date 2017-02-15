@@ -38,10 +38,9 @@
 ### [PowerShell](application-gateway-create-probe-ps.md)
 ### [PowerShell (Clássico)](application-gateway-create-probe-classic-ps.md)
 ## [Combinar serviços de balanceamento de carga](../traffic-manager/traffic-manager-load-balancing-azure.md?toc=%2fazure%2fapplication-gateway%2ftoc.json)
-## Gerir
-### [Diagnóstico](application-gateway-diagnostics.md)
-### [Resolução de problemas](application-gateway-troubleshooting-502.md)
-
+## Resolução de problemas
+### [Resolver problemas de erros no Gateway de Aplicação](application-gateway-troubleshooting-502.md)
+### [Registo de diagnóstico e métricas](application-gateway-diagnostics.md)
 # Referência
 ## [PowerShell](https://docs.microsoft.com/powershell/resourcemanager)
 ## [Pré-visualização da CLI 2.0 do Azure](/cli/azure/network/application-gateway)
@@ -67,6 +66,6 @@
 ## [SLA](https://azure.microsoft.com/support/legal/sla/)
 
 
-<!--HONumber=Jan17_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 

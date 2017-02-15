@@ -12,11 +12,11 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 10/24/2016
+ms.date: 01/05/2017
 ms.author: juliako
 translationtype: Human Translation
-ms.sourcegitcommit: ff663f40507547ba561053b5c9a7a8ce93fbf213
-ms.openlocfilehash: 99dfabcfcfcef69a43b45994cb4c729bd7faecff
+ms.sourcegitcommit: f6d6b7b1051a22bbc865b237905f8df84e832231
+ms.openlocfilehash: 1b0f5d61753df5860c4cc934ea2aad5175a41e16
 
 
 ---
@@ -54,9 +54,7 @@ Os seguintes são passos gerais referentes à criação de aplicações comuns d
    
     Utilize este URL para verificar se o canal está a receber corretamente a transmissão em fluxo em direto.
 5. Crie um evento/programa (que também irá criar um elemento). 
-6. Publique o evento (que criará um localizador OnDemand para o elemento associado).  
-   
-    Certifique-se de que tem, pelo menos, uma unidade reservada para transmissão em fluxo no ponto final da transmissão a partir do qual pretende transmitir o conteúdo.
+6. Publique o evento (que criará um localizador OnDemand para o elemento associado).    
 7. Inicie o evento quando estiver pronto para começar a transmissão em fluxo e o arquivamento.
 8. Opcionalmente, o codificador em direto pode ser indicado para iniciar um anúncio. O anúncio é inserido na transmissão de saída.
 9. Pare o evento sempre que pretender interromper a transmissão em fluxo e arquivar o evento.
@@ -65,13 +63,12 @@ Os seguintes são passos gerais referentes à criação de aplicações comuns d
 ## <a name="in-this-tutorial"></a>Neste tutorial
 Neste tutorial, o Portal do Azure é utilizado para realizar as seguintes tarefas: 
 
-1. Configurar os pontos finais de transmissão em fluxo.
-2. Crie um canal ativado para realizar live encoding.
-3. Obtenha o URL de Inserção para o fornecer ao codificador em direto. O codificador em direto irá utilizar este URL para inserir a transmissão em fluxo no Canal. .
-4. Crie um evento/programa (e um elemento)
-5. Publique o elemento e obtenha os URLs de transmissão em fluxo  
-6. Reproduza o seu conteúdo 
-7. Limpeza
+1. Crie um canal ativado para realizar live encoding.
+2. Obtenha o URL de Inserção para o fornecer ao codificador em direto. O codificador em direto irá utilizar este URL para inserir a transmissão em fluxo no Canal.
+3. Crie um evento/programa (e um elemento).
+4. Publique o elemento e obtenha os URLs de transmissão em fluxo.  
+5. Reproduzir os conteúdos.
+6. Faça a limpeza.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 O seguinte é necessário para concluir o tutorial.
@@ -81,29 +78,7 @@ O seguinte é necessário para concluir o tutorial.
 * Uma conta dos Media Services. Para criar uma conta dos Media Services, consulte [Criar Conta](media-services-portal-create-account.md).
 * Uma câmara Web e um codificador que possa enviar uma transmissão de velocidade de transmissão única.
 
-## <a name="configure-streaming-endpoints"></a>Configurar os pontos finais de transmissão em fluxo
-Os Serviços de Multimédia fornecem um empacotamento dinâmico, permitindo a entrega dos seus MP4s de velocidade de transmissão múltipla nos seguintes formatos de transmissão em fluxo: MPEG DASH, HLS, Smooth Streaming, sem ter de voltar a criar o pacote para estes formatos de transmissão em fluxo. Com o empacotamento dinâmico só tem de armazenar e pagar pelos ficheiros num único formato de armazenamento, os Media Services irão compilar e disponibilizar a resposta adequada com base nos pedidos de um cliente.
-
-Para tirar partido do empacotamento dinâmico, precisa de, pelo menos, uma unidade de transmissão em fluxo para o ponto final de transmissão em fluxo a partir do qual planeia distribuir o conteúdo.  
-
-Para criar e alterar o número de unidades reservadas para transmissão em fluxo, faça o seguinte:
-
-1. Inicie sessão no [portal do Azure](https://portal.azure.com/) e selecione a sua conta AMS.
-2. Na janela **Definições**, clique em **Pontos finais de transmissão em fluxo**. 
-3. Clique no ponto final de transmissão em fluxo predefinido. 
-   
-    A janela **DETALHES DO PONTO FINAL DE TRANSMISSÃO EM FLUXO PREDEFINIDO** é apresentada.
-4. Para especificar o número de unidades de transmissão em fluxo, deslize o controlo de deslize **Unidades de transmissão em fluxo**.
-   
-    ![Unidades de transmissão em fluxo](./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-streaming-units.png)
-5. Clique no botão **Guardar** para guardar as alterações.
-   
-   > [!NOTE]
-   > A alocação de quaisquer novas unidades pode demorar até 20 minutos a concluir.
-   > 
-   > 
-
-## <a name="create-a-channel"></a>Criar um CANAL
+## <a name="create-a-channel"></a>Criar um canal
 1. No [portal do Azure](https://portal.azure.com/), selecione os Serviços de Multimédia e, em seguida, clique no nome da sua conta dos Serviços de Multimédia.
 2. Selecione **Transmissão em Direto**.
 3. Selecione **Criação personalizada**. Esta opção permitir-lhe-á criar um canal que está ativado para codificação em direto.
@@ -172,6 +147,9 @@ Se pretende manter o conteúdo arquivado, mas não o quer manter disponível par
 ### <a name="createstartstop-events"></a>Criar/iniciar/parar eventos
 Assim que a transmissão em fluxo esteja a ser enviada para o Canal, pode começar o evento de transmissão em fluxo através da criação de um Elemento, Programa e Localizador de Transmissão em Fluxo. Isto irá arquivar a transmissão em fluxo e torná-la disponível para os espetadores através do Ponto Final de Transmissão em Fluxo. 
 
+>[!NOTE]
+>Quando a sua conta AMS é criada, é adicionado um ponto final de transmissão em fluxo **predefinido** à sua conta no estado **Parado**. Para começar a transmitir o seu conteúdo em fluxo e a tirar partido do empacotamento e encriptação dinâmicos, o ponto final de transmissão em fluxo a partir do qual quer transmitir conteúdo tem de estar no estado **Em execução**. 
+
 Existem duas formas de iniciar o evento: 
 
 1. Na página **Canal**, prima **Evento em Direto** para adicionar um novo evento.
@@ -216,7 +194,7 @@ Para gerir os seus elementos, selecione **Definição** e clique em **Elementos*
 
 ## <a name="considerations"></a>Considerações
 * Atualmente, a duração máxima recomendada de um evento em direto é de 8 horas. Contacte amslived através de Microsoft.com se tiver de executar um Canal durante períodos de tempo mais longos.
-* Certifique-se de que tem, pelo menos, uma unidade reservada para transmissão em fluxo no ponto final da transmissão a partir do qual pretende transmitir o conteúdo.
+* Certifique-se de que o ponto final de transmissão em fluxo a partir do qual quer transmitir o seu conteúdo está no estado **Em execução**.
 
 ## <a name="next-step"></a>Passo seguinte
 Rever os percursos de aprendizagem dos Serviços de Multimédia
@@ -229,6 +207,6 @@ Rever os percursos de aprendizagem dos Serviços de Multimédia
 
 
 
-<!--HONumber=Dec16_HO2-->
+<!--HONumber=Jan17_HO2-->
 
 

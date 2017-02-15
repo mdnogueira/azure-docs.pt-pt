@@ -12,11 +12,11 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: hero-article
-ms.date: 12/26/2016
+ms.date: 01/05/2017
 ms.author: juliako
 translationtype: Human Translation
-ms.sourcegitcommit: f01cd8d3a68776dd12d2930def1641411e6a4994
-ms.openlocfilehash: a9f77a58cdb13c357b6c3734bd9e3efa4ff5087b
+ms.sourcegitcommit: f6d6b7b1051a22bbc865b237905f8df84e832231
+ms.openlocfilehash: e7ac4b87370b5a9fa3a063ba02a1171e6830e075
 
 
 ---
@@ -42,20 +42,8 @@ Clique na imagem para visualizá-lo tamanho completo.
 
 <a href="https://docs.microsoft.com/en-us/azure/media-services/media/media-services-dotnet-get-started/media-services-overview-object-model.png" target="_blank"><img src="./media/media-services-dotnet-get-started/media-services-overview-object-model-small.png"></a> 
 
-Pode ver o modelo de todo [aqui](https://media.windows.net/API/$metadata?api-version=2.14).  
+Pode ver o modelo de todo [aqui](https://media.windows.net/API/$metadata?api-version=2.15).  
 
-## <a name="what-youll-learn"></a>O que irá aprender
-
-O tutorial mostra como realizar as seguintes tarefas:
-
-1. Criar uma conta dos Serviços de Multimédia (com o Portal do Azure).
-2. Configurar o ponto final de transmissão em fluxo (com o Portal do Azure).
-3. Criar e configurar um projeto de Visual Studio.
-4. Ligar à conta de Media Services.
-5. Criar um novo elemento e carregar um ficheiro de vídeo.
-6. Codificar o ficheiro de origem para um conjunto de ficheiros MP4 de velocidade de transmissão adaptável.
-7. Publicar o elemento e obter os URLs para transmissão em fluxo e transferência progressiva.
-8. Testar com a reprodução do seu conteúdo.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 O seguinte é necessário para concluir o tutorial.
@@ -88,39 +76,31 @@ Os passos nesta secção explicam como criar uma conta dos AMS.
    6. Selecione **Afixar no dashboard** para ver o progresso da implementação da conta.
 4. Clique em **Criar** na parte inferior do formulário.
 
-    Após criar a conta com êxito, o estado é alterado para **Em Execução**.
+    Depois de criar a conta com êxito, a página de descrição geral é carregada. Na tabela do ponto final de transmissão em fluxo, a conta terá um ponto final de transmissão em fluxo predefinido no estado **Parado**.
+
+    >[!NOTE]
+    >Quando a sua conta AMS é criada, é adicionado um ponto final de transmissão em fluxo **predefinido** à sua conta no estado **Parado**. Para começar a transmitir o seu conteúdo em fluxo e a tirar partido do empacotamento e encriptação dinâmicos, o ponto final de transmissão em fluxo a partir do qual quer transmitir conteúdo tem de estar no estado **Em execução**. 
 
     ![Definições dos Media Services](./media/media-services-portal-vod-get-started/media-services-settings.png)
 
     Para gerir a sua conta de AMS (por exemplo, carregar vídeos, codificar elementos, monitorizar o progresso da tarefa) utilize a janela **Definições**.
 
-## <a name="configure-streaming-endpoints-using-the-azure-portal"></a>Configurar os pontos finais de transmissão em fluxo com o Portal do Azure
-Ao trabalhar com os Azure Media Services, uma das situações mais comuns é a entrega de vídeo através de transmissão em fluxo de velocidade de transmissão adaptável para os seus clientes. Os Serviços de Multimédia suportam as seguintes tecnologias de transmissão em fluxo de velocidade de transmissão adaptável: HTTP Live Streaming (HLS), Smooth Streaming e MPEG DASH.
+## <a name="start-streaming-endpoints-using-the-azure-portal"></a>Iniciar pontos finais de transmissão em fluxo com o portal do Azure
 
-Os Serviços de Multimédia fornecem um empacotamento dinâmico, permitindo a entrega dos seus conteúdos codificados em MP4 de velocidade de transmissão adaptável em formatos de transmissão em fluxo suportados pelos Serviços de Multimédia (MPEG DASH, HLS, Smooth Streaming) just-in-time, sem ter de voltar a armazenar versões pré-empacotadas de cada um destes formatos de transmissão em fluxo.
+Ao trabalhar com os Serviços de Multimédia do Azure, uma das situações mais comuns é a entrega de vídeo através de transmissão em fluxo de velocidade de transmissão adaptável. Os Serviços de Multimédia fornecem um empacotamento dinâmico, o que lhe permite entregar os seus conteúdos codificados em MP4 de velocidade de transmissão adaptável em formatos de transmissão em fluxo suportados pelos Serviços de Multimédia (MPEG DASH, HLS, Smooth Streaming) just-in-time, sem ter de armazenar versões pré-empacotadas de cada um destes formatos de transmissão em fluxo.
 
-Para tirar partido do empacotamento dinâmico, tem de fazer o seguinte:
+>[!NOTE]
+>Quando a sua conta AMS é criada, é adicionado um ponto final de transmissão em fluxo **predefinido** à sua conta no estado **Parado**. Para começar a transmitir o seu conteúdo em fluxo e a tirar partido do empacotamento e encriptação dinâmicos, o ponto final de transmissão em fluxo a partir do qual quer transmitir conteúdo tem de estar no estado **Em execução**. 
 
-* Codificar o ficheiro (origem) mezanino para um conjunto de ficheiros MP4 de velocidade de transmissão adaptável (os passos da codificação são demonstrados mais à frente neste tutorial).  
-* Criar, pelo menos, uma unidade de transmissão em fluxo para o *ponto final de transmissão em fluxo* a partir do qual planeia entregar o conteúdo. Os passos abaixo mostram como alterar o número de unidades de transmissão em fluxo.
+Para iniciar o ponto final de transmissão em fluxo, faça o seguinte:
 
-Com o empacotamento dinâmico, só tem de armazenar e pagar os ficheiros num único formato de armazenamento, e os Media Services compilam e disponibilizam a resposta adequada com base nos pedidos de um cliente.
+1. Na janela Definições, clique em Pontos finais de transmissão em fluxo. 
+2. Clique no ponto final de transmissão em fluxo predefinido. 
 
-Para criar e alterar o número de unidades reservadas para transmissão em fluxo, faça o seguinte:
+    A janela DETALHES DO PONTO FINAL DE TRANSMISSÃO EM FLUXO PREDEFINIDO é apresentada.
 
-1. Na janela **Definições**, clique em **Pontos finais de transmissão em fluxo**.
-2. Clique no ponto final de transmissão em fluxo predefinido.
-
-    A janela **DETALHES DO PONTO FINAL DE TRANSMISSÃO EM FLUXO PREDEFINIDO** é apresentada.
-3. Para especificar o número de unidades de transmissão em fluxo, deslize o controlo de deslize **Unidades de transmissão em fluxo**.
-
-    ![Unidades de transmissão em fluxo](./media/media-services-portal-vod-get-started/media-services-streaming-units.png)
-4. Clique no botão **Guardar** para guardar as alterações.
-
-   > [!NOTE]
-   > A alocação de quaisquer novas unidades pode demorar até 20 minutos a concluir.
-   >
-   >
+3. Clique no ícone Início.
+4. Clique no botão Guardar para guardar as alterações.
 
 ## <a name="create-and-configure-a-visual-studio-project"></a>Criar e configurar um projeto de Visual Studio
 
@@ -258,15 +238,12 @@ Após a inserção dos elementos nos Media Services, a multimédia pode ser codi
 
 Tal como mencionado anteriormente, ao trabalhar com os Media Services do Azure, uma das situações mais comuns é a distribuição de transmissão em fluxo de velocidade de transmissão adaptável para os seus clientes. Os Serviços de Multimédia podem empacotar dinamicamente um conjunto de ficheiros MP4 de velocidade de transmissão adaptável num dos seguintes formatos: HTTP Live Streaming (HLS), Smooth Streaming e MPEG DASH.
 
-Para tirar partido do empacotamento dinâmico, tem de fazer o seguinte:
-
-* Codificar ou transcodificar o ficheiro (origem) mezanino para um conjunto de ficheiros MP4 de velocidade de transmissão adaptável ou ficheiros de Transmissão em Fluxo Uniforme de velocidade de transmissão adaptável.  
-* Obter, pelo menos, uma unidade de transmissão em fluxo para o ponto final de transmissão em fluxo a partir do qual planeia distribuir o conteúdo.
+Para tirar partido do empacotamento dinâmico, tem de codificar ou transcodificar o ficheiro (de origem) mezanino para um conjunto de ficheiros MP4 de velocidade de transmissão adaptável ou ficheiros Smooth Streaming de velocidade de transmissão adaptável.  
 
 O código seguinte mostra como submeter uma tarefa de codificação. A tarefa contém uma tarefa que especifica a transcodificação do ficheiro de mezanino num conjunto de MP4s de velocidade de transmissão adaptável utilizando um **Codificador de Multimédia Standard**. O código submete a tarefa e aguarda até que esta esteja concluída.
 
-Depois da conclusão da tarefa de codificação, será capaz de publicar os ativos e, em seguida, transmita em fluxo ou transfira progressivamente os ficheiros MP4.
-
+Assim que a tarefa esteja concluída, será possível transmitir o seu elemento ou transferir progressivamente ficheiros MP4 que foram criados no seguimento da transcodificação
+ 
 Adicione o seguinte método à classe Program.
 
     static public IAsset EncodeToAdaptiveBitrateMP4s(IAsset asset, AssetCreationOptions options)
@@ -436,7 +413,7 @@ URLs de transferência progressiva (áudio e vídeo).
     https://storagetestaccount001.blob.core.windows.net/asset-38058602-a4b8-4b33-b9f0-6880dc1490ea/BigBuckBunny_AAC_und_ch2_56kbps.mp4?sv=2012-02-12&sr=c&si=166d5154-b801-410b-a226-ee2f8eac1929&sig=P2iNZJAvAWpp%2Bj9yV6TQjoz5DIIaj7ve8ARynmEM6Xk%3D&se=2015-02-14T01:13:05Z
 
 
-Para transmitir o vídeo, cole o URL na caixa de texto URL no [Leitor dos Serviços de Multimédia do Azure](http://amsplayer.azurewebsites.net/azuremediaplayer.html).
+Para transmitir o vídeo, cole o URL na caixa de texto do URL no [Leitor dos Serviços de Multimédia do Azure](http://amsplayer.azurewebsites.net/azuremediaplayer.html).
 
 Para testar as transferências progressivas, cole um URL num browser (por exemplo, Internet Explorer, Chrome ou Safari).
 
@@ -467,6 +444,6 @@ O exemplo de código seguinte contém o código que criou neste tutorial: [exemp
 
 
 
-<!--HONumber=Jan17_HO1-->
+<!--HONumber=Jan17_HO2-->
 
 
