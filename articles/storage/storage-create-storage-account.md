@@ -15,8 +15,8 @@ ms.topic: get-started-article
 ms.date: 12/08/2016
 ms.author: robinsh
 translationtype: Human Translation
-ms.sourcegitcommit: 7455d6f99ed8ceb401224f98105f7b651f55c724
-ms.openlocfilehash: fd5ca2dfb12b7527f49d32d9642a91df9e590b14
+ms.sourcegitcommit: a762a0e4753b73b11b2c903fa97c67176199b8d9
+ms.openlocfilehash: 5a1845ac32d2e7454a94d6678521b5e74561933a
 
 
 ---
@@ -59,7 +59,7 @@ Também pode configurar um nome de domínio personalizado para utilizar com a su
 
 ## <a name="create-a-storage-account"></a>Criar uma conta de armazenamento
 1. Inicie sessão no [Portal do Azure](https://portal.azure.com).
-2. No menu Hub, selecione **Novo** -> **Dados + Armazenamento** -> **Conta do Storage**.
+2. No menu Hub, selecione **Novo** -> **Armazenamento** -> **Conta de armazenamento**.
 3. Introduza um nome para a conta do Storage. Consulte [Pontos finais da conta do Storage](#storage-account-endpoints) para obter detalhes sobre a forma como o nome da conta do Storage será utilizado para endereçar os seus objetos no Storage do Azure.
    
    > [!NOTE]
@@ -162,6 +162,6 @@ Para obter mais informações, consulte a [documentação de Virtual Machines do
 
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Jan17_HO1-->
 
 

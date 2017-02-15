@@ -59,7 +59,7 @@ Com base no n.º de VMs que quer proteger, pode começar em pontos de início di
 
   ![Assistente para Ativar Cópia de Segurança](./media/backup-azure-vms-first-look-arm/vm-blade-enable-backup.png)
 
-5. No cofre dos Serviços de Recuperação, pode selecionar um cofre existente ou criar um novo. Se criar um cofre novo, este é criado no mesmo Grupo de Recursos que a máquina virtual e a localização é a mesma da máquina virtual. Se quiser criar um cofre dos Serviços de Recuperação com outros valores, [crie um cofre dos Serviços de Recuperação](backup-azure-vms-first-look-arm.md#create-a-recovery-services-vault-for-a-vm) antes de clicar na opção Cópia de Segurança do passo 3 e selecione o mesmo neste painel.
+5. No cofre dos Serviços de Recuperação, pode selecionar um cofre existente ou criar um novo. Se criar um cofre novo, este é criado no mesmo Grupo de Recursos que a máquina virtual e a localização é a mesma da máquina virtual. Se quiser criar um cofre dos Serviços de Recuperação com outros valores, [crie um cofre dos Serviços de Recuperação](backup-azure-vms-first-look-arm.md#create-a-recovery-services-vault-for-a-vm) antes de clicar na opção Cópia de Segurança do passo&3; e selecione o mesmo neste painel.
 
 6. No painel Política de cópia de segurança, selecione a política de cópia de segurança que pretende aplicar ao cofre e clique em **OK**.
     ![Selecionar política de cópias de segurança](./media/backup-azure-vms-first-look-arm/setting-rs-backup-policy-new.png)

@@ -16,6 +16,7 @@
 ## [Criar uma conta de armazenamento](azure-stack-provision-storage-account.md)
 ## [Ligar com a CLI](azure-stack-connect-cli.md)
 ## [Ligar com o PowerShell](azure-stack-connect-powershell.md)
+## [Instalar o Visual Studio](azure-stack-install-visual-studio.md)
 ## [Perguntas mais frequentes](azure-stack-faq.md)
 
 # Oferecer serviços a inquilinos
@@ -28,6 +29,7 @@
 # Utilizar modelos
 ## [Descrição geral dos modelos](azure-stack-arm-templates.md)
 ## [Desenvolver modelos](azure-stack-develop-templates.md)
+## [Ver modelos](azure-stack-validate-templates.md)
 ## [Implementar modelos com o portal](azure-stack-deploy-template-portal.md)
 ## [Implementar modelos com o PowerShell](azure-stack-deploy-template-powershell.md)
 ## [Implementar modelos com o Visual Studio](azure-stack-deploy-template-visual-studio.md)
@@ -67,15 +69,16 @@
 ## [Implementar máquinas virtuais do Linux](azure-stack-linux.md)
 ## [Gerir atualizações](azure-stack-updates.md)
 ## [Desenvolver para o Azure Stack](azure-stack-developer.md)
-## Implementar um fornecedor de recursos do MySQL ou SQL
-### [Utilizar bases de dados MySQL como PaaS no Azure Stack](azure-stack-mysql-resource-provider-deploy.md)
-### [Implementar o Adaptador do Fornecedor de Recursos do SQL Server no Azure Stack](azure-stack-sql-resource-provider-deploy.md)
+## Oferecer o SQL ou MySQL como PaaS
+### [Implementar um fornecedor de recursos MySQL](azure-stack-mysql-resource-provider-deploy.md)
+### [Implementar um fornecedor de recursos SQL](azure-stack-sql-resource-provider-deploy.md)
 
-## Planear e implementar o Serviço de Aplicações
+## Oferecer Serviço de Aplicações como PaaS
 ### [Descrição geral do Serviço de Aplicações no Azure Stack](azure-stack-app-service-overview.md)
 ### [Antes de começar](azure-stack-app-service-before-you-get-started.md)
+### [Implementar o fornecedor de recursos do Serviço de Aplicações](azure-stack-app-service-deploy.md)
 ### [Adicionar mais funções de trabalho Web](azure-stack-app-service-add-worker-roles.md)
-### [Adicionar um fornecedor de recursos do Serviço de Aplicações ao Azure Stack](azure-stack-app-service-deploy.md)
+
 
 # Resolução de problemas
 ## [Resolver problemas do Azure Stack](azure-stack-troubleshooting.md)
@@ -86,6 +89,6 @@
 ## [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-stack)
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Jan17_HO4-->
 
 

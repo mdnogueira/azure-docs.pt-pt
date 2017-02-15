@@ -1,8 +1,8 @@
 ---
 layout: LandingPage
 translationtype: Human Translation
-ms.sourcegitcommit: 9b0f7ee1d0eae8a7f0a67c4636de739f6c301d47
-ms.openlocfilehash: 9b853e70f34a4bc1462dfab71c41b2ea802b9dbf
+ms.sourcegitcommit: b4080529e9ff4500cef20e1dd735765051f6ce1f
+ms.openlocfilehash: ceade1ccba2d1328faf548f43f51b4fa3a5343b0
 
 ---
 # <a name="iot-suite-documentation"></a>Documentação do IoT Suite
@@ -29,7 +29,7 @@ Tenha uma introdução rápida ao Microsoft Azure IoT Suite. Utilize soluções 
         </a>
     </li>
     <li>
-        <a href="https://azure.microsoft.com/en-us/resources/videos/index/?services=internet-of-things">
+        <a href="https://azure.microsoft.com/resources/videos/index/?services=internet-of-things">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
@@ -68,16 +68,29 @@ Tenha uma introdução rápida ao Microsoft Azure IoT Suite. Utilize soluções 
 
 ---
 
-<div class="downloadHolder">
-    <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/iot-suite.pdf">
-        <div class="img"></div>
-        <div class="text">
-Transferir a Documentação do IoT Suite </div>
-    </a>
-</div>
+<h2>Referência</h2>
+<ul class="panelContent cardsW">
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>Recursos</h3>
+                        <p><a href="/azure/iot-suite/iot-security-architecture">Arquitetura de segurança</a></p>
+                        <p><a href="/azure/iot-suite/iot-security-best-practices">Melhores práticas de segurança</a></p>
+                        <p><a href="/azure/iot-suite/iot-suite-security-deployment">Proteger a sua implementação de IoT</a></p>
+                        <p><a href="/azure/iot-suite/securing-iot-ground-up">Segurança desde o início</a></p>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>
 
 
 
-<!--HONumber=Nov16_HO4-->
+
+
+<!--HONumber=Jan17_HO3-->
 
 

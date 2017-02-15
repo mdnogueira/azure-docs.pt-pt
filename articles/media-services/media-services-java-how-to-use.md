@@ -12,11 +12,11 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: java
 ms.topic: get-started-article
-ms.date: 12/20/2016
+ms.date: 01/05/2017
 ms.author: juliako
 translationtype: Human Translation
-ms.sourcegitcommit: 18054a72c3ead02311465d97dc13b7b5e4d87321
-ms.openlocfilehash: 401b3c931fa046ee2bdf0a12e9e837b820ec5464
+ms.sourcegitcommit: f6d6b7b1051a22bbc865b237905f8df84e832231
+ms.openlocfilehash: b36dc7bc2d4d1a8565bc6eb823e830a62d36bf34
 
 
 ---
@@ -24,9 +24,9 @@ ms.openlocfilehash: 401b3c931fa046ee2bdf0a12e9e837b820ec5464
 [!INCLUDE [media-services-selector-get-started](../../includes/media-services-selector-get-started.md)]
 
 ## <a name="setting-up-an-azure-account-for-media-services"></a>Configurar uma Conta do Azure para os Media Services
-Para configurar a conta dos Serviços de Multimédia, utilize o Portal do Azure. Consulte o tópico [Como Criar uma Conta dos Media Services](media-services-portal-create-account.md). Depois de criar a conta no Portal do Azure, estará pronto para configurar o computador para o desenvolvimento dos Serviços de Multimédia.
 
-## <a name="setting-up-for-media-services-development"></a>Configurar para o desenvolvimento de Media Services
+Para configurar a conta dos Serviços de Multimédia, utilize o Portal do Azure. Consulte o tópico [Como Criar uma Conta dos Media Services](media-services-portal-create-account.md). Depois de criar a conta no Portal do Azure, estará pronto para configurar o computador para o desenvolvimento dos Serviços de Multimédia.
+ 
 Esta secção contém pré-requisitos gerais para o desenvolvimento de Media Services utilizando o SDK de Media Services para Java.
 
 ### <a name="prerequisites"></a>Pré-requisitos
@@ -34,6 +34,10 @@ Esta secção contém pré-requisitos gerais para o desenvolvimento de Media Ser
 * As bibliotecas do Azure para Java, as quais pode instalar a partir do [Centro de Programadores Java do Azure][Azure Java Developer Center].
 
 ## <a name="how-to-use-media-services-with-java"></a>Como: utilizar os Media Services com Java
+
+>[!NOTE]
+>Quando a sua conta AMS é criada, é adicionado um ponto final de transmissão em fluxo **predefinido** à sua conta no estado **Parado**. Para começar a transmitir o seu conteúdo em fluxo e a tirar partido do empacotamento e encriptação dinâmicos, o ponto final de transmissão em fluxo a partir do qual quer transmitir conteúdo tem de estar no estado **Em execução**. 
+
 O código seguinte mostra como criar um elemento, carregar um ficheiro de multimédia para o elemento, executar uma função com uma tarefa para transformar o elemento e criar um localizador para transmitir o vídeo.
 
 Para utilizar este código, terá de configurar uma conta dos Media Services. Para obter informações sobre como configurar uma conta, consulte [Como Criar uma Conta dos Media Services](media-services-portal-create-account.md).
@@ -270,6 +274,6 @@ Para obter documentação Javadoc de Serviços de Multimédia, veja [Documentaç
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO2-->
 
 

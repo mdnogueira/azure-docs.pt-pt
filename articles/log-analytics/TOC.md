@@ -45,6 +45,9 @@
 #### [Monitorização de Alterações](log-analytics-change-tracking.md)
 #### [Contentores](log-analytics-containers.md)
 #### [Cofre de Chaves](log-analytics-azure-key-vault.md)
+#### Mensagens B2B de Aplicações Lógicas
+##### [Solução de Mensagens B2B de Aplicações Lógicas](../logic-apps/logic-apps-track-b2b-messages-omsportal.md?toc=%2fazure%2flog-analytics%2ftoc.json)
+##### [Esquema de controlo personalizado B2B de Aplicações Lógicas](../logic-apps/logic-apps-track-integration-account-custom-tracking-schema.md?toc=%2fazure%2flog-analytics%2ftoc.json)
 #### [Avaliação de Software Maligno](log-analytics-malware.md)
 #### [Análise de Redes](log-analytics-azure-networking-analytics.md)
 #### [Monitor de Desempenho da Rede](log-analytics-network-performance-monitor.md)
@@ -71,6 +74,6 @@
 ## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=log-analytics)
 
 
-<!--HONumber=Jan17_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 

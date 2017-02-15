@@ -1,13 +1,14 @@
 ---
 layout: LandingPage
+description: "Saiba como utilizar a Aplicações Web do Serviço de Aplicações para criar e alojar sites e aplicações Web. Tutoriais, vídeos, referências de API e muito mais."
 translationtype: Human Translation
-ms.sourcegitcommit: 95b54199c307efea21666c774525a9a539472131
-ms.openlocfilehash: d6fc4fe4f47571cbb8114b3de5ed9bc9466123fe
+ms.sourcegitcommit: 74579a5e96c26f130c0c1cc59e8cf4d6975ea89d
+ms.openlocfilehash: e5bb9e8ea35411f159ddf342fe0fda0ba1759fb5
 
 ---
 # <a name="azure-web-apps-documentation"></a>Documentação de Aplicações Web do Azure
 
-As Aplicações Web do Serviço de Aplicações são uma plataforma de computação completamente gerida, que está otimizada para o alojamento de Web sites e de aplicações Web. Esta oferta de plataforma como serviço (PaaS) do Microsoft Azure permite-lhe concentrar-se na lógica do seu negócio, enquanto o Azure gere a infraestrutura de execução e dimensionamento das suas aplicações.
+Saiba como utilizar a Aplicações Web do Serviço de Aplicações para criar e alojar sites e aplicações Web. Tutoriais, vídeos, referências de API e outra documentação mostram-lhe como desenvolver nesta plataforma de computação de gestão completa.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -65,7 +66,7 @@ As Aplicações Web do Serviço de Aplicações são uma plataforma de computaç
         </a>
     </li>
     <li>
-        <a href="/azure/app-service-web/web-sites-dotnet-get-started">
+        <a href="/azure/app-service-web/app-service-web-get-started-dotnet">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
@@ -83,7 +84,7 @@ As Aplicações Web do Serviço de Aplicações são uma plataforma de computaç
         </a>
     </li> 
      <li>
-        <a href="/azure/app-service-web/web-sites-java-get-started">
+        <a href="/azure/app-service-web/app-service-web-get-started-java">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
@@ -101,7 +102,7 @@ As Aplicações Web do Serviço de Aplicações são uma plataforma de computaç
         </a>
     </li>
     <li>
-        <a href="/azure/app-service-web/app-service-web-nodejs-get-started">
+        <a href="/azure/app-service-web/app-service-web-get-started-nodejs">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
@@ -119,7 +120,7 @@ As Aplicações Web do Serviço de Aplicações são uma plataforma de computaç
         </a>
     </li>
     <li>
-        <a href="/azure/app-service-web/web-sites-python-ptvs-django-mysql">
+        <a href="/azure/app-service-web/app-service-web-get-started-python">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
@@ -138,7 +139,7 @@ As Aplicações Web do Serviço de Aplicações são uma plataforma de computaç
     </li>
    
      <li>
-        <a href="/azure/app-service-web/app-service-web-php-get-started">
+        <a href="/azure/app-service-web/app-service-web-get-started-php">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
@@ -186,7 +187,7 @@ As Aplicações Web do Serviço de Aplicações são uma plataforma de computaç
                 <div class="card">
                     <div class="cardText">
                         <h3>Linha de Comandos</h3>
-                        <p><a href="/cli/azure/appservice">Pré-visualização do CLI do Azure 2.0</a></p>
+                        <p><a href="/cli/azure/appservice">Pré-visualização da CLI 2.0 do Azure</a></p>
                     </div>
                 </div>
             </div>
@@ -219,16 +220,10 @@ As Aplicações Web do Serviço de Aplicações são uma plataforma de computaç
     </li>
 </ul>
 
-<div class="downloadHolder">
-    <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/app-service-web.pdf">
-        <div class="img"></div>
-        <div class="text">
-Transferir a Documentação das Aplicações Web </div>
-    </a>
-</div>
 
 
 
-<!--HONumber=Dec16_HO2-->
+
+<!--HONumber=Jan17_HO4-->
 
 

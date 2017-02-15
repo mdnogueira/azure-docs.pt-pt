@@ -1,3 +1,4 @@
+
 # Descrição geral
 ## [O que é o DocumentDB?](documentdb-introduction.md)
 ## [Conceitos-chave](documentdb-resources.md)
@@ -29,6 +30,7 @@
 ### [Criar partições e dimensionar](documentdb-partition-data.md)
 ### [Consistência](documentdb-consistency-levels.md)
 ### [NoSQL vs SQL](documentdb-nosql-vs-sql.md)
+### [Leituras e escritas rentáveis](documentdb-key-value-store-cost.md)
 
 ## Gerir
 ### [Importar dados](documentdb-import-data.md)
@@ -91,6 +93,7 @@
 ### [Receber notificações com as Logic Apps](documentdb-change-notification.md)
 ### [Processar dados de sensores em tempo real](../hdinsight/hdinsight-storm-iot-eventhub-documentdb.md)
 ### [Ver os seus dados com o Power BI](documentdb-powerbi-visualize.md)
+### [Tirar partido do controlador ODBC para visualização de dados](documentdb-nosql-odbc-driver.md)
 
 
 # Referência
@@ -123,6 +126,6 @@
 ## [Percurso de aprendizagem](https://azure.microsoft.com/documentation/learning-paths/documentdb/)
 
 
-<!--HONumber=Jan17_HO4-->
+<!--HONumber=Feb17_HO1-->
 
 
