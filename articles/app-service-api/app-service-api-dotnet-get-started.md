@@ -442,6 +442,6 @@ O modelo do projeto **Aplicação API do Azure** é equivalente a escolher o mod
 
 
 
-<!--HONumber=Jan17_HO3-->
+<!--HONumber=Feb17_HO3-->
 
 
