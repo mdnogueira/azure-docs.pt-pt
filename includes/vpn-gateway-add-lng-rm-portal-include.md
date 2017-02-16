@@ -1,6 +1,7 @@
 1. No portal, em **Todos os recursos**, clique em **+Adicionar**. Na caixa de pesquisa do painel **Tudo**, escreva **Gateway de rede Local** e, em seguida, clique para procurar. Isto irá devolver uma lista. Clique em **Gateway de rede Local** para abrir o painel e, em seguida, clique em **Criar** para abrir o painel **Criar gateway de rede local**.
    
-    ![criar gateway de rede local](./media/vpn-gateway-add-lng-rm-portal-include/addlng250.png)
+    ![criar gateway de rede local](./media/vpn-gateway-add-lng-rm-portal-include/newlng.png)
+
 2. No painel **Criar gateway de rede local**, especifique um **Nome** para o objeto do gateway de rede local.
 3. Especifique um **Endereço IP** público válido para o dispositivo VPN ou para o gateway de rede virtual ao qual pretende ligar.<br>Se esta rede local representar uma localização no local, este é o endereço IP público do dispositivo VPN ao qual pretende ligar. Não pode estar protegido por NAT e tem de estar acessível ao Azure.<br>Se esta rede local representar outra VNet, irá especificar o endereço IP público atribuído ao gateway de rede virtual para essa VNet.<br>
 4. O **Espaço de endereços** refere-se aos intervalos de endereços da rede que esta rede local representa. Pode adicionar vários intervalos de espaço de endereços. Certifique-se de que os intervalos que especificar aqui não se sobrepõem aos intervalos de outras redes às quais pretende ligar.
@@ -11,6 +12,6 @@
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Jan17_HO3-->
 
 

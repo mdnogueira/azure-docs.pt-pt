@@ -26,10 +26,13 @@ O gateway de VPN do Azure irá anunciar as seguintes rotas para os seus disposit
 * Rotas aprendidas de outras sessões de peering de BGP ligadas ao gateway de VPN do Azure, **exceto a rota ou as rotas predefinidas que se sobreponham a um prefixo VNet**.
 
 ### <a name="can-i-advertise-default-route-00000-to-azure-vpn-gateways"></a>Posso anunciar a rota predefinida (0.0.0.0/0) para gateways de VPN do Azure?
-Neste momento, não.
+Sim.
 
 ### <a name="can-i-advertise-the-exact-prefixes-as-my-virtual-network-prefixes"></a>Posso anunciar os prefixos exatos como prefixos da minha Rede Virtual?
-Não, o ato de anunciar os mesmos prefixos como prefixos de endereços da sua Rede Virtual será bloqueado ou filtrado pela plataforma do Azure. No entanto, pode anunciar um prefixo que é um conjunto mais amplo do que tem no interior da Rede Virtual. Por exemplo, a Rede Virtual pode utilizar o espaço de endereços 10.10.0.0/16 e pode anunciar 10.0.0.0/8.
+
+Não, o ato de anunciar os mesmos prefixos como prefixos de endereços da sua Rede Virtual será bloqueado ou filtrado pela plataforma do Azure. No entanto, pode anunciar um prefixo que é um conjunto mais amplo do que tem no interior da Rede Virtual. 
+
+Por exemplo, se a sua rede virtual utilizou o espaço de endereços 10.0.0.0/16, pode anunciar 10.0.0.0/8. Contudo, não pode anunciar 10.0.0.0/16 ou 10.0.0.0/24.
 
 ### <a name="can-i-use-bgp-with-my-vnet-to-vnet-connections"></a>Posso utilizar o BGP com as minhas ligações VNet a VNet?
 Sim, pode utilizar o BGP para ligações em vários locais e ligações VNet a VNet.
@@ -41,10 +44,12 @@ Sim, pode misturar ligações BGP e não BGP para o mesmo gateway de VPN do Azur
 Sim, o encaminhamento de trânsito BGP é suportado. No entanto, os gateways de VPN do Azure **NÃO** anunciarão rotas predefinidas a outros elementos de rede BGP. Para ativar o encaminhamento de trânsito através de vários gateways de VPN do Azure, tem de ativar o BGP em todas as ligações VNet para VNet intermédias.
 
 ### <a name="can-i-have-more-than-one-tunnel-between-azure-vpn-gateway-and-my-on-premises-network"></a>Posso ter mais do que um túnel entre o gateway de VPN do Azure e a minha rede no local?
-Sim, pode estabelecer mais do que um túnel VPN S2S entre um gateway de VPN do Azure e a sua rede no local. Tenha em atenção que todos estes túneis serão contados tendo em conta o número total de túneis dos seus gateways de VPN do Azure. Por exemplo, se tiver dois túneis redundantes entre o gateway de VPN do Azure e uma das redes no local, irá consumir dois túneis da quota total para o seu gateway de VPN do Azure (10 para Standard e 30 para HighPerformance).
+Sim, pode estabelecer mais do que um túnel VPN S2S entre um gateway de VPN do Azure e a sua rede no local. Tenha em atenção que todos estes túneis serão contados tendo em conta o número total de túneis dos seus gateways de VPN do Azure e tem de ativar o BGP em ambos os túneis.
+
+Por exemplo, se tiver dois túneis redundantes entre o gateway de VPN do Azure e uma das redes no local, irá consumir dois túneis da quota total para o seu gateway de VPN do Azure (10 para Standard e 30 para HighPerformance).
 
 ### <a name="can-i-have-multiple-tunnels-between-two-azure-vnets-with-bgp"></a>Posso ter vários túneis entre duas VNets do Azure com BGP?
-Não, os túneis redundantes entre um par de redes virtuais não são suportados.
+Sim, mas pelo menos um dos gateways de rede virtual tem de estar na configuração de ativo-ativo.
 
 ### <a name="can-i-use-bgp-for-s2s-vpn-in-an-expressroutes2s-vpn-co-existence-configuration"></a>Posso utilizar o BGP para VPN S2S numa configuração de coexistência ExpressRoute/VPN S2S?
 Sim. 
@@ -63,6 +68,6 @@ Deve adicionar uma rota de anfitrião do endereço IP do Elemento de Rede BGP do
 
 
 
-<!--HONumber=Dec16_HO5-->
+<!--HONumber=Jan17_HO3-->
 
 

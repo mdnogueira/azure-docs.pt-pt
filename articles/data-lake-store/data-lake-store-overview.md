@@ -12,11 +12,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: big-data
-ms.date: 11/02/2016
+ms.date: 02/06/2017
 ms.author: nitinme
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: c90fe9e9f088e8af80b5d9dcf7ab5b970034122f
+ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
+ms.openlocfilehash: a1d30c77dd29a134017be7deec6bb50991e6a698
 
 
 ---
@@ -42,10 +42,10 @@ Os dados armazenados no Data Lake Store podem ser facilmente analisados utilizan
 ### <a name="unlimited-storage-petabyte-files"></a>Armazenamento ilimitado, ficheiros petabyte
 O Azure Data Lake Store fornece armazenamento ilimitado e é adequado para armazenar diversos dados para análise. Não tem quaisquer limites de tamanhos de conta, de ficheiros ou de volume de dados que podem ser armazenados num data lake. Os ficheiros individuais podem variar entre kilobytes e petabytes em termos de tamanho, sendo uma escolha ideal para armazenar qualquer tipo de dados. Os dados são armazenados de maneira duradoura, ao criar várias cópias e não existe limite de tempo para o armazenamento dos dados no data lake.
 
-### <a name="performancetuned-for-big-data-analytics"></a>Desempenho otimizado para análise de macrodados
+### <a name="performance-tuned-for-big-data-analytics"></a>Desempenho otimizado para análise de macrodados
 O Azure Data Lake Store foi concebido para a execução de sistemas de análise de grande escala que necessitam de débito intenso para consultar e analisar grandes quantidades de dados. O data lake propaga partes de um ficheiro ao longo de um número de servidores de armazenamento individuais. Isto melhora o débito de leitura ao ler o ficheiro em paralelo para efetuar análise de dados.
 
-### <a name="enterpriseready-highlyavailable-and-secure"></a>Pronto para empresas: elevada disponibilidade e segurança
+### <a name="enterprise-ready-highly-available-and-secure"></a>Pronto para empresas: elevada disponibilidade e segurança
 O Azure Data Lake Store fornece disponibilidade e fiabilidade de norma da indústria. Os recursos de dados são armazenados de maneira duradoura, ao fazer cópias redundantes para proteger contra quaisquer falhas inesperadas. As empresas podem utilizar o Azure Data Lake nas respetivas soluções como uma parte importante da respetiva plataforma de dados.
 
 O Data Lake Store também fornece segurança de nível empresarial para os dados armazenados. Para obter mais informações, consulte o artigo [Proteger dados no Azure Data Lake Store](#DataLakeStoreSecurity).
@@ -105,6 +105,6 @@ Se preferir assistir a vídeos para obter mais informações, o Data Lake Store 
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 

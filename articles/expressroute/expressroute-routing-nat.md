@@ -13,10 +13,10 @@ ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/12/2016
-ms.author: osamazia
+ms.author: osamam
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: bd7537a81661bc175a770fdbd6388ba07ea912ae
+ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
+ms.openlocfilehash: 5e3c65d9ada5c75e0ddef3b3778a79ca77aa07d8
 
 
 ---
@@ -101,7 +101,7 @@ Suportamos até 4000 prefixos que nos sejam anunciados através do peering priva
 
 A sessão de BGP será ignorada se o número de prefixos exceder o limite. Só aceitamos rotas predefinidas na ligação do peering privado. O fornecedor tem de filtrar a rota predefinida e os endereços IP privados (RFC 1918) nos caminhos do peering público do Azure e do peering da Microsoft. 
 
-## <a name="transit-routing-and-crossregion-routing"></a>Encaminhamento de trânsito e encaminhamento por várias regiões
+## <a name="transit-routing-and-cross-region-routing"></a>Encaminhamento de trânsito e encaminhamento por várias regiões
 Não é possível encaminhar o ExpressRoute como router de trânsito. Precisará do seu fornecedor de conectividade para os serviços de encaminhamento de trânsito.
 
 ## <a name="advertising-default-routes"></a>Anunciar rotas predefinidas
@@ -194,6 +194,6 @@ Para além do que foi dito acima, a Microsoft também marcará prefixos baseados
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 

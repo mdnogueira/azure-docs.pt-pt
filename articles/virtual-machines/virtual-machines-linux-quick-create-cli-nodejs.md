@@ -12,29 +12,32 @@ ms.devlang: NA
 ms.topic: hero-article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 10/27/2016
+ms.date: 12/15/2016
 ms.author: v-livech
 translationtype: Human Translation
-ms.sourcegitcommit: 9fd40ebce2f249d0ac7d42b3dc068083d90afc95
-ms.openlocfilehash: 3f224cb1a7e2d9d3527a79a2d1fe255354ae6783
+ms.sourcegitcommit: 2c37d5186e169789881a4b29597cb37cd6f7ede9
+ms.openlocfilehash: dc5c575873ceb2acc8321b949031276d9a8f8cc8
 
 
 ---
 # <a name="create-a-linux-vm-using-the-azure-cli"></a>Criar uma VM com Linux através da CLI do Azure
-Este artigo mostra como implementar rapidamente uma máquina virtual (VM) com Linux no Azure através do comando `azure vm quick-create` na interface de linha de comandos (CLI) do Azure. O comando `quick-create` implementa uma VM numa infraestrutura básica segura que pode utilizar para criar protótipos ou testar rapidamente um conceito. 
 
-> [!NOTE] 
+Este artigo mostra como implementar rapidamente uma máquina virtual (VM) com Linux no Azure através do comando `azure vm quick-create` na interface de linha de comandos (CLI) do Azure. O comando `quick-create` implementa uma VM numa infraestrutura básica segura que pode utilizar para criar protótipos ou testar rapidamente um conceito.
+
+> [!NOTE]
 Para criar uma VM com a CLI do Azure 2.0 (Pré-visualização), veja [Criar uma VM com a CLI do Azure](virtual-machines-linux-quick-create-cli.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
 O artigo requer:
 
-* uma conta do Azure ([obtenha uma avaliação gratuita](https://azure.microsoft.com/pricing/free-trial/)).
-* a [CLI do Azure](../xplat-cli-install.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) com sessão iniciada com `azure login`.
-* a CLI do Azure *tem de estar no* modo Azure Resource Manager`azure config mode arm`.
+- [uma conta do Azure](https://azure.microsoft.com/pricing/free-trial/)
+
+- [Ficheiros de chaves públicas e privadas SSH](virtual-machines-linux-mac-create-ssh-keys.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+
 
 Também pode implementar rapidamente uma VM com Linux através do [portal do Azure](virtual-machines-linux-quick-create-portal.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
 ## <a name="quick-commands"></a>Comandos rápidos
+
 O exemplo seguinte mostra como implementar uma VM CoreOS e anexar a chave Secure Shell (SSH) (os seus argumentos podem ser diferentes):
 
 ```azurecli
@@ -42,9 +45,11 @@ azure vm quick-create -M ~/.ssh/id_rsa.pub -Q CoreOS
 ```
 
 ## <a name="detailed-walkthrough"></a>Instruções detalhadas
+
 As instruções seguintes têm uma VM UbuntuLTS a ser implementada, passo a passo, com explicações do que cada passo está a fazer.
 
 ## <a name="vm-quick-create-aliases"></a>Criação rápida de aliases para VM
+
 Uma forma rápida de escolher uma distribuição consiste em utilizar os aliases da CLI do Azure mapeados para as distribuições de SO mais comuns. A tabela seguinte lista os aliases (a partir da versão 0.10 da CLI do Azure). Todas as implementações que utilizem `quick-create` são predefinidas para VMs apoiadas pelo armazenamento de unidade de estado sólido (SSD), que oferece aprovisionamento mais rápido e acesso ao disco de elevado desempenho. (Estes aliases representam uma parte muito pequena das distribuições disponíveis no Azure. Encontre mais imagens no Azure Marketplace ao [procurar uma imagem no PowerShell](virtual-machines-linux-cli-ps-findimage.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json), [na Web](https://azure.microsoft.com/marketplace/virtual-machines/) ou ao [carregar a sua própria imagem personalizada](virtual-machines-linux-create-upload-generic.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).)
 
 | Alias | Publicador | Oferta | SKU | Versão |
@@ -75,7 +80,7 @@ azure vm quick-create \
   --location westus \
   --os-type Linux \
   --admin-username myAdminUser \
-  --ssh-public-file ~/.ssh/id_rsa.pub \
+  --ssh-publickey-file ~/.ssh/id_rsa.pub \
   --image-urn UbuntuLTS
 ```
 
@@ -209,7 +214,6 @@ Também pode [utilizar o controlador `docker-machine` do Azure com vários coman
 
 
 
-
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Dec16_HO3-->
 
 

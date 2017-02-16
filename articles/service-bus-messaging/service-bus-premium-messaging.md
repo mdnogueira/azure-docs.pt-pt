@@ -12,11 +12,11 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 1/06/2016
-ms.author: darosa,sethm,jotaub
+ms.date: 01/18/2017
+ms.author: darosa;sethm;jotaub
 translationtype: Human Translation
-ms.sourcegitcommit: ed1469b7d12af84970d0675ac2af29580e319042
-ms.openlocfilehash: 11bac0e1877fa2c1cacc9a0a6e6d7870a17a44a2
+ms.sourcegitcommit: dfd1ae52cc56a4d4b4c7ee3f69f0c454be607401
+ms.openlocfilehash: 9dd2696ebf4e2c4749471e5adcbc446c3945babf
 
 
 ---
@@ -50,7 +50,7 @@ Uma vez que as mensagens Premium se executam num ambiente de tempo de execução
 
 ## <a name="get-started-with-premium-messaging"></a>Introdução às Mensagens Premium
 
-A Introdução às Mensagens Premium é simples e o processo é semelhante ao das Mensagens Standard. Comece por [criar um espaço de nomes](service-bus-create-namespace-portal.md). Certifique-se de que seleciona *Premium* em “Escalão de preço”.
+A introdução às Mensagens Premium é simples e o processo é semelhante ao das Mensagens Standard. Comece por [criar um espaço de nomes](service-bus-create-namespace-portal.md). Certifique-se de que seleciona **Premium**, em **Escalão de preço**.
 
 ![create-premium-namespace][create-premium-namespace]
 
@@ -71,6 +71,6 @@ Para saber mais sobre Mensagens do Service Bus, veja os tópicos seguintes.
 
 
 
-<!--HONumber=Jan17_HO2-->
+<!--HONumber=Jan17_HO3-->
 
 

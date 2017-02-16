@@ -15,8 +15,8 @@ ms.workload: na
 ms.date: 11/23/2016
 ms.author: andbuc
 translationtype: Human Translation
-ms.sourcegitcommit: 6b41567f7b43fd6a56da1f571e007d31cef97b92
-ms.openlocfilehash: 68965a1157b31d75595e546b2b227844ddff2eb9
+ms.sourcegitcommit: e1cf5ed3f2434a9e98027afd0225207ad5d2f1b1
+ms.openlocfilehash: 28984e14f5afc27b608ab37daf19d454eb7c3201
 
 
 ---
@@ -28,7 +28,7 @@ Antes de começar, tem de [configurar o seu ambiente de desenvolvimento][lnk-set
 
 1. Abra uma shell.
 2. Navegue até à pasta raiz na sua cópia local do repositório **azure-iot-gateway-sdk**.
-3. Execute o script **tools/build.sh --skip-unittests**. Este script utiliza o utilitário **cmake** para criar uma pasta denominada **build** na pasta raiz da sua cópia local do repositório **azure-iot-gateway-sdk** e gerar um makefile. Em seguida, o script compila a solução, ignorando os teste de unidade. Remova o parâmetro **--skip-unittests** se pretender criar e executar os testes de unidade.
+3. Execute o script **tools/build.sh**. Este script utiliza o utilitário **cmake** para criar uma pasta denominada **build** na pasta raiz da sua cópia local do repositório **azure-iot-gateway-sdk** e gerar um makefile. Em seguida, o script compila a solução, ignorando os teste de unidade e os testes completos. Adicione o parâmetro **--run-unittests** se quiser criar e executar os testes de unidade. Adicione o parâmetro **--run-e2e-tests** se quiser criar e executar os testes completos.
 
 > [!NOTE]
 > Sempre que executar o script **build.sh**, este elimina e, em seguida, recria a pasta **build** na pasta raiz da sua cópia local do repositório **azure-iot-gateway-sdk**.
@@ -92,6 +92,6 @@ Antes de começar, tem de [configurar o seu ambiente de desenvolvimento][lnk-set
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Jan17_HO3-->
 
 

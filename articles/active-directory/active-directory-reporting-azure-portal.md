@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 10/31/2016
 ms.author: markvi
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 96784e006b5986cbc6dfd4f264b22bd1d1bf208d
+ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
+ms.openlocfilehash: e082470c8ad3ee02c528a4ca6e3326e5be4752a3
 
 
 ---
-# <a name="azure-active-directory-reporting-preview"></a>Relatórios do Azure Active Directory - pré-visualização
+# <a name="azure-active-directory-reporting---preview"></a>Relatórios do Azure Active Directory - pré-visualização
 > [!div class="op_single_selector"]
 > * [Portal do Azure](active-directory-reporting-azure-portal.md)
 > * [Portal Clássico do Azure](active-directory-reporting-guide.md)
@@ -38,8 +38,8 @@ Existem duas áreas principais de relatórios:
 
 Consoante o âmbito dos dados de que está à procura, pode aceder a estes relatórios clicando em **Utilizadores e grupos** ou em **Aplicações empresariais** na lista de serviços no [portal do Azure](https://portal.azure.com).
 
-## <a name="signin-activities"></a>Atividades de início de sessão
-### <a name="user-signin-activities"></a>Atividades de início de sessão do utilizador
+## <a name="sign-in-activities"></a>Atividades de início de sessão
+### <a name="user-sign-in-activities"></a>Atividades de início de sessão do utilizador
 Com as informações fornecidas pelo relatório de início de sessão de utilizador, encontrará respostas a perguntas como:
 
 * O que é o padrão de início de sessão de um utilizador?
@@ -97,7 +97,7 @@ Utilizando o seletor de colunas, pode selecionar os campos de dados que pretende
 
 ![Relatórios](./media/active-directory-reporting-azure-portal/column_chooser.png "Reporting")
 
-### <a name="filtering-signins"></a>Filtrar inícios de sessão
+### <a name="filtering-sign-ins"></a>Filtrar inícios de sessão
 Pode filtrar inícios de sessão para limitar a quantidade de dados apresentados com os campos seguintes:
 
 * Data e hora 
@@ -203,6 +203,6 @@ Veja o [Guia dos Relatórios do Azure Active Directory](active-directory-reporti
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 

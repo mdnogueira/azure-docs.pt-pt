@@ -12,11 +12,11 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 01/05/2017
+ms.date: 01/10/2017
 ms.author: juliako
 translationtype: Human Translation
-ms.sourcegitcommit: f6d6b7b1051a22bbc865b237905f8df84e832231
-ms.openlocfilehash: b433c35817a0ba36003e8d506db9d2d6d97f9ff7
+ms.sourcegitcommit: e126076717eac275914cb438ffe14667aad6f7c8
+ms.openlocfilehash: 6b5ba034325ef1cbb7b085890c63302d06d0d927
 
 
 ---
@@ -25,59 +25,19 @@ ms.openlocfilehash: b433c35817a0ba36003e8d506db9d2d6d97f9ff7
 
 Este tutorial explica os passos para implementar um serviço básico de entrega de conteúdos de Vídeo a Pedido (VoD) com a aplicação Azure Media Services (AMS) com o Portal do Azure.
 
-> [!NOTE]
-> Para concluir este tutorial, precisa de uma conta do Azure. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/). 
-> 
-> 
+## <a name="prerequisites"></a>Pré-requisitos
+O seguinte é necessário para concluir o tutorial:
+
+* Uma conta do Azure. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/). 
+* Uma conta dos Media Services. Para criar uma conta dos Media Services, consulte [Como Criar uma Conta de Media Services](media-services-portal-create-account.md).
 
 Este tutorial inclui as seguintes tarefas:
 
-1. Criar uma conta dos Azure Media Services.
-2. Iniciar o ponto final de transmissão em fluxo.
-3. Carregar um ficheiro de vídeo.
-4. Codificar o ficheiro de origem para um conjunto de ficheiros MP4 de velocidade de transmissão adaptável.
-5. Publicar o elemento e obter os URLs de transferência progressiva e transmissão em fluxo.  
-6. Reproduzir os conteúdos.
-
-## <a name="create-an-azure-media-services-account"></a>Criar uma conta dos Azure Media Services
-Os passos nesta secção explicam como criar uma conta dos AMS.
-
-1. Inicie sessão no [Portal do Azure](https://portal.azure.com/).
-2. Clique em **+Novo** > **Web + Móvel** > **Serviços de Multimédia**.
-   
-    ![Criar Media Services](./media/media-services-portal-vod-get-started/media-services-new1.png)
-3. Em **CRIAR CONTA DE MEDIA SERVICES**, Introduza os valores necessários.
-   
-    ![Criar Media Services](./media/media-services-portal-vod-get-started/media-services-new3.png)
-   
-   1. Em **Nome da Conta**, introduza o nome da nova conta de AMS. Um nome de conta dos Media Services é composto por números ou letras minúsculas sem espaços, com 3 a 24 carateres de comprimento.
-   2. Na subscrição, selecione entre as diferentes subscrições do Azure disponíveis para si.
-   3. Em **Grupo de Recursos**, selecione o recurso novo ou existente.  Um grupo de recursos é uma coleção de recursos que partilham o ciclo de vida, as permissões e as políticas. Sabia mais [aqui](../azure-resource-manager/resource-group-overview.md#resource-groups).
-   4. Em **Localização**, selecione a região geográfica que é utilizada para armazenar os registos de multimédia e metadados da conta dos Media Services. Esta região é utilizada para processar e transmitir em fluxo os seus conteúdos multimédia. Apenas as regiões dos Media Services disponíveis são apresentadas na caixa de lista pendente. 
-   5. Em **Conta do Storage**, selecione uma conta do Storage para fornecer o Blob Storage do conteúdo de multimédia da conta de Media Services. Pode selecionar uma conta de armazenamento existente na mesma região geográfica da conta dos Serviços de Multimédia ou pode criar uma conta de armazenamento. É criada uma nova conta do Storage na mesma região. As regras para os nomes da conta do Storage são iguais às das contas dos Media Services.
-      
-       Saiba mais sobre armazenamento [aqui](../storage/storage-introduction.md).
-   6. Selecione **Afixar no dashboard** para ver o progresso da implementação da conta.
-4. Clique em **Criar** na parte inferior do formulário.
-   
-    Depois de criar a conta com êxito, a página de descrição geral é carregada. Na tabela do ponto final de transmissão em fluxo, a conta terá um ponto final de transmissão em fluxo predefinido no estado **Parado**. O ponto final de transmissão em fluxo a partir do qual quer transmitir o seu conteúdo tem de estar no estado **Em execução**. 
-   
-    ![Definições dos Media Services](./media/media-services-portal-vod-get-started/media-services-settings.png)
-   
-    Para gerir a sua conta de AMS (por exemplo, carregar vídeos, codificar elementos, monitorizar o progresso da tarefa) utilize a janela **Definições**.
-
-## <a name="manage-keys"></a>Gerir Chaves
-Necessita do nome da conta e das informações da chave primária para aceder programaticamente à conta de Media Services.
-
-1. No Portal do Azure, selecione a sua conta. 
-   
-    A janela **Definições** aparece à direita. 
-2. Na janela **Definições**, selecione **Chaves**. 
-   
-    A janela **Gerir chaves** mostra o nome da conta e as chaves primária e secundária são apresentadas. 
-3. Prima o botão Copiar para copiar os valores.
-   
-    ![Chaves dos Media Services](./media/media-services-portal-vod-get-started/media-services-keys.png)
+1. Iniciar o ponto final de transmissão em fluxo.
+2. Carregar um ficheiro de vídeo.
+3. Codificar o ficheiro de origem para um conjunto de ficheiros MP4 de velocidade de transmissão adaptável.
+4. Publicar o elemento e obter os URLs de transferência progressiva e transmissão em fluxo.  
+5. Reproduzir os conteúdos.
 
 ## <a name="start-streaming-endpoints"></a>Iniciar pontos finais de transmissão em fluxo 
 
@@ -88,13 +48,14 @@ Ao trabalhar com os Serviços de Multimédia do Azure, uma das situações mais 
 
 Para iniciar o ponto final de transmissão em fluxo, faça o seguinte:
 
-1. Na janela Definições, clique em Pontos finais de transmissão em fluxo. 
-2. Clique no ponto final de transmissão em fluxo predefinido. 
+1. Inicie sessão no [Portal do Azure](https://portal.azure.com/).
+2. Na janela Definições, clique em Pontos finais de transmissão em fluxo. 
+3. Clique no ponto final de transmissão em fluxo predefinido. 
 
     A janela DETALHES DO PONTO FINAL DE TRANSMISSÃO EM FLUXO PREDEFINIDO é apresentada.
 
-3. Clique no ícone Início.
-4. Clique no botão Guardar para guardar as alterações.
+4. Clique no ícone Início.
+5. Clique no botão Guardar para guardar as alterações.
 
 ## <a name="upload-files"></a>Carregar ficheiros
 Para transmitir vídeos em fluxo através dos Serviços de Multimédia do Azure, tem de carregar os vídeos de origem, codificá-los em múltiplas velocidades de transmissão e publicar o resultado. O primeiro passo é abrangido nesta secção. 
@@ -129,7 +90,7 @@ Esta secção descreve os passos que pode seguir para codificar o conteúdo com 
 1. Na janela **Definições**, selecione **Elementos**.  
 2. Na janela **Elementos**, selecione o elemento que gostaria de codificar.
 3. Prima o botão **Codificar**.
-4. Na janela **Codificar um elemento**, selecione o processador "Codificador de Multimédia Standard" e uma predefinição. Por exemplo, se sabe que o seu vídeo de entrada tem uma resolução de 1920 x 1080 pixels, então, pode utilizar a predefinição "H264 de Múltipla Velocidade de Transmissão a 1080p". Para obter mais informações sobre predefinições, consulte [este](https://msdn.microsoft.com/library/azure/mt269960.aspx) artigo – é importante selecionar a predefinição mais adequada para o seu vídeo de entrada. Se tiver um vídeo de baixa resolução (640 x 360), então, não deve estar a utilizar a predefinição "H264 de Múltipla Velocidade de Transmissão a 1080p".
+4. Na janela **Codificar um elemento**, selecione o processador "Codificador de Multimédia Standard" e uma predefinição. Por exemplo, se sabe que o seu vídeo de entrada tem uma resolução de 1920 x 1080 pixels, então, pode utilizar a predefinição "H264 de Múltipla Velocidade de Transmissão a 1080p". Para obter mais informações sobre predefinições, consulte [este](media-services-mes-presets-overview.md) artigo – é importante selecionar a predefinição mais adequada para o seu vídeo de entrada. Se tiver um vídeo de baixa resolução (640 x 360), então, não deve estar a utilizar a predefinição "H264 de Múltipla Velocidade de Transmissão a 1080p".
    
    Para facilitar a gestão, tem uma opção de editar o nome do elemento de saída e o nome da tarefa.
    
@@ -169,7 +130,7 @@ Um URL SAS tem o seguinte formato.
 > 
 > 
 
-Para atualizar uma data de expiração num localizador, utilize as APIs [REST](http://msdn.microsoft.com/library/azure/hh974308.aspx#update_a_locator) ou [.NET](http://go.microsoft.com/fwlink/?LinkID=533259). Ao atualizar a data de expiração de um localizador SAS, o URL é alterado.
+Para atualizar uma data de expiração num localizador, utilize as APIs [REST](https://docs.microsoft.com/rest/api/media/operations/locator#update_a_locator) ou [.NET](http://go.microsoft.com/fwlink/?LinkID=533259). Ao atualizar a data de expiração de um localizador SAS, o URL é alterado.
 
 ### <a name="to-use-the-portal-to-publish-an-asset"></a>Para utilizar o portal para publicar um elemento
 Para utilizar o portal para publicar um elemento, faça o seguinte:

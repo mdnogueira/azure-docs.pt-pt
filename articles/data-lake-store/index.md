@@ -1,13 +1,14 @@
 ---
 layout: LandingPage
+description: "Saiba como configurar, gerir e aceder a um repositório de hiperescala do data lake compatível com o Hadoop para análises em dados de qualquer tamanho, tipo e velocidade de ingestão."
 translationtype: Human Translation
-ms.sourcegitcommit: 3752a677351518195773a86c3824078a5aff6d03
-ms.openlocfilehash: d26d0f965ad1195ab41e04e870ead1b335ff513e
+ms.sourcegitcommit: a33b0509d1280a33a1e5134217b56071256fec24
+ms.openlocfilehash: d5ff73f8c9303bff281b2a2bbf314c76072f7569
 
 ---
 # <a name="data-lake-store-documentation"></a>Documentação do Data Lake Store
 
-O Azure Data Lake Store é um repositório de hiperescala para cargas de trabalho de análise de macrodados. O Azure Data Lake permite-lhe capturar dados de qualquer tamanho, tipo e velocidade de ingestão num único local para análises exploratórias e operacionais.  Pode aceder ao Azure Data Lake Store a partir do Hadoop (disponível com o cluster de HDInsight) através dos cenários compatíveis com WebHDFS. Inclui todas as funcionalidades de nível empresarial em matéria de segurança, capacidade de gestão, escalabilidade, fiabilidade e disponibilidade.
+Saiba como utilizar o Data Lake Store para criar um repositório de hiperescala compatível com o Hadoop para análises em dados de qualquer tamanho, tipo e velocidade de ingestão. Tutoriais, referências de API e outra documentação mostram-lhe como configurar, gerir e aceder a um repositório do data lake para análises exploratórias e operacionais.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -211,6 +212,6 @@ Transferir a Documentação do Azure Data Lake Store </div>
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

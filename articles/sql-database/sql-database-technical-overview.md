@@ -17,8 +17,8 @@ ms.workload: data-management
 ms.date: 12/20/2016
 ms.author: shkurhek;carlrab
 translationtype: Human Translation
-ms.sourcegitcommit: e5b5751facb68ae4a62e3071fe4dfefc02434a9f
-ms.openlocfilehash: 262583a2a11c41cf7acb55599041692137165e8f
+ms.sourcegitcommit: 187954f3ddafdbc17e341ce41f5b109cb95f8a24
+ms.openlocfilehash: 399fdbeee479f5598e6ed7f9bd6b6080ec919c98
 
 ---
 # <a name="what-is-sql-database-introduction-to-sql-database"></a>O que é a Base de Dados SQL? Introdução à Base de Dados SQL
@@ -26,7 +26,7 @@ A Base de Dados SQL é um serviço de bases de dados relacionais na cloud da Mic
 
 Este artigo é uma introdução aos conceitos e às funcionalidades essenciais da Base de Dados SQL relacionados com desempenho, escalabilidade e capacidade de gestão, com ligações para explorar detalhes. Se estiver preparado para avançar para tutoriais práticos, aceda a [Criar a sua primeira base de dados SQL](sql-database-get-started.md) ou [Criar um conjunto elástico](sql-database-elastic-pool-create-portal.md). Para obter uma demonstração em vídeo breve, veja este vídeo.
 
-> [!VIDEO https://channel9.msdn.com/Blogs/Windows-Azure/Azure-SQL-Database-create-DBs-in-seconds/player]
+> [!VIDEO https://channel9.msdn.com/Blogs/Azure/Azure-SQL-Database-create-DBs-in-seconds/player]
 > 
 > 
 
@@ -62,6 +62,6 @@ Agora que já leu uma introdução à Base de Dados SQL e respondeu à pergunta 
 
 
 
-<!--HONumber=Dec16_HO4-->
+<!--HONumber=Jan17_HO2-->
 
 

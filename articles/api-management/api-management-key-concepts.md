@@ -12,11 +12,11 @@ ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: hero-article
-ms.date: 10/25/2016
-ms.author: sdanie
+ms.date: 12/15/2016
+ms.author: apipm
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: dcff834c9d4aff82e8319e6c23a74c2e49902a8c
+ms.sourcegitcommit: b0ead7ecbf9327e9df6846d6e046ed69f25832cf
+ms.openlocfilehash: 872fbd44a9bccf0d6e9f7f3f3bd839e384874ae5
 
 
 ---
@@ -50,14 +50,14 @@ Este tópico fornece uma descrição geral dos conceitos-chave da API Management
 ## <a name="apis"> </a>APIs e operações
 As APIs são a base de uma instância de serviço de API Management. Cada API representa um conjunto de operações disponíveis para os programadores. Cada API contém uma referência ao serviço de back-end que implementa a API e as respetivas operações efetuam o mapeamento para as operações implementadas pelo serviço de back-end. As operações da API Management são altamente configuráveis, com controlo sobre o mapeamento de URL, parâmetros de caminho e consulta, conteúdo do pedido e da resposta e colocação em cache das respostas de operações. Também é possível implementar políticas de limite de taxa, quotas e restrição de IP ao nível da API ou da operação individual.
 
-Para obter mais informações, consulte [Como criar APIs][Como criar APIs] e [Como adicionar operações a uma API][Como adicionar operações a uma API].
+Para obter mais informações, consulte [Como criar APIs][How to create APIs] e [Como adicionar operações a uma API][How to add operations to an API].
 
 ## <a name="products"> </a> Produtos
 Os produtos são a forma como as APIs são apresentadas aos programadores. Os produtos na API Management têm uma ou mais APIs e são configurados com um título, uma descrição e termos de utilização. Os produtos podem ser **Abertos** ou **Protegidos**. Os produtos protegidos têm de ser subscritos antes de poderem ser utilizados, enquanto os produtos abertos podem ser utilizados sem uma subscrição. Quando um produto estiver pronto para ser utilizado pelos programadores, pode ser publicado. Assim que for publicado, pode ser visualizado (e subscrito, no caso dos produtos protegidos) pelos programadores. A aprovação de subscrição é configurada ao nível do produto e pode exigir a aprovação do administrador ou ser aprovada automaticamente.
 
 Os grupos são utilizados para gerir a visibilidade dos produtos para os programadores. Os produtos concedem visibilidade aos grupos e os programadores podem ver e subscrever os produtos que estão visíveis para os grupos a que pertencem. 
 
-Para obter mais informações, consulte [Como criar e publicar um produto][Como criar e publicar um produto] e o vídeo seguinte.
+Para obter mais informações, consulte [Como criar e publicar um produto][How to create and publish a product] e o vídeo seguinte.
 
 > [!VIDEO https://channel9.msdn.com/Blogs/AzureApiMgmt/Using-Products/player]
 > 
@@ -72,14 +72,14 @@ Os grupos são utilizados para gerir a visibilidade dos produtos para os program
 
 Para além destes grupos de sistema, os administradores podem criar grupos personalizados ou [tirar partido de grupos externos em inquilinos do Azure Active Directory associados](api-management-howto-aad.md#how-to-add-an-external-azure-active-directory-group). É possível utilizar grupos personalizados e externos em conjunto com grupos de sistema para dar aos programadores acesso e visibilidade a produtos de API. Por exemplo, pode criar um grupo personalizado para os programadores associados a uma organização parceira específica e permitir-lhes o acesso às APIs a partir de um produto que contém apenas APIs relevantes. Um utilizador pode ser membro de mais do que um grupo.
 
-Para obter mais informações, consulte [Como criar e utilizar grupos][Como criar e utilizar grupos].
+Para obter mais informações, consulte [Como criar e utilizar grupos][How to create and use groups].
 
 ## <a name="developers"> </a> Programadores
-Os programadores representam as contas de utilizador numa instância de serviço de API Management. Os programadores podem ser criados ou convidados a aderirem por administradores, ou podem inscrever-se a partir do [Portal do programador][Portal do programador]. Cada programador é membro de um ou mais grupos e pode subscrever os produtos que concedem visibilidade a esses grupos.
+Os programadores representam as contas de utilizador numa instância de serviço de API Management. Os programadores podem ser criados ou convidados a aderirem por administradores, ou podem inscrever-se a partir do [Portal do programador][Developer portal]. Cada programador é membro de um ou mais grupos e pode subscrever os produtos que concedem visibilidade a esses grupos.
 
 Quando os programadores subscrevem um produto, é-lhes concedida a chave primária e secundária desse produto. Esta chave é utilizada ao efetuar chamadas para as APIs do produto.
 
-Para obter mais informações, consulte [Como criar ou convidar programadores][Como criar ou convidar programadores] e [Como associar grupos a programadores][Como associar grupos a programadores].
+Para obter mais informações, consulte [Como criar ou convidar programadores][How to create or invite developers] e [Como associar grupos a programadores][How to associate groups with developers].
 
 ## <a name="policies"> </a> Políticas
 As políticas são uma funcionalidade poderosa da API Management que permite ao publicador alterar o comportamento da API através da configuração. As políticas são uma coleção de instruções que são executadas sequencialmente no pedido ou na resposta de uma API. As instruções populares incluem a conversão do formato de XML para JSON e a limitação de taxa de chamadas para restringir a quantidade de chamadas recebidas de um programador, bem como várias outras políticas disponíveis.
@@ -90,7 +90,7 @@ As expressões de política podem ser utilizadas como valores de atributo ou val
 > 
 > 
 
-Para obter uma lista completa das políticas de Gestão de API, consulte [Referência de política][Referência de política]. Para obter mais informações sobre como utilizar e configurar as políticas, consulte [Políticas de Gestão de API][Políticas de Gestão de API]. Para consultar um tutorial sobre a criação de um produto com políticas de limite de taxa e quota, consulte [Como criar e configurar definições de produto avançadas][Como criar e configurar definições de produto avançadas]. Para obter uma demonstração, veja o vídeo seguinte.
+Para obter uma lista completa das políticas de Gestão de API, consulte [Referência de política][Policy reference]. Para obter mais informações sobre como utilizar e configurar as políticas, consulte [Políticas de Gestão de API][API Management policies]. Para consultar um tutorial sobre a criação de um produto com políticas de limite de taxa e quota, consulte [Como criar e configurar definições de produto avançadas][How create and configure advanced product settings]. Para obter uma demonstração, veja o vídeo seguinte.
 
 > [!VIDEO https://channel9.msdn.com/Blogs/AzureApiMgmt/Rate-Limits-and-Quotas/player]
 > 
@@ -108,30 +108,30 @@ Para obter mais informações sobre a API Management, veja a seguinte apresenta�
 > 
 > 
 
-[APIs e operações]: #apis
-[Produtos]: #products
-[Grupos]: #groups
-[Programadores]: #developers
-[Políticas]: #policies
-[Portal do programador]: #developer-portal
+[APIs and operations]: #apis
+[Products]: #products
+[Groups]: #groups
+[Developers]: #developers
+[Policies]: #policies
+[Developer portal]: #developer-portal
 
-[Como criar APIs]: api-management-howto-create-apis.md
-[Como adicionar operações a uma API]: api-management-howto-add-operations.md
-[Como criar e publicar um produto]: api-management-howto-add-products.md
-[Como criar e utilizar grupos]: api-management-howto-create-groups.md
-[Como associar grupos a programadores]: api-management-howto-create-groups.md#associate-group-developer
-[Como criar e configurar definições de produto avançadas]: api-management-howto-product-with-rules.md
-[Como criar ou convidar programadores]: api-management-howto-create-or-invite-developers.md
-[Referência de políticas]: api-management-policy-reference.md
-[Políticas de Gestão de API]: api-management-howto-policies.md
-[Criar uma instância de serviço de Gestão de API]: api-management-get-started.md#create-service-instance
-
-
+[How to create APIs]: api-management-howto-create-apis.md
+[How to add operations to an API]: api-management-howto-add-operations.md
+[How to create and publish a product]: api-management-howto-add-products.md
+[How to create and use groups]: api-management-howto-create-groups.md
+[How to associate groups with developers]: api-management-howto-create-groups.md#associate-group-developer
+[How create and configure advanced product settings]: api-management-howto-product-with-rules.md
+[How to create or invite developers]: api-management-howto-create-or-invite-developers.md
+[Policy reference]: api-management-policy-reference.md
+[API Management policies]: api-management-howto-policies.md
+[Create an API Management service instance]: api-management-get-started.md#create-service-instance
 
 
 
 
 
-<!--HONumber=Nov16_HO2-->
+
+
+<!--HONumber=Dec16_HO3-->
 
 

@@ -15,8 +15,8 @@ ms.topic: get-started-article
 ms.date: 09/12/2016
 ms.author: tarcher
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: f2e607924f17b42bba73672a2d24257e672e1134
+ms.sourcegitcommit: 29c4c2a2818468a2fa8360eebd4b653bdcbbde19
+ms.openlocfilehash: 0749d371466226343227c79db544a8e3dca0cca8
 
 
 ---
@@ -39,9 +39,8 @@ Os passos seguintes mostram como utilizar o portal do Azure para criar um labora
    1. Introduza um **Nome de Laboratório** para o novo laboratório.
    2. Selecione a **Subscrição** para associar ao laboratório.
    3. Selecione uma **Localização** onde armazenar o laboratório.
-   4. Selecione **Encerramento automático** para especificar se pretende ativar e definir os parâmetros para o encerramento automático de todas as VMs do laboratório.
-   5. Selecione o **Tipo de armazenamento** para indicar o tipo de disco de armazenamento para as VMs do laboratório. 
-   6. Selecione **Criar**.
+   4. Selecione **Encerramento automático** para especificar se pretende ativar e definir os parâmetros para o encerramento automático de todas as VMs do laboratório. 
+   5. Selecione **Criar**.
       
       ![Painel Criar um laboratório](./media/devtest-lab-create-lab/create-devtestlab-blade.png)
 
@@ -59,6 +58,6 @@ Assim que tiver criado o seu laboratório, seguem-se alguns passos a ter em cons
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -20,7 +20,7 @@ ms.openlocfilehash: 0f035b58ccd140a5481703df7e184206da2ed651
 
 
 ---
-# <a name="scheduler-concepts-terminology-entity-hierarchy"></a>Conceitos, terminologia e hierarquia de entidades do Agendador
+# <a name="scheduler-concepts-terminology--entity-hierarchy"></a>Conceitos, terminologia e hierarquia de entidades do Agendador
 ## <a name="scheduler-entity-hierarchy"></a>Hierarquia de entidades do Agendador
 A tabela seguinte descreve os principais recursos expostos ou utilizados pela API do Agendador:
 

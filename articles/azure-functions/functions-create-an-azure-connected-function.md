@@ -14,175 +14,189 @@ ms.devlang: multiple
 ms.topic: get-started-article
 ms.tgt_pltfrm: multiple
 ms.workload: na
-ms.date: 10/25/2016
+ms.date: 12/06/2016
 ms.author: rachelap@microsoft.com
 translationtype: Human Translation
-ms.sourcegitcommit: a0a46708645be91f89b0a6ae9059468bc84aeb11
-ms.openlocfilehash: c6905452951910d3c62bc5152741a8ead26196ef
+ms.sourcegitcommit: f46a67f2591ef98eeda03f5c3bc556d5b8bcc096
+ms.openlocfilehash: 4e0dd8b922107b232a120c25d1f656c5d667748b
 
 
 ---
-# <a name="create-an-azure-function-which-binds-to-an-azure-service"></a>Criar uma Função do Azure vinculada a um serviço Azure
-[!INCLUDE [Getting Started Note](../../includes/functions-getting-started.md)]
+# <a name="create-an-azure-function-connected-to-an-azure-service"></a>Criar uma Função do Azure ligada a um serviço do Azure
 
-Neste breve vídeo, vai aprender a criar uma Função do Azure que escuta as mensagens numa Fila do Azure e copia as mensagens para um Blob do Azure.
+Este tópico mostra como criar uma Função do Azure que escuta as mensagens numa fila de Armazenamento do Azure e copia as mensagens para linhas numa tabela do Armazenamento do Azure. Uma função acionada por um temporizador é utilizada para carregar mensagens na fila. Uma segunda função lê a partir da fila e escreve mensagens na tabela. Tanto a fila como a tabela são criadas para si pelas Funções do Azure com base nas definições de enlace. 
+
+Para tornar as coisas mais interessantes, uma função é escrita em JavaScript e a outra é escrita em script C#. Isto demonstra como uma aplicação de função pode ter funções em várias linguagens.
 
 ## <a name="watch-the-video"></a>Ver o vídeo
 >[!VIDEO https://channel9.msdn.com/Series/Windows-Azure-Web-Sites-Tutorials/Create-an-Azure-Function-which-binds-to-an-Azure-service/player]
 >
 >
 
-## <a name="create-an-input-queue-trigger-function"></a>Criar uma função de acionador de fila de entrada
-O objetivo desta função é escrever uma mensagem numa fila a cada 10 segundos. Para tal, tem de criar a função e filas de mensagens, e adicionar o código para escrever mensagens nas filas recentemente criadas.
+## <a name="create-a-function-that-writes-to-the-queue"></a>Criar uma função que escreve na fila
 
-1. Aceda ao Portal do Azure e localize a Function App do Azure.
-2. Clique em **Nova Função** > **TimerTrigger - Node**. Atribua à função o nome **FunctionsBindingsDemo1**
-3. Introduza um valor de "0/10 * * * * *" para a Agenda. Este valor está sob a forma de uma expressão cron. Esta ação agenda o temporizador para ser executado a cada 10 segundos.
-4. Clique no botão **Criar** para criar a função.
-   
-    ![Adicionar funções de um temporizador de acionador](./media/functions-create-an-azure-connected-function/new-trigger-timer-function.png)
-5. Verifique se a função funciona, visualizando atividade no registo. Poderá ter de clicar na hiperligação **Registos**, no canto superior direito, para apresentar o painel de registo.
-   
-   ![Verifique se a função funciona, visualizando o registo](./media/functions-create-an-azure-connected-function/functionsbindingsdemo1-view-log.png)
+Para poder ligar a uma fila de armazenamento, tem de criar primeiro uma função que carregue a fila de mensagens. Esta função de JavaScript utiliza um acionador de temporizador que escreve uma mensagem na fila cada 10 segundos. Se ainda não tiver uma conta do Azure, veja a experiência [Experimentar Funções do Azure](https://functions.azure.com/try) ou [crie a sua conta do Azure gratuita](https://azure.microsoft.com/free/).
 
-### <a name="add-a-message-queue"></a>Adicionar uma fila de mensagens
-1. Aceda ao separador **Integrar**.
-2. Escolha **Nova Saída** > **Fila de Armazenamento do Azure** > **Selecionar**.
-3. Introduza **myQueueItem** na caixa de texto **Nome do parâmetro de mensagem**.
-4. Selecione uma conta de armazenamento ou clique em **nova** para criar uma conta de armazenamento, caso não tenha uma.
-5. Introduza **functions-bindings** na caixa de texto **Nome da fila**.
-6. Clique em **Guardar**.  
-   
-   ![Adicionar funções de um temporizador de acionador](./media/functions-create-an-azure-connected-function/functionsbindingsdemo1-integrate-tab.png)
+1. Aceda ao portal do Azure e localize a sua Function App.
 
-### <a name="write-to-the-message-queue"></a>Escrever na fila de mensagens
-1. Volte ao separador **Desenvolver** e adicione o seguinte código à função depois do código existente:
+2. Clique em **Nova Função** > **TimerTrigger JavaScript**. 
+
+3. Dê o nome **FunctionsBindingsDemo1** à função, introduza o valor de expressão cron `0/10 * * * * *` para **Agendar** e clique em **Criar**.
+   
+    ![Adicionar uma função acionada por temporizador](./media/functions-create-an-azure-connected-function/new-trigger-timer-function.png)
+
+    Criou uma função acionada por temporizador que é executada a cada 10 segundos.
+
+5. No separador **Desenvolver**, clique em **Registos** e veja a atividade no registo. Verá uma entrada de registo escrita a cada 10 segundos.
+   
+    ![Ver o registo para verificar se a função funciona](./media/functions-create-an-azure-connected-function/functionsbindingsdemo1-view-log.png)
+
+## <a name="add-a-message-queue-output-binding"></a>Adicionar um enlace de saída da fila de mensagens
+
+1. No separador **Integrar**, escolha **Nova Saída** > **Armazenamento de Filas do Azure** > **Selecionar**.
+
+    ![Adicionar uma função de temporizador de acionador](./media/functions-create-an-azure-connected-function/functionsbindingsdemo1-integrate-tab.png)
+
+2. Introduza `myQueueItem` para **Nome do parâmetro de mensagem** e `functions-bindings` para **Nome da fila**, selecione uma **Ligação da conta de armazenamento** existente ou clique em **Nova** para criar uma ligação de conta de armazenamento e, em seguida, clique em **Guardar**.  
+
+    ![Criar o enlace de saída para a fila de armazenamento](./media/functions-create-an-azure-connected-function/functionsbindingsdemo1-integrate-tab2.png)
+
+1. De volta ao separador **Desenvolver**, acrescente o seguinte código à função:
    
     ```javascript
    
     function myQueueItem() 
-      {
+    {
         return {
-        msg: "some message goes here",
-        time: "time goes here"
-      }
+            msg: "some message goes here",
+            time: "time goes here"
+        }
     }
    
     ```
-2. Modifique o código da função existente para chamar o código adicionado no Passo 1. Insira o seguinte código à volta da linha 9 da função, a seguir à instrução *if*.
+2. Localize a instrução *if* à volta da linha 9 da função e insira o seguinte código a seguir a essa instrução.
    
     ```javascript
    
     var toBeQed = myQueueItem();
     toBeQed.time = timeStamp;
-    context.bindings.myQueue = toBeQed;
+    context.bindings.myQueueItem = toBeQed;
    
-    ```
+    ```  
    
-    Este código cria um **myQueueItem** e define a respetiva propriedade **time** como o timeStamp atual. Em seguida, adiciona o novo item da fila para enlace de myQueue do contexto.
+    Este código cria um **myQueueItem** e define a respetiva propriedade **time** como o timeStamp atual. Em seguida, adiciona o novo item da fila ao enlace **myQueueItem** do contexto.
+
 3. Clique em **Guardar e executar**.
-4. Verifique se o código funciona, visualizando a fila no Visual Studio.
-   
-   * Abra o Visual Studio e aceda a **Ver** > **Nuvem** **Explorer**.
-   * Localize a conta de armazenamento e a fila **functions-bindings** que utilizou quando criou a fila myQueue. Deverá ver linhas de dados de registo. Poderá ser necessário iniciar sessão no Azure através do Visual Studio.  
 
-## <a name="create-an-output-queue-trigger-function"></a>Criar uma função de acionador de fila de saída
-1. Clique em **Nova Função** > **QueueTrigger - C#**. Atribua à função o nome **FunctionsBindingsDemo2**. Tenha em atenção que pode combinar vários idiomas na mesma function app (Node e C# neste caso).
-2. Introduza **functions-bindings** no campo **Nome da fila**.
-3. Selecione uma conta de armazenamento para utilizar ou crie uma nova.
-4. Clique em **Criar**.
-5. Verifique se a nova função funciona, visualizando o registo da função e o Visual Studio relativamente à existência de atualizações. O registo da função mostra que a função está a ser executada e os itens estão removidos da fila. Uma vez que a função está vinculada à fila de saída **functions-bindings** como um acionador de entrada, atualizar a Fila **functions-bindings** no Visual Studio deve revelar que os itens desapareceram. Foram removidos da fila.   
-   
-   ![Adicionar funções de um temporizador de fila de saída](./media/functions-create-an-azure-connected-function/functionsbindingsdemo2-integrate-tab.png)   
+## <a name="view-storage-updates-by-using-storage-explorer"></a>Ver atualizações de armazenamento através do Explorador de Armazenamento
+Pode verificar se a função está a funcionar, visualizando as mensagens na fila que criou.  Pode ligar à sua fila de armazenamento através do Cloud Explorer no Visual Studio. No entanto, o portal facilita a ligação à sua conta de armazenamento através do Explorador de Armazenamento do Microsoft Azure.
 
-### <a name="modify-the-queue-item-type-from-json-to-object"></a>Modificar o tipo de item de fila de JSON para objeto
-1. Substitua o código em **FunctionsBindingsDemo2** pelo código seguinte:    
+1. No separador **Integrar**, clique no enlace de saída da fila > **Documentação**, mostre a Cadeia de Ligação para a sua conta de armazenamento e copie o valor. Utilize este valor para ligar à sua conta de armazenamento.
+
+    ![Transferir o Explorador de Armazenamento do Azure](./media/functions-create-an-azure-connected-function/functionsbindingsdemo1-integrate-tab3.png)
+
+
+2. Se ainda não o fez, transfira e instale o [Explorador de Armazenamento do Microsoft Azure](http://storageexplorer.com). 
+ 
+3. No Explorador de Armazenamento, clique no ícone Ligar ao Armazenamento do Azure, cole a cadeia de ligação no campo e conclua o assistente.
+
+    ![Explorador de Armazenamento adicionar uma ligação](./media/functions-create-an-azure-connected-function/functionsbindingsdemo1-storage-explorer.png)
+
+4. Em **Local e ligado**, expanda **Contas de Armazenamento** > a sua conta de armazenamento > **Filas** > **functions-bindings** e verifique se as mensagens estão escritas na fila.
+
+    ![Vista de mensagens na fila](./media/functions-create-an-azure-connected-function/functionsbindings-azure-storage-explorer.png)
+
+    Se a fila não existir ou estiver vazia, é muito provável que exista um problema no código ou enlace de função.
+
+## <a name="create-a-function-that-reads-from-the-queue"></a>Criar uma função que lê a partir da fila
+
+Agora que tem mensagens que estão a ser adicionadas à fila, pode criar outra função que lê a partir da fila e escreve as mensagens de forma permanente numa tabela do Armazenamento do Azure.
+
+1. Clique em **Nova Função** > **QueueTrigger CSharp**. 
+ 
+2. Dê o nome `FunctionsBindingsDemo2` à função, introduza **functions-bindings** no campo **Nome da fila**, selecione uma conta de armazenamento existente ou crie uma e, em seguida, clique em **Criar**.
+
+    ![Adicionar uma função de temporizador de fila de saída](./media/functions-create-an-azure-connected-function/function-demo2-new-function.png) 
+
+3. (Opcional) Pode verificar se a nova função funciona ao visualizar a nova fila no Explorador de Armazenamento como anteriormente. Também pode utilizar o Cloud Explorer no Visual Studio.  
+
+4. (Opcional) Atualize a fila **functions-bindings** e repare que os itens foram removidos da fila. A remoção ocorre porque a função está vinculada à fila **functions-bindings** como um acionador de entrada e a função lê a fila. 
+ 
+## <a name="add-a-table-output-binding"></a>Adicionar um enlace de saída de tabela
+
+1. Em FunctionsBindingsDemo2, clique em **Integrar** > **Nova Saída** > **Armazenamento de Tabelas do Azure** > **Selecionar**.
+
+    ![Adicionar um enlace a uma tabela de Armazenamento do Azure](./media/functions-create-an-azure-connected-function/functionsbindingsdemo2-integrate-tab.png) 
+
+2. Introduza `TableItem` para **Nome da tabela** e `functionbindings` para **Nome do parâmetro de tabela**, escolha um **Ligação da conta de armazenamento** ou crie uma nova e, em seguida, clique em **Guardar**.
+
+    ![Configurar o enlace da tabela de Armazenamento](./media/functions-create-an-azure-connected-function/functionsbindingsdemo2-integrate-tab2.png)
+   
+3. No separador **Desenvolver**, substitua o código da função existente pelo seguinte:
    
     ```cs
-   
+    
     using System;
-   
-    public static void Run(QItem myQueueItem, ICollector<TableItem> myTable, TraceWriter log)
-    {
-      TableItem myItem = new TableItem
-      {
-        PartitionKey = "key",
-        RowKey = Guid.NewGuid().ToString(),
-        Time = DateTime.Now.ToString("hh.mm.ss.ffffff"),
-        Msg = myQueueItem.Msg,
-        OriginalTime = myQueueItem.Time    
-      };
-      log.Verbose($"C# Queue trigger function processed: {myQueueItem.Msg} | {myQueueItem.Time}");
-    }
-   
-    public class TableItem
-    {
-      public string PartitionKey {get; set;}
-      public string RowKey {get; set;}
-      public string Time {get; set;}
-      public string Msg {get; set;}
-      public string OriginalTime {get; set;}
-    }
-   
-    public class QItem
-    {
-      public string Msg { get; set;}
-      public string Time { get; set;}
-    }
-   
-    ```
-   
-    Este código adiciona duas classes, **TableItem** e **QItem**, que utiliza para ler e escrever em filas. Além disso, a função **Executar** foi modificada para aceitar o parâmetro **QItem** e **TraceWriter**, em vez de uma **cadeia** e um **TraceWriter**. 
-2. Clique no botão **Guardar**.
-3. Verifique se o código funciona, verificando o registo. Repare que as funções do Azure serializam e anulam a serialização do objeto automaticamente, facilitando o acesso à fila de uma forma orientada para objetos para passar dados. 
-
-## <a name="store-messages-in-an-azure-table"></a>Armazenar mensagens numa Tabela do Azure
-Agora que tem as filas a trabalhar em conjunto, está na altura de adicionar uma tabela do Azure para o armazenamento permanente dos dados da fila.
-
-1. Aceda ao separador **Integrar**.
-2. Crie uma Tabela de Armazenamento do Azure para Saída e dê-lhe o nome **myTable**.
-3. Responda **functionsbindings** à pergunta "Em que tabela os dados devem ser escritos?".
-4. Altere a definição **PartitionKey** de **{project-id}** para **{partition}**.
-5. Escolha uma conta de armazenamento ou crie uma nova.
-6. Clique em **Guardar**.
-7. Aceda ao separador **Desenvolver**.
-8. Crie uma classe **TableItem** para representar uma tabela do Azure e modifique a função Executar para aceitar o objeto TableItem recentemente criado. Tenha em atenção que tem de utilizar as propriedades **PartitionKey** e **RowKey** para que funcione.
-   
-    ```cs
-   
+    
     public static void Run(QItem myQueueItem, ICollector<TableItem> myTable, TraceWriter log)
     {    
-      TableItem myItem = new TableItem
-      {
-        PartitionKey = "key",
-        RowKey = Guid.NewGuid().ToString(),
-        Time = DateTime.Now.ToString("hh.mm.ss.ffffff"),
-        Msg = myQueueItem.Msg,
-        OriginalTime = myQueueItem.Time    
-      };
-   
-      log.Verbose($"C# Queue trigger function processed: {myQueueItem.RowKey} | {myQueueItem.Msg} | {myQueueItem.Time}");
+        TableItem myItem = new TableItem
+        {
+            PartitionKey = "key",
+            RowKey = Guid.NewGuid().ToString(),
+            Time = DateTime.Now.ToString("hh.mm.ss.ffffff"),
+            Msg = myQueueItem.Msg,
+            OriginalTime = myQueueItem.Time    
+        };
+        
+        // Add the item to the table binding collection.
+        myTable.Add(myItem);
+    
+        log.Verbose($"C# Queue trigger function processed: {myItem.RowKey} | {myItem.Msg} | {myItem.Time}");
     }
-   
+    
     public class TableItem
     {
-      public string PartitionKey {get; set;}
-      public string RowKey {get; set;}
-      public string Time {get; set;}
-      public string Msg {get; set;}
-      public string OriginalTime {get; set;}
+        public string PartitionKey {get; set;}
+        public string RowKey {get; set;}
+        public string Time {get; set;}
+        public string Msg {get; set;}
+        public string OriginalTime {get; set;}
+    }
+    
+    public class QItem
+    {
+        public string Msg { get; set;}
+        public string Time { get; set;}
     }
     ```
-9. Clique em **Guardar**.
-10. Verifique se o código funciona, visualizando os registos da função e no Visual Studio. Para verificar no Visual Studio, utilize o **Cloud Explorer** para navegar até à Tabela do Azure **functionbindings** e verificar se existem linhas na mesma.
+    A classe **TableItem** representa uma linha na tabela de armazenamento e o utilizador adiciona o item à coleção `myTable` de objetos **TableItem**. Tem de definir as propriedades **PartitionKey** e **RowKey** para conseguir inserir na tabela.
 
-[!INCLUDE [Getting Started Note](../../includes/functions-bindings-next-steps.md)]
+4. Clique em **Guardar**.  Por último, pode verificar se a função funciona, visualizando a tabela no Explorador de armazenamento ou no Cloud Explorer do Visual Studio.
 
-[!INCLUDE [Getting Started Note](../../includes/functions-get-help.md)]
+5. (Opcional) Na sua conta de armazenamento no Explorador de Armazenamento, expanda **Tabelas** > **functionsbindings** e verifique se as linhas são adicionadas à tabela. Pode fazer o mesmo no Cloud Explorer no Visual Studio.
+
+    ![Vista de linhas na tabela](./media/functions-create-an-azure-connected-function/functionsbindings-azure-storage-explorer2.png)
+
+    Se a tabela não existir ou estiver vazia, é muito provável que exista um problema no código ou enlace de função. 
+ 
+[!INCLUDE [More binding information](../../includes/functions-bindings-next-steps.md)]
+
+## <a name="next-steps"></a>Passos seguintes
+Veja os seguintes tópicos para obter mais informações sobre o Funções do Azure.
+
+* [Referência para programadores das Funções do Azure](functions-reference.md)  
+  Referência para programadores para codificar funções e definir acionadores e enlaces.
+* [Testar as Funções do Azure](functions-test-a-function.md)  
+  Descreve várias ferramentas e técnicas para testar as suas funções.
+* [Como dimensionar as Funções do Azure](functions-scale.md)  
+  Aborda os planos de serviço disponíveis com as Funções do Azure, incluindo o plano de alojamento de Consumo e como escolher o plano adequado. 
+
+[!INCLUDE [Getting help note](../../includes/functions-get-help.md)]
 
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 

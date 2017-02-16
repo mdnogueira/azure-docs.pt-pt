@@ -16,8 +16,8 @@ ms.topic: get-started-article
 ms.date: 11/28/2016
 ms.author: rickbyh;carlrab
 translationtype: Human Translation
-ms.sourcegitcommit: 86bc7d89bb5725add8ba05b6f0978467147fd3ca
-ms.openlocfilehash: a866b757c9c6946cdff4fe636e81bedbdfa29322
+ms.sourcegitcommit: 2a85b3dc1078bad9e5e2fc0ce0bec7e994b29150
+ms.openlocfilehash: 36938e642853d587cd28405f5e518ac9ac0697ac
 
 
 ---
@@ -51,7 +51,7 @@ Clique em **Guardar** para guardar as alterações.
 ## <a name="next-steps"></a>Passos seguintes
 
 - Para obter um tutorial introdutório, veja o artigo [Tutorial da Base de Dados SQL: Criar um servidor, uma regra de firewall ao nível do servidor, uma base de dados de exemplo, uma regra de firewall ao nível da base de dados e ligar com o SQL Server](sql-database-get-started.md).
-- Para uma introdução com um tutorial de segurança, consulte [Introdução à segurança](sql-database-get-started-security.md)
+- Para uma introdução com um tutorial de segurança, consulte [Introdução à segurança](sql-database-control-access-sql-authentication-get-started.md)
 - Para obter ajuda para ligar a uma base de dados SQL do Azure a partir de aplicações de código aberto ou de terceiros, veja [Client quick-start code samples to SQL Database (Exemplos de código de início rápido de cliente para a Base de Dados SQL)](https://msdn.microsoft.com/library/azure/ee336282.aspx).
 - Para compreender como criar utilizadores adicionais que se podem ligar a bases de dados, consulte [SQL Database Authentication and Authorization: Granting Access (Autenticação e Autorização da Base de Dados SQL: Conceder Acesso)](https://msdn.microsoft.com/library/azure/ee336235.aspx).
 
@@ -64,6 +64,6 @@ Clique em **Guardar** para guardar as alterações.
 
 
 
-<!--HONumber=Jan17_HO1-->
+<!--HONumber=Jan17_HO3-->
 
 

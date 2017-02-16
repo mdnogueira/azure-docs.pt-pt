@@ -15,8 +15,8 @@ ms.workload: infrastructure-services
 ms.date: 12/14/2016
 ms.author: gwallace
 translationtype: Human Translation
-ms.sourcegitcommit: e982d29f76d521720eea7cbb56c5084572f4a542
-ms.openlocfilehash: 1982b7ec7b7322366382e250b7f27f3da6448aa0
+ms.sourcegitcommit: 3c1fda0661d577e3042f1ad7103017eed74704ad
+ms.openlocfilehash: bb979cde449a7e6d8038f6ea392c3529ced29853
 
 
 ---
@@ -26,7 +26,7 @@ ms.openlocfilehash: 1982b7ec7b7322366382e250b7f27f3da6448aa0
 
 O Gateway de Aplicação do Microsoft Azure fornece um Controlador de Entrega de Aplicação (ADC) como um serviço e oferece várias capacidades de balanceamento de carga de camada 7 para a sua aplicação. Permite que os clientes otimizem a produtividade do Web farm ao descarregar a terminação de SSL com utilização intensiva da CPU para o Gateway de Aplicação. Proporciona também outras capacidades de encaminhamento de Camada 7, incluindo a distribuição round robin de tráfego de entrada, a afinidade de sessão com base no cookie, o encaminhamento baseado no caminho do URL e a capacidade de alojar vários Web sites atrás de um único Gateway de Aplicação. O Gateway de Aplicação também tem uma firewall de aplicações Web (WAF) que protege a aplicação contra a maior parte das 10 vulnerabilidades mais comuns na Web da OWASP. O Gateway de Aplicação pode ser configurado como um gateway com acesso à Internet, gateway só interno ou uma combinação de ambos. O Gateway de Aplicação é totalmente gerido pelo Azure, dimensionável e tem uma disponibilidade elevada. Proporciona um conjunto avançado de capacidades de registo e diagnóstico para uma melhor capacidade de gestão. O gateway de aplicação funciona com máquinas virtuais, serviços em nuvem e aplicações Web com acesso ao interior ou ao exterior.
 
-O gateway de aplicação é um dispositivo virtual dedicado para a sua aplicação e é composto por várias instâncias de trabalho para a escalabilidade e a elevada disponibilidade. Quando cria um gateway de aplicação, um ponto final (VIP público ou ILB IP interno) está associado e serve como tráfego de rede de entrada. Este VIP ou ILP IP é proporcionado pelo Balanceador de Carga do Azure a funcionar ao nível do transporte (TCP/UDP), tendo todo o tráfego de rede de entrada com a carga balanceada para as instâncias de trabalho do Gateway de Aplicação. Em seguida, o Gateway de Aplicação encaminha o tráfego HTTP/HTTPS com base na respetiva configuração, seja uma máquina virtual, um serviço em nuvem ou um endereço IP externo. Para o SLA e preços, consulte as páginas [SLA](https://azure.microsoft.com/support/legal/sla/) e [Pricing (Preços)](https://azure.microsoft.com/pricing/details/application-gateway/).
+O Gateway de Aplicação é um dispositivo virtual dedicado para a sua aplicação e é composto por várias instâncias de trabalho para escalabilidade e elevada disponibilidade. Quando cria um gateway de aplicação, um ponto final (VIP público ou ILB IP interno) está associado e serve como tráfego de rede de entrada. Este VIP ou ILP IP é proporcionado pelo Balanceador de Carga do Azure a funcionar ao nível do transporte (TCP/UDP), tendo todo o tráfego de rede de entrada com a carga balanceada para as instâncias de trabalho do Gateway de Aplicação. Em seguida, o Gateway de Aplicação encaminha o tráfego HTTP/HTTPS com base na respetiva configuração, seja uma máquina virtual, um serviço em nuvem ou um endereço IP externo. Para o SLA e preços, consulte as páginas [SLA](https://azure.microsoft.com/support/legal/sla/) e [Pricing (Preços)](https://azure.microsoft.com/pricing/details/application-gateway/).
 
 ## <a name="features"></a>Funcionalidades
 
@@ -95,6 +95,6 @@ Para saber como criar um gateway de aplicação com encaminhamento de conteúdo 
 
 
 
-<!--HONumber=Dec16_HO5-->
+<!--HONumber=Jan17_HO3-->
 
 

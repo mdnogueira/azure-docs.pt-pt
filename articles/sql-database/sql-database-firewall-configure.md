@@ -16,10 +16,10 @@ ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: data-management
 ms.date: 11/23/2016
-ms.author: rickbyh;carlrab
+ms.author: rickbyh
 translationtype: Human Translation
-ms.sourcegitcommit: e5b5751facb68ae4a62e3071fe4dfefc02434a9f
-ms.openlocfilehash: ae1cacf0ff003e69a16d6beac48abc36a7f18896
+ms.sourcegitcommit: 2f24c1c43300a3c5035fbb4e90c3d13f73c1bc74
+ms.openlocfilehash: a0c4cfb127934f86a7ce272c1aec2fd01331e17c
 
 
 ---
@@ -39,6 +39,10 @@ Para configurar a firewall, crie as regras de firewall que especificam intervalo
 
 * **Regras de firewall ao nível do servidor:** estas regras permitem que os clientes acedam a todo o seu servidor do SQL Azure, ou seja, todas as bases de dados dentro do mesmo servidor lógico. Estas regras são armazenadas na base de dados **mestra**. A configuração das regras de firewall ao nível do servidor pode ser feita no portal ou através de instruções de Transact-SQL. Para criar regras de firewall ao nível do servidor com o portal do Azure ou com o PowerShell, tem de ser o proprietário da subscrição ou um contribuinte da subscrição. Para criar uma regra de firewall ao nível do servidor através de Transact-SQL, deve ligar à instância da Base de dados SQL como o início de sessão principal ao nível do servidor ou como administrador do Azure Active Directory (o que significa que uma regra de firewall ao nível do servidor tem primeiro de ser criada por um utilizador com permissões ao nível do Azure).
 * **Regras de firewall ao nível da base de dados:** estas regras permitem que os clientes acedam a bases de dados individuais no seu servidor da Base de Dados SQL do Azure. Pode criar estas regras para cada base de dados, as quais são armazenadas nas bases de dados individuais. (Pode criar regras de firewall ao nível da base de dados para a base de dados **mestra**.) Estas regras podem ser úteis para restringir o acesso a determinadas bases de dados (seguras) no mesmo servidor lógico. As regras de firewall ao nível da base de dados só podem ser configuradas com instruções Transact-SQL.
+
+   > [!NOTE]
+   > Para obter um tutorial que demonstre a utilização de firewalls ao nível da base de dados, veja [SQL Database tutorial: SQL Server authentication, logins and user accounts, database roles, permissions, server-level firewall rules, and database-level firewall rules (Tutorial da Base de Dados SQL: autenticação do SQL Server, inícios de sessão e contas de utilizador, funções de base de dados, permissões, regras de firewall ao nível do servidor e regras de firewall ao nível da base de dados)](sql-database-control-access-sql-authentication-get-started.md).
+   >
 
 **Recomendação:** a Microsoft recomenda a utilização de regras de firewall ao nível da base de dados sempre que possível, para melhorar a segurança e tornar a sua base de dados mais portátil. Utilize as regras de firewall ao nível do servidor para os administradores e se tiver muitas bases de dados com os mesmos requisitos de acesso e não quer perder tempo a configurar individualmente cada uma.
 
@@ -150,6 +154,6 @@ Para compreender como navegar para as bases de dados, veja [Manage database acce
 
 
 
-<!--HONumber=Dec16_HO4-->
+<!--HONumber=Jan17_HO3-->
 
 

@@ -3,7 +3,7 @@ title: "Introdução ao Azure Batch PowerShell | Microsoft Docs"
 description: "Obtenha uma introdução rápida aos cmdlets do Azure PowerShell que pode utilizar para gerir o serviço Azure Batch"
 services: batch
 documentationcenter: 
-author: mmacy
+author: tamram
 manager: timlt
 editor: 
 ms.assetid: f9ad62c5-27bf-4e6b-a5bf-c5f5914e6199
@@ -12,11 +12,11 @@ ms.devlang: NA
 ms.topic: get-started-article
 ms.tgt_pltfrm: powershell
 ms.workload: big-compute
-ms.date: 10/20/2016
-ms.author: marsma
+ms.date: 01/20/2017
+ms.author: tamram
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 9aa49ecfa151b8ab56c0560db47c3b0eb80647a2
+ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
+ms.openlocfilehash: 1ea51f4053ba0d4e08628d29eca7cb7c82a26d61
 
 
 ---
@@ -30,7 +30,7 @@ Este artigo baseia-se nos cmdlets do Azure PowerShell versão 3.0.0. Recomendamo
 ## <a name="prerequisites"></a>Pré-requisitos
 Efetue as seguintes operações para utilizar o Azure PowerShell para gerir os recursos do Batch.
 
-* [Instale e configure o Azure PowerShell](../powershell-install-configure.md).
+* [Instale e configure o Azure PowerShell](/powershell/azureps-cmdlets-docs).
 * Execute o cmdlet **Login-AzureRmAccount** para ligar à sua subscrição (os cmdlets do Azure Batch enviados no módulo do Azure Resource Manager):
   
     `Login-AzureRmAccount`
@@ -240,6 +240,6 @@ Atualizou as propriedades do conjunto no serviço Batch. Contudo, para implement
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 

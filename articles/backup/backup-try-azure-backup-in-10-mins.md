@@ -16,8 +16,8 @@ ms.topic: hero-article
 ms.date: 09/27/2016
 ms.author: markgal;
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 900967975694a688b6d5054cb351746819b65f16
+ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
+ms.openlocfilehash: 8ac37244d1e691a2f075116f3d78b89923cfb845
 
 
 ---
@@ -78,7 +78,7 @@ Quando cria pela primeira vez um cofre dos Serviços de Recuperação, determina
 
 Agora que criou um cofre, prepare a infraestrutura para efetuar uma cópia de segurança de ficheiros e pastas ao transferir as credenciais do cofre e o agente dos Serviços de Recuperação do Microsoft Azure.
 
-## <a name="step-3-download-files"></a>Passo 3 – Transferir ficheiros
+## <a name="step-3---download-files"></a>Passo 3 – Transferir ficheiros
 1. Clique em **Definições** no dashboard do cofre dos Serviços de Recuperação.
    
     ![Painel Abrir objetivo de cópia de segurança](./media/backup-try-azure-backup-in-10-mins/settings-button.png)
@@ -102,7 +102,7 @@ Agora que criou um cofre, prepare a infraestrutura para efetuar uma cópia de se
    
     ![preparar infraestrutura](./media/backup-try-azure-backup-in-10-mins/prepare-infrastructure-download.png)
 
-## <a name="step-4-install-and-register-the-agent"></a>Passo 4 – instalar e registar o agente
+## <a name="step-4--install-and-register-the-agent"></a>Passo 4 – instalar e registar o agente
 > [!NOTE]
 > A permissão da cópia de segurança através do portal do Azure estará disponível brevemente. Neste momento, pode utilizar o Agente dos Serviços de Recuperação do Microsoft Azure no local para efetuar uma cópia de segurança dos ficheiros e pastas.
 > 
@@ -184,6 +184,6 @@ Se tiver dúvidas ou se houver alguma funcionalidade que gostaria de ver incluí
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -1,13 +1,14 @@
 ---
 layout: LandingPage
+description: "Tutoriais, referências de API e outra documentação mostram-lhe como utilizar os Serviços Cloud para alojar e executar APIs e aplicações em cloud dimensionáveis e de elevada disponibilidade."
 translationtype: Human Translation
-ms.sourcegitcommit: 3752a677351518195773a86c3824078a5aff6d03
-ms.openlocfilehash: 4985185ad8cb4a21e05d4668458e82411cd88ee0
+ms.sourcegitcommit: 2b32d1a06f7db06ad3f443548b33d3c8e2032a9e
+ms.openlocfilehash: 69bcbae09192ecbb6b375bac522b433f8cd5391f
 
 ---
 # <a name="cloud-services-documentation"></a>Documentação dos Serviços Cloud
 
-Os Serviços Cloud são um exemplo de uma implementação PaaS (Plataforma como Serviço). Foram concebidos para suportar aplicações dimensionáveis, fiáveis e rentáveis do ponto de vista da operação. Com os Serviços Cloud, além da vantagem da virtualização, também tem controlo sobre a máquina virtual para configurar, corrigir e instalar software.  
+Saiba como utilizar os Serviços Cloud para alojar APIs e aplicações em cloud dimensionáveis e de elevada disponibilidade.  Tutoriais, referências de API e outra documentação mostram-lhe como gerir anfitriões de máquina virtual e configurar, corrigir e instalar software.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -125,6 +126,6 @@ Transferir a Documentação dos Serviços Cloud </div>
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -12,11 +12,11 @@ ms.devlang: tbd
 ms.topic: hero-article
 ms.tgt_pltfrm: dotnet
 ms.workload: na
-ms.date: 08/23/2016
+ms.date: 11/30/2016
 ms.author: jotaub;sethm
 translationtype: Human Translation
-ms.sourcegitcommit: 9ace119de3676bcda45d524961ebea27ab093415
-ms.openlocfilehash: 6f138d547a356e47e6e195c236e69ad3ffcc2cc5
+ms.sourcegitcommit: 560e73eb7129e665d254c3e93b08f29cfb6b1aa9
+ms.openlocfilehash: d80bedba1909de671ef96ac5372d9ff15a90764e
 
 
 ---
@@ -51,7 +51,8 @@ Se já tiver criado uma fila do Service Bus, avance para a secção [Enviar mens
 Para enviar mensagens para a fila, vamos criar uma aplicação de consola C# com o Visual Studio.
 
 ### <a name="create-a-console-application"></a>Criar uma aplicação de consola
-1. Abra o Visual Studio e crie uma nova aplicação de Consola.
+
+- Abra o Visual Studio e crie uma nova aplicação de Consola.
 
 ### <a name="add-the-service-bus-nuget-package"></a>Adicionar o pacote NuGet do Service Bus
 1. Clique com o botão direito do rato no projeto recém-criado e selecione **Gerir Pacotes NuGet**.
@@ -62,12 +63,12 @@ Para enviar mensagens para a fila, vamos criar uma aplicação de consola C# com
 ### <a name="write-some-code-to-send-a-message-to-the-queue"></a>Escrever código para enviar uma mensagem para a fila
 1. Adicione a seguinte declaração using na parte superior do ficheiro Program.cs.
    
-    ```
+    ```csharp
     using Microsoft.ServiceBus.Messaging;
     ```
 2. Adicione o seguinte código no método `Main`, defina a variável **connectionString** como a cadeia de ligação obtida ao criar o espaço de nomes e defina o **queueName** como o nome da fila utilizado aquando da criação da fila.
    
-    ```
+    ```csharp
     var connectionString = "<Your connection string>";
     var queueName = "<Your queue name>";
    
@@ -78,7 +79,7 @@ Para enviar mensagens para a fila, vamos criar uma aplicação de consola C# com
    
     O ficheiro Program.cs deve ter o seguinte aspeto.
    
-    ```
+    ```csharp
     using System;
     using Microsoft.ServiceBus.Messaging;
    
@@ -107,12 +108,12 @@ Para enviar mensagens para a fila, vamos criar uma aplicação de consola C# com
 1. Crie uma nova aplicação de consola e adicione uma referência ao pacote NuGet do Service Bus, semelhante à aplicação de envio anterior.
 2. Adicione a seguinte declaração `using` na parte superior do ficheiro Program.cs.
    
-    ```
+    ```csharp
     using Microsoft.ServiceBus.Messaging;
     ```
 3. Adicione o seguinte código no método `Main`, defina a variável **connectionString** como a cadeia de ligação obtida ao criar o espaço de nomes e defina o **queueName** como o nome da fila utilizado aquando da criação da fila.
    
-    ```
+    ```csharp
     var connectionString = "";
     var queueName = "samplequeue";
    
@@ -129,7 +130,7 @@ Para enviar mensagens para a fila, vamos criar uma aplicação de consola C# com
    
     O ficheiro Program.cs deve ter o seguinte aspeto:
    
-    ```
+    ```csharp
     using System;
     using Microsoft.ServiceBus.Messaging;
    
@@ -162,7 +163,7 @@ Para enviar mensagens para a fila, vamos criar uma aplicação de consola C# com
 Parabéns! Acabou de criar uma fila, enviar uma mensagem e receber uma mensagem.
 
 ## <a name="next-steps"></a>Passos seguintes
-Consulte o nosso [repositório do GitHub com exemplos](https://github.com/Azure-Samples/azure-servicebus-messaging-samples) que demonstra algumas das funcionalidades mais avançadas das mensagens do Azure Service Bus.
+Consulte o nosso [repositório do GitHub com exemplos](https://github.com/Azure-Samples/azure-servicebus-messaging-samples) que demonstra algumas das funcionalidades mais avançadas das Mensagens do Azure Service Bus.
 
 <!--Image references-->
 
@@ -177,6 +178,6 @@ Consulte o nosso [repositório do GitHub com exemplos](https://github.com/Azure-
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

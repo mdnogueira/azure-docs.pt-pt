@@ -15,8 +15,8 @@ ms.topic: hero-article
 ms.date: 01/05/2017
 ms.author: juliako;anilmur
 translationtype: Human Translation
-ms.sourcegitcommit: f6d6b7b1051a22bbc865b237905f8df84e832231
-ms.openlocfilehash: 946f6e480083a0007a88c85b744ddeafa0385990
+ms.sourcegitcommit: e126076717eac275914cb438ffe14667aad6f7c8
+ms.openlocfilehash: f22b87fc5bdfe2db5de39adaafe9c71d8c32b26a
 
 
 ---
@@ -32,7 +32,7 @@ Pode também optar por transmitir os seus conteúdos em direto ou enviar conteú
 
 Para compilar soluções de Media Services, pode utilizar:
 
-* [API REST dos Serviços de Multimédia](https://msdn.microsoft.com/library/azure/hh973617.aspx)
+* [API REST dos Serviços de Multimédia](https://docs.microsoft.com/rest/api/media/operations/azure-media-services-rest-api-reference)
 * Um dos SDKs do Cliente disponíveis:
     * [SDK do .NET dos Media Services do Azure](https://github.com/Azure/azure-sdk-for-media-services),
     * [Azure SDK para Java](https://github.com/Azure/azure-sdk-for-java),
@@ -46,7 +46,7 @@ A imagem seguinte mostra alguns objetos mais frequentemente utilizados ao desenv
 
 Clique na imagem para visualizá-lo tamanho completo.  
 
-<a href="https://docs.microsoft.com/en-us/azure/media-services/media/media-services-overview/media-services-overview-object-model.png" target="_blank"><img src="./media/media-services-overview/media-services-overview-object-model-small.png"></a>  
+<a href="./media/media-services-overview/media-services-overview-object-model.png" target="_blank"><img src="./media/media-services-overview/media-services-overview-object-model-small.png"></a> 
 
 Pode ver o modelo de todo [aqui](https://media.windows.net/API/$metadata?api-version=2.15).  
 
@@ -79,8 +79,8 @@ Esta secção descreve cenários comuns e fornece ligações para tópicos relev
 ![Fluxo de trabalho do VoD](./media/media-services-video-on-demand-workflow/media-services-video-on-demand.png)
 
 >[!NOTE]
->Quando a sua conta AMS é criada, é adicionado um ponto final de transmissão em fluxo **predefinido** à sua conta no estado **Parado**. Para começar a transmitir o seu conteúdo em fluxo e a tirar partido do empacotamento e encriptação dinâmicos, o ponto final de transmissão em fluxo a partir do qual quer transmitir conteúdo tem de estar no estado **Em execução**. 
-    
+>Quando a sua conta AMS é criada, é adicionado um ponto final de transmissão em fluxo **predefinido** à sua conta no estado **Parado**. Para começar a transmitir o seu conteúdo em fluxo e a tirar partido do empacotamento e encriptação dinâmicos, o ponto final de transmissão em fluxo a partir do qual quer transmitir conteúdo tem de estar no estado **Em execução**.
+
 ### <a name="protect-content-in-storage-and-deliver-streaming-media-in-the-clear-non-encrypted"></a>Proteger conteúdos em armazenamento e distribuir multimédia de transmissão em fluxo em segurança (não encriptadas)
 1. Carregue um ficheiro mezanino de alta qualidade para um elemento.
 
@@ -184,7 +184,8 @@ Os Media Services suportam a integração com a CDN do Azure. Para obter mais in
 Pode escalar **Media Services** especificando o número das **Unidades Reservadas para Transmissão em Fluxo** e das **Unidades de Codificação Reservadas** que pretende aprovisionar na sua conta.
 
 Também pode escalar a sua conta dos Media Services adicionando-lhe contas deo Storage. Cada conta do Storage está limitada a 500 TB. Para expandir o limite predefinido do seu armazenamento, pode optar por ligar várias contas do Storage numa única conta de Media Services.
-Os clientes dos Serviços de Multimédia escolhem um ponto final de transmissão em fluxo **Standard** ou um ou mais pontos finais de transmissão em fluxo **Premium**, de acordo com as respetivas necessidades. O Ponto Final de Transmissão em Fluxo Standard é ideal para a maioria das cargas de trabalho de transmissão em fluxo. Inclui as mesmas funcionalidades das Unidades de Transmissão em Fluxo Premium. O Ponto Final de Transmissão em Fluxo Standard é ideal para a maioria das cargas de trabalho de transmissão em fluxo. Se tiver uma carga de trabalho avançada ou os seus requisitos de capacidade de transmissão em fluxo não forem adequadas aos destinos do débito do ponto final de transmissão em fluxo standard, ou se quiser controlar a capacidade do serviço do Ponto Final de Transmissão em Fluxo para processar as necessidades crescentes de largura de banda ao ajustar as unidades de escala (também conhecidas como unidades de transmissão em fluxo premium), recomenda-se a alocação de unidades de escala.
+Os clientes dos Serviços de Multimédia escolhem um ponto final de transmissão em fluxo **Standard** ou um ou mais pontos finais de transmissão em fluxo **Premium**, de acordo com as respetivas necessidades. O Ponto Final de Transmissão em Fluxo Standard é ideal para a maioria das cargas de trabalho de transmissão em fluxo. Inclui as mesmas funcionalidades das Unidades de Transmissão em Fluxo Premium.
+O Ponto Final de Transmissão em Fluxo Standard é ideal para a maioria das cargas de trabalho de transmissão em fluxo. Se tiver uma carga de trabalho avançada ou os seus requisitos de capacidade de transmissão em fluxo não forem adequadas aos destinos do débito do ponto final de transmissão em fluxo standard, ou se quiser controlar a capacidade do serviço do Ponto Final de Transmissão em Fluxo para processar as necessidades crescentes de largura de banda ao ajustar as unidades de escala (também conhecidas como unidades de transmissão em fluxo premium), recomenda-se a alocação de unidades de escala.
 
 [Este](media-services-portal-scale-streaming-endpoints.md) tópico está ligado a tópicos relevantes.
 

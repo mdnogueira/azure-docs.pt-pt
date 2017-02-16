@@ -1,13 +1,14 @@
 ---
 layout: LandingPage
+description: "Saiba como configurar um catálogo de dados em que a organização pode localizar, compreender e consumir origens de dados. Tutoriais, referência de API e outra documentação."
 translationtype: Human Translation
-ms.sourcegitcommit: 3752a677351518195773a86c3824078a5aff6d03
-ms.openlocfilehash: 7c2c989ca2119f7a2c14ca55a56a2bce69d94efa
+ms.sourcegitcommit: f41d4b06dfd385761780655971f69090050b967c
+ms.openlocfilehash: fed1fedd352b0bfab1729786eda990e78e14fbd1
 
 ---
 #<a name="data-catalog-documentation"></a>Documentação do Catálogo de Dados
 
-O Catálogo de Dados do Azure é um serviço em cloud completamente gerido que permite aos utilizadores detetar as origens de dados de que precisam e compreender as origens de dados que detetam, ajudando também as organizações a obter maior valor dos investimentos existentes. O Catálogo de Dados fornece capacidades que permitem a qualquer utilizador – dos analistas a cientistas de dados aos programadores – detetar, compreender e consumir origens de dados. O Catálogo de Dados inclui um modelo de crowdsourcing de metadados e anotações, e permite que todos os utilizadores contribuam com os seus conhecimentos para criar uma comunidade e cultura de dados.
+Saiba como configurar um Catálogo de Dados em que a organização e a equipa deteta, compreende e consume as origens de dados. Tutoriais, referência da API REST e outra documentação mostram-lhe como planear e configurar o repositório de dados onde os consumidores de dados podem detetar origens de dados disponíveis e obter conhecimento através de peritos na matéria.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -75,6 +76,7 @@ Transferir a Documentação do Catálogo de Dados </div>
 </div>
 
 
-<!--HONumber=Dec16_HO1-->
+
+<!--HONumber=Dec16_HO3-->
 
 

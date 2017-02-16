@@ -1,17 +1,22 @@
 
-1. Visite o [Portal do Azure]. Clique em **Procurar Tudo** > **Mobile Apps** > o back-end que acabou de criar. Nas definições da aplicação móvel, clique em **Início Rápido** > **Cordova**. Em **Configurar a aplicação cliente**, selecione **Criar uma Nova Aplicação** e clique em **Transferir**. Esta ação transfere um projeto Cordova concluído para uma aplicação pré-configurada para ligar ao back-end.
+1. Visite o [Portal do Azure].
+2. Clique em **Procurar Tudo** > **Aplicações Móveis** > o back-end que criou.
+3. Nas definições da aplicação móvel, clique em **Início Rápido** > **Cordova**.
+4. Em **Configurar a aplicação cliente**, selecione **Criar uma Nova Aplicação** e clique em **Transferir**.
 2. Descompacte o ficheiro ZIP transferido para um diretório no disco rígido, navegue para o ficheiro de solução (.sln) e abra-o com o Visual Studio.
-3. No Visual Studio, selecione a plataforma de solução (Android, iOS ou Windows) no menu pendente junto à seta de início e, em seguida, selecione um dispositivo de implementação ou emulador específicos, ao clicar no menu pendente na seta verde. Tenha em atenção que pode utilizar a plataforma Android e o emulador Ripple predefinidos. Tutoriais mais avançados irão requerer que selecione um dispositivo ou emulador suportados. 
-4. Prima F5 ou clique na seta verde para criar e executar a aplicação Cordova. Se for apresentada uma caixa de diálogo de segurança no emulador a solicitar acesso à rede, aceite.   
-5. Depois de iniciada a aplicação no dispositivo ou no emulador, introduza texto relevante em **Introduzir novo texto**, como *Concluir o tutorial* e, em seguida, clique no botão **Adicionar**.  
-   Esta ação envia um pedido POST ao back-end do Azure que implementou anteriormente. Os dados de inserções de back-end do pedido encontram-se na tabela TodoItem na Base de Dados SQL e devolvem informações sobre os itens recentemente armazenados na aplicação móvel. A aplicação móvel apresenta estes dados na lista.
-   
-    ![](./media/app-service-mobile-cordova-quickstart/quickstart-startup.png)
-6. Repita os três passos anteriores para cada plataforma de dispositivo que pretende suportar.
+3. No Visual Studio, escolha a plataforma de solução (Android, iOS ou Windows) a partir da lista pendente junto à seta de início. Selecione um dispositivo de implementação específico ou emulador ao clicar na lista pendente na seta verde. Pode utilizar a plataforma Android e o emulador Ripple predefinidos. Tutoriais mais avançados (por exemplo, notificações push) irão requerer que selecione um dispositivo ou emulador suportados.
+4. Para criar e executar a aplicação Cordova, prima F5 ou clique na seta verde. Se for apresentada uma caixa de diálogo de segurança no emulador a solicitar acesso à rede, aceite.
+5. Depois de iniciada a aplicação no dispositivo ou no emulador, introduza texto relevante em **Introduzir novo texto**, como *Concluir o tutorial* e, em seguida, clique no botão **Adicionar**.
+
+Os dados de inserções de back-end do pedido encontram-se na tabela TodoItem na Base de Dados SQL e devolvem informações sobre os itens recentemente armazenados na aplicação móvel. A aplicação móvel apresenta estes dados na lista.
+
+![](./media/app-service-mobile-cordova-quickstart/quickstart-startup.png)
+
+Pode repetir os passos 3 a 5 para outras plataformas.
 
 [Portal do Azure]: https://portal.azure.com/
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 

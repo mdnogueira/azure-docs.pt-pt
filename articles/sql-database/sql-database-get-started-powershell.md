@@ -17,8 +17,8 @@ ms.workload: data-management
 ms.date: 12/09/2016
 ms.author: sstein
 translationtype: Human Translation
-ms.sourcegitcommit: 2b55b6b4475abdbc1985d8ac370b3b612b77eb0e
-ms.openlocfilehash: 62f29382a2b29c7e5b06126b0ab60c7136186103
+ms.sourcegitcommit: 2a85b3dc1078bad9e5e2fc0ce0bec7e994b29150
+ms.openlocfilehash: e3a9ba798639a9939d8c3d5330b21715ac4be53d
 
 
 ---
@@ -566,7 +566,7 @@ Remove-AzureRmResourceGroup -Name {resource-group-name}
 ## <a name="next-steps"></a>Passos seguintes
 Agora que concluiu este tutorial de introdução e criou uma base de dados com alguns dados de exemplo, existem alguns tutoriais adicionais que poderá explorar para cimentar o que aprendeu neste tutorial. 
 
-* Se quiser começar a explorar a segurança da Base de Dados SQL do Azure, veja o artigo [Introdução à segurança](sql-database-get-started-security.md).
+* Se quiser começar a explorar a segurança da Base de Dados SQL do Azure, veja o artigo [Introdução à segurança](sql-database-control-access-sql-authentication-get-started.md).
 * Se tem conhecimentos de Excel, saiba como [Ligar a uma base de dados SQL no Azure com o Excel](sql-database-connect-excel.md).
 * Se estiver pronto para iniciar a codificação, escolha a linguagem de programação em [Bibliotecas de ligação para Base de Dados SQL e SQL Server](sql-database-libraries.md).
 * Se quiser mover as suas bases de dados do SQL Server no local para o Azure, veja o artigo [Migrar uma base de dados para a Base de Dados SQL](sql-database-cloud-migrate.md).
@@ -577,6 +577,7 @@ Agora que concluiu este tutorial de introdução e criou uma base de dados com a
 [O que é a Base de Dados SQL?](sql-database-technical-overview.md)
 
 
-<!--HONumber=Jan17_HO1-->
+
+<!--HONumber=Jan17_HO3-->
 
 

@@ -17,8 +17,8 @@ ms.workload: data-management
 ms.date: 10/04/2016
 ms.author: sstein
 translationtype: Human Translation
-ms.sourcegitcommit: 2b55b6b4475abdbc1985d8ac370b3b612b77eb0e
-ms.openlocfilehash: 7ffc593ee262f55a3fff6a2cd9cf62c691722478
+ms.sourcegitcommit: 10b40214ad4c7d7bb7999a5abce1c22100b617d8
+ms.openlocfilehash: d55c08dbd1d2372e5396f40e74b4f63f3e2f0022
 
 
 ---
@@ -51,9 +51,9 @@ Para executar os passos descritos neste artigo é necessário o seguinte:
 Para criar uma base de dados do SQL com o C#, carregue as bibliotecas de gestão necessárias (utilizando a [consola do gestor de pacote](http://docs.nuget.org/Consume/Package-Manager-Console)):
 
 1. clique em **Ferramentas** > **Gestor de Pacotes NuGet** > **Consola de Gestor de Pacotes**.
-2. Escreva `Install-Package Microsoft.Azure.Management.Sql –Pre` para instalar a [Biblioteca de Gestão da Base de Dados SQL do Microsoft Azure](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql) mais recente.
-3. Escreva `Install-Package Microsoft.Azure.Management.ResourceManager –Pre` para instalar a [Biblioteca do Microsoft Azure Resource Manager](https://www.nuget.org/packages/Microsoft.Azure.Management.ResourceManager).
-4. Escreva `Install-Package Microsoft.Azure.Common.Authentication –Pre` para instalar a [Biblioteca de Autenticação Comum do Microsoft Azure](https://www.nuget.org/packages/Microsoft.Azure.Common.Authentication). 
+2. Escreva `Install-Package Microsoft.Azure.Management.Sql -Pre` para instalar a [Biblioteca de Gestão da Base de Dados SQL do Microsoft Azure](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql) mais recente.
+3. Escreva `Install-Package Microsoft.Azure.Management.ResourceManager -Pre` para instalar a [Biblioteca do Microsoft Azure Resource Manager](https://www.nuget.org/packages/Microsoft.Azure.Management.ResourceManager).
+4. Escreva `Install-Package Microsoft.Azure.Common.Authentication -Pre` para instalar a [Biblioteca de Autenticação Comum do Microsoft Azure](https://www.nuget.org/packages/Microsoft.Azure.Common.Authentication). 
 
 > [!NOTE]
 > Os exemplos neste artigo utilizam uma forma síncrona de cada pedido e bloco de API até à conclusão da chamada no serviço subjacente. Existem métodos assíncronos disponíveis.
@@ -287,6 +287,6 @@ Agora que já experimentou a Base de Dados SQL e configurou uma base de dados co
 
 
 
-<!--HONumber=Jan17_HO1-->
+<!--HONumber=Jan17_HO2-->
 
 

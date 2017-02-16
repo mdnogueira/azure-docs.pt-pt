@@ -12,19 +12,19 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 12/15/2016
+ms.date: 10/18/2016
 ms.author: mihauss
 translationtype: Human Translation
-ms.sourcegitcommit: c75658d173bcb3438d6f2725ec9ef2c4127013d7
-ms.openlocfilehash: 0d0ca29a4733c681e044884697030ccd2916b6cb
+ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
+ms.openlocfilehash: 998e95611bca6778de601239bcf9c81246dead83
 
 
 ---
 # <a name="azure-blob-storage-hot-and-cool-storage-tiers"></a>Armazenamento de Blobs do Azure: camadas de armazenamento de acesso frequente e esporádico
 ## <a name="overview"></a>Descrição geral
-Agora, o Armazenamento do Azure disponibiliza duas camadas de armazenamento para o armazenamento de objetos Blob, para que possa armazenar os seus dados de forma mais económica consoante o modo como os utiliza. A **camada de armazenamento de acesso frequente** do Azure está otimizada para armazenar dados que são acedidos com frequência. A **camada de armazenamento de acesso esporádico** do Azure está otimizada para armazenar dados que são acedidos com pouca frequência e de longa duração. Os dados na camada de armazenamento de acesso esporádico podem tolerar disponibilidade ligeiramente inferior, mas ainda requerem uma durabilidade elevada, bem como tempo de acesso e características de débito semelhantes aos dados de acesso frequente. Para os dados de acesso esporádico, um SLA de disponibilidade ligeiramente inferior e custos de acesso superiores são compromissos aceitáveis em troca de custos de armazenamento muito inferiores.
+Agora, o Storage do Azure disponibiliza duas camadas de armazenamento para o Blob Storage (armazenamento de objetos), para que possa armazenar os seus dados de forma mais económica consoante o modo como os utiliza. A **camada de armazenamento de acesso frequente** do Azure está otimizada para armazenar dados que são acedidos com frequência. A **camada de armazenamento de acesso esporádico** do Azure está otimizada para armazenar dados que são acedidos com pouca frequência e de longa duração. Os dados na camada de armazenamento de acesso esporádico podem tolerar uma disponibilidade ligeiramente inferior, mas ainda requerem uma durabilidade elevada, bem como tempo de acesso e características de débito semelhantes aos dados de acesso frequente. Para os dados de acesso esporádico, um SLA de disponibilidade ligeiramente inferior e custos de acesso superiores são compromissos aceitáveis em troca de custos de armazenamento muito inferiores.
 
-Atualmente, os dados armazenados na nuvem estão a crescer a um ritmo exponencial. Para gerir os custos das suas necessidades de armazenamento em expansão, é recomendável organizar os dados com base em atributos como a frequência de acesso e o período de retenção planeado. Os dados armazenados na nuvem podem ser diferentes em termos da forma como são gerados, processados e acedidos ao longo da respetiva duração. Alguns dados são ativamente acedidos e modificados durante o seu ciclo de vida. Alguns dados são acedidos frequentemente no início da sua vida, mas o acesso diminui significativamente à medida que a sua idade aumenta. Alguns dados permanecem inativos na nuvem e são raramente acedidos após serem armazenados ou não são acedidos de todo.
+Atualmente, os dados armazenados na nuvem estão a crescer a um ritmo exponencial. Para gerir os custos das suas necessidades de armazenamento em expansão, é recomendável organizar os dados com base em atributos como a frequência de acesso e o período de retenção planeado. Os dados armazenados na nuvem podem ser bastante diferentes em termos da forma como são gerados, processados e acedidos ao longo da respetiva duração. Alguns dados são ativamente acedidos e modificados durante o seu ciclo de vida. Alguns dados são acedidos com muita frequência no início da sua vida, mas o acesso diminui significativamente à medida que a sua idade aumenta. Alguns dados permanecem inativos na nuvem e são raramente acedidos após serem armazenados ou não são acedidos de todo.
 
 Cada um dos cenários de acesso a dados descritos acima beneficia de uma camada diferenciada de armazenamento, otimizada para um padrão de acesso específico. Agora, com a introdução das camadas de armazenamento frequente e esporádico, o Armazenamento de Blobs do Azure dá resposta a esta necessidade de camadas de armazenamento diferenciadas com modelos de preços distintos.
 
@@ -36,7 +36,7 @@ As **Contas do Blob Storage** são contas do Storage especializadas para armazen
 > 
 > 
 
-As contas do Armazenamento de Blobs expõem o atributo **Access Tier**, que permite especificar a camada de armazenamento como de acesso **Frequente** ou **Esporádico**, consoante os dados armazenados na conta. Se o padrão de utilização dos dados sofrer uma alteração, pode também alternar entre estas camadas de armazenamento em qualquer altura.
+As contas do Blob Storage expõem o atributo **Access Tier**, que permite especificar a camada de armazenamento como de acesso **Frequente** ou **Esporádico**, consoante os dados armazenados na conta. Se o padrão de utilização dos dados sofrer uma alteração, pode também alternar entre estas camadas de armazenamento em qualquer altura.
 
 > [!NOTE]
 > A alteração da camada de armazenamento poderá resultar em encargos adicionais. Consulte a secção [Preços e Faturação](storage-blob-storage-tiers.md#pricing-and-billing) para obter mais detalhes.
@@ -66,7 +66,7 @@ Para as aplicações que requerem apenas o Blob Storage de blocos ou de acrésci
 * Utiliza uma versão da [API REST dos Serviços do Storage](https://msdn.microsoft.com/library/azure/dd894041.aspx) anterior a 14/02/2014 ou uma biblioteca de cliente com uma versão inferior à 4.x e não pode atualizar a sua aplicação.
 
 > [!NOTE]
-> Atualmente, as contas do armazenamento de Blobs são suportadas em todas as regiões do Azure.
+> Atualmente, as contas do Blob Storage são suportadas na maioria das regiões do Azure e serão adicionadas mais regiões no futuro. Pode encontrar a lista atualizada de regiões disponíveis na página [Serviços do Azure por Região](https://azure.microsoft.com/regions/#services).
 > 
 > 
 
@@ -285,7 +285,7 @@ Pode criar uma aplicação personalizada para migrar os dados para uma conta do 
 Para obter mais detalhes, consulte [Introdução ao Blob Storage do Azure](storage-dotnet-how-to-use-blobs.md).
 
 > [!NOTE]
-> Os blobs encriptados através de encriptação do lado do cliente armazenam os metadados relacionados com a encriptação armazenados com o blob. É fundamental que os mecanismos de cópia utilizados assegurem que os metadados do blob, e, em especial, os metadados relacionados com a encriptação, são preservados. Se copiar os blobs sem estes metadados, não será possível obter novamente o conteúdo do blob. Para obter mais detalhes acerca dos metadados relacionados com a encriptação, consulte [Encriptação do Lado do Cliente do Armazenamento do Azure](storage-client-side-encryption.md).
+> Os blobs encriptados através de encriptação do lado do cliente armazenam os metadados relacionados com a encriptação armazenados com o blob. É fundamental que os mecanismos de cópia utilizados assegurem que os metadados do blob, e, em especial, os metadados relacionados com a encriptação, são preservados. Se copiar os blobs sem estes metadados, não será possível obter novamente o conteúdo do blob. Para obter mais detalhes acerca dos metadados relacionados com a encriptação, consulte [Encriptação do lado do cliente do Storage do Azure](storage-client-side-encryption.md).
 > 
 > 
 
@@ -345,6 +345,6 @@ Para obter mais detalhes, consulte [Introdução ao Blob Storage do Azure](stora
 
 
 
-<!--HONumber=Dec16_HO5-->
+<!--HONumber=Dec16_HO1-->
 
 
