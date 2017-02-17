@@ -183,6 +183,6 @@ Saiba como utilizar o Hadoop na cloud no HDInsight para analisar dados históric
 
 
 
-<!--HONumber=Feb17_HO2-->
+<!--HONumber=Feb17_HO3-->
 
 

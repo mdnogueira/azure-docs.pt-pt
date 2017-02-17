@@ -147,6 +147,6 @@ Saiba como gerir os registos DNS com o Sistema de Nomes de Domínio do Azure, um
 
 
 
-<!--HONumber=Feb17_HO2-->
+<!--HONumber=Feb17_HO3-->
 
 

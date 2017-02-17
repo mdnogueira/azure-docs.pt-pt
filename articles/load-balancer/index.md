@@ -148,6 +148,6 @@ Saiba como configurar o Balanceador de Carga do Azure para fornecer disponibilid
 
 
 
-<!--HONumber=Feb17_HO2-->
+<!--HONumber=Feb17_HO3-->
 
 
