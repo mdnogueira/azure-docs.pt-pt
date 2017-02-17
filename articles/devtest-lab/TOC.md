@@ -21,11 +21,19 @@
 ### [Adicionar repositório de artefactos](devtest-lab-add-artifact-repo.md)
 ### [Criar artefacto personalizado](devtest-lab-artifact-author.md)
 
-## Gerir bases de VMs
-### [Criar uma imagem personalizada](devtest-lab-create-template.md)
+## Gerir bases e modelos de VM
+### [Criar ambientes multi-VM com modelos do Azure Resource Manager](devtest-lab-create-environment-from-arm.md)
 ### [Configurar imagens do Marketplace](devtest-lab-configure-marketplace-images.md)
-### [Gerir fórmulas](devtest-lab-manage-formulas.md)
 ### [Comparar imagens com fórmulas](devtest-lab-comparing-vm-base-image-types.md)
+### [Gerir fórmulas](devtest-lab-manage-formulas.md)
+### [Criar uma imagem personalizada a partir de uma VM](devtest-lab-create-custom-image-from-vm-using-portal.md)
+### [Criar uma imagem personalizada a partir de um VHD com o portal do Azure](devtest-lab-create-template.md)
+### [Criar uma imagem personalizada a partir de um VHD com o PowerShell](devtest-lab-create-custom-image-from-vhd-using-powershell.md)
+### [Carregar o ficheiro VHD com o AzCopy](devtest-lab-upload-vhd-using-azcopy.md)
+### [Carregar o ficheiro VHD com o PowerShell](devtest-lab-upload-vhd-using-powershell.md)
+### [Carregar o ficheiro VHD com o Explorador de Armazenamento](devtest-lab-upload-vhd-using-storage-explorer.md)
+
+
 
 # Recursos
 ## [Atualizações de Serviço](https://azure.microsoft.com/updates/?product=devtest-lab)
@@ -35,6 +43,6 @@
 ## [Vídeos](https://azure.microsoft.com/documentation/videos/index/?services=devtest-lab)
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Feb17_HO2-->
 
 

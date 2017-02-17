@@ -1,9 +1,20 @@
 ---
-layout: LandingPage
+title: "Documentação do Azure Site Recovery - Tutoriais, Referência da API | Microsoft Docs"
 description: "Saiba como configurar a recuperação após desastre na cloud e a continuidade de negócio para máquinas virtuais e servidores físicos implementando e gerindo a replicação."
+services: site-recovery
+author: carolz
+manager: carolz
+layout: LandingPage
+ms.assetid: 
+ms.service: site-recovery
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: landing-page
+ms.date: 01/23/2017
+ms.author: carolz
 translationtype: Human Translation
-ms.sourcegitcommit: b4080529e9ff4500cef20e1dd735765051f6ce1f
-ms.openlocfilehash: b8fe2704e7c68c1fe815d204d424f28fcbdfe75c
+ms.sourcegitcommit: 9816de3f1925e79fdd2814f5a65f80d0fe912137
+ms.openlocfilehash: d9bc1b35580377b8b5edd73c4b8797d9da30cf11
 
 ---
 # <a name="site-recovery-documentation"></a>Documentação do Site Recovery
@@ -84,6 +95,6 @@ Saiba como utilizar o Site Recovery para continuidade de negócio e a estratégi
 
 
 
-<!--HONumber=Jan17_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 

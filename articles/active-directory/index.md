@@ -1,14 +1,26 @@
 ---
 layout: LandingPage
+description: Learn how to synchronize directories and enable single sign-on. Documentation shows you how to integrate a full suite of identity management capabilities.
+title: "Documentação do Azure Active Directory - Tutoriais, Referência da API | Microsoft Docs"
+services: active-directory
+author: carolz
+manager: carolz
+ms.assetid: 
+ms.service: active-directory
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: landing-page
+ms.date: 01/23/2017
+ms.author: carolz
 translationtype: Human Translation
-ms.sourcegitcommit: 95b54199c307efea21666c774525a9a539472131
-ms.openlocfilehash: 72d219c4150ddbfd59231f9131bf3502897f0ab4
+ms.sourcegitcommit: 2dc340dcb864325554700f58057d157dd46f7f7a
+ms.openlocfilehash: ba13ea0d6c17e50e7b1887373d67ca691bdfad01
 
 ---
 
 # <a name="azure-active-directory-documentation"></a>Documentação do Azure Active Directory
 
-O Azure Active Directory Premium é uma solução de Gestão de Identidades e Acessos na cloud que fornece início de sessão único para milhares de aplicações na cloud (SaaS) e acesso às aplicações Web executadas no local. O Azure Active Directory permite a mobilidade e a colaboração empresarial e fornece proteção de identidade avançada através da Autenticação Multifator (MFA), relatórios de segurança, auditorias, alertas e políticas de acesso condicional adaptativas com base no estado de funcionamento do dispositivo, na localização do utilizador e no nível de risco.
+Saiba como sincronizar diretórios e ativar o início de sessão único com o Azure Active Directory (Azure AD). Tutoriais, referências de API e outra documentação mostram-lhe como integrar as funcionalidades de gestão de identidade incluindo a autenticação multifator, o registo do dispositivo, o controlo de acesso baseado em funções e a monitorização e alertas de segurança.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -128,16 +140,8 @@ O Azure Active Directory Premium é uma solução de Gestão de Identidades e Ac
     </li>
 </ul>
 
-<div class="downloadHolder">
-    <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/active-directory.pdf">
-        <div class="img"></div>
-        <div class="text">
-Transferir a Documentação do Active Directory </div>
-    </a>
-</div>
 
 
-
-<!--HONumber=Dec16_HO2-->
+<!--HONumber=Feb17_HO2-->
 
 

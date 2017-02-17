@@ -1,11 +1,23 @@
 ---
-layout: LandingPage
+title: "Documentação dos Serviços de Multimédia do Azure - Tutoriais, Referência da API | Microsoft Docs"
 description: "Saiba como transmitir em fluxo a pedido ou emitir vídeo de qualidade de emissão de forma segura com os Serviços de Multimédia, uma plataforma na cloud extensível. Tutoriais, referências de API e muito mais."
+services: media-services
+author: carolz
+manager: carolz
+layout: LandingPage
+ms.assetid: 
+ms.service: media-services
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: landing-page
+ms.date: 01/23/2017
+ms.author: carolz
 translationtype: Human Translation
-ms.sourcegitcommit: b4080529e9ff4500cef20e1dd735765051f6ce1f
-ms.openlocfilehash: 3e029a72b1918636ede33db1445ce0550d40ede6
+ms.sourcegitcommit: ac58c5e8f43a1e6bab1023826818cc3641cad54a
+ms.openlocfilehash: f0da57cc74e190e6684036c8a793dface3c6dd74
 
 ---
+
 # <a name="media-services-documentation"></a>Documentação dos Serviços de Multimédia
 
 Saiba como transmitir vídeo de qualidade de emissão com os Serviços de Multimédia, uma plataforma na cloud extensível. Tutoriais, referências de API e outra documentação mostram-lhe como fornecer de forma segura transmissões em fluxo de vídeo ou áudio a pedido e live dimensionáveis para milhões de utilizadores.
@@ -202,6 +214,6 @@ Saiba como transmitir vídeo de qualidade de emissão com os Serviços de Multim
 
 
 
-<!--HONumber=Jan17_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 

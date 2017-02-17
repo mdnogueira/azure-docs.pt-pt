@@ -1,11 +1,23 @@
 ---
-layout: LandingPage
+title: "Documentação do Balanceador de Carga do Azure - Tutoriais, Referência da API | Microsoft Docs"
 description: "Saiba como utilizar o Balanceador de Carga para desempenho de rede de aplicações. Gerir o tráfego de máquinas virtuais e recursos na cloud e em redes virtuais entre locais."
+services: load-balancer
+author: carolz
+manager: carolz
+layout: LandingPage
+ms.assetid: 
+ms.service: load-balancer
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: landing-page
+ms.date: 01/23/2017
+ms.author: carolz
 translationtype: Human Translation
-ms.sourcegitcommit: b4080529e9ff4500cef20e1dd735765051f6ce1f
-ms.openlocfilehash: 53a3e534f9c93c73ef6d28696c5a9d6430a7a258
+ms.sourcegitcommit: 7064f4749f4be100b6155ea219284c1ed8fe7eee
+ms.openlocfilehash: 8a225858cc738a8bc04404b0cbf788e77975aa51
 
 ---
+
 #<a name="load-balancer-documentation"></a>Documentação do Load Balancer
 
 Saiba como configurar o Balanceador de Carga do Azure para fornecer disponibilidade e desempenho da rede para aplicações. A documentação mostra-lhe como carregar tráfego de equilibrio para e de recursos na cloud e de máquinas virtuais e em redes virtuais entre locais.
@@ -136,6 +148,6 @@ Saiba como configurar o Balanceador de Carga do Azure para fornecer disponibilid
 
 
 
-<!--HONumber=Jan17_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 

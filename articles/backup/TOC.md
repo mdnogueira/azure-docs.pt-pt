@@ -1,3 +1,4 @@
+
 # Descrição geral
 ## [O que é o Azure Backup?](backup-introduction-to-azure-backup.md)
 # Introdução
@@ -32,6 +33,7 @@
 ### [Gerir e monitorizar as cópias de segurança de VMs do Azure no portal clássico](backup-azure-manage-vms-classic.md)
 ### [Gerir cópias de segurança de VMs do Azure no Portal do Azure](backup-azure-manage-vms.md)
 ### [Monitorizar alertas para cópias de segurança de VMs do Azure no Portal do Azure](backup-azure-monitor-vms.md)
+### [Recuperar ficheiros a partir de cópias de segurança de VM do Azure](backup-azure-restore-files-from-vm.md)
 ### [Restaurar máquinas virtuais no Azure](backup-azure-restore-vms.md)
 ### [Restaurar VMs implementadas pelo Azure Resource Manager no Portal do Azure](backup-azure-arm-restore-vms.md)
 ### [Restaurar a chave do Key Vault e o segredo para VMs encriptadas utilizando o Azure Backup](backup-azure-restore-key-secret.md)
@@ -49,6 +51,7 @@
 ### [Recuperar ficheiros para um Windows Server com o modelo de implementação Resource Manager](backup-azure-restore-windows-server.md)
 ### [Recuperar ficheiros para um Windows Server com o modelo de implementação clássico](backup-azure-restore-windows-server-classic.md)
 
+## [Utilizar o Controlo de Acesso Baseado em Funções para a gestão de cópia de segurança](backup-rbac-rs-vault.md)
 ## [Ativar funcionalidades de segurança para cópias de segurança híbridas](backup-azure-security-feature.md)
 ## [Eliminar um cofre do Azure Backup](backup-azure-delete-vault.md)
 ## [Configurar a cópia de segurança offline](backup-azure-backup-import-export.md)
@@ -70,6 +73,6 @@
 ## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=backup)
 
 
-<!--HONumber=Jan17_HO5-->
+<!--HONumber=Feb17_HO2-->
 
 

@@ -1,9 +1,20 @@
 ---
-layout: LandingPage
+title: "Documentação do Registo de Contentores do Azure - Tutoriais, Referência da API | Microsoft Docs"
 description: "Saiba como criar e manter registos de contentor para armazenar as imagens de implementação com um serviço de registo Docker gerido. Tutoriais, referência de API e muito mais."
+services: container-registry
+author: carolz
+manager: carolz
+layout: LandingPage
+ms.assetid: 
+ms.service: container-registry
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: landing-page
+ms.date: 01/23/2017
+ms.author: carolz
 translationtype: Human Translation
-ms.sourcegitcommit: ab80e1ef9771caa4369863c0aff1cee2c3055830
-ms.openlocfilehash: c42d5fe49d099fed7b5df9901c313832d966e340
+ms.sourcegitcommit: 97a09226c0f784c4834e96e47ac9052844ff7a36
+ms.openlocfilehash: 3962f34170cf3a19fe51b2f90b49fa21e01fc6cc
 
 ---
 
@@ -100,6 +111,6 @@ Saiba como utilizar o Registo de Contentores para armazenar e gerir imagens de t
 
 
 
-<!--HONumber=Jan17_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 
