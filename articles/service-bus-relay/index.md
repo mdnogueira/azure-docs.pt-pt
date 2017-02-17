@@ -84,7 +84,7 @@ Saiba como o serviço de Reencaminhamento do Azure facilita as aplicações híb
         </a>
     </li>
     <li>
-        <a href="/azure/service-bus-relay/service-bus-sas">
+        <a href="/azure/service-bus-messaging/service-bus-sas">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
