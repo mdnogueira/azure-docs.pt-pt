@@ -361,6 +361,6 @@ Pode utilizar uma rede virtual existente ou criar uma nova VNET ao implementar e
 
 
 
-<!--HONumber=Dec16_HO5-->
+<!--HONumber=Dec16_HO3-->
 
 

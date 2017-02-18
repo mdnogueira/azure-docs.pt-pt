@@ -12,11 +12,11 @@ ms.devlang: dotnet
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/12/2016
+ms.date: 12/15/2016
 ms.author: dobett
 translationtype: Human Translation
-ms.sourcegitcommit: a243e4f64b6cd0bf7b0776e938150a352d424ad1
-ms.openlocfilehash: 128e3607829d3838cdbb285fa95a1f7cd2112229
+ms.sourcegitcommit: 2e4220bedcb0091342fd9386669d523d4da04d1c
+ms.openlocfilehash: 90ca7089b2ce6a541f6890c6d50e912f2127ff85
 
 
 ---
@@ -27,7 +27,7 @@ No final deste tutorial, terá três aplicações de consola .NET:
 
 * **CreateDeviceIdentity**, que cria uma identidade de dispositivo e a chave de segurança associada para ligar a aplicação do dispositivo simulado.
 * **ReadDeviceToCloudMessages**, que apresenta a telemetria enviada pela aplicação do dispositivo simulado.
-* **SimulatedDevice**, que liga ao seu hub IoT com a identidade de dispositivo que criou anteriormente e envia uma mensagem de telemetria a cada segundo através do protocolo AMQP.
+* **SimulatedDevice**, que liga ao seu hub IoT com a identidade de dispositivo que criou anteriormente e envia uma mensagem de telemetria a cada segundo através do protocolo MQTT.
 
 > [!NOTE]
 > Para informações sobre os SDKs do Azure IoT que pode utilizar para criar quer as aplicações a executar em dispositivos, quer a sua solução de back-end, veja [Azure IoT SDKs][lnk-hub-sdks].
@@ -202,12 +202,12 @@ Nesta secção, irá criar uma aplicação de consola do .NET que simula um disp
 7. Por fim, adicione as seguintes linhas ao método **Main**:
    
         Console.WriteLine("Simulated device\n");
-        deviceClient = DeviceClient.Create(iotHubUri, new DeviceAuthenticationWithRegistrySymmetricKey("myFirstDevice", deviceKey));
+        deviceClient = DeviceClient.Create(iotHubUri, new DeviceAuthenticationWithRegistrySymmetricKey("myFirstDevice", deviceKey), TransportType.Mqtt);
    
         SendDeviceToCloudMessagesAsync();
         Console.ReadLine();
    
-   Por predefinição, o método **Criar** cria uma instância **DeviceClient** que utiliza o protocolo AMQP para comunicar com o IoT Hub. Para utilizar o protocolo HTTP, substitua o método **Criar** que lhe permite especificar o protocolo. Se utilizar o protocolo HTTP, deverá ainda adicionar o pacote NuGet **Microsoft.AspNet.WebApi.Client** ao seu projeto para incluir o espaço de nomes **System.Net.Http.Formatting**.
+   Por predefinição, o método **Criar** cria uma instância **DeviceClient** que utiliza o protocolo AMQP para comunicar com o IoT Hub. Para utilizar o protocolo MQTT ou HTTP, substitua o método **Criar** que lhe permite especificar o protocolo. Se utilizar o protocolo HTTP, deverá ainda adicionar o pacote NuGet **Microsoft.AspNet.WebApi.Client** ao seu projeto para incluir o espaço de nomes **System.Net.Http.Formatting**.
 
 Este tutorial guia-o pelos passos para criar uma aplicação do dispositivo simulado pelo Hub IoT. Pode ainda utilizar a extensão do Visual Studio [Serviço Ligado para o Hub IoT do Azure][lnk-connected-service] para adicionar o código necessário à aplicação do seu dispositivo.
 
@@ -270,6 +270,6 @@ Para saber como expandir a sua solução de IoT e processar mensagens do disposi
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

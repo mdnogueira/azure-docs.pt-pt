@@ -14,11 +14,11 @@ ms.workload: big-data
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 09/14/2016
+ms.date: 02/06/2017
 ms.author: jgao
 translationtype: Human Translation
-ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
-ms.openlocfilehash: 0ca7a73d0d7db3651bec26deb4557fae5fc3451f
+ms.sourcegitcommit: ec9e3c6c6919bb5ce50553a29536f821fe79f577
+ms.openlocfilehash: 3d8ee1d23fab0b410bce711afc27f8bbbad4c7e4
 
 
 ---
@@ -30,7 +30,7 @@ Os dados são armazenados nas linhas de uma tabela e os dados de uma linha são 
 ## <a name="how-is-hbase-implemented-in-azure-hdinsight"></a>Como é implementado o HBase no Azure HDInsight?
 O HBase do HDInsight é fornecido como um cluster gerido que está integrado no ambiente do Azure. Os clusters são configurados para armazenar dados diretamente no Blob Storage do Azure, que proporciona baixa latência e uma maior elasticidade em termos de opções de desempenho e custo. Isto permite aos clientes criar sites interativos que funcionam com grandes conjuntos de dados, criar serviços que armazenam dados telemétricos e de sensores de milhões de pontos finais e analisar esses dados com tarefas do Hadoop. O HBase e o Hadoop são bons pontos de partida para projetos de macrodados no Azure; em particular, podem permitir que as aplicações em tempo real trabalhem com grandes conjuntos de dados.
 
-A implementação do HDInsight tira partido da arquitetura de escalamento horizontal do HBase para fornecer fragmentação automática de tabelas, consistência forte para operações de leitura e escrita e ativação pós-falha automática. O desempenho é melhorado graças à colocação em cache dentro da memória para as operações de leitura e à transmissão em fluxo de alto débito para as operações de escrita. O aprovisionamento de redes virtuais também está disponível para o HBase do HDInsight. Para obter mais detalhes, consulte [Provision HDInsight clusters on Azure Virtual Network (Aprovisonar clusters do HDInsight na Azure Virtual Network)][hbase-provision-vnet].
+A implementação do HDInsight tira partido da arquitetura de escalamento horizontal do HBase para fornecer fragmentação automática de tabelas, consistência forte para operações de leitura e escrita e ativação pós-falha automática. O desempenho é melhorado graças à colocação em cache dentro da memória para as operações de leitura e à transmissão em fluxo de alto débito para as operações de escrita. O cluster HBase pode ser criado no interior da rede virtual. Para obter mais detalhes, consulte [Create HDInsight clusters on Azure Virtual Network (Criar clusters do HDInsight na Azure Virtual Network)][hbase-provision-vnet].
 
 ## <a name="how-is-data-managed-in-hdinsight-hbase"></a>Como são geridos os dados no HBase do HDInsight?
 É possível gerir os dados no HBase ao utilizar os comandos `create`, `get`, `put` e `scan` da shell do HBase. Os dados são escritos na base de dados através do comando `put` e lidos através do comando `get`. O comando `scan` é utilizado para obter dados de várias linhas numa tabela. É possível ainda gerir os dados através da API C# do HBase, que fornece uma biblioteca de cliente sobre a API REST do HBase. Além disso, é possível consultar uma base de dados do HBase através do Hive. Para uma introdução a estes modelos de programação, consulte [Get started using HBase with Hadoop in HDInsight (Começar a utilizar o HBase com o Hadoop no HDInsight)][hbase-get-started]. Estão também disponíveis coprocessadores, que permitem o processamento de dados nos nós que alojam a base de dados.
@@ -53,8 +53,8 @@ O caso de utilização canónico para o qual o BigTable (e, por extensão, o HBa
 
 ## <a name="a-namenext-stepsanext-steps"></a><a name="next-steps"></a>Passos seguintes
 * [Introdução à utilização do HBase com o Hadoop no HDInsight][hbase-get-started]
-* [Provision HDInsight clusters on Azure Virtual Network (Aprovisonar clusters do HDInsight na Azure Virtual Network)][hbase-provision-vnet]
-* [Configurar a replicação do HBase no HDInsight](hdinsight-hbase-geo-replication.md)
+* [Create HDInsight clusters on Azure Virtual Network (Criar clusters do HDInsight na Azure Virtual Network)][hbase-provision-vnet]
+* [Configurar a replicação do HBase no HDInsight](hdinsight-hbase-replication.md)
 * [Analisar dados de sentimento do Twitter com o HBase no HDInsight][hbase-twitter-sentiment]
 * [Use o Maven para construir aplicações Java que utilizam o HBase com o HDInsight (Hadoop)][hbase-build-java-maven]
 
@@ -84,6 +84,6 @@ O caso de utilização canónico para o qual o BigTable (e, por extensão, o HBa
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 
