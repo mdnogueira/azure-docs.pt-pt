@@ -1,5 +1,5 @@
 ---
-title: "Implementar a sua primeira aplicação Web no Azure em cinco minutos (CLI 2.0 [Pré-visualização]) | Microsoft Docs"
+title: "Implementar a sua primeira aplicação Web HTML no Azure em cinco minutos (CLI 2.0 [Pré-visualização]) | Microsoft Docs"
 description: "Saiba como é fácil executar aplicações Web no Serviço de Aplicações ao implementar uma aplicação de exemplo. Comece a programar verdadeiramente em pouco tempo e a ver resultados imediatos."
 services: app-service\web
 documentationcenter: 
@@ -15,12 +15,12 @@ ms.topic: hero-article
 ms.date: 01/04/2017
 ms.author: cephalin
 translationtype: Human Translation
-ms.sourcegitcommit: 05e61d2fc751c4239aef4b10ad897765c59fe928
-ms.openlocfilehash: 42f3f17366a37e10d746fe177a93a2432dbdcca2
+ms.sourcegitcommit: fccbab2baafed3b0347f2c35b7926200ec69a450
+ms.openlocfilehash: 640f04ca9a8351543d44899946464ed7cd4db437
 
 
 ---
-# <a name="deploy-your-first-web-app-to-azure-in-five-minutes-cli-20-preview"></a>Implementar a sua primeira aplicação Web no Azure em cinco minutos (CLI 2.0 [Pré-visualização])
+# <a name="deploy-your-first-html-web-app-to-azure-in-five-minutes-cli-20-preview"></a>Implementar a sua primeira aplicação Web HTML no Azure em cinco minutos (CLI 2.0 [Pré-visualização])
 
 > [!div class="op_single_selector"]
 > * [Primeiro site HTML](app-service-web-get-started-html.md)
@@ -57,7 +57,7 @@ Pode concluir a tarefa utilizando uma das seguintes versões CLI:
 * Uma conta do Microsoft Azure. Se não tiver uma conta, pode [inscrever-se numa avaliação gratuita](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F) ou [ativar os benefícios de subscritor do Visual Studio](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F).
 
 > [!NOTE]
-> Pode [Experimentar o Serviço de Aplicações](http://go.microsoft.com/fwlink/?LinkId=523751) sem uma conta do Azure. Crie uma aplicação de introdução e experimente-a durante uma hora, sem cartão de crédito nem compromissos.
+> Pode [Experimentar o Serviço de Aplicações](https://azure.microsoft.com/try/app-service/) sem uma conta do Azure. Crie uma aplicação de introdução e experimente-a durante uma hora, sem cartão de crédito nem compromissos.
 > 
 > 
 
@@ -154,6 +154,6 @@ Em alternativa, faça mais com a sua primeira aplicação Web. Por exemplo:
 
 
 
-<!--HONumber=Jan17_HO1-->
+<!--HONumber=Jan17_HO4-->
 
 

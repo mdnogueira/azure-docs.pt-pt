@@ -15,8 +15,8 @@ ms.topic: hero-article
 ms.date: 10/01/2016
 ms.author: adrianha
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 6a48181c6c22e6042dd8ef39c12415979e384f8b
+ms.sourcegitcommit: b1a633a86bd1b5997d5cbf66b16ec351f1043901
+ms.openlocfilehash: 6b8c5c2ac2e721c4d6f73c7c17f34eadc041e0c9
 
 
 ---
@@ -36,7 +36,7 @@ Para concluir este tutorial, precisa do seguinte:
 * Um Mac com Xcode v7.0 ou posterior e Xamarin Studio Community instalado. Consulte [Configuração e instalação do Visual Studio e Xamarin](https://msdn.microsoft.com/library/mt613162.aspx) e [Configuração, instalação e verificações para utilizadores Mac](https://msdn.microsoft.com/library/mt488770.aspx) (MSDN).
 
 > [!NOTE]
-> Se pretender começar a utilizar o App Service do Azure antes de se inscrever numa conta do Azure, aceda a [Experimentar App Service](https://tryappservice.azure.com/?appServiceName=mobile) e comece de imediato a criar uma Aplicação Móvel de arranque de curta duração no App Service. Sem cartões de crédito; sem compromissos.
+> Se pretender começar a utilizar o App Service do Azure antes de se inscrever numa conta do Azure, aceda a [Experimentar App Service](https://azure.microsoft.com/try/app-service/mobile/) e comece de imediato a criar uma Aplicação Móvel de arranque de curta duração no App Service. Sem cartões de crédito; sem compromissos.
 > 
 > 
 
@@ -161,9 +161,9 @@ Esta ação permite enviar um pedido POST para o novo back-end da aplicação m�
   Saiba como trabalhar com o SDK cliente gerido na aplicação Xamarin. 
 
 <!-- Anchors. -->
-[Introdução aos back-ends da apliação móvel]:#getting-started
-[Criar um novo back-end da aplicação móvel]:#create-new-service
-[Passos Seguintes]:#next-steps
+[Getting started with mobile app backends]:#getting-started
+[Create a new mobile app backend]:#create-new-service
+[Next Steps]:#next-steps
 
 
 <!-- Images. -->
@@ -177,12 +177,12 @@ Esta ação permite enviar um pedido POST para o novo back-end da aplicação m�
 
 <!-- URLs. -->
 [Visual Studio Professional 2013]: https://go.microsoft.com/fwLink/p/?LinkID=257546
-[SDK da aplicação Móvel]: http://go.microsoft.com/fwlink/?LinkId=257545
+[Mobile app SDK]: http://go.microsoft.com/fwlink/?LinkId=257545
 [Portal do Azure]: https://portal.azure.com/
 
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Jan17_HO3-->
 
 

@@ -70,10 +70,10 @@ sql-database-service-tiers.md
 | Máximo de eDTUs por base de dados | {25,50,75,<br>125,250,500,<br>1000,1750} | {25,50,75,<br>125,250,500,<br>1000,1750} | {25,50,75,<br>125,250,500,<br>1000,1750} | {25,50,75,<br>125,250,500,<br>1000,1750} | {25,50,75,<br>125,250,500,<br>1000,1750,4000} | 
 ||||||||
 
-\* A base de dados elástica partilha o armazenamento do conjunto, pelo que o armazenamento da base de dados é limitado ao armazenamento mais pequeno do conjunto restante ou ao armazenamento máximo por base de dados
+\* As bases de dados agrupadas partilham o armazenamento agrupado, pelo o que o armazenamento de base de dados é limitado ao armazenamento agrupado mais pequeno restante ou armazenamento máximo por base de dados. Armazenamento máximo por agrupamento refere-se ao armazenamento máximo dos ficheiros de dados no agrupamento de não inclui o espaço utilizado por ficheiros de registo.
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 

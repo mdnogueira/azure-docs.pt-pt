@@ -1,5 +1,5 @@
 ---
-title: Servidor VS nuvem do MFA do Azure | Microsoft Docs
+title: Escolher entre cloud ou servidor do Azure MFA | Microsoft Docs
 description: "Escolha a solução de segurança de autenticação multifator adequada para si ao perguntar o que está a tentar proteger e onde estão localizados os seus utilizadores.  Em seguida, selecione a nuvem, o servidor MFA ou o AD FS."
 services: multi-factor-authentication
 documentationcenter: 
@@ -12,11 +12,11 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 01/06/2017
+ms.date: 01/23/2017
 ms.author: kgremban
 translationtype: Human Translation
-ms.sourcegitcommit: 07e2a62ee63a8f9ef3d660fff8c6269654e2b448
-ms.openlocfilehash: 3e10becd802dfe8934063727f2f7fb0e9e8b420b
+ms.sourcegitcommit: 92c552f42f2645281f5039242825cfdaf6b683c9
+ms.openlocfilehash: 1a42c137204c2d2f6fff9a005b2b0e885c2002b2
 
 
 ---
@@ -36,7 +36,7 @@ Para determinar a solução de verificação de dois passos correta, primeiro é
 | --- |:---:|:---:|
 | Aplicações Microsoft originais |● |● |
 | Aplicações SaaS na galeria de aplicações |● |● |
-| Aplicações IIS publicadas através do Proxy de Aplicação do Azure AD |● |● |
+| Aplicações Web publicadas através do Proxy de Aplicação do Azure AD |● |● |
 | Aplicações IIS não publicadas através do Proxy de Aplicação do Azure AD | |● |
 | Acesso remoto, tais como VPN, RDG | |● |
 
@@ -62,8 +62,8 @@ A tabela seguinte é uma comparação das funcionalidades disponíveis do Multi-
 | SMS unidirecional como segundo fator | ● | ● |
 | SMS bidirecional como segundo fator | | ● |
 | Tokens de Hardware como segundo fator | | ● |
-| Palavras-passe da aplicação para os clientes que não suportam MFA | ● | |
-| Controlo de administração sobre métodos de autenticação | | ● |
+| Palavras-passe da aplicação para os clientes do Office 365 que não suportam MFA | ● | |
+| Controlo de administração sobre métodos de autenticação | ● | ● |
 | Modo PIN | | ● |
 | Alerta de fraudes |● | ● |
 | Relatórios do MFA |● | ● |
@@ -73,7 +73,7 @@ A tabela seguinte é uma comparação das funcionalidades disponíveis do Multi-
 | IPs Fidedignos | ● | ● |
 | Memorizar MFA para dispositivos fidedignos | ● | |
 | Acesso condicional | ● | ● |
-| Cache | ● | ● |
+| Cache |  | ● |
 
 Agora que determinámos se deve utilizar a autenticação multifator na nuvem ou o Servidor MFA no local, podemos começar a configurar e a utilizar o Multi-Factor Authentication do Azure. **Selecione o ícone que representa o seu cenário!**
 
@@ -87,6 +87,6 @@ Agora que determinámos se deve utilizar a autenticação multifator na nuvem ou
 
 
 
-<!--HONumber=Jan17_HO1-->
+<!--HONumber=Jan17_HO4-->
 
 

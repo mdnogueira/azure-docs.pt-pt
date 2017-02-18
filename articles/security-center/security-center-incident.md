@@ -1,10 +1,10 @@
 ---
-title: "Lidar com Incidentes de Segurança no Centro de Segurança do Azure | Microsoft Docs"
+title: "Gerir alertas de segurança no Centro de Segurança do Azure | Microsoft Docs"
 description: "Este documento ajuda-o a utilizar as capacidades do Centro de Segurança do Azure para lidar com incidentes de segurança."
 services: security-center
 documentationcenter: na
 author: YuriDio
-manager: swadhwa
+manager: mbaldwin
 editor: 
 ms.assetid: e8feb669-8f30-49eb-ba38-046edf3f9656
 ms.service: security-center
@@ -12,11 +12,11 @@ ms.topic: hero-article
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 01/04/2017
+ms.date: 02/06/2017
 ms.author: yurid
 translationtype: Human Translation
-ms.sourcegitcommit: ec32e3937d08d912c8f96987b0c5ebbf73060258
-ms.openlocfilehash: 25fef9472f023c37538cfc2f5f7c37c0bfca746e
+ms.sourcegitcommit: 9852981e530cd147c2d34ac2ede251b58a167a0a
+ms.openlocfilehash: a688c392434be5a27f5691c2d89ad934e435a3c9
 
 
 ---
@@ -32,25 +32,25 @@ No Centro de Segurança, um incidente de segurança é uma agregação de todos 
 Pode rever os incidentes de segurança atuais ao observar o mosaico Alertas de segurança. Aceda ao Portal do Azure e siga os passos abaixo para ver mais detalhes sobre cada incidente de segurança:
 
 1. No dashboard do Centro de Segurança, verá o mosaico **Alertas de segurança**.
-   
+
     ![Mosaico Alertas de segurança no Centro de Segurança](./media/security-center-incident/security-center-incident-fig1.png)
 
 2. Clique neste mosaico para o expandir e, se for detetado um incidente de segurança, este será apresentado no gráfico de alertas de segurança, tal como apresentado abaixo:
-   
+
     ![Incidente de segurança](./media/security-center-incident/security-center-incident-fig2.png)
 
 3. Observe que a descrição do incidente de segurança tem um ícone diferente em comparação com outros alertas. Clique nele para ver mais detalhes sobre este incidente.
-   
+
     ![Incidente de segurança](./media/security-center-incident/security-center-incident-fig3.png)
 
 4. No painel **Incidente**, verá mais detalhes sobre este incidente de segurança, incluindo a descrição completa do incidente, a gravidade (que, neste caso, é elevada), o estado atual do incidente (neste caso, ainda está *ativo*, o que implica que o utilizador ainda não tomou qualquer medida em relação ao incidente; isto pode ser feito clicando com o botão direito do rato no incidente no painel **Alertas de segurança**), o recurso atacado (neste caso, *VM1*), os passos de remediação e, na parte inferior, estão os alertas que foram incluídos neste incidente. Se pretender obter mais informações sobre cada alerta, basta clicar no mesmo e será aberto outro painel, conforme mostrado abaixo:
-   
+
     ![Incidente de segurança](./media/security-center-incident/security-center-incident-fig4.png)
 
 As informações neste painel irão variar de acordo com o alerta. Para obter mais informações sobre como gerir estes alertas, leia [Managing and responding to security alerts in Azure Security Center (Gerir e responder a alertas de segurança no Centro de Segurança do Azure)](security-center-managing-and-responding-alerts.md). Algumas considerações importantes sobre esta capacidade:
 
-* Um novo filtro permite-lhe personalizar a sua vista para Apenas incidentes, Apenas alertas ou ambos. 
-* O mesmo alerta pode existir como parte de um incidente (se aplicável), assim como pode estar visível como um alerta autónomo. 
+* Um novo filtro permite-lhe personalizar a sua vista para Apenas incidentes, Apenas alertas ou ambos.
+* O mesmo alerta pode existir como parte de um incidente (se aplicável), assim como pode estar visível como um alerta autónomo.
 
 ## <a name="see-also"></a>Consultar também
 Neste documento, aprendeu a utilizar a capacidade de incidentes de segurança no Centro de Segurança. Para saber mais acerca do Centro de Segurança, consulte o seguinte:
@@ -64,7 +64,6 @@ Neste documento, aprendeu a utilizar a capacidade de incidentes de segurança no
 
 
 
-
-<!--HONumber=Jan17_HO1-->
+<!--HONumber=Feb17_HO1-->
 
 

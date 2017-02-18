@@ -1,5 +1,5 @@
 ---
-title: "Criar um cluster do Spark no Azure HDInsight e utilizar o Spark SQL a partir do Jupyter para análises interativas | Microsoft Docs"
+title: "Introdução ao cluster do Apache Spark no Azure HDInsight | Microsoft Docs"
 description: "Instruções passo-a-passo sobre como criar rapidamente um cluster do Apache Spark no HDInsight e, em seguida, utilizar o Spark SQL a partir de blocos de notas do Jupyter para executar consultas interativas."
 services: hdinsight
 documentationcenter: 
@@ -13,15 +13,16 @@ ms.workload: big-data
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 01/06/2017
+ms.date: 02/01/2017
 ms.author: nitinme
 translationtype: Human Translation
-ms.sourcegitcommit: 791b6a5a07bb87302cb382290a355c9a14c63ff0
-ms.openlocfilehash: cc1d484d40dce0b1c64f2e8cdebb9377a38705cb
+ms.sourcegitcommit: a3bdeb6fea306babc9358134c37044843b9bdd1c
+ms.openlocfilehash: d8d9c5111a19bb165c25d2796d6b6e933d75042a
 
 
 ---
 # <a name="get-started-create-apache-spark-cluster-in-azure-hdinsight-and-run-interactive-queries-using-spark-sql"></a>Introdução: Criar um cluster do Apache Spark no Azure HDInsight e executar consultas interativas com o Spark SQL
+
 Saiba como criar um cluster do [Apache Spark](hdinsight-apache-spark-overview.md) no HDInsight e, em seguida, utilize o bloco de notas do [Jupyter](https://jupyter.org) para executar consultas interativas do Spark SQL no cluster do Spark.
 
    ![Introdução à utilização do Apache Spark no HDInsight](./media/hdinsight-apache-spark-jupyter-spark-sql/hdispark.getstartedflow.png "Introdução à utilização do Apache Spark no HDInsight. Passos ilustrados: criar uma conta de armazenamento; criar um cluster; executar declarações do Spark SQL")
@@ -30,7 +31,8 @@ Saiba como criar um cluster do [Apache Spark](hdinsight-apache-spark-overview.md
 
 ## <a name="prerequisites"></a>Pré-requisitos
 * **Uma subscrição do Azure**. Antes de começar este tutorial, tem de ter uma subscrição do Azure. Veja o artigo [Crie hoje a sua conta do Azure gratuita](https://azure.microsoft.com/free).
-* **Um cliente Secure Shell (SSH)**: Os sistemas Linux, Unix e OS X fornecem um cliente SSH através do comando `ssh`. Para os sistemas Windows, leia o artigo [Utilizar o SSH com Hadoop baseado em Linux no HDInsight a partir do Windows com PuTTY](hdinsight-hadoop-linux-use-ssh-windows.md). Para o Linux, Unix ou OS X, leia [Utilizar o SSH com Hadoop baseado em Linux no HDInsight a partir do Linux, Unix ou OS X](hdinsight-hadoop-linux-use-ssh-unix.md)
+
+* **Um cliente Secure Shell (SSH)**: Os sistemas Linux, Unix e OS X fornecem um cliente SSH através do comando `ssh`. Para os clientes Windows, veja [Utilizar o SSH com Hadoop no HDInsight a partir do Windows com PuTTY](hdinsight-hadoop-linux-use-ssh-windows.md). Para o Linux, Unix ou OS X, veja [Utilizar o SSH com Hadoop no HDInsight a partir do Linux, Unix ou OS X](hdinsight-hadoop-linux-use-ssh-unix.md)
 
 > [!NOTE]
 > Este artigo utiliza um modelo do Azure Resource Manager para criar um cluster do Spark que utiliza os [Azure Storage Blobs como o armazenamento do cluster](hdinsight-hadoop-use-blob-storage.md). Também pode criar um cluster Spark que utiliza [Arquivo azure Data Lake](../data-lake-store/data-lake-store-overview.md) como um armazenamento adicional, além de Blobs de armazenamento do Azure como armazenamento de predefinido. Para obter instruções, consulte [Criar um cluster de HDInsight com o Arquivo Data Lake](../data-lake-store/data-lake-store-hdinsight-hadoop-use-portal.md).
@@ -68,10 +70,10 @@ Nesta secção, utilizará o bloco de notas do Jupyter para executar consultas d
 * **PySpark** (para aplicações escritas no Python)
 * **Spark** (para aplicações escritas no Scala)
 
-Neste artigo, utilizará o kernel do PySpark. No artigo [Kernels disponíveis nos blocos de notas do Jupyter com clusters do Spark HDInsight](hdinsight-apache-spark-jupyter-notebook-kernels.md#why-should-i-use-the-pyspark-or-spark-kernels), pode obter detalhes acerca das vantagens da utilização do kernel do PySpark. No entanto, algumas das principais vantagens de utilizar o kernel do PySpark são as seguintes:
+Neste artigo, utiliza o kernel do PySpark. Para mais informações sobre os dois kernels, consulte [Use Jupyter notebooks kernels with Apache Spark clusters in HDInsight (Utilizar kernels de blocos de notas Jupyter com clusters do Apache Spark no HDInsight)](hdinsight-apache-spark-jupyter-notebook-kernels.md). Algumas das principais vantagens de utilizar o kernel do PySpark são as seguintes:
 
-* Não é necessário definir os contextos para o Spark e o Hive. Estes são definidos automaticamente.
-* Pode utilizar a magia de células, como `%%sql`, para executar diretamente as suas consultas de SQL ou Hive, sem quaisquer fragmentos de código anteriores.
+* Os contextos do Spark e do Hive são definidos automaticamente.
+* Utilize a magia de células, como `%%sql`, para executar diretamente as consultas de SQL ou Hive, sem quaisquer fragmentos de código anteriores.
 * O resultado das consultas de SQL ou Hive é visualizado automaticamente.
 
 ### <a name="create-jupyter-notebook-with-pyspark-kernel"></a>Criar um bloco de notas do Jupyter com o kernel do PySpark
@@ -80,7 +82,7 @@ Neste artigo, utilizará o kernel do PySpark. No artigo [Kernels disponíveis no
 2. No menu à esquerda, clique em **Grupos de recursos**.
 3. Clique no grupo de recursos que criou na última secção. Pode utilizar a função de pesquisa se existirem demasiados grupos de recursos. Pode ver dois recursos no grupo, o cluster do HDInsight e a conta de armazenamento predefinida.
 4. Clique no cluster para abri-lo.
- 
+
 2. A partir de **Ligações rápidas**, clique em **Dashboards de clusters** e, em seguida, clique em **Bloco de Notas do Jupyter**. Se lhe for solicitado, introduza as credenciais de administrador do cluster.
 
    ![Dashboards de clusters do HDInsight](./media/hdinsight-apache-spark-jupyter-spark-sql/hdinsight-azure-portal-cluster-dashboards.png "Dashboards de clusters do HDInsight")
@@ -95,7 +97,7 @@ Neste artigo, utilizará o kernel do PySpark. No artigo [Kernels disponíveis no
 
    ![Criar um novo bloco de notas Jupyter](./media/hdinsight-apache-spark-jupyter-spark-sql/hdispark.note.jupyter.createnotebook.png "Criar um novo bloco de notas Jupyter")
 
-   É criado e aberto um novo bloco de notas com o nome Untitled (Untitled.pynb). 
+   É criado e aberto um novo bloco de notas com o nome Untitled (Untitled.pynb).
 
 4. Clique no nome do bloco de notas na parte superior e introduza um nome amigável se assim o desejar.
 
@@ -128,13 +130,13 @@ Neste artigo, utilizará o kernel do PySpark. No artigo [Kernels disponíveis no
         hvacdf.registerTempTable("hvac")
 
     Os clusters do Spark no HDInsight incluem um ficheiro de dados de exemplo, **hvac.csv**, em **\HdiSamples\HdiSamples\SensorSampleData\hvac**.
-    
+
 7. Execute o seguinte código para consultar os dados:
 
         %%sql
         SELECT buildingID, (targettemp - actualtemp) AS temp_diff, date FROM hvac WHERE date = \"6/1/13\"
 
-   Uma vez que está a utilizar um kernel do PySpark, agora, pode executar diretamente uma consulta de SQL na tabela temporária **hvac** que acabou de criar utilizando a magia `%%sql`. Para obter mais informações sobre a magia `%%sql`, bem como sobre outras magias disponíveis com o kernel do PySpark, consulte [Kernels disponíveis nos blocos de notas do Jupyter com clusters do Spark HDInsight](hdinsight-apache-spark-jupyter-notebook-kernels.md#why-should-i-use-the-pyspark-or-spark-kernels).
+   Uma vez que está a utilizar um kernel do PySpark, agora, pode executar diretamente uma consulta de SQL na tabela temporária **hvac** que acabou de criar utilizando a magia `%%sql`. Para obter mais informações sobre a magia `%%sql`, bem como sobre outras magias disponíveis com o kernel do PySpark, consulte [Kernels disponíveis nos blocos de notas do Jupyter com clusters do Spark HDInsight](hdinsight-apache-spark-jupyter-notebook-kernels.md#choose-between-the-kernels).
 
    O resultado da tabela seguinte é apresentado por predefinição.
 
@@ -188,6 +190,6 @@ Neste artigo, utilizará o kernel do PySpark. No artigo [Kernels disponíveis no
 
 
 
-<!--HONumber=Jan17_HO2-->
+<!--HONumber=Feb17_HO1-->
 
 

@@ -15,8 +15,8 @@ ms.topic: get-started-article
 ms.date: 06/27/2016
 ms.author: riande
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 7ac0fde19d61a9c3a9f54b42982c7096434cb965
+ms.sourcegitcommit: b1a633a86bd1b5997d5cbf66b16ec351f1043901
+ms.openlocfilehash: a682e51bfaed9056b170c3e9473180ca210557b9
 
 
 ---
@@ -86,10 +86,10 @@ O código seguinte obtém este valor do estado de sessão.
        strValue = (string)objValue;    
 
 Também pode utilizar a Cache de Redis para colocar objetos na cache na sua aplicação Web. Para obter mais informações, consulte [Aplicação de filmes do MVC com a Cache de Redis do Azure em 15 minutos](https://azure.microsoft.com/blog/2014/06/05/mvc-movie-app-with-azure-redis-cache-in-15-minutes/).
-Para obter mais detalhes sobre como utilizar o estado de sessão do ASP.NET, veja [Descrição Geral do Estado de Sessão do ASP.NET][Descrição Geral do Estado de Sessão do ASP.NET].
+Para obter mais detalhes sobre como utilizar o estado de sessão do ASP.NET, veja [Descrição Geral do Estado de Sessão do ASP.NET][ASP.NET Session State Overview].
 
 > [!NOTE]
-> Se pretender começar a utilizar o App Service do Azure antes de se inscrever numa conta do Azure, aceda a [Experimentar o App Service](http://go.microsoft.com/fwlink/?LinkId=523751), onde pode criar de imediato uma aplicação Web de arranque de curta duração no App Service. Sem cartões de crédito; sem compromissos.
+> Se pretender começar a utilizar o App Service do Azure antes de se inscrever numa conta do Azure, aceda a [Experimentar o App Service](https://azure.microsoft.com/try/app-service/), onde pode criar de imediato uma aplicação Web de arranque de curta duração no App Service. Sem cartões de crédito; sem compromissos.
 > 
 > 
 
@@ -98,8 +98,8 @@ Para obter mais detalhes sobre como utilizar o estado de sessão do ASP.NET, vej
   
   *De [Rick Anderson](https://twitter.com/RickAndMSFT)*
 
-[instalou a versão mais recente]: http://www.windowsazure.com/downloads/?sdk=net  
-[Descrição Geral do Estado de Sessão do ASP.NET]: http://msdn.microsoft.com/library/ms178581.aspx
+[installed the latest]: http://www.windowsazure.com/downloads/?sdk=net  
+[ASP.NET Session State Overview]: http://msdn.microsoft.com/library/ms178581.aspx
 
 [NewIcon]: ./media/web-sites-dotnet-session-state-caching/CacheScreenshot_NewButton.png
 [NewCacheDialog]: ./media/web-sites-dotnet-session-state-caching/CachingScreenshot_CreateOptions.png
@@ -113,6 +113,6 @@ Para obter mais detalhes sobre como utilizar o estado de sessão do ASP.NET, vej
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Jan17_HO3-->
 
 

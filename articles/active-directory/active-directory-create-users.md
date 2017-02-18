@@ -12,11 +12,11 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 09/22/2016
+ms.date: 02/10/2017
 ms.author: curtand
 translationtype: Human Translation
-ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
-ms.openlocfilehash: f3787f72dbd8ee865899b71538816d2e8d30af32
+ms.sourcegitcommit: 8f171456f74925eba16ebd6f56ced558a11f9d99
+ms.openlocfilehash: 6c366a2b7e5017bbe67cf1dbefc0baec6cf1aed3
 
 
 ---
@@ -28,7 +28,7 @@ Adicione utilizadores para povoar o diretório. Este artigo explica como adicion
 2. Selecione **Active Directory** e, em seguida, selecione o nome do diretório da sua organização.
 3. Selecione o separador **Utilizadores** e selecione **Adicionar Utilizador** na barra de comandos.
 4. Na página **Forneça mais informações sobre este utilizador**, em **Tipo de utilizador**, selecione:
-   
+
    * **Novo utilizador na organização** – adiciona uma nova conta de utilizador ao diretório.
    * **Utilizador com uma conta Microsoft existente** – adiciona uma conta de consumidor Microsoft existente ao diretório (por exemplo, uma conta do Outlook)
 5. Dependendo do **tipo de utilizador**, introduza um nome de utilizador (para o novo utilizador) ou um endereço de e-mail (para um utilizador com uma conta Microsoft).
@@ -37,11 +37,11 @@ Adicione utilizadores para povoar o diretório. Este artigo explica como adicion
 
 > [!IMPORTANT]
 > Se a sua organização utilizar mais de um domínio, deverá ser informado dos seguintes problemas quando adicionar uma conta de utilizador:
-> 
-> * Para adicionar contas de utilizador com o mesmo nome principal de utilizador (UPN) entre domínios, **comece** por adicionar, por exemplo, geoffgrisso@contoso.onmicrosoft.com, **, seguido de ** geoffgrisso@contoso.com.
-> * **Não** adicione geoffgrisso@contoso.com, antes de adicionar geoffgrisso@contoso.onmicrosoft.com. É importante seguir esta ordem uma vez que qualquer anulação poderá ser complicada.
-> 
-> 
+>
+> * Para adicionar contas de utilizar com o mesmo nome principal de utilizador (UPN) em vários domínios, **comece** por adicionar, por exemplo, geoffgrisso@contoso.onmicrosoft.com, **seguido de**geoffgrisso@contoso.com.
+> * **Não** adicione geoffgrisso@contoso.com antes de adicionar geoffgrisso@contoso.onmicrosoft.com. É importante seguir esta ordem uma vez que qualquer anulação poderá ser complicada.
+>
+>
 
 ## <a name="change-user-information"></a>Alterar as informações do utilizador
 Pode alterar qualquer atributo do utilizador, exceto o ID de objeto.
@@ -87,6 +87,6 @@ Em seguida, pode editar as opções para controlar o acesso dos utilizadores con
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Feb17_HO2-->
 
 

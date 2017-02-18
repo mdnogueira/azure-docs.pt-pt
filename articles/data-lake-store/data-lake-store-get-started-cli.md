@@ -1,5 +1,5 @@
 ---
-title: "Introdução ao Data Lake Store utilizando a interface de linha de comandos entre plataformas | Microsoft Docs"
+title: "Utilizar a interface de linha de comandos para começar a utilizar o Azure Data Lake Store | Microsoft Docs"
 description: "Utilizar a linha de comandos entre plataformas para criar uma conta de Data Lake Store e executar operações básicas"
 services: data-lake-store
 documentationcenter: 
@@ -12,11 +12,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: big-data
-ms.date: 11/21/2016
+ms.date: 01/31/2017
 ms.author: nitinme
 translationtype: Human Translation
-ms.sourcegitcommit: c157da7bf53e2d0762624e8e71e56e956db04a24
-ms.openlocfilehash: 236563a8814640391130ba53886c5cebfea67a8f
+ms.sourcegitcommit: f33ccee7dd520adf074856616005c929040116dd
+ms.openlocfilehash: 89d1811f3f336f2526ccba3b6be26e90ab7120ad
 
 
 ---
@@ -29,9 +29,14 @@ ms.openlocfilehash: 236563a8814640391130ba53886c5cebfea67a8f
 > * [API REST](data-lake-store-get-started-rest-api.md)
 > * [CLI do Azure](data-lake-store-get-started-cli.md)
 > * [Node.js](data-lake-store-manage-use-nodejs.md)
-> * [python](data-lake-store-get-started-python.md)
+> * [Python](data-lake-store-get-started-python.md)
 >
 >
+
+> [!NOTE]
+> Para carregar e transferir uma grande quantidade de dados (ficheiros grandes, um grande número de ficheiros ou ambos), recomendamos que utilize o [SDK Python](data-lake-store-get-started-python.md), o [SDK .NET](data-lake-store-get-started-net-sdk.md), ou o [Azure PowerShell](data-lake-store-get-started-powershell.md). Estas opções têm um melhor desempenho porque podem utilizar vários threads para paralelizar o movimento de dados.
+> 
+>  
 
 Aprenda a utilizar a interface de linha de comandos do Azure para criar uma conta do Azure Data Lake Store e executar operações básicas, tais como criar pastas, carregar e transferir ficheiros de dados, eliminar a conta, entre outras. Para obter mais informações sobre o Data Lake Store, veja [Descrição geral do Data Lake Store](data-lake-store-overview.md).
 
@@ -177,6 +182,6 @@ Quando lhe for pedido, introduza **S** para eliminar a conta.
 
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Feb17_HO1-->
 
 

@@ -15,8 +15,8 @@ ms.topic: get-started-article
 ms.date: 01/17/2017
 ms.author: spelluru
 translationtype: Human Translation
-ms.sourcegitcommit: d175d3d4d7d7a58f071dab0f32e3fdd3cb3146ce
-ms.openlocfilehash: 8c26d8ef39827cff87b7fc7f17fab78c627a5035
+ms.sourcegitcommit: 4b29fd1c188c76a7c65c4dcff02dc9efdf3ebaee
+ms.openlocfilehash: 733c151012e3d896f720fbc64120432aca594bda
 
 
 ---
@@ -37,6 +37,9 @@ A Atividade de Cópia executa o movimento de dados no Azure Data Factory. A ativ
 
 > [!NOTE]
 > Este artigo não abrange toda a API .NET do Data Factory. Veja [Data Factory .NET API Reference (Referência da API .NET do Data Factory)](https://msdn.microsoft.com/library/mt415893.aspx) para obter detalhes sobre o SDK .NET do Data Factory.
+> 
+> O pipeline de dados neste tutorial copia dados a partir de um arquivo de dados de origem para um arquivo de dados de destino. Não transforma dados de entrada para produzir dados de saída. Para ver um tutorial sobre como transformar dados através do Azure Data Factory, consulte [Tutorial: Build a pipeline to transform data using Hadoop cluster (Tutorial: Criar um pipeline para transformar dados com o cluster do Hadoop)](data-factory-build-your-first-pipeline.md).
+
 
 ## <a name="prerequisites"></a>Pré-requisitos
 * Leia a [Descrição Geral e Pré-requisitos do Tutorial](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) para obter uma descrição geral do tutorial e concluir os passos de **pré-requisitos**.
@@ -503,12 +506,18 @@ Deve obter os quatro valores seguintes destes passos:
 20. Verifique se os registos dos dois colaboradores são criados na tabela “**emp**” na base de dados SQL do Azure especificada.
 
 ## <a name="next-steps"></a>Passos Seguintes
-* Leia o artigo [Data Movement Activities (Atividades de Movimento de Dados)](data-factory-data-movement-activities.md), que disponibiliza informações detalhadas sobre a Atividade de Cópia que utilizou no tutorial.
-* Veja [Data Factory .NET API Reference (Referência da API .NET do Data Factory)](https://msdn.microsoft.com/library/mt415893.aspx) para obter detalhes sobre o SDK .NET do Data Factory. Este artigo não abrange toda a API .NET do Data Factory.
+| Tópico | Descrição |
+|:--- |:--- |
+| [Pipelines](data-factory-create-pipelines.md) |Este artigo ajuda-o a compreender os pipelines e as atividades no Azure Data Factory. |
+| [Conjuntos de dados](data-factory-create-datasets.md) |Este artigo ajuda-o a compreender os conjuntos de dados no Azure Data Factory. |
+| [Agendamento e execução](data-factory-scheduling-and-execution.md) |Este artigo explica os aspetos de agendamento e execução do modelo da aplicação do Azure Data Factory. |
+[Referência da API .NET do Data Factory](/dotnet/api/) | Fornece detalhes sobre o SDK .NET do Data Factory (procure Microsoft.Azure.Management.DataFactories.Models na vista de árvore). 
 
 
 
 
-<!--HONumber=Dec16_HO3-->
+
+
+<!--HONumber=Feb17_HO1-->
 
 

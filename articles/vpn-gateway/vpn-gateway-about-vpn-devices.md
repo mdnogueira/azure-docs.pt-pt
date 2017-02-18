@@ -1,6 +1,6 @@
 ---
-title: "Acerca dos Dispositivos VPN para as ligações de Gateway de Rede de VPNs das Redes Virtuais do Azure | Microsoft Docs"
-description: "Este artigo fala sobre dispositivos VPN e parâmetros IPsec para ligações de Gateway de VPN S2S e contém hiperligações para instruções de configuração e exemplos."
+title: "Acerca de dispositivos VPN para ligações do Azure entre locais | Microsoft Docs"
+description: "Este artigo aborda os dispositivos VPN e os parâmetros IPsec para ligações entre locais do Gateway de VPN S2S. São fornecidas ligações para obter instruções e exemplos de configuração."
 services: vpn-gateway
 documentationcenter: na
 author: yushwang
@@ -16,13 +16,13 @@ ms.workload: infrastructure-services
 ms.date: 12/12/2016
 ms.author: yushwang;cherylmc
 translationtype: Human Translation
-ms.sourcegitcommit: bbaf89bca07fd2d4c4a12403d2daa8323f4d7be5
-ms.openlocfilehash: 12e7768665b8d360fe7241c9879bd1f7bfc63664
+ms.sourcegitcommit: bf262073b46daa8b7dcf50fabf5f455d7d5850e7
+ms.openlocfilehash: b8e65f6c314457b76bd062ea09bda53099fb79d9
 
 
 ---
 # <a name="about-vpn-devices-for-site-to-site-vpn-gateway-connections"></a>Acerca dos dispositivos de VPN para ligações de Gateway de Rede de VPNs
-Precisa de um dispositivo VPN para configurar uma ligação de rede de VPNs (S2S). As ligações Site a Site podem ser utilizadas para criar uma solução híbrida ou sempre que pretender uma ligação segura entre a rede no local e a rede virtual. Este artigo aborda os dispositivos VPN compatíveis e os parâmetros de configuração.
+Precisa de um dispositivo VPN para configurar uma ligação de rede de VPNs (S2S) entre locais através de um gateway de VPN. As ligações Site a Site podem ser utilizadas para criar uma solução híbrida ou sempre que pretender uma ligação segura entre a rede no local e a rede virtual. Este artigo aborda os dispositivos VPN compatíveis e os parâmetros de configuração.
 
 > [!NOTE]
 > Ao configurar uma ligação Site a Site, é preciso um endereço IP IPv4 destinado ao público para o dispositivo VPN.                                                                                                                                                                               
@@ -115,7 +115,7 @@ Depois de transferir o exemplo de configuração do dispositivo VPN fornecido, t
 | **Propriedade** | **PolicyBased** | **Gateway de VPN Standard ou de Elevado Desempenho e RouteBased** |
 | --- | --- | --- |
 | Versão do IKE |IKEv1 |IKEv2 |
-| Algoritmo Hash |SHA1(SHA128) |SHA1(SHA128) |
+| Algoritmo Hash |SHA1(SHA128), SHA2(SHA256) |SHA1(SHA128), SHA2(SHA256) |
 | Duração (Tempo) da Associação de Segurança (SA) da Fase 2 |3600 segundos |3600 segundos |
 | Duração (Débito) da Associação de Segurança (SA) da Fase 2 |102 400 000 KB |- |
 | Ofertas de Encriptação e de Autenticação de SA de IPsec (por ordem de preferência) |1. ESP-AES256 2. ESP-AES128 3. ESP-3DES 4. N/D |Veja *Ofertas de Associação de Segurança (SA) de IPsec do Gateway RouteBased* (abaixo) |
@@ -153,6 +153,6 @@ A tabela seguinte apresenta uma lista de Ofertas de Encriptação e Autenticaç�
 
 
 
-<!--HONumber=Dec16_HO2-->
+<!--HONumber=Jan17_HO4-->
 
 

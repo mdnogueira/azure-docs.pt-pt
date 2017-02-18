@@ -1,5 +1,5 @@
 ---
-title: "Introdução ao Data Lake Store | Microsoft Docs"
+title: "Utilizar o PowerShell para começar a utilizar o Azure Data Lake Store | Microsoft Docs"
 description: "Utilizar o Azure PowerShell para criar uma conta do Data Lake Store e executar operações básicas"
 services: data-lake-store
 documentationcenter: 
@@ -15,8 +15,8 @@ ms.workload: big-data
 ms.date: 12/02/2016
 ms.author: nitinme
 translationtype: Human Translation
-ms.sourcegitcommit: a86fd04a7ec0cffabe42d30132b97777c752bbde
-ms.openlocfilehash: e37b698436c067faa20b0e589078927d5955934a
+ms.sourcegitcommit: a939a0845d7577185ff32edd542bcb2082543a26
+ms.openlocfilehash: ebe8724d73769eb55e40b8af2056880a5a4007ce
 
 
 ---
@@ -63,13 +63,13 @@ Este artigo utiliza uma abordagem de autenticação mais simples com o Data Lake
         $resourceGroupName = "<your new resource group name>"
         New-AzureRmResourceGroup -Name $resourceGroupName -Location "East US 2"
 
-    ![Criar um Grupo de Recursos do Azure](./media/data-lake-store-get-started-powershell/ADL.PS.CreateResourceGroup.png "Create an Azure Resource Group")
+    ![Criar um Grupo de Recursos do Azure](./media/data-lake-store-get-started-powershell/ADL.PS.CreateResourceGroup.png "Criar um Grupo de Recursos do Azure")
 3. Crie uma conta do Azure Data Lake Store. O nome que especificar só pode conter minúsculas e números.
 
         $dataLakeStoreName = "<your new Data Lake Store name>"
         New-AzureRmDataLakeStoreAccount -ResourceGroupName $resourceGroupName -Name $dataLakeStoreName -Location "East US 2"
 
-    ![Criar uma conta do Azure Data Lake Store](./media/data-lake-store-get-started-powershell/ADL.PS.CreateADLAcc.png "Create an Azure Data Lake Store account")
+    ![Criar uma conta do Azure Data Lake Store](./media/data-lake-store-get-started-powershell/ADL.PS.CreateADLAcc.png "Criar uma conta do Azure Data Lake Store")
 4. Certifique-se de que a conta foi criada com êxito.
 
         Test-AzureRmDataLakeStoreAccount -Name $dataLakeStoreName
@@ -91,7 +91,7 @@ Pode criar diretórios na sua conta do Azure Data Lake Store para gerir e armaze
 
     Deve agora mostrar um resultado como o seguinte:
 
-    ![Verificar Diretório](./media/data-lake-store-get-started-powershell/ADL.PS.Verify.Dir.Creation.png "Verify Directory")
+    ![Verificar Diretório](./media/data-lake-store-get-started-powershell/ADL.PS.Verify.Dir.Creation.png "Verificar Diretório")
 
 ## <a name="upload-data-to-your-azure-data-lake-store"></a>Carregar dados para o Azure Data Lake Store
 Pode carregar os dados para o Data Lake Store diretamente no nível de raiz ou para um diretório que criou na conta. Os fragmentos abaixo demonstram como carregar alguns dados de exemplo para o diretório (**mynewdirectory**) que criou na secção anterior.
@@ -205,6 +205,6 @@ Pode continuar a otimizar estas definições, alterando a **PerFileThreadCount**
 
 
 
-<!--HONumber=Dec16_HO2-->
+<!--HONumber=Jan17_HO4-->
 
 

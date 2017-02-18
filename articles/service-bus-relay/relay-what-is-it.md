@@ -1,5 +1,5 @@
 ---
-title: "O que é o Reencaminhamento do Azure? | Microsoft Docs"
+title: "Descrição geral sobre o que é o Reencaminhamento do Azure e porquê utilizá-lo | Microsoft Docs"
 description: "Descrição Geral do Reencaminhamento do Azure"
 services: service-bus-relay
 documentationcenter: .net
@@ -12,11 +12,11 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: multiple
 ms.topic: get-started-article
-ms.date: 11/16/2016
-ms.author: babanisa,sethm
+ms.date: 02/14/2017
+ms.author: babanisa;sethm
 translationtype: Human Translation
-ms.sourcegitcommit: 14a5c029eef714134079b960109e58d821d0a609
-ms.openlocfilehash: 34b54d54b20d9aec69486c5ef98c97beee21bd94
+ms.sourcegitcommit: ca66a344ea855f561ead082091c6941540b1839d
+ms.openlocfilehash: 1b9423c22ff6e003a6236e01118b600a2c746db4
 
 
 ---
@@ -66,6 +66,6 @@ As Ligações Híbridas superam a funcionalidade anterior, igualmente chamada �
 
 
 
-<!--HONumber=Jan17_HO1-->
+<!--HONumber=Jan17_HO4-->
 
 

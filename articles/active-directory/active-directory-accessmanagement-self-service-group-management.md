@@ -12,11 +12,11 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 11/01/2016
+ms.date: 02/3/2017
 ms.author: curtand
 translationtype: Human Translation
-ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
-ms.openlocfilehash: 1fda0b3c6c3f262c0f4b2f3ad5f37c4ce44cc0e3
+ms.sourcegitcommit: 4bab9f44d1c91f05618ea510b83beb06540429f2
+ms.openlocfilehash: be84686351255585c3484f5ab8dad37b92462e2b
 
 
 ---
@@ -41,7 +41,7 @@ Pode também utilizar **Os utilizadores podem utilizar Personalização em grupo
 
 Também pode utilizar a caixa **Grupo que pode utilizar personalização para grupos de segurança** para especificar um nome personalizado para um grupo cujos membros podem utilizar a gestão personalizada.
 
-## <a name="additional-information"></a>Informações adicionais
+## <a name="next-steps"></a>Passos seguintes
 Estes artigos fornecem informações adicionais acerca do Azure Active Directory.
 
 * [Gerir o acesso aos recursos com grupos do Azure Active Directory](active-directory-manage-groups.md)
@@ -52,7 +52,6 @@ Estes artigos fornecem informações adicionais acerca do Azure Active Directory
 
 
 
-
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Feb17_HO2-->
 
 

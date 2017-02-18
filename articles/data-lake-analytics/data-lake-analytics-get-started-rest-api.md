@@ -7,16 +7,16 @@ author: mumian
 manager: jhubbard
 editor: cgronlun
 ms.assetid: 5e133d92-baaa-44c9-890c-ab2d85c91122
-ms.service: data-lake-store
+ms.service: data-lake-analytics
 ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: big-data
-ms.date: 10/19/2016
+ms.date: 02/03/2017
 ms.author: jgao
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: cae1eeb70e5358b8c30527a45379d2a0da315974
+ms.sourcegitcommit: 2fea3686b1484406d31c5447c7d3d7e2451b827e
+ms.openlocfilehash: 1898b3d6aa1a9ccbc9f4427cf994c02f9fa35abd
 
 
 ---
@@ -33,7 +33,7 @@ Saiba como utilizar APIs REST do WebHDFS e do Data Lake Analytics para gerir con
 ## <a name="authenticate-with-azure-active-directory"></a>Autenticar com o Azure Active Directory
 Existem dois métodos para autenticar no Azure Active Directory.
 
-### <a name="enduser-authentication-interactive"></a>Autenticação de utilizador final (interativa)
+### <a name="end-user-authentication-interactive"></a>Autenticação de utilizador final (interativa)
 Através deste método, a aplicação pede ao utilizador para iniciar sessão e todas as operações são efetuadas no contexto do utilizador. 
 
 Siga os passos seguintes para a autenticação interativa:
@@ -76,7 +76,7 @@ Siga os passos seguintes para a autenticação interativa:
 
 Para obter mais informações sobre a autenticação de utilizador interativa, veja [Fluxo de concessão de códigos de autorização](https://msdn.microsoft.com/library/azure/dn645542.aspx).
 
-### <a name="servicetoservice-authentication-noninteractive"></a>Autenticação serviço a serviço (não interativa)
+### <a name="service-to-service-authentication-non-interactive"></a>Autenticação serviço a serviço (não interativa)
 Através deste método, a aplicação fornece as suas próprias credenciais para efetuar as operações. Para tal, tem de emitir um pedido POST, como o mostrado abaixo: 
 
     curl -X POST https://login.microsoftonline.com/<TENANT-ID>/oauth2/token  \
@@ -209,7 +209,7 @@ Substitua \<`REDACTED`\> pelo token de autorização, \<`AzureSubscriptionID`\> 
         ]
     }
 
-## <a name="submit-usql-jobs"></a>Submeter tarefas U-SQL
+## <a name="submit-u-sql-jobs"></a>Submeter tarefas U-SQL
 O comando Curl seguinte mostra como submeter uma tarefa U-SQL:
 
     curl -i -X PUT -H "Authorization: Bearer <REDACTED>" https://<DataLakeAnalyticsAccountName>.azuredatalakeanalytics.net/Jobs/<NewGUID>?api-version=2016-03-20-preview -d@"C:\tutorials\adla\SubmitADLAJob.json"
@@ -266,7 +266,7 @@ O resultado é semelhante a:
     }
 
 
-## <a name="list-usql-jobs"></a>Listar tarefas U-SQL
+## <a name="list-u-sql-jobs"></a>Listar tarefas U-SQL
 O comando Curl seguinte mostra como listar tarefas U-SQL:
 
     curl -i -X GET -H "Authorization: Bearer <REDACTED>" https://<DataLakeAnalyticsAccountName>.azuredatalakeanalytics.net/Jobs?api-version=2016-11-01 
@@ -350,6 +350,6 @@ O resultado é semelhante a:
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Feb17_HO1-->
 
 

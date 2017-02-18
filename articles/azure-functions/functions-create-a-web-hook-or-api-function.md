@@ -1,6 +1,6 @@
 ---
 title: "Criar um web hook ou a Função de Azure API | Microsoft Docs"
-description: "Utilize as Funções do Azure para criar uma função que é invocada por uma chamada WebHook ou API."
+description: "Utilize as Funções do Azure para criar uma função sem servidores que é invocada por uma chamada WebHook ou API."
 services: azure-functions
 documentationcenter: na
 author: ggailey777
@@ -13,18 +13,20 @@ ms.devlang: multiple
 ms.topic: get-started-article
 ms.tgt_pltfrm: multiple
 ms.workload: na
-ms.date: 11/29/2016
+ms.date: 02/02/2017
 ms.author: glenga
 translationtype: Human Translation
-ms.sourcegitcommit: 44e397c7521ba8f0ba11893c364f51177561bee4
-ms.openlocfilehash: a74fc30480068788f33df092594119253df9487b
+ms.sourcegitcommit: a8f6d111a010666bf4aaaf05e061381cc8fffed0
+ms.openlocfilehash: 23a65319fe1825e2ba51f2fd5a2d0b65ca499472
 
 
 ---
 # <a name="create-a-webhook-or-api-azure-function"></a>Criar um webhook ou uma Função Azure API
 As Funções do Azure são uma experiência baseada em eventos, de cálculo a pedido que lhe permite criar unidades agendadas ou acionadas de código implementado em várias linguagens de programação. Para saber mais acerca das Funções do Azure, veja a [Descrição Geral das Funções do Azure](functions-overview.md).
 
-Este tópico mostra-lhe como criar uma função Node.js, que é invocada por um webhook do GitHub. A nova função é criada com base num modelo predefinido no portal Funções do Azure. Também pode ver um breve vídeo para verificar como estes passos são efetuados no portal.
+Este tópico mostra-lhe como criar uma função JavaScript, que é invocada por um webhook do GitHub. A nova função é criada com base num modelo predefinido no portal Funções do Azure. Também pode ver um breve vídeo para verificar como estes passos são efetuados no portal.
+
+Os passos gerais neste tutorial também podem ser utilizados para criar uma função em C# ou F#, em vez do JavaScript. 
 
 ## <a name="watch-the-video"></a>Ver o vídeo
 O vídeo seguinte mostra como realizar os passos básicos neste tutorial 
@@ -33,14 +35,22 @@ O vídeo seguinte mostra como realizar os passos básicos neste tutorial
 >
 >
 
+## <a name="prerequisites"></a>Pré-requisitos
+
+Para concluir este tutorial, irá precisar do seguinte:
+
++ Uma conta ativa do Azure. Se ainda não tiver uma conta, pode [inscrever-se numa conta gratuita do Azure](https://azure.microsoft.com/free/).  
+ Também pode utilizar a experiência [Experimentar funções](https://functions.azure.com/try) para concluir este tutorial sem uma conta do Azure.
++ Uma conta do GitHub. Pode [inscrever-se numa conta gratuita do GitHub](https://github.com/join), se ainda não tiver uma. 
+
 ## <a name="create-a-webhook-triggered-function-from-the-template"></a>Criar uma função acionada por webhook a partir do modelo
-Uma aplicação de função aloja a execução das suas funções no Azure. Se ainda não tiver uma conta do Azure, veja a experiência [Experimentar Funções](https://functions.azure.com/try) ou [criar uma conta gratuita do Azure](https://azure.microsoft.com/free/). 
+Uma aplicação de função aloja a execução das suas funções no Azure. 
 
 1. Aceda ao [portal das Funções do Azure](https://functions.azure.com/signin) e inicie sessão com a sua conta do Azure.
 
 2. Se tiver uma aplicação de função existente para utilizar, selecione-a partir de **As suas aplicações de função** e, em seguida, clique em **Abrir**. Para criar uma aplicação de função, escreva um **Nome** exclusivo para a nova aplicação de função ou aceite a gerada, selecione a **Região** preferencial e, em seguida, clique em **Criar + começar**. 
 
-3. Na sua aplicação de função, clique em **+ Nova função** > **GitHub Webhook - Nó** > **Criar**. Este passo cria uma função com um nome predefinido que é baseado no modelo especificado. 
+3. Na sua aplicação de função, clique em **+ Nova função** > **GitHub Webhook - JavaScript** > **Criar**. Este passo cria uma função com um nome predefinido que é baseado no modelo especificado. Em alternativa pode criar uma função C# ou F#.
    
     ![Criar uma função acionada de um webhook do GitHub](./media/functions-create-a-web-hook-or-api-function/functions-create-new-github-webhook.png) 
 
@@ -48,7 +58,7 @@ Uma aplicação de função aloja a execução das suas funções no Azure. Se a
 
     ![Reveja o código da função](./media/functions-create-a-web-hook-or-api-function/functions-new-webhook-in-portal.png) 
 
-1. Copie os valores **URL de função** e **Segredo do GitHub**. Estes valores são necessários para criar o webhook no GitHub. 
+1. Copie e guarde os valores **URL da função** e **Segredo do GitHub**. Irá utilizar estes valores na secção seguinte para configurar o webhook no GitHub. 
 
 2. Clique em **Testar**, tenha em atenção o corpo JSON predefinido de um comentário ao problema no **Corpo do pedido** e, em seguida, clique em **Executar**. 
 
@@ -65,7 +75,10 @@ Em seguida, crie o webhook no repositório do GitHub.
 2. Clique em **Definições** > **Webhooks e serviços** > **Adicionar webhook**.
    
     ![Adicionar um webhook do GitHub](./media/functions-create-a-web-hook-or-api-function/functions-create-new-github-webhook-2.png)   
-3. Cole o URL e o segredo da função no **URL de Payload** e **Segredo**. Em seguida, clique em **Deixar-me selecionar eventos individuais**, selecione **Emitir comentário** e clique em **Adicionar webhook**.
+
+3. Cole o URL e o segredo da função no **URL de Payload** e **Segredo** e selecione **aplicação/json** para **Tipo de conteúdo**.
+
+4. Clique em **Selecionar eventos individuais**, selecione **Emitir comentário** e clique em **Adicionar webhook**.
    
     ![Definir URL e segredo do webhook](./media/functions-create-a-web-hook-or-api-function/functions-create-new-github-webhook-3.png) 
 
@@ -73,9 +86,13 @@ Neste momento, o webhook GitHub está configurado para acionar a função quando
 Agora, está na altura de testá-lo.
 
 ## <a name="test-the-function"></a>Testar a função
-1. No seu repositório do GitHub, abra o separador **Problemas** numa nova janela do browser, clique em **Novo problema**, escreva um título e, em seguida, clique em **Submeter novo problema**. Também pode abrir um problema existente.
+1. No seu repositório do GitHub, abra o separador **Problemas** numa nova janela do browser.
 
-2. No problema, introduza um comentário e clique em **Comentário**. Neste momento, pode voltar para o novo webhook no GitHub e, em **Entregas Recentes** verifique se foi enviado um pedido de webhook e que o corpo da resposta é `New GitHub comment: <Your issue comment text>`.
+2. Numa nova janela, clique em **Novo Problema**, escreva um título e, em seguida, clique em **Submeter novo problema**. Também pode abrir um problema existente.
+
+2. No problema, introduza um comentário e clique em **Comentário**. 
+
+3. Na outra janela do GitHub, clique em **Editar** junto ao seu novo webhook, desloque para baixo para **Entregas Recentes** e certifique-se de que foi enviado um pedido de webhook e de que o corpo da resposta é `New GitHub comment: <Your issue comment text>`.
 
 3. De novo no portal de Funções, desloque para baixo para os registos e verifique se a função foi acionada e o valor `New GitHub comment: <Your issue comment text>` é escrito nos registos de transmissão em fluxo.
 
@@ -94,6 +111,6 @@ Veja os seguintes tópicos para obter mais informações sobre o Funções do Az
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Feb17_HO1-->
 
 

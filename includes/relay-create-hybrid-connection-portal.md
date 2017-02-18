@@ -2,7 +2,7 @@ Certifique-se que já criou um espaço de nomes do Reencaminhamento, como mostra
 
 1. Inicie sessão no [Portal do Azure](https://portal.azure.com).
 2. No painel de navegação esquerdo do portal, clique em **Reencaminhamento**.
-3. Selecione o espaço de nomes no qual gostaria de criar a Ligação Híbrida. Neste caso, trata-se de **mynewns1**.
+3. Selecione o espaço de nomes no qual gostaria de criar a Ligação Híbrida. Neste caso, trata-se de **mynewns**.
    
     ![Criar um hc](./media/relay-create-hybrid-connection-portal/create-hc-1.png)
 4. No painel **Espaço de nomes de Reencaminhamento**, selecione **Ligações Híbridas** e, em seguida, clique em **+Ligação Híbrida**.
@@ -15,6 +15,6 @@ Certifique-se que já criou um espaço de nomes do Reencaminhamento, como mostra
 
 [namespace-how-to]: ../articles/service-bus-relay/relay-create-namespace-portal.md 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Feb17_HO1-->
 
 
