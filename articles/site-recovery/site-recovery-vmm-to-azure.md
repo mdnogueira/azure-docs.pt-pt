@@ -1,5 +1,5 @@
 ---
-title: "Replicar máquinas virtuais de Hyper-V em nuvens do VMM no Azure com o portal do Azure | Microsoft Docs"
+title: Replicar VMs de Hyper-V nas clouds do VMM para o| Microsoft Docs
 description: "Descreve como implementar o Site Recovery para orquestrar a replicação, a ativação pós-falha e a recuperação de VMs de Hyper-V em clouds do VMM para o Azure."
 services: site-recovery
 documentationcenter: 
@@ -12,21 +12,22 @@ ms.workload: backup-recovery
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: hero-article
-ms.date: 11/23/2016
+ms.date: 01/23/2017
 ms.author: raynew
 translationtype: Human Translation
-ms.sourcegitcommit: 6fb71859d0ba2e0f2b39d71edd6d518b7a03bfe9
-ms.openlocfilehash: 8de917236d1dcbfdf0c1232380879a33d9425291
+ms.sourcegitcommit: 75653b84d6ccbefe7d5230449bea81f498e10a98
+ms.openlocfilehash: bdf9ce3d4ac359aa4150bc8912ce8b8302828343
 
 
 ---
 # <a name="replicate-hyper-v-virtual-machines-in-vmm-clouds-to-azure-using-the-azure-portal"></a>Replicar máquinas virtuais de Hyper-V em nuvens do VMM para o Azure com o portal do Azure
+
+> [!div class="op_single_selector"]
 > * [Portal do Azure](site-recovery-vmm-to-azure.md)
 > * [Azure clássico](site-recovery-vmm-to-azure-classic.md)
 > * [PowerShell Resource Manager](site-recovery-vmm-to-azure-powershell-resource-manager.md)
 > * [PowerShell clássico](site-recovery-deploy-with-powershell.md)
->
->
+
 
 Bem-vindo ao serviço do Azure Site Recovery!
 
@@ -46,7 +47,7 @@ Para uma implementação completa, recomendamos vivamente que siga todos os pass
 | **Limitações no local** |O proxy baseado em HTTPS não é suportado |
 | **Fornecedor/agente** |As VMs replicadas precisam do Azure Site Recovery Provider.<br/><br/> Os anfitriões de Hyper-V precisam do agente dos Serviços de Recuperação.<br/><br/> São instalados durante a implementação. |
 |  **Requisitos do Azure** |Conta do Azure<br/><br/> Cofre dos serviços de recuperação<br/><br/> Conta de armazenamento LRS ou GRS na região do cofre<br/><br/> Conta de armazenamento standard<br/><br/> Rede virtual do Azure na região do cofre [Ver os detalhes completos](#azure-prerequisites). |
-|  **Limitações do Azure** |Se utilizar GRS, precisa de outra conta LRS para registo<br/><br/> As contas de armazenamento criadas no portal do Azure não podem ser movidas entre grupos de recursos nas mesmas ou em diferentes subscrições. <br/><br/> Não há suporte para o armazenamento Premium.<br/><br/> As redes Azure utilizadas para o Site Recovery não podem ser movidas entre grupos de recursos nas mesmas ou em diferentes subscrições. 
+|  **Limitações do Azure** |Se utilizar GRS, precisa de outra conta LRS para registo<br/><br/> As contas de armazenamento criadas no portal do Azure não podem ser movidas entre grupos de recursos nas mesmas ou em diferentes subscrições. <br/><br/> Não há suporte para o armazenamento Premium.<br/><br/> As redes Azure utilizadas para o Site Recovery não podem ser movidas entre grupos de recursos nas mesmas ou em diferentes subscrições.
 |  **Replicação de VMs** |[As VMs devem estar em conformidade com os pré-requisitos do Azure](site-recovery-best-practices.md#azure-virtual-machine-requirements)<br/><br/>
 |  **Limitações da replicação** |Não pode replicar VMs que executem Linux com um endereço IP estático.<br/><br/> Pode excluir discos específicos da replicação, mas não pode excluir discos do SO.
 | **Passos da implementação** |1) Preparar o Azure (subscrição, armazenamento, rede) -> 2) Preparar no local (VMM e mapeamento de rede) -> 3) Criar cofre dos Serviços de Recuperação -> 4) Configurar o VMM e os anfitriões de Hyper-V -> 5) Configurar as definições da replicação -> 6) Ativar a replicação -> 7) Testar a replicação e a ativação pós-falha. |
@@ -319,7 +320,7 @@ Veja a seguir o que acontece quando começa o mapeamento da rede:
 2. Em **Criar e associar política**, especifique um nome de política.
 3. Em **Frequência de cópia**, especifique a frequência com que pretende replicar dados delta após a replicação inicial (a cada 30 segundos, 5 ou 15 minutos).
 4. Em **Retenção do ponto de recuperação**, especifique, em horas, qual será a duração da janela de retenção para cada ponto de recuperação. As máquinas protegidas podem ser recuperadas para qualquer ponto nessa janela.
-5. Em **Frequência de instantâneos consistentes com a aplicação**, especifique a frequência (1 a 12 horas) com que os pontos de recuperação que contêm os instantâneos consistentes com aplicações serão criados. O Hyper-V utiliza dois tipos de instantâneos – um instantâneo padrão que fornece um instantâneo incremental de toda a máquina virtual e um instantâneo consistente com aplicações que cria um instantâneo pontual dos dados de aplicação no interior da máquina virtual. Os instantâneos consistentes com aplicações utilizam o Serviço de Cópia de Sombra de Volumes (VSS) para se certificar de que as aplicações estão num estado consistente quando se obtém o instantâneo. Tenha em atenção que se ativar instantâneos consistentes com aplicações, afetará o desempenho das aplicações em execução nas máquinas virtuais de origem. Certifique-se de que o valor que define é menor que o número de pontos de recuperação adicionais que está a configurar.
+5. Em **Frequência de instantâneos consistentes com a aplicação**, especifique a frequência (1 a&12; horas) com que os pontos de recuperação que contêm os instantâneos consistentes com aplicações serão criados. O Hyper-V utiliza dois tipos de instantâneos – um instantâneo padrão que fornece um instantâneo incremental de toda a máquina virtual e um instantâneo consistente com aplicações que cria um instantâneo pontual dos dados de aplicação no interior da máquina virtual. Os instantâneos consistentes com aplicações utilizam o Serviço de Cópia de Sombra de Volumes (VSS) para se certificar de que as aplicações estão num estado consistente quando se obtém o instantâneo. Tenha em atenção que se ativar instantâneos consistentes com aplicações, afetará o desempenho das aplicações em execução nas máquinas virtuais de origem. Certifique-se de que o valor que define é menor que o número de pontos de recuperação adicionais que está a configurar.
 6. Em **Hora de início da replicação inicial**, especifique quando deve começar a replicação inicial. A replicação ocorre através da sua largura de banda de Internet, pelo que poderá querer agendá-la fora do horário de trabalho.
 7. Em **Encriptar dados armazenados no Azure**, especifique se pretende encriptar os dados REST no armazenamento do Azure. Em seguida, clique em **OK**.
 
@@ -392,16 +393,16 @@ Agora, ative a replicação da seguinte forma:
 7. Em **Propriedades** > **Configurar propriedades**, selecione o sistema operativo para as VMs selecionadas e o disco do sistema operativo. Por predefinição são selecionados todos os discos da VM para replicação. Deverá excluir disco(s) da replicação para reduzir o consumo de largura de banda, ao replicar dados desnecessários para o Azure. Por exemplo, não deverá replicar discos com dados temporários, ou dados que são atualizados sempre que uma máquina ou aplicação reinicia (por exemplo, pagefile.sys ou Microsoft SQL Server tempdbr). Pode impedir que o disco seja replicado ao desmarcá-lo. Certifique-se de que o nome da VM do Azure (nome de destino) está em conformidade com os [requisitos da máquina virtual do Azure](site-recovery-best-practices.md#azure-virtual-machine-requirements) e modifique-o se for necessário. Em seguida, clique em **OK**. Pode definir as propriedades adicionais mais tarde.
 
     ![Ativar a replicação](./media/site-recovery-vmm-to-azure/enable-replication6-with-exclude-disk.png)
-    
+
     >[!NOTE]
-    > 
-    > * Apenas os discos básicos podem ser excluídos da replicação. Não pode excluir o disco do SO e não recomendamos excluir discos dinâmicos. O ASR não consegue identificar que disco VHD é básico ou dinâmico no interior da VM do convidado.  Se todos os discos de volume dinâmico dependente não forem excluídos, o disco dinâmico protegido será tratado como um disco com falha na VM de ativação pós-falha e os dados desse disco não estarão acessíveis.   
+    >
+    > * Apenas os discos básicos podem ser excluídos da replicação. Não pode excluir o disco do SO e não recomendamos excluir discos dinâmicos. O ASR não consegue identificar que disco VHD é básico ou dinâmico no interior da VM do convidado.  Se todos os discos de volume dinâmico dependente não forem excluídos, o disco dinâmico protegido será tratado como um disco com falha na VM de ativação pós-falha e os dados desse disco não estarão acessíveis.
     > * Após a replicação estar ativada, não pode adicionar ou remover discos para replicação. Se pretende adicionar ou excluir um disco, terá de desativar a proteção da VM e, em seguida, reativar.
     > * Se excluir um disco necessário para o funcionamento de uma aplicação, após a ativação pós-falha do Azure, terá de criá-lo manualmente no Azure, para que a aplicação replicada possa ser executada. Em alternativa, pode integrar a automatização do Azure num plano de recuperação para criar o disco durante a ativação pós-falha da máquina.
     > * Os discos que criar manualmente no Azure não poderão realizar a ativação pós-falha novamente. Por exemplo, se realizar a ativação pós-falha de três discos e criar dois diretamente na VM do Azure, apenas três discos em que foi realizada a ativação pós falha realizarão a reativação pós-falha do Azure para o Hyper-V. Não pode incluir discos criados manualmente na reativação pós-falha ou em replicação inversa do Hyper-V para o Azure.
     >
     >
-    
+
 
 8. Em **Definições de replicação** > **Configurar as definições de replicação**, selecione a política de replicação que pretende aplicar para as máquinas virtuais protegidas. Em seguida, clique em **OK**. Pode modificar a política de replicação em **Definições** > **Políticas de replicação** > nome da política > **Editar Definições**. As alterações que aplicar são utilizadas para as máquinas que já estão a replicar e para as novas máquinas.
 
@@ -418,7 +419,8 @@ Recomendamos que verifique as propriedades da máquina de origem. Lembre-se de q
 2. Em **Propriedades**, pode ver as informações de replicação e de ativação pós-falha da VM.
 
     ![Ativar a replicação](./media/site-recovery-vmm-to-azure/test-failover2.png)
-3. Em **Computação e Rede** > **Propriedades de computação**, pode especificar o nome e o tamanho do destino da VM do Azure. Altere o nome para estar em conformidade com os [Requisitos do Azure](site-recovery-best-practices.md#azure-virtual-machine-requirements), se necessário. Também pode ver e modificar as informações sobre a rede de destino, a sub-rede e o endereço IP atribuído à VM do Azure. Tenha em atenção que:
+3. Em **Computação e Rede** > **Propriedades de computação**, pode especificar o nome e o tamanho do destino da VM do Azure. Altere o nome para estar em conformidade com os [Requisitos do Azure](site-recovery-best-practices.md#azure-virtual-machine-requirements), se necessário. Também pode ver e modificar as informações sobre a rede de destino, a sub-rede e o endereço IP atribuído à VM do Azure.
+Tenha em atenção que:
 
    * Pode definir o endereço IP de destino. Se não fornecer um endereço, a máquina na ativação pós-falha utilizará o DHCP. Se definir um endereço que não está disponível na ativação pós-falha, a ativação falhará. O mesmo endereço IP de destino pode ser utilizado para ativação pós-falha de teste se o endereço está disponível na rede de ativação pós-falha de teste.
    * O número de adaptadores de rede é ditado pelo tamanho especificado para a máquina virtual de destino, da seguinte forma:
@@ -430,19 +432,6 @@ Recomendamos que verifique as propriedades da máquina de origem. Lembre-se de q
 
      ![Ativar a replicação](./media/site-recovery-vmm-to-azure/test-failover4.png)
 4. Em **Discos**, pode ver o sistema operativo e os discos de dados na VM que será replicada.
-
-## <a name="step-7-test-your-deployment"></a>Passo 7: Testar a implementação
-Para testar a implementação pode executar uma ativação pós-falha de teste para uma única máquina virtual ou um plano de recuperação que contém uma ou mais máquinas virtuais.
-
-### <a name="prepare-for-failover"></a>Preparar para ativação pós-falha
-* Para executar uma ativação pós-falha de teste, recomenda-se que crie uma rede do Azure nova que esteja isolada da sua rede de produção do Azure. Este é o comportamento predefinido quando cria uma rede nova no Azure. [Saiba mais](site-recovery-failover.md#run-a-test-failover) sobre como executar as ativações pós-falha de teste.
-* Para obter o melhor desempenho quando houver uma ativação pós-falha para o Azure, instale o Agente do Azure na máquina protegida. Este torna o arranque mais rápido e ajuda na resolução de problemas. Instale o agente de [Linux](https://github.com/Azure/WALinuxAgent) ou de [Windows](http://go.microsoft.com/fwlink/?LinkID=394789).
-* Para testar totalmente a implementação, precisa de uma infraestrutura para a máquina replicada funcionar conforme esperado. Se quiser testar o Active Directory e o DNS, pode criar uma máquina virtual como controlador de domínio com o DNS e replicá-la no Azure com o Azure Site Recovery. Leia mais em [Considerações de ativação pós-falha de teste para o Active Directory](site-recovery-active-directory.md#test-failover-considerations).
-* Se tiver excluído discos da replicação, poderá ter de criar esses discos manualmente no Azure depois da ativação pós-falha, para que a aplicação seja executada como esperado.
-* Se quiser executar uma ativação pós-falha não planeada em vez de uma ativação pós-falha de teste, tenha em atenção que:
-
-  * Se for possível, deve encerrar as máquinas primárias antes de executar uma ativação pós-falha não planeada. Isto garante que não tenha as máquinas de origem e de réplica em execução ao mesmo tempo.
-  * Quando executa uma ativação pós-falha não planeada, a replicação de dados para nas máquinas primárias, de modo que não são transferidos deltas de dados a seguir ao início de uma ativação pós-falha não planeada. Além disso, se executar uma ativação pós-falha não planeada num plano de recuperação, esta será executada até ser concluída, mesmo que ocorra um erro.
 
 ### <a name="prepare-to-connect-to-azure-vms-after-failover"></a>Preparar a ligação para VMs do Azure após a ativação pós-falha
 Se pretende ligar-se para VMs do Azure com RDP após a ativação pós-falha, certifique-se de que efetua o seguinte procedimento:
@@ -474,26 +463,19 @@ Se pretender aceder a uma VM do Azure a executar o Linux após a ativação pós
 * Deverá ser criado um ponto final público para permitir ligações de entrada na porta SSH (a porta TCP 22 por predefinição).
 * Se o acesso à VM for feito através de uma ligação VPN (Express Route ou VPN de site a site), o cliente pode ser utilizado para ligar diretamente à VM através do SSH.
 
-### <a name="run-a-test-failover"></a>Executar uma ativação pós-falha de teste
+
+## <a name="step-7-test-your-deployment"></a>Passo 7: Testar a implementação
+Para testar a implementação pode executar uma ativação pós-falha de teste para uma única máquina virtual ou um plano de recuperação que contém uma ou mais máquinas virtuais.
+
 1. Para fazer a ativação pós-falha numa única VM, em **Definições** > **Itens Replicados**, clique na VM > **+ Ativação Pós-Falha de Teste**.
-2. Para efetuar a ativação pós-falha de um plano de recuperação, em **Definições** > **Planos de Recuperação**, clique com o botão direito no plano > **Ativação Pós-Falha de Teste**. Para criar um plano de recuperação, [siga estas instruções](site-recovery-create-recovery-plans.md).
-3. Em **Ativação Pós-Falha de Teste**, selecione a rede do Azure à qual as VMs do Azure se vão ligar depois de feita a ativação pós-falha.
-4. Clique em **OK** para iniciar a ativação pós-falha. Pode controlar o progresso clicando na VM para abrir as respetivas propriedades ou na tarefa **Ativação Pós-Falha de Teste** em **Definições** > **Tarefas da Recuperação de Sites**.
-5. Quando a ativação pós-falha chegar à fase **Concluir teste**, efetue o seguinte:
+1. Para efetuar a ativação pós-falha de um plano de recuperação, em **Definições** > **Planos de Recuperação**, clique com o botão direito no plano > **Ativação Pós-Falha de Teste**. Para criar um plano de recuperação, [siga estas instruções](site-recovery-create-recovery-plans.md).
+1. Em **Ativação Pós-Falha de Teste**, selecione a rede do Azure à qual as VMs do Azure se vão ligar depois de feita a ativação pós-falha.
+1. Clique em **OK** para iniciar a ativação pós-falha. Pode controlar o progresso clicando na VM para abrir as respetivas propriedades ou na tarefa **Ativação Pós-Falha de Teste** em **Definições** > **Tarefas da Recuperação de Sites**.
+1. Depois de concluída a ativação pós-falha, deverá também conseguir ver a máquina do Azure de réplica no Portal do Azure > **Máquinas Virtuais**. Confirme que a VM tem um tamanho adequado, que está ligada à rede certa e que está em execução.
+1. Se tiver [preparado para as ligações após a ativação pós-falha](#prepare-to-connect-to-Azure-VMs-after-failover), deverá ser capaz de ligar à VM do Azure.
+1. Quando tiver terminado, clique em **Ativação pós-falha de teste de limpeza** no plano de recuperação. Em **Notas**, registe e guarde todas as observações associadas à ativação pós-falha de teste. Este procedimento eliminará as máquinas virtuais criadas durante a ativação pós-falha de teste. 
 
-   1. Veja a máquina virtual de réplica no portal do Azure. Verifique se as máquinas virtuais são iniciadas corretamente.
-   2. Se tiver configurado para aceder a máquinas virtuais a partir da sua rede no local, pode iniciar uma ligação de Ambiente de Trabalho Remoto à máquina virtual.
-   3. Clique em **Concluir o teste** para terminar.
-   4. Clique em **Notas** para registar e guardar todas as observações associadas à ativação pós-falha de teste.
-   5. Clique em **A ativação pós-falha de teste está concluída**. Limpe o ambiente de teste para automaticamente desligar e eliminar a máquina virtual de teste.
-   6. Nesta fase são eliminados todos os elementos ou VMs criados automaticamente pela Recuperação de Sites durante a ativação pós-falha de teste. Não são eliminados quaisquer elementos adicionais criados para a ativação pós-falha de teste.
-
-      > [!NOTE]
-      > Se uma ativação pós-falha de teste continuar durante mais de duas semanas, terminará de maneira forçada.
-      >
-      >
-6. Depois de concluída a ativação pós-falha, deverá também conseguir ver a máquina do Azure de réplica no Portal do Azure > **Máquinas Virtuais**. Confirme que a VM tem um tamanho adequado, que está ligada à rede certa e que está em execução.
-7. Se tiver [preparado para as ligações após a ativação pós-falha](#prepare-to-connect-to-Azure-VMs-after-failover), deverá ser capaz de ligar à VM do Azure.
+Para obter mais detalhes, consulte o documento [Ativação pós-falha de teste do Azure](site-recovery-test-failover-to-azure.md).
 
 ## <a name="monitor-your-deployment"></a>Monitorizar a implementação
 Veja como pode monitorizar as definições de configuração, o estado e o estado de funcionamento da implementação da Recuperação de Sites:
@@ -509,6 +491,6 @@ Depois da implementação estar instalada e em execução, [saiba mais](site-rec
 
 
 
-<!--HONumber=Dec16_HO4-->
+<!--HONumber=Jan17_HO5-->
 
 

@@ -1,10 +1,10 @@
 ---
-title: "Criar uma rede virtual com uma ligação de Rede de VPNs com o Azure Resource Manager e o PowerShell | Microsoft Docs"
-description: "Este artigo explica como criar uma VNet com o modelo de implementação Resource Manager e como ligá-la à sua rede local no local através de uma ligação de gateway de VPN S2S."
+title: 'Ligar a rede no local a uma rede virtual do Azure: Rede de VPNs: PowerShell | Microsoft Docs'
+description: "Passos para criar uma ligação IPsec da sua rede no local a uma rede virtual do Azure através da Internet pública. Estes passos ajudam-no a criar uma ligação de Gateway de Rede de VPNs em vários sites com o PowerShell."
 services: vpn-gateway
 documentationcenter: na
 author: cherylmc
-manager: carmonm
+manager: timlt
 editor: 
 tags: azure-resource-manager
 ms.assetid: fcc2fda5-4493-4c15-9436-84d35adbda8e
@@ -13,15 +13,15 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 10/14/2016
+ms.date: 01/23/2017
 ms.author: cherylmc
 translationtype: Human Translation
-ms.sourcegitcommit: 3fe204c09eebf7d254a1bf2bb130e2d3498b6b45
-ms.openlocfilehash: e2c1a99a23f8d2d8ceb1fd8a9fe3c0e86abc0b02
+ms.sourcegitcommit: eea00841708212789e14fa8717d83dd81d472bac
+ms.openlocfilehash: dad78df8d841dd1d5e014a902fa541044743f7e4
 
 
 ---
-# <a name="create-a-vnet-with-a-site-to-site-connection-using-powershell"></a>Criar uma VNet com uma ligação de Rede de VPNs com o PowerShell
+# <a name="create-a-vnet-with-a-site-to-site-vpn-connection-using-powershell"></a>Criar uma VNet com uma ligação de Rede de VPNs com o PowerShell
 > [!div class="op_single_selector"]
 > * [Resource Manager - Portal do Azure](vpn-gateway-howto-site-to-site-resource-manager-portal.md)
 > * [Resource Manager – PowerShell](vpn-gateway-create-site-to-site-rm-powershell.md)
@@ -31,7 +31,7 @@ ms.openlocfilehash: e2c1a99a23f8d2d8ceb1fd8a9fe3c0e86abc0b02
 
 Este artigo explica como criar uma rede virtual e uma ligação de gateway de Rede de VPNs para a sua rede no local com o modelo de implementação Azure Resource Manager. As ligações site a site podem ser utilizadas para configurações em vários locais e híbridas.
 
-![Diagrama Site a Site](./media/vpn-gateway-create-site-to-site-rm-powershell/s2srmps.png "site-to-site")
+![Diagrama da ligação de Gateway de Rede de VPNs em vários sites](./media/vpn-gateway-create-site-to-site-rm-powershell/site-to-site-connection-diagram.png)
 
 ### <a name="deployment-models-and-methods-for-site-to-site-connections"></a>Modelos de implementação e métodos para ligações Site a Site
 [!INCLUDE [deployment models](../../includes/vpn-gateway-deployment-models-include.md)]
@@ -205,6 +205,6 @@ Se precisar de alterar os prefixos do gateway de rede local, utilize as instruç
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Jan17_HO4-->
 
 

@@ -15,8 +15,8 @@ ms.workload: data-services
 ms.date: 10/31/2016
 ms.author: mausher;barbkess
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 5a0519a0fdbfc428530e5b30a3f8e4e8bcdaa50b
+ms.sourcegitcommit: c0e2324a2b2e6294df6e502f2e7a0ae36ff94158
+ms.openlocfilehash: e368ae8b249fe3c33371794160440e472b0f35e3
 
 
 ---
@@ -29,7 +29,7 @@ ms.openlocfilehash: 5a0519a0fdbfc428530e5b30a3f8e4e8bcdaa50b
 > 
 > 
 
-**[bcp][bcp]** é um utilitário da linha de comandos para carregamento em massa, que permite copiar dados entre o SQL Server, ficheiros de dados e o SQL Data Warehouse. Utilize o bcp para importar um grande número de linhas para tabelas do SQL Data Warehouse ou exportar dados de tabelas do SQL Server para ficheiros de dados. Exceto quando utilizado com a opção de queryout, o bcp não necessita de nenhum conhecimento de Transact-SQL.
+O **[bcp][bcp]** é um utilitário de linha de comandos para carregamento em massa, que lhe permite copiar dados entre o SQL Server, ficheiros de dados e o SQL Data Warehouse. Utilize o bcp para importar um grande número de linhas para tabelas do SQL Data Warehouse ou exportar dados de tabelas do SQL Server para ficheiros de dados. Exceto quando utilizado com a opção de queryout, o bcp não necessita de nenhum conhecimento de Transact-SQL.
 
 O bcp é uma forma rápida e fácil de mover conjuntos de dados mais pequenos para dentro e fora de uma base de dados SQL Data Warehouse. A quantidade exata de dados recomendada para carregamento/extração através do bcp dependerá da ligação de rede ao centro de dados do Azure.  Geralmente, as tabelas de dimensões podem ser prontamente carregadas e extraídas com o bcp. No entanto, não é recomendada a utilização do bcp para carregar ou extrair grandes volumes de dados.  O Polybase é a ferramenta recomendada para carregar e extrair grandes volumes de dados, pois efetua uma melhor tarefa ao tirar partido da arquitetura de processamento paralelo em massa do SQL Data Warehouse.
 
@@ -43,7 +43,7 @@ Este tutorial irá mostrar-lhe como:
 * Importar dados para uma tabela com o comando de entrada do bcp
 * Exportar dados de uma tabela com o comando de saída do bcp
 
-> [!VIDEO https://channel9.msdn.com/Blogs/Windows-Azure/Loading-data-into-Azure-SQL-Data-Warehouse-with-BCP/player]
+> [!VIDEO https://channel9.msdn.com/Blogs/Azure/Loading-data-into-Azure-SQL-Data-Warehouse-with-BCP/player]
 > 
 > 
 
@@ -55,7 +55,7 @@ Para seguir este tutorial, é necessário:
 * Ter instalado o utilitário SQLCMD de linha de comandos
 
 > [!NOTE]
-> Pode transferir os utilitários bcp e sqlcmd a partir do [Centro de Transferências da Microsoft][Centro de Transferências da Microsoft].
+> Pode transferir os utilitários bcp e sqlcmd a partir do [Centro de Transferências da Microsoft][Microsoft Download Center].
 > 
 > 
 
@@ -82,7 +82,7 @@ sqlcmd.exe -S <server name> -d <database name> -U <username> -P <password> -I -Q
 ```
 
 > [!NOTE]
-> Consulte [Descrição Geral da Tabela][Descrição Geral da Tabela] ou a [sintaxe CREATE TABLE][sintaxe CREATE TABLE] para obter mais informações sobre como criar uma tabela no SQL Data Warehouse e as opções disponíveis na cláusula WITH.
+> Veja [Table Overview (Descrição Geral da Tabela)][Table Overview] ou a [sintaxe CREATE TABLE][CREATE TABLE syntax] para obter mais informações sobre como criar uma tabela no SQL Data Warehouse e as opções disponíveis na cláusula WITH.
 > 
 > 
 
@@ -140,7 +140,7 @@ Isto deverá devolver os seguintes resultados:
 | 20151201 |4 |2 |
 
 ### <a name="step-4-create-statistics-on-your-newly-loaded-data"></a>Passo 4: criar Estatísticas nos dados recentemente carregados
-O Azure SQL Data Warehouse ainda não suporta a criação ou atualização automática de estatísticas. Para obter o melhor desempenho das consultas, é importante que sejam criadas estatísticas em todas as colunas de todas as tabelas após o primeiro carregamento ou após a ocorrência de quaisquer alterações substanciais nos dados. Para obter uma explicação detalhada das estatísticas, consulte o tópico [Estatísticas][Estatísticas] no grupo de tópicos Desenvolver. Segue-se um breve exemplo de como criar estatísticas para a tabela carregada neste exemplo
+O Azure SQL Data Warehouse ainda não suporta a criação ou atualização automática de estatísticas. Para obter o melhor desempenho das consultas, é importante que sejam criadas estatísticas em todas as colunas de todas as tabelas após o primeiro carregamento ou após a ocorrência de quaisquer alterações substanciais nos dados. Para obter uma explicação detalhada das estatísticas, veja o tópico [Statistics (Estatísticas)][Statistics] no grupo de tópicos Programar. Segue-se um breve exemplo de como criar estatísticas para a tabela carregada neste exemplo
 
 Execute as seguintes instruções CREATE STATISTICS a partir de uma linha de comandos sqlcmd:
 
@@ -184,27 +184,27 @@ Pode verificar se os dados foram exportados corretamente ao abrir o novo ficheir
 > 
 
 ## <a name="next-steps"></a>Passos seguintes
-Para uma descrição geral do carregamento, consulte [Carregar dados para o SQL Data Warehouse][Carregar dados para o SQL Data Warehouse].
-Para mais sugestões de desenvolvimento, consulte [Descrição geral do desenvolvimento no SQL Data Warehouse][Descrição geral do desenvolvimento no SQL Data Warehouse].
+Para obter uma descrição geral do carregamento, veja [Load data into SQL Data Warehouse (Carregar dados para o SQL Data Warehouse)][Load data into SQL Data Warehouse].
+Para obter mais sugestões de desenvolvimento, veja [SQL Data Warehouse development overview (Descrição geral do desenvolvimento no SQL Data Warehouse)][SQL Data Warehouse development overview].
 
 <!--Image references-->
 
 <!--Article references-->
 
-[Carregar dados para o SQL Data Warehouse]: ./sql-data-warehouse-overview-load.md
-[Descrição geral do desenvolvimento do SQL Data Warehouse]: ./sql-data-warehouse-overview-develop.md
-[Descrição Geral da Tabela]: ./sql-data-warehouse-tables-overview.md
-[Estatísticas]: ./sql-data-warehouse-tables-statistics.md
+[Load data into SQL Data Warehouse]: ./sql-data-warehouse-overview-load.md
+[SQL Data Warehouse development overview]: ./sql-data-warehouse-overview-develop.md
+[Table Overview]: ./sql-data-warehouse-tables-overview.md
+[Statistics]: ./sql-data-warehouse-tables-statistics.md
 
 <!--MSDN references-->
 [bcp]: https://msdn.microsoft.com/library/ms162802.aspx
-[Sintaxe CREATE TABLE]: https://msdn.microsoft.com/library/mt203953.aspx
+[CREATE TABLE syntax]: https://msdn.microsoft.com/library/mt203953.aspx
 
 <!--Other Web references-->
-[Centro de Transferências da Microsoft]: https://www.microsoft.com/download/details.aspx?id=36433
+[Microsoft Download Center]: https://www.microsoft.com/download/details.aspx?id=36433
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Jan17_HO5-->
 
 

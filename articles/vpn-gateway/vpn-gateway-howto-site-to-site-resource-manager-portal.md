@@ -1,10 +1,10 @@
 ---
-title: "Criar uma rede virtual com uma ligação de Rede de VPNs utilizando o Azure Resource Manager e o Portal do Azure | Microsoft Docs"
-description: "Como criar uma VNet com o modelo de implementação Resource Manager e ligá-la à sua rede local no local através de uma ligação de gateway de VPN S2S."
+title: 'Ligar a rede no local a uma rede virtual do Azure: Rede de VPNs: Portal | Microsoft Docs'
+description: "Passos para criar uma ligação IPsec da sua rede no local a uma rede virtual do Azure através da Internet pública. Estes passos ajudam-no a criar uma ligação de Gateway de Rede de VPNs em vários sites com o portal."
 services: vpn-gateway
 documentationcenter: na
 author: cherylmc
-manager: carmonm
+manager: timlt
 editor: 
 tags: azure-resource-manager
 ms.assetid: 827a4db7-7fa5-4eaf-b7e1-e1518c51c815
@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 10/14/2016
+ms.date: 01/23/2017
 ms.author: cherylmc
 translationtype: Human Translation
-ms.sourcegitcommit: d269d9a76ff4ccd973eee70d2d5b54a7262383ef
-ms.openlocfilehash: f0491df77418c4d7c79beff87302b64ddc3fa9be
+ms.sourcegitcommit: eea00841708212789e14fa8717d83dd81d472bac
+ms.openlocfilehash: c99788aded849933289555dd133b8146d6b2bdf2
 
 
 ---
@@ -31,7 +31,7 @@ ms.openlocfilehash: f0491df77418c4d7c79beff87302b64ddc3fa9be
 
 Este artigo explica como criar uma rede virtual e uma ligação de gateway de Rede de VPNs para sua rede no local com o modelo de implementação Azure Resource Manager e o Portal do Azure. As ligações site a site podem ser utilizadas para configurações em vários locais e híbridas.
 
-![Diagrama](./media/vpn-gateway-howto-site-to-site-resource-manager-portal/s2srmportal.png)
+![Diagrama da ligação de Gateway de Rede de VPNs em vários sites](./media/vpn-gateway-howto-site-to-site-resource-manager-portal/site-to-site-diagram.png)
 
 ### <a name="deployment-models-and-methods-for-site-to-site-connections"></a>Modelos de implementação e métodos para ligações Site a Site
 [!INCLUDE [deployment models](../../includes/vpn-gateway-deployment-models-include.md)]
@@ -130,6 +130,6 @@ Pode verificar a ligação VPN no portal ou com o PowerShell.
 
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Jan17_HO4-->
 
 

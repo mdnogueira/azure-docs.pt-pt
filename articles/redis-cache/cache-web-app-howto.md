@@ -12,11 +12,11 @@ ms.workload: tbd
 ms.tgt_pltfrm: cache-redis
 ms.devlang: na
 ms.topic: hero-article
-ms.date: 01/06/2017
+ms.date: 01/27/2017
 ms.author: sdanie
 translationtype: Human Translation
-ms.sourcegitcommit: 5385e8a33466020dd89eaa843ece0ca8d1f31936
-ms.openlocfilehash: c6166484fb132395e7c06d695a6a03a7a628b56a
+ms.sourcegitcommit: 8d1b9293a0b3958d0f478b6a0b6816b8d534883d
+ms.openlocfilehash: d7e98ef1205f0d88e12779a4ce9317128ae81e73
 
 
 ---
@@ -65,7 +65,7 @@ Se tiver o Visual Studio 2013, pode [transferir o Azure SDK mais recente para o 
 
 ## <a name="create-the-visual-studio-project"></a>Criar o projeto do Visual Studio
 1. Abra o Visual Studio e clique em **Ficheiro**, **Novo**, **Projeto**.
-2. Expanda o nó **Visual C#** na lista de **Modelos**, selecione **Nuvem** e clique em **Aplicação Web ASP.NET**. Verifique se o **.NET Framework 4.5.2** está selecionado.  Escreva **ContosoTeamStats** na caixa de texto **Nome** e clique em **OK**.
+2. Expanda o nó **Visual C#** na lista de **Modelos**, selecione **Nuvem** e clique em **Aplicação Web ASP.NET**. Confirme que está selecionado o **.NET Framework 4.5.2** ou superior.  Escreva **ContosoTeamStats** na caixa de texto **Nome** e clique em **OK**.
    
     ![Criar o projeto][cache-create-project]
 3. Selecione **MVC** como tipo de projeto. Limpe a caixa de verificação **Alojar na nuvem**. Vai [aprovisionar os recursos do Azure](#provision-the-azure-resources) e [publicar a aplicação no Azure](#publish-the-application-to-azure) nos passos subsequentes do tutorial. Para obter um exemplo de aprovisionamento de uma aplicação Web do App Service a partir do Visual Studio com a opção **Alojar na nuvem** marcada, veja [Introdução às Aplicações Web no App Service do Azure com o ASP.NET e o Visual Studio](../app-service-web/web-sites-dotnet-get-started.md).
@@ -852,6 +852,6 @@ Assim que tiver selecionado ou criado a cache a utilizar, navegue para a cache n
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 

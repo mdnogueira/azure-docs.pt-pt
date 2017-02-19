@@ -1,5 +1,5 @@
 ---
-title: "Monitorização de estado de funcionamento de segurança no Centro de Segurança do Azure | Microsoft Docs"
+title: "Monitorização de segurança no Centro de Segurança do Azure | Microsoft Docs"
 description: "Este artigo ajuda-o a começar a trabalhar com as capacidades de monitorização no Centro de Segurança do Azure."
 services: security-center
 documentationcenter: na
@@ -12,11 +12,11 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 01/10/2017
+ms.date: 01/30/2017
 ms.author: yurid
 translationtype: Human Translation
-ms.sourcegitcommit: b0694222548e39718f6626c1b1666584445f8398
-ms.openlocfilehash: 246b322378d581f6f263fd0adb96ef32f6962906
+ms.sourcegitcommit: 3cba38d95535ff5ed3cd62aac5c0aa04a310f48c
+ms.openlocfilehash: ae263615d5fa262eb8a8ed2e5461d92bec503f1d
 
 
 ---
@@ -60,8 +60,8 @@ Esta secção tem um conjunto de [recomendações para cada máquina virtual](se
 
 > [!NOTE]
 > Apenas são apresentadas as máquinas virtuais com, pelo menos, um ponto final público no painel **Estado de Funcionamento da Rede**, na lista **Topologia da rede**.
-> 
-> 
+>
+>
 
 Cada recomendação tem um conjunto de ações que pode executar assim que clicar na mesma. Por exemplo, se clicar em **Atualizações do sistema em falta**, o painel **Atualizações do sistema em falta** é apresentado. Lista as máquinas virtuais que têm patches em falta e a gravidade da atualização em falta, conforme mostrado na seguinte captura de ecrã.
 
@@ -87,8 +87,8 @@ Para ver os detalhes das recomendações, clique no nome da máquina virtual. É
 
 > [!NOTE]
 > As recomendações de segurança aqui são as mesmas que as do painel **Recomendações**. Para obter mais informações sobre como resolver recomendações, veja o artigo [Implementing security recommendations in Azure Security Center (Implementar recomendações de segurança no Centro de Segurança do Azure)](security-center-recommendations.md). Este artigo é aplicável não só a máquinas virtuais, mas a todos os recursos que estão disponíveis no mosaico **Estado de Funcionamento do Recurso**.
-> 
-> 
+>
+>
 
 #### <a name="virtual-machines-section"></a>Secção Virtual Machines
 A secção de máquinas virtuais faculta uma descrição geral de todas as máquinas virtuais e recomendações. Cada coluna representa um conjunto de recomendações como é mostrado na seguinte captura de ecrã:
@@ -217,7 +217,6 @@ Neste artigo, aprendeu a utilizar as capacidades de monitorização no Centro de
 
 
 
-
-<!--HONumber=Jan17_HO2-->
+<!--HONumber=Jan17_HO5-->
 
 

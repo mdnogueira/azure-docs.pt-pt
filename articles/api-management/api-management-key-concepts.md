@@ -1,5 +1,5 @@
 ---
-title: Conceitos-chave da API Management
+title: "Descrição geral e conceitos-chave da Gestão de APIs do Azure | Microsoft Docs"
 description: "Saiba mais sobre APIs, produtos, funções, grupos e outros conceitos-chave da API Management."
 services: api-management
 documentationcenter: 
@@ -12,12 +12,11 @@ ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: hero-article
-ms.date: 12/15/2016
-ms.author: apipm
+ms.date: 01/23/2017
+ms.author: apimpm
 translationtype: Human Translation
-ms.sourcegitcommit: b0ead7ecbf9327e9df6846d6e046ed69f25832cf
-ms.openlocfilehash: 872fbd44a9bccf0d6e9f7f3f3bd839e384874ae5
-
+ms.sourcegitcommit: 94e13ac6fec09081484a2f7f5d7bc1871822743f
+ms.openlocfilehash: 47358c6c209488d7a12e8afbf7a2d9b3f872f0de
 
 ---
 # <a name="what-is-api-management"></a>O que é a API Management?
@@ -25,7 +24,7 @@ A API Management ajuda as organizações a publicar APIs para programadores exte
 
 Veja o seguinte vídeo para obter uma descrição geral da API Management do Azure e saiba como utilizar a API Management para adicionar várias funcionalidades à sua API, incluindo controlo de acesso, limitação de taxa, monitorização, registo de eventos e colocação de respostas em cache, com o mínimo de trabalho da sua parte.
 
-> [!VIDEO https://channel9.msdn.com/Blogs/Windows-Azure/Azure-API-Management-Overview/player]
+> [!VIDEO https://channel9.msdn.com/Blogs/Azure/Azure-API-Management-Overview/player]
 > 
 > 
 
@@ -132,6 +131,6 @@ Para obter mais informações sobre a API Management, veja a seguinte apresenta�
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO5-->
 
 
