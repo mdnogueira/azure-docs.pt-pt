@@ -4,11 +4,13 @@
 ## [Segurança de dados](security-center-data-security.md)
 ## Cenários
 ### [Resposta a incidentes](security-center-incident-response.md)
+### [Utilizar as recomendações para melhorar a segurança](security-center-using-recommendations.md)
 
 # Introdução
 ## [Início rápido](security-center-get-started.md)
 ## [Planeamento e operações](security-center-planning-and-operations-guide.md)
 ## [Permissões](security-center-permissions.md)
+## [Integração de parceiros](security-center-partner-integration.md)
 ## [FAQ](security-center-faq.md)
 
 # Procedimento
@@ -19,11 +21,13 @@
 
 ### [Recomendações da aplicação](security-center-application-recommendations.md)
 #### [Adicionar uma firewall de aplicação Web](security-center-add-web-application-firewall.md)
+#### [Finalizar a proteção das aplicações](security-center-add-web-application-firewall.md#finalize-application-protection)
 
 ### [Recomendações de rede](security-center-network-recommendations.md)
 #### [Adicionar uma firewall da próxima geração](security-center-add-next-generation-firewall.md)
 #### [Ativar os Grupos de Segurança de Rede](security-center-enable-network-security-groups.md)
 #### [Restringir o acesso através de pontos finais de acesso à Internet](security-center-restrict-access-through-internet-facing-endpoints.md)
+#### [Encaminhar o tráfego apenas através da NGFW](security-center-add-next-generation-firewall.md#route-traffic-through-ngfw-only)
 
 ### [Recomendações do serviço SQL](security-center-sql-service-recommendations.md)
 #### [Ativar a auditoria em bases de dados SQL](security-center-enable-auditing-on-sql-databases.md)
@@ -34,9 +38,11 @@
 #### [Aplicar encriptação de discos](security-center-apply-disk-encryption.md)
 #### [Aplicar atualizações do sistema](security-center-apply-system-updates.md)
 #### [Ativar a recolha de dados](security-center-enable-data-collection.md)
+#### [Ativar a encriptação da conta de armazenamento](security-center-enable-encryption-for-storage-account.md)
 #### [Ativar o Agente de VM](security-center-enable-vm-agent.md)
 #### [Instalar o Endpoint Protection](security-center-install-endpoint-protection.md)
 #### [Disponibilizar detalhes de contacto de segurança](security-center-provide-security-contact-details.md)
+#### [Reiniciar após atualizações do sistema](security-center-apply-system-updates.md#reboot-after-system-updates)
 #### [Remediar vulnerabilidades do SO](security-center-remediate-os-vulnerabilities.md)
 #### [Resolver alertas de estado de funcionamento do endpoint protection](security-center-resolve-endpoint-protection-health-alerts.md)
 #### [Atualizar a versão do SO](security-center-update-os-version.md)
@@ -70,6 +76,6 @@
 ## [Vídeos](https://azure.microsoft.com/documentation/videos/index/?services=security-center)
 
 
-<!--HONumber=Jan17_HO3-->
+<!--HONumber=Feb17_HO1-->
 
 
