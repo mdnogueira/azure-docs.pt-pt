@@ -129,7 +129,7 @@ Parabéns! Implementou a sua aplicação no App Service do Azure.
 ## <a name="see-your-app-running-live"></a>Ver a sua aplicação em execução
 Para ver a sua aplicação em execução no Azure, execute este comando a partir de qualquer diretório no seu repositório:
 
-    azure site browse
+    az appservice web browse -n <app-name> --resource-group my-first-app-group
 
 ## <a name="make-updates-to-your-app"></a>Efetuar atualizações à sua aplicação
 Agora, pode utilizar o Git para emitir a partir da raiz do projeto (repositório) em qualquer altura para efetuar uma atualização ao site online. Pode fazê-lo tal como quando implementou o seu código pela primeira vez. Por exemplo, sempre que pretender emitir uma nova alteração que tenha testado localmente, basta executar os seguintes comandos a partir da raiz do projeto (repositório):
