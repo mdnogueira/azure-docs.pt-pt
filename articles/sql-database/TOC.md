@@ -6,12 +6,6 @@
 ### [Limites de recursos](sql-database-resource-limits.md)
 ### [Funcionalidades](sql-database-features.md)
 ### [FAQ da Base de Dados SQL](sql-database-faq.md)
-## Benefícios
-### [Aprende e adapta-se](sql-database-learn-and-adapt.md)
-### [Dimensiona-se sem perder tempo](sql-database-scale-on-the-fly.md)
-### [Cria aplicações multi-inquilino](sql-database-build-multi-tenant-apps.md)
-### [Protege e defende](sql-database-helps-secures-and-protects.md)
-### [Funciona no seu ambiente](sql-database-works-in-your-environment.md)
 ## Comparações
 ### [Base de Dados SQL em comparação com o SQL numa VM](sql-database-paas-vs-sql-server-iaas.md)
 ### [Diferenças do T-SQL](sql-database-transact-sql-information.md)

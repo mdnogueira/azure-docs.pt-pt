@@ -6,7 +6,7 @@
 2. Clique no separador **Procurar**, procure “Microsoft.Azure.Relay” e selecione o item **Reencaminhamento do Microsoft Azure**. Clique em **Instalar** para concluir a instalação e, em seguida, feche esta caixa de diálogo.
 
 ### <a name="write-some-code-to-receive-messages"></a>Escrever alguns códigos para receber mensagens
-1. Adicione as seguinte declarações `using` à parte superior do ficheiro Program.cs.
+1. Substitua as instruções `using` existentes na parte superior do ficheiro Program.cs pelas seguintes instruções:
    
     ```csharp
     using System;
@@ -23,7 +23,7 @@
     private const string KeyName = "{SASKeyName}";
     private const string Key = "{SASKey}";
     ```
-3. Adicione um novo método denominado `ProcessMessagesOnConnection` à classe `Program`, da seguinte forma:
+3. Adicione o novo método seguinte denominado `ProcessMessagesOnConnection` à classe `Program`:
    
     ```csharp
     // Method is used to initiate connection
@@ -242,6 +242,6 @@
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Feb17_HO1-->
 
 

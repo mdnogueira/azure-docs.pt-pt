@@ -1,4 +1,10 @@
-1. Inicie sessão no [Portal do Azure][Portal do Azure].
+## <a name="create-a-service-namespace"></a>Criar um espaço de nomes de serviço
+
+Para começar a utilizar as filas do Service Bus no Azure, tem de, primeiro, criar um espaço de nomes. Um espaço de nomes fornece um contentor de âmbito para abordar os recursos do Service Bus na sua aplicação. 
+
+Para criar um espaço de nomes:
+
+1. Inicie sessão no [Portal do Azure][Azure portal].
 2. No painel de navegação à esquerda do portal, clique em **Novo** e, em seguida, clique em **Integração do Enterprise** e em **Service Bus**.
 3. Na caixa de diálogo **Criar espaço de nomes**, introduza um nome de espaço de nomes. O sistema verifica imediatamente a disponibilidade do nome.
 4. Após se certificar de que o espaço de nomes está disponível, selecione o escalão de preço (Básico, Standard ou Premium).
@@ -19,15 +25,15 @@
    
     ![connection-string][connection-string]
 
+5. Repita o passo anterior, copie e cole o valor da **Chave primária** para uma localização temporária para utilizar mais tarde.
+
 <!--Image references-->
 
 [create-namespace]: ./media/service-bus-create-namespace-portal/create-namespace.png
 [connection-info]: ./media/service-bus-create-namespace-portal/connection-info.png
 [connection-string]: ./media/service-bus-create-namespace-portal/connection-string.png
+[Azure portal]: https://portal.azure.com
 
-<!--Reference style links - using these makes the source content way more readable than using inline links-->
-[Portal do Azure]: https://portal.azure.com
-
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Feb17_HO2-->
 
 

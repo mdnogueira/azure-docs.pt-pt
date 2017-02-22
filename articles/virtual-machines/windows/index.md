@@ -1,21 +1,20 @@
 ---
-layout: LandingPage
+title: "Documentação da Máquina Virtual do Azure para Windows - Tutoriais, Referência da API | Microsoft Docs"
 description: "Saiba como criar máquinas virtuais do Windows. A documentação ajuda-o a planear, implementar e gerir um ambiente de computação de máquina virtual na cloud."
-title: "Máquinas Virtuais do Azure para Windows Documentação, Tutoriais e Referência da API | Microsoft Docs"
-services: virtual-machines
+services: virtual-machines\windows
 author: carolz
 manager: carolz
+layout: LandingPage
 ms.assetid: 
-ms.service: virtual-machines
+ms.service: virtual-machines\windows
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: landing-page
 ms.date: 01/23/2017
 ms.author: carolz
 translationtype: Human Translation
-ms.sourcegitcommit: c3b5f79fe9ee312b5f45eff460b43224b9c254fe
-ms.openlocfilehash: 927fb368a7d0e0c7c996a591dfe8536ea3509164
-
+ms.sourcegitcommit: 90d760207ee6b6e0d8c15ff597bf53512f071ef0
+ms.openlocfilehash: ace8475bd9a75eb92a3b5c084ee27b9813f13bfb
 
 ---
 # <a name="windows-virtual-machines-documentation"></a>Documentação de Máquinas Virtuais do Windows
@@ -165,6 +164,6 @@ Saiba como criar máquinas virtuais do Windows. Tutoriais, referências de API e
 
 
 
-<!--HONumber=Jan17_HO4-->
+<!--HONumber=Feb17_HO2-->
 
 

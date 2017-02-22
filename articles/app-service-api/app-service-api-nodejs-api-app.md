@@ -15,8 +15,8 @@ ms.topic: get-started-article
 ms.date: 05/26/2016
 ms.author: rachelap
 translationtype: Human Translation
-ms.sourcegitcommit: c700bfbd4f50a892e182124eb596159d2eb63feb
-ms.openlocfilehash: b6f97d299b1c100e4bae111d7f95c9619c6c9399
+ms.sourcegitcommit: 633caca05835aa204d4fec5fe216043a50520000
+ms.openlocfilehash: 87d2792d4f7610c62ed96cb522958844d4dc982b
 
 
 ---
@@ -230,23 +230,29 @@ Nesta secção, vai criar um repositório de Git local que contém o código de 
         git init
    
      ![Novo Repositório de Git Local](media/app-service-api-nodejs-api-app/new-local-git-repo.png)
-3. Execute o comando seguinte para adicionar um Git remoto para o repositório da sua Aplicação API. 
+3. Se tiver concluído a primeira parte do tutorial e copiou a pasta `ContactList`, é provável que a cópia tenha incluído a pasta `node_modules`. Não é útil incluir a pasta `node_modules` no controlo de origem, uma vez que é criada por si durante o processo de implementação através do ficheiro `package.json` e de `npm install`. Assim, execute o comando seguinte na raiz do diretório do seu projeto para adicionar um ficheiro `.gitignore`.
+
+         touch .gitignore
+      
+   Abra o ficheiro .gitignore e adicione `node_modules` à primeira linha do mesmo. Pode confirmar se a pasta `node_modules` está a ser ignorada pelo controlo de origem se executar `git status` e não vir o diretório na lista. Existe um (projeto GitHub)[https://github.com/github/gitignore/blob/master/Node.gitignore] relativo aos ficheiros recomendados que devem ser ignorados em projetos NodeJS, se quiser adicionar mais regras.
+ 
+4. Execute o comando seguinte para adicionar um Git remoto para o repositório da sua Aplicação API. 
    
         git remote add azure YOUR_GIT_CLONE_URL_HERE
    
     **Nota**: substitua a cadeia "YOUR_GIT_CLONE_URL_HERE" pelo seu URL de clone de Git que copiou anteriormente. 
-4. Execute os seguintes comandos para criar uma consolidação que contenha todo o conteúdo do código. 
+5. Execute os seguintes comandos para criar uma consolidação que contenha todo o conteúdo do código. 
    
         git add .
         git commit -m "initial revision"
    
     ![Saída de Consolidação de Git](media/app-service-api-nodejs-api-app/git-commit-output.png)
-5. Execute o comando para emitir o código para o Azure. Quando lhe for pedida uma palavra-passe, introduza aquela que criou previamente no Portal do Azure.
+6. Execute o comando para emitir o código para o Azure. Quando lhe for pedida uma palavra-passe, introduza aquela que criou previamente no Portal do Azure.
    
         git push azure master
    
     Isto aciona uma implementação para a sua aplicação API.  
-6. No seu browser, navegue de volta para o painel **Implementações** da aplicação API e irá verificar que a implementação está a ocorrer. 
+7. No seu browser, navegue de volta para o painel **Implementações** da aplicação API e irá verificar que a implementação está a ocorrer. 
    
     ![Implementação a Decorrer](media/app-service-api-nodejs-api-app/deployment-happening.png)
    
@@ -275,6 +281,6 @@ Neste momento, já criou com êxito uma aplicação API e implementou o código 
 
 
 
-<!--HONumber=Jan17_HO2-->
+<!--HONumber=Jan17_HO3-->
 
 

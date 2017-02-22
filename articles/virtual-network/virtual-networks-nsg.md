@@ -1,10 +1,10 @@
 ---
-title: "Grupos de Segurança de Rede | Microsoft Docs"
+title: "Grupos de segurança de rede no Azure | Microsoft Docs"
 description: "Saiba como isolar e controlar o fluxo de tráfego nas suas redes virtuais com a firewall distribuída no Azure através dos Grupos de Segurança de Rede."
 services: virtual-network
 documentationcenter: na
 author: jimdial
-manager: carmonm
+manager: timlt
 editor: tysonn
 ms.assetid: 20e850fc-6456-4b5f-9a3f-a8379b052bc9
 ms.service: virtual-network
@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 02/11/2016
 ms.author: jdial
 translationtype: Human Translation
-ms.sourcegitcommit: 1de0827c01c772a4298b7b568363e89f08910ff7
-ms.openlocfilehash: 46dce57f509872580c57bb1d8d93af51623211ac
+ms.sourcegitcommit: 2165cdc87a505e94fab2fc73c30a5764348c6dc1
+ms.openlocfilehash: b382cf65ae172e0037f2bc668a4f5862b29d1700
 
 
 ---
-# <a name="network-security-groups"></a>Grupos de segurança de rede
+# <a name="control-network-traffic-flow-with-network-security-groups"></a>Controlar o fluxo de tráfego de rede com grupos de segurança de rede
 
 Os grupos de segurança de rede (NSG) contêm uma lista de regras da lista de controlo de acesso (ACL) que permitem ou negam o tráfego de rede para as instâncias da sua VM numa Rede Virtual. Os NSGs podem ser associados a sub-redes ou a instâncias de VM individuais dentro dessa sub-rede. Quando um NSG é associado a uma sub-rede, as regras da ACL são aplicadas a todas as instâncias de VM nessa sub-rede. Além disso, o tráfego para uma VM individual pode ser mais restringido ao associar um NSG diretamente a essa VM.
 
@@ -261,6 +261,6 @@ Uma vez que alguns dos NSGs acima têm de ser associados a NICs individuais, tem
 
 
 
-<!--HONumber=Jan17_HO1-->
+<!--HONumber=Jan17_HO5-->
 
 

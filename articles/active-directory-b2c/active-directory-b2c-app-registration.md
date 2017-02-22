@@ -15,8 +15,8 @@ ms.topic: get-started-article
 ms.date: 12/06/2016
 ms.author: swkrish
 translationtype: Human Translation
-ms.sourcegitcommit: 0b87ec728891d4f64bb7b2e4b7b4f0f2276b1ffc
-ms.openlocfilehash: ca75ddf8d099f411c4ae1af00e922f26e145f939
+ms.sourcegitcommit: fd22e9596feecbc12e577a4abfb47552e1b6e520
+ms.openlocfilehash: da8f083cb7bca59501df080036e789a0fb75731e
 
 
 ---
@@ -29,7 +29,7 @@ Para criar uma aplicação que aceite a inscrição e o início de sessão do co
 ## <a name="navigate-to-the-b2c-features-blade"></a>Navegar para o painel de funcionalidades do B2C
 Se tiver o painel de funcionalidades do B2C afixado no seu Startboard, irá vê-lo assim que iniciar sessão no [Portal do Azure](https://portal.azure.com/) como Administrador Global do inquilino do B2C.
 
-Também pode aceder ao painel ao clicar em **Procurar** e depois em **Azure AD B2C** no painel de navegação à esquerda no [Portal do Azure](https://portal.azure.com/).
+Também pode aceder ao painel ao clicar em **Mais serviços** e depois pesquisar **Azure AD B2C** no painel de navegação à esquerda no [Portal do Azure](https://portal.azure.com/).
 
 > [!IMPORTANT]
 > Precisa de ser um Administrador Global de inquilino do B2C para poder aceder ao painel de funcionalidades do B2C. Um Administrador Global de qualquer outro inquilino ou um utilizador de qualquer outro inquilino não poderá aceder.  Pode mudar para o seu inquilino B2C ao utilizar o alternador inquilino no canto superior-direito do Portal do Azure.
@@ -40,7 +40,7 @@ Também pode aceder ao painel ao clicar em **Procurar** e depois em **Azure AD B
 1. No painel de funcionalidades do B2C no Portal do Azure, clique em **Aplicações**.
 2. Clique em **+ Adicionar** na parte superior do painel.
 3. Introduza um **Nome** para a aplicação que irá descrever a aplicação para os consumidores. Por exemplo, pode introduzir “Contoso B2C app”.
-4. Se estiver a escrever uma aplicação baseada na web, alterne o botão **Incluir web app / web API** para **Sim**. As **URLs de resposta** são pontos finais para onde o Azure AD B2C devolverá qualquer tokens que a aplicação solicite. Por exemplo, introduza `https://localhost:44321/`. Se a sua aplicação web também chamar algumas APIs da web protegidas pelo Azure AD B2C, vai querer criar um **Segredo de Aplicação** ao clicar no botão **Gerar Chave**.
+4. Se estiver a escrever uma aplicação baseada na web, alterne o botão **Incluir web app / web API** para **Sim**. As **URLs de resposta** são pontos finais para onde o Azure AD B2C devolverá qualquer tokens que a aplicação solicite. Por exemplo, introduza `https://localhost:44316/`. Se a sua aplicação web também chamar algumas APIs da web protegidas pelo Azure AD B2C, vai querer criar um **Segredo de Aplicação** ao clicar no botão **Gerar Chave**.
    
    > [!NOTE]
    > Um **Segredo de Aplicação** é uma credencial de segurança importante e deve ser protegida devidamente.
@@ -63,6 +63,6 @@ Agora que tem uma aplicação registada no Azure AD B2C, pode concluir um dos no
 
 
 
-<!--HONumber=Jan17_HO1-->
+<!--HONumber=Feb17_HO1-->
 
 

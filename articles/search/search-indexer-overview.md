@@ -16,8 +16,8 @@ ms.tgt_pltfrm: na
 ms.date: 10/27/2016
 ms.author: heidist
 translationtype: Human Translation
-ms.sourcegitcommit: 2cddd262f912efff029bb05f0f3f3551409167ed
-ms.openlocfilehash: 4c969499f562d8cef9c09ebd909508b1c0542c57
+ms.sourcegitcommit: 4bcd31a200024a182ee3d5a21bcbcb621fed595f
+ms.openlocfilehash: fd46641709d260f8b468556972aae14205fdb515
 
 ---
 
@@ -27,7 +27,7 @@ ms.openlocfilehash: 4c969499f562d8cef9c09ebd909508b1c0542c57
 > * [Descrição geral](search-indexer-overview.md)
 > * [Portal](search-import-data-portal.md)
 > * [SQL do Azure](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
-> * [DocumentDB](../documentdb/documentdb-search-indexer.md)
+> * [DocumentDB](search-howto-index-documentdb.md)
 > * [Armazenamento de Blobs (pré-visualização)](search-howto-indexing-azure-blob-storage.md)
 > * [Armazenamento de Tabelas (pré-visualização)](search-howto-indexing-azure-tables.md)
 >
@@ -56,7 +56,7 @@ Um indexador irá automatizar algumas tarefas relacionadas com a ingestão de da
 Um indexador obtém dados a partir de uma **origem de dados** que contém informações como uma cadeia de ligação. Atualmente são suportadas as seguintes origens de dados:
 
 * [Base de Dados SQL ou SQL Server do Azure numa máquina virtual do Azure](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
-* [DocumentDB](../documentdb/documentdb-search-indexer.md)
+* [DocumentDB](search-howto-index-documentdb.md)
 * [Armazenamento de Blobs do Azure](search-howto-indexing-azure-blob-storage.md), utilizado para extrair texto de PDFs, documentos do Office, HTML ou XML
 * [Armazenamento de Tabelas do Azure](search-howto-indexing-azure-tables.md)
 
@@ -69,7 +69,7 @@ A definição de indexador é uma construção que especifica o índice, a orige
 Agora que tem uma noção básica, o passo seguinte é rever os requisitos e as tarefas específicas de cada tipo de origem de dados.
 
 * [Base de Dados SQL ou SQL Server do Azure numa máquina virtual do Azure](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
-* [DocumentDB](../documentdb/documentdb-search-indexer.md)
+* [DocumentDB](search-howto-index-documentdb.md)
 * [Armazenamento de Blobs do Azure](search-howto-indexing-azure-blob-storage.md), utilizado para extrair texto de PDFs, documentos do Office, HTML ou XML
 * [Armazenamento de Tabelas do Azure](search-howto-indexing-azure-tables.md)
 * [Indexar blobs CSV com o indexador Blob do Azure Search (pré-visualização)](search-howto-index-csv-blobs.md)
@@ -77,6 +77,6 @@ Agora que tem uma noção básica, o passo seguinte é rever os requisitos e as 
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Jan17_HO3-->
 
 

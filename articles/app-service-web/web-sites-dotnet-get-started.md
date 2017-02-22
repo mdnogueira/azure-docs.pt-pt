@@ -1,5 +1,5 @@
 ---
-title: "Implementar uma aplicação ASP.NET no 	Serviço de Aplicações do Azure com o Visual Studio | Microsoft Docs"
+title: "Implementar uma aplicação ASP.NET no Azure com o Visual Studio | Microsoft Docs"
 description: "Saiba como implementar um projeto Web do ASP.NET numa nova aplicação Web no App Service do Azure, utilizando o Visual Studio."
 services: app-service\web
 documentationcenter: .net
@@ -15,8 +15,8 @@ ms.topic: get-started-article
 ms.date: 12/16/2016
 ms.author: rachelap
 translationtype: Human Translation
-ms.sourcegitcommit: 4fbfb24a2e9d55d718902d468bd25e12f64e7d24
-ms.openlocfilehash: 4a0d72f46fada5112563d10d22f61abc439730a7
+ms.sourcegitcommit: 9b7e0b429575d080819f25e04d492a2b09d4d63a
+ms.openlocfilehash: 946552d1b268c6e70a9e8fcd4c40bd6e2ab76178
 
 
 ---
@@ -47,7 +47,7 @@ Além do tempo necessário para instalar o Azure SDK para o .NET, este tutorial 
 * O tutorial assume que já trabalhou com ASP.NET MVC e o Visual Studio. Se precisar de uma introdução, consulte o artigo [Introdução ao ASP.NET MVC 5](http://www.asp.net/mvc/overview/getting-started/introduction/getting-started).
 * Precisa de uma conta do Azure. Pode [abrir uma conta do Azure gratuita](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F) ou [Ativar as vantagens de subscritor do Visual Studio](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F). 
   
-    Se pretender começar com o App Service do Azure antes de se inscrever numa conta do Azure, aceda a [Experimentar o App Service](http://go.microsoft.com/fwlink/?LinkId=523751). Aqui, pode criar uma aplicação de arranque de curta duração no App Service — sem cartões de crédito, sem compromissos.
+    Se pretender começar com o App Service do Azure antes de se inscrever numa conta do Azure, aceda a [Experimentar o App Service](https://azure.microsoft.com/try/app-service/). Aqui, pode criar uma aplicação de arranque de curta duração no App Service — sem cartões de crédito, sem compromissos.
 
 ## <a name="a-namesetupdevenvaset-up-the-development-environment"></a><a name="setupdevenv"></a>Configurar o ambiente de desenvolvimento
 O tutorial foi escrito para o Visual Studio 2015 com o [Azure SDK para .NET](../dotnet-sdk.md) 2.9 ou posterior. 
@@ -222,6 +222,6 @@ Neste tutorial, aprendeu a criar uma aplicação Web simples e a implementá-la 
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 

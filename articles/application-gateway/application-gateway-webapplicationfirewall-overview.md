@@ -92,6 +92,6 @@ Após saber mais sobre as capacidades da WAF, visite [Como configurar a Firewall
 
 
 
-<!--HONumber=Dec16_HO5-->
+<!--HONumber=Dec16_HO3-->
 
 

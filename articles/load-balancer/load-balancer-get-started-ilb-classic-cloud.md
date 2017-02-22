@@ -1,5 +1,5 @@
 ---
-title: "Criar um balanceador de carga interno para serviços em nuvem no modelo de implementação clássica | Microsoft Docs"
+title: "Criar um balanceador de carga interno para Serviços Cloud do Azure | Microsoft Docs"
 description: "Saiba como criar um balanceador de carga interno com o PowerShell no modelo de implementação clássica"
 services: load-balancer
 documentationcenter: na
@@ -12,11 +12,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 02/09/2016
+ms.date: 01/23/2017
 ms.author: kumud
 translationtype: Human Translation
-ms.sourcegitcommit: 8827793d771a2982a3dccb5d5d1674af0cd472ce
-ms.openlocfilehash: 7b2a5ea00a78f5643919f7095478801b13593ea6
+ms.sourcegitcommit: fd5960a4488f2ecd93ba117a7d775e78272cbffd
+ms.openlocfilehash: e32ffa81f7465682579eec92087b98aebbe3c4a8
 
 ---
 
@@ -100,6 +100,6 @@ Será efetuado o balanceamento de carga do tráfego de rede com o balanceador de
 
 
 
-<!--HONumber=Nov16_HO5-->
+<!--HONumber=Jan17_HO4-->
 
 

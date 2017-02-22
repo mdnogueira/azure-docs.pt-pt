@@ -15,10 +15,10 @@ ms.topic: get-started-article
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 10/13/2016
-ms.author: carlrab;sashan
+ms.author: sashan
 translationtype: Human Translation
-ms.sourcegitcommit: 747f6ca642a33c4ce9bcaacad4976e8eaed8fa44
-ms.openlocfilehash: f642cfade2369f5c758ab45994c7cf3f37b6d4c5
+ms.sourcegitcommit: 187954f3ddafdbc17e341ce41f5b109cb95f8a24
+ms.openlocfilehash: d04eb659bcf4df53c5f44c1a4b01763844476267
 
 
 ---
@@ -38,7 +38,7 @@ A tabela seguinte compara o ERT e o RPO para os três cenários mais comuns.
 | Georreplicação Ativa |ERT < 30s, RPO < 5s |ERT < 30s, RPO < 5s |ERT < 30s, RPO < 5s |
 
 ### <a name="use-database-backups-to-recover-a-database"></a>Utilizar cópias de segurança da base de dados para recuperar uma base de dados
-A Base de Dados SQL efetua automaticamente uma combinação de cópias de segurança completas de bases de dados semanalmente, cópias de segurança diferenciais de bases de dados de hora a hora e cópias de segurança do registo de transações a cada cinco minutos para proteger a sua empresa contra perda de dados. Estas cópias de segurança são armazenadas no armazenamento localmente redundante durante 35 dias para bases de dados nas camadas de serviços Standard e Premium e durante sete dias para bases de dados na camada de serviços Basic - veja [camadas de serviços](sql-database-service-tiers.md) para obter mais detalhes sobre as camadas de serviços. Se o período de retenção da camada de serviços não for de encontro aos seus requisitos empresariais, pode aumentar o período de retenção ao [alterar a camada de serviços](sql-database-scale-up.md). As cópias de segurança completas e diferenciais da base de dados também são replicadas para um [centro de dados emparelhado](../best-practices-availability-paired-regions.md), para proteção contra indisponibilidade do centro de dados. Veja [cópias de segurança automáticas da base de dados](sql-database-automated-backups.md) para obter mais detalhes.
+A Base de Dados SQL efetua automaticamente uma combinação de cópias de segurança completas de bases de dados semanalmente, cópias de segurança diferenciais de bases de dados de hora a hora e cópias de segurança do registo de transações a cada cinco minutos para proteger a sua empresa contra perda de dados. Estas cópias de segurança são armazenadas no armazenamento georredundante durante 35 dias para bases de dados nas camadas de serviços Standard e Premium e durante sete dias para bases de dados na camada de serviços Basic - veja [camadas de serviços](sql-database-service-tiers.md) para obter mais detalhes sobre as camadas de serviços. Se o período de retenção da camada de serviços não for de encontro aos seus requisitos empresariais, pode aumentar o período de retenção ao [alterar a camada de serviços](sql-database-scale-up.md). As cópias de segurança completas e diferenciais da base de dados também são replicadas para um [centro de dados emparelhado](../best-practices-availability-paired-regions.md), para proteção contra indisponibilidade do centro de dados. Veja [cópias de segurança automáticas da base de dados](sql-database-automated-backups.md) para obter mais detalhes.
 
 Se o período de retenção incorporado não for suficiente para a sua aplicação, pode expandi-lo ao configurar a política de retenção de longa duração para as bases de dados. Para obter mais informações, veja [Retenção de longa duração](sql-database-long-term-retention.md). 
 
@@ -75,6 +75,10 @@ Utilize a Georreplicação Ativa se a sua aplicação cumprir qualquer um dos se
 * O período de indisponibilidade irá resultar em encargos financeiros.
 * Tem uma taxa elevada de alteração de dados e perder uma hora não é aceitável.
 * O custo adicional da georreplicação ativa é inferior aos potenciais encargos financeiros e perda empresarial associada.
+
+>
+> [!VIDEO https://channel9.msdn.com/Blogs/Azure/Azure-SQL-Database-protecting-important-DBs-from-regional-disasters-is-easy/player]
+>
 
 ## <a name="recover-a-database-after-a-user-or-application-error"></a>Recuperar uma base de dados após um erro de utilizador ou aplicação
 * Ninguém é perfeito! Um utilizador poderá acidentalmente eliminar alguns dados, inadvertidamente remover uma tabela importante ou até mesmo remover uma base de dados completa. Ou uma aplicação poderá substituir acidentalmente dados corretos por dados incorretos devido a um defeito da aplicação. 
@@ -154,6 +158,6 @@ Para um debate das considerações de estrutura de aplicações para bases de da
 
 
 
-<!--HONumber=Dec16_HO2-->
+<!--HONumber=Jan17_HO2-->
 
 

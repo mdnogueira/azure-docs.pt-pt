@@ -1,5 +1,5 @@
 ---
-title: Utilizar chaves SSH com o Hadoop em clusters baseados em Linux a partir do Windows | Microsoft Docs
+title: Utilizar SSH com clusters do HDInsight a partir do PuTTY no Windows | Microsoft Docs
 description: "Saiba como criar e utilizar chaves SSH para se autenticar em clusters do HDInsight baseados em Linux a partir de clientes mediante a utilização do cliente de SSH PuTTY."
 services: hdinsight
 documentationcenter: 
@@ -13,18 +13,19 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: big-data
-ms.date: 08/30/2016
+ms.date: 01/12/2017
 ms.author: larryfr
 translationtype: Human Translation
-ms.sourcegitcommit: b72443c0ca60196535ac093a6ac03df456f776ea
-ms.openlocfilehash: 5498cfa6b8bcf50b1f375daa2e9adea585ce0d75
+ms.sourcegitcommit: 279990a67ae260b09d056fd84a12160150eb4539
+ms.openlocfilehash: 744d41a85d39cb468a17ac5a60cd2517f3e60147
 
 
 ---
-# <a name="use-ssh-with-linux-based-hadoop-on-hdinsight-from-windows-with-putty"></a>Utilizar o SSH com o Hadoop baseado em Linux no HDInsight a partir do Windows com PuTTY
+# <a name="use-ssh-with-hdinsight-hadoop-from-putty-on-windows"></a>Utilizar SSH com HDInsight (Hadoop) a partir do PuTTY no Windows
+
 > [!div class="op_single_selector"]
-> * [Windows](hdinsight-hadoop-linux-use-ssh-windows.md)
-> * [Linux, Unix, OS X](hdinsight-hadoop-linux-use-ssh-unix.md)
+> * [PuTTY (Windows)](hdinsight-hadoop-linux-use-ssh-windows.md)
+> * [SSH (Windows, Linux, Unix, OS X)](hdinsight-hadoop-linux-use-ssh-unix.md)
 
 O [Secure Shell (SSH)](https://en.wikipedia.org/wiki/Secure_Shell) permite-lhe efetuar operações remotamente nos seus clusters do HDInsight baseado em Linux utilizando uma interface de linha de comandos. Este documento fornece informações sobre a ligação ao HDInsight a partir de clientes baseados em Windows através do cliente SSH PuTTY.
 
@@ -241,6 +242,6 @@ Agora que sabe como efetuar a autenticação com uma chave SSH, saiba como utili
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Jan17_HO3-->
 
 

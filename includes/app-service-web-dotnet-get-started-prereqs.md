@@ -1,14 +1,19 @@
-* The tutorial assumes you have worked with ASP.NET MVC. If you need an introduction, see [Getting Started with ASP.NET MVC 5](http://www.asp.net/mvc/overview/getting-started/introduction/getting-started).
-* You need an Azure account. You can [open a free Azure account](/pricing/free-trial/?WT.mc_id=A261C142F) or [Activate Visual Studio subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F). If you want to get started with Azure App Service before you sign up for an Azure account, go to [Try App Service](http://go.microsoft.com/fwlink/?LinkId=523751). There, you can immediately create a short-lived starter  app in App Service — no credit card required, and no commitments.
+* O tutorial assume que já trabalhou com ASP.NET MVC. Se precisar de uma introdução, consulte o artigo [Introdução ao ASP.NET MVC 5](http://www.asp.net/mvc/overview/getting-started/introduction/getting-started).
+* Precisa de uma conta do Azure. Pode [abrir uma conta do Azure gratuita](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F) ou [Ativar as vantagens de subscritor do Visual Studio](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F). Se pretender começar com o App Service do Azure antes de se inscrever numa conta do Azure, aceda a [Experimentar o App Service](https://azure.microsoft.com/try/app-service/). Aqui, pode criar imediatamente uma aplicação de arranque de curta duração no Serviço de Aplicações — sem cartões de crédito e sem compromissos.
 
-### <a name="setupdevenv"></a>Visual Studio 2015 with the Azure SDK for .NET
-The tutorial is written for Visual Studio 2015 with the [Azure SDK for .NET](../articles/dotnet-sdk.md) 2.8.2 or later. [Download the latest Azure SDK for Visual Studio 2015 here](http://go.microsoft.com/fwlink/?linkid=518003). Visual Studio is automatically installed with the SDK if you don't already have it.
+### <a name="a-namesetupdevenvavisual-studio-2015-with-the-azure-sdk-for-net"></a><a name="setupdevenv"></a>Visual Studio 2015 com o SDK do Azure para .NET
+O tutorial foi escrito para o Visual Studio 2015 com o [Azure SDK para .NET](../articles/dotnet-sdk.md) 2.8.2 ou posterior. [Transfira aqui o Azure SDK mais recente para o Visual Studio 2015](http://go.microsoft.com/fwlink/?linkid=518003). O Visual Studio é instalado automaticamente com o SDK se ainda não o tiver.
 
-If you have Visual Studio 2013, you can [download the latest Azure SDK for Visual Studio 2013](http://go.microsoft.com/fwlink/?LinkID=324322). Some screens may look different from the illustrations.
+Se tiver o Visual Studio 2013, pode [transferir o Azure SDK mais recente para o Visual Studio 2013](http://go.microsoft.com/fwlink/?LinkID=324322). Alguns ecrãs podem parecer diferentes das ilustrações.
 
 > [!NOTE]
-> Depending on how many of the SDK dependencies you already have on your machine, installing the SDK could take a long time, from several minutes to a half hour or more.
+> Dependendo do número de dependências SDK que já possui no seu computador, instalar o SDK pode demorar muito tempo, de alguns minutos a meia hora ou mais.
 > 
 > 
 
-### ASP.NET MVC 5
+### <a name="aspnet-mvc-5"></a>ASP.NET MVC 5
+
+
+<!--HONumber=Jan17_HO3-->
+
+

@@ -1,13 +1,25 @@
 ---
+title: "Documentação do Azure Resource Manager - Tutoriais, Referência da API | Microsoft Docs"
+description: "Saiba como utilizar o Resource Manager para implementar e gerir recursos de solução como um grupo e criar modelos para a implementação de recursos repetíveis e consistentes."
+services: azure-resource-manager
+author: carolz
+manager: carolz
 layout: LandingPage
+ms.assetid: 
+ms.service: azure-resource-manager
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: landing-page
+ms.date: 01/23/2017
+ms.author: carolz
 translationtype: Human Translation
-ms.sourcegitcommit: e48fea077e09518ab5005518c8e8a413df458b93
-ms.openlocfilehash: a7b6655d2314b198706177f1adaf1b88eb135307
+ms.sourcegitcommit: c4a7875e7a5cace68b592cc7c4ea673851e0b070
+ms.openlocfilehash: ecf5fcec2ec5c1d11c34a035f24d78f991d66b57
 
 ---
 #<a name="azure-resource-manager-documentation"></a>Documentação do Azure Resource Manager
 
-Normalmente, a infraestrutura da sua aplicação é composta por vários componentes, como uma máquina virtual, uma conta de armazenamento e uma rede virtual, ou uma aplicação Web, uma base de dados, um servidor de base de dados e serviços de terceiros. Não vê estes componentes como entidades separadas. Em vez disso, vê-os como partes relacionadas e interdependentes de uma única entidade. Deve implementá-los, geri-los e monitorizá-los como um grupo. O Azure Resource Manager permite trabalhar com os recursos na sua solução como um grupo. Pode implementar, atualizar ou eliminar todos os recursos da sua solução numa operação única e coordenada. Utiliza um modelo para a implementação e esse modelo pode funcionar para ambientes diferentes, como de teste e produção. O Resource Manager proporciona funcionalidades de segurança, auditoria e etiquetagem para o ajudar a gerir os recursos após a implementação
+Saiba como utilizar o Resource Manager para implementar, monitorizar e gerir recursos de solução como um grupo. Tutoriais, referências de API e outra documentação mostram-lhe como configurar os grupos de recursos e criar modelos para a implementação repetível e consistente.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -112,7 +124,7 @@ Normalmente, a infraestrutura da sua aplicação é composta por vários compone
                 <div class="card">
                     <div class="cardText">
                         <h3>Linha de Comandos</h3>
-                        <p><a href="/powershell/resourcemanager/azurerm.resources/v3.2.0/azurerm.resources">PowerShell</a></p>
+                        <p><a href="/powershell/resourcemanager/azurerm.resources/v3.5.0/azurerm.resources">PowerShell</a></p>
                         <p><a href="/cli/azure/resource">CLI do Azure</a></p>
                     </div>
                 </div>
@@ -148,16 +160,10 @@ Normalmente, a infraestrutura da sua aplicação é composta por vários compone
     </li>
 </ul>
 
----
-<div class="downloadHolder">
-    <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/azure-resource-manager.pdf">
-        <div class="img"></div>
-        <div class="text">
-Transferir a Documentação do Azure Resource Manager </div>
-    </a>
-</div>
 
 
-<!--HONumber=Dec16_HO1-->
+
+
+<!--HONumber=Feb17_HO3-->
 
 

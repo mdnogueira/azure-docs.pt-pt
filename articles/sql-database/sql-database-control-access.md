@@ -17,8 +17,8 @@ ms.workload: data-management
 ms.date: 10/18/2016
 ms.author: rickbyh
 translationtype: Human Translation
-ms.sourcegitcommit: f4712d70c0323e607ddcc021809f8097a621730d
-ms.openlocfilehash: 82508d01f9f1aaee11ebb5a5f936dfc71ace9cad
+ms.sourcegitcommit: 356cc4c6d8e25d36880e4b12bf471326e61990c3
+ms.openlocfilehash: f12ed9d76e7c6db5e14ed3c00d7d4087dbd4069c
 
 
 ---
@@ -26,7 +26,8 @@ ms.openlocfilehash: 82508d01f9f1aaee11ebb5a5f936dfc71ace9cad
 Para fornecer segurança, a Base de Dados SQL controla o acesso com regras de firewall que limitam a conectividade por endereço IP, mecanismos de autenticação que exigem que os utilizadores provem a sua identidade e mecanismos de autorização que limitam os utilizadores a ações e dados específicos. 
 
 > [!IMPORTANT]
-> Para obter uma descrição geral das funcionalidades de segurança da Base de Dados SQL, veja [Descrição geral da segurança de SQL](sql-database-security-overview.md).
+> Para obter uma descrição geral das funcionalidades de segurança da Base de Dados SQL, veja [Descrição geral da segurança de SQL](sql-database-security-overview.md). Para obter um tutorial sobre como utilizar a autenticação do SQL Server, veja [SQL Database tutorial: SQL Server authentication, logins and user accounts, database roles, permissions, server-level firewall rules, and database-level firewall rules (Tutorial da Base de Dados SQL: autenticação do SQL Server, inícios de sessão e contas de utilizador, funções de base de dados, permissões, regras de firewall ao nível do servidor e regras de firewall ao nível da base de dados)](sql-database-control-access-sql-authentication-get-started.md). Para obter um tutorial sobre como utilizar a autenticação do Azure Active Directory, veja [SQL Database tutorial: AAD authentication, logins and user accounts, database roles, permissions, server-level firewall rules, and database-level firewall rules (Tutorial da Base de Dados SQL: autenticação do AAD, inícios de sessão e contas de utilizador, funções de base de dados, permissões, regras de firewall ao nível do servidor e regras de firewall ao nível da base de dados)](sql-database-control-access-aad-authentication-get-started.md).
+
 >
 
 ## <a name="firewall-and-firewall-rules"></a>Firewall e regras de firewall
@@ -69,10 +70,11 @@ Além disso, estas funcionalidades podem ser utilizadas para limitar ou elevar p
 - Para saber mais sobre utilizadores e inícios de sessão, veja [Gerir inícios de sessão](sql-database-manage-logins.md). 
 - Para ver um debate da utilização das funcionalidades de proteção de dados na Base de Dados SQL, veja [Proteção de dados e segurança](sql-database-protect-data.md).
 - Para ver um debate sobre a monitorização proativa, veja [Get started with SQL Database Auditing (Introdução à Auditoria da Base de Dados SQL)](sql-database-auditing-get-started.md) e [Get started with SQL Database Threat Detection (Introdução à Deteção de Ameaças da Base de Dados SQL)](sql-database-threat-detection-get-started.md).
+- Para obter um tutorial sobre como utilizar a autenticação do SQL Server, veja [SQL Database tutorial: SQL Server authentication, logins and user accounts, database roles, permissions, server-level firewall rules, and database-level firewall rules (Tutorial da Base de Dados SQL: autenticação do SQL Server, inícios de sessão e contas de utilizador, funções de base de dados, permissões, regras de firewall ao nível do servidor e regras de firewall ao nível da base de dados)](sql-database-control-access-sql-authentication-get-started.md).
+- Para obter um tutorial sobre como utilizar a autenticação do Azure Active Directory, veja [SQL Database tutorial: AAD authentication, logins and user accounts, database roles, permissions, server-level firewall rules, and database-level firewall rules (Tutorial da Base de Dados SQL: autenticação do AAD, inícios de sessão e contas de utilizador, funções de base de dados, permissões, regras de firewall ao nível do servidor e regras de firewall ao nível da base de dados)](sql-database-control-access-aad-authentication-get-started.md).
 
 
 
-
-<!--HONumber=Dec16_HO4-->
+<!--HONumber=Jan17_HO3-->
 
 

@@ -15,8 +15,8 @@ ms.workload: data-services
 ms.date: 10/31/2016
 ms.author: kevin;barbkess
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: edc3a915a59d83718d05ce39a1ce2bcd14333da4
+ms.sourcegitcommit: c0e2324a2b2e6294df6e502f2e7a0ae36ff94158
+ms.openlocfilehash: db402a9d8bdccf0db9783450fa4cb60a2c047ece
 
 
 ---
@@ -32,14 +32,14 @@ ms.openlocfilehash: edc3a915a59d83718d05ce39a1ce2bcd14333da4
 
 Este tutorial utiliza o Azure Machine Learning para criar um modelo preditivo de machine learning com base em dados armazenados no Azure SQL Data Warehouse. Mais especificamente, cria uma campanha de marketing direcionada para Adventure Works, a loja de bicicletas, ao prever se existe ou não probabilidade de um cliente comprar uma bicicleta.
 
-> [!VIDEO https://channel9.msdn.com/Blogs/Windows-Azure/Integrating-Azure-Machine-Learning-with-Azure-SQL-Data-Warehouse/player]
+> [!VIDEO https://channel9.msdn.com/Blogs/Azure/Integrating-Azure-Machine-Learning-with-Azure-SQL-Data-Warehouse/player]
 > 
 > 
 
 ## <a name="prerequisites"></a>Pré-requisitos
 Para seguir este tutorial, é necessário:
 
-* Um SQL Data Warehouse pré-carregado com dados de exemplo da AdventureWorksDW. Para proceder ao aprovisionamento, consulte [Create a SQL Data Warehouse (Criar um SQL Data Warehouse)][Create a SQL Data Warehouse (Criar um SQL Data Warehouse)] e opte por carregar os dados de exemplo. Se já tiver um armazém de dados, mas não tiver dados de exemplo, pode [carregar dados de exemplo manualmente][carregar dados de exemplo manualmente].
+* Um SQL Data Warehouse pré-carregado com dados de exemplo da AdventureWorksDW. Para proceder ao aprovisionamento, consulte [Create a SQL Data Warehouse (Criar um SQL Data Warehouse)][Create a SQL Data Warehouse] e opte por carregar os dados de exemplo. Se já tiver um armazém de dados, mas não tiver dados de exemplo, pode [carregar dados de exemplo manualmente][load sample data manually].
 
 ## <a name="1-get-data"></a>1. Obter dados
 Os dados encontram-se na vista dbo.vTargetMail na base de dados AdventureWorksDW. Para ler estes dados:
@@ -124,7 +124,7 @@ Verá mais duas colunas adicionadas ao conjunto de dados de teste.
 Ao comparar a coluna BikeBuyer (real) com as Etiquetas Classificadas (predição), pode ver quão bom foi o desempenho do modelo. Nos passos seguintes, pode utilizar este modelo para fazer predições para clientes novos e publicar este modelo como um serviço Web ou escrever os resultados de volta para o SQL Data Warehouse.
 
 ## <a name="next-steps"></a>Passos seguintes
-Para saber mais sobre como criar modelos preditivos de machine learning, consulte [Introdução ao Machine Learning no Azure][Introdução ao Machine Learning no Azure].
+Para saber mais sobre como criar modelos preditivos de machine learning, consulte [Introduction to Machine Learning on Azure (Introdução ao Machine Learning no Azure)][Introduction to Machine Learning on Azure].
 
 <!--Image references-->
 [1]: media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/img1_reader.png
@@ -143,12 +143,12 @@ Para saber mais sobre como criar modelos preditivos de machine learning, consult
 
 <!--Article references-->
 [Azure Machine Learning studio]:https://studio.azureml.net/
-[Introdução ao Machine Learning no Azure]:https://azure.microsoft.com/documentation/articles/machine-learning-what-is-machine-learning/
-[carregar dados de exemplo manualmente]: sql-data-warehouse-load-sample-databases.md
-[Criar um SQL Data Warehouse]: sql-data-warehouse-get-started-provision.md
+[Introduction to Machine Learning on Azure]:https://azure.microsoft.com/documentation/articles/machine-learning-what-is-machine-learning/
+[load sample data manually]: sql-data-warehouse-load-sample-databases.md
+[Create a SQL Data Warehouse]: sql-data-warehouse-get-started-provision.md
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Jan17_HO5-->
 
 

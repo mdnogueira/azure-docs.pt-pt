@@ -192,6 +192,6 @@ Para atualizar a CLI, navegue para o diretório onde clonou a CLI e execute `git
 
 
 
-<!--HONumber=Jan17_HO1-->
+<!--HONumber=Feb17_HO3-->
 
 

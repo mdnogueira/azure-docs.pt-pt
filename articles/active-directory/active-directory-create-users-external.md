@@ -12,11 +12,11 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 09/22/2016
+ms.date: 02/10/2017
 ms.author: curtand
 translationtype: Human Translation
-ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
-ms.openlocfilehash: 92b951ca273534a48648df5d8a7967d9b321c26f
+ms.sourcegitcommit: 7b506668b3025774edec25b6a37b83a47d702cb0
+ms.openlocfilehash: b2eaddc631087d8b7b94e40f508bdd5da5229736
 
 
 ---
@@ -24,8 +24,8 @@ ms.openlocfilehash: 92b951ca273534a48648df5d8a7967d9b321c26f
 > [!div class="op_single_selector"]
 > * [Portal do Azure](active-directory-users-create-external-azure-portal.md)
 > * [Portal Clássico do Azure](active-directory-create-users-external.md)
-> 
-> 
+>
+>
 
 Este artigo explica como adicionar utilizadores de outros diretórios no Azure Active Directory ou adicionar utilizadores de empresas associadas. Para obter informações sobre a adição de novos utilizadores na organização e adicionar utilizadores com contas Microsoft, consulte [Adicionar novos utilizadores ao Azure Active Directory](active-directory-create-users.md). Por predefinição, os utilizadores adicionados não têm permissões de administrador. No entanto, pode atribuir-lhes funções em qualquer altura.
 
@@ -34,7 +34,7 @@ Este artigo explica como adicionar utilizadores de outros diretórios no Azure A
 2. Selecione **Active Directory** e abra o diretório.
 3. Selecione o separador **Utilizadores** e selecione **Adicionar Utilizador** na barra de comandos.
 4. Na página **Forneça mais informações sobre este utilizador**, em **Tipo de utilizador**, selecione:
-   
+
    * **Utilizador noutro diretório do Azure AD** – adiciona uma conta de utilizador ao diretório com origem noutro diretório do Azure AD. Apenas pode selecionar um utilizador noutro diretório se também for membro desse diretório.
    * **Utilizadores de empresas associadas** – para convidar e autorizar utilizadores da empresa associada para o seu diretório (Consulte [Colaboração B2B do Azure Active Directory](active-directory-b2b-what-is-azure-ad-b2b.md)). Terá de [carregar um ficheiro CSV especificando endereços de e-mail](active-directory-b2b-references-csv-file-format.md).
 5. Na página **Perfil** do utilizador, introduza o nome e o apelido, um nome amigável de utilizador e uma função de utilizador na lista **Funções**. Para obter mais informações sobre as funções de utilizador e administrador, consulte [Atribuir funções de administrador no Azure AD](active-directory-assign-admin-roles.md). Especifique se pretende **Ativar o Multi-Factor Authentication** para o utilizador.
@@ -42,11 +42,11 @@ Este artigo explica como adicionar utilizadores de outros diretórios no Azure A
 
 > [!IMPORTANT]
 > Se a sua organização utilizar mais de um domínio, deverá ser informado dos seguintes problemas quando adicionar uma conta de utilizador:
-> 
-> * Para adicionar contas de utilizador com o mesmo nome principal de utilizador (UPN) entre domínios, **comece** por adicionar, por exemplo, geoffgrisso@contoso.onmicrosoft.com, **, seguido de ** geoffgrisso@contoso.com.
-> * **Não** adicione geoffgrisso@contoso.com, antes de adicionar geoffgrisso@contoso.onmicrosoft.com. É importante seguir esta ordem uma vez que qualquer anulação poderá ser complicada.
-> 
-> 
+>
+> * Para adicionar contas de utilizar com o mesmo nome principal de utilizador (UPN) em vários domínios, **comece** por adicionar, por exemplo, geoffgrisso@contoso.onmicrosoft.com, **seguido de**geoffgrisso@contoso.com.
+> * **Não** adicione geoffgrisso@contoso.com antes de adicionar geoffgrisso@contoso.onmicrosoft.com. É importante seguir esta ordem uma vez que qualquer anulação poderá ser complicada.
+>
+>
 
 Se alterar as informações de um utilizador cuja identidade está sincronizada com o serviço do Active Directory no local, não poderá alterar as informações do utilizador no Portal Clássico do Azure. Para alterar as informações do utilizador, utilize as ferramentas de gestão do Active Directory no local.
 
@@ -62,8 +62,8 @@ A única ligação entre as duas contas é que o utilizador é sempre autenticad
 
 > [!NOTE]
 > Ainda pode desativar o utilizador externo no diretório, bloqueando assim o acesso ao diretório.
-> 
-> 
+>
+>
 
 Se um utilizador for eliminado do respetivo diretório raiz ou se cancelar a respetiva conta Microsoft, o utilizador externo continuará a existir no seu diretório. Contudo, o utilizador no seu diretório não poderá aceder aos recursos, uma vez que não poderá autenticar-se com um diretório raiz ou conta Microsoft.
 
@@ -79,6 +79,7 @@ Se um utilizador for eliminado do respetivo diretório raiz ou se cancelar a res
 * Atualmente, o PowerBI não suporta o acesso por utilizadores externos
 * O Portal do Office não suporta o licenciamento a utilizadores externos
 * No que respeita ao Azure AD PowerShell, os utilizadores externos iniciam sessão no respetivo diretório raiz, sendo que não podem gerir diretórios nos quais forem utilizadores externos
+* Ao configurar o plug-in Dynamics CRM Outlook, os utilizadores externos poderão ter de introduzir manualmente o URL do inquilino do Dynamics CRM Online em vez de selecionar “CRM Online”.
 
 ## <a name="whats-next"></a>Passos seguintes
 * [Adicionar novos utilizadores ao Azure Active Directory](active-directory-create-users.md)
@@ -88,7 +89,6 @@ Se um utilizador for eliminado do respetivo diretório raiz ou se cancelar a res
 
 
 
-
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Jan17_HO5-->
 
 

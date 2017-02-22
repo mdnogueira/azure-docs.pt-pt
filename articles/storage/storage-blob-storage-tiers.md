@@ -345,6 +345,6 @@ Para obter mais detalhes, consulte [Introdução ao Blob Storage do Azure](stora
 
 
 
-<!--HONumber=Dec16_HO5-->
+<!--HONumber=Dec16_HO3-->
 
 

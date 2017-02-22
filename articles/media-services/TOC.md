@@ -21,16 +21,18 @@
 
 # Procedimento
 ## Gerir
-### Gerir contas
+### Contas
 #### [PowerShell](media-services-manage-with-powershell.md)
 #### [REST](/rest/api/media/mediaservice)
-### Gerir entidades
+### Entidades
 #### [.NET](media-services-dotnet-manage-entities.md)
 #### [REST](media-services-rest-manage-entities.md)
-### [Gerir pontos finais de transmissão em fluxo](media-services-streaming-endpoints-overview.md)
+### [Pontos finais de transmissão em fluxo](media-services-streaming-endpoints-overview.md)
 #### [Portal](media-services-portal-manage-streaming-endpoints.md)
 #### [.NET](media-services-dotnet-manage-streaming-endpoints.md)
-### [Atualizar Serviços de Multimédia após a implementação de chaves de acesso ao armazenamento](media-services-roll-storage-access-keys.md)
+### Armazenamento
+#### [Atualizar Serviços de Multimédia após a implementação de chaves de acesso ao armazenamento](media-services-roll-storage-access-keys.md)
+#### [Gerir recursos entre várias contas de armazenamento](meda-services-managing-multiple-storage-accounts.md)
 ### [Quotas e limitações](media-services-quotas-and-limitations.md)
 
 ## Carregar conteúdo
@@ -123,6 +125,8 @@
 ### [Utilizar a encriptação comum dinâmica com o PlayReady e/ou o Widevine](media-services-protect-with-drm.md)
 ### [Utilizar Serviços de Multimédia do Azure para Transmitir o conteúdo HLS Protegido com o Apple FairPlay](media-services-protect-hls-with-fairplay.md)
 ### [CENC com Controlo de Acesso e Multi-DRM: Uma Estrutura de Referência e Implementação no Azure e Serviços de Multimédia do Azure](media-services-cenc-with-multidrm-access-control.md)
+### [Utilizar o Axinom para entregar licenças do Widevine a Serviços de Multimédia do Azure](media-services-axinom-integration.md)
+### [Utilizar castLabs para entregar licenças do Widevine a Serviços de Multimédia do Azure](media-services-castlabs-integration.md)
 
 ### Entrega de ativo
 #### Configurar políticas de entrega de ativo
@@ -165,6 +169,7 @@
 ### [Descrição geral dos filtros e dos manifestos dinâmicos](media-services-dynamic-manifest-overview.md)
 #### [Criar filtros com .NET](media-services-dotnet-dynamic-manifest.md)
 #### [Criar filtros com REST](media-services-rest-dynamic-manifest.md)
+### [Política de Colocação em Cache de CDN na Extensão de Serviços de Multimédia](../cdn/cdn-caching-policy.md?toc=%2fazure%2fmedia-services%2ftoc.json)
 ### Publicar conteúdo
 #### [Portal](media-services-portal-publish.md)
 #### [.NET](media-services-deliver-streaming-content.md)
@@ -180,13 +185,10 @@
 #### [Aplicação HTML5 com DASH.js](media-services-embed-mpeg-dash-in-html5.md)
 #### [Leitores Open Source Media Framework da Adobe](media-services-use-osmf-smooth-streaming-client-plugin.md)
 ### [Inserir publicidade no lado do cliente](media-services-inserting-ads-on-client-side.md)
+### [Licenciamento do Kit de Migração de Cliente de Smooth Streaming da Microsoft](media-services-sspk.md)
 
 ## Integrar
-### [Política de Colocação em Cache de CDN na Extensão de Serviços de Multimédia](../cdn/cdn-caching-policy.md?toc=%2fazure%2fmedia-services%2ftoc.json)
-### [Licenciamento do Kit de Migração de Cliente de Transmissão em Fluxo Uniforme da Microsoft†"](media-services-sspk.md)
-### [Gerir ativos entre várias contas de Armazenamento](meda-services-managing-multiple-storage-accounts.md)
-### [Utilizar o Axinom para entregar licenças do Widevine a Serviços de Multimédia do Azure](media-services-axinom-integration.md)
-### [Utilizar castLabs para entregar licenças do Widevine a Serviços de Multimédia do Azure](media-services-castlabs-integration.md)
+### [Funções do Azure](https://github.com/azure-samples/media-services-dotnet-functions-integration)
 
 ## Monitorizar
 ### Verificar progresso da tarefa
@@ -214,6 +216,6 @@
 ## [Vídeos](https://azure.microsoft.com/resources/videos/index/?services=media-services)
 
 
-<!--HONumber=Feb17_HO1-->
+<!--HONumber=Feb17_HO2-->
 
 

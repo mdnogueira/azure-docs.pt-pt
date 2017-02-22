@@ -21,25 +21,21 @@
 ## [Guardar pesquisas e afixar recursos de dados](data-catalog-how-to-save-pin.md)
 ## [Configurar o glossário comercial](data-catalog-how-to-business-glossary.md)
 
-## Programar
-### [Conceitos de programador](data-catalog-developer-concepts.md)
-### [Exemplos de programador](data-catalog-samples.md)
-
 # Referência
 ## [REST](/rest/api/datacatalog/)
+## [Conceitos de programador](data-catalog-developer-concepts.md)
+## [Exemplos de programador](data-catalog-samples.md)
 
 # Recursos
 ## [Atalhos de teclado do Catálogo de Dados do Azure](data-catalog-keyboard-shortcuts.md)
 ## [Terminologia](data-catalog-terminology.md)
-## Notas de versão
-### [Notas de versão - Novo](data-catalog-whats-new.md)
-### [Notas de versão](data-catalog-release-notes.md)
+## [Notas de versão](data-catalog-whats-new.md)
 ## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=data-catalog)
 ## [Preços](https://azure.microsoft.com/pricing/details/data-catalog/)
 ## [Fórum do MSDN](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azuredatacatalog)
 ## [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-data-catalog)
 
 
-<!--HONumber=Jan17_HO3-->
+<!--HONumber=Feb17_HO1-->
 
 

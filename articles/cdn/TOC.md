@@ -12,6 +12,7 @@
 ### [Partilha de recursos de várias origens](cdn-cors.md)
 
 ## Gerir
+### [Ativar HTTPS num domínio personalizado](cdn-custom-ssl.md)
 ### [Gerir com o PowerShell](cdn-manage-powershell.md)
 ### Configurar time-to-live
 #### [Aplicações Web/Serviços Cloud, ASP.NET ou conteúdo IIS](cdn-manage-expiration-of-cloud-service-content.md)
@@ -40,7 +41,7 @@
 ### [Node.js](cdn-app-dev-node.md)
 
 ## Resolução de problemas
-### [estado 404](cdn-troubleshoot-endpoint.md)
+### [estado&404;](cdn-troubleshoot-endpoint.md)
 ### [Compressão de ficheiros](cdn-troubleshoot-compression.md)
 
 # Referência
@@ -62,6 +63,6 @@
 ## [Vídeos](https://azure.microsoft.com/documentation/videos/index/?services=cdn)
 
 
-<!--HONumber=Jan17_HO2-->
+<!--HONumber=Feb17_HO1-->
 
 

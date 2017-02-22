@@ -1,15 +1,11 @@
-## <a name="peering-virtual-networks-from-rm-to-classic"></a>Peering de redes virtuais de RM para clássica
-Neste cenário, vai criar um peering entre duas VNets, nomeadamente a **VNET1** e a **VNET2**, que pertencem ao modelo de implementação Azure Resource Manager e ao modelo de implementação clássica, respetivamente.
+## <a name="a-namex-modelapeering-virtual-networks-created-through-different-deployment-models"></a><a name="x-model"></a>Peering das redes virtuais criadas através de modelos de implementação diferentes
+Neste cenário, irá criar um peering entre duas VNets chamadas **VNET1** e **VNET2**. A VNET1 é criada através do modelo de implementação do Gestor de Recursos, enquanto a VNET2 é criada através do modelo de implementação clássico.
 
-> [!NOTE]
-> As redes virtuais têm de estar na mesma subscrição.
 > 
-> 
-
 ![cenário de implementação do asm para o arm](./media/virtual-networks-create-vnetpeering-scenario-asmtoarm-include/figure01.PNG)
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Feb17_HO1-->
 
 

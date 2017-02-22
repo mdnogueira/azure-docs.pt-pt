@@ -16,8 +16,8 @@ ms.topic: get-started-article
 ms.date: 10/20/2016
 ms.author: davidmu
 translationtype: Human Translation
-ms.sourcegitcommit: 5919c477502767a32c535ace4ae4e9dffae4f44b
-ms.openlocfilehash: 8b2ffd922df97ea3873f0c8559a6e3db97e8632c
+ms.sourcegitcommit: 26c58ae4c509cb768807875ecdf96e9a24d6a472
+ms.openlocfilehash: dd8009e8fb012a4271a0f110351ee3e74a706af6
 
 
 ---
@@ -70,7 +70,7 @@ O Azure cobra um [preço por hora](https://azure.microsoft.com/pricing/details/v
 A subscrição tem [limites de quota](../azure-subscription-service-limits.md) predefinidos num local que pode afetar a implementação de muitas VMs para o seu projeto. O limite atual numa base por subscrição é de 20 VMs por região. Os limites podem ser aumentados ao preencher um pedido de suporte a pedir um aumento.
 
 ### <a name="operating-system-disks-and-images"></a>Discos do sistema operativo e imagens
-As máquinas virtuais utilizam [discos rígidos virtuais (VHDs)](virtual-machines-windows-about-disks-vhds.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) para armazenar o respetivo sistema operativo (SO) e dados. Os VHDs também são utilizados para as imagens que pode escolher para instalar um SO. 
+As máquinas virtuais utilizam [discos rígidos virtuais (VHDs)](../storage/storage-about-disks-and-vhds-windows.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) para armazenar o respetivo sistema operativo (SO) e dados. Os VHDs também são utilizados para as imagens que pode escolher para instalar um SO. 
 
 O Azure oferece muitas [imagens do marketplace](https://azure.microsoft.com/marketplace/virtual-machines/) para utilizar com diversas versões e tipos de sistemas operativos do Windows Server. A imagens do marketplace são identificadas pelo publicador da imagem, oferta, sku e versão (normalmente, a versão especificada é a mais recente). 
 
@@ -152,6 +152,6 @@ Para proteger dados e ativos nos serviços do Azure Backup e do Azure Site Recov
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Feb17_HO3-->
 
 

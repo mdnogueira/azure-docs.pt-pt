@@ -14,8 +14,8 @@ ms.tgt_pltfrm: na
 ms.date: 12/08/2016
 ms.author: brjohnst
 translationtype: Human Translation
-ms.sourcegitcommit: 455c4847893175c1091ae21fa22215fd1dd10c53
-ms.openlocfilehash: e862002a5b1406196516e5ddd786790da7bd5a4d
+ms.sourcegitcommit: 7d45759915f38ba4337b745eb2b28dcbc72dbbe0
+ms.openlocfilehash: 88d5148806e58d61b7b64327e07809eea5126211
 
 
 ---
@@ -34,10 +34,10 @@ Antes de iniciar estas instruções, já deverá ter [criado um índice de Pesqu
 
 Tenha em atenção que todo o código de exemplo neste artigo está escrito em C#. Pode localizar o código de origem completo [no GitHub](http://aka.ms/search-dotnet-howto).
 
-## <a name="i-identify-your-azure-search-services-query-api-key"></a>I. Identificar a sua chave de API de consulta do serviço Azure Search
+## <a name="identify-your-azure-search-services-query-api-key"></a>Identificar a sua chave de API de consulta do serviço Azure Search
 Agora que criou um índice de Pesquisa do Azure, está quase pronto para emitir consultas utilizando o SDK .NET. Em primeiro lugar, precisa de obter uma das chaves de API de consulta que foi gerada para o serviço de pesquisa que aprovisionou. O SDK .NET irá enviar esta chave de API em cada pedido para o seu serviço. Ter uma chave válida estabelece fidedignidade, numa base por pedido, entre a aplicação a enviar o pedido e o serviço que o processa.
 
-1. Para localizar as chaves de API do seu serviço, tem de iniciar sessão no [portal do Azure](https://portal.azure.com/)
+1. Para localizar as chaves de API do seu serviço, pode iniciar sessão no [portal do Azure](https://portal.azure.com/)
 2. Aceda ao painel do seu serviço Azure Search
 3. Clique no ícone "Chaves"
 
@@ -48,7 +48,7 @@ O seu serviço terá *chaves de administração* e *chaves de consulta*.
 
 Para efeitos de consulta de um índice, pode utilizar uma das chaves de consulta. As chaves de administração também podem ser utilizadas para consultas, contudo, deve utilizar uma chave de consulta no código da aplicação, uma vez que tal segue melhor o [Princípio de menor privilégio](https://en.wikipedia.org/wiki/Principle_of_least_privilege).
 
-## <a name="ii-create-an-instance-of-the-searchindexclient-class"></a>II. Criar uma instância da classe SearchIndexClient
+## <a name="create-an-instance-of-the-searchindexclient-class"></a>Criar uma instância da classe SearchIndexClient
 Para começar a emitir consultas com o SDK .NET de Pesquisa do Azure, terá de criar uma instância da classe `SearchIndexClient`. Esta classe tem vários construtores. O pretendido recebe o nome do serviço de pesquisa, o nome do índice e um objeto `SearchCredentials` como parâmetros. `SearchCredentials` molda a sua chave de API.
 
 O código abaixo cria uma nova `SearchIndexClient` para o índice "hotéis" (criado em [Criar um índice de Pesquisa do Azure utilizando o SDK .NET](search-create-index-dotnet.md)) utilizando valores para o nome do serviço de pesquisa e a chave de API que são armazenados num ficheiro de configuração da aplicação (`app.config` ou `web.config`):
@@ -62,7 +62,7 @@ SearchIndexClient indexClient = new SearchIndexClient(searchServiceName, "hotels
 
 `SearchIndexClient` tem uma propriedade `Documents`. Esta propriedade fornece todos os métodos de que necessita para consultar os índices de Pesquisa do Azure.
 
-## <a name="iii-query-your-index"></a>III. Consultar o índice
+## <a name="query-your-index"></a>Consultar o índice
 A pesquisa com o SDK .NET é tão simples como chamar o método `Documents.Search` no seu `SearchIndexClient`. Este método aceita alguns parâmetros, incluindo o texto de pesquisa, juntamente com um objeto `SearchParameters` que podem ser utilizados para aperfeiçoar ainda mais a consulta.
 
 #### <a name="types-of-queries"></a>Tipos de consultas
@@ -127,7 +127,7 @@ results = indexClient.Documents.Search<Hotel>("motel", parameters);
 WriteDocuments(results);
 ```
 
-## <a name="iv-handle-search-results"></a>IV. Processar os resultados da pesquisa
+## <a name="handle-search-results"></a>Processar os resultados da pesquisa
 O método `Documents.Search` devolve um objeto `DocumentSearchResult` que contém os resultados da consulta. O exemplo na secção anterior utilizou um método denominado `WriteDocuments` para enviar os resultados da pesquisa para a consola:
 
 ```csharp
@@ -169,6 +169,6 @@ O código de exemplo acima utiliza a consola para produzir os resultados da pesq
 
 
 
-<!--HONumber=Dec16_HO2-->
+<!--HONumber=Jan17_HO2-->
 
 

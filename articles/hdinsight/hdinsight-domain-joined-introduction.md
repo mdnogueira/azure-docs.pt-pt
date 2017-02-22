@@ -1,5 +1,5 @@
 ---
-title: "Descrição Geral da Proteção do HDInsight | Microsoft Docs"
+title: "Segurança do Hadoop - clusters do HDInsight associados a um domínio - Azure | Microsoft Docs"
 description: Saiba mais...
 services: hdinsight
 documentationcenter: 
@@ -16,12 +16,13 @@ ms.workload: big-data
 ms.date: 10/31/2016
 ms.author: saurinsh
 translationtype: Human Translation
-ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
-ms.openlocfilehash: ff45fa2abc0f77f133491e9ee9695c69a79eea33
+ms.sourcegitcommit: cd57f3a43142b3af3546eafd9749123fadd333c2
+ms.openlocfilehash: 27cb0cda5d836e042e9eca3c053577db0bd8c148
 
 
 ---
-# <a name="an-introduction-to-domain-joined-hdinsight-clusters-preview"></a>Uma introdução aos clusters do HDInsight associados a um domínio (pré-visualização)
+# <a name="an-introduction-to-hadoop-security-with-domain-joined-hdinsight-clusters-preview"></a>Uma introdução à segurança do Hadoop com clusters do HDInsight associados a um domínio (Pré-visualização)
+
 Até hoje, o Azure HDInsight suportava apenas um único administrador local de utilizadores. Isto resultava muito bem para equipas ou departamentos de aplicações mais pequenos. À medida que as cargas de trabalho baseadas no Hadoop ganhavam mais popularidade no setor empresarial, a necessidade de capacidades de nível empresarial, como a autenticação baseada no Active Directory, o suporte de multi-utilizador e o controlo de acesso baseado em funções, tornou-se cada vez mais importante. Através da utilização de clusters do HDInsight associados a um domínio, pode criar um cluster do HDInsight associado a um domínio do Active Directory, configurar uma lista de empregados da empresa que podem autenticar-se através do Azure Active Directory para iniciar sessão no cluster do HDInsight. Qualquer pessoa fora da empresa não pode iniciar sessão nem aceder ao cluster do HDInsight. O administrador da empresa pode configurar o controlo de acesso baseado em funções para a segurança do Hive com o [Apache Ranger](http://hortonworks.com/apache/ranger/), restringindo deste modo o acesso aos dados apenas para a quantidade necessária. Por fim, o administrador pode auditar o acesso aos dados por parte dos empregados e quaisquer alterações efetuadas às políticas de controlo de acesso, alcançando um elevado grau de governação dos recursos empresariais.
 
 > [!NOTE]
@@ -57,6 +58,6 @@ A proteção de dados é importante para cumprir os requisitos de segurança e d
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Feb17_HO3-->
 
 

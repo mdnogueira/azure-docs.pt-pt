@@ -15,8 +15,8 @@ ms.topic: get-started-article
 ms.date: 01/10/2017
 ms.author: sethm
 translationtype: Human Translation
-ms.sourcegitcommit: cab2edc0d065dc8d5ac20ed41ccd0eed7a664895
-ms.openlocfilehash: 8d0730d50330b9093734adb1c503dd975606b7c3
+ms.sourcegitcommit: 9849b15115de5b17a50e0f46781c8aa16a53d297
+ms.openlocfilehash: c68125afe8979c595ae0f6e78fa90f6a365c435f
 
 
 ---
@@ -57,6 +57,15 @@ Este mecanismo de comunicação tem várias vantagens em relação às mensagens
   ![][2]
 
 As secções seguintes abordam o código que implementa esta arquitetura.
+
+## <a name="set-up-the-development-environment"></a>Configurar o ambiente de desenvolvimento
+Antes de poder começar a desenvolver aplicações do Azure, obtenha as ferramentas e configure o ambiente de desenvolvimento.
+
+1. Instale o Azure SDK para o .NET a partir de [Obter Ferramentas e SDK](https://azure.microsoft.com/downloads/).
+2. Na coluna **.NET**, clique na versão do Visual Studio que está a utilizar. Os passos neste tutorial utilizam o Visual Studio 2015.
+3. Quando lhe for pedido para executar ou guardar o instalador, clique em **Executar**.
+4. No **Instalador de Plataforma Web**, clique em **Instalar** e continue com a instalação.
+5. Após a conclusão da instalação, terá tudo o que é necessário para começar a desenvolver a aplicação. O SDK inclui ferramentas que permitem desenvolver facilmente aplicações do Azure no Visual Studio. Caso não tenha o Visual Studio instalado, o SDK também instala o Visual Studio Express gratuito.
 
 ## <a name="create-a-namespace"></a>Criar um espaço de nomes
 O passo seguinte consiste em criar um espaço de nomes de serviço e obter uma chave de Assinatura de Acesso Partilhado (SAS). Um espaço de nomes fornece um limite de aplicação para cada aplicação exposta através do Service Bus. O sistema gera uma chave SAS quando um espaço de nomes é criado. A combinação do espaço de nomes e da chave SAS fornece as credenciais do Service Bus para autenticar o acesso a uma aplicação.

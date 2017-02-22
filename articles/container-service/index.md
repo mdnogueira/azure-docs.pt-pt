@@ -1,14 +1,26 @@
 ---
+title: "Documentação do Azure Container Service - Tutoriais, Referência da API | Microsoft Docs"
+description: "Saiba como utilizar o Container Service para implementar e gerir contentores de aplicação utilizando o DC/OS, Docker Swarm ou Kubernetes. Tutoriais, referências de API e muito mais."
+services: container-service
+author: carolz
+manager: carolz
 layout: LandingPage
+ms.assetid: 
+ms.service: container-service
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: landing-page
+ms.date: 01/23/2017
+ms.author: carolz
 translationtype: Human Translation
-ms.sourcegitcommit: 445c13f0ff0106aa1d919be81ca373377464b32a
-ms.openlocfilehash: 5e027ac1a0a9ec4d11c76bbce1e0c944742ffaf9
+ms.sourcegitcommit: 8dd0b2fe35c7f6280e6c1032d788955c891668d2
+ms.openlocfilehash: b5e7c83af078678454e6fc036bff657de402cf73
 
 ---
 
 # <a name="azure-container-service-documentation"></a>Documentação do Azure Container Service
 
-O Azure Container Service simplifica a criação, configuração e gestão de um cluster de máquinas virtuais que estão pré-configuradas para executar aplicações em contentores. O Container Service utiliza uma configuração otimizada de populares ferramentas de código aberto de agendamento e orquestração. Isto permite-lhe utilizar as suas competências ou basear-se num corpo extenso e crescente de conhecimentos da comunidade, para implementar e gerir aplicações baseadas em contentores no Microsoft Azure.
+Saiba como utilizar o Container Service para implementar e gerir contentores de aplicação totalmente portáveis. Tutoriais, referências de API e outra documentação mostram-lhe como dimensionar e orquestrar os contentores utilizando o DC/OS, o Docker Swarm ou o Kubernetes.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -59,20 +71,8 @@ O Azure Container Service simplifica a criação, configuração e gestão de um
                 <div class="card">
                     <div class="cardText">
                         <h3>Linha de Comandos</h3>
-                        <p><a href="/powershell/resourcemanager/azurerm.compute/v2.3.0/azurerm.compute">PowerShell</a></p>
+                        <p><a href="/cli/azure/acs">CLI 2.0 do Azure (Pré-visualização)</a></p>
                     </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3>Linguagens</h3>
-                        <p><a href="/dotnet/api/microsoft.azure.management.compute.models">.NET</a></p>
-                   </div>
                 </div>
             </div>
         </div>
@@ -91,15 +91,9 @@ O Azure Container Service simplifica a criação, configuração e gestão de um
     </li>
 </ul>
 
-<div class="downloadHolder">
-    <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/container-service.pdf">
-        <div class="img"></div>
-        <div class="text">
-Transferir a Documentação do Azure Container Service </div>
-    </a>
-</div>
 
 
-<!--HONumber=Dec16_HO1-->
+
+<!--HONumber=Feb17_HO2-->
 
 

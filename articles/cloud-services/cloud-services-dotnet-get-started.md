@@ -15,8 +15,8 @@ ms.topic: hero-article
 ms.date: 11/16/2016
 ms.author: adegeo
 translationtype: Human Translation
-ms.sourcegitcommit: 9ad2f55c7db53459c17299ba5015783781c7cd63
-ms.openlocfilehash: 81fd8f40d8f939e68fbe2cf9ef7b413073a8c363
+ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
+ms.openlocfilehash: 02474f8ab77763be1b40da95f5d7cd935ba7f121
 
 
 ---
@@ -48,7 +48,7 @@ Este tutorial mostra como executar front-end e back-end num serviço em nuvem do
 ## <a name="prerequisites"></a>Pré-requisitos
 O tutorial parte do princípio de que compreende os [conceitos básicos dos Cloud Services do Azure](cloud-services-choose-me.md) como a terminologia *função da Web* e *função de trabalho*.  Também parte do princípio de que sabe como trabalhar com o [MVC do ASP.NET](http://www.asp.net/mvc/tutorials/mvc-5/introduction/getting-started) ou com projetos de [Formulários Web](http://www.asp.net/web-forms/tutorials/aspnet-45/getting-started-with-aspnet-45-web-forms/introduction-and-overview) no Visual Studio. A aplicação de exemplo utiliza o MVC, mas a maioria do tutorial também se aplica aos Formulários Web.
 
-Pode executar a aplicação localmente sem precisar de uma subscrição do Azure, mas necessitará de uma para implementar a aplicação na nuvem. Se não tiver uma conta, pode [ativar os seus benefícios de subscritor MSDN](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A55E3C668) ou [inscrever-se numa avaliação gratuita](/pricing/free-trial/?WT.mc_id=A55E3C668).
+Pode executar a aplicação localmente sem precisar de uma subscrição do Azure, mas necessitará de uma para implementar a aplicação na nuvem. Se não tiver uma conta, pode [ativar os seus benefícios de subscritor MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A55E3C668) ou [inscrever-se numa avaliação gratuita](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A55E3C668).
 
 As instruções do tutorial funcionam com qualquer um dos seguintes produtos:
 
@@ -772,6 +772,6 @@ Para obter mais informações, consulte os seguintes recursos:
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -1,13 +1,25 @@
 ---
+title: "Documentação do Azure Application Insights - Tutoriais, Referência da API | Microsoft Docs"
+description: "Saiba como utilizar o Application Insights, uma gestão de desempenho de aplicações extensível para detetar, fazer uma triagem e diagnosticar problemas em aplicações e serviços Web."
+services: application-insights
+author: carolz
+manager: carolz
 layout: LandingPage
+ms.assetid: 
+ms.service: application-insights
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: landing-page
+ms.date: 01/23/2017
+ms.author: carolz
 translationtype: Human Translation
-ms.sourcegitcommit: 7f01669fe78aebfb17ebc6a33ae29d098b62868a
-ms.openlocfilehash: 8100f42cc97155431e4d3ba47f7946b546296700
+ms.sourcegitcommit: d22dec77ea0fde59a86799cf5f2d13c2c4d6dacd
+ms.openlocfilehash: 1f3fc2431bacd6852c6babc7ebbb07c6a3b74145
 
 ---
 # <a name="application-insights-documentation"></a>Documentação do Application Insights
 
-O Application Insights é um serviço de Gestão de Desempenho de Aplicações (APM) extensível para programadores da Web. Utilize-o para monitorizar a sua aplicação Web online. Além de detetar automaticamente anomalias de desempenho, inclui ferramentas de análise poderosas para o ajudar a diagnosticar problemas e a compreender o que os utilizadores efetivamente fazem com a sua aplicação. Foi concebido para o ajudar a melhorar continuamente o desempenho e a usabilidade. Funciona para aplicações em diversas plataformas, incluindo .NET, Node.js e J2EE, alojadas no local ou na cloud. Também se integra com o seu processo de devOps e tem pontos de ligação a uma grande variedade de outras ferramentas.
+Saiba como utilizar o Application Insights, um serviço de gestão de desempenho de aplicações extensível para programadores da Web. Tutoriais, referências de API e outra documentação mostram-lhe como detetar, fazer uma triagem e diagnosticar os problemas nas aplicações e serviços Web.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -151,16 +163,10 @@ O Application Insights é um serviço de Gestão de Desempenho de Aplicações (
     </li>
 </ul>
 
-<div class="downloadHolder">
-    <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/application-insights.pdf">
-        <div class="img"></div>
-        <div class="text">
-Transferir a Documentação do Application Insights </div>
-    </a>
-</div>
 
 
 
-<!--HONumber=Dec16_HO2-->
+
+<!--HONumber=Feb17_HO2-->
 
 

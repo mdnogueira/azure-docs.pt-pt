@@ -15,8 +15,8 @@ ms.topic: get-started-article
 ms.date: 01/17/2017
 ms.author: spelluru
 translationtype: Human Translation
-ms.sourcegitcommit: ebc5dbf790ca6012cfe9a7ea9ccee9fdacb46ffd
-ms.openlocfilehash: ac1c60e04b42e2804ef17ba35368dd28c1d748a4
+ms.sourcegitcommit: 4b29fd1c188c76a7c65c4dcff02dc9efdf3ebaee
+ms.openlocfilehash: c5049cbe98dbb04deae4a2b9dc098938aa65495a
 
 
 ---
@@ -36,9 +36,9 @@ ms.openlocfilehash: ac1c60e04b42e2804ef17ba35368dd28c1d748a4
 Este tutorial mostra-lhe como criar e monitorizar uma fábrica de dados do Azure com a API REST. O pipeline na fábrica de dados utiliza uma Atividade de Cópia para copiar dados do Armazenamento de Blobs do Azure para uma Base de Dados SQL do Azure.
 
 > [!NOTE]
-> Este artigo não abrange toda a API REST do Data Factory. Veja [Referência da API REST do Data Factory](https://msdn.microsoft.com/library/azure/dn906738.aspx) para obter a documentação completa sobre os cmdlets do Data Factory.
+> Este artigo não abrange toda a API REST do Data Factory. Veja [Referência da API REST do Data Factory](/rest/api/datafactory/) para obter a documentação completa sobre os cmdlets do Data Factory.
 > 
-> 
+> O pipeline de dados neste tutorial copia dados a partir de um arquivo de dados de origem para um arquivo de dados de destino. Não transforma dados de entrada para produzir dados de saída. Para ver um tutorial sobre como transformar dados através do Azure Data Factory, consulte [Tutorial: Build a pipeline to transform data using Hadoop cluster (Tutorial: Criar um pipeline para transformar dados com o cluster do Hadoop)](data-factory-build-your-first-pipeline.md).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 * Leia o artigo [Descrição Geral do Tutorial](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) e conclua os passos de **pré-requisitos**.
@@ -564,8 +564,6 @@ Neste tutorial, utilizou uma API REST para criar uma fábrica de dados do Azure 
 [troubleshoot]: data-factory-troubleshoot.md
 [developer-reference]: http://go.microsoft.com/fwlink/?LinkId=516908
 
-[cmdlet-reference]: https://msdn.microsoft.com/library/azure/dn820234.aspx
-[old-cmdlet-reference]: https://msdn.microsoft.com/library/azure/dn820234(v=azure.98).aspx
 [azure-free-trial]: http://azure.microsoft.com/pricing/free-trial/
 
 [azure-portal]: http://portal.azure.com
@@ -578,6 +576,6 @@ Neste tutorial, utilizou uma API REST para criar uma fábrica de dados do Azure 
 
 
 
-<!--HONumber=Dec16_HO4-->
+<!--HONumber=Feb17_HO1-->
 
 

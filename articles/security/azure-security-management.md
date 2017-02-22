@@ -1,10 +1,10 @@
 ---
-title: "Gestão de Segurança no Azure | Microsoft Docs"
+title: "Melhorar a segurança da gestão remota no Azure | Microsoft Docs"
 description: "Este artigo aborda os passos para melhorar a segurança da gestão remota ao administrar ambientes do Microsoft Azure, incluindo serviços cloud, Máquinas Virtuais e aplicações personalizadas."
 services: security
 documentationcenter: na
 author: TerryLanfear
-manager: StevenPo
+manager: MBaldwin
 editor: TomSh
 ms.assetid: 2431feba-3364-4a63-8e66-858926061dd3
 ms.service: security
@@ -12,11 +12,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/21/2016
+ms.date: 01/23/2017
 ms.author: terrylan
 translationtype: Human Translation
-ms.sourcegitcommit: f44ecd49d034ef6ec82baa402e613308a5b3e1a9
-ms.openlocfilehash: 5cee18e58bcf505547315e14dd378b36c0b3f651
+ms.sourcegitcommit: b5edb42f7fac6943a72e02a85a4cbc32300b9f38
+ms.openlocfilehash: bf4f0b64d1230395bf5dacc467d09debecdef559
 
 
 ---
@@ -235,6 +235,6 @@ Os recursos seguintes estão disponíveis para fornecer informações mais gerai
 
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Jan17_HO4-->
 
 

@@ -1,6 +1,6 @@
 ---
 title: "Introdução ao Microsoft Power BI Embedded"
-description: "Power BI Embedded, adicionar relatórios interativos do Power BI à aplicação de business intelligence"
+description: "Power BI Embedded, adicione relatórios interativos do Power BI à aplicação de business intelligence"
 services: power-bi-embedded
 documentationcenter: 
 author: guyinacube
@@ -13,11 +13,11 @@ ms.devlang: NA
 ms.topic: hero-article
 ms.tgt_pltfrm: NA
 ms.workload: powerbi
-ms.date: 01/06/2017
+ms.date: 02/06/2017
 ms.author: asaxton
 translationtype: Human Translation
-ms.sourcegitcommit: 7db56a4c0efb208591bb15aa03a4c0dbf833d22e
-ms.openlocfilehash: cedf69c6e50470e9d16d8e1e361bb51eb8abed72
+ms.sourcegitcommit: fd0ddf8275ab58eb3c411123b776654fb46cae5d
+ms.openlocfilehash: 5770bbfcf700b1cefea6d22e0d5f025c1660e744
 
 
 ---
@@ -41,7 +41,7 @@ Vamos guiá-lo pelos passos para criar uma **Coleção de Área de Trabalho** at
    
    ![](media/power-bi-embedded-get-started/create-workspace-1.png)
 3. Em **Dados + Análise** clique **Power BI Embedded**.
-4. No **Painel de Criação**, introduza as informações necessárias. Para **Preços**, consulte o artigo [Preços do Power BI Embedded](http://go.microsoft.com/fwlink/?LinkID=760527).
+4. No **Painel de Coleção de Área de Trabalho**, introduza as informações necessárias. Para **Preços**, consulte o artigo [Preços do Power BI Embedded](http://go.microsoft.com/fwlink/?LinkID=760527).
    
    ![](media/power-bi-embedded-get-started/create-workspace-2.png)
 5. Clique em **Criar**.
@@ -68,6 +68,10 @@ Copie estas chaves e armazene-as de forma segura na aplicação. É muito import
 Embora sejam apresentadas duas chaves, apenas é necessária uma de cada vez. A segunda chave é fornecida para periodicamente regenerar chaves sem interromper o acesso ao serviço.
 
 Agora que tem uma instância do Power BI para a aplicação e as **Chaves de Acesso**, pode importar um relatório para a própria aplicação. Antes de saber como importar um relatório, a secção a seguir descreve como criar conjuntos de dados do Power BI e relatórios para incorporar numa aplicação.
+
+## <a name="working-with-workspaces"></a>Trabalhar com áreas de trabalho
+
+Depois de ter criado a sua coleção da área de trabalho, terá de criar uma área de trabalho que irá guardar os relatórios e conjuntos de dados. Para criar uma área de trabalho, terá de utilizar a [API REST de Espaço de Trabalho de Publicação](https://msdn.microsoft.com/library/azure/mt711503.aspx).
 
 ## <a name="create-power-bi-datasets-and-reports-to-embed-into-an-app"></a>Criar conjuntos de dados e relatórios do Power BI para incorporar numa aplicação
 Agora que já criou uma instância do Power BI para a aplicação e tem **chaves de acesso**, terá de criar os conjuntos de dados do Power BI e os relatórios que pretende incorporar. Conjuntos de dados e relatórios podem ser criados utilizando o **Power BI Desktop**. Pode transferir o [Power BI Desktop gratuitamente](https://go.microsoft.com/fwlink/?LinkId=521662). Em alternativa, para começar rapidamente, pode transferir o [PBIX de exemplo de análise de revenda](http://go.microsoft.com/fwlink/?LinkID=780547).
@@ -109,6 +113,6 @@ Mais perguntas? [Tente a Comunidade do Power BI](http://community.powerbi.com/)
 
 
 
-<!--HONumber=Jan17_HO1-->
+<!--HONumber=Feb17_HO1-->
 
 

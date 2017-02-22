@@ -16,8 +16,8 @@ ms.workload: data-services
 ms.date: 11/16/2016
 ms.author: denlee
 translationtype: Human Translation
-ms.sourcegitcommit: bf07b8a10dd7e5ee9259c6fab9da886578504fe7
-ms.openlocfilehash: 4852d2b59faf01961fc8e39680bb05694dcde8d6
+ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
+ms.openlocfilehash: d8abb90b19fd3b79324209a2418c414e3b6bb301
 
 
 ---
@@ -457,7 +457,7 @@ Agora que concluímos a parte divertida - apenas falta criar uma interface de ut
             }
         }
 3. Precisamos de uma Interface de utilizador Web a apresentar ao utilizador. Vamos escrever novamente o index.jsp que criámos anteriormente:
-   
+    ```html
         <html>
         <head>
           <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -544,6 +544,7 @@ Agora que concluímos a parte divertida - apenas falta criar uma interface de ut
           <script src="assets/todo.js"></script>
         </body>
         </html>
+    ```
 4. E por fim, escreva algum Javascript do lado do cliente para ligar a interface de utilizador Web e a servlet:
    
         var todoApp = {
@@ -763,6 +764,6 @@ Todos os exemplos deste tutorial estão incluídos no projeto [todo](https://git
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

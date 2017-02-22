@@ -1,13 +1,25 @@
 ---
+title: "Documentação do Azure Active Directory Domain Services - Tutoriais | Microsoft Docs"
+description: "Saiba como utilizar Active Directory Domain Services para associarem máquinas virtuais do Azure a um domínio sem utilizar controladores de domínio e geri-las com políticas de grupo."
+services: active-directory-ds
+author: carolz
+manager: carolz
 layout: LandingPage
+ms.assetid: 
+ms.service: active-directory-ds
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: landing-page
+ms.date: 01/23/2017
+ms.author: carolz
 translationtype: Human Translation
-ms.sourcegitcommit: 55dedcab5b8e62b3666cffcfc7d9a0a31c624784
-ms.openlocfilehash: d3a6b967921edad13479c615ebec8edc9e568458
+ms.sourcegitcommit: ca9fd58260f97836c08e71a50d8411d1862fd650
+ms.openlocfilehash: 9654ec8791de56c33e4973e8ba20ef6e52780955
 
 ---
 # <a name="active-directory-domain-services-documentation"></a>Documentação do Active Directory Domain Services
 
-O Azure AD Domain Services (DS) fornece serviços de domínio gerido, como associação a um domínio, política de grupo, LDAP e autenticação Kerberos/NTLM, os quais são totalmente compatíveis com o Windows Server Active Directory.  Este serviço permite aos utilizadores implementar um vasto leque de soluções de computação de forma ágil.
+Saiba como utilizar Active Directory Domain Services para associarem máquinas virtuais do Azure a um domínio sem utilizar controladores de domínio. Tutoriais e outra documentação mostram-lhe como gerir máquinas virtuais através de políticas de grupo.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -156,18 +168,9 @@ O Azure AD Domain Services (DS) fornece serviços de domínio gerido, como assoc
     </li>
 </ul>
 
----
-
-<div class="downloadHolder">
-    <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/active-directory-domain-services.pdf">
-        <div class="img"></div>
-        <div class="text">
-Transferir a Documentação do Active Directory Domain Services </div>
-    </a>
-</div>
 
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Feb17_HO2-->
 
 

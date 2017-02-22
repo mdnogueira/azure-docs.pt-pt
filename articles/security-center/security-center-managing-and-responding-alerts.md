@@ -1,10 +1,10 @@
 ---
-title: "Gerir e responder a alertas de segurança no Centro de Segurança do Azure | WCF Relay service"
+title: "Gerir alertas de segurança no Centro de Segurança do Azure | Microsoft Docs"
 description: "Este documento ajuda-o a utilizar as capacidades de Centro de Segurança do Azure para gerir e responder a alertas de segurança."
 services: security-center
 documentationcenter: na
 author: YuriDio
-manager: swadhwa
+manager: mbaldwin
 editor: 
 ms.assetid: b88a8df7-6979-479b-8039-04da1b8737a7
 ms.service: security-center
@@ -12,11 +12,11 @@ ms.topic: hero-article
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 10/17/2016
+ms.date: 02/06/2017
 ms.author: yurid
 translationtype: Human Translation
-ms.sourcegitcommit: ec32e3937d08d912c8f96987b0c5ebbf73060258
-ms.openlocfilehash: 7a4413c6d2ecf497e72e2909e627761f0a9ff23a
+ms.sourcegitcommit: 9852981e530cd147c2d34ac2ede251b58a167a0a
+ms.openlocfilehash: 0093beda6af6d3b2400185fcd63bc73b2c8c9ba9
 
 
 ---
@@ -25,26 +25,27 @@ Este documento ajuda-o a utilizar o Centro de Segurança do Azure para gerir e r
 
 > [!NOTE]
 > Para ativar as deteções avançadas, atualize para o Centro de Segurança do Azure Standard. Está disponível uma avaliação gratuita de 90 dias. Para atualizar, selecione Escalão de Preço na [Política de Segurança](security-center-policies.md). Veja [Preços do Centro de Segurança do Azure](security-center-pricing.md) para saber mais.
-> 
-> 
+>
+>
 
 ## <a name="what-are-security-alerts"></a>O que são alertas de segurança?
-O Centro de Segurança recolhe, analisa e integra automaticamente dados de registo a partir dos seus recursos do Azure, da rede e soluções de parceiros ligadas, tal como soluções de proteção de ponto final e firewall, para detetar ameaças reais e reduzir os falsos positivos. Uma lista de alertas de segurança prioritários é apresentada no Centro de Segurança juntamente com as informações necessárias para investigar rapidamente o problema e fornecer recomendações sobre como remediar um ataque. O Centro de segurança do Azure também agrega alertas alinhados com padrões de cadeia de ataque em [Incidentes](security-center-incident.md). 
+O Centro de Segurança recolhe, analisa e integra automaticamente dados de registo a partir dos seus recursos do Azure, da rede e soluções de parceiros ligadas, tal como soluções de proteção de ponto final e firewall, para detetar ameaças reais e reduzir os falsos positivos. Uma lista de alertas de segurança prioritários é apresentada no Centro de Segurança juntamente com as informações necessárias para investigar rapidamente o problema e fornecer recomendações sobre como remediar um ataque.
+
 
 > [!NOTE]
 > Para obter mais informações sobre como funcionam as capacidades de deteção do Centro de Segurança, leia [Capacidades de Deteção do Centro de Segurança do Azure](security-center-detection-capabilities.md).
-> 
-> 
+>
+>
 
 ## <a name="managing-security-alerts"></a>Gerir alertas de segurança
 Pode rever os alertas atuais ao observar o mosaico **Alertas de segurança**. Abra o Portal do Azure e siga os passos abaixo para ver mais detalhes sobre cada alerta:
 
 1. No dashboard do Centro de Segurança, verá o mosaico **Alertas de segurança**.
-   
+
     ![Mosaico Alertas de segurança no Centro de Segurança](./media/security-center-managing-and-responding-alerts/security-center-managing-and-responding-alerts-fig1-ga.png)
 
 2. Clique no mosaico para abrir o painel **Alertas de segurança** que contém mais detalhes sobre os alertas como é mostrado abaixo.
-   
+
    ![O painel Alertas de segurança no Centro de Segurança](./media/security-center-managing-and-responding-alerts/security-center-managing-and-responding-alerts-fig2-ga.png)
 
 Na parte inferior deste painel encontram-se os detalhes de cada alerta. Para ordenar, clique na coluna pela qual pretende ordenar. A definição para cada coluna é indicada abaixo:
@@ -61,7 +62,7 @@ Na parte inferior deste painel encontram-se os detalhes de cada alerta. Para ord
 Pode filtrar os alertas com base na data, no estado e na gravidade. A filtragem de alertas pode ser útil para cenários onde necessita de limitar o âmbito dos alertas de segurança mostrados. Por exemplo, pode pretender resolver alertas de segurança que ocorreram nas últimas 24 horas, porque está a investigar uma potencial violação no sistema.
 
 1. Clique em **Filtrar** no painel **Alertas de Segurança**. O painel **Filtro** abre-se e o utilizador seleciona os valores de data, de estado e de gravidade que pretende ver.
-   
+
     ![Filtragem de alertas no Centro de Segurança](./media/security-center-managing-and-responding-alerts/security-center-managing-and-responding-alerts-fig3-2017.png)
 
 ### <a name="respond-to-security-alerts"></a>Responder a alertas de segurança
@@ -79,8 +80,8 @@ A remediação sugerida pelo Centro de Segurança irá variar de acordo com o al
 
 > [!NOTE]
 > Para obter mais informações sobre os diferentes tipos de alertas, leia [Alertas de Segurança por Tipo no Centro de Segurança do Azure](security-center-alerts-type.md).
-> 
-> 
+>
+>
 
 ## <a name="see-also"></a>Consultar também
 Neste documento, aprendeu a configurar as políticas de segurança no Centro de Segurança. Para saber mais acerca do Centro de Segurança, consulte o seguinte:
@@ -93,7 +94,6 @@ Neste documento, aprendeu a configurar as políticas de segurança no Centro de 
 
 
 
-
-<!--HONumber=Jan17_HO1-->
+<!--HONumber=Feb17_HO1-->
 
 

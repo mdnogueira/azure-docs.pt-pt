@@ -4,7 +4,7 @@
 > 
 > 
 
-Este artigo fornece instruções detalhadas sobre o [código de exemplo Olá Mundo][lnk-helloworld-sample] para ilustrar os componentes fundamentais da arquitetura do [SDK do Gateway do Azure IoT][lnk-gateway-sdk]. Este exemplo utiliza o SDK do Gateway do Hub IoT para criar um gateway simples que regista uma mensagem "olá, mundo" num ficheiro a cada cinco segundos.
+Este artigo fornece instruções detalhadas sobre o [código de exemplo Olá Mundo][lnk-helloworld-sample] para ilustrar os componentes fundamentais da arquitetura do [SDK do Gateway do Azure IoT][lnk-gateway-sdk]. Este exemplo utiliza o SDK do Gateway do Azure IoT para criar um gateway simples que regista uma mensagem "olá, mundo" num ficheiro a cada cinco segundos.
 
 Estas instruções abrangem:
 
@@ -72,6 +72,6 @@ A figura acima mostra a arquitetura do exemplo Olá Mundo e os caminhos relativo
 [lnk-helloworld-sample]: https://github.com/Azure/azure-iot-gateway-sdk/tree/master/samples/hello_world
 [lnk-gateway-sdk]: https://github.com/Azure/azure-iot-gateway-sdk
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

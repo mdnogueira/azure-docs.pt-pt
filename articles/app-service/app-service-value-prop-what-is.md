@@ -16,8 +16,8 @@ ms.topic: get-started-article
 ms.date: 12/02/2016
 ms.author: byvinyal
 translationtype: Human Translation
-ms.sourcegitcommit: 7ff7874538f23c8dd8c4aaa789018c77dfe2ab9a
-ms.openlocfilehash: 692a7e0e54dd8ba6b47f79228696b223123dfb9b
+ms.sourcegitcommit: 40dd75832302d7d88e852e2ea93821750675607e
+ms.openlocfilehash: 4deb60c25bf13d1f31b58f002a7edea0672eca25
 
 
 ---
@@ -72,7 +72,7 @@ Os planos do Serviço de Aplicações definem:
 
 Todas as aplicações atribuídas a um **plano do Serviço de Aplicações** partilham os recursos definidos pelo mesmo, o que lhe permite economizar quando alojar várias aplicações.
 
-O seu **plano do Serviço de Aplicações** pode escalar SKUs de formulário **Gratuito** e **Partilhado** para SKUs **Básico**, **Standard** e **Premium**, dando-lhe acesso a mais recursos e funcionalidades ao longo do caminho. Assim que o seu plano do Serviço de Aplicações estiver definido como **Básico** ou superior também pode controlar o **tamanho** e a contagem de escala das VMs.
+O seu **plano do Serviço de Aplicações** pode escalar SKUs de **Gratuito** e **Partilhado** para SKUs **Básico**, **Standard** e **Premium**, dando-lhe acesso a mais recursos e funcionalidades ao longo do caminho. Assim que o seu plano do Serviço de Aplicações estiver definido como **Básico** ou superior também pode controlar o **tamanho** e a contagem de escala das VMs.
 
 O **SKU** e a **Escala** do plano do Serviço de Aplicações determina o custo e não o número de aplicações alojadas no mesmo. 
 
@@ -94,6 +94,6 @@ Ou abra uma [conta do Azure gratuita](https://azure.microsoft.com/pricing/free-t
 
 
 
-<!--HONumber=Jan17_HO3-->
+<!--HONumber=Feb17_HO1-->
 
 

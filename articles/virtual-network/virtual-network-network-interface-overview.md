@@ -1,10 +1,10 @@
 ---
-title: Interfaces de rede | Microsoft Docs
-description: Saiba mais sobre as interfaces de rede do Azure no Azure Resource Manager.
+title: Interfaces de rede no Azure | Microsoft Docs
+description: "Saiba mais sobre as interfaces de rede do Azure no modelo de implementação Azure Resource Manager."
 services: virtual-network
 documentationcenter: na
 author: jimdial
-manager: carmonm
+manager: timlt
 editor: 
 tags: azure-resource-manager
 ms.assetid: f58b503f-18bf-4377-aa63-22fc8a96e4be
@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 09/23/2016
 ms.author: jdial
 translationtype: Human Translation
-ms.sourcegitcommit: 6e96471c4f61e1ebe15c23f87ac646001d8e30ee
-ms.openlocfilehash: 586877781f4b74c49936a8129db49a67018bab65
+ms.sourcegitcommit: 3244d5b52785d820698bf26f9bf189de93ef64e4
+ms.openlocfilehash: 691b79d7739246dad7191195fa049fd58340c8ff
 
 
 ---
-# <a name="network-interfaces"></a>Interfaces de rede
+# <a name="network-interfaces-in-azure"></a>Interfaces de rede no Azure
 Uma interface de rede (NIC) é a interligação entre uma Máquina Virtual (VM) e a rede de software subjacente. Este artigo explica o que são as interfaces de rede e como são utilizadas no modelo de implementação Azure Resource Manager.
 
 A Microsoft recomenda implementar recursos novos com o modelo de implementação do Resource Manager, mas também pode implementar VMs com a conectividade de rede no modelo de implementação [clássica](virtual-network-ip-addresses-overview-classic.md). Se estiver familiarizado com o modelo clássico, existem diferenças importantes nas redes de VMs no modelo de implementação Resource Manager. Leia o artigo [Virtual machine networking - Classic (Redes de máquinas virtuais - Implementação Clássica)](virtual-network-ip-addresses-overview-classic.md#differences-between-resource-manager-and-classic-deployments) para saber mais sobre as diferenças.
@@ -56,6 +56,6 @@ Podem ser ligadas várias NICs a uma VM, mas tenha em atenção o seguinte quand
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Jan17_HO5-->
 
 

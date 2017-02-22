@@ -270,6 +270,6 @@ Para saber como expandir a sua solução de IoT e processar mensagens do disposi
 
 
 
-<!--HONumber=Dec16_HO5-->
+<!--HONumber=Dec16_HO3-->
 
 

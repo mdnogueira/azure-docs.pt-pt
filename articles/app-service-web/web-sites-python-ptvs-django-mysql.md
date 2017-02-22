@@ -15,8 +15,8 @@ ms.topic: get-started-article
 ms.date: 07/07/2016
 ms.author: huvalo
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 759441c5d64ee59f13d50eb415fbaa884dd4821a
+ms.sourcegitcommit: b1a633a86bd1b5997d5cbf66b16ec351f1043901
+ms.openlocfilehash: 1c29cfc0a5b6361a7f526c37d5421ee4be3fe2c1
 
 
 ---
@@ -28,7 +28,7 @@ Neste tutorial, irá utilizar as [Ferramentas do Python para Visual Studio](http
 > [!NOTE]
 > As informações contidas neste tutorial também estão disponíveis no vídeo seguinte:
 > 
-> [PTVS 2.1: aplicação Django com MySQL – ][vídeo]
+> [PTVS 2.1: aplicação Django com MySQL][video]
 > 
 > 
 
@@ -47,7 +47,7 @@ Consulte o [Centro para Programadores do Python] para ver mais artigos que abran
 <!-- This note should not render as part of the the previous include. -->
 
 > [!NOTE]
-> Se pretender começar a utilizar o App Service do Azure antes de se inscrever numa conta do Azure, aceda a [Experimentar o App Service](http://go.microsoft.com/fwlink/?LinkId=523751), onde pode criar de imediato uma aplicação Web de arranque de curta duração no App Service. Sem cartões de crédito nem compromissos necessários.
+> Se pretender começar a utilizar o App Service do Azure antes de se inscrever numa conta do Azure, aceda a [Experimentar o App Service](https://azure.microsoft.com/try/app-service/), onde pode criar de imediato uma aplicação Web de arranque de curta duração no App Service. Sem cartões de crédito nem compromissos necessários.
 > 
 > 
 
@@ -158,12 +158,12 @@ Para obter mais informações, consulte o [Centro para Programadores do Python](
 <!--Link references-->
 
 [Centro para Programadores do Python]: /develop/python/
-[Serviços Cloud do Azure]: ../cloud-services/cloud-services-python-ptvs.md
+[Cloud Services do Azure]: ../cloud-services/cloud-services-python-ptvs.md
 
 <!--External Link references-->
 
 [Portal do Azure]: https://portal.azure.com
-[Ferramentas do Python para Visual Studio]: https://www.visualstudio.com/vs/python/
+[Python Tools for Visual Studio]: https://www.visualstudio.com/vs/python/
 [Ferramentas do Python 2.2 para Visual Studio]: http://go.microsoft.com/fwlink/?LinkID=624025
 [Ferramentas do Python 2.2 para VSIX de Exemplo do Visual Studio]: http://go.microsoft.com/fwlink/?LinkID=624025
 [Ferramentas do Azure SDK para VS 2015]: http://go.microsoft.com/fwlink/?LinkId=518003
@@ -175,10 +175,10 @@ Para obter mais informações, consulte o [Centro para Programadores do Python](
 [Projetos do Serviço em Nuvem]: http://go.microsoft.com/fwlink/?LinkId=624028
 [Documentação do Django]: https://www.djangoproject.com/
 [MySQL]: http://www.mysql.com/
-[vídeo]: http://youtu.be/oKCApIrS0Lo
+[video]: http://youtu.be/oKCApIrS0Lo
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Jan17_HO3-->
 
 

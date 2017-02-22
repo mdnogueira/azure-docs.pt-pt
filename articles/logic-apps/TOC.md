@@ -23,6 +23,7 @@
 ### [Aplicações lógicas como pontos finais disponíveis](logic-apps-http-endpoint.md)
 ### [Ciclos, âmbitos e divisões](logic-apps-loops-and-scopes.md)
 ### [Com a API personalizada](logic-apps-custom-hosted-api.md)
+### [Utilizar a instrução de comutador](logic-apps-switch-case.md)
 ### [Processamento de exceções](logic-apps-exception-handling.md)
 ### [Cenário de processamento de exceções](logic-apps-scenario-error-and-exception-handling.md)
 ### [Tipos de conteúdo de processamento](logic-apps-content-type.md)
@@ -91,6 +92,6 @@
 ## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=logic-apps)
 
 
-<!--HONumber=Feb17_HO1-->
+<!--HONumber=Feb17_HO3-->
 
 

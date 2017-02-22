@@ -1,13 +1,25 @@
 ---
+title: "Documentação do Azure Data Lake Store - Tutoriais, Referência da API | Microsoft Docs"
+description: "Saiba como configurar, gerir e aceder a um repositório de hiperescala do data lake compatível com o Hadoop para análises em dados de qualquer tamanho, tipo e velocidade de ingestão."
+services: data-lake-store
+author: carolz
+manager: carolz
 layout: LandingPage
+ms.assetid: 
+ms.service: data-lake-store
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: landing-page
+ms.date: 01/23/2017
+ms.author: carolz
 translationtype: Human Translation
-ms.sourcegitcommit: 3752a677351518195773a86c3824078a5aff6d03
-ms.openlocfilehash: d26d0f965ad1195ab41e04e870ead1b335ff513e
+ms.sourcegitcommit: dcc8f86fe5871d307bf304252e80e64a0084ef49
+ms.openlocfilehash: d7f56dd2658de2cc270f569b871ebf28ad610fd7
 
 ---
 # <a name="data-lake-store-documentation"></a>Documentação do Data Lake Store
 
-O Azure Data Lake Store é um repositório de hiperescala para cargas de trabalho de análise de macrodados. O Azure Data Lake permite-lhe capturar dados de qualquer tamanho, tipo e velocidade de ingestão num único local para análises exploratórias e operacionais.  Pode aceder ao Azure Data Lake Store a partir do Hadoop (disponível com o cluster de HDInsight) através dos cenários compatíveis com WebHDFS. Inclui todas as funcionalidades de nível empresarial em matéria de segurança, capacidade de gestão, escalabilidade, fiabilidade e disponibilidade.
+Saiba como utilizar o Data Lake Store para criar um repositório de hiperescala compatível com o Hadoop para análises em dados de qualquer tamanho, tipo e velocidade de ingestão. Tutoriais, referências de API e outra documentação mostram-lhe como configurar, gerir e aceder a um repositório do data lake para análises exploratórias e operacionais.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -202,15 +214,9 @@ O Azure Data Lake Store é um repositório de hiperescala para cargas de trabalh
     </li>
 </ul>
 
-<div class="downloadHolder">
-    <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/data-lake-store.pdf">
-        <div class="img"></div>
-        <div class="text">
-Transferir a Documentação do Azure Data Lake Store </div>
-    </a>
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Feb17_HO2-->
 
 

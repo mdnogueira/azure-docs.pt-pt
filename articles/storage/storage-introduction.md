@@ -1,5 +1,5 @@
 ---
-title: "Introdução ao Storage | Microsoft Docs"
+title: "Introdução ao Azure Storage | Microsoft Docs"
 description: "Uma descrição geral do Storage do Azure, o armazenamento de dados online da Microsoft na nuvem. Saiba como utilizar a melhor solução de armazenamento na nuvem disponível nas aplicações."
 services: storage
 documentationcenter: 
@@ -12,15 +12,16 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 12/08/2016
+ms.date: 02/02/2017
 ms.author: marsma
 translationtype: Human Translation
-ms.sourcegitcommit: 931503f56b32ce9d1b11283dff7224d7e2f015ae
-ms.openlocfilehash: 40ab7632f47de4d4eef277f4c4071ce2d4de1eed
+ms.sourcegitcommit: 8e11b36ee927724d4736f8a235aa97848ee2d271
+ms.openlocfilehash: d0647706ad18b3106de44496e43ea822896215ba
 
 
 ---
 # <a name="introduction-to-microsoft-azure-storage"></a>Introdução ao Storage do Microsoft Azure
+
 ## <a name="overview"></a>Descrição geral
 O Storage do Azure é a solução de armazenamento na nuvem para aplicações modernas que dependem da durabilidade, da disponibilidade e da escalabilidade para satisfazer as necessidades dos seus clientes. Ao ler este artigo, os programadores, os profissionais de TI e os decisores das empresas podem saber mais sobre:
 
@@ -49,7 +50,7 @@ O Storage do Azure suporta clientes que utilizam um conjunto diverso de sistemas
 
 O Premium Storage do Azure fornece suporte de disco de elevado desempenho e de baixa latência para cargas de trabalho E/S intensivas executadas em Virtual Machines do Azure. Com o Premium Storage do Azure, pode anexar vários discos de dados persistentes a um computador virtual e configurá-los para satisfazer os seus requisitos de desempenho. Cada disco de dados está associado a um disco SSD no Premium Storage do Azure para um desempenho E/S máximo. Consulte o artigo [Premium Storage: Armazenamento de Elevado Desempenho para Cargas de Trabalho de Computadores Virtuais do Azure](storage-premium-storage.md) para obter mais detalhes.
 
-## <a name="introducing-the-azure-storage-services"></a>Apresentação dos Serviços do Storage do Azure
+## <a name="introducing-the-azure-storage-services"></a>Apresentação dos serviços de Armazenamento do Azure
 O Storage do Azure fornece os seguintes quatro serviços: Blob Storage, Table Storage, Armazenamento de filas e File Storage.
 
 * O Blob Storage armazena dados de objetos não estruturados. Um blob pode ser qualquer tipo de texto ou de dados binários, tal como um documento, um ficheiro multimédia ou o instalador da aplicação. O Blob Storage também é referido como um Armazenamento de objetos.
@@ -65,7 +66,7 @@ Uma conta do Storage do Azure é uma conta segura que lhe dá acesso a serviços
 
 [!INCLUDE [storage-versions-include](../../includes/storage-versions-include.md)]
 
-## <a name="blob-storage"></a>Blob Storage
+## <a name="blob-storage"></a>Armazenamento de blobs
 Para os utilizadores com grandes quantidades de dados de objetos não estruturados para armazenar na nuvem, o Blob Storage oferece uma solução económica e dimensionável. Pode utilizar o Blob Storage para armazenar conteúdos, tais como:
 
 * Documentos
@@ -101,7 +102,7 @@ Ao conceber aplicações para o dimensionamento, os componentes da aplicação, 
 
 Uma conta do Storage pode conter qualquer número de filas. Uma fila pode conter qualquer número de mensagens, até ao limite de capacidade da conta do Storage. As mensagens individuais podem ter até 64 KB de tamanho.
 
-## <a name="file-storage"></a>File Storage
+## <a name="file-storage"></a>Armazenamento de ficheiros
 O File Storage do Azure oferece partilhas de ficheiros SMB com base na nuvem para que possa migrar aplicações antigas que se baseiam em partilhas de ficheiros para o Azure rapidamente e sem reescritas dispendiosas. Com o File Storage do Azure, as aplicações em execução nos Virtual Machines ou nos Cloud Services do Azure podem montar uma partilha de ficheiros na nuvem, tal como uma aplicação de ambiente de trabalho monta uma partilha SMB típica. Em seguida, quaisquer componentes da aplicação podem montar e aceder à partilha do File Storage em simultâneo.
 
 Uma vez que as partilhas do Armazenamento de ficheiros são partilhas de ficheiros SMB padrão, as aplicações em execução no Azure podem aceder a dados na partilha através das APIs de E/S do sistema de ficheiros. Os programadores, por conseguinte, podem tirar partido do respetivo código existente e competências para migrar as aplicações existentes. Os profissionais de TI podem utilizar os cmdlets do PowerShell para criar, montar e gerir partilhas de File Storage como parte da administração de aplicações Azure.
@@ -125,7 +126,7 @@ Por fim, pode especificar que um contentor e os respetivos blobs, ou um blob esp
 
 Veja [Utilizar Assinaturas de Acesso Partilhado (SAS)](storage-dotnet-shared-access-signature-part-1.md) para obter mais informações sobre assinaturas de acesso partilhado. Consulte o artigo [Gerir o acesso de leitura anónimo a contentores e blobs](storage-manage-access-to-resources.md) e [Autenticação para os Serviços do Storage do Azure](https://msdn.microsoft.com/library/azure/dd179428.aspx) para mais informações sobre o acesso seguro à sua conta do Storage.
 
-## <a name="replication-for-durability-and-high-availability"></a>Replicação para Durabilidade e Elevada Disponibilidade
+## <a name="replication-for-durability-and-high-availability"></a>Replicação para durabilidade e elevada disponibilidade
 Os dados na sua conta de armazenamento do Microsoft Azure são sempre replicados para garantir a durabilidade e a elevada disponibilidade. A replicação copia os dados, no mesmo centro de dados ou para um segundo centro de dados, consoante a opção de replicação que escolher. A replicação protege os dados e preserva o tempo ativo da sua aplicação em caso de falhas de hardware transitórias. Se os dados são replicados para um segundo centro de dados, esta ação também protege os dados contra uma falha catastrófica na localização primária.
 
 A replicação garante que a sua conta de armazenamento cumpre o [Contrato de Nível de Serviço (SLA) para o Armazenamento](https://azure.microsoft.com/support/legal/sla/storage/) mesmo em caso de falhas. Leia o SLA para obter mais informações sobre as garantias do Armazenamento do Azure quanto à durabilidade e à disponibilidade.
@@ -161,7 +162,7 @@ Para informações sobre os preços da replicação da conta do Storage, consult
 
 Para obter detalhes da arquitetura sobre a durabilidade com o Storage do Azure, consulte o [Artigo SOSP – Storage do Azure: um Serviço de Armazenamento na Nuvem de Elevada Disponibilidade com Consistência Forte](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx).
 
-## <a name="transferring-data-to-and-from-azure-storage"></a>Transferir Dados de e para o Storage do Azure
+## <a name="transferring-data-to-and-from-azure-storage"></a>Transferir dados de e para o Armazenamento do Azure
 Pode utilizar o utilitário da linha de comandos do AzCopy para copiar os dados de blob, de ficheiro e de tabela na sua conta do Storage ou em várias contas do Storage. Consulte o artigo [Transferir dados com o utilitário da linha de comandos do AzCopy](storage-use-azcopy.md) para obter mais informações.
 
 O AzCopy é criado sobre a [Biblioteca de Movimento de Dados do Azure](https://www.nuget.org/packages/Microsoft.Azure.Storage.DataMovement/), que está atualmente disponível na pré-visualização.
@@ -171,10 +172,10 @@ O serviço de Importação/Exportação do Azure fornece uma forma de importar o
 ## <a name="pricing"></a>Preços
 [!INCLUDE [storage-account-billing-include](../../includes/storage-account-billing-include.md)]
 
-## <a name="storage-apis-libraries-and-tools"></a>APIs de armazenamento, Bibliotecas e Ferramentas
+## <a name="storage-apis-libraries-and-tools"></a>APIs de armazenamento, bibliotecas e ferramentas
 É possível aceder aos recursos do Storage do Azure por qualquer idioma que consiga efetuar pedidos de HTTP/HTTPS. Além disso, o Storage do Azure oferece bibliotecas de programação para vários idiomas populares. Estas bibliotecas simplificam muitos aspetos do trabalho com o Storage do Azure ao processar detalhes como a invocação síncrona e assíncrona, a criação de batches de operações, a gestão de exceções, as tentativas automáticas, o comportamento operacional, etc. Atualmente, as bibliotecas estão disponíveis para os seguintes idiomas e plataformas, com outros no pipeline:
 
-### <a name="azure-storage-data-services"></a>Serviços de Dados do Storage do Azure
+### <a name="azure-storage-data-services"></a>Serviços de dados do Armazenamento do Azure
 * [API REST dos Serviços de Armazenamento](http://msdn.microsoft.com/library/azure/dd179355.aspx)
 * [Biblioteca de Clientes de Armazenamento para o .NET, o Windows Phone e o Windows Runtime](https://www.nuget.org/packages/WindowsAzure.Storage/)
 * [Biblioteca de Clientes de Armazenamento para C++](https://github.com/Azure/azure-storage-cpp)
@@ -185,17 +186,17 @@ O serviço de Importação/Exportação do Azure fornece uma forma de importar o
 * [Biblioteca de Clientes de Armazenamento para Python](/develop/python/)
 * [Cmdlets de Armazenamento para o PowerShell 1.0](https://msdn.microsoft.com/library/azure/mt269418.aspx)
 
-### <a name="azure-storage-management-services"></a>Serviços de Gestão do Storage do Azure
+### <a name="azure-storage-management-services"></a>Serviços de gestão de Armazenamento do Azure
 * [Referência da API REST do Fornecedor de Recursos de Armazenamento](https://msdn.microsoft.com/library/azure/mt163683.aspx)
 * [Biblioteca de Clientes do Fornecedor de Recursos de Armazenamento para o .NET](https://msdn.microsoft.com/library/azure/mt131037.aspx)
 * [Cmdlets do Fornecedor de Recursos de Armazenamento para o PowerShell 1.0](https://msdn.microsoft.com/library/azure/mt607151.aspx)
 * [API REST da Gestão de Serviços de Armazenamento (Clássica)](https://msdn.microsoft.com/library/azure/ee460790.aspx)
 
-### <a name="azure-storage-data-movement-services"></a>Serviços do Movimento de Dados do Storage do Azure
+### <a name="azure-storage-data-movement-services"></a>Serviços do movimento de dados do Armazenamento do Azure
 * [API REST do Serviço de Importação/Exportação de Armazenamento](https://msdn.microsoft.com/library/azure/dn529096.aspx)
 * [Biblioteca de Clientes do Movimento de Dados de Armazenamento para o .NET](https://www.nuget.org/packages/Microsoft.Azure.Storage.DataMovement/)
 
-### <a name="tools-and-utilities"></a>Ferramentas e Utilitários
+### <a name="tools-and-utilities"></a>Ferramentas e utilitários
 * [Explorador do Armazenamento do Azure](http://go.microsoft.com/fwlink/?LinkID=822673&clcid=0x409)
 * [Ferramentas de Cliente do Armazenamento do Azure](storage-explorers.md)
 * [Azure SDKs e Ferramentas](https://azure.microsoft.com/tools/)
@@ -203,39 +204,41 @@ O serviço de Importação/Exportação do Azure fornece uma forma de importar o
 * [Azure PowerShell](/powershell/azureps-cmdlets-docs)
 * [Utilitário da Linha de Comandos do AzCopy](http://aka.ms/downloadazcopy)
 
-## <a name="next-steps"></a>Passos Seguintes
+## <a name="next-steps"></a>Passos seguintes
 Para saber mais sobre o Storage do Azure, explore estes recursos:
 
 ### <a name="documentation"></a>Documentação
 * [Documentação do Armazenamento do Azure](https://azure.microsoft.com/documentation/services/storage/)
+* [Criar uma conta de armazenamento](storage-create-storage-account.md)
+* [Introdução ao Storage do Azure em cinco minutos](storage-getting-started-guide.md)
 
-### <a name="for-administrators"></a>Para Administradores
+### <a name="for-administrators"></a>Para administradores
 * [Using Azure PowerShell with Azure Storage (Utilizar o Azure PowerShell com o Armazenamento do Azure)](storage-powershell-guide-full.md)
 * [Utilizar a CLI do Azure com o Armazenamento do Azure](storage-azure-cli.md)
 
-### <a name="for-net-developers"></a>Para Programadores do .NET
+### <a name="for-net-developers"></a>Para programadores do .NET
 * [Introdução ao armazenamento de Blobs do Azure através do .NET](storage-dotnet-how-to-use-blobs.md)
 * [Introdução ao armazenamento de Tabelas do Azure através do .NET](storage-dotnet-how-to-use-tables.md)
 * [Introdução ao Armazenamento de filas do Azure através do .NET](storage-dotnet-how-to-use-queues.md)
 * [Introdução ao Armazenamento de Ficheiros do Azure no Windows](storage-dotnet-how-to-use-files.md)
 
-### <a name="for-javaandroid-developers"></a>Para Programadores de Java/Android
+### <a name="for-javaandroid-developers"></a>Para orogramadores de Java/Android
 * [Como utilizar o Armazenamento de blobs do Java](storage-java-how-to-use-blob-storage.md)
 * [Como utilizar o Armazenamento de tabelas do Java](storage-java-how-to-use-table-storage.md)
 * [Como utilizar o Armazenamento de filas do Java](storage-java-how-to-use-queue-storage.md)
 * [Como utilizar o Armazenamento de ficheiros do Java](storage-java-how-to-use-file-storage.md)
 
-### <a name="for-nodejs-developers"></a>Para Programadores de Node.js
+### <a name="for-nodejs-developers"></a>Para programadores de Node.js
 * [Como utilizar o Armazenamento de blobs do Node.js](storage-nodejs-how-to-use-blob-storage.md)
 * [Como utilizar o Armazenamento de tabelas do Node.js](storage-nodejs-how-to-use-table-storage.md)
 * [Como utilizar o Armazenamento de filas do Node.js](storage-nodejs-how-to-use-queues.md)
 
-### <a name="for-php-developers"></a>Para Programadores de PHP
+### <a name="for-php-developers"></a>Para programadores de PHP
 * [Como utilizar o Armazenamento de blobs do PHP](storage-php-how-to-use-blobs.md)
 * [Como utilizar o Armazenamento de tabelas do PHP](storage-php-how-to-use-table-storage.md)
 * [Como utilizar o Armazenamento de filas do PHP](storage-php-how-to-use-queues.md)
 
-### <a name="for-ruby-developers"></a>Para Programadores de Ruby
+### <a name="for-ruby-developers"></a>Para programadores de Ruby
 * [Como utilizar o Armazenamento de blobs do Ruby](storage-ruby-how-to-use-blob-storage.md)
 * [Como utilizar o Armazenamento de tabelas do Ruby](storage-ruby-how-to-use-table-storage.md)
 * [Como utilizar o Armazenamento de filas do Ruby](storage-ruby-how-to-use-queue-storage.md)
@@ -246,12 +249,8 @@ Para saber mais sobre o Storage do Azure, explore estes recursos:
 * [Como utilizar o Armazenamento de filas do Python](storage-python-how-to-use-queue-storage.md)
 * [Como utilizar o Armazenamento de ficheiros do Python](storage-python-how-to-use-file-storage.md)
 
-## <a name="next-steps"></a>Passos seguintes
-
-* [Criar uma conta de armazenamento](storage-create-storage-account.md)
-* [Introdução ao Storage do Azure em cinco minutos](storage-getting-started-guide.md)
 
 
-<!--HONumber=Dec16_HO2-->
+<!--HONumber=Feb17_HO1-->
 
 

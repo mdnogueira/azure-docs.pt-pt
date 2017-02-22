@@ -16,8 +16,8 @@ ms.tgt_pltfrm: na
 ms.date: 08/29/2016
 ms.author: heidist
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 2a0f4c9c5942ee75b9ca4f3924198e8a8ad8ccc7
+ms.sourcegitcommit: c98251147bca323d31213a102f607e995b37e0ec
+ms.openlocfilehash: c2bf44dc23a3b330994e51317b6b021fab6eef1f
 
 
 ---
@@ -77,7 +77,7 @@ Um índice preliminar, normalmente, é inferido do conjunto de dados. Adicionar,
 4. Clique no separador **Analisador** se pretende especificar um analisador de idioma ao nível do campo. Apenas podem ser especificados, de momento, analisadores de idiomas. Ao utilizar um analisador personalizado ou um analisador que não seja de idioma como Palavra-chave, Padrão e assim sucessivamente, necessitará um código.
    
    * Clique em **Pesquisável** para designar a pesquisa em texto completo no campo e ativar a lista pendente do Analisador.
-   * Escolha o analisador que pretende. Consulte o artigo [Criar um índice para documentos em vários idiomas](search-language-support.md) para obter detalhes.
+   * Escolha o analisador que pretende. Veja [Create an index for documents in multiple languages (Criar um índice para documentos em vários idiomas)](search-language-support.md) para obter detalhes.
 5. Clique em **Sugestor** par ativar as sugestões de consulta de escrita antecipada nos campos selecionados.
 
 ## <a name="import-your-data"></a>Importar dados
@@ -93,11 +93,17 @@ No Azure Search, as atualizações estruturais de um índice irão exigir uma re
 
 As edições que não requerem uma reconstrução incluem a adição de um novo campo, alteração dos perfis de classificação, alteração dos sugestores ou alteração dos analisadores de idiomas. Para obter mais informações, veja [Update Index (Atualizar Índice)](https://msdn.microsoft.com/library/azure/dn800964.aspx).
 
-## <a name="next-step"></a>Passo seguinte
+## <a name="query-an-index-using-search-explorer"></a>Consultar índices com o Explorador de Pesquisas
+
+O portal inclui o **Explorador de Pesquisas**, para que possa consultar índices sem ter de escrever código. Pode utilizar o Explorador de Pesquisas em qualquer índice.
+
+A experiência de pesquisa baseia-se em predefinições, como a [sintaxe simples](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search) e a predefinição [parâmetro de consulta searchMode (https://docs.microsoft.com/rest/api/searchservice/search-documents). Os resultados são devolvidos em JSON, de modo a que possa inspecionar todo o documento.
+
+## <a name="next-steps"></a>Passos seguintes
 Reveja estas ligações para saber mais sobre indexadores:
 
 * [Indexação da Base de Dados SQL do Azure](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
-* [Indexação do DocumentDB](../documentdb/documentdb-search-indexer.md)
+* [Indexação do DocumentDB](search-howto-index-documentdb.md)
 * [Indexação do Armazenamento de Blobs (pré-visualização)](search-howto-indexing-azure-blob-storage.md)
 * [Indexação do Armazenamento de Tabelas (pré-visualização)](search-howto-indexing-azure-tables.md)
 
@@ -107,6 +113,6 @@ Reveja estas ligações para saber mais sobre indexadores:
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Jan17_HO3-->
 
 

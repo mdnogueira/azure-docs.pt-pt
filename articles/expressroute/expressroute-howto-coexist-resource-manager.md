@@ -14,14 +14,14 @@ ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/10/2016
-ms.author: charleywen
+ms.author: charwen
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 44f6761b3c3680af923f2a3b16671ca19672e281
+ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
+ms.openlocfilehash: 68ad5679a2a6fcb7cfca25410af3f2f113490bdc
 
 
 ---
-# <a name="configure-expressroute-and-sitetosite-coexisting-connections-for-the-resource-manager-deployment-model"></a>Configurar ligações ExpressRoute e de Site a Site coexistentes para o modelo de implementação Resource Manager
+# <a name="configure-expressroute-and-site-to-site-coexisting-connections-for-the-resource-manager-deployment-model"></a>Configurar ligações ExpressRoute e de Site a Site coexistentes para o modelo de implementação Resource Manager
 > [!div class="op_single_selector"]
 > * [PowerShell – Resource Manager](expressroute-howto-coexist-resource-manager.md)
 > * [PowerShell – Clássica](expressroute-howto-coexist-classic.md)
@@ -47,7 +47,7 @@ A capacidade de configurar o ExpressRoute e a Rede de VPNs tem várias vantagens
 * **O gateway do ExpressRoute tem de ser configurado primeiro.** Tem de criar primeiro o Gateway do ExpressRoute antes de adicionar o Gateway de Rede de VPNs.
 
 ## <a name="configuration-designs"></a>Estruturas de configuração
-### <a name="configure-a-sitetosite-vpn-as-a-failover-path-for-expressroute"></a>Configurar uma Rede de VPNs como um caminho de ativação pós-falha para o ExpressRoute
+### <a name="configure-a-site-to-site-vpn-as-a-failover-path-for-expressroute"></a>Configurar uma Rede de VPNs como um caminho de ativação pós-falha para o ExpressRoute
 Pode configurar uma ligação de Rede de VPNs como uma cópia de segurança para o ExpressRoute. Isto aplica-se apenas às redes virtuais ligadas ao caminho de peering privado do Azure. Não existe qualquer solução de ativação pós-falha baseada em VPN para os serviços acessíveis através dos peerings público do Azure e da Microsoft. O circuito ExpressRoute é sempre a ligação primária. Os dados percorrerão o caminho da Rede de VPNs apenas se o circuito ExpressRoute falhar.
 
 > [!NOTE]
@@ -57,7 +57,7 @@ Pode configurar uma ligação de Rede de VPNs como uma cópia de segurança para
 
 ![Coexistir](media/expressroute-howto-coexist-resource-manager/scenario1.jpg)
 
-### <a name="configure-a-sitetosite-vpn-to-connect-to-sites-not-connected-through-expressroute"></a>Configurar uma Rede de VPNs para se ligar a sites não ligados através do ExpressRoute
+### <a name="configure-a-site-to-site-vpn-to-connect-to-sites-not-connected-through-expressroute"></a>Configurar uma Rede de VPNs para se ligar a sites não ligados através do ExpressRoute
 Pode configurar a sua rede para um local no qual alguns sites se ligam diretamente ao Azure através da Rede de VPNs e alguns sites estabelecem ligação através do ExpressRoute. 
 
 ![Coexistir](media/expressroute-howto-coexist-resource-manager/scenario2.jpg)
@@ -82,7 +82,7 @@ Existem dois conjuntos diferentes de procedimentos à sua escolha para configura
 ## <a name="a-namenewato-create-a-new-virtual-network-and-coexisting-connections"></a><a name="new"></a>Para criar uma nova rede virtual e ligações coexistentes
 Este procedimento irá explicar-lhe como criar uma VNet e criar ligações coexistentes ExpressRoute e de Rede de VPNs.
 
-1. Terá de instalar a versão mais recente dos cmdlets do Azure PowerShell. Veja [Como instalar e configurar o Azure PowerShell](../powershell-install-configure.md) para obter mais informações sobre como instalar os cmdlets PowerShell. Tenha em atenção que os cmdlets que irá utilizar para esta configuração podem ser ligeiramente diferentes do que poderá estar familiarizado. Confirme que utiliza os cmdlets especificados nestas instruções.
+1. Terá de instalar a versão mais recente dos cmdlets do Azure PowerShell. Veja [Como instalar e configurar o Azure PowerShell](/powershell/azureps-cmdlets-docs) para obter mais informações sobre como instalar os cmdlets PowerShell. Tenha em atenção que os cmdlets que irá utilizar para esta configuração podem ser ligeiramente diferentes do que poderá estar familiarizado. Confirme que utiliza os cmdlets especificados nestas instruções.
 2. Inicie a sessão na sua conta e configure o ambiente.
    
         login-AzureRmAccount
@@ -160,7 +160,7 @@ Se a sub-rede do gateway é /27 ou superior e a rede virtual está ligada atrav�
 > 
 > 
 
-1. Terá de instalar a versão mais recente dos cmdlets do Azure PowerShell. Veja [Como instalar e configurar o Azure PowerShell](../powershell-install-configure.md) para obter mais informações sobre como instalar os cmdlets PowerShell. Tenha em atenção que os cmdlets que irá utilizar para esta configuração podem ser ligeiramente diferentes do que poderá estar familiarizado. Confirme que utiliza os cmdlets especificados nestas instruções. 
+1. Terá de instalar a versão mais recente dos cmdlets do Azure PowerShell. Veja [Como instalar e configurar o Azure PowerShell](/powershell/azureps-cmdlets-docs) para obter mais informações sobre como instalar os cmdlets PowerShell. Tenha em atenção que os cmdlets que irá utilizar para esta configuração podem ser ligeiramente diferentes do que poderá estar familiarizado. Confirme que utiliza os cmdlets especificados nestas instruções. 
 2. Elimine o gateway ExpressRoute ou de Rede de VPNs existente. 
    
         Remove-AzureRmVirtualNetworkGateway -Name <yourgatewayname> -ResourceGroupName <yourresourcegroup>
@@ -183,7 +183,7 @@ Se a sub-rede do gateway é /27 ou superior e a rede virtual está ligada atrav�
         $vnet = Set-AzureRmVirtualNetwork -VirtualNetwork $vnet
 5. Neste momento, terá uma VNet sem quaisquer gateways. Para criar gateways novos e concluir as suas ligações, pode continuar com [Passo 4 – Criar um gateway ExpressRoute](#gw), presente no conjunto de passos anterior.
 
-## <a name="to-add-pointtosite-configuration-to-the-vpn-gateway"></a>Para adicionar uma configuração ponto a site para o gateway de VPN
+## <a name="to-add-point-to-site-configuration-to-the-vpn-gateway"></a>Para adicionar uma configuração ponto a site para o gateway de VPN
 Pode seguir os passos abaixo para adicionar a configuração Ponto a Site para o seu gateway de VPN numa configuração de coexistência.
 
 1. Adicione um conjunto de endereços de Cliente de VPN. 
@@ -212,6 +212,6 @@ Para obter mais informações acerca do ExpressRoute, veja as [FAQs do ExpressRo
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 

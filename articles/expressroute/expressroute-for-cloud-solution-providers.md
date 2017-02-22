@@ -15,8 +15,8 @@ ms.workload: infrastructure-services
 ms.date: 10/10/2016
 ms.author: richcar
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 8f2c2253132d2c0ca8eefd975af2ac23f196afd0
+ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
+ms.openlocfilehash: 26c9420c9b8ba1aff6b016c01b8ed51853c91506
 
 
 ---
@@ -38,7 +38,7 @@ A Microsoft fornece CSPs com APIs para gerir as subscrições de cliente do Azur
 ## <a name="microsoft-azure-resource-management"></a>Gestão dos recursos do Microsoft Azure
 Consoante o contrato celebrado com o seu cliente, este determinará a forma como a subscrição será gerida. O CSP pode gerir diretamente a criação e manutenção de recursos ou o cliente pode manter o controlo da subscrição do Microsoft Azure e criar os recursos Azure à medida que são necessários. Se o seu cliente está a gerir a criação de recursos na respetiva subscrição do Microsoft Azure, será utilizado um de dois modelos: modelo “Connect-through” ou modelo “Direct-To”. Estes modelos são descritos em detalhe nas secções seguintes.  
 
-### <a name="connectthrough-model"></a>Modelo Connect-through
+### <a name="connect-through-model"></a>Modelo Connect-through
 ![texto alternativo](./media/expressroute-for-cloud-solution-providers/connect-through.png)  
 
 No modelo connect-through, o CSP cria uma ligação direta entre o seu centro de dados e a subscrição do Azure do seu cliente. A ligação direta é estabelecida com o ExpressRoute, estabelecendo uma ligação entre a sua rede e o Azure. Em seguida, o cliente liga-se à sua rede. Este cenário requer que o cliente passe através da rede do CSP para aceder aos serviços do Azure. 
@@ -49,7 +49,7 @@ Para o CSP gerir os serviços do Azure, pressupõe-se que este tem um arquivo de
 
 ![texto alternativo](./media/expressroute-for-cloud-solution-providers/connect-through-model.png)
 
-### <a name="connectto-model"></a>Modelo Connect-to
+### <a name="connect-to-model"></a>Modelo Connect-to
 ![texto alternativo](./media/expressroute-for-cloud-solution-providers/connect-to.png)
 
 No modelo Connect-To, o fornecedor de serviços cria uma ligação direta entre o centro de dados do seu cliente e a subscrição do Azure aprovisionado pelo CSP com o ExpressRoute na rede do cliente (cliente).
@@ -82,10 +82,10 @@ O ExpressRoute suporta a ligação de várias vNets para um único circuito Expr
 ## <a name="configuring-expressroute"></a>Configurar o ExpressRoute
 O ExpressRoute pode ser configurado para suportar três tipos de tráfego ([domínios de encaminhamento](#ExpressRoute-routing-domains)) num circuito ExpressRoute único. Este tráfego é segregado para o peering da Microsoft, peering público e peering privado do Azure. Pode escolher um ou todos os tipos de tráfego a serem enviados através de um circuito ExpressRoute único ou utilizar vários circuitos ExpressRoute, dependendo do tamanho do circuito ExpressRoute e do isolamento necessários pelo seu cliente. A postura de segurança do seu cliente pode não permitir a passagem de tráfego público e privado no mesmo circuito.
 
-### <a name="connectthrough-model"></a>Modelo Connect-through
+### <a name="connect-through-model"></a>Modelo Connect-through
 Numa configuração connect-through, será responsável por todos os apoios de funcionamento de rede para ligar os seus recursos do centro de dados dos clientes às subscrições alojadas no Azure. Cada um dos seus clientes que pretenda utilizar as capacidades do Azure irá necessitar da sua própria ligação do ExpressRoute, que será gerida pela si. Depois, utilizará os mesmos métodos que o cliente utilizaria para obter o circuito ExpressRoute. Deve seguir os mesmos passos descritos no artigo [Fluxos de trabalho do ExpressRoute](expressroute-workflows.md) para o aprovisionamento do circuito e estados de circuitos. Em seguida, irá configurar as rotas do Protocolo BGP (Border Gateway Protocol) para controlar o tráfego que flui entre a rede no local e a Azure vNet.
 
-### <a name="connectto-model"></a>Modelo Connect-to
+### <a name="connect-to-model"></a>Modelo Connect-to
 Numa configuração connect-to, o seu cliente já tem uma ligação existente para o Azure ou iniciará uma ligação ao fornecedor de serviços de Internet ligando o ExpressRoute a partir do respetivo centro de dados do seu cliente diretamente para o Azure, ao invés do seu centro de dados. Para iniciar o processo de aprovisionamento, o cliente seguirá os passos, conforme descrito no modelo Connect-Through, acima. Depois de o circuito ter sido estabelecido, o seu cliente terá de configurar os routers no local para conseguir aceder à sua rede e às Azure vNets.
 
 Pode ajudá-lo com a configuração da ligação e das rotas para permitir que os recursos no(s) seu(s) centro(s) de dados comuniquem com os recursos do cliente no seu centro de dados ou com os recursos alojados no Azure.
@@ -116,7 +116,7 @@ A tabela de rotas predefinidas inclui as rotas seguintes:
 
 ![texto alternativo](./media/expressroute-for-cloud-solution-providers/default-routing.png)  
 
-### <a name="userdefined-routing-udr"></a>Encaminhamento definido pelo utilizador (UDR)
+### <a name="user-defined-routing-udr"></a>Encaminhamento definido pelo utilizador (UDR)
 As rotas definidas pelo utilizador permitem o controlo de tráfego de saída da sub-rede atribuída a outras sub-redes na rede virtual ou ao longo de um dos outros gateways predefinidos (ExpressRoute; Internet ou VPN). A tabela de encaminhamento do sistema predefinido pode ser substituída por uma tabela de encaminhamento definida pelo utilizador que substitui a tabela de encaminhamento predefinido com rotas personalizadas. Com o encaminhamento definido pelo utilizador, os clientes podem criar rotas específicas para aparelhos, tais como firewalls ou aplicações de deteção de intrusões ou bloquear o acesso a sub-redes específicas da sub-rede que aloja a rota definida pelo utilizador. Para obter uma descrição geral das Rotas Definidas pelo Utilizador, veja [aqui](../virtual-network/virtual-networks-udr-overview.md). 
 
 ## <a name="security"></a>Segurança
@@ -141,6 +141,6 @@ Pode encontrar informações adicionais nas seguintes ligações:
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -1,13 +1,25 @@
 ---
+title: "Documentação do Azure Backup - Tutoriais, Referência da API | Microsoft Docs"
+description: "Utilize a documentação do Backup para aprender a efetuar uma cópia de segurança para a cloud. Veja tutoriais e vídeos da aplicação, do Windows server e da máquina virtual do Azure."
+services: backup
+author: carolz
+manager: carolz
 layout: LandingPage
+ms.assetid: 
+ms.service: backup
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: landing-page
+ms.date: 01/23/2017
+ms.author: carolz
 translationtype: Human Translation
-ms.sourcegitcommit: 95b54199c307efea21666c774525a9a539472131
-ms.openlocfilehash: 4c3a00fe82ec903bcd756e8cd2ef940fc10e8af2
+ms.sourcegitcommit: 4d159b2cec70d9491a562f460629d8efa511d695
+ms.openlocfilehash: 29466a465865dc17350eb4aa70a86f9c973b693a
 
 ---
 #<a name="backup-documentation"></a>Documentação do Backup
 
-O Azure Backup é o serviço cloud que pode utilizar para criar cópias de segurança (ou proteger) e restaurar os dados na cloud Microsoft.  O Azure Backup substitui a solução de cópia de segurança no local ou fora das instalações por uma solução baseada na cloud que é fiável, segura e competitiva em termos de custos.  
+Saiba como utilizar o Azure Backup na cloud para proteger os dados de retenção e recuperação a longo prazo. Tutoriais, vídeos e outra documentação mostram-lhe como efetuar a cópia de segurança de dados, aplicações, servidores Windows e máquinas virtuais do Azure.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -132,16 +144,10 @@ O Azure Backup é o serviço cloud que pode utilizar para criar cópias de segur
     </li>
 </ul>
 
-<div class="downloadHolder">
-    <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/backup.pdf">
-        <div class="img"></div>
-        <div class="text">
-Transferir a Documentação do Azure Backup </div>
-    </a>
-</div>
 
 
 
-<!--HONumber=Dec16_HO2-->
+
+<!--HONumber=Feb17_HO2-->
 
 

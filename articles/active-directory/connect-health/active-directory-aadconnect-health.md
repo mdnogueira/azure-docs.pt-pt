@@ -12,11 +12,11 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 10/18/2016
-ms.author: vakarand
+ms.date: 02/06/2017
+ms.author: billmath
 translationtype: Human Translation
-ms.sourcegitcommit: 28b5da6098316f8fbe84966e0dac88f5b7d2cb1d
-ms.openlocfilehash: fbb95696d8b9267d59d04769d3d7f48c29a8e4dd
+ms.sourcegitcommit: c9ebe21acbe06aa25bcadb3b500c34cf89154388
+ms.openlocfilehash: 9abdfa7349bee74b89a23663969904110c730395
 
 
 ---
@@ -63,7 +63,7 @@ O vídeo seguinte apresenta uma descrição geral do Azure AD Connect Health par
 >
 
 ## <a name="azure-ad-connect-health-for-ad-ds-previewactive-directory-aadconnect-health-addsmd"></a>[Azure AD Connect Health para AD DS (pré-visualização)](active-directory-aadconnect-health-adds.md)
-O Azure AD Connect Health para AD DS fornece monitorização para Controladores de Domínio instalado no Windows Server 2008 R2, Windows Server 2012 e Windows Server 2012 R2. Uma instalação do agente de estado de funcionamento de fácil e de baixo custo permite-lhe monitorizar o ambiente AD DS diretamente a partir da nuvem. O Azure AD Connect Health para AD DS fornece o seguinte conjunto de capacidades principais:
+O Azure AD Connect Health para AD DS proporciona monitorização para Controladores de Domínio instalados no Windows Server 2008 R2, no Windows Server 2012, no Windows Server 2012 R2 e no Windows Server 2016. Uma instalação do agente de estado de funcionamento de fácil e de baixo custo permite-lhe monitorizar o ambiente AD DS diretamente a partir da nuvem. O Azure AD Connect Health para AD DS fornece o seguinte conjunto de capacidades principais:
 
 * Alertas de monitorização para detetar quando os controladores de domínio estão em mau estado de funcionamento, em conjunto com as notificações de correio eletrónico para alertas críticos.
 * O dashboard de Controladores de Domínio que fornece uma vista rápida do estado de funcionamento e operacional de controladores de domínio.
@@ -121,6 +121,6 @@ O Portal do Azure AD Connect Health permite a visualização de alertas, a monit
 
 
 
-<!--HONumber=Dec16_HO5-->
+<!--HONumber=Jan17_HO3-->
 
 

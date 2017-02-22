@@ -1,5 +1,5 @@
 ---
-title: "Tutorial do HBase: Introdução aos clusters de HBase no Hadoop baseado em Linux | Microsoft Docs"
+title: "Introdução ao HBase no Azure HDInsight | Microsoft Docs"
 description: "Siga este tutorial de HBase para uma introdução ao HBase do Apache com Hadoop no HDInsight. Criar tabelas a partir da shell de HBase e fazer consultas utilizando o Hive."
 keywords: apache hbase,hbase,hbase shell,tutorial de hbase
 services: hdinsight
@@ -13,20 +13,17 @@ ms.workload: big-data
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 11/23/2016
+ms.date: 02/09/2017
 ms.author: jgao
 translationtype: Human Translation
-ms.sourcegitcommit: 2c7b46521c5da3290af244652b5ac20d4c309d5d
-ms.openlocfilehash: 5ec4b260ce82ec78b614ae442d3f14063ce590b5
+ms.sourcegitcommit: 0a09f1511778623b21a26042a752009ae2208ba6
+ms.openlocfilehash: 415f6f71642726aeb8477f067bd406a57717ff2a
 
 
 ---
-# <a name="hbase-tutorial-get-started-using-apache-hbase-with-linux-based-hadoop-in-hdinsight"></a>Tutorial de HBase: Introdução ao HBase do Apache com Hadoop baseado em Linux no HDInsight
-[!INCLUDE [hbase-selector](../../includes/hdinsight-hbase-selector.md)]
+# <a name="hbase-tutorial-get-started-using-apache-hbase-in-hdinsight"></a>Tutorial de HBase: introdução ao Apache HBase no HDInsight
 
 Saiba como criar um cluster de HBase no HDInsight, criar tabelas de HBase e consultar tabelas utilizando o Hive. Para obter informações gerais do HBase, consulte o artigo [Descrição geral do HBase do HDInsight][hdinsight-hbase-overview].
-
-As informações neste documento são específicas para clusters do HDInsight baseados em Linux. Para obter informações sobre clusters baseados no Windows, utilize o seletor de separador no topo da página para alternar.
 
 [!INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
@@ -45,7 +42,7 @@ O procedimento seguinte utiliza um modelo do Azure Resource Manager para criar u
 
 1. Clique na imagem seguinte para abrir o modelo no portal do Azure. O modelo está localizado num contentor de blob público. 
    
-    <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fhditutorialdata.blob.core.windows.net%2Farmtemplates%2Fcreate-linux-based-hbase-cluster-in-hdinsight.json" target="_blank"><img src="https://acom.azurecomcdn.net/80C57D/cdn/mediahandler/docarticles/dpsmedia-prod/azure.microsoft.com/en-us/documentation/articles/hdinsight-hbase-tutorial-get-started-linux/20160201111850/deploy-to-azure.png" alt="Deploy to Azure"></a>
+    <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fhditutorialdata.blob.core.windows.net%2Farmtemplates%2Fcreate-linux-based-hbase-cluster-in-hdinsight.json" target="_blank"><img src="./media/hdinsight-hbase-tutorial-get-started-linux/deploy-to-azure.png" alt="Deploy to Azure"></a>
 2. No painel **Implementação personalizada**, introduza o seguinte:
    
    * **Subscrição**: selecione a sua subscrição do Azure que será utilizada para criar o cluster.
@@ -143,7 +140,7 @@ Pode criar um ficheiro de texto e carregar o ficheiro para a sua própria conta 
 Pode consultar dados nas tabelas HBase através do Hive. Esta secção cria uma tabela de Hive que mapeia para a tabela HBase e utiliza-a para consultar os dados na tabela HBase.
 
 > [!NOTE]
-> Se o Hive e o HBase estiverem em diferentes cluters no mesmo VNet, deve passar o quórum zookeeper ao invocar a Hive shell:
+> Se o Hive e o HBase estiverem em diferentes clusters no mesmo VNet, deve passar o quórum zookeeper ao invocar a Hive shell:
 >
 >       hive --hiveconf hbase.zookeeper.quorum=zk0-xxxx.xxxxxxxxxxxxxxxxxxxxxxx.cx.internal.cloudapp.net,zk1-xxxx.xxxxxxxxxxxxxxxxxxxxxxx.cx.internal.cloudapp.net,zk2-xxxx.xxxxxxxxxxxxxxxxxxxxxxx.cx.internal.cloudapp.net --hiveconf zookeeper.znode.parent=/hbase-unsecure  
 >
@@ -207,7 +204,7 @@ Pode consultar dados nas tabelas HBase através do Hive. Esta secção cria uma 
         -X PUT "https://<ClusterName>.azurehdinsight.net/hbaserest/Contacts1/false-row-key" \
         -H "Accept: application/json" \
         -H "Content-Type: application/json" \
-        -d "{\"Row\":{\"key\":\"MTAwMA==\",\"Cell\":{\"column\":\"UGVyc29uYWw6TmFtZQ==\", \"$\":\"Sm9obiBEb2xl\"}}}" \
+        -d "{\"Row\":[{\"key\":\"MTAwMA==\",\"Cell\": [{\"column\":\"UGVyc29uYWw6TmFtZQ==\", \"$\":\"Sm9obiBEb2xl\"}]}]}" \
         -v
    
     Terá de codificar em base64 os valores especificados no comutador -d.  No exemplo:
@@ -286,6 +283,6 @@ Para saber mais, consulte:
 
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Feb17_HO2-->
 
 

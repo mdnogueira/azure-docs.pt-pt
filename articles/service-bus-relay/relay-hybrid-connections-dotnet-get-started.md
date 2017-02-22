@@ -1,5 +1,5 @@
 ---
-title: "Introdução às Ligações Híbridas de Reencaminhamento | Microsoft Docs"
+title: "Introdução às Ligações Híbridas de Reencaminhamento do Azure | Microsoft Docs"
 description: "Como escrever uma aplicação de consola C# para Ligações Híbridas"
 services: service-bus-relay
 documentationcenter: .net
@@ -12,24 +12,26 @@ ms.devlang: tbd
 ms.topic: get-started-article
 ms.tgt_pltfrm: dotnet
 ms.workload: na
-ms.date: 10/28/2016
-ms.author: jotaub,sethm
+ms.date: 02/03/2017
+ms.author: jotaub;sethm
 translationtype: Human Translation
-ms.sourcegitcommit: 849d7995e9c74bc929c4f791ae9155ca18ddb77b
-ms.openlocfilehash: 3ab92ba4e5c19d4b713ceb2da30835542f343d68
+ms.sourcegitcommit: 1ee1e7d0c6f239abfda474d51c8d02d5338dabc7
+ms.openlocfilehash: ec8d7cf64786a3347998f243fc7e4f9550fd9f08
 
 
 ---
 # <a name="get-started-with-relay-hybrid-connections"></a>Introdução às Ligações Híbridas de Reencaminhamento
 [!INCLUDE [relay-selector-hybrid-connections](../../includes/relay-selector-hybrid-connections.md)]
 
+Este tutorial disponibiliza uma introdução às [Ligações Híbridas de Reencaminhamento do Azure](relay-what-is-it.md#hybrid-connections) e mostra como criar uma aplicação de cliente que envia mensagens para uma aplicação de serviço de escuta correspondente. 
+
 ## <a name="what-will-be-accomplished"></a>O que será efetuado
-Uma vez que as Ligações Híbridas necessitam de um cliente e um componente de servidor, iremos criar duas aplicações de consola neste tutorial. Eis os passos:
+Uma vez que as Ligações Híbridas necessitam de um cliente e um componente de servidor, este tutorial cria duas aplicações de consola. Os passos são:
 
 1. Criar um espaço de nomes de Reencaminhamento com o Portal do Azure.
 2. Criar uma Ligação Híbrida com o Portal do Azure.
-3. Escrever uma aplicação de consola de servidor para receber mensagens.
-4. Escrever uma aplicação de consola de cliente para enviar mensagens.
+3. Escrever uma aplicação de consola (serviço de escuta) de servidor para receber mensagens.
+4. Escrever uma aplicação de consola (remetente) de cliente para enviar mensagens.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 1. [Visual Studio 2013 ou Visual Studio 2015](http://www.visualstudio.com). Os exemplos neste tutorial utilizam o Visual Studio 2015.
@@ -38,12 +40,12 @@ Uma vez que as Ligações Híbridas necessitam de um cliente e um componente de 
 [!INCLUDE [create-account-note](../../includes/create-account-note.md)]
 
 ## <a name="1-create-a-namespace-using-the-azure-portal"></a>1. Criar um espaço de nomes com o Portal do Azure
-Se já tiver criado um espaço de nomes de Reencaminhamento, avance para a secção [Criar uma Ligação Híbrida com o Portal do Azure](#2-create-a-hybrid-connection-using-the-azure-portal).
+Se já tiver criado um espaço de nomes de Reencaminhamento, avance para a secção [Create a Hybrid Connection using the Azure portal (Criar uma Ligação Híbrida com o Portal do Azure)](#2-create-a-hybrid-connection-using-the-azure-portal).
 
 [!INCLUDE [relay-create-namespace-portal](../../includes/relay-create-namespace-portal.md)]
 
 ## <a name="2-create-a-hybrid-connection-using-the-azure-portal"></a>2. Criar uma Ligação Híbrida com o Portal do Azure
-Se já tiver uma Ligação Híbrida criada, avance para a secção [Criar uma aplicação de servidor](#3-create-a-server-application-listener).
+Se já tiver uma Ligação Híbrida criada, avance para a secção [Create a server application (Criar uma aplicação de servidor)](#3-create-a-server-application-listener).
 
 [!INCLUDE [relay-create-hybrid-connection-portal](../../includes/relay-create-hybrid-connection-portal.md)]
 
@@ -74,6 +76,6 @@ Parabéns, criou uma aplicação de Ligações Híbridas ponto a ponto.
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Feb17_HO1-->
 
 

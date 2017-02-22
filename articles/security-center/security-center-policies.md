@@ -12,11 +12,11 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 01/04/2017
+ms.date: 01/12/2017
 ms.author: yurid
 translationtype: Human Translation
-ms.sourcegitcommit: ec32e3937d08d912c8f96987b0c5ebbf73060258
-ms.openlocfilehash: d9915ecbfca1eab7515b4879ae2b947c59f3ea2b
+ms.sourcegitcommit: fc82aaf3300a8d40fe00a2ae4dc008ccee6e2a66
+ms.openlocfilehash: 66cdc1fbe5afea4790e5c8ef34b4fcf2d7e89d84
 
 
 ---
@@ -50,7 +50,7 @@ Pode configurar políticas de segurança para cada subscrição ou grupo de recu
    > Recomendamos que ative a recolha de dados para cada uma das suas subscrições para garantir que a monitorização de segurança está disponível em todas as VMs novas e existentes. Ativar a recolha de dados instala o agente de monitorização. Se não pretender ativar a recolha de dados agora a partir desta localização, pode fazê-lo mais tarde a partir das vistas de **Estado de Funcionamento** e **Recomendações**. Também pode ativar a recolha de dados apenas para a subscrição ou para VMs selecionadas. Consulte [FAQ do Centro de Segurança do Azure](security-center-faq.md) para saber mais sobre as VMs suportadas.
    > 
    > 
-5. Se a sua conta de armazenamento ainda não estiver configurada, pode ver um aviso semelhante ao mostrado na captura de ecrã seguinte quando abre a **Política de Segurança**:
+5. Se a sua conta de armazenamento ainda não estiver configurada, pode ver um aviso semelhante ao mostrado na captura de ecrã seguinte quando abre a **Política de Segurança**. Se não escolher uma conta de armazenamento para cada região, será criada por si.
    
     ![Seleção de armazenamento](./media/security-center-policies/security-center-policies-fig2.png)
 6. Se vir este aviso, clique nesta opção e selecione a região, conforme mostrado na captura de ecrã seguinte:
@@ -111,6 +111,6 @@ Neste documento, aprendeu a configurar as políticas de segurança no Centro de 
 
 
 
-<!--HONumber=Jan17_HO1-->
+<!--HONumber=Jan17_HO2-->
 
 

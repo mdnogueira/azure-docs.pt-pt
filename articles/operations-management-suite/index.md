@@ -1,23 +1,20 @@
 ---
-title: "Descrição geral do Operations Management Suite (OMS) | Microsoft Docs"
-description: "O Microsoft Operations Management Suite (OMS) é a solução de gestão de TI baseada na nuvem da Microsoft que o ajuda a gerir e a proteger a sua infraestrutura no local e na nuvem.  Este artigo identifica os diferentes serviços incluídos no OMS e fornece ligações para o respetivo conteúdo detalhado."
+title: "Documentação do Operations Management Suite (OMS) do Azure - Tutoriais | Microsoft Docs"
+description: "O Microsoft Operations Management Suite (OMS) é a solução de gestão de TI baseada na nuvem da Microsoft que o ajuda a gerir e a proteger a sua infraestrutura no local e na nuvem. Este artigo identifica os diferentes serviços incluídos no OMS e fornece ligações para o respetivo conteúdo detalhado."
 services: operations-management-suite
-documentationcenter: 
-author: bwren
-manager: jwhit
-editor: tysonn
-ms.assetid: 9dc437b9-e83c-45da-917c-cb4f4d8d6333
+author: carolz
+manager: carolz
+layout: LandingPage
+ms.assetid: 
 ms.service: operations-management-suite
-ms.devlang: na
-ms.topic: get-started-article
 ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 10/24/2016
-ms.author: bwren
+ms.devlang: na
+ms.topic: landing-page
+ms.date: 01/23/2017
+ms.author: carolz
 translationtype: Human Translation
-ms.sourcegitcommit: 4f14a461b842649de977d2c4c80edfc197e15657
-ms.openlocfilehash: 14274c7d94213681b3779b97a44296e6eaf90be9
-
+ms.sourcegitcommit: ccfbd45def1ecf036a2464f560aa89817c37b419
+ms.openlocfilehash: 54b3ce2c8c3966ee36350fed71bdc48aa5bffa63
 
 ---
 # <a name="what-is-operations-management-suite-oms"></a>O que é o Operations Management Suite (OMS)?
@@ -32,7 +29,7 @@ O [Log Analytics](http://azure.microsoft.com/documentation/services/log-analytic
 
 Pode adicionar facilmente soluções ao Log Analytics que define os dados que vão ser recolhidos e a lógica para a respetiva análise.  As soluções podem incluir funcionalidades adicionais que são entregues automaticamente a agentes com uma configuração mínima ou sem configuração.  Além de utilizar as ferramentas de análise fornecidas por soluções individuais, pode efetuar pesquisas personalizadas em todo o conjunto de dados para correlacionar dados entre sistemas e aplicações.  
 
-## <a name="automation-controlmediaoperations-management-suite-overviewicon-automation-controlpng-automation-control"></a>![Automatização e controlo](media/operations-management-suite-overview/icon-automation-control.png) Automatização e controlo
+## <a name="automation--controlmediaoperations-management-suite-overviewicon-automation-controlpng-automation--control"></a>![Automatização e controlo](media/operations-management-suite-overview/icon-automation-control.png) Automatização e controlo
 A Automatização do Azure automatiza processos administrativos com [runbooks](../automation/automation-runbook-types.md) que são baseados no PowerShell e executados na nuvem do Azure.  Os runbooks podem aceder a qualquer produto ou serviço que pode ser gerido com o PowerShell, incluindo recursos noutras nuvens, tais como serviços do Amazon Web (AWS).  Os runbooks podem ser também executados no seu centro de dados local para gerir recursos locais.
 
 A Automatização do Azure fornece gestão de configuração com o [PowerShell DSC](../automation/automation-dsc-overview.md).  Pode criar e gerir recursos de DSC alojados no Azure e aplicá-los em sistemas de nuvem e no local para definir e aplicar automaticamente a respetiva configuração.
@@ -58,6 +55,6 @@ Segurança e Conformidade ajuda-o a identificar, avaliar e mitigar os riscos de 
 
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Feb17_HO2-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: Service Bus do Azure | Microsoft Docs
+title: "Descrição geral dos princípios básicos do Azure Service Bus | Microsoft Docs"
 description: "Uma introdução à utilização do Service Bus para ligar aplicações Azure com outros programas de software."
 services: service-bus-messaging
 documentationcenter: .net
@@ -12,11 +12,11 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 08/31/2016
+ms.date: 01/10/2017
 ms.author: sethm
 translationtype: Human Translation
-ms.sourcegitcommit: 9ace119de3676bcda45d524961ebea27ab093415
-ms.openlocfilehash: 57a168e6c595eb76851bf14d19f2949d5693b08d
+ms.sourcegitcommit: ca66a344ea855f561ead082091c6941540b1839d
+ms.openlocfilehash: 9c7f4b6f6417b6eef90dc5b92eeaca3a004d2955
 
 
 ---
@@ -53,17 +53,17 @@ Suponha que decide ligar duas aplicações com uma fila do Service Bus. A figura
 
 O processo é simples: um remetente envia uma mensagem para uma fila do Service Bus e um recetor apanha essa mensagem mais tarde. Uma fila pode ter apenas um recetor único, como mostra a Figura 2. Ou várias aplicações podem ler a partir da mesma fila. Na última situação, cada mensagem é lida por apenas um recetor. Num serviço multicast, deve utilizar um tópico.
 
-Cada mensagem tem duas partes: um conjunto de propriedades, cada uma delas um par chave/valor, e um corpo de mensagem binário. O modo como são utilizados depende do que a aplicação está a tentar fazer. Por exemplo, uma aplicação que envia uma mensagem sobre uma venda recente pode incluir as propriedades *Vendedor="Ava"* e *Valor= 10000*. O corpo da mensagem poderá conter uma imagem digitalizada do contrato de venda assinado ou, se não existir, pode permanecer vazio.
+Cada mensagem tem duas partes: um conjunto de propriedades, cada uma delas um par chave/valor e um payload de mensagem. O payload pode ser binário, texto ou até mesmo XML. O modo como são utilizados depende do que a aplicação está a tentar fazer. Por exemplo, uma aplicação que envia uma mensagem sobre uma venda recente pode incluir as propriedades *Vendedor="Ava"* e *Valor=&10000;*. O corpo da mensagem poderá conter uma imagem digitalizada do contrato de venda assinado ou, se não existir, pode permanecer vazio.
 
-O recetor pode ler uma mensagem da fila do Service Bus de duas formas diferentes. A primeira opção, denominada *ReceiveAndDelete*, remove a mensagem da fila e elimina-a imediatamente. Isto é simples, mas se há uma falha da parte do recetor antes de concluir o processamento da mensagem, esta será perdida. Dado que é removida da fila, nenhum outro recetor pode aceder à mesma. 
+O recetor pode ler uma mensagem da fila do Service Bus de duas formas diferentes. A primeira opção, denominada *[ReceiveAndDelete](https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging.receivemode)*, remove a mensagem da fila e elimina-a imediatamente. Isto é simples, mas se há uma falha da parte do recetor antes de concluir o processamento da mensagem, esta será perdida. Dado que é removida da fila, nenhum outro recetor pode aceder à mesma. 
 
-A segunda opção, *PeekLock*, foi criada para solucionar este problema. Como acontece com **ReceiveAndDelete**, uma leitura de **PeekLock** remove a mensagem da fila. No entanto, não elimina a mensagem. Neste caso, bloqueia a mensagem, pelo que fica invisível para os outros recetores, em seguida, aguarda que um dos três eventos ocorra:
+A segunda opção, *[PeekLock](https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging.receivemode)*, foi criada para solucionar este problema. Como acontece com **ReceiveAndDelete**, uma leitura de **PeekLock** remove a mensagem da fila. No entanto, não elimina a mensagem. Neste caso, bloqueia a mensagem, pelo que fica invisível para os outros recetores, em seguida, aguarda que um dos três eventos ocorra:
 
-* Se o recetor processar a mensagem com êxito, aquele invoca **Concluir** e a fila elimina a mensagem. 
-* Se o recetor decidir que não é possível processar a mensagem com êxito, aquele invoca **Abandonar**. A fila, em seguida, remove o bloqueio da mensagem e torna-o disponível para outros recetores.
+* Se o recetor processar a mensagem com êxito, invoca **[Concluir()](https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging.brokeredmessage#Microsoft_ServiceBus_Messaging_BrokeredMessage_Complete)** e a fila elimina a mensagem. 
+* Se o recetor decidir que não consegue processar a mensagem com êxito, invoca **[Abandonar()](https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging.brokeredmessage#Microsoft_ServiceBus_Messaging_BrokeredMessage_Abandon)**. A fila, em seguida, remove o bloqueio da mensagem e torna-o disponível para outros recetores.
 * Se o recetor não invocar nenhuma destas opções num período de tempo configurável (60 segundos, por predefinição), a fila assume que o recetor falhou. Neste caso, comporta-se como se o recetor invocasse **Abandonar**, pelo que a mensagem ficaria disponível para outros recetores.
 
-Tenha em atenção o que pode acontecer aqui: a mesma mensagem poderá ser entregue duas vezes, talvez a dois recetores diferentes. As aplicações que utilizam filas do Service Bus devem estar preparadas para tal. Para facilitar a deteção duplicada, cada mensagem dispõe de uma propriedade **MessageID** exclusiva que não se modifica de forma predefinida, independentemente do número de vezes que se leia uma mensagem numa fila. 
+Tenha em atenção o que pode acontecer aqui: a mesma mensagem poderá ser entregue duas vezes, talvez a dois recetores diferentes. As aplicações que utilizam filas do Service Bus devem estar preparadas para tal. Para facilitar a deteção duplicada, cada mensagem dispõe de uma propriedade **[MessageID](https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging.brokeredmessage#Microsoft_ServiceBus_Messaging_BrokeredMessage_MessageId)** exclusiva que não se modifica de forma predefinida, independentemente do número de vezes que se leia uma mensagem numa fila. 
 
 As filas são úteis em determinadas situações. Permitem às aplicações comunicar entre si, mesmo quando ambas não estão a ser executadas ao mesmo tempo, algo que é especialmente útil com lotes e aplicações móveis. Uma fila com vários recetores também proporciona um balanceamento de carga automático, uma vez que as mensagens enviadas são distribuídas por estes recetores.
 
@@ -80,7 +80,7 @@ Um *tópico* é semelhante em muitos aspetos a uma fila. Os remetentes submetem 
 * O subscritor 2 recebe mensagens que contêm a propriedade *Vendedor="Ruby"* e/ou contem a propriedade *Valor* cujo valor é superior a 100.000. Talvez Ruby seja a gestora de vendas, pelo que pretende ver as suas próprias vendas e todas as vendas grandes, independentemente de quem as faz.
 * O subscritor 3 definiu o seu filtro como *True*, o que significa que recebe todas as mensagens. Por exemplo, esta aplicação pode ser responsável por manter um registo de auditoria e, por conseguinte, precisa de ver todas as mensagens.
 
-Como acontece com as filas, os subscritores de um tópico podem ler mensagens através de **ReceiveAndDelete** ou de **PeekLock**. No entanto, ao contrário das filas, uma única mensagem enviada para um tópico pode recebida por várias subscrições. Esta abordagem, geralmente designada por *publicar e subscrever* (ou *pub/sub*), é útil quando várias aplicações estão interessadas nas mesmas mensagens. Se definir o filtro adequado, cada subscritor pode recuperar apenas a parte do fluxo de mensagens que quer ver.
+Como acontece com as filas, os subscritores de um tópico podem ler mensagens através de [**ReceiveAndDelete** ou de **PeekLock**](https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging.receivemode). No entanto, ao contrário das filas, uma única mensagem enviada para um tópico pode recebida por várias subscrições. Esta abordagem, geralmente designada por *publicar e subscrever* (ou *pub/sub*), é útil quando várias aplicações estão interessadas nas mesmas mensagens. Se definir o filtro adequado, cada subscritor pode recuperar apenas a parte do fluxo de mensagens que quer ver.
 
 ## <a name="relays"></a>Reencaminhamentos
 Tanto as filas como os tópicos proporcionam comunicação assíncrona unidirecional através de um mediador. O tráfego flui numa única direção e não existe uma ligação direta entre os remetentes e os recetores. Mas e se não o quiser? Suponha que as suas aplicações precisam de enviar e receber mensagens ou talvez pretenda uma ligação direta entre elas e não precisa de um mediador para armazenar as mensagens. Para solucionar soluções como esta, o Service Bus proporciona *reencaminhamentos*, como mostra a Figura 4.
@@ -119,6 +119,6 @@ Agora que aprendeu as noções básicas sobre o Service Bus do Azure, siga estas
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 
