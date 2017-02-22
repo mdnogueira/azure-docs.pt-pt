@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 07/29/2016
+ms.date: 11/11/2016
 ms.author: magoedte
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 5cd87c888a5e3407da2bad1bc3f2ef10aa75312b
+ms.sourcegitcommit: dd6b2fa2a1ca003578eaee82ef42741b9b1bf2a4
+ms.openlocfilehash: 432321c66fc991136b0b473abd0880876c31887e
 
 
 ---
@@ -28,7 +28,7 @@ Este artigo irá cobrir os vários cenários de autenticação suportados pela A
 ## <a name="automation-account-overview"></a>Descrição Geral da Conta de Automatização
 Quando inicia a Automatização do Azure pela primeira vez, tem de criar pelo menos uma conta de Automatização. As contas de automatização permitem-lhe a isolar os recursos de Automatização (runbooks, recursos, configurações) a partir dos recursos contidos noutras contas de Automatização. Pode utilizar contas de Automatização para separar recursos em ambientes lógicos separados. Por exemplo, poderá utilizar uma conta para o desenvolvimento, outra para a produção e outra para o seu ambiente no local.  Uma conta de automatização do Azure é diferente da sua conta Microsoft ou contas criadas na sua subscrição do Azure.
 
-Os recursos de Automatização para cada conta de Automatização estão associados a uma única região do Azure, mas as contas de Automatização podem gerir os recursos em qualquer região. A razão principal para criar contas de Automatização em diferentes regiões seria se tiver políticas que exigem que os dados e os recursos estejam isolados numa região específica.
+Os recursos de Automatização de cada conta de Automatização estão associados a uma única região do Azure, mas as contas de Automatização podem gerir todos os recursos na sua subscrição. A razão principal para criar contas de Automatização em diferentes regiões seria se tiver políticas que exigem que os dados e os recursos estejam isolados numa região específica.
 
 > [!NOTE]
 > As contas de Automatização e os recursos que contêm que são criados no portal do Azure não podem ser acedidos no portal clássico do Azure. Se pretende gerir estas contas ou os respetivos recursos com o Windows PowerShell, tem de utilizar os módulos do Azure Resource Manager.
@@ -60,6 +60,6 @@ A tabela seguinte resume os métodos de autenticação diferentes para cada ambi
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO3-->
 
 
