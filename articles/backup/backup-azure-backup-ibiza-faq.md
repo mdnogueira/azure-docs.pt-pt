@@ -4,7 +4,7 @@ description: "Esta versão de FAQ suporta o lançamento da Pré-visualização P
 services: backup
 documentationcenter: 
 author: markgalioto
-manager: jwhit
+manager: carmonm
 editor: 
 keywords: "solução de cópia de segurança; serviço de cópia de segurança"
 ms.assetid: 5f55b500-1ee9-4f64-9306-02d6f7a8eded
@@ -14,14 +14,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
 ms.date: 10/21/2016
-ms.author: trinadhk; markgal; jimpark;
+ms.author: markgal;trinadhk;
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: fdc596def57968381ea48dfc5df2269a682c9de7
+ms.sourcegitcommit: e12d533ac5befe020c0aad4aa64ca9ed50349c3d
+ms.openlocfilehash: 271f447a36f42330ed7b8dea78b32c06eebdeda6
 
 
 ---
-# <a name="recovery-services-vault-faq"></a>Cofre dos Serviços de Recuperação – FAQ
+# <a name="recovery-services-vault---faq"></a>Cofre dos Serviços de Recuperação – FAQ
 Este artigo indica informações específicas do cofre dos Serviços de Recuperação e complementa o [FAQ do Azure Backup](backup-azure-backup-faq.md). As FAQ sobre o Backup do Azure fornecem o conjunto completo de perguntas e respostas sobre o serviço de Backup do Azure.  
 
 Pode colocar perguntas sobre o Backup do Azure na secção Disqus deste artigo ou um artigo relacionado. Também pode publicar perguntas sobre o serviço de Backup do Azure no [fórum de debate](https://social.msdn.microsoft.com/forums/azure/home?forum=windowsazureonlinebackup).
@@ -35,7 +35,7 @@ Infelizmente não, neste momento não é possível migrar os conteúdos de um co
 ## <a name="do-recovery-services-vaults-support-classic-vms-or-resource-manager-based-vms-br"></a>Os cofres dos Serviços de Recuperação suportam VMs clássicas ou VMs no Resource Manager? <br/>
 Os cofres dos Serviços de Recuperação suportam ambos os modelos.  Pode efetuar uma cópia de segurança de uma VM criada no portal Clássico (que são VMs em modo clássico) ou de uma VM criada no portal do Azure (que se baseiam no Resource Manager) para um cofre dos Serviços de Recuperação.
 
-## <a name="i-have-backed-up-my-classic-vms-in-backup-vault-now-i-want-to-migrate-my-vms-from-classic-mode-to-resource-manager-mode-how-can-i-backup-them-in-recovery-services-vault"></a>Efetuei cópia de segurança das minhas VMs clássicas no cofre de cópia de segurança. Agora, quero migrar as minhas VMs do modo clássico para o modo do Resource Manager.  Como posso efetuar uma cópia de segurança das mesmas no cofre dos serviços de recuperação?
+## <a name="i-have-backed-up-my-classic-vms-in-backup-vault-now-i-want-to-migrate-my-vms-from-classic-mode-to-resource-manager-mode--how-can-i-backup-them-in-recovery-services-vault"></a>Efetuei cópia de segurança das minhas VMs clássicas no cofre de cópia de segurança. Agora, quero migrar as minhas VMs do modo clássico para o modo do Resource Manager.  Como posso efetuar uma cópia de segurança das mesmas no cofre dos serviços de recuperação?
 As cópias de segurança de VMs clássicas no cofre de cópia de segurança não são automaticamente migradas para o cofre dos serviços de recuperação quando migrar as VMs do modo clássico para o modo do Resource Manager. Siga estes passos para migrar as cópias de segurança de VMs:
 
 1. No cofre de cópia de segurança, aceda ao separador **Itens Protegidos** e selecione a VM. Clique em [Parar Proteção](backup-azure-manage-vms-classic.md#stop-protecting-virtual-machines). Deixe a opção *Eliminar dados de cópia de segurança associados* **desmarcada**.
@@ -44,7 +44,6 @@ As cópias de segurança de VMs clássicas no cofre de cópia de segurança não
 
 
 
-
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Feb17_HO3-->
 
 

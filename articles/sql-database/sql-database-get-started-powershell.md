@@ -17,13 +17,13 @@ ms.workload: data-management
 ms.date: 12/09/2016
 ms.author: sstein
 translationtype: Human Translation
-ms.sourcegitcommit: 2a85b3dc1078bad9e5e2fc0ce0bec7e994b29150
-ms.openlocfilehash: e3a9ba798639a9939d8c3d5330b21715ac4be53d
+ms.sourcegitcommit: 93efe1a08149e7c027830b03a9e426ac5a05b27b
+ms.openlocfilehash: cf626be4914168d3ed3caae7f959a79324487b4e
 
 
 ---
 
-# <a name="sql-database-tutorial-get-started-with-azure-sql-database-servers-databases-and-firewall-rules-using-powershell"></a>Tutorial da Base de Dados SQL: Introdução aos servidores, bases de dados e regras de firewall da Base de Dados SQL do Azure com o PowerShell
+# <a name="tutorial-provision-and-access-an-azure-sql-database-using-powershell"></a>Tutorial: Aprovisionar e aceder a uma base de dados SQL do Azure com o PowerShell
 
 Neste tutorial de introdução irá aprender a utilizar o PowerShell para:
 
@@ -54,7 +54,7 @@ Quando terminar este tutorial, terá uma base de dados de exemplo e uma base de 
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* Precisa de uma conta do Azure. Pode [abrir uma conta do Azure gratuita](/pricing/free-trial/?WT.mc_id=A261C142F) ou [Ativar as vantagens de subscritor do Visual Studio](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F). 
+* Precisa de uma conta do Azure. Pode [abrir uma conta do Azure gratuita](https://azure.microsoft.com/free/) ou [Ativar as vantagens de subscritor do Visual Studio](https://azure.microsoft.com/pricing/member-offers/msdn-benefits/). 
 
 * Tem de iniciar sessão com uma conta que seja membro do proprietário da subscrição ou da função de contribuinte. Para obter mais informações sobre o controlo de acesso baseado em funções (RBAC), veja o artigo [Introdução à gestão de acesso no portal do Azure](../active-directory/role-based-access-control-what-is.md).
 
@@ -566,7 +566,9 @@ Remove-AzureRmResourceGroup -Name {resource-group-name}
 ## <a name="next-steps"></a>Passos seguintes
 Agora que concluiu este tutorial de introdução e criou uma base de dados com alguns dados de exemplo, existem alguns tutoriais adicionais que poderá explorar para cimentar o que aprendeu neste tutorial. 
 
-* Se quiser começar a explorar a segurança da Base de Dados SQL do Azure, veja o artigo [Introdução à segurança](sql-database-control-access-sql-authentication-get-started.md).
+- Para obter um tutorial de introdução à autenticação do SQL Server, veja [SQL authentication and authorization (Autenticação e autorização do SQL)](sql-database-control-access-sql-authentication-get-started.md)
+- Para obter um tutorial de introdução à autenticação do Azure Active Directory, veja [Azure AD authentication and authorization (Autenticação e autorização do Azure AD)](sql-database-control-access-aad-authentication-get-started.md).
+* Se quiser consultar a base de dados de exemplo no portal do Azure, veja [Public preview: Interactive query experience for SQL databases (Pré-visualização pública: Experiência de consultas interativas para bases de dados SQL)](https://azure.microsoft.com/en-us/updates/azure-sql-database-public-preview-t-sql-editor/)
 * Se tem conhecimentos de Excel, saiba como [Ligar a uma base de dados SQL no Azure com o Excel](sql-database-connect-excel.md).
 * Se estiver pronto para iniciar a codificação, escolha a linguagem de programação em [Bibliotecas de ligação para Base de Dados SQL e SQL Server](sql-database-libraries.md).
 * Se quiser mover as suas bases de dados do SQL Server no local para o Azure, veja o artigo [Migrar uma base de dados para a Base de Dados SQL](sql-database-cloud-migrate.md).
@@ -578,6 +580,6 @@ Agora que concluiu este tutorial de introdução e criou uma base de dados com a
 
 
 
-<!--HONumber=Jan17_HO3-->
+<!--HONumber=Feb17_HO3-->
 
 

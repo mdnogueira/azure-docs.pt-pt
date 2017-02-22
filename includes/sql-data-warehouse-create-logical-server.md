@@ -38,7 +38,7 @@
     ![localização do servidor](./media/sql-data-warehouse-create-logical-server/server-location.png)
     
     > [!TIP]
-    > A caixa de verificação **Permitir que os serviços do azure acedam ao servidor** não pode ser alterada neste painel. Pode alterar esta definição no painel da firewall do servidor. Para obter mais informações, veja o artigo [Introdução à segurança](../articles/sql-database/sql-database-get-started-security.md).
+    > A caixa de verificação **Permitir que os serviços do azure acedam ao servidor** não pode ser alterada neste painel. Pode alterar esta definição no painel da firewall do servidor. Para obter mais informações, veja o artigo [Introdução à segurança](../articles/sql-database/sql-database-manage-servers-portal.md).
     >
     
 9. Clique em **Criar**.
@@ -47,6 +47,6 @@
 
 
 
-<!--HONumber=Jan17_HO3-->
+<!--HONumber=Feb17_HO3-->
 
 
