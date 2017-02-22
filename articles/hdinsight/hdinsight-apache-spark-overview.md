@@ -1,5 +1,5 @@
 ---
-title: "Uma descrição geral do Apache Spark no HDInsight | Microsoft Docs"
+title: "Uma descrição geral do Apache Spark no Azure HDInsight | Microsoft Docs"
 description: "Uma introdução ao Apache Spark no HDInsight e cenários nos quais pode ser utilizado o Spark no HDInsight nas aplicações."
 services: hdinsight
 documentationcenter: 
@@ -16,22 +16,23 @@ ms.topic: get-started-article
 ms.date: 01/03/2017
 ms.author: nitinme
 translationtype: Human Translation
-ms.sourcegitcommit: ab9c4bc6e2e68a3522bbc3fe23ea33760f03b620
-ms.openlocfilehash: fe40bc372a63735b0130bcbb115c312fa2e45fa6
+ms.sourcegitcommit: a939a0845d7577185ff32edd542bcb2082543a26
+ms.openlocfilehash: 2cb69f253e1a6d01b412775bbfc37de3423bde0b
 
 
 ---
-# <a name="overview-apache-spark-on-hdinsight-linux"></a>Descrição geral: Apache Spark no HDInsight Linux
+# <a name="overview-apache-spark-on-hdinsight"></a>Descrição geral: Apache Spark no HDInsight
+
 O <a href="http://spark.apache.org/" target="_blank">Apache Spark</a> é uma arquitetura de processamento paralelo open source que suporta o processamento dentro da memória para melhorar o desempenho de aplicações de análise de macrodados. O motor de processamento do Spark foi concebido para ser rápido, fácil de utilizar e efetuar análises sofisticadas. As capacidades de computação dentro da memória do Spark transformam-no numa boa opção para algoritmos iterativos na Machine Learning e nas operações de gráficos. O Spark também é compatível com o Blob Storage do Azure (WASB), pelo que os dados existentes armazenados no Azure podem ser facilmente processados através do Spark.
 
 Quando cria um cluster do Spark no HDInsight, está a criar recursos de computação do Azure com o Spark instalado e configurado. Demora apenas cerca de dez minutos para criar um cluster do Spark no HDInsight. Os dados a serem processados são armazenados no Blob Storage do Azure. Consulte [Use Azure Blob Storage with HDInsight (Utilizar o Armazenamento de Blobs do Azure com o HDInsight)][hdinsight-storage].
 
 ![Apache Spark no Azure HDInsight](./media/hdinsight-apache-spark-overview/hdispark.architecture.png "Apache Spark no Azure HDInsight")
 
-**Pretende começar a utilizar o Apache Spark no Azure HDInsight?** Consulte [Início Rápido: criar um cluster do Spark no HDInsight Linux e executar aplicações de exemplo com o Jupyter](hdinsight-apache-spark-jupyter-spark-sql.md).
+**Pretende começar a utilizar o Apache Spark no Azure HDInsight?** Veja [Início Rápido: criar um cluster do Spark no HDInsight e executar aplicações de exemplo com o Jupyter](hdinsight-apache-spark-jupyter-spark-sql.md).
 
 > [!NOTE]
-> Para obter uma lista de limitações e problemas conhecidos da versão atual, consulte [Problemas conhecidos do Apache Spark no Azure HDInsight (Linux)](hdinsight-apache-spark-jupyter-spark-sql.md).
+> Para obter uma lista de limitações e problemas conhecidos da versão atual, veja [Problemas conhecidos do Apache Spark no Azure HDInsight](hdinsight-apache-spark-jupyter-spark-sql.md).
 > 
 > 
 
@@ -52,7 +53,7 @@ O Azure HDInsight oferece um serviço Spark completamente gerido. As vantagens d
 | Integração com Ferramentas de BI |O Spark para o HDInsight fornece conectores para ferramentas de BI, tais como [Power BI](http://www.powerbi.com/) e [Tableau](http://www.tableau.com/products/desktop), para análise de dados. |
 | Bibliotecas Anaconda pré-carregadas |Os clusters do Spark no HDInsight incluem bibliotecas Anaconda pré-instaladas. O [Anaconda](http://docs.continuum.io/anaconda/) fornece cerca de 200 bibliotecas de Machine Learning, análise de dados, visualização, etc. |
 | Escalabilidade |Embora possa especificar o número de nós do cluster durante a criação, pode querer aumentar ou diminuir o cluster para que coincida à carga de trabalho. Todos os clusters do HDInsight permitem-lhe alterar o número de nós do cluster. Além disso, é possível ignorar os clusters do Spark sem perda de dados, uma vez que todos os dados são armazenados no Blob Storage do Azure. |
-| Suporte 24 horas por dia, 7 dias por semana |O Spark no HDInsight inclui suporte de nível empresarial 24 horas por dia, 7 dias por semana e um SLA de 99,9% de tempo ativo. |
+| Suporte&24; horas por dia,&7; dias por semana |O Spark no HDInsight inclui suporte de nível empresarial 24 horas por dia, 7 dias por semana e um SLA de 99,9% de tempo ativo. |
 
 ## <a name="what-are-the-use-cases-for-spark-on-hdinsight"></a>Quais são os casos de utilização do Spark no HDInsight?
 O Apache Spark no HDInsight possibilita os seguintes cenários-chave.
@@ -115,6 +116,6 @@ Comece por criar um cluster do Spark no HDInsight Linux. Consulte [Início Rápi
 
 
 
-<!--HONumber=Jan17_HO1-->
+<!--HONumber=Jan17_HO4-->
 
 

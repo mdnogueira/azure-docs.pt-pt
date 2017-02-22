@@ -41,7 +41,15 @@
 ### [Linux](storage-how-to-use-files-linux.md)
 ### [Java](storage-java-how-to-use-file-storage.md)
 ### [C++](storage-c-plus-plus-how-to-use-files.md)
-### [python](storage-python-how-to-use-file-storage.md)
+### [Python](storage-python-how-to-use-file-storage.md)
+
+## Armazenamento em Disco 
+### [Criar uma VM com o Resource Manager e o PowerShell](../virtual-machines/virtual-machines-windows-ps-create.md)
+### [Criar uma VM do Linux com o Azure CLI 2.0 (Pré-visualização)](../virtual-machines/virtual-machines-linux-quick-create-cli.md)
+### [Anexar um disco gerido a uma VM do Windows com o PowerShell](../virtual-machines/virtual-machines-windows-attach-disk-ps.md)
+### [Adicionar um disco gerido a uma VM do Linux](../virtual-machines/virtual-machines-linux-add-disk.md)
+### [Criar uma cópia de um VHD armazenado como Disco Gerido com os Instantâneos no Windows](../virtual-machines/virtual-machines-windows-snapshot-copy-managed-disk.md)
+### [Criar uma cópia de um VHD armazenado como Disco Gerido com os Instantâneos no Linux](../virtual-machines/linux/virtual-machines-linux-snapshot-copy-managed-disk.md)
 
 # Procedimento
 ## [Criar uma conta de armazenamento](storage-create-storage-account.md)
@@ -62,13 +70,21 @@
 ### [Descrição geral](/rest/api/storageservices/fileservices/File-Service-Concepts)
 ### [Resolução de problemas de Ficheiros do Azure](storage-troubleshoot-file-connection-problems.md)
 ### [Amostras](https://azure.microsoft.com/documentation/samples/?service=storage&term=file)
-## Utilizar Discos da Máquina Virtual
+## Utilizar discos
+### [Discos e VHDs para VMs do Windows](storage-about-disks-and-vhds-windows.md)
+### [Discos e VHDs para VMs do Linux](storage-about-disks-and-vhds-linux.md)
+### [Descrição Geral dos Managed Disks do Azure](storage-managed-disks-overview.md)
+### [Migrar VMs do Azure para os Managed Disks do Azure](../virtual-machines/virtual-machines-windows-migrate-to-managed-disks.md)
+### [Migrar do AWS e de outras plataformas para os Managed Disks](../virtual-machines/virtual-machines-windows-on-prem-to-azure.md)
+### [Perguntas Mais Frequentes acerca dos Discos de VM do IaaS do Azure ](storage-faq-for-disks.md)
 ### Armazenamento Premium
-#### [Armazenamento de elevado desempenho para cargas de trabalho de VM](storage-premium-storage.md)
-#### [Migrar para o Armazenamento Premium](storage-migration-to-premium-storage.md)
+#### [Armazenamento Premium de elevado desempenho para Discos de VM](storage-premium-storage.md)
 #### [Conceber o elevado desempenho](storage-premium-storage-performance.md)
 ### Armazenamento Standard
-#### [Criar cópias de segurança de discos da VM com instantâneos incrementais](storage-incremental-snapshots.md)
+#### [Armazenamento Standard económico e Discos de VM geridos e não geridos](storage-standard-storage.md)
+### Utilizar discos não geridos
+#### [Migrar para o Armazenamento Premium](storage-migration-to-premium-storage.md)
+#### [Criar cópias de segurança de discos de VM não geridos com instantâneos incrementais](storage-incremental-snapshots.md)
 ## Planear e conceber
 ### [Replicação](storage-redundancy.md)
 ### [Metas de escalabilidade e desempenho](storage-scalability-targets.md)
@@ -155,12 +171,12 @@
 ### [Resource Manager](/dotnet/api/microsoft.azure.management.storage)
 ### [Movimento de dados](https://msdn.microsoft.com/library/azure/mt684990.aspx)
 ### [Blobs, Filas, Tabelas e Ficheiros](https://msdn.microsoft.com/library/azure/mt347887.aspx)
-## [Java](/java/api/)
+## [Java](http://azure.github.io/azure-storage-java/)
 ## [Node.js](http://azure.github.io/azure-storage-node)
 ## [Ruby](http://azure.github.io/azure-storage-ruby)
 ## [Python](https://azure-storage.readthedocs.io/en/latest/index.html)
 ## [C++](http://azure.github.io/azure-storage-cpp)
-## [iOS](https://github.com/Azure/azure-storage-ios)
+## [iOS](http://azure.github.io/azure-storage-ios/)
 ## [Android](http://azure.github.io/azure-storage-android)
 ## REST
 ### [Blobs, Filas, Tabelas e Ficheiros](/rest/api/storageservices/fileservices/azure-storage-services-rest-api-reference)
@@ -205,6 +221,6 @@
 ### [iOS](https://github.com/Azure/azure-storage-ios)
 
 
-<!--HONumber=Jan17_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 

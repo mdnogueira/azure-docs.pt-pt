@@ -43,19 +43,22 @@
 ### [Criar principal de serviço com a CLI do Azure](resource-group-authenticate-service-principal-cli.md)
 ### [Criar principal de serviço com o portal](resource-group-create-service-principal-portal.md)
 ### [API de Autenticação para aceder a subscrições](resource-manager-api-authentication.md)
-### [Definir políticas de gestão](resource-manager-policy.md)
 ### [Bloquear recursos](resource-group-lock-resources.md)
 ### [Considerações de segurança](best-practices-resource-manager-security.md)
+## Definir políticas de recursos
+### [O que são políticas de recursos?](resource-manager-policy.md)
+### [Atribuir e gerir políticas](resource-manager-policy-create-assign.md)
+### [Políticas de etiqueta de recursos](resource-manager-policy-tags.md)
+### [Políticas de armazenamento](resource-manager-policy-storage.md)
+### [Políticas de VM do Linux](../virtual-machines/virtual-machines-linux-policy.md?toc=%2fazure%2fazure-resource-manager%2ftoc.json)
+### [Políticas de VM do Windows](../virtual-machines/virtual-machines-windows-policy.md?toc=%2fazure%2fazure-resource-manager%2ftoc.json)
 ## Auditoria e Resolução de Problemas
 ### [Resolver erros de implementação comuns](resource-manager-common-deployment-errors.md)
 ### [Ver registos de atividades](resource-group-audit.md)
-### [Ver as operações de implementação com o portal](resource-manager-troubleshoot-deployments-portal.md)
-### [Ver as operações de implementação com o PowerShell](resource-manager-troubleshoot-deployments-powershell.md)
-### [Ver as operações de implementação com a CLI do Azure](resource-manager-troubleshoot-deployments-cli.md)
-### [Ver as operações de implementação com a API REST](resource-manager-troubleshoot-deployments-rest.md)
+### [Ver as operações de implementação](resource-manager-deployment-operations.md)
 
 # Referência
-## [PowerShell](/powershell/resourcemanager/azurerm.resources/v3.2.0/azurerm.resources)
+## [PowerShell](/powershell/resourcemanager/azurerm.resources/v3.5.0/azurerm.resources)
 ## [CLI 2.0 do Azure (Pré-visualização)](/cli/azure/resource)
 ## [.NET](/dotnet/api/microsoft.azure.management.resourcemanager)
 ## [Java](/java/api/com.microsoft.azure.management.resources)
@@ -65,11 +68,12 @@
 
 # Recursos
 ## [Limitar pedidos](resource-manager-request-limits.md)
+## [Monitorizar operações assíncronas](resource-manager-async-operations.md)
 ## [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-resource-manager)
 ## [Vídeos](https://azure.microsoft.com/documentation/videos/index/?services=azure-resource-manager)
 ## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=azure-resource-manager)
 
 
-<!--HONumber=Jan17_HO1-->
+<!--HONumber=Feb17_HO3-->
 
 

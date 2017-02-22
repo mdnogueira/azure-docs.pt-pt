@@ -16,8 +16,8 @@ ms.topic: get-started-article
 ms.date: 11/16/2016
 ms.author: mimig
 translationtype: Human Translation
-ms.sourcegitcommit: 2d833a559b72569983340972ba3b905b9e42e61d
-ms.openlocfilehash: cb1fd606fa03650980a02325b82774ce9ef8cf77
+ms.sourcegitcommit: 988c887d2d26ab3ab5b287f803c7d598bd6620e3
+ms.openlocfilehash: 23b1780df8ec01c0692e3afd408ea44fc9773b28
 
 
 ---
@@ -44,7 +44,7 @@ O Azure DocumentDB oferece as principais capacidades e vantagens seguintes:
 * **Níveis de consistência sincronizáveis:** Selecione um dos quatro níveis de consistência bem definidos para alcançar compromissos ótimos entre a consistência e o desempenho. Para consultas e operações de leitura, o DocumentDB oferece quatro níveis de consistência distintos: forte, consistência vinculada, sessão e eventual. Estes níveis de consistência granular e bem definidos permitem-lhe efetuar compromissos sonoros entre a consistência, a disponibilidade e a latência. Saiba mais em [Utilizar níveis de consistência para maximizar a disponibilidade e desempenho no DocumentDB](documentdb-consistency-levels.md).
 * **Completamente geridos:** Eliminar a necessidade de gerir bases de dados e recursos de máquinas. O serviço Microsoft Azure sendo completamente gerido, não precisa de gerir máquinas virtuais, implementar e configurar o software, gerir o dimensionamento, ou lidar com atualizações de camada de dados complexas. É feita uma cópia de segurança automática de cada base de dados, sendo protegida contra falhas regionais. Pode facilmente adicionar uma conta DocumentDB e aprovisionar a capacidade conforme necessário, permitindo-lhe focar-se na sua aplicação em vez de explorar e gerir a sua base de dados. 
 * **Abrir por conceção:** Comece a trabalhar rapidamente utilizando as competências e ferramentas existentes. A programação do DocumentDB é simples, acessível e não requer a utilização de novas ferramentas ou a adesão a extensões personalizadas para o JSON ou o JavaScript. Pode aceder a todas as funcionalidades da base de dados, incluindo CRUD, consulta e processamento de JavaScript através de uma interface RESTful HTTP simples. O DocumentDB engloba formatos, idiomas e normas existentes, oferecendo capacidades de base de dados de elevado valor.
-* **Indexação automática:** por predefinição, o DocumentDB [indexa automaticamente](documentdb-indexing.md) todos os documentos na base de dados e não espera nem exige nenhum esquema ou criação de índices secundários. Não pretende indexar tudo? Não se preocupe, também pode [optar por excluir caminhos nos seus ficheiros JSON](documentdb-indexing-policies.md).
+* **Indexação automática:** por predefinição, o DocumentDB indexa automaticamente todos os documentos na base de dados e não espera nem exige nenhum esquema ou criação de índices secundários. Não pretende indexar tudo? Não se preocupe, também pode [optar por excluir caminhos nos seus ficheiros JSON](documentdb-indexing-policies.md).
 
 ## <a name="a-namedata-managementahow-does-documentdb-manage-data"></a><a name="data-management"></a>Como é que o DocumentDB gere dados?
 O Azure DocumentDB gere dados JSON através de recursos de bases de dados bem definidos. Estes recursos são replicados para elevada disponibilidade, sendo exclusivamente endereçáveis pelo respetivo URI lógico. O DocumentDB oferece um modelo de programação HTTP simples com base na RESTful para todos os recursos. 
@@ -87,6 +87,14 @@ O DocumentDB permite-lhe escrever a lógica da aplicação como programas com no
 
 A execução do JavaScript no DocumentDB é modelada após os conceitos suportados pelos sistemas de base de dados relacional, o JavaScript sendo um substituto moderno para Transact-SQL. Toda a lógica do JavaScript é executada numa transação do ambiente ACID, com o isolamento do instantâneo. Durante a sua execução, se o JavaScript emitir uma exceção, toda a transação será abortada.
 
+## <a name="are-there-any-online-courses-on-documentdb"></a>Existem cursos online no DocumentDB?
+
+Sim, existe um curso da [Microsoft Virtual Academy](https://mva.microsoft.com/en-US/training-courses/azure-documentdb-planetscale-nosql-16847) sobre o Azure DocumentDB. 
+
+>[!VIDEO https://mva.microsoft.com/en-US/training-courses-embed/azure-documentdb-planetscale-nosql-16847]
+>
+>
+
 ## <a name="next-steps"></a>Passos seguintes
 Já tem uma conta do Azure? Então, pode começar a utilizar o DocumentDB no [Portal do Azure](https://portal.azure.com/#gallery/Microsoft.DocumentDB), [criando uma conta de base de dados DocumentDB](documentdb-create-account.md).
 
@@ -103,6 +111,6 @@ Em seguida, quando estiver pronto para saber mais, aceda ao nosso [percurso de a
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Feb17_HO1-->
 
 

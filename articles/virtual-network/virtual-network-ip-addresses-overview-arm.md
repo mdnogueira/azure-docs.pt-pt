@@ -1,5 +1,5 @@
 ---
-title: "Endereços IP | Microsoft Docs"
+title: "Tipos de endereços IP no Azure | Microsoft Docs"
 description: "Saiba mais sobre os endereços IP públicos e privados no Azure."
 services: virtual-network
 documentationcenter: na
@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 04/27/2016
 ms.author: jdial
 translationtype: Human Translation
-ms.sourcegitcommit: 6e96471c4f61e1ebe15c23f87ac646001d8e30ee
-ms.openlocfilehash: 38dc72d7248584006a478413b5da9a6b230e6b89
+ms.sourcegitcommit: 3de0b167d0ad32de17093caf7e66a6d08f5c1c61
+ms.openlocfilehash: 762b048056752abd24328433ceb57de492dbf884
 
 
 ---
-# <a name="ip-addresses-in-azure"></a>Endereços IP no Azure
+# <a name="ip-address-types-and-allocation-methods-in-azure"></a>Tipos de endereços IP e métodos de alocação no Azure
 Pode atribuir endereços IP a recursos do Azure para comunicar com outros recursos do Azure, a rede no local e a Internet. Existem dois tipos de endereços IP que pode utilizar no Azure:
 
 * **Endereços IP públicos**: utilizados para comunicação com a Internet, incluindo os serviços do Azure destinados ao público
@@ -85,7 +85,7 @@ Pode associar um endereço IP público a um [Gateway de Aplicação](../applicat
 ### <a name="at-a-glance"></a>De relance
 A tabela abaixo mostra a propriedade específica através da qual os endereços IP públicos podem ser associados a recursos de nível superior e os métodos de alocação possíveis (dinâmica ou estática) que podem ser utilizados.
 
-| Recurso de nível superior | Associação de endereço IP | Dinâmica | Estática |
+| Recurso de nível superior | Associação de endereço IP | Dinâmica | Estático |
 | --- | --- | --- | --- |
 | Máquina virtual |Interface de rede |Sim |Sim |
 | Load balancer |Configuração de front-end |Sim |Sim |
@@ -124,7 +124,7 @@ Quando cria uma VM, é adicionado aos servidores DNS geridos pelo Azure um mapea
 
 As VMs configuradas com servidores DNS geridos pelo Azure conseguirão resolver os nomes de anfitrião de todas as VMs dentro da VNet para os respetivos endereços IP privados.
 
-### <a name="internal-load-balancers-ilb-application-gateways"></a>Balanceadores de carga internos (ILBs) e gateways de aplicação
+### <a name="internal-load-balancers-ilb--application-gateways"></a>Balanceadores de carga internos (ILBs) e gateways de aplicação
 Pode atribuir um endereço IP privado à configuração de **front-end** de um [Balanceador de Carga Interno do Azure](../load-balancer/load-balancer-internal-overview.md) (ILB) ou de um [Gateway de Aplicação](../application-gateway/application-gateway-introduction.md). Este endereço IP privado funciona como o ponto final interno, que só é acessível pelos recursos dentro da respetiva rede virtual (VNet) e pelas redes remotas ligadas à VNet. Pode atribuir um endereço IP privado dinâmico ou estático à configuração de front-end.
 
 ### <a name="at-a-glance"></a>De relance
@@ -149,6 +149,6 @@ Os endereços IP públicos podem ter custos nominais. Para saber mais sobre os p
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Jan17_HO5-->
 
 

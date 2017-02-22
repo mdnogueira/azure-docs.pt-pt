@@ -1,10 +1,10 @@
 ---
 title: FAQ do Gateway de VPN da Rede Virtual | Microsoft Docs
-description: "FAQ do VPN Gateway. FAQ das ligações em vários locais da Rede Virtual do Microsoft Azure, das ligações da configuração híbrida e dos VPN Gateways"
+description: "FAQ do VPN Gateway. FAQ das ligações em vários locais da Rede Virtual do Microsoft Azure, das ligações de configuração híbrida e dos Gateways de VPN."
 services: vpn-gateway
 documentationcenter: na
-author: yushwang
-manager: rossort
+author: cherylmc
+manager: timlt
 editor: 
 ms.assetid: 6ce36765-250e-444b-bfc7-5f9ec7ce0742
 ms.service: vpn-gateway
@@ -12,11 +12,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 03/10/2016
-ms.author: yushwang
+ms.date: 01/10/2017
+ms.author: cherylmc
 translationtype: Human Translation
-ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
-ms.openlocfilehash: e7d0fa43001268fc4747bbf40d3dc209aa037a67
+ms.sourcegitcommit: 2dda1cd384cf365504811a260872703f2c5c484e
+ms.openlocfilehash: ccb0dc6172b234412558b9175f3872d690d4ea3a
 
 
 ---
@@ -102,7 +102,7 @@ Por predefinição, o computador cliente não restabelece a ligação VPN automa
 Atualmente, o restabelecimento de ligação automático e DDNS não são suportados nas VPNs Ponto a Site.
 
 ### <a name="can-i-have-site-to-site-and-point-to-site-configurations-coexist-for-the-same-virtual-network"></a>Posso ter configurações Site a Site e Ponto a Site coexistentes na mesma rede virtual?
-Sim. Ambas as soluções funcionarão se tiver um tipo de VPN RouteBased para o gateway. No modelo de implementação clássica, precisa de um gateway dinâmico. Não suportamos a ligação Ponto a Site para gateways de VPN de encaminhamento estático ou gateways que utilizem -VpnType PolicyBased.
+Sim. Ambas as soluções funcionarão se tiver um tipo de VPN RouteBased para o gateway. No modelo de implementação clássica, precisa de um gateway dinâmico. Não suportamos a ligação Ponto a Site para gateways de VPN de encaminhamento estático ou gateways que utilizem o cmdlet `-VpnType PolicyBased`.
 
 ### <a name="can-i-configure-a-point-to-site-client-to-connect-to-multiple-virtual-networks-at-the-same-time"></a>Posso configurar um cliente Ponto a Site para ligar a várias redes virtuais ao mesmo tempo?
 Sim, é possível. Mas as redes virtuais não podem ter prefixos IP sobrepostos e os espaços de endereços Ponto a Site não se podem sobrepor nas redes virtuais.
@@ -129,7 +129,7 @@ Sim, o cmdlet do PowerShell e a API Definir Chave Pré-Partilhada podem ser util
 ### <a name="can-i-use-other-authentication-options"></a>Posso utilizar outras opções de autenticação?
 Estamos limitados à utilização de chaves pré-partilhadas (PSK) para a autenticação.
 
-### <a name="what-is-the-gateway-subnet-and-why-is-it-needed"></a>O que é a “sub-rede do gateway” e por que motivo é necessária?
+### <a name="what-is-the-gatewaysubnet-and-why-is-it-needed"></a>O que é a “Sub-rede do Gateway” e por que motivo é necessária?
 Temos um serviço de gateway que executamos para ativar a conetividade em vários locais.
 
 Terá de configurar uma sub-rede do gateway para que a VNet configure um gateway de VPN. Para funcionarem corretamente, todas as sub-redes do gateway têm de ter o nome GatewaySubnet. Não atribua outro nome à sub-rede do gateway. E não implemente VMs ou quaisquer outros elementos na sub-rede do gateway.
@@ -140,7 +140,14 @@ O tamanho mínimo da sub-rede do gateway depende totalmente da configuração qu
 Não.
 
 ### <a name="how-do-i-specify-which-traffic-goes-through-the-vpn-gateway"></a>Como posso especificar que tráfego atravessa o gateway de VPN?
-Se estiver a utilizar o Portal Clássico do Azure, adicione cada intervalo que pretende enviar através do gateway para a rede virtual na página Redes em Redes Locais.
+
+####<a name="resource-manager-deployment-model"></a>Modelo de implementação Resource Manager
+* PowerShell: utilize "AddressPrefix" para especificar o tráfego para o gateway de rede local.
+* Portal do Azure: navegue para o Gateway de rede local > Configuração > Espaço de endereços.
+
+####<a name="classic-deployment-model"></a>Modelo de implementação clássica
+* Portal do Azure: navegue para a rede virtual clássica > ligações VPN > ligações de Redes de VPN > Nome do site local >Site local > Espaço de endereço do cliente. 
+* Portal clássico: adicione cada intervalo que pretende enviar através do gateway para a rede virtual na página Redes, em Redes Locais. 
 
 ### <a name="can-i-configure-forced-tunneling"></a>Posso configurar a Imposição do Túnel?
 Sim. Veja [Configurar imposição do túnel](vpn-gateway-about-forced-tunneling.md).
@@ -167,7 +174,7 @@ Não, ambas as redes virtuais TÊM de utilizar VPNs baseadas na rota (encaminham
 Sim, está protegido pela encriptação IPsec/IKE.
 
 ### <a name="does-vnet-to-vnet-traffic-travel-over-the-azure-backbone"></a>O tráfego VNet a VNet percorre o backbone do Azure?
-Sim.
+Sim, este tráfego atravessa o backbone do Azure. Não é transmitido pela Internet.
 
 ### <a name="how-many-on-premises-sites-and-virtual-networks-can-one-virtual-network-connect-to"></a>A quantos sites no local e redes virtuais pode uma rede virtual ligar?
 Um máximo de dez combinados para gateways de Encaminhamento Dinâmico Básico e Standard; 30 para gateways de VPN de Elevado Desempenho.
@@ -176,7 +183,7 @@ Um máximo de dez combinados para gateways de Encaminhamento Dinâmico Básico e
 Sim, as VPNs Ponto a Site (P2S) podem ser utilizadas com os gateways de VPN a ligar a vários sites no local e a outras redes virtuais.
 
 ### <a name="can-i-configure-multiple-tunnels-between-my-virtual-network-and-my-on-premises-site-using-multi-site-vpn"></a>Posso configurar vários túneis entre a minha rede virtual e o meu site no local através da VPN multilocal?
-Não, os túneis redundantes entre uma rede virtual do Azure e um site no local não são suportados.
+Sim, mas tem de configurar o BGP em ambos os túneis para a mesma localização.
 
 ### <a name="can-there-be-overlapping-address-spaces-among-the-connected-virtual-networks-and-on-premises-local-sites"></a>Pode existir uma sobreposição de espaços de endereços entre as redes virtuais ligadas e os sites locais no local?
 Não. A sobreposição de espaços de endereços fará com que o carregamento do ficheiro de configuração de rede ou a “Criação da Rede Virtual” falhe.
@@ -185,10 +192,12 @@ Não. A sobreposição de espaços de endereços fará com que o carregamento do
 Não, todos os túneis VPN, incluindo VPNs Ponto a Site, partilham o mesmo gateway de VPN do Azure e a largura de banda disponível.
 
 ### <a name="can-i-use-azure-vpn-gateway-to-transit-traffic-between-my-on-premises-sites-or-to-another-virtual-network"></a>Posso utilizar o gateway de VPN do Azure para transitar o tráfego entre os meus sites no local ou para outra rede virtual?
-**Modelo de implementação clássica**<br>
+
+####<a name="resource-manager-deployment-model"></a>Modelo de implementação Resource Manager
+Sim. Veja a secção [BGP](#bgp) para obter mais informações.
+
+####<a name="classic-deployment-model"></a>Modelo de implementação clássica
 É possível transitar o tráfego através do gateway de VPN do Azure com o modelo de implementação clássica, mas tal depende de espaços de endereços definidos estaticamente no ficheiro de configuração de rede. O BGP ainda não é suportado com Redes Virtuais do Azure nem gateways de VPN mediante a utilização do modelo de implementação clássica. Sem o BGP, a definição manual dos espaços de endereços de trânsito é muito propensa a erros e não se recomenda.<br>
-**Modelo de implementação Resource Manager**<br>
-Se estiver a utilizar o modelo de implementação Resource Manager, veja a secção [BGP](#bgp) para obter mais informações.
 
 ### <a name="does-azure-generate-the-same-ipsecike-pre-shared-key-for-all-my-vpn-connections-for-the-same-virtual-network"></a>O Azure gera a mesma chave pré-partilhada IPsec/IKE para todas as minhas ligações VPN para a mesma rede virtual?
 Não, por predefinição, o Azure gera chaves pré-partilhadas diferentes para diferentes ligações VPN. No entanto, pode utilizar o cmdlet do PowerShell ou a API REST Definir Chave de Gateway de VPN para definir o valor da chave que preferir. A chave TEM de ser uma cadeia alfanumérica com um comprimento entre 1 a 128 carateres.
@@ -216,6 +225,6 @@ Pode ver informações adicionais sobre a rede virtual nas [FAQ da Rede Virtual]
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Jan17_HO2-->
 
 

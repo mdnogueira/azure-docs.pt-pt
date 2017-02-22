@@ -78,6 +78,8 @@
 ### [Antes de começar](azure-stack-app-service-before-you-get-started.md)
 ### [Implementar o fornecedor de recursos do Serviço de Aplicações](azure-stack-app-service-deploy.md)
 ### [Adicionar mais funções de trabalho Web](azure-stack-app-service-add-worker-roles.md)
+### [Ativar a publicação FTP](azure-stack-app-service-enable-ftp.md)
+### [Configurar origens de implementação](azure-stack-app-service-configure-deployment-sources.md)
 
 
 # Resolução de problemas
@@ -89,6 +91,6 @@
 ## [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-stack)
 
 
-<!--HONumber=Jan17_HO4-->
+<!--HONumber=Feb17_HO2-->
 
 

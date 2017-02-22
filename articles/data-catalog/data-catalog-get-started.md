@@ -366,6 +366,6 @@ Neste tutorial, explorou as capacidades essenciais do Catálogo de Dados do Azur
 
 
 
-<!--HONumber=Jan17_HO3-->
+<!--HONumber=Feb17_HO3-->
 
 

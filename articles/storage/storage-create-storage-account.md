@@ -1,6 +1,6 @@
 ---
-title: Como criar, gerir ou eliminar uma conta do Storage no Portal do Azure | Microsoft Docs
-description: "Crie uma nova conta do Storage, efetue a gestão das chaves de acesso da conta ou elimine uma conta do Storage no Portal do Azure. Saiba mais sobre contas do Storage standard e premium."
+title: Como criar, gerir ou eliminar uma conta de armazenamento no portal do Azure | Microsoft Docs
+description: "Crie uma nova conta de armazenamento, efetue a gestão das chaves de acesso da conta ou elimine uma conta de armazenamento no portal do Azure. Saiba mais sobre contas do Storage standard e premium."
 services: storage
 documentationcenter: 
 author: robinsh
@@ -12,11 +12,11 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 12/08/2016
+ms.date: 01/23/2017
 ms.author: robinsh
 translationtype: Human Translation
-ms.sourcegitcommit: a762a0e4753b73b11b2c903fa97c67176199b8d9
-ms.openlocfilehash: 5a1845ac32d2e7454a94d6678521b5e74561933a
+ms.sourcegitcommit: 3203358dce9cba95d325ec786e7ba12dd45f5ca1
+ms.openlocfilehash: eb9e9ca5082559ee0e30ea67bf53229d38f81589
 
 
 ---
@@ -162,6 +162,6 @@ Para obter mais informações, consulte a [documentação de Virtual Machines do
 
 
 
-<!--HONumber=Jan17_HO1-->
+<!--HONumber=Jan17_HO4-->
 
 

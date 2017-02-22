@@ -42,14 +42,13 @@
 ### [Personalizar os índices](documentdb-indexing-policies.md)
 ### [Proteger o acesso a dados](documentdb-secure-access-to-data.md)
 ### [Criar cópias de segurança e restauro](documentdb-online-backup-and-restore.md)
-### [Níveis de desempenho](documentdb-performance-levels.md)
+### [Extinguir S1, S2, S3](documentdb-performance-levels.md)
 ### [Unidades de pedidos](documentdb-request-units.md)
 ### CLI do Azure
 #### [Criar uma conta](documentdb-automation-resource-manager-cli.md)
 #### [Adicionar ou remover regiões](documentdb-automation-region-management.md)
 ### [Azure PowerShell](documentdb-manage-account-with-powershell.md)
 ### [Suporte de firewall](documentdb-firewall-support.md)
-### [Sobrecarregar a sua conta](documentdb-supercharge-your-account.md)
 
 ## Programar
 ### [Consulta SQL](documentdb-sql-query.md)
@@ -73,6 +72,7 @@
 ## Utilizar o portal
 ### [Criar uma conta de base de dados](documentdb-create-account.md)
 ### [Criar uma coleção](documentdb-create-collection.md)
+### [Definir débito](documentdb-set-throughput.md)
 ### [Adicionar replicação global](documentdb-portal-global-replication.md)
 ### [Adicionar e editar documentos](documentdb-view-json-document-explorer.md)
 ### [Consultar documentos](documentdb-query-collections-query-explorer.md)
@@ -90,7 +90,7 @@
 ### [Integrar no Azure Search](../search/search-howto-index-documentdb.md)
 ### [Mover dados com o Azure Data Factory](../data-factory/data-factory-azure-documentdb-connector.md)
 ### [Analisar dados em tempo real com o Azure Stream Analytics](../stream-analytics/stream-analytics-define-outputs.md#documentdb)
-### [Receber notificações com as Logic Apps](documentdb-change-notification.md)
+### [Obter o registo HL7 FHIR alterado com o Logic Apps](documentdb-change-feed-hl7-fhir-logic-apps.md)
 ### [Processar dados de sensores em tempo real](../hdinsight/hdinsight-storm-iot-eventhub-documentdb.md)
 ### [Ver os seus dados com o Power BI](documentdb-powerbi-visualize.md)
 ### [Tirar partido do controlador ODBC para visualização de dados](documentdb-nosql-odbc-driver.md)
@@ -126,6 +126,6 @@
 ## [Percurso de aprendizagem](https://azure.microsoft.com/documentation/learning-paths/documentdb/)
 
 
-<!--HONumber=Feb17_HO1-->
+<!--HONumber=Feb17_HO3-->
 
 

@@ -31,7 +31,7 @@ sql-database-service-tiers.md
 | Máximo de eDTUs por base de dados | {10,20,<br>50} | {10,20,<br>50,100} | {10,20,<br>50,100} | {10,20,<br>50,100} | {10,20,<br>50,100} | {10,20,<br>50,100} | 
 ||||||||
 
-### <a name="standard-elastic-pool-limits-continued-"></a>Limites do conjunto elástico standard (continuação) **
+### <a name="standard-elastic-pool-limits-continued"></a>Limites do conjunto elástico standard (continuação) 
 
 | Tamanho do conjunto (eDTUs)  |  **1200** | **1600** | **2000** | **2500** | **3000** |
 |:---|---:|---:|---:| ---: | ---: |
@@ -57,7 +57,7 @@ sql-database-service-tiers.md
 | Máximo de eDTUs por base de dados | {25,50,75,<br>125} | {25,50,75,<br>125,250} | {25,50,75,<br>125,250,500} | {25,50,75,<br>125,250,500,<br>1000} | {25,50,75,<br>125,250,500,<br>1000,1500} |  
 ||||||||
 
-### <a name="premium-elastic-pool-limits-continued-"></a>Limites do conjunto elástico premium (continuação) **
+### <a name="premium-elastic-pool-limits-continued"></a>Limites do conjunto elástico premium (continuação) 
 
 | Tamanho do conjunto (eDTUs)  |  **2000** | **2500** | **3000** | **3500** | **4000** |
 |:---|---:|---:|---:| ---: | ---: | 
@@ -70,11 +70,10 @@ sql-database-service-tiers.md
 | Máximo de eDTUs por base de dados | {25,50,75,<br>125,250,500,<br>1000,1750} | {25,50,75,<br>125,250,500,<br>1000,1750} | {25,50,75,<br>125,250,500,<br>1000,1750} | {25,50,75,<br>125,250,500,<br>1000,1750} | {25,50,75,<br>125,250,500,<br>1000,1750,4000} | 
 ||||||||
 
-\* A base de dados elástica partilha o armazenamento do conjunto, pelo que o armazenamento da base de dados é limitado ao armazenamento mais pequeno do conjunto restante ou ao armazenamento máximo por base de dados
-
-\** O tamanho do conjunto de 3000 eDTU para um conjunto elástico Standard e o tamanho do conjunto de 4000 eDTU para um conjunto elástico Premium estão atualmente apenas disponíveis através do PowerShell e da API REST. Estes tamanhos de conjunto estarão disponíveis no portal do Azure brevemente. 
+\* As bases de dados agrupadas partilham o armazenamento agrupado, pelo o que o armazenamento de base de dados é limitado ao armazenamento agrupado mais pequeno restante ou armazenamento máximo por base de dados. Armazenamento máximo por agrupamento refere-se ao armazenamento máximo dos ficheiros de dados no agrupamento de não inclui o espaço utilizado por ficheiros de registo.
 
 
-<!--HONumber=Dec16_HO1-->
+
+<!--HONumber=Jan17_HO1-->
 
 

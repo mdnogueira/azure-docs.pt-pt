@@ -6,18 +6,17 @@ keywords: acesso condicional baseado no dispositivo, registo de dispositivos, at
 documentationcenter: 
 author: MarkusVi
 manager: femila
-editor: 
 ms.assetid: 8ad0156c-0812-4855-8563-6fbff6194174
 ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 11/11/2016
+ms.date: 01/24/2017
 ms.author: markvi
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: fd2076f22c6048fda83d6da3b069e2805afb453f
+ms.sourcegitcommit: fbabf6f2e1e588ba509c4da84ab1700b1b5d4f87
+ms.openlocfilehash: ad9f9a8c5b370ffa916b9089ef3ce523fe0266c7
 
 
 ---
@@ -48,7 +47,7 @@ Se o seu dispositivo executar uma das seguintes plataformas, consulte as secçõ
 ### <a name="device-is-not-registered"></a>O dispositivo não está registado
 Se o dispositivo não estiver registado no Azure AD e a aplicação estiver protegida por uma política baseada no dispositivo, poderá ver uma página com uma das seguintes mensagens de erro:
 
-![Mensagens “Problemas difíceis de resolver” relativas a dispositivos não registados](./media/active-directory-conditional-access-device-remediation/01.png "Scenario")
+![Mensagens "Problemas difíceis de resolver" relativas a dispositivos não registados](./media/active-directory-conditional-access-device-remediation/01.png "Cenário")
 
 Se o seu dispositivo estiver associado ao domínio do Active Directory na sua organização, tente o seguinte:
 
@@ -122,7 +121,7 @@ O acesso pode ser negado se estiver a tentar aceder a uma aplicação ou serviç
 
 Verá uma página de erro com o seguinte aspeto:
 
-![Mensagem “Problemas difíceis de resolver” relativos a browsers não suportados](./media/active-directory-conditional-access-device-remediation/02.png "Scenario")
+![Mensagem "Problemas difíceis de resolver" relativos a browsers não suportados](./media/active-directory-conditional-access-device-remediation/02.png "Cenário")
 
 A única remediação é utilizar um browser que a aplicação suporte na plataforma do seu dispositivo.
 
@@ -132,6 +131,6 @@ A única remediação é utilizar um browser que a aplicação suporte na plataf
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Jan17_HO4-->
 
 

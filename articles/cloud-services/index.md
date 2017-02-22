@@ -1,13 +1,25 @@
 ---
+title: "Documentação dos Serviços Cloud do Azure - Tutoriais, Referência da API | Microsoft Docs"
+description: "Tutoriais, referências de API e outra documentação mostram-lhe como utilizar os Serviços Cloud para alojar e executar APIs e aplicações em cloud dimensionáveis e de elevada disponibilidade."
+services: cloud-services
+author: carolz
+manager: carolz
 layout: LandingPage
+ms.assetid: 
+ms.service: cloud-services
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: landing-page
+ms.date: 01/23/2017
+ms.author: carolz
 translationtype: Human Translation
-ms.sourcegitcommit: 3752a677351518195773a86c3824078a5aff6d03
-ms.openlocfilehash: 4985185ad8cb4a21e05d4668458e82411cd88ee0
+ms.sourcegitcommit: c8e0cec964b7c72e45564ff776c55be1b06bfbc1
+ms.openlocfilehash: 16bbb9953db91bfe031e5e87e14aac84d32799b3
 
 ---
 # <a name="cloud-services-documentation"></a>Documentação dos Serviços Cloud
 
-Os Serviços Cloud são um exemplo de uma implementação PaaS (Plataforma como Serviço). Foram concebidos para suportar aplicações dimensionáveis, fiáveis e rentáveis do ponto de vista da operação. Com os Serviços Cloud, além da vantagem da virtualização, também tem controlo sobre a máquina virtual para configurar, corrigir e instalar software.  
+Saiba como utilizar os Serviços Cloud para alojar APIs e aplicações em cloud dimensionáveis e de elevada disponibilidade.  Tutoriais, referências de API e outra documentação mostram-lhe como gerir anfitriões de máquina virtual e configurar, corrigir e instalar software.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -115,16 +127,10 @@ Os Serviços Cloud são um exemplo de uma implementação PaaS (Plataforma como 
     </li>
 </ul>
 
-<div class="downloadHolder">
-    <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/cloud-services.pdf">
-        <div class="img"></div>
-        <div class="text">
-Transferir a Documentação dos Serviços Cloud </div>
-    </a>
-</div>
 
 
 
-<!--HONumber=Dec16_HO1-->
+
+<!--HONumber=Feb17_HO2-->
 
 

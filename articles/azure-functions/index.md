@@ -1,13 +1,25 @@
 ---
+title: "Documentação das Funções do Azure - Tutoriais | Microsoft Docs"
+description: "Saiba como desenvolver e implementar funções no idioma que preferir para executar tarefas em segundo plano ou com base numa agenda sem infraestrutura especial."
+services: functions
+author: carolz
+manager: carolz
 layout: LandingPage
+ms.assetid: 
+ms.service: functions
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: landing-page
+ms.date: 01/23/2017
+ms.author: carolz
 translationtype: Human Translation
-ms.sourcegitcommit: 87316969b7849396c6542decde3257774c35c454
-ms.openlocfilehash: dc15cd4e497135ea9ce07d671020af6df49ad3f6
+ms.sourcegitcommit: b490d47b03cd3c7c57c3630fafb95777fffaa3aa
+ms.openlocfilehash: b2f2e067fd6c6c2c34bee167356756721c8fd0cd
 
 ---
 #<a name="azure-functions-documentation"></a>Documentação das Funções do Azure
 
-Funções do Azure é uma solução para uma fácil execução de pequenos blocos de código, ("funções"), na nuvem. É possível escrever o código que necessita para o problema em questão, sem ter de se preocupar com toda a aplicação ou a infraestrutura para executá-la. Também pode desenvolver na linguagem à sua escolha, como C#, F#, Node.js, Python ou PHP.
+Saiba como utilizar funções para desenvolver e implementar pequenas partes do código de idioma da sua escolha e na cloud sem configurar a infraestrutura. Tutoriais, modelos e outra documentação mostram-lhe como criar funções para tarefas que pretende executar num thread ou numa agenda em segundo plano.
 
 <ul class="panelContent cardsFTitle">
    <li>
@@ -103,18 +115,9 @@ Funções do Azure é uma solução para uma fácil execução de pequenos bloco
     </li>
 </ul>
 
----
-
-<div class="downloadHolder">
-    <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/azure-functions.pdf">
-        <div class="img"></div>
-        <div class="text">
-Transferir a Documentação das Funções do Azure </div>
-    </a>
-</div>
 
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Feb17_HO2-->
 
 

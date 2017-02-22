@@ -1,10 +1,10 @@
 ---
-title: Ligar VNets do Azure com o Gateway de VPN e o PowerShell | Microsoft Docs
+title: 'Ligar uma rede virtual do Azure a outra VNet: PowerShell | Microsoft Docs'
 description: "Este artigo explica como ligar redes virtuais entre si através do Azure Resource Manager e do PowerShell."
 services: vpn-gateway
 documentationcenter: na
 author: cherylmc
-manager: carmonm
+manager: timlt
 editor: 
 tags: azure-resource-manager
 ms.assetid: 0683c664-9c03-40a4-b198-a6529bf1ce8b
@@ -13,15 +13,15 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 08/31/2016
+ms.date: 01/23/2017
 ms.author: cherylmc
 translationtype: Human Translation
-ms.sourcegitcommit: 3fe204c09eebf7d254a1bf2bb130e2d3498b6b45
-ms.openlocfilehash: 0f0b2df109d8326e5d15d4955ab4547c90df545b
+ms.sourcegitcommit: eadb1f29da69e7f6fcc2c7c19ba67f4e3072c346
+ms.openlocfilehash: eb21e6cc47da18d2e6fa5cbb00c3b71bf36173c6
 
 
 ---
-# <a name="configure-a-vnet-to-vnet-connection-for-resource-manager-using-powershell"></a>Configurar uma ligação VNet a VNet para o Resource Manager com o PowerShell
+# <a name="configure-a-vnet-to-vnet-connection-using-powershell"></a>Configurar uma ligação VNet a VNet com o Powershell
 > [!div class="op_single_selector"]
 > * [Resource Manager - Portal do Azure](vpn-gateway-howto-vnet-vnet-resource-manager-portal.md)
 > * [Resource Manager – PowerShell](vpn-gateway-vnet-vnet-rm-ps.md)
@@ -36,7 +36,7 @@ Este artigo descreve os passos para criar uma ligação entre VNets no modelo de
 ### <a name="deployment-models-and-methods-for-vnet-to-vnet-connections"></a>Modelos de implementação e métodos para ligações VNet a VNet
 [!INCLUDE [deployment models](../../includes/vpn-gateway-deployment-models-include.md)]
 
-A tabela seguinte mostra os modelos e métodos de implementação atualmente disponíveis para configurações VNet a VNet. Quando estiver disponível um artigo com passos de configuração, criamos uma ligação direta para o mesmo nesta tabela.
+A tabela seguinte mostra os modelos e métodos de implementação atualmente disponíveis para configurações VNet a VNet. Quando estiver disponível um artigo com passos de configuração, criamos uma ligação direta para o mesmo nesta tabela. 
 
 [!INCLUDE [vpn-gateway-table-vnet-vnet](../../includes/vpn-gateway-table-vnet-to-vnet-include.md)]
 
@@ -60,7 +60,7 @@ Poderá pretender ligar redes virtuais pelos seguintes motivos:
   
   * Na mesma região, pode configurar aplicações de várias camadas com várias redes virtuais ligadas em conjunto devido a requisitos de isolamento ou administrativos.
 
-### <a name="vnet-to-vnet-faq"></a>FAQ da ligação VNet a VNet
+### <a name="vnet-to-vnet-considerations"></a>Considerações de VNet a VNet
 [!INCLUDE [vpn-gateway-vnet-vnet-faq](../../includes/vpn-gateway-vnet-vnet-faq-include.md)]
 
 ## <a name="which-set-of-steps-should-i-use"></a>Que conjunto de passos devo utilizar?
@@ -94,8 +94,8 @@ Utilizamos os seguintes valores nos exemplos:
 * GatewayName: VNet1GW
 * IP Público: VNet1GWIP
 * VPNType: RouteBased
-* Ligação (1 a 4): VNet1toVNet4
-* Ligação (1 a 5): VNet1toVNet5
+* Ligação (1 a&4;): VNet1toVNet4
+* Ligação (1 a&5;): VNet1toVNet5
 * ConnectionType: VNet2VNet
 
 **Valores da TestVNet4:**
@@ -434,6 +434,6 @@ Neste exemplo, uma vez que os gateways estão em subscrições diferentes, divid
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Jan17_HO4-->
 
 

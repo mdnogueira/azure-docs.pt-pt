@@ -17,75 +17,12 @@ ms.topic: hero-article
 ms.date: 12/08/2016
 ms.author: carlrab
 translationtype: Human Translation
-ms.sourcegitcommit: 7f26cd0f6c5f9c7a2fe692bfcdc6ef60d1b2200f
-ms.openlocfilehash: d4ea089ed4b5d29c261b25e95f4d304611f9a857
+ms.sourcegitcommit: a9adc82faab977ad5da1c9dc281d45db3101d8c8
+ms.openlocfilehash: 3fb97f80d5012e993f92eb592d877faabc94c43e
 
 
 ---
-<!------------------
-This topic is annotated with TEMPLATE guidelines for TUTORIAL TOPICS.
-
-
-Metadata guidelines
-
-title
-    60 characters or less. Tells users clearly what they will do (deploy an ASP.NET web app to App Service). Not the same as H1. It's 60 characters or fewer including all characters between the quotes and the Microsoft Docs site identifier.
-
-description
-    115-145 characters. Duplicate of the first sentence in the introduction. This is the abstract of the article that displays under the title when searching in Bing or Google. 
-
-    Example: "This tutorial shows how to deploy an ASP.NET web application to a web app in Azure App Service by using Visual Studio 2015."
------------------->
-
-<!----------------
-
-TEMPLATE GUIDELINES for tutorial topics
-
-The tutorial topic shows users how to solve a problem using a product or service. It includes the prerequisites and steps users need to be successful.  
-
-It is a "solve a problem" topic, not a "learn concepts" topic.
-
-DO include this:
-    • What users will do
-    • What they will create or accomplish by the end of the tutorial
-    • Time estimate
-    • Optional but useful: Include a diagram or video. Diagrams help users see the big picture of what they are doing. A video of the steps can be used by customers as an alternative to following the steps in the topic.
-    • Prerequisites: Technical expertise and software requirements
-    • End-to-end steps. At the end, include next steps to deeper or related tutorials so users can learn more about the service
-
-DON'T include this:
-    • Conceptual info about the service. This info is in overview topics that you can link to in the prerequisites section if necessary
-
-------------------->
-
-<!------------------
-GUIDELINES for the H1 
-    
-    The H1 should answer the question "What will I do in this topic?" Write the H1 heading in conversational language and use search keywords as much as possible. Since this is a "solve a problem" topic, make sure the title indicates that. Use a strong, specific verb like "Deploy."  
-        
-    Heading must use an industry standard term. If your feature is a proprietary name like "elastic pools", use a synonym. For example: "Learn about elastic pools for multi-tenant databases." In this case multi-tenant database is the industry-standard term that will be an anchor for finding the topic.
-
--------------------->
-
 # <a name="get-started-with-backup-and-restore-for-data-protection-and-recovery"></a>Introdução à Cópia de Segurança e ao Restauro para Proteção e Recuperação de Dados
-
-<!------------------
-    GUIDELINES for introduction
-    
-    The introduction is 1-2 sentences.  It is optimized for search and sets proper expectations about what to expect in the article. It should contain the top keywords that you are using throughout the article.The introduction should be brief and to the point of what users will do and what they will accomplish. 
-
-    In this example:
-     
-
-Sentence #1 Explains what the user will do. This is also the metadata description. 
-    This tutorial shows how to deploy an ASP.NET web application to a web app in Azure App Service by using Visual Studio 2015. 
-
-Sentence #2 Explains what users will learn and the benefit.  
-    When you’re finished, you’ll have a simple web application up and running in the cloud.
-
--------------------->
-
-
 Neste tutorial de introdução irá aprender a utilizar o portal do Azure para:
 
 - Ver as cópias de segurança existentes de uma base de dados
@@ -95,6 +32,9 @@ Neste tutorial de introdução irá aprender a utilizar o portal do Azure para:
 
 **Estimativa de tempo**: a conclusão deste tutorial demora, aproximadamente, 30 minutos (partindo do princípio de que já cumpriu os pré-requisitos).
 
+> [!TIP]
+> Pode realizar estas mesmas tarefas num tutorial de introdução utilizando o [PowerShell](sql-database-get-started-backup-recovery-powershell.md).
+>
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -105,11 +45,11 @@ Neste tutorial de introdução irá aprender a utilizar o portal do Azure para:
 * Concluiu a [Introdução aos servidores, bases de dados e regras de firewall da Base de Dados SQL do Azure através do portal do Azure e do SQL Server Management Studio](sql-database-get-started.md) ou a [versão do PowerShell](sql-database-get-started-powershell.md) equivalente deste tutorial. Se não o tiver feito, conclua este tutorial de pré-requisitos ou execute o script do PowerShell no final da [versão do PowerShell](sql-database-get-started-powershell.md) deste tutorial antes de continuar.
 
 
-> [!TIP]
-> Pode realizar estas mesmas tarefas num tutorial de introdução utilizando o [PowerShell](sql-database-get-started-backup-recovery-powershell.md).
+> [!NOTE]
+> Este tutorial ajuda-o a aprender os conteúdos dos tópicos de aprendizagem seguintes: [SQL Database backups (Cópias de segurança da Base de Dados SQL)](sql-database-automated-backups.md), [Long-term backup retention (Retenção de cópias de segurança a longo prazo)](sql-database-long-term-retention.md) e [Recover an Azure SQL database using automated database backups (Recupera bases de dados SQL do Azure com cópias de segurança de bases de dados automáticas)](sql-database-recovery-using-backups.md).
+>  
 
-
-## <a name="sign-in-by-using-your-existing-account"></a>Iniciar sessão com a conta existente
+## <a name="sign-in-to-the-azure-portal-using-your-azure-account"></a>Inicie sessão no portal do Azure com a sua conta do Azure
 Com a [subscrição existente](https://account.windowsazure.com/Home/Index), siga estes passos para se ligar ao portal do Azure.
 
 1. Abra o browser da sua preferência e ligue-se ao [Portal do Azure](https://portal.azure.com/).
@@ -117,7 +57,6 @@ Com a [subscrição existente](https://account.windowsazure.com/Home/Index), sig
 3. Quando for apresentada a página **Iniciar sessão**, forneça as credenciais da sua subscrição.
    
    ![Iniciar sessão](./media/sql-database-get-started/login.png)
-
 
 <a name="create-logical-server-bk"></a>
 
@@ -127,15 +66,15 @@ Nesta secção do tutorial, vê informações sobre o ponto de restauro mais ant
 
 1. Abra o painel **Base de dados SQL** da base de dados, **sqldbtutorialdb**.
 
-    ![painel da nova base de dados de exemplo](./media/sql-database-get-started/new-sample-db-blade.png)
+   ![painel da nova base de dados de exemplo](./media/sql-database-get-started/new-sample-db-blade.png)
 
 2. Na barra de ferramentas, clique em **Restaurar**.
 
-    ![barra de ferramentas de restauro](./media/sql-database-get-started-backup-recovery/restore-toolbar.png)
+   ![barra de ferramentas de restauro](./media/sql-database-get-started-backup-recovery/restore-toolbar.png)
 
 3. No painel Restauro, reveja o ponto de restauro mais antigo.
 
-    ![ponto de restauro mais antigo](./media/sql-database-get-started-backup-recovery/oldest-restore-point.png)
+   ![ponto de restauro mais antigo](./media/sql-database-get-started-backup-recovery/oldest-restore-point.png)
 
 ## <a name="restore-a-database-to-a-previous-point-in-time"></a>Restaurar uma base de dados para um ponto anterior no tempo
 
@@ -143,37 +82,37 @@ Nesta secção do tutorial irá restaure a base de dados para uma nova base de d
 
 1. No painel **Restaurar** da base de dados, reveja o nome predefinido para a nova base de dados para a qual pretende restaurar a base de dados para um ponto anterior no tempo (o nome é o nome da base de dados existente com um carimbo de data/hora acrescentado). Este nome é alterado para refletir a hora que especificar nos próximos passos.
 
-    ![nome da base de dados restaurada](./media/sql-database-get-started-backup-recovery/restored-database-name.png)
+   ![nome da base de dados restaurada](./media/sql-database-get-started-backup-recovery/restored-database-name.png)
 
 2. Clique no ícone **calendário** da caixa de entrada **Ponto de restauro (UTC)**.
 
-    ![ponto de restauro](./media/sql-database-get-started-backup-recovery/restore-point.png)
+   ![ponto de restauro](./media/sql-database-get-started-backup-recovery/restore-point.png)
 
 2. No calendário, selecione uma data dentro do período de retenção
 
-    ![data do ponto de restauro](./media/sql-database-get-started-backup-recovery/restore-point-date.png)
+   ![data do ponto de restauro](./media/sql-database-get-started-backup-recovery/restore-point-date.png)
 
 3. Na caixa de entrada **Restaurar ponto (UTC)**, especifique a hora na data selecionada para a qual pretende restaurar os dados na base de dados a partir de cópias de segurança automáticas da base de dados.
 
-    ![hora do ponto de restauro](./media/sql-database-get-started-backup-recovery/restore-point-time.png)
+   ![hora do ponto de restauro](./media/sql-database-get-started-backup-recovery/restore-point-time.png)
 
-    >[!NOTE]
-    >Repare que o nome da base de dados foi alterado para refletir a data e hora que selecionou. Tenha também em atenção que não é possível alterar o servidor para o qual está a restaurar para um ponto específico anterior no tempo. Para restaurar para um servidor diferente, utilize o [Georrestauro](sql-database-disaster-recovery.md#recover-using-geo-restore). Por fim, tenha em atenção que pode restaurar para um [conjunto elástico](sql-database-elastic-jobs-overview.md) ou para um escalão de preço diferente. 
-    >
+   >[!NOTE]
+   >Repare que o nome da base de dados foi alterado para refletir a data e hora que selecionou. Tenha também em atenção que não é possível alterar o servidor para o qual está a restaurar para um ponto específico anterior no tempo. Para restaurar para um servidor diferente, utilize o [Georrestauro](sql-database-disaster-recovery.md#recover-using-geo-restore). Por fim, tenha em atenção que pode restaurar para um [conjunto elástico](sql-database-elastic-jobs-overview.md) ou para um escalão de preço diferente. 
+   >
 
 4. Clique em **OK** para restaurar a base de dados para um ponto anterior no tempo para a nova base de dados.
 
 5. Na barra de ferramentas, clique no ícone de notificação para ver o estado da tarefa de restauro.
 
-    ![progresso da tarefa de restauro](./media/sql-database-get-started-backup-recovery/restore-job-progress.png)
+   ![progresso da tarefa de restauro](./media/sql-database-get-started-backup-recovery/restore-job-progress.png)
 
 6. Quando a tarefa de restauro estiver concluída, abra o painel **Bases de dados SQL** para ver a base de dados recentemente restaurada.
 
-    ![base de dados restaurada](./media/sql-database-get-started-backup-recovery/restored-database.png)
+   ![base de dados restaurada](./media/sql-database-get-started-backup-recovery/restored-database.png)
 
-   > [!NOTE]
-   > A partir daqui, pode ligar à base de dados restaurada através do o SQL Server Management Studio para efetuar tarefas necessárias, bem como para [extrair alguns dados da base de dados restaurada para copiá-los para a base de dados existente ou para eliminar a base de dados existente e mudar o nome da base de dados restaurada para o nome da base de dados existente](sql-database-recovery-using-backups.md#point-in-time-restore).
-   >
+> [!NOTE]
+> A partir daqui, pode ligar à base de dados restaurada através do o SQL Server Management Studio para efetuar tarefas necessárias, bem como para [extrair alguns dados da base de dados restaurada para copiá-los para a base de dados existente ou para eliminar a base de dados existente e mudar o nome da base de dados restaurada para o nome da base de dados existente](sql-database-recovery-using-backups.md#point-in-time-restore).
+>
 
 ## <a name="configure-long-term-retention-of-automated-backups-in-an-azure-recovery-services-vault"></a>Configurar a retenção de longa duração das cópias de segurança automáticas num cofre dos Serviços de Recuperação do Azure 
 
@@ -182,11 +121,11 @@ Nesta secção do tutorial, irá [configurar um cofre dos Serviços de Recupera�
 
 > [!TIP]
 > Para eliminar cópias de segurança, veja [Eliminar cópias de segurança de retenção de longa duração](sql-database-long-term-retention-delete.md).
-
+>
 
 1. Abra o painel **SQL Server** do seu servidor, **sqldbtutorialserver**.
 
-    ![painel do servidor sql](./media/sql-database-get-started/sql-server-blade.png)
+   ![painel do servidor sql](./media/sql-database-get-started/sql-server-blade.png)
 
 2. Clique em **Retenção de longa duração de cópia de segurança**.
 
@@ -246,9 +185,9 @@ Nesta secção do tutorial, irá [configurar um cofre dos Serviços de Recupera�
 
    ![ver o cofre dos serviços de recuperação](./media/sql-database-get-started-backup-recovery/view-recovery-services-vault.png)
 
-   > [!IMPORTANT]
-   > Depois de configuradas, as cópias de segurança aparecem no cofre nos próximos sete dias. Não continue este tutorial até que as cópias de segurança apareçam no cofre.
-   >
+> [!IMPORTANT]
+> Depois de configuradas, as cópias de segurança aparecem no cofre nos próximos sete dias. Não continue este tutorial até que as cópias de segurança apareçam no cofre.
+>
 
 ## <a name="view-backups-in-long-term-retention"></a>Ver cópias de segurança em retenção de longa duração
 
@@ -260,17 +199,17 @@ Nesta secção do tutorial é possível ver informações sobre as cópias de se
 
 2. Abra o painel **Base de dados SQL** da base de dados, **sqldbtutorialdb**.
 
-    ![painel da nova base de dados de exemplo](./media/sql-database-get-started/new-sample-db-blade.png)
+   ![painel da nova base de dados de exemplo](./media/sql-database-get-started/new-sample-db-blade.png)
 
 3. Na barra de ferramentas, clique em **Restaurar**.
 
-    ![barra de ferramentas de restauro](./media/sql-database-get-started-backup-recovery/restore-toolbar.png)
+   ![barra de ferramentas de restauro](./media/sql-database-get-started-backup-recovery/restore-toolbar.png)
 
 4. No painel Restauro, clique em **Longa duração**.
 
 5. Nas cópias de segurança do cofre do Azure, clique em **Selecionar uma cópia de segurança** para ver as cópias de segurança da base de dados disponíveis na retenção de longa duração de cópia de segurança.
 
-    ![cópias de segurança no cofre](./media/sql-database-get-started-backup-recovery/view-backups-in-vault.png)
+   ![cópias de segurança no cofre](./media/sql-database-get-started-backup-recovery/view-backups-in-vault.png)
 
 ## <a name="restore-a-database-from-a-backup-in-long-term-backup-retention"></a>Restaurar uma base de dados a partir de uma cópia de segurança em retenção de longa duração de cópia de segurança
 
@@ -278,28 +217,25 @@ Nesta secção do tutorial, irá restaurar a base de dados para uma nova base de
 
 1. No painel **Cópias de segurança do cofre do Azure**, clique na cópia de segurança a restaurar e, em seguida, clique em **Selecionar**.
 
-    ![Selecione a cópia de segurança no cofre](./media/sql-database-get-started-backup-recovery/select-backup-in-vault.png)
+   ![Selecione a cópia de segurança no cofre](./media/sql-database-get-started-backup-recovery/select-backup-in-vault.png)
 
 2. Na caixa de texto **Nome da base de dados**, forneça o nome da base de dados restaurada.
 
-    ![nome da nova base de dados](./media/sql-database-get-started-backup-recovery/new-database-name.png)
+   ![nome da nova base de dados](./media/sql-database-get-started-backup-recovery/new-database-name.png)
 
 3. Clique em **OK** para restaurar a base de dados a partir da cópia de segurança no cofre para a nova base de dados.
 
 4. Na barra de ferramentas, clique no ícone de notificação para ver o estado da tarefa de restauro.
 
-    ![progresso da tarefa de restauro a partir do cofre](./media/sql-database-get-started-backup-recovery/restore-job-progress-long-term.png)
+   ![progresso da tarefa de restauro a partir do cofre](./media/sql-database-get-started-backup-recovery/restore-job-progress-long-term.png)
 
 5. Quando a tarefa de restauro estiver concluída, abra o painel **Bases de dados SQL** para ver a base de dados recentemente restaurada.
 
-    ![restaurar base de dados a partir do cofre](./media/sql-database-get-started-backup-recovery/restored-database-from-vault.png)
+   ![restaurar base de dados a partir do cofre](./media/sql-database-get-started-backup-recovery/restored-database-from-vault.png)
 
-   > [!NOTE]
-   > A partir daqui, pode ligar à base de dados restaurada através do o SQL Server Management Studio para efetuar tarefas necessárias, bem como para [extrair alguns dados da base de dados restaurada para copiá-los para a base de dados existente ou para eliminar a base de dados existente e mudar o nome da base de dados restaurada para o nome da base de dados existente](sql-database-recovery-using-backups.md#point-in-time-restore).
-   >
-
-
-<!--**Next steps**: *Reiterate what users have done, and give them interesting and useful next steps so they want to go on.*-->
+> [!NOTE]
+> A partir daqui, pode ligar à base de dados restaurada através do o SQL Server Management Studio para efetuar tarefas necessárias, bem como para [extrair alguns dados da base de dados restaurada para copiá-los para a base de dados existente ou para eliminar a base de dados existente e mudar o nome da base de dados restaurada para o nome da base de dados existente](sql-database-recovery-using-backups.md#point-in-time-restore).
+>
 
 ## <a name="next-steps"></a>Passos seguintes
 
@@ -309,6 +245,6 @@ Nesta secção do tutorial, irá restaurar a base de dados para uma nova base de
 
 
 
-<!--HONumber=Dec16_HO4-->
+<!--HONumber=Jan17_HO2-->
 
 

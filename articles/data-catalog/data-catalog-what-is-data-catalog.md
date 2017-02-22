@@ -1,5 +1,5 @@
 ---
-title: "O que é o Catálogo de Dados do Azure? | Microsoft Docs"
+title: "Introdução ao Catálogo de Dados do Azure | Microsoft Docs"
 description: "Este artigo fornece uma descrição geral do Catálogo de Dados do Microsoft Azure, incluindo as suas funcionalidades e os problemas que se destina a resolver. O Catálogo de Dados fornece capacidades que permitem a qualquer utilizador – dos analistas a cientistas de dados aos programadores – registar, detetar, compreender e consumir origens de dados."
 services: data-catalog
 documentationcenter: 
@@ -13,11 +13,11 @@ ms.devlang: NA
 ms.topic: get-started-article
 ms.tgt_pltfrm: NA
 ms.workload: data-catalog
-ms.date: 09/21/2016
+ms.date: 01/23/2017
 ms.author: maroche
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 97482bc365395e3d9218688bf38ded4a54bb556a
+ms.sourcegitcommit: cd3184059a0970bb7c9b59803cf37125abbbd879
+ms.openlocfilehash: 19d4c3990c88f82f60cd253ffdcbd2005d00ad79
 
 
 ---
@@ -75,7 +75,6 @@ Para saber mais sobre as funcionalidades do Catálogo de Dados, veja:
 
 
 
-
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Jan17_HO4-->
 
 

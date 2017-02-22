@@ -14,16 +14,16 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: big-data
-ms.date: 11/02/2016
+ms.date: 02/06/2017
 ms.author: jgao
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 8bd214c166190248662634d488d8e7b1427b5738
+ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
+ms.openlocfilehash: 1fd0451809c8afca5c330229390ec691f4a25eb5
 
 
 ---
 # <a name="get-started-using-azure-data-lake-hdinsight-tools-for-visual-studio-to-run-a-hive-query"></a>Começar a utilizar as Ferramentas do Azure Data Lake (HDInsight) para Visual Studio para executar uma consulta do Hive
-Saiba como utilizar as Ferramentas do Data Lake (HDInsight) para Visual Studio para se ligar a clusters do HDInsight e submeter consultas do Hive. Para obter mais informações sobre a utilização do HDInsight, consulte [Introdução ao HDInsight][hdinsight.introduction] e [Começar a utilizar o HDInsight][hdinsight.get.started]. Para obter mais informações sobre a ligação a um cluster do Storm, consulte [Desenvolver topologias C# para o Apache Storm no HDInsight com o Visual Studio][hdinsight.storm.visual.studio.tools].
+Saiba como utilizar as Ferramentas do Data Lake (HDInsight) para Visual Studio para se ligar a clusters do HDInsight e submeter consultas do Hive. Para obter mais informações sobre a utilização do HDInsight, consulte [Introduction to HDInsight (Introdução ao HDInsight)][hdinsight.introduction] e [Get started with HDInsight (Começar a utilizar o HDInsight)][hdinsight.get.started]. Para obter mais informações sobre a ligação a um cluster do Storm, consulte [Develop C# topologies for Apache Storm on HDInsight using Visual Studio (Desenvolver topologias C# para o Apache Storm no HDInsight com o Visual Studio)][hdinsight.storm.visual.studio.tools].
 
 As Ferramentas do Data Lake para Visual Studio podem ser utilizadas para aceder ao Data Lake Analytics e ao HDInsight.  Para obter informações sobre as Ferramentas do Data Lake, veja o [Tutorial: desenvolver scripts U-SQL com as Ferramentas do Data Lake para Visual Studio](../data-lake-analytics/data-lake-analytics-data-lake-tools-get-started.md).
 
@@ -72,7 +72,7 @@ As Ferramentas do Data Lake para Visual Studio permitem-lhe ligar-se aos seus cl
    > 
    > 
 4. Introduza as credenciais da sua subscrição do Azure e clique em **Iniciar Sessão**. Esta ação só é necessária se nunca se tiver ligado à subscrição do Azure a partir do Visual Studio nesta estação de trabalho.
-5. No Explorador de Servidores, é apresentada uma lista dos clusters do HDInsight existentes. Se não tiver clusters, pode criar um através do Portal do Azure, do Azure PowerShell ou do SDK do HDInsight. Para obter mais informações, veja [Criar clusters do HDInsight][hdinsight-create-clusters].
+5. No Explorador de Servidores, é apresentada uma lista dos clusters do HDInsight existentes. Se não tiver clusters, pode criar um através do Portal do Azure, do Azure PowerShell ou do SDK do HDInsight. Para obter mais informações, veja [Create HDInsight clusters (Criar clusters do HDInsight)][hdinsight-create-clusters].
    
    ![Lista de clusters do Explorador de Servidores das Ferramentas do Data Lake para Visual Studio][5]
 6. Expanda um cluster do HDInsight. Verá **Bases de Dados do Hive**, uma conta do Storage predefinida, contas do Storage ligadas e o **Registo do serviço do Hadoop**. Pode expandir ainda mais as entidades.
@@ -232,7 +232,7 @@ Para ajudar a compreender melhor a sua consulta do Hive, as ferramentas adiciona
 ## <a name="run-pig-scripts"></a>Executar scripts Pig
 As Ferramentas do Data Lake para Visual Studio suportam a criação e submissão de scripts Pig para clusters do HDInsight. Os utilizadores podem criar um projeto do Pig a partir de um modelo e, em seguida, submeter o script para os clusters do HDInsight.
 
-## <a name="feedbacks-known-issues"></a>Comentários e problemas conhecidos
+## <a name="feedbacks--known-issues"></a>Comentários e problemas conhecidos
 * Atualmente, os resultados do HiveServer2 são apresentados sob a forma de texto simples, o que não é ideal. Estamos a trabalhar para resolver este problema.
 * Se os resultados forem iniciados com valores NULL, os resultados não são apresentados atualmente. Resolvemos este problema. Contudo, se estiver bloqueado devido ao mesmo, não hesite em enviar-nos um e-mail ou contactar a equipa de suporte.
 * O script HQL criado pelo Visual Studio é codificado consoante a definição de região local do utilizador. Se o utilizador o carregar para o cluster como binário, este script pode não ser executado corretamente.
@@ -241,16 +241,16 @@ As Ferramentas do Data Lake para Visual Studio suportam a criação e submissão
 Neste artigo, aprendeu a ligar-se a clusters do HDInsight a partir do Visual Studio, com o pacote de Ferramentas do Data Lake, e a executar uma consulta do Hive. Para obter mais informações, consulte:
 
 * [Utilizar o Hive do Hadoop no HDInsight][hdinsight.hive]
-* [Começar a utilizar o Hadoop no HDInsight][hdinsight.get.started]
-* [Submeter tarefas do Hadoop no HDInsight][hdinsight.submit.jobs]
-* [Analisar dados do Twitter com o Hadoop no HDInsight][hdinsight.analyze.twitter.data]
+* [Introdução à utilização do Hadoop no HDInsight][hdinsight.get.started]
+* [Submeta tarefas Hadoop no HDInsight][hdinsight.submit.jobs]
+* [Analise dados do Twitter com o Hadoop no HDInsight][hdinsight.analyze.twitter.data]
 
 <!--Anchors-->
-[Instalação]: #installation
-[Ligar à sua subscrição do Azure]: #connect-to-your-azure-subscription
-[Navegar nos recursos ligados]: #navigate-the-linked-resources
-[Executar consultas do Hive]: #run-hive-queries
-[Passos seguintes?]: #next-steps
+[Installation]: #installation
+[Connect to your Azure subscription]: #connect-to-your-azure-subscription
+[Navigate the linked resources]: #navigate-the-linked-resources
+[Run Hive queries]: #run-hive-queries
+[Next steps]: #next-steps
 
 <!--Image references-->
 [1]: ./media/hdinsight-hadoop-visual-studio-tools-get-started/hdinsight.visual.studio.tools.wpi.png
@@ -281,6 +281,6 @@ Neste artigo, aprendeu a ligar-se a clusters do HDInsight a partir do Visual Stu
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 

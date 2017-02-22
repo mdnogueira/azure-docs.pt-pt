@@ -12,17 +12,17 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 01/06/2017
+ms.date: 02/03/2017
 ms.author: banders
 translationtype: Human Translation
-ms.sourcegitcommit: 6862723b774951fe4cca0303ee2a39a0d5f2089d
-ms.openlocfilehash: eec688e33ff55334ebe0c1bc6d08e4753aadb85c
+ms.sourcegitcommit: 96a971c31f9088b3aa409a85f0679fd3bd5945d1
+ms.openlocfilehash: 4dc1bfa1e385e945c47bbfc5faa776e577ee84b2
 
 
 ---
 # <a name="manage-workspaces"></a>Gerir áreas de trabalho
 
-Para gerir o acesso ao Log Analytics, tem de realizar diversas tarefas administrativas relacionadas com áreas de trabalho. Este artigo fornece conselhos sobre as melhores práticas e procedimentos que irá utilizar para gerir áreas de trabalho com vários tipos de conta. Uma área de trabalho é essencialmente um contentor que inclui informações da conta e informações de configuração simples para a conta. O utilizador ou outros membros da sua organização podem utilizar várias áreas de trabalho para gerir diferentes conjuntos de dados recolhidos da totalidade ou de partes da sua infraestrutura de TI.
+Para gerir o acesso ao Log Analytics, tem de realizar diversas tarefas administrativas relacionadas com áreas de trabalho. Este artigo fornece conselhos sobre as melhores práticas e procedimentos para gerir áreas de trabalho. Uma área de trabalho é essencialmente um contentor que inclui informações da conta e informações de configuração simples para a conta. O utilizador ou outros membros da sua organização podem utilizar várias áreas de trabalho para gerir diferentes conjuntos de dados recolhidos da totalidade ou de partes da sua infraestrutura de TI.
 
 Para criar uma área de trabalho, terá de:
 
@@ -41,8 +41,9 @@ Atualmente, uma área de trabalho fornece:
 * Uma localização geográfica para armazenamento de dados
 * Granularidade para faturação
 * Isolamento de dados
+* Âmbito de configuração
 
-Com base nas características acima, pode pretender criar várias áreas de trabalho se:
+Com base nas características anteriores, pode pretender criar várias áreas de trabalho se:
 
 * For uma empresa global e precisar de dados armazenados em regiões específicas por motivos de soberania ou conformidade dos dados.
 * Estiver a utilizar o Azure e pretender evitar custos de transferência de dados de saída ao ter uma área de trabalho na mesma região dos recursos do Azure que gere.
@@ -61,7 +62,7 @@ Pode ver detalhes sobre a sua área de trabalho no portal do Azure. Também pode
 #### <a name="view-workspace-information-the-azure-portal"></a>Ver informações da área de trabalho no portal do Azure
 
 1. Se ainda não o fez, inicie sessão no [portal do Azure](https://portal.azure.com) através da sua subscrição do Azure.
-2. No menu **Hub**, clique em **Mais serviços** e, na lista de recursos, escreva **Log Analytics**. À medida que começa a escrever, irá filtrar a lista com base na sua entrada. Clique em **Log Analytics**.  
+2. No menu **Hub**, clique em **Mais serviços** e, na lista de recursos, escreva **Log Analytics**. À medida que começa a escrever, a lista filtra com base na sua entrada. Clique em **Log Analytics**.  
     ![Hub do Azure](./media/log-analytics-manage-access/hub.png)  
 3. No painel de subscrições do Log Analytics, selecione uma área de trabalho.
 4. O painel da área de trabalho apresenta detalhes sobre a área de trabalho e ligações para informações adicionais.  
@@ -78,8 +79,7 @@ O acesso à área de trabalho que é concedido às pessoas é controlado em dois
 * No Azure, pode utilizar o controlo de acesso baseado em funções para fornecer acesso à subscrição do Azure e aos recursos do Azure associados. Estas permissões também são utilizadas para acesso ao PowerShell e à API REST.
 * No portal do OMS, o acesso apenas ao portal do OMS e não à subscrição do Azure associada.
 
-Os utilizadores não veem os dados nos mosaicos das soluções de Backup e Site Recovery se só lhes der acesso ao portal do OMS e não à subscrição do Azure à qual está ligado.
-Para permitir que todos os utilizadores vejam os dados nestas soluções, confirme que têm, pelo menos, acesso de **leitor** ao Backup Vault e ao cofre do Site Recovery que está ligado à área de trabalho.   
+Para ver os dados nos mosaicos de solução de Cópia de Segurança e Site Recovery, deve ter permissão de administrador ou co-administrador à área de trabalho que está ligada à subscrição do Azure.   
 
 ### <a name="managing-access-to-log-analytics-using-the-azure-portal"></a>Gerir o acesso ao Log Analytics utilizando o portal do Azure
 Se conceder às pessoas acesso à área de trabalho do Log Analytics utilizando as permissões do Azure, no portal do Azure, por exemplo, os mesmos utilizadores podem aceder ao portal do Log Analytics. Se os utilizadores estiverem no portal do Azure, podem navegar para o portal do OMS clicando na tarefa **Portal do OMS** quando visualizarem o recurso da área de trabalho do Log Analytics.
@@ -199,7 +199,7 @@ O novo plano de dados é apresentado no friso do portal do OMS na parte superior
 8. Clique em **OK**. A área de trabalho está agora ligada à sua conta do Azure.
 
 > [!NOTE]
-> Se não visualizar a área de trabalho que pretende ligar, a sua subscrição do Azure não tem acesso à área de trabalho que criou com o site do OMS.  Tem de conceder acesso a esta conta a partir do portal da OMS. Para tal, veja [Adicionar um utilizador a uma área de trabalho existente](#add-a-user-to-an-existing-workspace).
+> Se não visualizar a área de trabalho que pretende ligar, a sua subscrição do Azure não tem acesso à área de trabalho que criou com o site do OMS.  Para conceder acesso a esta conta a partir do portal do OMS, consulte [Add a user to an existing workspace (Adicionar um utilizador a uma área de trabalho existente)](#add-a-user-to-an-existing-workspace).
 >
 >
 
@@ -232,15 +232,20 @@ Se tiver uma alocação monetária do Azure na inscrição empresarial à qual a
 
 Se precisar de alterar a subscrição do Azure à qual está ligada a área de trabalho, pode utilizar o cmdlet [Move-AzureRmResource](https://msdn.microsoft.com/library/mt652516.aspx) do Azure PowerShell.  
 
-### <a name="change-a-workspace-to-a-paid-data-plan"></a>Alterar uma área de trabalho para um plano de dados pago
+### <a name="change-a-workspace-to-a-paid-pricing-tier"></a>Alterar uma área de trabalho para um escalão de preço pago
 1. Inicie sessão no [Portal do Azure](http://portal.azure.com).
 2. Procure o **Log Analytics** e selecione-o.
 3. Verá a lista de áreas de trabalho existentes. Selecione uma área de trabalho.  
 4. No painel da área de trabalho, em **Geral**, clique em **Escalão de preço**.  
-5. Em **Escalão de preço**, selecione um plano de dados e, em seguida, clique em **Selecionar**.  
+5. Em **Escalão de preço**, selecione um escalão de preço e, em seguida, clique em **Selecionar**.  
     ![selecionar plano](./media/log-analytics-manage-access/manage-access-change-plan03.png)
-6. Quando atualizar a vista no portal do Azure, verá o **Escalão de preço** atualizado com o plano que selecionou.  
+6. Quando atualizar a vista no portal do Azure, verá o **Escalão de preço** atualizado com o escalão que selecionou.  
     ![plano atualizado](./media/log-analytics-manage-access/manage-access-change-plan04.png)
+
+> [!NOTE]
+> Se a sua área de trabalho estiver ligada a uma conta de Automatização, antes poder selecionar o escalão de preço *Autónomo (Por GB)*, tem de eliminar quaisquer soluções de **Automatização e Controlo** e desassociar a conta de Automatização. No painel da área de trabalho, em **Geral**, clique em **Soluções** para ver e eliminar soluções. Para desassociar a Conta de automatização, clique no nome da Conta de automatização no painel **Escalão de preços**.
+>
+>
 
 ## <a name="change-how-long-log-analytics-stores-data"></a>Alterar o tempo durante o qual o Log Analytics armazena dados
 
@@ -293,6 +298,6 @@ Se for um administrador e existirem vários utilizadores associados à área de 
 
 
 
-<!--HONumber=Jan17_HO1-->
+<!--HONumber=Feb17_HO1-->
 
 

@@ -1,10 +1,10 @@
 ---
-layout: LandingPage
+title: "Documentação dos Conjuntos de Dimensionamento de Máquinas Virtuais do Azure - Tutoriais, Referência da API | Microsoft Docs"
 description: "Saiba como utilizar Conjuntos de Dimensionamento de Máquina Virtual para criar o dimensionamento automático de VMs Windows ou Linux para soluções computação grande, macrodados e de contentor."
-title: "Conjuntos de Dimensionamento de Máquinas Virtuais do Azure para Linux Documentação, Tutoriais e Referência da API | Microsoft Docs"
 services: virtual-machine-scale-sets
 author: carolz
 manager: carolz
+layout: LandingPage
 ms.assetid: 
 ms.service: virtual-machine-scale-sets
 ms.tgt_pltfrm: na
@@ -13,8 +13,8 @@ ms.topic: landing-page
 ms.date: 01/23/2017
 ms.author: carolz
 translationtype: Human Translation
-ms.sourcegitcommit: 7b2af8e58e050100b1778d977dabe25538b84cfe
-ms.openlocfilehash: 3bb6307cee24c80cbf8d621a49d2304d9b9b5c99
+ms.sourcegitcommit: c9a4b71fc888f5b2b9a32af80d1d4947ff731157
+ms.openlocfilehash: 091259841325103ce6733796f1cfe9109e39877b
 
 ---
 #<a name="virtual-machine-scale-sets-documentation"></a>Documentação dos Conjuntos de Dimensionamento de Máquinas Virtuais
@@ -41,7 +41,7 @@ Saiba como utilizar Conjuntos de Dimensionamento de Máquina Virtual para implem
         </a>
     </li>
        <li>
-        <a href="https://azure.microsoft.com/en-us/documentation/videos/index/?services=virtual-machines">
+        <a href="https://azure.microsoft.com/documentation/videos/index/?services=virtual-machines">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
@@ -90,7 +90,22 @@ Saiba como utilizar Conjuntos de Dimensionamento de Máquina Virtual para implem
                     <div class="cardText">
                         <h3>Linha de Comandos</h3>
                         <p><a href="/powershell/azureps-cmdlets-docs">PowerShell</a></p>
-                        <p><a href="/azure/virtual-machines/azure-cli-arm-commands">CLI do Azure</a></p>
+                        <p><a href="/cli/azure/vm">CLI do Azure</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>Linguagens</h3>
+                        <p><a href="/dotnet/api/microsoft.azure.management.compute">.NET</a></p>
+                        <p><a href="/java/api">Java</a></p>
+                        <p><a href="https://azure.microsoft.com/develop/nodejs/#azure-sdk">Node.js</a></p>
+                        <p><a href="http://azure-sdk-for-python.readthedocs.io/en/latest/ref/azure.mgmt.compute.html">Python</a></p>
                     </div>
                 </div>
             </div>
@@ -102,7 +117,7 @@ Saiba como utilizar Conjuntos de Dimensionamento de Máquina Virtual para implem
                 <div class="card">
                     <div class="cardText">
                         <h3>REST</h3>
-                        <p><a href="/rest/api/compute/">Referência da API REST</a></p>
+                        <p><a href="/rest/api/compute">Referência da API REST da Computação</a></p>
                     </div>
                 </div>
             </div>
@@ -114,6 +129,6 @@ Saiba como utilizar Conjuntos de Dimensionamento de Máquina Virtual para implem
 
 
 
-<!--HONumber=Jan17_HO4-->
+<!--HONumber=Feb17_HO3-->
 
 

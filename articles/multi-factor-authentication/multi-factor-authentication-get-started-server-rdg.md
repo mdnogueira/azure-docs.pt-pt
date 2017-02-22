@@ -1,22 +1,22 @@
 ---
-title: Gateway de Ambiente de Trabalho Remoto e Servidor Multi-Factor Authentication do Azure com o RADIUS
+title: Servidor de RDG e de MFA do Azure com o RADIUS | Microsoft Docs
 description: "Esta é a página do Multi-Factor Authentication do Azure que irá ajudar a implementar o Gateway de Ambiente de Trabalho Remoto (RD) e o Servidor Multi-Factor Authentication do Azure com o RADIUS."
 services: multi-factor-authentication
 documentationcenter: 
 author: kgremban
 manager: femila
-editor: curtand
+editor: yossib
 ms.assetid: f2354ac4-a3a7-48e5-a86d-84a9e5682b42
 ms.service: multi-factor-authentication
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 08/15/2016
+ms.date: 02/06/2017
 ms.author: kgremban
 translationtype: Human Translation
-ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
-ms.openlocfilehash: 3b14925f41138904aa10a172f83dffa3c6662700
+ms.sourcegitcommit: 4547a805c1827a703bf0ef118387882e45c3f241
+ms.openlocfilehash: 4b117f03a8f769cbd2ecf1fca2653e8c343b6aa0
 
 
 ---
@@ -37,7 +37,7 @@ O Gateway de RD utiliza o NPS para enviar o pedido RADIUS para o Multi-Factor Au
 4. Copie esta política para criar uma nova. Na nova política, adicione uma condição que corresponda ao Nome Amigável do Cliente com o nome amigável definido no passo 2 acima para o cliente RADIUS do Servidor Multi-Factor Authentication do Azure. Altere o Fornecedor de Autenticação para Computador Local. Esta política assegura que, quando é recebido um pedido RADIUS do Servidor Multi-Factor Authentication do Azure, a autenticação ocorre localmente em vez de enviar um pedido RADIUS novamente para o Servidor Multi-Factor Authentication do Azure, o que poderia resultar numa condição de ciclo. Para impedir a condição de ciclo, esta nova política tem de ser ordenada ACIMA da política original que encaminha para o Servidor Multi-Factor Authentication.
 
 ## <a name="configure-azure-multi-factor-authentication"></a>Configurar o Multi-Factor Authentication do Azure
-- - -
+
 O Servidor Multi-Factor Authentication do Azure está configurado como um proxy RADIUS entre o Gateway de RD e o NPS.  Deve ser instalado num servidor associado a um domínio separado do servidor do Gateway de RD. Utilize o seguinte procedimento para configurar o Servidor Multi-Factor Authentication do Azure.
 
 1. Abra o Servidor Multi-Factor Authentication do Azure e clique no ícone Autenticação RADIUS. Selecione a caixa de verificação Ativar autenticação RADIUS.
@@ -47,9 +47,14 @@ O Servidor Multi-Factor Authentication do Azure está configurado como um proxy 
 
 ![Autenticação Radius](./media/multi-factor-authentication-get-started-server-rdg/radius.png)
 
+## <a name="next-steps"></a>Passos seguintes
+
+- Integre a MFA do Azure e [aplicações Web do IIS](multi-factor-authentication-get-started-server-iis.md)
+
+- Obtenha as respostas na [FAQ sobre o Multi-Factor Authentication do Azure](multi-factor-authentication-faq.md)
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Feb17_HO1-->
 
 

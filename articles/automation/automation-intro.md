@@ -16,8 +16,8 @@ ms.topic: get-started-article
 ms.date: 05/10/2016
 ms.author: magoedte;bwren
 translationtype: Human Translation
-ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
-ms.openlocfilehash: 16f6285577294ff49f11a27f48daea090655a2b1
+ms.sourcegitcommit: 15456a887aab29ac6c4ee74d15b8b8ef8d3047d3
+ms.openlocfilehash: 4e7488f954ce50298aba0da83ae07f7a0de6a73d
 
 
 ---
@@ -36,7 +36,7 @@ Os runbooks na Automatização do Azure são baseados no Windows PowerShell ou n
 A [Galeria de Runbooks](automation-runbook-gallery.md#runbooks-in-runbook-gallery) contém runbooks da Microsoft e da comunidade que pode utilizar inalterados no seu ambiente ou personalizados para os seus fins. Também são úteis como referências para aprender a criar os seus próprios runbooks. Até pode contribuir os seus próprios runbooks para a galeria que pensa que outros utilizadores poderão considerar úteis. 
 
 ## <a name="creating-runbooks-with-azure-automation"></a>Criar Runbooks com a Automatização do Azure
-Pode [criar os seus próprios runbooks](automation-creating-importing-runbook.md) a partir do zero ou modificar runbooks a partir da [Galeria de Runbooks](http://msdn.microsoft.com/library/azure/dn781422.aspx), conforme os seus requisitos. Existem três [tipos de runbooks](automation-runbook-types.md) diferentes dos quais pode escolher com base nos seus requisitos e na sua experiência com o PowerShell. Se preferir trabalhar diretamente com o código do PowerShell, pode utilizar um [Runbook do PowerShell](automation-runbook-types.md#powershell-runbooks) ou um [runbook do Fluxo de Trabalho do PowerShell](automation-runbook-types.md#powershell-workflow-runbooks) que edita offline ou com o [editor de texto](http://msdn.microsoft.com/library/azure/dn879137.aspx) no portal do Azure. Se preferir editar um runbook sem estar exposto do código subjacente, pode criar um [Runbook gráfico](automation-runbook-types.md#graphical-runbooks) utilizando o [editor gráfico](automation-graphical-authoring-intro.md) no portal do Azure. 
+Pode [criar os seus próprios runbooks](automation-creating-importing-runbook.md) a partir do zero ou modificar runbooks a partir da [Galeria de Runbooks](http://msdn.microsoft.com/library/azure/dn781422.aspx), conforme os seus requisitos. Pode escolher de entre quatro [tipos de runbooks](automation-runbook-types.md) diferentes com base nos seus requisitos e na sua experiência com o PowerShell. Se preferir trabalhar diretamente com o código do PowerShell, pode utilizar um [Runbook do PowerShell](automation-runbook-types.md#powershell-runbooks) ou um [runbook do Fluxo de Trabalho do PowerShell](automation-runbook-types.md#powershell-workflow-runbooks) que edita offline ou com o [editor de texto](http://msdn.microsoft.com/library/azure/dn879137.aspx) no portal do Azure. Se preferir editar um runbook sem estar exposto do código subjacente, pode criar um [Runbook gráfico](automation-runbook-types.md#graphical-runbooks) utilizando o [editor gráfico](automation-graphical-authoring-intro.md) no portal do Azure. 
 
 Prefere ver do que ler? Veja o vídeo abaixo da sessão do Microsoft Ignite de maio de 2015. Nota: apesar de os conceitos e as funcionalidades descritos neste vídeo estarem corretos, a Automatização do Azure tem progredido muito desde que o vídeo foi gravado, agora tem uma IU mais extensa no portal do Azure e suporta funcionalidades adicionais.
 
@@ -87,6 +87,6 @@ Está disponível uma variedade de recursos para obter mais informações sobre 
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Jan17_HO3-->
 
 

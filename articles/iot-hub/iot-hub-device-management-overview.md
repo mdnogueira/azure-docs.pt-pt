@@ -15,8 +15,8 @@ ms.workload: na
 ms.date: 10/03/2016
 ms.author: briz
 translationtype: Human Translation
-ms.sourcegitcommit: 6b77e338e1c7f0f79ea3c25b0b073296f7de0dcf
-ms.openlocfilehash: 91dcace2d74d44a5d2ab3b9a1352b2fa052ddc44
+ms.sourcegitcommit: 55d3f08de7f8c7ba68faba1945e8fd960e888853
+ms.openlocfilehash: 5e1b1333212af0b9042e7ed3793c08e305085519
 
 
 ---
@@ -24,7 +24,7 @@ ms.openlocfilehash: 91dcace2d74d44a5d2ab3b9a1352b2fa052ddc44
 ## <a name="introduction"></a>Introdução
 O Hub IoT do Azure fornece as funcionalidades e um modelo de extensibilidade que permitem ao dispositivo e aos programadores de back-end criarem soluções de gestão de dispositivos robustas. Os dispositivos variam desde sensores restritos e microcontroladores com um objetivo único, a gateways poderosos que encaminham as comunicações para grupos de dispositivos.  Além disso, os casos de utilização e os requisitos para operadores de IoT variam significativamente entre os setores.  Apesar desta variação, a gestão de dispositivos com o Hub IoT fornece as capacidades, os padrões e as bibliotecas de código para atender um conjunto diverso de dispositivos e utilizadores finais.
 
-Uma parte fundamental da criação de uma solução de IoT empresarial bem-sucedida para fornecer uma estratégia para a forma como os operadores vão processar a gestão contínua da coleção de dispositivos. Os operadores de IoT requerem ferramentas simples e fiáveis e aplicações e que lhes permitam concentrar-se em aspetos mais estratégicos das funções deles. Este artigo fornece:
+Uma parte fundamental da criação de uma solução de IoT empresarial bem-sucedida é fornecer uma estratégia para a forma como os operadores vão processar a gestão contínua da coleção de dispositivos. Os operadores de IoT requerem ferramentas simples e fiáveis e aplicações e que lhes permitam concentrar-se em aspetos mais estratégicos das funções deles. Este artigo fornece:
 
 * Uma breve descrição geral da abordagem do Hub IoT perante a gestão de dispositivos.
 * Uma descrição dos princípios de gestão de dispositivos comuns.
@@ -112,6 +112,6 @@ Para continuar a saber mais sobre as funcionalidades de gestão de dispositivos 
 
 
 
-<!--HONumber=Dec16_HO2-->
+<!--HONumber=Jan17_HO4-->
 
 

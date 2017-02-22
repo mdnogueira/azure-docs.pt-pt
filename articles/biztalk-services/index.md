@@ -1,13 +1,25 @@
 ---
+title: "Documentação dos Serviços BizTalk do Azure - Tutoriais | Microsoft Docs"
+description: "Saiba como utilizar os serviços BizTalk para fornecer uma integração de aplicações da cloud para o local e de linha de negócio para SAP, Oracle EBS, SQL Server e PeopleSoft."
+services: biztalk-services
+author: carolz
+manager: carolz
 layout: LandingPage
+ms.assetid: 
+ms.service: biztalk-services
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: landing-page
+ms.date: 01/23/2017
+ms.author: carolz
 translationtype: Human Translation
-ms.sourcegitcommit: 329bf8f57270c901d54f27a2159287e08e4c355a
-ms.openlocfilehash: dfde406339068f9261fccb87039d18a0dfdedeff
+ms.sourcegitcommit: 8c09bee7be24d8ba18fa67f3aef1c951dfde1434
+ms.openlocfilehash: 80b381d59e95297cf8d7616e6a2eb3186ab26a05
 
 ---
 # <a name="biztalk-services-documentation"></a>Documentação dos Serviços BizTalk
 
-Os Serviços BizTalk proporcionam uma integração de aplicações da cloud para o local e de linha de negócio para SAP, Oracle EBS, SQL Server e PeopleSoft. Permitem-lhe ligar a qualquer origem de dados HTTP, FTP, SFTP ou REST. Pode encaminhar mensagens através de vários artefactos do Azure, tais como filas do Service Bus, Tópicos, Base de Dados SQL e armazenamento de Blobs.   
+Saiba como utilizar os serviços BizTalk para fornecer uma integração de aplicações da cloud para o local e de linha de negócio para SAP, Oracle EBS, SQL Server e PeopleSoft. Tutoriais e outra documentação mostram-lhe como integrar a empresa e a cloud.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -66,17 +78,10 @@ Os Serviços BizTalk proporcionam uma integração de aplicações da cloud para
     </li>
 </ul>
 
----
-
-<div class="downloadHolder">
-    <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/biztalk-services.pdf">
-        <div class="img"></div>
-        <div class="text">
-Transferir a Documentação dos Serviços BizTalk </div>
-    </a>
-</div>
 
 
-<!--HONumber=Nov16_HO4-->
+
+
+<!--HONumber=Feb17_HO2-->
 
 

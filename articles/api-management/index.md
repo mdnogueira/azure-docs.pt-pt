@@ -1,13 +1,25 @@
 ---
+title: "Documentação da Gestão de API do Azure - Tutoriais, Referência da API | Microsoft Docs"
+description: "Saiba como utilizar a Gestão de API para publicar APIs de forma segura e à escala. A documentação mostra como criar modernos gateways de API para os serviços de back-end existentes."
+services: api-management
+author: carolz
+manager: carolz
 layout: LandingPage
+ms.assetid: 
+ms.service: api-management
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: landing-page
+ms.date: 01/23/2017
+ms.author: carolz
 translationtype: Human Translation
-ms.sourcegitcommit: 3752a677351518195773a86c3824078a5aff6d03
-ms.openlocfilehash: 79b75ae11af07735449714d3a3034c867224ebf4
+ms.sourcegitcommit: 5710f0aeb9af0f5d829c30d4b3e604c0a62afdb5
+ms.openlocfilehash: 09eb558a4e4b32fa6e1094c55f321db8ce008d4d
 
 ---
 # <a name="api-management-documentation"></a>Documentação da Gestão de API
 
-A Gestão de API ajuda as organizações a publicar APIs para programadores externos, parceiros e internos, de modo a que estes possam explorar ao máximo o potencial dos seus dados e serviços.  A Gestão de API fornece as competências essenciais para garantir um programa de API bem-sucedido através do envolvimento dos programadores, das informações de negócio, da análise, da segurança e da proteção.
+Saiba como utilizar a Gestão de API para publicar APIs para programadores externos, parceiros e empregados de forma segura e à escala. Tutoriais, referências de API e outra documentação mostram-lhe como criar e gerir modernos gateways de API para os serviços de back-end existentes alojados em qualquer lugar.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -129,18 +141,12 @@ A Gestão de API ajuda as organizações a publicar APIs para programadores exte
     </li>
 </ul>
 
----
-
-<div class="downloadHolder">
-    <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/api-management.pdf">
-        <div class="img"></div>
-        <div class="text">
-Transferir a Documentação da Gestão de API </div>
-    </a>
-</div>
 
 
 
-<!--HONumber=Dec16_HO1-->
+
+
+
+<!--HONumber=Feb17_HO2-->
 
 

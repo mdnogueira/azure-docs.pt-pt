@@ -14,8 +14,8 @@ ms.topic: get-started-article
 ms.date: 11/01/2016
 ms.author: awills
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 57daba3f23b2a35afc2d704e4913584f21259ec7
+ms.sourcegitcommit: 601045a6048266cbd317f3a8ff328caa7edf877f
+ms.openlocfilehash: a7b17961ea23c109dc840192fa3f7cea1d88326e
 
 
 ---
@@ -170,7 +170,7 @@ Clique em qualquer linha para ver detalhes específicos.
 Clique em `...` para ver a telemetria completa de uma chamada Ajax.
 
 ### <a name="no-ajax-calls-reported"></a>Nenhuma chamada Ajax reportada?
-As chamadas AJAX incluem quaisquer chamadas HTTP feitas a partir do script da sua página Web. Se não as vir reportadas, verifique se o fragmento de código não define os [parâmetros](https://github.com/Microsoft/ApplicationInsights-JS/blob/master/API-reference.md#config) `disableAjaxTracking` ou `maxAjaxCallsPerView`.
+As chamadas AJAX incluem quaisquer chamadas HTTP/HTTPS feitas a partir do script da sua página Web. Se não as vir reportadas, verifique se o fragmento de código não define os [parâmetros](https://github.com/Microsoft/ApplicationInsights-JS/blob/master/API-reference.md#config) `disableAjaxTracking` ou `maxAjaxCallsPerView`.
 
 ## <a name="browser-exceptions"></a>Exceções de browser
 No painel Browsers, existe um gráfico de resumo de exceções e uma grelha dos tipos de exceção mais abaixo no painel.
@@ -193,7 +193,7 @@ Selecione qualquer evento para ver mais detalhes. Na página de detalhes, clique
 > 
 > 
 
-Também pode utilizar o [Idioma de consulta do Analytics](app-insights-analytics-tour.md) avançado para procurar visualizações de página.
+Também pode utilizar o [Idioma de consulta do Analytics](https://docs.microsoft.com/azure/application-insights/app-insights-analytics-tour#browser-timings-table) avançado para procurar visualizações de página.
 
 ### <a name="page-view-properties"></a>Propriedades de visualização de página
 * **Duração de visualização de página** 
@@ -230,6 +230,6 @@ Quer descobrir o que os utilizadores fazem com a sua aplicação?
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Jan17_HO4-->
 
 

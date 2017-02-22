@@ -1,203 +1,203 @@
-# How to use the Azure Command-Line Tools for Mac and Linux
-This guide describes how to use the Azure Command-Line Tools for Mac and Linux to create and manage services in Azure. The scenarios covered include **installing the tools**, **importing your publishing settings**, **creating and managing Azure Websites**, and **creating and managing Azure Virtual Machines**. For comprehensive reference documentation, see [Azure command-line tool for Mac and Linux Documentation][reference-docs]. 
+# <a name="how-to-use-the-azure-command-line-tools-for-mac-and-linux"></a>Como utilizar as Ferramentas de Linha de Comandos do Azure para Mac e Linux
+Este guia descreve como utilizar as Ferramentas de Linha de Comandos do Azure para Mac e Linux para criar e gerir serviços no Azure. Os cenários abordados incluem **instalar as ferramentas**, **importar as definições de publicação**, **criar e gerir Web Sites do Azure** e **criar e gerir Máquinas Virtuais do Azure**. Para obter documentação de referência abrangente, veja [Azure command-line tool for Mac and Linux Documentation (Documentação da ferramenta de linha de comandos do Azure para Mac e Linux)][reference-docs]. 
 
-## Table of contents
-* [What are the Azure Command-Line Tools for Mac and Linux](#Overview)
-* [How to install the Azure Command-Line Tools for Mac and Linux](#Download)
-* [How to create an Azure account](#CreateAccount)
-* [How to download and import publish settings](#Account)
-* [How to create and manage an Azure Web Site](#WebSites)
-* [How to create and manage an Azure Virtual Machine](#VMs)
+## <a name="table-of-contents"></a>Índice
+* [O que são as Ferramentas de Linha de Comandos do Azure para Mac e Linux](#Overview)
+* [Como instalar as Ferramentas de Linha de Comandos do Azure para Mac e Linux](#Download)
+* [Como criar uma conta do Azure](#CreateAccount)
+* [Como transferir e importar definições de publicação](#Account)
+* [Como criar e gerir um Web Site do Azure](#WebSites)
+* [Como criar e gerir uma Máquina Virtual do Azure](#VMs)
 
-<h2><a id="Overview"></a>What are the Azure Command-Line Tools for Mac and Linux</h2>
+<h2><a id="Overview"></a>O que são as Ferramentas de Linha de Comandos do Azure para Mac e Linux</h2>
 
-The Azure Command-Line Tools for Mac and Linux are a set of command-line tools for deploying and managing Azure services.
+As Ferramentas da Linha de Comandos do Azure para Mac e Linux são um conjunto de ferramentas da linha de comandos para implementação e gestão de serviços do Azure.
 
-The supported tasks include the following:
+As tarefas suportadas incluem o seguinte:
 
-* Import publishing settings.
-* Create and manage Azure Websites.
-* Create and manage Azure Virtual Machines.
+* Importar definições de publicação.
+* Criar e gerir Web Sites do Azure.
+* Criar e gerir Máquinas Virtuais do Azure.
 
-For a complete list of supported commands, type `azure -help` at the command line after installing the tools, or see the [reference documentation][reference-docs].
+Para obter uma lista completa dos comandos suportados, escreva `azure -help` na linha de comandos depois de instalar as ferramentas ou veja a [documentação de referência][reference-docs].
 
-<h2><a id="Download">How to install the Azure Command-Line Tools for Mac and Linux</a></h2>
+<h2><a id="Download">Como instalar as Ferramentas de Linha de Comandos do Azure para Mac e Linux</a></h2>
 
-The following list contains information for installing the command-line tools, depending on your operating system:
+A lista seguinte contém informações para instalar as ferramentas de linha de comandos, consoante o seu sistema operativo:
 
-* **Mac**: Download the [Azure SDK Installer][mac-installer]. Open the downloaded .pkg file and complete the installation steps as you are prompted.
-* **Linux**: Install the latest version of [Node.js][nodejs-org] (see [Install Node.js via Package Manager][install-node-linux]), then run the following command:
+* **Mac**: transfira o [Azure SDK Installer][mac-installer]. Abra o ficheiro .pkg transferido e conclua os passos de instalação pedidos.
+* **Linux**: instale a versão mais recente de [Node.js][nodejs-org] (veja [Install Node.js via Package Manager [Instalar o Node.js através do Gestor de Pacotes]][install-node-linux]) e execute o comando seguinte:
   
         npm install azure-cli -g
   
-    **Note**: You may need to run this command with elevated privileges:
+    **Nota**: poderá ter de executar este comando com privilégios elevados:
   
         sudo npm install azure-cli -g
-* **Windows**: Run the Winows installer (.msi file), which is available here: [Azure Command Line Tools][windows-installer].
+* **Windows**: execute o instalador Windows (ficheiro .msi), que está disponível em [Azure Command Line Tools (Ferramentas de Linha de Comandos do Azure)][windows-installer].
 
-To test the installation, type `azure` at the command prompt. If the installation was successful, you will see a list of all the available `azure` commands.
+Para testar a instalação, escreva `azure` na linha de comandos. Se a instalação tiver sido concluída com êxito, verá uma lista de todos os comandos `azure` disponíveis.
 
-<h2><a id="CreateAccount"></a>How to create an Azure account</h2>
+<h2><a id="CreateAccount"></a>Como criar uma conta do Azure</h2>
 
-To use the Azure Command-Line Tools for Mac and Linux, you will need an Azure account.
+Para utilizar as Ferramentas de Linha de Comandos do Azure para Mac e Linux, precisa de uma conta do Azure.
 
-Open a web browser and browse to [http://www.windowsazure.com][windowsazuredotcom] and click **free trial** in the upper right corner.
+Abra um browser, navegue para [http://www.windowsazure.com][windowsazuredotcom] e clique em **conta gratuita**, no canto superior direito.
 
-![Azure Web Site][Azure Web Site]
+![Web Site do Azure][Azure Web Site]
 
-Follow the instructions for creating an account.
+Siga as instruções para criar uma conta.
 
-<h2><a id="Account"></a>How to download and import publish settings</h2>
+<h2><a id="Account"></a>Como transferir e importar definições de publicação</h2>
 
-To get started, you need to first download and import your publish settings. This will allow you to use the tools to create and manage Azure Services. To download your publish settings, use the `account download` command:
+Para começar, tem, primeiro, de transferir e importar as definições de publicação. Desta forma, poderá utilizar as ferramentas para criar e gerir os serviços do Azure. Para transferir as definições de publicação, utilize o comando `account download`:
 
     azure account download
 
-This will open your default browser and prompt you to sign in to the Management Portal. After signing in, your `.publishsettings` file will be downloaded. Make note of where this file is saved.
+É aberto o seu browser predefinido e é-lhe pedido que inicie sessão no Portal de Gestão. Depois de iniciar sessão, o ficheiro `.publishsettings` é transferido. Aponte a localização onde o ficheiro é guardado.
 
-Next, import the `.publishsettings` file by running the following command, replacing `{path to .publishsettings file}` with the path to your `.publishsettings` file:
+Em seguida, importe o ficheiro `.publishsettings`. Para tal, execute o comando seguinte, substituindo `{path to .publishsettings file}` pelo caminho para o ficheiro `.publishsettings`:
 
     azure account import {path to .publishsettings file}
 
-You can remove all of the information stored by the <code>import</code> command by using the <code>account clear</code> command:
+Pode utilizar o comando <code>account clear</code> para remover todas as informações armazenadas pelo comando <code>import</code>:
 
     azure account clear
 
-To see a list of options for `account` commands, use the `-help` option:
+Para ver uma lista de opções para comandos de `account`, utilize a opção `-help`:
 
     azure account -help
 
-After importing your publish settings, you should delete the `.publishsettings` file for security reasons.
+Depois de importar as definições de publicação, deve eliminar o ficheiro `.publishsettings`, por motivos de segurança.
 
 > [!NOTE]
-> When you import publish settings, credentials for accessing your Azure subscription are stored inside your `user` folder. Your `user` folder is protected by your operating system. However, it is recommended that you take additional steps to encrypt your `user` folder. You can do so in the following ways:    
+> Quando importa as definições de publicação, as credenciais para aceder à sua subscrição do Azure são armazenadas dentro da sua pasta `user`. A pasta `user` é protegida pelo seu sistema operativo. Contudo, recomenda-se que tome medidas adicionais para encriptar esta pasta `user`. Pode fazê-lo das seguintes formas:    
 > 
-> * On Windows, modify the folder properties or use BitLocker.
-> * On Mac, turn on FileVault for the folder.
-> * On Ubuntu, use the Encrypted Home directory feature. Other Linux distributions offer equivalent features.
+> * No Windows, modifique as propriedades da pasta ou utilize o BitLocker.
+> * No Mac, ative o FileVault na pasta.
+> * No Ubuntu, utilize a funcionalidade de diretório Encrypted Home. Outras distribuições de Linux oferecem funcionalidades equivalentes.
 > 
 > 
 
-You are now ready to being creating and managing Azure Websites and Azure Virtual Machines.  
+Está agora pronto para começar a criar e gerir Web Sites e Máquinas Virtuais do Azure.  
 
-<h2><a id="WebSites"></a>How to create and manage an Azure Website</h2>
+<h2><a id="WebSites"></a>Como criar e gerir um Web Site do Azure</h2>
 
-### Create a Website
-To create an Azure website, first create an empty directory called `MySite` and browse into that directory.
+### <a name="create-a-website"></a>Criar um Web Site
+Para criar um Web Site do Azure, crie primeiro um diretório vazio, com o nome `MySite`, e navegue para o mesmo.
 
-Then, run the following command:
+Depois, execute o comando seguinte:
 
     azure site create MySite --git
 
-The output from this command will contain the default URL for the newly created website. The `--git` option allows you to use git to publish to your website by creating git repositories in both your local application directory and in your website's data center. Note that if your local folder is already a git repository, the command will add a new remote to the existing repository, pointing to the repository in your website's data center.
+O resultado deste comando vai conter o URL predefinido do Web Site acabado de criar. A opção `--git` permite-lhe utilizar o git para publicar no seu Web Site através da criação de repositórios git, quer no diretório de aplicações local, quer no datacenter do Web Site. Tenha em conta que, se a sua pasta local já for um repositório git, o comando vai adicionar um remoto novo para o repositório existente, apontando para o repositório no datacenter do seu Web Site.
 
-Note that you can execute the `azure site create` command with any of the following options:
+Note que pode executar o comando `azure site create` com qualquer uma destas opções:
 
-* `--location [location name]`. This option allows you to specify the location of the data center in which your website is created (e.g. "West US"). If you omit this option, you will be promted to choose a location.
-* `--hostname [custom host name]`. This option allows you to specify a custom hostname for your website.
+* `--location [location name]`. Esta opção permite-lhe especificar a localização do datacenter no qual o Web Site é criado (por exemplo, "E.U.A. Oeste"). Se omitir esta opção, é-lhe pedido que escolha uma localização.
+* `--hostname [custom host name]`. Esta opção permite-lhe especificar um nome de anfitrião personalizado para o Web Site.
 
-You can then add content to your website directory. Use the regular git flow (`git add`, `git commit`) to commit your content. Use the following git command to push your website content to Azure: 
+Depois, pode adicionar conteúdos ao diretório do Web Site. Utilize o fluxo normal do git (`git add`, `git commit`) para consolidar os conteúdos. Utilize o comando do git seguinte para emitir os conteúdos do Web Site para o Azure: 
 
     git push azure master
 
-### Set up publishing from GitHub
-To set up continuous publishing from a GitHub repository, use the `--GitHub` option when creating a site:
+### <a name="set-up-publishing-from-github"></a>Configurar a publicação a partir do GitHub
+Para configurar a publicação contínua a partir de um repositório do GitHub, utilize a opção `--GitHub` quando estiver a criar um site:
 
     auzre site create MySite --github --githubusername username --githubpassword password --githubrepository githubuser/reponame
 
-If you have a local clone of a GitHub repository or if you have a repository with a single remote reference to a GitHub repository, this command will automatically publish code in the GitHub repository to your site. From then on, any changes pushed to the GitHub repository will automatically be published to your site.
+Se tiver um clone local de um repositório do GitHub ou um repositório com uma única referência remota para um repositório do GitHub, este comando publica automaticamente código do repositório do GitHub no seu site. A partir daí, todas as alterações emitidas para o repositório do GitHub são publicadas automaticamente no seu Web Site.
 
-When you set up publishing from GitHub, the default branch used is the master branch. To specify a different branch, execute the following command from your local repository:
+Quando configura a publicação a partir do GitHub, o ramo predefinido utilizado é o ramo principal. Para especificar outro ramo, execute o comando seguinte a partir do seu repositório local:
 
     azure site repository <branch name>
 
-### Configure app settings
-App settings are key-value pairs that are available to your application at runtime. When set for an Azure Website, app setting values will override settings with the same key that are defined in your site's Web.config file. For Node.js and PHP applications, app settings are available as environment variables. The following example shows you how to set a key-value pair:
+### <a name="configure-app-settings"></a>Configurar as definições da aplicação
+As definições da aplicação são pares de chave-valor que estão disponíveis para a aplicação no momento de execução. Quando definidos para um Web Site do Azure, os valores das definições da aplicação substituem as definições que tenham a mesma chave que estão definidas no ficheiro Web.config do Site. Para aplicações Node.js e PHP, as definições da aplicação estão disponíveis como variáveis do ambiente. O exemplo seguinte mostra como configurar um par chave-valor:
 
     azure site config add <key>=<value> 
 
-To see a list of all key/value pairs, use the following:
+Para ver uma lista de todos os pares chaves-valor, utilize o seguinte:
 
     azure site config list 
 
-Or if you know the key and want to see the value, you can use:
+Em alternativa, se souber a chave e quiser ver o valor, pode utilizar:
 
     azure site config get <key> 
 
-If you want to change the value of an existing key you must first clear the existing key and then re-add it. The clear command is:
+Se pretender alterar o valor de uma chave existente, tem, primeiro, de limpar a chave existente e, depois, voltar a adicioná-la. O comando para limpar é:
 
     azure site config clear <key> 
 
-### List and show sites
-To list your websites, use the following command:
+### <a name="list-and-show-sites"></a>Listar e mostrar Sites
+Para listar os seus Web Sites, utilize o comando seguinte:
 
     azure site list
 
-To get detailed information about a site, use the `site show` command. The following example shows details for `MySite`:
+Para obter informações detalhas sobre um Site, utilize o comando `site show`. O exemplo seguinte mostra detalhes relativos a `MySite`:
 
     azure site show MySite
 
-### Stop, start, or restart a site
-You can stop, start, or restart a site with the `site stop`, `site start`, or `site restart` commands:
+### <a name="stop-start-or-restart-a-site"></a>Parar, iniciar ou reiniciar um Site
+Pode parar, iniciar ou reiniciar um Site com os comandos `site stop`, `site start` ou `site restart`:
 
     azure site stop MySite
     azure site start MySite
     azure site restart MySite
 
-### Delete a site
-Finally, you can delete a site with the `site delete` command:
+### <a name="delete-a-site"></a>Eliminar um Site
+Por fim, pode eliminar um site com o comando `site delete`:
 
     azure site delete MySite
 
-Note that if you are running any of above commands from inside the folder where you ran `site create`, you do not need to specify the site name `MySite` as the last parameter.
+Tenha em conta que, se estiver a executar um dos comandos anteriores dentro da pasta onde executou `site create`, não tem de especificar o nome do site `MySite` como o último parâmetro.
 
-To see a complete list of `site` commands, use the `-help` option:
+Para ver uma lista completa de comandos `site`, utilize a opção `-help` :
 
     azure site -help 
 
-<h2><a id="VMs"></a>How to create and manage an Azure Virtual Machine</h2>
+<h2><a id="VMs"></a>Como criar e gerir uma Máquina Virtual do Azure</h2>
 
-an Azure Virtual Machine is created from a virtual machine image (a .vhd file) that you provide or that is available in the Image Gallery. To see images that are available, use the `vm image list` command:
+As Máquinas Virtuais do Azure são criadas a partir de imagens de máquinas virtuais (ficheiros .vhd) que são fornecidas por si ou que estão disponíveis na Galeria de Imagens. Para ver as imagens disponíveis, utilize o comando `vm image list`:
 
     azure vm image list
 
-You can provision and start a virtual machine from one of the available images with the `vm create` command. The following example shows how to create a Linux virtual machine (called `myVM`) from an image in the Image Gallery (CentOS 6.2). The root user name and password for the virtual machine are `myusername` and `Mypassw0rd` respectively. (Note that the `--location` parameter specifies the data center in which the virtual machine is created. If you omit the `--location` parameter, you will be prompted to choose a location.)
+Pode aprovisionar e iniciar uma máquina virtual a partir de uma das imagens disponíveis com o comando `vm create`. O exemplo seguinte mostra como criar uma máquina virtual do Linux (com nome `myVM`) com base numa imagem da Galeria de Imagens (CentOS 6.2). O nome de utilizador e a palavra-passe raiz da máquina virtual são `myusername` e `Mypassw0rd`, respetivamente. (Tenha em atenção que o parâmetro `--location` especifica o datacenter no qual a máquina virtual é criada. Se omitir o parâmetro `--location`, é-lhe pedido que escolha uma localização.)
 
     azure vm create myVM OpenLogic__OpenLogic-CentOS-62-20120509-en-us-30GB.vhd myusername --location "West US"
 
-You may consider passing the `--ssh` flag (Linux) or `--rdp` flag (Windows) to `vm create` to enable remote connections to the newly-created virtual machine.
+Pode considerar transmitir o sinalizador `--ssh` (Linux) ou o sinalizador `--rdp` (Windows) a `vm create` para permitir ligações remotas à máquina virtual criada recentemente.
 
-If you would rather provision a virtual machine from a custom image, you can create an image from a .vhd file with the `vm image create` command, then use the `vm create` command to provision the virtual machine. The following example shows how to create a Linux image (called `myImage`) from a local .vhd file. (The `--location` parameter specifies the data in which the image is stored.)
+Se preferir aprovisionar uma máquina virtual a partir de uma imagem personalizada, pode criar uma imagem a partir de um ficheiro .vhd com o comando `vm image create` e, em seguida, utilizar o comando `vm create` para aprovisionar a máquina. O exemplo seguinte mostra como criar uma imagem do Linux (com o nome `myImage`) a partir de um ficheiro .vhd local. (O parâmetro `--location` especifica os dados nos quais a imagem está armazenada.)
 
     azure vm image create myImage /path/to/myImage.vhd --os linux --location "West US"
 
-Instead of creating an image from a local .vhd, you can create an image from a .vhd stored in Azure Blob Storage. You can do this with the `blob-url` parameter:
+Em vez de criar uma imagem a partir de um ficheiro .vhd local, pode criá-la através de um ficheiro .vhd armazenado no Armazenamento de Blobs do Azure. Pode fazê-lo com o parâmetro `blob-url`:
 
     azure vm image create myImage --blob-url <url to .vhd in Blob Storage> --os linux
 
-After creating an image, you can provision a virtual machine from the image by using `vm create`. The command below creates a virtual machine called `myVM` from the image created above (`myImage`).
+Depois de criar uma imagem, pode aprovisionar uma máquina virtual a partir da imagem com `vm create`. O comando seguinte cria uma máquina virtual com o nome `myVM` a partir da imagem criada acima (`myImage`).
 
     azure vm create myVM myImage myusername --location "West US"
 
-After you have provisioned a virtual machine, you may want to create endpoints to allow remote access to your virtual machine (for example). The following example uses the `vm create endpoint` command to open external port 22 and local port 22 on `myVM`:
+Depois de aprovisionar uma máquina virtual, poderá ser útil criar pontos finais, para permitir o acesso remoto à mesma (por exemplo). O exemplo seguinte utiliza o comando `vm create endpoint` para abrir a porta externa 22 e a porta local 22 em `myVM`:
 
     azure vm endpoint create myVM 22 22
 
-You can get detailed information about a virtual machine (including IP address, DNS name, and endpoint information) with the `vm show` command:
+Pode obter informações detalhadas sobre uma máquina virtual (incluindo o endereço IP, o nome de DNS e as informações do ponto final) com o comando `vm show`:
 
     azure vm show myVM
 
-To shutdown, start, or restart the virtual machine, use one of the following commands:
+Para encerrar, iniciar ou reiniciar a máquina virtual, utilize um dos comandos seguintes:
 
     azure vm shutdown myVM
     azure vm start myVM
     azure vm restart myVM
 
-And finally, to delete the VM, use the `vm delete` command:
+E, por fim, para eliminar a VM, utilize o comando `vm delete`:
 
     azure vm delete myVM
 
-For a complete list of commands for creating and managing virtual machines, use the `-h` option:
+Para obter uma lista completa de comandos para criar e gerir máquinas virtuais, utilize a opção `-h`:
 
     azure vm -h
 
@@ -211,4 +211,9 @@ For a complete list of commands for creating and managing virtual machines, use 
 [windows-installer]: http://go.microsoft.com/fwlink/?LinkID=275464
 [reference-docs]: http://go.microsoft.com/fwlink/?LinkId=252246
 [windowsazuredotcom]: http://www.windowsazure.com
+
+
+
+<!--HONumber=Jan17_HO5-->
+
 

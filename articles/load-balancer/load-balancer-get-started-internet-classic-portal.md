@@ -1,5 +1,5 @@
 ---
-title: "Introdução à criação de um balanceador de carga com acesso à Internet no modelo de implementação clássica com o portal clássico do Azure | Microsoft Docs"
+title: "Criar um balanceador de carga com acesso à Internet – Portal clássico do Azure | Microsoft Docs"
 description: "Saiba como criar um balanceador de carga com acesso à Internet num modelo de implementação clássica com o portal clássico do Azure"
 services: load-balancer
 documentationcenter: na
@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 08/31/2016
+ms.date: 01/23/2017
 ms.author: kumud
 translationtype: Human Translation
-ms.sourcegitcommit: 8827793d771a2982a3dccb5d5d1674af0cd472ce
-ms.openlocfilehash: 7153d0321a95a19cf7de17aa1c77d1369330a79b
+ms.sourcegitcommit: fd5960a4488f2ecd93ba117a7d775e78272cbffd
+ms.openlocfilehash: a022154f5eca6de2d2dbfc1b9aa30d2ea0a7d650
 
 ---
 
@@ -70,6 +70,6 @@ Para as máquinas virtuais adicionais no conjunto com balanceamento de carga, re
 
 
 
-<!--HONumber=Nov16_HO5-->
+<!--HONumber=Jan17_HO4-->
 
 

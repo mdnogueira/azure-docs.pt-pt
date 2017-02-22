@@ -12,15 +12,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 11/01/2016
+ms.date: 02/3/2017
 ms.author: curtand
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 255670335151443445e5ea4a87614b904915e76f
+ms.sourcegitcommit: 4bab9f44d1c91f05618ea510b83beb06540429f2
+ms.openlocfilehash: be84686351255585c3484f5ab8dad37b92462e2b
 
 
 ---
-# <a name="setting-up-azure-active-directory-for-selfservice-group-management"></a>Configurar o Azure Active Directory para gestão de grupo personalizada
+# <a name="setting-up-azure-active-directory-for-self-service-group-management"></a>Configurar o Azure Active Directory para gestão de grupo personalizada
 A gestão de grupo personalizada permite aos utilizadores criar e gerir grupos de segurança ou grupos do Office 365 no Azure Active Directory (Azure AD). Os utilizadores também podem pedir um grupo de segurança ou as associações de grupos do Office 365 e, em seguida, o proprietário do grupo pode aceitar ou recusar a associação. Deste modo, o controlo diário da filiação no grupo pode ser delegado a quem entenda o contexto empresarial dessa filiação. As funcionalidades de gestão de grupo personalizada estão disponíveis apenas para grupos de segurança e grupos do Office 365, mas não para grupos de segurança com capacidade de e-mail correio ou listas de distribuição.
 
 A gestão de grupo personalizada inclui atualmente dois cenários essenciais: gestão de grupo delegada e gestão de grupo personalizada.
@@ -30,7 +30,7 @@ A gestão de grupo personalizada inclui atualmente dois cenários essenciais: ge
 * **Gestão de grupo personalizada**
    Um exemplo deste cenário são dois utilizadores com sites do SharePoint Online que configuraram independentemente. Pretendem conceder acesso às equipas uns dos outros com os respetivos sites. Para o conseguirem, podem criar um grupo no Azure AD e no SharePoint Online cada um deles seleciona esse grupo para fornecer acesso aos respetivos sites. Quando alguém quiser ter acesso, pode solicitá-lo no Painel de Acesso e, após a aprovação, obtém automaticamente acesso a ambos os sites do SharePoint Online. Posteriormente, um deles decide que todas as pessoas que acedem ao site devem também ter acesso a uma determinada aplicação SaaS. O administrador da aplicação SaaS pode adicionar direitos de acesso da aplicação ao site do SharePoint Online. A partir daí, quaisquer pedidos que ele aprove concedem acesso aos dois sites SharePoint Online e também a esta aplicação SaaS.
 
-## <a name="making-a-group-available-for-end-user-selfservice"></a>Disponibilizar um grupo para personalização por utilizadores finais
+## <a name="making-a-group-available-for-end-user-self-service"></a>Disponibilizar um grupo para personalização por utilizadores finais
 1. No [portal clássico do Azure](https://manage.windowsazure.com), abra o diretório do Azure AD.
 2. No separador **Configurar**, defina **Gestão de grupo delegada** como Ativado.
 3. Defina **Os utilizadores podem criar grupos de segurança** ou **Os utilizadores podem criar grupos do Office** como Ativado.
@@ -41,7 +41,7 @@ Pode também utilizar **Os utilizadores podem utilizar Personalização em grupo
 
 Também pode utilizar a caixa **Grupo que pode utilizar personalização para grupos de segurança** para especificar um nome personalizado para um grupo cujos membros podem utilizar a gestão personalizada.
 
-## <a name="additional-information"></a>Informações adicionais
+## <a name="next-steps"></a>Passos seguintes
 Estes artigos fornecem informações adicionais acerca do Azure Active Directory.
 
 * [Gerir o acesso aos recursos com grupos do Azure Active Directory](active-directory-manage-groups.md)
@@ -52,7 +52,6 @@ Estes artigos fornecem informações adicionais acerca do Azure Active Directory
 
 
 
-
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Feb17_HO2-->
 
 

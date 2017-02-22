@@ -1,14 +1,25 @@
 ---
+title: "Documentação das Aplicações Móveis do Azure - Tutoriais, Referência da API | Microsoft Docs"
+description: "Saiba como utilizar Aplicações Móveis no Serviço de Aplicações do Azure para criar e alojar aplicações iOS, Android ou Windows ou aplicações de várias plataformas utilizando o Xamarin ou o Cordova."
+services: app-service\mobile
+author: carolz
+manager: carolz
 layout: LandingPage
+ms.assetid: 
+ms.service: app-service\mobile
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: landing-page
+ms.date: 01/23/2017
+ms.author: carolz
 translationtype: Human Translation
-ms.sourcegitcommit: 95b54199c307efea21666c774525a9a539472131
-ms.openlocfilehash: 9cae18a8206e2828838c8b35733eee5d25d15cb1
-
+ms.sourcegitcommit: 6f1ca5fe5125728b51a6d46e55415afb72405910
+ms.openlocfilehash: f660922fa2f7d5d21b4e6678233792ad6cb84041
 
 ---
 # <a name="mobile-apps-documentation"></a>Documentação das Aplicações Móveis
 
-As Aplicações Móveis no Serviço de Aplicações do Azure oferecem uma plataforma de desenvolvimento de aplicações móveis dimensionável para Programadores Empresariais e Integradores de Sistemas que fornece um conjunto avançado de capacidades para programadores móveis.
+Saiba como utilizar Aplicações Móveis no Serviço de Aplicações do Azure para criar aplicações iOS, Android ou Windows ou aplicações de várias plataformas utilizando o Xamarin ou o Cordova. Tutoriais, vídeos, documentação do SDK de cliente e mais mostram-lhe como criar e alojar o back-end para qualquer aplicação móvel.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -185,8 +196,13 @@ As Aplicações Móveis no Serviço de Aplicações do Azure oferecem uma plataf
                 <div class="card">
                     <div class="cardText">
                         <h3>Linguagens</h3>
-                        <p><a href="https://msdn.microsoft.com/library/azure/dn961176.aspx">.NET</a></p>
-                   </div>
+                        <p><a href="https://msdn.microsoft.com/library/azure/dn961176.aspx">.NET SDK de back-end</a></p>
+                        <p><a href="https://azure.github.io/azure-mobile-apps-node/">Node.js SDK de back-end</a></p>
+                        <p><a href="https://azure.github.io/azure-mobile-apps-android-client/">SDK de cliente Android</a></p>
+                        <p><a href="https://azure.github.io/azure-mobile-apps-ios-client/">SDK de cliente iOS</a></p>
+                        <p><a href="https://azure.github.io/azure-mobile-apps-js-client/">SDK de cliente JavaScript/Cordova</a></p>
+                        <p><a href="https://msdn.microsoft.com/library/azure/mt419521.aspx">SDK de cliente Windows/Xamarin</a></p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -194,6 +210,7 @@ As Aplicações Móveis no Serviço de Aplicações do Azure oferecem uma plataf
 </ul>
 
 
-<!--HONumber=Dec16_HO2-->
+
+<!--HONumber=Feb17_HO2-->
 
 

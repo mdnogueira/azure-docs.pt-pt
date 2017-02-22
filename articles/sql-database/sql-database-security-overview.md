@@ -16,8 +16,8 @@ ms.workload: data-management
 ms.date: 06/09/2016
 ms.author: thmullan;jackr
 translationtype: Human Translation
-ms.sourcegitcommit: f4712d70c0323e607ddcc021809f8097a621730d
-ms.openlocfilehash: 9ebf3cd290151449c05c89307500fa5679de3b09
+ms.sourcegitcommit: 69faa86ddbc43793146653fc8d8dc2bf35c40aa1
+ms.openlocfilehash: f3a7bcbc80580232f2704087eb529ee9ec8ead46
 
 
 ---
@@ -71,9 +71,14 @@ A Base de Dados SQL protege os seus dados, fornecendo capacidades de auditoria e
 ### <a name="auditing"></a>Auditoria
 A Auditoria da Base de Dados SQL controla as atividades de base de dados e ajuda a manter a conformidade regulamentar, ao registar eventos de base de dados num registo de auditoria na conta de Armazenamento do Azure. A Auditoria permite-lhe compreender as atividades de base de dados em curso, bem como analisar e investigar atividade do histórico para identificar potenciais ameaças ou suspeita de abuso e violações de segurança. Para obter informações adicionais, veja [Introdução à Auditoria da Base de Dados SQL](sql-database-auditing-get-started.md).  
 
-### <a name="threat-detection"></a>Deteção de ameaças
+### <a name="auditing--threat-detection"></a>Auditoria e Deteção de Ameaças 
+A Auditoria da Base de Dados SQL controla as atividades de base de dados e ajuda a manter a conformidade regulamentar, ao registar eventos de base de dados num registo de auditoria na conta de Armazenamento do Azure. A Auditoria permite-lhe compreender as atividades de base de dados em curso, bem como analisar e investigar atividade do histórico para identificar potenciais ameaças ou suspeita de abuso e violações de segurança. Para obter informações adicionais, veja [Introdução à Auditoria da Base de Dados SQL](sql-database-auditing-get-started.md).  
+ 
 A Deteção de Ameaças complementa a auditoria, fornecendo uma camada adicional de análise de segurança incorporada no serviço Base de Dados SQL do Azure. Funciona continuamente para aprender, traçar o perfil e detetar atividades anómalas da base de dados. O utilizador será alertado relativamente a atividades suspeitas, potenciais vulnerabilidades, ataques de injeção de SQL e padrões de acesso anómalos à base de dados. Pode responder a alertas, seguindo as instruções informativas e passíveis de ação fornecidas. Para obter mais informações, veja [Get started with SQL Database Threat Detection (Introdução à Deteção de Ameaças da Base de Dados SQL)](sql-database-threat-detection-get-started.md).  
-
+ 
+### <a name="data-masking"></a>Máscara de Dados 
+A Máscara de Dados Dinâmicos da Base de Dados SQL limita a exposição de dados confidenciais ao mascará-los para utilizadores sem privilégios. A Máscara de Dados Dinâmicos deteta automaticamente dados potencialmente confidenciais na Base de Dados SQL do Azure e fornece recomendações passíveis de ação para mascarar estes campos, com um impacto mínimo na camada da aplicação. Funciona ao ofuscar os dados confidenciais no conjunto de resultados de uma consulta em campos de base de dados designados, enquanto os dados na base de dados não são alterados. Para obter mais informações, veja Get started with [SQL Database Dynamic Data Masking (Introdução à Máscara de Dados Dinâmicos da Base de Dados SQL)](sql-database-dynamic-data-masking-get-started.md).
+ 
 ## <a name="compliance"></a>Conformidade
 Para além das funcionalidades anteriores que podem ajudar a sua aplicação a cumprir os diversos requisitos de compatibilidade de segurança, a Base de Dados SQL do Azure também participa em auditorias regulares e tem certificação de uma série de normas de conformidade. Para obter mais informações, veja o [Centro de Fidedignidade do Microsoft Azure](https://azure.microsoft.com/support/trust-center/), onde pode encontrar a lista mais recente de [certificações de conformidade da Base de Dados SQL](https://azure.microsoft.com/support/trust-center/services/).
 
@@ -84,6 +89,7 @@ Para além das funcionalidades anteriores que podem ajudar a sua aplicação a c
 - Para ver um debate sobre a monitorização proativa, veja [Get started with SQL Database Auditing (Introdução à Auditoria da Base de Dados SQL)](sql-database-auditing-get-started.md) e [Get started with SQL Database Threat Detection (Introdução à Deteção de Ameaças da Base de Dados SQL)](sql-database-threat-detection-get-started.md).
 
 
-<!--HONumber=Dec16_HO4-->
+
+<!--HONumber=Jan17_HO2-->
 
 

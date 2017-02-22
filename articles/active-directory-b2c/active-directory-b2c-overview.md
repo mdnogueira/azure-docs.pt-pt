@@ -15,8 +15,8 @@ ms.topic: hero-article
 ms.date: 12/06/2016
 ms.author: swkrish
 translationtype: Human Translation
-ms.sourcegitcommit: 4b13c040a15bef2f04d2cd2126e2270d061898bd
-ms.openlocfilehash: 37c9d6808b3282d86583f6305672405775a7f306
+ms.sourcegitcommit: f37fa3a212a0dca46c76b3928cf78756722f0340
+ms.openlocfilehash: 2c6765e28f40210730823a9af0b6fb80a5ddc4d1
 
 
 ---
@@ -33,7 +33,7 @@ Pode escrever a aplicação no serviço do Azure Active Directory B2C ao selecio
 [!INCLUDE [active-directory-b2c-quickstart-table](../../includes/active-directory-b2c-quickstart-table.md)]
 
 ## <a name="whats-new"></a>Novidades
-Verifique novamente aqui com frequência para saber mais sobre as alterações futuras ao Azure Active Directory B2C. Podemos também colocar no Tweet quaisquer atualizações utilizando @AzureAD.
+Verifique novamente aqui com frequência para saber mais sobre as alterações futuras ao Azure Active Directory B2C. Podemos também colocar no Tweet quaisquer atualizações utilizando o @AzureAD.
 
 * Saiba mais sobre a nossa [estrutura de políticas extensível](active-directory-b2c-reference-policies.md) e sobre os tipos de políticas que pode criar e utilizar nas aplicações.
 * Marque o nosso [blogue de serviços](https://blogs.msdn.microsoft.com/azureadb2c/) para obter notificações sobre problemas secundários de serviço, atualizações, estado e atenuações. Continue a monitorizar também o [Dashboard de estado do Azure](https://azure.microsoft.com/status/).
@@ -54,6 +54,7 @@ Saiba como utilizar funcionalidades específicas do Azure Active Directory B2C:
 Estas hiperligações serão úteis para explorar o serviço em profundidade:
 
 * Veja as [Informações sobre preços do Azure Active Directory B2C](https://azure.microsoft.com/pricing/details/active-directory-b2c/).
+* Veja os nossos [exemplos de código](https://azure.microsoft.com/en-us/resources/samples/?service=active-directory&term=b2c) do Azure Active Directory B2C. 
 * Obtenha ajuda na Stack Overflow, utilizando as etiquetas [azure-active-directory](http://stackoverflow.com/questions/tagged/azure-active-directory) ou [adal](http://stackoverflow.com/questions/tagged/adal).
 * Indique-nos a sua opinião sobre como utilizar [A Voz do Utilizador](https://feedback.azure.com/forums/169401-azure-active-directory/), queremos ouvi-la! Utilize a frase "AzureADB2C:" no título da sua publicação para que possa encontrar.
 * Reveja a [Referência de Protocolo do Azure AD B2C](active-directory-b2c-reference-protocols.md).
@@ -67,6 +68,6 @@ Aconselhamo-lo a obter notificações de quando os incidentes de segurança ocor
 
 
 
-<!--HONumber=Dec16_HO2-->
+<!--HONumber=Feb17_HO1-->
 
 

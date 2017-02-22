@@ -16,6 +16,10 @@
 ### [Conjunto de dimensionamento do Linux com dimensionamento automático](virtual-machine-scale-sets-linux-autoscale.md)
 ### [Conjunto de dimensionamento do Windows com dimensionamento automático](virtual-machine-scale-sets-windows-autoscale.md)
 ### [Aplicações em conjuntos de dimensionamento](virtual-machine-scale-sets-deploy-app.md)
+### [Utilizar discos de dados com conjuntos de dimensionamento](virtual-machine-scale-sets-attached-disks.md)
+### [Trabalhar com conjuntos de dimensionamento de grande escala](virtual-machine-scale-sets-placement-groups.md)
+### [Converter um modelo de conjunto de dimensionamento para utilizar um disco gerido](virtual-machine-scale-sets-convert-template-to-md.md)
+
 
 ## Gerir
 ### [Conjunto de dimensionamento do Windows com o PowerShell](virtual-machine-scale-sets-windows-manage.md)
@@ -24,6 +28,7 @@
 ### [Atualizações para conjuntos de dimensionamento](virtual-machine-scale-sets-upgrade-scale-set.md)
 ### [Dimensionamento automático avançado](../monitoring-and-diagnostics/insights-advanced-autoscale-virtual-machine-scale-sets.md)
 ### [Com o DSC e conjuntos de dimensionamento](virtual-machine-scale-sets-dsc.md)
+### [Converter um modelo para discos geridos](virtual-machine-scale-sets-convert-template-to-md.md)
 
 ## Resolução de problemas
 ### [Dimensionamento Automático](virtual-machine-scale-sets-troubleshoot.md)
@@ -40,6 +45,6 @@
 ## [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-vm-scale-set)
 
 
-<!--HONumber=Jan17_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 

@@ -1,11 +1,23 @@
 ---
-layout: LandingPage
+title: "Documentação dos Hubs de Eventos do Azure - Tutoriais, Referência da API | Microsoft Docs"
 description: "Saiba como utilizar Hubs de Eventos para ingerir milhões de eventos por segundo a partir de dispositivos IoT ligados e aplicações num conjunto abrangente de plataformas."
+services: event-hubs
+author: carolz
+manager: carolz
+layout: LandingPage
+ms.assetid: 
+ms.service: event-hubs
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: landing-page
+ms.date: 01/23/2017
+ms.author: carolz
 translationtype: Human Translation
-ms.sourcegitcommit: b4080529e9ff4500cef20e1dd735765051f6ce1f
-ms.openlocfilehash: 29d6165596d3e98264285b6471c8f54b66aa2c3a
+ms.sourcegitcommit: a7759c242057e5190fcef6952303a770a3277b55
+ms.openlocfilehash: b3bbbefea5b2bffd8cdee1b93d7bd8bcf808bef0
 
 ---
+
 #<a name="event-hubs-documentation"></a>Documentação dos Hubs de Eventos
 
 Saiba como utilizar Hubs de Eventos para recolher e gerir milhões de eventos por segundo a partir de aplicações e dispositivos IoT ligados. Tutoriais, referências de API e outra documentação mostram-lhe como configurar a ingestão dimensionável para eventos de um conjunto abrangente de plataformas.
@@ -48,10 +60,10 @@ Saiba como utilizar Hubs de Eventos para recolher e gerir milhões de eventos po
         </a>
     </li>
      <li>
-        <a href="/azure/Event-Hubs/event-hubs-programming-guide">
+        <a href="/azure/event-hubs/event-hubs-programming-guide">
         <div class="cardSize">
             <div class="cardPadding">
-                <div class="card">
+               <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
                             <img src="media/index/get-started.svg" alt="" />
@@ -66,7 +78,7 @@ Saiba como utilizar Hubs de Eventos para recolher e gerir milhões de eventos po
         </a>
     </li>
     <li>
-        <a href="/azure/Event-Hubs/event-hubs-csharp-ephcs-getstarted">
+        <a href="/azure/event-hubs/event-hubs-csharp-ephcs-getstarted">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
@@ -76,7 +88,7 @@ Saiba como utilizar Hubs de Eventos para recolher e gerir milhões de eventos po
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Introdução aos Hubs de Eventos com o Portal do Azure</h3>
+                        <h3>Introdução aos Hubs de Eventos com o portal do Azure</h3>
                     </div>
                 </div>
             </div>
@@ -86,7 +98,6 @@ Saiba como utilizar Hubs de Eventos para recolher e gerir milhões de eventos po
 </ul>
 
 ---
-
 <h2>Referência</h2>
 <ul class="panelContent cardsW">
     <li>
@@ -94,9 +105,11 @@ Saiba como utilizar Hubs de Eventos para recolher e gerir milhões de eventos po
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-                        <h3>Linguagens</h3>
-                        <p><a href="/dotnet/api/microsoft.azure.eventhubs">.NET</a></p>
-                        <p><a href="/java/api/com.microsoft.azure.eventhubs">Java</a></p>
+                        <h3>.NET</h3>
+                        <p><a href="/dotnet/api/microsoft.azure.eventhubs">Microsoft.Azure.EventHubs</a></p>
+                        <p><a href="/dotnet/api/microsoft.azure.eventhubs.processor">Microsoft.Azure.EventHubs.Processor</a></p>
+                        <p><a href="/dotnet/api/microsoft.servicebus.messaging">Microsoft.ServiceBus.Messaging</a></p>
+                        <p><a href="/dotnet/api/microsoft.azure.servicebus.eventprocessorhost">Microsoft.Azure.ServiceBus.EventProcessorHost</a></p>
                    </div>
                 </div>
             </div>
@@ -107,8 +120,22 @@ Saiba como utilizar Hubs de Eventos para recolher e gerir milhões de eventos po
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-                        <h3>REST</h3>
-                        <p><a href="/rest/api/eventhub">Referência da API REST</a></p>
+                        <h3>Java</h3>
+                        <p><a href="/java/api/com.microsoft.azure.eventhubs">com.microsoft.azure.eventhubs</a></p>
+                        <p><a href="/java/api/com.microsoft.azure.eventprocessorhost">com.microsoft.azure.eventprocessorhost</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3><a href="/rest/api/eventhub">REST</a></h3>
+                        <p><a href="/azure/event-hubs/event-hubs-messaging-exceptions">Exceções</a></p>
+                        <p><a href="/azure/event-hubs/event-hubs-quotas">Quotas</a></p>
                     </div>
                 </div>
             </div>
@@ -118,8 +145,6 @@ Saiba como utilizar Hubs de Eventos para recolher e gerir milhões de eventos po
 
 
 
-
-
-<!--HONumber=Jan17_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 

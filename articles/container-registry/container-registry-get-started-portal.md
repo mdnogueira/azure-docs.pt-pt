@@ -1,5 +1,5 @@
 ---
-title: Criar um registo de contentores no portal | Microsoft Docs
+title: "Criar registo de contentores do Azure – portal | Microsoft Docs"
 description: "Introdução à criação e gestão de registos de contentores do Azure com o portal do Azure"
 services: container-registry
 documentationcenter: 
@@ -17,8 +17,8 @@ ms.workload: na
 ms.date: 11/14/2016
 ms.author: stevelas
 translationtype: Human Translation
-ms.sourcegitcommit: aa4b960ed75b5a4702317bf557b4588e7a54fa0e
-ms.openlocfilehash: c22fee1a9172eba28d8f841d973704934cdb3ebb
+ms.sourcegitcommit: d3047cd4cddb23c4daeb9265afc4d7b3fe30d46c
+ms.openlocfilehash: bec138da39696cd93bdc9bf0307108b8ca6eb149
 
 ---
 # <a name="create-a-container-registry-using-the-azure-portal"></a>Criar um registo de contentores com o portal do Azure
@@ -52,7 +52,7 @@ Para obter informações e conceitos, veja [What is Azure Container Registry? (O
    > [!IMPORTANT]
    > Para além de proporcionarem acesso através de uma conta de utilizador administrador, os registos de contentores suportam autenticação com base em principais de serviço do Azure Active Directory. Para obter mais informações e considerações, veja [Authenticate with a container registry (Autenticar num registo de contentores)](container-registry-authentication.md).
    
-    e. **Conta de armazenamento** - utilize a predefinição para criar uma [conta de armazenamento](../storage/storage-introduction.md) ou selecione uma já existente na mesma localização.
+    e. **Conta de armazenamento** - utilize a predefinição para criar uma [conta de armazenamento](../storage/storage-introduction.md) ou selecione uma já existente na mesma localização. Tenha em atenção que as contas de armazenamento Premium e Clássica não são suportadas.
 
 ## <a name="manage-registry-settings"></a>Gerir as definições do registo
 Depois de criar o registo, encontre as definições do mesmo, começando no painel **Registos de Contentores** do portal. Por exemplo, poderá precisar das definições para iniciar sessão no seu registo ou poderá querer ativar ou desativar o utilizador administrador.
@@ -77,6 +77,6 @@ Depois de criar o registo, encontre as definições do mesmo, começando no pain
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 

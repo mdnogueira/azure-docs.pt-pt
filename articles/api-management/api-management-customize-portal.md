@@ -12,11 +12,11 @@ ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 10/25/2016
-ms.author: sdanie
+ms.date: 12/15/2016
+ms.author: apimpm
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 398b845a6549341d6afba101acec9eefd146d810
+ms.sourcegitcommit: 13431648e87d085161ad278dc991d49f7872be34
+ms.openlocfilehash: 60213f885020a5ba36d6ada0812f755e06b3c48b
 
 
 ---
@@ -43,19 +43,19 @@ Agora deve conseguir ver o novo cabeçalho em todas as páginas do portal do pro
 > 
 
 ## <a name="change-headers-styling"> </a>Alterar o estilo dos cabeçalhos
-As cores, tipos de letra, tamanhos, espaços e outros elementos relacionados com o estilo de qualquer página no portal são definidos por regras de estilo. Para editar os estilos, clique em **Aspeto** no menu **Portal do programador** no portal do publicador e, em seguida, clique em **Iniciar personalização** para ativar o editor de estilo.
+As cores, tipos de letra, tamanhos, espaços e outros elementos relacionados com o estilo de qualquer página no portal são definidos por regras de estilo. Para editar os estilos, enquanto estiver no **Portal de programador**, abra a barra de ferramentas de personalização no lado esquerdo, movendo sobre o ícone de personalização e, em seguida, selecione "estilos" na barra de ferramentas.
 
-O browser muda para uma página oculta no portal do programador que contém amostras de conteúdo, com exemplos de todas as regras de estilo utilizadas em qualquer local do site. Para abrir o editor de estilo, mova o cursor sobre a linha vertical cinzenta fina na parte mais à esquerda da página. Deverá aparecer a barra de ferramentas do editor.
+![Botão da barra de ferramentas de personalização][api-management-customization-toolbar-button]
+
+Existem duas formas principais de editar regras de estilo - pode consultar a lista de todas as regras de estilo utilizadas em qualquer local que é apresentada por predefinição e modificar um estilo, conforme necessário, ou pode escolher **Selecionar um elemento na página** e, em seguida, clicar em qualquer parte da página para ver apenas os estilos desse elemento.
+
+Nesta secção, pretendemos alterar o estilo apenas dos cabeçalhos. Clique na opção **Selecionar um elemento na página** da barra de ferramentas do editor de estilo. 
 
 ![Barra de ferramentas de personalização][api-management-customization-toolbar]
 
-Existem dois modos principais de edição de regras de estilo – **Editar todas as regras** apresenta uma lista de todas as regras de estilo utilizadas em qualquer lugar, enquanto **Escolher elemento** permite-lhe selecionar um elemento da página na qual se encontra e apresenta estilos apenas para esse elemento.
+Os elementos ficam agora realçados à medida que paira o rato sobre os mesmos, de modo a indicar os estilos do elemento que começaria a editar se clicasse. Mova o rato sobre o texto que representa o nome da empresa no cabeçalho (“Portal do Programador da Fabrikam” se seguiu as instruções da secção anterior) e, em seguida, clique no mesmo. Um conjunto de regras de estilo nomeadas e categorizadas aparece no editor de estilo. Cada regra representa uma propriedade de estilo do elemento selecionado. Por exemplo, para o texto do cabeçalho selecionado acima, o tamanho do texto é @font-size-h1, enquanto o nome do tipo de letra com alternativas é @headings-font-family.
 
-Nesta secção, pretendemos alterar o estilo apenas dos cabeçalhos. Clique na opção **Escolher elemento** da barra de ferramentas do editor de estilo e, em seguida, clique em **Selecionar um elemento para personalizar**. Os elementos ficam agora realçados à medida que paira o rato sobre os mesmos, de modo a indicar os estilos do elemento que começaria a editar se clicasse. Mova o rato sobre o texto que representa o nome da empresa no cabeçalho (“Portal do Programador da Fabrikam” se seguiu as instruções da secção anterior) e, em seguida, clique no mesmo. Um conjunto de regras de estilo nomeadas e categorizadas aparece no editor de estilo.
-
-Cada regra representa uma propriedade de estilo do elemento selecionado. Por exemplo, para o texto do cabeçalho selecionado acima, o tamanho do texto é @font-size-h1, enquanto o nome do tipo de letra com alternativas é @headings-font-family.
-
-> Se estiver familiarizado com [bootstrap][bootstrap], estas regras são de facto [variáveis LESS][variáveis LESS] dentro do tema de bootstrap utilizado pelo portal do programador.
+> Se estiver familiarizado com [bootstrap][bootstrap], estas regras são de facto [variáveis LESS][LESS variables] dentro do tema de bootstrap utilizado pelo portal do programador.
 > 
 > 
 
@@ -63,7 +63,7 @@ Vamos alterar a cor do texto do cabeçalho. Selecione a entrada no campo **@head
 
 ![Seletor de cores][api-management-customization-toolbar-color-picker]
 
-Quando terminar de fazer as alterações aos estilos do elemento selecionado, clique em **Pré-visualizar Alterações** para ver os resultados no ecrã. Neste momento, são visíveis apenas para administradores. Para tornar estas alterações visíveis para todos, clique no botão **Publicar** no editor de estilo e confirme as alterações.
+As alterações são pré-visualizadas em tempo real enquanto são realizadas, mas são visíveis apenas para os administradores. Para tornar estas alterações visíveis para todos, clique no botão **Publicar** no editor de estilo e confirme as alterações.
 
 ![Menu Publicar][api-management-customization-toolbar-publish-form]
 
@@ -87,15 +87,16 @@ Clique na página **Bem-vindo** para editar o que é apresentado na home page do
 ## <a name="next-steps"> </a>Passos seguintes
 * Saiba como personalizar o conteúdo das páginas dos portais de programador com [Modelos de portais de programador](api-management-developer-portal-templates.md).
 
-[Alterar o texto/logótipo nos cabeçalhos de página]: #change-page-headers
-[Alterar o estilo dos cabeçalhos]: #change-headers-styling
-[Editar o conteúdo de uma página]: #edit-page-contents
-[Passos seguintes?]: #next-steps
+[Change the text/logo in the page headers]: #change-page-headers
+[Change the styling of the headers]: #change-headers-styling
+[Edit the contents of a page]: #edit-page-contents
+[Next steps]: #next-steps
 
-[Portal Clássico do Azure]: https://manage.windowsazure.com/
+[Azure Classic Portal]: https://manage.windowsazure.com/
 
 [api-management-management-console]: ./media/api-management-customize-portal/api-management-management-console.png
 [api-management-widgets-header]: ./media/api-management-customize-portal/api-management-widgets-header.png
+[api-management-customization-toolbar-button]: ./media/api-management-customize-portal/api-management-customization-toolbar-button.png
 [api-management-customization-toolbar]: ./media/api-management-customize-portal/api-management-customization-toolbar.png
 [api-management-customization-toolbar-color-picker]: ./media/api-management-customize-portal/api-management-customization-toolbar-color-picker.png
 [api-management-customization-toolbar-publish-form]: ./media/api-management-customize-portal/api-management-customization-toolbar-publish-form.png
@@ -103,10 +104,10 @@ Clique na página **Bem-vindo** para editar o que é apresentado na home page do
 
 
 [bootstrap]: http://getbootstrap.com/
-[Variáveis LESS]: http://getbootstrap.com/css/
+[LESS variables]: http://getbootstrap.com/css/
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Feb17_HO1-->
 
 

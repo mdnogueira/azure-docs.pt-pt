@@ -1,13 +1,25 @@
 ---
+title: "Documentação do Azure Stack - Tutoriais | Microsoft Docs"
+description: "Saiba como utilizar a pré-visualização do Azure Stack para fornecer os serviços do Azure a partir do centro de dados. Saiba e demonstre funcionalidades a partir de uma prova de ambiente de conceito."
+services: azure-stack
+author: carolz
+manager: carolz
 layout: LandingPage
+ms.assetid: 
+ms.service: azure-stack
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: landing-page
+ms.date: 01/23/2017
+ms.author: carolz
 translationtype: Human Translation
-ms.sourcegitcommit: cc7cf80b26a0bdc79448fc87d2d8b6fff1931d49
-ms.openlocfilehash: eb675cc7a401583cf0f2dc0605a16d5dda8b306f
+ms.sourcegitcommit: 888d813814862faf23121f0b7ec2645bdcf589c6
+ms.openlocfilehash: 07f3c5dc580a0d8e7e7e2a7aee5f2b9e907c3e80
 
 ---
 #<a name="azure-stack-documentation"></a>Documentação do Azure Stack
 
-O Microsoft Azure Stack é um novo produto de plataforma de nuvem híbrida que lhe permite disponibilizar serviços do Azure a partir do datacenter da sua organização. O Microsoft Azure Stack Technical Preview 2 está a ser disponibilizado através de uma Prova de Conceito (POC). A POC é um ambiente para aprendizagem e demonstração das funcionalidades do Azure Stack. Permite-lhe implementar todos os componentes necessários num único computador físico para criar um ambiente para avaliar os conceitos e as capacidades chave, e validar o modelo de extensibilidade para APIs.
+Saiba como utilizar a pré-visualização técnica do Azure Stack para fornecer os serviços do Azure a partir do centro de dados da organização. Tutoriais e outra documentação mostram-lhe como utilizar a prova de ambiente de conceito para obter informações e demonstrar funcionalidades do Azure Stack.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -84,18 +96,12 @@ O Microsoft Azure Stack é um novo produto de plataforma de nuvem híbrida que l
     </li>
 </ul>
 
----
-
-<div class="downloadHolder">
-    <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/azure-stack.pdf">
-        <div class="img"></div>
-        <div class="text">
-Transferir a Documentação do Azure Stack </div>
-    </a>
-</div>
 
 
 
-<!--HONumber=Nov16_HO4-->
+
+
+
+<!--HONumber=Feb17_HO2-->
 
 

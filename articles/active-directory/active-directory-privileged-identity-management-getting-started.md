@@ -3,7 +3,7 @@ title: "Introdução ao Azure AD Privileged Identity Management | Microsoft Docs
 description: "Saiba como gerir identidades privilegiadas com a aplicação do Azure Active Directory Privileged Identity Management no Portal do Azure."
 services: active-directory
 documentationcenter: 
-author: kgremban
+author: billmath
 manager: femila
 editor: 
 ms.assetid: 2299db7d-bee7-40d0-b3c6-8d628ac61071
@@ -12,11 +12,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 09/16/2016
-ms.author: kgremban
+ms.date: 02/14/2017
+ms.author: billmath
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: e84b361ec2acb062142d15ff9a6e02aca07d0958
+ms.sourcegitcommit: 081e45e0256134d692a2da7333ddbaafc7366eaa
+ms.openlocfilehash: 7b1510ccfed939e27bad4fc0e5fafd4383db4a35
 
 
 ---
@@ -44,7 +44,6 @@ Assim que o Azure AD Privileged Identity Management é configurado, verá o pain
 * **Gerir funções com privilégios** é o dashboard para os administradores de função com privilégios gerirem atribuições de função, alterarem definições de ativação de função, iniciarem revisões de acesso e muito mais. As opções neste dashboard estão desativadas para todas as pessoas que não são um administrador de função com privilégios.
 * **Rever acesso privilegiado** leva-o a quaisquer revisões de acesso pendente que necessite de concluir, se estiver a rever o acesso para si ou para outra pessoa. 
 
-<!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## <a name="next-steps"></a>Passos seguintes
 A [descrição geral do Azure AD Privileged Identity Management](active-directory-privileged-identity-management-configure.md) inclui mais informações sobre como pode gerir o acesso administrativo na organização.
 
@@ -56,6 +55,6 @@ A [descrição geral do Azure AD Privileged Identity Management](active-director
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Feb17_HO1-->
 
 

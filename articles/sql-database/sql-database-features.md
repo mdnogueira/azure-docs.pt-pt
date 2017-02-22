@@ -16,8 +16,8 @@ ms.workload: data-management
 ms.date: 02/01/2017
 ms.author: carlrab; jognanay
 translationtype: Human Translation
-ms.sourcegitcommit: e5b5751facb68ae4a62e3071fe4dfefc02434a9f
-ms.openlocfilehash: c153f09741b9b063d67459bbb127f9c4e7942a5b
+ms.sourcegitcommit: 5d51a5ef3387b4c00079547b0f44ffe1f96bd77c
+ms.openlocfilehash: 5d8fa8328bb2257b77a27fc2fa33565e20000e10
 
 
 ---
@@ -47,7 +47,7 @@ Continuaremos a adicionar funcionalidades para V12. Por isso, aconselhamo-lo a v
 * Filtrado para [anúncios](http://azure.microsoft.com/updates/?service=sql-database&update-type=general-availability) de Disponibilidade Geral (DG) para funcionalidades de Base de Dados SQL.
 
 > [!TIP]
-> Para testar uma base de dados existente para compatibilidade com a Base de Dados SQL do Azure, consulte [Validar compatibilidade da Base de Dados SQL do Azure](sql-database-cloud-migrate-fix-compatibility-issues-ssdt.md).
+> Para testar uma base de dados existente para compatibilidade com a Base de Dados SQL do Azure, consulte [Migrate a SQL Server database to Azure (Migrar uma base de dados do SQL Server para o Azure)](sql-database-cloud-migrate.md).
 >
 
 | **Funcionalidade** | **SQL Server** | **Base de Dados SQL do Azure** | 
@@ -57,12 +57,12 @@ Continuaremos a adicionar funcionalidades para V12. Por isso, aconselhamo-lo a v
 | Grupos de Disponibilidade AlwaysOn | [Suportado](https://msdn.microsoft.com/library/hh510230.aspx) | Não suportado - consulte [Georreplicação Ativa](sql-database-geo-replication-overview.md) |
 | Anexar uma base de dados | [Suportado](https://msdn.microsoft.com/library/ms190209.aspx) | Não suportado |
 | Funções da aplicação | [Suportado](https://msdn.microsoft.com/library/ms190998.aspx) | [Suportado](https://msdn.microsoft.com/library/ms190998.aspx) |
-| Dimensionar automaticamente | Não suportado | [Suportado](sql-database-scale-up.md) |
+| Dimensionar automaticamente | Não suportado | [Suportado](sql-database-service-tiers.md) |
 | Azure Active Directory | Não suportado | [Suportado](sql-database-aad-authentication.md) |
 | Azure Data Factory | Não suportado - consulte [Serviços de Integração do SQL Server (SSIS)](https://msdn.microsoft.com/library/ms141026.aspx) | [Suportado](https://azure.microsoft.com/services/data-factory/) |
-| Auditoria | [Suportado](https://msdn.microsoft.com/library/cc280386.aspx) | [Suportado](sql-database-auditing-get-started.md) |
+| Auditoria | [Suportado](https://msdn.microsoft.com/library/cc280386.aspx) | [Suportado](sql-database-auditing.md) |
 | Ficheiro BACPAC (exportação) | [Suportado](https://msdn.microsoft.com/library/hh213241.aspx) | [Suportado](sql-database-export.md) |
-| Ficheiro BACPAC (importação) | [Suportado](https://msdn.microsoft.com/library/hh710052.aspx) | [Suportado](sql-database-import.md) |
+| Ficheiro BACPAC (importação) | [Suportado](https://msdn.microsoft.com/library/hh710052.aspx) | [Suportado](sql-database-import-portal.md) |
 | Instruções de CÓPIA DE SEGURANÇA e RESTAURO | [Suportado](https://msdn.microsoft.com/library/ff848768.aspx) | Não suportado |
 | Funções incorporadas | [Suportado](https://msdn.microsoft.com/library/ms174318.aspx) | [Maioria](https://msdn.microsoft.com/library/ms174318.aspx) |
 | Captura de dados de alteração | [Suportado](https://msdn.microsoft.com/library/cc645937.aspx) | Não suportado |
@@ -132,7 +132,7 @@ Continuaremos a adicionar funcionalidades para V12. Por isso, aconselhamo-lo a v
 | SQL Server Integration Services (SSIS) | [Suportado](https://msdn.microsoft.com/library/ms141026.aspx) | Não suportado - consulte [Azure Data Factory](https://azure.microsoft.com/services/data-factory/) |
 | PowerShell do SQL Server | [Suportado](https://msdn.microsoft.com/library/hh245198.aspx) | [Suportado](https://msdn.microsoft.com/library/hh245198.aspx) |
 | Gerador de perfis do SQL Server | [Suportado](https://msdn.microsoft.com/library/ms181091.aspx) | Não suportado - consulte [Eventos expandidos](https://msdn.microsoft.com/library/ms181091.aspx) |
-| Replicação do SQL Server | [Suportado](https://msdn.microsoft.com/library/ms151198.aspx) | [Apenas subscritor de replicação de instantâneo e transacional](sql-database-cloud-migrate-compatible-using-transactional-replication.md) |
+| Replicação do SQL Server | [Suportado](https://msdn.microsoft.com/library/ms151198.aspx) | [Apenas subscritor de replicação de instantâneo e transacional](sql-database-cloud-migrate.md) |
 | SQL Server Reporting Services (SSRS) | [Suportado](https://msdn.microsoft.com/library/ms159106.aspx) | Não suportado |
 | Procedimentos armazenados | [Suportado](https://msdn.microsoft.com/library/ms190782.aspx) | [Suportado](https://msdn.microsoft.com/library/ms190782.aspx) |
 | Funções armazenadas do sistema | [Suportado](https://msdn.microsoft.com/library/ff848780.aspx) | [Alguns](https://msdn.microsoft.com/library/ff848780.aspx) |
@@ -161,6 +161,6 @@ Continuaremos a adicionar funcionalidades para V12. Por isso, aconselhamo-lo a v
 
 
 
-<!--HONumber=Dec16_HO4-->
+<!--HONumber=Feb17_HO3-->
 
 

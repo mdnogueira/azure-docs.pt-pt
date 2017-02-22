@@ -16,9 +16,10 @@
 # Procedimento
 ## [Configurar um método de encaminhamento](traffic-manager-configure-routing-method.md)
 ## [Testar as definições](traffic-manager-testing-settings.md)
-## [Resolver problemas relacionados com um ponto final degradado](traffic-manager-troubleshooting-degraded.md)
 ## [Combinar serviços de balanceamento de carga](traffic-manager-load-balancing-azure.md)
 ## [Utilizar recursos de rede](../virtual-network/resource-groups-networking.md?toc=%2fazure%2ftraffic-manager%2ftoc.json)
+## Resolução de problemas
+### [Resolver problemas relacionados com um ponto final degradado](traffic-manager-troubleshooting-degraded.md)
 
 # Referência
 ## [PowerShell](/powershell/resourcemanager/azurerm.trafficmanager/v2.3.0/azurerm.trafficmanager)
@@ -45,6 +46,6 @@
 ## [Vídeos](https://azure.microsoft.com/resources/videos/index/?services=traffic-manager)
 
 
-<!--HONumber=Jan17_HO3-->
+<!--HONumber=Jan17_HO5-->
 
 

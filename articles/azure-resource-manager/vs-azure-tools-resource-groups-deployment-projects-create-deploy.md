@@ -12,11 +12,11 @@ ms.devlang: multiple
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/20/2016
+ms.date: 12/19/2016
 ms.author: tomfitz
 translationtype: Human Translation
-ms.sourcegitcommit: 4f541e34e7c0696e4074613c4ab0734a096c6d12
-ms.openlocfilehash: dd1161f2b5cf717246391900a616e51c457f5280
+ms.sourcegitcommit: e3df10acf4a6c123186c72687a56ccb4856c46fe
+ms.openlocfilehash: 07499f9b1c9668d8cb4037405478210e0738e03d
 
 
 ---
@@ -136,7 +136,7 @@ Agora, está pronto para implementar o projeto. Quando implementa um projeto do 
    
     **administratorLogin** especifica o nome de utilizador do administrador do SQL Server. Não utilize nomes de administradores comuns, como **sa** ou **admin**. 
    
-    **administratorLoginPassword** especifica a palavra-passe do administrador do SQL Server. A opção **Guardar palavras-passe como texto simples no ficheiro de parâmetros** não é segura; por isso, não a selecione. Uma vez que a palavra-passe não é guardada como texto simples, terá de fornecer novamente esta palavra-passe durante a implementação. 
+    **administratorLoginPassword** especifica a palavra-passe do administrador do SQL Server. A opção **Guardar palavras-passe como texto simples no ficheiro de parâmetros** não é segura; por isso, não a selecione. Uma vez que a palavra-passe não é guardada como texto simples, tem de fornecer novamente esta palavra-passe durante a implementação. 
    
     **databaseName** especifica um nome para a base de dados criar. 
    
@@ -189,7 +189,7 @@ Neste momento, implementou a infraestrutura para a sua aplicação, mas não exi
    
     As propriedades são:
    
-   * As **Propriedades Adicionais** contêm a localização de transição do pacote de implementação Web que é enviada para o Armazenamento do Azure. Anote a pasta (ExampleApp) e o ficheiro (package.zip). Irá fornecer estes valores como parâmetros aquando da implementação da aplicação. 
+   * As **Propriedades Adicionais** contêm a localização de transição do pacote de implementação Web que é enviada para o Armazenamento do Azure. Anote a pasta (ExampleApp) e o ficheiro (package.zip). É necessário saber estes valores, uma vez que os fornece como parâmetros ao implementar a aplicação. 
    * O **Incluir Caminho do Ficheiro** contém o caminho onde o pacote é criado. O **Incluir Destinos** contém o comando que a implementação executa. 
    * O valor predefinido de **Build;Package** permite a implementação para criar um pacote de implementação Web (package.zip).  
      
@@ -219,6 +219,6 @@ Neste momento, implementou a infraestrutura para a sua aplicação, mas não exi
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Dec16_HO3-->
 
 

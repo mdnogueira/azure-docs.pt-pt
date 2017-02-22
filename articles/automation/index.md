@@ -1,13 +1,25 @@
 ---
+title: "Documentação da Automatização do Azure - Tutoriais, Referência da API | Microsoft Docs"
+description: "Saiba como utilizar automatização para automatizar os processos e gestão de configuração para poupar tempo e aumentar a fiabilidade das tarefas administrativas normais."
+services: automation
+author: carolz
+manager: carolz
 layout: LandingPage
+ms.assetid: 
+ms.service: automation
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: landing-page
+ms.date: 01/23/2017
+ms.author: carolz
 translationtype: Human Translation
-ms.sourcegitcommit: 3752a677351518195773a86c3824078a5aff6d03
-ms.openlocfilehash: c9444c341bc5746c96719e6ebfa464f294adf2f8
+ms.sourcegitcommit: 5a96f86157516585742bf184a65f42b1a2070a95
+ms.openlocfilehash: 008fe9bc549d2ba4bc043c344b39409a04efe598
 
 ---
 # <a name="automation-documentation"></a>Documentação da Automatização
 
-A Automatização do Azure fornece uma forma de os utilizadores automatizarem as tarefas manuais, de execução longa, propensas ao erro e frequentemente repetidas que normalmente são executadas num ambiente de cloud. Poupa tempo, aumenta a fiabilidade das tarefas administrativas normais e agenda-as para serem executadas automaticamente em intervalos regulares.
+Saiba como utilizar automatização para poupar tempo e aumentar a fiabilidade das tarefas administrativas regulares executadas num ambiente em cloud. Tutoriais, referências de API e outra documentação mostra-lhe como automatizar processos utilizando runbooks ou automatizar a gestão de configuração utilizando a Configuração de Estado Pretendido.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -165,16 +177,10 @@ A Automatização do Azure fornece uma forma de os utilizadores automatizarem as
     </li>
 </ul>
 
-<div class="downloadHolder">
-    <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/automation.pdf">
-        <div class="img"></div>
-        <div class="text">
-Transferir a Documentação da Automatização </div>
-    </a>
-</div>
 
 
 
-<!--HONumber=Dec16_HO1-->
+
+<!--HONumber=Feb17_HO2-->
 
 

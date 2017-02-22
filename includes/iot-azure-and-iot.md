@@ -18,7 +18,7 @@ O diagrama seguinte mostra uma arquitetura da solução de IoT típica. O diagra
 > 
 
 ### <a name="device-connectivity"></a>Conectividade dos dispositivos
-Nesta arquitetura da solução de IoT, os dispositivos enviam telemetria, como as leituras dos sensores de uma estação de bombagem, para um ponto final da nuvem para armazenamento e processamento. Num cenário de manutenção preventiva, o back-end poderá utilizar o fluxo de dados dos sensores para determinar quando uma bomba específica precisa de manutenção. Os dispositivos também podem receber e responder a comandos da nuvem para o dispositivo, lendo as mensagens a partir de um ponto final da nuvem. Por exemplo, no cenário de manutenção preventiva, o back-end da solução poderá enviar comandos a outras bombas na estação de bombagem para que comecem a reencaminhar os fluxos imediatamente antes do início previsto da manutenção, de modo a garantir que o técnico de manutenção possa começar quando chegar.
+Nesta arquitetura da solução de IoT, os dispositivos enviam telemetria, como as leituras dos sensores de uma estação de bombagem, para um ponto final da nuvem para armazenamento e processamento. Num cenário de manutenção preventiva, o back-end de solução poderá utilizar o fluxo de dados dos sensores para determinar quando uma bomba específica precisa de manutenção. Os dispositivos também podem receber e responder a mensagens da cloud para o dispositivo, lendo as mensagens a partir de um ponto final da cloud. Por exemplo, no cenário de manutenção preventiva, o back-end da solução poderá enviar mensagens a outras bombas na estação de bombagem para que comecem a reencaminhar os fluxos imediatamente antes do início previsto da manutenção, de modo a garantir que o técnico de manutenção possa começar quando chegar.
 
 Um dos maiores desafios de projetos IoT consiste na ligação fiável e segura de dispositivos à solução de back-end. Os dispositivos IoT têm características diferentes em comparação a outros clientes, como browsers e aplicações móveis. Os dispositivos IoT:
 
@@ -42,9 +42,9 @@ Na nuvem, é no back-end da solução de IoT que ocorre a maior parte do process
 * Fornece capacidades de registo de dispositivos que lhe permitem aprovisionar dispositivos e controlar que dispositivos estão autorizados a ligar à sua infraestrutura.
 * Permite-lhe acompanhar o estado dos seus dispositivos e monitorizar as respetivas atividades.
 
-No cenário de manutenção preditiva, o back-end da solução armazena os dados de telemetria históricos. O back-end pode utilizar estes dados para identificar padrões que indicam que a manutenção se deve a uma bomba específica.
+No cenário de manutenção preditiva, o back-end da solução armazena os dados de telemetria históricos. O back-end de solução pode utilizar estes dados para identificar padrões que indicam que a manutenção se deve a uma bomba específica.
 
-As soluções de IoT podem incluir ciclos de feedback automáticos. Por exemplo, um módulo de análise no back-end pode identificar, com base na telemetria, que a temperatura de uma máquina específica está acima dos níveis de funcionamento normais. A solução pode, em seguida, enviar um comando ao dispositivo, instruindo-o para tomar uma ação corretiva.
+As soluções de IoT podem incluir ciclos de feedback automáticos. Por exemplo, um módulo de análise no back-end de solução pode identificar, com base na telemetria, que a temperatura de uma máquina específica está acima dos níveis de funcionamento normais. A solução pode, em seguida, enviar um comando ao dispositivo, instruindo-o para tomar uma ação corretiva.
 
 ### <a name="presentation-and-business-connectivity"></a>Apresentação e conectividade empresarial
 A camada de apresentação e conectividade empresarial permite aos utilizadores finais interagirem com os dispositivos e soluções de IoT. Permite que os utilizadores vejam e analisem os dados recolhidos a partir dos dispositivos. Estas vistas podem ter a forma de dashboards ou de relatórios do BI e podem apresentar dados históricos ou dados quase em tempo real. Por exemplo, um operador pode verificar o estado de uma estação de bombagem específica e ver todos os alertas gerados pelo sistema. Esta camada também permite a integração do back-end da solução de IoT com aplicações da linha de negócio existentes para se ligarem a processos empresariais ou fluxos de trabalho da empresa. Por exemplo, a solução da manutenção preventiva pode ser integrada num sistema de agendamento que marca a visita de um técnico a uma estação de bombagem quando a solução identifica uma bomba a precisar de manutenção.
@@ -60,6 +60,6 @@ A camada de apresentação e conectividade empresarial permite aos utilizadores 
 [lnk-refarch]: http://download.microsoft.com/download/A/4/D/A4DAD253-BC21-41D3-B9D9-87D2AE6F0719/Microsoft_Azure_IoT_Reference_Architecture.pdf
 
 
-<!--HONumber=Nov16_HO5-->
+<!--HONumber=Dec16_HO1-->
 
 

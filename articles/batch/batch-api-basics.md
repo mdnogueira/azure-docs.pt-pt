@@ -1,5 +1,5 @@
 ---
-title: "Descrição geral das funcionalidades do Azure Batch para programadores | Microsoft Docs"
+title: "Descrição geral do Azure Batch para programadores | Microsoft Docs"
 description: "Conheça as funcionalidades do serviço Batch e das respetivas APIs de um ponto de vista de programação."
 services: batch
 documentationcenter: .net
@@ -12,11 +12,11 @@ ms.devlang: multiple
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: big-compute
-ms.date: 11/18/2016
+ms.date: 01/23/2017
 ms.author: tamram
 translationtype: Human Translation
-ms.sourcegitcommit: 4bd60ab3b1be1fa590b20fbe292da69f6a2dac8e
-ms.openlocfilehash: 0b63ea1e6308732f6993357466d7e372ec53a78f
+ms.sourcegitcommit: 182e28e37eb56c547e28524f2a3e13f042238cb4
+ms.openlocfilehash: 984d1afe93b19ebea7add524091ed64aa276da0c
 
 
 ---
@@ -111,7 +111,7 @@ Quando cria um conjunto, pode especificar os seguintes atributos:
     Todos os nós num conjunto têm de ter o mesmo tamanho. Se quiser executar aplicações com requisitos de sistema e/ou níveis de carga diferentes, recomendamos utilizar conjuntos separados.
 * **Número de nós de destino**
 
-    Este é o número de nós de computação que pretende implementar no conjunto. É referido com *destino* porque, em algumas situações, é possível que o seu conjunto não atinja o número de nós pretendido. O conjunto poderá não atingir o número de nós pretendidos se chegar à [quota de núcleos](batch-quota-limit.md#batch-account-quotas) da sua conta do Batch ou se tiver aplicado uma fórmula de dimensionamento automático ao conjunto que limite o número máximo de nós (veja a secção “Política de dimensionamento”, abaixo).
+    Este é o número de nós de computação que pretende implementar no conjunto. É referido com *destino* porque, em algumas situações, é possível que o seu conjunto não atinja o número de nós pretendido. O conjunto poderá não atingir o número de nós pretendidos se chegar à [quota de núcleos](batch-quota-limit.md) da sua conta do Batch ou se tiver aplicado uma fórmula de dimensionamento automático ao conjunto que limite o número máximo de nós (veja a secção “Política de dimensionamento”, abaixo).
 * **Política de dimensionamento**
 
     Para cargas de trabalho dinâmicas, pode escrever e aplicar uma [fórmula de dimensionamento automático](#scaling-compute-resources) num conjunto. O serviço Batch avalia periodicamente a fórmula e ajusta o número de nós dentro do conjunto com base em vários parâmetros de conjuntos, trabalhos e tarefas que pode especificar.
@@ -489,6 +489,6 @@ Em situações onde algumas das suas tarefas estejam a falhar, a aplicação cli
 
 
 
-<!--HONumber=Dec16_HO2-->
+<!--HONumber=Feb17_HO2-->
 
 

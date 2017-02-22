@@ -1,13 +1,25 @@
 ---
+title: "Documentação do Catálogo de Dados do Azure - Tutoriais, Referência da API | Microsoft Docs"
+description: "Saiba como configurar um catálogo de dados em que a organização pode localizar, compreender e consumir origens de dados. Tutoriais, referência de API e outra documentação."
+services: data-catalog
+author: carolz
+manager: carolz
 layout: LandingPage
+ms.assetid: 
+ms.service: data-catalog
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: landing-page
+ms.date: 01/23/2017
+ms.author: carolz
 translationtype: Human Translation
-ms.sourcegitcommit: 3752a677351518195773a86c3824078a5aff6d03
-ms.openlocfilehash: 7c2c989ca2119f7a2c14ca55a56a2bce69d94efa
+ms.sourcegitcommit: c5ada5ff9a0ba37cecff9e2d507736457cc11eb5
+ms.openlocfilehash: b04ec1a07bd1d74aa061409823c78ea814d127fc
 
 ---
 #<a name="data-catalog-documentation"></a>Documentação do Catálogo de Dados
 
-O Catálogo de Dados do Azure é um serviço em cloud completamente gerido que permite aos utilizadores detetar as origens de dados de que precisam e compreender as origens de dados que detetam, ajudando também as organizações a obter maior valor dos investimentos existentes. O Catálogo de Dados fornece capacidades que permitem a qualquer utilizador – dos analistas a cientistas de dados aos programadores – detetar, compreender e consumir origens de dados. O Catálogo de Dados inclui um modelo de crowdsourcing de metadados e anotações, e permite que todos os utilizadores contribuam com os seus conhecimentos para criar uma comunidade e cultura de dados.
+Saiba como configurar um Catálogo de Dados em que a organização e a equipa deteta, compreende e consume as origens de dados. Tutoriais, referência da API REST e outra documentação mostram-lhe como planear e configurar o repositório de dados onde os consumidores de dados podem detetar origens de dados disponíveis e obter conhecimento através de peritos na matéria.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -66,15 +78,10 @@ O Catálogo de Dados do Azure é um serviço em cloud completamente gerido que p
     </li>
 </ul>
 
-<div class="downloadHolder">
-    <a href="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/Azure.azure-documents/live/data-catalog.pdf">
-        <div class="img"></div>
-        <div class="text">
-Transferir a Documentação do Catálogo de Dados </div>
-    </a>
-</div>
 
 
-<!--HONumber=Dec16_HO1-->
+
+
+<!--HONumber=Feb17_HO2-->
 
 

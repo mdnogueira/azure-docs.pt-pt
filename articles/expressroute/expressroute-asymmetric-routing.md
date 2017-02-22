@@ -13,10 +13,10 @@ ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/10/2016
-ms.author: osamazia
+ms.author: osamam
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: cebf1a1712b6ba7f1f6125369703694ba19d0244
+ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
+ms.openlocfilehash: 10166e6b8b9144f0a5dde4f2fc10b492120e85d7
 
 
 ---
@@ -64,7 +64,7 @@ Certifique-se de que os seus endereços IP públicos são anunciados para ligaç
 
 Se quiser utilizar o ExpressRoute para autenticação, certifique-se de que anuncia os endereços IP públicos do AD FS através do ExpressRoute sem NAT. Desta forma, o tráfego que tem origem na Microsoft e vai para um servidor AD FS no local passa pelo ExpressRoute. O tráfego de retorno do cliente para a Microsoft utiliza o ExpressRoute porque é a rota preferida em detrimento da Internet.
 
-### <a name="sourcebased-nat"></a>NAT baseado na origem
+### <a name="source-based-nat"></a>NAT baseado na origem
 Outra forma de resolver problemas de encaminhamento assimétrico é através da utilização de SNAT. Por exemplo, não anunciou o endereço IP público de um servidor SMTP (Simple Mail Transfer Protocol) através do ExpressRoute porque pretende utilizar a Internet para este tipo de comunicação. Um pedido que tenha origem na Microsoft e que vá para o seu servidor SMTP no local atravessa a Internet. Faz o SNAT do pedido de entrada para um endereço IP interno. O tráfego inverso do servidor SMTP vai para a firewall de limite (que utiliza para o NAT) em vez de ir através do ExpressRoute. O tráfego de retorno regressa através da Internet.
 
 ![Configuração de rede NAT baseada na origem](./media/expressroute-asymmetric-routing/AsymmetricRouting2.png)
@@ -75,6 +75,6 @@ O Traceroute é a melhor forma de garantir que o tráfego de rede atravessa o ca
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 

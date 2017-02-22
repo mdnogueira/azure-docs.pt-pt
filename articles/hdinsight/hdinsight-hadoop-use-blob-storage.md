@@ -14,15 +14,15 @@ ms.workload: big-data
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 09/06/2016
+ms.date: 02/06/2017
 ms.author: jgao
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 7baf1aa756221df62a36cd975ffb92fc8cd27232
+ms.sourcegitcommit: e2d78b7e71cd17c88ce4e283cc0b0ddc9bf7b479
+ms.openlocfilehash: 41b19d0ed2d77fc94ec7b3a7905b51e8e25e0585
 
 
 ---
-# <a name="use-hdfscompatible-azure-blob-storage-with-hadoop-in-hdinsight"></a>Utilizar o Blob Storage do Azure compatível com HDFS com o Hadoop no HDInsight
+# <a name="use-hdfs-compatible-azure-blob-storage-with-hadoop-in-hdinsight"></a>Utilizar o Blob Storage do Azure compatível com HDFS com o Hadoop no HDInsight
 Saiba como utilizar o Blob Storage de baixo custo do Azure com o HDInsight, como criar uma conta do Storage e um contentor de Blob Storage do Azure e como processar os dados aí guardados.
 
 O Blob Storage do Azure é uma solução de armazenamento para fins gerais robusta que se integra perfeitamente com o HDInsight. Através de uma interface HDFS (Sistema de Ficheiros Distribuído Hadoop), o conjunto completo de componentes do HDInsight pode operar diretamente em dados estruturados ou não estruturados no Blob Storage.
@@ -34,12 +34,12 @@ O armazenamento de dados no Blob Storage permite eliminar em segurança os clust
 > 
 > 
 
-Para obter informações sobre a criação de um cluster do HDInsight, consulte [Introdução ao HDInsight][hdinsight-get-started] ou [Criar clusters do HDInsight][hdinsight-creation].
+Para obter informações sobre a criação de um cluster do HDInsight, consulte [Get Started with HDInsight (Introdução ao HDInsight)][hdinsight-get-started] ou [Create HDInsight clusters (Criar clusters do HDInsight)][hdinsight-creation].
 
 ## <a name="hdinsight-storage-architecture"></a>Arquitetura de armazenamento do HDInsight
 O diagrama seguinte apresenta uma vista abstrata da arquitetura de armazenamento do HDInsight:
 
-![Os clusters do Hadoop utilizam a API do HDFS para aceder e armazenar dados estruturados e não estruturados no Blob Storage.](./media/hdinsight-hadoop-use-blob-storage/HDI.WASB.Arch.png "HDInsight Storage Architecture")
+![Os clusters do Hadoop utilizam a API do HDFS para aceder e armazenar dados estruturados e não estruturados no Armazenamento de Blobs.](./media/hdinsight-hadoop-use-blob-storage/HDI.WASB.Arch.png "Arquitetura do Armazenamento do HDInsight")
 
 O HDInsight fornece acesso ao sistema de ficheiros distribuído que está ligado localmente aos nós de computação. É possível aceder a este sistema de ficheiros ao utilizar o URI completamente qualificado, por exemplo:
 
@@ -56,7 +56,7 @@ Além disso, o HDInsight oferece a capacidade de aceder aos dados armazenados no
 
 O Hadoop suporta uma noção do sistema de ficheiros predefinido. O sistema de ficheiros predefinido implica um esquema e uma autoridade predefinidos. Também pode ser utilizado para resolver caminhos relativos. Durante o processo de criação do HDInsight, uma conta do Storage do Azure e um contentor de Blob Storage do Azure específico dessa conta são designados como o sistema de ficheiros predefinido.
 
-Além desta conta de armazenamento, pode adicionar mais contas de armazenamento da mesma subscrição do Azure ou de diferentes subscrições do Azure durante o processo de criação ou depois de um cluster ter sido criado. Para obter instruções sobre como adicionar mais contas do Storage, consulte [Criar clusters do HDInsight][hdinsight-creation].
+Além desta conta de armazenamento, pode adicionar mais contas de armazenamento da mesma subscrição do Azure ou de diferentes subscrições do Azure durante o processo de criação ou depois de um cluster ter sido criado. Para obter instruções sobre como adicionar mais contas do Storage, consulte [Create HDInsight clusters (Criar clusters do HDInsight)][hdinsight-creation].
 
 * **Contentores nas contas do Storage ligadas a um cluster:** como o nome e a chave da conta são associados ao cluster durante a criação, tem acesso total aos blobs desses contentores.
 * **Contentores públicos ou blobs públicos em contas do Storage NÃO ligadas a um cluster:** tem permissão só de leitura para os blobs dos contentores.
@@ -78,7 +78,7 @@ O custo de desempenho implícito de não ter clusters de cálculo e recursos de 
 
 Existem várias vantagens associadas ao armazenamento de dados no Blob Storage do Azure em vez do HDFS:
 
-* **Partilha e reutilização de dados:** os dados no HDFS estão localizados dentro do cluster de cálculo. Apenas as aplicações que têm acesso ao cluster de cálculo podem utilizar os dados ao utilizar as APIs do HDFS. É possível aceder aos dados no Blob Storage do Azure através das APIs do HDFS ou através das [APIs REST do Blob Storage][blob-storage-restAPI]. Assim, pode-se utilizar um conjunto maior de ferramentas e aplicações (incluindo outros clusters do HDInsight) para produzir e consumir dados.
+* **Partilha e reutilização de dados:** os dados no HDFS estão localizados dentro do cluster de cálculo. Apenas as aplicações que têm acesso ao cluster de cálculo podem utilizar os dados ao utilizar as APIs do HDFS. É possível aceder aos dados no Armazenamento de Blobs do Azure através das APIs do HDFS ou através das [APIs REST do Armazenamento de Blobs][blob-storage-restAPI]. Assim, pode-se utilizar um conjunto maior de ferramentas e aplicações (incluindo outros clusters do HDInsight) para produzir e consumir dados.
 * **Arquivo de dados:** o armazenamento de dados no Blob Storage do Azure permite eliminar em segurança os clusters do HDInsight utilizados para o cálculo sem que haja perda de dados do utilizador.
 * **Custo do armazenamento de dados:** armazenar os dados no DFS a longo prazo é mais dispendioso do que armazenar os dados no Blob Storage do Azure, uma vez que o custo de um cluster de cálculo é superior ao custo de um contentor de Blob Storage do Azure. Além disso, uma vez que não é necessário recarregar os dados para cada geração de cluster de cálculo, também reduz os custos do carregamento de dados.
 * **Aumento horizontal elástico:** embora o HDFS forneça um sistema de ficheiros ampliado horizontalmente, o dimensionamento é determinado pelo número de nós que cria para o cluster. A alteração do dimensionamento pode tornar-se um processo mais complexo do que depender das capacidades de dimensionamento elástico que obtém automaticamente com o Blob Storage do Azure.
@@ -96,12 +96,12 @@ Para utilizar blobs, primeiro tem de criar uma [Conta do Storage do Azure][azure
 
 Independentemente do local onde se encontre, cada blob que criar pertence a um contentor na sua conta do Storage do Azure. Este contentor pode ser um blob existente que tenha sido criado fora do HDInsight ou um contentor criado para um cluster do HDInsight.
 
-O contentor de blobs predefinido armazena informações específicas do cluster como o histórico de tarefas e os registos. Não partilhe um contentor de blobs predefinido com vários clusters do HDInsight. Tal poderá danificar o histórico de tarefas e o cluster comportar-se-á de forma incorreta. É recomendável utilizar um contentor diferente para cada cluster e colocar os dados partilhados numa conta do Storage ligada especificada na implementação de todos os clusters relevantes em vez da conta do Storage predefinida. Para obter mais informações sobre como configurar contas do Storage ligadas, consulte [Criar clusters do HDInsight][hdinsight-creation]. No entanto, pode reutilizar um contentor de armazenamento predefinido depois de o cluster do HDInsight original ser eliminado. Para clusters do HBase, pode manter os dados e o esquema da tabela do HBase ao criar um novo cluster do HBase com o contentor do Blob Storage predefinido utilizado por um cluster do HBase que foi eliminado.
+O contentor de blobs predefinido armazena informações específicas do cluster como o histórico de tarefas e os registos. Não partilhe um contentor de blobs predefinido com vários clusters do HDInsight. Tal poderá danificar o histórico de tarefas e o cluster comportar-se-á de forma incorreta. É recomendável utilizar um contentor diferente para cada cluster e colocar os dados partilhados numa conta do Storage ligada especificada na implementação de todos os clusters relevantes em vez da conta do Storage predefinida. Para obter mais informações sobre como configurar contas do Storage ligadas, consulte [Create HDInsight clusters (Criar clusters do HDInsight)][hdinsight-creation]. No entanto, pode reutilizar um contentor de armazenamento predefinido depois de o cluster do HDInsight original ser eliminado. Para clusters do HBase, pode manter os dados e o esquema da tabela do HBase ao criar um novo cluster do HBase com o contentor do Blob Storage predefinido utilizado por um cluster do HBase que foi eliminado.
 
-### <a name="using-the-azure-portal"></a>Utilizar o Portal do Azure
+### <a name="using-the-azure-portal"></a>Utilizar o portal do Azure
 Ao criar um cluster do HDInsight no Portal, tem a opção de utilizar uma conta do Storage existente ou criar uma nova conta do Storage:
 
-![hdinsight hadoop criação origem de dados](./media/hdinsight-hadoop-use-blob-storage/hdinsight.provision.data.source.png)
+![origem de dados de criação do HDInsight hadoop](./media/hdinsight-hadoop-use-blob-storage/hdinsight.provision.data.source.png)
 
 ### <a name="using-azure-cli"></a>Utilizar a CLI do Azure
 [!INCLUDE [use-latest-version](../../includes/hdinsight-use-latest-cli.md)]
@@ -216,7 +216,7 @@ Utilize o seguinte comando para listar os cmdlets relacionados com blobs:
 ![Lista de cmdlets do PowerShell relacionados com blobs.][img-hdi-powershell-blobcommands]
 
 ### <a name="upload-files"></a>Carregar ficheiros
-Consulte [Carregar dados para o HDInsight][hdinsight-upload-data].
+Consulte [Upload data to HDInsight (Carregar dados para o HDInsight)][hdinsight-upload-data].
 
 ### <a name="download-files"></a>Transferir ficheiros
 O script seguinte transfere um blob de blocos para a pasta atual. Antes de executar o script, altere o diretório para uma pasta em que tenha permissões de escrita.
@@ -282,14 +282,14 @@ Neste artigo, aprendeu a utilizar o Blob Storage do Azure compatível com HDFS c
 
 Para obter mais informações, consulte:
 
-* [Introdução ao Azure HDInsight][hdinsight-get-started]
-* [Carregar dados para o HDInsight][hdinsight-upload-data]
-* [Utilizar o Hive com o HDInsight][hdinsight-use-hive]
-* [Utilizar o Pig com o HDInsight][hdinsight-use-pig]
+* [Get Started with Azure HDInsight (Introdução ao Azure HDInsight)][hdinsight-get-started]
+* [Upload data to HDInsight (Carregar dados para o HDInsight)][hdinsight-upload-data]
+* [Use Hive with HDInsight (Utilizar o Hive com o HDInsight)][hdinsight-use-hive]
+* [Use Pig with HDInsight (Utilizar o Pig com o HDInsight)][hdinsight-use-pig]
 * [Utilizar Assinaturas de Acesso Partilhado do Storage do Azure para restringir o acesso aos dados com o HDInsight][hdinsight-use-sas]
 
 [hdinsight-use-sas]: hdinsight-storage-sharedaccesssignature-permissions.md
-[powershell-install]: ../powershell-install-configure.md
+[powershell-install]: /powershell/azureps-cmdlets-docs
 [hdinsight-creation]: hdinsight-provision-clusters.md
 [hdinsight-get-started]: hdinsight-hadoop-tutorial-get-started-windows.md
 [hdinsight-upload-data]: hdinsight-upload-data.md
@@ -305,6 +305,6 @@ Para obter mais informações, consulte:
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Feb17_HO1-->
 
 

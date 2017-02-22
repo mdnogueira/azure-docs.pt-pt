@@ -1,6 +1,6 @@
 ---
-title: Utilizar chaves SSH com o Hadoop baseado em Linux a partir do Linux, Unix ou OS X | Microsoft Docs
-description: " Pode aceder ao HDInsight baseado em Linux através do Secure Shell (SSH). Este documento fornece informações sobre a utilização do SSH com o HDInsight a partir de clientes Linux, Unix ou OS X."
+title: Utilizar SSH com o HDInsight (Hadoop) a partir de Windows, Linux, Unix ou OS X | Microsoft Docs
+description: " Pode aceder ao HDInsight através do Secure Shell (SSH). Este documento disponibiliza informações sobre a utilização do SSH com o HDInsight a partir de clientes Windows, Linux, Unix ou OS X."
 services: hdinsight
 documentationcenter: 
 author: Blackmist
@@ -13,21 +13,19 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: big-data
-ms.date: 09/13/2016
+ms.date: 01/12/2017
 ms.author: larryfr
 translationtype: Human Translation
-ms.sourcegitcommit: 72ca562c53f813599f19069cfac7ef3ac1957968
-ms.openlocfilehash: f64cca8823a74c1c0f52e5d9112836661dc51d8e
+ms.sourcegitcommit: 279990a67ae260b09d056fd84a12160150eb4539
+ms.openlocfilehash: 37409ad3f50cdd4a7a384c96a57a35ef8c83fb8f
 
 
 ---
-# <a name="use-ssh-with-linux-based-hadoop-on-hdinsight-from-linux-unix-or-os-x"></a>Utilizar o SSH com o Hadoop baseado em Linux no HDInsight a partir do Linux, Unix ou OS X
+# <a name="use-ssh-with-hdinsight-hadoop-from-windows-linux-unix-or-os-x"></a>Utilizar SSH com o HDInsight (Hadoop) a partir de Windows, Linux, Unix ou OS X
 
 > [!div class="op_single_selector"]
-> * [Windows](hdinsight-hadoop-linux-use-ssh-windows.md)
-> * [Linux, Unix, OS X](hdinsight-hadoop-linux-use-ssh-unix.md)
->
->
+> * [PuTTY (Windows)](hdinsight-hadoop-linux-use-ssh-windows.md)
+> * [SSH (Windows, Linux, Unix, OS X)](hdinsight-hadoop-linux-use-ssh-unix.md)
 
 O [Secure Shell (SSH)](https://en.wikipedia.org/wiki/Secure_Shell) permite-lhe iniciar sessão num cluster do HDInsight baseado em Linux e executar comandos através de uma interface de linha de comandos. Este documento disponibiliza informações básicas sobre SSH e informações específicas sobre a utilização de SSH com o HDInsight.
 
@@ -233,6 +231,6 @@ Agora que sabe como efetuar a autenticação com uma chave SSH, saiba como utili
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Jan17_HO3-->
 
 

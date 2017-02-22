@@ -1,9 +1,20 @@
 ---
-layout: LandingPage
+title: "Documentação do Azure Service Fabric - Tutoriais, Referência da API | Microsoft Docs"
 description: "Saiba como utilizar plataforma o middleware do Service Fabric para empacotar e implementar micro-serviços para aplicações de dimensionamento na cloud. Tutoriais, referências de API e códigos de exemplo."
+services: service-fabric
+author: carolz
+manager: carolz
+layout: LandingPage
+ms.assetid: 
+ms.service: service-fabric
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: landing-page
+ms.date: 01/23/2017
+ms.author: carolz
 translationtype: Human Translation
-ms.sourcegitcommit: b4080529e9ff4500cef20e1dd735765051f6ce1f
-ms.openlocfilehash: d9b4e3b3df6760b15e151c5eab37c9f534784de8
+ms.sourcegitcommit: 964b9b1ab804b8e5d56863ab5a174c984ebf8235
+ms.openlocfilehash: 2180a54f576c8878e8a33bd6a5be3082188abebc
 
 ---
 #<a name="service-fabric-documentation"></a>Documentação do Service Fabric
@@ -146,13 +157,13 @@ Saiba como utilizar o Service Fabric para empacotar, implementar e gerir micro-s
             </div>
         </div>
     </li>
-</ul>   
+</ul>    
 
 
 
 
 
 
-<!--HONumber=Jan17_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 

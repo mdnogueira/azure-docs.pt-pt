@@ -40,7 +40,7 @@ A sua subscrição do Azure RemoteApp inclui três imagens de modelo:
 
 Continue a ler para obter detalhes sobre o conteúdo de cada imagem.
 
-## <a name="windows-server-2012-r2-the-vanilla-image"></a>Windows Server 2012 R2 (“a imagem clássica”)
+## <a name="windows-server-2012-r2--the-vanilla-image"></a>Windows Server 2012 R2 (“a imagem clássica”)
 Esta imagem baseia-se no sistema operativo Microsoft Windows Server 2012 R2 Datacenter e tem as seguintes funções e funcionalidades instaladas para cumprir os requisitos das imagens de modelo do Azure RemoteApp:
 
 * .NET Framework 4.5, 3.5.1, 3.5

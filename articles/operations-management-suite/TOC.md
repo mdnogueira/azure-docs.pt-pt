@@ -19,10 +19,6 @@
 ### [Log Analytics](../log-analytics/log-analytics-overview.md?toc=%2fazure%2foperations-management-suite%2ftoc.json)
 ### [Monitorização de comparação de produtos](operations-management-suite-monitoring-product-comparison.md)
 ### [Gerir alertas](operations-management-suite-monitoring-alerts.md)
-## Gerir
-### [Planear e implementar](operations-management-suite-solutions-creating.md)
-### [Recursos de automatização](operations-management-suite-solutions-resources-automation.md)
-### [Vistas](operations-management-suite-solutions-resources-views.md)
 ## Automatizar
 ### [Descrição geral da Automatização do Azure](../automation/automation-intro.md?toc=%2fazure%2foperations-management-suite%2ftoc.json)
 ## Cópia de segurança
@@ -35,6 +31,11 @@
 ### [Avaliação de software maligno](../log-analytics/log-analytics-malware.md?toc=%2fazure%2foperations-management-suite%2ftoc.json)
 ### [Avaliação de atualizações do sistema](../log-analytics/log-analytics-system-update.md?toc=%2fazure%2foperations-management-suite%2ftoc.json)
 ### [Ligar produtos de segurança](oms-security-connect-products.md)
+## Criar soluções
+### [Soluções de gestão](operations-management-suite-solutions-creating.md)
+### [Recursos de automatização](operations-management-suite-solutions-resources-automation.md)
+### [Pesquisas de registos e alertas](operations-management-suite-solutions-resources-searches-alerts.md)
+### [Vistas](operations-management-suite-solutions-resources-views.md)
 ## [Integrar no OMS](operations-management-suite-integration.md)
 
 
@@ -65,6 +66,6 @@
 
 
 
-<!--HONumber=Dec16_HO2-->
+<!--HONumber=Feb17_HO1-->
 
 

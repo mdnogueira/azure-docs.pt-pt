@@ -12,18 +12,18 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 10/10/2016
+ms.date: 01/27/2017
 ms.author: charwen
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 26f0992e734f0aae96ac6e8b7040d661d5fb063c
+ms.sourcegitcommit: 1b26e82f862a3b2149024d863b907899e14e7d86
+ms.openlocfilehash: 404929cf0def75d92d8bb6de8b41be3aecced458
 
 
 ---
 # <a name="optimize-expressroute-routing"></a>Otimizar o Encaminhamento do ExpressRoute
 Se tem vários circuitos do ExpressRoute, significa que tem mais do que um caminho para se ligar à Microsoft. Sendo assim, o encaminhamento poderá não ser o ideal, ou seja, o tráfego poderá optar por um caminho mais longo para chegar à Microsoft e da Microsoft à sua rede. Quanto mais longo for o caminho de rede, maior será a latência. A latência tem um impacto direto no desempenho das aplicações e na experiência do utilizador. Este artigo ilustra este problema e explica como otimizar o encaminhamento com as tecnologias de encaminhamento padrão.
 
-## <a name="suboptimal-routing-case-1"></a>Encaminhamento inferior ao ideal – Caso 1
+## <a name="suboptimal-routing-from-customer-to-microsoft"></a>Encaminhamento inferior ao ideal do cliente para a Microsoft
 Vamos analisar o problema de encaminhamento com um exemplo. Imagine que tem dois escritórios nos EUA, um em Los Angeles e outro em Nova Iorque. Os escritórios estão ligados através de uma Rede Alargada (WAN), que pode ser a sua própria rede principal ou a VPN de IP do seu fornecedor de serviços. Tem dois circuitos do ExpressRoute, um nos EUA Oeste e o outro nos EUA Leste, que também estão ligados através da WAN. Tem, obviamente, dois caminhos para se ligar à rede da Microsoft. Imagine agora que tem a implementação do Azure (por exemplo, Serviço de Aplicações do Azure) tanto nos EUA Oeste como nos EUA Leste. A sua intenção é ligar os utilizadores em Los Angeles ao Azure dos EUA Oeste e os utilizadores em Nova Iorque ao Azure dos EUA Leste, porque o administrador de serviços anuncia que os utilizadores em cada escritório acederão aos serviços mais próximos do Azure, para uma experiência ideal. Infelizmente, o plano funciona bem para os utilizadores da costa leste mas não para os utilizadores da costa oeste. A causa do problema é a seguinte. Em cada circuito do ExpressRoute, anunciamos o prefixo no Azure dos EUA Leste (23.100.0.0/16) e o prefixo no Azure dos EUA Oeste (13.100.0.0/16). Se não souber que prefixo corresponde a que região, não conseguirá tratá-los de forma diferente. A rede WAN poderá achar que ambos os prefixos estão mais próximos dos EUA Leste do que dos EUA Oeste e, por conseguinte, encaminhar ambos os utilizadores do escritório para o circuito do ExpressRoute nos EUA Leste. No final, terá muitos utilizadores insatisfeitos no escritório de Los Angeles.
 
 ![](./media/expressroute-optimize-routing/expressroute-case1-problem.png)
@@ -33,7 +33,7 @@ Para otimizar o encaminhamento para os utilizadores dos dois escritório, é nec
 
 ![](./media/expressroute-optimize-routing/expressroute-case1-solution.png)
 
-## <a name="suboptimal-routing-case-2"></a>Encaminhamento inferior ao ideal – Caso 2
+## <a name="suboptimal-routing-from-microsoft-to-customer"></a>Encaminhamento inferior ao ideal da Microsoft para o cliente
 Veja outro exemplo em que as ligações da Microsoft optam por um caminho mais longo para chegarem à sua rede. Neste caso, está a utilizar servidores do Exchange no local e o Exchange Online num [ambiente híbrido](https://technet.microsoft.com/library/jj200581%28v=exchg.150%29.aspx). Os seus escritórios estão ligados a uma WAN. Anuncia os prefixos dos servidores no local em ambos os escritórios para a Microsoft através de dois circuitos do ExpressRoute. O Exchange Online irá iniciar ligações aos servidores no local em casos como a migração da caixa de correio. Infelizmente, a ligação ao seu escritório em Los Angeles é encaminhada para o circuito do ExpressRoute nos EUA Leste, atravessando todo o continente antes de voltar à costa oeste. A causa do problema é semelhante à anterior. Sem sugestões, a rede da Microsoft não sabe qual dos prefixos do cliente está próximo dos EUA Leste e qual deles está próximo dos EUA Oeste. E escolhe o caminho errado para o seu escritório em Los Angeles.
 
 ![](./media/expressroute-optimize-routing/expressroute-case2-problem.png)
@@ -58,6 +58,6 @@ A segunda solução é continuar a anunciar ambos os prefixos em ambos os circui
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Jan17_HO4-->
 
 

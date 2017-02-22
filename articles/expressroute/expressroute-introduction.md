@@ -15,8 +15,8 @@ ms.workload: infrastructure-services
 ms.date: 10/10/2016
 ms.author: cherylmc
 translationtype: Human Translation
-ms.sourcegitcommit: 219dcbfdca145bedb570eb9ef747ee00cc0342eb
-ms.openlocfilehash: 3b3e0fd5342c4729d6ffee4858089099b31404a8
+ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
+ms.openlocfilehash: 57b95d5018fa197096992f7cd255a54501875dea
 
 
 ---
@@ -40,13 +40,13 @@ Veja [FAQ do ExpressRoute](expressroute-faqs.md) para obter mais detalhes.
 ## <a name="a-namehowtoconnectahow-can-i-connect-my-network-to-microsoft-using-expressroute"></a><a name="howtoconnect"></a>Como ligar a minha rede à Microsoft através do ExpressRoute?
 Pode criar uma ligação entre a sua rede no local e a nuvem da Microsoft de três formas diferentes:
 
-### <a name="colocated-at-a-cloud-exchange"></a>Localizado conjuntamente numa troca de nuvem
+### <a name="co-located-at-a-cloud-exchange"></a>Localizado conjuntamente numa troca de nuvem
 Se estiver localizado conjuntamente num local com uma troca de nuvem, pode organizar ligações cruzadas virtuais para a nuvem da Microsoft através da troca de Ethernet do fornecedor de localização conjunta. Os fornecedores de localização conjunta podem oferecer ligações cruzadas de Camada 2 ou ligações cruzadas geridas de Camada 3 entre a sua infraestrutura na localização conjunto e a nuvem da Microsoft.
 
-### <a name="pointtopoint-ethernet-connections"></a>Ligações de Ethernet ponto a ponto
+### <a name="point-to-point-ethernet-connections"></a>Ligações de Ethernet ponto a ponto
 Pode ligar os seus centros de dados/escritórios no local à nuvem da Microsoft através de ligações de Ethernet ponto a ponto. Os fornecedores de Ethernet ponto a ponto podem oferecer ligações de Camada 2 ou ligações geridas de Camada 3 entre o seu site e a nuvem da Microsoft.
 
-### <a name="anytoany-ipvpn-networks"></a>Redes qualquer a qualquer (VPN de IP)
+### <a name="any-to-any-ipvpn-networks"></a>Redes qualquer a qualquer (VPN de IP)
 Pode integrar a sua WAN com a nuvem da Microsoft. Os fornecedores de VPN de IP (normalmente VPN de MPLS) oferecem uma conectividade qualquer a qualquer entre as suas sucursais e os centros de dados. A nuvem da Microsoft pode ser interligada à sua WAN para torná-la mais semelhante a qualquer outra sucursal. Os fornecedores de WAN oferecem normalmente uma conectividade gerida de Camada 3. As funcionalidades e capacidades do ExpressRoute são idênticas em todos os modelos de conetividade acima. 
 
 Os fornecedores de conectividade podem oferecer um ou mais modelos de conetividade. Pode trabalhar com o seu fornecedor de conectividade para escolher o modelo que funciona melhor para si.
@@ -78,7 +78,7 @@ Pode ligar-se à Microsoft a partir de uma das nossas [localizações de peering
 
 Por exemplo, se ligar à Microsoft em Amesterdão através do ExpressRoute, terá acesso a todos os serviços em nuvem da Microsoft alojados na Europa do Norte e na Europa Ocidental. Veja o artigo [Parceiros ExpressRoute e localizações de peering](expressroute-locations.md) para obter uma descrição geral das regiões geopolíticas, das regiões associadas em nuvem da Microsoft e as localizações de peering do ExpressRoute correspondentes.
 
-### <a name="global-connectivity-with-expressroute-premium-addon"></a>Conectividade global com o suplemento do ExpressRoute Premium
+### <a name="global-connectivity-with-expressroute-premium-add-on"></a>Conectividade global com o suplemento do ExpressRoute Premium
 Pode ativar a funcionalidade do suplemento ExpressRoute Premium para expandir a conectividade ao longo dos limites geopolíticos. Por exemplo, se estiver ligado à Microsoft em Amesterdão através do ExpressRoute, terá acesso a todos os serviços em nuvem da Microsoft alojados em todas as regiões pelo mundo (exceto nuvens nacionais). Pode aceder aos serviços implementados na América do Sul ou Austrália da mesma forma que acede às regiões da Europa do Norte e Europa Ocidental.
 
 ### <a name="rich-connectivity-partner-ecosystem"></a>Ecossistema de parceiro de conectividade avançada
@@ -125,6 +125,6 @@ Pode escolher um modelo de faturação que funciona melhor para si. Escolha entr
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Dec16_HO1-->
 
 

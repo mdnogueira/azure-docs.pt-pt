@@ -12,11 +12,11 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 09/30/2016
+ms.date: 02/13/2017
 ms.author: curtand
 translationtype: Human Translation
-ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
-ms.openlocfilehash: 98c8352152b6cd1817d32c6418597c566d94d44f
+ms.sourcegitcommit: e4896c1a3adf76477899336f1ff1ee215cc7c9aa
+ms.openlocfilehash: 6a20f75dbb2c914b1239adb5ba10189a7193584c
 
 
 ---
@@ -31,8 +31,8 @@ Este tópico explica como pode personalizar a página de início de sessão e a 
 > [!NOTE]
 > * “Imagem corporativa” é uma funcionalidade que só está disponível se tiver atualizado para a edição Premium ou Básica do Azure Active Directory ou se for utilizador do Office 365. Para obter mais informações, consulte [Edições do Azure Active Directory](active-directory-editions.md).
 > * As edições Premium e Basic do Azure Active Directory estão disponíveis para clientes na China que utilizem a instância mundial do Azure Active Directory. As edições Basic e Premium do Azure Active Directory não são atualmente suportadas pelo serviço Microsoft Azure operado pela 21Vianet na China. Para mais informações, contacte-nos através do [Fórum do Azure Active Directory](https://feedback.azure.com/forums/169401-azure-active-directory/).
-> 
-> 
+>
+>
 
 ## <a name="customizing-the-sign-in-page"></a>Personalizar a página de início de sessão
 Normalmente, se precisa de acesso baseado em browser para as suas aplicações e serviços na nuvem que a sua organização subscreve, utiliza a página de início de sessão.
@@ -46,8 +46,8 @@ Quando visita um serviço com URLs específicos de não inquilino (por exemplo, 
 > [!NOTE]
 > * O nome de domínio tem de aparecer como “Ativo” na secção **Domínios** > **do Diretório** > **do Active Directory** do Portal Clássico do Azure onde tiver configurado uma imagem corporativa.
 > * A imagem corporativa na página de início de sessão de imagem não passa para a página de sessão do consumidor da Microsoft. Se iniciar sessão com uma conta Microsoft pessoal, poderá ver uma lista de mosaicos de utilizador com marca corporativa composto pelo Azure AD, mas a aplicação de imagem corporativa da sua organização não se aplica à página de início de sessão da Microsoft.
-> 
-> 
+>
+>
 
 Se pretender mostrar nesta página a marca, cores e outros elementos personalizáveis da sua empresa,, consulte as seguintes imagens para entender a diferença entre as duas experiências.
 
@@ -91,8 +91,8 @@ Pode personalizar os seguintes elementos na página de início de sessão:
 
 > [!NOTE]
 > Todos os elementos são opcionais. Por exemplo, se especificar um Logótipo de Faixa, mas não uma Ilustração Grande, a página de início de sessão mostra o seu logótipo e a ilustração do site de destino (ou seja, a imagem de autoestrada da Califórnia do Office 365).
-> 
-> 
+>
+>
 
 Na sua página de início de sessão, a caixa de verificação **Manter a sessão iniciada** permite que os utilizadores permaneçam com a sessão iniciada depois de fecharem e reabrirem o browser. Não afeta a duração da sessão. Pode ocultar a caixa de verificação na página de início de sessão do Azure Active Directory.
 
@@ -100,12 +100,12 @@ A apresentação ou não da caixa de verificação depende da definição de **O
 
 ![][9]
 
-Para ocultar a caixa de verificação, configure esta definição como **Oculto**. 
+Para ocultar a caixa de verificação, configure esta definição como **Oculto**.
 
 > [!NOTE]
 > Algumas funcionalidades do SharePoint Online e do Office 2010 dependem da capacidade de os utilizadores poderem selecionar esta caixa. Se configurar esta definição como oculta, os seus utilizadores poderão ver avisos adicionais e inesperados para iniciar sessão.
-> 
-> 
+>
+>
 
 Também pode localizar todos os elementos nesta página. Depois de configurar um conjunto “predefinido” de elementos de personalização, pode configurar mais versões para diferentes regiões. Também pode misturar e combinar os vários elementos. Pode, por exemplo:
 
@@ -163,15 +163,15 @@ Pode demorar até uma hora para que apareça a nova alteração que efetuou na i
 4. Clique em **Personalizar a Imagem Corporativa**.
 5. Na página Personalizar uma Imagem Corporativa, selecione **Editar Definições da Imagem Corporativa Existente** e vá para a página seguinte.
 6. Dependendo dos elementos que pretende remover, efetue um ou mais dos seguintes procedimentos:
-   
+
     a. Em **Logótipo de Faixa**, selecione **Remover o logótipo carregado**.
-   
+
     b. Em **Logótipo de Mosaico**, selecione **Remover o logótipo carregado**.
-   
+
     c. Remova o texto de todas as caixas de texto.
-   
+
     d. Clique em **Seguinte**.
-   
+
     e. Remova o texto de todas as caixas de texto.
 7. Clique em **Guardar** para remover os elementos.
 8. Se necessário, clique novamente em **Personalizar uma Imagem Corporativa** e repita estes passos para todas as imagens corporativas específicas do idioma que têm de ser removidas.
@@ -199,15 +199,15 @@ Alguns elementos personalizáveis no Azure AD tem vários casos de utilização.
 
 | Nome | Descrição | Restrições | Recomendações |
 | --- | --- | --- | --- |
-| Logótipo de Faixa |O Logótipo de Faixa será apresentado na página de início de sessão e no Painel de Acesso. |<p>JPG ou PNG</p><p>60 x 280 pixels</p><p>10 KB</p> |<p>Utilize o logótipo completo da sua organização (incluindo pictograma e logótipo)</p><p>Mantenha uma altura inferior a 30 pixeis para evitar a introdução de barras de deslocamento em dispositivos móveis</p><p>Mantenha-a inferior a 4 KB</p><p>Utilize um PNG transparente (não parta do princípio de que a página de início de sessão tem sempre um fundo branco)</p> |
-| Logótipo de Mosaico |(atualmente não utilizado na página de início de sessão) De futuro, este texto poderá ser utilizado para substituir o pictograma genérico de “conta escolar ou profissional” em locais diferentes da experiência. |<p>JPG ou PNG</p><p>120 x 120 pixéis</p><p>10 KB</p> |<p>Mantenha-o simples (sem texto pequeno), uma vez que esta imagem poderá ser redimensionada para 50% |
+| Logótipo de Faixa |O Logótipo de Faixa será apresentado na página de início de sessão e no Painel de Acesso. |<p>JPG ou PNG</p><p>60 x&280; pixels</p><p>10 KB</p> |<p>Utilize o logótipo completo da sua organização (incluindo pictograma e logótipo)</p><p>Mantenha uma altura inferior a 30 pixeis para evitar a introdução de barras de deslocamento em dispositivos móveis</p><p>Mantenha-a inferior a 4 KB</p><p>Utilize um PNG transparente (não parta do princípio de que a página de início de sessão tem sempre um fundo branco)</p> |
+| Logótipo de Mosaico |(atualmente não utilizado na página de início de sessão) De futuro, este texto poderá ser utilizado para substituir o pictograma genérico de “conta escolar ou profissional” em locais diferentes da experiência. |<p>JPG ou PNG</p><p>120 x&120; pixéis</p><p>10 KB</p> |<p>Mantenha-o simples (sem texto pequeno), uma vez que esta imagem poderá ser redimensionada para 50% |
 | </p> | | | |
 | Etiqueta de Nome de Utilizador da Página de Início de Sessão |(atualmente não utilizada na página de início de sessão) No futuro, este texto poderá ser utilizado para substituir a cadeia genérica “conta escolar ou profissional” em locais diferentes da experiência. Pode configurá-lo para algo como “Conta de Contoso” ou “ID Contoso”. |<p>Texto Unicode, até 50 carateres</p><p>Apenas texto simples (sem ligações ou tags de HTML)</p> |<p>Mantenha-o curto e simples</p><p>Peça aos seus utilizadores como se costumam referir à conta profissional ou escolar que lhes fornece.</p> |
 | Texto da Página de Início de Sessão |Este texto “automático” aparece por baixo do formulário da página de início de sessão e pode ser utilizado para comunicar instruções adicionais ou onde obter ajuda e suporte. |<p>Texto Unicode, até 256 carateres</p><p>Apenas texto simples (sem ligações ou tags de HTML)</p> |Mantenha-o abaixo dos 250 carateres (cerca de 3 linhas de texto) |
-| Ilustração da Página de Início de Sessão |A ilustração é uma imagem grande que é apresentada na página de início de sessão à esquerda do formulário da página de início de sessão. |<p>JPG ou PNG</p><p>1420 x 1200</p><p>500 KB</p> |<p>1420 x 1200 pixéis</p><p>Importante: mantê-la o mais pequena possível, idealmente abaixo de 200 KB. Se esta imagem for demasiado grande, o desempenho da página de Início de Sessão é afetado se a imagem não estiver em cache</p><p>Esta imagem é frequentemente recortada, para suportar aspetos de ecrã diferentes. Mantenha os elementos visuais principais na parte superior esquerda canto (canto superior direito para linguagens RTL), porque redimensionamento ocorre a partir do canto inferior/direita, em direção à parte superior / esquerda, à medida que diminui a janela do browser.</p> |
+| Ilustração da Página de Início de Sessão |A ilustração é uma imagem grande que é apresentada na página de início de sessão à esquerda do formulário da página de início de sessão. |<p>JPG ou PNG</p><p>1420 x&1200;</p><p>500 KB</p> |<p>1420 x&1200; pixéis</p><p>Importante: mantê-la o mais pequena possível, idealmente abaixo de 200 KB. Se esta imagem for demasiado grande, o desempenho da página de Início de Sessão é afetado se a imagem não estiver em cache</p><p>Esta imagem é frequentemente recortada, para suportar aspetos de ecrã diferentes. Mantenha os elementos visuais principais na parte superior esquerda canto (canto superior direito para linguagens RTL), porque redimensionamento ocorre a partir do canto inferior/direita, em direção à parte superior / esquerda, à medida que diminui a janela do browser.</p> |
 | Cor de Fundo da Página de Início de Sessão |A cor de fundo de página de início de sessão é utilizada na área à esquerda do formulário da página de início de sessão. |Tem de ser uma cor RGB numa forma hexadecimal (exemplo: #FFFFFF) |<p>A cor de fundo poderá ser apresentada em vez da Ilustração Grande em ligações de largura de banda baixa</p><p>Sugerimos que escolha a cor primária do Logótipo de Faixa</p> |
 
-## <a name="next-steps"></a>Passos Seguintes
+## <a name="next-steps"></a>Passos seguintes
 * [Introdução ao Azure Active Directory Premium](active-directory-get-started-premium.md)
 * [Ver os relatórios de acesso e utilização](active-directory-view-access-usage-reports.md)
 
@@ -224,6 +224,6 @@ Alguns elementos personalizáveis no Azure AD tem vários casos de utilização.
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Feb17_HO2-->
 
 

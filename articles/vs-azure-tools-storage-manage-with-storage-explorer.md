@@ -15,14 +15,14 @@ ms.workload: na
 ms.date: 11/18/2016
 ms.author: tarcher
 translationtype: Human Translation
-ms.sourcegitcommit: a538ceef7d9aeaca0e6f54443f3a5dabd06c22a1
-ms.openlocfilehash: 9914051f5f509a657e91aa66c1efb99ceb9f4817
+ms.sourcegitcommit: 0550f5fecd83ae9dc0acb2770006156425baddf3
+ms.openlocfilehash: 0617d2e668fe719d6002254b6d13ca729887c0e3
 
 
 ---
 # <a name="getting-started-with-storage-explorer-preview"></a>Introdução ao Explorador de Armazenamento (Pré-visualização)
 ## <a name="overview"></a>Descrição geral
-O Explorador de Armazenamento do Microsoft Azure (Pré-visualização) é uma aplicação autónoma que lhe permite trabalhar facilmente com dados do Storage do Azure no Windows, OS X e Linux. Neste artigo, irá aprender as várias formas de ligar e gerir as contas do Storage do Azure.
+O Explorador de Armazenamento do Microsoft Azure (Pré-visualização) é uma aplicação autónoma que lhe permite trabalhar facilmente com dados do Armazenamento do Azure no Windows, macOS e Linux. Neste artigo, irá aprender as várias formas de ligar e gerir as contas de armazenamento do Azure.
 
 ![Explorador de Armazenamento do Microsoft Azure (pré-visualização)][15]
 
@@ -30,11 +30,11 @@ O Explorador de Armazenamento do Microsoft Azure (Pré-visualização) é uma ap
 * [Transfira e instale o Explorador de Armazenamento (pré-visualização)](http://www.storageexplorer.com)
 
 ## <a name="connect-to-a-storage-account-or-service"></a>Ligar a um serviço ou a uma conta do Storage
-Explorador de Armazenamento (Pré-visualização) fornece um conjunto de formas para ligar às contas do Storage. Isto inclui ligar a contas de armazenamento associadas às subscrições do Azure, ligar a contas de armazenamento e serviços partilhados de outras subscrições do Azure e até ligar e gerir o armazenamento local com o Emulador de Armazenamento do Azure. Além disso, pode trabalhar com contas de armazenamento no Azure global e nacional:
+O Explorador de Armazenamento (Pré-visualização) fornece várias formas de ligar às contas de armazenamento. Isto inclui ligar a contas de armazenamento associadas às subscrições do Azure, ligar a contas de armazenamento e serviços partilhados de outras subscrições do Azure e até ligar e gerir o armazenamento local com o Emulador de Armazenamento do Azure. Além disso, pode trabalhar com contas de armazenamento no Azure global e nacional:
 
 * [Ligar a uma subscrição Azure](#connect-to-an-azure-subscription) – Gira os recursos de armazenamento que pertencem à sua subscrição do Azure.
 * [Trabalhar com o armazenamento de desenvolvimento local](#work-with-local-development-storage) – Faça a gestão de armazenamento local utilizando o Emulador de armazenamento do Microsoft Azure.
-* [Anexar ao armazenamento externo](#attach-or-detach-an-external-storage-account) – Gira recursos de armazenamento que pertencem a outra subscrição do Azure ou a clouds do Azure nacional com a chave, o nome e os pontos finais da conta de armazenamento.
+* [Anexar ao armazenamento externo](#attach-or-detach-an-external-storage-account) – Gira recursos de armazenamento que pertencem a outra subscrição do Azure ou a nuvens do Azure nacional com a chave, o nome e os pontos finais da conta de armazenamento.
 * [Anexar conta de armazenamento através da SAS](#attach-storage-account-using-sas) – Faça a gestão de recursos de armazenamento que pertencem a outra subscrição Azure com uma SAS.
 * [Anexar serviço através da SAS](#attach-service-using-sas) – Gira um serviço de armazenamento específico (contentor de blobs, filas ou tabelas) que pertence a outra subscrição do Azure com uma SAS.
 
@@ -47,11 +47,11 @@ Explorador de Armazenamento (Pré-visualização) fornece um conjunto de formas 
 1. No Explorador de Armazenamento (pré-visualização), selecione **Definições de conta do Azure**.
 
     ![Definições de conta do Azure][0]
-2. O painel esquerdo irá apresentar agora todas as contas Microsoft nas quais tenha sessão iniciada. Para ligar a outra conta, selecione **Adicionar uma conta** e siga as caixas de diálogo para iniciar sessão com uma conta Microsoft que esteja associada a, pelo menos, uma subscrição Azure ativa.
+2. O painel esquerdo apresenta todas as contas Microsoft nas quais tenha sessão iniciada. Para ligar a outra conta, selecione **Adicionar uma conta** e siga as caixas de diálogo para iniciar sessão com uma conta Microsoft que esteja associada a, pelo menos, uma subscrição Azure ativa.
 > [!NOTE]
 >Atualmente, não pode ligar ao Azure nacional, como o Black Forest Azure, o Fairfax Azure e o Mooncake Azure através do início de sessão. Consulte a secção **Attach or detach an external storage account (Anexar ou desanexar uma conta de armazenamento externa)**, sobre como ligar a contas de armazenamento do Azure nacional.
 
-3. Quando inicia a sessão com êxito numa conta Microsoft, o painel da esquerda será preenchido com as subscrições do Azure associadas a essa conta. Selecione as subscrições do Azure com as quais pretende trabalhar e, em seguida, selecione **Aplicar**. (Selecionar **Todas as subscrições** alterna entre selecionar todas ou nenhuma das subscrições Azure listadas.)
+3. Quando inicia sessão com êxito numa conta Microsoft, o painel esquerdo será preenchido com as subscrições do Azure associadas a essa conta. Selecione as subscrições do Azure com as quais pretende trabalhar e, em seguida, selecione **Aplicar**. (Selecionar **Todas as subscrições** alterna entre selecionar todas ou nenhuma das subscrições Azure listadas.)
 
     ![Selecionar subscrições do Azure][3]
 4. O painel esquerdo apresenta as contas de armazenamento associadas às subscrições do Azure selecionadas.
@@ -69,10 +69,10 @@ O Explorador de Armazenamento (Pré-visualização) permite-lhe funcionar com o 
 1. No painel da esquerda do Explorador de Armazenamento (pré-visualização), expanda o nó **(Contas de Armazenamento ** > **Locais e Anexadas** > **(Desenvolvimento)**.
 
     ![Nó de desenvolvimento local][21]
-2. Se ainda não instalou o Emulador do Storage do Azure, será solicitado a fazê-lo através de uma barra de informações. Se a barra de informações for apresentada, selecione **Transferir a versão mais recente** e instale o emulador.
+2. Se ainda não instalou o Emulador de Armazenamento do Azure, será solicitado a fazê-lo através de uma barra de informações. Se a barra de informações for apresentada, selecione **Transferir a versão mais recente** e instale o emulador.
 
     ![Transferir o pedido de Emulador de Armazenamento do Azure][22]
-3. Assim que o emulador estiver instalado, terá a possibilidade de criar e de trabalhar com tabelas, filas e blobs locais. Para saber como trabalhar com cada tipo de conta do Storage, selecione na ligação adequada abaixo:
+3. Assim que o emulador estiver instalado, tem a possibilidade de criar e de trabalhar com tabelas, filas e blobs locais. Para saber como trabalhar com cada tipo de conta de armazenamento, selecione uma das ligações seguintes:
 
    * [Gerir recursos do armazenamento de blobs do Azure](vs-azure-tools-storage-explorer-blobs.md)
    * Gerir recursos de armazenamento de partilha de ficheiros do Azure - *Brevemente*
@@ -83,7 +83,7 @@ O Explorador de Armazenamento (Pré-visualização) permite-lhe funcionar com o 
 Explorador de Armazenamento (Pré-visualização) fornece a capacidade para anexar a contas do Storage externo para que as contas do Storage possam ser partilhadas facilmente. Esta secção explica como anexar (e desanexar) de contas do Storage externo.
 
 ### <a name="get-the-storage-account-credentials"></a>Obter as credenciais da conta do Storage
-Para partilhar uma conta do Storage externo, o proprietário dessa conta tem primeiro de obter as credenciais – nome de conta e chave – para a conta e, em seguida, partilhar essas informações com a pessoa que pretende anexar a essa conta (externa). Obter as credenciais da conta do Storage pode ser efetuado através do Portal do Azure ao seguir estes passos:
+Para partilhar uma conta de armazenamento externa, o proprietário dessa conta tem primeiro de obter as credenciais – nome de conta e chave – para a conta e, em seguida, partilhar essas informações com a pessoa que pretende anexar a essa conta (externa). Obter as credenciais da conta do Storage pode ser efetuado através do Portal do Azure ao seguir estes passos:
 
 1. Inicie sessão no [Portal do Azure](https://portal.azure.com).
 2. Selecione **Procurar**.
@@ -97,7 +97,7 @@ Para partilhar uma conta do Storage externo, o proprietário dessa conta tem pri
    ![Chaves de acesso][6]
 
 ### <a name="attach-to-an-external-storage-account"></a>Anexar a uma conta do Storage externo
-Para anexar a uma conta de armazenamento externo, é necessário o nome e a chave da conta. A secção *Obter as credenciais da conta de armazenamento* explica como obter estes valores a partir do portal do Azure. No entanto, tenha em atenção que no portal a chave de conta é designada por «chave 1», por isso se o Explorador de Armazenamento (Pré-visualização) pedir-lhe uma chave de conta, terá de introduzir (ou colar) o valor de "chave 1".
+Para anexar a uma conta de armazenamento externa, é necessário o nome e a chave da conta. A secção *Obter as credenciais da conta de armazenamento* explica como obter estes valores a partir do portal do Azure. No entanto, tenha em atenção que no portal a chave de conta é designada por «chave 1», por isso se o Explorador de Armazenamento (Pré-visualização) pedir-lhe uma chave de conta, terá de introduzir (ou colar) o valor de "chave 1".
 
 1. No Explorador de Armazenamento (Pré-visualização), selecione **Ligar ao armazenamento do Azure**.
 
@@ -111,8 +111,8 @@ Para anexar a uma conta de armazenamento externo, é necessário o nome e a chav
 3. Na caixa de diálogo **Anexar Armazenamento Externo**, introduza o nome da conta de armazenamento na caixa **Nome da conta**, especifique as definições pretendidas e selecione **Seguinte** quando terminar.
 
    ![Anexar a caixa de diálogo de armazenamento externo][8]
-4. Na caixa de diálogo **Resumo da Ligação**, verifique as informações. Se pretender alterar alguma informação, selecione **Voltar** e reintroduza as definições pretendidas. Depois de terminar, selecione **Ligar**.
-5. Depois de anexada, a conta de armazenamento externo será apresentada com o texto **(Externo)** anexado ao nome da conta de armazenamento.
+4. Na caixa de diálogo **Resumo da Ligação**, verifique as informações. Se quiser alterar alguma informação, selecione **Voltar** e reintroduza as definições pretendidas. Depois de terminar, selecione **Ligar**.
+5. Depois de ligada, a conta de armazenamento externa será apresentada com o texto **(Externo)** anexado ao nome da conta de armazenamento.
 
    ![Resultado da ligação a uma conta de armazenamento externo][9]
 
@@ -138,7 +138,7 @@ Para ilustrar isto, vamos supor que o Utilizador A é um administrador de uma su
 2. Na caixa de diálogo **Assinatura de Acesso Partilhado**, especifique o período de tempo e as permissões que pretende para a conta e selecione **Criar**.
 
     ![Obter a caixa de diálogo SAS][14]
-3. Uma segunda caixa de diálogo **Assinatura de Acesso Partilhado** aparecerá a apresentar a SAS. Selecione **Copiar** junto a **Cadeia de Ligação** para a copiar para a área de transferência. Selecione **Fechar** para dispensar a caixa de diálogo.
+3. Uma segunda caixa de diálogo **Assinatura de Acesso Partilhado** apresenta a SAS. Selecione **Copiar** junto a **Cadeia de Ligação** para a copiar para a área de transferência. Selecione **Fechar** para dispensar a caixa de diálogo.
 
 ### <a name="attach-to-the-shared-account-using-the-sas"></a>Ligar à conta partilhada utilizando a SAS
 1. No Explorador de Armazenamento (Pré-visualização), selecione **Ligar ao armazenamento do Azure**.
@@ -147,8 +147,8 @@ Para ilustrar isto, vamos supor que o Utilizador A é um administrador de uma su
 2. Na caixa de diálogo **Ligar ao armazenamento do Azure**, especifique a cadeia de ligação e, em seguida, selecione **Seguinte**.
 
    ![Ligar ao diálogo de armazenamento do Azure][24]
-3. Na caixa de diálogo **Resumo da Ligação**, verifique as informações. Se pretender alterar alguma informação, selecione **Voltar** e reintroduza as definições pretendidas. Depois de terminar, selecione **Ligar**.
-4. Depois de anexada, a conta do Storage será apresentada com o texto (SAS) acrescentado ao nome da conta que forneceu.
+3. Na caixa de diálogo **Resumo da Ligação**, verifique as informações. Se quiser alterar alguma informação, selecione **Voltar** e reintroduza as definições pretendidas. Depois de terminar, selecione **Ligar**.
+4. Depois de anexada, a conta de armazenamento é apresentada com o texto (SAS) acrescentado ao nome da conta que forneceu.
 
    ![Resultado do anexado a uma conta utilizando SAS][17]
 
@@ -170,15 +170,15 @@ Neste contexto, um serviço pode ser um contentor de blobs, de filas ou tabelas.
 2. Na caixa de diálogo **Ligar ao armazenamento do Azure**, especifique a URI da SAS e, em seguida, selecione **Seguinte**.
 
    ![Ligar ao diálogo de armazenamento do Azure][24]
-3. Na caixa de diálogo **Resumo da Ligação**, verifique as informações. Se pretender alterar alguma informação, selecione **Voltar** e reintroduza as definições pretendidas. Depois de terminar, selecione **Ligar**.
-4. Quando estiver anexado, o serviço anexado recentemente será apresentado sob o nó **(Serviço SAS)**.
+3. Na caixa de diálogo **Resumo da Ligação**, verifique as informações. Se quiser alterar alguma informação, selecione **Voltar** e reintroduza as definições pretendidas. Depois de terminar, selecione **Ligar**.
+4. Depois de anexado, o serviço anexado recentemente é apresentado no nó **(Serviço SAS)**.
 
    ![Resultado da anexação a um serviço partilhado através de SAS][20]
 
 ## <a name="search-for-storage-accounts"></a>Procurar contas do Storage
 Se tiver uma longa lista de contas do Storage, uma forma rápida de localizar uma conta do Storage específico consiste em utilizar a caixa de pesquisa na parte superior do painel esquerdo.
 
-Ao escrever na caixa de pesquisa, o painel esquerdo irá apresentar apenas as contas do Storage que correspondem ao valor de pesquisa que introduziu até esse ponto. A captura de ecrã seguinte ilustra um exemplo em que pesquisei todas as contas do Storage em que o nome da conta do Storage contém o texto “tarcher”.
+Ao escrever na caixa de pesquisa, o painel esquerdo apresenta apenas as contas de armazenamento que correspondem ao valor de pesquisa que introduziu até esse ponto. A captura de ecrã seguinte ilustra um exemplo em que pesquisei todas as contas do Storage em que o nome da conta do Storage contém o texto “tarcher”.
 
 ![Procurar conta de armazenamento][11]
 
@@ -210,6 +210,6 @@ Para limpar a pesquisa, selecione o botão **x** na caixa de pesquisa.
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO3-->
 
 

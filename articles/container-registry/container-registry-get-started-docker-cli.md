@@ -1,5 +1,5 @@
 ---
-title: "Operações do Docker num registo de contentores | Microsoft Docs"
+title: Imagens do Docker no registo de contentores do Azure | Microsoft Docs
 description: Enviar e enviar imagens do Docker para um registo de contentores do Azure com a CLI do Docker
 services: container-registry
 documentationcenter: 
@@ -17,8 +17,8 @@ ms.workload: na
 ms.date: 11/14/2016
 ms.author: stevelas
 translationtype: Human Translation
-ms.sourcegitcommit: aa4b960ed75b5a4702317bf557b4588e7a54fa0e
-ms.openlocfilehash: 923e1a045062a817dd6726dfce94485be7211ca2
+ms.sourcegitcommit: f299cff22d00a1c765a32838647818d18f3df85d
+ms.openlocfilehash: df15eebf0052aa4713263a810df605fa1016c306
 
 ---
 # <a name="push-your-first-image-to-a-container-registry-using-the-docker-cli"></a>Enviar a sua primeira imagem para um registo de contentores com a CLI do Docker
@@ -118,6 +118,6 @@ Agora que sabe as noções básicas, está pronto para começar a utilizar o seu
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 

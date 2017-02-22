@@ -1,5 +1,5 @@
 ---
-title: Arquitetura do Service Bus | Microsoft Docs
+title: "Descrição geral da arquitetura de processamento de mensagens do Azure Service Bus | Microsoft Docs"
 description: Descreve a arquitetura de processamento de mensagens e do reencaminhamento do Azure Service Bus.
 services: service-bus-messaging
 documentationcenter: na
@@ -15,8 +15,8 @@ ms.workload: na
 ms.date: 11/30/2016
 ms.author: sethm
 translationtype: Human Translation
-ms.sourcegitcommit: 0b1f6f7ec47e47f39407cdbfd5efef2a18944ecc
-ms.openlocfilehash: 6a2e59f9366e411d322b8560f03b115638619966
+ms.sourcegitcommit: ca66a344ea855f561ead082091c6941540b1839d
+ms.openlocfilehash: cd0e53955495752cd91323b9926f9494a70c5797
 
 
 ---
@@ -58,6 +58,6 @@ Agora que já leu uma descrição geral da arquitetura do Service Bus, visite as
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Jan17_HO4-->
 
 

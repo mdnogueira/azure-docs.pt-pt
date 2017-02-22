@@ -1,5 +1,5 @@
 ---
-title: "Implemente a sua primeira aplicação Web para o Azure em cinco minutos | Microsoft Docs"
+title: "Implementar a sua primeira aplicação Web HTML no Azure em cinco minutos | Microsoft Docs"
 description: "Saiba como é fácil executar aplicações Web no Serviço de Aplicações ao implementar uma aplicação de exemplo. Comece a programar verdadeiramente em pouco tempo e a ver resultados imediatos."
 services: app-service\web
 documentationcenter: 
@@ -15,12 +15,12 @@ ms.topic: hero-article
 ms.date: 01/04/2017
 ms.author: cephalin
 translationtype: Human Translation
-ms.sourcegitcommit: 05e61d2fc751c4239aef4b10ad897765c59fe928
-ms.openlocfilehash: 4e2d846ef3ce6e78d5789c7b8e1b8228617837b6
+ms.sourcegitcommit: 5e532c130910e292d8b742353dfe7e24f1bf865e
+ms.openlocfilehash: 37c364ab2a3948acd20b016639887a46ee18c470
 
 
 ---
-# <a name="deploy-your-first-web-app-to-azure-in-five-minutes"></a>Implemente a sua primeira aplicação Web no Azure em cinco minutos
+# <a name="deploy-your-first-html-web-app-to-azure-in-five-minutes"></a>Implementar a sua primeira aplicação Web HTML no Azure em cinco minutos
 
 > [!div class="op_single_selector"]
 > * [Primeiro site HTML](app-service-web-get-started-html-cli-nodejs.md)
@@ -57,7 +57,7 @@ Pode concluir a tarefa utilizando uma das seguintes versões CLI:
 * Uma conta do Microsoft Azure. Se não tiver uma conta, pode [inscrever-se numa avaliação gratuita](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F) ou [ativar os benefícios de subscritor do Visual Studio](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F).
 
 > [!NOTE]
-> Pode [Experimentar o Serviço de Aplicações](http://go.microsoft.com/fwlink/?LinkId=523751) sem uma conta do Azure. Crie uma aplicação de introdução e experimente-a durante uma hora, sem cartão de crédito nem compromissos.
+> Pode [Experimentar o Serviço de Aplicações](https://azure.microsoft.com/try/app-service/) sem uma conta do Azure. Crie uma aplicação de introdução e experimente-a durante uma hora, sem cartão de crédito nem compromissos.
 > 
 > 
 
@@ -135,6 +135,6 @@ Em alternativa, faça mais com a sua primeira aplicação Web. Por exemplo:
 
 
 
-<!--HONumber=Jan17_HO1-->
+<!--HONumber=Jan17_HO4-->
 
 
