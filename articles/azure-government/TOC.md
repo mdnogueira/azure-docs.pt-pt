@@ -1,36 +1,41 @@
 # Descrição geral
-## [O que é o Azure Government?](../azure-government-overview.md?toc=%2fazure%2fazure-government%2ftoc.json)
+## [O que é o Azure Government?](documentation-government-welcome.md)
 ## [ITAR](documentation-government-overview-itar.md)
 ## [Justiça e Segurança Pública](documentation-government-overview-jps.md)
 ## [Departamento de Defesa](documentation-government-overview-dod.md)
 
 # Introdução
-## [Guia para programadores](../azure-government-developer-guide.md?toc=%2fazure%2fazure-government%2ftoc.json)
+## [Guia para programadores](documentation-government-developer-guide.md)
+## [Iniciar sessão no portal do Azure Government](documentation-government-get-started-connect-with-portal.md)
+## [Aprovisionar uma aplicação Web](documentation-government-howto-deploy-webandmobile.md)
+## [Ligar com o PowerShell](documentation-government-get-started-connect-with-ps.md)
+## [Ligar com a CLI](documentation-government-get-started-connect-with-cli.md)
+## [Configurar o Visual Studio para o Azure Government](documentation-government-get-started-connect-with-vs.md)
+## [Serviços disponíveis](documentation-government-services.md)
 
 # Procedimento
 ## Planear
 ### [Segurança](documentation-government-plan-security.md)
 ### [Conformidade](documentation-government-plan-compliance.md)
 ## Gerir
-### [Imagens](../azure-government-image-gallery.md?toc=%2fazure%2fazure-government%2ftoc.json)
-### [Marketplace](documentation-government-manage-marketplace.md)
-### [Mercado para parceiros](documentation-government-manage-marketplace-partners.md)
-### [Resource Manager](documentation-government-manage-azure-resource-manager.md)
 ### [Operations Management Suite](documentation-government-manage-oms.md)
 ### [Subscrição](documentation-government-manage-subscriptions.md)
-## Implementação
-### Web + móvel
-#### [Serviços Aplicacionais](documentation-government-howto-deploy-webandmobile.md)
+
 
 # Referência
-## [Serviços](documentation-government-services.md)
+## [Imagens](documentation-government-image-gallery.md)
+## [Marketplace](documentation-government-manage-marketplace.md)
+## [Mercado para parceiros](documentation-government-manage-marketplace-partners.md)
+
+## Serviços
 ### [Computação](documentation-government-compute.md)
 ### [Armazenamento](documentation-government-services-storage.md)
 ### [Base de Dados](documentation-government-services-database.md)
 ### [Redes](documentation-government-networking.md)
-### [Segurança + identidade](documentation-government-services-securityandidentity.md)
-### [Monitorização + gestão](documentation-government-services-monitoringandmanagement.md)
-### [Web + móvel](documentation-government-services-webandmobile.md)
+### [Segurança + Identidade](documentation-government-services-securityandidentity.md)
+### [Monitorização + Gestão](documentation-government-services-monitoringandmanagement.md)
+### [Web + Móvel](documentation-government-services-webandmobile.md)
+
 
 # Recursos
 ## [Preços](https://azure.microsoft.com/pricing/)

@@ -27,7 +27,6 @@
 ### [CLI do Azure](resource-group-template-deploy-cli.md)
 ### [Portal](resource-group-template-deploy-portal.md)
 ### [API REST](resource-group-template-deploy-rest.md)
-### [Ambientes de desenvolvimento e teste](solution-dev-test-environments.md)
 ### [Integração Contínua com o Visual Studio Team Services](../vs-azure-tools-resource-groups-ci-in-vsts.md?toc=%2fazure%2fazure-resource-manager%2ftoc.json)
 ## Gerir
 ### [PowerShell](powershell-azure-resource-manager.md)
@@ -59,7 +58,7 @@
 
 # Referência
 ## [PowerShell](/powershell/resourcemanager/azurerm.resources/v3.5.0/azurerm.resources)
-## [CLI 2.0 do Azure (Pré-visualização)](/cli/azure/resource)
+## [CLI 2.0 do Azure](/cli/azure/resource)
 ## [.NET](/dotnet/api/microsoft.azure.management.resourcemanager)
 ## [Java](/java/api/com.microsoft.azure.management.resources)
 ## [Python](http://azure-sdk-for-python.readthedocs.io/en/latest/resourcemanagement.html)
