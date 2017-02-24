@@ -4,7 +4,7 @@
 
 # Introdução
 ## [Criar um registo no portal](container-registry-get-started-portal.md)
-## [Criar um registo com a CLI](container-registry-get-started-azure-cli.md)
+## [Criar um registo com a CLI 2.0 do Azure](container-registry-get-started-azure-cli.md)
 ## [Emitir via push e solicitar uma imagem](container-registry-get-started-docker-cli.md)
 
 # Procedimento
@@ -14,7 +14,7 @@
 
 # Referência
 
-## [Pré-visualização da CLI 2.0 do Azure](/cli/azure/acr)
+## [CLI 2.0 do Azure](/cli/azure/acr)
 ## [REST](/rest/api/containerregistry)
 
 # Relacionado
@@ -27,6 +27,6 @@
 ## [Atualizações de Serviço](https://azure.microsoft.com/en-us/updates/?product=container-registry&updatetype=&platform=)
 
 
-<!--HONumber=Jan17_HO3-->
+<!--HONumber=Feb17_HO4-->
 
 

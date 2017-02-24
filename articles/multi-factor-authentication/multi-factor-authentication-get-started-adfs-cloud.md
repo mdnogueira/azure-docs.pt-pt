@@ -1,5 +1,5 @@
 ---
-title: Proteger recursos da cloud com o MFA do Azure e AD FS
+title: Proteger recursos da cloud com o MFA do Azure e AD FS | Microsoft Docs
 description: "Esta é a página do Multi-Factor Authentication do Azure que descreve como começar a utilizar o MFA do Azure e o AD FS na nuvem."
 services: multi-factor-authentication
 documentationcenter: 
@@ -12,43 +12,40 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 10/14/2016
+ms.date: 02/09/2017
 ms.author: kgremban
 translationtype: Human Translation
-ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
-ms.openlocfilehash: 0a9ab0aca1a77245f360d0d8976aa9b8f59f15a0
-
+ms.sourcegitcommit: 60e8bf883a09668100df8fb51572f9ce0856ccb3
+ms.openlocfilehash: 9eb32ac7936ad54d487dc15d3ef320ec279ce0bc
 
 ---
+
 # <a name="securing-cloud-resources-with-azure-multi-factor-authentication-and-ad-fs"></a>Proteger recursos da nuvem com o Multi-Factor Authentication do Azure e o AD FS
 Se a sua organização estiver federada no Azure Active Directory, utilize o Multi-Factor Authentication do Azure ou os Serviços de Federação do Active Directory (AD FS) para proteger os recursos acedidos pelo Azure AD. Utilize os procedimentos seguintes para proteger os recursos do Azure Active Directory com o Multi-Factor Authentication do Azure ou os Serviços de Federação do Active Directory (AD FS).
 
 ## <a name="secure-azure-ad-resources-using-ad-fs"></a>Proteger recursos do Azure AD com o AD FS
-Para proteger o seu recurso da cloud, ative primeiro uma conta para os utilizadores e, em seguida, configure uma regra de afirmações. Siga este procedimento para percorrer os passos:
+Para proteger o recurso da cloud, configure uma regra de afirmações para que os Serviços de Federação do Active Directory emitam a afirmação de autenticação múltipla quando um utilizador executar uma verificação de dois passos com êxito. Esta afirmação é transmitida ao Azure AD. Siga este procedimento para percorrer os passos:
 
-1. Utilize os passos descritos em [Ativar o Multi-Factor Authentication para os utilizadores](multi-factor-authentication-get-started-cloud.md#turn-on-two-step-verification-for-users) para ativar uma conta.
-2. Inicie a consola de Gestão do AD FS.
-   ![Cloud](./media/multi-factor-authentication-get-started-adfs-cloud/adfs1.png)
-3. Navegue até **Confianças de Entidade Confiadora** e clique com o botão direito do rato na Confiança da Entidade Confiadora. Selecione **Editar Regras de Afirmação...**
-4. Clique em **Adicionar Regra...**
-5. No menu pendente, selecione **Enviar Afirmações Utilizando uma Regra Personalizada** e clique em **Seguinte**.
-6. Introduza um nome para a regra de afirmação.
-7. Em Regra personalizada, adicione o texto seguinte:
 
-    ```
-    => issue(Type = "http://schemas.microsoft.com/claims/authnmethodsreferences", Value = "http://schemas.microsoft.com/claims/multipleauthn");
-    ```
+1. Abra a Gestão do AD FS.
+2. À esquerda, selecione **Confianças de Entidades Confiadoras**.
+3. Clique com o botão direito do rato na **Plataforma de Identidade do Microsoft Office 365** e selecione **Editar Regras de Afirmação...**
 
-    Afirmação correspondente:
+   ![Nuvem](./media/multi-factor-authentication-get-started-adfs-cloud/trustedip1.png)
 
-    ```
-    <saml:Attribute AttributeName="authnmethodsreferences" AttributeNamespace="http://schemas.microsoft.com/claims">
-    <saml:AttributeValue>http://schemas.microsoft.com/claims/multipleauthn</saml:AttributeValue>
-    </saml:Attribute>
-    ```
-8. Clique em **OK** e em **Concluir**. Feche a consola de Gestão do AD FS.
+4. Em Regras de Transformação da Emissão, clique em **Adicionar Regra.**
 
-Em seguida, os utilizadores podem concluir o início de sessão utilizando o método no local (por exemplo, um smart card).
+   ![Nuvem](./media/multi-factor-authentication-get-started-adfs-cloud/trustedip2.png)
+
+5. No Assistente para Adicionar Regra de Afirmação de Transformação, selecione **Passar ou Filtrar uma Afirmação de Entrada** no menu pendente e clique em **Seguinte**.
+
+   ![Nuvem](./media/multi-factor-authentication-get-started-adfs-cloud/trustedip3.png)
+
+6. Dê um nome à sua regra. 
+7. Selecione **Referências de Métodos de Autenticação** como o tipo de Afirmação de entrada.
+8. Selecione **Passar todos os valores de afirmação**.
+    ![Assistente para Adicionar Regra de Afirmação de Transformação](./media/multi-factor-authentication-get-started-adfs-cloud/configurewizard.png)
+9. Clique em **Concluir**. Feche a consola de Gestão do AD FS.
 
 ## <a name="trusted-ips-for-federated-users"></a>IPs Fidedignos para utilizadores federados
 Os IPs Fidedignos permitem aos administradores ignorar a verificação em dois passos para endereços IP específicos ou para os utilizadores federados que tenham pedidos com origem na sua própria intranet. As secções seguintes descrevem como configurar IPs Fidedignos do Multi-Factor Authentication do Azure com utilizadores federados e ignorar a verificação em dois passos quando um pedido tem origem na intranet dos utilizadores federados. Isto é feito ao configurar o AD FS para utilizar uma passagem ou filtrar um modelo de afirmação de entrada com o tipo de afirmação Dentro da Rede da Empresa.
@@ -56,7 +53,7 @@ Os IPs Fidedignos permitem aos administradores ignorar a verificação em dois p
 Este exemplo utiliza o Office 365 para as Confianças de Entidades Confiadoras.
 
 ### <a name="configure-the-ad-fs-claims-rules"></a>Configurar regras de afirmações do AD FS
-A primeira coisa a fazer é configurar as afirmações do AD FS. Vamos criar duas regras de afirmações, uma para o tipo de afirmação Dentro da Rede da Empresa e uma adicional para manter os utilizadores com sessão iniciada.
+A primeira coisa a fazer é configurar as afirmações do AD FS. Crie duas regras de afirmações, uma para o tipo de afirmação Dentro da Rede da Empresa e uma adicional para manter os utilizadores com sessão iniciada.
 
 1. Abra a Gestão do AD FS.
 2. À esquerda, selecione **Confianças de Entidades Confiadoras**.
@@ -100,6 +97,6 @@ Já está! Neste momento, os utilizadores federados do Office 365 apenas têm de
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Feb17_HO2-->
 
 

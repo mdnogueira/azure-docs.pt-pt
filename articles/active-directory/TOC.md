@@ -50,8 +50,11 @@
 ### [Configurar grupos de self-service](active-directory-accessmanagement-self-service-group-management.md)
 ### [Resolução de problemas](active-directory-accessmanagement-troubleshooting.md)
 
-## [Ver relatórios de acesso e utilização](active-directory-view-access-usage-reports.md)
+## [Ver relatórios de atividades e segurança](active-directory-view-access-usage-reports.md)
 ### [Relatórios do Azure AD](active-directory-reporting-getting-started.md)
+### [FAQ](active-directory-reporting-faq.md)
+### [Migração de relatórios](active-directory-reporting-migration.md)
+
 ### [Redes conhecidas](active-directory-known-networks.md)
 
 ### [Guia de relatórios](active-directory-reporting-guide.md)
@@ -212,7 +215,6 @@
 #### [Tokens de utilizador B2B](active-directory-b2b-user-token.md)
 #### [Mapeamento das afirmações de utilizador B2B](active-directory-b2b-claims-mapping.md)
 #### [Partilha externa do Office 365](active-directory-b2b-o365-external-user.md)
-#### [Comparar B2B com B2C](active-directory-b2b-compare-b2c.md)
 #### [Configurar aplicações SaaS para B2B](active-directory-b2b-configure-saas-apps.md)
 #### [Exemplos de código e do PowerShell](active-directory-b2b-code-samples.md)
 #### [Limitações atuais](active-directory-b2b-current-limitations.md)
@@ -230,9 +232,9 @@
 ### [Unidades administrativas](active-directory-administrative-units-management.md)
 ### [Acesso a recursos no Azure](active-directory-understanding-resource-access.md)
 ### [Controlo de Acesso Baseado em Funções](role-based-access-control-what-is.md)
-#### Gerir o acesso
-##### [Portal do Azure](role-based-access-control-manage-assignments.md)
-##### [Portal clássico](role-based-access-control-configure.md)
+#### Gerir atribuições de acesso
+##### [Por utilizador](role-based-access-control-manage-assignments.md)
+##### [Por recurso](role-based-access-control-configure.md)
 #### [Funções incorporadas](role-based-access-built-in-roles.md)
 #### [Funções personalizadas](role-based-access-control-custom-roles.md)
 #### [Relatórios](role-based-access-control-access-change-history-report.md)
@@ -323,6 +325,6 @@
 ## [Fórum de comentários do Azure](https://feedback.azure.com/forums/169401-azure-active-directory)
 
 
-<!--HONumber=Feb17_HO2-->
+<!--HONumber=Feb17_HO4-->
 
 

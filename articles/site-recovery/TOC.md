@@ -2,7 +2,7 @@
 ## [O que é o Site Recovery?](site-recovery-overview.md)
 ## [Como funciona o Site Recovery?](site-recovery-components.md)
 ## [Que cargas de trabalho pode proteger?](site-recovery-workload.md)
-## [Matriz de suporte do Site Recovery](site-recovery-support-matrix.md)
+## [Matriz de suporte do Site Recovery](site-recovery-support-matrix-to-azure.md)
 ## [FAQ](site-recovery-faq.md)
 ## [Veja uma introdução](https://www.youtube.com/watch?v=eOOwMQPBKfM)
 
@@ -26,7 +26,14 @@
 ### [Implementar o serviço de Mobilidade para a replicação de VMware](site-recovery-vmware-to-azure-install-mob-svc.md)
 #### [Implementar o serviço de Mobilidade com o System Center Configuration Manager](site-recovery-install-mobility-service-using-sccm.md)
 #### [Implementar o serviço de Mobilidade com o Automation DSC do Azure](site-recovery-automate-mobility-service-install.md)
-### [Remover servidores e desativar proteção](site-recovery-manage-registration-and-protection.md)
+## Ativação pós-falha e reativação pós-falha
+### [Ativação pós-falha no Site Recovery](site-recovery-failover.md)
+### [Configurar planos de recuperação](site-recovery-create-recovery-plans.md)
+#### [Adicionar runbooks do Azure aos planos de recuperação](site-recovery-runbook-automation.md)
+### [Executar uma ativação pós-falha de teste no Azure](site-recovery-test-failover-to-azure.md)
+### [Executar uma ativação pós-falha de teste entre dois sites VMM](site-recovery-test-failover-vmm-to-vmm.md)
+### [Reativação pós-falha de VMs do VMware e servidores físicos](site-recovery-failback-azure-to-vmware.md)
+
 ## Migrar
 ### [Migrar para o Azure](site-recovery-migrate-to-azure.md)
 ### [Migrar entre regiões do Azure](site-recovery-migrate-azure-to-azure.md)
@@ -44,13 +51,9 @@
 ### [Automatizar a replicação de Hyper-V para o Azure (sem VMM)](site-recovery-deploy-with-powershell-resource-manager.md)
 ### [Automatizar a replicação de Hyper-V para o Azure (com VMM)](site-recovery-vmm-to-azure-powershell-resource-manager.md)
 ### [Automatizar a replicação de Hyper-V para um site secundário (com VMM)](site-recovery-vmm-to-vmm-powershell-resource-manager.md)
-## Ativação pós-falha e reativação pós-falha
-### [Ativação pós-falha no Site Recovery](site-recovery-failover.md)
-### [Configurar planos de recuperação](site-recovery-create-recovery-plans.md)
-#### [Adicionar runbooks do Azure aos planos de recuperação](site-recovery-runbook-automation.md)
-### [Executar uma ativação pós-falha de teste do VMware para o Azure](site-recovery-test-failover-to-azure.md)
-### [Executar uma ativação pós-falha de teste entre dois sites VMM](site-recovery-test-failover-vmm-to-vmm.md)
-### [Reativação pós-falha de VMs do VMware e servidores físicos](site-recovery-failback-azure-to-vmware.md)
+## Gerir
+### [Remover servidores e desativar proteção](site-recovery-manage-registration-and-protection.md)
+### [Editar as definições de replicação](site-recovery-setup-replication-settings-vmware.md#edit-replication-policy)
 ## [Monitorizar e resolver problemas](site-recovery-monitoring-and-troubleshooting.md)
 
 # Referência
@@ -69,6 +72,6 @@
 ## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=site-recovery)
 
 
-<!--HONumber=Feb17_HO2-->
+<!--HONumber=Feb17_HO4-->
 
 
