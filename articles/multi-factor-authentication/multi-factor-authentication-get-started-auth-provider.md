@@ -12,11 +12,11 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 10/14/2016
+ms.date: 02/14/2016
 ms.author: kgremban
 translationtype: Human Translation
-ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
-ms.openlocfilehash: b3dadee1ea8d1ff4a0164a90eb617f9d276b6670
+ms.sourcegitcommit: 4572913c2bc732c31f38021f9d3ccc34417de875
+ms.openlocfilehash: be4361af8f3f3024ab7f12114760f6f58e77deaf
 
 
 ---
@@ -25,17 +25,13 @@ A verificação de dois passos está disponível por predefinição para os admi
 
 > [!NOTE]
 > É utilizado um Fornecedor do Multi-Factor Auth do Azure para tirar partido das funcionalidades fornecidas pela versão completa do MFA do Azure. Destina-se aos utilizadores que **não têm licenças do MFA do Azure, Azure AD Premium ou EMS**.  Por predefinição, o MFA do Azure, Azure AD Premium e EMS incluem a versão completa do MFA do Azure.  Se tiver licenças, não precisará de um Fornecedor do Multi-Factor Auth do Azure.
-> 
-> 
 
 Para transferir o SDK, é preciso um fornecedor do Multi-Factor Auth do Azure.
 
 > [!IMPORTANT]
 > Para transferir o SDK, crie um Fornecedor do Multi-Factor Auth do Azure, mesmo que tenha licenças MFA do Azure, AAD Premium ou EMS.  Se criar um fornecedor do Multi-Factor Auth do Azure para esta finalidade e já tiver licenças, verifique se cria o Fornecedor com o modelo **Por Utilizador Ativado**. Em seguida, associe o Fornecedor ao diretório que contém o MFA do Azure, o Azure AD Premium ou as licenças EMS.  Este procedimento garante que só lhe será cobrado qualquer valor se tiver mais utilizadores exclusivos a utilizar o SDK do que o número de licenças.
-> 
-> 
 
-## <a name="to-create-a-multi-factor-auth-provider"></a>Para criar um Fornecedor do Multi-Factor Auth
+## <a name="create-a-multi-factor-auth-provider"></a>Criar um Fornecedor do Multi-Factor Auth
 Utilize os passos seguintes para criar um Fornecedor do Multi-Factor Auth do Azure.
 
 1. Inicie sessão no [portal clássico do Azure](https://manage.windowsazure.com) como administrador.
@@ -64,6 +60,6 @@ Utilize os passos seguintes para criar um Fornecedor do Multi-Factor Auth do Azu
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Feb17_HO3-->
 
 

@@ -1,10 +1,9 @@
-Pode ver percurso de aprendizagem do AMS aqui:
+Pode ver os percursos de aprendizagem dos Serviços de Multimédia do Azure aqui:
 
-* [Fluxo de Trabalho de Transmissão em Direto do AMS](https://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
-* [Fluxo de Trabalho de Transmissão a Pedido do AMS](https://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+* [Fluxo de Trabalho de Transmissão em Direto do Serviços de Multimédia](https://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
+* [Fluxo de Trabalho de Transmissão a Pedido do Serviços de Multimédia](https://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
 
 
-
-<!--HONumber=Jan17_HO1-->
+<!--HONumber=Feb17_HO3-->
 
 

@@ -5,7 +5,7 @@ description: "Respostas a perguntas mais frequentes sobre o serviço de cópia d
 services: backup
 documentationcenter: 
 author: markgalioto
-manager: jwhit
+manager: carmonm
 editor: 
 keywords: "recuperação de cópia de segurança e após desastres; serviço de cópia de segurança"
 ms.assetid: 1011bdd6-7a64-434f-abd7-2783436668d7
@@ -14,16 +14,16 @@ ms.workload: storage-backup-recovery
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 11/16/2016
-ms.author: trinadhk; giridham; arunak; markgal; jimpark;
+ms.date: 2/8/2017
+ms.author: markgal;giridham;arunak;markgal;trinadhk;
 translationtype: Human Translation
-ms.sourcegitcommit: 1b2eeab756309148db5890ccc0d93853f3e69372
-ms.openlocfilehash: 4b7a8a88d21b11deb377c2fef4e2d8f9fbcf9036
+ms.sourcegitcommit: d842d0a7e6a99a0a0a67b7cf6c695aba16f83d8f
+ms.openlocfilehash: 72cd97798df4e63da1e3d1dc167714f6033d2c86
 
 
 ---
 # <a name="azure-backup-service--faq"></a>Serviço de Backup do Azure – FAQ
-Este artigo é uma lista de perguntas mais frequentes (e as respetivas respostas) sobre o serviço de Backup do Azure. A nossa comunidade responde rapidamente e se uma pergunta é colocada frequentemente, adicionamo-la a este artigo. Normalmente, as respostas a perguntas fornecem referência ou informações de suporte. Pode colocar perguntas sobre o Backup do Azure na secção Disqus deste artigo ou um artigo relacionado. Também pode publicar perguntas sobre o serviço de Backup do Azure no [fórum de debate](https://social.msdn.microsoft.com/forums/azure/home?forum=windowsazureonlinebackup).
+Este artigo é uma lista de perguntas mais frequentes (e as respetivas respostas) sobre o serviço de Backup do Azure. A nossa comunidade responde rapidamente e se uma pergunta é colocada frequentemente, adicionamo-la a este artigo. Normalmente, as respostas a perguntas fornecem referência ou informações de suporte. Pode fazer perguntas sobre o Azure Backup ao clicar em **Comentários** (à direita). Os comentários aparecem na parte inferior do artigo. É necessária uma conta Livefyre para o comentário. Também pode publicar perguntas sobre o serviço de Backup do Azure no [fórum de debate](https://social.msdn.microsoft.com/forums/azure/home?forum=windowsazureonlinebackup).
 
 ## <a name="what-is-the-list-of-supported-operating-systems-from-which-i-can-back-up-to-azure-using-azure-backup-br"></a>Qual é a lista dos sistemas operativos suportados a partir dos quais posso fazer uma cópia de segurança no Azure através do Backup do Azure? <br/>
 O Azure Backup suporta a lista seguinte de sistemas operativos para criar cópias de segurança: ficheiros e pastas e aplicações de carga de trabalho protegidas com o Azure Backup Server e o SCDPM.
@@ -58,7 +58,7 @@ Recomendamos que instale o agente do Azure Backup [mais recente](http://aka.ms/a
 Sim, as credenciais do cofre expiram após 48 horas. Se o ficheiro expirar, inicie sessão no portal do Azure e transfira os ficheiros de credenciais do cofre a partir do seu cofre.
 
 ## <a name="is-there-any-limit-on-the-number-of-vaults-that-can-be-created-in-each-azure-subscription-br"></a>Existe algum limite ao número de cofres que podem ser criados em cada subscrição do Azure? <br/>
-Sim. A partir de Setembro de 2016, pode criar 25 cofres de cópia de segurança por subscrição. Pode criar até 25 cofres de Serviços de Recuperação por cada região suportada da cópia de segurança do Azure por subscrição. Se precisar de mais cofres, crie uma subscrição nova.
+Sim. A partir de Setembro de 2016, pode criar 25 cofres de cópia de segurança por subscrição. Pode criar até 25 cofres de Serviços de Recuperação por região suportada do Azure Backup por subscrição. Se precisar de mais cofres, crie uma subscrição adicional.
 
 ## <a name="are-there-any-limits-on-the-number-of-serversmachines-that-can-be-registered-against-each-vault-br"></a>Existem limites no número de servidores/máquinas que podem ser registados em relação a cada cofre? <br/>
 Sim, pode registar até 50 máquinas por cofre. Em máquinas virtuais de IaaS do Azure, o limite são 200 VMs por cofre. Se precisar de registar mais máquinas, crie outro cofre.
@@ -68,17 +68,17 @@ Os dados de cópia de segurança são enviados para o datacenter do cofre no qua
 
 ## <a name="what-happens-if-i-rename-a-windows-server-that-is-backing-up-data-to-azurebr"></a>O que acontece se mudar o nome de um servidor do Windows que está a efetuar a cópia de segurança dos dados para o Azure?<br/>
 Quando mudar o nome de um servidor, todas as cópias de segurança atualmente configuradas são paradas.
-Registe o nome novo do servidor no cofre do Backup. Quando registar o nome novo no cofre, a primeira operação de cópia de segurança é uma cópia de segurança *completa*. Se precisar de recuperar dados de cópias de segurança anteriores no cofre com o nome do servidor antigo, pode recuperar esses dados utilizando a opção [**Outro servidor**](backup-azure-restore-windows-server.md#recover-to-an-alternate-machine) no assistente **Recuperar Dados**.
+Registe o nome novo do servidor no cofre do Backup. Quando registar o nome novo no cofre, a primeira operação de cópia de segurança é uma cópia de segurança *completa*. Se precisar de recuperar dados de cópias de segurança no cofre com o nome do servidor antigo, utilize a opção [**Outro servidor**](backup-azure-restore-windows-server.md#use-instant-restore-to-restore-data-to-an-alternate-machine) no assistente **Recuperar Dados**.
 
-## <a name="what-types-of-drives-can-i-backup-files-and-folders-from-br"></a>A partir de que tipos de unidades posso criar cópias de segurança de ficheiros e pastas? <br/>
-Não é possível criar cópias de segurança do conjunto de unidades/volumes seguinte:
+## <a name="what-types-of-drives-can-i-back-up-files-and-folders-from-br"></a>A partir de que tipos de unidades posso criar cópias de segurança de ficheiros e pastas? <br/>
+Não consegue realizar uma cópia de segurança das seguintes unidades/volumes:
 
-* Suporte de dados amovível: a unidade tem de ser reportada como fixa para ser utilizada como a origem do item da cópia de segurança.
+* Suporte de Dados Amovível: todas as origens de item de cópia de segurança devem ser comunicadas como fixas.
 * Volumes de Só de Leitura: o volume tem de ser gravável para o serviço de cópia sombra de volumes (VSS) funcionar.
 * Volumes Offline: o volume tem de estar online para que o VSS funcione.
 * Partilha de rede: o volume tem de ser local no servidor para ser efetuada uma cópia de segurança utilizando a cópia de segurança online.
 * Volumes protegidos de BitLocker: o volume tem de ser desbloqueado antes de a cópia de segurança ocorrer.
-* Identificação do Sistema de Ficheiros: o NTFS é o único sistema de ficheiros suportado para esta versão do serviço de cópia de segurança online.
+* Identificação do Sistema de Ficheiros: o NTFS é o único sistema de ficheiros suportado.
 
 ## <a name="what-file-and-folder-types-can-i-back-up-from-my-serverbr"></a>De que tipos de ficheiros e pastas posso criar cópias de segurança a partir do meu servidor?<br/>
 São suportados os seguintes tipos:
@@ -89,7 +89,6 @@ São suportados os seguintes tipos:
 * Comprimidos + dispersos
 * Hiperligações: não suportadas, ignoradas
 * Ponto de Nova Análise: não suportados, ignorados
-* Encriptados + comprimidos: não suportados, ignorados
 * Encriptados + dispersos: não suportados, ignorados
 * Fluxo Comprimido: não suportado, ignorado
 * Fluxo Disperso: não suportado, ignorado
@@ -107,7 +106,7 @@ Não. O cofre é criado um nível de subscrição e não pode ser reatribuído p
 Sim. O serviço do agente converte os dados com duplicados eliminados em dados normais quando prepara a operação de cópia de segurança. Em seguida, otimiza os dados para a cópia de segurança, encripta os dados e, em seguida, envia os dados encriptados para o serviço de cópia de segurança online.
 
 ## <a name="if-i-cancel-a-backup-job-once-it-has-started-is-the-transferred-backup-data-deleted-br"></a>Se cancelar uma tarefa de cópia de segurança depois de ser iniciada, os dados de cópia de segurança transferidos são eliminados? <br/>
-Não. Todos os dados transferidos para o cofre, antes do ponto de cancelamento, permanecem no cofre. O Backup do Azure utiliza um mecanismo de ponto de verificação para adicionar, ocasionalmente, pontos de verificação aos dados de cópia de segurança durante a cópia de segurança. Por existirem pontos de verificação nos dados de cópia de segurança, o processo de cópia de segurança seguinte pode validar a integridade dos ficheiros. A tarefa de cópia de segurança seguinte será incremental face aos dados para os quais foi criada uma cópia de segurança anteriormente. As cópias de segurança incrementais só transferem dados novos ou alterados, o que se traduz numa melhor utilização da largura de banda.
+Não. Todos os dados transferidos para o cofre, antes da tarefa de cópia de segurança ser cancelada, permanecem no cofre. O Backup do Azure utiliza um mecanismo de ponto de verificação para adicionar, ocasionalmente, pontos de verificação aos dados de cópia de segurança durante a cópia de segurança. Por existirem pontos de verificação nos dados de cópia de segurança, o processo de cópia de segurança seguinte pode validar a integridade dos ficheiros. A tarefa de cópia de segurança seguinte será incremental face aos dados para os quais foi criada uma cópia de segurança anteriormente. As cópias de segurança incrementais só transferem dados novos ou alterados, o que se traduz numa melhor utilização da largura de banda.
 
 Se cancelar uma tarefa de cópia de segurança para uma VM do Azure, os dados transferidos são ignorados. A próxima tarefa de cópia de segurança transfere os dados incrementais desde a última tarefa de cópia de segurança bem-sucedida.
 
@@ -124,16 +123,16 @@ Para uma proteção totalmente integrada de dados no local para o Azure e da car
 * \*.windows.net
 
 ## <a name="can-i-install-the-azure-backup-agent-on-an-azure-vm-already-backed-by-the-azure-backup-service-using-the-vm-extension-br"></a>Pode instalar o agente do Backup do Azure numa VM do Azure cuja cópia de segurança já foi efetuada pelo serviço de Backup do Azure através da extensão da VM? <br/>
-Com certeza. O Backup do Azure fornece uma cópia de segurança ao nível da VM para VMs do Azure com a extensão da VM. Instale o agente do Azure Backup no SO Windows convidado para proteger ficheiros e pastas nesse SO convidado.
+Com certeza. O Backup do Azure fornece uma cópia de segurança ao nível da VM para VMs do Azure com a extensão da VM. Para proteger ficheiros e pastas no SO Windows convidado, instale o agente do Azure Backup no SO Windows convidado.
 
 ## <a name="can-i-install-the-azure-backup-agent-on-an-azure-vm-to-back-up-files-and-folders-present-on-temporary-storage-provided-by-the-azure-vm-br"></a>Posso instalar o agente do Backup do Azure numa VM do Azure para efetuar uma cópia de segurança de ficheiros e pastas presentes no armazenamento temporário fornecido pela VM do Azure? <br/>
-Sim. Instale o agente do Azure Backup no SO Windows convidado e crie uma cópia de segurança de ficheiros e pastas no armazenamento temporário. No entanto, tenha em atenção que as cópias de segurança falham depois de os dados de armazenamento temporário serem eliminados. Além disso, se os dados de armazenamento temporário tiverem sido eliminados, só pode restaurar para o armazenamento não volátil.
+Sim. Instale o agente do Azure Backup no SO Windows convidado e crie uma cópia de segurança de ficheiros e pastas no armazenamento temporário. Tenha em atenção que as cópias de segurança falham depois de os dados de armazenamento temporário serem eliminados. Além disso, se os dados de armazenamento temporário tiverem sido eliminados, só pode restaurar para o armazenamento não volátil.
 
 ## <a name="i-have-installed-azure-backup-agent-to-protect-my-files-and-folders-can-i-now-install-scdpm-to-work-with-azure-backup-agent-to-protect-on-premises-applicationvm-workloads-to-azure-br"></a>Instalei o agente do Backup do Azure para proteger os meus ficheiros e pastas. Posso agora a instalar o SCDPM para funcionar com o agente do Backup do Azure para proteger cargas de trabalho de VM/aplicações no local para o Azure? <br/>
-Para utilizar o Azure Backup com o System Center Data Protection Manager (DPM), instale o DPM primeiro e, em seguida, o agente do Azure Backup. Instalar os componentes do Azure Backup por esta ordem garante que o agente do Azure Backup vai funcionar com o DPM. Instalar o agente do Azure Backup antes do DPM não é aconselhável nem suportado.
+Para utilizar o Azure Backup com o System Center Data Protection Manager (DPM), instale o DPM primeiro e, em seguida, o agente do Azure Backup. Instalar os componentes do Azure Backup por esta ordem garante que o agente do Azure Backup funciona com o DPM. Instalar o agente do Azure Backup antes do DPM não é aconselhável nem suportado.
 
 ## <a name="what-is-the-length-of-file-path-that-can-be-specified-as-part-of-azure-backup-policy-using-azure-backup-agent-br"></a>Qual é o comprimento do caminho do ficheiro que pode ser especificado como parte da política do Backup do Azure com o agente do Backup do Azure? <br/>
-O agente do Backup do Azure depende do NTFS. A [especificação do comprimento do caminho do ficheiro está limitada pela API do Windows](https://msdn.microsoft.com/library/aa365247.aspx#fully_qualified_vs._relative_paths). Ao criar cópias de segurança de ficheiros com um comprimento de caminho de ficheiro maior do que o permitido pela API do Windows, pode optar por criar uma cópia de segurança da pasta principal ou da unidade de disco dos ficheiros de cópia de segurança.  
+O agente do Backup do Azure depende do NTFS. A [especificação do comprimento do caminho do ficheiro está limitada pela API do Windows](https://msdn.microsoft.com/library/aa365247.aspx#fully_qualified_vs._relative_paths). Se os ficheiros que pretende proteger têm um comprimento de caminho de ficheiro maior do que o permitido pela API do Windows, crie uma cópia de segurança da pasta principal ou da unidade de disco.  
 
 ## <a name="what-characters-are-allowed-in-file-path-of-azure-backup-policy-using-azure-backup-agent-br"></a>Que carateres são permitidos no caminho de ficheiro da política do Backupdo Azure com o agente do Backup do Azure? <br>
  O agente do Backup do Azure depende do NTFS. Permite a [carateres suportados pelo NTFS](https://msdn.microsoft.com/library/aa365247.aspx#naming_conventions) como parte da especificação do ficheiro.  
@@ -145,12 +144,12 @@ Sim.
 Sim, o serviço de Cópia de Segurança tem vários alertas com base em eventos que podem ser utilizados com um script do PowerShell. Para obter uma descrição completa, consulte [Configurar notificações](backup-azure-monitor-vms.md#configure-notifications)
 
 ## <a name="is-there-a-limit-on-the-size-of-each-data-source-being-backed-up-br"></a>Existe um limite no tamanho de cada origem de dados para uma cópia de segurança? <br/>
-Não existe limite relativamente à quantidade de dados para os quais podem ser criadas cópias de segurança para um cofre. O Azure Backup restringe o tamanho máximo da origem de dados. Contudo, estes limites são extremamente grandes. A partir de agosto de 2015, o tamanho máximo das origens de dados para os sistemas operativos suportados é:
+Não existe limite relativamente à quantidade de dados para os quais podem ser criadas cópias de segurança para um cofre. O Azure Backup restringe o tamanho máximo da origem de dados. Contudo, estes limites são grandes. A partir de agosto de 2015, o tamanho máximo das origens de dados para os sistemas operativos suportados é:
 
 | S.No | Sistema operativo | Tamanho máximo da origem de dados |
 |:---:|:--- |:--- |
-| 1 |Windows Server 2012 ou posterior |54 400 GB |
-| 2 |Windows 8 ou posterior |54 400 GB |
+| 1 |Windows Server 2012 ou posterior |54&400; GB |
+| 2 |Windows 8 ou posterior |54&400; GB |
 | 3 |Windows Server 2008, Windows Server 2008 R2 |1700 GB |
 | 4 |Windows 7 |1700 GB |
 
@@ -193,7 +192,7 @@ Não, a cópia incremental é enviada com base na hora referida na página da ag
 Os produtos de ponto de retenção de longa duração típicos armazenam cópias de segurança como pontos completos. Os pontos completos são *ineficazes* ao nível do armazenamento, mas é mais rápido e mais fácil restaurá-los. As cópias incrementais são *eficientes* ao nível do armazenamento, mas necessitam que restaure uma cadeia de dados, que tem impacto no seu tempo de recuperação. A arquitetura de armazenamento do Backup do Azure dá-lhe o melhor dos dois mundos ao armazenar da melhor maneira dados para restauros rápidos e incorrer em custos de armazenamento reduzido reduzidos. Esta abordagem de armazenamento de dados garante que a largura de banda de entrada e de saída é utilizada com eficácia. A quantidade do armazenamento de dados e o tempo necessário para recuperar os dados são mantidos num mínimo. Saiba mais sobre como as [cópias de segurança incrementais](https://azure.microsoft.com/blog/microsoft-azure-backup-save-on-long-term-storage/) são eficientes.
 
 ## <a name="is-there-a-limit-on-the-number-of-recovery-points-that-can-be-createdbr"></a>Existe um limite no número de pontos de recuperação que podem ser criados?<br/>
-Não. Eliminamos os limites nos pontos de recuperação. Pode criar os pontos de recuperação que desejar.
+Pode criar até 9999 pontos de recuperação por instância protegida. Uma instância protegida é um computador, servidor (físico ou virtual) ou carga de trabalho configurados para criar cópias de segurança para o Azure. Não existe limite no número de instâncias protegidas por cofre de cópia de segurança. Para obter mais informações, consulte as explicações de [Cópia de segurança e retenção](./backup-introduction-to-azure-backup.md#backup-and-retention), e [O que é uma instância protegida](./backup-introduction-to-azure-backup.md#what-is-a-protected-instance)?
 
 ## <a name="why-is-the-amount-of-data-transferred-in-backup-not-equal-to-the-amount-of-data-i-backed-upbr"></a>Por que motivo é a quantidade de dados transferidos na cópia de segurança diferente da quantidade de dados da minha cópia de segurança?<br/>
  Todos os dados para os quais são criadas cópias de segurança a partir do Agente do Azure Backup, do SCDPM ou do Azure Backup Server são comprimidos e encriptados antes de serem transferidos. Uma vez aplicada a compressão e a encriptação, os dados no cofre de cópia de segurança são 30-40% mais reduzidos.
@@ -202,7 +201,7 @@ Não. Eliminamos os limites nos pontos de recuperação. Pode criar os pontos de
  Sim, utilize a opção **Alterar Propriedades** no Agente do Backup para ajustar a largura de banda. Pode ajustar a quantidade de largura de banda e as horas em que a utiliza. Para obter instruções passo a passo, veja **[Enable network throttling (Ativar a limitação de rede)](backup-configure-vault.md#enable-network-throttling)** no artigo Back up a Windows Server or client to Azure using the Resource Manager deployment model (Criar uma cópia de segurança do Windows Server ou de um cliente para o Azure com o modelo de implementação do Resource Manager).
 
 ## <a name="my-internet-bandwidth-is-limited-for-the-amount-of-data-i-need-to-back-up-is-there-a-way-i-can-move-data-to-a-certain-location-with-a-large-network-pipe-and-push-that-data-into-azure-br"></a>A minha largura de banda da Internet está limitada à quantidade de dados de que preciso para a cópia de segurança. Existe alguma forma de mover dados para uma determinada localização com um encaminhamento de rede grande e enviar esses dados para o Azure? <br/>
-Pode criar cópias de segurança de dados no Azure através do processo de cópia de segurança online standard ou pode utilizar o serviço Importar/Exportar do Azure para transferir dados para o armazenamento de blobs no Azure. Não existem formas adicionais de obter a data da cópia de segurança para o armazenamento do Azure. Para obter informações sobre como utilizar o serviço Importar/Exportar do Azure com o Backup do Azure, consulte o artigo [Fluxo de trabalho da Cópia de Segurança Offline](backup-azure-backup-import-export.md).
+Pode criar cópias de segurança de dados no Azure através do processo de cópia de segurança online standard ou pode utilizar o serviço Importar/Exportar do Azure para transferir dados para o armazenamento de blobs no Azure. Não existem formas adicionais de obter a data da cópia de segurança para o armazenamento do Azure. Para obter informações sobre como utilizar o serviço Importar/Exportar do Azure com o Backup do Azure, consulte o artigo [Offline Backup workflow (Fluxo de trabalho da Cópia de Segurança Offline)](backup-azure-backup-import-export.md).
 
 ## <a name="how-many-recoveries-can-i-perform-on-the-data-that-is-backed-up-to-azurebr"></a>Quantas recuperações posso efetuar nos dados da cópia de segurança para o Azure?<br/>
 Não existe limite no número de recuperações do Backup do Azure.
@@ -260,10 +259,10 @@ As seguintes localizações para a pasta cache não são recomendadas:
 Nem a pasta de cache nem o VHD de metadados têm os atributos necessários para o agente do Azure Backup.
 
 ## <a name="recovery-services-vaults-are-resource-manager-based-are-backup-vaults-classic-mode-still-supported-br"></a>Os cofres dos Serviços de Recuperação baseiam-se no Resource Manager. Os cofres do Backup (modo clássico) ainda são suportados? <br/>
-Sim, os cofres da Cópia de Segurança ainda são suportados. Crie cofres da Cópia de Segurança no [Portal Clássico](https://manage.windowsazure.com). Crie cofres dos Serviços de Recuperação no [portal do Azure](https://portal.azure.com). No entanto, recomendamos vivamente que crie o cofre dos serviços de recuperação, dado que todas as futuras melhorias estarão disponíveis apenas através do cofre dos Serviços de Recuperação.
+Sim, os cofres da Cópia de Segurança ainda são suportados. Crie cofres da Cópia de Segurança no [Portal Clássico](https://manage.windowsazure.com). Crie cofres dos Serviços de Recuperação no [portal do Azure](https://portal.azure.com). Recomendamos vivamente que crie cofres dos Serviços de Recuperação, dado que todas as futuras melhorias serão apenas para os cofres dos Serviços de Recuperação.
 
 ## <a name="can-i-migrate-a-backup-vault-to-a-recovery-services-vault-br"></a>Posso migrar um cofre da Cópia de Segurança para um cofre dos Serviços de Recuperação? <br/>
-Infelizmente não, neste momento não é possível migrar os conteúdos de um cofre da Cópia de Segurança para um cofre dos Serviços de Recuperação. Estamos a trabalhar no sentido de adicionar esta funcionalidade, mas não está disponível atualmente.
+Infelizmente não, não pode migrar os conteúdos de um cofre da Cópia de Segurança para um cofre dos Serviços de Recuperação. Estamos a trabalhar no sentido de adicionar esta funcionalidade, mas não está disponível atualmente.
 
 ## <a name="do-recovery-services-vaults-support-classic-vms-or-resource-manager-based-vms-br"></a>Os cofres dos Serviços de Recuperação suportam VMs clássicas ou VMs no Resource Manager? <br/>
 Os cofres dos Serviços de Recuperação suportam ambos os modelos.  Pode criar uma cópia de segurança de uma VM clássica (criada no Portal clássico) ou de uma VM do Resource Manager (criada no portal do Azure) num cofre dos Serviços de Recuperação.
@@ -277,6 +276,6 @@ Os pontos de recuperação das VMs clássicas nos cofres de cópias de seguranç
 
 
 
-<!--HONumber=Jan17_HO1-->
+<!--HONumber=Feb17_HO2-->
 
 
