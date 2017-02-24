@@ -23,7 +23,7 @@ ms.openlocfilehash: d1ab1ab2132d12bf06dbe2504b7d7111ef2ae851
 ---
 # <a name="how-app-service-works"></a>Como funciona o Serviço de Aplicações
 O Serviço de Aplicações do Azure é um serviço em nuvem concebido para resolver os problemas práticos com que os engenheiros se deparam atualmente.
-O Serviço de Aplicações concentra-se em fornecer uma produtividade de programador superior sem comprometer a necessidade de entregar aplicações à escala da nuvem.
+O Serviço de Aplicações concentra-se em fornecer uma produtividade de programador superior sem comprometer a necessidade de entregar aplicações à escala da nuvem. 
 
 O Serviço de Aplicações também fornece as funcionalidades e estruturas necessárias para criar aplicações de linha de negócio empresariais ao mesmo tempo que fornece suporte aos programadores com as linguagens de programação mais conhecidas (tais como Microsoft .NET, Java, PHP, Node.js e Python).
 Com o Serviço de Aplicações, os programadores podem:

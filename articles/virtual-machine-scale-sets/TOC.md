@@ -3,6 +3,7 @@
 
 # Introdução
 ## [Criar um conjunto de dimensionamento no portal](virtual-machine-scale-sets-portal-create.md)
+## [Criar um conjunto de dimensionamento com a CLI do Azure](virtual-machine-scale-sets-linux-create-cli.md)
 
 # Procedimento
 ## Planear e conceber
@@ -10,6 +11,7 @@
 
 ## Implementação
 ### [Conjunto de dimensionamento com o portal](virtual-machine-scale-sets-portal-create.md)
+### [Conjunto de dimensionamento com discos geridos](virtual-machine-scale-sets-managed-disks.md)
 ### [Conjunto de dimensionamento com o Visual Studio](virtual-machine-scale-sets-vs-create.md)
 ### [Conjunto de dimensionamento com o PowerShell](virtual-machine-scale-sets-windows-create.md)
 ### [Conjunto de dimensionamento com a CLI do Azure](virtual-machine-scale-sets-linux-create-cli.md)
@@ -19,6 +21,7 @@
 ### [Utilizar discos de dados com conjuntos de dimensionamento](virtual-machine-scale-sets-attached-disks.md)
 ### [Trabalhar com conjuntos de dimensionamento de grande escala](virtual-machine-scale-sets-placement-groups.md)
 ### [Converter um modelo de conjunto de dimensionamento para utilizar um disco gerido](virtual-machine-scale-sets-convert-template-to-md.md)
+
 
 
 ## Gerir
@@ -36,7 +39,7 @@
 # Referência
 ## [PowerShell](/powershell/azureps-cmdlets-docs)
 ## [CLI do Azure](../virtual-machines/azure-cli-arm-commands.md)
-## [REST](/rest/api/compute/)
+## [REST](/rest/api/virtualmachinescalesets/)
 
 # Recursos
 ## Preços 
@@ -45,6 +48,6 @@
 ## [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-vm-scale-set)
 
 
-<!--HONumber=Feb17_HO2-->
+<!--HONumber=Feb17_HO3-->
 
 

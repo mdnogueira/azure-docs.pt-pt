@@ -195,7 +195,8 @@
 #### [REST](media-services-rest-check-job-progress.md)
 #### [Portal](media-services-portal-check-job-progress.md)
 #### [.NET](media-services-check-job-progress.md)
-### [Armazenamento de filas para monitorizar as notificações de tarefas](media-services-dotnet-check-job-progress-with-queues.md)
+### [Monitorizar notificações de tarefas com armazenamento de filas](media-services-dotnet-check-job-progress-with-queues.md)
+### [Monitorizar notificações de tarefas com webhooks](media-services-dotnet-check-job-progress-with-webhooks.md)
 
 ## Resolução de problemas
 ### [Perguntas mais frequentes](media-services-frequently-asked-questions.md)
@@ -216,6 +217,6 @@
 ## [Vídeos](https://azure.microsoft.com/resources/videos/index/?services=media-services)
 
 
-<!--HONumber=Feb17_HO2-->
+<!--HONumber=Feb17_HO3-->
 
 

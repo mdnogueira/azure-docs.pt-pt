@@ -12,11 +12,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 11/09/2016
+ms.date: 02/13/2017
 ms.author: curtand
 translationtype: Human Translation
-ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
-ms.openlocfilehash: b2985119b60bf11bf1ce1b951c40f8b87351e749
+ms.sourcegitcommit: a4a78b92c8bb9e8aff25fd724ed78283de8f2fd8
+ms.openlocfilehash: 2fda7dc07d01bcd0629d1fa80ec9262e80af4c5f
 
 
 ---
@@ -25,7 +25,7 @@ Este artigo descreve como gerir um diretório criado para uma subscrição do Of
 
 Depois de concluir a subscrição do Azure, pode iniciar sessão no Portal Clássico do Azure e aceder aos serviços do Azure. Clique na extensão do Active Directory para gerir o mesmo diretório que autentica os utilizadores do Office 365.
 
-Se já tiver uma subscrição do Azure, o processo para gerir um diretório adicional também é simples. Por exemplo, Miguel Cardoso poderá ter uma subscrição do Office 365 para a Contoso.com. Ele também tem uma subscrição do Azure para a qual se inscreveu com a conta Microsoft, msmith@hotmail.com.. Neste caso,ele gere dois diretórios.
+Se já tiver uma subscrição do Azure, o processo para gerir um diretório adicional também é simples. Por exemplo, Miguel Cardoso poderá ter uma subscrição do Office 365 para a Contoso.com. Ele também tem uma subscrição do Azure para a qual se inscreveu utilizando a conta Microsoft, msmith@hotmail.com. Neste caso, ele gere dois diretórios.
 
 | Subscrição | Office 365 | Azure |
 | --- | --- | --- |
@@ -49,15 +49,15 @@ Para Miguel Cardoso gerir os dois diretórios enquanto tiver sessão iniciada no
 1. Inicie sessão no [Portal Clássico do Azure](https://manage.windowsazure.com) como msmith@hotmail.com.
 2. Clique em **Novo** > **Serviços de aplicações** > **Active Directory** > **Diretório** > **Criação Personalizada**.
 3. Clique em Utilizar diretório existente e marque a caixa de verificação **Estou pronto para terminar sessão agora**.
-4. Inicie sessão no Portal Clássico do Azure como administrador global da Contoso.onmicrosoft.com (por exemplo, mcardoso@contoso.com).
+4. Inicie sessão no Portal Clássico do Azure como administrador global da Contoso.onmicrosoft.com (por exemplo, msmith@contoso.com)).
 5. Quando aparecer **Utilizar o diretório da Contoso com o Azure?**, clique em **Continuar**.
 6. Clique em **Terminar sessão agora**.
-7. Inicie sessão no Portal clássico do Azure como msmith@hotmail.com.. O diretório da Contoso e o diretório predefinido aparecem na extensão do Active Directory.
+7. Inicie sessão no Portal Clássico do Azure como msmith@hotmail.com. O diretório da Contoso e o diretório predefinido aparecem na extensão do Active Directory.
 
 Depois de concluir estes passos, msmith@hotmail.com é um administrador global no diretório da Contoso.
 
 ## <a name="to-administer-resources-as-the-global-admin"></a>Para administrar recursos como administrador global
-Agora vamos imaginar que Júlia Martins necessita de administrar Websites e recursos da base de dados associados à subscrição do Azure de msmith@hotmail.com.. Antes dela poder fazer isso, Miguel Cardoso tem de concluir estes passos adicionais:
+Agora vamos imaginar que Júlia Martins necessita de administrar Websites e recursos da base de dados associados à subscrição do Azure de msmith@hotmail.com. Para o poder fazer, Miguel Cardoso precisa de concluir estes passos adicionais:
 
 1. Iniciar sessão no [Portal Clássico do Azure](https://manage.windowsazure.com) utilizando a conta de Administrador de Serviços da subscrição do Azure (neste exemplo, msmith@hotmail.com).
 2. Transferir a subscrição para o diretório da Contoso: clicar em **Definições** > **Subscrições** > selecionar a subscrição > **Editar Diretório** > selecionar **Contoso (Contoso.com)**. Como parte da transferência, será removida qualquer conta de estudante ou profissional pertencente a coadministradores da subscrição.
@@ -68,6 +68,6 @@ Para mais informações sobre a relação entre subscrições e diretórios, con
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Feb17_HO2-->
 
 

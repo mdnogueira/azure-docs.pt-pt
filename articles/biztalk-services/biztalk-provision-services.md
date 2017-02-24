@@ -15,13 +15,12 @@ ms.topic: hero-article
 ms.date: 11/07/2016
 ms.author: mandia
 translationtype: Human Translation
-ms.sourcegitcommit: 71f9dd111ebdbe885f33d162b2ea320dfaa167bb
-ms.openlocfilehash: a2e289de2719be64a9468cb9b24ff4101b2e93db
+ms.sourcegitcommit: 9cf1faabe3ea12af0ee5fd8a825975e30947b03a
+ms.openlocfilehash: 12606d312ba95d9ef73e988fa4677a8314f9a579
 
 
 ---
 # <a name="create-biztalk-services-using-the-azure-portal"></a>Criar os BizTalk Services com o Portal do Azure
-Criar os BizTalk Services no Portal do Azure.
 
 > [!TIP]
 > Para iniciar sessão no Portal do Azure, deve ter uma conta e uma subscrição do Azure. Se não tiver uma conta, pode criar uma conta de avaliação gratuita em apenas alguns minutos. Veja [Avaliação Gratuita do Azure](http://go.microsoft.com/fwlink/p/?LinkID=239738).
@@ -116,7 +115,7 @@ Quando terminar, o BizTalk Service do Azure é criado e estará pronto para as s
 
 Consoante o estado do BizTalk Service, há determinadas operações que não poderão ser concluídas. Para obter uma lista dessas operações, veja o [Gráfico de Estado dos BizTalk Services](biztalk-service-state-chart.md).
 
-## <a name="postprovisioning-steps"></a>Passos pós-aprovisionamento
+## <a name="post-provisioning-steps"></a>Passos pós-aprovisionamento
 * [Instalar o certificado num computador local](#InstallCert)
 * [Adicionar um certificado pronto para produção](#AddCert)
 * [Obter o espaço de nomes do Controlo de Acesso](#ACS)
@@ -131,7 +130,7 @@ Como parte do aprovisionamento do BizTalk Service, é criado um certificado auto
    ![Modificar o Certificado SSL][QuickGlance]
 5. Faça duplo clique no certificado e execute o assistente para instalar o certificado. Confira se instala o certificado no arquivo **Autoridades de Certificados de Raiz Fidedigna**.
 
-#### <a name="a-nameaddcertaadd-a-productionready-certificate"></a><a name="AddCert"></a>Adicionar um certificado pronto para produção
+#### <a name="a-nameaddcertaadd-a-production-ready-certificate"></a><a name="AddCert"></a>Adicionar um certificado pronto para produção
 O certificado autoassinado criado automaticamente aquando da criação dos BizTalk Services destina-se apenas a ser utilizado em ambientes de desenvolvimento. Para cenários de produção, substitua-o pelo certificado pronto para produção.
 
 1. No separador **Dashboard**, selecione **Atualizar Certificado SSL**.
@@ -275,6 +274,6 @@ Agora que criou um BizTalk Service, familiarize-se com os diferentes separadores
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO3-->
 
 

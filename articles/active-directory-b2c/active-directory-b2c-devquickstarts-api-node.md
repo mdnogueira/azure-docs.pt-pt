@@ -15,8 +15,8 @@ ms.topic: hero-article
 ms.date: 01/07/2017
 ms.author: brandwe
 translationtype: Human Translation
-ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
-ms.openlocfilehash: cea04afd22270c77d91148d3c4a95e87f37406db
+ms.sourcegitcommit: 3b5d9162e2d39e2b0f011383a478545644c57861
+ms.openlocfilehash: c9742c7f505417577857889ef307083afb9bab18
 
 
 ---
@@ -279,7 +279,7 @@ passReqToCallback: false // This is a node.js construct that lets you pass the r
 `policyName`: a política que pretende que valide os tokens recebidos pelo seu servidor. Esta política deve ser igual à utilizada na aplicação cliente para iniciar sessão.
 
 > [!NOTE]
-> Para a nossa pré-visualização do B2C, utilize as mesmas políticas para configurar o cliente e o servidor. Se já tiver concluído uma passagem e criado estas políticas, não terá de fazê-lo novamente. Uma vez concluída a passagem, não deverá ser necessário configurar novas políticas para passagens de cliente no site.
+> Por agora, utilize as mesmas políticas para configurar o cliente e o servidor. Se já tiver concluído uma passagem e criado estas políticas, não terá de fazê-lo novamente. Uma vez concluída a passagem, não deverá ser necessário configurar novas políticas para passagens de cliente no site.
 >
 >
 
@@ -763,6 +763,6 @@ Agora pode aceder a tópicos mais avançados, como:
 
 
 
-<!--HONumber=Dec16_HO4-->
+<!--HONumber=Feb17_HO2-->
 
 

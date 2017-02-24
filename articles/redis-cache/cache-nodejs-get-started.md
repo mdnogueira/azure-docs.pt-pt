@@ -12,11 +12,11 @@ ms.devlang: nodejs
 ms.topic: hero-article
 ms.tgt_pltfrm: cache-redis
 ms.workload: tbd
-ms.date: 01/06/2017
+ms.date: 02/10/2017
 ms.author: sdanie
 translationtype: Human Translation
-ms.sourcegitcommit: 65385aa918222837468f88246d0527c22c677ba7
-ms.openlocfilehash: 6de51407a78b3e33e6d3de544caeee714c9d1f4c
+ms.sourcegitcommit: 5369dcd6ad1ec93c63eb442db9fc5ffdcca37375
+ms.openlocfilehash: 530191637b1aa91ee1d7fe5b5bb032c60983f7dc
 
 
 ---
@@ -55,6 +55,10 @@ As versões mais recentes do [node_redis](https://github.com/mranney/node_redis)
       // Add your cache name and access key.
     var client = redis.createClient(6380,'<name>.redis.cache.windows.net', {auth_pass: '<key>', tls: {servername: '<name>.redis.cache.windows.net'}});
 
+> [!NOTE]
+> A porta não SSL está desativada para novas instâncias da Cache de Redis do Azure. Se estiver a utilizar um cliente diferente que não suporta SSL, consulte [How to enable the non-SSL port (Como ativar a porta não SSL)](cache-configure.md#access-ports).
+> 
+> 
 
 ## <a name="add-something-to-the-cache-and-retrieve-it"></a>Adicionar um elemento à cache e recuperá-lo
 O seguinte exemplo mostra como ligar a uma instância da Cache de Redis do Azure, bem como armazenar e recuperar um item da cache. Para obter mais exemplos de utilização de Redis com o cliente [node_redis](https://github.com/mranney/node_redis), aceda a [http://redis.js.org/](http://redis.js.org/).
@@ -85,6 +89,6 @@ Saída:
 
 
 
-<!--HONumber=Jan17_HO2-->
+<!--HONumber=Feb17_HO2-->
 
 
