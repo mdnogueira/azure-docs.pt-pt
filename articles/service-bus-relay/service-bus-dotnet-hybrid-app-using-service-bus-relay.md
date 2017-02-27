@@ -1,5 +1,5 @@
 ---
-title: "Aplicação híbrida no local/nuvem (.NET) | Microsoft Docs"
+title: "Aplicação híbrida no local/cloud de Reencaminhamento WCF do Azure (.NET) | Microsoft Docs"
 description: "Saiba como criar uma aplicação .NET híbrida no local/cloud utilizando o Reencaminhamento WCF do Azure."
 services: service-bus-relay
 documentationcenter: .net
@@ -12,17 +12,17 @@ ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: hero-article
-ms.date: 09/16/2016
+ms.date: 02/16/2017
 ms.author: sethm
 translationtype: Human Translation
-ms.sourcegitcommit: 385eb87ec32f5f605b28cc8c76b1c89c7e90bfec
-ms.openlocfilehash: 0288b0dda9139c28da28fedfe39c4e9156c6c938
+ms.sourcegitcommit: 94f4d852aeaed1eec20f178e2721650660ebec49
+ms.openlocfilehash: ae5e08e7a5c483fd89390580647722b2c9da0ecb
 
 
 ---
 # <a name="net-on-premisescloud-hybrid-application-using-azure-wcf-relay"></a>Aplicação .NET híbrida no local/cloud com o Reencaminhamento de WCF do Azure
 ## <a name="introduction"></a>Introdução
-Este artigo descreve como compilar uma aplicação híbrida na nuvem com o Microsoft Azure e o Visual Studio. O tutorial parte do princípio de que não tem experiência anterior na utilização do Azure. Em menos de 30 minutos, terá uma aplicação que utiliza vários recursos do Azure instalados e em execução na nuvem.
+Este artigo mostra como compilar uma aplicação híbrida na cloud com o Microsoft Azure e o Visual Studio. O tutorial parte do princípio de que não tem experiência anterior na utilização do Azure. Em menos de 30 minutos, terá uma aplicação que utiliza vários recursos do Azure instalados e em execução na nuvem.
 
 Aprenderá:
 
@@ -36,7 +36,7 @@ As soluções de negócio são normalmente compostas por um código personalizad
 
 Os arquitetos de soluções estão a começar a utilizar a nuvem para um processamento mais fácil de requisitos de escala e custos operacionais inferiores. Deste modo, descobriram que os elementos de serviço existentes que gostariam de utilizar como blocos modulares para as suas soluções encontram-se na firewall da empresa e longe do fácil acesso pela solução em nuvem. Muitos serviços internos não são compilados ou alojados de modo a poderem ser facilmente expostos na margem da rede empresarial.
 
-O Reencaminhamento do Azure foi concebido para o caso de utilização de processar serviços Web do Windows Communication Foundation (WCF) e tornar esses serviços acessíveis de forma segura para soluções que residem fora do perímetro empresarial sem exigir alterações intrusivas na infraestrutura da rede empresarial. Esses serviços de reencaminhamento continuam a ser alojados no seu ambiente existente, contudo, delegam a escuta de sessões e pedidos de entrada para o serviço de reencaminhamento alojado na cloud. O Reencaminhamento do Azure também protege esses serviços de acesso não autorizado utilizando a autenticação por [Assinatura de Acesso Partilhado](../service-bus-messaging/service-bus-sas-overview.md) (SAS).
+O [Reencaminhamento do Azure](https://azure.microsoft.com/services/service-bus/) foi concebido para o caso de utilização de processar serviços Web do Windows Communication Foundation (WCF) e tornar esses serviços acessíveis de forma segura para soluções que residem fora do perímetro empresarial sem exigir alterações intrusivas na infraestrutura da rede empresarial. Esses serviços de reencaminhamento continuam a ser alojados no seu ambiente existente, contudo, delegam a escuta de sessões e pedidos de entrada para o serviço de reencaminhamento alojado na cloud. O Reencaminhamento do Azure também protege esses serviços de acesso não autorizado utilizando a autenticação por [Assinatura de Acesso Partilhado (SAS)](../service-bus-messaging/service-bus-sas.md).
 
 ## <a name="solution-scenario"></a>Cenário de solução
 Neste tutorial, criará um Web site ASP.NET que permite ver uma lista de produtos na página de inventário de produtos.
@@ -50,18 +50,16 @@ Segue-se uma captura de ecrã da página inicial da aplicação Web completa.
 ![][1]
 
 ## <a name="set-up-the-development-environment"></a>Configurar o ambiente de desenvolvimento
-Antes de poder começar a desenvolver aplicações do Azure, obtenha as ferramentas e configure o ambiente de desenvolvimento.
+Antes de poder começar a desenvolver aplicações do Azure, transfira as ferramentas e configure o ambiente de desenvolvimento:
 
-1. Instale o Azure SDK para o .NET a partir da página [Obter Ferramentas e SDK][Get Tools and SDK].
-2. Clique em **Instalar o SDK** para a versão do Visual Studio que está a utilizar. Os passos neste tutorial utilizam o Visual Studio 2015.
+1. Instale o Azure SDK para o .NET a partir da [página de transferências](https://azure.microsoft.com/downloads/) do SDK.
+2. Na coluna **.NET**, clique na versão do Visual Studio que está a utilizar. Os passos neste tutorial utilizam o Visual Studio 2015.
 3. Quando lhe for pedido para executar ou guardar o instalador, clique em **Executar**.
 4. No **Instalador de Plataforma Web**, clique em **Instalar** e continue com a instalação.
 5. Após a conclusão da instalação, terá tudo o que é necessário para começar a desenvolver a aplicação. O SDK inclui ferramentas que permitem desenvolver facilmente aplicações do Azure no Visual Studio. Caso não tenha o Visual Studio instalado, o SDK também instala o Visual Studio Express gratuito.
 
 ## <a name="create-a-namespace"></a>Criar um espaço de nomes
-Para começar a utilizar as funcionalidades do reencaminhamento no Azure, deve criar, em primeiro lugar, um espaço de nomes de serviço. Um espaço de nomes fornece um contentor de âmbito para abordar os recursos do Azure na sua aplicação.
-
-[!INCLUDE [service-bus-create-namespace-portal](../../includes/service-bus-create-namespace-portal.md)]
+Para começar a utilizar as funcionalidades do reencaminhamento no Azure, deve criar, em primeiro lugar, um espaço de nomes de serviço. Um espaço de nomes fornece um contentor de âmbito para abordar os recursos do Azure na sua aplicação. Siga as [instruções aqui](relay-create-namespace-portal.md) para criar um espaço de nomes de Reencaminhamento.
 
 ## <a name="create-an-on-premises-server"></a>Criar um servidor no local
 Em primeiro lugar, compilará um sistema de catálogo de produtos no local (mock). Tal será bastante simples; pode vê-lo como representando um sistema de catálogo de produtos no local real com uma superfície de serviço completo que estamos a tentar integrar.
@@ -69,7 +67,7 @@ Em primeiro lugar, compilará um sistema de catálogo de produtos no local (mock
 Este projeto é uma aplicação de consola do Visual Studio e utiliza o [Pacote NuGet do Service Bus do Azure](https://www.nuget.org/packages/WindowsAzure.ServiceBus/) para incluir as bibliotecas e as definições de configuração do Service Bus.
 
 ### <a name="create-the-project"></a>Criar o projeto
-1. Inicie o Microsoft Visual Studio com privilégios de administrador. Para iniciar o Visual Studio com privilégios de administrador, clique com o botão direito no ícone do programa **Visual Studio** e, em seguida, clique em **Executar como administrador**.
+1. Inicie o Microsoft Visual Studio com privilégios de administrador. Para tal, clique com o botão direito do rato no ícone do programa do Visual Studio e, em seguida, clique em **Executar como administrador**.
 2. No Visual Studio, no menu **Ficheiro**, clique em **Novo** e, de seguida, em **Projeto**.
 3. A partir de **Modelos Instalados**, no **Visual C#**, clique em **Aplicação de Consola**. Na caixa **Nome**, escreva o nome **ProductsServer**:
 
@@ -86,7 +84,7 @@ Este projeto é uma aplicação de consola do Visual Studio e utiliza o [Pacote 
 9. Na caixa **Nome**, escreva o nome **ProductsContract.cs**. Em seguida, clique em **Adicionar**.
 10. No **ProductsContract.cs**, substitua a definição de espaço de nomes pelo código seguinte, que define o contrato para o serviço.
 
-    ```
+    ```csharp
     namespace ProductsServer
     {
         using System.Collections.Generic;
@@ -122,7 +120,7 @@ Este projeto é uma aplicação de consola do Visual Studio e utiliza o [Pacote 
     ```
 11. Em Program.cs, substitua a definição de espaço de nomes pelo código seguinte, que adiciona o serviço de perfil e o respetivo anfitrião.
 
-    ```
+    ```csharp
     namespace ProductsServer
     {
         using System;
@@ -174,9 +172,9 @@ Este projeto é uma aplicação de consola do Visual Studio e utiliza o [Pacote 
         }
     }
     ```
-12. No Explorador de Soluções, faça duplo clique no ficheiro **App.config** para abri-lo no editor do Visual Studio. Na parte inferior do elemento **&lt;system.ServiceModel&gt;** (contudo, ainda no &lt;system.ServiceModel&gt;), adicione o seguinte código XML. Certifique-se de que substitui *yourServiceNamespace* pelo nome do espaço de nomes e *yourKey* pela chave SAS obtida anteriormente a partir do portal:
+12. No Explorador de Soluções, faça duplo clique no ficheiro **App.config** para abri-lo no editor do Visual Studio. Na parte inferior do elemento `<system.ServiceModel>` (mas ainda dentro de `<system.ServiceModel>`), adicione o seguinte código XML. Certifique-se de que substitui *yourServiceNamespace* pelo nome do espaço de nomes e *yourKey* pela chave SAS obtida anteriormente a partir do portal:
 
-    ```
+    ```xml
     <system.serviceModel>
     ...
       <services>
@@ -197,9 +195,9 @@ Este projeto é uma aplicação de consola do Visual Studio e utiliza o [Pacote 
       </behaviors>
     </system.serviceModel>
     ```
-13. Ainda em App.config, no elemento **&lt;appSettings&gt;**, substitua o valor da cadeia de ligação pela cadeia de ligação previamente obtida no portal.
+13. Ainda no App.config, no elemento `<appSettings>`, substitua o valor da cadeia de ligação pela cadeia previamente obtida no portal.
 
-    ```
+    ```xml
     <appSettings>
        <!-- Service Bus specific app settings for messaging connections -->
        <add key="Microsoft.ServiceBus.ConnectionString"
@@ -236,22 +234,22 @@ Nesta secção, compilará uma aplicação ASP.NET simples que apresenta dados o
 ### <a name="modify-the-web-application"></a>Modificar a aplicação Web
 1. No ficheiro Product.cs no Visual Studio, substitua a definição de espaço de nomes existente pelo código seguinte.
 
-   ```
-   // Declare properties for the products inventory.
+   ```csharp
+    // Declare properties for the products inventory.
     namespace ProductsWeb.Models
-   {
+    {
        public class Product
        {
            public string Id { get; set; }
            public string Name { get; set; }
            public string Quantity { get; set; }
        }
-   }
-   ```
+    }
+    ```
 2. No Explorador de Soluções, expanda a pasta **Controllers** e, em seguida, faça duplo clique no ficheiro **HomeController.cs** para abri-lo no Visual Studio.
 3. No **HomeController.cs**, substitua a definição de espaço de nomes existente pelo código seguinte.
 
-    ```
+    ```csharp
     namespace ProductsWeb.Controllers
     {
         using System.Collections.Generic;
@@ -278,7 +276,7 @@ Nesta secção, compilará uma aplicação ASP.NET simples que apresenta dados o
 7. No Explorador de Soluções, expanda a pasta Views\Home e, em seguida, faça duplo clique em **Index.cshtml** para abri-lo no editor do Visual Studio.
    Substitua os conteúdos integrais do ficheiro pelo seguinte código.
 
-   ```
+   ```html
    @model IEnumerable<ProductsWeb.Models.Product>
 
    @{
@@ -334,7 +332,7 @@ O passo seguinte consiste em ligar o servidor de produtos no local à aplicaçã
    ![][24]
 6. Agora abra o ficheiro **HomeController.cs** no editor do Visual Studio e substitua a definição do espaço de nomes pelo código seguinte. Certifique-se de que substitui *yourServiceNamespace* pelo nome do espaço de nomes de serviço e *yourKey* pela chave SAS. Tal permitirá ao cliente chamar o serviço no local, devolvendo o resultado da chamada.
 
-   ```
+   ```csharp
    namespace ProductsWeb.Controllers
    {
        using System.Linq;
@@ -441,7 +439,6 @@ Para obter mais informações sobre o Reencaminhamento do Azure, veja os seguint
 
 [0]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/hybrid.png
 [1]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/App2.png
-[Get Tools and SDK]: http://go.microsoft.com/fwlink/?LinkId=271920
 [NuGet]: http://nuget.org
 
 [11]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/hy-con-1.png
@@ -468,6 +465,6 @@ Para obter mais informações sobre o Reencaminhamento do Azure, veja os seguint
 
 
 
-<!--HONumber=Dec16_HO5-->
+<!--HONumber=Feb17_HO3-->
 
 

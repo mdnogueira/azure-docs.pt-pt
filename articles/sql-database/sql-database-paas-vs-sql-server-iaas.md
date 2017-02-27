@@ -17,8 +17,8 @@ ms.topic: get-started-article
 ms.date: 02/01/2017
 ms.author: carlrab
 translationtype: Human Translation
-ms.sourcegitcommit: 7402249aa87ffe985ae13f28a701e22af3afd450
-ms.openlocfilehash: a2e65de2ec77da9005cea18876fd86fd2928b9da
+ms.sourcegitcommit: 8d988aa55d053d28adcf29aeca749a7b18d56ed4
+ms.openlocfilehash: bdcf28703f007d32144278c7f0956fe4c27c3b27
 
 
 ---
@@ -121,7 +121,7 @@ Para muitos departamentos de TI, cumprir as obrigações de tempo de atividade d
 
 Para os escalões de serviço Básico, Standard e Premium da **Base de Dados SQL**, a Microsoft fornece um SLA de 99,99% de disponibilidade. Para obter as informações mais recentes, consulte [Contrato de Nível de Serviço](https://azure.microsoft.com/support/legal/sla/sql-database/). Para obter as informações mais recentes sobre os escalões de serviço da Base de Dados SQL e os planos de continuidade do negócio suportados, consulte [Escalões de serviço](sql-database-service-tiers.md).
 
-Para o **SQL Server em execução em VMs do Azure**, a Microsoft fornece um SLA de 99,95% de disponibilidade, que abrange apenas a Máquina Virtual. Este SLA não abrange os processos (como o SQL Server) em execução na VM e requer que aloje, pelo menos, duas instâncias de VM num conjunto de disponibilidade. Para obter as informações mais recentes, consulte o [SLA de VM](https://azure.microsoft.com/support/legal/sla/virtual-machines/). Para elevada disponibilidade da base de dados dentro das VMs, deve configurar uma das opções de elevada disponibilidade suportadas no SQL Server, como os [Grupos de Disponibilidade AlwaysOn](http://blogs.technet.com/b/dataplatforminsider/archive/2014/08/25/sql-server-alwayson-offering-in-microsoft-azure-portal-gallery.aspx). Utilizar uma opção de elevada disponibilidade suportadas não fornece um SLA adicional, mas permite-lhe alcançar uma disponibilidade de base de dados > 99,99%.
+Para o **SQL Server em execução em VMs do Azure**, a Microsoft fornece um SLA de 99,95% de disponibilidade, que abrange apenas a Máquina Virtual. Este SLA não abrange os processos (como o SQL Server) em execução na VM e requer que aloje, pelo menos, duas instâncias de VM num conjunto de disponibilidade. Para obter as informações mais recentes, consulte o [SLA de VM](https://azure.microsoft.com/support/legal/sla/virtual-machines/). Para elevada disponibilidade da base de dados dentro das VMs, deve configurar uma das opções de elevada disponibilidade suportadas no SQL Server, como os [Grupos de Disponibilidade AlwaysOn](http://blogs.technet.com/b/dataplatforminsider/archive/2014/08/25/sql-server-alwayson-offering-in-microsoft-azure-portal-gallery.aspx). Utilizar uma opção de elevada disponibilidade suportadas não fornece um SLA adicional, mas permite-lhe alcançar uma disponibilidade de base de dados >&99;,99%.
 
 ### <a name="a-namemarketatime-to-market"></a><a name="market"></a>Tempo de colocação no mercado
 A **Base de Dados SQL** é a solução certa para aplicações desenvolvidas para a nuvem quando a produtividade do programador e o tempo rápido de colocação no mercado são fatores essenciais. Com funcionalidade semelhante a DBA programática, é perfeita para programadores e arquitetos de nuvem, uma vez que reduz a necessidade de gerir a base de dados e o sistema operativo subjacentes. Por exemplo, pode utilizar a [API REST](http://msdn.microsoft.com/library/azure/dn505719.aspx) e [Cmdlets do PowerShell](http://msdn.microsoft.com/library/mt740629.aspx) para automatizar e gerir as operações administrativas em milhares de bases de dados. Funcionalidades como os [conjuntos elásticos](sql-database-elastic-pool.md) permitem-lhe focar-se na camada da aplicação e apresentar a sua solução ao mercado mais rapidamente.
@@ -142,14 +142,13 @@ Opte pelo **SQL Server em VMs do Azure** se:
 * tiver os recursos de TI existentes e pode, em última análise, se proprietário da aplicação de patches, de cópias de segurança e de base de dados de elevada disponibilidade. Repare que algumas funcionalidades automatizadas simplificam significativamente estas operações. 
 
 ## <a name="next-steps"></a>Passos seguintes
-* Consulte [Tutorial da Base de Dados SQL: criar uma base de dados SQL Server em minutos com o portal do Azure](sql-database-get-started.md) para começar a utilizar a Base de Dados SQL.
+* Consulte [A sua primeira Base de Dados SQL do Azure](sql-database-get-started.md) para começar a utilizar a Base de Dados SQL.
 * Consulte [Preços de Base de Dados SQL](https://azure.microsoft.com/pricing/details/sql-database/).
 * Consulte [Aprovisionar uma máquina virtual do SQL Server no Azure](../virtual-machines/windows/sql/virtual-machines-windows-portal-sql-server-provision.md) para começar a utilizar o SQL Server em VMs do Azure.
-* Consulte [SQL Server on an Azure Virtual Machine: Learning Path (SQL Server numa Máquina Virtual do Azure: Percurso de Aprendizagem)](https://azure.microsoft.com/documentation/learning-paths/sql-azure-vm/).
 
 
 
 
-<!--HONumber=Jan17_HO2-->
+<!--HONumber=Feb17_HO3-->
 
 

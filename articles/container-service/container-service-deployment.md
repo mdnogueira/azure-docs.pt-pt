@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 02/02/2017
+ms.date: 02/21/2017
 ms.author: rogardle
 translationtype: Human Translation
-ms.sourcegitcommit: 01fe5302e1c596017755c4669103bac910e3452c
-ms.openlocfilehash: 470bf39bf0e61325f36a2f45316f57545c69e3de
+ms.sourcegitcommit: 2a381431acb6436ddd8e13c69b05423a33cd4fa6
+ms.openlocfilehash: b9be92498f9daf1d2f964cc689bacb2358b237be
 
 
 ---
@@ -28,10 +28,7 @@ ms.openlocfilehash: 470bf39bf0e61325f36a2f45316f57545c69e3de
 
 O Serviço de Contentor do Azure fornece uma implementação rápida de soluções de orquestração e de clustering populares e de open source do contentor. Este documento explica-lhe como utilizar o portal do Azure ou um modelo de início rápido do Azure Resource Manager para implementar um cluster do Azure Container Service. 
 
-> [!NOTE]
-> O suporte de Kubernetes no Azure Container Service está atualmente em pré-visualização.
-
-Também pode implementar um cluster do Azure Container Service com a [CLI do Azure 2.0 (Pré-visualização)](container-service-create-acs-cluster-cli.md) ou as APIs do Azure Container Service.
+Também pode implementar um cluster do Azure Container Service com a [CLI do Azure 2.0](container-service-create-acs-cluster-cli.md) ou as APIs do Azure Container Service.
 
 
 
@@ -39,7 +36,7 @@ Também pode implementar um cluster do Azure Container Service com a [CLI do Azu
 
 * **Subscrição do Azure**: se não tiver uma, inscreva-se numa [avaliação gratuita](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=AA4C1C935).
 
-* **Chave pública SSH**: ao implementar através do portal ou de modelos de início rápido do Azure, tem de indicar a chave pública para autenticação nas máquinas virtuais do Azure Container Service. Para criar chaves Secure Shell (SSH), veja as orientações para [OS X e Linux](../virtual-machines/virtual-machines-linux-mac-create-ssh-keys.md) ou [Windows](../virtual-machines/virtual-machines-linux-ssh-from-windows.md). 
+* **Chave pública RSA SSH**: ao implementar através do portal ou de modelos de início rápido do Azure, tem de indicar a chave pública para autenticação nas máquinas virtuais do Azure Container Service. Para criar chaves RSA Secure Shell (SSH), veja as orientações para [OS X e Linux](../virtual-machines/virtual-machines-linux-mac-create-ssh-keys.md) ou [Windows](../virtual-machines/virtual-machines-linux-ssh-from-windows.md). 
 
 * **ID e segredo de cliente de principal de serviço** (apenas Kubernetes): para obter mais informações e orientações para criar um principal de serviço, veja [Sobre o principal de serviço para um cluster de Kubernetes](container-service-kubernetes-service-principal.md).
 
@@ -58,32 +55,32 @@ Também pode implementar um cluster do Azure Container Service com a [CLI do Azu
 
     * **Nome de utilizador**: o nome de utilizador de uma conta em cada uma das máquinas virtuais e nos conjuntos de dimensionamento de máquinas virtuais no cluster do Azure Container Service.
     * **Subscrição**: selecione uma subscrição do Azure.
-    * **Grupo de recursos**: selecione um grupo de recursos existente ou crie um novo.
+    * **Grupo de recursos**: selecione um grupo de recursos existente ou crie um novo. Como melhor prática, utilize um grupo de recursos novo para cada implementação.
     * **Localização**: selecione uma região do Azure para a implementação do Serviço de Contentor do Azure.
-    * **Chave pública SSH**: adicione a chave pública que vai ser utilizada para autenticação nas máquinas virtuais do Azure Container Service. É importante que esta chave não contenha quebras de linha e que inclua o prefixo `ssh-rsa`. O sufixo `username@domain` é opcional. Deve ter um aspeto semelhante a **ssh-rsa AAAAB3Nz...<...>...UcyupgH azureuser@linuxvm**. 
+    * **Chave pública RSA SSH**: adicione a chave pública que vai ser utilizada para autenticação nas máquinas virtuais do Azure Container Service. É importante que esta chave não contenha quebras de linha e que inclua o prefixo `ssh-rsa`. O sufixo `username@domain` é opcional. Deve ter um aspeto semelhante a **ssh-rsa AAAAB3Nz...<...>...UcyupgH azureuser@linuxvm**. 
 
 4. Clique em **OK** quando estiver pronto para continuar.
 
     ![Definições básicas](media/container-service-deployment/acs-portal3.png)  <br />
 
-5. Selecione um tipo de Orquestração. As opções são:
+5. No painel **Configuração do framework**, selecione uma **Configuração do Orchestrator**. As opções incluem:
 
   * **DC/OS**: implementa um cluster DC/OS.
   * **Swarm**: implementa um cluster Docker Swarm.
-  * **Kubernetes**: implementa um cluster do Kubernetes
+  * **Kubernetes**: implementa um cluster de Kubernetes.
 
 
 6. Clique em **OK** quando estiver pronto para continuar.
 
     ![Escolher um orquestrador](media/container-service-deployment/acs-portal4-new.png)  <br />
 
-7. Se o **Kubernetes** estiver selecionado na lista pendente, tem de introduzir um ID de cliente do principal de serviço e o segredo do cliente do principal de serviço. Para obter mais informações, veja [About the service principal for a Kubernetes cluster (Sobre o principal de serviço para um cluster de Kubernetes)](container-service-kubernetes-service-principal.md).
+7. Se o **Kubernetes** estiver selecionado na lista pendente, tem de introduzir um ID de cliente do principal de serviço (também chamado como appId) e o segredo do cliente do principal de serviço (palavra-passe). Para obter mais informações, veja [About the service principal for a Kubernetes cluster (Sobre o principal de serviço para um cluster de Kubernetes)](container-service-kubernetes-service-principal.md).
 
     ![Introduzir o principal de serviço do Kubernetes](media/container-service-deployment/acs-portal10.png)  <br />
 
 7. No painel de definições do **Azure Container Service**, introduza as informações seguintes:
 
-    * **Contagem de modelos de estrutura mestres**: o número de modelos de estrutura mestres no cluster. Se o Kubernetes estiver selecionado, o número de modelos de estruturas mestres é predefinido como 1.
+    * **Contagem de modelos de estrutura mestres**: o número de modelos de estrutura mestres no cluster.
     * **Contagem de agentes**: para o Docker Swarm e para o Kubernetes, este valor é o número inicial de agentes no conjunto de dimensionamento dos agentes. Para o DC/OS, é o número inicial de agentes num conjunto de dimensionamento privado. Além disso, é criado um conjunto de dimensionamento público para o DC/OS, que contém um número pré-determinado de agentes. O número de agentes neste conjunto de dimensionamento público é determinado pelo número de modelos de estrutura mestres criados no cluster: um agente público para um modelo de estrutura mestre e dois agentes públicos para três ou cinco modelos de estrutura mestres.
     * **Tamanho das máquinas virtuais dos agentes**: o tamanho das máquinas virtuais dos agentes.
     * **Prefixo DNS**: um nome exclusivo a nível mundial que é utilizado para o prefixo das partes de chave dos nomes de domínio completamente qualificados do serviço.
@@ -112,12 +109,12 @@ A conclusão da implementação demora vários minutos. Depois, o cluster do Azu
 ## <a name="create-a-cluster-by-using-a-quickstart-template"></a>Utilizar um modelo de início rápido para criar um cluster
 Estão disponíveis modelos de início rápido do Azure para implementar clusters no Azure Container Service. Os modelos de início rápido fornecidos podem ser modificados para incluir configuração do Azure, adicional ou avançada. Para criar um cluster do Azure Container Service com um modelo de início rápido do Azure, precisa de uma subscrição do Azure. Se não tiver uma, inscreva-se numa [avaliação gratuita](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=AA4C1C935). 
 
-Siga estes passos para implementar um cluster com um modelo e a CLI do Azure 2.0 (Pré-visualização) (veja [installation and setup instructions [Instruções de instalação e configuração]](/cli/azure/install-az-cli2.md)).
+Siga estes passos para implementar um cluster com um modelo e a CLI do Azure 2.0 (veja [installation and setup instructions (Instruções de instalação e configuração)](/cli/azure/install-az-cli2.md)).
 
 > [!NOTE] 
 > Se estiver num sistema Windows, pode utilizar passos semelhantes para implementar um modelo com o Azure PowerShell. Veja os passos mais adiante nesta secção. Também pode implementar modelos através do [portal](../azure-resource-manager/resource-group-template-deploy-portal.md) ou de outros métodos.
 
-1. Para implementar um cluster DC/OS, Docker Swarm ou Kubernetes, selecione um dos modelos seguintes no GitHub. Tenha em conta que os modelos do DC/OS e do Swarm são iguais, com exceção da seleção do orquestrador predefinido.
+1. Para implementar um cluster DC/OS, Docker Swarm ou Kubernetes, selecione um dos modelos de início rápido disponíveis no GitHub. Segue uma lista parcial. Tenha em conta que os modelos do DC/OS e do Swarm são iguais, com exceção da seleção do orquestrador predefinido.
 
     * [Modelo do DC/OS](https://github.com/Azure/azure-quickstart-templates/tree/master/101-acs-dcos)
     * [Modelo do Swarm](https://github.com/Azure/azure-quickstart-templates/tree/master/101-acs-swarm)
@@ -165,7 +162,7 @@ Siga estes passos para implementar um cluster com um modelo e a CLI do Azure 2.0
 ### <a name="equivalent-powershell-commands"></a>Comandos do PowerShell equivalentes
 Também pode implementar um modelo de cluster do Azure Container Service com o PowerShell. Este documento baseia-se na versão 1.0 do [módulo do Azure PowerShell](https://azure.microsoft.com/blog/azps-1-0/).
 
-1. Para implementar um cluster DC/OS, Docker Swarm ou Kubernetes, selecione um dos modelos seguintes. Tenha em conta que os modelos do DC/OS e do Swarm são iguais, com exceção da seleção do orquestrador predefinido.
+1. Para implementar um cluster DC/OS, Docker Swarm ou Kubernetes, selecione um dos modelos de início rápido disponíveis no GitHub. Segue uma lista parcial. Tenha em conta que os modelos do DC/OS e do Swarm são iguais, com exceção da seleção do orquestrador predefinido.
 
     * [Modelo do DC/OS](https://github.com/Azure/azure-quickstart-templates/tree/master/101-acs-dcos)
     * [Modelo do Swarm](https://github.com/Azure/azure-quickstart-templates/tree/master/101-acs-swarm)
@@ -214,6 +211,6 @@ Agora que tem um cluster a funcionar, veja estes documentos para obter os detalh
 
 
 
-<!--HONumber=Feb17_HO1-->
+<!--HONumber=Feb17_HO4-->
 
 

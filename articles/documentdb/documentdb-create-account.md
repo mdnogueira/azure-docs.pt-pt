@@ -13,11 +13,11 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 11/16/2016
+ms.date: 02/10/2017
 ms.author: mimig
 translationtype: Human Translation
-ms.sourcegitcommit: ed44ca2076860128b175888748cdaa8794c2310d
-ms.openlocfilehash: b922127076a8cb29ffb89c7fd184d4b8fa2d7e13
+ms.sourcegitcommit: 3dbf57923e104715d34d1131d16acb6bc6c51637
+ms.openlocfilehash: 1f7faf166c1ddab8b25fb6a1fe4cc432b8a47432
 
 
 ---
@@ -37,10 +37,10 @@ Pode criar uma conta do DocumentDB através do portal do Azure, de modelos do Az
 
 Ainda não conhece o DocumentDB? Veja [este](https://azure.microsoft.com/documentation/videos/create-documentdb-on-azure/) vídeo de quatro minutos da autoria de Scott Hanselman para saber como pode realizar as tarefas mais comuns no portal online.
 
-1. Inicie sessão no [portal do Azure](https://portal.azure.com/).
-2. Na Barra de índice, clique em **Novo**, clique em **Bases de Dados** e, em seguida, clique em **DocumentDB (NoSQL)**.
+1. Inicie sessão no [Portal do Azure](https://portal.azure.com/).
+2. Na navegação esquerda, clique em **Novo**, clique em **Bases de Dados** e clique em **NoSQL (DocumentDB)**.
 
-   ![Captura de ecrã do portal do Azure, com destaque para Mais Serviços, e DocumentDB (NoSQL)](./media/documentdb-create-account/create-nosql-db-databases-json-tutorial-1.png)  
+   ![Captura de ecrã do portal do Azure, com destaque para Mais Serviços e NoSQL (DocumentDB)](./media/documentdb-create-account/create-nosql-db-databases-json-tutorial-1.png)  
 3. No painel **Nova conta**, especifique a configuração pretendida para a conta do DocumentDB.
 
     ![Captura de ecrã do painel Novo DocumentDB](./media/documentdb-create-account/create-nosql-db-databases-json-tutorial-2.png)
@@ -90,6 +90,6 @@ Para saber mais sobre o DocumentDB, explore estes recursos:
 
 
 
-<!--HONumber=Jan17_HO2-->
+<!--HONumber=Feb17_HO3-->
 
 

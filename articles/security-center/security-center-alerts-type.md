@@ -15,8 +15,8 @@ ms.workload: na
 ms.date: 02/06/2017
 ms.author: yurid
 translationtype: Human Translation
-ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
-ms.openlocfilehash: bdd7d3d6e532efe7c3ed8225dd29a895725f2ff9
+ms.sourcegitcommit: 5d51a5ef3387b4c00079547b0f44ffe1f96bd77c
+ms.openlocfilehash: 9ee2d2ef7b21fab8cfc4a70561d612be7367d366
 
 
 ---
@@ -182,7 +182,7 @@ Este é um exemplo deste tipo de alerta:
 ![DOS de saída](./media/security-center-alerts-type/security-center-alerts-type-fig10-new.png)
 
 ## <a name="resource-analysis"></a>Análise de recursos
-A análise de recursos do Centro de Segurança concentra-se em serviços de PaaS, como a integração com a funcionalidade [Azure SQL Db Threat Detection](../sql-database/sql-database-threat-detection-get-started.md). Com base nos resultados da análise destas áreas, o Centro de Segurança aciona um alerta relacionados com um recurso.
+A análise de recursos do Centro de Segurança concentra-se em serviços de PaaS, como a integração com a funcionalidade [Deteção de Ameaças da Base de Dados SQL do Azure](../sql-database/sql-database-threat-detection.md). Com base nos resultados da análise destas áreas, o Centro de Segurança aciona um alerta relacionados com um recurso.
 
 ### <a name="potential-sql-injection"></a>Potencial injeção de SQL
 A injeção de SQL é um ataque no qual é inserido código malicioso nas cadeias que são transmitidas posteriormente para uma instância do SQL Server para análise e execução. Qualquer procedimento que crie instruções SQL deve ser revisto em termos de vulnerabilidades de injeção, uma vez que o SQL Server irá executar todas as consultas sintaticamente válidas que receber. A Deteção de ameaça do SQL Server utiliza machine learning, análise comportamental e deteção de anomalias para determinar eventos suspeitos que poderão estar a ocorrer nas suas Bases de Dados SQL do Azure. Por exemplo:
@@ -216,6 +216,6 @@ Neste documento, tive conhecimento dos vários tipos de alertas de segurança no
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Feb17_HO3-->
 
 

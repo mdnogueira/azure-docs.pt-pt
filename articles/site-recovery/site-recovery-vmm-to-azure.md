@@ -1,6 +1,6 @@
 ---
 title: Replicar VMs de Hyper-V nas clouds do VMM para o| Microsoft Docs
-description: "Descreve como implementar o Site Recovery para orquestrar a replicação, a ativação pós-falha e a recuperação de VMs de Hyper-V em clouds do VMM para o Azure."
+description: "Orquestrar a replicação, a ativação pós-falha e a recuperação de VMs de Hyper-V geridas em clouds do VMM do System Center para o Azure"
 services: site-recovery
 documentationcenter: 
 author: rayne-wiselman
@@ -12,16 +12,15 @@ ms.workload: backup-recovery
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: hero-article
-ms.date: 01/23/2017
+ms.date: 02/21/2017
 ms.author: raynew
 translationtype: Human Translation
-ms.sourcegitcommit: 75653b84d6ccbefe7d5230449bea81f498e10a98
-ms.openlocfilehash: bdf9ce3d4ac359aa4150bc8912ce8b8302828343
+ms.sourcegitcommit: 89668033a5e9cf6b727992b7d221e49624fb3314
+ms.openlocfilehash: 448023b57d0beadc49e89d7dc22d324303700fa4
 
 
 ---
-# <a name="replicate-hyper-v-virtual-machines-in-vmm-clouds-to-azure-using-the-azure-portal"></a>Replicar máquinas virtuais de Hyper-V em nuvens do VMM para o Azure com o portal do Azure
-
+# <a name="replicate-hyper-v-virtual-machines-in-vmm-clouds-to-azure-using-site-recovery-in-the-azure-portal"></a>Replicar máquinas virtuais de Hyper-V em nuvens do VMM para o Azure com o Site Recovery no portal do Azure
 > [!div class="op_single_selector"]
 > * [Portal do Azure](site-recovery-vmm-to-azure.md)
 > * [Azure clássico](site-recovery-vmm-to-azure-classic.md)
@@ -29,45 +28,12 @@ ms.openlocfilehash: bdf9ce3d4ac359aa4150bc8912ce8b8302828343
 > * [PowerShell clássico](site-recovery-deploy-with-powershell.md)
 
 
-Bem-vindo ao serviço do Azure Site Recovery!
+Este artigo descreve como replicar máquinas virtuais de Hyper-V no local geridas em clouds do System Center VMM para o Azure ao utilizar o serviço do [Azure Site Recovery](site-recovery-overview.md) no portal do Azure.
 
-O Site Recovery é um serviço do Azure que contribui para a sua estratégia de continuidade do negócio e de recuperação após desastre (BCDR). O Site Recovery orquestra a replicação dos servidores físicos no local e das máquinas virtuais para a nuvem (Azure) ou para um centro de dados secundário. Quando ocorrem falhas na sua localização principal, faz-se a ativação pós-falha para a localização secundária para manter disponíveis as aplicações e cargas de trabalho. A localização principal é reativada quando se retomam as operações normais. Saiba mais em [O que é o Azure Site Recovery?](site-recovery-overview.md)
-
-Este artigo descreve como replicar máquinas virtuais de Hyper-V no local geridas em nuvens do System Center VMM para o Azure ao utilizar o Azure Site Recovery no portal do Azure.
-
-Depois de ler este artigo, publique quaisquer comentários na parte inferior. Coloque questões técnicas no [Fórum de Serviços de Recuperação do Azure](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr).
-
-## <a name="quick-reference"></a>Referência rápida
-Para uma implementação completa, recomendamos vivamente que siga todos os passos do artigo. Mas se tiver pouco tempo, eis um resumo rápido.
-
-| **Área** | **Detalhes** |
-| --- | --- |
-| **Cenário de implementação** |Replicar VMs de Hyper-V em nuvens do VMM para o Azure com o portal do Azure |
-| **Requisitos no local** |Um ou mais servidores VMM em execução no System Center 2012 R2 com uma ou mais nuvens.<br/><br/> As nuvens devem conter um ou mais grupos de anfitriões de VMM.<br/><br/> Pelo menos um servidor Hyper-V na nuvem, a executar pelo menos o Windows Server 2012 R2 com a função Hyper-V ou o Microsoft Hyper-V Server 2012 R2 com as mais recentes atualizações.<br/><br/> Os servidores VMM e os anfitriões de Hyper-V precisam de acesso à Internet e têm de conseguir aceder a URLs específicos diretamente ou através de um proxy. [Ver os detalhes completos](#on-premises-prerequisites). |
-| **Limitações no local** |O proxy baseado em HTTPS não é suportado |
-| **Fornecedor/agente** |As VMs replicadas precisam do Azure Site Recovery Provider.<br/><br/> Os anfitriões de Hyper-V precisam do agente dos Serviços de Recuperação.<br/><br/> São instalados durante a implementação. |
-|  **Requisitos do Azure** |Conta do Azure<br/><br/> Cofre dos serviços de recuperação<br/><br/> Conta de armazenamento LRS ou GRS na região do cofre<br/><br/> Conta de armazenamento standard<br/><br/> Rede virtual do Azure na região do cofre [Ver os detalhes completos](#azure-prerequisites). |
-|  **Limitações do Azure** |Se utilizar GRS, precisa de outra conta LRS para registo<br/><br/> As contas de armazenamento criadas no portal do Azure não podem ser movidas entre grupos de recursos nas mesmas ou em diferentes subscrições. <br/><br/> Não há suporte para o armazenamento Premium.<br/><br/> As redes Azure utilizadas para o Site Recovery não podem ser movidas entre grupos de recursos nas mesmas ou em diferentes subscrições.
-|  **Replicação de VMs** |[As VMs devem estar em conformidade com os pré-requisitos do Azure](site-recovery-best-practices.md#azure-virtual-machine-requirements)<br/><br/>
-|  **Limitações da replicação** |Não pode replicar VMs que executem Linux com um endereço IP estático.<br/><br/> Pode excluir discos específicos da replicação, mas não pode excluir discos do SO.
-| **Passos da implementação** |1) Preparar o Azure (subscrição, armazenamento, rede) -> 2) Preparar no local (VMM e mapeamento de rede) -> 3) Criar cofre dos Serviços de Recuperação -> 4) Configurar o VMM e os anfitriões de Hyper-V -> 5) Configurar as definições da replicação -> 6) Ativar a replicação -> 7) Testar a replicação e a ativação pós-falha. |
-
-## <a name="site-recovery-in-the-azure-portal"></a>Recuperação de Sites no Portal do Azure
-
-O Azure tem dois [modelos de implementação](../resource-manager-deployment-model.md) diferentes para criar e trabalhar com recursos – o Azure Resource Manager e o clássico. Também tem dois portais, o portal clássico do Azure e o portal do Azure. Este artigo descreve como implementar no portal do Azure.
+Depois de ler este artigo, publique comentários na parte inferior ou no [Fórum dos Serviços de Recuperação do Azure](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr).
 
 
-Este artigo descreve como implementar no portal do Azure, fornecendo uma experiência de implementação otimizada. O portal clássico pode ser utilizado para manter cofres existentes. Não é possível criar novos cofres através do portal clássico.
 
-
-## <a name="site-recovery-in-your-business"></a>Site Recovery na sua empresa
-
-As organizações precisam de uma estratégia de BCDR que determine como as aplicações e os dados continuam em execução e disponíveis durante os períodos de indisponibilidade planeados e imprevistos e como retomar as condições de trabalho normais com a maior brevidade possível. Eis o que o Site Recovery pode fazer:
-
-* Proteção fora do local para aplicações empresariais em execução em VMs de Hyper-V.
-* Uma localização única para configurar, gerir e monitorizar a replicação, a ativação pós-falha e a recuperação.
-* Ativação pós-falha simples para o Azure e reativação pós-falha (restauro) do Azure para servidores anfitrião de Hyper-V no seu site no local.
-* Planos de recuperação que incluem várias VMs, para que a ativação pós-falha das cargas de trabalho de aplicações em camadas seja feita em conjunto.
 
 ## <a name="scenario-architecture"></a>Arquitetura do cenário
 Estes são os componentes de cenário:
@@ -108,7 +74,7 @@ Para se preparar para a implementação, é necessário:
 1. [Configurar uma rede Azure](#set-up-an-azure-network) na qual as VMs do Azure serão localizadas após a ativação pós-falha.
 2. [Configurar uma conta de armazenamento do Azure](#set-up-an-azure-storage-account) para dados replicados.
 3. [Preparar o servidor VMM](#prepare-the-vmm-server) para a implementação de Recuperação de Sites.
-4. [Preparar o mapeamento da rede](#prepare-for-network-mapping). Configure redes de modo a poder configurar o mapeamento da rede durante a implementação da Recuperação de Sites.
+4. Preparar o mapeamento da rede. Configure redes de modo a poder configurar o mapeamento da rede durante a implementação da Recuperação de Sites.
 
 ### <a name="set-up-an-azure-network"></a>Configurar uma rede do Azure
 Necessita de uma rede do Azure à qual as VMs do Azure criadas depois da ativação pós-falha se liguem.
@@ -137,7 +103,6 @@ Tem de configurar o mapeamento da rede durante a implementação da Recuperaçã
 
   * Certifique-se de que as VMs no servidor de anfitrião Hyper-V de origem estão ligadas a uma rede VM do VMM. Essa rede deve ser ligada a uma rede lógica que está associada à nuvem.
   * Um rede de Azure conforme descrito [acima](#set-up-an-azure-network)
-* [Saiba mais](site-recovery-network-mapping.md) sobre como funciona o mapeamento da rede.
 
 ## <a name="create-a-recovery-services-vault"></a>Criar um cofre dos Serviços de Recuperação 
 1. Inicie sessão no [Portal do Azure](https://portal.azure.com).
@@ -177,14 +142,17 @@ Instale o Fornecedor do Azure Site Recovery no servidor VMM e registe o servidor
 1. Clique em **Passo 2: Preparar a Infraestrutura** > **Origem**.
 
     ![Configurar a origem](./media/site-recovery-vmm-to-azure/set-source1.png)
+    
 2. Em **Preparar a origem**, clique em **+ VMM** para adicionar um servidor VMM.
 
     ![Configurar a origem](./media/site-recovery-vmm-to-azure/set-source2.png)
+    
 3. No painel **Adicionar Servidor**, verifique se o **Servidor do System Center VMM** aparece em **Tipo de servidor** e se o servidor VMM cumpre os [pré-requisitos e os requisitos de URLs](#on-premises-prerequisites).
 4. Transfira o ficheiro de instalação do Fornecedor do Azure Site Recovery.
 5. Transfira a chave de registo. Precisará disto quando executar a configuração. A chave é válida durante cinco dias depois de gerá-la.
 
     ![Configurar a origem](./media/site-recovery-vmm-to-azure/set-source3.png)
+    
 6. Instale o Fornecedor do Azure Site Recovery no servidor VMM.
 
 ### <a name="set-up-the-azure-site-recovery-provider"></a>Instale o Fornecedor do Azure Site Recovery
@@ -274,7 +242,7 @@ Especifique a conta de armazenamento do Azure a ser utilizada para replicação 
     ![Armazenamento](./media/site-recovery-vmm-to-azure/enablerep3.png)
 
 2. A Recuperação de Sites verifica que tem uma ou mais contas de armazenamento e redes do Azure compatíveis.
-    ![Armazenamento](./media/site-recovery-vmm-to-azure/compatible-storage.png)
+      ![Armazenamento](./media/site-recovery-vmm-to-azure/compatible-storage.png)
 
 4. Se ainda não criou uma conta de armazenamento e quiser criar uma com o Resource Manager, clique em **+Conta de armazenamento**, para fazê-lo inline.  No painel **Criar conta de armazenamento**, especifique um nome de conta, o tipo, a subscrição e a localização. A conta tem de ter a mesma localização que o cofre de Serviços de Recuperação.
 
@@ -291,7 +259,8 @@ Especifique a conta de armazenamento do Azure a ser utilizada para replicação 
    Se quiser criar uma rede com o modelo clássico, pode fazê-lo no portal do Azure. [Saiba mais](../virtual-network/virtual-networks-create-vnet-classic-pportal.md).
 
 ### <a name="configure-network-mapping"></a>Configurar o mapeamento da rede
-* [Leia](#prepare-for-network-mapping) uma rápida descrição geral do que faz o mapeamento da rede. [Leia este artigo](site-recovery-network-mapping.md) para obter uma explicação mais aprofundada.
+
+* [Leia](#prepare-for-network-mapping) para obter uma rápida descrição geral do que faz o mapeamento da rede.
 * Confirme que as máquinas virtuais no servidor VMM estão ligadas a uma rede de VM e que criou, pelo menos, uma rede virtual do Azure. Várias redes VM podem ser mapeadas para uma única rede Azure.
 
 Configure o mapeamento da seguinte forma:
@@ -396,10 +365,10 @@ Agora, ative a replicação da seguinte forma:
 
     >[!NOTE]
     >
-    > * Apenas os discos básicos podem ser excluídos da replicação. Não pode excluir o disco do SO e não recomendamos excluir discos dinâmicos. O ASR não consegue identificar que disco VHD é básico ou dinâmico no interior da VM do convidado.  Se todos os discos de volume dinâmico dependente não forem excluídos, o disco dinâmico protegido será tratado como um disco com falha na VM de ativação pós-falha e os dados desse disco não estarão acessíveis.
+    > * Apenas os discos básicos podem ser excluídos da replicação. Não pode excluir o disco do SO e não recomendamos que exclua discos dinâmicos. O Site Recovery não consegue identificar se um disco VHD é básico ou dinâmico, dentro da VM do convidado.  Se todos os discos de volume dinâmico dependente não forem excluídos, o disco dinâmico protegido será tratado como um disco com falha na ativação pós-falha da VM e os dados desse disco não estarão acessíveis.
     > * Após a replicação estar ativada, não pode adicionar ou remover discos para replicação. Se pretende adicionar ou excluir um disco, terá de desativar a proteção da VM e, em seguida, reativar.
     > * Se excluir um disco necessário para o funcionamento de uma aplicação, após a ativação pós-falha do Azure, terá de criá-lo manualmente no Azure, para que a aplicação replicada possa ser executada. Em alternativa, pode integrar a automatização do Azure num plano de recuperação para criar o disco durante a ativação pós-falha da máquina.
-    > * Os discos que criar manualmente no Azure não poderão realizar a ativação pós-falha novamente. Por exemplo, se realizar a ativação pós-falha de três discos e criar dois diretamente na VM do Azure, apenas três discos em que foi realizada a ativação pós falha realizarão a reativação pós-falha do Azure para o Hyper-V. Não pode incluir discos criados manualmente na reativação pós-falha ou em replicação inversa do Hyper-V para o Azure.
+    > * Os discos que criar manualmente no Azure não poderão realizar a reativação pós-falha. Por exemplo, se realizar a ativação pós-falha de três discos e criar dois diretamente na VM do Azure, apenas três discos em que foi realizada a ativação pós falha realizarão a reativação pós-falha do Azure para o Hyper-V. Não pode incluir discos criados manualmente na reativação pós-falha ou em replicação inversa do Hyper-V para o Azure.
     >
     >
 
@@ -473,7 +442,7 @@ Para testar a implementação pode executar uma ativação pós-falha de teste p
 1. Clique em **OK** para iniciar a ativação pós-falha. Pode controlar o progresso clicando na VM para abrir as respetivas propriedades ou na tarefa **Ativação Pós-Falha de Teste** em **Definições** > **Tarefas da Recuperação de Sites**.
 1. Depois de concluída a ativação pós-falha, deverá também conseguir ver a máquina do Azure de réplica no Portal do Azure > **Máquinas Virtuais**. Confirme que a VM tem um tamanho adequado, que está ligada à rede certa e que está em execução.
 1. Se tiver [preparado para as ligações após a ativação pós-falha](#prepare-to-connect-to-Azure-VMs-after-failover), deverá ser capaz de ligar à VM do Azure.
-1. Quando tiver terminado, clique em **Ativação pós-falha de teste de limpeza** no plano de recuperação. Em **Notas**, registe e guarde todas as observações associadas à ativação pós-falha de teste. Este procedimento eliminará as máquinas virtuais criadas durante a ativação pós-falha de teste. 
+1. Quando tiver terminado, clique em **Ativação pós-falha de teste de limpeza** no plano de recuperação. Em **Notas**, registe e guarde todas as observações associadas à ativação pós-falha de teste. Este procedimento eliminará as máquinas virtuais criadas durante a ativação pós-falha de teste.
 
 Para obter mais detalhes, consulte o documento [Ativação pós-falha de teste do Azure](site-recovery-test-failover-to-azure.md).
 
@@ -483,7 +452,7 @@ Veja como pode monitorizar as definições de configuração, o estado e o estad
 1. Clique no nome do cofre para aceder ao dashboard **Essentials**. Neste dashboard, pode ver as tarefas de Recuperação de Sites, o estado de replicação, os planos de recuperação, o estado de funcionamento do servidor e os eventos.  Pode personalizar **Essentials** para mostrar os mosaicos e os esquemas que são mais úteis para si, incluindo o estado de outros cofres do Site Recovery e do Backup.
 
     ![Essentials](./media/site-recovery-vmm-to-azure/essentials.png)
-2. No mosaico **Estado de Funcionamento**, pode monitorizar problemas nos servidores do site (servidores VMM ou de configuração) e os eventos gerados pelo Site Recovery nas últimas 24 horas.
+2. Em *Estado de Funcionamento**, pode monitorizar problemas nos servidores do site (servidores VMM ou de configuração) e os eventos gerados pelo Site Recovery nas últimas 24 horas.
 3. Nos mosaicos **Itens Replicados**, **Planos de Recuperação** e **Tarefas do Site Recovery**, pode gerir e monitorizar a replicação. Pode ver os pormenores das tarefas em **Definições** > **Tarefas** > **Tarefas da Recuperação de Sites**.
 
 ## <a name="next-steps"></a>Passos seguintes
@@ -491,6 +460,6 @@ Depois da implementação estar instalada e em execução, [saiba mais](site-rec
 
 
 
-<!--HONumber=Jan17_HO5-->
+<!--HONumber=Feb17_HO4-->
 
 

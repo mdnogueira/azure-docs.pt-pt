@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 01/30/2017
+ms.date: 02/21/2017
 ms.author: rogardle
 translationtype: Human Translation
-ms.sourcegitcommit: 2464c91b99d985d7e626f57b2d77a334ee595f43
-ms.openlocfilehash: 813517a26ccbbd9df7e7fb7de36811cdebb84284
+ms.sourcegitcommit: 2a381431acb6436ddd8e13c69b05423a33cd4fa6
+ms.openlocfilehash: 45d399b72f8d037fb828d9ad22bbd3543847feb3
 
 
 ---
@@ -29,14 +29,11 @@ Os clusters do Kubernetes, de DC/OS e do Docker Swarm disponibilizam pontos fina
 
 Em DC/OS e Docker Swarm, tem de criar um túnel de secure shell (SSH) para um sistema interno. Depois de estabelecido o túnel, pode executar comandos que utilizam os pontos finais HTTP e ver a interface Web do cluster no seu sistema local. 
 
-> [!NOTE]
-> O suporte de Kubernetes no Azure Container Service está atualmente em pré-visualização.
->
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
 * Um cluster do Kubernetes, de DC/OS ou do Swarm [implementado no Azure Container Service](container-service-deployment.md).
-* Um ficheiro de chave privada, que corresponda à chave pública adicionada ao cluster durante a implementação. Estes comandos partem do princípio de que a chave pública SSH está em `$HOME/.ssh/id_rsa` no seu computador. Veja estas instruções para [OS X e Linux](../virtual-machines/virtual-machines-linux-mac-create-ssh-keys.md) ou [Windows](../virtual-machines/virtual-machines-linux-ssh-from-windows.md), para obter mais informações. Se a ligação SSH não estiver a funcionar, poderá ter de [repor as chaves SSH](../virtual-machines/virtual-machines-linux-troubleshoot-ssh-connection.md).
+* Um ficheiro de chave privada RSA SSH, que corresponda à chave pública adicionada ao cluster durante a implementação. Estes comandos partem do princípio de que a chave pública SSH está em `$HOME/.ssh/id_rsa` no seu computador. Veja estas instruções para [OS X e Linux](../virtual-machines/virtual-machines-linux-mac-create-ssh-keys.md) ou [Windows](../virtual-machines/virtual-machines-linux-ssh-from-windows.md), para obter mais informações. Se a ligação SSH não estiver a funcionar, poderá ter de [repor as chaves SSH](../virtual-machines/virtual-machines-linux-troubleshoot-ssh-connection.md).
 
 ## <a name="connect-to-a-kubernetes-cluster"></a>Ligar a um cluster do Kubernetes
 
@@ -47,7 +44,7 @@ Siga estes passos para instalar e configurar `kubectl` no seu computador.
 > 
 
 ### <a name="install-kubectl"></a>Instalar o kubectl
-Uma forma de instalar esta ferramenta é utilizar o comando `az acs kubernetes install-cli` da CLI 2.0 do Azure (Pré-visualização). Para executar este comando, confirme que [instalou](/cli/azure/install-az-cli2) a mais recente CLI 2.0 do Azure (Pré-visualização) e que tem sessão iniciada numa conta do Azure (`az login`).
+Uma forma de instalar esta ferramenta é utilizar o comando `az acs kubernetes install-cli` da CLI do Azure 2.0. Para executar este comando, confirme que [instalou](/cli/azure/install-az-cli2) a mais recente CLI do Azure 2.0 e que tem sessão iniciada numa conta do Azure (`az login`).
 
 ```azurecli
 # Linux or OS X
@@ -57,7 +54,7 @@ az acs kubernetes install-cli [--install-location=/some/directory/kubectl]
 az acs kubernetes install-cli [--install-location=C:\some\directory\kubectl.exe]
 ```
 
-Em alternativa, pode transferir o cliente diretamente a partir da [página de lançamentos](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG.md#downloads-for-v146).
+Em alternativa, pode transferir o cliente mais recente diretamente a partir da [página de lançamentos do Kubernetes](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG.md). Para obter mais informações, consulte [Installing and Setting up kubectl (Instalar e Configurar o kubectl)](https://kubernetes.io/docs/user-guide/prereqs/).
 
 ### <a name="download-cluster-credentials"></a>Transferir as credenciais do cluster
 Assim que tiver o `kubectl` instalado, deve copiar as credenciais de cluster para a máquina. Uma forma de obter as credenciais é utilizar o comando `az acs kubernetes get-credentials`. Transmita o nome do grupo de recursos e o nome do recurso do serviço de contentores:
@@ -203,7 +200,7 @@ Existem várias opções para criar túneis SSH no Windows. Esta secção descre
 
     ![Registo de eventos do puTTY](media/putty4.png)
 
-Depois de configurar o túnel para DC/OS, pode aceder ao ponto final relacionado em:
+Depois de configurar o túnel para DC/OS, pode aceder ao pontos finais relacionados em:
 
 * DC/OS: `http://localhost/`
 * Marathon: `http://localhost/marathon`
@@ -221,6 +218,6 @@ Implementar e gerir contentores no seu cluster:
 
 
 
-<!--HONumber=Jan17_HO5-->
+<!--HONumber=Feb17_HO4-->
 
 

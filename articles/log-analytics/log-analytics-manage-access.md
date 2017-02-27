@@ -1,6 +1,6 @@
 ---
 title: "Gerir áreas de trabalho | Microsoft Docs"
-description: "Faça a gestão de áreas de trabalho no Log Analytics com uma variedade de tarefas administrativas em utilizadores, contas, áreas de trabalho e contas do Azure."
+description: "Faça a gestão de áreas de trabalho no Log Analytics do Azure com uma variedade de tarefas administrativas em utilizadores, contas, áreas de trabalho e contas do Azure."
 services: log-analytics
 documentationcenter: 
 author: bandersmsft
@@ -12,11 +12,11 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 02/03/2017
+ms.date: 02/17/2017
 ms.author: banders
 translationtype: Human Translation
-ms.sourcegitcommit: 96a971c31f9088b3aa409a85f0679fd3bd5945d1
-ms.openlocfilehash: 4dc1bfa1e385e945c47bbfc5faa776e577ee84b2
+ms.sourcegitcommit: 9ee8f4aafcc35e43c4fcba5a3a72b043dd9fc32c
+ms.openlocfilehash: 1d330362389ee690dc2942c9bb1bc32e1f10e08a
 
 
 ---
@@ -97,10 +97,13 @@ Alguns pontos a ter em conta sobre o portal do Azure:
 
   O URL é semelhante a `https://eus.mms.microsoft.com/?tenant=contoso.com&resource=%2fsubscriptions%2faaa5159e-dcf6-890a-a702-2d2fee51c102%2fresourcegroups%2fdb-resgroup%2fproviders%2fmicrosoft.operationalinsights%2fworkspaces%2fmydemo12`
 
+Por exemplo, para adicionar ou remover soluções de gestão, o utilizador tem de ser um administrador ou contribuinte para a subscrição do Azure ao utilizar o portal do Azure. Além disso, o utilizador tem de ser um membro da função de administrador ou contribuinte da área de trabalho do OMS no portal do OMS.
+
 ### <a name="managing-users-in-the-oms-portal"></a>Gestão de utilizadores no portal do OMS
 Gere utilizadores e grupos no separador **Gerir Utilizadores** no separador **Contas** da página Definições.   
 
 ![gerir utilizadores](./media/log-analytics-manage-access/setup-workspace-manage-users.png)
+
 
 #### <a name="add-a-user-to-an-existing-workspace"></a>Adicionar um utilizador a uma área de trabalho existente
 Siga os passos seguintes para adicionar um utilizador ou grupo a uma área de trabalho.
@@ -298,6 +301,6 @@ Se for um administrador e existirem vários utilizadores associados à área de 
 
 
 
-<!--HONumber=Feb17_HO1-->
+<!--HONumber=Feb17_HO3-->
 
 
