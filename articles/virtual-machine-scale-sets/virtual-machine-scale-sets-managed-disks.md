@@ -13,7 +13,7 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 2/14/2017
+ms.date: 2/21/2017
 ms.author: negat
 translationtype: Human Translation
 ms.sourcegitcommit: db84d2b03ad1542a898c2c452e62a3f7ef7e6af8
@@ -35,7 +35,7 @@ Agora, os [conjuntos de dimensionamento de máquinas virtuais](/azure/virtual-ma
 
 Uma forma simples de começar a utilizar os conjuntos de dimensionamento de discos geridos consiste em implementar um conjunto a partir do portal do Azure. Para obter mais informações, consulte [este artigo](./virtual-machine-scale-sets-portal-create.md). Outra forma simples de começar é utilizar a [CLI 2.0 do Azure](https://docs.microsoft.com/cli/azure/install-az-cli2) para implementar um conjunto de dimensionamento. O exemplo seguinte mostra como criar um conjunto de dimensionamento baseado em Ubuntu com 10 VMs, cada uma com um disco de dados de 50 GB e 100 GB:
 
-```bash
+```azurecli
 az group create -l southcentralus -n dsktest
 az vmss create -g dsktest -n dskvmss --image ubuntults --instance-count 10 --data-disk-sizes-gb 50 100
 ```
