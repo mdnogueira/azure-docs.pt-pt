@@ -17,8 +17,8 @@ ms.workload: na
 ms.date: 11/14/2016
 ms.author: stevelas
 translationtype: Human Translation
-ms.sourcegitcommit: f299cff22d00a1c765a32838647818d18f3df85d
-ms.openlocfilehash: df15eebf0052aa4713263a810df605fa1016c306
+ms.sourcegitcommit: 2a381431acb6436ddd8e13c69b05423a33cd4fa6
+ms.openlocfilehash: 1e70f41dd15b0243fb8edd137710ac555821434e
 
 ---
 # <a name="push-your-first-image-to-a-container-registry-using-the-docker-cli"></a>Enviar a sua primeira imagem para um registo de contentores com a CLI do Docker
@@ -33,7 +33,7 @@ Para obter mais informações e conceitos, veja [What is Azure Container Registr
 > 
 
 ## <a name="prerequisites"></a>Pré-requisitos
-* **Registo de contentores do Azure** - crie um registos de contentores na sua subscrição do Azure. Por exemplo, utilize o [portal do Azure](container-registry-get-started-portal.md) ou a [CLI do Azure 2.0 (Pré-visualização)](container-registry-get-started-azure-cli.md).
+* **Registo de contentores do Azure** - crie um registos de contentores na sua subscrição do Azure. Por exemplo, utilize o [portal do Azure](container-registry-get-started-portal.md) ou a [CLI do Azure 2.0](container-registry-get-started-azure-cli.md).
 * **Docker CLI** - para configurar o seu computador local como anfitrião Docker e aceder aos comandos da CLI do Docker, instale o [Docker Engine](https://docs.docker.com/engine/installation/).
 
 ## <a name="log-in-to-a-registry"></a>Iniciar sessão num registo
@@ -118,6 +118,6 @@ Agora que sabe as noções básicas, está pronto para começar a utilizar o seu
 
 
 
-<!--HONumber=Jan17_HO4-->
+<!--HONumber=Feb17_HO4-->
 
 

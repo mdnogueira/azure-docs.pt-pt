@@ -16,8 +16,8 @@ ms.workload: big-data
 ms.date: 01/17/2017
 ms.author: jgao
 translationtype: Human Translation
-ms.sourcegitcommit: 86f339b1a8f8c18fd898dc06b87245b265b3adb1
-ms.openlocfilehash: 1cf85c16847aad632d52fe72cd827f0ef8e66e91
+ms.sourcegitcommit: c08b568642e88da1aeddd36cb25a9f5c94b083e2
+ms.openlocfilehash: f283f103804d8e6d4a3c2037c8d38daafcb3f3e8
 
 
 ---
@@ -26,7 +26,6 @@ ms.openlocfilehash: 1cf85c16847aad632d52fe72cd827f0ef8e66e91
 Saiba como criar clusters do [Hadoop](http://hadoop.apache.org/) no HDInsight e como executar tarefas do Hive no HDInsight. O [Apache Hive](https://hive.apache.org/) é o componente mais popular do ecossistema Hadoop. Atualmente o HDInsight vem com seis tipos de clusters diferentes: [Hadoop](hdinsight-hadoop-introduction.md), [Spark](hdinsight-apache-spark-overview.md), [HBase](hdinsight-hbase-overview.md), [Storm](hdinsight-storm-overview.md), [Hive Interativo (Pré-visualização)](hdinsight-hadoop-use-interactive-hive.md) e [R Server](hdinsight-hadoop-r-server-overview.md).  Cada tipo de cluster suporta um conjunto diferente de componentes. Todos os seis tipos de cluster suportam o Hive. Para obter uma lista dos componentes suportados no HDInsight, consulte [Quais são as novidades nas versões de cluster do Hadoop fornecidas pelo HDInsight?](hdinsight-component-versioning.md)  
 
 [!INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
-
 ## <a name="prerequisites"></a>Pré-requisitos
 Antes de começar este tutorial, tem de ter os seguintes elementos:
 
@@ -59,11 +58,13 @@ O modelo do Resource Manager utilizado neste tutorial está localizado no [Githu
     Algumas propriedades foram codificadas no modelo.  Pode configurar estes valores a partir do modelo.
 
     * **Localização**: a localização do cluster e a conta de armazenamento dependente utilizam a mesma localização que o grupo de recursos.
-    * **Versão do cluster**: 3.4
+    * **Versão do cluster**: 3.5
     * **Tipo de SO**: Linux
     * **Número de nós de trabalho**: 2
 
-     Cada cluster tem uma dependência de conta do Blob Storage do Azure. Normalmente, é designada de conta do Storage predefinida. O cluster do HDInsight e a respetiva conta do Storage predefinida devem estar colocalizados na mesma região do Azure. A eliminação dos clusters não elimina a conta de armazenamento. No modelo, o nome da conta do Storage predefinida é definido como o nome do cluster com "store" anexado. 
+     Cada cluster tem uma dependência de conta do Blob Storage do Azure. Normalmente, é designada de conta do Storage predefinida. O cluster do HDInsight e a respetiva conta do Storage predefinida devem estar colocalizados na mesma região do Azure. A eliminação dos clusters não elimina a conta de armazenamento. 
+     
+     Para obter mais explicações sobre estas propriedades, veja [Criar clusters Hadoop no HDInsight](hdinsight-hadoop-provision-linux-clusters.md).
 
 3. Selecione **Concordo com os termos e condições indicados acima** e **Afixar ao dashboard** e, em seguida, clique em **Comprar**. Verá um novo mosaico intitulado **A implementar implementação de Modelo** no dashboard do portal. A criação de um cluster demora cerca de 20 minutos. Assim que o cluster for criado, a legenda do mosaico é alterada para o nome do grupo de recursos que especificou. E o portal abre automaticamente o grupo de recursos num novo painel. Pode ver o cluster e o armazenamento predefinidos listados.
    
@@ -148,28 +149,16 @@ Se gostaria de saber mais sobre como criar ou gerir um cluster do HDInsight, con
 
 [1]: ../HDInsight/hdinsight-hadoop-visual-studio-tools-get-started.md
 
-[hdinsight-provision]: hdinsight-provision-clusters.md
-[hdinsight-admin-powershell]: hdinsight-administer-use-powershell.md
+[hdinsight-provision]: hdinsight-provision-linux-clusters.md
 [hdinsight-upload-data]: hdinsight-upload-data.md
 [hdinsight-use-mapreduce]: hdinsight-use-mapreduce.md
 [hdinsight-use-hive]: hdinsight-use-hive.md
 [hdinsight-use-pig]: hdinsight-use-pig.md
 
-[powershell-download]: http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409
-[powershell-install-configure]: /powershell/azureps-cmdlets-docs
-[powershell-open]: /powershell/azureps-cmdlets-docs#Install
-
-[img-hdi-dashboard]: ./media/hdinsight-hadoop-tutorial-get-started-windows/HDI.dashboard.png
-[img-hdi-dashboard-query-select]: ./media/hdinsight-hadoop-tutorial-get-started-windows/HDI.dashboard.query.select.png
-[img-hdi-dashboard-query-select-result]: ./media/hdinsight-hadoop-tutorial-get-started-windows/HDI.dashboard.query.select.result.png
-[img-hdi-dashboard-query-select-result-output]: ./media/hdinsight-hadoop-tutorial-get-started-windows/HDI.dashboard.query.select.result.output.png
-[img-hdi-dashboard-query-browse-output]: ./media/hdinsight-hadoop-tutorial-get-started-windows/HDI.dashboard.query.browse.output.png
-[image-hdi-clusterstatus]: ./media/hdinsight-hadoop-tutorial-get-started-windows/HDI.ClusterStatus.png
-[image-hdi-gettingstarted-powerquery-importdata]: ./media/hdinsight-hadoop-tutorial-get-started-windows/HDI.GettingStarted.PowerQuery.ImportData.png
-[image-hdi-gettingstarted-powerquery-importdata2]: ./media/hdinsight-hadoop-tutorial-get-started-windows/HDI.GettingStarted.PowerQuery.ImportData2.png
 
 
 
-<!--HONumber=Jan17_HO3-->
+
+<!--HONumber=Feb17_HO3-->
 
 

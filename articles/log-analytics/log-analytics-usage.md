@@ -15,8 +15,8 @@ ms.topic: get-started-article
 ms.date: 01/02/2017
 ms.author: banders
 translationtype: Human Translation
-ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
-ms.openlocfilehash: 668cde23cb717fcad52fd7823561d10735e6df1b
+ms.sourcegitcommit: 7e3d4b83fefdc70f292cf85b682cf8ed756bf4c5
+ms.openlocfilehash: e7f04df679604f274c8ad9bf4daddc63c8b5418a
 
 
 ---
@@ -47,6 +47,12 @@ O dashboard **Utilização do Log Analytics** apresenta as informações seguint
     - Tempo decorrido para recolher e indexar dados
 - Lista de consultas
 
+## <a name="understanding-nodes-for-oms-offers"></a>Noções básicas sobre as ofertas do OMS
+
+Se estiver no escalão de preço *por nó (OMS)*, é-lhe cobrado com base no número de nós e soluções ativados. Pode ver quantos nós de cada oferta estão a ser utilizados na secção *ofertas* do dashboard de utilização.
+
+![dashboard de utilização](./media/log-analytics-usage/log-analytics-usage-offerings.png)
+
 ## <a name="to-work-with-usage-data"></a>Trabalhar com dados de utilização
 1. Se ainda não o fez, inicie sessão no [portal do Azure](https://portal.azure.com) através da sua subscrição do Azure.
 2. No menu **Hub**, clique em **Mais serviços** e, na lista de recursos, escreva **Log Analytics**. À medida que começa a escrever, a lista filtra com base na sua entrada. Clique em **Log Analytics**.  
@@ -66,6 +72,6 @@ O dashboard **Utilização do Log Analytics** apresenta as informações seguint
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Feb17_HO4-->
 
 

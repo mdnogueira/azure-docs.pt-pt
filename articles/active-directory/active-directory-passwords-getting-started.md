@@ -16,8 +16,8 @@ ms.topic: get-started-article
 ms.date: 10/05/2016
 ms.author: asteen
 translationtype: Human Translation
-ms.sourcegitcommit: e2e5c302d04a41386bfc98dd4e3f8546265dd9f3
-ms.openlocfilehash: e686952a7363e4758f8a3532b54cf5e7f05ce865
+ms.sourcegitcommit: f9a0218b55ed30c0dd5022965241d1374c70c3d7
+ms.openlocfilehash: 1b5f96750b92bc7b7398fdaa177f360746747964
 
 
 ---
@@ -393,6 +393,6 @@ Veja-se abaixo as ligações para todas as páginas da documentação de reposi�
 
 
 
-<!--HONumber=Feb17_HO3-->
+<!--HONumber=Feb17_HO4-->
 
 

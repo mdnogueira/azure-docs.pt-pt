@@ -13,11 +13,11 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 01/03/2017
+ms.date: 02/16/2017
 ms.author: kgremban
 translationtype: Human Translation
-ms.sourcegitcommit: 0fec7a18e098891374b3b0d7313a72918b630918
-ms.openlocfilehash: 7fb107922af9d2316fb7490670002f4255572458
+ms.sourcegitcommit: eccd394a29376a20371732023bfbf9b53435f0ae
+ms.openlocfilehash: 51c994a37ebaca472c360e0c5f7b4a7fab5f55fc
 
 ---
 
@@ -30,7 +30,7 @@ Agora que determinamos que vamos utilizar o Servidor Multi-Factor Authentication
 Existem duas formas diferentes de transferir o Servidor Multi-Factor Authentication do Azure. Ambas são efetuadas através do portal do Azure. A primeira é através da gestão direta do Fornecedor do Multi-Factor Auth. A segunda é através de definições de serviço. A segunda opção requer um Fornecedor do Multi-Factor Auth ou uma licença MFA do Azure, Azure AD Premium ou Enterprise Mobility Suite.
 
 > [!Important]
-> Estas duas opções parecem semelhantes, mas é importante saber qual delas utilizar. Se os utilizadores tiverem licenças provenientes do MFA, não crie um Fornecedor de Multi-Factor Auth para obter a transferência do servidor. Em alternativa, utilize a opção 2 para transferir o servidor a partir da página de definições de serviço. 
+> Estas duas opções parecem semelhantes, mas é importante saber qual delas utilizar. Se os utilizadores tiverem licenças provenientes do MFA (MFA do Azure, Azure AD Premium ou Enterprise Mobility + Security), não crie um Fornecedor de Multi-Factor Auth para obter a transferência do servidor. Em alternativa, utilize a opção 2 para transferir o servidor a partir da página de definições de serviço. 
 
 ### <a name="option-1-download-azure-multi-factor-authentication-server-from-the-azure-classic-portal"></a>Opção 1: Transferir o Servidor Multi-Factor Authentication do Azure a partir do portal clássico do Azure
 
@@ -67,7 +67,7 @@ Agora que transferiu o servidor, pode instalá-lo e configurá-lo.  Certifique-s
 
 | Requisitos do Servidor Multi-Factor Authentication do Azure | Descrição |
 |:--- |:--- |
-| Hardware |<li>200 MB de espaço no disco rígido</li><li>processador com capacidade de 32 ou 64 bits</li><li>1 GB de RAM ou superior</li> |
+| Hardware |<li>200 MB de espaço no disco rígido</li><li>processador com capacidade de&32; ou&64; bits</li><li>1 GB de RAM ou superior</li> |
 | Software |<li>Windows Server 2008 ou superior, se o anfitrião for um SO servidor</li><li>Windows 7 ou superior, se o anfitrião for um SO cliente</li><li>Microsoft .NET 4.0 Framework</li><li>O IIS 7.0 ou superior, se estiver a instalar o portal de utilizador ou o SDK do serviço Web</li> |
 
 ### <a name="azure-multi-factor-authentication-server-firewall-requirements"></a>Requisitos da firewall do Servidor Multi-Factor Authentication do Azure

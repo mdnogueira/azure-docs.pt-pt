@@ -13,57 +13,54 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 12/16/2016
+ms.date: 02/15/2017
 ms.author: garye
 translationtype: Human Translation
-ms.sourcegitcommit: 07cb3fe0d5688d5b63fe3312cad14c2274a58a09
-ms.openlocfilehash: e98a64910f28da0a8a9b4a58c717c40d791ccf00
+ms.sourcegitcommit: b652c0f817e5e56d4ff50701345b03db634f616c
+ms.openlocfilehash: 043c54094f53ae539c833eb8f167201781c677a6
 
 
 ---
 # <a name="walkthrough-develop-a-predictive-analytics-solution-for-credit-risk-assessment-in-azure-machine-learning"></a>Instruções: desenvolver uma solução de análise preditiva para a avaliação de riscos de crédito no Azure Machine Learning
 
-Nestas instruções, faremos uma observação expandida ao processo de desenvolvimento de uma solução no Machine Learning Studio. Desenvolveremos um modelo de análise preditiva no Machine Learning Studio e, em seguida, implementá-lo como um serviço Web do Azure Machine Learning onde o modelo pode efetuar predições utilizando novos dados. 
+Nestas instruções, analisamos mais aprofundadamente o processo de desenvolvimento de uma solução de análise preditiva no Machine Learning Studio. Desenvolvemos um modelo simples no Machine Learning Studio e, em seguida, implementamo-lo como um serviço Web Machine Learning onde o modelo pode realizar predições com dados novos. 
 
-> [!TIP]
-> Estas instruções assumem que já tenha utilizado Machine Learning Studio pelo menos uma vez antes e que tem alguma compreensão dos conceitos de machine learning, embora assuma que não seja um perito.
-> 
->Se nunca tiver utilizado o **Azure Machine Learning Studio** antes, poderá querer começar com o tutorial, [Create your first data science experiment in Azure Machine Learning Studio (Criar a primeira experimentação de ciência de dados no Azure Machine Learning Studio)](machine-learning-create-experiment.md). Tal tutorial guia-o ao longo do Machine Learning Studio pela primeira vez, mostrando-lhe as noções básicas, como arrastar e largar módulos na experimentação, ligá-los entre si, executar a experimentação e analisar os resultados.
->
->Se não estiver familiarizado com machine learning, a série de vídeos [Data Science for Beginners (Ciência de Dados para Principiantes)](machine-learning-data-science-for-beginners-the-5-questions-data-science-answers.md) pode ser um ponto de partida. Esta série de vídeos é uma excelente introdução ao machine learning, que utiliza uma linguagem e conceitos do dia a dia.
-> 
+Estas instruções partem do princípio de que já utilizou o Machine Learning Studio pelo menos uma vez e que compreende, de alguma forma, os conceitos de machine learning. Porém, não parte do princípio de que é um especialista.
+
+Se nunca tiver utilizado o **Azure Machine Learning Studio** antes, poderá querer começar com o tutorial, [Create your first data science experiment in Azure Machine Learning Studio (Criar a primeira experimentação de ciência de dados no Azure Machine Learning Studio)](machine-learning-create-experiment.md). Esse tutorial orienta-o ao longo do Machine Learning Studio pela primeira vez. Mostra-lhe as noções básicas de como arrastar e largar módulos na experimentação, ligá-los entre si, executar a experimentação e analisar os resultados. Outra ferramenta que pode ser útil para começar a trabalhar é um diagrama que dá uma visão geral das funcionalidades do Machine Learning Studio. Pode transferir e imprimi-lo a partir daqui: [Diagrama de descrição geral das funcionalidades do Azure Machine Learning Studio](machine-learning-studio-overview-diagram.md).
+ 
+Se não estiver familiarizado com o machine learning em geral, existe uma série em vídeo que poderá ser útil para si. Chama-se [Data Science for Beginners (Ciência de Dados para Principiantes)](machine-learning-data-science-for-beginners-the-5-questions-data-science-answers.md) e pode dar-lhe uma excelente introdução ao machine learning utilizando linguagem e conceitos do dia a dia.
+
+
+[!INCLUDE [machine-learning-free-trial](../../includes/machine-learning-free-trial.md)]
+ 
 
 ## <a name="the-problem"></a>O problema
 
-Suponhamos que tem de prever o risco de crédito de um indivíduo com base nas informações fornecidas sobre uma aplicação de crédito.  
+Suponhamos que precisa de prever o risco de crédito de um indivíduo com base nas informações fornecidas sobre uma aplicação de crédito.  
 
-A avaliação de riscos de crédito é um problema complexo, obviamente, mas vamos simplificar um pouco os parâmetros da pergunta. Vamos utilizá-la como um exemplo de como pode utilizar o Microsoft Azure Machine Learning com o Machine Learning Studio e o serviço web do Machine Learning para criar uma solução de análise preditiva.  
+A avaliação do risco de crédito é um problema complexo, mas podemos simplificá-lo um pouco para estas instruções. Iremos utilizá-lo como um exemplo de como pode criar uma solução de análise preditiva com o Microsoft Azure Machine Learning. Para tal, utilizamos o Azure Machine Learning Studio e um serviço Web Machine Learning.  
 
 ## <a name="the-solution"></a>A solução
 
-Nesta introdução detalhada, iremos começar com dados de risco de crédito publicamente disponíveis, desenvolver e formar um modelo preditivo com base nesses dados e, em seguida, implementar o modelo como um serviço web que pode ser utilizado por terceiros para a avaliação de riscos de crédito.
+Nestas instruções detalhadas, começamos com dados de risco de crédito disponíveis ao público e desenvolvemos e formamos um modelo preditivo com base nesses dados. Em seguida, implementamos o modelo como um serviço web, para que possa ser utilizado por outros utilizadores para avaliação de risco de crédito.
 
-[!INCLUDE [machine-learning-free-trial](../../includes/machine-learning-free-trial.md)]
-
-Para criar uma solução de avaliação do risco de crédito, teremos de executar os seguintes passos:  
+Para criar esta solução de avaliação do risco de crédito, temos de executar os seguintes passos:  
 
 1. [Criar uma área de trabalho do Machine Learning](machine-learning-walkthrough-1-create-ml-workspace.md)
 2. [Carregar os dados existentes](machine-learning-walkthrough-2-upload-data.md)
-3. [Criar uma nova experimentação](machine-learning-walkthrough-3-create-new-experiment.md)
+3. [Criar uma experimentação](machine-learning-walkthrough-3-create-new-experiment.md)
 4. [Dar formação e avaliar os modelos](machine-learning-walkthrough-4-train-and-evaluate-models.md)
 5. [Implementar o serviço web](machine-learning-walkthrough-5-publish-web-service.md)
 6. [Aceder ao serviço web](machine-learning-walkthrough-6-access-web-service.md)
 
-Estas instruções baseiam-se uma versão simplificada da [Classificação do binário: previsão do risco de crédito](http://go.microsoft.com/fwlink/?LinkID=525270) experimentação de exemplo na [Galeria da Cortana Intelligence](http://gallery.cortanaintelligence.com/).
-
-
-> [!TIP]
-> Para transferir e imprimir um diagrama da descrição geral das funcionalidades do Machine Learning Studio, consulte o artigo [Diagrama da descrição geral das funcionalidades do Azure Machine Learning Studio](machine-learning-studio-overview-diagram.md).
+> [!TIP] 
+> Pode encontrar uma cópia de trabalho da experimentação que desenvolvemos nestas instruções na [Cortana Intelligence Gallery](https://gallery.cortanaintelligence.com). Aceda a **[Walkthrough - Credit risk prediction](https://gallery.cortanaintelligence.com/Experiment/Walkthrough-Credit-risk-prediction-1)** e clique em **Open in Studio** para transferir uma cópia da experimentação para a área de trabalho do Machine Learning Studio.
 > 
-> 
+> Estas instruções baseiam-se numa versão simplificada da experimentação de exemplo, [Binary Classification: Credit risk prediction](http://go.microsoft.com/fwlink/?LinkID=525270), também disponível na [Gallery](http://gallery.cortanaintelligence.com/).
 
 
 
-<!--HONumber=Dec16_HO5-->
+<!--HONumber=Feb17_HO3-->
 
 

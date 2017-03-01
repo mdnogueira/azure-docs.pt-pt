@@ -15,8 +15,9 @@ ms.workload: storage-backup-recovery
 ms.date: 02/06/2017
 ms.author: raynew
 translationtype: Human Translation
-ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
-ms.openlocfilehash: 9a1281e7615501b379fc795ca957a07acfea7171
+ms.sourcegitcommit: 0c56a74e43b989a32b10a878cec16cce0f972a9f
+ms.openlocfilehash: 63c0397b6e737038fb7758d2749ae82d1485d45d
+ms.lasthandoff: 02/22/2017
 
 
 ---
@@ -131,11 +132,5 @@ Utilize a Recuperação de Sites para proteger a sua implementação de SAP da s
 [Saiba mais](http://aka.ms/asr-sap) sobre como proteger o SAP.
 
 ## <a name="next-steps"></a>Passos seguintes
-[Preparar para a implementação da Recuperação de Sites](site-recovery-best-practices.md) 
-
-
-
-
-<!--HONumber=Dec16_HO1-->
-
+[Verificar pré-requisitos](site-recovery-prereq.md) 
 

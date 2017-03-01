@@ -1,6 +1,6 @@
 ---
-title: "Criar um Conjunto de Dimensionamento da Máquinas Virtuais com o PowerShell | Microsoft Docs"
-description: "Criar um Conjunto de Dimensionamento da Máquina Virtual com o PowerShell"
+title: "Criar um Conjunto de Dimensionamento de Máquinas Virtuais do Azure com o PowerShell | Microsoft Docs"
+description: "Criar um Conjunto de Dimensionamento de Máquinas Virtuais do Azure com o PowerShell"
 services: virtual-machine-scale-sets
 documentationcenter: 
 author: Thraka
@@ -13,11 +13,11 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 10/18/2016
+ms.date: 02/21/2017
 ms.author: adegeo
 translationtype: Human Translation
-ms.sourcegitcommit: 550db52c2b77ad651b4edad2922faf0f951df617
-ms.openlocfilehash: 5abaa31828e624f77b6a9efb4496327977b483e4
+ms.sourcegitcommit: 1f8e66fac5b82698525794f0486dd0432c7421a7
+ms.openlocfilehash: 7286fed39839675eb960b749f3235f83e36c5e9a
 
 
 ---
@@ -55,46 +55,6 @@ Um conjunto de dimensionamento da máquina virtual tem de estar contido num grup
         ProvisioningState : Succeeded
         Tags              :
         ResourceId        : /subscriptions/########-####-####-####-############/resourceGroups/myrg1
-
-### <a name="storage-account"></a>Conta de armazenamento
-Uma conta de armazenamento é utilizada por uma máquina virtual para armazenar o disco do sistema operativo e os dados de diagnóstico utilizados para dimensionamento. Sempre que possível, o ideal é ter uma conta de armazenamento para cada máquina virtual criada num conjunto de dimensionamento. Se não for possível, não planeie mais de 20 VMs por conta de armazenamento. O exemplo neste artigo mostra três contas de armazenamento a serem criadas para três máquinas virtuais.
-
-1. Substitua o valor do **$saName** por um nome para a conta do Storage. Teste a exclusividade do nome. 
-   
-        $saName = "storage account name"
-        Get-AzureRmStorageAccountNameAvailability $saName
-   
-    Se a resposta for **True**, o nome proposto é exclusivo.
-2. Substitua o valor do **$saType** pelo tipo da conta de armazenamento e, em seguida, crie a variável:  
-   
-        $saType = "storage account type"
-   
-    Os valores possíveis são: Standard_LRS, Standard_GRS, Standard_RAGRS ou Premium_LRS.
-3. Crie a conta:
-   
-        New-AzureRmStorageAccount -Name $saName -ResourceGroupName $rgName –Type $saType -Location $locName
-   
-    Deverá ver algo semelhante a este exemplo:
-   
-        ResourceGroupName   : myrg1
-        StorageAccountName  : myst1
-        Id                  : /subscriptions/########-####-####-####-############/resourceGroups/myrg1/providers/Microsoft
-                              .Storage/storageAccounts/myst1
-        Location            : centralus
-        AccountType         : StandardLRS
-        CreationTime        : 3/15/2016 4:51:52 PM
-        CustomDomain        :
-        LastGeoFailoverTime :
-        PrimaryEndpoints    : Microsoft.Azure.Management.Storage.Models.Endpoints
-        PrimaryLocation     : centralus
-        ProvisioningState   : Succeeded
-        SecondaryEndpoints  :
-        SecondaryLocation   :
-        StatusOfPrimary     : Available
-        StatusOfSecondary   :
-        Tags                : {}
-        Context             : Microsoft.WindowsAzure.Commands.Common.Storage.AzureStorageContext
-4. Repita os passos 1 a 4 para criar três contas de armazenamento, por exemplo myst1, myst2 e myst3.
 
 ### <a name="virtual-network"></a>Rede virtual
 Uma rede virtual é necessária para as máquinas virtuais no conjunto de dimensionamento.
@@ -173,12 +133,10 @@ Tem todos os recursos que precisa para a configuração do conjunto de dimension
         $imageSku = "2012-R2-Datacenter"
    
     Para encontrar as informações sobre outras imagens a utilizar, consulte [Navigate and select Azure virtual machine images with Windows PowerShell and the Azure CLI (Navegue e selecione imagens da máquina virtual do Azure com o Windows PowerShell e o CLI do Azure)](../virtual-machines/virtual-machines-windows-cli-ps-findimage.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
-3. Substitua o valor do **$vhdContainers** por uma lista que contenha os caminhos de onde são armazenados os discos rígidos virtuais, como "https://mystorage.blob.core.windows.net/vhds" e, em seguida, crie a variável:
+
+3. Crie o perfil de armazenamento:
    
-        $vhdContainers = @("https://myst1.blob.core.windows.net/vhds","https://myst2.blob.core.windows.net/vhds","https://myst3.blob.core.windows.net/vhds")
-4. Crie o perfil de armazenamento:
-   
-        Set-AzureRmVmssStorageProfile -VirtualMachineScaleSet $vmss -ImageReferencePublisher $imagePublisher -ImageReferenceOffer $imageOffer -ImageReferenceSku $imageSku -ImageReferenceVersion "latest" -Name $storageProfile -VhdContainer $vhdContainers -OsDiskCreateOption "FromImage" -OsDiskCaching "None"  
+        Set-AzureRmVmssStorageProfile -VirtualMachineScaleSet $vmss -ImageReferencePublisher $imagePublisher -ImageReferenceOffer $imageOffer -ImageReferenceSku $imageSku -ImageReferenceVersion "latest" -OsDiskCreateOption "FromImage" -OsDiskCaching "None"  
 
 ### <a name="virtual-machine-scale-set"></a>Conjuntos de dimensionamento de máquinas virtuais
 Por fim, pode criar o conjunto de dimensionamento.
@@ -225,6 +183,6 @@ Utilize estes recursos para explorar o conjunto de dimensionamento da máquina v
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Feb17_HO4-->
 
 

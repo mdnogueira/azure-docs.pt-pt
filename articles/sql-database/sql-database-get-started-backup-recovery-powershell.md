@@ -1,5 +1,5 @@
 ---
-title: "Introdução à cópia de segurança e ao restauro de bases de dados SQL do Azure para proteção e recuperação de dados com o Azure PowerShell | Microsoft Docs"
+title: "PowerShell: Criar cópias de segurança e restaurar bases de dados SQL do Azure | Microsoft Docs"
 description: "Este tutorial mostra como restaurar a partir de cópias de segurança automáticas para um ponto anterior no tempo, armazenar cópias de segurança automáticas no cofre dos Serviços de Recuperação do Azure e restaurar a partir do cofre dos Serviços de Recuperação do Azure com o PowerShell"
 keywords: tutorial de base de dados sql
 services: sql-database
@@ -17,16 +17,16 @@ ms.topic: hero-article
 ms.date: 12/19/2016
 ms.author: sstein
 translationtype: Human Translation
-ms.sourcegitcommit: 68a4ed7aad946dda644a0f085c48fd33f453e018
-ms.openlocfilehash: 15d5cb803332133c8015a8ba23ca5751b8abc29a
+ms.sourcegitcommit: 93efe1a08149e7c027830b03a9e426ac5a05b27b
+ms.openlocfilehash: 8a3ede8af471e656e830e38e0cf2f3a909fdaadb
 
 
 ---
 
 
-# <a name="get-started-with-backup-and-restore-for-data-protection-and-recovery-using-powershell"></a>Introdução à Cópia de Segurança e ao Restauro para Proteção e Recuperação de Dados com o PowerShell
+# <a name="tutorial-back-up-and-restore-an-azure-sql-database-using-powershell"></a>Tutorial: Criar cópia de segurança e restaurar uma base de dados SQL do Azure com o PowerShell
 
-Neste tutorial de introdução irá aprender a utilizar o Azure PowerShell para:
+Neste tutorial, vai aprender a utilizar o Azure PowerShell para:
 
 - Ver as cópias de segurança existentes de uma base de dados
 - Restaurar uma base de dados para um ponto anterior no tempo
@@ -38,7 +38,7 @@ Neste tutorial de introdução irá aprender a utilizar o Azure PowerShell para:
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* Precisa de uma conta do Azure. Pode [abrir uma conta do Azure gratuita](/pricing/free-trial/?WT.mc_id=A261C142F) ou [Ativar as vantagens de subscritor do Visual Studio](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F). 
+* Precisa de uma conta do Azure. Pode [abrir uma conta do Azure gratuita](https://azure.microsoft.com/free/) ou [Ativar as vantagens de subscritor do Visual Studio](https://azure.microsoft.com/pricing/member-offers/msdn-benefits/). 
 
 * Tem de ligar ao Azure com uma conta que seja membro do proprietário da subscrição ou da função de contribuinte. Para obter mais informações sobre o controlo de acesso baseado em funções (RBAC), veja o artigo [Introdução à gestão de acesso no portal do Azure](../active-directory/role-based-access-control-what-is.md).
 
@@ -47,7 +47,7 @@ Neste tutorial de introdução irá aprender a utilizar o Azure PowerShell para:
 * Concluiu a [Introdução aos servidores, bases de dados e regras de firewall da Base de Dados SQL do Azure através do portal do Azure e do SQL Server Management Studio](sql-database-get-started.md) ou a [versão do PowerShell](sql-database-get-started-powershell.md) equivalente. Se não o tiver feito, conclua este tutorial de pré-requisitos ou execute o script do PowerShell no final da [versão do PowerShell](sql-database-get-started-powershell.md) antes de continuar.
 
 > [!TIP]
-> Pode realizar estas mesmas tarefas num tutorial de introdução com [o portal do Azure](sql-database-get-started-backup-recovery.md).
+> Pode realizar estas mesmas tarefas num tutorial de introdução com [o portal do Azure](sql-database-get-started-backup-recovery-portal.md).
 
 [!INCLUDE [Start your PowerShell session](../../includes/sql-database-powershell.md)]
 
@@ -114,7 +114,7 @@ Nesta secção do tutorial, irá [configurar um cofre dos Serviços de Recupera�
 
 
 > [!TIP]
-> Para eliminar cópias de segurança de retenção de longa duração, veja [Eliminar cópias de segurança de retenção de longa duração](sql-database-long-term-retention-delete.md).
+> Para eliminar cópias de segurança de retenção de longa duração, consulte [Manage long-term backup retention using PowerShell (Gerir a retenção de cópia de segurança de longa duração com o PowerShell)](sql-database-manage-long-term-backup-retention-powershell.md).
 
 
 ### <a name="create-a-recovery-services-vault"></a>Criar um cofre dos serviços de recuperação
@@ -380,6 +380,7 @@ $restoredDbFromLtr
 - Para saber mais sobre o restauro de cópias de segurança, veja [restaurar a partir de cópia de segurança](sql-database-recovery-using-backups.md)
 
 
-<!--HONumber=Dec16_HO4-->
+
+<!--HONumber=Feb17_HO3-->
 
 

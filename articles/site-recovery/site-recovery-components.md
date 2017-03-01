@@ -12,11 +12,11 @@ ms.workload: backup-recovery
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 01/02/2017
+ms.date: 02/21/2017
 ms.author: raynew
 translationtype: Human Translation
-ms.sourcegitcommit: bd8082c46ee36c70e372208d1bd15337acc558a1
-ms.openlocfilehash: eb97f66901efa336942dee56d9a8a62ade1f6842
+ms.sourcegitcommit: 080dce21c2c803fc05c945cdadb1edd55bd7fe1c
+ms.openlocfilehash: 4993a873742db5ca2bd8c31eaab098beb0a0a030
 
 
 ---
@@ -24,13 +24,11 @@ ms.openlocfilehash: eb97f66901efa336942dee56d9a8a62ade1f6842
 
 Leia este artigo para compreender a arquitetura subjacente do Azure Site Recovery e os componentes que fazem com que funcione.
 
-As organizações necessitam de uma estratégia BCDR que determine como as aplicações, cargas de trabalho e dados continuam em execução e disponíveis durante o período de indisponibilidade planeado e imprevisto, e como retomar as condições de trabalho normais com a maior brevidade possível. A estratégia de BCDR deve manter os dados de negócio seguros e recuperáveis, e garantir que as cargas de trabalho continuam a estar continuamente disponíveis quando ocorrer um desastre.
-
 A Recuperação de Sites é um serviço do Azure que contribui para a sua estratégia de BCDR através da orquestração da replicação dos servidores físicos no local e das máquinas virtuais para a nuvem (Azure) ou para um datacenter secundário. Quando ocorrem falhas na sua localização principal, faz-se a ativação pós-falha para a localização secundária para manter disponíveis as aplicações e cargas de trabalho. A localização principal é reativada quando se retomam as operações normais. Saiba mais em [O que é a Recuperação de Sites?](site-recovery-overview.md)
 
 Este artigo descreve a implementação no [portal do Azure](https://portal.azure.com). O [portal clássico do Azure](https://manage.windowsazure.com/) pode ser utilizado para manter cofres existentes do Site Recovery, mas não pode criar cofres novos.
 
-Publique os seus comentários na parte inferior do artigo. Coloque questões técnicas no [Fórum de Serviços de Recuperação do Azure](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr).
+Publique comentários na parte inferior deste artigo ou no [Fórum dos Serviços de Recuperação do Azure](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr).
 
 
 ## <a name="deployment-scenarios"></a>Cenários de implementação
@@ -133,10 +131,11 @@ Existem alguns requisitos para a reativação pós-falha:
 
 **Componente** | **Detalhes**
 --- | ---
+
 **Azure** | No Azure, precisa de uma conta do Microsoft Azure, de uma conta de armazenamento do Azure e de uma rede do Azure.<br/><br/> O armazenamento e a rede podem ser contas baseadas no Resource Manager ou contas clássicas.<br/><br/> Os dados replicados são armazenados na conta de armazenamento e as VMs do Azure são criadas com os dados replicados quando ocorre a ativação pós-falha a partir do site no local.<br/><br/> As VMs do Azure ligam-se à rede virtual do Azure quando são criadas.
-**Servidor VMM** | Se os anfitriões de Hyper-V estiverem localizados em clouds do VMM, precisa de ter redes lógicas e de VMs configuradas para definir o [mapeamento de rede](site-recovery-network-mapping.md). Uma rede VM deve ser ligada a uma rede lógica que está associada à nuvem.
-**Anfitrião Hyper-V** | Precisa de um ou mais servidores de anfitrião Hyper-V.
-**VMs de Hyper-V** | Precisa de uma ou mais VMs no servidor de anfitrião Hyper-V. O Fornecedor em execução no anfitrião Hyper-V coordena e orquestra a replicação com o serviço Site Recovery através da Internet. O agente processa os dados de replicação de dados através de HTTPS 443. As comunicações provenientes do Fornecedor e do agente são seguras e encriptadas. Também são encriptados os dados replicados no armazenamento do Azure.
+**Servidor VMM** |Se os anfitriões de Hyper-V estiverem localizados em clouds do VMM, precisa de ter redes lógicas e de VMs configuradas para definir o mapeamento de rede. Uma rede VM deve ser ligada a uma rede lógica que está associada à nuvem.
+**Anfitrião de Hyper-V** | Precisa de um ou mais servidores de anfitrião Hyper-V.
+**VMs de Hyper-V** | precisa de uma ou mais VMs no servidor anfitrião Hyper-V. O Fornecedor em execução no anfitrião Hyper-V coordena e orquestra a replicação com o serviço Site Recovery através da Internet. O agente processa os dados de replicação de dados através de HTTPS 443. As comunicações provenientes do Fornecedor e do agente são seguras e encriptadas. Também são encriptados os dados replicados no armazenamento do Azure.
 
 
 ## <a name="replication-process"></a>Processo de replicação
@@ -200,7 +199,7 @@ Existem alguns requisitos para a reativação pós-falha:
 
 1. Executa uma [ativação pós-falha](site-recovery-failover.md) planeada ou não planeada entre os sites no local. Se executar uma ativação pós-falha planeada, as VMs de origem são desligadas para garantir que não há perda de dados.
 2. Pode fazer a ativação pós-falha de uma máquina individual ou criar [planos de recuperação](site-recovery-create-recovery-plans.md) para orquestrar a ativação pós-falha de várias máquinas.
-4. Se fizer uma ativação pós-falha não planeada para um site secundário, as máquinas na localização secundária não estão ativadas para proteção ou replicação após a ativação pós-falha. Se tiver feito uma ativação pós-falha planeada, as máquinas na localização secundária estão protegidas após a ativação pós-falha.
+4. Se fizer uma ativação pós-falha não planeada para um site secundário, as máquinas na localização secundária não estão ativadas para proteção ou replicação após a ativação pós-falha. Se tiver executado uma ativação pós-falha planeada, as máquinas na localização secundária estão protegidas após a ativação pós-falha.
 5. Em seguida, consolida a ativação pós-falha para começar a aceder à carga de trabalho da VM de réplica.
 6. Quando o site primário estiver novamente disponível, inicia a replicação inversa, para replicar do site secundário para o primário. A replicação inversa coloca as máquinas virtuais num estado protegido, mas a localização ativa continua a ser o datacenter secundário.
 7. Para que o site primário volte a ser a localização ativa, inicie uma ativação pós-falha planeada do site secundário para o primário, seguida de outra replicação inversa.
@@ -212,7 +211,7 @@ Existem alguns requisitos para a reativação pós-falha:
 --- | ---
 1. **Ativar a proteção** | Depois de ativar a proteção numa VM de Hyper-V, é iniciada a tarefa **Ativar Proteção**, para verificar se a máquina está em conformidade com os pré-requisitos. A tarefa invoca dois métodos:<br/><br/> [CreateReplicationRelationship](https://msdn.microsoft.com/library/hh850036.aspx), para configurar a replicação com as definições que configurou.<br/><br/> [StartReplication](https://msdn.microsoft.com/library/hh850303.aspx), para inicializar uma replicação completa da VM.
 2. **Replicação inicial** |  É obtido um instantâneo da máquina virtual e os discos rígidos virtuais são replicados um de cada vez até estarem todos copiados para a localização secundária.<br/><br/> O tempo necessário para concluir isto depende do tamanho da VM, largura de banda da rede e do método de replicação inicial.<br/><br/> Se ocorrerem alterações de disco enquanto a replicação inicial está em curso, o Controlador de Replicação de Réplica do Hyper-V regista essas alterações como Registos de Replicação do Hyper-V (.hrl) que se encontram na mesma pasta que os discos.<br/><br/> Cada disco tem um ficheiro de .hrl associado que será enviado para o armazenamento secundário.<br/><br/> Os ficheiros de instantâneo e de registo consomem recursos do disco quando a replicação inicial está em curso. Quando a replicação inicial for concluída, o instantâneo de VM é eliminado e as alterações de disco delta no registo são sincronizadas e intercaladas.
-3. **Finalizar a proteção** | Após a conclusão da replicação inicial, a tarefa **Finalizar proteção** configura a rede e outras definições de pós-replicação, para que a máquina virtual fique protegida.<br/><br/> Se estiver a replicar para o Azure, poderá ter de otimizar as definições para a máquina virtual, de modo a que fique preparada para a ativação pós-falha.<br/><br/> Nesta altura, pode executar uma ativação pós-falha de teste para verificar que tudo está a funcionar conforme esperado.
+3. **Finalizar a proteção** | Após a conclusão da replicação inicial, a tarefa **Finalizar proteção** configura a rede e outras definições de pós-replicação, para que a máquina virtual fique protegida.<br/><br/> Se está a replicar para o Azure, poderá ter de otimizar as definições para a máquina virtual para que fique preparada para a ativação pós-falha.<br/><br/> Nesta altura, pode executar uma ativação pós-falha de teste para verificar que tudo está a funcionar conforme esperado.
 4. **Replicação** | Depois da replicação inicial, começa a sincronização delta, de acordo com as definições de replicação.<br/><br/> **Falha de replicação**: se falhar a replicação delta, e uma replicação completa seria dispendiosa em termos de largura de banda ou de tempo, ocorre a ressincronização. Por exemplo, se os ficheiros de .hrl atingirem 50% do tamanho do disco, a VM será marcada para ressincronização. A ressincronização minimiza a quantidade de dados enviados por computação de somas de verificação das máquinas virtuais de origem e de destino, enviando apenas o delta. Após a conclusão da ressincronização, retoma-se a replicação delta. Por predefinição, a ressincronização está agendada para ser executada automaticamente fora do horário de expediente, mas pode ressincronizar manualmente uma máquina virtual.<br/><br/> **Erro de replicação**: se ocorrer um erro de replicação, haverá uma repetição interna. Se for um erro não recuperável, tais como um erro de autenticação ou autorização, ou uma máquina de réplica que está num estado inválido, nenhuma repetição ocorrerá. Se for um erro recuperável, como um erro de rede ou espaço em disco/memória insuficiente, em seguida, uma nova tentativa ocorre em intervalos crescentes (a cada 1, 2, 4, 8, 10 e 30 minutos).
 5. **Ativação pós-falha planeada/não planeada** | Pode executar ativações pós-falha planeadas ou não planeadas conforme necessário.<br/><br/> Se executar uma ativação pós-falha planeada, as VMs de origem são desligadas para garantir que não há perda de dados.<br/><br/> Depois de as réplicas de VMs serem criadas, são colocadas no estado de confirmação pendente. Para concluir a ativação pós-falha, tem de consolidá-las.<br/><br/> Quando o site primário estiver a funcionar, pode fazer a reativação pós-falha para o site primário, quando este estiver disponível.
 
@@ -223,10 +222,10 @@ Existem alguns requisitos para a reativação pós-falha:
 
 ## <a name="next-steps"></a>Passos seguintes
 
-[Preparar para a implementação](site-recovery-best-practices.md)
+[Verificar pré-requisitos](site-recovery-prereq.md)
 
 
 
-<!--HONumber=Jan17_HO1-->
+<!--HONumber=Feb17_HO4-->
 
 

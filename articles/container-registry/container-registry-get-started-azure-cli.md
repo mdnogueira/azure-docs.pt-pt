@@ -1,6 +1,6 @@
 ---
 title: "Criar registo de contentores do Azure – CLI | Microsoft Docs"
-description: "Introdução à criação e gestão de registos de contentores do Azure com a CLI do Azure 2.0 (Pré-visualização)"
+description: "Introdução à criação e gestão de registos de contentores do Azure com o CLI do Azure 2.0"
 services: container-registry
 documentationcenter: 
 author: stevelas
@@ -17,12 +17,12 @@ ms.workload: na
 ms.date: 11/14/2016
 ms.author: stevelas
 translationtype: Human Translation
-ms.sourcegitcommit: f299cff22d00a1c765a32838647818d18f3df85d
-ms.openlocfilehash: bd2f3f5331eb83f09f5d187699a39c74be6282d5
+ms.sourcegitcommit: 2a381431acb6436ddd8e13c69b05423a33cd4fa6
+ms.openlocfilehash: 1d5e16952cbc56a381ead23843515cf6ed1d74a9
 
 ---
 # <a name="create-a-container-registry-using-the-azure-cli"></a>Criar um registo de contentores com a CLI do Azure
-Utilize os comandos da [CLI do Azure 2.0 (Pré-visualização)](https://github.com/Azure/azure-cli) para criar um registo de contentores e gerir as respetivas definições a partir do seu computador Linux, Mac ou Windows. Também pode criar e gerir registos de contentores com o [portal do Azure](container-registry-get-started-portal.md) ou programaticamente com a [API REST](https://go.microsoft.com/fwlink/p/?linkid=834376) do Registo de Contentores.
+Utilize os comandos da [CLI do Azure 2.0](https://github.com/Azure/azure-cli) para criar um registo de contentores e gerir as respetivas definições a partir do seu computador Linux, Mac ou Windows. Também pode criar e gerir registos de contentores com o [portal do Azure](container-registry-get-started-portal.md) ou programaticamente com a [API REST](https://go.microsoft.com/fwlink/p/?linkid=834376) do Registo de Contentores.
 
 
 * Para obter informações e conceitos, veja [What is Azure Container Registry? (O que é o Registo de Contentores do Azure?)](container-registry-intro.md)
@@ -34,9 +34,9 @@ Utilize os comandos da [CLI do Azure 2.0 (Pré-visualização)](https://github.c
 > 
 
 ## <a name="prerequisites"></a>Pré-requisitos
-* **CLI do Azure 2.0 (Pré-visualização)** - para instalar e começar a trabalhar com a CLI 2.0 (Pré-visualização), veja as [instruções de instalação](https://github.com/Azure/azure-cli/blob/master/README.rst). Execute `az login` para iniciar sessão na sua subscrição do Azure.
-* **Grupo de recursos** - crie um [grupo de recursos](../azure-resource-manager/resource-group-overview.md#resource-groups) antes de criar um registo de contentores ou utilize um grupo de recursos existente. Confirme que o grupo de recursos está numa localização na qual o serviço do Registo de Contentores esteja [disponível](https://azure.microsoft.com/regions/services/). Para criar um grupo de recursos com a CLI 2.0 (Pré-visualização), veja [os exemplos da CLI 2.0 (Pré-visualização)](https://github.com/Azure/azure-cli-samples/tree/master/arm). 
-* **Conta de armazenamento** (opcional) - crie uma [conta de armazenamento](../storage/storage-introduction.md) standard do Azure para colocar o registo de contentores na mesma localização. Se não especificar uma conta de armazenamento quando criar um registo com `az acr create`, o comando cria uma por si. Para criar uma conta de armazenamento com a CLI 2.0 (Pré-visualização), veja [os exemplos da CLI 2.0 (Pré-visualização)](https://github.com/Azure/azure-cli-samples/tree/master/storage).
+* **CLI do Azure 2.0** - para instalar e começar a trabalhar com a CLI 2.0, veja as [instruções de instalação](https://github.com/Azure/azure-cli/blob/master/README.rst). Execute `az login` para iniciar sessão na sua subscrição do Azure.
+* **Grupo de recursos** - crie um [grupo de recursos](../azure-resource-manager/resource-group-overview.md#resource-groups) antes de criar um registo de contentores ou utilize um grupo de recursos existente. Confirme que o grupo de recursos está numa localização na qual o serviço do Registo de Contentores esteja [disponível](https://azure.microsoft.com/regions/services/). Para criar um grupo de recursos com a CLI 2.0, veja [os exemplos da CLI 2.0](https://github.com/Azure/azure-cli-samples/tree/master/arm). 
+* **Conta de armazenamento** (opcional) - crie uma [conta de armazenamento](../storage/storage-introduction.md) standard do Azure para colocar o registo de contentores na mesma localização. Se não especificar uma conta de armazenamento quando criar um registo com `az acr create`, o comando cria uma por si. Para criar uma conta de armazenamento com a CLI 2.0, veja [os exemplos da CLI 2.0](https://github.com/Azure/azure-cli-samples/tree/master/storage).
 * **Principal de serviço** (opcional) - quando cria um registo com a CLI, este não está configurado para acesso, por predefinição. Consoante as suas necessidades, pode atribuir um principal de serviço existente do Azure Active Directory a um registo (ou criar e atribuir um novo) ou ativar a conta de utilizador administrador do registo. Veja as secções posteriores deste artigo. Para obter mais informações sobre o acesso ao registo, veja [Authenticate with a container registry (Autenticar num registo de contentores)](container-registry-authentication.md). 
 
 ## <a name="create-a-container-registry"></a>Criar um registo de contentores
@@ -66,7 +66,7 @@ Tome especial atenção:
 * `loginServer` - o nome completamente qualificado que especificou para [iniciar sessão no registo](container-registry-authentication.md). Neste exemplo, o nome é `myregistry-contoso.exp.azurecr.io` (em minúsculas).
 
 ## <a name="assign-a-service-principal"></a>Atribuir um principal de serviço
-Utilize os comandos da CLI 2.0 (Pré-visualização) para atribuir um principal de serviço do Azure Active Directory a um registo. É atribuída a função Proprietário ao principal de serviço destes exemplos, mas pode atribuir [outras funções](../active-directory/role-based-access-control-configure.md), se assim entender.
+Utilize os comandos da CLI 2.0 para atribuir um principal de serviço do Azure Active Directory a um registo. É atribuída a função Proprietário ao principal de serviço destes exemplos, mas pode atribuir [outras funções](../active-directory/role-based-access-control-configure.md), se assim entender.
 
 ### <a name="create-a-service-principal-and-assign-access-to-the-registry"></a>Criar um principal de serviço e atribuir acesso ao registo
 No comando seguinte, é atribuído a um principal de serviço novo o acesso de função Proprietário ao identificador do registo transmitido com o parâmetro `--scopes`. Especifique uma palavra-passe forte com o parâmetro `--password`.
@@ -131,6 +131,6 @@ az acr repository show-tags -n myRegistry --repository samples/nginx -o json
 
 
 
-<!--HONumber=Jan17_HO4-->
+<!--HONumber=Feb17_HO4-->
 
 

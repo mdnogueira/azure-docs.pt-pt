@@ -1,6 +1,6 @@
 ---
-title: "Introdução à Azure Search | Microsoft Docs"
-description: "Saiba como criar o seu primeiro índice do Azure Search com as instruções deste tutorial e os dados de exemplo do DocumentDB. Baseado no portal e sem código, este exercício utiliza o Assistente para Importar Dados."
+title: "Criar o seu primeiro índice do Azure Search no portal | Microsoft Docs"
+description: "No portal do Azure, utilize dados de exemplo predefinidos para gerar um índice. Explore a pesquisa em texto completo, filtros, facetas, a pesquisa difusa, a pesquisa geográfica e muito mais."
 services: search
 documentationcenter: 
 author: HeidiSteen
@@ -13,174 +13,170 @@ ms.devlang: na
 ms.workload: search
 ms.topic: hero-article
 ms.tgt_pltfrm: na
-ms.date: 10/03/2016
+ms.date: 02/15/2017
 ms.author: heidist
 translationtype: Human Translation
-ms.sourcegitcommit: 4fc33ba185122496661f7bc49d14f7522d6ee522
-ms.openlocfilehash: 02623fc3d663a674e2184380915d651dff5760bc
+ms.sourcegitcommit: cb0843ec739d11e997794a8217c95696c4e78d23
+ms.openlocfilehash: 70999d615038e7a5a11a623a9eef3e08c09f5eb9
 
 
 ---
-# <a name="get-started-with-azure-search-in-the-portal"></a>Introdução à Azure Search no portal
-Esta introdução sem código ajuda-o a trabalhar com a Pesquisa do Microsoft Azure utilizando as funcionalidades integradas diretamente no portal. 
+# <a name="build-and-query-your-first-azure-search-index-in-the-portal"></a>Criar e consultar o seu primeiro índice do Azure Search no portal
 
-O tutorial assume uma [base de dados de DocumentDB do Azure de exemplo](#apdx-sampledata) fácil de criar utilizando os nossos dados e instruções, mas também pode adaptar estes passos aos seus dados existentes no DocumentDB ou na Base de Dados SQL.
+No portal do Azure, comece com um conjunto de dados de exemplo predefinido para gerar rapidamente um índice com o assistente para **Importar dados**. Explore a pesquisa em texto completo, filtros, facetas, a pesquisa difusa e a pesquisa geográfica com o **Explorador de pesquisa**.  
 
-> [!NOTE]
-> Este Tutorial de introdução requer uma [Subscrição do Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F) e um [Serviço Azure Search](search-create-service-portal.md). 
-> 
-> 
+Nesta introdução isenta de código, vai começar com dados predefinidos, para que possa escrever consultas interessantes imediatamente. Embora as ferramentas do portal não substituam o código, são úteis para as tarefas seguintes:
+
++ Aprendizagem prática com esforço mínimo
++ Criar protótipos e índices antes de escrever código em **Importar dados**
++ Testar consultas e a sintaxe do analisador no **explorador de Pesquisa**
++ Ver um índice existente publicado no seu serviço e procurar os atributos do mesmo
+
+**Estimativa de tempo:** cerca de 15 minutos, mas pode demorar mais, se também for necessário fazer a inscrição na conta ou no serviço. 
+
+Em alternativa, pode ver uma demonstração de seis minutos dos passos deste tutorial a partir do terceiro minuto deste [vídeo de Descrição geral do Azure Search](https://channel9.msdn.com/Events/Connect/2016/138).
+
+## <a name="prerequisites"></a>Pré-requisitos
+
+Este tutorial parte do princípio de que existe uma [subscrição do Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F) e o [serviço Azure Search](search-create-service-portal.md). 
 
 ## <a name="find-your-service"></a>Encontrar o seu serviço
 1. Inicie sessão no [Portal do Azure](https://portal.azure.com).
-2. Abra o dashboard de serviço do seu serviço da Azure Search. Seguem-se algumas formas de localizar o dashboard.
+2. Abra o dashboard de serviço do seu serviço da Azure Search. Se não tiver afixado o mosaico do serviço ao dashboard, pode encontrar o seu serviço da seguinte forma: 
    
-   * Na barra de índice, clique em **Procurar serviços**. A barra lista todos os serviços aprovisionados na sua subscrição. Se tiver sido definido um serviço de pesquisa, verá **Serviços de pesquisa** na lista.
-   * Na barra de índice, clique em **Procurar** e, em seguida, digite "pesquisar" na caixa de pesquisa para produzir uma lista de todos os serviços de pesquisa criados nas suas subscrições.
+   * Na barra de atalhos, clique em **Mais serviços**, na parte inferior do painel de navegação à esquerda.
+   * Na caixa de pesquisa, escreva *pesquisa* para obter uma lista dos serviços de pesquisa da sua subscrição. O serviço deverá aparecer na lista. 
 
 ## <a name="check-for-space"></a>Verificar o espaço
-Muitos clientes começam com o serviço gratuito. Esta versão está limitada a três índices, três origens de dados e três indexadores. Certifique-se de que tem espaço para itens adicionais antes de começar. Estas instruções criam um de cada objeto.
+Muitos clientes começam com o serviço gratuito. Esta versão está limitada a três índices, três origens de dados e três indexadores. Certifique-se de que tem espaço para itens adicionais antes de começar. Este tutorial cria um objeto de cada. 
 
-## <a name="create-an-index-and-load-data"></a>Criar um índice e carregar dados
-As consultas de pesquisas iteram sobre um *índice* que contém dados pesquisáveis, metadados e construções utilizadas para otimizar determinados comportamentos de pesquisa. Como primeiro passo, defina e preencha um índice.
+> [!TIP] 
+> Os mosaicos no dashboard do serviço mostram quantos índices, indexadores e origens de dados já tem. O mosaico Indexador mostra indicadores de êxito e falha. Clique no mosaico para ver a contagem de indexadores. 
+>
+> ![Mosaicos para indexadores e origens de dados][1]
+>
 
-Existem várias formas de criar um índice. Se os seus dados estiverem num arquivo que a Azure Search possa pesquisar, tal como a Base de Dados SQL do Azure, o SQL Server num VM do Azure ou DocumentDB, pode criar e preencher um índice muito facilmente recorrendo a um *indexador*.
+## <a name="a-namecreate-indexa-create-an-index-and-load-data"></a><a name="create-index"></a> Criar um índice e carregar dados
+As consultas de pesquisas iteram sobre um *índice* que contém dados pesquisáveis, metadados e construções utilizadas para otimizar determinados comportamentos de pesquisa.
 
-Para manter esta tarefa com base no portal, utilizamos dados do DocumentDB que podem ser pesquisados com um indexador através do Assistente para **Importar Dados**. 
+Para manter esta tarefa baseada no portal, utilizamos um conjunto de dados de exemplo incorporado que pode ser pesquisado com um indexador através do Assistente para **Importar Dados**. 
 
-Antes de continuar, crie uma [base de dados do DocumentDB de exemplo](#apdx-sampledata) para utilizar com este tutorial e, em seguida, regresse a esta secção para concluir os passos abaixo.
-
-<a id="defineDS"></a>
-
-#### <a name="step-1-define-the-data-source"></a>Passo 1: Definir a origem de dados
+#### <a name="step-1-start-the-import-data-wizard"></a>Passo 1: Iniciar o assistente para Importar dados
 1. No seu dashboard do serviço Azure Search, clique em **Importar dados** na barra de comando para iniciar um assistente que cria e preenche um índice.
    
-    ![][7]
-2. No assistente, clique em **Origem de Dados** > **DocumentDB** > **Nome**, digite um nome para a origem de dados. Uma origem de dados é um objeto de ligação na Azure Search que pode ser utilizado com outros indexadores. Uma vez criada, esta fica disponível como uma "origem de dados existente" no seu serviço.
-3. Escolha a sua conta do DocumentDB existente, a base de dados e a coleção. Se estiver a utilizar os dados de exemplo que nós fornecemos, a sua definição da origem de dados terá este aspeto:
-   
-    ![][2]
+    ![Comando de importação de dados][2]
 
-Repare que estamos a ignorar a consulta. Isto deve-se ao facto de não estarmos a implementar um registo de alterações no nosso conjunto de dados. Se o seu conjunto de dados inclui um campo que monitoriza quando um registo é atualizado, pode configurar um indexador de Azure Search para utilizar o controlo de alterações para atualizações seletivas ao seu índice.
+2. No assistente, clique em **Origem de Dados** > **Exemplos** > **realestate-us-sample**. Esta origem de dados está pré-configurada com um nome, um tipo e informações da ligação. Depois de criada, torna-se uma “origem de dados existente”, que pode ser reutilizada noutras operações de importação.
 
-Clique em **OK** para concluir este passo do assistente.
+    ![Selecionar o conjunto de dados de exemplo][9]
+
+3. Clique em **OK** para utilizá-la.
 
 #### <a name="step-2-define-the-index"></a>Passo 2: Definir o índice
-Ainda no assistente, clique em **Índice** e observe a superfície do design utilizada para criar um índice da Azure Search. No mínimo, um índice necessita de um nome e uma coleção de campos, com um campo marcado como a chave do documento. Uma vez que estamos a utilizar um conjunto de dados DocumentDB, os campos são automaticamente detetados pelo assistente e o índice é pré-carregado com campos e atribuições do tipo de dados. 
+Geralmente, a tarefa de criação de um índice é manual e baseada em código, mas o assistente pode gerar um índice para qualquer origem de dados que consiga pesquisar. No mínimo, os índices precisam de um nome e de uma coleção de campos, com um campo marcado como a chave do documento para identificar exclusivamente cada documento.
 
-  ![][3]
-
-Embora os campos e os tipos de dados estejam configurados, é preciso atribuir os atributos. As caixas de verificação na parte superior da lista de campos são *atributos de índice* que controlam a forma como o campo é utilizado. 
+Os campos têm tipos de dados e atributos. As caixas de verificação na parte superior são *atributos de índice* que controlam a forma como o campo é utilizado. 
 
 * **Recuperável** significa que aparece na lista de resultados da pesquisa. Pode marcar campos individuais como inacessíveis para os resultados da pesquisa ao desmarcar esta caixa de verificação, por exemplo, quando os campos são utilizados apenas em expressões de filtro. 
 * **Filtrável**, **Ordenável** e **Facetável** determinam se um campo pode ser utilizado num filtro, uma ordenação ou uma estrutura de navegação de faceta. 
-* **Pesquisável** significa que um campo está incluído na pesquisa de texto completo. Por norma, as cadeias são pesquisáveis. Os campos numéricos e booleanos são frequentemente marcados como não pesquisáveis. 
+* **Pesquisável** significa que um campo está incluído na pesquisa de texto completo. As cadeias são pesquisáveis. Os campos numéricos e booleanos são frequentemente marcados como não pesquisáveis. 
 
-Antes de sair desta página, marque os campos no seu índice para utilizar as seguintes opções (Recuperável, Pesquisável e assim sucessivamente). A maioria dos campos são Recuperáveis. A maioria dos campos de cadeia são Pesquisáveis (não precisa de tornar a Chave pesquisável). Alguns campos, como género, orderableOnline, classificação e etiquetas, são também Filtráveis, Ordenáveis e Facetáveis. 
+Por predefinição, o assistente verifica a origem de dados relativamente a identificadores exclusivos como a base do campo de chaves. As cadeias são atribuídas como recuperáveis e pesquisáveis. Os números inteiros são atribuídos como recuperáveis, filtráveis, ordenáveis e facetáveis.
 
-| Campo | Tipo | Opções |
-| --- | --- | --- |
-| ID |Edm.String | |
-| albumTitle |Edm.String |Recuperável, Pesquisável |
-| albumUrl |Edm.String |Recuperável, Pesquisável |
-| género |Edm.String |Recuperável, Pesquisável, Filtrável, Ordenável, Facetável |
-| genreDescription |Edm.String |Recuperável, Pesquisável |
-| artistName |Edm.String |Recuperável, Pesquisável |
-| orderableOnline |Edm.Boolean |Recuperável, Filtrável, Ordenável, Facetável |
-| etiquetas |Coleção (Edm.String) |Recuperável, Filtrável, Facetável |
-| preço |Edm.Double |Recuperável, Filtrável, Facetável |
-| margem |Edm.Int32 | |
-| classificação |Edm.Int32 |Recuperável, Filtrável, Ordenável, Facetável |
-| inventário |Edm.Int32 |Recuperável |
-| lastUpdated |Edm.DateTimeOffset | |
+  ![Índice de realestate gerado][3]
 
-Como ponto de comparação, a seguinte captura de ecrã é uma ilustração de um índice compilado conforme as especificações na tabela anterior.
-
- ![][4]
-
-Clique em **OK** para concluir este passo do assistente.
+Clique em **OK** para criar o índice.
 
 #### <a name="step-3-define-the-indexer"></a>Passo 3: Definir o indexador
-Ainda no assistente para **Importar dados**, clique em **Indexador** > **Nome**, digite um nome para o indexador e utilize as predefinições para todos os outros valores. Este objeto define um processo executável. Depois de o ter criado, pode colocá-lo na agenda recorrente, mas, por agora, utilize a opção predefinida para executar o indexador uma vez, de imediato, quando clicar em **OK**. 
+Ainda no assistente para **Importar dados**, clique em **Indexador** > **Nome** e escreva um nome para o indexador. 
 
-As suas entradas de dados importados devem estar todas preenchidas e prontas a utilizar.
+Este objeto define um processo executável. Pode colocá-lo na agenda recorrente, mas, por agora, utilize a opção predefinida para executar o indexador uma vez, de imediato, quando clicar em **OK**.  
 
-  ![][5]
-
-Para executar o assistente, clique em **OK** para começar a importação e fechar o assistente.
+  ![indexador de realestate][8]
 
 ## <a name="check-progress"></a>Verificar progresso
-Para verificar o progresso, aceda ao dashboard do serviço, desloque-se para baixo e faça duplo clique no mosaico **Indexadores** para abrir a lista de indexadores. Deve ver o indexador que acabou de criar na lista, assim como o estado que indica "em curso" ou com êxito, juntamente com o número de documentos indexados numa Azure Search.
+Para monitorizar a importação de dados, regresse ao dashboard do serviço, desloque-se para baixo e faça duplo clique no mosaico **Indexadores**, para abrir a lista de indexadores. Deverá ver o indexador que acabou de criar na lista, com o estado a indicar “em curso” ou “êxito”, juntamente com o número de documentos indexados.
 
-  ![][6]
+   ![Mensagem de indexador em curso][4]
 
-## <a name="query-the-index"></a>Consultar o índice
-Tem agora um índice de pesquisa pronto para consulta. 
+## <a name="a-namequery-indexa-query-the-index"></a><a name="query-index"></a> Consultar o índice
+Tem agora um índice de pesquisa pronto para consulta. O **Explorador de pesquisa** é uma ferramenta de consulta incorporada no portal. Proporciona uma caixa de pesquisa, que lhe permite ver se os resultados da pesquisa são os esperados. 
 
-O **Explorador de pesquisa** é uma ferramenta de consulta incorporada no portal. Esta fornece uma caixa de pesquisa para que possa verificar se uma introdução de pesquisa devolve os dados esperados. 
+   ![Comando do Explorador de pesquisa][5]
+
+> [!TIP]
+> No [vídeo de Descrição Geral do Azure Search](https://channel9.msdn.com/Events/Connect/2016/138), os passos seguintes são demonstrados a partir dos 6m08 segundos.
+>
 
 1. Clique em **Explorador de pesquisa** na barra de comando.
-2. Tenha em atenção que o índice está ativo. Se não for aquele que acabou de criar, clique em **Alterar índice** na barra de comando para selecionar aquela que pretende.
-3. Deixe a caixa de pesquisa em branco e, em seguida, clique no botão **Pesquisar** para executar uma pesquisa com carateres universais, a qual devolve todos os documentos.
-4. Introduza algumas consultas de pesquisa em texto completo. Pode rever os resultados da sua pesquisa com carateres universais para se familiarizar com artistas, álbuns e géneros a consultar.
-5. Experimente outra sintaxe de consulta utilizando os [exemplos fornecidos no final deste artigo](https://msdn.microsoft.com/library/azure/dn798927.aspx) para ideias, modificar a sua consulta para utilizar cadeias de pesquisa que provavelmente encontrará no seu índice.
+
+2. Clique em **Alterar índice**, na barra de comandos, para mudar para *realestate-us-sample*.
+
+   ![Comandos de índice e de API][6]
+
+3. Clique em **Definir versão da API**, na barra de comandos, para ver que APIs REST estão disponíveis. As APIs de pré-visualização dão-lhe acesso a funcionalidades novas que ainda não foram lançadas geralmente. Utilize a versão disponível geralmente (2016-09-01), salvo indicação em contrário. 
+
+    > [!NOTE]
+    > A [API REST do Azure Search](https://docs.microsoft.com/rest/api/searchservice/search-documents) e a [Biblioteca .NET](search-howto-dotnet-sdk.md#core-scenarios) são totalmente equivalentes, mas o **Explorador de pesquisa** só está preparado para processar chamadas REST. Aceita sintaxes de [sintaxe de consultas simples](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search) e [ analisador de consultas de Lucene completo](https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search), bem como todos os parâmetros de pesquisa disponíveis em operações de [Pesquisar no Documento](https://docs.microsoft.com/rest/api/searchservice/search-documents).
+    > 
+    > O **Explorador de pesquisa** devolve resultados em JSON, que é verboso e difícil de ler se os documentos tiverem uma estrutura densa. Consoante os seus documentos, poderá ter de escrever código que processe os resultados de pesquisa, de modo a extrair elementos importantes.
+
+4. Na barra de pesquisa, introduza as cadeias de consulta abaixo e clique em **Pesquisar**.
+
+  ![Exemplo de consulta de pesquisa][7]
+
+**`search=seattle`** O parâmetro `search` é utilizado para introduzir uma pesquisa de palavras-chave; neste caso, devolve listas em King County, no estado norte-americano de Washington, que contenham Seattle em qualquer campo pesquisável do documento.
+
+**`search=seattle&facet=beds`** O parâmetro `facet` devolve uma estrutura de navegação que pode transmitir a um controlo de IU. Devolve categorias e uma contagem. Neste caso, as categorias são baseadas no número de quartos, com uma contagem dos documentos ou correspondências para cada uma. `"beds"` pode ser especificado como faceta, porque está marcado como um campo filtrável e facetável no índice e os valores nele contidos (numéricos, 1 a 5) são adequados para categorizar listas em grupos (listas com três quartos, quatro quartos).  O símbolo `&` é utilizado para acrescentar os parâmetros da pesquisa.
+
+**`search=seattle&filter=bed gt 3`** O parâmetro `filter` devolve resultados que correspondem aos critérios que indicou. Neste caso, quartos acima de 3. A sintaxe do filtro é uma construção OData. Para obter mais informações, veja [Filter OData syntax (Sintaxe de Filtros OData)](https://docs.microsoft.com/rest/api/searchservice/odata-expression-syntax-for-azure-search).
+
+**`search=granite countertops&highlight=description`** Os detetores de ocorrências acrescentam formatação aos textos que correspondam à palavra-chave, tendo em conta as correspondências encontradas num determinado campo. Se o termo da sua pesquisa estiver embrenhado numa descrição, pode adicionar o detetor de ocorrências para que seja mais fácil encontrá-lo. Neste caso, é mais fácil ver a expressão formatada `"granite countertops"` no campo da descrição.
+
+**`search=mice&highlight=description`** A Pesquisa em texto completo localiza formas de palavras com uma semântica parecida. Neste caso, os resultados da pesquisa contêm texto realçado para “rato”, para casas que tenham uma praga de ratos, em resposta a uma pesquisa de palavras-chave sobre “rato”. Podem aparecer nos resultados diferentes formas da mesma palavra, devido à análise linguística. O Azure Search suporta 56 analisadores do Lucene e da Microsoft. Por predefinição, o Azure Search utiliza o analisador padrão do Lucene. 
+
+**`search=samamish`** Palavras com erros ortográficos, como “samamish”para o planalto Samammish, na área de Seattle, não conseguem devolver correspondências em pesquisas típicas. Para processar erros ortográficos, pode utilizar a pesquisa difusa, descrita no exemplo seguinte.
+
+**`search=samamish~&queryType=full`** A pesquisa difusa é ativada quando especifica o símbolo `~` e utiliza o analisador de consultas completa, que interpreta e analisa corretamente a sintaxe `~`. Por predefinição, o analisador de consultas simples é utilizado porque é mais rápido, mas pode optar pelo analisador de consultas completo se precisar da pesquisa difusa, de expressões regulares, da pesquisa de proximidade ou de outros tipos de consultas avançadas. Para obter mais informações sobre os cenários de consultas que o analisador de consultas completo permite, veja [Lucene query syntax in Azure Search (Sintaxe de consultas do Lucene no Azure Search)](https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search).
+
+**`search=*`** As pesquisas em branco devolvem tudo. Pode utilizar uma pesquisa em branco para obter a contagem de documentos total no seu índice ou se quiser filtrar ou facetar o conjunto completo de documentos, conforme descrito a seguir.
+
+**`search=*&filter=geo.distance(location,geography'POINT(-122.13+47.64)')+le+10`** A pesquisa geoespacial é suportada através do [tipo de dados edm.GeographyPoint](https://docs.microsoft.com/rest/api/searchservice/supported-data-types) em campos que contenham coordenadas. Esta consulta filtra todos os resultados relativamente a dados posicionais, em que os resultados estejam a menos de dez quilómetros de distância de um determinado ponto (especificado como coordenadas de latitude e longitude). A pesquisa geográfica é um tipo de filtros especificado em [Filter OData syntax (Sintaxe de Filtros OData)](https://docs.microsoft.com/rest/api/searchservice/odata-expression-syntax-for-azure-search). 
+
+Normalmente, as expressões de filtro são especificadas como $filter com um caráter `$`. No Explorador de pesquisa, deve omitir `$`.
+
+A pesquisa geoespacial é útil se a sua aplicação de pesquisa tiver uma funcionalidade “encontrar perto de mim” ou utilizar a navegação por mapa. Contudo, não é uma pesquisa em texto completo. Se os seus utilizadores tiverem de pesquisar por nome de cidade ou país, adicione campos que contenham nomes de cidades ou países, para além de coordenadas.
 
 ## <a name="next-steps"></a>Passos seguintes
-Depois de executar o assistente uma vez, pode voltar atrás e ver ou modificar componentes individuais: índice, indexador ou origem de dados. Algumas edições, tal como a alteração do tipo de dados de campo, não são permitidas no índice, mas a maioria das propriedades e das definições são modificáveis. Para ver componentes individuais, clique nos mosaicos **Índice**, **Indexador** ou **Origens de Dados** no seu dashboard para apresentar uma lista de objetos existentes.
 
-Para obter mais informações sobre outras funcionalidades mencionadas neste artigo, visite estas ligações:
++ Modifique qualquer um dos objetos que acabou de criar. Depois de executar o assistente uma vez, pode voltar atrás e ver ou modificar componentes individuais: índice, indexador ou origem de dados. Algumas edições, tal como a alteração do tipo de dados de campo, não são permitidas no índice, mas a maioria das propriedades e das definições são modificáveis.
 
-* [Indexadores](search-indexer-overview.md)
-* [Criar Índice (inclui uma explicação detalhada dos atributos do índice)](https://msdn.microsoft.com/library/azure/dn798941.aspx)
+  Para ver componentes individuais, clique nos mosaicos **Índice**, **Indexador** ou **Origens de Dados** no seu dashboard para apresentar uma lista de objetos existentes. Para saber mais sobre as edições a índices que não exigem uma recompilação, veja [Update Index (Azure Search REST API) (Atualizar Índice [API REST do Azure Search])](https://docs.microsoft.com/rest/api/searchservice/update-index).
+
++ Experimente as ferramentas e os passos com outras origens de dados. O conjunto de dados de exemplo, `realestate-us-sample`, é de uma Base de Dados SQL do Azure que o Azure Search consegue pesquisar. Para além da Base de Dados SQL do Azure, o Azure Search consegue pesquisar o Armazenamento de Tabelas do Azure, o Armazenamento de Blobs do Azure, o SQL Server em VMs do Azure e o DocumentDB. O assistente suporta todas estas origens de dados. No código, pode utilizar um *indexador* para criar e preencher facilmente um índice.
+
++ Todas as outras origens de dados são suportadas através de um modelo push, no qual o código envia conjuntos de linhas novos e alterados em JSON para o seu índice. Para obter mais informações, veja [Add, update, or delete documents in Azure Search (Adicionar, atualizar ou eliminar documentos no Azure Search)](https://docs.microsoft.com/rest/api/searchservice/addupdate-or-delete-documents).
+
+Visite as ligações abaixo para saber mais sobre as outras funcionalidades mencionadas neste artigo:
+
+* [Descrição geral dos indexadores](search-indexer-overview.md)
+* [Criar Índice (inclui uma explicação detalhada dos atributos do índice)](https://docs.microsoft.com/rest/api/searchservice/create-index)
 * [Explorador de Procura](search-explorer.md)
-* [Procurar nos Documentos (inclui exemplos da sintaxe de consulta)](https://msdn.microsoft.com/library/azure/dn798927.aspx)
+* [Procurar nos Documentos (inclui exemplos da sintaxe de consulta)](https://docs.microsoft.com/rest/api/searchservice/search-documents)
 
-Pode tentar este mesmo fluxo de trabalho, utilizando o assistente para Importar dados para outras origens de dados, tal como a Base de Dados SQL do Azure ou do SQL Server em máquinas virtuais do Azure.
-
-> [!NOTE]
-> Foi recentemente comunicada a funcionalidade de suporte de indexadores para pesquisa do Blob Storage do Azure, contudo, esta função está em pré-visualização e ainda não é uma opção do portal. Para experimentar esse indexador, tem de escrever código. Consulte [Indexar o Blob Storage do Azure na Azure Search](search-howto-indexing-azure-blob-storage.md) para obter mais informações.
-> <a id="apdx-sampledata"></a>
-> 
-> 
-
-## <a name="appendix-create-sample-data-in-documentdb"></a>Apêndice: Criar dados de exemplo no DocumentDB
-Esta secção cria uma base de dados pequena no DocumentDB que pode ser utilizada para concluir as tarefas neste tutorial.
-
-As instruções seguintes dão-lhe orientações gerais, mas não são exaustivas. Se precisar de mais ajuda com as tarefas e a navegação do portal do DocumentDB, veja a documentação do DocumentDB, mas a maioria dos comandos de que precisa estão na barra de comandos de serviço, na parte superior do dashboard, ou no painel da base de dados. 
-
-  ![][1]
-
-### <a name="create-musicstoredb-for-this-tutorial"></a>Criar musicstoredb para este tutorial
-1. [Clique aqui](https://github.com/HeidiSteen/azure-search-get-started-sample-data) para transferir um ficheiro ZIP com os ficheiros de dados JSON da loja de música. Fornecemos 246 documentos JSON para este conjunto de dados.
-2. Adicione DocumentDB à sua subscrição e, em seguida, abra o dashboard de serviço.
-3. Clique em **Adicionar Base de Dados** para criar uma nova base de dados com um ID de `musicstoredb`. Esta aparece no mosaico da base de dados mais abaixo na página, depois de criada.
-4. Clique no nome da base de dados para abrir o painel da base de dados.
-5. Clique em **Adicionar Coleção** para criar uma coleção com um ID de `musicstorecoll`.
-6. Clique em **Explorador de Documentos**.
-7. Clique em **Carregar**.
-8. Em **Carregar Documento**, navegue até à pasta local que contém os ficheiros JSON que transferiu anteriormente. Selecione ficheiros JSON em lotes de 100 ou menos.
-   * 386.json
-   * 387.json
-   * . . .
-   * 486.json
-9. Repita para obter o lote seguinte de ficheiros até carregar o último, 669.json.
-10. Clique em **Explorador de Consulta** para verificar que os dados foram carregados de forma a cumprir os requisitos de carregamento do Explorador de Documentos.
-
-Uma forma fácil de o fazer consiste em utilizar a consulta predefinida, mas também pode modificar esta consulta para que selecione os 300 primeiros (este conjunto de dados tem menos de 300 itens).
-
-Deve regressar à saída JSON, começando pelo documento 386 e terminando no documento 669. Assim que os dados sejam carregados, pode [regressar aos passos destas instruções](#defineDS) para criar um índice utilizando o **Assistente para importar dados**.
 
 <!--Image references-->
-[1]: ./media/search-get-started-portal/AzureSearch-GetStart-Docdbmenu1.png
-[2]: ./media/search-get-started-portal/AzureSearch-GetStart-DataSource.png
-[3]: ./media/search-get-started-portal/AzureSearch-GetStart-DefaultIndex.png
-[4]: ./media/search-get-started-portal/AzureSearch-GetStart-FinishedIndex.png
-[5]: ./media/search-get-started-portal/AzureSearch-GetStart-ImportReady.png
-[6]: ./media/search-get-started-portal/AzureSearch-GetStart-IndexerList.png
-[7]: ./media/search-get-started-portal/search-data-import-wiz-btn.png
+[1]: ./media/search-get-started-portal/tiles-indexers-datasources2.png
+[2]: ./media/search-get-started-portal/import-data-cmd2.png
+[3]: ./media/search-get-started-portal/realestateindex2.png
+[4]: ./media/search-get-started-portal/indexers-inprogress2.png
+[5]: ./media/search-get-started-portal/search-explorer-cmd2.png
+[6]: ./media/search-get-started-portal/search-explorer-changeindex-se2.png
+[7]: ./media/search-get-started-portal/search-explorer-query2.png
+[8]: ./media/search-get-started-portal/realestate-indexer2.png
+[9]: ./media/search-get-started-portal/import-datasource-sample2.png
 
 
-
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Feb17_HO3-->
 
 

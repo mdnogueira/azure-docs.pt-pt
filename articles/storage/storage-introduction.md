@@ -12,11 +12,12 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 02/02/2017
+ms.date: 02/24/2017
 ms.author: marsma
 translationtype: Human Translation
-ms.sourcegitcommit: 8e11b36ee927724d4736f8a235aa97848ee2d271
-ms.openlocfilehash: d0647706ad18b3106de44496e43ea822896215ba
+ms.sourcegitcommit: f4b26aa9a4dd110eafb8f9f8d658cc0f530136ec
+ms.openlocfilehash: 4548d83525dba6024d1892950e3acbc6b857977a
+ms.lasthandoff: 02/27/2017
 
 
 ---
@@ -179,21 +180,21 @@ O serviço de Importação/Exportação do Azure fornece uma forma de importar o
 * [API REST dos Serviços de Armazenamento](http://msdn.microsoft.com/library/azure/dd179355.aspx)
 * [Biblioteca de Clientes de Armazenamento para o .NET, o Windows Phone e o Windows Runtime](https://www.nuget.org/packages/WindowsAzure.Storage/)
 * [Biblioteca de Clientes de Armazenamento para C++](https://github.com/Azure/azure-storage-cpp)
-* [Biblioteca de Clientes de Armazenamento do Azure para Java/Android](/develop/java/)
+* [Biblioteca de Clientes de Armazenamento do Azure para Java/Android](https://azure.microsoft.com/develop/java/)
 * [Biblioteca de Clientes de Armazenamento para Node.js](http://dl.windowsazure.com/nodestoragedocs/index.html)
-* [Biblioteca de Clientes de Armazenamento para PHP](/develop/php/)
-* [Biblioteca de Clientes de Armazenamento para Ruby](/develop/ruby/)
-* [Biblioteca de Clientes de Armazenamento para Python](/develop/python/)
+* [Biblioteca de Clientes de Armazenamento para PHP](https://azure.microsoft.com/develop/php/)
+* [Biblioteca de Clientes de Armazenamento para Ruby](https://azure.microsoft.com/develop/ruby/)
+* [Biblioteca de Clientes de Armazenamento para Python](https://azure.microsoft.com/develop/python/)
 * [Cmdlets de Armazenamento para o PowerShell 1.0](https://msdn.microsoft.com/library/azure/mt269418.aspx)
 
 ### <a name="azure-storage-management-services"></a>Serviços de gestão de Armazenamento do Azure
-* [Referência da API REST do Fornecedor de Recursos de Armazenamento](https://msdn.microsoft.com/library/azure/mt163683.aspx)
-* [Biblioteca de Clientes do Fornecedor de Recursos de Armazenamento para o .NET](https://msdn.microsoft.com/library/azure/mt131037.aspx)
-* [Cmdlets do Fornecedor de Recursos de Armazenamento para o PowerShell 1.0](https://msdn.microsoft.com/library/azure/mt607151.aspx)
+* [Referência da API REST do Fornecedor de Recursos de Armazenamento](/rest/api/storagerp/)
+* [Biblioteca de Clientes do Fornecedor de Recursos de Armazenamento para o .NET](/dotnet/api/microsoft.azure.management.storage)
+* [Cmdlets do Fornecedor de Recursos de Armazenamento para o PowerShell 1.0](/powershell/storage/)
 * [API REST da Gestão de Serviços de Armazenamento (Clássica)](https://msdn.microsoft.com/library/azure/ee460790.aspx)
 
 ### <a name="azure-storage-data-movement-services"></a>Serviços do movimento de dados do Armazenamento do Azure
-* [API REST do Serviço de Importação/Exportação de Armazenamento](https://msdn.microsoft.com/library/azure/dn529096.aspx)
+* [API REST do Serviço de Importação/Exportação de Armazenamento](storage-import-export-service.md)
 * [Biblioteca de Clientes do Movimento de Dados de Armazenamento para o .NET](https://www.nuget.org/packages/Microsoft.Azure.Storage.DataMovement/)
 
 ### <a name="tools-and-utilities"></a>Ferramentas e utilitários
@@ -248,9 +249,4 @@ Para saber mais sobre o Storage do Azure, explore estes recursos:
 * [Como utilizar o Armazenamento de tabelas do Python](storage-python-how-to-use-table-storage.md)
 * [Como utilizar o Armazenamento de filas do Python](storage-python-how-to-use-queue-storage.md)
 * [Como utilizar o Armazenamento de ficheiros do Python](storage-python-how-to-use-file-storage.md)
-
-
-
-<!--HONumber=Feb17_HO1-->
-
 

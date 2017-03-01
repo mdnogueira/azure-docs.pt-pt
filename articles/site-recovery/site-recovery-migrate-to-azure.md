@@ -15,18 +15,17 @@ ms.topic: get-started-article
 ms.date: 01/04/2017
 ms.author: raynew
 translationtype: Human Translation
-ms.sourcegitcommit: f82634af931a1e9a9646c5631ebd0e5923a0adcc
-ms.openlocfilehash: cbb6de4587871c40c9d4e97c9fb2a88eab4945a6
+ms.sourcegitcommit: 67b4861ac564565b2a36932ae15141a1e1f56035
+ms.openlocfilehash: 2fb457166b4ebe61c11173aa75bdcd2fbce3f03d
+ms.lasthandoff: 02/23/2017
 
 
 ---
-# <a name="migrate-to-azure-with-site-recovery"></a>Migrar para o Azure com o Site Recovery?
+# <a name="migrate-to-azure-with-site-recovery"></a>Migrar para o Azure com o Site Recovery
 
 Leia este artigo para obter uma descrição geral de como utilizar o serviço Azure Site Recovery para migrar máquinas virtuais e servidores físicos.
 
-As organizações necessitam de uma estratégia BCDR que determine como as aplicações, cargas de trabalho e dados continuam em execução e disponíveis durante o período de indisponibilidade planeado e imprevisto, e como retomar as condições de trabalho normais com a maior brevidade possível. A estratégia de BCDR deve manter os dados de negócio seguros e recuperáveis, e garantir que as cargas de trabalho continuam a estar continuamente disponíveis quando ocorrer um desastre.
-
-O Site Recovery é um serviço do Azure que contribui para a sua estratégia de BCDR (Continuidade de Negócio e Recuperação Após Desastre) através da orquestração da replicação dos servidores físicos no local e das máquinas virtuais para a cloud (Azure) ou para um datacenter secundário. Quando ocorrem falhas na sua localização principal, faz-se a ativação pós-falha para a localização secundária para manter disponíveis as aplicações e cargas de trabalho. A localização principal é reativada quando se retomam as operações normais. Saiba mais em [O que é a Recuperação de Sites?](site-recovery-overview.md)
+O Site Recovery é um serviço do Azure que contribui para a sua estratégia de BCDR (Continuidade de Negócio e Recuperação Após Desastre) através da orquestração da replicação dos servidores físicos no local e das máquinas virtuais para a cloud (Azure) ou para um datacenter secundário. Quando ocorrem falhas na sua localização principal, faz-se a ativação pós-falha para a localização secundária para manter disponíveis as aplicações e cargas de trabalho. A localização principal é reativada quando se retomam as operações normais. Saiba mais em [O que é a Recuperação de Sites?](site-recovery-overview.md) Também pode utilizar o Site Recovery para migrar as cargas de trabalho existentes no local para o Azure, para agilizar a sua viagem na cloud e beneficiar da matriz de funcionalidades que o Azure disponibiliza.
 
 Este artigo descreve a implementação no [portal do Azure](https://portal.azure.com). O [portal clássico do Azure](https://manage.windowsazure.com/) pode ser utilizado para manter cofres existentes do Site Recovery, mas não pode criar cofres novos.
 
@@ -35,7 +34,7 @@ Publique os seus comentários na parte inferior do artigo. Coloque questões té
 
 ## <a name="what-do-we-mean-by-migration"></a>O que queremos dizer com migração?
 
-Pode implementar o Site Recovery para replicação completa de VMs no local e de servidores físicos, para o Azure ou para um site secundário. Em caso de indisponibilidade do site primário, replica as máquinas, faz a reativação pós-falha a partir do site primário e, depois, faz a reativação pós-falha quando esta localização é recuperada. Além da replicação completa, pode utilizar o Site Recovery para migrar VMs e servidores físicos para o Azure, para que os utilizadores possam aceder à carga de trabalho da máquina a partir das VMs do Azure. A migração pressupõe a replicação e a ativação pós-falha do site primário para o Azure. No entanto, ao contrário da replicação completa, não inclui um mecanismo de reativação pós-falha.
+Pode implementar o Site Recovery para a replicação de VMs no local e os servidores físicos para o Azure ou para um site secundário. Pode replicar máquinas, efetuar a ativação pós-falha desde o site primário quando ocorrerem falhas e reativar a ativação pós-falha para o site primário quando recuperar. Além disto, pode utilizar o Site Recovery para migrar VMs e servidores físicos para o Azure, para que os utilizadores possam aceder às mesmas a partir das VMs do Azure. A migração pressupõe a replicação e a ativação pós-falha do site primário para o Azure, e um gesto de migração completo.
 
 ## <a name="what-can-site-recovery-migrate"></a>O que pode ser migrado com o Site Recovery?
 
@@ -49,7 +48,9 @@ Pode:
 
 Para migrar VMs de Hyper-V no local, VMs VMware e servidores físicos, são seguidos quase os mesmo passos que os utilizados na replicação normal. Configura um cofre dos Serviços de Recuperação, configura os servidores de gestão necessários (consoante o que pretende migrar), adiciona-os ao cofre e especifica as definições da replicação. Ativa a replicação nas máquinas que quer migrar e executa uma ativação pós-falha de teste rápida, para garantir que tudo está a trabalhar como deve ser.
 
-Depois de verificar se o seu ambiente de replicação está a funcionar, utiliza uma ativação pós-falha planeada ou não planeada, dependendo do que [é suportado](site-recovery-failover.md#failover-and-failback) no seu cenário. Para a migração, não precisa de consolidar uma ativação pós-falha nem de eliminar nada. Em vez disso, selecione a opção **Concluir Migração** em cada máquina que pretende migrar. A ação **Concluir Migração** conclui o processo de migração, remove a replicação da máquina e interrompe a faturação do Site Recovery da mesma.
+Depois de verificar se o seu ambiente de replicação está a funcionar, utiliza uma ativação pós-falha planeada ou não planeada, dependendo do que [é suportado](site-recovery-failover.md) no seu cenário. Para a migração, não precisa de consolidar uma ativação pós-falha. Em vez disso, selecione a opção **Concluir Migração** em cada máquina que pretende migrar. A ação **Concluir Migração** conclui o processo de migração, remove a replicação da máquina e interrompe a faturação do Site Recovery da mesma.
+
+![completemigration](./media/site-recovery-hyper-v-site-to-azure/migrate.png)
 
 ## <a name="migrate-between-azure-regions"></a>Migrar entre regiões do Azure
 
@@ -65,14 +66,8 @@ Pode migrar instâncias do AWS para VMs do Azure. Neste cenário, só a migraç�
 ## <a name="next-steps"></a>Passos seguintes
 
 - [Migrar VMs VMware para o Azure](site-recovery-vmware-to-azure.md)
-- [Migrar servidores físicos para o Azure](site-recovery-vmware-to-azure.md)
 - [Migrar VMs de Hyper-V em clouds do VMM para o Azure](site-recovery-vmm-to-azure.md)
 - [Migrar VMs de Hyper-V sem o VMM para o Azure](site-recovery-hyper-v-site-to-azure.md)
 - [Migrar VMs do Azure entre regiões do Azure](site-recovery-migrate-azure-to-azure.md)
 - [Migrar instâncias do AWS para o Azure](site-recovery-migrate-aws-to-azure.md)
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

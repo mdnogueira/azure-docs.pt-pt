@@ -4,7 +4,7 @@ description: "Saiba como criar, implementar e consumir uma aplicação API do AS
 services: app-service\api
 documentationcenter: .net
 author: tdykstra
-manager: wpickett
+manager: erikre
 editor: 
 ms.assetid: ddc028b2-cde0-4567-a6ee-32cb264a830a
 ms.service: app-service-api
@@ -17,6 +17,7 @@ ms.author: rachelap
 translationtype: Human Translation
 ms.sourcegitcommit: b1a633a86bd1b5997d5cbf66b16ec351f1043901
 ms.openlocfilehash: c7b4e39e01ae335c3e6a5cf9cb1efe8a64490e35
+ms.lasthandoff: 02/16/2017
 
 
 ---
@@ -438,10 +439,5 @@ Se pretender criar novos projetos de aplicação API do início, utilize o model
 ![Modelo Aplicação API no Visual Studio](./media/app-service-api-dotnet-get-started/apiapptemplate.png)
 
 O modelo do projeto **Aplicação API do Azure** é equivalente a escolher o modelo ASP.NET 4.5.2 **Empty**, clicando na caixa de verificação para adicionar suporte da API Web e instalar o pacote Swashbuckle NuGet. Além disso, o modelo adiciona algum código de configuração do Swashbuckle concebido para impedir a criação de IDs de operação do Swagger duplicadas. Depois de criar um projeto Aplicação API, pode implementá-lo numa aplicação API da mesma forma que vimos neste tutorial.
-
-
-
-
-<!--HONumber=Feb17_HO3-->
 
 
