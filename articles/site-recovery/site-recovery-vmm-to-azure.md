@@ -15,8 +15,9 @@ ms.topic: hero-article
 ms.date: 02/21/2017
 ms.author: raynew
 translationtype: Human Translation
-ms.sourcegitcommit: 89668033a5e9cf6b727992b7d221e49624fb3314
-ms.openlocfilehash: 448023b57d0beadc49e89d7dc22d324303700fa4
+ms.sourcegitcommit: dcd7836f1ef84bbf7f45f1a70da1e177d9913a36
+ms.openlocfilehash: 345e5516be0c4de56c0cb104b1a598cd964b41d2
+ms.lasthandoff: 02/22/2017
 
 
 ---
@@ -66,7 +67,7 @@ Eis o que precisa no ambiente no local
 ## <a name="protected-machine-prerequisites"></a>Pré-requisitos do computador protegido
 | **Pré-requisito** | **Detalhes** |
 | --- | --- |
-| **VMs protegidas** |Antes da ativação pós-falha numa VM, terá de certificar-se de que o nome que será atribuído à VM do Azure está em conformidade com os [Pré-requisitos do Azure](site-recovery-best-practices.md#azure-virtual-machine-requirements). Pode modificar o nome depois de ter ativado a replicação para a VM. <br/><br/> A capacidade de disco individual nas máquinas protegidas não deve ser superior a 1023 GB. Uma VM pode ter até 64 discos (portanto, 64 TB).<br/><br/> Os clusters de disco partilhado convidado não são suportados.<br/><br/> Não é suportada a interface UEFI (Unified Extensible Firmware Interface), nem o arranque da interface EFI (Extensible Firmware Interface) <br/><br/> Se a VM de origem tem o agrupamento NIC, este é convertido para um único NIC após a ativação pós-falha para o Azure.<br/><br/>Não é suportada a proteção de VMs Hyper-V que executam Linux com um endereço IP estático. |
+| **VMs protegidas** |Antes da ativação pós-falha numa VM, terá de certificar-se de que o nome que será atribuído à VM do Azure está em conformidade com os [Pré-requisitos do Azure](site-recovery-support-matrix-to-azure.md#failed-over-azure-vm-requirements). Pode modificar o nome depois de ter ativado a replicação para a VM. <br/><br/> A capacidade de disco individual nas máquinas protegidas não deve ser superior a 1023 GB. Uma VM pode ter até 64 discos (portanto, 64 TB).<br/><br/> Os clusters de disco partilhado convidado não são suportados.<br/><br/> Não é suportada a interface UEFI (Unified Extensible Firmware Interface), nem o arranque da interface EFI (Extensible Firmware Interface) <br/><br/> Se a VM de origem tem o agrupamento NIC, este é convertido para um único NIC após a ativação pós-falha para o Azure.<br/><br/>Não é suportada a proteção de VMs Hyper-V que executam Linux com um endereço IP estático. |
 
 ## <a name="prepare-for-deployment"></a>Preparar para a implementação
 Para se preparar para a implementação, é necessário:
@@ -260,7 +261,7 @@ Especifique a conta de armazenamento do Azure a ser utilizada para replicação 
 
 ### <a name="configure-network-mapping"></a>Configurar o mapeamento da rede
 
-* [Leia](#prepare-for-network-mapping) para obter uma rápida descrição geral do que faz o mapeamento da rede.
+* [Leia](#prepare-for-network-mapping) uma rápida descrição geral do que faz o mapeamento da rede.
 * Confirme que as máquinas virtuais no servidor VMM estão ligadas a uma rede de VM e que criou, pelo menos, uma rede virtual do Azure. Várias redes VM podem ser mapeadas para uma única rede Azure.
 
 Configure o mapeamento da seguinte forma:
@@ -359,7 +360,8 @@ Agora, ative a replicação da seguinte forma:
 6. Em **Máquinas Virtuais** > **Selecionar máquinas virtuais**, clique e selecione cada máquina que pretende replicar. Só pode selecionar máquinas para as quais a replicação pode ser ativada. Em seguida, clique em **OK**.
 
     ![Ativar a replicação](./media/site-recovery-vmm-to-azure/enable-replication5.png)
-7. Em **Propriedades** > **Configurar propriedades**, selecione o sistema operativo para as VMs selecionadas e o disco do sistema operativo. Por predefinição são selecionados todos os discos da VM para replicação. Deverá excluir disco(s) da replicação para reduzir o consumo de largura de banda, ao replicar dados desnecessários para o Azure. Por exemplo, não deverá replicar discos com dados temporários, ou dados que são atualizados sempre que uma máquina ou aplicação reinicia (por exemplo, pagefile.sys ou Microsoft SQL Server tempdbr). Pode impedir que o disco seja replicado ao desmarcá-lo. Certifique-se de que o nome da VM do Azure (nome de destino) está em conformidade com os [requisitos da máquina virtual do Azure](site-recovery-best-practices.md#azure-virtual-machine-requirements) e modifique-o se for necessário. Em seguida, clique em **OK**. Pode definir as propriedades adicionais mais tarde.
+
+7. Em **Propriedades** > **Configurar propriedades**, selecione o sistema operativo para as VMs selecionadas e o disco do sistema operativo. Por predefinição são selecionados todos os discos da VM para replicação. Deverá excluir disco(s) da replicação para reduzir o consumo de largura de banda, ao replicar dados desnecessários para o Azure. Por exemplo, não deverá replicar discos com dados temporários, ou dados que são atualizados sempre que uma máquina ou aplicação reinicia (por exemplo, pagefile.sys ou Microsoft SQL Server tempdbr). Pode impedir que o disco seja replicado ao desmarcá-lo. Certifique-se de que o nome da VM do Azure (nome de destino) está em conformidade com os [requisitos da máquina virtual do Azure](site-recovery-support-matrix-to-azure.md#failed-over-azure-vm-requirements) e modifique-o se for necessário. Em seguida, clique em **OK**. Pode definir as propriedades adicionais mais tarde.
 
     ![Ativar a replicação](./media/site-recovery-vmm-to-azure/enable-replication6-with-exclude-disk.png)
 
@@ -380,7 +382,7 @@ Agora, ative a replicação da seguinte forma:
 Pode controlar o progresso da tarefa **Ativar Proteção** em **Definições** > **Tarefas** > **Tarefas da Recuperação de Sites**. Depois de a tarefa **Finalizar Proteção** ser executada, a máquina está preparada para ativação pós-falha.
 
 ### <a name="view-and-manage-vm-properties"></a>Ver e gerir propriedades da VM
-Recomendamos que verifique as propriedades da máquina de origem. Lembre-se de que o nome da VM do Azure deve estar em conformidade com os [Requisitos de máquina virtual do Azure](site-recovery-best-practices.md#azure-virtual-machine-requirements).
+Recomendamos que verifique as propriedades da máquina de origem. Lembre-se de que o nome da VM do Azure deve estar em conformidade com os [Requisitos de máquina virtual do Azure](site-recovery-support-matrix-to-azure.md#failed-over-azure-vm-requirements).
 
 1. Clique em **Definições** > **Itens Protegidos** > **Itens Replicados** e selecione a máquina para ver os respetivos detalhes.
 
@@ -388,7 +390,7 @@ Recomendamos que verifique as propriedades da máquina de origem. Lembre-se de q
 2. Em **Propriedades**, pode ver as informações de replicação e de ativação pós-falha da VM.
 
     ![Ativar a replicação](./media/site-recovery-vmm-to-azure/test-failover2.png)
-3. Em **Computação e Rede** > **Propriedades de computação**, pode especificar o nome e o tamanho do destino da VM do Azure. Altere o nome para estar em conformidade com os [Requisitos do Azure](site-recovery-best-practices.md#azure-virtual-machine-requirements), se necessário. Também pode ver e modificar as informações sobre a rede de destino, a sub-rede e o endereço IP atribuído à VM do Azure.
+3. Em **Computação e Rede** > **Propriedades de computação**, pode especificar o nome e o tamanho do destino da VM do Azure. Altere o nome para estar em conformidade com os [Requisitos do Azure](site-recovery-support-matrix-to-azure.md#failed-over-azure-vm-requirements), se necessário. Também pode ver e modificar as informações sobre a rede de destino, a sub-rede e o endereço IP atribuído à VM do Azure.
 Tenha em atenção que:
 
    * Pode definir o endereço IP de destino. Se não fornecer um endereço, a máquina na ativação pós-falha utilizará o DHCP. Se definir um endereço que não está disponível na ativação pós-falha, a ativação falhará. O mesmo endereço IP de destino pode ser utilizado para ativação pós-falha de teste se o endereço está disponível na rede de ativação pós-falha de teste.
@@ -457,9 +459,4 @@ Veja como pode monitorizar as definições de configuração, o estado e o estad
 
 ## <a name="next-steps"></a>Passos seguintes
 Depois da implementação estar instalada e em execução, [saiba mais](site-recovery-failover.md) sobre os diferentes tipos de ativação pós-falha.
-
-
-
-<!--HONumber=Feb17_HO4-->
-
 

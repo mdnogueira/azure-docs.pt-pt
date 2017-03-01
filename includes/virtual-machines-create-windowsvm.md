@@ -16,7 +16,7 @@ O painel Noções Básicas solicita as informações administrativas para a máq
 
 2. Introduza um **Nome de utilizador** e uma **Palavra-passe** forte que são utilizados para criar uma conta local na VM. A conta local é utilizada para iniciar sessão e gerir a VM. No exemplo, _azureuser_ é o nome de utilizador.
 
- A palavra-passe tem de ter entre 8 e 123 carateres e cumprir três dos quatro requisitos de complexidade seguintes: um caráter em letra minúscula, um caráter em letra maiúscula, um número e um caráter especial. Saiba mais sobre os [requisitos de nomes de utilizador e palavras-passe](../articles/virtual-machines.md/virtual-machines-windows-faq).
+ A palavra-passe tem de ter entre 8 e 123 carateres e cumprir três dos quatro requisitos de complexidade seguintes: um caráter em letra minúscula, um caráter em letra maiúscula, um número e um caráter especial. Saiba mais sobre os [requisitos de nomes de utilizador e palavras-passe](../articles/virtual-machines/virtual-machines-windows-faq.md).
 
 3. A **Subscrição** é opcional. Uma definição comum é "Pay As You Go".
 
@@ -51,15 +51,6 @@ O painel Resumo lista as definições especificadas nos painéis anteriores. Cli
 
  ![O painel Resumo comunica as definições especificadas da máquina virtual](./media/virtual-machines-common-portal-create-fqdn/summary-blade-classic.png)
 
-<!--  deleted 2/16/2017 - RABixby
-  * A virtual machine's size affects the cost of using it, as well as configuration options such as how many data disks you can attach. For more information, see [Sizes for virtual machines](../articles/virtual-machines/virtual-machines-windows-sizes.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
-  -->
-
 Depois da máquina virtual ser criada, o portal lista a nova máquina virtual em **Todos os recursos** e apresenta um mosaico da máquina virtual no dashboard. A conta de armazenamento e o serviço cloud correspondentes também são criados e listados. A máquina virtual e o serviço cloud são iniciados automaticamente e o estado listado como **Em execução**.
 
  ![Configure o Agente da VM e os pontos finais da máquina virtual](./media/virtual-machines-common-portal-create-fqdn/portal-with-new-vm.png)
-
-
-<!--HONumber=Feb17_HO3-->
-
-

@@ -4,7 +4,7 @@ description: "Saiba como utilizar o Azure Mobile Engagement com notificações p
 services: mobile-engagement
 documentationcenter: windows
 author: piyushjo
-manager: dwrede
+manager: erikre
 editor: 
 ms.assetid: aa34692f-87f7-47c6-a20c-a1972750bc25
 ms.service: mobile-engagement
@@ -15,8 +15,9 @@ ms.topic: hero-article
 ms.date: 08/19/2016
 ms.author: piyushjo
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: fc6f97db04ae9dc547beb5a1fa3ee0c8c61885a6
+ms.sourcegitcommit: 06e16033435ed0a37d5688055743875827d3aec2
+ms.openlocfilehash: 3f1f8d74eb2f562991b351cae87c372897644cf8
+ms.lasthandoff: 02/28/2017
 
 
 ---
@@ -41,10 +42,10 @@ Para este tutorial, necessita do seguinte:
 > 
 > 
 
-## <a name="a-idsetupazmeasetup-mobile-engagement-for-your-windows-phone-app"></a><a id="setup-azme"></a>Configurar o Mobile Engagement para a sua aplicação para Windows Phone
+## <a name="a-idsetup-azmeasetup-mobile-engagement-for-your-windows-phone-app"></a><a id="setup-azme"></a>Configurar o Mobile Engagement para a sua aplicação para Windows Phone
 [!INCLUDE [Create Mobile Engagement App in Portal](../../includes/mobile-engagement-create-app-in-portal-new.md)]
 
-## <a name="a-idconnectingappaconnect-your-app-to-the-mobile-engagement-backend"></a><a id="connecting-app"></a>Ligar a aplicação ao back-end do Mobile Engagement
+## <a name="a-idconnecting-appaconnect-your-app-to-the-mobile-engagement-backend"></a><a id="connecting-app"></a>Ligar a aplicação ao back-end do Mobile Engagement
 Este tutorial apresenta uma “integração básica”, o conjunto mínimo necessário para recolher dados e enviar uma notificação push. É possível encontrar toda a documentação da integração na página [Integração do Windows Phone SDK do Mobile Engagement](mobile-engagement-windows-phone-sdk-overview.md).
 
 Iremos criar uma aplicação básica com o Visual Studio para demonstrar a integração.
@@ -91,7 +92,7 @@ Criou uma nova aplicação do Windows Phone Silverlight na qual vamos integrar o
                EngagementAgent.Instance.OnActivated(e);
             }
 
-## <a name="a-idmonitoraenable-realtime-monitoring"></a><a id="monitor"></a>Ativar a monitorização em tempo real
+## <a name="a-idmonitoraenable-real-time-monitoring"></a><a id="monitor"></a>Ativar a monitorização em tempo real
 Para iniciar o envio de dados e garantir que os utilizadores estão ativos, terá de enviar, pelo menos, um ecrã (Atividade) para o back-end do Mobile Engagement.
 
 1. No MainPage.xaml.cs, adicione a instrução `using`:
@@ -108,10 +109,10 @@ Para iniciar o envio de dados e garantir que os utilizadores estão ativos, ter�
    
     b. Substitua `phone:PhoneApplicationPage` no nome da etiqueta XML por `engagement:EngagementPage`.
 
-## <a name="a-idmonitoraconnect-app-with-realtime-monitoring"></a><a id="monitor"></a>Ligar a aplicação com a monitorização em tempo real
+## <a name="a-idmonitoraconnect-app-with-real-time-monitoring"></a><a id="monitor"></a>Ligar a aplicação com a monitorização em tempo real
 [!INCLUDE [Connect app with real-time monitoring](../../includes/mobile-engagement-connect-app-with-monitor.md)]
 
-## <a name="a-idintegratepushaenable-push-notifications-and-inapp-messaging"></a><a id="integrate-push"></a>Ativar as notificações push e mensagens na aplicação
+## <a name="a-idintegrate-pushaenable-push-notifications-and-in-app-messaging"></a><a id="integrate-push"></a>Ativar as notificações push e mensagens na aplicação
 O Mobile Engagement permite interagir e alcançar os seus utilizadores com Notificações Push e Mensagens na aplicação no contexto das campanhas. Este módulo é designado ALCANCE no portal do Mobile Engagement.
 As secções seguintes configuram a aplicação para as receber.
 
@@ -150,7 +151,7 @@ Agora deverá ver uma notificação no seu dispositivo que irá aparecer como um
 
 <!-- URLs. -->
 [MicrosoftAzure.MobileEngagement]: http://go.microsoft.com/?linkid=9874664
-[Documentação do Windows Phone SDK do Mobile Engagement]: ../mobile-engagement-windows-phone-integrate-engagement/
+[Mobile Engagement Windows Phone SDK documentation]: ../mobile-engagement-windows-phone-integrate-engagement/
 
 <!-- Images. -->
 [1]: ./media/mobile-engagement-windows-phone-get-started/project-properties.png
@@ -158,9 +159,4 @@ Agora deverá ver uma notificação no seu dispositivo que irá aparecer como um
 [3]: ./media/mobile-engagement-windows-phone-get-started/add-connection-string.png
 [5]: ./media/mobile-engagement-windows-phone-get-started/reach-capabilities.png
 [6]: ./media/mobile-engagement-windows-phone-get-started/push-screenshot.png
-
-
-
-<!--HONumber=Nov16_HO2-->
-
 

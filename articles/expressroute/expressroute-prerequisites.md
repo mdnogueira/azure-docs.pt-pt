@@ -15,8 +15,9 @@ ms.workload: infrastructure-services
 ms.date: 1/6/2017
 ms.author: cherylmc
 translationtype: Human Translation
-ms.sourcegitcommit: 409f22dcc352aae1af9100bb7a30120ea861009b
-ms.openlocfilehash: c38e324c68d382f74a6140952b7900afd509d319
+ms.sourcegitcommit: 1cb57e5156dab976599ddfa9a58f26ca8ef1ee0e
+ms.openlocfilehash: 304acc7d2bfdefffde700ecd469b6335b08b85e6
+ms.lasthandoff: 02/22/2017
 
 
 ---
@@ -30,7 +31,7 @@ Para ligar a serviços cloud da Microsoft com o ExpressRoute, terá de verificar
 * Uma subscrição ativa do Office 365 (se utilizar os serviços do Office 365). Para obter mais informações, consulte a secção [Requisitos específicos do Office 365](#office-365-specific-requirements) deste artigo.
 
 ## <a name="connectivity-provider"></a>Fornecedor de conectividade
-* Pode trabalhar com um [Parceiro de conectividade do ExpressRoute](expressroute-locations.md#partners) para se ligar à nuvem da Microsoft. Pode configurar uma ligação entre a sua rede no local e a Microsoft de [três modos](expressroute-introduction.md#howtoconnect). 
+* Pode trabalhar com um [Parceiro de conectividade do ExpressRoute](expressroute-locations.md#partners) para se ligar à nuvem da Microsoft. Pode configurar uma ligação entre a sua rede no local e a Microsoft de [três modos](expressroute-introduction.md). 
 * Se o seu fornecedor não for um parceiro de conectividade do ExpressRoute, ainda pode ligar-se à nuvem da Microsoft através de um [fornecedor do Exchange na nuvem](expressroute-locations.md#nonpartners).
 
 ## <a name="network-requirements"></a>Requisitos da rede
@@ -64,10 +65,5 @@ Se planear ativar o CRM Online no ExpressRoute, reveja os seguintes documentos p
   * [Crie um circuito do ExpressRoute](expressroute-howto-circuit-classic.md)
   * [Configure o encaminhamento](expressroute-howto-routing-classic.md)
   * [Ligar uma VNet a um circuito do ExpressRoute](expressroute-howto-linkvnet-classic.md)
-
-
-
-
-<!--HONumber=Feb17_HO1-->
 
 

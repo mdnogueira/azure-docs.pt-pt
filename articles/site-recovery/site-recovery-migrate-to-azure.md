@@ -15,8 +15,9 @@ ms.topic: get-started-article
 ms.date: 01/04/2017
 ms.author: raynew
 translationtype: Human Translation
-ms.sourcegitcommit: 3396818cd177330b7123f3a346b1591a4bcb1e4e
-ms.openlocfilehash: f0edea9c1509b0eb4b2590019610ccc9eb9d5f55
+ms.sourcegitcommit: 67b4861ac564565b2a36932ae15141a1e1f56035
+ms.openlocfilehash: 2fb457166b4ebe61c11173aa75bdcd2fbce3f03d
+ms.lasthandoff: 02/23/2017
 
 
 ---
@@ -47,7 +48,7 @@ Pode:
 
 Para migrar VMs de Hyper-V no local, VMs VMware e servidores físicos, são seguidos quase os mesmo passos que os utilizados na replicação normal. Configura um cofre dos Serviços de Recuperação, configura os servidores de gestão necessários (consoante o que pretende migrar), adiciona-os ao cofre e especifica as definições da replicação. Ativa a replicação nas máquinas que quer migrar e executa uma ativação pós-falha de teste rápida, para garantir que tudo está a trabalhar como deve ser.
 
-Depois de verificar se o seu ambiente de replicação está a funcionar, utiliza uma ativação pós-falha planeada ou não planeada, dependendo do que [é suportado](site-recovery-failover.md#failover-and-failback) no seu cenário. Para a migração, não precisa de consolidar uma ativação pós-falha. Em vez disso, selecione a opção **Concluir Migração** em cada máquina que pretende migrar. A ação **Concluir Migração** conclui o processo de migração, remove a replicação da máquina e interrompe a faturação do Site Recovery da mesma.
+Depois de verificar se o seu ambiente de replicação está a funcionar, utiliza uma ativação pós-falha planeada ou não planeada, dependendo do que [é suportado](site-recovery-failover.md) no seu cenário. Para a migração, não precisa de consolidar uma ativação pós-falha. Em vez disso, selecione a opção **Concluir Migração** em cada máquina que pretende migrar. A ação **Concluir Migração** conclui o processo de migração, remove a replicação da máquina e interrompe a faturação do Site Recovery da mesma.
 
 ![completemigration](./media/site-recovery-hyper-v-site-to-azure/migrate.png)
 
@@ -69,9 +70,4 @@ Pode migrar instâncias do AWS para VMs do Azure. Neste cenário, só a migraç�
 - [Migrar VMs de Hyper-V sem o VMM para o Azure](site-recovery-hyper-v-site-to-azure.md)
 - [Migrar VMs do Azure entre regiões do Azure](site-recovery-migrate-azure-to-azure.md)
 - [Migrar instâncias do AWS para o Azure](site-recovery-migrate-aws-to-azure.md)
-
-
-
-<!--HONumber=Feb17_HO4-->
-
 
