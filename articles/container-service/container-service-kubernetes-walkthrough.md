@@ -19,6 +19,7 @@ ms.author: anhowe
 translationtype: Human Translation
 ms.sourcegitcommit: 2a381431acb6436ddd8e13c69b05423a33cd4fa6
 ms.openlocfilehash: 1742a6d4d99b81509564696e6faaf9e6fbf8f604
+ms.lasthandoff: 02/22/2017
 
 
 ---
@@ -81,7 +82,7 @@ az acs kubernetes install-cli
 Depois de o `kubectl` estar instalado, execute o comando seguinte para transferir a configuração de cluster do Kubernetes principal para o ficheiro ~/.kube/config:
 
 ```console
-az acs kubernetes get-credentials --resource-group=$RESOURCE_GROUP --name=$SERVICE_NAME
+az acs kubernetes get-credentials --resource-group=$RESOURCE_GROUP --name=$CLUSTER_NAME
 ```
 
 Neste momento, deve estar pronto para aceder ao cluster a partir do seu computador. Tente executar:
@@ -176,9 +177,4 @@ Para fazer mais com o seu cluster do Kubernetes, veja os seguintes recursos:
 * [Bootcamp do Kubernetes](https://katacoda.com/embed/kubernetes-bootcamp/1/) – Mostra como implementar, dimensionar, atualizar e depurar aplicações em contentores.
 * [Guia de Utilizador do Kubernetes](http://kubernetes.io/docs/user-guide/) – Fornece informações sobre como executar programas num cluster do Kubernetes existente.
 * [Exemplos do Kubernetes](https://github.com/kubernetes/kubernetes/tree/master/examples) – Fornece exemplos sobre como executar aplicações reais com o Kubernetes.
-
-
-
-<!--HONumber=Feb17_HO4-->
-
 

@@ -19,6 +19,7 @@ ms.author: rogardle
 translationtype: Human Translation
 ms.sourcegitcommit: 2a381431acb6436ddd8e13c69b05423a33cd4fa6
 ms.openlocfilehash: 45d399b72f8d037fb828d9ad22bbd3543847feb3
+ms.lasthandoff: 02/22/2017
 
 
 ---
@@ -125,7 +126,7 @@ A primeira coisa que faz quando cria um túnel SSH no Linux ou OS X é localiza
     **PATH_TO_PRIVATE_KEY** [OPCIONAL] é o caminho para a chave privada que corresponde à chave pública que indicou quando criou o cluster. Utilize esta opção com o sinalizador `-i`.
 
     ```bash
-    ssh -fNL PORT:localhost:PORT -p 2200 [USERNAME]@[DNSPREFIX]mgmt.[REGION].cloudapp.azure.com 
+    ssh -fNL LOCAL_PORT:localhost:REMOTE_PORT -p 2200 [USERNAME]@[DNSPREFIX]mgmt.[REGION].cloudapp.azure.com 
     ```
     > [!NOTE]
     > A porta de ligação SSH é 2200 e não a porta 22 padrão. Em cluster com mais de uma VM principal, esta é a porta de ligação para a primeira VM principal.
@@ -214,10 +215,5 @@ Implementar e gerir contentores no seu cluster:
 * [Trabalhar com o Azure Container Service e o Kubernetes](container-service-kubernetes-ui.md)
 * [Trabalhar com o Azure Container Service e o DC/OS](container-service-mesos-marathon-rest.md)
 * [Trabalhar com o Azure Container Service e o Docker Swarm](container-service-docker-swarm.md)
-
-
-
-
-<!--HONumber=Feb17_HO4-->
 
 
