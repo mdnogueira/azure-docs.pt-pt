@@ -6,11 +6,11 @@
 
 ## [Criar uma zona DNS](dns-getstarted-create-dnszone-portal.md)
 ### [PowerShell](dns-getstarted-create-dnszone.md)
-### [CLI](dns-getstarted-create-dnszone-cli.md)
+### [CLI do Azure](dns-getstarted-create-dnszone-cli.md)
 
 ## [Criar registos DNS](dns-getstarted-create-recordset-portal.md)
 ### [PowerShell](dns-getstarted-create-recordset.md)
-### [CLI](dns-getstarted-create-recordset-cli.md)
+### [CLI do Azure](dns-getstarted-create-recordset-cli.md)
 
 ## [Delegar o domínio no DNS do Azure](dns-domain-delegation.md)
 ## [Criar registos DNS personalizados para uma aplicação web](dns-web-sites-custom-domain.md)
@@ -19,14 +19,15 @@
 
 ## Gerir zonas DNS
 ### [PowerShell](dns-operations-dnszones.md)
-### [CLI](dns-operations-dnszones-cli.md)
+### [CLI do Azure](dns-operations-dnszones-cli.md)
+
 
 ## [Gerir registos DNS](dns-operations-recordsets-portal.md)
 ### [PowerShell](dns-operations-recordsets.md)
-### [CLI](dns-operations-recordsets-cli.md)
+### [CLI do Azure](dns-operations-recordsets-cli.md)
 
 ## [Gerir registos DNS inversos](dns-reverse-dns-record-operations-ps.md)
-### [CLI](dns-reverse-dns-record-operations-cli.md)
+### [CLI do Azure](dns-reverse-dns-record-operations-cli.md)
 ### [PowerShell](dns-reverse-dns-record-operations-classic-ps.md)
 
 ## [Importar e exportar um ficheiro de zona DNS](dns-import-export.md)
@@ -39,7 +40,7 @@
 
 # Referência
 ## [PowerShell](/powershell/resourcemanager/azurerm.dns/v2.3.0/azurerm.dns)
-## [CLI 2.0 do Azure (Pré-visualização)](/cli/azure/network/dns)
+## [CLI do Azure](/cli/azure/network/dns)
 ## [.NET](/dotnet/api/microsoft.azure.management.dns.models)
 ## [Java](/java/api/com.microsoft.azure.management.dns)
 ## [Node.js](http://azure.github.io/azure-sdk-for-node/azure-arm-dns/latest/)
@@ -60,8 +61,3 @@
 ## [Preços](https://azure.microsoft.com/pricing/details/dns/)
 ## [Fórum do MSDN](https://social.msdn.microsoft.com/Forums/en-US/home?forum=WAVirtualMachinesVirtualNetwork)
 ## [Blogue das redes](http://azure.microsoft.com/blog/topics/networking)
-
-
-<!--HONumber=Feb17_HO3-->
-
-

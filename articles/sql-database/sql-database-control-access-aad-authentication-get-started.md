@@ -17,13 +17,13 @@ ms.topic: hero-article
 ms.date: 01/17/2017
 ms.author: carlrab
 translationtype: Human Translation
-ms.sourcegitcommit: 4ef415b7c0e7079da9930ecc6d8375dfc5a3c0a9
-ms.openlocfilehash: f3c8b487f23b5d1642de90d795eb2b41bfdb674d
+ms.sourcegitcommit: 7d061c083b23de823d373c30f93cccfe1c856ba3
+ms.openlocfilehash: 8a6dc7d3dca80782a55e13b53180b1542b61544b
 
 
 ---
-# <a name="sql-database-tutorial-aad-authentication-logins-and-user-accounts-database-roles-permissions-server-level-firewall-rules-and-database-level-firewall-rules"></a>Tutorial da Base de Dados SQL: autenticação do AAD, inícios de sessão e contas de utilizador, funções de base de dados, permissões, regras de firewall ao nível do servidor e regras de firewall ao nível da base de dados)
-Neste tutorial de introdução, vai aprender a utilizar o SQL Server Management Studio para trabalhar com a autenticação do Azure Active Directory e com inícios de sessão, utilizadores e funções de base de dados que concedem acesso e permissões aos servidores e bases de dados da Base de Dados SQL do Azure. Vai aprender a:
+# <a name="azure-ad-authentication-access-and-database-level-firewall-rules"></a>Autenticação, acesso e regras de firewall ao nível da base de dados do Azure AD
+Neste tutorial, vai aprender a utilizar o SQL Server Management Studio para trabalhar com a autenticação do Azure Active Directory e com inícios de sessão, utilizadores e funções de base de dados que concedem acesso e permissões aos servidores e bases de dados da Base de Dados SQL do Azure. Vai aprender a:
 
 - Ver permissões de utilizador na base de dados mestra e em bases de dados de utilizador
 - Criar inícios de sessão e utilizadores com base na autenticação do Azure Active Directory
@@ -36,17 +36,17 @@ Neste tutorial de introdução, vai aprender a utilizar o SQL Server Management 
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* Precisa de uma conta do Azure. Pode [abrir uma conta do Azure gratuita](/pricing/free-trial/?WT.mc_id=A261C142F) ou [Ativar as vantagens de subscritor do Visual Studio](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F). 
+* Precisa de uma conta do Azure. Pode [abrir uma conta do Azure gratuita](https://azure.microsoft.com/free/) ou [Ativar as vantagens de subscritor do Visual Studio](https://azure.microsoft.com/pricing/member-offers/msdn-benefits/). 
 
 * Tem de conseguir ligar ao portal do Azure com uma conta que seja membro do proprietário da subscrição ou da função de contribuinte. Para obter mais informações sobre o controlo de acesso baseado em funções (RBAC), veja o artigo [Introdução à gestão de acesso no portal do Azure](../active-directory/role-based-access-control-what-is.md).
 
 * Concluiu a [Introdução aos servidores, bases de dados e regras de firewall da Base de Dados SQL do Azure através do portal do Azure e do SQL Server Management Studio](sql-database-get-started.md) ou a [versão do PowerShell](sql-database-get-started-powershell.md) equivalente deste tutorial. Se não, conclua este tutorial de pré-requisitos ou execute o script do PowerShell no final da [versão do PowerShell](sql-database-get-started-powershell.md) do tutorial antes de continuar.
 
    > [!NOTE]
-   > A conclusão do tutorial relacionado para a autenticação do SQL Server, [SQL Database tutorial: SQL authentication, logins and user accounts, database roles, permissions, server-level firewall rules, and database-level firewall rules (Tutorial da Base de Dados SQL: autenticação do SQL, inícios de sessão e contas de utilizador, funções de base de dados, permissões, regras de firewall ao nível do servidor e regras de firewall ao nível da base de dados)](sql-database-control-access-sql-authentication-get-started.md). Os procedimentos deste tutorial relativos às firewalls ao nível do servidor e da base de dados não são necessários, caso tenha concluído este tutorial relacionado nos mesmos computadores (com os mesmos endereços IP) e, por esse motivo, estão assinalados como opcionais. Além disso, as capturas de ecrã do tutorial partem do princípio de que concluiu este tutorial relacionado. 
+   > A conclusão do tutorial relacionado para a autenticação do SQL Server, [SQL authentication, logins and user accounts, database roles, permissions, server-level firewall rules, and database-level firewall rules (Autenticação do SQL, inícios de sessão e contas de utilizador, funções de base de dados, permissões, regras de firewall ao nível do servidor e regras de firewall ao nível da base de dados)](sql-database-control-access-sql-authentication-get-started.md). Os procedimentos deste tutorial relativos às firewalls ao nível do servidor e da base de dados não são necessários, caso tenha concluído este tutorial relacionado nos mesmos computadores (com os mesmos endereços IP) e, por esse motivo, estão assinalados como opcionais. Além disso, as capturas de ecrã do tutorial partem do princípio de que concluiu este tutorial relacionado. 
    >
 
-* Criou e preencheu um Azure Active Directory. Para obter mais informações, veja [Integrar as identidades no local ao Azure Active Directory](../active-directory/active-directory-aadconnect.md), [Adicionar o seu próprio nome de domínio ao Azure AD](../active-directory/active-directory-add-domain.md), [Microsoft Azure now supports federation with Windows Server Active Directory (O Microsoft Azure suporta agora a federação com o Windows Server Active Directory](https://azure.microsoft.com/blog/2012/11/28/windows-azure-now-supports-federation-with-windows-server-active-directory/), [Administrar o seu diretório do Azure AD](https://msdn.microsoft.com/library/azure/hh967611.aspx), [Manage Azure AD using Windows PowerShell (Gerir o Azure AD com o Windows PowerShell](https://msdn.microsoft.com/library/azure/jj151815.aspx) e [Hybrid Identity Required Ports and Protocols (Portas e Protocolos Necessários para a Identidade Híbrida)](../active-directory/active-directory-aadconnect-ports.md).
+* Criou e preencheu um Azure Active Directory. Para obter mais informações, veja [Integrating your on-premises identities with Azure Active Directory (Integrar as identidades no local ao Azure Active Directory)](../active-directory/active-directory-aadconnect.md), [Add your own domain name to Azure AD (Adicionar o seu próprio nome de domínio ao Azure AD)](../active-directory/active-directory-add-domain.md), [Microsoft Azure now supports federation with Windows Server Active Directory (O Microsoft Azure suporta agora a federação com o Windows Server Active Directory)](https://azure.microsoft.com/blog/2012/11/28/windows-azure-now-supports-federation-with-windows-server-active-directory/), [Administering your Azure AD directory (Administrar o seu diretório do Azure AD)](https://msdn.microsoft.com/library/azure/hh967611.aspx), [Manage Azure AD using Windows PowerShell (Gerir o Azure AD com o Windows PowerShell)](https://msdn.microsoft.com/library/azure/jj151815.aspx) e [Hybrid Identity Required Ports and Protocols (Portas e Protocolos Necessários para a Identidade Híbrida)](../active-directory/active-directory-aadconnect-ports.md).
 
 > [!NOTE]
 > Este tutorial ajuda-o a aprender os conteúdos dos tópicos de aprendizagem seguintes: [Acesso e controlo à Base de Dados SQL](sql-database-control-access.md), [Inícios de sessão, utilizadores e funções de base de dados](sql-database-manage-logins.md), [Principals (Principais)](https://msdn.microsoft.com/library/ms181127.aspx), [Database roles (Funções de base de dados)](https://msdn.microsoft.com/library/ms189121.aspx), [Regras de firewall da Base de Dados SQL](sql-database-firewall-configure.md) e [Azure Active Directory authentication (Autenticação do Azure Active Directory)](sql-database-aad-authentication.md). 
@@ -85,7 +85,7 @@ Nesta secção do tutorial, vai ver informações sobre a configuração de segu
    ![Guardar a conta de administrador do AAD selecionada](./media/sql-database-control-access-aad-authentication-get-started/aad_admin_save.png)
 
 > [!NOTE]
-> Para rever as informações da ligação deste servidor, aceda a [Ver ou atualizar definições do servidor](sql-database-view-update-server-settings.md). Nesta série de tutoriais, o nome do servidor completamente qualificado é “sqldbtutorialserver.database.windows.net”.
+> Para rever as informações da ligação deste servidor, aceda a [Gerir servidores](sql-database-manage-servers-portal.md). Nesta série de tutoriais, o nome do servidor completamente qualificado é “sqldbtutorialserver.database.windows.net”.
 >
 
 ## <a name="connect-to-sql-server-using-sql-server-management-studio-ssms"></a>Ligar ao servidor SQL através do SQL Server Management Studio (SSMS)
@@ -256,7 +256,7 @@ Nesta secção do tutorial, vai criar uma conta de utilizador na base de dados A
 ## <a name="create-a-database-level-firewall-rule-for-adventureworkslt-database-users"></a>Criar uma regra de firewall ao nível da base de dados para utilizadores da base de dados AdventureWorksLT
 
 > [!NOTE]
-> Não tem de concluir este procedimento se tiver concluído o procedimento equivalente no tutorial relacionado para a autenticação do SQL Server, [SQL Database tutorial: SQL authentication, logins and user accounts, database roles, permissions, server-level firewall rules, and database-level firewall rules (Tutorial da Base de Dados SQL: autenticação do SQL, inícios de sessão e contas de utilizador, funções de base de dados, permissões, regras de firewall ao nível do servidor e regras de firewall ao nível da base de dados)](sql-database-control-access-sql-authentication-get-started.md), e se estiver a aprender no mesmo computador com o mesmo endereço IP.
+> Não tem de concluir este procedimento se concluiu o procedimento equivalente no tutorial relacionado para a autenticação do SQL Server [Autenticação e autorização do SQL](sql-database-control-access-sql-authentication-get-started.md) e está a aprender a utilizar o mesmo computador com o mesmo endereço IP.
 >
 
 Nesta secção do tutorial, vai tentar iniciar sessão com a conta de utilizador nova num computador com um endereço IP diferente, criar uma regra de firewall ao nível da base de dados como o Administrador do servidor e, depois, iniciar sessão com êxito com esta nova regra de firewall ao nível da base de dados. 
@@ -317,6 +317,6 @@ Nesta secção do tutorial, vai tentar iniciar sessão com a conta de utilizador
 
 
 
-<!--HONumber=Jan17_HO2-->
+<!--HONumber=Feb17_HO3-->
 
 

@@ -4,7 +4,7 @@ description: "Este artigo destina-se a ajudá-lo a saber como utilizar esta solu
 services: operations-management-suite
 documentationcenter: 
 author: MGoedtel
-manager: jwhit
+manager: carmonm
 editor: 
 ms.assetid: e33ce6f9-d9b0-4a03-b94e-8ddedcc595d2
 ms.service: operations-management-suite
@@ -12,11 +12,11 @@ ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 12/06/2016
+ms.date: 02/21/2017
 ms.author: magoedte
 translationtype: Human Translation
-ms.sourcegitcommit: 705bbd78970c6e3c20ef7214704194f722da09a6
-ms.openlocfilehash: 0f00d5a3b8116864d9e66c18d535f319b31b9f9c
+ms.sourcegitcommit: ca1e8b9ef8c7543c2b21441c761b0c309d22f202
+ms.openlocfilehash: e148fbe6e27eef747ad757fea4be038d3b662f87
 
 
 ---
@@ -24,6 +24,8 @@ ms.openlocfilehash: 0f00d5a3b8116864d9e66c18d535f319b31b9f9c
 A solução de Gestão de Atualizações no OMS permite-lhe gerir atualizações para os seus computadores Windows e Linux.  Pode rapidamente avaliar o estado das atualizações disponíveis em todos os computadores agente e iniciar o processo de instalação de atualizações necessárias para os servidores. 
 
 ## <a name="prerequisites"></a>Pré-requisitos
+* A solução suporta apenas a realização de avaliações de atualização do Windows Server 2008 e versões posteriores, e implementações de atualizações no Windows Server 2012 e versões posteriores.  Não são suportadas opções de instalação Server Core e Nano Server.
+* Não são suportados os sistemas operativos cliente.  
 * Os agentes do Windows têm de ser configurados para comunicar com um Windows Server Update Services (WSUS) ou de ter acesso ao Microsoft Update.  
   
   > [!NOTE]
@@ -104,7 +106,9 @@ Clique no mosaico **Gestão de Atualizações** para abrir o dashboard **Gestão
 ## <a name="installing-updates"></a>Instalar as atualizações
 Depois de terem sido avaliadas as atualizações para todos os computadores Windows no seu ambiente, pode instar as atualizações necessárias ao criar uma *Implementação de Atualização*.  Uma implementação de atualização é uma instalação agendada de atualizações necessárias num ou mais computadores Windows.  Especifique a data e a hora da implementação, bem como um computador ou grupo de computadores que devem ser incluídos.  
 
-As atualizações são instaladas por runbooks na Automatização do Azure.  Atualmente, não pode ver estes runbooks, que não requerem nenhuma configuração.  Quando é criada uma Implementação de Atualização, é criada uma agenda que inicia um runbook de atualização principal num momento especificado nos computadores incluídos.  Este runbook principal inicia um runbook subordinado em cada agente do Windows que efetua a instalação das atualizações necessárias.  
+As atualizações são instaladas por runbooks na Automatização do Azure.  Não pode ver estes runbooks, que não requerem nenhuma configuração.  Quando é criada uma Implementação de Atualização, é criada uma agenda que inicia um runbook de atualização principal num momento especificado nos computadores incluídos.  Este runbook principal inicia um runbook subordinado em cada agente do Windows que efetua a instalação das atualizações necessárias.  
+
+Para máquinas virtuais criadas a partir de imagens de Red Hat Enterprise Linux (RHEL) a pedido disponíveis no Azure Marketplace, estão registadas para aceder à [Infraestrutura de Atualização do Red Hat (RHUI)](../virtual-machines/virtual-machines-linux-update-infrastructure-redhat.md) implementada no Azure.  Qualquer outra distribuição de Linux tem de ser atualizada a partir do repositório de ficheiros online distros, de acordo com os respetivos métodos suportados.  
 
 ### <a name="viewing-update-deployments"></a>Ver as implementações de atualizações
 Clique no mosaico **Implementação de Atualização** para ver a lista de implementações de atualizações existentes.  Estão agrupadas por estado – **Agendada**, **Em Execução** e **Concluída**.<br><br> ![Página de Agenda de Implementações de Atualizações](./media/oms-solution-update-management/update-updatedeployment-schedule-page.png)<br>  
@@ -247,6 +251,6 @@ A tabela seguinte disponibiliza pesquisas de registos de exemplo para registos d
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Feb17_HO3-->
 
 

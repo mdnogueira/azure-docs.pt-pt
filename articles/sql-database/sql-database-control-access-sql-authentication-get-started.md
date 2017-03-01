@@ -14,40 +14,44 @@ ms.workload: data-management
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: hero-article
-ms.date: 01/17/2017
+ms.date: 02/17/2017
 ms.author: carlrab
 translationtype: Human Translation
-ms.sourcegitcommit: 356cc4c6d8e25d36880e4b12bf471326e61990c3
-ms.openlocfilehash: 275a33567fa1472573bc8abc87948ad306e853f0
+ms.sourcegitcommit: c70b3b23fa95af6614c34bd951943f0559409220
+ms.openlocfilehash: cf43790c329ef156ae17579d2281c861533ec201
 
 
 ---
-# <a name="sql-database-tutorial-sql-server-authentication-logins-and-user-accounts-database-roles-permissions-server-level-firewall-rules-and-database-level-firewall-rules"></a>Tutorial da Base de Dados SQL: autenticação do SQL Server, inícios de sessão e contas de utilizador, funções de base de dados, permissões, regras de firewall ao nível do servidor e regras de firewall ao nível da base de dados)
-Neste tutorial de introdução, vai aprender a utilizar o SQL Server Management Studio para trabalhar com a autenticação do SQL Server e com inícios de sessão, utilizadores e funções de base de dados que concedem acesso e permissões aos servidores e bases de dados da Base de Dados SQL do Azure. Vai aprender a:
+# <a name="sql-server-authentication-access-and-database-level-firewall-rules"></a>Autenticação do SQL Server, acesso e regras de firewall ao nível da base de dados
 
-- Ver permissões de utilizador na base de dados mestra e em bases de dados de utilizador
+Neste tutorial, vai aprender a utilizar o SQL Server Management Studio para trabalhar com a autenticação do SQL Server e com inícios de sessão, utilizadores e funções de base de dados que concedem acesso e permissões aos servidores e bases de dados da Base de Dados SQL do Azure. Depois de concluir este tutorial, ficará a saber como:
+
 - Criar inícios de sessão e utilizadores com base na autenticação do SQL Server
-- Conceder permissões ao nível de todo o servidor e específicas para bases de dados aos utilizadores
-- Iniciar sessão numa base de dados de utilizador como utilizador não administrador
-- Criar regras de firewall ao nível da base de dados para utilizadores de bases de dados
-- Criar regras de firewall ao nível do servidor para administradores do servidor
+- Adicionar utilizadores a funções e conceder permissões a funções
+- Utilizar T-SQL para criar uma regra de firewall ao nível da base de dados e ao nível do servidor 
+- Utilizar o SSMS para se ligar como um utilizador específico a uma base de dados específica
+- Ver permissões de utilizador na base de dados mestra e em bases de dados de utilizador
 
 **Estimativa de tempo**: a conclusão deste tutorial demora, aproximadamente, 45 minutos (partindo do princípio de que já cumpriu os pré-requisitos).
 
-## <a name="prerequisites"></a>Pré-requisitos
-
-* Precisa de uma conta do Azure. Pode [abrir uma conta do Azure gratuita](/pricing/free-trial/?WT.mc_id=A261C142F) ou [Ativar as vantagens de subscritor do Visual Studio](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F). 
-
-* Tem de conseguir ligar ao portal do Azure com uma conta que seja membro do proprietário da subscrição ou da função de contribuinte. Para obter mais informações sobre o controlo de acesso baseado em funções (RBAC), veja o artigo [Introdução à gestão de acesso no portal do Azure](../active-directory/role-based-access-control-what-is.md).
-
-* Concluiu a [Introdução aos servidores, bases de dados e regras de firewall da Base de Dados SQL do Azure através do portal do Azure e do SQL Server Management Studio](sql-database-get-started.md) ou a [versão do PowerShell](sql-database-get-started-powershell.md) equivalente deste tutorial. Se não, conclua este tutorial de pré-requisitos ou execute o script do PowerShell no final da [versão do PowerShell](sql-database-get-started-powershell.md) do tutorial antes de continuar.
-
 > [!NOTE]
-> Este tutorial ajuda-o a aprender os conteúdos dos tópicos de aprendizagem seguintes: [Acesso e controlo à Base de Dados SQL](sql-database-control-access.md), [Inícios de sessão, utilizadores e funções de base de dados](sql-database-manage-logins.md), [Principais](https://msdn.microsoft.com/library/ms181127.aspx), [Database roles (Funções de base de dados)](https://msdn.microsoft.com/library/ms189121.aspx) e [Regras de firewall da Base de Dados SQL](sql-database-firewall-configure.md).
+> Este tutorial ajuda-o a aprender os conteúdos dos tópicos seguintes: [Acesso e controlo à Base de Dados SQL](sql-database-control-access.md), [Inícios de sessão, utilizadores e funções de base de dados](sql-database-manage-logins.md), [Principals (Principais)](https://msdn.microsoft.com/library/ms181127.aspx), [Database roles (Funções de base de dados)](https://msdn.microsoft.com/library/ms189121.aspx) e [Regras de firewall da Base de Dados SQL](sql-database-firewall-configure.md). Para obter um tutorial sobre a autenticação do Azure Active Directory, veja [Introdução à autenticação do Azure AD](sql-database-control-access-aad-authentication-get-started.md).
 >  
 
+## <a name="prerequisites"></a>Pré-requisitos
+
+* **Uma conta do Azure**. Precisa de uma conta do Azure. Pode [abrir uma conta do Azure gratuita](https://azure.microsoft.com/free/) ou [Ativar as vantagens de subscritor do Visual Studio](https://azure.microsoft.com/pricing/member-offers/msdn-benefits/). 
+
+* **Permissões de criação do Azure**. Tem de conseguir ligar ao portal do Azure com uma conta que seja membro do proprietário da subscrição ou da função de contribuinte. Para obter mais informações sobre o controlo de acesso baseado em funções (RBAC), veja o artigo [Introdução à gestão de acesso no portal do Azure](../active-directory/role-based-access-control-what-is.md).
+
+* **SQL Server Management Studio**. Pode transferir e instalar a versão mais recente do SQL Server Management Studio (SSMS) em [Download SQL Server Management Studio (Transferir o SQL Server Management Studio)](https://msdn.microsoft.com/library/mt238290.aspx). Utilize sempre a versão mais recente do SSMS quando ligar à Base de Dados SQL do Azure, uma vez que são continuamente lançadas capacidades novas.
+
+* **Concluir o tutorial de base**. Concluiu a [Introdução aos servidores, bases de dados e regras de firewall da Base de Dados SQL do Azure através do portal do Azure e do SQL Server Management Studio](sql-database-get-started.md) ou a [versão do PowerShell](sql-database-get-started-powershell.md) equivalente deste tutorial. Se não, conclua este tutorial de pré-requisitos ou execute o script do PowerShell no final da [versão do PowerShell](sql-database-get-started-powershell.md) do tutorial antes de continuar.
+
+
+
 ## <a name="sign-in-to-the-azure-portal-using-your-azure-account"></a>Iniciar sessão no portal do Azure com a sua conta do Azure
-Com a [subscrição existente](https://account.windowsazure.com/Home/Index), siga estes passos para se ligar ao portal do Azure.
+Os passos deste procedimento mostram-lhe como ligar ao portal do Azure com a sua conta do Azure](https://account.windowsazure.com/Home/Index).
 
 1. Abra o browser da sua preferência e ligue-se ao [Portal do Azure](https://portal.azure.com/).
 2. Inicie sessão no [Portal do Azure](https://portal.azure.com/).
@@ -58,53 +62,46 @@ Com a [subscrição existente](https://account.windowsazure.com/Home/Index), sig
 
 <a name="create-logical-server-bk"></a>
 
-## <a name="view-information-about-the-security-configuration-for-your-logical-server"></a>Ver informações sobre a configuração de segurança do servidor lógico
+## <a name="view-logical-server-security-information-in-the-azure-portal"></a>Ver informações de segurança do servidor lógico no portal do Azure
 
-Nesta secção do tutorial, vai ver informações sobre a configuração de segurança do seu servidor lógico no portal do Azure.
+Os passos deste procedimento mostram-lhe como ver informações sobre a configuração de segurança do seu servidor lógico no portal do Azure.
 
-1. Abra o painel **SQL Server** do servidor lógico e veja as informações na página **Descrição geral**.
+1. Abra o painel **SQL Server** do seu servidor e veja as informações na página **Descrição geral**.
 
    ![Conta de administrador do servidor no portal do Azure](./media/sql-database-control-access-sql-authentication-get-started/sql_admin_portal.png)
 
-2. Aponte o nome da Conta de administrador do servidor do servidor lógico. Se não se lembrar da palavra-passe, clique em **Repor palavra-passe** para definir uma nova.
+2. Tome nota do nome do administrador do servidor do seu servidor lógico. 
 
-> [!NOTE]
-> Para rever as informações da ligação deste servidor, aceda a [Ver ou atualizar definições do servidor](sql-database-view-update-server-settings.md). Nesta série de tutoriais, o nome do servidor completamente qualificado é “sqldbtutorialserver.database.windows.net”.
->
+3. Se não se lembrar da palavra-passe, clique em **Repor palavra-passe** para definir uma nova.
 
-## <a name="connect-to-sql-server-using-sql-server-management-studio-ssms"></a>Ligar ao servidor SQL através do SQL Server Management Studio (SSMS)
+4. Se precisar de obter as informações de ligação deste servidor, clique em **Propriedades**.
 
-1. Se ainda não o fez, transfira e instale a versão mais recente do SSMS em [Transferir o SQL Server Management Studio](https://msdn.microsoft.com/library/mt238290.aspx). Para se manter atualizado, a versão mais recente do SSMS avisa-o quando existe uma nova versão disponível para transferência.
+## <a name="view-server-admin-permissions-using-ssms"></a>Ver permissões de administrador de servidor com o SSMS
 
-2. Após a instalação, escreva **Microsoft SQL Server Management Studio** na caixa de pesquisa do Windows e clique em **Enter** para abrir o SSMS.
+Os passos deste procedimento mostram-lhe como ver as informações da conta de administrador do servidor e as respetivas permissões na base de dados mestra e em bases de dados de utilizador.
 
-   ![SQL Server Management Studio](./media/sql-database-get-started/ssms.png)
-
-3. Na caixa de diálogo **Ligar ao Servidor**, introduza as informações necessárias para ligar ao seu servidor SQL através da Autenticação do SQL Server e da Conta de administrador do servidor.
+1. Abra o SQL Server Management Studio e utilize a Autenticação do SQL Server e a Conta de administrador do servidor para ligar ao servidor como o administrador do servidor.
 
    ![ligar ao servidor](./media/sql-database-get-started/connect-to-server.png)
 
-4. Clique em **Ligar**.
+2. Clique em **Ligar**.
 
    ![ligado ao servidor](./media/sql-database-get-started/connected-to-server.png)
 
-## <a name="view-the-server-admin-account-and-its-permissions"></a>Ver a Conta de administrador do servidor e as respetivas permissões 
-Nesta secção do tutorial, vai ver as informações da conta de administrador do servidor e as respetivas permissões na base de dados mestra e em bases de dados de utilizador.
-
-1. No Object Explorer, expanda **Segurança** e **Inícios de sessão** para ver os inícios de sessão existentes para o seu servidor da Base de Dados SQL do Azure. Repare que é apresentado um início de sessão para a Conta de administrador de servidor especificada durante o aprovisionamento - o início de sessão sqladmin desta série de tutoriais.
+3. No Object Explorer, expanda **Segurança** e **Inícios de Sessão** para ver os inícios de sessão atuais do seu servidor. O único início de sessão em servidores novos é o da conta de administrador do servidor.
 
    ![Início de sessão de administrador do servidor](./media/sql-database-control-access-sql-authentication-get-started/server_admin_login.png)
 
-2. No Object Explorer, expanda a opção **Bases de Dados**, **Bases de Dados do Sistema**, **mestra**, **Segurança** e, por fim, **Utilizadores**. Observe que foi criada uma conta de utilizador na base de dados mestra para o Início de sessão de administrador do servidor, sendo o nome da conta de utilizador o mesmo do início de sessão (os nomes não têm de ser iguais, mas é uma melhor prática, para evitar confusões).
+4. No Object Explorer, expanda **Bases de dados**, expanda **Bases de dados do sistema**, expanda **mestra**, expanda **Segurança** e expanda **Utilizadores** para ver a conta de utilizador que foi criada para o início de sessão de administrador do servidor nesta base de dados.
 
    ![conta de utilizador da base de dados mestra de administrador do servidor](./media/sql-database-control-access-sql-authentication-get-started/master_database_user_account_for_server_admin.png)
 
    > [!NOTE]
-   > Para obter informações sobre as outras contas de utilizador que aparecem, veja [Principals (Principais](https://msdn.microsoft.com/library/ms181127.aspx).
+   > Para obter informações sobre as outras contas de utilizador que aparecem no nó Utilizadores, veja [Principals (Principais)](https://msdn.microsoft.com/library/ms181127.aspx).
    >
 
-3. No Object Explorer, clique com o botão direito do rato em **mestra** e clique em **Nova Consulta** para abrir uma janela de consultas ligada à base de dados mestra.
-4. Na janela de consultas, execute a consulta seguinte para devolver informações sobre o utilizador que está a executar a consulta. Repare que é devolvido sqladmin para a conta de utilizador que está a executar a consulta (veremos um resultado diferente quando consultarmos uma base de dados de utilizador mais à frente neste procedimento).
+5. No Object Explorer, clique com o botão direito do rato em **mestra** e clique em **Nova Consulta** para abrir uma janela de consultas ligada à base de dados mestra.
+6. Na janela de consultas, execute a consulta seguinte para devolver informações sobre o utilizador que está a executar a consulta. 
 
    ```
    SELECT USER;
@@ -112,7 +109,7 @@ Nesta secção do tutorial, vai ver as informações da conta de administrador d
 
    ![selecione a consulta de utilizador na base de dados mestra](./media/sql-database-control-access-sql-authentication-get-started/select_user_query_in_master_database.png)
 
-5. Na janela de consultas, execute a consulta seguinte para devolver informações sobre as permissões do utilizador sqladmin. Repare que sqladmin tem permissões para ligar à base de dados mestra, criar inícios de sessão e utilizadores, selecionar informações da tabela sys.sql_logins e adicionar utilizadores às funções de base de dados dbmanager e dbcreator. Estas permissões são um acrescento às permissões concedidas à função pública da qual todos os utilizadores herdam permissões (como permissões para selecionar informações de determinadas tabelas). Veja [Permissões (Permissões)](https://msdn.microsoft.com/library/ms191291.aspx) para obter mais informações.
+7. Na janela de consultas, execute a consulta seguinte para devolver informações sobre as permissões do utilizador sqladmin na base de dados **mestra**. 
 
    ```
    SELECT prm.permission_name
@@ -134,13 +131,17 @@ Nesta secção do tutorial, vai ver as informações da conta de administrador d
 
    ![permissões do administrador de servidor na base de dados mestra](./media/sql-database-control-access-sql-authentication-get-started/server_admin_permissions_in_master_database.png)
 
-6. No Object Explorer, expanda **blankdb**, **Segurança** e, por fim, **Utilizadores**. Repare que não existe nenhuma conta de utilizador com o nome sqladmin nesta base de dados.
+   >[!NOTE]
+   > O administrador de servidor tem permissões para ligar à base de dados mestra, criar inícios de sessão e utilizadores, selecionar informações da tabela sys.sql_logins e adicionar utilizadores às funções de base de dados dbmanager e dbcreator. Estas permissões são um acrescento às permissões concedidas à função pública da qual todos os utilizadores herdam permissões (como permissões para selecionar informações de determinadas tabelas). Veja [Permissões (Permissões)](https://msdn.microsoft.com/library/ms191291.aspx) para obter mais informações.
+   >
+
+8. No Object Explorer, expanda **blankdb**, expanda **Segurança** e expanda **Utilizadores** para ver a conta de utilizador que foi criada para o início de sessão de administrador desta base de dados (e de cada base de dados de utilizador).
 
    ![contas de utilizador em blankdb](./media/sql-database-control-access-sql-authentication-get-started/user_accounts_in_blankdb.png)
 
-7. No Object Explorer, clique com o botão direito do rato em **blankdb** e, em seguida, clique em **Nova Consulta**.
+9. No Object Explorer, clique com o botão direito do rato em **blankdb** e, em seguida, clique em **Nova Consulta**.
 
-8. Na janela de consultas, execute a consulta seguinte para devolver informações sobre o utilizador que está a executar a consulta. Observe que é devolvido dbo para a conta de utilizador que está a executar esta consulta (por predefinição, o Início de sessão de administrador do Servidor é mapeado para a conta de utilizador dbo em cada base de dados de utilizador).
+10. Na janela de consultas, execute a consulta seguinte para devolver informações sobre o utilizador que está a executar a consulta.
 
    ```
    SELECT USER;
@@ -148,7 +149,7 @@ Nesta secção do tutorial, vai ver as informações da conta de administrador d
 
    ![selecionar a consulta de utilizador na base de dados blankdb](./media/sql-database-control-access-sql-authentication-get-started/select_user_query_in_blankdb_database.png)
 
-9. Na janela de consultas, execute a consulta seguinte para devolver informações sobre as permissões do utilizador dbo. Repare que dbo é membro da função pública e também da função de base de dados fixa db_owner. Veja [Database-Level Roles (Funções ao Nível da Base de Dados)](https://msdn.microsoft.com/library/ms189121.aspx) para obter mais informações.
+11. Na janela de consultas, execute a consulta seguinte para devolver informações sobre as permissões do utilizador dbo. 
 
    ```
    SELECT prm.permission_name
@@ -170,26 +171,28 @@ Nesta secção do tutorial, vai ver as informações da conta de administrador d
 
    ![permissões do administrador de servidor na base de dados blankdb](./media/sql-database-control-access-sql-authentication-get-started/server_admin_permissions_in_blankdb_database.png)
 
-10. Opcionalmente, repita os três passos anteriores para a base de dados de utilizador AdventureWorksLT.
+   > [!NOTE]
+   > O utilizador dbo é membro da função pública e também da função de base de dados fixa db_owner. Veja [Database-Level Roles (Funções ao Nível da Base de Dados)](https://msdn.microsoft.com/library/ms189121.aspx) para obter mais informações.
+   >
 
-## <a name="create-a-new-user-in-the-adventureworkslt-database-with-select-permissions"></a>Criar um utilizador novo na base de dados AdventureWorksLT com permissões SELECT
+## <a name="create-a-new-user-with-select-permissions"></a>Criar um utilizador novo com permissões SELECT
 
-Nesta secção do tutorial, vai criar uma conta de utilizador na base de dados AdventureWorksLT, testar as permissões deste utilizador como membro da função pública, conceder permissões SELECT ao utilizador e testar novamente as permissões do mesmo.
+Os passos deste procedimento mostram-lhe como criar um utilizador ao nível da base de dados, testar as permissões predefinidas de um utilizador novo (através da função pública), conceder permissões **SELECT** e ver estas permissões modificadas.
 
 > [!NOTE]
-> Os utilizadores ao nível da base de dados ([utilizadores contidos](https://msdn.microsoft.com/library/ff929188.aspx)) aumentam a portabilidade da sua base de dados, uma capacidade que vamos explorar em tutoriais posteriores.
+> Os utilizadores ao nível da base de dados também são conhecidos como [utilizadores contidos](https://msdn.microsoft.com/library/ff929188.aspx) e aumentam a portabilidade da base de dados. Para obter informações sobre os benefícios da portabilidade, veja [Configure and manage Azure SQL Database security for geo-restore or failover to a secondary server (Configurar e gerir a segurança da Base de Dados SQL do Azure para georrestauro ou ativação pós-falha para um servidor secundário)](sql-database-geo-replication-security-config.md).
 >
 
-1. No Object Explorer, clique com o botão direito do rato em **AdventureWorksLT** e clique em **Nova Consulta** para abrir uma janela de consultas ligada à base de dados AdventureWorksLT.
-2. Execute a declaração seguinte para criar um utilizador com o nome utilizador1 na base de dados AdventureWorksLT.
+1. No Object Explorer, clique com o botão direito do rato em **sqldbtutorialdb** e clique em **Nova Consulta**.
+2. Execute a declaração seguinte nesta janela de consultas para criar um utilizador com o nome **user1** na base de dados sqldbtutorialdb.
 
    ```
    CREATE USER user1
    WITH PASSWORD = 'p@ssw0rd';
    ```
-   ![novo utilizador utilizador1 de AdventureWorksLT](./media/sql-database-control-access-sql-authentication-get-started/new_user_user1_aw.png)
+   ![novo utilizador user1 sqldbtutorialdb](./media/sql-database-control-access-sql-authentication-get-started/new_user_user1_aw.png)
 
-3. Na janela de consultas, execute a consulta seguinte para devolver informações sobre as permissões do utilizador1. Repare que as únicas permissões que o utilizador1 tem são as herdadas da função pública.
+3. Na janela de consultas, execute a consulta seguinte para devolver informações sobre as permissões do utilizador1.
 
    ```
    SELECT prm.permission_name
@@ -211,7 +214,11 @@ Nesta secção do tutorial, vai criar uma conta de utilizador na base de dados A
 
    ![permissões do utilizador novo numa base de dados de utilizador](./media/sql-database-control-access-sql-authentication-get-started/new_user_permissions_in_user_database.png)
 
-4. Execute as consultas seguintes para tentar consultar uma tabela na base de dados AdventureWorksLT como Utilizador1.
+   > [!NOTE]
+   > Os utilizadores novos nas bases de dados só têm as permissões herdadas da função pública.
+   >
+
+4. Utilize a declaração **EXECUTE AS USER** para executar as consultas seguintes e tentar consultar a tabela SalesLT.ProductCategory na base de dados sqldbtutorialdb como **user1** apenas com as permissões herdadas da função pública.
 
    ```
    EXECUTE AS USER = 'user1';  
@@ -221,7 +228,11 @@ Nesta secção do tutorial, vai criar uma conta de utilizador na base de dados A
 
    ![sem permissões select](./media/sql-database-control-access-sql-authentication-get-started/no_select_permissions.png)
 
-5. Execute a declaração seguinte para conceder permissões SELECT na tabela ProductCategory no esquema SalesLT ao utilizador1.
+   > [!NOTE]
+   > Por predefinição, a função pública não concede permissões **SELECT** em objetos de utilizador.
+   >
+
+5. Execute a declaração seguinte para conceder permissões **SELECT** na tabela SalesLT.ProductCategory a **user1**.
 
    ```
    GRANT SELECT ON OBJECT::[SalesLT].[ProductCategory] to user1;
@@ -229,7 +240,7 @@ Nesta secção do tutorial, vai criar uma conta de utilizador na base de dados A
 
    ![conceder permissões select](./media/sql-database-control-access-sql-authentication-get-started/grant_select_permissions.png)
 
-6. Execute as consultas seguintes para tentar consultar uma tabela na base de dados AdventureWorksLT como Utilizador1.
+6. Execute as consultas seguintes para consultar com êxito a tabela SalesLT.ProductCategory na base de dados sqldbtutorialdb como **user1**.
 
    ```
    EXECUTE AS USER = 'user1';  
@@ -239,70 +250,67 @@ Nesta secção do tutorial, vai criar uma conta de utilizador na base de dados A
 
    ![permissões select](./media/sql-database-control-access-sql-authentication-get-started/select_permissions.png)
 
-## <a name="create-a-database-level-firewall-rule-for-an-adventureworkslt-database-user"></a>Criar uma regra de firewall ao nível da base de dados para um utilizador da base de dados AdventureWorksLT
+## <a name="create-a-database-level-firewall-rule-using-t-sql"></a>Criar uma regra de firewall ao nível da base de dados com T-SQL
 
-Nesta secção do tutorial, vai tentar iniciar sessão num computador com um endereço IP diferente, criar uma regra de firewall ao nível da base de dados como o Administrador do servidor e, depois, iniciar sessão com esta nova regra de firewall ao nível da base de dados. 
+Os passos deste procedimento mostram-lhe como criar uma regra de firewall ao nível da base de dados com o procedimento armazenado do sistema [sp_set_database_firewall_rule](https://msdn.microsoft.com/library/dn270010.aspx). As regras de firewall ao nível da base de dados possibilitam aos administradores de servidores permitir utilizadores através da firewall da Base de Dados SQL do Azure apenas para bases de dados específicas.
 
 > [!NOTE]
-> As [regras de firewall ao nível da base de dados](sql-database-firewall-configure.md) aumentam a portabilidade da sua base de dados, uma capacidade que vamos explorar em tutoriais posteriores.
+> As [regras ao nível da base de dados](sql-database-firewall-configure.md) aumentam a portabilidade da sua base de dados. Para obter informações sobre os benefícios da portabilidade, veja [Configure and manage Azure SQL Database security for geo-restore or failover to a secondary server (Configurar e gerir a segurança da Base de Dados SQL do Azure para georrestauro ou ativação pós-falha para um servidor secundário)](sql-database-geo-replication-security-config.md).
 >
 
-1. Noutro computador para o qual ainda não criado uma regra de firewall ao nível do servidor, abra o SQL Server Management Studio.
+> [!IMPORTANT]
+> Para testar uma regra de firewall ao nível da base de dados, ligue a partir de outro computador (ou elimine a regra de firewall ao nível do servidor no portal do Azure).
+>
 
-   > [!IMPORTANT]
-   > Utilize sempre a versão mais recente do SSMS disponível em [Download SQL Server Management Studio (Transferir o SQL Server Management Studio)](https://msdn.microsoft.com/library/mt238290.aspx). 
-   >
+1. Abra o SQL Server Management Studio num computador no qual não tem uma regra de firewall ao nível do servidor.
 
-2. Na janela **Ligar ao Servidor**, introduza o nome do servidor e as informações de autenticação para ligar através da autenticação do SQL Server com a conta de utilizador1. 
+2. Na janela **Ligar ao Servidor**, introduza o nome do servidor e as informações de autenticação para ligar através da autenticação do SQL Server com a conta de **user1**. 
     
    ![Ligar como o utilizador1 sem a regra de firewall1](./media/sql-database-control-access-sql-authentication-get-started/connect-user1_no_rule1.png)
 
-3. Clique em **Opções** para especificar a base de dados à qual quer ligar e, em seguida, escreva **AdventureWorksLT** na caixa pendente **Ligar à Base de Dados**, no separador **Propriedades da Ligação**.
+3. Clique em **Opções** para especificar a base de dados à qual quer ligar e, em seguida, escreva **sqldbtutorialdb** na caixa pendente **Ligar à Base de Dados**, no separador **Propriedades da Ligação**.
    
    ![Ligar como o utilizador1 sem a regra de firewall2](./media/sql-database-control-access-sql-authentication-get-started/connect-user1_no_rule2.png)
 
-4. Clique em **Ligar**. Aparece uma caixa de diálogo que o informa de que o computador através do qual está a tentar ligar à Base de Dados SQL não tem uma regra de firewall que permita o acesso à base de dados. A caixa de diálogo que recebe tem duas variações, consoante os passos que seguiu anteriormente no que diz respeito às firewalls, mas, regra geral, recebe a primeira caixa apresentada.
+4. Clique em **Ligar**. 
 
-   ![Ligar como o utilizador1 sem a regra de firewall3](./media/sql-database-control-access-sql-authentication-get-started/connect-user1_no_rule3.png)
+   Aparece uma caixa de diálogo que o informa de que o computador através do qual está a tentar ligar à Base de Dados SQL não tem uma regra de firewall que permita o acesso à base de dados. 
 
    ![Ligar como o utilizador1 sem a regra de firewall4](./media/sql-database-control-access-sql-authentication-get-started/connect-user1_no_rule4.png)
 
-   > [!NOTE]
-   > As versões mais recentes do SSMS incluem uma funcionalidade que permite aos proprietários de subscrições e aos contribuidores iniciar sessão no Microsoft Azure e criar uma regra de firewall ao nível do servidor.
-   > 
 
-4. Copie o endereço IP de cliente desta caixa de diálogo para utilização no passo 7.
-5. Clique em **Cancelar**, mas não feche a caixa de diálogo **Ligar ao Servidor**.
-6. Mude para um computador para o qual já tenha criado uma regra de firewall ao nível do servidor e ligue ao seu servidor com a Conta de administrador de servidor.
-7. Numa janela de consulta nova ligada à base de dados AdventureWorksLT como Administrador de servidor, execute a declaração seguinte para criar uma regra de firewall ao nível da base de dados ao executar [sp_set_database_firewall_rule](https://msdn.microsoft.com/library/dn270010.aspx) através da utilização do endereço IP do passo 4:
+5. Copie o endereço IP de cliente desta caixa de diálogo para utilização no passo 8.
+6. Clique em **OK** para fechar a caixa de diálogo de erro, mas não feche a caixa de diálogo **Ligar ao Servidor**.
+7. Mude para um computador para o qual já tenha criado uma regra de firewall ao nível do servidor. 
+8. Ligue à base de dados sqldbtutorialdb no SSMS como o administrador do servidor e execute a declaração seguinte para criar uma firewall ao nível da base de dados com o endereço IP (ou com o intervalo de endereços) do passo 5.  
 
    ```
-   EXEC sp_set_database_firewall_rule @name = N'AdventureWorksLTFirewallRule', 
+   EXEC sp_set_database_firewall_rule @name = N'sqldbtutorialdbFirewallRule', 
      @start_ip_address = 'x.x.x.x', @end_ip_address = 'x.x.x.x';
    ```
 
    ![adicionar regra de firewall](./media/sql-database-control-access-sql-authentication-get-started/user1_add_rule_aw.png)
 
-8. Mude novamente de computador e clique em **Ligar**, na caixa de diálogo **Ligar ao Servidor**, para ligar a AdventureWorksLT como o utilizador1. 
+9. Mude novamente de computador e clique em **Ligar**, na caixa de diálogo **Ligar ao Servidor**, para ligar a sqldbtutorialdb como user1. 
+
+   > [!NOTE]
+   > Depois de criar a regra de firewall ao nível da base de dados, esta pode demorar até cinco minutos a ficar ativa.
+   >
+
+10. Depois de ligar com êxito, expanda **Bases de dados**, no Object Explorer. Repare que **user1** só pode ver a base de dados **sqldbtutorialdb**.
 
    ![Ligar como o utilizador1 com a regra de firewall1](./media/sql-database-control-access-sql-authentication-get-started/connect-user1_rule1.png)
 
-9. No Object Explorer, expanda **Bases de Dados**, **AdventureWorksLT** e, por fim, **Tabelas**. Repare que o utilizador1 só tem permissão para ver uma única tabela, a tabela **SalesLT.ProductCategory**. 
+11. Expanda **sqldbtutorialdb** e, em seguida, expanda **Tabelas**. Repare que o utilizador1 só tem permissão para ver uma única tabela, a tabela **SalesLT.ProductCategory**. 
 
-   ![Ligar como o utilizador1 e ver objetos1](./media/sql-database-control-access-sql-authentication-get-started/connect-user1_view_objects1.png)
+   ![Ligar como o user1 e ver objects1](./media/sql-database-control-access-sql-authentication-get-started/connect-user1_view_objects1.png)
 
-10. No Object Explorer, clique com o botão direito do rato em **SalesLT.ProductCategory** e clique em **Selecionar as Primeiras 1000 Linhas**.   
+## <a name="create-a-new-user-as-dbowner-and-a-database-level-firewall-rule"></a>Criar um utilizador novo como db_owner e uma regra de firewall ao nível da base de dados
 
-   ![utilizador1 consulta1](./media/sql-database-control-access-sql-authentication-get-started/user1_query1.png)
+Os passos deste procedimento mostram-lhe como criar um utilizador noutra base de dados com as permissões de função de base de dados db_owner e uma firewall ao nível da base de dados para essa base de dados. Este utilizador novo com a associação de função **db_owner** só se poderá ligar e gerir esta base de dados individual.
 
-   ![utilizador1 resultados da consulta1](./media/sql-database-control-access-sql-authentication-get-started/user1_query1_results.png)
-
-## <a name="create-a-new-user-in-the-blankdb-database-with-dbowner-database-role-permissions-and-a-database-level-firewall-rule"></a>Criar um utilizador novo na base de dados blankdb com permissões de função de base de dados db_owner e uma regra de firewall ao nível da base de dados
-
-Nesta secção do tutorial, vai criar um utilizador na base de dados blankdb com as permissões de função de base de dados db_owner e criar uma firewall ao nível da base de dados para esta base de dados com a Conta de administrador de servidor. 
-
-1. Mude para o computador que tem ligação à Base de Dados SQL com a Conta de administrador de servidor.
-2. Abra uma janela de consultas ligada à base de dados blankdb e execute a declaração seguinte para criar um utilizador com o nome blankdbadmin na base de dados blankdb.
+1. Mude para o computador que tem ligação à Base de Dados SQL com a conta de administrador de servidor.
+2. Abra uma janela de consultas ligada à base de dados **blankdb** e execute a declaração seguinte para criar um utilizador com o nome blankdbadmin na base de dados blankdb.
 
    ```
    CREATE USER blankdbadmin
@@ -330,17 +338,21 @@ Nesta secção do tutorial, vai criar um utilizador na base de dados blankdb com
    WITH PASSWORD = 'p@ssw0rd';
    ```
  
-7. Conforme necessário para o seu ambiente de aprendizagem, crie uma regra de firewall ao nível da base de dados adicional para este utilizador. 
+7. Conforme necessário para o seu ambiente de aprendizagem, crie uma regra de firewall ao nível da base de dados adicional para este utilizador. No entanto, se tiver criado a regra de firewall ao nível da base de dados com um intervalo de endereços IP, essa regra poderá não ser necessária.
 
-## <a name="create-a-new-login-and-user-in-the-master-database-with-dbmanager-permissions-and-create-a-server-level-firewall-rule"></a>Criar um início de sessão e um utilizador novos na base de dados mestra com permissões dbmanager e criar uma regra de firewall ao nível do servidor
+## <a name="grant-dbmanager-permissions-and-create-a-server-level-firewall-rule"></a>Conceder permissões de dbmanager e criar uma regra de firewall ao nível do servidor
 
-Nesta secção do tutorial, vai criar um início de sessão e um utilizador na base de dados mestra com permissões para criar e gerir novas bases de dados de utilizador. Também vai criar uma regra de firewall ao nível do servidor adicional com Transact-SQL através de [sp_set_firewall_rule](https://msdn.microsoft.com/library/dn270017.aspx).
+Os passos deste tutorial mostram-lhe como criar um início de sessão e um utilizador na base de dados mestra com permissões para criar e gerir novas bases de dados de utilizador. Também lhe mostram como criar uma regra de firewall ao nível do servidor adicional com Transact-SQL através de [sp_set_firewall_rule](https://msdn.microsoft.com/library/dn270017.aspx). 
 
-> [!NOTE]
-> Para que o titular da Conta de administrador de servidor possa delegar permissões de criação de bases de dados a outro utilizador, é necessário criar inícios de sessão na base de dados mestra e contas de utilizador a partir de inícios de sessão. Contudo, criar inícios de sessão e utilizadores a partir de inícios de sessão diminui a portabilidade do seu ambiente, cujas consequências vamos explorar em tutoriais posteriores, incluindo como antecipar e processar como parte do planeamento da recuperação após desastre.
+> [!IMPORTANT]
+>A primeira regra de firewall ao nível do servidor tem de ser sempre criada no Azure (no portal do Azure, com o PowerShell ou com a API REST).
 >
 
-1. Mude para o computador que tem ligação à Base de Dados SQL com a Conta de administrador de servidor.
+> [!IMPORTANT]
+> Para que o de administrador de servidor possa delegar permissões de criação de bases de dados a outro utilizador, é necessário criar inícios de sessão na base de dados mestra e contas de utilizador a partir de inícios de sessão. No entanto, criar inícios de sessão e depois criar utilizadores a partir de inícios de sessão diminui a portabilidade do seu ambiente.
+>
+
+1. Mude para o computador que tem ligação à Base de Dados SQL com a conta de administrador de servidor.
 2. Abra uma janela de consultas ligada à base de dados mestra e execute a declaração seguinte para criar um início de sessão com o nome dbcreator na base de dados mestra.
 
    ```
@@ -361,7 +373,7 @@ Nesta secção do tutorial, vai criar um início de sessão e um utilizador na b
    ALTER ROLE dbmanager ADD MEMBER dbcreator; 
    ```
 
-4. Na janela da mesma consulta, execute a consulta seguinte para criar uma firewall ao nível do servidor ao executar [sp_set_database_firewall_rule](https://msdn.microsoft.com/library/dn270010.aspx) através de um endereço IP adequado ao seu ambiente:
+4. Na janela da mesma consulta, execute a consulta seguinte para criar uma firewall ao nível do servidor ao executar [sp_set_firewall_rule](https://msdn.microsoft.com/library/dn270017.aspx) com um endereço IP adequado ao seu ambiente:
 
    ```
    EXEC sp_set_firewall_rule @name = N'dbcreatorFirewallRule', 
@@ -395,13 +407,13 @@ EXEC sp_set_firewall_rule @name = N'dbcreatorFirewallRule',
      @start_ip_address = 'x.x.x.x', @end_ip_address = 'x.x.x.x';
 ```
 
-### <a name="adventureworkslt-database"></a>Base de dados AdventureWorksLT
-Execute estas declarações na base de dados AdventureWorksLT com a Conta de administrador de servidor, adicionando os endereços ou intervalos de endereços IP apropriados.
+### <a name="sqldbtutorialdb-database"></a>base de dados sqldbtutorialdb
+Execute estas declarações na base de dados sqldbtutorialdb com a Conta de administrador de servidor, adicionando os endereços ou intervalos de endereços IP apropriados.
 
 ```
 CREATE USER user1 WITH PASSWORD = 'p@ssw0rd';
 GRANT SELECT ON OBJECT::[SalesLT].[ProductCategory] to user1;
-EXEC sp_set_database_firewall_rule @name = N'AdventureWorksLTFirewallRule', 
+EXEC sp_set_database_firewall_rule @name = N'sqldbtutorialdbFirewallRule', 
      @start_ip_address = 'x.x.x.x', @end_ip_address = 'x.x.x.x';
 ```
 
@@ -424,11 +436,11 @@ CREATE USER blankdbuser1
 - Para obter mais informações sobre os principais de bases de dados, veja [Principals (Principais)](https://msdn.microsoft.com/library/ms181127.aspx).
 - Para obter mais informações sobre as funções de base de dados, veja [Database roles (Funções de base de dados)](https://msdn.microsoft.com/library/ms189121.aspx).
 - Para obter mais informações sobre as regras de firewall na Base de Dados SQL, veja [Regras de firewall da Base de Dados SQL](sql-database-firewall-configure.md).
-- Para obter um tutorial sobre como utilizar a autenticação do Azure Active Directory, veja [SQL Database tutorial: AAD authentication, logins and user accounts, database roles, permissions, server-level firewall rules, and database-level firewall rules (Tutorial da Base de Dados SQL: autenticação do AAD, inícios de sessão e contas de utilizador, funções de base de dados, permissões, regras de firewall ao nível do servidor e regras de firewall ao nível da base de dados)](sql-database-control-access-sql-authentication-get-started.md).
+- Para obter um tutorial sobre a autenticação do Azure Active Directory, veja [Autenticação e autorização do Azure AD](sql-database-control-access-aad-authentication-get-started.md).
 
 
 
 
-<!--HONumber=Jan17_HO3-->
+<!--HONumber=Feb17_HO3-->
 
 

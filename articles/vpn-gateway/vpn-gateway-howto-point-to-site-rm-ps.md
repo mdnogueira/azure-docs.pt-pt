@@ -1,10 +1,10 @@
 ---
-title: "Configurar uma ligação de gateway de VPN Ponto a Site para uma rede virtual do Azure através do modelo de implementação do Resource Manager | Microsoft Docs"
-description: "Ligue-se de forma segura à Rede Virtual do Azure criando uma ligação de gateway de VPN Ponto a Site."
+title: "Ligar um computador a uma rede virtual do Azure através de Ponto a Site: PowerShell | Microsoft Docs"
+description: "Crie uma ligação de gateway de VPN Ponto a Site para ligar de forma segura um computador à sua Rede Virtual do Azure."
 services: vpn-gateway
 documentationcenter: na
 author: cherylmc
-manager: carmonm
+manager: timlt
 editor: 
 tags: azure-resource-manager
 ms.assetid: 3eddadf6-2e96-48c4-87c6-52a146faeec6
@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 10/17/2016
+ms.date: 02/17/2017
 ms.author: cherylmc
 translationtype: Human Translation
-ms.sourcegitcommit: 3fe204c09eebf7d254a1bf2bb130e2d3498b6b45
-ms.openlocfilehash: 41bba6660c52d4aa7d10d846ad65e1f6aa5e582c
+ms.sourcegitcommit: cf72197aba2c6e6c7a51f96d1161cf1fbe88a0c5
+ms.openlocfilehash: fe3bb0a5faee806e7956acba23c22b9aefd1f0a8
 
 
 ---
@@ -29,9 +29,9 @@ ms.openlocfilehash: 41bba6660c52d4aa7d10d846ad65e1f6aa5e582c
 > 
 > 
 
-Uma configuração Ponto a Site (P2S) permite-lhe criar uma ligação segura a partir de um computador cliente individual para a sua rede virtual. Uma ligação P2S é útil quando pretende ligar a VNet a partir de uma localização remota, por exemplo, quando está em casa ou numa conferência ou quando tem apenas alguns clientes que precisam de se ligar a uma rede virtual. 
+Uma configuração Ponto a Site (P2S) permite-lhe criar uma ligação segura a partir de um computador cliente individual para a sua rede virtual. Uma ligação P2S é útil quando pretende ligar a VNet a partir de uma localização remota, por exemplo, quando está em casa ou numa conferência ou quando tem apenas alguns clientes que precisam de se ligar a uma rede virtual.
 
-As ligações Ponto a Site não precisam de nenhum dispositivo VPN ou endereço IP destinado ao público para funcionar. É estabelecida uma ligação VPN ao iniciar a ligação a partir do computador cliente. Para obter mais informações sobre ligações Ponto a Site, veja [FAQ do Gateway de VPN](vpn-gateway-vpn-faq.md#point-to-site-connections) e [Planeamento e Conceção](vpn-gateway-plan-design.md). 
+As ligações Ponto a Site não precisam de nenhum dispositivo VPN ou endereço IP destinado ao público para funcionar. É estabelecida uma ligação VPN ao iniciar a ligação a partir do computador cliente. Para obter mais informações sobre ligações de Ponto a Site, consulte [Point-to-Site FAQ (FAQ sobre Ponto a Site)](#faq) no final deste artigo. 
 
 Este artigo explica-lhe como criar uma VNet com uma ligação Ponto a Site no modelo de implementação Resource Manager através do PowerShell.
 
@@ -43,7 +43,7 @@ A tabela seguinte mostra os dois modelos de implementação e métodos de implem
 [!INCLUDE [vpn-gateway-clasic-rm](../../includes/vpn-gateway-table-point-to-site-include.md)]
 
 ## <a name="basic-workflow"></a>Fluxo de trabalho básico
-![Diagrama Ponto a Site](./media/vpn-gateway-howto-point-to-site-rm-ps/p2srm.png "point-to-site")
+![Ligar um computador a uma VNet do Azure - diagrama da ligação Ponto a Site](./media/vpn-gateway-howto-point-to-site-rm-ps/point-to-site-diagram.png)
 
 Neste cenário, irá criar uma rede virtual com uma ligação Ponto a Site. As instruções também o vão ajudar a gerar certificados, que são necessários para esta configuração. Uma ligação P2S é composta pelos seguintes itens: uma VNet com um gateway de VPN, um ficheiro .cer de certificado de raiz (chave pública), um certificado de cliente e a configuração de VPN no cliente. 
 
@@ -126,11 +126,11 @@ Nesta secção, vai iniciar sessão e declarar os valores utilizados para esta c
 ## <a name="a-namecertificatesapart-3---certificates"></a><a name="Certificates"></a>Parte 3 – Certificados
 O Azure utiliza os certificados para autenticar os clientes VPN em VPNs Ponto a Site. Exporte os dados do certificado público (e não a chave privada) como um ficheiro .cer X.509 codificado com Base-64 de um certificado de raiz gerado por uma solução de certificados de empresa ou um certificado de raiz autoassinado. Em seguida, importe os dados do certificado público a partir do certificado de raiz para o Azure. Além disso, precisa de gerar um certificado de cliente a partir do certificado de raiz para os clientes. Cada cliente que pretenda ligar-se à rede virtual através de uma ligação de P2S tem de ter instalado um certificado de cliente que foi gerado a partir do certificado de raiz.
 
-### <a name="a-namecera1-obtain-the-cer-file-for-the-root-certificate"></a><a name="cer"></a>1. Obter o ficheiro .cer para o certificado de raiz
+### <a name="a-namecerastep-1---obtain-the-cer-file-for-the-root-certificate"></a><a name="cer"></a>Passo 1: Obter o ficheiro .cer para o certificado de raiz
 Terá de obter os dados do certificado público para o certificado de raiz que pretende utilizar.
 
 * Se estiver a utilizar um sistema de certificado de empresa, obtenha o ficheiro .cer para o certificado de raiz que pretende utilizar. 
-* Se não estiver a utilizar uma solução de certificados de empresa, tem de gerar um certificado de raiz autoassinado. Para obter os passos para o Windows 10, pode ver [Trabalhar com certificados de raiz autoassinados para configurações Ponto a Site](vpn-gateway-certificates-point-to-site.md).
+* Se não estiver a utilizar uma solução de certificados de empresa, tem de gerar um certificado de raiz autoassinado. O método recomendado para a criação de um certificado autoassinado para P2S é makecert. Embora seja possível utilizar o PowerShell para criar certificados autoassinados, o certificado gerado através do PowerShell não contém os campos necessários para ligações P2S. Para obter os passos para o Windows 10, pode ver [Trabalhar com certificados de raiz autoassinados para configurações Ponto a Site](vpn-gateway-certificates-point-to-site.md).
 
 1. Para obter um ficheiro .cer a partir de um certificado, abra **certmgr.msc** e localize o certificado de raiz. Clique no certificado de raiz autoassinado com o botão direito, clique em **todas as tarefas** e, em seguida, clique em **exportar**. Esta ação abre o **Assistente para Exportar Certificados**.
 2. No Assistente, clique em **Seguinte**, selecione **Não, não exportar a chave privada** e, em seguida, clique em **Seguinte**.
@@ -138,19 +138,24 @@ Terá de obter os dados do certificado público para o certificado de raiz que p
 4. Em **Ficheiro a Exportar**, **Navegue** até à localização para a qual pretende exportar o certificado. Em **Nome do ficheiro**, atribua um nome ao ficheiro de certificado. Clique depois em **Seguinte**.
 5. Clique em **Concluir** para exportar o certificado.
 
-### <a name="a-namegeneratea2-generate-the-client-certificate"></a><a name="generate"></a>2. Gerar o certificado de cliente
+### <a name="a-namegenerateastep-2---generate-the-client-certificate"></a><a name="generate"></a>Passo 2: Gerar o certificado de cliente
 Em seguida, gere certificados de cliente. Pode optar por gerar um certificado exclusivo para cada cliente que irá ligar ou pode utilizar o mesmo certificado em vários clientes. A vantagem de gerar certificados de cliente únicos é a capacidade de revogar um certificado único se for necessário. Caso contrário, se toda a gente estiver a utilizar o mesmo certificado de cliente e precisar de revogar o certificado para um cliente, terá de gerar e instalar novos certificados para todos os clientes que utilizam o certificado para autenticação. Os certificados de cliente são instalados em cada computador cliente posteriormente neste exercício.
 
-* Se estiver a utilizar uma solução de certificado de empresa, gere um certificado de cliente com o formato do valor de nome comum 'name@yourdomain.com',, em vez do formato “DOMÍNIO/nomedeutilizaodor” do NetBIOS. 
-* Se estiver a utilizar um certificado de raiz autoassinado, consulte [Trabalhar com certificados de raiz autoassinados para configurações de Ponto a Site](vpn-gateway-certificates-point-to-site.md), para gerar um certificado de cliente.
 
-### <a name="a-nameexportclientcerta3-export-the-client-certificate"></a><a name="exportclientcert"></a>3. Exportar o certificado de cliente
+####<a name="enterprise-certificate"></a>Certificado da empresa
+- Se estiver a utilizar uma solução de certificado de empresa, gere um certificado de cliente com o formato do valor de nome comum 'name@yourdomain.com',, em vez do formato “nome de domínio/nome de utilizador”.
+- Certifique-se de que o certificado de cliente que emitiu é baseado no modelo de certificado "Utilizador" que tem a "Autenticação de Cliente" como o primeiro item na lista de utilização, em vez do Início de Sessão de Smart Card, etc. Pode verificar o certificado ao clicar duas vezes no certificado de cliente e visualizar **Detalhes > Utilização Avançada da Chaves**.
+
+####<a name="self-signed-certificate"></a>Certificado autoassinado 
+Se estiver a utilizar um certificado de raiz autoassinado, consulte [Trabalhar com certificados de raiz autoassinados para configurações de Ponto a Site](vpn-gateway-certificates-point-to-site.md), para gerar um certificado de cliente.
+
+### <a name="a-nameexportclientcertastep-3---export-the-client-certificate"></a><a name="exportclientcert"></a>Passo 3: Exportar o certificado de cliente
 É necessário um certificado de cliente para a autenticação. Após a gerar o certificado de cliente, exporte-o. O certificado de cliente que exportar será instalado posteriormente em cada computador cliente.
 
 1. Para exportar um certificado de cliente, pode utilizar *certmgr.msc*. Clique com o botão direito do rato no certificado de cliente que pretende exportar, clique em **todas as tarefas** e, em seguida, em **exportar**.
 2. Exporte o certificado de cliente com a chave privada. Este é um ficheiro *.pfx*. Certifique-se de que regista ou memoriza a palavra-passe (chave) que define para este certificado.
 
-### <a name="a-nameuploada4-upload-the-root-certificate-cer-file"></a><a name="upload"></a>4. Carregar o ficheiro .cer do certificado de raiz
+### <a name="a-nameuploadastep-4---upload-the-root-certificate-cer-file"></a><a name="upload"></a>Passo 4: Carregar o ficheiro .cer do certificado de raiz
 Declare a variável para o nome de certificado, ao substituir o valor pelo seu próprio:
 
         $P2SRootCertName = "Mycertificatename.cer"
@@ -173,7 +178,9 @@ Configure e crie o gateway de rede virtual da sua VNet. O *-GatewayType* tem de 
         -VpnClientAddressPool $VPNClientAddressPool -VpnClientRootCertificates $p2srootcert
 
 ## <a name="a-nameclientconfigapart-5---download-the-vpn-client-configuration-package"></a><a name="clientconfig"></a>Parte 5 – Transferir o pacote de configuração do cliente VPN
-Os clientes que se liguem ao Azure com P2S têm de ter um certificado de cliente e um pacote de instalação de cliente de VPN instalados. Os pacotes de configuração do cliente VPN estão disponíveis para clientes Windows. O pacote de cliente de VPN contém as informações para configurar o software de cliente de VPN que está incluído no Windows e é específico da VPN à qual se quer ligar. O pacote não instala software adicional. Consulte as [FAQ do Gateway de VPN](vpn-gateway-vpn-faq.md#point-to-site-connections) para obter mais informações.
+Os clientes que se liguem ao Azure com P2S têm de ter um certificado de cliente e um pacote de instalação de cliente de VPN instalados. Os pacotes de configuração do cliente VPN estão disponíveis para clientes Windows.
+
+O pacote de clientes VPN contém informações de configuração para configurar o software de cliente VPN incorporado no Windows. O pacote não instala software adicional. As definições são específicas para a rede virtual à qual se quer ligar. Para consultar a lista de sistemas operativos cliente que são suportados, consulte [Point-to-Site connections FAQ (FAQ das ligações de Ponto a Site)](#faq) no final deste artigo.
 
 1. Depois de criado o gateway, pode transferir o pacote de configuração do cliente. Este exemplo transfere o pacote para clientes de 64 bits. Se pretende transferir o cliente de 32 bits, substitua “Amd64” por “x86”. Também pode transferir o cliente VPN ao utilizar o portal do Azure.
    
@@ -185,7 +192,7 @@ Os clientes que se liguem ao Azure com P2S têm de ter um certificado de cliente
 3. Copie e cole a ligação devolvida num browser, para transferir o pacote. Em seguida, instale o pacote no computador cliente. Se obtiver um pop-up SmartScreen, clique em **Mais informações** e, em seguida, em **Executar mesmo assim** para instalar o pacote.
 4. No computador cliente, navegue para **Definições de Rede** e clique em **VPN**. Verá a ligação listada. Mostrará o nome da rede virtual à qual se vai ligar e terá um aspeto semelhante a este exemplo: 
    
-    ![cliente de VPN](./media/vpn-gateway-howto-point-to-site-rm-ps/vpn.png "VPN client")
+    ![cliente de VPN](./media/vpn-gateway-howto-point-to-site-rm-ps/vpn.png)
 
 ## <a name="a-nameclientcertificateapart-6---install-the-client-certificate"></a><a name="clientcertificate"></a>Parte 6 – Instalar o certificado de cliente
 Cada computador cliente tem de ter um certificado de cliente para se autenticar. Ao instalar o certificado de cliente, vai precisar da palavra-passe que foi criada quando o certificado de cliente foi exportado.
@@ -197,10 +204,15 @@ Cada computador cliente tem de ter um certificado de cliente para se autenticar.
 1. Para se ligar à sua VNet, no computador cliente, navegue até às ligações VPN e localize a ligação VPN que criou. Tem o mesmo nome da sua rede virtual. Clique em **Ligar**. Poderá aparecer uma mensagem pop-up que se refere à utilização do certificado. Se isto ocorrer, clique em **Continuar** para utilizar privilégios elevados. 
 2. Na página de estado da **Ligação**, clique em **Ligar** para iniciar a ligação. Se vir um ecrã **Selecionar Certificado**, verifique se o certificado de cliente apresentado é aquele que pretende utilizar para se ligar. Se não for, utilize a seta para baixo para selecionar o certificado correto e clique em **OK**.
    
-    ![Ligação de cliente VPN](./media/vpn-gateway-howto-point-to-site-rm-ps/clientconnect.png "VPN client connection")
+    ![Ligação de cliente VPN ao Azure](./media/vpn-gateway-howto-point-to-site-rm-ps/clientconnect.png)
 3. A ligação deve ser agora estabelecida.
    
-    ![Ligação estabelecida](./media/vpn-gateway-howto-point-to-site-rm-ps/connected.png "Connection established")
+    ![Ligação estabelecida](./media/vpn-gateway-howto-point-to-site-rm-ps/connected.png)
+
+> [!NOTE]
+> Se estiver a utilizar um certificado que foi emitido através de uma solução de AC Empresarial e se deparou com problemas de autenticação, verifique a ordem de autenticação do certificado de cliente. Pode verificar a ordem da lista de autenticação ao clicar duas vezes no certificado de cliente e aceder a **Detalhes > Utilização Avançada de Chaves**. Certifique-se de que a lista apresenta "Autenticação de Cliente" como o primeiro item. Caso contrário, terá de emitir um certificado de cliente com base no modelo de Utilizador que tenha a Autenticação de Cliente como o primeiro item na lista. 
+>
+>
 
 ## <a name="a-nameverifyapart-8---verify-your-connection"></a><a name="verify"></a>Parte 8 – Verificar a ligação
 1. Para verificar se a ligação VPN está ativa, abra uma linha de comandos elevada e execute *ipconfig/all*.
@@ -229,7 +241,13 @@ Pode adicionar até 20 ficheiros .cer de certificado de raiz fidedigna ao Azure.
    
     Copie os valores, conforme mostrado no exemplo seguinte:
    
-    ![certificado](./media/vpn-gateway-howto-point-to-site-rm-ps/copycert.png "certificate")
+    ![certificado](./media/vpn-gateway-howto-point-to-site-rm-ps/copycert.png)
+
+    > [!NOTE]
+    > Quando copiar os dados de certificado, certifique-se de que copia o texto como uma linha contínua sem símbolos de retorno ou avanços de linha. Poderá ter de modificar a sua vista no editor de texto para "Mostrar Símbolo/Mostrar todos os carateres" para ver os símbolos de retorno ou avanços de linha.                                                                                                                                                                            
+    >
+
+
 2. Especifique o nome do certificado e as informações da chave como uma variável. Substitua as informações pelas suas próprias informações, conforme mostrado no exemplo seguinte:
    
         $P2SRootCertName2 = "ARMP2SRootCert2.cer"
@@ -287,6 +305,9 @@ Pode restabelecer um certificado de cliente, removendo o thumbprint da lista de 
 2. Verifique se o thumbprint é removido da lista revogada.
    
         Get-AzureRmVpnClientRevokedCertificate -VirtualNetworkGatewayName $GWName -ResourceGroupName $RG
+## <a name="a-namefaqapoint-to-site-faq"></a><a name="faq"></a>FAQ Ponto a Site
+
+[!INCLUDE [Point-to-Site FAQ](../../includes/vpn-gateway-point-to-site-faq-include.md)]
 
 ## <a name="next-steps"></a>Passos seguintes
 Assim que a ligação estiver concluída, pode adicionar máquinas virtuais às redes virtuais. Para obter mais informações, veja [Máquinas Virtuais](https://docs.microsoft.com/azure/#pivot=services&panel=Compute).
@@ -294,6 +315,6 @@ Assim que a ligação estiver concluída, pode adicionar máquinas virtuais às 
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Feb17_HO3-->
 
 

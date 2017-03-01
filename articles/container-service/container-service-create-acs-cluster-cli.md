@@ -1,6 +1,6 @@
 ---
 title: Implementar um cluster de contentor Docker no Azure CLI | Microsoft Docs
-description: "Implementar um cluster do Azure Container Service com a Pré-visualização do Azure CLI 2.0"
+description: Implementar um cluster do Azure Container Service com a CLI do Azure 2.0
 services: container-service
 documentationcenter: 
 author: sauryadas
@@ -17,23 +17,23 @@ ms.workload: na
 ms.date: 02/03/2017
 ms.author: saudas
 translationtype: Human Translation
-ms.sourcegitcommit: df916670743158d6a22b3f17343630114584fa08
-ms.openlocfilehash: 65f1c812472f4a3b6d4a4e6fb7666a2c022af102
+ms.sourcegitcommit: 2a381431acb6436ddd8e13c69b05423a33cd4fa6
+ms.openlocfilehash: 792150afa1c4f91c4bf6175037c7708d8f7bfabe
 
 
 ---
-# <a name="using-the-azure-cli-20-preview-to-create-an-azure-container-service-cluster"></a>Utilizar o Azure CLI 2.0 (Pré-visualização) para criar um cluster do Azure Container Service
+# <a name="use-the-azure-cli-20-to-create-an-azure-container-service-cluster"></a>Utilize a CLI do Azure 2.0 para criar um cluster do Azure Container Service
 
-Utilize os comandos `az acs` no Azure CLI 2.0 (Pré-visualização), para criar e gerir clusters no Azure Container Service. Também pode implementar um cluster do Azure Container Service com o [portal do Azure](container-service-deployment.md) ou as APIs do Azure Container Service.
+Utilize os comandos `az acs` na CLI do Azure 2.0, para criar e gerir clusters no Azure Container Service. Também pode implementar um cluster do Azure Container Service com o [portal do Azure](container-service-deployment.md) ou as APIs do Azure Container Service.
 
 Para obter ajuda com os comandos `az acs`, passe o parâmetro `-h` para qualquer comando. Por exemplo: `az acs create -h`.
 
 
 
 ## <a name="prerequisites"></a>Pré-requisitos
-Para criar um cluster do Azure Container Service com o Azure CLI 2.0 (Pré-visualização), tem de:
+Para criar um cluster do Azure Container Service com a CLI do Azure 2.0, tem de:
 * ter uma conta do Azure ([obter uma avaliação gratuita](https://azure.microsoft.com/pricing/free-trial/))
-* ter instalado e configurado o [Azure CLI v. 2.0 (Pré-visualização)](/cli/azure/install-az-cli2)
+* ter instalado e configurado a [CLI do Azure 2.0](/cli/azure/install-az-cli2)
 
 ## <a name="get-started"></a>Introdução 
 ### <a name="log-in-to-your-account"></a>Iniciar sessão na sua conta
@@ -41,7 +41,7 @@ Para criar um cluster do Azure Container Service com o Azure CLI 2.0 (Pré-visua
 az login 
 ```
 
-Siga os pedidos para iniciar sessão interativamente. Para outros métodos para iniciar sessão, consulte [Get started with Azure CLI 2.0 (Preview) (Introdução ao Azure CLI 2.0 (Pré-visualização))](/cli/azure/get-started-with-az-cli2).
+Siga os pedidos para iniciar sessão interativamente. Para outros métodos para iniciar sessão, consulte [Get started with Azure CLI 2.0 (Introdução à CLI do Azure 2.0)](/cli/azure/get-started-with-az-cli2).
 
 ### <a name="set-your-azure-subscription"></a>Defina a sua subscrição do Azure
 
@@ -74,7 +74,7 @@ As outras entradas estão definidas para os valores predefinidos (veja o ecrã s
 
 
 ### <a name="quick-acs-create-using-defaults"></a>Rápido `acs create` com predefinições
-Se tiver um ficheiro de chave pública SSH `id_rsa.pub` na localização predefinida (ou tiver criado um para [OS X e Linux](../virtual-machines/virtual-machines-linux-mac-create-ssh-keys.md) ou [Windows](../virtual-machines/virtual-machines-linux-ssh-from-windows.md)), utilize um comando como o seguinte:
+Se tiver um ficheiro de chave pública RSA SSH `id_rsa.pub` na localização predefinida (ou tiver criado um para [OS X e Linux](../virtual-machines/virtual-machines-linux-mac-create-ssh-keys.md) ou [Windows](../virtual-machines/virtual-machines-linux-ssh-from-windows.md)), utilize um comando como o seguinte:
 
 ```azurecli
 az acs create -n acs-cluster -g acsrg1 -d applink789
@@ -145,6 +145,6 @@ Agora que tem um cluster a funcionar, veja estes documentos para obter os detalh
 * [Trabalhar com o Azure Container Service e o Kubernetes](container-service-kubernetes-walkthrough.md)
 
 
-<!--HONumber=Feb17_HO1-->
+<!--HONumber=Feb17_HO4-->
 
 

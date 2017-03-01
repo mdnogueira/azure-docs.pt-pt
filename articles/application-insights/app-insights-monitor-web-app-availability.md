@@ -11,11 +11,11 @@ ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 11/16/2016
+ms.date: 02/13/2017
 ms.author: awills
 translationtype: Human Translation
-ms.sourcegitcommit: 003db6e1479be1007dd292555ce5997f1c138809
-ms.openlocfilehash: c5c2742065536805cd032f2d814ad668b8ad3b6e
+ms.sourcegitcommit: c800f6e7b6bd1e17165146f981e32a8cbb251e3c
+ms.openlocfilehash: af4343dbe23f314a85c98d7337f42c4b60b03c6a
 
 
 ---
@@ -29,7 +29,7 @@ Pode configurar testes Web para qualquer ponto final HTTP ou HTTPS acessível a 
 Existem dois tipos de testes Web:
 
 * [Teste de ping do URL](#create): um teste simples que pode criar no Portal do Azure.
-* [Teste Web com vários passos](#multi-step-web-tests): pode criá-lo no Visual Studio Ultimate ou no Visual Studio Enterprise e carregá-lo no Portal.
+* [Teste Web de vários passos](#multi-step-web-tests): pode criá-lo no Visual Studio Enterprise e carregá-lo no Portal.
 
 Pode criar até dez testes por recurso de aplicação.
 
@@ -78,37 +78,20 @@ Estes gráficos reúnem os resultados de todos os testes Web desta aplicação.
 ## <a name="a-namefailuresaif-you-see-failures"></a><a name="failures"></a>Se vir falhas
 Clique num ponto vermelho.
 
-![Clicar num ponto vermelho](./media/app-insights-monitor-web-app-availability/14-availRedDot.png)
+![Clicar num ponto vermelho](./media/app-insights-monitor-web-app-availability/open-instance.png)
 
-Ou, desloque-se para baixo e clique num teste se a taxa de êxito for inferior a 100%.
 
-![Clicar num teste Web específico](./media/app-insights-monitor-web-app-availability/15-webTestList.png)
+A partir de um resultado do teste Web, pode:
 
-Os resultados desse teste são apresentados.
+* Inspecionar a resposta recebida do seu servidor.
+* Abra a telemetria enviada pela aplicação do servidor ao processar a instância do pedido falhado.
+* Registe um problema ou item de trabalho no Git ou no VSTS para controlar o problema. O erro irá conter uma ligação para este evento.
+* Abra o resultado do teste da Web no Visual Studio.
 
-![Clicar num teste Web específico](./media/app-insights-monitor-web-app-availability/16-1test.png)
-
-O teste é executado a partir de várias localizações: escolha uma com resultados inferiores a 100%.
-
-![Clicar num teste Web específico](./media/app-insights-monitor-web-app-availability/17-availViewDetails.png)
-
-Desloque-se para baixo para **Testes falhados** e escolha um resultado.
-
-Clique no resultado para avaliá-lo no portal e ver o motivo da sua falha.
-
-![Resultado da execução do teste Web](./media/app-insights-monitor-web-app-availability/18-availDetails.png)
-
-Em alternativa, pode transferir o ficheiro de resultado e analisá-lo no Visual Studio.
 
 *Os resultados parecem estar OK mas foi reportada uma falha?* Verifique todas as imagens, scripts, folhas de estilo e outros ficheiros carregados pela página. Se qualquer um deles falhar, o teste é reportado como falhado, mesmo se a página principal HTML carregar corretamente.
 
-### <a name="open-the-server-request-and-exceptions"></a>Abrir o pedido e as exceções do servidor
-
-A partir das propriedades detalhadas de um determinado teste, pode abrir o relatório do lado do servidor do pedido e outros eventos, como as exceções.
-
-![Resultado da execução do teste Web](./media/app-insights-monitor-web-app-availability/web-test-linked-to-server-telemetry.png)
-
-Se não vir itens relacionados, poderá ser porque a [amostragem](app-insights-sampling.md) está em curso.
+*Não existem itens relacionados?* Poderá dever-se à [amostragem](app-insights-sampling.md) estar em funcionamento.
 
 ## <a name="multi-step-web-tests"></a>Testes Web com vários passos
 Pode monitorizar um cenário que envolva uma sequência de URLs. Por exemplo, se estiver a monitorizar um site de vendas, pode testar se a adição de artigos no carrinho de compras funciona corretamente.
@@ -122,7 +105,7 @@ Para criar um teste com vários passos, registe o cenário com o Visual Studio e
 Tenha em atenção que não pode utilizar funções codificadas nos testes: os passos do cenário devem ser contidos como um script no ficheiro .webtest.
 
 #### <a name="1-record-a-scenario"></a>1. Registar um cenário
-Utilize o Visual Studio Enterprise ou o Ultimate para guardar uma sessão Web.
+Utilize o Visual Studio Enterprise para guardar uma sessão Web.
 
 1. Crie um projeto de teste de desempenho da Web.
 
@@ -239,7 +222,7 @@ No painel Descrição geral, abra **Definições**, **Testes de desempenho**. Qu
 Quando o teste estiver concluído, são-lhe apresentados tempos de resposta e taxas de êxito.
 
 ## <a name="automation"></a>Automatização
-* [Utilizar scripts do PowerShell para configurar um teste Web](https://azure.microsoft.com/blog/creating-a-web-test-alert-programmatically-with-application-insights/) automaticamente.
+* [Utilizar scripts do PowerShell para configurar um teste Web](app-insights-powershell.md#add-an-availability-test) automaticamente.
 * Configure um [webhook](../monitoring-and-diagnostics/insights-webhooks-alerts.md) que será chamado sempre que for gerado um alerta.
 
 ## <a name="questions-problems"></a>Tem dúvidas? Problemas?
@@ -294,6 +277,6 @@ Quando o teste estiver concluído, são-lhe apresentados tempos de resposta e ta
 
 
 
-<!--HONumber=Dec16_HO2-->
+<!--HONumber=Feb17_HO3-->
 
 

@@ -12,22 +12,22 @@ ms.devlang: NA
 ms.topic: hero-article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 09/26/2016
+ms.date: 01/13/2016
 ms.author: rasquill
 translationtype: Human Translation
-ms.sourcegitcommit: 95b924257c64a115728c66956d5ea38eb8764a35
-ms.openlocfilehash: 70592ac773aced0bfcec5c7418a6dc53555fab33
+ms.sourcegitcommit: 1081eb18bd63b1ad580f568201e03258901e4eaf
+ms.openlocfilehash: e926f22b94da30e1d3b790432ffdc229d9f4e609
 
 
 ---
 
 # <a name="create-a-linux-vm-using-the-azure-cli-20-preview-azpy"></a>Criar uma VM do Linux com a CLI do Azure 2.0 (Pré-visualização) (az.py)
-Este artigo mostra como implementar rapidamente uma máquina virtual (VM) do Linux no Azure através do comando [az vm create](/cli/azure/vm#create) na CLI do Azure 2.0 (Pré-visualização). 
+Este artigo mostra como implementar rapidamente uma máquina virtual (VM) do Linux no Azure através do comando [az vm create](/cli/azure/vm#create) na CLI do Azure 2.0 (Pré-visualização) com os discos geridos e os discos nas contas de armazenamento nativas.
 
 > [!NOTE] 
-> A CLI do Azure 2.0 (Pré-visualização) é a nossa CLI multiplataforma de próxima geração. [Experimente](https://docs.microsoft.com/en-us/cli/azure/install-az-cli2)
+> A CLI do Azure 2.0 (Pré-visualização) é a nossa CLI multiplataforma de próxima geração. [Experimente](https://docs.microsoft.com/cli/azure/install-az-cli2)
 >
-> Os nossos outros documentos utilizam a CLI do Azure existente. Para criar uma VM com a CLI do Azure atual (1.0) e não com a CLI 2.0 (Pré-visualização), veja [Criar uma VM através da CLI do Azure](virtual-machines-linux-quick-create-cli-nodejs.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+> Para criar uma VM com a CLI do Azure atual (1.0) e não com a CLI do Azure 2.0 (Pré-visualização), veja [Create a VM with the Azure CLI (Criar uma VM através da CLI do Azure)](virtual-machines-linux-quick-create-cli-nodejs.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
 Para criar uma VM, precisa de: 
 
@@ -35,24 +35,25 @@ Para criar uma VM, precisa de:
 * da [CLI do Azure v. 2.0 (Pré-visualização)](/cli/azure/install-az-cli2) instalada
 * ter sessão iniciada na sua conta do Azure (escreva[az login](/cli/azure/#login))
 
-Também pode implementar rapidamente uma VM do Linux através do [portal do Azure](virtual-machines-linux-quick-create-portal.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+(Também pode implementar uma VM com Linux através do [portal do Azure](virtual-machines-linux-quick-create-portal.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).)
 
-O exemplo seguinte mostra como implementar uma VM Debian e ligar a chave Secure Shell (SSH) (os seus argumentos podem ser diferentes; se quiser outra imagem, pode [procurá-la](virtual-machines-linux-cli-ps-findimage.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)).
+O exemplo seguinte mostra como implementar uma VM Debian e ligá-la com a chave Secure Shell (SSH). Os argumentos podem ser diferentes; se pretender uma imagem diferente, pode [procurar por uma](virtual-machines-linux-cli-ps-findimage.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
-## <a name="create-a-resource-group"></a>Criar um grupo de recursos
+## <a name="using-managed-disks"></a>Utilizar os Managed Disks
 
-Em primeiro lugar, escreva [az group create](/cli/azure/group#create) para criar um grupo de recursos que contenha todos os recursos implementados:
+Para utilizar os discos geridos do Azure, tem de utilizar uma região que os suporte. Em primeiro lugar, escreva [az group create](/cli/azure/group#create) para criar um grupo de recursos que contenha todos os recursos implementados:
 
 ```azurecli
-az group create -n myResourceGroup -l westus
+ az group create -n myResourceGroup -l westus
 ```
 
-O resultado tem um aspeto semelhante ao seguinte (pode escolher outra opção de `--output` se quiser):
+O resultado tem um aspeto semelhante ao seguinte (pode especificar outra opção de `--output` se quiser ver um formato diferente):
 
 ```json
 {
   "id": "/subscriptions/<guid>/resourceGroups/myResourceGroup",
   "location": "westus",
+  "managedBy": null,
   "name": "myResourceGroup",
   "properties": {
     "provisioningState": "Succeeded"
@@ -60,17 +61,15 @@ O resultado tem um aspeto semelhante ao seguinte (pode escolher outra opção de
   "tags": null
 }
 ```
-
-## <a name="create-your-vm-using-the-latest-debian-image"></a>Criar a VM com a imagem Debian mais recente
-
-Agora, pode criar a sua VM e o respetivo ambiente. Não se esqueça de substituir o valor de `----public-ip-address-dns-name` por um exclusivo; é possível que o valor abaixo possa já não estar disponível.
+### <a name="create-your-vm"></a>Criar a VM 
+Agora, pode criar a sua VM e o respetivo ambiente. Não se esqueça de substituir o valor de `--public-ip-address-dns-name` por um exclusivo; é possível que o valor abaixo possa já não estar disponível.
 
 ```azurecli
 az vm create \
 --image credativ:Debian:8:latest \
---admin-username ops \
+--admin-username azureuser \
 --ssh-key-value ~/.ssh/id_rsa.pub \
---public-ip-address-dns-name mydns \
+--public-ip-address-dns-name manageddisks \
 --resource-group myResourceGroup \
 --location westus \
 --name myVM
@@ -82,28 +81,29 @@ O resultado tem o seguinte aspeto. Tenha em atenção os valores `publicIpAddres
 
 ```json
 {
-  "fqdn": "mydns.westus.cloudapp.azure.com",
+  "fqdn": "manageddisks.westus.cloudapp.azure.com",
   "id": "/subscriptions/<guid>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM",
-  "macAddress": "00-0D-3A-32-05-07",
+  "macAddress": "00-0D-3A-32-E9-41",
   "privateIpAddress": "10.0.0.4",
-  "publicIpAddress": "40.112.217.29",
+  "publicIpAddress": "104.42.127.53",
   "resourceGroup": "myResourceGroup"
 }
 ```
 
-Inicie sessão na sua VM com o endereço IP público apresentado no resultado. Também pode utilizar o nome de domínio completamente qualificado (FQDN) apresentado.
+Inicie sessão na VM com o endereço IP público ou o nome de domínio completamente qualificado (FQDN) listado no resultado.
 
 ```bash
-ssh ops@mydns.westus.cloudapp.azure.com
+ssh ops@manageddisks.westus.cloudapp.azure.com
 ```
 
 Deverá ver algo semelhante ao resultado seguinte, consoante a distribuição que escolheu:
 
-```
-The authenticity of host 'mydns.westus.cloudapp.azure.com (40.112.217.29)' can't be established.
-RSA key fingerprint is SHA256:xbVC//lciRvKild64lvup2qIRimr/GB8C43j0tSHWnY.
+```bash
+The authenticity of host 'manageddisks.westus.cloudapp.azure.com (134.42.127.53)' can't be established.
+RSA key fingerprint is c9:93:f5:21:9e:33:78:d0:15:5c:b2:1a:23:fa:85:ba.
 Are you sure you want to continue connecting (yes/no)? yes
-Warning: Permanently added 'mydns.westus.cloudapp.azure.com,40.112.217.29' (RSA) to the list of known hosts.
+Warning: Permanently added 'manageddisks.westus.cloudapp.azure.com' (RSA) to the list of known hosts.
+Enter passphrase for key '/home/ops/.ssh/id_rsa':
 
 The programs included with the Debian GNU/Linux system are free software;
 the exact distribution terms for each program are described in the
@@ -111,7 +111,86 @@ individual files in /usr/share/doc/*/copyright.
 
 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
 permitted by applicable law.
-ops@mynewvm:~$ ls /
+Last login: Fri Jan 13 14:44:21 2017 from net-37-117-240-123.cust.vodafonedsl.it
+ops@myVM:~$ 
+```
+
+Consulte [Next Steps (Próximos Passos)](#next-steps) para ver outras coisas que pode fazer com a nova VM através dos discos geridos.
+
+## <a name="using-unmanaged-disks"></a>Utilizar discos não geridos 
+
+VMs que utilizam discos de armazenamento não geridos têm contas de armazenamento não geridas. Em primeiro lugar, escreva [az group create](/cli/azure/group#create) para criar um grupo de recursos que contenha todos os recursos implementados:
+
+```azurecli
+az group create --name nativedisks --location westus
+```
+
+O resultado tem um aspeto semelhante ao seguinte (pode escolher outra opção de `--output` se quiser):
+
+```json
+{
+  "id": "/subscriptions/<guid>/resourceGroups/nativedisks",
+  "location": "westus",
+  "managedBy": null,
+  "name": "nativedisks",
+  "properties": {
+    "provisioningState": "Succeeded"
+  },
+  "tags": null
+}
+```
+
+### <a name="create-your-vm"></a>Criar a VM 
+
+Agora, pode criar a sua VM e o respetivo ambiente. Utilize o sinalizador `--use-unmanaged-disk` para criar a VM com discos não geridos. Também é criada uma conta de armazenamento não gerida. Não se esqueça de substituir o valor de `--public-ip-address-dns-name` por um exclusivo; é possível que o valor abaixo possa já não estar disponível.
+
+```azurecli
+az vm create \
+--image credativ:Debian:8:latest \
+--admin-username azureuser \
+--ssh-key-value ~/.ssh/id_rsa.pub \
+--public-ip-address-dns-name nativedisks \
+--resource-group nativedisks \
+--location westus \
+--name myVM \
+--use-unmanaged-disk
+```
+
+O resultado tem o seguinte aspeto. Tenha em atenção os valores `publicIpAddress` ou `fqdn` para **ssh** na sua VM.
+
+```json
+{
+  "fqdn": "nativedisks.westus.cloudapp.azure.com",
+  "id": "/subscriptions/<guid>/resourceGroups/nativedisks/providers/Microsoft.Compute/virtualMachines/myVM",
+  "macAddress": "00-0D-3A-33-24-3C",
+  "privateIpAddress": "10.0.0.4",
+  "publicIpAddress": "13.91.91.195",
+  "resourceGroup": "nativedisks"
+}
+```
+
+Inicie sessão na VM com o endereço IP público ou o nome de domínio completamente qualificado (FQDN), ambos listados no resultado acima.
+
+```bash
+ssh ops@nativedisks.westus.cloudapp.azure.com
+```
+
+Deverá ver algo semelhante ao resultado seguinte, consoante a distribuição que escolheu:
+
+```
+The authenticity of host 'nativedisks.westus.cloudapp.azure.com (13.91.93.195)' can't be established.
+RSA key fingerprint is 3f:65:22:b9:07:c9:ef:7f:8c:1b:be:65:1e:86:94:a2.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'nativedisks.westus.cloudapp.azure.com,13.91.93.195' (RSA) to the list of known hosts.
+Enter passphrase for key '/home/ops/.ssh/id_rsa':
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+ops@myVM:~$ ls /
 bin  boot  dev  etc  home  initrd.img  lib  lib64  lost+found  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var  vmlinuz
 ```
 
@@ -127,6 +206,6 @@ Também pode [utilizar o controlador `docker-machine` do Azure com vários coman
 
 
 
-<!--HONumber=Jan17_HO1-->
+<!--HONumber=Feb17_HO4-->
 
 

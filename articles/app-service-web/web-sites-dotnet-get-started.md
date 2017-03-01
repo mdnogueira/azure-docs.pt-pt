@@ -4,7 +4,7 @@ description: "Saiba como implementar um projeto Web do ASP.NET numa nova aplica�
 services: app-service\web
 documentationcenter: .net
 author: tdykstra
-manager: wpickett
+manager: erikre
 editor: 
 ms.assetid: 69759e3c-384c-4afb-9278-db6724f6cb74
 ms.service: app-service-web
@@ -17,6 +17,7 @@ ms.author: rachelap
 translationtype: Human Translation
 ms.sourcegitcommit: 9b7e0b429575d080819f25e04d492a2b09d4d63a
 ms.openlocfilehash: 946552d1b268c6e70a9e8fcd4c40bd6e2ab76178
+ms.lasthandoff: 01/24/2017
 
 
 ---
@@ -218,10 +219,5 @@ Neste tutorial, aprendeu a criar uma aplicação Web simples e a implementá-la 
   
     Para obter informações sobre como trabalhar com grupos de recursos no Portal do Azure, veja [Implementar recursos com modelos do Resource Manager e com o portal do Azure](../azure-resource-manager/resource-group-template-deploy-portal.md).   
 * Para obter mais exemplos de criação de uma Aplicação Web ASP.NET no Serviço de Aplicações, veja [Create and deploy an ASP.NET web app in Azure App Service (Criar e implementar uma aplicação Web ASP.NET no Serviço de Aplicações do Azure)](https://github.com/Microsoft/HealthClinic.biz/wiki/Create-and-deploy-an-ASP.NET-web-app-in-Azure-App-Service) e [Create and deploy a mobile app in Azure App Service (Criar e implementar uma aplicação móvel no Serviço de Aplicações do Azure)](https://github.com/Microsoft/HealthClinic.biz/wiki/Create-and-deploy-a-mobile-app-in-Azure-App-Service) da [demonstração](https://blogs.msdn.microsoft.com/visualstudio/2015/12/08/connectdemos-2015-healthclinic-biz/) de [HealthClinic.biz](https://github.com/Microsoft/HealthClinic.biz) 2015 Connect. Para obter mais inícios rápidos a partir da demonstração de HealthClinic.biz, veja [Inícios Rápidos de Ferramentas de Programador do Azure](https://github.com/Microsoft/HealthClinic.biz/wiki/Azure-Developer-Tools-Quickstarts).
-
-
-
-
-<!--HONumber=Jan17_HO4-->
 
 

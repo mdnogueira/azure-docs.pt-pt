@@ -1,5 +1,5 @@
 ---
-title: "Utilizar o Controlo de Acesso Baseado em Funções no Portal do Azure | Microsoft Docs"
+title: "Controlo de Acesso Baseado em Funções no portal clássico do Azure | Microsoft Docs"
 description: "Introdução à gestão de acessos com Controlo de Acesso Baseado em Funções no Portal do Azure. Utilize atribuições de funções para atribuir permissões aos seus recursos."
 services: active-directory
 documentationcenter: 
@@ -12,11 +12,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 10/10/2016
+ms.date: 02/17/2017
 ms.author: kgremban
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: b930fe0a4a47cffebb579be43a77e87548549cfd
+ms.sourcegitcommit: bb894c38de63d0eac4066eeabaed7ba791021cc4
+ms.openlocfilehash: 05da6cd034a387b54eff0790996662223e4b8bab
 
 
 ---
@@ -24,8 +24,6 @@ ms.openlocfilehash: b930fe0a4a47cffebb579be43a77e87548549cfd
 > [!div class="op_single_selector"]
 > * [Gerir o acesso por utilizador ou grupo](role-based-access-control-manage-assignments.md)
 > * [Gerir o acesso por recurso](role-based-access-control-configure.md)
-> 
-> 
 
 O Controlo de Acesso Baseado em Funções (RBAC) do Azure permite uma gestão pormenorizada de acesso ao Azure. Utilizando o RBAC, pode conceder apenas a quantidade de acesso precisa aos utilizadores para realizar os trabalhos. Este artigo ajuda-o a começar a utilizar o RBAC no Portal do Azure. Se quiser saber mais sobre como o RBAC pode ajudá-lo a gerir o acesso, consulte o artigo [O que é o Controlo de Acesso Baseado em Funções](role-based-access-control-what-is.md).
 
@@ -44,8 +42,6 @@ Tenha em atenção que alguns utilizadores tiveram acesso **Atribuído** enquant
 
 > [!NOTE]
 > Os administradores e coadministradores de subscrição clássica são considerados proprietários da subscrição no novo modelo RBAC.
-> 
-> 
 
 ## <a name="add-access"></a>Adicionar Acesso
 Pode conceder acesso de dentro do recurso, grupo de recursos ou subscrição, que é o âmbito da atribuição de função.
@@ -61,12 +57,11 @@ Pode conceder acesso de dentro do recurso, grupo de recursos ou subscrição, qu
 Depois de adicionar com êxito uma atribuição de função, esta será apresentada no painel **Utilizadores**.
 
 ## <a name="remove-access"></a>Remover o Acesso
-1. Selecione a atribuição de funções no painel Controlo de acesso.
-2. Selecione **Remover** no painel de detalhes de atribuição.  
-3. Selecione **sim** para confirmar a remoção.  
-    ![Captura de ecrã Painel de utilizadores – remover de função](./media/role-based-access-control-configure/remove-access1.png)
+1. Utilize as caixas de verificação no painel de Controlo de acesso para selecionar uma ou mais atribuições de função.
+2. Selecione **Remover**.  
+3. Será apresentada uma caixa que lhe pede para confirmar a ação. Selecione **Sim** para remover as atribuições de função.
 
-Não foi possível remover atribuições herdadas. Repare na imagem abaixo onde o botão Remover está a cinzento. Em vez disso, repare no detalhe **Atribuído Em**. Ir para o recurso aí listado para remover a atribuição de função.
+Não foi possível remover atribuições herdadas. Se precisar de remover uma atribuição herdada, terá de o fazer no âmbito em que a atribuição da função foi criada. Na coluna **Âmbito**, junto a **Herdado**, existe uma ligação que o leva aos recursos onde esta função foi atribuída. Ir para o recurso aí listado para remover a atribuição de função.
 
 ![Painel de utilizadores – captura de ecrã do botão de acesso herdado desativa remover](./media/role-based-access-control-configure/remove-access2.png)
 
@@ -85,6 +80,6 @@ Pode atribuir funções e gerir acessos com os comandos de Azure RBAC noutras fe
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Feb17_HO3-->
 
 

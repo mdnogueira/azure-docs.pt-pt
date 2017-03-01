@@ -46,7 +46,7 @@
 
 # Referência
 ## [PowerShell](/powershell/resourcemanager/azurerm.network/v3.1.0/azurerm.network)
-## [CLI 2.0 do Azure (Pré-visualização)](/cli/azure/network/lb)
+## [CLI 2.0 do Azure](/cli/azure/network/lb)
 ## [.NET](/dotnet/api/microsoft.azure.management.network.models)
 ## [Java](/java/api/com.microsoft.azure.management.network)
 ## [Node.js](http://azure.github.io/azure-sdk-for-node/azure-arm-network/latest/LoadBalancers.html)
@@ -66,8 +66,3 @@
 # Recursos
 ## [Preços](https://azure.microsoft.com/pricing/details/load-balancer/)
 ## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=load-balancer)
-
-
-<!--HONumber=Jan17_HO3-->
-
-

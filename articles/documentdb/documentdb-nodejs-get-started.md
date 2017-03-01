@@ -16,8 +16,9 @@ ms.topic: hero-article
 ms.date: 12/25/2016
 ms.author: anhoh
 translationtype: Human Translation
-ms.sourcegitcommit: 16bff1b5708652a75ea603f596c864901b12a88d
-ms.openlocfilehash: 08f4cd48ea41d66203e296415181d5da14327854
+ms.sourcegitcommit: fba82c5c826da7d1912814b61c5065ca7f726011
+ms.openlocfilehash: 49b765010be87bacdb486391c28bf58aad1a9d24
+ms.lasthandoff: 02/23/2017
 
 
 ---
@@ -406,7 +407,7 @@ O seguinte diagrama ilustra como a sintaxe de consulta do DocumentDB SQL é cham
 
 ![Tutorial Node.js - Diagrama que ilustra o âmbito e o significado da consulta - base de dados Node](./media/documentdb-nodejs-get-started/node-js-tutorial-collection-documents.png)
 
-A palavra-chave [FROM](documentdb-sql-query.md#from-clause) é opcional na consulta porque as consultas do DocumentDB já estão confinadas a uma única coleção. Por conseguinte, "FROM Families f" pode ser trocada por "FROM root r" ou qualquer outra variável de nome escolher. Por predefinição, o DocumentDB irá inferir essas Famílias, raiz ou o nome da variável que escolheu, referenciar a atual coleção.
+A palavra-chave [FROM](documentdb-sql-query.md#FromClause) é opcional na consulta porque as consultas do DocumentDB já estão confinadas a uma única coleção. Por conseguinte, "FROM Families f" pode ser trocada por "FROM root r" ou qualquer outra variável de nome escolher. Por predefinição, o DocumentDB irá inferir essas Famílias, raiz ou o nome da variável que escolheu, referenciar a atual coleção.
 
 Copie e cole o código por baixo da chamada para **getFamilyDocument** para executar a função **queryCollection**.
 
@@ -627,9 +628,4 @@ Já está, basta criar e está pronto!
 
 [documentdb-create-account]: documentdb-create-account.md
 [keys]: media/documentdb-nodejs-get-started/node-js-tutorial-keys.png
-
-
-
-<!--HONumber=Jan17_HO1-->
-
 

@@ -15,8 +15,8 @@ ms.workload: storage-backup-recovery
 ms.date: 02/06/2017
 ms.author: raynew
 translationtype: Human Translation
-ms.sourcegitcommit: 7455d6f99ed8ceb401224f98105f7b651f55c724
-ms.openlocfilehash: 98bf94960c39565243995a1c4dd45787478b8f40
+ms.sourcegitcommit: 5adacea6033070e808f9bf5e76bae0f45f7f1199
+ms.openlocfilehash: e922590c500517c93f7682b5cca5ef6a2c89de53
 
 
 ---
@@ -49,6 +49,9 @@ Saiba o que a Recuperação de Sites pode fazer pela sua empresa:
 * **Ativação pós-falha da várias VMs**— Pode configurar o plano de recuperação que abranja scripts e runbooks de automatização do Azure. Os planos de recuperação permitem-lhe modelar e personalizar a ativação pós-falha e a recuperação de aplicações de vários escalões que estão distribuídas por várias VMs.
 * **Integrar com tecnologias BCDR existentes** – a Recuperação de Sites é integrada com outras tecnologias BCDR. Por exemplo, pode utilizar a Recuperação de Sites para proteger o back-end do SQL Server de cargas de trabalho corporativas, incluindo suporte nativo para o SQL Server AlwaysOn gerir a ativação pós-falha de grupos de disponibilidade.
 
+## <a name="which-regions-are-supported"></a>Que regiões são suportadas?
+Para saber mais sobre as regiões em que o Azure Site Recovery está disponível, consulte [aqui](https://azure.microsoft.com/en-us/regions/services/) 
+
 ## <a name="what-can-i-replicate"></a>O que posso replicar?
 Apresentamos a seguir um resumo daquilo que pode replicar com a Recuperação de Sites.
 
@@ -78,7 +81,6 @@ O Site Recovery fornece replicação com suporte para aplicações para que as c
 
 
 
-
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Feb17_HO4-->
 
 

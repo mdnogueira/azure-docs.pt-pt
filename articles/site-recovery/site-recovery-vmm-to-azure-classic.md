@@ -15,8 +15,8 @@ ms.topic: hero-article
 ms.date: 02/06/2017
 ms.author: raynew
 translationtype: Human Translation
-ms.sourcegitcommit: 27df1166a23e3ed89fdc86f861353c80a4a467ad
-ms.openlocfilehash: 28c41f08bf8eaf7e6679040bb8fbab2e134d08fb
+ms.sourcegitcommit: e34b10aec5ee4316c8e2ffc03e1714dc6753e4d1
+ms.openlocfilehash: 96504042c4fb6a83c4ab2c35c20a8264d7db85bb
 
 
 ---
@@ -24,12 +24,12 @@ ms.openlocfilehash: 28c41f08bf8eaf7e6679040bb8fbab2e134d08fb
 > [!div class="op_single_selector"]
 > * [Portal do Azure](site-recovery-vmm-to-azure.md)
 > * [PowerShell – Resource Manager](site-recovery-vmm-to-azure-powershell-resource-manager.md)
-> * [Portal Clássico](site-recovery-vmm-to-azure-classic.md)
+> * [Portal clássico](site-recovery-vmm-to-azure-classic.md)
 > * [PowerShell – Clássica](site-recovery-deploy-with-powershell.md)
 >
 >
 
-O serviço do Azure Site Recovery contribui para a estratégia da continuidade do seu negócio e recuperação após desastre (BCDR) através da orquestração de replicação, ativação pós-falha e recuperação de máquinas virtuais e servidores físicos. As máquinas podem ser replicadas para o Azure ou para um datacenter secundário no local. Para uma descrição geral, leia [O que é o Azure Site Recovery?](site-recovery-overview.md).
+O serviço do Azure Site Recovery contribui para a estratégia da continuidade do seu negócio e recuperação após desastre (BCDR) através da orquestração de replicação, ativação pós-falha e recuperação de máquinas virtuais e servidores físicos. As máquinas podem ser replicadas para o Azure ou para um datacenter secundário no local. Para uma descrição geral, leia [O que é o Azure Site Recovery?](site-recovery-overview.md)
 
 ## <a name="overview"></a>Descrição geral
 Este artigo descreve como implementar a Recuperação de Sites para replicar máquinas virtuais Hyper-V em servidores anfitrião Hyper-V que se encontram em nuvens privadas do VMM para o Azure.
@@ -50,7 +50,7 @@ Eis o que necessita no Azure.
 | **Pré-requisito** | **Detalhes** |
 | --- | --- |
 | **Conta do Azure** |Precisará de uma conta do [Microsoft Azure](https://azure.microsoft.com/). Pode começar com uma [avaliação gratuita](https://azure.microsoft.com/pricing/free-trial/). [Saiba mais](https://azure.microsoft.com/pricing/details/site-recovery/) sobre os preços da Recuperação de Sites. |
-| **Armazenamento do Azure** |Precisará de uma conta de armazenamento do Azure para armazenar dados replicados. Os dados replicados são guardados no armazenamento do Azure e as VMs do Azure são aceleradas quando ocorre a ativação pós-falha. <br/><br/>Precisará de uma [conta de armazenamento georredundante padrão](../storage/storage-redundancy.md#geo-redundant-storage). A conta tem de estar na mesma região que o serviço de Recuperação de Sites e estar associado à mesma subscrição. Tenha em atenção que a replicação para contas de armazenamento Premium não é atualmente suportada e não deve ser utilizada.<br/><br/>[Leia sobre](../storage/storage-introduction.md) o armazenamento do Azure. |
+| **Armazenamento do Azure** |Precisará de uma conta de armazenamento do Azure para armazenar dados replicados. Os dados replicados são guardados no armazenamento do Azure e as VMs do Azure são aceleradas quando ocorre a ativação pós-falha. <br/><br/>Precisará de uma [conta de armazenamento georredundante padrão](../storage/storage-redundancy.md#geo-redundant-storage). A conta tem de estar na mesma região que o serviço Site Recovery e estar associado à mesma subscrição. Tenha em atenção que a replicação para contas de armazenamento Premium não é atualmente suportada e não deve ser utilizada.<br/><br/>[Leia sobre](../storage/storage-introduction.md) o armazenamento do Azure. |
 | **Rede do Azure** |Precisará de uma rede virtual do Azure à qual se ligarão as VMs do Azure quando ocorrer a ativação pós-falha. A rede virtual do Azure tem de estar na mesma região que o cofre de Recuperação de Sites. |
 
 ## <a name="on-premises-prerequisites"></a>Pré-requisitos no local
@@ -74,13 +74,6 @@ Se pretender implementar o mapeamento da rede precisará do seguinte:
 * As máquinas virtuais que pretende proteger no servidor VMM de origem devem estar ligadas a uma rede VM. Essa rede deve ser ligada a uma rede lógica que está associada à nuvem.
 * Uma rede do Azure para a qual as máquinas virtuais replicadas podem ligar após a ativação pós-falha. Selecionará esta rede no momento da ativação pós-falha. A rede deve estar na mesma região que a sua subscrição do Azure Site Recovery.
 
-Prepare o mapeamento da rede da seguinte forma:
-
-1. [Leia sobre](site-recovery-network-mapping.md) os requisitos de mapeamento da rede.
-2. Prepare as redes VM no VMM:
-
-   * [Configure as redes lógicas](https://technet.microsoft.com/library/jj721568.aspx).
-   * [Configure as redes VM](https://technet.microsoft.com/library/jj721575.aspx).
 
 ## <a name="step-1-create-a-site-recovery-vault"></a>Passo 1: Criar um cofre de Recuperação de Sites
 1. Inicie sessão no [Portal de Gestão](https://portal.azure.com) do servidor VMM que pretende registar.
@@ -146,7 +139,7 @@ Gere uma chave de registo no cofre. Depois de transferir o Fornecedor do Azure S
 12. Em **Sincronizar metadados da nuvem**, selecione se pretende sincronizar ou não os metadados de todas as nuvens no servidor VMM com o cofre. Esta ação só deverá ocorrer uma vez em cada servidor. Se não quiser sincronizar todas as nuvens, pode deixar esta definição desmarcada e sincronizar cada nuvem individualmente nas propriedades de nuvem na consola do VMM.
 13. Clique em **Seguinte** para concluir o processo. Após o registo, os metadados do servidor VMM são obtidos pelo Azure Site Recovery. O servidor é apresentado no separador **Servidores VMM**, na página **Servidores** do cofre.
 
-    ![Lastpage](./media/site-recovery-vmm-to-azure-classic/provider13.PNG)
+    ![Última página](./media/site-recovery-vmm-to-azure-classic/provider13.PNG)
 
 Após o registo, os metadados do servidor VMM são obtidos pelo Azure Site Recovery. O servidor é apresentado no separador **Servidores VMM**, na página **Servidores** do cofre.
 
@@ -217,7 +210,7 @@ Depois do servidor VMM estar registado, pode configurar as definições de prote
 2. No separador **Itens Protegidos**, clique na nuvem que pretende configurar e vá para o separador **Configuração**.
 3. Em **Destino**, selecione **Azure**.
 4. Em **Conta de Armazenamento**, selecione a conta de armazenamento do Azure que utiliza para replicação.
-5. Defina **Encriptar dados armazenados** como **Desativar**. Esta definição especifica que os dados devem ser replicados encriptados entre o site no local e o Azure.
+5. Defina **Encriptar dados armazenados** como **Desativar**. Esta definição especifica que os dados devem ser encriptados durante a replicação entre o site no local e o Azure.
 6. Em **Copiar frequência** deixe o valor predefinido. Este valor especifica a frequência com que devem ser sincronizadas as localizações de origem e de destino.
 7. Em **Manter pontos de recuperação para**, deixe o valor predefinido. Com um valor predefinido de zero, o último ponto de recuperação para uma máquina virtual principal é o único que é armazenado num servidor de anfitrião de réplica.
 8. Em **Frequência de instantâneos consistentes com aplicações**, deixe o valor predefinido. Este valor especifica a frequência de criar instantâneos. Os instantâneos utilizam o Serviço de Cópia de Sombra de Volumes (VSS) para se certificar de que as aplicações estão num estado consistente quando se obtém o instantâneo.  Se definir um valor, certifique-se de que é menor que o número de pontos de recuperação adicionais que está a configurar.
@@ -274,7 +267,7 @@ Depois de configurar corretamente os servidores, as nuvens e as redes, pode ativ
     ![Verificar as máquinas virtuais](./media/site-recovery-vmm-to-azure-classic/vm-properties.png)
 2. No separador**Configurar** das propriedades da máquina virtual, pode modificar as seguintes propriedades de rede.
 
-* **Número de adaptadores de rede na máquina virtual de destino** – o número de adaptadores de rede é ditado pelo tamanho especificado para a máquina virtual de destino. Verifique as [especificações de tamanho das máquinas virtuais](../virtual-machines/virtual-machines-linux-sizes.md#size-tables) para obter o número de adaptadores suportados pelo tamanho da máquina virtual. Quando modificar o tamanho de uma máquina virtual e guardar as definições, o número do adaptador de rede será alterado quando abrir a página **Configurar** na próxima vez. O número de adaptadores de rede de máquinas virtuais de destino é o número mínimo de placas de rede na máquina virtual de origem e o número máximo de adaptadores de rede suportados pelo tamanho da máquina virtual escolhido, da seguinte forma:
+* **Número de adaptadores de rede na máquina virtual de destino** – o número de adaptadores de rede é ditado pelo tamanho especificado para a máquina virtual de destino. Verifique as [especificações de tamanho das máquinas virtuais](../virtual-machines/virtual-machines-linux-sizes.md#size-tables) para obter o número de adaptadores suportados pelo tamanho da máquina virtual. Quando modificar o tamanho de uma máquina virtual e guardar as definições, o número dos adaptadores de rede será alterado quando abrir a página **Configurar** na próxima vez. O número de adaptadores de rede de máquinas virtuais de destino é o número mínimo de placas de rede na máquina virtual de origem e o número máximo de adaptadores de rede suportados pelo tamanho da máquina virtual escolhido, da seguinte forma:
 
   * Se o número de adaptadores de rede na máquina de origem for menor ou igual ao número de adaptadores permitido para o tamanho da máquina de destino, o destino terá o mesmo número de adaptadores que os de origem.
   * Se o número de adaptadores da máquina virtual de origem exceder o número permitido para o tamanho de destino, será utilizado o tamanho máximo de destino.
@@ -296,15 +289,15 @@ Para testar a implementação, pode executar uma ativação pós-falha de teste 
 A ativação pós-falha de teste simula o mecanismo de ativação pós-falha e recuperação numa rede isolada. Tenha em atenção que:
 
 * Se pretender ligar à máquina virtual no Azure utilizando o Ambiente de Trabalho Remoto após a ativação pós-falha, deverá ativar a Ligação de Ambiente Remoto na máquina virtual antes de executar a ativação pós-falha de teste.
-* Após a ativação pós-falha, utilizará um endereço IP público para ligar à máquina virtual no Azure utilizando o Ambiente de Trabalho Remoto. Se pretender efetuar este procedimento, certifique-se de que não tem quaisquer políticas de domínio a impedir a ligação a uma máquina virtual utilizando um endereço público.
+* Após a ativação pós-falha, utilize um endereço IP público para ligar à VM do Azure com o Ambiente de Trabalho Remoto. Se pretender efetuar este procedimento, certifique-se de que não tem quaisquer políticas de domínio a impedir a ligação a uma máquina virtual utilizando um endereço público.
 
 > [!NOTE]
-> Para obter o melhor desempenho quando fizer uma ativação pós-falha para o Azure, certifique-se de que tem instalado o agente do Azure na máquina protegida. Este procedimento ajuda a arrancar mais rapidamente e também ajuda a realizar o diagnóstico em caso de problemas. O agente Linux pode ser encontrado [aqui](https://github.com/Azure/WALinuxAgent) – e o agente do Windows pode ser encontrado [aqui](http://go.microsoft.com/fwlink/?LinkID=394789)
+> Para obter o melhor desempenho quando houver uma ativação pós-falha para o Azure, certifique-se de que instalou o agente do Azure na VM. Isto fornece um arranque mais rápido e ajuda na resolução de problemas. Transfira o [agente do Linux](https://github.com/Azure/WALinuxAgent) ou o [agente do Windows](http://go.microsoft.com/fwlink/?LinkID=394789).
 >
 >
 
 ### <a name="create-a-recovery-plan"></a>Criar um plano de recuperação
-1. No separador **Planos de Recuperação**, adicione um novo plano. Especifique um nome, **VMM** no **Tipo de origem** e o servidor VMM de origem em **Origem**, o destino será Azure.
+1. No separador **Planos de Recuperação**, adicione um novo plano. Especifique um nome, **VMM** no **Tipo de origem** e o servidor VMM de origem em **Origem**. O destino será o Azure.
 
     ![Criar plano de recuperação](./media/site-recovery-vmm-to-azure-classic/recovery-plan1.png)
 2. Na página **Selecionar Virtual Machines**, selecione as máquinas virtuais a adicionar ao plano de recuperação. Estas máquinas virtuais são adicionadas ao grupo predefinido do plano de recuperação – Grupo 1. Foi testado um máximo de 100 máquinas virtuais num plano de recuperação simples.
@@ -334,11 +327,11 @@ Para executar um teste de ativação pós-falha, efetue o seguinte:
     ![Sem rede](./media/site-recovery-vmm-to-azure-classic/test-no-network.png)
 3. Se a encriptação de dados estiver ativada para a nuvem, em **Chave de Encriptação** selecione o certificado que foi emitido durante a instalação do Fornecedor no servidor VMM, quando ativar a opção para ativar a encriptação de dados para uma nuvem.
 4. No separador **Tarefas**, pode controlar o progresso de ativação pós-falha. Também deve ser capaz de ver a réplica de teste da máquina virtual no portal do Azure. Se tiver configurado para aceder a máquinas virtuais a partir da rede no local, pode iniciar uma ligação de Ambiente de Trabalho Remoto para a máquina virtual.
-5. Quando a ativação pós-falha atingir a fase **Teste completo**, clique em **Concluir Teste** para concluir a ativação pós-falha de teste. Pode desagregar o separador **Tarefa** para controlar o estado e o progresso de ativação pós-falha e para realizar qualquer ação necessária.
-6. Após a ativação pós-falha, poderá ver a réplica de teste da máquina virtual no portal do Azure. Se tiver configurado para aceder a máquinas virtuais a partir da rede no local, pode iniciar uma ligação de Ambiente de Trabalho Remoto para a máquina virtual. Faça o seguinte:
+5. Quando a ativação pós-falha atingir a fase **Teste completo**, clique em **Concluir Teste** para concluir. Pode desagregar o separador **Tarefa** para controlar o estado e o progresso de ativação pós-falha e para realizar qualquer ação necessária.
+6. Após a ativação pós-falha, pode ver a réplica de teste da máquina virtual no portal do Azure. Se tiver configurado para aceder a máquinas virtuais a partir da rede no local, pode iniciar uma ligação de Ambiente de Trabalho Remoto para a máquina virtual. Faça o seguinte:
 
    1. Verifique se as máquinas virtuais iniciam corretamente.
-   2. Se pretender ligar à máquina virtual no Azure utilizando o Ambiente de Trabalho Remoto após a ativação pós-falha, deverá ativar a Ligação de Ambiente Remoto na máquina virtual antes de executar a ativação pós-falha de teste. Também terá de adicionar um ponto final RDP na máquina virtual. Pode tirar partido dos [Runbooks de Automatização do Azure](site-recovery-runbook-automation.md) para esse fim.
+   2. Se pretender ligar à máquina virtual no Azure utilizando o Ambiente de Trabalho Remoto após a ativação pós-falha, deverá ativar a Ligação de Ambiente Remoto na máquina virtual antes de executar a ativação pós-falha de teste. Também tem de adicionar um ponto final RDP na máquina virtual. Pode tirar partido dos [Runbooks de Automatização do Azure](site-recovery-runbook-automation.md) para esse fim.
    3. Depois da ativação pós-falha, se utilizar um endereço IP público para ligar à máquina virtual no Azure utilizando o Ambiente de Trabalho Remoto, certifique-se de que não tem qualquer política de domínio a impedir a ligação a uma máquina virtual utilizando um endereço público.
 7. Depois do teste ter concluído, efetue o seguinte:
 
@@ -351,6 +344,6 @@ Saiba mais sobre como [Configurar planos de recuperação](site-recovery-create-
 
 
 
-<!--HONumber=Dec16_HO4-->
+<!--HONumber=Feb17_HO4-->
 
 

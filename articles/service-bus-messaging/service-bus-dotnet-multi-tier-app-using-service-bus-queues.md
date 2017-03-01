@@ -1,5 +1,5 @@
 ---
-title: "Aplicação .NET multicamadas com as filas do Azure Service Bus | Microsoft Docs"
+title: "Aplicação .NET multicamadas com o Azure Service Bus | Microsoft Docs"
 description: "Um tutorial de .NET que ajuda a desenvolver uma aplicação multicamadas no Azure que utiliza as filas do Service Bus para comunicar entre camadas."
 services: service-bus-messaging
 documentationcenter: .net
@@ -15,8 +15,8 @@ ms.topic: get-started-article
 ms.date: 01/10/2017
 ms.author: sethm
 translationtype: Human Translation
-ms.sourcegitcommit: 9849b15115de5b17a50e0f46781c8aa16a53d297
-ms.openlocfilehash: c68125afe8979c595ae0f6e78fa90f6a365c435f
+ms.sourcegitcommit: 94f4d852aeaed1eec20f178e2721650660ebec49
+ms.openlocfilehash: 0f2caeed40b59a65ec08e7d94701c93b862199fc
 
 
 ---
@@ -61,7 +61,7 @@ As secções seguintes abordam o código que implementa esta arquitetura.
 ## <a name="set-up-the-development-environment"></a>Configurar o ambiente de desenvolvimento
 Antes de poder começar a desenvolver aplicações do Azure, obtenha as ferramentas e configure o ambiente de desenvolvimento.
 
-1. Instale o Azure SDK para o .NET a partir de [Obter Ferramentas e SDK](https://azure.microsoft.com/downloads/).
+1. Instale o Azure SDK para o .NET a partir da [página de transferências](https://azure.microsoft.com/downloads/) do SDK.
 2. Na coluna **.NET**, clique na versão do Visual Studio que está a utilizar. Os passos neste tutorial utilizam o Visual Studio 2015.
 3. Quando lhe for pedido para executar ou guardar o instalador, clique em **Executar**.
 4. No **Instalador de Plataforma Web**, clique em **Instalar** e continue com a instalação.
@@ -397,6 +397,6 @@ Para obter mais informações sobre os cenários de multicamadas, consulte:
 
 
 
-<!--HONumber=Jan17_HO2-->
+<!--HONumber=Feb17_HO3-->
 
 

@@ -4,7 +4,7 @@ description: "Siga este tutorial para começar a utilizar Mobile Apps para o des
 services: app-service\mobile
 documentationcenter: xamarin
 author: adrianhall
-manager: dwrede
+manager: erikre
 editor: 
 ms.assetid: 14428794-52ad-4b51-956c-deb296cafa34
 ms.service: app-service-mobile
@@ -17,6 +17,7 @@ ms.author: adrianha
 translationtype: Human Translation
 ms.sourcegitcommit: b1a633a86bd1b5997d5cbf66b16ec351f1043901
 ms.openlocfilehash: ed289d0755bbad08de01b0f311d14f5514ce0631
+ms.lasthandoff: 01/20/2017
 
 
 ---
@@ -93,9 +94,4 @@ Siga os passos seguintes para configurar o projeto de servidor para utilizar o b
 
 <!-- URLs. -->
 [Portal do Azure]: https://portal.azure.com/
-
-
-
-<!--HONumber=Jan17_HO3-->
-
 
