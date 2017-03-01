@@ -44,8 +44,9 @@
 ### [Criar cópias de segurança e restauro](documentdb-online-backup-and-restore.md)
 ### [Extinguir S1, S2, S3](documentdb-performance-levels.md)
 ### [Unidades de pedidos](documentdb-request-units.md)
-### CLI do Azure
-#### [Criar uma conta](documentdb-automation-resource-manager-cli.md)
+### [CLI 2.0 do Azure](documentdb-automation-resource-manager-cli.md)
+### CLI do Azure 1.0
+#### [Criar uma conta](documentdb-automation-resource-manager-cli-nodejs.md)
 #### [Adicionar ou remover regiões](documentdb-automation-region-management.md)
 ### [Azure PowerShell](documentdb-manage-account-with-powershell.md)
 ### [Suporte de firewall](documentdb-firewall-support.md)
@@ -124,8 +125,3 @@
 ## [Consistência dos dados explicada através do basebol](http://research.microsoft.com/apps/pubs/default.aspx?id=206913)
 ## [Livro: Using Microsoft Azure DocumentDB in a Node.js Application (Utilizar o Microsoft Azure DocumentDB numa Aplicação Node.js)](https://go.microsoft.com/fwlink/?LinkId=828428&clcid=0x409)
 ## [Percurso de aprendizagem](https://azure.microsoft.com/documentation/learning-paths/documentdb/)
-
-
-<!--HONumber=Feb17_HO3-->
-
-
