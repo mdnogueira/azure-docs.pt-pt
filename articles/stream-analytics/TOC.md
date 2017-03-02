@@ -31,6 +31,7 @@
 ### [Funções do Windows](stream-analytics-window-functions.md)
 
 ## Gerir
+### [Fiabilidade das tarefas](stream-analytics-job-reliability.md)
 ### [Monitorizar trabalhos](stream-analytics-monitoring.md)
 ### [Registos de diagnóstico](stream-analytics-job-diagnostic-logs.md)
 ### [Monitorizar trabalhos de forma programática](stream-analytics-monitor-jobs.md)
@@ -59,8 +60,3 @@
 ## [Fórum de comentários](http://feedback.azure.com/forums/270577-azure-stream-analytics)
 ## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=stream-analytics)
 ## [Vídeos](https://azure.microsoft.com/documentation/videos/index/?services=stream-analytics)
-
-
-<!--HONumber=Feb17_HO1-->
-
-

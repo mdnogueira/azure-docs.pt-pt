@@ -54,6 +54,7 @@
 ### [Instalar o RStudio](hdinsight-hadoop-r-server-install-r-studio.md)
 ### [Contextos de computação](hdinsight-hadoop-r-server-compute-contexts.md)
 ## Utilizar o Spark para processamento na memória
+### [Utilizar Caffe para aprendizagem profunda](hdinsight-apache-spark-use-with-data-lake-store.md)
 ### [Com o Data Lake Store](hdinsight-apache-spark-use-with-data-lake-store.md)
 ### [Com as ferramentas de BI](hdinsight-apache-spark-use-bi-tools.md)
 ### [Aplicação autónoma](hdinsight-apache-spark-create-standalone-application.md)
@@ -223,8 +224,3 @@
 # Recursos
 ## [Obter ajuda no fórum](https://social.msdn.microsoft.com/forums/azure/en-US/home?forum=hdinsight)
 ## [Percurso de aprendizagem](https://azure.microsoft.com/documentation/learning-paths/hdinsight-self-guided-hadoop-training/)
-
-
-<!--HONumber=Feb17_HO2-->
-
-

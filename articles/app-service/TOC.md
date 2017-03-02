@@ -28,6 +28,20 @@
 ### [Aplicação Marketplace](../app-service-web/web-sites-php-web-site-gallery.md)
 ### [PHP](../app-service-web/app-service-web-php-get-started.md)    
 
+# Exemplos comuns
+## Exemplos da CLI
+### [Criar uma aplicação Web e implementar código a partir do GitHub](./scripts/app-service-cli-deploy-github.md)
+### [Criar uma aplicação Web com implementação contínua do GitHub](./scripts/app-service-cli-continuous-deployment-github.md)
+### [Criar uma aplicação Web e implementar código a partir de um repositório do Git local](./scripts/app-service-cli-deploy-local-git.md)
+### [Criar uma aplicação Web e implementar código para um ambiente de teste](./scripts/app-service-cli-deploy-staging-environment.md)
+### [Criar uma aplicação Web do Núcleo ASP.NET num contentor do Docker](./scripts/app-service-cli-linux-docker-aspnetcore.md)
+### [Mapear domínios personalizados para uma aplicação Web](./scripts/app-service-cli-configure-custom-domain.md)
+### [Dimensionar uma aplicação Web manualmente](./scripts/app-service-cli-scale-manual.md)
+### [Dimensionar uma aplicação Web para todo o mundo com uma arquitetura de elevada disponibilidade](./scripts/app-service-cli-scale-high-availability.md)
+### [Ligar uma aplicação Web a uma base de dados SQL](./scripts/app-service-cli-app-service-sql.md)
+### [Ligar uma aplicação Web a uma conta de armazenamento](./scripts/app-service-cli-app-service-storage.md)
+### [Monitorizar uma aplicação Web com os registos do servidor Web](./scripts/app-service-cli-monitor.md)
+
 # Procedimento
 
 ## Planear e conceber
@@ -156,8 +170,3 @@
 ## [Fórum do MSDN](https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=windowsazurewebsitespreview)  
 ## [Vídeos](https://azure.microsoft.com/documentation/videos/index/?services=app-service) 
 ## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=app-service) 
-
-
-<!--HONumber=Jan17_HO3-->
-
-
