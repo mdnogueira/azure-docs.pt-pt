@@ -45,9 +45,17 @@
 
 ## [Codificar conteúdo](media-services-encode-asset.md)
 ### [Comparar codificadores](media-services-compare-encoders.md)
-### [Códigos de erro](media-services-encoding-error-codes.md)
 ### Media Encoder Standard (MES)
 #### [Formatos e Codecs do Media Encoder Standard](media-services-media-encoder-standard-formats.md)
+#### [Utilize o MES para gerar automaticamente uma escala de bits](media-services-autogen-bitrate-ladder-with-mes.md)
+#### Codificar com o Media Encoder Standard
+##### [Portal](media-services-portal-encode.md)
+##### [.NET](media-services-dotnet-encode-with-media-encoder-standard.md)
+##### [REST](media-services-rest-encode-asset.md)
+#### [Codificação avançada com MES](media-services-advanced-encoding-with-mes.md)
+##### [Personalizar as predefinições do Media Encoder Standard](media-services-custom-mes-presets-with-dotnet.md)
+##### [Como gerar miniaturas com o Media Encoder Standard com o .NET](media-services-dotnet-generate-thumbnail-with-mes.md)
+##### [Recortar vídeos com o Media Encoder Standard](media-services-crop-video.md)
 #### Esquemas MES
 ##### [Esquema Media Encoder Standard](media-services-mes-schema.md)
 ##### [Metadados de entrada](media-services-input-metadata-schema.md)
@@ -78,13 +86,6 @@
 ##### [H264 Taxa de Bits Única 720p para Android](media-services-mes-preset-H264-Single-Bitrate-720p-for-Android.md)
 ##### [H264 Taxa de Bits Única de Alta Qualidade SD para Android](media-services-mes-preset-H264-Single-Bitrate-High-Quality-SD-for-Android.md)
 ##### [H264 Taxa de Bits Única de Baixa Qualidade SD para Android](media-services-mes-preset-H264-Single-Bitrate-Low-Quality-SD-for-Android.md)
-#### Codificar com o Media Encoder Standard
-##### [Portal](media-services-portal-encode.md)
-##### [.NET](media-services-dotnet-encode-with-media-encoder-standard.md)
-##### [REST](media-services-rest-encode-asset.md)
-#### [Codificação avançada com MES](media-services-advanced-encoding-with-mes.md)
-##### [Como gerar miniaturas com o Media Encoder Standard com o .NET](media-services-dotnet-generate-thumbnail-with-mes.md)
-##### [Recortar vídeos com o Media Encoder Standard](media-services-crop-video.md)
 ### Fluxo de Trabalho Premium de Codificador de Multimédia
 #### [Formatos e Codecs de Fluxo de Trabalho Premium do Codificador de Multimédia](media-services-premium-workflow-encoder-formats.md)
 #### Codificar com o Fluxo de Trabalho Premium do Codificador de Multimédia
@@ -92,9 +93,11 @@
 ##### [Tutoriais de Fluxo de Trabalho Premium do Codificador de Multimédia](media-services-media-encoder-premium-workflow-tutorials.md)
 ##### [Criar Fluxos de Trabalho de Codificação Avançados com o Estruturador de Fluxos de Trabalho](media-services-workflow-designer.md)
 ##### [Fluxo de trabalho Premium com várias entradas](media-services-media-encoder-premium-workflow-multiplefilesinput.md)
+### [Criar uma tarefa que gera segmentos fMP4](media-services-generate-fmp4-chunks.md)
 ### Processadores de multimédia
 #### [.NET](media-services-get-media-processor.md)
 #### [REST](media-services-rest-get-media-processor.md)
+### [Códigos de erro](media-services-encoding-error-codes.md)
 ### Preterido
 #### [Empacotamento e encriptação estáticas](media-services-static-packaging.md)
 
@@ -215,8 +218,3 @@
 ## [Preços](https://azure.microsoft.com/pricing/details/media-services/)
 ## [Comunidade dos Serviços de Multimédia do Azure](media-services-community.md)
 ## [Vídeos](https://azure.microsoft.com/resources/videos/index/?services=media-services)
-
-
-<!--HONumber=Feb17_HO3-->
-
-

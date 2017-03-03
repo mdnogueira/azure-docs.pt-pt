@@ -45,7 +45,7 @@
 
 ## Armazenamento em Disco 
 ### [Criar uma VM com o Resource Manager e o PowerShell](../virtual-machines/virtual-machines-windows-ps-create.md)
-### [Criar uma VM do Linux com o Azure CLI 2.0 (Pré-visualização)](../virtual-machines/virtual-machines-linux-quick-create-cli.md)
+### [Criar uma VM com Linux através da CLI do Azure 2.0](../virtual-machines/virtual-machines-linux-quick-create-cli.md)
 ### [Anexar um disco gerido a uma VM do Windows com o PowerShell](../virtual-machines/virtual-machines-windows-attach-disk-ps.md)
 ### [Adicionar um disco gerido a uma VM do Linux](../virtual-machines/virtual-machines-linux-add-disk.md)
 ### [Criar uma cópia de um VHD armazenado como Disco Gerido com os Instantâneos no Windows](../virtual-machines/virtual-machines-windows-snapshot-copy-managed-disk.md)
@@ -100,7 +100,7 @@
 ### [Definir e obter propriedades e metadados](storage-properties-metadata.md)
 ## Gerir
 ### [PowerShell](storage-powershell-guide-full.md)
-### [CLI 2.0 do Azure (Pré-visualização)](storage-azure-cli.md)
+### [CLI 2.0 do Azure](storage-azure-cli.md)
 ### [CLI do Azure 1.0](storage-azure-cli-nodejs.md)
 ### [Automatização do Azure](automation-manage-storage.md)
 ## Proteger
@@ -219,8 +219,3 @@
 ### [Ruby](https://github.com/Azure/azure-storage-ruby)
 ### [Python](https://github.com/Azure/azure-storage-python)
 ### [iOS](https://github.com/Azure/azure-storage-ios)
-
-
-<!--HONumber=Feb17_HO2-->
-
-
