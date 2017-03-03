@@ -17,6 +17,7 @@ ms.author: banders
 translationtype: Human Translation
 ms.sourcegitcommit: 9ee8f4aafcc35e43c4fcba5a3a72b043dd9fc32c
 ms.openlocfilehash: 1d330362389ee690dc2942c9bb1bc32e1f10e08a
+ms.lasthandoff: 02/21/2017
 
 
 ---
@@ -298,9 +299,4 @@ Se for um administrador e existirem vários utilizadores associados à área de 
 * Veja [Ligar computadores Windows ao Log Analytics](log-analytics-windows-agents.md) para adicionar agentes e recolher dados.
 * [Adicionar soluções do Log Analytics a partir da Galeria de Soluções](log-analytics-add-solutions.md) para adicionar funcionalidade e recolher dados.
 * [Configure definições de proxy e firewall no Log Analytics](log-analytics-proxy-firewall.md) se a organização utilizar um servidor proxy ou firewall para que os agentes possam comunicar com o serviço Log Analytics.
-
-
-
-<!--HONumber=Feb17_HO3-->
-
 

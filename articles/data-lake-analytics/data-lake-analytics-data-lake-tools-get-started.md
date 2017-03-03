@@ -17,6 +17,7 @@ ms.author: edmaca
 translationtype: Human Translation
 ms.sourcegitcommit: 3c8406efd9d716df56ed3ca10fc596684945c2f2
 ms.openlocfilehash: 3281b001aeab42aace951b5bdd5d4ec901de396f
+ms.lasthandoff: 12/10/2016
 
 
 ---
@@ -130,7 +131,7 @@ As tarefas de Data Lake Analytics são escritas em linguagem U-SQL. Para saber m
    * **Expandir * colunas**
 
        Clique no lado direito de *, deve ver um sublinhado azul sob o *. Faça pairar o cursor do rato no sublinhado azul e, em seguida, clique na seta para baixo.
-       ![É possível expandir as ferramentas do Visual Studio para o Data Lake.*](./media/data-lake-analytics-data-lake-tools-get-started/data-lake-analytics-data-lake-tools-expand-asterisk.png)
+       ![É possível expandir as ferramentas do Visual Studio para o Data Lake *](./media/data-lake-analytics-data-lake-tools-get-started/data-lake-analytics-data-lake-tools-expand-asterisk.png)
 
        Clique em **Expandir Colunas**, a ferramenta irá substituir * com os nomes das colunas.
    * **Formatação Automática**
@@ -349,9 +350,4 @@ O seguinte script do PowerShell prepara uma conta do Azure Data Lake Analytics e
     Write-Host "List the source data ..."  -ForegroundColor Green
     Get-AzureRmDataLakeStoreChildItem -Account $dataLakeStoreName -Path  "/Samples/Data/"
     #endregion
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 
