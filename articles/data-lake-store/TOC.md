@@ -21,6 +21,7 @@
 ### [Utilizar o DistCp](data-lake-store-copy-data-wasb-distcp.md)
 ### [Utilizar o Sqoop](data-lake-store-data-transfer-sql-sqoop.md)
 ### [Carregar dados a partir de origens offline](data-lake-store-offline-bulk-data-upload.md)
+### [Migrar o Azure Data Lake Store entre regiões](data-lake-store-migration-cross-region.md)
 
 ## Proteger Dados
 ### [Descrição geral da segurança](data-lake-store-security-overview.md)
@@ -70,8 +71,3 @@
 ## [Enviar comentários sobre o UserVoice](https://feedback.azure.com/forums/327234-data-lake)
 ## [Blogue do Data Lake Store](https://blogs.msdn.microsoft.com/azuredatalake/)
 ## [Vídeos](https://azure.microsoft.com/documentation/videos/index/?services=data-lake-store)
-
-
-<!--HONumber=Feb17_HO3-->
-
-
