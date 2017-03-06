@@ -17,6 +17,7 @@ ms.author: banders
 translationtype: Human Translation
 ms.sourcegitcommit: 7e3d4b83fefdc70f292cf85b682cf8ed756bf4c5
 ms.openlocfilehash: e7f04df679604f274c8ad9bf4daddc63c8b5418a
+ms.lasthandoff: 02/22/2017
 
 
 ---
@@ -69,9 +70,4 @@ Se estiver no escalão de preço *por nó (OMS)*, é-lhe cobrado com base no nú
 
 ## <a name="next-steps"></a>Passos seguintes
 * Veja [Log searches in Log Analytics (Pesquisas de registos no Log Analytics)](log-analytics-log-searches.md) para ver informações detalhadas que são recolhidas e enviadas para OMS por funcionalidades e soluções.
-
-
-
-<!--HONumber=Feb17_HO4-->
-
 
