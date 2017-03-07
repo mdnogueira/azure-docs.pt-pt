@@ -1,6 +1,6 @@
 ---
-title: "Criar uma VM do Linux com a CLI do Azure 2.0 (Pré-visualização) | Microsoft Azure"
-description: "Criar uma VM do Linux com a CLI do Azure 2.0 (Pré-visualização)."
+title: Criar uma VM do Linux com a CLI 2.0 do Azure | Microsoft Azure
+description: "Criar uma VM com Linux através da CLI 2.0 do Azure."
 services: virtual-machines-linux
 documentationcenter: 
 author: squillace
@@ -12,27 +12,23 @@ ms.devlang: NA
 ms.topic: hero-article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 01/13/2016
+ms.date: 01/13/2017
 ms.author: rasquill
 translationtype: Human Translation
-ms.sourcegitcommit: 1081eb18bd63b1ad580f568201e03258901e4eaf
-ms.openlocfilehash: e926f22b94da30e1d3b790432ffdc229d9f4e609
+ms.sourcegitcommit: 892e3c62a2ad4dc4fd0691874d46bb296e379524
+ms.openlocfilehash: cc51b04c31c02aabf25c9efb1e9cd975077811a4
+ms.lasthandoff: 02/27/2017
 
 
 ---
 
-# <a name="create-a-linux-vm-using-the-azure-cli-20-preview-azpy"></a>Criar uma VM do Linux com a CLI do Azure 2.0 (Pré-visualização) (az.py)
-Este artigo mostra como implementar rapidamente uma máquina virtual (VM) do Linux no Azure através do comando [az vm create](/cli/azure/vm#create) na CLI do Azure 2.0 (Pré-visualização) com os discos geridos e os discos nas contas de armazenamento nativas.
-
-> [!NOTE] 
-> A CLI do Azure 2.0 (Pré-visualização) é a nossa CLI multiplataforma de próxima geração. [Experimente](https://docs.microsoft.com/cli/azure/install-az-cli2)
->
-> Para criar uma VM com a CLI do Azure atual (1.0) e não com a CLI do Azure 2.0 (Pré-visualização), veja [Create a VM with the Azure CLI (Criar uma VM através da CLI do Azure)](virtual-machines-linux-quick-create-cli-nodejs.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+# <a name="create-a-linux-vm-using-the-azure-cli-20"></a>Criar uma VM com Linux através da CLI 2.0 do Azure
+Este artigo mostra como implementar rapidamente uma máquina virtual (VM) do Linux no Azure através do comando [az vm create](/cli/azure/vm#create) na CLI 2.0 do Azure com os discos geridos e os discos nas contas de armazenamento nativas. Também pode efetuar estes passos com a [CLI 1.0 do Azure](virtual-machines-linux-quick-create-cli-nodejs.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
 Para criar uma VM, precisa de: 
 
 * uma conta do Azure ([obter uma avaliação gratuita](https://azure.microsoft.com/pricing/free-trial/))
-* da [CLI do Azure v. 2.0 (Pré-visualização)](/cli/azure/install-az-cli2) instalada
+* a [CLI 2.0 do Azure](/cli/azure/install-az-cli2) instalada
 * ter sessão iniciada na sua conta do Azure (escreva[az login](/cli/azure/#login))
 
 (Também pode implementar uma VM com Linux através do [portal do Azure](virtual-machines-linux-quick-create-portal.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).)
@@ -202,10 +198,5 @@ O comando `az vm create` é a forma mais rápida de implementar uma VM para que 
 * [Criar uma VM com Linux Protegida por SSH no Azure através de modelos](virtual-machines-linux-create-ssh-secured-vm-from-template.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 
 Também pode [utilizar o controlador `docker-machine` do Azure com vários comandos para criar rapidamente uma VM do Linux como anfitrião docker](virtual-machines-linux-docker-machine.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) e, se estiver a utilizar Java, experimente o método [create()](/java/api/com.microsoft.azure.management.compute._virtual_machine).
-
-
-
-
-<!--HONumber=Feb17_HO4-->
 
 

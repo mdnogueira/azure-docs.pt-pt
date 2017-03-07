@@ -4,7 +4,7 @@ description: "Saiba como é fácil executar aplicações Web no Serviço de Apli
 services: app-service\web
 documentationcenter: 
 author: cephalin
-manager: wpickett
+manager: erikre
 editor: 
 ms.assetid: 0458cc3b-b630-4632-8cd0-76e2ed96498b
 ms.service: app-service-web
@@ -15,22 +15,14 @@ ms.topic: hero-article
 ms.date: 01/04/2017
 ms.author: cephalin
 translationtype: Human Translation
-ms.sourcegitcommit: b1a633a86bd1b5997d5cbf66b16ec351f1043901
-ms.openlocfilehash: cd4c048baff62deff42c4f8794aa7aac8eb1599d
+ms.sourcegitcommit: d24e78a826de9fb72e0eedc48877c83e867f70ca
+ms.openlocfilehash: 58683e50ab57e0d162dde92c2f9558d5c2379d5b
+ms.lasthandoff: 02/28/2017
 
 
 ---
 # <a name="deploy-your-first-aspnet-web-app-to-azure-in-five-minutes"></a>Implementar a primeira aplicação Web ASP.NET no Azure em cinco minutos
-
-> [!div class="op_single_selector"]
-> * [Primeiro site HTML](app-service-web-get-started-html-cli-nodejs.md)
-> * [Primeira aplicação .NET](app-service-web-get-started-dotnet-cli-nodejs.md)
-> * [Primeira aplicação PHP](app-service-web-get-started-php-cli-nodejs.md)
-> * [Primeira aplicação Node.js](app-service-web-get-started-nodejs-cli-nodejs.md)
-> * [Primeira aplicação Python](app-service-web-get-started-python-cli-nodejs.md)
-> * [Primeira aplicação Java](app-service-web-get-started-java.md)
-> 
-> 
+[!INCLUDE [app-service-web-selector-get-started-nodejs-cli](../../includes/app-service-web-selector-get-started-nodejs-cli.md)]  
 
 Este tutorial ajuda-o a implementar uma aplicação Web ASP.NET simples no [Serviço de Aplicações do Azure](../app-service/app-service-value-prop-what-is.md).
 Pode utilizar o Serviço de Aplicações para criar aplicações, [back-ends de aplicações móveis](/documentation/learning-paths/appservice-mobileapps/) e [aplicações API](../app-service-api/app-service-api-apps-why-best-platform.md).
@@ -49,7 +41,7 @@ Irá:
 Pode concluir a tarefa utilizando uma das seguintes versões CLI:
 
 - [Azure CLI 1.0](app-service-web-get-started-dotnet-cli-nodejs.md) – CLI para os modelos de implementação de gestão clássica e de recursos
-- [Azure CLI 2.0 (Pré-visualização)](app-service-web-get-started-dotnet.md) - CLI de próxima geração para o modelo de implementação de gestão de recursos
+- [CLI 2.0 do Azure](app-service-web-get-started-dotnet.md) - CLI de próxima geração para o modelo de implementação de gestão de recursos
 
 ## <a name="prerequisites"></a>Pré-requisitos
 * [Git](http://www.git-scm.com/downloads).
@@ -127,10 +119,5 @@ Em alternativa, faça mais com a sua primeira aplicação Web. Por exemplo:
 
 * Experimente [outras formas de implementar o seu código no Azure](web-sites-deploy.md). Por exemplo, para implementar a partir de um dos seus repositórios do GitHub, só tem de selecionar **GitHub** em vez de **Repositório de Git Local** nas **Opções de implementação**.
 * Eleve a sua aplicação do Azure ao nível seguinte. Autentique os seus utilizadores. Dimensione-a com base no pedido. Configure alguns alertas de desempenho. Tudo com apenas alguns cliques. Consulte [Adicionar funcionalidades à sua primeira aplicação Web](app-service-web-get-started-2.md).
-
-
-
-
-<!--HONumber=Feb17_HO2-->
 
 
