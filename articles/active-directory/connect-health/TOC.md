@@ -22,8 +22,3 @@
 # Recursos
 ##[Azure AD Connect Health FAQ (FAQ do Azure AD Connect Health)](active-directory-aadconnect-health-faq.md)
 
-
-
-<!--HONumber=Jan17_HO3-->
-
-
