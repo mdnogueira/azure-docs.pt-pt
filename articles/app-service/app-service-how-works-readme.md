@@ -5,7 +5,7 @@ keywords: "serviço de aplicações, serviço de aplicações do azure, dimensio
 services: app-service
 documentationcenter: 
 author: yochay
-manager: wpickett
+manager: erikre
 editor: 
 ms.assetid: ae74fc32-969e-4580-8d61-02c922f1f184
 ms.service: app-service
@@ -13,11 +13,12 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: hero-article
-ms.date: 02/10/2016
+ms.date: 02/23/2017
 ms.author: yochayk
 translationtype: Human Translation
-ms.sourcegitcommit: 6adb1dd25c24b18b834dd921c2586ef29d56dc81
-ms.openlocfilehash: d1ab1ab2132d12bf06dbe2504b7d7111ef2ae851
+ms.sourcegitcommit: edb3325414adf876548181243ddfa2d515aeb0b8
+ms.openlocfilehash: 2d830963d3d2adba71a6ca99f79eac0fc8cbfb12
+ms.lasthandoff: 02/24/2017
 
 
 ---
@@ -25,8 +26,7 @@ ms.openlocfilehash: d1ab1ab2132d12bf06dbe2504b7d7111ef2ae851
 O Serviço de Aplicações do Azure é um serviço em nuvem concebido para resolver os problemas práticos com que os engenheiros se deparam atualmente.
 O Serviço de Aplicações concentra-se em fornecer uma produtividade de programador superior sem comprometer a necessidade de entregar aplicações à escala da nuvem. 
 
-O Serviço de Aplicações também fornece as funcionalidades e estruturas necessárias para criar aplicações de linha de negócio empresariais ao mesmo tempo que fornece suporte aos programadores com as linguagens de programação mais conhecidas (tais como Microsoft .NET, Java, PHP, Node.js e Python).
-Com o Serviço de Aplicações, os programadores podem:
+O Serviço de Aplicações também fornece as funcionalidades e estruturas que são necessárias para criar aplicações de linha de negócios de empresa. O Serviço de Aplicações permite desenvolver aplicações nas linguagens de programação mais populares, incluindo Java PHP, Node.js, Python e as linguagens Microsoft .NET. Com o Serviço de aplicações, pode:
 
 * Criar aplicações Web altamente dimensionáveis.
 * Criar rapidamente backs-ends de Aplicações Móveis com um conjunto de funcionalidades móveis fáceis de utilizar, tais como back-ends de dados, autenticação de utilizadores e notificações push.
@@ -41,18 +41,31 @@ Todos os tipos de aplicações baseiam-se na plataforma de Aplicações Web dime
 
 * **Criação rápida de aplicações**. Comece do zero ou escolha um pacote de sistema de suporte operacional (OSS) no Azure Marketplace.
 * **Implementação contínua**. Implemente automaticamente o novo código de soluções de controlo de origem populares, tais como TFS, GitHub e Bitbucket, e sincronize conteúdo de serviços de armazenamento online como o OneDrive e o Dropbox.
-* **Testar na produção**. Crie facilmente ambientes de pré-produção e faça a gestão do tráfego que entra nos mesmos. Faça a depuração na nuvem quando for necessário e reverta se forem encontrados problemas.
+* **Testar na produção**. Crie facilmente ambientes de pré-produção e faça a gestão do tráfego que entra nos mesmos. Faça a depuração na nuvem quando for necessário e reverta quando forem encontrados problemas.
 * **Executar tarefas assíncronas e tarefas de lote**. Execute código num processo em segundo plano ou ative o seu código com base em eventos (tal como mensagens de destino numa fila de Armazenamento do Azure) e horas agendadas (CRON).
 * **Dimensionar a aplicação**. Utilize uma das muitas opções para dimensionar automaticamente o serviço horizontal e verticalmente com base no tráfego e na utilização de recursos. Configurar ambientes privados dedicados às suas aplicações.   
 * **Manter a aplicação**. Utiliza muitas das funcionalidades de depuração e diagnóstico para se manter adiantado face aos problemas e para resolvê-los de forma eficiente em tempo real (com funcionalidades como recuperação automática e depuração dinâmica) ou após o facto ao analisar registos e informações do estado da memória.
 
-Em conjunto, as capacidades do Serviço de Aplicações permitem aos programadores focarem-se no respetivo código e atingir rapidamente um estado estável e altamente dimensionável de produção. Com as funcionalidades de Aplicações API e Aplicações Lógicas, os programadores podem criar aplicações empresariais reais que estabelecem a ponte entre soluções de negócio, bem como a integração de soluções no local na nuvem.  
+Em conjunto, as capacidades do Serviço de Aplicações permitem aos programadores focarem-se no respetivo código e atingir rapidamente um estado estável e altamente dimensionável de produção. Com as funcionalidades de Aplicações API e Aplicações Lógicas, os programadores podem criar aplicações empresariais reais que estabelecem a ponte entre soluções de negócio e a integração de soluções no local na cloud. 
 
-[!INCLUDE [app-service-blueprint-how-app-service-works](../../includes/app-service-blueprint-how-app-service-works.md)]
+## <a name="videos"></a>Vídeos
+* [Arquitetura do Serviço de Aplicações do Azure](https://azure.microsoft.com/documentation/videos/why-azure-web-sites-plus-architecture/)
+
+## <a name="next-steps"></a>Passos seguintes
+
+Saiba mais sobre o Serviço de Aplicações num dos seguintes tópicos:
+
+* [O que é o Serviço de Aplicações do Azure?](app-service-value-prop-what-is.md)
+  * [Aplicação Web](../app-service-web/app-service-web-overview.md)
+  * [Aplicação Móvel](../app-service-mobile/app-service-mobile-value-prop.md)
+  * [Aplicação API](../app-service-api/app-service-api-apps-why-best-platform.md)
+* [Arquitetura do Serviço de Aplicações do Azure (apresentação)](http://www.slideshare.net/maartenba/windows-azure-web-sites-things-they-dont-teach-kids-in-school-comunity-day-2013)
+* [Comparação das Virtual Machines, dos Cloud Services e do Serviço de Aplicações do Azure](../app-service-web/choose-web-site-cloud-service-vm.md)
+* [Compreender os Planos do Serviço de Aplicações](azure-web-sites-web-hosting-plans-in-depth-overview.md)
+* [Introdução ao Ambiente do Serviço de Aplicações](../app-service-web/app-service-app-service-environment-intro.md)
+  * [Exercício: Criar um Ambiente do Serviço de Aplicações](../app-service-web/app-service-web-how-to-create-an-app-service-environment.md)
+* [Suporte às Pilhas de Desenvolvimento do Serviço de Aplicações do Azure](https://azure.microsoft.com/blog/windows-azure-websites-development-stacks-support/)
 
 
-
-
-<!--HONumber=Dec16_HO2-->
 
 

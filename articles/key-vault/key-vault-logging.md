@@ -15,8 +15,9 @@ ms.topic: hero-article
 ms.date: 01/07/2017
 ms.author: cabailey
 translationtype: Human Translation
-ms.sourcegitcommit: c40545833da86426d3e71955b8eb8627db3c1e4b
-ms.openlocfilehash: 50a85747a3414e180bcd9129899fef7ffdaebc8d
+ms.sourcegitcommit: 30b30513d5563cf64679e29c4858bf15f65d3a44
+ms.openlocfilehash: 015c997135eae9c936af1a1ec0b0064912baaa04
+ms.lasthandoff: 02/28/2017
 
 
 ---
@@ -40,8 +41,6 @@ Utilize este tutorial para o ajudar a começar com o registo do Cofre de Chaves 
 > 
 > 
 
-Os registos que recolhe podem ser visualizados através de Log Analytics a partir do Operations Management Suite. Para obter mais informações, veja [Azure Key Vault (Preview) solution in Log Analytics (Solução Cofre de Chaves do Azure (pré-visualização) no Log Analytics)](../log-analytics/log-analytics-azure-key-vault.md).
-
 Para obter informações gerais sobre o Cofre de Chaves do Azure, consulte o artigo [O que é o Cofre de Chaves do Azure?](key-vault-whatis.md)
 
 ## <a name="prerequisites"></a>Pré-requisitos
@@ -51,7 +50,7 @@ Para concluir este tutorial, deve ter o seguinte:
 * Azure PowerShell, **versão mínima 1.0.1**. Para instalar o Azure PowerShell e associá-lo à sua subscrição do Azure, consulte o artigo [Como instalar e configurar o Azure PowerShell](/powershell/azureps-cmdlets-docs). Se já tiver instalado o Azure PowerShell e não souber a versão, a partir da consola do Azure PowerShell, introduza `(Get-Module azure -ListAvailable).Version`.  
 * Armazenamento suficiente no Azure para os seus registos do Cofre de Chaves.
 
-## <a name="a-idconnectaconnect-to-your-subscriptions"></a><a id="connect"></a>Ligar às suas subscrições
+## <a id="connect"></a>Ligar às suas subscrições
 Abra uma sessão no Azure PowerShell e inicie sessão na sua conta do Azure com o seguinte comando:  
 
     Login-AzureRmAccount
@@ -68,7 +67,7 @@ Em seguida, para especificar a subscrição associada ao seu cofre de chaves que
 
 Para mais informações sobre como configurar o PowerShell, consulte [Como instalar e configurar o Azure PowerShell](/powershell/azureps-cmdlets-docs).
 
-## <a name="a-idstorageacreate-a-new-storage-account-for-your-logs"></a><a id="storage"></a>Criar uma nova conta de armazenamento para os seus registos
+## <a id="storage"></a>Criar uma nova conta de armazenamento para os seus registos
 Apesar de poder utilizar uma conta de armazenamento existente para os seus registos, iremos criar uma nova conta de armazenamento dedicada aos registos do seu Cofre de Chaves. Para sua comodidade, e já que poderemos ter de especificar estas informações mais tarde, iremos guardar os detalhes numa variável designada **sa**.
 
 Para facilitar ainda mais a gestão, também iremos utilizar o mesmo grupo de recursos que contém o nosso cofre de chaves. A partir do [tutorial de introdução](key-vault-get-started.md), este grupo de recursos será designado **ContosoResourceGroup** e continuaremos a utilizar a Ásia Oriental como localização. Substitua estes valores pelos seus próprios valores, conforme aplicável:
@@ -81,13 +80,13 @@ Para facilitar ainda mais a gestão, também iremos utilizar o mesmo grupo de re
 > 
 > 
 
-## <a name="a-ididentifyaidentify-the-key-vault-for-your-logs"></a><a id="identify"></a>Identifique o cofre de chaves para os seus registos
+## <a id="identify"></a>Identifique o cofre de chaves para os seus registos
 No nosso tutorial de introdução, o nome do nosso cofre de chaves era **ContosoKeyVault**. Por isso, continuaremos a utilizar esse nome e a guardar os detalhes numa variável designada **kv**:
 
     $kv = Get-AzureRmKeyVault -VaultName 'ContosoKeyVault'
 
 
-## <a name="a-idenableaenable-logging"></a><a id="enable"></a>Ativar registo
+## <a id="enable"></a>Ativar registo
 Para ativar o registo para o Cofre de Chaves, iremos utilizar o cmdlet Set-AzureRmDiagnosticSetting, juntamente com as variáveis criadas para a nossa conta de armazenamento e o nosso cofre de chaves. Também vamos definir o sinalizador **-Enabled** para **$true** e definir a categoria para AuditEvent (a única categoria para o registo do Cofre de Chaves):
 
     Set-AzureRmDiagnosticSetting -ResourceId $kv.ResourceId -StorageAccountId $sa.Id -Enabled $true -Categories AuditEvent
@@ -118,7 +117,7 @@ O que é registado:
 * Operações sobre chaves e segredos no cofre de chaves, que incluem a criação, eliminação, alteração ou eliminação dessas chaves ou segredos; operações como assinar, verificar, encriptar, desencriptar, moldar e desenrolar chaves, obter segredos, listar segredos e as suas versões.
 * Pedidos não autenticados que resultam numa resposta 401. Por exemplo, pedidos que não têm um token de portador ou pedidos incorretamente formulados ou expirados ou com um token inválido.  
 
-## <a name="a-idaccessaaccess-your-logs"></a><a id="access"></a>Aceder aos seus registos
+## <a id="access"></a>Aceder aos seus registos
 Os registos do cofre de chaves são guardados no contentor **insights-logs-auditevent** na conta de armazenamento que indicou. Para listar todos os blobs neste contentor, escreva:
 
     Get-AzureStorageBlob -Container 'insights-logs-auditevent' -Context $sa.Context
@@ -173,7 +172,7 @@ Agora, está pronto para começar a procurar o conteúdo dos registos. No entant
 * Para consultar o estado das definições de diagnóstico para o recurso do seu cofre de chaves: `Get-AzureRmDiagnosticSetting -ResourceId $kv.ResourceId`
 * Para desativar o registo do seu cofre de chaves: `Set-AzureRmDiagnosticSetting -ResourceId $kv.ResourceId -StorageAccountId $sa.Id -Enabled $false -Categories AuditEvent`
 
-## <a name="a-idinterpretainterpret-your-key-vault-logs"></a><a id="interpret"></a>Interpretar os registos do seu Cofre de Chaves
+## <a id="interpret"></a>Interpretar os registos do seu Cofre de Chaves
 Os blobs individuais são armazenadas como texto, formatados como um blob JSON. Esta é uma entrada de registo de exemplo em execução `Get-AzureRmKeyVault -VaultName 'contosokeyvault'`:
 
     {
@@ -254,7 +253,11 @@ A tabela seguinte lista o operationName e o comando API REST correspondente.
 | SecretList |[Lista os segredos num cofre](https://msdn.microsoft.com/en-us/library/azure/dn903614.aspx) |
 | SecretListVersions |[Lista as versões de um segredo](https://msdn.microsoft.com/en-us/library/azure/dn986824.aspx) |
 
-## <a name="a-idnextanext-steps"></a><a id="next"></a>Passos seguintes
+## <a id="loganalytics"></a>Utilizar o Log Analytics
+
+Pode utilizar a solução do Azure Key Vault no Log Analytics para rever os registos AuditEvent do Azure Key Vault. Para obter mais informações, incluindo informação sobre configuração, veja [Azure Key Vault solution in Log Analytics (Solução Cofre de Chaves do Azure no Log Analytics)](../log-analytics/log-analytics-azure-key-vault.md). Este artigo também contém instruções caso precise de migrar a partir da solução Key Vault antiga que foi oferecida durante a pré-visualização do Log Analytics, onde primeiro encaminhou os registos para uma conta de Armazenamento do Azure e configurou o Log Analytics para ler a partir daí.
+
+## <a id="next"></a>Passos seguintes
 Para um tutorial que utiliza o Cofre de Chaves do Azure numa aplicação Web, consulte o artigo [Utilizar o Cofre de Chaves do Azure a partir de uma Aplicação Web](key-vault-use-from-web-application.md).
 
 Para as referências de programação, consulte o [Guia para programadores do Cofre de Chaves do Azure](key-vault-developers-guide.md).
@@ -262,10 +265,5 @@ Para as referências de programação, consulte o [Guia para programadores do Co
 Para obter uma lista dos cmdlets do Azure PowerShell 1.0 para o Cofre de Chaves do Azure, consulte o artigo [Cmdlets do Cofre de Chaves do Azure](https://msdn.microsoft.com/library/azure/dn868052.aspx).
 
 Para um tutorial de rotação da chave e auditoria do registo com o Cofre de Chaves do Azure, veja [How to setup Key Vault with end to end key rotation and auditing (Como configurar o Cofre de Chaves com auditoria e rotação de chave ponto a ponto)](key-vault-key-rotation-log-monitoring.md).
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

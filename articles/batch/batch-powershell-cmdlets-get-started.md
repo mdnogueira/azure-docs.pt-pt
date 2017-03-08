@@ -1,6 +1,6 @@
 ---
 title: "Introdução ao PowerShell para Azure Batch | Microsoft Docs"
-description: "Obtenha uma introdução rápida aos cmdlets do Azure PowerShell que pode utilizar para gerir o serviço Azure Batch"
+description: "Introdução rápida aos cmdlets do Azure PowerShell que pode utilizar para gerir os recursos do Batch."
 services: batch
 documentationcenter: 
 author: tamram
@@ -12,15 +12,18 @@ ms.devlang: NA
 ms.topic: get-started-article
 ms.tgt_pltfrm: powershell
 ms.workload: big-compute
-ms.date: 01/23/2017
+ms.date: 02/27/2017
 ms.author: tamram
+ms.custom: H1Hack27Feb2017
 translationtype: Human Translation
-ms.sourcegitcommit: bf22cd3426e936c8d74377f59443e5e1a6834286
-ms.openlocfilehash: 9bd1c2a1f273d2487e4ce9063c286896cc414e42
+ms.sourcegitcommit: 6b6c548ca1001587e2b40bbe9ee2fcb298f40d72
+ms.openlocfilehash: cc8942dacee60d6243e91a3b4360c0c07956fa66
+ms.lasthandoff: 02/28/2017
 
 
 ---
-# <a name="get-started-with-azure-batch-powershell-cmdlets"></a>Introdução aos cmdlets do Azure Batch PowerShell
+# <a name="manage-batch-resources-with-powershell-cmdlets"></a>Gerir os recursos do Batch com os cmdlets do PowerShell
+
 Com os cmdlets do Azure Batch PowerShell, pode efetuar e encriptar muitas das mesmas tarefas que desempenha com as APIs do lote, o portal do Azure e a Interface de Linha de Comandos do Azure (CLI). Isto é uma introdução rápida aos cmdlets que pode utilizar para gerir as contas do Batch e trabalhar com os recursos do Batch, como conjuntos e tarefas.
 
 Para obter uma lista completa de cmdlets do Batch e a sintaxe detalhada dos cmdlets, veja a [Referência de cmdlets do Azure Batch](https://msdn.microsoft.com/library/azure/mt125957.aspx).
@@ -236,10 +239,5 @@ Atualizou as propriedades do conjunto no serviço Batch. Contudo, para implement
 ## <a name="next-steps"></a>Passos seguintes
 * Para obter exemplos e a sintaxe detalhada dos cmdlets, veja a [Referência de cmdlets do Azure Batch](https://msdn.microsoft.com/library/azure/mt125957.aspx).
 * Pode obter mais informações sobre as aplicações e os pacotes de aplicações no Batch, veja [Application deployment with Azure Batch application packages (Implementação de aplicações com pacotes de aplicações do Azure Batch)](batch-application-packages.md).
-
-
-
-
-<!--HONumber=Jan17_HO4-->
 
 

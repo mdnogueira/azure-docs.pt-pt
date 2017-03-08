@@ -1,6 +1,6 @@
 ---
 title: "Tutorial – Utilizar a biblioteca de cliente do Azure Batch para .NET | Microsoft Docs"
-description: "Conheça os conceitos básicos do Azure Batch e como desenvolver para o serviço Batch com um cenário de exemplo."
+description: "Obter informações sobre os conceitos básicos do Azure Batch e criar uma solução simples utilizando o .NET."
 services: batch
 documentationcenter: .net
 author: tamram
@@ -12,15 +12,18 @@ ms.devlang: dotnet
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: big-compute
-ms.date: 01/23/2017
+ms.date: 02/27/2017
 ms.author: tamram
+ms.custom: H1Hack27Feb2017
 translationtype: Human Translation
-ms.sourcegitcommit: bf22cd3426e936c8d74377f59443e5e1a6834286
-ms.openlocfilehash: 5af894b60180d32593ed19c13aecf2732645120a
+ms.sourcegitcommit: 6b6c548ca1001587e2b40bbe9ee2fcb298f40d72
+ms.openlocfilehash: edda9dc389d670b463d518edf8c4703062ba169d
+ms.lasthandoff: 02/28/2017
 
 
 ---
-# <a name="get-started-with-the-azure-batch-library-for-net"></a>Introdução à biblioteca do Azure Batch para .NET
+# <a name="get-started-building-solutions-with-the-batch-client-library-for-net"></a>Comece a criar soluções com a biblioteca de cliente do Batch para .NET
+
 > [!div class="op_single_selector"]
 > * [.NET](batch-dotnet-get-started.md)
 > * [Python](batch-python-tutorial.md)
@@ -802,9 +805,4 @@ Agora que está familiarizado com o fluxo de trabalho básico de uma solução d
 [9]: ./media/batch-dotnet-get-started/credentials_batch_sm.png "Credenciais do Batch no Portal"
 [10]: ./media/batch-dotnet-get-started/credentials_storage_sm.png "Credenciais do Armazenamento no Portal"
 [11]: ./media/batch-dotnet-get-started/batch_workflow_minimal_sm.png "Fluxo de trabalho da solução Batch (diagrama mínimo)"
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

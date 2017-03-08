@@ -12,11 +12,12 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 02/09/2017
+ms.date: 02/28/2017
 ms.author: cherylmc
 translationtype: Human Translation
-ms.sourcegitcommit: 6aed200529f8f21f15d9b77a403f9ef07582d449
-ms.openlocfilehash: 975c8fbc9afdc7b01da85f56a075aa44dade9dde
+ms.sourcegitcommit: 280a17677714a522ca978a6eb6baf3e70f853d7a
+ms.openlocfilehash: 5b0865310076557c8f7ce6f9d9b553950854407c
+ms.lasthandoff: 02/28/2017
 
 
 ---
@@ -35,7 +36,7 @@ A conectividade pode ser a partir de uma rede qualquer a qualquer (VPN de IP), u
 * Encaminhamento dinâmico entre a sua rede e a Microsoft através de protocolos standard da indústria (BGP).
 * Redundância incorporada em cada localização de peering para maior fiabilidade.
 * Tempo de atividade da ligação [SLA](https://azure.microsoft.com/support/legal/sla/).
-* QoS e suporte para várias classes do serviço para aplicações especiais, tal como o Skype para Empresas.
+* Suporte QoS para o Skype para empresas.
 
 Para obter mais informações, consulte as [ExpressRoute FAQ (FAQs do ExpressRoute)](expressroute-faqs.md).
 
@@ -108,8 +109,4 @@ Pode escolher um modelo de faturação que funciona melhor para si. Escolha entr
   * [Crie um circuito do ExpressRoute](expressroute-howto-circuit-portal-resource-manager.md)
   * [Configure o encaminhamento](expressroute-howto-routing-portal-resource-manager.md)
   * [Ligar uma VNet a um circuito do ExpressRoute](expressroute-howto-linkvnet-portal-resource-manager.md)
-
-
-<!--HONumber=Feb17_HO2-->
-
 

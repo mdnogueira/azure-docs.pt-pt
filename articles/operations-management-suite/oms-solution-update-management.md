@@ -12,11 +12,12 @@ ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 02/21/2017
+ms.date: 02/28/2017
 ms.author: magoedte
 translationtype: Human Translation
-ms.sourcegitcommit: ca1e8b9ef8c7543c2b21441c761b0c309d22f202
-ms.openlocfilehash: e148fbe6e27eef747ad757fea4be038d3b662f87
+ms.sourcegitcommit: fa9b427afff2c12babde30aa354e59d31c8f5b2c
+ms.openlocfilehash: 219fe64481df2c5c5cbfe622afdab11dcc1b7100
+ms.lasthandoff: 02/28/2017
 
 
 ---
@@ -38,7 +39,7 @@ A solução de Gestão de Atualizações no OMS permite-lhe gerir atualizações
 Execute os seguintes passos para adicionar a solução de Gestão de Atualizações à sua área de trabalho do OMS e adicionar agentes do Linux. Os agentes do Windows são adicionados automaticamente, sem configurações adicionais.
 
 > [!NOTE]
-> Atualmente se ativar esta solução, qualquer computador com o Windows ligado à sua área de trabalho do OMS será automaticamente configurado como uma Função de Trabalho de Runbook Híbrida para suportar os runbooks que fazem parte desta solução.  No entanto, não está registado com quaisquer grupos de Função de Trabalho Híbrida que criou na sua conta de Automatização, e não pode adicioná-los a um grupo de Função de Trabalho Híbrida para executar os seus próprios runbooks.  Se um computador com Windows já estiver designado como uma Função de Trabalho de Runbook Híbrida e ligado à área de trabalho do OMS, terá de o remover da área de trabalho do OMS antes de adicionar a solução para impedir que os runbooks deixem de funcionar conforme esperado.  
+> Se ativar esta solução, qualquer computador com o Windows ligado à sua área de trabalho do OMS será automaticamente configurado como uma Função de Trabalho de Runbook Híbrida para suportar os runbooks que estão incluídos nesta solução.  No entanto, não está registado com quaisquer grupos de Função de Trabalho Híbrida que pode já ter definido na conta de Automatização.  Pode ser adicionada a um grupo de Função de Trabalho de Runbook Híbrida na conta de Automatização para suportar runbooks de Automatização, desde que esteja a utilizar a mesma conta para a solução e a subscrição do grupo de Função de Trabalho de Runbook Híbrida.  Esta funcionalidade foi adicionada à versão 7.2.12024.0 da Função de Trabalho de Runbook Híbrida.   
 
 1. Adicione a solução de Gestão de Atualizações à sua área de trabalho do OMS através do processo descrito em [Add OMS solutions (Adicionar soluções do OMS)](../log-analytics/log-analytics-add-solutions.md), na Galeria de Soluções.  
 2. No portal do OMS, selecione **Definições** e, em seguida, **Origens Ligadas**.  Tenha em atenção o **ID da Área de Trabalho** e a **Chave Primária** ou a **Chave Secundária**.
@@ -247,10 +248,5 @@ A tabela seguinte disponibiliza pesquisas de registos de exemplo para registos d
 * Utilizar as Pesquisas de Registos no [Log Analytics](../log-analytics/log-analytics-log-searches.md) para ver dados de atualizações detalhados.
 * [Criar os seus próprios dashboards](../log-analytics/log-analytics-dashboards.md), que mostram a conformidade das atualizações para os seus computadores geridos.
 * [Criar alertas](../log-analytics/log-analytics-alerts.md) para quando são detetadas atualizações críticas em falta nos computadores ou quando um computador tiver as atualizações automáticas desativadas.  
-
-
-
-
-<!--HONumber=Feb17_HO3-->
 
 

@@ -12,17 +12,18 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 12/15/2016
+ms.date: 02/27/2017
 ms.author: mihauss
 translationtype: Human Translation
-ms.sourcegitcommit: c75658d173bcb3438d6f2725ec9ef2c4127013d7
-ms.openlocfilehash: 0d0ca29a4733c681e044884697030ccd2916b6cb
+ms.sourcegitcommit: c004285f3b3052ed9361fc7165702aff8f5e835d
+ms.openlocfilehash: e0df34dbb4278d759ee412000d6dafd64276d926
+ms.lasthandoff: 02/28/2017
 
 
 ---
 # <a name="azure-blob-storage-hot-and-cool-storage-tiers"></a>Armazenamento de Blobs do Azure: camadas de armazenamento de acesso frequente e esporádico
 ## <a name="overview"></a>Descrição geral
-Agora, o Armazenamento do Azure disponibiliza duas camadas de armazenamento para o armazenamento de objetos Blob, para que possa armazenar os seus dados de forma mais económica consoante o modo como os utiliza. A **camada de armazenamento de acesso frequente** do Azure está otimizada para armazenar dados que são acedidos com frequência. A **camada de armazenamento de acesso esporádico** do Azure está otimizada para armazenar dados que são acedidos com pouca frequência e de longa duração. Os dados na camada de armazenamento de acesso esporádico podem tolerar disponibilidade ligeiramente inferior, mas ainda requerem uma durabilidade elevada, bem como tempo de acesso e características de débito semelhantes aos dados de acesso frequente. Para os dados de acesso esporádico, um SLA de disponibilidade ligeiramente inferior e custos de acesso superiores são compromissos aceitáveis em troca de custos de armazenamento muito inferiores.
+O Armazenamento do Azure disponibiliza duas camadas de armazenamento para o armazenamento de objetos Blob, para que possa armazenar os seus dados de forma mais económica consoante o modo como os utiliza. A **camada de armazenamento de acesso frequente** do Azure está otimizada para armazenar dados que são acedidos com frequência. A **camada de armazenamento de acesso esporádico** do Azure está otimizada para armazenar dados que são acedidos com pouca frequência e de longa duração. Os dados na camada de armazenamento de acesso esporádico podem tolerar disponibilidade ligeiramente inferior, mas ainda requerem uma durabilidade elevada, bem como tempo de acesso e características de débito semelhantes aos dados de acesso frequente. Para os dados de acesso esporádico, um SLA de disponibilidade ligeiramente inferior e custos de acesso superiores são compromissos aceitáveis em troca de custos de armazenamento muito inferiores.
 
 Atualmente, os dados armazenados na nuvem estão a crescer a um ritmo exponencial. Para gerir os custos das suas necessidades de armazenamento em expansão, é recomendável organizar os dados com base em atributos como a frequência de acesso e o período de retenção planeado. Os dados armazenados na nuvem podem ser diferentes em termos da forma como são gerados, processados e acedidos ao longo da respetiva duração. Alguns dados são ativamente acedidos e modificados durante o seu ciclo de vida. Alguns dados são acedidos frequentemente no início da sua vida, mas o acesso diminui significativamente à medida que a sua idade aumenta. Alguns dados permanecem inativos na nuvem e são raramente acedidos após serem armazenados ou não são acedidos de todo.
 
@@ -85,13 +86,13 @@ A tabela seguinte realça a comparação entre as duas camadas de armazenamento:
 </tr>
 <tr>
     <td><strong><center>Disponibilidade</center></strong></td>
-    <td><center>99,9%</center></td>
+    <td><center>99.9%</center></td>
     <td><center>99%</center></td>
 </tr>
 <tr>
     <td><strong><center>Disponibilidade<br>(leituras de RA-GRS)</center></strong></td>
-    <td><center>99,99%</center></td>
-    <td><center>99,9%</center></td>
+    <td><center>99.99%</center></td>
+    <td><center>99.9%</center></td>
 </tr>
 <tr>
     <td><strong><center>Custos de utilização</center></strong></td>
@@ -341,10 +342,5 @@ Para obter mais detalhes, consulte [Introdução ao Blob Storage do Azure](stora
 [Transferir dados com o Utilitário de Linha de Comandos AzCopy](storage-use-azcopy.md)
 
 [Procurar e explorar as suas contas de armazenamento](http://storageexplorer.com/)
-
-
-
-
-<!--HONumber=Dec16_HO3-->
 
 

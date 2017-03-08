@@ -15,8 +15,9 @@ ms.topic: hero-article
 ms.date: 02/16/2017
 ms.author: sethm
 translationtype: Human Translation
-ms.sourcegitcommit: 94f4d852aeaed1eec20f178e2721650660ebec49
-ms.openlocfilehash: ae5e08e7a5c483fd89390580647722b2c9da0ecb
+ms.sourcegitcommit: f92909e0098a543f99baf3df3197a799bc9f1edc
+ms.openlocfilehash: 6c59c98a400da0616762b2bd0c4217d97e22ab86
+ms.lasthandoff: 02/28/2017
 
 
 ---
@@ -53,10 +54,10 @@ Segue-se uma captura de ecrã da página inicial da aplicação Web completa.
 Antes de poder começar a desenvolver aplicações do Azure, transfira as ferramentas e configure o ambiente de desenvolvimento:
 
 1. Instale o Azure SDK para o .NET a partir da [página de transferências](https://azure.microsoft.com/downloads/) do SDK.
-2. Na coluna **.NET**, clique na versão do Visual Studio que está a utilizar. Os passos neste tutorial utilizam o Visual Studio 2015.
+2. Na coluna **.NET**, clique na versão do [Visual Studio](http://www.visualstudio.com) que está a utilizar. Os passos neste tutorial utilizam o Visual Studio 2015.
 3. Quando lhe for pedido para executar ou guardar o instalador, clique em **Executar**.
 4. No **Instalador de Plataforma Web**, clique em **Instalar** e continue com a instalação.
-5. Após a conclusão da instalação, terá tudo o que é necessário para começar a desenvolver a aplicação. O SDK inclui ferramentas que permitem desenvolver facilmente aplicações do Azure no Visual Studio. Caso não tenha o Visual Studio instalado, o SDK também instala o Visual Studio Express gratuito.
+5. Após a conclusão da instalação, terá tudo o que é necessário para começar a desenvolver a aplicação. O SDK inclui ferramentas que permitem desenvolver facilmente aplicações do Azure no Visual Studio.
 
 ## <a name="create-a-namespace"></a>Criar um espaço de nomes
 Para começar a utilizar as funcionalidades do reencaminhamento no Azure, deve criar, em primeiro lugar, um espaço de nomes de serviço. Um espaço de nomes fornece um contentor de âmbito para abordar os recursos do Azure na sua aplicação. Siga as [instruções aqui](relay-create-namespace-portal.md) para criar um espaço de nomes de Reencaminhamento.
@@ -462,9 +463,4 @@ Para obter mais informações sobre o Reencaminhamento do Azure, veja os seguint
 [38]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/hy-service2.png
 [41]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/getting-started-multi-tier-40.png
 [43]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/getting-started-hybrid-43.png
-
-
-
-<!--HONumber=Feb17_HO3-->
-
 

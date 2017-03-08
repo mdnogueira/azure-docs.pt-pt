@@ -15,8 +15,9 @@ ms.topic: get-started-article
 ms.date: 01/10/2017
 ms.author: sethm
 translationtype: Human Translation
-ms.sourcegitcommit: 94f4d852aeaed1eec20f178e2721650660ebec49
-ms.openlocfilehash: 0f2caeed40b59a65ec08e7d94701c93b862199fc
+ms.sourcegitcommit: f92909e0098a543f99baf3df3197a799bc9f1edc
+ms.openlocfilehash: 76c884bfdfbfacf474489d41f1e388956e4daaa0
+ms.lasthandoff: 02/28/2017
 
 
 ---
@@ -62,10 +63,10 @@ As secções seguintes abordam o código que implementa esta arquitetura.
 Antes de poder começar a desenvolver aplicações do Azure, obtenha as ferramentas e configure o ambiente de desenvolvimento.
 
 1. Instale o Azure SDK para o .NET a partir da [página de transferências](https://azure.microsoft.com/downloads/) do SDK.
-2. Na coluna **.NET**, clique na versão do Visual Studio que está a utilizar. Os passos neste tutorial utilizam o Visual Studio 2015.
+2. Na coluna **.NET**, clique na versão do [Visual Studio](http://www.visualstudio.com) que está a utilizar. Os passos neste tutorial utilizam o Visual Studio 2015.
 3. Quando lhe for pedido para executar ou guardar o instalador, clique em **Executar**.
 4. No **Instalador de Plataforma Web**, clique em **Instalar** e continue com a instalação.
-5. Após a conclusão da instalação, terá tudo o que é necessário para começar a desenvolver a aplicação. O SDK inclui ferramentas que permitem desenvolver facilmente aplicações do Azure no Visual Studio. Caso não tenha o Visual Studio instalado, o SDK também instala o Visual Studio Express gratuito.
+5. Após a conclusão da instalação, terá tudo o que é necessário para começar a desenvolver a aplicação. O SDK inclui ferramentas que permitem desenvolver facilmente aplicações do Azure no Visual Studio.
 
 ## <a name="create-a-namespace"></a>Criar um espaço de nomes
 O passo seguinte consiste em criar um espaço de nomes de serviço e obter uma chave de Assinatura de Acesso Partilhado (SAS). Um espaço de nomes fornece um limite de aplicação para cada aplicação exposta através do Service Bus. O sistema gera uma chave SAS quando um espaço de nomes é criado. A combinação do espaço de nomes e da chave SAS fornece as credenciais do Service Bus para autenticar o acesso a uma aplicação.
@@ -394,9 +395,4 @@ Para obter mais informações sobre os cenários de multicamadas, consulte:
 [sbacom]: https://azure.microsoft.com/services/service-bus/  
 [sbacomqhowto]: service-bus-dotnet-get-started-with-queues.md  
 [mutitierstorage]: https://code.msdn.microsoft.com/Windows-Azure-Multi-Tier-eadceb36
-
-
-
-<!--HONumber=Feb17_HO3-->
-
 

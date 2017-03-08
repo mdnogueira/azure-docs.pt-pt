@@ -13,11 +13,12 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: infrastructure-services
-ms.date: 02/02/2017
+ms.date: 02/28/2017
 ms.author: jroth
 translationtype: Human Translation
-ms.sourcegitcommit: 55a4b22c3bb097c688446a5ec22f60baecf44ffe
-ms.openlocfilehash: 0dea81ef42d9225ee3780ffd2ad67a37c8a4a2ed
+ms.sourcegitcommit: 5121b2f9d33ebf4749fae6d990feab3bf9244e93
+ms.openlocfilehash: 6b99dbbacd9451285cca29de4a72ffb1473479fc
+ms.lasthandoff: 02/28/2017
 
 
 ---
@@ -52,11 +53,14 @@ Neste tutorial, irá:
 
    ![Painel Virtual Machines do Azure](./media/virtual-machines-windows-portal-sql-server-provision/azure-compute-blade2.png)
 
-5. Reveja os modelos do SQL Server disponíveis.
-6. Cada modelo identifica uma versão do SQL Server e um sistema operativo. Selecione uma destas imagens na lista. Em seguida, reveja o painel de detalhes que fornece uma descrição da imagem da máquina virtual.
+5. Reveja os modelos do SQL Server disponíveis. Cada modelo identifica uma versão do SQL Server e um sistema operativo. 
+6. Selecione o modelo para o SQL Server 2016 SP1 Developer no Windows Server 2016.
+
+   > [!TIP]
+   > A edição de Programador é utilizada neste tutorial porque é uma edição com todas as funcionalidades do SQL Server que é gratuita para fins de teste de programação. Apenas paga pelo custo de execução da VM.
    
    > [!NOTE]
-   > As imagens da VM do SQL incluem os custos de licenciamento para o SQL Server nos preços por minuto da VM que cria. Há outra opção que consiste em trazer a sua própria licença (BYOL) e pagar apenas a própria VM. Aos nomes dessas imagem é adicionado o prefixo {BYOL}. Para obter mais informações sobre esta opção, veja [Introdução ao SQL Server em Máquinas Virtuais do Azure](virtual-machines-windows-sql-server-iaas-overview.md).
+   > As imagens da VM do SQL incluem os custos de licenciamento para o SQL Server nos preços por minuto da VM que cria (exceto para o Programador e para as edições Express). O SQL Server Developer é gratuito para programação/teste (não para produção) e o SQL Express é gratuito para cargas de trabalho leves (inferiores a 1GB de memória e inferiores a 10 GB de armazenamento). Há outra opção que consiste em trazer a sua própria licença (BYOL) e pagar apenas a própria VM. Aos nomes dessas imagem é adicionado o prefixo {BYOL}. Para obter mais informações sobre esta opção, veja [Introdução ao SQL Server em Máquinas Virtuais do Azure](virtual-machines-windows-sql-server-iaas-overview.md).
    > 
    > 
 7. Em **Selecionar um modelo de implementação**, confirme se **Resource Manager** está selecionado. O modelo de implementação recomendado para máquinas virtuais novas é o Resource Manager. Clique em **Criar**.
@@ -243,14 +247,10 @@ Para obter mais informações, consulte o artigo [Configurar a Integração do C
 Quando tiver terminado de configurar as definições do SQL Server, clique em **OK**.
 
 ### <a name="r-services"></a>Serviços R
-Para a edição SQL Server 2016 Enterprise, tem a opção de ativar os [Serviços R do SQL Server](https://msdn.microsoft.com/library/mt604845.aspx). Esta ação permite-lhe utilizar a análise avançada com o SQL Server 2016. Clique em **Ativar** no painel **Definições do SQL Server**.
+Tem a opção de ativar os [Serviços R do SQL Server](https://msdn.microsoft.com/library/mt604845.aspx). Esta ação permite-lhe utilizar a análise avançada com o SQL Server 2016. Clique em **Ativar** no painel **Definições do SQL Server**.
 
 ![Ativar os Serviços R do SQL Server](./media/virtual-machines-windows-portal-sql-server-provision/azure-vm-sql-server-r-services.png)
 
-> [!NOTE]
-> Para imagens do SQL Server que não são da edição 2016 Enterprise, a opção para ativar os Serviços R está desativada.
-> 
-> 
 
 ## <a name="5-review-the-summary"></a>5. Reveja o resumo
 No painel **Resumo**, reveja o resumo e clique em **OK** para criar o SQL Server, o grupo de recursos e recursos especificados para esta VM.
@@ -299,10 +299,5 @@ Para outras informações sobre como utilizar o SQL Server no Azure, consulte o 
 Para obter uma descrição geral do vídeo do SQL Server em Virtual Machines do Azure, veja [A VM do Azure é a melhor plataforma para o SQL Server 2016](https://channel9.msdn.com/Events/DataDriven/SQLServer2016/Azure-VM-is-the-best-platform-for-SQL-Server-2016).
 
 [Explorar o Percurso de Aprendizagem](https://azure.microsoft.com/documentation/learning-paths/sql-azure-vm/) para o SQL Server em máquinas virtuais do Azure.
-
-
-
-
-<!--HONumber=Feb17_HO1-->
 
 

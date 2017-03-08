@@ -4,7 +4,7 @@ description: "Saiba como criar uma API RESTful Node.js e implementá-la numa apl
 services: app-service\api
 documentationcenter: node
 author: bradygaster
-manager: wpickett
+manager: erikre
 editor: 
 ms.assetid: a820e400-06af-4852-8627-12b3db4a8e70
 ms.service: app-service-api
@@ -15,8 +15,9 @@ ms.topic: get-started-article
 ms.date: 05/26/2016
 ms.author: rachelap
 translationtype: Human Translation
-ms.sourcegitcommit: 633caca05835aa204d4fec5fe216043a50520000
-ms.openlocfilehash: 87d2792d4f7610c62ed96cb522958844d4dc982b
+ms.sourcegitcommit: 9e62ed235d872738bc1a99ad33d977745c8b2d08
+ms.openlocfilehash: a3dacff719588be707418248ddc35c6f686b9b49
+ms.lasthandoff: 02/28/2017
 
 
 ---
@@ -161,7 +162,7 @@ Embora o App Service suporte várias formas de implementar o seu código numa ap
    
     ![IU do Swagger](media/app-service-api-nodejs-api-app/swagger-ui.png)
 
-## <a name="a-idcreateapiappa-create-a-new-api-app"></a><a id="createapiapp"></a> Criar uma nova Aplicação API
+## <a id="createapiapp"></a> Criar uma nova Aplicação API
 Nesta secção irá utilizar o Portal do Azure para criar uma nova Aplicação API no Azure. Esta aplicação API representa os recursos de computação que o Azure irá fornecer para executar o código. Nas secções posteriores vai implementar o código na nova aplicação API.
 
 1. Navegue para o [Portal do Azure](https://portal.azure.com/). 
@@ -277,10 +278,5 @@ Agora que tem a distribuição contínua a funcionar, pode fazer alterações ao
 
 ## <a name="next-steps"></a>Passos seguintes
 Neste momento, já criou com êxito uma aplicação API e implementou o código API do Node.js à mesma. O próximo tutorial mostra como [consumir API Apps a partir de clientes JavaScript, utilizando a CORS](app-service-api-cors-consume-javascript.md).
-
-
-
-
-<!--HONumber=Jan17_HO3-->
 
 
