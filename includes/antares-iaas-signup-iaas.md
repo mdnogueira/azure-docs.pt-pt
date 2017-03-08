@@ -1,18 +1,6 @@
 ---
-title: ''
-description: ''
-documentationcenter: ''
-services: ''
-solutions: ''
-writer: kathydav
-editor: tysonn
-manager: jeffreyg
-
-{}
-
----
 > [!NOTE]
-> To complete this tutorial, you need an Azure account. You can create a free trial account in just a couple of minutes. For details, see [Azure Free Trial](https://azure.microsoft.com/pricing/free-trial/).
+> Para concluir este tutorial, precisa de uma conta do Azure. Pode criar uma conta de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/).
 > 
 > 
 

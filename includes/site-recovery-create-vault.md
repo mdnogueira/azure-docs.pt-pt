@@ -1,4 +1,4 @@
-## <a name="create-a-recovery-services-vault"></a>Criar um cofre dos Serviços de Recuperação 
+
 1. Inicie sessão no [Portal do Azure](https://portal.azure.com) > **Site Recovery**
 2. Clique em **Novo** > **Gestão** >
 3. Em **Nome**, especifique um nome amigável para identificar o cofre. Se tiver mais do que uma subscrição, selecione uma delas.
@@ -8,8 +8,3 @@
    ![Novo cofre](./media/site-recovery-create-vault/new-vault-settings.png)
 
    O novo cofre é apresentado no **Dashboard** > **Todos os recursos** e no painel principal **Cofres dos Serviços de Recuperação**.
-
-
-<!--HONumber=Feb17_HO4-->
-
-

@@ -15,9 +15,9 @@ ms.topic: hero-article
 ms.date: 2/21/2017
 ms.author: nisoneji
 translationtype: Human Translation
-ms.sourcegitcommit: f438db1d0129dfb0e2eaa00146147084cd8c11b6
-ms.openlocfilehash: 179e8cf928d83a3a66ed3489173e4c28a2bc9d4f
-ms.lasthandoff: 02/28/2017
+ms.sourcegitcommit: d9dad6cff80c1f6ac206e7fa3184ce037900fc6b
+ms.openlocfilehash: 4e444deaa84c7f02608f4910e31f7033df51a73b
+ms.lasthandoff: 03/06/2017
 
 
 ---
@@ -309,7 +309,7 @@ O **RPO pretendido** é o Objetivo de Ponto de Recuperação (RPO) para a sua im
 
 **To meet RPO 90% of the time (Para satisfazer o RPO em 90% do tempo)**: se não puder aprovisionar a largura de banda necessária para satisfazer o seu RPO pretendido em 100% do tempo, devido aos preços da largura de banda ou a qualquer outro motivo, pode optar por aprovisionar uma quantidade de largura de banda inferior e que possa satisfazer esse RPO 90% do tempo. Para compreender as implicações de aprovisionar esta menor largura de banda, o relatório disponibiliza uma análise de hipóteses quanto ao número e à duração das violações de RPO que podem ser esperadas.
 
-**Achieved Throughput (Débito Alcançado):** é o débito do servidor onde executou o comando GetThroughput para a região do Microsoft Azure onde está localizada a conta de Armazenamento do Azure. Indica o débito aproximado que pode ser alcançado quando protege as máquinas virtuais compatíveis com o Azure Site Recovery, desde que as características de armazenamento e rede do Servidor de Configuração / Servidor de Processos permaneçam iguais às do servidor de onde executou a ferramenta. O Débito Alcançado é o débito do servidor onde executou o comando GetThroughput para a região do Microsoft Azure onde está localizada a conta de Armazenamento do Azure. Indica o débito aproximado que pode ser alcançado quando protege as máquinas virtuais compatíveis com o Azure Site Recovery, desde que as características de armazenamento e rede do Servidor de Configuração / Servidor de Processos permaneçam iguais às do servidor de onde executou a ferramenta.
+**Achieved Throughput (Débito Alcançado):** é o débito do servidor onde executou o comando GetThroughput para a região do Microsoft Azure onde está localizada a conta de Armazenamento do Azure. Indica o débito aproximado que pode ser alcançado quando protege as máquinas virtuais compatíveis com o Azure Site Recovery, desde que as características de armazenamento e rede do Servidor de Configuração / Servidor de Processos permaneçam iguais às do servidor de onde executou a ferramenta.    
 
 Para replicação, deve aprovisionar a largura de banda que é recomendada para cumprir o RPO em 100% do tempo. Se, mesmo depois de aprovisionar a largura de banda certa, não vir um aumento no débito alcançado comunicado pela ferramenta, verifique o seguinte:
 
