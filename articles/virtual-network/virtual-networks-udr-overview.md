@@ -1,10 +1,10 @@
 ---
-title: "O que são Rotas Definidas pelo Utilizador e Reencaminhamento IP?"
-description: "Saiba como utilizar Rotas Definidas pelo Utilizador (UDR) e Reencaminhamento IP para reencaminhar tráfego para aplicações virtuais de rede no Azure."
+title: Rotas definidas pelo utilizador e Reencaminhamento IP no Azure | Microsoft Docs
+description: "Saiba como configurar rotas definidas pelo utilizador (UDR) e Reencaminhamento IP para reencaminhar tráfego para aplicações virtuais de rede no Azure."
 services: virtual-network
 documentationcenter: na
 author: jimdial
-manager: carmonm
+manager: timlt
 editor: tysonn
 ms.assetid: c39076c4-11b7-4b46-a904-817503c4b486
 ms.service: virtual-network
@@ -14,13 +14,16 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/15/2016
 ms.author: jdial
+ms.custom: H1Hack27Feb2017
 translationtype: Human Translation
-ms.sourcegitcommit: d0b8e8ec88c39ce18ddfd6405faa7c11ab73f878
-ms.openlocfilehash: 673ce33f0f0836c3df3854b0e6368a6215ee6f5f
+ms.sourcegitcommit: c9996d2160c4082c18e9022835725c4c7270a248
+ms.openlocfilehash: 555939d6181d43d89a2d355744b74887d41df6ff
+ms.lasthandoff: 02/28/2017
 
 
 ---
-# <a name="what-are-user-defined-routes-and-ip-forwarding"></a>O que são Rotas Definidas pelo Utilizador e Reencaminhamento IP?
+# <a name="user-defined-routes-and-ip-forwarding"></a>Rotas definidas pelo utilizador e reencaminhamento de IP
+
 Quando adiciona máquinas virtuais (VM) a uma rede virtual (VNet) no Azure, repara que as VM conseguem comunicar entre si através da rede, automaticamente. Não é necessário especificar um gateway, apesar das VM estarem em sub-redes diferentes. O mesmo se verifica para a comunicação entre as VM e a Internet pública, e até mesmo na sua rede no local quando está presente uma ligação híbrida a partir do Azure para o seu centro de dados.
 
 Este fluxo de comunicação é possível porque o Azure utiliza uma série de rotas de sistema para definir como flui o tráfego IP. As rotas de sistema controlam o fluxo de comunicação nos seguintes cenários:
@@ -53,8 +56,8 @@ Os pacotes são reencaminhados através de uma rede TCP/IP com base numa tabela 
 | Propriedade | Descrição | Restrições | Considerações |
 | --- | --- | --- | --- |
 | Prefixo do endereço |O CIDR de destino aos quais se aplica a rota, por exemplo, 10.1.0.0/16. |Tem de ser um intervalo CIDR válido que represente endereços na Internet pública, rede virtual do Azure ou centro de dados no local. |Confirme se o **Prefixo do endereço** não contém o endereço para o **Endereço do próximo salto**. Caso contrário, os pacotes entrarão num ciclo que vai da origem para o salto seguinte sem nunca chegarem ao destino. |
-| Tipo de salto seguinte |O tipo de salto Azure para o qual o pacote deve ser enviado. |Tem de ser um dos seguintes valores: <br/> **Rede Virtual**. Representa a rede virtual local. Por exemplo, se tiver duas sub-redes, 10.1.0.0/16 e 10.2.0.0/16, na mesma rede virtual, a rota de cada sub-rede na tabela de rota terá um valor de salto seguinte igual a *Rede Virtual*. <br/> **Gateway de Rede Virtual**. Representa um VPN Gateway S2S do Azure. <br/> **Internet**. Representa o gateway de Internet predefinido fornecido pela infraestrutura do Azure. <br/> **Aplicação Virtual**. Representa uma aplicação virtual que adicionou à sua rede virtual do Azure. <br/> **Nenhuma**. Representa um buraco negro. Os pacotes reencaminhados para um buraco negro não são reencaminhados de modo algum. |Considere a utilização de um tipo **Nenhuma** para impedir o fluxo dos pacotes para um determinado destino. |
-| Endereço do próximo salto |O endereço do próximo salto contém o endereço IP para onde devem ser reencaminhados os pacotes. Os valores de salto seguintes só são permitidos em rotas onde está o tipo de salto seguinte é *Aplicação Virtual*. |Tem de ser um endereço IP alcançável dentro da Rede Virtual onde é aplicada a Rota Definida pelo Utilizador. |Se o endereço IP representa uma VM, certifique-se de que ativa [reencaminhamento IP](#IP-forwarding) no Azure para a VM. |
+| Tipo de salto seguinte |O tipo de salto Azure para o qual o pacote deve ser enviado. |Tem de ser um dos seguintes valores: <br/> **Rede Virtual**. Representa a rede virtual local. Por exemplo, se tiver duas sub-redes, 10.1.0.0/16 e 10.2.0.0/16, na mesma rede virtual, a rota de cada sub-rede na tabela de rota terá um valor de salto seguinte igual a *Rede Virtual*. <br/> **Gateway de Rede Virtual**. Representa um VPN Gateway S2S do Azure. <br/> **Internet**. Representa o gateway de Internet predefinido fornecido pela infraestrutura do Azure. <br/> **Aplicação Virtual**. Representa uma aplicação virtual que adicionou à sua rede virtual do Azure. <br/> **Nenhuma**. Representa um buraco negro. Os pacotes reencaminhados para um buraco negro não são reencaminhados de modo algum. |Considere a utilização de um **Dispositivo Virtual** para direcionar o tráfego para um endereço IP interno VM ou para um Balanceador de Carga do Azure.  Este tipo permite a especificação de um endereço IP, conforme descrito abaixo. Considere a utilização de um tipo **Nenhuma** para impedir o fluxo dos pacotes para um determinado destino. |
+| Endereço do próximo salto |O endereço do próximo salto contém o endereço IP para onde devem ser reencaminhados os pacotes. Os valores de salto seguintes só são permitidos em rotas onde está o tipo de salto seguinte é *Aplicação Virtual*. |Tem de ser um endereço IP alcançável dentro da Rede Virtual onde é aplicada a Rota Definida pelo Utilizador. |Se o endereço IP representa uma VM, certifique-se de que ativa [reencaminhamento IP](#IP-forwarding) no Azure para a VM. Se o endereço IP representa o endereço IP interno de um Balanceador de Carga do Azure, certifique-se de que tem uma regra de balanceamento de carga correspondente para cada porta para a qual pretende fazer o balanceamento de carga.|
 
 No Azure PowerShell alguns dos valores "NextHopType" têm nomes diferentes:
 
@@ -71,7 +74,7 @@ Cada sub-rede criada numa rede virtual é associada automaticamente a uma tabela
 * **Regra no local**: esta regra aplica-se a todo o tráfego destinado ao intervalo de endereços no local e utiliza o gateway VPN como destino de salto seguinte.
 * **Regra de Internet**: esta regra processa todo o tráfego destinado à Internet pública (prefixo de endereço 0.0.0.0/0) e utiliza o gateway para a Internet da infraestrutura como salto seguinte para todo o tráfego destinado à Internet.
 
-### <a name="user-defined-routes"></a>Rotas Definidas pelo Utilizador
+### <a name="user-defined-routes"></a>Rotas definidas pelo utilizador
 Para a maior parte dos ambientes, só necessita das rotas de sistema já definidas pelo Azure. No entanto, poderá ter de criar uma tabela de rota e adicionar um ou mais rotas em casos específicos, tais como:
 
 * Forçar o túnel à Internet através da rede no local.
@@ -105,13 +108,8 @@ Como descrito acima, uma das principais razões para criar uma rota definido de 
 
 Este VM de aplicação virtual deve ser capaz de receber tráfego de entrada que não esteja endereçada a si mesma. Para permitir que uma VM receba tráfego endereçado a outros destinos, tem de ativar o Reencaminhamento IP para a VM. Isto é uma definição do Azure, não se trata de uma definição no sistema operativo convidado.
 
-## <a name="next-steps"></a>Passos Seguintes
+## <a name="next-steps"></a>Passos seguintes
 * Saiba como [criar rotas no modelo de implementação do Gestor de recursos](virtual-network-create-udr-arm-template.md) e associá-las a sub-redes. 
 * Saiba como [criar rotas no modelo de implementação clássico](virtual-network-create-udr-classic-ps.md) e associá-las a sub-redes.
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: "Introdução às filas do Service Bus | Microsoft Docs"
+title: Escrever um programa que utiliza filas do Azure Service Bus | Microsoft Docs
 description: "Como escrever uma aplicação de consola C# para as mensagens do Service Bus"
 services: service-bus-messaging
 documentationcenter: .net
@@ -15,8 +15,9 @@ ms.workload: na
 ms.date: 11/30/2016
 ms.author: jotaub;sethm
 translationtype: Human Translation
-ms.sourcegitcommit: 560e73eb7129e665d254c3e93b08f29cfb6b1aa9
-ms.openlocfilehash: d80bedba1909de671ef96ac5372d9ff15a90764e
+ms.sourcegitcommit: f92909e0098a543f99baf3df3197a799bc9f1edc
+ms.openlocfilehash: 83649bdad1d369cdfe4edf3c2bdaa67180db8668
+ms.lasthandoff: 02/28/2017
 
 
 ---
@@ -32,7 +33,7 @@ Neste tutorial, iremos realizar o seguinte:
 4. Escrever uma aplicação de consola para receber mensagens.
 
 ## <a name="prerequisites"></a>Pré-requisitos
-1. [Visual Studio 2013 ou Visual Studio 2015](http://www.visualstudio.com). Os exemplos neste tutorial utilizam o Visual Studio 2015.
+1. [Visual Studio 2015 ou superior](http://www.visualstudio.com). Os exemplos neste tutorial utilizam o Visual Studio 2015.
 2. Uma subscrição do Azure.
 
 [!INCLUDE [create-account-note](../../includes/create-account-note.md)]
@@ -175,9 +176,4 @@ Consulte o nosso [repositório do GitHub com exemplos](https://github.com/Azure-
 <!--Reference style links - using these makes the source content way more readable than using inline links-->
 
 [github-samples]: https://github.com/Azure-Samples/azure-servicebus-messaging-samples
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

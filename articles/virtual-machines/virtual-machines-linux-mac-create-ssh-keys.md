@@ -1,6 +1,6 @@
 ---
 title: Criar um par de chaves SSH para as VMs do Linux no Azure | Microsoft Docs
-description: "Criar um par de chaves pública e privada SSH para as VMs do Linux de forma segura."
+description: "Criar um par de chaves pública e privada SSH para as VMs do Azure Linux de forma segura."
 services: virtual-machines-linux
 documentationcenter: 
 author: vlivech
@@ -13,11 +13,12 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 2/6/2016
+ms.date: 2/6/2017
 ms.author: rasquill
 translationtype: Human Translation
-ms.sourcegitcommit: e5f93bab46620e06e56950ba7b3686b15f789a9d
-ms.openlocfilehash: 1ee0368b75e4ef2fc759251db32c5aed5c1a168d
+ms.sourcegitcommit: 6776fe5cf1faadfbcfc9bbd6c69ec1380c2429c7
+ms.openlocfilehash: 67dce2c226f5ec5f396ef51cd59781d532d76795
+ms.lasthandoff: 02/27/2017
 
 
 ---
@@ -41,6 +42,9 @@ Adicione a chave recentemente criada para `ssh-agent`:
 ```bash
 ssh-add ~/.ssh/id_rsa
 ```
+
+> [!NOTE] 
+> Os comandos acima funcionam em sistemas operativos Linux de quase todas as distribuições, mas não funcionam necessariamente em contentores, visto que o ambiente pode estar radicalmente restrito.
 
 ## <a name="detailed-walkthrough"></a>Instruções Detalhadas
 
@@ -249,9 +253,4 @@ O passo seguinte consiste na criação de VMs com Linux do Azure utilizando a no
 * [Criar uma VM do Linux segura com um modelo do Azure](virtual-machines-linux-create-ssh-secured-vm-from-template.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 * [Criar uma VM do Linux segura com o portal do Azure](virtual-machines-linux-quick-create-portal.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 * [Criar uma VM do Linux segura com a CLI do Azure](virtual-machines-linux-quick-create-cli.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 

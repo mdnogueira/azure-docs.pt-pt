@@ -1,8 +1,8 @@
 
 
-## <a name="azure-cli-20-preview"></a>CLI do Azure 2.0 (Pré-visualização )
+## <a name="azure-cli-20"></a>CLI 2.0 do Azure
 
-Assim que tiver [instalado a CLI do Azure 2.0 (Pré-visualização)](https://docs.microsoft.com/cli/azure/install-az-cli2), utilize o comando `az vm image list` para ver uma lista em cache de imagens populares da VM. Por exemplo, o exemplo seguinte do comando `az vm image list -o table` apresenta:
+Assim que tiver [instalado a CLI 2.0 do Azure](https://docs.microsoft.com/cli/azure/install-az-cli2), utilize o comando `az vm image list` para ver uma lista em cache de imagens populares da VM. Por exemplo, o exemplo seguinte do comando `az vm image list -o table` apresenta:
 
 ```
 You are viewing an offline list of images, use --all to retrieve an up-to-date list
@@ -294,7 +294,3 @@ A partir da lista, copie o nome do SKU escolhido e tem todas as informações pa
 [gog]: http://google.com/
 [yah]: http://search.yahoo.com/  
 [msn]: http://search.msn.com/
-
-<!--HONumber=Feb17_HO3-->
-
-

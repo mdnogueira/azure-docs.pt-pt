@@ -1,5 +1,5 @@
 ---
-title: "Soluções Batch e HPC na nuvem | Microsoft Docs"
+title: "Soluções Batch e HPC na cloud - Azure | Microsoft Docs"
 description: "Saiba mais sobre cenários de computação em lote e de alto desempenho (HPC e Macrocomputação) e as opções das soluções no Azure"
 services: batch, virtual-machines, cloud-services
 documentationcenter: 
@@ -12,15 +12,18 @@ ms.devlang: NA
 ms.topic: get-started-article
 ms.tgt_pltfrm: NA
 ms.workload: big-compute
-ms.date: 01/23/2017
+ms.date: 02/27/2017
 ms.author: danlep
+ms.custom: H1Hack27Feb2017
 translationtype: Human Translation
-ms.sourcegitcommit: ffba988bd8cd3896816118afde979c7067fced79
-ms.openlocfilehash: c3e80bc18e4d1007146d9d3c80c2618400480046
+ms.sourcegitcommit: 6b6c548ca1001587e2b40bbe9ee2fcb298f40d72
+ms.openlocfilehash: 288bd4dc0bde4cb610efc4a6d015e5b9499eb0ee
+ms.lasthandoff: 02/28/2017
 
 
 ---
-# <a name="batch-and-hpc-solutions-in-the-azure-cloud"></a>Soluções Batch e HPC na nuvem do Azure
+# <a name="batch-and-hpc-solutions-for-large-scale-computing-workloads"></a>Soluções de Batch e HPC para cargas de trabalho de computação em grande escala
+
 O Azure oferece soluções na nuvem eficientes e dimensionáveis para computação de lotes e de alto desempenho (HPC), também conhecida como *Macrocomputação*. Saiba mais aqui sobre cargas de trabalho de Macrocomputação e os serviços do Azure para suportá-las ou vá diretamente para [cenários de soluções](#scenarios) posteriormente neste artigo. Este artigo destina-se principalmente a decisores, gestores de TI e fabricantes independentes de software, mas outros programadores e profissionais de TI podem utilizá-lo para se familiarizarem com estas soluções.
 
 As organizações têm problemas informáticos em grande escala, incluindo a arquitetura e a análise da engenharia, a composição de imagens, modelação complexa, simulações Monte Carlo , cálculos de riscos financeiros, entre outros. O Azure ajuda as organizações a resolver estes problemas com os recursos, a escala e a agenda de que precisam. Com o Azure, as organizações podem:
@@ -134,9 +137,4 @@ A sua solução de Macrocomputação poderá necessitar de outros serviços do A
 [iaas_cluster]: ./media/batch-hpc-solutions/iaas_cluster.png
 [burst_cluster]: ./media/batch-hpc-solutions/burst_cluster.png
 [batch_proc]: ./media/batch-hpc-solutions/batch_proc.png
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

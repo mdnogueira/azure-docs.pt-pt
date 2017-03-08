@@ -15,13 +15,15 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 1/25/2017
 ms.author: guybo
+ms.custom: H1Hack27Feb2017
 translationtype: Human Translation
-ms.sourcegitcommit: 868d65642ab9ca3e1c35d33a7cb9e9dd8c31c430
-ms.openlocfilehash: f945ac0357c11c70780dea8e62f094457a213d96
+ms.sourcegitcommit: 54673cbc69e418bdbe7cb5791dfb5d20e7ebcb9f
+ms.openlocfilehash: 2294587fd3f978a3f8383112ece329b47307db7a
+ms.lasthandoff: 02/28/2017
 
 
 ---
-# <a name="virtual-machine-scale-sets-overview"></a>Descrição Geral dos Conjuntos de Dimensionamento de Máquinas Virtuais
+# <a name="what-are-virtual-machine-scale-sets-in-azure"></a>O que são os Conjuntos de Dimensionamento de Máquinas Virtuais do Azure?
 Os conjuntos de dimensionamento de máquinas virtuais são um recurso de computação do Azure que pode ser utilizado para implementar e gerir um conjunto de VMs idênticas. Com todas as VMs configuradas da mesma forma, os conjuntos de dimensionamento de VMs foram concebidos para suportar um verdadeiro dimensionamento automático – não é necessário fazer o aprovisionamento prévio das VMs –, pelo que facilitam a criação de serviços de grande escala destinados a Big Compute, macrodados e cargas de trabalho em contentores.
 
 Para aplicações que têm de aumentar e reduzir verticalmente os recursos de computação, as operações em escala são balanceadas, implicitamente, entre domínios de falha e de atualização. Para obter uma introdução aos conjuntos de dimensionamento de VMs, veja o [anúncio no blogue do Azure](https://azure.microsoft.com/blog/azure-virtual-machine-scale-sets-ga/). 
@@ -127,9 +129,4 @@ Esta secção lista alguns cenários comuns de conjuntos de dimensionamento de V
 **P.** Os conjuntos de dimensionamento de VMs funcionam com os conjuntos de disponibilidade do Azure?
 
 **R.** Sim. Um conjunto de dimensionamento de VMs é um conjunto de disponibilidade implícito com cinco domínios de falha e cinco domínios de atualização. Não tem de configurar nada em virtualMachineProfile. Os conjuntos de dimensionamento de VMs de mais de 100 VMs abrangem vários "grupos de posicionamento" que são equivalentes aos vários conjuntos de disponibilidade. Um conjunto de disponibilidade de VMs pode existir na mesma VNET como um conjunto de dimensionamento de VMs. Uma configuração comum é colocar as VMs de nó de controlo que muitas vezes necessitam da configuração exclusiva no conjunto de disponibilidade e nós de dados no conjunto de dimensionamento.
-
-
-
-<!--HONumber=Feb17_HO1-->
-
 

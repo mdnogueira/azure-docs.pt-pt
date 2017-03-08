@@ -15,9 +15,9 @@ ms.workload: big-data
 ms.date: 12/23/2016
 ms.author: nitinme
 translationtype: Human Translation
-ms.sourcegitcommit: 091fadce064086d82b833f8e44edfbba125d3e6b
-ms.openlocfilehash: cb5babdd8fea3615d8aa27f05a07c3b489f3faa4
-ms.lasthandoff: 01/30/2017
+ms.sourcegitcommit: 1e6ae31b3ef2d9baf578b199233e61936aa3528e
+ms.openlocfilehash: 3e4302e7c5b54a46994eccaa8cf9ecbb0a84446d
+ms.lasthandoff: 03/03/2017
 
 
 ---
@@ -51,7 +51,7 @@ Neste tutorial, utilizamos um segredo do cliente da aplicação Azure AD para ob
 2. Obter o ID de cliente, o segredo do cliente e o ponto final do token da aplicação Web do Azure AD.
 3. Configurar o acesso à aplicação Web do Azure AD no ficheiro/pasta do Data Lake Store que pretende aceder a partir da aplicação Java que está a criar.
 
-Para obter instruções sobre como realizar estes passos, veja [Create an Active Directory application (Criar uma aplicação do Active Directory)](data-lake-store-authenticate-using-active-directory.md#create-an-active-directory-application).
+Para obter instruções sobre como realizar estes passos, veja [Create an Active Directory application (Criar uma aplicação do Active Directory)](data-lake-store-authenticate-using-active-directory.md).
 
 O Azure Active Directory fornece também outras opções para obter um token. Pode escolher entre vários mecanismos de autenticação diferentes de acordo com o seu cenário, por exemplo, uma aplicação em execução num browser, uma aplicação distribuída como uma aplicação de ambiente de trabalho ou uma aplicação de servidor em execução no local ou numa máquina virtual do Azure. Também pode escolher entre diferentes tipos de credenciais, como palavras-passe, certificados, autenticação de 2 fatores, etc. Além disso, o Azure Active Directory permite-lhe sincronizar os seus utilizadores do Active Directory no local com a nuvem. Para obter detalhes, veja [Authentication Scenarios for Azure Active Directory (Cenários de Autenticação do Azure Active Directory)](../active-directory/active-directory-authentication-scenarios.md). 
 

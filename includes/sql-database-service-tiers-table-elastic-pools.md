@@ -4,12 +4,12 @@ sql-database-elastic-pool.md
 sql-database-resource-limits.md
 sql-database-service-tiers.md  
 -->
-
+ 
 ### <a name="basic-elastic-pool-limits"></a>Limites do conjunto elástico básico
 
 | Tamanho do conjunto (eDTUs)  | **50** | **100** | **200** | **300** | **400** | **800** | **1200** | **1600** |
 |:---|---:|---:|---:| ---: | ---: | ---: | ---: | ---: |
-| Armazenamento máximo por conjunto* | 5 GB | 10 GB | 20 GB | 29 GB | 39 GB | 78 GB | 117 GB | 156 GB |
+| Armazenamento de dados máximo por conjunto* | 5 GB | 10 GB | 20 GB | 29 GB | 39 GB | 78 GB | 117 GB | 156 GB |
 | Armazenamento OLTP máximo em memória por conjunto* | N/D | N/D | N/D | N/D | N/D | N/D | N/D | N/D |
 | Número de DBs máximo por conjunto | 100 | 200 | 500 | 500 | 500 | 500 | 500 | 500 |
 | Máximo de trabalhadores simultâneos por conjunto | 100 | 200 | 400 | 600 | 800 | 1600 | 2400 | 3200 |
@@ -23,7 +23,7 @@ sql-database-service-tiers.md
 
 | Tamanho do conjunto (eDTUs)  | **50** | **100** | **200** | **300** | **400** | **800** | 
 |:---|---:|---:|---:| ---: | ---: | ---: | 
-| Armazenamento máximo por conjunto* | 50 GB| 100 GB| 200 GB | 300 GB| 400 GB | 800 GB | 
+| Armazenamento de dados máximo por conjunto* | 50 GB| 100 GB| 200 GB | 300 GB| 400 GB | 800 GB | 
 | Armazenamento OLTP máximo em memória por conjunto* | N/D | N/D | N/D | N/D | N/D | N/D | 
 | Número de DBs máximo por conjunto | 100 | 200 | 500 | 500 | 500 | 500 | 
 | Máximo de trabalhadores simultâneos por conjunto | 100 | 200 | 400 | 600 |  800 | 1600 |
@@ -37,7 +37,7 @@ sql-database-service-tiers.md
 
 | Tamanho do conjunto (eDTUs)  |  **1200** | **1600** | **2000** | **2500** | **3000** |
 |:---|---:|---:|---:| ---: | ---: |
-| Armazenamento máximo por conjunto* | 1.2 TB | 1.6 TB | 2 TB | 2.4 TB | 2,9 TB | 
+| Armazenamento de dados máximo por conjunto* | 1.2 TB | 1.6 TB | 2 TB | 2.4 TB | 2,9 TB | 
 | Armazenamento OLTP máximo em memória por conjunto* | N/D | N/D | N/D | N/D | N/D | 
 | Número de DBs máximo por conjunto | 500 | 500 | 500 | 500 | 500 | 500 |
 | Máximo de trabalhadores simultâneos por conjunto |  2400 | 3200 | 4000 | 5000 | 6000 |
@@ -51,7 +51,7 @@ sql-database-service-tiers.md
 
 | Tamanho do conjunto (eDTUs)  | **125** | **250** | **500** | **1000** | **1500** | 
 |:---|---:|---:|---:| ---: | ---: | 
-| Armazenamento máximo por conjunto* | 250 GB| 500 GB| 750 GB| 750 GB| 750 GB| 
+| Armazenamento de dados máximo por conjunto* | 250 GB| 500 GB| 750 GB| 750 GB| 750 GB| 
 | Armazenamento OLTP máximo em memória por conjunto* | 1 GB| 2GB| 4GB| 10 GB| 12 GB| 
 | Número de DBs máximo por conjunto | 50 | 100 | 100 | 100 | 100 |  
 | Máximo de trabalhadores simultâneos por conjunto | 200 | 400 | 800 | 1600 |  2400 | 
@@ -65,7 +65,7 @@ sql-database-service-tiers.md
 
 | Tamanho do conjunto (eDTUs)  |  **2000** | **2500** | **3000** | **3500** | **4000** |
 |:---|---:|---:|---:| ---: | ---: | 
-| Armazenamento máximo por conjunto* | 750 GB | 750 GB | 750 GB | 750 GB | 750 GB |
+| Armazenamento de dados máximo por conjunto* | 750 GB | 750 GB | 750 GB | 750 GB | 750 GB |
 | Armazenamento OLTP máximo em memória por conjunto* | 16 GB | 20 GB | 24 GB | 28 GB | 32 GB |
 | Número de DBs máximo por conjunto | 100 | 100 | 100 | 100 | 100 | 
 | Máximo de trabalhadores simultâneos por conjunto |  3200 | 4000 | 4800 | 5600 | 6400 |
@@ -75,10 +75,6 @@ sql-database-service-tiers.md
 | Máximo de eDTUs por base de dados | {25,50,75,<br>125,250,500,<br>1000,1750} | {25,50,75,<br>125,250,500,<br>1000,1750} | {25,50,75,<br>125,250,500,<br>1000,1750} | {25,50,75,<br>125,250,500,<br>1000,1750} | {25,50,75,<br>125,250,500,<br>1000,1750,4000} | 
 ||||||||
 
-\* As bases de dados agrupadas partilham o armazenamento agrupado, pelo o que o armazenamento de base de dados é limitado ao armazenamento agrupado mais pequeno restante ou armazenamento máximo por base de dados. Armazenamento máximo por agrupamento refere-se ao armazenamento máximo dos ficheiros de dados no agrupamento de não inclui o espaço utilizado por ficheiros de registo.
-
-
-
-<!--HONumber=Feb17_HO3-->
-
-
+> [!IMPORTANT]
+>\* As bases de dados agrupadas partilham o armazenamento agrupado, pelo o que o armazenamento de dados num conjunto elástico é limitado ao armazenamento agrupado mais pequeno restante ou armazenamento máximo por base de dados.
+>

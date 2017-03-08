@@ -15,8 +15,9 @@ ms.topic: hero-article
 ms.date: 02/06/2017
 ms.author: raynew
 translationtype: Human Translation
-ms.sourcegitcommit: e34b10aec5ee4316c8e2ffc03e1714dc6753e4d1
-ms.openlocfilehash: 96504042c4fb6a83c4ab2c35c20a8264d7db85bb
+ms.sourcegitcommit: 67b4861ac564565b2a36932ae15141a1e1f56035
+ms.openlocfilehash: d315c5ed186c24236c860df1ad1b79d55c9a4d57
+ms.lasthandoff: 02/23/2017
 
 
 ---
@@ -60,7 +61,7 @@ Eis o que precisa no ambiente no local.
 | --- | --- |
 | **VMM** |Precisará de, pelo menos, um servidor VMM implementado como um servidor autónomo físico ou virtual ou como um cluster virtual. <br/><br/>O servidor VMM deve executar o System Center 2012 R2 com as atualizações acumulativas mais recentes.<br/><br/>Precisará de, pelo menos, uma nuvem configurada no servidor VMM.<br/><br/>A nuvem de origem que pretende proteger tem de conter um ou mais grupos de anfitriões VMM.<br/><br/>Saiba mais sobre como configurar as nuvens do VMM em [Instruções: criar nuvens privadas com o VMM do System Center 2012 SP1](http://blogs.technet.com/b/keithmayer/archive/2013/04/18/walkthrough-creating-private-clouds-with-system-center-2012-sp1-virtual-machine-manager-build-your-private-cloud-in-a-month.aspx) no blogue de Keith Mayer. |
 | **Hyper-V** |Precisará de um ou mais servidores anfitrião Hyper-V ou clusters na nuvem VMM. O servidor de anfitrião tem de ter uma ou várias VMs. <br/><br/>O servidor Hyper-V tem de ser executado, pelo menos, no **Windows Server 2012 R2** com a função Hyper-V ou no **Microsoft Hyper-V Server 2012 R2** com as atualizações mais recentes instaladas.<br/><br/>Qualquer servidor Hyper-V que contenha VMs que pretende proteger tem de estar localizado numa nuvem VMM.<br/><br/>Se estiver a executar Hyper-V num cluster, tenha em atenção que o mediador de clusters não é criado automaticamente se tiver um cluster com base no endereço IP estático. Precisará de configurar manualmente o mediador de clusters. [Saiba mais](https://www.petri.com/use-hyper-v-replica-broker-prepare-host-clusters) na entrada de blogue de Aidan Finn. |
-| **Máquinas protegidas** |As VMs que pretende proteger devem estar em conformidade com os [Requisitos do Azure](site-recovery-best-practices.md#azure-virtual-machine-requirements). |
+| **Máquinas protegidas** | As VMs que pretende proteger devem estar em conformidade com os [Requisitos do Azure](site-recovery-support-matrix-to-azure.md#failed-over-azure-vm-requirements). |
 
 ## <a name="network-mapping-prerequisites"></a>Pré-requisitos de mapeamento da rede
 Quando protege máquinas virtuais no mapeamento da rede do Azure, mapeia entre as redes VM no servidor VMM de origem e as redes do Azure de destino para ativar o seguinte:
@@ -73,6 +74,12 @@ Se pretender implementar o mapeamento da rede precisará do seguinte:
 
 * As máquinas virtuais que pretende proteger no servidor VMM de origem devem estar ligadas a uma rede VM. Essa rede deve ser ligada a uma rede lógica que está associada à nuvem.
 * Uma rede do Azure para a qual as máquinas virtuais replicadas podem ligar após a ativação pós-falha. Selecionará esta rede no momento da ativação pós-falha. A rede deve estar na mesma região que a sua subscrição do Azure Site Recovery.
+
+
+Preparar redes no VMM:
+
+   * [Configure as redes lógicas](https://technet.microsoft.com/library/jj721568.aspx).
+   * [Configure as redes VM](https://technet.microsoft.com/library/jj721575.aspx).
 
 
 ## <a name="step-1-create-a-site-recovery-vault"></a>Passo 1: Criar um cofre de Recuperação de Sites
@@ -246,7 +253,7 @@ Tenha em atenção que se a rede de destino tiver várias sub-redes e uma dessas
 ## <a name="step-8-enable-protection-for-virtual-machines"></a>Passo 8: Ativar a proteção para máquinas virtuais
 Depois de configurar corretamente os servidores, as nuvens e as redes, pode ativar a proteção para máquinas virtuais na nuvem. Tenha em atenção o seguinte:
 
-* As máquinas virtuais têm de cumprir os [Requisitos Azure](site-recovery-best-practices.md#azure-virtual-machine-requirements).
+* As máquinas virtuais têm de cumprir os [Requisitos Azure](site-recovery-support-matrix-to-azure.md#failed-over-azure-vm-requirements).
 * Para ativar a proteção, o sistema operativo e as propriedades de disco do sistema operativo têm de ser definidos para a máquina virtual. Quando cria uma máquina virtual no VMM utilizando um modelo de máquina virtual, pode definir a propriedade. Também pode definir estas propriedades para as máquinas virtuais existentes nos separadores **Geral** e **Configuração de Hardware** das propriedades da máquina virtual. Se não definir estas propriedades no VMM, poderá configurá-las no portal do Azure Site Recovery.
 
     ![Criar a máquina virtual](./media/site-recovery-vmm-to-azure-classic/enable-new.png)
@@ -315,7 +322,7 @@ Existem duas formas de executar uma ativação pós-falha de teste para o Azure.
 * **Testar a ativação pós-falha sem uma rede Azure** – este tipo de ativação pós-falha de teste verifica se a máquina virtual é apresentada corretamente no Azure. A máquina virtual não será ligada a nenhuma rede Azure após a ativação pós-falha.
 * **Testar a ativação pós-falha com uma rede Azure** – este tipo de ativação pós-falha verifica se o ambiente de replicação completo é mostrado conforme esperado e se as máquinas virtuais com ativação pós-falha serão ligadas à rede de destino do Azure especificada. Para o processamento da sub-rede e para fins de teste da ativação pós-falha, a sub-rede da máquina virtual de teste será determinada com base na sub-rede da máquina virtual de réplica. Isto é diferente da replicação normal em que a sub-rede da máquina virtual de réplica se baseia na sub-rede da máquina virtual de origem.
 
-Se pretender executar uma ativação pós-falha de teste para uma máquina virtual ativada para a proteção do Azure sem especificar uma rede de destino do Azure, não precisa de preparar nada. Para executar uma ativação pós-falha de teste com uma rede de destino do Azure, terá de criar uma nova rede do Azure isolada da sua rede de produção do Azure (comportamento predefinido quando cria uma nova rede no Azure). Veja como [Executar uma ativação pós-falha de teste](site-recovery-failover.md#run-a-test-failover) para obter mais detalhes.
+Se pretender executar uma ativação pós-falha de teste para uma máquina virtual ativada para a proteção do Azure sem especificar uma rede de destino do Azure, não precisa de preparar nada. Para executar uma ativação pós-falha de teste com uma rede de destino do Azure, terá de criar uma nova rede do Azure isolada da sua rede de produção do Azure (comportamento predefinido quando cria uma nova rede no Azure). Veja como [Executar uma ativação pós-falha de teste](site-recovery-failover.md) para obter mais detalhes.
 
 Terá também de configurar a infraestrutura para a máquina virtual replicada funcionar conforme esperado. Por exemplo, uma máquina virtual com o Controlador de Domínio e o DNS pode ser replicada para o Azure utilizando o Azure Site Recovery e pode ser criada na rede de teste com Ativação Pós-falha de Teste. Veja a secção [Considerações sobre a ativação pós-falha do Active Directory](site-recovery-active-directory.md#test-failover-considerations) para obter mais detalhes.
 
@@ -341,9 +348,4 @@ Para executar um teste de ativação pós-falha, efetue o seguinte:
 
 ## <a name="next-steps"></a>Passos seguintes
 Saiba mais sobre como [Configurar planos de recuperação](site-recovery-create-recovery-plans.md) e [Ativação pós-falha](site-recovery-failover.md).
-
-
-
-<!--HONumber=Feb17_HO4-->
-
 
