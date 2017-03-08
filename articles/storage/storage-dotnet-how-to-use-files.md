@@ -15,15 +15,16 @@ ms.topic: hero-article
 /ms.date: 1/18/2017
 ms.author: renash
 translationtype: Human Translation
-ms.sourcegitcommit: 550db52c2b77ad651b4edad2922faf0f951df617
-ms.openlocfilehash: b4f13f1b5469ea3d3b2ab69e6435d3e7beb6ace8
+ms.sourcegitcommit: 4e81088857c0e9cacaf91342227ae63080fc90c5
+ms.openlocfilehash: 780066b1e71d967c64da0a1c1a284ffd5d1b7481
+ms.lasthandoff: 02/23/2017
 
 
 ---
 # <a name="get-started-with-azure-file-storage-on-windows"></a>Introdução ao Armazenamento de ficheiros do Azure no Windows
 [!INCLUDE [storage-selector-file-include](../../includes/storage-selector-file-include.md)]
 
-[!INCLUDE [storage-try-azure-tools-files](../../includes/storage-try-azure-tools-files.md)]
+[!INCLUDE [storage-check-out-samples-dotnet](../../includes/storage-check-out-samples-dotnet.md)]
 
 [!INCLUDE [storage-file-overview-include](../../includes/storage-file-overview-include.md)]
 
@@ -38,7 +39,7 @@ Para obter informações sobre metas de desempenho e escalabilidade do Armazenam
 ## <a name="video-using-azure-file-storage-with-windows"></a>Vídeo: utilizar o Armazenamento de ficheiros do Azure com o Windows
 Eis um vídeo que demonstra como criar e utilizar Partilhas de ficheiros do Azure no Windows.
 
-> [!VIDEO https://channel9.msdn.com/Blogs/Windows-Azure/Azure-File-Storage-with-Windows/player]
+> [!VIDEO https://channel9.msdn.com/Blogs/Azure/Azure-File-Storage-with-Windows/player]
 > 
 > 
 
@@ -215,10 +216,10 @@ Para demonstrar como montar uma partilha de ficheiros do Azure, vamos agora cria
 3. Abra uma janela do PowerShell na máquina virtual.
 
 ### <a name="persist-your-storage-account-credentials-for-the-virtual-machine"></a>Manter as suas credenciais da conta de armazenamento para a máquina
-Antes da montagem para a partilha de ficheiros, primeiro mantenha as credenciais da conta de armazenamento na máquina virtual. Este passo permite ao Windows restabelecer automaticamente ligação à partilha de ficheiros quando a máquina virtual reiniciar. Para manter as suas credenciais de conta, execute o comando `cmdkey` a partir da janela do PowerShell na máquina virtual. Substitua `<storage-account-name>` pelo nome da sua conta de armazenamento e `<storage-account-key>` pela chave da conta de armazenamento.
+Antes da montagem para a partilha de ficheiros, primeiro mantenha as credenciais da conta de armazenamento na máquina virtual. Este passo permite ao Windows restabelecer automaticamente ligação à partilha de ficheiros quando a máquina virtual reiniciar. Para manter as suas credenciais de conta, execute o comando `cmdkey` a partir da janela do PowerShell na máquina virtual. Substitua `<storage-account-name>` pelo nome da sua conta de armazenamento e `<storage-account-key>` pela chave da conta de armazenamento. É necessário especificar explicitamente o domínio "AZURE" como na amostra abaixo. 
 
 ```
-cmdkey /add:<storage-account-name>.file.core.windows.net /user:<storage-account-name> /pass:<storage-account-key>
+cmdkey /add:<storage-account-name>.file.core.windows.net /user:AZURE\<storage-account-name> /pass:<storage-account-key>
 ```
 
 Em seguida, o Windows irá restabelecer ligação à partilha de ficheiros quando a máquina virtual reiniciar. Pode verificar se a ligação à partilha foi restabelecida ao executar o comando `net use` a partir de uma janela do PowerShell.
@@ -238,10 +239,10 @@ net use z: \\samples.file.core.windows.net\logs
 Uma vez que manteve as credenciais da conta de armazenamento no passo anterior, não tem de os fornecer com o comando `net use`. Se ainda não manteve as suas credenciais, inclua-as como um parâmetro passado ao comando `net use`, conforme mostrado no exemplo seguinte.
 
 ```
-net use <drive-letter>: \\<storage-account-name>.file.core.windows.net\<share-name> /u:<storage-account-name> <storage-account-key>
+net use <drive-letter>: \\<storage-account-name>.file.core.windows.net\<share-name> /u:AZURE\<storage-account-name> <storage-account-key>
 
 example :
-net use z: \\samples.file.core.windows.net\logs /u:samples <storage-account-key>
+net use z: \\samples.file.core.windows.net\logs /u:AZURE\samples <storage-account-key>
 ```
 
 Agora, pode trabalhar com a partilha do File Storage a partir da máquina virtual como o faria com qualquer outra unidade. Pode emitir comandos de ficheiros padrão a partir da linha de comandos ou visualizar a partilha montada e o respetivo conteúdo a partir do Explorador de Ficheiros. De igual modo, pode executar código na máquina virtual que acede à partilha de ficheiros através das APIs de E/S dos ficheiros do Windows padrão, tais como as fornecidas pelos [espaços de nomes System.IO](http://msdn.microsoft.com/library/gg145019.aspx) no .NET Framework.
@@ -602,49 +603,61 @@ Além disso, pode consultar o [Azure Files Troubleshooting Article (Artigo de Re
    
     Atualmente, não suportamos a autenticação baseada no AD ou em ACLs, mas é uma funcionalidade que está presente na nossa lista de pedidos de funcionalidades. Por agora, as chaves da conta de armazenamento do Azure são utilizadas para fornecer a autenticação à partilha de ficheiros. Oferecemos uma solução através de assinaturas de acesso partilhado (SAS) através da API REST ou de bibliotecas de cliente. Através de SAS, pode gerar tokens com permissões específicas que são válidas ao longo de um intervalo de tempo especificado. Por exemplo, pode gerar um token de acesso só de leitura para um determinado ficheiro. Quem tiver este token enquanto for válido tem acesso só de leitura a esse ficheiro.
    
-    A SAS só é suportada através da API REST ou de bibliotecas cliente. Ao montar a partilha de ficheiros através do protocolo SMB, não pode utilizar uma SAS para delegar o acesso ao seu conteúdo.
-2. **As Partilhas de ficheiros do Azure são visíveis publicamente através da Internet ou são apenas acessíveis a partir do Azure?**
-   
-    Desde que a porta 445 (Saída de TCP) esteja aberta e o cliente suportar o protocolo SMB 3.0 (*por exemplo,*, Windows 8 ou Windows Server 2012), a partilha de ficheiros está disponível através da Internet.  
-3. **O tráfego de rede entre uma máquina virtual do Azure e uma partilha de ficheiros conta como largura de banda externa que é cobrada na subscrição?**
+    A SAS só é suportada através da API REST ou de bibliotecas cliente. Ao montar a partilha de ficheiros através do protocolo SMB, não pode utilizar uma SAS para delegar o acesso ao seu conteúdo. 
+
+2. **Como pode fornecer acesso a um ficheiro específico num browser?**
+   Através de SAS, pode gerar tokens com permissões específicas que são válidas ao longo de um intervalo de tempo especificado. Por exemplo, pode gerar um token de acesso só de leitura a um determinado ficheiro por um período de tempo específico. Quem tiver este URL pode efetuar transferências diretamente a partir de qualquer browser enquanto for válido. As chaves SAS podem ser facilmente geradas a partir da IU, como o Explorador de Armazenamento.
+
+3.   **Que formas diferentes existem de aceder aos ficheiros no Armazenamento de ficheiros do Azure ?**
+    Pode montar a partilha de ficheiros no seu computador local com o protocolo SMB 3.0 ou utilizar ferramentas como o [Explorador de Armazenamento](http://storageexplorer.com/) ou o Cloudberry para aceder aos ficheiros na partilha de ficheiros. A partir da sua aplicação, pode utilizar Bibliotecas de Cliente, a API REST ou o Powershell para aceder aos seus ficheiros na Partilha de Ficheiros do Azure.
+    
+4.   **Como posso montar a partilha de ficheiros do Azure no meu computador local?** Pode montar a partilha de ficheiros através do protocolo SMB desde que a porta 445 (Saída de TCP) esteja aberta e o cliente suportar o protocolo SMB 3.0 (*por exemplo*, Windows 8 ou Windows Server 2012). Trabalhe em conjunto com o seu fornecedor de ISP local para desbloquear a porta. Entretanto, pode ver os ficheiros com o Explorador de Armazenamento ou outro de terceiros, como o Cloudberry.
+
+5. **O tráfego de rede entre uma máquina virtual do Azure e uma partilha de ficheiros conta como largura de banda externa que é cobrada na subscrição?**
    
     Se a partilha de ficheiros e a máquina virtual estiverem em regiões diferentes, o tráfego entre os mesmos será cobrado como largura de banda externa.
-4. **Se o tráfego de rede estiver entre uma máquina virtual e uma partilha de ficheiros na mesma região, é gratuito?**
+6. **Se o tráfego de rede estiver entre uma máquina virtual e uma partilha de ficheiros na mesma região, é gratuito?**
    
     Sim. É gratuito se o tráfego estiver na mesma região.
-5. **Ligar ao Armazenamento de Ficheiros do Azure a partir de máquinas virtuais no local depende do Azure ExpressRoute?**
+7. **Ligar ao Armazenamento de Ficheiros do Azure a partir de máquinas virtuais no local depende do Azure ExpressRoute?**
    
     Não. Se não tiver o ExpressRoute, pode continuar a aceder à partilha de ficheiros no local, desde que tenha a porta 445 (Saída de TCP) aberta para o acesso à Internet. No entanto, pode utilizar o ExpressRoute com o Armazenamento de ficheiros se assim o desejar.
-6. **Um “Testemunho de Partilha de Ficheiros” de um cluster de ativação pós-falha é um dos casos de utilização do Armazenamento de Ficheiros do Azure?**
+8. **Um “Testemunho de Partilha de Ficheiros” de um cluster de ativação pós-falha é um dos casos de utilização do Armazenamento de Ficheiros do Azure?**
    
     Esta utilização não é suportada de momento.
-7. **Neste momento, o Armazenamento de ficheiros é apenas replicado através do LRS ou do GRS, certo?**  
+9. **Neste momento, o Armazenamento de ficheiros é apenas replicado através do LRS ou do GRS, certo?**  
    
     Planeamos suportar o RA-GRS, mas ainda não podemos avançar uma data de quando a vamos disponibilizar.
-8. **Quando posso utilizar contas de armazenamento existentes do Armazenamento de Ficheiros do Azure?**
+10. **Quando posso utilizar contas de armazenamento existentes do Armazenamento de Ficheiros do Azure?**
    
     O File Storage do Azure está agora ativado para todas as contas de armazenamento.
-9. **Vai ser adicionada à API REST uma operação de Mudança de Nome?**
+11. **Vai ser adicionada à API REST uma operação de Mudança de Nome?**
    
     A Mudança de nome ainda não é suportada na nossa API REST.
-10. **É possível ter partilhas aninhadas, por outras palavras, uma partilha numa partilha?**
+12. **É possível ter partilhas aninhadas, por outras palavras, uma partilha numa partilha?**
     
     Não. A partilha de ficheiros é o controlador virtual que é possível montar, pelo que não são suportadas partilhas aninhadas.
-11. **É possível especificar permissões só de leitura ou só de escrita em pastas dentro da partilha?**
+13. **É possível especificar permissões só de leitura ou só de escrita em pastas dentro da partilha?**
     
     Não tem este nível de controlo sobre as permissões se montar a partilha de ficheiros através do SMB. No entanto, pode conseguir isto ao criar uma assinatura de acesso partilhado (SAS) através da API REST ou das bibliotecas de cliente.  
-12. **O meu desempenho ficou lento ao tentar deszipar ficheiros para o Armazenamento de ficheiros. O que devo fazer?**
+14. **O meu desempenho ficou lento ao tentar deszipar ficheiros para o Armazenamento de ficheiros. O que devo fazer?**
     
     Para transferir um grande número de ficheiros para o Armazenamento de ficheiros, recomendamos que utilize o AzCopy, o Azure Powershell (Windows) ou a CLI do Azure (Linux/Unix), uma vez que estas ferramentas foram otimizadas para transferência de rede.
-13. **Foi lançado o patch para corrigir o problema do desempenho lento com os Ficheiros do Azure**
+15. **Foi lançado o patch para corrigir o problema do desempenho lento com os Ficheiros do Azure**
     
     A equipa do Windows lançou recentemente uma correção para resolver um problema de desempenho lento quando o cliente acede ao File Storage do Azure a partir do Windows 8.1 ou Windows Server 2012 R2. Para mais informações, consulte o artigo KB associado [Desempenho lento ao aceder ao File Storage do Azure a partir do Windows 8.1 ou Server 2012 R2](https://support.microsoft.com/en-us/kb/3114025).
-14. **Utilizar o Armazenamento de Ficheiros do Azure com o IBM MQ**
+16. **Utilizar o Armazenamento de Ficheiros do Azure com o IBM MQ**
     
     A IBM lançou um documento para guiar os clientes do IBM MQ na configuração do File Storage do Azure com o respetivo serviço. Para mais informações, consulte [Como configurar o gestor de filas de várias instâncias do IBM MQ com o Serviço do Ficheiro do Microsoft Azure](https://github.com/ibm-messaging/mq-azure/wiki/How-to-setup-IBM-MQ-Multi-instance-queue-manager-with-Microsoft-Azure-File-Service).
-15. **Como posso resolver erros de Armazenamento de Ficheiros do Azure?**
+17. **Como posso resolver erros de Armazenamento de Ficheiros do Azure?**
     
     Pode consultar o [Azure Files Troubleshooting Article (Artigo de Resolução de Problemas de Ficheiros do Azure)](storage-troubleshoot-file-connection-problems.md) para obter documentação de orientação de resolução de problemas de ponto a ponto.               
+
+18. **Como posso ativar a encriptação do Lado do Servidor nos Ficheiros do Azure?**
+
+    A [Encriptação do Lado do Servidor](https://docs.microsoft.com/en-us/azure/storage/storage-service-encryption) está atualmente em Pré-visualização. Durante a pré-visualização, a funcionalidade só pode ser ativada para contas de Armazenamento do Azure Resource Manager (ARM) recentemente criadas.
+    Pode ativar esta funcionalidade numa conta de armazenamento do Azure Resource Manager através do Portal do Azure. Pretendemos ter o [Azure Powershell](https://msdn.microsoft.com/en-us/library/azure/mt607151.aspx), [Azure CLI](https://docs.microsoft.com/en-us/azure/storage/storage-azure-cli-nodejs) ou a [API do Fornecedor de Recursos de Armazenamento do Microsoft Azure](https://docs.microsoft.com/en-us/rest/api/storagerp/storageaccounts) para ativar a encriptação de armazenamento de ficheiros até ao final de Fevereiro. Não existe nenhum encargo adicional para ativar esta funcionalidade. Quando ativar a Encriptação do Serviço de Armazenamento para o Armazenamento de Ficheiros do Azure, os seus dados são automaticamente encriptados por si. 
+    Saiba mais sobre a Encriptação do Serviço de Armazenamento. Também pode consultar o ssediscussions@microsoft.com, para ver mais perguntas na pré-visualização.
 
 ## <a name="next-steps"></a>Passos seguintes
 Consulte as ligações para obter mais informações sobre o Armazenamento de ficheiros do Azure.
@@ -657,6 +670,7 @@ Consulte as ligações para obter mais informações sobre o Armazenamento de fi
 * [Using Azure PowerShell with Azure Storage (Utilizar o Azure PowerShell com o Armazenamento do Azure)](storage-powershell-guide-full.md)
 * [How to use AzCopy with Microsoft Azure Storage (Como utilizar o AzCopy com o Armazenamento do Microsoft Azure)](storage-use-azcopy.md)
 * [Using the Azure CLI with Azure Storage (Utilizar a CLI do Azure com o Armazenamento do Azure)](storage-azure-cli.md#create-and-manage-file-shares)
+* [Resolver problemas do armazenamento de ficheiros do Azure](https://docs.microsoft.com/en-us/azure/storage/storage-troubleshoot-file-connection-problems)
 
 ### <a name="reference"></a>Referência
 * [Storage Client Library for .NET reference (Referência da Biblioteca de Clientes do Armazenamento para .NET)](https://msdn.microsoft.com/library/azure/dn261237.aspx)
@@ -667,9 +681,4 @@ Consulte as ligações para obter mais informações sobre o Armazenamento de fi
 * [Inside Azure File Storage (Dentro do Armazenamento de Ficheiros do Azure)](https://azure.microsoft.com/blog/inside-azure-file-storage/)
 * [Introducing Microsoft Azure File Service (Introdução ao Serviço de Ficheiros do Microsoft Azure)](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
 * [Persisting connections to Microsoft Azure Files (Ligações persistentes aos Ficheiros do Microsoft Azure)](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

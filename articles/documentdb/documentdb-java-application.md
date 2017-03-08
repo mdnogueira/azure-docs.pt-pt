@@ -18,6 +18,7 @@ ms.author: denlee
 translationtype: Human Translation
 ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
 ms.openlocfilehash: d8abb90b19fd3b79324209a2418c414e3b6bb301
+ms.lasthandoff: 12/07/2016
 
 
 ---
@@ -761,9 +762,4 @@ Todos os exemplos deste tutorial estão incluídos no projeto [todo](https://git
 22. Para implementar o seu num site Web do Azure, consulte o artigo [Passo 6. Implementar a sua aplicação Java nos sites Web do Azure](#Deploy).
 
 [1]: media/documentdb-java-application/keys.png
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

@@ -1,21 +1,22 @@
 ---
-title: "Adicionar o Application Insights SDK para monitorizar a aplicação Node.js | Microsoft Docs"
-description: "Analise a utilização, a disponibilidade e o desempenho da aplicação Web no local ou do Microsoft Azure com o Application Insights."
+title: "Monitorizar a aplicação Node.js com o Azure Application Insights SDK | Microsoft Docs"
+description: "Analise a utilização, a disponibilidade e o desempenho da aplicação Web no local ou do Microsoft Azure utilizando o Application Insights."
 services: application-insights
 documentationcenter: 
 author: alancameronwills
-manager: douge
+manager: carmonm
 ms.assetid: 2ec7f809-5e1a-41cf-9fcd-d0ed4bebd08c
 ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 08/30/2016
+ms.date: 02/23/2017
 ms.author: awills
 translationtype: Human Translation
-ms.sourcegitcommit: d84ab993b1d9489ca9d2edaa1cb9672d9bced899
-ms.openlocfilehash: fd089f0cc5c23dcddb392df55c65907519f59248
+ms.sourcegitcommit: 46b829ce52994a5112494145a02e78859c5fae2d
+ms.openlocfilehash: d4c7fa2058b1c07671329304c37630d2e6e8e8a7
+ms.lasthandoff: 02/23/2017
 
 
 ---
@@ -31,22 +32,21 @@ O SDK fornece uma coleção automática de taxas de pedidos de HTTP recebidos e 
 #### <a name="before-you-start"></a>Antes de começar
 É necessário:
 
-* Visual Studio 2013 ou posterior. É preferível a versão posterior.
 * Uma subscrição do [Microsoft Azure](http://azure.com). Se a sua equipa ou organização tiver uma subscrição do Azure, o proprietário pode adicioná-lo utilizando a [Conta Microsoft](http://live.com).
 
-## <a name="a-nameaddacreate-an-application-insights-resource"></a><a name="add"></a>Criar um recurso do Application Insights
+## <a name="add"></a>Criar um recurso do Application Insights
 Inicie sessão no [Portal do Azure][portal] e crie um novo recurso do Application Insights. Um [recurso][roles] no Azure é uma instância de um serviço. Este recurso é onde a telemetria da aplicação será analisada e apresentada.
 
 ![Clicar em Novo, Application Insights](./media/app-insights-nodejs/01-new-asp.png)
 
-Escolha Outro como o tipo de aplicação. A escolha do tipo de aplicação define o conteúdo predefinido dos painéis de recursos e as propriedades visíveis no [Explorador de Métricas][metrics].
+Escolha Geral como tipo de aplicação. A escolha do tipo de aplicação define o conteúdo predefinido dos painéis de recursos e as propriedades visíveis no [Explorador de Métricas][metrics].
 
 #### <a name="copy-the-instrumentation-key"></a>Copiar a Chave de Instrumentação
 A chave identifica o recurso. Deverá instalá-lo logo no SDK para direcionar os dados para o recurso.
 
 ![Clicar em Propriedades, selecionar a chave e premir Ctrl+C](./media/app-insights-nodejs/02-props-asp.png)
 
-## <a name="a-namesdka-install-the-sdk-in-your-application"></a><a name="sdk"></a> Instalar o SDK na aplicação
+## <a name="sdk"></a> Instalar o SDK na aplicação
 ```
 npm install applicationinsights --save
 ```
@@ -64,23 +64,23 @@ Também é pode definir a chave de instrumentação na variável de ambiente APP
 
 Pode experimentar o SDK sem enviar telemetria: defina a chave de instrumentação para uma cadeia não vazia.
 
-## <a name="a-nameruna-run-your-project"></a><a name="run"></a> Executar o projeto
+## <a name="run"></a> Executar o projeto
 Execute e experimente a aplicação: abra páginas diferentes para gerar alguma telemetria.
 
-## <a name="a-namemonitora-view-your-telemetry"></a><a name="monitor"></a> Ver a telemetria
+## <a name="monitor"></a> Ver a telemetria
 Volte ao [Portal do Azure](https://portal.azure.com) e navegue para o recurso do Application Insights.
 
 Procure dados na página Descrição Geral. Inicialmente, verá apenas um ou dois pontos. Por exemplo:
 
 ![Clicar para mais dados](./media/app-insights-nodejs/12-first-perf.png)
 
-Clique em qualquer gráfico para ver métricas mais detalhadas. [Saiba mais sobre as métricas.][perf]
+Clique em qualquer gráfico para ver métricas mais detalhadas. [Saiba mais sobre métricas.][perf]
 
 #### <a name="no-data"></a>Não existem dados?
 * Utilize a aplicação, abrindo páginas diferentes, de modo a gerar alguma telemetria.
 * Abra o mosaico [Pesquisa](app-insights-diagnostic-search.md) para ver eventos individuais. Por vezes, os eventos demoram um pouco mais de tempo a chegar ao pipeline de métricas.
 * Aguarde alguns segundos e clique em **Atualizar**. Os gráficos atualizam-se periodicamente, mas pode atualizá-los manualmente se estiver à espera que apareçam alguns dados.
-* Veja [Resolução de Problemas][qna].
+* Veja a [Resolução de Problemas][qna].
 
 ## <a name="publish-your-app"></a>Publicar a aplicação
 Agora, implemente a aplicação no IIS ou no Azure e veja os dados a acumularem.
@@ -197,9 +197,4 @@ server.on("listening", () => {
 [portal]: http://portal.azure.com/
 [qna]: app-insights-troubleshoot-faq.md
 [roles]: app-insights-resources-roles-access-control.md
-
-
-
-<!--HONumber=Nov16_HO3-->
-
 

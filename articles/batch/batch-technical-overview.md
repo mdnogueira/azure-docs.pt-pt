@@ -1,5 +1,5 @@
 ---
-title: "Descrição geral do serviço Azure Batch | Microsoft Docs"
+title: "O Azure Batch executa soluções de computação paralelas em grande escala na cloud | Documentos do Microsoft"
 description: "Saiba como utilizar o serviço Azure Batch para cargas de trabalho em larga e escala e de HPC"
 services: batch
 documentationcenter: 
@@ -12,15 +12,18 @@ ms.workload: big-compute
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 01/23/2017
+ms.date: 02/27/2017
 ms.author: tamram
+ms.custom: H1Hack27Feb2017
 translationtype: Human Translation
-ms.sourcegitcommit: bf22cd3426e936c8d74377f59443e5e1a6834286
-ms.openlocfilehash: 3a01764b6a0e777e947cf8648606cdd568d118ff
+ms.sourcegitcommit: 6b6c548ca1001587e2b40bbe9ee2fcb298f40d72
+ms.openlocfilehash: e204a3c79768ddbd433f3b00a3db456ef3258173
+ms.lasthandoff: 02/28/2017
 
 
 ---
-# <a name="basics-of-azure-batch"></a>Noções básicas do Azure Batch
+# <a name="run-intrinsically-parallel-workloads-with-batch"></a>Executar cargas de trabalho paralelas intrinsecamente com o Batch
+
 O Azure Batch é uma plataforma para executar aplicações de computação de alto desempenho (HPC) e paralelas em larga escala, de forma eficaz na cloud. O Azure Batch agenda trabalho de computação intensivo para ser executado numa coleção gerida de máquinas virtuais, e pode dimensionar automaticamente recursos de computação para satisfazer as necessidades das suas tarefas.
 
 Com o Azure Batch, pode definir facilmente os recursos de computação do Azure para executar as aplicações em paralelo e com dimensionamento. Não precisa de criar, configurar e gerir at manualmente um cluster HPC, máquinas virtuais individuais, redes virtuais ou uma tarefa complexa e a infraestrutura de agendamento de tarefas. O Azure Batch automatiza ou simplifica estas tarefas por si.
@@ -156,9 +159,4 @@ Agora que tem um elevado nível de descrição geral do serviço Batch, está na
 
 [1]: ./media/batch-technical-overview/tech_overview_01.png
 [2]: ./media/batch-technical-overview/tech_overview_02.png
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

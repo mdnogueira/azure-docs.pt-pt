@@ -1,6 +1,6 @@
 ---
 title: Interfaces de rede no Azure | Microsoft Docs
-description: "Saiba mais sobre as interfaces de rede do Azure no modelo de implementação Azure Resource Manager."
+description: "Saiba mais sobre as interfaces de rede do Azure e como são utilizadas com máquinas virtuais."
 services: virtual-network
 documentationcenter: na
 author: jimdial
@@ -13,15 +13,18 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 09/23/2016
+ms.date: 02/24/2016
 ms.author: jdial
+ms.custom: H1Hack27Feb2017
 translationtype: Human Translation
-ms.sourcegitcommit: 3244d5b52785d820698bf26f9bf189de93ef64e4
-ms.openlocfilehash: 691b79d7739246dad7191195fa049fd58340c8ff
+ms.sourcegitcommit: 63f2f6dde56c1b5c4b3ad2591700f43f6542874d
+ms.openlocfilehash: 395cff80b3f97b6340e15f370c13f783e2f5dde3
+ms.lasthandoff: 02/28/2017
 
 
 ---
-# <a name="network-interfaces-in-azure"></a>Interfaces de rede no Azure
+# <a name="what-are-network-interfaces"></a>O que são interfaces de rede?
+
 Uma interface de rede (NIC) é a interligação entre uma Máquina Virtual (VM) e a rede de software subjacente. Este artigo explica o que são as interfaces de rede e como são utilizadas no modelo de implementação Azure Resource Manager.
 
 A Microsoft recomenda implementar recursos novos com o modelo de implementação do Resource Manager, mas também pode implementar VMs com a conectividade de rede no modelo de implementação [clássica](virtual-network-ip-addresses-overview-classic.md). Se estiver familiarizado com o modelo clássico, existem diferenças importantes nas redes de VMs no modelo de implementação Resource Manager. Leia o artigo [Virtual machine networking - Classic (Redes de máquinas virtuais - Implementação Clássica)](virtual-network-ip-addresses-overview-classic.md#differences-between-resource-manager-and-classic-deployments) para saber mais sobre as diferenças.
@@ -34,7 +37,7 @@ No Azure, uma interface de rede:
 4. Pode ser ligada a uma VM, mas só pode ser ligada a uma VM individual que exista na mesma localização que a NIC.
 5. Tem um endereço MAC, que é persistido com a NIC enquanto esta permanecer ligada a uma VM. O endereço MAC é persistido, quer a VM seja reiniciada (a partir do sistema operativo) ou parada (desalocada) e iniciada com o portal do Azure, o Azure PowerShell ou a Interface de Linha de Comandos do Azure. Se for desligada de uma VM e ligada a outra, a NIC recebe um endereço MAC diferente. Se a NIC for eliminada, o endereço MAC é atribuído a outras NICs.
 6. Tem de ter atribuído um endereço IP dinâmico ou estático *IPv4* **privado** primário.
-7. Pode ter um recurso de endereço IP público associado a si.
+7. Pode ter um ou mais recursos de endereços IP públicos associados à mesma, leia a documentação [Múltiplos endereços IP por NIC](virtual-network-multiple-ip-addresses-portal.md) para obter mais informações.
 8. Suporta rede acelerada com virtualização de E/S de raiz única (SR-IOV) para tamanhos de VMs específicos que executem versões específicas do sistema operativo Microsoft Windows Server. Para saber mais sobre esta funcionalidade de PR´R-VISUALIZAÇÃO, leia o artigo [Accelerated networking for a virtual machine (Rede acelerada para máquinas virtuais)](virtual-network-accelerated-networking-powershell.md).
 9. Pode receber tráfego não destinado a endereços IP privados atribuídos à mesma, se o reencaminhamento de IP estiver ativado na NIC. Se, por exemplo, uma VM estiver a executar software de firewall, encaminha os pacotes não destinados para os respetivos endereços IP. A VM continua a ter de executar software capaz de encaminhar ou reencaminhar tráfego, embora, para tal, o reencaminhamento de IPs tenha de estar ativado numa NIC.
 10. Muitas vezes, é criada no mesmo grupo de recursos que a VM ou a VNet à qual está ligada, mas não é necessário que assim seja.
@@ -52,10 +55,5 @@ Podem ser ligadas várias NICs a uma VM, mas tenha em atenção o seguinte quand
 * Leia o artigo [Criar uma VM](../virtual-machines/virtual-machines-windows-hero-tutorial.md) para saber como criar uma VM só com uma NIC.
 * Leia o artigo [Deploy a VM with multiple NIC (Implementar uma VM com várias NICs)](virtual-network-deploy-multinic-arm-ps.md) para saber como criar uma VM com várias NICs.
 * Leia o artigo [Multiple IP addresses for Azure virtual machines (Vários endereços IP para máquinas virtuais do Azure)](virtual-network-multiple-ip-addresses-powershell.md) para saber como criar uma NIC com várias configurações de IP.
-
-
-
-
-<!--HONumber=Jan17_HO5-->
 
 

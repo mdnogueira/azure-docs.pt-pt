@@ -58,8 +58,3 @@
 ## [Exemplos da cache de Redis](cache-redis-samples.md)
 ## [Preços](https://azure.microsoft.com/pricing/details/cache/)
 
-
-
-<!--HONumber=Jan17_HO3-->
-
-

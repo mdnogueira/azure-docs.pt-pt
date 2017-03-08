@@ -3,6 +3,7 @@
 ## [O que é o SQL Data Warehouse?](sql-data-warehouse-overview-what-is.md)
 ## [Carga de trabalho do armazém de dados](sql-data-warehouse-overview-workload.md)
 ## [Dados distribuídos](sql-data-warehouse-distributed-data.md)
+## [Perguntas mais frequentes](sql-data-warehouse-overview-faq.md)
 
 # Introdução
 
@@ -10,6 +11,7 @@
 ## [Melhores práticas](sql-data-warehouse-best-practices.md)
 ## [Gerir](sql-data-warehouse-overview-manage.md)
 ## [Obter suporte](sql-data-warehouse-get-started-create-support-ticket.md)
+## [Resolução de problemas](sql-data-warehouse-troubleshoot.md)
 
 # Procedimento
 
@@ -114,7 +116,6 @@
 ### [Compressão Columnstore](sql-data-warehouse-memory-optimizations-for-columnstore-compression.md)
 ### [Consultas](sql-data-warehouse-manage-monitor.md)
 ### [Carga de trabalho](sql-data-warehouse-develop-concurrency.md)
-### [Resolução de problemas](sql-data-warehouse-troubleshoot.md)
 
 ## Segurança
 

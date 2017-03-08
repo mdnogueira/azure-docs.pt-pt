@@ -13,11 +13,12 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: data-management
-ms.date: 02/01/2017
+ms.date: 03/03/2017
 ms.author: carlrab; jognanay
 translationtype: Human Translation
-ms.sourcegitcommit: 5d51a5ef3387b4c00079547b0f44ffe1f96bd77c
-ms.openlocfilehash: 5d8fa8328bb2257b77a27fc2fa33565e20000e10
+ms.sourcegitcommit: 2f03ba60d81e97c7da9a9fe61ecd419096248763
+ms.openlocfilehash: 3f8ad9bf72555b9ab19af4c7a15f66b982fe66fe
+ms.lasthandoff: 03/04/2017
 
 
 ---
@@ -117,7 +118,8 @@ Continuaremos a adicionar funcionalidades para V12. Por isso, aconselhamo-lo a v
 | Polybase | [Suportado](https://msdn.microsoft.com/library/mt143171.aspx) | [Não suportado]
 | Gestão baseada na política | [Suportado](https://msdn.microsoft.com/library/bb510667.aspx) | Não suportado |
 | Predicados | [Suportado](https://msdn.microsoft.com/library/ms189523.aspx) | [Maioria](https://msdn.microsoft.com/library/ms189523.aspx)
-| Governador de recursos | [Suportado](https://msdn.microsoft.com/library/bb933866.aspx) | [Incorporado](sql-database-service-tiers.md) |
+| Serviços R | [Suportado](https://msdn.microsoft.com/library/mt604845.aspx)
+| Governador de recursos | [Suportado](https://msdn.microsoft.com/library/bb933866.aspx) | Não suportado |
 | Restaurar base de dados a partir da cópia de segurança | [Suportado](https://msdn.microsoft.com/library/ms187048.aspx#anchor_6) | [Apenas a partir de cópias de segurança incorporadas](sql-database-recovery-using-backups.md) |
 | Segurança a Nível da Linha | [Suportado](https://msdn.microsoft.com/library/dn765131.aspx) | [Suportado](https://msdn.microsoft.com/library/dn765131.aspx) |
 | Declarações de segurança | [Suportado](https://msdn.microsoft.com/library/ff848791.aspx) | [Alguns](https://msdn.microsoft.com/library/ff848791.aspx) |
@@ -158,9 +160,4 @@ Continuaremos a adicionar funcionalidades para V12. Por isso, aconselhamo-lo a v
 - Para obter informações sobre quotas e limitações de recursos específicas com base na sua **camada de serviços**. Para obter uma descrição geral de camadas de serviços, veja [Camadas de serviços da Base de Dados SQL](sql-database-service-tiers.md).
 - Para obter uma descrição geral da segurança, veja [Descrição Geral da Segurança da Base de Dados SQL do Azure](sql-database-security-overview.md).
 - Para obter informações sobre a disponibilidade de controlador e o suporte da Base de Dados SQL, veja [Bibliotecas de Ligação para a Base de Dados SQL e o SQL Server](sql-database-libraries.md).
-
-
-
-<!--HONumber=Feb17_HO3-->
-
 

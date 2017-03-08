@@ -17,8 +17,9 @@ ms.workload: data-management
 ms.date: 12/20/2016
 ms.author: shkurhek
 translationtype: Human Translation
-ms.sourcegitcommit: ae230c012a17eb73c8993a32197c844c6abaa2a4
-ms.openlocfilehash: c99f16e7aa6ea6fe82f7a115b4642025a05bb241
+ms.sourcegitcommit: ae493fbb3690e80eef4b37e0315d1715a924e568
+ms.openlocfilehash: 7c70c737fb41e8c1c5a339462fa77a8bc7318f7e
+ms.lasthandoff: 02/22/2017
 
 ---
 # <a name="what-is-sql-database-introduction-to-sql-database"></a>O que é a Base de Dados SQL? Introdução à Base de Dados SQL
@@ -43,7 +44,7 @@ Qualquer que seja a sua opção — bases de dados individual ou conjuntos elás
 Mas como pode comparar o desempenho relativo das bases de dados individuais e dos conjuntos elásticos? Como pode saber qual é o ponto de paragem certo quando aumenta ou reduz verticalmente o desempenho? Utilize as ferramentas de [monitorização de desempenho ](sql-database-performance.md) e de [alertas incorporadas](sql-database-insights-alerts-portal.md) em conjunto com as classificações de desempenho baseadas em [Unidades de Transação da Base de Dados (DTUs) de bases de dados individuais e DTUs elásticas (eDTUs) de conjuntos elásticos](sql-database-what-is-a-dtu.md). Com estas ferramentas, pode avaliar rapidamente o impacto de aumentar ou reduzir verticalmente consoante as necessidades de desempenho atuais ou do projeto. Consulte o artigo [Opções e desempenho da Base de Dados SQL: compreender o que está disponível em casa escalão de serviço](sql-database-service-tiers.md) para obter mais detalhes.
 
 ## <a name="keep-your-app-and-business-running"></a>Mantenha a sua aplicação e o seu negócio operacionais
-O contrato de nível de serviço [(SLA)](http://azure.microsoft.com/support/legal/sla/) do Azure líder da indústria, que garante 99,99% de disponibilidade, com tecnologia de uma rede global de datacenters geridos pela Microsoft, ajuda a manter a sua aplicação operacional 24 horas por dia, sete dias por semana. Em cada base de dados SQL, pode tirar partido da segurança, da tolerância a falhas e da [proteção de dados](sql-database-automated-backups.md) incorporadas, que, de outra forma, teria de comprar ou conceber e criar e gerir. Com Base de dados SQL, cada camada de serviço oferece um conjunto completo de funcionalidades de continuidade de negócio e as opções que pode utilizar para aceder e executar e manter-se dessa forma. Pode utilizar o [restauro para um ponto anterior no tempo](sql-database-recovery-using-backups.md) para repor um estado anterior de uma base de dados, até 35 dias. Pode configurar a [retenção de cópias de segurança de longa duração](sql-database-long-term-retention.md) para armazenar as cópias de segurança num cofre seguro durante um máximo de dez anos. Além disso, se o datacenter que aloja as suas bases de dados sofrer um período de indisponibilidade, pode restaurar bases de dados de [cópias georredundantes de cópias de segurança recentes]((sql-database-recovery-using-backups.md). Se for necessário, também pode configurar [réplicas georredundantes legíveis](sql-database-geo-replication-overview.md) numa ou mais regiões para ativação pós-falha rápida em caso de indisponibilidade de um datacenter. Também pode utilizar estas réplicas para um desempenho de leitura mais rápido em regiões geográficas diferentes ou para [atualizações de aplicações sem períodos de indisponibilidade](sql-database-manage-application-rolling-upgrade.md). 
+O contrato de nível de serviço [(SLA)](http://azure.microsoft.com/support/legal/sla/) do Azure líder da indústria, que garante 99,99% de disponibilidade, com tecnologia de uma rede global de datacenters geridos pela Microsoft, ajuda a manter a sua aplicação operacional 24 horas por dia, sete dias por semana. Em cada base de dados SQL, pode tirar partido da segurança, da tolerância a falhas e da [proteção de dados](sql-database-automated-backups.md) incorporadas, que, de outra forma, teria de comprar ou conceber e criar e gerir. Com Base de dados SQL, cada camada de serviço oferece um conjunto completo de funcionalidades de continuidade de negócio e as opções que pode utilizar para aceder e executar e manter-se dessa forma. Pode utilizar o [restauro para um ponto anterior no tempo](sql-database-recovery-using-backups.md) para repor um estado anterior de uma base de dados, até 35 dias. Pode configurar a [retenção de cópias de segurança de longa duração](sql-database-long-term-retention.md) para armazenar as cópias de segurança num cofre seguro durante um máximo de dez anos. Além disso, se o datacenter que aloja as suas bases de dados sofrer um período de indisponibilidade, pode restaurar bases de dados de [cópias georredundantes de cópias de segurança recentes](sql-database-recovery-using-backups.md). Se for necessário, também pode configurar [réplicas georredundantes legíveis](sql-database-geo-replication-overview.md) numa ou mais regiões para ativação pós-falha rápida em caso de indisponibilidade de um datacenter. Também pode utilizar estas réplicas para um desempenho de leitura mais rápido em regiões geográficas diferentes ou para [atualizações de aplicações sem períodos de indisponibilidade](sql-database-manage-application-rolling-upgrade.md). 
 
 ![Georreplicação da Base de Dados SQL](./media/sql-database-technical-overview/azure_sqldb_map.png)
 
@@ -59,9 +60,4 @@ Agora que já leu uma introdução à Base de Dados SQL e respondeu à pergunta 
 * Saber mais sobre [conjuntos elásticos](sql-database-elastic-pool.md).
 * Começar por [criar a sua primeira base de dados](sql-database-get-started.md).
 * Criar a sua primeira aplicação em C#, Java, Node.js, PHP, Python ou Ruby: [Bibliotecas de ligações para a Base de Dados SQL e o SQL Server](sql-database-libraries.md)
-
-
-
-<!--HONumber=Feb17_HO3-->
-
 

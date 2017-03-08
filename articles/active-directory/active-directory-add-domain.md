@@ -3,7 +3,7 @@ title: "Adicionar o seu nome de domínio personalizado ao Azure Active Directory
 description: "Como adicionar nomes de domínio da sua empresa ao Azure Active Directory e como verificar o nome de domínio."
 services: active-directory
 documentationcenter: 
-author: jeffsta
+author: curtand
 manager: femila
 editor: 
 ms.assetid: 35a6e20a-9907-432b-9d36-16b916a5c249
@@ -15,8 +15,9 @@ ms.topic: get-started-article
 ms.date: 09/30/2016
 ms.author: curtand;jeffsta
 translationtype: Human Translation
-ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
-ms.openlocfilehash: 7bd889847f07ebbadc5e427f2b1ff3f9f869e69a
+ms.sourcegitcommit: f1f3d6fa1ba29b0d43d29c7d9cccfc430fdd6f1e
+ms.openlocfilehash: 9803b4e41223bc979e4c0b0a4f22586a441c28df
+ms.lasthandoff: 02/22/2017
 
 
 ---
@@ -27,7 +28,7 @@ ms.openlocfilehash: 7bd889847f07ebbadc5e427f2b1ff3f9f869e69a
 > 
 > 
 
-Já tem um ou mais nomes de domínio que a sua organização utiliza para fins comerciais e os seus utilizadores iniciam sessão na rede da sua empresa utilizando o nome de domínio da sua empresa. Agora que está a utilizar o Azure Active Directory (Azure AD), pode também adicionar ao Azure AD o nome de domínio da sua empresa. Isto permite-lhe atribuir nomes de utilizador no diretório com que os seus utilizadores estão familiarizados, como ‘alice@contoso.com.’. O processo é simples:
+Já tem um ou mais nomes de domínio que a sua organização utiliza para fins comerciais e os seus utilizadores iniciam sessão na rede da sua empresa utilizando o nome de domínio da sua empresa. Agora que está a utilizar o Azure Active Directory (Azure AD), pode também adicionar ao Azure AD o nome de domínio da sua empresa. Isto permite-lhe atribuir nomes de utilizador no diretório com que os seus utilizadores estão familiarizados, como “alice@contoso.com”. O processo é simples:
 
 1. Adicione o nome de domínio personalizado ao seu diretório
 2. Adicione uma entrada DNS do nome de domínio à entidade registo do nome de domínio
@@ -85,10 +86,5 @@ Se a sua organização utilizar vários nomes de domínio personalizados, como �
 * [Saber mais acerca de conceitos de gestão de domínios no Azure AD](active-directory-add-domain-concepts.md)
 * [Mostrar a imagem corporativa da sua empresa quando os seus utilizadores iniciam sessão](active-directory-add-company-branding.md)
 * [Utilizar o PowerShell para gerir os nomes de domínio no Azure AD](https://msdn.microsoft.com/library/azure/e1ef403f-3347-4409-8f46-d72dafa116e0#BKMK_ManageDomains)
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 
