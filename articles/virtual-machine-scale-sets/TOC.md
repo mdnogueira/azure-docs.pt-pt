@@ -4,6 +4,7 @@
 # Introdução
 ## [Criar um conjunto de dimensionamento no portal](virtual-machine-scale-sets-portal-create.md)
 ## [Criar um conjunto de dimensionamento com a CLI do Azure](virtual-machine-scale-sets-linux-create-cli.md)
+## [Criar um conjunto de dimensionamento com um Modelo do Resource Manager](virtual-machine-scale-sets-mvss-start.md)
 
 # Procedimento
 ## Planear e conceber
@@ -46,8 +47,3 @@
 ### [Linux](https://azure.microsoft.com/pricing/details/virtual-machine-scale-sets/linux/)
 ### [Windows](https://azure.microsoft.com/pricing/details/virtual-machine-scale-sets/windows/)
 ## [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-vm-scale-set)
-
-
-<!--HONumber=Feb17_HO3-->
-
-
