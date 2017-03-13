@@ -12,11 +12,12 @@ ms.devlang: dotNet
 ms.topic: get-started-article
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 02/14/2017
+ms.date: 03/07/2017
 ms.author: ryanwi, mikhegn
 translationtype: Human Translation
-ms.sourcegitcommit: a3367bc4eb66a97263abc2e057eda41770e3face
-ms.openlocfilehash: c461706167728361576f42f8ac7f9b4a2d120609
+ms.sourcegitcommit: 72b2d9142479f9ba0380c5bd2dd82734e370dee7
+ms.openlocfilehash: 935b0ba8725b083878a0f9213e4fbd31bd27ab2c
+ms.lasthandoff: 03/08/2017
 
 
 ---
@@ -46,8 +47,8 @@ As seguintes versões do sistema operativo são suportadas para desenvolvimento:
 > 
 
 ## <a name="install-the-sdk-and-tools"></a>Instalar o SDK e as ferramentas
-### <a name="to-use-visual-studio-2017-rc"></a>Utilizar o Visual Studio 2017 RC
-As Ferramentas do Service Fabric fazem parte da carga de trabalho de Desenvolvimento e de Gestão do Azure no Visual Studio 2017 RC. Ative esta carga de trabalho como parte da instalação do Visual Studio.
+### <a name="to-use-visual-studio-2017"></a>Para utilizar o Visual Studio 2017
+As Ferramentas do Service Fabric fazem parte da carga de trabalho de Desenvolvimento e Gestão do Azure no Visual Studio 2017. Ative esta carga de trabalho como parte da instalação do Visual Studio.
 Para além disso, deve instalar o Microsoft Azure Service Fabric SDK, utilizando o Instalador de Plataforma Web.
 
 * [Instalar o SDK do Microsoft Azure Service Fabric][core-sdk]
@@ -99,9 +100,4 @@ Agora que o ambiente de desenvolvimento está configurado, pode começar a criar
 [full-bundle-dev15]:http://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=MicrosoftAzure-ServiceFabric-Dev15 "Ligação Dev15 WebPI"
 [core-sdk]:http://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=MicrosoftAzure-ServiceFabric-CoreSDK "Ligação Core SDK WebPI"
 [powershell5-download]:https://www.microsoft.com/en-us/download/details.aspx?id=50395
-
-
-
-<!--HONumber=Feb17_HO3-->
-
 

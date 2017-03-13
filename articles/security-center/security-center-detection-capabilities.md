@@ -15,8 +15,9 @@ ms.workload: na
 ms.date: 01/04/2017
 ms.author: yurid
 translationtype: Human Translation
-ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
-ms.openlocfilehash: a18ffc2b3b0f317a4209a9d6457bdcc571d9f899
+ms.sourcegitcommit: 094729399070a64abc1aa05a9f585a0782142cbf
+ms.openlocfilehash: 8d24ab744715df69c707df5a119fa71c72338b62
+ms.lasthandoff: 03/07/2017
 
 
 ---
@@ -24,7 +25,7 @@ ms.openlocfilehash: a18ffc2b3b0f317a4209a9d6457bdcc571d9f899
 Este documento descreve as capacidades de deteção avançadas do Centro de Segurança do Azure, o que ajuda a identificar ameaças ativas que ameaçam os seus recursos do Microsoft Azure e fornece informações necessárias para responder rapidamente.
 
 > [!NOTE]
-> As deteções avançadas estão disponíveis no Escalão Standard do Centro de Segurança do Azure. Está disponível uma avaliação gratuita de 90 dias. Pode atualizar a partir da seleção do Escalão de Preço na [Política de Segurança](security-center-policies.md). Visite a [página do Centro de Segurança](https://azure.microsoft.com/pricing/details/security-center/) para saber mais sobre os preços. 
+> As deteções avançadas estão disponíveis no Escalão Standard do Centro de Segurança do Azure. Está disponível uma avaliação gratuita de 60 dias. Pode atualizar a partir da seleção do Escalão de Preço na [Política de Segurança](security-center-policies.md). Visite a [página do Centro de Segurança](https://azure.microsoft.com/pricing/details/security-center/) para saber mais sobre os preços. 
 > 
 > 
 
@@ -89,10 +90,5 @@ Neste documento, aprendeu como funcionam as capacidades de deteção do Centro d
 * [Monitorizar soluções de parceiros com o Centro de Segurança do Azure](security-center-partner-solutions.md) – Saiba como monitorizar o estado de funcionamento das suas soluções de parceiros.
 * [Azure Security Center FAQ (FAQ do Centro de Segurança do Azure)](security-center-faq.md) – Encontre as perguntas mais frequentes acerca de como utilizar o serviço.
 * [Blogue de Segurança do Azure](http://blogs.msdn.com/b/azuresecurity/) – Encontre mensagens do blogue acerca da segurança e conformidade do Azure.
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

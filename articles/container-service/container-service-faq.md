@@ -14,15 +14,17 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 02/21/2017
+ms.date: 03/03/2017
 ms.author: danlep
+ms.custom: H1Hack27Feb2017
 translationtype: Human Translation
-ms.sourcegitcommit: 2a381431acb6436ddd8e13c69b05423a33cd4fa6
-ms.openlocfilehash: c28391b752c071161796421aee63402899d2a0a4
+ms.sourcegitcommit: d9dad6cff80c1f6ac206e7fa3184ce037900fc6b
+ms.openlocfilehash: c11adbe77131d4e0337ccd926da03041042c3703
+ms.lasthandoff: 03/06/2017
 
 
 ---
-# <a name="frequently-asked-questions-azure-container-service"></a>Perguntas mais frequentes: Azure Container Service
+# <a name="container-service-frequently-asked-questions"></a>Perguntas mais frequentes sobre o Container Service
 
 
 ## <a name="orchestrators"></a>Orquestradores
@@ -81,6 +83,17 @@ DNSnamePrefix.AzureRegion.cloudapp.azure.net
 ```
 
 Pode encontrar URLs frequentemente utilizados para o seu cluster no portal do Azure, o Explorador de Recursos do Azure ou outras ferramentas do Azure.
+
+### <a name="how-do-i-tell-which-orchestrator-version-is-running-in-my-cluster"></a>Como posso saber qual a versão do orquestrador em execução no meu cluster?
+
+* DC/OS: veja a [documentação do Mesosphere](https://support.mesosphere.com/hc/en-us/articles/207719793-How-to-get-the-DCOS-version-from-the-command-line-)
+* Docker Swarm: executar `docker version`
+* Kubernetes: executar `kubectl version`
+
+
+### <a name="how-do-i-upgrade-the-orchestrator-after-deployment"></a>Como posso atualizar o orquestrador após a implementação?
+
+Atualmente, o Azure Container Service não fornece ferramentas para atualizar a versão do orquestrador implementada num cluster. Se o Container Service suportar uma versão posterior, pode implementar um novo cluster. Outra opção consiste em utilizar ferramentas específicas do orquestrador, se estiverem disponíveis para atualizar um cluster no local. Por exemplo, veja [Atualizar DC/OS](https://dcos.io/docs/1.8/administration/upgrading/).
  
 ### <a name="where-do-i-find-the-ssh-connection-string-to-my-cluster"></a>Onde posso encontrar a cadeia de ligação SSH do meu cluster?
 
@@ -109,8 +122,3 @@ Para mais informações, consulte [Connect to an Azure Container Service cluster
 
 * [Saiba mais](container-service-intro.md) sobre o Azure Container Service.
 * Implementar um cluster do serviço de contentor através do [portal](container-service-deployment.md) ou do [ CLI do Azure 2.0](container-service-create-acs-cluster-cli.md).
-
-
-<!--HONumber=Feb17_HO4-->
-
-

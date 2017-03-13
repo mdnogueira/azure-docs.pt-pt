@@ -4,20 +4,20 @@
 | Recurso | Limite Predefinido | 
 | --- | --- | 
 | Contas dos Serviços de Multimédia do Azure (AMS) numa subscrição individual | 25 (fixo) |
-| Unidades Reservadas de Multimédia (RUs) por conta do AMS |25 (S1, S2)<br/>10 (S3) <sup>1</sup> | 
-| Trabalhos por conta do AMS | 50&000;<sup>2</sup> |
+| Unidades Reservadas de Multimédia (RUs) por conta do AMS |25 (S1, S2)<br/>10 (S3) <sup>(1)</sup> | 
+| Trabalhos por conta do AMS | 50,000<sup>(2)</sup> |
 | Tarefas em cadeia por trabalho | 30 (fixo) |
 | Elementos por conta do AMS | 1&000;&000;|
 | Elementos por tarefa | 50 |
 | Elementos por trabalho | 100 |
-| Localizadores exclusivos associados a um elemento ao mesmo tempo | 5<sup>4</sup> |
+| Localizadores exclusivos associados a um elemento ao mesmo tempo | 5<sup>(4)</sup> |
 | Canais em direto por conta do AMS |5|
 | Programas no estado de paragem por canal |50|
 | Programas no estado parado por canal |3|
 | Pontos finais de transmissão em fluxo no estado em execução por conta do AMS|2|
 | Unidades de transmissão em fluxo por ponto final de transmissão em fluxo |10 |
-| Contas de armazenamento | 1000<sup>5</sup> (fixo) |
-| Políticas | 1&000;&000;<sup>6</sup> |
+| Contas de armazenamento | 1000<sup>(5)</sup> (fixo) |
+| Políticas | 1,000,000<sup>(6)</sup> |
 | Tamanho dos ficheiros| Em alguns cenários, existe um limite para o tamanho máximo dos ficheiros suportado para processamento nos Serviços de Multimédia. <sup>7</sup> |
   
 <sup>1</sup> As RUs S3 não estão disponíveis na Índia Ocidental.
@@ -44,8 +44,3 @@ A partir de 1 de abril de 2017, qualquer Registo de tarefa na sua conta com mais
 |S1    | 325|
 |S2    | 640|
 |S3    | 260|
-
-
-<!--HONumber=Feb17_HO2-->
-
-

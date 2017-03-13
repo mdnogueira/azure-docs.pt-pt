@@ -16,9 +16,9 @@ ms.tgt_pltfrm: na
 ms.date: 02/22/2017
 ms.author: heidist
 translationtype: Human Translation
-ms.sourcegitcommit: 3f608b8ae7a7812b939e0d9ab1cb8e19853220fd
-ms.openlocfilehash: 6ed23693c95ce9025576d59fa6df9d640950ada3
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 72b2d9142479f9ba0380c5bd2dd82734e370dee7
+ms.openlocfilehash: 7945ee77be8a09dcac9ddd6b338bdd542ec18540
+ms.lasthandoff: 03/08/2017
 
 
 ---
@@ -35,11 +35,13 @@ Nesta introdução isenta de código, vai começar com dados predefinidos, para 
 
 **Estimativa de tempo:** cerca de 15 minutos, mas pode demorar mais, se também for necessário fazer a inscrição na conta ou no serviço. 
 
-Em alternativa, pode ver uma demonstração de seis minutos dos passos deste tutorial a partir do terceiro minuto deste [vídeo de Descrição geral do Azure Search](https://channel9.msdn.com/Events/Connect/2016/138).
+Em alternativa, otimize com a utilização de uma [introdução baseada em código à programação do Azure Search no .NET](search-howto-dotnet-sdk.md).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
 Este tutorial parte do princípio de que existe uma [subscrição do Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F) e o [serviço Azure Search](search-create-service-portal.md). 
+
+Se não pretender aprovisionar um serviço imediatamente, pode ver uma demonstração de 6 minutos dos passos deste tutorial a partir do terceiro minuto deste [vídeo de Descrição Geral do Azure Search](https://channel9.msdn.com/Events/Connect/2016/138).
 
 ## <a name="find-your-service"></a>Encontrar o seu serviço
 1. Inicie sessão no [Portal do Azure](https://portal.azure.com).
