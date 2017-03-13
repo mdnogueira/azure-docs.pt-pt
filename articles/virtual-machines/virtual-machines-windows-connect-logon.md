@@ -13,16 +13,19 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-windows
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 07/28/2016
+ms.date: 03/01/2017
 ms.author: cynthn
 translationtype: Human Translation
-ms.sourcegitcommit: 5919c477502767a32c535ace4ae4e9dffae4f44b
-ms.openlocfilehash: 9077746d8ffe968504f1dde90ed5f76dd1facc19
+ms.sourcegitcommit: 00f6b2e60c20eb27771d9d54df63f930ee88a55a
+ms.openlocfilehash: 7427c8126ab73a851bc696d4925366b3b714616d
+ms.lasthandoff: 03/02/2017
 
 
 ---
 # <a name="how-to-connect-and-log-on-to-an-azure-virtual-machine-running-windows"></a>Como ligar e iniciar sessão numa máquina virtual do Azure a executar o Windows
-Irá utilizar o botão **Ligar** no Portal do Azure para iniciar uma sessão de Ambiente de Trabalho Remoto (RDP). Ligue primeiro à máquina virtual e, em seguida, inicie sessão.
+Irá utilizar o botão **Ligar** no Portal do Azure para iniciar uma sessão de Ambiente de Trabalho Remoto (RDP) a partir de um ambiente de trabalho do Windows. Ligue primeiro à máquina virtual e, em seguida, inicie sessão.
+
+Se estiver a tentar ligar a uma VM do Windows a partir de um Mac, terá de instalar um cliente RDP para Mac, como [o protocolo RDP (Remote Desktop Protocol) da Microsoft](https://itunes.apple.com/app/microsoft-remote-desktop/id715768417).
 
 ## <a name="connect-to-the-virtual-machine"></a>Ligar à máquina virtual
 1. Se ainda não o fez, inicie sessão no [Portal do Azure](https://portal.azure.com/).
@@ -42,10 +45,5 @@ Irá utilizar o botão **Ligar** no Portal do Azure para iniciar uma sessão de 
 
 ## <a name="next-steps"></a>Passos seguintes
 Caso se depare com problemas ao tentar ligar, veja [Troubleshoot Remote Desktop connections (Resolução de Problemas de Ligações ao Ambiente de Trabalho Remoto)](virtual-machines-windows-troubleshoot-rdp-connection.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). Este artigo orienta-o ao longo do diagnóstico e da resolução de problemas comuns.
-
-
-
-
-<!--HONumber=Nov16_HO2-->
 
 
