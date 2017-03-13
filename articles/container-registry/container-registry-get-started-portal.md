@@ -1,6 +1,6 @@
 ---
-title: "Criar registo de contentores do Azure – portal | Microsoft Docs"
-description: "Introdução à criação e gestão de registos de contentores do Azure com o portal do Azure"
+title: Criar registo privado do Docker - Portal do Azure | Microsoft Docs
+description: "Introdução à criação e gestão de registos privados de contentores Docker com o portal do Azure"
 services: container-registry
 documentationcenter: 
 author: stevelas
@@ -16,15 +16,18 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/14/2016
 ms.author: stevelas
+ms.custom: H1Hack27Feb2017
 translationtype: Human Translation
-ms.sourcegitcommit: 2a381431acb6436ddd8e13c69b05423a33cd4fa6
-ms.openlocfilehash: 97bbb72e044d86375afd1dc2ba40c90681e5d9a1
+ms.sourcegitcommit: d9dad6cff80c1f6ac206e7fa3184ce037900fc6b
+ms.openlocfilehash: 33944d34ce695e1729b761a7f762e24a6dce70a2
+ms.lasthandoff: 03/06/2017
 
 ---
-# <a name="create-a-container-registry-using-the-azure-portal"></a>Criar um registo de contentores com o portal do Azure
+
+# <a name="create-a-private-docker-container-registry-using-the-azure-portal"></a>Criar um registo privado de contentores Docker com o portal do Azure
 Utilize o portal do Azure para criar um registo de contentores e gerir as respetivas definições. Também pode criar e gerir registos de contentores com os [comandos da CLI do Azure 2.0](container-registry-get-started-azure-cli.md) ou programaticamente com a [API REST](https://go.microsoft.com/fwlink/p/?linkid=834376) do Registo de Contentores.
 
-Para obter informações e conceitos, veja [What is Azure Container Registry? (O que é o Registo de Contentores do Azure?)](container-registry-intro.md)
+Para explicações e conceitos, veja [a descrição geral](container-registry-intro.md)
 
 
 > [!NOTE]
@@ -41,18 +44,20 @@ Para obter informações e conceitos, veja [What is Azure Container Registry? (O
     ![Definições do registo de contentores](./media/container-registry-get-started-portal/container-registry-settings.png)
 5. No painel **Registo de Contentores**, introduza as informações seguintes. Clique em **Criar** quando tiver concluído.
    
-    a. **Nome do registo** - um nome de domínio de nível superior globalmente exclusivo para o seu registo específico. Neste exemplo, o nome do registo é *myRegistry01*, mas substitua por um nome exclusivo seu. O nome só pode conter letras e números.
+    a. **Nome do registo**: um nome de domínio de nível superior globalmente exclusivo para o seu registo específico. Neste exemplo, o nome do registo é *myRegistry01*, mas substitua por um nome exclusivo seu. O nome só pode conter letras e números.
    
-    b. **Grupo de recursos** - selecione um [grupo de recursos](../azure-resource-manager/resource-group-overview.md#resource-groups) ou escreva o nome de um grupo novo. 
+    b. **Grupo de recursos**: selecione um [grupo de recursos](../azure-resource-manager/resource-group-overview.md#resource-groups) ou escreva o nome de um grupo novo. 
    
-    c. **Localização** - selecione a localização de um datacenter do Azure onde o serviço esteja [disponível](https://azure.microsoft.com/regions/services/), como **E.U.A. Centro-Sul**. 
+    c. **Localização**: selecione a localização de um datacenter do Azure onde o serviço esteja [disponível](https://azure.microsoft.com/regions/services/), como **E.U.A. Centro-Sul**. 
    
-    d. **Utilizador administrador** - se quiser, ative um utilizador administrador para aceder ao registo. Pode alterar esta definição depois de criar o registo.
+    d. **Utilizador administrador**: se quiser, ative um utilizador administrador para aceder ao registo. Pode alterar esta definição depois de criar o registo.
    
-   > [!IMPORTANT]
-   > Para além de proporcionarem acesso através de uma conta de utilizador administrador, os registos de contentores suportam autenticação com base em principais de serviço do Azure Active Directory. Para obter mais informações e considerações, veja [Authenticate with a container registry (Autenticar num registo de contentores)](container-registry-authentication.md).
-   
-    e. **Conta de armazenamento** - utilize a predefinição para criar uma [conta de armazenamento](../storage/storage-introduction.md) ou selecione uma já existente na mesma localização. Tenha em atenção que as contas de armazenamento Premium e Clássica não são suportadas.
+    > [!IMPORTANT]
+    > Para além de proporcionarem acesso através de uma conta de utilizador administrador, os registos de contentores suportam autenticação com base em principais de serviço do Azure Active Directory. Para obter mais informações e considerações, veja [Authenticate with a container registry (Autenticar num registo de contentores)](container-registry-authentication.md).
+    >
+    
+    e. **Conta de armazenamento**: utilize a predefinição para criar uma [conta de armazenamento](../storage/storage-introduction.md) ou selecione uma já existente na mesma localização. Atualmente, não há suporte para o Armazenamento Premium.
+
 
 ## <a name="manage-registry-settings"></a>Gerir as definições do registo
 Depois de criar o registo, encontre as definições do mesmo, começando no painel **Registos de Contentores** do portal. Por exemplo, poderá precisar das definições para iniciar sessão no seu registo ou poderá querer ativar ou desativar o utilizador administrador.
@@ -73,10 +78,5 @@ Depois de criar o registo, encontre as definições do mesmo, começando no pain
 * [Push your first image using the Docker CLI (Enviar a sua primeira imagem com a CLI do Docker)](container-registry-get-started-docker-cli.md)
 
 
-
-
-
-
-<!--HONumber=Feb17_HO4-->
 
 

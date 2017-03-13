@@ -15,13 +15,15 @@ ms.devlang: na
 ms.topic: hero-article
 ms.date: 02/15/2017
 ms.author: markgal;jimpark
+ms.custom: H1Hack27Feb2017
 translationtype: Human Translation
-ms.sourcegitcommit: dca042ce1684b35e6a874075e0de28b9d8766331
-ms.openlocfilehash: 7aa9305bf8a32bb7e911dfda3d331adcf1c70383
+ms.sourcegitcommit: 05a3b32e6d059c219b1b99df02536c5b287c29fd
+ms.openlocfilehash: 9a73f361ba80c7c4219de68d39026b936a77aa05
+ms.lasthandoff: 03/02/2017
 
 
 ---
-# <a name="first-look-protect-azure-vms-with-a-recovery-services-vault"></a>Primeira impressão: proteger VMs do Azure com um cofre de serviços de recuperação
+# <a name="back-up-azure-virtual-machines-to-recovery-services-vaults"></a>Fazer cópia de segurança de máquinas virtuais do Azure para cofres dos Serviços de Recuperação
 > [!div class="op_single_selector"]
 > * [Proteger VMs com um cofre dos serviços de recuperação](backup-azure-vms-first-look-arm.md)
 > * [Proteger VMs com um cofre das cópias de segurança](backup-azure-vms-first-look.md)
@@ -50,7 +52,7 @@ Dependendo do número de máquinas virtuais que quer proteger, pode começar em 
 
 ## <a name="configure-the-backup-job-from-the-vm-management-blade"></a>Configurar a tarefa de criação de cópia de segurança no painel de gestão da VM
 
-Os passos seguintes orientam-no ao longo da configuração da tarefa de criação da cópia de segurança a partir do painel de gestão da máquina virtual, no portal do Azure. Estes passos não se aplicam às máquinas virtuais no portal clássico.
+Utilize os passos seguintes para configurar a tarefa de criação da cópia de segurança a partir do painel de gestão da máquina virtual, no portal do Azure. Estes passos não se aplicam às máquinas virtuais no portal clássico.
 
 1. Inicie sessão no [Portal do Azure](https://portal.azure.com/).
 2. No menu Hub, clique em **Mais Serviços** e, na caixa de diálogo Filtro, escreva **Máquinas virtuais**. À medida que escreve, a lista de recursos filtra. Quando vir Máquinas Virtuais, selecione-as.
@@ -65,33 +67,36 @@ Os passos seguintes orientam-no ao longo da configuração da tarefa de criaçã
 
   ![É apresentada a lista de VMs na subscrição.](./media/backup-azure-vms-first-look-arm/list-of-vms-selected.png)
 
-  Quando seleciona a VM, a lista de máquinas virtuais passa para a esquerda e são abertos o painel de gestão e o dashboard da máquina virtual.
+  Quando seleciona a VM, a lista de máquinas virtuais passa para a esquerda e são abertos o painel de gestão e o dashboard da máquina virtual. </br>
  ![Painel de gestão da VM](./media/backup-azure-vms-first-look-arm/vm-management-blade.png)
 
-4. No painel de gestão da VM, na secção **Definições**, clique em **Cópia de Segurança**.
-![Opção Cópia de segurança no painel de gestão da VM](./media/backup-azure-vms-first-look-arm/backup-option-vm-management-blade.png)
-    É aberto o painel Ativar cópia de segurança.
+4. No painel de gestão da VM, na secção **Definições**, clique em **Cópia de Segurança**. </br>
+
+  ![Opção Cópia de Segurança no painel de gestão da VM](./media/backup-azure-vms-first-look-arm/backup-option-vm-management-blade.png)
+
+  É aberto o painel Ativar cópia de segurança.
 
   ![Opção Cópia de Segurança no painel de gestão da VM](./media/backup-azure-vms-first-look-arm/vm-blade-enable-backup.png)
 
 5. No cofre dos Serviços de Recuperação, clique em **Selecionar existente** e escolha o cofre na lista pendente.
 
-    ![Assistente para Ativar Cópia de Segurança](./media/backup-azure-vms-first-look-arm/vm-blade-enable-backup.png)
+  ![Assistente para Ativar Cópia de Segurança](./media/backup-azure-vms-first-look-arm/vm-blade-enable-backup.png)
 
-    Se não existirem cofres dos Serviços de Recuperação ou quiser utilizar um novo, clique em **Criar novo** e indique o nome do cofre novo. É criado um cofre novo no mesmo grupo de recursos e na mesma localização que a máquina virtual. Se quiser criar um cofre dos Serviços de Recuperação com valores diferentes, veja a secção sobre como [criar cofres dos Serviços de Recuperação](backup-azure-vms-first-look-arm.md#create-a-recovery-services-vault-for-a-vm).
+  Se não existirem cofres dos Serviços de Recuperação ou quiser utilizar um novo, clique em **Criar novo** e indique o nome do cofre novo. É criado um cofre novo no mesmo grupo de recursos e na mesma localização que a máquina virtual. Se quiser criar um cofre dos Serviços de Recuperação com valores diferentes, veja a secção sobre como [criar cofres dos Serviços de Recuperação](backup-azure-vms-first-look-arm.md#create-a-recovery-services-vault-for-a-vm).
 
 6. Para ver os detalhes da Política de cópias de segurança, clique em **Política de cópias de segurança**.
 
-    É aberto o painel **Política de cópias de segurança**, que mostra os detalhes da política selecionada. Se houver outras políticas, utilize o menu pendente para escolher outra. Se pretende criar uma nova política, selecione **Criar Novo** no menu pendente. Para obter instruções sobre como definir uma política de cópia de segurança, consulte o artigo [Definir uma política de cópia de segurança](backup-azure-vms-first-look-arm.md#defining-a-backup-policy). Para guardar as alterações à política de cópias de segurança e regressar ao painel Ativar cópia de segurança, clique em **OK**.
+  É aberto o painel **Política de cópias de segurança**, que mostra os detalhes da política selecionada. Se houver outras políticas, utilize o menu pendente para escolher outra. Se pretende criar uma nova política, selecione **Criar Nova** no menu pendente. Para obter instruções sobre como definir uma política de cópia de segurança, consulte o artigo [Definir uma política de cópia de segurança](backup-azure-vms-first-look-arm.md#defining-a-backup-policy). Para guardar as alterações à política de cópias de segurança e regressar ao painel Ativar cópia de segurança, clique em **OK**.
 
-    ![Selecionar política de cópia de segurança](./media/backup-azure-vms-first-look-arm/setting-rs-backup-policy-new-2.png)
+  ![Selecionar política de cópia de segurança](./media/backup-azure-vms-first-look-arm/setting-rs-backup-policy-new-2.png)
 
-7. No painel Ativar política de cópias de segurança, clique em **Ativar cópia de segurança** para acionar a implementação da política que associa esta ao cofre e à máquina ou máquinas virtuais.
+7. No painel Ativar cópia de segurança, clique em **Ativar Cópia de Segurança** para implementar a política. A implementação da política associa-a ao cofre e às máquinas virtuais.
 
   ![Botão Ativar cópia de segurança](./media/backup-azure-vms-first-look-arm/vm-management-blade-enable-backup-button.png)
 
 8. Pode acompanhar o progresso da configuração através das notificações que aparecem no portal. O exemplo seguinte mostra que a Implementação foi iniciada.
-![Notificação de Ativar Cópia de Segurança](./media/backup-azure-vms-first-look-arm/vm-management-blade-enable-backup-notification.png)
+
+  ![Notificação de Ativar Cópia de Segurança](./media/backup-azure-vms-first-look-arm/vm-management-blade-enable-backup-notification.png)
 
 9. Depois de concluído o progresso, no painel de gestão da VM, clique em **Cópia de Segurança** para abrir o painel Item de Cópia de Segurança e ver os detalhes.
 
@@ -114,28 +119,28 @@ Os passos seguintes orientam-no ao longo da configuração da tarefa de criaçã
   As notificações de implementação permitem-lhe saber se a tarefa de cópia de segurança foi acionada e que pode acompanhar o progresso da tarefa na página Tarefas de cópias de segurança.
 
 ## <a name="configure-the-backup-job-from-the-recovery-services-vault"></a>Configurar a tarefa de cópia de segurança a partir do cofre dos Serviços de Recuperação
-A um nível elevado, estes são os passos que deverá concluir.  
+Para configurar a tarefa de cópia de segurança, execute os seguintes passos.  
 
-1. Crie um cofre dos serviços de recuperação para uma VM.
-2. Utilize o portal do Azure para selecionar um Cenário, definir uma Política e identificar itens para proteger.
+1. Crie um cofre dos Serviços de Recuperação para uma máquina virtual.
+2. Utilize o portal do Azure para selecionar um Cenário, definir uma política de Cópias de Segurança e identificar itens para proteger.
 3. Execute a cópia de segurança inicial.
 
 ## <a name="create-a-recovery-services-vault-for-a-vm"></a>Criar um cofre dos Serviços de Recuperação para uma VM
-Um cofre dos serviços de recuperação é uma entidade que armazena todas as cópias de segurança e os pontos de recuperação que foram criados ao longo do tempo. O cofre dos serviços de recuperação também contém a política de cópias de segurança aplicada às VMs protegidas.
+Um cofre dos Serviços de Recuperação é uma entidade que armazena todas as cópias de segurança e os pontos de recuperação que foram criados ao longo do tempo. O cofre dos Serviços de Recuperação também contém a política de cópia de segurança aplicada às VMs protegidas.
 
 > [!NOTE]
-> A criação de cópias de segurança de VMs é um processo local. Não pode efetuar a cópia de segurança de VMs de uma localização para um cofre dos serviços de recuperação noutra localização. Por isso, para cada localização do Azure com VMs para a cópia de segurança, tem de existir, pelo menos, um cofre dos serviços de recuperação nessa localização.
+> A criação de cópias de segurança de VMs é um processo local. Não pode efetuar a cópia de segurança de VMs de uma localização para um cofre dos Serviços de Recuperação noutra localização. Por isso, para cada localização do Azure com VMs para a cópia de segurança, tem de existir, pelo menos, um cofre dos Serviços de Recuperação nessa localização.
 >
 >
 
-Para criar um cofre dos serviços de recuperação:
+Para criar um cofre dos Serviços de Recuperação:
 
 1. Se ainda não o fez, inicie sessão no [portal do Azure](https://portal.azure.com/) através da sua subscrição do Azure.
 2. No menu Hub, clique em **Mais Serviços** e, na caixa de diálogo Filtro, escreva **Serviços de Recuperação**. À medida que escreve, a lista de recursos filtra. Quando vir os cofres dos Serviços de Recuperação, clique nos mesmos.
 
     ![Passo 1 da Criação de um Cofre dos Serviços de Recuperação](./media/backup-try-azure-backup-in-10-mins/open-rs-vault-list.png) <br/>
 
-    Se existirem cofres de serviços de recuperação na subscrição, os cofres estão listados.
+    Se existirem cofres dos Serviços de Recuperação na subscrição, os cofres estão listados.
 
     ![Passo 2 da Criação do Cofre dos Serviços de Recuperação](./media/backup-azure-vms-first-look-arm/list-of-rs-vault.png)
 3. No menu **Cofres dos Serviços de Recuperação**, clique em **Adicionar**.
@@ -152,7 +157,7 @@ Para criar um cofre dos serviços de recuperação:
 
 6. Na secção **Grupo de recursos**:
 
-    * selecione **Criar novo** se pretender criar um novo Grupo de recursos.
+    * selecione **Criar novo** se pretender criar um grupo de Recursos.
     Ou
     * selecione **Utilizar existente** e clique no menu pendente para ver a lista de Grupos de recursos disponíveis.
 
@@ -161,7 +166,7 @@ Para criar um cofre dos serviços de recuperação:
 7. Clique em **Localização** para selecionar a região geográfica do cofre. Esta escolha determina a região geográfica para onde os dados da cópia de segurança são enviados.
 
   > [!IMPORTANT]
-  > Se não tiver a certeza de qual é a localização em que se encontra a VM, feche a caixa de diálogo de criação do cofre e aceda à lista de Máquinas Virtuais no portal. Se tiver máquinas virtuais em várias regiões, crie um cofre dos Serviços de Recuperação em cada região. Crie o cofre na primeira localização antes de ir para a localização seguinte. Não é necessário especificar contas de armazenamento para armazenar os dados de cópia de segurança – o cofre dos serviços de recuperação e o serviço de Backup do Azure processam isto automaticamente.
+  > Se não tiver a certeza de qual é a localização em que se encontra a VM, feche a caixa de diálogo de criação do cofre e aceda à lista de Máquinas Virtuais no portal. Se tiver máquinas virtuais em várias regiões, crie um cofre dos Serviços de Recuperação em cada região. Crie o cofre na primeira localização antes de ir para a localização seguinte. Não é necessário especificar as contas de armazenamento utilizadas para armazenar os dados de cópia de segurança - o cofre dos Serviços de Recuperação e o serviço do Azure Backup processam automaticamente o armazenamento.
   >
 
 8. Na parte inferior do painel do cofre dos Serviços de Recuperação, clique em **Criar**.
@@ -175,17 +180,18 @@ Para criar um cofre dos serviços de recuperação:
 Agora que criou o cofre, saiba como configurar a replicação de armazenamento.
 
 ### <a name="set-storage-replication"></a>Definir Replicação de Armazenamento
-A opção de replicação de armazenamento permite-lhe escolher entre o armazenamento georredundante e o armazenamento localmente redundante. Por predefinição, o seu cofre tem um armazenamento georredundante. Deixe a opção definida para armazenamento georredundante se for a sua cópia de segurança primária. Escolha o armazenamento localmente redundante se pretender uma opção mais barata e com menos duração. Leia mais sobre as opções de armazenamento [georredundante](../storage/storage-redundancy.md#geo-redundant-storage) e [localmente redundante](../storage/storage-redundancy.md#locally-redundant-storage) na [descrição geral da replicação de Armazenamento do Azure](../storage/storage-redundancy.md).
+A opção de replicação de armazenamento permite-lhe escolher entre o armazenamento georredundante e o armazenamento localmente redundante. Por predefinição, o seu cofre tem um armazenamento georredundante. Se o cofre dos Serviços de Recuperação for a sua cópia de segurança primária, deixe a opção de replicação de armazenamento definida para armazenamento georredundante. Escolha o armazenamento localmente redundante se pretender uma opção mais barata e com menos duração. Leia mais sobre as opções de armazenamento [georredundante](../storage/storage-redundancy.md#geo-redundant-storage) e [localmente redundante](../storage/storage-redundancy.md#locally-redundant-storage) na [descrição geral da replicação de Armazenamento do Azure](../storage/storage-redundancy.md).
 
 Para editar a definição de replicação de armazenamento:
 
-1. No painel **Cofres dos Serviços de Recuperação**, clique em novo cofre.
+1. No painel **Cofres dos Serviços de Recuperação**, selecione o novo cofre.
 
   ![Selecione o novo cofre da lista de cofres dos Serviços de Recuperação](./media/backup-try-azure-backup-in-10-mins/rs-vault-list.png)
 
-  Ao selecionar o cofre, o painel **cofre dos Serviços de Recuperação** estreita e o painel Definições (*que tem o nome do cofre na parte superior*), e o painel de detalhes do cofre abre.
+  Ao selecionar o cofre, o painel Definições (*que tem o nome do cofre na parte superior*) e o painel de detalhes do cofre abrem.
 
-    ![Ver a configuração de armazenamento do novo cofre](./media/backup-try-azure-backup-in-10-mins/set-storage-configuration-2.png)
+  ![Ver a configuração de armazenamento do novo cofre](./media/backup-try-azure-backup-in-10-mins/set-storage-configuration-2.png)
+
 2. No painel de Definições do novo cofre, utilize o diapositivo vertical para deslocar para baixo para a secção Gerir e clique em **Infraestrutura de Cópia de Segurança**.
     É aberto o painel Infraestrutura de Cópia de Segurança.
 3. No painel Infraestrutura de Cópia de Segurança, clique em **Configuração de Cópia de Segurança** para abrir o painel **Configuração de Cópia de Segurança**.
@@ -222,7 +228,7 @@ Antes de registar uma VM com um cofre, execute o processo de deteção para se c
     ![Abrir o painel Cenário](./media/backup-azure-arm-vms-prepare/select-backup-goal-1.png)
 3. No painel Objetivo da Cópia de Segurança, no menu pendente **Onde está a sua carga de trabalho a ser executada**, escolha o Azure. No menu pendente **Do que pretende criar uma cópia de segurança**, escolha Máquina virtual e clique em **OK**.
 
-    A extensão da VM é registada no cofre. O painel Objetivo da Cópia de Segurança fecha-se e o painel **Política de cópias de segurança** abre-se.
+    Estas ações registam a extensão da VM no cofre. O painel Objetivo da Cópia de Segurança fecha-se e o painel **Política de cópias de segurança** abre-se.
 
     ![Abrir o painel Cenário](./media/backup-azure-arm-vms-prepare/select-backup-goal-2.png)
 
@@ -230,7 +236,7 @@ Antes de registar uma VM com um cofre, execute o processo de deteção para se c
 
     ![Selecionar política de cópia de segurança](./media/backup-azure-arm-vms-prepare/setting-rs-backup-policy-new.png)
 
-    Os detalhes da política predefinida estão listados no menu pendente. Se pretende criar uma nova política, selecione **Criar Novo** no menu pendente. Para obter instruções sobre como definir uma política de cópia de segurança, consulte o artigo [Definir uma política de cópia de segurança](backup-azure-vms-first-look-arm.md#defining-a-backup-policy).
+    Os detalhes da política predefinida estão listados no menu pendente. Se pretende criar uma nova política, selecione **Criar Nova** no menu pendente. Para obter instruções sobre como definir uma política de cópia de segurança, consulte o artigo [Definir uma política de cópia de segurança](backup-azure-vms-first-look-arm.md#defining-a-backup-policy).
     Clique em **OK** para associar a política de cópias de segurança ao cofre.
 
     O painel Política de cópias de segurança fecha-se e o painel **Selecionar máquinas virtuais** abre-se.
@@ -240,7 +246,7 @@ Antes de registar uma VM com um cofre, execute o processo de deteção para se c
 
     A máquina virtual selecionada é validada. Se não conseguir ver as máquinas virtuais que pretende ver, verifique se existem na mesma localização do Azure que o cofre dos Serviços de Recuperação. A localização do cofre dos Serviços de Recuperação é apresentada no dashboard do cofre.
 
-6. Agora que definiu todas as definições do cofre, no painel Cópia de Segurança, clique em **Ativar Cópia de Segurança**. Isto implementa a política no cofre e as VMs. Não cria o ponto de recuperação inicial da máquina virtual.
+6. Agora que definiu todas as definições do cofre, no painel Cópia de Segurança, clique em **Ativar Cópia de Segurança** para implementar a política no cofre e nas VMs. A implementação da política de cópias de segurança não cria o ponto de recuperação inicial da máquina virtual.
 
     ![Ativar Backup](./media/backup-azure-arm-vms-prepare/vm-validated-click-enable.png)
 
@@ -311,7 +317,7 @@ Para executar a tarefa de cópia de segurança inicial:
 [!INCLUDE [backup-create-backup-policy-for-vm](../../includes/backup-create-backup-policy-for-vm.md)]
 
 ## <a name="install-the-vm-agent-on-the-virtual-machine"></a>Instalar o Agente da VM na máquina virtual
-Estas informações são fornecidas no caso de serem necessárias. O Agente da VM do Azure tem de estar instalado na máquina virtual do Azure para que a extensão da Cópia de Segurança funcione. Contudo, se a VM foi criada a partir da galeria do Azure, o Agente da VM já se encontra presente na máquina virtual. As VMs que são migradas dos datacenters no local não teriam o Agente da VM instalado. Nesse caso, o Agente da VM tem de ser instalado. Se tiver problemas a efetuar a cópia de segurança da VM do Azure, verifique se o Agente da VM do Azure está corretamente instalado na máquina virtual (consulte a tabela abaixo). Se criar uma VM personalizada, [confirme que a caixa de verificação **Instalar o Agente da VM** está selecionada](../virtual-machines/virtual-machines-windows-classic-agents-and-extensions.md?toc=%2fazure%2fvirtual-machines%2fwindows%2fclassic%2ftoc.json) antes de aprovisionar a máquina virtual.
+Estas informações são fornecidas no caso de serem necessárias. O Agente da VM do Azure tem de estar instalado na máquina virtual do Azure para que a extensão da Cópia de Segurança funcione. Contudo, se a VM foi criada a partir da galeria do Azure, o Agente da VM já se encontra presente na máquina virtual. As VMs que são migradas dos datacenters no local não teriam o Agente da VM instalado. Nesse caso, o Agente da VM tem de ser instalado. Se tiver problemas a efetuar a cópia de segurança da VM do Azure, verifique se o Agente da VM do Azure está corretamente instalado na máquina virtual (veja a tabela seguinte). Se criar uma VM personalizada, [confirme que a caixa de verificação **Instalar o Agente da VM** está selecionada](../virtual-machines/virtual-machines-windows-classic-agents-and-extensions.md?toc=%2fazure%2fvirtual-machines%2fwindows%2fclassic%2ftoc.json) antes de aprovisionar a máquina virtual.
 
 Saiba mais sobre o [Agente da VM](https://go.microsoft.com/fwLink/?LinkID=390493&clcid=0x409) e [como o instalar](../virtual-machines/virtual-machines-windows-classic-manage-extensions.md?toc=%2fazure%2fvirtual-machines%2fwindows%2fclassic%2ftoc.json).
 
@@ -326,19 +332,14 @@ A tabela seguinte fornece informações adicionais sobre o Agente da VM para as 
 ### <a name="backup-extension"></a>Extensão da cópia de segurança
 Assim que o Agente da VM estiver instalado na máquina virtual, o serviço de Backup do Azure instala a extensão da cópia de segurança no Agente da VM. O serviço de Backup do Azure atualiza de forma totalmente integrada e aplica os patches à extensão da cópia de segurança sem intervenção adicional do utilizador.
 
-A extensão de cópia de segurança é instalada pelo serviço de Backup quer a VM esteja ou não em execução. Uma VM em execução fornece a maior possibilidade de obter um ponto de recuperação consistente com aplicações. No entanto, o serviço Azure Backup continuará a criar cópias de segurança da VM mesmo se estiver desligado e se não for possível instalar a extensão. Este processo é conhecido como VM Offline. Neste caso, o ponto de recuperação será *consistente com a falha*.
+O serviço de Cópia de Segurança instala a extensão de cópia de segurança, mesmo se a VM não estiver em execução. Uma VM em execução fornece a maior possibilidade de obter um ponto de recuperação consistente com aplicações. No entanto, o serviço Azure Backup continuará a criar cópias de segurança da VM mesmo se estiver desligado e se não for possível instalar a extensão. Este tipo de cópia de segurança é conhecido como VM Offline, e o ponto de recuperação é *consistente com a falha*.
 
 ## <a name="troubleshooting-information"></a>Informações sobre a resolução de problemas
 Se tiver problemas ao realizar algumas das tarefas neste artigo, veja a [Orientação na resolução de problemas](backup-azure-vms-troubleshoot.md).
 
 ## <a name="pricing"></a>Preços
-A cópia de segurança de VMs do Azure será cobrada com base no modelo de Instâncias Protegidas. Saiba mais sobre os [Preços da Cópia de Segurança](https://azure.microsoft.com/pricing/details/backup/)
+O custo de fazer cópias de segurança das VMs do Azure baseia-se no número de instâncias protegidas. Para uma definição de instância protegida, veja [o que é uma instância protegida](backup-introduction-to-azure-backup.md#what-is-a-protected-instance). Para obter um exemplo de como calcular o custo de fazer uma cópia de segurança de uma máquina virtual, veja [Como as instâncias protegidas são calculadas](backup-azure-vms-introduction.md#calculating-the-cost-of-protected-instances). Consulte a página de Preços do Azure Backup para obter informações sobre [Preços da Cópia de Segurança](https://azure.microsoft.com/pricing/details/backup/).
 
 ## <a name="questions"></a>Tem dúvidas?
 Se tiver dúvidas ou se houver alguma funcionalidade que gostaria de ver incluída, [envie-nos comentários](http://aka.ms/azurebackup_feedback).
-
-
-
-<!--HONumber=Feb17_HO3-->
-
 

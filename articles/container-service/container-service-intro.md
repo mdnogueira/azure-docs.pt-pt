@@ -1,5 +1,5 @@
 ---
-title: Clusters de contentor do Docker na cloud do Azure | Microsoft Docs
+title: Contentor Docker com alojamento na cloud do Azure | Microsoft Docs
 description: "O Azure Container Service proporciona uma forma de simplificar a criação, configuração e gestão de um cluster de máquinas virtuais que estão pré-configuradas para executar aplicações em contentores."
 services: container-service
 documentationcenter: 
@@ -14,15 +14,18 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 02/21/2017
+ms.date: 03/01/2017
 ms.author: rogardle
+ms.custom: H1Hack27Feb2017
 translationtype: Human Translation
-ms.sourcegitcommit: 2a381431acb6436ddd8e13c69b05423a33cd4fa6
-ms.openlocfilehash: a11b133794f7aedfa6740757fd8c1e89da665744
+ms.sourcegitcommit: 31897e11abfe70ed08381f0d13c6bdabe56c28ed
+ms.openlocfilehash: 04fabadb1c713deb007b740369496b61bb5f424f
+ms.lasthandoff: 03/02/2017
+
 
 
 ---
-# <a name="azure-container-service-introduction"></a>Introdução ao Azure Container Service
+# <a name="introduction-to-docker-container-hosting-solutions-with-azure-container-service"></a>Introdução às soluções de alojamento do contentor Docker com o Azure Container Service 
 O Azure Container Service simplifica a criação, configuração e gestão de um cluster de máquinas virtuais que estão pré-configuradas para executar aplicações em contentores. Utiliza uma configuração otimizada de populares ferramentas open-source de agendamento e orquestração. Isto permite-lhe utilizar as suas competências ou basear-se num corpo extenso e crescente de conhecimentos da comunidade, para implementar e gerir aplicações baseadas em contentores do Microsoft Azure.
 
 ![O Azure Container Service fornece um meio para gerir aplicações em contentores, em vários anfitriões no Azure.](./media/acs-intro/acs-cluster-new.png)
@@ -109,8 +112,3 @@ Criar Aplicações com o Azure Container Service (Compilação 2016)
 ## <a name="next-steps"></a>Passos seguintes
 
 Implementar um cluster do serviço de contentor através do [portal](container-service-deployment.md) ou do [ CLI do Azure 2.0](container-service-create-acs-cluster-cli.md).
-
-
-<!--HONumber=Feb17_HO4-->
-
-

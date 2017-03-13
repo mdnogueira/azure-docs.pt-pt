@@ -16,9 +16,9 @@ ms.topic: hero-article
 ms.date: 12/25/2016
 ms.author: anhoh
 translationtype: Human Translation
-ms.sourcegitcommit: fba82c5c826da7d1912814b61c5065ca7f726011
-ms.openlocfilehash: 49b765010be87bacdb486391c28bf58aad1a9d24
-ms.lasthandoff: 02/23/2017
+ms.sourcegitcommit: 72b2d9142479f9ba0380c5bd2dd82734e370dee7
+ms.openlocfilehash: e955366aa6fb8481fc8a76158b298dd927e855a2
+ms.lasthandoff: 03/08/2017
 
 
 ---
@@ -26,8 +26,9 @@ ms.lasthandoff: 02/23/2017
 > [!div class="op_single_selector"]
 > * [.NET](documentdb-get-started.md)
 > * [.NET Core](documentdb-dotnetcore-get-started.md)
-> * [Java](documentdb-java-get-started.md)
+> * [Node.js para MongoDB](documentdb-mongodb-samples.md)
 > * [Node.js](documentdb-nodejs-get-started.md)
+> * [Java](documentdb-java-get-started.md)
 > * [C++](documentdb-cpp-get-started.md)
 >  
 > 
@@ -64,7 +65,7 @@ Criemos uma conta DocumentDB. Se já tiver uma conta que pretende utilizar, pode
 
 [!INCLUDE [documentdb-create-dbaccount](../../includes/documentdb-create-dbaccount.md)]
 
-## <a name="a-idsetupnodeastep-2-setup-your-nodejs-application"></a><a id="SetupNode"></a>Passo 2: Configurar a sua aplicação Node.js
+## <a id="SetupNode"></a>Passo 2: Configurar a sua aplicação Node.js
 1. Abra o seu terminal favorito.
 2. Localize a pasta ou o diretório onde pretende guardar a sua aplicação Node.js.
 3. Crie dois ficheiros JavaScript vazios com os seguintes comandos:
@@ -79,7 +80,7 @@ Criemos uma conta DocumentDB. Se já tiver uma conta que pretende utilizar, pode
 
 Ótimo! Agora que concluiu a configuração, comecemos a escrever certos códigos.
 
-## <a name="a-idconfigastep-3-set-your-apps-configurations"></a><a id="Config"></a>Passo 3: Configurar as configurações da sua aplicação
+## <a id="Config"></a>Passo 3: Configurar as configurações da sua aplicação
 Abra ```config.js``` no seu editor de texto favorito.
 
 Em seguida, copie e cole o fragmento de código abaixo e defina as propriedades ```config.endpoint``` e ```config.primaryKey``` para o uri e chave primária do ponto final do seu DocumentDB. Pode encontrar ambas as configurações no [Portal do Azure](https://portal.azure.com).
@@ -176,7 +177,7 @@ Por fim, exporte o seu objeto ```config``` para poder referenciá-lo no ficheiro
     // ADD THIS PART TO YOUR CODE
     module.exports = config;
 
-## <a name="a-idconnecta-step-4-connect-to-a-documentdb-account"></a><a id="Connect"></a> Passo 4: Ligar a uma conta do DocumentDB
+## <a id="Connect"></a> Passo 4: Ligar a uma conta do DocumentDB
 Abra o seu ficheiro ```app.js``` vazio no editor de texto. Copie e cole o código abaixo para importar o módulo ```documentdb``` e o módulo ```config``` que criou recentemente.
 
     // ADD THIS PART TO YOUR CODE
@@ -260,7 +261,7 @@ No seu terminal, localize o seu ficheiro ```app.js``` e execute o comando: ```no
 
 Parabéns! Criou uma base de dados DocumentDB com êxito.
 
-## <a name="a-idcreatecollastep-6-create-a-collection"></a><a id="CreateColl"></a>Passo 6: Criar uma coleção
+## <a id="CreateColl"></a>Passo 6: Criar uma coleção
 > [!WARNING]
 > **CreateDocumentCollectionAsync** irá criar uma nova coleção, tendo repercussões sobre os preços. Para obter mais detalhes, visite a nossa [página de preços](https://azure.microsoft.com/pricing/details/documentdb/).
 > 
@@ -314,7 +315,7 @@ No seu terminal, localize o seu ficheiro ```app.js``` e execute o comando: ```no
 
 Parabéns! Criou uma coleção DocumentDB com êxito.
 
-## <a name="a-idcreatedocastep-7-create-a-document"></a><a id="CreateDoc"></a>Passo 7: Criar um documento
+## <a id="CreateDoc"></a>Passo 7: Criar um documento
 Pode criar um [documento](documentdb-resources.md#documents) utilizando a função [createDocument](https://azure.github.io/azure-documentdb-node/DocumentClient.html) da classe **DocumentClient**. Os documentos são conteúdos (arbitrários) JSON definidos pelo utilizador. Pode agora inserir um documento no DocumentDB.
 
 Copie e cole a função **getFamilyDocument** por baixo da função **getCollection** para criar documentos que contêm os dados JSON guardados no objeto ```config```. Mais uma vez, iremos certificar-nos de que não existe nenhum documento com o mesmo ID.
@@ -368,7 +369,7 @@ Parabéns! Criou documentos DocumentDB com êxito.
 
 ![Tutorial Node.js - Diagrama que ilustra a relação hierárquica entre a conta, a base de dados, a coleção e os documentos - base de dados Node](./media/documentdb-nodejs-get-started/node-js-tutorial-account-database.png)
 
-## <a name="a-idqueryastep-8-query-documentdb-resources"></a><a id="Query"></a>Passo 8: Consultar os recursos do DocumentDB
+## <a id="Query"></a>Passo 8: Consultar os recursos do DocumentDB
 O DocumentDB suporta [consultas](documentdb-sql-query.md) extensas de documentos JSON armazenados em cada coleção. O seguinte código de exemplo mostra uma consulta que pode executar nos documentos da sua coleção.
 
 Copie e cole a função **queryCollection** por baixo da função **getFamilyDocument** no ficheiro app.js. O DocumentDB suporta consultas de tipo SQL, conforme mostrado abaixo. Para obter mais informações sobre a criação de consultas complexas, consulte o artigo o [Query Playground](https://www.documentdb.com/sql/demo) e a [documentação sobre consultas](documentdb-sql-query.md).
@@ -425,7 +426,7 @@ No seu terminal, localize o seu ficheiro ```app.js``` e execute o comando: ```no
 
 Parabéns! Consultou documentos DocumentDB com êxito.
 
-## <a name="a-idreplacedocumentastep-9-replace-a-document"></a><a id="ReplaceDocument"></a>Passo 9: Substituir um documento
+## <a id="ReplaceDocument"></a>Passo 9: Substituir um documento
 O DocumentDB suporta a substituição de documentos JSON.
 
 Copie e cole a função **replaceFamilyDocument** por baixo da função **queryCollection** no ficheiro app.js.
@@ -472,7 +473,7 @@ No seu terminal, localize o seu ficheiro ```app.js``` e execute o comando: ```no
 
 Parabéns! Substituiu um documento do DocumentDB com êxito.
 
-## <a name="a-iddeletedocumentastep-10-delete-a-document"></a><a id="DeleteDocument"></a>Passo 10: Eliminar um documento
+## <a id="DeleteDocument"></a>Passo 10: Eliminar um documento
 O DocumentDB suporta a eliminação de documentos JSON.
 
 Copie e cole a função **deleteFamilyDocument** por baixo da função **replaceFamilyDocument**.
@@ -516,7 +517,7 @@ No seu terminal, localize o seu ficheiro ```app.js``` e execute o comando: ```no
 
 Parabéns! Eliminou um documento do DocumentDB com êxito.
 
-## <a name="a-iddeletedatabaseastep-11-delete-the-node-database"></a><a id="DeleteDatabase"></a>Passo 11: Eliminar a base de dados Node
+## <a id="DeleteDatabase"></a>Passo 11: Eliminar a base de dados Node
 Eliminar a base de dados criada irá remover a base de dados e todos os recursos subordinados (coleções, documentos, etc.).
 
 Copie e cole afunção **cleanup** baixo da função **deleteFamilyDocument** para remover a base de dados e todos os recursos subordinados.
@@ -551,7 +552,7 @@ Copie e cole o código por baixo da chamada para **deleteFamilyDocument** para e
     .then(() => { exit(`Completed successfully`); })
     .catch((error) => { exit(`Completed with error ${JSON.stringify(error)}`) });
 
-## <a name="a-idrunastep-12-run-your-nodejs-application-all-together"></a><a id="Run"></a>Passo 12: Executar a sua aplicação Node.js em conjunto!
+## <a id="Run"></a>Passo 12: Executar a sua aplicação Node.js em conjunto!
 No seu conjunto, a sequência para chamar as suas funções deve ter o seguinte aspeto:
 
     getDatabase()
@@ -602,7 +603,7 @@ Deverá ver o resultado da sua aplicação Introdução. A saída deve correspon
 
 Parabéns! Criou e completou o tutorial Node.js e tem a sua primeira aplicação de consola do DocumentDB!
 
-## <a name="a-idgetsolutionaget-the-complete-nodejs-tutorial-solution"></a><a id="GetSolution"></a>Obter a solução completa do tutorial Node.js
+## <a id="GetSolution"></a>Obter a solução completa do tutorial Node.js
 Se não tiver tempo de completar os passos deste tutorial, ou apenas pretender transferir o código, pode obtê-lo a partir do [Github](https://github.com/Azure-Samples/documentdb-node-getting-started).
 
 Para executar a solução GetStarted que contém todos os exemplos deste artigo, deverá ter o seguinte:

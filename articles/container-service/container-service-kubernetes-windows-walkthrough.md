@@ -14,16 +14,18 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 02/21/2017
-ms.author: dlepow
+ms.date: 03/03/2017
+ms.author: danlep
+ms.custom: H1Hack27Feb2017
 translationtype: Human Translation
-ms.sourcegitcommit: 2a381431acb6436ddd8e13c69b05423a33cd4fa6
-ms.openlocfilehash: 010a9a4a9ad0f6f7584b1c9a54e665557078d25b
+ms.sourcegitcommit: d9dad6cff80c1f6ac206e7fa3184ce037900fc6b
+ms.openlocfilehash: ef1e790edc4cd329245331bf1178ed1f610e914c
+ms.lasthandoff: 03/06/2017
 
 
 ---
 
-# <a name="get-started-with-windows-containers-in-a-kubernetes-cluster"></a>Introdução aos contentores do Windows num cluster de Kubernetes
+# <a name="get-started-with-kubernetes-and-windows-containers-in-container-service"></a>Introdução ao contentores Kubernetes e Windows no Container Service
 
 
 Este artigo mostra como criar um cluster de Kubernetes no Azure Container Service que contém nós do Windows para executar contentores do Windows. 
@@ -55,9 +57,19 @@ Todas as VMs estão na mesma rede virtual privada e totalmente acessíveis entre
 
 ## <a name="create-the-cluster"></a>Criar o cluster
 
-Pode utilizar o portal do Azure para [criar um cluster de Kubernetes](container-service-deployment.md#create-a-cluster-by-using-the-azure-portal) com os nós de agente do Windows. 
+Pode utilizar o portal do Azure para [criar um cluster de Kubernetes](container-service-deployment.md#create-a-cluster-by-using-the-azure-portal) com os nós de agente do Windows. Tenha em atenção as seguintes definições ao criar o cluster:
 
-No painel **Configuração da arquitetura**, em **Configuração do Orchestrator**, selecione **Kubernetes - Windows**. 
+* No painel **Noções básicas**, em **Orchestrator**, selecione **Kubernetes**. 
+
+  ![Selecionar orquestrador Kubernetes](media/container-service-kubernetes-windows-walkthrough/portal-select-kubernetes.png)
+
+* No painel **Configuração principal**, introduza as credenciais de utilizador e as credenciais de principal de serviço os nós principais do Linux. Selecione 1, 3 ou 5 nós principais.
+
+* No painel **Configuração do agente**, em **Sistema operativo**, selecione **Windows (pré-visualização)**. Introduza as credenciais de administrador para os nós de agente do Windows.
+
+  ![Selecionar agentes do Windows](media/container-service-kubernetes-windows-walkthrough/portal-select-windows.png)
+
+Para detalhes, veja [Implementar um cluster do Azure Container Service](container-service-deployment.md).
 
 ## <a name="connect-to-the-cluster"></a>Ligar ao cluster
 
@@ -67,7 +79,7 @@ Utilize a ferramenta da linha de comandos `kubectl` para ligar a partir do compu
 
 Depois de criar o cluster e ligar a `kubectl`, pode tentar iniciar uma aplicação Web do Windows básica e expô-la à Internet. Neste exemplo, vai especificar os recursos de contentor com um ficheiro YAML e, em seguida, criá-lo com `kubctl apply`.
 
-1. Para ver uma lista dos nós, escreva `kubectl get nodes`.  Se quiser detalhes completos dos nós, escreva:  
+1. Para ver uma lista dos nós, escreva `kubectl get nodes`. Se quiser detalhes completos dos nós, escreva:  
 
   ```
   kubectl get nodes -o yaml
@@ -198,8 +210,3 @@ Eis as ligações recomendadas para saber mais sobre o Kubernetes:
 * [Bootcamp do Kubernetes](https://kubernetesbootcamp.github.io/kubernetes-bootcamp/index.html) – Mostra como implementar, dimensionar, atualizar e depurar aplicações em contentores.
 * [Guia de Utilizador do Kubernetes](http://kubernetes.io/docs/user-guide/) – Fornece informações sobre como executar programas num cluster do Kubernetes existente.
 * [Exemplos do Kubernetes](https://github.com/kubernetes/kubernetes/tree/master/examples) – Fornece exemplos sobre como executar aplicações reais com o Kubernetes.
-
-
-<!--HONumber=Feb17_HO4-->
-
-

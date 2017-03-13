@@ -12,11 +12,12 @@ ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 10/20/2016
+ms.date: 03/03/2017
 ms.author: tomfitz
 translationtype: Human Translation
-ms.sourcegitcommit: e841c21a15c47108cbea356172bffe766003a145
-ms.openlocfilehash: 4f1e8850aee2cc9578ce80ceb4a5eecf121c4c60
+ms.sourcegitcommit: d9dad6cff80c1f6ac206e7fa3184ce037900fc6b
+ms.openlocfilehash: f8512229ee30fee6315d8ba167f1716e40f79b3e
+ms.lasthandoff: 03/06/2017
 
 
 ---
@@ -36,7 +37,7 @@ Neste tutorial, irá iniciar sessão no portal do Azure, criar uma conta de arma
 1. No [portal do Azure](https://portal.azure.com), selecione **Novo** > **Armazenamento** > **Conta de armazenamento**.
    
       ![criar armazenamento](./media/resource-manager-export-template/create-storage.png)
-2. Crie uma conta do Storage com o nome **storage**, as suas iniciais e a data. O nome da conta do Storage tem de ser exclusivo em todo o Azure. Se o nome já estiver a ser utilizado, verá uma mensagem de erro a indicar isso. Tente uma variação. Para o grupo de recursos, crie um novo grupo de recursos e atribua-lhe o nome **ExportGroup**. Pode utilizar os valores predefinidos para as outras propriedades. Selecione **Criar**.
+2. Crie uma conta do Storage com o nome **storage**, as suas iniciais e a data. O nome da conta do Storage tem de ser exclusivo em todo o Azure. Se o nome já estiver a ser utilizado, verá uma mensagem de erro a indicar isso. Tente uma variação. No grupo de recursos, selecione **Criar novo** e atribua-lhe o nome **ExportGroup**. Pode utilizar os valores predefinidos para as outras propriedades. Selecione **Criar**.
    
       ![fornecer valores para o armazenamento](./media/resource-manager-export-template/provide-storage-values.png)
 
@@ -57,6 +58,7 @@ A implementação pode demorar um minuto. Após a conclusão da implementação,
    1. **Modelo** - O modelo que define a infraestrutura para a sua solução. Quando criou a conta do Storage através do portal, o Resource Manager utilizou um modelo para a implementar e guardou esse modelo para consulta futura.
    2. **Parâmetros** - Um ficheiro de parâmetros que pode utilizar para transmitir valores durante a implementação. Contém os valores que indicou durante a primeira implementação, mas pode alterar qualquer um destes valores quando implementar novamente o modelo.
    3. **CLI** - Um ficheiro de script da interface de linha de comandos do Azure (CLI) que pode utilizar para implementar o modelo.
+   3. **CLI 2.0** - Um ficheiro de script da interface de linha de comandos (CLI) do Azure que pode utilizar para implementar o modelo.
    4. **PowerShell** - Um ficheiro de script do Azure PowerShell que pode utilizar para implementar o modelo.
    5. **.NET** - Uma classe .NET que pode utilizar para implementar o modelo.
    6. **.NET** - Uma classe Ruby que pode utilizar para implementar o modelo.
@@ -67,48 +69,49 @@ A implementação pode demorar um minuto. Após a conclusão da implementação,
       
       Vamos observar o modelo com atenção. O modelo deverá ter um aspeto semelhante ao seguinte:
       
-        {
-      
-          "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-          "contentVersion": "1.0.0.0",
-          "parameters": {
-            "name": {
-              "type": "String"
-            },
-            "accountType": {
-              "type": "String"
-            },
-            "location": {
-              "type": "String"
-            },
-            "encryptionEnabled": {
-              "defaultValue": false,
-              "type": "Bool"
-            }
+      ```json
+      {
+        "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+        "contentVersion": "1.0.0.0",
+        "parameters": {
+          "name": {
+            "type": "String"
           },
-          "resources": [
-            {
-              "type": "Microsoft.Storage/storageAccounts",
-              "sku": {
-                "name": "[parameters('accountType')]"
-              },
-              "kind": "Storage",
-              "name": "[parameters('name')]",
-              "apiVersion": "2016-01-01",
-              "location": "[parameters('location')]",
-              "properties": {
-                "encryption": {
-                  "services": {
-                    "blob": {
-                      "enabled": "[parameters('encryptionEnabled')]"
-                    }
-                  },
-                  "keySource": "Microsoft.Storage"
-                }
+          "accountType": {
+            "type": "String"
+          },
+          "location": {
+            "type": "String"
+          },
+          "encryptionEnabled": {
+            "defaultValue": false,
+            "type": "Bool"
+          }
+        },
+        "resources": [
+          {
+            "type": "Microsoft.Storage/storageAccounts",
+            "sku": {
+              "name": "[parameters('accountType')]"
+            },
+            "kind": "Storage",
+            "name": "[parameters('name')]",
+            "apiVersion": "2016-01-01",
+            "location": "[parameters('location')]",
+            "properties": {
+              "encryption": {
+                "services": {
+                  "blob": {
+                    "enabled": "[parameters('encryptionEnabled')]"
+                  }
+                },
+                "keySource": "Microsoft.Storage"
               }
             }
-          ]
-        }
+          }
+        ]
+      }
+      ```
 
 Este é o modelo utilizado para criar a conta de armazenamento. Repare que contém os parâmetros que permitem-lhe implementar os diferentes tipos de contas de armazenamento. Para saber mais sobre a estrutura de um modelo, consulte [Criação de modelos do Azure Resource Manager](resource-group-authoring-templates.md). Para obter a lista completa das funções que pode utilizar num modelo, veja [Funções de modelo do Azure Resource Manager](resource-group-template-functions.md).
 
@@ -144,25 +147,29 @@ Para obter o estado atual do seu grupo de recursos, exporte um modelo que mostra
    
      Nem todos os tipos de recursos suportam a função de modelo de exportação. Se o grupo de recursos incluir apenas a conta de armazenamento e a rede virtual referidas neste artigo, não será apresentado nenhum erro. No entanto, se tiver criado outros tipos de recursos, pode aparecer um erro a indicar que existe um problema com a exportação. Pode saber como lidar com esses problemas na secção [Corrigir problemas de exportação](#fix-export-issues).
 2. Verá novamente os seis ficheiros que pode utilizar para voltar a implementar a solução, mas, desta vez, o modelo é ligeiramente diferente. Este modelo tem apenas dois parâmetros: um para o nome da conta do Storage e outro para o nome da rede virtual.
-   
-        "parameters": {
-          "virtualNetworks_VNET_name": {
-            "defaultValue": "VNET",
-            "type": "String"
-          },
-          "storageAccounts_storagetf05092016_name": {
-            "defaultValue": "storagetf05092016",
-            "type": "String"
-          }
-        },
+
+  ```json
+  "parameters": {
+    "virtualNetworks_VNET_name": {
+      "defaultValue": "VNET",
+      "type": "String"
+    },
+    "storageAccounts_storagetf05092016_name": {
+      "defaultValue": "storagetf05092016",
+      "type": "String"
+    }
+  },
+  ```
    
      O Resource Manager não obteve os modelos que utilizou durante a implementação. Em vez disso, gerou um novo modelo baseado na configuração atual dos recursos. Por exemplo, o modelo define a localização da conta de armazenamento e o valor da replicação para:
-   
-        "location": "northeurope",
-        "tags": {},
-        "properties": {
-            "accountType": "Standard_RAGRS"
-        },
+
+  ```json 
+  "location": "northeurope",
+  "tags": {},
+  "properties": {
+    "accountType": "Standard_RAGRS"
+  },
+  ```
 3. Tem algumas opções para continuar a trabalhar com este modelo. Pode transferir o modelo e trabalhar no mesmo localmente com um editor JSON. Em alternativa, pode guardar o modelo na sua biblioteca e trabalhar no mesmo através do portal.
    
      Se estiver familiarizado com um editor JSON, como [Código VS](resource-manager-vs-code.md) ou [Visual Studio](vs-azure-tools-resource-groups-deployment-projects-create-deploy.md), pode preferir transferir o modelo localmente e utilizar esse editor. Se não tiver um editor JSON, poderá preferir editar o modelo através do portal. O resto deste tópico parte do princípio de que guardou o modelo na sua biblioteca no portal. No entanto, realiza as mesmas alterações de sintaxe no modelo quer trabalhe localmente com um editor JSON quer trabalhe através do portal.
@@ -190,88 +197,97 @@ O modelo exportado funcionará bem se pretender criar a mesma conta de armazenam
 
 Nesta secção, adiciona parâmetros ao modelo exportado para que possa reutilizar o modelo ao implementar estes recursos noutros ambientes. Também adiciona algumas funcionalidades ao modelo para diminuir a probabilidade de encontrar um erro ao implementar o seu modelo. Já não tem de procurar um nome exclusivo para a sua conta de armazenamento. Em vez disso, o modelo cria um nome exclusivo. Restrinja os valores que podem ser especificados para o tipo de conta de armazenamento para apenas opções válidas.
 
-1. Selecione **Editar** para personalizar o modelo.
+1. Para personalizar o modelo, selecione **Editar**.
    
      ![mostrar modelo](./media/resource-manager-export-template/show-template.png)
 2. Selecione o modelo.
    
      ![editar modelo](./media/resource-manager-export-template/edit-template.png)
 3. Para poder passar os valores que pode pretender especificar durante a implementação, substitua a secção **parâmetro** por novas definições de parâmetros. Repare nos valores de **allowedValues** para **storageAccount_accountType**. Se fornecer acidentalmente um valor inválido, esse erro é reconhecido antes do início da implementação. Além disso, tenha em atenção que está a fornecer apenas um prefixo para o nome da conta do Storage e o prefixo está limitado a 11 carateres. Ao limitar o prefixo a 11 carateres, assegura que o nome completo não excede o número máximo de carateres para uma conta de armazenamento. O prefixo permite aplicar uma convenção de nomenclatura às contas do Storage. Poderá ver como criar um nome exclusivo no próximo passo.
-   
-        "parameters": {
-          "storageAccount_prefix": {
-            "type": "string",
-            "maxLength": 11
-          },
-          "storageAccount_accountType": {
-            "defaultValue": "Standard_RAGRS",
-            "type": "string",
-            "allowedValues": [
-              "Standard_LRS",
-              "Standard_ZRS",
-              "Standard_GRS",
-              "Standard_RAGRS",
-              "Premium_LRS"
-            ]
-          },
-          "virtualNetwork_name": {
-            "type": "string"
-          },
-          "addressPrefix": {
-            "defaultValue": "10.0.0.0/16",
-            "type": "string"
-          },
-          "subnetName": {
-            "defaultValue": "subnet-1",
-            "type": "string"
-          },
-          "subnetAddressPrefix": {
-            "defaultValue": "10.0.0.0/24",
-            "type": "string"
-          }
-        },
+
+  ```json
+  "parameters": {
+    "storageAccount_prefix": {
+      "type": "string",
+      "maxLength": 11
+    },
+    "storageAccount_accountType": {
+      "defaultValue": "Standard_RAGRS",
+      "type": "string",
+      "allowedValues": [
+        "Standard_LRS",
+        "Standard_ZRS",
+        "Standard_GRS",
+        "Standard_RAGRS",
+        "Premium_LRS"
+      ]
+    },
+    "virtualNetwork_name": {
+      "type": "string"
+    },
+    "addressPrefix": {
+      "defaultValue": "10.0.0.0/16",
+      "type": "string"
+    },
+    "subnetName": {
+      "defaultValue": "subnet-1",
+      "type": "string"
+    },
+    "subnetAddressPrefix": {
+      "defaultValue": "10.0.0.0/24",
+      "type": "string"
+    }
+  },
+  ```
+
 4. A secção **variables** do seu modelo está atualmente vazia. Na secção **variáveis**, pode criar valores que simplifiquem a sintaxe para o resto do seu modelo. Substitua esta secção por uma nova definição de variável. A variável **storageAccount_name** concatena o prefixo do parâmetro a uma cadeia exclusiva que é gerada com base no identificador do grupo de recursos. Já não tem de procurar um nome exclusivo quando fornecer um valor de parâmetro.
-   
-        "variables": {
-          "storageAccount_name": "[concat(parameters('storageAccount_prefix'), uniqueString(resourceGroup().id))]"
-        },
+
+  ```json
+  "variables": {
+    "storageAccount_name": "[concat(parameters('storageAccount_prefix'), uniqueString(resourceGroup().id))]"
+  },
+  ```
+
 5. Para utilizar os parâmetros e a variável nas definições de recursos, substitua a secção **recursos** por novas definições. Repare que pouco mudou nas definições de recursos, além do valor que é atribuído à propriedade de recursos. As propriedades são as mesmas do modelo exportado. Está simplesmente a atribuir propriedades a valores de parâmetros em vez de valores impostos. A localização dos recursos está definida para utilizar a mesma localização que o grupo de recursos através da expressão **resourceGroup().location**. A variável que criou para o nome da conta do Storage é referenciada através da expressão **variables**.
-   
-        "resources": [
+
+  ```json
+  "resources": [
+    {
+      "type": "Microsoft.Network/virtualNetworks",
+      "name": "[parameters('virtualNetwork_name')]",
+      "apiVersion": "2015-06-15",
+      "location": "[resourceGroup().location]",
+      "properties": {
+        "addressSpace": {
+          "addressPrefixes": [
+            "[parameters('addressPrefix')]"
+          ]
+        },
+        "subnets": [
           {
-            "type": "Microsoft.Network/virtualNetworks",
-            "name": "[parameters('virtualNetwork_name')]",
-            "apiVersion": "2015-06-15",
-            "location": "[resourceGroup().location]",
+            "name": "[parameters('subnetName')]",
             "properties": {
-              "addressSpace": {
-                "addressPrefixes": [
-                  "[parameters('addressPrefix')]"
-                ]
-              },
-              "subnets": [
-                {
-                  "name": "[parameters('subnetName')]",
-                  "properties": {
-                    "addressPrefix": "[parameters('subnetAddressPrefix')]"
-                  }
-                }
-              ]
-            },
-            "dependsOn": []
-          },
-          {
-            "type": "Microsoft.Storage/storageAccounts",
-            "name": "[variables('storageAccount_name')]",
-            "apiVersion": "2015-06-15",
-            "location": "[resourceGroup().location]",
-            "tags": {},
-            "properties": {
-                "accountType": "[parameters('storageAccount_accountType')]"
-            },
-            "dependsOn": []
+              "addressPrefix": "[parameters('subnetAddressPrefix')]"
+            }
           }
         ]
+      },
+      "dependsOn": []
+    },
+    {
+      "type": "Microsoft.Storage/storageAccounts",
+      "name": "[variables('storageAccount_name')]",
+      "apiVersion": "2015-06-15",
+      "location": "[resourceGroup().location]",
+      "tags": {},
+      "properties": {
+        "accountType": "[parameters('storageAccount_accountType')]"
+      },
+      "dependsOn": []
+    }
+  ]
+  ```
+
 6. Selecione **OK** quando terminar de editar o modelo.
 7. Selecione **Guardar** para guardar as alterações feitas ao modelo.
    
@@ -286,7 +302,7 @@ Se estiver a trabalhar com os ficheiros transferidos (em vez da biblioteca do po
 
 Substitua o conteúdo do ficheiro parameters.json por:
 
-```
+```json
 {
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
   "contentVersion": "1.0.0.0",
@@ -304,7 +320,7 @@ Substitua o conteúdo do ficheiro parameters.json por:
 O ficheiro de parâmetros atualizado fornece valores apenas para os parâmetros que não tenham um valor predefinido. Pode fornecer valores para os outros parâmetros quando pretender utilizar um valor que seja diferente do valor predefinido.
 
 ## <a name="fix-export-issues"></a>Corrigir problemas de exportação
-Nem todos os tipos de recursos suportam a função de modelo de exportação. O Resource Manager não exporta especificamente alguns tipos de recursos para impedir a exposição a dados confidenciais. Por exemplo, se tiver uma cadeia de ligação na sua configuração de site, provavelmente não pretende que seja apresentada explicitamente num modelo exportado. Pode contornar este problema adicionando manualmente os recursos em falta no seu modelo.
+Nem todos os tipos de recursos suportam a função de modelo de exportação. O Resource Manager não exporta especificamente alguns tipos de recursos para impedir a exposição a dados confidenciais. Por exemplo, se tiver uma cadeia de ligação na sua configuração de site, provavelmente não pretende que seja apresentada explicitamente num modelo exportado. Para resolver este problema, adicione manualmente os recursos em falta no seu modelo.
 
 > [!NOTE]
 > Só encontra problemas de exportação se exportar a partir de um grupo de recursos em vez do seu histórico de implementação. Se a última implementação representar com precisão o estado atual do grupo de recursos, deve exportar o modelo do histórico de implementação em vez do grupo de recursos. Só deve exportar de um grupo de recursos depois de efetuar alterações ao grupo de recursos que não esteja definido num único modelo.
@@ -324,7 +340,7 @@ Este tópico mostra as correções comuns.
 ### <a name="connection-string"></a>Cadeia de ligação
 No recurso de sites, adicione uma definição para a cadeia de ligação à base de dados:
 
-```
+```json
 {
   "type": "Microsoft.Web/sites",
   ...
@@ -350,7 +366,7 @@ No recurso de sites, adicione uma definição para a cadeia de ligação à base
 ### <a name="web-site-extension"></a>Extensão do site
 No recurso de sites, adicione uma definição para o código para instalar:
 
-```
+```json
 {
   "type": "Microsoft.Web/sites",
   ...
@@ -382,7 +398,7 @@ Para obter exemplos de extensões de máquina virtual, veja o artigo [Amostras d
 ### <a name="virtual-network-gateway"></a>Gateway de rede virtual
 Adicione um tipo de recurso de gateway de rede virtual.
 
-```
+```json
 {
   "type": "Microsoft.Network/virtualNetworkGateways",
   "name": "[parameters('<gateway-name>')]",
@@ -417,7 +433,7 @@ Adicione um tipo de recurso de gateway de rede virtual.
 ### <a name="local-network-gateway"></a>Gateway de rede local
 Adicione um tipo de recurso de gateway de rede local.
 
-```
+```json
 {
     "type": "Microsoft.Network/localNetworkGateways",
     "name": "[parameters('<local-network-gateway-name>')]",
@@ -434,7 +450,7 @@ Adicione um tipo de recurso de gateway de rede local.
 ### <a name="connection"></a>Ligação
 Adicione um tipo de recurso de ligação.
 
-```
+```json
 {
     "apiVersion": "2015-06-15",
     "name": "[parameters('<connection-name>')]",
@@ -461,10 +477,5 @@ Parabéns! Aprendeu a exportar um modelo a partir dos recursos que criou no port
 * Pode implementar um modelo através do [PowerShell](resource-group-template-deploy.md), do [CLI do Azure](resource-group-template-deploy-cli.md) ou da [API REST](resource-group-template-deploy-rest.md).
 * Para ver como exportar um modelo através do PowerShell, consulte [Utilizar o Azure PowerShell com o Azure Resource Manager](powershell-azure-resource-manager.md).
 * Para ver como exportar um modelo através da CLI do Azure, consulte [Utilizar a CLI do Azure para Mac, Linux e Windows com o Azure Resource Manager](xplat-cli-azure-resource-manager.md).
-
-
-
-
-<!--HONumber=Nov16_HO3-->
 
 

@@ -12,12 +12,12 @@ ms.workload: backup-recovery
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: hero-article
-ms.date: 02/21/2017
+ms.date: 03/05/2017
 ms.author: raynew
 translationtype: Human Translation
-ms.sourcegitcommit: dcd7836f1ef84bbf7f45f1a70da1e177d9913a36
-ms.openlocfilehash: 345e5516be0c4de56c0cb104b1a598cd964b41d2
-ms.lasthandoff: 02/22/2017
+ms.sourcegitcommit: d9dad6cff80c1f6ac206e7fa3184ce037900fc6b
+ms.openlocfilehash: b1bbe3a43d071b452b7b60e1c56571958b444237
+ms.lasthandoff: 03/06/2017
 
 
 ---
@@ -129,8 +129,8 @@ Comece a Introdução com a escolha de como pretende implementar a Recuperação
 ## <a name="step-1-choose-your-protection-goals"></a>Passo 1: Escolher os seus objetivos de proteção
 Selecione o que pretende replicar e para onde pretende que seja replicado.
 
-1. No painel **Cofres dos Serviços de Recuperação**, selecione o cofre e clique em **Definições**.
-2. Em **Introdução**, clique em **Recuperação de Sites** > **Passo 1: Preparar a Infraestrutura** > **Objetivo de proteção**.
+1. No painel **Cofres dos Serviços de Recuperação**, selecione o cofre.
+2. Em **Introdução**, clique em **Site Recovery** > **Passo 1: Preparar a Infraestrutura** > **Objetivo de proteção**.
 
     ![Selecione os objetivos](./media/site-recovery-vmm-to-azure/choose-goals.png)
 3. Em **Objetivo de proteção**, selecione **Para o Azure** e, em seguida, selecione **Sim, com o Hyper-V**. Selecione **Sim** para confirmar que está a utilizar o VMM para gerir anfitriões Hyper-V e o site de recuperação. Em seguida, clique em **OK**.
@@ -143,17 +143,17 @@ Instale o Fornecedor do Azure Site Recovery no servidor VMM e registe o servidor
 1. Clique em **Passo 2: Preparar a Infraestrutura** > **Origem**.
 
     ![Configurar a origem](./media/site-recovery-vmm-to-azure/set-source1.png)
-    
+
 2. Em **Preparar a origem**, clique em **+ VMM** para adicionar um servidor VMM.
 
     ![Configurar a origem](./media/site-recovery-vmm-to-azure/set-source2.png)
-    
+
 3. No painel **Adicionar Servidor**, verifique se o **Servidor do System Center VMM** aparece em **Tipo de servidor** e se o servidor VMM cumpre os [pré-requisitos e os requisitos de URLs](#on-premises-prerequisites).
 4. Transfira o ficheiro de instalação do Fornecedor do Azure Site Recovery.
 5. Transfira a chave de registo. Precisará disto quando executar a configuração. A chave é válida durante cinco dias depois de gerá-la.
 
     ![Configurar a origem](./media/site-recovery-vmm-to-azure/set-source3.png)
-    
+
 6. Instale o Fornecedor do Azure Site Recovery no servidor VMM.
 
 ### <a name="set-up-the-azure-site-recovery-provider"></a>Instale o Fornecedor do Azure Site Recovery
@@ -180,7 +180,7 @@ Instale o Fornecedor do Azure Site Recovery no servidor VMM e registe o servidor
 9. Ative **Sincronizar metadados de nuvem** se pretender sincronizar os metadados de todas as nuvens no servidor VMM com o cofre. Esta ação só deverá ocorrer uma vez em cada servidor. Se não quiser sincronizar todas as nuvens, pode deixar esta definição desmarcada e sincronizar cada nuvem individualmente nas propriedades de nuvem na consola do VMM. Clique em **Registar** para concluir o processo.
 
     ![Registo do servidor](./media/site-recovery-vmm-to-azure/provider16.PNG)
-10. Inicia-se o registo. Após a conclusão de registo, o servidor é apresentado no painel **Definições** > **Servidores** no cofre.
+10. Inicia-se o registo. Após a conclusão do registo, o servidor é apresentado na **Infraestrutura do Site Recovery** >  **Servidores VMM**.
 
 #### <a name="command-line-installation-for-the-azure-site-recovery-provider"></a>Instalação de linha de comandos para o Azure Site Recovery Provider
 O Azure Site Recovery Provider pode ser instalado a partir da linha de comandos. Este método pode ser utilizado para instalar o Fornecedor num Server Core do Windows Server 2012 R2.
@@ -266,7 +266,7 @@ Especifique a conta de armazenamento do Azure a ser utilizada para replicação 
 
 Configure o mapeamento da seguinte forma:
 
-1. Em **Definições** > **Infraestrutura de Recuperação de Sites** > **Mapeamentos da Rede** > **Mapeamento da Rede**, clique no ícone **+ Mapeamento da Rede**.
+1. Em **Infraestrutura do Site Recovery** > **Mapeamentos da Rede** > **Mapeamento da Rede**, clique no ícone **+ Mapeamento da Rede**.
 
     ![Mapeamento da rede](./media/site-recovery-vmm-to-azure/network-mapping1.png)
 2. Em **Adicionar mapeamento da rede**, selecione o servidor VMM como a origem e o **Azure** como o destino.
@@ -295,7 +295,7 @@ Veja a seguir o que acontece quando começa o mapeamento da rede:
 7. Em **Encriptar dados armazenados no Azure**, especifique se pretende encriptar os dados REST no armazenamento do Azure. Em seguida, clique em **OK**.
 
     ![Política de replicação](./media/site-recovery-vmm-to-azure/gs-replication2.png)
-8. Quando cria uma nova política, automaticamente fica associada à nuvem do VMM. Clique em **OK**. Pode associar nuvens adicionais do VMM (e as VMs) com esta política de replicação em **Definições** > **Replicação** > nome da política > **Associar Nuvem do VMM**.
+8. Quando cria uma nova política, automaticamente fica associada à nuvem do VMM. Clique em **OK**. Pode associar clouds adicionais do VMM (e as VMs) com esta política de replicação em **Replicação** > nome da política > **Associar Cloud do VMM**.
 
     ![Política de replicação](./media/site-recovery-vmm-to-azure/policy-associate.png)
 
@@ -375,16 +375,16 @@ Agora, ative a replicação da seguinte forma:
     >
 
 
-8. Em **Definições de replicação** > **Configurar as definições de replicação**, selecione a política de replicação que pretende aplicar para as máquinas virtuais protegidas. Em seguida, clique em **OK**. Pode modificar a política de replicação em **Definições** > **Políticas de replicação** > nome da política > **Editar Definições**. As alterações que aplicar são utilizadas para as máquinas que já estão a replicar e para as novas máquinas.
+8. Em **Definições de replicação** > **Configurar as definições de replicação**, selecione a política de replicação que pretende aplicar para as máquinas virtuais protegidas. Em seguida, clique em **OK**. Pode modificar a política de replicação em **Políticas de replicação** > nome da política > **Editar Definições**. As alterações que aplicar são utilizadas para as máquinas que já estão a replicar e para as novas máquinas.
 
    ![Ativar a replicação](./media/site-recovery-vmm-to-azure/enable-replication7.png)
 
-Pode controlar o progresso da tarefa **Ativar Proteção** em **Definições** > **Tarefas** > **Tarefas da Recuperação de Sites**. Depois de a tarefa **Finalizar Proteção** ser executada, a máquina está preparada para ativação pós-falha.
+Pode controlar o progresso da tarefa **Ativar Proteção** em **Tarefas** > **Tarefas do Site Recovery**. Depois de a tarefa **Finalizar Proteção** ser executada, a máquina está preparada para ativação pós-falha.
 
 ### <a name="view-and-manage-vm-properties"></a>Ver e gerir propriedades da VM
 Recomendamos que verifique as propriedades da máquina de origem. Lembre-se de que o nome da VM do Azure deve estar em conformidade com os [Requisitos de máquina virtual do Azure](site-recovery-support-matrix-to-azure.md#failed-over-azure-vm-requirements).
 
-1. Clique em **Definições** > **Itens Protegidos** > **Itens Replicados** e selecione a máquina para ver os respetivos detalhes.
+1. Em **Itens Protegidos**, clique em **tens Replicados** e selecione a máquina para ver os respetivos detalhes.
 
     ![Ativar a replicação](./media/site-recovery-vmm-to-azure/vm-essentials.png)
 2. Em **Propriedades**, pode ver as informações de replicação e de ativação pós-falha da VM.
@@ -438,10 +438,10 @@ Se pretender aceder a uma VM do Azure a executar o Linux após a ativação pós
 ## <a name="step-7-test-your-deployment"></a>Passo 7: Testar a implementação
 Para testar a implementação pode executar uma ativação pós-falha de teste para uma única máquina virtual ou um plano de recuperação que contém uma ou mais máquinas virtuais.
 
-1. Para fazer a ativação pós-falha numa única VM, em **Definições** > **Itens Replicados**, clique na VM > **+ Ativação Pós-Falha de Teste**.
-1. Para efetuar a ativação pós-falha de um plano de recuperação, em **Definições** > **Planos de Recuperação**, clique com o botão direito no plano > **Ativação Pós-Falha de Teste**. Para criar um plano de recuperação, [siga estas instruções](site-recovery-create-recovery-plans.md).
+1. Para fazer a ativação pós-falha numa única VM, em **Itens Replicados**, clique na VM > **+ Ativação Pós-Falha de Teste**.
+1. Para efetuar a ativação pós-falha de um plano de recuperação, em **Planos de Recuperação**, clique com o botão direito no plano > **Ativação Pós-Falha de Teste**. Para criar um plano de recuperação, [siga estas instruções](site-recovery-create-recovery-plans.md).
 1. Em **Ativação Pós-Falha de Teste**, selecione a rede do Azure à qual as VMs do Azure se vão ligar depois de feita a ativação pós-falha.
-1. Clique em **OK** para iniciar a ativação pós-falha. Pode controlar o progresso clicando na VM para abrir as respetivas propriedades ou na tarefa **Ativação Pós-Falha de Teste** em **Definições** > **Tarefas da Recuperação de Sites**.
+1. Clique em **OK** para iniciar a ativação pós-falha. Pode controlar o progresso clicando na VM para abrir as respetivas propriedades ou na tarefa **Ativação Pós-Falha de Teste** em **Tarefas do Site Recovery**.
 1. Depois de concluída a ativação pós-falha, deverá também conseguir ver a máquina do Azure de réplica no Portal do Azure > **Máquinas Virtuais**. Confirme que a VM tem um tamanho adequado, que está ligada à rede certa e que está em execução.
 1. Se tiver [preparado para as ligações após a ativação pós-falha](#prepare-to-connect-to-Azure-VMs-after-failover), deverá ser capaz de ligar à VM do Azure.
 1. Quando tiver terminado, clique em **Ativação pós-falha de teste de limpeza** no plano de recuperação. Em **Notas**, registe e guarde todas as observações associadas à ativação pós-falha de teste. Este procedimento eliminará as máquinas virtuais criadas durante a ativação pós-falha de teste.
@@ -454,9 +454,9 @@ Veja como pode monitorizar as definições de configuração, o estado e o estad
 1. Clique no nome do cofre para aceder ao dashboard **Essentials**. Neste dashboard, pode ver as tarefas de Recuperação de Sites, o estado de replicação, os planos de recuperação, o estado de funcionamento do servidor e os eventos.  Pode personalizar **Essentials** para mostrar os mosaicos e os esquemas que são mais úteis para si, incluindo o estado de outros cofres do Site Recovery e do Backup.
 
     ![Essentials](./media/site-recovery-vmm-to-azure/essentials.png)
-2. Em *Estado de Funcionamento**, pode monitorizar problemas nos servidores do site (servidores VMM ou de configuração) e os eventos gerados pelo Site Recovery nas últimas 24 horas.
-3. Nos mosaicos **Itens Replicados**, **Planos de Recuperação** e **Tarefas do Site Recovery**, pode gerir e monitorizar a replicação. Pode ver os pormenores das tarefas em **Definições** > **Tarefas** > **Tarefas da Recuperação de Sites**.
+2. Em **Estado de Funcionamento**, pode monitorizar problemas nos servidores do site (servidores VMM ou de configuração) e os eventos gerados pelo Site Recovery nas últimas 24 horas.
+3. Nos mosaicos **Itens Replicados**, **Planos de Recuperação** e **Tarefas do Site Recovery**, pode gerir e monitorizar a replicação. Pode ver os pormenores das tarefas em **Tarefas** > **Tarefas do Site Recovery**.
 
 ## <a name="next-steps"></a>Passos seguintes
-Depois da implementação estar instalada e em execução, [saiba mais](site-recovery-failover.md) sobre os diferentes tipos de ativação pós-falha.
+Depois de a implementação estar instalada e em execução, [saiba mais](site-recovery-failover.md) sobre a ativação pós-falha.
 

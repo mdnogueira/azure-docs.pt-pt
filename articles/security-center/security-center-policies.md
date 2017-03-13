@@ -12,11 +12,12 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 01/12/2017
+ms.date: 03/03/2017
 ms.author: yurid
 translationtype: Human Translation
-ms.sourcegitcommit: fc82aaf3300a8d40fe00a2ae4dc008ccee6e2a66
-ms.openlocfilehash: 66cdc1fbe5afea4790e5c8ef34b4fcf2d7e89d84
+ms.sourcegitcommit: 2f03ba60d81e97c7da9a9fe61ecd419096248763
+ms.openlocfilehash: bd2291129a1a61f69e83cb76748d00b9ede6eb6f
+ms.lasthandoff: 03/04/2017
 
 
 ---
@@ -33,38 +34,38 @@ Pode configurar políticas de segurança para cada subscrição ou grupo de recu
 
 1. Clique no mosaico **Política** no dashboard do Centro de Segurança.
 2. No painel **Política de Segurança – Definir política por subscrição ou grupo de recursos** que se abre, selecione a subscrição na qual pretende ativar a política de segurança. Se preferir ativar a política de segurança para um grupo de recursos em vez da subscrição completa, desloque para baixo até à secção seguinte que fala sobre como configurar políticas de segurança para grupos de recursos.
-   
+
     ![Definir política](./media/security-center-policies/security-center-policies-fig1-ga.png)
 3. O painel **Política de segurança** da subscrição selecionada abre-se com um conjunto de opções semelhantes às que são mostradas na seguinte captura de ecrã:
-   
+
     ![Ativar a recolha de dados](./media/security-center-policies/security-center-policies-fig2-ga.png)
-   
+
     As opções disponíveis neste painel são:
-   
+
    * **Política de prevenção de**: utilize esta opção para configurar políticas por subscrição ou grupo de recursos.  
    * **Notificação por e-mail**: utilize esta opção para configurar uma notificação por e-mail que é enviada na primeira ocorrência diária de um alerta e relativamente a alertas de gravidade elevada. As preferências de e-mail só podem ser configuradas para as políticas de subscrição. Leia [Provide security contact details in Azure Security Center (Fornecer detalhes de contacto de segurança no Centro de Segurança do Azure)](security-center-provide-security-contact-details.md) para obter mais informações sobre como configurar uma notificação por e-mail.
-   * **Escalão de preço**: utilize esta opção para atualizar a seleção do escalão de preço. Consulte a [página do Centro de Segurança](https://azure.microsoft.com/pricing/details/security-center/) para saber mais sobre as opções de preços.
+   * **Escalão de preço**: utilize esta opção para atualizar a seleção do escalão de preço. Consulte os [Preços do Centro de Segurança](security-center-pricing.md) para saber mais sobre as opções de preços.
 4. Certifique-se de que a opção **Recolher dados de máquinas virtuais** está **Ativada**. Esta opção permite a recolha automática de registos relativos a recursos novos e existentes.
-   
+
    > [!NOTE]
    > Recomendamos que ative a recolha de dados para cada uma das suas subscrições para garantir que a monitorização de segurança está disponível em todas as VMs novas e existentes. Ativar a recolha de dados instala o agente de monitorização. Se não pretender ativar a recolha de dados agora a partir desta localização, pode fazê-lo mais tarde a partir das vistas de **Estado de Funcionamento** e **Recomendações**. Também pode ativar a recolha de dados apenas para a subscrição ou para VMs selecionadas. Consulte [FAQ do Centro de Segurança do Azure](security-center-faq.md) para saber mais sobre as VMs suportadas.
-   > 
-   > 
+   >
+   >
 5. Se a sua conta de armazenamento ainda não estiver configurada, pode ver um aviso semelhante ao mostrado na captura de ecrã seguinte quando abre a **Política de Segurança**. Se não escolher uma conta de armazenamento para cada região, será criada por si.
-   
+
     ![Seleção de armazenamento](./media/security-center-policies/security-center-policies-fig2.png)
 6. Se vir este aviso, clique nesta opção e selecione a região, conforme mostrado na captura de ecrã seguinte:
-   
+
     ![Seleção de armazenamento](./media/security-center-policies/security-center-policies-fig3-ga.png)
 7. Para cada região na qual tenha máquinas virtuais em execução, selecione a conta de armazenamento onde os dados recolhidos dessas máquinas virtuais estão armazenados. Isto faz com que seja mais fácil manter os dados na mesma área geográfica para fins de privacidade e soberania dos dados. Assim que decidir a região que irá utilizar, selecione a região e, em seguida, selecione a conta de armazenamento.
 8. No painel **Escolher contas de armazenamento**, clique em **OK**.
-   
+
    > [!NOTE]
    > Se preferir, pode agregar dados numa conta de armazenamento central para máquinas virtuais que estão em várias regiões. Consulte [FAQ do Centro de Segurança do Azure](security-center-faq.md) para obter mais informações.
-   > 
-   > 
+   >
+   >
 9. No painel **Política de Segurança**, clique em **Ativada** para ativar as recomendações de segurança que pretende utilizar nesta subscrição. Clique em **Política de prevenção** para ver opções como as que estão incluídas na seguinte captura de ecrã:
-   
+
     ![Selecionar as políticas de segurança](./media/security-center-policies/security-center-policies-fig4-ga-new.png)
 
 Utilize a tabela seguinte como uma referência para compreender cada opção:
@@ -72,7 +73,7 @@ Utilize a tabela seguinte como uma referência para compreender cada opção:
 | Política | Quando o estado está ativado |
 | --- | --- |
 | Atualizações do sistema |Obtém uma lista diária de atualizações críticas e de segurança disponíveis a partir do Windows Update ou o Windows Server Update Services. A lista obtida depende do serviço que está configurado para essa máquina virtual e recomenda que as atualizações em falta sejam aplicadas. Para sistemas Linux, a política utiliza o sistema de gestão de pacotes fornecido pelo distro para determinar os pacotes que têm atualizações disponíveis. Também verifica se existem atualizações críticas e de segurança de máquinas virtuais dos [Serviços em Nuvem do Azure](../cloud-services/cloud-services-how-to-configure.md). |
-| Vulnerabilidades do SO |Analisa configurações do sistema operativo diariamente para determinar os problemas que podem tornar a máquina virtual vulnerável a ataques. A política também recomenda alterações de configuração para resolver estas vulnerabilidades. Consulte a [lista de linhas de base recomendadas](https://gallery.technet.microsoft.com/Azure-Security-Center-a789e335) para obter mais informações sobre as configurações específicas a serem monitorizadas. |
+| Vulnerabilidades do SO |Analisa configurações do sistema operativo diariamente para determinar os problemas que podem tornar a máquina virtual vulnerável a ataques. A política também recomenda alterações de configuração para resolver estas vulnerabilidades. Consulte a [lista de linhas de base recomendadas](https://gallery.technet.microsoft.com/Azure-Security-Center-a789e335) para obter mais informações sobre as configurações específicas a serem monitorizadas. (Neste momento, o Windows Server 2016 não é totalmente suportado.) |
 | Endpoint protection |Recomenda que a Endpoint Protection seja aprovisionada para todas as máquinas virtuais do Windows de modo a ajudar a identificar e remover vírus, spyware e outro software malicioso. |
 | Encriptação de disco |Recomenda a ativação da encriptação de disco em todas as máquinas virtuais para melhorar a proteção de dados inativos. |
 | Grupos de segurança de rede |Recomenda que sejam configurados [grupos de segurança de rede](../virtual-network/virtual-networks-nsg.md) para controlar o tráfego de entrada e de saída para VMs que têm pontos finais públicos. Os grupos de segurança de rede configurados para uma sub-rede serão herdados por todas as interfaces de rede de máquina virtual, exceto se for especificado em contrário. Para além de verificar que um grupo de segurança de rede foi configurado, esta política avalia as regras de segurança de entrada para identificar regras que permitam o tráfego de entrada. |
@@ -95,8 +96,8 @@ Depois de selecionar o grupo de recursos, o painel **Política de segurança** a
 
 > [!NOTE]
 > Em caso de conflito entre a política de nível da subscrição e a política de nível do grupo de recursos, a política de nível de grupo de recursos tem prioridade.
-> 
-> 
+>
+>
 
 ## <a name="see-also"></a>Consultar também
 Neste documento, aprendeu a configurar as políticas de segurança no Centro de Segurança do Azure. Para saber mais acerca do Centro de Segurança do Azure, consulte o seguinte:
@@ -107,10 +108,4 @@ Neste documento, aprendeu a configurar as políticas de segurança no Centro de 
 * [Monitorizar soluções de parceiros com o Centro de Segurança do Azure](security-center-partner-solutions.md). Saiba como monitorizar o estado de funcionamento das soluções dos seus parceiros.
 * [Centro de Segurança do Azure FAQ (FAQ do Centro de Segurança do Azure)](security-center-faq.md). Encontre as perguntas mais frequentes acerca de como utilizar o serviço.
 * [Blogue de Segurança do Azure](http://blogs.msdn.com/b/azuresecurity/). Encontre mensagens do blogue acerca da segurança e conformidade do Azure.
-
-
-
-
-<!--HONumber=Jan17_HO2-->
-
 
