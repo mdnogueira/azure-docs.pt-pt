@@ -12,15 +12,17 @@ ms.devlang: java
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 02/14/2017
+ms.date: 03/07/2017
 ms.author: dobett
+ms.custom: H1Hack27Feb2017
 translationtype: Human Translation
-ms.sourcegitcommit: d4eb942db51af9c8136e9e0f5f8683cc15679d08
-ms.openlocfilehash: 5bfbe4cfac202592ddd745c5f959cb791fe17ba8
+ms.sourcegitcommit: 094729399070a64abc1aa05a9f585a0782142cbf
+ms.openlocfilehash: a8bc1b0a1011cc2d7719d93fad9db76a7b0f0795
+ms.lasthandoff: 03/07/2017
 
 
 ---
-# <a name="get-started-with-azure-iot-hub-java"></a>Introdução ao Hub IoT do Azure (Java)
+# <a name="connect-your-simulated-device-to-your-iot-hub-using-java"></a>Ligar o dispositivo simulado ao seu hub IoT com Java
 [!INCLUDE [iot-hub-selector-get-started](../../includes/iot-hub-selector-get-started.md)]
 
 No final deste tutorial, terá três aplicações de consola Java:
@@ -37,7 +39,7 @@ No final deste tutorial, terá três aplicações de consola Java:
 Para concluir este tutorial, precisa do seguinte:
 
 * Java SE 8. <br/> [Preparar o seu ambiente de desenvolvimento][lnk-dev-setup] descreve como instalar o Java para este tutorial no Windows ou no Linux.
-* Maven 3.  <br/> [Preparar o seu ambiente de desenvolvimento][lnk-dev-setup] descreve como instalar o Maven para este tutorial no Windows ou no Linux.
+* Maven 3.  <br/> [Preparar o seu ambiente de desenvolvimento][lnk-dev-setup] descreve como instalar o [Maven][lnk-maven] para este tutorial no Windows ou no Linux.
 * Uma conta ativa do Azure. (Se não tiver uma conta, pode criar uma [conta gratuita][lnk-free-trial] em apenas alguns minutos.)
 
 [!INCLUDE [iot-hub-get-started-create-hub](../../includes/iot-hub-get-started-create-hub.md)]
@@ -57,13 +59,12 @@ Nesta secção, vai criar uma aplicação de consola Java que cria uma identidad
     mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=create-device-identity -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
     ```
 2. Na linha de comandos, navegue para a pasta create-device-identity.
-3. Com um editor de texto, abra o ficheiro pom.xml na pasta create-device-identity e adicione a seguinte dependência ao nó **dependências**. Esta dependência permite-lhe utilizar o pacote iothub-service-sdk na sua aplicação:
+3. Com um editor de texto, abra o ficheiro pom.xml na pasta create-device-identity e adicione a seguinte dependência ao nó **dependências**. Esta dependência permite-lhe utilizar o pacote iot-service-client na sua aplicação:
    
     ```
-    <dependency>
-      <groupId>com.microsoft.azure.iothub-java-client</groupId>
-      <artifactId>iothub-java-service-client</artifactId>
-      <version>1.0.11</version>
+    <groupId>com.microsoft.azure.sdk.iot</groupId>
+      <artifactId>iot-service-client</artifactId>
+      <version>1.0.14</version>
     </dependency>
     ```
 4. Guarde e feche o ficheiro pom.xml.
@@ -71,9 +72,9 @@ Nesta secção, vai criar uma aplicação de consola Java que cria uma identidad
 6. Adicione as seguintes declarações de **importação** ao ficheiro:
    
     ```
-    import com.microsoft.azure.iot.service.exceptions.IotHubException;
-    import com.microsoft.azure.iot.service.sdk.Device;
-    import com.microsoft.azure.iot.service.sdk.RegistryManager;
+    import com.microsoft.azure.sdk.iot.service.exceptions.IotHubException;
+    import com.microsoft.azure.sdk.iot.service.sdk.Device;
+    import com.microsoft.azure.sdk.iot.service.sdk.RegistryManager;
    
     import java.io.IOException;
     import java.net.URISyntaxException;
@@ -146,7 +147,7 @@ Nesta secção, irá criar uma aplicação de consola do Java que lê mensagens 
     <dependency> 
         <groupId>com.microsoft.azure</groupId> 
         <artifactId>azure-eventhubs</artifactId> 
-        <version>0.10.0</version> 
+        <version>0.11.0</version> 
     </dependency>
     ```
 4. Guarde e feche o ficheiro pom.xml.
@@ -157,16 +158,12 @@ Nesta secção, irá criar uma aplicação de consola do Java que lê mensagens 
     import java.io.IOException;
     import com.microsoft.azure.eventhubs.*;
     import com.microsoft.azure.servicebus.*;
-   
-    import java.io.IOException;
+
     import java.nio.charset.Charset;
     import java.time.*;
-    import java.util.Collection;
-    import java.util.concurrent.ExecutionException;
     import java.util.function.*;
-    import java.util.logging.*;
     ```
-7. Adicione as seguintes variáveis de nível de classe à classe **Aplicação**. Substitua **{youriothubkey}**, **{youreventhubcompatibleendpoint}** e **{youreventhubcompatiblename}** pelos valores que apontou anteriormente:
+7. Adicione a seguinte variável de nível de classe à classe **Aplicação**. Substitua **{youriothubkey}**, **{youreventhubcompatibleendpoint}** e **{youreventhubcompatiblename}** pelos valores que apontou anteriormente:
    
     ```
     private static String connStr = "Endpoint={youreventhubcompatibleendpoint};EntityPath={youreventhubcompatiblename};SharedAccessKeyName=iothubowner;SharedAccessKey={youriothubkey}";
@@ -281,9 +278,9 @@ Nesta secção, irá criar uma aplicação de consola do Java que simula um disp
    
     ```
     <dependency>
-      <groupId>com.microsoft.azure.iothub-java-client</groupId>
-      <artifactId>iothub-java-device-client</artifactId>
-      <version>1.0.16</version>
+      <groupId>com.microsoft.azure.sdk.iot</groupId>
+      <artifactId>iot-device-client</artifactId>
+      <version>1.0.20</version>
     </dependency>
     <dependency>
       <groupId>com.google.code.gson</groupId>
@@ -296,13 +293,15 @@ Nesta secção, irá criar uma aplicação de consola do Java que simula um disp
 6. Adicione as seguintes declarações de **importação** ao ficheiro:
    
     ```
-    import com.microsoft.azure.iothub.DeviceClient;
-    import com.microsoft.azure.iothub.IotHubClientProtocol;
-    import com.microsoft.azure.iothub.Message;
-    import com.microsoft.azure.iothub.IotHubStatusCode;
-    import com.microsoft.azure.iothub.IotHubEventCallback;
-    import com.microsoft.azure.iothub.IotHubMessageResult;
+    import com.microsoft.azure.sdk.iot.device.DeviceClient;
+    import com.microsoft.azure.sdk.iot.device.IotHubClientProtocol;
+    import com.microsoft.azure.sdk.iot.device.Message;
+    import com.microsoft.azure.sdk.iot.device.IotHubStatusCode;
+    import com.microsoft.azure.sdk.iot.device.IotHubEventCallback;
+    import com.microsoft.azure.sdk.iot.device.MessageCallback;
+    import com.microsoft.azure.sdk.iot.device.IotHubMessageResult;
     import com.google.gson.Gson;
+
     import java.io.IOException;
     import java.net.URISyntaxException;
     import java.util.Random;
@@ -352,14 +351,13 @@ Nesta secção, irá criar uma aplicação de consola do Java que simula um disp
     
     ```
     private static class MessageSender implements Runnable {
-      public volatile boolean stopThread = false;
     
       public void run()  {
         try {
           double avgWindSpeed = 10; // m/s
           Random rand = new Random();
     
-          while (!stopThread) {
+          while (true) {
             double currentWindSpeed = avgWindSpeed + rand.nextDouble() * 4 - 2;
             TelemetryDataPoint telemetryDataPoint = new TelemetryDataPoint();
             telemetryDataPoint.deviceId = deviceId;
@@ -471,9 +469,4 @@ Para saber como expandir a sua solução de IoT e processar mensagens do disposi
 [lnk-device-management]: iot-hub-node-node-device-management-get-started.md
 [lnk-gateway-SDK]: iot-hub-linux-gateway-sdk-get-started.md
 [lnk-connect-device]: https://azure.microsoft.com/develop/iot/
-
-
-
-<!--HONumber=Jan17_HO1-->
-
-
+[lnk-maven]: https://maven.apache.org/what-is-maven.html

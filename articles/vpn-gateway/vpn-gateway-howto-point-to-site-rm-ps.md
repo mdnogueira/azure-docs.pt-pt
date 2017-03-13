@@ -13,11 +13,12 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 02/17/2017
+ms.date: 03/02/2017
 ms.author: cherylmc
 translationtype: Human Translation
-ms.sourcegitcommit: cf72197aba2c6e6c7a51f96d1161cf1fbe88a0c5
-ms.openlocfilehash: fe3bb0a5faee806e7956acba23c22b9aefd1f0a8
+ms.sourcegitcommit: cea53acc33347b9e6178645f225770936788f807
+ms.openlocfilehash: 462372711ef26a7b3e9beb6409a97a1df0273e02
+ms.lasthandoff: 03/03/2017
 
 
 ---
@@ -49,7 +50,7 @@ Neste cenário, irá criar uma rede virtual com uma ligação Ponto a Site. As i
 
 Utilizamos os seguintes valores para esta configuração. Definimos as variáveis na secção [1](#declare) do artigo. Pode utilizar os passos como orientação e utilizar os valore sem os alterar ou alterá-los de modo a refletir o seu ambiente. 
 
-### <a name="a-nameexampleaexample-values"></a><a name="example"></a>Valores de exemplo
+### <a name="example"></a>Valores de exemplo
 * **Nome: VNet1**
 * **Espaço de endereços: 192.168.0.0/16** e **10.254.0.0/16**<br>Para este exemplo, utilizamos mais do que um espaço de endereço para ilustrar que esta configuração irá funcionar com vários espaços de endereço. No entanto, vários espaços de endereços não são precisos para esta configuração.
 * **Nome da sub-rede: FrontEnd**
@@ -57,7 +58,7 @@ Utilizamos os seguintes valores para esta configuração. Definimos as variávei
 * **Nome da sub-rede: BackEnd**
   * **Intervalo de endereços da sub-rede: 10.254.1.0/24**
 * **Nome da sub-rede: GatewaySubnet**<br>O nome da Sub-rede *GatewaySubnet* é obrigatório para o gateway de VPN funcionar.
-  * **Intervalo de endereços da sub-rede: 192.168.200.0/24** 
+  * **Intervalo de endereços do GatewaySubnet: 192.168.200.0/24** 
 * **Conjunto de endereços de cliente VPN: 172.16.201.0/24**<br>Os clientes VPN que se ligam à VNet através desta ligação Ponto a Site recebem um endereço IP a partir do conjunto de endereços de cliente VPN especificado.
 * **Subscrição:** se tiver várias subscrições, verifique se tem a correta.
 * **Grupo de Recursos: TestRG**
@@ -71,7 +72,7 @@ Utilizamos os seguintes valores para esta configuração. Definimos as variávei
 * Verifique se tem uma subscrição do Azure. Se ainda não tiver uma subscrição do Azure, pode ativar os [Benefícios de subscritor do MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details) ou inscrever-se numa [conta gratuita](https://azure.microsoft.com/pricing/free-trial).
 * Instale a versão mais recente dos cmdlets do PowerShell do Azure Resource Manager. Veja [Como instalar e configurar o Azure PowerShell](/powershell/azureps-cmdlets-docs) para obter mais informações sobre como instalar os cmdlets PowerShell. Ao trabalhar com o PowerShell para esta configuração, certifique-se de que está a executar como administrador. 
 
-## <a name="a-namedeclareapart-1---log-in-and-set-variables"></a><a name="declare"></a>Parte 1 - Iniciar sessão e definir as variáveis
+## <a name="declare"></a>Parte 1 - Iniciar sessão e definir as variáveis
 Nesta secção, vai iniciar sessão e declarar os valores utilizados para esta configuração. Os valores declarados são utilizados nos scripts de exemplo. Altere os valores para refletir o seu ambiente. Em alternativa, pode utilizar os valores declarados e percorrer os passos como um exercício.
 
 1. Na consola do PowerShell, inicie sessão na sua conta do Azure. Este cmdlet pede-lhe as credenciais de início de sessão da sua Conta Azure. Após iniciar sessão, são transferidas as definições da conta para que fiquem disponíveis para o Azure PowerShell.
@@ -102,7 +103,7 @@ Nesta secção, vai iniciar sessão e declarar os valores utilizados para esta c
         $GWIPName = "VNet1GWPIP"
         $GWIPconfName = "gwipconf"
 
-## <a name="a-nameconfigurevnetapart-2---configure-a-vnet"></a><a name="ConfigureVNet"></a>Parte 2 – Configurar uma VNet
+## <a name="ConfigureVNet"></a>Parte 2 – Configurar uma VNet
 1. Crie um grupo de recursos.
    
         New-AzureRmResourceGroup -Name $RG -Location $Location
@@ -123,39 +124,45 @@ Nesta secção, vai iniciar sessão e declarar os valores utilizados para esta c
         $pip = New-AzureRmPublicIpAddress -Name $GWIPName -ResourceGroupName $RG -Location $Location -AllocationMethod Dynamic
         $ipconf = New-AzureRmVirtualNetworkGatewayIpConfig -Name $GWIPconfName -Subnet $subnet -PublicIpAddress $pip
 
-## <a name="a-namecertificatesapart-3---certificates"></a><a name="Certificates"></a>Parte 3 – Certificados
+## <a name="Certificates"></a>Parte 3 – Certificados
 O Azure utiliza os certificados para autenticar os clientes VPN em VPNs Ponto a Site. Exporte os dados do certificado público (e não a chave privada) como um ficheiro .cer X.509 codificado com Base-64 de um certificado de raiz gerado por uma solução de certificados de empresa ou um certificado de raiz autoassinado. Em seguida, importe os dados do certificado público a partir do certificado de raiz para o Azure. Além disso, precisa de gerar um certificado de cliente a partir do certificado de raiz para os clientes. Cada cliente que pretenda ligar-se à rede virtual através de uma ligação de P2S tem de ter instalado um certificado de cliente que foi gerado a partir do certificado de raiz.
 
-### <a name="a-namecerastep-1---obtain-the-cer-file-for-the-root-certificate"></a><a name="cer"></a>Passo 1: Obter o ficheiro .cer para o certificado de raiz
-Terá de obter os dados do certificado público para o certificado de raiz que pretende utilizar.
+### <a name="cer"></a>Passo 1: Obter o ficheiro .cer para o certificado de raiz
+Se estiver a utilizar uma solução empresarial, pode servir-se da sua cadeia de certificados existente. Obtenha o ficheiro .cer para o certificado de raiz que pretende utilizar.
 
-* Se estiver a utilizar um sistema de certificado de empresa, obtenha o ficheiro .cer para o certificado de raiz que pretende utilizar. 
-* Se não estiver a utilizar uma solução de certificados de empresa, tem de gerar um certificado de raiz autoassinado. O método recomendado para a criação de um certificado autoassinado para P2S é makecert. Embora seja possível utilizar o PowerShell para criar certificados autoassinados, o certificado gerado através do PowerShell não contém os campos necessários para ligações P2S. Para obter os passos para o Windows 10, pode ver [Trabalhar com certificados de raiz autoassinados para configurações Ponto a Site](vpn-gateway-certificates-point-to-site.md).
+Se não estiver a utilizar uma solução de certificados de empresa, tem de criar um certificado de raiz autoassinado. Para criar um certificado autoassinado que contenha os campos necessários para autenticação P2S, utilize o makecert. [Criar um certificado de raiz autoassinado para ligações P2S](vpn-gateway-certificates-point-to-site.md) descreve os passos para criar um certificado de raiz autoassinado. Estamos cientes de que o makecert foi preterido mas, de momento, é a solução suportada.
 
-1. Para obter um ficheiro .cer a partir de um certificado, abra **certmgr.msc** e localize o certificado de raiz. Clique no certificado de raiz autoassinado com o botão direito, clique em **todas as tarefas** e, em seguida, clique em **exportar**. Esta ação abre o **Assistente para Exportar Certificados**.
+>[!NOTE]
+>Embora seja possível utilizar o PowerShell para criar certificados autoassinados, o certificado gerado com o PowerShell não contém os campos necessários para autenticação Ponto a Site.
+>
+>
+
+#### <a name="to-obtain-the-cer-file-from-a-self-signed-root-certificate"></a>Para obter o ficheiro .cer a partir de um certificado de raiz autoassinado
+
+1. Para obter um ficheiro .cer a partir de um certificado de raiz autoassinado, abra **certmgr.msc** e localize o certificado de raiz que criou. Normalmente, o certificado está localizado em “'Certificates-Current User/ Personal/Certificates” e tem o nome que lhe atribuiu quando o criou. Clique no certificado de raiz autoassinado com o botão direito, clique em **todas as tarefas** e, em seguida, clique em **exportar**. Esta ação abre o **Assistente para Exportar Certificados**.
 2. No Assistente, clique em **Seguinte**, selecione **Não, não exportar a chave privada** e, em seguida, clique em **Seguinte**.
-3. Na página **Formato do Ficheiro de Exportação**, selecione **X.509 codificado com Base-64 (*.CER).** Clique depois em **Seguinte**. 
+3. Na página **Formato do Ficheiro de Exportação**, selecione **X.509 codificado com Base-64 (*.CER).** Clique depois em **Seguinte**.
 4. Em **Ficheiro a Exportar**, **Navegue** até à localização para a qual pretende exportar o certificado. Em **Nome do ficheiro**, atribua um nome ao ficheiro de certificado. Clique depois em **Seguinte**.
 5. Clique em **Concluir** para exportar o certificado.
 
-### <a name="a-namegenerateastep-2---generate-the-client-certificate"></a><a name="generate"></a>Passo 2: Gerar o certificado de cliente
+### <a name="generate"></a>Passo 2: Gerar o certificado de cliente
 Em seguida, gere certificados de cliente. Pode optar por gerar um certificado exclusivo para cada cliente que irá ligar ou pode utilizar o mesmo certificado em vários clientes. A vantagem de gerar certificados de cliente únicos é a capacidade de revogar um certificado único se for necessário. Caso contrário, se toda a gente estiver a utilizar o mesmo certificado de cliente e precisar de revogar o certificado para um cliente, terá de gerar e instalar novos certificados para todos os clientes que utilizam o certificado para autenticação. Os certificados de cliente são instalados em cada computador cliente posteriormente neste exercício.
 
 
 ####<a name="enterprise-certificate"></a>Certificado da empresa
-- Se estiver a utilizar uma solução de certificado de empresa, gere um certificado de cliente com o formato do valor de nome comum 'name@yourdomain.com',, em vez do formato “nome de domínio/nome de utilizador”.
+- Se estiver a utilizar uma solução de certificado da empresa, gere um certificado de cliente com o formato do valor de nome comum “name@yourdomain.com”, em vez do formato “nome de domínio/nome de utilizador”.
 - Certifique-se de que o certificado de cliente que emitiu é baseado no modelo de certificado "Utilizador" que tem a "Autenticação de Cliente" como o primeiro item na lista de utilização, em vez do Início de Sessão de Smart Card, etc. Pode verificar o certificado ao clicar duas vezes no certificado de cliente e visualizar **Detalhes > Utilização Avançada da Chaves**.
 
 ####<a name="self-signed-certificate"></a>Certificado autoassinado 
 Se estiver a utilizar um certificado de raiz autoassinado, consulte [Trabalhar com certificados de raiz autoassinados para configurações de Ponto a Site](vpn-gateway-certificates-point-to-site.md), para gerar um certificado de cliente.
 
-### <a name="a-nameexportclientcertastep-3---export-the-client-certificate"></a><a name="exportclientcert"></a>Passo 3: Exportar o certificado de cliente
+### <a name="exportclientcert"></a>Passo 3: Exportar o certificado de cliente
 É necessário um certificado de cliente para a autenticação. Após a gerar o certificado de cliente, exporte-o. O certificado de cliente que exportar será instalado posteriormente em cada computador cliente.
 
 1. Para exportar um certificado de cliente, pode utilizar *certmgr.msc*. Clique com o botão direito do rato no certificado de cliente que pretende exportar, clique em **todas as tarefas** e, em seguida, em **exportar**.
 2. Exporte o certificado de cliente com a chave privada. Este é um ficheiro *.pfx*. Certifique-se de que regista ou memoriza a palavra-passe (chave) que define para este certificado.
 
-### <a name="a-nameuploadastep-4---upload-the-root-certificate-cer-file"></a><a name="upload"></a>Passo 4: Carregar o ficheiro .cer do certificado de raiz
+### <a name="upload"></a>Passo 4: Carregar o ficheiro .cer do certificado de raiz
 Declare a variável para o nome de certificado, ao substituir o valor pelo seu próprio:
 
         $P2SRootCertName = "Mycertificatename.cer"
@@ -169,7 +176,7 @@ Substitua o caminho do ficheiro pelo seu e, em seguida, execute os cmdlets.
         $CertBase64 = [system.convert]::ToBase64String($cert.RawData)
         $p2srootcert = New-AzureRmVpnClientRootCertificate -Name $P2SRootCertName -PublicCertData $CertBase64
 
-## <a name="a-namecreategatewayapart-4---create-the-vpn-gateway"></a><a name="creategateway"></a>Parte 4 – Criar o gateway de VPN
+## <a name="creategateway"></a>Parte 4 – Criar o gateway de VPN
 Configure e crie o gateway de rede virtual da sua VNet. O *-GatewayType* tem de ser **Vpn** e o *-VpnType* tem de ser **RouteBased**. Esta ação pode demorar até 45 minutos a concluir.
 
         New-AzureRmVirtualNetworkGateway -Name $GWName -ResourceGroupName $RG `
@@ -177,7 +184,7 @@ Configure e crie o gateway de rede virtual da sua VNet. O *-GatewayType* tem de 
         -VpnType RouteBased -EnableBgp $false -GatewaySku Standard `
         -VpnClientAddressPool $VPNClientAddressPool -VpnClientRootCertificates $p2srootcert
 
-## <a name="a-nameclientconfigapart-5---download-the-vpn-client-configuration-package"></a><a name="clientconfig"></a>Parte 5 – Transferir o pacote de configuração do cliente VPN
+## <a name="clientconfig"></a>Parte 5 – Transferir o pacote de configuração do cliente VPN
 Os clientes que se liguem ao Azure com P2S têm de ter um certificado de cliente e um pacote de instalação de cliente de VPN instalados. Os pacotes de configuração do cliente VPN estão disponíveis para clientes Windows.
 
 O pacote de clientes VPN contém informações de configuração para configurar o software de cliente VPN incorporado no Windows. O pacote não instala software adicional. As definições são específicas para a rede virtual à qual se quer ligar. Para consultar a lista de sistemas operativos cliente que são suportados, consulte [Point-to-Site connections FAQ (FAQ das ligações de Ponto a Site)](#faq) no final deste artigo.
@@ -194,13 +201,13 @@ O pacote de clientes VPN contém informações de configuração para configurar
    
     ![cliente de VPN](./media/vpn-gateway-howto-point-to-site-rm-ps/vpn.png)
 
-## <a name="a-nameclientcertificateapart-6---install-the-client-certificate"></a><a name="clientcertificate"></a>Parte 6 – Instalar o certificado de cliente
+## <a name="clientcertificate"></a>Parte 6 – Instalar o certificado de cliente
 Cada computador cliente tem de ter um certificado de cliente para se autenticar. Ao instalar o certificado de cliente, vai precisar da palavra-passe que foi criada quando o certificado de cliente foi exportado.
 
 1. Copie o ficheiro .pfx para o computador cliente.
 2. Faça duplo clique no ficheiro .pfx para o instalar. Não modifique a localização da instalação.
 
-## <a name="a-nameconnectapart-7---connect-to-azure"></a><a name="connect"></a>Parte 7 – Ligar ao Azure
+## <a name="connect"></a>Parte 7 – Ligar ao Azure
 1. Para se ligar à sua VNet, no computador cliente, navegue até às ligações VPN e localize a ligação VPN que criou. Tem o mesmo nome da sua rede virtual. Clique em **Ligar**. Poderá aparecer uma mensagem pop-up que se refere à utilização do certificado. Se isto ocorrer, clique em **Continuar** para utilizar privilégios elevados. 
 2. Na página de estado da **Ligação**, clique em **Ligar** para iniciar a ligação. Se vir um ecrã **Selecionar Certificado**, verifique se o certificado de cliente apresentado é aquele que pretende utilizar para se ligar. Se não for, utilize a seta para baixo para selecionar o certificado correto e clique em **OK**.
    
@@ -214,7 +221,7 @@ Cada computador cliente tem de ter um certificado de cliente para se autenticar.
 >
 >
 
-## <a name="a-nameverifyapart-8---verify-your-connection"></a><a name="verify"></a>Parte 8 – Verificar a ligação
+## <a name="verify"></a>Parte 8 – Verificar a ligação
 1. Para verificar se a ligação VPN está ativa, abra uma linha de comandos elevada e execute *ipconfig/all*.
 2. Veja os resultados. Repare que o endereço IP que recebeu é um dos endereços dentro do Conjunto de Endereços de Cliente de VPN de Ponto a Site que especificou na configuração. Os resultados deverão ser algo semelhante a isto:
    
@@ -229,12 +236,12 @@ Cada computador cliente tem de ter um certificado de cliente para se autenticar.
             Default Gateway.................:
             NetBIOS over Tcpip..............: Enabled
 
-## <a name="a-nameaddremovecertato-add-or-remove-a-trusted-root-certificate"></a><a name="addremovecert"></a>Para adicionar ou remover um certificado de raiz fidedigna
-Os certificados são utilizados para autenticar clientes VPN para as VPNs Ponto a Site. Os seguintes passos orientam-no para adicionar e remover certificados de raiz. Quando adiciona um ficheiro com codificação x.509 Base64 (.cer) ao Azure, está a dizer ao Azure para confiar no certificado de raiz que o ficheiro representa. 
+## <a name="addremovecert"></a>Adicionar ou remover um certificado de raiz fidedigna
 
-Pode adicionar ou remover os certificados de raiz fidedigna com o PowerShell ou através do portal do Azure. Se quiser fazê-lo através do portal do Azure, aceda ao **gateway de rede virtual > definições > Configuração de Ponto a Site > Certificados de raiz**. Os passos abaixo descrevem estas tarefas com o PowerShell. 
+Pode adicionar e remover certificados de raiz fidedigna do Azure. Quando remove um certificado fidedigno, os certificados de cliente que foram gerados a partir do certificado de raiz já não poderão ser ligados ao Azure via Ponto a Site. Se pretender que os clientes estabeleçam ligação, terá de instalar um novo certificado de cliente que seja gerado a partir de um certificado considerado fidedigno no Azure.
 
-### <a name="add-a-trusted-root-certificate"></a>Adicionar um certificado de raiz fidedigna
+
+### <a name="to-add-a-trusted-root-certificate"></a>Para adicionar um certificado de raiz fidedigna
 Pode adicionar até 20 ficheiros .cer de certificado de raiz fidedigna ao Azure. Siga os passos abaixo para adicionar um certificado de raiz.
 
 1. Crie e prepare o novo certificado de raiz que será adicionado ao Azure. Exporte a chave pública como um X.509 codificado em Base64 (.CER). e abra-o num editor de texto. Em seguida, copie apenas a secção mostrada abaixo. 
@@ -255,7 +262,7 @@ Pode adicionar até 20 ficheiros .cer de certificado de raiz fidedigna ao Azure.
 3. Adicione o novo certificado de raiz. Apenas pode adicionar um certificado de cada vez.
    
         Add-AzureRmVpnClientRootCertificate -VpnClientRootCertificateName $P2SRootCertName2 -VirtualNetworkGatewayname "VNet1GW" -ResourceGroupName "TestRG" -PublicCertData $MyP2SCertPubKeyBase64_2
-4. Pode verificar se o novo certificado foi adicionado corretamente ao utilizar o cmdlet seguinte.
+4. Pode verificar se o novo certificado foi adicionado corretamente ao utilizar o seguinte exemplo:
    
         Get-AzureRmVpnClientRootCertificate -ResourceGroupName "TestRG" `
         -VirtualNetworkGatewayName "VNet1GW"
@@ -263,58 +270,67 @@ Pode adicionar até 20 ficheiros .cer de certificado de raiz fidedigna ao Azure.
 ### <a name="to-remove-a-trusted-root-certificate"></a>Para remover um certificado de raiz fidedigna
 Pode remover o certificado de raiz fidedigna do Azure. Quando remove um certificado fidedigno, os certificados de cliente que foram gerados a partir do certificado de raiz já não poderão ser ligados ao Azure via Ponto a Site. Se pretender que os clientes estabeleçam ligação, terá de instalar um novo certificado de cliente que seja gerado a partir de um certificado considerado fidedigno no Azure.
 
-1. Para remover um certificado de raiz fidedigna, modifique o exemplo seguinte:
+1. Declare as variáveis.
    
-    Declare as variáveis.
-   
+        $GWName = "Name_of_virtual_network_gateway"
+        $RG = "Name_of_resource_group"
         $P2SRootCertName2 = "ARMP2SRootCert2.cer"
         $MyP2SCertPubKeyBase64_2 = "MIIC/zCCAeugAwIBAgIQKazxzFjMkp9JRiX+tkTfSzAJBgUrDgMCHQUAMBgxFjAUBgNVBAMTDU15UDJTUm9vdENlcnQwHhcNMTUxMjE5MDI1MTIxWhcNMzkxMjMxMjM1OTU5WjAYMRYwFAYDVQQDEw1NeVAyU1Jvb3RDZXJ0MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAyjIXoWy8xE/GF1OSIvUaA0bxBjZ1PJfcXkMWsHPzvhWc2esOKrVQtgFgDz4ggAnOUFEkFaszjiHdnXv3mjzE2SpmAVIZPf2/yPWqkoHwkmrp6BpOvNVOpKxaGPOuK8+dql1xcL0eCkt69g4lxy0FGRFkBcSIgVTViS9wjuuS7LPo5+OXgyFkAY3pSDiMzQCkRGNFgw5WGMHRDAiruDQF1ciLNojAQCsDdLnI3pDYsvRW73HZEhmOqRRnJQe6VekvBYKLvnKaxUTKhFIYwuymHBB96nMFdRUKCZIiWRIy8Hc8+sQEsAML2EItAjQv4+fqgYiFdSWqnQCPf/7IZbotgQIDAQABo00wSzBJBgNVHQEEQjBAgBAkuVrWvFsCJAdK5pb/eoCNoRowGDEWMBQGA1UEAxMNTXlQMlNSb290Q2VydIIQKazxzFjMkp9JRiX+tkTfSzAJBgUrDgMCHQUAA4IBAQA223veAZEIar9N12ubNH2+HwZASNzDVNqspkPKD97TXfKHlPlIcS43TaYkTz38eVrwI6E0yDk4jAuPaKnPuPYFRj9w540SvY6PdOUwDoEqpIcAVp+b4VYwxPL6oyEQ8wnOYuoAK1hhh20lCbo8h9mMy9ofU+RP6HJ7lTqupLfXdID/XevI8tW6Dm+C/wCeV3EmIlO9KUoblD/e24zlo3YzOtbyXwTIh34T0fO/zQvUuBqZMcIPfM1cDvqcqiEFLWvWKoAnxbzckye2uk1gHO52d8AVL3mGiX8wBJkjc/pMdxrEvvCzJkltBmqxTM6XjDJALuVh16qFlqgTWCIcb7ju"
 2. Remova o certificado.
    
         Remove-AzureRmVpnClientRootCertificate -VpnClientRootCertificateName $P2SRootCertName2 -VirtualNetworkGatewayName $GWName -ResourceGroupName $RG -PublicCertData $MyP2SCertPubKeyBase64_2
-3. Utilize o cmdlet seguinte para verificar se o certificado foi removido com êxito. 
+3. Utilize o exemplo seguinte para verificar se o certificado foi removido com êxito. 
    
         Get-AzureRmVpnClientRootCertificate -ResourceGroupName "TestRG" `
         -VirtualNetworkGatewayName "VNet1GW"
 
-## <a name="a-namerevokeato-manage-the-list-of-revoked-client-certificates"></a><a name="revoke"></a>Para gerir a lista de certificados de cliente revogados
-Pode revogar certificados de cliente. A lista de revogação de certificado permite-lhe negar seletivamente a conectividade de Ponto a Site, com base em certificados de cliente individuais. Se remover um certificado de raiz .cer do Azure, revoga o acesso a todos os certificados de cliente gerados/assinados pelo certificado de raiz revogado. Se pretender revogar um certificado de cliente específico, e não a raiz, pode fazê-lo. Dessa forma, os outros certificados gerados a partir do certificado de raiz continuarão a ser válidos.
+## <a name="revoke"></a>Revogar um certificado de cliente
+Pode revogar certificados de cliente. A lista de revogação de certificado permite-lhe negar seletivamente a conectividade de Ponto a Site, com base em certificados de cliente individuais. Isto é diferente da remoção de um certificado de raiz fidedigna. Se remover um certificado de raiz .cer fidedigno do Azure, revoga o acesso a todos os certificados de cliente gerados/assinados pelo certificado de raiz revogado. Ao revogar um certificado de cliente, em vez do certificado de raiz, permite que os outros certificados que foram gerados a partir do certificado de raiz continuem a ser utilizados para autenticação da ligação Ponto a Site.
 
 A prática comum é utilizar o certificado de raiz para gerir o acesso nos níveis de equipa ou organização e utilizar certificados de cliente revogados para controlo de acesso detalhado dos utilizadores individuais.
 
-### <a name="revoke-a-client-certificate"></a>Revogar um certificado de cliente
-1. Obtenha o thumbprint do certificado de cliente a revogar.
+### <a name="to-revoke-a-client-certificate"></a>Para revogar um certificado de cliente
+
+1. Obtenha o thumbprint do certificado de cliente. Para obter mais informações, veja [Como: Obter o Thumbprint de um Certificado](https://msdn.microsoft.com/library/ms734695.aspx).
+2. Copie as informações para um editor de texto e remova todos os espaços, para que seja uma cadeia contínua. Irá declará-lo como uma variável.
+3. Declare as variáveis. Certifique-se de que declara o thumbprint que obteve no passo anterior.
    
-        $RevokedClientCert1 = "ClientCert1"
-        $RevokedThumbprint1 = "?ef2af033d0686820f5a3c74804d167b88b69982f"
-2. Adicione o thumbprint à lista de thumbprint revogado.
+        $RevokedClientCert1 = "NameofCertificate"
+        $RevokedThumbprint1 = "‎51ab1edd8da4cfed77e20061c5eb6d2ef2f778c7"
+        $GWName = "Name_of_virtual_network_gateway"
+        $RG = "Name_of_resource_group"
+4. Adicione o thumbprint à lista de certificados revogados. irá ver "Êxito" quando o thumbprint for adicionado.
    
         Add-AzureRmVpnClientRevokedCertificate -VpnClientRevokedCertificateName $RevokedClientCert1 `
-        -VirtualNetworkGatewayName $GWName -ResourceGroupName $RG -Thumbprint $RevokedThumbprint1
-3. Certifique-se de que o thumbprint foi adicionado à lista de revogação de certificados. Tem de adicionar um thumbprint de cada vez.
+        -VirtualNetworkGatewayName $GWName -ResourceGroupName $RG `
+        -Thumbprint $RevokedThumbprint1
+5. Certifique-se de que o thumbprint foi adicionado à lista de revogação de certificados.
    
         Get-AzureRmVpnClientRevokedCertificate -VirtualNetworkGatewayName $GWName -ResourceGroupName $RG
+6. Depois de o thumbprint ser adicionado, o certificado já não pode ser utilizado para ligar. Os clientes que tentarem ligar com este certificado irão receber uma mensagem a indicar que o certificado já não é válido.
 
-### <a name="reinstate-a-client-certificate"></a>Restabelecer um certificado de cliente
+### <a name="to-reinstate-a-client-certificate"></a>Para restabelecer um certificado de cliente
 Pode restabelecer um certificado de cliente, removendo o thumbprint da lista de certificados de cliente revogados.
 
-1. Remova o thumbprint da lista de thumbprint de certificado de cliente revogado.
+1. Declare as variáveis. Certifique-se de que declara o thumbprint correto para o certificado que pretende restabelecer.
+ 
+        $RevokedClientCert1 = "NameofCertificate"
+        $RevokedThumbprint1 = "‎51ab1edd8da4cfed77e20061c5eb6d2ef2f778c7"
+        $GWName = "Name_of_virtual_network_gateway"
+        $RG = "Name_of_resource_group"
+
+2. Remova o thumbprint do certificado da lista de revogação de certificados.
    
        Remove-AzureRmVpnClientRevokedCertificate -VpnClientRevokedCertificateName $RevokedClientCert1 `
        -VirtualNetworkGatewayName $GWName -ResourceGroupName $RG -Thumbprint $RevokedThumbprint1
-2. Verifique se o thumbprint é removido da lista revogada.
+3. Verifique se o thumbprint é removido da lista revogada.
    
         Get-AzureRmVpnClientRevokedCertificate -VirtualNetworkGatewayName $GWName -ResourceGroupName $RG
-## <a name="a-namefaqapoint-to-site-faq"></a><a name="faq"></a>FAQ Ponto a Site
+## <a name="faq"></a>FAQ Ponto a Site
 
 [!INCLUDE [Point-to-Site FAQ](../../includes/vpn-gateway-point-to-site-faq-include.md)]
 
 ## <a name="next-steps"></a>Passos seguintes
 Assim que a ligação estiver concluída, pode adicionar máquinas virtuais às redes virtuais. Para obter mais informações, veja [Máquinas Virtuais](https://docs.microsoft.com/azure/#pivot=services&panel=Compute).
-
-
-
-
-<!--HONumber=Feb17_HO3-->
 
 

@@ -16,9 +16,9 @@ ms.topic: hero-article
 ms.date: 12/16/2016
 ms.author: anhoh
 translationtype: Human Translation
-ms.sourcegitcommit: fba82c5c826da7d1912814b61c5065ca7f726011
-ms.openlocfilehash: 1622566c34c1ff9c8e83f0356e04743f8a890e96
-ms.lasthandoff: 02/23/2017
+ms.sourcegitcommit: 72b2d9142479f9ba0380c5bd2dd82734e370dee7
+ms.openlocfilehash: 2ca704e3ef14589b5a0c44c9b6857445e3e62dd7
+ms.lasthandoff: 03/08/2017
 
 
 ---
@@ -26,7 +26,9 @@ ms.lasthandoff: 02/23/2017
 > [!div class="op_single_selector"]
 > * [.NET](documentdb-get-started.md)
 > * [.NET Core](documentdb-dotnetcore-get-started.md)
+> * [Node.js para MongoDB](documentdb-mongodb-samples.md)
 > * [Node.js](documentdb-nodejs-get-started.md)
+> * [Java](documentdb-java-get-started.md)
 > * [C++](documentdb-cpp-get-started.md)
 >  
 > 
@@ -64,7 +66,7 @@ Criemos uma conta DocumentDB. Se já tiver uma conta que pretende utilizar, pode
 
 [!INCLUDE [documentdb-create-dbaccount](../../includes/documentdb-create-dbaccount.md)]
 
-## <a name="a-idsetupvsastep-2-setup-your-visual-studio-solution"></a><a id="SetupVS"></a>Passo 2: Configurar a sua Solução Visual Studio
+## <a id="SetupVS"></a>Passo 2: Configurar a sua Solução Visual Studio
 1. Abra o **Visual Studio 2015** no seu computador.
 2. No menu **Ficheiro**, selecione **Novo**, e, em seguida, escolha **Projeto**.
 3. Na caixa de diálogo **Novo projeto**, selecione **Modelos** / **Visual C#** / **Aplicação de Consola**, atribua um nome ao projeto e, em seguida, clique em **OK**.
@@ -81,7 +83,7 @@ Criemos uma conta DocumentDB. Se já tiver uma conta que pretende utilizar, pode
 
 Ótimo! Agora que concluímos a configuração, comecemos a escrever certos códigos. Pode encontrar um projeto de código completo deste tutorial em [GitHub](https://github.com/Azure-Samples/documentdb-dotnet-getting-started/blob/master/src/Program.cs).
 
-## <a name="a-idconnectastep-3-connect-to-a-documentdb-account"></a><a id="Connect"></a>Passo 3: Ligar a uma conta do DocumentDB
+## <a id="Connect"></a>Passo 3: Ligar a uma conta do DocumentDB
 Primeiro, adicione estas referências ao início da sua aplicação C#, no ficheiro Program.cs:
 
     using System;
@@ -214,7 +216,7 @@ Prima **F5** para executar a sua aplicação.
 
 Parabéns! Criou uma base de dados DocumentDB com êxito.  
 
-## <a name="a-idcreatecollastep-5-create-a-collection"></a><a id="CreateColl"></a>Passo 5: Criar uma coleção
+## <a id="CreateColl"></a>Passo 5: Criar uma coleção
 > [!WARNING]
 > **CreateDocumentCollectionAsync** irá criar uma nova coleção com débito reservado, tendo repercussões sobre os preços. Para obter mais detalhes, visite a nossa [página de preços](https://azure.microsoft.com/pricing/details/documentdb/).
 > 
@@ -271,7 +273,7 @@ Prima **F5** para executar a sua aplicação.
 
 Parabéns! Criou uma coleção de documentos DocumentDB com êxito.  
 
-## <a name="a-idcreatedocastep-6-create-json-documents"></a><a id="CreateDoc"></a>Passo 6: Criar documentos JSON
+## <a id="CreateDoc"></a>Passo 6: Criar documentos JSON
 Pode criar um [documento](documentdb-resources.md#documents) utilizando o método [CreateDocumentAsync](https://msdn.microsoft.com/library/microsoft.azure.documents.client.documentclient.createdocumentasync.aspx) da classe **DocumentClient**. Os documentos são conteúdos (arbitrários) JSON definidos pelo utilizador. Podemos agora inserir um ou mais documentos. Se já tiver dados que pretende armazenar na sua base de dados, pode utilizar a [ferramenta de Migração de Dados](documentdb-import-data.md) do DocumentDB, para importar os dados para uma base de dados.
 
 Em primeiro lugar, temos de criar uma classe **Família** que irá representar objetos armazenados no DocumentDB neste exemplo. Também iremos criar subclasses **Principal**, **Subordinado**, **Animal de estimação** e **Endereço** utilizadas dentro da **Família**. Tenha em atenção que os documentos têm de ter um **Id** propriedade serializado como **id** no JSON. Crie estas classes ao adicionar as seguintes subclasses internas a seguir ao método **GetStartedDemo**.
@@ -432,7 +434,7 @@ Parabéns! Criou dois documentos DocumentDB com êxito.
 
 ![Diagrama que ilustra a relação hierárquica entre a conta, a base de dados online, a coleção e os documentos utilizados pelo tutorial NoSQL na criação da aplicação de consola C#](./media/documentdb-get-started/nosql-tutorial-account-database.png)
 
-## <a name="a-idqueryastep-7-query-documentdb-resources"></a><a id="Query"></a>Passo 7: Consultar os recursos do DocumentDB
+## <a id="Query"></a>Passo 7: Consultar os recursos do DocumentDB
 O DocumentDB suporta [consultas](documentdb-sql-query.md) extensas contra documentos JSON armazenados em cada coleção.  O seguinte código de exemplo mostra várias consultas - utilizando ambas as sintaxes DocumentDB SQ e LINQ - que podemos procurar nos documentos que inserimos no passo anterior.
 
 Copie e cole o método **ExecuteSimpleQuery** após o seu método **CreateFamilyDocumentIfNotExists**.
@@ -490,7 +492,7 @@ O seguinte diagrama ilustra como a sintaxe de consulta do DocumentDB SQL é cham
 
 A palavra-chave [FROM](documentdb-sql-query.md#FromClause) é opcional na consulta porque as consultas do DocumentDB já estão confinadas a uma única coleção. Por conseguinte, "FROM Families f" pode ser trocada por "FROM root r" ou qualquer outra variável de nome escolher. Por predefinição, o DocumentDB irá inferir essas Famílias, raiz ou o nome da variável que escolheu, referenciar a atual coleção.
 
-## <a name="a-idreplacedocumentastep-8-replace-json-document"></a><a id="ReplaceDocument"></a>Passo 8: Substituir um documento JSON
+## <a id="ReplaceDocument"></a>Passo 8: Substituir um documento JSON
 O DocumentDB suporta a substituição de documentos JSON.  
 
 Copie e cole o método **ReplaceFamilyDocument** após o seu método **ExecuteSimpleQuery**.
@@ -527,7 +529,7 @@ Prima **F5** para executar a sua aplicação.
 
 Parabéns! Substituiu um documento do DocumentDB com êxito.
 
-## <a name="a-iddeletedocumentastep-9-delete-json-document"></a><a id="DeleteDocument"></a>Passo 9: Eliminar um documento JSON
+## <a id="DeleteDocument"></a>Passo 9: Eliminar um documento JSON
 O DocumentDB suporta a eliminação de documentos JSON.  
 
 Copie e cole o método **DeleteFamilyDocument** após o seu método **ReplaceFamilyDocument**.
@@ -559,7 +561,7 @@ Prima **F5** para executar a sua aplicação.
 
 Parabéns! Eliminou um documento do DocumentDB com êxito.
 
-## <a name="a-iddeletedatabaseastep-10-delete-the-database"></a><a id="DeleteDatabase"></a>Passo 10: Eliminar a base de dados
+## <a id="DeleteDatabase"></a>Passo 10: Eliminar a base de dados
 Eliminar a base de dados criada irá remover a base de dados e todos os recursos subordinados (coleções, documentos, etc.).
 
 Copie e cole o seguinte código no seu método **GetStartedDemo**, após o documento a eliminar para eliminar a base de dados e todos os recursos subordinados.
@@ -576,7 +578,7 @@ Prima **F5** para executar a sua aplicação.
 
 Parabéns! Eliminou uma base de dados DocumentDB com êxito.
 
-## <a name="a-idrunastep-11-run-your-c-console-application-all-together"></a><a id="Run"></a>Passo 11: Executar a sua aplicação de consola C# em conjunto!
+## <a id="Run"></a>Passo 11: Executar a sua aplicação de consola C# em conjunto!
 Prima F5 no Visual Studio para criar a aplicação no modo de depuração.
 
 Deverá ver o resultado da sua aplicação Introdução. O resultado apresentará os resultados das consultas que adicionámos e deverá corresponder ao texto de exemplo abaixo.
@@ -604,7 +606,7 @@ Deverá ver o resultado da sua aplicação Introdução. O resultado apresentar�
 
 Parabéns! Concluiu este tutorial NoSQL e a sua aplicação de consola C# está a funcionar!
 
-## <a name="a-idgetsolutiona-get-the-complete-nosql-tutorial-solution"></a><a id="GetSolution"></a>Obter a solução completa do tutorial NoSQL
+## <a id="GetSolution"></a>Obter a solução completa do tutorial NoSQL
 Se não tiver tempo de completar os passos deste tutorial, ou apenas pretender transferir os exemplos de código, pode obtê-los a partir do [Github](https://github.com/Azure-Samples/documentdb-dotnet-getting-started). 
 
 Para criar a solução GetStarted, irá precisar do seguinte:

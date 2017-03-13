@@ -12,11 +12,12 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 02/13/2017
+ms.date: 03/03/2017
 ms.author: curtand
 translationtype: Human Translation
-ms.sourcegitcommit: e4896c1a3adf76477899336f1ff1ee215cc7c9aa
-ms.openlocfilehash: 6a20f75dbb2c914b1239adb5ba10189a7193584c
+ms.sourcegitcommit: 7c28fda22a08ea40b15cf69351e1b0aff6bd0a95
+ms.openlocfilehash: 1ec1a20dec318153923afd6a0875545d1e102f29
+ms.lasthandoff: 03/07/2017
 
 
 ---
@@ -133,6 +134,10 @@ Se a sua preferência de idioma é alemão, verá o Logótipo de Faixa predefini
 
 Embora possa tecnicamente configurar um conjunto diferente para cada idioma suportado pelo Azure AD, recomendamos que mantenha o número de variações baixo, por motivos de manutenção e desempenho.
 
+> [!IMPORTANT]
+> O Yammer só mostra a página de início de sessão com a marca corporativa do Azure AD depois de o utilizador iniciar sessão. O utilizador verá primeiro a página genérica de início de sessão do Office 365 e verá depois a página com a marca corporativa.   
+ 
+ 
 **Para adicionar a imagem corporativa da sua empresa ao seu diretório, execute os seguintes passos:**
 
 1. Inicie sessão no [Portal Clássico do Azure](https://manage.windowsazure.com) como administrador global do diretório que pretende personalizar.
@@ -148,7 +153,7 @@ Pode demorar até uma hora para que apareça a nova alteração que efetuou na i
 
 1. Inicie sessão no [Portal Clássico do Azure](https://manage.windowsazure.com) como administrador global do diretório que pretende personalizar.
 2. Selecione o diretório que pretende personalizar.
-3. Na barra de ferramentas no canto superior, clique em **Configurar**.
+fs3. Na barra de ferramentas no canto superior, clique em **Configurar**.
 4. Clique em **Personalizar a Imagem Corporativa**.
 5. Clique em **Adicionar imagem corporativa para um idioma específico**.
 6. Selecione o idioma para que pretende personalizar o logótipo e clique em **Seguinte**.
@@ -221,9 +226,4 @@ Alguns elementos personalizáveis no Azure AD tem vários casos de utilização.
 [7]: ./media/active-directory-add-company-branding/SignInPage_aftercustomization_croppedtop.png
 [8]: ./media/active-directory-add-company-branding/APBranding.png
 [9]: ./media/active-directory-add-company-branding/hidekmsi.png
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 

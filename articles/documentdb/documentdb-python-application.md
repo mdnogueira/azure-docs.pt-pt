@@ -1,7 +1,7 @@
 ---
-title: "Desenvolvimento da aplicação Web Python com o DocumentDB | Microsoft Docs"
+title: "Tutorial de aplicação Web Python Flask para o Azure DocumentDB | Microsoft Docs"
 description: "Reveja um tutorial de base de dados sobre a utilização do DocumentDB para armazenar e aceder a dados a partir de uma aplicação Web Python Flask alojada no Azure. Encontre soluções de desenvolvimento de aplicações."
-keywords: "Desenvolvimento de aplicações, tutorial sobre bases de dados, python flask, aplicação web python, desenvolvimento web do python, documentdb, azure, Microsoft azure"
+keywords: "Desenvolvimento de aplicações, python flask, aplicação Web python, desenvolvimento Web python"
 services: documentdb
 documentationcenter: python
 author: syamkmsft
@@ -15,15 +15,18 @@ ms.devlang: python
 ms.topic: hero-article
 ms.date: 11/16/2016
 ms.author: syamk
+ms.custom: H1Hack27Feb2017
 translationtype: Human Translation
-ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
-ms.openlocfilehash: 8dc246755c90686f890d2ac9df05b3a8b2a9341f
+ms.sourcegitcommit: 72b2d9142479f9ba0380c5bd2dd82734e370dee7
+ms.openlocfilehash: 4f05075efea0f0fd8ca4424f771d3991a65c6d67
+ms.lasthandoff: 03/08/2017
 
 
 ---
-# <a name="python-flask-web-application-development-with-documentdb"></a>Desenvolvimento da aplicação Web Python com o DocumentDB
+# <a name="build-a-python-flask-web-application-using-documentdb"></a>Criar uma aplicação Web Python Flask com o DocumentDB
 > [!div class="op_single_selector"]
 > * [.NET](documentdb-dotnet-application.md)
+> * [.NET para MongoDB](documentdb-mongodb-application.md)
 > * [Node.js](documentdb-nodejs-application.md)
 > * [Java](documentdb-java-application.md)
 > * [Python](documentdb-python-application.md)
@@ -410,9 +413,4 @@ Para tutoriais adicionais do Python Flask, consulte o artigo [Mega Tutorial Flas
 [3]: https://www.microsoft.com/download/details.aspx?id=44266
 [Microsoft Web Platform Installer]: http://www.microsoft.com/web/downloads/platform.aspx
 [Azure portal]: http://portal.azure.com
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

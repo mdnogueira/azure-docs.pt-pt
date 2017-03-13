@@ -14,11 +14,12 @@ ms.devlang: multiple
 ms.topic: get-started-article
 ms.tgt_pltfrm: multiple
 ms.workload: na
-ms.date: 01/23/2017
-ms.author: rachelap@microsoft.com
+ms.date: 03/01/2017
+ms.author: rachelap; glenga
 translationtype: Human Translation
-ms.sourcegitcommit: a8f6d111a010666bf4aaaf05e061381cc8fffed0
-ms.openlocfilehash: 634781189459f26e2ffa42b25a2ffb229d3371d4
+ms.sourcegitcommit: d9dad6cff80c1f6ac206e7fa3184ce037900fc6b
+ms.openlocfilehash: 4bea7f73871f8bfc755f30b9ef41a1960893152e
+ms.lasthandoff: 03/06/2017
 
 
 ---
@@ -125,7 +126,7 @@ Agora que tem mensagens que estão a ser adicionadas à fila, pode criar outra f
 
     ![Adicionar um enlace a uma tabela de Armazenamento do Azure](./media/functions-create-an-azure-connected-function/functionsbindingsdemo2-integrate-tab.png) 
 
-2. Introduza `TableItem` para **Nome da tabela** e `functionbindings` para **Nome do parâmetro de tabela**, escolha um **Ligação da conta de armazenamento** ou crie uma nova e, em seguida, clique em **Guardar**.
+2. Introduza `functionbindings` para **Nome da tabela** e `myTable` para **Nome do parâmetro de tabela**, escolha um **Ligação da conta de armazenamento** ou crie uma nova e, em seguida, clique em **Guardar**.
 
     ![Configurar o enlace da tabela de Armazenamento](./media/functions-create-an-azure-connected-function/functionsbindingsdemo2-integrate-tab2.png)
    
@@ -180,7 +181,7 @@ Agora que tem mensagens que estão a ser adicionadas à fila, pode criar outra f
 [!INCLUDE [More binding information](../../includes/functions-bindings-next-steps.md)]
 
 ## <a name="next-steps"></a>Passos seguintes
-Veja os seguintes tópicos para obter mais informações sobre o Funções do Azure.
+Para obter mais informações sobre Funções do Azure, veja os seguintes tópicos:
 
 * [Referência para programadores das Funções do Azure](functions-reference.md)  
   Referência para programadores para codificar funções e definir acionadores e enlaces.
@@ -190,10 +191,5 @@ Veja os seguintes tópicos para obter mais informações sobre o Funções do Az
   Aborda os planos de serviço disponíveis com as Funções do Azure, incluindo o plano de alojamento de Consumo e como escolher o plano adequado. 
 
 [!INCLUDE [Getting help note](../../includes/functions-get-help.md)]
-
-
-
-
-<!--HONumber=Feb17_HO1-->
 
 

@@ -1,6 +1,6 @@
 ---
 title: Implementar um cluster de contentor Docker no Azure CLI | Microsoft Docs
-description: Implementar um cluster do Azure Container Service com a CLI do Azure 2.0
+description: "Implementar uma solução Kubernetes, DC/OS ou Docker Swarm no Azure Container Service através da CLI 2.0 do Azure"
 services: container-service
 documentationcenter: 
 author: sauryadas
@@ -14,15 +14,17 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 02/03/2017
+ms.date: 03/01/2017
 ms.author: saudas
+ms.custom: H1Hack27Feb2017
 translationtype: Human Translation
-ms.sourcegitcommit: 2a381431acb6436ddd8e13c69b05423a33cd4fa6
-ms.openlocfilehash: 792150afa1c4f91c4bf6175037c7708d8f7bfabe
+ms.sourcegitcommit: 2464901d22bb91cbf396ef60f4bda6d979b578b7
+ms.openlocfilehash: a0cbf24c2e2f1e6f3a1d2097e6146c09b4eee4fe
+ms.lasthandoff: 03/02/2017
 
 
 ---
-# <a name="use-the-azure-cli-20-to-create-an-azure-container-service-cluster"></a>Utilize a CLI do Azure 2.0 para criar um cluster do Azure Container Service
+# <a name="deploy-a-docker-container-hosting-solution-using-the-azure-cli-20"></a>Implementar uma solução de alojamento de contentor Docker com a CLI 2.0 do Azure
 
 Utilize os comandos `az acs` na CLI do Azure 2.0, para criar e gerir clusters no Azure Container Service. Também pode implementar um cluster do Azure Container Service com o [portal do Azure](container-service-deployment.md) ou as APIs do Azure Container Service.
 
@@ -143,8 +145,3 @@ Agora que tem um cluster a funcionar, veja estes documentos para obter os detalh
 * [Trabalhar com o Azure Container Service e o DC/OS](container-service-mesos-marathon-rest.md)
 * [Trabalhar com o Azure Container Service e o Docker Swarm](container-service-docker-swarm.md)
 * [Trabalhar com o Azure Container Service e o Kubernetes](container-service-kubernetes-walkthrough.md)
-
-
-<!--HONumber=Feb17_HO4-->
-
-

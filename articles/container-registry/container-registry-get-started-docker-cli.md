@@ -1,6 +1,6 @@
 ---
-title: Imagens do Docker no registo de contentores do Azure | Microsoft Docs
-description: Enviar e enviar imagens do Docker para um registo de contentores do Azure com a CLI do Docker
+title: Enviar imagem do Docker para registo privado do Azure | Microsoft Docs
+description: Enviar e extrair imagens do Docker para um registo privado de contentor do Azure com a CLI do Docker
 services: container-registry
 documentationcenter: 
 author: stevelas
@@ -16,15 +16,17 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/14/2016
 ms.author: stevelas
+ms.custom: H1Hack27Feb2017
 translationtype: Human Translation
-ms.sourcegitcommit: 2a381431acb6436ddd8e13c69b05423a33cd4fa6
-ms.openlocfilehash: 1e70f41dd15b0243fb8edd137710ac555821434e
+ms.sourcegitcommit: 0433e22dc7722ef9c8edfaf949dbd9a9d8645e67
+ms.openlocfilehash: e778c09991da73cd5064532119d92bff36f0a00e
+ms.lasthandoff: 03/02/2017
 
 ---
-# <a name="push-your-first-image-to-a-container-registry-using-the-docker-cli"></a>Enviar a sua primeira imagem para um registo de contentores com a CLI do Docker
+# <a name="push-your-first-image-to-a-private-docker-container-registry-using-the-docker-cli"></a>Enviar a sua primeira imagem para um registo privado de contentor Docker com a CLI do Docker
 Os registos de contentores do Azure armazenam e gerem imagens de contentores do [Docker](http://hub.docker.com) privadas, de forma semelhante a como o [Docker Hub](https://hub.docker.com/) armazena imagens do Docker públicas. Utilize a [Interface de Linha de Comandos do Docker](https://docs.docker.com/engine/reference/commandline/cli/) (CLI do Docker) para [iniciar sessão](https://docs.docker.com/engine/reference/commandline/login/), [enviar](https://docs.docker.com/engine/reference/commandline/push/), [receber](https://docs.docker.com/engine/reference/commandline/pull/) e fazer outras operações no registo de contentores. 
 
-Para obter mais informações e conceitos, veja [What is Azure Container Registry? (O que é o Registo de Contentores do Azure?)](container-registry-intro.md)
+Para mais explicações e conceitos, veja [a descrição geral](container-registry-intro.md)
 
 
 > [!NOTE]
@@ -114,10 +116,5 @@ docker rmi myregistry-contoso.azurecr.io/samples/nginx
 Agora que sabe as noções básicas, está pronto para começar a utilizar o seu registo! Por exemplo, comece a implementar imagens do contentor num cluster do [Azure Container Service](https://azure.microsoft.com/documentation/services/container-service/).
 
 
-
-
-
-
-<!--HONumber=Feb17_HO4-->
 
 

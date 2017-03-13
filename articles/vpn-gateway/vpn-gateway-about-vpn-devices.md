@@ -13,35 +13,39 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 12/12/2016
+ms.date: 03/03/2017
 ms.author: yushwang;cherylmc
 translationtype: Human Translation
-ms.sourcegitcommit: ba659fe42fa2264708833f5674711334845defcc
-ms.openlocfilehash: 283e71f03f3907fd1e72283059ba7acbdac054d4
+ms.sourcegitcommit: 2f03ba60d81e97c7da9a9fe61ecd419096248763
+ms.openlocfilehash: bea87fce9f1b1587af5a3e0d827a75e93d7bf534
+ms.lasthandoff: 03/04/2017
 
 
 ---
 # <a name="about-vpn-devices-for-site-to-site-vpn-gateway-connections"></a>Acerca dos dispositivos de VPN para ligações de Gateway de Rede de VPNs
 Precisa de um dispositivo VPN para configurar uma ligação de rede de VPNs (S2S) entre locais através de um gateway de VPN. As ligações Site a Site podem ser utilizadas para criar uma solução híbrida ou sempre que pretender uma ligação segura entre a rede no local e a rede virtual. Este artigo aborda os dispositivos VPN compatíveis e os parâmetros de configuração.
 
-> [!NOTE]
-> Ao configurar uma ligação Site a Site, é preciso um endereço IP IPv4 destinado ao público para o dispositivo VPN.                                                                                                                                                                               
->
->
-
-Se o dispositivo não aparecer na tabela de [Dispositivos VPN Validados](#devicetable), veja a secção [Dispositivos VPN Não Validados](#additionaldevices) deste artigo. É possível que o seu dispositivo funcione com o Azure. Para obter suporte para dispositivos VPN, contacte o fabricante do dispositivo.
 
 > [!IMPORTANT]
-> Consulte [Problemas de Compatibilidade de Dispositivos Conhecidos](#known) se ocorrerem problemas de conetividade entre os dispositivos VPN no local e gateways de VPN do Azure.
+> Se ocorrerem problemas de conectividade entre os dispositivos VPN no local e gateways de VPN do Azure, consulte [Problemas de compatibilidade de dispositivos conhecidos](#known).
+> 
+> 
 
-**Itens a ter em atenção quando visualizar as tabelas:**
+
+###<a name="items-to-note-when-viewing-the-tables"></a>Itens a ter em atenção quando visualizar as tabelas:
 
 * A terminologia para o encaminhamento estático e dinâmico foi alterada. Encontrará provavelmente os dois termos. Não há nenhuma alteração de funcionalidade, só os nomes estão a mudar.
   * Encaminhamento Estático = PolicyBased
   * Encaminhamento Dinâmico = RouteBased
 * As especificações para o gateway de VPN de Elevado Desempenho e para o gateway de VPN RouteBased são as mesmas, salvo indicação em contrário. Por exemplo, os dispositivos VPN validados compatíveis com os gateways de VPN RouteBased também são compatíveis com o gateway de VPN de Elevado Desempenho do Azure.
 
-## <a name="a-namedevicetableavalidated-vpn-devices"></a><a name="devicetable"></a>Dispositivos VPN validados
+> [!NOTE]
+> Ao configurar uma ligação Site a Site, é preciso um endereço IP IPv4 destinado ao público para o dispositivo VPN.                                                                                                                                                                               
+>
+>
+
+
+## <a name="devicetable"></a>Dispositivos VPN validados
 Validámos uma série de dispositivos VPN padrão em parceria com os fornecedores dos dispositivos. Todos os dispositivos nas famílias de dispositivos contidas na lista seguinte deverão funcionar com gateways de VPN do Azure. Veja o artigo [Acerca do VPN Gateway](vpn-gateway-about-vpngateways.md) para verificar o tipo de gateway que tem de criar para a solução que pretende configurar.
 
 Para obter ajuda na configuração do seu dispositivo VPN, veja as ligações que correspondem à família de dispositivos adequada. Para obter suporte para dispositivos VPN, contacte o fabricante do dispositivo.
@@ -73,13 +77,13 @@ Para obter ajuda na configuração do seu dispositivo VPN, veja as ligações qu
 
 (*) Os routers da série ISR 7200 só suportam VPNs PolicyBased.
 
-## <a name="a-nameadditionaldevicesanon-validated-vpn-devices"></a><a name="additionaldevices"></a>Dispositivos VPN não validados
-Se não vir o seu dispositivo listado na tabela de Dispositivos VPN Validados, poderá, mesmo assim, funcionar com uma ligação Site a Site. Verifique se o seu dispositivo VPN cumpre os requisitos mínimos descritos na secção Requisitos de Gateway do artigo [Acerca dos Gateways de VPN](vpn-gateway-about-vpngateways.md). Os dispositivos que cumprem os requisitos mínimos devem também funcionar bem com os gateways de VPN. Contacte o fabricante do dispositivo para obter instruções adicionais de suporte e de configuração.
+## <a name="additionaldevices"></a>Dispositivos VPN não validados
+Se não vir o seu dispositivo listado na tabela de Dispositivos VPN Validados, o seu dispositivo poderá, mesmo assim, funcionar com uma ligação Site a Site. Contacte o fabricante do dispositivo para obter instruções adicionais de suporte e de configuração.
 
-## <a name="editing-device-configuration-samples"></a>Editar os exemplos de configuração do dispositivo
+## <a name="editing"></a>Editar os exemplos de configuração do dispositivo
 Depois de transferir o exemplo de configuração do dispositivo VPN fornecido, terá de substituir alguns dos valores para que reflitam as definições do seu ambiente.
 
-**Para editar um exemplo:**
+###<a name="to-edit-a-sample"></a>Para editar um exemplo:
 
 1. Abra o exemplo com o Bloco de Notas.
 2. Procure e substitua todas as cadeias <*texto*> pelos valores que dizem respeito ao seu ambiente. Não se esqueça de incluir < e >. O nome especificado deve ser exclusivo. Se um comando não funcionar, consulte a documentação do fabricante do dispositivo.
@@ -98,7 +102,7 @@ Depois de transferir o exemplo de configuração do dispositivo VPN fornecido, t
 | &lt;SP_AzureGatewayIpAddress&gt; |Esta informação é específica da sua rede virtual e encontra-se no Portal de Gestão como **Endereço IP do Gateway**. |
 | &lt;SP_PresharedKey&gt; |Esta informação é específicas da sua rede virtual e encontra-se no Portal de Gestão como Gerir Chave. |
 
-## <a name="ipsec-parameters"></a>Parâmetros IPsec
+## <a name="IPSec"></a>Parâmetros IPsec
 > [!NOTE]
 > Apesar de os valores apresentados na tabela seguinte serem suportados pelo VPN Gateway do Azure, não há atualmente um modo de especificar ou de selecionar uma combinação específica no VPN Gateway do Azure. Tem de especificar as eventuais restrições no dispositivo VPN no local. Além disso, tem de fixar MSS em 1350.
 >
@@ -121,7 +125,7 @@ Depois de transferir o exemplo de configuração do dispositivo VPN fornecido, t
 | Algoritmo Hash |SHA1(SHA128), SHA2(SHA256) |SHA1(SHA128), SHA2(SHA256) |
 | Duração (Tempo) da Associação de Segurança (SA) da Fase 2 |3600 segundos |3600 segundos |
 | Duração (Débito) da Associação de Segurança (SA) da Fase 2 |102 400 000 KB |- |
-| Ofertas de Encriptação e de Autenticação de SA de IPsec (por ordem de preferência) |1. ESP-AES256 2. ESP-AES128 3. ESP-3DES 4. N/D |Veja *Ofertas de Associação de Segurança (SA) de IPsec do Gateway RouteBased* (abaixo) |
+| Ofertas de Encriptação e de Autenticação de SA de IPsec (por ordem de preferência) |1. ESP-AES256 2. ESP-AES128 3. ESP-3DES 4. N/D |Veja “Ofertas de Associação de Segurança (SA) de IPsec do Gateway RouteBased” (abaixo) |
 | Perfect Forward Secrecy (PFS) |Não |Não (*) |
 | Deteção de Elemento Inutilizado |Não suportado |Suportado |
 
@@ -154,21 +158,16 @@ A tabela seguinte apresenta uma lista de Ofertas de Encriptação e Autenticaç�
 * Pode especificar a encriptação IPsec ESP NULL com gateways de VPN de Elevado Desempenho e RouteBased. A encriptação baseada em Nulo não proporciona proteção aos dados em trânsito e só deve ser utilizada quando é preciso ter débito máximo e latência mínima.  Os clientes podem optar por utilizar esta opção em cenários de comunicação de VNet a VNet ou quando a encriptação está a ser aplicada noutro ponto da solução.
 * Para a conectividade em vários locais através da Internet, utilize as predefinições do gateway de VPN do Azure com a encriptação e os algoritmos hash listados nas tabelas acima, para garantir a segurança da sua comunicação crítica.
 
-## <a name="a-nameknownaknown-device-compatibility-issues"></a><a name="known"></a>Problemas de Compatibilidade de Dispositivos Conhecidos
+## <a name="known"></a>Problemas de compatibilidade de dispositivos conhecidos
 
 > [!IMPORTANT]
 > Estes são os problemas de compatibilidade conhecidos entre dispositivos VPN de terceiros e gateways de VPN do Azure. A equipa do Azure está a trabalhar ativamente com os fornecedores para resolver os problemas aqui listados. Assim que os problemas são resolvidos, esta página será atualizada com as informações mais atualizadas. Volte a verificar periodicamente.
 
 ###<a name="feb-16-2017"></a>16 de fevereiro de 2017
 
-**Os dispositivos da Palo Alto Networks com versão anterior à 7.1.4** para VPN baseado em rota do Azure: se estiver a utilizar dispositivos da Palo Alto Networks com versão do SO PAN anterior à 7.1.4 e ocorrerem problemas de conectividade para gateways de VPN baseados em rota do Azure, execute os seguintes passos:
+**Dispositivos da Palo Alto Networks com versão anterior à 7.1.4** para VPN baseado em rota do Azure: se estiver a utilizar dispositivos da Palo Alto Networks com versão do SO PAN anterior à 7.1.4 e ocorrerem problemas de conectividade para gateways de VPN baseados em rota do Azure, execute os seguintes passos:
 
-1. Verifique a versão de firmware do seu dispositivo da Palo Alto Networks. Se a sua versão do SO PAN for anterior à 7.1.4, atualize para 7.1.4
-2. No dispositivo da Palo Alto Networks, altere a duração da Fase 2 SA (ou SA de Modo Rápido) para 28,800 segundos (8 horas) quando ligar ao gateway de VPN do Azure
-3. Se ainda ocorrerem problemas de conectividade, abra um pedido de suporte a partir do Portal do Azure 
-
-
-
-<!--HONumber=Feb17_HO3-->
-
+1. Verifique a versão de firmware do seu dispositivo da Palo Alto Networks. Se a sua versão do SO PAN for anterior à 7.1.4, atualize para 7.1.4.
+2. No dispositivo da Palo Alto Networks, altere a duração da Fase 2 SA (ou SA de Modo Rápido) para 28,800 segundos (8 horas) quando ligar ao gateway de VPN do Azure.
+3. Se ainda ocorrerem problemas de conectividade, abra um pedido de suporte a partir do Portal do Azure.
 

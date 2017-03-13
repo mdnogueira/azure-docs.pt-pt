@@ -1,5 +1,5 @@
 ---
-title: Criar registo de contentores privado do Docker no Azure | Microsoft Docs
+title: Criar registos privados de contentores Docker no Azure | Microsoft Docs
 description: "Introdução ao serviço de Registo de Contentores do Azure, que proporciona registos do Docker baseado na cloud, geridos e privados."
 services: container-registry
 documentationcenter: 
@@ -16,12 +16,14 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/14/2016
 ms.author: stevelas
+ms.custom: H1Hack27Feb2017
 translationtype: Human Translation
-ms.sourcegitcommit: f299cff22d00a1c765a32838647818d18f3df85d
-ms.openlocfilehash: 44bfd57feecc45e037717a35b64dd8e4bfb6a1b3
+ms.sourcegitcommit: 0433e22dc7722ef9c8edfaf949dbd9a9d8645e67
+ms.openlocfilehash: 69d1750f13b5507268229b29a392c38662c0f5f0
+ms.lasthandoff: 03/02/2017
 
 ---
-# <a name="what-is-azure-container-registry"></a>O que é o Registo de Contentores do Azure?
+# <a name="introduction-to-private-docker-container-registries"></a>Introdução aos registos privados de contentores Docker
 > [!NOTE]
 > O Registo de Contentores está em pré-visualização atualmente.
 
@@ -68,9 +70,4 @@ Os programadores também podem enviar para um registo de contentores como parte 
 * [Push your first image using the Docker CLI (Enviar a sua primeira imagem com a CLI do Docker)](container-registry-get-started-docker-cli.md)
 * Para criar uma integração contínua e um fluxo de trabalho de implementação através dos Visual Studio Team Services, do Azure Container Service e do Azure Container Registry, veja [este tutorial](../container-service/container-service-setup-ci-cd.md).
 * Se quiser configurar um registo privado do Docker no Azure (sem um ponto final público), veja [Deploying Your Own Private Docker Registry on Azure (Implementar o Seu Primeiro Registo Privado do Docker no Azure)](../virtual-machines/virtual-machines-linux-docker-registry-in-blob-storage.md).
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 
