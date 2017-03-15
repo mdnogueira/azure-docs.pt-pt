@@ -16,8 +16,9 @@ ms.topic: get-started-article
 ms.date: 01/23/2017
 ms.author: garye
 translationtype: Human Translation
-ms.sourcegitcommit: 31157645006b24e9ed6ee9187c355310356615a7
-ms.openlocfilehash: 7d9dbf3af8e7d84d470bf6f42e2d2be01c5cb27d
+ms.sourcegitcommit: 21d2c20a3ac8dc4fee0680028d6c004c80a3ae38
+ms.openlocfilehash: 2835e4e8be2a11b659118f836d53c84a2c021263
+ms.lasthandoff: 03/02/2017
 
 
 ---
@@ -83,7 +84,7 @@ Pode transferir dados para uma experimentação do Machine Learning Studio de tr
 
 Para saber mais sobre os formatos de ficheiro suportados, veja [Import training data into Machine Learning Studio (Importar dados de formação para o Machine Learning Studio)](machine-learning-data-science-import-data.md).
 
-#### <a name="a-idmodulelimitahow-large-can-the-data-set-be-for-my-modules"></a><a id="ModuleLimit"></a>Qual o tamanho máximo do conjunto de dados para os meus módulos?
+#### <a id="ModuleLimit"></a>Qual o tamanho máximo do conjunto de dados para os meus módulos?
 Os módulos no Machine Learning Studio suportam conjuntos de dados até 10 GB de dados numéricos em casos de utilização comum. Se um módulo precisar de mais do que uma entrada, 10 GB é o valor do tamanho total de todas as entradas de dados. Também pode utilizar consultas do Hive ou da Base de Dados SQL do Azure para extrair exemplos de conjuntos de dados maiores ou utilizar o pré-processamento de Aprendizagem por Contagens antes da ingestão.  
 
 Os seguintes tipos de dados podem ser expandidos para conjuntos de dados de maiores dimensões durante a normalização da funcionalidade, estando limitados a menos de 10 GB:
@@ -101,7 +102,7 @@ Os seguintes módulos estão limitados a conjuntos de dados inferiores a 10 GB:
 * Módulos onde o tamanho dos dados de saída pode ser superior ao tamanho dos dados de entrada, tais como Associação ou Hashing de Funcionalidade
 * Validação Cruzada, Hiperparâmetros do Modelo de Otimização, Regressão Ordinal e Multicasse “One-vs-All”, quando o número de iterações é muito grande
 
-#### <a name="a-iduploadlimitawhat-are-the-limits-for-data-upload"></a><a id="UploadLimit"></a>Quais são os limites para o carregamento de dados?
+#### <a id="UploadLimit"></a>Quais são os limites para o carregamento de dados?
 Para conjuntos de dados superiores a alguns GB, carregue os dados para o Armazenamento do Azure ou para a Base de Dados SQL do Azure ou utilize o Azure HDInsight em vez de os carregar diretamente a partir de um ficheiro local.
 
 **Posso ler dados do Amazon S3?**
@@ -429,7 +430,11 @@ Recomendamos que comece com o escalão Standard S1 e que monitorize o seu servi�
 
 **Em que regiões estão disponíveis os novos planos?**
 
-Para obter informações sobre a disponibilidade regional, veja [Produtos disponíveis por região](https://azure.microsoft.com/regions/services/).
+Os novos planos de faturação estão disponíveis nas três regiões de produção nas quais suportamos os novos serviços Web:
+
+* EUA Centro-Sul
+* Europa Ocidental
+* Sudeste Asiático
 
 **Tenho serviços Web em várias regiões. Preciso de um plano para cada região?**
 
@@ -464,7 +469,13 @@ Sim, os Serviços Web Clássicos ainda estão disponíveis no Azure Machine Lear
 ### <a name="azure-machine-learning-free-and-standard-tier"></a>Escalão Gratuito e Standard do Azure Machine Learning
 **O que está incluído no escalão Gratuito do Azure Machine Learning?**
 
-O escalão Gratuito do Azure Machine Learning destina-se a fornecer uma introdução aprofundada ao Azure Machine Learning Studio. Tudo o que precisa é uma conta Microsoft para se inscrever. O escalão Gratuito inclui acesso gratuito a uma área de trabalho do Azure Machine Learning Studio por [conta Microsoft](https://www.microsoft.com/account/default.aspx). Neste escalão, pode utilizar até 10 GB de armazenamento e operacionalizar modelos como APIs de teste. As cargas de trabalho do escalão Gratuito não são abrangidas por um SLA e destinam-se apenas ao desenvolvimento e utilização pessoal. As cargas de trabalho do escalão gratuito não podem aceder a dados ao ligar a um servidor no local que execute o SQL Server.
+O escalão Gratuito do Azure Machine Learning destina-se a fornecer uma introdução aprofundada ao Azure Machine Learning Studio. Tudo o que precisa é uma conta Microsoft para se inscrever. O escalão Gratuito inclui acesso gratuito a uma área de trabalho do Azure Machine Learning Studio por [conta Microsoft](https://www.microsoft.com/account/default.aspx). Neste escalão, pode utilizar até 10 GB de armazenamento e operacionalizar modelos como APIs de teste. As cargas de trabalho do escalão Gratuito não são abrangidas por um SLA e destinam-se apenas ao desenvolvimento e utilização pessoal. 
+
+As áreas de trabalho do escalão gratuito têm as seguintes limitações:
+
+* As cargas de trabalho não podem aceder a dados ao ligar a um servidor no local que execute o SQL Server.
+* Não é possível implementar novos serviços Web base do Resource Manager.
+
 
 **O que está incluído no escalão e planos Standard do Azure Machine Learning?**
 
@@ -546,9 +557,4 @@ O acesso de Convidado é uma experiência de avaliação limitada. Pode criar e 
 [split]: https://msdn.microsoft.com/library/azure/70530644-c97a-4ab6-85f7-88bf30a8be5f/
 [python]: https://msdn.microsoft.com/library/azure/CDB56F95-7F4C-404D-BDE7-5BB972E6F232
 [counts]: https://msdn.microsoft.com/library/azure/dn913056.aspx
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 

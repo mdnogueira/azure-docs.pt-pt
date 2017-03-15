@@ -15,9 +15,9 @@ ms.topic: hero-article
 ms.date: 01/10/2017
 ms.author: juliako
 translationtype: Human Translation
-ms.sourcegitcommit: e126076717eac275914cb438ffe14667aad6f7c8
-ms.openlocfilehash: 34b166d63e539883a110dc96f7333a2379bc4963
-ms.lasthandoff: 01/13/2017
+ms.sourcegitcommit: 1e6ae31b3ef2d9baf578b199233e61936aa3528e
+ms.openlocfilehash: 124eff2edccb6b4ad56ee39a2b37e892ef8c6cb4
+ms.lasthandoff: 03/03/2017
 
 
 ---
@@ -33,8 +33,8 @@ O seguinte é necessário para concluir o tutorial:
 
 * Uma conta do Azure. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/).
 * Uma conta dos Media Services. Para criar uma conta dos Media Services, consulte [Como Criar uma Conta de Media Services](media-services-portal-create-account.md).
-* .NET framework 4.0 ou posterior
-* Visual Studio 2010 SP1 (Professional, Premium, Ultimate ou Express) ou versões posteriores.
+* .NET Framework 4.0 ou posterior.
+* Visual Studio.
 
 Este tutorial inclui as seguintes tarefas:
 
@@ -81,7 +81,7 @@ Para iniciar o ponto final de transmissão em fluxo, faça o seguinte:
 
 ## <a name="create-and-configure-a-visual-studio-project"></a>Criar e configurar um projeto de Visual Studio
 
-1. Crie uma nova Aplicação de Consola C# no Visual Studio 2013, Visual Studio 2012 ou Visual Studio 2010 SP1. Introduza o **Nome**, **Localização** e **Nome da solução** e, em seguida, clique em **OK**.
+1. Crie uma nova Aplicação de Consola C# no Visual Studio. Introduza o **Nome**, **Localização** e **Nome da solução** e, em seguida, clique em **OK**.
 2. Utilize o pacote NuGet [windowsazure.mediaservices.extensions](https://www.nuget.org/packages/windowsazure.mediaservices.extensions) para instalar **Extensões do SDK do .NET dos Serviços de Multimédia do Azure**.  As Extensões do SDK do .NET dos Media Services são um conjunto de métodos de extensão e funções de programa auxiliar que irão simplificar o seu código e facilitar o desenvolvimento com os Media Services. Ao instalar este pacote, também é instalado o **SDK do .NET dos Media Services** e são adicionadas todas as outras dependências necessárias.
 
     Para adicionar referências com o NuGet, faça o seguinte: no Explorador de Soluções, clique com o botão direito do rato no nome do projeto e selecione **Gerir pacotes NuGet**. Em seguida, procure **windowsazure.mediaservices.extensions** e clique em **Instalar**.
@@ -184,7 +184,7 @@ O método **CreateFromFile** recorre a **AssetCreationOptions** que permite espe
 
 * **Nenhum** - Não é utilizada qualquer encriptação. Este é o valor predefinido. Tenha em atenção que, ao utilizar esta opção, o seu conteúdo não está protegido enquanto estiver em trânsito ou inativo no armazenamento.
   Se planear distribuir um MP4 utilizando uma transferência progressiva, utilize esta opção.
-* **StorageEncrypted** - Utilize esta opção para encriptar o seu conteúdo transparente localmente utilizando a encriptação de 256 bit norma AES (Advanced Encryption Standard), posteriormente, esta carrega-o para o Storage do Azure onde é armazenado encriptados e permanece inativo. Os elementos protegidos com Encriptação do Storage são desencriptados automaticamente e colocados num sistema de ficheiros encriptados antes da codificação, sendo opcionalmente encriptados novamente antes de serem carregados novamente como um novo elemento de saída. O principal caso de utilização da Encriptação do Storage ocorre quando pretende proteger os seus ficheiros de multimédia de entrada de alta qualidade inativos no disco com uma encriptação forte.
+* **StorageEncrypted** - Utilize esta opção para encriptar o seu conteúdo transparente localmente utilizando a encriptação de&256; bit norma AES (Advanced Encryption Standard), posteriormente, esta carrega-o para o Storage do Azure onde é armazenado encriptados e permanece inativo. Os elementos protegidos com Encriptação do Storage são desencriptados automaticamente e colocados num sistema de ficheiros encriptados antes da codificação, sendo opcionalmente encriptados novamente antes de serem carregados novamente como um novo elemento de saída. O principal caso de utilização da Encriptação do Storage ocorre quando pretende proteger os seus ficheiros de multimédia de entrada de alta qualidade inativos no disco com uma encriptação forte.
 * **CommonEncryptionProtected** - Utilize esta opção se estiver a carregar conteúdo que já foi encriptado e protegido com Encriptação Comum ou PlayReady DRM (por exemplo, Transmissão em Fluxo Uniforme protegida com PlayReady DRM).
 * **EnvelopeEncryptionProtected** – Utilize esta opção se estiver a carregar HLS encriptado com AES. Tenha em atenção que os ficheiros têm de ser codificados e encriptados pelo Gestor de Transformação.
 
