@@ -41,7 +41,7 @@ Para efeitos deste tutorial, irá implementar um site de blogue do WordPress a p
 O site do WordPress que irá implementar neste tutorial utiliza o MySQL para a base de dados. Se, em alternativa, pretender utilizar a SQL Database para a base de dados, consulte [Projeto Nami], que também está disponível através do Azure Marketplace.
 
 > [!NOTE]
-> Para concluir este tutorial, necessita de uma conta do Microsoft Azure. Se não tiver uma conta, pode [ativar os benefícios de subscritor do Visual Studio][ activate]ou [inscrever-se numa avaliação gratuita][free trial].
+> Para concluir este tutorial, necessita de uma conta do Microsoft Azure. Se não tiver uma conta, pode [ativar os benefícios de subscritor do Visual Studio][activate]ou [inscrever-se numa avaliação gratuita][free trial].
 > 
 > Se pretender começar com o App Service do Azure antes de se inscrever numa conta do Azure, aceda a [Experimentar o App Service]. A partir daí, pode criar imediatamente uma aplicação Web de arranque de curta duração no App Service — sem necessidade de cartões de crédito e sem compromissos.
 > 
