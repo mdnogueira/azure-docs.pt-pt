@@ -39,9 +39,10 @@
 ## [Configurar o BGP para Gateways de VPN do Azure com o PowerShell](vpn-gateway-bgp-resource-manager-ps.md)
 ## [Configurar ligações ativas/ativas de elevada disponibilidade](vpn-gateway-activeactive-rm-powershell.md)
 ## [Modificar as definições do gateway de rede local com o PowerShell](vpn-gateway-modify-local-network-gateway.md)
-## [Verificar uma ligação de gateway](vpn-gateway-verify-connection-resource-manager.md)
-## [Repor um Gateway de VPN do Azure](vpn-gateway-resetgw-classic.md)
-## [Como trabalhar com certificados autoassinados para ligações Ponto a Site](vpn-gateway-certificates-point-to-site.md)
+## [Verificar uma ligação do gateway de VPN](vpn-gateway-verify-connection-resource-manager.md)
+## [Repor um gateway de VPN](vpn-gateway-resetgw-classic.md)
+## [Eliminar um gateway de VPN](vpn-gateway-delete-vnet-gateway-powershell.md)
+## [Criar certificados de raiz autoassinados para ligações P2S](vpn-gateway-certificates-point-to-site.md)
 ## [Configurar um gateway de VPN (clássico)](vpn-gateway-configure-vpn-gateway-mp.md)
 
 # Referência
@@ -64,8 +65,3 @@
 ## [Preços](https://azure.microsoft.com/pricing/details/vpn-gateway)
 ## [SLA](https://azure.microsoft.com/support/legal/sla)
 ## [Vídeos](https://azure.microsoft.com/documentation/videos/index/?services=vpn-gateway)
-
-
-<!--HONumber=Jan17_HO5-->
-
-
