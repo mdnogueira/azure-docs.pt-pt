@@ -64,7 +64,7 @@ Pode processar de forma eficaz cargas de trabalho em grande escala para a sua or
 ### <a name="azure-accounts-youll-need"></a>As contas do Azure de que irá precisar
 Quando desenvolver soluções Batch, irá utilizar as seguintes contas no Microsoft Azure.
 
-* **Conta e subscrição do Azure** - se ainda não tiver uma subscrição do Azure, pode ativar o seu [benefício de subscritor do MSDN][smsdn_benefits] ou inscrever-se numa [conta gratuita do Azure][free_account]. Quando cria uma conta, é criada uma subscrição predefinida para si.
+* **Conta e subscrição do Azure** - se ainda não tiver uma subscrição do Azure, pode ativar o seu [benefício de subscritor do MSDN][msdn_benefits] ou inscrever-se numa [conta gratuita do Azure][free_account]. Quando cria uma conta, é criada uma subscrição predefinida para si.
 * **Conta do Batch** - os recursos do Azure Batch, como conjuntos, nós de computação, trabalhos e tarefas estão associados a uma conta do Azure Batch. Quando a aplicação faz um pedido com o serviço do Batch, autentica o pedido com o nome de conta do Azure Batch, o URL da conta e uma tecla de acesso. Pode [criar uma conta do Batch](batch-account-create-portal.md) no portal do Azure.
 * **Conta de armazenamento** - o Batch inclui suporte incorporado para trabalhar com ficheiros no [Armazenamento do Azure][azure_storage]. Quase todos os cenários do Batch utilizam o Armazenamento de blobs para testar os programas que as tarefas executam e os dados que processam, e para o armazenamento de dados de saída por elas gerados. Para criar uma conta de Armazenamento, veja [Acerca de contas de armazenamento do Azure](../storage/storage-create-storage-account.md).
 

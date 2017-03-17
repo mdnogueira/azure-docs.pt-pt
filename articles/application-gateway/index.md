@@ -13,11 +13,12 @@ ms.topic: landing-page
 ms.date: 01/23/2017
 ms.author: carolz
 translationtype: Human Translation
-ms.sourcegitcommit: 50b30a64fab9a7c996040c5a0380975b11b5966f
-ms.openlocfilehash: 9d62ea6d75b48bbc84194635da792764871617e7
+ms.sourcegitcommit: a087df444c5c88ee1dbcf8eb18abf883549a9024
+ms.openlocfilehash: 535364a9da46b137c4d32e1c3049a5be3496e5d2
+ms.lasthandoff: 03/15/2017
 
 ---
-#<a name="application-gateway-documentation"></a>Documentação do Gateway de Aplicação
+# <a name="application-gateway-documentation"></a>Documentação do Gateway de Aplicação
 
 Saiba como implementar o Gateway de Aplicação um controlador de entrega de aplicações (ADC) como um serviço. Tutoriais, referências de API e outra documentação mostram-lhe como configurar serviços de balanceamento de carga e encaminhamento ao nível da aplicação que lhe permitem criar um front-end Web dimensionável e de elevada disponibilidade.
 
@@ -125,7 +126,7 @@ Saiba como implementar o Gateway de Aplicação um controlador de entrega de apl
                     <div class="cardText">
                         <h3>Linha de Comandos</h3>
                         <p><a href="/powershell/resourcemanager">PowerShell</a></p>
-                        <p><a href="/cli/azure/network/application-gateway">Pré-visualização da CLI 2.0 do Azure</a></p>
+                        <p><a href="/cli/azure/network/application-gateway">CLI 2.0 do Azure</a></p>
                     </div>
                 </div>
             </div>
@@ -162,10 +163,5 @@ Saiba como implementar o Gateway de Aplicação um controlador de entrega de apl
     </li>
 </ul>    
 
-
-
-
-
-<!--HONumber=Feb17_HO2-->
 
 

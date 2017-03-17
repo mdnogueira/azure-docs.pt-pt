@@ -38,7 +38,8 @@
 ### [Mover recursos para um grupo novo ou uma subscrição nova](resource-group-move-resources.md)
 ## Controlar Acesso
 ### [Criar principal de serviço com o PowerShell](resource-group-authenticate-service-principal.md)
-### [Criar principal de serviço com a CLI do Azure](resource-group-authenticate-service-principal-cli.md)
+### [Criar principal de serviço com a CLI 2.0 do Azure](/cli/azure/create-an-azure-service-principal-azure-cli?toc=%2fazure%2fazure-resource-manager%2ftoc.json)
+### [Criar principal de serviço com a CLI 1.0 do Azure](resource-group-authenticate-service-principal-cli.md)
 ### [Criar principal de serviço com o portal](resource-group-create-service-principal-portal.md)
 ### [API de Autenticação para aceder a subscrições](resource-manager-api-authentication.md)
 ### [Bloquear recursos](resource-group-lock-resources.md)
