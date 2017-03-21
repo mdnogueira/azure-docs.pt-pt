@@ -15,8 +15,9 @@ ms.topic: hero-article
 ms.date: 11/16/2016
 ms.author: adegeo
 translationtype: Human Translation
-ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
-ms.openlocfilehash: 02474f8ab77763be1b40da95f5d7cd935ba7f121
+ms.sourcegitcommit: a087df444c5c88ee1dbcf8eb18abf883549a9024
+ms.openlocfilehash: f72a3650de5b1d43c992a801ffce1384774594f2
+ms.lasthandoff: 03/15/2017
 
 
 ---
@@ -54,8 +55,9 @@ As instruções do tutorial funcionam com qualquer um dos seguintes produtos:
 
 * Visual Studio 2013
 * Visual Studio 2015
+* Visual Studio 2017
 
-Se não tiver nenhum destes produtos, o Visual Studio 2015 será instalado automaticamente ao instalar o Azure SDK.
+Se não tiver nenhum destes produtos, o Visual Studio poderá ser instalado automaticamente ao instalar o Azure SDK.
 
 ## <a name="application-architecture"></a>Arquitetura da aplicação
 A aplicação armazena anúncios numa SQL Database, utilizando o Entity Framework Code First para criar as tabelas e aceder aos dados. Para cada anúncio, a base de dados armazena dois URLs, um para a imagem de tamanho completo e outro para a miniatura.
@@ -76,7 +78,7 @@ Quando um utilizador carrega uma imagem, o front-end em execução numa função
 
     Por predefinição, o Visual Studio restaura automaticamente o conteúdo do pacote NuGet, que não estava incluído no ficheiro *.zip*. Se os pacotes não forem restaurados, instale-os manualmente. Para tal, vá para a caixa de diálogo **Gerir Pacotes NuGet da Solução** e clique no botão **Restaurar** na parte superior direita.
 5. No **Explorador de Soluções**, certifique-se de que **ContosoAdsCloudService** é selecionado como o projeto de arranque.
-6. Se estiver a utilizar o Visual Studio 2015, altere a cadeia de ligação do SQL Server no ficheiro *Web.config* da aplicação do projeto ContosoAdsWeb e no ficheiro*ServiceConfiguration.Local.cscfg* do projeto ContosoAdsCloudService. Em cada caso, altere “(localdb)\v11.0” para “(localdb)\MSSQLLocalDB”.
+6. Se estiver a utilizar o Visual Studio 2015 ou superior, altere a cadeia de ligação do SQL Server no ficheiro *Web.config* da aplicação do projeto ContosoAdsWeb e no ficheiro*ServiceConfiguration.Local.cscfg* do projeto ContosoAdsCloudService. Em cada caso, altere “(localdb)\v11.0” para “(localdb)\MSSQLLocalDB”.
 7. Prima CTRL+F5 para executar a aplicação.
 
     Quando executa localmente um projeto do serviço em nuvem, o Visual Studio invoca automaticamente o *emulador de computação* do Azure e o *emulador de armazenamento* do Azure. O emulador de computação utiliza os recursos do computador para simular os ambientes da função da Web e da função de trabalho. O emulador de armazenamento utiliza uma base de dados [SQL Server Express LocalDB](http://msdn.microsoft.com/library/hh510202.aspx) para simular o armazenamento na nuvem do Azure.
@@ -364,7 +366,7 @@ Nesta secção, deverá configurar o Storage do Azure e as cadeias de ligação 
     </connectionStrings>
     ```
 
-    Se estiver a utilizar o Visual Studio 2015, substitua “v11.0” por “MSSQLLocalDB”.
+    Se estiver a utilizar o Visual Studio 2015 ou superior, substitua “v11.0” por “MSSQLLocalDB”.
 2. Guarde as alterações.
 3. No projeto ContosoAdsCloudService, clique com o botão direito do rato em ContosoAdsWeb em **Funções** e, em seguida, clique em **Propriedades**.
 
@@ -381,7 +383,7 @@ Nesta secção, deverá configurar o Storage do Azure e as cadeias de ligação 
 
    * Nome: ContosoAdsDbConnectionString
    * Tipo: Cadeia
-   * Valor: cole a mesma cadeia de ligação utilizada para o projeto da função da Web. (O exemplo seguinte é para o Visual Studio 2013; não se esqueça de alterar a Origem de Dados se copiar este exemplo e estiver a utilizar o Visual Studio 2015.)
+   * Valor: cole a mesma cadeia de ligação utilizada para o projeto da função da Web. (O exemplo seguinte é para o Visual Studio 2013; não se esqueça de alterar a Origem de Dados se copiar este exemplo e estiver a utilizar o Visual Studio 2015 ou superior.)
 
        ```
        Data Source=(localdb)\v11.0; Initial Catalog=ContosoAds; Integrated Security=True; MultipleActiveResultSets=True;
@@ -769,9 +771,4 @@ Para obter mais informações, consulte os seguintes recursos:
 * [Como gerir Serviços Cloud](cloud-services-how-to-manage.md)
 * [Armazenamento do Azure](/documentation/services/storage/)
 * [Como escolher um fornecedor de serviços cloud](https://azure.microsoft.com/overview/choosing-a-cloud-service-provider/)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

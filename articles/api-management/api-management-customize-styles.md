@@ -32,7 +32,7 @@ Existem três formas fundamentais de personalizar o portal do programador na Ges
 
 As cores, tipos de letra, tamanhos, espaços e outros elementos relacionados com o estilo de qualquer página no portal são definidos por regras de estilo. 
 
-A edição das regras de estilo é feita a partir do **Portal do programador** enquanto tem sessão iniciada como administrador. Para aceder a este portal, abra o Portal do Azure e clique em **	Portal do publicador** a partir da barra de ferramentas de serviço da instância da Gestão de API.
+A edição das regras de estilo é feita a partir do **Portal do programador** enquanto tem sessão iniciada como administrador. Para aceder a este portal, abra o Portal do Azure e clique em **Portal do publicador** a partir da barra de ferramentas de serviço da instância da Gestão de API.
 
 ![Portal do publicador][api-management-management-console]
 

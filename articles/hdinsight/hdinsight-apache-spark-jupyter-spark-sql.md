@@ -13,11 +13,12 @@ ms.workload: big-data
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 02/22/2017
+ms.date: 03/13/2017
 ms.author: nitinme
 translationtype: Human Translation
-ms.sourcegitcommit: a3bdeb6fea306babc9358134c37044843b9bdd1c
-ms.openlocfilehash: d8d9c5111a19bb165c25d2796d6b6e933d75042a
+ms.sourcegitcommit: a087df444c5c88ee1dbcf8eb18abf883549a9024
+ms.openlocfilehash: 33256025811f18529c942fa00726b40191127b7a
+ms.lasthandoff: 03/15/2017
 
 
 ---
@@ -27,23 +28,11 @@ Saiba como criar um cluster do [Apache Spark](hdinsight-apache-spark-overview.md
 
    ![Introdução à utilização do Apache Spark no HDInsight](./media/hdinsight-apache-spark-jupyter-spark-sql/hdispark.getstartedflow.png "Introdução à utilização do Apache Spark no HDInsight. Passos ilustrados: criar uma conta de armazenamento; criar um cluster; executar declarações do Spark SQL")
 
-[!INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
-
 ## <a name="prerequisites"></a>Pré-requisitos
 * **Uma subscrição do Azure**. Antes de começar este tutorial, tem de ter uma subscrição do Azure. Veja o artigo [Crie hoje a sua conta do Azure gratuita](https://azure.microsoft.com/free).
 
-* **Um cliente Secure Shell (SSH)**: Os sistemas Linux, Unix e OS X fornecem um cliente SSH através do comando `ssh`. Para os clientes Windows, veja [Utilizar o SSH com Hadoop no HDInsight a partir do Windows com PuTTY](hdinsight-hadoop-linux-use-ssh-windows.md). Para o Linux, Unix ou OS X, veja [Utilizar o SSH com Hadoop no HDInsight a partir do Linux, Unix ou OS X](hdinsight-hadoop-linux-use-ssh-unix.md)
-
-> [!NOTE]
-> Este artigo utiliza um modelo do Azure Resource Manager para criar um cluster do Spark que utiliza os [Azure Storage Blobs como o armazenamento do cluster](hdinsight-hadoop-use-blob-storage.md). Também pode criar um cluster Spark que utiliza [Arquivo azure Data Lake](../data-lake-store/data-lake-store-overview.md) como um armazenamento adicional, além de Blobs de armazenamento do Azure como armazenamento de predefinido. Para obter instruções, consulte [Criar um cluster de HDInsight com o Arquivo Data Lake](../data-lake-store/data-lake-store-hdinsight-hadoop-use-portal.md).
->
->
-
-### <a name="access-control-requirements"></a>Requisitos do controlo de acesso
-[!INCLUDE [access-control](../../includes/hdinsight-access-control-requirements.md)]
-
-## <a name="create-spark-cluster"></a>Criar um cluster do Spark
-Nesta secção, vai criar um cluster do Spark no HDInsight com um [modelo do Azure Resource Manager](https://azure.microsoft.com/resources/templates/101-hdinsight-spark-linux/). Para obter informações sobre as versões do HDInsight e os respetivos SLAs, consulte [Controlo de versões de componentes do HDInsight](hdinsight-component-versioning.md). Para obter outros métodos de criação de clusters, consulte [Criar clusters do HDInsight](hdinsight-hadoop-provision-linux-clusters.md).
+## <a name="create-a-spark-cluster"></a>Criar um cluster do Spark
+Nesta secção, vai criar um cluster do Spark no HDInsight com um [modelo do Azure Resource Manager](https://azure.microsoft.com/resources/templates/101-hdinsight-spark-linux/). Para obter outros métodos de criação de clusters, consulte [Criar clusters do HDInsight](hdinsight-hadoop-provision-linux-clusters.md).
 
 1. Clique na imagem seguinte para abrir o modelo no portal do Azure.         
 
@@ -53,24 +42,32 @@ Nesta secção, vai criar um cluster do Spark no HDInsight com um [modelo do Azu
 
     ![Criar um cluster do Spark no HDInsight com um modelo do Azure Resource Manager](./media/hdinsight-apache-spark-jupyter-spark-sql/create-spark-cluster-in-hdinsight-using-azure-resource-manager-template.png "Criar um cluster do Spark no HDInsight com um modelo do Azure Resource Manager")
 
-   * **Subscrição**: Selecione a sua subscrição do Azure para este cluster.
-   * **Grupo de recursos**: Crie um novo grupo de recursos ou selecione um grupo existente. O grupo de recursos é utilizado para gerir recursos do Azure para os seus projetos.
-   * **Localização**: Selecione uma localização para o grupo de recursos.  Esta localização também é utilizada para o armazenamento de cluster predefinido e o cluster do HDInsight.
-   * **ClusterName**: introduza um nome para o cluster do Hadoop que irá criar.
-   * **Nome e palavra-passe de início de sessão do cluster**: o nome de início de sessão predefinido é admin.
-   * **Nome de utilizador e palavra-passe do SSH**.
+    * **Subscrição**: Selecione a sua subscrição do Azure para este cluster.
+    * **Grupo de recursos**: crie um grupo de recursos ou selecione um grupo existente. O grupo de recursos é utilizado para gerir recursos do Azure para os seus projetos.
+    * **Localização**: Selecione uma localização para o grupo de recursos.  Esta localização também é utilizada para o armazenamento de cluster predefinido e o cluster do HDInsight.
+    * **ClusterName**: introduza um nome para o cluster do Hadoop que quer criar.
+    * **Versão do Spark**: selecione a versão do Spark que quer instalar no cluster.
+    * **Nome e palavra-passe de início de sessão do cluster**: o nome de início de sessão predefinido é admin.
+    * **Nome de utilizador e palavra-passe do SSH**.
 
-   Anote estes valores.  Serão necessários mais tarde no tutorial.
+   Anote estes valores.  Vai precisar deles mais tarde no tutorial.
 
-3. Selecione **Concordo com os termos e condições indicados acima**, selecione **Afixar ao dashboard** e, em seguida, clique em **Comprar**. Verá um novo mosaico intitulado Submeter a implementação para a implementação do Modelo. A criação de um cluster demora cerca de 20 minutos.
+3. Selecione **Concordo com os termos e condições indicados acima**, selecione **Afixar ao dashboard** e, em seguida, clique em **Comprar**. Verá um novo mosaico intitulado Submeter a implementação para a implementação do Modelo. A criação do cluster demora cerca de 20 minutos.
 
-## <a name="run-spark-sql-queries-using-a-jupyter-notebook"></a>Executar consultas do Spark SQL com um bloco de notas do Jupyter
-Nesta secção, utilizará o bloco de notas do Jupyter para executar consultas do Spark SQL face ao cluster do Spark. Os clusters do HDInsight Spark fornecem dois kernels que pode utilizar com o bloco de notas do Jupyter. Nomeadamente:
+> [!NOTE]
+> Este artigo cria um cluster do Spark que utiliza [Blobs de Armazenamento do Azure como armazenamento de cluster](hdinsight-hadoop-use-blob-storage.md). Também pode criar um cluster do Spark que utiliza o [Azure Data Lake Store](../data-lake-store/data-lake-store-overview.md) como armazenamento adicional, além dos Blobs de Armazenamento do Azure como armazenamento predefinido. Para obter instruções, consulte [Criar um cluster de HDInsight com o Arquivo Data Lake](../data-lake-store/data-lake-store-hdinsight-hadoop-use-portal.md).
+>
+>
+
+## <a name="run-a-spark-sql-query"></a>Executar uma consulta SQL do Spark
+
+Nesta secção, utilizará o bloco de notas do Jupyter para executar consultas do Spark SQL face ao cluster do Spark. Os clusters do HDInsight Spark fornecem três kernels que pode utilizar com o bloco de notas do Jupyter. Nomeadamente:
 
 * **PySpark** (para aplicações escritas no Python)
+* **PySpark3** (para aplicações escritas em Python3)
 * **Spark** (para aplicações escritas no Scala)
 
-Neste artigo, utiliza o kernel do PySpark. Para mais informações sobre os dois kernels, consulte [Use Jupyter notebooks kernels with Apache Spark clusters in HDInsight (Utilizar kernels de blocos de notas Jupyter com clusters do Apache Spark no HDInsight)](hdinsight-apache-spark-jupyter-notebook-kernels.md). Algumas das principais vantagens de utilizar o kernel do PySpark são as seguintes:
+Neste artigo, utiliza o kernel do **PySpark**. Para obter mais informações sobre os kernels, veja [Utilizar kernels de blocos de notas do Jupyter com clusters do Apache Spark no HDInsight](hdinsight-apache-spark-jupyter-notebook-kernels.md). Algumas das principais vantagens de utilizar o kernel do PySpark são as seguintes:
 
 * Os contextos do Spark e do Hive são definidos automaticamente.
 * Utilize a magia de células, como `%%sql`, para executar diretamente as consultas de SQL ou Hive, sem quaisquer fragmentos de código anteriores.
@@ -79,11 +76,12 @@ Neste artigo, utiliza o kernel do PySpark. Para mais informações sobre os dois
 ### <a name="create-jupyter-notebook-with-pyspark-kernel"></a>Criar um bloco de notas do Jupyter com o kernel do PySpark
 
 1. Abra o [Portal do Azure](https://portal.azure.com/).
-2. No menu à esquerda, clique em **Grupos de recursos**.
-3. Clique no grupo de recursos que criou na última secção. Pode utilizar a função de pesquisa se existirem demasiados grupos de recursos. Pode ver dois recursos no grupo, o cluster do HDInsight e a conta de armazenamento predefinida.
-4. Clique no cluster para abri-lo.
 
-2. A partir de **Ligações rápidas**, clique em **Dashboards de clusters** e, em seguida, clique em **Bloco de Notas do Jupyter**. Se lhe for solicitado, introduza as credenciais de administrador do cluster.
+2. Se optou por afixar o cluster ao dashboard, clique no mosaico do cluster a partir do dashboard para iniciar o painel do cluster.
+
+    Se não afixou o cluster ao dashboard, no painel da esquerda, clique em **Clusters do HDInsight** e, em seguida, clique no cluster que criou.
+
+3. A partir de **Ligações rápidas**, clique em **Dashboards de clusters** e, em seguida, clique em **Bloco de Notas do Jupyter**. Se lhe for solicitado, introduza as credenciais de administrador do cluster.
 
    ![Dashboards de clusters do HDInsight](./media/hdinsight-apache-spark-jupyter-spark-sql/hdinsight-azure-portal-cluster-dashboards.png "Dashboards de clusters do HDInsight")
 
@@ -93,26 +91,27 @@ Neste artigo, utiliza o kernel do PySpark. Para mais informações sobre os dois
    > `https://CLUSTERNAME.azurehdinsight.net/jupyter`
    >
    >
-3. Crie um novo bloco de notas. Clique em **Novo** e, em seguida, clique em **PySpark**.
+3. Crie um bloco de notas. Clique em **Novo** e, em seguida, clique em **PySpark**.
 
-   ![Criar um novo bloco de notas Jupyter](./media/hdinsight-apache-spark-jupyter-spark-sql/hdispark.note.jupyter.createnotebook.png "Criar um novo bloco de notas Jupyter")
+   ![Criar um bloco de notas do Jupyter](./media/hdinsight-apache-spark-jupyter-spark-sql/hdispark.note.jupyter.createnotebook.png "Criar um bloco de notas do Jupyter")
 
    É criado e aberto um novo bloco de notas com o nome Untitled (Untitled.pynb).
 
 4. Clique no nome do bloco de notas na parte superior e introduza um nome amigável se assim o desejar.
 
     ![Forneça um nome para o bloco de notas](./media/hdinsight-apache-spark-jupyter-spark-sql/hdispark.note.jupyter.notebook.name.png "Forneça um nome para o bloco de notas")
+
 5. Cole o seguinte código numa célula vazia e, em seguida, prima **SHIFT + ENTER** para executar o código. O código importa os tipos necessários para este cenário:
 
         from pyspark.sql.types import *
 
-    Uma vez que criou um bloco de notas com o kernel do PySpark, não é necessário criar quaisquer contextos explicitamente. Os contextos do Spark e do Hive serão criados automaticamente quando executa a primeira célula do código.
+    Uma vez que criou um bloco de notas com o kernel do PySpark, não é necessário criar quaisquer contextos explicitamente. Os contextos do Spark e do Hive são criados automaticamente quando executa a primeira célula do código.
 
     ![Estado de uma tarefa de bloco de notas Jupyter](./media/hdinsight-apache-spark-jupyter-spark-sql/hdispark.jupyter.job.status.png "Estado de uma tarefa de bloco de notas Jupyter")
 
-    Sempre que executar uma tarefa no Jupyter, o título da janela do browser apresentará um estado **(Ocupado)** juntamente com o título do bloco de notas. Também verá um círculo sólido junto ao texto do **PySpark** no canto superior direito. Após a conclusão da tarefa, este é alterado para um círculo vazio.
+    Sempre que executar uma tarefa no Jupyter, o título da janela do browser apresenta um estado **(Ocupado)** juntamente com o título do bloco de notas. Também vê um círculo sólido junto ao texto do **PySpark** no canto superior direito. Após a conclusão da tarefa, este é alterado para um círculo vazio.
 
-6. Execute o seguinte código para registar alguns dados de exemplo numa tabela temporária denominada **avac**.
+6. Registe um conjunto de dados de exemplo como uma tabela temporária (**hvac**) ao executar o código seguinte.
 
         # Load the data
         hvacText = sc.textFile("wasbs:///HdiSamples/HdiSamples/SensorSampleData/hvac/HVAC.csv")
@@ -131,12 +130,12 @@ Neste artigo, utiliza o kernel do PySpark. Para mais informações sobre os dois
 
     Os clusters do Spark no HDInsight incluem um ficheiro de dados de exemplo, **hvac.csv**, em **\HdiSamples\HdiSamples\SensorSampleData\hvac**.
 
-7. Execute o seguinte código para consultar os dados:
+7. Para consultar os dados, execute o código seguinte.
 
         %%sql
         SELECT buildingID, (targettemp - actualtemp) AS temp_diff, date FROM hvac WHERE date = \"6/1/13\"
 
-   Uma vez que está a utilizar um kernel do PySpark, agora, pode executar diretamente uma consulta de SQL na tabela temporária **hvac** que acabou de criar utilizando a magia `%%sql`. Para obter mais informações sobre a magia `%%sql`, bem como sobre outras magias disponíveis com o kernel do PySpark, consulte [Kernels disponíveis nos blocos de notas do Jupyter com clusters do Spark HDInsight](hdinsight-apache-spark-jupyter-notebook-kernels.md#choose-between-the-kernels).
+   Uma vez que está a utilizar um kernel do PySpark, pode agora executar diretamente uma consulta SQL na tabela temporária **hvac** que acabou de criar com a magia `%%sql`. Para obter mais informações sobre a magia `%%sql`, bem como sobre outras magias disponíveis com o kernel do PySpark, veja [Kernels disponíveis nos blocos de notas do Jupyter com clusters do Spark HDInsight](hdinsight-apache-spark-jupyter-notebook-kernels.md#choose-between-the-kernels).
 
    O resultado da tabela seguinte é apresentado por predefinição.
 
@@ -146,7 +145,14 @@ Neste artigo, utiliza o kernel do PySpark. Para mais informações sobre os dois
 
     ![Gráfico de área do resultado da consulta](./media/hdinsight-apache-spark-jupyter-spark-sql/area.output.png "Gráfico de área do resultado da consulta")
 
-9. Depois de terminar a execução da aplicação, pode encerrar o bloco de notas para libertar os recursos. Para o fazer, no menu **Ficheiro** do bloco de notas, clique em **Fechar e Parar**. Deste modo, o bloco de notas é encerrado e fechado.
+9. Encerre o bloco de notas para libertar os recursos do cluster depois de terminar a execução da aplicação. Para o fazer, no menu **Ficheiro** do bloco de notas, clique em **Fechar e Parar**.
+
+## <a name="troubleshoot"></a>Resolução de problemas
+
+Seguem-se alguns problemas comuns que podem ocorrer ao utilizar clusters do HDInsight.
+
+### <a name="access-control-requirements"></a>Requisitos do controlo de acesso
+[!INCLUDE [access-control](../../includes/hdinsight-access-control-requirements.md)]
 
 ## <a name="delete-the-cluster"></a>Eliminar o cluster
 [!INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
@@ -187,9 +193,4 @@ Neste artigo, utiliza o kernel do PySpark. Para mais informações sobre os dois
 [azure-free-trial]: http://azure.microsoft.com/pricing/free-trial/
 [azure-management-portal]: https://manage.windowsazure.com/
 [azure-create-storageaccount]: storage-create-storage-account.md
-
-
-
-<!--HONumber=Feb17_HO1-->
-
 

@@ -1,10 +1,10 @@
 
-1. Inicie sessão no [Portal do Azure](https://portal.azure.com) > **Site Recovery**
-2. Clique em **Novo** > **Gestão** >
-3. Em **Nome**, especifique um nome amigável para identificar o cofre. Se tiver mais do que uma subscrição, selecione uma delas.
-4. [Crie um grupo de recursos](../articles/azure-resource-manager/resource-group-template-deploy-portal.md) ou selecione um existente. Selecione uma região do Azure. Para verificar as regiões suportadas veja Disponibilidade Geográfica em [Azure Site Recovery Pricing Details (Detalhes dos Preços do Azure Site Recovery)](https://azure.microsoft.com/pricing/details/site-recovery/)
-5. Se pretender aceder rapidamente ao cofre a partir do Dashboard, clique em **Afixar ao dashboard** e clique em **Criar**.
+1. Sign in to the [Azure portal](https://portal.azure.com) > **Site Recovery**
+2. Click **New** > **Monitoring & Management** > **Backup and Site Recovery** > 
+3. In **Name**, specify a friendly name to identify the vault. If you have more than one subscription, select one of them.
+4. [Create a resource group](../articles/azure-resource-manager/resource-group-template-deploy-portal.md), or select an existing one. Specify an Azure region. To check supported regions, see Geographic Availability in [Azure Site Recovery Pricing Details](https://azure.microsoft.com/pricing/details/site-recovery/)
+5. If you want to quickly access the vault from the Dashboard, click **Pin to dashboard** and then click **Create**.
 
-   ![Novo cofre](./media/site-recovery-create-vault/new-vault-settings.png)
+   ![New vault](./media/site-recovery-create-vault/new-vault-settings.png)
 
-   O novo cofre é apresentado no **Dashboard** > **Todos os recursos** e no painel principal **Cofres dos Serviços de Recuperação**.
+   The new vault will appear on the **Dashboard** > **All resources**, and on the main **Recovery Services vaults** blade.

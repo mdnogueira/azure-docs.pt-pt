@@ -13,16 +13,16 @@ ms.devlang: NA
 ms.topic: hero-article
 ms.tgt_pltfrm: NA
 ms.workload: powerbi
-ms.date: 02/06/2017
+ms.date: 03/11/2017
 ms.author: asaxton
 translationtype: Human Translation
-ms.sourcegitcommit: bd7925f3fa9a717cbe0649bf899cdd00511d5ca6
-ms.openlocfilehash: b9dff45d1bb60d50c882c6daf363fca86a7f8f4c
-ms.lasthandoff: 02/22/2017
-
+ms.sourcegitcommit: c1cd1450d5921cf51f720017b746ff9498e85537
+ms.openlocfilehash: 4afa8d2c7f8ec1942521ba5fa131967dfd581c91
+ms.lasthandoff: 03/14/2017
 
 ---
 # <a name="get-started-with-microsoft-power-bi-embedded"></a>Introdução ao Microsoft Power BI Embedded
+
 O **Power BI Embedded** é um serviço do Azure que permite aos programadores de aplicações adicionar relatórios de Power BI interativos às suas próprias aplicações. O **Power BI Embedded** funciona com as aplicações existentes sem precisar de recriar ou alterar a forma como os utilizadores iniciam sessão.
 
 Os recursos para o **Microsoft Power BI Embedded** são aprovisionados através das [APIs ARM do Azure](https://msdn.microsoft.com/library/mt712306.aspx). Neste caso, o recurso que aprovisiona é uma **Coleção de Áreas de Trabalho do Power BI**.
@@ -30,6 +30,7 @@ Os recursos para o **Microsoft Power BI Embedded** são aprovisionados através 
 ![](media/power-bi-embedded-get-started/introduction.png)
 
 ## <a name="create-a-workspace-collection"></a>Criar uma coleção de área de trabalho
+
 Uma **Coleção de Área de Trabalho** é o recurso mais superior do Azure e um contentor para o conteúdo que será incorporado na aplicação. Uma **Coleção de Área de Trabalho** pode ser criada de duas formas:
 
 * Manualmente pela utilização do Portal do Azure
@@ -55,7 +56,8 @@ O **Painel de Criação** contém as informações de que precisa para chamar as
 
 <a name="view-access-keys"/>
 
-## <a name="view-power-bi-api-access-keys"></a>Visualizar Chaves de Acesso da API do Power BI
+## <a name="view-power-bi-api-access-keys"></a>Ver chaves de acesso da API do Power BI
+
 Uma das informações mais importantes necessárias para chamar as APIs REST do Power BI é são as **Teclas de Acesso**. Estas são utilizadas para gerar os **tokens de aplicação** utilizados para autenticar os pedidos de API. Para ver as suas **Teclas de Acesso**, clique em **Teclas de Acesso** no **Painel de Definições**. Para obter mais informações sobre **tokens de aplicação**, veja [Authenticating and authorizing with Power BI Embedded (Autenticação e autorização com Power BI Embedded)](power-bi-embedded-app-token-flow.md).
 
    ![](media/power-bi-embedded-get-started/access-keys.png)
@@ -74,8 +76,9 @@ Agora que tem uma instância do Power BI para a aplicação e as **Chaves de Ace
 
 Depois de ter criado a sua coleção da área de trabalho, terá de criar uma área de trabalho que irá guardar os relatórios e conjuntos de dados. Para criar uma área de trabalho, terá de utilizar a [API REST de Espaço de Trabalho de Publicação](https://msdn.microsoft.com/library/azure/mt711503.aspx).
 
-## <a name="create-power-bi-datasets-and-reports-to-embed-into-an-app"></a>Criar conjuntos de dados e relatórios do Power BI para incorporar numa aplicação
-Agora que já criou uma instância do Power BI para a aplicação e tem **chaves de acesso**, terá de criar os conjuntos de dados do Power BI e os relatórios que pretende incorporar. Conjuntos de dados e relatórios podem ser criados utilizando o **Power BI Desktop**. Pode transferir o [Power BI Desktop gratuitamente](https://go.microsoft.com/fwlink/?LinkId=521662). Em alternativa, para começar rapidamente, pode transferir o [PBIX de exemplo de análise de revenda](http://go.microsoft.com/fwlink/?LinkID=780547).
+## <a name="create-power-bi-datasets-and-reports-to-embed-into-an-app-using-power-bi-desktop"></a>Criar conjuntos de dados e relatórios do Power BI para incorporar numa aplicação com o Power BI Desktop
+
+Agora que já criou uma instância do Power BI para a aplicação e tem **chaves de acesso**, terá de criar os conjuntos de dados do Power BI e os relatórios que pretende incorporar. Os conjuntos de dados e os relatórios podem ser criados com o **Power BI Desktop**. Pode transferir o [Power BI Desktop gratuitamente](https://go.microsoft.com/fwlink/?LinkId=521662). Em alternativa, para começar rapidamente, pode transferir o [PBIX de exemplo de análise de revenda](http://go.microsoft.com/fwlink/?LinkID=780547).
 
 > [!NOTE]
 > Para saber mais sobre como utilizar **Power BI Desktop**, consulte o artigo [Introdução ao Power BI Desktop](https://powerbi.microsoft.com/guided-learning/powerbi-learning-0-2-get-started-power-bi-desktop).
@@ -95,20 +98,25 @@ Depois de guardar o trabalho no **Power BI Desktop**, é criado um ficheiro PBIX
 > [!NOTE]
 > O **Power BI Embedded ** inclui APIs adicionais para alterar o servidor e a base de dados para a qual o conjunto de dados está a apontar, e para definir uma credencial de conta de serviço que o conjunto de dados utilizará para ligar à base de dados. Consulte o artigo [Post SetAllConnections](https://msdn.microsoft.com/library/mt711505.aspx) e [Patch Gateway Datasource](https://msdn.microsoft.com/library/mt711498.aspx) (Correção de fonte de dados do Gateway).
 
-## <a name="next-steps"></a>Passos Seguintes
-Nos passos anteriores, criou uma coleção de áreas de trabalho e o primeiro relatório e conjunto de dados. Agora está na altura de aprender a escrever código para **Power BI Embedded**. Para o ajudar a começar, criámos uma aplicação Web de exemplo: [Introdução com exemplo](power-bi-embedded-get-started-sample.md). O exemplo mostra-lhe como:
+## <a name="create-power-bi-datasets-and-reports-using-apis"></a>Criar conjuntos de dados e relatórios do Power BI com APIs
 
-* Aprovisionar conteúdo
-  * Criar uma área de trabalho
-  * Importar um ficheiro PBIX
-  * Atualizar as cadeias de ligação e definir credenciais para os conjuntos de dados.
-* Incorporar um relatório de forma segura
+### <a name="datsets"></a>Conjuntos de dados
+
+Pode criar conjuntos de dados no Power BI Embedded com a API REST. Em seguida, pode enviar os dados para o conjunto de dados. Isto permite trabalhar com os dados sem necessitar do Power BI Desktop. Para obter mais informações, veja [Pós-conjuntos de dados](https://msdn.microsoft.com/library/azure/mt778875.aspx).
+
+### <a name="reports"></a>Relatórios
+
+Pode criar um relatório a partir de um conjunto de dados diretamente na aplicação com a API JavaScript. Para obter mais informações, veja [Criar um novo relatório a partir de um conjunto de dados no Power BI Embedded](power-bi-embedded-create-report-from-dataset.md).
 
 ## <a name="see-also"></a>Veja também
-* [Introdução com exemplo](power-bi-embedded-get-started-sample.md)
-* [Autenticação e autorização com o Power BI Embedded](power-bi-embedded-app-token-flow.md)
-* [Power BI Desktop](https://powerbi.microsoft.com/documentation/powerbi-desktop-get-the-desktop/)
 
+[Introdução com exemplo](power-bi-embedded-get-started-sample.md)  
+[Autenticação e autorização no Power BI Embedded](power-bi-embedded-app-token-flow.md)  
+[Incorporar um relatório](power-bi-embedded-embed-report.md)  
+[Criar um novo relatório a partir de um conjunto de dados no Power BI Embedded](power-bi-embedded-create-report-from-dataset.md)
+[Guardar relatórios](power-bi-embedded-save-reports.md)  
+[Power BI Desktop](https://powerbi.microsoft.com/documentation/powerbi-desktop-get-the-desktop/)  
+[Exemplo de Incorporação de JavaScript](https://microsoft.github.io/PowerBI-JavaScript/demo/)  
 Mais perguntas? [Tente a Comunidade do Power BI](http://community.powerbi.com/)
 
 

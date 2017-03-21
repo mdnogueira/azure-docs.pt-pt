@@ -12,11 +12,12 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 10/03/2016
+ms.date: 03/09/2017
 ms.author: briz
 translationtype: Human Translation
-ms.sourcegitcommit: 55d3f08de7f8c7ba68faba1945e8fd960e888853
-ms.openlocfilehash: 5e1b1333212af0b9042e7ed3793c08e305085519
+ms.sourcegitcommit: 8a531f70f0d9e173d6ea9fb72b9c997f73c23244
+ms.openlocfilehash: 352c42ddeef5537f9b912ddfe6a72b6b5342835b
+ms.lasthandoff: 03/09/2017
 
 
 ---
@@ -38,7 +39,11 @@ O IoT inclui uma série de desafios de gestão de dispositivos únicos e qualque
 
 * **Escala e automatização**: as soluções IoT requerem ferramentas simples que consigam automatizar tarefas de rotina e permitam que uma equipa de operações relativamente pequena faça a gestão de milhões de dispositivos. Todos os dias, os operadores esperam processar operações com dispositivos remotamente, em massa, e serem alertados apenas quando ocorrem problemas que precisam da atenção direta deles.
 * **Acessibilidade e compatibilidade**: o ecossistema de dispositivos é extremamente diversificado. As ferramentas de gestão têm de ser adaptadas, de modo a acomodarem uma multitude de classes de dispositivos, plataformas e protocolos. Os operadores têm de conseguir suportar muitos tipos de dispositivos, desde os mais restritos chips de processamento único incorporados a computadores poderosos e totalmente funcionais.
-* **Perceção do contexto**: os ambientes de IoT são dinâmicos e estão em constante mudança. A fiabilidade do serviço é crucial. As operações de gestão de dispositivos têm de considerar as janelas de manutenção de SLA, o estado da rede e da energia, as condições de utilização e a geolocalização dos dispositivos, para garantir que os períodos de indisponibilidade devido a manutenção não afetam operações empresariais importantes nem criam condições perigosas.
+* **Perceção do contexto**: os ambientes de IoT são dinâmicos e estão em constante mudança. A fiabilidade do serviço é crucial. As operações de gestão de dispositivos devem ter em consideração os seguintes fatores para assegurar que esse período de indisponibilidade devido a manutenção não afeta operações empresariais críticas nem cria condições perigosas:
+    * Janelas de manutenção de SLA
+    * Estados de rede e de energia
+    * Condições em utilização
+    * Geolocalização de dispositivos
 * **Dar assistência a muitas funções**: o suporte para os fluxos de trabalho e os processos exclusivos das funções de operações de IoT é crucial. A equipa de operações tem de trabalhar em harmonia com as restrições dadas de departamentos de TI internos.  Ela também tem de encontrar formas sustentáveis de fornecer informações de operações de dispositivos em tempo real a supervisores e outras funções de gestão empresarial.
 
 ## <a name="device-lifecycle"></a>Ciclo de vida dos dispositivos
@@ -50,19 +55,19 @@ Dentro de cada uma destas cinco fases, existem vários requisitos de operador de
 
 * **Planear**: permitir aos operadores criarem um esquema de metadados de dispositivo que lhes possibilite, de forma fácil e precisa, consultarem e segmentarem um grupo de dispositivos para operações de gestão em massa. Pode utilizar os twins do dispositivo para armazenar metadados deste dispositivo sob a forma de etiquetas e propriedades.
   
-    *Leitura adicional*: [Get started with device twins (Introdução aos dispositivos duplos) ][lnk-twins-getstarted], [Understand device twins (Compreender os dispositivos duplos)][lnk-twins-devguide], [How to use device twin properties (Como utilizar as propriedades dos dispositivos duplos)][lnk-twin-properties]
+    *Leitura adicional*: [Introdução aos dispositivos duplos][lnk-twins-getstarted], [Compreender os dispositivos duplos][lnk-twins-devguide], [Como utilizar as propriedades dos dispositivos duplos][lnk-twin-properties].
 * **Aprovisionar**: aprovisionar em segurança dispositivos novos no Hub IoT e permitir aos operadores descobrir imediatamente as capacidades dos dispositivos.  Utilize o registo de dispositivos do Hub para criar identidades e credenciais de dispositivos flexíveis e efetuar esta operação em massa através de uma tarefa. Crie dispositivos para comunicar as respetivas capacidades e condições através de propriedades dos dispositivos no twin do dispositivo.
   
-    *Leitura adicional*: [Manage device identities (Gerir identidades de dispositivos)][lnk-identity-registry], [Bulk management of device identities (Gestão em massa de identidades de dispositivos)][lnk-bulk-identity], [How to use device twin properties (Como utilizar as propriedades dos dispositivos duplos)][lnk-twin-properties]
+    *Leitura adicional*: [Gerir identidades de dispositivos][lnk-identity-registry], [Gestão em massa de identidades de dispositivos][lnk-bulk-identity], [Como utilizar as propriedades dos dispositivos duplos][lnk-twin-properties].
 * **Configurar**: facilitar alterações de configuração e atualizações de firmware em massa nos dispositivos, preservando o estado de funcionamento e as segurança. Efetue estas operações de gestão de dispositivos em massa com as propriedades pretendidas ou com métodos diretos e tarefas de difusão.
   
-    *Leitura adicional*:  [Use direct methods (Utilizar métodos diretos)][lnk-c2d-methods], [Invoke a direct method on a device (Invocar um método direto num dispositivo)][lnk-methods-devguide], [How to use device twin properties (Como utilizar as propriedades dos dispositivos duplos)][lnk-twin-properties], [Schedule and broadcast jobs (Agendar e transmitir trabalhos)][lnk-jobs], [Schedule jobs on multiple devices (Agendar trabalhos em vários dispositivos)][lnk-jobs-devguide]
+    *Leitura adicional*: [Utilizar métodos diretos][lnk-c2d-methods], [Invocar um método direto num dispositivo][lnk-methods-devguide], [Como utilizar as propriedades dos dispositivos duplos][lnk-twin-properties], [Agendar e transmitir tarefas][lnk-jobs], [Agendar tarefas em vários dispositivos][lnk-jobs-devguide].
 * **Monitorizar**: monitorizar o estado de funcionamento geral da coleção de dispositivos, o estado de operações contínuas e alertar os operadores relativamente a problemas que possam precisar da atenção deles.  Aplique o twin do dispositivo para permitir aos dispositivos comunicarem as condições de funcionamento em tempo real e o estado das operações de atualização. Crie relatórios de dashboards eficientes que emitem os problemas mais imediatos com consultas twin do dispositivo.
   
-    *Leitura adicional*: [How to use device twin properties (Como utilizar as propriedades dos dispositivos duplos)][lnk-twin-properties], [IoT Hub query language for device twins and jobs (Linguagem de consulta do Hub IoT para dispositivos duplos e trabalhos)][lnk-query-language]
+    *Leitura adicional*: [Como utilizar as propriedades dos dispositivos duplos][lnk-twin-properties], [Linguagem de consulta do Hub IoT para dispositivos duplos e tarefas][lnk-query-language].
 * **Extinguir**: substituir ou desativar dispositivos após uma falha, ciclo de atualização ou no fim do ciclo de vida do serviço.  Utilize o twin do dispositivo para manter informações do dispositivo se o dispositivo físico estiver a ser substituído, ou arquivar se estiver a ser retirado. Utilize o registo de identidades do Hub IoT para revogar de forma segura identidades e credenciais de dispositivos.
   
-    *Leitura adicional*: [How to use device twin properties (Como utilizar as propriedades dos dispositivos duplos)][lnk-twin-properties], [Manage device identities (Gerir identidades dos dispositivos)][lnk-identity-registry]
+    *Leitura adicional*: [Como utilizar as propriedades dos dispositivos duplos][lnk-twin-properties], [Gerir identidades dos dispositivos][lnk-identity-registry].
 
 ## <a name="device-management-patterns"></a>Padrões da gestão de dispositivos
 O Hub IoT permite o conjunto de padrões de gestão de dispositivos seguinte.  Os [tutoriais da gestão de dispositivos][lnk-get-started] mostram-lhe mais detalhadamente como pode expandir estes padrões para se ajustarem ao seu cenário exato e como desenhar novos padrões com base nestes modelos de núcleo.
@@ -84,7 +89,7 @@ O Hub IoT permite o conjunto de padrões de gestão de dispositivos seguinte.  O
     ![Gráfico do padrão de estado e progresso dos relatórios de gestão de dispositivos][img-report_progress_pattern]
 
 ## <a name="next-steps"></a>Passos Seguintes
-Pode utilizar as capacidades, padrões e bibliotecas de código que o Hub IoT fornece para gestão de dispositivos, para criar aplicações IoT que satisfazem os requisitos do operador de IoT empresarial em cada fase do ciclo de vida do dispositivo.
+As capacidades, padrões e bibliotecas de código que o Hub IoT fornece para gestão de dispositivos permitem criar aplicações IoT que satisfazem os requisitos do operador de IoT empresarial em cada fase do ciclo de vida do dispositivo.
 
 Para continuar a saber mais sobre as funcionalidades de gestão de dispositivos no Hub IoT, veja o tutorial [Get started with device management (Introdução à gestão de dispositivos)][lnk-get-started].
 
@@ -109,9 +114,4 @@ Para continuar a saber mais sobre as funcionalidades de gestão de dispositivos 
 [lnk-methods-devguide]: iot-hub-devguide-direct-methods.md
 [lnk-jobs]: iot-hub-node-node-schedule-jobs.md
 [lnk-jobs-devguide]: iot-hub-devguide-jobs.md
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

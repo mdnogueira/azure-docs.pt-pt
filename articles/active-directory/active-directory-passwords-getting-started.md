@@ -13,35 +13,168 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 02/28/2017
+ms.date: 03/08/2017
 ms.author: joflore
 translationtype: Human Translation
-ms.sourcegitcommit: d9dad6cff80c1f6ac206e7fa3184ce037900fc6b
-ms.openlocfilehash: c40fca54b02f2673194ab16c41314f1e50be12be
-ms.lasthandoff: 03/06/2017
+ms.sourcegitcommit: a087df444c5c88ee1dbcf8eb18abf883549a9024
+ms.openlocfilehash: 441caf3cc9a3b9074bd263f4a4c45763967fa580
+ms.lasthandoff: 03/15/2017
 
 
 ---
 # <a name="getting-started-with-password-management"></a>Introdução à Gestão de Palavras-passe
 > [!IMPORTANT]
-> **Está aqui porque está a ter problemas em iniciar sessão?** Se assim for, [Eis como pode alterar e repor a sua própria palavra-passe](active-directory-passwords-update-your-own-password.md).
+> **Está aqui porque está a ter problemas em iniciar sessão?** Se assim for, [Eis como pode alterar e repor a sua própria palavra-passe](active-directory-passwords-update-your-own-password.md#how-to-reset-your-password).
 >
 >
 
 Para permitir que os utilizadores façam a gestão das suas próprias palavras-passe do Active Directory no local ou do Azure Active Directory na nuvem precisa apenas de alguns passos simples. Depois de se certificar que cumpriu alguns pré-requisitos simples, terá a opção de alterar e repor a palavra-passe para toda a organização em menos de nada. Este artigo descreve os seguintes conceitos:
 
+* [**Principais sugestões dos nossos clientes que deve ler antes de começar**](#top-tips-from-our-customers-to-read-before-you-begin)
+ * [**SUGESTÃO PRINCIPAL: NAVEGAR NA DOCUMENTAÇÃO** - utilize o nosso índice e a funcionalidade de procura do browser para encontrar as respostas](#top-tip-documentation-navigation---use-our-table-of-contents-and-your-browsers-find-feature-to-find-answers)
+ * [**Sugestão 1: LICENSIAMENTO** - assegure-se de que compreende os requisitos de licenciamento](#tip-1-licensing---make-sure-you-understand-the-licensing-requirements)
+ * [**Sugestão 2: TESTAR** - teste com um utilizador final e não um administrador e crie um piloto com um pequeno grupo de utilizadores](#tip-2-testing---test-with-a-end-user-not-an-administrator-and-pilot-with-a-small-set-of-users)
+ * [**Sugestão 3: IMPLEMENTAÇÃO** - preencha previamente dados para os utilizadores, para que estes não tenham de se registar](#tip-3-deployment---pre-populate-data-for-your-users-so-they-dont-have-to-register)
+ * [**Sugestão 4: IMPLEMENTAÇÃO** - utilize a reposição de palavras-passe para eliminar a necessidade de comunicar palavras-passe temporárias](#tip-4-deployment---use-password-reset-to-obviate-the-need-to-communicate-temporary-passwords)
+ * [**Sugestão 5: REPETIÇÃO DE ESCRITA** - analise o registo de eventos da aplicação no computador com o AAD Connect para resolver problemas de repetição de escrita de palavras-passe](#tip-5-writeback---look-at-the-application-event-log-on-your-aad-connect-machine-to-troubleshoot-password-writeback)
+ * [**Sugestão 6: REPETIÇÃO DE ESCRITA** - certifique-se de que ativa as permissões, as regras de firewall e as definições de ligação corretas para a repetição de escrita de palavras-passe](#tip-6-writeback---ensure-you-enable-the-correct-permissions-firewall-rules-and-connection-settings-for-password-writeback)
+ * [**Sugestão 7: RELATÓRIO** - veja que utilizadores estão a registar ou a repor palavras-passe com os Registos de Auditoria SSPR do Azure AD](#tip-7-reporting---see-who-is-registering-or-resetting-passwords-with-the-azure-ad-sspr-audit-logs)
+ * [**Sugestão 8: RESOLUÇÃO DE PROBLEMAS** - leia o nosso guia de resolução de problemas e as nossas FAQ para resolver muitos problemas](#tip-8-troubleshoot---read-our-troubleshooting-guide-and-faq-to-solve-many-issues)
+ * [**Sugestão 9: RESOLUÇÃO DE PROBLEMAS** - se continuar a precisar de ajuda, inclua informações suficientes para que possamos ajudar](#tip-9-troubleshoot---if-you-still-need-help-include-enough-information-for-us-to-assist-you)
 * [**Como permitir que os utilizadores reponham as respetivas palavras-passe do Azure Active Directory**](#enable-users-to-reset-their-azure-ad-passwords)
-  * [Pré-requisitos da reposição personalizada de palavra-passe](#prerequisites)
-  * [Passo 1: Configurar a política de reposição de palavra-passe](#step-1-configure-password-reset-policy)
-  * [Passo 2: Adicionar dados de contacto do utilizador de teste](#step-2-add-contact-data-for-your-test-user)
-  * [Passo 3: Repor a palavra-passe como utilizador](#step-3-reset-your-azure-ad-password-as-a-user)
+ * [Pré-requisitos da reposição personalizada de palavra-passe](#prerequisites)
+ * [Passo 1: Configurar a política de reposição de palavra-passe](#step-1-configure-password-reset-policy)
+ * [Passo 2: Adicionar dados de contacto do utilizador de teste](#step-2-add-contact-data-for-your-test-user)
+ * [Passo 3: Repor a palavra-passe como utilizador](#step-3-reset-your-azure-ad-password-as-a-user)
 * [**Como permitir que os utilizadores reponham ou alterem as respetivas palavras-passe do Active Directory no local**](#enable-users-to-reset-or-change-their-ad-passwords)
-  * [Pré-requisitos da Repetição de Escrita de Palavras-passe](#writeback-prerequisites)
-  * [Passo 1: Transferir a versão mais recente do Azure AD Connect](#step-1-download-the-latest-version-of-azure-ad-connect)
-  * [Passo 2: Ativar a Repetição de Escrita de Palavras-passe no Azure AD Connect através da IU ou do PowerShell e verificar](#step-2-enable-password-writeback-in-azure-ad-connect)
-  * [Passo 3: Configurar a firewall](#step-3-configure-your-firewall)
-  * [Passo 4: Configurar as permissões adequadas](#step-4-set-up-the-appropriate-active-directory-permissions)
-  * [Passo 5: Repor a palavra-passe do AD como utilizador e verificar](#step-5-reset-your-ad-password-as-a-user)
+ * [Pré-requisitos da Repetição de Escrita de Palavras-passe](#writeback-prerequisites)
+ * [Passo 1: Transferir a versão mais recente do Azure AD Connect](#step-1-download-the-latest-version-of-azure-ad-connect)
+ * [Passo 2: Ativar a Repetição de Escrita de Palavras-passe no Azure AD Connect através da IU ou do PowerShell e verificar](#step-2-enable-password-writeback-in-azure-ad-connect)
+ * [Passo 3: Configurar a firewall](#step-3-configure-your-firewall)
+ * [Passo 4: Configurar as permissões adequadas](#step-4-set-up-the-appropriate-active-directory-permissions)
+ * [Passo 5: Repor a palavra-passe do AD como utilizador e verificar](#step-5-reset-your-ad-password-as-a-user)
+
+## <a name="top-tips-from-our-customers-to-read-before-you-begin"></a>Principais sugestões dos nossos clientes que deve ler antes de começar
+Seguem-se algumas das principais sugestões que vimos terem sido úteis para os clientes que implementam a gestão de palavras-passe nas respetivas organizações.
+
+* [**SUGESTÃO PRINCIPAL: NAVEGAR NA DOCUMENTAÇÃO** - utilize o nosso índice e a funcionalidade de procura do browser para encontrar as respostas](#top-tip-documentation-navigation---use-our-table-of-contents-and-your-browsers-find-feature-to-find-answers)
+* [**Sugestão 1: LICENSIAMENTO** - assegure-se de que compreende os requisitos de licenciamento](#tip-1-licensing---make-sure-you-understand-the-licensing-requirements)
+* [**Sugestão 2: TESTAR** - teste com um utilizador final e não um administrador e crie um piloto com um pequeno grupo de utilizadores](#tip-2-testing---test-with-a-end-user-not-an-administrator-and-pilot-with-a-small-set-of-users)
+* [**Sugestão 3: IMPLEMENTAÇÃO** - preencha previamente dados para os utilizadores, para que estes não tenham de se registar](#tip-3-deployment---pre-populate-data-for-your-users-so-they-dont-have-to-register)
+* [**Sugestão 4: IMPLEMENTAÇÃO** - utilize a reposição de palavras-passe para eliminar a necessidade de comunicar palavras-passe temporárias](#tip-4-deployment---use-password-reset-to-obviate-the-need-to-communicate-temporary-passwords)
+* [**Sugestão 5: REPETIÇÃO DE ESCRITA** - analise o registo de eventos da aplicação no computador com o AAD Connect para resolver problemas de repetição de escrita de palavras-passe](#tip-5-writeback---look-at-the-application-event-log-on-your-aad-connect-machine-to-troubleshoot-password-writeback)
+* [**Sugestão 6: REPETIÇÃO DE ESCRITA** - certifique-se de que ativa as permissões, as regras de firewall e as definições de ligação corretas para a repetição de escrita de palavras-passe](#tip-6-writeback---ensure-you-enable-the-correct-permissions-firewall-rules-and-connection-settings-for-password-writeback)
+* [**Sugestão 7: RELATÓRIO** - veja que utilizadores estão a registar ou a repor palavras-passe com os Registos de Auditoria SSPR do Azure AD](#tip-7-reporting---see-who-is-registering-or-resetting-passwords-with-the-azure-ad-sspr-audit-logs)
+* [**Sugestão 8: RESOLUÇÃO DE PROBLEMAS** - leia o nosso guia de resolução de problemas e as nossas FAQ para resolver muitos problemas](#tip-8-troubleshoot---read-our-troubleshooting-guide-and-faq-to-solve-many-issues)
+* [**Sugestão 9: RESOLUÇÃO DE PROBLEMAS** - se continuar a precisar de ajuda, inclua informações suficientes para que possamos ajudar](#tip-9-troubleshoot---if-you-still-need-help-include-enough-information-for-us-to-assist-you)
+
+### <a name="top-tip-documentation-navigation---use-our-table-of-contents-and-your-browsers-find-feature-to-find-answers"></a>SUGESTÃO PRINCIPAL: NAVEGAR NA DOCUMENTAÇÃO - utilize o nosso índice e a funcionalidade de procura do browser para encontrar as respostas
+Se estiver a utilizar a nossa documentação, tentámos ao máximo disponibilizar quicklinks para todos os sítios de interesse no nosso índice, onde os administradores podem aprender. 
+
+Veja o índice abaixo: 
+* [Reposição de Palavras-passe do Azure AD: Índice da Documentação](https://docs.microsoft.com/azure/active-directory/active-directory-passwords)
+
+### <a name="tip-1-licensing---make-sure-you-understand-the-licensing-requirements"></a>Sugestão 1: LICENSIAMENTO - assegure-se de que compreende os requisitos de licenciamento
+Para que a Reposição de Palavras-passe do Azure AD funcione, tem de ter, pelo menos, uma licença atribuída na sua organização. Não aplicamos o licenciamento por utilizador na experiência de reposição de palavras-passe propriamente dita. Contudo, se não tiver uma licença atribuída a um utilizador e fizer uso da funcionalidade, será considerado como não estando em conformidade com o seu contrato de licenciamento da Microsoft e terá de atribuir licenças a esses utilizadores.
+
+Seguem-se alguns documentos que o podem ajudar a compreender as licenças necessárias para a reposição de palavras-passe.
+* [Informações gerais de licenciamento de reposição de palavras-passe]()
+* [Informações de licenciamento de reposição de palavras-passe por funcionalidade]()
+* [Cenários suportados para repetição de escrita de palavras-passe]()
+
+### <a name="tip-2-testing---test-with-an-end-user-not-an-administrator-and-pilot-with-a-small-set-of-users"></a>Sugestão 2: TESTAR - teste com um utilizador final e não um administrador e crie um piloto com um pequeno grupo de utilizadores
+Quando testa com um administrador, aplicamos a política de reposição de palavras-passe de administrador, que está definida abaixo.  Isto significa que NÃO verá os resultados esperados da política que configurou para os seus utilizadores finais.
+
+As políticas configuradas na UX administrativa SÓ se aplica aos utilizadores finais, não aos administradores. A Microsoft impõe políticas de reposição de palavras-passe predefinidas fortes nos seus administradores, que podem ser diferentes daquelas que configurou para os utilizadores finais, de modo a garantir que a sua organização se mantém segura.
+
+#### <a name="administrator-password-reset-policy"></a>Política de reposição de palavras-passe de administrador
+* **Aplica-se a** - qualquer função de administrador (Administrador Global, Administrador de Suporte Técnico, Administrador de Palavras-passe, etc.)
+* **Aplica-se a política de uma porta...**
+ * ... nos primeiros 30 dias a seguir a uma avaliação ter sido iniciada, criada **OU**
+ * ... se não estiver presente um domínio personalizado **E** o Azure AD Connect não estiver a sincronizar identidades
+ * **_Requer_**: **um** de E-mail de Autenticação, E-mail Alternativo, Telefone de Autenticação, Telemóvel ou Telefone do Escritório para ter um valor presente
+* **Aplica-se a política de duas portas...** 
+ * ... ao fim dos primeiros 30 dias de uma avaliação**OU**
+ * ... se não estiver presente um domínio personalizado **OU** 
+ * … se tiver ativado o Azure AD Connect para sincronizar as identidades do seu ambiente no local
+ * _**Requer**_: **dois** de E-mail de Autenticação, E-mail Alternativo, Telefone de Autenticação, Telemóvel ou Telefone do Escritório para ter um valor presente
+
+### <a name="tip-3-deployment---pre-populate-data-for-your-users-so-they-dont-have-to-register"></a>Sugestão 3: IMPLEMENTAÇÃO - preencha previamente dados para os utilizadores, para que estes não tenham de se registar
+Muitas pessoas não se apercebem de que não é necessário fazer com que os seus utilizadores se registem na reposição de palavras-passe para poderem utilizar a funcionalidade.  Ao definir, de antemão, propriedades de telefone ou e-mail para os utilizadores, pode implementar imediatamente a reposição de palavras-passe em toda a organização **sem que eles tenham de fazer o que quer seja!**
+
+Para saber como fazer isto com uma API, o PowerShell ou o Azure AD Connect, leia os documentos seguintes:
+* [Deploying password reset without requiring users to register (Implementar a reposição de palavras-passe sem exigir que os utilizadores se registem)](https://docs.microsoft.com/azure/active-directory/active-directory-passwords-learn-more#deploying-password-reset-without-requiring-end-user-registration)
+* [What data is used by password reset (Que dados são utilizados pela reposição de palavras-passe)](https://docs.microsoft.com/azure/active-directory/active-directory-passwords-learn-more#what-data-is-used-by-password-reset)
+
+### <a name="tip-4-deployment---use-password-reset-to-obviate-the-need-to-communicate-temporary-passwords"></a>Sugestão 4: IMPLEMENTAÇÃO - utilize a reposição de palavras-passe para eliminar a necessidade de comunicar palavras-passe temporárias
+Esta sugestão está relacionada com a sugestão 3. Depois de pré-configurar os utilizadores para a reposição de palavras-passe, imagine um cenário em que um empregado entra para a sua empresa. Em vez de lhe comunicar a palavra-passe temporária dele, pode, agora, simplesmente dizer-lhe para navegar para o [Portal de Reposição de Palavras-passe do Azure AD](https://passwordreset.microsoftonline.com) e repor a palavra-passe.
+
+Se o utilizador estiver a utilizar um [dispositivo Windows 10 associado a um domínio do Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-azureadjoin-devices-group-policy), até o pode fazer de imediato a partir do ecrã de início de sessão do Windows 10 Out of Box, o que lhe permite obter acesso a um PC totalmente novo sem ter de levantar um dedo :).
+
+Para saber como fazer isto com uma API, o PowerShell ou o Azure AD Connect, leia os documentos seguintes. Depois de preencher previamente estes dados, só tem de dizer aos utilizadores para reporem as palavras-passe e podem aceder às contas deles de imediato:
+* [Deploying password reset without requiring users to register (Implementar a reposição de palavras-passe sem exigir que os utilizadores se registem)](https://docs.microsoft.com/azure/active-directory/active-directory-passwords-learn-more#deploying-password-reset-without-requiring-end-user-registration)
+* [What data is used by password reset (Que dados são utilizados pela reposição de palavras-passe)](https://docs.microsoft.com/azure/active-directory/active-directory-passwords-learn-more#what-data-is-used-by-password-reset)
+
+### <a name="tip-5-writeback---look-at-the-application-event-log-on-your-aad-connect-machine-to-troubleshoot-password-writeback"></a>Sugestão 5: REPETIÇÃO DE ESCRITA - analise o registo de eventos da aplicação no computador com o AAD Connect para resolver problemas de repetição de escrita de palavras-passe
+O Registo de Eventos de Aplicação do Azure AD Connect contém um conjunto avançado de informações de registo que descreve quase tudo o que se está a passar com o serviço de repetição de escrita de palavras-passe, em tempo real. Para obter acesso a este registo, siga os passos abaixo:
+
+1. Inicie sessão no computador do**Azure AD Connect**
+2. Prima **Iniciar** e escreva **“Visualizador de Eventos”** para abrir o **Visualizador de Eventos do Windows**
+3. Abra o registo de eventos de **Aplicação**
+4. Procure eventos das origens **PasswordResetService** ou **ADSync** para saber mais sobre o problema que pode estar a ocorrer
+
+Para obter uma lista dos eventos que podem aparecer neste registo, bem como muito mais orientações de resolução de problemas de repetição de escrita de palavras-passe, veja:
+* [Troubleshoot: password writeback (Resolução de problemas: repetição de escrita de palavras-passe)](https://docs.microsoft.com/azure/active-directory/active-directory-passwords-troubleshoot#troubleshoot-password-writeback)
+* [Writeback event log error codes (Códigos de erros de registo de eventos de repetição de escrita)](https://docs.microsoft.com/azure/active-directory/active-directory-passwords-troubleshoot#password-writeback-event-log-error-codes)
+* [Troubleshoot: password writeback connectivity (Resolução de problemas: conectividade da repetição de escrita de palavras-passe)](https://docs.microsoft.com/azure/active-directory/active-directory-passwords-troubleshoot#troubleshoot-password-writeback-connectivity)
+* [Implementação da repetição de escrita - passo 3: Configurar a firewall](#step-3-configure-your-firewall)
+* [Implementação da repetição de escrita - passo 4: Configurar as permissões adequadas](#step-4-set-up-the-appropriate-active-directory-permissions)
+
+### <a name="tip-6-writeback---ensure-you-enable-the-correct-permissions-firewall-rules-and-connection-settings-for-password-writeback"></a>Sugestão 6: REPETIÇÃO DE ESCRITA -certifique-se de que ativa as permissões, as regras de firewall e as definições de ligação corretas para a repetição de escrita de palavras-passe
+Para que a repetição de escrita funcione corretamente, tem de confirmar que:
+
+1. Foram definidas as **permissões do Active Directory** adequadas para os utilizadores que utilizam a funcionalidade de repetição de escrita de palavras-passe, de modo a que tenham direitos para modificar as respetivas palavras-passe e sinalizadores de desbloqueio de conta no AD
+2. Foram abertas as **portas da firewall** adequadas para permitir que o serviço de repetição de escrita de palavras-passe comunique em segurança com o mundo exterior através de uma ligação de saída
+3. Foram criadas as **exceções de firewall** adequadas para os URLs do serviço de reposição de palavras-passe, como o Service Bus
+4. O **proxy e a firewall não estão a cancelar ligações de saída inativas**; recomendamos dez minutos ou mais
+
+Para obter uma lista completa das orientações de resolução de problemas e diretrizes específicas para configurar permissões e regras de firewall para a repetição de escrita de palavras-passe, veja:
+* [Troubleshoot: password writeback (Resolução de problemas: repetição de escrita de palavras-passe)](https://docs.microsoft.com/azure/active-directory/active-directory-passwords-troubleshoot#troubleshoot-password-writeback)
+* [Writeback event log error codes (Códigos de erros de registo de eventos de repetição de escrita)](https://docs.microsoft.com/azure/active-directory/active-directory-passwords-troubleshoot#password-writeback-event-log-error-codes)
+* [Troubleshoot: password writeback connectivity (Resolução de problemas: conectividade da repetição de escrita de palavras-passe)](https://docs.microsoft.com/azure/active-directory/active-directory-passwords-troubleshoot#troubleshoot-password-writeback-connectivity)
+* [Implementação da repetição de escrita - passo 3: Configurar a firewall](#step-3-configure-your-firewall)
+* [Implementação da repetição de escrita - passo 4: Configurar as permissões adequadas](#step-4-set-up-the-appropriate-active-directory-permissions)
+
+### <a name="tip-7-reporting---see-who-is-registering-or-resetting-passwords-with-the-azure-ad-sspr-audit-logs"></a>Sugestão 7: RELATÓRIO - veja que utilizadores estão a registar ou a repor palavras-passe com os Registos de Auditoria SSPR do Azure AD 
+Quando a reposição de palavras-passe estiver implementada e a funcionar, o passo seguinte lógico é vê-la em ação e analisar quem é que ainda tem de se registar, os problemas comuns com que os utilizadores se deparam durante a reposição e o seu retorno sobre o investimento feito na funcionalidade.
+
+Pode fazer isto e muito mais com os Registos de Auditoria da Reposição de Palavras-passe do Azure AD no Portal do Azure, no PowerBI, na API de Eventos de Relatórios do Azure AD ou no PowerShell.  Para saber mais sobre como utilizar estas funcionalidades de relatórios, veja:
+* [Password management reports overview (Descrição geral dos relatórios de gestão de palavras-passe)](https://docs.microsoft.com/azure/active-directory/active-directory-passwords-get-insights#overview-of-password-management-reports)
+* [How to view password management reports in the Azure portal (Como ver os relatórios de gestão de palavras-passe no portal do Azure)](https://docs.microsoft.com/azure/active-directory/active-directory-passwords-get-insights#how-to-view-password-management-reports)
+* [Self-service Password Management activity types in the Azure Portal (Tipos de atividades de Gestão de Palavras-passe Personalizada no portal do Azure)](https://docs.microsoft.com/azure/active-directory/active-directory-passwords-get-insights#self-service-password-management-activity-types-in-the-new-azure-portal)
+* [How to retrieve password management events from the Azure AD Reports and Events API (Como obter eventos de gestão de palavras-passe a partir da API de Relatórios e Eventos do Azure AD)](https://docs.microsoft.com/azure/active-directory/active-directory-passwords-get-insights#how-to-retrieve-password-management-events-from-the-azure-ad-reports-and-events-api)
+* [How to download password reset registration events quickly with PowerShell (Como transferir eventos de registo de reposição de palavras-chave rapidamente com o PowerShell)](https://docs.microsoft.com/azure/active-directory/active-directory-passwords-get-insights#how-to-download-password-reset-registration-events-quickly-with-powershell)
+
+### <a name="tip-8-troubleshoot---read-our-troubleshooting-guide-and-faq-to-solve-many-issues"></a>Sugestão 8: RESOLUÇÃO DE PROBLEMAS - leia o nosso guia de resolução de problemas e as nossas FAQ para resolver muitos problemas
+Sabia que reposição de palavras-passe tem um conjunto de orientações avançadas de resolução de problemas e uma secção de FAQ? O mais provável é que, em caso de dúvidas, pode encontrar as respostas nas ligações seguintes.
+
+Além disso, também pode utilizar o painel **Suporte e Resolução de Problemas**, no [portal do Azure](https://portal.azure.com), para obter um conjunto de conteúdos avançados de resolução de problemas, diretamente na experiência de utilizador administrativo da gestão de palavras-passe, que se encontra em **Azure Active Directory** -> **Utilizadores e Grupos** -> **Reposição de Palavra-passe** -> **Suporte e Resolução de Problemas**, no painel de navegação do lado esquerdo.
+
+Ligações para as orientações de resolução de problemas e FAQ da reposição de palavras-passe:
+* [Troubleshoot Password Management (Resolver Problemas da Gestão de Palavras-passe)](https://docs.microsoft.com/azure/active-directory/active-directory-passwords-troubleshoot)
+* [FAQ da Gestão de Palavras-passe](https://docs.microsoft.com/azure/active-directory/active-directory-passwords-faq)
+
+### <a name="tip-9-troubleshoot---if-you-still-need-help-include-enough-information-for-us-to-assist-you"></a>Sugestão 9: RESOLUÇÃO DE PROBLEMAS - se continuar a precisar de ajuda, inclua informações suficientes para que possamos ajudar
+Se ainda precisar de ajuda para resolver problemas, estamos aqui para ajudar. Pode abrir um pedido de suporte ou entrar em contacto com a sua equipa de gestão de conta para falar diretamente connosco. Gostaríamos de ouvir a sua opinião!
+
+Contudo, antes de nos contactar, **certifique-se de que reúne todas as informações pedidas em baixo**, para que o possamos ajudar rapidamente.
+* [Information to include when you need help (Informações a incluir se precisar de ajuda)](https://docs.microsoft.com/azure/active-directory/active-directory-passwords-troubleshoot#information-to-include-when-you-need-help)
+
+#### <a name="ways-to-provide-password-reset-feedback"></a>Como enviar comentários sobre a reposição de palavras-passe
+* [Pedidos de funcionalidades ou resolução de problemas - publicar nos fóruns da MSDN do Azure AD](https://social.msdn.microsoft.com/Forums/azure/home?forum=WindowsAzureAD)
+* [Pedidos de funcionalidades ou resolução de problemas - publicar no StackOverflow](http://stackoverflow.com/questions/tagged/azure-active-directory)
+* [Pedidos de funcionalidades ou resolução de problemas - enviar um tweet para @azuread!](https://twitter.com/azuread)
+* [Apenas pedidos de funcionalidades - deixe uma nota no UserVoice](https://feedback.azure.com/forums/169401-azure-active-directory)
 
 ## <a name="enable-users-to-reset-their-azure-ad-passwords"></a>Permitir que os utilizadores reponham as respetivas palavras-passe do Azure AD
 Esta secção explica como ativar a reposição personalizada de palavra-passe para o diretório na nuvem do AAD, como registar os utilizadores para a reposição personalizada de palavra-passe e como executar uma reposição personalizada de palavra-passe de teste como utilizador.
@@ -267,11 +400,11 @@ Depois de ter ativado a Repetição de Escrita de Palavras-passe, tem de certifi
 
 Para a Repetição de Escrita de Palavras-passe funcionar corretamente, a máquina com o Azure AD Connect tem de conseguir estabelecer ligações HTTPS de saída para **.servicebus.windows.net* e endereço IP específico utilizado pelo Azure, tal como definido na [lista de Intervalos IP do Datacenter do Microsoft Azure](https://www.microsoft.com/download/details.aspx?id=41653).
 
-Para a ferramenta Azure AD Connect **1.1.439.0** (mais recente) e posterior:
+Para a ferramenta Azure AD Connect **1.1.443.0** (mais recente) e posterior:
 
 - A versão mais recente da ferramenta Azure AD Connect precisará de acesso **HTTPS de saída** a:
     - *passwordreset.microsoftonline.com*
-    - *servicbus.windows.net*
+    - *servicebus.windows.net*
 
 Para versões da ferramenta Azure AD Connect **1.0.8667.0** à **1.1.380.0**:
 
@@ -302,11 +435,11 @@ Para versões da ferramenta Azure AD Connect **1.0.8667.0** à **1.1.380.0**:
 
 Assim que os dispositivos de rede estiverem configurados, reinicie a máquina que executa a ferramenta do Azure AD Connect.
 
-#### <a name="idle-connections-on-azure-ad-connect-114390-and-up"></a>Ligações inativas no Azure AD Connect (1.1.439.0 e posteriores)
+#### <a name="idle-connections-on-azure-ad-connect-114430-and-up"></a>Ligações inativas no Azure AD Connect (1.1.443.0 e posteriores)
 A ferramenta Azure AD Connect irá enviar pings/keepalives periódicos para pontos finais do ServiceBus, para garantir que as ligações permanecem ativas. Se a ferramenta detetar que demasiadas ligações estão a ser terminadas, irá aumentar automaticamente a frequência de pings para o ponto final. Os “intervalos de pings” mais baixos irão cair para 1 ping a cada 60 segundos. No entanto, **recomendamos vivamente que os proxies/firewalls permitam que as ligações inativas persistam durante, pelo menos, 2 a 3 minutos.** \*Para versões mais antigas, sugerimos 4 minutos ou mais.
 
 ### <a name="step-4-set-up-the-appropriate-active-directory-permissions"></a>Passo 4: Configurar as permissões adequadas do Active Directory
-Para cada floresta que contenha utilizadores cujas palavras-passe serão repostas, se X for a conta especificada para essa floresta no assistente de configuração (durante a configuração inicial), devem ser concedidos a X os direitos expandidos **Repor Palavra-passe**, **Alterar Palavra-passe**, **Permissões de Escrita** em `lockoutTime` e **Permissões de Escrita** em `pwdLastSet` no objeto raiz de cada domínio dessa floresta. O direito deve ser marcado como herdado por todos os objetos de utilizador.  
+Para cada floresta que contenha utilizadores cujas palavras-passe serão repostas, se X for a conta especificada para essa floresta no assistente de configuração (durante a configuração inicial), devem ser concedidos a X os direitos expandidos **Repor Palavra-passe**, **Alterar Palavra-passe**, **Permissões de Escrita** em `lockoutTime` e **Permissões de Escrita** em `pwdLastSet` no objeto raiz de cada domínio dessa floresta OU na UO(s) que pretende que esteja no âmbito do SSPR.  Pode utilizar a última opção se quiser circunscrever as permissões de reposição a apenas um conjunto específico de objetos de utilizador, caso não seja aceitável fazê-lo na raiz do domínio. O direito deve ser marcado como herdado por todos os objetos de utilizador.  
 
 Se não tiver a certeza sobre a conta a que nos referimos acima, abra a IU de configuração do Azure Active Directory Connect e clique na opção **Rever a sua Solução**.  A conta para a qual tem de adicionar permissão está sublinhada a vermelho na captura de ecrã abaixo.
 
@@ -361,7 +494,7 @@ Agora que a Repetição de Escrita de Palavras-passe foi ativada, pode testar se
 ## <a name="next-steps"></a>Passos seguintes
 Veja-se abaixo as ligações para todas as páginas da documentação de reposição de palavra-passe do Azure AD:
 
-* **Está aqui porque está a ter problemas em iniciar sessão?** Se assim for, [Eis como pode alterar e repor a sua própria palavra-passe](active-directory-passwords-update-your-own-password.md).
+* **Está aqui porque está a ter problemas em iniciar sessão?** Se assim for, [Eis como pode alterar e repor a sua própria palavra-passe](active-directory-passwords-update-your-own-password.md#how-to-reset-your-password).
 * [**Como funciona**](active-directory-passwords-how-it-works.md) – saiba mais acerca dos seis componentes diferentes do serviço e o que cada um faz
 * [**Personalizar**](active-directory-passwords-customize.md) – saiba como personalizar o aspeto e o comportamento do serviço de acordo com as necessidades da sua organização
 * [**Práticas recomendadas**](active-directory-passwords-best-practices.md) – saiba como implementar rapidamente e gerir de forma eficaz as palavras-passe da organização
