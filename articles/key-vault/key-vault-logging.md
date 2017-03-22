@@ -15,9 +15,9 @@ ms.topic: hero-article
 ms.date: 01/07/2017
 ms.author: cabailey
 translationtype: Human Translation
-ms.sourcegitcommit: 30b30513d5563cf64679e29c4858bf15f65d3a44
-ms.openlocfilehash: 015c997135eae9c936af1a1ec0b0064912baaa04
-ms.lasthandoff: 02/28/2017
+ms.sourcegitcommit: c1cd1450d5921cf51f720017b746ff9498e85537
+ms.openlocfilehash: 51732acdad74dd6dbfc47fae62efc87df6ce5c15
+ms.lasthandoff: 03/14/2017
 
 
 ---
@@ -64,6 +64,11 @@ Se tiver várias subscrições, poderá ter de especificar uma subscrição util
 Em seguida, para especificar a subscrição associada ao seu cofre de chaves que irá registar, introduza:
 
     Set-AzureRmContext -SubscriptionId <subscription ID>
+
+> [!NOTE]
+> Isto é um passo importante e especialmente útil se tiver várias subscrições associadas à sua conta. Poderá ser apresentado um erro ao registar o Microsoft.Insights se este passo for ignorado. 
+>   
+>
 
 Para mais informações sobre como configurar o PowerShell, consulte [Como instalar e configurar o Azure PowerShell](/powershell/azureps-cmdlets-docs).
 
@@ -120,8 +125,13 @@ O que é registado:
 ## <a id="access"></a>Aceder aos seus registos
 Os registos do cofre de chaves são guardados no contentor **insights-logs-auditevent** na conta de armazenamento que indicou. Para listar todos os blobs neste contentor, escreva:
 
-    Get-AzureStorageBlob -Container 'insights-logs-auditevent' -Context $sa.Context
+Primeiro, crie uma variável para o nome do contentor. Isto irá ser utilizado no resto da explicação.
 
+    $container = 'insights-logs-auditevent'
+
+Para listar todos os blobs neste contentor, escreva:
+
+    Get-AzureStorageBlob -Container $container -Context $sa.Context
 O resultado será algo parecido com isto:
 
 **Uri do contentor: https://contosokeyvaultlogs.blob.core.windows.net/insights-logs-auditevent**

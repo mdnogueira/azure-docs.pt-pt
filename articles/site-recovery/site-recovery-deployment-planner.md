@@ -15,9 +15,9 @@ ms.topic: hero-article
 ms.date: 2/21/2017
 ms.author: nisoneji
 translationtype: Human Translation
-ms.sourcegitcommit: d9dad6cff80c1f6ac206e7fa3184ce037900fc6b
-ms.openlocfilehash: 4e444deaa84c7f02608f4910e31f7033df51a73b
-ms.lasthandoff: 03/06/2017
+ms.sourcegitcommit: a087df444c5c88ee1dbcf8eb18abf883549a9024
+ms.openlocfilehash: 2575621d72b7db2b090ba923324697b7fa7b8308
+ms.lasthandoff: 03/15/2017
 
 
 ---
@@ -82,9 +82,9 @@ Copie o ficheiro zip para o Windows Server a partir do qual quer executar a ferr
 Extraia a pasta zip. Pode ver vários ficheiros e subpastas. O executável é ASRDeploymentPlanner.exe na pasta principal.
 
 Exemplo: copie o ficheiro .zip para a unidade E:\ e extraia-o.
-E:\ASR Deployment Planner-Preview_v1.0.zip
+E:\ASR Deployment Planner-Preview_v1.1.zip
 
-E:\ASR Deployment Planner-Preview_v1.0\ ASR Deployment Planner-Preview_v1.0\ ASRDeploymentPlanner.exe
+E:\ASR Deployment Planner-Preview_v1.1\ ASR Deployment Planner-Preview_v1.1\ ASRDeploymentPlanner.exe
 
 ##<a name="capabilities"></a>Capacidades
 A ferramenta de linha de comandos (ASRDeploymentPlanner.exe) pode ser executada num dos três modos seguintes:
@@ -199,7 +199,7 @@ ASRDeploymentPlanner.exe **-Operation** GenerateReport **-Server** vCenter1.cont
 
 
 ##### <a name="example-2-to-generate-report-when-profiled-data-is-on-a-remote-server-user-should-have-readwrite-access-on-the-remote-directory"></a>Exemplo 2: para gerar o relatório quando os dados de criação de perfis estão num servidor remoto. O utilizador deve ter acesso de leitura/escrita no diretório remoto
-ASRDeploymentPlanner.exe **-Operation** GenerateReport **-Server** vCenter1.contoso.com **-Directory** “\\PS1-W2K12R2\vCenter1_ProfiledData” **-VMListFile** “\\PS1-W2K12R2\vCenter1_ProfiledData\ProfileVMList1.txt”
+ASRDeploymentPlanner.exe **-Operation** GenerateReport **-Server** vCenter1.contoso.com **-Directory** “\\\\PS1-W2K12R2\vCenter1_ProfiledData” **-VMListFile** “\\\\PS1-W2K12R2\vCenter1_ProfiledData\ProfileVMList1.txt”
 
 ##### <a name="example-3-generate-report-with-specific-bandwidth-and-goal-to-complete-ir-within-specified-time"></a>Exemplo 3: gerar o relatório com largura de banda e objetivos específicos para concluir a replicação inicial no período especificado
 ASRDeploymentPlanner.exe **-Operation** GenerateReport **-Server** vCenter1.contoso.com **-Directory** “E:\vCenter1_ProfiledData” **-VMListFile** “E:\vCenter1_ProfiledData\ProfileVMList1.txt” **-Bandwidth** 100 **-GoalToCompleteIR** 24
@@ -407,10 +407,10 @@ A página Input proporciona uma descrição geral do ambiente do VMware com perf
 
 **Virtual Machines to Place (Máquinas Virtuais a Colocar)** apresenta uma lista de todas as máquinas virtuais que devem ser colocadas nesta conta de Armazenamento do Azure específica, para otimizar o desempenho e a utilização.
 
-##<a name="compatible-vms"></a>Compatible VMs (VMs Compatíveis)
+## <a name="compatible-vms"></a>Compatible VMs (VMs Compatíveis)
 ![Deployment Planner](./media/site-recovery-deployment-planner/compatible-vms.png)
 
-**VM Name (Nome da VM)** é o nome ou o endereço IP da máquina virtual conforme utilizado em VMListFile no momento da geração de relatórios. Esta coluna também apresenta os discos (VMDKs) ligados às máquinas virtuais.
+**VM Name (Nome da VM)** é o nome ou o endereço IP da máquina virtual conforme utilizado em VMListFile no momento da geração de relatórios. Esta coluna também apresenta os discos (VMDKs) ligados às máquinas virtuais. As máquinas virtuais num vCenter com nomes ou endereços IP duplicados são mencionados com o nome de anfitrião ESXi para distinguir cada máquina virtual. O anfitrião ESXi listado é o anfitrião no qual a máquina virtual foi colocada quando a ferramenta a detetou pela primeira vez durante o período de criação de perfis.
 
 **VM Compatibility (Compatibilidade de VMs)** tem dois valores – Yes (Sim) / Yes (Sim)*. Yes* destina-se aos casos em que a máquina virtual se adequa ao [Armazenamento do Azure premium](https://aka.ms/premium-storage-workload), recaindo o disco de alterações a dados / IOPS elevadas com perfis criados na categoria P20 ou P30, mas em que o tamanho do disco faz com que seja mapeada para a categoria P10 ou P20. Para decidir para que tipo de disco de armazenamento premium mapear um disco, o Armazenamento do Azure baseia-se no respetivo tamanho, ou seja, < 128 GB é P10, 128 a 512 GB é P20 e 512 GB a 1023 GB é P30. Assim, se as características da carga de trabalho de um disco o colocarem num P20 ou P30, mas o tamanho o mapear para um tipo de disco de armazenamento premium inferior, a ferramenta marca essa máquina virtual como Yes* e recomenda-lhe que altere o tamanho do disco de origem, de modo a que se adeque ao tipo de disco de armazenamento premium recomendado, ou que altere o tipo de disco de destino a seguir à ativação pós-falha.
 O Tipo de Armazenamento é standard ou premium.
@@ -439,7 +439,7 @@ O Tipo de Armazenamento é standard ou premium.
 
 ![Deployment Planner](./media/site-recovery-deployment-planner/incompatible-vms.png)
 
-**VM Name (Nome da VM)** é o nome ou o endereço IP da máquina virtual conforme utilizado em VMListFile no momento da geração de relatórios. Esta coluna também apresenta os discos (VMDKs) ligados às máquinas virtuais.
+**VM Name (Nome da VM)** é o nome ou o endereço IP da máquina virtual conforme utilizado em VMListFile no momento da geração de relatórios. Esta coluna também apresenta os discos (VMDKs) ligados às máquinas virtuais. As máquinas virtuais num vCenter com nomes ou endereços IP duplicados são mencionados com o nome de anfitrião ESXi para distinguir cada máquina virtual. O anfitrião ESXi listado é o anfitrião no qual a máquina virtual foi colocada quando a ferramenta a detetou pela primeira vez durante o período de criação de perfis.
 
 **VM Compatibility (Compatibilidade de VM)** indica a razão pela qual a máquina virtual especificada é incompatível para utilização com o Azure Site recovery. As razões são descritas por disco incompatível da máquina virtual e podem ser uma das seguintes, com base nos [limites](https://aka.ms/azure-storage-scalbility-performance) do Armazenamento do Azure publicados.
 
@@ -483,7 +483,24 @@ Estes são números médios, que pressupõem uma sobreposição de 30% de E/S. O
 
 Os limites publicados anteriormente baseiam-se nos nossos testes, mas não abrangem todas as combinações de E/S de aplicações possíveis. Os resultados reais vão variar consoante a combinação de E/S da sua aplicação. Para obter os melhores resultados, mesmo após o planeamento da implementação, é sempre recomendado efetuar testes extensos às aplicações com a ativação pós-falha de teste, para ter a perspetiva verdadeira quanto ao desempenho.
 
-##<a name="release-notes"></a>Notas de versão
+## <a name="how-to-update-the-deployment-planner"></a>Como atualizar o Deployment Planner?
+[Transfira](site-recovery-deployment-planner.md#download) a versão mais recente do Azure Site Recovery Deployment Planner. Copie o ficheiro zip para um servidor onde quer executar. Extraia o ficheiro zip.
+Se já tiver a versão anterior do Deployment Planner e a criação de perfis não estiver a funcionar, não tem de parar a criação de perfis, a menos que a nova versão tenha uma correção de criação de perfis. Se a versão tiver correções no componente de criação de perfis, é recomendado parar a criação de perfis com a versão mais antiga e iniciar novamente a criação de perfis com a nova versão. Tenha em atenção que, ao iniciar a criação de perfis com a nova versão, tem de introduzir o mesmo caminho de diretório de saída para que a ferramenta acrescente os dados de perfil nos ficheiros existentes e será utilizado o conjunto completo de dados da criação de perfis na geração de relatórios. Se tiver introduzido um diretório de saída diferente, serão criados novos ficheiros e os dados da criação de perfis antigos não podem ser utilizados na geração de relatórios.<br> Cada atualização é uma atualização cumulativa com um ficheiro zip. Não é necessário copiar os novos ficheiros de versão para a pasta de versão anterior para serem utilizados. Pode utilizar a nova pasta tal.
+
+
+##<a name="version-history"></a>Histórico de Versões
+### <a name="11"></a>1.1
+Atualizado a: 09-Mar-2017 <br>
+
+Problemas seguintes corrigidos<br>
+
+* Não é possível criar perfis para máquinas virtuais se o vCenter tiver duas ou mais máquinas virtuais com o mesmo nome/endereço IP em diferentes anfitriões ESXi.<br>
+* A cópia e a pesquisa foram desativadas para as folhas VMs Compatíveis e VMs Incompatíveis.
+
+
+### <a name="10"></a>1.0 
+Atualizado a: 23-Fev-2017 
+
 O Azure Site Recovery Deployment Planner Public Preview 1.0 tem os problemas conhecidos seguintes, que serão resolvidos em atualizações futuras.
 
 * A ferramenta só funciona no cenário de implementações do VMware para o Azure, não do Hyper-V para o Azure. Para o cenário de implementações do Hyper-V para o Azure, utilize a [ferramenta Capacity Planner do Hyper-V](./site-recovery-capacity-planning-for-hyper-v-replication.md).

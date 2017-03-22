@@ -16,9 +16,9 @@ ms.date: 02/27/2017
 ms.author: tamram
 ms.custom: H1Hack27Feb2017
 translationtype: Human Translation
-ms.sourcegitcommit: 6b6c548ca1001587e2b40bbe9ee2fcb298f40d72
-ms.openlocfilehash: edda9dc389d670b463d518edf8c4703062ba169d
-ms.lasthandoff: 02/28/2017
+ms.sourcegitcommit: cfe4957191ad5716f1086a1a332faf6a52406770
+ms.openlocfilehash: 08b478b3108f0673f3a130612020408a0e61c815
+ms.lasthandoff: 03/09/2017
 
 
 ---
@@ -48,7 +48,7 @@ Este artigo parte do princípio de que tem um conhecimento prático do C# e do V
 >
 
 ### <a name="visual-studio"></a>Visual Studio
-Tem de ter o **Visual Studio 2015** para compilar o projeto de exemplo. Pode encontrar versões de avaliação e gratuitas do Visual Studio na [descrição geral dos produtos Visual Studio 2015][visual_studio].
+Tem de ter o **Visual Studio 2015 ou mais recente** para compilar o projeto de exemplo. Pode encontrar versões de avaliação e gratuitas do Visual Studio na [descrição geral dos produtos Visual Studio][visual_studio].
 
 ### <a name="dotnettutorial-code-sample"></a>Exemplo de código *DotNetTutorial*
 A amostra [DotNetTutorial][github_dotnettutorial] é um dos muito exemplos de código Batch encontrados no repositório [azure-batch-samples][github_samples] do GitHub. Pode transferir todos os exemplos ao clicar em **Clonar ou transferir > Transferir ZIP** na home page do repositório ou ao clicar na ligação de transferência direta [azure-batch-samples-master.zip][github_samples_zip]. Assim que extrair o conteúdo do ficheiro ZIP, pode encontrar a solução na seguinte pasta:
@@ -59,7 +59,7 @@ A amostra [DotNetTutorial][github_dotnettutorial] é um dos muito exemplos de c�
 O [Explorador do Azure Batch][github_batchexplorer] é um utilitário gratuito que está incluído no repositório [azure-batch-samples][github_samples] do GitHub. Embora não seja necessário para concluir este tutorial, poderá ser útil no desenvolvimento e depuração das soluções Batch.
 
 ## <a name="dotnettutorial-sample-project-overview"></a>Descrição geral do projeto de exemplo DotNetTutorial
-O exemplo de código *DotNetTutorial* é uma solução do Visual Studio 2015 que consiste em dois projetos: **DotNetTutorial** e **TaskApplication**.
+O exemplo de código *DotNetTutorial* é uma solução do Visual Studio que consiste em dois projetos: **DotNetTutorial** e **TaskApplication**.
 
 * **DotNetTutorial** é a aplicação cliente que interage com os serviços Batch e Armazenamento para executar uma carga de trabalho paralela em nós de computação (máquinas virtuais). O DotNetTutorial é executado na sua estação de trabalho local.
 * **TaskApplication** é o programa que é executado em nós de computação do Azure para realizar o trabalho real. No exemplo, `TaskApplication.exe` analisa o texto num ficheiro transferido do Armazenamento do Azure (o ficheiro de entrada). Em seguida, gera um ficheiro de texto (o ficheiro de saída) que contém uma lista das três palavras principais que aparecem no ficheiro de entrada. Depois de criar o ficheiro de saída, o TaskApplication carrega o ficheiro para o Armazenamento do Azure. Esta ação torna-o disponível para a aplicação cliente para transferência. O TaskApplication é executado em paralelo em diversos nós de computação no serviço Batch.
@@ -792,7 +792,7 @@ Agora que está familiarizado com o fluxo de trabalho básico de uma solução d
 [nuget_packagemgr]: https://docs.nuget.org/consume/installing-nuget
 [nuget_restore]: https://docs.nuget.org/consume/package-restore/msbuild-integrated#enabling-package-restore-during-build
 [storage_explorers]: http://storageexplorer.com/
-[visual_studio]: https://www.visualstudio.com/products/vs-2015-product-editions
+[visual_studio]: https://www.visualstudio.com/vs/
 
 [1]: ./media/batch-dotnet-get-started/batch_workflow_01_sm.png "Criar contentores no Armazenamento do Azure"
 [2]: ./media/batch-dotnet-get-started/batch_workflow_02_sm.png "Carregar a aplicação de tarefa e os ficheiros de entrada (dados) para contentores"

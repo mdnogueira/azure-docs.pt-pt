@@ -214,7 +214,7 @@ Irá implementar o código para a aplicação API ao emitir consolidações para
 5. Quando o repositório do Git tiver sido criado, o painel muda para mostrar as implementações ativas. Uma vez que o repositório é novo, não tem implementações ativas na lista. 
    
     ![Sem Implementações Ativas](media/app-service-api-nodejs-api-app/no-active-deployments.png)
-6. Copie o URL do repositório do Git. Para tal, navegue para o painel da nova aplicação API e observe a secção **Princípios Básicos** do painel. Repare no **URL de clone do Git ** na secção **Princípios Básicos**. Quando paira o rato sobre este URL, verá um ícone à direita que vai copiar o URL para a área de transferência. Clique neste ícone para copiar o URL.
+6. Copie o URL do repositório do Git. Para tal, navegue para o painel da nova aplicação API e observe a secção **Princípios Básicos** do painel. Repare no **URL de clone do Git** na secção **Princípios Básicos**. Quando paira o rato sobre este URL, verá um ícone à direita que vai copiar o URL para a área de transferência. Clique neste ícone para copiar o URL.
    
     ![Obter o Url do Git a partir do Portal](media/app-service-api-nodejs-api-app/get-the-git-url-from-the-portal.png)
    

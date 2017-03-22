@@ -12,30 +12,33 @@ ms.workload: backup-recovery
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 02/21/2017
+ms.date: 03/14/2017
 ms.author: raynew
 translationtype: Human Translation
-ms.sourcegitcommit: 22b50dd6242e8c10241b0626b48f8ef842b6b0fd
-ms.openlocfilehash: c33ca9e5292096a0fd96d98da3e89d721463e903
-ms.lasthandoff: 03/02/2017
+ms.sourcegitcommit: a087df444c5c88ee1dbcf8eb18abf883549a9024
+ms.openlocfilehash: 4674985363bc1267449e018ab15a53757a8fd32d
+ms.lasthandoff: 03/15/2017
 
 
 ---
 # <a name="how-does-azure-site-recovery-work"></a>Como funciona o Azure Site Recovery?
 
-Leia este artigo para compreender a arquitetura subjacente do serviço [Azure Site Recovery](site-recovery-overview.md) e os componentes que fazem com que funcione.
+Este artigo descreve a arquitetura subjacente do serviço [Azure Site Recovery](site-recovery-overview.md) e os componentes que fazem com que funcione.
 
 Publique comentários na parte inferior deste artigo ou no [Fórum dos Serviços de Recuperação do Azure](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr).
 
 
-## <a name="replication-to-azure"></a>Replicação para o Azure
+## <a name="replicate-to-azure"></a>Replicar para o Azure
 
 Pode replicar o que se segue para o Azure:
+
 - **VMware**: VMs VMware no local em execução num [anfitrião suportado](site-recovery-support-matrix-to-azure.md#support-for-datacenter-management-servers). É possível replicar VMs VMware que executam [sistemas operativos suportados](site-recovery-support-matrix-to-azure.md#support-for-replicated-machine-os-versions)
 - **Hyper-V**: VMs Hyper-V no local em execução em [anfitriões suportados](site-recovery-support-matrix-to-azure.md#support-for-datacenter-management-servers).
 - **Máquinas físicas**: servidores físicos no local que executem o Windows ou Linux em [sistemas operativos suportados](site-recovery-support-matrix-to-azure.md#support-for-replicated-machine-os-versions). Pode replicar VMs Hyper-V que executem qualquer sistema operativo convidado [suportado pelo Hyper-V e o Azure](https://technet.microsoft.com/en-us/windows-server-docs/compute/hyper-v/supported-windows-guest-operating-systems-for-hyper-v-on-windows).
 
-## <a name="vmware-replication-to-azure"></a>Replicação do VMware para o Azure
+## <a name="vmware-to-azure"></a>VMware para o Azure
+
+Segue-se aquilo de que precisa para replicar VMs de VMware para o Azure.
 
 Área | Componente | Detalhes
 --- | --- | ---
@@ -85,14 +88,16 @@ Existem alguns requisitos para a reativação pós-falha:
 
 ![Reativação pós-falha](./media/site-recovery-components/enhanced-failback.png)
 
-## <a name="physical-server-replication-to-azure"></a>Replicação de servidor físico para o Azure
+## <a name="physical-to-azure"></a>Físico para o Azure
 
-Este cenário de replicação utiliza os mesmos componentes e processos do [VMware para o Azure](#vmware-replication-to-azure), mas tenha em atenção estas diferenças:
+Quando replicar servidores físicos no local para o Azure, a replicação utiliza também os mesmos componentes e processos como [VMware para o Azure](#vmware-replication-to-azure), mas tenha em atenção estas diferenças:
 
 - Pode utilizar um servidor físico para o servidor de configuração, em vez de uma VM VMware
 - Vai precisar de uma infraestrutura de VMware no local para a reativação pós-falha. Não pode fazer a reativação pós-falha para um computador.
 
-## <a name="hyper-v-replication-to-azure"></a>Replicação do Hyper-V para o Azure
+## <a name="hyper-v-to-azure"></a>Hyper-V para o Azure
+
+Segue-se aquilo de que precisa para replicar VMs de Hyper-V para o Azure.
 
 **Área** | **Componente** | **Detalhes**
 --- | --- | ---
@@ -130,7 +135,7 @@ Este cenário de replicação utiliza os mesmos componentes e processos do [VMwa
 ![Componentes](./media/site-recovery-components/arch-onprem-onprem-azure-vmm.png)
 
 
-## <a name="replication-to-a-secondary-site"></a>Replicação para um site secundário
+## <a name="replicate-to-a-secondary-site"></a>Replicar para um site secundário
 
 Pode replicar o que se segue para o seu site secundário:
 
@@ -139,13 +144,15 @@ Pode replicar o que se segue para o seu site secundário:
 - **Hyper-V**: VMs Hyper-V no local em execução em [anfitriões Hyper-V suportados](site-recovery-support-matrix-to-sec-site.md#on-premises-servers), geridos em clouds do VMM. [anfitriões suportados](site-recovery-support-matrix-to-azure.md#support-for-datacenter-management-servers). Pode replicar VMs Hyper-V que executem qualquer sistema operativo convidado [suportado pelo Hyper-V e o Azure](https://technet.microsoft.com/en-us/windows-server-docs/compute/hyper-v/supported-windows-guest-operating-systems-for-hyper-v-on-windows).
 
 
-## <a name="vmware-vmphysical-server-replication-to-a-secondary-site"></a>Replicação de VM VMware/servidor físico para um site secundário
+## <a name="vmwarephysical-to-a-secondary-site"></a>VMware/físico para um site secundário
+
+Pode replicar VMs de VMware ou servidores físicos para um site secundário com o InMage Scout.
 
 ### <a name="components"></a>Componentes
 
 **Área** | **Componente** | **Detalhes**
 --- | --- | ---
-**Azure** | Este cenário é implementado através de InMage Scout. | Para obter o InMage Scout, precisa de uma subscrição do Azure.<br/><br/> Depois de criar um cofre dos Serviços de Recuperação, transfere o InMage Scout e instala as atualizações mais recentes para configurar a implementação.
+**Azure** | InMage Scout. | Para obter o InMage Scout, precisa de uma subscrição do Azure.<br/><br/> Depois de criar um cofre dos Serviços de Recuperação, transfere o InMage Scout e instala as atualizações mais recentes para configurar a implementação.
 **Servidor de processos** | Localizado no site primário | O servidor de processos é implementado para lidar com a colocação em cache, a compressão e a otimização de dados.<br/><br/> Ele também faz a instalação por push do Agente Unified nas máquinas que pretende proteger.
 **Servidor de configuração** | Localizado no site secundário | O servidor de configuração gere, configura e monitoriza a implementação, utilizando o site de gestão ou a consola do vContinuum.
 **Servidor de vContinuum** | Opcional. Instalado na mesma localização que o servidor de configuração. | Fornece uma consola de gestão e monitorização do seu ambiente protegido.
@@ -166,7 +173,9 @@ Pode replicar o que se segue para o seu site secundário:
 
 
 
-## <a name="hyper-v-vm-replication-to-a-secondary-site"></a>Replicação de VM Hyper-V para um site secundário
+## <a name="hyper-v-to-a-secondary-site"></a>Hyper-V para um site secundário
+
+Segue-se aquilo de que precisa para replicar VMs de Hyper-V para um site secundário.
 
 
 **Área** | **Componente** | **Detalhes**
@@ -202,25 +211,8 @@ Pode replicar o que se segue para o seu site secundário:
 7. Para que o site primário volte a ser a localização ativa, inicie uma ativação pós-falha planeada do site secundário para o primário, seguida de outra replicação inversa.
 
 
-## <a name="hyper-v-replication-workflow"></a>Fluxo de trabalho da replicação de Hyper-V
-
-**Fase do fluxo de trabalho** | **Ação**
---- | ---
-1. **Ativar a proteção** | Depois de ativar a proteção numa VM de Hyper-V, é iniciada a tarefa **Ativar Proteção**, para verificar se a máquina está em conformidade com os pré-requisitos. A tarefa invoca dois métodos:<br/><br/> [CreateReplicationRelationship](https://msdn.microsoft.com/library/hh850036.aspx), para configurar a replicação com as definições que configurou.<br/><br/> [StartReplication](https://msdn.microsoft.com/library/hh850303.aspx), para inicializar uma replicação completa da VM.
-2. **Replicação inicial** |  É obtido um instantâneo da máquina virtual e os discos rígidos virtuais são replicados um de cada vez até estarem todos copiados para a localização secundária.<br/><br/> O tempo necessário para concluir isto depende do tamanho da VM, largura de banda da rede e do método de replicação inicial.<br/><br/> Se ocorrerem alterações de disco enquanto a replicação inicial está em curso, o Controlador de Replicação de Réplica do Hyper-V regista essas alterações como Registos de Replicação do Hyper-V (.hrl) que se encontram na mesma pasta que os discos.<br/><br/> Cada disco tem um ficheiro de .hrl associado que será enviado para o armazenamento secundário.<br/><br/> Os ficheiros de instantâneo e de registo consomem recursos do disco quando a replicação inicial está em curso. Quando a replicação inicial for concluída, o instantâneo de VM é eliminado e as alterações de disco delta no registo são sincronizadas e intercaladas.
-3. **Finalizar a proteção** | Após a conclusão da replicação inicial, a tarefa **Finalizar proteção** configura a rede e outras definições de pós-replicação, para que a máquina virtual fique protegida.<br/><br/> Se está a replicar para o Azure, poderá ter de otimizar as definições para a máquina virtual para que fique preparada para a ativação pós-falha.<br/><br/> Nesta altura, pode executar uma ativação pós-falha de teste para verificar que tudo está a funcionar conforme esperado.
-4. **Replicação** | Depois da replicação inicial, começa a sincronização delta, de acordo com as definições de replicação.<br/><br/> **Falha de replicação**: se falhar a replicação delta, e uma replicação completa seria dispendiosa em termos de largura de banda ou de tempo, ocorre a ressincronização. Por exemplo, se os ficheiros de .hrl atingirem 50% do tamanho do disco, a VM será marcada para ressincronização. A ressincronização minimiza a quantidade de dados enviados por computação de somas de verificação das máquinas virtuais de origem e de destino, enviando apenas o delta. Após a conclusão da ressincronização, retoma-se a replicação delta. Por predefinição, a ressincronização está agendada para ser executada automaticamente fora do horário de expediente, mas pode ressincronizar manualmente uma máquina virtual.<br/><br/> **Erro de replicação**: se ocorrer um erro de replicação, haverá uma repetição interna. Se for um erro não recuperável, tais como um erro de autenticação ou autorização, ou uma máquina de réplica que está num estado inválido, nenhuma repetição ocorrerá. Se for um erro recuperável, como um erro de rede ou espaço em disco/memória insuficiente, em seguida, uma nova tentativa ocorre em intervalos crescentes (a cada 1, 2, 4, 8, 10 e 30 minutos).
-5. **Ativação pós-falha planeada/não planeada** | Pode executar ativações pós-falha planeadas ou não planeadas conforme necessário.<br/><br/> Se executar uma ativação pós-falha planeada, as VMs de origem são desligadas para garantir que não há perda de dados.<br/><br/> Depois de as réplicas de VMs serem criadas, são colocadas no estado de confirmação pendente. Para concluir a ativação pós-falha, tem de consolidá-las.<br/><br/> Quando o site primário estiver a funcionar, pode fazer a reativação pós-falha para o site primário, quando este estiver disponível.
-
-
-**Figura 8: Fluxo de trabalho do Hyper-V**
-
-![fluxo de trabalho](./media/site-recovery-components/arch-hyperv-azure-workflow.png)
-
-
-
-
 ## <a name="next-steps"></a>Passos seguintes
 
-[Verificar pré-requisitos](site-recovery-prereq.md)
+- [Saiba mais](site-recovery-hyper-v-azure-architecture.md) sobre o fluxo de trabalho da replicação de Hyper-V.
+- [Verificar pré-requisitos](site-recovery-prereq.md)
 

@@ -12,12 +12,12 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 01/05/2017
+ms.date: 03/16/2017
 ms.author: juliako
 translationtype: Human Translation
-ms.sourcegitcommit: f6d6b7b1051a22bbc865b237905f8df84e832231
-ms.openlocfilehash: 3309db6a926c3c2a0ff6340f0ade3d73093f6d6b
-ms.lasthandoff: 02/16/2017
+ms.sourcegitcommit: c1cd1450d5921cf51f720017b746ff9498e85537
+ms.openlocfilehash: 8f11b9a6606e30e323295d4144497fae90040d2a
+ms.lasthandoff: 03/14/2017
 
 
 ---
@@ -88,17 +88,17 @@ Com a encriptação dinâmica, apenas tem de criar um elemento que contenha um c
 
 Para obter instruções sobre como codificar, consulte [Como codificar um elemento utilizando um Codificador de Multimédia Standard](media-services-dotnet-encode-with-media-encoder-standard.md).
 
-## <a name="a-idcreatecontentkeyacreate-a-content-key-and-associate-it-with-the-encoded-asset"></a><a id="create_contentkey"></a>Criar uma chave de conteúdo e associe-a com elemento codificado
+## <a id="create_contentkey"></a>Criar uma chave de conteúdo e associe-a com elemento codificado
 Nos Media Services, a chave de conteúdo contém a chave na qual pretende encriptar um elemento.
 
 Para obter informações detalhadas, consulte [Criar chave de conteúdo](media-services-dotnet-create-contentkey.md).
 
-## <a name="a-idconfigurekeyauthpolicyaconfigure-the-content-keys-authorization-policy"></a><a id="configure_key_auth_policy"></a>Configure a política de autorização da chave de conteúdo
+## <a id="configure_key_auth_policy"></a>Configure a política de autorização da chave de conteúdo
 Os Media Services suportam várias formas de autenticar utilizadores que efetuam pedidos de chave. A política de autorização da chave de conteúdo tem de ser configurada por si e cumprida pelo cliente (leitor) para que a chave seja entregue ao cliente. A política de autorização da chave de conteúdo pode ter uma ou mais restrições de autorização: aberto ou token restrito.
 
 Para obter informações detalhadas, consulte [Configurar a Política de Autorização da Chave de Conteúdo](media-services-dotnet-configure-content-key-auth-policy.md#playready-dynamic-encryption).
 
-## <a name="a-idconfigureassetdeliverypolicyaconfigure-asset-delivery-policy"></a><a id="configure_asset_delivery_policy"></a>Configurar a política de entrega de elemento
+## <a id="configure_asset_delivery_policy"></a>Configurar a política de entrega de elemento
 Configure a política de entrega para o seu elemento. Alguns dos aspetos da configuração de política de entrega de elementos incluem:
 
 * O URL de aquisição da licença da DRM.
@@ -107,7 +107,7 @@ Configure a política de entrega para o seu elemento. Alguns dos aspetos da conf
 
 Para obter informações detalhadas, consulte [Configurar a política de entrega de elemento](media-services-rest-configure-asset-delivery-policy.md).
 
-## <a name="a-idcreatelocatoracreate-an-ondemand-streaming-locator-in-order-to-get-a-streaming-url"></a><a id="create_locator"></a>Criar um localizador de transmissão em fluxo OnDemand para obter um URL de transmissão em fluxo
+## <a id="create_locator"></a>Criar um localizador de transmissão em fluxo OnDemand para obter um URL de transmissão em fluxo
 Terá de fornecer aos seus utilizadores o URL de transmissão em fluxo Uniforme, DASH ou HLS.
 
 > [!NOTE]
@@ -134,7 +134,7 @@ Obtenha um token de teste baseado na restrição de token que foi utilizada para
 
 Pode utilizar o [Leitor AMS](http://amsplayer.azurewebsites.net/azuremediaplayer.html) para testar a sua transmissão em fluxo.
 
-## <a name="a-idexampleaexample"></a><a id="example"></a>Exemplo
+## <a id="example"></a>Exemplo
 O exemplo seguinte demonstra a funcionalidade que foi introduzida no SDK de Media Services do Azure para .Net-versão 3.5.2 (especificamente, a capacidade de definir um modelo de licença Widevine e pedir uma licença Widevine a partir dos Media Services do Azure). O seguinte comando do pacote Nuget foi utilizado para instalar o pacote:
 
     PM> Install-Package windowsazure.mediaservices -Version 3.5.2
@@ -160,6 +160,9 @@ O exemplo seguinte demonstra a funcionalidade que foi introduzida no SDK de Medi
               </appSettings>
         </configuration>
 7. Substitua o código no seu ficheiro Program.cs com o código mostrado nesta secção.
+
+    >[!NOTE]
+    >Existe um limite de 1,000,000 políticas para diferentes políticas do AMS (por exemplo, para a política Locator ou ContentKeyAuthorizationPolicy). Deve utilizar o mesmo ID de política se estiver a utilizar sempre os mesmas permissões de dias/acesso, por exemplo, políticas para localizadores que pretendam permanecem no local durante muito tempo (políticas de não carregamento). Para obter mais informações, veja [este](media-services-dotnet-manage-entities.md#limit-access-policies) tópico.
 
     Certifique-se de que atualiza as variáveis para apontar para as pastas onde se encontram os seus ficheiros de entrada.
 
@@ -276,20 +279,10 @@ O exemplo seguinte demonstra a funcionalidade que foi introduzida no SDK de Medi
 
                     Console.WriteLine("Created assetFile {0}", assetFile.Name);
 
-                    var policy = _context.AccessPolicies.Create(
-                                            assetName,
-                                            TimeSpan.FromDays(30),
-                                            AccessPermissions.Write | AccessPermissions.List);
-
-                    var locator = _context.Locators.CreateLocator(LocatorType.Sas, inputAsset, policy);
-
                     Console.WriteLine("Upload {0}", assetFile.Name);
 
                     assetFile.Upload(singleFilePath);
                     Console.WriteLine("Done uploading {0}", assetFile.Name);
-
-                    locator.Delete();
-                    policy.Delete();
 
                     return inputAsset;
                 }
@@ -484,7 +477,6 @@ O exemplo seguinte demonstra a funcionalidade que foi introduzida no SDK de Medi
 
                     return MediaServicesLicenseTemplateSerializer.Serialize(responseTemplate);
                 }
-
 
                 private static string ConfigureWidevineLicenseTemplate()
                 {
