@@ -15,9 +15,9 @@ ms.workload: big-data
 ms.date: 12/08/2016
 ms.author: edmaca
 translationtype: Human Translation
-ms.sourcegitcommit: 3c8406efd9d716df56ed3ca10fc596684945c2f2
-ms.openlocfilehash: 3281b001aeab42aace951b5bdd5d4ec901de396f
-ms.lasthandoff: 12/10/2016
+ms.sourcegitcommit: cfe4957191ad5716f1086a1a332faf6a52406770
+ms.openlocfilehash: 2fa2d26b996435c18c2f88396991bf7210350553
+ms.lasthandoff: 03/09/2017
 
 
 ---
@@ -29,7 +29,7 @@ Saiba como instalar as Ferramentas do Data Lake para Visual Studio e utilizar as
 U-SQL é uma linguagem hiper escalável e altamente extensível para preparar, transformar e analisar todos os dados no Data Lake e além deste. Para obter mais informações, veja [Referência U-SQL](http://go.microsoft.com/fwlink/p/?LinkId=691348).
 
 ## <a name="prerequisites"></a>Pré-requisitos
-* **Visual Studio 2015, Visual Studio 2013 Update 4 ou Visual Studio 2012. As edições Enterprise (Ultimate/Premium), Professional e Community são suportadas; a edição Express não é suportada. O Visual Studio 2017 não é atualmente suportado.**
+* **Visual Studio 2015 atualização 3, Visual Studio 2013 atualização 4 ou Visual Studio 2012. As edições Enterprise (Ultimate/Premium), Professional e Community são suportadas; a edição Express não é suportada. O Visual Studio 2017 não é atualmente suportado.**
 * **SDK do Microsoft Azure para .NET versão 2.7.1 ou superior**.  Instale-lo através do [Instalador de plataforma Web](http://www.microsoft.com/web/downloads/platform.aspx).
 * **[Data Lake Tools para Visual Studio](http://aka.ms/adltoolsvs)**.
 

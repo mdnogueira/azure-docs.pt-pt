@@ -16,9 +16,9 @@ ms.date: 02/27/2017
 ms.author: tamram
 ms.custom: H1Hack27Feb2017
 translationtype: Human Translation
-ms.sourcegitcommit: 6b6c548ca1001587e2b40bbe9ee2fcb298f40d72
-ms.openlocfilehash: e204a3c79768ddbd433f3b00a3db456ef3258173
-ms.lasthandoff: 02/28/2017
+ms.sourcegitcommit: cfe4957191ad5716f1086a1a332faf6a52406770
+ms.openlocfilehash: 9ea205cb5034fea66c770ec71934e302ee818a89
+ms.lasthandoff: 03/09/2017
 
 
 ---
@@ -100,7 +100,7 @@ As APIs do Azure Resource Manager para o Batch concedem acesso programático às
 Embora não sejam necessárias para criar soluções com o Batch, existem algumas ferramentas valiosas a utilizar durante a criação e a depuração das suas aplicações e serviços Batch.
 
 * [Portal do Azure][portal]: pode criar, monitorizar e eliminar conjuntos, trabalhos e tarefas do Batch nos painéis Batch do portal do Azure. Pode ver as informações de estado para estes e outros recursos ao executar os trabalhos, e até mesmo transferir os ficheiros de nós de computação nos seus conjuntos (por exemplo, transferir o `stderr.txt` de uma tarefa falhada durante a resolução de problemas). Também pode transferir ficheiros de Ambiente de Trabalho Remoto (RDP) que pode utilizar para iniciar sessão em nós de computação.
-* [Azure Batch Explorer][batch_explorer]: o Batch Explorer fornece uma funcionalidade de gestão de recursos do Batch semelhante à do portal do Azure, mas numa aplicação autónoma de cliente do Windows Presentation Foundation (WPF). Uma das aplicações Batch .NET de exemplo disponível no [GitHub][github_samples], que pode criar com o Visual Studio 2015 ou superior e utilizá-la para procurar e gerir os recursos na sua conta do Batch enquanto desenvolve e depura soluções Batch. Veja o trabalho, o conjunto e os detalhes da tarefa, transfira ficheiros a partir de nós de computação e ligue a nós remotamente, com ficheiros de Ambiente de Trabalho Remoto (RDP) que pode transferir com o Explorador do Batch.
+* [Azure Batch Explorer][batch_explorer]: o Batch Explorer fornece uma funcionalidade de gestão de recursos do Batch semelhante à do portal do Azure, mas numa aplicação autónoma de cliente do Windows Presentation Foundation (WPF). Uma das aplicações Batch .NET de exemplo disponível no [GitHub][github_samples], que pode criar com o Visual Studio 2015 ou mais recente e utilizá-la para procurar e gerir os recursos na sua conta do Batch enquanto desenvolve e depura soluções Batch. Veja o trabalho, o conjunto e os detalhes da tarefa, transfira ficheiros a partir de nós de computação e ligue a nós remotamente, com ficheiros de Ambiente de Trabalho Remoto (RDP) que pode transferir com o Explorador do Batch.
 * [Explorador de Armazenamento do Microsoft Azure][storage_explorer]: embora não seja estritamente uma ferramenta do Azure Batch, o Explorador de Armazenamento é outra ferramenta valiosa a ter enquanto estiver a desenvolver e a depurar as soluções do Batch.
 
 ## <a name="scenario-scale-out-a-parallel-workload"></a>Cenário: aumentar horizontalmente uma carga de trabalho paralela

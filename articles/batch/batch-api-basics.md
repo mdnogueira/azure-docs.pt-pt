@@ -16,9 +16,9 @@ ms.date: 02/27/2017
 ms.author: tamram
 ms.custom: H1Hack27Feb2017
 translationtype: Human Translation
-ms.sourcegitcommit: 6b6c548ca1001587e2b40bbe9ee2fcb298f40d72
-ms.openlocfilehash: 9a17b749a50c0f75890fa71b4ae00391aa63876a
-ms.lasthandoff: 02/28/2017
+ms.sourcegitcommit: a087df444c5c88ee1dbcf8eb18abf883549a9024
+ms.openlocfilehash: 0682a048429d8e980da529975a24dde28a9812fe
+ms.lasthandoff: 03/15/2017
 
 
 ---
@@ -105,7 +105,7 @@ Quando cria um conjunto, pode especificar os seguintes atributos:
   * Tal como com as funções de trabalho, recomendamos que especifique `*` para a *Versão do SO*, para que os nós sejam atualizados automaticamente e não seja necessário fazer nada para fornecer versões lançadas recentemente. O principal motivo para selecionar uma versão de SO específica é garantir a compatibilidade da aplicação, o que permite fazer testes de retrocompatibilidade antes de permitir a atualização da versão. Após a validação, a *Versão do SO* do conjunto pode ser atualizada e a nova imagem do SO instalada. As tarefas que estejam em execução são interrompidas e colocadas novamente em fila.
 * **Tamanho dos nós**
 
-    Os tamanhos dos nós de computação de **Configuração de Serviços Cloud** estão listados em [Sizes for Cloud Services (Tamanhos dos Serviços Cloud)](../cloud-services/cloud-services-sizes-specs.md). O Batch suporta todos os tamanhos de Serviços Cloud, exceto `ExtraSmall`.
+    Os tamanhos dos nós de computação de **Configuração de Serviços Cloud** estão listados em [Sizes for Cloud Services (Tamanhos dos Serviços Cloud)](../cloud-services/cloud-services-sizes-specs.md). O Batch suporta todos os tamanhos de Serviços Cloud, exceto `ExtraSmall`, `STANDARD_A1_V2`, e `STANDARD_A2_V2`.
 
     Os tamanhos dos nós de computação de **Configuração de Máquina Virtual** estão listados em [Sizes for virtual machines in Azure (Tamanhos das máquinas virtuais no Azure)](../virtual-machines/virtual-machines-linux-sizes.md) (Linux) e em [Sizes for virtual machines in Azure (Tamanhos das máquinas virtuais no Azure)](../virtual-machines/virtual-machines-windows-sizes.md) (Windows). O Batch suporta todos os tamanhos de VM do Azure, exceto `STANDARD_A0` e os do armazenamento premium (séries `STANDARD_GS`, `STANDARD_DS` e `STANDARD_DSV2`).
 

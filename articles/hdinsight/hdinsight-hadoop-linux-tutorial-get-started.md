@@ -16,8 +16,9 @@ ms.workload: big-data
 ms.date: 01/17/2017
 ms.author: jgao
 translationtype: Human Translation
-ms.sourcegitcommit: c08b568642e88da1aeddd36cb25a9f5c94b083e2
-ms.openlocfilehash: f283f103804d8e6d4a3c2037c8d38daafcb3f3e8
+ms.sourcegitcommit: 24d86e17a063164c31c312685c0742ec4a5c2f1b
+ms.openlocfilehash: d038245747ff8cfd2c80d7a7e0f05373ccb1e5fe
+ms.lasthandoff: 03/11/2017
 
 
 ---
@@ -62,7 +63,7 @@ O modelo do Resource Manager utilizado neste tutorial está localizado no [Githu
     * **Tipo de SO**: Linux
     * **Número de nós de trabalho**: 2
 
-     Cada cluster tem uma dependência de conta do Blob Storage do Azure. Normalmente, é designada de conta do Storage predefinida. O cluster do HDInsight e a respetiva conta do Storage predefinida devem estar colocalizados na mesma região do Azure. A eliminação dos clusters não elimina a conta de armazenamento. 
+     Cada cluster tem uma dependência de conta do Armazenamento do Azure. Normalmente, é designada de conta do Storage predefinida. O cluster do HDInsight e a respetiva conta do Storage predefinida devem estar colocalizados na mesma região do Azure. A eliminação dos clusters não elimina a conta de armazenamento. 
      
      Para obter mais explicações sobre estas propriedades, veja [Criar clusters Hadoop no HDInsight](hdinsight-hadoop-provision-linux-clusters.md).
 
@@ -134,7 +135,7 @@ Para saber mais sobre como analisar os dados com o HDInsight, consulte os seguin
 
 Se estiver pronto para começar a trabalhar com os seus próprios dados e precisar de saber mais sobre a forma como o HDInsight armazena os dados ou como carregar dados para o HDInsight, consulte os seguintes recursos:
 
-* Para obter informações sobre como o HDInsight utiliza o Blob Storage do Azure, consulte [Utilizar o Blob Storage do Azure com o HDInsight](hdinsight-hadoop-use-blob-storage.md).
+* Para obter informações sobre como o HDInsight utiliza o Armazenamento do Azure, consulte [Utilizar o Armazenamento do Azure com o HDInsight](hdinsight-hadoop-use-blob-storage.md).
 * Para obter informações sobre como carregar dados para o HDInsight, consulte [Carregar dados para o HDInsight][hdinsight-upload-data].
 
 Se gostaria de saber mais sobre como criar ou gerir um cluster do HDInsight, consulte os seguintes recursos:
@@ -155,10 +156,5 @@ Se gostaria de saber mais sobre como criar ou gerir um cluster do HDInsight, con
 [hdinsight-use-hive]: hdinsight-use-hive.md
 [hdinsight-use-pig]: hdinsight-use-pig.md
 
-
-
-
-
-<!--HONumber=Feb17_HO3-->
 
 

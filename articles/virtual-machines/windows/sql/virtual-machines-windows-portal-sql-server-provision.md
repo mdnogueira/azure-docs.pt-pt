@@ -16,9 +16,9 @@ ms.workload: infrastructure-services
 ms.date: 02/28/2017
 ms.author: jroth
 translationtype: Human Translation
-ms.sourcegitcommit: 5121b2f9d33ebf4749fae6d990feab3bf9244e93
-ms.openlocfilehash: 6b99dbbacd9451285cca29de4a72ffb1473479fc
-ms.lasthandoff: 02/28/2017
+ms.sourcegitcommit: cfe4957191ad5716f1086a1a332faf6a52406770
+ms.openlocfilehash: fa7c846cf5018b5f0d918e5dc9d9020313833d77
+ms.lasthandoff: 03/09/2017
 
 
 ---
@@ -53,8 +53,8 @@ Neste tutorial, irá:
 
    ![Painel Virtual Machines do Azure](./media/virtual-machines-windows-portal-sql-server-provision/azure-compute-blade2.png)
 
-5. Reveja os modelos do SQL Server disponíveis. Cada modelo identifica uma versão do SQL Server e um sistema operativo. 
-6. Selecione o modelo para o SQL Server 2016 SP1 Developer no Windows Server 2016.
+5. Reveja as imagens do SQL Server disponíveis. Cada imagem identifica uma versão do SQL Server e um sistema operativo. 
+6. Selecione a imagem para o SQL Server 2016 SP1 Developer no Windows Server 2016.
 
    > [!TIP]
    > A edição de Programador é utilizada neste tutorial porque é uma edição com todas as funcionalidades do SQL Server que é gratuita para fins de teste de programação. Apenas paga pelo custo de execução da VM.
@@ -97,7 +97,7 @@ No painel **Noções básicas**, forneça as seguintes informações:
     ![Painel de Noções Básicas do SQL](./media/virtual-machines-windows-portal-sql-server-provision/azure-sql-basic.png)
 
 ## <a name="2-choose-virtual-machine-size"></a>2. Selecionar o tamanho da máquina virtual
-No passo **Tamanho**, escolha um tamanho da máquina virtual no painel **Escolher um tamanho**. O painel inicialmente apresenta os tamanhos recomendados da máquina baseados no modelo que selecionou. Também calcula o custo mensal para executar a VM.
+No passo **Tamanho**, escolha um tamanho da máquina virtual no painel **Escolher um tamanho**. O painel inicialmente apresenta os tamanhos recomendados da máquina baseados na imagem que selecionou. Também calcula o custo mensal para executar a VM.
 
 ![Opções de Tamanho da VM do SQL](./media/virtual-machines-windows-portal-sql-server-provision/azure-sql-vm-choose-a-size.png)
 
