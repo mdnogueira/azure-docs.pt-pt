@@ -151,7 +151,7 @@ Nesta secção, irá criar uma aplicação de consola do Java que lê mensagens 
     <dependency> 
         <groupId>com.microsoft.azure</groupId> 
         <artifactId>azure-eventhubs</artifactId> 
-        <version>0.11.0</version> 
+        <version>0.13.0</version> 
     </dependency>
     ```
 
