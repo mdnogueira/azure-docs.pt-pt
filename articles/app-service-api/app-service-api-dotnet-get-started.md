@@ -3,7 +3,7 @@ title: "Introdução às API Apps e ASP.NET no App Service | Microsoft Docs"
 description: "Saiba como criar, implementar e consumir uma aplicação API do ASP.NET no App Service do Azure, utilizando o Visual Studio 2015."
 services: app-service\api
 documentationcenter: .net
-author: tdykstra
+author: alexkarcher-msft
 manager: erikre
 editor: 
 ms.assetid: ddc028b2-cde0-4567-a6ee-32cb264a830a
@@ -13,7 +13,7 @@ ms.tgt_pltfrm: dotnet
 ms.devlang: na
 ms.topic: hero-article
 ms.date: 09/20/2016
-ms.author: rachelap
+ms.author: alkarche
 translationtype: Human Translation
 ms.sourcegitcommit: b1a633a86bd1b5997d5cbf66b16ec351f1043901
 ms.openlocfilehash: c7b4e39e01ae335c3e6a5cf9cb1efe8a64490e35
@@ -199,7 +199,7 @@ O Swashbuckle funciona com qualquer projeto API Web do ASP.NET. Se pretender adi
 > 
 > 
 
-## <a name="a-idcreateapiappa-create-an-api-app-in-azure-and-deploy-code-to-it"></a><a id="createapiapp"></a> Criar uma aplicação API no Azure e implementar código na mesma
+## <a id="createapiapp"></a> Criar uma aplicação API no Azure e implementar código na mesma
 Nesta secção, irá utilizar as ferramentas do Azure que estão integradas no assistente **Publicar Web** do Visual Studio para criar uma nova aplicação API no Azure. Em seguida, implemente o projeto ToDoListDataAPI na nova aplicação API e chame a API executando a IU do Swagger.
 
 1. No **Explorador de Soluções**, clique com o botão direito do rato no projeto ToDoListDataAPI e, em seguida, clique em **Publicar**.
@@ -303,7 +303,7 @@ Nesta secção, irá utilizar as ferramentas do Azure que estão integradas no a
     
     Quando seleciona uma aplicação API para gerar o código de cliente para a mesma, o Visual Studio obtém os metadados a partir deste URL.
 
-## <a name="a-idcodegena-generate-client-code-for-the-data-tier"></a><a id="codegen"></a> Gerar código de cliente para a camada de dados
+## <a id="codegen"></a> Gerar código de cliente para a camada de dados
 Uma das vantagens de integrar o Swagger em API Apps do Azure é a geração automática de código. As classes de cliente geradas tornam mais fácil escrever código que chama uma aplicação API.
 
 O projeto ToDoListAPI já tem o código de cliente gerado, mas nos passos seguintes irá eliminá-lo e voltar a gerá-lo para ver como efetuar a geração de código.
