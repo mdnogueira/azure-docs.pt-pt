@@ -1,6 +1,6 @@
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Se ainda não o fez, pode obter uma [Versão de avaliação gratuita da subscrição do Azure](https://azure.microsoft.com/pricing/free-trial/) e a [CLI 1.0 do Azure](../articles/xplat-cli-install.md) [ligada à sua conta do Azure](../articles/xplat-cli-connect.md). Confirme que a CLI do Azure está no modo Resource Manager da seguinte forma:
+Se ainda não o fez, pode obter uma [Versão de avaliação gratuita da subscrição do Azure](https://azure.microsoft.com/pricing/free-trial/) e a [CLI 1.0 do Azure](../articles/cli-install-nodejs.md) [ligada à sua conta do Azure](../articles/xplat-cli-connect.md). Confirme que a CLI do Azure está no modo Resource Manager da seguinte forma:
 
 ```azurecli
 azure config mode arm

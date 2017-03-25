@@ -15,9 +15,9 @@ ms.topic: get-started-article
 ms.date: 12/16/2016
 ms.author: cephalin
 translationtype: Human Translation
-ms.sourcegitcommit: 0921b01bc930f633f39aba07b7899ad60bd6a234
-ms.openlocfilehash: 9482315aba089f3f00e114b835963c247a4f5007
-ms.lasthandoff: 02/28/2017
+ms.sourcegitcommit: 0d8472cb3b0d891d2b184621d62830d1ccd5e2e7
+ms.openlocfilehash: 9be7aec6d66c625be83b93bb840ad137d3c786d2
+ms.lasthandoff: 03/21/2017
 
 
 ---
@@ -247,7 +247,7 @@ Para ativar o Node-Inspector, siga estes passos:
 
 <!-- URL List -->
 
-[CLI do Azure]: ../xplat-cli-install.md
+[CLI do Azure]:../cli-install-nodejs.md
 [Serviço de Aplicações do Azure]: ../app-service/app-service-value-prop-what-is.md
 [ativar os benefícios de subscritor do Visual Studio]: http://go.microsoft.com/fwlink/?LinkId=623901
 [Bower]: http://bower.io/

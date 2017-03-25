@@ -15,9 +15,9 @@ ms.topic: hero-article
 ms.date: 01/07/2017
 ms.author: ambapat
 translationtype: Human Translation
-ms.sourcegitcommit: 36e0a52013b8d12c7e66c5955756a61a2c72b7dc
-ms.openlocfilehash: c3507aed3cc44d6360b8ba3ddf172e1437c1227a
-ms.lasthandoff: 01/05/2017
+ms.sourcegitcommit: 0d8472cb3b0d891d2b184621d62830d1ccd5e2e7
+ms.openlocfilehash: a28e325e8a7e902a64f8cc267e2f0d3be151bcb3
+ms.lasthandoff: 03/21/2017
 
 
 ---
@@ -73,7 +73,7 @@ Os controlos de acesso do plano de gestão e do plano de dados funcionam de form
 O plano de gestão consiste em operações que afetam o próprio cofre de chaves. Por exemplo, pode criar ou eliminar um cofre de chaves. Pode ver uma lista dos cofres numa subscrição. Pode obter as propriedades do cofre de chaves (como o SKU e as etiquetas) e definir políticas de acesso do cofre de chaves que controlem os utilizadores e aplicações que podem aceder a chaves e segredos do cofre de chaves. O controlo de acesso do plano de gestão utiliza o RBAC. Veja a lista completa das operações de cofres de chaves que podem ser feitas através do plano de gestão na tabela da secção anterior. 
 
 ### <a name="role-based-access-control-rbac"></a>Controlo de Acesso Baseado em Funções (RBAC)
-Cada subscrição do Azure tem um Azure Active Directory. Os utilizadores, grupos e aplicações deste diretório podem receber acesso para gerir recursos na subscrição do Azure que utilizem o modelo de implementação Azure Resource Manager. Este tipo de controlo de acesso tem o nome de Controlo de Acesso Baseado em Funções (Role-Based Access Control, RBAC). Para gerir este acesso, pode utilizar o [portal do Azure](https://portal.azure.com/), as [ferramentas da CLI do Azure](../xplat-cli-install.md), o [PowerShell](/powershell/azureps-cmdlets-docs) ou as [APIs REST do Azure Resource Manager](https://msdn.microsoft.com/library/azure/dn906885.aspx).
+Cada subscrição do Azure tem um Azure Active Directory. Os utilizadores, grupos e aplicações deste diretório podem receber acesso para gerir recursos na subscrição do Azure que utilizem o modelo de implementação Azure Resource Manager. Este tipo de controlo de acesso tem o nome de Controlo de Acesso Baseado em Funções (Role-Based Access Control, RBAC). Para gerir este acesso, pode utilizar o [portal do Azure](https://portal.azure.com/), as [ferramentas da CLI do Azure](../cli-install-nodejs.md), o [PowerShell](/powershell/azureps-cmdlets-docs) ou as [APIs REST do Azure Resource Manager](https://msdn.microsoft.com/library/azure/dn906885.aspx).
 
 Com o modelo Azure Resource Manager, o cofre de chaves é criado num grupo de recursos e o acesso ao plano de gestão desse cofre é controlado com o Azure Active Directory. Por exemplo, pode conceder a utilizadores ou grupos a capacidade de gerir cofres de chave num grupo de recursos específico.
 
@@ -90,7 +90,7 @@ O plano de dados do cofre de chaves consiste em operações que afetam os objeto
 O acesso do plano de dados é concedido mediante a definição de políticas de acesso a cofres de chaves. De modo a poder definir políticas de acesso a um cofre de chaves, um utilizador, grupo ou aplicação tem de ter as permissões de Contribuinte (RBAC) para o plano de gestão desse cofre. Pode ser concedido acesso a um utilizador, grupo ou aplicação para fazer operações específicas de chaves ou segredos num cofre de chaves. Os cofres de chaves suportam até 16 entradas de políticas de acesso. Crie um grupo de segurança do Azure Active Directory e adicione utilizadores ao mesmo para conceder acesso do plano de dados a vários utilizadores a um cofre de chaves.
 
 ### <a name="key-vault-access-policies"></a>Políticas de Acesso dos cofres de chaves
-As políticas de acesso dos cofres de chaves concedem permissões para chaves, segredos e certificados em separado. Por exemplo, pode dar a um utilizador acesso só a chaves, mas não permissões para segredos. No entanto, as permissões para aceder a chaves, segredos ou certificados são ao nível do cofre. Por outras palavras, a política de acesso do cofre de chaves não suporta permissões ao nível do objeto. Pode utilizar o [portal do Azure](https://portal.azure.com/), as [ferramentas da CLI do Azure](../xplat-cli-install.md), o [PowerShell](/powershell/azureps-cmdlets-docs) ou as [APIs REST de Gestão dos cofres de chaves](https://msdn.microsoft.com/library/azure/mt620024.aspx) para definir políticas de acesso para um cofre de chave.
+As políticas de acesso dos cofres de chaves concedem permissões para chaves, segredos e certificados em separado. Por exemplo, pode dar a um utilizador acesso só a chaves, mas não permissões para segredos. No entanto, as permissões para aceder a chaves, segredos ou certificados são ao nível do cofre. Por outras palavras, a política de acesso do cofre de chaves não suporta permissões ao nível do objeto. Pode utilizar o [portal do Azure](https://portal.azure.com/), as [ferramentas da CLI do Azure](../cli-install-nodejs.md), o [PowerShell](/powershell/azureps-cmdlets-docs) ou as [APIs REST de Gestão dos cofres de chaves](https://msdn.microsoft.com/library/azure/mt620024.aspx) para definir políticas de acesso para um cofre de chave.
 
 > [!IMPORTANT]
 > Tenha em atenção que as políticas de acesso do cofre de chaves são aplicadas ao nível do cofre. Por exemplo, quando é concedida permissão a um utilizador para criar e eliminar chaves, esse utilizador pode fazer essas operações em todas as chaves no cofre de chaves.

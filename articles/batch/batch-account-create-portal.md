@@ -16,9 +16,9 @@ ms.date: 02/27/2017
 ms.author: tamram
 ms.custom: H1Hack27Feb2017
 translationtype: Human Translation
-ms.sourcegitcommit: 6b6c548ca1001587e2b40bbe9ee2fcb298f40d72
-ms.openlocfilehash: bdd7f1410906a46c66c1fd33949b30cc669e5a6b
-ms.lasthandoff: 02/28/2017
+ms.sourcegitcommit: 0d8472cb3b0d891d2b184621d62830d1ccd5e2e7
+ms.openlocfilehash: 09be891b5385871554f45bc1f824b4351ffd3bc2
+ms.lasthandoff: 03/21/2017
 
 
 ---
@@ -60,7 +60,7 @@ Depois de a conta ter sido criada, pode abrir o **painel Conta do Batch** para a
 
 ![Painel Conta do Batch no portal do Azure][account_blade]
 
-* **URL da conta do Batch**: quando desenvolver uma aplicação com as [APIs Batch](batch-technical-overview.md#batch-development-apis), irá precisar de um URL de conta para aceder aos recursos do Batch. Os URLs de conta do Batch têm o formato seguinte:
+* **URL da conta do Batch**: quando desenvolver uma aplicação com as [APIs Batch](batch-apis-tools.md#batch-development-apis), irá precisar de um URL de conta para aceder aos recursos do Batch. Os URLs de conta do Batch têm o formato seguinte:
   
     `https://<account_name>.<region>.batch.azure.com`
 
@@ -107,7 +107,7 @@ Para além disso, é possível aumentar muitas destas quotas simplesmente ao sub
 Para além do portal do Azure, também pode criar e gerir contas do Batch com o seguinte:
 
 * [Cmdlets do PowerShell do Batch](batch-powershell-cmdlets-get-started.md)
-* [CLI do Azure](../xplat-cli-install.md)
+* [CLI do Azure](../cli-install-nodejs.md)
 * [Gestão de Batch .NET](batch-management-dotnet.md)
 
 ## <a name="next-steps"></a>Passos seguintes

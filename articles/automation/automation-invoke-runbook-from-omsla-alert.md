@@ -15,8 +15,9 @@ ms.topic: get-started-article
 ms.date: 01/31/2017
 ms.author: magoedte
 translationtype: Human Translation
-ms.sourcegitcommit: 4ce5ad30d79e92a11231313fe13dd42b94fc2aa4
-ms.openlocfilehash: 50969591267ca74e5c4d4aa5c1efe5b673498309
+ms.sourcegitcommit: bb1ca3189e6c39b46eaa5151bf0c74dbf4a35228
+ms.openlocfilehash: 8460ed6be3e922fb85f46982662d44eed21dda7c
+ms.lasthandoff: 03/17/2017
 
 ---
 
@@ -35,7 +36,7 @@ Existem duas opções para invocar um runbook durante a configuração do alerta
 
 ## <a name="calling-a-runbook-using-a-webhook"></a>Utilizar um webhook para chamar um runbook
 
-Um webhook permite-lhe iniciar um runbook específico na Automatização do Azure através de um único pedido HTTP.  Antes de configurar o [alerta do Log Analytics](../log-analytics/log-analytics-alerts.md#creating-an-alert-rule) para chamar o runbook com um webhook como ação do alerta, tem de, primeiro, criar um webhook para o runbook que será chamado com este método.  Veja e siga os passos no artigo [Create a Webhook (Criar um Webhook)](automation-webhooks.md#creating-a-webhook) e não se esqueça de registar o URL do webhook, para que o possa referenciar enquanto configura a regra do alerta.   
+Um webhook permite-lhe iniciar um runbook específico na Automatização do Azure através de um único pedido HTTP.  Antes de configurar o [alerta do Log Analytics](../log-analytics/log-analytics-alerts.md#creating-alert-rules) para chamar o runbook com um webhook como ação do alerta, tem de, primeiro, criar um webhook para o runbook que será chamado com este método.  Veja e siga os passos no artigo [Create a Webhook (Criar um Webhook)](automation-webhooks.md#creating-a-webhook) e não se esqueça de registar o URL do webhook, para que o possa referenciar enquanto configura a regra do alerta.   
 
 ## <a name="calling-a-runbook-directly"></a>Chamar um runbook diretamente
 
@@ -52,14 +53,14 @@ Ambos os métodos para chamar o runbook a partir do alerta do Log Analytics têm
           [Parameter (Mandatory=$true)]  
           [object] $WebhookData  
          )
-  
+
 *  Tem de ter código para converter o WebhookData num objeto do PowerShell.
 
     `$SearchResults = (ConvertFrom-Json $WebhookData.RequestBody).SearchResults.value`
 
     *$SearchResults* será uma matriz de objetos; cada objeto contém os campos com valores de um resultado de pesquisa
 
-### <a name="webhookdata-inconsistencies-between-the-webhook-option-and-runbook-option"></a>Inconsistências do WebhookData entre a opção webhook e a opção runbook 
+### <a name="webhookdata-inconsistencies-between-the-webhook-option-and-runbook-option"></a>Inconsistências do WebhookData entre a opção webhook e a opção runbook
 
 * Quando configurar um alerta para chamar um webhook, introduza um URL do webhook criado para um runbook e clique no botão **Testar Webhook**.  O WebhookData resultante enviado para o runbook não contém nem *SearchResult* nem *.SearchResults*.
 
@@ -68,7 +69,7 @@ Ambos os métodos para chamar o runbook a partir do alerta do Log Analytics têm
 
 Deste modo, no exemplo de código acima, terá de obter *.SearchResult* se o alerta chamar um webhook e terá de obter *.SearchResults* se o alerta chamar um runbook diretamente.
 
-## <a name="example-walkthrough"></a>Instruções de exemplo 
+## <a name="example-walkthrough"></a>Instruções de exemplo
 
 Para demonstrar como isto funciona, vamos utilizar o runbook gráfico de exemplo seguinte, que inicia um serviço do Windows.<br><br> ![Runbook Gráfico de Início de Serviço do Windows](media/automation-invoke-runbook-from-omsla-alert/automation-runbook-restartservice.png)<br>
 
@@ -90,9 +91,4 @@ Em alternativa, se a sua conta de Automatização não estiver ligada à área d
 * Para saber mais sobre os alertas no Log Analytics e como criá-los, veja [Alerts in Log Analytics (Alertas no Log Analytics)](../log-analytics/log-analytics-alerts.md).
 
 * Para saber como utilizar webhooks para acionar runbooks, veja [Azure Automation webhooks (Webhooks da Automatização do Azure)](automation-webhooks.md).
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 

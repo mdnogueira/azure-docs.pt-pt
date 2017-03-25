@@ -16,9 +16,9 @@ ms.topic: get-started-article
 ms.date: 01/03/2017
 ms.author: nitinme
 translationtype: Human Translation
-ms.sourcegitcommit: 24d86e17a063164c31c312685c0742ec4a5c2f1b
-ms.openlocfilehash: 858d6115ed3a96e3b6a3362ff8f5c1fc4c279bd2
-ms.lasthandoff: 03/11/2017
+ms.sourcegitcommit: 2c9877f84873c825f96b62b492f49d1733e6c64e
+ms.openlocfilehash: edfdba3105aba1079d3c707e7320770c4a999a32
+ms.lasthandoff: 03/15/2017
 
 
 ---
@@ -33,7 +33,7 @@ Quando cria um cluster do Spark no HDInsight, está a criar recursos de computa�
 **Pretende começar a utilizar o Apache Spark no Azure HDInsight?** Veja [Início Rápido: criar um cluster do Spark no HDInsight e executar aplicações de exemplo com o Jupyter](hdinsight-apache-spark-jupyter-spark-sql.md).
 
 > [!NOTE]
-> Para obter uma lista de limitações e problemas conhecidos da versão atual, veja [Problemas conhecidos do Apache Spark no Azure HDInsight](hdinsight-apache-spark-jupyter-spark-sql.md).
+> Para obter uma lista de limitações e problemas conhecidos da versão atual, veja [Problemas conhecidos do Apache Spark no Azure HDInsight](hdinsight-apache-spark-known-issues.md).
 > 
 > 
 

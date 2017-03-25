@@ -12,7 +12,7 @@
 * [Anexar um disco de dados](#attach-a-data-disk)
 
 ## <a name="getting-ready"></a>Preparação
-Antes de poder utilizar a CLI do Azure com grupos de recursos do Azure, tem de ter a versão certa da CLI e uma conta do Azure. Se não tiver a CLI do Azure, [instale-a](../articles/xplat-cli-install.md).
+Antes de poder utilizar a CLI do Azure com grupos de recursos do Azure, tem de ter a versão certa da CLI e uma conta do Azure. Se não tiver a CLI do Azure, [instale-a](../articles/cli-install-nodejs.md).
 
 ### <a name="update-your-azure-cli-version-to-090-or-later"></a>Atualizar a versão da CLI do Azure para a 0.9.0 ou posterior
 Escreva `azure --version` para ver se já tem instalada a versão 0.9.0 ou posterior.
@@ -80,7 +80,7 @@ Pode, então, gerir o clico de vida completo dos recursos do grupo através de c
 
 Pode ver a [Descrição geral do Azure Resource Manager](../articles/azure-resource-manager/resource-group-overview.md) para aprender muito mais sobre os grupos de recursos do Azure e o que estes podem fazer por si. Se estiver interessado em criar modelos, veja [Authoring Azure Resource Manager templates (Criar modelos do Azure Resource Manager)](../articles/resource-group-authoring-templates.md).
 
-## <a name="a-idquick-create-a-vm-in-azureatask-quick-create-a-vm-in-azure"></a><a id="quick-create-a-vm-in-azure"></a>Tarefa: Criar rapidamente uma VM no Azure
+## <a id="quick-create-a-vm-in-azure"></a>Tarefa: Criar rapidamente uma VM no Azure
 Em alguns casos, sabe de que imagem precisa e precisa de uma VM dessa imagem rapidamente e não está muito preocupado com a infraestrutura -- se calhar, tem de testar algo numa VM limpa. É nestes casos que é útil utilizar o comando `azure vm quick-create` e transmitir os argumentos necessários para criar a VM e a respetiva infraestrutura.
 
 O primeiro passo é criar o grupo de recursos.
@@ -214,7 +214,7 @@ info:    vm quick-create command OK
 
 E pronto, já tem a sua VM nova.
 
-## <a name="a-iddeploy-a-vm-in-azure-from-a-templateatask-deploy-a-vm-in-azure-from-a-template"></a><a id="deploy-a-vm-in-azure-from-a-template"></a>Tarefa: Implementar uma VM no Azure a partir de um modelo
+## <a id="deploy-a-vm-in-azure-from-a-template"></a>Tarefa: Implementar uma VM no Azure a partir de um modelo
 Utilize as instruções destas secções para utilizar um modelo com a CLI do Azure e implementar uma VM do Azure nova. Este modelo cria uma máquina virtual individual numa rede virtual nova com uma única sub-rede e, ao contrário de `azure vm quick-create`, permite-lhe descrever o que precisa exatamente e repeti-lo sem erros. Este modelo cria o seguinte:
 
 ![](./media/virtual-machines-common-cli-deploy-templates/new-vm.png)
@@ -483,7 +483,7 @@ info:    group deployment create command OK
 ```
 
 
-## <a name="a-idcreate-a-custom-vm-imageatask-create-a-custom-vm-image"></a><a id="create-a-custom-vm-image"></a>Tarefa: Criar uma imagem de VM personalizada
+## <a id="create-a-custom-vm-image"></a>Tarefa: Criar uma imagem de VM personalizada
 Abordámos a utilização básica dos modelos anteriormente, pelo que agora podemos utilizar instruções semelhantes para criar uma VM personalizada a partir de um ficheiro .vhd no Azure através de um modelo com a CLI do Azure. A diferença é que este modelo cria uma máquina virtual individual com base num disco rígido virtual (VHD) especificado.
 
 ### <a name="step-1-examine-the-json-file-for-the-template"></a>Passo 1: Examinar o ficheiro JSON relativamente do modelo
@@ -751,7 +751,7 @@ data:    nicName                        String        myNIC
 info:    group deployment create command OK
 ```
 
-## <a name="a-iddeploy-a-multi-vm-application-that-uses-a-virtual-network-and-an-external-load-balanceratask-deploy-a-multi-vm-application-that-uses-a-virtual-network-and-an-external-load-balancer"></a><a id="deploy-a-multi-vm-application-that-uses-a-virtual-network-and-an-external-load-balancer"></a>Tarefa: Implementar uma aplicação multi-VMs que utiliza uma rede virtual e um balanceador de carga externo
+## <a id="deploy-a-multi-vm-application-that-uses-a-virtual-network-and-an-external-load-balancer"></a>Tarefa: Implementar uma aplicação multi-VMs que utiliza uma rede virtual e um balanceador de carga externo
 Este modelo permite-lhe criar duas máquinas virtuais num balanceador de carga e configurar uma regra de balanceamento de carga na porta 80. Também implementa uma conta de armazenamento, uma rede virtual, um endereço IP público, um conjunto de disponibilidade e interfaces de rede.
 
 ![](./media/virtual-machines-common-cli-deploy-templates/multivmextlb.png)
@@ -1163,7 +1163,7 @@ info:    group deployment create command OK
 
 Tenha em atenção que este modelo implementa uma imagem do Windows Server. No entanto, pode ser facilmente substituída por qualquer imagem do Linux. Quer criar um cluster do Docker com vários gestores de swarm? [Pode fazê-lo](https://azure.microsoft.com/documentation/templates/docker-swarm-cluster/).
 
-## <a name="a-idremove-a-resource-groupatask-remove-a-resource-group"></a><a id="remove-a-resource-group"></a>Tarefa: Remover um grupo de recursos
+## <a id="remove-a-resource-group"></a>Tarefa: Remover um grupo de recursos
 Lembre-se de que pode reimplementar num grupo de recursos, mas se já não quiser um grupo, pode utilizar `azure group delete <group name>` para eliminá-lo.
 
 ```azurecli
@@ -1174,7 +1174,7 @@ Delete resource group myResourceGroup? [y/n] y
 info:    group delete command OK
 ```
 
-## <a name="a-idshow-the-log-for-a-resource-group-deploymentatask-show-the-log-for-a-resource-group-deployment"></a><a id="show-the-log-for-a-resource-group-deployment"></a>Tarefa: Mostrar o registo da implementação de um grupo de recursos
+## <a id="show-the-log-for-a-resource-group-deployment"></a>Tarefa: Mostrar o registo da implementação de um grupo de recursos
 Esta tarefa é comum quando está a criar ou a utilizar modelos. A chamada para apresentar os registos de implementação de um grupo é `azure group log show <groupname>`, o que mostra muitas informações que são úteis para compreender por que motivo uma determinada situação ocorreu ou não ocorreu. (Para obter mais informações sobre a resolução de problemas com implementações, bem como outras informações sobre problemas, veja [Troubleshoot common Azure deployment errors with Azure Resource Manager (Resolver erros comuns de implementações do Azure com o Azure Resource Manager](../articles/azure-resource-manager/resource-manager-common-deployment-errors.md).))
 
 Para responder a falhas específicas, por exemplo, pode utilizar ferramentas como **jq** para fazer consultas com mais precisão, como falhas individuais que tem de corrigir. O exemplo seguinte utiliza **jq** para analisar um registo de implementação para **lbgroup** relativamente a falhas.
@@ -1191,7 +1191,7 @@ Pode detetar muito rapidamente o que correu mal, corrigir e tentar outra vez. No
 }
 ```
 
-## <a name="a-iddisplay-information-about-a-virtual-machineatask-display-information-about-a-virtual-machine"></a><a id="display-information-about-a-virtual-machine"></a>Tarefa: Apresentar informações sobre uma máquina virtual
+## <a id="display-information-about-a-virtual-machine"></a>Tarefa: Apresentar informações sobre uma máquina virtual
 Pode utilizar o comando `azure vm show <groupname> <vmname>` para ver informações sobre VMs específicas no seu grupo de recursos. Se tiver mais de uma VM no grupo, poderá ter de, primeiro, listar as VMs com `azure vm list <groupname>`.
 
 ```azurecli
@@ -1263,10 +1263,10 @@ info:    vm show command OK
 >
 >
 
-## <a name="a-idlog-on-to-a-linux-based-virtual-machineatask-log-on-to-a-linux-based-virtual-machine"></a><a id="log-on-to-a-linux-based-virtual-machine"></a>Iniciar sessão numa máquina virtual baseada no Linux
+## <a id="log-on-to-a-linux-based-virtual-machine"></a>Iniciar sessão numa máquina virtual baseada no Linux
 Regra geral, as máquinas do Linux são ligadas através de SSH. Para obter mais informações, veja [como utilizar SSH com Linux no Azure](../articles/virtual-machines/virtual-machines-linux-mac-create-ssh-keys.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
-## <a name="a-idstop-a-virtual-machineatask-stop-a-vm"></a><a id="stop-a-virtual-machine"></a>Tarefa: Parar uma VM
+## <a id="stop-a-virtual-machine"></a>Tarefa: Parar uma VM
 Execute este comando:
 
 ```azurecli
@@ -1278,14 +1278,14 @@ azure vm stop <group name> <virtual machine name>
 >
 >
 
-## <a name="a-idstart-a-virtual-machineatask-start-a-vm"></a><a id="start-a-virtual-machine"></a>Tarefa: Iniciar uma VM
+## <a id="start-a-virtual-machine"></a>Tarefa: Iniciar uma VM
 Execute este comando:
 
 ```azurecli
 azure vm start <group name> <virtual machine name>
 ```
 
-## <a name="a-idattach-a-data-diskatask-attach-a-data-disk"></a><a id="attach-a-data-disk"></a>Tarefa: Anexar um disco de dados
+## <a id="attach-a-data-disk"></a>Tarefa: Anexar um disco de dados
 Também vai ter de decidir entre anexar um disco novo ou um que contenha dados. Para um disco novo, o comando cria o ficheiro .vhd e anexa-o no mesmo comando.
 
 Para anexar um disco novo, execute este comando:
@@ -1306,8 +1306,3 @@ Em seguida, tem de montar o disco, como faria normalmente no Linux.
 Para obter muitos mais exemplos de utilização da CLI do Azure no modo **arm**, veja [Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Manager (Utilizar a CLI do Azure para Mac, Linux e Windows com o Azure Resource Manager)](../articles/xplat-cli-azure-resource-manager.md). Para saber mais sobre os recursos do Azure e seus conceitos, veja [Descrição geral do Azure Resource Manager](../articles/azure-resource-manager/resource-group-overview.md).
 
 Para obter mais modelos que podem ser utilizados, veja [Modelos de Início Rápido do Azure](https://azure.microsoft.com/documentation/templates/) e [Application frameworks using templates (Arquiteturas de aplicações com modelos)](../articles/virtual-machines/virtual-machines-linux-app-frameworks.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
-
-
-<!--HONumber=Jan17_HO4-->
-
-

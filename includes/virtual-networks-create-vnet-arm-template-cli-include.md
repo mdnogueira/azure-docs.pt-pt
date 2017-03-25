@@ -1,7 +1,7 @@
 ## <a name="deploy-the-arm-template-by-using-the-azure-cli"></a>Implementar o modelo ARM com a CLI do Azure
 Para implementar o modelo ARM que transferiu com a CLI do Azure, siga os passos abaixo:
 
-1. Se nunca tiver utilizado a CLI do Azure, veja [Install and Configure the Azure CLI (Instalar e Configurar a CLI do Azure)](../articles/xplat-cli-install.md) e siga as instruções até ao ponto onde poderá selecionar a sua conta e subscrição do Azure.
+1. Se nunca tiver utilizado a CLI do Azure, veja [Install and Configure the Azure CLI (Instalar e Configurar a CLI do Azure)](../articles/cli-install-nodejs.md) e siga as instruções até ao ponto onde poderá selecionar a sua conta e subscrição do Azure.
 2. Execute o comando **`azure config mode`** para mudar para o modo Resource Manager, como mostrado abaixo.
    
         azure config mode arm
@@ -84,9 +84,4 @@ Para implementar o modelo ARM que transferiu com a CLI do Azure, siga os passos 
         data:      Address prefix                : 192.168.2.0/24
         data:
         info:    network vnet show command OK
-
-
-
-<!--HONumber=Nov16_HO2-->
-
 
