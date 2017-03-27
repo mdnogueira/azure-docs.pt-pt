@@ -15,8 +15,9 @@ ms.workload: infrastructure-services
 ms.date: 01/23/2017
 ms.author: kumud
 translationtype: Human Translation
-ms.sourcegitcommit: fd5960a4488f2ecd93ba117a7d775e78272cbffd
-ms.openlocfilehash: bd1f5e497bcf39a0d8848cc63c718e693f775d63
+ms.sourcegitcommit: 0d8472cb3b0d891d2b184621d62830d1ccd5e2e7
+ms.openlocfilehash: 128b91c685b5f7e494a69ca5b04165a0ee7cbb78
+ms.lasthandoff: 03/21/2017
 
 ---
 
@@ -51,7 +52,7 @@ Para obter mais informações, veja [Suporte do Azure Resource Manager para o Lo
 
 ## <a name="set-up-cli-to-use-resource-manager"></a>Configurar a CLI para utilizar o Resource Manager
 
-1. Se nunca tiver utilizado a CLI do Azure, veja [Instalar e configurar a CLI do Azure](../xplat-cli-install.md). Siga as instruções até ao ponto onde seleciona a sua conta e subscrição do Azure.
+1. Se nunca tiver utilizado a CLI do Azure, veja [Instalar e configurar a CLI do Azure](../cli-install-nodejs.md). Siga as instruções até ao ponto onde seleciona a sua conta e subscrição do Azure.
 2. Execute o comando **azure config mode** para mudar para o modo Resource Manager, como mostrado abaixo:
 
     ```azurecli
@@ -214,10 +215,5 @@ azure network lb delete --resource-group nrprg --name ilbset
 [Configurar um modo de distribuição de balanceador de carga com a afinidade do IP de origem](load-balancer-distribution-mode.md)
 
 [Configurar definições de tempo limite TCP inativo para o balanceador de carga](load-balancer-tcp-idle-timeout.md)
-
-
-
-
-<!--HONumber=Jan17_HO4-->
 
 

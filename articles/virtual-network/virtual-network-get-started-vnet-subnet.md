@@ -16,9 +16,9 @@ ms.workload: infrastructure-services
 ms.date: 02/27/2016
 ms.author: jdial
 translationtype: Human Translation
-ms.sourcegitcommit: cea53acc33347b9e6178645f225770936788f807
-ms.openlocfilehash: 071ef9c0784bdb24c7d29f49c36aee2271f4b524
-ms.lasthandoff: 03/03/2017
+ms.sourcegitcommit: afe143848fae473d08dd33a3df4ab4ed92b731fa
+ms.openlocfilehash: 214913cb63e38c5df0ab32ad19629507e5fdb35c
+ms.lasthandoff: 03/17/2017
 
 
 ---
@@ -160,7 +160,7 @@ Se tiver criado uma VNet e duas VMs, o portal do Azure terá criado vários recu
 
     ![Conteúdos do grupo de recursos](./media/virtual-network-get-started-vnet-subnet/resource-group-contents.png)
 
-Para saber mais sobre VMs, discos e contas de armazenamento, veja os artigos de descrição geral [Máquina Virtual](../virtual-machines/virtual-machines-windows-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json), [Disco](../storage/storage-about-disks-and-vhds-windows.md?toc=%2fazure%2fvirtual-network%2ftoc.json), e [Conta de armazenamento](../storage/storage-introduction.md?toc=%2fazure%2fvirtual-network%2ftoc.json). Pode ver os dois NSGs predefinidos que o portal criou por si. Também pode ver que o portal criou dois recursos de interface de rede (NIC). Uma NIC permite a uma VM ligar a outros recursos através da VNet. Veja o artigo [NIC](virtual-network-network-interface-overview.md) para saber mais sobre NICs. O portal também criou um recurso de endereço IP público. Os endereços IP públicos são uma definição para um recurso de endereço IP público. Para saber mais sobre endereços IP públicos, veja o artigo [Endereços IP](virtual-network-ip-addresses-overview-arm.md#public-ip-addresses).
+Para saber mais sobre VMs, discos e contas de armazenamento, veja os artigos de descrição geral [Máquina Virtual](../virtual-machines/virtual-machines-windows-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json), [Disco](../storage/storage-about-disks-and-vhds-windows.md?toc=%2fazure%2fvirtual-network%2ftoc.json), e [Conta de armazenamento](../storage/storage-introduction.md?toc=%2fazure%2fvirtual-network%2ftoc.json). Pode ver os dois NSGs predefinidos que o portal criou por si. Também pode ver que o portal criou dois recursos de interface de rede (NIC). Uma NIC permite a uma VM ligar a outros recursos através da VNet. Veja o artigo [NIC](virtual-network-network-interface.md) para saber mais sobre NICs. O portal também criou um recurso de endereço IP público. Os endereços IP públicos são uma definição para um recurso de endereço IP público. Para saber mais sobre endereços IP públicos, veja o artigo [Endereços IP](virtual-network-ip-addresses-overview-arm.md#public-ip-addresses).
 
 ## <a name="connect-to-from-vms"></a>Ligar às VMs
 
@@ -250,7 +250,7 @@ Neste exercício, criou uma VNet e duas VMs. Especificou algumas definições pe
 
 - [Redes virtuais](virtual-networks-overview.md)
 - [Endereços IP públicos](virtual-network-ip-addresses-overview-arm.md#public-ip-addresses)
-- [Interfaces de rede](virtual-network-network-interface-overview.md)
+- [Interfaces de rede](virtual-network-network-interface.md)
 - [Grupos de segurança de rede](virtual-networks-nsg.md)
 - [Máquinas virtuais](../virtual-machines/virtual-machines-windows-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
 

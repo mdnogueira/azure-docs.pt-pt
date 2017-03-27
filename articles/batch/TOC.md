@@ -11,6 +11,7 @@
 ## Programar
 ### [Pacotes de aplicações](batch-application-packages.md)
 ### [Nós de computação com dimensionamento automático](batch-automatic-scaling.md)
+### [Autenticação do Azure AD](batch-aad-auth.md)
 ### [Tarefas de nós simultâneas](batch-parallel-node-tasks.md)
 ### [Consultas de lista eficientes](batch-efficient-list-queries.md)
 ### [Tarefas de preparação e conclusão de trabalhos](batch-job-prep-release.md)
@@ -47,4 +48,5 @@
 ## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=batch&updatetype=&platform=)
 ## [Exemplos de código C#](https://github.com/Azure/azure-batch-samples/tree/master/CSharp/)
 ## [Exemplos de código Python](https://github.com/Azure/azure-batch-samples/tree/master/Python/Batch)
+## [Blogue](https://blogs.technet.microsoft.com/windowshpc/)
 
