@@ -9,6 +9,7 @@ editor: cgronlun
 tags: azure-portal
 ms.assetid: 639328ca-d800-4fa9-97ed-5664477b88cd
 ms.service: hdinsight
+ms.custom: hdinsightactive
 ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
@@ -16,8 +17,9 @@ ms.workload: big-data
 ms.date: 01/12/2017
 ms.author: larryfr
 translationtype: Human Translation
-ms.sourcegitcommit: 279990a67ae260b09d056fd84a12160150eb4539
-ms.openlocfilehash: 744d41a85d39cb468a17ac5a60cd2517f3e60147
+ms.sourcegitcommit: 0d8472cb3b0d891d2b184621d62830d1ccd5e2e7
+ms.openlocfilehash: b1806950581e0adbeec52839f12c70599d28100d
+ms.lasthandoff: 03/21/2017
 
 
 ---
@@ -110,7 +112,7 @@ Esta ação cria um início de sessão para o utilizador especificado e permite 
 
 ### <a name="azure-command-line-interface-for-mac-linux-and-windows"></a>Interface de Linha de Comandos do Azure para Mac, Linux e Windows
 
-Pode utilizar a [CLI do Azure para Mac, Linux e Windows](../xplat-cli-install.md) para criar um novo cluster através do comando `azure hdinsight cluster create`.
+Pode utilizar a [CLI do Azure para Mac, Linux e Windows](../cli-install-nodejs.md) para criar um novo cluster através do comando `azure hdinsight cluster create`.
 
 Para obter mais informações sobre a utilização deste comando, consulte [Aprovisionar clusters do Hadoop em Linux no HDInsight através de opções personalizadas](hdinsight-hadoop-provision-linux-clusters.md).
 
@@ -221,7 +223,7 @@ Se precisar de adicionar mais contas ao cluster, execute os seguintes passos:
 
 6. Agora, deverá conseguir autenticar-se junto do servidor com a nova conta de utilizador e chave privada.
 
-## <a name="a-idtunnelassh-tunneling"></a><a id="tunnel"></a>Túnel SSH
+## <a id="tunnel"></a>Túnel SSH
 
 É possível utilizar o SSH para criar um túnel entre os pedidos locais, tais como pedidos Web, e o cluster do HDInsight. O pedido será encaminhado para o recurso solicitado como se tivesse tido origem no nó principal do cluster do HDInsight.
 
@@ -239,9 +241,4 @@ Agora que sabe como efetuar a autenticação com uma chave SSH, saiba como utili
 * [Utilizar tarefas de MapReduce com o HDInsight](hdinsight-use-mapreduce.md)
 
 [preview-portal]: https://portal.azure.com/
-
-
-
-<!--HONumber=Jan17_HO3-->
-
 

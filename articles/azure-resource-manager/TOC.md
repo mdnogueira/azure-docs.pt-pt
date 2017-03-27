@@ -7,14 +7,13 @@
 
 # Introdução
 ## [Exportar modelo](resource-manager-export-template.md)
-## [Instruções do modelo](resource-manager-template-walkthrough.md)
+## [Criar o seu primeiro modelo](resource-manager-create-first-template.md)
 ## [Visual Studio com o Resource Manager](vs-azure-tools-resource-groups-deployment-projects-create-deploy.md)
-## [Código VS com o Resource Manager](resource-manager-vs-code.md)
 
 # Procedimento
 ## Criar modelos
 ### [Melhores práticas de modelos](resource-manager-template-best-practices.md)
-### [Criar modelos](resource-group-authoring-templates.md)
+### [Secções de modelos](resource-group-authoring-templates.md)
 ### [Funções de modelos](resource-group-template-functions.md)
 ### [Definir a dependência entre recursos](resource-group-define-dependencies.md)
 ### [Definir nome e tipo do recurso subordinado](resource-manager-template-child-resource.md)
@@ -62,7 +61,7 @@
 ## [.NET](/dotnet/api/microsoft.azure.management.resourcemanager)
 ## [Java](/java/api/com.microsoft.azure.management.resources)
 ## [Python](http://azure-sdk-for-python.readthedocs.io/en/latest/resourcemanagement.html)
-## [Esquemas dos modelos](https://github.com/Azure/azure-resource-manager-schemas)
+## [Formato de modelo](/azure/templates/)
 ## [REST](/rest/api/resources/)
 
 # Recursos

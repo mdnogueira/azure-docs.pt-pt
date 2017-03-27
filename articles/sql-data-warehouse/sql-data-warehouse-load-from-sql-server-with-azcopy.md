@@ -14,9 +14,11 @@ ms.tgt_pltfrm: NA
 ms.workload: data-services
 ms.date: 10/31/2016
 ms.author: cakarst;barbkess
+ms.custom: loading
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: f3a4ad30d1aa0ec273b6b875b0d2d037005ac159
+ms.sourcegitcommit: 424d8654a047a28ef6e32b73952cf98d28547f4f
+ms.openlocfilehash: 21b4cc704e271ac220fd606305f8f97c9b2593bb
+ms.lasthandoff: 03/21/2017
 
 
 ---
@@ -31,7 +33,7 @@ Para seguir este tutorial, é necessário:
 * Ter instalado o utilitário SQLCMD de linha de comandos
 
 > [!NOTE]
-> Pode transferir os utilitários bcp e sqlcmd a partir do [Centro de Transferências da Microsoft][Centro de Transferências da Microsoft].
+> Pode transferir os utilitários bcp e sqlcmd a partir do [Centro de Transferências da Microsoft][Microsoft Download Center].
 > 
 > 
 
@@ -58,7 +60,7 @@ sqlcmd.exe -S <server name> -d <database name> -U <username> -P <password> -I -Q
 ```
 
 > [!NOTE]
-> Consulte [Descrição Geral da Tabela][Descrição Geral da Tabela] ou a [sintaxe CREATE TABLE][sintaxe CREATE TABLE] para obter mais informações sobre como criar uma tabela no SQL Data Warehouse e as opções disponíveis na cláusula WITH.
+> Veja [Table Overview (Descrição Geral da Tabela)][Table Overview] ou a [sintaxe CREATE TABLE][CREATE TABLE syntax] para obter mais informações sobre como criar uma tabela no SQL Data Warehouse e as opções disponíveis na cláusula WITH.
 > 
 > 
 
@@ -116,7 +118,7 @@ Isto deverá devolver os seguintes resultados:
 | 20151201 |4 |2 |
 
 ### <a name="step-4-create-statistics-on-your-newly-loaded-data"></a>Passo 4: criar Estatísticas nos dados recentemente carregados
-O Azure SQL Data Warehouse ainda não suporta a criação ou atualização automática de estatísticas. Para obter o melhor desempenho das consultas, é importante que sejam criadas estatísticas em todas as colunas de todas as tabelas após o primeiro carregamento ou após a ocorrência de quaisquer alterações substanciais nos dados. Para obter uma explicação detalhada das estatísticas, consulte o tópico [Estatísticas][Estatísticas] no grupo de tópicos Desenvolver. Segue-se um breve exemplo de como criar estatísticas para a tabela carregada neste exemplo
+O Azure SQL Data Warehouse ainda não suporta a criação ou atualização automática de estatísticas. Para obter o melhor desempenho das consultas, é importante que sejam criadas estatísticas em todas as colunas de todas as tabelas após o primeiro carregamento ou após a ocorrência de quaisquer alterações substanciais nos dados. Para obter uma explicação detalhada das estatísticas, veja o tópico [Statistics (Estatísticas)][Statistics] no grupo de tópicos Programar. Segue-se um breve exemplo de como criar estatísticas para a tabela carregada neste exemplo
 
 Execute as seguintes instruções CREATE STATISTICS a partir de uma linha de comandos sqlcmd:
 
@@ -160,27 +162,22 @@ Pode verificar se os dados foram exportados corretamente ao abrir o novo ficheir
 > 
 
 ## <a name="next-steps"></a>Passos seguintes
-Para uma descrição geral do carregamento, consulte [Carregar dados para o SQL Data Warehouse][Carregar dados para o SQL Data Warehouse].
-Para mais sugestões de desenvolvimento, consulte [Descrição geral do desenvolvimento no SQL Data Warehouse][Descrição geral do desenvolvimento no SQL Data Warehouse].
+Para obter uma descrição geral do carregamento, veja [Load data into SQL Data Warehouse (Carregar dados para o SQL Data Warehouse)][Load data into SQL Data Warehouse].
+Para obter mais sugestões de desenvolvimento, veja [SQL Data Warehouse development overview (Descrição geral do desenvolvimento no SQL Data Warehouse)][SQL Data Warehouse development overview].
 
 <!--Image references-->
 
 <!--Article references-->
 
-[Carregar dados para o SQL Data Warehouse]: ./sql-data-warehouse-overview-load.md
-[Descrição geral do desenvolvimento do SQL Data Warehouse]: ./sql-data-warehouse-overview-develop.md
-[Descrição Geral da Tabela]: ./sql-data-warehouse-tables-overview.md
-[Estatísticas]: ./sql-data-warehouse-tables-statistics.md
+[Load data into SQL Data Warehouse]: ./sql-data-warehouse-overview-load.md
+[SQL Data Warehouse development overview]: ./sql-data-warehouse-overview-develop.md
+[Table Overview]: ./sql-data-warehouse-tables-overview.md
+[Statistics]: ./sql-data-warehouse-tables-statistics.md
 
 <!--MSDN references-->
 [bcp]: https://msdn.microsoft.com/library/ms162802.aspx
-[Sintaxe CREATE TABLE]: https://msdn.microsoft.com/library/mt203953.aspx
+[CREATE TABLE syntax]: https://msdn.microsoft.com/library/mt203953.aspx
 
 <!--Other Web references-->
-[Centro de Transferências da Microsoft]: https://www.microsoft.com/download/details.aspx?id=36433
-
-
-
-<!--HONumber=Nov16_HO2-->
-
+[Microsoft Download Center]: https://www.microsoft.com/download/details.aspx?id=36433
 

@@ -1,16 +1,11 @@
-Uma máquina virtual do Azure suporta anexar um número de discos de dados. Para obter o melhor desempenho, deverá limitar o número dos discos mais utilizados anexados à máquina virtual para evitar uma possível limitação. Se todos os discos não estiverem a ser muito utilizados ao mesmo tempo, a conta de armazenamento pode suportar um maior número de discos.
+An Azure virtual machine supports attaching a number of data disks. For optimal performance, you will want to limit the number of highly utilized disks attached to the virtual machine to avoid possible throttling. If all disks are not being highly utilized at the same time, the storage account can support a larger number disks.
 
-* **Para Managed Disks do Azure:** o limite de contagem dos Managed Disks é regional para a subscrição. O limite não restritivo predefinido é de 2000. Para aumentar o limite, contacte o suporte do Azure.
+* **For Azure Managed Disks:** Managed Disks count limit is regional for the subscription. The default soft limit is 2,000 per region per subscription. To increase your limit, contact Azure support.
 
-    Os Instantâneos Geridos e as imagens são contadas de acordo com o limite dos Managed Disks.
+    Managed Snapshots and Images are counted against the Managed Disks limit.
 
-* **Para contas de armazenamento standard:** uma conta de armazenamento standard tem uma taxa de pedidos total máxima de 20.000 IOPS. O IOPS total em todos os discos da máquina virtual numa conta de armazenamento standard não deve exceder este limite.
+* **For standard storage accounts:** A standard storage account has a maximum total request rate of 20,000 IOPS. The total IOPS across all of your virtual machine disks in a standard storage account should not exceed this limit.
   
-    Pode calcular aproximadamente o número de discos muito utilizados suportados por uma única conta de armazenamento standard com base no limite da taxa de pedido. Por exemplo, para uma VM de Escalão Básico, o número máximo de discos muito utilizados é cerca de 66 (20.000/300 IOPS por disco) e para uma VM de escalão Standard, é cerca de 40 (20.000/500 IOPS por disco), conforme mostrado na tabela abaixo. 
-* **Para contas de armazenamento premium:** uma conta de armazenamento premium tem uma taxa de débito total máximo de 50 Gbps. O débito total em todos os discos da VM não deve exceder este limite.
-
-
-
-<!--HONumber=Feb17_HO2-->
-
+    You can roughly calculate the number of highly utilized disks supported by a single standard storage account based on the request rate limit. For example, for a Basic Tier VM, the maximum number of highly utilized disks is about 66 (20,000/300 IOPS per disk), and for a Standard Tier VM, it is about 40 (20,000/500 IOPS per disk), as shown in the table below. 
+* **For premium storage accounts:** A premium storage account has a maximum total throughput rate of 50 Gbps. The total throughput across all of your VM disks should not exceed this limit.
 
