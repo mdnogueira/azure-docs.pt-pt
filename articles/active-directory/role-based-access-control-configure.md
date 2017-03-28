@@ -1,5 +1,5 @@
 ---
-title: "Controlo de Acesso Baseado em Funções no portal clássico do Azure | Microsoft Docs"
+title: "Controlo de Acesso Baseado em Funções no portal do Azure | Microsoft Docs"
 description: "Introdução à gestão de acessos com Controlo de Acesso Baseado em Funções no Portal do Azure. Utilize atribuições de funções para atribuir permissões aos seus recursos."
 services: active-directory
 documentationcenter: 
@@ -15,8 +15,9 @@ ms.workload: identity
 ms.date: 02/17/2017
 ms.author: kgremban
 translationtype: Human Translation
-ms.sourcegitcommit: bb894c38de63d0eac4066eeabaed7ba791021cc4
-ms.openlocfilehash: 05da6cd034a387b54eff0790996662223e4b8bab
+ms.sourcegitcommit: 1429bf0d06843da4743bd299e65ed2e818be199d
+ms.openlocfilehash: c3e3e407eb6a05b208863443bb8ccf3cba701b23
+ms.lasthandoff: 03/22/2017
 
 
 ---
@@ -76,10 +77,5 @@ Pode atribuir funções e gerir acessos com os comandos de Azure RBAC noutras fe
 * [Criar um relatório de histórico de alteração do acesso](role-based-access-control-access-change-history-report.md)
 * Consulte as [Funções incorporadas do RBAC](role-based-access-built-in-roles.md)
 * Definir as suas [Funções personalizadas no Azure RBAC](role-based-access-control-custom-roles.md)
-
-
-
-
-<!--HONumber=Feb17_HO3-->
 
 

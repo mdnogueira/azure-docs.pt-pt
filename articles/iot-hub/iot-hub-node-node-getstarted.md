@@ -12,13 +12,13 @@ ms.devlang: javascript
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/15/2016
+ms.date: 03/16/2017
 ms.author: dobett
 ms.custom: H1Hack27Feb2017
 translationtype: Human Translation
-ms.sourcegitcommit: 7adde91586f5fbbffd0aeaf0efb0810cc891ac0b
-ms.openlocfilehash: cae5694bc8189c525c8ae593eda3e51f5636c439
-ms.lasthandoff: 03/02/2017
+ms.sourcegitcommit: afe143848fae473d08dd33a3df4ab4ed92b731fa
+ms.openlocfilehash: e5cfa4c0a6964c3722ecaa6727336f5497565885
+ms.lasthandoff: 03/17/2017
 
 
 ---
@@ -46,7 +46,7 @@ Para concluir este tutorial, precisa do seguinte:
 Criou o seu hub IoT. Tem o nome de anfitrião e a cadeia de ligação do Hub IoT de que precisa para concluir o resto deste tutorial.
 
 ## <a name="create-a-device-identity"></a>Criar uma identidade de dispositivo
-Nesta secção, vai criar uma aplicação de consola do Node.js que cria uma identidade de dispositivo no registo de identidade do seu hub IoT. Não é possível ligar um dispositivo ao hub IoT, exceto se tiver uma entrada no registo de identidade. Para obter mais informações, veja a secção **Identity Registry (Registo de Identidades)** do [Hub IoT developer guide (Guia do programador do Hub IoT)][lnk-devguide-identity]. Ao executar esta aplicação de consola, será gerado um ID de dispositivo único e uma chave que o seu dispositivo pode utilizar para identificar-se quando enviar mensagens do dispositivo para a nuvem ao IoT Hub.
+Nesta secção, vai criar uma aplicação de consola do Node.js que cria uma identidade de dispositivo no registo de identidade do seu hub IoT. Só é possível ligar um dispositivo ao hub IoT, se tiver uma entrada no registo de identidade. Para obter mais informações, veja a secção **Identity Registry (Registo de Identidades)** do [Hub IoT developer guide (Guia do programador do Hub IoT)][lnk-devguide-identity]. Ao executar esta aplicação de consola, será gerado um ID de dispositivo único e uma chave que o seu dispositivo pode utilizar para identificar-se quando enviar mensagens do dispositivo para a nuvem ao IoT Hub.
 
 1. Criar uma nova pasta designada **createdeviceidentity**. Na pasta **createdeviceidentity**, crie um ficheiro package.json com o seguinte comando na sua linha de comandos. Aceite todas as predefinições:
    

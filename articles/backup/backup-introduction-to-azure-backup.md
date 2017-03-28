@@ -13,13 +13,13 @@ ms.workload: storage-backup-recovery
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 2/27/2017
-ms.author: markgal;trinadhk
+ms.date: 3/13/2017
+ms.author: markgal;trinadhk; anuragm
 ms.custom: H1Hack27Feb2017
 translationtype: Human Translation
-ms.sourcegitcommit: bafcd7f23a2a90a1cfdcd9286c20a09bd7a316b7
-ms.openlocfilehash: c9fd621ca2d4440b4a8c90e2fd8ab7924f4dbce8
-ms.lasthandoff: 03/02/2017
+ms.sourcegitcommit: 424d8654a047a28ef6e32b73952cf98d28547f4f
+ms.openlocfilehash: 0be8f1f9fb96bce445c4a91520b9a847b205a519
+ms.lasthandoff: 03/21/2017
 
 
 ---
@@ -43,7 +43,7 @@ As soluções de cópia de segurança tradicionais evoluíram para tratar a nuve
 
 **Transferência de dados ilimitada** - o Azure Backup não limita a quantidade de dados de entrada ou saída que transfere. O Azure Backup também não cobra por dados que sejam transferidos. No entanto, se utilizar o serviço Importar/Exportar do Azure para importar grandes quantidades de dados, existe um custo associado aos dados de entrada. Para mais informações sobre este custo, veja [Fluxo de trabalho de cópia de segurança offline no Azure Backup](backup-azure-backup-import-export.md). Os dados de saída são os dados transferidos a partir de um cofre do Backup durante uma operação de restauro.
 
-**Encriptação de dados ** - a encriptação de dados permite a transmissão e o armazenamento seguros dos seus dados na nuvem pública. A frase de acesso de encriptação é armazenada por si localmente, e nunca é transmitida ou armazenada no Azure. Se for necessário restaurar quaisquer dados, é o único a ter a frase de acesso ou a chave de encriptação.
+**Encriptação de dados** - a encriptação de dados permite a transmissão e o armazenamento seguros dos seus dados na nuvem pública. A frase de acesso de encriptação é armazenada por si localmente, e nunca é transmitida ou armazenada no Azure. Se for necessário restaurar quaisquer dados, é o único a ter a frase de acesso ou a chave de encriptação.
 
 **Cópia de segurança consistentes com aplicações** - ao criar uma cópia de segurança de um servidor de ficheiros, máquina virtual ou base de dados SQL, precisa de saber que um ponto de recuperação tem todos os dados necessários para restaurar a cópia de segurança. O Azure Backup fornece cópias de segurança consistentes com as aplicações, o que garante que não são necessárias correções adicionais para restaurar os dados. Restaurar dados consistentes com as aplicações reduz o tempo de restauro, permitindo-lhe voltar rapidamente ao estado de execução.
 
@@ -92,7 +92,7 @@ A tabela seguinte mostra os componentes do Azure Backup com suporte para Linux.
 | Agente do Backup do Azure (MARS) |Nenhum (Apenas agente baseado no Windows) |
 | System Center DPM |Cópia de segurança consistente com ficheiros apenas no Hyper-V<br/> (não disponível para VM do Azure) |
 | Servidor do Backup do Azure |Cópia de segurança consistente com ficheiros apenas no Hyper-V<br/> (não disponível para VM do Azure) |
-| Cópia de segurança da VM do IaaS do Azure |Sim |
+| Cópia de segurança da VM do IaaS do Azure |Sim (cópia de segurança consistente com a aplicação utilizando [arquitetura de script anterior script posterior](https://docs.microsoft.com/azure/backup/backup-azure-linux-app-consistent)) |
 
 ## <a name="using-premium-storage-vms-with-azure-backup"></a>Utilizar VMs de Armazenamento Premium com o Azure Backup
 O Azure Backup protege VMs de Armazenamento Premium. O Armazenamento Premium do Azure é o armazenamento baseado numa unidade de estado sólido (SSD), concebido para suportar cargas de trabalho de E/S intensivas. O Armazenamento Premium é apelativo para cargas de trabalho de máquina virtual (VM). Para mais informações sobre o Armazenamento Premium, veja o artigo [Armazenamento Premium: Armazenamento de Elevado Desempenho para Cargas de Trabalho de Máquinas Virtuais do Azure](../storage/storage-premium-storage.md).

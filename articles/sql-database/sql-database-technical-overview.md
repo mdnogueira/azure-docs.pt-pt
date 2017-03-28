@@ -14,22 +14,25 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: data-management
-ms.date: 12/20/2016
+ms.date: 03/17/2017
 ms.author: shkurhek
 translationtype: Human Translation
-ms.sourcegitcommit: ae493fbb3690e80eef4b37e0315d1715a924e568
-ms.openlocfilehash: 7c70c737fb41e8c1c5a339462fa77a8bc7318f7e
-ms.lasthandoff: 02/22/2017
+ms.sourcegitcommit: bb1ca3189e6c39b46eaa5151bf0c74dbf4a35228
+ms.openlocfilehash: c505844cc2b7c745a1106b3c446833fb206ca98a
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="what-is-sql-database-introduction-to-sql-database"></a>O que é a Base de Dados SQL? Introdução à Base de Dados SQL
 A Base de Dados SQL é um serviço de bases de dados relacionais na cloud da Microsoft baseado no motor Microsoft SQL Server líder de mercado e com capacidade para processar cargas de trabalho críticas para missões. A Base de Dados SQL proporciona um desempenho previsível em vários níveis de serviço, escalabilidade dinâmica sem períodos de indisponibilidade, continuidade de negócio incorporada e proteção de dados — tudo quase sem administração. Estas capacidades permitem-lhe concentrar-se no desenvolvimento rápido de aplicações e acelerar o seu tempo de colocação no mercado, em vez de alocar tempo e recursos valiosos para a gestão de máquinas virtuais e de infraestruturas. Uma vez que se baseia no motor do [SQL Server](https://msdn.microsoft.com/library/bb545450.aspx), a Base de Dados SQL suporta as ferramentas, bibliotecas e APIs existentes do SQL Server. Como resultado, é mais fácil desenvolver soluções novas, mover as suas soluções do SQL Server existentes e alargá-las para a cloud da Microsoft sem ter de aprender competências novas.
 
-Este artigo é uma introdução aos conceitos e às funcionalidades essenciais da Base de Dados SQL relacionados com desempenho, escalabilidade e capacidade de gestão, com ligações para explorar detalhes. Se estiver preparado para avançar para tutoriais práticos, aceda a [Criar a sua primeira base de dados SQL](sql-database-get-started.md) ou [Criar um conjunto elástico](sql-database-elastic-pool-manage-portal.md). Para obter uma demonstração em vídeo breve, veja este vídeo.
+Este artigo é uma introdução aos conceitos e às funcionalidades essenciais da Base de Dados SQL relacionados com desempenho, escalabilidade e capacidade de gestão, com ligações para explorar detalhes. Veja estes guias de introdução para começar:
+ - [Criar uma base de dados SQL no portal do Azure](sql-database-get-started-portal.md)  
+ - [Criar uma base de dados SQL com a CLI do Azure](sql-database-get-started-cli.md)
+ - [Criar uma base de dados SQL utilizando o PowerShell](sql-database-get-started-powershell.md)
 
-> [!VIDEO https://channel9.msdn.com/Blogs/Azure/Azure-SQL-Database-create-DBs-in-seconds/player]
-> 
-> 
+Para um conjunto de amostras de CLI do Azure e PowerShell, veja:
+ - [Amostras de CLI do Azure para a Base de Dados SQL do Azure](sql-database-cli-samples.md)
+ - [Amostras de Azure PowerShell para a Base de Dados SQL do Azure](sql-database-powershell-samples.md)
 
 ## <a name="adjust-performance-and-scale-without-downtime"></a>Ajuste o desempenho e dimensione a capacidade sem períodos de indisponibilidade
 O serviço Base de Dados SQL oferece três escalões de serviço - Básico, Standard e Premium. Cada escalão de serviço oferece [diferentes níveis de desempenho e capacidades](sql-database-service-tiers.md) para suportar desde cargas de trabalho leves até pesadas. Pode criar a sua primeira aplicação numa base de dados pequena por alguns euros por mês e, em seguida, [alterar o escalão de serviço](sql-database-service-tiers.md) manual ou programaticamente em qualquer altura para satisfazer as necessidades da sua solução. Pode fazê-lo sem causar períodos de indisponibilidade para a aplicação e para os seus clientes. A escalabilidade dinâmica permite que a base de dados responda de forma transparente a requisitos de recursos em rápida mutação e permite-lhe pagar apenas pelos recursos de que precisa, quando precisa.

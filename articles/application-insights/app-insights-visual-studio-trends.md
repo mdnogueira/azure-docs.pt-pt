@@ -11,23 +11,25 @@ ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 10/25/2016
+ms.date: 03/17/2017
 ms.author: daviste
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 00c697b47ef17c9c575378c7d433b9bf19602749
+ms.sourcegitcommit: 0d8472cb3b0d891d2b184621d62830d1ccd5e2e7
+ms.openlocfilehash: c0c1eb80685d18794bcae7acaa16b777ff21b3e6
+ms.lasthandoff: 03/21/2017
 
 
 ---
 # <a name="analyzing-trends-in-visual-studio"></a>Analisar Tendências no Visual Studio
-A ferramenta Application Insights Trends visualiza como eventos de telemetria importantes da sua aplicação alteram ao longo do tempo, ajudando-o a identificar rapidamente problemas e anomalias. Ao ligá-lo a informações mais detalhadas de diagnóstico, o Trends pode ajudá-lo a melhorar o desempenho da aplicação, identificar as causas de exceções e descobrir conhecimentos aprofundados dos seus eventos personalizados.
+A ferramenta Application Insights Trends visualiza como eventos de telemetria importantes da sua aplicação Web alteram ao longo do tempo, ajudando-o a identificar rapidamente problemas e anomalias. Ao ligá-lo a informações mais detalhadas de diagnóstico, o Trends pode ajudá-lo a melhorar o desempenho da aplicação, identificar as causas de exceções e descobrir conhecimentos aprofundados dos seus eventos personalizados.
 
 ![Janela de exemplo do Trends](./media/app-insights-visual-studio-trends/app-insights-trends-hero-750.png)
 
-> [!NOTE]
-> O Application Insights Trends está disponível no Visual Studio 2015 Update 3 e posterior, ou com a [extensão do Developer Analytics Tools](https://visualstudiogallery.msdn.microsoft.com/82367b81-3f97-4de1-bbf1-eaf52ddc635a) versão 5.209 e posterior.
-> 
-> 
+## <a name="configure-your-web-app-for-application-insights"></a>Configurar a aplicação Web para o Application Insights
+
+Caso isto ainda não tenha sido realizado, [configure a aplicação Web para o Application Insights](app-insights-overview.md). Isto permite enviar telemetria para o portal do Application Insights. A ferramenta Trends lê a telemetria a partir daí.
+
+As Application Insights Trends está disponível no Visual Studio 2015 Update 3 e posteriores.
 
 ## <a name="open-application-insights-trends"></a>Abrir o Application Insights Trends
 Para abrir a janela do Application Insights Trends:
@@ -99,16 +101,11 @@ A ferramenta Trends pode realçar bolhas de eventos que são anómalos em compar
 > 
 > 
 
-## <a name="a-namenextanext-steps"></a><a name="next"></a>Passos seguintes
+## <a name="next"></a>Passos seguintes
 |  |  |
 | --- | --- |
 | **[Trabalhar com o Application Insights no Visual Studio](app-insights-visual-studio.md)**<br/>Procure telemetria, veja dados no CodeLens e configure o Application Insights. Tudo isto no Visual Studio. |![Clique com o botão direito do rato no projeto e escolha Application Insights, Pesquisa](./media/app-insights-visual-studio-trends/34.png) |
 | **[Adicionar mais dados](app-insights-asp-net-more.md)**<br/>Monitorize a utilização, a disponibilidade, as dependências e as exceções. Integre rastreios a partir de arquiteturas de registo. Grave a telemetria personalizada. |![Visual Studio](./media/app-insights-visual-studio-trends/64.png) |
 | **[Trabalhar com o portal do Application Insights](app-insights-dashboards.md)**<br/>Dashboards, ferramentas de diagnóstico e análise poderosas, alertas, mapa de dependência em direto da aplicação e exportação de telemetria. |![Visual Studio](./media/app-insights-visual-studio-trends/62.png) |
-
-
-
-
-<!--HONumber=Nov16_HO2-->
 
 

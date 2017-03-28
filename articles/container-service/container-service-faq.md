@@ -18,9 +18,9 @@ ms.date: 03/03/2017
 ms.author: danlep
 ms.custom: H1Hack27Feb2017
 translationtype: Human Translation
-ms.sourcegitcommit: d9dad6cff80c1f6ac206e7fa3184ce037900fc6b
-ms.openlocfilehash: c11adbe77131d4e0337ccd926da03041042c3703
-ms.lasthandoff: 03/06/2017
+ms.sourcegitcommit: bb1ca3189e6c39b46eaa5151bf0c74dbf4a35228
+ms.openlocfilehash: 682ebb212f9056f3704a6de5dde8d3a35681108f
+ms.lasthandoff: 03/17/2017
 
 
 ---
@@ -105,7 +105,7 @@ Pode encontrar a cadeia de ligação no portal do Azure ou através das ferramen
 
 3. No painel **Histórico de implementação**, clique na implementação que tem um nome que começa por **microsoft-acs** seguido de uma data de implementação. Exemplo: microsoft-acs-201701310000.  
 
-4. Na página **Resumo**, em **Saídas**, as várias ligações de cluster são <provided></provided>. O **SSHMaster0** fornece uma cadeia de ligação SSH ao primeiro modelo de estrutura mestre no cluster de serviço do contentor. 
+4. Na página **Resumo**, em **Saídas**, as várias ligações de cluster são fornecidas. O **SSHMaster0** fornece uma cadeia de ligação SSH ao primeiro modelo de estrutura mestre no cluster de serviço do contentor. 
 
 Como mencionado anteriormente, também pode utilizar ferramentas do Azure para encontrar o FQDN do modelo de estrutura mestre. Efetue uma ligação SSH ao modelo de estrutura mestre através do FQDN do modelo de estrutura mestre e do nome de utilizador que especificou quando criou o cluster. Por exemplo:
 
@@ -122,3 +122,4 @@ Para mais informações, consulte [Connect to an Azure Container Service cluster
 
 * [Saiba mais](container-service-intro.md) sobre o Azure Container Service.
 * Implementar um cluster do serviço de contentor através do [portal](container-service-deployment.md) ou do [ CLI do Azure 2.0](container-service-create-acs-cluster-cli.md).
+
