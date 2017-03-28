@@ -12,11 +12,12 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 05/27/2016
+ms.date: 03/15/2017
 ms.author: tomsh
 translationtype: Human Translation
-ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
-ms.openlocfilehash: 83e277fe261338aed960dea8e2ab15cbff3c895e
+ms.sourcegitcommit: 2c9877f84873c825f96b62b492f49d1733e6c64e
+ms.openlocfilehash: 5054ea1d5bd17712a4b343319d583e62a256752d
+ms.lasthandoff: 03/15/2017
 
 
 ---
@@ -26,7 +27,7 @@ O Centro de Segurança do Azure alerta-o se tiver máquinas virtuais que não es
 ![Recomendação de encriptação de disco](./media/security-center-disk-encryption/security-center-disk-encryption-fig1.png)
 
 > [!NOTE]
-> As informações neste documento aplicam-se ao pré-lançamento do Centro de Segurança do Azure.
+> As informações neste documento aplicam-se à encriptação de máquinas virtuais sem utilizar uma Chave de Encriptação de Chave (que é necessária para criar cópias de máquinas virtuais utilizando o Azure Backup). Veja o artigo [Azure Disk Encryption para Máquinas Virtuais do Azure Windows e Linux](https://docs.microsoft.com/en-us/azure/security/azure-security-disk-encryption) para obter informações sobre como utilizar uma Chave de Encriptação de Chave para suportar o Azure Backup para Máquinas Virtuais do Azure encriptadas.
 >
 >
 
@@ -178,9 +179,4 @@ Neste documento, aprendeu a encriptar uma Máquina Virtual do Azure. Para saber 
 * [Gerir e responder a alertas de segurança no Centro de Segurança do Azure](security-center-managing-and-responding-alerts.md) – Saiba como gerir e responder a alertas de segurança
 * [FAQ do Centro de Segurança do Azure](security-center-faq.md) – Encontre as perguntas mais frequentes acerca de como utilizar o serviço
 * [Blogue de Segurança do Azure](http://blogs.msdn.com/b/azuresecurity/) – Encontre mensagens do blogue acerca da segurança e conformidade do Azure
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

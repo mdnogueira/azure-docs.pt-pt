@@ -16,10 +16,5 @@ Este tutorial mostrar-lhe como:
 
 * Utilizar o Portal do Azure para criar um IoT Hub.
 * Criar uma identidade de dispositivo no seu IoT Hub.
-* Criar uma aplicação de dispositivo simulada que envia telemetria à sua back-end de solução, e recebe comandos da sua back-end de solução.
-
-
-
-<!--HONumber=Dec16_HO1-->
-
+* Criar uma aplicação de dispositivo simulado que envia telemetria à solução back-end.
 
