@@ -4,18 +4,19 @@ description: "Configurar testes Web no Application Insights. Receber alertas se 
 services: application-insights
 documentationcenter: 
 author: alancameronwills
-manager: douge
+manager: carmonm
 ms.assetid: 46dc13b4-eb2e-4142-a21c-94a156f760ee
 ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 02/13/2017
+ms.date: 03/13/2017
 ms.author: awills
 translationtype: Human Translation
-ms.sourcegitcommit: c800f6e7b6bd1e17165146f981e32a8cbb251e3c
-ms.openlocfilehash: af4343dbe23f314a85c98d7337f42c4b60b03c6a
+ms.sourcegitcommit: 0d8472cb3b0d891d2b184621d62830d1ccd5e2e7
+ms.openlocfilehash: 153a97154faf65598141f321bcd33c4503fa30b0
+ms.lasthandoff: 03/21/2017
 
 
 ---
@@ -33,7 +34,7 @@ Existem dois tipos de testes Web:
 
 Pode criar até dez testes por recurso de aplicação.
 
-## <a name="a-namecreatea1-create-a-resource-for-your-test-reports"></a><a name="create"></a>1. Criar um recurso para os relatórios de teste
+## <a name="create"></a>1. Criar um recurso para os relatórios de teste
 Ignore este passo se já tiver [configurado um recurso do Application Insights][start] para esta aplicação e quiser ver os relatórios de disponibilidade no mesmo local.
 
 Inicie sessão no [Microsoft Azure](http://azure.com), aceda ao [portal do Azure](https://portal.azure.com) e crie um recurso do Application Insights.
@@ -42,7 +43,7 @@ Inicie sessão no [Microsoft Azure](http://azure.com), aceda ao [portal do Azure
 
 Clique em **Todos os recursos** para abrir o painel Descrição geral do novo recurso.
 
-## <a name="a-namesetupa2-create-a-url-ping-test"></a><a name="setup"></a>2. Criar um teste de ping do URL
+## <a name="setup"></a>2. Criar um teste de ping do URL
 No recurso do Application Insights, procure o mosaico Disponibilidade. Clique no mosaico para abrir o painel Testes Web da aplicação e adicione um teste Web.
 
 ![Indique, pelo menos, o URL do seu site](./media/app-insights-monitor-web-app-availability/13-availability.png)
@@ -66,7 +67,7 @@ No recurso do Application Insights, procure o mosaico Disponibilidade. Clique no
 ### <a name="test-more-urls"></a>Testar mais URLs
 Adicionar mais testes. Para o exemplo, tal como para o teste da sua home page, pode verificar se a sua base de dados está em execução testando o URL de uma pesquisa.
 
-## <a name="a-namemonitora3-see-your-web-test-results"></a><a name="monitor"></a>3. Ver resultados do teste Web
+## <a name="monitor"></a>3. Ver resultados do teste Web
 Passados 1 a 2 minutos, os resultados são apresentados no painel Teste Web.
 
 ![Resultados do resumo no painel principal](./media/app-insights-monitor-web-app-availability/14-availSummary.png)
@@ -75,7 +76,7 @@ Clique em qualquer barra no gráfico de resumo para obter uma vista mais detalha
 
 Estes gráficos reúnem os resultados de todos os testes Web desta aplicação.
 
-## <a name="a-namefailuresaif-you-see-failures"></a><a name="failures"></a>Se vir falhas
+## <a name="failures"></a>Se vir falhas
 Clique num ponto vermelho.
 
 ![Clicar num ponto vermelho](./media/app-insights-monitor-web-app-availability/open-instance.png)
@@ -100,7 +101,7 @@ Pode monitorizar um cenário que envolva uma sequência de URLs. Por exemplo, se
 > Os testes Web de vários passos estão sujeitos a um custo. [Esquema do escalão de preço](http://azure.microsoft.com/pricing/details/application-insights/).
 > 
 
-Para criar um teste com vários passos, registe o cenário com o Visual Studio e, em seguida, carregue o registo no Application Insights. O Application Insights reproduz o cenário de tempos a tempos e verifica as respostas.
+Para criar um teste com vários passos, registe o cenário com o Visual Studio Enterprise e, em seguida, carregue o registo no Application Insights. O Application Insights reproduz o cenário de tempos a tempos e verifica as respostas.
 
 Tenha em atenção que não pode utilizar funções codificadas nos testes: os passos do cenário devem ser contidos como um script no ficheiro .webtest.
 
@@ -109,7 +110,10 @@ Utilize o Visual Studio Enterprise para guardar uma sessão Web.
 
 1. Crie um projeto de teste de desempenho da Web.
 
-    ![No Visual Studio, crie um projeto a partir do modelo Desempenho da Web e Carregar Teste.](./media/app-insights-monitor-web-app-availability/appinsights-71webtest-multi-vs-create.png)
+    ![Na edição Visual Studio Enterprise, crie um projeto a partir do modelo Desempenho da Web e Carregar Teste.](./media/app-insights-monitor-web-app-availability/appinsights-71webtest-multi-vs-create.png)
+
+ * *Não vê o modelo de Desempenho da Web e de Teste de Carga?* - Feche o Visual Studio Enterprise. Abra o **Instalador do Visual Studio** para modificar a instalação do Visual Studio Enterprise. Em **Componentes Individuais**, selecione **ferramentas de Desempenho da Web e de Teste de Carga**.
+
 2. Abra o ficheiro .webtest e comece a gravar.
 
     ![Abrir o ficheiro .webtest e clicar em Gravar.](./media/app-insights-monitor-web-app-availability/appinsights-71webtest-multi-vs-start.png)
@@ -207,7 +211,7 @@ Se o teste tiver de iniciar sessão com a OAuth, a abordagem geral será:
 * Parametrizar os tokens definindo o parâmetro quando o token é devolvido do autenticador e utilizando-o na consulta do site.
   (O Visual Studio tenta parametrizar o teste, mas não parametriza corretamente os tokens.)
 
-## <a name="a-nameedita-edit-or-disable-a-test"></a><a name="edit"></a> Editar ou desativar um teste
+## <a name="edit"></a> Editar ou desativar um teste
 Abra um teste individual para editá-lo ou desativá-lo.
 
 ![Editar ou desativar um teste Web](./media/app-insights-monitor-web-app-availability/19-availEdit.png)
@@ -256,12 +260,12 @@ Quando o teste estiver concluído, são-lhe apresentados tempos de resposta e ta
 
     Essa função não é suportada.
 
-## <a name="a-namevideoavideo"></a><a name="video"></a>Vídeo
+## <a name="video"></a>Vídeo
 > [!VIDEO https://channel9.msdn.com/Series/Application-Insights-on-Azure-Preview-Portal/Monitoring-Availability-with-Application-Insights/player]
 >
 >
 
-## <a name="a-namenextanext-steps"></a><a name="next"></a>Passos seguintes
+## <a name="next"></a>Passos seguintes
 [Pesquisar registos de diagnóstico][diagnostic]
 
 [Resolução de problemas][qna]
@@ -274,9 +278,4 @@ Quando o teste estiver concluído, são-lhe apresentados tempos de resposta e ta
 [diagnostic]: app-insights-diagnostic-search.md
 [qna]: app-insights-troubleshoot-faq.md
 [start]: app-insights-overview.md
-
-
-
-<!--HONumber=Feb17_HO3-->
-
 

@@ -1,21 +1,22 @@
 ---
-title: "Application Insights para aplicações Web JavaScript | Microsoft Docs"
+title: "Azure Application Insights para aplicações Web JavaScript | Microsoft Docs"
 description: "Obtenha contagens de sessões e visualizações de páginas, dados de clientes Web e controle padrões de utilização. Detete exceções e problemas de desempenho em páginas Web de JavaScript."
 services: application-insights
 documentationcenter: 
 author: alancameronwills
-manager: douge
+manager: carmonm
 ms.assetid: 3b710d09-6ab4-4004-b26a-4fa840039500
 ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 11/01/2016
+ms.date: 03/14/2017
 ms.author: awills
 translationtype: Human Translation
-ms.sourcegitcommit: 601045a6048266cbd317f3a8ff328caa7edf877f
-ms.openlocfilehash: a7b17961ea23c109dc840192fa3f7cea1d88326e
+ms.sourcegitcommit: fd35f1774ffda3d3751a6fa4b6e17f2132274916
+ms.openlocfilehash: c4e1ecc824b09fd7523cdc7a29559adca19488f3
+ms.lasthandoff: 03/16/2017
 
 
 ---
@@ -97,7 +98,7 @@ Os [parâmetros disponíveis](https://github.com/Microsoft/ApplicationInsights-J
 
 
 
-## <a name="a-namerunarun-your-app"></a><a name="run"></a>Executar a aplicação
+## <a name="run"></a>Executar a aplicação
 Execute a sua aplicação Web, utilize-a durante algum tempo para gerar telemetria e espere alguns segundos. Pode executá-la com a tecla **F5** do seu computador de desenvolvimento ou publicá-la e permitir que os utilizadores a testem.
 
 Se quiser verificar na telemetria o que uma aplicação Web está a enviar para o Application Insights, utilize as ferramentas de depuração do seu browser (**F12** em muitos browsers). Os dados são enviados para dc.services.visualstudio.com.
@@ -107,7 +108,7 @@ Abra o painel Browser para mostrar dados de desempenho agregados dos browsers do
 
 ![Em portal.azure.com, abra o recurso da sua aplicação e clique em Definições, Browser](./media/app-insights-javascript/03.png)
 
-*Ainda não existem dados? Clique em **Atualizar** no início da página. Ainda nada? Veja [Resolução de problemas](app-insights-troubleshoot-faq.md).*
+*Ainda não existem dados? Clique em**Atualizar**no início da página. Ainda nada? Veja [Resolução de problemas](app-insights-troubleshoot-faq.md).*
 
 O painel Browser é um [painel do Explorador de Métricas](app-insights-metrics-explorer.md) que predefine filtros e seleções de gráficos. Se quiser, pode editar o intervalo de tempo, os filtros e a configuração de gráficos e guardar o resultado como um favorito. Clique em **Restaurar predefinições** para voltar à configuração de painel original.
 
@@ -167,6 +168,7 @@ Clique em qualquer linha para ver detalhes específicos.
 
 ![](./media/app-insights-javascript/37.png)
 
+
 Clique em `...` para ver a telemetria completa de uma chamada Ajax.
 
 ### <a name="no-ajax-calls-reported"></a>Nenhuma chamada Ajax reportada?
@@ -180,6 +182,7 @@ No painel Browsers, existe um gráfico de resumo de exceções e uma grelha dos 
 Se não vir exceções de browser reportadas, verifique se o fragmento de código não define o [parâmetro](https://github.com/Microsoft/ApplicationInsights-JS/blob/master/API-reference.md#config) `disableExceptionTracking`.
 
 ## <a name="inspect-individual-page-view-events"></a>Inspecionar eventos individuais de visualização de página
+
 Normalmente, a telemetria de visualizações de página é analisada pelo Application Insights e o utilizador vê apenas os relatórios cumulativos, cuja média de todos os utilizadores foi calculada. Mas, para fins de depuração, também pode ver eventos individuais de visualização de página.
 
 No painel Pesquisa de Diagnóstico, defina Filtros como Visualização de Página.
@@ -217,19 +220,16 @@ Quer descobrir o que os utilizadores fazem com a sua aplicação?
 * [Saiba mais sobre o controlo de utilização](app-insights-web-track-usage.md)
 * [Saiba mais sobre a API de métricas e eventos personalizados](app-insights-api-custom-events-metrics.md).
 
-#### <a name="a-namevideoa-video-tracking-usage"></a><a name="video"></a> Vídeo: Controlo de Utilização
-> [!VIDEO https://channel9.msdn.com/Series/Application-Insights-on-Azure-Preview-Portal/Tracking-Usage-with-Application-Insights/player]
-> 
-> 
+## <a name="video"></a> Vídeo
 
-## <a name="a-namenexta-next-steps"></a><a name="next"></a> Passos seguintes
+
+> [!VIDEO https://channel9.msdn.com/events/Connect/2016/100/player]
+
+
+
+## <a name="next"></a> Passos seguintes
 * [Controlar a utilização](app-insights-web-track-usage.md)
 * [Métricas e eventos personalizados](app-insights-api-custom-events-metrics.md)
 * [Build-measure-learn](app-insights-overview-usage.md)
-
-
-
-
-<!--HONumber=Jan17_HO4-->
 
 

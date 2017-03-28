@@ -14,15 +14,16 @@ ms.topic: get-started-article
 ms.date: 02/08/2017
 ms.author: awills
 translationtype: Human Translation
-ms.sourcegitcommit: 917f54248f4c9277caa3cf09d92f78593a901e89
-ms.openlocfilehash: fd76f40f5a34b6adf9c6ec3bded604d59b6baa72
+ms.sourcegitcommit: fd35f1774ffda3d3751a6fa4b6e17f2132274916
+ms.openlocfilehash: a0340359dff470551a08a8213f3a704f15f78794
+ms.lasthandoff: 03/16/2017
 
 
 ---
 # <a name="instrument-web-apps-at-runtime-with-application-insights"></a>Instrumentar aplicações Web no tempo de execução com o Application Insights
 
 
-Pode instrumentar uma aplicação Web em direto com o Azure Application Insights, sem ter de modificar ou voltar a implementar o seu código. Se as suas aplicações forem alojadas por um servidor IIS no local, instale o Monitor de Estado; se forem aplicações Web do Azure ou forem executadas numa VM do Azure, pode instalar a extensão Application Insights. (Existem artigos separados sobre instrumentação de [aplicações Web J2EE em direto](app-insights-java-live.md) e [Serviços Cloud do Azure](app-insights-cloudservices.md).) Precisará de uma subscrição do [Microsoft Azure](http://azure.com).
+Pode instrumentar uma aplicação Web em direto com o Azure Application Insights, sem ter de modificar ou voltar a implementar o seu código. Se as suas aplicações são alojadas por um servidor IIS no local, instale o Monitor de Estado. Se forem aplicações Web do Azure ou forem executadas numa VM do Azure, pode ativar a monitorização do Application Insights a partir do painel de controlo do Azure. (Existem artigos separados sobre instrumentação de [aplicações Web J2EE em direto](app-insights-java-live.md) e [Serviços Cloud do Azure](app-insights-cloudservices.md).) Precisará de uma subscrição do [Microsoft Azure](http://azure.com).
 
 ![gráficos de exemplo](./media/app-insights-monitor-performance-live-website-now/10-intro.png)
 
@@ -38,7 +39,7 @@ Segue-se um resumo do que pode usufruir:
 | --- | --- | --- |
 | Pedidos e exceções |Sim |Sim |
 | [Exceções mais detalhadas](app-insights-asp-net-exceptions.md) | |Sim |
-| [Diagnóstico de dependências](app-insights-asp-net-dependencies.md) |Em .NET 4.6+, mas com menos detalhe |Sim, detalhe completo: códigos de resultado, texto do comando do SQL, HTTP  Verbo|
+| [Diagnóstico de dependências](app-insights-asp-net-dependencies.md) |Em .NET 4.6+, mas com menos detalhe |Sim, detalhe completo: códigos de resultado, texto do comando do SQL, verbo HTTP|
 | [Contadores de desempenho do sistema](app-insights-performance-counters.md) |Sim |Sim |
 | [API para telemetria personalizada][api] |Sim | |
 | [Integração de registos de rastreio](app-insights-asp-net-trace-logs.md) |Sim | |
@@ -64,7 +65,7 @@ Se a aplicação estiver a ser executada como um serviço Web do Azure, eis como
 Se a aplicação estiver alojada num servidor de IIS, ative o Application Insights com o Monitor de Estado.
 
 1. No seu servidor Web de IIS, inicie sessão com credenciais de administrador.
-2. Se o Monitor de Estado do Application Insights ainda não estiver instalado, transfira e execute o [instalador de Monitor de Estado](http://go.microsoft.com/fwlink/?LinkId=506648).
+2. Se o Monitor de Estado do Application Insights ainda não estiver instalado, transfira e execute o [Instalador do Monitor de estado](http://go.microsoft.com/fwlink/?LinkId=506648) (ou execute o [Instalador de Plataforma Web](https://www.microsoft.com/web/downloads/platform.aspx) e pesquise no Monitor de Estado do Application Insights).
 3. No Monitor de Estado, selecione a aplicação Web instalada ou o Web site que pretende monitorizar. Inicie sessão com as credenciais do Azure.
 
     Configure o recurso onde pretende ver os resultados no portal do Application Insights. (Normalmente, é melhor criar um novo recurso. Selecione um recurso existente se já tiver [testes Web][availability] ou [monitorização de cliente][client] para esta aplicação.) 
@@ -75,7 +76,7 @@ Se a aplicação estiver alojada num servidor de IIS, ative o Application Insigh
 
     ![Escolha Reiniciar na parte superior da caixa de diálogo.](./media/app-insights-monitor-performance-live-website-now/appinsights-036-restart.png)
 
-    O serviço Web será interrompido durante um curto período.
+    O serviço Web é interrompido durante um curto período.
 
 ## <a name="customize-monitoring-options"></a>Personalizar opções de monitorização
 
@@ -97,7 +98,7 @@ Se pretender voltar a publicar sem adicionar o Application Insights ao código, 
 
 ### <a name="cant-connect-no-telemetry"></a>Não consegue ligar? Sem telemetria?
 
-* Tem de abrir [algumas portas de envio](app-insights-ip-addresses.md#outgoing-ports) na firewall do seu servidor para permitir que o Monitor de Estado funcione.
+* Abra [as portas de envio necessárias](app-insights-ip-addresses.md#outgoing-ports) na firewall do seu servidor para permitir que o Monitor de Estado funcione.
 
 * Abra o Monitor de Estado e selecione a aplicação no painel esquerdo. Verifique se existem quaisquer mensagens de diagnóstico para esta aplicação na secção "Notificações de configuração":
 
@@ -105,7 +106,7 @@ Se pretender voltar a publicar sem adicionar o Application Insights ao código, 
 * No servidor, se vir uma mensagem sobre "permissões insuficientes", experimente o seguinte:
   * No Gestor de IIS, selecione o conjunto de aplicações, abra **Definições Avançadas**, e, em **Modelo de Processos** tenha em atenção a identidade.
   * No painel de controlo de gestão do Computador, adicione esta identidade ao grupo de Utilizadores do Monitor de Desempenho.
-* Se tiver MMA/SCOM instalado no servidor, algumas versões podem entrar em conflito. Desinstale o SCOM e o Monitor de Estado, e reinstale as versões mais recentes.
+* Se tiver MMA/SCOM (Systems Center Operations Manager) instalado no servidor, algumas versões podem entrar em conflito. Desinstale o SCOM e o Monitor de Estado, e reinstale as versões mais recentes.
 * Veja a [Resolução de Problemas][qna].
 
 ## <a name="system-requirements"></a>Requisitos de Sistema
@@ -119,7 +120,7 @@ Suporte de SO para o Monitor de Estado do Application Insights no Servidor:
 
 com o .NET Framework 4.5 e o SP mais recente
 
-No lado do cliente, Windows 7, 8, 8.1 e 10, novamente com o .NET Framework 4.5
+No lado do cliente: Windows 7, 8, 8.1 e 10, novamente com o .NET Framework 4.5
 
 O Suporte do IIS é: 7, IIS 7.5, 8, 8.5 (o IIS é necessário)
 
@@ -150,7 +151,7 @@ Descubra que aplicações estão a ser monitorizadas:
 * `-InstrumentationKey` A ikey do recurso Application Insights onde pretende que os resultados sejam apresentados.
 * Este cmdlet afeta apenas as aplicações que ainda não foram instrumentadas - ou seja, SdkState==NotInstrumented.
 
-    O cmdlet não afeta uma aplicação que já está instrumentada, quer no momento da compilação, adicionando o SDK ao código, ou no momento da execução, através de uma utilização anterior deste cmdlet.
+    O cmdlet não afeta uma aplicação que já esteja instrumentada. É indiferente se a aplicação foi instrumentada no momento da compilação, adicionando o SDK ao código, ou no momento da execução, através de uma utilização anterior deste cmdlet.
 
     A versão SDK utilizada para instrumentar a aplicação é a versão mais recentemente transferida para este servidor.
 
@@ -183,7 +184,11 @@ Descubra que aplicações estão a ser monitorizadas:
 
 * Transfere o SDK mais recente do Application Insights para o servidor.
 
-## <a name="a-namenextanext-steps"></a><a name="next"></a>Passos seguintes
+## <a name="video"></a>Vídeo
+
+> [!VIDEO https://channel9.msdn.com/events/Connect/2016/100/player]
+
+## <a name="next"></a>Passos seguintes
 
 Ver a telemetria:
 
@@ -208,9 +213,4 @@ Adicionar mais telemetria:
 [qna]: app-insights-troubleshoot-faq.md
 [roles]: app-insights-resources-roles-access-control.md
 [usage]: app-insights-web-track-usage.md
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 
