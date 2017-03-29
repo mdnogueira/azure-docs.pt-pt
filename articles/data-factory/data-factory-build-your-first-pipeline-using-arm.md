@@ -15,8 +15,9 @@ ms.topic: hero-article
 ms.date: 01/17/2017
 ms.author: spelluru
 translationtype: Human Translation
-ms.sourcegitcommit: fbf77e9848ce371fd8d02b83275eb553d950b0ff
-ms.openlocfilehash: 1820b25f1cf426d0a81588a00dc5f26073ebb9f8
+ms.sourcegitcommit: 5e6ffbb8f1373f7170f87ad0e345a63cc20f08dd
+ms.openlocfilehash: 38e8320c09c5aa870018081a29911611f09a3e3a
+ms.lasthandoff: 03/24/2017
 
 
 ---
@@ -390,15 +391,15 @@ Especifique o nome e a chave da sua conta de armazenamento do Azure nesta secç�
     "type": "linkedservices",
     "name": "[variables('azureStorageLinkedServiceName')]",
     "dependsOn": [
-        "[variables('dataFactoryName')]"
+          "[variables('dataFactoryName')]"
     ],
     "apiVersion": "2015-10-01",
     "properties": {
-        "type": "AzureStorage",
-        "description": "Azure Storage linked service",
-        "typeProperties": {
+          "type": "AzureStorage",
+          "description": "Azure Storage linked service",
+          "typeProperties": {
             "connectionString": "[concat('DefaultEndpointsProtocol=https;AccountName=',parameters('storageAccountName'),';AccountKey=',parameters('storageAccountKey'))]"
-        }
+          }
     }
 }
 ```
@@ -412,18 +413,18 @@ Veja o artigo [Serviços ligados de computação](data-factory-compute-linked-se
     "type": "linkedservices",
     "name": "[variables('hdInsightOnDemandLinkedServiceName')]",
     "dependsOn": [
-        "[variables('dataFactoryName')]"
+          "[variables('dataFactoryName')]"
     ],
     "apiVersion": "2015-10-01",
     "properties": {
-        "type": "HDInsightOnDemand",
-        "typeProperties": {
+          "type": "HDInsightOnDemand",
+          "typeProperties": {
             "clusterSize": 1,
             "version": "3.2",
             "timeToLive": "00:05:00",
             "osType": "windows",
             "linkedServiceName": "[variables('azureStorageLinkedServiceName')]"
-        }
+          }
     }
 }
 ```
@@ -438,64 +439,64 @@ Tenha em atenção os seguintes pontos:
 Veja [On-demand HDInsight Linked Service (Serviço Ligado do HDInsight a Pedido)](data-factory-compute-linked-services.md#azure-hdinsight-on-demand-linked-service) para obter detalhes.
 
 #### <a name="azure-blob-input-dataset"></a>Conjunto de dados de entrada de blobs do Azure
-Especifique os nomes do contentor de blob, da pasta e do ficheiro que contém os dados de entrada. Veja [Azure Blob dataset properties (Propriedades do conjunto de dados de Blobs do Azure)](data-factory-azure-blob-connector.md#azure-blob-dataset-type-properties) para obter detalhes sobre as propriedades JSON utilizadas para definir um conjunto de dados de Blobs do Azure. 
+Especifique os nomes do contentor de blob, da pasta e do ficheiro que contém os dados de entrada. Veja [Azure Blob dataset properties (Propriedades do conjunto de dados de Blobs do Azure)](data-factory-azure-blob-connector.md#dataset-properties) para obter detalhes sobre as propriedades JSON utilizadas para definir um conjunto de dados de Blobs do Azure. 
 
 ```json
 {
     "type": "datasets",
     "name": "[variables('blobInputDatasetName')]",
     "dependsOn": [
-        "[variables('dataFactoryName')]",
-        "[variables('azureStorageLinkedServiceName')]"
+          "[variables('dataFactoryName')]",
+          "[variables('azureStorageLinkedServiceName')]"
     ],
     "apiVersion": "2015-10-01",
     "properties": {
-        "type": "AzureBlob",
-        "linkedServiceName": "[variables('azureStorageLinkedServiceName')]",
-        "typeProperties": {
+          "type": "AzureBlob",
+          "linkedServiceName": "[variables('azureStorageLinkedServiceName')]",
+          "typeProperties": {
             "fileName": "[parameters('inputBlobName')]",
             "folderPath": "[concat(parameters('blobContainer'), '/', parameters('inputBlobFolder'))]",
             "format": {
-                "type": "TextFormat",
-                "columnDelimiter": ","
+                  "type": "TextFormat",
+                  "columnDelimiter": ","
             }
-        },
-        "availability": {
+          },
+          "availability": {
             "frequency": "Month",
             "interval": 1
-        },
-        "external": true
+          },
+          "external": true
     }
 }
 ```
 Esta definição utiliza os seguintes parâmetros definidos no modelo de parâmetro: blobContainer, inputBlobFolder e inputBlobName. 
 
 #### <a name="azure-blob-output-dataset"></a>Conjunto de dados de saída do Blob do Azure
-Especifique os nomes do contentor de blob e pasta que contêm os dados de saída. Veja [Azure Blob dataset properties (Propriedades do conjunto de dados de Blobs do Azure)](data-factory-azure-blob-connector.md#azure-blob-dataset-type-properties) para obter detalhes sobre as propriedades JSON utilizadas para definir um conjunto de dados de Blobs do Azure.  
+Especifique os nomes do contentor de blob e pasta que contêm os dados de saída. Veja [Azure Blob dataset properties (Propriedades do conjunto de dados de Blobs do Azure)](data-factory-azure-blob-connector.md#dataset-properties) para obter detalhes sobre as propriedades JSON utilizadas para definir um conjunto de dados de Blobs do Azure.  
 
 ```json
 {
     "type": "datasets",
     "name": "[variables('blobOutputDatasetName')]",
     "dependsOn": [
-        "[variables('dataFactoryName')]",
-        "[variables('azureStorageLinkedServiceName')]"
+          "[variables('dataFactoryName')]",
+          "[variables('azureStorageLinkedServiceName')]"
     ],
     "apiVersion": "2015-10-01",
     "properties": {
-        "type": "AzureBlob",
-        "linkedServiceName": "[variables('azureStorageLinkedServiceName')]",
-        "typeProperties": {
+          "type": "AzureBlob",
+          "linkedServiceName": "[variables('azureStorageLinkedServiceName')]",
+          "typeProperties": {
             "folderPath": "[concat(parameters('blobContainer'), '/', parameters('outputBlobFolder'))]",
             "format": {
-                "type": "TextFormat",
-                "columnDelimiter": ","
+                  "type": "TextFormat",
+                  "columnDelimiter": ","
             }
-        },
-        "availability": {
+          },
+          "availability": {
             "frequency": "Month",
             "interval": 1
-        }
+          }
     }
 }
 ```
@@ -510,51 +511,51 @@ Defina um pipeline que transforme dados executando o script de ramo de registo n
     "type": "datapipelines",
     "name": "[variables('pipelineName')]",
     "dependsOn": [
-        "[variables('dataFactoryName')]",
-        "[variables('azureStorageLinkedServiceName')]",
-        "[variables('hdInsightOnDemandLinkedServiceName')]",
-        "[variables('blobInputDatasetName')]",
-        "[variables('blobOutputDatasetName')]"
+          "[variables('dataFactoryName')]",
+          "[variables('azureStorageLinkedServiceName')]",
+          "[variables('hdInsightOnDemandLinkedServiceName')]",
+          "[variables('blobInputDatasetName')]",
+          "[variables('blobOutputDatasetName')]"
     ],
     "apiVersion": "2015-10-01",
     "properties": {
-        "description": "Pipeline that transforms data using Hive script.",
-        "activities": [
+          "description": "Pipeline that transforms data using Hive script.",
+          "activities": [
         {
-            "type": "HDInsightHive",
-            "typeProperties": {
+              "type": "HDInsightHive",
+              "typeProperties": {
                 "scriptPath": "[concat(parameters('blobContainer'), '/', parameters('hiveScriptFolder'), '/', parameters('hiveScriptFile'))]",
                 "scriptLinkedService": "[variables('azureStorageLinkedServiceName')]",
                 "defines": {
-                    "inputtable": "[concat('wasb://', parameters('blobContainer'), '@', parameters('storageAccountName'), '.blob.core.windows.net/', parameters('inputBlobFolder'))]",
-                    "partitionedtable": "[concat('wasb://', parameters('blobContainer'), '@', parameters('storageAccountName'), '.blob.core.windows.net/', parameters('outputBlobFolder'))]"
+                      "inputtable": "[concat('wasb://', parameters('blobContainer'), '@', parameters('storageAccountName'), '.blob.core.windows.net/', parameters('inputBlobFolder'))]",
+                      "partitionedtable": "[concat('wasb://', parameters('blobContainer'), '@', parameters('storageAccountName'), '.blob.core.windows.net/', parameters('outputBlobFolder'))]"
                 }
-            },
-            "inputs": [
+              },
+              "inputs": [
             {
-                "name": "[variables('blobInputDatasetName')]"
+                  "name": "[variables('blobInputDatasetName')]"
             }
-            ],
-            "outputs": [
+              ],
+              "outputs": [
             {
-                "name": "[variables('blobOutputDatasetName')]"
+                  "name": "[variables('blobOutputDatasetName')]"
             }
-            ],
-            "policy": {
+              ],
+              "policy": {
                 "concurrency": 1,
                 "retry": 3
-            },
-            "scheduler": {
+              },
+              "scheduler": {
                 "frequency": "Month",
                 "interval": 1
-            },
-            "name": "RunSampleHiveActivity",
-            "linkedServiceName": "[variables('hdInsightOnDemandLinkedServiceName')]"
+              },
+              "name": "RunSampleHiveActivity",
+              "linkedServiceName": "[variables('hdInsightOnDemandLinkedServiceName')]"
         }
-        ],
-        "start": "2016-10-01T00:00:00Z",
-        "end": "2016-10-02T00:00:00Z",
-        "isPaused": false
+          ],
+          "start": "2016-10-01T00:00:00Z",
+          "end": "2016-10-02T00:00:00Z",
+          "isPaused": false
     }
 }
 ```
@@ -619,10 +620,5 @@ Este modelo cria uma fábrica de dados com o nome GatewayUsingArmDF com um gatew
 | [Conjuntos de dados](data-factory-create-datasets.md) |Este artigo ajuda-o a compreender os conjuntos de dados no Azure Data Factory. |
 | [Agendamento e execução](data-factory-scheduling-and-execution.md) |Este artigo explica os aspetos de agendamento e execução do modelo da aplicação do Azure Data Factory. |
 | [Monitorizar e gerir pipelines com a Aplicação de Monitorização](data-factory-monitor-manage-app.md) |Este artigo descreve como monitorizar, gerir e depurar pipelines com a Aplicação de Monitorização e Gestão. |
-
-
-
-
-<!--HONumber=Feb17_HO1-->
 
 

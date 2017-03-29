@@ -41,4 +41,4 @@ O Agente VM é ativado nas seguintes situações:
 >
 
 ## <a name="find-add-update-and-remove-vm-extensions"></a>Localizar, Adicionar, Atualizar e Remover Extensões de VM
-Para obter detalhes sobre estas tarefas, veja [Adicionar, Localizar, Atualizar e Remover Extensões de VM do Azure](../articles/virtual-machines/virtual-machines-windows-classic-manage-extensions.md?toc=%2fazure%2fvirtual-machines%2fwindows%2fclassic%2ftoc.json).
+Para obter detalhes sobre estas tarefas, veja [Adicionar, Localizar, Atualizar e Remover Extensões de VM do Azure](../articles/virtual-machines/windows/classic/manage-extensions.md?toc=%2fazure%2fvirtual-machines%2fwindows%2fclassic%2ftoc.json).
