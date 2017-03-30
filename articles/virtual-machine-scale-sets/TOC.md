@@ -3,22 +3,21 @@
 
 # Introdução
 ## [Implementar um conjunto de dimensionamento no portal](virtual-machine-scale-sets-portal-create.md)
-## [Implementar um conjunto de dimensionamento com a CLI do Azure](virtual-machine-scale-sets-linux-create-cli.md)
-## [Implementar um conjunto de dimensionamento simples com um Modelo do Resource Manager](virtual-machine-scale-sets-mvss-start.md)
+## [Implementar um conjunto de dimensionamento com o PowerShell ou a CLI do Azure](virtual-machine-scale-sets-create.md)
 
 # Procedimento
 ## Planear e conceber
 ### [Considerações de design](virtual-machine-scale-sets-design-overview.md)
-## Escrever Modelos de Conjunto de Dimensionamento Para
-### [Implementar um conjunto de dimensionamento simples](virtual-machine-scale-sets-mvss-start.md)
-### [Implementar um conjunto de dimensionamento numa rede virtual existente](virtual-machine-scale-sets-mvss-existing-vnet.md)
+
+## Criar um modelo
+### [Saiba mais sobre modelos de conjunto de dimensionamento](virtual-machine-scale-sets-mvss-start.md)
+### [Adicionar uma rede virtual](virtual-machine-scale-sets-mvss-existing-vnet.md)
 
 ## Implementação
-### [Conjunto de dimensionamento com o portal](virtual-machine-scale-sets-portal-create.md)
+### [Criar com o portal](virtual-machine-scale-sets-portal-create.md)
+### [Criar com o Visual Studio](virtual-machine-scale-sets-vs-create.md)
+### [Criar com o PowerShell ou a CLI do Azure](virtual-machine-scale-sets-create.md)
 ### [Conjunto de dimensionamento com discos geridos](virtual-machine-scale-sets-managed-disks.md)
-### [Conjunto de dimensionamento com o Visual Studio](virtual-machine-scale-sets-vs-create.md)
-### [Conjunto de dimensionamento com o PowerShell](virtual-machine-scale-sets-windows-create.md)
-### [Conjunto de dimensionamento com a CLI do Azure](virtual-machine-scale-sets-linux-create-cli.md)
 ### [Conjunto de dimensionamento do Linux com dimensionamento automático](virtual-machine-scale-sets-linux-autoscale.md)
 ### [Conjunto de dimensionamento do Windows com dimensionamento automático](virtual-machine-scale-sets-windows-autoscale.md)
 ### [Aplicações em conjuntos de dimensionamento](virtual-machine-scale-sets-deploy-app.md)
