@@ -9,6 +9,7 @@ editor: cgronlun
 tags: azure-portal
 ms.assetid: 72d54080-1e48-4a5e-aa50-cce4ffc85077
 ms.service: hdinsight
+ms.custom: hdinsightactive
 ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
@@ -16,9 +17,9 @@ ms.workload: big-data
 ms.date: 01/11/2017
 ms.author: larryfr
 translationtype: Human Translation
-ms.sourcegitcommit: 0d8472cb3b0d891d2b184621d62830d1ccd5e2e7
-ms.openlocfilehash: 0cf2d7f4cbbed730d690693fd006665355155c22
-ms.lasthandoff: 03/21/2017
+ms.sourcegitcommit: 5e6ffbb8f1373f7170f87ad0e345a63cc20f08dd
+ms.openlocfilehash: 0aa2a7075f64b353f6b052ab6b973a06622a9339
+ms.lasthandoff: 03/24/2017
 
 
 ---
@@ -42,7 +43,7 @@ O Apache Storm no HDInsight oferece as seguintes grandes vantagens:
 * Personalização fácil, ao executar scripts face ao cluster durante ou após a criação. Para obter mais informações, veja [Customize HDInsight clusters using script action (Personalizar clusters do HDInsight com ações de script)](hdinsight-hadoop-customize-cluster-linux.md).
 
 * Utilize uma linguagem à sua escolha: os componentes do Storm podem ser escritos em diversas linguagens, tais como **Java**, **c#** e **Python**.
-  
+
   * Integração do Visual Studio com HDInsight para o desenvolvimento, a gestão e a monitorização das topologias C#. Para obter mais informações, veja [Develop C# Storm topologies with the HDInsight Tools for Visual Studio (Desenvolver topologias do Strom C# com as Ferramentas do HDInsight para Visual Studio)](hdinsight-storm-develop-csharp-visual-studio-topology.md).
 
   * Suporta a interface de Java **Trident**. Esta interface permite-lhe criar topologias Storm que suportam o processamento de mensagens "exatamente uma vez", persistência do arquivo de dados "transacional" e um conjunto de operações de análise de fluxo comuns.
@@ -50,13 +51,13 @@ O Apache Storm no HDInsight oferece as seguintes grandes vantagens:
 * Aumentar e reduzir verticalmente o cluster de forma fácil: adicione ou remova nós de trabalho sem qualquer impacto nas topologias Storm em execução.
 
 * Integração nos seguintes serviços do Azure:
-  
+
     * Event Hubs
     * Rede Virtual
     * SQL Database
     * Storage do Azure
     * DocumentDB.
-  
+
   * Combinar em segurança as capacidades de vários clusters do HDInsight através da utilização da Rede Virtual do Azure: crie pipelines de análise que utilizem clusters do HDInsight, do HBase ou do Hadoop.
 
 Para obter uma lista de empresas que utiliza o Apache Storm como solução de análise em tempo real, consulte o artigo [Empresas que Utilizam o Apache Storm](https://storm.apache.org/documentation/Powered-By.html).
@@ -80,7 +81,7 @@ Em menos de 15 minutos após submeter o pedido, tem um novo cluster Storm em exe
 
 * __Conectividade Web__: os clusters do HDInsight fornecem a IU da Web do Ambari. A IU Web do Ambari permite monitorizar, configurar e gerir facilmente serviços no seu cluster. O Storm no HDInsight também fornece a IU do Storm, através da qual pode monitorizar e gerir topologias Storm em execução a partir do browser.
 
-  Para obter mais informações, veja [Manage HDInsight using the Ambari Web UI (Gerir o HDInsight com a IU da Web do Ambari)](hdinsight-hadoop-manage-ambari.md) e [Monitor and manage using the Storm UI (Monitorizar e gerir com a IU do Storm)](hdinsight-storm-deploy-monitor-topology-linux.md#monitor-and-manage-using-the-storm-ui).
+  Para obter mais informações, veja [Manage HDInsight using the Ambari Web UI (Gerir o HDInsight com a IU da Web do Ambari)](hdinsight-hadoop-manage-ambari.md) e [Monitor and manage using the Storm UI (Monitorizar e gerir com a IU do Storm)](hdinsight-storm-deploy-monitor-topology-linux.md#monitor-and-manage-storm-ui).
 
 * __Azure PowerShell e CLI d Azure__: quer o Azure PowerShell, quer a CLI do Azure, disponibilizam utilitários de linha de comandos que podem ser utilizados a partir do sistema cliente para funcionar com o HDInsight e com outros serviços do Azure.
 
@@ -152,7 +153,7 @@ O Apache Storm executa **topologias** em vez dos trabalhos de MapReduce com que 
 * **Fluxo**: Uma coleção não ligada de **tuplas**. **Spouts** e **bolts**produzem fluxos e os **bolts** consomem-los.
 * **Tupla**: uma lista com nomes de valores escritos de forma dinâmica.
 * **Spout**: consome dados de uma origem de dados e emite um ou vários **fluxos**.
-  
+
   > [!NOTE]
   > Muitas vezes, os dados são lidos a partir de filas, como o Kafka ou os hubs de Eventos do Azure. Em caso de falha, a fila garante que os dados persistem.
 

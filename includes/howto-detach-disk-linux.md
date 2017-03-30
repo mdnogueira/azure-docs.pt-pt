@@ -29,7 +29,7 @@ Para poder desligar um disco de uma VM, precisa de saber o número do LUN, que �
 3. Tome nota do LUN ou do **número de unidade lógica** para o disco que pretende desligar.
 
 ## <a name="remove-operating-system-references-to-the-disk"></a>Remover referências do sistema operativo ao disco
-Antes de desligar o disco do convidado Linux, certifique-se de que todas as partições no disco não estão a ser utilizadas. Certifique-se de que o sistema operativo não tenta voltar a montá-las após um reinício. Estes passos anulam a configuração que provavelmente criou quando [ligou](../articles/virtual-machines/virtual-machines-linux-classic-attach-disk.md?toc=%2fazure%2fvirtual-machines%2flinux%2fclassic%2ftoc.json) o disco.
+Antes de desligar o disco do convidado Linux, certifique-se de que todas as partições no disco não estão a ser utilizadas. Certifique-se de que o sistema operativo não tenta voltar a montá-las após um reinício. Estes passos anulam a configuração que provavelmente criou quando [ligou](../articles/virtual-machines/linux/classic/attach-disk.md?toc=%2fazure%2fvirtual-machines%2flinux%2fclassic%2ftoc.json) o disco.
 
 1. Utilize o comando `lsscsi` para detetar o identificador do disco. `lsscsi` pode ser instalado através de `yum install lsscsi` (em distribuições baseadas no Red Hat) ou de `apt-get install lsscsi` (em distribuições baseadas no Debian). Pode localizar o identificador do disco que está a procurar através do número do LUN. O último número na cadeia de identificação em cada linha é o LUN. No exemplo seguinte de `lsscsi`, o LUN 0 é mapeado para */dev/sdc*
 
@@ -111,9 +111,4 @@ Depois de encontrar o número do LUN do disco e remover as referências de siste
     ```
 
 O disco desligado permanece no armazenamento, mas já não está ligado a uma máquina virtual.
-
-
-
-<!--HONumber=Feb17_HO3-->
-
 
