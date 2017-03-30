@@ -15,8 +15,9 @@ ms.topic: get-started-article
 ms.date: 02/14/2017
 ms.author: spelluru
 translationtype: Human Translation
-ms.sourcegitcommit: 4b29fd1c188c76a7c65c4dcff02dc9efdf3ebaee
-ms.openlocfilehash: 299a55865c1c91e664d67095de76708f444d30b9
+ms.sourcegitcommit: 5e6ffbb8f1373f7170f87ad0e345a63cc20f08dd
+ms.openlocfilehash: a4658f1eee3cdd24b3da47b4c7319c61ea39cb34
+ms.lasthandoff: 03/24/2017
 
 
 ---
@@ -103,7 +104,7 @@ Neste passo, irá criar dois serviços ligados: **AzureStorageLinkedService** e 
 1. No painel **Data Factory**, clique no mosaico **Criar e implementar** para iniciar o **Editor** da fábrica de dados.
    
    ![Mosaico Criar e Implementar](./media/data-factory-copy-activity-tutorial-using-azure-portal/getstarted-author-deploy-tile.png) 
-2. No **Editor**, clique no botão **Novo arquivo de dados** na barra de ferramentas e selecione ** armazenamento do Azure** no menu pendente. Deverá ver o modelo JSON para criar um serviço ligado de armazenamento do Azure no painel à direita. 
+2. No **Editor**, clique no botão **Novo arquivo de dados** na barra de ferramentas e selecione **armazenamento do Azure** no menu pendente. Deverá ver o modelo JSON para criar um serviço ligado de armazenamento do Azure no painel à direita. 
    
     ![Botão Arquivar dados novos do Editor](./media/data-factory-copy-activity-tutorial-using-azure-portal/getstarted-editor-newdatastore-button.png)    
 3. Substitua `<accountname>` e `<accountkey>` pelo nome da conta e pelos valores da chave de conta da sua conta de armazenamento do Azure. 
@@ -125,7 +126,7 @@ Neste passo, irá criar dois serviços ligados: **AzureStorageLinkedService** e 
 4. Confirme que consegue ver o **AzureSqlLinkedService** na vista de árvore. 
 
 > [!NOTE]
-> Veja [Move data from/to Azure SQL Database (Mover dados do/para a Base de Dados SQL do Azure)](data-factory-azure-sql-connector.md#azure-sql-linked-service-properties) para obter detalhes sobre as propriedades de JSON.
+> Veja [Move data from/to Azure SQL Database (Mover dados do/para a Base de Dados SQL do Azure)](data-factory-azure-sql-connector.md#linked-service-properties) para obter detalhes sobre as propriedades de JSON.
 > 
 > 
 
@@ -201,7 +202,7 @@ Neste passo, vai criar um conjunto de dados com o nome **InputDataset** que apon
 3. Clique em **Implementar**, na barra de ferramentas, para criar e implementar o conjunto de dados **InputDataset**. Confirme que consegue ver **InputDataset** na vista de árvore.
 
 > [!NOTE]
-> Veja [Mover dados do/para o Blob do Azure](data-factory-azure-blob-connector.md#azure-blob-dataset-type-properties) para obter detalhes sobre as propriedades de JSON.
+> Veja [Mover dados do/para o Blob do Azure](data-factory-azure-blob-connector.md#dataset-properties) para obter detalhes sobre as propriedades de JSON.
 > 
 > 
 
@@ -247,7 +248,7 @@ Nesta parte do passo, vai criar um conjunto de dados de saída com o nome **Outp
 3. Clique em **Implementar**, na barra de ferramentas, para criar e implementar o conjunto de dados **OutputDataset**. Confirme que consegue ver **OutputDataset** na vista de árvore. 
 
 > [!NOTE]
-> Veja [Move data from/to Azure SQL Database (Mover dados do/para a Base de Dados SQL do Azure)](data-factory-azure-sql-connector.md#azure-sql-linked-service-properties) para obter detalhes sobre as propriedades de JSON.
+> Veja [Move data from/to Azure SQL Database (Mover dados do/para a Base de Dados SQL do Azure)](data-factory-azure-sql-connector.md#linked-service-properties) para obter detalhes sobre as propriedades de JSON.
 > 
 > 
 
@@ -401,7 +402,7 @@ Neste tutorial, vai criar um Azure Data Factory para copiar dados de um blob do 
 
 1. Criou uma **fábrica de dados** do Azure.
 2. Criou **serviços ligados**:
-   1. Um serviço ligado do ** Storagedo Azure** para ligar a sua Conta de armazenamento do Azure que contém dados de entrada.     
+   1. Um serviço ligado do **Storagedo Azure** para ligar a sua Conta de armazenamento do Azure que contém dados de entrada.     
    2. Um serviço ligado do **SQL do Azure** para ligar a sua base de dados SQL do Azure que contém dados de saída. 
 3. Criou **conjuntos de dados** que descrevem dados de entrada e saída para pipelines.
 4. Criou um **pipeline** com uma **Atividade de Cópia** com **BlobSource** como origem e **SqlSink** como sink.  
@@ -412,9 +413,4 @@ Neste tutorial, vai criar um Azure Data Factory para copiar dados de um blob do 
 | [Pipelines](data-factory-create-pipelines.md) |Este artigo ajuda-o a compreender os pipelines e as atividades no Azure Data Factory. |
 | [Conjuntos de dados](data-factory-create-datasets.md) |Este artigo ajuda-o a compreender os conjuntos de dados no Azure Data Factory. |
 | [Agendamento e execução](data-factory-scheduling-and-execution.md) |Este artigo explica os aspetos de agendamento e execução do modelo da aplicação do Azure Data Factory. |
-
-
-
-<!--HONumber=Feb17_HO1-->
-
 

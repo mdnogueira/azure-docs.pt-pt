@@ -146,8 +146,8 @@ Docker no Microsoft Azure:
 
 * [Docker VM Extension for Linux on Azure (Extensão Docker VM para Linux no Azure)](../articles/virtual-machines/virtual-machines-linux-dockerextension.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 * [Azure Docker VM Extension User Guide (Guia do Utilizador da Extensão Azure Docker VM)](https://github.com/Azure/azure-docker-extension/blob/master/README.md)
-* [Utilizar a Extensão Docker VM a partir da Interface de Linha de Comandos do Azure (CLI do Azure)](../articles/virtual-machines/virtual-machines-linux-classic-cli-use-docker.md?toc=%2fazure%2fvirtual-machines%2flinux%2fclassic%2ftoc.json)
-* [Using the Docker VM Extension from the Azure portal (Utilizar a Extensão Docker VM a partir do portal do Azure)](../articles/virtual-machines/virtual-machines-linux-classic-portal-use-docker.md?toc=%2fazure%2fvirtual-machines%2flinux%2fclassic%2ftoc.json)
+* [Utilizar a Extensão Docker VM a partir da Interface de Linha de Comandos do Azure (CLI do Azure)](../articles/virtual-machines/linux/classic/cli-use-docker.md?toc=%2fazure%2fvirtual-machines%2flinux%2fclassic%2ftoc.json)
+* [Using the Docker VM Extension from the Azure portal (Utilizar a Extensão Docker VM a partir do portal do Azure)](../articles/virtual-machines/linux/classic/portal-use-docker.md?toc=%2fazure%2fvirtual-machines%2flinux%2fclassic%2ftoc.json)
 * [How to use docker-machine on Azure (Como utilizar o docker-machine no Azure)](../articles/virtual-machines/virtual-machines-linux-docker-machine.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 * [How to use docker with swarm on Azure (Como utilizar o docker com swarm no Azure)](../articles/virtual-machines/virtual-machines-linux-docker-swarm.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 * [Get Started with Docker and Compose on Azure (Introdução ao Docker e ao Compose no Azure)](../articles/virtual-machines/virtual-machines-linux-docker-compose-quickstart.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
@@ -193,8 +193,3 @@ Veja [Docker](https://www.docker.com) e [Windows Containers (Contentores do Wind
 [microservices]: http://martinfowler.com/articles/microservices.html
 [microservice]: http://martinfowler.com/articles/microservices.html
 <!--Image references-->
-
-
-<!--HONumber=Feb17_HO3-->
-
-
