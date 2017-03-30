@@ -15,9 +15,9 @@ ms.topic: get-started-article
 ms.date: 02/02/2017
 ms.author: spelluru
 translationtype: Human Translation
-ms.sourcegitcommit: 7196b4eddc8a00cf2c15e8d8447ef8381db738a3
-ms.openlocfilehash: a1ef4ccb6546f011c405a98cab3cae514de813ea
-ms.lasthandoff: 03/02/2017
+ms.sourcegitcommit: 5e6ffbb8f1373f7170f87ad0e345a63cc20f08dd
+ms.openlocfilehash: 39824fa66dee9f1bd57687e59ece97f4f4636b7d
+ms.lasthandoff: 03/24/2017
 
 
 ---
@@ -97,7 +97,7 @@ Neste passo, irá criar dois serviços ligados: **AzureStorageLinkedService1** e
 4. Guarde o ficheiro **AzureSqlLinkedService1.json**. 
 
 > [!NOTE]
-> Veja [Move data from/to Azure SQL Database (Mover dados do/para a Base de Dados SQL do Azure)](data-factory-azure-sql-connector.md#azure-sql-linked-service-properties) para obter detalhes sobre as propriedades de JSON.
+> Veja [Move data from/to Azure SQL Database (Mover dados do/para a Base de Dados SQL do Azure)](data-factory-azure-sql-connector.md#linked-service-properties) para obter detalhes sobre as propriedades de JSON.
 > 
 > 
 
@@ -169,7 +169,7 @@ Neste passo, vai criar um conjunto de dados com o nome **InputDataset** que apon
     ```
             
 > [!NOTE]
-> Veja [Mover dados do/para o Blob do Azure](data-factory-azure-blob-connector.md#azure-blob-dataset-type-properties) para obter detalhes sobre as propriedades de JSON.
+> Veja [Mover dados do/para o Blob do Azure](data-factory-azure-blob-connector.md#dataset-properties) para obter detalhes sobre as propriedades de JSON.
 > 
 > 
 
@@ -216,7 +216,7 @@ Neste passo, vai criar um conjunto de dados de saída com o nome **OutputDataset
    * A **disponibilidade** está definida como **de hora a hora** (**frequência** definida como **hora** e **intervalo** definido como **1**).  O serviço Data Factory gera um setor de dados de saída a cada hora na tabela **emp** da base de dados SQL do Azure.
 
 > [!NOTE]
-> Veja [Move data from/to Azure SQL Database (Mover dados do/para a Base de Dados SQL do Azure)](data-factory-azure-sql-connector.md#azure-sql-linked-service-properties) para obter detalhes sobre as propriedades de JSON.
+> Veja [Move data from/to Azure SQL Database (Mover dados do/para a Base de Dados SQL do Azure)](data-factory-azure-sql-connector.md#linked-service-properties) para obter detalhes sobre as propriedades de JSON.
 > 
 > 
 
@@ -350,7 +350,7 @@ Neste tutorial, irá criar um Azure Data Factory para copiar dados de um blob do
 
 1. Criou uma **fábrica de dados** do Azure.
 2. Criou **serviços ligados**:
-   1. Um serviço ligado do ** Storagedo Azure** para ligar a sua Conta de armazenamento do Azure que contém dados de entrada.     
+   1. Um serviço ligado do **Storagedo Azure** para ligar a sua Conta de armazenamento do Azure que contém dados de entrada.     
    2. Um serviço ligado do **SQL do Azure** para ligar a sua base de dados SQL do Azure que contém dados de saída. 
 3. Criou **conjuntos de dados** que descrevem dados de entrada e saída para pipelines.
 4. Criou um **pipeline** com uma **Atividade de Cópia** com **BlobSource** como origem e **SqlSink** como sink. 

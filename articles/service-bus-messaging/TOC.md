@@ -1,6 +1,7 @@
 # Descrição geral
 ## [O que são as Mensagens do Service Bus?](service-bus-messaging-overview.md)
 ## [Noções básicas sobre o Service Bus](service-bus-fundamentals-hybrid-solutions.md)
+## [Arquitetura do Service Bus](service-bus-architecture.md)
 ## [FAQ](service-bus-faq.md)
 
 # Introdução

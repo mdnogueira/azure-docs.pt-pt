@@ -560,6 +560,6 @@ Agora, vamos concentrar a nossa atenção na criação de uma interface de utili
 
 [Node.js]: http://nodejs.org/
 [Git]: http://git-scm.com/
-[Github]: https://github.com/Azure-Samples/documentdb-node-todo-app
+[GitHub]: https://github.com/Azure-Samples/documentdb-node-todo-app
 
 
