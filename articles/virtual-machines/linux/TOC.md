@@ -36,7 +36,14 @@
 ### [Agenda](../virtual-machines-linux-planned-maintenance-schedule.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 ## Tamanhos de VM
 ### [Descrição geral dos tamanhos de VM](../virtual-machines-linux-sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-### [Tamanhos de computação intensiva](../virtual-machines-linux-a8-a9-a10-a11-specs.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+#### [Fins gerais](../virtual-machines-linux-sizes-general.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+#### [Com otimização de computação](../virtual-machines-linux-sizes-compute.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+#### [Com otimização de memória](../virtual-machines-linux-sizes-memory.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+#### [Com otimização de armazenamento](../virtual-machines-linux-sizes-storage.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+#### [GPU](../virtual-machines-linux-sizes-gpu.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+#### [Computação de elevado desempenho](../virtual-machines-linux-sizes-hpc.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+##### [Tamanhos de computação intensiva](../virtual-machines-linux-a8-a9-a10-a11-specs.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+### [Unidades de computação do Azure (ACU)](../virtual-machines-linux-acu.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 ### [Pontuações de referência de computação](../virtual-machines-linux-compute-benchmark-scores.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 ## Considerações sobre implementação
 ### [Diretrizes de infraestruturas](../virtual-machines-linux-infrastructure-virtual-machine-guidelines.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
@@ -148,7 +155,7 @@
 ### [Bloco de Notas do Jupyter](../virtual-machines-linux-jupyter-notebook.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 ### [Implementar arquiteturas de aplicações a partir de um modelo](../virtual-machines-linux-app-frameworks.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 ### [Computação de Alto Desempenho (HPC)](../virtual-machines-linux-hpcpack-cluster-options.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-#### [Executar NAMD com pacote HPC da Microsoft](../virtual-machines-linux-classic-hpcpack-cluster-namd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+#### [Executar NAMD com pacote HPC da Microsoft](classic/hpcpack-cluster-namd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 ### SAP no Azure
 #### [Introdução ao SAP](../virtual-machines-linux-sap-get-started.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 #### [Planear para o SAP](../virtual-machines-linux-sap-planning-guide.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
