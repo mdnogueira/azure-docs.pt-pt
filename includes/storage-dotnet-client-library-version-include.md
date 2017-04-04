@@ -1,12 +1,7 @@
 > [!NOTE]
-> Recomendamos que utilize a versão mais recente da Biblioteca de Clientes de Armazenamento do Azure para .NET para concluir este tutorial. A versão mais recente da biblioteca é a 7.x, disponível para transferência no [Nuget](https://www.nuget.org/packages/WindowsAzure.Storage/). A origem para a biblioteca de clientes está disponível no [GitHub](https://github.com/Azure/azure-storage-net).
+> Recomendamos que utilize a versão mais recente da Biblioteca de Clientes de Armazenamento do Azure para .NET para concluir este tutorial. Pode encontrar a versão mais recente para transferência no [NuGet](https://www.nuget.org/packages/WindowsAzure.Storage/). O código de origem para a biblioteca de clientes está disponível no [GitHub](https://github.com/Azure/azure-storage-net).
 > 
-> Se estiver a utilizar o emulador de armazenamento, tenha em atenção que a versão 7.x da biblioteca de clientes precisa, no mínimo, da versão 4.3 do emulador de armazenamento 
+> Se estiver a utilizar o emulador de armazenamento, consulte o [LEIA-ME da biblioteca cliente](https://github.com/Azure/azure-storage-net/blob/master/README.md) para os requisitos de versão. Para utilizar a Biblioteca de Cliente de Armazenamento para .NET com o emulador de armazenamento, tem de utilizar a versão mínima correspondente do emulador de armazenamento do Azure.
 > 
 > 
-
-
-
-<!--HONumber=Nov16_HO2-->
-
 

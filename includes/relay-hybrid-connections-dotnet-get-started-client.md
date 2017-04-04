@@ -15,10 +15,10 @@
     using System.Threading.Tasks;
     using Microsoft.Azure.Relay;
     ```
-2. Adicione constantes à classe `Program`, para obter os detalhes da ligação da Ligação Híbrida. Substitua os marcadores de posição entre parênteses retos pelos valores adequados que foram obtidos ao criar a Ligação Híbrida.
+2. Adicione constantes à classe `Program`, para obter os detalhes da ligação da Ligação Híbrida. Substitua os marcadores de posição entre parênteses retos pelos valores adequados que foram obtidos ao criar a Ligação Híbrida. Certifique-se de que utiliza o nome de espaço de nomes totalmente qualificado:
    
     ```csharp
-    private const string RelayNamespace = "{RelayNamespace}";
+    private const string RelayNamespace = "{RelayNamespace}.servicebus.windows.net";
     private const string ConnectionName = "{HybridConnectionName}";
     private const string KeyName = "{SASKeyName}";
     private const string Key = "{SASKey}";
@@ -37,7 +37,7 @@
         // Initiate the connection
         var relayConnection = await client.CreateConnectionAsync();
    
-        // We run two conucrrent loops on the connection. One 
+        // We run two concurrent loops on the connection. One 
         // reads input from the console and writes it to the connection 
         // with a stream writer. The other reads lines of input from the 
         // connection with a stream reader and writes them to the console. 
@@ -103,7 +103,7 @@
     {
         class Program
         {
-            private const string RelayNamespace = "{RelayNamespace}";
+            private const string RelayNamespace = "{RelayNamespace}.servicebus.windows.net";
             private const string ConnectionName = "{HybridConnectionName}";
             private const string KeyName = "{SASKeyName}";
             private const string Key = "{SASKey}";
@@ -173,9 +173,4 @@
         }
     }
     ```
-
-
-
-<!--HONumber=Feb17_HO1-->
-
 
