@@ -17,9 +17,9 @@ ms.date: 03/17/2017
 ms.author: larryfr
 ms.custom: H1Hack27Feb2017,hdinsightactive
 translationtype: Human Translation
-ms.sourcegitcommit: cfaade8249a643b77f3d7fdf466eb5ba38143f18
-ms.openlocfilehash: 4950dbe528290c7d839c97cc8770db4ae0ec08c6
-ms.lasthandoff: 02/28/2017
+ms.sourcegitcommit: 4f2230ea0cc5b3e258a1a26a39e99433b04ffe18
+ms.openlocfilehash: 5d74f2c130eeddb1022acf9673c6a2006af2db58
+ms.lasthandoff: 03/25/2017
 
 ---
 #<a name="get-started-with-the-storm-starter-samples-for-big-data-analytics-on-linux-based-hdinsight"></a>Introdução aos exemplos do Storm Starter para a análise de macrodados no HDInsight baseado no Linux
@@ -35,11 +35,7 @@ O Apache Storm é um sistema de cálculo dimensionável, tolerante a falhas, dis
 
 * **Uma subscrição do Azure**. Consulte [Obter uma avaliação gratuita do Azure](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 
-* **Estar familiarizado com o SSH e o SCP**. Para obter mais informações sobre a utilização do SSH e do SCP com o HDInsight, veja os seguintes documentos:
-  
-    * [Utilizar o SSH com o Hadoop baseado em Linux no HDInsight a partir do Bash no Windows 10, Linux, Unix ou OS X](hdinsight-hadoop-linux-use-ssh-unix.md)
-    
-    * [Utilizar o SSH (PuTTY) com o Hadoop baseado em Linux no HDInsight a partir do Windows](hdinsight-hadoop-linux-use-ssh-windows.md)
+* **Estar familiarizado com o SSH e o SCP**. Para obter informações, veja [Use SSH with HDInsight (Utilizar SSH com o HDInsight)](hdinsight-hadoop-linux-use-ssh-unix.md).
 
 ### <a name="access-control-requirements"></a>Requisitos do controlo de acesso
 
@@ -99,11 +95,7 @@ Utilize os seguintes passos para criar um Storm num cluster HDInsight:
    
     Se utilizou uma palavra-passe para proteger a sua conta de utilizador do SSH, é solicitado que a introduza. Se utilizou uma chave pública, poderá ter de utilizar o parâmetro `-i` para especificar a chave privada correspondente. Por exemplo, `ssh -i ~/.ssh/id_rsa USERNAME@CLUSTERNAME-ssh.azurehdinsight.net`.
    
-    Para obter mais informações sobre a utilização do SSH com o HDInsight baseado em Linux, consulte os seguintes artigos:
-   
-    * [Utilizar o SSH com o Hadoop baseado em Linux no HDInsight a partir do Bash no Windows 10, Linux, Unix ou OS X](hdinsight-hadoop-linux-use-ssh-unix.md)
-
-    * [Utilizar o SSH (PuTTY) com o Hadoop baseado em Linux no HDInsight a partir do Windows](hdinsight-hadoop-linux-use-ssh-windows.md)
+    Para obter informações, veja [Use SSH with HDInsight (Utilizar SSH com o HDInsight)](hdinsight-hadoop-linux-use-ssh-unix.md).
 
 2. Utilize o seguinte comando para iniciar uma topologia de exemplo:
    

@@ -15,8 +15,9 @@ ms.topic: hero-article
 ms.date: 06/05/2016
 ms.author: mlearned
 translationtype: Human Translation
-ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
-ms.openlocfilehash: 6a03b96b3f06d9c8cdb820e6c7835f728a28cc99
+ms.sourcegitcommit: 503f5151047870aaf87e9bb7ebf2c7e4afa27b83
+ms.openlocfilehash: eec7d1402bdea4e5433c473dd713eed23aa80464
+ms.lasthandoff: 03/28/2017
 
 
 ---
@@ -62,10 +63,10 @@ Criar uma aplicação Web com o [Serviço de Aplicações do Azure](https://azur
 9. Assim que escolher o seu projeto e ramo, clique em ok. Deve começar a ver as notificações de uma implementação.
    
    ![image9][image9]
-10. Regresse ao Github para ver o webhook que foi criado para integrar o repo do controlo de origem com o Azure. O Portal do Azure permite a integração com o Github com apenas alguns passos simples.
+10. Regresse ao GitHub para ver o webhook que foi criado para integrar o repo do controlo de origem com o Azure. O Portal do Azure permite a integração com o GitHub com apenas alguns passos simples.
     
     ![image10][image10]
-11. Para demonstrar a implementação contínua, adicione rapidamente algum conteúdo ao repositório. Para obter um exemplo simples, adicione um ficheiro de texto de exemplo a um repo do Github. Pode utilizar o .NET, o Ruby, o Python ou outro tipo de aplicação com o Serviço de Aplicações. Pode adicionar um ficheiro de texto, ASP.NET MVC, Java ou aplicação Ruby ao repo à sua escolha.
+11. Para demonstrar a implementação contínua, adicione rapidamente algum conteúdo ao repositório. Para obter um exemplo simples, adicione um ficheiro de texto de exemplo a um repo do GitHub. Pode utilizar o .NET, o Ruby, o Python ou outro tipo de aplicação com o Serviço de Aplicações. Pode adicionar um ficheiro de texto, ASP.NET MVC, Java ou aplicação Ruby ao repo à sua escolha.
     
     ![image11][image11]
 12. Após efetuar alterações ao seu repositório, verá uma nova implementação iniciar na área de notificações do portal. Clique em Sincronizar se não vir rapidamente as alterações efetuadas no seu repositório.
@@ -334,9 +335,4 @@ Este tutorial demonstrou algumas das vantagens da plataforma do Azure, ao ativar
 [image67]: ./media/tutorial-azureportal-devops/image67.png
 [image68]: ./media/tutorial-azureportal-devops/image68.png
 [image69]: ./media/tutorial-azureportal-devops/image69.png
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

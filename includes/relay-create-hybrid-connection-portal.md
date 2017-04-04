@@ -14,7 +14,3 @@ Certifique-se que já criou um espaço de nomes do Reencaminhamento, como mostra
 6. Na parte inferior do painel, clique em **Criar**.
 
 [namespace-how-to]: ../articles/service-bus-relay/relay-create-namespace-portal.md 
-
-<!--HONumber=Feb17_HO1-->
-
-

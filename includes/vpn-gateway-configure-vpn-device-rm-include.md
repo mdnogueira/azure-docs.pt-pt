@@ -1,14 +1,16 @@
+As ligações de Site a Site para uma rede no local requerem um dispositivo VPN. Existem vários dispositivos VPN diferentes que funcionam com o Azure. Para obter informações sobre dispositivos VPN e definições de configuração, consulte [VPN Devices (Dispositivos VPN)](../articles/vpn-gateway/vpn-gateway-about-vpn-devices.md). Antes de configurar o dispositivo VPN, verifique a existência de [Problemas de compatibilidade de dispositivos conhecidos](../articles/vpn-gateway/vpn-gateway-about-vpn-devices.md#known) para o dispositivo VPN que pretende utilizar. Para obter informações de configuração do dispositivo VPN, contacte o fabricante do dispositivo.
 
-Para configurar um dispositivo VPN, vai precisar do endereço IP público do gateway da rede virtual para configurar o dispositivo VPN no local. Contacte o fabricante do dispositivo para obter as informações de configuração específicas e configurar o dispositivo. Veja [Dispositivos VPN](../articles/vpn-gateway/vpn-gateway-about-vpn-devices.md) para obter mais informações sobre os dispositivos VPN que funcionam bem com o Azure.
+Quando configurar o dispositivo VPN, irá precisar dos seguintes itens:
 
-Para localizar o endereço IP público do gateway de rede virtual com o PowerShell, utilize o seguinte exemplo:
+- **O endereço IP Público** do gateway de rede virtual.
 
-    Get-AzureRmPublicIpAddress -Name GW1PublicIP -ResourceGroupName TestRG
+    -  Para encontrar o endereço IP Público através do portal do Azure, navegue para **Gateways de rede virtual** e, em seguida, clique no nome do gateway. 
 
-Também pode ver o endereço IP público do gateway da rede virtual com Portal do Azure. Navegue até **Gateways da rede virtual** e clique no nome do seu gateway.
+    - Para encontrar o endereço IP Público do gateway de rede virtual com o PowerShell, utilize o seguinte exemplo, substituindo os valores pelos seus próprios.
+
+            Get-AzureRmPublicIpAddress -Name GW1PublicIP -ResourceGroupName TestRG
+- **Uma chave partilhada**. Esta é a mesma chave partilhada que irá especificar ao criar a ligação VPN de Site a Site. Nos nossos exemplos, iremos utilizar uma chave partilhada muito básica. Deve gerar uma chave mais complexa para utilizar.
 
 
-
-<!--HONumber=Nov16_HO2-->
 
 

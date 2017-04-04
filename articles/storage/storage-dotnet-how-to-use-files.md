@@ -12,12 +12,12 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: hero-article
-/ms.date: 3/8/2017
+ms.date: 03/27/2017
 ms.author: renash
 translationtype: Human Translation
-ms.sourcegitcommit: 4e81088857c0e9cacaf91342227ae63080fc90c5
-ms.openlocfilehash: 780066b1e71d967c64da0a1c1a284ffd5d1b7481
-ms.lasthandoff: 02/23/2017
+ms.sourcegitcommit: 6e0ad6b5bec11c5197dd7bded64168a1b8cc2fdd
+ms.openlocfilehash: fcdeac53c79551000b48a47a1afc65e082bcc692
+ms.lasthandoff: 03/28/2017
 
 
 ---
@@ -46,7 +46,7 @@ Eis um vídeo que demonstra como criar e utilizar Partilhas de ficheiros do Azur
 ## <a name="about-this-tutorial"></a>Acerca deste tutorial
 Este tutorial de introdução demonstra as noções básicas da utilização do Armazenamento de ficheiros do Microsoft Azure. Neste tutorial, iremos:
 
-* Utilizar o Portal do Azure ou o PowerShell para criar uma nova Partilha de ficheiros do Azure, adicionar um diretório, carregar um ficheiro local para a partilha e listar os ficheiros no diretório.
+* Utilizar o portal do Azure ou o PowerShell para criar uma nova Partilha de ficheiros do Azure, adicionar um diretório, carregar um ficheiro local para a partilha e listar os ficheiros no diretório.
 * Montar a partilha de ficheiros, tal como montaria qualquer partilha SMB.
 * Utilizar a Biblioteca de Clientes do Armazenamento do Azure para .NET para aceder à partilha de ficheiros a partir de uma aplicação no local. Criar uma aplicação de consola e realizar estas ações com a partilha de ficheiros:
   * Escrever o conteúdo de um ficheiro na partilha para a janela da consola.
@@ -58,8 +58,8 @@ Este tutorial de introdução demonstra as noções básicas da utilização do 
 
 O Armazenamento de ficheiros é agora suportado em todas as contas de armazenamento, pelo que pode utilizar uma conta de armazenamento já existente ou criar uma nova. Veja [Como criar uma conta de armazenamento](storage-create-storage-account.md#create-a-storage-account) para obter informações sobre como criar uma conta de armazenamento nova.
 
-## <a name="use-the-azure-portal-to-manage-a-file-share"></a>Utilizar o Portal do Azure para gerir uma partilha de ficheiros
-O [Portal do Azure](https://portal.azure.com) fornece uma interface de utilizador para os clientes gerirem partilhas de ficheiros. A partir do portal, pode:
+## <a name="use-the-azure-portal-to-manage-a-file-share"></a>Utilizar o portal do Azure para gerir uma partilha de ficheiros
+O [portal do Azure](https://portal.azure.com) fornece uma interface de utilizador para os clientes gerirem partilhas de ficheiros. A partir do portal, pode:
 
 * Criar a partilha de ficheiros
 * Carregar e transferir os ficheiros de e para a partilha de ficheiros
@@ -129,7 +129,7 @@ Para preparar para utilizar o PowerShell, transfira e instale os cmdlets do Azur
 Abra uma janela do Azure PowerShell ao clicar em **Iniciar** e escrever **Windows PowerShell**. A janela do PowerShell carrega o módulo do Azure Powershell.
 
 ### <a name="create-a-context-for-your-storage-account-and-key"></a>Criar um contexto para a conta de armazenamento e a chave
-Agora, crie o contexto da conta de armazenamento. O contexto contém a chave de conta e o nome da conta de armazenamento. Para obter instruções sobre a cópia da chave de conta a partir do [Portal do Azure](https://portal.azure.com), veja [Ver e copiar chaves de acesso de armazenamento](storage-create-storage-account.md#view-and-copy-storage-access-keys).
+Agora, crie o contexto da conta de armazenamento. O contexto contém a chave de conta e o nome da conta de armazenamento. Para obter instruções sobre a cópia da chave de conta a partir do [portal do Azure](https://portal.azure.com), veja [View and copy storage access keys (Ver e copiar chaves de acesso de armazenamento)](storage-create-storage-account.md#view-and-copy-storage-access-keys).
 
 Substitua `storage-account-name` e `storage-account-key` pelo nome da conta de armazenamento e a chave no exemplo seguinte.
 
@@ -211,8 +211,8 @@ Quando um cliente acede ao Armazenamento de ficheiros, a versão do SMB utilizad
 ### <a name="mount-the-file-share-from-an-azure-virtual-machine-running-windows"></a>Montar a partilha de ficheiros a partir de uma máquina virtual do Azure em execução no Windows
 Para demonstrar como montar uma partilha de ficheiros do Azure, vamos agora criar uma máquina virtual do Azure a executar o Windows e aceder remotamente ao mesmo para montar a partilha.
 
-1. Primeiro, crie uma nova máquina virtual do Azure, seguindo as instruções em [Criar uma máquina virtual do Windows no Portal do Azure](../virtual-machines/virtual-machines-windows-hero-tutorial.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
-2. Em seguida, siga as instruções em [Iniciar sessão numa máquina virtual do Windows através do Portal do Azure](../virtual-machines/virtual-machines-windows-connect-logon.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) para aceder remotamente à máquina virtual.
+1. Primeiro, crie uma nova máquina virtual do Azure, seguindo as instruções em [Create a Windows virtual machine in the Azure portal (Criar uma máquina virtual do Windows no portal do Azure)](../virtual-machines/virtual-machines-windows-hero-tutorial.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
+2. Em seguida, siga as instruções em [Log on to a Windows virtual machine using the Azure portal (Iniciar sessão numa máquina virtual do Windows através do portal do Azure)](../virtual-machines/virtual-machines-windows-connect-logon.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) para aceder remotamente à máquina virtual.
 3. Abra uma janela do PowerShell na máquina virtual.
 
 ### <a name="persist-your-storage-account-credentials-for-the-virtual-machine"></a>Manter as suas credenciais da conta de armazenamento para a máquina
@@ -264,17 +264,29 @@ Para montar a partilha de ficheiros a partir de um cliente no local, primeiro te
 Para escrever código que chama o Armazenamento de ficheiros, pode utilizar as bibliotecas de cliente do armazenamento para o .NET e o Java ou a API REST do Storage do Azure. O exemplo nesta secção demonstra como trabalhar com uma partilha de ficheiros com [Azure Storage Client Library for .NET (Biblioteca de Clientes do Storage do Azure para .NET)](https://msdn.microsoft.com/library/mt347887.aspx) a partir de uma aplicação de consola simples em execução no ambiente de trabalho.
 
 ### <a name="create-the-console-application-and-obtain-the-assembly"></a>Criar a aplicação de consola e obter a assemblagem
-Para criar uma nova aplicação de consola no Visual Studio e instalar o pacote NuGet que contém a Biblioteca de Clientes do Storage do Azure:
+No Visual Studio, crie uma nova aplicação de consola do Windows. Os passos seguintes mostram como criar uma aplicação de consola no Visual Studio 2017, no entanto, os passos são semelhantes em outras versões do Visual Studio.
 
-1. No Visual Studio, selecione **Ficheiro > Novo Projeto** e, em seguida, escolha **Windows > Aplicação de Consola** na lista de modelos do Visual C#.
-2. Forneça um nome para a aplicação de consola e, em seguida, clique em **OK**.
-3. Depois de o projeto ter sido criado, clique com o botão direito do rato no projeto no Explorador de Soluções e escolha **Gerir Pacotes NuGet**. Procure online por “WindowsAzure.Storage” e clique em **Instalar** para instalar dependências e pacotes da Biblioteca de Clientes do Armazenamento do Azure para .NET.
+1. Selecione **Ficheiro** > **Novo** > **Projeto**
+2. Selecione **Instalado** > **Modelos** > **Visual C#** > **Ambiente de Trabalho Clássico do Windows**
+3. Selecione **Aplicação da Consola (.NET Framework)**
+4. Introduza um nome para a sua aplicação no campo **Nome:**
+5. Selecione **OK**
 
-Os exemplos de código neste artigo também utilizam a [Biblioteca do Gestor de Configuração do Microsoft Azure](https://msdn.microsoft.com/library/azure/mt634646.aspx) para obter a cadeia de ligação do armazenamento a partir de um ficheiro app.config na aplicação de consola. Com o Gestor de Configuração do Azure, pode obter a cadeia de ligação no runtime, quer a aplicação esteja em execução no Microsoft Azure ou a partir de um ambiente de trabalho, telemóvel ou aplicação Web.
+Todos os exemplos de código deste tutorial podem ser adicionados ao método `Main()` do ficheiro `Program.cs` da aplicação da consola.
 
-Para instalar o pacote do Gestor de Configuração do Azure, clique com o botão direito do rato no Explorador de Soluções e escolha **Gerir Pacotes NuGet**. Procure online por “ConfigurationManager” e clique em **Instalar** para instalar o pacote.
+Pode utilizar a Biblioteca de Clientes de Armazenamento do Azure em qualquer tipo de aplicação .NET, incluindo um serviço cloud do Azure ou aplicação Web, e aplicações de ambiente de trabalho ou móveis. Neste guia, utilizamos uma aplicação de consola pela simplicidade.
 
-A utilização do Gestor de Configuração do Azure é opcional. De igual modo, pode utilizar uma API, tal como a [classe ConfigurationManager](https://msdn.microsoft.com/library/system.configuration.configurationmanager.aspx) do .NET Framework.
+### <a name="use-nuget-to-install-the-required-packages"></a>Utilizar o NuGet para instalar os pacotes necessários
+Há dois pacotes que tem de fazer referência no seu projeto para concluir este tutorial:
+
+* [Biblioteca de Clientes de Armazenamento do Microsoft Azure para .NET](https://www.nuget.org/packages/WindowsAzure.Storage/): este pacote fornece acesso programático a recursos de dados na sua conta de armazenamento.
+* [Biblioteca do Gestor de Configuração do Microsoft Azure para .NET](https://www.nuget.org/packages/Microsoft.WindowsAzure.ConfigurationManager/): este pacote fornece uma classe para analisar uma cadeia de ligação num ficheiro de configuração, independentemente de onde a sua aplicação estiver a ser executada.
+
+Pode utilizar o NuGet para obter ambos os pacotes. Siga estes passos.
+
+1. Clique com o botão direito do rato no projeto no **Explorador de Soluções** e escolha **Gerir Pacotes NuGet**.
+2. Procure online “WindowsAzure.Storage” e clique em **Instalar** para instalar a Biblioteca de Clientes de Armazenamento e as respetivas dependências.
+3. Procure online “WindowsAzure.ConfigurationManager” e clique em **Instalar** para instalar o Gestor de Configuração do Azure.
 
 ### <a name="save-your-storage-account-credentials-to-the-appconfig-file"></a>Guardar as suas credenciais da conta de armazenamento no ficheiro app.config
 Em seguida, guarde as suas credenciais no ficheiro app.config do seu projeto. Edite o ficheiro app.config para que seja apresentado de forma semelhante ao seguinte exemplo, substituindo `myaccount` pelo seu nome da sua conta de armazenamento e `mykey` pela chave da mesma.
@@ -296,8 +308,8 @@ Em seguida, guarde as suas credenciais no ficheiro app.config do seu projeto. Ed
 > 
 > 
 
-### <a name="add-namespace-declarations"></a>Adicionar declarações de espaço de nomes
-Abra o ficheiro `program.cs` a partir do Explorador de Soluções e adicione as seguintes declarações de espaço de nomes à parte superior do ficheiro.
+### <a name="add-using-directives"></a>Adicionar com diretivas
+Abra o ficheiro `Program.cs` a partir do Explorador de Soluções e adicione as seguintes diretivas de utilização à parte superior do ficheiro.
 
 ```csharp
 using Microsoft.Azure; // Namespace for Azure Configuration Manager
@@ -542,11 +554,11 @@ Pode copiar um blob para um ficheiro da mesma forma. Se o objeto de origem for u
 ## <a name="troubleshooting-file-storage-using-metrics"></a>Resolução de problemas com o Armazenamento de ficheiros através de métricas
 Agora, a Análise do Storage do Azure suporta métricas para o Armazenamento de ficheiros. Com os dados de métricas, pode rastrear pedidos e diagnosticar problemas.
 
-Pode ativar métricas para o Armazenamento de ficheiros a partir do [Portal do Azure](https://portal.azure.com). Pode também ativar as métricas programaticamente chamando a operação Definir Propriedades do Serviço do Ficheiro através da API REST ou de um dos respetivos análogos na Biblioteca de Clientes do Storage.
+Pode ativar métricas para o Armazenamento de ficheiros a partir do [portal do Azure](https://portal.azure.com). Pode também ativar as métricas programaticamente chamando a operação Definir Propriedades do Serviço do Ficheiro através da API REST ou de um dos respetivos análogos na Biblioteca de Clientes do Storage.
 
 O exemplo de código seguinte mostra como utilizar a Biblioteca de Clientes do Storage para o .NET para ativar as métricas para o Armazenamento de ficheiros.
 
-Primeiro, adicione as seguintes declarações `using` ao ficheiro program.cs, para além das que adicionou acima:
+Primeiro, adicione as seguintes diretivas `using` ao ficheiro `Program.cs`, para além das que adicionou acima:
 
 ```csharp
 using Microsoft.WindowsAzure.Storage.File.Protocol;
@@ -645,7 +657,7 @@ Além disso, pode consultar o [Azure Files Troubleshooting Article (Artigo de Re
     Para transferir um grande número de ficheiros para o Armazenamento de ficheiros, recomendamos que utilize o AzCopy, o Azure Powershell (Windows) ou a CLI do Azure (Linux/Unix), uma vez que estas ferramentas foram otimizadas para transferência de rede.
 15. **Foi lançado o patch para corrigir o problema do desempenho lento com os Ficheiros do Azure**
     
-    A equipa do Windows lançou recentemente uma correção para resolver um problema de desempenho lento quando o cliente acede ao File Storage do Azure a partir do Windows 8.1 ou Windows Server 2012 R2. Para mais informações, consulte o artigo KB associado [Desempenho lento ao aceder ao File Storage do Azure a partir do Windows 8.1 ou Server 2012 R2](https://support.microsoft.com/en-us/kb/3114025).
+    A equipa do Windows lançou recentemente uma correção para resolver um problema de desempenho lento quando o cliente acede ao File Storage do Azure a partir do Windows 8.1 ou Windows Server 2012 R2. Para mais informações, consulte o artigo KB associado [Desempenho lento ao aceder ao File Storage do Azure a partir do Windows 8.1 ou Server 2012 R2](https://support.microsoft.com/kb/3114025).
 16. **Utilizar o Armazenamento de Ficheiros do Azure com o IBM MQ**
     
     A IBM lançou um documento para guiar os clientes do IBM MQ na configuração do File Storage do Azure com o respetivo serviço. Para mais informações, consulte [Como configurar o gestor de filas de várias instâncias do IBM MQ com o Serviço do Ficheiro do Microsoft Azure](https://github.com/ibm-messaging/mq-azure/wiki/How-to-setup-IBM-MQ-Multi-instance-queue-manager-with-Microsoft-Azure-File-Service).
@@ -653,11 +665,12 @@ Além disso, pode consultar o [Azure Files Troubleshooting Article (Artigo de Re
     
     Pode consultar o [Azure Files Troubleshooting Article (Artigo de Resolução de Problemas de Ficheiros do Azure)](storage-troubleshoot-file-connection-problems.md) para obter documentação de orientação de resolução de problemas de ponto a ponto.               
 
-18. **Como posso ativar a encriptação do Lado do Servidor nos Ficheiros do Azure?**
+18. **Como posso ativar a encriptação do lado do servidor nos Ficheiros do Azure?**
 
-    A [Encriptação do Lado do Servidor](https://docs.microsoft.com/en-us/azure/storage/storage-service-encryption) está atualmente em Pré-visualização. Durante a pré-visualização, a funcionalidade só pode ser ativada para contas de Armazenamento do Azure Resource Manager (ARM) recentemente criadas.
-    Pode ativar esta funcionalidade numa conta de armazenamento do Azure Resource Manager através do Portal do Azure. Pretendemos ter o [Azure Powershell](https://msdn.microsoft.com/en-us/library/azure/mt607151.aspx), [Azure CLI](https://docs.microsoft.com/en-us/azure/storage/storage-azure-cli-nodejs) ou a [API do Fornecedor de Recursos de Armazenamento do Microsoft Azure](https://docs.microsoft.com/en-us/rest/api/storagerp/storageaccounts) para ativar a encriptação de armazenamento de ficheiros até ao final de Fevereiro. Não existe nenhum encargo adicional para ativar esta funcionalidade. Quando ativar a Encriptação do Serviço de Armazenamento para o Armazenamento de Ficheiros do Azure, os seus dados são automaticamente encriptados por si. 
-    Saiba mais sobre a Encriptação do Serviço de Armazenamento. Também pode consultar o ssediscussions@microsoft.com, para ver mais perguntas na pré-visualização.
+    A [Encriptação do Lado do Servidor](storage-service-encryption.md) para os Ficheiros do Azure está atualmente em pré-visualização. Durante a pré-visualização, pode ativar esta funcionalidade em novas contas de armazenamento do Azure Resource Manager através do [portal do Azure](https://portal.azure.com). Não existe nenhum encargo adicional para ativar esta funcionalidade. Quando ativar a Encriptação do Serviço de Armazenamento para o Armazenamento de Ficheiros do Azure, os seus dados são automaticamente encriptados por si. 
+    
+    Pretendemos oferecer suporte à encriptação do armazenamento de ficheiros com o [Azure Powershell](/powershell/resourcemanager/azurerm.storage/v2.7.0/azurerm.storage), a [CLI do Azure](storage-azure-cli.md) e a [API REST do Fornecedor de Recursos de Armazenamento do Azure](/rest/api/storagerp/storageaccounts) no futuro. 
+    Consulte [Storage Service Encryption (Encriptação do Serviço de Armazenamento)](storage-service-encryption.md) para obter mais informações sobre a encriptação em repouso no Armazenamento do Azure, e pode contactar ssediscussions@microsoft.com se tiver dúvidas durante a pré-visualização.
 
 ## <a name="next-steps"></a>Passos seguintes
 Consulte as ligações para obter mais informações sobre o Armazenamento de ficheiros do Azure.
@@ -670,7 +683,7 @@ Consulte as ligações para obter mais informações sobre o Armazenamento de fi
 * [Using Azure PowerShell with Azure Storage (Utilizar o Azure PowerShell com o Armazenamento do Azure)](storage-powershell-guide-full.md)
 * [How to use AzCopy with Microsoft Azure Storage (Como utilizar o AzCopy com o Armazenamento do Microsoft Azure)](storage-use-azcopy.md)
 * [Using the Azure CLI with Azure Storage (Utilizar a CLI do Azure com o Armazenamento do Azure)](storage-azure-cli.md#create-and-manage-file-shares)
-* [Resolver problemas do armazenamento de ficheiros do Azure](https://docs.microsoft.com/en-us/azure/storage/storage-troubleshoot-file-connection-problems)
+* [Resolver problemas do armazenamento de ficheiros do Azure](https://docs.microsoft.com/azure/storage/storage-troubleshoot-file-connection-problems)
 
 ### <a name="reference"></a>Referência
 * [Storage Client Library for .NET reference (Referência da Biblioteca de Clientes do Armazenamento para .NET)](https://msdn.microsoft.com/library/azure/dn261237.aspx)
