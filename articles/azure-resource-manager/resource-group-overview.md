@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 03/06/2017
+ms.date: 03/23/2017
 ms.author: tomfitz
 translationtype: Human Translation
-ms.sourcegitcommit: 094729399070a64abc1aa05a9f585a0782142cbf
-ms.openlocfilehash: eed360b6c996d1901b40f3d1fcf4b8ff859da573
-ms.lasthandoff: 03/07/2017
+ms.sourcegitcommit: 0bec803e4b49f3ae53f2cc3be6b9cb2d256fe5ea
+ms.openlocfilehash: 295203755487ace6193d97737be635d4a61fe337
+ms.lasthandoff: 03/24/2017
 
 
 ---
@@ -79,7 +79,7 @@ Existem alguns fatores importantes a considerar ao definir o grupo de recursos:
 Ao criar um grupo de recursos, deve fornecer uma localização para esse grupo de recursos. Pode perguntar-se, "Porque é que um grupo de recursos necessita de uma localização? E, se os recursos podem ter diferentes localizações em relação ao grupo de recursos, por que motivo é que a localização do grupo de recursos é sequer relevante?" O grupo de recursos armazena metadados sobre os recursos. Por conseguinte, quando especifica uma localização para o grupo de recursos, está a especificar onde esses metadados estão armazenados. Por motivos de conformidade, poderá ter de certificar que os dados estão armazenados numa determinada região.
 
 ## <a name="resource-providers"></a>Fornecedores de recursos
-Cada fornecedor de recursos oferece um conjunto de recursos e operações para trabalhar com a um serviço do Azure. Por exemplo, se pretende armazenar chaves e segredos, trabalha com o fornecedor de recursos **Microsoft.KeyVault**. Este fornecedor de recursos oferece um tipo de recurso denominado **vaults** para criar o cofre de chaves e um tipo de recurso denominado **vaults/secrets** para criar um segredo no cofre de chaves. 
+Cada fornecedor de recursos oferece um conjunto de recursos e operações para trabalhar com a um serviço do Azure. Por exemplo, se pretende armazenar chaves e segredos, trabalha com o fornecedor de recursos **Microsoft.KeyVault**. Este fornecedor de recursos oferece um tipo de recurso denominado **cofres** para a criação do cofre de chaves. 
 
 Antes de começar com a implementação de recursos, deve tomar conhecimento dos fornecedores de recursos disponíveis. Saber os nomes dos recursos e os fornecedores de recursos ajuda-o a definir os recursos que pretende implementar no Azure.
 
@@ -118,7 +118,7 @@ Para obter mais informações, consulte [Resource Manager providers, regions, AP
 ## <a name="template-deployment"></a>Implementação de modelos
 Com o Resource Manager, pode criar um modelo (no formato JSON) que define a infraestrutura e configuração da sua solução do Azure. Ao utilizar um modelo, pode implementar repetidamente a solução durante o ciclo de vida da mesma e ter a confiança de que os recursos são implementados num estado consistente. Quando cria uma solução a partir do portal, esta inclui automaticamente um modelo de implementação. Não é necessário criar o modelo a partir do zero porque pode começar com o modelo para a sua solução e personalizá-lo de modo a satisfazer as suas necessidades específicas. Pode obter um modelo para um grupo de recursos existente ao exportar o estado atual do grupo de recursos ou ao visualizar o modelo utilizado para uma implementação específica. Visualizar o [modelo exportado](resource-manager-export-template.md) é uma forma útil de saber mais sobre a sintaxe do modelo.
 
-Para saber mais sobre o formato do modelo e como construí-lo, consulte [Authoring Azure Resource Manager Templates (Criação de Modelos do Azure Resource Manager)](resource-group-authoring-templates.md) e [Resource Manager Template Walkthrough (Instruções do Modelo do Resource Manager)](resource-manager-template-walkthrough.md).
+Para saber mais sobre o formato do modelo e como o construir, consulte [Create your first Azure Resource Manager template (Criar o seu primeiro modelo do Azure Resource Manager)](resource-manager-create-first-template.md). Para ver a sintaxe JSON para tipos de recursos, consulte [Define resources in Azure Resource Manager templates (Definir recursos nos modelos do Azure Resource Manager)](/azure/templates/).
 
 O Resource Manager processa o modelo como qualquer outro pedido (veja a imagem da [Camada de gestão consistente](#consistent-management-layer)). Este analisa o modelo e converte a respetiva sintaxe em operações de API REST para os fornecedores de recursos adequados. Por exemplo, quando o Resource Manager recebe um modelo com a seguinte definição de recursos:
 
@@ -333,10 +333,9 @@ Para além estes exemplos, pode procurar nos exemplos da galeria.
 
 ## <a name="next-steps"></a>Passos seguintes
 * Para obter uma introdução simples sobre como trabalhar com modelos, consulte [Exportar um modelo do Azure Resource Manager a partir de recursos existentes](resource-manager-export-template.md).
-* Para obter instruções mais detalhadas sobre como criar um modelo, consulte [Instruções do Modelo do Resource Manager](resource-manager-template-walkthrough.md).
+* Para obter instruções mais detalhadas sobre como criar um modelo, consulte [Create your first Azure Resource Manager template (Criar o seu primeiro modelo do Azure Resource Manager)](resource-manager-create-first-template.md).
 * Para compreender as funções que pode utilizar num modelo, consulte [Funções de modelo](resource-group-template-functions.md)
 * Para obter informações sobre como utilizar o Visual Studio com o Resource Manager, consulte [Criar e implementar grupos de recursos do Azure através do Visual Studio](vs-azure-tools-resource-groups-deployment-projects-create-deploy.md).
-* Para obter informações sobre como utilizar o VS Code com o Resource Manager, veja o artigo [Trabalhar com modelos do Azure Resource Manager no Visual Studio Code](resource-manager-vs-code.md).
 
 Eis uma demonstração em vídeo desta descrição geral:
 

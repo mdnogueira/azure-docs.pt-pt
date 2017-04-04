@@ -15,9 +15,9 @@ ms.workload: NA
 ms.date: 12/27/2016
 ms.author: saysa
 translationtype: Human Translation
-ms.sourcegitcommit: 24d86e17a063164c31c312685c0742ec4a5c2f1b
-ms.openlocfilehash: fc73eedae7ec9664da714567f47a543e625cd023
-ms.lasthandoff: 03/11/2017
+ms.sourcegitcommit: 503f5151047870aaf87e9bb7ebf2c7e4afa27b83
+ms.openlocfilehash: e5d14eb0a656d67030f4c0d3d510aec0e9cafae7
+ms.lasthandoff: 03/28/2017
 
 
 ---
@@ -38,17 +38,20 @@ O Service Fabric não é executado de forma nativa no OS X. Para executar um clu
 * [VirtualBox](http://www.virtualbox.org/wiki/Downloads)
 
 >[!NOTE]
->  Tem de utilizar versões do Vagrant e do VirtualBox mutuamente suportadas. O Vagrant pode ter um comportamento errático numa versão do VirtualBox não suportada.
+> Tem de utilizar versões do Vagrant e do VirtualBox mutuamente suportadas. O Vagrant pode ter um comportamento errático numa versão do VirtualBox não suportada.
 >
 
 ## <a name="create-the-local-vm"></a>Criar a VM local
 Para criar a VM local que contenha um cluster do Service Fabric de cinco nós, execute os seguintes passos:
 
-1. Clone o repositório **Vagrantfile**
+1. Clonar o repositório `Vagrantfile`
 
     ```bash
     git clone https://github.com/azure/service-fabric-linux-vagrant-onebox.git
     ```
+    Estes passos trazem o ficheiro `Vagrantfile` que contém a configuração da VM, juntamente com a localização de onde a VM foi transferida.
+
+   
 2. Navegue para o clone local do repositório
 
     ```bash
@@ -61,7 +64,7 @@ Para criar a VM local que contenha um cluster do Service Fabric de cinco nós, e
    * 3 GB de memória atribuída
    * Rede de anfitrião privada configurada no IP 192.168.50.50 , permitindo pass-through do tráfego a partir do anfitrião Mac
 
-     Pode alterar qualquer uma destas definições ou adicionar outra configuração à VM no Vagrantfile. Veja a [documentação do Vagrant](http://www.vagrantup.com/docs) para obter a lista completa das opções de configuração.
+     Pode alterar qualquer uma destas definições ou adicionar outra configuração à VM no `Vagrantfile`. Veja a [documentação do Vagrant](http://www.vagrantup.com/docs) para obter a lista completa das opções de configuração.
 4. Crie a VM
 
     ```bash
@@ -72,19 +75,24 @@ Para criar a VM local que contenha um cluster do Service Fabric de cinco nós, e
 
     ![Início da configuração do cluster a seguir ao aprovisionamento da VM][cluster-setup-script]
 
+>[!TIP]
+> Se a transferência da VM estiver a demorar muito tempo, pode transferi-la com o wget ou o curl, ou através de um browser ao navegar até à ligação especificada por **config.vm.box_url** no ficheiro `Vagrantfile`. Depois de transferi-la localmente, edite `Vagrantfile` para apontar para o caminho local onde transferiu a imagem. Por exemplo, se transferiu a imagem para /home/users/test/azureservicefabric.tp8.box, defina **config.vm.box_url** para esse caminho.
+>
+
 5. Teste se o cluster foi configurado corretamente ao navegar para o Service Fabric Explorer, em http://192.168.50.50:19080/Explorer (partindo do princípio de que manteve o IP de rede privado predefinido).
 
     ![Service Fabric Explorer visto no Mac anfitrião][sfx-mac]
 
 ## <a name="install-the-service-fabric-plugin-for-eclipse-neon"></a>Instalar o plug-in do Service Fabric para Eclipse Neon
 
-O Service Fabric fornece um plug-in para o **IDE Eclipse Neon para Java** que pode simplificar o processo de criação e implementação de serviços Java. Pode seguir os passos de instalação mencionados nesta [documentação](service-fabric-get-started-eclipse.md#install-or-update-service-fabric-plugin-on-eclipse-neon) geral sobre a instalação ou atualização do plug-in do Eclipse para o Service Fabric.
+O Service Fabric fornece um plug-in para o **IDE Eclipse Neon para Java** que pode simplificar o processo de criação e implementação de serviços Java. Pode seguir os passos de instalação mencionados nesta [documentação](service-fabric-get-started-eclipse.md#install-or-update-the-service-fabric-plug-in-in-eclipse-neon) geral sobre a instalação ou atualização do plug-in do Eclipse para o Service Fabric.
 
 ## <a name="using-service-fabric-eclipse-plugin-on-mac"></a>Utilizar o plug-in do Eclipse para o Service Fabric no Mac
 
-Certifique-se de que seguiu os passos mencionados na [documentação do plug-in do Eclipse para o Service Fabric](service-fabric-get-started-eclipse.md). Os passos para criar e implementar a aplicação Java do Service Fabric com o contentor de convidado vagrant num anfitrião Mac, são praticamente os mesmos da documentação geral, exceto alguns pontos que tem de ter em consideração, como mencionado abaixo -
-* Uma vez que as bibliotecas do Service Fabric serão requeridas pela aplicação Java do Service Fabric para serem criadas com êxito, o projeto eclipse tem de ser criado num caminho partilhado. Por predefinição, o conteúdo no caminho no anfitrião onde o ``Vagrantfile`` existe, é partilhado com o ``/vagrant`` caminho no convidado.
-* Para simplificar, se tiver o ``Vagrantfile`` num caminho, por exemplo, ``~/home/john/allprojects/``, tem de criar o seu projeto service-fabric ``MyActor`` numa localização ``~/home/john/allprojects/MyActor`` e o caminho para a área de trabalho eclipse seria ``~/home/john/allprojects``.
+Certifique-se de que seguiu os passos mencionados na [documentação do plug-in do Eclipse para o Service Fabric](service-fabric-get-started-eclipse.md). Os passos para criar e implementar a aplicação Java do Service Fabric com o contentor de convidado vagrant num anfitrião Mac, são praticamente os mesmos da documentação geral, exceto alguns itens seguintes:
+
+* Uma vez que as bibliotecas do Service Fabric são requeridas pela aplicação Java do Service Fabric, o projeto eclipse tem de ser criado num caminho partilhado. Por predefinição, o conteúdo no caminho no anfitrião onde o ``Vagrantfile`` existe, é partilhado com o ``/vagrant`` caminho no convidado.
+* Se tiver o ``Vagrantfile`` num caminho, por exemplo, ``~/home/john/allprojects/``, tem de criar o seu projeto Service Fabric ``MyActor`` numa localização ``~/home/john/allprojects/MyActor`` e o caminho para a área de trabalho eclipse seria ``~/home/john/allprojects``.
 
 ## <a name="next-steps"></a>Passos seguintes
 <!-- Links -->
