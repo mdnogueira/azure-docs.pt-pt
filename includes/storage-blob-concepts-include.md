@@ -14,7 +14,7 @@ O serviço Blob contém os seguintes componentes:
 
 ![Arquitetura de blob](./media/storage-blob-concepts-include/blob1.png)
 
-* **Conta de Armazenamento:** todos os acessos ao Storage do Azure são efetuados através de uma conta de armazenamento. Esta conta de armazenamento pode ser uma **Conta de armazenamento para fins gerais** ou uma **Conta de armazenamento de Blobs**, que é especializada para armazenar objetos/blobs. Para obter mais informações sobre as contas de armazenamento, veja [Conta de armazenamento do Azure](../articles/storage/storage-create-storage-account.md).
+* **Conta de Armazenamento:** todos os acessos ao Storage do Azure são efetuados através de uma conta de armazenamento. Esta conta de armazenamento pode ser uma **Conta de armazenamento para fins gerais** ou uma **Conta de armazenamento de Blobs**, que é especializada para armazenar objetos/blobs. Consulte [About Azure storage accounts (Acerca das contas de armazenamento do Azure)](../articles/storage/storage-create-storage-account.md) para obter mais informações.
 * **Contentor:** um contentor fornece um agrupamento de um conjunto de blobs. Todos os blobs tem de estar num contentor. Uma conta pode conter um número ilimitado de contentores. Um contentor pode armazenar um número ilimitado de blobs. Tenha em atenção que o nome do contentor tem de ser em minúsculas.
 * **Blob:** um ficheiro de qualquer tipo e tamanho. O Storage do Azure oferece três tipos de blobs: blobs de blocos, blobs de páginas e blobs de acréscimo.
   
@@ -22,10 +22,5 @@ O serviço Blob contém os seguintes componentes:
   
     Os *blobs de páginas* podem ter até 1 TB de tamanho e são mais eficientes para operações de leitura/escrita frequentes. As Virtual Machines do Azure utilizam blobs de páginas como discos de dados e SO.
   
-    Para obter detalhes sobre os nomes dos contentores e dos blobs, veja [Naming and Referencing Containers, Blobs, and Metadata (Nomenclatura e Referência de Contentores, Blobs e Metadados)](https://msdn.microsoft.com/library/azure/dd135715.aspx).
-
-
-
-<!--HONumber=Dec16_HO3-->
-
+    Para obter detalhes sobre os nomes dos contentores e dos blobs, veja [Naming and Referencing Containers, Blobs, and Metadata (Nomenclatura e Referência de Contentores, Blobs e Metadados)](/rest/api/storageservices/fileservices/Naming-and-Referencing-Containers--Blobs--and-Metadata).
 

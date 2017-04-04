@@ -15,9 +15,9 @@ ms.workload: storage-backup-recovery
 ms.date: 02/06/2017
 ms.author: raynew
 translationtype: Human Translation
-ms.sourcegitcommit: 0c56a74e43b989a32b10a878cec16cce0f972a9f
-ms.openlocfilehash: 63c0397b6e737038fb7758d2749ae82d1485d45d
-ms.lasthandoff: 02/22/2017
+ms.sourcegitcommit: 503f5151047870aaf87e9bb7ebf2c7e4afa27b83
+ms.openlocfilehash: 34a9d187eecec185e2b8d6977baea267ca9e60e5
+ms.lasthandoff: 03/28/2017
 
 
 ---
@@ -130,6 +130,19 @@ Utilize a Recuperação de Sites para proteger a sua implementação de SAP da s
 * Simplificar o desenvolvimento e teste de SAP através de uma cópia do tipo produção a pedido para teste e depuração de aplicações.
 
 [Saiba mais](http://aka.ms/asr-sap) sobre como proteger o SAP.
+
+## <a name="protect-iis"></a>Proteger o IIS
+Utilize o Site Recovery para proteger a sua implementação de IIS da seguinte forma:
+
+O Azure Site Recovery fornece a recuperação após desastre ao replicar os componentes críticos no seu ambiente para um site remoto sem interesse ou para uma cloud pública, como o Microsoft Azure. Uma vez que a máquina virtual com o servidor Web e a base de dados estão a ser replicados para o site de recuperação, não é necessária a cópia de segurança de ficheiros de configuração ou certificados em separado. Os mapeamentos de aplicação e enlaces dependentes em variáveis de ambiente que são alterados após a ativação pós-falha podem ser atualizados através de scripts integrados em planos de recuperação após desastre. As Máquinas Virtuais são colocadas no site de recuperação em caso de uma ativação pós-falha. Não só isto, o Azure Site Recovery também ajuda a orquestrar a ativação pós-falha de ponta a ponta ao fornecer-lhe as seguintes funcionalidades:
+
+-    Sequenciação do encerramento e arranque das máquinas virtuais nas várias camadas.
+-    Adição de scripts para permitir a atualização de dependências de aplicações e enlaces nas máquinas virtuais após terem sido iniciadas. Os scripts também podem ser utilizados para atualizar o servidor DNS que aponta para o site de recuperação.
+-    Alocar endereços IP a máquinas virtuais de pré-ativação pós-falha ao mapear as redes principais e de recuperação e, consequentemente, utilizar scripts que não precisam de ser atualizados após a ativação pós-falha.
+-    Capacidade de uma ativação pós-falha com um clique para várias aplicações Web nos servidores Web, eliminando, por conseguinte, o âmbito de confusão em caso de desastre.
+-    Capacidade para testar os planos de recuperação num ambiente isolado para testes de recuperação após desastre.
+
+[Saiba mais](https://aka.ms/asr-iis) sobre como proteger o Web farm IIS.
 
 ## <a name="next-steps"></a>Passos seguintes
 [Verificar pré-requisitos](site-recovery-prereq.md) 

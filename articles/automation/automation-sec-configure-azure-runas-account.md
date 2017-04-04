@@ -1,6 +1,6 @@
 ---
-title: Configurar Conta Run As do Azure | Microsoft Docs
-description: "Tutorial que o orienta através da criação, teste e exemplo de utilização da autenticação principal de segurança na Automatização do Azure."
+title: Configurar uma Conta Run As do Azure | Microsoft Docs
+description: "Este tutorial orienta-o ao longo da criação, do teste e do exemplo de utilização da autenticação principal de segurança na Automatização do Azure."
 services: automation
 documentationcenter: 
 author: mgoedtel
@@ -16,188 +16,272 @@ ms.topic: get-started-article
 ms.date: 03/27/2017
 ms.author: magoedte
 translationtype: Human Translation
-ms.sourcegitcommit: 2c9877f84873c825f96b62b492f49d1733e6c64e
-ms.openlocfilehash: 6f2a3880c6cd307282020a689ddd4e22a95c17b0
-ms.lasthandoff: 03/15/2017
+ms.sourcegitcommit: 503f5151047870aaf87e9bb7ebf2c7e4afa27b83
+ms.openlocfilehash: fbca3d195290551d37606e231b997a40a602351f
+ms.lasthandoff: 03/28/2017
 
 
 ---
-# <a name="authenticate-runbooks-with-azure-run-as-account"></a>Autenticar Runbooks com a conta Run As do Azure
-Este tópico mostra como configurar uma conta de Automatização do portal do Azure, utilizando a funcionalidade da conta Run as para autenticar runbooks que gerem recursos no Azure Resource Manager ou na Gestão de Serviço do Azure.
 
-Quando cria uma nova conta de Automatização no portal do Azure, este cria automaticamente:
+# <a name="authenticate-runbooks-with-an-azure-run-as-account"></a>Autenticar runbooks com uma conta Run As do Azure
+Este artigo mostra-lhe como configurar uma conta de Automatização do Azure no portal do Azure. Para tal, vai utilizar a funcionalidade de conta Run As para autenticar runbooks que gerem recursos no Azure Resource Manager ou na Gestão do Serviço do Azure.
 
-* Uma conta Run As, que cria um novo principal de serviço no Azure Active Directory, um certificado e atribui o controlo de acesso baseado em funções (RBAC) de Contribuidor, que será utilizado para gerir recursos do Gestor de Recursos através de runbooks.   
-* A conta Run As clássica através do carregamento de um certificado de gestão, que será utilizada para gerir a Gestão de Serviço do Azure ou recursos clássicos através de runbooks.  
+Quando cria uma conta de Automatização no portal do Azure, são criadas automaticamente duas contas.
 
-Isto simplifica o processo para si e ajuda-o a começar rapidamente a criar e implementar runbooks para suportar as suas necessidades de automatização.      
+* Uma conta Run As. Esta conta cria um principal de serviço no Azure Active Directory (Azure AD) e um certificado. Também atribui o controlo de acesso baseado em funções (RBAC) Contribuinte, que gere os recursos do Resource Manager mediante a utilização de runbooks.
+* Uma conta Run As Clássica. Esta conta carrega um certificado de gestão, que é utilizado para gerir recursos da Gestão do Serviço ou clássicos mediante a utilização de runbooks.
 
-Ao utilizar uma conta Run As e Run As Clássica, pode:
+A criação de uma conta de Automatização simplifica o processo para si e ajuda-o a começar rapidamente a criar e implementar runbooks para suportar as suas necessidades de automatização.
 
-* Fornecer uma forma normalizada de autenticar com o Azure ao gerir os recursos do Azure Resource Manager ou do Gestão de Serviço do Azure através de runbooks no portal do Azure.  
-* Automatizar a utilização de runbooks globais configurados nos Alertas do Azure.
+Com contas Run As e Run As Clássica, pode:
+
+* Proporcionar uma forma normalizada de autenticar com o Azure quando gere os recursos do Azure Resource Manager ou da Gestão do Serviço através de runbooks no portal do Azure.
+* Automatizar a utilização de runbooks globais, que pode configurar nos Alertas do Azure.
 
 > [!NOTE]
-> A [Funcionalidade de integração de alertas](../monitoring-and-diagnostics/insights-receive-alert-notifications.md) do Azure com Runbooks Globais de Automatização requer uma conta de Automatização que esteja configurada com uma conta Run As e Run As clássica. Pode selecionar uma conta de Automatização que já tenha uma conta Run As e Run As clássica definida ou opte por criar um nova.
+> A [funcionalidade de integração de Alertas do Azure](../monitoring-and-diagnostics/insights-receive-alert-notifications.md) com Runbooks globais da Automatização requer uma conta de Automatização que esteja configurada com uma conta Run As e uma conta Run As clássica. Pode selecionar uma conta de Automatização que já tenha contas Run As e Run As clássica definidas ou optar por criar uma conta de Automatização nova.
 >  
 
-Iremos mostrar-lhe como criar a conta de Automatização a partir do portal do Azure, atualizar uma conta de Automatização com o PowerShell, gerir a configuração da conta e demonstrar como fazer a autenticação nos runbooks.
+Este artigo mostra como criar uma conta de Automatização a partir do portal do Azure, atualizar uma conta de Automatização com o Azure PowerShell, gerir a configuração da conta e autenticar nos seus runbooks.
 
-Antes de o fazermos, há alguns aspetos que deve compreender e considerar antes de continuar.
+Antes de começar a criar uma conta de Automatização, é importante compreender e ter em conta o seguinte:
 
-1. Isto não afeta as contas de Automatização existentes já criadas no modelo de implementação clássico ou do Gestor de Recursos.  
-2. Isto funciona apenas para contas de Automatização criadas através do portal do Azure.  Tentar criar uma conta a partir do portal clássico não irá replicar a configuração de conta Run As.
-3. Se tiver atualmente runbooks e recursos (ou seja, agendas, variáveis, etc.) que criou anteriormente para gerir recursos clássicos e pretende que esses runbooks efetuem a autenticação com a nova conta Run As clássica, terá de criar uma Conta Run As Clássica, utilizando a secção Gerir uma Conta Run As, ou atualizar a sua conta existente, utilizando o script do PowerShell abaixo.  
-4. Para efetuar a autenticação com a nova conta de Automatização Run As e a conta Run As clássica, terá de modificar os runbooks existentes com o código de exemplo abaixo.  **Tenha em atenção** que a conta Run As serve de autenticação relativamente aos recursos do Gestor de Recursos utilizando o principal de serviço baseado em certificados e a conta Run As clássica serve de autenticação relativamente aos recursos de Gestão do Serviço com o certificado de gestão.     
+* A criação de uma conta de Automatização não afeta as contas de Automatização que possa já ter criado, quer no modelo de implementação Resource Manager ou clássica.
+* O processo funciona apenas para contas de Automatização que criar no portal do Azure. Tentar criar uma conta a partir do portal clássico do Azure não replica a configuração da conta Run As.
+* Se já tiver runbooks e recursos (como agendas ou variáveis) em funcionamento para gerir recursos clássicos e pretender que os runbooks se autentiquem com a conta Run As Clássica nova, siga um dos procedimentos abaixo:
 
-## <a name="create-a-new-automation-account-from-the-azure-portal"></a>Criar uma nova Conta de Automatização a partir do portal do Azure
-Nesta secção, é necessário executar os seguintes passos para criar uma nova conta de Automatização do Azure a partir do portal do Azure.  Esta ação cria a conta Run As e conta Run As clássica.  
+  * Para criar uma conta Run As Clássica, siga as instruções na secção “Gerir a conta Run As”. 
+  * Para atualizar a sua conta já existente, utilize o script do PowerShell na secção “Atualizar a conta de Automatização com o PowerShell”.
+* Para autenticar com a conta de Automatização Run As nova e a conta Run As Clássica, tem de modificar os runbooks existentes com o código de exemplo fornecido na secção [Exemplos de código de autenticação](#authentication-code-examples).
 
-> [!NOTE]
-> O utilizador que executa estes passos tem de ser membro da função Administradores de Serviços ou o coadministrador da subscrição que está a conceder acesso à subscrição para o utilizador. O utilizador tem também de ser adicionado como Utilizador para esse Active Directory predefinido das subscrições; a conta não necessita de ser atribuídos a uma função com privilégios. Os utilizadores que não são membros do Active Directory da Subscrição antes de serem adicionados à função Coadministrador da subscrição serão adicionados ao Active Directory como Convidados e irão ver o aviso "Não tem permissões para criar..." no painel **Adicionar uma Conta de Automatização**. Os utilizadores que foram adicionados primeiro à função de coadministrador podem ser removidos das subscrições do Active Directory e adicionados novamente para que se tornem num Utilizador completo no Active Directory. Esta situação pode ser verificada a partir do painel **Azure Active Directory** no portal do Azure ao selecionar **Utilizadores e grupos**. Selecione **Todos os utilizadores** e depois de selecionar o utilizador específico, selecione **Perfil**.  O valor do atributo **Tipo de utilizador** sob o perfil de utilizadores não deve ser igual a **Convidado**.  
-> 
+    >[!NOTE]
+    >A conta Run As destina-se a autenticação em recursos do Resource Manager, mediante a utilização do principal de serviço baseado em certificados. A conta Run As Clássica destina-se a autenticação em recursos da Gestão do Serviço com certificados de gestão.
 
-1. Inicie sessão no portal do Azure com uma conta que seja membro da função Administradores da Subscrição e coadministrador da subscrição.
+## <a name="create-an-automation-account-from-the-azure-portal"></a>Criar uma conta de Automatização a partir do portal do Azure
+Nesta secção, vai criar uma conta de Automatização do Azure a partir do portal do Azure, o que, por sua vez, criar uma conta Run As e uma conta Run As Clássica.
+
+>[!NOTE]
+>Para criar uma conta de Automatização, tem de ser membro da função Administradores de Serviço ou o coadministrador da subscrição que está a conceder acesso à subscrição. Também tem de ser adicionado como utilizador à instância predefinida do Active Directory dessa subscrição. Não é necessário atribuir uma função privilegiada à conta.
+>
+>Se não for membro da instância do Active Directory da subscrição antes de ser adicionado à função de coadministrador da mesma, será adicionado ao Active Directory como convidado. Neste caso, receberá o aviso "Não tem permissões para criar...", no painel **Adicionar Conta de Automatização**.
+>
+>Os utilizadores que foram adicionados primeiro à função de coadministrador podem ser removidos da instância do Active Directory da subscrição e adicionados novamente, para que se tornem em Utilizadores completos no Active Directory. Esta situação pode ser verificada a partir do painel **Azure Active Directory**, no portal do Azure, ao selecionar **Utilizadores e grupos**, **Todos os utilizadores** e, depois de selecionar o utilizador específico, selecionar **Perfil**. O valor do atributo **Tipo de utilizador** sob o perfil de utilizadores não deve ser igual a **Convidado**.
+>
+
+1. Inicie sessão no portal do Azure com uma conta que seja membro da função de administradores da subscrição e coadministrador da subscrição.
+
 2. Selecione **Contas de Automatização**.
-3. No painel Contas de Automatização, clique em **Adicionar**.<br>![Adicionar Conta de Automatização](media/automation-sec-configure-azure-runas-account/create-automation-account-properties-b.png)
-   
+
+3. No painel **Contas de Automatização**, clique em **Adicionar**.
+É aberto o painel **Adicionar Conta de Automatização**.
+
+ ![O painel “Adicionar Conta de Automatização”](media/automation-sec-configure-azure-runas-account/create-automation-account-properties-b.png)
+
    > [!NOTE]
-   > Se vir o seguinte aviso no painel **Adicionar Conta de Automatização**, isto acontece porque a conta não é membro da função de Administradores da Subscrição nem coadministradora da subscrição.<br>![Adicionar Aviso de Conta de Automatização](media/automation-sec-configure-azure-runas-account/create-account-without-perms.png)
-   > 
-   > 
-4. No painel **Adicionar Conta de Automatização**, no tipo de caixa **Nome**, escreva um nome para a sua nova conta de Automatização.
-5. Se tiver mais do que uma subscrição, especifique uma para a nova conta, bem como um **Grupo de recursos** novo ou existente e uma **Localização** do datacenter do Azure.
-6. Verifique se valor **Sim** está selecionado para a opção **Criar conta Run As do Azure** e clique no botão **Criar**.  
-   
+   > Se a sua conta não for membro da função de administradores da subscrição e coadministradora da subscrição, é apresentado o aviso seguinte no painel **Adicionar Conta de Automatização**:
+   >
+   >![Adicionar Aviso de Conta de Automatização](media/automation-sec-configure-azure-runas-account/create-account-without-perms.png)
+   >
+   >
+
+4. No painel **Adicionar Conta de Automatização**, na caixa **Nome**, escreva um nome para a sua conta de Automatização nova.
+
+5. Se tiver mais do que uma subscrição, faça o seguinte:
+
+    a. Em **Subscrição**, especifique uma para a conta nova.
+
+    b. Em **Grupo de Recursos**, clique em **Criar nova** ou **Utilizar existente**.
+
+    c. Em **Localização**, especifique um datacenter do Azure.
+
+6. Em **Criar conta Run As do Azure**, selecione **Sim** e, em seguida, clique em **Criar**.
+
    > [!NOTE]
-   > Se optar por não criar a conta Run As, selecionando a opção **Não**, será apresentada uma mensagem de aviso no painel **Adicionar Conta de Automatização**.  Enquanto a conta é criada no portal do Azure, não terá uma identidade de autenticação correspondente no seu serviço de diretório de subscrições clássico ou do Gestor de Recursos e, por isso, não terá acesso a recursos na sua subscrição.  Isto irá impedir que todos os runbooks relacionados com esta conta tenham capacidade para autenticar e executar tarefas relativamente no que respeita a recursos nesses modelos de implementação.
-   > 
-   > ![Adicionar Aviso de Conta de Automatização](media/automation-sec-configure-azure-runas-account/create-account-decline-create-runas-msg.png)<br>
-   > Se o principal de serviço não for criado, a função Contribuidor não será atribuída.
-   > 
+   > Se selecionar **Não** e optar por não criar a conta Run As, é apresentada uma mensagem de aviso no painel **Adicionar Conta de Automatização**. Embora a conta seja criada no portal do Azure, não tem uma identidade de autenticação correspondente no seu serviço de diretório de subscrições clássico ou do Resource Manager. Consequentemente, a conta não tema cesso aos recursos da sua subscrição. Este cenário impede que qualquer runbook que referencie esta conta se autentique e realize tarefas nos recursos nestes modelos de implementação.
+   >
+   > ![Mensagem de aviso no painel “Adicionar Conta de Automatização”](media/automation-sec-configure-azure-runas-account/create-account-decline-create-runas-msg.png)
+   >
+   > Além disso, uma vez que o principal de serviço não é criado, a função Contribuinte não é atribuída.
+   >
 
 7. Enquanto o Azure cria a conta de automatização, pode acompanhar o progresso em **Notificações** a partir do menu.
 
-### <a name="resources-included"></a>Recursos incluídos
-Quando a conta de Automatização é criada com sucesso, são criados vários recursos automaticamente para si.  A tabela seguinte resume os recursos para a conta Run As.<br>
+### <a name="resources"></a>Recursos
+Quando a conta de Automatização é criada com sucesso, são criados vários recursos automaticamente para si. Os recursos estão resumidos nas duas tabelas seguintes:
+
+#### <a name="run-as-account-resources"></a>Recursos da conta Run As
 
 | Recurso | Descrição |
 | --- | --- |
-| Runbook AzureAutomationTutorial |Um runbook gráfico de exemplo que demonstra como efetuar a autenticação com a conta Run As e obtém todos os recursos do Resource Manager. |
-| AzureAutomationTutorialScript Runbook |Um runbook do PowerShell de exemplo que demonstra como efetuar a autenticação com a conta Run As e obtém todos os recursos do Gestor de Recursos. |
-| AzureRunAsCertificate |Recurso de certificado criado automaticamente durante a criação da conta de Automatização ou utilizando o script do PowerShell abaixo para uma conta existente.  Permite-lhe autenticar com o Azure, para que possa gerir recursos do Azure Resource Manager a partir dos runbooks.  Este certificado tem um tempo de vida de um ano. |
-| AzureRunAsConnection |Recurso de ligação criado automaticamente durante a criação da conta de Automatização ou utilizando o script do PowerShell abaixo para uma conta existente. |
+| Runbook AzureAutomationTutorial | Um runbook gráfico de exemplo que demonstra como fazer a autenticação com a conta Run As e que obtém todos os recursos do Resource Manager. |
+| AzureAutomationTutorialScript Runbook | Um runbook do PowerShell de exemplo que demonstra como fazer a autenticação com a conta Run As e que obtém todos os recursos do Resource Manager. |
+| AzureRunAsCertificate | O recurso de certificado que é criado automaticamente quando cria uma conta de Automatização ou utiliza o script do PowerShell seguinte para uma conta já existente. O certificado permite-lhe autenticar com o Azure, para que possa gerir recursos do Azure Resource Manager a partir dos runbooks. O certificado tem um tempo de vida de um ano. |
+| AzureRunAsConnection | O recurso de ligação que é criado automaticamente quando cria uma conta de Automatização ou utiliza o script do PowerShell para uma conta já existente. |
 
-A tabela seguinte resume os recursos da conta Run As clássica.<br>
+#### <a name="classic-run-as-account-resources"></a>Recursos da conta Run As Clássica
 
 | Recurso | Descrição |
 | --- | --- |
-| AzureClassicAutomationTutorial Runbook |Um runbook gráfico de exemplo que obtém todas as VMs clássicas numa subscrição utilizando a conta Run As clássica (certificado) e, em seguida, devolve o nome e o estado da VM. |
-| AzureClassicAutomationTutorial Script Runbook |Um runbook do PowerShell de exemplo que obtém todas as VMs clássicas numa subscrição utilizando a conta Run As clássica (certificado) e, em seguida, devolve o nome e o estado da VM. |
-| AzureClassicRunAsCertificate |Recurso de certificado criado automaticamente utilizado para autenticar com o Azure, para que possa gerir os recursos clássicos do Azure a partir de runbooks.  Este certificado tem um tempo de vida de um ano. |
-| AzureClassicRunAsConnection |Recurso de ligação criado automaticamente, que é utilizado para autenticar com o Azure, para que possa gerir os recursos clássicos do Azure a partir de runbooks. |
+| AzureClassicAutomationTutorial Runbook | Um runbook gráfico de exemplo que obtém todas as VMs que são criadas com o modelo de implementação clássica numa subscrição, utilizando a conta Run As Clássica (certificado) e que, em seguida, escreve o nome e o estado da VM. |
+| AzureClassicAutomationTutorial Script Runbook | Um runbook do PowerShell de exemplo que obtém todas as VMs clássicas numa subscrição, utilizando a conta Run As Clássica (certificado) e, em seguida, escreve o nome e o estado da VM. |
+| AzureClassicRunAsCertificate | O recurso de certificado criado automaticamente que utiliza para autenticar com o Azure, para que possa gerir os recursos clássicos do Azure a partir de runbooks. O certificado tem um tempo de vida de um ano. |
+| AzureClassicRunAsConnection | O recurso de ligação criado automaticamente que utiliza para autenticar com o Azure, para que possa gerir os recursos clássicos do Azure a partir de runbooks. |
 
 ## <a name="verify-run-as-authentication"></a>Verificar a autenticação Run As
-Em seguida, iremos efetuar um pequeno teste para confirmar se é possível efetuar a autenticação com êxito utilizando a nova conta Run As.     
+Faça um pequeno teste para confirmar que consegue autenticar com êxito através da utilização da conta Run As nova.
 
-1. No portal do Azure, abra a conta de Automatização criada anteriormente.  
+1. No portal do Azure, abra a conta de Automatização que criou anteriormente.
+
 2. Clique no mosaico **Runbooks** para abrir a lista de runbooks.
-3. Selecione o runbook **AzureAutomationTutorialScript** e, em seguida, clique em **Iniciar** para iniciar o runbook.  Irá receber um aviso a confirmar que pretende iniciar o runbook.
-4. Uma [tarefa do runbook](automation-runbook-execution.md) é criada, o painel Tarefa é apresentado e o estado da tarefa é apresentado no mosaico **Resumo da Tarefa**.  
-5. O estado da tarefa começará como *Em fila* com a indicação de que está à espera que uma função de trabalho de runbook na nuvem fique disponível. Em seguida, irá mudar para *A iniciar* quando uma função de trabalho reivindicar a tarefa e, em seguida, *A executar* quando o runbook começar a ser executado.  
-6. Quando tiver concluído a tarefa de runbook, vemos um estado de **Concluído**.<br> ![Teste do Runbook de Principal de Segurança](media/automation-sec-configure-azure-runas-account/job-summary-automationtutorialscript.png)<br>
-7. Para ver os resultados detalhados do runbook, clique no mosaico **Saída**.
-8. No painel **Saída**, deve verificar que foi autenticado com sucesso e devolveu uma lista de todos os recursos disponíveis no grupo de recursos.
-9. Feche o painel **Saída** para voltar para o painel **Resumo da Tarefa**.
-10. Feche o **Resumo da tarefa** e o painel do runbook **AzureAutomationTutorialScript** correspondente.
+
+3. Selecione o runbook **AzureAutomationTutorialScript** e, em seguida, clique em **Iniciar**, para iniciar o runbook. Ocorrerem os seguintes eventos:
+ * É criada uma [tarefa do runbook](automation-runbook-execution.md), é apresentado o painel **Tarefa** e o estado da tarefa é apresentado no mosaico **Resumo da Tarefa**.
+ * O estado da tarefa começa como **Em fila**, com a indicação de que está à espera que uma função de trabalho de runbook na cloud fique disponível.
+ * Quando uma função de trabalho reivindicar a tarefa, o estado muda para **A iniciar**.
+ * Quando a execução do runbook é iniciada, o estado muda para **Em execução**.
+ * Depois de concluída a execução da tarefa de runbook, deverá ver o estado **Concluída**.
+
+       ![Security Principal Runbook Test](media/automation-sec-configure-azure-runas-account/job-summary-automationtutorialscript.png)
+4. Para ver os resultados detalhados do runbook, clique no mosaico **Saída**.  
+É apresentado o painel **Saída**, que mostra que o runbook foi autenticado com êxito e devolveu uma lista de todos os recursos disponíveis no grupo de recursos.
+
+5. Feche o painel **Saída** para voltar para o painel **Resumo da Tarefa**.
+
+6. Feche o painel **Resumo da Tarefa** e o painel do runbook **AzureAutomationTutorialScript** correspondente.
 
 ## <a name="verify-classic-run-as-authentication"></a>Certifique-se de autenticação Run As clássica
-Em seguida, iremos efetuar um pequeno teste para confirmar que é possível autenticar com êxito utilizando a nova conta Run As clássica.     
+Faça um pequeno teste semelhante para confirmar que consegue autenticar com êxito através da utilização da conta Run As Clássica nova.
 
-1. No portal do Azure, abra a conta de Automatização criada anteriormente.  
+1. No portal do Azure, abra a conta de Automatização que criou anteriormente.
+
 2. Clique no mosaico **Runbooks** para abrir a lista de runbooks.
-3. Selecione o runbook **AzureClassicAutomationTutorialScript** e, em seguida, clique em **Iniciar** para iniciar o runbook.  Irá receber um aviso a confirmar que pretende iniciar o runbook.
-4. Uma [tarefa do runbook](automation-runbook-execution.md) é criada, o painel Tarefa é apresentado e o estado da tarefa é apresentado no mosaico **Resumo da Tarefa**.  
-5. O estado da tarefa começará como *Em fila* com a indicação de que está à espera que uma função de trabalho de runbook na nuvem fique disponível. Em seguida, irá mudar para *A iniciar* quando uma função de trabalho reivindicar a tarefa e, em seguida, *A executar* quando o runbook começar a ser executado.  
-6. Quando tiver concluído a tarefa de runbook, vemos um estado de **Concluído**.<br> ![Teste do Runbook de Principal de Segurança](media/automation-sec-configure-azure-runas-account/job-summary-automationclassictutorialscript.png)<br>
-7. Para ver os resultados detalhados do runbook, clique no mosaico **Saída**.
-8. No painel **Saída**, deve verificar que foi autenticado com sucesso e devolveu uma lista de todas as VMs clássicas na subscrição.
-9. Feche o painel **Saída** para voltar para o painel **Resumo da Tarefa**.
-10. Feche o **Resumo da Tarefa** e painel do runbook **AzureClassicAutomationTutorialScript** correspondente.
 
-## <a name="managing-azure-run-as-account"></a>Gerir a conta Run As do Azure
-Durante o ciclo de vida da sua conta de Automatização, terá de renovar o certificado antes de expirar ou, se considerar que a conta foi comprometida, pode eliminar a conta Run As e voltar a criá-la.  Esta secção irá apresentar passos sobre como executar estas operações.  
+3. Selecione o runbook **AzureClassicAutomationTutorialScript** e, em seguida, clique em **Iniciar**, para iniciar o runbook. Ocorrerem os seguintes eventos:
+
+ * É criada uma [tarefa do runbook](automation-runbook-execution.md), é apresentado o painel **Tarefa** e o estado da tarefa é apresentado no mosaico **Resumo da Tarefa**.
+ * O estado da tarefa começa como **Em fila**, com a indicação de que está à espera que uma função de trabalho de runbook na cloud fique disponível.
+ * Quando uma função de trabalho reivindicar a tarefa, o estado muda para **A iniciar**.
+ * Quando a execução do runbook é iniciada, o estado muda para **Em execução**.
+ * Depois de concluída a execução da tarefa de runbook, deverá ver o estado **Concluída**.
+
+    ![Teste do Runbook de Principal de Segurança](media/automation-sec-configure-azure-runas-account/job-summary-automationclassictutorialscript.png)<br>
+4. Para ver os resultados detalhados do runbook, clique no mosaico **Saída**.  
+É apresentado o painel **Saída**, que mostra que o runbook foi autenticado com êxito e devolveu uma lista de todas as VMs clássicas na subscrição.
+
+5. Feche o painel **Saída** para voltar para o painel **Resumo da Tarefa**.
+
+6. Feche o painel **Resumo da Tarefa** e o painel do runbook **AzureAutomationTutorialScript** correspondente.
+
+## <a name="managing-your-run-as-account"></a>Gerir a conta Run As
+Num dado momento antes de a sua conta de Automatização expirar, vai ter de renovar o certificado. Se considerar que a conta Run As tiver sido comprometida, pode eliminá-la e voltar a criá-la. Esta secção mostra como executar estas operações.
 
 ### <a name="self-signed-certificate-renewal"></a>Renovação de certificado autoassinado
-O certificado autoassinado criado para a conta Run As do Azure pode ser renovado em qualquer altura, até à data de expiração, que corresponde a um ano a contar da data de criação.  Quando o renovar, o antigo certificado válido será mantido para garantir que todos os runbooks que se encontram em fila ou ativamente em execução, que são autenticados com a conta Run As, não serão afetados.  O certificado continuará a existir até à data de expiração.    
+O certificado autoassinado que criou para a conta Run As expira ao fim de um ano após a data de criação. Pode renová-lo em qualquer altura antes de expirar. Quando o renovar, o certificado atual válido é mantido, para garantir que todos os runbooks que se encontram em fila ou ativamente em execução, e que se autenticam com a conta Run As, não são afetados negativamente. O certificado permanece válido até à data de expiração.
 
 > [!NOTE]
-> Se tiver configurado a sua conta Run As de Automatização para utilizar um certificado emitido pela sua autoridade de certificação empresarial e utilizar esta opção, esse certificado irá ser substituído por um certificado autoassinado.  
+> Se tiver configurado a sua conta Run As de Automatização para utilizar um certificado emitido pela sua autoridade de certificação empresarial e utilizar esta opção, esse certificado empresarial será substituído por um certificado autoassinado.
 
-1. No portal do Azure, abra a conta de Automatização.  
-2. No painel da conta de Automatização, no painel de propriedades da conta, selecione **Contas Run As** na secção **Definições da Conta**.<br><br> ![Painel de propriedades da conta de automatização](media/automation-sec-configure-azure-runas-account/automation-account-properties-pane.png)<br><br>
-3. No painel de propriedades de **Contas Run As**, selecione a Conta Run As ou a conta Clássica Run As para a qual pretende renovar o certificado e, no painel de propriedades da conta selecionada, clique em **Renovar certificado**.<br><br> ![Renovar o certificado para a conta Run As](media/automation-sec-configure-azure-runas-account/automation-account-renew-runas-certificate.png)<br><br> Irá receber um pedido de confirmação de que pretende continuar.  
-4. Enquanto o certificado estiver a ser renovado, pode acompanhar o progresso em **Notificações** a partir do menu.
+Para renovar o certificado, faça o seguinte:
 
-### <a name="delete-run-as-account"></a>Eliminar a conta Run As
-Os passos seguintes descrevem como eliminar e voltar a criar a conta Run As do Azure ou a conta Clássica Run As.  Quando executar esta ação, a conta de Automatização é mantida.  Depois de eliminar a conta Run As ou a conta Clássica Run As, pode voltar a criá-la no portal.  
+1. No portal do Azure, abra a conta de Automatização.
 
-1. No portal do Azure, abra a conta de Automatização.  
-2. No painel da conta de Automatização, no painel de propriedades da conta, selecione **Contas Run As** na secção **Definições da Conta**.
-3. No painel de propriedades de **Contas Run As**, selecione a Conta Run As ou a conta Clássica Run As que pretende eliminar e, no painel de propriedades da conta selecionada, clique em **Eliminar**.<br><br> ![Eliminar a conta Run As](media/automation-sec-configure-azure-runas-account/automation-account-delete-runas.png)<br><br>  Irá receber um pedido de confirmação de que pretende continuar.
-4. Enquanto a conta estiver a ser eliminada, pode acompanhar o progresso em **Notificações** a partir do menu.  Assim que a eliminação estiver concluída, pode voltar a criá-la no painel de propriedades de **Contas Run As** e selecionando a opção de criação **Conta Run As do Azure**.<br><br> ![Voltar a criar a conta Run As de Automatização](media/automation-sec-configure-azure-runas-account/automation-account-create-runas.png)<br> 
+2. No painel **Conta de Automatização**, no painel **Propriedades da conta**, em **Definições da Conta**, selecione **Contas Run As**.
+
+    ![Painel Propriedades da conta de automatização](media/automation-sec-configure-azure-runas-account/automation-account-properties-pane.png)
+3. No painel de propriedades das **Contas Run As**, selecione a conta Run As ou a conta Run As Clássica para a qual pretende renovar o certificado.
+
+4. No painel **Propriedades** da conta selecionada, clique em **Renovar certificado**.
+
+    ![Renovar certificado da conta Run As](media/automation-sec-configure-azure-runas-account/automation-account-renew-runas-certificate.png)
+
+5. Enquanto o certificado estiver a ser renovado, pode acompanhar o progresso em **Notificações** a partir do menu.
+
+### <a name="delete-a-run-as-or-classic-run-as-account"></a>Eliminar uma conta Run As ou Run As Clássica
+Esta secção descreve como eliminar e recriar uma conta Run As ou Run As Clássica. Quando executar esta ação, a conta de Automatização é mantida. Depois de eliminar uma conta Run As ou Run As Clássica, pode voltar a criá-la no portal do Azure.
+
+1. No portal do Azure, abra a conta de Automatização.
+
+2. No painel **Conta de Automatização**, no painel de propriedades da conta, selecione **Contas Run As**.
+
+3. No painel de propriedades **Contas Run As**, selecione a conta Run As ou a conta Run As Clássico que quer eliminar. Em seguida, no painel **Propriedades** da conta selecionada, clique em **Eliminar**.
+
+ ![Eliminar a conta Run As](media/automation-sec-configure-azure-runas-account/automation-account-delete-runas.png)
+
+4. Enquanto a conta estiver a ser eliminada, pode acompanhar o progresso em **Notificações** a partir do menu.
+
+5. Assim que a conta tiver sido eliminada, pode voltar a criá-la no painel de propriedades **Contas Run As**, ao selecionar a opção de criação **Conta Run As do Azure**.
+
+ ![Recriar a conta Run As de Automatização](media/automation-sec-configure-azure-runas-account/automation-account-create-runas.png)
 
 ### <a name="misconfiguration"></a>Configuração incorreta
-Se qualquer um dos itens de configuração necessários para a conta Run As ou Clássica Run As funcionar corretamente for eliminado ou não for criado corretamente durante a configuração inicial, tais como:
+É possível que alguns itens de configuração necessários para a conta Run As ou Run As Clássica funcionar corretamente tenham sido eliminados ou criados de forma incorreta durante a configuração inicial. Os itens incluem:
 
-* Recurso de certificado 
-* Recurso de ligação 
+* Recurso de certificado
+* Recurso de ligação
 * A conta Run As foi removida da função de contribuinte
 * Principal de serviço ou aplicação no Azure AD
 
-O serviço Automatização irá detetar estas alterações e notificar o utilizador com o estado **Incompleto** no painel de propriedades de **Contas Run As** da conta.<br><br> ![Mensagem de estado de configuração incompleta de conta Run As](media/automation-sec-configure-azure-runas-account/automation-account-runas-incomplete-config.png)<br><br>Ao selecionar a conta Run As, o erro seguinte será apresentado no painel de propriedades da conta:<br><br> ![Mensagem de aviso de configuração incompleta de conta Run As](media/automation-sec-configure-azure-runas-account/automation-account-runas-incomplete-config-msg.png).<br>  
-Se a sua conta Run As estiver configurada incorretamente, pode resolver rapidamente este problema ao eliminar e voltar a criar a conta Run As.   
+Nas configurações incorretas anteriores e noutras, a conta de Automatização deteta as alterações e apresenta o estado *Não concluída*, no painel de propriedades **Contas Run As** da conta.
 
-## <a name="update-an-automation-account-using-powershell"></a>Atualizar uma Conta de Automatização com o PowerShell
-Aqui fornecemos-lhe a opção para utilizar o PowerShell para atualizar a sua conta de automatização existente se:
+![Estado de configuração Não concluída da conta Run As](media/automation-sec-configure-azure-runas-account/automation-account-runas-incomplete-config.png)
 
-1. É criada uma conta de Automatização, mas recusou-se a criar a conta Run As 
-2. Já tem uma conta de Automatização para gerir os recursos do Gestor de Recursos e pretende atualizá-la para incluir a conta Run As para autenticação de runbook
-4. Já tem uma conta de utomatização para gerir os recursos clássicos e pretende atualizá-lo para utilizar a Run As clássica em vez de criar uma nova conta e migrar os runbooks e recursos para o mesmo   
-5. Pretende criar uma conta Run As do Azure e uma conta Run As Clássica com um certificado emitido pela sua AC empresarial
+Quando selecionar a conta Run As, o painel **Propriedades** da conta apresenta a mensagem de erro seguinte:
 
-Este script tem os seguintes pré-requisitos:
+![Mensagem de aviso de configuração não concluída de Run As](media/automation-sec-configure-azure-runas-account/automation-account-runas-incomplete-config-msg.png).
 
-1. Este script suporta a execução apenas no Windows 10 e no Windows Server 2016 com módulos do Azure Resource Manager 2.01 e superior instalados.  Não é suportado em versões anteriores do Windows.  
-2. Azure PowerShell 1.0 e superior. Para obter informações sobre esta versão e como a instalar, consulte o artigo [Como instalar e configurar o Azure PowerShell](/powershell/azureps-cmdlets-docs).
-3. Criou uma conta de automatização.  Esta conta vai ser referenciada como o valor para os parâmetros -AutomationAccountName e -ApplicationDisplayName no script abaixo.
+Pode resolver rapidamente estes problemas da conta Run As, ao eliminar e recriar a conta.
 
-Para obter os valores de *SubscriptionID*, *ResourceGroup*, e *AutomationAccountName*, que são os parâmetros necessários para os scripts, no portal do Azure selecione a sua conta de automatização do painel **Conta de automatização** e selecione **Todas as definições**.  A partir do painel **Todas as definições**, em **Definições da Conta** selecione **Propriedades**.  No painel **Propriedades**, pode ter em atenção estes valores.<br><br> ![Propriedades da Conta de Automatização](media/automation-sec-configure-azure-runas-account/automation-account-properties.png)  
+## <a name="update-your-automation-account-by-using-powershell"></a>Atualizar a conta de Automatização com o PowerShell
+Pode utilizar o PowerShell para atualizar a sua conta de Automatização já existente se:
 
-### <a name="create-run-as-account-powershell-script"></a>Criar o script do PowerShell da Conta Run As
-Este script do PowerShell inclui suporte para as seguintes configurações: 
+* Criar uma conta de Automatização, mas rejeitar criar a conta Run As.
+* Já tiver uma conta de Automatização para gerir os recursos do Resource Manager e quer atualizá-la para incluir a conta Run As para autenticação de runbooks.
+* Já tiver uma conta de automatização para gerir os recursos clássicos e quer atualizá-la para utilizar a Run As Clássica em vez de criar uma nova conta e migrar os runbooks e recursos para a mesma.   
+* Quiser criar uma conta Run As e uma conta Run As Clássica mediante a utilização de um certificado emitido pela sua autoridade de certificação empresarial (AC).
 
-* Criar conta Run As do Azure com um certificado Autoassinado
-* Criar conta Run As do Azure e conta Run As Clássica do Azure, com o certificado Autoassinado
-* Criar conta Run As e conta Run As Clássica do Azure, com o certificado da empresa
-* Criar conta Run As do Azure e conta Run As Clássica do Azure, com o certificado Autoassinado na cloud do Azure Government
+O script tem os pré-requisitos seguintes:
 
-Dependendo das opções de configuração que selecionar, irá criar:
+* O script só pode ser executado no Windows 10 e no Windows Server 2016 com os módulos do Azure Resource Manager 2.01 e posterior. Não é suportado em versões anteriores do Windows.
+* Azure PowerShell 1.0 e posterior. Para obter mais informações sobre a versão do PowerShell 1.0, veja [How to install and configure Azure PowerShell](/powershell/azureps-cmdlets-docs) (Como instalar e configurar o Azure PowerShell).
+* Uma conta de Automatização, que é referenciada como o valor para os parâmetros *–AutomationAccountName* e *-ApplicationDisplayName* no script do PowerShell seguinte.
 
-* Uma aplicação do Azure AD exportada com o certificado autoassinado ou a chave pública do certificado da empresa, criar uma conta do principal de serviço para esta aplicação no Azure AD com a função Contribuinte atribuída (pode alterar isto para Proprietário ou outra função) para esta conta na sua subscrição atual.  Para obter mais informações, consulte o [Controlo de acesso baseado em funções na Automatização do Azure](automation-role-based-access-control.md).
-* Um recurso de certificado de Automatização na conta de automatização especificada com o nome **AzureRunAsCertificate**, que contém a chave privada do certificado utilizada pela aplicação Azure AD.
-* Um recurso de ligação de Automatização na conta de automatização especificada com o nome **AzureRunAsConnection**, que contém applicationId, tenantId, subscriptionId e o thumbprint do certificado.    
+Para obter os valores para *SubscriptionID*, *ResourceGroup* e *AutomationAccountName*, que são parâmetros necessários para os scripts, faça o seguinte:
+1. No portal do Azure, selecione a sua conta de Automatização no painel **Conta de Automatização** e, em seguida, selecione **Todas as definições**. 
+2. No painel **Todas as definições**, em **Definições da Conta**, selecione **Propriedades**. 
+3. Repare nos valores no painel **Propriedades**.
 
-Para uma conta Run As Clássica:
+ ![O painel “Propriedades” da conta de Automatização](media/automation-sec-configure-azure-runas-account/automation-account-properties.png)  
 
-* Um recurso de certificado de Automatização na conta de automatização especificada com o nome **AzureClassicRunAsCertificate**, que contém a chave privada do certificado utilizada pelo certificado de gestão.  
-* Um recurso de ligação de Automatização na conta de automatização especificada com o nome **AzureRunAsConnection**, que contém o nome da subscrição, o subscriptionId e o nome do recurso do certificado.
+### <a name="create-a-run-as-account-powershell-script"></a>Criar um script do PowerShell da onta Run As
+Este script do PowerShell inclui suporte para as seguintes configurações:
 
-Se selecionar a opção para criar uma conta Run As Clássica, após a execução do script, terá de carregar o certificado público (formato .cer) para o arquivo de gestão para a subscrição em que foi criada a conta de Automatização. Os passos abaixo irão guiá-lo através do processo de execução do script e carregar o certificado.    
+* Utilizar um certificado autoassinado para criar uma conta Run As.
+* Utilizar um certificado autoassinado para criar uma conta Run As e uma conta Run As Clássica.
+* Utilizar um certificado empresarial para criar uma conta Run As e uma conta Run As Clássica.
+* Utilizar um certificado autoassinado na cloud do Azure Government para criar uma conta Run As e uma conta Run As Clássica.
 
-1. Guarde o seguinte script no seu computador.  Neste exemplo, guarde-o com o nome de ficheiro **New-RunAsAccount.ps1**.  
-   
-         #Requires -RunAsAdministrator
+Consoante a opção de configuração que selecionar, o script cria os itens seguintes.
+
+**Para contas Run as:**
+
+* Cria uma aplicação do Azure AD a ser exportada com a chave pública do certificado autoassinado ou empresarial, criar uma conta de principal de serviço para a aplicação no Azure AD e atribui a função Contribuinte à conta na sua subscrição atual. Pode alterar esta definição para Proprietário ou qualquer outra função. Para obter mais informações, veja [Controlo de acesso baseado em funções na Automatização do Azure](automation-role-based-access-control.md).
+* Cria um recurso de certificado da Automatização com o nome *AzureRunAsCertificate* na conta de Automatização especificada. O recurso do certificado contém a chave privada do certificado que a aplicação do Azure AD utiliza.
+* Criar um recurso de ligação da Automatização com o nome *AzureRunAsConnection* na conta de Automatização especificada. O recurso de ligação contém o applicationId, o tenantId, o subscriptionId e o thumbprint do certificado.
+
+**Para contas Run As Clássica:**
+
+* Cria um recurso de certificado da Automatização com o nome *AzureClassicRunAsCertificate* na conta de Automatização especificada. O recurso do certificado contém a chave privada do certificado que o certificado de gestão utiliza.
+* Cria um recurso de ligação da Automatização com o nome *AzureClassicRunAsConnection* na conta de Automatização especificada. O recurso de ligação contém o nome da subscrição, o subscriptionid e o nome de recurso do certificado.
+
+>[!NOTE]
+> Se selecionar uma destas opções para criar uma conta Run As Clássica, após o script ser executado, carregue o certificado público (extensão de nome de ficheiro .cer) para o arquivo de gestão da subscrição na qual a conta de Automatização foi criada.
+> 
+
+Para executar o script e carregar o certificado, faça o seguinte:
+
+1. Guarde o seguinte script no seu computador. Neste exemplo, guarde-o com o nome de ficheiro *New-RunAsAccount.ps1*.
+
+        #Requires -RunAsAdministrator
          Param (
         [Parameter(Mandatory=$true)]
         [String] $ResourceGroup,
@@ -216,7 +300,7 @@ Se selecionar a opção para criar uma conta Run As Clássica, após a execuçã
 
         [Parameter(Mandatory=$true)]
         [String] $SelfSignedCertPlainPassword,
- 
+
         [Parameter(Mandatory=$false)]
         [String] $EnterpriseCertPathForRunAsAccount,
 
@@ -237,7 +321,7 @@ Se selecionar a opção para criar uma conta Run As Clássica, após a execuçã
         [int] $SelfSignedCertNoOfMonthsUntilExpired = 12
         )
 
-        function CreateSelfSignedCertificate([string] $keyVaultName, [string] $certificateName, [string] $selfSignedCertPlainPassword, 
+        function CreateSelfSignedCertificate([string] $keyVaultName, [string] $certificateName, [string] $selfSignedCertPlainPassword,
                                       [string] $certPath, [string] $certPathCer, [string] $selfSignedCertNoOfMonthsUntilExpired ) {
         $Cert = New-SelfSignedCertificate -DnsName $certificateName -CertStoreLocation cert:\LocalMachine\My `
            -KeyExportPolicy Exportable -Provider "Microsoft Enhanced RSA and AES Cryptographic Provider" `
@@ -245,13 +329,13 @@ Se selecionar a opção para criar uma conta Run As Clássica, após a execuçã
 
         $CertPassword = ConvertTo-SecureString $selfSignedCertPlainPassword -AsPlainText -Force
         Export-PfxCertificate -Cert ("Cert:\localmachine\my\" + $Cert.Thumbprint) -FilePath $certPath -Password $CertPassword -Force | Write-Verbose
-        Export-Certificate -Cert ("Cert:\localmachine\my\" + $Cert.Thumbprint) -FilePath $certPathCer -Type CERT | Write-Verbose 
+        Export-Certificate -Cert ("Cert:\localmachine\my\" + $Cert.Thumbprint) -FilePath $certPathCer -Type CERT | Write-Verbose
         }
 
         function CreateServicePrincipal([System.Security.Cryptography.X509Certificates.X509Certificate2] $PfxCert, [string] $applicationDisplayName) {  
         $CurrentDate = Get-Date
         $keyValue = [System.Convert]::ToBase64String($PfxCert.GetRawCertData())
-        $KeyId = (New-Guid).Guid 
+        $KeyId = (New-Guid).Guid
 
         $KeyCredential = New-Object  Microsoft.Azure.Commands.Resources.Models.ActiveDirectory.PSADKeyCredential
         $KeyCredential.StartDate = $CurrentDate
@@ -259,12 +343,12 @@ Se selecionar a opção para criar uma conta Run As Clássica, após a execuçã
         $KeyCredential.KeyId = $KeyId
         $KeyCredential.CertValue  = $keyValue
 
-        # Use Key credentials and create AAD Application
+        # Use key credentials and create an Azure AD application
         $Application = New-AzureRmADApplication -DisplayName $ApplicationDisplayName -HomePage ("http://" + $applicationDisplayName) -IdentifierUris ("http://" + $KeyId) -KeyCredentials $KeyCredential
-        $ServicePrincipal = New-AzureRMADServicePrincipal -ApplicationId $Application.ApplicationId 
+        $ServicePrincipal = New-AzureRMADServicePrincipal -ApplicationId $Application.ApplicationId
         $GetServicePrincipal = Get-AzureRmADServicePrincipal -ObjectId $ServicePrincipal.Id
-   
-        # Sleep here for a few seconds to allow the service principal application to become active (should only take a couple of seconds normally)
+
+        # Sleep here for a few seconds to allow the service principal application to become active (ordinarily takes a few seconds)
         Sleep -s 15
         $NewRole = New-AzureRMRoleAssignment -RoleDefinitionName Contributor -ServicePrincipalName $Application.ApplicationId -ErrorAction SilentlyContinue
         $Retries = 0;
@@ -286,7 +370,7 @@ Se selecionar a opção para criar uma conta Run As Clássica, após a execuçã
 
         function CreateAutomationConnectionAsset ([string] $resourceGroup, [string] $automationAccountName, [string] $connectionAssetName, [string] $connectionTypeName, [System.Collections.Hashtable] $connectionFieldValues ) {
         Remove-AzureRmAutomationConnection -ResourceGroupName $resourceGroup -AutomationAccountName $automationAccountName -Name $connectionAssetName -Force -ErrorAction SilentlyContinue
-        New-AzureRmAutomationConnection -ResourceGroupName $ResourceGroup -AutomationAccountName $automationAccountName -Name $connectionAssetName -ConnectionTypeName $connectionTypeName -ConnectionFieldValues $connectionFieldValues 
+        New-AzureRmAutomationConnection -ResourceGroupName $ResourceGroup -AutomationAccountName $automationAccountName -Name $connectionAssetName -ConnectionTypeName $connectionTypeName -ConnectionFieldValues $connectionFieldValues
         }
 
         Import-Module AzureRM.Profile
@@ -298,15 +382,15 @@ Se selecionar a opção para criar uma conta Run As Clássica, após a execuçã
            Write-Error -Message "Please install the latest Azure PowerShell and retry. Relevant doc url : https://docs.microsoft.com/powershell/azureps-cmdlets-docs/ "
            return
         }
- 
+
         Login-AzureRmAccount -EnvironmentName $EnvironmentName
         $Subscription = Select-AzureRmSubscription -SubscriptionId $SubscriptionId
 
-        # Create Run As Account using Service Principal
+        # Create a Run As account by using a service principal
         $CertifcateAssetName = "AzureRunAsCertificate"
         $ConnectionAssetName = "AzureRunAsConnection"
         $ConnectionTypeName = "AzureServicePrincipal"
- 
+
         if ($EnterpriseCertPathForRunAsAccount -and $EnterpriseCertPlainPasswordForRunAsAccount) {
         $PfxCertPathForRunAsAccount = $EnterpriseCertPathForRunAsAccount
         $PfxCertPlainPasswordForRunAsAccount = $EnterpriseCertPlainPasswordForRunAsAccount
@@ -315,34 +399,35 @@ Se selecionar a opção para criar uma conta Run As Clássica, após a execuçã
           $PfxCertPathForRunAsAccount = Join-Path $env:TEMP ($CertificateName + ".pfx")
           $PfxCertPlainPasswordForRunAsAccount = $SelfSignedCertPlainPassword
           $CerCertPathForRunAsAccount = Join-Path $env:TEMP ($CertificateName + ".cer")
-          CreateSelfSignedCertificate $KeyVaultName $CertificateName $PfxCertPlainPasswordForRunAsAccount $PfxCertPathForRunAsAccount $CerCertPathForRunAsAccount $SelfSignedCertNoOfMonthsUntilExpired 
+          CreateSelfSignedCertificate $KeyVaultName $CertificateName $PfxCertPlainPasswordForRunAsAccount $PfxCertPathForRunAsAccount $CerCertPathForRunAsAccount $SelfSignedCertNoOfMonthsUntilExpired
         }
 
-        # Create Service Principal
+        # Create a service principal
         $PfxCert = New-Object -TypeName System.Security.Cryptography.X509Certificates.X509Certificate2 -ArgumentList @($PfxCertPathForRunAsAccount, $PfxCertPlainPasswordForRunAsAccount)
         $ApplicationId=CreateServicePrincipal $PfxCert $ApplicationDisplayName
 
-        # Create the automation certificate asset
+        # Create the Automation certificate asset
         CreateAutomationCertificateAsset $ResourceGroup $AutomationAccountName $CertifcateAssetName $PfxCertPathForRunAsAccount $PfxCertPlainPasswordForRunAsAccount $true
 
         # Populate the ConnectionFieldValues
         $SubscriptionInfo = Get-AzureRmSubscription -SubscriptionId $SubscriptionId
         $TenantID = $SubscriptionInfo | Select TenantId -First 1
         $Thumbprint = $PfxCert.Thumbprint
-        $ConnectionFieldValues = @{"ApplicationId" = $ApplicationId; "TenantId" = $TenantID.TenantId; "CertificateThumbprint" = $Thumbprint; "SubscriptionId" = $SubscriptionId} 
+        $ConnectionFieldValues = @{"ApplicationId" = $ApplicationId; "TenantId" = $TenantID.TenantId; "CertificateThumbprint" = $Thumbprint; "SubscriptionId" = $SubscriptionId}
 
-        # Create a Automation connection asset named AzureRunAsConnection in the Automation account. This connection uses the service principal.
-        CreateAutomationConnectionAsset $ResourceGroup $AutomationAccountName $ConnectionAssetName $ConnectionTypeName $ConnectionFieldValues  
 
-        if ($CreateClassicRunAsAccount) {  
-            # Create Run As Account using Service Principal
+        # Create an Automation connection asset named AzureRunAsConnection in the Automation account. This connection uses the service principal.
+        CreateAutomationConnectionAsset $ResourceGroup $AutomationAccountName $ConnectionAssetName $ConnectionTypeName $ConnectionFieldValues
+
+        if ($CreateClassicRunAsAccount) {
+            # Create a Run As account by using a service principal
             $ClassicRunAsAccountCertifcateAssetName = "AzureClassicRunAsCertificate"
             $ClassicRunAsAccountConnectionAssetName = "AzureClassicRunAsConnection"
             $ClassicRunAsAccountConnectionTypeName = "AzureClassicCertificate "
             $UploadMessage = "Please upload the .cer format of #CERT# to the Management store by following the steps below." + [Environment]::NewLine +
                     "Log in to the Microsoft Azure Management portal (https://manage.windowsazure.com) and select Settings -> Management Certificates." + [Environment]::NewLine +
-                    "Then click Upload and upload the .cer format of #CERT#" 
- 
+                    "Then click Upload and upload the .cer format of #CERT#"
+
              if ($EnterpriseCertPathForClassicRunAsAccount -and $EnterpriseCertPlainPasswordForClassicRunAsAccount ) {
              $PfxCertPathForClassicRunAsAccount = $EnterpriseCertPathForClassicRunAsAccount
              $PfxCertPlainPasswordForClassicRunAsAccount = $EnterpriseCertPlainPasswordForClassicRunAsAccount
@@ -353,46 +438,52 @@ Se selecionar a opção para criar uma conta Run As Clássica, após a execuçã
              $PfxCertPlainPasswordForClassicRunAsAccount = $SelfSignedCertPlainPassword
              $CerCertPathForClassicRunAsAccount = Join-Path $env:TEMP ($ClassicRunAsAccountCertificateName + ".cer")
              $UploadMessage = $UploadMessage.Replace("#CERT#", $CerCertPathForClassicRunAsAccount)
-             CreateSelfSignedCertificate $KeyVaultName $ClassicRunAsAccountCertificateName $PfxCertPlainPasswordForClassicRunAsAccount $PfxCertPathForClassicRunAsAccount $CerCertPathForClassicRunAsAccount $SelfSignedCertNoOfMonthsUntilExpired 
+             CreateSelfSignedCertificate $KeyVaultName $ClassicRunAsAccountCertificateName $PfxCertPlainPasswordForClassicRunAsAccount $PfxCertPathForClassicRunAsAccount $CerCertPathForClassicRunAsAccount $SelfSignedCertNoOfMonthsUntilExpired
         }
 
-        # Create the automation certificate asset
+        # Create the Automation certificate asset
         CreateAutomationCertificateAsset $ResourceGroup $AutomationAccountName $ClassicRunAsAccountCertifcateAssetName $PfxCertPathForClassicRunAsAccount $PfxCertPlainPasswordForClassicRunAsAccount $false
 
         # Populate the ConnectionFieldValues
         $SubscriptionName = $subscription.Subscription.SubscriptionName
         $ClassicRunAsAccountConnectionFieldValues = @{"SubscriptionName" = $SubscriptionName; "SubscriptionId" = $SubscriptionId; "CertificateAssetName" = $ClassicRunAsAccountCertifcateAssetName}
 
-        # Create a Automation connection asset named AzureRunAsConnection in the Automation account. This connection uses the service principal.
+        # Create an Automation connection asset named AzureRunAsConnection in the Automation account. This connection uses the service principal.
         CreateAutomationConnectionAsset $ResourceGroup $AutomationAccountName $ClassicRunAsAccountConnectionAssetName $ClassicRunAsAccountConnectionTypeName $ClassicRunAsAccountConnectionFieldValues
 
         Write-Host -ForegroundColor red $UploadMessage
         }
 
-2. No seu computador, inicie o **Windows PowerShell** a partir do ecrã **Iniciar** ecrã com direitos de utilizador elevados.
-3. A partir da shell elevada da linha de comandos do PowerShell, navegue para a pasta que contém o script que criou no Passo 1 e execute o script que define os valores de parâmetros necessários, consoante a configuração necessária.  
+2. No seu computador, clique em **Iniciar** e inicie o **Windows PowerShell** com direitos de utilizador elevados.
 
-    **Criar conta Run As do Azure com um certificado autoassinado**  
-    `.\New-RunAsAccount.ps1 -ResourceGroup <ResourceGroupName> -AutomationAccountName <NameofAutomationAccount> -SubscriptionId <SubscriptionId> -ApplicationDisplayName <DisplayNameofAADApplication> -SelfSignedCertPlainPassword <StrongPassword> -CreateClassicRunAsAccount $false` 
+3. A partir da shell da linha de comandos do PowerShell elevada, aceda à pasta que contém o script que criou no passo 1.
 
-    **Criar conta Run As do Azure e conta Run As Clássica do Azure com o certificado autoassinado**  
+4. Execute o script, utilizando os valores de parâmetros da configuração de que precisa.
+
+    **Utilizar um certificado autoassinado para criar uma conta Run As**  
+    `.\New-RunAsAccount.ps1 -ResourceGroup <ResourceGroupName> -AutomationAccountName <NameofAutomationAccount> -SubscriptionId <SubscriptionId> -ApplicationDisplayName <DisplayNameofAADApplication> -SelfSignedCertPlainPassword <StrongPassword> -CreateClassicRunAsAccount $false`
+
+    **Utilizar um certificado autoassinado para criar uma conta Run As e uma conta Run As Clássica**  
     `.\New-RunAsAccount.ps1 -ResourceGroup <ResourceGroupName> -AutomationAccountName <NameofAutomationAccount> -SubscriptionId <SubscriptionId> -ApplicationDisplayName <DisplayNameofAADApplication> -SelfSignedCertPlainPassword <StrongPassword> -CreateClassicRunAsAccount $true`
 
-    **Criar conta Run As do Azure e conta Run As Clássica do Azure com o certificado da empresa**  
+    **Utilizar um certificado empresarial para criar uma conta Run As e uma conta Run As Clássica**  
     `.\New-RunAsAccount.ps1 -ResourceGroup <ResourceGroupName> -AutomationAccountName <NameofAutomationAccount> -SubscriptionId <SubscriptionId> -ApplicationDisplayName <DisplayNameofAADApplication>  -SelfSignedCertPlainPassword <StrongPassword> -CreateClassicRunAsAccount $true -EnterpriseCertPathForRunAsAccount <EnterpriseCertPfxPathForRunAsAccount> -EnterpriseCertPlainPasswordForRunAsAccount <StrongPassword> -EnterpriseCertPathForClassicRunAsAccount <EnterpriseCertPfxPathForClassicRunAsAccount> -EnterpriseCertPlainPasswordForClassicRunAsAccount <StrongPassword>`
 
-    **Criar conta Run As do Azure e conta Run As Clássica do Azure com o certificado autoassinado na cloud do Azure Government**  
+    **Utilizar um certificado autoassinado na cloud do Azure Government para criar uma conta Run As e uma conta Run As Clássica**  
     `.\New-RunAsAccount.ps1 -ResourceGroup <ResourceGroupName> -AutomationAccountName <NameofAutomationAccount> -SubscriptionId <SubscriptionId> -ApplicationDisplayName <DisplayNameofAADApplication> -SelfSignedCertPlainPassword <StrongPassword> -CreateClassicRunAsAccount $true  -EnvironmentName AzureUSGovernment`
- 
-    > [!NOTE]
-    > Será solicitado para autenticar com o Azure, depois de executar o script. Tem de iniciar sessão com uma conta que seja membro da função de Administradores da Subscrição e o coadministrador da subscrição.
-    > 
-    > 
 
-Após o conclusão do script com êxito, se tiver criado uma conta Run As Clássica com o certificado público auto-assinado (formato. cer), o script irá criá-lo e guardá-lo na pasta de ficheiros temporários do computador no perfil de utilizador utilizado para executar a sessão do PowerShell - *%USERPROFILE%\AppData\Local\Temp* ou, caso tenha criado uma conta Run As Clássica com um certificado público de empresa (formato. cer), será necessário utilizar este certificado.  Siga os passos para [carregar um certificado da API de gestão](../azure-api-management-certs.md) no portal clássico do Azure e, em seguida, consulte o [código de exemplo](#sample-code-to-authenticate-with-service-management-resources) para validar a configuração de credenciais com recursos de Gestão do Serviço.  Se não tiver criado uma conta Run As Clássica, consulte o [código de exemplo](#sample-code-to-authenticate-with-resource-manager-resources) abaixo para autenticar com recursos do Resource Manager e validar a configuração de credenciais.
+    > [!NOTE]
+    > Após o script ser executado, ser-lhe-á pedido para autenticar com o Azure. Inicie sessão com uma conta que seja membro da função de administradores da subscrição e coadministrador da subscrição.
+    >
+    >
+
+Depois de o script ser executado com êxito, tenha em conta o seguinte:
+* Se tiver criado uma conta Run As Clássica com um certificado público autoassinado (ficheiro .cer), o script cria-o e guarda-o na pasta de ficheiros temporários no seu computador, no perfil de utilizador *%USERPROFILE%\AppData\Local\Temp* que utilizou para executar a sessão do PowerShell.
+* Se tiver criado uma conta Run As Clássica com um certificado público empresarial (ficheiro .cer), utilize esse certificado. Siga as instruções relativas a [carregar certificados de API de gestão para o portal clássico do Azure](../azure-api-management-certs.md) e utilize o [código de exemplo para autenticar com os Recursos da Gestão do Serviço](#sample-code-to-authenticate-with-service-management-resources) para validar a configuração da credencial com recursos da Gestão do Serviço. 
+* Se *não* tiver criado uma conta Run As Clássica, autentique com recursos do Resource Manager e utilize o [código de exemplo para autenticar com recursos da Gestão do Serviço](#sample-code-to-authenticate-with-resource-manager-resources) para validar a configuração da credencial.
 
 ## <a name="sample-code-to-authenticate-with-resource-manager-resources"></a>Código de exemplo para autenticar com recursos do Resource Manager
-Pode utilizar o código de exemplo atualizado abaixo, retirado do runbook de exemplo **AzureAutomationTutorialScript**, para efetuar a autenticação com a conta Run As para gerir os recursos do Gestor de Recursos com os runbooks.   
+Pode utilizar o código de exemplo atualizado seguinte, retirado do runbook de exemplo *AzureAutomationTutorialScript*, para autenticar com a conta Run As e gerir os recursos do Resource Manager com os runbooks.
 
     $connectionName = "AzureRunAsConnection"
     $SubId = Get-AutomationVariable -Name 'SubscriptionId'
@@ -421,13 +512,12 @@ Pode utilizar o código de exemplo atualizado abaixo, retirado do runbook de exe
          }
     }
 
+Para o ajudar a alternar facilmente entre várias subscrições, o script inclui duas linhas adicionais de código que suportam a referência a contextos de subscrições. O ID da subscrição está contido num recurso de variável com o nome *SubscriptionId*. A seguir à declaração do cmdlet `Add-AzureRmAccount`, o cmdlet [`Set-AzureRmContext`](https://msdn.microsoft.com/library/mt619263.aspx) é indicado com o parâmetro definido como *-SubscriptionId*. Se o nome da variável for demasiado genérico, pode revê-lo para incluir um prefixo ou outra convenção de nomenclatura para ser mais fácil de identificar. Em alternativa, pode utilizar o parâmetro definido *-SubscriptionName* em vez de *-SubscriptionId* com um recurso de variável correspondente.
 
-O script inclui duas linhas adicionais de código para suportar a referência a um contexto de subscrição para que possa trabalhar facilmente entre várias subscrições. Um recurso variável com o nome SubscriptionId contém o ID da subscrição e, após a declaração de cmdlet Add-AzureRmAccount, o [cmdlet Set-AzureRmContext](https://msdn.microsoft.com/library/mt619263.aspx) é declarado com o conjunto de parâmetros *-SubscriptionId*. Se o nome da variável for demasiado genérico, pode rever o nome da variável para incluir um prefixo ou outra convenção de nomenclatura para ser mais fácil de identificar para os fins pretendidos. Em alternativa, pode utilizar o parâmetro definido -SubscriptionName em vez de -SubscriptionId com um recurso de variável correspondente.    
-
-Repare que o cmdlet utilizado para autenticar no runbook - **Add-AzureRmAccount**, utiliza o conjunto de parâmetros *ServicePrincipalCertificate*.  Autentica utilizando o certificado de serviço principal, não as credenciais.  
+O cmdlet que utiliza para autenticar no runbook, `Add-AzureRmAccount`, utiliza o parâmetro definido *ServicePrincipalCertificate*. Para autenticar, utiliza o certificado do principal de serviço, não as credenciais de utilizador.
 
 ## <a name="sample-code-to-authenticate-with-service-management-resources"></a>Código de exemplo para autenticar com recursos do Service Management
-Pode utilizar o código de exemplo atualizado abaixo, retirado do runbook de exemplo **AzureClassicAutomationTutorialScript** para efetuar a autenticação com a conta Run As para gerir os recursos clássicos dos runbooks.
+Pode utilizar o código de exemplo atualizado seguinte, retirado do runbook de exemplo *AzureClassicAutomationTutorialScript* para autenticar com a conta Run As Clássica para gerir os recursos clássicos com os runbooks.
 
     $ConnectionAssetName = "AzureClassicRunAsConnection"
     # Get the connection
@@ -454,8 +544,7 @@ Pode utilizar o código de exemplo atualizado abaixo, retirado do runbook de exe
     Select-AzureSubscription -SubscriptionId $Conn.SubscriptionID
 
 ## <a name="next-steps"></a>Passos seguintes
-* Para mais informações sobre Principais de Serviço, consulte a [Objetos da Aplicação e Objetos de Principais de Serviço](../active-directory/active-directory-application-objects.md).
-* Para obter mais informações sobre o Controlo de Acesso baseado em Funções na Automatização do Azure, consulte o [Controlo de acesso baseado em funções da Automatização do Azure](automation-role-based-access-control.md).
-* Para obter mais informações sobre certificados e serviços do Azure, veja [Descrição geral de certificados para serviços de nuvem do Azure](../cloud-services/cloud-services-certs-create.md)
-
+* [Application and service principal objects in Azure AD](../active-directory/active-directory-application-objects.md) (Objetos de aplicação e de principal de serviço no Azure AD)
+* [Controlo de acesso baseado em funções na Automatização do Azure](automation-role-based-access-control.md)
+* [Certificates overview for Azure Cloud Services](../cloud-services/cloud-services-certs-create.md) (Descrição geral dos certificados para os Serviços Cloud do Azure)
 
