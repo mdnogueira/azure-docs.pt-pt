@@ -33,6 +33,8 @@
 ### [Centro de Segurança do Azure](../security-center/security-center-intro.md?toc=%2fazure%2fsecurity%2ftoc.json)
 ### [Introdução à integração de registos do Azure](security-azure-log-integration-overview.md)
 #### [Começar a utilizar a integração de registos do Azure](security-azure-log-integration-get-started.md)
+#### [Integrar registos de auditoria do Azure Active Directory](security-azure-log-integration-ad.md)
+#### [Integrar alertas do Centro de Segurança](security-azure-log-integration-security-center.md)
 #### [FAQ](security-azure-log-integration-faq.md)
 
 ## Gestão de identidades

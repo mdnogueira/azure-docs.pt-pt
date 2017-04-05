@@ -3,7 +3,7 @@ title: "Implementar uma aplicação ASP.NET no Azure com o Visual Studio | Micro
 description: "Saiba como implementar um projeto Web do ASP.NET numa nova aplicação Web no App Service do Azure, utilizando o Visual Studio."
 services: app-service\web
 documentationcenter: .net
-author: tdykstra
+author: cephalin
 manager: erikre
 editor: 
 ms.assetid: 69759e3c-384c-4afb-9278-db6724f6cb74
@@ -13,11 +13,11 @@ ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: get-started-article
 ms.date: 12/16/2016
-ms.author: rachelap
+ms.author: cephalin
 translationtype: Human Translation
-ms.sourcegitcommit: 9b7e0b429575d080819f25e04d492a2b09d4d63a
-ms.openlocfilehash: 946552d1b268c6e70a9e8fcd4c40bd6e2ab76178
-ms.lasthandoff: 01/24/2017
+ms.sourcegitcommit: 26d460a699e31f6c19e3b282fa589ed07ce4a068
+ms.openlocfilehash: 93107d19e1814b30d69fc12c92b544d9760bda6a
+ms.lasthandoff: 04/04/2017
 
 
 ---
@@ -50,7 +50,7 @@ Além do tempo necessário para instalar o Azure SDK para o .NET, este tutorial 
   
     Se pretender começar com o App Service do Azure antes de se inscrever numa conta do Azure, aceda a [Experimentar o App Service](https://azure.microsoft.com/try/app-service/). Aqui, pode criar uma aplicação de arranque de curta duração no App Service — sem cartões de crédito, sem compromissos.
 
-## <a name="a-namesetupdevenvaset-up-the-development-environment"></a><a name="setupdevenv"></a>Configurar o ambiente de desenvolvimento
+## <a name="setupdevenv"></a>Configurar o ambiente de desenvolvimento
 O tutorial foi escrito para o Visual Studio 2015 com o [Azure SDK para .NET](../dotnet-sdk.md) 2.9 ou posterior. 
 
 * [Transfira o Azure SDK mais recente para o Visual Studio 2015](http://go.microsoft.com/fwlink/?linkid=518003). O SDK instala o Visual Studio 2015, se ainda não o tiver.
@@ -189,8 +189,6 @@ Nesta secção, é possível implementar o projeto Web para o recurso de aplica�
 
 ## <a name="troubleshooting"></a>Resolução de problemas
 Se tiver um problema à medida que revê este tutorial, certifique-se de que está a utilizar a versão mais recente do Azure SDK para o .NET. A forma mais fácil para o fazer é [transferir o Azure SDK para o Visual Studio 2015](http://go.microsoft.com/fwlink/?linkid=518003). Se tiver a versão atual instalada, o Instalador de Plataforma Web permite-lhe saber que não é necessária qualquer instalação.
-
-Caso se encontre numa rede empresarial e esteja a tentar implementar no App Service do Azure através de uma firewall, certifique-se de que as portas 443 e 8172 estão abertas para Web Deploy. Se não for possível abrir essas portas, consulte a secção Passos seguintes para obter outras opções de implementação.
 
 Depois de ter a aplicação Web do ASP.NET em execução no App Service do Azure, pode querer saber mais sobre as funcionalidades do Visual Studio que simplificam a resolução de problemas. Para obter informações sobre o registo, a depuração remota e muito mais, consulte o artigo [Resolução de problemas com as Web Apps do Azure no Visual Studio](web-sites-dotnet-troubleshoot-visual-studio.md).
 

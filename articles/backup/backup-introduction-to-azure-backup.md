@@ -17,9 +17,9 @@ ms.date: 3/13/2017
 ms.author: markgal;trinadhk; anuragm
 ms.custom: H1Hack27Feb2017
 translationtype: Human Translation
-ms.sourcegitcommit: 424d8654a047a28ef6e32b73952cf98d28547f4f
-ms.openlocfilehash: 0be8f1f9fb96bce445c4a91520b9a847b205a519
-ms.lasthandoff: 03/21/2017
+ms.sourcegitcommit: 303cb9950f46916fbdd58762acd1608c925c1328
+ms.openlocfilehash: a2452b95c9355957b10477a6e457000f0eba6a9c
+ms.lasthandoff: 04/04/2017
 
 
 ---
@@ -98,7 +98,7 @@ A tabela seguinte mostra os componentes do Azure Backup com suporte para Linux.
 O Azure Backup protege VMs de Armazenamento Premium. O Armazenamento Premium do Azure é o armazenamento baseado numa unidade de estado sólido (SSD), concebido para suportar cargas de trabalho de E/S intensivas. O Armazenamento Premium é apelativo para cargas de trabalho de máquina virtual (VM). Para mais informações sobre o Armazenamento Premium, veja o artigo [Armazenamento Premium: Armazenamento de Elevado Desempenho para Cargas de Trabalho de Máquinas Virtuais do Azure](../storage/storage-premium-storage.md).
 
 ### <a name="back-up-premium-storage-vms"></a>Criar cópia de segurança das VMs do Premium Storage
-Durante a cópia de segurança das VMs do Armazenamento Premium, o serviço de Cópia de Segurança cria uma localização de transição temporária, com o nome "AzureBackup-", na conta do Armazenamento Premium. A localização de transição é igual ao tamanho do instantâneo do ponto de recuperação. Certifique-se de que existe espaço livre na conta de armazenamento para suportar a localização de transição temporária. Para obter mais informações, veja o artigo [Premium Storage Limitations (Limitações do Armazenamento Premium)](../storage/storage-premium-storage.md#premium-storage-scalability-and-performance-targets). Depois de a tarefa de cópia de segurança estar concluída, a localização de transição é eliminada. O preço do armazenamento utilizado para a localização de transição é consistente com todos os [Preços do Premium Storage](../storage/storage-premium-storage.md#pricing-and-billing).
+Durante a cópia de segurança das VMs do Armazenamento Premium, o serviço de Cópia de Segurança cria uma localização de transição temporária, com o nome "AzureBackup-", na conta do Armazenamento Premium. A localização de transição é igual ao tamanho do instantâneo do ponto de recuperação. Certifique-se de que existe espaço livre na conta de armazenamento para suportar a localização de transição temporária. Para obter mais informações, veja o artigo [Premium Storage Limitations (Limitações do Armazenamento Premium)](../storage/storage-premium-storage.md#scalability-and-performance-targets). Depois de a tarefa de cópia de segurança estar concluída, a localização de transição é eliminada. O preço do armazenamento utilizado para a localização de transição é consistente com todos os [Preços do Premium Storage](../storage/storage-premium-storage.md#pricing-and-billing).
 
 > [!NOTE]
 > Não modifique ou edite a localização de transição.

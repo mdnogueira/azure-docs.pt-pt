@@ -1,13 +1,3 @@
-### <a name="disk-persistence"></a>Persistência do Disco 
-
-A tabela seguinte ilustra os estados diferentes para os diferentes discos numa VM do Azure e se os dados são persistentes ou não em cada estado.
-
-| Disco | Iniciar | Parar/<br>Desalocar | Colocar em pausa | Rei<br>niciar | Ence<br>rrar | Eliminar | Falha | Redimensionar | 
-| ---- | ----- | ---- | ---- | ---- | ----  | ------ | ------- | ------ | 
-| Disco do SO | Sim | Sim  | Sim | Sim | Sim  | Não | Não  | Sim | 
-| RAM  | Sim | Sim | Sim | Sim | Não   | Não | Não | Não | 
-| Disco Temp Local | Sim | Não | Sim | Não | Não  | Não | Não | Não | 
-| Disco de Dados Ligado | Sim | Sim | Sim | Sim | Sim  | Sim | Sim | Sim | 
 
 ## <a name="about-vhds"></a>Sobre VHDs
 
@@ -63,7 +53,3 @@ A tabela seguinte apresenta uma comparação dos Premium vs Standard para os dis
 | Tamanho do Disco | P10: 128 GB<br>P20: 512 GB<br>P30: 1024 GB | Discos Não Geridos: 1 GB – 1 TB <br><br>Managed Disks:<br> S4: 32 GB <br>S6: 64 GB <br>S10: 128 GB <br>S20: 512 GB <br>S30: 1024 GB |
 | Débito Máx por Disco | 200 MB/s | 60 MB/s |
 | IOPs Máx por disco | 5000 IOPS | 500 IOPS |
-
-<!--HONumber=Feb17_HO3-->
-
-

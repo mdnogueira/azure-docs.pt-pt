@@ -23,6 +23,7 @@
 ## Configurar uma ligação VNet a VNet
 ### [Portal do Azure](vpn-gateway-howto-vnet-vnet-resource-manager-portal.md)
 ### [PowerShell](vpn-gateway-vnet-vnet-rm-ps.md)
+### [Portal do Azure (clássico)](vpn-gateway-howto-vnet-vnet-portal-classic.md)
 ### [Portal clássico (clássico)](virtual-networks-configure-vnet-to-vnet-connection.md)
 ## Configurar uma ligação VNet a VNet entre modelos de implementação
 ### [Portal do Azure](vpn-gateway-connect-different-deployment-models-portal.md)
@@ -42,6 +43,7 @@
 ## [Verificar uma ligação do gateway de VPN](vpn-gateway-verify-connection-resource-manager.md)
 ## [Repor um gateway de VPN](vpn-gateway-resetgw-classic.md)
 ## Eliminar um gateway de VPN
+### [Portal do Azure](vpn-gateway-delete-vnet-gateway-portal.md)
 ### [PowerShell](vpn-gateway-delete-vnet-gateway-powershell.md)
 ### [PowerShell (clássico)](vpn-gateway-delete-vnet-gateway-classic-powershell.md)
 ## [Criar certificados de raiz autoassinados para ligações P2S](vpn-gateway-certificates-point-to-site.md)

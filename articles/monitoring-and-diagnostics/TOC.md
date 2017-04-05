@@ -4,6 +4,7 @@
 ## [Alertas](monitoring-overview-alerts.md)
 ## [Dimensionamento Automático](monitoring-overview-autoscale.md)
 ## [Registo de atividades](monitoring-overview-activity-logs.md)
+## [Grupos de Ação](monitoring-action-groups.md)
 ## [Registos de Diagnóstico](monitoring-overview-of-diagnostic-logs.md)
 ## [Integrações de Parceiros](monitoring-partners.md)
 ## [Diagnóstico do Azure](azure-diagnostics.md)
@@ -28,10 +29,19 @@
 ### [Configurar webhooks e notificações de e-mail no dimensionamento automático](insights-autoscale-to-webhook-email.md)
 ## Utilizar o registo de atividades
 ### [Ver eventos no registo de atividades](insights-debugging-with-events.md)
-### [Configurar o webhook num alerta do registo de atividades](insights-auditlog-to-webhook-email.md)
+### [Configurar alertas num evento do registo de atividades](monitoring-activity-log-alerts.md)
 ### [Arquivar registo de atividades](monitoring-archive-activity-log.md)
 ### [Transmitir em fluxo o registo de atividades para o Hubs de Eventos](monitoring-stream-activity-logs-event-hubs.md)
 ### [Auditar operações com o Resource Manager](../azure-resource-manager/resource-group-audit.md)
+### [Criar alertas do registo de atividades com o Resource Manager](monitoring-create-activity-log-alerts-with-resource-manager-template.md)
+## Notificações do serviço
+### [Ver notificações do serviço](monitoring-service-notifications.md)
+### [Configurar alertas nas notificações do serviço](monitoring-activity-log-alerts-on-service-notifications.md)
+## Grupos de Ação
+### [Saiba mais sobre o esquema de webhook](monitoring-activity-log-alerts-webhook.md)
+### [Comportamento do Alerta por SMS](monitoring-sms-alert-behavior.md)
+### [Limitar a Taxa de Alertas](monitoring-alerts-rate-limiting.md)
+### [Criar grupos de ação com o Resource Manager](monitoring-create-action-group-with-resource-manager-template.md)
 ## Gerir registos de diagnóstico
 ### [Arquivo](monitoring-archive-diagnostic-logs.md)
 ### [Transmitir em Fluxo nos Hubs de Eventos](monitoring-stream-diagnostic-logs-to-event-hubs.md)
