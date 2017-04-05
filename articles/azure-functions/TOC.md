@@ -21,13 +21,12 @@
 #### [Enlaces de HTTP e webhook](functions-bindings-http-webhook.md)
 #### [Enlaces de Aplicações Móveis](functions-bindings-mobile-apps.md)
 #### [Vínculo de saída do Hub de notificação](functions-bindings-notification-hubs.md)
-#### [Acionadores e enlaces do Service Bus para filas e tópicos](functions-bindings-service-bus.md)
+#### [Enlaces do Service Bus](functions-bindings-service-bus.md)
 #### [Enlaces do SendGrid](functions-bindings-sendgrid.md)
 #### Enlaces de armazenamento
 ##### [Enlaces de blobs](functions-bindings-storage-blob.md)
 ##### [Enlaces de filas](functions-bindings-storage-queue.md)
 ##### [Enlaces de tabelas](functions-bindings-storage-table.md)
-##### [Enlaces do SendGrid](functions-bindings-sendgrid.md)
 #### [Acionador de temporizador](functions-bindings-timer.md)
 #### [Enlace de saída do Twilio](functions-bindings-twilio.md)
 ### [Criar uma função de aplicação a partir do portal do Azure](functions-create-function-app-portal.md) 
@@ -35,6 +34,8 @@
 ### [Desenvolver e depurar localmente](functions-run-local.md)
 ### [Best Practices for Azure Functions (Melhores Práticas para as Funções do Azure)](functions-best-practices.md)
 ### [Utilize as Funções do Azure para efetuar uma tarefa agendada de limpeza](functions-scenario-database-table-cleanup.md)
+### [Criar uma definição de OpenAPI (pré-visualização)](functions-api-definition-getting-started.md)
+#### [OpenAPI 2.0 na referência das Funções](functions-api-definition.md)
 
 ## Gerir
 ### [Configurar definições para uma aplicação de função](functions-how-to-use-azure-function-app-settings.md)

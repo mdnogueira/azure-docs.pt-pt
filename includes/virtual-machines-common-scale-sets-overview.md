@@ -23,7 +23,7 @@ Para aumentar ou reduzir o número de máquinas virtuais num conjunto de dimensi
 
 Se estiver a reimplementar um modelo para alterar a capacidade, pode definir um modelo muito mais pequeno que inclua apenas o SKU e a capacidade atualizada. Um exemplo disto é mostrado aqui: [https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-vmss-scale-in-or-out/azuredeploy.json](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-vmss-linux-nat/azuredeploy.json).
 
-Para percorrer os passos que criam um conjunto de dimensionamento que se dimensiona automaticamente, veja [Automatically Scale Machines in a Virtual Machine Scale Set (Dimensionar Automaticamente Máquinas num Conjunto de Dimensionamento de Máquinas Virtuais)](../articles/virtual-machines/virtual-machines-windows-vmss-powershell-creating.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
+Para percorrer os passos que criam um conjunto de dimensionamento que se dimensiona automaticamente, veja [Automatically Scale Machines in a Virtual Machine Scale Set (Dimensionar Automaticamente Máquinas num Conjunto de Dimensionamento de Máquinas Virtuais)](../articles/virtual-machines/windows/vmss-powershell-creating.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 
 ## <a name="monitoring-your-vm-scale-set"></a>Monitorizar o conjunto de dimensionamento de VMs
 Recomenda-se atualmente que utilize o [Explorador de Recursos do Azure](https://resources.azure.com) para ver conjuntos de dimensionamento de VMs. Os conjuntos de dimensionamento de VMs são um recurso de Microsoft.Compute, pelo que os pode ver a partir deste site, ao expandir as ligações seguintes:
@@ -115,9 +115,4 @@ Esta secção lista alguns cenários comuns de conjuntos de dimensionamento de V
 **P.** Os conjuntos de dimensionamento de VMs funcionam com os conjuntos de disponibilidade do Azure?
 
 **R.** Sim. Um conjunto de dimensionamento de VMs é um conjunto de disponibilidade implícito com três FDs e cinco UDs. Não tem de configurar nada em virtualMachineProfile. Em versões futuras, é provável que os conjuntos de dimensionamento de VMs abranjam vários inquilinos, mas, por agora, são um único conjunto de disponibilidade.
-
-
-
-<!--HONumber=Jan17_HO5-->
-
 

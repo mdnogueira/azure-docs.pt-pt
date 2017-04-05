@@ -81,14 +81,14 @@ No Azure, as VMs são criadas a partir de uma imagem. Normalmente, as imagens s�
 
 Ao criar uma VM a partir de uma imagem no Azure Marketplace, na realidade está a trabalhar com modelos. Os modelos do Azure Resource Manager são ficheiros declarativos JavaScript Object Notation (JSON) que podem ser utilizados para criar ambientes de aplicação complexos, incluindo VMs, armazenamento, redes virtuais, etc. Pode ler mais sobre como utilizar [modelos do Azure Resource Manager](../articles/azure-resource-manager/resource-group-overview.md), incluindo como [criar os seus próprios modelos](../articles/resource-group-authoring-templates.md).
 
-Também pode criar imagens personalizadas e carregá-las com a [CLI do Azure](../articles/virtual-machines/virtual-machines-linux-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) ou o [Azure PowerShell](../articles/virtual-machines/virtual-machines-windows-upload-image.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) para criar rapidamente VMs personalizadas para os seus requisitos específicos de compilação.
+Também pode criar imagens personalizadas e carregá-las com a [CLI do Azure](../articles/virtual-machines/linux/upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) ou o [Azure PowerShell](../articles/virtual-machines/windows/upload-image.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) para criar rapidamente VMs personalizadas para os seus requisitos específicos de compilação.
 
 ## <a name="availability-sets"></a>Conjuntos de disponibilidade
 Um conjunto de disponibilidade é um agrupamento lógico de VMs que permite ao Azure compreender a forma como a aplicação é criada, para fornecer redundância e disponibilidade. É recomendado que sejam criadas duas ou mais VMs dentro de um conjunto de disponibilidade, para fornecer uma aplicação de elevada disponibilidade e para cumprir [99,95% do SLA do Azure](https://azure.microsoft.com/support/legal/sla/virtual-machines/). Quando uma única VM estiver a utilizar o [Armazenamento Premium do Azure](../articles/storage/storage-premium-storage.md), o SLA do Azure aplica-se para eventos de manutenção não planeada. Um conjunto de disponibilidade é composto por dois agrupamentos adicionais que protegem contra falhas de hardware e que permitem que as atualizações sejam aplicadas de forma segura - domínios de falha (FDs) e domínios de atualização (UDs).
 
 ![Desenho conceptual da configuração do domínio de falha e do domínio de atualização](./media/virtual-machines-common-regions-and-availability/ud-fd-configuration.png)
 
-Pode ler mais sobre como gerir a disponibilidade de [VMs do Linux](../articles/virtual-machines/virtual-machines-linux-manage-availability.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) ou [VMs do Windows](../articles/virtual-machines/virtual-machines-linux-manage-availability.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+Pode ler mais sobre como gerir a disponibilidade de [VMs do Linux](../articles/virtual-machines/linux/manage-availability.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) ou [VMs do Windows](../articles/virtual-machines/linux/manage-availability.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
 ### <a name="fault-domains"></a>Domínios de falha
 Um domínio de falha é um grupo lógico de hardware subjacente que partilha a mesma origem de energia e o mesmo comutador de rede física, semelhante a uma estrutura dentro de um datacenter no local. À medida que cria VMs num conjunto de disponibilidade, a plataforma Azure distribui automaticamente as suas VMs por estes domínios de falha. Esta abordagem limita o impacto de potenciais falhas de hardware físico, indisponibilidade de rede ou falhas de energia.
@@ -101,9 +101,4 @@ Um domínio de atualização é um grupo lógico de hardware subjacente que pode
 
 ## <a name="next-steps"></a>Passos seguintes
 Pode agora começar a utilizar estas funcionalidades de redundância e disponibilidade para criar o seu ambiente do Azure. Para informações relativas a melhores práticas, veja [Melhores Práticas de Disponibilidade do Azure](../articles/best-practices-availability-checklist.md).
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 

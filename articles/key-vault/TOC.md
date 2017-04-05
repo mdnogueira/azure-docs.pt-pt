@@ -16,7 +16,7 @@
 ### [Migrar para o NET 2.0](key-vault-dotnet2api-release-notes.md)
 
 ## Gerir
-### [Registo do Cofre de Chaves do Azure](key-vault-logging.md)
+### [Registo do Azure Key Vault](key-vault-logging.md)
 ### [Acesso por trás de firewalls](key-vault-access-behind-firewall.md)
 ### [Alterar ID do inquilino](key-vault-subscription-move-fix.md)
 ### [Disponibilidade e redundância](key-vault-disaster-recovery-guidance.md)
@@ -24,7 +24,8 @@
 
 ## Automatizar
 ### [Automatização do Azure](automation-manage-key-vault.md)
-### [Criar e Gerir com a CLI](key-vault-manage-with-cli.md)
+### [Criar e gerir com a CLI](key-vault-manage-with-cli.md)
+### [Criar e gerir com a CLI 2.0](key-vault-manage-with-cli2.md)
 
 # Referência
 ## [PowerShell](/powershell/resourcemanager/azurerm.keyvault/v2.3.0/azurerm.keyvault)

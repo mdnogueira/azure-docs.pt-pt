@@ -17,9 +17,9 @@ ms.topic: get-started-article
 ms.date: 3/10/2017
 ms.author: markgal;giridham;arunak;trinadhk;
 translationtype: Human Translation
-ms.sourcegitcommit: c1cd1450d5921cf51f720017b746ff9498e85537
-ms.openlocfilehash: 463e2a8af1fd319b396c6a769896344cac5f9f32
-ms.lasthandoff: 03/14/2017
+ms.sourcegitcommit: eeb56316b337c90cc83455be11917674eba898a3
+ms.openlocfilehash: 87d500d886feb2dbd61d15d5a980ab2c4018c2f2
+ms.lasthandoff: 04/03/2017
 
 
 ---
@@ -213,7 +213,7 @@ O Azure Backup suporta a lista seguinte de sistemas operativos para criar cópia
 
 **Para cópias de segurança de VMs do Azure:**
 
-* **Linux**: o Azure Backup suporta [uma lista de distribuições apoiadas pelo Azure](../virtual-machines/virtual-machines-linux-endorsed-distros.md), exceto Core OS Linux.  Outras distribuições “Bring-Your-Own-Linux” poderão também funcionar, desde que o agente de VM esteja disponível na máquina virtual e haja suporte para Python.
+* **Linux**: o Azure Backup suporta [uma lista de distribuições apoiadas pelo Azure](../virtual-machines/linux/endorsed-distros.md), exceto Core OS Linux.  Outras distribuições “Bring-Your-Own-Linux” poderão também funcionar, desde que o agente de VM esteja disponível na máquina virtual e haja suporte para Python.
 * **Windows Server**: não são suportadas as versões mais antigas do que o Windows Server 2008 R2.
 
 
@@ -222,8 +222,8 @@ Não existe limite relativamente à quantidade de dados para os quais podem ser 
 
 | S.No | Sistema operativo | Tamanho máximo da origem de dados |
 |:---:|:--- |:--- |
-| 1 |Windows Server 2012 ou posterior |54&400; GB |
-| 2 |Windows 8 ou posterior |54&400; GB |
+| 1 |Windows Server 2012 ou posterior |54 400 GB |
+| 2 |Windows 8 ou posterior |54 400 GB |
 | 3 |Windows Server 2008, Windows Server 2008 R2 |1700 GB |
 | 4 |Windows 7 |1700 GB |
 

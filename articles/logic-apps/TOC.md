@@ -16,9 +16,9 @@
 ### [Adicionar código personalizado com as Funções do Azure](logic-apps-azure-functions.md)
 ### [Ciclos, âmbitos e divisões de dados](logic-apps-loops-and-scopes.md)
 ### [Criar definições de aplicação lógica](logic-apps-author-definitions.md)
+### [Chamar, acionar ou aninhar aplicações lógicas](logic-apps-http-endpoint.md)
 ### [Criar APIs personalizadas para aplicações lógicas](logic-apps-create-api-app.md)
 ### [Chamar APIs personalizadas para aplicações lógicas](logic-apps-custom-hosted-api.md)
-### [Chamar pontos finais da aplicação lógica como acionadores](logic-apps-http-endpoint.md)
 ### [Lidar com erros e exceções](logic-apps-exception-handling.md)
 ### [Lidar com tipos de conteúdo](logic-apps-content-type.md)
 ### [Proteger as suas aplicações lógicas](logic-apps-securing-a-logic-app.md)
@@ -47,6 +47,7 @@
 ### [Integração da empresa de X12](logic-apps-enterprise-integration-x12.md)
 ### [Codificação de X12](logic-apps-enterprise-integration-x12-encode.md)
 ### [Descodificação de X12](logic-apps-enterprise-integration-x12-decode.md)
+### [Recuperação após desastre](logic-apps-enterprise-integration-b2b-business-continuity.md)
 
 ## Acesso aos dados no local
 ### [Ligar aos dados no local](logic-apps-gateway-connection.md)
@@ -69,6 +70,7 @@
 
 ## Exemplos, cenários e instruções
 ### [Descrição geral](logic-apps-examples-and-scenarios.md)
+### [Criar um dashboard de rede social sem servidor](logic-apps-scenario-social-serverless.md)
 ### [Chamar aplicações lógicas com Funções do Azure](logic-apps-scenario-function-sb-trigger.md)
 ### [Adicionar processamento de exceções e erros](logic-apps-scenario-error-and-exception-handling.md)
 ### [Processamento B2B](logic-apps-enterprise-integration-b2b.md)

@@ -16,8 +16,9 @@ ms.workload: infrastructure-services
 ms.date: 04/27/2016
 ms.author: jdial
 translationtype: Human Translation
-ms.sourcegitcommit: 3de0b167d0ad32de17093caf7e66a6d08f5c1c61
-ms.openlocfilehash: 762b048056752abd24328433ceb57de492dbf884
+ms.sourcegitcommit: 197ebd6e37066cb4463d540284ec3f3b074d95e1
+ms.openlocfilehash: 0506de98119576aae8f55cc6067f0bee95334c87
+ms.lasthandoff: 03/31/2017
 
 
 ---
@@ -71,7 +72,7 @@ Pode especificar uma etiqueta de nome de domínio DNS par um recurso IP público
 >
 
 ### <a name="virtual-machines"></a>Máquinas virtuais
-Pode associar um endereço IP público a uma VM do [Windows](../virtual-machines/virtual-machines-windows-about.md) ou do [Linux](../virtual-machines/virtual-machines-linux-about.md) ao atribuí-la para a respetiva **interface de rede**. No caso de VMs com várias interfaces de rede, pode atribuí-lo à interface de rede *primária* apenas. Pode atribuir um endereço IP público dinâmico ou estático a uma VM.
+Pode associar um endereço IP público a uma VM do [Windows](../virtual-machines/windows/about.md) ou do [Linux](../virtual-machines/virtual-machines-linux-about.md) ao atribuí-la para a respetiva **interface de rede**. No caso de VMs com várias interfaces de rede, pode atribuí-lo à interface de rede *primária* apenas. Pode atribuir um endereço IP público dinâmico ou estático a uma VM.
 
 ### <a name="internet-facing-load-balancers"></a>Balanceadores de carga com acesso à Internet
 Pode associar um endereço IP público a um [Balanceador de Carga do Azure](../load-balancer/load-balancer-overview.md) ao atribuí-lo à configuração do **front-end** do balanceador. Este endereço IP serve como um endereço IP virtual (VIP) com balanceamento de carga. Pode atribuir um endereço IP público dinâmico ou estático a um front-end de balanceador de carga. Também pode atribuir múltiplos endereços IP públicos a um front-end de balanceador de carga, que permite cenários de [vários VIPs](../load-balancer/load-balancer-multivip.md), como um ambiente multi-inquilinos com Web sites baseados em SSL.
@@ -115,7 +116,7 @@ Geralmente, os endereços IP privados estáticos são utilizados para:
 * Recursos acedidos por outros recursos/aplicações através de um endereço IP.
 
 ### <a name="virtual-machines"></a>Máquinas virtuais
-É atribuído um endereço IP privado à **interface de rede** de uma VM do [Windows](../virtual-machines/virtual-machines-windows-about.md) ou do [Linux](../virtual-machines/virtual-machines-linux-about.md). No caso de VMs de várias interfaces de rede, é atribuído um endereço IP privado a cada interface. Pode especificar o método de alocação como dinâmico ou estático para as interfaces de rede.
+É atribuído um endereço IP privado à **interface de rede** de uma VM do [Windows](../virtual-machines/windows/about.md) ou do [Linux](../virtual-machines/virtual-machines-linux-about.md). No caso de VMs de várias interfaces de rede, é atribuído um endereço IP privado a cada interface. Pode especificar o método de alocação como dinâmico ou estático para as interfaces de rede.
 
 #### <a name="internal-dns-hostname-resolution-for-vms"></a>Resolução de nomes de anfitrião DNS interna (para VMs)
 Todas as VMs do Azure são configuradas com [servidores DNS geridos pelo Azure](virtual-networks-name-resolution-for-vms-and-role-instances.md#azure-provided-name-resolution) por predefinição, a não ser que configure explicitamente servidores DNS personalizados. Estes servidores DNS fornecem resolução de nomes interna para as VMs que residam na mesma VNet.
@@ -146,9 +147,4 @@ Os endereços IP públicos podem ter custos nominais. Para saber mais sobre os p
 * [Deploy a VM with a static public IP using the Azure portal (Implementar uma VM com IP público estático através do portal do Azure)](virtual-network-deploy-static-pip-arm-portal.md)
 * [Deploy a VM with a static public IP using a template (Implementar uma VM com um IP estático público através de um modelo)](virtual-network-deploy-static-pip-arm-template.md)
 * [Deploy a VM with a static private IP address using the Azure portal (Implementar uma VM com um endereço IP privado estático através do portal do Azure)](virtual-networks-static-private-ip-arm-pportal.md)
-
-
-
-<!--HONumber=Jan17_HO5-->
-
 

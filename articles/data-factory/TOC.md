@@ -25,10 +25,11 @@
 
 # Procedimento
 ## Mover Dados
+### [Descrição Geral da Atividade de Cópia](data-factory-data-movement-activities.md)
 ### [Assistente de Cópia do Data Factory](data-factory-azure-copy-wizard.md)
 #### [Carregar 1 TB em 15 minutos](data-factory-load-sql-data-warehouse.md)
-### [Atividade de Cópia](data-factory-data-movement-activities.md)
-#### [Guia de Desempenho e Otimização](data-factory-copy-activity-performance.md)
+### [Guia de desempenho e otimização](data-factory-copy-activity-performance.md)
+### Conectores
 #### [Amazon Redshift](data-factory-amazon-redshift-connector.md)
 #### [Amazon S3](data-factory-amazon-simple-storage-service-connector.md)
 #### [Armazenamento de Blobs do Azure](data-factory-azure-blob-connector.md)
@@ -52,16 +53,14 @@
 #### [PostgreSQL](data-factory-onprem-postgresql-connector.md)
 #### [Salesforce](data-factory-salesforce-connector.md)
 #### [SAP Business Warehouse](data-factory-sap-business-warehouse-connector.md)
-#### [SFTP](data-factory-sftp-connector.md)
 #### [SAP HANA](data-factory-sap-hana-connector.md)
+#### [SFTP](data-factory-sftp-connector.md)
 #### [SQL Server](data-factory-sqlserver-connector.md)
 #### [Sybase](data-factory-onprem-sybase-connector.md)
 #### [Teradata](data-factory-onprem-teradata-connector.md)
 #### [Tabela Web](data-factory-web-table-connector.md)
 ### [Data Management Gateway](data-factory-data-management-gateway.md)
 ### [Mover dados entre o local e a cloud](data-factory-move-data-between-onprem-and-cloud.md)
-### [Mapear colunas do conjunto de dados de entrada e de saída](data-factory-map-columns.md)
-### [Formatos de ficheiro e de compressão suportados](data-factory-supported-file-and-compression-formats.md)
 
 ## [Transformar Dados](data-factory-data-transformation-activities.md)
 ### [Atividade Hive do HDInsight](data-factory-hive-activity.md)
@@ -100,9 +99,9 @@
 ### [Recomendações do Produto](data-factory-product-reco-usecase.md)
 ### [Criação de Perfis de Cliente](data-factory-customer-profiling-usecase.md)
 ### [Processar grandes conjuntos de dados com o Data Factory e o Batch](data-factory-data-processing-using-batch.md)
-## [Atualizações de serviço](https://azure.microsoft.com/en-us/updates/?product=data-factory)
+## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=data-factory)
 ## [Preços](https://azure.microsoft.com/pricing/details/data-factory/)
-## [Fórum do MSDN](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureDataFactory)
+## [Fórum do MSDN](https://social.msdn.microsoft.com/Forums/home?forum=AzureDataFactory)
 ## [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-data-factory)
 ## [Vídeos](https://azure.microsoft.com/documentation/videos/index/?services=data-factory)
 ## [Pedir uma funcionalidade](https://feedback.azure.com/forums/270578-azure-data-factory)

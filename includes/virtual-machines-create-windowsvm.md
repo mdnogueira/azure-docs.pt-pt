@@ -16,7 +16,7 @@ O painel Noções Básicas solicita as informações administrativas para a máq
 
 2. Introduza um **Nome de utilizador** e uma **Palavra-passe** forte que são utilizados para criar uma conta local na VM. A conta local é utilizada para iniciar sessão e gerir a VM. No exemplo, _azureuser_ é o nome de utilizador.
 
- A palavra-passe tem de ter entre 8 e 123 carateres e cumprir três dos quatro requisitos de complexidade seguintes: um caráter em letra minúscula, um caráter em letra maiúscula, um número e um caráter especial. Saiba mais sobre os [requisitos de nomes de utilizador e palavras-passe](../articles/virtual-machines/virtual-machines-windows-faq.md).
+ A palavra-passe tem de ter entre 8 e 123 carateres e cumprir três dos quatro requisitos de complexidade seguintes: um caráter em letra minúscula, um caráter em letra maiúscula, um número e um caráter especial. Saiba mais sobre os [requisitos de nomes de utilizador e palavras-passe](../articles/virtual-machines/windows/faq.md).
 
 3. A **Subscrição** é opcional. Uma definição comum é "Pay As You Go".
 
