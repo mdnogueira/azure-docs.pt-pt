@@ -15,8 +15,9 @@ ms.workload: infrastructure-services
 ms.date: 10/17/2016
 ms.author: narayan
 translationtype: Human Translation
-ms.sourcegitcommit: 15afcad97941fc595478e36e826a73831f40475e
-ms.openlocfilehash: eb05b504c5cf13cd852a5e01cc3bec79fd20d547
+ms.sourcegitcommit: eeb56316b337c90cc83455be11917674eba898a3
+ms.openlocfilehash: 6fbcdcf77f46a3c643e8fedc1d112588cbd7befc
+ms.lasthandoff: 04/03/2017
 
 
 ---
@@ -36,7 +37,7 @@ Requisitos e aspetos fundamentais da VNet peering:
 * O VNet peering é feito entre duas VNets, mas não existe nenhuma relação transitiva derivada entre peerings. Por exemplo, se a VNetA e a VNetB estiverem no mesmo peer e esta última e a VNetC também, a VNetA e a VNetC *não* estão no mesmo peer.
 * Pode configurar o peering em VNets que existam em duas subscrições diferentes, desde que um utilizador com privilégios em ambas as subscrições o autorize e que essas subscrições estejam associadas ao mesmo inquilino do Active Directory.
 * O peering pode ser configurado nas VNets se ambas forem criadas com o modelo de implementação Resource Manager ou se uma for criada com este modelo e a outra com o modelo de implementação clássica. Contudo, não é possível configurar o peering entre duas VNets criadas através do modelo de implementação clássica. Ao configurar o peering entre VNets criadas com modelos de implementação diferentes, estas têm de estar na *mesma* subscrição. A capacidade de configurar o peering entre VNets criadas com modelos de implementação diferentes e que estejam em subscrições *diferentes* está na versão de **pré-visualização**. Leia o artigo [Create a virtual network peering using Powershell (Criar um peering de rede virtual com o PowerShell)](virtual-networks-create-vnetpeering-arm-ps.md) para obter mais detalhes.
-* Embora a comunicação entre VMs em VNets no modo de peering não tenha restrições de largura de banda adicionais, existe uma largura de banda de rede máxima, dependendo do tamanho das VMs que ainda se aplicar. Para saber mais sobre a largura de banda de rede máxima para os diferentes tamanhos de VMs, leia os artigos sobre os tamanhos de VMs do [Windows](../virtual-machines/virtual-machines-windows-sizes.md) ou do [Linux](../virtual-machines/virtual-machines-linux-sizes.md).
+* Embora a comunicação entre VMs em VNets no modo de peering não tenha restrições de largura de banda adicionais, existe uma largura de banda de rede máxima, dependendo do tamanho das VMs que ainda se aplicar. Para saber mais sobre a largura de banda de rede máxima para os diferentes tamanhos de VMs, leia os artigos sobre os tamanhos de VMs do [Windows](../virtual-machines/windows/sizes.md) ou do [Linux](../virtual-machines/linux/sizes.md).
 
 ![VNet peering básico](./media/virtual-networks-peering-overview/figure01.png)
 
@@ -84,15 +85,10 @@ Existem limites em relação ao número de peerings que são permitidos para uma
 ## <a name="pricing"></a>Preços
 Existe uma cobrança nominal para o tráfego de entrada e de saída que utilize um VNet peering. Para obter mais informações, consulte a [página de preços](https://azure.microsoft.com/pricing/details/virtual-network).
 
-## <a name="a-namenext-stepsanext-steps"></a><a name="next-steps"></a>Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 Saiba como criar um peering de VNets com:
 
 * [O portal do Azure](virtual-networks-create-vnetpeering-arm-portal.md)
 * [O Azure PowerShell](virtual-networks-create-vnetpeering-arm-ps.md)
 * [Um Modelo do Azure Resource Manager](virtual-networks-create-vnetpeering-arm-template-click.md)
-
-
-
-<!--HONumber=Feb17_HO1-->
-
 

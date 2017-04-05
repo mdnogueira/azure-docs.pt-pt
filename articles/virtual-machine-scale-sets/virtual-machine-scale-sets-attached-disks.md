@@ -16,8 +16,9 @@ ms.topic: get-started-article
 ms.date: 2/6/2017
 ms.author: guybo
 translationtype: Human Translation
-ms.sourcegitcommit: 2939de432fcb5dbf4a7316343c3c6ae102b579e8
-ms.openlocfilehash: 5b34969f9c854775587d402acbedee12f236ab7a
+ms.sourcegitcommit: 197ebd6e37066cb4463d540284ec3f3b074d95e1
+ms.openlocfilehash: 91d36d5321f455a2af31093fa460ddf6640942d4
+ms.lasthandoff: 03/31/2017
 
 
 ---
@@ -62,7 +63,7 @@ Pode adicionar um disco de dados a um conjunto de dimensionamento de VM com o co
 az vmss disk attach -g dsktest -n dskvmss --size-gb 50 --lun 3
 ```
 > [!NOTE]
-> Diferentes tamanhos de VM têm limites diferentes relativamente ao número de unidades anexadas que suportam. Verifique as [características do tamanho da máquina virtual](../virtual-machines/virtual-machines-windows-sizes.md) antes de adicionar um novo disco.
+> Diferentes tamanhos de VM têm limites diferentes relativamente ao número de unidades anexadas que suportam. Verifique as [características do tamanho da máquina virtual](../virtual-machines/windows/sizes.md) antes de adicionar um novo disco.
 
 Também pode adicionar um disco ao criar uma nova entrada na propriedade _dataDisks_ no _storageProfile_ de uma definição de conjunto de dimensionamento e ao aplicar essa alteração. Para testar isto, localize a definição de um conjunto de dimensionamento existente no [Explorador de Recursos do Azure](https://resources.azure.com/). Selecione _Editar_ e adicione um novo disco à lista de discos de dados. Por exemplo, com o exemplo acima:
 ```json
@@ -106,10 +107,5 @@ Na implementação inicial do suporte para discos anexados para conjuntos de dim
 
 O suporte do portal do Azure para discos de dados anexados em conjuntos de dimensionamento é limitado inicialmente. Dependendo das suas necessidades, pode utilizar modelos do Azure, a CLI, o PowerShell, SDKs e a API REST para gerir discos anexados.
 
-
-
-
-
-<!--HONumber=Feb17_HO2-->
 
 

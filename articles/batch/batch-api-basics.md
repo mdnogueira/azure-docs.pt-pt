@@ -16,9 +16,9 @@ ms.date: 03/08/2017
 ms.author: tamram
 ms.custom: H1Hack27Feb2017
 translationtype: Human Translation
-ms.sourcegitcommit: 2c9877f84873c825f96b62b492f49d1733e6c64e
-ms.openlocfilehash: 1ebe72255697af16fc28191a102a7c0487968eda
-ms.lasthandoff: 03/15/2017
+ms.sourcegitcommit: eeb56316b337c90cc83455be11917674eba898a3
+ms.openlocfilehash: f323afdea34e973f3ecdd54022f04b3f0d86afb1
+ms.lasthandoff: 04/03/2017
 
 
 ---
@@ -107,7 +107,7 @@ Quando cria um conjunto, pode especificar os seguintes atributos:
 
     Os tamanhos dos nós de computação de **Configuração de Serviços Cloud** estão listados em [Sizes for Cloud Services (Tamanhos dos Serviços Cloud)](../cloud-services/cloud-services-sizes-specs.md). O Batch suporta todos os tamanhos de Serviços Cloud, exceto `ExtraSmall`, `STANDARD_A1_V2`, e `STANDARD_A2_V2`.
 
-    Os tamanhos dos nós de computação de **Configuração de Máquina Virtual** estão listados em [Sizes for virtual machines in Azure (Tamanhos das máquinas virtuais no Azure)](../virtual-machines/virtual-machines-linux-sizes.md) (Linux) e em [Sizes for virtual machines in Azure (Tamanhos das máquinas virtuais no Azure)](../virtual-machines/virtual-machines-windows-sizes.md) (Windows). O Batch suporta todos os tamanhos de VM do Azure, exceto `STANDARD_A0` e os do armazenamento premium (séries `STANDARD_GS`, `STANDARD_DS` e `STANDARD_DSV2`).
+    Os tamanhos dos nós de computação de **Configuração de Máquina Virtual** estão listados em [Sizes for virtual machines in Azure (Tamanhos das máquinas virtuais no Azure)](../virtual-machines/linux/sizes.md) (Linux) e em [Sizes for virtual machines in Azure (Tamanhos das máquinas virtuais no Azure)](../virtual-machines/windows/sizes.md) (Windows). O Batch suporta todos os tamanhos de VM do Azure, exceto `STANDARD_A0` e os do armazenamento premium (séries `STANDARD_GS`, `STANDARD_DS` e `STANDARD_DSV2`).
 
     Ao selecionar um tamanho de nó de computação, considere as características e os requisitos das aplicações que vai executar nos nós. Alguns aspetos, como se a aplicação tem vários threads e a quantidade de memória que consome, podem ajudar a determinar o tamanho de nó mais adequado e económico. Normalmente, o tamanho dos nós é selecionado ao partir do princípio de que será executada uma tarefa de cada vez num nó. Contudo, é possível que várias tarefas (e, consequentemente, múltiplas instâncias da aplicação) sejam [executadas em paralelo](batch-parallel-node-tasks.md) nos nós de computação durante a execução do trabalho. Neste caso, é comum escolher um tamanho de nó maior para acomodar a maior necessidade de execução de tarefas em paralelo. Veja [Task scheduling policy (Política de agendamento de tarefas)](#task-scheduling-policy) para obter mais informações.
 

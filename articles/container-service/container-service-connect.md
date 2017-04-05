@@ -18,9 +18,9 @@ ms.date: 03/01/2017
 ms.author: rogardle
 ms.custom: H1Hack27Feb2017
 translationtype: Human Translation
-ms.sourcegitcommit: 503f5151047870aaf87e9bb7ebf2c7e4afa27b83
-ms.openlocfilehash: 25a35912b72f7f44b83ccd49f298b44665318418
-ms.lasthandoff: 03/28/2017
+ms.sourcegitcommit: eeb56316b337c90cc83455be11917674eba898a3
+ms.openlocfilehash: 3dfa2c56dd6d3e0fe7757995d284cebe172eabc4
+ms.lasthandoff: 04/03/2017
 
 
 ---
@@ -35,7 +35,7 @@ Em DC/OS e Docker Swarm, tem de criar um túnel de secure shell (SSH) para um si
 ## <a name="prerequisites"></a>Pré-requisitos
 
 * Um cluster do Kubernetes, de DC/OS ou do Swarm [implementado no Azure Container Service](container-service-deployment.md).
-* Um ficheiro de chave privada RSA SSH, que corresponda à chave pública adicionada ao cluster durante a implementação. Estes comandos partem do princípio de que a chave pública SSH está em `$HOME/.ssh/id_rsa` no seu computador. Veja estas instruções para [OS X e Linux](../virtual-machines/virtual-machines-linux-mac-create-ssh-keys.md) ou [Windows](../virtual-machines/virtual-machines-linux-ssh-from-windows.md), para obter mais informações. Se a ligação SSH não estiver a funcionar, poderá ter de [repor as chaves SSH](../virtual-machines/virtual-machines-linux-troubleshoot-ssh-connection.md).
+* Um ficheiro de chave privada RSA SSH, que corresponda à chave pública adicionada ao cluster durante a implementação. Estes comandos partem do princípio de que a chave pública SSH está em `$HOME/.ssh/id_rsa` no seu computador. Veja estas instruções para [OS X e Linux](../virtual-machines/linux/mac-create-ssh-keys.md) ou [Windows](../virtual-machines/linux/ssh-from-windows.md), para obter mais informações. Se a ligação SSH não estiver a funcionar, poderá ter de [repor as chaves SSH](../virtual-machines/linux/troubleshoot-ssh-connection.md).
 
 ## <a name="connect-to-a-kubernetes-cluster"></a>Ligar a um cluster do Kubernetes
 
