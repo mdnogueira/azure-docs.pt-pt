@@ -16,9 +16,9 @@ ms.workload: infrastructure-services
 ms.date: 02/27/2016
 ms.author: jdial
 translationtype: Human Translation
-ms.sourcegitcommit: 5e6ffbb8f1373f7170f87ad0e345a63cc20f08dd
-ms.openlocfilehash: 81c9313635f382252550a4c0dcc7a707e9f365fb
-ms.lasthandoff: 03/24/2017
+ms.sourcegitcommit: 197ebd6e37066cb4463d540284ec3f3b074d95e1
+ms.openlocfilehash: c731099cb91512f3bf0ecc2ffa5258788c90cd1b
+ms.lasthandoff: 03/31/2017
 
 
 ---
@@ -101,7 +101,7 @@ Para criar a VM do servidor Web, execute os seguintes passos:
     |**Grupo de recursos**|**Utilizar existente:** selecione *MyRG*|Embora estejamos a utilizar o mesmo grupo de recursos, tal como fizemos para a VNet, os recursos não têm de existir no mesmo grupo de recursos.|
     |**Localização**|*E.U.A. Oeste*|A localização tem de ser a mesma localização que especificou no passo 5 da secção [Criar uma rede virtual com duas sub-redes](#create-vnet) deste artigo. As VMs e as VNets às quais as sub-redes ligam têm de existir na mesma localização.|
 
-4. No painel **Escolher um tamanho**, clique em *DS1_V2 Standard* e clique em **Selecionar**. Veja o artigo [Tamanhos de VM do Windows](../virtual-machines/virtual-machines-windows-sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json) para obter uma lista de todos os tamanhos de VM do Windows suportados pelo Azure.
+4. No painel **Escolher um tamanho**, clique em *DS1_V2 Standard* e clique em **Selecionar**. Veja o artigo [Tamanhos de VM do Windows](../virtual-machines/windows/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json) para obter uma lista de todos os tamanhos de VM do Windows suportados pelo Azure.
 5. No painel **Definições**, introduza ou selecione os seguintes valores e clique em **OK**:
 
     |**Definição**|**Valor**|**Detalhes**|
@@ -111,7 +111,7 @@ Para criar a VM do servidor Web, execute os seguintes passos:
     |**Sub-rede**|Selecionar *front-end*|Pode selecionar qualquer sub-rede que exista dentro da VNet.|
     |**Endereço IP público**|Aceitar a predefinição|Um endereço IP público permite-lhe ligar à VM a partir da Internet. Para saber mais sobre endereços IP públicos, veja o artigo [Endereços IP](virtual-network-ip-addresses-overview-arm.md#public-ip-addresses).|
     |**Grupo de segurança de rede (firewall)**|Aceitar a predefinição|Clique no NSG **(novo) MyWebServer-nsg** predefinido que o portal criou, para ver as respetivas definições. No painel **Criar grupo de segurança de rede** que se abre, repare que tem uma regra de entrada que permite tráfego de TCP/3389 (RDP) de qualquer endereço IP de origem.|
-    |**Todos os outros valores**|Aceitar todas as predefinições|Para saber mais sobre as restantes definições, veja o artigo [Sobre as VMs](../virtual-machines/virtual-machines-windows-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json).|
+    |**Todos os outros valores**|Aceitar todas as predefinições|Para saber mais sobre as restantes definições, veja o artigo [Sobre as VMs](../virtual-machines/windows/overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json).|
 
     Os grupos de segurança de rede (NSG) permitem-lhe criar regras de entrada/saída para o tipo de tráfego de rede que pode circular de e para a VM. Por predefinição, todo o tráfego de entrada para a VM é negado. Pode adicionar regras de entrada adicionais para TCP/80 (HTTP) e TCP/443 (HTTPS) para um servidor Web de produção. Não existe nenhuma regra para o tráfego de saída porque, por predefinição, todo o tráfego de saída é permitido. Pode adicionar/remover regras para controlar o tráfego de acordo com as suas políticas. Leia o artigo [Grupos de segurança de rede](virtual-networks-nsg.md) para saber mais sobre os NSGs.
 
@@ -160,7 +160,7 @@ Se tiver criado uma VNet e duas VMs, o portal do Azure terá criado vários recu
 
     ![Conteúdos do grupo de recursos](./media/virtual-network-get-started-vnet-subnet/resource-group-contents.png)
 
-Para saber mais sobre VMs, discos e contas de armazenamento, veja os artigos de descrição geral [Máquina Virtual](../virtual-machines/virtual-machines-windows-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json), [Disco](../storage/storage-about-disks-and-vhds-windows.md?toc=%2fazure%2fvirtual-network%2ftoc.json), e [Conta de armazenamento](../storage/storage-introduction.md?toc=%2fazure%2fvirtual-network%2ftoc.json). Pode ver os dois NSGs predefinidos que o portal criou por si. Também pode ver que o portal criou dois recursos de interface de rede (NIC). Uma NIC permite a uma VM ligar a outros recursos através da VNet. Veja o artigo [NIC](virtual-network-network-interface.md) para saber mais sobre NICs. O portal também criou um recurso de endereço IP público. Os endereços IP públicos são uma definição para um recurso de endereço IP público. Para saber mais sobre endereços IP públicos, veja o artigo [Endereços IP](virtual-network-ip-addresses-overview-arm.md#public-ip-addresses).
+Para saber mais sobre VMs, discos e contas de armazenamento, veja os artigos de descrição geral [Máquina Virtual](../virtual-machines/windows/overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json), [Disco](../storage/storage-about-disks-and-vhds-windows.md?toc=%2fazure%2fvirtual-network%2ftoc.json), e [Conta de armazenamento](../storage/storage-introduction.md?toc=%2fazure%2fvirtual-network%2ftoc.json). Pode ver os dois NSGs predefinidos que o portal criou por si. Também pode ver que o portal criou dois recursos de interface de rede (NIC). Uma NIC permite a uma VM ligar a outros recursos através da VNet. Veja o artigo [NIC](virtual-network-network-interface.md) para saber mais sobre NICs. O portal também criou um recurso de endereço IP público. Os endereços IP públicos são uma definição para um recurso de endereço IP público. Para saber mais sobre endereços IP públicos, veja o artigo [Endereços IP](virtual-network-ip-addresses-overview-arm.md#public-ip-addresses).
 
 ## <a name="connect-to-from-vms"></a>Ligar às VMs
 
@@ -252,5 +252,5 @@ Neste exercício, criou uma VNet e duas VMs. Especificou algumas definições pe
 - [Endereços IP públicos](virtual-network-ip-addresses-overview-arm.md#public-ip-addresses)
 - [Interfaces de rede](virtual-network-network-interface.md)
 - [Grupos de segurança de rede](virtual-networks-nsg.md)
-- [Máquinas virtuais](../virtual-machines/virtual-machines-windows-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
+- [Máquinas virtuais](../virtual-machines/windows/overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
 

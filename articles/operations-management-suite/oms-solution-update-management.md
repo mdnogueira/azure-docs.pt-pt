@@ -15,9 +15,9 @@ ms.topic: get-started-article
 ms.date: 03/06/2017
 ms.author: magoedte
 translationtype: Human Translation
-ms.sourcegitcommit: d9dad6cff80c1f6ac206e7fa3184ce037900fc6b
-ms.openlocfilehash: f709fe00cce61f6766a0a56ea31b023e00c91fce
-ms.lasthandoff: 03/06/2017
+ms.sourcegitcommit: eeb56316b337c90cc83455be11917674eba898a3
+ms.openlocfilehash: 18aa17f6af7fe492f3875e1af7cb06b613f171af
+ms.lasthandoff: 04/03/2017
 
 
 ---
@@ -106,7 +106,7 @@ Depois de terem sido avaliadas as atualizações para todos os computadores Wind
 
 As atualizações são instaladas por runbooks na Automatização do Azure.  Não pode ver estes runbooks, que não requerem nenhuma configuração.  Quando é criada uma Implementação de Atualização, é criada uma agenda que inicia um runbook de atualização principal num momento especificado nos computadores incluídos.  Este runbook principal inicia um runbook subordinado em cada agente do Windows que efetua a instalação das atualizações necessárias.  
 
-Para máquinas virtuais criadas a partir de imagens de Red Hat Enterprise Linux (RHEL) a pedido disponíveis no Azure Marketplace, estão registadas para aceder à [Infraestrutura de Atualização do Red Hat (RHUI)](../virtual-machines/virtual-machines-linux-update-infrastructure-redhat.md) implementada no Azure.  Qualquer outra distribuição de Linux tem de ser atualizada a partir do repositório de ficheiros online distros, de acordo com os respetivos métodos suportados.  
+Para máquinas virtuais criadas a partir de imagens de Red Hat Enterprise Linux (RHEL) a pedido disponíveis no Azure Marketplace, estão registadas para aceder à [Infraestrutura de Atualização do Red Hat (RHUI)](../virtual-machines/linux/update-infrastructure-redhat.md) implementada no Azure.  Qualquer outra distribuição de Linux tem de ser atualizada a partir do repositório de ficheiros online distros, de acordo com os respetivos métodos suportados.  
 
 ### <a name="viewing-update-deployments"></a>Ver as implementações de atualizações
 Clique no mosaico **Implementação de Atualização** para ver a lista de implementações de atualizações existentes.  Estão agrupadas por estado – **Agendada**, **Em Execução** e **Concluída**.<br><br> ![Página de Agenda de Implementações de Atualizações](./media/oms-solution-update-management/update-updatedeployment-schedule-page.png)<br>  

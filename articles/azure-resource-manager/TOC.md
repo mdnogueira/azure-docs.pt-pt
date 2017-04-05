@@ -46,11 +46,12 @@
 ### [Considerações de segurança](best-practices-resource-manager-security.md)
 ## Definir políticas de recursos
 ### [O que são políticas de recursos?](resource-manager-policy.md)
-### [Atribuir e gerir políticas](resource-manager-policy-create-assign.md)
+### [Atribuição da política de portal](resource-manager-policy-portal.md)
+### [Atribuição da política de script](resource-manager-policy-create-assign.md)
 ### [Políticas de etiqueta de recursos](resource-manager-policy-tags.md)
 ### [Políticas de armazenamento](resource-manager-policy-storage.md)
-### [Políticas de VM do Linux](../virtual-machines/virtual-machines-linux-policy.md?toc=%2fazure%2fazure-resource-manager%2ftoc.json)
-### [Políticas de VM do Windows](../virtual-machines/virtual-machines-windows-policy.md?toc=%2fazure%2fazure-resource-manager%2ftoc.json)
+### [Políticas de VM do Linux](../virtual-machines/linux/policy.md?toc=%2fazure%2fazure-resource-manager%2ftoc.json)
+### [Políticas de VM do Windows](../virtual-machines/windows/policy.md?toc=%2fazure%2fazure-resource-manager%2ftoc.json)
 ## Auditoria e Resolução de Problemas
 ### [Resolver erros de implementação comuns](resource-manager-common-deployment-errors.md)
 ### [Ver registos de atividades](resource-group-audit.md)

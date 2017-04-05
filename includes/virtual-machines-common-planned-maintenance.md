@@ -14,7 +14,7 @@ Existem dois tipos de configuração de máquinas virtuais: várias instâncias 
 
 A configuração de várias instâncias fornece redundância entre máquinas físicas, energia e rede, e é recomendada para garantir a disponibilidade da aplicação. Todas as máquinas virtuais no conjunto de disponibilidade devem servir o mesmo fim para a aplicação.
 
-Para obter mais informações sobre como configurar máquinas virtuais para elevada disponibilidade, veja [Gerir a disponibilidade das máquinas virtuais do Windows](../articles/virtual-machines/virtual-machines-windows-manage-availability.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) ou [Gerir a disponibilidade das máquinas virtuais do Linux](../articles/virtual-machines/virtual-machines-linux-manage-availability.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+Para obter mais informações sobre como configurar máquinas virtuais para elevada disponibilidade, veja [Gerir a disponibilidade das máquinas virtuais do Windows](../articles/virtual-machines/windows/manage-availability.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) ou [Gerir a disponibilidade das máquinas virtuais do Linux](../articles/virtual-machines/linux/manage-availability.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
 Por outro lado, uma configuração de instância única é utilizada para máquinas virtuais autónomas que não são colocadas num conjunto de disponibilidade. Estas máquinas virtuais não se qualificam para o contrato de nível de serviço (SLA), que requer a implementação de duas ou mais máquinas virtuais no mesmo conjunto de disponibilidade.
 
@@ -28,7 +28,7 @@ Uma atualização de configuração de várias instâncias parte do princípio q
 A cada máquina virtual num conjunto de disponibilidade é atribuído um domínio de atualização e um domínio de falha pela plataforma Azure subjacente. Cada domínio de atualização é um grupo de máquinas virtuais que irão ser reiniciadas na mesma janela de tempo. Cada domínio de falha é um grupo de máquinas virtuais que partilham a mesma origem de energia e o mesmo comutador de rede física.
 
 
-Para obter mais informações sobre domínios de atualização e domínios de falha, veja [Configurar várias máquinas virtuais num conjunto de disponibilidade para redundância](../articles/virtual-machines/virtual-machines-windows-manage-availability.md#configure-multiple-virtual-machines-in-an-availability-set-for-redundancy).
+Para obter mais informações sobre domínios de atualização e domínios de falha, veja [Configurar várias máquinas virtuais num conjunto de disponibilidade para redundância](../articles/virtual-machines/windows/manage-availability.md#configure-multiple-virtual-machines-in-an-availability-set-for-redundancy).
 
 Para manter a disponibilidade durante uma atualização, o Azure efetua a manutenção por domínio de atualização, atualizando um domínio de cada vez. A manutenção de um domínio de atualização consiste em encerrar cada máquina virtual no domínio, aplicar a atualização às máquinas do anfitrião e, em seguida, reiniciar as máquinas virtuais. Quando tiver concluído a manutenção do domínio, o Azure repete o processo com o domínio de atualização seguinte e continua com cada domínio, até que todos estejam atualizados.
 
@@ -55,7 +55,7 @@ Depois de as atualizações de configuração de várias instâncias estarem con
 A manutenção numa configuração de instância única consiste em encerrar cada máquina virtual em execução num computador anfitrião, atualizar a máquina do anfitrião e, em seguida, reiniciar as máquinas virtuais. A manutenção requer cerca de 15 minutos de indisponibilidade. O evento de manutenção planeada é executado em todas as máquinas virtuais numa região, numa janela de manutenção única.
 
 
-Os eventos de manutenção planeada têm impacto na disponibilidade da aplicação para configurações de instância única. O Azure oferece&1; semana de notificação prévia para a manutenção planeada de máquinas virtuais em configurações de instância única.
+Os eventos de manutenção planeada têm impacto na disponibilidade da aplicação para configurações de instância única. O Azure oferece 1 semana de notificação prévia para a manutenção planeada de máquinas virtuais em configurações de instância única.
 
 ## <a name="email-notification"></a>Notificação por e-mail
 Apenas no caso de configurações de máquinas virtuais de instância única e várias instâncias, o Azure envia um alerta por e-mail da futura manutenção planeada (com uma semana de antecedência). Esta mensagem é enviada para as contas de e-mail de administrador e coadministrador da subscrição. Segue-se um exemplo deste tipo de alerta:
@@ -101,4 +101,4 @@ Consulte a tabela seguinte para pares da região atual:
 <!--Link references-->
 [Virtual Machines Manage Availability]: ../articles/virtual-machines/virtual-machines-windows-hero-tutorial.md
 
-[Understand planned versus unplanned maintenance]: ../articles/virtual-machines/virtual-machines-windows-manage-availability.md#Understand-planned-versus-unplanned-maintenance/
+[Understand planned versus unplanned maintenance]: ../articles/virtual-machines/windows/manage-availability.md#Understand-planned-versus-unplanned-maintenance/
