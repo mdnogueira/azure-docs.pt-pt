@@ -1,13 +1,14 @@
 # Descrição geral
 ## [O que é o Gateway de Aplicação?](application-gateway-introduction.md)
 ## [FAQ do Gateway de Aplicação](application-gateway-faq.md)
-## [Firewall de aplicação Web](application-gateway-webapplicationfirewall-overview.md)
+## [Firewall de aplicação Web](application-gateway-web-application-firewall-overview.md)
+### [Principais conjuntos de regras e regras](application-gateway-crs-rulegroups-rules.md)
 ## [Monitorização do estado de funcionamento](application-gateway-probe-overview.md)
 ## [Encaminhamento do URL](application-gateway-url-route-overview.md)
 ## [Multilocal](application-gateway-multi-site-overview.md)
 ## [SSL Ponto a Ponto](application-gateway-backend-ssl.md)
 ## [WebSocket](application-gateway-websocket.md)
-## [Limites do serviço](../azure-subscription-service-limits.md#application-gateway-limits?toc=%2fazure%2fapplication-gateway%2ftoc.json)
+## [Limites do serviço](../azure-subscription-service-limits.md?toc=%2fazure%2fapplication-gateway%2ftoc.json#application-gateway-limits)
 # Introdução
 ## Criar um Gateway de Aplicação
 ### Destinado ao público
@@ -23,6 +24,8 @@
 ## Configurar a firewall de aplicações Web
 ### [Portal](application-gateway-web-application-firewall-portal.md)
 ### [PowerShell](application-gateway-web-application-firewall-powershell.md)
+## Personalizar regras de firewall de aplicações Web
+### [Portal](application-gateway-customize-waf-rules-portal.md)
 ## Configurar para descarga de SSL
 ### [Portal](application-gateway-ssl-portal.md)
 ### [PowerShell](application-gateway-ssl-arm.md)
