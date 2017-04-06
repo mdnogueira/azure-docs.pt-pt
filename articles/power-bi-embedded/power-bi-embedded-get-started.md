@@ -38,7 +38,7 @@ Uma **Coleção de Área de Trabalho** é o recurso mais superior do Azure e um 
 
 Vamos guiá-lo pelos passos para criar uma **Coleção de Área de Trabalho** através do Portal do Azure.
 
-1. Abra e inicie sessão no **Portal do Azure **: [http://portal.azure.com](http://portal.azure.com).
+1. Abra e inicie sessão no **Portal do Azure**: [http://portal.azure.com](http://portal.azure.com).
 2. Clique em **+ Novo** no painel superior.
    
    ![](media/power-bi-embedded-get-started/create-workspace-1.png)
@@ -96,7 +96,7 @@ Para obter mais informações sobre como ligar a uma fonte de dados, consulte o 
 Depois de guardar o trabalho no **Power BI Desktop**, é criado um ficheiro PBIX. Este ficheiro contém o relatório. Além disso, se importar dados, o PBIX conterá o conjunto de dados completo, mas se utilizar o **DirectQuery**, o PBIX conterá apenas um esquema de conjunto de dados. Implemente o PBIX através de programação na área de trabalho utilizando a [API de Importação do Power BI](https://msdn.microsoft.com/library/mt711504.aspx).
 
 > [!NOTE]
-> O **Power BI Embedded ** inclui APIs adicionais para alterar o servidor e a base de dados para a qual o conjunto de dados está a apontar, e para definir uma credencial de conta de serviço que o conjunto de dados utilizará para ligar à base de dados. Consulte o artigo [Post SetAllConnections](https://msdn.microsoft.com/library/mt711505.aspx) e [Patch Gateway Datasource](https://msdn.microsoft.com/library/mt711498.aspx) (Correção de fonte de dados do Gateway).
+> O **Power BI Embedded** inclui APIs adicionais para alterar o servidor e a base de dados para a qual o conjunto de dados está a apontar, e para definir uma credencial de conta de serviço que o conjunto de dados utilizará para ligar à base de dados. Consulte o artigo [Post SetAllConnections](https://msdn.microsoft.com/library/mt711505.aspx) e [Patch Gateway Datasource](https://msdn.microsoft.com/library/mt711498.aspx) (Correção de fonte de dados do Gateway).
 
 ## <a name="create-power-bi-datasets-and-reports-using-apis"></a>Criar conjuntos de dados e relatórios do Power BI com APIs
 
