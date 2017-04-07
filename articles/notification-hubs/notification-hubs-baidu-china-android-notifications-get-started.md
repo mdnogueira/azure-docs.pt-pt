@@ -87,7 +87,7 @@ Quando cria um projeto Baidu Cloud Push, recebe o ID da aplicação, a chave de 
 1. Depois de ter sessão iniciada no [Portal do Baidu], clique em **更多 >>** (**mais**).
    
       ![][5]
-2. Desloque o ecrã para baixo na secção **站长与开发者服务 ** (**Serviços do Programador e Webmaster**) e clique em **百度开放云平台 ** (**Abrir plataforma do Baidu na nuvem**).
+2. Desloque o ecrã para baixo na secção **站长与开发者服务** (**Serviços do Programador e Webmaster**) e clique em **百度开放云平台** (**Abrir plataforma do Baidu na nuvem**).
    
       ![][6]
 3. Na página seguinte, clique em **开发者服务** (**Serviços do Programador**) no canto superior direito.
@@ -174,7 +174,7 @@ Verá a mensagem **保存成功!** (**Guardado com êxito!**).
 8. Adicione a propriedade **android:name** ao elemento **aplicação** em **AndroidManifest.xml**, substituindo o *nomedoprojeto* (por ex., **com.exemplo.BaiduTeste**). Certifique-se de que este nome de projeto corresponde ao que configurou na consola do Baidu.
    
         <application android:name="yourprojectname.DemoApplication"
-9. Adicione a seguinte configuração no elemento da aplicação depois do elemento de atividade ** MainActivity**, substituindo o *nomedoprojeto* (por ex., **com.exemplo.BaiduTeste**):
+9. Adicione a seguinte configuração no elemento da aplicação depois do elemento de atividade **MainActivity**, substituindo o *nomedoprojeto* (por ex., **com.exemplo.BaiduTeste**):
    
         <receiver android:name="yourprojectname.MyPushMessageReceiver">
             <intent-filter>

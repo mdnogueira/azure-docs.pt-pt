@@ -33,7 +33,7 @@ Este tutorial demonstra o cenário de difusão simples utilizando o Mobile Engag
 ## <a name="set-up-mobile-engagement-for-your-windows-universal-app"></a>Configurar o Mobile Engagement para a aplicação Universal do Windows
 [!INCLUDE [Create Mobile Engagement App in Portal](../../includes/mobile-engagement-create-app-in-portal-new.md)]
 
-## <a name="a-idconnecting-appaconnect-your-app-to-the-mobile-engagement-backend"></a><a id="connecting-app"></a>Ligar a aplicação ao back-end do Mobile Engagement
+## <a id="connecting-app"></a>Ligar a aplicação ao back-end do Mobile Engagement
 Este tutorial apresenta uma "integração básica", o conjunto mínimo necessário para recolher dados e enviar uma notificação push. É possível encontrar toda a documentação da integração na página [Integração do SDK Windows Universal do Mobile Engagement](mobile-engagement-windows-store-sdk-overview.md).
 
 Irá criar uma aplicação básica com o Visual Studio para demonstrar a integração.
@@ -42,7 +42,7 @@ Irá criar uma aplicação básica com o Visual Studio para demonstrar a integra
 Os seguintes passos assumem a utilização do Visual Studio 2015, apesar de os passos serem semelhantes em versões anteriores do Visual Studio.
 
 1. Inicie o Visual Studio e, no ecrã **Base**, selecione **Novo Projeto**.
-2. No pop-up, selecione **Windows ** -> **Universal** -> **Aplicação em Branco (Universal do Windows)**. Introduza o **Nome** da aplicação, o nome da **Solução** e, em seguida, clique em **OK**.
+2. No pop-up, selecione **Windows** -> **Universal** -> **Aplicação em Branco (Universal do Windows)**. Introduza o **Nome** da aplicação, o nome da **Solução** e, em seguida, clique em **OK**.
 
     ![][1]
 
@@ -98,7 +98,7 @@ Criou um projeto de Aplicação Universal do Windows no qual irá integrar depoi
               //... rest of the code
             }
 
-## <a name="a-idmonitoraenable-real-time-monitoring"></a><a id="monitor"></a>Ativar a monitorização em tempo real
+## <a id="monitor"></a>Ativar a monitorização em tempo real
 Para iniciar o envio de dados e garantir que os utilizadores estão ativos, terá de enviar, pelo menos, um ecrã (Atividade) para o back-end do Mobile Engagement.
 
 1. No **MainPage.xaml.cs**, adicione a seguinte instrução `using`:
@@ -120,10 +120,10 @@ Para iniciar o envio de dados e garantir que os utilizadores estão ativos, ter�
 >
 > Em **aplicações Windows 10 Universal**, utilize o método recomendado na secção “Recommended method: overload your Page classes” (“Método recomendado: sobrecarregar as classes de Página”) de [Advanced Reporting with the Windows Universal Apps Engagement SDK (Relatórios Avançados com o SDK Engagement das Aplicações Universais do Windows)](mobile-engagement-windows-store-advanced-reporting.md) em vez do método mencionado acima.
 
-## <a name="a-idmonitoraconnect-app-with-real-time-monitoring"></a><a id="monitor"></a>Ligar a aplicação com a monitorização em tempo real
+## <a id="monitor"></a>Ligar a aplicação com a monitorização em tempo real
 [!INCLUDE [Connect app with real-time monitoring](../../includes/mobile-engagement-connect-app-with-monitor.md)]
 
-## <a name="a-idintegrate-pushaenable-push-notifications-and-in-app-messaging"></a><a id="integrate-push"></a>Ativar as notificações push e mensagens na aplicação
+## <a id="integrate-push"></a>Ativar as notificações push e mensagens na aplicação
 O Mobile Engagement permite interagir e alcançar os seus utilizadores com notificações push e mensagens na aplicação no contexto das campanhas. Este módulo é designado ALCANCE no portal do Mobile Engagement.
 As secções seguintes configuram a aplicação para as receber.
 
@@ -167,7 +167,7 @@ Está pronto para enviar um alerta. A seguir, vamos confirmar que realizou corre
 
     ![][7]
 
-## <a name="a-idsendasend-a-notification-to-your-app"></a><a id="send"></a>Enviar uma notificação à aplicação
+## <a id="send"></a>Enviar uma notificação à aplicação
 [!INCLUDE [Create Windows Push campaign](../../includes/mobile-engagement-windows-push-campaign.md)]
 
 Se a aplicação estiver a ser executada, verá uma notificação na aplicação. Caso contrário, se a aplicação for fechada, verá uma notificação de alerta.
