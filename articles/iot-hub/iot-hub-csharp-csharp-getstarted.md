@@ -196,7 +196,7 @@ Nesta secção, irá criar uma aplicação de consola do .NET que simula um disp
                 await deviceClient.SendEventAsync(message);
                 Console.WriteLine("{0} > Sending message: {1}", DateTime.Now, messageString);
    
-                Task.Delay(1000).Wait();
+                await Task.Delay(1000);
             }
         }
    
