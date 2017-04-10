@@ -9,23 +9,25 @@ manager: jhubbard
 editor: 
 ms.assetid: aeb8c4c3-6ae2-45f7-b2c3-fa13e3752eed
 ms.service: sql-database
-ms.custom: quick start
+ms.custom: quick start create
 ms.workload: data-management
 ms.tgt_pltfrm: portal
 ms.devlang: na
 ms.topic: hero-article
-ms.date: 03/13/2017
+ms.date: 04/03/2017
 ms.author: carlrab
 translationtype: Human Translation
-ms.sourcegitcommit: 07635b0eb4650f0c30898ea1600697dacb33477c
-ms.openlocfilehash: be5839e04fae457b889db11dffe56f31afe723a5
-ms.lasthandoff: 03/28/2017
+ms.sourcegitcommit: 303cb9950f46916fbdd58762acd1608c925c1328
+ms.openlocfilehash: c0c6cdf8aa48568b7a4468dd87b2896f94fc1bf6
+ms.lasthandoff: 04/04/2017
 
 
 ---
 # <a name="create-an-azure-sql-database-in-the-azure-portal"></a>Criar uma base de dados SQL do Azure no portal do Azure
 
 Este guia de introdução explica como criar uma base de dados SQL no Azure.  A Base de Dados SQL do Azure é uma oferta de "Base de dados como Serviço" que lhe permite executar e dimensionar bases de dados do SQL Server altamente disponíveis na cloud.  Este guia de introdução mostra-lhe como começar a criar uma nova base de dados SQL através do portal do Azure.
+
+Se não tiver uma subscrição do Azure, crie uma conta [gratuita](https://azure.microsoft.com/free/) antes de começar.
 
 ## <a name="log-in-to-the-azure-portal"></a>Iniciar sessão no portal do Azure
 
@@ -43,10 +45,10 @@ Siga estes passos para criar uma base de dados SQL com os dados de exemplo da Ad
 
     ![criar base de dados-1](./media/sql-database-get-started/create-database-1.png)
 
-3. Preencha o formulário da Base de Dados SQL com as informações seguintes, conforme mostrado na imagem anterior: 
-   - Nome da base de dados: utilize **mySampleDatabase**
-   - Grupo de recursos: utilize **myResourceGroup**
-   - Origem: selecione **Exemplo (AdventureWorksLT)**
+3. Preencha o formulário da Base de Dados SQL com as informações seguintes, conforme mostrado na imagem anterior:     
+   - Nome da base de dados: **mySampleDatabase**
+   - Grupo de recursos: **myResourceGroup**
+   - Origem: **Exemplo (AdventureWorksLT)**
 
 4. Clique em **Servidor** para criar e configurar um novo servidor para a nova base de dados. Preencha o **Novo formulário do servidor** especificando um nome de servidor globalmente único, forneça um nome para o início de sessão de administrador do Servidor e, em seguida, especifique a palavra-passe da sua preferência. 
 
@@ -82,7 +84,7 @@ O serviço da Base de Dados SQL cria uma firewall ao nível do servidor, impedin
 
 4. Clique em **OK** e, em seguida, clique no **X** para fechar a página **Definições da firewall**.
 
-Pode agora ligar à base de dados e ao respetivo servidor com o SQL Server Management Studio ou outra ferramenta à sua escolha.
+Pode agora ligar à base de dados e ao respetivo servidor com o SQL Server Management Studio ou outra ferramenta à sua escolha a partir deste endereço IP com a conta de administrador de Servidor criada anteriormente.
 
 ## <a name="query-the-sql-database"></a>Consultar a base de dados SQL
 
@@ -103,7 +105,7 @@ Quando criámos a nossa base de dados SQL, preenchemos com a base de dados de ex
 5. Quando estiver autenticado, escreva a consulta seguinte no painel do editor de consultas.
 
    ```
-   SELECT pc.Name as CategoryName, p.name as ProductName
+   SELECT TOP 20 pc.Name as CategoryName, p.name as ProductName
    FROM SalesLT.ProductCategory pc
    JOIN SalesLT.Product p
    ON pc.productcategoryid = p.productcategoryid;

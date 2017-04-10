@@ -14,14 +14,15 @@ ms.topic: get-started-article
 ms.date: 11/23/2016
 ms.author: mbaldwin
 translationtype: Human Translation
-ms.sourcegitcommit: fcc53e4073a6957fae263cfb5d38023ed9710d21
-ms.openlocfilehash: 47a60ba7de5ad09f0fc27efd2d041199b71be348
+ms.sourcegitcommit: 5cce99eff6ed75636399153a846654f56fb64a68
+ms.openlocfilehash: 43d0dbb905b2f2b9d98fb3bf8c073ba1c4b6f4c4
+ms.lasthandoff: 03/31/2017
 
 
 ---
 # <a name="how-does-licensing-work-in-azure-remoteapp"></a>Como funciona o licenciamento no Azure RemoteApp?
 > [!IMPORTANT]
-> O Azure RemoteApp está a ser descontinuado. Leia o [anúncio](https://go.microsoft.com/fwlink/?linkid=821148) para obter detalhes.
+> O Azure RemoteApp vai ser descontinuado a 31 de agosto de 2017. Leia o [anúncio](https://go.microsoft.com/fwlink/?linkid=821148) para obter detalhes.
 > 
 > 
 
@@ -40,10 +41,5 @@ Para outras aplicações, deve certificar-se de que tem a licença para partilha
 Faz sentido, certo? Pode publicar qualquer aplicação cuja partilha realizada por si esteja legalmente autorizada. Deve certificar-se de que tem, efetivamente, direito de partilhar os programas.
 
 Tenha em atenção que não pode utilizar uma CAL ou um contrato de Licenciamento em Volume numa coleção na nuvem. *Pode* utilizar um contrato de Licenciamento em Volume para ativar aplicações na coleção híbrida (exceto o Office). Tem apenas de instalar aquelas na imagem de modelo do suporte de dados de Licenciamento em Volume. Siga as informações do fabricante da aplicação para instalar licenças num Ambiente de Trabalho Remoto.
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

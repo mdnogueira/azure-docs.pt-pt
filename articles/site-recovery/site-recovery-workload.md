@@ -15,9 +15,9 @@ ms.workload: storage-backup-recovery
 ms.date: 02/06/2017
 ms.author: raynew
 translationtype: Human Translation
-ms.sourcegitcommit: 503f5151047870aaf87e9bb7ebf2c7e4afa27b83
-ms.openlocfilehash: 34a9d187eecec185e2b8d6977baea267ca9e60e5
-ms.lasthandoff: 03/28/2017
+ms.sourcegitcommit: eeb56316b337c90cc83455be11917674eba898a3
+ms.openlocfilehash: 4149c5e06f1a23864ca0f92f1b7b73f4f66949df
+ms.lasthandoff: 04/03/2017
 
 
 ---
@@ -61,6 +61,7 @@ A Recuperação de Sites pode replicar qualquer aplicação em execução numa m
 | Dynamics CRM |S |Brevemente |S |Brevemente |
 | Oracle |S (testado pela Microsoft) |S (testado pela Microsoft) |S (testado pela Microsoft) |S (testado pela Microsoft) |
 | Servidor de Ficheiros do Windows |S |S |S |S |
+| Citrix XenApp e XenDesktop |N/D |S |N/D |S |
 
 ## <a name="replicate-active-directory-and-dns"></a>Replicar o Active Directory e o DNS
 As infraestruturas de DNS e Active Directory são essenciais para a maioria das aplicações da empresa. Durante a recuperação após desastre terá de proteger e recuperar estes componentes da infraestrutura antes de recuperar as cargas de trabalho e aplicações.
@@ -143,6 +144,17 @@ O Azure Site Recovery fornece a recuperação após desastre ao replicar os comp
 -    Capacidade para testar os planos de recuperação num ambiente isolado para testes de recuperação após desastre.
 
 [Saiba mais](https://aka.ms/asr-iis) sobre como proteger o Web farm IIS.
+
+## <a name="protect-citrix-xenapp-and-xendesktop"></a>Proteger o Citrix XenApp e o XenDesktop
+Utilize o Site Recovery para proteger as suas implementações do Citrix XenApp e do XenDesktop deployments, da seguinte forma:
+
+* Ative a proteção das implementações do Citrix XenApp e do XenDesktop ao replicar camadas de implementação diferentes (incluindo servidor DNS do AD, servidor de bases de dados SQL, Citrix Delivery Controller, servidor StoreFront, XenApp Master (VDA), Citrix XenApp License Server) para o Azure.
+* Utilize o Site Recovery para migrar as suas implementações do Citrix XenApp e do XenDesktop para o Azure, de modo a simplificar a migração para a cloud.
+* Crie uma cópia de tipo de produção e a pedido para testes e depuração, para simplificar os testes de Citrix XenApp/XenDesktop.
+* Esta solução só é aplicável a ambientes de trabalho virtuais do sistema operativo do Windows Server e não a ambientes de trabalho virtuais cliente, uma vez que estes ainda não são suportados para licenciamento no Azure. 
+[Saiba mais](https://azure.microsoft.com/en-us/pricing/licensing-faq/) sobre o licenciamento para ambientes de trabalho de cliente/servidor no Azure.
+
+[Saiba mais](https://aka.ms/citrix-xenapp-xendesktop-with-asr) sobre como proteger implementações do Citrix XenApp e do XenDesktop.
 
 ## <a name="next-steps"></a>Passos seguintes
 [Verificar pré-requisitos](site-recovery-prereq.md) 

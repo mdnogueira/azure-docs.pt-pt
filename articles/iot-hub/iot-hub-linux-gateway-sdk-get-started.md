@@ -12,41 +12,42 @@ ms.devlang: cpp
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/23/2016
+ms.date: 03/28/2017
 ms.author: andbuc
 ms.custom: H1Hack27Feb2017
 translationtype: Human Translation
-ms.sourcegitcommit: 37b2a82d7f6043224e68219fde753eef73078ffd
-ms.openlocfilehash: b3cc8e53b0c8bb7ea40b6ebcebe1f97d4a3e1180
-ms.lasthandoff: 03/02/2017
+ms.sourcegitcommit: 5cce99eff6ed75636399153a846654f56fb64a68
+ms.openlocfilehash: 856ffeeeb8f9d8296ba972a9e070686171f7fde8
+ms.lasthandoff: 03/31/2017
 
 
 ---
 # <a name="explore-the-iot-gateway-sdk-architecture-on-linux"></a>Explorar a arquitetura SDK do Gateway do IoT em Linux
+
 [!INCLUDE [iot-hub-gateway-sdk-getstarted-selector](../../includes/iot-hub-gateway-sdk-getstarted-selector.md)]
 
 ## <a name="how-to-build-the-sample"></a>Como criar o exemplo
+
 Antes de começar, tem de [configurar o seu ambiente de desenvolvimento][lnk-setupdevbox] para trabalhar com o SDK no Linux.
 
 1. Abra uma shell.
-2. Navegue até à pasta raiz na sua cópia local do repositório **azure-iot-gateway-sdk**.
-3. Execute o script **tools/build.sh**. Este script utiliza o utilitário **cmake** para criar uma pasta denominada **build** na pasta raiz da sua cópia local do repositório **azure-iot-gateway-sdk** e gerar um makefile. Em seguida, o script compila a solução, ignorando os teste de unidade e os testes completos. Adicione o parâmetro **--run-unittests** se quiser criar e executar os testes de unidade. Adicione o parâmetro **--run-e2e-tests** se quiser criar e executar os testes completos.
+1. Navegue até à pasta raiz na sua cópia local do repositório **azure-iot-gateway-sdk**.
+1. Execute o script **tools/build.sh**. Este script utiliza o utilitário **cmake** para criar uma pasta denominada **build** na pasta raiz da sua cópia local do repositório **azure-iot-gateway-sdk** e gerar um makefile. Em seguida, o script compila a solução, ignorando os teste de unidade e os testes completos. Adicione o parâmetro **--run-unittests** se quiser criar e executar os testes de unidade. Adicione o parâmetro **--run-e2e-tests** se quiser criar e executar os testes completos.
 
 > [!NOTE]
 > Sempre que executar o script **build.sh**, este elimina e, em seguida, recria a pasta **build** na pasta raiz da sua cópia local do repositório **azure-iot-gateway-sdk**.
-> 
-> 
 
 ## <a name="how-to-run-the-sample"></a>Como executar o exemplo
-1. O script **build.sh** gera o respetivo resultado na pasta **build** na sua cópia local do repositório **azure-iot-gateway-sdk**. Isto inclui os dois módulos utilizados neste exemplo.
-   
-    O script build coloca **liblogger.so** na pasta **build/modules/logger/** e **libhello_world.so** na pasta **build/modules/hello_world/**. Utilize estes caminhos para o valor **caminho do módulo**, conforme mostrado no ficheiro de definições JSON abaixo.
-2. O processo hello_world_sample aceita o caminho para um ficheiro de configuração JSON como argumento na linha de comandos. Foi disponibilizado um ficheiro JSON de exemplo como parte do repositório em **azure-iot-gateway-sdk/samples/hello_world/src/hello_world_win.json**, que está copiado abaixo. Funcionará tal como está, a menos que tenha modificado o script build para colocar módulos ou executáveis de exemplo em localizações não predefinidas.
+
+1. O script **build.sh** gera o respetivo resultado na pasta **build** na sua cópia local do repositório **azure-iot-gateway-sdk**. Este resultado inclui os dois módulos utilizados neste exemplo.
+
+    O script build coloca **liblogger.so** na pasta **build/modules/logger/** e **libhello\_world.so** na pasta **build/modules/hello_world/**. Utilize estes caminhos para o valor **caminho do módulo**, conforme mostrado no ficheiro de definições JSON de exemplo seguinte.
+1. O processo hello\_world\_sample aceita o caminho para um ficheiro de configuração JSON como argumento da linha de comandos. O ficheiro JSON de exemplo seguinte é disponibilizado no repositório do SDK, em **samples/hello\_world/src/hello\_world\_lin.json**. Este ficheiro de configuração funciona tal como está, a menos que modifique o script build para colocar módulos ou executáveis de exemplo em localizações não predefinidas.
 
    > [!NOTE]
-   > Os caminhos dos módulos são relativos face ao diretório de trabalho atual a partir do qual o executável hello_world_sample é iniciado, não face ao diretório onde o executável está localizado. O ficheiro de configuração JSON de exemplo é predefinido para escrever “log.txt” no seu diretório de trabalho atual.
-   
-    ```
+   > Os caminhos dos módulos são relativos face ao diretório de trabalho atual a partir do qual o executável hello\_world\_sample é iniciado, não face ao diretório onde o executável está localizado. O ficheiro de configuração JSON de exemplo é predefinido para escrever “log.txt” no seu diretório de trabalho atual.
+
+    ```json
     {
         "modules" :
         [
@@ -71,7 +72,7 @@ Antes de começar, tem de [configurar o seu ambiente de desenvolvimento][lnk-set
                 "args" : null
             }
         ],
-        "links": 
+        "links":
         [
             {
                 "source": "hello_world",
@@ -80,12 +81,10 @@ Antes de começar, tem de [configurar o seu ambiente de desenvolvimento][lnk-set
         ]
     }
     ```
-3. Navegue para a pasta **azure-iot-gateway-sdk/build**.
-4. Execute o seguinte comando:
-   
-   ```
-   ./samples/hello_world/hello_world_sample ./../samples/hello_world/src/hello_world_lin.json
-   ``` 
+1. Navegue para a pasta **build**.
+1. Execute o seguinte comando:
+
+   `./samples/hello_world/hello_world_sample ./../samples/hello_world/src/hello_world_lin.json`
 
 [!INCLUDE [iot-hub-gateway-sdk-getstarted-code](../../includes/iot-hub-gateway-sdk-getstarted-code.md)]
 

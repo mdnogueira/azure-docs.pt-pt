@@ -13,13 +13,13 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: big-data
-ms.date: 03/16/2017
+ms.date: 04/03/2017
 ms.author: larryfr
 ms.custom: H1Hack27Feb2017,hdinsightactive
 translationtype: Human Translation
-ms.sourcegitcommit: 4f2230ea0cc5b3e258a1a26a39e99433b04ffe18
-ms.openlocfilehash: 89d44476e9de8ac32195efaf66535cdd9fb4260e
-ms.lasthandoff: 03/25/2017
+ms.sourcegitcommit: 303cb9950f46916fbdd58762acd1608c925c1328
+ms.openlocfilehash: 248e820ccd2c68a8500aab3233c5beea3c8cc868
+ms.lasthandoff: 04/04/2017
 
 ---
 # <a name="connect-to-hdinsight-hadoop-using-ssh"></a>Ligar ao HDInsight (Hadoop) através de SSH
@@ -30,16 +30,19 @@ A tabela seguinte contém as informações de portas e de endereços necessária
 
 | Endereço | Porta | Liga-se a... |
 | ----- | ----- | ----- |
-| `<edgenodename>.<clustername>-ssh.azurehdinsight.net` | 22 | Nó de extremidade (se existir) |
+| `<clustername>-ed-ssh.azurehdinsight.net` | 22 | Nó de extremidade (R Server no HDInsight) |
+| `<edgenodename>.<clustername>-ssh.azurehdinsight.net` | 22 | Nó de extremidade (qualquer outro tipo de cluster, se existir um nó de extremidade) |
 | `<clustername>-ssh.azurehdinsight.net` | 22 | Nó principal primário |
 | `<clustername>-ssh.azurehdinsight.net` | 23 | Nó principal secundário |
 
 > [!NOTE]
-> Substitua `<edgenodename>` pelo nome do nó de extremidade. Para obter mais informações sobre a utilização de nós de extremidade, veja [Use edge nodes in HDInsight](hdinsight-apps-use-edge-node.md#access-an-edge-node) (Utilizar nós de extremidade no HDInsight).
+> Substitua `<edgenodename>` pelo nome do nó de extremidade.
 >
 > Substitua `<clustername>` pelo nome do seu cluster do HDInsight.
 >
 > Recomendamos __ligar sempre ao nó de extremidade__, se tiver um. Os nós principais alojam serviços que são fundamentais para o estado de funcionamento do cluster. O nó de extremidade executa apenas o que colocar no mesmo.
+>
+> Para obter mais informações sobre a utilização de nós de extremidade, veja [Use edge nodes in HDInsight](hdinsight-apps-use-edge-node.md#access-an-edge-node) (Utilizar nós de extremidade no HDInsight).
 
 ## <a name="ssh-clients"></a>Clientes SSH
 

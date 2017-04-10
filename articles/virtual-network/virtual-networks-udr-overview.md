@@ -16,9 +16,9 @@ ms.date: 03/15/2016
 ms.author: jdial
 ms.custom: H1Hack27Feb2017
 translationtype: Human Translation
-ms.sourcegitcommit: c9996d2160c4082c18e9022835725c4c7270a248
-ms.openlocfilehash: 555939d6181d43d89a2d355744b74887d41df6ff
-ms.lasthandoff: 02/28/2017
+ms.sourcegitcommit: eeb56316b337c90cc83455be11917674eba898a3
+ms.openlocfilehash: 1657f7c772b7039707a67c4abc788479cc08bdd0
+ms.lasthandoff: 04/03/2017
 
 
 ---
@@ -57,7 +57,7 @@ Os pacotes são reencaminhados através de uma rede TCP/IP com base numa tabela 
 | --- | --- | --- | --- |
 | Prefixo do endereço |O CIDR de destino aos quais se aplica a rota, por exemplo, 10.1.0.0/16. |Tem de ser um intervalo CIDR válido que represente endereços na Internet pública, rede virtual do Azure ou centro de dados no local. |Confirme se o **Prefixo do endereço** não contém o endereço para o **Endereço do próximo salto**. Caso contrário, os pacotes entrarão num ciclo que vai da origem para o salto seguinte sem nunca chegarem ao destino. |
 | Tipo de salto seguinte |O tipo de salto Azure para o qual o pacote deve ser enviado. |Tem de ser um dos seguintes valores: <br/> **Rede Virtual**. Representa a rede virtual local. Por exemplo, se tiver duas sub-redes, 10.1.0.0/16 e 10.2.0.0/16, na mesma rede virtual, a rota de cada sub-rede na tabela de rota terá um valor de salto seguinte igual a *Rede Virtual*. <br/> **Gateway de Rede Virtual**. Representa um VPN Gateway S2S do Azure. <br/> **Internet**. Representa o gateway de Internet predefinido fornecido pela infraestrutura do Azure. <br/> **Aplicação Virtual**. Representa uma aplicação virtual que adicionou à sua rede virtual do Azure. <br/> **Nenhuma**. Representa um buraco negro. Os pacotes reencaminhados para um buraco negro não são reencaminhados de modo algum. |Considere a utilização de um **Dispositivo Virtual** para direcionar o tráfego para um endereço IP interno VM ou para um Balanceador de Carga do Azure.  Este tipo permite a especificação de um endereço IP, conforme descrito abaixo. Considere a utilização de um tipo **Nenhuma** para impedir o fluxo dos pacotes para um determinado destino. |
-| Endereço do próximo salto |O endereço do próximo salto contém o endereço IP para onde devem ser reencaminhados os pacotes. Os valores de salto seguintes só são permitidos em rotas onde está o tipo de salto seguinte é *Aplicação Virtual*. |Tem de ser um endereço IP alcançável dentro da Rede Virtual onde é aplicada a Rota Definida pelo Utilizador. |Se o endereço IP representa uma VM, certifique-se de que ativa [reencaminhamento IP](#IP-forwarding) no Azure para a VM. Se o endereço IP representa o endereço IP interno de um Balanceador de Carga do Azure, certifique-se de que tem uma regra de balanceamento de carga correspondente para cada porta para a qual pretende fazer o balanceamento de carga.|
+| Endereço do próximo salto |O endereço do próximo salto contém o endereço IP para onde devem ser reencaminhados os pacotes. Os valores de salto seguintes só são permitidos em rotas onde está o tipo de salto seguinte é *Aplicação Virtual*. |Tem de ser um endereço IP alcançável dentro da Rede Virtual onde é aplicada a Rota Definida pelo Utilizador, sem passar por um **Gateway de Rede Virtual**. O endereço IP tem de estar na mesma Rede Virtual em que é aplicado ou uma Rede Virtual em modo de peering. |Se o endereço IP representa uma VM, certifique-se de que ativa [reencaminhamento IP](#IP-forwarding) no Azure para a VM. Se o endereço IP representa o endereço IP interno de um Balanceador de Carga do Azure, certifique-se de que tem uma regra de balanceamento de carga correspondente para cada porta para a qual pretende fazer o balanceamento de carga.|
 
 No Azure PowerShell alguns dos valores "NextHopType" têm nomes diferentes:
 

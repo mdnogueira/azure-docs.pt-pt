@@ -15,8 +15,9 @@ ms.topic: get-started-article
 ms.date: 02/07/2017
 ms.author: markvi
 translationtype: Human Translation
-ms.sourcegitcommit: 23c49393a115d9cd0ac3a1b0f146e9dcc780347e
-ms.openlocfilehash: 42be5d71d8f22a2eb06f7ca0ebd4c33fb3d8bebe
+ms.sourcegitcommit: 432752c895fca3721e78fb6eb17b5a3e5c4ca495
+ms.openlocfilehash: 025e8c9e575123a3ad9863a35061ebd0af212486
+ms.lasthandoff: 03/30/2017
 
 
 ---
@@ -137,6 +138,16 @@ Para contas do Azure AD, os administradores podem repor as palavras-passe atrav�
 
 
 - - -
+## <a name="security"></a>Segurança
+**P: As contas são bloqueadas ao fim de um determinado número de tentativas falhadas ou é utilizada outra estratégia mais sofisticada?**</br>
+Utilizamos uma estratégia mais sofisticada para bloquear as contas.  Baseia-se no IP do pedido e nas palavras-passe introduzidas. A duração do bloqueio também aumenta com base na probabilidade de se tratar de um ataque.  
+
+**P: Algumas palavras-passe (comuns) são rejeitadas com a mensagem “esta palavra-passe foi utilizada demasiadas vezes”. Isto refere-se a palavras-passe utilizadas no diretório ativo atual?**</br>
+Refere-se a palavras-passe que são globalmente comuns, como as variantes de “Palavra-passe” e “123456”.
+
+**P: Os pedidos de início de sessão de origens duvidosas (botnets, pontos finais de tor) vão ser bloqueados em inquilinos B2C ou é necessário para tal um inquilino da edição Básica ou Premium?**</br>
+Temos um gateway que filtra os pedidos e que oferece alguma proteção contra botnets, que é aplicado a todos os inquilinos B2C. 
+
 ## <a name="application-access"></a>Acesso à aplicação
 **P: Onde posso encontrar uma lista das aplicações previamente integradas ao Azure AD e as respetivas funcionalidades?**
 
@@ -199,12 +210,7 @@ Para mais informações, consulte [Securing access to Office 365 and other apps 
 Para obter mais informações, consulte [Automate user provisioning and deprovisioning to SaaS applications with Azure Active Directory (Automatizar o aprovisionamento do utilizador e cancelar o aprovisionamento a aplicações SaaS com o Azure Active Directory)](active-directory-saas-app-provisioning.md).
 
 - - -
-**P: Posso configurar uma ligação LDAP segura ao Azure AD? **
+**P: Posso configurar uma ligação LDAP segura ao Azure AD?**
 
 **R:** Não.  O Azure AD não suporta o protocolo LDAP.
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 

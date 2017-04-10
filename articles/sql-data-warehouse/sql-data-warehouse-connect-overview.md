@@ -12,11 +12,13 @@ ms.devlang: NA
 ms.topic: get-started-article
 ms.tgt_pltfrm: NA
 ms.workload: data-services
+ms.custom: connect
 ms.date: 10/31/2016
 ms.author: barbkess
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 106b9e8b5fd3461655527004fa7a65bbab9b3182
+ms.sourcegitcommit: eeb56316b337c90cc83455be11917674eba898a3
+ms.openlocfilehash: c3c30e51b81886ebc875df7c815a17dfa633a5f8
+ms.lasthandoff: 04/03/2017
 
 
 ---
@@ -26,7 +28,7 @@ Este artigo ajuda-o a ligar-se ao SQL Data Warehouse pela primeira vez.
 ## <a name="find-your-server-name"></a>Encontrar o nome do servidor
 O primeiro passo para ligar ao SQL Data Warehouse é saber como localizar o nome do servidor.  Por exemplo, o nome do servidor no exemplo seguinte é sample.database.windows.net. Descubra o nome de servidor completamente qualificado:
 
-1. Aceda ao [Portal do Azure][Portal do Azure].
+1. Aceda ao [portal do Azure][Azure portal].
 2. Clique em **Bases de Dados SQL** 
 3. Clique na base de dados à qual se quer ligar.
 4. Localize o nome do servidor completo.
@@ -72,11 +74,11 @@ O SQL Data Warehouse uniformiza algumas definições durante a ligação e a cri
 | [DATEFIRST][DATEFIRST] |7 |
 
 ## <a name="next-steps"></a>Passos seguintes
-Para ligar e consultar com o Visual Studio, veja [Query with Visual Studio (Consulta com o Visual Studio)][Query with Visual Studio (Consulta com o Visual Studio)]. Para saber mais sobre as opções de autenticação, veja [Authentication to Azure SQL Data Warehouse (Autenticação no Azure SQL Data Warehouse)][Authentication to Azure SQL Data Warehouse (Autenticação no Azure SQL Data Warehouse)].
+Para ligar e consultar com o Visual Studio, veja [Query with Visual Studio (Consulta com o Visual Studio)][Query with Visual Studio]. Para saber mais sobre as opções de autenticação, veja [Authentication to Azure SQL Data Warehouse (Autenticação no Azure SQL Data Warehouse)][Authentication to Azure SQL Data Warehouse].
 
 <!--Articles-->
-[Query with Visual Studio (Consulta com o Visual Studio)]: ./sql-data-warehouse-query-visual-studio.md
-[Authentication to Azure SQL Data Warehouse (Autenticação no Azure SQL Data Warehouse)]: ./sql-data-warehouse-authentication.md
+[Query with Visual Studio]: ./sql-data-warehouse-query-visual-studio.md
+[Authentication to Azure SQL Data Warehouse]: ./sql-data-warehouse-authentication.md
 
 <!--MSDN references-->
 [ADO.NET]: https://msdn.microsoft.com/library/e80y5yhx(v=vs.110).aspx
@@ -89,15 +91,10 @@ Para ligar e consultar com o Visual Studio, veja [Query with Visual Studio (Cons
 [DATEFIRST]: https://msdn.microsoft.com/library/ms181598.aspx
 
 <!--Other-->
-[Portal do Azure]: https://portal.azure.com
+[Azure portal]: https://portal.azure.com
 
 <!--Image references-->
 [1]: media/sql-data-warehouse-connect-overview/get-server-name.png
 
-
-
-
-
-<!--HONumber=Nov16_HO2-->
 
 

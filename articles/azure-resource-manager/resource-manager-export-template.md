@@ -12,12 +12,12 @@ ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 03/03/2017
+ms.date: 03/30/2017
 ms.author: tomfitz
 translationtype: Human Translation
-ms.sourcegitcommit: d9dad6cff80c1f6ac206e7fa3184ce037900fc6b
-ms.openlocfilehash: f8512229ee30fee6315d8ba167f1716e40f79b3e
-ms.lasthandoff: 03/06/2017
+ms.sourcegitcommit: f41fbee742daf2107b57caa528e53537018c88c6
+ms.openlocfilehash: cee4748a0b24e11cd8a8ee46471418680fcf7b33
+ms.lasthandoff: 03/31/2017
 
 
 ---
@@ -53,7 +53,7 @@ A implementação pode demorar um minuto. Após a conclusão da implementação,
 3. O painel apresenta um resumo da implementação. O resumo inclui o estado da implementação e as respetivas operações, bem como os valores que forneceu para os parâmetros. Para ver o modelo que utilizou para a implementação, selecione **Ver modelo**.
    
      ![ver resumo da implementação](./media/resource-manager-export-template/deployment-summary.png)
-4. O Resource Manager obtém os seguintes seis ficheiros para si:
+4. O Resource Manager obtém os seguintes sete ficheiros para si:
    
    1. **Modelo** - O modelo que define a infraestrutura para a sua solução. Quando criou a conta do Storage através do portal, o Resource Manager utilizou um modelo para a implementar e guardou esse modelo para consulta futura.
    2. **Parâmetros** - Um ficheiro de parâmetros que pode utilizar para transmitir valores durante a implementação. Contém os valores que indicou durante a primeira implementação, mas pode alterar qualquer um destes valores quando implementar novamente o modelo.
@@ -148,28 +148,28 @@ Para obter o estado atual do seu grupo de recursos, exporte um modelo que mostra
      Nem todos os tipos de recursos suportam a função de modelo de exportação. Se o grupo de recursos incluir apenas a conta de armazenamento e a rede virtual referidas neste artigo, não será apresentado nenhum erro. No entanto, se tiver criado outros tipos de recursos, pode aparecer um erro a indicar que existe um problema com a exportação. Pode saber como lidar com esses problemas na secção [Corrigir problemas de exportação](#fix-export-issues).
 2. Verá novamente os seis ficheiros que pode utilizar para voltar a implementar a solução, mas, desta vez, o modelo é ligeiramente diferente. Este modelo tem apenas dois parâmetros: um para o nome da conta do Storage e outro para o nome da rede virtual.
 
-  ```json
-  "parameters": {
-    "virtualNetworks_VNET_name": {
-      "defaultValue": "VNET",
-      "type": "String"
-    },
-    "storageAccounts_storagetf05092016_name": {
-      "defaultValue": "storagetf05092016",
-      "type": "String"
-    }
-  },
-  ```
+   ```json
+   "parameters": {
+     "virtualNetworks_VNET_name": {
+       "defaultValue": "VNET",
+       "type": "String"
+     },
+     "storageAccounts_storagetf05092016_name": {
+       "defaultValue": "storagetf05092016",
+       "type": "String"
+     }
+   },
+   ```
    
-     O Resource Manager não obteve os modelos que utilizou durante a implementação. Em vez disso, gerou um novo modelo baseado na configuração atual dos recursos. Por exemplo, o modelo define a localização da conta de armazenamento e o valor da replicação para:
+   O Resource Manager não obteve os modelos que utilizou durante a implementação. Em vez disso, gerou um novo modelo baseado na configuração atual dos recursos. Por exemplo, o modelo define a localização da conta de armazenamento e o valor da replicação para:
 
-  ```json 
-  "location": "northeurope",
-  "tags": {},
-  "properties": {
-    "accountType": "Standard_RAGRS"
-  },
-  ```
+   ```json 
+   "location": "northeurope",
+   "tags": {},
+   "properties": {
+     "accountType": "Standard_RAGRS"
+   },
+   ```
 3. Tem algumas opções para continuar a trabalhar com este modelo. Pode transferir o modelo e trabalhar no mesmo localmente com um editor JSON. Em alternativa, pode guardar o modelo na sua biblioteca e trabalhar no mesmo através do portal.
    
      Se estiver familiarizado com um editor JSON, como [Código VS](resource-manager-vs-code.md) ou [Visual Studio](vs-azure-tools-resource-groups-deployment-projects-create-deploy.md), pode preferir transferir o modelo localmente e utilizar esse editor. Se não tiver um editor JSON, poderá preferir editar o modelo através do portal. O resto deste tópico parte do princípio de que guardou o modelo na sua biblioteca no portal. No entanto, realiza as mesmas alterações de sintaxe no modelo quer trabalhe localmente com um editor JSON quer trabalhe através do portal.
@@ -205,88 +205,88 @@ Nesta secção, adiciona parâmetros ao modelo exportado para que possa reutiliz
      ![editar modelo](./media/resource-manager-export-template/edit-template.png)
 3. Para poder passar os valores que pode pretender especificar durante a implementação, substitua a secção **parâmetro** por novas definições de parâmetros. Repare nos valores de **allowedValues** para **storageAccount_accountType**. Se fornecer acidentalmente um valor inválido, esse erro é reconhecido antes do início da implementação. Além disso, tenha em atenção que está a fornecer apenas um prefixo para o nome da conta do Storage e o prefixo está limitado a 11 carateres. Ao limitar o prefixo a 11 carateres, assegura que o nome completo não excede o número máximo de carateres para uma conta de armazenamento. O prefixo permite aplicar uma convenção de nomenclatura às contas do Storage. Poderá ver como criar um nome exclusivo no próximo passo.
 
-  ```json
-  "parameters": {
-    "storageAccount_prefix": {
-      "type": "string",
-      "maxLength": 11
-    },
-    "storageAccount_accountType": {
-      "defaultValue": "Standard_RAGRS",
-      "type": "string",
-      "allowedValues": [
-        "Standard_LRS",
-        "Standard_ZRS",
-        "Standard_GRS",
-        "Standard_RAGRS",
-        "Premium_LRS"
-      ]
-    },
-    "virtualNetwork_name": {
-      "type": "string"
-    },
-    "addressPrefix": {
-      "defaultValue": "10.0.0.0/16",
-      "type": "string"
-    },
-    "subnetName": {
-      "defaultValue": "subnet-1",
-      "type": "string"
-    },
-    "subnetAddressPrefix": {
-      "defaultValue": "10.0.0.0/24",
-      "type": "string"
-    }
-  },
-  ```
+   ```json
+   "parameters": {
+     "storageAccount_prefix": {
+       "type": "string",
+       "maxLength": 11
+     },
+     "storageAccount_accountType": {
+       "defaultValue": "Standard_RAGRS",
+       "type": "string",
+       "allowedValues": [
+         "Standard_LRS",
+         "Standard_ZRS",
+         "Standard_GRS",
+         "Standard_RAGRS",
+         "Premium_LRS"
+       ]
+     },
+     "virtualNetwork_name": {
+       "type": "string"
+     },
+     "addressPrefix": {
+       "defaultValue": "10.0.0.0/16",
+       "type": "string"
+     },
+     "subnetName": {
+       "defaultValue": "subnet-1",
+       "type": "string"
+     },
+     "subnetAddressPrefix": {
+       "defaultValue": "10.0.0.0/24",
+       "type": "string"
+     }
+   },
+   ```
 
 4. A secção **variables** do seu modelo está atualmente vazia. Na secção **variáveis**, pode criar valores que simplifiquem a sintaxe para o resto do seu modelo. Substitua esta secção por uma nova definição de variável. A variável **storageAccount_name** concatena o prefixo do parâmetro a uma cadeia exclusiva que é gerada com base no identificador do grupo de recursos. Já não tem de procurar um nome exclusivo quando fornecer um valor de parâmetro.
 
-  ```json
-  "variables": {
-    "storageAccount_name": "[concat(parameters('storageAccount_prefix'), uniqueString(resourceGroup().id))]"
-  },
-  ```
+   ```json
+   "variables": {
+     "storageAccount_name": "[concat(parameters('storageAccount_prefix'), uniqueString(resourceGroup().id))]"
+   },
+   ```
 
 5. Para utilizar os parâmetros e a variável nas definições de recursos, substitua a secção **recursos** por novas definições. Repare que pouco mudou nas definições de recursos, além do valor que é atribuído à propriedade de recursos. As propriedades são as mesmas do modelo exportado. Está simplesmente a atribuir propriedades a valores de parâmetros em vez de valores impostos. A localização dos recursos está definida para utilizar a mesma localização que o grupo de recursos através da expressão **resourceGroup().location**. A variável que criou para o nome da conta do Storage é referenciada através da expressão **variables**.
 
-  ```json
-  "resources": [
-    {
-      "type": "Microsoft.Network/virtualNetworks",
-      "name": "[parameters('virtualNetwork_name')]",
-      "apiVersion": "2015-06-15",
-      "location": "[resourceGroup().location]",
-      "properties": {
-        "addressSpace": {
-          "addressPrefixes": [
-            "[parameters('addressPrefix')]"
-          ]
-        },
-        "subnets": [
-          {
-            "name": "[parameters('subnetName')]",
-            "properties": {
-              "addressPrefix": "[parameters('subnetAddressPrefix')]"
-            }
-          }
-        ]
-      },
-      "dependsOn": []
-    },
-    {
-      "type": "Microsoft.Storage/storageAccounts",
-      "name": "[variables('storageAccount_name')]",
-      "apiVersion": "2015-06-15",
-      "location": "[resourceGroup().location]",
-      "tags": {},
-      "properties": {
-        "accountType": "[parameters('storageAccount_accountType')]"
-      },
-      "dependsOn": []
-    }
-  ]
-  ```
+   ```json
+   "resources": [
+     {
+       "type": "Microsoft.Network/virtualNetworks",
+       "name": "[parameters('virtualNetwork_name')]",
+       "apiVersion": "2015-06-15",
+       "location": "[resourceGroup().location]",
+       "properties": {
+         "addressSpace": {
+           "addressPrefixes": [
+             "[parameters('addressPrefix')]"
+           ]
+         },
+         "subnets": [
+           {
+             "name": "[parameters('subnetName')]",
+             "properties": {
+               "addressPrefix": "[parameters('subnetAddressPrefix')]"
+             }
+           }
+         ]
+       },
+       "dependsOn": []
+     },
+     {
+       "type": "Microsoft.Storage/storageAccounts",
+       "name": "[variables('storageAccount_name')]",
+       "apiVersion": "2015-06-15",
+       "location": "[resourceGroup().location]",
+       "tags": {},
+       "properties": {
+         "accountType": "[parameters('storageAccount_accountType')]"
+       },
+       "dependsOn": []
+     }
+   ]
+   ```
 
 6. Selecione **OK** quando terminar de editar o modelo.
 7. Selecione **Guardar** para guardar as alterações feitas ao modelo.
@@ -393,7 +393,7 @@ No recurso de sites, adicione uma definição para o código para instalar:
 ```
 
 ### <a name="virtual-machine-extension"></a>Extensão de máquina virtual
-Para obter exemplos de extensões de máquina virtual, veja o artigo [Amostras de Configuração de Extensão do Azure Windows VM](../virtual-machines/virtual-machines-windows-extensions-configuration-samples.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
+Para obter exemplos de extensões de máquina virtual, veja o artigo [Amostras de Configuração de Extensão do Azure Windows VM](../virtual-machines/windows/extensions-configuration-samples.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 
 ### <a name="virtual-network-gateway"></a>Gateway de rede virtual
 Adicione um tipo de recurso de gateway de rede virtual.

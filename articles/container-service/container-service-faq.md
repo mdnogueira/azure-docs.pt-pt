@@ -14,13 +14,13 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 03/03/2017
+ms.date: 03/28/2017
 ms.author: danlep
 ms.custom: H1Hack27Feb2017
 translationtype: Human Translation
-ms.sourcegitcommit: bb1ca3189e6c39b46eaa5151bf0c74dbf4a35228
-ms.openlocfilehash: 682ebb212f9056f3704a6de5dde8d3a35681108f
-ms.lasthandoff: 03/17/2017
+ms.sourcegitcommit: eeb56316b337c90cc83455be11917674eba898a3
+ms.openlocfilehash: a70b82770a13231ee59ac768deb45b232f95687d
+ms.lasthandoff: 04/03/2017
 
 
 ---
@@ -44,7 +44,7 @@ Atualmente são suportados contentores de Linux com todos os orquestradores. O s
 ### <a name="do-you-recommend-a-specific-orchestrator-in-azure-container-service"></a>Recomenda um orquestrador específico no Azure Container Service? 
 Geralmente não recomendamos um orquestrador específico. Se tiver experiência com um dos orquestradores suportados, pode aplicar essa experiência no Azure Container Service. As tendências de dados sugerem, no entanto, que o DC/SO seja comprovado pela produção de Macrodados e as cargas de trabalho de IoT, o Kubernetes é adequado para cargas de trabalho de cloud nativa e o Docker Swarm é conhecido pela integração com ferramentas de Docker e uma fácil uma curva de aprendizagem.
 
-Dependendo do seu cenário, também pode criar e gerir soluções de contentor personalizadas com outros serviços do Azure. Estes serviços incluem [Máquinas Virtuais](../virtual-machines/virtual-machines-linux-azure-overview.md), [Service Fabric](../service-fabric/service-fabric-overview.md), [Aplicações Web](../app-service-web/app-service-web-overview.md) e [Batch](../batch/batch-technical-overview.md).  
+Dependendo do seu cenário, também pode criar e gerir soluções de contentor personalizadas com outros serviços do Azure. Estes serviços incluem [Máquinas Virtuais](../virtual-machines/linux/overview.md), [Service Fabric](../service-fabric/service-fabric-overview.md), [Aplicações Web](../app-service-web/app-service-web-overview.md) e [Batch](../batch/batch-technical-overview.md).  
 
 ### <a name="what-is-the-difference-between-azure-container-service-and-acs-engine"></a>Qual é a diferença entre o Azure Container Service e o Motor de ACS? 
 O Azure Container Service é um serviço do Azure apoiado pelo SLA com funcionalidades no portal do Azure, ferramentas da linha de comandos do Azure e APIs do Azure. O serviço permite-lhe implementar e gerir rapidamente clusters que executam ferramentas de orquestração do contentor padrão com um número relativamente pequeno de opções de configuração. 
@@ -55,7 +55,7 @@ O [Motor de ACS](http://github.com/Azure/acs-engine) é um projeto de código ab
 
 ### <a name="how-do-i-create-ssh-keys-for-my-cluster"></a>Como criar chaves SSH para o meu cluster?
 
-Pode utilizar as ferramentas padrão no seu sistema operativo para criar um par de chaves SSH RSA público e privado para autenticação relativamente às máquinas virtuais Linux do cluster. Para obter os passos, consulte a documentação de orientação [SO X e Linux](../virtual-machines/virtual-machines-linux-mac-create-ssh-keys.md) ou [Windows](../virtual-machines/virtual-machines-linux-ssh-from-windows.md). 
+Pode utilizar as ferramentas padrão no seu sistema operativo para criar um par de chaves SSH RSA público e privado para autenticação relativamente às máquinas virtuais Linux do cluster. Para obter os passos, consulte a documentação de orientação [SO X e Linux](../virtual-machines/linux/mac-create-ssh-keys.md) ou [Windows](../virtual-machines/linux/ssh-from-windows.md). 
 
 Se utilizar [comandos do CLI do Azure 2.0](container-service-create-acs-cluster-cli.md) para implementar um cluster de serviço do contentor, as chaves SSH podem ser geradas automaticamente para o cluster.
 
@@ -66,6 +66,12 @@ Também são necessários uma palavra-passe e o ID principal de serviço do Azur
 
 Se utilizar os [comandos do CLI do Azure 2.0](container-service-create-acs-cluster-cli.md) para implementar um cluster de Kubernetes, as credenciais do principal de serviço podem ser geradas automaticamente para o cluster.
 
+### <a name="how-large-a-cluster-can-i-create"></a>Que tamanho de cluster posso criar?
+Pode criar clusters com um, três ou cinco nós principais. Pode escolher até cem nós de agente.
+
+> [!IMPORTANT]
+> Relativamente a clusters maiores e consoante o tamanho da VM que escolher para os nós, poderá ter de aumentar a quota de núcleos da sua subscrição. Para pedir um aumento de quota, abra um [pedido de suporte ao cliente online](../azure-supportability/how-to-create-azure-support-request.md), sem custos. Se estiver a utilizar uma [conta gratuita do Azure](https://azure.microsoft.com/free/), pode utilizar apenas um número limitado de núcleos de computação do Azure.
+> 
 
 ### <a name="how-do-i-increase-the-number-of-masters-after-a-cluster-is-created"></a>Como posso aumentar o número de modelos de estrutura mestres depois de ser criado um cluster? 
 Assim que o cluster for criado, o número de modelos de estrutura mestres é fixo e não pode ser alterado. Durante a criação do cluster, idealmente deve selecionar múltiplos modelos de estrutura mestres para elevada disponibilidade.

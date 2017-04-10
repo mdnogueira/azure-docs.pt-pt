@@ -14,14 +14,15 @@ ms.topic: hero-article
 ms.date: 11/23/2016
 ms.author: mbaldwin
 translationtype: Human Translation
-ms.sourcegitcommit: 300ee477a00cdd463a2abf87dd73550777fd9e05
-ms.openlocfilehash: 941cc40c3c1979609649eda42e4b39aa383c3fd2
+ms.sourcegitcommit: 5cce99eff6ed75636399153a846654f56fb64a68
+ms.openlocfilehash: a6d4fbdf0e552f50673092183e893841ec0c5aa4
+ms.lasthandoff: 03/31/2017
 
 
 ---
 # <a name="using-microsoft-outlook-in-azure-remoteapp"></a>Utilizar o Microsoft Outlook no Azure RemoteApp
 > [!IMPORTANT]
-> O Azure RemoteApp está a ser descontinuado. Leia o [anúncio](https://go.microsoft.com/fwlink/?linkid=821148) para obter detalhes.
+> O Azure RemoteApp vai ser descontinuado a 31 de agosto de 2017. Leia o [anúncio](https://go.microsoft.com/fwlink/?linkid=821148) para obter detalhes.
 > 
 > 
 
@@ -36,10 +37,5 @@ Leia as [instruções passo-a-passo sobre a ativação do modo de cache](https:/
 
 ## <a name="search"></a>Pesquisa
 No Azure RemoteApp, a utilização da pesquisa no Outlook tem limitações. O Azure RemoteApp utiliza VMs agrupadas para acomodar sessões de utilizador. A indexação da pesquisa depende do ID da máquina, que é distinto para diferentes VMs. É possível que sempre que um utilizador inicia sessão no Azure RemoteApp, seja direcionado para uma nova VM. Tal significa que, se a pesquisa local for ativada, o indexador será executado sempre que o ID da máquina se alterar (quando o utilizador está numa VM diferente). Consoante o tamanho do ficheiro .OST, o indexador pode levar tempo a concluir e a utilizar os recursos necessários para outras aplicações. A pesquisa não só seria lenta, mas também poderia não produzir resultados. Utilizar um perfil de conta do Modo Online permite contornar esta situação, mas o desempenho global seria afetado negativamente devido à falta de uma cache local (veja a ligação acima para obter mais informações sobre a diferença entre o modo em cache e online). Infelizmente, não é possível desativar a pesquisa indexada/local e a pesquisa online não pode ser ativada por predefinição no Outlook 2013.
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

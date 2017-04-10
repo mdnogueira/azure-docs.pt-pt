@@ -15,8 +15,9 @@ ms.workload: infrastructure-services
 ms.date: 02/11/2016
 ms.author: jdial
 translationtype: Human Translation
-ms.sourcegitcommit: 2165cdc87a505e94fab2fc73c30a5764348c6dc1
-ms.openlocfilehash: b382cf65ae172e0037f2bc668a4f5862b29d1700
+ms.sourcegitcommit: eeb56316b337c90cc83455be11917674eba898a3
+ms.openlocfilehash: 6ea9db6ac7a7ba63652b860c22899a8616ea81bc
+ms.lasthandoff: 04/03/2017
 
 
 ---
@@ -65,8 +66,8 @@ A figura acima mostra como as regras do NSG são processadas.
 ### <a name="default-tags"></a>Etiquetas Predefinidas
 Etiquetas predefinidas são identificadores fornecidos pelo sistema para abordar uma categoria de endereços IP. Pode utilizar etiquetas predefinidas nas propriedades **prefixo do endereço de origem** e **prefixo do endereço de destino** de qualquer regra. Existem três etiquetas predefinidas que pode utilizar.
 
-* **VIRTUAL_NETWORK:** esta etiqueta predefinida indica todos os espaços de endereços de rede. Inclui o espaço de endereços de rede virtual (intervalos CIDR definidos no Azure), bem como todos os espaços de endereços no local ligados e as VNets do Azure ligadas (redes locais).
-* **AZURE_LOADBALANCER:** esta etiqueta predefinida indica o balanceador de carga da infraestrutura do Azure. Isto traduzir-se-á num IP de datacenter do Azure onde as sondas de estado de funcionamento do Azure têm origem.
+* **VIRTUAL_NETWORK** (**VirtualNetwork** se estiver a utilizar o Azure Resource Manager): esta etiqueta predefinida denota todos os espaços de endereços da sua rede. Inclui o espaço de endereços de rede virtual (intervalos CIDR definidos no Azure), bem como todos os espaços de endereços no local ligados e as VNets do Azure ligadas (redes locais).
+* **AZURE_LOADBALANCER** (**AzureLoadBalancer** se estiver a utilizar o Azure Resource Manager): esta etiqueta predefinida denota o balanceador de carga da Infraestrutura do Azure. Isto traduzir-se-á num IP de datacenter do Azure onde as sondas de estado de funcionamento do Azure têm origem.
 * **INTERNET:** esta etiqueta predefinida indica o espaço de endereços IP que está fora da rede virtual e acessível pela Internet pública. Este intervalo também inclui o [espaço de IP público pertencente ao Azure](https://www.microsoft.com/download/details.aspx?id=41653).
 
 ### <a name="default-rules"></a>Regras Predefinidas
@@ -258,9 +259,4 @@ Uma vez que alguns dos NSGs acima têm de ser associados a NICs individuais, tem
 * [Implementar NSGs no modelo de implementação clássica](virtual-networks-create-nsg-classic-ps.md).
 * [Implementar NSGs no Resource Manager](virtual-networks-create-nsg-arm-pportal.md).
 * [Gerir registos de NSG](virtual-network-nsg-manage-log.md).
-
-
-
-<!--HONumber=Jan17_HO5-->
-
 

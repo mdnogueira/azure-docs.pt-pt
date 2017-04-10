@@ -16,9 +16,9 @@ ms.workload: infrastructure-services
 ms.date: 03/10/2017
 ms.author: jonatul
 translationtype: Human Translation
-ms.sourcegitcommit: 424d8654a047a28ef6e32b73952cf98d28547f4f
-ms.openlocfilehash: 656f2c7d00161d15ebb6f72db0dff33c709973c2
-ms.lasthandoff: 03/21/2017
+ms.sourcegitcommit: b4802009a8512cb4dcb49602545c7a31969e0a25
+ms.openlocfilehash: 79f0c9297c4be70f705f325274f3d9241ea4bc3f
+ms.lasthandoff: 03/29/2017
 
 ---
 
@@ -79,7 +79,7 @@ O exemplo seguinte explica-lhe o processo de criação do novo registo "A". Para
 
 ## <a name="view-records"></a>Ver registos
 
-Na parte inferior do painel da zona DNS, pode ver os registos para a zona DNS. Deverá ver os registos NS e SOA predefinidos, que são criados em cada zona, assim como quaisquer novos registos que tenha criado.
+Na parte inferior do painel da zona DNS, pode ver os registos para a zona DNS. Deverá ver os registos DNS e SOA predefinidos, que são criados em cada zona, assim como quaisquer novos registos que tenha criado.
 
 ![zona](./media/dns-getstarted-portal/viewzone500.png)
 
