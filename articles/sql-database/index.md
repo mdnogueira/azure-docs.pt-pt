@@ -1,11 +1,10 @@
 ---
 title: "Documentação da Base de Dados SQL do Azure - Tutoriais, Referência da API | Microsoft Docs"
-description: "Saiba mais sobre a Base de Dados SQL, uma serviço de base de dados na cloud. Tutoriais, vídeos e outra documentação mostram como configurar, ligar e gerir uma base de dados relacional."
+description: Saiba como utilizar bases de dados SQL do Azure.
 services: sql-database
 author: carolz
 manager: carolz
 layout: LandingPage
-ms.assetid: 
 ms.service: sql-database
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -13,122 +12,63 @@ ms.topic: landing-page
 ms.date: 01/23/2017
 ms.author: carolz
 translationtype: Human Translation
-ms.sourcegitcommit: 424d8654a047a28ef6e32b73952cf98d28547f4f
-ms.openlocfilehash: e982e07b6279c1338398980aa07d46ce08ede11c
-ms.lasthandoff: 03/21/2017
+ms.sourcegitcommit: 0b53a5ab59779dc16825887b3c970927f1f30821
+ms.openlocfilehash: 1092d5963cd1b9e21796809374be2534df39e437
+ms.lasthandoff: 04/08/2017
 
 ---
-
-# <a name="sql-database-documentation"></a>Documentação da Base de Dados SQL
-
-<div class="introHolder">
-    <div class="intro">
-Saiba como utilizar uma Base de dados SQL, uma base de dados que funciona como um serviço na cloud criado no motor do Microsoft SQL Server. Tutoriais, vídeos e outra documentação mostram-lhe como configurar, ligar e gerir uma base de dados SQL.
+<div class="content">
+    <h1>Documentação da Base de Dados SQL</h1>
+    <p style="padding-bottom: 0px; max-width: 1050px;">A Base de Dados SQL do Azure é uma base de dados relacional como serviço que utiliza o Motor do Microsoft SQL Server. A Base de Dados SQL é uma base de dados de elevado desempenho, fiável e segura que pode utilizar para criar aplicações e sites com base em dados na linguagem de programação da sua preferência, sem ter de gerir infraestrutura. Saiba como utilizar a Base de Dados SQL com os nossos inícios rápidos, tutoriais e amostras.</p>
+<h2 style="margin-top: 36px; margin-bottom: 0px;">Inícios rápidos</h2>
+<p style="margin-top: 6px; margin-bottom: 6px;">Crie uma BD SQL com:</p>
+<div class="ico48Case">
+    <div class="ico48Link">
+        <a href="/azure/sql-database/sql-database-get-started-portal">
+            <img src="media/index/portal.svg" alt="">
+            <span>Portal do Azure</span>
+        </a>
     </div>
-    <div class="calloutHolder">
-        <div class="callout">
-            <a href="https://azure.microsoft.com/community/training/courses/managing-infrastructure-microsoft-azure-getting-started/">
-                <img src="media/index/pluralsight.svg" /> Vídeo de formação gratuita da PluralSight - Gerir a Infraestrutura com o Microsoft Azure </a>
-        </div>
+    <div class="ico48Link">
+        <a href="/azure/sql-database/sql-database-get-started-cli">
+            <img src="media/index/cli.svg" alt="">
+            <span>CLI do Azure</span>
+        </a>
+    </div>
+    <div class="ico48Link">
+        <a href="/azure/sql-database/sql-database-get-started-powershell">
+            <img src="media/index/logo_powershell.svg" alt="">
+            <span>Azure PowerShell</span>
+        </a>
     </div>
 </div>
 
-<ul class="panelContent cardsFTitle">
-     <li>
-        <a href="/azure/sql-database/sql-database-technical-overview">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="media/index/sql-database.svg" alt="" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Mais informações sobre a Base de Dados SQL do Azure</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </a>
-    </li>
-     <li>
-        <a href="https://azure.microsoft.com/documentation/videos/index/?services=sql-database">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="media/index/video-library.svg" alt="" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Biblioteca de Vídeo de Base de Dados SQL do Azure</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </a>
-    </li>
-    <li>
-        <a href="/azure/sql-database/sql-database-get-started">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="media/index/get-started.svg" alt="" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Introdução à Base de Dados SQL do Azure</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </a>
-    </li>
-    <li>
-        <a href="/azure/sql-database/sql-database-elastic-scale-get-started">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="media/index/get-started.svg" alt="" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Introdução às Ferramentas Elásticas</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </a>
-    </li>
-     <li>
-        <a href="/azure/sql-database/sql-database-get-started-security">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="media/index/tutorial.svg" alt="" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Introdução à gestão de acesso e permissões</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </a>
-    </li>
-</ul>
+<div class="columnHolder">
+    <div class="column50">
+        <h2 style="margin-top: 36px">Tutoriais</h2>
+        <p>Crie e implemente aplicações da Base de Dados SQL.</p>
+        <ul class="spaced">
+            <li><a href="/azure/sql-database/sql-database-design-first-database">Estruturar uma base de dados</a></li>
+            <li><a href="/azure/sql-database/sql-database-migrate-your-sql-server-database">Migrar uma base de dados</a></li>
+        </ul>
+        <h2>Amostras</h2>
+        <p>Encontre scripts para gerir tarefas comuns.</p>
+        <ul class="spaced">
+            <li><a href="/azure/sql-database/sql-database-cli-samples">CLI do Azure</a></li>
+            <li><a href="/azure/sql-database/sql-database-powershell-samples">Azure PowerShell</a></li>
+        </ul>
+    </div>
+    <div class="column50" style="max-width: 400px">
+        <h2 style="margin-top: 36px">Vídeo de Formação Gratuita</h2>
+        <a href="https://www.pluralsight.com/courses/developing-dotnet-microsoft-azure-getting-started?twoid=d6abac77-7dcc-4d33-9e03-f85e78989f02">
+            <img src="media/index/video-training-dotnet.png" width="400" alt="">
+            <p style="margin-top: 0px">Vídeo de formação gratuita da PluralSight - Programar com .NET</a></p>
+    </div>
+</div>
 
----
+<hr />
 
-<h2>Referência</h2>
+<h2 style="margin-top: 36px">Referência</h2>
 <ul class="panelContent cardsW">
     <li>
         <div class="cardSize">
@@ -136,8 +76,8 @@ Saiba como utilizar uma Base de dados SQL, uma base de dados que funciona como u
                 <div class="card">
                     <div class="cardText">
                         <h3>Linha de Comandos</h3>
-                        <p><a href="/powershell/resourcemanager/azurerm.sql/v2.3.0/azurerm.sql">PowerShell</a></p>
-                        <p><a href="/powershell/elasticdatabasejobs/v0.8.33/elasticdatabasejobs">PowerShell (DB Elástica)</a></p>
+                        <p><a href="/powershell/resourcemanager/azurerm.sql/v2.3.0/azurerm.sql">Azure PowerShell</a></p>
+                        <p><a href="/powershell/elasticdatabasejobs/v0.8.33/elasticdatabasejobs">Azure PowerShell (BD Elástica)</a></p>
                         <p><a href="/cli/azure/sql">CLI 2.0 do Azure</a></p>
                     </div>
                 </div>
@@ -206,6 +146,4 @@ Saiba como utilizar uma Base de dados SQL, uma base de dados que funciona como u
         </div>
     </li>
 </ul>
-
-
-
+</div>
