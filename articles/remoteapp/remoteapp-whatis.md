@@ -15,14 +15,15 @@ ms.topic: get-started-article
 ms.date: 11/23/2016
 ms.author: mbaldwin
 translationtype: Human Translation
-ms.sourcegitcommit: fcc53e4073a6957fae263cfb5d38023ed9710d21
-ms.openlocfilehash: bf8f7763db5844a0706264d24ad7a035758ebbda
+ms.sourcegitcommit: 5cce99eff6ed75636399153a846654f56fb64a68
+ms.openlocfilehash: bc5de9daeb09339c9488de8699174cd280197525
+ms.lasthandoff: 03/31/2017
 
 
 ---
 # <a name="what-is-azure-remoteapp"></a>O que é o Azure RemoteApp?
 > [!IMPORTANT]
-> O Azure RemoteApp está a ser descontinuado. Leia o [anúncio](https://go.microsoft.com/fwlink/?linkid=821148) para obter detalhes.
+> O Azure RemoteApp vai ser descontinuado a 31 de agosto de 2017. Leia o [anúncio](https://go.microsoft.com/fwlink/?linkid=821148) para obter detalhes.
 > 
 > 
 
@@ -83,10 +84,5 @@ Aceda! Experimente! Estes artigos ajudam a começar a utilizar o Azure RemoteApp
 
 ### <a name="help-us-help-you"></a>Ajude-nos para o podermos ajudar
 Sabia que além de classificar este artigo e deixar um comentário a seguir, pode alterar o próprio artigo? Falta algo? Algo errado? Escrevi algo que é simplesmente confuso? Desloque-se para cima e clique em **Editar no GitHub** ou **Editar** para efetuar alterações – estas serão enviadas para nós para revisão e, em seguida, após serem aceites, as suas alterações e melhorias serão apresentadas aqui.
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

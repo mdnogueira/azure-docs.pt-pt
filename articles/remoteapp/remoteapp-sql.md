@@ -15,14 +15,15 @@ ms.workload: compute
 ms.date: 11/23/2016
 ms.author: mbaldwin
 translationtype: Human Translation
-ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
-ms.openlocfilehash: 52edc23e0f677567beeb33c47b14f6ea66989890
+ms.sourcegitcommit: 5cce99eff6ed75636399153a846654f56fb64a68
+ms.openlocfilehash: 24d41c7eb6b5bd34c07d21318740ecf4c6db2d22
+ms.lasthandoff: 03/31/2017
 
 
 ---
 # <a name="sql-azure-with-azure-remoteapp"></a>SQL Azure com o Azure RemoteApp
 > [!IMPORTANT]
-> O Azure RemoteApp está a ser descontinuado. Leia o [anúncio](https://go.microsoft.com/fwlink/?linkid=821148) para obter detalhes.
+> O Azure RemoteApp vai ser descontinuado a 31 de agosto de 2017. Leia o [anúncio](https://go.microsoft.com/fwlink/?linkid=821148) para obter detalhes.
 > 
 > 
 
@@ -56,10 +57,5 @@ Caso a experiência de utilização de uma aplicação cliente alojada no Azure 
 * A latência de rede do dispositivo para o Azure é alta. Mude para a melhor e mais rápida ligação de rede possível para o melhor desempenho. Utilize o [azurespeed.com](http://azurespeed.com/) como uma ferramenta geral para testar a latência dos dispositivos para o datacenter do Azure.  
 * A aplicação cliente alojada no Azure RemoteApp está em esforço. Selecionar um plano de faturação como, por exemplo, a faturação Premium melhorará o desempenho. Outro truque consiste em monitorizar os recursos que a aplicação está a consumir: durante uma sessão ativa efetue uma sequência de teclas Ctrl-Alt-End que iniciará o ecrã da SAS, selecione Gestor de Tarefas e observe a utilização de recursos da aplicação.
 * O SQL Servidor está em esforço ou não está otimizado. Siga a documentação de orientação do SQL para a resolução de problemas. 
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

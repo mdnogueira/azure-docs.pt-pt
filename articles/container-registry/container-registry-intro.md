@@ -18,9 +18,9 @@ ms.date: 11/14/2016
 ms.author: stevelas
 ms.custom: H1Hack27Feb2017
 translationtype: Human Translation
-ms.sourcegitcommit: 5e6ffbb8f1373f7170f87ad0e345a63cc20f08dd
-ms.openlocfilehash: dd504c95e22d322707c55818815b09d8a36c7ca4
-ms.lasthandoff: 03/24/2017
+ms.sourcegitcommit: 4e4a4f4e299dc2747eb48bbd2e064cd80783211c
+ms.openlocfilehash: 0d3b09fb20f748fe70049c505625d813190e94b0
+ms.lasthandoff: 04/04/2017
 
 ---
 # <a name="introduction-to-private-docker-container-registries"></a>Introdução aos registos privados de contentores Docker
@@ -48,9 +48,7 @@ Os programadores também podem enviar para um registo de contentores como parte 
 
 
 ## <a name="key-concepts"></a>Conceitos-chave
-* **Registo** - crie um ou mais registos de contentores na sua subscrição do Azure. Cada registo tem por base uma [conta de armazenamento](../storage/storage-introduction.md) standard do Azure na mesma localização. Tire partido do armazenamento local e perto da rede das imagens do seu contentor ao criar um registo na mesma localização do Azure das suas implementações.
-
-  Os registos são nomeados num domínio raiz com base no [inquilino do Azure Active Directory](../active-directory/active-directory-howto-tenant.md) da subscrição. Por exemplo, se tiver uma conta organizacional no domínio Contoso, a forma do seu nome de registo completamente qualificado é `myregistry-contoso.azurecr.io`.
+* **Registo** - crie um ou mais registos de contentores na sua subscrição do Azure. Cada registo tem por base uma [conta de armazenamento](../storage/storage-introduction.md) standard do Azure na mesma localização. Tire partido do armazenamento local e perto da rede das imagens do seu contentor ao criar um registo na mesma localização do Azure das suas implementações. Os nomes de registo completamente qualificados têm o formato `myregistry.azurecr.io`.
 
   Para [controlar o acesso](container-registry-authentication.md) a um registo de contentores, utilize um [principal de serviço](../active-directory/active-directory-application-objects.md) baseado no Azure Active Directory ou uma conta de administrador fornecida. Execute o comando `docker login` padrão para se autenticar num registo.
 

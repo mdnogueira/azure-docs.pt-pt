@@ -14,9 +14,9 @@ ms.topic: get-started-article
 ms.date: 03/14/2017
 ms.author: awills
 translationtype: Human Translation
-ms.sourcegitcommit: fd35f1774ffda3d3751a6fa4b6e17f2132274916
-ms.openlocfilehash: ae869be6ed9f304629498f416ffdda96252bdf9c
-ms.lasthandoff: 03/16/2017
+ms.sourcegitcommit: 197ebd6e37066cb4463d540284ec3f3b074d95e1
+ms.openlocfilehash: bcd8b3b7fb44a28d7184d14969eb998ce07c8e53
+ms.lasthandoff: 03/31/2017
 
 
 ---
@@ -83,9 +83,10 @@ Abra o recurso do Application Insights. Inicie sessão no [portal do Azure](http
 ![Captura de ecrã do Visual Studio que mostra como abrir o portal do Application Insights](./media/app-insights-asp-net/appinsights-04-openPortal.png)
 
 > [!NOTE]
-> Se receber um erro de acesso, é possível que tenha mais do que um conjunto de credenciais da Microsoft, pelo que a sessão poderá ser iniciada com o conjunto errado. No portal, termine a sessão e inicie sessão novamente.
+> Se receber o erro de acesso “Tem mais de um conjunto de credenciais da Microsoft e tem sessão iniciada com o conjunto errado?” No portal, termine a sessão e inicie sessão novamente.
 
 O portal é aberto na vista da telemetria da sua aplicação.
+
 ![Captura de ecrã da página de descrição geral do Application Insights](./media/app-insights-asp-net/66.png)
 
 Clique em qualquer gráfico ou mosaico para ver mais detalhes.

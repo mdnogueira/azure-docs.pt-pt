@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 03/07/2017
+ms.date: 03/31/2017
 ms.author: sethm; babanisa
 translationtype: Human Translation
-ms.sourcegitcommit: 72b2d9142479f9ba0380c5bd2dd82734e370dee7
-ms.openlocfilehash: 55cc1559189a37741d866d86241426fb73f72e4f
-ms.lasthandoff: 03/08/2017
+ms.sourcegitcommit: 5cce99eff6ed75636399153a846654f56fb64a68
+ms.openlocfilehash: 6450651062219c8f2c4757d6f233bd4b710e56ff
+ms.lasthandoff: 03/31/2017
 
 
 ---
@@ -34,7 +34,7 @@ As capacidades de processamento de eventos e telemetria do Event Hubs são útei
 O Event Hubs também inclui o controlo do comportamento em aplicações móveis, informações de tráfego de Web farms, captura de eventos nos jogos de consola ou telemetria recolhida a partir de máquinas industriais ou veículos ligados.
 
 ## <a name="azure-event-hubs-overview"></a>Descrição geral dos Event Hubs do Azure
-Uma das funções comuns que o Event Hubs desempenha nas arquiteturas de solução é ser a "porta de entrada" para um pipeline de eventos, denominado frequentemente *ingestor de eventos*. Um ingestor de eventos é um componente ou serviço que se encontra entre os publicadores de eventos e os consumidores de eventos para desacoplar a produção de uma transmissão de eventos do consumo desses eventos.
+Uma das funções comuns que o Event Hubs desempenha nas arquiteturas de solução é ser a "porta de entrada" para um pipeline de eventos, denominado frequentemente *ingestor de eventos*. Um ingestor de eventos é um componente ou serviço que se encontra entre os publicadores de eventos e os consumidores de eventos para desacoplar a produção de uma transmissão de eventos do consumo desses eventos. A imagem seguinte mostra esta arquitetura:
 
 ![Event Hubs](./media/event-hubs-what-is-event-hubs/event_hubs_full_pipeline.png)
 
@@ -104,6 +104,8 @@ Apresentamos a seguir exemplos da convenção de URI do grupo de consumidores:
 //[my namespace].servicebus.windows.net/[event hub name]/[Consumer Group #1]
 //[my namespace].servicebus.windows.net/[event hub name]/[Consumer Group #2]
 ```
+
+A imagem seguinte mostra a arquitetura do processamento de fluxos dos Hubs de Eventos:
 
 ![Event Hubs](./media/event-hubs-what-is-event-hubs/event_hubs_architecture.png)
 

@@ -1,0 +1,118 @@
+---
+title: "Guia de Introdução do Azure - Criar CLI da VM do Windows | Microsoft Docs"
+description: "Aprender rapidamente a criar máquinas virtuais do Windows com a CLI do Azure."
+services: virtual-machines-windows
+documentationcenter: virtual-machines
+author: neilpeterson
+manager: timlt
+editor: tysonn
+tags: azure-resource-manager
+ms.assetid: 
+ms.service: virtual-machines-windows
+ms.devlang: na
+ms.topic: hero-article
+ms.tgt_pltfrm: vm-windows
+ms.workload: infrastructure
+ms.date: 04/03/2017
+ms.author: nepeters
+translationtype: Human Translation
+ms.sourcegitcommit: 303cb9950f46916fbdd58762acd1608c925c1328
+ms.openlocfilehash: d131a13d0d347a676c3cff0d668034ffc9373e4c
+ms.lasthandoff: 04/04/2017
+
+---
+
+# <a name="create-a-windows-virtual-machine-with-the-azure-cli"></a>Criar uma máquina virtual do Windows com a CLI do Azure
+
+A CLI do Azure é utilizada para criar e gerir recursos do Azure a partir da linha de comandos ou em scripts. Este guia detalha a utilização da CLI do Azure para implementar uma virtual a executar o Windows Server 2016. Depois de concluída a implementação, vamos ligar ao servidor e instalar o IIS.
+
+Antes de começar, certifique-se de que a CLI do Azure foi instalada. Para obter mais informações, veja [Guia de instalação da CLI do Azure](https://docs.microsoft.com/cli/azure/install-azure-cli).
+
+[!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
+
+## <a name="log-in-to-azure"></a>Iniciar sessão no Azure 
+
+Inicie sessão na sua subscrição do Azure com o comando [az login](/cli/azure/#login) e siga as instruções no ecrã.
+
+```azurecli
+az login
+```
+
+## <a name="create-a-resource-group"></a>Criar um grupo de recursos
+
+Crie um grupo de recursos com [az group create](/cli/azure/group#create). Um grupo de recursos do Azure é um contentor lógico no qual os recursos do Azure são implementados e geridos. 
+
+O exemplo seguinte cria um grupo de recursos com o nome `myResourceGroup` na localização `westeurope`.
+
+```azurecli
+az group create --name myResourceGroup --location westeurope
+```
+
+## <a name="create-virtual-machine"></a>Criar a máquina virtual
+
+Crie uma VM com [az vm create](/cli/azure/vm#create). 
+
+O exemplo seguinte cria uma VM com o nome `myVM`. Este exemplo utiliza `azureuser` para um nome de utilizador administrativo e ` myPassword12` como palavra-passe. Atualize estes valores para algo adequado ao ambiente. Estes valores são necessários quando criar uma ligação com a máquina virtual.
+
+```azurecli
+az vm create --resource-group myResourceGroup --name myVM --image win2016datacenter --admin-username azureuser --admin-password myPassword12
+```
+
+Quando a VM tiver sido criada, a CLI do Azure mostra informações semelhantes ao seguinte exemplo. Anote o endereço IP público. Este endereço é utilizado para aceder à VM.
+
+```azurecli
+{
+  "fqdns": "",
+  "id": "/subscriptions/d5b9d4b7-6fc1-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM",
+  "location": "westeurope",
+  "macAddress": "00-0D-3A-23-9A-49",
+  "powerState": "VM running",
+  "privateIpAddress": "10.0.0.4",
+  "publicIpAddress": "52.174.34.95",
+  "resourceGroup": "myResourceGroup"
+}
+```
+
+## <a name="open-port-80-for-web-traffic"></a>Abrir a porta 80 para o tráfego da Web 
+
+Por predefinição, só são permitidas ligações RDP para máquinas virtuais do Windows implementadas no Azure. Se esta VM vier a ser um servidor Web, tem de abrir a porta 80 a partir da Internet.  É necessário um único comando para abrir a porta pretendida.  
+ 
+ ```azurecli 
+az vm open-port --port 80 --resource-group myResourceGroup --name myVM
+```
+
+
+## <a name="connect-to-virtual-machine"></a>Conectar à máquina virtual
+
+Utilize o seguinte comando para criar uma sessão de ambiente de trabalho remoto com a máquina virtual. Substitua o endereço IP com o endereço IP público da máquina virtual. Quando lhe for pedido, introduza as credenciais utilizadas ao criar a máquina virtual.
+
+```bash 
+mstsc /v:<Public IP Address>
+```
+
+## <a name="install-iis-using-powershell"></a>Instalar o IIS com o PowerShell
+
+Agora que iniciou sessão na VM do Azure, pode utilizar uma única linha do PowerShell para instalar o IIS e ativar a regra de firewall local para permitir o tráfego da Web.  Abra uma janela do PowerShell e execute o comando seguinte:
+
+```powershell
+Install-WindowsFeature -name Web-Server -IncludeManagementTools
+```
+
+## <a name="view-the-iis-welcome-page"></a>Ver a página de boas-vindas do IIS
+
+Com o IIS instalado e a porta 80 agora aberta na sua VM a partir da Internet, pode utilizar um browser à sua escolha para ver a página de boas-vindas do IIS predefinida. Certifique-se de que utiliza o `publicIpAddress` que documentou acima para visitar a página predefinida. 
+
+![Site predefinido do IIS](./media/quick-create-powershell/default-iis-website.png) 
+## <a name="delete-virtual-machine"></a>Eliminar máquina virtual
+
+Quando já não for necessário, pode ser utilizado o seguinte comando para remover o Grupo de Recursos, a VM e todos os recursos relacionados.
+
+```azurecli
+az group delete --name myResourceGroup
+```
+
+## <a name="next-steps"></a>Passos seguintes
+
+[Tutorial sobre instalação de uma função e a configuração de firewall](hero-role.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
+
+[Explorar amostras de CLI de implementação de VM](cli-samples.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)

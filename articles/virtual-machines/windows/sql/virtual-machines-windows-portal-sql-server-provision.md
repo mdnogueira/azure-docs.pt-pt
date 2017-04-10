@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: infrastructure-services
-ms.date: 02/28/2017
+ms.date: 04/03/2017
 ms.author: jroth
 translationtype: Human Translation
-ms.sourcegitcommit: cfe4957191ad5716f1086a1a332faf6a52406770
-ms.openlocfilehash: fa7c846cf5018b5f0d918e5dc9d9020313833d77
-ms.lasthandoff: 03/09/2017
+ms.sourcegitcommit: eeb56316b337c90cc83455be11917674eba898a3
+ms.openlocfilehash: f5793f771553df78c1c335ad57e0d64078d98148
+ms.lasthandoff: 04/03/2017
 
 
 ---
@@ -97,14 +97,17 @@ No painel **Noções básicas**, forneça as seguintes informações:
     ![Painel de Noções Básicas do SQL](./media/virtual-machines-windows-portal-sql-server-provision/azure-sql-basic.png)
 
 ## <a name="2-choose-virtual-machine-size"></a>2. Selecionar o tamanho da máquina virtual
-No passo **Tamanho**, escolha um tamanho da máquina virtual no painel **Escolher um tamanho**. O painel inicialmente apresenta os tamanhos recomendados da máquina baseados na imagem que selecionou. Também calcula o custo mensal para executar a VM.
+No passo **Tamanho**, escolha um tamanho da máquina virtual no painel **Escolher um tamanho**. O painel inicialmente apresenta os tamanhos recomendados da máquina baseados na imagem que selecionou.
+
+> [!IMPORTANT]
+> O custo mensal estimado apresentado no painel **Escolher tamanho** não inclui os custos de licenciamento do SQL Server. É o custo da VM apenas. Relativamente às edições Express e Developer do SQL Server, este é o custo total estimado. Quanto a outras edições, veja a [página de preços das Máquinas Virtuais do Windows](https://azure.microsoft.com/pricing/details/virtual-machines/windows/) e selecione a edição de destino do SQL Server. 
 
 ![Opções de Tamanho da VM do SQL](./media/virtual-machines-windows-portal-sql-server-provision/azure-sql-vm-choose-a-size.png)
 
 Para cargas de trabalho de produção, recomendamos que selecione um tamanho da máquina virtual que suporte o [Premium Storage](../../../storage/storage-premium-storage.md). Se não necessitar desse nível de desempenho, utilize o botão **Ver todas**, que mostra todas as opções de tamanho da máquina. Por exemplo, poderá utilizar um tamanho mais pequeno da máquina para um ambiente de teste ou de desenvolvimento.
 
 > [!NOTE]
-> Para obter mais informações sobre os tamanhos da máquina virtual, consulte [Tamanhos das Virtual Machines](../../virtual-machines-windows-sizes.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). Para considerações acerca dos tamanhos da VM do SQL Server, consulte [Práticas recomendadas do SQL Server em Virtual Machines do Azure](virtual-machines-windows-sql-performance.md).
+> Para obter mais informações sobre os tamanhos da máquina virtual, consulte [Tamanhos das Virtual Machines](../sizes.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). Para considerações acerca dos tamanhos da VM do SQL Server, consulte [Práticas recomendadas do SQL Server em Virtual Machines do Azure](virtual-machines-windows-sql-performance.md).
 > 
 > 
 
@@ -123,7 +126,7 @@ No painel **Definições**, configure o Storage do Azure, as redes e a monitoriz
 * Em **Conta do Storage**, pode aceitar o nome da conta do Storage automaticamente aprovisionado. Também pode clicar em **Conta do Storage** para escolher uma conta existente e configurar o tipo de conta do Storage. Por predefinição, o Azure cria uma nova conta do Storage com o armazenamento localmente redundante. Para mais informações sobre as opções de armazenamento, consulte o artigo [Replicação do Storage do Azure](../../../storage/storage-redundancy.md).
 * Em **Rede**, pode aceitar os valores automaticamente preenchidos. Também pode clicar em cada funcionalidade para configurar manualmente a **Virtual Network**, a **Sub-rede**, o **Endereço IP público** e o **Grupo de Segurança de Rede**. Para efeitos deste tutorial, mantenha os valores predefinidos.
 * O Azure ativa a **Monitorização** por predefinição com a mesma conta do Storage designada para a VM. Pode alterar estas definições aqui.
-* Em **Conjunto de Disponibilidade**, especifique um conjunto de disponibilidade. Para efeitos deste tutorial, pode selecionar **Nenhum**. Se planear configurar Grupos de Disponibilidade AlwaysOn do SQL Server, configure a disponibilidade para evitar recriar a máquina virtual.  Para obter mais informações, consulte o artigo [Gerir a Disponibilidade das Virtual Machines](../../virtual-machines-windows-manage-availability.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
+* Em **Conjunto de Disponibilidade**, especifique um conjunto de disponibilidade. Para efeitos deste tutorial, pode selecionar **Nenhum**. Se planear configurar Grupos de Disponibilidade AlwaysOn do SQL Server, configure a disponibilidade para evitar recriar a máquina virtual.  Para obter mais informações, consulte o artigo [Gerir a Disponibilidade das Virtual Machines](../manage-availability.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 
 Quando tiver terminado de configurar estas definições, clique em **OK**.
 

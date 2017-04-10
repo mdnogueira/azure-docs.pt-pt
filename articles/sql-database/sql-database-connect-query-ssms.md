@@ -18,15 +18,15 @@ ms.topic: hero-article
 ms.date: 03/15/2017
 ms.author: carlrab
 translationtype: Human Translation
-ms.sourcegitcommit: 4f2230ea0cc5b3e258a1a26a39e99433b04ffe18
-ms.openlocfilehash: ba56eaa154116edbe1dd8962049535cfa57551ac
-ms.lasthandoff: 03/25/2017
+ms.sourcegitcommit: 303cb9950f46916fbdd58762acd1608c925c1328
+ms.openlocfilehash: 7ae47bcce700336206d532b414b7d0eea41d87c5
+ms.lasthandoff: 04/04/2017
 
 
 ---
 # <a name="azure-sql-database-use-sql-server-management-studio-to-connect-and-query-data"></a>Base de Dados SQL do Azure: utilize o SQL Server Management Studio para ligar e consultar dados
 
-Utilize o [SQL Server Management Studio](https://msdn.microsoft.com/library/ms174173.aspx) (SSMS) para criar e gerir recursos do SQL Server a partir da interface de utilizador ou em scripts. Este guia detalha a utilização do SSMS para ligar a uma base de dados SQL do Azure e, em seguida, executar declarações de consulta, inserção, atualização e eliminação.
+Utilize o [SQL Server Management Studio](https://msdn.microsoft.com/library/ms174173.aspx) (SSMS) para criar e gerir recursos do SQL Server a partir da interface de utilizador ou em scripts. Este guia de início rápido detalha a utilização do SSMS para ligar a uma base de dados SQL do Azure e, em seguida, executar declarações de consulta, inserção, atualização e eliminação.
 
 Este guia de introdução utiliza como ponto de partida os recursos criados num destes guias de introdução:
 
@@ -45,11 +45,11 @@ Obtenha o nome de servidor totalmente qualificado para o servidor da Base de Dad
 
     <img src="./media/sql-database-connect-query-ssms/connection-information.png" alt="connection information" style="width: 780px;" />
 
-## <a name="connect-to-the-server"></a>Ligar ao servidor
+## <a name="connect-to-the-server-and-your-new-database"></a>Ligar ao servidor e à sua base de dados nova
 
 Utilize o SQL Server Management Studio para estabelecer uma ligação ao servidor da Base de Dados SQL do Azure.
 
-1. Escreva **SSMS** na caixa de pesquisa do Windows e, em seguida, clique em **Enter** para abrir o SSMS.
+1. Abra o SQL Server Management Studio.
 
 2. Na caixa de dialogo **Ligar ao Servidor**, introduza as seguintes informações:
    - **Tipo de servidor**: especificar Base de Dados do motor

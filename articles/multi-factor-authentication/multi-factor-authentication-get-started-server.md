@@ -13,12 +13,12 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 02/26/2017
+ms.date: 03/26/2017
 ms.author: kgremban
 translationtype: Human Translation
-ms.sourcegitcommit: d9dad6cff80c1f6ac206e7fa3184ce037900fc6b
-ms.openlocfilehash: c5a26a17ab50993f8b57c8868b02541251de1cb1
-ms.lasthandoff: 03/06/2017
+ms.sourcegitcommit: 197ebd6e37066cb4463d540284ec3f3b074d95e1
+ms.openlocfilehash: b769f785f67c24b99156dcfc21a42f661cc9da27
+ms.lasthandoff: 03/31/2017
 
 ---
 
@@ -70,7 +70,7 @@ Agora que transferiu o servidor, pode instalá-lo e configurá-lo.  Certifique-s
 
 | Requisitos do Servidor Multi-Factor Authentication do Azure | Descrição |
 |:--- |:--- |
-| Hardware |<li>200 MB de espaço no disco rígido</li><li>processador com capacidade de&32; ou&64; bits</li><li>1 GB de RAM ou superior</li> |
+| Hardware |<li>200 MB de espaço no disco rígido</li><li>processador com capacidade de 32 ou 64 bits</li><li>1 GB de RAM ou superior</li> |
 | Software |<li>Windows Server 2008 ou superior, se o anfitrião for um SO servidor</li><li>Windows 7 ou superior, se o anfitrião for um SO cliente</li><li>Microsoft .NET 4.0 Framework</li><li>O IIS 7.0 ou superior, se estiver a instalar o portal de utilizador ou o SDK do serviço Web</li> |
 
 ### <a name="azure-multi-factor-authentication-server-firewall-requirements"></a>Requisitos da firewall do Servidor Multi-Factor Authentication do Azure
@@ -121,13 +121,13 @@ Agora que o servidor está instalado e configurado, pode rapidamente importar ut
 ## <a name="send-users-an-email"></a>Enviar uma mensagem de e-mail aos utilizadores
 Agora que importou os seus utilizadores para o Servidor MFA, envie uma mensagem de e-mail a informá-los que foram inscritos na verificação de dois passos.
 
-A mensagem de e-mail que envia deve ser determinada através de como configurou os seus utilizadores para a verificação de dois passos. Por exemplo, se conseguiu importar números de telefone do diretório da empresa, a mensagem de e-mail deve incluir os números de telefone predefinidos, de modo a que os utilizadores saibam o que esperar. Se não tiver importado os números de telefone ou se os utilizadores estiverem configurados para utilizar a aplicação móvel, envie-lhes uma mensagem de e-mail que os direcione para concluírem a inscrição da respetiva conta através de uma hiperligação para o Portal de Utilizador Multi-Factor Authentication do Azure.
+A mensagem de e-mail que envia deve ser determinada através de como configurou os seus utilizadores para a verificação de dois passos. Por exemplo, se conseguiu importar números de telefone do diretório da empresa, a mensagem de e-mail deve incluir os números de telefone predefinidos, de modo a que os utilizadores saibam o que esperar. Se não tiver importado os números de telefone ou se os utilizadores estiverem configurados para utilizar a aplicação móvel, envie-lhes uma mensagem de e-mail que os direcione para concluírem a inscrição da respetiva conta. Inclua uma hiperligação para o Portal de Utilizador da Multi-Factor Authentication do Azure na mensagem de e-mail.
 
 O conteúdo da mensagem de e-mail também varia consoante o método de verificação definido para o utilizador (chamada telefónica, SMS ou aplicação móvel).  Por exemplo, se for exigido ao utilizador que utilize um PIN quando fizer a autenticação, a mensagem de e-mail irá informá-lo de que o PIN inicial foi definido.  É pedido as utilizadores que alterem o PIN durante a primeira verificação.
 
 
 ### <a name="configure-email-and-email-templates"></a>Configurar o e-mail e modelos de e-mail
-Clique no ícone de e-mail à esquerda para configurar as definições de envio destas mensagens de e-mail. É aqui que pode introduzir as informações de SMTP do seu servidor de correio e enviar mensagens de e-mail, assinalando a caixa de verificação **Enviar e-mails aos utilizadores**.
+Clique no ícone de e-mail à esquerda para configurar as definições de envio destas mensagens de e-mail. É nesta página que pode introduzir as informações de SMTP do seu servidor de correio e enviar mensagens de e-mail, assinalando a caixa de verificação **Enviar e-mails aos utilizadores**.
 
 ![Definições de E-mail](./media/multi-factor-authentication-get-started-server/email1.png)
 
@@ -155,11 +155,7 @@ Além dos campos anteriores, o resultado da verificação (êxito/rejeição) e 
 
 - Defina e configure o [Portal do Utilizador](multi-factor-authentication-get-started-portal.md) para personalização por utilizadores.
 
-- Configure a Multi-Factor Authentication com o [Serviço de Federação do Active Directory](multi-factor-authentication-get-started-adfs.md).
-
-- Defina e configure o Servidor MFA do Azure com [Autenticação RADIUS](multi-factor-authentication-get-started-server-radius.md). A utilização de RADIUS permite-lhe integrar vários sistemas de terceiros no Servidor MFA do Azure. 
-
-- Defina e configure o Servidor MFA do Azure com a [Autenticação do Windows](multi-factor-authentication-get-started-server-windows.md).
+- Configure e defina o Servidor MFA do Azure com o [Active Directory Federation Service](multi-factor-authentication-get-started-adfs.md), a [Autenticação RADIUS](multi-factor-authentication-get-started-server-radius.md) ou a [Autenticação LDAP](multi-factor-authentication-get-started-server-ldap.md).
 
 - Defina e configure o [Gateway de Ambiente de Trabalho Remoto e o Servidor Multi-Factor Authentication do Azure com o RADIUS](multi-factor-authentication-get-started-server-rdg.md). 
 

@@ -12,11 +12,12 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 01/30/2017
+ms.date: 03/30/2017
 ms.author: yurid
 translationtype: Human Translation
-ms.sourcegitcommit: 3cba38d95535ff5ed3cd62aac5c0aa04a310f48c
-ms.openlocfilehash: 10e58a76644b5e4d50f05a2db03f4af193cc5152
+ms.sourcegitcommit: f41fbee742daf2107b57caa528e53537018c88c6
+ms.openlocfilehash: 1091abef19121ac4ce65fdaf7299b091bf41eb1c
+ms.lasthandoff: 03/31/2017
 
 
 ---
@@ -28,12 +29,12 @@ Também pode misturar recomendações e alertas de segurança do Centro de Segur
 ## <a name="using-azure-security-center-dashboard-to-access-power-bi"></a>Utilizar o dashboard do Centro de Segurança do Azure para aceder ao Power BI
 Também pode utilizar o dashboard do Centro de Segurança do Azure para aceder aos relatórios do Power BI. Siga os passos para realizar esta tarefa:
 
-1. No dashboard do **Centro de Segurança do Azure**, clique no botão **Explorar no Power BI**.
+1. No dashboard do **Centro de Segurança do Azure**, clique no botão **Power BI**.
 
-    ![Ligar-se ao Centro de Segurança do Azure através do Power BI](./media/security-center-powerbi/security-center-powerbi-fig1-new10.png)
-2. O painel **Explorar no Power BI** abre-se no lado direito, conforme mostrado no ecrã seguinte:
+    ![Ligar-se ao Centro de Segurança do Azure através do Power BI](./media/security-center-powerbi/security-center-powerbi-fig1-new10-2017.png)
+2. O painel **Power BI** abre-se no lado direito, conforme mostrado no ecrã seguinte:
 
-    ![Ligar-se ao Centro de Segurança do Azure através do Power BI](./media/security-center-powerbi/security-center-powerbi-fig1-new2.png)
+    ![Ligar-se ao Centro de Segurança do Azure através do Power BI](./media/security-center-powerbi/security-center-powerbi-fig1-new11-2017.png)
 3. Se estiver a criar o dashboard do Power BI pela primeira vez, pode escolher uma das opções seguintes no painel **Explorar no Power BI**:
 
    * **Dashboard de informações de segurança**: escolha esta opção se pretende criar um dashboard que inclua o estado de segurança, threads e deteções. Esta opção é mais comum para a função DevOps que é responsável por analisar o respetivo estado de proteção e os alertas detetados nas subscrições.
@@ -119,9 +120,4 @@ Neste documento, aprendeu a utilizar o Power BI no Centro de Segurança do Azure
 * [Gerir e responder a alertas de segurança no Centro de Segurança do Azure](security-center-managing-and-responding-alerts.md) – Saiba como gerir e responder a alertas de segurança
 * [Azure Security Center FAQ (FAQ do Centro de Segurança do Azure)](security-center-faq.md) – Encontre as perguntas mais frequentes acerca de como utilizar o serviço
 * [Blogue de Segurança do Azure](http://blogs.msdn.com/b/azuresecurity/) – Encontre mensagens do blogue acerca da segurança e conformidade do Azure
-
-
-
-<!--HONumber=Jan17_HO5-->
-
 
