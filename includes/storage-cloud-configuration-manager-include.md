@@ -3,7 +3,7 @@ A [Biblioteca do Gestor de Configuração do Microsoft Azure para .NET](https://
 Para mencionar o pacote CloudConfigurationManager, adicione a seguinte diretiva `using`:
 
 ```csharp
-using Microsoft.Azure;    //Namespace for CloudConfigurationManager
+using Microsoft.Azure; //Namespace for CloudConfigurationManager
 ```
 
 Eis um exemplo que mostra como obter uma cadeia de ligação a partir de um ficheiro de configuração:
@@ -15,9 +15,4 @@ CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
 ```
 
 A utilização do Gestor de Configuração do Azure é opcional. De igual modo, pode utilizar uma API, tal como a [classe ConfigurationManager](https://msdn.microsoft.com/library/system.configuration.configurationmanager.aspx) do .NET Framework.
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 
