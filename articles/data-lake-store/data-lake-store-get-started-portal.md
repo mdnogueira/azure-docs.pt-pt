@@ -15,8 +15,9 @@ ms.workload: big-data
 ms.date: 02/06/2017
 ms.author: nitinme
 translationtype: Human Translation
-ms.sourcegitcommit: a939a0845d7577185ff32edd542bcb2082543a26
-ms.openlocfilehash: db53f991aab10bace2d253fa96f739f99640bd77
+ms.sourcegitcommit: 988e7fe2ae9f837b661b0c11cf30a90644085e16
+ms.openlocfilehash: efb9e68256765873eb2776637d1a9469af6e46d6
+ms.lasthandoff: 04/06/2017
 
 
 ---
@@ -28,6 +29,7 @@ ms.openlocfilehash: db53f991aab10bace2d253fa96f739f99640bd77
 > * [SDK Java](data-lake-store-get-started-java-sdk.md)
 > * [API REST](data-lake-store-get-started-rest-api.md)
 > * [CLI do Azure](data-lake-store-get-started-cli.md)
+> * [CLI 2.0 do Azure](data-lake-store-get-started-cli-2.0.md)
 > * [Node.js](data-lake-store-manage-use-nodejs.md)
 > * [python](data-lake-store-get-started-python.md)
 >
@@ -86,7 +88,7 @@ Se utilizou chaves de um Cofre de Chaves do Azure para configurar a encriptaçã
    * Na primeira opção, clique em **Conceder Permissão** para configurar o acesso. A primeira opção só estará ativada se o utilizador que criou a conta do Data Lake Store também for administrador do Cofre de Chaves do Azure.
    * A outra opção consiste em executar o cmdlet do PowerShell apresentado no painel. Tem de ser o proprietário do Cofre de Chaves do Azure ou ter a capacidade de conceder permissões no Cofre de Chaves do Azure. Depois de executar o cmdlet, volte para o painel e clique em **Ativar** para configurar o acesso.
 
-## <a name="a-namecreatefolderacreate-folders-in-azure-data-lake-store-account"></a><a name="createfolder"></a>Criar pastas na conta do Azure Data Lake Store
+## <a name="createfolder"></a>Criar pastas na conta do Azure Data Lake Store
 Pode criar pastas na sua conta do Data Lake Store para gerir e armazenar dados.
 
 1. Abra a conta do Data Lake Store que acabou de criar. No painel esquerdo, clique em **Procurar**, clique em **Data Lake Store** e, em seguida, no painel Data Lake Store, clique no nome da conta sob o qual pretende criar as pastas. Se afixou a conta ao startboard, clique no mosaico dessa conta.
@@ -101,14 +103,14 @@ Pode criar pastas na sua conta do Data Lake Store para gerir e armazenar dados.
    
     ![Criar pastas numa conta do Data Lake](./media/data-lake-store-get-started-portal/ADL.New.Directory.png "Criar pastas numa conta do Data Lake")
 
-## <a name="a-nameuploaddataaupload-data-to-azure-data-lake-store-account"></a><a name="uploaddata"></a>Carregar dados para a conta do Azure Data Lake Store
+## <a name="uploaddata"></a>Carregar dados para a conta do Azure Data Lake Store
 Pode carregar os dados para a conta do Azure Data Lake Store diretamente no nível de raiz ou para uma pasta que criou na conta. Na captura de ecrã abaixo, siga os passos para carregar um ficheiro para uma sub-pasta a partir do painel **Explorador de Dados**. Nesta captura de ecrã, o ficheiro é carregado para uma sub-pasta mostrada na estrutura (marcado numa caixa vermelha).
 
 Se estiver à procura de alguns dados de exemplo para carregar, pode obter a pasta **Ambulance Data** a partir do [Repositório de Git do Azure Data Lake](https://github.com/MicrosoftBigData/usql/tree/master/Examples/Samples/Data/AmbulanceData).
 
 ![Carregar dados](./media/data-lake-store-get-started-portal/ADL.New.Upload.File.png "Carregar dados")
 
-## <a name="a-namepropertiesaproperties-and-actions-available-on-the-stored-data"></a><a name="properties"></a>Propriedades e ações disponíveis nos dados armazenados
+## <a name="properties"></a>Propriedades e ações disponíveis nos dados armazenados
 Clique no ficheiro recém-adicionado para abrir o painel **Propriedades**. As propriedades associadas ao ficheiro e as ações que pode efetuar no ficheiro estão disponíveis neste painel. Também pode copiar o caminho completo para o ficheiro na sua conta do Azure Data Lake Store, realçada na caixa vermelha na captura de ecrã abaixo.
 
 ![Propriedades nos dados](./media/data-lake-store-get-started-portal/ADL.File.Properties.png "Propriedades nos dados")
@@ -133,10 +135,5 @@ Para eliminar uma conta do Azure Data Lake Store, a partir do painel Data Lake S
 * [Utilizar o Azure Data Lake Analytics com o Data Lake Store](../data-lake-analytics/data-lake-analytics-get-started-portal.md)
 * [Use Azure HDInsight with Data Lake Store (Utilizar o Azure HDInsight com o Data Lake Store)](data-lake-store-hdinsight-hadoop-use-portal.md)
 * [Access diagnostic logs for Data Lake Store (Registos de diagnóstico de acesso do Data Lake Store)](data-lake-store-diagnostic-logs.md)
-
-
-
-
-<!--HONumber=Jan17_HO4-->
 
 

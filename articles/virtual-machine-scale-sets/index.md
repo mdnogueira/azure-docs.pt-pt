@@ -13,8 +13,9 @@ ms.topic: landing-page
 ms.date: 01/23/2017
 ms.author: carolz
 translationtype: Human Translation
-ms.sourcegitcommit: c9a4b71fc888f5b2b9a32af80d1d4947ff731157
-ms.openlocfilehash: 091259841325103ce6733796f1cfe9109e39877b
+ms.sourcegitcommit: 785d3a8920d48e11e80048665e9866f16c514cf7
+ms.openlocfilehash: c03fc321082b8be9044faf0e57e2f26ddc22c243
+ms.lasthandoff: 04/12/2017
 
 ---
 #<a name="virtual-machine-scale-sets-documentation"></a>Documentação dos Conjuntos de Dimensionamento de Máquinas Virtuais
@@ -117,7 +118,7 @@ Saiba como utilizar Conjuntos de Dimensionamento de Máquina Virtual para implem
                 <div class="card">
                     <div class="cardText">
                         <h3>REST</h3>
-                        <p><a href="/rest/api/compute">Referência da API REST da Computação</a></p>
+                        <p><a href="/rest/api/virtualmachinescalesets/">Referência da API REST dos Conjuntos de Dimensionamento de Máquinas Virtuais</a></p>
                     </div>
                 </div>
             </div>
@@ -125,10 +126,5 @@ Saiba como utilizar Conjuntos de Dimensionamento de Máquina Virtual para implem
     </li>
 </ul>
 
-
-
-
-
-<!--HONumber=Feb17_HO3-->
 
 

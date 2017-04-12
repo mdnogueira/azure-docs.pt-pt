@@ -196,7 +196,6 @@
 ## Cortana Analytics
 ### APIs
 #### [Deteção de anomalias](machine-learning-apps-anomaly-detection-api.md)
-#### [Análise de texto](machine-learning-apps-text-analytics.md)
 #### [Serviços Cognitivos](https://azure.microsoft.com/services/cognitive-services/)
 #### Manutenção preditiva
 ##### [Descrição geral](cortana-analytics-playbook-predictive-maintenance.md)
