@@ -1,8 +1,10 @@
 Pode verificar se a sua ligação foi concluída com êxito com o cmdlet`Get-AzureRmVirtualNetworkGatewayConnection`, com ou sem `-Debug`. 
 
 1. Utilize o seguinte exemplo de cmdlet, configurando os valores para corresponder aos seus. Se lhe for pedido, selecione "A" para executar "Todos". No exemplo, `-Name` refere-se para o nome da ligação que criou e quer testar.
-   
-        Get-AzureRmVirtualNetworkGatewayConnection -Name MyGWConnection -ResourceGroupName MyRG
+
+  ```powershell
+  Get-AzureRmVirtualNetworkGatewayConnection -Name MyGWConnection -ResourceGroupName MyRG
+  ```
 2. Quando o cmdlet terminar, veja os valores. No exemplo abaixo, o estado da ligação é apresentado como "Ligado" e pode ver bytes de entrada e de saída.
    
         Body:
@@ -30,9 +32,4 @@ Pode verificar se a sua ligação foi concluída com êxito com o cmdlet`Get-Azu
             "ingressBytesTransferred": 33509044,
             "egressBytesTransferred": 4142431
           }
-
-
-
-<!--HONumber=Nov16_HO2-->
-
 

@@ -50,7 +50,7 @@
 ## Gerir
 ### [Bibliotecas de gestão do Service Bus](service-bus-management-libraries.md)
 ### [Utilizar modelos do Azure Resource Manager](service-bus-resource-manager-overview.md)
-### [Utilizar o PowerShell para aprovisionar entidades](service-bus-powershell-how-to-provision.md)
+### [Utilizar o PowerShell para aprovisionar entidades](service-bus-manage-with-ps.md)
 
 # Referência
 ## .NET

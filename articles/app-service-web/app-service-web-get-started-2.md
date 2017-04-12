@@ -15,14 +15,14 @@ ms.topic: get-started-article
 ms.date: 05/12/2016
 ms.author: cephalin
 translationtype: Human Translation
-ms.sourcegitcommit: 9916000ddf38fdda1dcbdcf8818c5833a445efc8
-ms.openlocfilehash: 3f099db9f75466b5571aa732bb60343af7bd86da
-ms.lasthandoff: 01/24/2017
+ms.sourcegitcommit: 6ea03adaabc1cd9e62aa91d4237481d8330704a1
+ms.openlocfilehash: 34cccf6a0962f72e04a90516fa7643db2533d85d
+ms.lasthandoff: 04/06/2017
 
 
 ---
 # <a name="add-functionality-to-your-first-web-app"></a>Adicionar funcionalidades à sua primeira aplicação Web
-Em [Implementar a sua primeira aplicação Web no Azure em cinco minutos](app-service-web-get-started-cli-nodejs.md), implementou uma aplicação Web de exemplo no [Serviço de Aplicações do Azure](../app-service/app-service-value-prop-what-is.md). Neste artigo, irá adicionar rapidamente algumas funcionalidades excelentes à sua aplicação Web implementada. Em apenas alguns minutos, irá:
+Em [Implementar a sua primeira aplicação Web no Azure em cinco minutos](app-service-web-get-started-dotnet.md), implementou uma aplicação Web de exemplo no [Serviço de Aplicações do Azure](../app-service/app-service-value-prop-what-is.md). Neste artigo, irá adicionar rapidamente algumas funcionalidades excelentes à sua aplicação Web implementada. Em apenas alguns minutos, irá:
 
 * impor a autenticação para os seus utilizadores
 * dimensionar a sua aplicação automaticamente
