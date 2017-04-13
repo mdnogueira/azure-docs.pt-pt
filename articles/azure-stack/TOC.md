@@ -8,6 +8,7 @@
 ## Introdução
 ### [Pré-requisitos da implementação](azure-stack-deploy.md)
 ### [Implementar](azure-stack-run-powershell-script.md)
+### [Ativar portais](azure-stack-run-powershell-script.md#activate-the-administrator-and-tenant-portals)
 ### [Registar](azure-stack-register.md)
 ## Procedimento
 ### [Ligar ao Azure Stack POC](azure-stack-connect-azure-stack.md)
@@ -56,6 +57,7 @@
 #### [Descrição geral do Serviço de Aplicações no Azure Stack](azure-stack-app-service-overview.md)
 #### [Antes de começar](azure-stack-app-service-before-you-get-started.md)
 #### [Implementar o fornecedor de recursos do Serviço de Aplicações](azure-stack-app-service-deploy.md)
+#### [Implementar o Serviço de Aplicações offline](azure-stack-app-service-deploy-offline.md)
 #### [Adicionar mais funções de trabalho Web](azure-stack-app-service-add-worker-roles.md)
 #### [Configurar origens de implementação](azure-stack-app-service-configure-deployment-sources.md)
 #### [Ativar o FTP no Serviço de Aplicações no Azure Stack](azure-stack-app-service-enable-ftp.md)
@@ -65,7 +67,7 @@
 #### [Criar e publicar um item do Marketplace](azure-stack-create-and-publish-marketplace-item.md)
 #### [Adicionar uma imagem de máquina virtual personalizada](azure-stack-add-vm-image.md)
 #### [Implementar máquinas virtuais do Linux](azure-stack-linux.md)
-### Utilização e Faturação
+### Utilização e faturação
 #### [Descrição geral](azure-stack-billing-and-chargeback.md)
 #### [Relatórios de dados de utilização](azure-stack-usage-reporting.md)
 #### [API de utilização do fornecedor](azure-stack-provider-resource-api.md)
@@ -80,7 +82,7 @@
 ### [Descrição geral](azure-stack-storage-overview.md)
 ### [Diferenças e considerações](azure-stack-acs-differences-tp2.md)
 ## Rede
-### [iDNS para o Azure Stack](azure-stack-understanding-dns-in-tp2.md)
+### [iDNS para o Azure Stack](azure-stack-understanding-dns.md)
 ### [DNS no Azure Stack](azure-stack-dns.md)
 ### [Compreender as ligações de rede de VPNs](azure-stack-create-vpn-connection-one-node-tp2.md)
 ## Cofre de Chaves

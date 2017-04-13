@@ -24,13 +24,10 @@
 ### [Portal do Azure](vpn-gateway-howto-vnet-vnet-resource-manager-portal.md)
 ### [PowerShell](vpn-gateway-vnet-vnet-rm-ps.md)
 ### [Portal do Azure (clássico)](vpn-gateway-howto-vnet-vnet-portal-classic.md)
-### [Portal clássico (clássico)](virtual-networks-configure-vnet-to-vnet-connection.md)
 ## Configurar uma ligação VNet a VNet entre modelos de implementação
 ### [Portal do Azure](vpn-gateway-connect-different-deployment-models-portal.md)
 ### [PowerShell](vpn-gateway-connect-different-deployment-models-powershell.md)
-## Criar ligações coexistentes de Site a Site e do ExpressRoute
-### [PowerShell](../expressroute/expressroute-howto-coexist-resource-manager.md?toc=%2fazure%2fvpn-gateway%2ftoc.json)
-### [PowerShell (clássico)](../expressroute/expressroute-howto-coexist-classic.md?toc=%2fazure%2fvpn-gateway%2ftoc.json)
+## [Configurar ligações coexistentes de site a site e do ExpressRoute](../expressroute/expressroute-howto-coexist-resource-manager.md?toc=%2fazure%2fvpn-gateway%2ftoc.json)
 ## Configurar túnel forçado
 ### [PowerShell](vpn-gateway-forced-tunneling-rm.md)
 ### [PowerShell (clássico)](vpn-gateway-about-forced-tunneling.md)
@@ -50,8 +47,8 @@
 ## [Configurar um gateway de VPN (clássico)](vpn-gateway-configure-vpn-gateway-mp.md)
 
 # Referência
-## [PowerShell](https://msdn.microsoft.com/library/mt163510(v=azure.300))
-## [PowerShell (clássico)](https://msdn.microsoft.com/library/mt270335(v=azure.300))
+## [PowerShell](/powershell/resourcemanager/azurerm.network/v3.6.0/azurerm.network)
+## [PowerShell (clássico)](/powershell/servicemanagement/azure.networking/v3.4.0/azure.networking)
 ## [REST](https://msdn.microsoft.com/library/mt163859)
 ## [REST (clássico)](https://msdn.microsoft.com/library/jj154113)
 
