@@ -27,7 +27,7 @@
 
 ## Gerir bases e modelos de VM
 ### [Criar VM reclamável](devtest-lab-add-claimable-vm.md)
-### [Criar ambientes multi-VM com modelos do Azure Resource Manager](devtest-lab-create-environment-from-arm.md)
+### [Criar ambientes multi-VM e recursos PaaS com modelos do Azure Resource Manager](devtest-lab-create-environment-from-arm.md)
 ### [Configurar imagens do Marketplace](devtest-lab-configure-marketplace-images.md)
 ### [Comparar imagens com fórmulas](devtest-lab-comparing-vm-base-image-types.md)
 ### [Gerir fórmulas](devtest-lab-manage-formulas.md)

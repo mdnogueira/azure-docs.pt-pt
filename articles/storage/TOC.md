@@ -79,6 +79,7 @@
 ### [Perguntas Mais Frequentes acerca dos Discos de VM do IaaS do Azure ](storage-faq-for-disks.md)
 ### Armazenamento Premium
 #### [Armazenamento Premium de elevado desempenho para Discos de VM](storage-premium-storage.md)
+#### [Migrar para o Armazenamento Premium através do Azure Site Recovery](storage-migrate-to-premium-storage-using-azure-site-recovery.md)
 #### [Conceber o elevado desempenho](storage-premium-storage-performance.md)
 ### Armazenamento Standard
 #### [Armazenamento Standard económico e Discos de VM geridos e não geridos](storage-standard-storage.md)
