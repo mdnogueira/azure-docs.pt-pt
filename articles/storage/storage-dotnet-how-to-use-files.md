@@ -15,9 +15,9 @@ ms.topic: hero-article
 ms.date: 03/27/2017
 ms.author: renash
 translationtype: Human Translation
-ms.sourcegitcommit: 6e0ad6b5bec11c5197dd7bded64168a1b8cc2fdd
-ms.openlocfilehash: fcdeac53c79551000b48a47a1afc65e082bcc692
-ms.lasthandoff: 03/28/2017
+ms.sourcegitcommit: 538f282b28e5f43f43bf6ef28af20a4d8daea369
+ms.openlocfilehash: b835b04d6ef6d06e35add4f503e6800099e97383
+ms.lasthandoff: 04/07/2017
 
 
 ---
@@ -259,6 +259,16 @@ Para montar a partilha de ficheiros a partir de um cliente no local, primeiro te
 > Alguns fornecedores de serviços de Internet podem bloquear a porta 445, pelo que terá de verificar junto do seu fornecedor de serviços.
 > 
 > 
+
+### <a name="unmount-the-file-share"></a>Desmontar a partilha de ficheiros
+Para desmontar a partilha de ficheiros, pode utilizar o comando `net use` com a opção `/delete`.
+
+```
+net use <drive-letter> /delete
+
+example :
+net use z: /delete
+```
 
 ## <a name="develop-with-file-storage"></a>Desenvolver com o Armazenamento de ficheiros
 Para escrever código que chama o Armazenamento de ficheiros, pode utilizar as bibliotecas de cliente do armazenamento para o .NET e o Java ou a API REST do Storage do Azure. O exemplo nesta secção demonstra como trabalhar com uma partilha de ficheiros com [Azure Storage Client Library for .NET (Biblioteca de Clientes do Storage do Azure para .NET)](https://msdn.microsoft.com/library/mt347887.aspx) a partir de uma aplicação de consola simples em execução no ambiente de trabalho.
@@ -666,11 +676,13 @@ Além disso, pode consultar o [Azure Files Troubleshooting Article (Artigo de Re
     Pode consultar o [Azure Files Troubleshooting Article (Artigo de Resolução de Problemas de Ficheiros do Azure)](storage-troubleshoot-file-connection-problems.md) para obter documentação de orientação de resolução de problemas de ponto a ponto.               
 
 18. **Como posso ativar a encriptação do lado do servidor nos Ficheiros do Azure?**
+> [!NOTE]
+> A [Encriptação do Lado do Servidor](storage-service-encryption.md) para os Ficheiros do Azure está atualmente em pré-visualização. Pode contactar a [SSEDiscussion](mailto:ssediscussions@microsoft.com) se tiver dúvidas durante a pré-visualização.
 
-    A [Encriptação do Lado do Servidor](storage-service-encryption.md) para os Ficheiros do Azure está atualmente em pré-visualização. Durante a pré-visualização, pode ativar esta funcionalidade em novas contas de armazenamento do Azure Resource Manager através do [portal do Azure](https://portal.azure.com). Não existe nenhum encargo adicional para ativar esta funcionalidade. Quando ativar a Encriptação do Serviço de Armazenamento para o Armazenamento de Ficheiros do Azure, os seus dados são automaticamente encriptados por si. 
+    [Server Side Encryption](storage-service-encryption.md) for Azure Files is currently in preview. During preview, you can enable this feature only on new Azure Resource Manager storage accounts created by using the [Azure portal](https://portal.azure.com). There is no additional charge for enabling this feature. When you enable Storage Service Encryption for Azure File Storage, your data is automatically encrypted for you. 
     
-    Pretendemos oferecer suporte à encriptação do armazenamento de ficheiros com o [Azure Powershell](/powershell/resourcemanager/azurerm.storage/v2.7.0/azurerm.storage), a [CLI do Azure](storage-azure-cli.md) e a [API REST do Fornecedor de Recursos de Armazenamento do Azure](/rest/api/storagerp/storageaccounts) no futuro. 
-    Consulte [Storage Service Encryption (Encriptação do Serviço de Armazenamento)](storage-service-encryption.md) para obter mais informações sobre a encriptação em repouso no Armazenamento do Azure, e pode contactar ssediscussions@microsoft.com se tiver dúvidas durante a pré-visualização.
+    We plan to support enabling encryption for file storage with [Azure PowerShell](/powershell/resourcemanager/azurerm.storage/v2.7.0/azurerm.storage), [Azure CLI](storage-azure-cli.md), and the [Azure Storage Resource Provider REST API](/rest/api/storagerp/storageaccounts) in the future. 
+    See [Storage Service Encryption](storage-service-encryption.md) for more information about encryption at rest in Azure Storage, and you can contact ssediscussions@microsoft.com if you have questions during the preview.
 
 ## <a name="next-steps"></a>Passos seguintes
 Consulte as ligações para obter mais informações sobre o Armazenamento de ficheiros do Azure.

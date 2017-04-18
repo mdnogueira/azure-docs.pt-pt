@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 02/22/2017
+ms.date: 04/06/2017
 ms.author: markvi
 translationtype: Human Translation
-ms.sourcegitcommit: 78617dc7e3a4b6eb4fc32d32b6850b8c0832d6d8
-ms.openlocfilehash: 9819c5f6a3aea53664d86e3a23b25946c0f2b731
-ms.lasthandoff: 02/22/2017
+ms.sourcegitcommit: 757d6f778774e4439f2c290ef78cbffd2c5cf35e
+ms.openlocfilehash: a63514af636696d168931150cbda2fd30e0b32ce
+ms.lasthandoff: 04/10/2017
 
 
 ---
@@ -44,17 +44,99 @@ Com as informações fornecidas pelo relatório de início de sessão de utiliza
 * Quantos utilizadores iniciaram sessão ao longo de uma semana?
 * Qual é o estado destes inícios de sessão?
 
+O primeiro ponto de entrada de todos os dados de atividades de início de sessão é **Inícios de sessão** na secção de Atividade do **Azure Active**. Directory.
+
+
+![Atividade de início de sessão](./media/active-directory-reporting-activity-sign-ins/61.png "Atividade de início de sessão")
+
+
+Um registo de auditoria tem uma vista de lista predefinida que mostra:
+
+- o utilizador relacionado
+- a aplicação em que o utilizador tem sessão iniciada
+- o estado de início de sessão
+- a hora de início de sessão
+
+![Atividade de início de sessão](./media/active-directory-reporting-activity-sign-ins/41.png "Atividade de início de sessão")
+
+Pode personalizar a vista de lista ao clicar em **Colunas** na barra de ferramentas.
+
+![Atividade de início de sessão](./media/active-directory-reporting-activity-sign-ins/19.png "Atividade de início de sessão")
+
+Isto permite-lhe apresentar campos adicionais ou remover campos que já são apresentados.
+
+![Atividade de início de sessão](./media/active-directory-reporting-activity-sign-ins/42.png "Atividade de início de sessão")
+
+Ao clicar num item na vista de lista, obtém todos os detalhes sobre o mesmo.
+
+![Atividade de início de sessão](./media/active-directory-reporting-activity-sign-ins/43.png "Atividade de início de sessão")
+
+
+## <a name="filtering-sign-in-activities"></a>Filtrar atividades de início de sessão
+
+Para limitar os dados comunicados para um nível que funcione para si, pode filtrar os dados de inícios de sessão através dos seguintes campos:
+
+- Intervalo de tempo
+- Utilizador
+- Aplicação
+- Cliente
+- Estado de início de sessão
+
+![Atividade de início de sessão](./media/active-directory-reporting-activity-sign-ins/44.png "Atividade de início de sessão")
+
+
+O filtro **intervalo de tempo** permite-lhe definir um período de tempo para os dados devolvidos.  
+Os valores possíveis são:
+
+- 1 mês
+- 7 dias
+- 24 horas
+- Personalizado
+
+Quando selecionar um período de tempo personalizado, pode configurar uma hora de início e uma hora de fim.
+
+O filtro **utilizador** permite-lhe especificar o nome ou o nome principal de utilizador (UPN) do utilizador que mais lhe interessa.
+
+O filtro **aplicação** permite-lhe especificar o nome da aplicação que mais lhe interessa.
+
+O filtro **cliente** permite-lhe especificar informações sobre o dispositivo que mais lhe interessa.
+
+O filtro **estado do início de sessão** permite-lhe selecionar um dos seguintes filtros:
+
+- Todos
+- Êxito
+- Falha
+
+
+## <a name="sign-in-activities-shortcuts"></a>Atalhos de atividades de início de sessão
+
+Para além do Azure Active Directory, o portal do Azure fornece-lhe dois pontos de entrada adicionais para dados de atividades de início de sessão:
+
+- Utilizadores e grupos
+- Aplicações Empresariais
+
+
+### <a name="users-and-groups-sign-ins-activities"></a>Atividades de inícios de sessão de utilizadores e grupos
+
+Com as informações fornecidas pelo relatório de início de sessão de utilizador, encontrará respostas a perguntas como:
+
+- O que é o padrão de início de sessão de um utilizador?
+- Quantos utilizadores iniciaram sessão ao longo de uma semana?
+- Qual é o estado destes inícios de sessão?
+
+
+
 O ponto de entrada para estes dados é o gráfico de início de sessão de utilizador na secção **Descrição geral** em **Utilizadores e grupos**.
 
- ![Relatórios](./media/active-directory-reporting-activity-sign-ins/05.png "Relatórios")
+![Atividade de início de sessão](./media/active-directory-reporting-activity-sign-ins/45.png "Atividade de início de sessão")
 
 O gráfico de início de sessão de utilizador mostra as agregações semanais de inícios de sessão de todos os utilizadores num determinado período de tempo. A predefinição do período de tempo é 30 dias.
 
-![Relatórios](./media/active-directory-reporting-activity-sign-ins/02.png "Relatórios")
+![Atividade de início de sessão](./media/active-directory-reporting-activity-sign-ins/46.png "Atividade de início de sessão")
 
-Quando clica num dia no gráfico de início de sessão, obtém uma lista detalhada das atividades de início de sessão.
+Quando clica num dia no gráfico de início de sessão, obtém uma lista detalhada das atividades de início de sessão para este dia.
 
-![Relatórios](./media/active-directory-reporting-activity-sign-ins/03.png "Relatórios")
+![Atividade de início de sessão](./media/active-directory-reporting-activity-sign-ins/41.png "Atividade de início de sessão")
 
 Cada linha na lista de atividades de início de sessão dá-lhe as informações detalhadas sobre o início de sessão selecionado, tais como:
 
@@ -63,6 +145,12 @@ Cada linha na lista de atividades de início de sessão dá-lhe as informações
 * Que aplicação foi o destino do início de sessão?
 * Qual é o endereço IP do início de sessão?
 * Qual era o estado do início de sessão?
+
+A opção **Inícios de sessão** oferece uma descrição geral completa de todos os inícios de sessão dos utilizadores.
+
+![Atividade de início de sessão](./media/active-directory-reporting-activity-sign-ins/51.png "Atividade de início de sessão")
+
+
 
 ## <a name="usage-of-managed-applications"></a>Utilização de aplicações geridas
 
@@ -74,43 +162,27 @@ Com uma vista centrada em aplicações dos seus dados de início de sessão, pod
 
 O ponto de entrada para estes dados são as três aplicações mais utilizadas na sua organização no relatório dos últimos 30 dias na secção **Descrição geral** em **Aplicações empresariais**.
 
- ![Relatórios](./media/active-directory-reporting-activity-sign-ins/06.png "Relatórios")
+![Atividade de início de sessão](./media/active-directory-reporting-activity-sign-ins/64.png "Atividade de início de sessão")
 
 As agregações semanais de inícios de sessão do gráfico de utilização da aplicação das três aplicações mais utilizadas num determinado período de tempo. A predefinição do período de tempo é 30 dias.
 
-![Relatórios](./media/active-directory-reporting-activity-sign-ins/78.png "Relatórios")
+![Atividade de início de sessão](./media/active-directory-reporting-activity-sign-ins/47.png "Atividade de início de sessão")
 
 Se quiser, pode colocar o foco numa aplicação específica.
+
 
 ![Relatórios](./media/active-directory-reporting-activity-sign-ins/single_spp_usage_graph.png "Relatórios")
 
 Quando clica num dia no gráfico de utilização da aplicação, obtém uma lista detalhada das atividades de início de sessão.
 
-![Relatórios](./media/active-directory-reporting-activity-sign-ins/top_app_sign_ins.png "Relatórios")
+
+![Atividade de início de sessão](./media/active-directory-reporting-activity-sign-ins/48.png "Atividade de início de sessão")
+
 
 A opção **Inícios de sessão** dá uma visão geral completa de todos os eventos de início de sessão nas suas aplicações.
 
-![Relatórios](./media/active-directory-reporting-activity-sign-ins/85.png "Relatórios")
+![Atividade de início de sessão](./media/active-directory-reporting-activity-sign-ins/49.png "Atividade de início de sessão")
 
-Utilizando o seletor de colunas, pode selecionar os campos de dados que pretende apresentar.
-
-![Relatórios](./media/active-directory-reporting-activity-sign-ins/column_chooser.png "Relatórios")
-
-## <a name="filtering-sign-ins"></a>Filtrar inícios de sessão
-Pode filtrar inícios de sessão para limitar a quantidade de dados apresentados com os campos seguintes:
-
-* Data e hora 
-* Nome principal do utilizador
-* Nome da aplicação
-* Nome do cliente
-* Estado de início de sessão
-
-![Relatórios](./media/active-directory-reporting-activity-sign-ins/293.png "Relatórios")
-
-Outro método para filtrar as entradas das atividades de início de sessão consiste em procurar entradas específicas.
-O método de pesquisa permite-lhe definir o âmbito dos inícios de sessão em torno de **utilizadores**, **grupos** ou **aplicações** específicos.
-
-![Relatórios](./media/active-directory-reporting-activity-sign-ins/84.png "Relatórios")
 
 
 ## <a name="next-steps"></a>Passos seguintes

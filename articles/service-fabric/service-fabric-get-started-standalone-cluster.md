@@ -1,0 +1,95 @@
+---
+title: Configurar um cluster do Azure Service Fabric | Microsoft Docs
+description: "Crie um cluster autónomo de desenvolvimento com três nós em execução no mesmo computador. Depois de concluir esta configuração, estará pronto a criar um cluster de várias máquinas."
+services: service-fabric
+documentationcenter: .net
+author: rwike77
+manager: timlt
+editor: 
+ms.assetid: 
+ms.service: service-fabric
+ms.devlang: dotNet
+ms.topic: get-started-article
+ms.tgt_pltfrm: NA
+ms.workload: NA
+ms.date: 04/11/2017
+ms.author: ryanwi
+translationtype: Human Translation
+ms.sourcegitcommit: 785d3a8920d48e11e80048665e9866f16c514cf7
+ms.openlocfilehash: 6da8b21014966edd9f4cea0fd27f6973b2b820f0
+ms.lasthandoff: 04/12/2017
+
+
+---
+
+# <a name="create-your-first-service-fabric-standalone-cluster"></a>Crie o primeiro cluster autónomo do Service Fabric
+Pode criar um cluster autónomo do Service Fabric em quaisquer máquinas virtuais ou computadores com o Windows Server 2012 R2 ou o Windows Server 2016, no local ou na cloud. Este guia de introdução ajuda-o a criar um cluster autónomo de desenvolvimento em apenas alguns minutos.  Quando tiver terminado, terá um cluster com três nós em execução num computador único onde pode implementar aplicações.
+
+## <a name="before-you-begin"></a>Antes de começar
+O Service Fabric fornece um pacote de configuração para criar clusters autónomos do Service Fabric.  [Transferir o pacote de configuração](http://go.microsoft.com/fwlink/?LinkId=730690).  Deszipe-o para uma pasta, por exemplo *C:\temp\Microsoft.Azure.ServiceFabric.WindowsServer*, no computador ou na máquina virtual, onde irá configurar o cluster de desenvolvimento.  Os conteúdos do pacote de configuração estão descritos em detalhe [aqui](service-fabric-cluster-standalone-package-contents.md).
+
+O administrador do cluster que irá implementar e configurar o cluster tem de ter privilégios de administrador no computador. Não pode instalar o Service Fabric num controlador de domínio.
+
+## <a name="validate-the-environment"></a>Validar o ambiente
+O script *TestConfiguration.ps1* no pacote autónomo é utilizado como um analisador de melhores práticas para validar se um cluster pode ser implementado num determinado ambiente. A [preparação da implementação](service-fabric-cluster-standalone-deployment-preparation.md) lista os pré-requisitos e os requisitos do ambiente. Execute o script para verificar se pode criar o cluster de desenvolvimento:
+
+```powershell
+.\TestConfiguration.ps1 -ClusterConfigFilePath .\ClusterConfig.Unsecure.DevCluster.json
+```
+## <a name="create-the-cluster"></a>Criar o cluster
+São instalados vários ficheiros de configuração de cluster de exemplo com o pacote de configuração. O *ClusterConfig.Unsecure.DevCluster.json* é a configuração de cluster mais simples: um cluster inseguro com três nós em execução num único computador. Não necessita de modificar qualquer uma das predefinições de configuração deste tutorial.  Outros ficheiros de configuração descrevem clusters únicos ou de várias máquinas protegidas com certificados X.509 ou de segurança do Windows.  Leia [Secure a cluster (Proteger um cluster)](service-fabric-cluster-security.md) para saber mais sobre a segurança do cluster do Service Fabric. 
+
+Para criar o cluster de desenvolvimento com três nós, execute o script *CreateServiceFabricCluster.ps1* a partir de uma sessão do PowerShell do administrador:
+
+```powershell
+.\CreateServiceFabricCluster.ps1 -ClusterConfigFilePath .\ClusterConfig.Unsecure.DevCluster.json -AcceptEULA
+```
+
+O pacote do runtime do Service Fabric é transferido e instalado automaticamente no momento da criação do cluster.
+
+## <a name="connect-to-the-cluster"></a>Ligar ao cluster
+O cluster de desenvolvimento com três nós está agora em execução. O módulo do ServiceFabric PowerShell é instalado com o runtime.  Pode verificar que o cluster está em execução a partir do mesmo computador ou de um computador remoto com o runtime do Service Fabric.  O cmdlet [Connect-ServiceFabricCluster](/powershell/module/ServiceFabric/Connect-ServiceFabricCluster) estabelece uma ligação ao cluster.   
+
+```powershell
+Connect-ServiceFabricCluster -ConnectionEndpoint localhost:19000
+```
+Consulte [Connect to a secure cluster (Ligar a um cluster seguro)](service-fabric-connect-to-secure-cluster.md) para outros exemplos de ligação a um cluster. Depois de ligar ao cluster, utilize o cmdlet [Get-ServiceFabricNode](/powershell/module/servicefabric/get-servicefabricnode) para apresentar uma lista de nós no cluster e informações de estado para cada nó. O **HealthState** deve ser *OK* para cada nó.
+
+```powershell
+PS C:\temp\Microsoft.Azure.ServiceFabric.WindowsServer> Get-ServiceFabricNode |Format-Table
+
+NodeDeactivationInfo NodeName IpAddressOrFQDN NodeType  CodeVersion ConfigVersion NodeStatus NodeUpTime NodeDownTime HealthState
+-------------------- -------- --------------- --------  ----------- ------------- ---------- ---------- ------------ -----------
+                     vm2      localhost       NodeType2 5.5.216.0   0                     Up 03:00:07   00:00:00              Ok
+                     vm1      localhost       NodeType1 5.5.216.0   0                     Up 03:00:02   00:00:00              Ok
+                     vm0      localhost       NodeType0 5.5.216.0   0                     Up 03:00:01   00:00:00              Ok
+```
+
+## <a name="visualize-the-cluster-using-service-fabric-explorer"></a>Visualize o cluster com o explorador do Service Fabric
+O [Service Fabric Explorer](service-fabric-visualizing-your-cluster.md) é uma boa ferramenta para visualizar o seu cluster e gerir aplicações.  O Service Fabric Explorer é um serviço que é executado no cluster, que poderá aceder através de um browser, ao navegar para [http://localhost:19080/Explorer](http://localhost:19080/Explorer). 
+
+O dashboard do cluster fornece uma descrição geral do cluster, incluindo um resumo de aplicações e do estado de funcionamento do nó. A vista do nó mostra o esquema físico do cluster. Para um determinado nó, pode inspecionar as aplicações que têm um código implementado nesse nó.
+
+![Service Fabric Explorer][service-fabric-explorer]
+
+## <a name="remove-the-cluster"></a>Remover o cluster
+Para remover um cluster, execute o script *RemoveServiceFabricCluster.ps1* do PowerShell a partir da pasta do pacote e passe no caminho para o ficheiro de configuração do JSON. Opcionalmente, pode especificar uma localização para o registo da eliminação.
+
+```powershell
+# Removes Service Fabric cluster nodes from each computer in the configuration file.
+.\RemoveServiceFabricCluster.ps1 -ClusterConfigFilePath .\ClusterConfig.Unsecure.DevCluster.json -Force
+```
+
+Para remover o tempo de execução do Service Fabric do computador, execute o seguinte script do PowerShell a partir da pasta do pacote.
+
+```powershell
+# Removes Service Fabric from the current computer.
+.\CleanFabric.ps1
+```
+
+## <a name="next-steps"></a>Passos seguintes
+Agora que configurou um cluster autónomo de desenvolvimento, experimente o seguinte:
+* [Configure um cluster autónomo de várias máquinas](service-fabric-cluster-creation-for-windows-server.md) e ative a segurança.
+* [Implementar aplicações com o Powershell](service-fabric-deploy-remove-applications.md)
+
+[service-fabric-explorer]: ./media/service-fabric-get-started-standalone-cluster/sfx.png

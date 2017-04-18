@@ -15,9 +15,9 @@ ms.topic: get-started-article
 ms.date: 02/27/2017
 ms.author: mihauss
 translationtype: Human Translation
-ms.sourcegitcommit: c004285f3b3052ed9361fc7165702aff8f5e835d
-ms.openlocfilehash: e0df34dbb4278d759ee412000d6dafd64276d926
-ms.lasthandoff: 02/28/2017
+ms.sourcegitcommit: 988e7fe2ae9f837b661b0c11cf30a90644085e16
+ms.openlocfilehash: 618d31e991d9405ece6533727d700e316ae85bec
+ms.lasthandoff: 04/06/2017
 
 
 ---
@@ -268,7 +268,8 @@ Também pode ser calculado o custo de transferência de dados de georreplicaçã
 
 ### <a name="migrating-existing-data"></a>Migração de dados existentes
 Uma conta do Blob Storage é especializada para o armazenamento apenas de blobs de blocos e de acréscimo. Não é possível converter as contas de armazenamento para fins gerais existentes, que lhe permitem armazenar tabelas, filas, ficheiros, discos e também blobs, em contas do Armazenamento de Blobs. Para utilizar as camadas de armazenamento, terá de criar novas contas do Blob Storage e migrar os dados existentes para as contas recém-criadas.
-Pode utilizar os métodos seguintes para migrar os dados existentes para contas do Blob Storage a partir de dispositivos de armazenamento no local, fornecedores de armazenamento na nuvem externos ou das suas contas do Storage para fins gerais existentes no Azure:
+
+Pode utilizar os métodos seguintes para migrar os dados existentes para contas do Armazenamento de Blobs a partir de dispositivos de armazenamento no local, fornecedores de armazenamento na cloud externos ou das suas contas do armazenamento para fins gerais existentes no Azure:
 
 #### <a name="azcopy"></a>AzCopy
 O AzCopy é um utilitário de linha de comandos do Windows concebido para copiar dados de e para o Storage do Azure com um elevado desempenho. Pode utilizar o AzCopy para copiar dados para a sua conta do Blob Storage a partir das suas contas do Storage para fins gerais existentes ou para carregar dados dos dispositivos de armazenamento no local para a conta do Blob Storage.

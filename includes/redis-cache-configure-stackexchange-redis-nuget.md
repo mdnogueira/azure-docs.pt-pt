@@ -25,7 +25,7 @@ O pacote NuGet transfere e adiciona as referências de assemblagem necessárias 
 > 
 > 
 
-Também é possível instalar o pacote de StackExchange.Redis NuGet clicando em **Gestor de Pacotes NuGet**, **Gestor de Pacotes** a partir do menu **Ferramentas** e executar o seguinte comando a partir da janela `Package Manager Console`.
+Também é possível instalar o pacote de StackExchange.Redis NuGet clicando em **Gestor de Pacotes NuGet**, **Gestor de Pacotes** a partir do menu **Ferramentas** e executar o seguinte comando a partir da janela **Consola do Gestor de Pacotes**.
     
 ```
 Install-Package StackExchange.Redis

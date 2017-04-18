@@ -17,7 +17,7 @@
     ```
 2. Adicione o Reencaminhamento seguinte `constants` ao `sender.js`, para obter os detalhes da ligação da Ligação Híbrida. Substitua os marcadores de posição entre parênteses retos pelos valores adequados que foram obtidos ao criar a Ligação Híbrida.
    
-   1. `const ns` - O espaço de nomes do Reencaminhamento
+   1. `const ns` - O espaço de nomes de Reencaminhamento (utilize o FQDN - por exemplo, `{namespace}.servicebus.windows.net`)
    2. `const path` - O nome da Ligação Híbrida
    3. `const keyrule` - O nome da chave SAS
    4. `const key` - O valor da chave SAS
@@ -71,9 +71,4 @@
         }
     );
     ```
-
-
-
-<!--HONumber=Nov16_HO2-->
-
 

@@ -13,24 +13,24 @@ ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.custom: H1Hack27Feb2017
 ms.workload: infrastructure-services
-ms.date: 12/12/2016
+ms.date: 04/04/2017
 ms.author: amsriva
 translationtype: Human Translation
-ms.sourcegitcommit: 5009b13cec57e6974f71610c84fdaad837085df0
-ms.openlocfilehash: 5f81d8146f8000e73a2eb578ff2371a62c8875e9
-ms.lasthandoff: 02/28/2017
+ms.sourcegitcommit: 73ee330c276263a21931a7b9a16cc33f86c58a26
+ms.openlocfilehash: 40368e31790a7ffa2d34a51a13e78d028cd0a1eb
+ms.lasthandoff: 04/05/2017
 
 
 ---
 # <a name="overview-of-end-to-end-ssl-and-ssl-policy-on-application-gateway"></a>Descrição geral de SSL e da Política SSL de ponto a ponto no Gateway de Aplicação
 
-O Gateway de Aplicação suporta a terminação de SSL no gateway, após o qual o tráfego normalmente flui desencriptado para os servidores de back-end. Esta funcionalidade permite que os servidores Web estejam livres de sobrecarga de encriptação/desencriptação dispendiosa. No entanto, para alguns clientes, a comunicação sem encriptação para os servidores de back-end não é uma opção aceitável. Esta comunicação desencriptada pode dever-se aos requisitos de segurança/conformidade ou a aplicação pode aceitar apenas a ligação segura. Para essas aplicações, o gateway de aplicação suporta agora a encriptação SSL de ponta a ponta.
+O Gateway de Aplicação suporta a terminação de SSL no gateway, após o qual o tráfego normalmente flui desencriptado para os servidores de back-end. Esta funcionalidade permite que os servidores Web estejam livres de sobrecarga de encriptação e desencriptação dispendiosa. No entanto, para alguns clientes, a comunicação sem encriptação para os servidores de back-end não é uma opção aceitável. Esta comunicação desencriptada pode dever-se aos requisitos de segurança, requisitos de conformidade ou a aplicação pode aceitar apenas uma ligação segura. Para essas aplicações, o gateway de aplicação suporta a encriptação SSL de ponta a ponta.
 
 ## <a name="overview"></a>Descrição geral
 
-O SSL de ponto a ponto permite-lhe transmitir dados confidenciais de forma segura para o back-end encriptado e tirar partido dos benefícios das funcionalidades de balanceamento de carga da Camada 7 que o gateway de aplicação proporciona. Algumas destas funcionalidades são a afinidade do cookie, encaminhamento baseado em URL, suporte para encaminhamento baseado em sites ou capacidade para injetar cabeçalhos Encaminhados para X-*.
+O SSL de ponto a ponto permite-lhe transmitir dados confidenciais de forma segura para o back-end encriptado e tirar partido dos benefícios das funcionalidades de balanceamento de carga da Camada 7 que o gateway de aplicação proporciona. Algumas destas funcionalidades são a afinidade do cookie baseado na sessão, encaminhamento baseado em URL, suporte para encaminhamento baseado em sites ou capacidade para injetar cabeçalhos Encaminhados para X-*.
 
-Quando configurado com o modo de comunicação SSL de ponta a ponta, o gateway de aplicação termina sessões de SSL de utilizador no gateway e desencripta o tráfego de utilizador. Em seguida, aplica as regras configuradas para selecionar uma instância de conjunto de back-end adequada para encaminhar o tráfego. O gateway de aplicação, em seguida, inicia uma nova ligação SSL ao servidor de back-end e encripta novamente os dados com o certificado de chave pública do servidor de back-end antes de transmitir o pedido para o back-end. O SSL de ponta a ponta é ativado ao configurar a definição do protocolo no BackendHTTPSetting como Https que, em seguida, é aplicado a um conjunto de back-end. Cada servidor de back-end no conjunto de back-end com SSL de ponta a ponta ativado deve ser configurado com um certificado, para permitir a comunicação segura.
+Quando configurado com o modo de comunicação SSL de ponta a ponta, o gateway de aplicação termina as sessões de SSL no gateway e desencripta o tráfego de utilizador. Em seguida, aplica as regras configuradas para selecionar uma instância de conjunto de back-end adequada para encaminhar o tráfego. O gateway de aplicação, em seguida, inicia uma nova ligação SSL ao servidor de back-end e encripta novamente os dados com o certificado de chave pública do servidor de back-end antes de transmitir o pedido para o back-end. O SSL de ponta a ponta é ativado ao configurar a definição do protocolo no BackendHTTPSetting como HTTPS que, em seguida, é aplicado a um conjunto de back-end. Cada servidor de back-end no conjunto de back-end com SSL de ponta a ponta ativado deve ser configurado com um certificado, para permitir a comunicação segura.
 
 ![cenário de SSL ponto a ponto][1]
 
@@ -44,7 +44,7 @@ O gateway de aplicação comunica apenas com instâncias de back-end conhecidas 
 
 O gateway de aplicação suporta políticas de negociação SSL configuráveis pelo utilizador, o que permite aos clientes um maior controlo sobre ligações SSL no gateway de aplicação.
 
-1. Por predefinição, o SSL 2.0 e 3.0 estão desativados para todos os Gateways de Aplicação. Não são configuráveis em qualquer altura.
+1. Por predefinição, o SSL 2.0 e 3.0 estão desativados para todos os Gateways de Aplicação. Estas políticas não são configuráveis em qualquer altura.
 2. A definição da política SSL dá-lhe a opção de desativar qualquer um dos seguintes três protocolos – **TLSv1\_0**, **TLSv1\_1**, **TLSv1\_2**.
 3. Se não for definida uma política SSL, as três (TLSv1\_0, TLSv1\_1, TLSv1_2) serão ativadas.
 

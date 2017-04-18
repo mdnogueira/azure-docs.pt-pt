@@ -1,6 +1,6 @@
 ---
 title: "Ligue à Base de Dados SQL do Azure com o .NET (C#) | Microsoft Docs"
-description: "Utilize o código de exemplo neste guia de introdução para criar uma aplicação moderna com C# e apoiada por uma poderosa base de dados relacional na cloud com a Base de Dados SQL do Azure."
+description: "Apresenta um exemplo de código .NET que pode utilizar para ligar e consultar a Base de Dados SQL do Azure"
 services: sql-database
 documentationcenter: 
 author: ajlam
@@ -8,37 +8,42 @@ manager: jhubbard
 editor: 
 ms.assetid: 7faca033-24b4-4f64-9301-b4de41e73dfd
 ms.service: sql-database
-ms.custom: quick start
+ms.custom: quick start connect
 ms.workload: drivers
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: hero-article
-ms.date: 03/28/2017
+ms.date: 04/05/2017
 ms.author: andrela;sstein;carlrab
 translationtype: Human Translation
-ms.sourcegitcommit: 432752c895fca3721e78fb6eb17b5a3e5c4ca495
-ms.openlocfilehash: c6c0c218b8d0456d37a4514238675fd8e75faf9d
-ms.lasthandoff: 03/30/2017
+ms.sourcegitcommit: 785d3a8920d48e11e80048665e9866f16c514cf7
+ms.openlocfilehash: c36c3a3f651bcee38b953b12e48cab8d93a34207
+ms.lasthandoff: 04/12/2017
 
 
 ---
 # <a name="azure-sql-database-use-net-c-to-connect-and-query-data"></a>Base de Dados SQL do Azure: utilize o .NET (C#) para ligar e consultar dados
 
-Utilize o [C# e o ADO.NET](https://msdn.microsoft.com/library/kb9s9ks0.aspx) para ligar e consultar uma Base de Dados SQL do Azure. Este guia detalha a utilização do C# para ligar a uma base de dados SQL do Azure e, em seguida, executar declarações de consulta, inserção, atualização e eliminação.
+Este guia de introdução demonstra como utilizar o [C# e o ADO.NET](https://msdn.microsoft.com/library/kb9s9ks0.aspx) para ligar a uma base de dados SQL do Azure e, em seguida, utilizar as declarações de Transact-SQL para consultar, inserir, atualizar e eliminar dados na base de dados a partir de plataformas do Windows, do Mac OS e do Ubuntu Linux.
 
 Este guia de introdução utiliza como ponto de partida os recursos criados num destes guias de introdução:
 
 - [Criar BD - Portal](sql-database-get-started-portal.md)
 - [Criar BD - CLI](sql-database-get-started-cli.md)
 
-## <a name="configure-development-environment"></a>Configurar o ambiente de desenvolvimento
+## <a name="install-net"></a>Instalar o .NET
 
-As secções seguintes mostram em detalhe a configuração dos seus ambientes de desenvolvimento Mac OS, Linux (Ubuntu) e Windows para funcionar com a Base de Dados SQL do Azure.
+### <a name="windows-net-framework-and-net-core"></a>**Windows .NET framework e .NET core**
+
+O Visual Studio 2017 Community é um IDE gratuito, extensível e repleto de funcionalidades para criar aplicações modernas para Android, iOS e Windows, bem como aplicações Web e de bases de dados e serviços cloud. Pode instalar o .NET framework completo ou o apenas o .NET core. Os fragmentos de código no início rápido funcionam com ambos. Se já tiver o Visual Studio instalado no seu computador, ignore os passos seguintes.
+
+1. Transfira o [Instalador](https://go.microsoft.com/fwlink/?LinkId=691978). 
+2. Execute o instalador e siga as instruções de instalação, para concluí-la.
 
 ### <a name="mac-os"></a>**Mac OS**
 Abra o terminal e navegue para um diretório no qual pretenda criar o seu projeto .NET Core. Introduza os comandos seguintes para instalar **brew**, **OpenSSL** e **.NET Core**. 
 
-```C#
+```bash
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew update
 brew install openssl
@@ -52,20 +57,12 @@ Instale o .NET Core em macOS. Transfira o [instalador oficial](https://go.micros
 ### <a name="linux-ubuntu"></a>**Linux (Ubuntu)**
 Abra o terminal e navegue para um diretório no qual pretenda criar o seu projeto .NET Core. Utilize os comandos seguintes para instalar o **.NET Core**.
 
-```C#
+```bash
 sudo sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet-release/ xenial main" > /etc/apt/sources.list.d/dotnetdev.list'
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 417A0893
 sudo apt-get update
 sudo apt-get install dotnet-dev-1.0.1
 ```
-
-### <a name="windows"></a>**Windows**
-Instale o Visual Studio 2015 Community Edition e o .NET Framework. Se já tiver o Visual Studio instalado no seu computador, ignore os passos seguintes.
-
-O Visual Studio 2015 Community é um IDE gratuito, extensível e repleto de funcionalidades para criar aplicações modernas para Android, iOS e Windows, bem como aplicações Web e de bases de dados e serviços cloud.
-
-1. Transfira o [Instalador](https://go.microsoft.com/fwlink/?LinkId=691978). 
-2. Execute o instalador e siga as instruções de instalação, para concluí-la.
 
 ## <a name="get-connection-information"></a>Obter informações da ligação
 
@@ -309,5 +306,11 @@ namespace ConsoleApplication1
 ## <a name="next-steps"></a>Passos seguintes
 
 - Para obter documentação .NET, consulte [documentação .NET](https://docs.microsoft.com/dotnet/).
-- Para obter informações sobre a consulta e edição de dados com o Visual Studio Code, consulte [Visual Studio Code](https://code.visualstudio.com/docs).
+- Para ligar e consultar com o SQL Server Management Studio, veja [Ligar e consultar com SSMS](sql-database-connect-query-ssms.md)
+- Para ligar e consultar com o Visual Studio, veja [Connect and query with Visual Studio Code (Ligar e consultar com o Visual Studio Code)](sql-database-connect-query-vscode.md).
+- Para ligar e consultar com PHP, consulte [Connect and query with PHP (Ligar e consultar com PHP)](sql-database-connect-query-php.md).
+- Para ligar e consultar com Node.js, consulte [Connect and query with Node.js (Ligar e consultar com Node.js)](sql-database-connect-query-nodejs.md).
+- Para ligar e consultar com Java, consulte [Connect and query with Java (Ligar e consultar com Java)](sql-database-connect-query-java.md).
+- Para ligar e consultar com Python, consulte [Connect and query with Python (Ligar e consultar com Python)](sql-database-connect-query-python.md).
+- Para ligar e consultar com Ruby, consulte [Connect and query with Ruby (Ligar e consultar com Ruby)](sql-database-connect-query-ruby.md).
 

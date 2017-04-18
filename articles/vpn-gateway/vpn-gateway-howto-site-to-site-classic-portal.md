@@ -13,42 +13,38 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 03/15/2017
+ms.date: 04/11/2017
 ms.author: cherylmc
 translationtype: Human Translation
-ms.sourcegitcommit: 4f2230ea0cc5b3e258a1a26a39e99433b04ffe18
-ms.openlocfilehash: 619ea430b13c16e8e4338413613d5798f36458ba
-ms.lasthandoff: 03/25/2017
+ms.sourcegitcommit: 785d3a8920d48e11e80048665e9866f16c514cf7
+ms.openlocfilehash: 81eca4b41b6a0726e5fcf851074bfb7dfca16fb8
+ms.lasthandoff: 04/12/2017
 
 
 ---
 # <a name="create-a-site-to-site-connection-using-the-azure-portal-classic"></a>Criar uma ligação de Site a Site com o portal do Azure (clássico)
-> [!div class="op_single_selector"]
-> * [Resource Manager - Portal do Azure](vpn-gateway-howto-site-to-site-resource-manager-portal.md)
-> * [Resource Manager – PowerShell](vpn-gateway-create-site-to-site-rm-powershell.md)
-> * [Clássica – Portal do Azure](vpn-gateway-howto-site-to-site-classic-portal.md)
-> * [Clássica – Portal Clássico](vpn-gateway-site-to-site-create.md)
->
->
-
 
 Uma ligação de gateway de VP de Site a Site (S2S) é uma ligação através do túnel VPN IPsec/IKE (S2S ou IKEv1). Este tipo de ligação requer um dispositivo VPN localizado no local que tenha um endereço IP público atribuído ao mesmo e não se encontre protegido por um NAT. As ligações site a site podem ser utilizadas para configurações em vários locais e híbridas.
 
-Este artigo explica-lhe como criar uma rede virtual e uma ligação de gateway de Rede de VPNs na sua rede no local com o modelo de implementação clássica e o portal do Azure. 
-
 ![Diagrama da ligação de Gateway de Rede de VPNs em vários sites](./media/vpn-gateway-howto-site-to-site-classic-portal/site-to-site-diagram.png)
 
-### <a name="deployment-models-and-methods-for-site-to-site-connections"></a>Modelos de implementação e métodos para ligações Site a Site
-[!INCLUDE [deployment models](../../includes/vpn-gateway-deployment-models-include.md)]
+Este artigo explica-lhe como criar uma rede virtual e uma ligação de gateway de Rede de VPNs na sua rede no local com o modelo de implementação clássica e o portal do Azure. Também pode criar esta configuração para o modelo de implementação do Gestor de Recursos ao selecionar uma opção diferente da lista seguinte:
 
-A tabela seguinte mostra os modelos e métodos de implementação atualmente disponíveis para configurações Site a Site. Quando estiver disponível um artigo com passos de configuração, criamos uma ligação direta para o mesmo nesta tabela.
-
-[!INCLUDE [site-to-site table](../../includes/vpn-gateway-table-site-to-site-include.md)]
+> [!div class="op_single_selector"]
+> * [Resource Manager - portal do Azure](vpn-gateway-howto-site-to-site-resource-manager-portal.md)
+> * [Resource Manager – PowerShell](vpn-gateway-create-site-to-site-rm-powershell.md)
+> * [Clássica – portal do Azure](vpn-gateway-howto-site-to-site-classic-portal.md)
+> * [Clássica – portal clássico](vpn-gateway-site-to-site-create.md)
+>
+>
 
 #### <a name="additional-configurations"></a>Configurações adicionais
 Se pretender ligar VNets entre si, mas não estiver a criar uma ligação para uma localização no local, veja [Configurar uma ligação VNet a VNet](virtual-networks-configure-vnet-to-vnet-connection.md). Se pretender adicionar uma ligação Site a Site a uma VNet que já tem uma ligação, veja [Adicionar uma ligação S2S a uma VNet com uma ligação de gateway de VPN existente](vpn-gateway-multi-site.md).
 
 ## <a name="before-you-begin"></a>Antes de começar
+
+[!INCLUDE [deployment models](../../includes/vpn-gateway-deployment-models-include.md)]
+
 Antes de iniciar a configuração, verifique se tem os seguintes itens:
 
 * Um dispositivo VPN compatível e alguém que consiga configurá-lo. Veja [Acerca dos Dispositivos VPN](vpn-gateway-about-vpn-devices.md). Se não estiver familiarizado com a configuração do dispositivo VPN ou com os intervalos de endereços IP localizados na configuração da rede no local, tem de se coordenar com alguém que consiga fornecer esses detalhes.
@@ -57,8 +53,7 @@ Antes de iniciar a configuração, verifique se tem os seguintes itens:
 * Atualmente, o PowerShell é necessário para especificar a chave partilhada e criar a ligação de gateway de VPN. Instale a versão mais recente dos cmdlets do PowerShell da Gestão de Serviço (SM) do Azure. Para obter mais informações, veja [How to install and configure Azure PowerShell (Como instalar e configurar o Azure PowerShell)](/powershell/azureps-cmdlets-docs). Ao trabalhar com o PowerShell para esta configuração, certifique-se de que está a executar como administrador. 
 
 > [!NOTE]
-> Ao configurar uma ligação Site a Site, é preciso um endereço IP IPv4 destinado ao público para o dispositivo VPN.                                                                                                                                                                               
->
+> Ao configurar uma ligação Site a Site, é preciso um endereço IP IPv4 destinado ao público para o dispositivo VPN.
 >
 
 ### <a name="values"></a>Valores de configuração de exemplo para este exercício
@@ -103,7 +98,7 @@ Quando cria uma rede virtual para utilizar numa ligação de S2S, tem de certifi
 8. Selecione **Afixar ao dashboard** se pretender conseguir localizar mais facilmente as suas VNet no dashboard e clique em **Criar**.
 
     ![Afixar ao dashboard](./media/vpn-gateway-howto-site-to-site-classic-portal/pintodashboard150.png "Afixar ao dashboard")
-9. Depois de clicar em "Criar", verá um mosaico no dashboard que irá refletir o progresso da VNet. O mosaico muda enquanto a VNet está a ser criada.
+9. Depois de clicar em "Criar", é apresentado um mosaico no dashboard que reflete o progresso da sua VNet. O mosaico muda enquanto a VNet está a ser criada.
 
     ![Mosaico A criar a rede virtual](./media/vpn-gateway-howto-point-to-site-classic-azure-portal/deploying150.png "A criar a rede virtual")
 
@@ -120,12 +115,12 @@ Depois de criar a rede virtual, pode adicionar espaço de endereços adicional. 
 ## <a name="dns"></a>3. Especificar um servidor DNS
 As definições de DNS não são uma parte obrigatória de uma configuração de S2S, mas o DNS é necessário se quiser resolução de nomes.
 
-Depois de criar a rede virtual, pode adicionar o endereço IP de um servidor DNS, de modo a lidar com a resolução de nomes. Abra as definições da rede virtual, clique em Servidores DNS e adicione o endereço IP do servidor DNS que quer utilizar para a resolução de nomes. Esta definição não cria um servidor DNS. Nas definições de exemplo, utilizamos um servidor DNS público. Normalmente, deve utilizar um servidor DNS privado. Certifique-se de que adiciona um servidor DNS com o qual os seus recursos possam comunicar.
+Depois de criar a rede virtual, pode adicionar o endereço IP de um servidor DNS, para lidar com a resolução de nomes. Abra as definições da rede virtual, clique em Servidores DNS e adicione o endereço IP do servidor DNS que quer utilizar para a resolução de nomes. Esta definição não cria um servidor DNS. Nas definições de exemplo, utilizamos um servidor DNS público. Normalmente, deve utilizar um servidor DNS privado. Certifique-se de que adiciona um servidor DNS com o qual os seus recursos possam comunicar.
 
 1. Localize as redes virtuais no portal.
 2. No painel da sua rede virtual, na secção **Definições**, clique em **Servidores DNS**.
 3. Adicione um servidor DNS.
-4. Clique em **Guardar** no início da página para guardar as definições.
+4. Para guardar as suas definições, clique em **Guardar** no início da página.
  
 ## <a name="localsite"></a>4. Configurar o site local
 
@@ -147,7 +142,7 @@ O site local refere-se, normalmente, à sua localização no local. Contém o en
 
 ## <a name="gatewaysubnet"></a>5. Configurar a sub-rede do gateway
 
-Tem de criar uma sub-rede de gateway para o gateway de VPN. A sub-rede do gateway contém os endereços IP que os serviços do gateway de VPN irão utilizar.
+Tem de criar uma sub-rede de gateway para o gateway de VPN. A sub-rede do gateway contém os endereços IP que os serviços do gateway de VPN utilizam.
 
 1. No painel **Nova Ligação VPN**, selecione a caixa de verificação **Criar gateway de imediato**. Será apresentado o painel de "Configuração de gateway opcional". Se não selecionar a caixa de verificação, não verá o painel para configurar a sub-rede do gateway.
 
@@ -161,7 +156,7 @@ Tem de criar uma sub-rede de gateway para o gateway de VPN. A sub-rede do gatewa
     ![Adicionar sub-rede do gateway](./media/vpn-gateway-howto-site-to-site-classic-portal/addgwsubnet.png "Adicionar sub-rede do gateway")
 
 ## <a name="sku"></a>6. Especificar o SKU e o tipo de VPN
-1. Selecione o **Tamanho** do gateway. Este é o SKU de gateway que vai utilizar para criar o gateway de rede virtual. No portal, o 'SKU Predefinido' = **Basic**. Para obter mais informações sobre os SKUs de gateway, veja [About VPN Gateway Settings (Acerca das Definições do Gateway de VPN)](vpn-gateway-about-vpn-gateway-settings.md#gwsku).
+1. Selecione o **Tamanho** do gateway. Este é o SKU de gateway que utiliza para criar o gateway de rede virtual. No portal, o 'SKU Predefinido' = **Basic**. Para obter mais informações sobre os SKUs de gateway, veja [About VPN Gateway Settings (Acerca das Definições do Gateway de VPN)](vpn-gateway-about-vpn-gateway-settings.md#gwsku).
 
     ![Selecionar o SKU e o tipo de VPN](./media/vpn-gateway-howto-site-to-site-classic-portal/sku.png "Selecionar o SKU e o tipo de VPN")
 2. Selecione o **Tipo de Encaminhamento** do gateway. Também é conhecido como o tipo de VPN. É importante selecionar o tipo de gateway correto porque não é possível converter o gateway de um tipo para outro. O dispositivo VPN tem de ser compatível com o tipo de encaminhamento que selecionar. Para obter mais informações sobre o tipo de VPN, veja [About VPN Gateway (Acerca do Gateway de VPN)](vpn-gateway-about-vpn-gateway-settings.md#vpntype). Poderá ver artigos que fazem referência aos tipos de VPN 'RouteBased' e 'PolicyBased'. 'Dynamic' corresponde a 'RouteBased' e 'Static' corresponde a 'PolicyBased'.
@@ -170,46 +165,66 @@ Tem de criar uma sub-rede de gateway para o gateway de VPN. A sub-rede do gatewa
 
 ## <a name="vpndevice"></a>7. Configurar o dispositivo VPN
 
-Contacte o fabricante do dispositivo para obter as informações de configuração específicas e configurar o dispositivo. Veja [Dispositivos VPN](vpn-gateway-about-vpn-devices.md) para obter mais informações sobre os dispositivos VPN que funcionam bem com o Azure. Além disso, verifique a existência de [Problemas de compatibilidade de dispositivos conhecidos](vpn-gateway-about-vpn-devices.md#known) para o dispositivo VPN que pretende utilizar. 
+As ligações de Site a Site para uma rede no local requerem um dispositivo VPN. Enquanto não fornecemos os passos de configuração para todos os dispositivos VPN, as informações das seguintes ligações úteis ser-lhe-ão úteis:
 
-Quando configurar o seu dispositivo VPN, irá precisar do endereço IP do gateway de VPN que criou. Para localizá-lo, aceda ao painel **Descrição geral** da sua rede virtual.
+- Para obter mais informações sobre os dispositivos VPN compatíveis, consulte [VPN Devices (Dispositivos VPN)](vpn-gateway-about-vpn-devices.md). 
+- Para ver as ligações para as definições de configuração de dispositivo, consulte [Validated VPN Devices (Dispositivos VPN Validados)](vpn-gateway-about-vpn-devices.md#devicetable). Estas ligações são fornecidas numa base de melhor esforço. É sempre melhor verificar com o fabricante do dispositivo para obter as mais recentes informações de configuração.
+- Para obter informações sobre a edição de amostras de configuração do dispositivo, consulte [Editing samples (Editar amostras)](vpn-gateway-about-vpn-devices.md#editing).
+- Para os parâmetros de IPsec/IKE, consulte [Parameters (Parâmetros)](vpn-gateway-about-vpn-devices.md#ipsec).
+- Antes de configurar o dispositivo VPN, verifique a existência de [Problemas de compatibilidade de dispositivos conhecidos](vpn-gateway-about-vpn-devices.md#known) para o dispositivo VPN que pretende utilizar.
+
+Quando configurar o dispositivo VPN, irá precisar dos seguintes itens:
+
+- O endereço IP Público do gateway de rede virtual. Para localizá-lo, aceda ao painel **Descrição geral** da sua rede virtual.
+- Uma chave partilhada. Esta é a mesma chave partilhada que especifica ao criar a ligação VPN de Site a Site. Nos nossos exemplos, iremos utilizar uma chave partilhada muito básica. Deve gerar uma chave mais complexa para utilizar.
 
 ## <a name="CreateConnection"></a>8. Criar a ligação
 Neste passo, vai definir a chave partilhada e criar a ligação. A chave que definir tem de ser a mesma chave que foi utilizada na configuração do seu dispositivo VPN.
 
 > [!NOTE]
-> Atualmente, este passo não está disponível no portal do Azure. Terá de utilizar a versão da Gestão de Serviço (SM) dos cmdlets do Azure PowerShell.                                                                                                                                                                             
->
+> Atualmente, este passo não está disponível no portal do Azure. Terá de utilizar a versão da Gestão de Serviço (SM) dos cmdlets do Azure PowerShell.                                        >
 >
 
 ### <a name="step-1-connect-to-your-azure-account"></a>Passo 1. Ligar à sua conta do Azure
 
 1. Abra a consola do PowerShell com direitos elevados e ligue-se à sua conta. Utilize o exemplo seguinte para o ajudar na ligação:
 
-        Login-AzureRmAccount
+  ```powershell
+  Login-AzureRmAccount
+  ```
 2. Verifique as subscrições da conta.
 
-        Get-AzureRmSubscription
+  ```powershell
+  Get-AzureRmSubscription
+  ```
 3. Se tiver mais do que uma subscrição, selecione a subscrição que pretende utilizar.
 
-        Select-AzureRmSubscription -SubscriptionName "Replace_with_your_subscription_name"
+  ```powershell
+  Select-AzureRmSubscription -SubscriptionName "Replace_with_your_subscription_name"
+  ```
 4. Adicione a versão de SM dos cmdlets do PowerShell.
 
-        Add-AzureAccount
+  ```powershell
+  Add-AzureAccount
+  ```
 
 ### <a name="step-2-set-the-shared-key-and-create-the-connection"></a>Passo 2. Definir a chave partilhada e criar a ligação
 
-Ao trabalhar com o PowerShell e o modelo de implementação clássica, por vezes, os nomes dos recursos no portal não são os nomes que o Azure espera ver quando utiliza o PowerShell. Os passos seguintes irão ajudá-lo a exportar o ficheiro de configuração de rede para obter os valores exatos para os nomes.
+Ao trabalhar com o PowerShell e o modelo de implementação clássica, por vezes, os nomes dos recursos no portal não são os nomes que o Azure espera ver quando utiliza o PowerShell. Os passos seguintes ajudam-no a exportar o ficheiro de configuração de rede para obter os valores exatos para os nomes.
 
 1. Crie um diretório no seu computador e, em seguida, exporte o ficheiro de configuração de rede para o diretório. Neste exemplo, o ficheiro de configuração de rede é exportado para C:\AzureNet.
 
-         Get-AzureVNetConfig -ExportToFile C:\AzureNet\NetworkConfig.xml
+  ```powershell
+  Get-AzureVNetConfig -ExportToFile C:\AzureNet\NetworkConfig.xml
+  ```
 2. Abra o ficheiro de configuração de rede com um editor de xml e verifique os valores de 'LocalNetworkSite name' e 'VirtualNetworkSite name'. Modifique o exemplo para refletir os valores. Ao especificar um nome que contenha espaços, utilize plicas à volta do valor.
 
 3. Defina a chave partilhada e crie a ligação. '-SharedKey' é um valor que gera e especifica. No exemplo, utilizámos 'abc123', mas pode gerar e (deve) utilizar algo mais complexo. O importante é que o valor que especificar aqui seja igual ao valor que especificou quando configurou o seu dispositivo VPN.
 
-        Set-AzureVNetGatewayKey -VNetName 'Group TestRG1 TestVNet1' `
-        -LocalNetworkSiteName 'D1BFC9CB_Site2' -SharedKey abc123
+  ```powershell
+  Set-AzureVNetGatewayKey -VNetName 'Group TestRG1 TestVNet1' `
+  -LocalNetworkSiteName 'D1BFC9CB_Site2' -SharedKey abc123
+  ```
 Quando a ligação é criada, o resultado é: **Estado: Com êxito**.
 
 ## <a name="verify"></a>9. Verificar a ligação

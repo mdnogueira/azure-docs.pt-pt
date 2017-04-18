@@ -12,12 +12,12 @@ ms.topic: hero-article
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 03/06/2017
+ms.date: 04/05/2017
 ms.author: yurid
 translationtype: Human Translation
-ms.sourcegitcommit: afe143848fae473d08dd33a3df4ab4ed92b731fa
-ms.openlocfilehash: 5da00d1d64b258773fa485baa804b283fde731c3
-ms.lasthandoff: 03/17/2017
+ms.sourcegitcommit: 6ea03adaabc1cd9e62aa91d4237481d8330704a1
+ms.openlocfilehash: 1b0d278c102497eca978d8cd3fa29cd2527f186c
+ms.lasthandoff: 04/06/2017
 
 
 ---
@@ -148,11 +148,63 @@ Este é um exemplo deste tipo de alerta:
 ![Alerta de processos suspeitos](./media/security-center-alerts-type/security-center-alerts-type-fig6-new.png)
 
 ### <a name="multiple-domain-accounts-queried"></a>Várias contas de domínio consultadas
-O Centro de Segurança pode detetar várias tentativas para consultar contas de domínio, o que é normalmente efetuado pelos atacantes durante o reconhecimento de redes. Os atacantes podem aproveitar esta técnica para consultar o domínio e identificar os utilizadores, identificar as contas de administrador de domínio, identificar os computadores que são controladores de domínio e também identificar uma potencial relação de confiança do domínio com outros domínios.
+O Centro de Segurança pode detetar várias tentativas para consultar contas de domínio do Active Directory, o que é normalmente efetuado pelos atacantes durante o reconhecimento de redes. Os atacantes podem aproveitar esta técnica para consultar o domínio e identificar os utilizadores, identificar as contas de administrador de domínio, identificar os computadores que são controladores de domínio e também identificar uma potencial relação de confiança do domínio com outros domínios.
 
 Este é um exemplo deste tipo de alerta:
 
 ![Alerta de conta de vários domínios](./media/security-center-alerts-type/security-center-alerts-type-fig7-new.png)
+
+### <a name="local-administrators-group-members-were-enumerated"></a>Foram enumerados membros do grupo de Administradores Locais
+
+O Centro de Segurança vai acionar um alerta quando o evento de segurança 4798, no Windows Server 2016 e Windows 10, está acionado. Isto acontece quando são enumerados grupos de administradores locais, que é algo normalmente efetuado pelos atacantes durante o reconhecimento de rede. Os atacantes podem tirar partido desta técnica para consultar a identidade dos utilizadores com privilégios administrativos.
+
+Este é um exemplo deste tipo de alerta:
+
+![Administrador local](./media/security-center-alerts-type/security-center-alerts-type-fig14-new.png)
+
+### <a name="anomalous-mix-of-upper-and-lower-case-characters"></a>Mistura anómala de carateres minúsculos e maiúsculos
+
+O Centro de Segurança irá acionar um alerta quando detetar a utilização de uma combinação de carateres minúsculos e maiúsculos na linha de comandos. Alguns atacantes poderão utilizar esta técnica para ocultar a regra de maiúsculas e minúsculas ou a máquina baseada em hash.
+
+Este é um exemplo deste tipo de alerta:
+
+![Mistura anómala](./media/security-center-alerts-type/security-center-alerts-type-fig15-new.png)
+
+### <a name="suspected-kerberos-golden-ticket-attack"></a>Ataque de Pedido Dourado Kerberos suspeito
+
+Uma chave [krbtgt](https://technet.microsoft.com/library/dn745899.aspx) comprometida pode ser utilizada por um atacante para criar o "Pedido Dourado" Kerberos, permitindo que o atacante represente qualquer utilizador que desejar. O Centro de Segurança vai acionar um alerta quando detetar este tipo de atividade.
+
+> [!NOTE] 
+> Para mais informações sobre o Pedido Dourado Kerberos, leia [Windows 10 credential theft mitigation guide (Guia de atenuação de roubo de credenciais do Windows 10)](http://download.microsoft.com/download/C/1/4/C14579CA-E564-4743-8B51-61C0882662AC/Windows%2010%20credential%20theft%20mitigation%20guide.docx).
+
+Este é um exemplo deste tipo de alerta:
+
+![Pedido dourado](./media/security-center-alerts-type/security-center-alerts-type-fig16-new.png)
+
+### <a name="suspicious-account-created"></a>Conta suspeita criada
+
+O Centro de Segurança irá acionar um alerta quando for criada uma conta semelhante a uma conta de privilégios administrativos incorporada existente. Esta técnica pode ser utilizada por atacantes para criar uma conta de adesão, para evitar serem detetados por verificação humana.
+ 
+Este é um exemplo deste tipo de alerta:
+
+![Conta suspeita](./media/security-center-alerts-type/security-center-alerts-type-fig17-new.png)
+
+### <a name="suspicious-firewall-rule-created"></a>Regra de Firewall suspeita criada
+
+Os atacantes poderão tentar contornar a segurança do anfitrião ao criar regras personalizadas da firewall para permitir que aplicações maliciosas comuniquem com o comando e o controlo, ou para lançar ataques através da rede pelo anfitrião comprometido. O Centro de Segurança irá acionar um alerta quando detetar que foi criada uma nova regra de firewall de um ficheiro executável numa localização suspeita.
+ 
+Este é um exemplo deste tipo de alerta:
+
+![Regra de firewall](./media/security-center-alerts-type/security-center-alerts-type-fig18-new.png)
+
+### <a name="suspicious-combination-of-hta-and-powershell"></a>Combinação suspeita de HTA e PowerShell
+
+O Centro de Segurança irá acionar um alerta quando detetar que um Anfitrião de Aplicação HTML (HTA) da Microsoft está a iniciar comandos do PowerShell. Esta é uma técnica utilizada pelos atacantes para iniciar scripts maliciosos do PowerShell.
+ 
+Este é um exemplo deste tipo de alerta:
+
+![HTA e PS](./media/security-center-alerts-type/security-center-alerts-type-fig19-new.png)
+
 
 ## <a name="network-analysis"></a>Análise de rede
 A deteção de ameaças de rede do Centro de Segurança funciona através da recolha automática de informações de segurança a partir do tráfego do Azure IPFIX (Internet Protocol Flow Information Export). Analisa esta informação, muitas vezes correlacionando informações de várias origens, para identificar ameaças.

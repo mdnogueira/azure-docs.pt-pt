@@ -12,13 +12,13 @@ ms.devlang: multiple
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: big-compute
-ms.date: 03/08/2017
+ms.date: 03/27/2017
 ms.author: tamram
 ms.custom: H1Hack27Feb2017
 translationtype: Human Translation
-ms.sourcegitcommit: eeb56316b337c90cc83455be11917674eba898a3
-ms.openlocfilehash: f323afdea34e973f3ecdd54022f04b3f0d86afb1
-ms.lasthandoff: 04/03/2017
+ms.sourcegitcommit: 6ea03adaabc1cd9e62aa91d4237481d8330704a1
+ms.openlocfilehash: c7090940192d9bd07fce96ad475b2239f5e9f2e8
+ms.lasthandoff: 04/06/2017
 
 
 ---
@@ -46,7 +46,7 @@ O fluxo de trabalho detalhado que se segue é típico de quase todos os serviço
 As secções seguintes abordam estes e os outros recursos do Batch permitem o seu cenário computacional distribuído.
 
 > [!NOTE]
-> Precisa de uma [conta do Batch](batch-account-create-portal.md) para utilizar o serviço. Do mesmo modo, quase todas as soluções utilizam uma conta do [Armazenamento do Azure][azure_storage] para armazenamento e obtenção de ficheiros. Atualmente, o Batch só suporta o tipo de conta de armazenamento para **Fins gerais**, conforme descrito no passo 5, [Criar uma conta de Armazenamento](../storage/storage-create-storage-account.md#create-a-storage-account), do artigo [Acerca das contas de Armazenamento do Azure](../storage/storage-create-storage-account.md).
+> Precisa de uma [conta do Batch](#account) para utilizar o serviço. Do mesmo modo, quase todas as soluções utilizam uma conta do [Armazenamento do Azure][azure_storage] para armazenamento e obtenção de ficheiros. Atualmente, o Batch só suporta o tipo de conta de armazenamento para **Fins gerais**, conforme descrito no passo 5, [Criar uma conta de Armazenamento](../storage/storage-create-storage-account.md#create-a-storage-account), do artigo [Acerca das contas de Armazenamento do Azure](../storage/storage-create-storage-account.md).
 >
 >
 
@@ -69,7 +69,16 @@ Todas as soluções que utilizam o serviço Batch precisam de alguns dos recurso
 * [Pacotes de aplicações](#application-packages)
 
 ## <a name="account"></a>Conta
-Uma conta do Batch é uma entidade identificada exclusivamente no âmbito do serviço Batch. Todo o processamento está associado a uma conta do Batch. Quando faz operações com o serviço Batch, precisa do nome da conta e de uma das chaves de conta. Pode [criar uma conta do Azure Batch no portal do Azure](batch-account-create-portal.md).
+Uma conta do Batch é uma entidade identificada exclusivamente no âmbito do serviço Batch. Todo o processamento está associado a uma conta do Batch.
+
+Pode criar uma conta do Azure Batch através do [portal do Azure](batch-account-create-portal.md) ou através de programação, como com a [Biblioteca .NET de Gestão de Batch](batch-management-dotnet.md). Ao criar a conta, pode associar uma conta de armazenamento do Azure.
+
+O Batch suporta duas configurações de conta, com base na propriedade *modo de alocação de conjunto*. As duas configurações dão-lhe diferentes opções para a autenticação com o serviço de Batch e para o aprovisionamento e gestão de [conjuntos](#pool) de Batch (consulte este artigo mais tarde). 
+
+
+* **Serviço de Batch** (predefinição): pode aceder às APIs de Batch com a autenticação de chave partilhada ou a [autenticação do Azure Active Directory](batch-aad-auth.md). Os recursos de computação do Batch são alocados nos bastidores de uma conta gerida pelo Azure.   
+* **Subscrição do utilizador**: só pode aceder às APIs do Batch com a [autenticação do Azure Active Directory](batch-aad-auth.md). Os recursos de computação do Batch são alocados diretamente na sua subscrição do Azure. Este modo dá-lhe mais flexibilidade para configurar os nós de computação e integrar com outros serviços. Neste modo tem de configurar um cofre chaves adicional do Azure para a sua conta do Batch.
+ 
 
 ## <a name="compute-node"></a>Nó de computação
 Um nó de computação é uma máquina virtual (VM) do Azure dedicada ao processamento de uma parte da carga de trabalho da sua aplicação. O tamanho de um nó determina o número de núcleos de CPU, a capacidade da memória e o tamanho do sistema de ficheiros local que está alocado ao nó. Pode criar conjuntos de nós do Windows ou Linux ao utilizar imagens dos Serviços Cloud do Azure ou imagens de Máquinas Virtuais do Azure Marketplace. Veja a secção [Conjunto](#pool), abaixo, para obter mais informações sobre estas opções.
@@ -89,13 +98,16 @@ Conjuntos do Azure Batch criados com base na plataforma de computação principa
 
 Um nome e um endereço IP exclusivos são atribuídos a cada nó que seja adicionado a um conjunto. Quando um nó é removido de um conjunto, as alterações feitas ao sistema operativo ou aos ficheiros perdem-se e o respetivo nome e endereço IP são libertados para utilização futura. Quando um nó deixa um conjunto, a sua duração termina.
 
-Quando cria um conjunto, pode especificar os seguintes atributos:
+Quando cria um conjunto, pode especificar os seguintes atributos. Algumas definições variam, consoante o modo de alocação do conjunto da [conta](#account) do Batch.
 
 * **Sistema operativo** e **versão** do nó de computação
 
-    Quando seleciona um sistema operativo para os nós do conjunto, tem duas opções - **Configuração de Máquina Virtual** e **Configuração de Serviços Cloud**.
+    > [!NOTE]
+    > No modo de alocação do conjunto do serviço do Batch, tem duas opções quando seleciona um sistema operativo para os nós no seu conjunto: **Configuração da Máquina Virtual** e **Configuração dos Serviços Cloud**. No modo de subscrição de utilizador, só pode utilizar a configuração de Máquina Virtual.
+    >
 
-    A **Configuração da Máquina Virtual** disponibiliza imagens do Linux e Windows aos nós de computação a partir do [Marketplace das Máquinas Virtuais do Azure][vm_marketplace].
+    A **Configuração da Máquina Virtual** disponibiliza imagens do Linux e Windows aos nós de computação a partir do [Marketplace das Máquinas Virtuais do Azure][vm_marketplace] e, no modo de alocação de subscrição do utilizador, a opção para utilizar imagens da VM personalizadas.
+
     Quando cria um conjunto que contém nós de Configuração de Máquina Virtual, tem de especificar não apenas o tamanho dos nós, mas também a **referência da imagem da máquina virtual** e o **SKU do agente de nó** do Batch a instalar nos nós. Para obter mais informações sobre como especificar estas propriedades dos conjuntos, veja [Provision Linux compute nodes in Azure Batch pools (Aprovisionar nós de computação do Linux em conjuntos do Azure Batch)](batch-linux-nodes.md).
 
     A **Configuração de Serviços Cloud** fornece nós de computação do Windows *apenas*. Os sistemas operativos disponíveis para os conjuntos de Configuração de Serviços Cloud estão listados em [Azure Guest OS releases and SDK compatibility matrix (Versões de SO Convidado do Azure e matriz de compatibilidade de SDK)](../cloud-services/cloud-services-guestos-update-matrix.md). Ao criar um conjunto que contém nós de Serviços Cloud, tem de especificar apenas o tamanho do nó e a respetiva *Família de SO*. Quando cria conjuntos de nós de computação do Windows, o mais comum é utilizar os Serviços Cloud.
@@ -313,17 +325,27 @@ Geralmente, é utilizada uma abordagem combinada para lidar com cargas variávei
 
 ## <a name="pool-network-configuration"></a>Configuração de rede de conjunto
 
-Quando cria um conjunto de nós de computação no Azure Batch, pode especificar o ID de uma [rede virtual do Azure (VNet)](https://azure.microsoft.com/documentation/articles/virtual-networks-overview/), na qual devem ser criados os nós de computação do conjunto.
-
-* Só podem ser atribuídos a VNets conjuntos de **Configuração de Serviços Cloud**.
+Quando cria um conjunto de nós de computação no Azure Batch, pode utilizar as APIs para especificar o ID de uma [rede virtual do Azure (VNet)](../virtual-network/virtual-networks-overview.md), na qual devem ser criados os nós de computação do conjunto.
 
 * A VNet tem de:
 
    * Estar na mesma **região** do Azure que a conta do Azure Batch.
    * Estar na mesma **subscrição** do Azure que a conta do Azure Batch.
-   * Ser uma VNet **clássica**. Não são suportadas VNets criadas com o modelo de implementação Azure Resource Manager.
 
 * A VNet deve ter **endereços IP** livres suficientes para acomodar a propriedade `targetDedicated` do conjunto. Se a sub-rede não tiver endereços IP livres suficientes, o serviço Batch aloca, parcialmente, os nós de computação do conjunto e devolve um erro de redimensionamento.
+
+* A sub-rede especificada tem de permitir a comunicação do serviço Batch para conseguir agendar tarefas nos nós de computação. Se a comunicação com os nós de computação for recusada por um **Grupo de Segurança de Rede (NSG)** associado à VNet, o serviço Batch define o estado dos nós de computação como **inutilizável**. 
+
+* Se a VNet especificada tiver qualquer NSGs associados, então a comunicação de entrada tem de estar ativada. Para um conjunto do Linux, as portas 29876, 29877 e 22 têm de estar ativadas. Para um conjunto do Windows, a porta 3389 tem de estar ativada.
+
+As definições adicionais para a VNet dependem do modo de alocação do conjunto da conta do Batch.
+
+### <a name="vnets-for-pools-provisioned-in-the-batch-service"></a>VNets para conjuntos aprovisionados no serviço de Batch
+
+No modo de alocação de serviço do Batch, só podem ser atribuídos a VNets conjuntos de **Configuração de Serviços Cloud**. Além disso, a VNet especificada tem de ser uma VNet **clássica**. Não são suportadas VNets criadas com o modelo de implementação Azure Resource Manager.
+   
+
+
 * O principal de serviço *MicrosoftAzureBatch* tem de ter a função [Contribuinte de Máquina Virtual Clássica](../active-directory/role-based-access-built-in-roles.md#classic-virtual-machine-contributor) do Controlo de Acesso Baseado em Funções (RBAC) na VNet especificada. No portal do Azure:
 
   * Selecione a **VNet**, selecione **Controlo de acesso (IAM)** > **Funções** > **Contribuidor de Máquina Virtual Clássica** > **Adicionar**
@@ -331,7 +353,13 @@ Quando cria um conjunto de nós de computação no Azure Batch, pode especificar
   * Selecione a caixa de verificação **MicrosoftAzureBatch**
   * Selecione o botão **Selecionar**
 
-* Se a comunicação com os nós de computação for recusada por um **Grupo de Segurança de Rede (NSG)** associado à VNet, o serviço Batch define o estado dos nós de computação como **inutilizável**. A sub-rede tem de permitir a comunicação do serviço Azure Batch para conseguir agendar tarefas nos nós de computação.
+
+
+### <a name="vnets-for-pools-provisioned-in-a-user-subscription"></a>VNets para conjuntos aprovisionados numa subscrição de utilizador
+
+No modo de alocação de subscrição de utilizador, são suportados apenas conjuntos de **Configuração da Máquina Virtual** e podem ser atribuídos a uma VNet. Além disso, a VNet especificada tem de ser um **Gestor de Recursos** com base na VNet. Não são suportadas VNets criadas com o modelo de implementação clássica.
+
+
 
 ## <a name="scaling-compute-resources"></a>Dimensionar os recursos de computação
 Com o [dimensionamento automático](batch-automatic-scaling.md), pode fazer com que o serviço Batch ajuste dinamicamente o número de nós de computação num conjunto de acordo com a carga de trabalho e a utilização de recursos atual do seu cenário de computação. Esta funcionalidade permite-lhe reduzir o custo global de execução da sua aplicação ao utilizar apenas os recursos de que precisa e libertar aqueles de que não precisa.

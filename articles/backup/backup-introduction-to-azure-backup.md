@@ -17,9 +17,9 @@ ms.date: 3/13/2017
 ms.author: markgal;trinadhk; anuragm
 ms.custom: H1Hack27Feb2017
 translationtype: Human Translation
-ms.sourcegitcommit: 303cb9950f46916fbdd58762acd1608c925c1328
-ms.openlocfilehash: a2452b95c9355957b10477a6e457000f0eba6a9c
-ms.lasthandoff: 04/04/2017
+ms.sourcegitcommit: 538f282b28e5f43f43bf6ef28af20a4d8daea369
+ms.openlocfilehash: 2e981f0f45bc5b338937839b74114e12db960927
+ms.lasthandoff: 04/07/2017
 
 
 ---
@@ -90,9 +90,9 @@ A tabela seguinte mostra os componentes do Azure Backup com suporte para Linux.
 | Componente | Apoio Técnico para Linux (aprovado pelo Azure) |
 | --- | --- |
 | Agente do Backup do Azure (MARS) |Nenhum (Apenas agente baseado no Windows) |
-| System Center DPM |Cópia de segurança consistente com ficheiros apenas no Hyper-V<br/> (não disponível para VM do Azure) |
-| Servidor do Backup do Azure |Cópia de segurança consistente com ficheiros apenas no Hyper-V<br/> (não disponível para VM do Azure) |
-| Cópia de segurança da VM do IaaS do Azure |Sim (cópia de segurança consistente com a aplicação utilizando [arquitetura de script anterior script posterior](https://docs.microsoft.com/azure/backup/backup-azure-linux-app-consistent)) |
+| System Center DPM |Cópia de segurança consistente com ficheiros de VMs de Convidado Linux no Hyper-V e no VMWare<br/> (não disponível para VM do Azure)<br/> Restauro de VMs de Convidado do Linux do Hyper-V e do VMWare |
+| Servidor do Backup do Azure |Cópia de segurança consistente com ficheiros de VMs de Convidado Linux no Hyper-V e no VMWare<br/> (não disponível para VM do Azure)<br/> Restauro de VMs de Convidado do Linux do Hyper-V e do VMWare |
+| Cópia de segurança da VM do IaaS do Azure |Cópia de segurança consistente com a aplicação utilizando [arquitetura de script anterior script posterior](https://docs.microsoft.com/azure/backup/backup-azure-linux-app-consistent)<br/> [Recuperação de ficheiros granular](backup-azure-restore-files-from-vm.md)<br/> [Restaurar todos os discos da VM](https://docs.microsoft.com/azure/backup/backup-azure-arm-restore-vms#restore-backed-up-disks)<br/> [Restauro da VM](https://docs.microsoft.com/azure/backup/backup-azure-arm-restore-vms#create-a-new-vm-from-restore-point) |
 
 ## <a name="using-premium-storage-vms-with-azure-backup"></a>Utilizar VMs de Armazenamento Premium com o Azure Backup
 O Azure Backup protege VMs de Armazenamento Premium. O Armazenamento Premium do Azure é o armazenamento baseado numa unidade de estado sólido (SSD), concebido para suportar cargas de trabalho de E/S intensivas. O Armazenamento Premium é apelativo para cargas de trabalho de máquina virtual (VM). Para mais informações sobre o Armazenamento Premium, veja o artigo [Armazenamento Premium: Armazenamento de Elevado Desempenho para Cargas de Trabalho de Máquinas Virtuais do Azure](../storage/storage-premium-storage.md).

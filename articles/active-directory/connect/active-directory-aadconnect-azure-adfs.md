@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
 ms.date: 02/27/2017
-ms.author: anandy;billmath
+ms.author: anandy; billmath
 ms.custom: H1Hack27Feb2017
 translationtype: Human Translation
-ms.sourcegitcommit: 72b2d9142479f9ba0380c5bd2dd82734e370dee7
-ms.openlocfilehash: ed3b3b114af2844405779f65fa8c3e89ae6a6c35
-ms.lasthandoff: 03/08/2017
+ms.sourcegitcommit: 757d6f778774e4439f2c290ef78cbffd2c5cf35e
+ms.openlocfilehash: a6a8300046a0f17061e74b793b254cdca1e1a265
+ms.lasthandoff: 04/10/2017
 
 ---
 # <a name="deploying-active-directory-federation-services-in-azure"></a>Implementação do Serviço de Federação do Active Directory no Azure
@@ -123,8 +123,8 @@ Crie os conjuntos de disponibilidade seguintes
 | contosodcset |DC/ADFS |3 |5 |
 | contosowapset |WAP |3 |5 |
 
-### <a name="4----deploy-virtual-machines"></a>4.    Implementar máquinas virtuais
-O passo seguinte é implementar máquinas virtuais que vão alojar as diferentes funções da sua infraestrutura. Recomenda-se um mínimo de duas máquinas em cada conjunto de disponibilidade. Crie seis máquinas virtuais para a implementação básica.
+### <a name="4-deploy-virtual-machines"></a>4. Implementar máquinas virtuais
+O passo seguinte é implementar máquinas virtuais que vão alojar as diferentes funções da sua infraestrutura. Recomenda-se um mínimo de duas máquinas em cada conjunto de disponibilidade. Crie quatro máquinas virtuais para a implementação básica.
 
 | Máquina | Função | Subrede | Conjunto de disponibilidade | Conta de armazenamento | Endereço IP |
 |:---:|:---:|:---:|:---:|:---:|:---:|
@@ -150,8 +150,8 @@ Depois de concluída a implementação, o painel da máquina virtual deverá ser
 * Promover os dois servidores como controladores de domínio de réplica com o DNS
 * Configure os servidores do AD FS ao instalar a função do AD FS com o gestor de servidor.
 
-### <a name="6----deploying-internal-load-balancer-ilb"></a>6.    Implementar o Balanceador de Carga Interno (Internal Load Balancer, ILB)
-**6.1.    Criar o ILB**
+### <a name="6-deploying-internal-load-balancer-ilb"></a>6. Implementar o Balanceador de Carga Interno (Internal Load Balancer, ILB)
+**6.1. Criar o ILB**
 
 Para implementar um ILB, selecione Balanceadores de Carga no portal do Azure e clique em “Adicionar” (+).
 
@@ -176,7 +176,7 @@ Depois de clicar em “Criar” e o ILB ser implementado, deve vê-lo na lista d
 
 O passo seguinte é configurar o conjunto de back-ends e a sonda de back-ends.
 
-**6.2.    Configurar o conjunto de back-ends do ILB**
+**6.2. Configurar o conjunto de back-ends do ILB**
 
 Selecione o ILB recentemente criado no painel Balanceadores de Carga. É aberto o painel de definições. 
 
@@ -187,7 +187,7 @@ Selecione o ILB recentemente criado no painel Balanceadores de Carga. É aberto 
 
 ![Configurar o conjunto de back-ends do ILB](./media/active-directory-aadconnect-azure-adfs/ilbdeployment3.png)
 
-**6.3.    A configurar a sonda**
+**6.3. A configurar a sonda**
 
 No painel de definições do ILB, selecione Sondas.
 
@@ -196,7 +196,7 @@ No painel de definições do ILB, selecione Sondas.
 
 ![Configurar a sonda do ILB](./media/active-directory-aadconnect-azure-adfs/ilbdeployment4.png)
 
-**6.4.    Criar regras de balanceamento de carga**
+**6.4. Criar regras de balanceamento de carga**
 
 Para poder balancear eficazmente o tráfego, o ILB deve ser configurado com regras de balanceamento de carga. Para criar uma regra de balanceamento de carga: 
 
@@ -206,23 +206,23 @@ Para poder balancear eficazmente o tráfego, o ILB deve ser configurado com regr
 
 ![Configurar as regras de balanceamento do ILB](./media/active-directory-aadconnect-azure-adfs/ilbdeployment5.png)
 
-**6.5.    Atualizar o DNS com o ILB**
+**6.5. Atualizar o DNS com o ILB**
 
 Aceda ao seu servidor DNS e crie um CNAME para o ILB. O CNAME deve destinar-se ao serviço de federação com o endereço IP que está a apontar para o endereço IP do ILB. Por exemplo, se o endereço IDP do ILB for 10.3.0.8 e o serviço de federação instalado for fs.contoso.com, crie um CNAME para fs.contoso.com a apontar para 10.3.0.8.
 Desta forma, é garantido que todas as comunicações relativas a fs.contoso.com chegam ao ILB e são encaminhadas adequadamente.
 
-### <a name="7----configuring-the-web-application-proxy-server"></a>7.    Especificar o servidor Proxy de Aplicações Web
-**7.1.    Configurar os servidores do Proxy de Aplicações Web para alcançar os servidores AD FS**
+### <a name="7-configuring-the-web-application-proxy-server"></a>7. Especificar o servidor Proxy de Aplicações Web
+**7.1. Configurar os servidores do Proxy de Aplicações Web para alcançar os servidores AD FS**
 
 Para garantir que os servidores de Proxy de Aplicações Web conseguem aceder aos servidores AD FS atrás do ILB, crie um registo em %systemroot%\system32\drivers\etc\hosts para o ILB. Tenha em atenção que o nome único (DN) deve ser o nome do serviço de federação, como, por exemplo, fs.contoso.com. E a entrada IP deve ser a do endereço IP do ILB (10.3.0.8, como no exemplo).
 
-**7.2.    Instalar a função de Proxy de Aplicações Web**
+**7.2. Instalar a função de Proxy de Aplicações Web**
 
 Depois de assegurar que os servidores Proxy de Aplicações Web conseguem contactar os servidores AD FS por detrás do ILB, pode instalar os servidores Proxy de Aplicações Web. Os servidores Proxy de Aplicações Web não podem ser associados ao domínio. Instale as funções Proxy de Aplicações Web nos dois servidores Proxy de Aplicações Web ao selecionar a função Acesso Remoto. O gestor de servidor vai guiá-lo para concluir a instalação do WAP.
 Para obter mais informações sobre como implementar o WAP, veja [Install and Configure the Web Application Proxy Server (Instalar e Configurar o Servidor Proxy de Aplicações Web)](https://technet.microsoft.com/library/dn383662.aspx).
 
-### <a name="8----deploying-the-internet-facing-public-load-balancer"></a>8.    Implementar o Balanceador de Carga com Acesso à Internet (Público)
-**8.1.    Criar o Balanceador de Carga com Acesso à Internet (Público)**
+### <a name="8--deploying-the-internet-facing-public-load-balancer"></a>8.  Implementar o Balanceador de Carga com Acesso à Internet (Público)
+**8.1.  Criar o Balanceador de Carga com Acesso à Internet (Público)**
 
 No portal do Azure, selecione “Balanceadores de carga” e, em seguida, clique em “Adicionar”. No painel Criar balanceador de carga, introduza as seguintes informações
 
@@ -236,7 +236,7 @@ Após a implementação, o balanceador de carga irá aparecer na lista de Balanc
 
 ![Lista de balanceadores de carga](./media/active-directory-aadconnect-azure-adfs/elbdeployment2.png)
 
-**8.2.    Atribuir uma etiqueta de DNS ao IP público**
+**8.2. Atribuir uma etiqueta de DNS ao IP público**
 
 Clique na entrada do balanceador carga criado recentemente no painel de balanceadores de carga para mostrar o painel da configuração. Siga os passos abaixo para configurar a etiqueta de DNS para o IP público:
 
@@ -248,26 +248,26 @@ Clique na entrada do balanceador carga criado recentemente no painel de balancea
 
 ![Configurar o balanceador de carga com acesso à Internet (DNS)](./media/active-directory-aadconnect-azure-adfs/elbdeployment4.png)
 
-**8.3.    Configurar o conjunto de back-ends do Balanceador de Carga com Acesso à Internet (Público)** 
+**8.3. Configurar o conjunto de back-ends do Balanceador de Carga com Acesso à Internet (Público)** 
 
 Siga os passos da criação do balanceador de carga interno para configurar o conjunto de back-ends do balanceador de carga com Acesso à Internet (Público) como o conjunto de disponibilidade dos servidores WAP. Por exemplo, contosowapset.
 
 ![Configurar o conjunto de back-ends do Balanceador de Carga com Acesso à Internet](./media/active-directory-aadconnect-azure-adfs/elbdeployment5.png)
 
-**8.4.    Configurar a sonda**
+**8.4. Configurar a sonda**
 
 Siga os passos da configuração do balanceador de carga interno para configurar a sonda do conjunto de back-ends dos servidores WAP.
 
 ![Configurar a sonda do Balanceador de Carga com Acesso à Internet](./media/active-directory-aadconnect-azure-adfs/elbdeployment6.png)
 
-**8.5.    Criar regra(s) de balanceamento de carga**
+**8.5. Criar regra(s) de balanceamento de carga**
 
 Siga os passos do ILB para configurar a regra de balanceamento de carga para TCP 443.
 
 ![Configurar as regras de balanceamento do Balanceador de Carga com Acesso à Internet](./media/active-directory-aadconnect-azure-adfs/elbdeployment7.png)
 
-### <a name="9----securing-the-network"></a>9.    Proteger a rede
-**9.1.    Proteger a sub-rede interna**
+### <a name="9-securing-the-network"></a>9. Proteger a rede
+**9.1. Proteger a sub-rede interna**
 
 De um modo geral, precisa das regras seguintes para proteger de forma eficiente a sua sub-rede interna (conforme a ordem apresentada abaixo)
 
@@ -280,7 +280,7 @@ De um modo geral, precisa das regras seguintes para proteger de forma eficiente 
 
 [comment]: <> (![regras de acesso INT (entrada)](./media/active-directory-aadconnect-azure-adfs/nsgintinbound.png)) [comment]: <> (![regras de acesso INT(saída)](./media/active-directory-aadconnect-azure-adfs/nsgintoutbound.png))
 
-**9.2.    Proteger a sub-rede de perímetro **
+**9.2. Proteger a sub-rede de perímetro**
 
 | Regra | Descrição | Fluxo |
 |:--- |:--- |:---:|
@@ -296,7 +296,7 @@ De um modo geral, precisa das regras seguintes para proteger de forma eficiente 
 > 
 > 
 
-### <a name="10----test-the-ad-fs-sign-in"></a>10.    Testar o início de sessão do AD FS
+### <a name="10-test-the-ad-fs-sign-in"></a>10. Testar o início de sessão do AD FS
 A forma mais fácil é testar o AD FS com a página IdpInitiatedSignon.aspx. Para poder fazer isso, é obrigatório ativar o IdpInitiatedSignOn nas propriedades do AD FS. Siga os passos abaixo para verificar a sua configuração do AD FS
 
 1. Execute o cmdlet abaixo no servidor AD FS com o PowerShell, para o definir como ativado.

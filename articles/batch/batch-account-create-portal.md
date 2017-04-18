@@ -1,5 +1,5 @@
 ---
-title: Criar uma conta do Batch no Portal do Azure | Microsoft Docs
+title: Criar uma conta do Batch no portal do Azure | Microsoft Docs
 description: Saiba como criar uma conta do Azure Batch no portal do Azure a executar cargas de trabalho paralelas em grande escala na nuvem
 services: batch
 documentationcenter: 
@@ -12,13 +12,13 @@ ms.workload: big-compute
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 02/27/2017
+ms.date: 03/27/2017
 ms.author: tamram
 ms.custom: H1Hack27Feb2017
 translationtype: Human Translation
-ms.sourcegitcommit: 0d8472cb3b0d891d2b184621d62830d1ccd5e2e7
-ms.openlocfilehash: 09be891b5385871554f45bc1f824b4351ffd3bc2
-ms.lasthandoff: 03/21/2017
+ms.sourcegitcommit: 6ea03adaabc1cd9e62aa91d4237481d8330704a1
+ms.openlocfilehash: 11f8c3f37e56e0b5c566c4abdb60697c5279e72a
+ms.lasthandoff: 04/06/2017
 
 
 ---
@@ -30,30 +30,96 @@ ms.lasthandoff: 03/21/2017
 > 
 > 
 
-Saiba como criar uma conta do Azure Batch no [portal do Azure][azure_portal] e onde encontrar propriedades importantes da conta, como chaves de acesso e URLs da conta. Também abordamos os preços do Batch e mostramos como associar uma conta do Armazenamento do Azure à sua conta do Batch, para que possa utilizar [pacotes de aplicações](batch-application-packages.md) e [manter resultados de trabalhos e tarefas](batch-task-output.md).
+Saiba como criar uma conta do Azure Batch no [portal do Azure][azure_portal] e escolha as propriedades da conta que se adequam ao seu cenário de computação. Saiba onde encontrar as propriedades da conta importantes, como as teclas de acesso e os URLs de conta. 
+
+Para informações sobre contas do Batch e cenários, consulte a [descrição geral da funcionalidade](batch-api-basics.md).
+
+
 
 ## <a name="create-a-batch-account"></a>Criar uma conta do Batch
+
+Utilize o portal para criar uma conta do Batch de um dos dois *modos de alocação de conjunto*: modo de **serviço do Batch** ou o mais recente modo de **subscrição de utilizador**, o que necessitar de mais de configuração. Para obter informações sobre estes dois modos, consulte a [descrição geral da funcionalidade](batch-api-basics.md#account). Para funcionalidades do modo de subscrição do utilizador, consulte também a [publicação do blogue](https://blogs.technet.microsoft.com/windowshpc/2017/03/17/azure-batch-vnet-and-custom-image-support-for-virtual-machine-pools/).
+
+## <a name="batch-service-mode"></a>Modo de serviço do Batch
+
+
+
 1. Inicie sessão no [Portal do Azure][azure_portal].
 2. Clique em **Novo** > **Computação** > **Serviço Batch**.
    
     ![Batch no Marketplace][marketplace_portal]
-3. O painel **Nova Conta do Batch** é apresentado. Veja os itens do *a* ao *e* abaixo para obter descrições de cada elemento do painel.
+3. O painel **Nova Conta do Batch** é apresentado. Consulte as descrições abaixo de cada elemento do painel.
    
     ![Criar uma conta do Batch][account_portal]
    
-    a. **Nome da Conta**: o nome exclusivo para a conta do Batch. O nome que escolher deve ser único na região do Azure na qual será criada a nova conta (veja a **Localização** abaixo). O nome da conta pode conter apenas carateres em minúsculas ou números e tem de ter 3 a 24 carateres de comprimento.
+    a. **Nome da conta**: o nome da conta Batch que escolher deve ser único na região do Azure na qual é criada a conta (veja a **Localização** abaixo). O nome da conta pode conter apenas carateres em minúsculas ou números e tem de ter 3 a 24 carateres de comprimento.
    
     b. **Subscrição**: a subscrição onde cria a conta do Batch. Se tiver apenas uma subscrição, está selecionada por predefinição.
+
+    c. **Modo de alocação do conjunto**: selecione **serviço do Batch**.
    
     c. **Grupo de recursos**: selecione um grupo de recursos existente para a sua nova conta do Batch ou, opcionalmente, para criar um novo.
    
     d. **Localização**: a região do Azure na qual se cria a conta do Batch. Apenas as regiões suportadas pela sua subscrição e grupo de recursos são apresentadas como opções.
    
-    e. **Conta de Armazenamento** (opcional): uma conta de Armazenamento do Azure para fins gerais que associa à nova conta do Batch. Veja [Conta do Armazenamento do Azure Ligada](#linked-azure-storage-account), abaixo, para obter mais informações.
+    e. **Conta de armazenamento** (opcional): uma conta de Armazenamento do Azure para fins gerais que associa à conta do Batch. Esta opção é recomendada para a maioria das contas do Batch. Veja [Linked Azure Storage account (Conta do Armazenamento do Azure Ligada)](#linked-azure-storage-account) mais tarde neste artigo para obter mais informações.
 
 4. Clique em **Criar** para criar a conta.
    
-   O portal indica que está a **Implementar** a conta e, após a conclusão, é apresentada uma notificação que diz **Implementações concluídas com êxito**, em *Notificações*.
+   O portal indica que a implementação está em curso. Após a conclusão, aparece a notificação **Implementações concluídas com êxito** em **Notificações**.
+   
+## <a name="user-subscription-mode"></a>Modo de subscrição do utilizador
+
+### <a name="allow-azure-batch-to-access-the-subscription-one-time-operation"></a>Permitir que o Azure Batch aceda à subscrição (operação única)
+Quando criar a sua primeira conta do Batch no modo de subscrição do utilizador, execute os seguintes passos para registar a sua subscrição com o Batch. (Se anteriormente efetuou este procedimento, avance para a secção seguinte.)
+
+1. Inicie sessão no [Portal do Azure][azure_portal].
+
+2. Clique em **Mais Serviços** > **Subscrições** e clique na subscrição que pretende utilizar para a conta do Batch. 
+
+3. No painel **Subscrição**, clique em **Controlo de acesso (IAM)** > **Adicionar**.
+
+    ![Controlo de acesso da subscrição][subscription_access]
+
+4. No painel **Adicionar permissões**, selecione a função **Contribuinte** e procure **MicrosoftAzureBatch** (sem espaços). Selecione **MicrosoftAzureBatch** e clique em **Guardar**.
+
+    ![Adicionar permissões do Batch][add_permission]
+
+### <a name="create-a-key-vault"></a>Criar um cofre de chaves
+No modo de subscrição de utilizador, é necessário um cofre de chaves do Azure que pertence ao mesmo grupo de recursos que a conta do Batch a ser criada. Certifique-se de que o grupo de recursos está numa região onde o Batch está [disponível](https://azure.microsoft.com/regions/services/) e que a sua subscrição suporta.
+
+1. No [portal do Azure][azure_portal], clique em **Novo** > **Segurança + Identidade** > **Key Vault**. 
+
+2. No painel **Criar Key Vault**, introduza um nome para o cofre de chaves e crie um grupo de recursos na região em que pretende a sua conta do Batch. Deixe as definições restantes nos valores predefinidos e clique em **Criar**.
+
+### <a name="create-a-batch-account"></a>Criar uma conta do Batch
+
+1. No [portal do Azure][azure_portal], clique em **Novo** > **Computação** > **Serviço do Batch**.
+   
+    ![Batch no Marketplace][marketplace_portal]
+3. O painel **Nova Conta do Batch** é apresentado. Consulte as descrições abaixo de cada elemento do painel.
+   
+    ![Criar uma conta do Batch][account_portal_byos]
+   
+    a. **Nome da conta**: o nome da conta Batch que escolher deve ser único na região do Azure na qual é criada a conta (veja a **Localização** abaixo). O nome da conta pode conter apenas carateres em minúsculas ou números e tem de ter 3 a 24 carateres de comprimento.
+   
+    b. **Subscrição**: se tiver mais do que uma subscrição, selecione a subscrição que registou com o serviço do Batch.
+
+    c. **Modo de alocação do conjunto**: selecione **Subscrição do utilizador**.
+
+    d. **Cofre de chaves**: selecione o cofre de chaves que criou para a sua conta do Batch na secção anterior. Opcionalmente, crie um novo cofre de chaves. Depois de selecionar o cofre, selecione a caixa de verificação para conceder acesso do Azure Batch ao cofre de chaves.
+   
+    c. **Grupo de recursos**: selecione o grupo de recursos em que criou o cofre de chaves.
+   
+    d. **Localização**: a região do Azure na qual criou o cofre de chaves para a conta do Batch. 
+   
+    e. **Conta de armazenamento** (opcional): uma conta de Armazenamento do Azure para fins gerais que associa à conta do Batch. Esta opção é recomendada para a maioria das contas do Batch. Veja [Conta do Armazenamento do Azure Ligada](#linked-azure-storage-account), abaixo, para obter mais informações.
+
+4. Clique em **Criar** para criar a conta.
+   
+   O portal indica que a implementação está em curso. Após a conclusão, aparece a notificação **Implementações concluídas com êxito** em **Notificações**.
+
+
 
 ## <a name="view-batch-account-properties"></a>Ver propriedades da conta do Batch
 Depois de a conta ter sido criada, pode abrir o **painel Conta do Batch** para aceder às respetivas definições e propriedades. Pode aceder a todas as definições e propriedades da conta através do menu à esquerda do painel Conta do Batch.
@@ -66,7 +132,9 @@ Depois de a conta ter sido criada, pode abrir o **painel Conta do Batch** para a
 
 ![URL da conta do Batch no portal][account_url]
 
-* **Chaves de acesso**: para autenticar o acesso à conta do Batch a partir da aplicação, necessitará uma chave de acesso de conta. Para ver ou regenerar as chaves de acesso da sua conta do Batch, introduza `keys` na caixa **Pesquisar** do menu à esquerda do painel Conta do Batch selecione **Chaves**.
+* **Chaves de acesso** (modo de serviço do Batch): para autenticar o acesso à conta do Batch a partir da aplicação, necessitará uma chave de acesso de conta. (Esta definição não está disponível no modo de subscrição de utilizador, onde utiliza a autenticação do Azure Active Directory.)
+
+    Para ver ou regenerar as chaves de acesso da sua conta do Batch, introduza `keys` na caixa **Pesquisar** do menu à esquerda do painel Conta do Batch selecione **Chaves**. 
   
     ![Chaves da conta do Batch no portal do Azure][account_keys]
 
@@ -74,7 +142,7 @@ Depois de a conta ter sido criada, pode abrir o **painel Conta do Batch** para a
 
 ## <a name="linked-azure-storage-account"></a>Conta do Armazenamento do Azure Ligada
 
-Como já foi dito, opcionalmente, pode ligar uma conta de Armazenamento do Azure para fins gerais à conta do Batch. A funcionalidade de [pacotes de aplicações](batch-application-packages.md) do Batch utiliza o armazenamento de Blobs, tal como o faz a biblioteca [.NET de Convenções de Ficheiros do Batch](batch-task-output.md). Estas funcionalidades opcionais ajudam-no a implementar as aplicações nas quais as tarefas do Batch são executadas e a manter os dados que aquelas produzem.
+Opcionalmente, pode ligar uma conta de Armazenamento do Azure para fins gerais à conta do Batch. A funcionalidade de [pacotes de aplicações](batch-application-packages.md) do Batch utiliza o armazenamento de Blobs, tal como o faz a biblioteca [.NET de Convenções de Ficheiros do Batch](batch-task-output.md). Estas funcionalidades opcionais ajudam-no a implementar as aplicações nas quais as tarefas do Batch são executadas e a manter os dados que aquelas produzem.
 
 Recomendamos que crie uma nova conta de Armazenamento para utilização exclusiva por parte da sua conta do Batch.
 
@@ -97,9 +165,7 @@ Tenha em atenção que, tal como sucede com a subscrição do Azure e outros ser
 
 ![Quotas das contas do Batch no portal do Azure][quotas]
 
-Tenha presentes estas quotas quando conceber e dimensionar as cargas de trabalho do Batch. Por exemplo, se o conjunto não está a atingir o número de destino de nós de computação que especificou, poderá ter atingido o limite de quota de núcleos da sua conta do Batch.
 
-A quota para as contas do Batch é efetuada por região por subscrição, pelo que pode ter mais do que uma conta do Batch por predefinição, desde que estejam em regiões diferentes. Pode executar várias cargas de trabalho do Batch numa única conta do Batch ou distribuí-las entre contas do Batch que estejam na mesma subscrição, mas em diferentes regiões do Azure.
 
 Para além disso, é possível aumentar muitas destas quotas simplesmente ao submeter um pedido de suporte de produto gratuito no portal do Azure. Veja [Quotas e limites do serviço Batch](batch-quota-limit.md) para obter detalhes sobre como pedir aumentos de quotas.
 
@@ -107,12 +173,12 @@ Para além disso, é possível aumentar muitas destas quotas simplesmente ao sub
 Para além do portal do Azure, também pode criar e gerir contas do Batch com o seguinte:
 
 * [Cmdlets do PowerShell do Batch](batch-powershell-cmdlets-get-started.md)
-* [CLI do Azure](../cli-install-nodejs.md)
+* [CLI do Azure](batch-cli-get-started.md)
 * [Gestão de Batch .NET](batch-management-dotnet.md)
 
 ## <a name="next-steps"></a>Passos seguintes
-* Consulte a [Descrição geral da funcionalidade do Azure Batch](batch-api-basics.md) para saber mais sobre conceitos e funcionalidades de serviço do Batch. O artigo aborda os recursos do Batch principais como conjuntos, nós de computação e tarefas e fornece uma descrição geral das funcionalidades do serviço que permitem a execução de cargas de trabalho de computação em grande escala.
-* Aprenda os conceitos básicos de programação de uma aplicação compatível com o Batch ao utilizar a [biblioteca de cliente .NET do Batch](batch-dotnet-get-started.md). O [artigo introdutório](batch-dotnet-get-started.md) orienta-o numa aplicação em funcionamento que utiliza o serviço do Batch para executar uma carga de trabalho em vário nós de computação e inclui a utilização do Armazenamento do Azure para o teste e obtenção do ficheiro de carga de trabalho.
+* Consulte a [Batch feature overview (Descrição geral da funcionalidade do Batch)](batch-api-basics.md) para saber mais sobre conceitos e funcionalidades de serviço do Batch. O artigo aborda os recursos do Batch principais como conjuntos, nós de computação e tarefas e fornece uma descrição geral das funcionalidades do serviço que permitem a execução de cargas de trabalho de computação em grande escala.
+* Aprenda os conceitos básicos de programação de uma aplicação compatível com o Batch ao utilizar a [biblioteca de cliente .NET do Batch](batch-dotnet-get-started.md) ou [Python](batch-python-tutorial.md). Estes artigos introdutórios orientam-no numa aplicação em funcionamento que utiliza o serviço do Batch para executar uma carga de trabalho em vário nós de computação e inclui a utilização do Armazenamento do Azure para o teste e obtenção do ficheiro de carga de trabalho.
 
 [api_net]: https://msdn.microsoft.com/library/azure/mt348682.aspx
 [api_rest]: https://msdn.microsoft.com/library/azure/Dn820158.aspx
@@ -128,4 +194,6 @@ Para além do portal do Azure, também pode criar e gerir contas do Batch com o 
 [account_url]: ./media/batch-account-create-portal/account_url.png
 [storage_account]: ./media/batch-account-create-portal/storage_account.png
 [quotas]: ./media/batch-account-create-portal/quotas.png
-
+[subscription_access]: ./media/batch-account-create-portal/subscription_iam.png
+[add_permission]: ./media/batch-account-create-portal/add_permission.png
+[account_portal_byos]: ./media/batch-account-create-portal/batch_acct_portal_byos.png

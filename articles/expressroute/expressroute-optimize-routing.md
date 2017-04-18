@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 03/24/2017
+ms.date: 04/06/2017
 ms.author: charwen
 translationtype: Human Translation
-ms.sourcegitcommit: 4f2230ea0cc5b3e258a1a26a39e99433b04ffe18
-ms.openlocfilehash: f03099391600bc3b918eb3a8c866c16a02052b7a
-ms.lasthandoff: 03/25/2017
+ms.sourcegitcommit: 0b53a5ab59779dc16825887b3c970927f1f30821
+ms.openlocfilehash: c3a85b9445d69330c3f6c7d298169efddb6ecca0
+ms.lasthandoff: 04/07/2017
 
 
 ---
@@ -67,7 +67,7 @@ Com o ExpressRoute, pode permitir a comunicação de Rede Virtual para Rede Virt
 ![Caso 3 do ExpressRoute - encaminhamento inferior ao ideal entre redes virtuais](./media/expressroute-optimize-routing/expressroute-case3-problem.png)
 
 ### <a name="solution-assign-a-high-weight-to-local-connection"></a>Solução: atribuir uma ponderação elevada à ligação no local
-A solução é simples. Uma vez que sabe onde estão as VNets e os circuitos, pode dizer-nos que caminho cada VNet deve preferir. Mais concretamente para este exemplo, vai atribuir uma ponderação mais elevada à ligação local do que à remota. Quando uma VNet recebe o prefixo da outra VNet em várias ligações, vai dar preferência à ligação que tem a ponderação mais elevada para enviar o tráfego destinado a esse prefixo.
+A solução é simples. Uma vez que sabe onde estão as VNets e os circuitos, pode dizer-nos que caminho cada VNet deve preferir. Mais concretamente para este exemplo, vai atribuir uma ponderação mais elevada à ligação local do que à remota (veja o exemplo de configuração [aqui](expressroute-howto-linkvnet-arm.md#modify-a-virtual-network-connection)). Quando uma VNet recebe o prefixo da outra VNet em várias ligações, vai dar preferência à ligação que tem a ponderação mais elevada para enviar o tráfego destinado a esse prefixo.
 
 ![Solução do Caso 3 do ExpressRoute - atribuir uma ponderação elevada à ligação no local](./media/expressroute-optimize-routing/expressroute-case3-solution.png)
 
@@ -75,3 +75,4 @@ A solução é simples. Uma vez que sabe onde estão as VNets e os circuitos, po
 > Também pode influenciar o encaminhamento da VNet para a sua rede no local, se tiver diversos circuitos do ExpressRoute, ao configurar a ponderação de uma ligação em vez de aplicar a prefixação COMO CAMINHO, uma técnica que foi descrita no segundo cenário, acima. Para cada prefixo, para decidir como enviar o tráfego, vamos sempre considerar primeiro a ponderação da ligação face ao comprimento de COMO CAMINHO.
 >
 >
+

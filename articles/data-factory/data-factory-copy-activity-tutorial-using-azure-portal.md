@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 02/14/2017
+ms.date: 04/11/2017
 ms.author: spelluru
 translationtype: Human Translation
-ms.sourcegitcommit: 5e6ffbb8f1373f7170f87ad0e345a63cc20f08dd
-ms.openlocfilehash: a4658f1eee3cdd24b3da47b4c7319c61ea39cb34
-ms.lasthandoff: 03/24/2017
+ms.sourcegitcommit: 785d3a8920d48e11e80048665e9866f16c514cf7
+ms.openlocfilehash: 079cb3e69954a9b02e26e005ad4bb1b7ef14c909
+ms.lasthandoff: 04/12/2017
 
 
 ---
@@ -175,12 +175,12 @@ Neste passo, vai criar um conjunto de dados com o nome **InputDataset** que apon
     ```   
     Tenha em atenção os seguintes pontos: 
    
-   * O **type** do conjunto de dados está definido como **AzureBlob**.
-   * O **linkedServiceName** está definido como **AzureStorageLinkedService**. Criou este serviço ligado no Passo 2.
-   * O **folderPath** está definido para o contentor **adftutorial**. Também pode especificar o nome de um blob na pasta com a propriedade **fileName**. Uma vez que não está a especificar o nome do blob, os dados de todos os blobs no contentor são considerados como dados de entrada.  
-   * O **type** do formato está definido como **TextFormat**
-   * Existem dois campos no ficheiro de texto – **FirstName** e **LastName** – separados por vírgula (**columnDelimiter**)    
-   * A **disponibilidade** está definida como **de hora a hora** (**a frequência** está definida como **hora** e o **intervalo** está definido como **1**). Por conseguinte, o Data Factory procura dados de entrada a cada hora na pasta raiz do contentor de blobs (**adftutorial**) que especificou. 
+    - O **type** do conjunto de dados está definido como **AzureBlob**.
+    - O **linkedServiceName** está definido como **AzureStorageLinkedService**. Criou este serviço ligado no Passo 2.
+    - O **folderPath** está definido para o contentor **adftutorial**. Também pode especificar o nome de um blob na pasta com a propriedade **fileName**. Uma vez que não está a especificar o nome do blob, os dados de todos os blobs no contentor são considerados como dados de entrada.
+    - O **type** do formato está definido como **TextFormat**
+    - Existem dois campos no ficheiro de texto – **FirstName** e **LastName** separados por vírgula (**columnDelimiter**)
+    - A **disponibilidade** está definida como **de hora a hora** (**a frequência** está definida como **hora** e o **intervalo** está definido como **1**). Por conseguinte, o Data Factory procura dados de entrada a cada hora na pasta raiz do contentor de blobs (**adftutorial**) que especificou. 
      
      Se não especificar um **fileName** para um conjunto de dados de **entrada**, todos os ficheiros/blobs da pasta de entrada (**folderPath**) são considerados entradas. Se especificar um fileName no JSON, apenas o ficheiro/blob especificado é considerado uma entrada asn.
      
@@ -240,11 +240,11 @@ Nesta parte do passo, vai criar um conjunto de dados de saída com o nome **Outp
     ```       
     Tenha em atenção os seguintes pontos: 
    
-   * O **type** do conjunto de dados está definido como **AzureSQLTable**.
-   * **linkedServiceName** está definido como **AzureSqlLinkedService** (criou este serviço ligado no Passo 2).
-   * O **tablename** está definido como **emp**.
-   * Existem três colunas – **ID**, **FirstName**, e **LastName** – na tabela emp da base de dados. O ID é uma coluna de identidade, por isso terá de especificar apenas **FirstName** e **LastName** aqui.
-   * A **disponibilidade** está definida como **de hora a hora** (**frequência** definida como **hora** e **intervalo** definido como **1**).  O serviço Data Factory gera um setor de dados de saída a cada hora na tabela **emp** da base de dados SQL do Azure.
+    - O **type** do conjunto de dados está definido como **AzureSQLTable**.
+    - **linkedServiceName** está definido como **AzureSqlLinkedService** (criou este serviço ligado no Passo 2).
+    - O **tablename** está definido como **emp**.
+    - Existem três colunas – **ID**, **FirstName**, e **LastName** – na tabela emp da base de dados. O ID é uma coluna de identidade, por isso terá de especificar apenas **FirstName** e **LastName** aqui.
+    - A **disponibilidade** está definida como **de hora a hora** (**frequência** definida como **hora** e **intervalo** definido como **1**).  O serviço Data Factory gera um setor de dados de saída a cada hora na tabela **emp** da base de dados SQL do Azure.
 3. Clique em **Implementar**, na barra de ferramentas, para criar e implementar o conjunto de dados **OutputDataset**. Confirme que consegue ver **OutputDataset** na vista de árvore. 
 
 > [!NOTE]
@@ -303,17 +303,17 @@ Neste passo, vai criar um pipeline com uma **Atividade de Cópia** que utiliza *
     
     Tenha em atenção os seguintes pontos:
    
-   * Na secção atividades, existe apenas uma atividade cujo **type** está definido como **Copy**.
-   * A entrada da atividade está definida como **InputDataset** e a saída como **OutputDataset**.
-   * Na secção **typeProperties**, **BlobSource** está especificado como o tipo de origem e **SqlSink** como o tipo de sink.
+    - Na secção atividades, existe apenas uma atividade cujo **type** está definido como **Copy**.
+    - A entrada da atividade está definida como **InputDataset** e a saída como **OutputDataset**.
+    - Na secção **typeProperties**, **BlobSource** está especificado como o tipo de origem e **SqlSink** como o tipo de sink.
      
-     Substitua o valor da propriedade **start** com o dia atual e o valor **end** com o dia seguinte. Pode especificar apenas a parte da data e ignorar a parte da hora em data e hora. Por exemplo, "2016-02-03", que é equivalente a "2016-02-03T00:00:00Z"
+    Substitua o valor da propriedade **start** com o dia atual e o valor **end** com o dia seguinte. Pode especificar apenas a parte da data e ignorar a parte da hora em data e hora. Por exemplo, "2016-02-03", que é equivalente a "2016-02-03T00:00:00Z"
      
-     Tanto o datetime de início como de fim têm de estar no [formato ISO](http://en.wikipedia.org/wiki/ISO_8601). Por exemplo: 2016-10-14T16:32:41Z. O tempo **end** é opcional, mas iremos utilizá-lo neste tutorial. 
+    Tanto o datetime de início como de fim têm de estar no [formato ISO](http://en.wikipedia.org/wiki/ISO_8601). Por exemplo: 2016-10-14T16:32:41Z. O tempo **end** é opcional, mas iremos utilizá-lo neste tutorial. 
      
-     Se não especificar valor da propriedade **end**, esta é calculada como “**início + 48 horas**”. Para executar o pipeline de forma indefinida, especifique **9999-09-09** como o valor da propriedade **end**.
+    Se não especificar valor da propriedade **end**, esta é calculada como “**início + 48 horas**”. Para executar o pipeline de forma indefinida, especifique **9999-09-09** como o valor da propriedade **end**.
      
-     No exemplo anterior existem 24 setores de dados, uma vez que estes são produzidos de hora a hora.
+    No exemplo anterior existem 24 setores de dados, uma vez que estes são produzidos de hora a hora.
 3. Clique em **Implementar** na barra de ferramentas para criar e implementar o **ADFTutorialPipeline**. Verifique se vê o pipeline na vista de árvore. 
 4. Agora, feche o painel **Editor** clicando em **X**. Clique em **X** novamente para ver a home page do **Data Factory** relativa a **ADFTutorialDataFactory**.
 

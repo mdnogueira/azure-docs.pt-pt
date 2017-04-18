@@ -12,12 +12,12 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: hero-article
-ms.date: 03/27/2016
+ms.date: 04/10/2017
 ms.author: marsma
 translationtype: Human Translation
-ms.sourcegitcommit: 6e0ad6b5bec11c5197dd7bded64168a1b8cc2fdd
-ms.openlocfilehash: 7a9a28ce8be7587c84a1188d643c990cc4fb7355
-ms.lasthandoff: 03/28/2017
+ms.sourcegitcommit: 757d6f778774e4439f2c290ef78cbffd2c5cf35e
+ms.openlocfilehash: 0764d4cbcd618be54c8b6e71a632d24c5c3bfe67
+ms.lasthandoff: 04/10/2017
 
 
 ---
@@ -26,20 +26,21 @@ ms.lasthandoff: 03/28/2017
 
 [!INCLUDE [storage-check-out-samples-dotnet](../../includes/storage-check-out-samples-dotnet.md)]
 
-## <a name="overview"></a>Descrição geral
-O Table Storage do Azure é um serviço que armazena dados NoSQL estruturados na nuvem. O Table Storage é um armazenamento de chaves/atributos com um design sem esquemas. Uma vez que o Table Storage não tem esquemas, é fácil adaptar os seus dados à medida que as necessidades da sua aplicação evoluem. O acesso aos dados é rápido e rentável para todos os tipos de aplicações. Geralmente, o custo do Table Storage é significativamente inferior ao SQL tradicional para volumes de dados semelhantes.
+O Armazenamento de tabelas do Azure é um serviço que armazena dados NoSQL estruturados na cloud, fornecendo uma loja de atributos/chaves com um design sem esquemas. Uma vez que o Table Storage não tem esquemas, é fácil adaptar os seus dados à medida que as necessidades da sua aplicação evoluem. O acesso a dados do Armazenamento de tabelas é rápido e rentável para muitos tipos de aplicações, e é normalmente mais económico do que o SQL tradicional para semelhantes volumes de dados.
 
-Pode utilizar o Table Storage para armazenar conjuntos de dados flexíveis, tais como os dados do utilizador para Web Apps, livros de endereços, informações do dispositivo e qualquer outro tipo de metadados necessários para o seu serviço. Pode armazenar quantas entidades pretender numa tabela e uma conta do Storage pode conter quantas tabelas pretender, até ao limite de capacidade da conta do Storage.
+Pode utilizar o Armazenamento de Tabelas para armazenar conjuntos de dados flexíveis, como os dados do utilizador para aplicações Web, livros de endereços, informações do dispositivo, ou outros tipo de metadados necessários para o seu serviço. Pode armazenar quantas entidades pretender numa tabela e uma conta do Storage pode conter quantas tabelas pretender, até ao limite de capacidade da conta do Storage.
 
 ### <a name="about-this-tutorial"></a>Acerca deste tutorial
-Este tutorial mostra como escrever código .NET para alguns cenários comuns utilizando o Table Storage do Azure, incluindo criar e eliminar uma tabela e inserir, atualizar, eliminar e consultar os dados da tabela.
+Este tutorial mostra-lhe como utilizar a [Biblioteca de Cliente de Armazenamento do Azure para .NET](https://www.nuget.org/packages/WindowsAzure.Storage/) em alguns cenários comuns de Armazenamento de tabelas do Azure. Estes cenários são apresentados com exemplos C#, para criar e eliminar uma tabela e inserir, atualizar, eliminar e consultar dados de tabelas.
 
-**Pré-requisitos:**
+## <a name="prerequisites"></a>Pré-requisitos
+
+Para concluir este tutorial com êxito, precisa do seguinte:
 
 * [Microsoft Visual Studio](https://www.visualstudio.com/visual-studio-homepage-vs.aspx)
 * [Biblioteca de Clientes do Armazenamento do Azure para .NET](https://www.nuget.org/packages/WindowsAzure.Storage/)
 * [Gestor de Configuração do Azure para .NET](https://www.nuget.org/packages/Microsoft.WindowsAzure.ConfigurationManager/)
-* Uma [Conta do Storage do Azure](storage-create-storage-account.md#create-a-storage-account)
+* [Conta de armazenamento do Azure](storage-create-storage-account.md#create-a-storage-account)
 
 [!INCLUDE [storage-dotnet-client-library-version-include](../../includes/storage-dotnet-client-library-version-include.md)]
 
@@ -65,7 +66,7 @@ using Microsoft.WindowsAzure.Storage.Table; // Namespace for Table storage types
 [!INCLUDE [storage-cloud-configuration-manager-include](../../includes/storage-cloud-configuration-manager-include.md)]
 
 ### <a name="create-the-table-service-client"></a>Criar o cliente do serviço Tabela
-A classe **CloudTableClient** permite-lhe obter tabelas e entidades armazenadas no Table Storage. Eis uma forma de criar o cliente do serviço:
+A classe [CloudTableClient][dotnet_CloudTableClient] permite-lhe obter tabelas e entidades armazenadas no Armazenamento de tabelas. Eis uma forma de criar o Cliente do serviço de tabelas:
 
 ```csharp
 // Create the table client.
@@ -93,8 +94,7 @@ table.CreateIfNotExists();
 ```
 
 ## <a name="add-an-entity-to-a-table"></a>Adicionar uma entidade a uma tabela
-As entidades mapeiam para objetos C\# através de uma classe personalizada derivada de **TableEntity**. Para adicionar uma entidade a uma tabela, crie uma classe que define as propriedades de entidade. O código seguinte define uma classe de entidade que utiliza o nome próprio do cliente como a chave da fila e o apelido como a chave de partição. Em conjunto, a chave da fila e a partição da entidade identificam de forma exclusiva a entidade na tabela. As entidades com a mesma chave de partição podem ser consultadas mais rapidamente do que as entidades com chaves de partição diferentes, mas a utilização de várias chaves de partição permite uma maior escalabilidade de operações simultâneas. Para qualquer propriedade que deva ser armazenada no serviço Tabela, a propriedade tem de ser uma propriedade pública de um tipo suportado que expõe valores de obtenção e de definição.
-Além disso, o tipo de entidade *tem de* expor um construtor sem parâmetros.
+As entidades mapeiam para objetos C# através de uma classe personalizada derivada de [TableEntity][dotnet_TableEntity]. Para adicionar uma entidade a uma tabela, crie uma classe que define as propriedades de entidade. O código seguinte define uma classe de entidade que utiliza o nome próprio do cliente como a chave da fila e o apelido como a chave de partição. Em conjunto, a chave da fila e a partição da entidade identificam-na de forma exclusiva na tabela. As entidades com a mesma chave de partição podem ser consultadas mais rapidamente do que as entidades com chaves de partição diferentes, mas a utilização de várias chaves de partição permite uma maior escalabilidade de operações simultâneas. As entidades a serem armazenadas em tabelas têm de ter um tipo suportado, por exemplo derivadas da classe [TableEntity][dotnet_TableEntity]. As propriedades de entidade que pretende armazenar numa tabela têm de ser propriedades públicas do tipo e suportar a introdução e a definição de valores. Além disso, o tipo de entidade *tem de* expor um construtor sem parâmetros.
 
 ```csharp
 public class CustomerEntity : TableEntity
@@ -113,7 +113,7 @@ public class CustomerEntity : TableEntity
 }
 ```
 
-As operações de tabela que envolvem entidades são efetuadas através do objeto **CloudTable** que criou anteriormente na secção "Criar uma tabela". A operação a realizar é representada por um objeto **TableOperation**.  O exemplo de código seguinte mostra a criação do objeto **CloudTable** e, em seguida, um objeto **CustomerEntity**.  Para preparar a operação, é criado um objeto **TableOperation** para inserir a entidade de cliente na tabela.  Por fim, a operação é executada chamando **CloudTable.Execute**.
+As operações de tabela que envolvem entidades são efetuadas através do objeto [CloudTable][dotnet_CloudTable] que criou anteriormente na secção "Criar uma tabela". A operação a realizar é representada por um objeto [TableOperation][dotnet_TableOperation]. O exemplo de código seguinte mostra a criação do objeto [CloudTable][dotnet_CloudTable] e, em seguida, um objeto **CustomerEntity**. Para preparar a operação, é criado um objeto [TableOperation][dotnet_TableOperation] para inserir a entidade de cliente na tabela. Por fim, a operação é executada chamando [CloudTable][dotnet_CloudTable].[Executar][dotnet_CloudTable_Execute].
 
 ```csharp
 // Retrieve the storage account from the connection string.
@@ -146,8 +146,7 @@ Pode inserir um lote de entidades numa tabela numa operação de escrita. Alguma
 * Todas as entidades numa única operação em lote têm de ter a mesma chave de partição.
 * Embora seja possível executar uma consulta como uma operação em lote, tem de ser a única operação no lote.
 
-<!-- -->
-O exemplo de código seguinte cria dois objetos de entidade e adiciona cada um deles a **TableBatchOperation** através do método **Inserir**. Em seguida, chama-se **CloudTable.Execute** para executar a operação.
+O exemplo de código seguinte cria dois objetos de entidade e adiciona cada um deles a [TableBatchOperation][dotnet_TableBatchOperation] através do método [Inserir][dotnet_TableBatchOperation_Insert]. Em seguida, chama-se [CloudTable][dotnet_CloudTable].[ExecuteBatch][dotnet_CloudTable_ExecuteBatch] para executar a operação.
 
 ```csharp
 // Retrieve the storage account from the connection string.
@@ -182,8 +181,7 @@ table.ExecuteBatch(batchOperation);
 ```
 
 ## <a name="retrieve-all-entities-in-a-partition"></a>Obter todas as entidades numa partição
-Para consultar uma tabela para todas as entidades numa partição, utilize um objeto **TableQuery**.
-O exemplo de código seguinte especifica um filtro para as entidades em que “Santos” é a chave de partição. Este exemplo imprime os campos de cada entidade nos resultados da consulta para a consola.
+Para consultar uma tabela para todas as entidades numa partição, utilize um objeto [TableQuery][dotnet_TableQuery]. O exemplo de código seguinte especifica um filtro para as entidades em que “Santos” é a chave de partição. Este exemplo imprime os campos de cada entidade nos resultados da consulta para a consola.
 
 ```csharp
 // Retrieve the storage account from the connection string.
@@ -237,9 +235,7 @@ foreach (CustomerEntity entity in table.ExecuteQuery(rangeQuery))
 ```
 
 ## <a name="retrieve-a-single-entity"></a>Obter uma única entidade
-Pode escrever uma consulta para obter uma entidade única e específica. O seguinte código utiliza **TableOperation** para especificar o cliente “Bernardo Santos”.
-Este método devolve apenas uma entidade em vez de uma coleção e o valor devolvido em **TableResult.Result** é um objeto **CustomerEntity**.
-Especificar as chaves de partição e da fila numa consulta é a forma mais rápida de obter uma única entidade a partir do serviço Tabela.
+Pode escrever uma consulta para obter uma entidade única e específica. O seguinte código utiliza [TableOperation][dotnet_TableOperation] para especificar o cliente “Bernardo Santos”. Este método devolve apenas uma entidade em vez de uma coleção e o valor devolvido em [TableResult.Result][dotnet_TableResult].[Resultado][dotnet_TableResult_Result] é um objeto **CustomerEntity**. Especificar as chaves de partição e da fila numa consulta é a forma mais rápida de obter uma única entidade a partir do serviço Tabela.
 
 ```csharp
 // Retrieve the storage account from the connection string.
@@ -270,7 +266,7 @@ else
 ```
 
 ## <a name="replace-an-entity"></a>Substituir uma entidade
-Para atualizar uma entidade, recupere-a do serviço Tabela, modifique o objeto de entidade e, em seguida, guarde as alterações novamente no serviço Tabela. O código seguinte altera o número de telefone de um cliente existente. Em vez de chamar **Inserir**, este código utiliza **Substituir**. Isto faz com que a entidade seja totalmente substituída no servidor, a menos que a entidade no servidor tenha sido alterada desde que foi obtida, caso em que a operação falhará.  Esta falha é para impedir que a sua aplicação substitua inadvertidamente uma alteração efetuada entre a obtenção e a atualização por outro componente da aplicação.  O processamento adequado desta falha é para obter a entidade novamente, efetuar as alterações (se ainda forem válidas) e, em seguida, executar outra operação de **Substituição**.  A secção seguinte irá mostrar como substituir este comportamento.
+Para atualizar uma entidade, recupere-a do serviço Tabela, modifique o objeto de entidade e, em seguida, guarde as alterações novamente no serviço Tabela. O código seguinte altera o número de telefone de um cliente existente. Em vez de chamar [Inserir][dotnet_TableOperation_Insert], este código utiliza [Substituir][dotnet_TableOperation_Replace]. [Substituir][dotnet_TableOperation_Replace] faz com que a entidade seja totalmente substituída no servidor, a menos que a entidade no servidor tenha sido alterada desde que foi obtida, caso em que a operação falhará. Esta falha é para impedir que a sua aplicação substitua inadvertidamente uma alteração efetuada entre a obtenção e a atualização por outro componente da aplicação. O processamento adequado desta falha é para obter a entidade novamente, efetuar as alterações (se ainda forem válidas) e, em seguida, executar outra operação de [Substituição][dotnet_TableOperation_Replace]. A secção seguinte irá mostrar como substituir este comportamento.
 
 ```csharp
 // Retrieve the storage account from the connection string.
@@ -312,8 +308,9 @@ else
 ```
 
 ## <a name="insert-or-replace-an-entity"></a>Inserir ou substituir uma entidade
-As operações de **Substituição** irão falhar se a entidade tiver sido alterada desde que foi obtida do servidor.  Além disso, tem de obter primeiro a entidade do servidor para que a operação de **Substituição** seja concluída com êxito.
-Por vezes, no entanto, não sabe se a entidade existe no servidor e os valores atuais armazenados na mesma são irrelevantes. A atualização deve substituí-los a todos.  Para tal, utilizaria uma operação **InsertOrReplace**.  Esta operação insere a entidade se esta não existir ou substitui-a se existir, independentemente de quando foi efetuada a última atualização.  No exemplo de código seguinte, a entidade de cliente para Bernardo Santos ainda é obtida, mas, em seguida, é guardada no servidor através de **InsertOrReplace**.  Todas as atualizações efetuadas à entidade entre as operações de obtenção e atualização serão substituídas.
+As operações de [Substituição][dotnet_TableOperation_Replace] irão falhar se a entidade tiver sido alterada desde que foi obtida do servidor. Além disso, tem de obter primeiro a entidade do servidor para que a operação de [Substituição][dotnet_TableOperation_Replace] seja concluída com êxito. Por vezes, no entanto, não sabe se a entidade existe no servidor e os valores atuais armazenados na mesma são irrelevantes. A atualização deve substituí-los a todos. Para tal, utilizaria uma operação [InsertOrReplace][dotnet_TableOperation_InsertOrReplace]. Esta operação insere a entidade se esta não existir ou substitui-a se existir, independentemente de quando foi efetuada a última atualização.
+
+No seguinte exemplo de código, uma entidade de cliente para "Pedro Silva" é criada e inserida na tabela "pessoas". Em seguida, utilizamos a operação [InsertOrReplace][dotnet_TableOperation_InsertOrReplace] para guardar uma entidade com a mesma chave de partição (Silva) e a chave de linha (Pedro) para o servidor, desta vez com um valor diferente para a propriedade PhoneNumber. Uma vez que utilizamos [InsertOrReplace][dotnet_TableOperation_InsertOrReplace], todos os respetivos valores de propriedade são substituídos. No entanto, se uma entidade "Pedro Silva" já não existir na tabela, este seria inserido.
 
 ```csharp
 // Retrieve the storage account from the connection string.
@@ -326,36 +323,37 @@ CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
 // Create the CloudTable object that represents the "people" table.
 CloudTable table = tableClient.GetTableReference("people");
 
-// Create a retrieve operation that takes a customer entity.
-TableOperation retrieveOperation = TableOperation.Retrieve<CustomerEntity>("Smith", "Ben");
+// Create a customer entity.
+CustomerEntity customer3 = new CustomerEntity("Jones", "Fred");
+customer3.Email = "Fred@contoso.com";
+customer3.PhoneNumber = "425-555-0106";
+
+// Create the TableOperation object that inserts the customer entity.
+TableOperation insertOperation = TableOperation.Insert(customer3);
 
 // Execute the operation.
-TableResult retrievedResult = table.Execute(retrieveOperation);
+table.Execute(insertOperation);
 
-// Assign the result to a CustomerEntity object.
-CustomerEntity updateEntity = (CustomerEntity)retrievedResult.Result;
+// Create another customer entity with the same partition key and row key.
+// We've already created a 'Fred Jones' entity and saved it to the
+// 'people' table, but here we're specifying a different value for the
+// PhoneNumber property.
+CustomerEntity customer4 = new CustomerEntity("Jones", "Fred");
+customer4.Email = "Fred@contoso.com";
+customer4.PhoneNumber = "425-555-0107";
 
-if (updateEntity != null)
-{
-    // Change the phone number.
-    updateEntity.PhoneNumber = "425-555-1234";
+// Create the InsertOrReplace TableOperation.
+TableOperation insertOrReplaceOperation = TableOperation.InsertOrReplace(customer4);
 
-    // Create the InsertOrReplace TableOperation.
-    TableOperation insertOrReplaceOperation = TableOperation.InsertOrReplace(updateEntity);
-
-    // Execute the operation.
-    table.Execute(insertOrReplaceOperation);
-
-    Console.WriteLine("Entity was updated.");
-}
-else
-{
-    Console.WriteLine("Entity could not be retrieved.");
-}
+// Execute the operation. Because a 'Fred Jones' entity already exists in the
+// 'people' table, its property values will be overwritten by those in this
+// CustomerEntity. If 'Fred Jones' didn't already exist, the entity would be
+// added to the table.
+table.Execute(insertOrReplaceOperation);
 ```
 
 ## <a name="query-a-subset-of-entity-properties"></a>Consultar um subconjunto de propriedades de entidade
-Uma consulta de tabela pode obter apenas algumas propriedades de uma entidade em vez de todas as propriedades de entidade. Esta técnica, denominada projeção, reduz a largura de banda e pode melhorar o desempenho da consulta, especialmente para entidades grandes. A consulta no seguinte código devolve apenas os endereços de e-mail de entidades na tabela. Isto é feito utilizando uma consulta de **DynamicTableEntity** e também **EntityResolver**. Pode saber mais sobre a projeção na [Mensagem de blogue Apresentação do Upsert e da Projeção da Consulta][Introducing Upsert and Query Projection blog post]. Tenha em atenção que a projeção não é suportada o emulador de armazenamento local, pelo que este código é executado apenas quando estiver a utilizar uma conta do serviço Tabela.
+Uma consulta de tabela pode obter apenas algumas propriedades de uma entidade em vez de todas as propriedades de entidade. Esta técnica, denominada projeção, reduz a largura de banda e pode melhorar o desempenho da consulta, especialmente para entidades grandes. A consulta no seguinte código devolve apenas os endereços de e-mail de entidades na tabela. Isto é feito utilizando uma consulta de [DynamicTableEntity][dotnet_DynamicTableEntity] e também [EntityResolver][dotnet_EntityResolver]. Pode saber mais sobre a projeção na [Mensagem de blogue Apresentação do Upsert e da Projeção da Consulta][blog_post_upsert]. A projeção não é suportada pelo emulador de armazenamento, pelo que este código é executado apenas quando estiver a utilizar uma conta do serviço Tabela.
 
 ```csharp
 // Retrieve the storage account from the connection string.
@@ -381,7 +379,7 @@ foreach (string projectedEmail in table.ExecuteQuery(projectionQuery, resolver, 
 ```
 
 ## <a name="delete-an-entity"></a>Eliminar uma entidade
-Pode facilmente eliminar uma entidade depois de a ter obtido através do mesmo padrão mostrado para atualizar uma entidade.  O código seguinte obtém e elimina uma entidade de cliente.
+Pode facilmente eliminar uma entidade depois de a ter obtido através do mesmo padrão mostrado para atualizar uma entidade. O código seguinte obtém e elimina uma entidade de cliente.
 
 ```csharp
 // Retrieve the storage account from the connection string.
@@ -479,18 +477,23 @@ Agora que aprendeu as noções básicas do Table Storage, siga estas ligações 
 [Download and install the Azure SDK for .NET]: /develop/net/
 [Creating an Azure Project in Visual Studio]: http://msdn.microsoft.com/library/azure/ee405487.aspx
 
-[Blob5]: ./media/storage-dotnet-how-to-use-table-storage/blob5.png
-[Blob6]: ./media/storage-dotnet-how-to-use-table-storage/blob6.png
-[Blob7]: ./media/storage-dotnet-how-to-use-table-storage/blob7.png
-[Blob8]: ./media/storage-dotnet-how-to-use-table-storage/blob8.png
-[Blob9]: ./media/storage-dotnet-how-to-use-table-storage/blob9.png
+[blog_post_upsert]: http://blogs.msdn.com/b/windowsazurestorage/archive/2011/09/15/windows-azure-tables-introducing-upsert-and-query-projection.aspx
 
-[Introducing Upsert and Query Projection blog post]: http://blogs.msdn.com/b/windowsazurestorage/archive/2011/09/15/windows-azure-tables-introducing-upsert-and-query-projection.aspx
-[.NET Client Library reference]: http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409
-[Azure Storage Team blog]: http://blogs.msdn.com/b/windowsazurestorage/
-[Configure Azure Storage connection strings]: http://msdn.microsoft.com/library/azure/ee758697.aspx
-[OData]: http://nuget.org/packages/Microsoft.Data.OData/5.0.2
-[Edm]: http://nuget.org/packages/Microsoft.Data.Edm/5.0.2
-[Spatial]: http://nuget.org/packages/System.Spatial/5.0.2
-[How to: Programmatically access Table storage]: #tablestorage
+[dotnet_api_ref]: https://msdn.microsoft.com/library/azure/mt347887.aspx
+[dotnet_CloudTableClient]: https://msdn.microsoft.com/library/microsoft.windowsazure.storage.table.cloudtableclient.aspx
+[dotnet_CloudTable]: https://msdn.microsoft.com/library/microsoft.windowsazure.storage.table.cloudtable.aspx
+[dotnet_CloudTable_Execute]: https://msdn.microsoft.com/library/microsoft.windowsazure.storage.table.cloudtable.execute.aspx
+[dotnet_CloudTable_ExecuteBatch]: https://msdn.microsoft.com/library/microsoft.windowsazure.storage.table.cloudtable.executebatch.aspx
+[dotnet_DynamicTableEntity]: https://msdn.microsoft.com/library/microsoft.windowsazure.storage.table.dynamictableentity.aspx
+[dotnet_EntityResolver]: https://msdn.microsoft.com/library/jj733144.aspx
+[dotnet_TableBatchOperation]: https://msdn.microsoft.com/library/microsoft.windowsazure.storage.table.tablebatchoperation.aspx
+[dotnet_TableBatchOperation_Insert]: https://msdn.microsoft.com/library/microsoft.windowsazure.storage.table.tablebatchoperation.insert.aspx
+[dotnet_TableEntity]: https://msdn.microsoft.com/library/microsoft.windowsazure.storage.table.tableentity.aspx
+[dotnet_TableOperation]: https://msdn.microsoft.com/library/microsoft.windowsazure.storage.table.tableoperation.aspx
+[dotnet_TableOperation_Insert]: https://msdn.microsoft.com/library/microsoft.windowsazure.storage.table.tableoperation.insert.aspx
+[dotnet_TableOperation_InsertOrReplace]: https://msdn.microsoft.com/library/microsoft.windowsazure.storage.table.tableoperation.insertorreplace.aspx
+[dotnet_TableOperation_Replace]: https://msdn.microsoft.com/library/microsoft.windowsazure.storage.table.tableoperation.replace.aspx
+[dotnet_TableQuery]: https://msdn.microsoft.com/library/microsoft.windowsazure.storage.table.tablequery.aspx
+[dotnet_TableResult]: https://msdn.microsoft.com/library/microsoft.windowsazure.storage.table.tableresult.aspx
+[dotnet_TableResult_Result]: https://msdn.microsoft.com/library/microsoft.windowsazure.storage.table.tableresult.result.aspx
 
