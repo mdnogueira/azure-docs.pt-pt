@@ -16,9 +16,9 @@ ms.workload: data-management
 ms.date: 03/03/2017
 ms.author: carlrab; jognanay
 translationtype: Human Translation
-ms.sourcegitcommit: c1cd1450d5921cf51f720017b746ff9498e85537
-ms.openlocfilehash: e052109ff10f21c3a737f336479fe43fb54e500e
-ms.lasthandoff: 03/14/2017
+ms.sourcegitcommit: 757d6f778774e4439f2c290ef78cbffd2c5cf35e
+ms.openlocfilehash: 7dc5210c073a3130bfc9ffdbc9ce33e19ca5bc1a
+ms.lasthandoff: 04/10/2017
 
 
 ---
@@ -42,7 +42,7 @@ Para obter mais informações sobre as bases de dados SQL do Azure, veja [Bases 
 
 As tabelas seguintes listam as principais funcionalidades da Base de Dados SQL do Azure e do SQL Server, especificam a sua suportabilidade e fornecem uma ligação para obter mais informações sobre a funcionalidade de cada plataforma. Para funcionalidades do Transact-SQL, siga a ligação da tabela para a categoria da funcionalidade. Veja também [Diferenças do Transact-SQL da Base de dados SQL do Azure](sql-database-transact-sql-information.md) para obter mais contexto sobre as razões para a falta de suporte de determinados tipos de funcionalidades.
 
-Continuaremos a adicionar funcionalidades para V12. Por isso, aconselhamo-lo a visitar a nossa página Web de Atualizações de Serviço do Azure e utilizar os respetivos filtros:
+Continuaremos a adicionar funcionalidades à Base de Dados SQL do Azure. Por isso, aconselhamo-lo a visitar a nossa página Web de Atualizações de Serviço do Azure e utilizar os respetivos filtros:
 
 * Filtrado para o [serviço da Base de Dados SQL](https://azure.microsoft.com/updates/?service=sql-database).
 * Filtrado para [anúncios](http://azure.microsoft.com/updates/?service=sql-database&update-type=general-availability) de Disponibilidade Geral (DG) para funcionalidades de Base de Dados SQL.

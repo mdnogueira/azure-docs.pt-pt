@@ -12,12 +12,12 @@ ms.workload: backup-recovery
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 03/27/2017
+ms.date: 04/05/2017
 ms.author: raynew
 translationtype: Human Translation
-ms.sourcegitcommit: cfe4957191ad5716f1086a1a332faf6a52406770
-ms.openlocfilehash: 981155c38bdc8cb54639d2271be1f3bd3036125c
-ms.lasthandoff: 03/09/2017
+ms.sourcegitcommit: 988e7fe2ae9f837b661b0c11cf30a90644085e16
+ms.openlocfilehash: 5348cedf369264defc5bb8417397aae046915ca7
+ms.lasthandoff: 04/06/2017
 
 
 ---
@@ -49,9 +49,16 @@ Pode:
 
 ## <a name="migrate-on-premises-vms-and-physical-servers"></a>Migrar VMs no local e servidores físicos
 
-Para migrar VMs de Hyper-V no local, VMs VMware e servidores físicos, são seguidos quase os mesmo passos que os utilizados na replicação normal. Configura um cofre dos Serviços de Recuperação, configura os servidores de gestão necessários (consoante o que pretende migrar), adiciona-os ao cofre e especifica as definições da replicação. Ativa a replicação nas máquinas que quer migrar e executa uma ativação pós-falha de teste rápida, para garantir que tudo está a trabalhar como deve ser.
+Para migrar VMs de Hyper-V no local, VMs VMware e servidores físicos, são seguidos quase os mesmo passos que os utilizados na replicação normal.
 
-Depois de verificar se o seu ambiente de replicação está a funcionar, utiliza uma ativação pós-falha planeada ou não planeada, dependendo do que [é suportado](site-recovery-failover.md) no seu cenário. Para a migração, não precisa de consolidar uma ativação pós-falha. Em vez disso, selecione a opção **Concluir Migração** em cada máquina que pretende migrar. A ação **Concluir Migração** conclui o processo de migração, remove a replicação da máquina e interrompe a faturação do Site Recovery da mesma.
+1. Configurar um cofre dos Serviços de Recuperação
+2. Configura os servidores de gestão necessários (VMware, VMM, Hyper-V -consoante o que pretende migrar), adiciona-os ao cofre e especifica as definições da replicação.
+3. Ativa a replicação nas máquinas que quer migrar
+4. Após a migração inicial, execute uma ativação pós-falha de teste rápida para se certificar de que tudo está a funcionar conforme devia.
+5. Depois de verificar se o seu ambiente de replicação está a funcionar, utiliza uma ativação pós-falha planeada ou não planeada, dependendo do que [é suportado](site-recovery-failover.md) no seu cenário. Recomendamos que utilize uma ativação pós-falha planeada sempre que possível.
+6. Para a migração, não precisa de consolidar uma ativação pós-falha nem de eliminá-la. Em vez disso, selecione a opção **Concluir Migração** em cada máquina que pretende migrar.
+     - Em **Itens Replicados**, clique com o botão direito na VM e clique em **Concluir a Migração**. Clique em **OK** para concluir. Pode controlar o progresso nas propriedades da VM, pela monitorização da tarefa de Migração Completa em **Tarefas de Recuperação de Sites**.
+     - A ação **Concluir Migração** conclui o processo de migração, remove a replicação da máquina e interrompe a faturação do Site Recovery da mesma.
 
 ![completemigration](./media/site-recovery-hyper-v-site-to-azure/migrate.png)
 

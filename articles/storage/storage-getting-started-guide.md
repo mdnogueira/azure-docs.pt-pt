@@ -15,9 +15,9 @@ ms.topic: get-started-article
 ms.date: 02/23/2017
 ms.author: marsma
 translationtype: Human Translation
-ms.sourcegitcommit: a8e5d36d31aabc9226206f52d8543566c5218494
-ms.openlocfilehash: 6c833cd40439fef1fe9cca2591d36a6c49630579
-ms.lasthandoff: 02/23/2017
+ms.sourcegitcommit: 988e7fe2ae9f837b661b0c11cf30a90644085e16
+ms.openlocfilehash: 6508b5a5d7d654954c68f9390c62a7871c1f032c
+ms.lasthandoff: 04/06/2017
 
 
 ---
@@ -75,7 +75,7 @@ Em seguida, execute a aplicação de exemplo:
 ## <a name="run-your-first-azure-storage-application-locally-against-the-azure-storage-emulator"></a>Executar a sua primeira aplicação do Storage do Azure localmente relativamente ao Emulador do Storage do Azure
 O [Emulador do Storage do Azure](storage-use-emulator.md) fornece um ambiente local que emula os serviços Tabela, Fila e Blob do Azure para fins de desenvolvimento. Pode utilizar o emulador de armazenamento para testar a sua aplicação de armazenamento localmente, sem criar uma subscrição do Azure ou uma conta do Storage e sem incorrer em qualquer custo.
 
-Para o tentar, vamos criar uma aplicação do Storage do Azure simples utilizando um dos projetos de exemplo de Inícios Rápidos do Azure no Visual Studio. Este tutorial centra-se nos projetos de exemplo **Blob Storage do Azure**, **Table Storage do Azure** e **Armazenamento de Filas do Azure**:
+Para o tentar, vamos criar uma aplicação do Armazenamento do Azure simples utilizando um dos projetos de exemplo de Inícios Rápidos do Azure no Visual Studio. Este tutorial centra-se nos projetos de exemplo **Blob Storage do Azure**, **Table Storage do Azure** e **Armazenamento de Filas do Azure**:
 
 1. Inicie o Visual Studio.
 2. No menu **Ficheiro**, clique em **Novo Projeto**.

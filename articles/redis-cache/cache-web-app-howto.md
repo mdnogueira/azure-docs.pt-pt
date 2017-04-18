@@ -15,9 +15,9 @@ ms.topic: hero-article
 ms.date: 03/27/2017
 ms.author: sdanie
 translationtype: Human Translation
-ms.sourcegitcommit: 6e0ad6b5bec11c5197dd7bded64168a1b8cc2fdd
-ms.openlocfilehash: 02e30f7fcbe0782528460b542a75f1d11c7286a1
-ms.lasthandoff: 03/28/2017
+ms.sourcegitcommit: 6ea03adaabc1cd9e62aa91d4237481d8330704a1
+ms.openlocfilehash: 076a85b7b965f163255e919eb61700aef0d1fc18
+ms.lasthandoff: 04/06/2017
 
 
 ---
@@ -70,7 +70,7 @@ Se tiver o Visual Studio 2013, pode [transferir o Azure SDK mais recente para o 
 
     Certifique-se de que **Sem Autenticação** está especificado para as definições **Autenticação**. Dependendo da versão do Visual Studio, a predefinição pode ser outra. Para alterá-la, clique em **Alterar Autenticação** e selecione **Sem Autenticação**.
 
-    Se estiver a seguir, juntamente com o Visual Studio 2015, desmarque a caixa de verificação **Alojar na cloud**. Vai [aprovisionar os recursos do Azure](#provision-the-azure-resources) e [publicar a aplicação no Azure](#publish-the-application-to-azure) nos passos subsequentes do tutorial. Para obter um exemplo de aprovisionamento de uma aplicação Web do App Service a partir do Visual Studio com a opção **Alojar na nuvem** marcada, veja [Introdução às Aplicações Web no App Service do Azure com o ASP.NET e o Visual Studio](../app-service-web/web-sites-dotnet-get-started.md).
+    Se estiver a seguir, juntamente com o Visual Studio 2015, desmarque a caixa de verificação **Alojar na cloud**. Vai [aprovisionar os recursos do Azure](#provision-the-azure-resources) e [publicar a aplicação no Azure](#publish-the-application-to-azure) nos passos subsequentes do tutorial. Para obter um exemplo de aprovisionamento de uma aplicação Web do App Service a partir do Visual Studio com a opção **Alojar na nuvem** marcada, veja [Introdução às Aplicações Web no App Service do Azure com o ASP.NET e o Visual Studio](../app-service-web/app-service-web-get-started-dotnet.md).
    
     ![Selecionar o modelo de projeto][cache-select-template]
 4. Clique em **OK** para criar o projeto.
@@ -86,7 +86,7 @@ Nesta secção do tutorial, vai criar a aplicação básica para ler e apresenta
 ### <a name="add-the-entity-framework-nuget-package"></a>Adicionar o pacote do Entity Framework NuGet
 
 1. Clique em **Gestor do Pacote NuGet**, **Consola do Gestor de Pacotes**, a partir do menu **Ferramentas**.
-2. Execute o seguinte comando a partir da janela `Package Manager Console`.
+2. Emita o comando seguinte na janela da **Consola do Gestor de Pacotes**.
     
     ```
     Install-Package EntityFramework

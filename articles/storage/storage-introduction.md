@@ -15,9 +15,9 @@ ms.topic: get-started-article
 ms.date: 02/24/2017
 ms.author: marsma
 translationtype: Human Translation
-ms.sourcegitcommit: f4b26aa9a4dd110eafb8f9f8d658cc0f530136ec
-ms.openlocfilehash: 4548d83525dba6024d1892950e3acbc6b857977a
-ms.lasthandoff: 02/27/2017
+ms.sourcegitcommit: 988e7fe2ae9f837b661b0c11cf30a90644085e16
+ms.openlocfilehash: 44f40aebe8418b0cfcf2c2708469d586d1dd4c4c
+ms.lasthandoff: 04/06/2017
 
 
 ---
@@ -45,7 +45,7 @@ O Storage do Azure é elástico, pelo que pode conceber aplicações para uma gr
 
 O Storage do Azure utiliza um sistema de criação de partições automático que efetua automaticamente o balanceamento de carga dos dados com base no tráfego. Isto significa que à medida que aumentam as exigências sobre a sua aplicação, o Storage do Azure atribui automaticamente os recursos adequados para as satisfazer.
 
-O Storage do Azure está acessível a partir de qualquer parte do mundo, a partir de qualquer tipo de aplicação, quer esteja a ser executado na nuvem, no ambiente de trabalho, num servidor no local, num telemóvel ou num tablet. Pode utilizar o Storage do Azure em cenários móveis em que a aplicação armazena um subconjunto de dados no dispositivo e sincroniza-o com um conjunto completo de dados armazenados na nuvem.
+O Armazenamento do Azure está acessível a partir de qualquer parte do mundo, a partir de qualquer tipo de aplicação, quer esteja a ser executado na cloud, no ambiente de trabalho, num servidor no local, num telemóvel ou num tablet. Pode utilizar o Storage do Azure em cenários móveis em que a aplicação armazena um subconjunto de dados no dispositivo e sincroniza-o com um conjunto completo de dados armazenados na nuvem.
 
 O Storage do Azure suporta clientes que utilizam um conjunto diverso de sistemas operativos (incluindo o Windows e o Linux) e uma variedade de linguagens de programação (incluindo .NET, Java, Node.js, Python, Ruby, PHP e C++ e linguagens de programação móvel) para uma programação conveniente. O Storage do Azure também expõe os recursos de dados através das APIs REST, que estão disponíveis para qualquer cliente com capacidade para enviar e receber dados através de HTTP/HTTPS.
 
@@ -88,7 +88,7 @@ O Blob Storage oferece três tipos de blobs: blobs de blocos, blobs de acréscim
 Para grandes conjuntos de dados em que as restrições de rede fazem com que o carregamento ou a transferência de dados para o Blob Storage seja irrealista, pode enviar um disco rígido para a Microsoft para importar ou exportar dados diretamente a partir do datacenter. Consulte o artigo [Utilizar o Serviço de Importação/Exportação do Microsoft Azure para Transferir Dados para o Blob Storage](storage-import-export-service.md).
 
 ## <a name="table-storage"></a>Table Storage
-As aplicações modernas exigem frequentemente arquivos de dados com maior escalabilidade e flexibilidade do que as gerações anteriores do software necessário. O Table Storage oferece um armazenamento de elevada disponibilidade e extremamente dimensionável para que a aplicação possa ser automaticamente dimensionada para satisfazer o pedido do utilizador. O Table Storage é um arquivo de chaves/atributos NoSQL da Microsoft – tem um design sem esquemas, o que o diferencia das tradicionais bases de dados relacionais. Com um arquivo de dados sem esquemas, é fácil adaptar os seus dados à medida que as necessidades da sua aplicação evoluem. O Table Storage é fácil de utilizar para que os programadores possam criar aplicações rapidamente. O acesso aos dados é rápido e rentável para todos os tipos de aplicações.  Geralmente, o custo do Table Storage é significativamente inferior ao SQL tradicional para volumes de dados semelhantes.
+As aplicações modernas exigem frequentemente arquivos de dados com maior escalabilidade e flexibilidade do que as gerações anteriores do software necessário. O Table Storage oferece um armazenamento de elevada disponibilidade e extremamente dimensionável para que a aplicação possa ser automaticamente dimensionada para satisfazer o pedido do utilizador. O Armazenamento de tabelas é um arquivo de chaves/atributos NoSQL da Microsoft – tem um design sem esquemas, o que o diferencia das tradicionais bases de dados relacionais. Com um arquivo de dados sem esquemas, é fácil adaptar os seus dados à medida que as necessidades da sua aplicação evoluem. O Table Storage é fácil de utilizar para que os programadores possam criar aplicações rapidamente. O acesso aos dados é rápido e rentável para todos os tipos de aplicações.  Geralmente, o custo do Table Storage é significativamente inferior ao SQL tradicional para volumes de dados semelhantes.
 
 O Table Storage é um arquivo de atributo chave, o que significa que cada valor numa tabela é armazenado com um nome de propriedade escrito. O nome da propriedade pode ser utilizado para filtrar e especificar critérios de seleção. Uma coleção de propriedades e os respetivos valores compõem uma entidade. Uma vez que o Table Storage não tem esquemas, duas entidades na mesma tabela podem conter diferentes coleções de propriedades e essas propriedades podem ser de diferentes tipos.
 
@@ -108,7 +108,7 @@ O File Storage do Azure oferece partilhas de ficheiros SMB com base na nuvem par
 
 Uma vez que as partilhas do Armazenamento de ficheiros são partilhas de ficheiros SMB padrão, as aplicações em execução no Azure podem aceder a dados na partilha através das APIs de E/S do sistema de ficheiros. Os programadores, por conseguinte, podem tirar partido do respetivo código existente e competências para migrar as aplicações existentes. Os profissionais de TI podem utilizar os cmdlets do PowerShell para criar, montar e gerir partilhas de File Storage como parte da administração de aplicações Azure.
 
-Tal como os outros serviços do Storage do Azure, o File Storage expõe uma API REST para aceder aos dados numa partilha. As aplicações no local podem chamar a API REST do File Storage para aceder aos dados numa partilha de ficheiros. Desta forma, uma empresa pode optar por migrar algumas aplicações antigas para o Azure e continuar a executar outras dentro da própria organização. Tenha em atenção que montar uma partilha de ficheiros só é possível para aplicações em execução no Azure; uma aplicação no local só pode aceder à partilha de ficheiros através da API REST.
+Tal como os outros serviços do Storage do Azure, o File Storage expõe uma API REST para aceder aos dados numa partilha. As aplicações no local podem chamar a API REST do Armazenamento de Ficheiros para aceder aos dados numa partilha de ficheiros. Desta forma, uma empresa pode optar por migrar algumas aplicações antigas para o Azure e continuar a executar outras dentro da própria organização. Tenha em atenção que montar uma partilha de ficheiros só é possível para aplicações em execução no Azure; uma aplicação no local só pode aceder à partilha de ficheiros através da API REST.
 
 As aplicações distribuídas também podem utilizar o File Storage para armazenar e partilhar dados da aplicação úteis e ferramentas de testes e de desenvolvimento. Por exemplo, uma aplicação pode armazenar ficheiros de configuração e dados de diagnóstico, tais como registos, métricas e informações de falhas de sistema numa partilha do File Storage para que fiquem disponíveis para várias funções e computadores virtuais. Os programadores e os administradores podem armazenar utilitários de que necessitam para criar ou gerir uma aplicação numa partilha do File Storage que está disponível para todos os componentes, em vez de os instalar em cada computador virtual ou instância de função.
 

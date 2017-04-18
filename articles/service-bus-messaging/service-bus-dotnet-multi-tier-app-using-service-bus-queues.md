@@ -12,18 +12,18 @@ ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: get-started-article
-ms.date: 01/10/2017
+ms.date: 04/11/2017
 ms.author: sethm
 translationtype: Human Translation
-ms.sourcegitcommit: f92909e0098a543f99baf3df3197a799bc9f1edc
-ms.openlocfilehash: 76c884bfdfbfacf474489d41f1e388956e4daaa0
-ms.lasthandoff: 02/28/2017
+ms.sourcegitcommit: 785d3a8920d48e11e80048665e9866f16c514cf7
+ms.openlocfilehash: 8b502f5ac5d89801d390a872e7a8b06e094ecbba
+ms.lasthandoff: 04/12/2017
 
 
 ---
 # <a name="net-multi-tier-application-using-azure-service-bus-queues"></a>Aplicação .NET multicamadas que utiliza as filas do Service Bus do Azure
 ## <a name="introduction"></a>Introdução
-O desenvolvimento para o Microsoft Azure é fácil através do Visual Studio e do Azure SDK gratuito para o .NET. Este tutorial explica os passos para criar uma aplicação que utiliza vários recursos do Azure em execução no ambiente local. Os passos partem do princípio de que não tem qualquer experiência na utilização do Azure.
+O desenvolvimento para o Microsoft Azure é fácil através do Visual Studio e do Azure SDK gratuito para o .NET. Este tutorial explica os passos para criar uma aplicação que utiliza vários recursos do Azure em execução no ambiente local.
 
 Aprenderá o seguinte:
 
@@ -34,16 +34,16 @@ Aprenderá o seguinte:
 
 [!INCLUDE [create-account-note](../../includes/create-account-note.md)]
 
-Neste tutorial, compilará e executará a aplicação multicamadas num serviço em nuvem do Azure. O front-end é uma função da Web de MVC do ASP.NET e o back-end é uma função de trabalho que utiliza uma fila do Service Bus. Pode criar a mesma aplicação multicamadas com o front-end como um projeto Web implementado num site do Azure em vez de num serviço cloud. Para obter instruções sobre o que fazer de forma diferente no front-end de um Web site Azure, consulte a secção [Passos seguintes](#nextsteps). Pode também experimentar o tutorial [Aplicação .NET híbrida no local/nuvem](../service-bus-relay/service-bus-dotnet-hybrid-app-using-service-bus-relay.md).
+Neste tutorial, compilará e executará a aplicação multicamadas num serviço em nuvem do Azure. O front-end é uma função da Web de MVC do ASP.NET e o back-end é uma função de trabalho que utiliza uma fila do Service Bus. Pode criar a mesma aplicação multicamadas com o front-end como um projeto Web implementado num site do Azure em vez de num serviço cloud. Pode também experimentar o tutorial [Aplicação .NET híbrida no local/nuvem](../service-bus-relay/service-bus-dotnet-hybrid-app-using-service-bus-relay.md).
 
 A seguinte captura de ecrã mostra a aplicação concluída.
 
 ![][0]
 
 ## <a name="scenario-overview-inter-role-communication"></a>Descrição geral do cenário: comunicação entre funções
-Para submeter um pedido para processamento, o componente de IU do front-end, em execução na função da Web, deve interagir com a lógica da camada média em execução na função de trabalho. Este exemplo utiliza mensagens mediadas do Service Bus para a comunicação entre as camadas.
+Para submeter um pedido para processamento, o componente de IU do front-end, em execução na função da Web, deve interagir com a lógica da camada média em execução na função de trabalho. Este exemplo utiliza mensagens do Service Bus para a comunicação entre as camadas.
 
-A utilização de mensagens mediadas entre as camadas média e da Web desacopla os dois componentes. Contrariamente às mensagens diretas (ou seja, TCP ou HTTP), a camada da Web não estabelece diretamente ligação à camada média; em vez disso, emite unidades de trabalho, tais como mensagens, para o Service Bus que, de forma fiável, mantém as mesmas até a camada média estar preparada para o respetivo consumo e processamento.
+A utilização de mensagens do Service Bus entre as camadas média e da Web desacopla os dois componentes. Contrariamente às mensagens diretas (ou seja, TCP ou HTTP), a camada da Web não estabelece diretamente ligação à camada média; em vez disso, emite unidades de trabalho, tais como mensagens, para o Service Bus que, de forma fiável, mantém as mesmas até a camada média estar preparada para o respetivo consumo e processamento.
 
 O Service Bus fornece duas entidades para suportar mensagens mediadas: as filas e os tópicos. Com as filas, cada mensagem enviada para a fila é consumida por um único recetor. Os tópicos suportam o padrão publicar/subscrever em que cada mensagem publicada é disponibilizada para uma subscrição registada com o tópico. Cada subscrição mantém logicamente a sua própria fila de mensagens. As subscrições também podem ser configuradas com regras de filtragem que restringem o conjunto de mensagens transmitidas para a fila de subscrição para as correspondentes ao filtro. O exemplo seguinte utiliza as filas do Service Bus.
 
@@ -63,7 +63,7 @@ As secções seguintes abordam o código que implementa esta arquitetura.
 Antes de poder começar a desenvolver aplicações do Azure, obtenha as ferramentas e configure o ambiente de desenvolvimento.
 
 1. Instale o Azure SDK para o .NET a partir da [página de transferências](https://azure.microsoft.com/downloads/) do SDK.
-2. Na coluna **.NET**, clique na versão do [Visual Studio](http://www.visualstudio.com) que está a utilizar. Os passos neste tutorial utilizam o Visual Studio 2015.
+2. Na coluna **.NET**, clique na versão do [Visual Studio](http://www.visualstudio.com) que está a utilizar. Os passos neste tutorial utilizam o Visual Studio 2015, mas também funcionam com o Visual Studio 2017.
 3. Quando lhe for pedido para executar ou guardar o instalador, clique em **Executar**.
 4. No **Instalador de Plataforma Web**, clique em **Instalar** e continue com a instalação.
 5. Após a conclusão da instalação, terá tudo o que é necessário para começar a desenvolver a aplicação. O SDK inclui ferramentas que permitem desenvolver facilmente aplicações do Azure no Visual Studio.
@@ -78,7 +78,7 @@ Nesta secção, compile o front-end da sua aplicação. Em primeiro ligar, crie 
 Em seguida, adicione o código que submete itens para a fila do Service Bus e mostra as informações de estado sobre a fila.
 
 ### <a name="create-the-project"></a>Criar o projeto
-1. Inicie o Microsoft Visual Studio com privilégios de administrador. Para iniciar o Visual Studio com privilégios de administrador, clique com o botão direito no ícone do programa **Visual Studio** e, em seguida, clique em **Executar como administrador**. O emulador de computação do Azure, abordado posteriormente neste artigo, necessita que o Visual Studio seja iniciado com privilégios de administrador.
+1. Com os privilégios de administrador, inicie o Visual Studio: clique com o botão direito no ícone do programa **Visual Studio** e, em seguida, clique em **Executar como administrador**. O emulador de computação do Azure, abordado posteriormente neste artigo, necessita que o Visual Studio seja iniciado com privilégios de administrador.
    
    No Visual Studio, no menu **Ficheiro**, clique em **Novo** e, de seguida, em **Projeto**.
 2. A partir de **Modelos Instalados**, em **Visual C#**, clique em **Nuvem** e, de seguida, em **Serviço em Nuvem do Azure**. Atribua o nome **MultiTierApp** ao projeto. Em seguida, clique em **OK**.
@@ -98,7 +98,7 @@ Em seguida, adicione o código que submete itens para a fila do Service Bus e mo
     ![][16]
 7. Novamente na caixa de diálogo **Novo Projeto ASP.NET**, clique em **OK** para criar o projeto.
 8. No **Explorador de Soluções**, no projeto **FrontendWebRole**, clique com o botão direito em **Referências** e, em seguida, clique em **Gerir Pacotes NuGet**.
-9. Clique no separador **Procurar** e, em seguida, procure `Microsoft Azure Service Bus`. Clique em **Instalar** e aceite os termos de utilização.
+9. Clique no separador **Procurar** e, em seguida, procure `Microsoft Azure Service Bus`. Selecione o pacote **WindowsAzure.ServiceBus**, clique em **Instalar** e aceite os termos de utilização.
    
    ![][13]
    
@@ -362,7 +362,7 @@ Agora criará a função de trabalho que processa as submissões de pedidos. Est
 ## <a name="next-steps"></a>Passos seguintes
 Para obter mais informações sobre o Service Bus, consulte os seguintes recursos:  
 
-* [Azure Service Bus][sbmsdn]  
+* [Documentação do Azure Service Bus][sbdocs]  
 * [Página do serviço do Service Bus][sbacom]  
 * [Como Utilizar as Filas do Service Bus][sbacomqhowto]  
 
@@ -370,7 +370,7 @@ Para obter mais informações sobre os cenários de multicamadas, consulte:
 
 * [Aplicação .NET Multicamadas com Tabelas, Filas e Blobs de Armazenamento][mutitierstorage]  
 
-[0]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-01.png
+[0]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-app.png
 [1]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-100.png
 [2]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-101.png
 [9]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-10.png
@@ -381,8 +381,8 @@ Para obter mais informações sobre os cenários de multicamadas, consulte:
 [14]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-33.png
 [15]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-34.png
 [16]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-14.png
-[17]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-36.png
-[18]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-37.png
+[17]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-app.png
+[18]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-app2.png
 
 [19]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-38.png
 [20]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-39.png
@@ -391,7 +391,7 @@ Para obter mais informações sobre os cenários de multicamadas, consulte:
 [26]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/SBNewWorkerRole.png
 [28]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-40.png
 
-[sbmsdn]: http://msdn.microsoft.com/library/azure/ee732537.aspx  
+[sbdocs]: /azure/service-bus-messaging/  
 [sbacom]: https://azure.microsoft.com/services/service-bus/  
 [sbacomqhowto]: service-bus-dotnet-get-started-with-queues.md  
 [mutitierstorage]: https://code.msdn.microsoft.com/Windows-Azure-Multi-Tier-eadceb36

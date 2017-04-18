@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 01/17/2017
+ms.date: 04/11/2017
 ms.author: spelluru
 translationtype: Human Translation
-ms.sourcegitcommit: 4b29fd1c188c76a7c65c4dcff02dc9efdf3ebaee
-ms.openlocfilehash: 733c151012e3d896f720fbc64120432aca594bda
-ms.lasthandoff: 02/03/2017
+ms.sourcegitcommit: 785d3a8920d48e11e80048665e9866f16c514cf7
+ms.openlocfilehash: 0664888dbb14aaa353d5d126cdf799b62711d71f
+ms.lasthandoff: 04/12/2017
 
 
 ---
@@ -106,7 +106,7 @@ Crie uma aplicação no Azure Active Directory, crie um principal de serviço pa
     ```PowerShell
     $azureAdApplication    
     ```
-    Tome nota do ID da aplicação (**applicationID** a partir do resultado).
+    Tome nota do ID da aplicação (applicationID) a partir do resultado.
 
 Deve obter os quatro valores seguintes destes passos:
 
@@ -124,7 +124,7 @@ Deve obter os quatro valores seguintes destes passos:
    5. Introduza **DataFactoryAPITestApp** para o Nome.
    6. Selecione **C:\ADFGetStarted** para a Localização.
    7. Clique em **OK** para criar o projeto.
-2. Clique em **Ferramentas**, aponte para **Gestor de Pacotes Nuget** e clique em **Consola do Gestor de Pacotes**.
+2. Clique em **Ferramentas**, aponte para **Gestor de Pacotes NuGet** e clique em **Consola do Gestor de Pacotes**.
 3. Na **Consola do Gestor de Pacotes**, realize os seguintes passos:
    1. Execute o seguinte comando para instalar o pacote do Data Factory: `Install-Package Microsoft.Azure.Management.DataFactories`
    2. Execute o seguinte comando para instalar o pacote do Azure Active Directory (utilize a API do Azure Active Directory no código): `Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -Version 2.19.208020213`
@@ -184,7 +184,7 @@ Deve obter os quatro valores seguintes destes passos:
    > [!IMPORTANT]
    > Substitua o valor do **resourceGroupName** pelo nome do seu grupo de recursos do Azure.
    >
-   > Atualize o nome da fábrica de dados (**dataFactoryName**) para que seja exclusivo. O nome da fábrica de dados deve ser globalmente exclusivo. Veja o tópico [Data Factory – Naming Rules (Data Factory – Regras de Nomenclatura)](data-factory-naming-rules.md) para obter as regras de nomenclatura dos artefactos do Data Factory.
+   > Atualize o nome da fábrica de dados (dataFactoryName) para que seja exclusivo. O nome da fábrica de dados deve ser globalmente exclusivo. Veja o tópico [Data Factory – Naming Rules (Data Factory – Regras de Nomenclatura)](data-factory-naming-rules.md) para obter as regras de nomenclatura dos artefactos do Data Factory.
 
 7. Adicione o código seguinte, que cria uma **fábrica de dados**, ao método **Principal**.
 
@@ -473,7 +473,7 @@ Deve obter os quatro valores seguintes destes passos:
     }
     ```
 
-15. No Explorador de Soluções, expanda o projeto (**DataFactoryAPITestApp**), clique com o botão direito do rato em **Referências** e clique em **Adicionar Referência**. Selecione a caixa de verificação da assemblagem "**System.Configuration**" e clique em **OK**.
+15. No Explorador de Soluções, expanda o projeto (DataFactoryAPITestApp), clique com o botão direito do rato em **Referências** e clique em **Adicionar Referência**. Selecione a caixa de verificação da assemblagem **System.Configuration**. e clique em **OK**.
 16. Crie a aplicação da consola. Clique em **Criar** no menu e clique em **Criar Solução**.
 17. Confirme se existe pelo menos um ficheiro no contentor **adftutorial** do seu armazenamento de blobs do Azure. Se não existir, crie um ficheiro **Emp.txt** no Bloco de Notas com o seguinte conteúdo e carregue-o para o contentor adftutorial.
 
@@ -486,7 +486,7 @@ Deve obter os quatro valores seguintes destes passos:
    * Serviço ligado: **LinkedService_AzureStorage**
    * Conjunto de dados: **DatasetBlobSource** e **DatasetBlobDestination**.
    * Pipeline: **PipelineBlobSample**
-20. Verifique se os registos dos dois colaboradores são criados na tabela “**emp**” na base de dados SQL do Azure especificada.
+20. Verifique se os registos dos dois colaboradores são criados na tabela **emp** na base de dados SQL do Azure especificada.
 
 ## <a name="next-steps"></a>Passos Seguintes
 | Tópico | Descrição |

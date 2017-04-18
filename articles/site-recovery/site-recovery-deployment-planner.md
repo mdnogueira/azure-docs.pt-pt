@@ -15,9 +15,9 @@ ms.topic: hero-article
 ms.date: 2/21/2017
 ms.author: nisoneji
 translationtype: Human Translation
-ms.sourcegitcommit: 503f5151047870aaf87e9bb7ebf2c7e4afa27b83
-ms.openlocfilehash: 431f73e1be45dec9aa0fe186cb22078f8d95588d
-ms.lasthandoff: 03/28/2017
+ms.sourcegitcommit: 538f282b28e5f43f43bf6ef28af20a4d8daea369
+ms.openlocfilehash: 07c6836c9279ed2f28730a49d131c064891de1b1
+ms.lasthandoff: 04/07/2017
 
 
 ---
@@ -90,9 +90,9 @@ Esta contém vários ficheiros e sub-pastas. O ficheiro executável é ASRDeploy
 
     Exemplo:  
     Copie o ficheiro .zip para a unidade E:\ e extraia-o.
-   E:\ASR Deployment Planner-Preview_v1.1.zip
+   E:\ASR Deployment Planner-Preview_v1.2.zip
 
-    E:\ASR Deployment Planner-Preview_v1.1\ ASR Deployment Planner-Preview_v1.1\ ASRDeploymentPlanner.exe
+    E:\ASR Deployment Planner-Preview_v1.2\ ASR Deployment Planner-Preview_v1.2\ ASRDeploymentPlanner.exe
 
 ## <a name="capabilities"></a>Capacidades
 Pode executar a ferramenta de linha de comandos (ASRDeploymentPlanner.exe) num dos três modos seguintes:
@@ -145,6 +145,8 @@ ASRDeploymentPlanner.exe -Operation StartProfiling /?
 | -Password | (Opcional) A palavra-passe a utilizar para ligar ao vCenter Server/anfitrião ESXi do vSphere. Se não indicar uma agora, ser-lhe-á pedida quando o comando for executado.|
 | -StorageAccountName | (Opcional) O nome da conta de armazenamento utilizada para encontrar o débito alcançável para a replicação de dados no local para o Azure. Para calcular o débito, a ferramenta carrega dados de teste para esta conta de armazenamento.|
 | -StorageAccountKey | (Opcional) A chave da conta de armazenamento utilizada para aceder à mesma. Aceda a o portal do Azure > Contas de armazenamento > <*Nome da conta de armazenamento*> > Definições > Chaves de Acesso > Chave1 (ou chave de acesso primária para contas de armazenamento clássicas). |
+| -Ambiente | (opcional) Este é o seu ambiente da conta de Armazenamento do Azure de destino. Este pode ser um de três valores - AzureCloud, AzureUSGovernment, AzureChinaCloud. A predefinição é AzureCloud. Utilize o parâmetro quando o região do Azure de destino está na cloud do Azure US Government ou do Azure China. |
+
 
 Recomendamos que crie perfis para VMs durante, pelo menos, 15 a 30 dias. Durante o período de criação de perfis, ASRDeploymentPlanner.exe permanece em execução. A ferramenta aceita a entrada da duração da criação de perfis em dias. Se quiser criar perfis por poucas horas ou minutos para um breve teste à ferramenta, na pré-visualização pública, terá de converter a duração na medida equivalente de dias. Por exemplo, para criar perfis durante 30 minutos, a entrada tem de ser 30/(60*24) = 0,021 dias. O período mínimo de criação de perfis são 30 minutos.
 
@@ -281,11 +283,12 @@ Abra uma consola da linha de comandos e aceda à pasta da ferramenta Site Recove
 
 |Nome do parâmetro | Descrição |
 |-|-|
-| -operation | GetThroughput |
+| -Operation | GetThroughput |
 | -Directory | (Opcional) O caminho UNC ou o caminho do diretório local onde são armazenados os dados da criação de perfis (ficheiros gerados durante a criação de perfis). Estes dados são necessários para gerar o relatório. Se não for especificado o nome de um diretório, é utilizado o diretório “ProfiledData”. |
 | -StorageAccountName | O nome da conta de armazenamento utilizado para encontrar a largura de banda consumida para a replicação dos dados no local para o Azure. Para calcular a largura de banda consumida, a ferramenta carrega dados de teste para esta conta de armazenamento. |
 | -StorageAccountKey | A chave da conta de armazenamento utilizada para aceder à mesma. Aceda ao portal do Azure > Contas de armazenamento > <*Nome da conta de armazenamento*> > Definições > Chaves de acesso > Chave1 (ou uma chave de acesso primário para contas de armazenamento clássicas). |
 | -VMListFile | O ficheiro que contém a lista de VMs para as quais criar perfis para calcular a largura de banda consumida. O caminho do ficheiro pode ser absoluto ou relativo. Deve conter um nome/endereço IP de VM por linha. Os nomes das VMs especificados no ficheiro devem ser iguais aos nomes das VMs no vCenter Server/anfitrião ESXi do vSphere.<br>Por exemplo, o ficheiro VMList.txt contém as VMs seguintes:<ul><li>VM_A</li><li>10.150.29.110</li><li>VM_B</li></ul>|
+| -Ambiente | (opcional) Este é o seu ambiente da conta de Armazenamento do Azure de destino. Este pode ser um de três valores - AzureCloud, AzureUSGovernment, AzureChinaCloud. A predefinição é AzureCloud. Utilize o parâmetro quando o região do Azure de destino está na cloud do Azure US Government ou do Azure China. |
 
 A ferramenta cria vários ficheiros asrvhdfile<#>.vhd (em que # corresponde ao número de ficheiros) de 64 MB no diretório especificado. Para encontrar o débito, a ferramenta carrega os ficheiros para a conta de armazenamento. Depois de o débito ser medido, elimina todos os ficheiros da conta de armazenamento e do servidor local. Se a ferramenta for terminada por qualquer motivo enquanto está a calcular o débito, não elimina os ficheiros do armazenamento nem do servidor local. Tem de eliminá-los manualmente.
 
@@ -477,6 +480,10 @@ Se as características da carga de trabalho de um disco o colocarem na categoria
 
 **NICs**: o número de NICs na VM.
 
+**Tipo de Arranque**: é o tipo de arranque da VM. Pode ser BIOS ou EFI. Atualmente o Azure Site Recovery suporta apenas o tipo de arranque BIOS. Todas as máquinas virtuais do tipo de arranque EFI estão listadas na folha de cálculo das VMs Incompatíveis. 
+
+**Tipo de SO**: é o tipo de SO da VM. Pode ser Windows ou Linux ou outro.
+
 ## <a name="incompatible-vms"></a>Incompatible VMs (VMs Não Compatíveis)
 
 ![Folha de cálculo do Excel de VMs incompatíveis](./media/site-recovery-deployment-planner/incompatible-vms.png)
@@ -486,6 +493,7 @@ Se as características da carga de trabalho de um disco o colocarem na categoria
 **VM Compatibility (Compatibilidade de VM)**: indica a razão pela qual a VM especificada é incompatível para utilização com o Site Recovery. São descritas as razões para todos os discos incompatíveis da VM, que, com base nos [limites do armazenamento](https://aka.ms/azure-storage-scalbility-performance) publicados, podem ser as seguintes:
 
 * O tamanho do disco é > 1023 GB. Atualmente, o Armazenamento do Azure não suporta tamanhos de disco superiores a 1 TB.
+* O tipo de arranque é EFI. Atualmente o Azure Site Recovery suporta apenas a máquina virtual com o tipo de arranque BIOS.
 
 * O tamanho total da VM (replicação + ativação pós-falha de teste) excede o limite de tamanho da conta de armazenamento suportado (35 TB). Geralmente, esta incompatibilidade ocorre quando um disco individual na VM tem uma característica de desempenho que excede os limites máximos suportados pelo Azure ou o Site Recovery relativamente ao armazenamento standard. Uma instância deste género envia a VM para a zona de armazenamento premium. No entanto, o tamanho máximo suportado das contas de armazenamento premium são 35 TB e não é possível proteger VMs protegidas individuais em várias contas de armazenamento. Tenha também em atenção que, quando é executada uma ativação pós-falha de teste numa VM protegida, esta é executada na mesma conta de armazenamento na qual a replicação está em curso. Neste caso, configure duas vezes o tamanho do disco para que a replicação progrida e a ativação pós-falha de teste seja concluída em paralelo.
 * O IOPS de origem excede o limite de IOPS suportado pelo armazenamento de 5000 por disco.
@@ -508,6 +516,10 @@ Se as características da carga de trabalho de um disco o colocarem na categoria
 **Memory (MB) (Memória [MB])**: a quantidade de RAM na VM.
 
 **NICs**: o número de NICs na VM.
+
+**Tipo de Arranque**: é o tipo de arranque da VM. Pode ser BIOS ou EFI. Atualmente o Azure Site Recovery suporta apenas o tipo de arranque BIOS. Todas as máquinas virtuais do tipo de arranque EFI estão listadas na folha de cálculo das VMs Incompatíveis. 
+
+**Tipo de SO**: é o tipo de SO da VM. Pode ser Windows ou Linux ou outro.
 
 
 ## <a name="site-recovery-limits"></a>Limites do Site Recovery
@@ -546,6 +558,18 @@ Para atualizar o Deployment Planner, faça o seguinte:
 
 
 ## <a name="version-history"></a>Histórico de versões
+### <a name="12"></a>1.2
+Atualização: 7 de abril de 2017
+
+Foram adicionadas as correções seguintes:
+
+* Verificação de tipo de arranque (BIOS ou EFI) adicionada a cada máquina virtual, para determinar se a máquina virtual é compatível ou incompatível para a proteção.
+* Informações do tipo do SO adicionadas para cada máquina virtual em folhas de cálculo das VMs Compatíveis e Incompatíveis.
+* A operação GetThroughput é agora suportada nas regiões US Government e China do Microsoft Azure.
+* Foram adicionadas mais verificações de pré-requisitos para o vCenter e o Servidor ESXi.
+* O relatório incorreto estava a ser gerado quando as definições de região estavam definidas como não sendo em inglês.
+
+
 ### <a name="11"></a>1.1
 Atualização: 9 de março de 2017
 
