@@ -16,15 +16,15 @@ ms.topic: get-started-article
 ms.date: 03/08/2017
 ms.author: joflore
 translationtype: Human Translation
-ms.sourcegitcommit: 503f5151047870aaf87e9bb7ebf2c7e4afa27b83
-ms.openlocfilehash: c2c46637ccccd01c1c3056d6a25ef605cfd68f2d
-ms.lasthandoff: 03/28/2017
+ms.sourcegitcommit: 7f469fb309f92b86dbf289d3a0462ba9042af48a
+ms.openlocfilehash: d1094e1b350883c206a9180ff71bd8613156360a
+ms.lasthandoff: 04/13/2017
 
 
 ---
 # <a name="getting-started-with-password-management"></a>Introdução à Gestão de Palavras-passe
 > [!IMPORTANT]
-> **Está aqui porque está a ter problemas em iniciar sessão?** Se assim for, [Eis como pode alterar e repor a sua própria palavra-passe](active-directory-passwords-update-your-own-password.md#reset-your-password).
+> **Está aqui porque está a ter problemas em iniciar sessão?** Se assim for, [Eis como pode alterar e repor a sua própria palavra-passe](active-directory-passwords-update-your-own-password.md#reset-my-password).
 >
 >
 
@@ -69,9 +69,9 @@ Seguem-se algumas das principais sugestões que vimos terem sido úteis para os 
 * [**Sugestão 9: RESOLUÇÃO DE PROBLEMAS** - se continuar a precisar de ajuda, inclua informações suficientes para que possamos ajudar](#tip-9-troubleshoot---if-you-still-need-help-include-enough-information-for-us-to-assist-you)
 
 ### <a name="top-tip-documentation-navigation---use-our-table-of-contents-and-your-browsers-find-feature-to-find-answers"></a>SUGESTÃO PRINCIPAL: NAVEGAR NA DOCUMENTAÇÃO - utilize o nosso índice e a funcionalidade de procura do browser para encontrar as respostas
-Se estiver a utilizar a nossa documentação, tentámos ao máximo disponibilizar quicklinks para todos os sítios de interesse no nosso índice, onde os administradores podem aprender. 
+Se estiver a utilizar a nossa documentação, tentámos ao máximo disponibilizar quicklinks para todos os sítios de interesse no nosso índice, onde os administradores podem aprender.
 
-Veja o índice abaixo: 
+Veja o índice abaixo:
 * [Reposição de Palavras-passe do Azure AD: Índice da Documentação](https://docs.microsoft.com/azure/active-directory/active-directory-passwords)
 
 ### <a name="tip-1-licensing---make-sure-you-understand-the-licensing-requirements"></a>Sugestão 1: LICENSIAMENTO - assegure-se de que compreende os requisitos de licenciamento
@@ -93,9 +93,9 @@ As políticas configuradas na UX administrativa SÓ se aplica aos utilizadores f
  * ... nos primeiros 30 dias a seguir a uma avaliação ter sido iniciada, criada **OU**
  * ... se não estiver presente um domínio personalizado **E** o Azure AD Connect não estiver a sincronizar identidades
  * **_Requer_**: **um** de E-mail de Autenticação, E-mail Alternativo, Telefone de Autenticação, Telemóvel ou Telefone do Escritório para ter um valor presente
-* **Aplica-se a política de duas portas...** 
+* **Aplica-se a política de duas portas...**
  * ... ao fim dos primeiros 30 dias de uma avaliação**OU**
- * ... se não estiver presente um domínio personalizado **OU** 
+ * ... se não estiver presente um domínio personalizado **OU**
  * … se tiver ativado o Azure AD Connect para sincronizar as identidades do seu ambiente no local
  * _**Requer**_: **dois** de E-mail de Autenticação, E-mail Alternativo, Telefone de Autenticação, Telemóvel ou Telefone do Escritório para ter um valor presente
 
@@ -145,7 +145,7 @@ Para obter uma lista completa das orientações de resolução de problemas e di
 * [Implementação da repetição de escrita - passo 3: Configurar a firewall](#step-3-configure-your-firewall)
 * [Implementação da repetição de escrita - passo 4: Configurar as permissões adequadas](#step-4-set-up-the-appropriate-active-directory-permissions)
 
-### <a name="tip-7-reporting---see-who-is-registering-or-resetting-passwords-with-the-azure-ad-sspr-audit-logs"></a>Sugestão 7: RELATÓRIO - veja que utilizadores estão a registar ou a repor palavras-passe com os Registos de Auditoria SSPR do Azure AD 
+### <a name="tip-7-reporting---see-who-is-registering-or-resetting-passwords-with-the-azure-ad-sspr-audit-logs"></a>Sugestão 7: RELATÓRIO - veja que utilizadores estão a registar ou a repor palavras-passe com os Registos de Auditoria SSPR do Azure AD
 Quando a reposição de palavras-passe estiver implementada e a funcionar, o passo seguinte lógico é vê-la em ação e analisar quem é que ainda tem de se registar, os problemas comuns com que os utilizadores se deparam durante a reposição e o seu retorno sobre o investimento feito na funcionalidade.
 
 Pode fazer isto e muito mais com os Registos de Auditoria da Reposição de Palavras-passe do Azure AD no Portal do Azure, no PowerBI, na API de Eventos de Relatórios do Azure AD ou no PowerShell.  Para saber mais sobre como utilizar estas funcionalidades de relatórios, veja:
@@ -495,7 +495,7 @@ Agora que a Repetição de Escrita de Palavras-passe foi ativada, pode testar se
 ## <a name="next-steps"></a>Passos seguintes
 Veja-se abaixo as ligações para todas as páginas da documentação de reposição de palavra-passe do Azure AD:
 
-* **Está aqui porque está a ter problemas em iniciar sessão?** Se assim for, [Eis como pode alterar e repor a sua própria palavra-passe](active-directory-passwords-update-your-own-password.md#reset-your-password).
+* **Está aqui porque está a ter problemas em iniciar sessão?** Se assim for, [Eis como pode alterar e repor a sua própria palavra-passe](active-directory-passwords-update-your-own-password.md#reset-my-password).
 * [**Como funciona**](active-directory-passwords-how-it-works.md) – saiba mais acerca dos seis componentes diferentes do serviço e o que cada um faz
 * [**Personalizar**](active-directory-passwords-customize.md) – saiba como personalizar o aspeto e o comportamento do serviço de acordo com as necessidades da sua organização
 * [**Práticas recomendadas**](active-directory-passwords-best-practices.md) – saiba como implementar rapidamente e gerir de forma eficaz as palavras-passe da organização

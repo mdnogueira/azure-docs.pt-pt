@@ -14,9 +14,9 @@ ms.topic: get-started-article
 ms.date: 03/30/2017
 ms.author: awills
 translationtype: Human Translation
-ms.sourcegitcommit: 538f282b28e5f43f43bf6ef28af20a4d8daea369
-ms.openlocfilehash: 8d9d39d63209b8ab6884ddeff569687b55591f95
-ms.lasthandoff: 04/07/2017
+ms.sourcegitcommit: 0c4554d6289fb0050998765485d965d1fbc6ab3e
+ms.openlocfilehash: c6f25b8cf8c133f44644db1507958b2176efa230
+ms.lasthandoff: 04/13/2017
 
 
 ---
@@ -107,7 +107,7 @@ Para fazer pesquisas mais poderosas na sua telemetria, utilize a [linguagem de c
 * [Ativar os diagnósticos do Azure](app-insights-azure-diagnostics.md) para serem enviados para o Application Insights.
 * [Monitorizar as métricas de estado de funcionamento de serviço](../monitoring-and-diagnostics/insights-how-to-customize-monitoring.md) para se certificar de que o serviço está disponível e a responder.
 * [Receber notificações de alertas](../monitoring-and-diagnostics/insights-receive-alert-notifications.md) sempre que ocorrem eventos operacionais ou quando as métricas ultrapassam um determinado limiar.
-* Utilizar o [Application Insights para aplicações JavaScript e páginas Web](app-insights-web-track-usage.md) para obter telemetria de clientes a partir dos browsers que visitam as páginas Web.
+* Utilizar o [Application Insights para aplicações JavaScript e páginas Web](app-insights-javascript.md) para obter telemetria de clientes a partir dos browsers que visitam as páginas Web.
 * [Configurar os Testes Web de disponibilidade](app-insights-monitor-web-app-availability.md) para ser alertado se o seu site estiver em baixo.
 
 

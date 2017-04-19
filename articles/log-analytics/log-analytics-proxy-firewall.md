@@ -12,12 +12,12 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 02/10/2017
+ms.date: 04/12/2017
 ms.author: banders;magoedte
 translationtype: Human Translation
-ms.sourcegitcommit: 6a527fa303f1e2bd06ac662e545d6b6a1d299fb4
-ms.openlocfilehash: cd06dfd498540970dc8ed29650f4d9e3ca57939b
-ms.lasthandoff: 02/10/2017
+ms.sourcegitcommit: 7f469fb309f92b86dbf289d3a0462ba9042af48a
+ms.openlocfilehash: cc3ff1ca5e638896df155b55145b300f70f7540a
+ms.lasthandoff: 04/13/2017
 
 
 ---
@@ -41,7 +41,6 @@ Para que o Agente de Monitorização da Microsoft se ligue e para se registar no
 | \*.oms.opinsights.azure.com |443 |Sim |
 | \*.blob.core.windows.net |443 |Sim |
 | \*.azure-automation.net |443 |Sim |
-| ods.systemcenteradvisor.com |443 | |
 
 Pode utilizar o procedimento seguinte para configurar as definições de proxy para o Agente de Monitorização da Microsoft utilizando o Painel de Controlo. Terá de utilizar o procedimento para cada servidor. Se tiver vários servidores que necessita configurar, poderá considerar mais fácil utilizar um script para automatizar este processo. Se este é o caso, consulte o seguinte procedimento [Configurar as definições de proxy para o Agente de Monitorização da Microsoft utilizando um script](#to-configure-proxy-settings-for-the-microsoft-monitoring-agent-using-a-script).
 
@@ -102,7 +101,6 @@ Eis uma lista de recursos de agente e de portas:<br>
 | \*.ods.opinsights.azure.com |443 |
 | \*.oms.opinsights.azure.com |443 |
 | \*.blob.core.windows.net/\* |443 |
-| ods.systemcenteradvisor.com |443 |
 
 <br>
 Eis uma lista de recursos de servidor de gestão e de portas:<br>
@@ -112,8 +110,6 @@ Eis uma lista de recursos de servidor de gestão e de portas:<br>
 | service.systemcenteradvisor.com |443 | |
 | \*.service.opinsights.azure.com |443 | |
 | \*.blob.core.windows.net |443 |Sim |
-| data.systemcenteradvisor.com |443 | |
-| ods.systemcenteradvisor.com |443 | |
 | \*.ods.opinsights.azure.com |443 |Sim |
 | \*.azure-automation.net |443 |Sim |
 
@@ -145,7 +141,7 @@ Utilize os procedimentos seguintes para registar o grupo de gestão do Operation
    ![Ligação do OMS do Operations Manager](./media/log-analytics-proxy-firewall/proxy-om01.png)
 3. Na vista Ligação OMS, clique em **Configurar Servidor Proxy**.<br>  
    ![Ligação do OMS do Operations Manager Configurar Servidor Proxy](./media/log-analytics-proxy-firewall/proxy-om02.png)
-4. No Assistente de Definição de Informações Operacionais: Servidor Proxy, selecione **Utilizar um servidor proxy para aceder ao Serviço Web de Informações Operacionais ** e, em seguida, escreva o URL com o número de porta, por exemplo, **http://myproxy:80**.<br>  
+4. No Assistente de Definição de Informações Operacionais: Servidor Proxy, selecione **Utilizar um servidor proxy para aceder ao Serviço Web de Informações Operacionais** e, em seguida, escreva o URL com o número de porta, por exemplo, **http://myproxy:80**.<br>  
    ![Endereço proxy do OMS do Operations Manager](./media/log-analytics-proxy-firewall/proxy-om03.png)
 
 ### <a name="to-specify-credentials-if-the-proxy-server-requires-authentication"></a>Especificar credenciais se o servidor proxy requer autenticação

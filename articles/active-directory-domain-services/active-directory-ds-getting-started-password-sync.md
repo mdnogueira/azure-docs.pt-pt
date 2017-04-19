@@ -15,9 +15,9 @@ ms.topic: get-started-article
 ms.date: 03/06/2017
 ms.author: maheshu
 translationtype: Human Translation
-ms.sourcegitcommit: 785d3a8920d48e11e80048665e9866f16c514cf7
-ms.openlocfilehash: 6ed35ca1b83f5f7221824d99817800c1e42e68c1
-ms.lasthandoff: 04/12/2017
+ms.sourcegitcommit: c300ba45cd530e5a606786aa7b2b254c2ed32fcd
+ms.openlocfilehash: 51e4665b6372859021237144a0bf7f6763a2638b
+ms.lasthandoff: 04/14/2017
 
 
 ---
@@ -55,7 +55,7 @@ Seguem-se as instruções que tem de fornecer aos utilizadores, para que possam 
    > Se a opção **Alterar palavra-passe** não estiver apresentada na página do Painel de Acesso, certifique-se de que a sua organização configurou a [gestão de palavras-passe no Azure AD](../active-directory/active-directory-passwords-getting-started.md).
    >
    >
-4. Na página **Alterar palavra-passe**, escreva a palavra-passe existente (antiga), escreva uma palavra-passe nova e, em seguida, confirme-a. 
+4. Na página **Alterar palavra-passe**, escreva a palavra-passe existente (antiga), escreva uma palavra-passe nova e, em seguida, confirme-a.
 
     ![Crie uma rede virtual para os Serviços de Domínio do Azure AD.](./media/active-directory-domain-services-getting-started/user-change-password2.png)
 
@@ -64,7 +64,7 @@ Seguem-se as instruções que tem de fornecer aos utilizadores, para que possam 
 Uns minutos depois de ter alterado a palavra-passe, a nova palavra-passe pode ser utilizada no Azure Active Directory Domain Services. Após mais alguns minutos (normalmente, cerca de 20 minutos), pode iniciar sessão em computadores que estão associados ao domínio gerido com a palavra-passe recentemente alterada.
 
 ## <a name="next-steps"></a>Passos seguintes
-* [Como atualizar a sua própria palavra-passe](../active-directory/active-directory-passwords-update-your-own-password.md#reset-your-password)
+* [Como atualizar a sua própria palavra-passe](../active-directory/active-directory-passwords-update-your-own-password.md#reset-my-password)
 * [Introdução à Gestão de Palavras-passe no Azure AD](../active-directory/active-directory-passwords-getting-started.md)
 * [Ativar a sincronização de palavras-passe para o Azure Active Directory Domain Services para um inquilino do Azure AD sincronizado](active-directory-ds-getting-started-password-sync-synced-tenant.md)
 * [Administrar um domínio gerido pelo Azure Active Directory Domain Services](active-directory-ds-admin-guide-administer-domain.md)
