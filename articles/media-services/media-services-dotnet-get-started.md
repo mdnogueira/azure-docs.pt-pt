@@ -17,7 +17,7 @@ ms.author: juliako
 translationtype: Human Translation
 ms.sourcegitcommit: 1e6ae31b3ef2d9baf578b199233e61936aa3528e
 ms.openlocfilehash: 124eff2edccb6b4ad56ee39a2b37e892ef8c6cb4
-ms.lasthandoff: 03/03/2017
+ms.lasthandoff: 04/18/2017
 
 
 ---
@@ -184,7 +184,7 @@ O método **CreateFromFile** recorre a **AssetCreationOptions** que permite espe
 
 * **Nenhum** - Não é utilizada qualquer encriptação. Este é o valor predefinido. Tenha em atenção que, ao utilizar esta opção, o seu conteúdo não está protegido enquanto estiver em trânsito ou inativo no armazenamento.
   Se planear distribuir um MP4 utilizando uma transferência progressiva, utilize esta opção.
-* **StorageEncrypted** - Utilize esta opção para encriptar o seu conteúdo transparente localmente utilizando a encriptação de&256; bit norma AES (Advanced Encryption Standard), posteriormente, esta carrega-o para o Storage do Azure onde é armazenado encriptados e permanece inativo. Os elementos protegidos com Encriptação do Storage são desencriptados automaticamente e colocados num sistema de ficheiros encriptados antes da codificação, sendo opcionalmente encriptados novamente antes de serem carregados novamente como um novo elemento de saída. O principal caso de utilização da Encriptação do Storage ocorre quando pretende proteger os seus ficheiros de multimédia de entrada de alta qualidade inativos no disco com uma encriptação forte.
+* **StorageEncrypted** - Utilize esta opção para encriptar o seu conteúdo transparente localmente utilizando a encriptação de 256 bit norma AES (Advanced Encryption Standard), posteriormente, esta carrega-o para o Storage do Azure onde é armazenado encriptados e permanece inativo. Os elementos protegidos com Encriptação do Storage são desencriptados automaticamente e colocados num sistema de ficheiros encriptados antes da codificação, sendo opcionalmente encriptados novamente antes de serem carregados novamente como um novo elemento de saída. O principal caso de utilização da Encriptação do Storage ocorre quando pretende proteger os seus ficheiros de multimédia de entrada de alta qualidade inativos no disco com uma encriptação forte.
 * **CommonEncryptionProtected** - Utilize esta opção se estiver a carregar conteúdo que já foi encriptado e protegido com Encriptação Comum ou PlayReady DRM (por exemplo, Transmissão em Fluxo Uniforme protegida com PlayReady DRM).
 * **EnvelopeEncryptionProtected** – Utilize esta opção se estiver a carregar HLS encriptado com AES. Tenha em atenção que os ficheiros têm de ser codificados e encriptados pelo Gestor de Transformação.
 
