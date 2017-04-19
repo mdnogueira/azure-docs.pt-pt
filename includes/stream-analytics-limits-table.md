@@ -1,16 +1,12 @@
 ---
-| Identificador de limite | Limite | Comentários |
+| Limit identifier | Limit | Comments |
 | --- | --- | --- |
-| Número máximo de Unidades de Transmissão em Fluxo por subscrição por região |50 |Pode ser feito um pedido para aumentar as unidades de transmissão em fluxo para a sua subscrição para além de 50, basta contactar o [Suporte da Microsoft](https://support.microsoft.com/en-us). |
-| Débito máximo de uma Unidade de Transmissão em Fluxo |1MB/s* |O débito máximo por SU depende do cenário. O débito real pode ser mais baixo e depende da complexidade da consulta e da criação de partições. Pode ver mais detalhes no artigo [Scale Azure Stream Analytics jobs to increase throughput (Dimensionar tarefas do Azure Stream Analytics para aumentar o débito)](../articles/stream-analytics/stream-analytics-scale-jobs.md). |
-| Número máximo de entradas por tarefa |60 |Existe um limite restritivo de 60 entradas por tarefa do Stream Analytics. |
-| Número máximo de saídas por tarefa |60 |Existe um limite restritivo de 60 saídas por tarefa do Stream Analytics. |
-| Número máximo de funções por tarefa |60 |Existe um limite restritivo de 60 funções por tarefa do Stream Analytics. |
-| Número máximo de tarefas por região |1500 |Cada subscrição pode ter até 1500 tarefas por região geográfica. |
-| MB do blob dos dados de referência | 100 | Os blobs dos dados de referência não podem ser maiores do que 100 MB. |
-
-
-
-<!--HONumber=Feb17_HO2-->
-
+| Maximum number of Streaming Units per subscription per region |50 |A request to increase streaming units for your subscription beyond 50 can be made by contacting [Microsoft Support](https://support.microsoft.com/en-us). |
+| Maximum throughput of a Streaming Unit |1MB/s* |Maximum throughput per SU depends on the scenario. Actual throughput may be lower and depends upon query complexity and partitioning. Further details can be found in the [Scale Azure Stream Analytics jobs to increase throughput](../articles/stream-analytics/stream-analytics-scale-jobs.md) article. |
+| Maximum number of inputs per job |60 |There is a hard limit of 60 inputs per Stream Analytics job. |
+| Maximum number of outputs per job |60 |There is a hard limit of 60 outputs per Stream Analytics job. |
+| Maximum number of functions per job |60 |There is a hard limit of 60 functions per Stream Analytics job. |
+| Maximum number of Streaming Units per job |120 |There is a hard limit of 120 Streaming Units per Stream Analytics job. |
+| Maximum number of jobs per region |1500 |Each subscription may have up to 1500 jobs per geographical region. |
+| Reference data blob MB | 100 | Reference data blobs cannot be larger than 100 MB each. |
 
