@@ -14,15 +14,15 @@ articles/sql-data-warehouse-get-started-provision.md
 
 1. No painel do servidor SQL, em Definições, clique em **Firewall** para abrir o painel Firewall do servidor SQL.
 
-    ![firewall do servidor sql](../articles/sql-database/media/sql-database-get-started/sql-server-firewall.png)
-    
+    <!-- ![sql server firewall](../articles/sql-database/media/sql-database-get-started/sql-server-firewall.png) -->
+
 2. Reveja o endereço IP de cliente apresentado e confirme que o mesmo é o seu endereço IP na Internet através do browser da sua preferência (perguntar "qual é o meu endereço IP"). Ocasionalmente, os endereços IP não correspondem devido a vários motivos.
 
-    ![o seu endereço IP](../articles/sql-database/media/sql-database-get-started/your-ip-address.png)
+    <!-- ![your IP address](../articles/sql-database/media/sql-database-get-started/your-ip-address.png) -->
 
 3. Partindo do princípio de que os endereços IP correspondem, clique em **Adicionar IP de cliente** na barra de ferramentas.
 
-    ![adicionar IP de cliente](../articles/sql-database/media/sql-database-get-started/add-client-ip.png)
+    ![adicionar IP de cliente](../articles/sql-data-warehouse/media/sql-data-warehouse-get-started-provision/add-client-ip.png)
 
     > [!NOTE]
     > Pode abrir a firewall da Base de Dados SQL no servidor para um único endereço IP ou um conjunto de endereços. Abrir a firewall permite aos utilizadores e administradores SQL iniciar sessão em qualquer base de dados no servidor para o qual tenham credenciais válidas.
@@ -30,13 +30,8 @@ articles/sql-data-warehouse-get-started-provision.md
 
 4. Clique em **Guardar** na barra de ferramentas para guardar esta regra de firewall ao nível do servidor e, em seguida, clique em **OK**.
 
-    ![adicionar IP de cliente](../articles/sql-database/media/sql-database-get-started/save-firewall-rule.png)
+    ![adicionar IP de cliente](../articles/sql-database/media/sql-database-get-started-portal/server-firewall-rule.png)
 
 > [!Tip]
 > Para obter um tutorial, veja o artigo [Tutorial da Base de Dados SQL: Criar um servidor, uma regra de firewall ao nível do servidor, uma base de dados de exemplo, uma regra de firewall ao nível da base de dados e ligar com o SQL Server](../articles/sql-database/sql-database-get-started.md).    
 >
-
-
-<!--HONumber=Jan17_HO1-->
-
-
