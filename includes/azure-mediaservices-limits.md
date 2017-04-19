@@ -7,7 +7,7 @@
 | Unidades Reservadas de Multimédia (RUs) por conta do AMS |25 (S1, S2)<br/>10 (S3) <sup>(1)</sup> | 
 | Trabalhos por conta do AMS | 50,000<sup>(2)</sup> |
 | Tarefas em cadeia por trabalho | 30 (fixo) |
-| Elementos por conta do AMS | 1&000;&000;|
+| Elementos por conta do AMS | 1 000 000|
 | Elementos por tarefa | 50 |
 | Elementos por trabalho | 100 |
 | Localizadores exclusivos associados a um elemento ao mesmo tempo | 5<sup>(4)</sup> |

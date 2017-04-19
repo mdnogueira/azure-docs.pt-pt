@@ -18,7 +18,7 @@ ms.author: syamk
 translationtype: Human Translation
 ms.sourcegitcommit: 72b2d9142479f9ba0380c5bd2dd82734e370dee7
 ms.openlocfilehash: 44307f258ea05635addf85bf9c59cd78b2ac0f1e
-ms.lasthandoff: 03/08/2017
+ms.lasthandoff: 04/18/2017
 
 
 ---
@@ -559,7 +559,7 @@ Se receber o erro "Ocorreu um erro ao processar o pedido" ao tentar implementar 
     - Região: selecione a região mais próxima dos utilizadores da aplicação
     - Servidor de base de dados: clique em “nenhuma base de dados” e, em seguida, clique em **Criar**. 
 
-4. No “ecrã * todo-net-app", clique em **Validar Ligação**. Depois de verificada a ligação, clique em **Publicar**. 
+4. No “ecrã **todo-net-app", clique em**Validar Ligação. Depois de verificada a ligação, clique em **Publicar***. 
     
     A aplicação é, então, apresentada no seu browser.
 

@@ -18,7 +18,7 @@ ms.author: garye
 translationtype: Human Translation
 ms.sourcegitcommit: 21d2c20a3ac8dc4fee0680028d6c004c80a3ae38
 ms.openlocfilehash: 2835e4e8be2a11b659118f836d53c84a2c021263
-ms.lasthandoff: 03/02/2017
+ms.lasthandoff: 04/18/2017
 
 
 ---
@@ -455,11 +455,11 @@ Os serviços que tenham o escalão de preço Dev/Test atribuído são parados at
 
 Para cargas de trabalho de RRS, é-lhe cobrada cada chamada de transação à API que fizer e o tempo de computação associado a esses pedidos. Os custos de transações de API de produção de RRS são calculados como o número total de chamadas à API que realiza multiplicado pelo preço de mil transações (rateado por transação individual). Os custos de hora de computação de API de produção de RRS são calculados como a quantidade de tempo necessária para a execução de cada chamada à API, multiplicada pelo número total de transações de API, multiplicado pelo preço por hora de computação de API de produção.
 
-Por exemplo, numa utilização excedida do escalão Standard S1, 1 000 000 de transações de API com um tempo de execução individual de 0,72 segundos teria um custo de (1 000. 00 * 0,50 $/Mil transações de API) 500 $ em custos de transação de API de produção e (1 000 000 * 0,72 * 2 $/h) 400 $ em horas de computação de API de produção, o que totaliza 900 $.
+Por exemplo, numa utilização excedida do escalão Standard S1, 1 000 000 de transações de API com um tempo de execução individual de 0,72 segundos teria um custo de (1 000. 00 0,50 $/Mil transações de API) 500 $ em custos de transação de API de produção e (1 000 000 0,72 * 2 $/h) 400 $ em horas de computação de API de produção, o que totaliza 900 $.
 
 As cargas de trabalho de BEST são cobradas da mesma forma. No entanto, os custos de transação de API representam o número de tarefas de lote que submeter e os custos de computação representam o tempo de computação associado a essas tarefas de lote. Os custos de transação de API de produção de BES são calculados como o número total de tarefas submetidas multiplicado pelo preço de mil transações (rateado por transação individual). Os custos de hora de computação de API de produção de BES são calculados como a quantidade de tempo necessária para a execução de cada linha na sua tarefa, multiplicada pelo número total de linhas na tarefa, multiplicado pelo preço por hora de computação de API de produção. Quando utiliza a calculadora do Machine Learning, o medidor de transação representa o número de tarefas que planeia submeter e o campo de tempo por transação representa o tempo combinado necessário para a execução de todas as linhas em cada tarefa.
 
-Por exemplo, imaginemos a utilização excedida de Standard S1 e submete 100 tarefas por dia, que cada consistem em 500 linhas que demoram 0,72 segundos cada. Os custos de utilização excedida mensais seriam de (100 tarefas por dia = 3100 tarefas/mês * 0,50 $/1 Mil transações de API) 1,55 $ em custos de transação de API de produção (500 linhas * 0,72 segundos * 3100 Tarefas * 2 $/hr) 620 $ em horas de computação de API de produção, num total de 621,55 $.
+Por exemplo, imaginemos a utilização excedida de Standard S1 e submete 100 tarefas por dia, que cada consistem em 500 linhas que demoram 0,72 segundos cada. Os custos de utilização excedida mensais seriam de (100 tarefas por dia = 3100 tarefas/mês 0,50 $/1 Mil transações de API) 1,55 $ em custos de transação de API de produção (500 linhas 0,72 segundos 3100 Tarefas 2 $/hr) 620 $ em horas de computação de API de produção, num total de 621,55 $.
 
 ### <a name="azure-machine-learning-classic-web-services"></a>Serviços Web Clássico do Azure Machine Learning
 **A opção Pay As You Go ainda está disponível?**
@@ -545,7 +545,7 @@ O serviço Machine Learning é um serviço multi-inquilino. Os recursos de compu
 ### <a name="guest-access"></a>Acesso de Convidado
 **O que é o Acesso de Convidado do Azure Machine Learning Studio?**
 
-O acesso de Convidado é uma experiência de avaliação limitada. Pode criar e executar experimentações no Azure Machine Learning Studio sem custos e sem autenticação. As sessões de convidados são não persistentes (não podem ser guardadas) e estão limitadas a&8; horas. Outras limitações incluem falta de suporte para R e Python, falta de APIs de teste e capacidade de armazenamento e tamanho dos conjuntos de dados restritos. Por comparação, os utilizadores que optem por iniciar sessão com uma conta Microsoft têm acesso total ao escalão Gratuito do Machine Learning Studio, que está descrito acima, o qual inclui uma área de trabalho persistente e capacidades mais abrangentes. Para escolher a sua experimentação gratuita do Machine Learning, clique em **Introdução**, em [https://studio.azureml.net](https://studio.azureml.net), e selecione **Acesso de Convidado** ou inicie sessão com uma conta Microsoft.
+O acesso de Convidado é uma experiência de avaliação limitada. Pode criar e executar experimentações no Azure Machine Learning Studio sem custos e sem autenticação. As sessões de convidados são não persistentes (não podem ser guardadas) e estão limitadas a 8 horas. Outras limitações incluem falta de suporte para R e Python, falta de APIs de teste e capacidade de armazenamento e tamanho dos conjuntos de dados restritos. Por comparação, os utilizadores que optem por iniciar sessão com uma conta Microsoft têm acesso total ao escalão Gratuito do Machine Learning Studio, que está descrito acima, o qual inclui uma área de trabalho persistente e capacidades mais abrangentes. Para escolher a sua experimentação gratuita do Machine Learning, clique em **Introdução**, em [https://studio.azureml.net](https://studio.azureml.net), e selecione **Acesso de Convidado** ou inicie sessão com uma conta Microsoft.
 
 <!-- Module References -->
 [image-reader]: https://msdn.microsoft.com/library/azure/893f8c57-1d36-456d-a47b-d29ae67f5d84/
