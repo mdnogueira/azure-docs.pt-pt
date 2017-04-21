@@ -76,6 +76,7 @@
 ## [Eliminar um cofre do Azure Backup](backup-azure-delete-vault.md)
 ## [Configurar a cópia de segurança offline](backup-azure-backup-import-export.md)
 ## [Substituir a sua biblioteca de unidades de banda](backup-azure-backup-cloud-as-tape.md)
+## [Cópias de segurança de VMs do Linux consistentes com a aplicação](backup-azure-linux-app-consistent.md)
 
 # Referência
 ## [PowerShell](/powershell/resourcemanager/azurerm.recoveryservices.backup/v2.3.0/azurerm.recoveryservices.backup)

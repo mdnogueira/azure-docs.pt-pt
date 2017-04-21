@@ -19,6 +19,7 @@
 ### [Configurar gestão de custos](devtest-lab-configure-cost-management.md)
 ### [Configurar redes virtuais](devtest-lab-configure-vnet.md)
 ### [Compreender endereços IP partilhados](devtest-lab-shared-ip.md)
+### [Automatizar a modificação de laboratório com modelos e o PowerShell](devtest-lab-use-arm-and-powershell-for-lab-resources.md)
 
 ## Gerir Artefactos
 ### [Adicionar repositório de artefactos](devtest-lab-add-artifact-repo.md)

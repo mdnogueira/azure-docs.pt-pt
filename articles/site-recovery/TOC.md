@@ -5,7 +5,7 @@
 ## [Que cargas de trabalho pode proteger?](site-recovery-workload.md)
 ## [Matriz de suporte do Site Recovery](site-recovery-support-matrix-to-azure.md)
 ## [FAQ](site-recovery-faq.md)
-## [Veja uma introdução](https://azure.microsoft.com/resources/videos/index/?services=recovery-manager)
+## [Veja uma introdução](https://azure.microsoft.com/resources/videos/index/?services=site-recovery)
 
 # Introdução
 ## [Replicar VMs VMware para o Azure](site-recovery-vmware-to-azure.md)
@@ -21,7 +21,7 @@
 ### [Considerações de infraestrutura de rede](site-recovery-network-design.md)
 ### [Planear a capacidade e dimensionar a replicação de VMware para o Azure](site-recovery-plan-capacity-vmware.md)
 ### [Deployment Planner para a replicação do VMware para o Azure](site-recovery-deployment-planner.md)
-### [Executar o Site Recovery Capacity Planner para a replicação de Hyper-V](site-recovery-capacity-planner.md)
+### [Capacity Planner para a replicação de Hyper-V](site-recovery-capacity-planner.md)
 
 ## Configurar
 ### [Configurar o ambiente de origem](site-recovery-set-up-vmware-to-azure.md)

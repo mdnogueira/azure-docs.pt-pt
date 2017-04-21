@@ -34,10 +34,11 @@
 ## Configurar várias ligações Site a Site
 ### [Portal do Azure](vpn-gateway-howto-multi-site-to-site-resource-manager-portal.md)
 ### [PowerShell (clássico)](vpn-gateway-multi-site.md)
-## [Configurar o BGP para Gateways de VPN do Azure com o PowerShell](vpn-gateway-bgp-resource-manager-ps.md)
+## [Configurar o BGP para um gateway de VPN](vpn-gateway-bgp-resource-manager-ps.md)
 ## [Configurar ligações ativas/ativas de elevada disponibilidade](vpn-gateway-activeactive-rm-powershell.md)
 ## [Modificar as definições do gateway de rede local com o PowerShell](vpn-gateway-modify-local-network-gateway.md)
 ## [Verificar uma ligação do gateway de VPN](vpn-gateway-verify-connection-resource-manager.md)
+## [Validar o débito de VPN para uma VNet](vpn-gateway-validate-throughput-to-vnet.md)
 ## [Repor um gateway de VPN](vpn-gateway-resetgw-classic.md)
 ## Eliminar um gateway de VPN
 ### [Portal do Azure](vpn-gateway-delete-vnet-gateway-portal.md)
