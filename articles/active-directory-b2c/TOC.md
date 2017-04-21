@@ -1,7 +1,7 @@
 # Descrição geral
 ## [Descrição geral](active-directory-b2c-overview.md)
 ## [Tipos de aplicações](active-directory-b2c-apps.md)
-## [Inquilinos de escala de produção versus inquilinos de B2C de pré-visualização](active-directory-b2c-reference-tenant-type.md)
+## [Disponibilidade regional e residência dos dados](active-directory-b2c-reference-tenant-type.md)
 
 # Introdução
 ## [Criar um Diretório do Azure AD B2C](active-directory-b2c-get-started.md)

@@ -28,7 +28,6 @@
 ## Utilizar o Hadoop para consultas de batch
 ### [Hive com o Hadoop](hdinsight-use-hive.md)
 #### [Utilizar a Vista do Hive](hdinsight-hadoop-use-hive-ambari-view.md)
-#### [Utilizar SSH](hdinsight-hadoop-use-hive-ssh.md)
 #### [Utilizar Beeline](hdinsight-hadoop-use-hive-beeline.md)
 #### [Utilizar cURL](hdinsight-hadoop-use-hive-curl.md)
 #### [Utilizar o PowerShell](hdinsight-hadoop-use-hive-powershell.md)
@@ -109,6 +108,7 @@
 ### [Utilizar com o Spark](hdinsight-apache-spark-with-kafka.md)
 ### [Utilizar com o Storm](hdinsight-apache-storm-with-kafka.md)
 ## Programar
+### [Desenvolver programas MapReduce de transmissão em fluxo de C#](hdinsight-hadoop-dotnet-csharp-mapreduce-streaming.md)
 ### [Desenvolver programas Java MapReduce](hdinsight-develop-deploy-java-mapreduce-linux.md)
 ### [Desenvolver trabalhos de Scalding MapReduce](hdinsight-hadoop-mapreduce-scalding.md)
 ### [Utilizar Ferramentas do HDInsight para criar aplicações do Spark](hdinsight-apache-spark-eclipse-tool-plugin.md)
@@ -199,6 +199,7 @@
 # Relacionado
 ## Clusters do Windows
 ### [Migrar clusters do Windows para clusters do Linux](hdinsight-migrate-from-windows-to-linux.md)
+### [Migrar soluções .NET para clusters do Linux](hdinsight-hadoop-migrate-dotnet-to-linux.md)
 ### [Executar exemplos de MapReduce do Hadoop](hdinsight-run-samples.md)
 ### [Utilizar Solr nos clusters](hdinsight-hadoop-solr-install-linux.md)
 ### [Utilizar Giraph para processar gráficos em grande escala](hdinsight-hadoop-giraph-install.md)
