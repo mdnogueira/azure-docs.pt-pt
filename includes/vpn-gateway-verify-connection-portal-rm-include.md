@@ -5,9 +5,3 @@ No portal do Azure, pode ver o estado da ligação de um Gateway de VPN do Resou
 3. Clique no nome da ligação que pretende verificar para abrir o **Essentials**. No Essentials, pode ver mais informações sobre a ligação. Quando efetuar uma ligação com êxito o **Estado** é alterado para "Com Êxito" e "Ligado".
    
     ![Utilizar o portal do Azure para verificar a ligação do Gateway de VPN](./media/vpn-gateway-verify-connection-portal-rm-include/connectionsucceeded.png)
-
-
-
-<!--HONumber=Jan17_HO5-->
-
-
