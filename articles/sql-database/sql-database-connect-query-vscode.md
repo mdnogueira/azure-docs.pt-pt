@@ -15,12 +15,12 @@ ms.workload: data-management
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: hero-article
-ms.date: 03/17/2017
+ms.date: 04/17/2017
 ms.author: carlrab
 translationtype: Human Translation
-ms.sourcegitcommit: 785d3a8920d48e11e80048665e9866f16c514cf7
-ms.openlocfilehash: ff5d156ab2b701233c4cdbf08e3d6e517c01b9fb
-ms.lasthandoff: 04/12/2017
+ms.sourcegitcommit: db7cb109a0131beee9beae4958232e1ec5a1d730
+ms.openlocfilehash: 5b623c78f8b8eac846c5ca244f1e0b25ee4f400f
+ms.lasthandoff: 04/18/2017
 
 
 ---
@@ -38,7 +38,7 @@ Antes de começar, certifique-se de que instalou a versão mais recente do [Visu
 ## <a name="configure-vs-code-mac-os-only"></a>Configurar VS Code (apenas para Mac OS)
 
 ### <a name="mac-os"></a>**Mac OS**
-Para macOS, terá de instalar o OpenSSL que é um pré-requisito do DotNet Core que essa extensão do mssql utiliza. Abra o terminal e introduza os comandos seguintes para instalar **brew**, **OpenSSL***. 
+Para macOS, tem de instalar o OpenSSL que é um pré-requisito do DotNet Core que essa extensão do mssql utiliza. Abra o terminal e introduza os comandos seguintes para instalar **brew**, **OpenSSL**. 
 
 ```bash
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -55,9 +55,11 @@ Obtenha o nome de servidor totalmente qualificado para o servidor da Base de Dad
 
 1. Inicie sessão no [Portal do Azure](https://portal.azure.com/).
 2. Selecione **Bases de Dados SQL** a partir do menu do lado esquerdo e clique na sua base de dados na página **Bases de Dados SQL**. 
-3. No painel **Essentials** na página do portal do Azure da sua base de dados, localize e, em seguida, copie o **Nome do servidor** para utilizar mais tarde neste guia de introdução.
+3. Na página **Overview (Descrição geral)** da sua base de dados, reveja o nome de servidor totalmente qualificado, como mostrado na imagem seguinte. Pode pairar sobre o nome do servidor para aparecer a opção **Clique para copiar**.
 
-    <img src="./media/sql-database-connect-query-vscode/connection-information.png" alt="connection information" style="width: 780px;" />
+   ![informações da ligação](./media/sql-database-connect-query-ssms/connection-information.png) 
+
+4. Se se tiver esquecido das informações de início de sessão do seu servidor da Base de Dados SQL do Azure, navegue para a página de servidor da Base de Dados SQL para visualizar o nome de administrador do servidor e, se necessário, repor a palavra-passe. 
 
 ## <a name="set-language-mode-to-sql"></a>Definir modo do idioma para SQL
 
@@ -65,17 +67,22 @@ Defina o modo de idioma para **SQL** no Visual Studio Code, para ativar comandos
 
 1. Abra uma nova janela do Visual Studio Code. 
 
-2. Prima **⌘+K,M** ou **CTRL+K,M** (opções do Mac e do Windows respetivamente), escreva **SQL** e prima **ENTER** para definir o modo de idioma para o SQL Server. 
+2. Clique em **Texto Simples** no canto inferior direito da barra de estado.
+3. No menu pendente **Selecionar modo de idioma** que se abre, escreva **SQL** e, em seguida, prima **ENTER** para definir o modo de idioma para o SQL. 
 
-<img src="./media/sql-database-connect-query-vscode/vscode-language-mode.png" alt="SQL language mode" style="width: 780px;" />
+   ![Modo de idioma do SQL](./media/sql-database-connect-query-vscode/vscode-language-mode.png)
 
-## <a name="connect-to-the-server"></a>Ligar ao servidor
+## <a name="connect-to-your-database-in-the-sql-database-logical-server"></a>Ligue à base de dados no servidor lógico da Base de Dados SQL
 
 Utilize o Visual Studio Code para estabelecer uma ligação ao servidor da Base de Dados SQL do Azure.
 
+> [!IMPORTANT]
+> Antes de continuar, certifique-se de que tem as informações do servidor, da base de dados e de início de sessão prontas. Assim que começar a introduzir as informações do perfil de ligação, se alterar o foco do Visual Studio Code, tem de reiniciar a criação do perfil de ligação.
+>
+
 1. No VS Code, prima **CTRL+SHIFT+P** (ou **F1**) para abrir a Paleta de Comandos.
 
-2. Escreva **sqlcon** e prima **ENTER** e defina o idioma como **SQL**.
+2. Escreva **sqlcon** e prima **ENTER**.
 
 3. Prima **ENTER** para selecionar **Criar Perfil de Ligação**. Esta ação cria um perfil de ligação para a sua instância do SQL Server.
 
@@ -97,7 +104,7 @@ Utilize o Visual Studio Code para estabelecer uma ligação ao servidor da Base 
 
 6. Verifique a ligação na barra de estado.
 
-   <img src="./media/sql-database-connect-query-vscode/vscode-connection-status.png" alt="Connection status" style="width: 780px;" />
+   ![Estado da ligação](./media/sql-database-connect-query-vscode/vscode-connection-status.png)
 
 ## <a name="query-data"></a>Consultar dados
 
@@ -114,7 +121,7 @@ Utilize a declaração do Transact-SQL [SELECIONAR](https://msdn.microsoft.com/l
 
 2. Prima **CTRL+SHIFT+E** para obter dados das tabelas Produto e ProductCategory.
 
-    <img src="./media/sql-database-connect-query-vscode/query.png" alt="Query" style="width: 780px;" />
+    ![Consulta](./media/sql-database-connect-query-vscode/query.png)
 
 ## <a name="insert-data"></a>Inserir dados
 

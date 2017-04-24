@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 04/03/2017
+ms.date: 04/13/2017
 ms.author: nepeters
 translationtype: Human Translation
-ms.sourcegitcommit: 6ea03adaabc1cd9e62aa91d4237481d8330704a1
-ms.openlocfilehash: 25ffd1c5bf289fa98a4b350eb916b386eee7f05c
-ms.lasthandoff: 04/06/2017
+ms.sourcegitcommit: e851a3e1b0598345dc8bfdd4341eb1dfb9f6fb5d
+ms.openlocfilehash: ab29f01980bc7c3a8f12aaa55ff35baa3bf3f9fb
+ms.lasthandoff: 04/15/2017
 
 ---
 
@@ -26,7 +26,7 @@ ms.lasthandoff: 04/06/2017
 
 As máquinas virtuais podem ser criadas através do portal do Azure. Este método fornece uma interface de utilizador baseada no browser para criar e configurar máquinas virtuais e todos os recursos relacionados. Estes passos do Guia de Introdução explicam a criação de uma máquina virtual com o portal do Azure.
 
-[!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
+Se não tiver uma subscrição do Azure, crie uma [conta gratuita](https://azure.microsoft.com/en-us/free/?WT.mc_id=A261C142F) antes de começar.
 
 ## <a name="create-ssh-key-pair"></a>Criar o par de chaves SSH
 
@@ -52,9 +52,9 @@ Inicie sessão no portal do Azure em http://portal.azure.com.
 
     ![Introduza as informações básicas sobre a VM no painel do portal](./media/quick-create-portal/create-vm-portal-basic-blade.png)  
 
-4. Escolha um tamanho da VM e clique em **Selecionar**. 
+4. Escolha um tamanho para a VM. Para ver mais tamanhos, selecione **Visualizar todos** ou altere o filtro **Tipo de disco suportado**. 
 
-    ![Selecione um tamanho para a VM no painel do portal](./media/quick-create-portal/create-vm-portal-size-blade.png)
+    ![Captura de ecrã que mostra os tamanhos de VM](./media/quick-create-portal/create-linux-vm-portal-sizes.png)  
 
 5. No painel definições, selecione **Sim** em **Utilizar discos geridos**, mantenha as predefinições para o resto das definições e clique em **OK**.
 
@@ -71,7 +71,7 @@ Por predefinição, só são permitidas ligações SSH para máquinas virtuais d
 2. No painel do grupo de recursos, clique no **Grupo de segurança de rede**, na lista de recursos. O nome do NSG deve ser o nome da VM com -nsg acrescentado ao fim.
 3. Clique no cabeçalho **Regra de Segurança de Entrada** para abrir a lista de regras de entrada. Deverá ver uma regra para RDP já na lista.
 4. Clique em **+ Adicionar** para abrir o painel **Adicionar regra de segurança de entrada**.
-5. Em **Nome**, escreva **nginx** e confirme que **Intervalo de portas** está definido como 80 e **Ação** como **Permitir** e clique em **OK**.
+5. Em **Nome**, escreva **nginx**. Certifique-se de que o **Intervalo da porta** está definido como 80 e a **Ação** está definida como **Permitir**. Clique em **OK**.
 
 
 ## <a name="connect-to-virtual-machine"></a>Conectar à máquina virtual
@@ -104,7 +104,7 @@ apt-get -y install nginx
 
 ## <a name="view-the-ngix-welcome-page"></a>Ver a página de boas-vindas do NGINX
 
-Com o NGINX instalado e a porta 80 agora aberta na sua VM a partir da Internet, pode utilizar um browser à sua escolha para ver a página de boas-vindas do NGINX predefinida. Certifique-se de que utiliza o `publicIpAddress` que documentou acima para visitar a página predefinida. 
+Com o NGINX instalado e a porta 80 agora aberta na sua VM a partir da Internet, pode utilizar um browser à sua escolha para ver a página de boas-vindas do NGINX predefinida. Certifique-se de que utiliza o `publicIpAddress` que documentou para visitar a página predefinida. 
 
 ![Site predefinido do NGINX](./media/quick-create-cli/nginx.png) 
 ## <a name="delete-virtual-machine"></a>Eliminar máquina virtual

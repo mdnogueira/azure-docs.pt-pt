@@ -13,12 +13,12 @@ ms.workload: drivers
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: hero-article
-ms.date: 04/05/2017
+ms.date: 04/17/2017
 ms.author: andrela;sstein;carlrab
 translationtype: Human Translation
-ms.sourcegitcommit: 785d3a8920d48e11e80048665e9866f16c514cf7
-ms.openlocfilehash: c36c3a3f651bcee38b953b12e48cab8d93a34207
-ms.lasthandoff: 04/12/2017
+ms.sourcegitcommit: db7cb109a0131beee9beae4958232e1ec5a1d730
+ms.openlocfilehash: 368ffc65382c75b0fe5f4c20ce1c6a487a764ed3
+ms.lasthandoff: 04/18/2017
 
 
 ---
@@ -70,16 +70,18 @@ Obter a cadeia de ligação no portal do Azure. Utiliza a cadeia de ligação pa
 
 1. Inicie sessão no [Portal do Azure](https://portal.azure.com/).
 2. Selecione **Bases de Dados SQL** a partir do menu do lado esquerdo e clique na sua base de dados na página **Bases de Dados SQL**. 
-3. No painel **Essentials** da base de dados, reveja o nome do servidor totalmente qualificado. 
+3. Na página **Overview (Descrição geral)** da sua base de dados, reveja o nome de servidor totalmente qualificado, como mostrado na imagem abaixo. Pode pairar sobre o nome do servidor para aparecer a opção **Clique para copiar**. 
 
-    <img src="./media/sql-database-connect-query-dotnet/connection-strings.png" alt="connection strings" style="width: 780px;" />
+   ![server-name](./media/sql-database-connect-query-dotnet/server-name.png) 
 
-4. Clique em **Mostrar cadeias de ligação da base de dados**.
+4. Se se tiver esquecido das informações de início de sessão do seu servidor da Base de Dados SQL do Azure, navegue para a página de servidor da Base de Dados SQL para visualizar o nome de administrador do servidor e, se necessário, repor a palavra-passe.
 
-5. Reveja a cadeia de ligação **ADO.NET** completa.
+5. Clique em **Mostrar cadeias de ligação da base de dados**.
 
-    <img src="./media/sql-database-connect-query-dotnet/adonet-connection-string.png" alt="ADO.NET connection string" style="width: 780px;" />
-    
+6. Reveja a cadeia de ligação **ADO.NET** completa.
+
+    ![Cadeia de ligação de ADO.NET](./media/sql-database-connect-query-dotnet/adonet-connection-string.png)
+  
 ## <a name="add-systemdatasqlclient"></a>Adicionar System.Data.SqlClient
 Quando utilizar o .NET Core, adicione System.Data.SqlClient ao ficheiro ***csproj*** do seu projeto como dependência.
 
@@ -94,8 +96,7 @@ Quando utilizar o .NET Core, adicione System.Data.SqlClient ao ficheiro ***cspro
 1. No ambiente de desenvolvimento, abra um ficheiro de código em branco.
 2. Adicione ```using System.Data.SqlClient``` ao seu ficheiro de código ([System.Data.SqlClient namespace](https://msdn.microsoft.com/library/system.data.sqlclient.aspx)). 
 
-3. Utilize [SqlCommand.ExecuteReader](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.executereader.aspx) com uma declaração do Transact-SQL [SELECIONAR](https://msdn.microsoft.com/library/ms189499.aspx), para consultar dados na base de dados SQL do Azure. Adicione os valores adequados para o servidor
-
+3. Utilize [SqlCommand.ExecuteReader](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.executereader.aspx) com uma declaração do Transact-SQL [SELECIONAR](https://msdn.microsoft.com/library/ms189499.aspx), para consultar dados na base de dados SQL do Azure. Adicione os valores adequados para o servidor.
 ```csharp
 using System;
 using System.Data;

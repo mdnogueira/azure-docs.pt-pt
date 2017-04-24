@@ -15,9 +15,9 @@ ms.topic: get-started-article
 ms.date: 04/12/2017
 ms.author: banders
 translationtype: Human Translation
-ms.sourcegitcommit: 8a531f70f0d9e173d6ea9fb72b9c997f73c23244
-ms.openlocfilehash: ace5d18cd88d55d167f8447d18d65ca21818ff62
-ms.lasthandoff: 03/09/2017
+ms.sourcegitcommit: e851a3e1b0598345dc8bfdd4341eb1dfb9f6fb5d
+ms.openlocfilehash: 0a6b5115a4eebfcce14094d82cdcc9579f80def6
+ms.lasthandoff: 04/15/2017
 
 
 ---
@@ -60,7 +60,7 @@ Se estiver a utilizar o System Center Operations Manager, cada grupo de gestão 
 
 Pode ver detalhes sobre a sua área de trabalho no portal do Azure. Também pode ver detalhes no portal do OMS.
 
-#### <a name="view-workspace-information-the-azure-portal"></a>Ver informações da área de trabalho no portal do Azure
+#### <a name="view-workspace-information-in-the-azure-portal"></a>Ver informações da área de trabalho no portal do Azure
 
 1. Se ainda não o fez, inicie sessão no [portal do Azure](https://portal.azure.com) através da sua subscrição do Azure.
 2. No menu **Hub**, clique em **Mais serviços** e, na lista de recursos, escreva **Log Analytics**. À medida que começa a escrever, a lista filtra com base na sua entrada. Clique em **Log Analytics**.  
@@ -202,9 +202,6 @@ Todas as áreas de trabalho criadas depois de 26 de setembro de 2016 têm de ser
     > [!IMPORTANT]
     > Para ligar uma área de trabalho, a sua conta do Azure tem de ter acesso à área de trabalho que pretende ligar.  Por outras palavras, a conta que utiliza para aceder ao portal do Azure tem de ser **a mesma** conta utilizada para aceder à área de trabalho. Se não for, veja [Adicionar um utilizador a uma área de trabalho existente](#add-a-user-to-an-existing-workspace).
 
-
-
-
 ### <a name="to-link-a-workspace-to-an-azure-subscription-in-the-azure-portal"></a>Para ligar uma área de trabalho a uma subscrição do Azure no portal do Azure
 1. Inicie sessão no [Portal do Azure](http://portal.azure.com).
 2. Procure o **Log Analytics** e selecione-o.
@@ -225,7 +222,7 @@ Todas as áreas de trabalho criadas depois de 26 de setembro de 2016 têm de ser
 8. Clique em **OK**. A área de trabalho está agora ligada à sua conta do Azure.
 
 > [!NOTE]
-> Se não visualizar a área de trabalho que pretende ligar, a sua subscrição do Azure não tem acesso à área de trabalho que criou com o site do OMS.  Para conceder acesso a esta conta a partir do portal do OMS, consulte [Add a user to an existing workspace (Adicionar um utilizador a uma área de trabalho existente)](#add-a-user-to-an-existing-workspace).
+> Se não visualizar a área de trabalho que pretende ligar, a sua subscrição do Azure não tem acesso à área de trabalho que criou com o portal do OMS.  Para conceder acesso a esta conta a partir do portal do OMS, consulte [Add a user to an existing workspace (Adicionar um utilizador a uma área de trabalho existente)](#add-a-user-to-an-existing-workspace).
 >
 >
 
@@ -250,7 +247,7 @@ Para garantir que a utilização de uma área de trabalho é aplicada às suas e
 As elegibilidades da subscrição do OMS não estão visíveis no portal do Azure nem do OMS. Pode ver as elegibilidades e a utilização no Portal da Empresa.  
 
 Se precisar de alterar a subscrição do Azure à qual está ligada a área de trabalho, pode utilizar o cmdlet [Move-AzureRmResource](https://msdn.microsoft.com/library/mt652516.aspx) do Azure PowerShell.
-para
+
 ### <a name="using-azure-commitment-from-an-enterprise-agreement"></a>Utilizar o Azure Commitment a partir de um Contrato Enterprise
 Se não tiver uma subscrição do OMS, paga cada componente do OMS em separado e a utilização aparece na fatura do Azure.
 

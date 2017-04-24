@@ -15,9 +15,9 @@ ms.topic: hero-article
 ms.date: 01/07/2017
 ms.author: ambapat
 translationtype: Human Translation
-ms.sourcegitcommit: 0d8472cb3b0d891d2b184621d62830d1ccd5e2e7
-ms.openlocfilehash: a28e325e8a7e902a64f8cc267e2f0d3be151bcb3
-ms.lasthandoff: 03/21/2017
+ms.sourcegitcommit: 7f469fb309f92b86dbf289d3a0462ba9042af48a
+ms.openlocfilehash: c344941c59c52d260999c29f448bb94df24fba1d
+ms.lasthandoff: 04/13/2017
 
 
 ---
@@ -31,7 +31,7 @@ Tanto o plano de gestão, como o de dados, utilizam o Azure Active Directory na 
 
 Eis uma breve descrição geral dos tópicos abrangidos:
 
-[Autenticação com o Azure Active Directory](#authentication-using-azure-active-direcrory) - esta secção explica como um chamador se autentica com o Azure Active Directory para aceder a um cofre de chaves através dos planos de gestão e de dados. 
+[Autenticação com o Azure Active Directory](#authentication-using-azure-active-directory) - esta secção explica como um chamador se autentica com o Azure Active Directory para aceder a um cofre de chaves através dos planos de gestão e de dados. 
 
 [Plano de gestão e plano de dados](#management-plane-and-data-plane) - o plano de gestão e o plano de dados são dois planos de acesso utilizados para aceder aos seus cofres de chaves. Cada plano de acesso suporta operações específicas. Esta secção descreve os pontos finais de acesso, as operações suportadas e o método de controlo de acesso que cada plano utiliza. 
 

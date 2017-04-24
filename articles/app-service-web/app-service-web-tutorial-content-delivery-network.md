@@ -9,9 +9,9 @@ ms.topic: hero-article
 ms.service: app-service-web
 manager: erikre
 translationtype: Human Translation
-ms.sourcegitcommit: 785d3a8920d48e11e80048665e9866f16c514cf7
-ms.openlocfilehash: a12eab1f7bc4177f659771d58a58f749507c994c
-ms.lasthandoff: 04/12/2017
+ms.sourcegitcommit: db7cb109a0131beee9beae4958232e1ec5a1d730
+ms.openlocfilehash: 8194e669f943a6c47f02ae0d2a55e0e720420489
+ms.lasthandoff: 04/18/2017
 
 ---
 # <a name="connect-a-web-app-to-a-content-delivery-network"></a>Ligar uma Aplicação Web a uma Rede de Entrega de Conteúdos
@@ -28,7 +28,7 @@ Em primeiro lugar, abra o seu browser favorito e navegue para o [Portal](https:/
 
 ## <a name="step-2---create-a-cdn-profile"></a>Passo 2 - Criar um Perfil da CDN
 
-Clique no botão `+ New` na navegação do lado esquerdo e clique em **Web + Móvel**. Na categoria Web + Móvel, selecione **CDN**.
+Clique no botão **+ Novo** na navegação do lado esquerdo e clique em **Web + Móvel**. Na categoria Web + Móvel, selecione **CDN**.
 
 Especifique o **Nome**, a **Localização**, o **Grupo de recursos**, o **Escalão de preços** e clique em **Criar**.
 
@@ -38,7 +38,7 @@ Abra o concentrador de grupos de recursos na navegação do lado esquerdo e sele
 
 ## <a name="step-3---create-a-cdn-endpoint"></a>Passo 3 - Criar um Ponto Final da CDN
 
-Clique em `+ Endpoint` nos comandos ao lado da caixa de pesquisa, o que abre o painel Criação de ponto final.
+Clique em **+ Ponto Final** nos comandos ao lado da caixa de pesquisa, o que abre o painel Criação de ponto final.
 
 Especifique o **Nome**, o **Tipo de origem**, o **Nome de anfitrião da origem**, e clique em **Adicionar**.
 
