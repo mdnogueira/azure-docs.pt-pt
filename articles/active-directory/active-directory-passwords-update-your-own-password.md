@@ -16,9 +16,9 @@ ms.date: 04/11/2017
 ms.author: joflore
 ms.custom: end-user
 translationtype: Human Translation
-ms.sourcegitcommit: 785d3a8920d48e11e80048665e9866f16c514cf7
-ms.openlocfilehash: 9b7735bbe8d3b2ffc78eba8f1489d70a02fe7342
-ms.lasthandoff: 04/12/2017
+ms.sourcegitcommit: c300ba45cd530e5a606786aa7b2b254c2ed32fcd
+ms.openlocfilehash: bb62d6973dff00932e72ddb4b2c344f070537828
+ms.lasthandoff: 04/14/2017
 
 
 ---
@@ -31,7 +31,7 @@ Se os cenários seguintes se aplicam a si, podemos ajudar
 * Se não souber como aceder à sua conta e não se lembra da palavra-passe
 * Não foi atribuída uma palavra-passe e o administrador enviou-o para aqui
 
-## <a name="unlock-your-account"></a>Desbloquear a sua conta
+## <a name="unlock-my-account"></a>Desbloquear a minha conta
 
 Se o utilizador está aqui para desbloquear a conta, siga os passos abaixo. Quando vir **Escolher uma nova palavra-passe** no passo 6 abaixo, pode desbloquear ou alterar a palavra-passe.
 
@@ -43,6 +43,11 @@ Para voltar para a sua conta, siga estes passos abaixo.
     ![Não consegue aceder à sua conta?][Login]
 
 2. Introduza o seu **ID de Utilizador** escolar ou profissional e prove que não é um robot ao passar no teste CAPTCHA e introduzir o texto apresentado, e clique em **Seguinte**
+
+   > [!NOTE]
+   > Se o administrador não tiver ativado esta funcionalidade, é apresentada uma ligação "contacte o administrador" neste momento, para que o administrador possa fornecer assistência por e-mail ou por um próprio portal Web.
+   >
+
 3. Dependendo de como o administrador configurou as coisas verá um ou mais dos seguintes procedimentos
     * **Enviar um e-mail para o meu e-mail alternativo** - envia um e-mail com um código de seis dígitos para o seu e-mail alternativo ou o seu e-mail de autenticação (a opção é sua).
     * **Enviar uma mensagem para o meu telemóvel** - envia uma mensagem com um código de seis dígitos para o seu telemóvel ou para o telemóvel de autenticação (a opção é sua).
@@ -61,10 +66,6 @@ Para voltar para a sua conta, siga estes passos abaixo.
 7. Quando vir **A palavra-passe foi reposta**, pode iniciar sessão com a nova palavra-passe.
 
     ![A palavra-passe do utilizador foi reposta][Complete]
-
-> [!NOTE]
-> Se o administrador não tiver ativado esta funcionalidade, é apresentada uma ligação "contacte o administrador", para que o administrador possa fornecer assistência por e-mail ou por um próprio portal Web.
->
 
 Depois de utilizar este método para desbloquear ou repor a palavra-passe, poderá receber um e-mail a confirmar que este processo foi concluído e que provém de uma conta como "Microsoft em Nome da Sua Organização Aqui". Se receber um e-mail assim e não utilizou a reposição personalizada de palavra-passe para recuperar o acesso à sua conta, contacte o administrador.
 

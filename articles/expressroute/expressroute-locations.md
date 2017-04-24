@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 03/22/2017
+ms.date: 04/14/2017
 ms.author: cherylmc
 translationtype: Human Translation
-ms.sourcegitcommit: 988e7fe2ae9f837b661b0c11cf30a90644085e16
-ms.openlocfilehash: d878bd4ed40bc662dd5a43b56e08f84ce490287e
-ms.lasthandoff: 04/06/2017
+ms.sourcegitcommit: e851a3e1b0598345dc8bfdd4341eb1dfb9f6fb5d
+ms.openlocfilehash: 15c47d6641e6f5198f88dbe83980f098510916f8
+ms.lasthandoff: 04/15/2017
 
 
 ---
@@ -72,7 +72,7 @@ A tabela seguinte mostra as localizações por fornecedor de serviços. Se quise
 | --- | --- | --- | --- |
 | **[AARNet](https://www.aarnet.edu.au/network-and-services/cloud-services-applications/azure-expressroute/)** |Suportado |Suportado |Melbourne, Sydney |
 | **Airtel** | Brevemente | Brevemente | Chennai, Mumbai |
-| **[Redes Aryaka](http://www.aryaka.com/)** |Suportado |Suportado |Amesterdão, Dallas, Silicon Valley, Singapura, Tóquio, Washington D.C. |
+| **[Redes Aryaka](http://www.aryaka.com/)** |Suportado |Suportado |Amesterdão, Dallas, Hong Kong, Silicon Valley, Singapura, Tóquio, Washington D.C. |
 | **[AT&T NetBond](https://www.synaptic.att.com/clouduser/html/productdetail/ATT_NetBond.htm)** |Suportado |Suportado |Amesterdão, Chicago, Dallas, Londres, Silicon Valley, Singapura, Sydney, Washington D.C. |
 | **[Bell Canada](https://business.bell.ca/shop/enterprise/cloud-connect-access-to-cloud-partner-services)** |Suportado |Suportado |Montreal, Toronto |
 | **[British Telecom](http://www.globalservices.bt.com/uk/en/news/bt_to_provide_connectivity_to_microsoft_azure)** |Suportado |Suportado |Amesterdão, RAE de Hong Kong, Londres, Silicon Valley, Singapura, Sydney, Tóquio, Washington D.C. |
@@ -95,7 +95,7 @@ A tabela seguinte mostra as localizações por fornecedor de serviços. Se quise
 | **KINX** |Suportado |Suportado |Seoul |
 | **[KPN](http://www.kpn.com/cloudconnect)** | Suportado | Suportado | Amesterdão | 
 | **[Level 3 Communications](http://your.level3.com/LP=882?WT.tsrc=02192014LP882AzureVanityAzureText)** |Suportado |Suportado |Amesterdão, Chicago, Dallas, Las Vegas+, Londres, Seattle, Silicon Valley, Singapura Washington D.C. |
-| **LG CNS** |Brevemente |Brevemente |Busan+ |
+| **LG CNS** |Suportado |Suportado |Busan |
 | **[Megaport](https://www.megaport.com/services/microsoft-expressroute/)** |Suportado |Suportado |Dallas, Hong Kong, Las Vegas, Los Angeles, Melbourne, Nova Iorque, Cidade do Quebeque, Seattle, Singapura, Sydney, Toronto, Washington D.C. |
 | **MTN** |Suportado |Suportado |Londres |
 | **[Next Generation Data](http://www.nextgenerationdata.co.uk/ngd-cloud-gateway/)** |Suportado |Suportado |Newport (País de Gales) |

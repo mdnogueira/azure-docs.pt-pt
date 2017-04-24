@@ -16,9 +16,9 @@ ms.workload: infrastructure-services
 ms.date: 04/11/2017
 ms.author: yushwang;cherylmc
 translationtype: Human Translation
-ms.sourcegitcommit: 785d3a8920d48e11e80048665e9866f16c514cf7
-ms.openlocfilehash: 03ba7f0df69da073fd876fc4c06121952e594a02
-ms.lasthandoff: 04/12/2017
+ms.sourcegitcommit: 0d6f6fb24f1f01d703104f925dcd03ee1ff46062
+ms.openlocfilehash: d7c4c5b118dade39bd47ae2c7836157589fcb45a
+ms.lasthandoff: 04/17/2017
 
 
 ---
@@ -33,21 +33,21 @@ Precisa de um dispositivo VPN para configurar uma ligação de rede de VPNs (S2S
 
 ###<a name="items-to-note-when-viewing-the-tables"></a>Itens a ter em atenção quando visualizar as tabelas:
 
-* A terminologia para os gateways de VPN do Azure foi alterada. Não há nenhuma alteração de funcionalidade, só os nomes estão a mudar.
+* A terminologia para os gateways de VPN do Azure foi alterada. Não há qualquer alteração de funcionalidade. Apenas os nomes estão a ser alterados.
   * Encaminhamento Estático = PolicyBased
   * Encaminhamento Dinâmico = RouteBased
 * As especificações para o gateway de VPN de Elevado Desempenho e para o gateway de VPN RouteBased são as mesmas, salvo indicação em contrário. Por exemplo, os dispositivos VPN validados compatíveis com os gateways de VPN RouteBased também são compatíveis com o gateway de VPN de Elevado Desempenho do Azure.
 
 > [!NOTE]
-> Ao configurar uma ligação Site a Site, é preciso um endereço IP IPv4 destinado ao público para o dispositivo VPN.                                                                                                                                                                               
+> Ao configurar uma ligação Site a Site, é preciso um endereço IP IPv4 destinado ao público para o dispositivo VPN.
+>                
 
-
-## <a name="devicetable"></a>Dispositivos VPN validados
+## <a name="devicetable"></a>Dispositivos VPN validados e guias de configuração de dispositivo
 Validámos uma série de dispositivos VPN padrão em parceria com os fornecedores dos dispositivos. Todos os dispositivos nas famílias de dispositivos contidas na lista seguinte deverão funcionar com gateways de VPN do Azure. Veja o artigo [Acerca do VPN Gateway](vpn-gateway-about-vpngateways.md) para verificar o tipo de gateway que tem de criar para a solução que pretende configurar.
 
-Para obter ajuda na configuração do seu dispositivo VPN, veja as ligações que correspondem à família de dispositivos adequada.  As ligações para as instruções de configuração são fornecidas numa base de melhor esforço. Para obter suporte para dispositivos VPN, contacte o fabricante do dispositivo.
+Para obter ajuda na configuração do seu dispositivo VPN, veja as ligações que correspondem à família de dispositivos adequada. As ligações para as instruções de configuração são fornecidas numa base de melhor esforço. Para obter suporte para dispositivos VPN, contacte o fabricante do dispositivo.
 
-|**Fornecedor**          |**Família de dispositivos**     |**Versão mínima do SO** |**PolicyBased** |**RouteBased** |
+|**Fornecedor**          |**Família de dispositivos**     |**Versão mínima do SO** |**Instruções de configuração PolicyBased** |**Instruções de configuração RouteBased** |
 | ---                | ---                  | ---                   | ---            | ---           |
 | A10 Networks, Inc. |Thunder CFW           |ACOS 4.1.1             |Não Compatível  |[Guia de configuração](https://www.a10networks.com/resources/deployment-guides/a10-thunder-cfw-ipsec-vpn-interoperability-azure-vpn-gateways)|
 | Allied Telesis     |Routers VPN Série AR |2.9.2                  |Brevemente     |Não compatível  |
@@ -81,7 +81,7 @@ Se não vir o seu dispositivo listado na tabela de Dispositivos VPN Validados, o
 ## <a name="editing"></a>Editar os exemplos de configuração do dispositivo
 Depois de transferir o exemplo de configuração do dispositivo VPN fornecido, terá de substituir alguns dos valores para que reflitam as definições do seu ambiente.
 
-###<a name="to-edit-a-sample"></a>Para editar um exemplo:
+### <a name="to-edit-a-sample"></a>Para editar um exemplo:
 
 1. Abra o exemplo com o Bloco de Notas.
 2. Procure e substitua todas as cadeias <*texto*> pelos valores que dizem respeito ao seu ambiente. Não se esqueça de incluir < e >. O nome especificado deve ser exclusivo. Se um comando não funcionar, consulte a documentação do fabricante do dispositivo.
@@ -106,7 +106,7 @@ Depois de transferir o exemplo de configuração do dispositivo VPN fornecido, t
 > 
 >
 
-Nas tabelas abaixo:
+Nas seguintes tabelas:
 
 * SA = Associação de Segurança
 * IKE Fase 1 também é denominado "Modo Principal"
@@ -185,7 +185,7 @@ A tabela seguinte apresenta as Ofertas de SA IPsec (Modo Rápido de IKE). As ofe
 >
 >
 
-###<a name="feb-16-2017"></a>16 de fevereiro de 2017
+### <a name="feb-16-2017"></a>16 de fevereiro de 2017
 
 **Dispositivos da Palo Alto Networks com versão anterior à 7.1.4** para VPN baseado em rota do Azure: se estiver a utilizar dispositivos da Palo Alto Networks com versão do SO PAN anterior à 7.1.4 e ocorrerem problemas de conectividade para gateways de VPN baseados em rota do Azure, execute os seguintes passos:
 

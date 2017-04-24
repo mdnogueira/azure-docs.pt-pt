@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
-ms.date: 04/03/2017
+ms.date: 04/13/2017
 ms.author: nepeters
 translationtype: Human Translation
-ms.sourcegitcommit: 6ea03adaabc1cd9e62aa91d4237481d8330704a1
-ms.openlocfilehash: 17fb538b33a4a4a2b333ff501e6e729f6000f623
-ms.lasthandoff: 04/06/2017
+ms.sourcegitcommit: e851a3e1b0598345dc8bfdd4341eb1dfb9f6fb5d
+ms.openlocfilehash: 8a86cf64dcd65e74285a1073f7494eba0708ddcd
+ms.lasthandoff: 04/15/2017
 
 ---
 
@@ -26,7 +26,7 @@ ms.lasthandoff: 04/06/2017
 
 As máquinas virtuais podem ser criadas através do portal do Azure. Este método fornece uma interface de utilizador baseada no browser para criar e configurar máquinas virtuais e todos os recursos relacionados. Estes passos do Guia de Introdução explicam a criação de uma máquina virtual com o portal do Azure. Depois de concluída a implementação, vamos ligar ao servidor e instalar o IIS.
 
-[!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
+Se não tiver uma subscrição do Azure, crie uma [conta gratuita](https://azure.microsoft.com/en-us/free/?WT.mc_id=A261C142F) antes de começar.
 
 ## <a name="log-in-to-azure"></a>Iniciar sessão no Azure
 
@@ -42,7 +42,9 @@ Inicie sessão no portal do Azure em http://portal.azure.com.
 
     ![Introduza as informações básicas sobre a VM no painel do portal](./media/quick-create-portal/create-windows-vm-portal-basic-blade.png)  
 
-5. Escolha um tamanho da VM e clique em **Selecionar**.
+5. Escolha um tamanho para a VM. Para ver mais tamanhos, selecione **Visualizar todos** ou altere o filtro **Tipo de disco suportado**. 
+
+    ![Captura de ecrã que mostra os tamanhos de VM](./media/quick-create-portal/create-windows-vm-portal-sizes.png)  
 
 6. No painel definições, selecione **Sim** em **Utilizar discos geridos**, mantenha as predefinições para o resto das definições e clique em **OK**.
 
@@ -58,7 +60,7 @@ Para permitir tráfego para o IIS, tem de abrir a porta 80 ao tráfego da Web. E
 2. No painel do grupo de recursos, clique no **Grupo de segurança de rede**, na lista de recursos. O nome do NSG deve ser o nome da VM com -nsg acrescentado ao fim.
 3. Clique no cabeçalho **Regra de Segurança de Entrada** para abrir a lista de regras de entrada. Deverá ver uma regra para RDP já na lista.
 4. Clique em **+ Adicionar** para abrir o painel **Adicionar regra de segurança de entrada**.
-5. Em **Nome**, escreva **IIS** e confirme que **Intervalo de portas** está definido como 80 e **Ação** como **Permitir** e clique em **OK**.
+5. Em **Nome**, escreva **IIS**. Certifique-se de que o **Intervalo da porta** está definido como 80 e a **Ação** está definida como **Permitir**. Clique em **OK**.
 
 
 ## <a name="connect-to-virtual-machine"></a>Conectar à máquina virtual
@@ -78,7 +80,7 @@ Depois de a implementação estar concluída, crie uma ligação de ambiente de 
 
 ## <a name="install-iis-using-powershell"></a>Instalar o IIS com o PowerShell
 
-Agora que iniciou sessão na VM do Azure, pode utilizar uma única linha do PowerShell para instalar o IIS e ativar a regra de firewall local para permitir o tráfego da Web.  Abra uma janela do PowerShell e execute o comando seguinte:
+Na máquina virtual, abra uma linha de comandos do PowerShell e execute o seguinte comando para instalar o IIS e ativar a regra de firewall local para permitir o tráfego da Web:
 
 ```powershell
 Install-WindowsFeature -name Web-Server -IncludeManagementTools
@@ -90,13 +92,6 @@ Com o IIS instalado e a porta 80 agora aberta na sua VM a partir da Internet, po
 
 ![Site predefinido do IIS](./media/quick-create-powershell/default-iis-website.png) 
 
-## <a name="delete-virtual-machine"></a>Eliminar máquina virtual
-
-Quando já não for necessário, pode ser utilizado o seguinte comando para remover o Grupo de Recursos, a VM e todos os recursos relacionados.
-
-```powershell
-Remove-AzureRmResourceGroup -Name myResourceGroup
-```
 ## <a name="delete-virtual-machine"></a>Eliminar máquina virtual
 
 Quando já não for necessário, elimine o grupo de recursos, a máquina virtual e todos os recursos relacionados. Para fazê-lo, selecione o grupo de recursos a partir do painel da máquina virtual e clique em **Eliminar**.

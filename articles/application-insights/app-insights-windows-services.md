@@ -14,9 +14,9 @@ ms.topic: get-started-article
 ms.date: 11/01/2016
 ms.author: awills
 translationtype: Human Translation
-ms.sourcegitcommit: 197ebd6e37066cb4463d540284ec3f3b074d95e1
-ms.openlocfilehash: 97d750035e79d4780738e660d05e1a41085d51f1
-ms.lasthandoff: 03/31/2017
+ms.sourcegitcommit: 0c4554d6289fb0050998765485d965d1fbc6ab3e
+ms.openlocfilehash: 29598f052778759ed362e3aa4b997acb799717ef
+ms.lasthandoff: 04/13/2017
 
 
 ---
@@ -115,10 +115,7 @@ Em seguida, implemente a aplicação no servidor ou no Azure e veja os dados a a
 Quando é executada em modo de depuração, a telemetria é emitida através do pipeline, pelo que deve ver os dados que aparecem em segundos. Ao implementar a aplicação na configuração da Versão, os dados acumulam-se mais lentamente.
 
 #### <a name="no-data-after-you-publish-to-your-server"></a>Não existem dados depois de publicar no servidor?
-Abra estas portas para o tráfego de saída na firewall do servidor:
-
-* `dc.services.visualstudio.com:443`
-* `f5.services.visualstudio.com:443`
+Abra portas para o tráfego de saída na firewall do servidor. Consulte [esta página](https://docs.microsoft.com/azure/application-insights/app-insights-ip-addresses) para ver a lista de endereços necessários 
 
 #### <a name="trouble-on-your-build-server"></a>Problemas no servidor de compilação?
 Veja [este item de Resolução de Problemas](app-insights-asp-net-troubleshoot-no-data.md#NuGetBuild).

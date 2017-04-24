@@ -15,8 +15,9 @@ ms.workload: infrastructure-services
 ms.date: 10/10/2016
 ms.author: cherylmc
 translationtype: Human Translation
-ms.sourcegitcommit: 371c76ed36cd9d21026a5a49c6ef86a0cd3cc816
-ms.openlocfilehash: 8fd8b4b9611adb15df7e436a00f8ec35ea1e9614
+ms.sourcegitcommit: 0d6f6fb24f1f01d703104f925dcd03ee1ff46062
+ms.openlocfilehash: a7b3f8addbba21e60be0076784ae954f4cedb0b8
+ms.lasthandoff: 04/17/2017
 
 
 ---
@@ -26,7 +27,13 @@ Para ligar aos serviços em nuvem da Microsoft com o ExpressRoute, terá de conf
 Reveja a página [Circuitos ExpressRoute e domínios de encaminhamento](expressroute-circuit-peerings.md) para obter uma descrição geral de vários domínios de encaminhamento. Para cumprir os requisitos públicos de endereço IP para o Azure público e peering da Microsoft, recomendamos que configure o NAT entre a sua rede e a Microsoft. Esta secção fornece uma descrição detalhada da infraestrutura do NAT que tem de configurar.
 
 ## <a name="nat-requirements-for-azure-public-peering"></a>Requisitos do NAT para o peering público Azure
-O caminho de peering público Azure permite-lhe ligar a todos os serviços alojados no Azure ao longo dos respetivos endereços IP públicos. Estes incluem os serviços listados nas [FAQ do ExpressRoute](expressroute-faqs.md) e quaisquer serviços alojados pelos ISVs no Microsoft Azure. A conectividade aos serviços do Microsoft Azure em peering público é sempre iniciada a partir da sua rede para a rede da Microsoft. O tráfego destinado ao Microsoft Azure em peering público tem de realizar um SNAT para endereços IPv4 públicos válidos antes de serem introduzidos na rede da Microsoft. A figura abaixo fornece uma imagem de alto nível da forma como o NAT foi configurado para cumprir o requisito acima.
+O caminho de peering público Azure permite-lhe ligar a todos os serviços alojados no Azure ao longo dos respetivos endereços IP públicos. Estes incluem os serviços listados nas [FAQ do ExpressRoute](expressroute-faqs.md) e quaisquer serviços alojados pelos ISVs no Microsoft Azure. 
+
+> [!IMPORTANT]
+> A conectividade aos serviços do Microsoft Azure em peering público é sempre iniciada a partir da sua rede para a rede da Microsoft. Por conseguinte, as sessões não podem iniciar a partir de serviços do Microsoft Azure para a sua rede através do ExpressRoute. Se tentou, os pacotes enviados para estes IPs anunciados irão utilizar a internet, em vez do ExpressRoute.
+> 
+
+O tráfego destinado ao Microsoft Azure em peering público tem de realizar um SNAT para endereços IPv4 públicos válidos antes de serem introduzidos na rede da Microsoft. A figura abaixo fornece uma imagem de alto nível da forma como o NAT foi configurado para cumprir o requisito acima.
 
 ![](./media/expressroute-nat/expressroute-nat-azure-public.png) 
 
@@ -66,10 +73,5 @@ O caminho de peering da Microsoft permite-lhe ligar aos serviços em nuvem da Mi
   * [Crie um circuito do ExpressRoute](expressroute-howto-circuit-classic.md)
   * [Configure o encaminhamento](expressroute-howto-routing-classic.md)
   * [Ligar uma VNet a um circuito do ExpressRoute](expressroute-howto-linkvnet-classic.md)
-
-
-
-
-<!--HONumber=Nov16_HO3-->
 
 

@@ -12,12 +12,12 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 02/22/2017
+ms.date: 04/17/2017
 ms.author: juliako
 translationtype: Human Translation
-ms.sourcegitcommit: 44fe2f5c0a3f050a93368589d9ea6b8ea3e35d26
-ms.openlocfilehash: 60a35bbda79a45bd0ac24e76b0a20720afe79774
-ms.lasthandoff: 02/23/2017
+ms.sourcegitcommit: db7cb109a0131beee9beae4958232e1ec5a1d730
+ms.openlocfilehash: 86cb6a979d3aa429c0f501a5ebf37db4bff8ba99
+ms.lasthandoff: 04/18/2017
 
 
 ---
@@ -31,6 +31,7 @@ O **Aspera Server On Demand** par o Azure está disponível para compra no [Azur
 
 Este tutorial orienta-o ao longo dos passos para carregar ficheiros para uma conta de armazenamento que está associada a uma conta dos Serviços de Multimédia com o serviço **Aspera Server On Demand** no Azure. 
 
+Pode encontrar um exemplo que mostra como utilizar funções de Azure com o Aspera e os Serviços de Multimédia [aqui](https://github.com/Azure-Samples/media-services-dotnet-functions-integration/tree/master/103-aspera-ingest).
 
 >[!NOTE]
 >Existe um limite para o tamanho máximo dos ficheiros suportado para processamento nos processadores de multimédia (MPs) dos Serviços de Multimédia do Azure. Veja [este](media-services-quotas-and-limitations.md) tópico para obter detalhes sobre as limitações relativas aos tamanhos de ficheiros.

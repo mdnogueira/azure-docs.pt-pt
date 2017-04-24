@@ -18,9 +18,9 @@ ms.topic: hero-article
 ms.date: 03/15/2017
 ms.author: carlrab
 translationtype: Human Translation
-ms.sourcegitcommit: 785d3a8920d48e11e80048665e9866f16c514cf7
-ms.openlocfilehash: c173f1b6937739f662eb41aa1886e66cb06ed729
-ms.lasthandoff: 04/12/2017
+ms.sourcegitcommit: 0d6f6fb24f1f01d703104f925dcd03ee1ff46062
+ms.openlocfilehash: a08fe566f4962684bc4aad220687e9cd36fc4abf
+ms.lasthandoff: 04/17/2017
 
 
 ---
@@ -41,12 +41,13 @@ Obtenha o nome de servidor totalmente qualificado para o servidor da Base de Dad
 
 1. Inicie sessão no [Portal do Azure](https://portal.azure.com/).
 2. Selecione **Bases de Dados SQL** a partir do menu do lado esquerdo e clique na sua base de dados na página **Bases de Dados SQL**. 
-3. No painel **Essentials** na página do portal do Azure da sua base de dados, localize e, em seguida, copie o **Nome do servidor**.
+3. Na página **Overview (Descrição geral)** da sua base de dados, reveja o nome de servidor totalmente qualificado, como mostrado na imagem abaixo. Pode pairar sobre o nome do servidor para aparecer a opção **Clique para copiar**.
 
    ![informações da ligação](./media/sql-database-connect-query-ssms/connection-information.png) 
 
+4. Se se tiver esquecido das informações de início de sessão do seu servidor da Base de Dados SQL do Azure, navegue para a página de servidor da Base de Dados SQL para visualizar o nome de administrador do servidor e, se necessário, repor a palavra-passe. 
 
-## <a name="connect-to-the-server-and-your-new-database"></a>Ligar ao servidor e à sua base de dados nova
+## <a name="connect-to-your-database-in-the-sql-database-logical-server"></a>Ligue à base de dados no servidor lógico da Base de Dados SQL
 
 Utilize o SQL Server Management Studio para estabelecer uma ligação ao servidor da Base de Dados SQL do Azure. 
 
@@ -65,7 +66,7 @@ Utilize o SQL Server Management Studio para estabelecer uma ligação ao servido
 
    ![ligar ao servidor](./media/sql-database-connect-query-ssms/connect.png)  
 
-3. Clique em **Opções**. Na secção **Ligar à base de dados**, introduza **mySampleDatabase** para ligar a esta base de dados que criou anteriormente.
+3. Clique em **Opções** na caixa de diálogo **Ligar ao servidor**. Na secção **Ligar à base de dados**, introduza **mySampleDatabase** para ligar a esta base de dados.
 
    ![ligar à base de dados no servidor](./media/sql-database-connect-query-ssms/options-connect-to-db.png)  
 
@@ -73,7 +74,7 @@ Utilize o SQL Server Management Studio para estabelecer uma ligação ao servido
 
    ![ligado ao servidor](./media/sql-database-connect-query-ssms/connected.png)  
 
-4. No Object Explorer, expanda as **Bases de Dados** e, em seguida, expanda **mySampleDatabase**, para ver os objetos na base de dados de exemplo.
+5. No Object Explorer, expanda as **Bases de Dados** e, em seguida, expanda **mySampleDatabase**, para ver os objetos na base de dados de exemplo.
 
 ## <a name="query-data"></a>Consultar dados
 
@@ -91,7 +92,7 @@ Utilize a declaração do Transact-SQL [SELECIONAR](https://msdn.microsoft.com/l
 
 3. Na barra de ferramentas, clique em **Executar** para obter dados das tabelas Produto e ProductCategory.
 
-    <img src="./media/sql-database-connect-query-ssms/query.png" alt="query" style="width: 780px;" />
+    ![consulta](./media/sql-database-connect-query-ssms/query.png)
 
 ## <a name="insert-data"></a>Inserir dados
 

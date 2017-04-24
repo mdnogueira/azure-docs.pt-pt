@@ -14,9 +14,9 @@ ms.topic: get-started-article
 ms.date: 02/08/2017
 ms.author: awills
 translationtype: Human Translation
-ms.sourcegitcommit: fd35f1774ffda3d3751a6fa4b6e17f2132274916
-ms.openlocfilehash: a0340359dff470551a08a8213f3a704f15f78794
-ms.lasthandoff: 03/16/2017
+ms.sourcegitcommit: 0c4554d6289fb0050998765485d965d1fbc6ab3e
+ms.openlocfilehash: 88abdb41a403f9c1dc85e574c655c532ee9b1eb5
+ms.lasthandoff: 04/13/2017
 
 
 ---
@@ -184,6 +184,54 @@ Descubra que aplicações estão a ser monitorizadas:
 
 * Transfere o SDK mais recente do Application Insights para o servidor.
 
+## <a name="questions"></a>Perguntas sobre o Monitor de Estado
+
+### <a name="what-is-status-monitor"></a>O que é o Monitor de Estado?
+
+Uma aplicação de ambiente de trabalho que instala no seu servidor Web do IIS. Ajuda-o a instrumentar e a configurar as aplicações Web. 
+
+### <a name="when-do-i-use-status-monitor"></a>Quando utilizo o Monitor de Estado?
+
+* Para instrumentar qualquer aplicação Web que esteja em execução no seu servidor IIS - mesmo se já estiver em execução.
+* Para ativar telemetria adicional para aplicações Web que tenham sido [criadas com o SDK do Application Insights](app-insights-asp-net.md) no momento da compilação. 
+
+### <a name="can-i-close-it-after-it-runs"></a>Pode fechá-lo depois de a tarefa ser executada?
+
+Sim. Depois de ter instrumentado os sites que selecionou, pode fechá-lo.
+
+Não recolhe telemetria por si só. Só configura as aplicações Web e define algumas permissões.
+
+### <a name="what-does-status-monitor-do"></a>O que faz o Monitor de Estado?
+
+Quando seleciona uma aplicação Web para o Monitor de Estado instrumentar:
+
+* Transfere e coloca os assemblagens do Application Insights e o ficheiro .config na pasta de binários da aplicação Web.
+* Modifica `web.config` para adicionar o módulo de controlo HTTP do Application Insights.
+* Permite a criação de perfis CLR para recolher chamadas de dependência.
+
+### <a name="do-i-need-to-run-status-monitor-whenever-i-update-the-app"></a>Preciso de executar o Monitor de Estado sempre que atualizar a aplicação?
+
+Não, se voltar a implementar incrementalmente. 
+
+Se selecionar a opção "eliminar ficheiros existentes" no processo de publicação, terá de voltar a executar o Monitor de Estado para configurar o Application Insights.
+
+### <a name="what-telemetry-is-collected"></a>Que telemetria é recolhida?
+
+Para aplicações que instrumenta apenas no runtime com o Monitor de Estado:
+
+* Pedidos HTTP
+* Chamadas para dependências
+* Exceções
+* Contadores de desempenho
+
+Para aplicações já instrumentadas no momento da compilação:
+
+ * Contadores de processamento.
+ * Chamadas de dependência (.NET 4.5); valores de devolução em chamadas de dependência (.NET 4.6).
+ * Valores de rastreio de pilha de exceção.
+
+[Saiba mais](http://apmtips.com/blog/2016/11/18/how-application-insights-status-monitor-not-monitors-dependencies/)
+
 ## <a name="video"></a>Vídeo
 
 > [!VIDEO https://channel9.msdn.com/events/Connect/2016/100/player]
@@ -212,5 +260,5 @@ Adicionar mais telemetria:
 [greenbrown]: app-insights-asp-net.md
 [qna]: app-insights-troubleshoot-faq.md
 [roles]: app-insights-resources-roles-access-control.md
-[usage]: app-insights-web-track-usage.md
+[usage]: app-insights-javascript.md
 

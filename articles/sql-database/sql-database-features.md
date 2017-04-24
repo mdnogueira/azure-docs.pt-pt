@@ -8,7 +8,7 @@ manager: jhubbard
 editor: 
 ms.assetid: d1a46fa4-53d2-4d25-a0a7-92e8f9d70828
 ms.service: sql-database
-ms.custom: overview
+ms.custom: features
 ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
@@ -16,148 +16,121 @@ ms.workload: data-management
 ms.date: 03/03/2017
 ms.author: carlrab; jognanay
 translationtype: Human Translation
-ms.sourcegitcommit: 757d6f778774e4439f2c290ef78cbffd2c5cf35e
-ms.openlocfilehash: 7dc5210c073a3130bfc9ffdbc9ce33e19ca5bc1a
-ms.lasthandoff: 04/10/2017
+ms.sourcegitcommit: e851a3e1b0598345dc8bfdd4341eb1dfb9f6fb5d
+ms.openlocfilehash: a1ede93b5aacf0d8a5bcf83f208f72be328ee72f
+ms.lasthandoff: 04/15/2017
 
 
 ---
 # <a name="azure-sql-database-features"></a>Funcionalidades da Base de Dados SQL do Azure
-Este tópico dispõe de uma descrição geral dos servidores lógicos  e bases de dados de Base de Dados SQL do Azure, e inclui uma matriz de suporte da funcionalidade com ligações de cada funcionalidade listada. 
 
-## <a name="what-is-an-azure-sql-database-logical-server"></a>O que é um servidor lógico da Base de Dados SQL do Azure?
-Um servidor lógico da Base de Dados SQL do Azure funciona como um ponto administrativo central para várias bases de dados. Na Base de Dados SQL, um servidor é uma construção lógica distinta de uma instância do SQL Server com a qual poderá estar familiarizado no mundo no local. Especificamente, o serviço Base de Dados SQL não dá qualquer garantia relativamente à localização das bases de dados em relação aos respetivos servidores lógicos, nem expõe qualquer acesso de nível de instância ou funcionalidades. Para obter mais informações sobre servidores lógicos de SQL do Azure, veja [Servidores lógicos](sql-database-server-overview.md). 
-
-## <a name="what-is-an-azure-sql-database"></a>O que é uma base de dados SQL do Azure?
-Cada base de dados na Base de Dados SQL do Azure está associada a um servidor lógico. A base de dados pode ser:
-
-- Uma base de dados individual com um [conjunto próprio de recursos](sql-database-what-is-a-dtu.md#what-are-database-transaction-units-dtus) (DTUs)
-- Parte de um [conjunto de bases de dados](sql-database-elastic-pool.md) que [partilha um conjunto de recursos](sql-database-what-is-a-dtu.md#what-are-elastic-database-transaction-units-edtus) (eDTUs)
-- Parte de um [conjunto aumentado horizontalmente de bases de dados partilhadas](sql-database-elastic-scale-introduction.md#horizontal-and-vertical-scaling), que podem ser bases de dados individuais ou agrupadas
-- Parte de um conjunto de bases de dados que participam num [padrão de estrutura de SaaS multi-inquilino](sql-database-design-patterns-multi-tenancy-saas-applications.md), e cujas bases de dados podem ser individuais ou agrupadas (ou ambas) 
-
-Para obter mais informações sobre as bases de dados SQL do Azure, veja [Bases de dados SQL](sql-database-overview.md).
-
-## <a name="what-features-are-supported"></a>Que funcionalidades são suportadas?
-
-As tabelas seguintes listam as principais funcionalidades da Base de Dados SQL do Azure e do SQL Server, especificam a sua suportabilidade e fornecem uma ligação para obter mais informações sobre a funcionalidade de cada plataforma. Para funcionalidades do Transact-SQL, siga a ligação da tabela para a categoria da funcionalidade. Veja também [Diferenças do Transact-SQL da Base de dados SQL do Azure](sql-database-transact-sql-information.md) para obter mais contexto sobre as razões para a falta de suporte de determinados tipos de funcionalidades.
+As tabelas seguintes listam as funcionalidades principais da Base de Dados SQL do Azure e as funcionalidades equivalentes do SQL Server - e fornecem informações sobre se é suportada cada funcionalidade específica e uma ligação para obter mais informações sobre a funcionalidade de cada plataforma. Para as diferenças do Transact-SQL considerarem a migração de uma solução de base de dados existente, consulte [Resolving Transact-SQL differences during migration to SQL Database (Resolver diferenças do Transact-SQL durante a migração para a Base de Dados SQL)](sql-database-transact-sql-information.md).
 
 Continuaremos a adicionar funcionalidades à Base de Dados SQL do Azure. Por isso, aconselhamo-lo a visitar a nossa página Web de Atualizações de Serviço do Azure e utilizar os respetivos filtros:
 
 * Filtrado para o [serviço da Base de Dados SQL](https://azure.microsoft.com/updates/?service=sql-database).
 * Filtrado para [anúncios](http://azure.microsoft.com/updates/?service=sql-database&update-type=general-availability) de Disponibilidade Geral (DG) para funcionalidades de Base de Dados SQL.
 
-> [!TIP]
-> Para testar uma base de dados existente para compatibilidade com a Base de Dados SQL do Azure, consulte [Migrate a SQL Server database to Azure (Migrar uma base de dados do SQL Server para o Azure)](sql-database-cloud-migrate.md).
->
-
 | **Funcionalidade** | **SQL Server** | **Base de Dados SQL do Azure** | 
 | --- | :---: | :---: | 
-| Georreplicação Ativa | Não suportado - consulte [Grupos de Disponibilidade AlwaysOn](https://msdn.microsoft.com/library/hh510230.aspx) | [Suportado](sql-database-geo-replication-overview.md)
-| Sempre Encriptado | [Suportado](https://msdn.microsoft.com/library/mt163865.aspx) | [Suportado](sql-database-always-encrypted.md) |
-| Grupos de Disponibilidade AlwaysOn | [Suportado](https://msdn.microsoft.com/library/hh510230.aspx) | Não suportado - consulte [Georreplicação Ativa](sql-database-geo-replication-overview.md) |
-| Anexar uma base de dados | [Suportado](https://msdn.microsoft.com/library/ms190209.aspx) | Não suportado |
-| Funções da aplicação | [Suportado](https://msdn.microsoft.com/library/ms190998.aspx) | [Suportado](https://msdn.microsoft.com/library/ms190998.aspx) |
-| Dimensionar automaticamente | Não suportado | [Suportado](sql-database-service-tiers.md) |
+| Georreplicação Ativa | Não suportado - consulte [Grupos de Disponibilidade AlwaysOn](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/always-on-availability-groups-sql-server) | [Suportado](sql-database-geo-replication-overview.md)
+| Sempre Encriptado | [Suportado](https://docs.microsoft.com/sql/relational-databases/security/encryption/always-encrypted-database-engine) | Suportado - consulte [Arquivo de cert](sql-database-always-encrypted.md) e [Cofre de chaves](sql-database-always-encrypted-azure-key-vault.md)|
+| Grupos de Disponibilidade AlwaysOn | [Suportado](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/always-on-availability-groups-sql-server) | Não suportado - consulte [Georreplicação Ativa](sql-database-geo-replication-overview.md) |
+| Anexar uma base de dados | [Suportado](https://docs.microsoft.com/sql/relational-databases/databases/attach-a-database) | Não suportado |
+| Funções da aplicação | [Suportado](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/application-roles) | [Suportado](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/application-roles) |
+| Dimensionar automaticamente | Não suportado | Suportado - consulte [Escalões de serviços](sql-database-service-tiers.md) |
 | Azure Active Directory | Não suportado | [Suportado](sql-database-aad-authentication.md) |
 | Azure Data Factory | [Suportado](../data-factory/data-factory-introduction.md) | [Suportado](../data-factory/data-factory-introduction.md) |
-| Auditoria | [Suportado](https://msdn.microsoft.com/library/cc280386.aspx) | [Suportado](sql-database-auditing.md) |
-| Ficheiro BACPAC (exportação) | [Suportado](https://msdn.microsoft.com/library/hh213241.aspx) | [Suportado](sql-database-export.md) |
-| Ficheiro BACPAC (importação) | [Suportado](https://msdn.microsoft.com/library/hh710052.aspx) | [Suportado](sql-database-import-portal.md) |
-| Instruções de CÓPIA DE SEGURANÇA e RESTAURO | [Suportado](https://msdn.microsoft.com/library/ff848768.aspx) | Não suportado |
-| Funções incorporadas | [Suportado](https://msdn.microsoft.com/library/ms174318.aspx) | [Maioria](https://msdn.microsoft.com/library/ms174318.aspx) |
-| Captura de dados de alteração | [Suportado](https://msdn.microsoft.com/library/cc645937.aspx) | Não suportado |
-| Monitorização de alterações | [Suportado](https://msdn.microsoft.com/library/bb933875.aspx) | [Suportado](https://msdn.microsoft.com/library/bb933875.aspx) |
-| Instruções de agrupamento | [Suportado](https://msdn.microsoft.com/library/ff848763.aspx) | [Suportado](https://msdn.microsoft.com/library/ff848763.aspx) |
-| Índices Columnstore | [Suportado](https://msdn.microsoft.com/library/gg492088.aspx) | [Apenas a edição Premium](https://msdn.microsoft.com/library/gg492088.aspx) |
-| CLR (Common Language Runtime) | [Suportado](https://msdn.microsoft.com/library/ms131102.aspx) | Não suportado |
-| Bases de dados contidas | [Suportado](https://msdn.microsoft.com/library/ff929071.aspx) | Incorporado |
-| Utilizadores contidos | [Suportado](https://msdn.microsoft.com/library/ff929188.aspx) | [Suportado](sql-database-manage-logins.md#non-administrator-users) |
-| Controlo de palavras-chave de linguagem de fluxo | [Suportado](https://msdn.microsoft.com/library/ms174290.aspx) | [Suportado](https://msdn.microsoft.com/library/ms174290.aspx) |
-| Consultas entre bases de dados | [Suportado](https://msdn.microsoft.com/library/dn584627.aspx) | [Consultas elásticas](sql-database-elastic-query-overview.md) |
-| Cursores | [Suportado](https://msdn.microsoft.com/library/ms181441.aspx) | [Suportado](https://msdn.microsoft.com/library/ms181441.aspx) | 
-| Compressão de dados | [Suportado](https://msdn.microsoft.com/library/cc280449.aspx) | [Suportado](https://msdn.microsoft.com/library/cc280449.aspx) |
-| Cópias de segurança de bases de dados | [Expostos para utilizadores](https://msdn.microsoft.com/library/ms187048.aspx) | [Incorporado](sql-database-automated-backups.md) |
-| Correio de base de dados | [Suportado](https://msdn.microsoft.com/library/ms189635.aspx) | Não suportado |
-| Espelhamento da base de dados | [Suportado](https://msdn.microsoft.com/library/ms189852.aspx) | Não suportado |
-| Opções de configuração de base de dados | [Suportado](https://msdn.microsoft.com/library/mt629158.aspx) | [Suportado](https://msdn.microsoft.com/library/mt629158.aspx) |
-| Data Quality Services (DQS) | [Suportado](https://msdn.microsoft.com/library/ff877925.aspx) | Não suportado |
-| Instantâneos da base de dados | [Suportado](https://msdn.microsoft.com/library/ms175158.aspx) | Não suportado |
-| Tipos de dados | [Suportado](https://msdn.microsoft.com/library/ms187752.aspx) | [Suportado](https://msdn.microsoft.com/library/ms187752.aspx) |  
-| Declarações DBCC | [Todos](https://msdn.microsoft.com/library/ms188796.aspx) | [Alguns](https://msdn.microsoft.com/library/ms188796.aspx) |
-| Declarações DDL | [Suportado](https://msdn.microsoft.com/library/ff848799.aspx) | [Maioria](https://msdn.microsoft.com/library/ff848799.aspx)
-| Acionadores DDL | [Suportado](https://msdn.microsoft.com/library/ms175941.aspx) | [Apenas base de dados](https://msdn.microsoft.com/library/ms175941.aspx) |
-| Transações distribuídas | [MS DTC](https://msdn.microsoft.com/library/ms131665.aspx) | Apenas cenários de intra Bases de Dados SQL |
-| Declarações DML | [Suportado](https://msdn.microsoft.com/library/ff848766.aspx) | [Maioria](https://msdn.microsoft.com/library/ff848766.aspx) |
-| Acionadores DML | [Suportado](https://msdn.microsoft.com/library/ms178110.aspx) | [Suportado](https://msdn.microsoft.com/library/ms178110.aspx) |
-| DMVs | [Todos](https://msdn.microsoft.com/library/ms188754.aspx) | [Alguns](https://msdn.microsoft.com/library/ms188754.aspx) |
-| conjuntos elásticos | Não suportado | [Suportado](sql-database-elastic-pool.md) |
-| Tarefas elásticas | Não suportado - consulte [Agente do SQL Server](https://msdn.microsoft.com/library/ms189237.aspx) | [Suportado](sql-database-elastic-jobs-getting-started.md) | 
-| Consultas elásticas | Não suportado - consulte [Consultas entre bases de dados](https://msdn.microsoft.com/library/dn584627.aspx) | [Suportado](sql-database-elastic-query-overview.md) |
-| Notificações de eventos | [Suportado](https://msdn.microsoft.com/library/ms186376.aspx) | [Suportado](sql-database-insights-alerts-portal.md) |
-| Expressões | [Suportado](https://msdn.microsoft.com/library/ms190286.aspx) | [Suportado](https://msdn.microsoft.com/library/ms190286.aspx) |
-| Eventos expandidos | [Suportado](https://msdn.microsoft.com/library/bb630282.aspx) | [Alguns](sql-database-xevent-db-diff-from-svr.md) |
-| Procedimentos armazenados expandidos | [Suportado](https://msdn.microsoft.com/library/ms164627.aspx) | Não suportado |
-| Grupos de ficheiros | [Suportado](https://msdn.microsoft.com/library/ms189563.aspx#Anchor_2) | [Apenas principal](https://msdn.microsoft.com/library/ms189563.aspx#Anchor_2) |
-| Filestream | [Suportado](https://msdn.microsoft.com/library/gg471497.aspx) | Não suportado |
-| Pesquisa em texto completo | [Suportado](https://msdn.microsoft.com/library/ms142571.aspx) | [Separadores de palavras de terceiros não suportados](https://msdn.microsoft.com/library/ms142571.aspx) |
-| Funções | [Suportado](https://msdn.microsoft.com/library/ms174318.aspx) | [Maioria](https://msdn.microsoft.com/library/ms174318.aspx) |
-| Otimização dentro da memória | [Suportado](https://msdn.microsoft.com/library/dn133186.aspx) | [Apenas a edição Premium](https://msdn.microsoft.com/library/dn133186.aspx) |
-| Tarefas | [Agente do SQL Server](https://msdn.microsoft.com/library/ms189237.aspx) | [Suportado](sql-database-elastic-jobs-getting-started.md) |
-| Suporte de dados JSON | [Suportado](https://msdn.microsoft.com/library/dn921897.aspx) | [Suportado](sql-database-json-features.md) |
-| Elementos de linguagem | [Suportado](https://msdn.microsoft.com/library/ff848807.aspx) | [Maioria](https://msdn.microsoft.com/library/ff848807.aspx) |  
-| Servidores ligados | [Suportado](https://msdn.microsoft.com/library/ms188279.aspx) | Não suportado - consulte [Consulta elástica](sql-database-elastic-query-horizontal-partitioning.md) |
-| Envio de registos | [Suportado](https://msdn.microsoft.com/library/ms187103.aspx) | Não suportado - consulte [Georreplicação Ativa](sql-database-geo-replication-overview.md) |
-| Comandos de gestão | [Suportado](https://msdn.microsoft.com/library/ms190286.aspx)| [Não suportado](https://msdn.microsoft.com/library/ms190286.aspx) |
-| Master Data Services (MDS) | [Suportado](https://msdn.microsoft.com/library/ff487003.aspx) | Não suportado |
-| Registo mínimo na importação em massa | [Suportado](https://msdn.microsoft.com/library/ms190422.aspx) | Não suportado |
-| Modificar dados do sistema | [Suportado](https://msdn.microsoft.com/library/ms178028.aspx) | Não suportado |
-| Operações de índice online | [Suportado](https://msdn.microsoft.com/library/ms177442.aspx) | [Tamanho da transação limitado pelo escalão de serviço](https://msdn.microsoft.com/library/ms177442.aspx) |
-| Operadores | [Suportado](https://msdn.microsoft.com/library/ms174986.aspx) | [Maioria](https://msdn.microsoft.com/library/ms174986.aspx) |
-| Restauro de base de dados para um ponto no tempo | [Suportado](https://msdn.microsoft.com/library/ms179451.aspx) | [Suportado](sql-database-recovery-using-backups.md#point-in-time-restore) |
-| Polybase | [Suportado](https://msdn.microsoft.com/library/mt143171.aspx) | [Não suportado]
-| Gestão baseada na política | [Suportado](https://msdn.microsoft.com/library/bb510667.aspx) | Não suportado |
-| Predicados | [Suportado](https://msdn.microsoft.com/library/ms189523.aspx) | [Maioria](https://msdn.microsoft.com/library/ms189523.aspx)
-| Serviços R | [Suportado](https://msdn.microsoft.com/library/mt604845.aspx)
-| Governador de recursos | [Suportado](https://msdn.microsoft.com/library/bb933866.aspx) | Não suportado |
-| Restaurar base de dados a partir da cópia de segurança | [Suportado](https://msdn.microsoft.com/library/ms187048.aspx#anchor_6) | [Apenas a partir de cópias de segurança incorporadas](sql-database-recovery-using-backups.md) |
-| Segurança a Nível da Linha | [Suportado](https://msdn.microsoft.com/library/dn765131.aspx) | [Suportado](https://msdn.microsoft.com/library/dn765131.aspx) |
-| Declarações de segurança | [Suportado](https://msdn.microsoft.com/library/ff848791.aspx) | [Alguns](https://msdn.microsoft.com/library/ff848791.aspx) |
-| Pesquisa semântica | [Suportado](https://msdn.microsoft.com/library/gg492075.aspx) | Não suportado |
-| Números de sequência | [Suportado](https://msdn.microsoft.com/library/ff878058.aspx) | [Suportado](https://msdn.microsoft.com/library/ff878058.aspx) |
-| Mediador de Serviço | [Suportado](https://msdn.microsoft.com/library/bb522893.aspx) | Não suportado |
-| Opções de configuração do servidor | [Suportado](https://msdn.microsoft.com/library/ms189631.aspx) | Não suportado - consulte [Opções de configuração de base de dados](https://msdn.microsoft.com/library/mt629158.aspx) |
-| Definir instruções | [Suportado](https://msdn.microsoft.com/library/ms190356.aspx) | [Maioria](https://msdn.microsoft.com/library/ms190356.aspx) 
-| Espacial | [Suportado](https://msdn.microsoft.com/library/bb933790.aspx) | [Suportado](https://msdn.microsoft.com/library/bb933790.aspx) |
-| Agente do SQL Server | [Suportado](https://msdn.microsoft.com/library/ms189237.aspx) | Não suportado - consulte [Tarefas elásticas](sql-database-elastic-jobs-getting-started.md) |
-| SQL Server Analysis Services (SSAS) | [Suportado](https://msdn.microsoft.com/library/bb522607.aspx) | Não suportado - consulte [Azure Analysis Services](https://azure.microsoft.com/services/analysis-services/) |
-| SQL Server Integration Services (SSIS) | [Suportado](https://msdn.microsoft.com/library/ms141026.aspx) | Não suportado - consulte [Azure Data Factory](https://azure.microsoft.com/services/data-factory/) |
-| PowerShell do SQL Server | [Suportado](https://msdn.microsoft.com/library/hh245198.aspx) | [Suportado](https://msdn.microsoft.com/library/hh245198.aspx) |
-| Gerador de perfis do SQL Server | [Suportado](https://msdn.microsoft.com/library/ms181091.aspx) | Não suportado - consulte [Eventos expandidos](https://msdn.microsoft.com/library/ms181091.aspx) |
-| Replicação do SQL Server | [Suportado](https://msdn.microsoft.com/library/ms151198.aspx) | [Apenas subscritor de replicação de instantâneo e transacional](sql-database-cloud-migrate.md) |
-| SQL Server Reporting Services (SSRS) | [Suportado](https://msdn.microsoft.com/library/ms159106.aspx) | Não suportado |
-| Procedimentos armazenados | [Suportado](https://msdn.microsoft.com/library/ms190782.aspx) | [Suportado](https://msdn.microsoft.com/library/ms190782.aspx) |
-| Funções armazenadas do sistema | [Suportado](https://msdn.microsoft.com/library/ff848780.aspx) | [Alguns](https://msdn.microsoft.com/library/ff848780.aspx) |
-| Procedimentos armazenados do sistema | [Suportado](https://msdn.microsoft.com/library/ms187961.aspx) | [Alguns](https://msdn.microsoft.com/library/ms187961.aspx) |
-| Tabelas de sistema | [Suportado](https://msdn.microsoft.com/library/ms179932.aspx) | [Alguns](https://msdn.microsoft.com/library/ms179932.aspx) |
-| Vistas de sistema | [Suportado](https://msdn.microsoft.com/library/ms177862.aspx) | [Alguns](https://msdn.microsoft.com/library/ms177862.aspx)
-| Criação de partições de tabela | [Suportado](https://msdn.microsoft.com/library/ms190787.aspx) | [Apenas um grupo de ficheiros primário](https://msdn.microsoft.com/library/ms190787.aspx) |
-| Tabelas temporárias | [Local e global](https://msdn.microsoft.com/library/ms174979.aspx#Anchor_4) | [Só local](https://msdn.microsoft.com/library/ms174979.aspx#Anchor_4) |
-| Tabelas temporais | [Suportado](https://msdn.microsoft.com/library/dn935015.aspx) | [Suportado](sql-database-temporal-tables.md) |
-| Instruções de transação | [Suportado](https://msdn.microsoft.com/library/ms174377.aspx) | [Suportado](https://msdn.microsoft.com/library/ms174377.aspx) |
-| Variáveis | [Suportado](https://msdn.microsoft.com/library/ff848809.aspx) | | [Suportado](https://msdn.microsoft.com/library/ff848809.aspx) | 
-| Encriptação de dados transparente (TDE)  | [Suportado](https://msdn.microsoft.com/library/bb934049.aspx) | [Suportado](https://msdn.microsoft.com/dn948096.aspx) |
-| Clustering de Ativação Pós-falha do Windows Server | [Suportado](https://msdn.microsoft.com/library/hh270278.aspx) | Não suportado - consulte [Georreplicação Ativa](sql-database-geo-replication-overview.md) |
-| Índices XML | [Suportado](http://msdn.microsoft.com/library/bb934097.aspx) | [Suportado](http://msdn.microsoft.com/library/bb934097.aspx) |
-| Declarações XML | [Suportado](https://msdn.microsoft.com/library/ff848798.aspx) | [Suportado](https://msdn.microsoft.com/library/ff848798.aspx) |
+| Auditoria | [Suportado](https://docs.microsoft.com/sql/relational-databases/security/auditing/sql-server-audit-database-engine) | [Suportado](sql-database-auditing.md) |
+| Ficheiro BACPAC (exportação) | [Suportado](https://docs.microsoft.com/sql/relational-databases/data-tier-applications/export-a-data-tier-application) | [Suportado](sql-database-export.md) |
+| Ficheiro BACPAC (importação) | [Suportado](https://docs.microsoft.com/sql/relational-databases/data-tier-applications/import-a-bacpac-file-to-create-a-new-user-database) | [Suportado](sql-database-import.md) |
+| CÓPIA DE SEGURANÇA | [Suportado](https://docs.microsoft.com/sql/t-sql/statements/backup-transact-sql) | Não suportado |
+| Funções incorporadas | [Suportado](https://docs.microsoft.com/sql/t-sql/functions/functions) | Maioria - consulte [funções individuais] (https://docs.microsoft.com/sql/t-sql/functions/functions) |
+| Captura de dados de alteração | [Suportado](https://docs.microsoft.com/sql/relational-databases/track-changes/about-change-data-capture-sql-server) | Não suportado |
+| Monitorização de alterações | [Suportado](https://docs.microsoft.com/sql/relational-databases/track-changes/about-change-tracking-sql-server) | [Suportado](https://docs.microsoft.com/sql/relational-databases/track-changes/about-change-tracking-sql-server) |
+| Instruções de agrupamento | [Suportado](https://docs.microsoft.com/sql/t-sql/statements/collations) | [Suportado](https://docs.microsoft.com/sql/t-sql/statements/collations) |
+| Índices Columnstore | [Suportado](https://docs.microsoft.com/sql/relational-databases/indexes/columnstore-indexes-overview) | [Apenas a edição Premium](https://docs.microsoft.com/sql/relational-databases/indexes/columnstore-indexes-overview) |
+| CLR (Common Language Runtime) | [Suportado](https://docs.microsoft.com/sql/relational-databases/clr-integration/common-language-runtime-clr-integration-programming-concepts) | Não suportado |
+| Bases de dados contidas | [Suportado](https://docs.microsoft.com/sql/relational-databases/databases/contained-databases) | [Suportado](https://docs.microsoft.com/sql/relational-databases/databases/contained-databases) |
+| Utilizadores contidos | [Suportado](https://docs.microsoft.com/sql/relational-databases/security/contained-database-users-making-your-database-portable) | [Suportado](sql-database-manage-logins.md#non-administrator-users) |
+| Controlo de palavras-chave de linguagem de fluxo | [Suportado](https://docs.microsoft.com/sql/t-sql/language-elements/control-of-flow) | [Suportado](https://docs.microsoft.com/sql/t-sql/language-elements/control-of-flow) |
+| Consultas entre bases de dados | [Suportado](https://docs.microsoft.com/sql/relational-databases/in-memory-oltp/cross-database-queries) | Parcial - consulte [Consultas elásticas](sql-database-elastic-query-overview.md) |
+| Cursores | [Suportado](https://docs.microsoft.com/sql/t-sql/language-elements/cursors-transact-sql) | [Suportado](https://docs.microsoft.com/sql/t-sql/language-elements/cursors-transact-sql) | 
+| Compressão de dados | [Suportado](https://docs.microsoft.com/sql/relational-databases/data-compression/data-compression) | [Suportado](https://docs.microsoft.com/sql/relational-databases/data-compression/data-compression) |
+| Cópias de segurança de bases de dados | [Gerido pelo utilizador](https://docs.microsoft.com/sql/relational-databases/backup-restore/back-up-and-restore-of-sql-server-databases) | [Gerido pelo serviço de Base de Dados SQL](sql-database-automated-backups.md) |
+| Correio de base de dados | [Suportado](https://docs.microsoft.com/sql/relational-databases/database-mail/database-mail) | Não suportado |
+| Espelhamento da base de dados | [Suportado](https://docs.microsoft.com/sql/database-engine/database-mirroring/database-mirroring-sql-server) | Não suportado |
+| Definições de configuração de base de dados | [Suportado](https://docs.microsoft.com/sql/t-sql/statements/alter-database-scoped-configuration-transact-sql) | [Suportado](https://docs.microsoft.com/sql/t-sql/statements/alter-database-scoped-configuration-transact-sql) |
+| Data Quality Services (DQS) | [Suportado](https://docs.microsoft.com/sql/data-quality-services/data-quality-services) | Não suportado |
+| Instantâneos da base de dados | [Suportado](https://docs.microsoft.com/sql/relational-databases/databases/database-snapshots-sql-server) | Não suportado |
+| Tipos de dados | [Suportado](https://docs.microsoft.com/sql/t-sql/data-types/data-types-transact-sql) | [Suportado](https://docs.microsoft.com/sql/t-sql/data-types/data-types-transact-sql) |  
+| Declarações DBCC | [Suportado](https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-transact-sql) | Maioria - consulte [declarações individuais](https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-transact-sql) |
+| Declarações DDL | [Suportado](https://docs.microsoft.com/sql/t-sql/statements/statements) | Maioria - consulte [Declarações individuais](https://docs.microsoft.com/sql/t-sql/statements/statements)
+| Acionadores DDL | [Suportado](https://docs.microsoft.com/sql/relational-databases/triggers/ddl-triggers) | [Apenas base de dados](https://docs.microsoft.com/sql/relational-databases/triggers/ddl-triggers) |
+| Transações distribuídas | [MS DTC](https://docs.microsoft.com/sql/relational-databases/native-client-ole-db-transactions/supporting-distributed-transactions) | Apenas cenários de intra Bases de Dados SQL |
+| Declarações DML | [Suportado](https://docs.microsoft.com/sql/t-sql/queries/queries) | Consulte - mais [declarações individuais]] (https://docs.microsoft.com/sql/t-sql/queries/queries) |
+| Acionadores DML | [Suportado](https://docs.microsoft.com/sql/relational-databases/triggers/dml-triggers) | [Suportado](https://docs.microsoft.com/sql/relational-databases/triggers/dml-triggers) |
+| DMVs | [Todos](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/system-dynamic-management-views) | Alguns - consulte [DMVs individuais](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/system-dynamic-management-views) |
+| Conjuntos elásticos | Não suportado | [Suportado](sql-database-elastic-pool.md) |
+| Tarefas elásticas | Não suportado - consulte [Agente do SQL Server](https://docs.microsoft.com/sql/ssms/agent/sql-server-agent) | [Suportado](sql-database-elastic-jobs-getting-started.md) | 
+| Consultas elásticas | Não suportado - consulte [Consultas entre bases de dados](https://docs.microsoft.com/sql/relational-databases/in-memory-oltp/cross-database-queries) | [Suportado](sql-database-elastic-query-overview.md) |
+| Notificações de eventos | [Suportado](https://docs.microsoft.com/sql/relational-databases/service-broker/event-notifications) | [Suportado](sql-database-insights-alerts-portal.md) |
+| Expressões | [Suportado](https://docs.microsoft.com/sql/t-sql/language-elements/expressions-transact-sql) | [Suportado](https://docs.microsoft.com/sql/t-sql/language-elements/expressions-transact-sql) |
+| Eventos expandidos | [Suportado](https://docs.microsoft.com/sql/relational-databases/extended-events/extended-events) | Alguns - consulte [Eventos individuais](sql-database-xevent-db-diff-from-svr.md) |
+| Procedimentos armazenados expandidos | [Suportado](https://docs.microsoft.com/sql/relational-databases/extended-stored-procedures-programming/creating-extended-stored-procedures) | Não suportado |
+| Ficheiros e grupos de ficheiros | [Suportado](https://docs.microsoft.com/sql/relational-databases/databases/database-files-and-filegroups) | [Apenas principal](https://docs.microsoft.com/sql/relational-databases/databases/database-files-and-filegroups) |
+| Filestream | [Suportado](https://docs.microsoft.com/sql/relational-databases/blob/filestream-sql-server) | Não suportado |
+| Pesquisa em texto completo | [Suportado](https://docs.microsoft.com/sql/relational-databases/search/full-text-search) | [Separadores de palavras de terceiros não suportados](https://docs.microsoft.com/sql/relational-databases/search/full-text-search) |
+| Funções | [Suportado](https://docs.microsoft.com/sql/t-sql/functions/functions) | Maioria - consulte [Funções individuais](https://docs.microsoft.com/sql/t-sql/functions/functions) |
+| Otimização dentro da memória | [Suportado](https://docs.microsoft.com/sql/relational-databases/in-memory-oltp/in-memory-oltp-in-memory-optimization) | [Apenas a edição Premium](sql-database-in-memory.md) |
+| Tarefas | Consulte [Agente do SQL Server](https://docs.microsoft.com/sql/ssms/agent/sql-server-agent) | Consulte [Tarefas elásticas](sql-database-elastic-jobs-getting-started.md) |
+| Suporte de dados JSON | [Suportado](https://docs.microsoft.com/sql/relational-databases/json/json-data-sql-server) | [Suportado](sql-database-json-features.md) |
+| Elementos de linguagem | [Suportado](https://docs.microsoft.com/sql/t-sql/language-elements/language-elements-transact-sql) | Maioria - consulte [Elementos individuais](https://docs.microsoft.com/sql/t-sql/language-elements/language-elements-transact-sql) |  
+| Servidores ligados | [Suportado](https://docs.microsoft.com/sql/relational-databases/linked-servers/linked-servers-database-engine) | Não suportado - consulte [Consulta elástica](sql-database-elastic-query-horizontal-partitioning.md) |
+| Envio de registos | [Suportado](https://docs.microsoft.com/sql/database-engine/log-shipping/about-log-shipping-sql-server) | Não suportado - consulte [Georreplicação Ativa](sql-database-geo-replication-overview.md) |
+| Master Data Services (MDS) | [Suportado](https://docs.microsoft.com/sql/master-data-services/master-data-services-overview-mds) | Não suportado |
+| Registo mínimo na importação em massa | [Suportado](https://docs.microsoft.com/sql/relational-databases/import-export/prerequisites-for-minimal-logging-in-bulk-import) | Não suportado |
+| Modificar dados do sistema | [Suportado](https://docs.microsoft.com/sql/relational-databases/databases/system-databases) | Não suportado |
+| Operações de índice online | [Suportado](https://docs.microsoft.com/sql/relational-databases/indexes/perform-index-operations-online) | [Suportado - tamanho da transação limitado pelo escalão de serviço](https://docs.microsoft.com/sql/relational-databases/indexes/perform-index-operations-online) |
+| Operadores | [Suportado](https://docs.microsoft.com/sql/t-sql/language-elements/operators-transact-sql) | Maioria - consulte [Operadores individuais](https://docs.microsoft.com/sql/t-sql/language-elements/operators-transact-sql) |
+| Restauro de base de dados para um ponto no tempo | [Suportado](https://docs.microsoft.com/sql/relational-databases/backup-restore/restore-a-sql-server-database-to-a-point-in-time-full-recovery-model) | [Suportado](sql-database-recovery-using-backups.md#point-in-time-restore) |
+| Polybase | [Suportado](https://docs.microsoft.com/sql/relational-databases/polybase/polybase-guide) | Não suportado
+| Gestão baseada na política | [Suportado](https://docs.microsoft.com/sql/relational-databases/policy-based-management/administer-servers-by-using-policy-based-management) | Não suportado |
+| Predicados | [Suportado](https://docs.microsoft.com/sql/t-sql/queries/predicates) | Maioria - consulte [Predicados individuais](https://docs.microsoft.com/sql/t-sql/queries/predicates)
+| Serviços R | [Suportado](https://docs.microsoft.com/sql/advanced-analytics/r-services/sql-server-r-services)
+| Governador de recursos | [Suportado](https://docs.microsoft.com/sql/relational-databases/resource-governor/resource-governor) | Não suportado |
+| Instruções de RESTAURO | [Suportado](https://docs.microsoft.com/sql/t-sql/statements/restore-statements-for-restoring-recovering-and-managing-backups-transact-sql) | Não suportado | 
+| Restaurar base de dados a partir da cópia de segurança | [Suportado](https://docs.microsoft.com/sql/relational-databases/backup-restore/back-up-and-restore-of-sql-server-databases#restore-data-backups) | [Apenas a partir de cópias de segurança incorporadas](sql-database-recovery-using-backups.md) |
+| Segurança a Nível da Linha | [Suportado](https://docs.microsoft.com/sql/relational-databases/security/row-level-security) | [Suportado](https://docs.microsoft.com/sql/relational-databases/security/row-level-security) |
+| Pesquisa semântica | [Suportado](https://docs.microsoft.com/sql/relational-databases/search/semantic-search-sql-server) | Não suportado |
+| Números de sequência | [Suportado](https://docs.microsoft.com/sql/relational-databases/sequence-numbers/sequence-numbers) | [Suportado](https://docs.microsoft.com/sql/relational-databases/sequence-numbers/sequence-numbers) |
+| Mediador de Serviço | [Suportado](https://docs.microsoft.com/sql/database-engine/configure-windows/sql-server-service-broker) | Não suportado |
+| Definições de configuração de servidor | [Suportado](https://docs.microsoft.com/sql/database-engine/configure-windows/server-configuration-options-sql-server) | Não suportado - consulte [Opções de configuração de base de dados](https://docs.microsoft.com/sql/t-sql/statements/alter-database-scoped-configuration-transact-sql) |
+| Definir instruções | [Suportado](https://docs.microsoft.com/sql/t-sql/statements/set-statements-transact-sql) | Maioria - consulte [Declarações individuais](https://docs.microsoft.com/sql/t-sql/statements/set-statements-transact-sql) 
+| Espacial | [Suportado](https://docs.microsoft.com/sql/relational-databases/spatial/spatial-data-sql-server) | [Suportado](https://docs.microsoft.com/sql/relational-databases/spatial/spatial-data-sql-server) |
+| Agente do SQL Server | [Suportado](https://docs.microsoft.com/sql/ssms/agent/sql-server-agent) | Não suportado - consulte [Tarefas elásticas](sql-database-elastic-jobs-getting-started.md) |
+| SQL Server Analysis Services (SSAS) | [Suportado](https://docs.microsoft.com/sql/analysis-services/analysis-services) | Não suportado - consulte [Azure Analysis Services](https://azure.microsoft.com/services/analysis-services/) |
+| SQL Server Integration Services (SSIS) | [Suportado](https://docs.microsoft.com/sql/integration-services/sql-server-integration-services) | Não suportado - consulte [Azure Data Factory](https://azure.microsoft.com/services/data-factory/) |
+| PowerShell do SQL Server | [Suportado](https://docs.microsoft.com/sql/relational-databases/scripting/sql-server-powershell) | [Suportado](https://docs.microsoft.com/sql/relational-databases/scripting/sql-server-powershell) |
+| Gerador de perfis do SQL Server | [Suportado](https://docs.microsoft.com/sql/tools/sql-server-profiler/sql-server-profiler) | Não suportado - consulte [Eventos expandidos](sql-database-xevent-db-diff-from-svr.md) |
+| Replicação do SQL Server | [Suportado](https://docs.microsoft.com/sql/relational-databases/replication/sql-server-replication) | [Apenas subscritor de replicação de instantâneo e transacional](sql-database-cloud-migrate.md) |
+| SQL Server Reporting Services (SSRS) | [Suportado](https://docs.microsoft.com/sql/reporting-services/create-deploy-and-manage-mobile-and-paginated-reports) | Não suportado |
+| Procedimentos armazenados | [Suportado](https://docs.microsoft.com/sql/relational-databases/stored-procedures/stored-procedures-database-engine) | [Suportado](https://docs.microsoft.com/sql/relational-databases/stored-procedures/stored-procedures-database-engine) |
+| Funções armazenadas do sistema | [Suportado](https://docs.microsoft.com/sql/relational-databases/system-functions/system-functions-for-transact-sql) | Alguns - consulte [Função individual](https://docs.microsoft.com/sql/relational-databases/system-functions/system-functions-for-transact-sql) |
+| Procedimentos armazenados do sistema | [Suportado](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/system-stored-procedures-transact-sql) | Alguns - consulte [Procedimento individual armazenado](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/system-stored-procedures-transact-sql) |
+| Tabelas de sistema | [Suportado](https://docs.microsoft.com/sql/relational-databases/system-tables/system-tables-transact-sql) | Alguns - consulte [Tabela individual](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/system-stored-procedures-transact-sql) |
+| Vistas de catálogo de sistema | [Suportado](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/catalog-views-transact-sql) | Alguns - consulte [Vistas individuais](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/catalog-views-transact-sql)
+| Criação de partições de tabela | [Suportado](https://docs.microsoft.com/sql/relational-databases/partitions/partitioned-tables-and-indexes) | Suportado - [Apenas um grupo de ficheiros primário](https://docs.microsoft.com/sql/relational-databases/partitions/partitioned-tables-and-indexes) |
+| Tabelas temporárias | [Local e global](https://docs.microsoft.com/sql/t-sql/statements/create-table-transact-sql#temporary-tables) | [Só local](https://docs.microsoft.com/sql/t-sql/statements/create-table-transact-sql#temporary-tables) |
+| Tabelas temporais | [Suportado](https://docs.microsoft.com/sql/relational-databases/tables/temporal-tables) | [Suportado](sql-database-temporal-tables.md) |
+| Transações | [Suportado](https://docs.microsoft.com/sql/t-sql/language-elements/transactions-transact-sql) | [Suportado](https://docs.microsoft.com/sql/t-sql/language-elements/transactions-transact-sql) |
+| Variáveis | [Suportado](https://docs.microsoft.com/sql/t-sql/language-elements/variables-transact-sql) | [Suportado](https://docs.microsoft.com/sql/t-sql/language-elements/variables-transact-sql) | 
+| Encriptação de dados transparente (TDE)  | [Suportado](https://docs.microsoft.com/sql/relational-databases/security/encryption/transparent-data-encryption-tde) | [Suportado](https://docs.microsoft.com/sql/relational-databases/security/encryption/transparent-data-encryption-tde) |
+| Clustering de Ativação Pós-falha do Windows Server | [Suportado](https://docs.microsoft.com/sql/sql-server/failover-clusters/windows/windows-server-failover-clustering-wsfc-with-sql-server) | Não suportado - consulte [Georreplicação Ativa](sql-database-geo-replication-overview.md) |
+| Índices XML | [Suportado](https://docs.microsoft.com/sql/t-sql/statements/create-xml-index-transact-sql) | [Suportado](https://docs.microsoft.com/sql/t-sql/statements/create-xml-index-transact-sql) |
 
 ## <a name="next-steps"></a>Passos seguintes
 
 - Para obter informações sobre o serviço Base de Dados SQL do Azure, veja [O que é a Base de Dados SQL?](sql-database-technical-overview.md)
-- Para obter uma descrição geral dos servidores lógicos do SQL Azure, veja [Descrição geral do servidor lógico da Base de Dados SQL](sql-database-server-overview.md)
-- Para obter uma descrição geral das bases de dados SQL do Azure, veja [Descrição geral da Base de Dados SQL](sql-database-overview.md)
-- Para obter informações sobre o suporte de Transact-SQL e as diferenças, veja [Diferenças do Transact-SQL da Base de Dados SQL do Azure](sql-database-transact-sql-information.md).
-- Para obter informações sobre quotas e limitações de recursos específicas com base na sua **camada de serviços**. Para obter uma descrição geral de camadas de serviços, veja [Camadas de serviços da Base de Dados SQL](sql-database-service-tiers.md).
-- Para obter uma descrição geral da segurança, veja [Descrição Geral da Segurança da Base de Dados SQL do Azure](sql-database-security-overview.md).
-- Para obter informações sobre a disponibilidade de controlador e o suporte da Base de Dados SQL, veja [Bibliotecas de Ligação para a Base de Dados SQL e o SQL Server](sql-database-libraries.md).
+- Para obter informações sobre o suporte e as diferenças do Transact-SQL, veja [Resolving Transact-SQL differences during migration to SQL Database (Resolver as diferenças do Transact-SQL durante a migração para a Base de Dados SQL)](sql-database-transact-sql-information.md).
 

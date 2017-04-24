@@ -11,12 +11,12 @@ ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 04/06/2017
+ms.date: 04/12/2017
 ms.author: awills
 translationtype: Human Translation
-ms.sourcegitcommit: 538f282b28e5f43f43bf6ef28af20a4d8daea369
-ms.openlocfilehash: cfe70aa09b21aa914e3705bf7969583c7a1bbd52
-ms.lasthandoff: 04/07/2017
+ms.sourcegitcommit: 0c4554d6289fb0050998765485d965d1fbc6ab3e
+ms.openlocfilehash: 5893f8126b0f18ac0d56e434a8e495380bd605d5
+ms.lasthandoff: 04/13/2017
 
 
 ---
@@ -34,23 +34,26 @@ Existem dois tipos de testes Web:
 
 Pode criar até dez testes por recurso de aplicação.
 
-## <a name="create"></a>1. Criar um recurso para os relatórios de teste
-Ignore este passo se já tiver [configurado um recurso do Application Insights][start] para esta aplicação e quiser ver os relatórios de disponibilidade no mesmo local.
+## <a name="create"></a>1. Abra um recurso para os relatórios de teste Web
 
-Inicie sessão no [Microsoft Azure](http://azure.com), aceda ao [portal do Azure](https://portal.azure.com) e crie um recurso do Application Insights.
+**Se já tiver configurado o Application Insights configurado** para a sua aplicação Web, abra o recurso do Application Insights no [portal do Azure](https://portal.azure.com).
+
+**Ou, se quiser ver os relatórios num novo recurso,** inicie sessão no [Microsoft Azure](http://azure.com), aceda ao [portal do Azure](https://portal.azure.com) e crie um recurso do Application Insights.
 
 ![Novo > Application Insights](./media/app-insights-monitor-web-app-availability/11-new-app.png)
 
 Clique em **Todos os recursos** para abrir o painel Descrição geral do novo recurso.
 
 ## <a name="setup"></a>2. Criar um teste de ping do URL
-No recurso do Application Insights, procure o mosaico Disponibilidade. Clique no mosaico para abrir o painel Testes Web da aplicação e adicione um teste Web.
+Abra o painel de Disponibilidade e adicione um teste Web.
 
 ![Indique, pelo menos, o URL do seu site](./media/app-insights-monitor-web-app-availability/13-availability.png)
 
-* O **URL** tem de estar visível na Internet pública. Pode incluir uma cadeia de consulta (assim, pode, por exemplo, testar um pouco a base de dados). Se o URL remeter para um redirecionamento, iremos segui-lo até dez redirecionamentos.
-* **Analisar pedidos dependentes**: imagens, scripts, ficheiros de estilo e outros recursos da página são pedidos como parte do teste e o tempo de resposta registado inclui todos esses períodos. O teste falha se todos estes recursos não puderem ser transferidos com êxito no tempo limite para a realização do teste completo.
-* **Permitir repetição de tentativas**: quando o teste falhar, será feita uma nova tentativa após um curto intervalo. Uma falha só é comunicada após três tentativas falhadas sucessivas. Os testes subsequentes são realizados à frequência habitual de teste. A repetição encontra-se temporariamente suspensa até ao próximo êxito. Esta regra é aplicada de forma independente em cada localização de teste. (Recomendamos esta definição. Em média, cerca de 80% das falhas desaparecem aquando da repetição.)
+* **O URL** pode ser qualquer página Web que pretender testar, mas tem de estar visível a partir da Internet pública. O URL pode incluir uma cadeia de consulta (assim, pode, por exemplo, testar um pouco a base de dados). Se o URL remeter para um redirecionamento, iremos segui-lo até dez redirecionamentos.
+* **Analisar pedidos dependentes**: se esta opção for selecionada, o teste solicitará imagens, scripts, ficheiros de estilo e outros ficheiros que fazem parte da página Web em teste. O tempo de resposta gravado inclui o tempo necessário para obter estes ficheiros. O teste falha se todos estes recursos não puderem ser transferidos com êxito no tempo limite para a realização do teste completo. 
+
+    Se a opção não estiver selecionada, o teste pede apenas o ficheiro no URL especificado.
+* **Permitir repetição de tentativas**: se esta opção estiver selecionada, quando o teste falhar, será feita uma nova tentativa após um curto intervalo. Uma falha só é comunicada após três tentativas falhadas sucessivas. Os testes subsequentes são realizados à frequência habitual de teste. A repetição encontra-se temporariamente suspensa até ao próximo êxito. Esta regra é aplicada de forma independente em cada localização de teste. Recomendamos esta opção. Em média, cerca de 80% das falhas desaparecem aquando da repetição.
 * **Frequência de teste**: define a frequência de execução do teste em cada localização de teste. Com uma frequência de cinco minutos e cinco localizações de teste, o site é testado, em média, a cada minuto.
 * As **Localizações de teste** são os locais a partir de onde os nossos servidores enviam pedidos Web ao seu URL. Escolha mais do que uma localização para poder diferenciar os problemas no site dos problemas de rede. Pode selecionar até 16 localizações.
 * **Critérios de êxito**:
@@ -67,14 +70,23 @@ No recurso do Application Insights, procure o mosaico Disponibilidade. Clique no
 ### <a name="test-more-urls"></a>Testar mais URLs
 Adicionar mais testes. Para o exemplo, tal como para o teste da sua home page, pode verificar se a sua base de dados está em execução testando o URL de uma pesquisa.
 
+
 ## <a name="monitor"></a>3. Ver resultados do teste Web
-Passados 1 a 2 minutos, os resultados são apresentados no painel Teste Web.
+
+Depois de 5 minutos, clique em **Atualizar** para ver resultados do teste. 
 
 ![Resultados do resumo no painel principal](./media/app-insights-monitor-web-app-availability/14-availSummary.png)
 
 Clique em qualquer barra no gráfico de resumo para obter uma vista mais detalhada desse período de tempo.
 
-Estes gráficos reúnem os resultados de todos os testes Web desta aplicação.
+## <a name="edit"></a> Inspecionar e editar testes
+
+Na página de resumo, selecione um teste específico. Daí, pode ver os resultados específicos e editar ou desativar temporariamente.
+
+![Editar ou desativar um teste Web](./media/app-insights-monitor-web-app-availability/19-availEdit.png)
+
+Pode querer desativar os testes Web enquanto estiver a efetuar a manutenção do seu serviço.
+
 
 ## <a name="failures"></a>Se vir falhas
 Clique num ponto vermelho.
@@ -103,7 +115,9 @@ Pode monitorizar um cenário que envolva uma sequência de URLs. Por exemplo, se
 
 Para criar um teste com vários passos, registe o cenário com o Visual Studio Enterprise e, em seguida, carregue o registo no Application Insights. O Application Insights reproduz o cenário de tempos a tempos e verifica as respostas.
 
-Tenha em atenção que não pode utilizar funções codificadas nos testes: os passos do cenário devem ser contidos como um script no ficheiro .webtest.
+> [!NOTE]
+> Não pode utilizar funções codificadas ou ciclos no seus testes. O teste tem de estar contido completamente no script .webtest. No entanto, pode utilizar plug-ins standard.
+>
 
 #### <a name="1-record-a-scenario"></a>1. Registar um cenário
 Utilize o Visual Studio Enterprise para guardar uma sessão Web.
@@ -144,13 +158,19 @@ Utilize o Visual Studio Enterprise para guardar uma sessão Web.
 
     Defina as localizações do teste, a frequência e os parâmetros de alerta da mesma forma como para os testes de ping.
 
-Veja os resultados do teste e as eventuais falhas da mesma forma como para os testes com URL único.
+#### <a name="3-see-the-results"></a>3. Veja os resultados
 
-Um teste demasiado demorado é um motivo comum de falha. Não pode levar mais do dois minutos.
+Veja os resultados do teste e as eventuais falhas da mesma forma que os testes com URL único.
 
-Não se esqueça de que todos os recursos de uma página devem ser carregados corretamente para que o teste seja bem sucedido, incluindo scripts, folhas de estilo, imagens e assim sucessivamente.
+Além disso, pode transferir os resultados do teste para visualizá-los no Visual Studio.
 
-Tenha em atenção que o teste Web deve estar completamente contido no ficheiro .webtest: não pode utilizar funções codificadas no teste.
+#### <a name="too-many-failures"></a>Tem demasiadas falhas?
+
+* Um teste demasiado demorado é um motivo comum de falha. Não pode levar mais do dois minutos.
+
+* Não se esqueça de que todos os recursos de uma página devem ser carregados corretamente para que o teste seja bem sucedido, incluindo scripts, folhas de estilo, imagens e assim sucessivamente.
+
+* O teste Web deve estar completamente contido no script .webtest: não pode utilizar funções codificadas no teste.
 
 ### <a name="plugging-time-and-random-numbers-into-your-multi-step-test"></a>Ligar a hora e números aleatórios ao teste com vários passos
 Suponhamos que está a testar uma ferramenta que obtém dados dependentes da hora, tais como stocks de um feed externo. Ao gravar o teste Web, tem de utilizar horas específicas, embora sejam definidas como parâmetros do teste, StartTime e EndTime.
@@ -211,12 +231,6 @@ Se o teste tiver de iniciar sessão com a OAuth, a abordagem geral será:
 * Parametrizar os tokens definindo o parâmetro quando o token é devolvido do autenticador e utilizando-o na consulta do site.
   (O Visual Studio tenta parametrizar o teste, mas não parametriza corretamente os tokens.)
 
-## <a name="edit"></a> Editar ou desativar um teste
-Abra um teste individual para editá-lo ou desativá-lo.
-
-![Editar ou desativar um teste Web](./media/app-insights-monitor-web-app-availability/19-availEdit.png)
-
-Pode querer desativar os testes Web enquanto estiver a efetuar a manutenção do seu serviço.
 
 ## <a name="performance-tests"></a>Testes de desempenho
 Pode executar um teste de carga no seu Website. Como o teste de disponibilidade, pode enviar pedidos simples ou pedidos com vários passos a partir dos nossos pontos a nível mundial. Ao contrário de um teste de disponibilidade, são enviados muitos pedidos, simulando vários utilizadores em simultâneo.
@@ -229,7 +243,7 @@ Quando o teste estiver concluído, são-lhe apresentados tempos de resposta e ta
 * [Utilizar scripts do PowerShell para configurar um teste Web](app-insights-powershell.md#add-an-availability-test) automaticamente.
 * Configure um [webhook](../monitoring-and-diagnostics/insights-webhooks-alerts.md) que será chamado sempre que for gerado um alerta.
 
-## <a name="questions-problems"></a>Tem dúvidas? Problemas?
+## <a name="qna"></a>Tem dúvidas? Problemas?
 * *Posso chamar um código a partir do meu teste Web?*
 
     Não. Os passos do teste devem estar no ficheiro .webtest. E não pode chamar outros testes Web nem utilizar ciclos. No entanto, existem vários plug-ins que poderão ser úteis.

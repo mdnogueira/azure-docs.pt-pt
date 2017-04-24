@@ -18,9 +18,9 @@ ms.topic: get-started-article
 ms.date: 02/27/2017
 ms.author: jgao
 translationtype: Human Translation
-ms.sourcegitcommit: 0d8472cb3b0d891d2b184621d62830d1ccd5e2e7
-ms.openlocfilehash: f85f6484db177285e0fd64a15991a7eb227cd29b
-ms.lasthandoff: 03/21/2017
+ms.sourcegitcommit: 0c4554d6289fb0050998765485d965d1fbc6ab3e
+ms.openlocfilehash: f5c36624360b4a09819ea70f3ac23f943688c120
+ms.lasthandoff: 04/13/2017
 
 
 ---
@@ -106,6 +106,9 @@ O contentor de blobs predefinido armazena informações específicas do cluster 
 Ao criar um cluster do HDInsight a partir do Portal, tem as opções (tal como apresentado abaixo) de fornecer os detalhes da conta de armazenamento. Também pode especificar se pretende uma conta de armazenamento adicional associada ao cluster e, se assim for, escolher de entre o Data Lake Store ou outro Azure Storage Blob como armazenamento adicional.
 
 ![origem de dados de criação do HDInsight hadoop](./media/hdinsight-hadoop-use-blob-storage/hdinsight.provision.data.source.png)
+
+> [!WARNING]
+> Não é suportado utilizar uma conta de armazenamento adicional numa localização diferente do cluster do HDInsight.
 
 #### <a name="using-azure-cli"></a>Utilizar a CLI do Azure
 [!INCLUDE [use-latest-version](../../includes/hdinsight-use-latest-cli.md)]
@@ -285,6 +288,8 @@ $clusterName = "<HDInsightClusterName>"
 
 Ao criar um cluster do HDInsight, especifica a conta de armazenamento do Azure que pretende associar com o mesmo. Além desta conta de armazenamento, pode adicionar mais contas de armazenamento da mesma subscrição do Azure ou de diferentes subscrições do Azure durante o processo de criação ou depois de um cluster ter sido criado. Para obter instruções sobre como adicionar mais contas do Storage, consulte [Create HDInsight clusters (Criar clusters do HDInsight)](hdinsight-hadoop-provision-linux-clusters.md).
 
+> [!WARNING]
+> Não é suportado utilizar uma conta de armazenamento adicional numa localização diferente do cluster do HDInsight.
 
 ## <a name="using-azure-data-lake-store-with-hdinsight-clusters"></a>Utilizar o Azure Data Lake Store com clusters do HDInsight
 
