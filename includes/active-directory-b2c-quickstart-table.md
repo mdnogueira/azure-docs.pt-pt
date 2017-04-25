@@ -6,8 +6,3 @@
 | [Chamar uma API Web a partir de uma aplicação Web .NET](../articles/active-directory-b2c/active-directory-b2c-devquickstarts-web-api-dotnet.md) | [Adicionar Início de Sessão e Inscrição num SPA do Javascript (NodeJS)](https://github.com/Azure-Samples/active-directory-b2c-javascript-singlepageapp-nodejs-webapi)| |
 | [Adicionar Subscrições e Inícios de Sessão a uma aplicação ASP.NET Core](https://github.com/azure-samples/active-directory-dotnet-webapp-openidconnect-aspnetcore-b2c) | | |
 
-
-
-<!--HONumber=Feb17_HO1-->
-
-
