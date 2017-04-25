@@ -66,7 +66,7 @@ A última definição de aplicação é utilizada para ativar o Shim de Memcache
 
 ![AppSetting MEMCACHESHIM_REDIS_ENABLE da Aplicação Web](./media/web-sites-connect-to-redis-using-memcache-protocol/6-azure-website-appsettings-enable-shim.png)
 
-Depois de terminar de adicionar as&3; (três) definições de aplicação, clique em **Guardar**.
+Depois de terminar de adicionar as 3 (três) definições de aplicação, clique em **Guardar**.
 
 ## <a name="enable-memcache-extension-for-php"></a>Ativar a extensão de Memcache para PHP
 Para que a aplicação fale o protocolo de Memcache, é necessário instalar a extensão de Memcache para PHP - a estrutura de idioma para o seu site WordPress.
@@ -106,7 +106,7 @@ Na caixa de pesquisa, escreva **memcached** e prima **Enter**.
 
 ![Adicionar Novo Plug-in WordPress](./media/web-sites-connect-to-redis-using-memcache-protocol/11-wordpress-add-new-plugin.png)
 
-Localize a ** Cache de Objetos Memcached** na lista e, em seguida, clique em **Instalar Agora**.
+Localize a **Cache de Objetos Memcached** na lista e, em seguida, clique em **Instalar Agora**.
 
 ![Instalar o Plug-in do Memcache WordPress](./media/web-sites-connect-to-redis-using-memcache-protocol/12-wordpress-install-memcache-plugin.png)
 
