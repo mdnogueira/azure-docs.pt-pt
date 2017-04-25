@@ -40,8 +40,3 @@
     ![Resumo](./media/site-recovery-add-configuration-server/combined-wiz10.png)
 
 Após a conclusão de registo, o servidor é apresentado no painel **Definições** > **Servidores** no cofre.
-
-
-<!--HONumber=Feb17_HO4-->
-
-
