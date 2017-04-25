@@ -11,7 +11,3 @@ No portal do Azure, pode ver o estado da ligação de um Gateway de VPN de VNet 
 5. Para ver mais informações sobre a ligação, clique no nome da mesma para abrir o painel **Ligação de Rede de VPNs**.
 
     ![Connection status more](./media/vpn-gateway-verify-connection-azureportal-classic/connections4.png "Connection status more info")
-
-<!--HONumber=Jan17_HO5-->
-
-

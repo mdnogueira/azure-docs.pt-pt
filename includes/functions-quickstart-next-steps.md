@@ -10,7 +10,3 @@ Este início rápido demonstra uma execução simples de uma função básica ac
   Aborda os planos de serviço disponíveis com as Funções do Azure, incluindo o plano de alojamento de Consumo e como escolher o plano adequado. 
 * [O que é o Serviço de Aplicações do Azure?](../articles/app-service/app-service-value-prop-what-is.md)  
   As Funções do Azure utilizam a plataforma do Serviço de Aplicações do Azure para funcionalidades essenciais como implementações, variáveis de ambiente e diagnósticos. 
-
-<!--HONumber=Feb17_HO1-->
-
-
