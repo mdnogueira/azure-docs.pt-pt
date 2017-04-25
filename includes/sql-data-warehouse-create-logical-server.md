@@ -45,8 +45,3 @@
 
     ![botão criar](./media/sql-data-warehouse-create-logical-server/create.png)
 
-
-
-<!--HONumber=Feb17_HO3-->
-
-
