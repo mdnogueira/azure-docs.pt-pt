@@ -15,9 +15,9 @@ ms.topic: get-started-article
 ms.date: 04/14/2017
 ms.author: magoedte
 translationtype: Human Translation
-ms.sourcegitcommit: 0d6f6fb24f1f01d703104f925dcd03ee1ff46062
-ms.openlocfilehash: 1876b78186da3aa6c0ae9dc7de3b7ab7e46888bb
-ms.lasthandoff: 04/17/2017
+ms.sourcegitcommit: b0c27ca561567ff002bbb864846b7a3ea95d7fa3
+ms.openlocfilehash: 0f80ac93e3ff1ee95477e4fa5dbe21d61ddf8ead
+ms.lasthandoff: 04/25/2017
 
 ---
 
@@ -147,7 +147,7 @@ Existem formas diferentes de criar uma conta de Automatização no portal do Azu
 |-------|-------------|
 | Selecione Automatização & Controlo a partir do Mercado | Uma oferta que cria uma conta de Automatização e uma área de trabalho do OMS ligados entre si no mesmo grupo de recursos e região.  Também implementa as soluções de Gestão de Atualização & Controlo de Alterações, que estão ativadas por predefinição. |
 | Selecione Automatização a partir do Mercado | Cria uma conta de Automatização num grupo de recursos novo ou existente que não está ligado a uma área de trabalho do OMS e não inclui as soluções disponíveis da oferta de Automatização & Controlo. Esta é uma configuração básica que lhe apresenta a Automatização e pode ajudá-lo a aprender a escrever runbooks, configurações DSC e a utilizar as capacidades do serviço. |
-| Soluções de Gestão Selecionadas | Se selecionar uma solução – **[Gestão de Atualizações](../operations-management-suite/oms-solution-update-management.md)**, **[Iniciar/Parar VMs durante as horas de inatividade](automation-solution-vm-management.md)** ou **[Controlo de Alterações](../log-analytics/log-analytics-change-tracking.md)** ser-lhe-á pedido para selecionar uma área de trabalho existente de Automatização e OMS ou oferecida a opção para criar ambos, conforme necessário para a solução ser implementada na sua subscrição. |
+| Soluções de Gestão Selecionadas | Se selecionar uma solução – **[Gestão de Atualizações](../operations-management-suite/oms-solution-update-management.md)**,  **[Iniciar/Parar VMs durante as horas de inatividade](automation-solution-vm-management.md)** ou **[Controlo de Alterações](../log-analytics/log-analytics-change-tracking.md)**  ser-lhe-á pedido para selecionar uma área de trabalho existente de Automatização e OMS ou oferecida a opção para criar ambos, conforme necessário para a solução ser implementada na sua subscrição. |
 
 Este tópico explica-lhe como criar uma conta de Automatização e uma área de trabalho do OMS ao integrar a oferta de Controlo & Automatização.  Para criar uma conta de Automatização para fins de teste ou para pré-visualizar o serviço, reveja o seguinte artigo [Create standalone Automation account (Criar conta de Automatização autónoma)](automation-create-standalone-account.md).  
 
@@ -169,7 +169,7 @@ O método recomendado para carregar a Automatização é selecionar a oferta de 
 
 4. Depois de ler a descrição da oferta, clique em **Criar**.  
 
-5. No painel de definições **Automatização & Controlo**, selecione **Área de trabalho do OMS**.  No painel **Áreas de Trabalho do OMS**, selecione uma área de trabalho do OMS ligada à mesma subscrição do Azure da qual a conta de Automatização faz parte ou crie uma área de trabalho do OMS.  Se não tiver uma área de trabalho do OMS, selecione **Criar Nova Área de Trabalho** e, no painel **Área de Trabalho do OMS**, faça o seguinte: 
+5. No painel de definições **Automatização & Controlo**, selecione **Área de trabalho do OMS**.  No painel **Áreas de Trabalho do OMS**, selecione uma área de trabalho do OMS ligada à mesma subscrição do Azure da qual a conta de Automatização faz parte ou crie uma área de trabalho do OMS.  Se não tiver uma área de trabalho do OMS, selecione **Criar Nova Área de Trabalho** e, no painel **Área de Trabalho do OMS** , faça o seguinte: 
    - Especifique um nome para a **Área de Trabalho do OMS**.
    - Selecione uma **Subscrição** à qual ligar ao escolher na lista pendente se a predefinição selecionada não é adequada.
    - Em **Grupo de Recursos**, pode criar um grupo de recursos ou selecionar um já existente.  
@@ -211,7 +211,7 @@ Quando a conta de Automatização é criada com sucesso, são criados vários re
 | AzureClassicAutomationTutorial Runbook | Um runbook gráfico de exemplo que obtém todas as VMs que são criadas com o modelo de implementação clássica numa subscrição, utilizando a conta Run As Clássica (certificado) e que, em seguida, escreve o nome e o estado da VM. |
 | AzureClassicAutomationTutorial Script Runbook | Um runbook do PowerShell de exemplo que obtém todas as VMs clássicas numa subscrição, utilizando a conta Run As Clássica (certificado) e, em seguida, escreve o nome e o estado da VM. |
 | AzureClassicRunAsCertificate | O recurso de certificado criado automaticamente que utiliza para autenticar com o Azure, para que possa gerir os recursos clássicos do Azure a partir de runbooks. O certificado tem um tempo de vida de um ano. |
-| AzureClassicRunAsConnection | O recurso de ligação criado automaticamente que utiliza para autenticar com o Azure, para que possa gerir os recursos clássicos do Azure a partir de runbooks. |autentique com o Azure, para que possa gerir recursos clássicos do Azure a partir dos runbooks. |
+| AzureClassicRunAsConnection | O recurso de ligação criado automaticamente que utiliza para autenticar com o Azure, para que possa gerir os recursos clássicos do Azure a partir de runbooks.|
 
 ## <a name="next-steps"></a>Passos seguintes
 * Pode confirmar que a sua nova conta de Automatização pode autenticar em relação a recursos do Azure, através da consulta de [test Azure Automation Run As account authentication (testar a autenticação da conta Run As de Automatização do Azure)](automation-verify-runas-authentication.md).
