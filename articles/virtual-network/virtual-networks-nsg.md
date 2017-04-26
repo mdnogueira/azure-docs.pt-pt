@@ -262,5 +262,5 @@ Uma vez que alguns dos NSGs estão associados a NICs individuais, as regras dest
 * [Deploy NSGs (Resource Manager)](virtual-networks-create-nsg-arm-pportal.md) (Implementar NSGs [Resource Manager]).
 * [Deploy NSGs (classic)](virtual-networks-create-nsg-classic-ps.md) (Implementar NSGs [clássica]).
 * [Manage NSG logs](virtual-network-nsg-manage-log.md) (Gerir registos de NSGs).
-* [Troubleshoot NSGs] (virtual-network-nsg-troubleshoot-portal.md) [Resolver problemas de NSGs] (virtual-network-nsg-troubleshoot-portal.md)
+* [Troubleshoot NSGs] (virtual-network-nsg-troubleshoot-portal.md) (Resolver problemas de NSGs)
 
