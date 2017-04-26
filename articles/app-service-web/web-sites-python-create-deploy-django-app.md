@@ -25,7 +25,7 @@ ms.lasthandoff: 01/20/2017
 # <a name="creating-web-apps-with-django-in-azure"></a>Criar Web Apps com o Django no Azure
 Este tutorial descreve como começar a executar o Python nas [Web Apps do App Service do Azure](http://go.microsoft.com/fwlink/?LinkId=529714). As Web Apps fornecem um alojamento gratuito e uma implementação rápida e pode utilizar o Python! À medida que a sua aplicação cresce, pode mudar para o alojamento pago e também pode integrar com todos os outros serviços do Azure.
 
-Irá criar uma aplicação utilizando a estrutura Web Django (ver versões alternativas deste tutorial para [Balão](web-sites-python-create-deploy-flask-app.md) e [Garrafa](web-sites-python-create-deploy-bottle-app.md)). Irá criar a aplicação Web a partir do Azure Marketplace, configurar a implementação de Git e clonar o repositório localmente. Em seguida, irá executar a aplicação localmente, efetuar alterações, confirmá-las e enviá-las para o Azure. O tutorial mostra como o fazer a partir do Windows ou Mac/Linux.
+Irá criar uma aplicação utilizando a estrutura Web Django (ver versões alternativas deste tutorial para [Flask](web-sites-python-create-deploy-flask-app.md) e [Bottle](web-sites-python-create-deploy-bottle-app.md)). Irá criar a aplicação Web a partir do Azure Marketplace, configurar a implementação de Git e clonar o repositório localmente. Em seguida, irá executar a aplicação localmente, efetuar alterações, confirmá-las e enviá-las para o Azure. O tutorial mostra como o fazer a partir do Windows ou Mac/Linux.
 
 [!INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
