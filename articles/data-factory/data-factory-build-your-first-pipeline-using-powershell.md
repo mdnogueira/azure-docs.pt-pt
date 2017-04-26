@@ -398,7 +398,7 @@ Neste tutorial, criou uma fábrica de dados do Azure para processar dados execut
 
 1. Criou uma **fábrica de dados** do Azure.
 2. Criar dois **serviços ligados**:
-   1. O serviço ligado do ** Storage do Azure** para ligar o seu armazenamento de blobs do Azure que contém ficheiros de entrada/saída da fábrica de dados.
+   1. O serviço ligado do **Storage do Azure** para ligar o seu armazenamento de blobs do Azure que contém ficheiros de entrada/saída da fábrica de dados.
    2. O serviço ligado do **Azure HDInsight** a pedido para ligar um cluster de Hadoop do HDInsight a pedido à fábrica de dados. O Azure Data Factory cria um cluster de Hadoop do HDInsight para processar os dados de entrada e produzir dados de saída.
 3. Criar dois **conjuntos de dados**, que descrevem os dados de entrada e de saída da atividade do HDInsight Hive no pipeline.
 4. Criar um **pipeline** com uma atividade do **Ramo de Registo do HDInsight**.
