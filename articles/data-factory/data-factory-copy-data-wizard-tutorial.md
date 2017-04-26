@@ -112,7 +112,7 @@ Neste passo, irá utilizar o Portal do Azure para criar uma fábrica de dados do
 7. Na página **Definições do formato de ficheiro**, pode ver os delimitadores e o esquema que é detetado automaticamente pelo assistente ao analisar o ficheiro. Também pode introduzir os delimitadores manualmente para o Assistente de Cópia parar a deteção automática ou para substituir. Clique em **Seguinte** depois de rever os delimitadores e pré-visualizar os dados. 
    
     ![Ferramenta Copiar – Definições do formato de ficheiro](./media/data-factory-copy-data-wizard-tutorial/copy-tool-file-format-settings.png)  
-8. Na página de Arquivo de dados de destino, selecione ** Base de Dados SQL do Azure** e clique em **Seguinte**.
+8. Na página de Arquivo de dados de destino, selecione **Base de Dados SQL do Azure** e clique em **Seguinte**.
    
     ![Ferramenta Copiar - escolher arquivo de destino](./media/data-factory-copy-data-wizard-tutorial/choose-destination-store.png)
 9. Na página **Especificar a base de dados SQL do Azure**:
