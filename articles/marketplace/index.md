@@ -1,6 +1,6 @@
 ---
-title: "Documentação do Azure Marketplace - Tutoriais, Referência da API | Microsoft Docs"
-description: "Saiba como criar, implementar e gerir máquinas virtuais Windows ou Linux. Tutoriais, referências de API e outra documentação."
+title: "Documentação do Azure Marketplace | Microsoft Docs"
+description: Saiba mais sobre o Azure Marketplace.
 services: marketplace
 author: carolz
 manager: carolz
@@ -13,14 +13,14 @@ ms.topic: landing-page
 ms.date: 04/14/2017
 ms.author: carolz
 translationtype: Human Translation
-ms.sourcegitcommit: e851a3e1b0598345dc8bfdd4341eb1dfb9f6fb5d
-ms.openlocfilehash: fc1bb285fbec529724345d3974e42837a3d79114
-ms.lasthandoff: 04/15/2017
+ms.sourcegitcommit: 8c4e33a63f39d22c336efd9d77def098bd4fa0df
+ms.openlocfilehash: 6dca59ddd5fe524b7778abe770b6387f8bb24f01
+ms.lasthandoff: 04/19/2017
 
 ---
 # <a name="azure-marketplace-documentation"></a>Documentação do Azure Marketplace
 
-Saiba mais sobre o Azure Marketplace, um mercado de aplicações e serviços online que permite a oferta de soluções dos ISVs de empresas recém-criadas e empresas estabelecidas aos clientes Azure de todo o mundo.
+Saiba mais sobre o Azure Marketplace, um mercado de aplicações e serviços online que permite aos ISVs, de startups a empresas estabelecidas, oferecer as respetivas soluções a clientes de todo o mundo.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -30,7 +30,7 @@ Saiba mais sobre o Azure Marketplace, um mercado de aplicações e serviços onl
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="media/index/AzureDefaultBlack.svg" alt="" />
+                            <img src="media/index/seller-guide.svg" alt="" />
                         </div>
                     </div>
                     <div class="cardText">
@@ -48,7 +48,7 @@ Saiba mais sobre o Azure Marketplace, um mercado de aplicações e serviços onl
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="media/index/AzureDefaultBlack.svg" alt="" />
+                            <img src="media/index/get-started.svg" alt="" />
                         </div>
                     </div>
                     <div class="cardText">

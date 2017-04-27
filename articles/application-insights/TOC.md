@@ -18,6 +18,7 @@
 ### [Aplicações Web – runtime](app-insights-java-live.md)
 ### [Aplicações Docker](app-insights-docker.md)
 
+
 ## Monitorizar páginas Web
 ### [JavaScript](app-insights-javascript.md)
 
@@ -75,6 +76,7 @@
 #### [Dashboards](app-insights-dashboards.md)
 #### [Pesquisa](app-insights-diagnostic-search.md)
 #### [Métricas](app-insights-metrics-explorer.md)
+#### [Transmissão em direto](app-insights-live-stream.md)
 
 #### [Mapeamento de Aplicações](app-insights-app-map.md)
 #### [Dados do HockeyApp](app-insights-hockeyapp-bridge-app.md)
@@ -132,6 +134,14 @@
 ## [Java](/java/api/com.microsoft.applicationinsights)
 ## [JavaScript](https://github.com/Microsoft/ApplicationInsights-JS/blob/master/API-reference.md)
 ## [REST](https://dev.applicationinsights.io/)
+## [Modelo de dados](application-insights-data-model.md)
+### [Pedido](application-insights-data-model-request-telemetry.md)
+### [Dependência](application-insights-data-model-dependency-telemetry.md)
+### [Exceção](application-insights-data-model-exception-telemetry.md)
+### [Rastreio](application-insights-data-model-trace-telemetry.md)
+### [Evento](application-insights-data-model-event-telemetry.md)
+### [Métricas](application-insights-data-model-metric-telemetry.md)
+## [Correlação de telemetria](application-insights-correlation.md)
 
 # Recursos
 

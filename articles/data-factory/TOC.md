@@ -1,10 +1,9 @@
 # Descrição geral
 ## [Introdução ao Azure Data Factory](data-factory-introduction.md)
 ## Conceitos
-### [Conjuntos de dados](data-factory-create-datasets.md)
 ### [Pipelines e atividades](data-factory-create-pipelines.md)
+### [Conjuntos de dados](data-factory-create-datasets.md)
 ### [Agendamento e execução](data-factory-scheduling-and-execution.md)
-### [Serviços Ligados de Computação](data-factory-compute-linked-services.md)
 
 # Introdução
 ## [Tutorial: Criar um pipeline para copiar dados](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
@@ -21,6 +20,7 @@
 ### [PowerShell](data-factory-build-your-first-pipeline-using-powershell.md)
 ### [Modelo do Azure Resource Manager](data-factory-build-your-first-pipeline-using-arm.md)
 ### [API REST](data-factory-build-your-first-pipeline-using-rest-api.md)
+## [Tutorial: Mover dados entre o local e a cloud](data-factory-move-data-between-onprem-and-cloud.md)
 ## [FAQ](data-factory-faq.md)
 
 # Procedimento
@@ -60,7 +60,7 @@
 #### [Teradata](data-factory-onprem-teradata-connector.md)
 #### [Tabela Web](data-factory-web-table-connector.md)
 ### [Data Management Gateway](data-factory-data-management-gateway.md)
-### [Mover dados entre o local e a cloud](data-factory-move-data-between-onprem-and-cloud.md)
+
 
 ## [Transformar Dados](data-factory-data-transformation-activities.md)
 ### [Atividade Hive do HDInsight](data-factory-hive-activity.md)
@@ -75,6 +75,7 @@
 ### [Atividade personalizada do .NET](data-factory-use-custom-activities.md)
 ### [Invocar scripts R](https://github.com/Azure/Azure-DataFactory/tree/master/Samples/RunRScriptUsingADFSample)
 ### [Reprocessar modelos no Azure Analysis Services](https://github.com/Azure/Azure-DataFactory/tree/master/Samples/AzureAnalysisServicesProcessSample)
+### [Serviços Ligados de Computação](data-factory-compute-linked-services.md)
 
 ## Programar
 ### [Modelo do Azure Resource Manager](data-factory-how-to-use-resource-manager-templates.md)

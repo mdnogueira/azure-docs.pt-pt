@@ -1,7 +1,6 @@
 # Descrição geral
-## [O que são os Laboratórios DevTest?](devtest-lab-overview.md)
-## [Porquê Laboratórios DevTest?](devtest-lab-why.md)
-## [Conceitos de Laboratórios DevTest](devtest-lab-concepts.md)
+## [Saiba mais sobre o Azure DevTest Labs](devtest-lab-overview.md)
+## [Conceitos](devtest-lab-concepts.md)
 
 # Introdução
 ## [Criar laboratório](devtest-lab-create-lab.md)
