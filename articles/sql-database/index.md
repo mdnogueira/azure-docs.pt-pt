@@ -12,16 +12,30 @@ ms.topic: landing-page
 ms.date: 01/23/2017
 ms.author: carolz
 translationtype: Human Translation
-ms.sourcegitcommit: 0b53a5ab59779dc16825887b3c970927f1f30821
-ms.openlocfilehash: 1092d5963cd1b9e21796809374be2534df39e437
-ms.lasthandoff: 04/08/2017
+ms.sourcegitcommit: 9eafbc2ffc3319cbca9d8933235f87964a98f588
+ms.openlocfilehash: 503d92b694bf57381e7949b0bd379c52916b308a
+ms.lasthandoff: 04/22/2017
 
 ---
 <div class="content">
     <h1>Documentação da Base de Dados SQL</h1>
-    <p style="padding-bottom: 0px; max-width: 1050px;">A Base de Dados SQL do Azure é uma base de dados relacional como serviço que utiliza o Motor do Microsoft SQL Server. A Base de Dados SQL é uma base de dados de elevado desempenho, fiável e segura que pode utilizar para criar aplicações e sites com base em dados na linguagem de programação da sua preferência, sem ter de gerir infraestrutura. Saiba como utilizar a Base de Dados SQL com os nossos inícios rápidos, tutoriais e amostras.</p>
-<h2 style="margin-top: 36px; margin-bottom: 0px;">Inícios rápidos</h2>
-<p style="margin-top: 6px; margin-bottom: 6px;">Crie uma BD SQL com:</p>
+    <div class="introHolder" style="justify-content: space-between;">
+        <div class="intro" style="min-width: 200px">
+            <p>A Base de Dados SQL do Azure é uma base de dados relacional como serviço que utiliza o Motor do Microsoft SQL Server. A Base de Dados SQL é uma base de dados de elevado desempenho, fiável e segura que pode utilizar para criar aplicações e sites com base em dados na linguagem de programação da sua preferência, sem ter de gerir infraestrutura. Saiba como utilizar a Base de Dados SQL com os nossos inícios rápidos, tutoriais e amostras.</p>
+        </div>
+        <a href="https://azure.microsoft.com/en-us/resources/videos/create-sql-database-on-azure/">
+            <div class="calloutHolder" style="max-width: 250px">
+                <div>
+                    <img src="media/index/create-sql-database-on-azure.png" style="width: 250px;" />
+                </div>
+                <div>
+                    <p style="margin-top: 0; color: #6e6e6e">Criar uma base de dados SQL no Azure. (3:12)</p>
+                </div>
+            </div>
+        </a>
+    </div>
+<h2 style="margin-top: 18px; margin-bottom: 0px;">Inícios rápidos de cinco minutos</h2>
+<p style="margin-top: 6px; margin-bottom: 6px;">Saiba como criar uma Base de Dados SQL, faça a gestão da mesma com o SQL Management Studio e utilize-a para programar em C#, Java, Python, Node.js e Ruby:</p>
 <div class="ico48Case">
     <div class="ico48Link">
         <a href="/azure/sql-database/sql-database-get-started-portal">
@@ -43,30 +57,41 @@ ms.lasthandoff: 04/08/2017
     </div>
 </div>
 
-<div class="columnHolder">
-    <div class="column50">
-        <h2 style="margin-top: 36px">Tutoriais</h2>
-        <p>Crie e implemente aplicações da Base de Dados SQL.</p>
-        <ul class="spaced">
-            <li><a href="/azure/sql-database/sql-database-design-first-database">Estruturar uma base de dados</a></li>
-            <li><a href="/azure/sql-database/sql-database-migrate-your-sql-server-database">Migrar uma base de dados</a></li>
-        </ul>
-        <h2>Amostras</h2>
-        <p>Encontre scripts para gerir tarefas comuns.</p>
-        <ul class="spaced">
-            <li><a href="/azure/sql-database/sql-database-cli-samples">CLI do Azure</a></li>
-            <li><a href="/azure/sql-database/sql-database-powershell-samples">Azure PowerShell</a></li>
-        </ul>
-    </div>
-    <div class="column50" style="max-width: 400px">
-        <h2 style="margin-top: 36px">Vídeo de Formação Gratuita</h2>
-        <a href="https://www.pluralsight.com/courses/developing-dotnet-microsoft-azure-getting-started?twoid=d6abac77-7dcc-4d33-9e03-f85e78989f02">
-            <img src="media/index/video-training-dotnet.png" width="400" alt="">
-            <p style="margin-top: 0px">Vídeo de formação gratuita da PluralSight - Programar com .NET</a></p>
-    </div>
-</div>
+<h2 style="margin-top: 36px">Tutoriais Passo-a-Passo</h2>
+<p>Saiba como criar, gerir e migrar bases de dados com a BD SQL</p>
+<ol>
+    <li><a href="/azure/sql-database/sql-database-design-first-database">Criar e estruturar o esquema de uma nova Base de Dados SQL</a></li>
+    <li><a href="/azure/sql-database/sql-database-migrate-your-sql-server-database">Migrar uma Base de Dados do SQL Server existente para utilizar a Base de Dados SQL do Azure</a></li>
+</ol>
 
-<hr />
+<h2 style="margin-top: 36px">Vídeo de Formação Gratuita da PluralSight</h2>
+<ul class="panelContent cardsW">
+    <li style="flex: 0 1 25%">
+        <a href="https://www.pluralsight.com/courses/developing-dotnet-microsoft-azure-getting-started?twoid=d6abac77-7dcc-4d33-9e03-f85e78989f02"> 
+            <div class="cardSize">
+                <div class="cardPadding">
+                    <div class="card">
+                       <div class="cardImageOuter">
+                            <div class="cardImage">
+                                <img style="max-width: 100%" alt="" src="media/index/video-training-dotnet.png" data-linktype="external">
+                            </div>
+                        </div>
+                        <div class="cardText">
+                            <p>Programar em .NET</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </li>
+</ul>
+
+<h2 style="margin-top: 36px">Amostras</h2>
+<p>Encontrar scripts para gerir tarefas comuns</p>
+<ul class="spaced">
+    <li><a href="/azure/sql-database/sql-database-cli-samples">CLI do Azure</a></li>
+    <li><a href="/azure/sql-database/sql-database-powershell-samples">Azure PowerShell</a></li>
+</ul>
 
 <h2 style="margin-top: 36px">Referência</h2>
 <ul class="panelContent cardsW">
@@ -147,3 +172,4 @@ ms.lasthandoff: 04/08/2017
     </li>
 </ul>
 </div>
+
