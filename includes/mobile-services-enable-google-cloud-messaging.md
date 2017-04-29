@@ -21,8 +21,3 @@
    
     Vai utilizar este valor para permitir ao Azure a autenticação com o GCM e o envio de notificações push em nome da aplicação.
 
-
-
-<!--HONumber=Jan17_HO1-->
-
-

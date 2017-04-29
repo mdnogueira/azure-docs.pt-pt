@@ -41,8 +41,3 @@ Para criar um espaço de nomes:
 [connection-string]: ./media/howto-service-bus-topics/connection-string.png
 
 
-
-
-<!--HONumber=Jan17_HO1-->
-
-

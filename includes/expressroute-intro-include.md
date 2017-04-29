@@ -3,8 +3,3 @@ O Microsoft Azure ExpressRoute permite-lhe expandir as redes no local para a nuv
 
 ![](./media/expressroute-intro-include/expressroute-basic.png)
 
-
-
-<!--HONumber=Jan17_HO1-->
-
-

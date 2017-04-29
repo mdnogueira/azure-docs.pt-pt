@@ -7,8 +7,3 @@
 5. Clique em **Transferir Certificado de Gestão Remota** para transferir um certificado de gestão remota. Deverá especificar uma localização para guardar este ficheiro. Em seguida, este certificado tem de ser instalado no computador cliente ou anfitrião que irá utilizar para estabelecer ligação com o dispositivo virtual.
 6. Clique em **Guardar** na parte inferior da página.
 
-
-
-<!--HONumber=Jan17_HO1-->
-
-

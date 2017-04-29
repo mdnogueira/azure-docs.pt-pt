@@ -22,7 +22,3 @@ O DNS do Azure gere todos os registos DNS com *conjuntos de registos*. Um conjun
 Por exemplo, imagine que já criou um registo "www" A na zona "contoso.com", a apontar para o endereço IP "134.170.185.46" (o primeiro registo acima).  Para criar o segundo registo, deverá adicionar esse registo para o conjunto de registos existente, em vez de criar um conjunto de registos adicional.
 
 Os tipos de registos SOA e CNAME são exceções. As normas DNS não permitirem vários registos com o mesmo nome para estes tipos, por conseguinte, estes conjuntos de registos só podem conter um único registo.
-
-<!--HONumber=Jan17_HO1-->
-
-
