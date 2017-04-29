@@ -3,8 +3,3 @@
 2. Clique em **Virtual Machines** e selecione o dispositivo virtual.
 3. Clique em **Encerramento**.
 
-
-
-<!--HONumber=Jan17_HO1-->
-
-

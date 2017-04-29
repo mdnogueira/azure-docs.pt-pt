@@ -8,8 +8,3 @@ Neste cenário, vai criar uma VNet com o nome **TestVNet** com um bloco CIDR res
 * **Front-end**, utilizando **192.168.1.0/24** como bloco CIDR.
 * **Back-end**, utilizando **192.168.2.0/24** como bloco CIDR.
 
-
-
-<!--HONumber=Jan17_HO1-->
-
-

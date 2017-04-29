@@ -8,8 +8,3 @@ Vai pagar por duas coisas -- os custos de computação à hora do gateway de red
 * Se enviar tráfego entre redes virtuais em regiões diferentes, o preço baseia-se na região.
 * Se enviar tráfego apenas entre redes virtuais que estejam na mesma região, não existem custos de dados. O tráfego entre VNets na mesma região é gratuito.
 
-
-
-<!--HONumber=Jan17_HO1-->
-
-

@@ -12,8 +12,3 @@
 
 Uma vez criado o ponto final, pode ver os respetivos detalhes para determinar o endereço IP Virtual Público (VIP). Registe esse endereço.
 
-
-
-<!--HONumber=Jan17_HO1-->
-
-
