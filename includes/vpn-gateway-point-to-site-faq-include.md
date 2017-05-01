@@ -35,7 +35,3 @@ Sim, é possível. Mas as redes virtuais não podem ter prefixos IP sobrepostos 
 
 ### <a name="how-much-throughput-can-i-expect-through-site-to-site-or-point-to-site-connections"></a>Que débito posso esperar através das ligações Site a Site ou Ponto a Site?
 É difícil manter o débito exato dos túneis VPN. O IPsec e SSTP são protocolos VPN extremamente encriptados. O débito também é limitado pela latência e pela largura de banda entre o local e a Internet.
-
-<!--HONumber=Feb17_HO3-->
-
-
