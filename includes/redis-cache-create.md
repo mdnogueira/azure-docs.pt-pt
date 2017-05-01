@@ -34,8 +34,3 @@ Uma vez configuradas as opções da nova cache, clique em **Criar**. A criação
 
 ![Cache criada](media/redis-cache-create/redis-cache-cache-created.png)
 
-
-
-<!--HONumber=Feb17_HO2-->
-
-
