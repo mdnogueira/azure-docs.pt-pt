@@ -4,8 +4,3 @@
 > * [PowerShell](../articles/load-balancer/load-balancer-get-started-internet-classic-ps.md)
 > * [CLI do Azure](../articles/load-balancer/load-balancer-get-started-internet-classic-cli.md)
 > * [Serviços Cloud do Azure](../articles/load-balancer/load-balancer-get-started-internet-classic-cloud.md)
-
-
-<!--HONumber=Jan17_HO3-->
-
-

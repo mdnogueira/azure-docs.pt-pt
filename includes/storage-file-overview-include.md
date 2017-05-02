@@ -5,8 +5,3 @@ Uma vez que as partilhas do Armazenamento de ficheiros são partilhas de ficheir
 
 Pode criar partilhas de ficheiros do Azure através do [Portal do Azure](https://portal.azure.com), dos cmdlets do PowerShell do Storage do Azure, das bibliotecas de cliente do Storage do Azure ou da API REST do Storage do Azure. Além disso, uma vez que estas partilhas de ficheiros são partilhas SMB, pode aceder às mesmas através de APIs do sistema de ficheiros padrão e familiares.
 
-
-
-<!--HONumber=Jan17_HO3-->
-
-
