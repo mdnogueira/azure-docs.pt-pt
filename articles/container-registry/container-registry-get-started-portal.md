@@ -49,12 +49,11 @@ Para explicações e conceitos, veja [a descrição geral](container-registry-in
 
     d. **Utilizador administrador**: se quiser, ative um utilizador administrador para aceder ao registo. Pode alterar esta definição depois de criar o registo.
 
-    > [!IMPORTANT]
-    > Para além de proporcionarem acesso através de uma conta de utilizador administrador, os registos de contentores suportam autenticação com base em principais de serviço do Azure Active Directory. Para obter mais informações e considerações, veja [Authenticate with a container registry (Autenticar num registo de contentores)](container-registry-authentication.md).
-
+      > [!IMPORTANT]
+      > Para além de proporcionarem acesso através de uma conta de utilizador administrador, os registos de contentores suportam autenticação com base em principais de serviço do Azure Active Directory. Para obter mais informações e considerações, veja [Authenticate with a container registry (Autenticar num registo de contentores)](container-registry-authentication.md).
+      >
 
     e. **Conta de armazenamento**: utilize a predefinição para criar uma [conta de armazenamento](../storage/storage-introduction.md) ou selecione uma já existente na mesma localização. Atualmente, não há suporte para o Armazenamento Premium.
-
 
 ## <a name="manage-registry-settings"></a>Gerir as definições do registo
 Depois de criar o registo, encontre as definições do mesmo, começando no painel **Registos de Contentores** do portal. Por exemplo, poderá precisar das definições para iniciar sessão no seu registo ou poderá querer ativar ou desativar o utilizador administrador.
