@@ -13,34 +13,36 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 04/11/2017
+ms.date: 04/24/2017
 ms.author: cherylmc
 translationtype: Human Translation
-ms.sourcegitcommit: 785d3a8920d48e11e80048665e9866f16c514cf7
-ms.openlocfilehash: ff70484dff03a44d23d2cf34ce115fd57c4b0390
-ms.lasthandoff: 04/12/2017
+ms.sourcegitcommit: b0c27ca561567ff002bbb864846b7a3ea95d7fa3
+ms.openlocfilehash: d0cedf73aa3f73e672a73b6abaca5eb8c22a76a7
+ms.lasthandoff: 04/25/2017
 
 
 ---
-# <a name="create-a-vnet-with-a-site-to-site-connection-using-the-classic-portal"></a>Criar uma VNet com uma ligação de Rede de VPNs no portal clássico
+# <a name="create-a-vnet-with-a-site-to-site-connection-using-the-classic-portal-classic"></a>Criar uma VNet com uma ligação de Rede de VPNs no portal clássico (clássico)
 
-Uma ligação de gateway de VP de Site a Site (S2S) é uma ligação através do túnel VPN IPsec/IKE (S2S ou IKEv1). Este tipo de ligação requer um dispositivo VPN localizado no local que tenha um endereço IP público atribuído ao mesmo e não se encontre protegido por um NAT. As ligações site a site podem ser utilizadas para configurações em vários locais e híbridas.
-
-![Diagrama da ligação de Gateway de Rede de VPNs em vários sites](./media/vpn-gateway-site-to-site-create/site-to-site-connection-diagram.png)
-
-Este artigo explica-lhe como criar uma rede virtual e uma ligação de gateway de Rede de VPNs para a sua rede no local com o modelo de implementação clássica e o portal clássico. As ligações site a site podem ser utilizadas para configurações em vários locais e híbridas. Também pode criar esta configuração para o modelo de implementação do Gestor de Recursos ao selecionar uma opção diferente da lista seguinte:
+Este artigo mostra-lhe como utilizar o portal clássico para criar uma ligação de gateway de VPN de Site para Site a partir da sua rede no local para a VNet. Os passos neste artigo aplicam-se ao modelo de implementação clássica. Também pode criar esta configuração ao utilizar uma ferramenta de implementação diferente ou modelo de implementação ao selecionar uma opção diferente da lista seguinte:
 
 > [!div class="op_single_selector"]
 > * [Resource Manager - portal do Azure](vpn-gateway-howto-site-to-site-resource-manager-portal.md)
 > * [Resource Manager – PowerShell](vpn-gateway-create-site-to-site-rm-powershell.md)
+> * [Resource Manager - CLI](vpn-gateway-howto-site-to-site-resource-manager-cli.md)
 > * [Clássica – portal do Azure](vpn-gateway-howto-site-to-site-classic-portal.md)
 > * [Clássica – portal clássico](vpn-gateway-site-to-site-create.md)
+> 
 >
->
+
+![Diagrama da ligação de Gateway de Rede de VPNs em vários sites](./media/vpn-gateway-site-to-site-create/site-to-site-connection-diagram.png)
+
+
+Uma ligação de gateway de VPN de Site para Site é utilizada para ligar a sua rede no local a uma rede virtual do Azure através de um túnel VPN IPsec/IKE (IKEv1 ou IKEv2). Este tipo de ligação requer um dispositivo VPN localizado no local que tenha um endereço IP público com acesso exterior atribuído ao mesmo. Para obter mais informações sobre o gateways de VPN, veja [About VPN gateway (Acerca do gateway de VPN)](vpn-gateway-about-vpngateways.md).
 
 #### <a name="additional-configurations"></a>Configurações adicionais
-Se pretender ligar VNets entre si, veja [Configurar uma ligação VNet a VNet para o modelo de implementação clássica](virtual-networks-configure-vnet-to-vnet-connection.md). Se pretender adicionar uma ligação Site a Site a uma VNet que já tem uma ligação, veja [Adicionar uma ligação S2S a uma VNet com uma ligação de gateway de VPN existente](vpn-gateway-multi-site.md).
 
+Se pretender ligar VNets entre si, veja [Configurar uma ligação VNet a VNet para o modelo de implementação clássica](virtual-networks-configure-vnet-to-vnet-connection.md). Se pretender adicionar uma ligação Site a Site a uma VNet que já tem uma ligação, veja [Adicionar uma ligação S2S a uma VNet com uma ligação de gateway de VPN existente](vpn-gateway-multi-site.md).
 ## <a name="before-you-begin"></a>Antes de começar
 
 [!INCLUDE [deployment models](../../includes/vpn-gateway-deployment-models-include.md)]
@@ -70,7 +72,7 @@ Introduza as seguintes informações e clique na seta na parte inferior direita.
 * **Rede Local**: a rede local representa a sua localização física no local. Pode selecionar uma rede local criada anteriormente ou pode criar uma nova. No entanto, se optar por utilizar uma rede local criada anteriormente, aceda à página de configuração **Redes Locais** e certifique-se de que o endereço IP do Dispositivo VPN (endereço IPv4 destinado ao público) do dispositivo VPN está correto.
 
 ## <a name="Connectivity"></a>Página de conetividade site a site
-Se estiver a criar uma nova rede local, verá a página **Conetividade Site a Site**. Se pretender utilizar uma rede local criada anteriormente, esta página não aparecerá no assistente e poderá avançar para a secção seguinte.
+Se estiver a criar uma nova rede local, veja a página **Conectividade Site a Site**. Se pretender utilizar uma rede local criada anteriormente, esta página não aparecerá no assistente e poderá avançar para a secção seguinte.
 
 Introduza as seguintes informações e clique na seta seguinte.
 
@@ -90,7 +92,7 @@ Introduza as seguintes informações e clique na marca de verificação na parte
 * **Adicionar sub-rede**: inclua o IP Inicial e a Contagem de Endereços. Não são necessárias sub-redes adicionais, mas deve criar uma sub-rede separada para as VMs que terão DIPS estáticos. Em alternativa, pode ter as VMs numa sub-rede separada das outras instâncias de função.
 * **Adicionar sub-rede do gateway**: clique para adicionar a sub-rede do gateway. A sub-rede do gateway é utilizada apenas para o gateway da rede virtual. Precisa dela para esta configuração.
 
-Clique na marca de verificação na parte inferior da página para a rede virtual começar a ser criada. Quando terminar, verá **Criado** listado em **Estado** na página **Redes** no Portal Clássico do Azure. Após criar a VNet, pode configurar o gateway da rede virtual.
+Clique na marca de verificação na parte inferior da página para criar a rede virtual. Quando terminar, veja **Criado** listado em **Estado** na página **Redes** no Portal Clássico do Azure. Após criar a VNet, pode configurar o gateway da rede virtual.
 
 [!INCLUDE [vpn-gateway-no-nsg](../../includes/vpn-gateway-no-nsg-include.md)]
 

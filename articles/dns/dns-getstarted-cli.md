@@ -16,9 +16,9 @@ ms.workload: infrastructure-services
 ms.date: 03/10/2017
 ms.author: jonatul
 translationtype: Human Translation
-ms.sourcegitcommit: 424d8654a047a28ef6e32b73952cf98d28547f4f
-ms.openlocfilehash: c912aee814d339b979b4d2055425d195d2b9f346
-ms.lasthandoff: 03/21/2017
+ms.sourcegitcommit: b0c27ca561567ff002bbb864846b7a3ea95d7fa3
+ms.openlocfilehash: 5cb387c4d1a2a2ae5ee8822241b11e79f53f0d6a
+ms.lasthandoff: 04/25/2017
 
 ---
 
@@ -34,14 +34,21 @@ Este artigo explica-lhe os passos para criar a primeira zona DNS e registar com 
 
 Uma zona DNS é utilizada para alojar os registos DNS para um determinado domínio. Para começar a alojar o seu domínio no DNS do Azure, tem de criar uma zona DNS para esse nome de domínio. Cada registo DNS para o seu domínio é então criado no interior desta zona DNS. Por fim, para publicar a zona DNS na Internet, tem de configurar os servidores de nomes do domínio. Cada um destes passos está descrito abaixo.
 
-Estas instruções partem do princípio de que já instalou e iniciou sessão no CLI 1.0 do Azure. Para obter ajuda, consulte [How to manage DNS zones using Azure CLI 2.0 (Como gerir zonas DNS com a CLI 2.0 do Azure)](dns-operations-dnszones-cli.md).
+Estas instruções partem do princípio de que já instalou e iniciou sessão no CLI 2.0 do Azure. Para obter ajuda, consulte [How to manage DNS zones using Azure CLI 2.0 (Como gerir zonas DNS com a CLI 2.0 do Azure)](dns-operations-dnszones-cli.md).
 
+## <a name="create-the-resource-group"></a>Criar o grupo de recursos
+
+Antes de criar a zona DNS, um grupo de recursos é criado para conter a zona DNS. O seguinte mostra o comando.
+
+```azurecli
+az group create --name MyResourceGroup --location "West US"
+```
 
 ## <a name="create-a-dns-zone"></a>Criar uma zona DNS
 
 Uma zona DNS é criada ao utilizar o comando `az network dns zone create`. Para ver a ajuda deste comando, escreva `az network dns zone create -h`.
 
-O exemplo seguinte cria uma zona DNS denominada *contoso.com* no grupo de recursos denominado *MyResourceGroup*. Utilize o exemplo para criar uma zona DNS, substituindo os valores pelos seus.
+O exemplo seguinte cria uma zona DNS denominada *contoso.com* no grupo de recursos *MyResourceGroup*. Utilize o exemplo para criar uma zona DNS, substituindo os valores pelos seus.
 
 ```azurecli
 az network dns zone create -g MyResourceGroup -n contoso.com
@@ -100,6 +107,13 @@ az network dns zone show -g MyResourceGroup -n contoso.com -o json
 
 Estes servidores de nomes devem ser configurados com a entidade de registo de nomes de domínio (onde comprou o nome de domínio). A entidade de registo irá oferecer a opção para configurar os servidores de nomes do domínio. Para obter mais informações, consulte [Delegate your domain to Azure DNS (Delegar o seu domínio ao DNS do Azure)](dns-domain-delegation.md).
 
+## <a name="delete-all-resources"></a>Eliminar todos os recursos
+ 
+Para eliminar todos os recursos criados neste artigo, realize o seguinte passo:
+
+```azurecli
+az group delete --name MyResourceGroup
+```
 
 ## <a name="next-steps"></a>Passos seguintes
 

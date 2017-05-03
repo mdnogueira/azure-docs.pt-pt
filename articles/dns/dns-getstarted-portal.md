@@ -16,9 +16,9 @@ ms.workload: infrastructure-services
 ms.date: 03/10/2017
 ms.author: jonatul
 translationtype: Human Translation
-ms.sourcegitcommit: b4802009a8512cb4dcb49602545c7a31969e0a25
-ms.openlocfilehash: 79f0c9297c4be70f705f325274f3d9241ea4bc3f
-ms.lasthandoff: 03/29/2017
+ms.sourcegitcommit: abdbb9a43f6f01303844677d900d11d984150df0
+ms.openlocfilehash: 3aea60bc21bfb0650a336f6674005bbab47201fe
+ms.lasthandoff: 04/20/2017
 
 ---
 
@@ -32,7 +32,7 @@ ms.lasthandoff: 03/29/2017
 
 Este artigo explica-lhe os passos para criar a sua primeira zona DNS e o registo com o portal do Azure. Também pode executar estes passos com o Azure PowerShell ou a CLI do Azure de várias plataformas.
 
-Uma zona DNS é utilizada para alojar os registos DNS para um determinado domínio. Para começar a alojar o seu domínio no DNS do Azure, tem de criar uma zona DNS para esse nome de domínio. Cada registo DNS para o seu domínio é então criado no interior desta zona DNS. Por fim, para publicar a zona DNS na Internet, tem de configurar os servidores de nomes do domínio. Cada um destes passos está descrito abaixo.
+Uma zona DNS é utilizada para alojar os registos DNS para um determinado domínio. Para começar a alojar o seu domínio no DNS do Azure, tem de criar uma zona DNS para esse nome de domínio. Cada registo DNS para o seu domínio é então criado no interior desta zona DNS. Por fim, para publicar a zona DNS na Internet, tem de configurar os servidores de nomes do domínio. Cada um destes passos está descrito nos passos seguintes.
 
 ## <a name="create-a-dns-zone"></a>Criar uma zona DNS
 
@@ -41,41 +41,36 @@ Uma zona DNS é utilizada para alojar os registos DNS para um determinado domín
 
     ![Zona DNS](./media/dns-getstarted-portal/openzone650.png)
 
-4. No painel **Criar zona DNS**, nomeie a sua zona DNS. Por exemplo, *contoso.com*.
- 
-    ![Criar zona](./media/dns-getstarted-portal/newzone250.png)
+4. No painel **Criar zona DNS**, introduza os valores seguinte e clique em **Criar**:
 
-5. Em seguida, especifique o grupo de recursos que pretende utilizar. Pode criar um novo grupo de recursos ou selecionar um que já exista. Se optar por criar um novo grupo de recursos, utilize a lista pendente **Localização** para especificar a localização do grupo de recursos. Tenha em atenção que esta definição se refere à localização do grupo de recursos e não tem qualquer impacto na zona DNS. A localização da zona DNS é sempre "global" e não está apresentada.
 
-6. Pode deixar a caixa de verificação **Afixar ao dashboard** selecionada se pretender localizar facilmente a sua nova zona no dashboard. Em seguida, clique em **Criar**.
+   | **Definição** | **Valor** | **Detalhes** |
+   |---|---|---|
+   |**Nome**|contoso.com|O nome da zona DNS|
+   |**Subscrição**|[A sua subscrição]|Selecione uma subscrição para criar o gateway de aplicação.|
+   |**Grupo de recursos**|**Criar novo:** contosoDNSRG|Crie um grupo de recursos. O nome do grupo de recursos tem de ser exclusivo dentro da subscrição que selecionou. Para saber mais sobre grupos de recursos, veja o artigo de descrição geral do [Resource Manager](../azure-resource-manager/resource-group-overview.md?toc=%2fazure%2fdns%2ftoc.json#resource-groups).|
+   |**Localização**|EUA Oeste||
 
-    ![Afixar ao dashboard](./media/dns-getstarted-portal/pindashboard150.png)
-
-7. Depois de clicar em Criar, verá que a nova zona está a ser configurada no dashboard.
-
-    ![Criação](./media/dns-getstarted-portal/creating150.png)
-
-8. Quando tiver sido criada a nova zona, o painel para a nova zona abre-se no dashboard.
-
+> [!NOTE]
+> Esta definição refere à localização do grupo de recursos e não tem qualquer impacto na zona DNS. A localização da zona DNS é sempre "global" e não está apresentada.
 
 ## <a name="create-a-dns-record"></a>Criar um registo DNS
 
 O exemplo seguinte explica-lhe o processo de criação do novo registo "A". Para outros tipos de registo e para modificar registos existentes, consulte [Manage DNS records and record sets by using the Azure portal (Gerir registos DNS e conjuntos de registos com o portal do Azure)](dns-operations-recordsets-portal.md). 
 
+1. Com a Zona DNS criada, no painel **Favoritos** do portal do Azure, clique em **Todos os recursos**. Clique na zona DNS **contoso.com**, no painel Todos os recursos. Se a subscrição que selecionou já tiver vários recursos, pode introduzir **contoso.com** na caixa **Filtrar por nome...** para aceder facilmente à Zona DNS.
 
 1. No topo do painel **Zona DNS**, selecione **+ Conjunto de registos**, para abrir o painel **Adicionar conjunto de registos**.
 
-    ![Novo conjunto de registos](./media/dns-getstarted-portal/newrecordset500.png)
+1. No painel **Adicionar conjunto de registos**, introduza os valores seguintes e clique em **OK**. Neste exemplo, está a criar um registo A.
 
-4. No painel **Adicionar conjunto de registos**, nomeie o conjunto de registos. Por exemplo, pode nomear o conjunto de registos "**www**".
-
-    ![Adicionar conjunto de registos](./media/dns-getstarted-portal/addrecordset500.png)
-
-5. Selecione o tipo de registo que pretende criar. Para este exemplo, selecione **A**.
-6. Defina o **TTL**. O tempo de duração predefinido é de uma hora.
-7. Adicione o endereço IP do registo.
-8. Selecione **OK** na parte inferior do painel para criar o registo DNS.
-
+   |**Definição** | **Valor** | **Detalhes** |
+   |---|---|---|
+   |**Nome**|www|Nome do registo|
+   |**Tipo**|A| Os tipos de registo DNS para criar valores aceitáveis são A, AAAA, CNAME, MX, NS, SRV, TXT e PTR.  Para mais informações sobre os tipos de registo, visite [Descrição geral das zonas DNS e registos](dns-zones-records.md)|
+   |**TTL**|1|Tempo de vida do pedido DNS.|
+   |**Unidade de TTL**|Horas|Medida de tempo do valor TTL.|
+   |**Endereço IP**|{ipAddressValue| Este valor é o endereço IP que o registo DNS resolve.|
 
 ## <a name="view-records"></a>Ver registos
 
@@ -92,7 +87,15 @@ Os servidores de nomes para a sua zona são indicados no portal do Azure:
 
 ![zona](./media/dns-getstarted-portal/viewzonens500.png)
 
-Estes servidores de nomes devem ser configurados com a entidade de registo de nomes de domínio (onde comprou o nome de domínio). A entidade de registo irá oferecer a opção para configurar os servidores de nomes do domínio. Para obter mais informações, consulte [Delegate your domain to Azure DNS (Delegar o seu domínio ao DNS do Azure)](dns-domain-delegation.md).
+Estes servidores de nomes devem ser configurados com a entidade de registo de nomes de domínio (onde comprou o nome de domínio). A entidade de registo oferece a opção para configurar os servidores de nomes do domínio. Para obter mais informações, consulte [Delegate your domain to Azure DNS (Delegar o seu domínio ao DNS do Azure)](dns-domain-delegation.md).
+
+## <a name="delete-all-resources"></a>Eliminar todos os recursos
+
+Para eliminar todos os recursos criados neste artigo, conclua os seguintes passos:
+
+1. No painel **Favoritos** do portal do Azure, clique em **Todos os recursos**. Clique no grupo de recursos **MyResourceGroup**, no painel Todos os recursos. Se a subscrição que selecionou já tiver vários recursos, pode introduzir **MyResourceGroup** na caixa **Filtrar por nome...** para aceder facilmente ao grupo de recursos.
+1. No painel **MyResourceGroup**, clique no botão **Eliminar**.
+1. O portal requer que escreva o nome do grupo de recursos para confirmar que pretende eliminá-lo. Clique em **Eliminar**, escreva *MyResourceGroup* no nome do grupo de recursos e clique em **Eliminar**. A eliminação de um grupo de recursos elimina todos os recursos dentro do grupo de recursos. Por conseguinte, confirme os conteúdos de um grupo de recursos antes de o eliminar. O portal elimina todos os recursos contidos dentro do grupo de recursos e, em seguida, elimina o próprio grupo de recursos. Este processo demora vários minutos.
 
 
 ## <a name="next-steps"></a>Passos seguintes

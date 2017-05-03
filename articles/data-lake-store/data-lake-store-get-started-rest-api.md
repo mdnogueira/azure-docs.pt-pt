@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: big-data
-ms.date: 04/03/2017
+ms.date: 04/21/2017
 ms.author: nitinme
 translationtype: Human Translation
-ms.sourcegitcommit: 988e7fe2ae9f837b661b0c11cf30a90644085e16
-ms.openlocfilehash: 650ff05715c8c0d915c82f9de49756530b8f3138
-ms.lasthandoff: 04/06/2017
+ms.sourcegitcommit: 9eafbc2ffc3319cbca9d8933235f87964a98f588
+ms.openlocfilehash: de04bf367f9f9f92756202cf6c1571f811a0f1f7
+ms.lasthandoff: 04/22/2017
 
 
 ---
@@ -55,7 +55,7 @@ Neste cenário, a aplicação pede ao utilizador para iniciar sessão e todas as
 
 1. Através da sua aplicação, redirecione o utilizador para o seguinte URL:
    
-        https://login.microsoftonline.com/<TENANT-ID>/oauth2/authorize?client_id=<CLIENT-ID>&response_type=code&redirect_uri=<REDIRECT-URI>
+        https://login.microsoftonline.com/<TENANT-ID>/oauth2/authorize?client_id=<APPLICATION-ID>&response_type=code&redirect_uri=<REDIRECT-URI>
    
    > [!NOTE]
    > \<REDIRECT-URI> tem de estar codificado para utilização num URL. Assim, para https://localhost, utilize `https%3A%2F%2Flocalhost`)
@@ -71,7 +71,7 @@ Neste cenário, a aplicação pede ao utilizador para iniciar sessão e todas as
         -F redirect_uri=<REDIRECT-URI> \
         -F grant_type=authorization_code \
         -F resource=https://management.core.windows.net/ \
-        -F client_id=<CLIENT-ID> \
+        -F client_id=<APPLICATION-ID> \
         -F code=<AUTHORIZATION-CODE>
    
    > [!NOTE]
@@ -86,7 +86,7 @@ Neste cenário, a aplicação pede ao utilizador para iniciar sessão e todas as
         curl -X POST https://login.microsoftonline.com/<TENANT-ID>/oauth2/token  \
              -F grant_type=refresh_token \
              -F resource=https://management.core.windows.net/ \
-             -F client_id=<CLIENT-ID> \
+             -F client_id=<APPLICATION-ID> \
              -F refresh_token=<REFRESH-TOKEN>
 
 Para obter mais informações sobre a autenticação de utilizador interativa, veja [Fluxo de concessão de códigos de autorização](https://msdn.microsoft.com/library/azure/dn645542.aspx).
@@ -128,7 +128,7 @@ Esta operação baseia-se na chamada da API REST WebHDFS definida [aqui](http://
 
 Utilize o seguinte comando cURL. Substitua **\<nomedoarquivo>** pelo nome do Data Lake Store.
 
-    curl -i -X PUT -H "Authorization: Bearer <REDACTED>" -d "" https://<yourstorename>.azuredatalakestore.net/webhdfs/v1/mytempdir/?op=MKDIRS
+    curl -i -X PUT -H "Authorization: Bearer <REDACTED>" -d "" 'https://<yourstorename>.azuredatalakestore.net/webhdfs/v1/mytempdir/?op=MKDIRS'
 
 No comando acima, substitua \<`REDACTED`\> pelo token de autorização obtido anteriormente. Este comando cria um diretório denominado **mytempdir** na pasta raiz da conta do Data Lake Store.
 
@@ -141,7 +141,7 @@ Esta operação baseia-se na chamada da API REST WebHDFS definida [aqui](http://
 
 Utilize o seguinte comando cURL. Substitua **\<nomedoarquivo>** pelo nome do Data Lake Store.
 
-    curl -i -X GET -H "Authorization: Bearer <REDACTED>" https://<yourstorename>.azuredatalakestore.net/webhdfs/v1/?op=LISTSTATUS
+    curl -i -X GET -H "Authorization: Bearer <REDACTED>" 'https://<yourstorename>.azuredatalakestore.net/webhdfs/v1/?op=LISTSTATUS'
 
 No comando acima, substitua \<`REDACTED`\> pelo token de autorização obtido anteriormente.
 
@@ -167,33 +167,24 @@ Deverá ver uma resposta como esta se a operação for concluída com êxito:
 ## <a name="upload-data-into-a-data-lake-store-account"></a>Carregar dados para uma conta do Data Lake Store
 Esta operação baseia-se na chamada da API REST WebHDFS definida [aqui](http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/WebHDFS.html#Create_and_Write_to_a_File).
 
-Carregar dados utilizando a API REST WebHDFS é um processo de dois passos, conforme explicado abaixo.
+Utilize o seguinte comando cURL. Substitua **\<nomedoarquivo>** pelo nome do Data Lake Store.
 
-1. Submeta um pedido HTTP PUT sem enviar os dados do ficheiro a ser carregado. No comando seguinte, substitua **\<nomedoarquivo>** pelo nome do Data Lake Store.
+    curl -i -X PUT -L -T 'C:\temp\list.txt' -H "Authorization: Bearer <REDACTED>" 'https://<yourstorename>.azuredatalakestore.net/webhdfs/v1/mytempdir/list.txt?op=CREATE'
+
+No parâmetro da sintaxe acima **-T** encontra-se a localização do ficheiro que está a carregar.
+
+O resultado é semelhante ao seguinte:
    
-        curl -i -X PUT -H "Authorization: Bearer <REDACTED>" -d "" https://<yourstorename>.azuredatalakestore.net/webhdfs/v1/mytempdir/?op=CREATE
-   
-    O resultado para este comando irá conter um URL de redirecionamento temporário, como o mostrado abaixo.
-   
-        HTTP/1.1 100 Continue
-   
-        HTTP/1.1 307 Temporary Redirect
-        ...
-        ...
-        Location: https://<yourstorename>.azuredatalakestore.net/webhdfs/v1/mytempdir/somerandomfile.txt?op=CREATE&write=true
-        ...
-        ...
-2. Agora, tem de submeter outro pedido HTTP PUT relativamente ao URL listado para a propriedade **Localização** na resposta. Substitua **\<nomedoarquivo>** pelo nome do Data Lake Store.
-   
-        curl -i -X PUT -T myinputfile.txt -H "Authorization: Bearer <REDACTED>" https://<yourstorename>.azuredatalakestore.net/webhdfs/v1/mytempdir/myinputfile.txt?op=CREATE&write=true
-   
-    O resultado será semelhante ao seguinte:
-   
-        HTTP/1.1 100 Continue
-   
-        HTTP/1.1 201 Created
-        ...
-        ...
+    HTTP/1.1 307 Temporary Redirect
+    ...
+    Location: https://<yourstorename>.azuredatalakestore.net/webhdfs/v1/mytempdir/list.txt?op=CREATE&write=true
+    ...
+    Content-Length: 0
+
+    HTTP/1.1 100 Continue
+
+    HTTP/1.1 201 Created
+    ...
 
 ## <a name="read-data-from-a-data-lake-store-account"></a>Ler dados de uma conta do Data Lake Store
 Esta operação baseia-se na chamada da API REST WebHDFS definida [aqui](http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/WebHDFS.html#Open_and_Read_a_File).
@@ -205,7 +196,7 @@ Ler dados de uma conta do Data Lake Store é um processo de dois passos.
 
 No entanto, uma vez que não existe nenhuma diferença nos parâmetros de entrada entre o primeiro e o segundo passo, pode utilizar o parâmetro `-L` para submeter o primeiro pedido. A opção `-L` combina essencialmente dois pedidos num único e fará com que o cURL refaça o pedido na nova localização. Por fim, é apresentado o resultado de todas as chamadas do pedido, como mostrado abaixo. Substitua **\<nomedoarquivo>** pelo nome do Data Lake Store.
 
-    curl -i -L GET -H "Authorization: Bearer <REDACTED>" https://<yourstorename>.azuredatalakestore.net/webhdfs/v1/mytempdir/myinputfile.txt?op=OPEN
+    curl -i -L GET -H "Authorization: Bearer <REDACTED>" 'https://<yourstorename>.azuredatalakestore.net/webhdfs/v1/mytempdir/myinputfile.txt?op=OPEN'
 
 Deverá ver um resultado semelhante ao seguinte:
 
@@ -224,7 +215,7 @@ Esta operação baseia-se na chamada da API REST WebHDFS definida [aqui](http://
 
 Utilize o seguinte comando cURL para mudar o nome de um ficheiro. Substitua **\<nomedoarquivo>** pelo nome do Data Lake Store.
 
-    curl -i -X PUT -H "Authorization: Bearer <REDACTED>" -d "" https://<yourstorename>.azuredatalakestore.net/webhdfs/v1/mytempdir/myinputfile.txt?op=RENAME&destination=/mytempdir/myinputfile1.txt
+    curl -i -X PUT -H "Authorization: Bearer <REDACTED>" -d "" 'https://<yourstorename>.azuredatalakestore.net/webhdfs/v1/mytempdir/myinputfile.txt?op=RENAME&destination=/mytempdir/myinputfile1.txt'
 
 Deverá ver um resultado semelhante ao seguinte:
 
@@ -238,7 +229,7 @@ Esta operação baseia-se na chamada da API REST WebHDFS definida [aqui](http://
 
 Utilize o seguinte comando cURL para eliminar um ficheiro. Substitua **\<nomedoarquivo>** pelo nome do Data Lake Store.
 
-    curl -i -X DELETE -H "Authorization: Bearer <REDACTED>" https://<yourstorename>.azuredatalakestore.net/webhdfs/v1/mytempdir/myinputfile1.txt?op=DELETE
+    curl -i -X DELETE -H "Authorization: Bearer <REDACTED>" 'https://<yourstorename>.azuredatalakestore.net/webhdfs/v1/mytempdir/myinputfile1.txt?op=DELETE'
 
 Deve ver um resultado como o seguinte:
 

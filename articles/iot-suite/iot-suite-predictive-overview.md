@@ -13,11 +13,12 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 02/01/2017
+ms.date: 04/25/2017
 ms.author: dobett
 translationtype: Human Translation
-ms.sourcegitcommit: caecd0d6e546d4ddef71ebeee6fad3a5c7ba6451
-ms.openlocfilehash: 5447dff1ff9aea1b90f7e18499f795e7c173e2b9
+ms.sourcegitcommit: 1cc1ee946d8eb2214fd05701b495bbce6d471a49
+ms.openlocfilehash: e0e658fc392bf6a53f777f22a2e0b6e7bd742f97
+ms.lasthandoff: 04/25/2017
 
 
 ---
@@ -95,7 +96,7 @@ No Portal do Azure, navegue para o grupo de recursos com o nome da solução que
 
 ![][img-resource-group]
 
-Quando aprovisiona a solução pré-configurada, recebe um e-mail com uma ligação para a área de trabalho do Machine Learning. Pode ainda navegar para a área de trabalho do Machine Learning a partir do mosaico na página [azureiotsuite.com][lnk-azureiotsuite] para a sua solução aprovisionada quando estiver no estado **Pronto**.
+Quando aprovisiona a solução pré-configurada, recebe um e-mail com uma ligação para a área de trabalho do Machine Learning. Também pode navegar para a área de trabalho do Machine Learning a partir do mosaico na página [azureiotsuite.com][lnk-azureiotsuite] para a sua solução aprovisionada quando a solução estiver no estado **Pronto**.
 
 ![][img-machine-learning]
 
@@ -150,8 +151,3 @@ Também pode explorar algumas das outras funcionalidades e capacidades das solu�
 [lnk-permissions]: iot-suite-permissions.md
 [lnk-portal]: http://portal.azure.com/
 [lnk-machine-learning]: https://azure.microsoft.com/services/machine-learning/
-
-
-<!--HONumber=Feb17_HO1-->
-
-

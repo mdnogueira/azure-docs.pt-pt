@@ -1,0 +1,239 @@
+---
+title: Enviar eventos para o ambiente do Azure Time Series Insights | Microsoft Docs
+description: Este tutorial descreve como enviar eventos para o seu ambiente do Time Series Insights
+keywords: 
+services: time-series-insights
+documentationcenter: 
+author: venkatgct
+manager: almineev
+editor: cgronlun
+ms.assetid: 
+ms.service: time-series-insights
+ms.devlang: na
+ms.topic: get-started-article
+ms.tgt_pltfrm: na
+ms.workload: big-data
+ms.date: 04/21/2017
+ms.author: venkatja
+translationtype: Human Translation
+ms.sourcegitcommit: 1cc1ee946d8eb2214fd05701b495bbce6d471a49
+ms.openlocfilehash: 92e3e64f235e165a6a1772b6e1724789f3ec3049
+ms.lasthandoff: 04/25/2017
+
+---
+# <a name="send-events-to-a-time-series-insights-environment-via-event-hub"></a>Enviar eventos para um ambiente do Time Series Insights
+
+Este tutorial explica como criar e configurar um hub de eventos e executar uma aplicação de exemplo para enviar eventos. Se tiver um hub de eventos existente que já contém eventos no formato JSON, pode ignorar este tutorial e ver o seu ambiente no [Time Series Explorer](https://insights.timeseries.azure.com).
+
+## <a name="configure-an-event-hub"></a>Configurar um hub de eventos
+1. Para criar um hub de eventos, siga as instruções na [documentação](https://docs.microsoft.com/azure/event-hubs/event-hubs-create) dos Hubs de Eventos.
+
+2. Confirme que cria um grupo de consumidores que seja utilizado exclusivamente pela sua origem de eventos do Time Series Insights.
+
+  > [!IMPORTANT]
+  > Certifique-se de que este grupo de consumidores não é utilizado por nenhum outro serviço (como uma tarefa do Stream Analytics ou outro ambiente do Time Series Insights). Se for utilizado por outros serviços, a operação de leitura é afetada negativamente neste ambiente e nos outros serviços. A utilização de “$Default” como o grupo de consumidores pode levar à potencial reutilização por parte de outros leitores.
+
+  ![Selecionar o grupo de consumidores do hub de eventos](media/send-events/consumer-group.png)
+
+3. No hub de eventos, crie “MySendPolicy”, que é utilizada para enviar eventos no exemplo abaixo.
+
+  ![Selecione Políticas de acesso partilhado e clique no botão Adicionar](media/send-events/shared-access-policy.png)  
+
+  ![Adicionar uma política de acesso partilhado nova](media/send-events/shared-access-policy-2.png)  
+
+## <a name="create-time-series-insights-event-source"></a>Criar a origem de eventos do Time Series Insights
+1. Se não tiver criado uma origem de eventos, siga as instruções especificadas [aqui](time-series-insights-add-event-source.md) para criá-la.
+
+2. Especifique “deviceTimestamp” como o nome da propriedade de carimbo de data/hora. Esta propriedade é utilizada como o carimbo de data/hora real no exemplo seguinte. O nome da propriedade de carimbo de data/hora é sensível a maiúsculas e minúsculas e os valores devem estar no formato __aaaa-MM-ddTHH:mm:ss.FFFFFFFK__, se forem enviados como JSON para um hub de eventos. Se a propriedade não existir no evento, é utilizada a hora a que o evento foi colocado em fila no hub de eventos.
+
+  ![Crie a origem de eventos](media/send-events/event-source-1.png)
+
+## <a name="run-sample-code-to-push-events"></a>Executar código de exemplo para enviar eventos
+1. Aceda à política do hub de eventos “MySendPolicy” e copie a cadeia de ligação com a chave da política.
+
+  ![Copie a cadeia de ligação MySendPolicy](media/send-events/sample-code-connection-string.png)
+
+2. Execute o código seguinte, que enviará 600 eventos por cada um dos três dispositivos. Atualize `eventHubConnectionString` com a sua cadeia de ligação.
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using Microsoft.ServiceBus.Messaging;
+
+namespace Microsoft.Rdx.DataGenerator
+{
+    internal class Program
+    {
+        private static void Main(string[] args)
+        {
+            var from = new DateTime(2017, 4, 20, 15, 0, 0, DateTimeKind.Utc);
+            Random r = new Random();
+            const int numberOfEvents = 600;
+
+            var deviceIds = new[] { "device1", "device2", "device3" };
+
+            var events = new List<string>();
+            for (int i = 0; i < numberOfEvents; ++i)
+            {
+                for (int device = 0; device < deviceIds.Length; ++device)
+                {
+                    // Generate event and serialize as JSON object:
+                    // { "deviceTimestamp": "utc timestamp", "deviceId": "guid", "value": 123.456 }
+                    events.Add(
+                        String.Format(
+                            CultureInfo.InvariantCulture,
+                            @"{{ ""deviceTimestamp"": ""{0}"", ""deviceId"": ""{1}"", ""value"": {2} }}",
+                            (from + TimeSpan.FromSeconds(i * 30)).ToString("o"),
+                            deviceIds[device],
+                            r.NextDouble()));
+                }
+            }
+
+            // Create event hub connection.
+            var eventHubConnectionString = @"Endpoint=sb://...";
+            var eventHubClient = EventHubClient.CreateFromConnectionString(eventHubConnectionString);
+
+            using (var ms = new MemoryStream())
+            using (var sw = new StreamWriter(ms))
+            {
+                // Wrap events into JSON array:
+                sw.Write("[");
+                for (int i = 0; i < events.Count; ++i)
+                {
+                    if (i > 0)
+                    {
+                        sw.Write(',');
+                    }
+                    sw.Write(events[i]);
+                }
+                sw.Write("]");
+
+                sw.Flush();
+                ms.Position = 0;
+
+                // Send JSON to event hub.
+                EventData eventData = new EventData(ms);
+                eventHubClient.Send(eventData);
+            }
+        }
+    }
+}
+
+```
+## <a name="supported-json-shapes"></a>Formas JSON suportadas
+### <a name="sample-1"></a>Exemplo 1
+
+#### <a name="input"></a>Input
+
+Um objeto JSON simples.
+
+```json
+{
+    "deviceId":"device1",
+    "deviceTimestamp":"2016-01-08T01:08:00Z"
+}
+```
+#### <a name="output---1-event"></a>Saída - 1 evento
+
+|deviceId|deviceTimestamp|
+|--------|---------------|
+|device1|2016-01-08T01:08:00Z|
+
+### <a name="sample-2"></a>Exemplo 2
+
+#### <a name="input"></a>Input
+Uma matriz JSON com dois objetos JSON. Cada objeto JSON será convertido num evento.
+```json
+[
+    {
+        "deviceId":"device1",
+        "deviceTimestamp":"2016-01-08T01:08:00Z"
+    },
+    {
+        "deviceId":"device2",
+        "deviceTimestamp":"2016-01-17T01:17:00Z"
+    }
+]
+```
+#### <a name="output---2-events"></a>Saída - 2 eventos
+
+|deviceId|deviceTimestamp|
+|--------|---------------|
+|device1|2016-01-08T01:08:00Z|
+|device2|2016-01-08T01:17:00Z|
+
+### <a name="sample-3"></a>Exemplo 3
+
+#### <a name="input"></a>Input
+
+Um objeto JSON com uma matriz JSON aninhada que contém dois objetos JSON.
+```json
+{
+    "location":"WestUs",
+    "events":[
+        {
+            "deviceId":"device1",
+            "deviceTimestamp":"2016-01-08T01:08:00Z"
+        },
+        {
+            "deviceId":"device2",
+            "deviceTimestamp":"2016-01-17T01:17:00Z"
+        }
+    ]
+}
+
+```
+#### <a name="output---2-events"></a>Saída - 2 eventos
+Tenha em atenção que a propriedade "location" é copiada para cada evento.
+
+|localização|events.deviceId|events.deviceTimestamp|
+|--------|---------------|----------------------|
+|WestUs|device1|2016-01-08T01:08:00Z|
+|WestUs|device2|2016-01-08T01:17:00Z|
+
+### <a name="sample-4"></a>Exemplo 4
+
+#### <a name="input"></a>Input
+
+```json
+{
+    "location":"WestUs",
+    "manufacturerInfo":{
+        "name":"manufacturer1",
+        "location":"EastUs"
+    },
+    "events":[
+        {
+            "deviceId":"device1",
+            "deviceTimestamp":"2016-01-08T01:08:00Z",
+            "deviceData":{
+                "type":"pressure",
+                "units":"psi",
+                "value":108.09
+            }
+        },
+        {
+            "deviceId":"device2",
+            "deviceTimestamp":"2016-01-17T01:17:00Z",
+            "deviceData":{
+                "type":"vibration",
+                "units":"abs G",
+                "value":217.09
+            }
+        }
+    ]
+}
+```
+#### <a name="output---2-events"></a>Saída - 2 eventos
+
+|localização|manufacturerInfo.name|manufacturerInfo.location|events.deviceId|events.deviceTimestamp|events.deviceData.type|events.deviceData.units|events.deviceData.value|
+|---|---|---|---|---|---|---|---|
+|WestUs|manufacturer1|EastUs|device1|2016-01-08T01:08:00Z|pressure|psi|108.09|
+|WestUs|manufacturer1|EastUs|device1|2016-01-08T01:17:00Z|vibration|abs G|217.09|
+
+## <a name="next-steps"></a>Passos seguintes
+
+* Ver o seu ambiente no [Portal do Time Series Insights](https://insights.timeseries.azure.com)
+
