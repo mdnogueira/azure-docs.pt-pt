@@ -16,9 +16,9 @@ ms.date: 03/15/2016
 ms.author: jdial
 ms.custom: H1Hack27Feb2017
 translationtype: Human Translation
-ms.sourcegitcommit: eeb56316b337c90cc83455be11917674eba898a3
-ms.openlocfilehash: 1657f7c772b7039707a67c4abc788479cc08bdd0
-ms.lasthandoff: 04/03/2017
+ms.sourcegitcommit: b0c27ca561567ff002bbb864846b7a3ea95d7fa3
+ms.openlocfilehash: 93920075a8ad8de4fd650d9cbbfd13b7bc18bf52
+ms.lasthandoff: 04/25/2017
 
 
 ---
@@ -46,7 +46,7 @@ A figura abaixo mostra um exemplo de rotas definidas pelo utilizador e reencamin
 ![Rotas de sistema no Azure](./media/virtual-networks-udr-overview/Figure2.png)
 
 > [!IMPORTANT]
-> As rotas definidas pelo utilizador só se aplicadas ao tráfego que sai de uma sub-rede. não pode criar rotas para especificar a forma como o tráfego entra numa sub-rede a partir da Internet, por exemplo. Além disso, a aplicação para onde está a reencaminhar o tráfego não pode estar na mesma sub-rede de onde origina o tráfego. Crie sempre uma sub-rede separada para os dispositivos. 
+> As rotas definidas pelo utilizador são aplicadas ao tráfego que sai de uma sub-rede a partir de qualquer recurso (por exemplo, as interfaces de rede ligadas a VMs) na sub-rede. Não pode criar rotas para especificar a forma como o tráfego entra numa sub-rede a partir da Internet, por exemplo. A aplicação para onde está a reencaminhar o tráfego não pode estar na mesma sub-rede de onde origina o tráfego. Crie sempre uma sub-rede separada para os dispositivos. 
 > 
 > 
 

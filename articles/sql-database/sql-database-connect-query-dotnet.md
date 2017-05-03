@@ -16,9 +16,9 @@ ms.topic: hero-article
 ms.date: 04/17/2017
 ms.author: andrela;sstein;carlrab
 translationtype: Human Translation
-ms.sourcegitcommit: db7cb109a0131beee9beae4958232e1ec5a1d730
-ms.openlocfilehash: 368ffc65382c75b0fe5f4c20ce1c6a487a764ed3
-ms.lasthandoff: 04/18/2017
+ms.sourcegitcommit: abdbb9a43f6f01303844677d900d11d984150df0
+ms.openlocfilehash: 119ffa3ac31e0ea6e76f8232f13b4dd8667f78aa
+ms.lasthandoff: 04/20/2017
 
 
 ---
@@ -32,6 +32,8 @@ Este guia de introdução utiliza como ponto de partida os recursos criados num 
 - [Criar BD - CLI](sql-database-get-started-cli.md)
 
 ## <a name="install-net"></a>Instalar o .NET
+
+Os passos nesta secção partem do princípio de que está familiarizado com programação com .NET e nunca trabalhou com a Base de Dados SQL do Azure. Se não estiver familiarizado com a programação com .NET, aceda a [Criar uma aplicação com o SQL Server](https://www.microsoft.com/en-us/sql-server/developer-get-started/) e selecione **C#** e, em seguida, selecione o sistema operativo.
 
 ### <a name="windows-net-framework-and-net-core"></a>**Windows .NET framework e .NET core**
 
@@ -66,7 +68,7 @@ sudo apt-get install dotnet-dev-1.0.1
 
 ## <a name="get-connection-information"></a>Obter informações da ligação
 
-Obter a cadeia de ligação no portal do Azure. Utiliza a cadeia de ligação para ligar à base de dados SQL do Azure.
+Obtenha as informações de ligação necessárias para ligar à base de dados SQL do Azure. Irá precisar do nome de servidor totalmente qualificado, do nome de base de dados e das informações de início de sessão nos seguintes procedimentos.
 
 1. Inicie sessão no [Portal do Azure](https://portal.azure.com/).
 2. Selecione **Bases de Dados SQL** a partir do menu do lado esquerdo e clique na sua base de dados na página **Bases de Dados SQL**. 
@@ -96,7 +98,8 @@ Quando utilizar o .NET Core, adicione System.Data.SqlClient ao ficheiro ***cspro
 1. No ambiente de desenvolvimento, abra um ficheiro de código em branco.
 2. Adicione ```using System.Data.SqlClient``` ao seu ficheiro de código ([System.Data.SqlClient namespace](https://msdn.microsoft.com/library/system.data.sqlclient.aspx)). 
 
-3. Utilize [SqlCommand.ExecuteReader](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.executereader.aspx) com uma declaração do Transact-SQL [SELECIONAR](https://msdn.microsoft.com/library/ms189499.aspx), para consultar dados na base de dados SQL do Azure. Adicione os valores adequados para o servidor.
+3. Utilize o seguinte código para consultar os 20 melhores produtos por categoria com o comando [SqlCommand.ExecuteReader](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.executereader.aspx) com uma declaração Transact-SQL [SELECIONAR](https://msdn.microsoft.com/library/ms189499.aspx). Adicione os valores adequados para o servidor, a base de dados, o utilizador e a palavra-passe.
+
 ```csharp
 using System;
 using System.Data;
@@ -152,7 +155,7 @@ namespace ConsoleApplication1
 
 ## <a name="insert-data"></a>Inserir dados
 
-Utilize [SqlCommand.ExecuteNonQuery](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.executenonquery.aspx) com uma declaração do Transact-SQL [INSERIR](https://msdn.microsoft.com/library/ms174335.aspx), para inserir dados na base de dados SQL do Azure.
+Utilize o seguinte código para inserir um novo produto na tabela SalesLT.Product com o [SqlCommand.ExecuteNonQuery](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.executenonquery.aspx) com uma declaração Transact-SQL [INSERIR](https://msdn.microsoft.com/library/ms174335.aspx). Adicione os valores adequados para o servidor, a base de dados, o utilizador e a palavra-passe.
 
 ```csharp
 using System;
@@ -207,7 +210,7 @@ namespace ConsoleApplication1
 
 ## <a name="update-data"></a>Atualizar dados
 
-Utilize [SqlCommand.ExecuteNonQuery](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.executenonquery.aspx) com uma declaração do Transact-SQL [ATUALIZAR](https://msdn.microsoft.com/library/ms177523.aspx), para atualizar dados na base de dados SQL do Azure.
+Utilize o seguinte código para atualizar o produto novo que foi adicionado anteriormente com o [SqlCommand.ExecuteNonQuery](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.executenonquery.aspx) com uma declaração Transact-SQL [ATUALIZAR](https://msdn.microsoft.com/library/ms177523.aspx). Adicione os valores adequados para o servidor, a base de dados, o utilizador e a palavra-passe.
 
 ```csharp
 using System;
@@ -257,7 +260,7 @@ namespace ConsoleApplication1
 
 ## <a name="delete-data"></a>Eliminar dados
 
-Utilize [SqlCommand.ExecuteNonQuery](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.executenonquery.aspx) com uma declaração do Transact-SQL [ELIMINAR](https://msdn.microsoft.com/library/ms189835.aspx), para eliminar dados na base de dados SQL do Azure.
+Utilize o seguinte código para eliminar o produto novo que foi adicionado anteriormente com o [SqlCommand.ExecuteNonQuery](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.executenonquery.aspx) com uma declaração Transact-SQL [ELIMINAR](https://msdn.microsoft.com/library/ms189835.aspx). Adicione os valores adequados para o servidor, a base de dados, o utilizador e a palavra-passe.
 
 ```csharp
 using System;

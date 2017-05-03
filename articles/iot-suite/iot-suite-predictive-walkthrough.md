@@ -13,11 +13,12 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 02/01/2017
+ms.date: 04/25/2017
 ms.author: dobett
 translationtype: Human Translation
-ms.sourcegitcommit: 719f9810abb12cbe8645651d35cbff936cecd158
-ms.openlocfilehash: 57531b609b095359c8bf0ea3685af40124f46311
+ms.sourcegitcommit: 1cc1ee946d8eb2214fd05701b495bbce6d471a49
+ms.openlocfilehash: 9b2947d9ce00083c168635811395bc86b3e60b78
+ms.lasthandoff: 04/25/2017
 
 
 ---
@@ -63,7 +64,7 @@ O IoT Hub reconhece o comando do dispositivo.
 O **anfitrião do processador de eventos** executa uma Tarefa Web do Azure. O **processador de eventos** obtém os valores médios do sensor para um ciclo concluído. Em seguida, transmite esses valores para uma API que expõe o modelo formado para calcular a RUL de um motor. A API é exposta por uma área de trabalho do Machine Learning que está aprovisionada como parte da solução.
 
 ## <a name="machine-learning"></a>Machine Learning
-O componente de Machine Learning utiliza um modelo derivado dos dados recolhidos de motores de aeronave reais. Pode navegar para a área de trabalho do Machine Learning a partir do mosaico na página [azureiotsuite.com][lnk-azureiotsuite] para a sua solução aprovisionada quando estiver no estado **Pronto**.
+O componente de Machine Learning utiliza um modelo derivado dos dados recolhidos de motores de aeronave reais. Pode navegar para a área de trabalho do Machine Learning a partir do mosaico na página [azureiotsuite.com][lnk-azureiotsuite] para a sua solução aprovisionada quando a solução estiver no estado **Pronto**.
 
 
 ## <a name="next-steps"></a>Passos seguintes
@@ -83,8 +84,3 @@ Também pode explorar algumas das outras funcionalidades e capacidades das solu�
 [lnk-faq]: iot-suite-faq.md
 [lnk-security-groundup]: securing-iot-ground-up.md
 [lnk-machine-learning]: https://azure.microsoft.com/services/machine-learning/
-
-
-<!--HONumber=Feb17_HO1-->
-
-

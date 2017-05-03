@@ -13,12 +13,12 @@ ms.topic: get-started-article
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 03/30/2017
+ms.date: 04/19/2017
 ms.author: yurid
 translationtype: Human Translation
-ms.sourcegitcommit: 5001cd47b6ee51967d1286414ccefedd8e7e7813
-ms.openlocfilehash: 888b9786de8302ccd2e11f271aa417bcbcc2620b
-ms.lasthandoff: 12/02/2016
+ms.sourcegitcommit: 8c4e33a63f39d22c336efd9d77def098bd4fa0df
+ms.openlocfilehash: c6944fd4f93d2daa9071bb27f76ea0f772bdb743
+ms.lasthandoff: 04/19/2017
 
 
 ---
@@ -31,16 +31,16 @@ O Microsoft Operations Management Suite (OMS) é a solução de gestão de TI ba
 ## <a name="oms-security-and-audit-dashboard"></a>Dashboard de Segurança e Auditoria do OMS
 A solução de Segurança e Auditoria do OMS permite uma visão abrangente da postura de segurança de TI da organização com consultas de pesquisa incorporada para problemas relevantes que requerem a sua atenção. O dashboard de **Segurança e Auditoria** é o ecrã principal de tudo o que se relacione com a segurança no OMS. Fornece informações de alto nível sobre o estado de segurança dos computadores. Também inclui a capacidade de ver todos os eventos das últimas 24 horas, 7 dias ou qualquer outro intervalo de tempo personalizado. Para aceder ao dashboard de **Segurança e Auditoria**, siga estes passos:
 
-1. No dashboard principal do **Microsoft Operations Management Suite ** clique no mosaico **Definições** à esquerda.
+1. No dashboard principal do **Microsoft Operations Management Suite** clique no mosaico **Definições** à esquerda.
 2. No painel **Definições**, em **Soluções** clique na opção **Segurança e Auditoria**.
-3. O dashboard de **Segurança e Auditoria** aparecerá:
+3. O dashboard de **Segurança e Auditoria** aparece:
    
     ![Dashboard de Segurança e Auditoria do OMS](./media/oms-security-getting-started/oms-getting-started-fig1-ga.png)
 
 Se estiver a aceder a este dashboard pela primeira vez e se não tiver dispositivos monitorizados pelo OMS, os mosaicos não estarão preenchidos com dados obtidos a partir do agente. Depois de instalar o agente, pode demorar algum tempo a preencher, pelo que poderá não ver inicialmente alguns dados que ainda estejam a ser carregados para a nuvem.  Neste caso, é normal ver alguns mosaicos sem informações concretas. Leia [Ligar computadores Windows diretamente ao OMS](https://technet.microsoft.com/library/mt484108.aspx) para obter mais informações sobre como instalar o agente OMS num sistema Windows e [Ligar computadores Linux ao OMS](https://technet.microsoft.com/library/mt622052.aspx) para obter mais informações sobre como efetuar esta tarefa num sistema Linux.
 
 > [!NOTE]
-> O agente irá recolher as informações com base nos eventos atuais que estão ativados, por exemplo, no nome do computador, no nome de utilizador e no endereço IP. No entanto, nenhum documento/ficheiros, nome de base de dados ou dados privados são recolhidos.   
+> O agente recolhe as informações com base nos eventos atuais que estão ativados, por exemplo, no nome do computador, no nome de utilizador e no endereço IP. No entanto, nenhum documento/ficheiros, nome de base de dados ou dados privados são recolhidos.   
 > 
 > 
 
@@ -99,12 +99,12 @@ Tal como qualquer outro mosaico dinâmico disponível no Dashboard OMS, ao clica
 Se clicar no nome do computador, terá a vista cronológica do estado de proteção para este computador. Isto é muito útil para cenários em que tem de perceber se o antimalware foi instalado e removido em determinada altura.   
 
 ### <a name="update-assessment"></a>Avaliação de atualização
-Esta opção permite-lhe determinar rapidamente a exposição geral a potenciais problemas de segurança e até que ponto estas atualizações são críticas para o ambiente. A solução de Segurança e Auditoria do OMS apenas fornece a visualização destas atualizações, os dados reais são provenientes das [Soluções de Atualizações de Sistema](https://technet.microsoft.com/library/mt484096.aspx), que é um módulo diferentes dentro do OMS. Eis um exemplo das atualizações:
+Esta opção permite-lhe determinar rapidamente a exposição geral a potenciais problemas de segurança e até que ponto estas atualizações são críticas para o ambiente. A solução de Segurança e Auditoria do OMS apenas fornece a visualização destas atualizações, os dados reais são provenientes das [Soluções de Gestão de Atualizações](oms-solution-update-management.md), que é um módulo diferentes dentro do OMS. Eis um exemplo das atualizações:
 
-![atualizações do sistema](./media/oms-security-getting-started/oms-getting-started-fig6.png)
+![atualizações do sistema](./media/oms-security-getting-started/oms-getting-started-fig6-new.png)
 
 > [!NOTE]
-> para obter mais informações sobre a solução Atualizações, leia [atualizar os servidores com a solução Atualizações de Sistema](https://technet.microsoft.com/library/mt484096.aspx).
+> Para obter mais informações sobre a solução de Gestão de Atualizações, leia [Update Management solution in OMS (Solução de Gestão de Atualizações no OMS)](oms-solution-update-management.md).
 > 
 > 
 
@@ -135,6 +135,14 @@ Este mosaico pode ser utilizado para aceder a todos os computadores que tenham e
 
 Pode continuar a investigação clicando em cada computador e rever os eventos de segurança que foram sinalizados.
 
+### <a name="threat-intelligence"></a>Informações sobre Ameaças
+
+Ao utilizar a opção de Análise de Ameaças disponível na Auditoria e Segurança de OMS, os administradores de TI podem identificar ameaças de segurança contra o ambiente, por exemplo, identificar se um determinado computador faz parte de um botnet. Os computadores podem tornar-se nós de um botnet quando os atacantes instalam ilicitamente malware que liga secretamente este computador ao comando e controlo. Também poderá identificar potenciais ameaças provenientes de canais de comunicação underground, como o darknet. Saiba mais sobre a Análise de Ameaças ao ler o artigo [Monitoring and responding to security alerts in Operations Management Suite Security and Audit Solution (Monitorização e resposta aos alertas de segurança na Solução de Segurança e Auditoria do Operations Management Suite)](oms-security-responding-alerts.md).
+
+### <a name="baseline-assessment"></a>Avaliação da Linha de Base
+
+A Microsoft, juntamente com o setor e as organizações governamentais em todo o mundo, define uma configuração do Windows que representa implementações de servidor altamente seguras. Esta configuração é um conjunto de chaves de registo, definições de política de auditoria e definições de política de segurança juntamente com os valores recomendados da Microsoft para estas definições. Este conjunto de regras é conhecido como linha de base de Segurança. Leia [Avaliação da Linha de Base em Solução de Segurança e Auditoria do Operations Management Suite](oms-security-baseline.md) para obter mais informações sobre esta opção.
+
 ### <a name="azure-security-center"></a>Centro de Segurança do Azure
 Este mosaico é basicamente um atalho para aceder ao dashboard do Centro de Segurança do Azure. Leia [Introdução ao Centro de Segurança do Azure](../security-center/security-center-get-started.md) para obter mais informações sobre esta solução.
 
@@ -153,7 +161,7 @@ A intenção principal desta opção é permitir que as TI identifiquem rapidame
 Esta opção também pode ser utilizada durante uma [investigação de resposta a incidentes](https://blogs.msdn.microsoft.com/azuresecurity/2016/11/30/investigating-suspicious-activity-in-a-hybrid-cloud-with-oms-security/) para efetuar a avaliação e obter mais informações sobre o ataque.
 
 > [!NOTE]
-> Para obter mais informações sobre como utilizar o OMS para Resposta a Incidentes, veja [Como tirar partido do Centro de Segurança do Azure e do Microsoft Operations Management Suite para uma Resposta a Incidentes](https://channel9.msdn.com/Blogs/Taste-of-Premier/ToP1703).
+> Para obter mais informações sobre como utilizar o OMS para Resposta a Incidentes, veja este vídeo: [How to Leverage the Azure Security Center & Microsoft Operations Management Suite for an Incident Response (Como tirar partido do Centro de Segurança do Azure e do Microsoft Operations Management Suite para uma Resposta a Incidentes)](https://channel9.msdn.com/Blogs/Taste-of-Premier/ToP1703).
 > 
 > 
 

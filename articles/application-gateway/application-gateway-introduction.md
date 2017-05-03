@@ -16,9 +16,9 @@ ms.workload: infrastructure-services
 ms.date: 04/03/2017
 ms.author: gwallace
 translationtype: Human Translation
-ms.sourcegitcommit: 303cb9950f46916fbdd58762acd1608c925c1328
-ms.openlocfilehash: d23b400d8e6db66bc596731770a98e2833302543
-ms.lasthandoff: 04/04/2017
+ms.sourcegitcommit: 9eafbc2ffc3319cbca9d8933235f87964a98f588
+ms.openlocfilehash: ba9c673676fd0b742eb8bd780b67930333b151b3
+ms.lasthandoff: 04/22/2017
 
 
 ---
@@ -101,6 +101,9 @@ Pode criar e gerir um gateway de aplicação com APIs REST, cmdlets do PowerShel
 
 O preço baseia-se no custo de instância de gateway por hora e no custo do processamento de dados. O preço de gateway por hora do WAF SKU é diferente dos custos do SKU Standard e está disponível em [Detalhes dos preços do Gateway de Aplicação](https://azure.microsoft.com/pricing/details/application-gateway/). Os custos de processamento permanecem iguais.
 
+## <a name="faq"></a>FAQ
+
+Para perguntas mais frequentes sobre o Gateway de Aplicação, consulte [Application Gateway FAQ (FAQ sobre o Gateway de Aplicação)](application-gateway-faq.md).
 ## <a name="next-steps"></a>Passos seguintes
 
 Após aprender sobre o Gateway de aplicação, pode [criar um gateway de aplicação](application-gateway-create-gateway-portal.md) ou [criar uma descarga SSL de gateway de aplicação](application-gateway-ssl-arm.md) para ligações de HTTPS com carga balanceada.

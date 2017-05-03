@@ -13,17 +13,17 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 2/6/2017
+ms.date: 4/25/2017
 ms.author: guybo
 translationtype: Human Translation
-ms.sourcegitcommit: 197ebd6e37066cb4463d540284ec3f3b074d95e1
-ms.openlocfilehash: 91d36d5321f455a2af31093fa460ddf6640942d4
-ms.lasthandoff: 03/31/2017
+ms.sourcegitcommit: 1cc1ee946d8eb2214fd05701b495bbce6d471a49
+ms.openlocfilehash: d991adb8fa8f71a8785327be244ad9749a837dfd
+ms.lasthandoff: 04/25/2017
 
 
 ---
 # <a name="azure-vm-scale-sets-and-attached-data-disks"></a>Conjuntos de dimensionamento de VMs do Azure e discos de dados anexados
-Agora, os [conjuntos de dimensionamento de máquinas virtuais](/azure/virtual-machine-scale-sets/) do Azure suportam máquinas virtuais com discos de dados anexados. Pode definir os discos de dados no perfil de armazenamento dos conjuntos de dimensionamento criados com os Managed Disks do Azure. Anteriormente, as únicas opções de armazenamento diretamente anexadas disponíveis com as VMs em conjuntos de dimensionamento eram a unidade de SO e as unidades temporárias.
+Agora, os [conjuntos de dimensionamento de máquinas virtuais](/azure/virtual-machine-scale-sets/) do Azure suportam máquinas virtuais com discos de dados anexados. Pode definir os discos de dados no perfil de armazenamento dos conjuntos de dimensionamento que foram criados com os Managed Disks do Azure. Anteriormente, as únicas opções de armazenamento diretamente anexadas disponíveis com as VMs em conjuntos de dimensionamento eram a unidade de SO e as unidades temporárias.
 
 > [!NOTE]
 >  Quando cria um conjunto de dimensionamento com discos de dados anexados definidos, continua a ter de montar e formatar os discos a partir de uma VM para poder utilizá-los (tal como acontece com VMs do Azure autónomas). Uma forma conveniente de fazer isto consiste em utilizar uma extensão de script personalizado que chama um script padrão para particionar e formatar todos os discos de dados numa VM.
@@ -58,10 +58,21 @@ Outra forma de criar um conjunto de dimensionamento com discos de dados anexados
 Pode ver um exemplo de modelo de conjunto de dimensionamento com um disco anexado completo e pronto a utilizar definido aqui: [https://github.com/chagarw/MDPP/tree/master/101-vmss-os-data](https://github.com/chagarw/MDPP/tree/master/101-vmss-os-data).
 
 ## <a name="adding-a-data-disk-to-an-existing-scale-set"></a>Adicionar um disco de dados a um conjunto de dimensionamento existente
+> [!NOTE]
+>  Apenas pode anexar discos de dados a um conjunto de dimensionamento que foi criado com os [Azure Managed Disks](./virtual-machine-scale-sets-managed-disks.md).
+
 Pode adicionar um disco de dados a um conjunto de dimensionamento de VM com o comando _az vmss disk attach_ da CLI do Azure. Certifique-se de que especifica um lun que não esteja já em utilização. O seguinte exemplo da CLI adiciona uma unidade de 50 GB ao lun 3:
 ```bash
 az vmss disk attach -g dsktest -n dskvmss --size-gb 50 --lun 3
 ```
+
+O seguinte exemplo do PowerShell adiciona uma unidade de 50 GB ao lun 3:
+```powershell
+$vmss = Get-AzureRmVmss -ResourceGroupName myvmssrg -VMScaleSetName myvmss
+$vmss = Add-AzureRmVmssDataDisk -VirtualMachineScaleSet $vmss -Lun 3 -Caching 'ReadWrite' -CreateOption Empty -DiskSizeGB 50 -StorageAccountType StandardLRS
+Update-AzureRmVmss -ResourceGroupName myvmssrg -Name myvmss -VirtualMachineScaleSet $vmss
+```
+
 > [!NOTE]
 > Diferentes tamanhos de VM têm limites diferentes relativamente ao número de unidades anexadas que suportam. Verifique as [características do tamanho da máquina virtual](../virtual-machines/windows/sizes.md) antes de adicionar um novo disco.
 

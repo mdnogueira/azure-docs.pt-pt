@@ -18,9 +18,9 @@ ms.topic: hero-article
 ms.date: 03/15/2017
 ms.author: carlrab
 translationtype: Human Translation
-ms.sourcegitcommit: 0d6f6fb24f1f01d703104f925dcd03ee1ff46062
-ms.openlocfilehash: a08fe566f4962684bc4aad220687e9cd36fc4abf
-ms.lasthandoff: 04/17/2017
+ms.sourcegitcommit: 8c4e33a63f39d22c336efd9d77def098bd4fa0df
+ms.openlocfilehash: 9ffad92e668b76c9a4e2941b20d075bf52132d16
+ms.lasthandoff: 04/19/2017
 
 
 ---
@@ -37,7 +37,7 @@ Antes de começar, certifique-se de que instalou a versão mais recente do [SSMS
 
 ## <a name="get-connection-information"></a>Obter informações da ligação
 
-Obtenha o nome de servidor totalmente qualificado para o servidor da Base de Dados SQL do Azure no portal do Azure. Utilize o nome de servidor totalmente qualificado para ligar ao seu servidor com o SQL Server Management Studio.
+Obtenha as informações de ligação necessárias para ligar à base de dados SQL do Azure. Irá precisar do nome de servidor totalmente qualificado, do nome de base de dados e das informações de início de sessão nos seguintes procedimentos.
 
 1. Inicie sessão no [Portal do Azure](https://portal.azure.com/).
 2. Selecione **Bases de Dados SQL** a partir do menu do lado esquerdo e clique na sua base de dados na página **Bases de Dados SQL**. 
@@ -78,7 +78,7 @@ Utilize o SQL Server Management Studio para estabelecer uma ligação ao servido
 
 ## <a name="query-data"></a>Consultar dados
 
-Utilize a declaração do Transact-SQL [SELECIONAR](https://msdn.microsoft.com/library/ms189499.aspx) para consultar dados na base de dados SQL do Azure.
+Utilize o seguinte código para consultar os 20 melhores produtos por categoria com uma declaração Transact-SQL [SELECIONAR](https://msdn.microsoft.com/library/ms189499.aspx).
 
 1. No Object Explorer, clique com o botão direito do rato em **mySampleDatabase** e, em seguida, clique em **Nova Consulta**. É aberta uma janela de consulta em branco que está ligada à sua base de dados.
 2. Na janela da consulta, introduza a seguinte consulta:
@@ -96,7 +96,7 @@ Utilize a declaração do Transact-SQL [SELECIONAR](https://msdn.microsoft.com/l
 
 ## <a name="insert-data"></a>Inserir dados
 
-Utilize a declaração do Transact-SQL [INSERIR](https://msdn.microsoft.com/library/ms174335.aspx) para inserir dados na sua base de dados SQL do Azure.
+Utilize o seguinte código para inserir um novo produto na tabela SalesLT.Product com uma declaração Transact-SQL [INSERIR](https://msdn.microsoft.com/library/ms174335.aspx).
 
 1. Na janela da consulta, substitua a consulta anterior pela seguinte consulta:
 
@@ -126,7 +126,7 @@ Utilize a declaração do Transact-SQL [INSERIR](https://msdn.microsoft.com/libr
 
 ## <a name="update-data"></a>Atualizar dados
 
-Utilize a declaração do Transact-SQL [ATUALIZAR](https://msdn.microsoft.com/library/ms177523.aspx) para atualizar dados na base de dados SQL do Azure.
+Utilize o seguinte código para atualizar o produto novo que foi adicionado anteriormente com uma declaração Transact-SQL [ATUALIZAR](https://msdn.microsoft.com/library/ms177523.aspx).
 
 1. Na janela da consulta, substitua a consulta anterior pela seguinte consulta:
 
@@ -142,7 +142,7 @@ Utilize a declaração do Transact-SQL [ATUALIZAR](https://msdn.microsoft.com/li
 
 ## <a name="delete-data"></a>Eliminar dados
 
-Utilize a declaração do Transact-SQL [ELIMINAR](https://msdn.microsoft.com/library/ms189835.aspx) para eliminar dados na base de dados SQL do Azure.
+Utilize o seguinte código para eliminar o produto novo que foi adicionado anteriormente com uma declaração Transact-SQL [ELIMINAR](https://msdn.microsoft.com/library/ms189835.aspx).
 
 1. Na janela da consulta, substitua a consulta anterior pela seguinte consulta:
 

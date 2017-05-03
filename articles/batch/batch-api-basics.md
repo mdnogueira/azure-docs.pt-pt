@@ -16,9 +16,9 @@ ms.date: 03/27/2017
 ms.author: tamram
 ms.custom: H1Hack27Feb2017
 translationtype: Human Translation
-ms.sourcegitcommit: 6ea03adaabc1cd9e62aa91d4237481d8330704a1
-ms.openlocfilehash: c7090940192d9bd07fce96ad475b2239f5e9f2e8
-ms.lasthandoff: 04/06/2017
+ms.sourcegitcommit: 1cc1ee946d8eb2214fd05701b495bbce6d471a49
+ms.openlocfilehash: 23dfe112411ebc6f47e6a3f09baaf1aa746e6987
+ms.lasthandoff: 04/25/2017
 
 
 ---
@@ -73,11 +73,12 @@ Uma conta do Batch é uma entidade identificada exclusivamente no âmbito do ser
 
 Pode criar uma conta do Azure Batch através do [portal do Azure](batch-account-create-portal.md) ou através de programação, como com a [Biblioteca .NET de Gestão de Batch](batch-management-dotnet.md). Ao criar a conta, pode associar uma conta de armazenamento do Azure.
 
-O Batch suporta duas configurações de conta, com base na propriedade *modo de alocação de conjunto*. As duas configurações dão-lhe diferentes opções para a autenticação com o serviço de Batch e para o aprovisionamento e gestão de [conjuntos](#pool) de Batch (consulte este artigo mais tarde). 
+O Batch suporta duas configurações de conta, com base na propriedade *modo de alocação de conjunto*. As duas configurações concedem-lhe acesso às capacidades diferentes relacionadas com [conjuntos](#pool) do Batch (consulte este artigo mais tarde). 
 
 
-* **Serviço de Batch** (predefinição): pode aceder às APIs de Batch com a autenticação de chave partilhada ou a [autenticação do Azure Active Directory](batch-aad-auth.md). Os recursos de computação do Batch são alocados nos bastidores de uma conta gerida pelo Azure.   
-* **Subscrição do utilizador**: só pode aceder às APIs do Batch com a [autenticação do Azure Active Directory](batch-aad-auth.md). Os recursos de computação do Batch são alocados diretamente na sua subscrição do Azure. Este modo dá-lhe mais flexibilidade para configurar os nós de computação e integrar com outros serviços. Neste modo tem de configurar um cofre chaves adicional do Azure para a sua conta do Batch.
+* **Serviço do Batch**: esta é a opção predefinida com as VMs do conjunto do Batch a serem atribuídas em segundo plano em subscrições geridas do Azure. Esta configuração de conta tem de ser utilizada se os conjuntos dos Serviços Cloud forem necessários, mas não podem ser utilizados se forem necessários conjuntos da Máquina Virtual criados a partir de imagens da VM personalizadas ou utilizar uma rede virtual. Pode aceder às APIs de Batch com a autenticação de chave partilhada ou a [autenticação do Azure Active Directory](batch-aad-auth.md). 
+
+* **Subscrição do Azure**: esta configuração de conta tem de ser utilizada se os conjuntos da Máquina Virtual criados a partir de imagens da VM personalizadas ou utilizar uma rede virtual. Só pode aceder às APIs do Batch com a [autenticação do Azure Active Directory](batch-aad-auth.md) e os conjuntos dos Serviços Cloud não são suportados. As VMs de computação do Batch são alocadas diretamente na sua subscrição do Azure. Neste modo tem de configurar um cofre de chaves do Azure para a sua conta do Batch.
  
 
 ## <a name="compute-node"></a>Nó de computação

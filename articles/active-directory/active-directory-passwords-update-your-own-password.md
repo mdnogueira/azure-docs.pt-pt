@@ -16,84 +16,87 @@ ms.date: 04/11/2017
 ms.author: joflore
 ms.custom: end-user
 translationtype: Human Translation
-ms.sourcegitcommit: c300ba45cd530e5a606786aa7b2b254c2ed32fcd
-ms.openlocfilehash: bb62d6973dff00932e72ddb4b2c344f070537828
-ms.lasthandoff: 04/14/2017
+ms.sourcegitcommit: 1cc1ee946d8eb2214fd05701b495bbce6d471a49
+ms.openlocfilehash: c95f52f028cdfaed35821275d816a24035ff02fb
+ms.lasthandoff: 04/25/2017
 
 
 ---
-# <a name="help-i-forgot-my-password"></a>Ajuda, esqueci-me da minha palavra-passe
+# <a name="help-i-forgot-my-azure-ad-password"></a>Ajudem-me, esqueci-me da minha palavra-passe do Azure AD
 
-Passo 1... não entre em pânico
+Se se tiver esquecido da sua palavra-passe, o seu departamento de TI nunca lhe enviou uma, a sua conta foi bloqueada ou se quiser alterá-la, podemos ajudá-lo.
 
-Se os cenários seguintes se aplicam a si, podemos ajudar
+## <a name="reset-or-unlock-my-password-for-a-work-or-school-account"></a>Repor ou desbloquear a palavra-passe de uma conta escolar ou profissional
 
-* Se não souber como aceder à sua conta e não se lembra da palavra-passe
-* Não foi atribuída uma palavra-passe e o administrador enviou-o para aqui
+Para aceder à sua conta escolar ou profissional, siga os passos abaixo para aceder à reposição de palavras-passe self-service do Azure AD, ou SSPR, como gostamos de dizer.
 
-## <a name="unlock-my-account"></a>Desbloquear a minha conta
-
-Se o utilizador está aqui para desbloquear a conta, siga os passos abaixo. Quando vir **Escolher uma nova palavra-passe** no passo 6 abaixo, pode desbloquear ou alterar a palavra-passe.
-
-## <a name="reset-my-password"></a>Repor a minha palavra-passe
-
-Para voltar para a sua conta, siga estes passos abaixo.
-1. A partir de qualquer página de início de sessão escolar ou profissional, clique na **ligação Não consegue aceder à sua conta?** e, em seguida, na **Conta profissional ou escolar** ou aceda diretamente à [página de reposição de palavra-passe](https://passwordreset.microsoftonline.com/)
-
-    ![Não consegue aceder à sua conta?][Login]
-
-2. Introduza o seu **ID de Utilizador** escolar ou profissional e prove que não é um robot ao passar no teste CAPTCHA e introduzir o texto apresentado, e clique em **Seguinte**
+1. A partir de qualquer página de início de sessão escolar ou profissional, clique na ligação **Não consegue aceder à sua conta?** e, em seguida, clique em **Conta escolar ou profissional** ou aceda diretamente à [página de reposição de palavras-passe](https://passwordreset.microsoftonline.com/)
 
    > [!NOTE]
-   > Se o administrador não tiver ativado esta funcionalidade, é apresentada uma ligação "contacte o administrador" neste momento, para que o administrador possa fornecer assistência por e-mail ou por um próprio portal Web.
+   > Se estiver a tentar voltar a uma Conta pessoal, como hotmail.com ou outlook.com, experimente as [sugestões disponíveis neste artigo](https://support.microsoft.com/help/12429/microsoft-account-sign-in-cant)
+   >
+    ![Não consegue aceder à sua conta?][Login]
+
+2. Introduza o seu **ID de Utilizador** escolar ou profissional, introduza os carateres que vê no ecrã para provar que não é um robô e clique em **Seguinte**.
+
+   > [!NOTE]
+   > Se o seu departamento de TI não tiver ativado esta funcionalidade, aparece uma ligação que diz “contacte o seu administrador”, para que o departamento o possa ajudar através de e-mail ou de um portal Web do próprio departamento.
    >
 
-3. Dependendo de como o administrador configurou as coisas verá um ou mais dos seguintes procedimentos
-    * **Enviar um e-mail para o meu e-mail alternativo** - envia um e-mail com um código de seis dígitos para o seu e-mail alternativo ou o seu e-mail de autenticação (a opção é sua).
-    * **Enviar uma mensagem para o meu telemóvel** - envia uma mensagem com um código de seis dígitos para o seu telemóvel ou para o telemóvel de autenticação (a opção é sua).
-    * **Ligar para o meu telemóvel** - liga para o seu telemóvel ou para o telemóvel de autenticação (que escolher). Prima a tecla # para verificar a chamada.
-    * **Ligar para o meu telefone do escritório** - liga para o seu telefone do escritório. Prima a tecla # para verificar a chamada.
-    * **Responder às minhas perguntas de segurança** - apresenta as perguntas de segurança pré-registadas por si para que responda.
-4. Preencha os campos obrigatórios com respostas para as informações de teste e clique em **Seguinte**
+3. Dependendo da forma como o departamento de TI configurou a SSPR, verá uma ou mais das opções seguintes. Algumas [destas](active-directory-passwords-reset-register.md) informações foram preenchidas por si ou pelo seu departamento de TI antes de terem sido utilizadas.
+    * **Enviar e-mail para o meu e-mail alternativo**
+    * **Enviar mensagem de texto para o meu telemóvel**
+    * **Ligar para o meu telemóvel**
+    * **Ligar para o meu telefone do escritório**
+    * **Responder às minhas perguntas de segurança**
+
+    Escolha uma opção, dê as respostas corretas e clique em **Seguinte**.
 
     ![Verifique os dados de autenticação][Verification]
 
-5. O administrador poderá necessitar de um passo de verificação adicional e poderá ter de repetir o passo 4 novamente com uma opção diferente
-6. Na página **Escolher uma nova palavra-passe**, introduza uma nova palavra-passe que cumpra os requisitos de organizações, confirme a palavra-passe e, em seguida, clique em **Concluir**
+4. O seu departamento de TI poderá precisar de mais confirmações, pelo que é possível que tenha de repetir o passo 3 com outra opção.
+5. Na página **Escolher uma nova palavra-passe**, introduza uma palavra-passe nova, confirme-a e, em seguida, clique em **Concluir**. Sugerimos que a palavra-passe tenha entre 8 e 16 carateres com letras maiúsculas e minúsculas, números e carateres especiais.
 
-    ![Alterar a palavra-passe][Change]
+   > [!NOTE]
+   > Se precisava de desbloquear a sua conta, nesta fase, escolha a opção para desbloquear apenas ou altere a palavra-passe e desbloqueie.
+   >
 
-7. Quando vir **A palavra-passe foi reposta**, pode iniciar sessão com a nova palavra-passe.
+6. Quando vir **A sua palavra-passe foi reposta**, pode iniciar sessão com a mesma.
 
     ![A palavra-passe do utilizador foi reposta][Complete]
 
-Depois de utilizar este método para desbloquear ou repor a palavra-passe, poderá receber um e-mail a confirmar que este processo foi concluído e que provém de uma conta como "Microsoft em Nome da Sua Organização Aqui". Se receber um e-mail assim e não utilizou a reposição personalizada de palavra-passe para recuperar o acesso à sua conta, contacte o administrador.
+Já deverá conseguir aceder à sua conta. Se não, contacte o departamento de TI da sua organização para obter mais ajuda.
+
+Poderá receber um e-mail de confirmação proveniente de uma conta como "Microsoft, em nome da \<sua organização >\". Se receber um e-mail assim e não utilizou a reposição de palavra-passe self-service para recuperar o acesso à sua conta, contacte o departamento de TI da sua organização.
 
 ## <a name="change-my-password"></a>Alterar a minha palavra-passe
 
-Se já sabe a palavra-passe e precisa de alterá-la, experimente os passos que se seguem
+Se já souber a palavra-passe e quiser alterá-la, utilize os passos que se seguem para o fazer.
 
 ### <a name="change-your-password-from-the-office-365-portal"></a>Alterar a palavra-passe a partir do portal do Office 365
 
-1. Clique no seu perfil do canto superior direito, clique em **Ver conta**
-2. **Segurança e privacidade**
-3. **Palavra-passe**
-4. Introduza a palavra-passe antiga e defina e confirme a palavra-passe nova
-5. **Submeter**
+Utilize este método se aceder às suas aplicações através do portal do Office normalmente
+
+1. Iniciar sessão na sua [conta do Office 365](https://www.office.com)
+2. Clique no seu perfil, no canto superior direito, e clique em **Ver conta**
+3. Clique em **Segurança e Privacidade** > **Password**
+4. Introduza a palavra-passe antiga, defina e confirme a nova e clique em **Submeter**.
 
 ### <a name="change-your-password-from-the-azure-access-panel"></a>Alterar a palavra-passe a partir do Painel de Acesso do Azure
 
+Utilize este método se aceder às suas aplicações através do Portal de Acesso do Azure normalmente
+
 1. Inicie sessão no [Portal de Acesso do Azure](https://myapps.microsoft.com/) através da palavra-passe existente
-2. Clique no seu perfil do canto superior direito e clique em **Perfil**
-3. **Alterar palavra-passe**
-4. Introduza a palavra-passe antiga e defina e confirme a palavra-passe nova
-5. **Submeter**
+2. Clique no seu perfil, no canto superior direito, e clique em **Perfil**
+3. Clique em **Alterar palavra-passe**
+4. Introduza a palavra-passe antiga, defina e confirme a nova e clique em **Submeter**.
 
 ## <a name="next-steps"></a>Passos Seguintes
 
 * [Como se registar para utilizar a reposição personalizada de palavra-passe](active-directory-passwords-reset-register.md)
 * [Página de registo de reposição de palavra-passe](http://aka.ms/ssprsetup)
 * [Portal de reposição de palavra-passe](https://passwordreset.microsoftonline.com/)
+* [Não consegue iniciar sessão com a sua conta Microsoft](https://support.microsoft.com/help/12429/microsoft-account-sign-in-cant)
 
 [Login]: ./media/active-directory-passwords-update-your-own-password/reset-1-login.png "Página de início de sessão Não consegue aceder à sua conta?"
 [Verification]: ./media/active-directory-passwords-update-your-own-password/reset-2-verification.png "Verifique os dados de autenticação"

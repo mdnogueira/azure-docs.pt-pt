@@ -16,9 +16,9 @@ ms.workload: infrastructure-services
 ms.date: 03/10/2017
 ms.author: jonatul
 translationtype: Human Translation
-ms.sourcegitcommit: 424d8654a047a28ef6e32b73952cf98d28547f4f
-ms.openlocfilehash: 9f9c2ad56483919bf676fc84af49a7c90ba042f9
-ms.lasthandoff: 03/21/2017
+ms.sourcegitcommit: abdbb9a43f6f01303844677d900d11d984150df0
+ms.openlocfilehash: 48f7ba325f61b4a91c0208b4c99058da801bee19
+ms.lasthandoff: 04/20/2017
 
 ---
 
@@ -35,6 +35,14 @@ Este artigo explica-lhe os passos para criar a sua primeira zona DNS e o registo
 Uma zona DNS é utilizada para alojar os registos DNS para um determinado domínio. Para começar a alojar o seu domínio no DNS do Azure, tem de criar uma zona DNS para esse nome de domínio. Cada registo DNS para o seu domínio é então criado no interior desta zona DNS. Por fim, para publicar a zona DNS na Internet, tem de configurar os servidores de nomes do domínio. Cada um destes passos está descrito abaixo.
 
 Estas instruções partem do princípio de que já instalou e iniciou sessão no Azure PowerShell. Para obter ajuda, consulte [How to manage DNS zones using PowerShell (Como gerir zonas DNS com o PowerShell)](dns-operations-dnszones.md).
+
+## <a name="create-the-resource-group"></a>Criar o grupo de recursos
+
+Antes de criar a zona DNS, um grupo de recursos é criado para conter a zona DNS. O seguinte mostra o comando.
+
+```powershell
+New-AzureRMResourceGroup -name MyResourceGroup -location "westus"
+```
 
 ## <a name="create-a-dns-zone"></a>Criar uma zona DNS
 
@@ -84,6 +92,13 @@ MaxNumberOfRecordSets : 5000
 
 Estes servidores de nomes devem ser configurados com a entidade de registo de nomes de domínio (onde comprou o nome de domínio). A entidade de registo irá oferecer a opção para configurar os servidores de nomes do domínio. Para obter mais informações, consulte [Delegate your domain to Azure DNS (Delegar o seu domínio ao DNS do Azure)](dns-domain-delegation.md).
 
+## <a name="delete-all-resources"></a>Eliminar todos os recursos
+
+Para eliminar todos os recursos criados neste artigo, realize o seguinte passo:
+
+```powershell
+Remove-AzureRMResourceGroup -Name MyResourceGroup
+```
 
 ## <a name="next-steps"></a>Passos seguintes
 
