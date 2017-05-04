@@ -15,9 +15,9 @@ ms.topic: get-started-article
 ms.date: 04/24/2017
 ms.author: markvi
 translationtype: Human Translation
-ms.sourcegitcommit: 432752c895fca3721e78fb6eb17b5a3e5c4ca495
-ms.openlocfilehash: 025e8c9e575123a3ad9863a35061ebd0af212486
-ms.lasthandoff: 03/30/2017
+ms.sourcegitcommit: aaf97d26c982c1592230096588e0b0c3ee516a73
+ms.openlocfilehash: 521169d52d37e644ba416e27c9adc8587868ab40
+ms.lasthandoff: 04/27/2017
 
 
 ---
@@ -134,7 +134,7 @@ Para contas do Azure AD, os administradores podem repor as palavras-passe atrav�
 
 - [Repor contas no portal do Azure](active-directory-users-reset-password-azure-portal.md)
 - [Repor contas no portal clássico](active-directory-create-users-reset-password.md)
-- [Utilizar o PowerShell](https://docs.microsoft.com/en-us/powershell/msonline/v1/Set-MsolUserPassword?redirectedfrom=msdn)
+- [Utilizar o PowerShell](/powershell/module/msonline/set-msoluserpassword?view=azureadps-1.0)
 
 
 - - -
@@ -210,7 +210,7 @@ Para mais informações, consulte [Securing access to Office 365 and other apps 
 Para obter mais informações, consulte [Automate user provisioning and deprovisioning to SaaS applications with Azure Active Directory (Automatizar o aprovisionamento do utilizador e cancelar o aprovisionamento a aplicações SaaS com o Azure Active Directory)](active-directory-saas-app-provisioning.md).
 
 - - -
-**P: Posso configurar uma ligação LDAP segura ao Azure AD?**
+**P: Posso configurar uma ligação LDAP segura ao Azure AD?** 
 
 **R:** Não.  O Azure AD não suporta o protocolo LDAP.
 

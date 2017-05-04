@@ -15,9 +15,9 @@ ms.topic: get-started-article
 ms.date: 03/14/2017
 ms.author: kgremban
 translationtype: Human Translation
-ms.sourcegitcommit: bb1ca3189e6c39b46eaa5151bf0c74dbf4a35228
-ms.openlocfilehash: 79c6ef627d20be52b6067d1f6dfea2a53505c590
-ms.lasthandoff: 03/17/2017
+ms.sourcegitcommit: aaf97d26c982c1592230096588e0b0c3ee516a73
+ms.openlocfilehash: 554931e96e073ec2f2f68df2297e1ee21f5eda87
+ms.lasthandoff: 04/27/2017
 
 
 ---
@@ -66,7 +66,7 @@ Utilize o procedimento seguinte para ativar o MFA para os utilizadores.
 Depois de ter ativado os utilizadores, deverá notificá-los por e-mail. Da próxima vez que tentarem iniciar sessão, estes serão solicitados a inscrever a respetiva conta para a verificação de dois passos. Assim que começarem a utilizar a verificação de dois passos, também terão de configurar as palavras-passe das aplicações para evitarem ficar com o acesso bloqueado a aplicações fora do browser.
 
 ## <a name="use-powershell-to-automate-turning-on-two-step-verification"></a>Utilizar o PowerShell para automatizar a ativação da verificação de dois passos
-Para alterar o [estado](multi-factor-authentication-whats-next.md) através do [Azure AD PowerShell](/powershell/azureps-cmdlets-docs), pode utilizar o seguinte.  Pode alterar `$st.State` para ser igual a um dos seguintes estados:
+Para alterar o [estado](multi-factor-authentication-whats-next.md) através do [Azure AD PowerShell](/powershell/azure/overview), pode utilizar o seguinte.  Pode alterar `$st.State` para ser igual a um dos seguintes estados:
 
 * Ativado
 * Imposto

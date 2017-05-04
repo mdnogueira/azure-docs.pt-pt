@@ -15,9 +15,9 @@ ms.topic: hero-article
 ms.date: 03/17/2017
 ms.author: parakhj
 translationtype: Human Translation
-ms.sourcegitcommit: 757d6f778774e4439f2c290ef78cbffd2c5cf35e
-ms.openlocfilehash: d67043f2e0a062796f4d6167b28774ce494027c2
-ms.lasthandoff: 04/10/2017
+ms.sourcegitcommit: f6006d5e83ad74f386ca23fe52879bfbc9394c0f
+ms.openlocfilehash: 48749bfa2ab54a0e766a4aad4f39073cc4e90818
+ms.lasthandoff: 05/03/2017
 
 
 ---
@@ -37,7 +37,7 @@ Para poder utilizar o Azure AD B2C, tem de criar um diretório ou inquilino. Um 
 
 Em seguida, tem de criar uma aplicação API Web no seu diretório do B2C. Isto proporciona ao Azure AD as informações de que necessita para comunicar de forma segura com a sua aplicação. Para criar uma aplicação, siga [estas instruções](active-directory-b2c-app-registration.md). É necessário:
 
-* Incluir uma **aplicação web** ou uma **API Web** na aplicação.
+* Incluir uma **aplicação web** ou uma **API Web**  na aplicação.
 * Utilize o **URI de Redirecionamento**`https://localhost:44332/` da aplicação Web. Esta é a localização predefinida da aplicação Web cliente para este exemplo de código.
 * Copiar a **ID da Aplicação** atribuída à aplicação. Precisará dela mais tarde.
 * Introduza um identificador de aplicação em **URI de ID de Aplicação**.
@@ -59,10 +59,10 @@ Depois de criar a política com êxito, está pronto para criar a sua aplicaçã
 
 ## <a name="download-the-code"></a>Transferir o código
 
-O código deste tutorial é mantido no [GitHub](https://github.com/Azure-Samples/b2c-dotnet-webapp-and-webapi). Pode clonar o exemplo ao executar:
+O código deste tutorial é mantido no [GitHub](https://github.com/Azure-Samples/active-directory-b2c-dotnet-webapp-and-webapi). Pode clonar o exemplo ao executar:
 
 ```console
-git clone https://github.com/Azure-Samples/b2c-dotnet-webapp-and-webapi.git
+git clone https://github.com/Azure-Samples/active-directory-b2c-dotnet-webapp-and-webapi.git
 ```
 
 Depois de transferir o código de exemplo, abra o ficheiro de .sln do Visual Studio para começar a utilizar. O ficheiro de solução contém dois projetos: `TaskWebApp` e `TaskService`. A `TaskWebApp` é uma aplicação Web de MVC com a qual o utilizador interage. O `TaskService` é uma API Web de back-end da aplicação que armazena a lista de tarefas de cada utilizador. Este artigo só cobre a aplicação `TaskService`. Para saber como utilizar o Azure AD B2C para criar `TaskWebApp`, veja o [nosso tutorial de aplicações Web .NET](active-directory-b2c-devquickstarts-web-dotnet-susi.md).

@@ -21,7 +21,7 @@
 ### [Autenticação de saída](scheduler-outbound-authentication.md)
 
 # Referência
-## [PowerShell](/powershell/resourcemanager/azurerm.scheduler/v0.11.1/azurerm.scheduler)
+## [PowerShell](/powershell/module/azurerm.scheduler)
 ## [REST](/rest/api/scheduler)
 
 # Recursos

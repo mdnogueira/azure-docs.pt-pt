@@ -4,7 +4,6 @@
 
 # Introdução
 
-## [Guia de início rápido](storage-getting-started-guide.md)
 ## [Criar uma conta de armazenamento](storage-create-storage-account.md)
 
 ## Blob Storage
@@ -166,7 +165,7 @@
 #### [Fazer uma cópia de segurança dos manifestos da unidade](storage-import-export-backing-up-drive-manifests.md)
 #### [Recuperação de diagnósticos e erros para tarefas de Importação/Exportação](storage-import-export-diagnostics-and-error-recovery.md)
 # Referência
-## [PowerShell](/powershell/storage)
+## [PowerShell](/powershell/module/azure.storage)
 ## [CLI do Azure](/cli/azure/storage)
 ## .NET
 ### [Resource Manager](/dotnet/api/microsoft.azure.management.storage)
@@ -180,7 +179,7 @@
 ## [iOS](http://azure.github.io/azure-storage-ios/)
 ## [Android](http://azure.github.io/azure-storage-android)
 ## REST
-### [Blobs, Filas, Tabelas e Ficheiros](/rest/api/storageservices/azure-storage-services-rest-api-reference)
+### [Blobs, Filas, Tabelas e Ficheiros](/rest/api/storageservices)
 ### [Fornecedor de recursos](/rest/api/storagerp)
 ### [Importação/Exportação](/rest/api/storageimportexport)
 

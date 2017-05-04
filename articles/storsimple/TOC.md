@@ -197,7 +197,7 @@
 ### [Versão - GA](storsimple-july-2014-release-notes.md)
 
 ## Referência
-### [Azure PowerShell](/powershell/servicemanagement)
+### [Azure PowerShell](/powershell/azure/overview?view=azuresmps-3.7.0)
 ### [Windows PowerShell para cmdlets StorSimple](https://technet.microsoft.com/library/dn688168.aspx)
 
 # Gestor de Dados StorSimple (Pré-visualização privada)
