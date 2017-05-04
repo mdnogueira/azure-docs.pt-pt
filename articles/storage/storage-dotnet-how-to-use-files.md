@@ -15,9 +15,9 @@ ms.topic: hero-article
 ms.date: 03/27/2017
 ms.author: renash
 translationtype: Human Translation
-ms.sourcegitcommit: 538f282b28e5f43f43bf6ef28af20a4d8daea369
-ms.openlocfilehash: b835b04d6ef6d06e35add4f503e6800099e97383
-ms.lasthandoff: 04/07/2017
+ms.sourcegitcommit: aaf97d26c982c1592230096588e0b0c3ee516a73
+ms.openlocfilehash: e773fd4917c7a96201d94d31b2098a3486d27900
+ms.lasthandoff: 04/27/2017
 
 
 ---
@@ -119,7 +119,7 @@ O [portal do Azure](https://portal.azure.com) fornece uma interface de utilizado
 Em alternativa, pode utilizar o Azure PowerShell para criar e gerir partilhas de ficheiros.
 
 ### <a name="install-the-powershell-cmdlets-for-azure-storage"></a>Instalar os cmdlets do PowerShell para o Storage do Azure
-Para preparar para utilizar o PowerShell, transfira e instale os cmdlets do Azure PowerShell. Veja [Como instalar e configurar o Azure PowerShell](/powershell/azureps-cmdlets-docs) para obter as instruções de instalação e do ponto de instalação.
+Para preparar para utilizar o PowerShell, transfira e instale os cmdlets do Azure PowerShell. Veja [Como instalar e configurar o Azure PowerShell](/powershell/azure/overview) para obter as instruções de instalação e do ponto de instalação.
 
 > [!NOTE]
 > É recomendado que transfira e instale ou atualize para o módulo do Azure PowerShell mais recente.

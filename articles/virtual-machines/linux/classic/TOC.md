@@ -66,7 +66,7 @@
 ### [Reiniciar ou redimensionar uma VM](restart-resize-error-troubleshooting.md)
 
 # Referência
-## [PowerShell](/powershell/azureps-cmdlets-docs)
+## [PowerShell](/powershell/azure/overview)
 ## [CLI do Azure](/cli/azure/vm)
 ## [Java](/java/api)
 ## [Criar modelos do Resource Manager](../../../azure-resource-manager/resource-group-authoring-templates.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)

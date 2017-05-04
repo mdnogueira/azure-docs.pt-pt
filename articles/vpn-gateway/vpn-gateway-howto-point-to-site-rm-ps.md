@@ -16,9 +16,9 @@ ms.workload: infrastructure-services
 ms.date: 04/10/2017
 ms.author: cherylmc
 translationtype: Human Translation
-ms.sourcegitcommit: 785d3a8920d48e11e80048665e9866f16c514cf7
-ms.openlocfilehash: b0ccde30b93214b161558daf8e2b4e37e58711da
-ms.lasthandoff: 04/12/2017
+ms.sourcegitcommit: aaf97d26c982c1592230096588e0b0c3ee516a73
+ms.openlocfilehash: d340210d799f995cb10a20cf48a9245bbd3bc8d3
+ms.lasthandoff: 04/27/2017
 
 
 ---
@@ -68,7 +68,7 @@ Utilizamos os seguintes valores para esta configuração. Definimos as variávei
 
 ## <a name="before-beginning"></a>Antes de começar
 * Verifique se tem uma subscrição do Azure. Se ainda não tiver uma subscrição do Azure, pode ativar os [Benefícios de subscritor do MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details) ou inscrever-se numa [conta gratuita](https://azure.microsoft.com/pricing/free-trial).
-* Instale a versão mais recente dos cmdlets do PowerShell do Azure Resource Manager. Para obter mais informações sobre como instalar os cmdlets PowerShell, consulte [How to install and configure Azure PowerShell (Como instalar e configurar o Azure PowerShell)](/powershell/azureps-cmdlets-docs). 
+* Instale a versão mais recente dos cmdlets do PowerShell do Azure Resource Manager. Para obter mais informações sobre como instalar os cmdlets PowerShell, consulte [How to install and configure Azure PowerShell (Como instalar e configurar o Azure PowerShell)](/powershell/azure/overview). 
 
 ## <a name="declare"></a>Parte 1 - Iniciar sessão e definir as variáveis
 Nesta secção, vai iniciar sessão e declarar os valores utilizados para esta configuração. Os valores declarados são utilizados nos scripts de exemplo. Altere os valores para refletir o seu ambiente. Em alternativa, pode utilizar os valores declarados e percorrer os passos como um exercício.
@@ -284,7 +284,7 @@ Se estiver a ter problemas em ligar, verifique os seguintes itens:
 
 ## <a name="connectVM"></a>Conectar a uma máquina virtual
 
-1. Depois de ligar à sua VNet, pode ligar a uma VM através da sua ligação de P2S. Para ligar à VM, precisa do endereço IP privado da máquina virtual. O exemplo seguinte ajuda-o a obter o endereço IP privado com [Get-AzureRmNetworkInterface](https://docs.microsoft.com/powershell/module/azurerm.network/get-azurermnetworkinterface?view=azurermps-3.7.0). Os resultados devolvem uma lista de VMs e endereços IP privados correspondentes em todos os Grupos de Recursos. 
+1. Depois de ligar à sua VNet, pode ligar a uma VM através da sua ligação de P2S. Para ligar à VM, precisa do endereço IP privado da máquina virtual. O exemplo seguinte ajuda-o a obter o endereço IP privado com [Get-AzureRmNetworkInterface](/powershell/module/azurerm.network/get-azurermnetworkinterface). Os resultados devolvem uma lista de VMs e endereços IP privados correspondentes em todos os Grupos de Recursos. 
 
   ```powershell   
   $vms = get-azurermvm
@@ -424,3 +424,4 @@ Pode restabelecer um certificado de cliente, removendo o thumbprint da lista de 
 
 ## <a name="next-steps"></a>Passos seguintes
 Assim que a ligação estiver concluída, pode adicionar máquinas virtuais às redes virtuais. Para obter mais informações, veja [Máquinas Virtuais](https://docs.microsoft.com/azure/#pivot=services&panel=Compute). Para compreender melhor o funcionamento em rede e as máquinas virtuais, veja [Descrição geral da rede VM do Azure e Linux](../virtual-machines/linux/azure-vm-network-overview.md).
+

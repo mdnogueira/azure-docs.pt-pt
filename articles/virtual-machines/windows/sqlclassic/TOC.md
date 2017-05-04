@@ -35,7 +35,7 @@
 ## [Padrões de aplicação](../sql/virtual-machines-windows-sql-server-app-patterns-dev-strategies.md?toc=%2fazure%2fvirtual-machines%2fwindows%2fsqlclassic%2ftoc.json)
 
 # Referência
-## [PowerShell clássico](/powershell/servicemanagement)
+## [PowerShell clássico](/powershell/azure/overview?view=azuresmps-3.7.0)
 ## [CLI do Azure](/cli/azure/)
 ## [T-SQL](https://msdn.microsoft.com/library/azure/bb510741.aspx)
 ## [Controladores do SQL Server](https://msdn.microsoft.com/library/mt654049.aspx)

@@ -36,7 +36,7 @@
 ## [Padrões de aplicação](virtual-machines-windows-sql-server-app-patterns-dev-strategies.md)
 
 # Referência
-## [PowerShell](/powershell/resourcemanager)
+## [PowerShell](/powershell/azure/overview)
 ## [CLI do Azure](/cli/azure/)
 ## [T-SQL](https://msdn.microsoft.com/library/azure/bb510741.aspx)
 ## [Controladores do SQL Server](https://msdn.microsoft.com/library/mt654049.aspx)

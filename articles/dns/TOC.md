@@ -39,7 +39,7 @@
 ### [Guia de resolução de problemas](dns-troubleshoot.md)
 
 # Referência
-## [PowerShell](/powershell/resourcemanager/azurerm.dns/v2.3.0/azurerm.dns)
+## [PowerShell](/powershell/module/azurerm.dns)
 ## [CLI do Azure](/cli/azure/network/dns)
 ## [.NET](/dotnet/api/microsoft.azure.management.dns.models)
 ## [Java](/java/api/com.microsoft.azure.management.dns)
@@ -61,3 +61,4 @@
 ## [Preços](https://azure.microsoft.com/pricing/details/dns/)
 ## [Fórum do MSDN](https://social.msdn.microsoft.com/Forums/en-US/home?forum=WAVirtualMachinesVirtualNetwork)
 ## [Blogue das redes](http://azure.microsoft.com/blog/topics/networking)
+## [Pedidos de funcionalidades](https://feedback.azure.com/forums/217313-networking/category/77466-domain-name-service-dns-traffic-manager)

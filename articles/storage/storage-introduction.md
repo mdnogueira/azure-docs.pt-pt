@@ -15,9 +15,9 @@ ms.topic: get-started-article
 ms.date: 02/24/2017
 ms.author: marsma
 translationtype: Human Translation
-ms.sourcegitcommit: 988e7fe2ae9f837b661b0c11cf30a90644085e16
-ms.openlocfilehash: 44f40aebe8418b0cfcf2c2708469d586d1dd4c4c
-ms.lasthandoff: 04/06/2017
+ms.sourcegitcommit: db034a8151495fbb431f3f6969c08cb3677daa3e
+ms.openlocfilehash: eec53d5dea1255572d515f1ab2796da681579d19
+ms.lasthandoff: 04/29/2017
 
 
 ---
@@ -32,7 +32,9 @@ O Storage do Azure é a solução de armazenamento na nuvem para aplicações mo
 * Como os dados do Storage do Azure se tornam duráveis através da redundância e da replicação
 * O passo seguinte para criar a primeira aplicação do Storage do Azure
 
-Para executar o Storage do Azure rapidamente, consulte o artigo [Introdução ao Storage do Azure em cinco minutos](storage-getting-started-guide.md).
+<!-- after our quick starts are available, replace this link with a link to one of those. 
+Had to remove this article, it refers to the VS quickstarts, and they've stopped publishing them. Robin --> 
+<!-- To get up and running with Azure Storage quickly, see [Get started with Azure Storage in five minutes](storage-getting-started-guide.md). -->
 
 Para obter detalhes sobre as ferramentas, bibliotecas e outros recursos para trabalhar com o Storage do Azure, consulte o artigo [Passos Seguintes](#next-steps) abaixo.
 
@@ -185,12 +187,12 @@ O serviço de Importação/Exportação do Azure fornece uma forma de importar o
 * [Biblioteca de Clientes de Armazenamento para PHP](https://azure.microsoft.com/develop/php/)
 * [Biblioteca de Clientes de Armazenamento para Ruby](https://azure.microsoft.com/develop/ruby/)
 * [Biblioteca de Clientes de Armazenamento para Python](https://azure.microsoft.com/develop/python/)
-* [Cmdlets de Armazenamento para o PowerShell 1.0](https://msdn.microsoft.com/library/azure/mt269418.aspx)
+* [Cmdlets de Armazenamento para o PowerShell 1.0](/powershell/module/azurerm.storage/#storage)
 
 ### <a name="azure-storage-management-services"></a>Serviços de gestão de Armazenamento do Azure
 * [Referência da API REST do Fornecedor de Recursos de Armazenamento](/rest/api/storagerp/)
 * [Biblioteca de Clientes do Fornecedor de Recursos de Armazenamento para o .NET](/dotnet/api/microsoft.azure.management.storage)
-* [Cmdlets do Fornecedor de Recursos de Armazenamento para o PowerShell 1.0](/powershell/storage/)
+* [Cmdlets do Fornecedor de Recursos de Armazenamento para o PowerShell 1.0](/powershell/module/azure.storage)
 * [API REST da Gestão de Serviços de Armazenamento (Clássica)](https://msdn.microsoft.com/library/azure/ee460790.aspx)
 
 ### <a name="azure-storage-data-movement-services"></a>Serviços do movimento de dados do Armazenamento do Azure
@@ -202,7 +204,7 @@ O serviço de Importação/Exportação do Azure fornece uma forma de importar o
 * [Ferramentas de Cliente do Armazenamento do Azure](storage-explorers.md)
 * [Azure SDKs e Ferramentas](https://azure.microsoft.com/tools/)
 * [Emulador de Armazenamento do Azure](http://www.microsoft.com/download/details.aspx?id=43709)
-* [Azure PowerShell](/powershell/azureps-cmdlets-docs)
+* [Azure PowerShell](/powershell/azure/overview)
 * [Utilitário da Linha de Comandos do AzCopy](http://aka.ms/downloadazcopy)
 
 ## <a name="next-steps"></a>Passos seguintes
@@ -211,7 +213,11 @@ Para saber mais sobre o Storage do Azure, explore estes recursos:
 ### <a name="documentation"></a>Documentação
 * [Documentação do Armazenamento do Azure](https://azure.microsoft.com/documentation/services/storage/)
 * [Criar uma conta de armazenamento](storage-create-storage-account.md)
-* [Introdução ao Storage do Azure em cinco minutos](storage-getting-started-guide.md)
+
+<!-- after our quick starts are available, replace this link with a link to one of those. 
+Had to remove this article, it refers to the VS quickstarts, and they've stopped publishing them. Robin --> 
+<!--* [Get started with Azure Storage in five minutes](storage-getting-started-guide.md)
+-->
 
 ### <a name="for-administrators"></a>Para administradores
 * [Using Azure PowerShell with Azure Storage (Utilizar o Azure PowerShell com o Armazenamento do Azure)](storage-powershell-guide-full.md)

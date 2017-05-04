@@ -15,9 +15,9 @@ ms.workload: na
 ms.date: 03/15/2017
 ms.author: tomsh
 translationtype: Human Translation
-ms.sourcegitcommit: 5cce99eff6ed75636399153a846654f56fb64a68
-ms.openlocfilehash: ac0d2e6891d916febb3eeee736288454c2b92c2d
-ms.lasthandoff: 03/31/2017
+ms.sourcegitcommit: aaf97d26c982c1592230096588e0b0c3ee516a73
+ms.openlocfilehash: 859c0bf3afec46e07b8b8da73fffbc37f3f7959d
+ms.lasthandoff: 04/27/2017
 
 
 ---
@@ -48,7 +48,7 @@ Existem várias abordagens que podem ser utilizadas para configurar os pré-requ
 >
 
 ## <a name="install-and-configure-azure-powershell"></a>Instalar e configurar o Azure PowerShell
-Precisa da versão 1.2.1 ou superior do Azure PowerShell instalada no seu computador. O artigo [Como instalar e configurar o Azure PowerShell](/powershell/azureps-cmdlets-docs) contém todos os passos necessários para aprovisionar o computador de modo a trabalhar com o Azure PowerShell. A abordagem mais direta consiste em utilizar a abordagem de instalação do Instalador de Plataforma Web mencionada nesse artigo. Mesmo que já tenha instalado Azure PowerShell, instale-o novamente ao utilizar a abordagem do Instalador de Plataforma Web para que tenha a versão mais recente do Azure PowerShell.
+Precisa da versão 1.2.1 ou superior do Azure PowerShell instalada no seu computador. O artigo [Como instalar e configurar o Azure PowerShell](/powershell/azure/overview) contém todos os passos necessários para aprovisionar o computador de modo a trabalhar com o Azure PowerShell. A abordagem mais direta consiste em utilizar a abordagem de instalação do Instalador de Plataforma Web mencionada nesse artigo. Mesmo que já tenha instalado Azure PowerShell, instale-o novamente ao utilizar a abordagem do Instalador de Plataforma Web para que tenha a versão mais recente do Azure PowerShell.
 
 ## <a name="obtain-and-run-the-azure-disk-encryption-prerequisites-configuration-script"></a>Obter e executar o script de configuração de pré-requisitos do Azure Disk Encryption
 O Script de Configuração de Pré-requisitos do Azure Disk Encryption irá configurar todos os pré-requisitos necessários para encriptar as suas Virtual Machines do Azure.

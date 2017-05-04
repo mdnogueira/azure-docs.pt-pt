@@ -15,9 +15,9 @@ ms.topic: get-started-article
 ms.date: 04/11/2017
 ms.author: spelluru
 translationtype: Human Translation
-ms.sourcegitcommit: 785d3a8920d48e11e80048665e9866f16c514cf7
-ms.openlocfilehash: 003a32f2ef67f8aa63ed7be2553fa0f0c3afc08a
-ms.lasthandoff: 04/12/2017
+ms.sourcegitcommit: aaf97d26c982c1592230096588e0b0c3ee516a73
+ms.openlocfilehash: f4d2535e929996101f6e22ffbd0b2105e8fbf2a8
+ms.lasthandoff: 04/27/2017
 
 
 ---
@@ -49,7 +49,7 @@ Este tutorial mostra-lhe como criar e monitorizar uma fábrica de dados do Azure
   2. Obter o **ID de cliente** e a **chave secreta**. 
   3. Obter o **ID de inquilino**. 
   4. Atribuir a aplicação **ADFCopyTutorialApp** à função **Contribuinte do Data Factory**.  
-* Instale o [Azure PowerShell](/powershell/azureps-cmdlets-docs).  
+* Instale o [Azure PowerShell](/powershell/azure/overview).  
 * Inicie o **PowerShell** e execute os seguintes passos. Mantenha o Azure PowerShell aberto até ao fim deste tutorial. Se o fechar e reabrir, terá de executar os comandos novamente.
   
   1. Execute o comando seguinte e introduza o nome de utilizador e a palavra-passe que utiliza para iniciar sessão no Portal do Azure:

@@ -46,7 +46,7 @@
 ###[Utilizar o cluster de Redis para reduzir/aumentar horizontalmente](cache-how-to-premium-clustering.md)
 
 # Referência
-## [PowerShell](/powershell/resourcemanager/azurerm.rediscache/v2.3.0/azurerm.rediscache)
+## [PowerShell](/powershell/module/azurerm.rediscache)
 ## [Pré-visualização da CLI 2.0 do Azure](/cli/azure/redis)
 ## [.NET](/dotnet/api/microsoft.azure.management.redis)
 ## [Java](/java/api/com.microsoft.azure.management.redis._redis_cache)

@@ -15,9 +15,9 @@ ms.topic: hero-article
 ms.date: 01/07/2017
 ms.author: cabailey
 translationtype: Human Translation
-ms.sourcegitcommit: c1cd1450d5921cf51f720017b746ff9498e85537
-ms.openlocfilehash: 51732acdad74dd6dbfc47fae62efc87df6ce5c15
-ms.lasthandoff: 03/14/2017
+ms.sourcegitcommit: be3ac7755934bca00190db6e21b6527c91a77ec2
+ms.openlocfilehash: 924fce8245a88fd7c12636182336e503237fe4dc
+ms.lasthandoff: 05/03/2017
 
 
 ---
@@ -35,11 +35,11 @@ Pode aceder às suas informações de registo, no máximo, 10 minutos depois da 
 Utilize este tutorial para o ajudar a começar com o registo do Cofre de Chaves do Azure, para criar a sua conta de armazenamento, ativar o registo e interpretar as informações de registo recolhidas.  
 
 > [!NOTE]
-> Este tutorial não inclui instruções sobre a criação dos cofres de chaves, chaves ou segredos. Para obter estas informações, consulte o artigo [Introdução ao Cofre de Chaves do Azure](key-vault-get-started.md). Ou, para obter instruções sobre a Interface de Linha de Comandos de várias plataformas, veja o [tutorial equivalente](key-vault-manage-with-cli.md).
-> 
+> Este tutorial não inclui instruções sobre a criação dos cofres de chaves, chaves ou segredos. Para obter estas informações, consulte o artigo [Introdução ao Cofre de Chaves do Azure](key-vault-get-started.md). Ou, para obter instruções sobre a Interface de Linha de Comandos de várias plataformas, veja o [tutorial equivalente](key-vault-manage-with-cli2.md).
+>
 > Atualmente, não é possível configurar o Cofre de Chaves do Azure no Portal do Azure. Em alternativa, utilize estas instruções do Azure PowerShell.
-> 
-> 
+>
+>
 
 Para obter informações gerais sobre o Cofre de Chaves do Azure, consulte o artigo [O que é o Cofre de Chaves do Azure?](key-vault-whatis.md)
 
@@ -47,7 +47,7 @@ Para obter informações gerais sobre o Cofre de Chaves do Azure, consulte o art
 Para concluir este tutorial, deve ter o seguinte:
 
 * Um cofre de chaves que tiver utilizado.  
-* Azure PowerShell, **versão mínima 1.0.1**. Para instalar o Azure PowerShell e associá-lo à sua subscrição do Azure, consulte o artigo [Como instalar e configurar o Azure PowerShell](/powershell/azureps-cmdlets-docs). Se já tiver instalado o Azure PowerShell e não souber a versão, a partir da consola do Azure PowerShell, introduza `(Get-Module azure -ListAvailable).Version`.  
+* Azure PowerShell, **versão mínima 1.0.1**. Para instalar o Azure PowerShell e associá-lo à sua subscrição do Azure, consulte o artigo [Como instalar e configurar o Azure PowerShell](/powershell/azure/overview). Se já tiver instalado o Azure PowerShell e não souber a versão, a partir da consola do Azure PowerShell, introduza `(Get-Module azure -ListAvailable).Version`.  
 * Armazenamento suficiente no Azure para os seus registos do Cofre de Chaves.
 
 ## <a id="connect"></a>Ligar às suas subscrições
@@ -66,11 +66,11 @@ Em seguida, para especificar a subscrição associada ao seu cofre de chaves que
     Set-AzureRmContext -SubscriptionId <subscription ID>
 
 > [!NOTE]
-> Isto é um passo importante e especialmente útil se tiver várias subscrições associadas à sua conta. Poderá ser apresentado um erro ao registar o Microsoft.Insights se este passo for ignorado. 
+> Isto é um passo importante e especialmente útil se tiver várias subscrições associadas à sua conta. Poderá ser apresentado um erro ao registar o Microsoft.Insights se este passo for ignorado.
 >   
 >
 
-Para mais informações sobre como configurar o PowerShell, consulte [Como instalar e configurar o Azure PowerShell](/powershell/azureps-cmdlets-docs).
+Para mais informações sobre como configurar o PowerShell, consulte [Como instalar e configurar o Azure PowerShell](/powershell/azure/overview).
 
 ## <a id="storage"></a>Criar uma nova conta de armazenamento para os seus registos
 Apesar de poder utilizar uma conta de armazenamento existente para os seus registos, iremos criar uma nova conta de armazenamento dedicada aos registos do seu Cofre de Chaves. Para sua comodidade, e já que poderemos ter de especificar estas informações mais tarde, iremos guardar os detalhes numa variável designada **sa**.
@@ -82,8 +82,8 @@ Para facilitar ainda mais a gestão, também iremos utilizar o mesmo grupo de re
 
 > [!NOTE]
 > Se optar por utilizar uma conta de armazenamento existente, terá de utilizar a mesma subscrição do que o seu Cofre de Chaves e terá de utilizar o modelo de implementação do Resource Manager em vez do modelo de implementação Clássico.
-> 
-> 
+>
+>
 
 ## <a id="identify"></a>Identifique o cofre de chaves para os seus registos
 No nosso tutorial de introdução, o nome do nosso cofre de chaves era **ContosoKeyVault**. Por isso, continuaremos a utilizar esse nome e a guardar os detalhes numa variável designada **kv**:
@@ -168,13 +168,13 @@ Quando executar este segundo comando, o delimitador **/** dos nomes blob cria um
 Para transferir seletivamente blobs, utilize carateres universais. Por exemplo:
 
 * Se tiver vários cofres de chaves e pretender transferir registos apenas para um cofre de chaves designado CONTOSOKEYVAULT3:
-  
+
         Get-AzureStorageBlob -Container $container -Context $sa.Context -Blob '*/VAULTS/CONTOSOKEYVAULT3
 * Se tiver vários grupos de recursos e pretender transferir os registos para apenas um grupo de recursos, utilize `-Blob '*/RESOURCEGROUPS/<resource group name>/*'`:
-  
+
         Get-AzureStorageBlob -Container $container -Context $sa.Context -Blob '*/RESOURCEGROUPS/CONTOSORESOURCEGROUP3/*'
 * Se pretende transferir todos os registos do mês de janeiro de 2016, utilize `-Blob '*/year=2016/m=01/*'`:
-  
+
         Get-AzureStorageBlob -Container $container -Context $sa.Context -Blob '*/year=2016/m=01/*'
 
 Agora, está pronto para começar a procurar o conteúdo dos registos. No entanto, antes dessa ação, terá de conhecer dois parâmetros adicionais para o Get-AzureRmDiagnosticSetting:
@@ -272,8 +272,7 @@ Para um tutorial que utiliza o Cofre de Chaves do Azure numa aplicação Web, co
 
 Para as referências de programação, consulte o [Guia para programadores do Cofre de Chaves do Azure](key-vault-developers-guide.md).
 
-Para obter uma lista dos cmdlets do Azure PowerShell 1.0 para o Cofre de Chaves do Azure, consulte o artigo [Cmdlets do Cofre de Chaves do Azure](https://msdn.microsoft.com/library/azure/dn868052.aspx).
+Para obter uma lista dos cmdlets do Azure PowerShell 1.0 para o Cofre de Chaves do Azure, consulte o artigo [Cmdlets do Cofre de Chaves do Azure](/powershell/module/azurerm.keyvault/#key_vault).
 
 Para um tutorial de rotação da chave e auditoria do registo com o Cofre de Chaves do Azure, veja [How to setup Key Vault with end to end key rotation and auditing (Como configurar o Cofre de Chaves com auditoria e rotação de chave ponto a ponto)](key-vault-key-rotation-log-monitoring.md).
-
 

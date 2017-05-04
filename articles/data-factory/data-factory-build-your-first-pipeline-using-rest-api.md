@@ -15,9 +15,9 @@ ms.topic: hero-article
 ms.date: 04/17/2017
 ms.author: spelluru
 translationtype: Human Translation
-ms.sourcegitcommit: fbf77e9848ce371fd8d02b83275eb553d950b0ff
-ms.openlocfilehash: 78117fd3947be922e339931a0f8f31040ebf79fe
-ms.lasthandoff: 02/03/2017
+ms.sourcegitcommit: aaf97d26c982c1592230096588e0b0c3ee516a73
+ms.openlocfilehash: 19fe97eb41be3222a846f86b2a390bf86157884f
+ms.lasthandoff: 04/27/2017
 
 
 ---
@@ -47,7 +47,7 @@ Neste artigo, utiliza a API REST do Data Factory para criar a sua primeira fábr
   2. Obter o **ID de cliente** e a **chave secreta**.
   3. Obter o **ID de inquilino**.
   4. Atribuir a aplicação **ADFGetStartedApp** à função para o **Contribuinte do Data Factory**.
-* Instale o [Azure PowerShell](/powershell/azureps-cmdlets-docs).
+* Instale o [Azure PowerShell](/powershell/azure/overview).
 * Inicie o **PowerShell** e execute o seguinte comando. Mantenha o Azure PowerShell aberto até ao fim deste tutorial. Se o fechar e reabrir, terá de executar os comandos novamente.
   1. Execute **Login-AzureRmAccount** e introduza o nome de utilizador e a palavra-passe que utiliza para iniciar sessão no portal do Azure.
   2. Execute **Get-AzureRmSubscription** para ver todas as subscrições para esta conta.
