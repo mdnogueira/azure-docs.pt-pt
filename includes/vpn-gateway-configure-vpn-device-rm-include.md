@@ -9,5 +9,4 @@ As ligações de Site a Site para uma rede no local requerem um dispositivo VPN.
 Quando configurar o dispositivo VPN, irá precisar do seguinte:
 
 - Uma chave partilhada. Esta é a mesma chave partilhada que especifica ao criar a ligação VPN de Site a Site. Nos nossos exemplos, iremos utilizar uma chave partilhada básica. Deve gerar uma chave mais complexa para utilizar.
-
 - O endereço IP Público do gateway de rede virtual. Pode ver o endereço IP público através do portal do Azure, do PowerShell ou da CLI.
