@@ -12,18 +12,18 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 10/10/2016
+ms.date: 05/02/2017
 ms.author: ganesr
-translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 945923d9858ec0ed31272c23268b263f77b5c7a4
+ms.translationtype: Human Translation
+ms.sourcegitcommit: be3ac7755934bca00190db6e21b6527c91a77ec2
+ms.openlocfilehash: 7f8386b518ada850fc03e23c5cae3b159b3b213e
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/03/2017
 
 
 ---
 # <a name="moving-expressroute-circuits-from-the-classic-to-the-resource-manager-deployment-model"></a>Mover circuitos ExpressRoute do modelo de implementação clássica para o modelo do Resource Manager
 Este artigo fornece uma descrição geral sobre o que significa mover um circuito Azure ExpressRoute do modelo de implementação clássica Azure Resource Manager.
-
-[!INCLUDE [vpn-gateway-sm-rm](../../includes/vpn-gateway-classic-rm-include.md)]
 
 Pode utilizar um circuito ExpressRoute único para ligar a redes virtuais que são implementadas no modelo de implementação clássica e o modelo do Resource Manager. Um circuito ExpressRoute, independentemente de como é criado, pode agora ligar-se a redes virtuais através de ambos os modelos de implementação.
 
@@ -87,11 +87,11 @@ Esta secção descreve o que é suportado para circuitos ExpressRoute:
 * Após a mudança de um circuito ExpressRoute para o modelo de implementação Resource Manager, pode gerir o ciclo de vida do circuito ExpressRoute com apenas o modelo de implementação Resource Manager. Isto significa que pode realizar operações como adicionar/atualizar/eliminar peerings, atualizar propriedades de circuitos (tais como largura de banda, SKU e tipo de faturação) e eliminar circuitos apenas no modelo de implementação Resource Manager.
 * O circuito ExpressRoute funciona como uma ponte entre o modelo de implementação clássica e o modelo do Resource Manager. O tráfego entre máquinas virtuais nas redes virtuais no modelo de implementação clássica e nas redes virtuais no modelo de implementação Resource Manager flui através do ExpressRoute, se ambas as redes virtuais estiverem ligadas ao mesmo circuito ExpressRoute.
 * A conectividade entre subscrições é suportada nos modelos de implementação clássica e do modelo do Resource Manager.
+* Depois de mover um circuito ExpressRoute do modelo clássico para o modelo do Azure Resource Manager, pode [migrar as redes virtuais ligadas para o circuito do ExpressRoute](expressroute-migration-classic-resource-manager.md).
 
 ## <a name="whats-not-supported"></a>O que não é suportado
 Esta secção descreve o que não é suportado para circuitos ExpressRoute:
 
-* A passagem de ligações de circuito, gateways e redes virtuais do modelo de implementação clássica para o modelo do Resource Manager.
 * Gerir o ciclo de vida de um circuito ExpressRoute do modelo de implementação clássica.
 * Suporte para Controlo de Acesso Baseado em Funções (RBAC) para o modelo de implementação clássica. Não pode executar controlos RBAC para um circuito no modelo de implementação clássica. Qualquer administrador/coadministrador da subscrição pode associar ou desassociar redes virtuais ao circuito.
 
@@ -99,16 +99,12 @@ Esta secção descreve o que não é suportado para circuitos ExpressRoute:
 Siga as instruções descritas em [Mover um circuito ExpressRoute do modelo de implementação clássica para o modelo do Resource Manager](expressroute-howto-move-arm.md).
 
 ## <a name="next-steps"></a>Passos seguintes
+* [Migrar as redes virtuais ligadas ao circuito ExpressRoute a partir do modelo clássico ao modelo do Azure Resource Manager](expressroute-migration-classic-resource-manager.md)
 * Para obter informações sobre o fluxo de trabalho, veja [Circuito ExpressRoute aprovisiona fluxos de trabalho e estados de circuitos](expressroute-workflows.md).
 * Para configurar a ligação do ExpressRoute:
   
   * [Crie um circuito do ExpressRoute](expressroute-howto-circuit-arm.md)
   * [Configure o encaminhamento](expressroute-howto-routing-arm.md)
   * [Ligue uma rede virtual a um circuito do ExpressRoute](expressroute-howto-linkvnet-arm.md)
-
-
-
-
-<!--HONumber=Nov16_HO2-->
 
 

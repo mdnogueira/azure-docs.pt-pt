@@ -12,12 +12,13 @@ ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 04/14/2017
+ms.date: 05/02/2017
 ms.author: magoedte
-translationtype: Human Translation
-ms.sourcegitcommit: b0c27ca561567ff002bbb864846b7a3ea95d7fa3
-ms.openlocfilehash: 0f80ac93e3ff1ee95477e4fa5dbe21d61ddf8ead
-ms.lasthandoff: 04/25/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: be3ac7755934bca00190db6e21b6527c91a77ec2
+ms.openlocfilehash: 8a04fda8eaf6e14a278941e7bb55b23012f67850
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/03/2017
 
 ---
 
@@ -98,8 +99,6 @@ Quando cria uma conta de Automatização no portal do Azure, são criadas automa
 
 O controlo de acesso baseado em funções está disponível no Azure Resource Manager para conceder ações permitidas a uma conta de utilizador do Azure AD e uma conta Run As e autenticar esse principal de serviço.  Leia [o artigo Role-based access control in Azure Automation (Controlo de acesso baseado em funções na Automatização do Azure)](automation-role-based-access-control.md) para obter mais informações ajudar a desenvolver o seu modelo para a gestão de permissões de Automatização.  
 
-
-
 #### <a name="authentication-methods"></a>Métodos de autenticação
 A tabela seguinte resume os métodos de autenticação diferentes para cada ambiente suportado pela Automatização do Azure.
 
@@ -136,6 +135,13 @@ Se tiver uma conta de Automatização definida para uma região específica e pr
 | Sudeste da Austrália |ase-jobruntimedata-prod-su1.azure-automation.net |
 | Reino Unido Sul | uks-jobruntimedata-prod-su1.azure-automation.net |
 | Gov (US) - Virginia | usge-jobruntimedata-prod-su1.azure-automation.us |
+
+Para obter uma lista de endereços IP em vez de nomes, transfira e reveja o ficheiro xml do [endereço IP do Azure Datacenter](https://www.microsoft.com/download/details.aspx?id=41653) a partir do Centro de Transferências da Microsoft. 
+
+> [!NOTE]
+> Este ficheiro contém os intervalos de endereços IP (incluindo intervalos de Computação, SQL e Armazenamento) utilizados no Centro de Transferências da Microsoft. Um ficheiro atualizado é publicado semanalmente, refletindo os intervalos implementados atualmente e as alterações futuras para os intervalos IP. Os novo intervalos que aparecem no ficheiro não serão utilizados nos centros de dados durante, pelo menos, uma semana. Transfira o ficheiro xml novo todas as semanas e efetue as alterações necessárias no seu site para identificar corretamente os serviços em execução no Azure. Os utilizadores Express Route poderão notar este ficheiro utilizado para atualizar o anúncio BGP do espaço Azure na primeira semana de cada mês. 
+> 
+
 
 ## <a name="implementation"></a>Implementação
 
@@ -191,27 +197,6 @@ O método recomendado para carregar a Automatização é selecionar a oferta de 
 8. Clique em **Criar** para continuar com a integração da Automatização e uma área de trabalho do OMS. Todas as definições são validadas e, em seguida, tenta implementar a oferta na sua subscrição.  Este processo pode demorar alguns segundos até ser concluído e pode acompanhar o progresso em **Notificações**, no menu. 
 
 Após a integração da oferta, pode começar a criar runbooks, trabalhar com soluções de gestão ativadas por si ou começar a trabalhar com o [Log Analytics](https://docs.microsoft.com/azure/log-analytics) para recolher dados gerados pelos recursos em ambientes de cloud ou no local.   
-
-### <a name="resources-included"></a>Recursos incluídos
-Quando a conta de Automatização é criada com sucesso, são criados vários recursos automaticamente para si. Os recursos estão resumidos nas duas tabelas seguintes:<br>
-
-#### <a name="run-as-account-resources"></a>Recursos da conta Run As
-
-| Recurso | Descrição |
-| --- | --- |
-| Runbook AzureAutomationTutorial | Um runbook gráfico de exemplo que demonstra como fazer a autenticação com a conta Run As e que obtém todos os recursos do Resource Manager. |
-| AzureAutomationTutorialScript Runbook | Um runbook do PowerShell de exemplo que demonstra como fazer a autenticação com a conta Run As e que obtém todos os recursos do Resource Manager. |
-| AzureRunAsCertificate | O recurso de certificado que é criado automaticamente quando cria uma conta de Automatização ou utiliza o script do PowerShell seguinte para uma conta já existente. O certificado permite-lhe autenticar com o Azure, para que possa gerir recursos do Azure Resource Manager a partir dos runbooks. O certificado tem um tempo de vida de um ano. |
-| AzureRunAsConnection | O recurso de ligação que é criado automaticamente quando cria uma conta de Automatização ou utiliza o script do PowerShell para uma conta já existente. |
-
-#### <a name="classic-run-as-account-resources"></a>Recursos da conta Run As Clássica
-
-| Recurso | Descrição |
-| --- | --- |
-| AzureClassicAutomationTutorial Runbook | Um runbook gráfico de exemplo que obtém todas as VMs que são criadas com o modelo de implementação clássica numa subscrição, utilizando a conta Run As Clássica (certificado) e que, em seguida, escreve o nome e o estado da VM. |
-| AzureClassicAutomationTutorial Script Runbook | Um runbook do PowerShell de exemplo que obtém todas as VMs clássicas numa subscrição, utilizando a conta Run As Clássica (certificado) e, em seguida, escreve o nome e o estado da VM. |
-| AzureClassicRunAsCertificate | O recurso de certificado criado automaticamente que utiliza para autenticar com o Azure, para que possa gerir os recursos clássicos do Azure a partir de runbooks. O certificado tem um tempo de vida de um ano. |
-| AzureClassicRunAsConnection | O recurso de ligação criado automaticamente que utiliza para autenticar com o Azure, para que possa gerir os recursos clássicos do Azure a partir de runbooks.|
 
 ## <a name="next-steps"></a>Passos seguintes
 * Pode confirmar que a sua nova conta de Automatização pode autenticar em relação a recursos do Azure, através da consulta de [test Azure Automation Run As account authentication (testar a autenticação da conta Run As de Automatização do Azure)](automation-verify-runas-authentication.md).

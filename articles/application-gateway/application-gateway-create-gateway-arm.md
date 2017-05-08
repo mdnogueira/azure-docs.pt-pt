@@ -14,10 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/04/2017
 ms.author: gwallace
-translationtype: Human Translation
-ms.sourcegitcommit: 73ee330c276263a21931a7b9a16cc33f86c58a26
-ms.openlocfilehash: 11ecfc993f17c89d4ac4431e9a835000d30afe76
-ms.lasthandoff: 04/05/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 64bd7f356673b385581c8060b17cba721d0cf8e3
+ms.openlocfilehash: 8a0eb841b1a41a14e443b6ce93e6b8fb8985a803
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/02/2017
 
 
 ---
@@ -107,7 +108,7 @@ No exemplo acima, criámos um grupo de recursos denominado **appgw-RG** e a loca
 > [!NOTE]
 > Se tiver de configurar uma sonda personalizada para o gateway de aplicação, visite: [Criar um gateway de aplicação com sondas personalizadas através do PowerShell](application-gateway-create-probe-ps.md). Veja [monitorização das sondas personalizadas e do estado de funcionamento](application-gateway-probe-overview.md) para obter mais informações.
 
-## <a name="create-a-virtual-network-and-a-subnet-for-the-application-gateway"></a>Criar uma rede virtual e uma sub-rede para o gateway de aplicação
+## <a name="create-a-virtual-network-and-a-subnet"></a>Crie uma rede virtual e uma sub-rede
 
 O exemplo que se segue mostra como criar uma rede virtual com o Resource Manager. Este exemplo cria uma VNET para o Gateway de Aplicação. O Gateway de Aplicação requer uma sub-rede própria, pelo que, por esta razão, a sub-rede criada para o Gateway de Aplicação é mais pequena do que o espaço de endereços da VNET. Com uma sub-rede mais pequena, são permitidos outros recursos, incluindo, sem limitação, servidores Web a ser configurados na mesma VNET.
 
@@ -135,7 +136,7 @@ Atribua a variável da sub-rede para os passos seguintes. Esta variável é tran
 $subnet=$vnet.Subnets[0]
 ```
 
-## <a name="create-a-public-ip-address-for-the-front-end-configuration"></a>Criar um endereço IP público para a configuração de front-end
+## <a name="create-a-public-ip-address"></a>Crie um endereço IP público
 
 Crie um recurso de IP público **publicIP01** no grupo de recursos **appgw-rg** para a região E.U.A. Oeste. O Gateway de Aplicação pode utilizar um endereço IP público, um endereço IP interno ou ambos para receber pedidos para balanceamento de carga.  Este exemplo apenas utiliza um endereço IP público. No exemplo seguinte, não está configurado nenhum nome DNS para criar o endereço IP público.  O Gateway de Aplicação não suporta nomes DNS personalizados em endereços IP públicos.  Se for necessário um nome personalizado para o ponto final público, deve criar um registo CNAME para apontar para o nome DNS gerado automaticamente para o endereço IP público.
 
@@ -219,7 +220,7 @@ $sku = New-AzureRmApplicationGatewaySku -Name Standard_Small -Tier Standard -Cap
 > [!NOTE]
 > O valor predefinido para **InstanceCount** é 2, com um valor máximo de 10. O valor predefinido para **GatewaySize** é Médio. Pode escolher entre **Standard_Small**, **Standard_Medium** e **Standard_Large**.
 
-## <a name="create-an-application-gateway-by-using-new-azurermapplicationgateway"></a>Criar um gateway de aplicação com New-AzureRmApplicationGateway
+## <a name="create-the-application-gateway"></a>Criar o gateway de aplicação
 
 Crie um gateway de aplicação com todos os itens de configuração indicados nos passos anteriores. Neste exemplo, o gateway de aplicação é designado **appgwtest**.
 
@@ -233,7 +234,7 @@ Obter os detalhes de DNS e VIP do gateway da aplicação do recurso de IP públi
 Get-AzureRmPublicIpAddress -Name publicIP01 -ResourceGroupName appgw-rg  
 ```
 
-## <a name="delete-an-application-gateway"></a>Eliminar um gateway de aplicação
+## <a name="delete-the-application-gateway"></a>Eliminar o gateway de aplicação
 
 Siga estes passos para eliminar um gateway de aplicação:
 
@@ -296,6 +297,14 @@ IpConfiguration          : {
 DnsSettings              : {
                                 "Fqdn": "00000000-0000-xxxx-xxxx-xxxxxxxxxxxx.cloudapp.net"
                             }
+```
+
+## <a name="delete-all-resources"></a>Eliminar todos os recursos
+
+Para eliminar todos os recursos criados neste artigo, conclua os seguintes passos:
+
+```powershell
+Remove-AzureRmResourceGroup -Name appgw-RG
 ```
 
 ## <a name="next-steps"></a>Passos seguintes

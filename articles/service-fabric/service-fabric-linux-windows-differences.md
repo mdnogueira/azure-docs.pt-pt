@@ -14,16 +14,17 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 03/23/2017
 ms.author: subramar
-translationtype: Human Translation
-ms.sourcegitcommit: 503f5151047870aaf87e9bb7ebf2c7e4afa27b83
-ms.openlocfilehash: 5faf7dc0b544f6fe2f83565cc368e218c6df35af
-ms.lasthandoff: 03/28/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: e155891ff8dc736e2f7de1b95f07ff7b2d5d4e1b
+ms.openlocfilehash: 00c1f10f7df865344233143ce9cdf546e64acca0
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/02/2017
 
 
 ---
 # <a name="differences-between-service-fabric-on-linux-preview-and-windows-generally-available"></a>Diferenças entre o Service Fabric no Linux (pré-visualização) e no Windows (disponível em geral)
 
-Uma vez que o Service Fabric no Linux é uma pré-visualização, existem algumas funcionalidades que são suportadas no Windows, mas não no Linux. Eventualmente, os conjuntos de funcionalidades ficarão em paridade quando o Service Fabric no Linux se torna disponível em geral.
+Uma vez que o Service Fabric no Linux é uma pré-visualização, existem algumas funcionalidades que são suportadas no Windows, mas no Linux ainda não. Eventualmente, os conjuntos de funcionalidades ficarão em paridade quando o Service Fabric no Linux se torna disponível em geral.
 
 * As coleções fiáveis (e Serviços com Estado Fiável) não são suportadas no Linux.
 * O ReverseProxy não está disponível no Linux.
@@ -38,7 +39,7 @@ Uma vez que o Service Fabric no Linux é uma pré-visualização, existem alguma
 >[!NOTE]
 >O redirecionamento da consola não é suportado em clusters de produção, mesmo no Windows.
 
-As ferramentas de desenvolvimento são diferentes com o VisualStudio, o Powershell, o VSTS e o ETW a serem utilizados no Windows e no Yeoman, no Eclipse, no Jenkins e no LTTng utilizados no Linux.
+As ferramentas de desenvolvimento também são diferentes entre o Windows e o Linux. O VisualStudio, Powershell, VSTS e ETW são utilizados no Windows enquanto o Yeoman, Eclipse, Jenkins e LTTng são utilizados no Linux.
 
 ## <a name="powershell-cmdlets-that-do-not-work-against-a-linux-service-fabric-cluster"></a>Cmdlets do PowerShell que não funcionam num cluster do Service Fabric do Linux
 

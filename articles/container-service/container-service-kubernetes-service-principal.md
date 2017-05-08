@@ -16,9 +16,11 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/21/2017
 ms.author: danlep
-translationtype: Human Translation
-ms.sourcegitcommit: 71c6c5ffacf49b907e3e9f488789f31928b25823
-ms.openlocfilehash: e01a9ef7d223e7a5a06475cf419b73959baa803f
+ms.translationtype: Human Translation
+ms.sourcegitcommit: f6006d5e83ad74f386ca23fe52879bfbc9394c0f
+ms.openlocfilehash: b76020e3e5855a63c416851d9b9adefdbdc5874a
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/03/2017
 
 
 ---
@@ -27,7 +29,7 @@ ms.openlocfilehash: e01a9ef7d223e7a5a06475cf419b73959baa803f
 
 
 
-No Azure Container Service, o Kubernetes requer um [principal de serviço do Azure Active Directory](../active-directory/active-directory-application-objects.md) como uma conta de serviço para interagir com APIs do Azure. O principal de serviço tem de gerir dinamicamente recursos, como rotas definidas pelo utilizador e o Balanceador de Carga do Azure de Camada 4.
+No Azure Container Service, o Kubernetes requer um [principal de serviço do Azure Active Directory](../active-directory/active-directory-application-objects.md) como uma conta de serviço para interagir com APIs do Azure. O principal de serviço tem de gerir dinamicamente recursos, como [rotas definidas pelo utilizador](../virtual-network/virtual-networks-udr-overview.md) e o [Balanceador de Carga do Azure de Camada 4](../load-balancer/load-balancer-overview.md).
 
 Este artigo mostra as diferentes opções para especificar um principal de serviço para o cluster de Kubernetes. Por exemplo, se instalou e configurou o [CLI do Azure 2.0](https://docs.microsoft.com/cli/azure/install-az-cli2), pode executar o comando [`az acs create`](https://docs.microsoft.com/en-us/cli/azure/acs#create), para criar o cluster de Kubernetes e o principal de serviço ao mesmo tempo.
 
@@ -138,9 +140,4 @@ az vm list-sizes --location westus
 ## <a name="next-steps"></a>Passos seguintes
 
 * [Introdução ao Kubernetes](container-service-kubernetes-walkthrough.md) no cluster de serviço do contentor.
-
-
-
-<!--HONumber=Feb17_HO4-->
-
 

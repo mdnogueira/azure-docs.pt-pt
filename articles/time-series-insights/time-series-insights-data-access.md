@@ -5,7 +5,7 @@ keywords:
 services: time-series-insights
 documentationcenter: 
 author: op-ravi
-manager: santoshb
+manager: jhubbard
 editor: cgronlun
 ms.assetid: 
 ms.service: time-series-insights
@@ -13,12 +13,13 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: big-data
-ms.date: 04/21/2017
+ms.date: 05/01/2017
 ms.author: omravi
-translationtype: Human Translation
-ms.sourcegitcommit: 1cc1ee946d8eb2214fd05701b495bbce6d471a49
-ms.openlocfilehash: 5e9ee102c0375c8c1ac0e0ff6bc93989115b7cfa
-ms.lasthandoff: 04/25/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 64bd7f356673b385581c8060b17cba721d0cf8e3
+ms.openlocfilehash: 143d48b9fc551ade0d0fd043cdb0cf1f3340a9af
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/02/2017
 
 ---
 
@@ -29,16 +30,17 @@ Os ambientes do Time Series Insights têm dois tipos de políticas de acesso ind
 * Políticas de acesso de gestão
 * Políticas de acesso a dados
 
-Ambos os tipos de políticas concedem aos principais (utilizadores e aplicações) do Azure Active Directory várias permissões num determinado ambiente. Os principais (utilizadores e aplicações) têm de pertencer ao Active Directory (ou “inquilino do Azure”) associado à subscrição que contém o ambiente.
+Ambas as políticas concedem aos principais (utilizadores e aplicações) do Azure Active Directory várias permissões num determinado ambiente. Os principais (utilizadores e aplicações) têm de pertencer ao Active Directory (ou “inquilino do Azure”) associado à subscrição que contém o ambiente.
 
 As políticas de acesso de gestão concedem permissões relacionadas com a configuração do ambiente, como a:
-*    criação e eliminação do ambiente, origens de eventos, conjuntos de dados de referência, e
-*    gestão das políticas de acesso a dados.
+*    Criação e eliminação do ambiente, origens de eventos, conjuntos de dados de referência, e
+*    Gestão das políticas de acesso a dados.
 
 As políticas de acesso a dados concedem permissões para emitir consultas de dados, manipular dados de referência no ambiente e consultas partilhadas guardadas e perspetivas associadas ao ambiente.
 
 Ambos os tipos de políticas permitem uma clara separação entre o acesso à gestão do ambiente e o acesso aos dados dentro do ambiente. Por exemplo, é possível configurar um ambiente de forma a que o proprietário/criador do mesmo é removido do acesso a dados. Da mesma forma, pode não ser concedido acesso à configuração do ambiente aos utilizadores e serviços que têm permissão para ler dados do mesmo.
 
+## <a name="grant-data-access"></a>Conceder acesso a dados
 Os passos seguintes mostram como pode conceder acesso a dados a um principal de utilizador:
 
 1.    Inicie sessão no [Portal do Azure](https://portal.azure.com).

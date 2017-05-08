@@ -15,10 +15,11 @@ ms.workload: big-compute
 ms.date: 03/27/2017
 ms.author: tamram
 ms.custom: H1Hack27Feb2017
-translationtype: Human Translation
-ms.sourcegitcommit: 1cc1ee946d8eb2214fd05701b495bbce6d471a49
-ms.openlocfilehash: 23dfe112411ebc6f47e6a3f09baaf1aa746e6987
-ms.lasthandoff: 04/25/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: be3ac7755934bca00190db6e21b6527c91a77ec2
+ms.openlocfilehash: d05739a4d9f0712c2b4b47432bff97594a11b121
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/03/2017
 
 
 ---
@@ -337,7 +338,7 @@ Quando cria um conjunto de nós de computação no Azure Batch, pode utilizar as
 
 * A sub-rede especificada tem de permitir a comunicação do serviço Batch para conseguir agendar tarefas nos nós de computação. Se a comunicação com os nós de computação for recusada por um **Grupo de Segurança de Rede (NSG)** associado à VNet, o serviço Batch define o estado dos nós de computação como **inutilizável**. 
 
-* Se a VNet especificada tiver qualquer NSGs associados, então a comunicação de entrada tem de estar ativada. Para um conjunto do Linux, as portas 29876, 29877 e 22 têm de estar ativadas. Para um conjunto do Windows, a porta 3389 tem de estar ativada.
+* Se a VNet especificada tiver qualquer NSGs associados, então a comunicação de entrada tem de estar ativada. Para conjuntos Linux e Windows, as portas 29876 e 29877 devem estar ativadas. Pode, opcionalmente, ativar (ou filtrar seletivamente) as portas 22 ou 3389 de SSH em conjuntos Linux ou RDP em conjuntos Windows, respetivamente.
 
 As definições adicionais para a VNet dependem do modo de alocação do conjunto da conta do Batch.
 

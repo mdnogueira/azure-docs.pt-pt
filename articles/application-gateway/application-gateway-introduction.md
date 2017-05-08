@@ -13,38 +13,28 @@ ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.custom: H1Hack27Feb2017
 ms.workload: infrastructure-services
-ms.date: 04/03/2017
+ms.date: 04/27/2017
 ms.author: gwallace
-translationtype: Human Translation
-ms.sourcegitcommit: 9eafbc2ffc3319cbca9d8933235f87964a98f588
-ms.openlocfilehash: ba9c673676fd0b742eb8bd780b67930333b151b3
-ms.lasthandoff: 04/22/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 64bd7f356673b385581c8060b17cba721d0cf8e3
+ms.openlocfilehash: e9dfb5a744a7c63ef9805b1341236c4f3c57ec4d
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/02/2017
 
 
 ---
 # <a name="overview-of-application-gateway"></a>Descrição geral do Gateway de Aplicação
 
-O Gateway de Aplicação do Microsoft Azure é uma aplicação virtual dedicada, que disponibiliza um controlador de entrega de aplicação (ADC) como um serviço e oferece várias capacidades de balanceamento de carga de camada 7 para a sua aplicação. É composto por várias instâncias de trabalho, para escalabilidade e elevada disponibilidade. Permite que os clientes otimizem a produtividade do Web farm ao descarregar a terminação de SSL com utilização intensiva da CPU para o gateway de aplicação. Proporciona também outras capacidades de encaminhamento de camada 7, incluindo a distribuição round robin de tráfego de entrada, a afinidade de sessão com base em cookies, o encaminhamento baseado no caminho do URL e a capacidade de alojar vários Web sites atrás de um Gateway de Aplicação individual. O Gateway de Aplicação pode ser configurado como um gateway com acesso à Internet, gateway só interno ou uma combinação de ambos. O Gateway de Aplicação é totalmente gerido pelo Azure, dimensionável e tem uma disponibilidade elevada. Proporciona um conjunto avançado de capacidades de registo e diagnóstico, para uma melhor capacidade de gestão. Quando cria um gateway de aplicação, um ponto final (VIP público ou ILB IP interno) está associado e serve como tráfego de rede de entrada. Este VIP ou ILP IP é proporcionado pelo Balanceador de Carga do Azure a funcionar ao nível do transporte (TCP/UDP), tendo todo o tráfego de rede de entrada com a carga balanceada para as instâncias de trabalho do gateway de aplicação. Em seguida, o gateway de aplicação encaminha o tráfego HTTP/HTTPS com base na respetiva configuração, seja uma máquina virtual, um serviço cloud ou um endereço IP externo.
+O Gateway de Aplicação do Microsoft Azure é uma aplicação virtual dedicada, que disponibiliza um controlador de entrega de aplicação (ADC) como um serviço e oferece várias capacidades de balanceamento de carga de camada 7 para a sua aplicação. Permite que os clientes otimizem a produtividade do Web farm ao descarregar a terminação de SSL com utilização intensiva da CPU para o gateway de aplicação. Proporciona também outras capacidades de encaminhamento de camada 7, incluindo a distribuição round robin de tráfego de entrada, a afinidade de sessão com base em cookies, o encaminhamento baseado no caminho do URL e a capacidade de alojar vários Web sites atrás de um Gateway de Aplicação individual. Também é fornecida uma firewall de aplicações Web (WAF) como parte do WAF SKU do gateway de aplicação, que proporciona proteção às aplicações Web contra vulnerabilidades e exploits da Web comuns. O Gateway de Aplicação pode ser configurado como um gateway com acesso à Internet, gateway só interno ou uma combinação de ambos. 
 
-Também é fornecida uma firewall de aplicações Web (WAF) como parte do WAF SKU do gateway de aplicação, que proporciona proteção às aplicações Web contra vulnerabilidades e exploits da Web comuns. A firewall de aplicações Web confere essa proteção ao basear-se nas regras dos [conjuntos de regras de núcleo OWASP](https://www.owasp.org/index.php/Category:OWASP_ModSecurity_Core_Rule_Set_Project) 3.0 ou 2.2.9.
-
-## <a name="differences-between-application-gateway-skus"></a>Diferenças entre SKUs do Gateway de Aplicação
-
-O Gateway de Aplicação vem incluído em dois SKUs. Um SKU Standard e um Web Application Firewall (WAF) SKU.
-
-### <a name="standard"></a>Standard
-
-O SKU standard oferece terminação de SSL, afinidade de sessão baseada em cookies, distribuição de carga round robin, encaminhamento baseado em conteúdo, a capacidade de alojar vários sites e melhoramentos de segurança. Os melhoramentos de segurança que o gateway de aplicação oferece incluem gestão de políticas SSL, suporte SSL ponto a ponto e terminação de SSL.
-
-### <a name="web-application-firewall-waf"></a>Firewall de Aplicações Web (WAF)
-
-O WAF SKU proporciona todas as capacidades do SKU standard e ainda a [firewall de aplicações Web](application-gateway-web-application-firewall-overview.md). Esta disponibiliza regras de deteção de ataques que conferem proteção às suas aplicações Web relativamente a vulnerabilidades e exploits da Web comuns.
+![cenário](./media/application-gateway-introduction/scenario.png)
 
 ## <a name="features"></a>Funcionalidades
 
-O Gateway de Aplicação suporta atualmente a entrega da aplicação de camada 7 com as seguintes funcionalidades:
+O Gateway de Aplicação, atualmente, fornece as seguintes capacidades:
 
-* **[Firewall de Aplicações Web](application-gateway-webapplicationfirewall-overview.md)** - a firewall de aplicações Web (WAF) no Gateway de Aplicação do Azure protege aplicações Web contra ataques baseados na Web comuns, como injeção SQL, ataques de scripts entre sites e assunção do controlo de sessão sem autorização.
+
+* **[Firewall de aplicações web](application-gateway-webapplicationfirewall-overview.md)** - a firewall de aplicações Web (WAF) no Gateway de Aplicação do Azure protege aplicações Web contra ataques baseados na Web comuns, como injeção SQL, ataques de scripts entre sites e assunção do controlo de sessão sem autorização.
 * **Balanceamento de carga HTTP** - O Gateway de Aplicação fornece a opção de balanceamento de carga round robin. O balanceamento de carga é feito na Camada 7 e serve apenas para tráfego HTTP(S).
 * **Afinidade de sessão com base no cookie** - Esta funcionalidade é útil quando pretender manter uma sessão de utilizador no mesmo back-end. Ao utilizar cookies geridos por gateway, o Gateway de Aplicação pode direcionar tráfego subsequente de uma sessão de utilizador para o mesmo back-end para processamento. Esta funcionalidade é importante em casos em que o estado da sessão é guardado localmente no servidor de back-end para uma sessão de utilizador.
 * **[Descarga do SSL (Secure Sockets Layer)](application-gateway-ssl-arm.md)** - Esta funcionalidade elimina a tarefa dispendiosa de desencriptação de tráfego HTTPS para os servidores Web. Ao terminar a ligação SSL no Gateway de Aplicação e reencaminhar o pedido para o servidor não encriptado, o servidor Web é aliviado pela desencriptação.  O Gateway de Aplicação encripta novamente a resposta antes de a enviar para o cliente. Esta funcionalidade é útil em cenários onde o back-end está localizado na mesma rede virtual protegida que o Gateway de Aplicação no Azure.
@@ -64,6 +54,9 @@ O Gateway de Aplicação é útil para:
 * Aplicações, como uma rede de entrega de conteúdos, que requerem vários pedidos HTTP na mesma ligação TCP de execução longa a serem encaminhadas ou terem a carga balanceada para diferentes servidores de back-end.
 * Aplicações que suportam tráfego do websocket
 * Proteger aplicações Web de ataques baseados na web comuns, como injeção SQL, ataques de scripts entre sites e assunção de controlo de sessão sem autorização.
+* Distribuição lógica de tráfego de com base nos critérios de encaminhamento diferentes, tais como a caminho do url ou os cabeçalhos de domínio.
+
+O Gateway de Aplicação é totalmente gerido pelo Azure, dimensionável e tem uma disponibilidade elevada. Proporciona um conjunto avançado de capacidades de registo e diagnóstico, para uma melhor capacidade de gestão. Quando cria um gateway de aplicação, um ponto final (VIP público ou ILB IP interno) está associado e serve como tráfego de rede de entrada. Este VIP ou ILP IP é proporcionado pelo Balanceador de Carga do Azure a funcionar ao nível do transporte (TCP/UDP), tendo todo o tráfego de rede de entrada com a carga balanceada para as instâncias de trabalho do gateway de aplicação. Em seguida, o gateway de aplicação encaminha o tráfego HTTP/HTTPS com base na respetiva configuração, seja uma máquina virtual, um serviço cloud ou um endereço IP externo.
 
 O balanceamento de carga do Gateway de Aplicação como um serviço gerido pelo Azure permite o aprovisionamento de um balanceador de carga de camada 7, atrás do balanceador de carga de software do Azure. O gestor de tráfego pode ser utilizado para concluir o cenário, conforme se verifica na imagem seguinte, onde o Gestor de Tráfego fornece redirecionamento e disponibilidade de tráfego a vários recursos de gateway de aplicação em diferentes regiões, e o gateway de aplicação fornece balanceamento de carga de camada 7 de região cruzada. Pode ver um exemplo deste cenário em: [Using load balancing services in the Azure cloud (Utilizar serviços de balanceamento de carga na nuvem do Azure)](../traffic-manager/traffic-manager-load-balancing-azure.md)
 
@@ -104,6 +97,7 @@ O preço baseia-se no custo de instância de gateway por hora e no custo do proc
 ## <a name="faq"></a>FAQ
 
 Para perguntas mais frequentes sobre o Gateway de Aplicação, consulte [Application Gateway FAQ (FAQ sobre o Gateway de Aplicação)](application-gateway-faq.md).
+
 ## <a name="next-steps"></a>Passos seguintes
 
 Após aprender sobre o Gateway de aplicação, pode [criar um gateway de aplicação](application-gateway-create-gateway-portal.md) ou [criar uma descarga SSL de gateway de aplicação](application-gateway-ssl-arm.md) para ligações de HTTPS com carga balanceada.

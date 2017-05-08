@@ -15,10 +15,11 @@ ms.tgt_pltfrm: na
 ms.workload: data-services
 ms.date: 04/13/2017
 ms.author: jeffstok
-translationtype: Human Translation
-ms.sourcegitcommit: e851a3e1b0598345dc8bfdd4341eb1dfb9f6fb5d
-ms.openlocfilehash: bf245d8885e6d6628f182e36e0a9c99a4854873a
-ms.lasthandoff: 04/15/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: f6006d5e83ad74f386ca23fe52879bfbc9394c0f
+ms.openlocfilehash: bf5b1c0a6e76f712e0be1f16ed1a6b2ac78d68de
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/03/2017
 
 
 ---
@@ -36,13 +37,9 @@ O HDInsight inclui uma opção para integrar o R Server no seu cluster do HDInsi
 > Os passos neste documento partem do princípio de que está a utilizar uma palavra-passe.
 
 
-### <a name="access-control-requirements"></a>Requisitos do controlo de acesso
-
-[!INCLUDE [access-control](../../includes/hdinsight-access-control-requirements.md)]
-
 ## <a name="automated-cluster-creation"></a>Criação de clusters automatizada
 
-Pode automatizar a criação de HDInsight R Servers com modelos ARM, o SDK e também o PowerShell.
+Pode automatizar a criação de HDInsight R Servers com modelos do Azure Resource Manager, do SDK e também do PowerShell.
 
 * Para criar um R Server utilizando um modelo do Azure Resource Management, veja [Deploy an R server HDInsight cluster(Implementar um cluster de HDInsight R server)](https://azure.microsoft.com/resources/templates/101-hdinsight-rserver/).
 * Para criar um R Server com o SDK do .NET, consulte [create Linux-based clusters in HDInsight using the .NET SDK (criar clusters baseados em Linux no HDInsight com o SDK do .NET).](hdinsight-hadoop-create-linux-clusters-dotnet-sdk.md)
@@ -589,7 +586,7 @@ remoteLogin(
 )
 ```
 
-## <a name="how-to-scale-microsoft-r-server-operationalization-compute-nodes-on-hdinsight-worker-nodes"></a>Como dimensionar nós de computação da Operacionalização do Microsoft R Server em nós de trabalho do HDInsight?
+## <a name="how-to-scale-microsoft-r-server-operationalization-compute-nodes-on-hdinsight-worker-nodes"></a>Como dimensionar nós de computação da Operacionalização do Microsoft R Server em nós de trabalho do HDInsight
 
 
 ### <a name="decommission-the-worker-nodes"></a>Desativar o nó ou nós de trabalho
@@ -629,6 +626,10 @@ Assim que todos os nós de trabalho desativados estiverem configurados para exec
 * Procure a secção "URIs" e adicione o IP e os detalhes da porta do nó de trabalho.
 
 ![linha de comandos dos nós de trabalho de desativação](./media/hdinsight-hadoop-r-server-get-started/get-started-op-cmd.png)
+
+## <a name="troubleshoot"></a>Resolução de problemas
+
+Caso se depare com problemas com a criação de clusters do HDInsight, veja [aceder aos requisitos de controlo](hdinsight-administer-use-portal-linux.md#create-clusters).
 
 ## <a name="next-steps"></a>Passos seguintes
 

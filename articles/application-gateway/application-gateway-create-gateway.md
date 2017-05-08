@@ -15,10 +15,11 @@ ms.custom: H1Hack27Feb2017
 ms.workload: infrastructure-services
 ms.date: 12/12/2016
 ms.author: gwallace
-translationtype: Human Translation
-ms.sourcegitcommit: 119275f335344858cd20b6a17ef87e3ef32b6e12
-ms.openlocfilehash: 8b72a3f26e356af588e9f5c2039bcc525366ce11
-ms.lasthandoff: 02/28/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 64bd7f356673b385581c8060b17cba721d0cf8e3
+ms.openlocfilehash: 79e373a69f3b899dea1f10ac447a0284931648f4
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/02/2017
 
 
 ---
@@ -31,7 +32,7 @@ ms.lasthandoff: 02/28/2017
 > * [Modelo do Azure Resource Manager](application-gateway-create-gateway-arm-template.md)
 > * [CLI do Azure](application-gateway-create-gateway-cli.md)
 
-O Application Gateway do Azure é um balanceador de carga de&7; camadas. Fornece ativação pós-falha, pedidos HTTP de encaminhamento de desempenho entre diversos servidores, quer estejam na nuvem ou no local. O Gateway de Aplicação proporciona muitas funcionalidades de Controlador de Entrega de Aplicação (ADC), incluindo o balanceamento de carga HTTP, afinidade por sessões com base em cookies, descarga do SSL (Secure Sockets Layer), sondas de estado de funcionamento personalizadas, suporte multilocal e muitas outras. Para encontrar uma lista completa das funcionalidades suportadas, visite [Descrição geral do Gateway de Aplicação](application-gateway-introduction.md)
+O Application Gateway do Azure é um balanceador de carga de 7 camadas. Fornece ativação pós-falha, pedidos HTTP de encaminhamento de desempenho entre diversos servidores, quer estejam na nuvem ou no local. O Gateway de Aplicação proporciona muitas funcionalidades de Controlador de Entrega de Aplicação (ADC), incluindo o balanceamento de carga HTTP, afinidade por sessões com base em cookies, descarga do SSL (Secure Sockets Layer), sondas de estado de funcionamento personalizadas, suporte multilocal e muitas outras. Para encontrar uma lista completa das funcionalidades suportadas, visite [Descrição geral do Gateway de Aplicação](application-gateway-introduction.md)
 
 Este artigo descreve os passos para criar, configurar, iniciar e eliminar um gateway de aplicação.
 
@@ -106,11 +107,11 @@ DnsName       :
 
 Pode configurar o gateway de aplicação com XML ou um objeto de configuração.
 
-## <a name="configure-the-application-gateway-by-using-xml"></a>Configurar o gateway de aplicação com XML
+### <a name="configure-the-application-gateway-by-using-xml"></a>Configurar o gateway de aplicação com XML
 
 No exemplo que se segue, vai utilizar um ficheiro XML para configurar todas as definições do gateway de aplicação e consolidá-las no recurso do gateway de aplicação.  
 
-### <a name="step-1"></a>Passo 1
+#### <a name="step-1"></a>Passo 1
 
 Copie o seguinte texto para o Bloco de Notas.
 
@@ -211,7 +212,7 @@ O exemplo que se segue mostra como utilizar um ficheiro de configuração para c
 </ApplicationGatewayConfiguration>
 ```
 
-### <a name="step-2"></a>Passo 2
+#### <a name="step-2"></a>Passo 2
 
 Em seguida, configure o gateway de aplicação. Utilize o cmdlet `Set-AzureApplicationGatewayConfig` com um ficheiro XML de configuração.
 
@@ -219,14 +220,14 @@ Em seguida, configure o gateway de aplicação. Utilize o cmdlet `Set-AzureAppli
 Set-AzureApplicationGatewayConfig -Name AppGwTest -ConfigFile "D:\config.xml"
 ```
 
-## <a name="configure-the-application-gateway-by-using-a-configuration-object"></a>Configurar o gateway de aplicação com um objeto de configuração
+### <a name="configure-the-application-gateway-by-using-a-configuration-object"></a>Configurar o gateway de aplicação com um objeto de configuração
 
 O exemplo que se segue mostra como configurar o gateway de aplicação com objetos de configuração. Todos os itens de configuração devem ser configurados individualmente e, em seguida, adicionados a um objeto de configuração do gateway de aplicação. Depois de criar o objeto de configuração, utilize o comando `Set-AzureApplicationGateway` para consolidar a configuração no recurso de gateway de aplicação criado anteriormente.
 
 > [!NOTE]
 > Antes de atribuir um valor a cada objeto de configuração, tem de indicar qual o tipo de objeto utilizado pelo PowerShell para o armazenamento. A primeira linha para criar os itens individuais define que `Microsoft.WindowsAzure.Commands.ServiceManagement.Network.ApplicationGateway.Model(object name)` são utilizados.
 
-### <a name="step-1"></a>Passo 1
+#### <a name="step-1"></a>Passo 1
 
 Crie todos os itens de configuração individuais.
 
@@ -297,7 +298,7 @@ $rule.Listener = "listener1"
 $rule.BackendAddressPool = "pool1"
 ```
 
-### <a name="step-2"></a>Passo 2
+#### <a name="step-2"></a>Passo 2
 
 Atribua todos os itens individuais de configuração a um objeto de configuração do gateway de aplicação ($appgwconfig).
 
@@ -385,9 +386,9 @@ Vip           : 138.91.170.26
 DnsName       : appgw-1b8402e8-3e0d-428d-b661-289c16c82101.cloudapp.net
 ```
 
-## <a name="delete-an-application-gateway"></a>Eliminar um gateway de aplicação
+## <a name="delete-the-application-gateway"></a>Eliminar o gateway de aplicação
 
-Para eliminar um gateway de aplicação:
+Para eliminar o gateway de aplicação:
 
 1. Utilize o cmdlet `Stop-AzureApplicationGateway` para parar o gateway.
 2. Utilize o cmdlet `Remove-AzureApplicationGateway` para remover o gateway.
