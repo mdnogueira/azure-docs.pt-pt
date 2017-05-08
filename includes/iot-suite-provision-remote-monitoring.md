@@ -1,4 +1,7 @@
 ## <a name="provision-the-solution"></a>Aprovisionar a solução
+
+Se ainda não aprovisionou a solução pré-configurada de monitorização remota na sua conta:
+
 1. Inicie sessão em [azureiotsuite.com][lnk-azureiotsuite] com as credenciais da sua conta Azure e clique em **+** para criar uma solução.
 2. Clique em **Selecionar** no mosaico **Monitorização remota**.
 3. Introduza o **Nome da solução** para sua solução pré-configurada de monitorização remota.

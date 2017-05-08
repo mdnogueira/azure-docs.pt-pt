@@ -14,10 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/10/2016
 ms.author: cherylmc
-translationtype: Human Translation
-ms.sourcegitcommit: 0d6f6fb24f1f01d703104f925dcd03ee1ff46062
-ms.openlocfilehash: a7b3f8addbba21e60be0076784ae954f4cedb0b8
-ms.lasthandoff: 04/17/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: a3ca1527eee068e952f81f6629d7160803b3f45a
+ms.openlocfilehash: d29cf81747390fe153c3c6dc330ef738de0cd83a
+ms.contentlocale: pt-pt
+ms.lasthandoff: 04/27/2017
 
 
 ---
@@ -48,7 +49,7 @@ Não existem restrições ao comprimento do prefixo do IP do NAT anunciado atrav
 > 
 
 ## <a name="nat-requirements-for-microsoft-peering"></a>Requisitos do NAT para peering da Microsoft
-O caminho de peering da Microsoft permite-lhe ligar aos serviços em nuvem da Microsoft que não são suportados através do caminho de peering público do Azure. A lista de serviços inclui os serviços do Office 365, como o Exchange Online, SharePoint Online, Skype para Empresas e o CRM Online. A Microsoft espera suportar uma conetividade bidirecional no peering da Microsoft. O tráfego destinado aos serviços em nuvem da Microsoft tem de realizar um SNAT para endereços IPv4 públicos válidos antes de serem introduzidos na rede da Microsoft. O tráfego destinado à sua rede a partir dos serviços em nuvem da Microsoft tem de realizar um SNAT antes de entrarem na sua rede. A figura abaixo fornece uma imagem de alto nível da forma como o NAT deve ser configurado para peering da Microsoft.
+O caminho de peering da Microsoft permite-lhe ligar aos serviços em nuvem da Microsoft que não são suportados através do caminho de peering público do Azure. A lista de serviços inclui os serviços do Office 365, como o Exchange Online, SharePoint Online, Skype para Empresas e o CRM Online. A Microsoft espera suportar uma conetividade bidirecional no peering da Microsoft. O tráfego destinado aos serviços em nuvem da Microsoft tem de realizar um SNAT para endereços IPv4 públicos válidos antes de serem introduzidos na rede da Microsoft. O tráfego destinado à sua rede a partir dos serviços cloud da Microsoft tem de realizar um SNAT no intervalo de Internet para prevenir o [encaminhamento assimétrico](expressroute-asymmetric-routing.md). A figura abaixo fornece uma imagem de alto nível da forma como o NAT deve ser configurado para peering da Microsoft.
 
 ![](./media/expressroute-nat/expressroute-nat-microsoft.png) 
 
@@ -63,7 +64,9 @@ O caminho de peering da Microsoft permite-lhe ligar aos serviços em nuvem da Mi
 
 ### <a name="traffic-originating-from-microsoft-destined-to-your-network"></a>Tráfego com origem na Microsoft destinado à sua rede
 * Determinados cenários requerem que a Microsoft inicie a conectividade com pontos finais de serviço alojados na sua rede. Um exemplo típico desse cenário seria conectividade com servidores ADFS alojados na sua rede a partir do Office 365. Nestes casos, deve fornecer prefixos apropriados da sua rede para o peering da Microsoft. 
-* Deve realizar o SNAT do tráfego destinado a endereços IP na sua rede da Microsoft. 
+* É necessário realizar SNAT de tráfego Microsoft para o intervalo de Internet dos pontos finais do serviço na rede de modo a impedir o [encaminhamento assimétrico](expressroute-asymmetric-routing.md). Pedidos **e respostas** com um IP de destino que correspondem a uma rota ExpressRoute serão sempre enviados por ExpressRoute. O encaminhamento assimétrico existe se o pedido for recebido através da Internet com a resposta enviada por ExpressRoute. A entrada de SNAT de tráfego Microsoft no intervalo de Internet força o tráfego de resposta de volta para o intervalo de Internet, resolvendo o problema.
+
+![Encaminhamento assimétrico com o ExpressRoute](./media/expressroute-asymmetric-routing/AsymmetricRouting2.png)
 
 ## <a name="next-steps"></a>Passos seguintes
 * Veja os requisitos para [Encaminhamento](expressroute-routing.md) e [QoS](expressroute-qos.md).

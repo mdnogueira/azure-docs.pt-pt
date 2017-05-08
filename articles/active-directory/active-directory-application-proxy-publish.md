@@ -12,11 +12,13 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 11/30/2016
+ms.date: 04/20/2017
 ms.author: kgremban
-translationtype: Human Translation
-ms.sourcegitcommit: d7fe552e0c8856a8d7799ae8a7732e57a350fee3
-ms.openlocfilehash: 2a42605c75fe183d57030e4a3ff3f3218a7dbc2b
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 54b5b8d0040dc30651a98b3f0d02f5374bf2f873
+ms.openlocfilehash: 4f7860b906ab988c918de31d53f4a958e4dea83b
+ms.contentlocale: pt-pt
+ms.lasthandoff: 04/28/2017
 
 
 ---
@@ -30,8 +32,8 @@ A Proxy de Aplicação do Azure AD ajuda-o a fornecer suporte a funcionários re
 
 > [!NOTE]
 > O Proxy da Aplicação é uma funcionalidade que só estar disponível se tiver efetuado a atualização para a edição Premium ou Basic do Azure Active Directory. Para obter mais informações, consulte [Edições do Azure Active Directory](active-directory-editions.md).
-> 
-> 
+
+Se pretender utilizar a pré-visualização pública do Proxy de Aplicações, pode [Publicar aplicações no portal do Azure](application-proxy-publish-azure-portal.md).
 
 ## <a name="publish-an-app-using-the-wizard"></a>Publicar uma aplicação com o assistente
 1. Inicie sessão como administrador no [Portal Clássico do Azure](https://manage.windowsazure.com/).
@@ -102,10 +104,5 @@ Para eliminar uma aplicação, selecione-a na lista e clique em **Eliminar**.
 * [Trabalhar com aplicações com suporte para afirmações](active-directory-application-proxy-claims-aware-apps.md)
 
 Para obter as notícias e atualizações mais recentes, consulte o [blogue do Proxy da Aplicação](http://blogs.technet.com/b/applicationproxyblog/)
-
-
-
-
-<!--HONumber=Jan17_HO2-->
 
 
