@@ -4,7 +4,7 @@
   items:
   - name: "Acerca da BD SQL"
     href: sql-database-technical-overview.md
-- name: "Início Rápido"
+- name: "Inícios rápidos"
   expanded: true
   items:
   - name: "Criar BD - Portal"
@@ -38,7 +38,9 @@
   - name: "1 - Criar/estruturar uma nova BD SQL"
     href: sql-database-design-first-database.md
   - name: "2 - Migrar o SQL Server existente"
-    href: sql-database-migrate-your-sql-server-database.md 
+    href: sql-database-migrate-your-sql-server-database.md
+  - name: "3 - Proteger a sua BD SQL"
+    href: sql-database-security-tutorial.md
 - name: "Amostras"
   items:
   - name: "CLI do Azure"

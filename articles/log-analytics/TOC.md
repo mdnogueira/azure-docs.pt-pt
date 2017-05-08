@@ -48,6 +48,7 @@
 ### [Solução de Gestão de alertas](log-analytics-solution-alert-management.md)
 ## Utilizar soluções
 ### [Descrição geral das Soluções](log-analytics-add-solutions.md)
+### [Soluções de destino](../operations-management-suite/operations-management-suite-solution-targeting.md?toc=%2fazure%2flog-analytics%2ftoc.json)
 ### [Log Analytics da Atividade](log-analytics-activity.md)
 ### [Avaliação do AD](log-analytics-ad-assessment.md)
 ### [Estado de Replicação do AD](log-analytics-ad-replication-status.md)
@@ -57,6 +58,8 @@
 ### [Monitorização de Alterações](log-analytics-change-tracking.md)
 ### [Contentores](log-analytics-containers.md)
 ### [Análise DNS](log-analytics-dns.md)
+### [Conector da Gestão de Serviços de TI no OMS](log-analytics-itsmc-overview.md)
+#### [Ligações da Gestão de Serviços de TI no OMS](log-analytics-itsmc-connections.md)
 ### [Cofre de Chaves](log-analytics-azure-key-vault.md)
 ### Mensagens B2B de Aplicações Lógicas
 #### [Solução de Mensagens B2B de Aplicações Lógicas](../logic-apps/logic-apps-track-b2b-messages-omsportal.md?toc=%2fazure%2flog-analytics%2ftoc.json)
@@ -84,7 +87,7 @@
 ### [API de Alerta](log-analytics-api-alerts.md)
 
 # Referência
-## [PowerShell](/powershell/resourcemanager/azurerm.operationalinsights/v2.3.0/azurerm.operationalinsights)
+## [PowerShell](/powershell/module/azurerm.operationalinsights)
 ## [REST](/rest/api/loganalytics)
 
 # Recursos
