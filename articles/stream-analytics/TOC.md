@@ -32,23 +32,33 @@
 
 ## Gerir
 ### [Fiabilidade das tarefas](stream-analytics-job-reliability.md)
-### [Monitorizar trabalhos](stream-analytics-monitoring.md)
-### [Registos de diagnóstico](stream-analytics-job-diagnostic-logs.md)
 ### [Monitorizar trabalhos de forma programática](stream-analytics-monitor-jobs.md)
 ### [Monitorizar trabalhos com o PowerShell](stream-analytics-monitor-and-manage-jobs-use-powershell.md)
 ### [Dimensionar para aumentar o débito](stream-analytics-scale-jobs.md)
 ### [Dimensionamento para as funções do Machine Learning](stream-analytics-scale-with-machine-learning-functions.md)
 ### [Alternar credenciais de entrada e saída](stream-analytics-login-credentials-inputs-outputs.md)
 
+## Resolução de problemas
+### [Guia de resolução de problemas](stream-analytics-troubleshooting-guide.md)
+### [Monitorizar trabalhos](stream-analytics-monitoring.md)
+### [Painel do estado de funcionamento](stream-analytics-resource-health.md)
+### [Diagrama e métricas das tarefas](stream-analytics-job-diagram-with-metrics.md)
+### [Consultas de teste](stream-analytics-test-query.md)
+### [Dados de entrada de exemplo](stream-analytics-sample-data-input.md)
+### [Depuração SELECT INTO](stream-analytics-select-into.md)
+### [Processamento da ordem dos eventos](stream-analytics-out-of-order-and-late-events.md)
+### [Limites do leitor do hub de eventos](stream-analytics-event-hub-consumer-groups.md)
+### [Otimizar Unidades de Transmissão em Fluxo](stream-analytics-streaming-unit-consumption.md)
+### [Registos de diagnóstico](stream-analytics-job-diagnostic-logs.md)
+
 ## Automatizar
 ### [One-click PowerShell](https://github.com/Azure/azure-stream-analytics/tree/master/Samples/ASAOneClick)
 
 # Referência
-## [PowerShell](/powershell/resourcemanager/azurerm.streamanalytics/v2.3.0/azurerm.streamanalytics)
+## [PowerShell](/powershell/module/azurerm.streamanalytics)
 ## [.NET](/dotnet/api/microsoft.azure.management.streamanalytics)
 ## [Linguagem da consulta](https://msdn.microsoft.com/library/azure/dn834998)
 ## [REST](/rest/api/streamanalytics)
-
 
 # Recursos
 ## [Notas de versão](stream-analytics-release-notes.md)

@@ -37,21 +37,23 @@
 ### [PowerShell (clássico)](vpn-gateway-multi-site.md)
 ## [Configurar o BGP para um gateway de VPN](vpn-gateway-bgp-resource-manager-ps.md)
 ## [Configurar ligações ativas/ativas de elevada disponibilidade](vpn-gateway-activeactive-rm-powershell.md)
-## [Modificar as definições do gateway de rede local com o PowerShell](vpn-gateway-modify-local-network-gateway.md)
+## Modificar as definições do gateway de rede local
+### [PowerShell](vpn-gateway-modify-local-network-gateway.md)
+### [CLI](vpn-gateway-modify-local-network-gateway-cli.md)
 ## [Verificar uma ligação do gateway de VPN](vpn-gateway-verify-connection-resource-manager.md)
 ## [Repor um gateway de VPN](vpn-gateway-resetgw-classic.md)
 ## Eliminar um gateway de VPN
 ### [Portal do Azure](vpn-gateway-delete-vnet-gateway-portal.md)
 ### [PowerShell](vpn-gateway-delete-vnet-gateway-powershell.md)
 ### [PowerShell (clássico)](vpn-gateway-delete-vnet-gateway-classic-powershell.md)
-## [Criar certificados de raiz autoassinados para ligações P2S](vpn-gateway-certificates-point-to-site.md)
+## [Criar certificados autoassinados para ligações Ponto a Site](vpn-gateway-certificates-point-to-site.md)
 ## [Configurar um gateway de VPN (clássico)](vpn-gateway-configure-vpn-gateway-mp.md)
 ## Resolução de problemas
 ### [Validar o débito de VPN para uma VNet](vpn-gateway-validate-throughput-to-vnet.md)
 
 # Referência
-## [PowerShell](/powershell/resourcemanager/azurerm.network/v3.6.0/azurerm.network)
-## [PowerShell (clássico)](/powershell/servicemanagement/azure.networking/v3.4.0/azure.networking)
+## [PowerShell](/powershell/module/azurerm.network)
+## [PowerShell (clássico)](/powershell/module/azure/?view=azuresmps-3.7.0)
 ## [REST](https://msdn.microsoft.com/library/mt163859)
 ## [REST (clássico)](https://msdn.microsoft.com/library/jj154113)
 ## [CLI do Azure](https://docs.microsoft.com/cli/azure/network)

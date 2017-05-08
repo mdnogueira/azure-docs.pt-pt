@@ -4,7 +4,7 @@
   items:
   - name: "Acerca das Máquinas Virtuais"
     href: overview.md
-- name: "Início Rápido"
+- name: "Inícios rápidos"
   expanded: true
   items:
   - name: "Criar VM - Portal"
@@ -21,10 +21,19 @@
     href: tutorial-manage-data-disk.md
   - name: "3 - Automatizar a configuração"
     href: tutorial-automate-vm-deployment.md
-  - name: "4 - Balanceamento de carga de VMs"
+  - name: "4 - Criar imagens de VM"
+    href: tutorial-custom-images.md
+  - name: "5 - VMs de elevada disponibilidade"
+    href: tutorial-availability-sets.md
+  - name: "6 - Criar um conjunto de dimensionamento de VM"
+    href: tutorial-create-vmss.md
+  - name: "7 - Balanceamento de carga de VMs"
     href: tutorial-load-balancer.md
-  - name: "5 - Gerir redes"
+  - name: "8 - Gerir redes"
     href: tutorial-virtual-network.md
+  - name: "9 - Gerir segurança de VM"
+    href: tutorial-azure-security.md
+
 - name: "Amostras"
   items:
   - name: "PowerShell"

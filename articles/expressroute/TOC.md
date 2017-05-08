@@ -12,7 +12,6 @@
 ## [Pré-requisitos](expressroute-prerequisites.md)
 ## [Fluxos de trabalho](expressroute-workflows.md)
 ## [Requisitos do encaminhamento](expressroute-routing.md)
-## [Requisitos de NAT](expressroute-nat.md)
 ## [Requisitos de QoS](expressroute-qos.md)
 ## [Acerca de mover circuitos do clássico para o Resource Manager](expressroute-move.md)
 
@@ -38,8 +37,9 @@
 
 ## Melhores práticas
 ### [Melhores práticas para segurança de rede e serviços cloud](../best-practices-network-security.md)
-## [Otimizar o encaminhamento](expressroute-optimize-routing.md)
+### [Otimizar o encaminhamento](expressroute-optimize-routing.md)
 ### [Encaminhamento assimétrico](expressroute-asymmetric-routing.md)
+### [NAT para ExpressRoute](expressroute-routing-nat.md)
 
 ## Resolução de problemas
 ### [Verificar a conectividade do ExpressRoute](expressroute-troubleshooting-expressroute-overview.md)
@@ -47,7 +47,7 @@
 ### [Obter tabelas ARP (Clássicas)](expressroute-troubleshooting-arp-classic.md)
 
 # Referência
-## [PowerShell](https://docs.microsoft.com/powershell/resourcemanager/azurerm.network/v3.4.0/azurerm.network)
+## [PowerShell](/powershell/module/azurerm.network)
 ## [REST](https://msdn.microsoft.com/library/azure/mt586720)
 ## [REST (clássico)](https://msdn.microsoft.com/library/azure/dn606310)
 

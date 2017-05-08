@@ -7,11 +7,14 @@
 ## [Criar uma conta do Batch](batch-account-create-portal.md)
 ## [Tutorial .NET do Batch](batch-dotnet-get-started.md)
 ## [Tutorial Python do Batch](batch-python-tutorial.md)
+## [Tutorial Node.js do Batch](batch-nodejs-get-started.md)
 # Procedimento
 ## Programar
 ### [Pacotes de aplicações](batch-application-packages.md)
 ### [Nós de computação com dimensionamento automático](batch-automatic-scaling.md)
-### [Autenticação do Azure AD](batch-aad-auth.md)
+### Autenticação do Azure AD
+#### [Azure AD com o serviço Batch](batch-aad-auth.md)
+#### [Azure AD com a Gestão do Batch](batch-aad-auth-management.md)
 ### [Tarefas de nós simultâneas](batch-parallel-node-tasks.md)
 ### [Consultas de lista eficientes](batch-efficient-list-queries.md)
 ### [Tarefas de preparação e conclusão de trabalhos](batch-job-prep-release.md)
@@ -27,7 +30,7 @@
 ### [CLI do Azure](batch-cli-get-started.md)
 
 # Referência
-## [PowerShell](/powershell/resourcemanager/azurerm.batch/v2.5.0/azurerm.batch)
+## [PowerShell](/powershell/module/azurerm.batch)
 ## [CLI do Azure](/cli/azure/batch)
 ## [.NET](/dotnet/api/microsoft.azure.batch)
 ## [Java](/java/api/com.microsoft.azure.batch)
