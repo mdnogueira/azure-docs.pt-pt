@@ -1,5 +1,5 @@
 ---
-title: "Adicionar a imagem corporativa às páginas de início de sessão e do Painel de Acesso no Azure Active Directory"
+title: "Adicionar a imagem corporativa às suas páginas de início de sessão e Painel de Acesso"
 description: "Saiba como adicionar uma imagem corporativa à página de início de sessão do Azure e à página de painel de acesso"
 services: active-directory
 documentationcenter: 
@@ -8,107 +8,110 @@ manager: femila
 editor: 
 ms.assetid: f74621b4-4ef0-4899-8c0e-0c20347a8c31
 ms.service: active-directory
-ms.workload: identity
+ms.workload: infrastructure-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 04/07/2017
+ms.date: 03/03/2017
 ms.author: curtand
-translationtype: Human Translation
-ms.sourcegitcommit: 538f282b28e5f43f43bf6ef28af20a4d8daea369
-ms.openlocfilehash: 6d4fbfe97288fcb76628b45649b8b678152198a9
-ms.lasthandoff: 04/07/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 144132cf0d591e398d5a6ebafb06fd915eec38b8
+ms.openlocfilehash: 1ec1a20dec318153923afd6a0875545d1e102f29
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/09/2017
 
 
 ---
-# <a name="add-company-branding-to-sign-in-and-access-panel-pages"></a>Adicionar a imagem corporativa às páginas de início de sessão e do Painel de Acesso
-Muitas organizações preferem aplicar um aspeto e funcionalidade consistente em todos os Web sites e serviços que gerem. O Azure Active Directory proporciona esta capacidade ao permitir que os profissionais de TI personalizem o aspeto das seguintes páginas Web com logótipos e imagens das empresas:
+# <a name="add-company-branding-to-your-sign-in-and-access-panel-pages"></a>Adicionar a imagem corporativa às suas páginas de início de sessão e Painel de Acesso
+Para evitar confusões, muitas empresas pretendem aplicar um aspeto e funcionalidade consistentes em todos os Web sites e serviços que gerem. O Azure Active Directory fornece esta capacidade ao permitir-lhe personalizar o aspeto das seguintes páginas web com o logótipo da sua empresa e esquemas de cores personalizados:
 
-* **Página de início de sessão** - esta é a página que aparece quando os seus funcionários e convidados empresariais iniciam sessão no Office 365 ou noutras aplicações que utilizam o Azure AD.
-* **Página Painel de Acesso** - o Painel de Acesso é um portal baseado na Web que lhe permite ver e iniciar as aplicações baseadas na cloud a que o seu administrador do Azure AD lhe concedeu acesso. O Painel de Acesso está disponível em [https://myapps.microsoft.com](https://myapps.microsoft.com).
+* **Página de início de sessão** - Esta é a página que aparece quando inicia sessão Office 365 ou outras aplicações baseadas na web que estão a utilizar o Azure AD como o seu fornecedor de identidade. Interage com esta página durante uma Deteção de Realm Inicial ou ao introduzir as suas credenciais. A Deteção de Realm Inicial permite ao sistema redirecionar utilizadores federados para as respetivas STS no local (por exemplo, o AD FS).
+* **Página Painel de Acesso** - o Painel de Acesso é um portal baseado na web que lhe permite ver e iniciar as aplicações baseadas na nuvem a que o seu administrador do Azure AD lhe concedeu acesso. Para aceder ao Painel de Acesso, utilize o seguinte URL: [https://myapps.microsoft.com](https://myapps.microsoft.com).
 
 Este tópico explica como pode personalizar a página de início de sessão e a página de painel de acesso.
 
 > [!NOTE]
-> * A imagem corporativa só estará disponível se tiver atualizado para a edição Premium ou Básica do Azure Active Directory ou se tiver uma licença do Office 365. Para obter mais informações, veja Edições do Azure Active Directory.
-> 
-> * As edições Premium e Basic do Azure Active Directory estão disponíveis para clientes na China que utilizem a instância mundial do Azure Active Directory. As edições Basic e Premium do Azure Active Directory não são atualmente suportadas pelo serviço Microsoft Azure operado pela 21Vianet na China. Para obter mais informações, contacte-nos através do Fórum do Azure Active Directory.
-
+> * “Imagem corporativa” é uma funcionalidade que só está disponível se tiver atualizado para a edição Premium ou Básica do Azure Active Directory ou se for utilizador do Office 365. Para obter mais informações, consulte [Edições do Azure Active Directory](active-directory-editions.md).
+> * As edições Premium e Basic do Azure Active Directory estão disponíveis para clientes na China que utilizem a instância mundial do Azure Active Directory. As edições Basic e Premium do Azure Active Directory não são atualmente suportadas pelo serviço Microsoft Azure operado pela 21Vianet na China. Para mais informações, contacte-nos através do [Fórum do Azure Active Directory](https://feedback.azure.com/forums/169401-azure-active-directory/).
+>
+>
 
 ## <a name="customizing-the-sign-in-page"></a>Personalizar a página de início de sessão
-Geralmente, os utilizadores interagem com a página de início de sessão do Azure AD quando tentam aceder a aplicações e serviços cloud que a sua organização subscreveu.
+Normalmente, se precisa de acesso baseado em browser para as suas aplicações e serviços na nuvem que a sua organização subscreve, utiliza a página de início de sessão.
 
-Se tiver efetuado alterações à imagem corporativa na sua página de início de sessão, pode demorar até uma hora para que estas apareçam aos utilizadores finais.
+Se tiver efetuado alterações na sua página de início de sessão, pode demorar até uma hora para que estas apareçam.
 
-Os elementos da imagem corporativa das empresas aparecem na página de início de sessão do Azure AD quando os utilizadores acedem a um URL de inquilino específico, como https://outlook.com/contoso.com.
+Uma página de início de sessão com marca corporativa só é apresentada quando visita um serviço com um URL de inquilino específico como https://outlook.com/**contoso**. com ou https://mail.**contoso**. com.
 
-Quando os utilizadores visitam um serviço num URL genérico, como www.office.com, a página de início de sessão ainda não contém qualquer informação de imagem corporativa, porque o sistema não sabe quem são esses utilizadores. No entanto, a imagem aparece imediatamente depois de introduzirem o ID de utilizador ou de selecionarem um mosaico de utilizador.
+Quando visita um serviço com URLs específicos de não inquilino (por exemplo, https://mail.office365.com), é apresentada uma página de início de sessão sem uma imagem corporativa. Neste caso, a sua imagem corporativa aparece depois de introduzir o seu ID de utilizador ou de ter selecionado um mosaico de utilizador.
 
 > [!NOTE]
 > * O nome de domínio tem de aparecer como “Ativo” na secção **Domínios** > **do Diretório** > **do Active Directory** do Portal Clássico do Azure onde tiver configurado uma imagem corporativa.
-> * A imagem corporativa na página de início de sessão não passa para a página de início de sessão de contas Microsoft. Se os seus funcionários ou convidados empresariais iniciarem sessão com uma conta Microsoft, a página de início de sessão não refletirá a imagem corporativa da sua organização.
+> * A imagem corporativa na página de início de sessão de imagem não passa para a página de sessão do consumidor da Microsoft. Se iniciar sessão com uma conta Microsoft pessoal, poderá ver uma lista de mosaicos de utilizador com marca corporativa composto pelo Azure AD, mas a aplicação de imagem corporativa da sua organização não se aplica à página de início de sessão da Microsoft.
+>
 >
 
-As capturas de ecrã seguintes explicam como são personalizadas as páginas de início de sessão.
+Se pretender mostrar nesta página a marca, cores e outros elementos personalizáveis da sua empresa,, consulte as seguintes imagens para entender a diferença entre as duas experiências.
 
-### <a name="scenario-1-contoso-employee-goes-to-a-generic-app-url-for-example-wwwofficecom"></a>Cenário 1: um funcionário da Contoso vai ao URL genérico de uma aplicação (por exemplo, www.office.com)
+A seguinte captura de ecrã mostra um exemplo da página de início de sessão do Office 365 num computador de secretária **antes** da personalização:
 
-Neste exemplo, um utilizador da Contoso utiliza um URL genérico para iniciar sessão numa aplicação móvel ou numa aplicação Web. A ilustração à esquerda representará sempre a aplicação e o painel de interação, à direita, é atualizado para mostrar os elementos da imagem corporativa da Contoso, sempre que for adequado.
+![Página de início de sessão do Office 365 antes da personalização][1]
 
-![Página de início de sessão do Office 365 antes e depois da personalização][1]
+A seguinte captura de ecrã mostra um exemplo da página de início de sessão do Office 365 num computador de secretária **depois** da personalização:
 
-### <a name="scenario-2-contoso-employee-goes-to-contoso-app-thats-restricted-to-internal-users"></a>Cenário 2: o funcionário da Contoso aceda a uma aplicação da Contoso que está limitada a utilizadores internos
+![Página de início de sessão do Office 365 após a personalização][2]
 
-Neste exemplo, um utilizador Contoso está a iniciar sessão numa aplicação interna com um URL específico da empresa. A ilustração à esquerda representa a marca da empresa (Contoso). O painel de interação à direita está bloqueado para a Contoso e ajuda os funcionários ao longo do início de sessão.
+A seguinte captura de ecrã mostra um exemplo da página de início de sessão do Office 365 num dispositivo móvel **antes** da personalização:
 
-![página de início de sessão da aplicação restrita][2]
+![Página de início de sessão do Office 365 antes da personalização][3]
 
-### <a name="scenario-3-contoso-employee-goes-to-a-contoso-app-thats-open-to-external-users"></a>Cenário 3: um funcionário da Contoso acede a uma aplicação da Contoso que está aberta a utilizadores externos
+A seguinte captura de ecrã mostra um exemplo da página de início de sessão do Office 365 num dispositivo móvel **após** a personalização:
 
-Neste exemplo, os utilizadores estão a iniciar sessão numa aplicação LoB da Contoso, mas podem ser ou não funcionários da empresa. A ilustração à esquerda representa o proprietário do recurso (Contoso), tal e qual o caso \#2, acima. No entanto, desta vez, o painel de interação do lado direito não está bloqueado para a Contoso, para passar a mensagem de que o início de sessão dos utilizadores externos é bem-vindo.
+![Página de início de sessão do Office 365 após a personalização][4]
 
-![iniciar sessão para abrir o acesso][3]
+Quando redimensionar a janela do browser, ilustrações grandes, como a apresentada anteriormente, são muitas vezes recortadas para acomodar proporções de ecrã diferentes. Com isto em mente, deve tentar manter os elementos visuais chave na ilustração, para que sejam sempre apresentados no canto superior esquerdo (superior direito para idiomas da direita para a esquerda). Isto é importante porque o redimensionamento ocorre normalmente a partir do canto inferior direito em direção ao topo / esquerda ou a partir da parte inferior para o topo.
 
-### <a name="scenario-4-fabrikam-business-guest-goes-to-contoso-app-thats-open-to-external-users"></a>Cenário de 4: o convidado empresarial Fabrikam acede à aplicação da Contoso que está aberta a utilizadores externos
+A imagem seguinte mostra como a ilustração é recortada no browser quando este é redimensionado para a esquerda:
 
-Neste exemplo, um utilizador Contoso está a iniciar sessão numa aplicação interna com um URL específico da empresa. A ilustração à esquerda representa a marca da empresa (Contoso). O painel de interação à direita está bloqueado para a Contoso e ajuda os funcionários ao longo do início de sessão.
+![][6]
 
-![iniciar sessão como utilizador externo][4]
+Eis como aparece depois do browser ser redimensionado em direção ao topo:
 
+![][7]
 
 ## <a name="what-elements-on-the-page-can-i-customize"></a>Que elementos na página posso personalizar?
-
 Pode personalizar os seguintes elementos na página de início de sessão:
 
 ![][5]
 
 | Elemento da página | Localização na página |
 |:--- | --- |
-| Logótipo de Faixa | Mostrado na parte superior direita da página. Substitui o logótipo da aplicação assim que a organização do utilizador for determinada (normalmente, depois de introduzido o nome de utilizador). |
-| Ilustração de fundo | Mostrada como imagem de transbordo completo no lado esquerdo da página de início de sessão. Substitui a ilustração da aplicação, para cenários de início de sessão em inquilinos (quando os utilizadores acedem a uma aplicação publicada pela sua própria organização ou por uma organização da qual sejam convidado empresarial).<br>Em ligações de largura de banda baixa, a ilustração de fundo é substituída por uma cor de fundo. Em ecrãs estreitos, como os dos telemóveis, não é apresentada.<br>A ilustração de fundo será recortada se os utilizadores redimensionarem o browser. Ao desenhar a ilustração, mantenha os elementos visuais-chave no canto superior esquerdo, para que não sejam recortados. | 
-| Caixa de verificação Manter a sessão iniciada | Apresentada abaixo da caixa de texto **Palavra-passe**. |
-| Texto da página de início de sessão | Texto automático a ser apresentado acima do rodapé da página Pode ser útil para transmitir informações úteis aos seus utilizadores, como o número de telefone do suporte técnico ou uma declaração legal. |
+| Logótipo de Faixa |Mostrado na parte superior direita da página. Substitui o logótipo que apresenta o site de destino em que está a iniciar sessão (por exemplo. Office 365 ou do Azure). |
+| Ilustração Grande / Cor de Fundo |Apresentada à esquerda da página. Substitui a imagem que apresenta o site de destino que está a iniciar sessão. A Cor de Fundo poderá ser apresentada em vez da Ilustração Grande em ligações de largura de banda baixa ou em ecrãs estreitos. |
+| Manter a sessão iniciada |Apresentado abaixo da caixa de texto Palavra-passe |
+| Texto da Página de Início de Sessão |Mostrado acima do rodapé da página quando precisar de transmitir informações úteis antes de um início de sessão com uma conta escolar ou profissional. Por exemplo, pode querer incluir o número de telefone para o suporte técnico ou uma instrução legal. |
 
 > [!NOTE]
-> Todos os elementos são opcionais. Por exemplo, se especificar um Logótipo de Faixa, mas não uma Ilustração de Fundo, a página de início de sessão mostra o seu logótipo e a ilustração para o site de destino (por exemplo, a imagem de autoestrada da Califórnia do Office 365).
+> Todos os elementos são opcionais. Por exemplo, se especificar um Logótipo de Faixa, mas não uma Ilustração Grande, a página de início de sessão mostra o seu logótipo e a ilustração do site de destino (ou seja, a imagem de autoestrada da Califórnia do Office 365).
+>
 >
 
-Na sua página de início de sessão, a caixa de verificação **Manter a sessão iniciada** permite que os utilizadores permaneçam com a sessão iniciada depois de fecharem e reabrirem o browser e não afeta a duração da sessão.
+Na sua página de início de sessão, a caixa de verificação **Manter a sessão iniciada** permite que os utilizadores permaneçam com a sessão iniciada depois de fecharem e reabrirem o browser. Não afeta a duração da sessão. Pode ocultar a caixa de verificação na página de início de sessão do Azure Active Directory.
 
 A apresentação ou não da caixa de verificação depende da definição de **Ocultar KMSI (Keep Me Signed In)**.
 
-![Definição Ocultar KMSI][6]
+![][9]
 
-Para ocultar a caixa de verificação, configure esta definição como **Oculta**.
+Para ocultar a caixa de verificação, configure esta definição como **Oculto**.
 
 > [!NOTE]
-> Algumas funcionalidades do SharePoint Online e do Office 2010 dependem da capacidade de os utilizadores poderem selecionar esta caixa de verificação. Se configurar esta definição como oculta, os seus utilizadores poderão ver avisos de início de sessão adicionais e inesperados.
+> Algumas funcionalidades do SharePoint Online e do Office 2010 dependem da capacidade de os utilizadores poderem selecionar esta caixa. Se configurar esta definição como oculta, os seus utilizadores poderão ver avisos adicionais e inesperados para iniciar sessão.
 >
 >
 
 Também pode localizar todos os elementos nesta página. Depois de configurar um conjunto “predefinido” de elementos de personalização, pode configurar mais versões para diferentes regiões. Também pode misturar e combinar os vários elementos. Pode, por exemplo:
 
-* Criar uma ilustração “predefinida” que funciona para todas as culturas e criar, depois, versões específicas em inglês e francês. Quando definir os seus browsers para um destes dois idiomas, aparece a imagem específica, ao passo que a ilustração predefinida é apresentada para todos os outros idiomas.
+* Criar uma Ilustração Grande “predefinida” que funciona para todas as culturas e criar depois versões específicas em inglês e francês. Quando definir os seus browsers para um destes dois idiomas, aparece a imagem específica, ao passo que a ilustração predefinida é apresentada para todos os outros idiomas.
 * Configurar logótipos diferentes para a sua organização (por exemplo, versões em japonês ou hebraico).
 
 ## <a name="access-panel-page-customization"></a>Personalização de página do painel de acesso
@@ -131,6 +134,10 @@ Imagine a seguinte configuração:
 Se a sua preferência de idioma é alemão, verá o Logótipo de Faixa predefinido, mas o texto em alemão.
 
 Embora possa tecnicamente configurar um conjunto diferente para cada idioma suportado pelo Azure AD, recomendamos que mantenha o número de variações baixo, por motivos de manutenção e desempenho.
+
+> [!IMPORTANT]
+> O Yammer só mostra a página de início de sessão com a marca corporativa do Azure AD depois de o utilizador iniciar sessão. O utilizador verá primeiro a página genérica de início de sessão do Office 365 e verá depois a página com a marca corporativa.   
+ 
  
 **Para adicionar a imagem corporativa da sua empresa ao seu diretório, execute os seguintes passos:**
 
@@ -176,31 +183,48 @@ fs3. Na barra de ferramentas no canto superior, clique em **Configurar**.
 8. Se necessário, clique novamente em **Personalizar uma Imagem Corporativa** e repita estes passos para todas as imagens corporativas específicas do idioma que têm de ser removidas.
     Todas as definições de imagem corporativa foram removidas quando clicar em **Personalizar uma Imagem Corporativa** e vir o formulário **Personalizar Imagem Corporativa Predefinida** sem definições existentes configuradas.
 
+## <a name="testing-and-examples"></a>Testar e exemplos
+Recomendamos que experimente com um inquilino de teste antes de efetuar alterações no seu ambiente de produção.
+
+**Para verificar se a imagem corporativa foi aplicada:**
+
+1. Abra uma sessão de browser InPrivate ou Incognito.
+2. Visite https://outlook.com/contoso.com, substituindo contoso.com com o domínio que tenha personalizado.
+
+Isto também funciona com domínios com o aspeto de contoso.onmicrosoft.com.
+
+Para ajudar a criar conjuntos eficazes de personalização, personalizámos as duas páginas de início de sessão fictícias seguintes:
+
+* [http://aka.ms/aaddemo001](http://aka.ms/aaddemo001)
+* [http://aka.ms/aaddemo002](http://aka.ms/aaddemo002)
+
+Para testar as definições específicas do idioma, tem de modificar as preferências de idioma predefinidas no seu browser para um idioma que definiu na sua personalização. No Internet Explorer, pode configurá-lo no menu **Opções da Internet**.
 
 ## <a name="customizable-elements"></a>Elementos personalizáveis
-Os logótipos empresariais são utilizados para as páginas de início de sessão e do Painel de Acesso, enquanto outros elementos só são utilizados na página de início de sessão. A tabela seguinte fornece detalhes para os diferentes elementos personalizáveis.
+Alguns elementos personalizáveis no Azure AD tem vários casos de utilização. Pode configurar uma vez por diretório logótipos da empresa e este é utilizado na página de início de sessão e na do Painel de Acesso. Alguns elementos personalizáveis são específicos apenas da página de início de sessão. A tabela seguinte fornece detalhes para os diferentes elementos personalizáveis.
 
 | Nome | Descrição | Restrições | Recomendações |
 | --- | --- | --- | --- |
-| Logótipo de faixa |O logótipo de faixa é apresentado na página de início de sessão e no Painel de Acesso. |<p>JPG ou PNG</p><p>60 x 280 pixels</p><p>10 KB</p> |<p>Utilize o logótipo completo da sua organização (incluindo pictograma e logótipo)</p><p>Mantenha uma altura inferior a 30 pixeis para evitar a introdução de barras de deslocamento em dispositivos móveis</p><p>Mantenha-a inferior a 4 KB</p><p>Utilize um PNG transparente (não parta do princípio de que a página de início de sessão tem sempre um fundo branco)</p> |
-| Logótipo de mosaico | Não utilizado atualmente |<p>JPG ou PNG</p><p>120 x 120 pixéis</p><p>10 KB</p> |<p>Mantenha-o simples (sem texto pequeno), uma vez que esta imagem poderá ser redimensionada para 50% |
+| Logótipo de Faixa |O Logótipo de Faixa será apresentado na página de início de sessão e no Painel de Acesso. |<p>JPG ou PNG</p><p>60 x&280; pixels</p><p>10 KB</p> |<p>Utilize o logótipo completo da sua organização (incluindo pictograma e logótipo)</p><p>Mantenha uma altura inferior a 30 pixeis para evitar a introdução de barras de deslocamento em dispositivos móveis</p><p>Mantenha-a inferior a 4 KB</p><p>Utilize um PNG transparente (não parta do princípio de que a página de início de sessão tem sempre um fundo branco)</p> |
+| Logótipo de Mosaico |(atualmente não utilizado na página de início de sessão) De futuro, este texto poderá ser utilizado para substituir o pictograma genérico de “conta escolar ou profissional” em locais diferentes da experiência. |<p>JPG ou PNG</p><p>120 x&120; pixéis</p><p>10 KB</p> |<p>Mantenha-o simples (sem texto pequeno), uma vez que esta imagem poderá ser redimensionada para 50% |
 | </p> | | | |
-| Etiqueta de nome de utilizador de início de sessão | Não utilizado atualmente |<p>Texto Unicode, até 50 carateres</p><p>Apenas texto simples (sem ligações ou tags de HTML)</p> |<p>Mantenha-o curto e simples</p><p>Peça aos seus utilizadores como se costumam referir à conta profissional ou escolar que lhes fornece.</p> |
-| Texto automático de página de início de sessão |Este texto automático aparece por baixo do formulário da página de início de sessão e pode ser utilizado para comunicar instruções adicionais ou onde obter ajuda e suporte. |<p>Texto Unicode, até 256 carateres</p><p>Apenas texto simples (sem ligações ou tags de HTML)</p> |Mantenha-o abaixo dos 250 carateres (cerca de 3 linhas de texto) |
-| Ilustração de fundo da página de início de sessão | Imagem grande que é apresentada no lado esquerdo da página de início de sessão (no lado direito, para idiomas da direita para a esquerda) quando os utilizadores acedem a URLs de inquilinos específicos. |<p>JPG ou PNG</p><p>1420 x 1200</p><p>500 KB</p> |<p>1420 x 1200 pixéis</p><p>Importante: mantê-la o mais pequena possível, idealmente abaixo de 200 KB. Se esta imagem for demasiado grande, o desempenho da página de Início de Sessão é afetado se a imagem não estiver em cache</p><p>Esta imagem será quase sempre recortada, para suportar diferentes proporções de ecrã. Mantenha os elementos visuais principais no canto superior esquerdo.</p> |
-| Cor de fundo da página de início de sessão | Em ligações de largura de banda baixa, esta cor sólida é utilizada em vez da ilustração de fundo. | Tem de ser uma cor RGB numa forma hexadecimal (exemplo: \#FFFFFF) | Sugerimos que escolha a cor primária do logótipo de faixa. |
+| Etiqueta de Nome de Utilizador da Página de Início de Sessão |(atualmente não utilizada na página de início de sessão) No futuro, este texto poderá ser utilizado para substituir a cadeia genérica “conta escolar ou profissional” em locais diferentes da experiência. Pode configurá-lo para algo como “Conta de Contoso” ou “ID Contoso”. |<p>Texto Unicode, até 50 carateres</p><p>Apenas texto simples (sem ligações ou tags de HTML)</p> |<p>Mantenha-o curto e simples</p><p>Peça aos seus utilizadores como se costumam referir à conta profissional ou escolar que lhes fornece.</p> |
+| Texto da Página de Início de Sessão |Este texto “automático” aparece por baixo do formulário da página de início de sessão e pode ser utilizado para comunicar instruções adicionais ou onde obter ajuda e suporte. |<p>Texto Unicode, até 256 carateres</p><p>Apenas texto simples (sem ligações ou tags de HTML)</p> |Mantenha-o abaixo dos 250 carateres (cerca de 3 linhas de texto) |
+| Ilustração da Página de Início de Sessão |A ilustração é uma imagem grande que é apresentada na página de início de sessão à esquerda do formulário da página de início de sessão. |<p>JPG ou PNG</p><p>1420 x&1200;</p><p>500 KB</p> |<p>1420 x&1200; pixéis</p><p>Importante: mantê-la o mais pequena possível, idealmente abaixo de 200 KB. Se esta imagem for demasiado grande, o desempenho da página de Início de Sessão é afetado se a imagem não estiver em cache</p><p>Esta imagem é frequentemente recortada, para suportar aspetos de ecrã diferentes. Mantenha os elementos visuais principais na parte superior esquerda canto (canto superior direito para linguagens RTL), porque redimensionamento ocorre a partir do canto inferior/direita, em direção à parte superior / esquerda, à medida que diminui a janela do browser.</p> |
+| Cor de Fundo da Página de Início de Sessão |A cor de fundo de página de início de sessão é utilizada na área à esquerda do formulário da página de início de sessão. |Tem de ser uma cor RGB numa forma hexadecimal (exemplo: #FFFFFF) |<p>A cor de fundo poderá ser apresentada em vez da Ilustração Grande em ligações de largura de banda baixa</p><p>Sugerimos que escolha a cor primária do Logótipo de Faixa</p> |
 
 ## <a name="next-steps"></a>Passos seguintes
 * [Introdução ao Azure Active Directory Premium](active-directory-get-started-premium.md)
 * [Ver os relatórios de acesso e utilização](active-directory-view-access-usage-reports.md)
 
 <!--Image references-->
-[1]: ./media/active-directory-add-company-branding/signin-page_before-customization.png
-[2]: ./media/active-directory-add-company-branding/signin-page-restricted-app.png
-[3]: ./media/active-directory-add-company-branding/signin-page-open-access.png
-[4]: ./media/active-directory-add-company-branding/signin-page-external-guest.png
-[5]: ./media/active-directory-add-company-branding/which-elements-can-i-customize.png
-[6]: ./media/active-directory-add-company-branding/hide-kmsi.png
+[1]: ./media/active-directory-add-company-branding/SignInPage_beforecustomization.png
+[2]: ./media/active-directory-add-company-branding/SignInPage_aftercustomization.png
+[3]: ./media/active-directory-add-company-branding/SignInPage_mobile_beforecustomization.png
+[4]: ./media/active-directory-add-company-branding/SignInPage_mobile_aftercustomization.png
+[5]: ./media/active-directory-add-company-branding/SignInPage_aftercustomization_elements.png
+[6]: ./media/active-directory-add-company-branding/SignInPage_aftercustomization_croppedleft.png
+[7]: ./media/active-directory-add-company-branding/SignInPage_aftercustomization_croppedtop.png
 [8]: ./media/active-directory-add-company-branding/APBranding.png
 [9]: ./media/active-directory-add-company-branding/hidekmsi.png
 
