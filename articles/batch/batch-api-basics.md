@@ -16,10 +16,10 @@ ms.date: 03/27/2017
 ms.author: tamram
 ms.custom: H1Hack27Feb2017
 ms.translationtype: Human Translation
-ms.sourcegitcommit: be3ac7755934bca00190db6e21b6527c91a77ec2
-ms.openlocfilehash: d05739a4d9f0712c2b4b47432bff97594a11b121
+ms.sourcegitcommit: 9ae7e129b381d3034433e29ac1f74cb843cb5aa6
+ms.openlocfilehash: c3ed30ec43128c4e2b0e3d7e4b5dd61670e6bb52
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/03/2017
+ms.lasthandoff: 05/08/2017
 
 
 ---
@@ -27,7 +27,7 @@ ms.lasthandoff: 05/03/2017
 
 Nesta descrição geral dos componentes principais do serviço Azure Batch, vamos discutir as funcionalidades e os recursos principais do serviço que os programadores do Batch podem utilizar para criar soluções de computação paralelas em grande escala.
 
-Se está a desenvolver uma aplicação computacional distribuída ou um serviço que emite chamadas à [API REST][batch_rest_api] diretas ou a utilizar os [SDKs do Batch](batch-apis-tools.md#batch-development-apis), vai utilizar muitos dos recursos e funcionalidades abordados neste artigo.
+Se está a desenvolver uma aplicação computacional distribuída ou um serviço que emite chamadas à [API REST][batch_rest_api] diretas ou a utilizar os [SDKs do Batch](batch-apis-tools.md#azure-accounts-for-batch-development), vai utilizar muitos dos recursos e funcionalidades abordados neste artigo.
 
 > [!TIP]
 > Para obter uma introdução mais detalhada do serviço Batch, veja [Noções básicas do Azure Batch](batch-technical-overview.md).
@@ -74,13 +74,13 @@ Uma conta do Batch é uma entidade identificada exclusivamente no âmbito do ser
 
 Pode criar uma conta do Azure Batch através do [portal do Azure](batch-account-create-portal.md) ou através de programação, como com a [Biblioteca .NET de Gestão de Batch](batch-management-dotnet.md). Ao criar a conta, pode associar uma conta de armazenamento do Azure.
 
-O Batch suporta duas configurações de conta, com base na propriedade *modo de alocação de conjunto*. As duas configurações concedem-lhe acesso às capacidades diferentes relacionadas com [conjuntos](#pool) do Batch (consulte este artigo mais tarde). 
+O Batch suporta duas configurações de conta, com base na propriedade *modo de alocação de conjunto*. As duas configurações concedem-lhe acesso às capacidades diferentes relacionadas com [conjuntos](#pool) do Batch (consulte este artigo mais tarde).
 
 
-* **Serviço do Batch**: esta é a opção predefinida com as VMs do conjunto do Batch a serem atribuídas em segundo plano em subscrições geridas do Azure. Esta configuração de conta tem de ser utilizada se os conjuntos dos Serviços Cloud forem necessários, mas não podem ser utilizados se forem necessários conjuntos da Máquina Virtual criados a partir de imagens da VM personalizadas ou utilizar uma rede virtual. Pode aceder às APIs de Batch com a autenticação de chave partilhada ou a [autenticação do Azure Active Directory](batch-aad-auth.md). 
+* **Serviço do Batch**: esta é a opção predefinida com as VMs do conjunto do Batch a serem atribuídas em segundo plano em subscrições geridas do Azure. Esta configuração de conta tem de ser utilizada se os conjuntos dos Serviços Cloud forem necessários, mas não podem ser utilizados se forem necessários conjuntos da Máquina Virtual criados a partir de imagens da VM personalizadas ou utilizar uma rede virtual. Pode aceder às APIs de Batch com a autenticação de chave partilhada ou a [autenticação do Azure Active Directory](batch-aad-auth.md).
 
 * **Subscrição do Azure**: esta configuração de conta tem de ser utilizada se os conjuntos da Máquina Virtual criados a partir de imagens da VM personalizadas ou utilizar uma rede virtual. Só pode aceder às APIs do Batch com a [autenticação do Azure Active Directory](batch-aad-auth.md) e os conjuntos dos Serviços Cloud não são suportados. As VMs de computação do Batch são alocadas diretamente na sua subscrição do Azure. Neste modo tem de configurar um cofre de chaves do Azure para a sua conta do Batch.
- 
+
 
 ## <a name="compute-node"></a>Nó de computação
 Um nó de computação é uma máquina virtual (VM) do Azure dedicada ao processamento de uma parte da carga de trabalho da sua aplicação. O tamanho de um nó determina o número de núcleos de CPU, a capacidade da memória e o tamanho do sistema de ficheiros local que está alocado ao nó. Pode criar conjuntos de nós do Windows ou Linux ao utilizar imagens dos Serviços Cloud do Azure ou imagens de Máquinas Virtuais do Azure Marketplace. Veja a secção [Conjunto](#pool), abaixo, para obter mais informações sobre estas opções.
@@ -336,7 +336,7 @@ Quando cria um conjunto de nós de computação no Azure Batch, pode utilizar as
 
 * A VNet deve ter **endereços IP** livres suficientes para acomodar a propriedade `targetDedicated` do conjunto. Se a sub-rede não tiver endereços IP livres suficientes, o serviço Batch aloca, parcialmente, os nós de computação do conjunto e devolve um erro de redimensionamento.
 
-* A sub-rede especificada tem de permitir a comunicação do serviço Batch para conseguir agendar tarefas nos nós de computação. Se a comunicação com os nós de computação for recusada por um **Grupo de Segurança de Rede (NSG)** associado à VNet, o serviço Batch define o estado dos nós de computação como **inutilizável**. 
+* A sub-rede especificada tem de permitir a comunicação do serviço Batch para conseguir agendar tarefas nos nós de computação. Se a comunicação com os nós de computação for recusada por um **Grupo de Segurança de Rede (NSG)** associado à VNet, o serviço Batch define o estado dos nós de computação como **inutilizável**.
 
 * Se a VNet especificada tiver qualquer NSGs associados, então a comunicação de entrada tem de estar ativada. Para conjuntos Linux e Windows, as portas 29876 e 29877 devem estar ativadas. Pode, opcionalmente, ativar (ou filtrar seletivamente) as portas 22 ou 3389 de SSH em conjuntos Linux ou RDP em conjuntos Windows, respetivamente.
 
@@ -345,7 +345,7 @@ As definições adicionais para a VNet dependem do modo de alocação do conjunt
 ### <a name="vnets-for-pools-provisioned-in-the-batch-service"></a>VNets para conjuntos aprovisionados no serviço de Batch
 
 No modo de alocação de serviço do Batch, só podem ser atribuídos a VNets conjuntos de **Configuração de Serviços Cloud**. Além disso, a VNet especificada tem de ser uma VNet **clássica**. Não são suportadas VNets criadas com o modelo de implementação Azure Resource Manager.
-   
+
 
 
 * O principal de serviço *MicrosoftAzureBatch* tem de ter a função [Contribuinte de Máquina Virtual Clássica](../active-directory/role-based-access-built-in-roles.md#classic-virtual-machine-contributor) do Controlo de Acesso Baseado em Funções (RBAC) na VNet especificada. No portal do Azure:
@@ -368,7 +368,7 @@ Com o [dimensionamento automático](batch-automatic-scaling.md), pode fazer com 
 
 A ativação do dimensionamento automático é feita ao escrever uma [fórmula de dimensionamento automático](batch-automatic-scaling.md#automatic-scaling-formulas) e associá-la a um conjunto. O serviço Batch utiliza esta fórmula para determinar o número de destino de nós no conjunto para o próximo intervalo de dimensionamento (um intervalo que pode configurar). Pode especificar as definições de dimensionamento automático de um conjunto quando o criar ou ativar o dimensionamento num conjunto mais tarde. Também pode atualizar as definições de dimensionamento num conjunto preparado para dimensionamento.
 
-Por exemplo, talvez um trabalho que requer que submeta um grande número de tarefas para execução. Pode atribuir uma fórmula de dimensionamento ao conjunto que ajusta o número de nós no conjunto com base no número atual de tarefas na fila, bem como na taxa de conclusão das tarefas desse trabalho. O serviço Batch avalia periodicamente a fórmula e redimensiona o conjunto com base na carga de trabalho e nas outras definições de fórmula. O serviço adiciona nós conforme necessário quando existe um grande número de tarefas em fila e remove nós quando não existem tarefas em execução ou em fila. 
+Por exemplo, talvez um trabalho que requer que submeta um grande número de tarefas para execução. Pode atribuir uma fórmula de dimensionamento ao conjunto que ajusta o número de nós no conjunto com base no número atual de tarefas na fila, bem como na taxa de conclusão das tarefas desse trabalho. O serviço Batch avalia periodicamente a fórmula e redimensiona o conjunto com base na carga de trabalho e nas outras definições de fórmula. O serviço adiciona nós conforme necessário quando existe um grande número de tarefas em fila e remove nós quando não existem tarefas em execução ou em fila.
 
 Uma fórmula de dimensionamento pode basear-se nas métricas seguintes:
 

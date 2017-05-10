@@ -1,0 +1,5 @@
+| **Categoria** | Arquivo de dados | 
+| :-------- | :----------- | 
+| Azure | [Armazenamento de Blobs do Azure](../articles/data-factory/data-factory-azure-blob-connector.md)<br/>[Azure Data Lake Store](../articles/data-factory/data-factory-azure-datalake-connector.md)<br/>[Azure DocumentDB](../articles/data-factory/data-factory-azure-documentdb-connector.md)<br/>[Base de Dados SQL do Azure](../articles/data-factory/data-factory-azure-sql-connector.md)<br/>[Azure SQL Data Warehouse](../articles/data-factory/data-factory-azure-sql-data-warehouse-connector.md)<br/>[Índice do Azure Search](../articles/data-factory/data-factory-azure-search-connector.md)<br/>[Armazenamento de tabelas do Azure](../articles/data-factory/data-factory-azure-table-connector.md) | 
+| Bases de Dados | [SQL Server](../articles/data-factory/data-factory-sqlserver-connector.md)<br/>[Oracle](../articles/data-factory/data-factory-onprem-oracle-connector.md) | 
+| Ficheiro | [Sistema de Ficheiros](../articles/data-factory/data-factory-onprem-file-system-connector.md) |

@@ -14,20 +14,16 @@ ms.tgt_pltfrm: na
 ms.workload: big-data
 ms.date: 12/05/2016
 ms.author: edmaca
-translationtype: Human Translation
-ms.sourcegitcommit: 194b5d79505afbfd0208f63dd182a0e03227ba69
-ms.openlocfilehash: 36677be6bc5599f55f1f15bc145c59033ad20e0a
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 2db2ba16c06f49fd851581a1088df21f5a87a911
+ms.openlocfilehash: ca88b355416b4ae4785bc69244185a67756ca916
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/08/2017
 
 
 ---
 # <a name="use-azure-data-lake-analytics-interactive-tutorials"></a>Utilizar tutoriais interativos do Azure Data Lake Analytics
 O portal do Azure fornece um tutorial interativo para começar a utilizar o Data Lake Analytics . Este artigo mostra como seguir o tutorial para analisar os registos de Web sites.
-
-> [!NOTE]
-> Se pretender percorrer o mesmo tutorial com o Visual Studio, veja [Analisar os registos de sites com o Data Lake Analytics](data-lake-analytics-analyze-weblogs.md).
-> Serão adicionados tutoriais mais interativos ao portal.
-> 
-> 
 
 Para outros tutoriais, veja:
 
@@ -87,10 +83,5 @@ Cada conta do Data Lake Analytics tem uma dependência de conta do [Azure Data L
 * [Introdução ao Data Lake Analytics com o Azure PowerShell](data-lake-analytics-get-started-powershell.md)
 * [Desenvolver scripts U-SQL com as Ferramentas do Data Lake para Visual Studio](data-lake-analytics-data-lake-tools-get-started.md)
 * [Analyze Website logs using Azure Data Lake Analytics (Analisar registos de sites com o Azure Data Lake Analytics)](data-lake-analytics-analyze-weblogs.md)
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

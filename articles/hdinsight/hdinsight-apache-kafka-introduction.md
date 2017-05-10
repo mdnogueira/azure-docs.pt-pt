@@ -13,12 +13,13 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: big-data
-ms.date: 02/09/2017
+ms.date: 05/03/2017
 ms.author: larryfr
-translationtype: Human Translation
-ms.sourcegitcommit: 8c4e33a63f39d22c336efd9d77def098bd4fa0df
-ms.openlocfilehash: a3ceca6cd0f470a5cd6849c345867f094b870a85
-ms.lasthandoff: 04/19/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 7c4d5e161c9f7af33609be53e7b82f156bb0e33f
+ms.openlocfilehash: ca48abcdc9f9d05648a4b03bdb5fec7b4a5b7cce
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/04/2017
 
 ---
 # <a name="introducing-apache-kafka-on-hdinsight-preview"></a>Introdução ao Apache Kafka no HDInsight (pré-visualização)
@@ -48,10 +49,6 @@ O Kafka oferece as seguintes funcionalidades:
 * **Agregação**: com o processamento de transmissão em fluxo, pode agregar informações a partir de várias transmissões em fluxo para combinar e centralizar as informações nos dados operacionais.
 
 * **Transformação**: com o processamento de transmissão em fluxo, pode combinar e enriquecer os dados a partir de vários tópicos de entrada em um ou mais tópicos de saída.
-
-## <a name="where-do-i-start"></a>Por onde devo começar?
-
-Consulte [Get started with Kafka on HDInsight (Introdução ao Kafka no HDInsight)](hdinsight-apache-kafka-get-started.md), para ver os passos sobre a criação de um cluster do Kafka e utilização do Kafka, incluindo exemplos baseados em Java exemplos sobre como utilizar o produtor, consumidor e API de transmissão em fluxo
 
 ## <a name="next-steps"></a>Passos seguintes
 
