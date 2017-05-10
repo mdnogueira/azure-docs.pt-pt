@@ -15,10 +15,11 @@ ms.topic: get-started-article
 ms.date: 03/27/2017
 ms.author: tamram
 ms.custom: H1Hack27Feb2017
-translationtype: Human Translation
-ms.sourcegitcommit: 6ea03adaabc1cd9e62aa91d4237481d8330704a1
-ms.openlocfilehash: 11f8c3f37e56e0b5c566c4abdb60697c5279e72a
-ms.lasthandoff: 04/06/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 9ae7e129b381d3034433e29ac1f74cb843cb5aa6
+ms.openlocfilehash: 8cfe8689494a9f85d1533d259a2744e18407ecef
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/08/2017
 
 
 ---
@@ -27,10 +28,10 @@ ms.lasthandoff: 04/06/2017
 > [!div class="op_single_selector"]
 > * [Portal do Azure](batch-account-create-portal.md)
 > * [Gestão de Batch .NET](batch-management-dotnet.md)
-> 
-> 
+>
+>
 
-Saiba como criar uma conta do Azure Batch no [portal do Azure][azure_portal] e escolha as propriedades da conta que se adequam ao seu cenário de computação. Saiba onde encontrar as propriedades da conta importantes, como as teclas de acesso e os URLs de conta. 
+Saiba como criar uma conta do Azure Batch no [portal do Azure][azure_portal] e escolha as propriedades da conta que se adequam ao seu cenário de computação. Saiba onde encontrar as propriedades da conta importantes, como as teclas de acesso e os URLs de conta.
 
 Para informações sobre contas do Batch e cenários, consulte a [descrição geral da funcionalidade](batch-api-basics.md).
 
@@ -46,28 +47,28 @@ Utilize o portal para criar uma conta do Batch de um dos dois *modos de alocaç�
 
 1. Inicie sessão no [Portal do Azure][azure_portal].
 2. Clique em **Novo** > **Computação** > **Serviço Batch**.
-   
+
     ![Batch no Marketplace][marketplace_portal]
 3. O painel **Nova Conta do Batch** é apresentado. Consulte as descrições abaixo de cada elemento do painel.
-   
+
     ![Criar uma conta do Batch][account_portal]
-   
+
     a. **Nome da conta**: o nome da conta Batch que escolher deve ser único na região do Azure na qual é criada a conta (veja a **Localização** abaixo). O nome da conta pode conter apenas carateres em minúsculas ou números e tem de ter 3 a 24 carateres de comprimento.
-   
+
     b. **Subscrição**: a subscrição onde cria a conta do Batch. Se tiver apenas uma subscrição, está selecionada por predefinição.
 
     c. **Modo de alocação do conjunto**: selecione **serviço do Batch**.
-   
+
     c. **Grupo de recursos**: selecione um grupo de recursos existente para a sua nova conta do Batch ou, opcionalmente, para criar um novo.
-   
+
     d. **Localização**: a região do Azure na qual se cria a conta do Batch. Apenas as regiões suportadas pela sua subscrição e grupo de recursos são apresentadas como opções.
-   
+
     e. **Conta de armazenamento** (opcional): uma conta de Armazenamento do Azure para fins gerais que associa à conta do Batch. Esta opção é recomendada para a maioria das contas do Batch. Veja [Linked Azure Storage account (Conta do Armazenamento do Azure Ligada)](#linked-azure-storage-account) mais tarde neste artigo para obter mais informações.
 
 4. Clique em **Criar** para criar a conta.
-   
+
    O portal indica que a implementação está em curso. Após a conclusão, aparece a notificação **Implementações concluídas com êxito** em **Notificações**.
-   
+
 ## <a name="user-subscription-mode"></a>Modo de subscrição do utilizador
 
 ### <a name="allow-azure-batch-to-access-the-subscription-one-time-operation"></a>Permitir que o Azure Batch aceda à subscrição (operação única)
@@ -75,7 +76,7 @@ Quando criar a sua primeira conta do Batch no modo de subscrição do utilizador
 
 1. Inicie sessão no [Portal do Azure][azure_portal].
 
-2. Clique em **Mais Serviços** > **Subscrições** e clique na subscrição que pretende utilizar para a conta do Batch. 
+2. Clique em **Mais Serviços** > **Subscrições** e clique na subscrição que pretende utilizar para a conta do Batch.
 
 3. No painel **Subscrição**, clique em **Controlo de acesso (IAM)** > **Adicionar**.
 
@@ -88,35 +89,35 @@ Quando criar a sua primeira conta do Batch no modo de subscrição do utilizador
 ### <a name="create-a-key-vault"></a>Criar um cofre de chaves
 No modo de subscrição de utilizador, é necessário um cofre de chaves do Azure que pertence ao mesmo grupo de recursos que a conta do Batch a ser criada. Certifique-se de que o grupo de recursos está numa região onde o Batch está [disponível](https://azure.microsoft.com/regions/services/) e que a sua subscrição suporta.
 
-1. No [portal do Azure][azure_portal], clique em **Novo** > **Segurança + Identidade** > **Key Vault**. 
+1. No [portal do Azure][azure_portal], clique em **Novo** > **Segurança + Identidade** > **Key Vault**.
 
 2. No painel **Criar Key Vault**, introduza um nome para o cofre de chaves e crie um grupo de recursos na região em que pretende a sua conta do Batch. Deixe as definições restantes nos valores predefinidos e clique em **Criar**.
 
 ### <a name="create-a-batch-account"></a>Criar uma conta do Batch
 
 1. No [portal do Azure][azure_portal], clique em **Novo** > **Computação** > **Serviço do Batch**.
-   
+
     ![Batch no Marketplace][marketplace_portal]
 3. O painel **Nova Conta do Batch** é apresentado. Consulte as descrições abaixo de cada elemento do painel.
-   
+
     ![Criar uma conta do Batch][account_portal_byos]
-   
+
     a. **Nome da conta**: o nome da conta Batch que escolher deve ser único na região do Azure na qual é criada a conta (veja a **Localização** abaixo). O nome da conta pode conter apenas carateres em minúsculas ou números e tem de ter 3 a 24 carateres de comprimento.
-   
+
     b. **Subscrição**: se tiver mais do que uma subscrição, selecione a subscrição que registou com o serviço do Batch.
 
     c. **Modo de alocação do conjunto**: selecione **Subscrição do utilizador**.
 
     d. **Cofre de chaves**: selecione o cofre de chaves que criou para a sua conta do Batch na secção anterior. Opcionalmente, crie um novo cofre de chaves. Depois de selecionar o cofre, selecione a caixa de verificação para conceder acesso do Azure Batch ao cofre de chaves.
-   
+
     c. **Grupo de recursos**: selecione o grupo de recursos em que criou o cofre de chaves.
-   
-    d. **Localização**: a região do Azure na qual criou o cofre de chaves para a conta do Batch. 
-   
+
+    d. **Localização**: a região do Azure na qual criou o cofre de chaves para a conta do Batch.
+
     e. **Conta de armazenamento** (opcional): uma conta de Armazenamento do Azure para fins gerais que associa à conta do Batch. Esta opção é recomendada para a maioria das contas do Batch. Veja [Conta do Armazenamento do Azure Ligada](#linked-azure-storage-account), abaixo, para obter mais informações.
 
 4. Clique em **Criar** para criar a conta.
-   
+
    O portal indica que a implementação está em curso. Após a conclusão, aparece a notificação **Implementações concluídas com êxito** em **Notificações**.
 
 
@@ -126,16 +127,16 @@ Depois de a conta ter sido criada, pode abrir o **painel Conta do Batch** para a
 
 ![Painel Conta do Batch no portal do Azure][account_blade]
 
-* **URL da conta do Batch**: quando desenvolver uma aplicação com as [APIs Batch](batch-apis-tools.md#batch-development-apis), irá precisar de um URL de conta para aceder aos recursos do Batch. Os URLs de conta do Batch têm o formato seguinte:
-  
+* **URL da conta do Batch**: quando desenvolver uma aplicação com as [APIs Batch](batch-apis-tools.md#azure-accounts-for-batch-development), irá precisar de um URL de conta para aceder aos recursos do Batch. Os URLs de conta do Batch têm o formato seguinte:
+
     `https://<account_name>.<region>.batch.azure.com`
 
 ![URL da conta do Batch no portal][account_url]
 
 * **Chaves de acesso** (modo de serviço do Batch): para autenticar o acesso à conta do Batch a partir da aplicação, necessitará uma chave de acesso de conta. (Esta definição não está disponível no modo de subscrição de utilizador, onde utiliza a autenticação do Azure Active Directory.)
 
-    Para ver ou regenerar as chaves de acesso da sua conta do Batch, introduza `keys` na caixa **Pesquisar** do menu à esquerda do painel Conta do Batch selecione **Chaves**. 
-  
+    Para ver ou regenerar as chaves de acesso da sua conta do Batch, introduza `keys` na caixa **Pesquisar** do menu à esquerda do painel Conta do Batch selecione **Chaves**.
+
     ![Chaves da conta do Batch no portal do Azure][account_keys]
 
 [!INCLUDE [batch-pricing-include](../../includes/batch-pricing-include.md)]
@@ -148,15 +149,15 @@ Recomendamos que crie uma nova conta de Armazenamento para utilização exclusiv
 
 ![Criar uma conta de armazenamento para “Fins gerais"][storage_account]
 
-> [!NOTE] 
+> [!NOTE]
 > O Azure Batch, atualmente, suporta apenas o tipo de conta de Armazenamento para fins gerais. Este tipo de conta é descrito no passo 5, [Criar uma conta de armazenamento] (../storage/storage-create-storage-account.md#create-a-storage-account), em [Sobre as contas de armazenamento do Azure](../storage/storage-create-storage-account.md).
 >
 >
 
 > [!WARNING]
 > Tenha cuidado ao regenerar as chaves de acesso das contas de Armazenamento ligadas. Regenere apenas uma chave de conta de Armazenamento e clique em **Sincronizar Chaves**, no painel Conta de Armazenamento ligada. Aguarde cinco minutos para que as chaves se propaguem pelos nós de computação dos seus conjuntos e, depois, regenere e sincronize a outra chave, se necessário. Se regenerar ambas as chaves ao mesmo tempo, os nós de computação não conseguirão sincronizar nenhuma das chaves, que perdem o acesso à conta de Armazenamento.
-> 
-> 
+>
+>
 
 ![Regenerar chaves de conta de armazenamento][4]
 
@@ -197,3 +198,4 @@ Para além do portal do Azure, também pode criar e gerir contas do Batch com o 
 [subscription_access]: ./media/batch-account-create-portal/subscription_iam.png
 [add_permission]: ./media/batch-account-create-portal/add_permission.png
 [account_portal_byos]: ./media/batch-account-create-portal/batch_acct_portal_byos.png
+
