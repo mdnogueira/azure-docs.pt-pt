@@ -1,67 +1,67 @@
-## <a name="a-nameos-configaadd-ip-addresses-to-a-vm-operating-system"></a><a name="os-config"></a>Adicionar endereços IP ao sistema operativo de uma VM
+## <a name="os-config"></a>Add IP addresses to a VM operating system
 
-Ligue-se e inicie sessão numa VM criada por si com múltiplos endereços IP privados. Tem de adicionar manualmente todos os endereços IP privados (incluindo o principal) que adicionou à VM. Conclua os passos seguintes relativamente ao sistema operativo da sua VM:
+Connect and login to a VM you created with multiple private IP addresses. You must manually add all the private IP addresses (including the primary) that you added to the VM. Complete the following steps for your VM operating system:
 
 ### <a name="windows"></a>Windows
 
-1. A partir de uma linha de comandos, escreva *ipconfig /all*.  Apenas verá o endereço IP privado *Principal* (através de DHCP).
-2. Escreva *ncpa.cpl* na linha de comandos para abrir a janela **Ligações de rede**.
-3. Abra as propriedades do adaptador adequado: **Ligação de Área Local**.
-4. Faça duplo clique em protocolo IP versão 4 (IPv4).
-5. Selecione **Utilizar o seguinte endereço IP** e introduza os seguinte valores:
+1. From a command prompt, type *ipconfig /all*.  You only see the *Primary* private IP address (through DHCP).
+2. Type *ncpa.cpl* in the command prompt to open the **Network connections** window.
+3. Open the properties for the appropriate adapter: **Local Area Connection**.
+4. Double-click Internet Protocol version 4 (IPv4).
+5. Select **Use the following IP address** and enter the following values:
 
-    * **Endereço IP**: Introduza o endereço IP privado *Principal*
-    * **Máscara de sub-rede**: Conjunto baseado na sua sub-rede. Por exemplo, se a sub-rede for uma sub-rede /24, a máscara de sub-rede será 255.255.255.0.
-    * **Gateway predefinido**: O primeiro endereço IP na sub-rede. Se a sua sub-rede for 10.0.0.0/24, o endereço IP do gateway será 10.0.0.1.
-    * Clique em **Utilizar os seguintes endereços de servidor DNS** e introduza os seguintes valores:
-        * **Servidor DNS preferencial**: Se não estiver a utilizar o seu próprio servidor DNS, introduza 168.63.129.16.  Se estiver a utilizar o seu próprio servidor DNS, introduza o endereço IP do seu servidor.
-    * Clique no botão **Avançado** e adicione mais endereços IP. Adicione cada um dos endereços IP privados secundários apresentados no passo 8 ao NIC com a mesma sub-rede especificada para o endereço IP principal.
+    * **IP address**: Enter the *Primary* private IP address
+    * **Subnet mask**: Set based on your subnet. For example, if the subnet is a /24 subnet then the subnet mask is 255.255.255.0.
+    * **Default gateway**: The first IP address in the subnet. If your subnet is 10.0.0.0/24, then the gateway IP address is 10.0.0.1.
+    * Click **Use the following DNS server addresses** and enter the following values:
+        * **Preferred DNS server**: If you are not using your own DNS server, enter 168.63.129.16.  If you are using your own DNS server, enter the IP address for your server.
+    * Click the **Advanced** button and add additional IP addresses. Add each of the secondary private IP addresses listed in step 8 to the NIC with the same subnet specified for the primary IP address.
         >[!WARNING] 
-        >Se não seguir os passos acima corretamente, poderá perder a conetividade da sua VM. Certifique-se de que as informações introduzidas no passo 5 estão corretas antes de continuar.
+        >If you do not follow the steps above correctly, you may lose connectivity to your VM. Ensure the information entered for step 5 is accurate before proceeding.
 
-    * Clique em **OK** para fechar as definições de TCP/IP e, em seguida, novamente em **OK** para fechar as definições do adaptador. A ligação RDP é restabelecida.
+    * Click **OK** to close out the TCP/IP settings and then **OK** again to close the adapter settings. Your RDP connection is re-established.
 
-6. A partir de uma linha de comandos, escreva *ipconfig /all*. Todos os endereços IP adicionados por si são apresentados e o DHCP é desativado.
+6. From a command prompt, type *ipconfig /all*. All IP addresses you added are shown and DHCP is turned off.
 
 
-### <a name="validation-windows"></a>Validação (Windows)
+### <a name="validation-windows"></a>Validation (Windows)
 
-Para se certificar de que pode estabelecer uma ligação à Internet a partir da configuração de IP secundário através do IP público associado, assim que o tiver adicionado corretamente com os passos acima, utilize o seguinte comando:
+To ensure you are able to connect to the internet from your secondary IP configuration via the public IP associated it, once you have added it correctly using steps above, use the following command:
 
 ```bash
 ping -S 10.0.0.5 hotmail.com
 ```
 >[!NOTE]
->Apenas pode enviar ping para a Internet se o endereço IP privado que estiver a utilizar acima tiver um IP público associado ao mesmo.
+>For secondary IP configurations, you can only ping to the Internet if the configuration has a public IP address associated with it. For primary IP configurations, a public IP address is not required to ping to the Internet.
 
 ### <a name="linux-ubuntu"></a>Linux (Ubuntu)
 
-1. Abra uma janela de terminal.
-2. Certifique-se de que é o utilizador raiz. Se não for, introduza o seguinte comando:
+1. Open a terminal window.
+2. Make sure you are the root user. If you are not, enter the following command:
 
     ```bash
     sudo -i
     ```
 
-3. Atualize o ficheiro de configuração da interface de rede (assumindo “eth0”).
+3. Update the configuration file of the network interface (assuming ‘eth0’).
 
-    * Mantenha o item de linha existente para dhcp. O endereço IP principal continua configurado como estava anteriormente.
-    * Adicione uma configuração para um endereço IP estático adicional com os seguintes comandos:
+    * Keep the existing line item for dhcp. The primary IP address remains configured as it was previously.
+    * Add a configuration for an additional static IP address with the following commands:
 
         ```bash
         cd /etc/network/interfaces.d/
         ls
         ```
 
-    Deverá ver um ficheiro .cfg.
-4. Abra o ficheiro. Deverá ver as linhas seguintes no final do ficheiro:
+    You should see a .cfg file.
+4. Open the file. You should see the following lines at the end of the file:
 
     ```bash
     auto eth0
     iface eth0 inet dhcp
     ```
 
-5. Adicione as seguintes linhas a seguir às linhas existentes neste ficheiro:
+5. Add the following lines after the lines that exist in this file:
 
     ```bash
     iface eth0 inet static
@@ -69,66 +69,66 @@ ping -S 10.0.0.5 hotmail.com
     netmask <your subnet mask>
     ```
 
-6. Guarde o ficheiro com o comando seguinte:
+6. Save the file by using the following command:
 
     ```bash
     :wq
     ```
 
-7. Reponha a interface de rede com o seguinte comando:
+7. Reset the network interface with the following command:
 
     ```bash
     sudo ifdown eth0 && sudo ifup eth0
     ```
 
     > [!IMPORTANT]
-    > Execute ifdown e ifup na mesma linha se estiver a utilizar uma ligação remota.
+    > Run both ifdown and ifup in the same line if using a remote connection.
     >
 
-8. Certifique-se de que o endereço IP é adicionado à interface de rede com o seguinte comando:
+8. Verify the IP address is added to the network interface with the following command:
 
     ```bash
     ip addr list eth0
     ```
 
-    Deverá ver o endereço IP que adicionou como parte da lista.
+    You should see the IP address you added as part of the list.
 
-### <a name="linux-redhat-centos-and-others"></a>Linux (Redhat, CentOS e outros)
+### <a name="linux-redhat-centos-and-others"></a>Linux (Redhat, CentOS, and others)
 
-1. Abra uma janela de terminal.
-2. Certifique-se de que é o utilizador raiz. Se não for, introduza o seguinte comando:
+1. Open a terminal window.
+2. Make sure you are the root user. If you are not, enter the following command:
 
     ```bash
     sudo -i
     ```
 
-3. Introduza a sua palavra-passe e siga as instruções, conforme solicitado. Assim que se tornar no utilizador raiz, navegue até à pasta de scripts de rede com o seguinte comando:
+3. Enter your password and follow instructions as prompted. Once you are the root user, navigate to the network scripts folder with the following command:
 
     ```bash
     cd /etc/sysconfig/network-scripts
     ```
 
-4. Liste os ficheiros ifcfg relacionados com o seguinte comando:
+4. List the related ifcfg files using the following command:
 
     ```bash
     ls ifcfg-*
     ```
 
-    Deverá ver *ifcfg-eth0* como um dos ficheiros.
+    You should see *ifcfg-eth0* as one of the files.
 
-5. Para adicionar um endereço IP, crie um ficheiro de configuração para o mesmo como apresentado abaixo. Tenha em atenção que tem de criar um ficheiro para cada configuração de IP.
+5. To add an IP address, create a configuration file for it as shown below. Note that one file must be created for each IP configuration.
 
     ```bash
     touch ifcfg-eth0:0
     ```
 
-6. Abra o ficheiro *ifcfg-eth0:0* com o seguinte comando:
+6. Open the *ifcfg-eth0:0* file with the following command:
 
     ```bash
     vi ifcfg-eth0:0
     ```
 
-7. Adicione conteúdo ao ficheiro, que é *eth0:0* neste caso, com o seguinte comando. Certifique-se de que atualiza as informações com base no seu endereço IP.
+7. Add content to the file, *eth0:0* in this case, with the following command. Be sure to update information based on your IP address.
 
     ```bash
     DEVICE=eth0:0
@@ -138,32 +138,32 @@ ping -S 10.0.0.5 hotmail.com
     NETMASK=255.255.255.0
     ```
 
-8. Guarde o ficheiro com o comando seguinte:
+8. Save the file with the following command:
 
     ```bash
     :wq
     ```
 
-9. Reinicie os serviços de rede e certifique-se de que as alterações são realizadas com êxito ao executar os seguintes comandos:
+9. Restart the network services and make sure the changes are successful by running the following commands:
 
     ```bash
     /etc/init.d/network restart
     ifconfig
     ```
 
-    Deverá ver o endereço IP que adicionou, *eth0:0*, na lista devolvida.
+    You should see the IP address you added, *eth0:0*, in the list returned.
 
-### <a name="validation-linux"></a>Validação (Linux)
+### <a name="validation-linux"></a>Validation (Linux)
 
-Para se certificar de que pode estabelecer uma ligação à Internet a partir da configuração de IP secundário através do IP público associado, utilize o seguinte comando:
+To ensure you are able to connect to the internet from your secondary IP configuration via the public IP associated it, use the following command:
 
 ```bash
 ping -I 10.0.0.5 hotmail.com
 ```
 >[!NOTE]
->Apenas pode enviar ping para a Internet se o endereço IP privado que estiver a utilizar acima tiver um IP público associado ao mesmo.
+>For secondary IP configurations, you can only ping to the Internet if the configuration has a public IP address associated with it. For primary IP configurations, a public IP address is not required to ping to the Internet.
 
-Para VMs de Linux, ao tentar validar a conectividade de saída a partir de um NIC secundário, poderá ter de adicionar rotas adequadas. Existem várias formas de efetuar este procedimento. Consulte a documentação adequada para a distribuição de Linux. O método seguinte é adequado para realizar este procedimento:
+For Linux VMs, when trying to validate outbound connectivity from a secondary NIC, you may need to add appropriate routes. There are many ways to do this. Please see appropriate documentation for your Linux distribution. The following is one method to accomplish this:
 
 ```bash
 echo 150 custom >> /etc/iproute2/rt_tables 
@@ -172,12 +172,7 @@ ip rule add from 10.0.0.5 lookup custom
 ip route add default via 10.0.0.1 dev eth2 table custom
 
 ```
-- Certifique-se de que substitui:
-    - **10.0.0.5** pelo endereço IP privado que tem um endereço IP público associado ao mesmo
-    - **10.0.0.1** para o gateway predefinido
-    - **eth2** para o nome do seu NIC secundário
-
-
-<!--HONumber=Feb17_HO2-->
-
-
+- Be sure to replace:
+    - **10.0.0.5** with the private IP address that has a public IP address associated to it
+    - **10.0.0.1** to your default gateway
+    - **eth2** to the name of your secondary NIC
