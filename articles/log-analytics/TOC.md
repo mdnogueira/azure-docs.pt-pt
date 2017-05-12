@@ -5,7 +5,6 @@
 # Introdução
 ## [Inscrever-se no Log Analytics](log-analytics-get-started.md)
 ## [Gerir o acesso](log-analytics-manage-access.md)
-## [Proxy e firewall](log-analytics-proxy-firewall.md)
 ## [Dados de utilização](log-analytics-usage.md)
 ## [FAQ do Log Analytics](log-analytics-faq.md)
 ## [Fornecedores de serviços](log-analytics-service-providers.md)
@@ -14,7 +13,7 @@
 ## Recolher dados
 ### Origens ligadas
 #### [Agentes do Windows](log-analytics-windows-agents.md)
-#### [Agentes do Linux](log-analytics-linux-agents.md)
+#### [Agentes do Linux](log-analytics-agent-linux.md)
 #### [Máquinas virtuais do Azure](log-analytics-azure-vm-extension.md)
 #### [Recursos do Azure](log-analytics-azure-storage.md)
 #### [Operations Manager](log-analytics-om-agents.md)
@@ -23,8 +22,12 @@
 ### Origens de dados
 #### [Descrição geral das origens de dados](log-analytics-data-sources.md)
 #### [Eventos do Windows](log-analytics-data-sources-windows-events.md)
+#### [Dados JSON personalizados](log-analytics-data-sources-json.md)
+#### [Dados de desempenho recolhidos](log-analytics-data-sources-collectd.md)
+#### [Alertas do Nagios e do Zabbix](log-analytics-data-sources-alerts-nagios-zabbix.md)
 #### [Syslog](log-analytics-data-sources-syslog.md)
 #### [Contadores de desempenho](log-analytics-data-sources-performance-counters.md)
+#### [Desempenho de aplicações do Linux](log-analytics-data-sources-linux-applications.md)
 #### [Registos do IIS](log-analytics-data-sources-iis-logs.md)
 #### [Registos personalizados](log-analytics-data-sources-custom-logs.md)
 #### [Campos personalizados](log-analytics-custom-fields.md)
@@ -32,6 +35,7 @@
 ### [Descrição geral das pesquisas de registos](log-analytics-log-searches.md)
 ### [Referência de pesquisa](log-analytics-search-reference.md)
 #### [Expressões regulares](log-analytics-log-searches-regex.md)
+### [Agir com base nos resultados de pesquisa](log-analytics-log-search-takeaction.md)
 ### [Grupos de computadores](log-analytics-computer-groups.md)
 ## Analisar dados
 ### [Dashboards](log-analytics-dashboards.md)

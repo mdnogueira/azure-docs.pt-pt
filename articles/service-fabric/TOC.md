@@ -20,6 +20,7 @@
 ## [Implementar aplicações num cluster local](service-fabric-get-started-with-a-local-cluster.md)
 ## [Criar o seu primeiro cluster no Azure](service-fabric-get-started-azure-cluster.md)
 ## [Criar o seu primeiro cluster autónomo](service-fabric-get-started-standalone-cluster.md)
+## [Criar a sua primeira aplicação de contentor](service-fabric-get-started-containers.md)
 
 # Procedimento
 ## Criar uma aplicação
@@ -50,14 +51,19 @@
 #### Conceitos
 ##### [Ciclo de vida do Reliable Services - C#](service-fabric-reliable-services-lifecycle.md)
 ##### [Ciclo de vida do Reliable Services - Java](service-fabric-reliable-services-lifecycle-java.md)
+
+#### Reliable Collections
 ##### [Reliable Collections](service-fabric-reliable-services-reliable-collections.md)
+##### [Diretrizes e recomendações das Reliable Collections](service-fabric-reliable-services-reliable-collections-guidelines.md)
+##### [Trabalhar com as Reliable Collections](service-fabric-work-with-reliable-collections.md)
+##### [Transações e bloqueios](service-fabric-reliable-services-reliable-collections-transactions-locks.md)
+##### [Elementos internos do Reliable State Manager e das Reliable Collections](service-fabric-reliable-services-reliable-collections-internals.md)
 
 #### Introdução
 ##### [C# no Windows](service-fabric-reliable-services-quick-start.md)
 ##### [Java em Linux](service-fabric-reliable-services-quick-start-java.md)
 
 #### Ciclo de vida dos Reliable Services
-#### [Utilizar a Reliable Collections](service-fabric-work-with-reliable-collections.md)
 #### [Configurar](service-fabric-reliable-services-configuration.md)
 #### [Enviar notificações](service-fabric-reliable-services-notifications.md)
 #### [Backup e restauro](service-fabric-reliable-services-backup-restore.md)

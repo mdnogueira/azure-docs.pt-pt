@@ -11,10 +11,11 @@ ms.devlang: na
 ms.topic: landing-page
 ms.date: 01/23/2017
 ms.author: carolz
-translationtype: Human Translation
-ms.sourcegitcommit: 9eafbc2ffc3319cbca9d8933235f87964a98f588
-ms.openlocfilehash: 631eb4c8aa3a41e03cf623fcc5610d3e84f18ec4
-ms.lasthandoff: 04/22/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 18d4994f303a11e9ce2d07bc1124aaedf570fc82
+ms.openlocfilehash: f319bcba8a4eb5f6adfbfb22f99055ea3de13309
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/09/2017
 
 ---
 <div class="content">
@@ -63,8 +64,15 @@ ms.lasthandoff: 04/22/2017
    <li><a href="/azure/virtual-machines/windows/tutorial-manage-vm">Criar e gerir VMs do Windows</a></li>
     <li><a href="/azure/virtual-machines/windows/tutorial-manage-data-disk">Criar e gerir discos de VM</a></li>
     <li><a href="/azure/virtual-machines/windows/tutorial-automate-vm-deployment">Automatizar a configuração da VM</a></li>
+    <li><a href="/azure/virtual-machines/windows/tutorial-custom-images">Criar imagens de VM personalizadas</a></li> 
+    <li><a href="/azure/virtual-machines/windows/tutorial-availability-sets">Criar VMs de elevada disponibilidade</a></li>
+    <li><a href="/azure/virtual-machines/windows/tutorial-create-vmss">Criar um conjunto de dimensionamento de VM</a></li>
     <li><a href="/azure/virtual-machines/windows/tutorial-load-balancer">Balanceamento de carga de VMs</a></li>
-    <li><a href="/azure/virtual-machines/windows/tutorial-virtual-network">Gerir redes de VM</a></li>
+    <li><a href="/azure/virtual-machines/windows/tutorial-virtual-network">Gerir VMs com redes virtuais</a></li>
+    <li><a href="/azure/virtual-machines/windows/tutorial-backup-vms">Fazer cópias de segurança de VMs</a></li>
+    <li><a href="/azure/virtual-machines/windows/tutorial-monitoring">Monitorizar VMs</a></li>
+    <li><a href="/azure/virtual-machines/windows/tutorial-azure-security">Gerir a segurança em VMs</a></li>
+    
 </ol>
 
 <h2 style="margin-top: 36px">Vídeo de Formação Gratuita da PluralSight</h2>
