@@ -67,6 +67,7 @@
 ### [OpenID Connect](active-directory-protocols-openid-connect-code.md)
 ### [Oauth](active-directory-protocols-oauth-code.md)
 ### [Chamadas Serviço para Serviço](active-directory-protocols-oauth-service-to-service.md)
+### [Fluxo Em-Nome-De](active-directory-protocols-oauth-on-behalf-of.md)
 ### [Tipos de Token e de Afirmações Suportados](active-directory-token-and-claims.md)
 ### [Rollover de chave de assinatura](active-directory-signing-key-rollover.md)
 ### [Metadados de Federação](active-directory-federation-metadata.md)
@@ -104,4 +105,5 @@
 #### [OpenID Connect](active-directory-v2-protocols-oidc.md)
 #### [Fluxo implícito](active-directory-v2-protocols-implicit.md)
 #### [Credenciais de cliente OAuth 2.0](active-directory-v2-protocols-oauth-client-creds.md)
+#### [Fluxo Em-Nome-De da OAuth 2.0](active-directory-v2-protocols-oauth-on-behalf-of.md)
 ### [Âmbitos](active-directory-v2-scopes.md)

@@ -9,12 +9,13 @@ ms.service: sql-database
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: landing-page
-ms.date: 01/23/2017
+ms.date: 05/03/2017
 ms.author: carolz
-translationtype: Human Translation
-ms.sourcegitcommit: 54b5b8d0040dc30651a98b3f0d02f5374bf2f873
-ms.openlocfilehash: bc2036c18615e855234885cc0937c16d43eb80dc
-ms.lasthandoff: 04/28/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 18d4994f303a11e9ce2d07bc1124aaedf570fc82
+ms.openlocfilehash: 9f982f94d87500baf32a892c45d6478dcc582ed4
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/09/2017
 
 ---
 <div class="content">
@@ -62,6 +63,8 @@ ms.lasthandoff: 04/28/2017
 <ol>
     <li><a href="/azure/sql-database/sql-database-design-first-database">Criar e estruturar o esquema de uma nova Base de Dados SQL</a></li>
     <li><a href="/azure/sql-database/sql-database-migrate-your-sql-server-database">Migrar uma Base de Dados do SQL Server existente para utilizar a Base de Dados SQL do Azure</a></li>
+    <li><a href="/azure/sql-database/sql-database-security-tutorial">Proteger a sua Base de Dados SQL</a></li> 
+    <li><a href="/azure/sql-database/sql-database-performance-tutorial">Melhorar o desempenho da Base de Dados SQL</a></li> 
 </ol>
 
 <h2 style="margin-top: 36px">Vídeo de Formação Gratuita da PluralSight</h2>

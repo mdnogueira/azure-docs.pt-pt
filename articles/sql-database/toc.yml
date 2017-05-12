@@ -41,6 +41,8 @@
     href: sql-database-migrate-your-sql-server-database.md
   - name: "3 - Proteger a sua BD SQL"
     href: sql-database-security-tutorial.md
+  - name: "4 - Melhorar o desempenho da BD SQL"
+    href: sql-database-performance-tutorial.md
 - name: "Amostras"
   items:
   - name: "CLI do Azure"

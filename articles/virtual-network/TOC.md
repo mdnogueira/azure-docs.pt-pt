@@ -46,20 +46,22 @@
 #### [PowerShell](virtual-networks-create-vnetpeering-arm-ps.md)
 #### [Modelo](virtual-networks-create-vnetpeering-arm-template-click.md)
 
-### [Interfaces de rede](virtual-network-network-interface.md)
+### Interfaces de rede
+#### [Adicionar, alterar ou eliminar](virtual-network-network-interface.md)
+#### [Adicionar, alterar ou remover endereços IP](virtual-network-network-interface-addresses.md)
 
 ### [Endereços IP públicos](virtual-network-public-ip-address.md)
 
 ### Máquinas virtuais
-
-#### Endereços IP públicos estáticos
+#### [Adicionar ou remover interfaces de rede](virtual-network-network-interface-vm.md) 
+#### Criar uma VM com um endereço IP público estático
 ##### [Portal](virtual-network-deploy-static-pip-arm-portal.md)
 ##### [PowerShell](virtual-network-deploy-static-pip-arm-ps.md)
 ##### [CLI](virtual-network-deploy-static-pip-arm-cli.md)
 ##### [Modelo](virtual-network-deploy-static-pip-arm-template.md)
 ##### [PowerShell (Clássico)](virtual-networks-reserved-public-ip.md)
 
-#### Endereços IP privados estáticos
+#### Criar uma VM com um endereço IP privado estático
 ##### [Portal](virtual-networks-static-private-ip-arm-pportal.md)
 ##### [PowerShell](virtual-networks-static-private-ip-arm-ps.md)
 ##### [CLI](virtual-networks-static-private-ip-arm-cli.md)
@@ -67,14 +69,13 @@
 ##### [PowerShell (Clássico)](virtual-networks-static-private-ip-classic-ps.md)
 ##### [CLI (Clássica)](virtual-networks-static-private-ip-classic-cli.md)
 
-#### Várias interfaces de rede
-##### [PowerShell](virtual-network-deploy-multinic-arm-ps.md)
-##### [CLI](virtual-network-deploy-multinic-arm-cli.md)
-##### [Modelo](virtual-network-deploy-multinic-arm-template.md)
+#### Criar uma VM com várias interfaces de rede
+##### [PowerShell](../virtual-machines/windows/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
+##### [CLI](../virtual-machines/linux/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
 ##### [PowerShell (Clássico)](virtual-network-deploy-multinic-classic-ps.md)
 ##### [CLI (Clássica)](virtual-network-deploy-multinic-classic-cli.md)
 
-#### Vários endereços IP
+#### Criar uma VM com vários endereços IP
 ##### [Portal do Azure](virtual-network-multiple-ip-addresses-portal.md)
 ##### [PowerShell](virtual-network-multiple-ip-addresses-powershell.md)
 ##### [CLI](virtual-network-multiple-ip-addresses-cli.md)

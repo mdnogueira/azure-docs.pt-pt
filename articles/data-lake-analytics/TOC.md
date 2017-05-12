@@ -15,12 +15,12 @@
 
 # Procedimento
 ## Programar
-### [U-SQL](data-lake-analytics-u-sql-get-started.md)
+### [Noções básicas do U-SQL](data-lake-analytics-u-sql-get-started.md)
 ### [Funções de janela de U-SQL](data-lake-analytics-use-window-functions.md)
 ### [Operadores definidos pelo utilizador de U-SQL](data-lake-analytics-u-sql-develop-user-defined-operators.md)
 ### [Extensões Python para U-SQL](data-lake-analytics-u-sql-python-extensions.md)
 ### [Extensões R do U-SQL](data-lake-analytics-u-sql-r-extensions.md)
-### [Capacidades cognitivas para U-SQL](data-lake-analytics-u-sql-cognitive.md)
+### [Extensões Cognitivas do U-SQL](data-lake-analytics-u-sql-cognitive.md)
 
 ## Criar soluções
 ### [Analisar registos de Web sites](data-lake-analytics-analyze-weblogs.md)

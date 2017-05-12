@@ -31,7 +31,11 @@
     href: tutorial-load-balancer.md
   - name: "8 - Gerir redes"
     href: tutorial-virtual-network.md
-  - name: "9 - Gerir segurança de VM"
+  - name: "9 - Fazer cópias de segurança de máquinas virtuais"
+    href: tutorial-backup-vms.md
+  - name: "10 - Monitorizar máquinas virtuais"
+    href: tutorial-monitoring.md
+  - name: "11 - Gerir a segurança de VM"
     href: tutorial-azure-security.md
 
 - name: "Amostras"

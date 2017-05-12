@@ -29,10 +29,12 @@
 
 # Referência
 ## [PowerShell](/powershell/module/azurerm.keyvault)
-## [CLI 2.0 do Azure](/cli/azure/keyvault)
+## [CLI 2 do Azure](/cli/azure/keyvault)
 ## [.NET](/dotnet/api/microsoft.azure.keyvault)
 ## [Java](/java/api/com.microsoft.azure.keyvault)
-## [Node.js](http://azure.github.io/azure-sdk-for-node/azure-arm-keyvault/latest)
+## Node.js
+### [Gestão do cofre](http://azure.github.io/azure-sdk-for-node/azure-arm-keyvault/latest)
+### [Gestão dos conteúdos do cofre](http://azure.github.io/azure-sdk-for-node/azure-keyvault/latest)
 ## [REST](/rest/api/keyvault)
 
 # Relacionado

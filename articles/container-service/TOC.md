@@ -1,16 +1,28 @@
 # Descrição geral
-## [O que é o Azure Container Service?](container-service-intro.md)
-## [FAQ](container-service-faq.md)
-# Introdução
-## [Implementar um cluster ACS](container-service-deployment.md)
-## [Implementar no ACS com a CLI 2.0 do Azure](container-service-create-acs-cluster-cli.md)
+## [About Container Service](container-service-intro.md)
+## [Contentores no Azure](../virtual-machines/linux/containers.md?toc=%2fazure%2fcontainer-service%2ftoc.json)
+
+# Inícios rápidos
+## [Cluster do Kubernetes - Linux](container-service-kubernetes-walkthrough.md)
+## [Cluster do Kubernetes - Windows](container-service-kubernetes-windows-walkthrough.md)
+
+# Tutoriais
+## [Implementar o cluster - Portal](container-service-deployment.md)
+## [Implementar o cluster - CLI do Azure](container-service-create-acs-cluster-cli.md)
+## [CI/CD com Kubernetes e Jenkins](container-service-kubernetes-jenkins.md)
+## [CI/CD com DC/OS e VSTS](container-service-setup-ci-cd.md)
+## [CI/CD com Docker Swarm e VSTS](container-service-docker-swarm-setup-ci-cd.md)
+
+# Conceitos
+## [Proteger contentores](container-service-security.md)
+## [Principal de serviço - Kubernetes](container-service-kubernetes-service-principal.md)
+
+# Procedimento
 ## [Ligar com um cluster ACS](container-service-connect.md)
 ## [Dimensionar um cluster ACS](container-service-scale.md)
-# Procedimento
 ## Gerir com o DC/OS
 ### [Gestão de contentores – IU do DC/OS](container-service-mesos-marathon-ui.md)
 ### [Gestão de contentores - API REST do DC/OS](container-service-mesos-marathon-rest.md)
-### [Integração contínua do DC/OS](container-service-setup-ci-cd.md)
 ### [Conjuntos de agentes do DC/OS](container-service-dcos-agents.md)
 ### [Ativar o acesso público do DC/OS](container-service-enable-public-access.md)
 ### [Balanceamento de carga dos contentores do DC/OS](container-service-load-balancing.md)
@@ -24,12 +36,8 @@
 #### [Monitorizar com o Sysdig](container-service-monitoring-sysdig.md)
 #### [Monitorizar com o Dynatrace](container-service-monitoring-dynatrace.md)
 ## Gerir com o Kubernetes
-### [Introdução ao Kubernetes](container-service-kubernetes-walkthrough.md)
-### [Introdução ao Kubernetes e Windows](container-service-kubernetes-windows-walkthrough.md)
-### [Configurar um principal de serviço](container-service-kubernetes-service-principal.md)
 ### [Gestão de contentores - IU do Kubernetes](container-service-kubernetes-ui.md)
 ### [Balanceamento de carga dos contentores do Kubernetes](container-service-kubernetes-load-balancing.md)
-### [Integração de Jenkins com Kubernetes de ACS](container-service-kubernetes-jenkins.md)
 ### [Implementar gráficos Helm](container-service-kubernetes-helm.md)
 ### Monitorizar o Kubernetes
 #### [Monitorizar com o OMS](container-service-kubernetes-oms.md)
@@ -37,13 +45,15 @@
 #### [Monitorizar com o Sysdig](container-service-kubernetes-sysdig.md)
 ## Gerir com Docker Swarm
 ### [Docker e Docker Compose](container-service-docker-swarm.md)
-### [Integração contínua do Docker Swarm](container-service-docker-swarm-setup-ci-cd.md)
-## [Proteger contentores](container-service-security.md)
+
 # Referência
 ## [CLI 2.0 do Azure](/cli/azure/acs)
 ## [REST](/rest/api/compute/containerservices)
+
 # Recursos
-## [Disponibilidade por regiões](https://azure.microsoft.com/regions/services/)
+## [FAQ](container-service-faq.md)
+## [Modelos - Motor de ACS](https://github.com/Azure/acs-engine)
 ## [Preços](https://azure.microsoft.com/pricing/details/container-service/)
-## [Atualizações de Serviço](https://azure.microsoft.com/en-us/updates/?product=container-service&updatetype=&platform=)
+## [Disponibilidade por regiões](https://azure.microsoft.com/regions/services/)
 ## [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-container-service)
+## [Vídeos](https://azure.microsoft.com/resources/videos/index/?services=container-service&sort=newest)
