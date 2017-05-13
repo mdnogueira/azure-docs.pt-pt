@@ -1,0 +1,105 @@
+- name: BD do Azure para Documentos do MySQL
+  href: index.yml
+- name: Descrição geral
+  items:
+  - name: BD do Azure para MySQL
+    href: overview.md
+- name: Inícios rápidos
+  expanded: true
+  items:
+  - name: Criar BD - Portal
+    href: quickstart-create-mysql-server-database-using-azure-portal.md
+  - name: Criar BD - CLI do Azure
+    href: quickstart-create-mysql-server-database-using-azure-cli.md
+- name: Tutoriais
+  items:
+  - name: 1 - Estruturar uma Base de Dados
+    items:
+    - name: Portal do Azure
+      href: tutorial-design-database-using-portal.md
+    - name: CLI do Azure
+      href: tutorial-design-database-using-cli.md
+  - name: 2 - Criar uma Aplicação Web
+    items:
+    - name: Wordpress - Portal
+      href: ../app-service-web/app-service-web-create-web-app-from-marketplace.md?toc=%2fazure%2fmysql%2ftoc.json
+    - name: PHP - CLI do Azure
+      href: ../app-service-web/app-service-web-tutorial-php-mysql.md?toc=%2fazure%2fmysql%2ftoc.json
+- name: Amostras
+  items:
+  - name: CLI do Azure
+    href: sample-scripts-azure-cli.md
+- name: Conceitos
+  items:
+  - name: BD e Servidores
+    items:
+    - name: Servidores
+      href: concepts-servers.md
+    - name: Versões suportadas
+      href: concepts-supported-versions.md
+  - name: Recursos
+    items:
+    - name: Escalões de serviço
+      href: concepts-service-tiers.md
+    - name: Unidades de computação e Unidades de armazenamento
+      href: concepts-compute-unit-and-storage.md
+    - name: Limites
+      href: concepts-limits.md
+  - name: Acesso a dados e segurança
+    items:
+    - name: Regras da firewall
+      href: concepts-firewall-rules.md
+    - name: Configurar o SSL
+      href: concepts-ssl-connection-security.md
+  - name: Desenvolvimento
+    items:
+    - name: Bibliotecas de ligação
+      href: concepts-connection-libraries.md
+    - name: Programação de aplicações
+      href: concepts-database-application-development.md
+  - name: Migrar a base de dados
+    items:
+    - name: Informação de falha de sistema e restauro
+      href: concepts-migrate-dump-restore.md
+    - name: Importar e exportar
+      href: concepts-migrate-import-export.md
+- name: Guias de Procedimentos
+  items:
+  - name: Gerir um Servidor
+    items:
+    - name: Portal do Azure
+      href: howto-create-manage-server-portal.md
+  - name: Regras da firewall
+    items:
+    - name: Portal do Azure
+      href: howto-manage-firewall-using-portal.md
+    - name: CLI do Azure
+      href: howto-manage-firewall-using-cli.md
+  - name: Restaurar um servidor
+    items:
+    - name: Portal do Azure
+      href: howto-restore-server-portal.md
+  - name: Ligar Aplicações
+    items:
+    - name: Cadeias de Ligação
+      href: howto-connection-string.md
+    - name: Configurar o SSL
+      href: howto-configure-ssl.md
+- name: Referência
+  items:
+  - name: CLI do Azure
+    href: /cli/azure/mysql
+- name: Recursos
+  items:
+  - name: Preços
+    href: https://azure.microsoft.com/pricing/details/mysql/
+  - name: Fórum do MSDN
+    href: https://social.msdn.microsoft.com/forums/security/en-US/home?forum=AzureDatabaseforMySQL
+  - name: Stack Overflow
+    href: http://stackoverflow.com/questions/tagged/azure-database-mysql
+  - name: Pedir uma funcionalidade
+    href: https://feedback.azure.com/forums/597982-azure-database-for-mysql
+  - name: Disponibilidade de região
+    href: https://azure.microsoft.com/regions/services/
+  - name: Opções de suporte
+    href: https://azure.microsoft.com/support/options/
