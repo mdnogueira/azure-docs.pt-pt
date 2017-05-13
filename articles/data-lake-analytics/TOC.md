@@ -16,6 +16,8 @@
 # Procedimento
 ## Programar
 ### [Noções básicas do U-SQL](data-lake-analytics-u-sql-get-started.md)
+### [Catálogo U-SQL](data-lake-analytics-u-sql-catalog.md)
+### [Parâmetros do U-SQL](data-lake-analytics-u-sql-parameterize_scripts.md)
 ### [Funções de janela de U-SQL](data-lake-analytics-use-window-functions.md)
 ### [Operadores definidos pelo utilizador de U-SQL](data-lake-analytics-u-sql-develop-user-defined-operators.md)
 ### [Extensões Python para U-SQL](data-lake-analytics-u-sql-python-extensions.md)

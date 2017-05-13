@@ -1,0 +1,66 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: "Documentação das Funções do Azure"
+metadata:
+  title: "Documentação das Funções do Azure - Tutoriais | Microsoft Docs"
+  description: "Saiba como desenvolver e implementar funções no idioma que preferir para executar tarefas em segundo plano ou com base numa agenda sem infraestrutura especial."
+  services: functions
+  author: apexprodleads
+  manager: carolz
+  ms.service: virtual-machines\linux
+  ms.tgt_pltfrm: na
+  ms.devlang: na
+  ms.topic: landing-page
+  ms.date: 01-23-2017
+  ms.author: carolz
+abstract:
+  description: "As Funções do Azure são um serviço de computação sem servidor lhe que permite executar código a pedido sem ter de aprovisionar ou gerir explicitamente uma infraestrutura. Utilize as Funções do Azure para executar um script ou fragmento de código em resposta a uma variedade de eventos. Saiba como utilizar as Funções do Azure com os nossos guias de introdução, tutoriais e amostras."
+  aside:
+    image:
+      alt: 
+      height: 110
+      src: media/index/get-started-with-azure-functions.png
+      width: 250  
+    title: "Introdução às Funções do Azure. (2:39)"
+    href: https://azure.microsoft.com/en-us/resources/videos/get-started-with-azure-functions/
+    width: 250
+sections:
+- title: "Inícios rápidos de cinco minutos"
+  items:
+  - type: paragraph
+    text: 'Learn how to create a Hello World function using:'
+  - type: list
+    style: icon48
+    items: 
+    - image: 
+        src: https://docs.microsoft.com/en-us/azure/sql-database/media/index/portal.svg
+      text: Azure portal
+      href: /azure/azure-functions/functions-create-first-azure-function
+    - image: 
+        src: https://docs.microsoft.com/en-us/azure/sql-database/media/index/cli.svg
+      text: Azure CLI
+      href: /azure/azure-functions/functions-create-first-azure-function-azure-cli
+- title: "Tutoriais Passo-a-Passo"
+  items:
+  - type: paragraph
+    text: 'Learn how to build and manage Azure Functions'
+  - type: list
+    style: ordered
+    items:
+    - html: <a href="/azure/azure-functions/functions-twitter-email">Build a serverless social media dashboard</a>
+    - html: <a href="/azure/azure-functions/functions-create-serverless-api">Create a serverless API using Azure Functions</a>
+- title: "Amostras"
+  items:
+  - type: list
+    style: unordered
+    className: spaced noBullet
+    items:
+    - html: <a href="/azure/azure-functions/functions-cli-samples">Azure CLI</a>
+- title: "Referência"
+  items:
+  - type: list
+    style: cards
+    className: cardsD
+    items:
+    - title: "Linha de Comandos"
+      html: <p><a href="/cli/azure">Azure CLI</a></p>

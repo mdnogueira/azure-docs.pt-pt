@@ -43,6 +43,24 @@
     href: sql-database-security-tutorial.md
   - name: "4 - Melhorar o desempenho da BD SQL"
     href: sql-database-performance-tutorial.md
+  - name: "5 - Implementar aplicação multi-inquilino"
+    href: sql-database-multi-tenant-application.md
+  - name: "6 - Implementar uma aplicação multi-inquilino"
+    href: sql-database-saas-tutorial.md
+  - name: "7 - Aprovisionar/catalogar novos inquilinos"
+    href: sql-database-saas-tutorial-provision-and-catalog.md
+  - name: "8 - Monitorizar o desempenho"
+    href: sql-database-saas-tutorial-performance-monitoring.md
+  - name: "9 - Restaurar um único inquilino"
+    href: sql-database-saas-tutorial-restore-single-tenant.md
+  - name: "10 - Gerir esquemas de inquilino"
+    href: sql-database-saas-tutorial-schema-management.md
+  - name: "11 -Executar análises ad hoc"
+    href: sql-database-saas-tutorial-adhoc-analytics.md
+  - name: "12 - Monitorizar com o Log Analytics"
+    href: sql-database-saas-tutorial-log-analytics.md
+  - name: "13 - Gerir a análise de inquilino"
+
 - name: "Amostras"
   items:
   - name: "CLI do Azure"
@@ -144,7 +162,7 @@
       href: sql-database-long-term-retention.md
     - name: "Recuperação da base de dados"
       href: sql-database-recovery-using-backups.md
-    - name: "Georreplicação"
+    - name: "Ativação pós-falha automática e georreplicação"
       href: sql-database-geo-replication-overview.md
     - name: "Inícios de sessão"
       href: sql-database-geo-replication-security-config.md

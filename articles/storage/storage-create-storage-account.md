@@ -14,16 +14,18 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 01/23/2017
 ms.author: robinsh
-translationtype: Human Translation
-ms.sourcegitcommit: 3203358dce9cba95d325ec786e7ba12dd45f5ca1
-ms.openlocfilehash: eb9e9ca5082559ee0e30ea67bf53229d38f81589
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 71fea4a41b2e3a60f2f610609a14372e678b7ec4
+ms.openlocfilehash: 33988eaaf926dcd91a1e63ae766e815cda93cf03
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/10/2017
 
 
 ---
 # <a name="about-azure-storage-accounts"></a>Acerca das contas do Storage do Azure
 [!INCLUDE [storage-selector-portal-create-storage-account](../../includes/storage-selector-portal-create-storage-account.md)]
 
-[!INCLUDE [storage-try-azure-tools](../../includes/storage-try-azure-tools.md)]
+[!INCLUDE [storage-table-cosmos-db-tip-include](../../includes/storage-table-cosmos-db-tip-include.md)]
 
 ## <a name="overview"></a>Descrição geral
 Uma conta do Storage do Azure fornece um espaço de nomes exclusivo para armazenar e aceder aos seus objetos de dados do Storage do Azure. Todos os objetos numa conta do Storage são faturados em conjunto como um grupo. Por predefinição, os dados na sua conta só estão disponíveis para si, o proprietário da conta.
@@ -153,15 +155,11 @@ Se a conta de armazenamento utilizar o modelo de implementação Clássica, pode
 Para obter mais informações, consulte a [documentação de Virtual Machines do Azure](http://azure.microsoft.com/documentation/services/virtual-machines/).
 
 ## <a name="next-steps"></a>Passos seguintes
+* O [Explorador de Armazenamento do Microsoft Azure](../vs-azure-tools-storage-manage-with-storage-explorer.md) é uma aplicação autónoma e gratuita da Microsoft, que lhe permite trabalhar visualmente com dados do Armazenamento do Azure no Windows, macOS e Linux.
 * [Armazenamento de Blobs do Azure: camadas de acesso Frequente e Esporádico](storage-blob-storage-tiers.md)
 * [Replicação do Armazenamento do Azure](storage-redundancy.md)
 * [Configurar Cadeias de Ligação do Armazenamento do Azure](storage-configure-connection-string.md)
 * [Transferir dados com o Utilitário de Linha de Comandos AzCopy](storage-use-azcopy.md)
 * Aceda ao [Blogue da Equipa do Storage do Azure](http://blogs.msdn.com/b/windowsazurestorage/).
-
-
-
-
-<!--HONumber=Jan17_HO4-->
 
 

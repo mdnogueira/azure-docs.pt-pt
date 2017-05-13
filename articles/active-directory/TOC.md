@@ -3,7 +3,6 @@
 ## [Escolher edição](active-directory-editions.md)
 
 ## [Sobre a gestão de identidade do Azure](identity-fundamentals.md)
-## [Pré-visualizar a experiência do portal do Azure](active-directory-preview-explainer.md)
 
 # Introdução
 ## [Obter um inquilino do Azure AD](active-directory-howto-tenant.md)
@@ -82,7 +81,7 @@
 ### [Utilizadores em risco](active-directory-reporting-security-user-at-risk.md)
 ### [Inícios de sessão de risco](active-directory-reporting-security-risky-sign-ins.md)
 ### [Eventos de risco](active-directory-reporting-risk-events.md)
-### [Redes com nome](active-directory-known-networks-azure-portal.md)
+### [Localizações com nome](active-directory-named-locations.md)
 ### [Migração de relatórios](active-directory-reporting-migration.md)
 ### [Retenção](active-directory-reporting-retention.md)
 ### [Latências](active-directory-reporting-latencies-azure-portal.md)
