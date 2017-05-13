@@ -1,1 +1,4 @@
-O Azure funciona atualmente com dois modelos de implementação: Resource Manager e clássica. Antes de iniciar a configuração, certifique-se de que está a utilizar as instruções do modelo de implementação no qual quer trabalhar. Para obter mais informações, veja [Understanding deployment models (Compreender os modelos de implementação)](../articles/resource-manager-deployment-model.md).
+> [!NOTE]
+> O Azure funciona atualmente com dois modelos de implementação: Resource Manager e clássica. Os dois modelos não são totalmente compatíveis entre si. Antes de começar, deve saber em que modelo pretende trabalhar. Para obter informações sobre os modelos de implementação, veja [Compreender os modelos de implementação](../articles/resource-manager-deployment-model.md). Se estiver familiarizado com o Azure, recomendamos que utilize o modelo de implementação do Resource Manager.
+>
+>

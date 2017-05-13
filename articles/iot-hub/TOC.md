@@ -106,6 +106,7 @@
 ### Configurar o carregamento de ficheiros
 #### [Utilizar o portal](iot-hub-configure-file-upload.md)
 #### [Utilizar o PowerShell](iot-hub-configure-file-upload-powershell.md)
+#### [Utilizar a CLI 2.0](iot-hub-configure-file-upload-cli.md)
 ### [Gerir dispositivos IoT em massa](iot-hub-bulk-identity-mgmt.md)
 ### [Métricas de utilização](iot-hub-metrics.md)
 ### [Monitorização de operações](iot-hub-operations-monitoring.md)

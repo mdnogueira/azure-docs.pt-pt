@@ -12,12 +12,13 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: storage-backup-recovery
-ms.date: 02/06/2017
+ms.date: 05/08/2017
 ms.author: raynew
-translationtype: Human Translation
-ms.sourcegitcommit: eeb56316b337c90cc83455be11917674eba898a3
-ms.openlocfilehash: 4149c5e06f1a23864ca0f92f1b7b73f4f66949df
-ms.lasthandoff: 04/03/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 2db2ba16c06f49fd851581a1088df21f5a87a911
+ms.openlocfilehash: 1e48b0848c9f286f3bb0b3758403135a4f280bc0
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/08/2017
 
 
 ---
@@ -89,7 +90,7 @@ O Azure Site Recovery ajuda a proteger as implementações do SharePoint da segu
 * Simplifica o desenvolvimento e o teste de aplicações de SharePoint através da criação de um ambiente de réplica de cópia a pedido do tipo produção para realizar testes e depuração.
 * Simplifica a transição para a nuvem utilizando a Recuperação de Sites para migrar as implementações do SharePoint para o Azure.
 
-[Saiba mais](https://gallery.technet.microsoft.com/SharePoint-DR-Solution-f6b4aeae) sobre como proteger o SharePoint.
+[Saiba mais](site-recovery-sharepoint.md) sobre como proteger o SharePoint.
 
 ## <a name="protect-dynamics-ax"></a>Proteger Dynamics AX
 O Azure Site Recovery ajuda a proteger a sua solução ERP de Dynamics AX:
@@ -98,7 +99,7 @@ O Azure Site Recovery ajuda a proteger a sua solução ERP de Dynamics AX:
 * Simplificação da migração de implementações de Dynamics AX para a nuvem (Azure).
 * Simplificação do desenvolvimento e teste de aplicações do Dynamics AX através de uma cópia do tipo produção a pedido para teste e depuração.
 
-[Saiba mais](https://gallery.technet.microsoft.com/Dynamics-AX-DR-Solution-b2a76281) sobre como proteger o Dynamic AX.
+[Saiba mais](site-recovery-dynamicsax.md) sobre como proteger o Dynamic AX.
 
 ## <a name="protect-rds"></a>Proteger Serviços de Ambiente de Trabalho Remoto
 Os Serviços de Ambiente de Trabalho Remoto (RDS) ativa a infraestrutura de ambiente de trabalho virtual (VDI), ambientes de trabalho baseados em sessão e aplicações, permitindo aos utilizadores trabalhar em qualquer lugar. Com o Azure Site Recovery, pode:
