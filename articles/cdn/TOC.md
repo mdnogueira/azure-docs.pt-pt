@@ -29,6 +29,7 @@
 ### [Monitorizar recursos](cdn-resource-health.md)
 ### [Substituir comportamento por regras](cdn-rules-engine.md)
 ### [Receber alertas em tempo real](cdn-real-time-alerts.md)
+### [Suporte HTTP/2](cdn-http2.md)
 
 ## Analisar
 ### [Analisar padrões de utilização](cdn-analyze-usage-patterns.md)
