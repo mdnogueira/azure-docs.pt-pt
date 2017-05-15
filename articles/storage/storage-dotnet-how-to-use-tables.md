@@ -14,17 +14,17 @@ ms.devlang: dotnet
 ms.topic: hero-article
 ms.date: 04/10/2017
 ms.author: marsma
-translationtype: Human Translation
-ms.sourcegitcommit: 757d6f778774e4439f2c290ef78cbffd2c5cf35e
-ms.openlocfilehash: 0764d4cbcd618be54c8b6e71a632d24c5c3bfe67
-ms.lasthandoff: 04/10/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 71fea4a41b2e3a60f2f610609a14372e678b7ec4
+ms.openlocfilehash: bcd59c9951965fb1304bb8da678fd1f04ddded14
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/10/2017
 
 
 ---
 # <a name="get-started-with-azure-table-storage-using-net"></a>Introdução ao Table Storage do Azure através do .NET
 [!INCLUDE [storage-selector-table-include](../../includes/storage-selector-table-include.md)]
-
-[!INCLUDE [storage-check-out-samples-dotnet](../../includes/storage-check-out-samples-dotnet.md)]
+[!INCLUDE [storage-table-cosmos-db-tip-include](../../includes/storage-table-cosmos-db-tip-include.md)]
 
 O Armazenamento de tabelas do Azure é um serviço que armazena dados NoSQL estruturados na cloud, fornecendo uma loja de atributos/chaves com um design sem esquemas. Uma vez que o Table Storage não tem esquemas, é fácil adaptar os seus dados à medida que as necessidades da sua aplicação evoluem. O acesso a dados do Armazenamento de tabelas é rápido e rentável para muitos tipos de aplicações, e é normalmente mais económico do que o SQL tradicional para semelhantes volumes de dados.
 
@@ -465,14 +465,15 @@ do
 ## <a name="next-steps"></a>Passos seguintes
 Agora que aprendeu as noções básicas do Table Storage, siga estas ligações para saber mais sobre as tarefas de armazenamento mais complexas:
 
+* O [Explorador de Armazenamento do Microsoft Azure](../vs-azure-tools-storage-manage-with-storage-explorer.md) é uma aplicação autónoma e gratuita da Microsoft, que lhe permite trabalhar visualmente com dados do Armazenamento do Azure no Windows, macOS e Linux.
 * Ver mais exemplos do Armazenamento de Tabelas em [Introdução ao Armazenamento de Tabelas do Azure no .NET](https://azure.microsoft.com/documentation/samples/storage-table-dotnet-getting-started/)
 * Consulte a documentação de referência do serviço Tabela para obter detalhes completos sobre as APIs disponíveis:
-  * [Referência da Biblioteca de Clientes do Storage para o .NET](http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409)
-  * [Referência da API REST](http://msdn.microsoft.com/library/azure/dd179355)
+* [Referência da Biblioteca de Clientes do Storage para o .NET](http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409)
+* [Referência da API REST](http://msdn.microsoft.com/library/azure/dd179355)
 * Saiba como simplificar o código de escrita para trabalhar com o Storage do Azure utilizando o [SDK de WebJobs do Azure](../app-service-web/websites-dotnet-webjobs-sdk-get-started.md)
 * Ver mais guias de funcionalidades para saber mais sobre as opções adicionais para armazenar dados no Azure.
-  * [Introdução ao Blob Storage do Azure utilizando o .NET](storage-dotnet-how-to-use-blobs.md) para armazenar dados não estruturados.
-  * [Ligar à Base de Dados SQL com o .NET (C#)](../sql-database/sql-database-develop-dotnet-simple.md) para armazenar dados relacionais.
+* [Introdução ao Blob Storage do Azure utilizando o .NET](storage-dotnet-how-to-use-blobs.md) para armazenar dados não estruturados.
+* [Ligar à Base de Dados SQL com o .NET (C#)](../sql-database/sql-database-develop-dotnet-simple.md) para armazenar dados relacionais.
 
 [Download and install the Azure SDK for .NET]: /develop/net/
 [Creating an Azure Project in Visual Studio]: http://msdn.microsoft.com/library/azure/ee405487.aspx
