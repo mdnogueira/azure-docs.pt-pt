@@ -12,12 +12,13 @@ ms.devlang: na
 ms.tgt_pltfrm: ibiza
 ms.topic: get-started-article
 ms.workload: tbd
-ms.date: 03/14/2017
+ms.date: 05/05/2017
 ms.author: awills
-translationtype: Human Translation
-ms.sourcegitcommit: 538f282b28e5f43f43bf6ef28af20a4d8daea369
-ms.openlocfilehash: 65d4c06078d85400e2a1cc3b324821897acfe7d5
-ms.lasthandoff: 04/07/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 71fea4a41b2e3a60f2f610609a14372e678b7ec4
+ms.openlocfilehash: bfae0fcf992c38d7afef6140fdd79d87ab0ecb4f
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/10/2017
 
 
 ---
@@ -239,6 +240,7 @@ Compilou para .NET 4.6? O 4.6 não é suportado automaticamente nas funções do
 * [Configure sending Azure Diagnostics to Application Insights](app-insights-azure-diagnostics.md) (Configurar o envio de Diagnósticos do Azure para o Application Insights)
 * [Automate creation of Application Insights resources](app-insights-powershell.md) (Automatizar a criação de recursos do Application Insights)
 * [Automatizar o Diagnóstico do Azure](app-insights-powershell-azure-diagnostics.md)
+* [Funções do Azure](https://github.com/christopheranderson/azure-functions-app-insights-sample)
 
 [api]: app-insights-api-custom-events-metrics.md
 [availability]: app-insights-monitor-web-app-availability.md
