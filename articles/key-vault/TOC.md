@@ -24,7 +24,6 @@
 
 ## Automatizar
 ### [Automatização do Azure](automation-manage-key-vault.md)
-### [Criar e gerir com a CLI](key-vault-manage-with-cli.md)
 ### [Criar e gerir com a CLI 2.0](key-vault-manage-with-cli2.md)
 
 # Referência
