@@ -13,13 +13,14 @@ ms.workload: storage-backup-recovery
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 3/13/2017
+ms.date: 5/3/2017
 ms.author: markgal;trinadhk; anuragm
 ms.custom: H1Hack27Feb2017
-translationtype: Human Translation
-ms.sourcegitcommit: 538f282b28e5f43f43bf6ef28af20a4d8daea369
-ms.openlocfilehash: 2e981f0f45bc5b338937839b74114e12db960927
-ms.lasthandoff: 04/07/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: e72275ffc91559a30720a2b125fbd3d7703484f0
+ms.openlocfilehash: 245a89f2576dc1bfed2f9078f1d8761f91caf561
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/05/2017
 
 
 ---
@@ -43,7 +44,7 @@ As soluções de cópia de segurança tradicionais evoluíram para tratar a nuve
 
 **Transferência de dados ilimitada** - o Azure Backup não limita a quantidade de dados de entrada ou saída que transfere. O Azure Backup também não cobra por dados que sejam transferidos. No entanto, se utilizar o serviço Importar/Exportar do Azure para importar grandes quantidades de dados, existe um custo associado aos dados de entrada. Para mais informações sobre este custo, veja [Fluxo de trabalho de cópia de segurança offline no Azure Backup](backup-azure-backup-import-export.md). Os dados de saída são os dados transferidos a partir de um cofre do Backup durante uma operação de restauro.
 
-**Encriptação de dados** - a encriptação de dados permite a transmissão e o armazenamento seguros dos seus dados na nuvem pública. A frase de acesso de encriptação é armazenada por si localmente, e nunca é transmitida ou armazenada no Azure. Se for necessário restaurar quaisquer dados, é o único a ter a frase de acesso ou a chave de encriptação.
+**Encriptação de dados**  - a encriptação de dados permite a transmissão e o armazenamento seguros dos seus dados na nuvem pública. A frase de acesso de encriptação é armazenada por si localmente, e nunca é transmitida ou armazenada no Azure. Se for necessário restaurar quaisquer dados, é o único a ter a frase de acesso ou a chave de encriptação.
 
 **Cópia de segurança consistentes com aplicações** - ao criar uma cópia de segurança de um servidor de ficheiros, máquina virtual ou base de dados SQL, precisa de saber que um ponto de recuperação tem todos os dados necessários para restaurar a cópia de segurança. O Azure Backup fornece cópias de segurança consistentes com as aplicações, o que garante que não são necessárias correções adicionais para restaurar os dados. Restaurar dados consistentes com as aplicações reduz o tempo de restauro, permitindo-lhe voltar rapidamente ao estado de execução.
 
@@ -112,10 +113,10 @@ As VMs de Armazenamento Premium podem ser restauradas para o Armazenamento Premi
 O Azure Backup protege VMs de disco gerido. Os discos geridos libertam-no da gestão de contas de armazenamento de máquinas virtuais e simplificam bastante o aprovisionamento das VMs.
 
 ### <a name="back-up-managed-disk-vms"></a>Cópia de segurança de VMs de disco gerido
-A criação de cópias de segurança de VMs em discos geridos não difere da criação de cópias de segurança de VMs do Resource Manager. No portal do Azure, pode configurar a tarefa de cópia de segurança diretamente na vista Máquina Virtual ou na vista do cofre dos Serviços de Recuperação. Pode criar cópias de segurança de VMs em discos geridos através de coleções de RestorePoint criadas sobre os discos geridos. Atualmente, o Azure Backup não suporta a criação de cópia de segurança de VMs de discos geridos encriptados com o Azure Disk Encryption (ADE).
+A criação de cópias de segurança de VMs em discos geridos não difere da criação de cópias de segurança de VMs do Resource Manager. No portal do Azure, pode configurar a tarefa de cópia de segurança diretamente na vista Máquina Virtual ou na vista do cofre dos Serviços de Recuperação. Pode criar cópias de segurança de VMs em discos geridos através de coleções de RestorePoint criadas sobre os discos geridos. A cópia de segurança do Azure também suporta a criação de cópia de segurança de VMs de discos geridos encriptados com o Azure Disk Encryption (ADE).
 
 ### <a name="restore-managed-disk-vms"></a>Restaurar VMs de disco gerido
-O Azure Backup permite-lhe restaurar uma VM completa com discos geridos ou restaurar discos geridos para uma conta de armazenamento do Resource Manager. O Azure faz a gestão dos discos geridos durante o processo de restauro. Quanto a si (o cliente), faz a gestão da conta de armazenamento criada como parte do processo de restauro.
+O Azure Backup permite-lhe restaurar uma VM completa com discos geridos ou restaurar discos geridos para uma conta de armazenamento do Resource Manager. O Azure faz a gestão dos discos geridos durante o processo de restauro. Quanto a si (o cliente), faz a gestão da conta de armazenamento criada como parte do processo de restauro. Para restaurar VMs geridas encriptadas, as chaves e segredos da VM já devem existir no cofre de chave antes de restaurar.
 
 ## <a name="what-are-the-features-of-each-backup-component"></a>Quais são as funcionalidades de cada componente do Backup?
 As secções seguintes fornecem tabelas que resumem a disponibilidade ou o suporte para várias funcionalidades em cada componente do Azure Backup. Consulte as informações de cada tabela para suporte adicional ou detalhes.

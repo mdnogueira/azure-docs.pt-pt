@@ -12,12 +12,13 @@ ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: hero-article
-ms.date: 03/27/2017
+ms.date: 05/05/2017
 ms.author: cephalin
-translationtype: Human Translation
-ms.sourcegitcommit: e0bfa7620feeb1bad33dd2fe4b32cb237d3ce158
-ms.openlocfilehash: 24e9f1d7bdf4401d009ba04fb62351b6abda6079
-ms.lasthandoff: 04/21/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 2db2ba16c06f49fd851581a1088df21f5a87a911
+ms.openlocfilehash: 773d616b2a5815158971d63d005fae605450ac98
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/08/2017
 
 
 ---
@@ -29,7 +30,7 @@ Este Manual de Início Rápido ajuda-o a implementar a sua primeira aplicação 
 
 ![Aplicação Web ASP.NET no Serviço de Aplicações do Azure](./media/app-service-web-get-started-dotnet/updated-azure-web-app.png)
 
-## <a name="before-you-begin"></a>Antes de começar
+## <a name="prerequisites"></a>Pré-requisitos
 
 Este tutorial demonstra como utilizar o Visual Studio 2017 para criar e implementar uma aplicação Web ASP.NET no Azure. Se ainda não tiver o Visual Studio 2017 instalado, pode transferir e utilizar a [Visual Studio 2017 Community Edition](https://www.visualstudio.com/downloads/) **gratuita**. Confirme que ativa o **desenvolvimento do Azure** durante a configuração do Visual Studio.
 
@@ -37,7 +38,7 @@ Este tutorial demonstra como utilizar o Visual Studio 2017 para criar e implemen
 
 ## <a name="create-an-aspnet-web-app"></a>Criar uma aplicação Web ASP.NET
 
-No Visual Studio, crie um projeto novo com `Ctrl`+`Shift`+`N`.
+No Visual Studio, crie um projeto com `Ctrl`+`Shift`+`N`.
 
 Na caixa de diálogo **Novo Projeto**, clique em **Visual C# > Web > Aplicação Web ASP.NET (Arquitetura .NET)**.
 
@@ -76,7 +77,7 @@ Depois de iniciar sessão, está pronto para criar todos os recursos de que prec
 Primeiro, tem de criar um _grupo de recursos_. 
 
 > [!NOTE] 
-> Os grupos de recursos são contentores lógicos nos quais os recursos do Azure, como aplicações Web, bases de dados e contas de armazenamento, são implementados e geridos.
+> Um grupo de recursos é um contentor lógico em que os recursos do Azure, como aplicações Web, bases de dados e contas de armazenamento são implementados e geridos.
 >
 >
 
@@ -110,7 +111,7 @@ Na caixa de diálogo **Configurar o Plano do Serviço de Aplicações**, configu
 
 Clique em **OK**.
 
-![Criar novo plano do Serviço de Aplicações](./media/app-service-web-get-started-dotnet/configure-app-service-plan.png)
+![Criar plano do App Service](./media/app-service-web-get-started-dotnet/configure-app-service-plan.png)
 
 ## <a name="create-and-publish-the-web-app"></a>Criar e publicar a aplicação Web
 
@@ -165,11 +166,11 @@ No menu à esquerda, clique em **Serviços Aplicacionais** e clique no nome da s
 
 Chegou ao _painel_ da sua aplicação Web (uma página do portal que se abre na horizontal). 
 
-Por predefinição, o painel da sua aplicação Web mostra a página **Descrição Geral**. Esta página proporciona-lhe uma vista do desempenho da aplicação. Aqui, também pode realizar tarefas de gestão básicas, como navegar, parar, iniciar, reiniciar e eliminar. Os separadores no lado esquerdo do painel mostram as várias páginas de configuração que pode abrir. 
+Por predefinição, o painel da sua aplicação Web mostra a página **Descrição Geral**. Esta página proporciona-lhe uma vista do desempenho da aplicação. Aqui, também pode realizar tarefas de gestão básicas, como navegar, parar, iniciar, reiniciar e eliminar.  
 
 ![Painel Serviço de Aplicações no portal do Azure](./media/app-service-web-get-started-dotnet/web-app-blade.png)
 
-Estes separadores no painel mostram as muitas funcionalidades excelentes que pode adicionar à sua aplicação Web. A lista seguinte dá-lhe apenas algumas das possibilidades:
+Os separadores no lado esquerdo do painel mostram as várias páginas de configuração que pode abrir. A lista seguinte dá-lhe apenas algumas das possibilidades:
 
 - Mapear um nome DNS personalizado
 - Vincular um certificado SSL personalizado
@@ -193,5 +194,9 @@ No painel de confirmação, escreva o nome do grupo de recursos, **myResourceGro
 
 ## <a name="next-steps"></a>Passos seguintes
 
-Explore os [scripts do PowerShell das aplicações Web](app-service-powershell-samples.md) criados previamente.
+> [!div class="nextstepaction"]
+> [Saiba como criar uma aplicação do ASP.NET no Azure com a Base de Dados SQL](app-service-web-tutorial-dotnet-sqldatabase.md)
+
+> [!div class="nextstepaction"]
+> [Explore os scripts do PowerShell das aplicações Web de exemplo](app-service-powershell-samples.md)
 

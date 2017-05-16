@@ -1,7 +1,7 @@
 ---
 title: "Introdução ao HBase no Azure HDInsight | Microsoft Docs"
 description: "Siga este tutorial de HBase para uma introdução ao HBase do Apache com Hadoop no HDInsight. Criar tabelas a partir da shell de HBase e fazer consultas utilizando o Hive."
-keywords: apache hbase,hbase,hbase shell,tutorial de hbase
+keywords: apache hbase,hbase,hbase shell,hbase tutorial,beeline
 services: hdinsight
 documentationcenter: 
 author: mumian
@@ -14,13 +14,13 @@ ms.workload: big-data
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 03/22/2017
+ms.date: 05/08/2017
 ms.author: jgao
 ms.translationtype: Human Translation
-ms.sourcegitcommit: f6006d5e83ad74f386ca23fe52879bfbc9394c0f
-ms.openlocfilehash: 4e9ee21a7eac240cccdfac650992063244364185
+ms.sourcegitcommit: 2db2ba16c06f49fd851581a1088df21f5a87a911
+ms.openlocfilehash: a935fe574bffaad109abd13151c4da1027210014
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/03/2017
+ms.lasthandoff: 05/08/2017
 
 
 ---
@@ -31,7 +31,7 @@ Saiba como criar um cluster de HBase no HDInsight, criar tabelas de HBase e cons
 [!INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 ## <a name="prerequisites"></a>Pré-requisitos
-Antes de começar este tutorial do HBase, tem de ter o seguinte:
+Antes de começar este tutorial do HBase, tem de ter os itens seguintes:
 
 * **Uma subscrição do Azure**. Consulte [Obter uma avaliação gratuita do Azure](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 * [Secure Shell(SSH)](hdinsight-hadoop-linux-use-ssh-unix.md). 
@@ -43,12 +43,12 @@ O procedimento seguinte utiliza um modelo do Azure Resource Manager para criar u
 1. Clique na imagem seguinte para abrir o modelo no portal do Azure. O modelo está localizado num contentor de blob público. 
    
     <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fhditutorialdata.blob.core.windows.net%2Farmtemplates%2Fcreate-linux-based-hbase-cluster-in-hdinsight.json" target="_blank"><img src="./media/hdinsight-hbase-tutorial-get-started-linux/deploy-to-azure.png" alt="Deploy to Azure"></a>
-2. No painel **Implementação personalizada**, introduza o seguinte:
+2. No painel **Implementação personalizada**, introduza os seguintes valores:
    
-   * **Subscrição**: selecione a sua subscrição do Azure que será utilizada para criar o cluster.
-   * **Grupo de recursos**: crie um novo grupo do Azure Resource Management ou utilize um já existente.
+   * **Subscrição**: selecione a sua subscrição do Azure utilizada para criar o cluster.
+   * **Grupo de recursos**: crie um grupo do Azure Resource Management ou utilize um já existente.
    * **Localização**: especifique a localização do grupo de recursos. 
-   * **Nome de cluster**: introduza um nome para o cluster HBase que vai criar.
+   * **Nome de cluster**: introduza um nome para o cluster HBase.
    * **Nome e palavra-passe de início de sessão do cluster**: o nome de início de sessão predefinido é **admin**.
    * **Nome de utilizador e palavra-passe SSH**: o nome de utilizador predefinido é **sshuser**.  Pode alterá-lo.
      
@@ -73,7 +73,6 @@ No HBase que é uma implementação do BigTable, os mesmos dados tem este aspeto
 
 ![HDInsight HBase BigTable data][img-hbase-sample-data-bigtable]
 
-Depois de concluir o procedimento a seguir, isto fará mais sentido.  
 
 **Para utilizar a shell de HBase**
 
@@ -97,7 +96,7 @@ Depois de concluir o procedimento a seguir, isto fará mais sentido.
    
         get 'Contacts', '1000'
    
-    Verá os mesmos resultados como quando utiliza o comando de análise porque existe apenas uma linha.
+    Deverá ver os mesmos resultados como quando utiliza o comando de análise porque existe apenas uma linha.
    
     Para mais informações sobre o esquema da tabela HBase, consulte o artigo [Introdução ao Design do Esquema HBase][hbase-schema]. Para obter mais comandos HBase, consulte o artigo [Guia de referência Apache HBase][hbase-quick-start].
 5. Sair da shell
@@ -121,7 +120,7 @@ Um ficheiro de dados de exemplo foi carregado para um contentor de blobs públic
     4761    Caleb Alexander  670-555-0141    230-555-0199    4775 Kentucky Dr.
     16443   Terry Chander    998-555-0171    230-555-0200    771 Northridge Drive
 
-Pode criar um ficheiro de texto e carregar o ficheiro para a sua própria conta o Storage, se o desejar. Para instruções, consulte [Carregar dados para trabalhos de Hadoop no HDInsight][hdinsight-upload-data].
+Opcionalmente, pode criar um ficheiro de texto e carregar o ficheiro para a sua própria conta de armazenamento. Para instruções, consulte [Carregar dados para trabalhos de Hadoop no HDInsight][hdinsight-upload-data].
 
 > [!NOTE]
 > Este procedimento utiliza a tabela de contactos HBase que criou no último procedimento.
@@ -137,19 +136,14 @@ Pode criar um ficheiro de texto e carregar o ficheiro para a sua própria conta 
 3. Pode abrir a shell do HBase e utilizar o comando de análise para listar o conteúdo da tabela.
 
 ## <a name="use-hive-to-query-hbase"></a>Utilizar Hive para consultar o HBase
-Pode consultar dados nas tabelas HBase através do Hive. Esta secção cria uma tabela de Hive que mapeia para a tabela HBase e utiliza-a para consultar os dados na tabela HBase.
 
-> [!NOTE]
-> Se o Hive e o HBase estiverem em diferentes clusters no mesmo VNet, deve passar o quórum zookeeper ao invocar a Hive shell:
->
->       hive --hiveconf hbase.zookeeper.quorum=zk0-xxxx.xxxxxxxxxxxxxxxxxxxxxxx.cx.internal.cloudapp.net,zk1-xxxx.xxxxxxxxxxxxxxxxxxxxxxx.cx.internal.cloudapp.net,zk2-xxxx.xxxxxxxxxxxxxxxxxxxxxxx.cx.internal.cloudapp.net --hiveconf zookeeper.znode.parent=/hbase-unsecure  
->
->
+Pode consultar dados nas tabelas HBase através do Hive. Nesta secção, irá criar uma tabela de Hive que mapeia para a tabela HBase e utiliza-a para consultar os dados na tabela HBase.
 
 1. Abrir **PuTTY** e ligar ao cluster.  Consulte as instruções no procedimento anterior.
-2. Abra a shell do Hive.
-   
-       hive
+2. A partir da sessão SSH, utilize o comando seguinte para iniciar o Beeline:
+
+        beeline -u 'jdbc:hive2://localhost:10001/;transportMode=http' -n admin
+    Para obter mais informações sobre o Beeline, veja [Utilizar o Hive com o Hadoop no HDInsight com o Beeline](hdinsight-hadoop-use-hive-beeline.md).
        
 3. Execute o seguinte script de HiveQL para criar uma tabela de Hive que mapeia para a tabela HBase. Certifique-se de que criou a tabela de exemplo referida anteriormente neste tutorial, utilizando a shell de HBase antes de executar esta instrução.
    
@@ -159,31 +153,12 @@ Pode consultar dados nas tabelas HBase através do Hive. Esta secção cria uma 
         TBLPROPERTIES ('hbase.table.name' = 'Contacts');
 4. Execute o seguinte script de HiveQL para consultar os dados na tabela HBase:
    
-         SELECT count(*) FROM hbasecontacts;
+         SELECT * FROM hbasecontacts;
 
 ## <a name="use-hbase-rest-apis-using-curl"></a>Utilizar APIs REST de HBase utilizando Curl
-> [!NOTE]
-> Quando utilizar Curl ou quaisquer outras comunicações REST com WebHCat, tem de autenticar os pedidos, indicando o nome de utilizador e palavra-passe para o administrador de cluster do HDInsight. Também tem de utilizar o nome do cluster como parte do identificador URI (Uniform Resource Identifier) utilizado para enviar os pedidos para o servidor.
-> 
-> Para os comandos nesta secção, substitua **USERNAME** pelo utilizador para autenticar-se o cluster e substitua **PASSWORD** pela palavra-passe da conta de utilizador. Substitua **CLUSTERNAME** pelo nome do cluster.
-> 
-> A API de REST está protegida por [autenticação básica](http://en.wikipedia.org/wiki/Basic_access_authentication). Deve sempre efetuar pedidos utilizando HTTP Secure (HTTPS) para ajudar a garantir que as credenciais são enviadas de forma segura para o servidor.
-> 
-> 
 
-1. Numa linha de comandos, utilize o seguinte comando para verificar que se consegue ligar ao cluster do HDInsight:
-   
-        curl -u <UserName>:<Password> \
-        -G https://<ClusterName>.azurehdinsight.net/templeton/v1/status
-   
-    Deverá receber uma resposta semelhante ao seguinte:
-   
-        {"status":"ok","version":"v1"}
-   
-    Os parâmetros utilizados neste comando são os seguintes:
-   
-   * **-u** -o nome de utilizador e palavra-passe utilizada para autenticar o pedido.
-   * **-G** -indica que se trata de um pedido GET.
+A API de REST está protegida por [autenticação básica](http://en.wikipedia.org/wiki/Basic_access_authentication). Deve sempre efetuar pedidos utilizando HTTP Secure (HTTPS) para ajudar a garantir que as credenciais são enviadas de forma segura para o servidor.
+
 2. Utilize o seguinte comando para listar as tabelas HBase existentes:
    
         curl -u <UserName>:<Password> \
@@ -223,10 +198,20 @@ Pode consultar dados nas tabelas HBase através do Hive. Esta secção cria uma 
 
 Para mais informações sobre o HBase Rest, veja [Guia de Referência do HBase Apache](https://hbase.apache.org/book.html#_rest).
 
->
 > [!NOTE]
 > O thrift não é suportado pelo HBase no HDInsight.
 >
+> Quando utilizar Curl ou quaisquer outras comunicações REST com WebHCat, tem de autenticar os pedidos, indicando o nome de utilizador e palavra-passe para o administrador de cluster do HDInsight. Também tem de utilizar o nome do cluster como parte do URI (Uniform Resource Identifier) utilizado para enviar os pedidos para o servidor:
+> 
+>   
+>        curl -u <UserName>:<Password> \
+>        -G https://<ClusterName>.azurehdinsight.net/templeton/v1/status
+>   
+>    Deverá receber uma resposta semelhante à seguinte resposta:
+>   
+>        {"status":"ok","version":"v1"}
+   
+
 
 ## <a name="check-cluster-status"></a>Verificar o estado do cluster
 O HBase em HDInsight é fornecido com uma interface de utilizador da Web para monitorização de clusters. Utilizando a interface de utilizador da Web, pode pedir estatísticas ou informações sobre regiões.

@@ -1,6 +1,7 @@
 ---
-title: "Relatório de atividade de início de sessão no portal do Azure Active Directory - pré-visualização| Microsoft Docs"
-description: "Introdução aos relatórios de atividade de início de sessão na pré-visualização do portal do Azure Active Directory"
+
+title: "Relatórios de atividade de início de sessão no portal do Azure Active Directory | Microsoft Docs"
+description: "Introdução aos relatórios de atividade de início de sessão no portal do Azure Active Directory"
 services: active-directory
 documentationcenter: 
 author: MarkusVi
@@ -12,18 +13,19 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 04/06/2017
+ms.date: 05/04/2017
 ms.author: markvi
-translationtype: Human Translation
-ms.sourcegitcommit: 7f469fb309f92b86dbf289d3a0462ba9042af48a
-ms.openlocfilehash: f6c0bb59d9eb16da6c7daea2e722e32ac7dbc2d7
-ms.lasthandoff: 04/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 2db2ba16c06f49fd851581a1088df21f5a87a911
+ms.openlocfilehash: 19cd81c1e6020523d1bea3ec76c957ce22f931ca
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/08/2017
 
 
 ---
-# <a name="sign-in-activity-reports-in-the-azure-active-directory-portal---preview"></a>Relatório de atividade de início de sessão no portal do Azure Active Directory - pré-visualização
+# <a name="sign-in-activity-reports-in-the-azure-active-directory-portal"></a>Relatórios de atividade de início de sessão no portal do Azure Active Directory
 
-Com os relatórios na [pré-visualização](active-directory-preview-explainer.md) do Azure Active Directory, obtém todas as informações de que precisa para determinar o estado de funcionamento do seu ambiente.
+Com os relatórios no Azure Active Directory (Azure AD) no [portal do Azure](https://portal.azure.com) pode obter todas as informações de que precisa para determinar o estado de funcionamento do seu ambiente.
 
 A arquitetura de relatórios no Azure Active Directory consiste nos seguintes componentes:
 
@@ -44,7 +46,7 @@ Com as informações fornecidas pelo relatório de início de sessão de utiliza
 * Quantos utilizadores iniciaram sessão ao longo de uma semana?
 * Qual é o estado destes inícios de sessão?
 
-O primeiro ponto de entrada de todos os dados de atividades de início de sessão é **Inícios de sessão** na secção de Atividade do **Azure Active**. Directory.
+O primeiro ponto de entrada de todos os dados de atividades de início de sessão é **Inícios de sessão** na secção de Atividade do **Azure Active**.
 
 
 ![Atividade de início de sessão](./media/active-directory-reporting-activity-sign-ins/61.png "Atividade de início de sessão")

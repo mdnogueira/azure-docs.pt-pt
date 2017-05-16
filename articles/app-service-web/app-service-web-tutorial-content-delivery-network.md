@@ -1,148 +1,300 @@
 ---
-title: "Adicionar uma Rede de Entrega de Conteúdos ao Serviço de Aplicações do Azure | Microsoft Docs"
-description: "Adicionar uma Rede de Entrega de Conteúdos ao Serviço de Aplicações do Azure para entregar os seus ficheiros estáticos a partir de nós de extremidade."
+title: "Adicionar uma Rede de Entrega de Conteúdos (CDN) ao Serviço de Aplicações do Azure | Microsoft Docs"
+description: "Adicione uma Rede de Entrega de Conteúdos (CDN) a um Serviço de Aplicações do Azure para colocar em cache e entregar os seus ficheiros estáticos a partir de servidores próximos aos seus clientes em todo o mundo."
 services: app-service
 author: syntaxc4
 ms.author: cfowler
-ms.date: 04/03/2017
+ms.date: 05/01/2017
 ms.topic: hero-article
 ms.service: app-service-web
 manager: erikre
-translationtype: Human Translation
-ms.sourcegitcommit: 9eafbc2ffc3319cbca9d8933235f87964a98f588
-ms.openlocfilehash: 7ba3737566401152a3171e8926beca188045230c
-ms.lasthandoff: 04/22/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 2db2ba16c06f49fd851581a1088df21f5a87a911
+ms.openlocfilehash: 7208abc0e6eaa9067c5bb36a09e1bfd276fe0b0c
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/08/2017
 
 ---
-# <a name="add-a-content-deliver-network-on-an-azure-app-service"></a>Adicionar uma Rede de Entrega de Conteúdos ao Serviço de Aplicações do Azure
+# <a name="add-a-content-delivery-network-cdn-to-an-azure-app-service"></a>Adicionar uma Rede de Entrega de Conteúdos (CDN) ao Serviço de Aplicações do Azure
 
-Neste tutorial, vai adicionar uma Rede de Entrega de Conteúdos (CDN) ao seu Serviço de Aplicações do Azure para expor o conteúdo estático num servidor Edge. Vai criar um Perfil de CDN, que é uma coleção que inclui até dez Pontos Finais de CDN.
+A [Rede de Entrega de Conteúdos (CDN) do Azure](../cdn/cdn-overview.md) coloca em cache conteúdo Web estático em localizações estrategicamente colocadas de modo a fornecer o débito máximo para disponibilização de conteúdo aos utilizadores. A CDN também reduz a carga do servidor na sua aplicação Web. Este tutorial mostra como adicionar a CDN do Azure a uma [aplicação Web no Serviço de Aplicações do Azure](app-service-web-overview.md). 
 
-As Redes de Entrega de Conteúdos colocam em cache conteúdo Web estático em localizações estrategicamente colocadas, de modo a fornecer o débito máximo para disponibilização de conteúdo aos utilizadores. As vantagens de utilizar a CDN para colocar em cache recursos de sites incluem:
+Neste tutorial, ficará a saber como:
 
-* Melhor desempenho e experiência do utilizador para os utilizadores finais, especialmente quando se utilizam aplicações nas quais são necessárias vários percursos de ida e volta para carregar conteúdo.
-* Grande dimensionamento para processar melhor cargas elevadas instantâneas, como no início de um evento de iniciação de um produto.
-* Ao distribuir os pedidos de utilizador e publicar conteúdo a partir de servidores Edge, é enviado menos o tráfego para a origem.
+> [!div class="checklist"]
+> * Criar um ponto final da CDN.
+> * Atualizar ativos em cache.
+> * Utilize cadeias de consulta para controlar versões em cache.
+> * Utilize um domínio personalizado para o ponto final da CDN.
 
-> [!TIP]
-> Reveja a lista atualizada de [Azure CDN pop locations (Localizações pop da CDN do Azure)](https://docs.microsoft.com/en-us/azure/cdn/cdn-pop-locations).
->
+Segue a home page do site HTML estático de exemplo com que irá trabalhar:
 
-## <a name="deploy-the-sample"></a>Implementar a Amostra
+![Home page da aplicação de exemplo](media/app-service-web-tutorial-content-delivery-network/sample-app-home-page.png)
 
-Para concluir este tutorial, precisa de uma aplicação implementada nas Aplicações Web. Siga o [manual de início rápido de HTML estático](app-service-web-get-started-html.md) como base para este tutorial.
+## <a name="create-the-web-app"></a>Criar a aplicação Web
 
-## <a name="step-1---login-to-azure-portal"></a>Passo 1 - Iniciar sessão no Portal do Azure
+Para criar a aplicação Web com que irá trabalhar, siga o [início rápido HTML estático](app-service-web-get-started-html.md), mas não siga o passo **Limpar recursos**.
 
-Em primeiro lugar, abra o seu browser favorito e navegue para o [Portal](https://portal.azure.com) do Azure.
+Quando terminar o tutorial, mantenha a linha de comandos aberta, de modo a que possa implementar alterações adicionais na aplicação Web mais tarde neste tutorial.
 
-## <a name="step-2---create-a-cdn-profile"></a>Passo 2 - Criar um Perfil da CDN
+### <a name="have-a-custom-domain-ready"></a>Ter um domínio personalizado pronto
 
-Clique no botão `+ New`, na navegação do lado esquerdo, e clique em **Web + Móvel**. Na categoria Web + Móvel, selecione **CDN**.
+Para concluir o passo de domínio personalizado deste tutorial, precisa de ter acesso ao seu registo DNS para o seu fornecedor de domínios (como a GoDaddy). Por exemplo, para adicionar entradas DNS para `contoso.com` e `www.contoso.com`, tem de ter acesso para configurar as definições de DNS para o domínio de raiz `contoso.com`.
 
-Especifique os campos seguintes:
+Se ainda não tiver um nome de domínio, considere seguir o [App Service domain tutorial](custom-dns-web-site-buydomains-web-app.md)(tutorial de domínio do Serviço de Aplicações), para comprar um domínio com o portal do Azure. 
 
-| Campo | Valor da amostra | Descrição |
-|---|---|---|
-| Nome | myCDNProfile | Um nome para o perfil de CDN. |
-| Localização | Europa Ocidental | Esta é a localização do Azure onde as informações do seu perfil da CDN serão armazenadas. Esta ação não tem qualquer impacto sobre as localizações de ponto final da CDN. |
-| Grupo de recursos | myResourceGroup | Para obter mais informações sobre os grupos de Recursos, veja [Descrição geral do Azure Resource Manager](../azure-resource-manager/resource-group-overview.md#resource-groups). |
-| Escalão de preço | Standard da Akamai | Veja [Descrição Geral da CDN](../cdn/cdn-overview.md#azure-cdn-features) para obter uma comparação dos escalões de preço. |
+## <a name="log-in-to-the-azure-portal"></a>Iniciar sessão no portal do Azure
 
-Clique em **Criar**.
+Abra um browser e navegue para o [portal do Azure](https://portal.azure.com).
 
-Abra o concentrador de grupos de recursos na navegação do lado esquerdo e selecione **myResourceGroup**. A partir da lista de recursos, selecione **myCDNProfile**.
+## <a name="create-a-cdn-profile-and-endpoint"></a>Criar um perfil da CDN e ponto final
 
-![azure-cdn-profile-created](media/app-service-web-tutorial-content-delivery-network/azure-cdn-profile-created.png)
+No painel de navegação esquerdo, selecione **Serviço de Aplicações** e, em seguida, selecione a aplicação que criou no [início rápido HTML estático](app-service-web-get-started-html.md).
 
-## <a name="step-3---create-a-cdn-endpoint"></a>Passo 3 - Criar um Ponto Final da CDN
+![Selecione a aplicação de Serviço de Aplicações no portal](media/app-service-web-tutorial-content-delivery-network/portal-select-app-services.png)
 
-Clique em **+ Ponto Final** nos comandos ao lado da caixa de pesquisa, o que abre o painel Criação de ponto final.
+Na página **Serviço de Aplicações**, na secção **Definições**, selecione **Redes > Configurar a CDN do Azure para a sua aplicação**.
 
-Especifique os campos seguintes:
+![Selecione a CDN no portal](media/app-service-web-tutorial-content-delivery-network/portal-select-cdn.png)
 
-| Campo | Valor da amostra | Descrição |
-|---|---|
-| Nome |  | Este nome será utilizado para aceder aos seus recursos em cache no domínio `<endpointname>.azureedge.net` |
-| Tipo de origem | Aplicação Web | Selecionar um tipo de origem proporciona-lhe menus de contexto para os campos restantes. Selecionar a origem personalizada disponibiliza-lhe um campo de texto para o nome de anfitrião da sua origem. |
-| Nome de anfitrião da origem | |  A lista pendente apresentará todas as origens disponíveis do tipo que especificou. Se tiver selecionado Origem personalizada como o seu Tipo de origem, vai escrever no domínio da sua origem personalizada  |
+Na página **Azure Content Delivery Network**(Rede de Entrega de Conteúdos do Azure), indique as definições **Novo ponto final** conforme especificado na tabela.
 
-Clique em **Adicionar**.
+![Criar perfil e ponto final no portal](media/app-service-web-tutorial-content-delivery-network/portal-new-endpoint.png)
 
-O Ponto Final da Rede de Entrega de Conteúdos é criado e o estado atualizado para **em execução**.
+| Definição | Valor sugerido | Descrição |
+| ------- | --------------- | ----------- |
+| **Perfil da CDN** | myCDNProfile | Selecione **Criar novo** para criar um novo perfil da CDN. Um perfil da CDN é uma coleção de pontos finais da CDN com o mesmo escalão de preços. |
+| **Escalão de preço** | Standard da Akamai | O [escalão de preço](../cdn/cdn-overview.md#azure-cdn-features) especifica o fornecedor e as funcionalidades disponíveis. Neste tutorial, estamos a utilizar Standard Akamai. |
+| **Nome do ponto final da CDN** | Qualquer nome que é exclusivo no domínio azureedge.net | Aceda aos seus recursos em cache no domínio  *\<endpointname>.azureedge.net*.
 
-![azure-cdn-endpoint-created](media/app-service-web-tutorial-content-delivery-network/azure-cdn-endpoint-created.png)
+Selecione **Criar**.
 
-## <a name="step-4---serve-from-azure-cdn"></a>Passo 4 - Servir a partir da CDN do Azure
+O Azure cria o perfil e o ponto final. O novo ponto final é apresentado na lista **Pontos finais** na mesma página e quando está aprovisionado o estado é **A executar**.
 
-Agora que o Ponto Final da CDN está em **execução**, deverá conseguir aceder aos conteúdos a partir do mesmo.
+![Novo ponto final na lista](media/app-service-web-tutorial-content-delivery-network/portal-new-endpoint-in-list.png)
 
-Tendo em conta que utilizámos o [manual de início rápido de HTML estático](app-service-web-get-started-html.md) como base para este tutorial, deveremos ter as pastas seguintes disponíveis na nossa CDN: `css`, `img` e `js`.
+### <a name="test-the-cdn-endpoint"></a>Testar o ponto final da CDN
 
-Os caminhos de conteúdo entre o URL das Aplicações Web, `http://<app_name>.azurewebsites.net/img/`, e o URL do Ponto Final da CDN, `http://<endpointname>.azureedge.net/img/`, são iguais, o que significa que pode simplesmente substituir o domínio do Ponto Final da CDN de qualquer conteúdo estático, para que seja servido a partir da CDN.
+Se tiver selecionado o escalão de preços Verizon, demora geralmente cerca de 90 minutos para a propagação do ponto final. Para Akamai, demora alguns minutos para a propagação
 
-Vamos extrair a nossa primeira imagem a partir do Ponto Final da CDN, ao navegar para o URL seguinte no seu browser preferido:
+A aplicação de exemplo tem um ficheiro `index.html` e pastas *css*, *img* e *js* que contêm outros elementos estáticos. Os caminhos de conteúdo para todos estes ficheiros são os mesmos no ponto final da CDN. Por exemplo, ambos os seguintes URLs acedem ao ficheiro *bootstrap.css* na pasta *css*:
 
-```bash
-http://<endpointname>.azureedge.net/img/03-enterprise.png
+```
+http://<appname>.azurewebsites.net/css/bootstrap.css
 ```
 
-Agora que o conteúdo estático está disponível na CDN, pode atualizar a sua aplicação de modo a utilizar o Ponto Final da CDN para entregar o conteúdo ao utilizador final.
+```
+http://<endpointname>.azureedge.net/css/bootstrap.css
+```
 
-Consoante a linguagem em que o seu site foi criado, poderá haver muitas arquiteturas para ajudar à contingência de CDN. Por exemplo, ASP.NET disponibiliza suporte para [combinação (bundling) e minificação](https://docs.microsoft.com/en-us/aspnet/mvc/overview/performance/bundling-and-minification#using-a-cdn), que também permitem capacidades de contingência de CDN.
+Navegue num browser para o seguinte URL e verá a mesma página que executou anteriormente numa aplicação Web do Azure, mas é agora servida a partir da CDN.
 
-Se a sua linguagem não tiver uma biblioteca ou suporte incorporado para contingência de CDN incorporado, pode utilizar uma arquitetura de javascript, como [FallbackJS](http://fallback.io/), que suporta o carregamento de [scripts](https://github.com/dolox/fallback/tree/master/examples/loading-scripts), [folhas de estilo](https://github.com/dolox/fallback/tree/master/examples/loading-stylesheets) e [imagens](https://github.com/dolox/fallback/tree/master/examples/loading-images).
+```
+http://<endpointname>.azureedge.net/index.html
+```
 
-## <a name="step-5---purge-the-cdn"></a>5 - Limpar a CDN
+![Home page da aplicação de exemplo servida a partir de CDN](media/app-service-web-tutorial-content-delivery-network/sample-app-home-page-cdn.png)
 
-Por vezes, poderá ser necessário forçar uma limpeza da CDN, se quiser terminar o conteúdos antes de o TTL (time-to-live) expirar.
+Isto mostra que o Azure CDN obteve os ativos da aplicação Web de origem e está a servi-los a partir do ponto final da CDN. 
 
-É possível remover manualmente a CDN do Azure, a partir do painel Perfil de CDN ou do painel Ponto Final da CDN. Se selecionar a limpeza a partir da página Perfil, será necessário selecionar o ponto final a limpar.
+Para se certificar de que esta página está colocada em cache no CDN, atualize-a. Por vezes são necessários dois pedidos para o mesmo recurso, para o CDN colocar em cache os conteúdos solicitados.
 
-Para limpar o conteúdo, escreva os caminhos do conteúdo que pretende limpar. Pode transmitir um caminho de ficheiro completo para limpar um ficheiro individual ou um segmento de caminho para limpar e atualizar o conteúdo numa determinada pasta.
+Para obter mais informações sobre a criação de perfis de CDN do Azure e os pontos finais, consulte [Introdução ao Azure CDN](../cdn/cdn-create-new-endpoint.md).
 
-Depois de indicar todos os caminhos do conteúdo que pretende limpar, clique em **Limpar**.
+## <a name="purge-the-cdn"></a>Remover a CDN
 
-![app-service-web-purge-cdn](media/app-service-web-tutorial-content-delivery-network/app-service-web-purge-cdn.png)
+A CDN atualiza periodicamente os respetivos recursos da aplicação Web de origem consoante a configuração de tempo de duração (TTL). A predefinição do TTL é de sete dias.
 
-## <a name="step-6---map-a-custom-domain"></a>Passo 6 - Mapear um domínio personalizado
+Por vezes, poderá precisar de atualizar a CDN antes de expirar o TTL - por exemplo, ao implementar conteúdo atualizado na aplicação Web. Para acionar uma atualização, pode remover manualmente os recursos do CDN. 
 
-Mapear um domínio personalizado para o ponto final da CDN proporciona um domínio uniforme para a sua aplicação Web.
+Nesta secção do tutorial, implemente uma alteração na aplicação Web e remova o CDN para acionar o CDN para atualizar a respetiva cache.
 
-De modo a mapear um domínio personalizado para o Ponto Final da CDN, crie um registo CNAME junto da sua entidade de registo de domínios.
+### <a name="deploy-a-change-to-the-web-app"></a>Implementar uma alteração na aplicação Web
 
-> [!NOTE]
-> Os registos CNAME são uma funcionalidade de DNS que mapeia domínios de origem, como `www.contosocdn.com` ou `static.contosocdn.com`, para um domínio de destino.
+Abra o ficheiro `index.html` e adicione "-V2" ao cabeçalho H1, conforme mostrado no seguinte exemplo: 
 
-Neste caso, vamos adicionar o domínio de origem `static.contosocdn.com`, que vai apontar para o domínio de destino, que é o Ponto Final da CDN.
+```
+<h1>Azure App Service - Sample Static HTML Site - V2</h1>
+```
 
-| domínio de origem | domínio de destino |
-|---|---|
-| static.contosocdn.com | &lt;endpointname&gt;.azureedge.net |
+Consolide as alterações e implemente-as na aplicação Web.
 
-No painel de descrição geral do Ponto Final da CDN, clique no botão `+ Custom domain`.
+```bash
+git commit -am "version 2"
+git push azure master
+```
 
-No painel Adicionar domínio personalizado, introduza o seu domínio personalizado, incluindo o subdomínio, na caixa de diálogo. Por exemplo, introduza o nome de domínio no formato `static.contosocdn.com`.
+Depois de concluída a implementação, navegue para o URL da aplicação Web e veja a alteração.
 
-Clique em **Adicionar**.
+```
+http://<appname>.azurewebsites.net/index.html
+```
 
-## <a name="step-7---version-content"></a>Passo 7 - Conteúdo de Versão
+![V2 no título na aplicação Web](media/app-service-web-tutorial-content-delivery-network/v2-in-web-app-title.png)
 
-Na navegação do lado esquerdo do Ponto Final da CDN, selecione **Colocação em cache**, no cabeçalho Definições.
+Navegue para o URL de ponto final de CDN da home page e se não vir a alteração, significa que a versão em cache no CDN ainda não ainda expirou. 
 
-O painel **Colocação em cache** permite-lhe configurar de que forma é que a CDN lida com as cadeias de consulta do pedido.
+```
+http://<endpointname>.azureedge.net/index.html
+```
 
-> [!NOTE]
-> Para obter uma descrição das opções de comportamento de colocação em cache da cadeia de consulta, leia o tópico [Control Azure CDN caching behavior with query strings](../cdn/cdn-query-string.md) (Controlar o comportamento de colocação em cache da CDN do Azure com cadeias de consulta).
+![Nenhum V2 no título na CDN](media/app-service-web-tutorial-content-delivery-network/no-v2-in-cdn-title.png)
 
-Selecione **Colocar em cache todos os URL exclusivos** na lista pendente relativa ao comportamento de colocação em cache da Cadeia de consulta.
+### <a name="purge-the-cdn-in-the-portal"></a>Remova a CDN no portal
 
-Clique em **Guardar**.
+Para acionar a CDN para atualizar a versão em cache, remova a CDN.
+
+Na navegação à esquerda do portal, selecione **Grupos de recursos** e, em seguida, selecione o grupo de recursos que criou a sua aplicação Web (myResourceGroup).
+
+![Selecionar grupo de recursos](media/app-service-web-tutorial-content-delivery-network/portal-select-group.png)
+
+Na lista de recursos, selecione o ponto final de CDN.
+
+![Selecione o ponto final](media/app-service-web-tutorial-content-delivery-network/portal-select-endpoint.png)
+
+No topo da página **Ponto final**, clique em **Remover**.
+
+![Selecione Remover](media/app-service-web-tutorial-content-delivery-network/portal-select-purge.png)
+
+Introduza os caminhos do conteúdo que pretende remover. Pode transmitir um caminho de ficheiro completo para remover um ficheiro individual ou um segmento de caminho para remover e atualizar todo o conteúdo numa pasta. Uma vez que alterou `index.html`, certifique-se de que é um dos caminhos.
+
+Na parte inferior da página, selecione **Remover**.
+
+![Remover página](media/app-service-web-tutorial-content-delivery-network/app-service-web-purge-cdn.png)
+
+### <a name="verify-that-the-cdn-is-updated"></a>Certifique-se de que a CDN é atualizada
+
+Aguarde até que o pedido de remoção conclua o processamento; demora normalmente alguns minutos. Para ver o estado atual, selecione o ícone da campainha na parte superior da página. 
+
+![Remover notificação](media/app-service-web-tutorial-content-delivery-network/portal-purge-notification.png)
+
+Navegue para o URL de ponto final de CDN para `index.html`, e veja agora o V2 que adicionou ao título na home page. Isto mostra que a cache de CDN foi atualizada.
+
+```
+http://<endpointname>.azureedge.net/index.html
+```
+
+![V2 no título na CDN](media/app-service-web-tutorial-content-delivery-network/v2-in-cdn-title.png)
+
+Para obter mais informações, consulte [Remover um ponto final do Azure CDN](../cdn/cdn-purge-endpoint.md). 
+
+## <a name="use-query-strings-to-version-content"></a>Utilizar cadeias de consulta para o conteúdo da versão
+
+O Azure CDN oferece as seguintes opções de comportamento de colocação em cache:
+
+* Ignorar cadeias de consulta
+* Ignorar a colocação em cache de cadeias de consulta
+* Colocar em cache todos os URL exclusivos 
+
+O primeiro dos seguintes é o predefinido, o que significa que existe apenas uma versão em cache de um ativo, independentemente da cadeia de consulta utilizada no URL que acede ao mesmo. 
+
+Nesta secção do tutorial, pode alterar o comportamento de colocação em cache para colocar em cache todos os URL exclusivos.
+
+### <a name="change-the-cache-behavior"></a>Alterar o comportamento de cache
+
+Na página **Ponto Final CDN** do portal do Azure, selecione **Cache**.
+
+Selecione **Colocar em cache todos os URL exclusivos** relativo ao **comportamento de colocação em cache da Cadeia de consulta** na lista pendente.
+
+Selecione **Guardar**.
+
+![Selecione o comportamento de colocação em cache de cadeia de consulta](media/app-service-web-tutorial-content-delivery-network/portal-select-caching-behavior.png)
+
+### <a name="verify-that-unique-urls-are-cached-separately"></a>Certifique-se de que os URL exclusivos são colocados em cache em separado
+
+Num browser, navegue para a home page no ponto final CDN, mas inclua uma cadeia de consulta: 
+
+```
+http://<endpointname>.azureedge.net/index.html?q=1
+```
+
+O CDN devolve o conteúdo da aplicação Web atual, que inclui "V2" no cabeçalho. 
+
+Para se certificar de que esta página está colocada em cache no CDN, atualize-a. 
+
+Abra `index.html` altere "V2" para "V3" e implemente a alteração. 
+
+```bash
+git commit -am "version 3"
+git push azure master
+```
+
+Num browser, aceda ao URL de ponto final CDN com uma nova cadeia de consulta como `q=2`. A CDN obtém o ficheiro `index.html` atual e apresenta "V3".  Mas se navegar para o ponto final de CDN com a cadeia de consulta `q=1`, verá "V2".
+
+```
+http://<endpointname>.azureedge.net/index.html?q=2
+```
+
+![V3 no título na CDN, cadeia de consulta 2](media/app-service-web-tutorial-content-delivery-network/v3-in-cdn-title-qs2.png)
+
+```
+http://<endpointname>.azureedge.net/index.html?q=1
+```
+
+![V2 no título na CDN, cadeia de consulta 1](media/app-service-web-tutorial-content-delivery-network/v2-in-cdn-title-qs1.png)
+
+Este resultado mostra que cada cadeia de consulta é tratada de forma diferente: q = 1 era utilizada antes, pelo que os conteúdos em cache são devolvidos (V2), enquanto q = 2 é novo, então os conteúdos de aplicação Web mais recentes são obtidos e devolvidos (V3).
+
+Para obter mais informações, consulte [Control Azure CDN caching behavior with query strings](../cdn/cdn-query-string.md)(Controlar o comportamento de colocação em cache do Azure CDN com cadeias de consulta).
+
+## <a name="map-a-custom-domain-to-a-cdn-endpoint"></a>Mapear domínios personalizados para um ponto final de CDN
+
+Irá mapear o seu domínio personalizado para o Ponto final de CDN ao criar um registo CNAME. Um registo CNAME é uma funcionalidade de DNS que mapeia domínios de origem para um domínio de destino. Por exemplo, pode mapear `cdn.contoso.com` ou `static.contoso.com` para `contoso.azureedge.net`.
+
+Se não tiver um domínio personalizado, considere seguir o [tutorial de domínio do Serviço de Aplicações](custom-dns-web-site-buydomains-web-app.md) para comprar um domínio com o portal do Azure. 
+
+### <a name="find-the-hostname-to-use-with-the-cname"></a>Encontre o nome de anfitrião para utilizar com o CNAME
+
+No página **Ponto final** do portal do Azure, certifique-se de que a **Descrição Geral** está selecionada na navegação à esquerda e, em seguida, selecione o botão **+ Domínio Personalizado** na parte superior da página.
+
+![Selecione Adicionar Domínio Personalizado](media/app-service-web-tutorial-content-delivery-network/portal-select-add-domain.png)
+
+Na página **Add a custom domain**(Adicionar um domínio personalizado), verá o nome de anfitrião de ponto final a utilizar na criação de um registo CNAME. O nome do anfitrião é obtido a partir do seu URL do ponto final de CDN: **&lt;EndpointName>.azureedge.net**. 
+
+![Página Adicionar Domínio](media/app-service-web-tutorial-content-delivery-network/portal-add-domain.png)
+
+### <a name="configure-the-cname-with-your-domain-registrar"></a>Configure o CNAME com a sua entidade de registo do domínio
+
+Navegue para o site da entidade de domínio e localize a secção para criar registos DNS. Poderá encontrar isto numa secção como **Nome de Domínio**, **DNS** ou **Gestão de Nome de Servidor**.
+
+Encontre a secção para gerir CNAMEs. Poderá ter de voltar a uma página de definições avançadas e procurar as palavras, CNAME, Alias ou Subdomínios.
+
+Crie um novo registo CNAME que mapeia o subdomínio escolhido (por exemplo, **estático** ou **cdn**) para o **Nome de anfitrião do ponto final** apresentado anteriormente no portal. 
+
+### <a name="enter-the-custom-domain-in-azure"></a>Introduza o domínio personalizado no Azure
+
+Regresse à página **Adicionar domínio personalizado** e introduza o seu domínio personalizado, incluindo o subdomínio, na caixa de diálogo. Por exemplo, introduza `cdn.contoso.com`.   
+   
+O Azure verifica se o registo CNAME existe para o nome de domínio que introduziu. Se o CNAME estiver correto, o seu domínio personalizado é validado.
+
+Pode levar algum tempo para o registo CNAME ser propagado para servidores de nomes na Internet. Se o seu domínio não for validado imediatamente e considerar que o registo CNAME está correto, aguarde alguns minutos e tente novamente.
+
+### <a name="test-the-custom-domain"></a>Testar o domínio personalizado
+
+Num browser, navegue para o ficheiro `index.html` com o seu domínio personalizado (por exemplo, `cdn.contoso.com/index.html`) para verificar se o resultado é o mesmo quando vai diretamente a `<endpointname>azureedge.net/index.html`.
+
+![Home page da aplicação de exemplo através de URL de domínio personalizado](media/app-service-web-tutorial-content-delivery-network/home-page-custom-domain.png)
+
+Para obter mais informações, consulte [Mapear conteúdo do Azure CDN para um domínio personalizado](../cdn/cdn-map-content-to-custom-domain.md).
+
+[!INCLUDE [cli-samples-clean-up](../../includes/cli-samples-clean-up.md)]
 
 ## <a name="next-steps"></a>Passos Seguintes
 
-* [What is Azure CDN](../best-practices-cdn.md?toc=%2fazure%2fcdn%2ftoc.json) (O que é a CDN do Azure)
-* [Enable HTTPS on an Azure CDN custom domain](../cdn/cdn-custom-ssl.md) (Ativar HTTPS num domínio personalizado da CDN do Azure)
-* [Improve performance by compressing files in Azure CDN](../cdn/cdn-improve-performance.md) (Comprimir ficheiros na CDN do Azure para melhorar o desempenho)
-* [Pré-carregar recursos num ponto final da CDN do Azure](../cdn/cdn-preload-endpoint.md)
+Neste tutorial, ficou a saber como:
+
+> [!div class="checklist"]
+> * Criar um ponto final da CDN.
+> * Atualizar ativos em cache.
+> * Utilize cadeias de consulta para controlar versões em cache.
+> * Utilize um domínio personalizado para o ponto final da CDN.
+
+Saiba como otimizar o desempenho de CDN nos seguintes artigos.
+
+> [!div class="nextstepaction"]
+> [Improve performance by compressing files in Azure CDN](../cdn/cdn-improve-performance.md) (Comprimir ficheiros na CDN do Azure para melhorar o desempenho)
+
+> [!div class="nextstepaction"]
+> [Pré-carregar recursos num ponto final da CDN do Azure](../cdn/cdn-preload-endpoint.md)
+
 

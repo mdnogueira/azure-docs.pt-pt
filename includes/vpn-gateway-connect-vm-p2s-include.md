@@ -19,7 +19,7 @@ Pode ligar a uma VM que é implementada nos VNet criando uma Ligação de Ambien
     }
     ```
 
-2. Certifique-se de que está ligado ao VNet utilizando a ligação VPN.
+2. Certifique-se de que está ligado à VNet através da ligação VPN Ponto a Site.
 3. Abra a **Ligação de Ambiente de Trabalho Remoto** ao escrever "RDP" ou "Ligação de Ambiente de Trabalho Remoto" na caixa de pesquisa da barra de tarefas e, em seguida, selecione a Ligação de Ambiente de Trabalho Remoto. Também pode abrir a Ligação de Ambiente de Trabalho Remoto utilizando o comando "mstsc" no PowerShell. 
 4. Na Ligação de Ambiente de Trabalho Remoto, introduza o endereço IP privado da VM. Pode clicar em "Mostrar Opções" para ajustar as definições adicionais e, em seguida, em ligar.
 
@@ -29,5 +29,7 @@ Se estiver a ter problemas para estabelecer ligação a uma máquina virtual atr
 
 - Certifique-se de que a ligação VPN é efetuada com êxito.
 - Certifique-se de que está a ligar-se ao endereço IP privado da VM.
+- Utilize “ipconfig” para verificar o endereço IPv4 atribuído ao adaptador Ethernet no computador a partir do qual se está a ligar. Se o endereço IP estiver no âmbito do intervalo de endereços da VNet a que se está a ligar, ou no âmbito do intervalo de endereços do seu VPNClientAddressPool, tal trata-se de um espaço de endereços sobreposto. Quando o seu espaço de endereços se sobrepõe desta forma, o tráfego de rede não chega ao Azure e permanece na rede local.
 - Caso consiga ligar-se à VM utilizando o endereço IP privado, mas não o nome do computador, certifique-se de que configurou o DNS corretamente. Para obter mais informações sobre como funciona a resolução de nomes para VMs, consulte o artigo [Name Resolution for VMs](../articles/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md)(Resolução de Nomes para VMs).
+- Certifique-se de que o pacote de configuração de clientes VPN gerado depois dos endereços IP do servidor DNS foi especificado para a VNet. Se atualizou os endereços IP do servidor DNS, gere e instale um novo pacote de configuração de cliente VPN.
 - Para obter mais informações sobre ligações RDP, veja [Troubleshoot Remote Desktop connections to a VM](../articles/virtual-machines/windows/troubleshoot-rdp-connection.md)(Resolução de Problemas de ligações de Ambiente de Trabalho Remoto a uma VM).

@@ -12,12 +12,13 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 03/03/2017
+ms.date: 05/08/2017
 ms.author: yurid
-translationtype: Human Translation
-ms.sourcegitcommit: 2f03ba60d81e97c7da9a9fe61ecd419096248763
-ms.openlocfilehash: bd2291129a1a61f69e83cb76748d00b9ede6eb6f
-ms.lasthandoff: 04/18/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 2db2ba16c06f49fd851581a1088df21f5a87a911
+ms.openlocfilehash: ec658f4c74d54a11684460c0e634303793480152
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/08/2017
 
 
 ---
@@ -66,7 +67,7 @@ Pode configurar políticas de segurança para cada subscrição ou grupo de recu
    >
 9. No painel **Política de Segurança**, clique em **Ativada** para ativar as recomendações de segurança que pretende utilizar nesta subscrição. Clique em **Política de prevenção** para ver opções como as que estão incluídas na seguinte captura de ecrã:
 
-    ![Selecionar as políticas de segurança](./media/security-center-policies/security-center-policies-fig4-ga-new.png)
+    ![Selecionar as políticas de segurança](./media/security-center-policies/security-center-policies-fig4-newUI.png)
 
 Utilize a tabela seguinte como uma referência para compreender cada opção:
 
@@ -82,6 +83,7 @@ Utilize a tabela seguinte como uma referência para compreender cada opção:
 | Auditoria do SQL e Deteção de Ameaças |Recomenda que a auditoria de acesso à Base de Dados do Azure esteja ativada para fins de conformidade e também para deteção de ameaças avançadas, para propósitos de investigação. |
 | Encriptação de dados transparente SQL |Recomenda que a encriptação inativa seja ativada para a suas bases de dados SQL do Azure, cópias de segurança associadas e ficheiros de registo de transação. Mesmo se existir uma falha dos seus dados, esta poderá não ser legível. |
 | Avaliação de vulnerabilidades |Recomenda-se de que instala uma solução de avaliação de vulnerabilidades na sua VM. |
+| Encriptação de Armazenamento |Atualmente esta funcionalidade está disponível para Blobs do Azure e Ficheiros. Tenha em atenção que depois de ativar a Encriptação do Serviço de Armazenamento, apenas os novos dados serão encriptados e quaisquer ficheiros existentes nesta conta de armazenamento irão permanecer desencriptados. |
 
 Assim que configurar todas as opções, clique em **OK** no painel **Política de Segurança** que tem as recomendações e clique em **Guardar** no painel **Política de Segurança** que tem as definições iniciais.
 

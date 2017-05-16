@@ -12,12 +12,13 @@ ms.devlang: dotNet
 ms.topic: hero-article
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 03/07/2017
+ms.date: 05/05/2017
 ms.author: ryanwi
-translationtype: Human Translation
-ms.sourcegitcommit: 72b2d9142479f9ba0380c5bd2dd82734e370dee7
-ms.openlocfilehash: 296f02dd7deb22fd4ca15478b7f90a7688b4304a
-ms.lasthandoff: 04/18/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 2db2ba16c06f49fd851581a1088df21f5a87a911
+ms.openlocfilehash: dea338477ca82eead9e272ed9a1709cb2643f743
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/08/2017
 
 
 ---
@@ -116,7 +117,18 @@ Agora que tem uma aplicação, tente executá-la.
    
     ![Visualizador de eventos de diagnóstico após falha][diagnostic-events-viewer-detail-post-failover]
 
-## <a name="switch-cluster-mode"></a>Alternar o modo do cluster
+## <a name="cleaning-up-the-local-cluster-optional"></a>Limpar o cluster local (opcional)
+Antes de concluir, é importante lembrar-se de que o cluster local é real. Parar o depurador remove a instância da aplicação e anula o registo do tipo de aplicação. Contudo, o cluster continua a ser executado em segundo plano. Tem várias opções para gerir o cluster:
+
+1. Para encerrar o cluster, mas manter os dados de aplicação e o rastreio, clique em **Parar Cluster Local** na aplicação de tabuleiro do sistema.
+2. Para eliminar o cluster totalmente, clique em **Remover Cluster Local** na aplicação de tabuleiro do sistema. Esta opção resultará noutra implementação lenta da próxima vez que premir F5 no Visual Studio. Elimine o cluster apenas se não pretender utilizar o cluster local durante algum tempo ou se precisar de recuperar recursos.
+
+## <a name="deploy-your-application-to-an-azure-cluster"></a>Implementar a sua aplicação num cluster do Azure
+Agora que implementou a aplicação localmente, pode implementar a mesma aplicação no Azure. O documento [criar o primeiro cluster do Service Fabric no Azure](service-fabric-get-started-azure-cluster.md) explica os passos para utilizar o Azure PowerShell ou o portal.
+
+Assim que configurar um cluster do Azure, pode publicar esta aplicação a partir do Visual Studio no Azure, seguindo o artigo [publish to an Azure cluster](service-fabric-publish-app-remote-cluster.md)(publicar num cluster do Azure).  
+
+## <a name="switch-cluster-mode-of-your-local-development-cluster"></a>Alternar o modo de cluster do seu cluster de desenvolvimento local
 Por predefinição, o cluster de desenvolvimento local está configurado para ser executado como um cluster de cinco nós, o que é útil na depuração de serviços implementados em vários nós. No entanto, a implementação de uma aplicação no cluster de desenvolvimento de cinco nós pode demorar algum tempo. Se pretender iterar rapidamente alterações de código sem executar a aplicação nos cinco nós, alterne o cluster de desenvolvimento para o modo de um nó. Para executar o código num cluster com um nó, clique com o botão direito do rato no Gestor de Clusters Locais na bandeja do sistema e selecione **Alternar Modo do Cluster -> 1 Nó**.  
 
 ![Alternar o modo do cluster][switch-cluster-mode]
@@ -136,11 +148,7 @@ Também pode alterar o modo de cluster através do PowerShell:
    
     ![Saída do programa de configuração do cluster][cluster-setup-success-1-node]
 
-## <a name="cleaning-up"></a>Limpeza
-Antes de concluir, é importante lembrar-se de que o cluster local é real. Parar o depurador remove a instância da aplicação e anula o registo do tipo de aplicação. Contudo, o cluster continua a ser executado em segundo plano. Tem várias opções para gerir o cluster:
 
-1. Para encerrar o cluster, mas manter os dados de aplicação e o rastreio, clique em **Parar Cluster Local** na aplicação de tabuleiro do sistema.
-2. Para eliminar o cluster totalmente, clique em **Remover Cluster Local** na aplicação de tabuleiro do sistema. Esta opção resultará noutra implementação lenta da próxima vez que premir F5 no Visual Studio. Elimine o cluster apenas se não pretender utilizar o cluster local durante algum tempo ou se precisar de recuperar recursos.
 
 ## <a name="next-steps"></a>Passos seguintes
 * Saiba como criar um [cluster no Azure](service-fabric-cluster-creation-via-portal.md) ou um [cluster autónomo no Windows](service-fabric-cluster-creation-for-windows-server.md).

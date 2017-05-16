@@ -1,6 +1,7 @@
 ---
-title: "Relatório de atividade de auditoria no portal do Azure Active Directory - pré-visualização| Microsoft Docs"
-description: "Introdução aos relatórios de atividade de auditoria na pré-visualização do portal do Azure Active Directory"
+
+title: "Relatórios de atividade de auditoria no portal do Azure Active Directory | Microsoft Docs"
+description: "Introdução aos relatórios de atividade de auditoria no portal do Azure Active Directory"
 services: active-directory
 documentationcenter: 
 author: MarkusVi
@@ -12,20 +13,21 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 04/07/2017
+ms.date: 05/04/2017
 ms.author: markvi
-translationtype: Human Translation
-ms.sourcegitcommit: db7cb109a0131beee9beae4958232e1ec5a1d730
-ms.openlocfilehash: d88f8bed0cbd14ee49986d6749396731a810034b
-ms.lasthandoff: 04/18/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 2db2ba16c06f49fd851581a1088df21f5a87a911
+ms.openlocfilehash: 4065682658bdd99066266b8b4e5e4c4605ff3db9
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/08/2017
 
 
 ---
-# <a name="audit-activity-reports-in-the-azure-active-directory-portal---preview"></a>Relatório de atividade de auditoria no portal do Azure Active Directory - pré-visualização
+# <a name="audit-activity-reports-in-the-azure-active-directory-portal"></a>Relatório de atividade de auditoria no portal do Azure Active Directory 
 
-Com os relatórios na [pré-visualização](active-directory-preview-explainer.md) do Azure Active Directory, obtém todas as informações de que precisa para determinar o estado de funcionamento do seu ambiente.
+Com os relatórios no Azure Active Directory (Azure AD), obtenha todas as informações de que precisa para determinar o estado de funcionamento do seu ambiente.
 
-A arquitetura de relatórios no Azure Active Directory consiste nos seguintes componentes:
+A arquitetura de relatórios no Azure AD consiste nos seguintes componentes:
 
 - **Atividade** 
     - **Atividades de início de sessão** – Informações sobre a utilização de aplicações geridas e atividades de início de sessão do utilizador
