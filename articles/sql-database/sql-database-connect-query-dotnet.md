@@ -13,18 +13,19 @@ ms.workload: drivers
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: hero-article
-ms.date: 04/17/2017
+ms.date: 05/07/2017
 ms.author: andrela;sstein;carlrab
-translationtype: Human Translation
-ms.sourcegitcommit: abdbb9a43f6f01303844677d900d11d984150df0
-ms.openlocfilehash: 119ffa3ac31e0ea6e76f8232f13b4dd8667f78aa
-ms.lasthandoff: 04/20/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 2db2ba16c06f49fd851581a1088df21f5a87a911
+ms.openlocfilehash: 0dff167c370fcd2df40aa2ac302d0f09990e1d41
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/08/2017
 
 
 ---
 # <a name="azure-sql-database-use-net-c-to-connect-and-query-data"></a>Base de Dados SQL do Azure: utilize o .NET (C#) para ligar e consultar dados
 
-Este guia de introdução demonstra como utilizar o [C# e o ADO.NET](https://msdn.microsoft.com/library/kb9s9ks0.aspx) para ligar a uma base de dados SQL do Azure e, em seguida, utilizar as declarações de Transact-SQL para consultar, inserir, atualizar e eliminar dados na base de dados a partir de plataformas do Windows, do Mac OS e do Ubuntu Linux.
+Este guia de introdução demonstra como utilizar o [C# e o ADO.NET](https://msdn.microsoft.com/library/kb9s9ks0.aspx) para ligar a uma base de dados SQL do Azure; em seguida, utilizar as declarações de Transact-SQL para consultar, inserir, atualizar e eliminar dados na base de dados a partir de plataformas do Windows, do Mac OS e do Ubuntu Linux.
 
 Este guia de introdução utiliza como ponto de partida os recursos criados num destes guias de introdução:
 
@@ -39,7 +40,7 @@ Os passos nesta secção partem do princípio de que está familiarizado com pro
 
 O Visual Studio 2017 Community é um IDE gratuito, extensível e repleto de funcionalidades para criar aplicações modernas para Android, iOS e Windows, bem como aplicações Web e de bases de dados e serviços cloud. Pode instalar o .NET framework completo ou o apenas o .NET core. Os fragmentos de código no início rápido funcionam com ambos. Se já tiver o Visual Studio instalado no seu computador, ignore os passos seguintes.
 
-1. Transfira o [Instalador](https://go.microsoft.com/fwlink/?LinkId=691978). 
+1. Transferir o [instalador do Visual Studio 2017](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15). 
 2. Execute o instalador e siga as instruções de instalação, para concluí-la.
 
 ### <a name="mac-os"></a>**Mac OS**
@@ -76,7 +77,7 @@ Obtenha as informações de ligação necessárias para ligar à base de dados S
 
    ![server-name](./media/sql-database-connect-query-dotnet/server-name.png) 
 
-4. Se se tiver esquecido das informações de início de sessão do seu servidor da Base de Dados SQL do Azure, navegue para a página de servidor da Base de Dados SQL para visualizar o nome de administrador do servidor e, se necessário, repor a palavra-passe.
+4. Se se esqueceu das informações de início de sessão do seu servidor da Base de Dados SQL do Azure, navegue para a página de servidor da Base de Dados SQL para visualizar o nome de administrador do servidor e, se necessário, repor a palavra-passe.
 
 5. Clique em **Mostrar cadeias de ligação da base de dados**.
 
@@ -308,13 +309,9 @@ namespace ConsoleApplication1
 ```
 
 ## <a name="next-steps"></a>Passos seguintes
+- [Criar a sua primeira base de dados SQL do Azure](sql-database-design-first-database.md)
+- [Documentação .NET](https://docs.microsoft.com/dotnet/).
+- [Ligar e consultar com SSMS](sql-database-connect-query-ssms.md)
+- [Ligar e consultar com o Visual Studio Code](sql-database-connect-query-vscode.md).
 
-- Para obter documentação .NET, consulte [documentação .NET](https://docs.microsoft.com/dotnet/).
-- Para ligar e consultar com o SQL Server Management Studio, veja [Ligar e consultar com SSMS](sql-database-connect-query-ssms.md)
-- Para ligar e consultar com o Visual Studio, veja [Connect and query with Visual Studio Code (Ligar e consultar com o Visual Studio Code)](sql-database-connect-query-vscode.md).
-- Para ligar e consultar com PHP, consulte [Connect and query with PHP (Ligar e consultar com PHP)](sql-database-connect-query-php.md).
-- Para ligar e consultar com Node.js, consulte [Connect and query with Node.js (Ligar e consultar com Node.js)](sql-database-connect-query-nodejs.md).
-- Para ligar e consultar com Java, consulte [Connect and query with Java (Ligar e consultar com Java)](sql-database-connect-query-java.md).
-- Para ligar e consultar com Python, consulte [Connect and query with Python (Ligar e consultar com Python)](sql-database-connect-query-python.md).
-- Para ligar e consultar com Ruby, consulte [Connect and query with Ruby (Ligar e consultar com Ruby)](sql-database-connect-query-ruby.md).
 

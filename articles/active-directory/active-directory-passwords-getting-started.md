@@ -15,10 +15,10 @@ ms.topic: get-started-article
 ms.date: 04/26/2017
 ms.author: joflore
 ms.translationtype: Human Translation
-ms.sourcegitcommit: be3ac7755934bca00190db6e21b6527c91a77ec2
-ms.openlocfilehash: d138f4135d008c746bd5501680392b80a51786fa
+ms.sourcegitcommit: 2db2ba16c06f49fd851581a1088df21f5a87a911
+ms.openlocfilehash: b4d2819f51506651ebeb5b7b7c2d016c0cfc154d
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/03/2017
+ms.lasthandoff: 05/08/2017
 
 
 ---
@@ -61,15 +61,15 @@ Este guia pressupõe que já tem uma versão de avaliação ou um inquilino lice
 **Neste momento, já tem configurado o SSPR no seu inquilino do Azure AD**. Pode parar por aqui ou continuar e configurar a sincronização de palavras-passe para um domínio do AD no local.
 
 > [!NOTE]
-> Teste o SSPR com um utilizador e não com um administrador, pois a Microsoft aplica requisitos de autenticação fortes às contas de tipo administrador do Azure. Para obter mais informações sobre a política de palavras-passe de administrador, veja o nosso [artigo técnico detalhado](active-directory-passwords-how-it-works.md).
+> Teste o SSPR com um utilizador e não com um administrador, pois a Microsoft aplica requisitos de autenticação fortes às contas de tipo administrador do Azure. Para obter mais informações sobre a política de palavras-passe de administrador, veja o nosso [artigo de política de palavra-passe](active-directory-passwords-policy.md#administrator-password-policy-differences).
 
 ## <a name="configure-synchronization-to-existing-identity-source"></a>Configurar a sincronização com a origem de identidades existente
 
-Para ativar a sincronização de identidades no local com o Azure AD, tem de instalar e configurar o [Azure AD Connect](/connect/active-directory-aadconnect.md) num servidor da sua organização. Esta aplicação processa a sincronização de utilizadores e grupos da sua origem de identidades existente com o seu domínio do Azure AD.
+Para ativar a sincronização de identidades no local com o Azure AD, tem de instalar e configurar o [Azure AD Connect](./connect/active-directory-aadconnect.md) num servidor da sua organização. Esta aplicação processa a sincronização de utilizadores e grupos da sua origem de identidades existente com o seu domínio do Azure AD.
 
-[Introdução ao Azure AD Connect com as definições rápidas](/connect/active-directory-aadconnect-get-started-express.md)
+[Introdução ao Azure AD Connect com as definições rápidas](./connect/active-directory-aadconnect-get-started-express.md)
 
-[Upgrade from DirSync or Azure AD Sync to Azure AD Connect](/connect/active-directory-aadconnect-dirsync-deprecated.md) (Atualizar de DirSync ou do Azure AD Sync para o Azure AD Connect)
+[Upgrade from DirSync or Azure AD Sync to Azure AD Connect](./connect/active-directory-aadconnect-dirsync-deprecated.md) (Atualizar de DirSync ou do Azure AD Sync para o Azure AD Connect)
 
 ## <a name="disabling-self-service-password-reset"></a>Desativar a reposição de palavras-passe self-service
 
@@ -85,6 +85,6 @@ As ligações seguintes disponibilizam informações adicionais relativamente à
 * [**Policy**](active-directory-passwords-policy.md) - Understand and set Azure AD password policies (Política - Compreender e definir políticas de palavras-passe do Azure AD)
 * [**Reporting**](active-directory-passwords-reporting.md) - Discover if, when, and where your users are accessing SSPR functionality (Relatórios - Descubra se, quando e a partir de onde é que os utilizadores acedem à funcionalidade SSPR)
 * [**Technical Deep Dive**](active-directory-passwords-how-it-works.md) - Go behind the curtain to understand how it works (Análise Técnica - veja por detrás dos bastidores para saber como funciona)
-* [**Frequently Asked Questions**](active-directory-passwords-faq.md) - How? Why? What? Where? Who? When? - Answers to questions you always wanted to ask (Perguntas Mais Frequentes - Como? Porquê? O quê? Onde? Quem? - Respostas para as perguntas que sempre quis saber)
+* [**Frequently Asked Questions**](active-directory-passwords-faq.md) - How? Porquê? What? Where? Who? When? - Answers to questions you always wanted to ask (Perguntas Mais Frequentes - Como? Porquê? O quê? Onde? Quem? - Respostas para as perguntas que sempre quis saber)
 * [**Troubleshoot**](active-directory-passwords-troubleshoot.md) - Learn how to resolve common issues that we see with SSPR (Resolução de Problemas - Saiba como resolver problemas comuns do SSPR)
 

@@ -4,7 +4,7 @@ description: "Este artigo ajuda-o a começar a trabalhar com as capacidades de m
 services: security-center
 documentationcenter: na
 author: YuriDio
-manager: swadhwa
+manager: mbaldwin
 editor: 
 ms.assetid: 3bd5b122-1695-495f-ad9a-7c2a4cd1c808
 ms.service: security-center
@@ -12,12 +12,13 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 03/30/2017
+ms.date: 05/09/2017
 ms.author: yurid
-translationtype: Human Translation
-ms.sourcegitcommit: f41fbee742daf2107b57caa528e53537018c88c6
-ms.openlocfilehash: d796566676e13b312832dd543f52d3475d877ef8
-ms.lasthandoff: 03/31/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 2db2ba16c06f49fd851581a1088df21f5a87a911
+ms.openlocfilehash: f7f50c305a5ae6ad7bba4e793f4cb6a0735b80b4
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/08/2017
 
 
 ---
@@ -28,18 +29,17 @@ Este artigo ajuda-o a utilizar as capacidades de monitorização no Centro de Se
 Pensamos frequentemente que monitorizar é observar e esperar que um evento ocorra, para que possamos reagir à situação. A monitorização de segurança refere-se ao facto de ter uma estratégia proativa que audita os seus recursos para identificar os sistemas que não cumprem as normas ou melhores práticas organizacionais.
 
 ## <a name="monitoring-security-health"></a>Monitorizar o estado de funcionamento de segurança
-Depois de ativar [políticas de segurança](security-center-policies.md) para os recursos de uma subscrição, o Centro de Segurança irá analisar a segurança dos seus recursos para identificar potenciais vulnerabilidades. As informações sobre a configuração da rede estão disponíveis de forma instantânea. Pode demorar uma hora ou mais até que as informações acerca da configuração da máquina virtual, tais como o estado da atualização de segurança e a configuração do sistema operativo, fiquem disponíveis. Pode ver o estado de segurança dos seus recursos, juntamente com quaisquer problemas no painel **Estado de Funcionamento de Segurança do Recurso**. Também pode ver uma lista dos problemas no painel **Recomendações**.
+Depois de ativar [políticas de segurança](security-center-policies.md) para os recursos de uma subscrição, o Centro de Segurança irá analisar a segurança dos seus recursos para identificar potenciais vulnerabilidades. As informações sobre a configuração da rede estão disponíveis de forma instantânea. Pode demorar uma hora ou mais até que as informações acerca da configuração da máquina virtual, tais como o estado da atualização de segurança e a configuração do sistema operativo, fiquem disponíveis. Pode ver o estado de segurança dos seus recursos, juntamente com quaisquer problemas na secção **Prevenção**. Também pode ver uma lista dos problemas no mosaico **Recomendações**.
 
 Para obter mais informações sobre como aplicar recomendações, leia [Implementing security recommendations in Azure Security Center (Implementar recomendações de segurança no Centro de Segurança do Azure)](security-center-recommendations.md).
 
-No mosaico **Estado de funcionamento da segurança do recurso**, pode monitorizar o estado de segurança dos seus recursos. No exemplo seguinte, pode ver vários problemas com uma gravidade média e alta que necessitam de atenção. As políticas de segurança que estão ativadas terão impacto nos tipos de controlos que são monitorizados.
+Sob a secção **Prevenção**, pode monitorizar o estado de segurança dos seus recursos. No exemplo seguinte, pode ver que em cada mosaico do recurso (Computação, Redes, Armazenamento e dados e Aplicação) tem o número total de problemas que foram identificados.
 
-![Mosaico de estado de funcionamento da segurança dos recursos](./media/security-center-monitoring/security-center-monitoring-fig1-new001-2017.png)
+![Mosaico de estado de funcionamento da segurança dos recursos](./media/security-center-monitoring/security-center-monitoring-fig1-newUI-2017.png)
 
-Se o Centro de Segurança identificar uma vulnerabilidade que necessita de ser tratada, tal como uma máquina virtual com atualizações de segurança em falta ou uma sub-rede sem um [grupo de segurança de rede](/virtual-network/virtual-networks-nsg.md), a vulnerabilidade será listada aqui.
 
 ### <a name="monitor-compute"></a>Monitorizar a computação
-Quando clica em **Computação** no mosaico **Estado de funcionamento do recurso**, é aberto o painel **Computação**, que mostra três separadores:
+Quando clica no mosaico **Computação**, é aberto o painel **Computação**, que mostra três separadores:
 
 - **Descrição geral**: recomendações de monitorização e de máquina virtual.
 - **Máquinas virtuais**: lista todas as máquinas virtuais e o estado de segurança atual das mesmas.
@@ -119,7 +119,7 @@ Para ver uma explicação mais prescritiva sobre esta recomendação, clique em 
 ![Recomendações dos serviços em nuvem](./media/security-center-monitoring/security-center-monitoring-fig8-new4.png)  
 
 ### <a name="monitor-virtual-networks"></a>Monitorizar redes virtuais
-Quando clica em **Redes**, no mosaico **Estado de funcionamento da segurança dos recursos**, o painel **Redes** é apresentado com mais detalhes, conforme mostrado na seguinte captura de ecrã:
+Quando clica no mosaico **Redes**, o painel **Redes** é apresentado com mais detalhes, conforme mostrado na seguinte captura de ecrã:
 
 ![Painel Redes](./media/security-center-monitoring/security-center-monitoring-fig9-new3.png)
 
@@ -170,11 +170,11 @@ Nesta vista de topologia, o primeiro nível tem [máquinas virtuais](../virtual-
 
 A parte inferior deste painel tem as recomendações para esta máquina virtual, semelhantes ao que foi descrito anteriormente. Pode clicar numa recomendação para obter mais informações ou aplicar a configuração ou o controlo de segurança necessário.
 
-### <a name="monitor-data"></a>Monitorizar dados
+### <a name="monitor-storage--data"></a>Monitorizar o armazenamento e dados
 
-Quando clica em **SQL e Dados** no mosaico **Estado de funcionamento de segurança de recursos**, o painel **Recursos de Dados** abre-se com recomendações para SQL e Armazenamento. Também tem [recomendações](security-center-sql-service-recommendations.md) para o estado de funcionamento geral da base de dados. Para obter mais informações sobre a encriptação de armazenamento, leia o artigo [Ativar a encriptação para a conta de armazenamento do Azure no Centro de Segurança do Azure](security-center-enable-encryption-for-storage-account.md).
+Quando clica em **Armazenamento e dados** na secção **Prevenção**, o painel **Recursos de Dados** abre-se com recomendações para SQL e Armazenamento. Também tem [recomendações](security-center-sql-service-recommendations.md) para o estado de funcionamento geral da base de dados. Para obter mais informações sobre a encriptação de armazenamento, leia o artigo [Ativar a encriptação para a conta de armazenamento do Azure no Centro de Segurança do Azure](security-center-enable-encryption-for-storage-account.md).
 
-![Recursos de Dados](./media/security-center-monitoring/security-center-monitoring-fig13-ga-new.png)
+![Recursos de Dados](./media/security-center-monitoring/security-center-monitoring-fig13-newUI-2017.png)
 
 Em **Recomendações SQL**, pode clicar em qualquer recomendação e obter mais detalhes sobre mais ações para resolver um problema. O exemplo seguinte mostra a expansão da recomendação **Auditoria de Base de Dados e Deteção de ameaças em bases de dados SQL**.
 

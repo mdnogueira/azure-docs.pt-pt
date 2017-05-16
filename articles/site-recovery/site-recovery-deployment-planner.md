@@ -14,15 +14,16 @@ ms.devlang: na
 ms.topic: hero-article
 ms.date: 2/21/2017
 ms.author: nisoneji
-translationtype: Human Translation
-ms.sourcegitcommit: 538f282b28e5f43f43bf6ef28af20a4d8daea369
-ms.openlocfilehash: 07c6836c9279ed2f28730a49d131c064891de1b1
-ms.lasthandoff: 04/07/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 18d4994f303a11e9ce2d07bc1124aaedf570fc82
+ms.openlocfilehash: 5c716069bdff2a23bf81b2d2d0793a8616cf9c83
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/09/2017
 
 
 ---
 # <a name="azure-site-recovery-deployment-planner"></a>Azure Site Recovery Deployment Planner
-Este artigo é o manual do utilizador do Azure Site Recovery para implementações de produção de VMware para o Azure.
+Este artigo é o manual do utilizador do Azure Site Recovery Deployment Planner para implementações de produção de VMware para o Azure.
 
 ## <a name="overview"></a>Descrição geral
 
@@ -36,7 +37,7 @@ A ferramenta disponibiliza os seguintes detalhes:
 
 **Avaliação de compatibilidade**
 
-* Uma avaliação de elegibilidade de VMs com base no número de discos, no tamanho do disco, em IOPS e na alteração a dados
+* Uma avaliação de elegibilidade de VMs com base no número de discos, no tamanho do disco, em IOPS, na alteração a dados e no tipo de arranque (EFI/BIOS)
 * A largura de banda de rede estimada necessária para a replicação delta
 
 **Necessidade de largura de banda de rede vs avaliação de RPO**
@@ -204,6 +205,10 @@ Depois de concluída a criação de perfis, pode executar a ferramenta no modo d
 | -StartDate | (Opcional) A data e hora de início, em MM-DD-AAAA:HH:MM (no formato de 24 horas). *StartDate* tem de ser especificado juntamente com *EndDate*. Se StartDate for especificado, o relatório será gerado para os dados de criação de perfis recolhidos entre StartDate e EndDate. |
 | -EndDate | (Opcional) A data e hora de fim, em MM-DD-AAAA:HH:MM (no formato de 24 horas). *EndDate* tem de ser especificado juntamente com *StartDate*. Se EndDate for especificado, o relatório será gerado para os dados de criação de perfis recolhidos entre StartDate e EndDate. |
 | -GrowthFactor | (Opcional) O fator de crescimento, expresso em percentagem. A predefinição é 30 por cento. |
+| -UseManagedDisks | (Opcional) UseManagedDisks - Sim/Não. A predefinição é Sim. O número de máquinas virtuais que pode ser colocado numa conta de armazenamento única é calculado consoante o disco gerido disco está selecionado para Ativação pós-falha/Ativação pós-falha de teste. |
+
+para a colocação de uma conta de armazenamento única ser calculada considerando a Ativação pós-falha/Ativação pós-falha de Teste de máquinas virtuais é efetuada no Disco Gerido, em vez do Disco não gerido. |
+
 
 #### <a name="example-1-generate-a-report-with-default-values-when-the-profiled-data-is-on-the-local-drive"></a>Exemplo 1: gerar o relatório com valores predefinidos quando os dados de criação de perfis estão na unidade local
 ```
@@ -476,11 +481,11 @@ Se as características da carga de trabalho de um disco o colocarem na categoria
 
 **Cores (Núcleos)**: o número de núcleos de CPU na VM.
 
-**Memory (MB)**: a RAM na VM.
+**Memory (MB)** : a RAM na VM.
 
 **NICs**: o número de NICs na VM.
 
-**Tipo de Arranque**: é o tipo de arranque da VM. Pode ser BIOS ou EFI. Atualmente o Azure Site Recovery suporta apenas o tipo de arranque BIOS. Todas as máquinas virtuais do tipo de arranque EFI estão listadas na folha de cálculo das VMs Incompatíveis. 
+**Tipo de Arranque**: é o tipo de arranque da VM. Pode ser BIOS ou EFI. Atualmente o Azure Site Recovery suporta apenas o tipo de arranque BIOS. Todas as máquinas virtuais do tipo de arranque EFI estão listadas na folha de cálculo das VMs Incompatíveis.
 
 **Tipo de SO**: é o tipo de SO da VM. Pode ser Windows ou Linux ou outro.
 
@@ -513,11 +518,11 @@ Se as características da carga de trabalho de um disco o colocarem na categoria
 
 **Cores (Núcleos)**: o número de núcleos de CPU na VM.
 
-**Memory (MB) (Memória [MB])**: a quantidade de RAM na VM.
+**Memory (MB) (Memória [MB])** : a quantidade de RAM na VM.
 
 **NICs**: o número de NICs na VM.
 
-**Tipo de Arranque**: é o tipo de arranque da VM. Pode ser BIOS ou EFI. Atualmente o Azure Site Recovery suporta apenas o tipo de arranque BIOS. Todas as máquinas virtuais do tipo de arranque EFI estão listadas na folha de cálculo das VMs Incompatíveis. 
+**Tipo de Arranque**: é o tipo de arranque da VM. Pode ser BIOS ou EFI. Atualmente o Azure Site Recovery suporta apenas o tipo de arranque BIOS. Todas as máquinas virtuais do tipo de arranque EFI estão listadas na folha de cálculo das VMs Incompatíveis.
 
 **Tipo de SO**: é o tipo de SO da VM. Pode ser Windows ou Linux ou outro.
 
@@ -558,6 +563,15 @@ Para atualizar o Deployment Planner, faça o seguinte:
 
 
 ## <a name="version-history"></a>Histórico de versões
+
+### <a name="13"></a>1.3
+Atualização: 9 de maio de 2017
+
+É adicionada a nova funcionalidade a seguir:
+
+* Foi adicionado suporte de disco gerido na geração de relatórios. O número de máquinas virtuais que pode ser colocado numa conta de armazenamento única é calculado com base em se o disco gerido disco está selecionado para Ativação pós-falha/Ativação pós-falha de teste.        
+
+
 ### <a name="12"></a>1.2
 Atualização: 7 de abril de 2017
 

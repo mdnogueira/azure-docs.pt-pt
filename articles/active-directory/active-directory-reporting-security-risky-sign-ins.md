@@ -1,6 +1,7 @@
 ---
-title: "Relatório de inícios de sessão de risco no portal do Azure Active Directory - pré-visualização| Microsoft Docs"
-description: "Saiba mais sobre o relatório de inícios de sessão de risco no portal do Azure Active Directory - pré-visualização"
+
+title: "Relatório de inícios de sessão de risco no portal do Azure Active Directory | Microsoft Docs"
+description: "Saiba mais sobre o relatório de inícios de sessão de risco no portal do Azure Active Directory"
 services: active-directory
 author: MarkusVi
 manager: femila
@@ -10,20 +11,21 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 02/21/2017
+ms.date: 05/04/2017
 ms.author: markvi
-translationtype: Human Translation
-ms.sourcegitcommit: 349109e0c12a1394f96529a94ab884eeb451d242
-ms.openlocfilehash: 69b2166dcbc3e4abd99084b47907c90e157791de
-ms.lasthandoff: 02/22/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 2db2ba16c06f49fd851581a1088df21f5a87a911
+ms.openlocfilehash: e21b7733bc0f6b8625fbdcec3529ad603ce306c1
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/08/2017
 
 
 ---
-# <a name="risky-sign-ins-report-in-the-azure-active-directory-portal---preview"></a>Relatório de inícios de sessão de risco no portal do Azure Active Directory - pré-visualização
+# <a name="risky-sign-ins-report-in-the-azure-active-directory-portal"></a>Relatório de inícios de sessão de risco no portal do Azure Active Directory
 
-Com os relatórios de segurança na [pré-visualização](active-directory-preview-explainer.md) do Azure Active Directory, pode obter informações sobre a probabilidade de contas de utilizador comprometidas no seu ambiente. 
+Com os relatórios de segurança no Azure Active Directory (Azure AD), pode obter informações sobre a probabilidade de contas de utilizador comprometidas no seu ambiente. 
 
-O Azure Active Directory deteta as ações suspeitas relacionadas com as suas contas de utilizador. Para cada ação detetada, é criado um registo denominado *evento de risco*. Para obter mais detalhes, veja [Eventos de risco do Azure Active Directory](active-directory-identity-protection-risk-events.md). 
+O Azure AD deteta as ações suspeitas relacionadas com as suas contas de utilizador. Para cada ação detetada, é criado um registo denominado *evento de risco*. Para obter mais detalhes, veja [Eventos de risco do Azure Active Directory](active-directory-identity-protection-risk-events.md). 
 
 Os eventos de risco detetados são utilizados para calcular:
 
@@ -31,7 +33,7 @@ Os eventos de risco detetados são utilizados para calcular:
 
 - **Utilizadores sinalizados para risco** – Um utilizador de risco é um indicador de uma conta de utilizador que pode ter sido comprometida. Para obter mais detalhes, veja [Utilizadores sinalizados para risco](active-directory-identityprotection.md#users-flagged-for-risk).  
 
-No portal do Azure, pode encontrar os relatórios de segurança no painel do **Azure Active Directory**, na secção **Segurança**. 
+No [portal do Azure](https://portal.azure.com), pode encontrar os relatórios de segurança no painel do **Azure Active Directory**, na secção **Segurança**. 
 
 ![Inícios de Sessão de Risco](./media/active-directory-reporting-security-risky-sign-ins/10.png)
 
