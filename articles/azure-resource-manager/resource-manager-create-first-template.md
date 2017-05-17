@@ -14,10 +14,11 @@ ms.devlang: na
 ms.date: 04/18/2017
 ms.topic: get-started-article
 ms.author: tomfitz
-translationtype: Human Translation
-ms.sourcegitcommit: 8c4e33a63f39d22c336efd9d77def098bd4fa0df
-ms.openlocfilehash: 3c5520f30b75c0e0a2b1aee890f79d01d325d543
-ms.lasthandoff: 04/19/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 97fa1d1d4dd81b055d5d3a10b6d812eaa9b86214
+ms.openlocfilehash: 745e115409a5b1e5e4f343ca0a5bb922272d3020
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/11/2017
 
 ---
 
@@ -184,7 +185,7 @@ Novamente, o Código VS ajuda-o ao sugerir funções disponíveis.
 
 ![mostrar funções](./media/resource-manager-create-first-template/show-functions.png)
 
-Repare que a função está entre parênteses retos. A função [resourceGroup](resource-group-template-functions.md#resourcegroup) devolve um objeto com uma propriedade chamada `location`. O grupo de recursos contém todos os recursos relacionados para a sua solução. Podia codificar a propriedade de localização para um valor como "E.U.A. Central", mas teria de alterar manualmente o modelo para voltar a implementar numa localização diferente. Com a função `resourceGroup`, é fácil voltar a implementar este modelo num grupo de recursos diferente numa localização diferente.
+Repare que a função está entre parênteses retos. A função [resourceGroup](resource-group-template-functions-resource.md#resourcegroup) devolve um objeto com uma propriedade chamada `location`. O grupo de recursos contém todos os recursos relacionados para a sua solução. Podia codificar a propriedade de localização para um valor como "E.U.A. Central", mas teria de alterar manualmente o modelo para voltar a implementar numa localização diferente. Com a função `resourceGroup`, é fácil voltar a implementar este modelo num grupo de recursos diferente numa localização diferente.
 
 Agora, o seu modelo tem este aspeto:
 
@@ -216,7 +217,7 @@ Agora, o seu modelo tem este aspeto:
 ## <a name="add-parameters-and-variables"></a>Adicionar parâmetros e variáveis
 Só falta definir dois valores no seu modelo - **name** e **sku.name**. Para estas propriedades, adicione parâmetros que lhe permitem personalizar estes valores durante a implementação. 
 
-Os nomes das contas de armazenamento têm várias restrições que dificultam a respetiva definição. O nome tem de ter entre 3 e 24 carateres, utilizar apenas números e letras minúsculas e ser exclusivo. Em vez de tentar adivinhar um valor exclusivo que corresponda às restrições, utilize a função [uniqueString](resource-group-template-functions.md#uniquestring) para gerar um valor hash. Para atribuir mais significado a este valor hash, adicione um prefixo que o ajude a identificá-lo como uma conta de armazenamento após a implementação. 
+Os nomes das contas de armazenamento têm várias restrições que dificultam a respetiva definição. O nome tem de ter entre 3 e 24 carateres, utilizar apenas números e letras minúsculas e ser exclusivo. Em vez de tentar adivinhar um valor exclusivo que corresponda às restrições, utilize a função [uniqueString](resource-group-template-functions-string.md#uniquestring) para gerar um valor hash. Para atribuir mais significado a este valor hash, adicione um prefixo que o ajude a identificá-lo como uma conta de armazenamento após a implementação. 
 
 1. Para introduzir um prefixo para o nome que corresponda às suas convenções de nomenclatura, aceda à secção **parameters** do seu modelo. Adicione um parâmetro ao modelo que aceite um prefixo para o nome da conta de armazenamento:
 
