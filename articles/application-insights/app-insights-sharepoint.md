@@ -3,7 +3,7 @@ title: Monitorize um site do SharePoint com o Application Insights
 description: "Comece a monitorizar uma nova aplicação com uma nova chave de instrumentação"
 services: application-insights
 documentationcenter: 
-author: alancameronwills
+author: CFreemanwa
 manager: carmonm
 ms.assetid: 2bfe5910-d673-4cf6-a5c1-4c115eae1be0
 ms.service: application-insights

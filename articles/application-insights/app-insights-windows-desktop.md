@@ -3,7 +3,7 @@ title: "Monitorização de utilização e desempenho de aplicações de ambiente
 description: "Análise da utilização e desempenho da sua aplicação de ambiente de trabalho do Windows com o HockeyApp e o Application Insights."
 services: application-insights
 documentationcenter: windows
-author: alancameronwills
+author: CFreemanwa
 manager: carmonm
 ms.assetid: 19040746-3315-47e7-8c60-4b3000d2ddc4
 ms.service: application-insights
