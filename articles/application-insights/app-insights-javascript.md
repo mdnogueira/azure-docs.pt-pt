@@ -3,7 +3,7 @@ title: "Azure Application Insights para aplicações Web JavaScript | Microsoft 
 description: "Obtenha contagens de sessões e visualizações de páginas, dados de clientes Web e controle padrões de utilização. Detete exceções e problemas de desempenho em páginas Web de JavaScript."
 services: application-insights
 documentationcenter: 
-author: alancameronwills
+author: CFreemanwa
 manager: carmonm
 ms.assetid: 3b710d09-6ab4-4004-b26a-4fa840039500
 ms.service: application-insights
