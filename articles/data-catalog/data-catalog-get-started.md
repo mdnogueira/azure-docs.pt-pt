@@ -15,9 +15,10 @@ ms.tgt_pltfrm: NA
 ms.workload: data-catalog
 ms.date: 05/03/2017
 ms.author: spelluru
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 2b128e2771ea89d1c0d6b8d52357d1bcc993115a
 ms.openlocfilehash: a9629d0a4bfc44f5d035a29f8e97d76922cc0060
+ms.contentlocale: pt-pt
 ms.lasthandoff: 02/16/2017
 
 
@@ -127,7 +128,7 @@ Neste exercício, vai utilizar a ferramenta de registo para registar recursos de
 3. Na página **Boas-vindas**, clique em **Iniciar sessão** e introduza as suas credenciais.     
    
     ![Catálogo de Dados do Azure – página Boas-vindas](media/data-catalog-get-started/data-catalog-welcome-dialog.png)
-4. Na página **Catálogo de Dados do Microsoft Azure**, clique em **SQL Server** e em ** Seguinte**.
+4. Na página **Catálogo de Dados do Microsoft Azure**, clique em **SQL Server** e em **Seguinte**.
    
     ![Catálogo de Dados do Azure – origens de dados](media/data-catalog-get-started/data-catalog-data-sources.png)
 5. Introduza as propriedades de ligação do SQL Server para **AdventureWorks2014** (veja o exemplo abaixo) e clique em **LIGAR**.
