@@ -71,9 +71,11 @@
 ### [Problemas relacionados com cópias de segurança lentas de ficheiros e pastas no Azure Backup](backup-azure-troubleshoot-slow-backup-performance-issue.md)
 
 # Conceitos
+## [Descrição geral dos cofres dos Serviços de Recuperação](backup-azure-recovery-services-vault-overview.md)
+## [Atualizar um cofre de Cópia de Segurança para um cofre dos Serviços de Recuperação](backup-azure-upgrade-backup-to-recovery-services.md)
+## [Eliminar um cofre do Azure Backup](backup-azure-delete-vault.md)
 ## [Controlo de Acesso Baseado em Funções](backup-rbac-rs-vault.md)
 ## [Segurança para cópias de segurança híbridas](backup-azure-security-feature.md)
-## [Eliminar um cofre do Azure Backup](backup-azure-delete-vault.md)
 ## [Configurar a cópia de segurança offline](backup-azure-backup-import-export.md)
 ## [Substituir a sua biblioteca de unidades de banda](backup-azure-backup-cloud-as-tape.md)
 ## [Cópias de segurança de VMs do Linux consistentes com a aplicação](backup-azure-linux-app-consistent.md)
