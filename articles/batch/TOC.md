@@ -29,6 +29,10 @@
 ## Gerir
 ### [Cmdlets do PowerShell do Batch](batch-powershell-cmdlets-get-started.md)
 ### [CLI do Azure](batch-cli-get-started.md)
+#### [Criar uma conta do Batch](./scripts/batch-cli-sample-create-account.md)
+#### [Adicionar uma aplicação](./scripts/batch-cli-sample-add-application.md)
+#### [Gerir conjuntos](./scripts/batch-cli-sample-manage-pool.md)
+#### [Executar uma tarefa e tarefas](./scripts/batch-cli-sample-run-job.md)
 
 # Referência
 ## [PowerShell](/powershell/module/azurerm.batch)
@@ -63,7 +67,6 @@
 ## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=batch&updatetype=&platform=)
 ## [Exemplos de código C#](https://github.com/Azure/azure-batch-samples/tree/master/CSharp/)
 ## [Exemplos de código Python](https://github.com/Azure/azure-batch-samples/tree/master/Python/Batch)
-## [Amostras de CLI](batch-cli-samples.md)
 ## [Recursos de Macrocomputação](big-compute-resources.md)
 ## [Blogue](https://blogs.technet.microsoft.com/windowshpc/)
 

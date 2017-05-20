@@ -13,10 +13,10 @@ ms.topic: landing-page
 ms.date: 01/23/2017
 ms.author: carolz
 ms.translationtype: Human Translation
-ms.sourcegitcommit: f6006d5e83ad74f386ca23fe52879bfbc9394c0f
-ms.openlocfilehash: 475353f5a5abca1e9d6b5fdf4980d0cf33acc744
+ms.sourcegitcommit: 17c4dc6a72328b613f31407aff8b6c9eacd70d9a
+ms.openlocfilehash: e59cdcf2d54edece06feb0ee5675bdef35dfae03
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/03/2017
+ms.lasthandoff: 05/16/2017
 
 ---
 # <a name="azure-monitor-documentation"></a>Documentação do Azure Monitor
@@ -41,7 +41,25 @@ Saiba como utilizar serviços de monitorização e diagnósticos do Azure para m
             </div>
         </div>
         </a>
-    </li>    
+    </li>
+    <li>
+        <a href="https://azure.microsoft.com/resources/videos/index/?services=monitor">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="media/index/video-library.svg" alt="" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Centro de vídeo do Azure Monitor</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
     <li>
         <a href="/azure/monitoring-and-diagnostics/insights-alerts-portal">
         <div class="cardSize">
@@ -175,10 +193,11 @@ Saiba como utilizar serviços de monitorização e diagnósticos do Azure para m
                 <div class="card">
                     <div class="cardText">
                         <h3>Diagnóstico</h3>
-                        <p><a href="/azure/monitoring-and-diagnostics/azure-diagnostics-schema">Esquema de Diagnóstico do Azure</a></p>
-                        <p><a href="/azure/monitoring-and-diagnostics/azure-diagnostics-schema-1dot0">Esquema de Diagnóstico do Azure 1.0</a></p>
-                        <p><a href="/azure/monitoring-and-diagnostics/azure-diagnostics-schema-1dot2">Esquema de Diagnóstico do Azure 1.2</a></p>
-                        <p><a href="/azure/monitoring-and-diagnostics/azure-diagnostics-schema-1dot3-and-later">Esquema de Diagnóstico do Azure 1.3 a 1.5</a></p>
+                        <p><a href="/azure/monitoring-and-diagnostics/azure-diagnostics-versioning-history">Histórico de versões da extensão do Diagnóstico do Azure</a></p>
+                        <p><a href="/azure/monitoring-and-diagnostics/azure-diagnostics-schema">Esquema da extensão do Diagnóstico do Azure</a></p>
+                        <p><a href="/azure/monitoring-and-diagnostics/azure-diagnostics-schema-1dot0">Esquema da extensão do Diagnóstico do Azure 1.0</a></p>
+                        <p><a href="/azure/monitoring-and-diagnostics/azure-diagnostics-schema-1dot2">Esquema da extensão do Diagnóstico do Azure 1.2</a></p>
+                        <p><a href="/azure/monitoring-and-diagnostics/azure-diagnostics-schema-1dot3-and-later">Esquema da extensão do Diagnóstico do Azure 1.3 a 1.7</a></p>
                     </div>
                 </div>
             </div>
