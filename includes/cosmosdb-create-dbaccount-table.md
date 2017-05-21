@@ -16,7 +16,7 @@
     Definição|Valor sugerido|Descrição
     ---|---|---
     ID|*Valor exclusivo*|Um nome exclusivo que vai escolher para identificar a conta do Azure Cosmos DB. *documents.azure.com* é anexado ao ID que indicar para criar o seu URI, pelo que deve utilizar um ID exclusivo, mas identificável. O ID pode conter apenas minúsculas, números, o caráter “-” e tem de ter entre três e 50 carateres.
-    AP|Table (chave-valor)|Mais adiante neste artigo, vamos programar com a [API Table](../articles/cosmos-db/table-introduction.md).|
+    API|Table (chave-valor)|Mais adiante neste artigo, vamos programar com a [API Table](../articles/cosmos-db/table-introduction.md).|
     Subscrição|*A sua subscrição*|A subscrição do Azure que quer utilizar para a conta do Azure Cosmos DB. 
     Grupo de Recursos|*O mesmo valor que o ID*|O nome do grupo de recursos novo para a sua conta. Para simplicidade, pode utilizar o mesmo nome do ID. 
     Localização|*A região mais próxima dos seus utilizadores*|A localização geográfica na qual vai alojar a sua conta do Azure Cosmos DB. Escolha a localização mais próxima dos seus utilizadores para lhes dar o acesso mais rápido aos dados.   
