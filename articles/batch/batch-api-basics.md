@@ -12,14 +12,14 @@ ms.devlang: multiple
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: big-compute
-ms.date: 03/27/2017
+ms.date: 05/05/2017
 ms.author: tamram
 ms.custom: H1Hack27Feb2017
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 9ae7e129b381d3034433e29ac1f74cb843cb5aa6
-ms.openlocfilehash: c3ed30ec43128c4e2b0e3d7e4b5dd61670e6bb52
+ms.sourcegitcommit: 71fea4a41b2e3a60f2f610609a14372e678b7ec4
+ms.openlocfilehash: f8279eb672e58c7718ffb8e00a89bc1fce31174f
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/08/2017
+ms.lasthandoff: 05/10/2017
 
 
 ---
@@ -77,13 +77,12 @@ Pode criar uma conta do Azure Batch através do [portal do Azure](batch-account-
 O Batch suporta duas configurações de conta, com base na propriedade *modo de alocação de conjunto*. As duas configurações concedem-lhe acesso às capacidades diferentes relacionadas com [conjuntos](#pool) do Batch (consulte este artigo mais tarde).
 
 
-* **Serviço do Batch**: esta é a opção predefinida com as VMs do conjunto do Batch a serem atribuídas em segundo plano em subscrições geridas do Azure. Esta configuração de conta tem de ser utilizada se os conjuntos dos Serviços Cloud forem necessários, mas não podem ser utilizados se forem necessários conjuntos da Máquina Virtual criados a partir de imagens da VM personalizadas ou utilizar uma rede virtual. Pode aceder às APIs de Batch com a autenticação de chave partilhada ou a [autenticação do Azure Active Directory](batch-aad-auth.md).
+* **Serviço do Batch**: esta é a opção predefinida com as VMs do conjunto do Batch a serem atribuídas em segundo plano em subscrições geridas do Azure. Esta configuração de conta tem de ser utilizada se os conjuntos dos Serviços Cloud forem necessários, mas não podem ser utilizados se forem necessários conjuntos da Máquina Virtual criados a partir de imagens da VM personalizadas ou utilizar uma rede virtual. Pode aceder às APIs de Batch com a autenticação de chave partilhada ou a [autenticação do Azure Active Directory](batch-aad-auth.md). Pode utilizar nós de computação dedicados ou de baixa prioridade em conjuntos na configuração da conta do serviço do Batch.
 
-* **Subscrição do Azure**: esta configuração de conta tem de ser utilizada se os conjuntos da Máquina Virtual criados a partir de imagens da VM personalizadas ou utilizar uma rede virtual. Só pode aceder às APIs do Batch com a [autenticação do Azure Active Directory](batch-aad-auth.md) e os conjuntos dos Serviços Cloud não são suportados. As VMs de computação do Batch são alocadas diretamente na sua subscrição do Azure. Neste modo tem de configurar um cofre de chaves do Azure para a sua conta do Batch.
-
+* **Subscrição do Azure**: esta configuração de conta tem de ser utilizada se os conjuntos da Máquina Virtual criados a partir de imagens da VM personalizadas ou utilizar uma rede virtual. Só pode aceder às APIs do Batch com a [autenticação do Azure Active Directory](batch-aad-auth.md) e os conjuntos dos Serviços Cloud não são suportados. As VMs de computação do Batch são alocadas diretamente na sua subscrição do Azure. Neste modo tem de configurar um cofre de chaves do Azure para a sua conta do Batch. Só pode utilizar nós de computação dedicados em conjuntos na configuração de conta de subscrição do utilizador. 
 
 ## <a name="compute-node"></a>Nó de computação
-Um nó de computação é uma máquina virtual (VM) do Azure dedicada ao processamento de uma parte da carga de trabalho da sua aplicação. O tamanho de um nó determina o número de núcleos de CPU, a capacidade da memória e o tamanho do sistema de ficheiros local que está alocado ao nó. Pode criar conjuntos de nós do Windows ou Linux ao utilizar imagens dos Serviços Cloud do Azure ou imagens de Máquinas Virtuais do Azure Marketplace. Veja a secção [Conjunto](#pool), abaixo, para obter mais informações sobre estas opções.
+Um nó de computação é uma máquina virtual (VM) ou uma VM de um serviço cloud do Azure dedicada ao processamento de uma parte da carga de trabalho da sua aplicação. O tamanho de um nó determina o número de núcleos de CPU, a capacidade da memória e o tamanho do sistema de ficheiros local que está alocado ao nó. Pode criar conjuntos de nós do Windows ou Linux ao utilizar imagens dos Serviços Cloud do Azure ou imagens de Máquinas Virtuais do Azure Marketplace. Veja a secção [Conjunto](#pool), abaixo, para obter mais informações sobre estas opções.
 
 Os nós podem executar qualquer executável ou script que seja suportado pelo ambiente dos respetivos sistemas operativos. Incluem-se \*.exe, \*. cmd, \*. bat e scripts do PowerShell para o Windows, e binários, shell e scripts Python para Linux.
 
@@ -117,6 +116,25 @@ Quando cria um conjunto, pode especificar os seguintes atributos. Algumas defini
   * A *Família do SO* também determina quais as versões do .NET que estão instaladas no SO.
   * Tal como acontece com as funções de trabalho nos Serviços Cloud, pode especificar uma *Versão de SO* (para obter mais informações sobre as funções de trabalho, veja a secção [Tell me about cloud services (Saber mais sobre os serviços em nuvem)](../cloud-services/cloud-services-choose-me.md#tell-me-about-cloud-services), na [Descrição geral dos Serviços Cloud](../cloud-services/cloud-services-choose-me.md)).
   * Tal como com as funções de trabalho, recomendamos que especifique `*` para a *Versão do SO*, para que os nós sejam atualizados automaticamente e não seja necessário fazer nada para fornecer versões lançadas recentemente. O principal motivo para selecionar uma versão de SO específica é garantir a compatibilidade da aplicação, o que permite fazer testes de retrocompatibilidade antes de permitir a atualização da versão. Após a validação, a *Versão do SO* do conjunto pode ser atualizada e a nova imagem do SO instalada. As tarefas que estejam em execução são interrompidas e colocadas novamente em fila.
+
+* **Tipo de nó de computação** e **número de nós de destino**
+
+    Quando cria um conjunto, pode especificar quais os tipos de nós de computação que pretende e o número de destino de cada um. Os dois tipos de nós de computação são:
+
+    - **Nós de computação de baixa prioridade.** Os nós de baixa prioridade tiram partido da capacidade excedente do Azure para executar as cargas de trabalho do Batch. São mais económicos do que os nós dedicados e permitem cargas de trabalho que exigem muito poder de computação. Para obter mais informações, veja [Use low-priority VMs with Batch](batch-low-pri-vms.md) (Utilizar VMs de baixa prioridade com o Batch).
+
+        Se o Azure não tiver capacidade excedente suficiente, os nós de computação de baixa prioridade podem ser substituídos. Se um nó for substituído enquanto está a executar tarefas, estas são colocadas novamente na fila e executadas assim que esteja disponível um nó de computação. Os nós de baixa prioridade são uma boa opção para cargas de trabalho em que o tempo de conclusão do trabalho é flexível e este pode ser distribuído por muitos nós.
+
+        Os nós de computação de baixa prioridade só estão disponíveis para contas do Batch criadas com o modo de alocação de conjuntos definido como **Serviço do Batch**.
+
+    - **Nós de computação dedicados.** Os nós de computação dedicados estão reservados para as suas cargas de trabalho. São mais dispendiosos do que os nós de baixa prioridade, mas é garantido que nunca serão substituídos.    
+
+    Pode ter nós de computação de baixa prioridade e dedicados no mesmo conjunto. Cada tipo e nó &mdash; baixa prioridade e dedicado &mdash; tem a sua própria definição de destino, de acordo com a qual pode especificar o número pretendido de nós. 
+        
+    O número de nós de computação é referido com *destino* porque, em algumas situações, é possível que o seu conjunto não atinja o número de nós pretendido. Por exemplo, um conjunto pode não alcançar o destino se atingir primeiro a [quota de núcleos](batch-quota-limit.md) da sua conta do Batch. Ou o conjunto poderá não alcançar o destino se tiver aplicado uma fórmula de dimensionamento automático ao conjunto que limite o número máximo de nós.
+
+    Para obter informações sobre os preços dos nós de computação de baixa prioridade e dedicados, veja [Preços de Batch](https://azure.microsoft.com/pricing/details/batch/).
+
 * **Tamanho dos nós**
 
     Os tamanhos dos nós de computação de **Configuração de Serviços Cloud** estão listados em [Sizes for Cloud Services (Tamanhos dos Serviços Cloud)](../cloud-services/cloud-services-sizes-specs.md). O Batch suporta todos os tamanhos de Serviços Cloud, exceto `ExtraSmall`, `STANDARD_A1_V2`, e `STANDARD_A2_V2`.
@@ -126,12 +144,11 @@ Quando cria um conjunto, pode especificar os seguintes atributos. Algumas defini
     Ao selecionar um tamanho de nó de computação, considere as características e os requisitos das aplicações que vai executar nos nós. Alguns aspetos, como se a aplicação tem vários threads e a quantidade de memória que consome, podem ajudar a determinar o tamanho de nó mais adequado e económico. Normalmente, o tamanho dos nós é selecionado ao partir do princípio de que será executada uma tarefa de cada vez num nó. Contudo, é possível que várias tarefas (e, consequentemente, múltiplas instâncias da aplicação) sejam [executadas em paralelo](batch-parallel-node-tasks.md) nos nós de computação durante a execução do trabalho. Neste caso, é comum escolher um tamanho de nó maior para acomodar a maior necessidade de execução de tarefas em paralelo. Veja [Task scheduling policy (Política de agendamento de tarefas)](#task-scheduling-policy) para obter mais informações.
 
     Todos os nós num conjunto têm de ter o mesmo tamanho. Se quiser executar aplicações com requisitos de sistema e/ou níveis de carga diferentes, recomendamos utilizar conjuntos separados.
-* **Número de nós de destino**
 
-    Este é o número de nós de computação que pretende implementar no conjunto. É referido com *destino* porque, em algumas situações, é possível que o seu conjunto não atinja o número de nós pretendido. O conjunto poderá não atingir o número de nós pretendidos se chegar à [quota de núcleos](batch-quota-limit.md) da sua conta do Batch ou se tiver aplicado uma fórmula de dimensionamento automático ao conjunto que limite o número máximo de nós (veja a secção “Política de dimensionamento”, abaixo).
 * **Política de dimensionamento**
 
     Para cargas de trabalho dinâmicas, pode escrever e aplicar uma [fórmula de dimensionamento automático](#scaling-compute-resources) num conjunto. O serviço Batch avalia periodicamente a fórmula e ajusta o número de nós dentro do conjunto com base em vários parâmetros de conjuntos, trabalhos e tarefas que pode especificar.
+
 * **Política de agendamento de tarefas**
 
     A opção de configuração [máximo de tarefas por nó](batch-parallel-node-tasks.md) determina o número máximo de tarefas que podem ser executadas em paralelo em cada nó de computação dentro do conjunto.

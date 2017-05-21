@@ -3,7 +3,7 @@ title: "Monitorizar uma aplicação Web ASP.NET com o Application Insights do Az
 description: "Monitorize o desempenho de um site sem o reimplementar. Funciona com aplicações Web ASP.NET alojadas no local, em VMs ou no Azure."
 services: application-insights
 documentationcenter: .net
-author: alancameronwills
+author: CFreemanwa
 manager: carmonm
 ms.assetid: 769a5ea4-a8c6-4c18-b46c-657e864e24de
 ms.service: application-insights
@@ -11,12 +11,13 @@ ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 02/08/2017
-ms.author: awills
-translationtype: Human Translation
-ms.sourcegitcommit: 0c4554d6289fb0050998765485d965d1fbc6ab3e
-ms.openlocfilehash: 88abdb41a403f9c1dc85e574c655c532ee9b1eb5
-ms.lasthandoff: 04/13/2017
+ms.date: 05/05/2017
+ms.author: cfreeman
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 71fea4a41b2e3a60f2f610609a14372e678b7ec4
+ms.openlocfilehash: 769377af7bf62d35c45c6e2e7b0ae3311b784894
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/10/2017
 
 
 ---
@@ -59,6 +60,20 @@ Se a aplicação estiver a ser executada como um serviço Web do Azure, eis como
     ![Clique no Application Insights](./media/app-insights-monitor-performance-live-website-now/azure-web-view-more.png)
 
 [Monitorizar aplicações da VM e da Cloud](app-insights-azure.md).
+
+### <a name="enable-client-side-monitoring-in-azure"></a>Ativar a monitorização do lado do cliente no Azure
+
+Se tiver ativado o Application Insights no Azure, pode adicionar visualizações de páginas e telemetria dos utilizadores.
+
+1. Selecione Definições > Definições da Aplicação
+2.  Em Definições da Aplicação, adicione um par de chaves-valores novo: 
+   
+    Chave: `APPINSIGHTS_JAVASCRIPT_ENABLED` 
+    
+    Valor:`true`
+3. **Guarde** as definições e **reinicie** a aplicação.
+
+O Application Insights JavaScript SDK está agora injetado em cada página Web.
 
 ## <a name="monitor-a-live-iis-web-app"></a>Monitorizar uma aplicação Web IIS em direto
 

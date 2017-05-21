@@ -1,14 +1,15 @@
+1. Clique no botão **Novo** localizado no canto superior esquerdo do portal do Azure.
 
-1. Click the **New** button found on the upper left-hand corner of the Azure portal.
+1. Clique em **Computação** > **Function App** e selecione a sua **Subscrição**. Em seguida, utilize as definições da aplicação Function App, conforme especificado na tabela.
 
-2. Click **Compute** > **Function App**, select your **Subscription**, type a unique **App name** that identifies your function app, then specify the following settings:
-   
-   * **[Resource Group](../articles/azure-resource-manager/resource-group-overview.md)**: Select **Create new** and enter a name for your new resource group. 
-   * **[Hosting plan](../articles/app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md)**, which can be one of these plans: 
-     * **Consumption plan**: The default plan type for Azure Functions. When you choose a consumption plan, you must also choose the **Location**.  
-     * **App Service plan**: An App Service plan requires you to create an **App Service plan/location** or select an existing one. These settings determine the [location, features, cost, and compute resources](https://azure.microsoft.com/pricing/details/app-service/) associated with your app.  
-   * **Storage account**: Each function app requires a storage account. You can either choose an existing storage account or [create a storage account](../articles/storage/storage-create-storage-account.md#create-a-storage-account). 
-     
-    ![Create function app in the Azure portal](./media/functions-create-function-app-portal/function-app-create-flow.png)
+    ![Criar uma aplicação de função no portal do Azure](./media/functions-create-function-app-portal/function-app-create-flow.png)
 
-3. Click **Create** to provision and deploy the new function app.  
+    | Definição      | Valor sugerido  | Descrição                                        |
+    | ------------ |  ------- | -------------------------------------------------- |
+    | **Nome da aplicação**  | Nome globalmente exclusivo | Nome que identifica a sua aplicação Function App nova. | 
+    | **[Grupo de Recursos](../articles/azure-resource-manager/resource-group-overview.md)** |  myResourceGroup | Nome do grupo de recursos novo no qual a aplicação Function App vai ser criada. | 
+    | **[Plano de alojamento](../articles/azure-functions/functions-scale.md)** |   Plano de consumo | O plano de alojamento que define a forma como os recursos são alocados à sua aplicação Function App. No **Plano de Consumo** predefinido, os recursos são adicionados dinamicamente, conforme necessário por parte das suas funções. Só paga pelo tempo de execução das funções.   |
+    | **Localização** | Europa Ocidental | Escolha uma localização perto de si ou de outros serviços aos quais as suas funções vão aceder. |
+    | **[Conta de armazenamento](../articles/storage/storage-create-storage-account.md#create-a-storage-account)** |  Nome globalmente exclusivo |  O nome da conta de armazenamento nova utilizada pela sua aplicação Function App. Também pode utilizar uma conta já existente. |
+
+1. Clique em **Criar** para aprovisionar e implementar a nova aplicação de função.
