@@ -3,7 +3,7 @@ title: "Criar uma aplicação Web HTML estática no Azure em cinco minutos | Mic
 description: "Saiba como é fácil executar aplicações Web no Serviço de Aplicações ao implementar uma aplicação de exemplo."
 services: app-service\web
 documentationcenter: 
-author: cephalin
+author: rick-anderson
 manager: wpickett
 editor: 
 ms.assetid: 60495cc5-6963-4bf0-8174-52786d226c26
@@ -12,73 +12,77 @@ ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: hero-article
-ms.date: 03/17/2017
-ms.author: cephalin
-translationtype: Human Translation
-ms.sourcegitcommit: be3ac7755934bca00190db6e21b6527c91a77ec2
-ms.openlocfilehash: ba9b9b780da74c44f6314fa289f1d6b8c231dd30
-ms.lasthandoff: 05/03/2017
+ms.date: 05/08/2017
+ms.author: riande
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 71fea4a41b2e3a60f2f610609a14372e678b7ec4
+ms.openlocfilehash: 895906e1ab4bc50093ed3b18f043c3dd515ca054
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/10/2017
 
 
 ---
 # <a name="create-a-static-html-web-app-in-azure-in-five-minutes"></a>Criar uma aplicação Web HTML estática no Azure em cinco minutos
-[!INCLUDE [app-service-web-selector-get-started](../../includes/app-service-web-selector-get-started.md)] 
 
-Este Manual de Início Rápido ajuda-o a implementar um HTML+CSS simples no [Serviço de Aplicações do Azure](../app-service/app-service-value-prop-what-is.md) em apenas alguns minutos.
+Este guia de introdução mostra-lhe como implementar um site HTML+CSS básico no Azure. Vai executar a aplicação através de um [plano do Serviço de Aplicações do Azure](https://docs.microsoft.com/azure/app-service/azure-web-sites-web-hosting-plans-in-depth-overview) e criar uma aplicação Web no mesmo com a [CLI do Azure](https://docs.microsoft.com/en-us/cli/azure/get-started-with-azure-cli). Vai utilizar o Git para implementar a aplicação no Azure. Depois de instalados os pré-requisitos, o tutorial demora cerca de cinco minutos a ser concluído.
 
-Antes de começar, certifique-se de que a CLI do Azure foi instalada. Para obter mais informações, veja [Guia de instalação da CLI do Azure](https://docs.microsoft.com/cli/azure/install-azure-cli).
+![hello-world-in-browser](media/app-service-web-get-started-html/hello-world-in-browser-az.png)
 
-## <a name="log-in-to-azure"></a>Iniciar sessão no Azure
-Iniciar sessão no Azure através da execução de `az login` e das seguintes direções apresentadas no ecrã.
-   
-```azurecli
-az login
+## <a name="prerequisites"></a>Pré-requisitos
+
+Antes de criar este exemplo, transfira e instale os componentes seguintes:
+
+- [Git](https://git-scm.com/)
+- [CLI 2.0 do Azure](https://docs.microsoft.com/cli/azure/install-azure-cli)
+
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
+
+## <a name="download-the-sample"></a>Transferir o exemplo
+
+Numa janela do terminal, clone o repositório da aplicação de exemplo para o seu computador local:
+
+```bash
+git clone https://github.com/Azure-Samples/html-docs-hello-world.git
 ```
 
-## <a name="create-a-resource-group"></a>Criar um grupo de recursos   
-Criar um [grupo de recursos](../azure-resource-manager/resource-group-overview.md). Este é o local onde colocar todos os recursos Azure que pretende gerir em conjunto, tais como a aplicação web e o respetivo back-end da Base de Dados SQL.
+## <a name="view-the-html"></a>Ver o HTML
 
-```azurecli
-az group create --location "West Europe" --name myResourceGroup
+Navegue para o diretório que contém o HTML de exemplo. Abra o ficheiro *index.html* no browser.
+
+![hello-world-in-browser](media/app-service-web-get-started-html/hello-world-in-browser.png)
+
+[!INCLUDE [login-to-azure](../../includes/login-to-azure.md)] 
+[!INCLUDE [configure-deployment-user](../../includes/configure-deployment-user.md)] 
+
+[!INCLUDE [app-service-web-quickstart1](../../includes/app-service-web-quickstart1.md)] 
+
+Crie uma [Aplicação Web](app-service-web-overview.md) no plano do Serviço de Aplicações `quickStartPlan`. A aplicação Web fornece um espaço de alojamento para o código e um URL para ver a aplicação implementada.
+
+[!INCLUDE [app-service-web-quickstart2](../../includes/app-service-web-quickstart2.md)] 
+
+A página está a ser executada como uma aplicação Web do Serviço de Aplicações do Azure:
+
+![hello-world-in-browser](media/app-service-web-get-started-html/hello-world-in-browser-az.png)
+
+## <a name="update-and-redeploy-the-app"></a>Atualizar e reimplementar a aplicação
+
+Abra o ficheiro *index.html*. Altere a marcação. Por exemplo, altere `Hello world!` para `Hello Azure!`
+
+Consolide as suas alterações no Git e envie as alterações ao código para o Azure.
+
+```bash
+git commit -am "updated HTML"
+git push azure master
 ```
 
-Para ver os possíveis valores que pode utilizar para `--location`, utilize o comando do Azure CLI`az appservice list-locations`.
+Depois de concluída a implementação, atualize o browser para ver as alterações.
 
+[!INCLUDE [manage-azure-web-app](../../includes/manage-azure-web-app.md)]
 
-## <a name="create-an-app-service-plan"></a>Crie um plano do Serviço de Aplicações
-Crie um [plano do Serviço de Aplicações](../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md) "GRATUITO". 
-
-```azurecli
-az appservice plan create --name my-free-appservice-plan --resource-group myResourceGroup --sku FREE
-```
-
-## <a name="create-a-web-app"></a>Criar uma aplicação Web
-Crie uma aplicação Web com um nome exclusivo em `<app_name>`.
-
-```azurecli
-az appservice web create --name <app_name> --resource-group myResourceGroup --plan my-free-appservice-plan
-```
-
-## <a name="deploy-sample-application"></a>Implementar aplicação de exemplo
-Implemente um site HTML de exemplo a partir do GitHub.
-
-```azurecli
-az appservice web source-control config --name <app_name> --resource-group myResourceGroup \
---repo-url "https://github.com/Azure-Samples/app-service-web-html-get-started.git" --branch master --manual-integration 
-```
-
-## <a name="browse-to-web-app"></a>Navegue para a aplicação Web
-Para ver a aplicação em execução em direto no Azure, execute este comando.
-
-```azurecli
-az appservice web browse --name <app_name> --resource-group myResourceGroup
-```
-
-Parabéns, o seu primeiro site HTML estático está em execução em direto no Serviço de Aplicações do Azure.
 
 [!INCLUDE [cli-samples-clean-up](../../includes/cli-samples-clean-up.md)]
 
 ## <a name="next-steps"></a>Passos seguintes
 
-Explore os [Scripts de CLI de aplicações Web](app-service-cli-samples.md) criados anteriormente.
-
+- Explore sample [Web Apps CLI scripts](app-service-cli-samples.md) (Explorar scripts de exemplo da CLI das Aplicações Web).
+- Veja [Map a custom domain name](app-service-web-tutorial-custom-domain.md) (Mapear um nome de domínio personalizado), como contoso.com, para uma [aplicação do Serviço de Aplicações](app-service-web-tutorial-custom-domain.md).

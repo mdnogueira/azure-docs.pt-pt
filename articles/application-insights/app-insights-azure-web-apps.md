@@ -3,7 +3,7 @@ title: "Monitorizar o desempenho das aplicações Web do Azure | Microsoft Docs"
 description: "Monitorização do desempenho de aplicações para aplicações Web do Azure. Crie gráficos de tempos de carregamento e resposta, informações de dependências e defina alertas relativos ao desempenho."
 services: application-insights
 documentationcenter: .net
-author: alancameronwills
+author: CFreemanwa
 manager: carmonm
 ms.assetid: 0b2deb30-6ea8-4bc4-8ed0-26765b85149f
 ms.service: azure-portal
@@ -11,12 +11,13 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 03/30/2017
-ms.author: awills
-translationtype: Human Translation
-ms.sourcegitcommit: 0c4554d6289fb0050998765485d965d1fbc6ab3e
-ms.openlocfilehash: c6f25b8cf8c133f44644db1507958b2176efa230
-ms.lasthandoff: 04/13/2017
+ms.date: 05/05/2017
+ms.author: cfreeman
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 71fea4a41b2e3a60f2f610609a14372e678b7ec4
+ms.openlocfilehash: da09e09bb0605da583716e125f5d961bfb7af0c7
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/10/2017
 
 
 ---
@@ -40,9 +41,19 @@ Se já estiver a executar uma aplicação Web no Azure, já beneficia de alguma 
 2. **Instrumente a sua aplicação Web** depois de o Application Insights ser instalado. 
    
     ![Instrumente a sua aplicação Web](./media/app-insights-azure-web-apps/restart-web-app-for-insights.png)
+
+   **Ative a monitorização do lado do cliente** para visualização de páginas e telemetria do utilizador.
+
+   * Selecione Definições > Definições da Aplicação
+   * Em Definições da Aplicação, adicione um par de chaves-valores novo: 
+   
+    Chave: `APPINSIGHTS_JAVASCRIPT_ENABLED` 
+    
+    Valor:`true`
+   * **Guarde** as definições e **reinicie** a aplicação.
 3. **Monitorizar a sua aplicação**  [Explore os dados](#explore-the-data).
 
-Mais tarde, pode criar e reimplementar a aplicação com o Application Insights, se pretender.
+Mais tarde, pode criar a aplicação com o Application Insights, se pretender.
 
 *Como posso remover o Application Insights ou mudar para enviar para outro recurso?*
 
@@ -104,6 +115,7 @@ Para fazer pesquisas mais poderosas na sua telemetria, utilize a [linguagem de c
 
 ## <a name="next-steps"></a>Passos seguintes
 * [Run the profiler on your live app](app-insights-profiler.md) (Executar o gerador de perfis na sua aplicação publicada).
+* [Funções do Azure](https://github.com/christopheranderson/azure-functions-app-insights-sample) - monitorize Funções do Azure com o Application Insights
 * [Ativar os diagnósticos do Azure](app-insights-azure-diagnostics.md) para serem enviados para o Application Insights.
 * [Monitorizar as métricas de estado de funcionamento de serviço](../monitoring-and-diagnostics/insights-how-to-customize-monitoring.md) para se certificar de que o serviço está disponível e a responder.
 * [Receber notificações de alertas](../monitoring-and-diagnostics/insights-receive-alert-notifications.md) sempre que ocorrem eventos operacionais ou quando as métricas ultrapassam um determinado limiar.
