@@ -14,10 +14,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 02/24/2017
 ms.author: marsma
-translationtype: Human Translation
-ms.sourcegitcommit: db034a8151495fbb431f3f6969c08cb3677daa3e
-ms.openlocfilehash: eec53d5dea1255572d515f1ab2796da681579d19
-ms.lasthandoff: 04/29/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 71fea4a41b2e3a60f2f610609a14372e678b7ec4
+ms.openlocfilehash: e041a4d88d93b5ea9fcd792800c4a12a6a44ce36
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/10/2017
 
 
 ---
@@ -90,7 +91,7 @@ O Blob Storage oferece três tipos de blobs: blobs de blocos, blobs de acréscim
 Para grandes conjuntos de dados em que as restrições de rede fazem com que o carregamento ou a transferência de dados para o Blob Storage seja irrealista, pode enviar um disco rígido para a Microsoft para importar ou exportar dados diretamente a partir do datacenter. Consulte o artigo [Utilizar o Serviço de Importação/Exportação do Microsoft Azure para Transferir Dados para o Blob Storage](storage-import-export-service.md).
 
 ## <a name="table-storage"></a>Table Storage
-As aplicações modernas exigem frequentemente arquivos de dados com maior escalabilidade e flexibilidade do que as gerações anteriores do software necessário. O Table Storage oferece um armazenamento de elevada disponibilidade e extremamente dimensionável para que a aplicação possa ser automaticamente dimensionada para satisfazer o pedido do utilizador. O Armazenamento de tabelas é um arquivo de chaves/atributos NoSQL da Microsoft – tem um design sem esquemas, o que o diferencia das tradicionais bases de dados relacionais. Com um arquivo de dados sem esquemas, é fácil adaptar os seus dados à medida que as necessidades da sua aplicação evoluem. O Table Storage é fácil de utilizar para que os programadores possam criar aplicações rapidamente. O acesso aos dados é rápido e rentável para todos os tipos de aplicações.  Geralmente, o custo do Table Storage é significativamente inferior ao SQL tradicional para volumes de dados semelhantes.
+[!INCLUDE [storage-table-cosmos-db-tip-include](../../includes/storage-table-cosmos-db-tip-include.md)] As aplicações modernas exigem frequentemente arquivos de dados com maior escalabilidade e flexibilidade do que as gerações anteriores do software necessário. O Table Storage oferece um armazenamento de elevada disponibilidade e extremamente dimensionável para que a aplicação possa ser automaticamente dimensionada para satisfazer o pedido do utilizador. O Armazenamento de tabelas é um arquivo de chaves/atributos NoSQL da Microsoft – tem um design sem esquemas, o que o diferencia das tradicionais bases de dados relacionais. Com um arquivo de dados sem esquemas, é fácil adaptar os seus dados à medida que as necessidades da sua aplicação evoluem. O Table Storage é fácil de utilizar para que os programadores possam criar aplicações rapidamente. O acesso aos dados é rápido e rentável para todos os tipos de aplicações.  Geralmente, o custo do Table Storage é significativamente inferior ao SQL tradicional para volumes de dados semelhantes.
 
 O Table Storage é um arquivo de atributo chave, o que significa que cada valor numa tabela é armazenado com um nome de propriedade escrito. O nome da propriedade pode ser utilizado para filtrar e especificar critérios de seleção. Uma coleção de propriedades e os respetivos valores compõem uma entidade. Uma vez que o Table Storage não tem esquemas, duas entidades na mesma tabela podem conter diferentes coleções de propriedades e essas propriedades podem ser de diferentes tipos.
 
@@ -200,7 +201,7 @@ O serviço de Importação/Exportação do Azure fornece uma forma de importar o
 * [Biblioteca de Clientes do Movimento de Dados de Armazenamento para o .NET](https://www.nuget.org/packages/Microsoft.Azure.Storage.DataMovement/)
 
 ### <a name="tools-and-utilities"></a>Ferramentas e utilitários
-* [Explorador do Armazenamento do Azure](http://go.microsoft.com/fwlink/?LinkID=822673&clcid=0x409)
+* O [Explorador de Armazenamento do Microsoft Azure](../vs-azure-tools-storage-manage-with-storage-explorer.md) é uma aplicação autónoma e gratuita da Microsoft, que lhe permite trabalhar visualmente com dados do Armazenamento do Azure no Windows, macOS e Linux.
 * [Ferramentas de Cliente do Armazenamento do Azure](storage-explorers.md)
 * [Azure SDKs e Ferramentas](https://azure.microsoft.com/tools/)
 * [Emulador de Armazenamento do Azure](http://www.microsoft.com/download/details.aspx?id=43709)

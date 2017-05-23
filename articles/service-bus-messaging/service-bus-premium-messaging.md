@@ -15,10 +15,10 @@ ms.topic: get-started-article
 ms.date: 04/28/2017
 ms.author: darosa;sethm;jotaub
 ms.translationtype: Human Translation
-ms.sourcegitcommit: e155891ff8dc736e2f7de1b95f07ff7b2d5d4e1b
-ms.openlocfilehash: 72e4c59e1282d97cfc5aa5f55861c6f70d419ce8
+ms.sourcegitcommit: 5e92b1b234e4ceea5e0dd5d09ab3203c4a86f633
+ms.openlocfilehash: a916f643c7e6727d6053865d1c0bd2f683a53b3f
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/02/2017
+ms.lasthandoff: 05/10/2017
 
 
 ---
@@ -48,11 +48,17 @@ As seguintes secções abordam as diferenças entre as camadas de mensagens Stan
 
 ### <a name="partitioned-queues-and-topics"></a>Filas e tópicos particionados
 
-As filas e tópicos particionados são suportados nas Mensagens Premium; na realidade, estas entidades são sempre particionadas (e não podem ser desativadas). No entanto, as filas e tópicos particionados não funcionam da mesma forma que nos escalões de mensagens Standard e Basic do Service Bus. As mensagens Premium não utilizam SQL como armazém de dados e já não tem a possível concorrência de recursos associada a uma plataforma partilhada. Como resultado, não é necessário criar partições para melhorar o desempenho. Além disso, a quantidade de partições foi alterada de 16 partições nas Mensagens Standard para 2 partições nas Premium. Ter duas partições garante a disponibilidade e é um número mais adequado para o ambiente de tempo de execução Premium. Para mais informações sobre a criação de partições, consulte o artigo [Filas e tópicos particionados](service-bus-partitioning.md).
+As filas e tópicos particionados são suportados nas Mensagens Premium; na realidade, estas entidades são sempre particionadas (e não podem ser desativadas). No entanto, as filas e tópicos particionados não funcionam da mesma forma que nos escalões de mensagens Standard e Basic do Service Bus. As mensagens Premium não utilizam SQL como armazém de dados e já não tem a possível concorrência de recursos associada a uma plataforma partilhada. Como resultado, não é necessário criar partições para melhorar o desempenho. Além disso, a quantidade de partições foi alterada de 16 partições nas Mensagens Standard para 2 partições nas Premium. Ter duas partições garante a disponibilidade e é um número mais adequado para o ambiente de tempo de execução Premium. 
+
+Com as mensagens Premium, quando especificar o tamanho de uma entidade com [MaxSizeInMegabytes](/dotnet/api/microsoft.servicebus.messaging.queuedescription.maxsizeinmegabytes#Microsoft_ServiceBus_Messaging_QueueDescription_MaxSizeInMegabytes), esse tamanho é dividido igualmente em duas partições, ao contrário das [entidades de partições Standard](service-bus-partitioning.md#standard) no qual o tamanho total é 16 vezes o tamanho especificado. 
+
+Para mais informações sobre a criação de partições, consulte o artigo [Filas e tópicos particionados](service-bus-partitioning.md).
 
 ### <a name="express-entities"></a>Entidades expressas
 
-Uma vez que as mensagens Premium se executam num ambiente de tempo de execução completamente isolado, as entidades expressas deixam de ser suportadas nos espaços de nome Premium. Para obter mais informações sobre a funcionalidade Express, veja a propriedade [QueueDescription.EnableExpress](/dotnet/api/microsoft.servicebus.messaging.queuedescription.enableexpress?view=azureservicebus-4.0.0#Microsoft_ServiceBus_Messaging_QueueDescription_EnableExpress).
+Uma vez que as mensagens Premium se executam num ambiente de tempo de execução completamente isolado, as entidades expressas deixam de ser suportadas nos espaços de nome Premium. Para obter mais informações sobre a funcionalidade Express, veja a propriedade [QueueDescription.EnableExpress](/dotnet/api/microsoft.servicebus.messaging.queuedescription.enableexpress#Microsoft_ServiceBus_Messaging_QueueDescription_EnableExpress).
+
+Se tiver código em execução nas mensagens Standard e quiser transportar para o escalão Premium, certifique-se de que a propriedade [EnableExpress](/dotnet/api/microsoft.servicebus.messaging.queuedescription.enableexpress#Microsoft_ServiceBus_Messaging_QueueDescription_EnableExpress) está definida como **falso** (o valor predefinido).
 
 ## <a name="get-started-with-premium-messaging"></a>Introdução às Mensagens Premium
 

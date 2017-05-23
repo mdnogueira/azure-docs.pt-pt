@@ -11,7 +11,7 @@ Pode utilizar o serviço Tabela para armazenar e consultar conjuntos enormes de 
 ## <a name="table-service-concepts"></a>Conceitos do Serviço Tabela
 O serviço Tabela contém os seguintes componentes:
 
-![Table1][Table1]
+![Diagrama de componente do serviço Tabela][Table1]
 
 * **Formato do URL:** tabelas de códigos de endereços numa conta com este formato de endereço:   
   http://`<storage account>`.table.core.windows.net/`<table>`  
@@ -26,8 +26,3 @@ Para obter detalhes sobre a nomenclatura das tabelas e das propriedades, veja [N
 
 [Table1]: ./media/storage-table-concepts-include/table1.png
 [OData.org]: http://www.odata.org/
-
-
-<!--HONumber=Nov16_HO2-->
-
-

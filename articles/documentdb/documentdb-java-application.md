@@ -1,43 +1,44 @@
 ---
-title: "Tutorial de desenvolvimento de aplicações Java utilizando o DocumentDB | Microsoft Docs"
-description: "Este tutorial de aplicação Web do Java mostra-lhe como utilizar o serviço do Azure DocumentDB para armazenar e aceder a dados a partir de uma aplicação Java alojada em Web sites do Azure."
+title: "Tutorial de desenvolvimento de aplicações Java utilizando o Azure Cosmos DB | Microsoft Docs"
+description: "Este tutorial de aplicação Web do Java mostra-lhe como utilizar o serviço do Azure Cosmos DB para armazenar e aceder a dados a partir de uma aplicação Java alojada em sites do Azure."
 keywords: "Desenvolvimento de aplicações, tutorial sobre bases de dados, aplicação java, tutorial sobre aplicações web java, documentdb, azure, Microsoft azure"
-services: documentdb
+services: cosmosdb
 documentationcenter: java
 author: dennyglee
 manager: jhubbard
 editor: mimig
 ms.assetid: 0867a4a2-4bf5-4898-a1f4-44e3868f8725
-ms.service: documentdb
+ms.service: cosmosdb
 ms.devlang: java
 ms.topic: hero-article
 ms.tgt_pltfrm: NA
 ms.workload: data-services
 ms.date: 11/16/2016
 ms.author: denlee
-translationtype: Human Translation
-ms.sourcegitcommit: 72b2d9142479f9ba0380c5bd2dd82734e370dee7
-ms.openlocfilehash: 6e315ea33fe4a493f1ab349482f9af3a732b3127
-ms.lasthandoff: 04/18/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 71fea4a41b2e3a60f2f610609a14372e678b7ec4
+ms.openlocfilehash: a9ba49cb52fee446b7bffaa1579995f2cd095ead
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/10/2017
 
 
 ---
-# <a name="build-a-java-web-application-using-documentdb"></a>Criar uma aplicação Web de Java utilizando o DocumentDB
+# <a name="build-a-java-web-application-using-azure-cosmos-db"></a>Criar uma aplicação Web Java com o Azure Cosmos DB
 > [!div class="op_single_selector"]
 > * [.NET](documentdb-dotnet-application.md)
 > * [.NET para MongoDB](documentdb-mongodb-application.md)
 > * [Node.js](documentdb-nodejs-application.md)
 > * [Java](documentdb-java-application.md)
-> * [Python](documentdb-python-application.md)
+> * [python](documentdb-python-application.md)
 > 
 > 
 
-Este tutorial de aplicação Web do Java mostra-lhe como utilizar o serviço do [Microsoft Azure DocumentDB](https://portal.azure.com/#gallery/Microsoft.DocumentDB) para armazenar e aceder a dados a partir de uma aplicação Java alojada em Web sites do Azure. Neste tópico, irá aprender:
+Este tutorial de aplicação Web do Java mostra-lhe como utilizar o serviço do [Microsoft Azure Cosmos DB](https://portal.azure.com/#gallery/Microsoft.Azure Cosmos DB) para armazenar e aceder a dados a partir de uma aplicação Java alojada em sites do Azure. Neste tópico, irá aprender:
 
 * Como criar uma aplicação JSP básica no Eclipse.
-* Como trabalhar com o serviço do Azure DocumentDB utilizando o [SDK Java do DocumentDB](https://github.com/Azure/azure-documentdb-java).
+* Como trabalhar com o serviço do Azure Cosmos DB com o [SDK Java do Azure Cosmos DB](https://github.com/Azure/azure-documentdb-java).
 
-Este tutorial de aplicação Java mostra-lhe como criar uma aplicação de gestão de tarefas baseada na Web que lhe permite criar, obter e marcar tarefas como concluídas, conforme mostrado na imagem que se segue. Cada uma das tarefas da ToDo List é armazenada como documentos JSON no Azure DocumentDB.
+Este tutorial de aplicação Java mostra-lhe como criar uma aplicação de gestão de tarefas baseada na Web que lhe permite criar, obter e marcar tarefas como concluídas, conforme mostrado na imagem que se segue. Cada uma das tarefas da ToDo List é armazenada como documentos JSON no Azure Cosmos DB.
 
 ![A minha aplicação Java da ToDo List](./media/documentdb-java-application/image1.png)
 
@@ -53,15 +54,15 @@ Antes de começar este tutorial de desenvolvimento de aplicação, tem de ter o 
 
     OU
 
-    Uma instalação local do [Emulador do Azure DocumentDB](documentdb-nosql-local-emulator.md).
+    Uma instalação local do [Emulador do Azure Cosmos DB](documentdb-nosql-local-emulator.md).
 * [Kit de desenvolvimento do Java (JDK) 7 +](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
 * [IDE Eclipse para Programadores de Java EE.](http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/lunasr1)
 * [Um Web site do Azure com um tempo de execução em ambiente Java (por exemplo, Tomcat ou Jetty) ativado.](../app-service-web/web-sites-java-get-started.md)
 
 Se estiver a instalar estas ferramentas pela primeira vez, coreservlets.com fornece instruções do processo de instalação na secção Início Rápido do respetivo artigo [Tutorial: Instalar TomCat7 e utilizá-lo com o Eclipse](http://www.coreservlets.com/Apache-Tomcat-Tutorial/tomcat-7-with-eclipse.html).
 
-## <a id="CreateDB"></a>Passo 1: criar uma conta de base de dados no DocumentDB
-Comecemos por criar uma conta do DocumentDB. Se já tiver uma conta ou se estiver a utilizar o Emulador do DocumentDB para este tutorial, pode avançar para o [Passo 2: Criar a aplicação Java JSP](#CreateJSP).
+## <a id="CreateDB"></a>Passo 1: Criar uma conta de base de dados do Azure Cosmos DB
+Comecemos por criar uma conta do Azure Cosmos DB. Se já tiver uma conta ou se estiver a utilizar o Emulador do Azure Cosmos DB para este tutorial, pode avançar para o [Passo 2: Criar a aplicação Java JSP](#CreateJSP).
 
 [!INCLUDE [documentdb-create-dbaccount](../../includes/documentdb-create-dbaccount.md)]
 
@@ -116,7 +117,7 @@ Para tal, terá de converter o seu projeto em projeto maven, realizando os segui
 6. Clique em **Ok** e o Maven irá instalar o SDK de Java DocumentDB.
 7. Guarde o ficheiro pom.xml.
 
-## <a id="UseService"></a>Passo 4: utilizar o serviço do DocumentDB numa aplicação de Java
+## <a id="UseService"></a>Passo 4: utilizar o serviço do Azure Cosmos DB numa aplicação de Java
 1. Em primeiro lugar, definamos o objeto TodoItem:
    
         @Data
@@ -129,7 +130,7 @@ Para tal, terá de converter o seu projeto em projeto maven, realizando os segui
         }
    
     Neste projeto, utilizamos o [Project Lombok](http://projectlombok.org/) para gerar o construtor, os getters, os setters e um construtor. Em alternativa, pode escrever manualmente este código ou pedir a sua geração ao IDE.
-2. Para invocar o serviço do DocumentDB, tem de instanciar um novo **DocumentClient**. Em geral, é melhor reutilizar o **DocumentClient** - em vez de construir um novo cliente para cada pedido subsequente. Podemos reutilizar o cliente envolvendo-o num **DocumentClientFactory**. Neste ponto, também terá de colar o valor do URI e a CHAVE PRIMÁRIA que guardou na sua área de transferência no [passo 1](#CreateDB). Substitua o [SEU\_PONTO FINAL\_AQUI] pelo seu URI e substitua a [SUA\_CHAVE\_AQUI] pela sua CHAVE PRIMÁRIA.
+2. Para invocar o serviço do Azure Cosmos DB, tem de instanciar um novo **DocumentClient**. Em geral, é melhor reutilizar o **DocumentClient** - em vez de construir um novo cliente para cada pedido subsequente. Podemos reutilizar o cliente envolvendo-o num **DocumentClientFactory**. Neste ponto, também terá de colar o valor do URI e a CHAVE PRIMÁRIA que guardou na sua área de transferência no [passo 1](#CreateDB). Substitua o [SEU\_PONTO FINAL\_AQUI] pelo seu URI e substitua a [SUA\_CHAVE\_AQUI] pela sua CHAVE PRIMÁRIA.
    
         private static final String HOST = "[YOUR_ENDPOINT_HERE]";
         private static final String MASTER_KEY = "[YOUR_KEY_HERE]";
@@ -140,7 +141,7 @@ Para tal, terá de converter o seu projeto em projeto maven, realizando os segui
         public static DocumentClient getDocumentClient() {
             return documentClient;
         }
-3. Agora, criemos um Objeto de Acesso a Dados (DAO) para abstrair os nossos itens ToDo no DocumentDB.
+3. Agora, criemos um Objeto de Acesso a Dados (DAO) para abstrair os nossos itens ToDo no Azure Cosmos DB.
    
     Para guardar os itens ToDo numa coleção, o cliente tem de saber qual a base de dados e a coleção a manter (conforme referenciado em auto-ligações). Em geral, é melhor colocar em cache a base de dados e a coleção sempre que possível, para evitar tempos de retorno adicionais para a base de dados.
    
@@ -153,7 +154,7 @@ Para tal, terá de converter o seu projeto em projeto maven, realizando os segui
             // The name of our collection.
             private static final String COLLECTION_ID = "TodoCollection";
    
-            // The DocumentDB Client
+            // The Azure Cosmos DB Client
             private static DocumentClient documentClient = DocumentClientFactory
                     .getDocumentClient();
    
@@ -257,7 +258,7 @@ Para tal, terá de converter o seu projeto em projeto maven, realizando os segui
    
             return gson.fromJson(todoItemDocument.toString(), TodoItem.class);
         }
-5. Tal como as bases de dados DocumentDB e coleções, os documentos também são referenciados por auto-ligações. A seguinte função do programa auxiliar permite-nos obter documentos por outro atributo (por exemplo, "id") em vez de auto-ligação:
+5. Tal como as bases de dados do Azure Cosmos DB e coleções, os documentos também são referenciados por auto-ligações. A seguinte função do programa auxiliar permite-nos obter documentos por outro atributo (por exemplo, "id") em vez de auto-ligação:
    
         private Document getDocumentById(String id) {
             // Retrieve the document using the DocumentClient.
@@ -334,7 +335,7 @@ Para tal, terá de converter o seu projeto em projeto maven, realizando os segui
    
         @Override
         public boolean deleteTodoItem(String id) {
-            // DocumentDB refers to documents by self link rather than id.
+            // Azure Cosmos DB refers to documents by self link rather than id.
    
             // Query for the document to retrieve the self link.
             Document todoItemDocument = getDocumentById(id);
@@ -464,7 +465,7 @@ Agora que concluímos a parte divertida - apenas falta criar uma interface de ut
         <head>
           <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
           <meta http-equiv="X-UA-Compatible" content="IE=edge;" />
-          <title>Azure DocumentDB Java Sample</title>
+          <title>Azure Cosmos DB Java Sample</title>
    
           <!-- Bootstrap -->
           <link href="//ajax.aspnetcdn.com/ajax/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
@@ -748,7 +749,7 @@ Todos os exemplos deste tutorial estão incluídos no projeto [todo](https://git
 7. No ecrã **Seleção do Ramo**, certifique-se de ter selecionado **principal** e, em seguida, clique em **Seguinte**.
 8. No ecrã **Destino Local**, clique em **Procurar** para selecionar uma pasta em que o repositório pode ser copiado e, em seguida, clique em **Seguinte**.
 9. No ecrã **Selecionar um assistente a utilizar para importar projetos**, certifique-se de ter selecionado **Importar projetos existentes** e, em seguida, clique em **Seguinte**.
-10. No ecrã **Importar Projetos**, anule a seleção do projeto **DocumentDB** e, em seguida, clique em **Concluir**. O projeto DocumentDB contém o SDK de Java DocumentDB, que iremos adicionar como uma dependência.
+10. No ecrã **Importar Projetos**, anule a seleção do projeto **Azure Cosmos DB** e, em seguida, clique em **Concluir**. O projeto da BD do Cosmos do Azure contém o SDK do Azure Cosmos DB, que iremos adicionar como uma dependência.
 11. Em **Explorador de Projeto**, navegue até azure-documentdb-java-sample\src\com.microsoft.azure.documentdb.sample.dao\DocumentClientFactory.java e substitua os valores ANFITRIÃO e MASTER_KEY com o URI e a CHAVE PRIMÁRIA para a sua conta do DocumentDB e, em seguida, guarde o ficheiro. Para obter mais informações, veja o [Passo 1. Criar uma conta de base de dados no DocumentDB](#CreateDB).
 12. Em **Explorador de Projeto**, clique com o botão direito do rato em **azure-documentdb-java-sample**, clique em **Criar Caminho**, e, em seguida, clique em **Configurar Criar Caminho**.
 13. No ecrã **Criar Caminho Java**, no painel da direita, selecione o separador **Bibliotecas** e, em seguida, clique em **Adicionar JARs Externos**. Navegue para a localização do ficheiro lombok.jar e clique em **Abrir**, e, em seguida, clique em **OK**.

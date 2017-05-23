@@ -13,12 +13,13 @@ ms.devlang: na
 ms.workload: search
 ms.topic: hero-article
 ms.tgt_pltfrm: na
-ms.date: 02/22/2017
+ms.date: 05/01/2017
 ms.author: heidist
-translationtype: Human Translation
-ms.sourcegitcommit: 72b2d9142479f9ba0380c5bd2dd82734e370dee7
-ms.openlocfilehash: 7945ee77be8a09dcac9ddd6b338bdd542ec18540
-ms.lasthandoff: 04/18/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 71fea4a41b2e3a60f2f610609a14372e678b7ec4
+ms.openlocfilehash: e03d0ff92b0ad6d34314c55d98972997769d09f0
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/10/2017
 
 
 ---
@@ -199,7 +200,7 @@ Tem agora um índice de pesquisa pronto para consulta. O **Explorador de pesquis
 
   Para ver componentes individuais, clique nos mosaicos **Índice**, **Indexador** ou **Origens de Dados** no seu dashboard para apresentar uma lista de objetos existentes. Para saber mais sobre as edições a índices que não exigem uma recompilação, veja [Update Index (Azure Search REST API) (Atualizar Índice [API REST do Azure Search])](https://docs.microsoft.com/rest/api/searchservice/update-index).
 
-+ Experimente as ferramentas e os passos com outras origens de dados. O conjunto de dados de exemplo, `realestate-us-sample`, é de uma Base de Dados SQL do Azure que o Azure Search consegue pesquisar. Para além da Base de Dados SQL do Azure, o Azure Search consegue pesquisar e inferior um índice a partir de estruturas de dados simples no Armazenamento de Tabelas do Azure, no Armazenamento de Blobs, no SQL Server em VMs do Azure e no DocumentDB. O assistente suporta todas estas origens de dados. No código, pode utilizar um *indexador* para preencher facilmente um índice.
++ Experimente as ferramentas e os passos com outras origens de dados. O conjunto de dados de exemplo, `realestate-us-sample`, é de uma Base de Dados SQL do Azure que o Azure Search consegue pesquisar. Para além da Base de Dados SQL do Azure, o Azure Search consegue pesquisar e inferior um índice a partir de estruturas de dados simples no Armazenamento de Tabelas do Azure, no Armazenamento de Blobs, no SQL Server em VMs do Azure e o Azure Cosmos DB. O assistente suporta todas estas origens de dados. No código, pode utilizar um *indexador* para preencher facilmente um índice.
 
 + Todas as outras origens de dados que não pertencem ao indexador são suportadas através de um modelo push, no qual o código envia conjuntos de linhas novos e alterados em JSON para o seu índice. Para obter mais informações, veja [Add, update, or delete documents in Azure Search (Adicionar, atualizar ou eliminar documentos no Azure Search)](https://docs.microsoft.com/rest/api/searchservice/addupdate-or-delete-documents).
 

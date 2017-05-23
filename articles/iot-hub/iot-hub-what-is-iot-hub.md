@@ -15,10 +15,11 @@ ms.workload: na
 ms.date: 05/02/2017
 ms.author: dobett
 ms.custom: H1Hack27Feb2017
-translationtype: Human Translation
-ms.sourcegitcommit: 7adde91586f5fbbffd0aeaf0efb0810cc891ac0b
-ms.openlocfilehash: ed204c466c5cfb60e5ba250b9dacb2524ca384eb
-ms.lasthandoff: 04/18/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 71fea4a41b2e3a60f2f610609a14372e678b7ec4
+ms.openlocfilehash: 5b5792d2edee2069c7d021415632511643d68136
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/10/2017
 
 
 ---
@@ -66,7 +67,7 @@ Para além de um avançado conjunto de opções de comunicação [dispositivo pa
 * **Um vasto conjunto de bibliotecas do dispositivo**. Os [Azure IoT Device SDKs][lnk-device-sdks] estão disponíveis e suportam vários idiomas e plataformas -- C para várias distribuições Linux, Windows e sistemas operativos em tempo real. Os SDKs do Azure IoT Device suportam ainda idiomas geridos, como o C#, Java e JavaScript.
 * **Protocolos e extensibilidade do IoT**. Se a solução não conseguir utilizar as bibliotecas do dispositivo, o IoT Hub expõe um protocolo público que permite aos dispositivos utilizarem de forma nativa os protocolos MQTT v3.1.1, HTTP 1.1 ou AMQP 1.0.  Pode ainda expandir o seu IoT Hub para que suporte protocolos personalizados ao:
   
-  * Criar um gateway de campo com o [SDK do Gateway do Azure IoT][lnk-gateway-sdk] que converte o seu protocolo personalizado num dos três protocolos abrangidos pelo Hub IoT. 
+  * Criar um gateway de campo com o [Azure IoT Edge][lnk-gateway-sdk] que converte o seu protocolo personalizado num dos três protocolos abrangidos pelo Hub IoT. 
   * Personalizar o [gateway de protocolo do IoT do Azure][protocol-gateway], um componente de código aberto executado na cloud.
 * **Dimensionamento**. O IoT Hub do Azure IoT dimensiona milhões de dispositivos ligados em simultâneo e milhões de eventos por segundo.
 
@@ -117,7 +118,7 @@ Para começar a escrever código e executar alguns exemplos, veja o tutorial [In
 [lnk-apple-push]: https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW9
 [lnk-device-sdks]: https://github.com/Azure/azure-iot-sdks
 [lnk-refarch]: http://download.microsoft.com/download/A/4/D/A4DAD253-BC21-41D3-B9D9-87D2AE6F0719/Microsoft_Azure_IoT_Reference_Architecture.pdf
-[lnk-gateway-sdk]: https://github.com/Azure/azure-iot-gateway-sdk
+[lnk-gateway-sdk]: https://github.com/Azure/iot-edge
 [lnk-send-messages]: iot-hub-devguide-messaging.md
 [lnk-device-management]: iot-hub-device-management-overview.md
 

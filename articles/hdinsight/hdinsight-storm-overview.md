@@ -16,10 +16,11 @@ ms.tgt_pltfrm: na
 ms.workload: big-data
 ms.date: 03/31/2017
 ms.author: larryfr
-translationtype: Human Translation
-ms.sourcegitcommit: 6ea03adaabc1cd9e62aa91d4237481d8330704a1
-ms.openlocfilehash: 73e524bf9e7d51cee841a3c5599ab33aa31cbc37
-ms.lasthandoff: 04/06/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 71fea4a41b2e3a60f2f610609a14372e678b7ec4
+ms.openlocfilehash: 90043b27360cfea4235c4401bcba9e6a254b8627
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/10/2017
 
 
 ---
@@ -65,7 +66,7 @@ O Storm no HDInsight oferece as seguintes grandes vantagens:
 
     * Storage do Azure
 
-    * Azure DocumentDB
+    * Azure Cosmos DB
 
 * Combina com segurança as capacidades de vários clusters do HDInsight através da Rede Virtual. Pode criar pipelines de análise que utilizem clusters do HDInsight, HBase ou Hadoop.
 
@@ -103,7 +104,7 @@ Pode aprovisionar um novo cluster do Storm no HDInsight em minutos. Para obter m
 
     * [Process events from Azure Event Hubs with Storm on HDInsight (C#)](hdinsight-storm-develop-csharp-event-hub-topology.md) (Processar eventos dos Hubs de Eventos do Azure com o Storm no HDInsight [C#])
 
-* __Base de Dados SQL__, __DocumentDB__, __Hubs de Eventos__ e __HBase__: exemplos do modelos estão incluídos nas Ferramentas do Data Lake para Visual Studio. Para obter mais informações, veja [Desenvolver topologias C# para Storm no HDInsight](hdinsight-storm-develop-csharp-visual-studio-topology.md).
+* __Base de Dados SQL__, __Cosmos DB__, __Hubs de Eventos__ e __HBase__: exemplos do modelos estão incluídos nas Ferramentas do Data Lake para Visual Studio. Para obter mais informações, veja [Desenvolver topologias C# para Storm no HDInsight](hdinsight-storm-develop-csharp-visual-studio-topology.md).
 
 ## <a name="reliability"></a>Fiabilidade
 

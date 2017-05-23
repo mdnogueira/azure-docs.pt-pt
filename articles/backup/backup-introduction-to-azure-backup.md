@@ -13,19 +13,19 @@ ms.workload: storage-backup-recovery
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 5/3/2017
+ms.date: 5/8/2017
 ms.author: markgal;trinadhk; anuragm
 ms.custom: H1Hack27Feb2017
 ms.translationtype: Human Translation
-ms.sourcegitcommit: e72275ffc91559a30720a2b125fbd3d7703484f0
-ms.openlocfilehash: 245a89f2576dc1bfed2f9078f1d8761f91caf561
+ms.sourcegitcommit: 71fea4a41b2e3a60f2f610609a14372e678b7ec4
+ms.openlocfilehash: cd07cfe9663ffe2561f87b76b3eef1a551c9d665
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/05/2017
+ms.lasthandoff: 05/10/2017
 
 
 ---
 # <a name="overview-of-the-features-in-azure-backup"></a>Descrição geral das funcionalidades do Azure Backup
-O Azure Backup é o serviço baseado no Azure que pode utilizar para criar cópias de segurança (ou proteger) e restaurar os dados na nuvem Microsoft. O Azure Backup substitui a solução de cópia de segurança no local ou fora das instalações por uma solução baseada na nuvem que é fiável, segura e competitiva em termos de custos. O Azure Backup oferece vários componentes que são transferidos e implementados no computador ou servidor adequado, ou na nuvem. O componente ou o agente que implementar depende do que pretende proteger. Todos os componentes do Azure Backup (independentemente de estar a proteger dados no local ou na nuvem) podem ser utilizados para criar cópias de segurança para um cofre do Backup no Azure. Veja a [tabela de componentes do Azure Backup](backup-introduction-to-azure-backup.md#which-azure-backup-components-should-i-use) (mais à frente neste artigo) para obter informações sobre os componentes a utilizar para proteger dados, aplicações ou cargas de trabalho específicos.
+O Azure Backup é o serviço baseado no Azure que pode utilizar para criar cópias de segurança (ou proteger) e restaurar os dados na nuvem Microsoft. O Azure Backup substitui a solução de cópia de segurança no local ou fora das instalações por uma solução baseada na nuvem que é fiável, segura e competitiva em termos de custos. O Azure Backup oferece vários componentes que são transferidos e implementados no computador ou servidor adequado, ou na nuvem. O componente ou o agente que implementar depende do que pretende proteger. Todos os componentes do Azure Backup (independentemente de estar a proteger dados no local ou na cloud) podem ser utilizados para criar cópias de segurança para um cofre dos Serviços de Recuperação do Azure. Veja a [tabela de componentes do Azure Backup](backup-introduction-to-azure-backup.md#which-azure-backup-components-should-i-use) (mais à frente neste artigo) para obter informações sobre os componentes a utilizar para proteger dados, aplicações ou cargas de trabalho específicos.
 
 [Veja uma descrição geral do vídeo do Azure Backup](https://azure.microsoft.com/documentation/videos/what-is-azure-backup/)
 
@@ -42,7 +42,7 @@ As soluções de cópia de segurança tradicionais evoluíram para tratar a nuve
 
 * O armazenamento georredundante(GRS) replica os dados para uma região secundária (a centenas de quilómetros da localização primária da origem dos dados). O GRS custa mais do que o LRS, mas o GRS proporciona um nível mais elevado de durabilidade aos seus dados, mesmo se ocorrer uma indisponibilidade regional.
 
-**Transferência de dados ilimitada** - o Azure Backup não limita a quantidade de dados de entrada ou saída que transfere. O Azure Backup também não cobra por dados que sejam transferidos. No entanto, se utilizar o serviço Importar/Exportar do Azure para importar grandes quantidades de dados, existe um custo associado aos dados de entrada. Para mais informações sobre este custo, veja [Fluxo de trabalho de cópia de segurança offline no Azure Backup](backup-azure-backup-import-export.md). Os dados de saída são os dados transferidos a partir de um cofre do Backup durante uma operação de restauro.
+**Transferência de dados ilimitada** - o Azure Backup não limita a quantidade de dados de entrada ou saída que transfere. O Azure Backup também não cobra por dados que sejam transferidos. No entanto, se utilizar o serviço Importar/Exportar do Azure para importar grandes quantidades de dados, existe um custo associado aos dados de entrada. Para mais informações sobre este custo, veja [Fluxo de trabalho de cópia de segurança offline no Azure Backup](backup-azure-backup-import-export.md). Os dados de saída são os dados transferidos a partir de um cofre dos Serviços de Recuperação durante uma operação de restauro.
 
 **Encriptação de dados**  - a encriptação de dados permite a transmissão e o armazenamento seguros dos seus dados na nuvem pública. A frase de acesso de encriptação é armazenada por si localmente, e nunca é transmitida ou armazenada no Azure. Se for necessário restaurar quaisquer dados, é o único a ter a frase de acesso ou a chave de encriptação.
 
@@ -55,18 +55,18 @@ Se não tiver a certeza qual é componente do Azure Backup que funciona para as 
 
 | Componente | Benefícios | Limites | O que está protegido? | Onde estão armazenadas as cópias de segurança? |
 | --- | --- | --- | --- | --- |
-| Agente do Backup do Azure (MARS) |<li>Os ficheiros e as pastas de cópia de segurança no SO Windows físico ou virtual (as VMs podem estar no local ou no Azure)<li>Nenhum servidor de cópia de segurança separado necessário. |<li>Criar cópias de segurança 3 vezes por dia <li>Sem deteção de aplicações; restauro apenas ao nível do ficheiro, pasta e volume, <li>  Sem suporte para Linux. |<li>Ficheiros, <li>Pastas |Cofre do Backup do Azure |
-| System Center DPM |<li>Instantâneos de deteção de aplicações (VSS)<li>Total flexibilidade para quando efetuar cópias de segurança<li>Granularidade de recuperação (tudo)<li>Pode utilizar o cofre do Backup do Azure<li>Apoio técnico para Linux para VMs de Hyper-V e VMware <li>Criar cópias de segurança e restaurar VMs VMware com o DPM 2012 R2 |Não é possível fazer cópias de segurança da carga de trabalho do Oracle.|<li>Ficheiros, <li>Pastas,<li> Volumes, <li>VMs,<li> Aplicações,<li> Cargas de trabalho |<li>Cofre do Backup do Azure,<li> Disco ligado localmente,<li>  Banda (apenas no local) |
-| Servidor do Backup do Azure |<li>Instantâneos da deteção de aplicações (VSS)<li>Total flexibilidade para quando efetuar cópias de segurança<li>Granularidade de recuperação (tudo)<li>Pode utilizar o cofre do Backup do Azure<li>Apoio técnico para Linux para VMs de Hyper-V e VMware<li>Criar cópias de segurança e restaurar VMs VMware <li>Não necessita de uma licença do System Center |<li>Não é possível fazer cópias de segurança da carga de trabalho do Oracle.<li>Requer sempre a subscrição do Azure em direto<li>Sem suporte para cópia de segurança em fila |<li>Ficheiros, <li>Pastas,<li> Volumes, <li>VMs,<li> Aplicações,<li> Cargas de trabalho |<li>Cofre do Backup do Azure,<li> Disco ligado localmente |
-| Cópia de segurança da VM do IaaS do Azure |<li>Cópias de segurança nativas para o Windows/Linux<li>Não é necessária qualquer instalação do agente específico<li>Cópia de segurança ao nível dos recursos de infraestrutura sem ser necessária qualquer infraestrutura de cópia de segurança |<li>Criar cópia de segurança de VMs uma vez por dia <li>Restaurar VMs apenas ao nível do disco<li>Não é possível efetuar a cópia de segurança no local |<li>VMs, <li>Todos os discos (com o PowerShell) |<p>Cofre do Backup do Azure</p> |
+| Agente do Backup do Azure (MARS) |<li>Os ficheiros e as pastas de cópia de segurança no SO Windows físico ou virtual (as VMs podem estar no local ou no Azure)<li>Nenhum servidor de cópia de segurança separado necessário. |<li>Criar cópias de segurança 3 vezes por dia <li>Sem deteção de aplicações; restauro apenas ao nível do ficheiro, pasta e volume, <li>  Sem suporte para Linux. |<li>Ficheiros, <li>Pastas |Cofre dos Serviços de Recuperação |
+| System Center DPM |<li>Instantâneos de deteção de aplicações (VSS)<li>Total flexibilidade para quando efetuar cópias de segurança<li>Granularidade de recuperação (tudo)<li>Pode utilizar o cofre dos Serviços de Recuperação<li>Apoio técnico para Linux para VMs de Hyper-V e VMware <li>Criar cópias de segurança e restaurar VMs VMware com o DPM 2012 R2 |Não é possível fazer cópias de segurança da carga de trabalho do Oracle.|<li>Ficheiros, <li>Pastas,<li> Volumes, <li>VMs,<li> Aplicações,<li> Cargas de trabalho |<li>Cofre dos Serviços de Recuperação,<li> Disco ligado localmente,<li>  Banda (apenas no local) |
+| Servidor do Backup do Azure |<li>Instantâneos da deteção de aplicações (VSS)<li>Total flexibilidade para quando efetuar cópias de segurança<li>Granularidade de recuperação (tudo)<li>Pode utilizar o cofre dos Serviços de Recuperação<li>Apoio técnico para Linux para VMs de Hyper-V e VMware<li>Criar cópias de segurança e restaurar VMs VMware <li>Não necessita de uma licença do System Center |<li>Não é possível fazer cópias de segurança da carga de trabalho do Oracle.<li>Requer sempre a subscrição do Azure em direto<li>Sem suporte para cópia de segurança em fila |<li>Ficheiros, <li>Pastas,<li> Volumes, <li>VMs,<li> Aplicações,<li> Cargas de trabalho |<li>Cofre dos Serviços de Recuperação,<li> Disco ligado localmente |
+| Cópia de segurança da VM do IaaS do Azure |<li>Cópias de segurança nativas para o Windows/Linux<li>Não é necessária qualquer instalação do agente específico<li>Cópia de segurança ao nível dos recursos de infraestrutura sem ser necessária qualquer infraestrutura de cópia de segurança |<li>Criar cópia de segurança de VMs uma vez por dia <li>Restaurar VMs apenas ao nível do disco<li>Não é possível efetuar a cópia de segurança no local |<li>VMs, <li>Todos os discos (com o PowerShell) |<p>Cofre dos Serviços de Recuperação</p> |
 
 ## <a name="what-are-the-deployment-scenarios-for-each-component"></a>Quais são os cenários de implementação para cada componente?
 | Componente | Pode ser implementado no Azure? | Pode ser implementado no local? | Armazenamento de destino suportado |
 | --- | --- | --- | --- |
-| Agente do Backup do Azure (MARS) |<p>**Sim**</p> <p>O agente do Backup do Azure pode ser implementado em qualquer VM do Windows Server que é executada no Azure.</p> |<p>**Sim**</p> <p>O agente de Cópia de Segurança pode ser implementado em qualquer máquina física ou VM do Windows Server.</p> |<p>Cofre do Backup do Azure</p> |
-| System Center DPM |<p>**Sim**</p><p>Saiba mais sobre [como proteger cargas de trabalho no Azure utilizando o System Center DPM](backup-azure-dpm-introduction.md).</p> |<p>**Sim**</p> <p>Saiba mais sobre [como proteger cargas de trabalho e VMs no datacenter](https://technet.microsoft.com/en-us/system-center-docs/dpm/data-protection-manager).</p> |<p>Disco ligado localmente,</p> <p>Cofre do Backup do Azure,</p> <p>banda (apenas no local)</p> |
-| Servidor do Backup do Azure |<p>**Sim**</p><p>Saiba mais sobre [como proteger cargas de trabalho no Azure utilizando o Servidor do Backup do Azure](backup-azure-microsoft-azure-backup.md).</p> |<p>**Sim**</p> <p>Saiba mais sobre [como proteger cargas de trabalho no Azure utilizando o Servidor do Backup do Azure](backup-azure-microsoft-azure-backup.md).</p> |<p>Disco ligado localmente,</p> <p>Cofre do Backup do Azure</p> |
-| Cópia de segurança da VM do IaaS do Azure |<p>**Sim**</p><p>Parte dos recursos de infraestrutura do Azure</p><p>Especializada para a [cópia de segurança da infraestrutura do Azure como máquinas virtuais do serviço (IaaS)](backup-azure-vms-introduction.md).</p> |<p>**Não**</p> <p>Utilize o System Center DPM para efetuar a cópia de segurança das máquinas virtuais no datacenter.</p> |<p>Cofre do Backup do Azure</p> |
+| Agente do Backup do Azure (MARS) |<p>**Sim**</p> <p>O agente do Backup do Azure pode ser implementado em qualquer VM do Windows Server que é executada no Azure.</p> |<p>**Sim**</p> <p>O agente de Cópia de Segurança pode ser implementado em qualquer máquina física ou VM do Windows Server.</p> |<p>Cofre dos Serviços de Recuperação</p> |
+| System Center DPM |<p>**Sim**</p><p>Saiba mais sobre [como proteger cargas de trabalho no Azure utilizando o System Center DPM](backup-azure-dpm-introduction.md).</p> |<p>**Sim**</p> <p>Saiba mais sobre [como proteger cargas de trabalho e VMs no datacenter](https://technet.microsoft.com/system-center-docs/dpm/data-protection-manager).</p> |<p>Disco ligado localmente,</p> <p>Cofre dos Serviços de Recuperação,</p> <p>banda (apenas no local)</p> |
+| Servidor do Backup do Azure |<p>**Sim**</p><p>Saiba mais sobre [como proteger cargas de trabalho no Azure utilizando o Servidor do Backup do Azure](backup-azure-microsoft-azure-backup.md).</p> |<p>**Sim**</p> <p>Saiba mais sobre [como proteger cargas de trabalho no Azure utilizando o Servidor do Backup do Azure](backup-azure-microsoft-azure-backup.md).</p> |<p>Disco ligado localmente,</p> <p>Cofre dos Serviços de Recuperação</p> |
+| Cópia de segurança da VM do IaaS do Azure |<p>**Sim**</p><p>Parte dos recursos de infraestrutura do Azure</p><p>Especializada para a [cópia de segurança da infraestrutura do Azure como máquinas virtuais do serviço (IaaS)](backup-azure-vms-introduction.md).</p> |<p>**Não**</p> <p>Utilize o System Center DPM para efetuar a cópia de segurança das máquinas virtuais no datacenter.</p> |<p>Cofre dos Serviços de Recuperação</p> |
 
 ## <a name="which-applications-and-workloads-can-be-backed-up"></a>Podem ser efetuadas cópias de segurança a que aplicações e cargas de trabalho?
 A tabela seguinte fornece uma matriz dos dados e cargas de trabalho que podem ser protegidos com o Azure Backup. A coluna de solução do Azure Backup tem ligações para a documentação de implementação dessa solução. Cada componente do Azure Backup pode ser implementado num ambiente de modelo Clássico (Gestor de Serviços-implementação) ou de Gestor de Recursos-implementação.
@@ -91,15 +91,15 @@ A tabela seguinte mostra os componentes do Azure Backup com suporte para Linux.
 | Componente | Apoio Técnico para Linux (aprovado pelo Azure) |
 | --- | --- |
 | Agente do Backup do Azure (MARS) |Nenhum (Apenas agente baseado no Windows) |
-| System Center DPM |Cópia de segurança consistente com ficheiros de VMs de Convidado Linux no Hyper-V e no VMWare<br/> (não disponível para VM do Azure)<br/> Restauro de VMs de Convidado do Linux do Hyper-V e do VMWare |
-| Servidor do Backup do Azure |Cópia de segurança consistente com ficheiros de VMs de Convidado Linux no Hyper-V e no VMWare<br/> (não disponível para VM do Azure)<br/> Restauro de VMs de Convidado do Linux do Hyper-V e do VMWare |
-| Cópia de segurança da VM do IaaS do Azure |Cópia de segurança consistente com a aplicação utilizando [arquitetura de script anterior script posterior](https://docs.microsoft.com/azure/backup/backup-azure-linux-app-consistent)<br/> [Recuperação de ficheiros granular](backup-azure-restore-files-from-vm.md)<br/> [Restaurar todos os discos da VM](https://docs.microsoft.com/azure/backup/backup-azure-arm-restore-vms#restore-backed-up-disks)<br/> [Restauro da VM](https://docs.microsoft.com/azure/backup/backup-azure-arm-restore-vms#create-a-new-vm-from-restore-point) |
+| System Center DPM |<li> Cópia de segurança consistente com ficheiros de VMs de Convidado Linux no Hyper-V e no VMWare<br/> <li> Restauro de VMs de Convidado do Linux do Hyper-V e do VMWare </br> </br>  *A cópia de segurança consistente com ficheiro não está disponível para a VM do Azure* <br/> |
+| Servidor do Backup do Azure |<li>Cópia de segurança consistente com ficheiros de VMs de Convidado Linux no Hyper-V e no VMWare<br/> <li> Restauro de VMs de Convidado do Linux do Hyper-V e do VMWare </br></br> *A cópia de segurança consistente com ficheiro não está disponível para a VM do Azure*  |
+| Cópia de segurança da VM do IaaS do Azure |Cópia de segurança consistente com a aplicação utilizando [arquitetura de script anterior script posterior](backup-azure-linux-app-consistent.md)<br/> [Recuperação de ficheiros granular](backup-azure-restore-files-from-vm.md)<br/> [Restaurar todos os discos da VM](backup-azure-arm-restore-vms.md#restore-backed-up-disks)<br/> [Restauro da VM](backup-azure-arm-restore-vms.md#create-a-new-vm-from-restore-point) |
 
 ## <a name="using-premium-storage-vms-with-azure-backup"></a>Utilizar VMs de Armazenamento Premium com o Azure Backup
 O Azure Backup protege VMs de Armazenamento Premium. O Armazenamento Premium do Azure é o armazenamento baseado numa unidade de estado sólido (SSD), concebido para suportar cargas de trabalho de E/S intensivas. O Armazenamento Premium é apelativo para cargas de trabalho de máquina virtual (VM). Para mais informações sobre o Armazenamento Premium, veja o artigo [Armazenamento Premium: Armazenamento de Elevado Desempenho para Cargas de Trabalho de Máquinas Virtuais do Azure](../storage/storage-premium-storage.md).
 
 ### <a name="back-up-premium-storage-vms"></a>Criar cópia de segurança das VMs do Premium Storage
-Durante a cópia de segurança das VMs do Armazenamento Premium, o serviço de Cópia de Segurança cria uma localização de transição temporária, com o nome "AzureBackup-", na conta do Armazenamento Premium. A localização de transição é igual ao tamanho do instantâneo do ponto de recuperação. Certifique-se de que existe espaço livre na conta de armazenamento para suportar a localização de transição temporária. Para obter mais informações, veja o artigo [Premium Storage Limitations (Limitações do Armazenamento Premium)](../storage/storage-premium-storage.md#scalability-and-performance-targets). Depois de a tarefa de cópia de segurança estar concluída, a localização de transição é eliminada. O preço do armazenamento utilizado para a localização de transição é consistente com todos os [Preços do Premium Storage](../storage/storage-premium-storage.md#pricing-and-billing).
+Durante a cópia de segurança das VMs do Armazenamento Premium, o serviço de Cópia de Segurança cria uma localização de transição temporária, com o nome "AzureBackup-", na conta do Armazenamento Premium. O tamanho da localização de transição é igual ao tamanho do instantâneo do ponto de recuperação. Certifique-se de que a conta de Armazenamento Premium tem espaço livre para acomodar a localização de transição temporária. Para obter mais informações, veja o artigo [Premium Storage Limitations (Limitações do Armazenamento Premium)](../storage/storage-premium-storage.md#scalability-and-performance-targets). Depois de a tarefa de cópia de segurança estar concluída, a localização de transição é eliminada. O preço do armazenamento utilizado para a localização de transição é consistente com todos os [Preços do Premium Storage](../storage/storage-premium-storage.md#pricing-and-billing).
 
 > [!NOTE]
 > Não modifique ou edite a localização de transição.
@@ -116,7 +116,7 @@ O Azure Backup protege VMs de disco gerido. Os discos geridos libertam-no da ges
 A criação de cópias de segurança de VMs em discos geridos não difere da criação de cópias de segurança de VMs do Resource Manager. No portal do Azure, pode configurar a tarefa de cópia de segurança diretamente na vista Máquina Virtual ou na vista do cofre dos Serviços de Recuperação. Pode criar cópias de segurança de VMs em discos geridos através de coleções de RestorePoint criadas sobre os discos geridos. A cópia de segurança do Azure também suporta a criação de cópia de segurança de VMs de discos geridos encriptados com o Azure Disk Encryption (ADE).
 
 ### <a name="restore-managed-disk-vms"></a>Restaurar VMs de disco gerido
-O Azure Backup permite-lhe restaurar uma VM completa com discos geridos ou restaurar discos geridos para uma conta de armazenamento do Resource Manager. O Azure faz a gestão dos discos geridos durante o processo de restauro. Quanto a si (o cliente), faz a gestão da conta de armazenamento criada como parte do processo de restauro. Para restaurar VMs geridas encriptadas, as chaves e segredos da VM já devem existir no cofre de chave antes de restaurar.
+O Azure Backup permite-lhe restaurar uma VM completa com discos geridos ou restaurar discos geridos para uma conta de armazenamento. O Azure faz a gestão dos discos geridos durante o processo de restauro. Quanto a si (o cliente), faz a gestão da conta de armazenamento criada como parte do processo de restauro. Ao restaurar VMs geridas encriptadas, as chaves e segredos da VM devem existir no cofre de chaves antes de começar a operação de restauro.
 
 ## <a name="what-are-the-features-of-each-backup-component"></a>Quais são as funcionalidades de cada componente do Backup?
 As secções seguintes fornecem tabelas que resumem a disponibilidade ou o suporte para várias funcionalidades em cada componente do Azure Backup. Consulte as informações de cada tabela para suporte adicional ou detalhes.
@@ -124,19 +124,19 @@ As secções seguintes fornecem tabelas que resumem a disponibilidade ou o supor
 ### <a name="storage"></a>Armazenamento
 | Funcionalidade | Agente do Backup do Azure | System Center DPM | Servidor do Backup do Azure | Cópia de segurança da VM do IaaS do Azure |
 | --- | --- | --- | --- | --- |
-| Cofre do Backup do Azure |![Sim][green] |![Sim][green] |![Sim][green] |![Sim][green] |
+| Cofre dos Serviços de Recuperação |![Sim][green] |![Sim][green] |![Sim][green] |![Sim][green] |
 | Armazenamento em disco | |![Sim][green] |![Sim][green] | |
 | Armazenamento em banda | |![Sim][green] | | |
-| Compressão <br/>(no cofre do Backup) |![Sim][green] |![Sim][green] |![Sim][green] | |
+| Compressão <br/>(no cofre dos Serviços de Recuperação) |![Sim][green] |![Sim][green] |![Sim][green] | |
 | Cópia de segurança incremental |![Sim][green] |![Sim][green] |![Sim][green] |![Sim][green] |
-| Eliminação de discos duplicados | |![Parcialmente][yellow] |![Parcialmente][yellow] | |
+| Eliminação de discos duplicados | |![Parcialmente][yellow] |![Parcialmente][yellow] | | |
 
 ![chave da tabela](./media/backup-introduction-to-azure-backup/table-key.png)
 
-O Cofre de cópia de segurança é o destino de armazenamento preferencial em todos os componentes. O System Center DPM e o Azure Backup Server oferecem também a opção de criar uma cópia de disco local. No entanto, apenas o System Center DPM disponibiliza a opção para escrever dados num dispositivo de armazenamento em banda.
+O cofre dos Serviços de Recuperação é o destino de armazenamento preferencial em todos os componentes. O System Center DPM e o Azure Backup Server oferecem também a opção de criar uma cópia de disco local. No entanto, apenas o System Center DPM disponibiliza a opção para escrever dados num dispositivo de armazenamento em banda.
 
 #### <a name="compression"></a>Compressão
-As cópias de segurança estão comprimidas para reduzir o espaço de armazenamento necessário. O único componente que não utiliza a compressão é a extensão da VM. A extensão de VM copia todos os dados de cópias de segurança da conta de armazenamento para o cofre do Backup na mesma região. Não é utilizada compressão durante a transferência dos dados. A transferência dos dados sem compressão aumenta ligeiramente o armazenamento utilizado. No entanto, armazenar os dados sem compressão permite restauros mais rápidos, caso precise desse ponto de recuperação.
+As cópias de segurança estão comprimidas para reduzir o espaço de armazenamento necessário. O único componente que não utiliza a compressão é a extensão da VM. A extensão de VM copia todos os dados de cópias de segurança da conta de armazenamento para o cofre dos Serviços de Recuperação na mesma região. Não é utilizada compressão durante a transferência dos dados. A transferência dos dados sem compressão aumenta ligeiramente o armazenamento utilizado. No entanto, armazenar os dados sem compressão permite restauros mais rápidos, caso precise desse ponto de recuperação.
 
 
 #### <a name="disk-deduplication"></a>Eliminação de Discos Duplicados
@@ -148,7 +148,7 @@ Pode tirar partido da eliminação de duplicados ao implementar o System Center 
 >
 
 ### <a name="incremental-backup-explained"></a>A cópia de segurança incremental explicada
-Todos os componentes do Azure Backup suportam a cópia de segurança incremental, independentemente do armazenamento de destino (disco, banda, cofre de cópia de segurança). A cópia de segurança incremental assegura que as cópias de segurança são eficientes ao nível do armazenamento e do tempo, transferindo apenas as alterações efetuadas desde a última cópia de segurança.
+Todos os componentes do Azure Backup suportam a cópia de segurança incremental, independentemente do armazenamento de destino (disco, banda, cofre dos Serviços de Recuperação). A cópia de segurança incremental assegura que as cópias de segurança são eficientes ao nível do armazenamento e do tempo, transferindo apenas as alterações efetuadas desde a última cópia de segurança.
 
 #### <a name="comparing-full-differential-and-incremental-backup"></a>Comparação entre cópias de segurança Completas, Diferenciais e Incrementais
 
@@ -171,10 +171,10 @@ A **Cópia de Segurança Incremental** proporciona uma elevada eficiência em te
 ![chave da tabela](./media/backup-introduction-to-azure-backup/table-key.png)
 
 #### <a name="network-security"></a>Segurança da rede
-Todo o tráfego de cópia de segurança dos seus servidores para o cofre do Backup é encriptado com a norma AES (Advanced Encryption Standard) 256. Os dados de cópia de segurança são enviados através de uma ligação HTTPS segura. Os dados de cópia de segurança também são armazenados no Cofre de cópia de segurança no formato encriptado. Apenas você, o cliente do Azure, tem a frase de acesso para desbloquear estes dados. A Microsoft não pode desencriptar os dados de cópia de segurança em momento algum.
+Todo o tráfego de cópia de segurança dos seus servidores para o cofre dos Serviços de Recuperação é encriptado com a norma AES (Advanced Encryption Standard) 256. Os dados de cópia de segurança são enviados através de uma ligação HTTPS segura. Os dados de cópia de segurança também são armazenados no cofre dos Serviços de Recuperação no formato encriptado. Apenas você, o cliente do Azure, tem a frase de acesso para desbloquear estes dados. A Microsoft não pode desencriptar os dados de cópia de segurança em momento algum.
 
 > [!WARNING]
-> Depois de estabelecer o cofre do Backup, é o único a ter acesso à chave de encriptação. A Microsoft nunca mantém uma cópia da sua chave de encriptação e não tem acesso à chave. Se a chave está no local incorreto, a Microsoft não pode recuperar os dados de cópia de segurança.
+> Depois de estabelecer o cofre dos Serviços de Recuperação, é o único a ter acesso à chave de encriptação. A Microsoft nunca mantém uma cópia da sua chave de encriptação e não tem acesso à chave. Se a chave está no local incorreto, a Microsoft não pode recuperar os dados de cópia de segurança.
 >
 >
 
@@ -185,15 +185,15 @@ A cópia de segurança das VMs do Azure necessita da configuração da encripta�
 | Funcionalidade | Agente do Backup do Azure | System Center DPM | Servidor do Backup do Azure | Cópia de segurança da VM do IaaS do Azure |
 | --- | --- | --- | --- | --- |
 | Compressão de rede <br/>(para o **servidor de cópia de segurança**) | |![Sim][green] |![Sim][green] | |
-| Compressão de rede <br/>(para o **cofre de cópia de segurança**) |![Sim][green] |![Sim][green] |![Sim][green] | |
+| Compressão de rede <br/>(no **cofre dos Serviços de Recuperação**) |![Sim][green] |![Sim][green] |![Sim][green] | |
 | Protocolo de rede <br/>(para o **servidor de cópia de segurança**) | |TCP |TCP | |
-| Protocolo de rede <br/>(para o **cofre de cópia de segurança**) |HTTPS |HTTPS |HTTPS |HTTPS |
+| Protocolo de rede <br/>(no **cofre dos Serviços de Recuperação**) |HTTPS |HTTPS |HTTPS |HTTPS |
 
 ![chave da tabela](./media/backup-introduction-to-azure-backup/table-key-2.png)
 
 A extensão da VM (na VM IaaS) lê os dados diretamente a partir da conta de armazenamento do Azure através da rede de armazenamento, pelo que não é necessário comprimir este tráfego.
 
-Se estiver a criar uma cópia de segurança de dados para um System Center DPM ou para o Azure Backup Server, comprima os dados que passam do servidor primário para o servidor de cópia de segurança. A compressão dos dados antes da criação da cópia de segurança no DPM ou no Azure Backup Server poupa largura de banda.
+Se estiver a utilizar um servidor System Center DPM ou Azure Backup Server como um servidor de cópia de segurança secundário, comprima os dados que passam do servidor primário para o servidor de cópia de segurança. A compressão dos dados antes da criação da cópia de segurança no DPM ou no Azure Backup Server poupa largura de banda.
 
 #### <a name="network-throttling"></a>Limitação de rede
 O agente do Azure Backup fornece limitação de rede, o que lhe permite controlar como a largura de banda de rede é utilizada durante a transferência de dados. A limitação pode ser útil se precisar de efetuar uma cópia de segurança dos dados durante as horas de trabalho, mas não pretende que o processo de cópia de segurança interfira com outro tráfego de Internet. A limitação para a transferência de dados aplica-se às atividades de cópia de segurança e de restauro.
@@ -204,7 +204,7 @@ O Azure Backup tem um limite de 9999 pontos de recuperação, também conhecidos
 
 |  | Agente do Backup do Azure | System Center DPM | Servidor do Backup do Azure | Cópia de segurança da VM do IaaS do Azure |
 | --- | --- | --- | --- | --- |
-| Frequência de cópia de segurança<br/> (para o cofre do Backup) |Três cópias de segurança por dia |Duas cópias de segurança por dia |Duas cópias de segurança por dia |Uma cópia de segurança por dia |
+| Frequência de cópia de segurança<br/> (para o cofre dos Serviços de Recuperação) |Três cópias de segurança por dia |Duas cópias de segurança por dia |Duas cópias de segurança por dia |Uma cópia de segurança por dia |
 | Frequência de cópia de segurança<br/> (para o disco) |Não aplicável |<li>A cada 15 minutos para o SQL Server <li>A cada hora para outras cargas de trabalho |<li>A cada 15 minutos para o SQL Server <li>A cada hora para outras cargas de trabalho</p> |Não aplicável |
 | Opções de retenção |Diariamente, semanalmente, mensalmente, anualmente |Diariamente, semanalmente, mensalmente, anualmente |Diariamente, semanalmente, mensalmente, anualmente |Diariamente, semanalmente, mensalmente, anualmente |
 | Número máximo de pontos de recuperação por instância protegida |9999|9999|9999|9999|
@@ -222,12 +222,12 @@ Alguns exemplos comuns de instâncias protegidas são máquinas virtuais, servid
 
 
 ## <a name="what-is-the-vault-credential-file"></a>O que é o ficheiro de credenciais do cofre?
-O ficheiro de credenciais do cofre é um certificado gerado pelo portal para cada cofre do Backup. O portal, em seguida, carrega a chave pública para o Access Control Service (ACS). A chave privada é fornecida ao transferir as credenciais. Utilize-a para registar os computadores que está a proteger. A chave privada é o que lhe permite autenticar servidores ou computadores para enviar dados de cópia de segurança para um cofre do Backup específico.
+O ficheiro de credenciais do cofre é um certificado gerado pelo portal para cada cofre dos Serviços de Recuperação. O portal, em seguida, carrega a chave pública para o Access Control Service (ACS). A chave privada é fornecida ao transferir as credenciais. Utilize-a para registar os computadores que está a proteger. A chave privada é o que lhe permite autenticar servidores ou computadores para enviar dados de cópia de segurança para um cofre dos Serviços de Recuperação específico.
 
-A credencial do cofre só é utilizada para registar os servidores ou computadores. No entanto, tenha cuidado com as credenciais do cofre, pois caso se percam ou sejam obtidas por terceiros, as credenciais do cofre podem ser utilizadas para registar outras máquinas no mesmo cofre. Uma vez que os dados de cópia de segurança são encriptados com uma frase de acesso só acessível por si, os dados de cópia de segurança existentes não podem ficar comprometidos. As credenciais do cofre expiram após 48 horas. Embora possa transferir as credenciais do cofre do Backup as vezes que forem necessárias, apenas as credenciais mais recentes podem ser utilizadas para registo.
+A credencial do cofre só é utilizada para registar os servidores ou computadores. No entanto, tenha cuidado com as credenciais do cofre, pois caso se percam ou sejam obtidas por terceiros, as credenciais do cofre podem ser utilizadas para registar outras máquinas no mesmo cofre. Uma vez que os dados de cópia de segurança são encriptados com uma frase de acesso só acessível por si, os dados de cópia de segurança existentes não podem ficar comprometidos. As credenciais do cofre expiram após 48 horas. Embora possa transferir as credenciais do cofre dos Serviços de Recuperação as vezes que forem necessárias, apenas as credenciais mais recentes podem ser utilizadas para registo.
 
 ## <a name="how-does-azure-backup-differ-from-azure-site-recovery"></a>Qual é a diferença entre o Backup do Azure e o Azure Site Recovery?
-O Azure Backup e o Azure Site Recovery estão relacionados na medida em que ambos os serviços criam cópias de segurança dos dados e podem restaurá-los. No entanto, têm propostas de valor distintas.
+O Azure Backup e o Azure Site Recovery estão relacionados na medida em que ambos os serviços criam cópias de segurança dos dados e podem restaurá-los. No entanto, estes serviços servem objetivos diferentes ao oferecer continuidade empresarial e recuperação após desastre na sua empresa. Utilize o Azure Backup para proteger e restaurar dados a um nível mais granular. Por exemplo, se uma apresentação num computador portátil se danificasse, utilizaria o Azure Backup para restaurar a apresentação. Se quisesse replicar a configuração e os dados de uma VM através de outro datacenter, utilizaria o Azure Site Recovery.
 
 O Azure Backup protege os dados no local e na nuvem. O Azure Site Recovery coordena a replicação da máquina virtual e do servidor físico, a ativação pós-falha e a reativação pós-falha. Ambos os serviços são importantes porque a sua solução de recuperação após desastre tem de manter os seus dados seguros e recuperáveis (Cópia de Segurança) *e* manter as cargas de trabalho disponíveis (Recuperação de Sites) quando ocorrerem falhas.
 

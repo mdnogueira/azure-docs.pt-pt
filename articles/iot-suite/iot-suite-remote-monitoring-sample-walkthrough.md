@@ -15,10 +15,11 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/15/2017
 ms.author: dobett
-translationtype: Human Translation
-ms.sourcegitcommit: dc8ee6a0f17c20c5255d95c7b6f636d89ffe3aee
-ms.openlocfilehash: 9bd4232670256ec7889dd367ea2ea01a2845e789
-ms.lasthandoff: 02/27/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 71fea4a41b2e3a60f2f610609a14372e678b7ec4
+ms.openlocfilehash: 57544151cc020e5170ebd231b5e4d8f424aeada0
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/10/2017
 
 
 ---
@@ -50,7 +51,7 @@ Cada dispositivo simulado pode enviar os seguintes tipos de mensagens para o Hub
 | Telemetria |Um dispositivo envia periodicamente uma mensagem de **telemetria** que comunica valores simulados de temperatura e humidade recolhidos a partir dos sensores simulados do dispositivo. |
 
 > [!NOTE]
-> A solução armazena a lista de comandos suportados pelo dispositivo numa base de dados do DocumentDB e não no dispositivo duplo.
+> A solução armazena a lista de comandos suportados pelo dispositivo numa base de dados do Cosmos DB e não no dispositivo duplo.
 > 
 > 
 
@@ -229,10 +230,10 @@ As tarefas do ASA **device info** e **rules** enviam os seus dados para os Hubs 
 A solução utiliza o armazenamento de blobs do Azure para manter todos os dados de telemetria não processados e resumidos dos dispositivos na solução. O portal lê os dados de telemetria do armazenamento de blobs para preencher os gráficos. Para apresentar os alertas, o portal da solução lê os dados do armazenamento de blobs que regista quando os valores de telemetria excederam os valores de limiar configurados. A solução também utiliza o armazenamento de blobs para registar os valores de limiar definidos por si no portal da solução.
 
 ## <a name="webjobs"></a>Trabalhos Web
-Para além de alojar os simuladores de dispositivo, os Trabalhos Web na solução também alojam o **Processador de Eventos** em execução num Trabalho Web do Azure que processa respostas de comandos. Utiliza mensagens de resposta de comandos para atualizar o histórico de comandos do dispositivo (armazenado na base de dados do DocumentDB).
+Para além de alojar os simuladores de dispositivo, os Trabalhos Web na solução também alojam o **Processador de Eventos** em execução num Trabalho Web do Azure que processa respostas de comandos. Utiliza mensagens de resposta de comandos para atualizar o histórico de comandos do dispositivo (armazenado na base de dados do Cosmos DB).
 
-## <a name="documentdb"></a>DocumentDB
-A solução utiliza uma base de dados do DocumentDB para armazenar informações sobre os dispositivos ligados à solução. Estas informações incluem o histórico dos comandos enviados para os dispositivos a partir do portal da solução e dos métodos invocados a partir do portal da solução.
+## <a name="cosmos-db"></a>Cosmos DB
+A solução utiliza uma base de dados do Cosmos DB para armazenar informações sobre os dispositivos ligados à solução. Estas informações incluem o histórico dos comandos enviados para os dispositivos a partir do portal da solução e dos métodos invocados a partir do portal da solução.
 
 ## <a name="solution-portal"></a>Portal de solução
 
@@ -244,7 +245,7 @@ Esta página na aplicação Web utiliza os controlos javascript do PowerBI (veja
 ### <a name="device-list"></a>Lista de dispositivos
 A partir desta página no portal da solução, poderá:
 
-* Aprovisionar um novo dispositivo. Esta ação define o ID exclusivo do dispositivo e gera a chave de autenticação. Escreve informações sobre o dispositivo no registo de identidade do Hub IoT e na base de dados do DocumentDB específica da solução.
+* Aprovisionar um novo dispositivo. Esta ação define o ID exclusivo do dispositivo e gera a chave de autenticação. Escreve informações sobre o dispositivo no registo de identidade do Hub IoT e na base de dados do Cosmos DB específica da solução.
 * Gerir propriedades dos dispositivos. Esta ação inclui a visualização das propriedades existentes e a atualização de novas propriedades.
 * Enviar comandos para um dispositivo.
 * Ver o histórico de comando de um dispositivo.
@@ -271,3 +272,4 @@ Pode continuar a introdução ao IoT Suite ao ler os artigos seguintes:
 [lnk-c2d-guidance]: ../iot-hub/iot-hub-devguide-c2d-guidance.md
 [lnk-device-twins]:  ../iot-hub/iot-hub-devguide-device-twins.md
 [lnk-direct-methods]: ../iot-hub/iot-hub-devguide-direct-methods.md
+
