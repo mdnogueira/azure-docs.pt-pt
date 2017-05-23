@@ -15,10 +15,11 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/24/2017
 ms.author: dobett
-translationtype: Human Translation
-ms.sourcegitcommit: b0c27ca561567ff002bbb864846b7a3ea95d7fa3
-ms.openlocfilehash: fba7f5f33d1a0d39219a6790e1d5c6b4515b794c
-ms.lasthandoff: 04/25/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 71fea4a41b2e3a60f2f610609a14372e678b7ec4
+ms.openlocfilehash: 29e8639a6f1f0c2733d24dda78975ea7cfb6107a
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/10/2017
 
 
 ---
@@ -107,7 +108,7 @@ A capacidade de gestão de dispositivos do Hub IoT permite-lhe gerir as propried
 ## <a name="azure-stream-analytics"></a>Azure Stream Analytics
 A solução pré-configurada utiliza três tarefas do [Azure Stream Analytics][lnk-asa] (ASA) para filtrar o fluxo de telemetria dos dispositivos:
 
-* *Tarefa DeviceInfo* - produz dados para um hub de Eventos que redireciona mensagens específicas do registo do dispositivo para o registo do dispositivo da solução (uma base de dados do DocumentDB). Esta mensagem é enviada quando um dispositivo é ligado pela primeira vez ou em resposta a um comando **Alterar estado do dispositivo**.
+* *Tarefa DeviceInfo* - produz dados para um hub de Eventos que redireciona mensagens específicas do registo do dispositivo para o registo do dispositivo da solução (uma base de dados do Azure Cosmos DB). Esta mensagem é enviada quando um dispositivo é ligado pela primeira vez ou em resposta a um comando **Alterar estado do dispositivo**.
 * *Tarefa de telemetria* - envia telemetria não processada ao Blob Storage do Azure para um armazenamento de frio e calcula as agregações de telemetria apresentadas no dashboard de solução.
 * *Tarefa de regras* - filtra o fluxo de telemetria para valores que excedem quaisquer limiares de regra e produz os dados para um Event Hub. Quando uma regra é acionada, a vista do dashboard do portal da solução apresenta este evento como uma nova linha na tabela do histórico de alarmes. Estas regras também podem acionar uma ação com base nas definições especificadas nas vistas **Regras** e **Ações** no portal da solução.
 
@@ -117,10 +118,10 @@ Nesta solução pré-configurada, as tarefas ASA fazem parte da **solução de b
 Nesta solução pré-configurada, o processador de eventos faz parte da **solução de back-end do IoT** numa [arquitetura de solução IoT][lnk-what-is-azure-iot] típica.
 
 As tarefas ASA **DeviceInfo** e **Regras** enviam o respetivo resultado aos Hubs de Eventos para que seja transmitido a outros serviços de back-end. A solução utiliza uma instância [EventPocessorHost][lnk-event-processor] executada numa [WebJob][lnk-web-job] para ler as mensagens a partir destes Hubs de eventos. O **EventProcessorHost** utiliza:
-- Os dados de **DeviceInfo** para atualizar os dados do dispositivo na base de dados do DocumentDB.
+- Os dados de **DeviceInfo** para atualizar os dados do dispositivo na base de dados do Cosmos DB.
 - O dados de **Regras** para invocar a Aplicação lógica e atualizar a apresentação dos alertas no portal da solução.
 
-## <a name="device-identity-registry-device-twin-and-documentdb"></a>Registo de identidade do dispositivo, dispositivo duplo e DocumentDB
+## <a name="device-identity-registry-device-twin-and-cosmos-db"></a>Registo de identidade do dispositivo, dispositivo duplo e do Cosmos DB
 Cada Hub IoT inclui um [registo de identidade do dispositivo][lnk-identity-registry] que armazena as chaves de dispositivo. O IoT Hub utiliza essas informações para autenticar dispositivos - um dispositivo deve estar registado e ter uma chave válida antes de estabelecer a ligação ao hub.
 
 Um [dispositivo duplo][lnk-device-twin] é um documento JSON gerido pelo Hub IoT. Um dispositivo duplo para um dispositivo contém:
@@ -129,9 +130,9 @@ Um [dispositivo duplo][lnk-device-twin] é um documento JSON gerido pelo Hub IoT
 - Propriedades pretendidas que quer enviar para o dispositivo. Pode definir estas propriedades no portal da solução.
 - Etiquetas que existem apenas no dispositivo duplo e não no dispositivo. Pode utilizar estas etiquetas para filtrar as listas de dispositivos no portal da solução.
 
-Esta solução utiliza dispositivos duplos para gerir metadados do dispositivo. A solução também utiliza uma base de dados do DocumentDB para armazenar dados adicionais de dispositivos específicos da solução, tais como os comandos suportados por cada dispositivo e o histórico de comandos.
+Esta solução utiliza dispositivos duplos para gerir metadados do dispositivo. A solução também utiliza uma base de dados do Cosmos DB para armazenar dados adicionais de dispositivos específicos da solução, tais como os comandos suportados por cada dispositivo e o histórico de comandos.
 
-A solução deve ainda manter as informações do registo de identidade do dispositivo sincronizadas com os conteúdos da base de dados do DocumentDB. O **EventProcessorHost** utiliza os dados da tarefa **DeviceInfo** do stream analytics para gerir a sincronização.
+A solução deve ainda manter as informações do registo de identidade do dispositivo sincronizadas com os conteúdos da base de dados do Cosmos DB. O **EventProcessorHost** utiliza os dados da tarefa **DeviceInfo** do stream analytics para gerir a sincronização.
 
 ## <a name="solution-portal"></a>Portal de solução
 ![portal de solução][img-dashboard]
@@ -168,3 +169,4 @@ Agora que sabe o que é uma solução pré-configurada, pode começar por implem
 [lnk-device-twin]: ../iot-hub/iot-hub-devguide-device-twins.md
 [lnk-direct-methods]: ../iot-hub/iot-hub-devguide-direct-methods.md
 [lnk-getstarted-factory]: iot-suite-connected-factory-overview.md
+

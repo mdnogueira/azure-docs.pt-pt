@@ -15,10 +15,11 @@ ms.workload: na
 ms.date: 03/16/2017
 ms.author: dobett
 ms.custom: H1Hack27Feb2017
-translationtype: Human Translation
-ms.sourcegitcommit: afe143848fae473d08dd33a3df4ab4ed92b731fa
-ms.openlocfilehash: e5cfa4c0a6964c3722ecaa6727336f5497565885
-ms.lasthandoff: 03/17/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 71fea4a41b2e3a60f2f610609a14372e678b7ec4
+ms.openlocfilehash: 259477f26686eb43c1a06d8a72544d4ca8a72c71
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/10/2017
 
 
 ---
@@ -272,7 +273,7 @@ Para continuar a introdução ao Hub IoT e explorar outros cenários de IoT, vej
 
 * [Ligar o seu dispositivo][lnk-connect-device]
 * [Getting started with device management (Introdução à gestão de dispositivos)][lnk-device-management]
-* [Introdução ao SDK do Gateway do IoT][lnk-gateway-SDK]
+* [Começar a utilizar o Edge IoT do Azure][lnk-gateway-SDK]
 
 Para saber como expandir a sua solução de IoT e processar mensagens do dispositivo para a cloud em escala, veja o tutorial [Process device-to-cloud messages (Processar mensagens do dispositivo para a cloud)][lnk-process-d2c-tutorial].
 

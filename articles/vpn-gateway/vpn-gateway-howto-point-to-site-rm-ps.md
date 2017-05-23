@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 05/03/2017
 ms.author: cherylmc
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 9ae7e129b381d3034433e29ac1f74cb843cb5aa6
-ms.openlocfilehash: 8e6b1dc7e17fe41db1deb03417083cfc891afa86
+ms.sourcegitcommit: 5e92b1b234e4ceea5e0dd5d09ab3203c4a86f633
+ms.openlocfilehash: 112f120f95d67ef3387760ea70758bf83f182935
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/08/2017
+ms.lasthandoff: 05/10/2017
 
 
 ---
@@ -35,9 +35,18 @@ Este artigo mostra como criar uma VNet com uma ligação Ponto a Site no modelo 
 >
 >
 
-Uma configuração Ponto a Site (P2S) permite-lhe criar uma ligação segura a partir de um computador cliente individual para a sua rede virtual. Uma P2S é uma ligação VPN através de SSTP (Secure Socket Tunneling Protocol). As ligações Ponto a Site são úteis quando quer ligar a VNet a partir de uma localização remota, por exemplo, quando está em casa ou numa conferência ou quando tem apenas alguns clientes que precisam de se ligar a uma rede virtual. As ligações P2S não precisam de nenhum dispositivo VPN ou endereço IP destinado ao público. O utilizador estabelece a ligação VPN a partir do computador cliente. Para obter mais informações sobre ligações de Ponto a Site, consulte [Point-to-Site FAQ (FAQ sobre Ponto a Site)](#faq) no final deste artigo.
+Uma configuração Ponto a Site (P2S) permite-lhe criar uma ligação segura a partir de um computador cliente individual para a sua rede virtual. Uma P2S é uma ligação VPN através de SSTP (Secure Socket Tunneling Protocol). As ligações Ponto a Site são úteis quando quer ligar a VNet a partir de uma localização remota, por exemplo, quando está em casa ou numa conferência ou quando tem apenas alguns clientes que precisam de se ligar a uma rede virtual. As ligações P2S não precisam de nenhum dispositivo VPN ou endereço IP destinado ao público. O utilizador estabelece a ligação VPN a partir do computador cliente.
 
 ![Ligar um computador a uma VNet do Azure - diagrama da ligação Ponto a Site](./media/vpn-gateway-howto-point-to-site-rm-ps/point-to-site-diagram.png)
+
+As ligações de P2S requerem o seguinte:
+
+* Um gateway de VPN RouteBased.
+* A chave pública (ficheiro .cer) de um certificado de raiz carregado para o Azure. Isto é considerado um certificado fidedigno e é utilizado para autenticação.
+* Um certificado de cliente gerado a partir do certificado de raiz e instalado em cada computador cliente que irá ligar. Este certificado é utilizado para autenticação de cliente.
+* Um pacote de configuração de cliente VPN tem de estar gerado e instalado em todos os computadores cliente que estabelece ligação. O pacote de configuração do cliente configura o cliente VPN nativo que já se encontra no sistema operativo com as informações necessárias para estabelecer uma ligação à VNet.
+
+Para obter mais informações sobre ligações de Ponto a Site, consulte [Point-to-Site FAQ (FAQ sobre Ponto a Site)](#faq) no final deste artigo.
 
 ## <a name="before-beginning"></a>Antes de começar
 
@@ -76,7 +85,7 @@ Nesta secção, vai iniciar sessão e declarar os valores utilizados para esta c
   ```
 2. Obtenha uma lista das suas subscrições do Azure.
 
-  ```powershell  
+  ```powershell
   Get-AzureRmSubscription
   ```
 3. Especifique a subscrição que pretende utilizar.
@@ -119,7 +128,7 @@ Nesta secção, vai iniciar sessão e declarar os valores utilizados para esta c
   $besub = New-AzureRmVirtualNetworkSubnetConfig -Name $BESubName -AddressPrefix $BESubPrefix
   $gwsub = New-AzureRmVirtualNetworkSubnetConfig -Name $GWSubName -AddressPrefix $GWSubPrefix
   ```
-3. Criar a rede virtual. <br>O servidor DNS é opcional. A especificação deste valor não cria um servidor DNS novo. O pacote de configuração de cliente que irá gerar num passo mais à frente irá conter o endereço IP do servidor DNS que especificar nesta definição. Se precisar de atualizar a lista de servidores DNS no futuro, pode gerar e instalar novos pacotes de configuração de cliente VPN que reflitam a nova lista.<br>O servidor DNS especificado deve ser um servidor DNS que possa resolver os nomes dos recursos a que se está a ligar. Para este exemplo, utilizámos um endereço IP público. Certifique-se de que utiliza os seus próprios valores.
+3. Criar a rede virtual. <br>O servidor DNS é opcional. A especificação deste valor não cria um servidor DNS novo. O pacote de configuração de cliente que irá gerar num passo mais à frente irá conter o endereço IP do servidor DNS que especificar nesta definição. Se precisar de atualizar a lista de servidores DNS no futuro, pode gerar e instalar novos pacotes de configuração de cliente VPN que reflitam a nova lista. O servidor DNS especificado deve ser um servidor DNS que possa resolver os nomes dos recursos a que se está a ligar. Para este exemplo, utilizámos um endereço IP público. Certifique-se de que utiliza os seus próprios valores.
 
   ```powershell
   New-AzureRmVirtualNetwork -Name $VNetName -ResourceGroupName $RG -Location $Location -AddressPrefix $VNetPrefix1,$VNetPrefix2 -Subnet $fesub, $besub, $gwsub -DnsServer $DNS
@@ -141,7 +150,7 @@ Nesta secção, vai iniciar sessão e declarar os valores utilizados para esta c
 
 ## <a name="Certificates"></a>3 - Gerar certificados
 
-O Azure utiliza os certificados para autenticar os clientes VPN em VPNs Ponto a Site.
+O Azure utiliza os certificados para autenticar os clientes VPN em VPNs Ponto a Site. Carrega as informações da chave pública do certificado de raiz para o Azure. A chave pública é então considerada "fidedigna". Os certificados de cliente têm de ser gerados a partir do certificado de raiz fidedigna e, em seguida, instalado em cada computador cliente no arquivo de Certificados Atuais do Utilizador/Pessoais. O certificado é utilizado para autenticar o cliente quando é iniciada uma ligação à VNet. Para mais informações sobre a geração e instalação de certificados, consulte [Certificates for Point-to-Site](vpn-gateway-certificates-point-to-site.md) (Certificados de Ponto a Site).
 
 ### <a name="cer"></a>Passo 1: Obter o ficheiro .cer para o certificado de raiz
 
@@ -152,9 +161,9 @@ O Azure utiliza os certificados para autenticar os clientes VPN em VPNs Ponto a 
 
 [!INCLUDE [vpn-gateway-basic-vnet-rm-portal](../../includes/vpn-gateway-p2s-clientcert-include.md)]
 
-## <a name="upload"></a>4 - Carregar o ficheiro .cer do certificado de raiz
+## <a name="upload"></a>4 - Preparar o ficheiro .cer do certificado de raiz para carregamento
 
-Carregue o ficheiro .cer (que contém as informações da chave pública) para um certificado de raiz fidedigna no Azure. Pode carregar ficheiros de um máximo de 20 certificados de raiz. Não carregue a chave privada do certificado de raiz para o Azure. Após o carregamento do ficheiro .cer, o Azure utiliza-lo para autenticar os clientes que se ligam à rede virtual. Pode carregar mais chaves públicas de certificados de raiz mais tarde, se necessário.
+Prepare-se para carregar o ficheiro .cer (que contém as informações da chave pública) para um certificado de raiz fidedigna no Azure. Não carregue a chave privada do certificado de raiz para o Azure. Depois de o ficheiro .cer ser carregado, o Azure pode utilizá-lo para autenticar clientes que tenham instalado um certificado de cliente gerado a partir do certificado de raiz fidedigna. Pode carregar ficheiros de certificado de raiz fidedigna adicionais - até um total de 20 - mais tarde, se necessário. Nesta secção, declara o ficheiro .cer do certificado de raiz, que será associado ao gateway de VPN ao criar na secção seguinte.
 
 1. Declare a variável para o nome de certificado, substituindo o valor pelo seu próprio valor.
 
@@ -170,10 +179,14 @@ Carregue o ficheiro .cer (que contém as informações da chave pública) para u
   $p2srootcert = New-AzureRmVpnClientRootCertificate -Name $P2SRootCertName -PublicCertData $CertBase64
   ```
 
-
 ## <a name="creategateway"></a>5 - Criar o gateway de VPN
 
-Configure e crie o gateway de rede virtual da sua VNet. O *-GatewayType* tem de ser **Vpn** e o *-VpnType* tem de ser **RouteBased**. Neste exemplo, a chave pública para o certificado de raiz é associada ao gateway de VPN. Um gateway de VPN pode demorar até 45 minutos a concluir.
+Configure e crie o gateway de rede virtual da sua VNet.
+
+* O *-GatewayType* tem de ser **Vpn** e o *-VpnType* tem de ser **RouteBased**.
+* Neste exemplo, a chave pública para o certificado de raiz fica associada ao gateway de VPN, com a variável "$p2srootcert", especificada na secção anterior.
+* Neste exemplo, o conjunto de endereços de cliente VPN está declarado como uma [variável](#declare) no Passo 1. O conjunto de endereços do cliente VPN é o intervalo a partir do qual os clientes VPN recebem um endereço IP quando ligam. Utilize um intervalo de endereços IP privados que não se sobrepõe à localização no local onde irá estabelecer ligação ou com a VNet a que pretende ligar.
+* Um gateway de VPN pode demorar até 45 minutos a concluir, consoante a [sku do gateway](vpn-gateway-about-vpn-gateway-settings.md) que selecionar.
 
 ```powershell
 New-AzureRmVirtualNetworkGateway -Name $GWName -ResourceGroupName $RG `
@@ -184,9 +197,9 @@ New-AzureRmVirtualNetworkGateway -Name $GWName -ResourceGroupName $RG `
 
 ## <a name="clientconfig"></a>6 - Transferir o pacote de configuração de cliente VPN
 
-Para ligar a uma VNet com um VPN de Ponto a Site, cada cliente tem de instalar um pacote de configuração de cliente VPN. O pacote não instala um cliente VPN. Pode utilizar o mesmo pacote de configuração do cliente VPN em cada computador cliente, desde que a versão corresponda à arquitetura do cliente. Para consultar a lista de sistemas operativos cliente que são suportados, consulte [Point-to-Site connections FAQ (FAQ das ligações de Ponto a Site)](#faq) no final deste artigo.
+Para ligar a uma VNet com um VPN de Ponto a Site, cada cliente tem de instalar um pacote para configurar o cliente de VPN do Windows nativo. O pacote de configuração configura o cliente VPN do Windows nativo com as definições necessárias para estabelecer ligação à rede virtual e, se especificou um servidor DNS para a sua VNet, contém o endereço IP do servidor DNS que o cliente irá utilizar para a resolução de nomes. Se alterar o servidor DNS especificado mais tarde, depois de gerar o pacote de configuração de cliente, certifique-se de que gera um novo pacote de configuração de cliente para instalar nos seus computadores cliente.
 
-O pacote de configuração configura o cliente VPN do Windows nativo com as definições necessárias para estabelecer ligação à rede virtual e, se especificou um servidor DNS para a sua VNet, contém o endereço IP do servidor DNS que o cliente irá utilizar para a resolução de nomes. Se alterar o servidor DNS especificado mais tarde, depois de gerar o pacote de configuração de cliente, certifique-se de que gera um novo pacote de configuração de cliente para instalar nos seus computadores cliente.
+Pode utilizar o mesmo pacote de configuração do cliente VPN em cada computador cliente, desde que a versão corresponda à arquitetura do cliente. Para consultar a lista de sistemas operativos cliente que são suportados, consulte [Point-to-Site connections FAQ (FAQ das ligações de Ponto a Site)](#faq) no final deste artigo.
 
 1. Depois de criado o gateway, pode gerar e transferir o pacote de configuração do cliente. Este exemplo transfere o pacote para clientes de 64 bits. Se pretende transferir o cliente de 32 bits, substitua “Amd64” por “x86”. Também pode transferir o cliente VPN ao utilizar o portal do Azure.
 
@@ -194,7 +207,7 @@ O pacote de configuração configura o cliente VPN do Windows nativo com as defi
   Get-AzureRmVpnClientPackage -ResourceGroupName $RG `
   -VirtualNetworkGatewayName $GWName -ProcessorArchitecture Amd64
   ```
-2. Copie e cole a ligação devolvida num browser, para transferir o pacote, não esquecendo de remover o """ à volta da ligação. 
+2. Copie e cole a ligação devolvida num browser, para transferir o pacote, não esquecendo de remover as aspas à volta da ligação. 
 3. Transfira e instale o pacote no computador cliente. Se vir um pop-up SmartScreen, clique em **Mais informações** e, em seguida, em **Executar mesmo assim**. Também pode guardar o pacote para instalar noutros computadores cliente.
 4. No computador cliente, navegue para **Definições de Rede** e clique em **VPN**. A ligação VPN mostra o nome da rede virtual à qual se liga.
 
@@ -221,17 +234,19 @@ Se estiver a ter problemas em ligar, verifique os seguintes itens:
 
 1. Para verificar se a ligação VPN está ativa, abra uma linha de comandos elevada e execute *ipconfig/all*.
 2. Veja os resultados. Repare que o endereço IP que recebeu é um dos endereços dentro do Conjunto de Endereços de Cliente de VPN de Ponto a Site que especificou na configuração. Os resultados são semelhantes a este exemplo:
-   
-        PPP adapter VNet1:
-            Connection-specific DNS Suffix .:
-            Description.....................: VNet1
-            Physical Address................:
-            DHCP Enabled....................: No
-            Autoconfiguration Enabled.......: Yes
-            IPv4 Address....................: 172.16.201.3(Preferred)
-            Subnet Mask.....................: 255.255.255.255
-            Default Gateway.................:
-            NetBIOS over Tcpip..............: Enabled
+
+  ```
+  PPP adapter VNet1:
+      Connection-specific DNS Suffix .:
+      Description.....................: VNet1
+      Physical Address................:
+      DHCP Enabled....................: No
+      Autoconfiguration Enabled.......: Yes
+      IPv4 Address....................: 172.16.201.3(Preferred)
+      Subnet Mask.....................: 255.255.255.255
+      Default Gateway.................:
+      NetBIOS over Tcpip..............: Enabled
+  ```
 
 
 ## <a name="connectVM"></a>Conectar a uma máquina virtual
@@ -357,4 +372,3 @@ Pode restabelecer um certificado de cliente, removendo o thumbprint da lista de 
 
 ## <a name="next-steps"></a>Passos seguintes
 Assim que a ligação estiver concluída, pode adicionar máquinas virtuais às redes virtuais. Para obter mais informações, veja [Máquinas Virtuais](https://docs.microsoft.com/azure/#pivot=services&panel=Compute). Para compreender melhor o funcionamento em rede e as máquinas virtuais, veja [Descrição geral da rede VM do Azure e Linux](../virtual-machines/linux/azure-vm-network-overview.md).
-

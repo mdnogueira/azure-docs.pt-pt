@@ -1,6 +1,6 @@
 ---
 title: Importar dados para o Azure Search no portal do | Microsoft Docs
-description: "Utilize o Assistente de Dados de Importação de Azure Search no Portal do Azure para pesquisar dados do Azure no NoSQL DocumentDB, no armazenamento de Blobs do Azure, no armazenamento de tabelas, Base de Dados SQL e no SQL Server em VMs do Azure."
+description: "Utilize o Assistente de Dados de Importação de Azure Search no Portal do Azure para pesquisar dados do Azure no NoSQL do Azure Cosmos DB, no armazenamento de Blobs do Azure, no armazenamento de tabelas, Base de Dados SQL e no SQL Server em VMs do Azure."
 services: search
 documentationcenter: 
 author: HeidiSteen
@@ -13,11 +13,13 @@ ms.devlang: na
 ms.workload: search
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
-ms.date: 02/08/2017
+ms.date: 05/01/2017
 ms.author: heidist
-translationtype: Human Translation
-ms.sourcegitcommit: d19a85e127b548e5f8979358879e8b9354934904
-ms.openlocfilehash: c03c26d0e5ea2529162262664412f4f8f7e854dc
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 71fea4a41b2e3a60f2f610609a14372e678b7ec4
+ms.openlocfilehash: a3e6dd66197a17bfdc80c04130e198b787692a58
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/10/2017
 
 
 ---
@@ -32,17 +34,17 @@ Internamente, o assistente configura e invoca um *indexador*, automatizando vár
 * Gerar um esquema de índice modificável com base na estrutura dos dados de origem
 * Carregue documentos JSON para um índice com um conjunto de linhas obtido a partir da origem de dados
 
-Pode tentar terminar este fluxo de trabalho com dados de exemplo no DocumentDB. Visite [Introdução ao Azure Search no Portal do Azure](search-get-started-portal.md) para obter instruções.
+Pode tentar terminar este fluxo de trabalho com dados de exemplo no Azure Cosmos DB. Visite [Introdução ao Azure Search no Portal do Azure](search-get-started-portal.md) para obter instruções.
 
 > [!NOTE]
-> Pode iniciar o assistente **Importar dados** a partir do dashboard do DocumentDB, para simplificar a indexação dessa origem de dados. Na navegação à esquerda, aceda a **Coleções** > **Adicionar Azure Search** para começar.
+> Pode iniciar o assistente **Importar dados** a partir do dashboard do Azure Cosmos DB, para simplificar a indexação dessa origem de dados. Na navegação à esquerda, aceda a **Coleções** > **Adicionar Azure Search** para começar.
 
 ## <a name="data-sources-supported-by-the-import-data-wizard"></a>Origens de dados suportadas pelo Assistente de Importação de Dados
 O Assistente para Importar Dados suporta as seguintes origens de dados: 
 
 * Base de Dados SQL do Azure
 * Dados relacionais do SQL Server numa VM do Azure
-* Azure DocumentDB
+* Azure Cosmos DB
 * Armazenamento de Blobs do Azure
 * Armazenamento de Tabelas do Azure
 
@@ -58,7 +60,7 @@ Um conjunto de dados bidimensional é uma entrada necessária. Só é possível 
 | **Origem de dados existente** |Se já tiver indexadores definidos no seu serviço de pesquisa, pode selecionar uma definição de origem de dados para outra importação existente. |
 | **Base de Dados SQL do Azure** |Podem ser especificados um nome do serviço, credenciais para um utilizador de base de dados com permissão de leitura e um nome de base de dados na página ou através de uma cadeia de ligação do ADO.NET. Escolha a opção de cadeia de ligação para ver ou personalizar propriedades. <br/><br/>A tabela ou vista que fornece o conjunto de linhas deve ser especificada na página. Esta opção é apresentada após a ligação ser bem sucedida, apresentando uma lista pendente para que possa fazer uma seleção. |
 | **SQL Server numa VM do Azure** |Especifique um nome de serviço totalmente qualificado, um ID de utilizador e palavra-passe e uma base de dados como uma cadeia de ligação. Para utilizar esta origem de dados, deve ter instalado anteriormente um certificado no arquivo local que encripta a ligação. Para obter instruções, consulte [Ligação da VM do SQL para o Azure Search](search-howto-connecting-azure-sql-iaas-to-azure-search-using-indexers.md). <br/><br/>A tabela ou vista que fornece o conjunto de linhas deve ser especificada na página. Esta opção é apresentada após a ligação ser bem sucedida, apresentando uma lista pendente para que possa fazer uma seleção. |
-| **DocumentDB** |Os requisitos incluem a conta, a base de dados e a coleção. Todos os documentos na coleção serão incluídos no índice remissivo. Pode definir uma consulta para nivelamento ou filtrar o conjunto de linhas ou para detetar documentos alterados para as operações de atualização de dados subsequentes. |
+| **Azure Cosmos DB** |Os requisitos incluem a conta, a base de dados e a coleção. Todos os documentos na coleção serão incluídos no índice remissivo. Pode definir uma consulta para nivelamento ou filtrar o conjunto de linhas ou para detetar documentos alterados para as operações de atualização de dados subsequentes. |
 | **Armazenamento de Blobs do Azure** |Os requisitos incluem a conta de armazenamento e um contentor. Opcionalmente, se os nomes de blob seguem uma convenção de nomenclatura virtual para fins de agrupamento, pode especificar a porção do diretório virtual do nome como uma pasta no contentor. Consulte [Armazenamento de Blobs de Indexação](search-howto-indexing-azure-blob-storage.md) para obter mais informações. |
 | **Armazenamento de Tabelas do Azure** |Os requisitos incluem a conta de armazenamento e um nome de tabela. Opcionalmente, pode especificar uma consulta para obter um subconjunto de tabelas. Consulte [Armazenamento de Tabelas de Indexação](search-howto-indexing-azure-tables.md) para obter mais informações. |
 
@@ -113,16 +115,11 @@ As edições que não requerem uma reconstrução incluem a adição de um novo 
 Reveja estas ligações para saber mais sobre indexadores:
 
 * [Indexação da Base de Dados SQL do Azure](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
-* [Indexação do DocumentDB](search-howto-index-documentdb.md)
+* [Indexação do Azure Cosmos DB](search-howto-index-documentdb.md)
 * [Indexação do Armazenamento de Blobs](search-howto-indexing-azure-blob-storage.md)
 * [Indexação do Armazenamento de Tabelas](search-howto-indexing-azure-tables.md)
 
 <!--Image references-->
 [1]: ./media/search-import-data-portal/search-import-data-command.png
-
-
-
-
-<!--HONumber=Feb17_HO2-->
 
 
