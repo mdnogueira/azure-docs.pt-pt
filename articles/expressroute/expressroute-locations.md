@@ -12,13 +12,13 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 05/02/2017
-ms.author: cherylmc
+ms.date: 05/10/2017
+ms.author: pareshmu
 ms.translationtype: Human Translation
-ms.sourcegitcommit: be3ac7755934bca00190db6e21b6527c91a77ec2
-ms.openlocfilehash: 6f4e6629b6058eec292f13e236eba8a91679d5b4
+ms.sourcegitcommit: 97fa1d1d4dd81b055d5d3a10b6d812eaa9b86214
+ms.openlocfilehash: 90f38dc85ed99fa89a8acb6e55ee8aa0956638b7
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/03/2017
+ms.lasthandoff: 05/11/2017
 
 
 ---
@@ -83,7 +83,7 @@ A tabela seguinte mostra as localizações por fornecedor de serviços. Se quise
 | **[Colt](http://www.colt.net/uk/en/news/colt-announces-dedicated-cloud-access-for-microsoft-azure-services-en.htm)** |Suportado |Suportado |Amesterdão, Dublin, Londres, Tóquio |
 | **Comcast** |Suportado |Suportado |Chicago, Silicon Valley, Washington D.C. |
 | **Console**| Suportado | Suportado |Silicon Valley, Toronto |
-| **[CoreSite](http://www.coresite.com/solutions/cloud-services/public-cloud-providers/microsoft-azure-expressroute)** |Suportado |Suportado |Los Angeles, Nova Iorque |
+| **[CoreSite](http://www.coresite.com/solutions/cloud-services/public-cloud-providers/microsoft-azure-expressroute)** |Suportado |Suportado |Denver+, Los Angeles, Nova Iorque |
 | **[Equinix](http://www.equinix.com/partners/microsoft-azure/)** |Suportado |Suportado |Amesterdão, Atlanta, Chicago, Dallas, Hong Kong, Londres, Los Angeles, Melbourne, Nova Iorque, Osaka, Paris+, São Paulo, Seattle, Silicon Valley, Singapura, Sydney, Tóquio, Toronto, Washington, D.C. |
 | **euNetworks** |Suportado |Suportado |Amesterdão |
 | **GÉANT** |Suportado |Suportado |Amesterdão |
@@ -163,6 +163,8 @@ Se o seu fornecedor de conectividade não está listado nas secções anteriores
 * Organize um circuito ExpressRoute com a troca como o seu fornecedor de conectividade para se ligar à Microsoft.
   * Siga os passos em [Criar um circuito ExpressRoute](expressroute-howto-circuit-classic.md) para configurar a conectividade.
 
+## <a name="connectivity-through-additional-service-providers"></a>Conectividade Através de Fornecedores de Serviços Adicionais
+
 | **Fornecedor de conectividade** | **Exchange** | **Localizações** |
 | --- | --- | --- |
 | **[1CLOUDSTAR](http://www.1cloudstar.com/service/cloudconnect-azure-expressroute/)** |Equinix |Singapura |
@@ -170,10 +172,11 @@ Se o seu fornecedor de conectividade não está listado nas secções anteriores
 | **[Alaska Communications](http://www.alaskacommunications.com/For-Your-Business/Direct-Cloud-Service)** |Equinix |Seattle |
 | **[Arteria Networks Corporation](https://arteria-net.com/business/service/cloud_access/sca/)** |Equinix |Tóquio |
 | **[Bezeq International Ltd.](https://www.bezeqint.net/english)** | euNetworks | Londres |
-| **[C3ntro](http://www.c3ntro.com/data/cloud-conectivity/)** | Equinix, Megaport | Dallas |
+| **[C3ntro Telecom](http://www.c3ntro.com/data/cloud-conectivity/)** | Equinix, Megaport | Dallas |
 | **[Cogeco Peer 1](https://www.cogecopeer1.com/en/)**| Equinix | Montreal, Toronto |
+| **[Cox Business](https://www.cox.com/business/networking/cloud-connectivity.html)** | Equinix | Dallas, Silicon Valley, Washington DC | 
 | **[Data Foundry](https://www.datafoundry.com/services/cloud-connect)** | Megaport | Dallas |
-| **[Epsilon Telecommunications Limited](http://www.epsilontel.com/data-connectivity/cloud-access/)** | Equinix | Singapura |
+| **[Epsilon Telecommunications Limited](http://www.epsilontel.com/data-connectivity/cloud-access/)** | Equinix | Londres, Singapura, Washington DC |
 | **[Eurofiber](https://eurofiber.nl/microsoft-azure/)** | Equinix | Amesterdão |
 | **[Exponential E](http://www.exponential-e.com/services/connectivity-services/cloud-connect-exchange)** | Equinix | Londres |
 | **[Fastweb S.p.A](http://www.fastweb.it/grandi-aziende/connessione-voce-e-wifi/scheda-prodotto/rete-privata-virtuale/)** | Equinix | Amesterdão |
@@ -184,11 +187,33 @@ Se o seu fornecedor de conectividade não está listado nas secções anteriores
 | **[NexGen Networks](http://www.nexgen-net.com/nexgen-networks-direct-connect-microsoft-azure-expressroute.html)** | Interxion | Londres |
 | **[Nianet](https://nianet.dk/produkter/internet/microsoft-expressroute)** |Telecity | Amesterdão, Frankfurt |  
 | **[QSC AG](https://www.qsc.de/de/produkte-loesungen/cloud-services-und-it-outsourcing/pure-enterprise-cloud/multi-cloud-management/azure-expressroute/)** |Interxion | Frankfurt |  
-| **[Tamares Telecom](http://www.tamarestelecom.com/our-services/#Connectivity)** | Telecity | Londres
+| **Rogers** | Cologix, Equinix | Montreal, Toronto |
+| **[Tamares Telecom](http://www.tamarestelecom.com/our-services/#Connectivity)** | Telecity | Londres | 
+| **[ThinkTel](http://www.thinktel.ca/services/agile-ix-data/expressroute/)** | Equinix | Toronto | 
 | **[Transtelco](http://www.transtelco.net/tcloud/microsoft)** |Equinix | Dallas, Los Angeles |  
 | **[Windstream](http://www.windstreambusiness.com/solutions/cloud-services/cloud-and-managed-hosting-services)**| Equinix | Chicago, Silicon Valley, Washington D.C. |
 | **[Zertia](http://www.zertia.es/index.php/novedades)**| Level 3 | Madrid |
 
+## <a name="connectivity-through-datacenter-providers"></a>Conectividade Através de Fornecedores de Datacenters
+| **Fornecedor** | **Exchange** | **Localização**|
+| --- | --- | --- |
+| **[Cyrus One](https://cyrusone.com/enterprise-data-center-services/connectivity-and-interconnection/)** | Megaport | Dallas |
+| **[Digital Realty](https://www.digitalrealty.com/services/interconnection/service-exchange/)** | Megaport | - |
+| **[EdgeConnex](http://www.edgeconnex.com/services/edge-data-centers-proximity-matters/)** | Megaport | - |
+
+## <a name="connectivity-through-national-research-and-education-networks-nren"></a>Conectividade Através de National Research and Education Networks (NREN, Redes de Investigação e Ensino Nacionais)
+
+| **Fornecedor**|
+| --- |
+| **AARNET**| 
+| **GARR, através da GÉANT**|
+| **GÉANT**|
+| **HEAnet, através da GÉANT**|
+| **JISC**|
+| **RedIRIS, através da GÉANT**|
+| **Surfnet, através da GÉANT**|
+
+* Se o seu fornecedor de conectividade não estiver listado aqui, verifique se está ligado a algum dos Parceiros do Exchange do ExpressRoute apresentados acima.
 
 ## <a name="expressroute-system-integrators"></a>Integradores de sistemas ExpressRoute
 A ativação da conectividade privada para atender as suas necessidades pode ser um desafio, com base na escala da sua rede. Pode trabalhar com qualquer um dos integradores de sistemas listados na seguinte tabela para ajudá-lo com a integração do ExpressRoute.
@@ -199,6 +224,7 @@ A ativação da conectividade privada para atender as suas necessidades pode ser
 | **[Avanade Inc.](http://www.avanade.com/)** | Ásia, Europa, América do Norte, América do Sul |
 | **[Bright Skies GmbH](http://bskies.io/expressroute)** | Europa
 | **[Dotnet Solutions](http://www.dotnetsolutions.co.uk/)** | Europa |
+| **[Ensyst](http://www.ensyst.com.au)** | Ásia
 | **[Serviços Profissionais Equinix](http://www.equinix.com/services/consulting/)** | América do Norte |
 | **[The IT Consultancy Group](http://itconsult.com.au/microsoft-expressroute)** | Austrália |
 | **[MSG Services](https://www.msg-services.de/it-services/managed-services/cloud-outsourcing/)** | Europa (Alemanha) |
@@ -209,6 +235,7 @@ A ativação da conectividade privada para atender as suas necessidades pode ser
 | **[Presidio](http://info.presidio.com/microsoft-azure-expressroute)** | América do Norte |
 | **[Project Leadership](http://www.projectleadership.net/azure)** | América do Norte |
 | **[sol-tec](http://www.sol-tec.com/Technologies)** | Europa |
+| **[Vigilant.IT](https://vigilant.it/expressroute)** | Austrália |
 
 
 ## <a name="next-steps"></a>Passos seguintes

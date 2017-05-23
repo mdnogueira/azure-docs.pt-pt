@@ -1,6 +1,6 @@
 ---
-title: "Aprovisionar e catalogar novos inquilinos (aplicação SaaS de exemplo com a Base de Dados SQL do Azure) | Microsoft Docs"
-description: Aprovisionar e catalogar novos inquilinos
+title: "Aprovisionar inquilinos novos numa aplicação multi-inquilino com a Base de Dados SQL do Azure | Microsoft Docs"
+description: "Aprovisionar e catalogar inquilinos novos na aplicação Wingtip Tickets (WTP) SaaS de exemplo da Base de Dados SQL do Azure"
 keywords: tutorial de base de dados sql
 services: sql-database
 documentationcenter: 
@@ -17,10 +17,10 @@ ms.topic: hero-article
 ms.date: 05/10/2017
 ms.author: billgib; sstein
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 71fea4a41b2e3a60f2f610609a14372e678b7ec4
-ms.openlocfilehash: 4eeada941f8615fa04624bc725efcb44f05d56c7
+ms.sourcegitcommit: fc4172b27b93a49c613eb915252895e845b96892
+ms.openlocfilehash: aae5d85a18f93b7821a6ef8fc7161dd9a6ebe533
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 05/12/2017
 
 
 ---

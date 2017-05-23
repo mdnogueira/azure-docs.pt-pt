@@ -1,6 +1,6 @@
 ---
-title: "Executar consultas de análise em vários inquilinos (aplicação SaaS de exemplo com a Base de Dados SQL do Azure) | Microsoft Docs"
-description: "Executar consultas de análise em vários inquilinos"
+title: "Executar consultas de análise em várias bases de dados SQL do Azure | Microsoft Docs"
+description: "Executar consultas distribuídas em várias bases de dados SQL do Azure"
 keywords: tutorial de base de dados sql
 services: sql-database
 documentationcenter: 
@@ -17,14 +17,14 @@ ms.topic: hero-article
 ms.date: 05/10/2017
 ms.author: billgib; sstein
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 71fea4a41b2e3a60f2f610609a14372e678b7ec4
-ms.openlocfilehash: b512e2f7833be1947ef7674d6e0266879789ac5a
+ms.sourcegitcommit: fc4172b27b93a49c613eb915252895e845b96892
+ms.openlocfilehash: a0742a004b618dda304618bca21ae715552c16e6
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 05/12/2017
 
 
 ---
-# <a name="run-analytics-queries-against-multiple-tenants"></a>Executar consultas de análise em vários inquilinos
+# <a name="run-distributed-queries-across-multiple-azure-sql-databases"></a>Executar consultas distribuídas em várias bases de dados SQL do Azure
 
 Neste tutorial, vai executar consultas de análise em cada inquilino no catálogo. É criada uma tarefa elástica que executa as consultas. A tarefa obtém os dados e carrega-os numa base de dados de análise separada, criada no servidor de catálogo. Esta base de dados pode ser consultada para extrair as informações que estão escondidas nos dados operacionais diários de todos os inquilinos. Como resultado da tarefa, é criada uma tabela a partir das consultas dos resultados dentro da base de dados de análise de inquilinos.
 
