@@ -11,6 +11,6 @@ Agora, pode utilizar o Data Explorer para criar um contentor de gráficos e adic
     ID da coleção|tabela de exemplo|O ID da coleção nova. Os nomes de coleções têm os mesmos requisitos que os ids das bases de dados.
     Capacidade de Armazenamento| 10 GB|Deixe o valor predefinido. Esta é a capacidade de armazenamento da base de dados.
     Débito|400 RUs|Deixe o valor predefinido. Pode aumentar verticalmente o débito mais tarde, se quiser reduzir a latência.
-    Chave de partição|/databases|Uma chave de partição que irá distribuir uniformemente os dados para cada partição. É importante selecionar a chave de partição correta para criar coleções com bom desempenho. Leia mais em [Designing for partitioning](../articles/cosmos-db/partition-data.md#designing-for-partitioning) (Conceber a criação de partições).
+    Chave de partição|/lastname|Uma chave de partição que irá distribuir uniformemente os dados para cada partição. É importante selecionar a chave de partição correta para criar coleções com bom desempenho. Leia mais em [Designing for partitioning](../articles/cosmos-db/partition-data.md#designing-for-partitioning) (Conceber a criação de partições).
 
 3. Assim que o formulário estiver preenchido, clique em **OK**.

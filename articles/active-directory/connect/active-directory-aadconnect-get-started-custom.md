@@ -14,10 +14,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 03/30/2017
 ms.author: billmath
-translationtype: Human Translation
-ms.sourcegitcommit: 538f282b28e5f43f43bf6ef28af20a4d8daea369
-ms.openlocfilehash: 06f81b11205085357ba4ba4e2f0d2e1e4c0e940a
-ms.lasthandoff: 04/07/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fc4172b27b93a49c613eb915252895e845b96892
+ms.openlocfilehash: 5120b3f11549c936daacdfab37190a7193fde89f
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/12/2017
 
 
 ---
@@ -74,9 +75,19 @@ Se receber um erro e tiver problemas com a conectividade, veja [Resolver problem
 ## <a name="pages-under-the-section-sync"></a>Páginas na secção Sincronização
 
 ### <a name="connect-your-directories"></a>Ligar os diretórios
-Para se ligar ao Serviço de Domínio do Active Directory, o Azure AD Connect tem as credenciais de uma conta com permissões suficientes. Pode introduzir a parte do domínio no formato NetBios ou FQDN, ou seja, FABRIKAM\syncuser ou fabrikam.com\syncuser. Esta conta pode ser uma conta de utilizador normal, porque precisa apenas das permissões de leitura predefinidas. No entanto, dependendo do seu cenário, poderá precisar de mais permissões. Para obter mais informações, consulte [Contas e permissões do Azure AD Connect](active-directory-aadconnect-accounts-permissions.md#create-the-ad-ds-account)
+Para ligar ao seu serviço do Active Directory Domain Services, o Azure AD Connect precisa do nome da floresta e das credenciais de uma conta com permissões suficientes.
 
-![Ligar o Diretório](./media/active-directory-aadconnect-get-started-custom/connectdir.png)
+![Ligar o Diretório](./media/active-directory-aadconnect-get-started-custom/connectdir01.png)
+
+Depois de introduzir o nome da floresta e de clicar em **Adicionar Diretório**, é apresentada uma caixa de diálogo de pop-up que mostra as opções seguintes:
+
+| Opção | Descrição |
+| --- | --- |
+| Utilizar conta existente | Selecione esta opção se quiser indicar uma conta do AD DS existente para ser utilizada com o Azure AD Connect para ligar à floresta do AD durante a sincronização de diretórios. Pode introduzir a parte do domínio no formato NetBios ou FQDN, ou seja, FABRIKAM\syncuser ou fabrikam.com\syncuser. Esta conta pode ser uma conta de utilizador normal, porque precisa apenas das permissões de leitura predefinidas. No entanto, dependendo do seu cenário, poderá precisar de mais permissões. Para obter mais informações, veja [Azure AD Connect Accounts and permissions](active-directory-aadconnect-accounts-permissions.md#create-the-ad-ds-account) (Contas e permissões do Azure AD Connet). |
+| Criar conta nova | Selecione esta opção se quiser que o assistente do Azure AD Connect crie a conta do AD DS de que precisa para ligar à floresta do AD durante a sincronização de diretórios. Se esta opção estiver selecionada, introduza o nome de utilizador e a palavra-passe de uma conta de administrador empresarial. O assistente do Azure AD Connect vai utilizar a conta de administrador empresarial indicada para criar a conta do AD DS necessária. Pode introduzir a parte do domínio no formato NetBios ou FQDN, ou seja, FABRIKAM\administrator ou fabrikam.com\administrator. |
+
+![Ligar o Diretório](./media/active-directory-aadconnect-get-started-custom/connectdir02.png)
+
 
 ### <a name="azure-ad-sign-in-configuration"></a>Configuração do início de sessão do Azure AD
 Esta página permite-lhe rever os domínios UPN presentes no AD DS no local e que foram verificados no Azure AD. Esta página também lhe permite configurar o atributo a utilizar para userPrincipalName.
@@ -99,7 +110,7 @@ Por predefinição, todos os domínios e UOs são sincronizados. Se houver domí
 ![Filtragem de DomainOU](./media/active-directory-aadconnect-get-started-custom/domainoufiltering.png)  
 Esta página no assistente está a configurar filtragem baseada no domínio ou em UO. Se pretender efetuar alterações, consulte [filtragem baseada em domínio](active-directory-aadconnectsync-configure-filtering.md#domain-based-filtering) e [filtragem baseada em UO](active-directory-aadconnectsync-configure-filtering.md#organizational-unitbased-filtering) antes de efetuar estas alterações. Algumas UOs são essenciais para a funcionalidade e devem estar selecionadas.
 
-Se utilizar a filtragem baseada em UO, as novas UOs adicionadas mais tarde são sincronizados por predefinição. Se quiser optar pelo comportamento em que as UOs não são sincronizadas, pode configurar essa opção mais tarde, depois de o assistente terminar a [filtragem baseada em UO](active-directory-aadconnectsync-configure-filtering.md#organizational-unitbased-filtering).
+Se utilizar a filtragem baseada em UO com uma versão do Azure AD Connect anterior à 1.1.524.0, as novas UOs adicionadas mais tarde são sincronizados por predefinição. Se quiser optar pelo comportamento em que as UOs não são sincronizadas, pode configurar essa opção mais tarde, depois de o assistente terminar a [filtragem baseada em UO](active-directory-aadconnectsync-configure-filtering.md#organizational-unitbased-filtering). Na versão 1.1.524.0 ou posterior do Azure AD Connect, pode indicar se quer que as UOs novas sejam sincronizadas ou não.
 
 Se planeia utilizar a [filtragem baseada em grupo](#sync-filtering-based-on-groups), certifique-se de que a UO com o grupo é incluída e não é filtrada com filtragem de UO. A filtragem de UO é avaliado antes da filtragem baseada em grupo.
 
@@ -108,6 +119,8 @@ Também é possível que alguns domínios não estejam acessíveis devido a rest
 Se vir este aviso, certifique-se de que estes domínios são de facto inacessível e que o aviso é esperado.
 
 ### <a name="uniquely-identifying-your-users"></a>Identificar os utilizadores de forma exclusiva
+
+#### <a name="select-how-users-should-be-identified-in-your-on-premises-directories"></a>Selecione a forma como os utilizadores devem ser identificados nos seus diretórios no local
 A funcionalidade Correspondência entre florestas permite-lhe definir o modo como são representados no Azure AD os utilizadores das florestas do AD DS. Um utilizador pode ser representado apenas uma vez em todas as florestas ou ter uma combinação de contas ativadas e desativadas. O utilizador também pode ser representado como um contacto em algumas florestas.
 
 ![Exclusivo](./media/active-directory-aadconnect-get-started-custom/unique.png)
@@ -120,7 +133,15 @@ A funcionalidade Correspondência entre florestas permite-lhe definir o modo com
 | sAMAccountName e MailNickName |Esta opção associa atributos em que se espera que o ID de início de sessão do utilizador possa ser encontrado. |
 | Um atributo específico |Esta opção permite-lhe selecionar o seu próprio atributo. **Limitação:** certifique-se de que escolhe um atributo que já pode ser encontrado no metaverso. Se escolher um atributo personalizado (não no metaverso), não é possível concluir o assistente. |
 
-**Âncora de origem** - sourceAnchor é um atributo que é imutável durante a duração de um objeto de utilizador. É a chave primária da ligação do utilizador no local com o utilizador no Azure AD. Uma vez que o atributo não pode ser alterado, terá de planear um bom atributo para utilizar. Um bom candidato é objectGUID. Este atributo não é alterado, a menos que a conta de utilizador seja movida entre florestas/domínios. Num ambiente de várias florestas em que se movem contas entre florestas, tem de ser utilizado outro atributo, como um atributo com o campo IDdeEmpregado. Evite atributos que se alteram quando uma pessoa se casa ou muda de atribuições. Não é possível utilizar atributos com um @-sign, sendo assim o e-mail e userPrincipalName não podem ser utilizados. O atributo é também sensível a maiúsculas e minúsculas, por isso, ao mover um objeto entre florestas, certifique-se de que preserva as maiúsculas/minúsculas. Os atributos binários são codificados em base64, mas outros tipos de atributo permanecem no seu estado não codificado. Em cenários de federação e em algumas interfaces do Azure AD, este atributo é também conhecido como immutableID. Poderá encontrar mais informações acerca da âncora de origem no artigo [Conceitos de design](active-directory-aadconnect-design-concepts.md#sourceanchor).
+#### <a name="select-how-users-should-be-identified-with-azure-ad---source-anchor"></a>Selecione a forma como os utilizadores devem ser identificados com o Azure AD - Âncora de Origem
+O atributo sourceAnchor é imutável durante o ciclo de vida de um objeto de utilizador. É a chave primária da ligação do utilizador no local com o utilizador no Azure AD.
+
+| Definição | Descrição |
+| --- | --- |
+| Permitir que seja o Azure a gerir a âncora de por mim | Selecione esta opção se pretender que o Azure AD escolha o atributo por si. |
+| Um atributo específico | Selecione esta opção se pretender especificar um atributo do AD existente como o atributo sourceAnchor. |
+
+Uma vez que o atributo não pode ser alterado, terá de planear um bom atributo para utilizar. Um bom candidato é objectGUID. Este atributo não é alterado, a menos que a conta de utilizador seja movida entre florestas/domínios. Num ambiente de várias florestas em que se movem contas entre florestas, tem de ser utilizado outro atributo, como um atributo com o campo IDdeEmpregado. Evite atributos que se alteram quando uma pessoa se casa ou muda de atribuições. Não é possível utilizar atributos com um @-sign, sendo assim o e-mail e userPrincipalName não podem ser utilizados. O atributo é também sensível a maiúsculas e minúsculas, por isso, ao mover um objeto entre florestas, certifique-se de que preserva as maiúsculas/minúsculas. Os atributos binários são codificados em base64, mas outros tipos de atributo permanecem no seu estado não codificado. Em cenários de federação e em algumas interfaces do Azure AD, este atributo é também conhecido como immutableID. Poderá encontrar mais informações acerca da âncora de origem no artigo [Conceitos de design](active-directory-aadconnect-design-concepts.md#sourceanchor).
 
 ### <a name="sync-filtering-based-on-groups"></a>Filtragem de sincronização baseada em grupos
 A filtragem na funcionalidade de grupos permite-lhe sincronizar apenas um pequeno subconjunto de objetos para uma implementação piloto. Para utilizar esta funcionalidade, crie um grupo para este efeito no Active Directory no local. Em seguida, adicione os utilizadores e grupos que devem ser sincronizados com o Azure AD como membros diretos. Pode adicionar e remover posteriormente utilizadores deste grupo para manter a lista de objetos que deve estar presente no Azure AD. Todos os objetos que pretende sincronizar têm de ser membros diretos do grupo. Os utilizadores, grupos, contactos e computadores/dispositivos têm de ser todos membros diretos. A associação a grupos aninhados não é resolvida. Ao adicionar um grupo como membro, só é adicionado o grupo em si e não os seus membros.
@@ -147,6 +168,7 @@ Este ecrã permite-lhe selecionar as funcionalidades opcionais para os seus cen�
 | Funcionalidades Opcionais | Descrição |
 | --- | --- |
 | Implementação Híbrida do Exchange |A funcionalidade Implementação Híbrida do Exchange permite a coexistência de caixas de correio do Exchange no local e no Office 365. O Azure AD Connect está a sincronizar um conjunto específico de [atributos](active-directory-aadconnectsync-attributes-synchronized.md#exchange-hybrid-writeback) do Azure AD para o diretório no local. |
+| Pastas Públicas de Correio do Exchange | A funcionalidade Pastas Públicas de Correio do Exchange permite-lhe sincronizar objetos de Pastas Públicas ativadas para correio do seu Active Directory no local para o Azure AD. |
 | Aplicação Azure AD e filtragem de atributos |Ao ativar a aplicação Azure AD e a filtragem de atributos, o conjunto de atributos sincronizados pode ser personalizado. Esta opção adiciona mais duas páginas de configuração ao assistente. Para obter mais informações, consulte [Aplicação Azure AD e filtragem de atributos](#azure-ad-app-and-attribute-filtering). |
 | Sincronização de palavras-passe |Se tiver selecionado a federação como solução de início de sessão, poderá ativar esta opção. A sincronização de palavras-passe pode ser utilizada como uma opção de cópia de segurança. Para obter mais informações, consulte [Sincronização de palavras-passe](active-directory-aadconnectsync-implement-password-synchronization.md). </br></br>Se tiver selecionado a Autenticação Pass-through, esta opção está ativada por predefinição para assegurar o suporte para clientes legados e como uma opção de cópia de segurança. Para obter mais informações, consulte [Sincronização de palavras-passe](active-directory-aadconnectsync-implement-password-synchronization.md).|
 | Repetição de escrita de palavras-passe |Ao ativar a repetição de escrita de palavras-passe, as alterações de palavras-passe com origem no Azure AD são reescritas no diretório no local. Para mais informações, consulte [Introdução à gestão de palavras-passe](../active-directory-passwords-getting-started.md) |

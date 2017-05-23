@@ -1,6 +1,6 @@
 ---
-title: "Gerir Esquema para vários inquilinos (aplicação SaaS de exemplo com a Base de Dados SQL do Azure) | Microsoft Docs"
-description: "Gerir Esquema para vários inquilinos numa aplicação SaaS que utiliza a Base de Dados SQL do Azure"
+title: "Gerir o esquema da Base de Dados SQL numa aplicação multi-inquilino | Microsoft Docs"
+description: "Gerir o Esquema para vários inquilinos numa aplicação multi-inquilino que utiliza a Base de Dados SQL do Azure"
 keywords: tutorial de base de dados sql
 services: sql-database
 documentationcenter: 
@@ -17,10 +17,10 @@ ms.topic: hero-article
 ms.date: 05/10/2017
 ms.author: billgib; sstein
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 71fea4a41b2e3a60f2f610609a14372e678b7ec4
-ms.openlocfilehash: 226cda254934fae30410e54148d5cc527e1c7881
+ms.sourcegitcommit: fc4172b27b93a49c613eb915252895e845b96892
+ms.openlocfilehash: 19d02229781186053a0063af1c7e1a3280179f46
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 05/12/2017
 
 
 ---

@@ -14,10 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: storage-backup-recovery
 ms.date: 03/14/2017
 ms.author: raynew
-translationtype: Human Translation
-ms.sourcegitcommit: a087df444c5c88ee1dbcf8eb18abf883549a9024
-ms.openlocfilehash: d8e4e4bb7dd1e40d8c561adba04b8346fcb2127d
-ms.lasthandoff: 03/15/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 97fa1d1d4dd81b055d5d3a10b6d812eaa9b86214
+ms.openlocfilehash: 89921997f68bd72ee6086d2b635361eeeaba1c28
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/11/2017
 
 
 ---
@@ -33,7 +34,7 @@ Os Serviços de Recuperação do Azure contribuem para a sua estratégia BCDR. O
 
 - **Recuperação após desastre na cloud**— Pode replicar cargas de trabalho em execução em VMs e servidores físicos para o Azure, em vez de recorrer a um site secundário. Esta ação elimina o custo e a complexidade de manter um datacenter secundário.
 - **Replicação flexível para ambientes híbridos**— Pode replicar qualquer carga de trabalho em execução em VMs de Hyper-V no local, VMs de VMware e servidores físicos do Windows/Linux suportados.
-- **Migração**— Pode utilizar o Site Recovery para migrar instâncias de AWS no local para VMs do Azure ou para migrar VMs do Azure entre regiões do Azure.
+- **Migração**  — pode utilizar o Site Recovery para migrar instâncias do AWS para VMs do Azure ou para migrar VMs do Azure entre regiões do Azure.
 - **BCDR simplificado**— Pode implementar a replicação a partir de uma única localização no portal do Azure.  Pode executar ativações pós-falha simples e a reativação pós-falha de máquinas individuais e múltiplas.
 - **Resiliência**— A recuperação de sites orquestra a replicação e a ativação pós-falha, sem intercetar dados da aplicação.
 Os dados replicados são armazenados no armazenamento do Azure, com a resiliência que oferece. Quando ocorre a ativação pós-falha, as VMs do Azure são criadas com base nos dados replicados.
