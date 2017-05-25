@@ -2,7 +2,7 @@
 layout: HubPage
 hide_bc: true
 experimental: true
-experiment_id: d6155f71-baae-45
+experiment_id: 81ba5f65-59fb-4d
 title: "Documentação do Microsoft Azure"
 description: "Saiba como criar e gerir aplicações poderosas com os serviços cloud do Microsoft Azure. Obtenha documentação, código de exemplo, tutoriais e muito mais."
 ms.translationtype: Human Translation

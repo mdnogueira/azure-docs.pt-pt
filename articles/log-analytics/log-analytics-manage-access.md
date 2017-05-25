@@ -3,7 +3,7 @@ title: "Gerir áreas de trabalho no Log Analytics do Azure e no portal do OMS | 
 description: "Pode gerir áreas de trabalho no Log Analytics do Azure e no Portal do OMS com uma variedade de tarefas administrativas em utilizadores, contas, áreas de trabalho e contas do Azure."
 services: log-analytics
 documentationcenter: 
-author: bandersmsft
+author: MGoedtel
 manager: carmonm
 editor: 
 ms.assetid: d0e5162d-584b-428c-8e8b-4dcaa746e783
@@ -13,10 +13,11 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
 ms.date: 04/12/2017
-ms.author: banders
-translationtype: Human Translation
+ms.author: magoedte
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 2c33e75a7d2cb28f8dc6b314e663a530b7b7fdb4
 ms.openlocfilehash: 5b4a2b7646a2ead1df459c5d9a17d125821c86a5
+ms.contentlocale: pt-pt
 ms.lasthandoff: 04/21/2017
 
 
