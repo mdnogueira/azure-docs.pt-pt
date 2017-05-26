@@ -21,9 +21,13 @@
 ### [Portal do Azure](vpn-gateway-howto-point-to-site-resource-manager-portal.md)
 ### [PowerShell](vpn-gateway-howto-point-to-site-rm-ps.md)
 ### [Portal do Azure (clássico)](vpn-gateway-howto-point-to-site-classic-azure-portal.md)
+### Gerar certificados assinados automaticamente para ligações Ponto a Site
+#### [PowerShell](vpn-gateway-certificates-point-to-site.md)
+#### [Makecert](vpn-gateway-certificates-point-to-site-makecert.md)
 ## Configurar uma ligação VNet a VNet
 ### [Portal do Azure](vpn-gateway-howto-vnet-vnet-resource-manager-portal.md)
 ### [PowerShell](vpn-gateway-vnet-vnet-rm-ps.md)
+### [CLI do Azure](vpn-gateway-howto-vnet-vnet-cli.md)
 ### [Portal do Azure (clássico)](vpn-gateway-howto-vnet-vnet-portal-classic.md)
 ## Configurar uma ligação VNet a VNet entre modelos de implementação
 ### [Portal do Azure](vpn-gateway-connect-different-deployment-models-portal.md)
@@ -46,9 +50,6 @@
 ### [Portal do Azure](vpn-gateway-delete-vnet-gateway-portal.md)
 ### [PowerShell](vpn-gateway-delete-vnet-gateway-powershell.md)
 ### [PowerShell (clássico)](vpn-gateway-delete-vnet-gateway-classic-powershell.md)
-## Criar certificados autoassinados para ligações Ponto a Site
-### [PowerShell](vpn-gateway-certificates-point-to-site.md)
-### [Makecert](vpn-gateway-certificates-point-to-site-makecert.md)
 ## [Configurar um gateway de VPN (clássico)](vpn-gateway-configure-vpn-gateway-mp.md)
 ## Resolução de problemas
 ### [Validar o débito de VPN para uma VNet](vpn-gateway-validate-throughput-to-vnet.md)
@@ -56,9 +57,9 @@
 # Referência
 ## [PowerShell](/powershell/module/azurerm.network)
 ## [PowerShell (clássico)](/powershell/module/azure/?view=azuresmps-3.7.0)
-## [REST](https://msdn.microsoft.com/library/mt163859)
+## [REST](https://docs.microsoft.com/rest/api/network/virtualnetworkgateways)
 ## [REST (clássico)](https://msdn.microsoft.com/library/jj154113)
-## [CLI do Azure](https://docs.microsoft.com/cli/azure/network)
+## [CLI do Azure](https://docs.microsoft.com/cli/azure/network/vnet-gateway)
 
 # Relacionado
 ## [Rede Virtual](/azure/virtual-network/)

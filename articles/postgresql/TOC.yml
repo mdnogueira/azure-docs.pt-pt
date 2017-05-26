@@ -39,9 +39,9 @@
       href: concepts-server-logs.md
   - name: Recursos
     items:
-    - name: Escalões de serviço
+    - name: Escalões de preço
       href: concepts-service-tiers.md
-    - name: Unidades de Computação e Unidades de Armazenamento
+    - name: Unidades de Computação
       href: concepts-compute-unit-and-storage.md
     - name: Limites
       href: concepts-limits.md

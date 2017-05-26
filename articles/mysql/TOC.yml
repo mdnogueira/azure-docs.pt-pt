@@ -39,9 +39,9 @@
       href: concepts-supported-versions.md
   - name: Recursos
     items:
-    - name: Escalões de serviço
+    - name: Escalões de preço
       href: concepts-service-tiers.md
-    - name: Unidades de computação e Unidades de armazenamento
+    - name: Unidades de computação
       href: concepts-compute-unit-and-storage.md
     - name: Limites
       href: concepts-limits.md
@@ -85,6 +85,8 @@
       href: howto-connection-string.md
     - name: Configurar o SSL
       href: howto-configure-ssl.md
+    - name: Aplicação Web
+      href: howto-connect-webapp.md
 - name: Referência
   items:
   - name: CLI do Azure
