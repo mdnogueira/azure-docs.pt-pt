@@ -57,7 +57,8 @@
     href: azure-vm-network-overview.md
   - name: Conjuntos de Dimensionamento de VMs
     href: ../../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md
-  - name: Serviço de Metadados de Instância 
+  - name: Serviço de Metadados de Instância
+ 
     href: ../virtual-machines-instancemetadataservice-overview.md
   - name: Contentores
     href: containers.md
@@ -296,6 +297,8 @@
       href: extensions-customscript.md
     - name: Extensão do Agente OMS
       href: extensions-oms.md
+    - name: Extensão de Diagnóstico do Linux
+      href: diagnostic-extension.md
   - name: Executar aplicações
     items:
     - name: Cloud Foundry
@@ -353,19 +356,24 @@
       href: migration-classic-resource-manager-faq.md
   - name: Resolução de problemas
     items:
-    - name: Resolver problemas de ligações SSH
+    - name: Ligações SSH
       href: troubleshoot-ssh-connection.md
       items:
       - name: Passos detalhados de resolução de problemas
         href: detailed-troubleshoot-ssh-connection.md
-    - name: Resolver problemas de acesso às aplicações
+    - name: Diagnósticos de arranque
+ 
+      href: boot-diagnostics.md
+    - name: Acesso a aplicações
       href: troubleshoot-app-connection.md
-    - name: Resolver problemas de falhas de alocação
+    - name: Falhas de alocação
       href: allocation-failure.md
-    - name: Resolver problemas de implementação
+    - name: Problemas de implementação
       href: troubleshoot-deployment-new-vm.md
     - name: Reimplementar VM num novo nó do Azure
       href: redeploy-to-new-node.md
+    - name: Mensagens de erro comuns
+      href: error-messages.md
     - name: Anexar disco rígido virtual para resolver problemas
       items:
       - name: CLI do Azure

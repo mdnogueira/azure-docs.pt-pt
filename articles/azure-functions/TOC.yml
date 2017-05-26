@@ -45,12 +45,22 @@
     href: functions-create-serverless-api.md
 - name: Conceitos
   items:
-  - name: Planos de alojamento
+  - name: Consumo e planos do Serviço de Aplicações
     href: functions-scale.md
   - name: Acionadores e enlaces
     href: functions-triggers-bindings.md
+  - name: Linguagens
+    items:
+    - name: 'Conceitos de funções do C#'
+      href: functions-reference-csharp.md
+    - name: 'Conceitos de funções do F#'
+      href: functions-reference-fsharp.md
+    - name: Conceitos de funções de JavaScript
+      href: functions-reference-node.md    
 - name: Guias de procedimentos
   items:
+  - name: Guia para programadores
+    href: functions-reference.md
   - name: Testar as Funções do Azure
     href: functions-test-a-function.md
   - name: Programar e depurar localmente
@@ -65,15 +75,14 @@
     href: functions-monitoring.md
   - name: Instalar o Runtime das Funções
     href: functions-runtime-install.md
+  - name: Ligar à Base de dados SQL
+    href: functions-scenario-database-table-cleanup.md
+  - name: Criar uma definição de OpenAPI 2.0
+    href: functions-api-definition-getting-started.md     
+  - name: Melhores Práticas para as Funções do Azure
+    href: functions-best-practices.md     
 - name: Referência
   items:
-  - name: Programar aplicações de função
-    href: functions-reference.md
-    items:
-    - name: Open API 2.0
-      href: functions-api-definition.md
-  - name: Melhores Práticas para as Funções do Azure
-    href: functions-best-practices.md
   - name: Enlaces
     items:
     - name: Enlaces do Cosmos DB
@@ -106,14 +115,8 @@
       href: functions-bindings-timer.md
     - name: Enlace de saída do Twilio
       href: functions-bindings-twilio.md
-  - name: Estruturas
-    items:
-    - name: 'C#'
-      href: functions-reference-csharp.md
-    - name: 'F#'
-      href: functions-reference-fsharp.md
-    - name: JavaScript
-      href: functions-reference-node.md
+  - name: Referência de OpenAPI
+    href: functions-api-definition.md     
 - name: Recursos
   items:
   - name: Preços

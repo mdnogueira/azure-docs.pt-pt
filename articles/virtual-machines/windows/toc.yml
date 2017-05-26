@@ -55,7 +55,8 @@
     href: network-overview.md
   - name: Conjuntos de Dimensionamento de VMs
     href: ../../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json
-  - name: Serviço de Metadados de Instância 
+  - name: Serviço de Metadados de Instância
+ 
     href: ../virtual-machines-instancemetadataservice-overview.md
   - name: Contentores
     href: containers.md
@@ -321,10 +322,7 @@
       href: ./sql/virtual-machines-windows-sql-server-iaas-overview.md
     - name: SharePoint
       href: sharepoint-farm.md
-    - name: >-
-        Configurar uma aplicação LOB baseada na Web numa cloud híbrida para fins de
-        teste
-
+    - name: Configurar uma aplicação LOB baseada na Web numa cloud híbrida para fins de teste
       href: ps-hybrid-cloud-test-env-lob.md
     - name: Configurar um ambiente de cloud híbrida simulado para fins de teste
       href: ps-hybrid-cloud-test-env-sim.md
@@ -373,6 +371,9 @@
         href: troubleshoot-specific-rdp-errors.md
     - name: Repor palavra-passe de RDP
       href: reset-rdp.md
+    - name: Diagnósticos de arranque
+ 
+      href: boot-diagnostics.md
     - name: Criar uma VM
       href: troubleshoot-deployment-new-vm.md
     - name: Reiniciar ou redimensionar uma VM
@@ -383,6 +384,8 @@
       href: allocation-failure.md
     - name: Reimplementar uma VM
       href: redeploy-to-new-node.md
+    - name: Mensagens de erro comuns
+      href: error-messages.md
     - name: Anexar o disco rígido virtual para resolver problemas de VMs
       items:
       - name: Azure PowerShell

@@ -17,17 +17,13 @@
 ### [Grupos de segurança de rede](virtual-networks-nsg.md)
 
 ## Implementação
-### Redes virtuais (VNets)
-#### [Criar, alterar ou eliminar VNets](virtual-network-manage-network.md)
-#### [Criar, alterar ou eliminar sub-redes](virtual-network-manage-subnet.md)
-#### [Criar uma VNet - várias sub-redes](virtual-networks-create-vnet-arm-pportal.md) 
-##### [PowerShell](virtual-networks-create-vnet-arm-ps.md)
-##### [CLI](virtual-networks-create-vnet-arm-cli.md)
-##### [Modelo](virtual-networks-create-vnet-arm-template-click.md)
-#### Criar uma VNet - várias sub-redes (clássico)
-##### [Portal](virtual-networks-create-vnet-classic-pportal.md)
-##### [PowerShell](virtual-networks-create-vnet-classic-netcfg-ps.md)
-##### [CLI](virtual-networks-create-vnet-classic-cli.md)
+### [Redes virtuais](virtual-networks-create-vnet-arm-pportal.md)
+#### [PowerShell](virtual-networks-create-vnet-arm-ps.md)
+#### [CLI](virtual-networks-create-vnet-arm-cli.md)
+#### [Modelo](virtual-networks-create-vnet-arm-template-click.md)
+#### [Portal (clássico)](virtual-networks-create-vnet-classic-pportal.md)
+#### [PowerShell (clássico)](virtual-networks-create-vnet-classic-netcfg-ps.md)
+#### [CLI (clássico)](virtual-networks-create-vnet-classic-cli.md)
 
 ### Grupos de segurança de rede
 #### [Portal](virtual-networks-create-nsg-arm-pportal.md)
@@ -49,14 +45,9 @@
 #### [PowerShell](virtual-networks-create-vnetpeering-arm-ps.md)
 #### [Modelo](virtual-networks-create-vnetpeering-arm-template-click.md)
 
-### Interfaces de rede (NICs)
-#### [Criar, alterar ou eliminar NICs](virtual-network-network-interface.md)
-#### [Adicionar, alterar ou remover endereços IP](virtual-network-network-interface-addresses.md)
-
 ### [Endereços IP públicos](virtual-network-public-ip-address.md)
 
 ### Máquinas virtuais
-#### [Adicionar ou remover interfaces de rede](virtual-network-network-interface-vm.md) 
 #### Criar uma VM com um endereço IP público estático
 ##### [Portal](virtual-network-deploy-static-pip-arm-portal.md)
 ##### [PowerShell](virtual-network-deploy-static-pip-arm-ps.md)
@@ -103,20 +94,29 @@
 ##### [Aplicação de exemplo](virtual-networks-sample-app.md)
 
 ## Configurar
-### [Otimizar o débito da rede VM](virtual-network-optimize-network-bandwidth.md)
+
 ### Lista de controlo de acesso
 #### [Portal clássico](virtual-networks-acl.md)
 #### [PowerShell](virtual-networks-acl-powershell.md)
-### [Resolução de nomes para VMs e serviços cloud](virtual-networks-name-resolution-for-vms-and-role-instances.md)
+### Máquinas virtuais
+#### [Adicionar ou remover interfaces de rede](virtual-network-network-interface-vm.md)
+#### [Resolução de nomes para VMs e serviços cloud](virtual-networks-name-resolution-for-vms-and-role-instances.md)
+#### [Otimizar o débito de rede](virtual-network-optimize-network-bandwidth.md)
+#### [Ver e modificar nomes de anfitriões](virtual-networks-viewing-and-modifying-hostnames.md)
 
 ## Gerir
+### [Redes virtuais](virtual-network-manage-network.md)
+#### [Sub-redes](virtual-network-manage-subnet.md)
+#### [Peerings](virtual-network-manage-peering.md)
 ### Grupos de segurança de rede
 #### [Portal](virtual-network-manage-nsg-arm-portal.md)
 #### [PowerShell](virtual-network-manage-nsg-arm-ps.md)
 #### [CLI](virtual-network-manage-nsg-arm-cli.md)
 #### [Registos](virtual-network-nsg-manage-log.md)
+### Interfaces de rede (NICs)
+#### [Criar, alterar ou eliminar NICs](virtual-network-network-interface.md)
+#### [Adicionar, alterar ou remover endereços IP](virtual-network-network-interface-addresses.md)
 ### Máquinas virtuais
-#### [Ver e modificar nomes de anfitriões](virtual-networks-viewing-and-modifying-hostnames.md)
 #### [Mover uma VM para outra sub-rede](virtual-networks-move-vm-role-to-subnet.md)
 
 ## Resolução de problemas

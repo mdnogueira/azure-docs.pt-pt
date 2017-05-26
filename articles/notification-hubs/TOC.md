@@ -44,6 +44,7 @@
 
 ## Gerir
 ### [Registos](notification-hubs-push-notification-registration-management.md)
+### [Autenticação baseada em tokens do APNS](notification-hubs-push-notification-http2-token-authentification.md)
 
 ## [Proteger](notification-hubs-push-notification-security.md)
 ### Push seguro
