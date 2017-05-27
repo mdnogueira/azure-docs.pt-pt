@@ -3,7 +3,7 @@ title: Criar um SQL Data Warehouse com TSQL | Microsoft Docs
 description: Saiba como criar um Azure SQL Data Warehouse com TSQL
 services: sql-data-warehouse
 documentationcenter: NA
-author: barbkess
+author: hirokib
 manager: jhubbard
 editor: 
 tags: azure-sql-data-warehouse
@@ -15,10 +15,11 @@ ms.tgt_pltfrm: NA
 ms.workload: data-services
 ms.custom: create
 ms.date: 10/31/2016
-ms.author: barbkess
-translationtype: Human Translation
+ms.author: elbutter;barbkess
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 5d3bcc3c1434b16279778573ccf3034f9ac28a4d
 ms.openlocfilehash: 836d72e32e54ecef9691b55214766a1fc3ff9701
+ms.contentlocale: pt-pt
 ms.lasthandoff: 12/06/2016
 
 
