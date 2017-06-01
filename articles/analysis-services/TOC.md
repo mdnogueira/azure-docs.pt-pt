@@ -1,5 +1,6 @@
 # Descrição geral
 ## [O que é o Azure Analysis Services?](analysis-services-overview.md)
+## [Origens de dados suportadas](analysis-services-datasource.md)
 
 # Inícios rápidos
 ## [Criar um servidor - portal](analysis-services-create-server.md)
@@ -17,7 +18,7 @@
 ### [Lição 6: Criar medidas](tutorials/aas-lesson-6-create-measures.md)  
 ### [Lição 7: Criar Indicadores Chave de Desempenho](tutorials/aas-lesson-7-create-key-performance-indicators.md)  
 ### [Lição 8: Criar perspetivas](tutorials/aas-lesson-8-create-perspectives.md) 
-### [Lição 9: Criar hierarquias](tutorials/aas-lesson-9-create-hierarchies.md)  
+### [Lição 9: Criar hierarquias](tutorials/aas-lesson-9-create-hierarchies.md) 
 ### [Lição 10: Criar partições](tutorials/aas-lesson-10-create-partitions.md) 
 ### [Lição 11: Criar funções](tutorials/aas-lesson-11-create-roles.md)
 ### [Lição 12: Analisar no Excel](tutorials/aas-lesson-12-analyze-in-excel.md)
@@ -36,7 +37,6 @@
 ## [Obter bibliotecas de cliente](analysis-services-data-providers.md)
 ## [Backup e restauro](analysis-services-backup.md)
 ## [Elevada disponibilidade](analysis-services-bcdr.md)
-## [Ligações de origem de dados](analysis-services-datasource.md)
 ## [Criar um ficheiro .odc](analysis-services-odc.md)
 
 # Referência

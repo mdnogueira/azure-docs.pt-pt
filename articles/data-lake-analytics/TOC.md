@@ -2,7 +2,6 @@
 ## [O que é o Data Lake Analytics?](data-lake-analytics-overview.md)
 
 # Introdução
-## [Tutorial interativo: analisar os registos de Web site](data-lake-analytics-use-interactive-tutorials.md)
 ## [Portal do Azure](data-lake-analytics-get-started-portal.md)
 ## [PowerShell](data-lake-analytics-get-started-powershell.md)
 ## [SDK do .NET](data-lake-analytics-get-started-net-sdk.md)
@@ -27,6 +26,8 @@
 
 ## Criar soluções
 ### [Analisar registos de Web sites](data-lake-analytics-analyze-weblogs.md)
+### [Tutorial interativo: analisar os registos de Web site](data-lake-analytics-use-interactive-tutorials.md)
+
 
 ## Gerir
 ### [Portal do Azure](data-lake-analytics-manage-use-portal.md)
