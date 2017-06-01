@@ -63,7 +63,7 @@
       href: concepts-migrate-dump-restore.md
     - name: Importar e exportar
       href: concepts-migrate-import-export.md
-- name: Guias de Procedimentos
+- name: Guias de procedimentos
   items:
   - name: Gerir um Servidor
     items:
