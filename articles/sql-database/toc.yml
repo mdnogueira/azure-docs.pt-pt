@@ -13,14 +13,12 @@
     href: sql-database-get-started-cli.md
   - name: Criar BD - PowerShell
     href: sql-database-get-started-powershell.md
-  - name: Gerir
+  - name: Ligar e consultar
     items:
     - name: SSMS
       href: sql-database-connect-query-ssms.md
     - name: Código VS
       href: sql-database-connect-query-vscode.md
-  - name: Ligar
-    items:
     - name: .NET
       href: sql-database-connect-query-dotnet.md
     - name: PHP
@@ -37,7 +35,7 @@
   items:
   - name: 1 - Criar/estruturar uma nova BD SQL
     href: sql-database-design-first-database.md
-  - name: 2 - Migrar o SQL Server existente
+  - name: 2. - Migrar BD do SQL Server
     href: sql-database-migrate-your-sql-server-database.md
   - name: 3 - Proteger a sua BD SQL
     href: sql-database-security-tutorial.md
@@ -45,6 +43,8 @@
     href: sql-database-performance-tutorial.md
   - name: 5 - Implementar aplicação multi-inquilino
     href: sql-database-multi-tenant-application.md
+  - name: 6 - implementar uma base de dados distribuída geograficamente
+    href: sql-database-implement-geo-distributed-database.md 
   - name: Tutoriais do Wingtip SaaS
     items:
     - name: Introdução de Wingtip SaaS
@@ -55,15 +55,15 @@
       href: sql-database-saas-tutorial-provision-and-catalog.md
     - name: Monitorizar desempenho
       href: sql-database-saas-tutorial-performance-monitoring.md
+    - name: Monitorizar com o Log Analytics
+      href: sql-database-saas-tutorial-log-analytics.md
     - name: Restaurar um único inquilino
       href: sql-database-saas-tutorial-restore-single-tenant.md
     - name: Gerir esquemas de inquilino
       href: sql-database-saas-tutorial-schema-management.md
     - name: Executar análises ad hoc
       href: sql-database-saas-tutorial-adhoc-analytics.md
-    - name: Monitorizar com o Log Analytics
-      href: sql-database-saas-tutorial-log-analytics.md
-    - name: Gerir a análise de inquilino
+    - name: Executar análises de inquilinos
       href: sql-database-saas-tutorial-tenant-analytics.md
 - name: Amostras
   items:
@@ -145,7 +145,7 @@
       href: sql-database-ssms-mfa-authentication.md
     - name: Auditoria
       href: sql-database-auditing.md
-    - name: Auditoria e TDS
+    - name: Auditoria e TDS de tabelas
       href: sql-database-auditing-and-dynamic-data-masking-downlevel-clients.md
     - name: Deteção de ameaças
       href: sql-database-threat-detection.md
@@ -355,6 +355,8 @@
       href: sql-database-xevent-code-event-file.md
     - name: Eventos expandidos - memória intermédia em anel
       href: sql-database-xevent-code-ring-buffer.md
+    - name: Registo de diagnósticos
+      href: sql-database-metrics-diag-logging.md
   - name: Gerir
     items:
     - name: Automatização do Azure

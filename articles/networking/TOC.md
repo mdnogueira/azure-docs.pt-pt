@@ -1,6 +1,7 @@
 # Descrição geral
 ## [Acerca das redes do Azure](networking-overview.md)
 ## Arquitetura
+### [Datacenters Virtuais](networking-virtual-datacenter.md)
 ### [Encaminhamento assimétrico com vários caminhos de rede](../expressroute/expressroute-asymmetric-routing.md?toc=%2fazure%2fnetworking%2ftoc.json)
 ### [Designs de redes seguros](../best-practices-network-security.md?toc=%2fazure%2fnetworking%2ftoc.json)
 ### [Topologia hub-spoke](https://docs.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/hub-spoke)
@@ -44,6 +45,7 @@
 ### [Verificar fluxos de IP de uma VM](../network-watcher/network-watcher-check-ip-flow-verify-portal.md?toc=%2fazure%2fnetworking%2ftoc.json)
 ## Scripts de exemplo
 ### [CLI do Azure](cli-samples.md)
+### [PowerShell](powershell-samples.md)
 ## Tutoriais
 ### [Balanceamento de carga de VMs](../virtual-machines/linux/tutorial-load-balance-nodejs.md?toc=%2fazure%2fnetworking%2ftoc.json)
 ### [Ligar um computador a uma rede virtual](../vpn-gateway/vpn-gateway-howto-point-to-site-resource-manager-portal.md?toc=%2fazure%2fnetworking%2ftoc.json)

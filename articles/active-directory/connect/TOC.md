@@ -32,6 +32,7 @@
 ### [Opções de início de sessão do utilizador](active-directory-aadconnect-user-signin.md)
 ### [Suporte para vários domínios para federação](active-directory-aadconnect-multiple-domains.md)
 ### [Atualização automática](active-directory-aadconnect-feature-automatic-upgrade.md)
+### [Utilizar um Fornecedor de Identidade (IdP) SAML 2.0 para Início de Sessão Único](active-directory-aadconnect-federation-saml-idp.md)
 
 
 

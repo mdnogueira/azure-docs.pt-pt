@@ -116,7 +116,7 @@
 ### [Amostragem](app-insights-sampling.md)
 
 ## Gerir
-### [Gerir preços e quotas](app-insights-pricing.md)
+### [Gerir preços e volumes de dados](app-insights-pricing.md)
 ### [Monitorização do Desempenho de Aplicações com o Application Insights para SCOM](app-insights-scom.md)
 
 ## Exportar

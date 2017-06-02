@@ -61,6 +61,9 @@
 ### [Vistas](operations-management-suite-solutions-resources-views.md)
 ### [Melhores práticas](operations-management-suite-solutions-best-practices.md)
 
+## Cenários de gestão
+### [Recolher dados de análise a partir de runbooks](operations-management-suite-runbook-datacollect.md)
+
 ## [Integrar no OMS](operations-management-suite-integration.md)
 
 # Referência

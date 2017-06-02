@@ -5,6 +5,7 @@
 ## [Compreender as soluções de identidade do Azure](understand-azure-identity-solutions.md)
 ## [Pré-visualizar a experiência do portal do Azure](active-directory-preview-explainer.md)
 
+
 # Introdução
 ## [Obter um inquilino do Azure AD](active-directory-howto-tenant.md)
 ## [Inscreva-se no Azure AD Premium](active-directory-get-started-premium.md)
@@ -14,7 +15,8 @@
 ### [Portal clássico](active-directory-licensing-what-is.md)
 ## [Obter o Azure para a sua organização](sign-up-organization.md)
 ## [FAQs](active-directory-faq.md)
-## [Tutoriais de aplicação SaaS](active-directory-saas-tutorial-list.md)
+## [Como obter apoio para o Azure Active Directory](active-directory-troubleshooting-support-howto.md)
+## [Tutoriais de integração de aplicação SaaS](active-directory-saas-tutorial-list.md)
 
 # Procedimento
 ## Planear e conceber
