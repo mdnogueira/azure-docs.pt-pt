@@ -12,7 +12,7 @@
 
 ## Criar um modelo
 ### [Saiba mais sobre modelos de conjunto de dimensionamento](virtual-machine-scale-sets-mvss-start.md)
-### [Adicionar uma rede virtual](virtual-machine-scale-sets-mvss-existing-vnet.md)
+### [Utilizar uma rede virtual existente](virtual-machine-scale-sets-mvss-existing-vnet.md)
 ### [Utilizar uma imagem personalizada](virtual-machine-scale-sets-mvss-custom-image.md)
 
 ## Implementação
