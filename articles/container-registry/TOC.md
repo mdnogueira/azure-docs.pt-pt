@@ -17,6 +17,7 @@
 
 ## [CLI 2.0 do Azure](/cli/azure/acr)
 ## [REST](/rest/api/containerregistry)
+## [Cabeçalhos de telemetria](container-registry-headers.md)
 
 # Relacionado
 

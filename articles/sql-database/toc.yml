@@ -45,26 +45,6 @@
     href: sql-database-multi-tenant-application.md
   - name: 6 - implementar uma base de dados distribuída geograficamente
     href: sql-database-implement-geo-distributed-database.md 
-  - name: Tutoriais do Wingtip SaaS
-    items:
-    - name: Introdução de Wingtip SaaS
-      href: sql-database-wtp-overview.md
-    - name: Implementar a amostra de Wingtip SaaS
-      href: sql-database-saas-tutorial.md
-    - name: Aprovisionar/catalogar novos inquilinos
-      href: sql-database-saas-tutorial-provision-and-catalog.md
-    - name: Monitorizar desempenho
-      href: sql-database-saas-tutorial-performance-monitoring.md
-    - name: Monitorizar com o Log Analytics
-      href: sql-database-saas-tutorial-log-analytics.md
-    - name: Restaurar um único inquilino
-      href: sql-database-saas-tutorial-restore-single-tenant.md
-    - name: Gerir esquemas de inquilino
-      href: sql-database-saas-tutorial-schema-management.md
-    - name: Executar análises ad hoc
-      href: sql-database-saas-tutorial-adhoc-analytics.md
-    - name: Executar análises de inquilinos
-      href: sql-database-saas-tutorial-tenant-analytics.md
 - name: Amostras
   items:
   - name: CLI do Azure
@@ -175,25 +155,12 @@
       href: sql-database-disaster-recovery-strategies-for-applications-with-elastic-pool.md
     - name: Atualizações da aplicação
       href: sql-database-manage-application-rolling-upgrade.md
-  - name: Desenvolvimento
+  - name: Desenvolvimento de bases de dados
     items:
     - name: Descrição geral
       href: sql-database-develop-overview.md
     - name: Conectividade
       href: sql-database-libraries.md
-    - name: Estrutura da aplicação - SaaS
-      href: sql-database-design-patterns-multi-tenancy-saas-applications.md
-    - name: Segurança - SaaS
-      href: sql-database-elastic-tools-multi-tenant-row-level-security.md
-    - name: Portas - ADO.NET
-      href: sql-database-develop-direct-route-ports-adonet-v12.md
-    - name: Autenticar Aplicação
- 
-      href: sql-database-client-id-keys.md
-    - name: Mensagens de erro
-      href: sql-database-develop-error-messages.md
-    - name: Dapper
-      href: sql-database-elastic-scale-working-with-dapper.md
     - name: Dados JSON
       href: sql-database-json-features.md
     - name: Dentro da memória
@@ -231,8 +198,6 @@
       href: sql-database-monitoring-with-dmvs.md
     - name: Orientação de desempenho
       href: sql-database-performance-guidance.md
-    - name: Lotes
-      href: sql-database-use-batching-to-improve-performance.md
     - name: Eventos expandidos
       href: sql-database-xevent-db-diff-from-svr.md
     - name: Níveis de compatibilidade
@@ -365,6 +330,25 @@
       href: sql-database-ssms-remoteapp.md
     - name: SSMS - MFA
       href: sql-database-ssms-mfa-authentication-configure.md
+  - name: Programar aplicações
+    items:
+    - name: Portas - ADO.NET
+      href: sql-database-develop-direct-route-ports-adonet-v12.md
+    - name: Autenticar Aplicação
+ 
+      href: sql-database-client-id-keys.md
+    - name: Mensagens de erro
+      href: sql-database-develop-error-messages.md
+    - name: Dapper
+      href: sql-database-elastic-scale-working-with-dapper.md
+    - name: Criação de batches de desempenho
+      href: sql-database-use-batching-to-improve-performance.md
+    - name: Estrutura da aplicação SaaS
+      href: sql-database-design-patterns-multi-tenancy-saas-applications.md
+    - name: Segurança de aplicação SaaS
+      href: sql-database-elastic-tools-multi-tenant-row-level-security.md
+    - name: Tutorial de aplicação SaaS
+      href: sql-database-wtp-overview.md
 - name: Referência
   items:
   - name: PowerShell
@@ -444,5 +428,3 @@
       href: https://github.com/Microsoft/sql-server-samples/tree/master/samples/manage/azure-sql-db-elastic-pools
     - name: Dashboard personalizado do conjunto elástico
       href: https://github.com/Microsoft/sql-server-samples/tree/master/samples/manage/azure-sql-db-elastic-pools-custom-dashboard
-
-
