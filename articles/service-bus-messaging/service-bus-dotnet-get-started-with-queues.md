@@ -3,7 +3,7 @@ title: Escrever um programa que utiliza filas do Azure Service Bus | Microsoft D
 description: "Como escrever uma aplicação de consola C# para as mensagens do Service Bus"
 services: service-bus-messaging
 documentationcenter: .net
-author: jtaubensee
+author: sethmanheim
 manager: timlt
 editor: 
 ms.assetid: 68a34c00-5600-43f6-bbcc-fea599d500da
@@ -13,10 +13,11 @@ ms.topic: hero-article
 ms.tgt_pltfrm: dotnet
 ms.workload: na
 ms.date: 03/23/2017
-ms.author: jotaub;sethm
-translationtype: Human Translation
+ms.author: sethm
+ms.translationtype: Human Translation
 ms.sourcegitcommit: f92909e0098a543f99baf3df3197a799bc9f1edc
 ms.openlocfilehash: 83649bdad1d369cdfe4edf3c2bdaa67180db8668
+ms.contentlocale: pt-pt
 ms.lasthandoff: 02/28/2017
 
 

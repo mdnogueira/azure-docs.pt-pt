@@ -3,7 +3,7 @@ title: "Introdução às Ligações Híbridas de Reencaminhamento do Azure | Mic
 description: "Como escrever uma aplicação de consola C# para Ligações Híbridas"
 services: service-bus-relay
 documentationcenter: .net
-author: jtaubensee
+author: sethmanheim
 manager: timlt
 editor: 
 ms.assetid: d1386900-b942-4abf-acfc-38d2ef826253
@@ -13,14 +13,16 @@ ms.topic: get-started-article
 ms.tgt_pltfrm: dotnet
 ms.workload: na
 ms.date: 03/27/2017
-ms.author: jotaub;sethm
-translationtype: Human Translation
+ms.author: sethm
+ms.translationtype: Human Translation
 ms.sourcegitcommit: f92909e0098a543f99baf3df3197a799bc9f1edc
 ms.openlocfilehash: d27016559ede5d810d7efcec2a3abc78334f0f0a
+ms.contentlocale: pt-pt
 ms.lasthandoff: 02/28/2017
 
 
 ---
+
 # <a name="get-started-with-relay-hybrid-connections"></a>Introdução às Ligações Híbridas de Reencaminhamento
 [!INCLUDE [relay-selector-hybrid-connections](../../includes/relay-selector-hybrid-connections.md)]
 
