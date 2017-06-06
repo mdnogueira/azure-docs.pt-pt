@@ -15,10 +15,10 @@ ms.topic: get-started-article
 ms.date: 05/23/2017
 ms.author: curtand
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 144132cf0d591e398d5a6ebafb06fd915eec38b8
-ms.openlocfilehash: 1ec1a20dec318153923afd6a0875545d1e102f29
+ms.sourcegitcommit: d9ae8e8948d82b9695d7d144d458fe8180294084
+ms.openlocfilehash: c558bd5f2b7fae91483cc2c6724c40442bb65045
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/09/2017
+ms.lasthandoff: 06/05/2017
 
 
 ---
@@ -205,12 +205,12 @@ Alguns elementos personalizáveis no Azure AD tem vários casos de utilização.
 
 | Nome | Descrição | Restrições | Recomendações |
 | --- | --- | --- | --- |
-| Logótipo de Faixa |O Logótipo de Faixa será apresentado na página de início de sessão e no Painel de Acesso. |<p>JPG ou PNG</p><p>60 x&280; pixels</p><p>10 KB</p> |<p>Utilize o logótipo completo da sua organização (incluindo pictograma e logótipo)</p><p>Mantenha uma altura inferior a 30 pixeis para evitar a introdução de barras de deslocamento em dispositivos móveis</p><p>Mantenha-a inferior a 4 KB</p><p>Utilize um PNG transparente (não parta do princípio de que a página de início de sessão tem sempre um fundo branco)</p> |
-| Logótipo de Mosaico |(atualmente não utilizado na página de início de sessão) De futuro, este texto poderá ser utilizado para substituir o pictograma genérico de “conta escolar ou profissional” em locais diferentes da experiência. |<p>JPG ou PNG</p><p>120 x&120; pixéis</p><p>10 KB</p> |<p>Mantenha-o simples (sem texto pequeno), uma vez que esta imagem poderá ser redimensionada para 50% |
+| Logótipo de Faixa |O Logótipo de Faixa será apresentado na página de início de sessão e no Painel de Acesso. |<p>JPG ou PNG</p><p>60 x 280 pixels</p><p>10 KB</p> |<p>Utilize o logótipo completo da sua organização (incluindo pictograma e logótipo)</p><p>Mantenha uma altura inferior a 30 pixeis para evitar a introdução de barras de deslocamento em dispositivos móveis</p><p>Mantenha-a inferior a 4 KB</p><p>Utilize um PNG transparente (não parta do princípio de que a página de início de sessão tem sempre um fundo branco)</p> |
+| Logótipo de Mosaico |(atualmente não utilizado na página de início de sessão) De futuro, este texto poderá ser utilizado para substituir o pictograma genérico de “conta escolar ou profissional” em locais diferentes da experiência. |<p>JPG ou PNG</p><p>120 x 120 pixéis</p><p>10 KB</p> |<p>Mantenha-o simples (sem texto pequeno), uma vez que esta imagem poderá ser redimensionada para 50% |
 | </p> | | | |
 | Etiqueta de Nome de Utilizador da Página de Início de Sessão |(atualmente não utilizada na página de início de sessão) No futuro, este texto poderá ser utilizado para substituir a cadeia genérica “conta escolar ou profissional” em locais diferentes da experiência. Pode configurá-lo para algo como “Conta de Contoso” ou “ID Contoso”. |<p>Texto Unicode, até 50 carateres</p><p>Apenas texto simples (sem ligações ou tags de HTML)</p> |<p>Mantenha-o curto e simples</p><p>Peça aos seus utilizadores como se costumam referir à conta profissional ou escolar que lhes fornece.</p> |
 | Texto da Página de Início de Sessão |Este texto “automático” aparece por baixo do formulário da página de início de sessão e pode ser utilizado para comunicar instruções adicionais ou onde obter ajuda e suporte. |<p>Texto Unicode, até 256 carateres</p><p>Apenas texto simples (sem ligações ou tags de HTML)</p> |Mantenha-o abaixo dos 250 carateres (cerca de 3 linhas de texto) |
-| Ilustração da Página de Início de Sessão |A ilustração é uma imagem grande que é apresentada na página de início de sessão à esquerda do formulário da página de início de sessão. |<p>JPG ou PNG</p><p>1420 x&1200;</p><p>500 KB</p> |<p>1420 x&1200; pixéis</p><p>Importante: mantê-la o mais pequena possível, idealmente abaixo de 200 KB. Se esta imagem for demasiado grande, o desempenho da página de Início de Sessão é afetado se a imagem não estiver em cache</p><p>Esta imagem é frequentemente recortada, para suportar aspetos de ecrã diferentes. Mantenha os elementos visuais principais na parte superior esquerda canto (canto superior direito para linguagens RTL), porque redimensionamento ocorre a partir do canto inferior/direita, em direção à parte superior / esquerda, à medida que diminui a janela do browser.</p> |
+| Ilustração da Página de Início de Sessão |A ilustração é uma imagem grande que é apresentada na página de início de sessão à esquerda do formulário da página de início de sessão. |<p>JPG ou PNG</p><p>1420 x 1200</p><p>500 KB</p> |<p>1420 x 1200 pixéis</p><p>Importante: mantê-la o mais pequena possível, idealmente abaixo de 200 KB. Se esta imagem for demasiado grande, o desempenho da página de Início de Sessão é afetado se a imagem não estiver em cache</p><p>Esta imagem é frequentemente recortada, para suportar aspetos de ecrã diferentes. Mantenha os elementos visuais principais na parte superior esquerda canto (canto superior direito para linguagens RTL), porque redimensionamento ocorre a partir do canto inferior/direita, em direção à parte superior / esquerda, à medida que diminui a janela do browser.</p> |
 | Cor de Fundo da Página de Início de Sessão |A cor de fundo de página de início de sessão é utilizada na área à esquerda do formulário da página de início de sessão. |Tem de ser uma cor RGB numa forma hexadecimal (exemplo: #FFFFFF) |<p>A cor de fundo poderá ser apresentada em vez da Ilustração Grande em ligações de largura de banda baixa</p><p>Sugerimos que escolha a cor primária do Logótipo de Faixa</p> |
 
 ## <a name="next-steps"></a>Passos seguintes
