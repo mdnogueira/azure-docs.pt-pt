@@ -3,7 +3,7 @@ title: 'B2C do Azure AD: Proteger uma API Web utilizando Node.js | Microsoft Doc
 description: Como criar uma API Web de Node.js que aceita tokens de um inquilino do B2C
 services: active-directory-b2c
 documentationcenter: 
-author: xerners
+author: dstrockis
 manager: mbaldwin
 editor: 
 ms.assetid: fc2b9af8-fbda-44e0-962a-8b963449106a
