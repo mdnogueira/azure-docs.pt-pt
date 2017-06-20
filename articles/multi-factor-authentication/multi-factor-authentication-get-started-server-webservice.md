@@ -5,27 +5,28 @@ services: multi-factor-authentication
 documentationcenter: 
 author: kgremban
 manager: femila
-editor: yossib
 ms.assetid: 6c8d6fcc-70f4-4da4-9610-c76d66635b8b
 ms.service: multi-factor-authentication
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 02/25/2017
+ms.date: 06/15/2017
 ms.author: kgremban
-ms.custom: H1Hack27Feb2017
-translationtype: Human Translation
+ms.reviewer: yossib
+ms.custom: H1Hack27Feb2017,it-pro
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 20afeb3ba290ddf728d2b52c076c7a57fadc77c6
 ms.openlocfilehash: 4014bf0217e25ea9bc8473ef2383279e5eb79b87
+ms.contentlocale: pt-pt
 ms.lasthandoff: 02/28/2017
 
 ---
 # <a name="enable-mobile-app-authentication-with-azure-multi-factor-authentication-server"></a>Ativar a autenticação de aplicação móvel com o Servidor Multi-Factor Authentication do Azure
 
-A aplicação Microsoft Authenticator oferece uma opção de verificação fora de banda adicional. Em vez de fazer uma chamada telefónica automática ou enviar um SMS ao utilizador durante o início de sessão, o Multi-Factor Authentication do Azure envia uma notificação push para a aplicação Microsoft Authenticator no smartphone ou tablet do utilizador. O utilizador toca simplesmente em **Verificar** (ou introduz um PIN e toca em "Autenticar") na aplicação para concluir o início de sessão. 
+A aplicação Microsoft Authenticator oferece uma opção de verificação fora de banda adicional. Em vez de fazer uma chamada telefónica automática ou enviar um SMS ao utilizador durante o início de sessão, o Multi-Factor Authentication do Azure envia uma notificação push para a aplicação Microsoft Authenticator no smartphone ou tablet do utilizador. O utilizador toca simplesmente em **Verificar** (ou introduz um PIN e toca em "Autenticar") na aplicação para concluir o início de sessão.
 
-É preferível utilizar uma aplicação móvel para a verificação de dois passos quando a receção de telefone é pouco fiável. Se utilizar a aplicação como um gerador de token OATH, não é precisa qualquer ligação de rede ou à Internet. 
+É preferível utilizar uma aplicação móvel para a verificação de dois passos quando a receção de telefone é pouco fiável. Se utilizar a aplicação como um gerador de token OATH, não é precisa qualquer ligação de rede ou à Internet.
 
 Instalar o portal de utilizador num servidor diferente do Servidor Multi-Factor Authentication do Azure requer os seguintes passos:
 
@@ -51,10 +52,10 @@ Para utilizar a aplicação Microsoft Authenticator, é necessário o seguinte p
 
 
 ## <a name="install-the-web-service-sdk"></a>Instalar o SDK do serviço Web
-Se o SDK do Serviço Web do Multi-Factor Authentication do Azure ainda não estiver instalado no Servidor Multi-Factor Authentication (MFA) do Azure, aceda a esse servidor e abra o Servidor MFA do Azure. 
+Se o SDK do Serviço Web do Multi-Factor Authentication do Azure ainda não estiver instalado no Servidor Multi-Factor Authentication (MFA) do Azure, aceda a esse servidor e abra o Servidor MFA do Azure.
 
 1. Clique no ícone SDK do Serviço Web.
-2. Clique em **Instalar SDK do Serviço Web** e siga as instruções apresentadas. 
+2. Clique em **Instalar SDK do Serviço Web** e siga as instruções apresentadas.
 
 O SDK do Serviço Web tem de estar protegido por um certificado SSL. Pode utilizar um certificado autoassinado para este fim. Importe o certificado para o arquivo “Autoridades de Certificação de Raiz Fidedigna” da conta de Computador Local no servidor Web do Portal de Utilizador, para que este confie no certificado quando inicia a ligação SSL.
 
@@ -65,7 +66,7 @@ Antes de instalar o serviço Web da aplicação móvel, tenha em atenção os se
 
 * Se o Portal de Utilizador do MFA do Azure já estiver instalado no servidor com acesso à Internet, o nome de utilizador, a palavra-passe e o URL para o SDK do Serviço Web podem ser copiados do ficheiro web.config do Portal de Utilizador.
 * Facilita se abrir um browser no servidor Web com acesso à Internet e navegar para o URL do SDK do Serviço Web que foi introduzido no ficheiro web.config. Se o browser conseguir aceder ao serviço Web com êxito, este deve solicitar-lhe as credenciais. Introduza o nome de utilizador e a palavra-passe que foram introduzidos no ficheiro web.config, tal como é apresentado no ficheiro. Certifique-se de que não são apresentados erros ou avisos de certificado.
-* Se uma firewall ou um proxy inverso estiver junto do servidor Web do Serviço Web da Aplicação Móvel e a fazer o descarregamento de SSL, pode editar o ficheiro web.config do Serviço Web da Aplicação Móvel para que o Serviço Web da Aplicação Móvel possa utilizar http em vez de https. Ainda é necessário utilizar o SSL a partir da Aplicação Móvel para a firewall/proxy inverso. Adicione a chave seguinte à secção \<appSettings\>: 
+* Se uma firewall ou um proxy inverso estiver junto do servidor Web do Serviço Web da Aplicação Móvel e a fazer o descarregamento de SSL, pode editar o ficheiro web.config do Serviço Web da Aplicação Móvel para que o Serviço Web da Aplicação Móvel possa utilizar http em vez de https. Ainda é necessário utilizar o SSL a partir da Aplicação Móvel para a firewall/proxy inverso. Adicione a chave seguinte à secção \<appSettings\>:
 
         <add key="SSL_REQUIRED" value="false"/>
 
@@ -79,11 +80,11 @@ Antes de instalar o serviço Web da aplicação móvel, tenha em atenção os se
 
   É recomendado um nome de diretório virtual curto, uma vez que os utilizadores têm de introduzir o URL do Serviço Web da Aplicação Móvel num dispositivo móvel durante a ativação.
 
-4. Depois de concluir a instalação de Azure Multi-Factor AuthenticationMobileAppWebServiceSetup, navegue para C:\inetpub\wwwroot\PA (ou o diretório adequado, com base no nome do diretório virtual) e edite o ficheiro web.config. 
+4. Depois de concluir a instalação de Azure Multi-Factor AuthenticationMobileAppWebServiceSetup, navegue para C:\inetpub\wwwroot\PA (ou o diretório adequado, com base no nome do diretório virtual) e edite o ficheiro web.config.
 
 5. Localize as chaves WEB_SERVICE_SDK_AUTHENTICATION_USERNAME e WEB_SERVICE_SDK_AUTHENTICATION_PASSWORD. Defina os valores para o nome de utilizador e palavra-passe da conta de serviço que faça parte do grupo de segurança PhoneFactor Admins. Poderá ser a mesma conta que está a ser utilizada como Identidade do Portal de Utilizador do Multi-Factor Authentication do Azure, se tiver sido instalado anteriormente. Certifique-se de que introduz o Nome de Utilizador e a Palavra-Passe entre aspas no final da linha, (valor=””/>). Utilize um nome de utilizador qualificado, como domínio\nomedeutilizador ou máquina\nomedeutilizador.  
 
-6. Localize a definição pfMobile App Web Service_pfwssdk_PfWsSdk. Altere o valor de *http://localhost:4898/PfWsSdk.asmx* para o URL do SDK do Serviço Web que está em execução no Servidor Multi-Factor Authentication do Azure (como https://computer1.domain.local/MultiFactorAuthWebServiceSdk/PfWsSdk.asmx). 
+6. Localize a definição pfMobile App Web Service_pfwssdk_PfWsSdk. Altere o valor de *http://localhost:4898/PfWsSdk.asmx* para o URL do SDK do Serviço Web que está em execução no Servidor Multi-Factor Authentication do Azure (como https://computer1.domain.local/MultiFactorAuthWebServiceSdk/PfWsSdk.asmx).
 
   Uma vez que o SSL é utilizado para esta ligação, tem de fazer referência ao SDK do Serviço Web por nome de servidor e não por endereço IP. O certificado SSL teria sido emitido para o nome do servidor e o URL utilizado tem de corresponder ao nome do certificado. O nome do servidor não pode ser resolvido para um endereço IP do servidor com acesso à Internet. Se for este o caso, adicione uma entrada ao ficheiro de anfitriões nesse servidor para mapear o nome do Servidor Multi-Factor Authentication do Azure para o respetivo endereço IP. Guarde o ficheiro web.config após terem sido efetuadas alterações.
 

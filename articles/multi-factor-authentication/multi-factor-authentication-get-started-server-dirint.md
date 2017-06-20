@@ -5,19 +5,21 @@ services: multi-factor-authentication
 documentationcenter: 
 author: kgremban
 manager: femila
-editor: yossib
 ms.assetid: def7a534-cfb2-492a-9124-87fb1148ab1f
 ms.service: multi-factor-authentication
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 02/16/2017
+ms.date: 06/16/2017
 ms.author: kgremban
-translationtype: Human Translation
+ms.reviewer: yossib
+ms.custom: it-pro
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 999361daa2faebe3e88cab0b6085a938d6f40e9d
 ms.openlocfilehash: 07b14394b0e07fd78d70d77aeef8a2feb17284e0
-
+ms.contentlocale: pt-pt
+ms.lasthandoff: 02/17/2017
 
 ---
 # <a name="directory-integration-between-azure-mfa-server-and-active-directory"></a>Integração de diretórios entre o Servidor MFA do Azure e o Active Directory
@@ -94,7 +96,7 @@ Os atributos podem ser introduzidos manualmente e não precisam de corresponder 
 | Extensão |Introduza o nome de atributo do atributo que contém a extensão de número de telemóvel num registo de utilizador.  O valor do campo de extensão é utilizado como a extensão apenas do número de telefone principal.  A predefinição é blank. <br><br>Se o atributo Extensão não for especificado, as extensões podem ser incluídas como parte do atributo de telefone. Neste caso, preceda a extensão com um “x”, para que seja analisada corretamente.  Por exemplo, 555-123-4567 x890 resultaria em 555-123-4567 como o número de telefone e 890 como a extensão. |
 | Botão Restaurar Predefinições |Clique no botão **Restaurar Predefinições** para voltar a colocar todos os atributos nos valores predefinidos.  As predefinições devem funcionar corretamente com o esquema normal do Active Directory ou do ADAM. |
 
-Para editar os atributos, clique em **Editar**, no separador Atributos.  É aberta uma janela onde pode editá-los. Selecione **...** junto a qualquer atributo para abrir uma janela onde pode escolher que atributos mostrar. 
+Para editar os atributos, clique em **Editar**, no separador Atributos.  É aberta uma janela onde pode editá-los. Selecione **...** junto a qualquer atributo para abrir uma janela onde pode escolher que atributos mostrar.
 
 ![Editar Atributos](./media/multi-factor-authentication-get-started-server-dirint/dirint4.png)
 
@@ -137,10 +139,4 @@ Os botões Mover para cima e Mover para baixo permitem ao administrador alterar 
 Podem ser configurados Servidores Multi-Factor Auth adicionais para funcionarem como cópia de segurança do proxy RADIUS, do proxy LDAP ou para Autenticação do IIS. A configuração da Sincronização é partilhada entre todos os agentes. No entanto, apenas um destes agentes poderá ter o serviço Servidor Multi-Factor Auth em execução. Este separador permite selecionar o Servidor Multi-Factor Auth que deve estar ativado para sincronização.
 
 ![Servidores Multi-Factor-Auth](./media/multi-factor-authentication-get-started-server-dirint/dirint6.png)
-
-
-
-
-<!--HONumber=Feb17_HO3-->
-
 
