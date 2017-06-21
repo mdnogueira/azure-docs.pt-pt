@@ -7,15 +7,15 @@
 ## [Escolha onde pretende implementar](multi-factor-authentication-get-started.md)
 ## [MFA na nuvem](multi-factor-authentication-get-started-cloud.md)
 ## [MFA no local](multi-factor-authentication-get-started-server.md)
-## [MFA para utilizadores do Office 365](https://support.office.com/article/Set-up-multi-factor-authentication-for-Office-365-users-8f0454b2-f51a-4d9c-bcde-2c48e41621c6)
+## [MFA para utilizadores do Office 365](https://support.office.com/article/Plan-for-multi-factor-authentication-for-Office-365-Deployments-043807b2-21db-4d5c-b430-c8a6dee0e6ba)
 ## [Melhores práticas de segurança](multi-factor-authentication-security-best-practices.md)
 
 # Procedimento
 ## Implementar e utilizar
-### [Criar um Fornecedor de Autenticação](multi-factor-authentication-get-started-auth-provider.md)
 ### [Configurar definições](multi-factor-authentication-whats-next.md)
 ### [Relatórios no MFA](multi-factor-authentication-manage-reports.md)
 ### [Utilizar servidores de política de rede existentes](multi-factor-authentication-nps-extension.md)
+### [Criar um Fornecedor de Autenticação](multi-factor-authentication-get-started-auth-provider.md)
 ### MFA do Azure no local
 #### [Instalar o portal de utilizadores](multi-factor-authentication-get-started-portal.md)
 #### [Configurações Avançadas de VPN](multi-factor-authentication-advanced-vpn-configurations.md)

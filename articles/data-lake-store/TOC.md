@@ -10,7 +10,6 @@
 ## [Utilizar o SDK .NET](data-lake-store-get-started-net-sdk.md)
 ## [Utilizar o .Java SDK](data-lake-store-get-started-java-sdk.md)
 ## [Utilizar a API REST](data-lake-store-get-started-rest-api.md)
-## [Utilizar a CLI do Azure](data-lake-store-get-started-cli.md)
 ## [Utilizar a CLI 2.0 do Azure](data-lake-store-get-started-cli-2.0.md)
 ## [Utilizar o Node.js](data-lake-store-manage-use-nodejs.md)
 ## [Utilizar o Python](data-lake-store-get-started-python.md)

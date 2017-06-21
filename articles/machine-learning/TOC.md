@@ -155,7 +155,7 @@
 #### [Reenviar um serviço Web existente](machine-learning-retrain-existing-resource-manager-based-web-service.md)
 #### [Resolução de problemas](machine-learning-troubleshooting-retraining-models.md)
 ### Consumir modelos
-#### [Descrição geral](machine-learning-connect-to-azure-machine-learning-web-service.md)
+#### [Descrição geral](machine-learning-consume-web-services.md)
 #### [Utilizar o Excel](machine-learning-consuming-from-excel.md)
 #### [Utilizar o suplemento do Excel](machine-learning-excel-add-in-for-web-services.md)
 #### [Utilizar modelo de aplicação Web](machine-learning-consume-web-service-with-web-app-template.md)

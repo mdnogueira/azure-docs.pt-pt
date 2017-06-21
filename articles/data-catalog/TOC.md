@@ -23,6 +23,7 @@
 
 # Referência
 ## [REST](/rest/api/datacatalog/)
+## [Pesquisar referência de sintaxe](/rest/api/datacatalog/data-catalog-search-syntax-reference)
 ## [Conceitos de programador](data-catalog-developer-concepts.md)
 ## [Exemplos de programador](data-catalog-samples.md)
 
@@ -34,8 +35,3 @@
 ## [Preços](https://azure.microsoft.com/pricing/details/data-catalog/)
 ## [Fórum do MSDN](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azuredatacatalog)
 ## [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-data-catalog)
-
-
-<!--HONumber=Feb17_HO1-->
-
-

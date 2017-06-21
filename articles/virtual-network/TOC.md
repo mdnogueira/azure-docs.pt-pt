@@ -40,12 +40,7 @@
 #### [PowerShell (Clássico)](virtual-network-create-udr-classic-ps.md)
 #### [CLI (Clássica)](virtual-network-create-udr-classic-cli.md)
 
-### Peering de rede virtual
-#### [Portal](virtual-networks-create-vnetpeering-arm-portal.md)
-#### [PowerShell](virtual-networks-create-vnetpeering-arm-ps.md)
-#### [Modelo](virtual-networks-create-vnetpeering-arm-template-click.md)
-
-### [Endereços IP públicos](virtual-network-public-ip-address.md)
+### [Peering de rede virtual](virtual-network-create-peering.md)
 
 ### Máquinas virtuais
 #### Criar uma VM com um endereço IP público estático
@@ -118,6 +113,7 @@
 #### [Adicionar, alterar ou remover endereços IP](virtual-network-network-interface-addresses.md)
 ### Máquinas virtuais
 #### [Mover uma VM para outra sub-rede](virtual-networks-move-vm-role-to-subnet.md)
+### [Endereços IP públicos](virtual-network-public-ip-address.md)
 
 ## Resolução de problemas
 ### Grupos de segurança de rede
