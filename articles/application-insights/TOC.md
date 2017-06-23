@@ -43,6 +43,7 @@
 ### Azure
 #### [Gerador de perfis](app-insights-profiler.md)
 #### [Diagnóstico](app-insights-azure-diagnostics.md)
+#### [Pré-visualizações](app-insights-previews.md)
 
 ### ASP.NET
 #### [Recolher mais telemetria](app-insights-asp-net-more.md)
@@ -91,8 +92,9 @@
 
 ### Utilização
 #### [Descrição geral](app-insights-usage-overview.md)
-#### [Retenção](app-insights-usage-retention.md)
 #### [Utilizadores, Sessões, Eventos](app-insights-usage-segmentation.md)
+#### [Retenção](app-insights-usage-retention.md)
+#### [Livros](app-insights-usage-workbooks.md)
 
 ### Análise
 
@@ -108,6 +110,7 @@
 ### [Criar recursos](app-insights-powershell-script-create-resource.md)
 ### [Definir alertas](app-insights-powershell-alerts.md)
 ### [Obter diagnóstico do Azure](app-insights-powershell-azure-diagnostics.md)
+### [Automatizar com o Microsoft Flow](app-insights-automate-with-flow.md)
 
 ## Programar
 

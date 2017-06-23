@@ -11,6 +11,12 @@
     href: quickstart-create-mysql-server-database-using-azure-portal.md
   - name: Criar BD - CLI do Azure
     href: quickstart-create-mysql-server-database-using-azure-cli.md
+  - name: Ligar e consultar
+    items:
+    - name: PHP
+      href: connect-php.md
+    - name: Java
+      href: connect-java.md
 - name: Tutoriais
   items:
   - name: 1 - Estruturar uma Base de Dados
@@ -79,14 +85,18 @@
     items:
     - name: Portal do Azure
       href: howto-restore-server-portal.md
-  - name: Ligar Aplicações
+  - name: Ligar a aplicações
     items:
-    - name: Cadeias de Ligação
+    - name: Cadeias de ligação
       href: howto-connection-string.md
     - name: Configurar o SSL
       href: howto-configure-ssl.md
-    - name: Aplicação Web
+    - name: Web Apps
       href: howto-connect-webapp.md
+  - name: Configurar parâmetros do servidor
+    items:
+    - name: Portal do Azure
+      href: howto-server-parameters.md
 - name: Referência
   items:
   - name: CLI do Azure
@@ -99,6 +109,8 @@
     href: https://social.msdn.microsoft.com/forums/security/en-US/home?forum=AzureDatabaseforMySQL
   - name: Stack Overflow
     href: http://stackoverflow.com/questions/tagged/azure-database-mysql
+  - name: Vídeos
+    href: videos.md
   - name: Pedir uma funcionalidade
     href: https://feedback.azure.com/forums/597982-azure-database-for-mysql
   - name: Disponibilidade de região

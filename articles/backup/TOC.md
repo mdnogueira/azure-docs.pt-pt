@@ -48,7 +48,7 @@
 #### [Preparar máquinas virtuais implementadas com o Resource Manager](backup-azure-arm-vms-prepare.md)
 ### Planear o ambiente
 #### [Planear a infraestrutura de cópia de segurança da VM](backup-azure-vms-introduction.md)
-### Fazer cópias de segurança de servidores e cargas de trabalho
+### Fazer cópias de segurança de VMs
 #### [Fazer cópias de segurança de máquinas virtuais do Azure para o cofre de cópias de segurança](backup-azure-vms.md)
 #### [Fazer cópia de segurança de máquinas virtuais do Azure para um cofre dos Serviços de Recuperação](backup-azure-arm-vms.md)
 #### [Fazer cópias de segurança de máquinas virtuais encriptadas](backup-azure-vms-encryption.md)

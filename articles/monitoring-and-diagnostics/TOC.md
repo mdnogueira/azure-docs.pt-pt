@@ -29,8 +29,8 @@
 ### [Métricas comuns](insights-autoscale-common-metrics.md)
 ### [Padrões comuns](monitoring-autoscale-common-scale-patterns.md)
 ### [Dimensionamento automático através de uma métrica personalizada](monitoring-autoscale-scale-by-custom-metric.md)
-### [Dimensionar automaticamente os Conjuntos de Dimensionamento de VMs com modelos do Resource Manager](insights-advanced-autoscale-virtual-machine-scale-sets.md)
-### [Dimensionar automaticamente máquinas num conjunto de dimensionamento de máquinas virtuais](../virtual-machine-scale-sets/virtual-machine-scale-sets-windows-autoscale.md?toc=%2fazure%2fmonitoring-and-diagnostics%2ftoc.json)
+### [Dimensionar automaticamente os conjuntos de dimensionamento de VMs com modelos do Resource Manager](insights-advanced-autoscale-virtual-machine-scale-sets.md)
+### [Dimensionar automaticamente máquinas num conjunto de dimensionamento de VMs](../virtual-machine-scale-sets/virtual-machine-scale-sets-windows-autoscale.md?toc=%2fazure%2fmonitoring-and-diagnostics%2ftoc.json)
 ### [Configurar webhooks e notificações de e-mail no dimensionamento automático](insights-autoscale-to-webhook-email.md)
 ## Utilizar o registo de atividades
 ### [Ver eventos no registo de atividades](../azure-resource-manager/resource-group-audit.md?toc=%2fazure%2fmonitoring-and-diagnostics%2ftoc.json)
@@ -39,10 +39,10 @@
 ### [Transmitir em fluxo o registo de atividades para o Hubs de Eventos](monitoring-stream-activity-logs-event-hubs.md)
 ### [Auditar operações com o Resource Manager](../azure-resource-manager/resource-group-audit.md?toc=%2fazure%2fmonitoring-and-diagnostics%2ftoc.json)
 ### [Criar alertas do registo de atividades com o Resource Manager](monitoring-create-activity-log-alerts-with-resource-manager-template.md)
-## Notificações do serviço
+## Utilizar as Notificações do serviço
 ### [Ver notificações do serviço](monitoring-service-notifications.md)
 ### [Configurar alertas nas notificações do serviço](monitoring-activity-log-alerts-on-service-notifications.md)
-## Grupos de Ação
+## Utilizar os Grupos de Ação
 ### [Saiba mais sobre o esquema de webhook](monitoring-activity-log-alerts-webhook.md)
 ### [Comportamento do Alerta por SMS](monitoring-sms-alert-behavior.md)
 ### [Limitar a Taxa de Alertas](monitoring-alerts-rate-limiting.md)

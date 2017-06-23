@@ -102,7 +102,11 @@
 ### [Problemas de implementação comuns](cloud-services-troubleshoot-deployment-problems.md)
 ### [Função falhou ao iniciar](cloud-services-troubleshoot-roles-that-fail-start.md)
 ### [Documentação de orientação da recuperação](cloud-services-disaster-recovery-guidance.md)
-### [FAQ dos Serviços Cloud](cloud-services-faq.md)
+### FAQ dos Serviços em Nuvem
+#### [FAQ da disponibilidade de aplicações e serviços](cloud-services-application-and-service-availability-faq.md)
+#### [FAQ de configuração e gestão](cloud-services-configuration-and-management-faq.md)
+#### [FAQ de conectividade e rede](cloud-services-connectivity-and-networking-faq.md)
+#### [FAQ da Implementação](cloud-services-deployment-faq.md)
 
 # Referência
 ## [Esquema XML .csdef](https://msdn.microsoft.com/library/azure/ee758711)

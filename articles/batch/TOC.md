@@ -22,6 +22,8 @@
 ### [VMs de baixa prioridade](batch-low-pri-vms.md)
 ### [Gerir contas do Batch com a Gestão de Lotes .NET](batch-management-dotnet.md)
 ### [Manter saída de trabalhos e tarefas](batch-task-output.md)
+#### [Manter a saída com a API de Batch](batch-task-output-files.md)
+#### [Manter a saída com a biblioteca Convenções de Ficheiros](batch-task-output-file-conventions.md)
 ### [Executar Trabalhos de MPI no Batch](batch-mpi.md)
 ### [Dependências de tarefas](batch-task-dependencies.md)
 ### [Contas de utilizador para executar tarefas](batch-user-accounts.md)

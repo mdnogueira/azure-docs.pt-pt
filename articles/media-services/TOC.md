@@ -6,7 +6,13 @@
 ## [Configurar o ambiente de desenvolvimento](media-services-set-up-computer.md)
 ###[.NET](media-services-dotnet-how-to-use.md)
 ###[REST](media-services-rest-how-to-use.md)  
-## Ligar através de programação
+## [Utilizar a autenticação do AAD para aceder à API](media-services-use-aad-auth-to-access-ams-api.md)
+###[Utilizar o portal para gerir a autenticação do AAD](media-services-portal-get-started-with-aad.md)
+###[Aceder à API com .NET](media-services-dotnet-get-started-with-aad.md)
+###[Aceder à API com REST](media-services-rest-connect-with-aad.md)
+###[Utilizar a CLI para criar e configurar uma aplicação do AAD](media-services-cli-create-and-configure-aad-app.md)
+###[Utilizar o PowerShell para criar e configurar uma aplicação do AAD](media-services-powershell-create-and-configure-aad-app.md)
+## Ligar programaticamente com chaves ACS
 ### [.NET](media-services-dotnet-connect-programmatically.md)
 ### [REST](media-services-rest-connect-programmatically.md)
 
@@ -214,7 +220,7 @@
 ## [PowerShell (Resource Manager)](/powershell/module/azurerm.media)
 ## [PowerShell (Gestão de Serviços)](/powershell/module/azure/?view=azuresmps-3.7.0)
 ## [.NET](/dotnet/api/microsoft.windowsazure.mediaservices.client)
-## [REST](/rest/api/media)
+## [REST](/rest/api/media/mediaservice)  
 
 # Recursos
 ## [Notas de versão](media-services-release-notes.md)

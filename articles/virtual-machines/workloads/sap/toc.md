@@ -16,12 +16,13 @@
 ### [Resolver problemas e monitorizar](troubleshooting-monitoring.md)
 ## SAP HANA em Máquinas Virtuais
 ### [SAP HANA de instância única](hana-get-started.md)
-### [Guia de implementação do S/4 HANA ou BW/4 HANA](cal-s4h.md)
+### [Guia de implementação de S/4 HANA ou de BW/4 HANA SAP CAL](cal-s4h.md)
 ### [Elevada Disponibilidade nas VMs](sap-hana-high-availability.md)
 ### [Descrição geral da Cópia de Segurança](sap-hana-backup-guide.md)
 ### [Cópia de segurança ao nível do ficheiro](sap-hana-backup-file-level.md)
 ### [Cópias de segurança de instantâneos de armazenamento](sap-hana-backup-storage-snapshots.md)
 ## SAP Netweaver
+### [Guia de implementação de SAP IDES em SAP CAL no Windows/SQL Server](sap-cal-ides-erp6-ehp7-sp3-sql.md)
 ### [Descrição geral e arquitetura](suse-quickstart.md)
 ### [Planear e implementar](planning-guide.md)
 ### [Elevada disponibilidade](high-availability-guide.md)

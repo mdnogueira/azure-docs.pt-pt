@@ -1,6 +1,7 @@
 # Descrição geral
 
 ## [Introdução](storage-introduction.md)
+## [Escolher Blobs, Ficheiros ou Discos de Dados](storage-decide-blobs-files-disks.md)
 
 # Introdução
 
@@ -50,6 +51,7 @@
 ### [Adicionar um disco gerido a uma VM do Linux](../virtual-machines/linux/add-disk.md)
 ### [Criar uma cópia de um VHD armazenado como Disco Gerido com os Instantâneos no Windows](../virtual-machines/windows/snapshot-copy-managed-disk.md)
 ### [Criar uma cópia de um VHD armazenado como Disco Gerido com os Instantâneos no Linux](../virtual-machines/linux/snapshot-copy-managed-disk.md)
+### [Utilizar discos geridos em modelos do Resource Manager](storage-using-managed-disks-template-deployments.md)
 
 # Procedimento
 ## [Criar uma conta de armazenamento](storage-create-storage-account.md)
@@ -70,7 +72,8 @@
 ### [Amostras](https://azure.microsoft.com/documentation/samples/?service=storage&term=table)
 ## Utilizar ficheiros
 ### [Descrição geral](/rest/api/storageservices/File-Service-Concepts)
-### [Resolução de problemas de Ficheiros do Azure](storage-troubleshoot-file-connection-problems.md)
+### [Resolução de problemas de Ficheiros do Azure - Windows](storage-troubleshoot-windows-file-connection-problems.md)
+### [Resolução de problemas de Ficheiros do Azure - Linux](storage-troubleshoot-linux-file-connection-problems.md)
 ### [Amostras](https://azure.microsoft.com/documentation/samples/?service=storage&term=file)
 ## Utilizar discos
 ### [Discos e VHDs para VMs do Windows](storage-about-disks-and-vhds-windows.md)
@@ -109,6 +112,7 @@
 ## Proteger
 ### [Guia de segurança](storage-security-guide.md)
 ### [Encriptação de dados inativos](storage-service-encryption.md)
+### [Encriptação inativa com chaves do cliente](storage-service-encryption-customer-managed-keys.md)
 ### [Autenticação de chave partilhada](https://msdn.microsoft.com/library/dd179428.aspx)
 ### [Assinaturas de acesso partilhado (SAS)](storage-dotnet-shared-access-signature-part-1.md)
 ### [Tutorial: Encriptar e desencriptar blobs com o Cofre de Chaves do Azure](storage-encrypt-decrypt-blobs-key-vault.md)
@@ -130,7 +134,8 @@
 ### [Documentação de orientação da recuperação após desastre](storage-disaster-recovery-guidance.md)
 ## Transferir Dados
 ### [Mover dados de e para o Armazenamento](storage-moving-data.md)
-### [Utilitário de linha de comandos do AzCopy](storage-use-azcopy.md)
+### [AzCopy no Windows](storage-use-azcopy.md)
+### [AzCopy no Linux](storage-use-azcopy-linux.md)
 ### [Utilizar o serviço Importar/Exportar](storage-import-export-service.md)
 ### [Utilizar a Ferramenta Importar/Exportar](storage-import-export-tool-how-to.md)
 #### [Configurar a Ferramenta Importar/Exportar](storage-import-export-tool-setup.md)

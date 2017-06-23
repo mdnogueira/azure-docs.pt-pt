@@ -5,6 +5,7 @@
 # Introdução
 ## [Criar um registo no portal](container-registry-get-started-portal.md)
 ## [Criar um registo com a CLI 2.0 do Azure](container-registry-get-started-azure-cli.md)
+## [Criar um registo com o Azure PowerShell](container-registry-get-started-powershell.md)
 ## [Emitir via push e solicitar uma imagem](container-registry-get-started-docker-cli.md)
 ## [Ver repositórios](container-registry-repositories.md)
 

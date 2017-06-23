@@ -78,6 +78,7 @@
 ## [REST do serviço (Pré-visualização)](search-api-2015-02-28-preview.md)
 ## [Preços](https://azure.microsoft.com/pricing/details/search/)
 ## Sites de demonstração
+### [Demonstração do Search Analyzer](http://alice.unearth.ai/)
 ### [Aplicação de listagem de trabalhos](http://aka.ms/azjobsdemo)
 ### [Aplicações de demonstração ao vivo](https://searchsamples.azurewebsites.net/)
 ## Cursos e tutoriais

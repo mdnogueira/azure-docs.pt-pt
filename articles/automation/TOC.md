@@ -11,7 +11,7 @@
 ### [Criar conta de Automatização autónoma](automation-create-standalone-account.md)
 ### [Criar conta de Utilizador do Azure AD](automation-create-aduser-account.md)
 ### [Configurar a Autenticação com o AWS](automation-config-aws-account.md)
-### [Criar conta Run As do Azure com o PowerShell](automation-update-account-powershell.md)
+### [Criar conta Run As de Automatização](automation-create-runas-account.md)
 ### [Validar configuração da conta de Automatização](automation-verify-runas-authentication.md)
 ### [Gerir controlo de acesso baseado em funções](automation-role-based-access-control.md)
 ### [Gerir conta de Automatização](automation-manage-account.md)
@@ -56,12 +56,12 @@
 ### [Remediar o alerta da VM do Azure](automation-azure-vm-alert-integration.md)
 ### [Iniciar/parar VM com Etiquetas JSON](automation-scenario-start-stop-vm-wjson-tags.md)
 ### [Remover Grupo de Recursos](automation-scenario-remove-resourcegroup.md)
-### [Iniciar/parar VMs durante horas de inatividade](automation-solution-vm-management.md)
 ### [Integração do controlo de origem com o GitHub Enterprise](automation-scenario-source-control-integration-with-github-ent.md)
 ### [Integração do controlo de origem com o VSTS](automation-scenario-source-control-integration-with-VSTS.md)
 ## Soluções
 ### [Monitorização de Alterações](../log-analytics/log-analytics-change-tracking.md)
 ### [Gestão de Atualizações](../operations-management-suite/oms-solution-update-management.md)
+### [Iniciar/parar VMs durante horas de inatividade](automation-solution-vm-management.md)
 ## Monitorizar
 ### [Reencaminhar dados de tarefa da Automatização do Azure para o Log Analytics](automation-manage-send-joblogs-log-analytics.md)
 ### [Desassociar a conta de Automatização do Azure a partir do Log Analytics](automation-unlink-from-log-analytics.md)
