@@ -1,14 +1,14 @@
 ---
 title: "Azure Cosmos DB: criar uma aplicação Web com .NET e a MongoDB API | Microsoft Docs"
 description: "Apresenta um exemplo de código .NET que pode utilizar para ligar e consultar a Azure Cosmos DB MongoDB API"
-services: cosmosdb
+services: cosmos-db
 documentationcenter: 
 author: mimig1
 manager: jhubbard
 editor: 
 ms.assetid: 
-ms.service: cosmosdb
-ms.custom: quick start connect
+ms.service: cosmos-db
+ms.custom: quick start connect, mvc
 ms.workload: 
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
@@ -16,10 +16,10 @@ ms.topic: hero-article
 ms.date: 05/10/2017
 ms.author: mimig
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 71fea4a41b2e3a60f2f610609a14372e678b7ec4
-ms.openlocfilehash: 68dccb429a9214e62daad9c161ffb8ad2a7b9a0b
+ms.sourcegitcommit: a643f139be40b9b11f865d528622bafbe7dec939
+ms.openlocfilehash: b95afa4dd3cd264ea911c7aa809c7862f9576da8
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 06/01/2017
 
 
 ---
@@ -34,9 +34,10 @@ Este guia de introdução demonstra como criar uma conta do Azure Cosmos DB, bas
 Se ainda não tiver o Visual Studio 2017 instalado, pode transferir e utilizar a [Visual Studio 2017 Community Edition](https://www.visualstudio.com/downloads/) **gratuita**. Confirme que ativa o **desenvolvimento do Azure** durante a configuração do Visual Studio.
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
+<a id="create-account"></a>
 ## <a name="create-a-database-account"></a>Criar uma conta de base de dados
 
-[!INCLUDE [documentdb-create-dbaccount](../../includes/cosmosdb-create-dbaccount-mongodb.md)]
+[!INCLUDE [cosmos-db-create-dbaccount](../../includes/cosmos-db-create-dbaccount-mongodb.md)]
 
 ## <a name="clone-the-sample-application"></a>Clonar a aplicação de exemplo
 
@@ -122,7 +123,7 @@ Atualizou agora a sua aplicação com todas as informações necessárias para c
 
 ## <a name="review-slas-in-the-azure-portal"></a>Rever os SLAs no portal do Azure
 
-[!INCLUDE [cosmosdb-tutorial-review-slas](../../includes/cosmosdb-tutorial-review-slas.md)]
+[!INCLUDE [cosmosdb-tutorial-review-slas](../../includes/cosmos-db-tutorial-review-slas.md)]
 
 ## <a name="clean-up-resources"></a>Limpar recursos
 
@@ -136,6 +137,6 @@ Se não pretender continuar a utilizar esta aplicação, elimine todos os recurs
 Neste guia rápido, aprendeu a criar uma conta do Azure Cosmos DB e a executar uma aplicação Web com a API do MongoDB. Agora, pode importar dados adicionais à sua conta do Cosmos DB. 
 
 > [!div class="nextstepaction"]
-> [Import data into Azure Cosmos DB for the MongoDB API](../documentdb/documentdb-mongodb-migrate.md) (Importar dados para o Azure Cosmos DB para a MongoDB API)
+> [Import data into Azure Cosmos DB for the MongoDB API](mongodb-migrate.md) (Importar dados para o Azure Cosmos DB para a MongoDB API)
 
 

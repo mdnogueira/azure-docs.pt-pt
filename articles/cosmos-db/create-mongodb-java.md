@@ -1,25 +1,25 @@
 ---
 title: "Azure Cosmos DB: criar uma aplicação de consola com Java e a MongoDB API | Microsoft Docs"
 description: "Apresenta um exemplo de código Java que pode utilizar para ligar e consultar a Azure Cosmos DB MongoDB API"
-services: cosmosdb
+services: cosmos-db
 documentationcenter: 
 author: mimig1
 manager: jhubbard
 editor: 
 ms.assetid: 
-ms.service: cosmosdb
-ms.custom: quick start connect
+ms.service: cosmos-db
+ms.custom: quick start connect, mvc
 ms.workload: 
 ms.tgt_pltfrm: na
-ms.devlang: dotnet
+ms.devlang: java
 ms.topic: hero-article
 ms.date: 05/10/2017
 ms.author: mimig
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 71fea4a41b2e3a60f2f610609a14372e678b7ec4
-ms.openlocfilehash: 22bce387c2b33759c1b83247f253c72fb3132739
+ms.sourcegitcommit: a643f139be40b9b11f865d528622bafbe7dec939
+ms.openlocfilehash: 1683afd842294b3b45ae4d0e53bbecdccadc1ed5
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 06/01/2017
 
 
 ---
@@ -39,13 +39,13 @@ Este guia de introdução demonstra como criar uma conta do Azure Cosmos DB, bas
 
 ## <a name="create-a-database-account"></a>Criar uma conta de base de dados
 
-[!INCLUDE [mongodb-create-dbaccount](../../includes/cosmosdb-create-dbaccount-mongodb.md)]
+[!INCLUDE [mongodb-create-dbaccount](../../includes/cosmos-db-create-dbaccount-mongodb.md)]
 
 ## <a name="add-a-collection"></a>Adicionar uma coleção
 
 Dê um nome à base de dados nova, **db**, e à coleção nova, **coll**.
 
-[!INCLUDE [cosmosdb-create-collection](../../includes/cosmosdb-create-collection.md)]
+[!INCLUDE [cosmos-db-create-collection](../../includes/cosmos-db-create-collection.md)]
 
 ## <a name="clone-the-sample-application"></a>Clonar a aplicação de exemplo
 
@@ -92,7 +92,7 @@ Vamos fazer uma breve revisão do que está a acontecer à aplicação. Abra o f
 
     ```java
     Document queryResult = collection.find(Filters.eq("fruit", "apple")).first();
-    System.out.println(queryResult.toJson());        
+    System.out.println(queryResult.toJson());       
     ```
 
 ## <a name="update-your-connection-string"></a>Atualizar a cadeia de ligação
@@ -109,11 +109,11 @@ Agora, regresse ao portal do Azure para obter as informações da cadeia de liga
 
 2. Execute `mvn exec:java -D exec.mainClass=GetStarted.Program` num terminal para iniciar a aplicação Java.
 
-Agora, pode utilizar [Robomongo](../documentdb/documentdb-mongodb-robomongo.md) / [Studio 3T](../documentdb/documentdb-mongodb-mongochef.md) para consultar, modificar e trabalhar com estes dados novos.
+Agora, pode utilizar [Robomongo](mongodb-robomongo.md) / [Studio 3T](mongodb-mongochef.md) para consultar, modificar e trabalhar com estes dados novos.
 
 ## <a name="review-slas-in-the-azure-portal"></a>Rever os SLAs no portal do Azure
 
-[!INCLUDE [cosmosdb-tutorial-review-slas](../../includes/cosmosdb-tutorial-review-slas.md)]
+[!INCLUDE [cosmosdb-tutorial-review-slas](../../includes/cosmos-db-tutorial-review-slas.md)]
 
 ## <a name="clean-up-resources"></a>Limpar recursos
 
@@ -127,7 +127,7 @@ Se não pretender continuar a utilizar esta aplicação, elimine todos os recurs
 Neste guia rápido, aprendeu a criar uma conta do Azure Cosmos DB, a criar uma coleção com o Data Explorer e a executar uma aplicação de consola. Agora, pode importar dados adicionais à sua conta do Cosmos DB. 
 
 > [!div class="nextstepaction"]
-> [Import MongoDB data into Azure Cosmos DB](../documentdb/documentdb-mongodb-migrate.md) (Importar dados do MongoDB para o Azure Cosmos DB)
+> [Import MongoDB data into Azure Cosmos DB](mongodb-migrate.md) (Importar dados do MongoDB para o Azure Cosmos DB)
 
 
 

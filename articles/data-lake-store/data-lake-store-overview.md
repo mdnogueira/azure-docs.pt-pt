@@ -12,11 +12,13 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: big-data
-ms.date: 02/06/2017
+ms.date: 06/29/2017
 ms.author: nitinme
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
 ms.openlocfilehash: a1d30c77dd29a134017be7deec6bb50991e6a698
+ms.contentlocale: pt-pt
+ms.lasthandoff: 12/07/2016
 
 
 ---
@@ -55,7 +57,7 @@ O Azure Data Lake Store pode armazenar quaisquer dados no formato nativo, tal co
 
 Os contentores do Azure Data Lake Store para dados são essencialmente pastas e ficheiros. Utiliza os dados armazenados através do SDK, do Portal do Azure e do Azure Powershell. Desde que coloque os dados num arquivo utilizando estas interfaces e utilize os contentores adequados, pode armazenar qualquer tipo de dados. O Data Lake Store não efetua qualquer processamento especial de dados com base no tipo de dados que armazena.
 
-## <a name="a-namedatalakestoresecurityasecuring-data-in-azure-data-lake-store"></a><a name="DataLakeStoreSecurity"></a>Proteger dados no Azure Data Lake Store
+## <a name="DataLakeStoreSecurity"></a>Proteger dados no Azure Data Lake Store
 O Azure Data Lake Store utiliza o Azure Active Directory para autenticação e listas de controlo de acesso (ACL) para gerir o acesso aos seus dados.
 
 | Funcionalidade | Descrição |
@@ -101,10 +103,5 @@ Se preferir assistir a vídeos para obter mais informações, o Data Lake Store 
 * [Utilizar o Apache Sqoop para mover dados entre origens relacionais e o Azure Data Lake Store](https://mix.office.com/watch/1butcdjxmu114)
 * [Orquestração de Dados com o Azure Data Factory para o Azure Data Lake Store](https://mix.office.com/watch/1oa7le7t2u4ka)
 * [Proteger Dados no Azure Data Lake Store](https://mix.office.com/watch/1q2mgzh9nn5lx)
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 
