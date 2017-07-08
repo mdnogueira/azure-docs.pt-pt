@@ -70,7 +70,8 @@
 ### [Utilizar o portal para atribuir a política](resource-manager-policy-portal.md)
 ### [Utilizar scripts para atribuir a política](resource-manager-policy-create-assign.md)
 ### Exemplos
-#### [Etiquetas de recursos](resource-manager-policy-tags.md)
+#### [Etiquetas](resource-manager-policy-tags.md)
+#### [Convenções de nomenclatura](resource-manager-policy-naming-convention.md)
 #### [Armazenamento](resource-manager-policy-storage.md)
 #### [VM do Linux](../virtual-machines/linux/policy.md?toc=%2fazure%2fazure-resource-manager%2ftoc.json)
 #### [VM do Windows](../virtual-machines/windows/policy.md?toc=%2fazure%2fazure-resource-manager%2ftoc.json)
@@ -119,8 +120,9 @@
 ## [REST](/rest/api/resources/)
 
 # Recursos
+## [Mapa do Azure](https://azure.microsoft.com/roadmap/)
+## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=azure-resource-manager)
+## [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-resource-manager)
 ## [Limitar pedidos](resource-manager-request-limits.md)
 ## [Monitorizar operações assíncronas](resource-manager-async-operations.md)
-## [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-resource-manager)
 ## [Vídeos](https://azure.microsoft.com/documentation/videos/index/?services=azure-resource-manager)
-## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=azure-resource-manager)

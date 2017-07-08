@@ -5,6 +5,7 @@
 ## [Criar um ambiente](time-series-insights-get-started.md)
 ## [Conceder acesso a dados](time-series-insights-data-access.md)
 ## [Criar uma origem de eventos](time-series-insights-add-event-source.md)
+## [Criar um conjunto de dados de referência](time-series-insights-add-reference-data-set.md)
 ## [Enviar eventos](time-series-insights-send-events.md)
 
 # Procedimento
@@ -15,6 +16,7 @@
 ## Programar
 ### [Autenticação e autorização](time-series-insights-authentication-and-authorization.md)
 ### [Consultar dados com C#](time-series-insights-query-data-csharp.md)
+### [Gerir dados de referência com C#](time-series-insights-manage-reference-data-csharp.md)
 
 # Referência
 ## [API de Consulta](/rest/api/time-series-insights/time-series-insights-reference-queryapi)
@@ -26,4 +28,5 @@
 ## [Azure Stream Analytics](/azure/stream-analytics/)
 
 # Recursos
+## [Mapa do Azure](https://azure.microsoft.com/roadmap/)
 ## [Preços](https://azure.microsoft.com/pricing/details/time-series-insights/)

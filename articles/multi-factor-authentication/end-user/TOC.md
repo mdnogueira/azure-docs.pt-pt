@@ -14,8 +14,5 @@
 ### [Iniciar sessão com o telemóvel](microsoft-authenticator-app-phone-signin-faq.md)
 ### [FAQs](microsoft-authenticator-app-faq.md)
 
-
-
-<!--HONumber=Feb17_HO3-->
-
-
+# Recursos
+## [Mapa do Azure](https://azure.microsoft.com/roadmap/)

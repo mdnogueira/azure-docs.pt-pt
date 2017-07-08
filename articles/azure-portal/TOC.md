@@ -33,6 +33,7 @@
 ## [Exemplos de início rápido da CLI do Azure Insights](../monitoring-and-diagnostics/insights-cli-samples.md)
 
 # Recursos
+## [Mapa do Azure](https://azure.microsoft.com/roadmap/)
 ## [Fórum do MSDN](https://social.msdn.microsoft.com/Forums/en-US/home?forum=windowsazuremanagement) 
 ## [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-management-portal)
 

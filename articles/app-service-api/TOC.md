@@ -153,11 +153,12 @@
 ### [Resolver problemas com o Visual Studio](../app-service-web/web-sites-dotnet-troubleshoot-visual-studio.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
 
 # Recursos
-## [Portal do Azure](../app-service-web/app-service-web-app-azure-portal.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
-## [Referência do Serviço de Aplicações](../app-service-web/app-service-changes-existing-services.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
-## [SDK de WebJobs](../app-service-web/websites-dotnet-webjobs-sdk-get-started.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
 ## [Melhores práticas do Serviço de Aplicações](../app-service-web/app-service-best-practices.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
+## [Referência do Serviço de Aplicações](../app-service-web/app-service-changes-existing-services.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
+## [Portal do Azure](../app-service-web/app-service-web-app-azure-portal.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
+## [Mapa do Azure](https://azure.microsoft.com/roadmap/)
 ## [Lista de recursos do WebJob](../app-service-web/websites-webjobs-resources.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
+## [SDK de WebJobs](../app-service-web/websites-dotnet-webjobs-sdk-get-started.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
 
 
 

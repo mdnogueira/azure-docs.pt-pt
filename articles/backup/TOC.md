@@ -91,6 +91,8 @@
 ## [Eliminar um cofre do Azure Backup](backup-azure-delete-vault.md)
 ## [Controlo de Acesso Baseado em Funções](backup-rbac-rs-vault.md)
 ## [Segurança para cópias de segurança híbridas](backup-azure-security-feature.md)
+## [Configurar relatórios do Azure Backup](backup-azure-configure-reports.md)
+## [Modelo de dados para relatórios do Azure Backup](backup-azure-reports-data-model.md)
 ## [Configurar a cópia de segurança offline](backup-azure-backup-import-export.md)
 ## [Substituir a sua biblioteca de unidades de banda](backup-azure-backup-cloud-as-tape.md)
 ## [Cópias de segurança de VMs do Linux consistentes com a aplicação](backup-azure-linux-app-consistent.md)
@@ -100,7 +102,8 @@
 ## [.NET](/dotnet/api/microsoft.azure.management.recoveryservices.backup)
 
 # Recursos
-## [Preços](https://azure.microsoft.com/pricing/details/backup/)
+## [Mapa do Azure](https://azure.microsoft.com/roadmap/)
 ## [Fórum do MSDN](https://social.msdn.microsoft.com/Forums/en-US/home?forum=windowsazureonlinebackup)
-## [Vídeos](https://azure.microsoft.com/documentation/videos/index/?services=backup)
+## [Preços](https://azure.microsoft.com/pricing/details/backup/)
 ## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=backup)
+## [Vídeos](https://azure.microsoft.com/documentation/videos/index/?services=backup)

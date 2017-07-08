@@ -78,6 +78,7 @@
 
 
 # Recursos
+## [Mapa do Azure](https://azure.microsoft.com/roadmap/)
 ## [Preços](https://azure.microsoft.com/pricing/details/virtual-machines/#Linux)
 ## [Disponibilidade regional](https://azure.microsoft.com/regions/services)
 ## [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-virtual-machine)

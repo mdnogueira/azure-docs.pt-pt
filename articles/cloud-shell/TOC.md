@@ -14,3 +14,5 @@
 
 # Referência
 ## [CLI 2.0 do Azure](/cli/azure) 
+# Recursos
+## [Mapa do Azure](https://azure.microsoft.com/roadmap/)

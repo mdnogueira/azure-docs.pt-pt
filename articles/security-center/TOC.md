@@ -71,6 +71,7 @@
 ## [Azure Security](/azure/security/)
 
 # Recursos
+## [Mapa do Azure](https://azure.microsoft.com/roadmap/)
 ## [Blogue sobre Segurança, Privacidade e Conformidade do Azure](http://blogs.msdn.com/b/azuresecurity/)
 ## [Preços](security-center-pricing.md)
 ## [Descrição geral do serviço](https://azure.microsoft.com/services/security-center/)

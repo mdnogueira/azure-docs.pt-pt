@@ -114,8 +114,9 @@
 ## [REST](https://msdn.microsoft.com/library/azure/ee460812)
 
 # Recursos
-## [Preços](https://azure.microsoft.com/pricing/details/cloud-services/)
-## [Fórum do MSDN](https://social.msdn.microsoft.com/Forums/en-us/home?forum=windowsazuredevelopment)
-## [Vídeos](https://azure.microsoft.com/documentation/videos/index/?services=cloud-services)
-## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=cloud-services&updatetype=&platform=)
+## [Mapa do Azure](https://azure.microsoft.com/roadmap/)
 ## [Percurso de aprendizagem](https://azure.microsoft.com/documentation/learning-paths/cloud-services/)
+## [Fórum do MSDN](https://social.msdn.microsoft.com/Forums/en-us/home?forum=windowsazuredevelopment)
+## [Preços](https://azure.microsoft.com/pricing/details/cloud-services/)
+## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=cloud-services&updatetype=&platform=)
+## [Vídeos](https://azure.microsoft.com/documentation/videos/index/?services=cloud-services)

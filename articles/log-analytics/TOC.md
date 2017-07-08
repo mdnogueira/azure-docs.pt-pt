@@ -56,15 +56,17 @@
 ### [Log Analytics da Atividade](log-analytics-activity.md)
 ### [Avaliação do AD](log-analytics-ad-assessment.md)
 ### [Estado de Replicação do AD](log-analytics-ad-replication-status.md)
+### [Agente de Funcionamento de Agente](../operations-management-suite/oms-solution-agenthealth.md?toc=%2fazure%2flog-analytics%2ftoc.json)
 ### [Gestão de alertas](log-analytics-solution-alert-management.md)
+### [Conector do Application Insights](log-analytics-app-insights-connector.md)
 ### [Análise SQL do Azure](log-analytics-azure-sql.md)
 ### [Análise de Aplicações Web do Azure](log-analytics-azure-web-apps-analytics.md)
 ### [Capacidade e desempenho](log-analytics-capacity.md)
 ### [Monitorização de Alterações](log-analytics-change-tracking.md)
 ### [Contentores](log-analytics-containers.md)
 ### [Análise DNS](log-analytics-dns.md)
-### [Conector da Gestão de Serviços de TI no OMS](log-analytics-itsmc-overview.md)
-#### [Ligações da Gestão de Serviços de TI no OMS](log-analytics-itsmc-connections.md)
+### [Conector da Gestão de Serviços de TI](log-analytics-itsmc-overview.md)
+#### [Ligações da Gestão de Serviços de TI](log-analytics-itsmc-connections.md)
 ### [Cofre de Chaves](log-analytics-azure-key-vault.md)
 ### Mensagens B2B de Aplicações Lógicas
 #### [Solução de Mensagens B2B de Aplicações Lógicas](../logic-apps/logic-apps-track-b2b-messages-omsportal.md?toc=%2fazure%2flog-analytics%2ftoc.json)
@@ -89,6 +91,7 @@
 ### [Cmdlets do PowerShell](log-analytics-powershell-workspace-configuration.md)
 ### [Modelos do Resource Manager](log-analytics-template-workspace-configuration.md)
 ### [API de Pesquisas de Registos](log-analytics-log-search-api.md)
+#### [python](log-analytics-log-search-api-python.md)
 ### [API de Alerta](log-analytics-api-alerts.md)
 
 # Referência
@@ -96,6 +99,7 @@
 ## [REST](/rest/api/loganalytics)
 
 # Recursos
-## [Análise do Windows](https://www.microsoft.com/en-us/WindowsForBusiness/windows-analytics)
+## [Mapa do Azure](https://azure.microsoft.com/roadmap/)
 ## [Preços](https://azure.microsoft.com/pricing/details/log-analytics/)
 ## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=log-analytics)
+## [Análise do Windows](https://www.microsoft.com/en-us/WindowsForBusiness/windows-analytics)

@@ -55,6 +55,7 @@
 ## [REST](https://docs.microsoft.com/rest/api/redis/)
 
 # Recursos
-## [Exemplos da cache de Redis](cache-redis-samples.md)
+## [Mapa do Azure](https://azure.microsoft.com/roadmap/)
 ## [Preços](https://azure.microsoft.com/pricing/details/cache/)
+## [Exemplos da cache de Redis](cache-redis-samples.md)
 

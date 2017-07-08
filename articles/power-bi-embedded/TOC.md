@@ -33,9 +33,10 @@
 
 
 # Recursos
-## [Aplicação de exemplo](https://github.com/Azure-Samples/power-bi-embedded-integrate-report-into-web-app/)
+## [Mapa do Azure](https://azure.microsoft.com/roadmap/)
 ## [Exemplo de incorporação de JavaScript](https://microsoft.github.io/PowerBI-JavaScript/demo/)
 ## [Repositório de Git de JavaScript](https://github.com/Microsoft/PowerBI-JavaScript)
 ## [Repositório de Git de C# do Power BI](https://github.com/Microsoft/PowerBI-CSharp)
 ## [Comunidade do Power BI](http://community.powerbi.com/t5/Developer/bd-p/Developer)
+## [Aplicação de exemplo](https://github.com/Azure-Samples/power-bi-embedded-integrate-report-into-web-app/)
 ## [Stack Overflow](http://stackoverflow.com/questions/tagged/powerbi)

@@ -1,10 +1,9 @@
 # Descrição geral
 ## [O que é o Azure Active Directory?](active-directory-whatis.md)
-## [Escolher edição](active-directory-editions.md)
+## [Escolher uma edição](active-directory-editions.md)
 ## [Sobre a gestão de identidade do Azure](identity-fundamentals.md)
 ## [Compreender as soluções de identidade do Azure](understand-azure-identity-solutions.md)
-## [Pré-visualizar a experiência do portal do Azure](active-directory-preview-explainer.md)
-
+## [Escolher uma solução de identidade híbrida](choose-hybrid-identity-solution.md)
 
 # Introdução
 ## [Obter um inquilino do Azure AD](active-directory-howto-tenant.md)
@@ -13,14 +12,16 @@
 ## Gerir licenciamento do Azure AD
 ### [Portal do Azure](active-directory-licensing-get-started-azure-portal.md)
 ### [Portal clássico](active-directory-licensing-what-is.md)
-## [Obter o Azure para a sua organização](sign-up-organization.md)
+### [Utilizar grupos para atribuir licenças ](active-directory-licensing-whatis-azure-portal.md)
+#### [Atribuir licenças a um grupo](active-directory-licensing-group-assignment-azure-portal.md)
+#### [Identificar e resolver problemas de licenças num grupo](active-directory-licensing-group-problem-resolution-azure-portal.md)
+#### [Migrar utilizadores licenciados individuais para o licenciamento baseado no grupo](active-directory-licensing-group-migration-azure-portal.md)
+#### [Cenários adicionais para licenciamento baseado no grupo](active-directory-licensing-group-advanced.md)
+#### [Exemplos do PowerShell para licenciamento baseado no grupo](active-directory-licensing-ps-examples.md)
 ## [FAQs](active-directory-faq.md)
 ## [Como obter apoio para o Azure Active Directory](active-directory-troubleshooting-support-howto.md)
 ## [Tutoriais de integração de aplicação SaaS](active-directory-saas-tutorial-list.md)
-## Controlos do Azure AD
-### [Concluir revisão de acesso](active-directory-azure-ad-controls-complete-an-access-review.md)
-### [Criar revisão de acesso](active-directory-azure-ad-controls-create-an-access-review.md)
-### [Como realizar a revisão de acesso](active-directory-azure-ad-controls-perform-an-access-review.md)
+
 
 
 # Procedimento
@@ -53,9 +54,7 @@
 ### Adicionar utilizadores
 #### [Portal do Azure](active-directory-users-create-azure-portal.md)
 #### [Portal clássico](active-directory-create-users.md)
-### Controlos do Azure AD
-#### [Acesso de convidado com revisões de acesso](active-directory-azure-ad-controls-manage-guest-access-with-access-reviews.md)
-#### [Gerir o acesso dos utilizadores com revisões](active-directory-azure-ad-controls-manage-user-access-with-access-reviews.md)
+
 
 ### [Utilizar grupos para atribuir licenças ](active-directory-licensing-whatis-azure-portal.md)
 #### [Atribuir licenças a um grupo](active-directory-licensing-group-assignment-azure-portal.md)
@@ -106,11 +105,13 @@
 ### [Utilizadores em risco](active-directory-reporting-security-user-at-risk.md)
 ### [Inícios de sessão de risco](active-directory-reporting-security-risky-sign-ins.md)
 ### [Eventos de risco](active-directory-reporting-risk-events.md)
-### [Localizações com nome](active-directory-named-locations.md)
-### [Migração de relatórios](active-directory-reporting-migration.md)
 ### [Retenção](active-directory-reporting-retention.md)
 ### [Latências](active-directory-reporting-latencies-azure-portal.md)
 ### [FAQ](active-directory-reporting-faq.md)
+### Tarefas
+#### [Configurar localizações com nome](active-directory-named-locations.md)
+#### [Encontrar relatórios de atividades](active-directory-reporting-migration.md)
+#### [Utilizar o Pacote de Conteúdos do Power BI para o Azure Active Directory](active-directory-reporting-power-bi-content-pack-how-to.md)  
 ### Resolução de problemas
 #### [Dados de auditoria em falta](active-directory-reporting-troubleshoot-missing-audit-data.md)
 #### [Dados em falta em transferências](active-directory-reporting-troubleshoot-missing-data-download.md)
@@ -188,8 +189,7 @@
 ### [Cloud App Discovery](active-directory-cloudappdiscovery-whatis.md)
 #### [Atualizar definições de registo](active-directory-cloudappdiscovery-registry-settings-for-proxy-services.md)
 #### [Compreender a segurança e privacidade](active-directory-cloudappdiscovery-security-and-privacy-considerations.md)
-### Controlos do Azure AD
-####[Gerir programas e respetivos controlos](active-directory-azure-ad-controls-manage-programs-and-controls.md)
+
 
 ### [Aceder a aplicações remotamente com o Proxy de Aplicações](active-directory-application-proxy-get-started.md)
 #### Introdução
@@ -215,6 +215,7 @@
 ##### [Aplicações clientes nativas](active-directory-application-proxy-native-client.md)
 ##### [Instalação silenciosa](active-directory-application-proxy-silent-installation.md)
 ##### [Página inicial personalizada](application-proxy-office365-app-launcher.md)
+##### [Converter ligações inline](application-proxy-link-translation.md)
 #### Instruções de publicação
 ##### [Ambiente de Trabalho Remoto](application-proxy-publish-remote-desktop.md)
 ##### [SharePoint](application-proxy-enable-remote-access-sharepoint.md)
@@ -399,9 +400,10 @@
 ## [Azure AD Privileged Identity Management](./privileged-identity-management/active-directory-securing-privileged-access.md)
 
 # Recursos
-## [Preços](https://azure.microsoft.com/pricing/details/active-directory/)
+## [Fórum de comentários do Azure](https://feedback.azure.com/forums/169401-azure-active-directory)
+## [Mapa do Azure](https://azure.microsoft.com/roadmap/)
 ## [Fórum do MSDN](https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=WindowsAzureAD)
+## [Preços](https://azure.microsoft.com/pricing/details/active-directory/)
+## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=active-directory)
 ## [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-active-directory)
 ## [Vídeos](https://azure.microsoft.com/documentation/videos/index/?services=active-directory)
-## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=active-directory)
-## [Fórum de comentários do Azure](https://feedback.azure.com/forums/169401-azure-active-directory)

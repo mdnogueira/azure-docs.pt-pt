@@ -33,3 +33,5 @@
 ## [Gerir o perfil do publicador](./cloud-partner-portal-manage-publisher-profile.md)
 ## [Gerir utilizadores](./cloud-partner-portal-manage-users.md)
 ## [Obter suporte](./cloud-partner-portal-support-for-cloud-partner-portal.md)
+# Recursos
+## [Mapa do Azure](https://azure.microsoft.com/roadmap/)
