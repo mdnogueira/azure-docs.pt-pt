@@ -13,17 +13,18 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 02/15/2017
+ms.date: 05/15/2017
 ms.author: dobett
-translationtype: Human Translation
-ms.sourcegitcommit: d9dad6cff80c1f6ac206e7fa3184ce037900fc6b
-ms.openlocfilehash: e68815c2dafc596c3560ad3fcb2a7bf96d29182b
-ms.lasthandoff: 04/18/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 9568210d4df6cfcf5b89ba8154a11ad9322fa9cc
+ms.openlocfilehash: 2364ab79ec4091d41e4d340e13033181df05b507
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/15/2017
 
 
 ---
-# <a name="tutorial-get-started-with-the-preconfigured-solutions"></a>Tutorial: Introdução às soluções pré-configuradas
-## <a name="introduction"></a>Introdução
+# <a name="get-started-with-the-preconfigured-solutions"></a>Introdução às soluções pré-configuradas
+
 As [soluções pré-configuradas][lnk-preconfigured-solutions] do Azure IoT Suite combinam múltiplos serviços do Azure IoT para fornecer soluções ponto-a-ponto que implementam cenários de negócios comuns do IoT. A solução pré-configurada de *monitorização remota* estabelece ligação aos seus dispositivos e monitoriza-os. Pode utilizar a solução para analisar o fluxo de dados dos seus dispositivos e melhorar os resultados de negócios ao fazer com que os processos respondam automaticamente a esse fluxo de dados.
 
 Este tutorial mostra-lhe como aprovisionar a solução pré-configurada de monitorização remota. Também disponibiliza orientações sobre as funcionalidades básicas da solução pré-configurada. Pode aceder a muitas destas funcionalidades através do *dashboard* da solução pré-configurada que é implementado juntamente com a mesma:
@@ -34,8 +35,6 @@ Para concluir este tutorial, precisa de uma subscrição ativa do Azure.
 
 > [!NOTE]
 > Se não tiver uma conta, pode criar uma de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Azure Free Trial (Avaliação Gratuita do Azure)][lnk_free_trial].
-> 
-> 
 
 [!INCLUDE [iot-suite-provision-remote-monitoring](../../includes/iot-suite-provision-remote-monitoring.md)]
 

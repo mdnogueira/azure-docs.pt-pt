@@ -1,14 +1,14 @@
 ---
 title: "Azure Cosmos DB: criar uma aplicação Web com Xamarin e a autenticação do Facebook | Microsoft Docs"
 description: "Apresenta um exemplo de código .NET que pode utilizar para ligar e consultar o Azure Cosmos DB"
-services: cosmosdb
+services: cosmos-db
 documentationcenter: 
 author: mimig1
 manager: jhubbard
 editor: 
 ms.assetid: 
-ms.service: cosmosdb
-ms.custom: quick start connect
+ms.service: cosmos-db
+ms.custom: quick start connect, mvc
 ms.workload: 
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
@@ -16,10 +16,10 @@ ms.topic: hero-article
 ms.date: 05/10/2017
 ms.author: mimig
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 71fea4a41b2e3a60f2f610609a14372e678b7ec4
-ms.openlocfilehash: 80aa96973799584118125829f9479fbd14431ac0
+ms.sourcegitcommit: 07584294e4ae592a026c0d5890686eaf0b99431f
+ms.openlocfilehash: 4ea97c2aca6769843d0210ffeae6f95531a21f10
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 06/01/2017
 
 
 ---
@@ -27,7 +27,7 @@ ms.lasthandoff: 05/10/2017
 
 O Azure Cosmos DB é um serviço de bases de dados com vários modelos e distribuído globalmente. Pode criar e consultar rapidamente o documento, a chave/valor e as bases de dados de gráficos, que beneficiam de capacidades de escalamento horizontal e distribuição global no centro do Azure Cosmos DB. 
 
-Este guia de introdução demonstra como criar uma conta do Azure Cosmos DB, bases de dados de documentos e coleções com o portal do Azure. Depois, vai criar e implementar uma aplicação Web de Lista A Fazer criada na [DocumentDB .NET API](../documentdb/documentdb-sdk-dotnet.md), em [Xamarin](https://www.xamarin.com/) e no motor de autorização do Azure Cosmos DB. A aplicação Web de Lista A Fazer implementa um padrão de dados por utilizador que permite aos utilizadores iniciar sessão com a Autorização do Facebook e gerir os itens A Fazer deles.
+Este guia de introdução demonstra como criar uma conta do Azure Cosmos DB, bases de dados de documentos e coleções com o portal do Azure. Depois, vai criar e implementar uma aplicação Web de Lista A Fazer criada na [DocumentDB .NET API](documentdb-sdk-dotnet.md), em [Xamarin](https://www.xamarin.com/) e no motor de autorização do Azure Cosmos DB. A aplicação Web de Lista A Fazer implementa um padrão de dados por utilizador que permite aos utilizadores iniciar sessão com a Autorização do Facebook e gerir os itens A Fazer deles.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -37,11 +37,11 @@ Se ainda não tiver o Visual Studio 2017 instalado, pode transferir e utilizar a
 
 ## <a name="create-a-database-account"></a>Criar uma conta de base de dados
 
-[!INCLUDE [documentdb-create-dbaccount](../../includes/documentdb-create-dbaccount.md)]
+[!INCLUDE [cosmos-db-create-dbaccount](../../includes/cosmos-db-create-dbaccount.md)]
 
 ## <a name="add-a-collection"></a>Adicionar uma coleção
 
-[!INCLUDE [cosmosdb-create-collection](../../includes/cosmosdb-create-collection.md)]
+[!INCLUDE [cosmos-db-create-collection](../../includes/cosmos-db-create-collection.md)]
 
 ## <a name="clone-the-sample-application"></a>Clonar a aplicação de exemplo
 
@@ -114,7 +114,7 @@ Atualizou agora a sua aplicação com todas as informações necessárias para c
 
 ## <a name="review-slas-in-the-azure-portal"></a>Rever os SLAs no portal do Azure
 
-[!INCLUDE [cosmosdb-tutorial-review-slas](../../includes/cosmosdb-tutorial-review-slas.md)]
+[!INCLUDE [cosmosdb-tutorial-review-slas](../../includes/cosmos-db-tutorial-review-slas.md)]
 
 ## <a name="clean-up-resources"></a>Limpar recursos
 
@@ -128,5 +128,5 @@ Se não pretender continuar a utilizar esta aplicação, elimine todos os recurs
 Neste guia rápido, aprendeu a criar uma conta do Azure Cosmos DB, a criar uma coleção com o Data Explorer e criar e implementar uma aplicação Xamarin. Agora, pode importar dados adicionais à sua conta do Cosmos DB. 
 
 > [!div class="nextstepaction"]
-> [Import data into Azure Cosmos DB](../documentdb/documentdb-import-data.md) (Importar dados para o Azure Cosmos DB).
+> [Import data into Azure Cosmos DB](import-data.md) (Importar dados para o Azure Cosmos DB).
 

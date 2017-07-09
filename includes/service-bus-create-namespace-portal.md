@@ -1,5 +1,3 @@
-## <a name="create-a-service-namespace"></a>Criar um espaço de nomes de serviço
-
 Para começar a utilizar as filas do Service Bus no Azure, tem de, primeiro, criar um espaço de nomes. Um espaço de nomes fornece um contentor de âmbito para abordar os recursos do Service Bus na sua aplicação. 
 
 Para criar um espaço de nomes:
@@ -16,6 +14,7 @@ Para criar um espaço de nomes:
 8. Clique em **Criar**. O sistema cria o espaço de nomes e ativa-o. Poderá ter de aguardar alguns minutos enquanto o sistema aprovisiona recursos para a sua conta.
 
 ### <a name="obtain-the-management-credentials"></a>Obter as credenciais de gestão
+
 1. Na lista de espaços de nomes, clique no nome do espaço de nomes criado recentemente.
 2. No painel de espaço de nomes clique em **Políticas de Acesso Partilhado**.
 3. No painel **Políticas de acesso partilhado**, clique em **RootManageSharedAccessKey**.

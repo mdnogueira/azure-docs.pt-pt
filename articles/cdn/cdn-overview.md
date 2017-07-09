@@ -15,10 +15,10 @@ ms.topic: hero-article
 ms.date: 02/08/2017
 ms.author: rli
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 9ae7e129b381d3034433e29ac1f74cb843cb5aa6
-ms.openlocfilehash: ede96c450e1aa5e87d4dd2c1131cefec7cf3493c
+ms.sourcegitcommit: 07584294e4ae592a026c0d5890686eaf0b99431f
+ms.openlocfilehash: 299e55e095ac323ed0ded7c7844d7cd103174af2
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/08/2017
+ms.lasthandoff: 06/01/2017
 
 
 ---
@@ -51,7 +51,7 @@ Existem três produtos da CDN do Azure: **CDN do Azure Standard da Akamai**, **C
 
 |  | Standard da Akamai | Standard da Verizon | Premium da Verizon |
 | --- | --- | --- | --- |
-| Integração fácil com os serviços Azure, tais como o [Armazenamento](cdn-create-a-storage-account-with-cdn.md), [Serviços Cloud](cdn-cloud-service-with-cdn.md), [Aplicações Web](../app-service-web/cdn-websites-with-cdn.md) e [Serviços de Multimédia](../media-services/media-services-portal-manage-streaming-endpoints.md) |**&#x2713;** |**&#x2713;** |**&#x2713;** |
+| Integração fácil com os serviços Azure, tais como o [Armazenamento](cdn-create-a-storage-account-with-cdn.md), [Serviços Cloud](cdn-cloud-service-with-cdn.md), [Aplicações Web](../app-service-web/app-service-web-tutorial-content-delivery-network.md) e [Serviços de Multimédia](../media-services/media-services-portal-manage-streaming-endpoints.md) |**&#x2713;** |**&#x2713;** |**&#x2713;** |
 | Gestão através da [API REST](https://msdn.microsoft.com/library/mt634456.aspx), do [.NET](cdn-app-dev-net.md), do [Node.js](cdn-app-dev-node.md) ou do [PowerShell](cdn-manage-powershell.md). |**&#x2713;** |**&#x2713;** |**&#x2713;** |
 | Suporta HTTPS com ponto final CDN |**&#x2713;** |**&#x2713;** |**&#x2713;** |
 | HTTPS de domínio personalizado | |**&#x2713;** |**&#x2713;** |

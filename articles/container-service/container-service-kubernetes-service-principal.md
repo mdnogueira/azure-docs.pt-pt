@@ -17,10 +17,10 @@ ms.workload: na
 ms.date: 05/08/2017
 ms.author: danlep
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 71fea4a41b2e3a60f2f610609a14372e678b7ec4
-ms.openlocfilehash: 48b3a3090573718ff5d3ba70e93567e6428ff59b
+ms.sourcegitcommit: e7da3c6d4cfad588e8cc6850143112989ff3e481
+ms.openlocfilehash: 33a1ab822f2900fd51d801f94ad8679fe65ba21f
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 05/16/2017
 
 
 ---
@@ -104,7 +104,7 @@ O exemplo seguinte mostra uma forma de passar os parâmetros com a CLI do Azure 
 
 ## <a name="option-2-generate-a-service-principal-when-creating-the-cluster-with-az-acs-create"></a>Opção 2: gerar um principal de serviço ao criar o cluster com `az acs create`
 
-Se executar o comando [`az acs create`](https://docs.microsoft.com/en-us/cli/azure/acs#create) para criar o cluster de Kubernetes, tem a opção de gerar automaticamente um principal de serviço.
+Se executar o comando [`az acs create`](/cli/azure/acs#create) para criar o cluster de Kubernetes, tem a opção de gerar automaticamente um principal de serviço.
 
 Tal como com outras opções de criação de cluster de Kubernetes, pode especificar parâmetros para um principal de serviço existente quando executa `az acs create`. No entanto, quando omitir estes parâmetros, a CLI do Azure cria um automaticamente para utilização com o Container Service. Isto é efetuado de forma transparente durante a implementação. 
 

@@ -14,9 +14,11 @@ ms.devlang: na
 ms.topic: hero-article
 ms.date: 01/07/2017
 ms.author: ambapat
-translationtype: Human Translation
-ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
-ms.openlocfilehash: 7fc69510ee07f8a0c50fa7ab59c7e1fac38fc5bb
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 6dbb88577733d5ec0dc17acf7243b2ba7b829b38
+ms.openlocfilehash: 4317cf84760289ca29d8d5a78e2adef99c4cedf2
+ms.contentlocale: pt-pt
+ms.lasthandoff: 07/04/2017
 
 
 ---
@@ -31,7 +33,12 @@ Ao criar um novo cofre de chaves numa subscrição, é automaticamente associado
 Por exemplo, se tiver o cofre de chaves "myvault" numa subscrição que tenha sido movida do inquilino A para o B, saiba como alterar o ID de inquilino para este cofre de chaves e remover as políticas de acesso antigas.
 
 <pre>
-$vaultResourceId = (Get-AzureRmKeyVault -VaultName myvault).ResourceId $vault = Get-AzureRmResource –ResourceId $vaultResourceId -ExpandProperties $vault.Properties.TenantId = (Get-AzureRmContext).Tenant.TenantId $vault.Properties.AccessPolicies = @() Set-AzureRmResource -ResourceId $vaultResourceId -Properties $vault.Properties
+$Select-AzureRmSubscription -SubscriptionId YourSubscriptionID
+$vaultResourceId = (Get-AzureRmKeyVault -VaultName myvault).ResourceId
+$vault = Get-AzureRmResource –ResourceId $vaultResourceId -ExpandProperties
+$vault.Properties.TenantId = (Get-AzureRmContext).Tenant.Id
+$vault.Properties.AccessPolicies = @()
+Set-AzureRmResource -ResourceId $vaultResourceId -Properties $vault.Properties
 </pre>
 
 Uma vez que este cofre estava no inquilino A antes da movimentação, o valor original do **$vault.Properties.TenantId** é o inquilino A, e **(Get-AzureRmContext).Tenant.TenantId** é inquilino B.
@@ -40,10 +47,5 @@ Agora que o cofre está associado ao ID de inquilino correto e as entradas de po
 
 ## <a name="next-steps"></a>Passos seguintes
 Se tiver perguntas sobre o Cofre de Chaves do Azure, visite os [Fóruns do Cofre de Chaves do Azure](https://social.msdn.microsoft.com/forums/azure/home?forum=AzureKeyVault).
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

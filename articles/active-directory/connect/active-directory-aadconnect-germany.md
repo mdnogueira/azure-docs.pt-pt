@@ -15,9 +15,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 02/07/2017
 ms.author: billmath
-translationtype: Human Translation
-ms.sourcegitcommit: 7db56a4c0efb208591bb15aa03a4c0dbf833d22e
-ms.openlocfilehash: a6bb1c4b3a4972cdab9b99c548ef918a4d1070a0
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 6dbb88577733d5ec0dc17acf7243b2ba7b829b38
+ms.openlocfilehash: 780728950199bac6a317767ef1db4462b3fe6ffd
+ms.contentlocale: pt-pt
+ms.lasthandoff: 07/04/2017
 
 
 ---
@@ -35,8 +37,7 @@ Atualmente, muitos dos cenários no [Microsoft Cloud Alemanha](https://www.micro
 * As seguintes funcionalidades não estão disponíveis:
   * Azure AD Connect Health
   * Atualizações automáticas
-  * Repetição de escrita de palavras-passe
-
+ 
 ## <a name="download"></a>Transferência
 Pode transferir o Azure AD Connect a partir do painel do Azure AD Connect no portal.  Utilize as instruções abaixo para localizar o painel do Azure AD Connect.
 
@@ -64,10 +65,5 @@ Para instalar o Azure AD Connect, pode utilizar a documentação [aqui](active-d
 
 ## <a name="advanced-features-and-additional-information"></a>Funcionalidades avançadas e Informações Adicionais
 Para obter informações adicionais e orientações sobre definições personalizadas ou configurações avançadas, comece por [Integrar as identidades no local no Azure Active Directory](active-directory-aadconnect.md).  Esta página fornece informações e hiperligações para orientações adicionais.
-
-
-
-
-<!--HONumber=Jan17_HO1-->
 
 

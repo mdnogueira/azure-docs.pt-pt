@@ -14,10 +14,11 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 04/07/2017
 ms.author: alkohli
-translationtype: Human Translation
-ms.sourcegitcommit: 538f282b28e5f43f43bf6ef28af20a4d8daea369
-ms.openlocfilehash: d9ba200dba2b1460a9d3c9ba07e2bca54c30b53a
-ms.lasthandoff: 04/07/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 857267f46f6a2d545fc402ebf3a12f21c62ecd21
+ms.openlocfilehash: ead9fcc5ec582420d731faccb7abba0dc815ed84
+ms.contentlocale: pt-pt
+ms.lasthandoff: 06/28/2017
 
 
 ---
@@ -69,7 +70,7 @@ As secções seguintes explicam os pré-requisitos de configuração para o disp
 #### <a name="azure-requirements"></a>Requisitos do Azure
 Antes de aprovisionar o dispositivo virtual, terá de efetuar os seguintes preparativos no ambiente do Azure:
 
-* Para o dispositivo virtual, [configure uma rede virtual no Azure](../virtual-network/virtual-networks-create-vnet-classic-portal.md). Se utilizar o Premium Storage, tem de criar uma rede virtual numa região do Azure que suporte o Premium Storage. As regiões de armazenamento Premium são regiões que correspondem à linha para *Armazenamento no disco* na lista de [Serviços do Azure por Região](https://azure.microsoft.com/en-us/regions/services).
+* Para o dispositivo virtual, [configure uma rede virtual no Azure](../virtual-network/virtual-networks-create-vnet-classic-pportal.md). Se utilizar o Premium Storage, tem de criar uma rede virtual numa região do Azure que suporte o Premium Storage. As regiões de armazenamento Premium são regiões que correspondem à linha para *Armazenamento no disco* na lista de [Serviços do Azure por Região](https://azure.microsoft.com/en-us/regions/services).
 * É recomendado para a utilização do servidor DNS predefinido fornecido pelo Azure em vez de especificar o próprio nome de servidor DNS. Se o nome de servidor DNS não é válido ou se o servidor DNS não é capaz de resolver corretamente os endereços de IP, a criação do dispositivo virtual irá falhar.
 * As opções de ponto a site e site a site são opcionais, mas não obrigatórias. Se desejar, pode configurar estas opções para cenários mais avançados.
 * Pode criar [máquinas virtuais do Azure](../virtual-machines/virtual-machines-linux-about.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) (servidores anfitriões) na rede virtual que pode utilizar os volumes expostos pelo dispositivo virtual. Estes servidores devem cumprir os seguintes requisitos:                             

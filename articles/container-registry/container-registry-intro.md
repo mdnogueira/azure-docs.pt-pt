@@ -17,10 +17,11 @@ ms.workload: na
 ms.date: 03/24/2017
 ms.author: stevelas
 ms.custom: H1Hack27Feb2017
-translationtype: Human Translation
-ms.sourcegitcommit: 0d6f6fb24f1f01d703104f925dcd03ee1ff46062
-ms.openlocfilehash: 25301f1bbacdf2f1e3d04ed3470eafd31098ea32
-ms.lasthandoff: 04/17/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 1e6f2b9de47d1ce84c4043f5f6e73d462e0c1271
+ms.openlocfilehash: bc0c8ccad64166582dcb3f7162280a8772abc6b3
+ms.contentlocale: pt-pt
+ms.lasthandoff: 06/21/2017
 
 ---
 # <a name="introduction-to-private-docker-container-registries"></a>Introdução aos registos privados de contentores Docker
@@ -39,7 +40,7 @@ Para obter informações sobre o Docker e os contentores, veja:
 Extrair imagens de um registo de contentores do Azure para vários destinos de implementações:
 
 * **Sistemas de orquestração dimensionáveis** que gerem aplicações contentorizadas em clusters de anfitriões, incluindo [CD/SO](https://docs.mesosphere.com/), [Docker Swarm](https://docs.docker.com/swarm/) e [Kubernetes](http://kubernetes.io/docs/).
-* **Serviços do Azure** que suportam a criação e a execução de aplicações em escala, incluindo o [Container Service](../container-service/index.md), o [Serviço de Aplicações](/app-service/index.md), o [Batch](../batch/index.md), o [Service Fabric](../service-fabric/index.md) e outros.
+* **Serviços do Azure** que suportam a criação e a execução de aplicações em escala, incluindo o [Container Service](../container-service/index.yml), o [Serviço de Aplicações](/app-service/index.md), o [Batch](../batch/index.md), o [Service Fabric](../service-fabric/index.md) e outros.
 
 Os programadores também podem enviar para um registo de contentores como parte de um fluxo de trabalho de desenvolvimento de contentores. Por exemplo, podem segmentar um registo de contentores de uma ferramenta de integração contínua e programação, como o [Visual Studio Team Services](https://www.visualstudio.com/docs/overview) ou o [Jenkins](https://jenkins.io/).
 
@@ -69,6 +70,6 @@ Os programadores também podem enviar para um registo de contentores como parte 
 * [Create a container registry using the Azure portal (Criar um registo de contentores com o portal do Azure)](container-registry-get-started-portal.md)
 * [Create a container registry using the Azure CLI (Criar um registo de contentores com a CLI do Azure)](container-registry-get-started-azure-cli.md)
 * [Push your first image using the Docker CLI (Enviar a sua primeira imagem com a CLI do Docker)](container-registry-get-started-docker-cli.md)
-* Para criar uma integração contínua e um fluxo de trabalho de implementação através dos Visual Studio Team Services, do Azure Container Service e do Azure Container Registry, veja [este tutorial](../container-service/container-service-setup-ci-cd.md).
+* Para criar uma integração contínua e um fluxo de trabalho de implementação através dos Visual Studio Team Services, do Azure Container Service e do Azure Container Registry, veja [este tutorial](../container-service/container-service-docker-swarm-setup-ci-cd.md).
 * Se quiser configurar um registo privado do Docker no Azure (sem um ponto final público), veja [Deploying Your Own Private Docker Registry on Azure (Implementar o Seu Primeiro Registo Privado do Docker no Azure)](../virtual-machines/virtual-machines-linux-docker-registry-in-blob-storage.md).
 

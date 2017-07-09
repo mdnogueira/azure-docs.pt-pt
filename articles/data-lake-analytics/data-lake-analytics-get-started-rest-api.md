@@ -3,8 +3,8 @@ title: "Introdução ao Data Lake Analytics com a API REST | Microsoft Docs"
 description: "Utilizar APIs REST do WebHDFS para executar operações no Data Lake Analytics"
 services: data-lake-analytics
 documentationcenter: 
-author: mumian
-manager: jhubbard
+author: saveenr
+manager: saveenr
 editor: cgronlun
 ms.assetid: 5e133d92-baaa-44c9-890c-ab2d85c91122
 ms.service: data-lake-analytics
@@ -14,9 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: big-data
 ms.date: 02/03/2017
 ms.author: jgao
-translationtype: Human Translation
-ms.sourcegitcommit: 2fea3686b1484406d31c5447c7d3d7e2451b827e
-ms.openlocfilehash: 1898b3d6aa1a9ccbc9f4427cf994c02f9fa35abd
+ms.translationtype: Human Translation
+ms.sourcegitcommit: a1ba750d2be1969bfcd4085a24b0469f72a357ad
+ms.openlocfilehash: 332d7af2539eea8890745005104ac5b0921c2b7f
+ms.contentlocale: pt-pt
+ms.lasthandoff: 06/20/2017
 
 
 ---
@@ -345,11 +347,5 @@ O resultado é semelhante a:
 * Para tarefas de gestão, veja [Manage Azure Data Lake Analytics using Azure portal (Gerir o Azure Data Lake Analytics com o Portal do Azure)](data-lake-analytics-manage-use-portal.md).
 * Para uma descrição geral da Data Lake Analytics, consulte [Descrição geral da Análise do Azure Data Lake](data-lake-analytics-overview.md).
 * Para ver o mesmo tutorial, utilizando outras ferramentas, clique nos seletores de separador no topo da página.
-* Para obter informações de diagnóstico de registo, veja [Accessing diagnostics logs for Azure Data Lake Analytics (Aceder aos registos de diagnóstico do Azure Data Lake Analytics)](data-lake-analytics-diagnostic-logs.md)
-
-
-
-
-<!--HONumber=Feb17_HO1-->
 
 

@@ -15,10 +15,11 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/21/2017
 ms.author: cherylmc
-translationtype: Human Translation
-ms.sourcegitcommit: b0c27ca561567ff002bbb864846b7a3ea95d7fa3
-ms.openlocfilehash: 50934bcc065b4039467d7371d4bbac11f5933888
-ms.lasthandoff: 04/25/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: ff2fb126905d2a68c5888514262212010e108a3d
+ms.openlocfilehash: c614efa25e2e7ddbb9b6c90094cf84fa8b6b4243
+ms.contentlocale: pt-pt
+ms.lasthandoff: 06/17/2017
 
 
 ---
@@ -27,9 +28,10 @@ ms.lasthandoff: 04/25/2017
 Este artigo mostra-lhe como criar uma ligação de gateway de VPN entre redes virtuais. As redes virtuais podem estar nas mesmas regiões ou em regiões diferentes e pertencer às mesmas subscrições ou a subscrições diferentes. Os passos deste artigo aplicam-se ao modelo de implementação Resource Manager e o portal do Azure. Também pode criar esta configuração ao utilizar uma ferramenta de implementação diferente ou modelo de implementação ao selecionar uma opção diferente da lista seguinte:
 
 > [!div class="op_single_selector"]
-> * [Resource Manager - portal do Azure](vpn-gateway-howto-vnet-vnet-resource-manager-portal.md)
-> * [Resource Manager – PowerShell](vpn-gateway-vnet-vnet-rm-ps.md)
-> * [Clássica – portal do Azure](vpn-gateway-howto-vnet-vnet-portal-classic.md)
+> * [Portal do Azure](vpn-gateway-howto-vnet-vnet-resource-manager-portal.md)
+> * [PowerShell](vpn-gateway-vnet-vnet-rm-ps.md)
+> * [CLI do Azure](vpn-gateway-howto-vnet-vnet-cli.md)
+> * [Portal do Azure (clássico)](vpn-gateway-howto-vnet-vnet-portal-classic.md)
 > * [Ligue diferentes modelos de implementação - portal do Azure](vpn-gateway-connect-different-deployment-models-portal.md)
 > * [Ligue diferentes modelos de implementação - PowerShell](vpn-gateway-connect-different-deployment-models-powershell.md)
 >
