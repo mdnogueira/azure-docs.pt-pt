@@ -8,24 +8,28 @@ manager: garavd
 editor: 
 ms.assetid: 
 ms.service: site-recovery
-ms.workload: backup-recovery
+ms.workload: storage-backup-recovery
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: hero-article
-ms.date: 2/21/2017
+ms.date: 06/29/2017
 ms.author: nisoneji
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 18d4994f303a11e9ce2d07bc1124aaedf570fc82
-ms.openlocfilehash: 5c716069bdff2a23bf81b2d2d0793a8616cf9c83
+ms.sourcegitcommit: 3716c7699732ad31970778fdfa116f8aee3da70b
+ms.openlocfilehash: a6fdab66a6a41e352d07e3b6f3c58eb331c0d93f
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/09/2017
+ms.lasthandoff: 06/30/2017
 
 
 ---
-# <a name="azure-site-recovery-deployment-planner"></a>Azure Site Recovery Deployment Planner
+<a id="azure-site-recovery-deployment-planner" class="xliff"></a>
+
+# Azure Site Recovery Deployment Planner
 Este artigo é o manual do utilizador do Azure Site Recovery Deployment Planner para implementações de produção de VMware para o Azure.
 
-## <a name="overview"></a>Descrição geral
+<a id="overview" class="xliff"></a>
+
+## Descrição geral
 
 Antes de começar a proteger máquinas virtuais do VMware (VMs) com o Site Recovery, tem de alocar largura de banda suficiente com base na sua taxa de alterações de dados diária, de modo a cumprir o objetivo de ponto de recuperação (RPO) pretendido. Certifique-se de que implementa o número certo de servidores de configuração e de servidores de processos no local.
 
@@ -63,12 +67,14 @@ A ferramenta disponibiliza os seguintes detalhes:
 >Uma vez que a utilização é suscetível de aumentar ao longo do tempo, todos os cálculos da ferramenta anteriores são feitos presumindo um fator de crescimento de 30 por cento nas características das cargas de trabalho e utilizando um valor de percentil 95 de todas as métricas de criação de perfis (leitura/escrita, IOPS, alterações a dados e assim sucessivamente). Ambos os elementos (fator de crescimento e cálculo do percentil) são configuráveis. Para saber mais sobre o fator de crescimento, veja a secção "Considerações sobre o fator de crescimento". Para saber mais sobre o valor de percentil, veja a secção "Valor de percentil utilizado para o cálculo".
 >
 
-## <a name="requirements"></a>Requisitos
+<a id="requirements" class="xliff"></a>
+
+## Requisitos
 A ferramenta tem duas fases principais – a criação de perfis e a geração de relatórios. Também existe uma terceira opção, para calcular apenas o débito. Os requisitos para o servidor a partir do qual é iniciada a medição de criação de perfis e do débito são apresentados na tabela seguinte:
 
 | Requisito do servidor | Descrição|
 |---|---|
-|Medição da criação de perfis e do débito| <ul><li>Sistema operativo: Microsoft Windows Server 2012 R2<br>(que corresponda idealmente, pelo menos, às [recomendações de tamanho do servidor de configuração](https://aka.ms/asr-v2a-on-prem-components))</li><li>Configuração da máquina : 8 vCPus, 16 GB de RAM, 300 GB HDD</li><li>[Microsoft .NET Framework 4.5](https://aka.ms/dotnet-framework-45)</li><li>[VMware vSphere PowerCLI 6.0 R3](https://developercenter.vmware.com/tool/vsphere_powercli/6.0)</li><li>[Microsoft Visual C++ Redistributable para Visual Studio 2012](https://aka.ms/vcplusplus-redistributable)</li><li>Acesso à Internet para o Azure a partir deste servidor</li><li>Conta de armazenamento do Azure</li><li>Acesso de administrador no servidor</li><li>Mínimo de 100 GB de espaço livre no disco (presumindo mil VMs com uma média de três discos cada, com perfis criados para 30 dias)</li><li>As definições de nível de estatísticas do VMware vCenter devem ser definidas ao nível 2 ou superior</li></ul>|
+|Medição da criação de perfis e do débito| <ul><li>Sistema operativo: Microsoft Windows Server 2012 R2<br>(que corresponda idealmente, pelo menos, às [recomendações de tamanho do servidor de configuração](https://aka.ms/asr-v2a-on-prem-components))</li><li>Configuração da máquina : 8 vCPus, 16 GB de RAM, 300 GB HDD</li><li>[Microsoft .NET Framework 4.5](https://aka.ms/dotnet-framework-45)</li><li>[VMware vSphere PowerCLI 6.0 R3](https://aka.ms/download_powercli)</li><li>[Microsoft Visual C++ Redistributable para Visual Studio 2012](https://aka.ms/vcplusplus-redistributable)</li><li>Acesso à Internet para o Azure a partir deste servidor</li><li>Conta de armazenamento do Azure</li><li>Acesso de administrador no servidor</li><li>Mínimo de 100 GB de espaço livre no disco (presumindo mil VMs com uma média de três discos cada, com perfis criados para 30 dias)</li><li>As definições de nível de estatísticas do VMware vCenter devem ser definidas ao nível 2 ou superior</li></ul>|
 | Geração de relatórios | Um PC Windows ou Windows Server com o Microsoft Excel 2013 ou posterior |
 | Permissões de utilizador | Permissão só de leitura para a conta de utilizador utilizada para aceder ao VMware vCenter Server/anfitrião ESXi do VMware vSphere durante a criação do perfil |
 
@@ -77,7 +83,9 @@ A ferramenta tem duas fases principais – a criação de perfis e a geração d
 >A ferramenta só pode criar perfis para VMs com discos VMDK e RDM. Não pode criar perfis para VMs com discos iSCSI ou NFS. O Site Recovery suporta discos iSCSI e NFS para servidores do VMware. Contudo, uma vez que o Deployment Planner não está dentro do convidado e cria perfis apenas com os contadores de desempenho do vCenter, a ferramenta não tem visibilidade para estes tipos de discos.
 >
 
-## <a name="download-and-extract-the-public-preview"></a>Transferir e extrair a pré-visualização pública
+<a id="download-and-extract-the-public-preview" class="xliff"></a>
+
+## Transferir e extrair a pré-visualização pública
 1. Transfira a versão mais recente da [pré-visualização pública do Site Recovery Deployment Planner](https://aka.ms/asr-deployment-planner).  
 A ferramenta está comprimida numa pasta .zip. A versão atual só suporta o cenário de VMware para o Azure.
 
@@ -95,7 +103,9 @@ Esta contém vários ficheiros e sub-pastas. O ficheiro executável é ASRDeploy
 
     E:\ASR Deployment Planner-Preview_v1.2\ ASR Deployment Planner-Preview_v1.2\ ASRDeploymentPlanner.exe
 
-## <a name="capabilities"></a>Capacidades
+<a id="capabilities" class="xliff"></a>
+
+## Capacidades
 Pode executar a ferramenta de linha de comandos (ASRDeploymentPlanner.exe) num dos três modos seguintes:
 
 1. Criação de perfis  
@@ -104,13 +114,17 @@ Pode executar a ferramenta de linha de comandos (ASRDeploymentPlanner.exe) num d
 
 Em primeiro lugar, execute a ferramenta no modo de criação de perfis, para recolher IOPS e alterações a dados da VM. Em seguida, execute-a para gerar o relatório de modo a localizar os requisitos de largura de banda de rede e de armazenamento.
 
-## <a name="profiling"></a>Criação de perfis
+<a id="profiling" class="xliff"></a>
+
+## Criação de perfis
 No modo de criação de perfis, a ferramenta Deployment Planner liga-se ao vCenter Server/anfitrião ESXi do vSphere para recolher dados de desempenho da VM.
 
 * A criação de perfis não afeta o desempenho das VMs de produção, porque não é feita nenhuma ligação direta para as mesmas. Todos os dados de desempenho são recolhidos a partir do vCenter Server/anfitrião ESXi do vSphere.
 * Para garantir que a criação de perfis tem um impacto mínimo no servidor, a ferramenta consulta o vCenter Server/anfitrião ESXi do vSphere a cada quinze minutos. Este intervalo de consulta não põe em causa a precisão da criação de perfis, porque a ferramenta armazena os dados dos contadores de desempenho relativos a cada minuto.
 
-### <a name="create-a-list-of-vms-to-profile"></a>Criar uma lista de VMs para as quais criar perfis
+<a id="create-a-list-of-vms-to-profile" class="xliff"></a>
+
+### Criar uma lista de VMs para as quais criar perfis
 Em primeiro lugar, precisa de uma lista das VMs para as quais vão ser criados perfis. Pode utilizar os comandos do VMware vSphere PowerCLI no procedimento seguinte para obter todos os nomes de VMs num vCenter Server/anfitrião ESXi do vSphere. Em alternativa, pode listar, num ficheiro, os nomes amigáveis ou os endereços IP das VMs para as quais quer criar perfis manualmente.
 
 1. Inicie sessão na VM na qual o VMware vSphere PowerCLI está instalado.
@@ -130,7 +144,9 @@ Substitua &lsaquo;server name&rsaquo;, &lsaquo;user name&rsaquo;, &lsaquo;passwo
 
     ![Lista de nomes de VMs no Deployment Planner](./media/site-recovery-deployment-planner/profile-vm-list.png)
 
-### <a name="start-profiling"></a>Começar a criar perfis
+<a id="start-profiling" class="xliff"></a>
+
+### Começar a criar perfis
 Quando tiver a lista das VMs para as quais criar perfis, pode executar a ferramenta no modo de criação de perfis. Abaixo, pode ver a lista dos parâmetros obrigatórios e opcionais da ferramenta, para executá-la no modo de criação de perfis.
 
 ASRDeploymentPlanner.exe -Operation StartProfiling /?
@@ -140,7 +156,7 @@ ASRDeploymentPlanner.exe -Operation StartProfiling /?
 | -Operation | StartProfiling |
 | -Server | O nome de domínio completamente qualificado ou o endereço IP do vCenter Server/anfitrião ESXi do vSphere para cujas VMs vão ser criados perfis.|
 | -User | O nome de utilizador para ligar ao vCenter Server/anfitrião ESXi do vSphere. O utilizador tem de ter, pelo menos, acesso só de leitura.|
-| -VMListFile |    O ficheiro que contém a lista de VMs para as quais criar perfis. O caminho do ficheiro pode ser absoluto ou relativo. Deve conter um nome/endereço IP de VM por linha. O nome da máquina virtual especificado no ficheiro deve ser igual ao nome da VM no vCenter Server/anfitrião ESXi do vSphere.<br>Por exemplo, o ficheiro VMList.txt contém as VMs seguintes:<ul><li>máquina_virtual_A</li><li>10.150.29.110</li><li>máquina_virtual_B</li><ul> |
+| -VMListFile | O ficheiro que contém a lista de VMs para as quais criar perfis. O caminho do ficheiro pode ser absoluto ou relativo. Deve conter um nome/endereço IP de VM por linha. O nome da máquina virtual especificado no ficheiro deve ser igual ao nome da VM no vCenter Server/anfitrião ESXi do vSphere.<br>Por exemplo, o ficheiro VMList.txt contém as VMs seguintes:<ul><li>máquina_virtual_A</li><li>10.150.29.110</li><li>máquina_virtual_B</li><ul> |
 | -NoOfDaysToProfile | O número de dias durante os quais a criação de perfis deve ser executada. Recomendamos executar a criação de perfis durante mais de 15 dias, para garantir que o padrão da carga de trabalho no seu ambiente ao longo do período especificado é respeitado e utilizado para proporcionar uma recomendação precisa |
 | -Directory | (opcional) O caminho Universal Naming Convention (UNC) ou o caminho do diretório local para armazenar os dados de criação de perfis gerados durante a criação. Se não for indicado o nome de um diretório, será utilizado como diretório predefinido o diretório com o nome “ProfiledData” no caminho atual. |
 | -Password | (Opcional) A palavra-passe a utilizar para ligar ao vCenter Server/anfitrião ESXi do vSphere. Se não indicar uma agora, ser-lhe-á pedida quando o comando for executado.|
@@ -162,18 +178,24 @@ As configurações das VMs sã capturadas uma vez no início da operação de cr
 
 O comando de criação de perfis gera vários ficheiros no diretório de criação de perfis. Não elimine nenhum dos ficheiros, pois tal eliminação afeta a geração de relatórios.
 
-#### <a name="example-1-profile-vms-for-30-days-and-find-the-throughput-from-on-premises-to-azure"></a>Exemplo 1: criar perfis para VMs durante 30 dias e encontrar o débito no local para o Azure
+<a id="example-1-profile-vms-for-30-days-and-find-the-throughput-from-on-premises-to-azure" class="xliff"></a>
+
+#### Exemplo 1: criar perfis para VMs durante 30 dias e encontrar o débito no local para o Azure
 ```
 ASRDeploymentPlanner.exe -Operation StartProfiling -Directory “E:\vCenter1_ProfiledData” -Server vCenter1.contoso.com -VMListFile “E:\vCenter1_ProfiledData\ProfileVMList1.txt”  -NoOfDaysToProfile  30  -User vCenterUser1 -StorageAccountName  asrspfarm1 -StorageAccountKey Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==
 ```
 
-#### <a name="example-2-profile-vms-for-15-days"></a>Exemplo 2: criar perfis para VMs durante 15 dias
+<a id="example-2-profile-vms-for-15-days" class="xliff"></a>
+
+#### Exemplo 2: criar perfis para VMs durante 15 dias
 
 ```
 ASRDeploymentPlanner.exe -Operation StartProfiling -Directory “E:\vCenter1_ProfiledData” -Server vCenter1.contoso.com -VMListFile “E:\vCenter1_ProfiledData\ProfileVMList1.txt”  -NoOfDaysToProfile  15  -User vCenterUser1
 ```
 
-#### <a name="example-3-profile-vms-for-1-hour-for-a-quick-test-of-the-tool"></a>Exemplo 3: criar perfis para VMs durante uma hora, para um breve teste à ferramenta
+<a id="example-3-profile-vms-for-1-hour-for-a-quick-test-of-the-tool" class="xliff"></a>
+
+#### Exemplo 3: criar perfis para VMs durante uma hora, para um breve teste à ferramenta
 ```
 ASRDeploymentPlanner.exe -Operation StartProfiling -Directory “E:\vCenter1_ProfiledData” -Server vCenter1.contoso.com -VMListFile “E:\vCenter1_ProfiledData\ProfileVMList1.txt”  -NoOfDaysToProfile  0.04  -User vCenterUser1
 ```
@@ -184,7 +206,9 @@ ASRDeploymentPlanner.exe -Operation StartProfiling -Directory “E:\vCenter1_Pro
 >* Quando são transmitidos o nome e a chave da conta de armazenamento, a ferramenta mede o débito no último passo da criação de perfis. Se a ferramenta for fechada antes da conclusão da criação de perfis, o débito não é calculado. Para localizar o débito antes de gerar o relatório, pode executar a operação GetThroughput na consola da linha de comandos. Caso contrário, o relatório gerado não irá conter as informações de débito.
 
 
-## <a name="generate-a-report"></a>Gerar um relatório
+<a id="generate-a-report" class="xliff"></a>
+
+## Gerar um relatório
 A ferramenta gera um ficheiro do Microsoft Excel com permissão para macros (ficheiro XLSM) como o resultado do relatório, que resume todas as recomendações de implementação. O nome do relatório é DeploymentPlannerReport_<*identificador numérico exclusivo*>.xlsm, que é colocado no diretório especificado.
 
 Depois de concluída a criação de perfis, pode executar a ferramenta no modo de geração de relatórios. A tabela seguinte contém a lista dos parâmetros obrigatórios e opcionais da ferramenta, para executá-la no modo de geração de relatórios.
@@ -205,44 +229,55 @@ Depois de concluída a criação de perfis, pode executar a ferramenta no modo d
 | -StartDate | (Opcional) A data e hora de início, em MM-DD-AAAA:HH:MM (no formato de 24 horas). *StartDate* tem de ser especificado juntamente com *EndDate*. Se StartDate for especificado, o relatório será gerado para os dados de criação de perfis recolhidos entre StartDate e EndDate. |
 | -EndDate | (Opcional) A data e hora de fim, em MM-DD-AAAA:HH:MM (no formato de 24 horas). *EndDate* tem de ser especificado juntamente com *StartDate*. Se EndDate for especificado, o relatório será gerado para os dados de criação de perfis recolhidos entre StartDate e EndDate. |
 | -GrowthFactor | (Opcional) O fator de crescimento, expresso em percentagem. A predefinição é 30 por cento. |
-| -UseManagedDisks | (Opcional) UseManagedDisks - Sim/Não. A predefinição é Sim. O número de máquinas virtuais que pode ser colocado numa conta de armazenamento única é calculado consoante o disco gerido disco está selecionado para Ativação pós-falha/Ativação pós-falha de teste. |
+| -UseManagedDisks | (Opcional) UseManagedDisks - Sim/Não. A predefinição é Sim. O número de máquinas virtuais para a colocação de uma conta de armazenamento única ser calculada considerando se a Ativação pós-falha/Ativação pós-falha de Teste de máquinas virtuais é realizada no disco gerido, em vez do disco não gerido. |
 
-para a colocação de uma conta de armazenamento única ser calculada considerando a Ativação pós-falha/Ativação pós-falha de Teste de máquinas virtuais é efetuada no Disco Gerido, em vez do Disco não gerido. |
+<a id="example-1-generate-a-report-with-default-values-when-the-profiled-data-is-on-the-local-drive" class="xliff"></a>
 
-
-#### <a name="example-1-generate-a-report-with-default-values-when-the-profiled-data-is-on-the-local-drive"></a>Exemplo 1: gerar o relatório com valores predefinidos quando os dados de criação de perfis estão na unidade local
+#### Exemplo 1: gerar o relatório com valores predefinidos quando os dados de criação de perfis estão na unidade local
 ```
 ASRDeploymentPlanner.exe -Operation GenerateReport -Server vCenter1.contoso.com -Directory “\\PS1-W2K12R2\vCenter1_ProfiledData” -VMListFile “\\PS1-W2K12R2\vCenter1_ProfiledData\ProfileVMList1.txt”
 ```
 
-#### <a name="example-2-generate-a-report-when-the-profiled-data-is-on-a-remote-server"></a>Exemplo 2: gerar o relatório quando os dados de criação de perfis estão num servidor remoto
+<a id="example-2-generate-a-report-when-the-profiled-data-is-on-a-remote-server" class="xliff"></a>
+
+#### Exemplo 2: gerar o relatório quando os dados de criação de perfis estão num servidor remoto
 Deve ter acesso de leitura/escrita no diretório remoto.
 ```
 ASRDeploymentPlanner.exe -Operation GenerateReport -Server vCenter1.contoso.com -Directory “\\PS1-W2K12R2\vCenter1_ProfiledData” -VMListFile “\\PS1-W2K12R2\vCenter1_ProfiledData\ProfileVMList1.txt”
 ```
 
-#### <a name="example-3-generate-a-report-with-a-specific-bandwidth-and-goal-to-complete-ir-within-specified-time"></a>Exemplo 3: gerar um relatório com largura de banda e objetivos específicos para concluir a replicação inicial no período especificado
+<a id="example-3-generate-a-report-with-a-specific-bandwidth-and-goal-to-complete-ir-within-specified-time" class="xliff"></a>
+
+#### Exemplo 3: gerar um relatório com largura de banda e objetivos específicos para concluir a replicação inicial no período especificado
 ```
 ASRDeploymentPlanner.exe -Operation GenerateReport -Server vCenter1.contoso.com -Directory “E:\vCenter1_ProfiledData” -VMListFile “E:\vCenter1_ProfiledData\ProfileVMList1.txt” -Bandwidth 100 -GoalToCompleteIR 24
 ```
 
-#### <a name="example-4-generate-a-report-with-a-5-percent-growth-factor-instead-of-the-default-30-percent"></a>Exemplo 4: gerar um relatório com um fator de crescimento de 5 por cento em vez dos 30 por cento predefinidos
+<a id="example-4-generate-a-report-with-a-5-percent-growth-factor-instead-of-the-default-30-percent" class="xliff"></a>
+
+#### Exemplo 4: gerar um relatório com um fator de crescimento de 5 por cento em vez dos 30 por cento predefinidos
 ```
 ASRDeploymentPlanner.exe -Operation GenerateReport -Server vCenter1.contoso.com -Directory “E:\vCenter1_ProfiledData” -VMListFile “E:\vCenter1_ProfiledData\ProfileVMList1.txt” -GrowthFactor 5
 ```
 
-#### <a name="example-5-generate-a-report-with-a-subset-of-profiled-data"></a>Exemplo 5: gerar um relatório com um subconjunto de dados de criação de perfis
+<a id="example-5-generate-a-report-with-a-subset-of-profiled-data" class="xliff"></a>
+
+#### Exemplo 5: gerar um relatório com um subconjunto de dados de criação de perfis
 Por exemplo, tem 30 dias de dados de criação de perfis e quer gerar um relatório para apenas 20 dias.
 ```
 ASRDeploymentPlanner.exe -Operation GenerateReport -Server vCenter1.contoso.com -Directory “E:\vCenter1_ProfiledData” -VMListFile “E:\vCenter1_ProfiledData\ProfileVMList1.txt” -StartDate  01-10-2017:12:30 -EndDate 01-19-2017:12:30
 ```
 
-#### <a name="example-6-generate-a-report-for-5-minute-rpo"></a>Exemplo 6: gerar um relatório para um RPO de cinco minutos
+<a id="example-6-generate-a-report-for-5-minute-rpo" class="xliff"></a>
+
+#### Exemplo 6: gerar um relatório para um RPO de cinco minutos
 ```
 ASRDeploymentPlanner.exe -Operation GenerateReport -Server vCenter1.contoso.com -Directory “E:\vCenter1_ProfiledData” -VMListFile “E:\vCenter1_ProfiledData\ProfileVMList1.txt”  -DesiredRPO 5
 ```
 
-## <a name="percentile-value-used-for-the-calculation"></a>Valor de percentil utilizado para o cálculo
+<a id="percentile-value-used-for-the-calculation" class="xliff"></a>
+
+## Valor de percentil utilizado para o cálculo
 **Que valor de percentil predefinido das métricas de desempenho recolhidas durante a criação de perfis é utilizado pela ferramenta no momento em que gera relatórios?**
 
 A ferramenta é predefinida para os valores de percentil de 95 de IOPS de leitura/escrita, IOPS de escrita e alterações a dados recolhidas durante a criação de perfis para todas as VMs. Esta métrica garante que o pico de percentil 100 que as suas VMs poderão verificar devido a eventos temporários não é utilizado para determinar os requisitos de conta de armazenamento de destino e de largura de banda de origem. Por exemplo, um evento temporário pode consistir numa tarefa de cópia de segurança que é executada uma vez por dia, uma base de dados periódica a indexar ou uma atividade de geração de relatórios de atividades ou, ainda, outros eventos pontuais de curta duração semelhantes.
@@ -254,7 +289,9 @@ Utilizar valores de percentil 95 proporciona uma imagem verdadeira das caracter�
 <add key="DataChurnPercentile" value="95" />
 ```
 
-## <a name="growth-factor-considerations"></a>Considerações sobre o fator de crescimento
+<a id="growth-factor-considerations" class="xliff"></a>
+
+## Considerações sobre o fator de crescimento
 **Por que motivo devo ter em conta o fator de crescimento quando planear implementações?**
 
 É fundamental ter em conta o crescimento nas características da sua carga de trabalho, presumindo um potencial aumento na utilização ao longo do tempo. Depois de a proteção estar aplicada, caso as características da sua carga de trabalho sofram alterações, não pode mudar para outra conta de armazenamento para proteção sem desativar e reativar a proteção.
@@ -278,7 +315,9 @@ O relatório do Microsoft Excel gerado contém as seguintes informações:
 
 ![Deployment Planner](./media/site-recovery-deployment-planner/dp-report.png)
 
-## <a name="get-throughput"></a>Obtenção de débito
+<a id="get-throughput" class="xliff"></a>
+
+## Obtenção de débito
 
 Para estimar o débito que o Site Recovery pode alcançar no local para o Azure durante a replicação, execute a ferramenta no modo GetThroughput. A ferramenta calcula o débito do servidor no qual está a ser executada. Idealmente, este servidor baseia-se na orientação de tamanho do servidor de configuração. Se já tiver implementado componentes da infraestrutura do Site Recovery no local, execute a ferramenta no servidor de configuração.
 
@@ -299,7 +338,9 @@ A ferramenta cria vários ficheiros asrvhdfile<#>.vhd (em que # corresponde ao n
 
 O débito é medido num determinado ponto no tempo e é o débito máximo que o Site Recovery pode alcançar durante a replicação, desde que todos os outros fatores permaneçam iguais. Por exemplo, se uma aplicação começar a consumir mais largura de banda na mesma rede, o débito real varia durante a replicação. Se estiver a executar o comando GetThroughput num servidor de configuração, a ferramenta não está ciente de nenhuma VM protegida nem da replicação em curso. O resultado do débito medido é diferente se a operação GetThroughput for executada quando as VMs protegidas têm elevadas alterações a dados. Recomendamos que execute a ferramenta em vários pontos no tempo durante a criação de perfis, para compreender que níveis de débito podem ser alcançados em vários momentos. No relatório, a ferramenta mostra o último débito medido.
 
-### <a name="example"></a>Exemplo
+<a id="example" class="xliff"></a>
+
+### Exemplo
 ```
 ASRDeploymentPlanner.exe -Operation GetThroughput -Directory  E:\vCenter1_ProfiledData -VMListFile E:\vCenter1_ProfiledData\ProfileVMList1.txt  -StorageAccountName  asrspfarm1 -StorageAccountKey by8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==
 ```
@@ -318,9 +359,13 @@ ASRDeploymentPlanner.exe -Operation GetThroughput -Directory  E:\vCenter1_Profil
 >
 >  4. Altere as definições do Site Recovery no servidor de processos, para [aumentar a quantidade de largura de banda utilizada para a replicação](./site-recovery-plan-capacity-vmware.md#control-network-bandwidth).
 
-## <a name="recommendations-with-desired-rpo-as-input"></a>Recomendações com o RPO pretendido como entrada
+<a id="recommendations-with-desired-rpo-as-input" class="xliff"></a>
 
-### <a name="profiled-data"></a>Dados de criação de perfis
+## Recomendações com o RPO pretendido como entrada
+
+<a id="profiled-data" class="xliff"></a>
+
+### Dados de criação de perfis
 
 ![A vista de dados de criação de perfil no Deployment Planner](./media/site-recovery-deployment-planner/profiled-data-period.png)
 
@@ -330,7 +375,9 @@ ASRDeploymentPlanner.exe -Operation GetThroughput -Directory  E:\vCenter1_Profil
 
 **RPO Pretendido**: o objetivo de ponto de recuperação para a sua implementação. Por predefinição, a largura de banda de rede necessária é calculada para valores de RPO de 15, 30 e 60 minutos. Com base na seleção, os valores afetados são atualizados na folha. Se tiver utilizado o parâmetro *DesiredRPOinMin* ao gerar o relatório, esse valor é mostrado no resultado Desired RPO (RPO Pretendido).
 
-### <a name="profiling-overview"></a>Descrição geral da criação de perfis
+<a id="profiling-overview" class="xliff"></a>
+
+### Descrição geral da criação de perfis
 
 ![Resultados da criação de perfis no Deployment Planner](./media/site-recovery-deployment-planner/profiling-overview.png)
 
@@ -342,7 +389,9 @@ ASRDeploymentPlanner.exe -Operation GetThroughput -Directory  E:\vCenter1_Profil
 
 **Desired RPO (RPO Pretendido)**: o objetivo de ponto de recuperação pretendido, em minutos. O relatório é gerado para três valores de RPO: 15 (predefinição), 30 e 60 minutos. A recomendação de largura de banda no relatório é alterada com base no que selecionar na lista pendente de Desired RPO, no canto superior direito da folha. Se tiver utilizado o parâmetro *-DesiredRPO* com um valor personalizado para gerar o relatório, este valor personalizado será mostrado como a predefinição na lista pendente de Desired RPO.
 
-### <a name="required-network-bandwidth-mbps"></a>Required network bandwidth (Mbps) (Largura de banda de rede necessária [Mbps])
+<a id="required-network-bandwidth-mbps" class="xliff"></a>
+
+### Required network bandwidth (Mbps) (Largura de banda de rede necessária [Mbps])
 
 ![Largura de banda de rede necessária no Deployment Planner](./media/site-recovery-deployment-planner/required-network-bandwidth.png)
 
@@ -366,28 +415,38 @@ Se estiver a executar a ferramenta num servidor de configuração ou num servido
 
 Para todas as implementações empresariais do Site Recovery, recomendamos utilizar o [ExpressRoute](https://aka.ms/expressroute).
 
-### <a name="required-storage-accounts"></a>Required storage accounts (Contas de armazenamento necessárias)
+<a id="required-storage-accounts" class="xliff"></a>
+
+### Required storage accounts (Contas de armazenamento necessárias)
 O gráfico seguinte mostra o número total de contas de armazenamento (standard e premium) necessárias para proteger todas as VMs compatíveis. Para obter a conta de armazenamento a utilizar para cada VM, veja a secção "VM-storage placement” (“Colocação de armazenamento de VM").
 
 ![Contas de armazenamento necessárias no Deployment Planner](./media/site-recovery-deployment-planner/required-azure-storage-accounts.png)
 
-### <a name="required-number-of-azure-cores"></a>Required number of Azure cores (Número de núcleos do Azure necessários)
+<a id="required-number-of-azure-cores" class="xliff"></a>
+
+### Required number of Azure cores (Número de núcleos do Azure necessários)
 Este resultado é o número total de núcleos a configurar antes da ativação pós-falha ou da ativação pós-falha de teste de todas as VMs compatíveis. Se não estiverem disponíveis núcleos suficientes na subscrição, o Site Recovery não conseguirá criar VMs no momento da ativação pós-falha de teste ou da ativação pós-falha.
 
 ![Número de núcleos do Azure necessários no Deployment Planner](./media/site-recovery-deployment-planner/required-number-of-azure-cores.png)
 
-### <a name="required-on-premises-infrastructure"></a>Required on-premises infrastructure (Infraestrutura no local necessária)
+<a id="required-on-premises-infrastructure" class="xliff"></a>
+
+### Required on-premises infrastructure (Infraestrutura no local necessária)
 Este número é o total de servidores de configuração e de servidores de processos adicionais a configurar e que serão suficientes para proteger todas as VMs compatíveis. Consoante as [recomendações de tamanho do servidor de configuração](https://aka.ms/asr-v2a-on-prem-components) suportadas, a ferramenta poderá recomendar servidores adicionais. A recomendação baseia-se na maior das configurações de alterações a dados por dia ou do número máximo de VMs protegidas (presumindo uma média de três discos por VM), a que for atingida primeiro no servidor de configuração ou no servidor de processos adicional. Os detalhes do número total de alterações a dados por dia e do número total de discos protegidos estão disponíveis na secção “Input” (“Entrada”).
 
 ![Infraestrutura no local necessária no Deployment Planner](./media/site-recovery-deployment-planner/required-on-premises-infrastructure.png)
 
-### <a name="what-if-analysis"></a>Análise de hipóteses
+<a id="what-if-analysis" class="xliff"></a>
+
+### Análise de hipóteses
 Esta análise mostra quantas violações podem ocorrer durante o período de criação de perfis se configurar uma largura de banda inferior para que o RPO pretendido seja cumprido apenas durante 90 por cento do tempo. Podem ocorrer uma ou mais violações de RPO num determinado dia. O gráfico mostra o pico de RPO do dia.
 Com base nesta análise, pode decidir se o número de violações de RPO de todos os dias e a contagem de picos do RPO por dia é aceitável com a largura de banda inferior especificada. Se for aceitável, pode alocar a menor largura de banda à replicação; caso contrário, aloque a largura de banda superior, conforme sugerido, para cumprir o RPO pretendido durante 100 por cento do tempo.
 
 ![Análise de hipóteses no Deployment Planner](./media/site-recovery-deployment-planner/what-if-analysis.png)
 
-### <a name="recommended-vm-batch-size-for-initial-replication"></a>Recommended VM batch size for initial replication (Tamanho de lote de VMs recomendado para a replicação inicial)
+<a id="recommended-vm-batch-size-for-initial-replication" class="xliff"></a>
+
+### Recommended VM batch size for initial replication (Tamanho de lote de VMs recomendado para a replicação inicial)
 Nesta secção, recomendamos definir o número de VMs que podem ser protegidas em paralelo, para concluir a replicação inicial em 72 horas com a largura de banda sugerida, de modo a cumprir o RPO pretendido durante 100 por cento. Este valor é configurável. Para alterá-lo durante a geração de relatórios, utilize o parâmetro *GoalToCompleteIR*.
 
 Este gráfico mostra um intervalo de valores de largura de banda e a contagem do tamanho de lotes de VMs calculado para concluir a replicação inicial em 72 horas, com base no tamanho médio das VMs detetado em todas as VMs compatíveis.
@@ -396,12 +455,16 @@ Na pré-visualização pública, o relatório não especifica que VMs devem ser 
 
 ![Tamanho de lote de VMs recomendado](./media/site-recovery-deployment-planner/recommended-vm-batch-size.png)
 
-### <a name="growth-factor-and-percentile-values-used"></a>Growth factor and percentile values used (Fator de crescimento e valores de percentil utilizados)
+<a id="growth-factor-and-percentile-values-used" class="xliff"></a>
+
+### Growth factor and percentile values used (Fator de crescimento e valores de percentil utilizados)
 Esta secção da parte inferior da folha mostra o valor do percentil utilizado em todos os contadores de desempenho das VNs com perfis criados (a predefinição é o percentil 95) e o fator de crescimento (a predefinição é 30 por cento) utilizado em todos os cálculos.
 
 ![Growth factor and percentile values used (Fator de crescimento e valores de percentil utilizados)](./media/site-recovery-deployment-planner/max-iops-and-data-churn-setting.png)
 
-## <a name="recommendations-with-available-bandwidth-as-input"></a>Recomendações tendo a largura de banda disponível como entrada
+<a id="recommendations-with-available-bandwidth-as-input" class="xliff"></a>
+
+## Recomendações tendo a largura de banda disponível como entrada
 
 ![Recomendações tendo a largura de banda disponível como entrada](./media/site-recovery-deployment-planner/profiling-overview-bandwidth-input.png)
 
@@ -409,7 +472,9 @@ Poderá haver casos em que sabe que não pode definir uma largura de banda com m
 
 ![RPO alcançável para largura de banda de 500 Mbps](./media/site-recovery-deployment-planner/achievable-rpos.png)
 
-## <a name="input"></a>Input
+<a id="input" class="xliff"></a>
+
+## Input
 A folha Input (Entrada) proporciona uma descrição geral do ambiente do VMware com perfis criados.
 
 ![Descrição geral do ambiente do VMware com perfis criados](./media/site-recovery-deployment-planner/Input.png)
@@ -433,7 +498,9 @@ A folha Input (Entrada) proporciona uma descrição geral do ambiente do VMware 
 **Observed typical data churn per day (GB) (Alterações a dados típicas registadas por dia [GB])**: a alteração a dados média registada em todos os dias de criação de perfis. Este número é utilizado como uma das entradas para decidir o número de servidores de configuração e de servidores de processos adicionais a utilizar na implementação.
 
 
-## <a name="vm-storage-placement"></a>Colocação do armazenamento de VMs
+<a id="vm-storage-placement" class="xliff"></a>
+
+## Colocação do armazenamento de VMs
 
 ![Colocação do armazenamento de VMs](./media/site-recovery-deployment-planner/vm-storage-placement.png)
 
@@ -451,7 +518,9 @@ A folha Input (Entrada) proporciona uma descrição geral do ambiente do VMware 
 
 **Virtual Machines to Place (Máquinas Virtuais a Colocar)**: uma lista de todas as VMs que devem ser colocadas nesta conta de armazenamento específica, para otimizar o desempenho e a utilização.
 
-## <a name="compatible-vms"></a>Compatible VMs (VMs Compatíveis)
+<a id="compatible-vms" class="xliff"></a>
+
+## Compatible VMs (VMs Compatíveis)
 ![Folha de cálculo do Excel de VMs compatíveis](./media/site-recovery-deployment-planner/compatible-vms.png)
 
 **VM Name (Nome da VM)**: o nome ou o endereço IP da VM que é utilizado em VMListFile quando é gerado um relatório. Esta coluna também apresenta os discos (VMDKs) que estão ligados às VMs. Para distinguir VMs do vCenter com nomes ou endereços IP duplicados, os nomes incluem o nome de anfitrião ESXi. O anfitrião ESXi listado é aquele em que a VM foi colocada quando a ferramenta detetou durante o período de criação de perfis.
@@ -489,7 +558,9 @@ Se as características da carga de trabalho de um disco o colocarem na categoria
 
 **Tipo de SO**: é o tipo de SO da VM. Pode ser Windows ou Linux ou outro.
 
-## <a name="incompatible-vms"></a>Incompatible VMs (VMs Não Compatíveis)
+<a id="incompatible-vms" class="xliff"></a>
+
+## Incompatible VMs (VMs Não Compatíveis)
 
 ![Folha de cálculo do Excel de VMs incompatíveis](./media/site-recovery-deployment-planner/incompatible-vms.png)
 
@@ -527,22 +598,26 @@ Se as características da carga de trabalho de um disco o colocarem na categoria
 **Tipo de SO**: é o tipo de SO da VM. Pode ser Windows ou Linux ou outro.
 
 
-## <a name="site-recovery-limits"></a>Limites do Site Recovery
+<a id="site-recovery-limits" class="xliff"></a>
+
+## Limites do Site Recovery
 
 **Destino do armazenamento da replicação** | **Tamanho médio de E/S do disco de origem** |**Média de alterações a dados do disco de origem** | **Total de alterações a dados do disco de origem por dia**
 ---|---|---|---
-Armazenamento Standard | 8 KB    | 2 MBps | 168 GB por disco
-Disco P10 Premium | 8 KB    | 2 MBps | 168 GB por disco
-Disco P10 Premium | 16 KB | 4 MBps |    336 GB por disco
+Armazenamento Standard | 8 KB | 2 MBps | 168 GB por disco
+Disco P10 Premium | 8 KB | 2 MBps | 168 GB por disco
+Disco P10 Premium | 16 KB | 4 MBps | 336 GB por disco
 Disco P10 Premium | 32 KB ou superior | 8 MBps | 672 GB por disco
-Disco premium P20 ou P30 | 8 KB    | 5 MBps | 421 GB por disco
+Disco premium P20 ou P30 | 8 KB  | 5 MBps | 421 GB por disco
 Disco premium P20 ou P30 | 16 KB ou superior |10 MBps | 842 GB por disco
 
 Estes são números médios, que pressupõem uma sobreposição de 30 por cento de E/S. O Site Recovery é capaz de processar um débito superior com base no rácio de sobreposição, em tamanhos de escrita maiores e no comportamento real de E/S da carga de trabalho. Os números anteriores pressupõem um atraso típico de aproximadamente cinco minutos. Ou seja, depois de os dados serem carregados, são processados e é criado um ponto de recuperação ao fim de cinco minutos.
 
 Estes limites baseiam-se nos nossos testes, mas não abrangem todas as combinações de E/S de aplicações possíveis. Os resultados reais podem variar consoante a combinação de E/S da sua aplicação. Para obter os melhores resultados, mesmo após o planeamento da implementação, recomendamos-lhe que faça testes extensos às aplicações com uma ativação pós-falha de teste, para ter a perspetiva verdadeira quanto ao desempenho.
 
-## <a name="updating-the-deployment-planner"></a>Atualizar o Deployment Planner
+<a id="updating-the-deployment-planner" class="xliff"></a>
+
+## Atualizar o Deployment Planner
 Para atualizar o Deployment Planner, faça o seguinte:
 
 1. Transfira a versão mais recente do [Azure Site Recovery Deployment Planner](https://aka.ms/asr-deployment-planner).
@@ -562,9 +637,13 @@ Para atualizar o Deployment Planner, faça o seguinte:
   >Cada Deployment Planner novo é uma atualização acumulativa do ficheiro .zip. Não tem de copiar os ficheiros mais recentes para a pasta anterior. Pode criar e utilizar uma pasta nova.
 
 
-## <a name="version-history"></a>Histórico de versões
+<a id="version-history" class="xliff"></a>
 
-### <a name="13"></a>1.3
+## Histórico de versões
+
+<a id="13" class="xliff"></a>
+
+### 1.3
 Atualização: 9 de maio de 2017
 
 É adicionada a nova funcionalidade a seguir:
@@ -572,7 +651,9 @@ Atualização: 9 de maio de 2017
 * Foi adicionado suporte de disco gerido na geração de relatórios. O número de máquinas virtuais que pode ser colocado numa conta de armazenamento única é calculado com base em se o disco gerido disco está selecionado para Ativação pós-falha/Ativação pós-falha de teste.        
 
 
-### <a name="12"></a>1.2
+<a id="12" class="xliff"></a>
+
+### 1.2
 Atualização: 7 de abril de 2017
 
 Foram adicionadas as correções seguintes:
@@ -584,7 +665,9 @@ Foram adicionadas as correções seguintes:
 * O relatório incorreto estava a ser gerado quando as definições de região estavam definidas como não sendo em inglês.
 
 
-### <a name="11"></a>1.1
+<a id="11" class="xliff"></a>
+
+### 1.1
 Atualização: 9 de março de 2017
 
 Foram corrigidos os problemas seguintes:
@@ -592,7 +675,9 @@ Foram corrigidos os problemas seguintes:
 * A ferramenta não consegue criar perfis para VMs se o vCenter tiver duas ou mais VMs com o mesmo nome ou endereço IP em vários anfitriões ESXi.
 * A cópia e a pesquisa foram desativadas nas folhas Compatible VMs (VMs Compatíveis) e Incompatible VMs (VMs Incompatíveis).
 
-### <a name="10"></a>1.0
+<a id="10" class="xliff"></a>
+
+### 1.0
 Atualização: 23 de fevereiro de 2017
 
 A pré-visualização pública do Azure Site Recovery Deployment Planner 1.0 tem os problemas conhecidos seguintes (que vão ser resolvidos em atualizações futuras):

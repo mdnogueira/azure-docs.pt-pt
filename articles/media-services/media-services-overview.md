@@ -12,24 +12,29 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: hero-article
-ms.date: 01/05/2017
+ms.date: 06/29/2017
 ms.author: juliako;anilmur
-translationtype: Human Translation
-ms.sourcegitcommit: e126076717eac275914cb438ffe14667aad6f7c8
-ms.openlocfilehash: f22b87fc5bdfe2db5de39adaafe9c71d8c32b26a
-ms.lasthandoff: 01/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 1500c02fa1e6876b47e3896c40c7f3356f8f1eed
+ms.openlocfilehash: 42baa7a6e80468e47dda1e652fc2bbd20e5a4ee6
+ms.contentlocale: pt-pt
+ms.lasthandoff: 06/30/2017
 
 
 ---
-# <a name="azure-media-services-overview-and-common-scenarios"></a>Descrição geral e cenários comuns dos Serviços de Multimédia do Azure
+<a id="azure-media-services-overview-and-common-scenarios" class="xliff"></a>
 
-Os Media Services do Microsoft Azure são uma plataforma baseado na nuvem extensível que permite aos programadores compilar uma gestão de multimédia dimensionável e aplicações de entrega. Os Media Services são baseados nas APIs REST, que permitem carregar, armazenar, codificar e empacotar de forma segura conteúdos de vídeo ou áudio, para o envio de transmissão em fluxo tanto a pedido como em direto para vários clientes (por exemplo, TV, PC e dispositivos móveis).
+# Descrição geral e cenários comuns dos Serviços de Multimédia do Azure
+
+Os Media Services do Microsoft Azure são uma plataforma baseado na nuvem extensível que permite aos programadores compilar uma gestão de multimédia dimensionável e aplicações de entrega. Os Serviços de Multimédia são baseados nas APIs REST, que permitem carregar, armazenar, codificar e empacotar de forma segura conteúdos de vídeo ou áudio, para o envio de transmissão em fluxo, tanto a pedido como em direto, para vários clientes (por exemplo, TV, PC e dispositivos móveis).
 
 Pode compilar fluxos de trabalho ponto-a-ponto utilizando inteiramente os Media Services. Pode também optar por utilizar componentes de terceiros para algumas partes do seu fluxo de trabalho. Por exemplo, codificar utilizando um codificador de terceiros. Em seguida, carregue, proteja, empacote e entregue através dos Media Services.
 
 Pode também optar por transmitir os seus conteúdos em direto ou enviar conteúdos a pedido. Este tópico mostra cenários comuns para a entrega dos seus conteúdos [em direto](media-services-overview.md#live_scenarios) ou [a pedido](media-services-overview.md#vod_scenarios). O tópico também está ligado a outros tópicos relevantes.
 
-## <a name="sdks-and-tools"></a>SDKs e ferramentas
+<a id="sdks-and-tools" class="xliff"></a>
+
+## SDKs e ferramentas
 
 Para compilar soluções de Media Services, pode utilizar:
 
@@ -51,14 +56,17 @@ Clique na imagem para visualizá-lo tamanho completo.
 
 Pode ver o modelo de todo [aqui](https://media.windows.net/API/$metadata?api-version=2.15).  
 
+<a id="media-services-learning-paths" class="xliff"></a>
 
-## <a name="media-services-learning-paths"></a>Percursos de aprendizagem dos Media Services
+## Percursos de aprendizagem dos Media Services
 Pode ver percurso de aprendizagem do AMS aqui:
 
 * [Fluxo de Trabalho de Transmissão em Direto do AMS](https://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 * [Fluxo de Trabalho de Transmissão a Pedido do AMS](https://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
 
-## <a name="prerequisites"></a>Pré-requisitos
+<a id="prerequisites" class="xliff"></a>
+
+## Pré-requisitos
 
 Para começar a utilizar os Media Services do Azure, deve ter o seguinte:
 
@@ -69,12 +77,14 @@ Para começar a utilizar os Media Services do Azure, deve ter o seguinte:
     Além disso, saiba como [se ligar através de programação](media-services-dotnet-connect-programmatically.md).
 4. Um ponto final de transmissão em fluxo standard ou premium no estado iniciado.  Para obter mais informações, consulte [Gerir pontos finais de transmissão em fluxo](https://docs.microsoft.com/en-us/azure/media-services/media-services-portal-manage-streaming-endpoints)
 
-## <a name="concepts-and-overview"></a>Conceitos e descrição geral
+<a id="concepts-and-overview" class="xliff"></a>
+
+## Conceitos e descrição geral
 Para saber mais sobre os conceitos de Media Services do Azure, consulte [Conceitos](media-services-concepts.md).
 
-Para obter um conjunto de procedimentos que apresente todos os componentes principais dos Media Services do Azure, consulte [Tutorial Passo-a-Passo dos Media Services do Azure](https://docs.com/fukushima-shigeyuki/3439/english-azure-media-services-step-by-step-series). Este conjunto possui uma excelente descrição geral dos conceitos e utiliza a ferramenta AMSE para demonstrar as tarefas AMS. Tenha em atenção que a ferramenta AMSE é uma ferramenta do Windows. Esta ferramenta suporta a maioria das tarefas que pode realizar através de programação com [o SDK do AMS para .NET](https://github.com/Azure/azure-sdk-for-media-services), [Azure SDK para Java](https://github.com/Azure/azure-sdk-for-java) ou [SDK do PHP do Azure](https://github.com/Azure/azure-sdk-for-php).
+Para obter um conjunto de procedimentos que apresente todos os componentes principais dos Media Services do Azure, consulte [Tutorial Passo-a-Passo dos Media Services do Azure](https://docs.com/fukushima-shigeyuki/3439/english-azure-media-services-step-by-step-series). Este conjunto possui uma excelente descrição geral dos conceitos e utiliza a ferramenta AMSE para demonstrar as tarefas AMS. A ferramenta AMSE é uma ferramenta do Windows. Esta ferramenta suporta a maioria das tarefas que pode realizar através de programação com [o SDK do AMS para .NET](https://github.com/Azure/azure-sdk-for-media-services), [Azure SDK para Java](https://github.com/Azure/azure-sdk-for-java) ou [SDK do PHP do Azure](https://github.com/Azure/azure-sdk-for-php).
 
-## <a name="a-idvodscenariosadelivering-media-on-demand-with-azure-media-services-common-scenarios-and-tasks"></a><a id="vod_scenarios"></a>Fornecer Multimédia a Pedido com os Serviços de Multimédia do Azure: cenários e tarefas comuns
+## <a id="vod_scenarios"></a>Apresentar Multimédia a pedido com os Serviços de Multimédia do Azure: cenários e tarefas comuns
 Esta secção descreve cenários comuns e fornece ligações para tópicos relevantes. O diagrama seguinte mostra as principais partes da plataforma dos Media Services envolvidas na distribuição de conteúdos a pedido.
 
 ![Fluxo de trabalho do VoD](./media/media-services-video-on-demand-workflow/media-services-video-on-demand.png)
@@ -82,7 +92,9 @@ Esta secção descreve cenários comuns e fornece ligações para tópicos relev
 >[!NOTE]
 >Quando a sua conta AMS é criada, é adicionado um ponto final de transmissão em fluxo **predefinido** à sua conta no estado **Parado**. Para começar a transmitir o seu conteúdo em fluxo e a tirar partido do empacotamento e encriptação dinâmicos, o ponto final de transmissão em fluxo a partir do qual quer transmitir conteúdo tem de estar no estado **Em execução**.
 
-### <a name="protect-content-in-storage-and-deliver-streaming-media-in-the-clear-non-encrypted"></a>Proteger conteúdos em armazenamento e distribuir multimédia de transmissão em fluxo em segurança (não encriptadas)
+<a id="protect-content-in-storage-and-deliver-streaming-media-in-the-clear-non-encrypted" class="xliff"></a>
+
+### Proteger conteúdos em armazenamento e distribuir multimédia de transmissão em fluxo em segurança (não encriptadas)
 1. Carregue um ficheiro mezanino de alta qualidade para um elemento.
 
     É recomendado aplicar uma opção de encriptação de armazenamento ao seu elemento para proteger os seus conteúdos durante o carregamento e enquanto estes permanecem inativos em armazenamento.
@@ -95,7 +107,9 @@ Esta secção descreve cenários comuns e fornece ligações para tópicos relev
 4. Publique o elemento através da criação de um localizador OnDemand.
 5. Transmita os conteúdos publicados.
 
-### <a name="protect-content-in-storage-deliver-dynamically-encrypted-streaming-media"></a>Proteger os conteúdos em armazenamento, distribuir multimédia de transmissão em fluxo encriptada de forma dinâmica
+<a id="protect-content-in-storage-deliver-dynamically-encrypted-streaming-media" class="xliff"></a>
+
+### Proteger os conteúdos em armazenamento, distribuir multimédia de transmissão em fluxo encriptada de forma dinâmica
 
 1. Carregue um ficheiro mezanino de alta qualidade para um elemento. Aplique a opção de encriptação de armazenamento ao elemento.
 2. Codifique para um conjunto de ficheiros MP4 de velocidade de transmissão adaptável. Aplique a opção de encriptação de armazenamento ao elemento de saída.
@@ -105,7 +119,9 @@ Esta secção descreve cenários comuns e fornece ligações para tópicos relev
 6. Publique o elemento através da criação de um localizador OnDemand.
 7. Transmita os conteúdos publicados.
 
-### <a name="use-media-analytics-to-derive-actionable-insights-from-your-videos"></a>Utilize a Análise de Multimédia para derivar conhecimentos acionáveis dos seus vídeos
+<a id="use-media-analytics-to-derive-actionable-insights-from-your-videos" class="xliff"></a>
+
+### Utilize a Análise de Multimédia para derivar conhecimentos acionáveis dos seus vídeos
 A Análise de Multimédia é um conjunto de componentes de voz e visão que facilitam a derivação de conhecimentos acionáveis das organizações e empresas dos seus respetivos ficheiros de vídeo. Para obter mais informações, consulte [Descrição Geral da Análise dos Media Services do Azure](media-services-analytics-overview.md).
 
 1. Carregue um ficheiro mezanino de alta qualidade para um elemento.
@@ -118,7 +134,9 @@ A Análise de Multimédia é um conjunto de componentes de voz e visão que faci
    * **Resumo do vídeo** – [Utilize as Miniaturas de Vídeo de Multimédia do Azure para Criar um Resumo de Vídeo](media-services-video-summarization.md)
 3. Os processadores de multimédia de Análise de Multimédia produzem ficheiros MP4 ou ficheiros JSON. Se um processador de multimédia produzir um ficheiro MP4, pode transferir progressivamente o ficheiro. Se um processador de multimédia produzir um ficheiro JSON, pode transferir o ficheiro a partir do Blob Storage do Azure.
 
-### <a name="deliver-progressive-download"></a>Fornecer transferência progressiva
+<a id="deliver-progressive-download" class="xliff"></a>
+
+### Fornecer transferência progressiva
 1. Carregue um ficheiro mezanino de alta qualidade para um elemento.
 2. Codifique para um único ficheiro MP4.
 3. Publique o elemento através da criação de um localizador OnDemand ou SAS.
@@ -126,7 +144,7 @@ A Análise de Multimédia é um conjunto de componentes de voz e visão que faci
     Se utilizar o localizador SAS, o conteúdo é transferido a partir do Blob Storage do Azure. Neste caso, não precisa de ter pontos finais de transmissão em fluxo no estado iniciado.
 4. Transferir progressivamente os conteúdos.
 
-## <a name="a-idlivescenariosadelivering-live-streaming-events-with-azure-media-services"></a><a id="live_scenarios"></a>Fornecer Eventos de Transmissão em Direto com os Serviços de Multimédia do Azure
+## <a id="live_scenarios"></a>Apresentar eventos de Transmissão em Direto com os Serviços de Multimédia do Azure
 Ao trabalhar com Transmissão em Fluxo em Direto, os seguintes componentes estão normalmente relacionados:
 
 * Uma câmara, que é utilizada para difundir um evento.
@@ -158,45 +176,78 @@ Um **Canal** representa um pipeline de processamento de conteúdos de transmiss�
 
 * Um codificador em direto no local envia uma transmissão fluxo de velocidade única para o Canal ativado para realizar live encoding com os Media Services num dos seguintes formatos: RTP (MPEG-TS), RTMP ou Transmissão em Fluxo Uniforme (MP4 fragmentado). O Canal, em seguida, realiza live encoding da transmissão em fluxo de velocidade de transmissão única de entrada para uma transmissão em fluxo de vídeo com várias velocidades (adaptável). Quando solicitado, os Media Services disponibilizam a transmissão em fluxo para os clientes.
 
-### <a name="working-with-channels-that-receive-multi-bitrate-live-stream-from-on-premises-encoders-pass-through"></a>Trabalhar com Canais que recebem transmissões em fluxo em direto com velocidade de transmissão múltipla a partir de codificadores no local (pass-through)
+<a id="working-with-channels-that-receive-multi-bitrate-live-stream-from-on-premises-encoders-pass-through" class="xliff"></a>
+
+### Trabalhar com canais que recebem transmissões em fluxo em direto com velocidade de transmissão múltipla a partir de codificadores no local (pass-through)
 O diagrama seguinte mostra as principais partes da plataforma de AMS envolvidas no fluxo de trabalho de **pass-through**.
 
 ![Fluxo de trabalho em direto][live-overview2]
 
 Para obter mais informações, consulte [Trabalhar com Canais que recebem transmissões em Fluxo em Direto de Múltipla Velocidade de Transmissão a partir de Codificadores no Local](media-services-live-streaming-with-onprem-encoders.md).
 
-### <a name="working-with-channels-that-are-enabled-to-perform-live-encoding-with-azure-media-services"></a>Trabalhar com Canais ativados para realizar live encoding com Media Services do Azure
+<a id="working-with-channels-that-are-enabled-to-perform-live-encoding-with-azure-media-services" class="xliff"></a>
+
+### Trabalhar com canais ativados para realizar live encoding com os Serviços de Multimédia do Azure
 O diagrama seguinte mostra as partes principais da plataforma do AMS envolvidas no fluxo de trabalho de Transmissão em Fluxo em Direto onde um Canal é ativado para realizar live encoding comMedia Services.
 
 ![Fluxo de trabalho em direto][live-overview1]
 
 Para obter mais informações, consulte [Trabalhar com Canais Ativados para Realizar Live Encoding com Media Services do Azure](media-services-manage-live-encoder-enabled-channels.md).
 
-## <a name="consuming-content"></a>Consumo de conteúdos
+<a id="supported-media-processors" class="xliff"></a>
+
+## Processadores de multimédia suportados
+
+|Nome|Estado|Datacenters
+|---|---|---|
+|Azure Media Face Detector|Pré-visualização|Todos|
+|Azure Media Hyperlapse|Pré-visualização|Todos|
+|Azure Media Indexer|GA|Todos|
+|Azure Media Motion Detector|Pré-visualização|Todos|
+|Azure Media OCR|Pré-visualização|Todos|
+|Azure Media Redactor|Pré-visualização|Todos|
+|Azure Media Stabilizer|Pré-visualização|Todos|
+|Azure Media Video Thumbnails|Pré-visualização|Todos|
+|Media Encoder Standard|GA|Todos|
+|Indexador de Multimédia v2|Pré-visualização|Tudo, exceto a China e a região do Governo Federal|
+|Fluxo de Trabalho Premium de Codificador de Multimédia|GA|Tudo, exceto a China|
+
+<a id="consuming-content" class="xliff"></a>
+
+## Consumo de conteúdos
 Os Media Services do Azure fornecem as ferramentas necessárias para criar aplicações avançadas e dinâmicas de leitor de cliente para a maioria das plataformas, incluindo: Dispositivos iOS dispositivos, Dispositivos Android, Windows, Windows Phone, Xbox e Caixas descodificadoras. O tópico seguinte fornece ligações para SDKs e Estruturas do Leitor que pode utilizar para desenvolver as suas próprias aplicações de cliente que podem consumir multimédia de transmissão de fluxo a partir dos Media Services.
 
 [Developing Video Player Applications (Desenvolver Aplicações do Leitor de Vídeo)](media-services-develop-video-players.md)
 
-## <a name="enabling-azure-cdn"></a>Ativar a CDN do Azure
+<a id="enabling-azure-cdn" class="xliff"></a>
+
+## Ativar a CDN do Azure
 Os Media Services suportam a integração com a CDN do Azure. Para obter mais informações sobre como ativar a CDN do Azure, consulte [Como Gerir Transmissão em Fluxo de Pontos Finais numa Conta de Media Services](media-services-portal-manage-streaming-endpoints.md).
 
-## <a name="scaling-a-media-services-account"></a>Escalar uma conta dos Media Services
+<a id="scaling-a-media-services-account" class="xliff"></a>
+
+## Escalar uma conta dos Media Services
 
 Pode escalar **Media Services** especificando o número das **Unidades Reservadas para Transmissão em Fluxo** e das **Unidades de Codificação Reservadas** que pretende aprovisionar na sua conta.
 
 Também pode escalar a sua conta dos Media Services adicionando-lhe contas deo Storage. Cada conta do Storage está limitada a 500 TB. Para expandir o limite predefinido do seu armazenamento, pode optar por ligar várias contas do Storage numa única conta de Media Services.
-Os clientes dos Serviços de Multimédia escolhem um ponto final de transmissão em fluxo **Standard** ou um ou mais pontos finais de transmissão em fluxo **Premium**, de acordo com as respetivas necessidades. O Ponto Final de Transmissão em Fluxo Standard é ideal para a maioria das cargas de trabalho de transmissão em fluxo. Inclui as mesmas funcionalidades das Unidades de Transmissão em Fluxo Premium.
-O Ponto Final de Transmissão em Fluxo Standard é ideal para a maioria das cargas de trabalho de transmissão em fluxo. Se tiver uma carga de trabalho avançada ou os seus requisitos de capacidade de transmissão em fluxo não forem adequadas aos destinos do débito do ponto final de transmissão em fluxo standard, ou se quiser controlar a capacidade do serviço do Ponto Final de Transmissão em Fluxo para processar as necessidades crescentes de largura de banda ao ajustar as unidades de escala (também conhecidas como unidades de transmissão em fluxo premium), recomenda-se a alocação de unidades de escala.
+Os clientes dos Serviços de Multimédia escolhem um ponto final de transmissão em fluxo **Standard** ou um ou mais pontos finais de transmissão em fluxo **Premium**, de acordo com as respetivas necessidades. O Ponto Final de Transmissão em Fluxo Standard é ideal para a maioria das cargas de trabalho de transmissão em fluxo. Inclui as mesmas funcionalidades das Unidades de Transmissão em Fluxo Premium. Se tiver uma carga de trabalho avançada ou os seus requisitos de capacidade de transmissão em fluxo não forem adequadas aos destinos do débito do ponto final de transmissão em fluxo standard, ou se quiser controlar a capacidade do serviço do Ponto Final de Transmissão em Fluxo para processar as necessidades crescentes de largura de banda ao ajustar as unidades de escala (também conhecidas como unidades de transmissão em fluxo premium), recomenda-se a alocação de unidades de escala.
 
 [Este](media-services-portal-scale-streaming-endpoints.md) tópico está ligado a tópicos relevantes.
 
-## <a name="support"></a>Suporte
+<a id="support" class="xliff"></a>
+
+## Suporte
 O [Suporte do Azure](https://azure.microsoft.com/support/options/) fornece opções de suporte para o Azure, incluindo os Media Services.
 
-## <a name="provide-feedback"></a>Enviar comentários
+<a id="provide-feedback" class="xliff"></a>
+
+## Enviar comentários
 [!INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-## <a name="service-level-agreement-sla"></a>Contrato de Nível de Serviço (SLA)
+<a id="service-level-agreement-sla" class="xliff"></a>
+
+## Contrato de Nível de Serviço (SLA)
 * Para Media Services Encoding, podemos garantir 99,9% de disponibilidade das transações da API REST.
 * Para a Transmissão em Fluxo, iremos responder com êxito aos pedidos com 99,9% de disponibilidade garantida para os conteúdos de multimédia existentes quando for comprado um ponto final de transmissão em fluxo standard ou premium.
 * Para Canais em Direto, garantimos que a execução dos Canais terá uma conectividade externa em, pelo menos, 99,9% das vezes.

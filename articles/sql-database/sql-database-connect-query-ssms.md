@@ -10,32 +10,42 @@ manager: jhubbard
 editor: 
 ms.assetid: 7cd2a114-c13c-4ace-9088-97bd9d68de12
 ms.service: sql-database
-ms.custom: quick start manage
+ms.custom: mvc,DBs & servers
 ms.workload: data-management
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: hero-article
-ms.date: 03/15/2017
+ms.date: 05/26/2017
 ms.author: carlrab
-translationtype: Human Translation
-ms.sourcegitcommit: 8c4e33a63f39d22c336efd9d77def098bd4fa0df
-ms.openlocfilehash: 9ffad92e668b76c9a4e2941b20d075bf52132d16
-ms.lasthandoff: 04/19/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 857267f46f6a2d545fc402ebf3a12f21c62ecd21
+ms.openlocfilehash: 29883e37f1f506f33f44cf02dbf08221274e109d
+ms.contentlocale: pt-pt
+ms.lasthandoff: 06/28/2017
 
 
 ---
-# <a name="azure-sql-database-use-sql-server-management-studio-to-connect-and-query-data"></a>Base de Dados SQL do Azure: utilize o SQL Server Management Studio para ligar e consultar dados
+<a id="azure-sql-database-use-sql-server-management-studio-to-connect-and-query-data" class="xliff"></a>
 
-O [SQL Server Management Studio](https://msdn.microsoft.com/library/ms174173.aspx) (SSMS) é uma ferramenta de gestão para criar e gerir recursos do SQL Server a partir da interface de utilizador ou em scripts. Este guia de introdução demonstra como utilizar SSMS para ligar a uma base de dados SQL do Azure e, em seguida, utilizar as declarações de Transact-SQL para consultar, inserir, atualizar e eliminar dados na base de dados. 
+# Base de Dados SQL do Azure: utilize o SQL Server Management Studio para ligar e consultar dados
+
+O [SQL Server Management Studio](https://msdn.microsoft.com/library/ms174173.aspx) (SSMS) é um ambiente integrado para gerir qualquer infraestrutura SQL, do SQL Server à Base de Dados SQL do Microsoft Windows. Este guia de introdução demonstra como utilizar SSMS para ligar a uma base de dados SQL do Azure e, em seguida, utilizar as declarações de Transact-SQL para consultar, inserir, atualizar e eliminar dados na base de dados. 
+
+<a id="prerequisites" class="xliff"></a>
+
+## Pré-requisitos
 
 Este guia de introdução utiliza como ponto de partida os recursos criados num destes guias de introdução:
 
 - [Criar BD - Portal](sql-database-get-started-portal.md)
 - [Criar BD - CLI](sql-database-get-started-cli.md)
+- [Criar BD - PowerShell](sql-database-get-started-powershell.md)
 
 Antes de começar, certifique-se de que instalou a versão mais recente do [SSMS](https://msdn.microsoft.com/library/mt238290.aspx). 
 
-## <a name="get-connection-information"></a>Obter informações da ligação
+<a id="get-connection-information" class="xliff"></a>
+
+## Obter informações da ligação
 
 Obtenha as informações de ligação necessárias para ligar à base de dados SQL do Azure. Irá precisar do nome de servidor totalmente qualificado, do nome de base de dados e das informações de início de sessão nos seguintes procedimentos.
 
@@ -43,11 +53,13 @@ Obtenha as informações de ligação necessárias para ligar à base de dados S
 2. Selecione **Bases de Dados SQL** a partir do menu do lado esquerdo e clique na sua base de dados na página **Bases de Dados SQL**. 
 3. Na página **Overview (Descrição geral)** da sua base de dados, reveja o nome de servidor totalmente qualificado, como mostrado na imagem abaixo. Pode pairar sobre o nome do servidor para aparecer a opção **Clique para copiar**.
 
-   ![informações da ligação](./media/sql-database-connect-query-ssms/connection-information.png) 
+   ![informações da ligação](./media/sql-database-get-started-portal/server-name.png) 
 
 4. Se se tiver esquecido das informações de início de sessão do seu servidor da Base de Dados SQL do Azure, navegue para a página de servidor da Base de Dados SQL para visualizar o nome de administrador do servidor e, se necessário, repor a palavra-passe. 
 
-## <a name="connect-to-your-database-in-the-sql-database-logical-server"></a>Ligue à base de dados no servidor lógico da Base de Dados SQL
+<a id="connect-to-your-database" class="xliff"></a>
+
+## Ligar à base de dados
 
 Utilize o SQL Server Management Studio para estabelecer uma ligação ao servidor da Base de Dados SQL do Azure. 
 
@@ -58,11 +70,14 @@ Utilize o SQL Server Management Studio para estabelecer uma ligação ao servido
 1. Abra o SQL Server Management Studio.
 
 2. Na caixa de dialogo **Ligar ao Servidor**, introduza as seguintes informações:
-   - **Tipo de servidor**: especificar Base de Dados do motor
-   - **Nome do servidor**: Introduza o seu nome de servidor totalmente qualificado, como **mynewserver20170313.database.windows.net**
-   - **Autenticação**: especifique a autenticação do SQL Server
-   - **Início de sessão**: introduza a sua conta de administrador do servidor
-   - **Palavra-passe**: introduza a palavra-passe para a sua conta de administrador do servidor
+
+   | Definição       | Valor sugerido | Descrição | 
+   | ------------ | ------------------ | ------------------------------------------------- | 
+   | **Tipo de servidor** | Motor de base de dados | Este valor é preciso. |
+   | **Nome do servidor** | O nome de servidor completamente qualificado | O nome deve ser semelhante a: **mynewserver20170313.database.windows.net**. |
+   | **Autenticação** | Autenticação do SQL Server | A Autenticação do SQL é o único tipo de autenticação que configurámos neste tutorial. |
+   | **Início de sessão** | A conta de administrador do servidor | Esta é a conta que especificou quando criou o servidor. |
+   | **Palavra-passe** | A palavra-passe da sua conta de administrador do servidor | Esta é a palavra-passe que especificou quando criou o servidor. |
 
    ![ligar ao servidor](./media/sql-database-connect-query-ssms/connect.png)  
 
@@ -76,7 +91,9 @@ Utilize o SQL Server Management Studio para estabelecer uma ligação ao servido
 
 5. No Object Explorer, expanda as **Bases de Dados** e, em seguida, expanda **mySampleDatabase**, para ver os objetos na base de dados de exemplo.
 
-## <a name="query-data"></a>Consultar dados
+<a id="query-data" class="xliff"></a>
+
+## Consultar dados
 
 Utilize o seguinte código para consultar os 20 melhores produtos por categoria com uma declaração Transact-SQL [SELECIONAR](https://msdn.microsoft.com/library/ms189499.aspx).
 
@@ -94,7 +111,9 @@ Utilize o seguinte código para consultar os 20 melhores produtos por categoria 
 
     ![consulta](./media/sql-database-connect-query-ssms/query.png)
 
-## <a name="insert-data"></a>Inserir dados
+<a id="insert-data" class="xliff"></a>
+
+## Inserir dados
 
 Utilize o seguinte código para inserir um novo produto na tabela SalesLT.Product com uma declaração Transact-SQL [INSERIR](https://msdn.microsoft.com/library/ms174335.aspx).
 
@@ -124,7 +143,9 @@ Utilize o seguinte código para inserir um novo produto na tabela SalesLT.Produc
 
     <img src="./media/sql-database-connect-query-ssms/insert.png" alt="insert" style="width: 780px;" />
 
-## <a name="update-data"></a>Atualizar dados
+<a id="update-data" class="xliff"></a>
+
+## Atualizar dados
 
 Utilize o seguinte código para atualizar o produto novo que foi adicionado anteriormente com uma declaração Transact-SQL [ATUALIZAR](https://msdn.microsoft.com/library/ms177523.aspx).
 
@@ -140,7 +161,9 @@ Utilize o seguinte código para atualizar o produto novo que foi adicionado ante
 
     <img src="./media/sql-database-connect-query-ssms/update.png" alt="update" style="width: 780px;" />
 
-## <a name="delete-data"></a>Eliminar dados
+<a id="delete-data" class="xliff"></a>
+
+## Eliminar dados
 
 Utilize o seguinte código para eliminar o produto novo que foi adicionado anteriormente com uma declaração Transact-SQL [ELIMINAR](https://msdn.microsoft.com/library/ms189835.aspx).
 
@@ -155,8 +178,11 @@ Utilize o seguinte código para eliminar o produto novo que foi adicionado anter
 
     <img src="./media/sql-database-connect-query-ssms/delete.png" alt="delete" style="width: 780px;" />
 
-## <a name="next-steps"></a>Passos seguintes
+<a id="next-steps" class="xliff"></a>
 
+## Passos seguintes
+
+- Para obter informações sobre a criação e a gestão de servidores e bases de dados com o Transact-SQL, veja [Learn about Azure SQL Database servers and databases](sql-database-servers-databases.md) (Saiba mais sobre servidores e bases de dados da Base de Dados SQL do Azure).
 - Para obter informações sobre o SSMS, consulte o artigo [Use SQL Server Management Studio (Utilizar o SQL Server Management Studio)](https://msdn.microsoft.com/library/ms174173.aspx).
 - Para ligar e consultar com o Visual Studio Code, veja [Connect and query with Visual Studio Code (Ligar e consultar com o Visual Studio Code)](sql-database-connect-query-vscode.md).
 - Para ligar e consultar com .NET, consulte [Connect and query with .NET (Ligar e consultar com .NET)](sql-database-connect-query-dotnet.md).

@@ -12,20 +12,25 @@ ms.devlang: java
 ms.topic: get-started-article
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 04/06/2017
+ms.date: 06/29/2016
 ms.author: saysa
-translationtype: Human Translation
-ms.sourcegitcommit: 6d749e5182fbab04adc32521303095dab199d129
-ms.openlocfilehash: 0407eab7e70649999ba07730425366b7b62e4e7a
-ms.lasthandoff: 03/22/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 3716c7699732ad31970778fdfa116f8aee3da70b
+ms.openlocfilehash: 6f0f6d6399d53ae2ef81454e4d686e6cc59151c2
+ms.contentlocale: pt-pt
+ms.lasthandoff: 06/30/2017
 
 
 ---
 
-# <a name="service-fabric-plug-in-for-eclipse-java-application-development"></a>Plug-in do Service Fabric para desenvolvimento de aplicações Java de Eclipse
+<a id="service-fabric-plug-in-for-eclipse-java-application-development" class="xliff"></a>
+
+# Plug-in do Service Fabric para desenvolvimento de aplicações Java de Eclipse
 O Eclipse é um dos ambientes de desenvolvimento integrados (IDEs) mais utilizados para programadores Java. Neste artigo, descrevemos como configurar o seu ambiente de desenvolvimento do Eclipse para funcionar com o Azure Service Fabric. Saiba como instalar o plug-in do Service Fabric e criar uma aplicação do Service Fabric e implementá-la num cluster do Service Fabric local ou remoto no Eclipse Neon.
 
-## <a name="install-or-update-the-service-fabric-plug-in-in-eclipse-neon"></a>Instalar ou atualizar o plug-in do Service Fabric no Eclipse Neon
+<a id="install-or-update-the-service-fabric-plug-in-in-eclipse-neon" class="xliff"></a>
+
+## Instalar ou atualizar o plug-in do Service Fabric no Eclipse Neon
 Pode instalar um plug-in do Service Fabric no Eclipse. O plug-in pode ajudar a simplificar o processo de criação e implementação de serviços Java.
 
 1.  Confirme que tem instaladas as versões mais recentes do Eclipse Neon e do Buildship (1.0.17 ou posterior):
@@ -34,18 +39,21 @@ Pode instalar um plug-in do Service Fabric no Eclipse. O plug-in pode ajudar a s
     -   Para procurar e instalar atualizações do Eclipse Neon, aceda a **Ajuda** > **Procurar Atualizações**.
 
 2.  Para instalar o plug-in do Service Fabric, no Eclipse Neon, aceda a **Ajuda** > **Instalar Software Novo**.
-  1.    Na caixa de texto **Trabalhar com**, introduza **http://dl.windowsazure.com/eclipse/servicefabric**.
+  1.    Na caixa **Trabalhar com**, introduza **http://dl.microsoft.com/eclipse**.
   2.    Clique em **Adicionar**.
-    ![Plug-in do Service Fabric para Eclipse Neon][sf-eclipse-plugin-install]
+
+         ![Plug-in do Service Fabric para Eclipse Neon][sf-eclipse-plugin-install]
   3.    Selecione o plug-in do Service Fabric e clique em **Seguinte**.
   4.    Conclua os passos de instalação e aceite os Termos de Licenciamento para Software Microsoft.
 
 Se já tiver o plug-in do Service Fabric instalado, confirme que tem a versão mais recente. Para verificar se existem atualizações disponíveis, aceda a **Ajuda** > **Detalhes da Instalação**. Na lista de plug-ins instalados, selecione Service Fabric e clique em **Atualizar**. As atualizações disponíveis são instaladas.
 
 > [!NOTE]
-> Se a instalação ou atualização do plug-in do Service Fabric estiver lenta, tal poderá dever-se a uma definição do Eclipse. O Eclipse recolhe metadados sobre todas as alterações para atualizar os sites que estão registados na sua instância do Eclipse. Para acelerar o processo de procurar e instalar uma atualização do plug-in do Service Fabric, aceda a **Sites de Software Disponíveis**. Desmarque as caixas de verificação de todos os sites, exceto daquele que aponta para a localização do plug-in do Service Fabric (http://dl.windowsazure.com/eclipse/servicefabric).
+> Se a instalação ou atualização do plug-in do Service Fabric estiver lenta, tal poderá dever-se a uma definição do Eclipse. O Eclipse recolhe metadados sobre todas as alterações para atualizar os sites que estão registados na sua instância do Eclipse. Para acelerar o processo de procurar e instalar uma atualização do plug-in do Service Fabric, aceda a **Sites de Software Disponíveis**. Desmarque as caixas de verificação de todos os sites, exceto daquele que aponta para a localização do plug-in do Service Fabric (http://dl.microsoft.com/eclipse/azure/servicefabric).
 
-## <a name="create-a-service-fabric-application-in-eclipse"></a>Criar uma aplicação do Service Fabric no Eclipse
+<a id="create-a-service-fabric-application-in-eclipse" class="xliff"></a>
+
+## Criar uma aplicação do Service Fabric no Eclipse
 
 1.  No Eclipse Neon, aceda a **File (Ficheiro)** > **New (Novo)** > **Other (Outro)**. Selecione **Service Fabric Project** (Projeto do Service Fabric) e clique em **Next** (Seguinte).
 
@@ -71,7 +79,9 @@ Se já tiver o plug-in do Service Fabric instalado, confirme que tem a versão m
 
     ![Página 6 de Novo Projeto do Service Fabric][create-application/p6]
 
-## <a name="build-and-deploy-a-service-fabric-application-in-eclipse"></a>Compilar e implementar uma aplicação do Service Fabric no Eclipse
+<a id="build-and-deploy-a-service-fabric-application-in-eclipse" class="xliff"></a>
+
+## Compilar e implementar uma aplicação do Service Fabric no Eclipse
 
 1.  Clique com o botão direito na aplicação do Service Fabric nova e selecione **Service Fabric**.
 
@@ -103,7 +113,9 @@ Outra forma de implementar a aplicação do Service Fabric é utilizar configura
 
 A sua aplicação é criada e implementada ao fim de alguns momentos. Pode monitorizar o estado da implementação no Service Fabric Explorer.  
 
-## <a name="add-a-service-fabric-service-to-your-service-fabric-application"></a>Adicionar um serviço do Service Fabric à sua aplicação do Service Fabric
+<a id="add-a-service-fabric-service-to-your-service-fabric-application" class="xliff"></a>
+
+## Adicionar um serviço do Service Fabric à sua aplicação do Service Fabric
 
 Para adicionar um serviço do Service Fabric a uma aplicação do Service Fabric já existente, faça o seguinte:
 
@@ -124,7 +136,17 @@ Para adicionar um serviço do Service Fabric a uma aplicação do Service Fabric
 
     ![Página 4 de Adicionar Serviço do Service Fabric][add-service/p4]
 
-## <a name="upgrade-your-service-fabric-java-application"></a>Atualizar a sua aplicação Java do Service Fabric
+<a id="edit-manifest-versions-of-your-service-fabric-java-application" class="xliff"></a>
+
+## Editar versões do Manifesto da sua aplicação Java do Service Fabric
+
+Para editar versões do manifesto, clique com o botão direito do rato no projeto, entre no **Service Fabric** e selecione **Editar Versões do Manifesto...**  do menu suspenso. No assistente, pode atualizar as versões do manifesto para o manifesto de aplicação, o manifesto do serviço e as versões dos pacotes **Código**, **Config** e **Dados**.
+
+Se marcar a opção **Atualizar automaticamente as versões da aplicação e do serviço** e, em seguida, atualizar uma versão, as versões do manifesto serão atualizadas automaticamente. Por exemplo, primeiro selecione a caixa de verificação e atualize a versão do **Código** de 0.0.0 para 0.0.1 e clique em **Concluir**, em seguida, a versão do manifesto do serviço e a versão do manifesto de aplicação serão atualizadas automaticamente para 0.0.1.
+
+<a id="upgrade-your-service-fabric-java-application" class="xliff"></a>
+
+## Atualizar a sua aplicação Java do Service Fabric
 
 Num cenário de atualização, imaginemos que utilizou o plug-in do Service Fabric no Eclipse para criar o projeto **App1**. Para o implementar, utilizou o plug-in para criar uma aplicação com o nome **fabric:/App1Application**. O tipo de aplicação é **App1AppicationType** e a versão 1.0. Agora, quer atualizar a aplicação sem interromper a disponibilidade.
 
@@ -142,7 +164,7 @@ A atualização da aplicação demora alguns minutos. Pode utilizar o Service Fa
 
 <!-- Images -->
 
-[sf-eclipse-plugin-install]: ./media/service-fabric-get-started-mac/sf-eclipse-plugin-install.png
+[sf-eclipse-plugin-install]: ./media/service-fabric-get-started-eclipse/service-fabric-eclipse-plugin.png
 
 [create-application/p1]:./media/service-fabric-get-started-eclipse/create-application/p1.png
 [create-application/p2]:./media/service-fabric-get-started-eclipse/create-application/p2.png
