@@ -15,15 +15,17 @@ ms.workload: infrastructure-services
 ms.date: 05/03/2017
 ms.author: amsriva
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 7c4d5e161c9f7af33609be53e7b82f156bb0e33f
-ms.openlocfilehash: 0ba2158a45eb4ec9254ef829894152fe92276920
+ms.sourcegitcommit: 09f24fa2b55d298cfbbf3de71334de579fbf2ecd
+ms.openlocfilehash: 50863b60f2843f033bdb07f4564d937cd6f0b7be
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/04/2017
+ms.lasthandoff: 06/07/2017
 
 
 ---
 
-# <a name="web-application-firewall-waf"></a>Firewall de aplicações Web (WAF)
+<a id="web-application-firewall-waf" class="xliff"></a>
+
+# Firewall de aplicações Web (WAF)
 
 Firewall de aplicações Web (WAF) é uma funcionalidade de Gateway de Aplicação que fornece proteção centralizada das suas aplicações Web a partir de exploits e vulnerabilidades comuns. 
 
@@ -33,27 +35,37 @@ A firewall de aplicações Web baseia-se nas regras dos [conjuntos de regras de 
 
 O Gateway de Aplicação atua como um controlador de entrega de aplicações e oferece terminação de SSL, afinidade de sessão baseada em cookies, distribuição de carga round robin, encaminhamento baseado em conteúdo, a capacidade de alojar vários sites e melhoramentos de segurança. Os melhoramentos de segurança que o Gateway de Aplicação oferece incluem gestão de política SSL e suporte SSL ponto a ponto. Agora, a segurança das aplicações está mais fortalecida, com a WAF (firewall de aplicações Web) a ser integrada diretamente na oferta do ADC. Desta forma, conseguimos fornecer uma localização central fácil de configurar que permite gerir e proteger as suas aplicações Web contra vulnerabilidades Web conhecidas.
 
-## <a name="benefits"></a>Benefícios
+<a id="benefits" class="xliff"></a>
+
+## Benefícios
 
 Seguem-se as principais vantagens proporcionadas pelo Gateway de Aplicação e pela firewall de aplicações Web:
 
-### <a name="protection"></a>Proteção
+<a id="protection" class="xliff"></a>
+
+### Proteção
 
 * Protege a sua aplicação Web de vulnerabilidades e ataques Web sem modificar o código de back-end.
 
 * Protege várias aplicações Web em simultâneo por trás de um gateway de aplicação. O gateway de aplicação suporta o alojamento de até 20 Web sites por trás de um único gateway, que podem ser protegidos contra ataques Web com a WAF.
 
-### <a name="monitoring"></a>Monitorização
+<a id="monitoring" class="xliff"></a>
+
+### Monitorização
 
 * Utilize um registo da WAF em tempo real para monitorizar a sua aplicação Web contra ataques. Este registo está integrado no [Azure Monitor](../monitoring-and-diagnostics/monitoring-overview.md) para registar alertas e registos da WAF e monitorizar tendências facilmente.
 
 * A WAF vai ser integrada no Centro de Segurança do Azure brevemente. O Centro de Segurança do Azure permite obter uma visão central do estado de segurança de todos os seus recursos do Azure.
 
-### <a name="customization"></a>Personalização
+<a id="customization" class="xliff"></a>
+
+### Personalização
 
 * A capacidade para personalizar regras e grupos de regras WAF para se adequarem às necessidades da sua aplicação e eliminar falsos positivos.
 
-## <a name="features"></a>Funcionalidades
+<a id="features" class="xliff"></a>
+
+## Funcionalidades
 
 A firewall de aplicação Web está pré-configurada com CRS 3.0, por predefinição, ou pode optar por utilizar a 2.2.9. A CRS 3.0 oferece menos falsos positivos do que a 2.2.9. É disponibilizada a capacidade de [personalizar a regras para se adequarem às suas necessidades](application-gateway-customize-waf-rules-portal.md). Algumas das vulnerabilidades Web comuns contra as quais a firewall de aplicações Web protege incluem:
 
@@ -67,11 +79,15 @@ A firewall de aplicação Web está pré-configurada com CRS 3.0, por predefini�
 
 Para obter uma lista mais detalhada das regras e das respetivas proteções, veja [Core rule sets](#core-rule-sets) (Conjuntos de regras principais).
 
-### <a name="core-rule-sets"></a>Conjuntos de regras principais
+<a id="core-rule-sets" class="xliff"></a>
+
+### Conjuntos de regras principais
 
 O Gateway de Aplicação suporta dois conjuntos de regras: CRS 3.0 e CRS 2.2.9. Estes conjuntos de regras principais são coleções de regras que protegem as suas aplicações Web contra atividades maliciosas.
 
-#### <a name="owasp30"></a>OWASP_3.0
+<a id="owasp30" class="xliff"></a>
+
+#### OWASP_3.0
 
 O conjunto de regras principais 3.0 fornecido tem 13 grupos de regras, conforme mostrado na tabela seguinte. Cada um destes grupos de regras contém várias regras, que podem ser desativadas.
 
@@ -91,7 +107,9 @@ O conjunto de regras principais 3.0 fornecido tem 13 grupos de regras, conforme 
 |**[REQUEST-942-APPLICATION-ATTACK-SQLI](application-gateway-crs-rulegroups-rules.md#crs942)**|Contém regras para proteger contra ataques de injeção de SQL Server.|
 |**[REQUEST-943-APPLICATION-ATTACK-SESSION-FIXATION](application-gateway-crs-rulegroups-rules.md#crs943)**|Contém regras para proteger contra Ataques de Fixação de Sessão.|
 
-#### <a name="owasp229"></a>OWASP_2.2.9
+<a id="owasp229" class="xliff"></a>
+
+#### OWASP_2.2.9
 
 O conjunto de regras principais 2.2.9 fornecido tem dez grupos de regras, conforme mostrado na tabela seguinte. Cada um destes grupos de regras contém várias regras, que podem ser desativadas.
 
@@ -108,7 +126,9 @@ O conjunto de regras principais 2.2.9 fornecido tem dez grupos de regras, confor
 |**[crs_42_tight_security](application-gateway-crs-rulegroups-rules.md#crs42)**|Contém uma regra para proteger contra ataques de caminho tranversais.|
 |**[crs_45_trojans](application-gateway-crs-rulegroups-rules.md#crs45)**|Contém regras para proteger contra trojans de backdoor.|
 
-### <a name="waf-modes"></a>Modos de WAF
+<a id="waf-modes" class="xliff"></a>
+
+### Modos de WAF
 
 A WAF do Gateway de Aplicação pode ser configurada para ser executada nos dois modos seguintes:
 
@@ -121,11 +141,23 @@ A WAF do Gateway de Aplicação pode ser configurada para ser executada nos dois
 
 ![diagnósticos](./media/application-gateway-web-application-firewall-overview/diagnostics.png)
 
-#### <a name="azure-monitor"></a>Azure Monitor
+<a id="azure-monitor" class="xliff"></a>
+
+#### Azure Monitor
 
 Cada registo do gateway de aplicação é integrado no [Azure Monitor](../monitoring-and-diagnostics/monitoring-overview.md).  Desta forma, pode acompanhar as informações de diagnóstico, incluindo alertas e registos da WAF.  Esta capacidade é disponibilizada no recurso do Gateway da Aplicação no portal, no separador **Diagnósticos** ou diretamente através do serviço Azure Monitor. Para saber mais sobre como permitir os registos de diagnósticos no Gateway de Aplicação, veja [Application Gateway diagnostics](application-gateway-diagnostics.md) (Diagnóstico do Gateway de Aplicação)
 
-#### <a name="logging"></a>Registo
+<a id="azure-security-center" class="xliff"></a>
+
+#### Centro de Segurança do Azure
+
+O [Centro de Segurança do Azure](../security-center/security-center-intro.md) ajuda-o a evitar, detetar e responder a ameaças com uma maior visibilidade e controlo sobre a segurança dos seus recursos Azure. O gateway de aplicação [está agora integrado no Centro de Segurança do Azure](application-gateway-integration-security-center.md). O Centro de Segurança do Azure analisa o seu ambiente para detetar aplicações Web desprotegidas. Já pode recomendar o WAF do gateway de aplicação para proteger estes recursos vulneráveis. Pode criar diretamente o WAF do gateway de aplicação a partir do Centro de Segurança do Azure.  Estas instâncias do WAF são integradas no Centro de Segurança do Azure e irão enviar alertas e informações do estado de funcionamento para o Centro de Segurança do Azure para os relatórios.
+
+![figura 1](./media/application-gateway-web-application-firewall-overview/figure1.png)
+
+<a id="logging" class="xliff"></a>
+
+#### Registo
 
 A WAF do Gateway de Aplicação fornece relatórios detalhados sobre cada ameaça detetada. Os registos estão integrados no Diagnóstico do Azure e os registos e alertas são registados no formato json. Estes registos podem ser integrados no [Log Analytics](../log-analytics/log-analytics-azure-networking-analytics.md).
 
@@ -159,13 +191,17 @@ A WAF do Gateway de Aplicação fornece relatórios detalhados sobre cada ameaç
 
 ```
 
-## <a name="application-gateway-waf-sku-pricing"></a>Preços da SKU da WAF do Gateway de Aplicação
+<a id="application-gateway-waf-sku-pricing" class="xliff"></a>
+
+## Preços da SKU da WAF do Gateway de Aplicação
 
 A firewall de aplicações Web está disponível num novo WAF SKU. Este SKU só está disponível no modelo de aprovisionamento do Azure Resource Manager e não no modelo de implementação clássica. Além disso, o WAF SKU vem apenas em tamanhos de instâncias do gateway de aplicação médios e grandes. Todos os limites para o gateway de aplicação também se aplicam ao WAF SKU. O preço baseia-se no custo de instância de gateway por hora e no custo do processamento de dados. O preço de gateway por hora do WAF SKU é diferente dos custos do Standard SKU e está disponível em [Detalhes dos preços do Gateway da Aplicação](https://azure.microsoft.com/pricing/details/application-gateway/). Os custos de processamento permanecem iguais. Não existem custos relacionados com regras ou grupos de regras. Pode proteger várias aplicações Web atrás da mesma firewall de aplicações Web e não há custos adicionais para o suporte de várias aplicações. 
 
 A faturação da WAF entra em vigor a 05/05/2017; até lá, os gateways do WAF SKU continuam a ser cobrados às taxas standard.
 
-## <a name="next-steps"></a>Passos seguintes
+<a id="next-steps" class="xliff"></a>
+
+## Passos seguintes
 
 Após saber mais sobre as capacidades da WAF, visite [How to configure web application firewall on Application Gateway](application-gateway-web-application-firewall-portal.md) (Como configurar a firewall de aplicações Web no Gateway da Aplicação).
 

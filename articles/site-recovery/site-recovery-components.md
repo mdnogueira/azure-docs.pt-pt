@@ -8,52 +8,67 @@ manager: jwhit
 editor: 
 ms.assetid: c413efcd-d750-4b22-b34b-15bcaa03934a
 ms.service: site-recovery
-ms.workload: backup-recovery
+ms.workload: storage-backup-recovery
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 03/14/2017
+ms.date: 06/14/2017
 ms.author: raynew
-translationtype: Human Translation
-ms.sourcegitcommit: a087df444c5c88ee1dbcf8eb18abf883549a9024
-ms.openlocfilehash: 4674985363bc1267449e018ab15a53757a8fd32d
-ms.lasthandoff: 03/15/2017
-
+ROBOTS: NOINDEX, NOFOLLOW
+redirect_url: site-recovery-azure-to-azure-architecture
+ms.translationtype: Human Translation
+ms.sourcegitcommit: ef1e603ea7759af76db595d95171cdbe1c995598
+ms.openlocfilehash: e8faa2c7cde18fc08f0255e80f0acdb961082fcb
+ms.contentlocale: pt-pt
+ms.lasthandoff: 06/16/2017
 
 ---
-# <a name="how-does-azure-site-recovery-work"></a>Como funciona o Azure Site Recovery?
 
-Este artigo descreve a arquitetura subjacente do serviço [Azure Site Recovery](site-recovery-overview.md) e os componentes que fazem com que funcione.
+
+<a id="how-does-azure-site-recovery-work-for-on-premises-infrastructure" class="xliff"></a>
+
+# Como funciona o Azure Site Recovery para infraestruturas no local?
+
+> [!div class="op_single_selector"]
+> * [Replicar máquinas virtuais do Azure](site-recovery-azure-to-azure-architecture.md)
+> * [Replicar máquinas no local](site-recovery-components.md)
+
+Este artigo descreve a arquitetura subjacente do serviço [Azure Site Recovery](site-recovery-overview.md) e os componentes que fazem com que funcione para replicar cargas de trabalho do local para o Azure.
 
 Publique comentários na parte inferior deste artigo ou no [Fórum dos Serviços de Recuperação do Azure](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr).
 
 
-## <a name="replicate-to-azure"></a>Replicar para o Azure
+<a id="replicate-to-azure" class="xliff"></a>
 
-Pode replicar o que se segue para o Azure:
+## Replicar para o Azure
+
+Pode replicar e proteger a seguinte infraestrutura no local para o Azure:
 
 - **VMware**: VMs VMware no local em execução num [anfitrião suportado](site-recovery-support-matrix-to-azure.md#support-for-datacenter-management-servers). É possível replicar VMs VMware que executam [sistemas operativos suportados](site-recovery-support-matrix-to-azure.md#support-for-replicated-machine-os-versions)
 - **Hyper-V**: VMs Hyper-V no local em execução em [anfitriões suportados](site-recovery-support-matrix-to-azure.md#support-for-datacenter-management-servers).
 - **Máquinas físicas**: servidores físicos no local que executem o Windows ou Linux em [sistemas operativos suportados](site-recovery-support-matrix-to-azure.md#support-for-replicated-machine-os-versions). Pode replicar VMs Hyper-V que executem qualquer sistema operativo convidado [suportado pelo Hyper-V e o Azure](https://technet.microsoft.com/en-us/windows-server-docs/compute/hyper-v/supported-windows-guest-operating-systems-for-hyper-v-on-windows).
 
-## <a name="vmware-to-azure"></a>VMware para o Azure
+<a id="vmware-to-azure" class="xliff"></a>
+
+## VMware para o Azure
 
 Segue-se aquilo de que precisa para replicar VMs de VMware para o Azure.
 
 Área | Componente | Detalhes
 --- | --- | ---
-**Azure** | No Azure, precisa de uma conta do Azure, de uma conta de armazenamento do Azure e de uma rede do Azure. | O armazenamento e a rede podem ser contas do Resource Manager ou contas clássicas.<br/><br/>  Os dados replicados são armazenados na conta de armazenamento e as VMs do Azure são criadas com os dados replicados quando ocorre a ativação pós-falha a partir do site no local. As VMs do Azure ligam-se à rede virtual do Azure quando são criadas.
 **Servidor de configuração** | Um servidor de gestão único (VM VMware) executa todos os componentes no local - servidor de configuração, servidor de processos, servidor de destino mestre | O servidor de configuração coordena as comunicações entre o local e o Azure, e gere a replicação de dados.
  **Servidor de processos**:  | Instalado por predefinição no servidor de configuração. | Atua como um gateway de replicação. Recebe dados de replicação, otimiza-os com a colocação em cache, compressão e encriptação, e envia-os para o armazenamento do Azure.<br/><br/> O servidor de processos processa a instalação por push do serviço de Mobilidade para máquinas protegidas e efetua a deteção automática de VMs VMware.<br/><br/> À medida que cresça a implementação é possível adicionar mais servidores de processos dedicados independentes para processar um crescente volume de tráfego de replicação.
  **Servidor de destino mestre** | Instalado por predefinição no servidor de configuração no local. | Processa dados de replicação durante a reativação pós-falha a partir do Azure.<br/><br/> Se os volumes de tráfego da reativação pós-falha forem elevados, pode implementar um servidor de destino mestre separado para a reativação pós-falha.
-**Servidores de VMware** | As VMs VMware são alojadas em servidores do ESXi do vSphere e recomenda-se um servidor vCenter para gerir os anfitriões. | Pode adicionar servidores VMware ao cofre dos Serviços de Recuperação.<br/><br/> I
-**Máquinas replicadas** | O serviço de Mobilidade será instalado em cada VM VMware que pretende replicar. Pode ser instalado manualmente em cada máquina ou através de uma instalação push a partir do servidor de processos.
+**Servidores de VMware** | As VMs VMware são alojadas em servidores do ESXi do vSphere e recomenda-se um servidor vCenter para gerir os anfitriões. | Pode adicionar servidores VMware ao cofre dos Serviços de Recuperação.<br/><br/>
+**Máquinas replicadas** | O serviço de Mobilidade será instalado em cada VM VMware que pretende replicar. Pode ser instalado manualmente em cada máquina ou através de uma instalação push a partir do servidor de processos.| -
 
 **Figura 1: Componentes de VMware para o Azure**
 
 ![Componentes](./media/site-recovery-components/arch-enhanced.png)
 
-### <a name="replication-process"></a>Processo de replicação
+<a id="replication-process" class="xliff"></a>
+
+### Processo de replicação
 
 1. É configurada a implementação, incluindo componentes do Azure, e um cofre dos Serviços de Recuperação. No cofre, especifica a origem e o destino da replicação, configura o servidor de configuração, adiciona servidores de VMware, cria uma política de replicação, implementa o Serviço de mobilidade, ativa a replicação e executa uma ativação pós-falha de teste.
 2.  A replicação das máquinas é iniciada de acordo com a política de replicação e é replicada para o armazenamento do Azure uma cópia inicial dos dados.
@@ -69,45 +84,35 @@ Segue-se aquilo de que precisa para replicar VMs de VMware para o Azure.
 
 ![Melhorada](./media/site-recovery-components/v2a-architecture-henry.png)
 
-### <a name="failover-and-failback"></a>Ativação pós-falha e reativação pós-falha
+<a id="failover-and-failback" class="xliff"></a>
+
+### Ativação pós-falha e reativação pós-falha
 
 1. Depois de verificar que a ativação pós-falha de teste está a funcionar conforme esperado, pode executar as ativações pós-falha não planeadas do Azure conforme necessário. A ativação pós-falha planeada não é suportada.
 2. Pode fazer a ativação pós-falha de uma máquina individual ou criar [planos de recuperação](site-recovery-create-recovery-plans.md) para a ativação pós-falha de várias VMs.
 3. Quando executa uma ativação pós-falha, são criadas VMs de réplica no Azure. Consolida uma ativação pós-falha para começar a aceder à carga de trabalho da VM do Azure de réplica.
 4. Quando o site no local primário estiver novamente disponível, pode fazer a reativação pós-falha. Configura uma infraestrutura de reativação pós-falha, inicia a replicação da máquina do site secundário para o primário e executa uma ativação pós-falha não planeada a partir do site secundário. Depois de consolidar esta ativação pós-falha, os dados voltam ao site no local e terá de ativar novamente a replicação para o Azure. [Saiba mais](site-recovery-failback-azure-to-vmware.md)
 
-Existem alguns requisitos para a reativação pós-falha:
-
-
-- **Servidor de processo temporário no Azure**: se pretender uma reativação a partir do Azure após a ativação pós-falha, terá de configurar uma VM do Azure como servidor de processos, para lidar com a replicação a partir do Azure. É possível eliminar esta VM após a conclusão da reativação pós-falha.
-- **Ligação VPN**: para a reativação pós-falha, precisará de uma ligação VPN (ou Azure ExpressRoute) configurada a partir da rede Azure para o site no local.
-- **Servidor de destino principal no local independente**: o servidor de destino principal no local processa a reativação pós-falha. O servidor de destino principal está instalado por predefinição no servidor de gestão, mas se está a reativar maiores volumes de tráfego deve configurar um servidor de destino principal independente no local para esta finalidade.
-- **Política de reativação pós-falha**: para replicar de novo para o site no local, precisa de uma política de reativação pós-falha. Esta foi criada automaticamente quando criou a política de replicação.
-
 **Figura 3: Reativação pós-falha de VMware/servidor físico**
 
 ![Reativação pós-falha](./media/site-recovery-components/enhanced-failback.png)
 
-## <a name="physical-to-azure"></a>Físico para o Azure
+<a id="physical-to-azure" class="xliff"></a>
+
+## Físico para o Azure
 
 Quando replicar servidores físicos no local para o Azure, a replicação utiliza também os mesmos componentes e processos como [VMware para o Azure](#vmware-replication-to-azure), mas tenha em atenção estas diferenças:
 
 - Pode utilizar um servidor físico para o servidor de configuração, em vez de uma VM VMware
 - Vai precisar de uma infraestrutura de VMware no local para a reativação pós-falha. Não pode fazer a reativação pós-falha para um computador.
 
-## <a name="hyper-v-to-azure"></a>Hyper-V para o Azure
+<a id="hyper-v-to-azure" class="xliff"></a>
 
-Segue-se aquilo de que precisa para replicar VMs de Hyper-V para o Azure.
+## Hyper-V para o Azure
 
-**Área** | **Componente** | **Detalhes**
---- | --- | ---
-**Azure** | No Azure, precisa de uma conta do Microsoft Azure, de uma conta de armazenamento do Azure e de uma rede do Azure. | O armazenamento e a rede podem ser contas baseadas no Resource Manager ou contas clássicas.<br/><br/> Os dados replicados são armazenados na conta de armazenamento e as VMs do Azure são criadas com os dados replicados quando ocorre a ativação pós-falha a partir do site no local.<br/><br/> As VMs do Azure ligam-se à rede virtual do Azure quando são criadas.
-**Servidor VMM** | Anfitriões de Hyper-V localizados em clouds do VMM | Se os anfitriões Hyper-V forem geridos em clouds do VMM, pode registar o servidor VMM no cofre dos Serviços de Recuperação.<br/><br/> No servidor VMM, pode instalar o Fornecedor do Site Recovery para orquestrar a replicação com o Azure.<br/><br/> Precisa de redes lógicas e de VM configuradas para configurar o mapeamento da rede. Uma rede VM deve ser ligada a uma rede lógica que está associada à nuvem.
-**Anfitrião Hyper-V** | Os servidores Hyper-V podem ser implementados com ou sem o servidor VMM. | Se não existir nenhum servidor VMM, o Fornecedor do Site Recovery é instalado no anfitrião para orquestrar a replicação com o Site Recovery através da Internet. Se existir um servidor VMM, o fornecedor é instalado no mesmo, e não no anfitrião.<br/><br/> O agente dos Serviços de Recuperação é instalado no anfitrião para processar a replicação de dados.<br/><br/> As comunicações provenientes do Fornecedor e do agente são seguras e encriptadas. Também são encriptados os dados replicados no armazenamento do Azure.
-**VMs de Hyper-V** | Precisa de uma ou mais VMs no servidor de anfitrião Hyper-V. | Nada tem de estar explicitamente instalado nas VMs
+<a id="replication-process" class="xliff"></a>
 
-
-### <a name="replication-process"></a>Processo de replicação
+### Processo de replicação
 
 1. São configurados os componentes do Azure. Recomendamos que configure as contas de armazenamento e de rede antes de iniciar a implementação do Site Recovery.
 2. Cria um cofre dos Serviços de Replicação para o Site Recovery e configura as definições do cofre, incluindo:
@@ -118,7 +123,9 @@ Segue-se aquilo de que precisa para replicar VMs de Hyper-V para o Azure.
 4. As alterações aos dados são registadas e a replicação das alterações delta para o Azure começa depois de concluída a replicação inicial. As alterações registadas relativas a um item são guardadas num ficheiro .hrl.
 5. Executa uma ativação pós-falha de teste, para confirmar que está tudo a funcionar.
 
-### <a name="failover-and-failback-process"></a>Processo de ativação pós-falha e de reativação pós-falha
+<a id="failover-and-failback-process" class="xliff"></a>
+
+### Processo de ativação pós-falha e de reativação pós-falha
 
 1. Executa uma [ativação pós-falha](site-recovery-failover.md) planeada ou não planeada a partir das VMs de Hyper-V no local para o Azure. Se executar uma ativação pós-falha planeada, as VMs de origem são desligadas para garantir que não há perda de dados.
 2. Pode fazer a ativação pós-falha de uma máquina individual ou criar [planos de recuperação](site-recovery-create-recovery-plans.md) para orquestrar a ativação pós-falha de várias máquinas.
@@ -135,7 +142,9 @@ Segue-se aquilo de que precisa para replicar VMs de Hyper-V para o Azure.
 ![Componentes](./media/site-recovery-components/arch-onprem-onprem-azure-vmm.png)
 
 
-## <a name="replicate-to-a-secondary-site"></a>Replicar para um site secundário
+<a id="replicate-to-a-secondary-site" class="xliff"></a>
+
+## Replicar para um site secundário
 
 Pode replicar o que se segue para o seu site secundário:
 
@@ -144,15 +153,18 @@ Pode replicar o que se segue para o seu site secundário:
 - **Hyper-V**: VMs Hyper-V no local em execução em [anfitriões Hyper-V suportados](site-recovery-support-matrix-to-sec-site.md#on-premises-servers), geridos em clouds do VMM. [anfitriões suportados](site-recovery-support-matrix-to-azure.md#support-for-datacenter-management-servers). Pode replicar VMs Hyper-V que executem qualquer sistema operativo convidado [suportado pelo Hyper-V e o Azure](https://technet.microsoft.com/en-us/windows-server-docs/compute/hyper-v/supported-windows-guest-operating-systems-for-hyper-v-on-windows).
 
 
-## <a name="vmwarephysical-to-a-secondary-site"></a>VMware/físico para um site secundário
+<a id="vmwarephysical-to-a-secondary-site" class="xliff"></a>
+
+## VMware/físico para um site secundário
 
 Pode replicar VMs de VMware ou servidores físicos para um site secundário com o InMage Scout.
 
-### <a name="components"></a>Componentes
+<a id="components" class="xliff"></a>
+
+### Componentes
 
 **Área** | **Componente** | **Detalhes**
 --- | --- | ---
-**Azure** | InMage Scout. | Para obter o InMage Scout, precisa de uma subscrição do Azure.<br/><br/> Depois de criar um cofre dos Serviços de Recuperação, transfere o InMage Scout e instala as atualizações mais recentes para configurar a implementação.
 **Servidor de processos** | Localizado no site primário | O servidor de processos é implementado para lidar com a colocação em cache, a compressão e a otimização de dados.<br/><br/> Ele também faz a instalação por push do Agente Unified nas máquinas que pretende proteger.
 **Servidor de configuração** | Localizado no site secundário | O servidor de configuração gere, configura e monitoriza a implementação, utilizando o site de gestão ou a consola do vContinuum.
 **Servidor de vContinuum** | Opcional. Instalado na mesma localização que o servidor de configuração. | Fornece uma consola de gestão e monitorização do seu ambiente protegido.
@@ -161,7 +173,9 @@ Pode replicar VMs de VMware ou servidores físicos para um site secundário com 
 **VMs/servidores físicos** |  Agente Unificado instalado nas VMs VMware e servidores físicos que pretende replicar. | O agente atua como um fornecedor de comunicação entre todos os componentes.
 
 
-### <a name="replication-process"></a>Processo de replicação
+<a id="replication-process" class="xliff"></a>
+
+### Processo de replicação
 
 1. Configure servidores de componentes em cada site (configuração, processo, destino principal) e instale o agente Unified nas máquinas que pretende replicar.
 2. Após a replicação inicial, o agente em cada máquina envia alterações de replicação delta para o servidor de processos.
@@ -173,19 +187,22 @@ Pode replicar VMs de VMware ou servidores físicos para um site secundário com 
 
 
 
-## <a name="hyper-v-to-a-secondary-site"></a>Hyper-V para um site secundário
+<a id="hyper-v-to-a-secondary-site" class="xliff"></a>
+
+## Hyper-V para um site secundário
 
 Segue-se aquilo de que precisa para replicar VMs de Hyper-V para um site secundário.
 
 
 **Área** | **Componente** | **Detalhes**
 --- | --- | ---
-**Azure** | Precisa de uma conta do Microsoft Azure. |
 **Servidor VMM** | Recomenda-se um servidor VMM no site primário e um no site secundário | Cada servidor VMM deve estar ligado à Internet.<br/><br/> Cada servidor deve ter, pelo menos, uma cloud privada do VMM, com o perfil de capacidade de Hyper-V definido.<br/><br/> O Fornecedor do Azure Site Recovery é instalado no servidor VMM. O Fornecedor coordena e orquestra a replicação com o serviço de Recuperação de Sites através da Internet. As comunicações entre o Fornecedor e o Azure são seguras e encriptadas.
 **Servidor Hyper-V** |  Um ou mais servidores de anfitriões Hyper-V nas clouds do VMM primárias e secundárias.<br/><br/> Os servidores devem estar ligados à Internet.<br/><br/> Os dados são replicados entre os servidores anfitrião primário e secundário Hyper-V através de LAN ou VPN mediante a utilização de Kerberos ou da autenticação de certificados.  
 **VMs de Hyper-V** | Localizadas no servidor de anfitrião Hyper-V de origem. | O servidor de anfitrião de origem deve ter, pelo menos, uma VM que queira replicar.
 
-### <a name="replication-process"></a>Processo de replicação
+<a id="replication-process" class="xliff"></a>
+
+### Processo de replicação
 
 1. É configurada a conta do Azure.
 2. Cria um cofre dos Serviços de Replicação para o Site Recovery e configura as definições do cofre, incluindo:
@@ -201,7 +218,9 @@ Segue-se aquilo de que precisa para replicar VMs de Hyper-V para um site secund�
 
 ![Local para local](./media/site-recovery-components/arch-onprem-onprem.png)
 
-### <a name="failover-and-failback"></a>Ativação pós-falha e reativação pós-falha
+<a id="failover-and-failback" class="xliff"></a>
+
+### Ativação pós-falha e reativação pós-falha
 
 1. Executa uma [ativação pós-falha](site-recovery-failover.md) planeada ou não planeada entre os sites no local. Se executar uma ativação pós-falha planeada, as VMs de origem são desligadas para garantir que não há perda de dados.
 2. Pode fazer a ativação pós-falha de uma máquina individual ou criar [planos de recuperação](site-recovery-create-recovery-plans.md) para orquestrar a ativação pós-falha de várias máquinas.
@@ -211,7 +230,9 @@ Segue-se aquilo de que precisa para replicar VMs de Hyper-V para um site secund�
 7. Para que o site primário volte a ser a localização ativa, inicie uma ativação pós-falha planeada do site secundário para o primário, seguida de outra replicação inversa.
 
 
-## <a name="next-steps"></a>Passos seguintes
+<a id="next-steps" class="xliff"></a>
+
+## Passos seguintes
 
 - [Saiba mais](site-recovery-hyper-v-azure-architecture.md) sobre o fluxo de trabalho da replicação de Hyper-V.
 - [Verificar pré-requisitos](site-recovery-prereq.md)

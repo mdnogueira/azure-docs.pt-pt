@@ -14,14 +14,16 @@ ms.date: 04/22/2017
 ms.author: dkshir
 ms.custom: na
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 71fea4a41b2e3a60f2f610609a14372e678b7ec4
-ms.openlocfilehash: d0ccbcfa5fc8006590951707f7162f7864110f38
+ms.sourcegitcommit: d9ae8e8948d82b9695d7d144d458fe8180294084
+ms.openlocfilehash: 572dfc8965957c4667d4124b045ffbb835786a94
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 05/23/2017
 
 
 ---
-# <a name="connect-your-simulated-device-to-your-iot-hub-using-python"></a>Ligar o dispositivo simulado ao seu hub IoT com Python
+<a id="connect-your-simulated-device-to-your-iot-hub-using-python" class="xliff"></a>
+
+# Ligar o dispositivo simulado ao seu hub IoT com Python
 [!INCLUDE [iot-hub-selector-get-started](../../includes/iot-hub-selector-get-started.md)]
 
 No final deste tutorial, terá duas aplicações Python:
@@ -41,6 +43,10 @@ Para concluir este tutorial, precisa do seguinte:
 * [Node.js 4.0 ou posterior][lnk-node-download]. Certifique-se de que utiliza a instalação de 32 ou 64 bits, conforme exigido pela sua configuração. Esta é necessária para instalar a [ferramenta Explorador do Hub IoT][lnk-iot-hub-explorer].
 * Uma conta ativa do Azure. Se não tiver uma conta, pode criar uma [conta gratuita][lnk-free-trial] em apenas alguns minutos.
 
+> [!NOTE]
+> Os pacotes *pip* para `azure-iothub-service-client` e `azure-iothub-device-client` estão atualmente disponíveis apenas para o SO Windows. Para Linux/Mac OS, veja as secções específicas de SO Linux e Mac na publicação [Prepare your development environment for Python][lnk-python-devbox] (Preparar o seu ambiente de desenvolvimento para Python).
+> 
+
 [!INCLUDE [iot-hub-get-started-create-hub](../../includes/iot-hub-get-started-create-hub.md)]
 
 Criou o seu hub IoT. Utilize o nome de anfitrião e a cadeia de ligação do Hub IoT no resto deste tutorial.
@@ -49,7 +55,9 @@ Criou o seu hub IoT. Utilize o nome de anfitrião e a cadeia de ligação do Hub
 > Também pode utilizar a CLI baseada no Azure para criar facilmente o seu hub IoT numa linha de comandos. O artigo [Create an IoT hub using the Azure CLI 2.0][lnk-azure-cli-hub] (Criar um hub IoT com a CLI 2.0 do Azure) mostra-lhe os passos rápidos para o fazer. 
 > 
 
-## <a name="create-a-device-identity"></a>Criar uma identidade de dispositivo
+<a id="create-a-device-identity" class="xliff"></a>
+
+## Criar uma identidade de dispositivo
 Esta secção mostra os passos para criar uma aplicação de consola Python que cria uma identidade de dispositivo no registo de identidades do seu hub IoT. Só é possível ligar um dispositivo ao hub IoT, se aquele tiver uma entrada no registo de identidade. Para obter mais informações, veja a secção **Identity Registry (Registo de Identidades)** do [Hub IoT developer guide (Guia do programador do Hub IoT)][lnk-devguide-identity]. Ao executar esta aplicação de consola, será gerado um ID de dispositivo único e uma chave que o seu dispositivo pode utilizar para identificar-se quando enviar mensagens do dispositivo para a nuvem ao IoT Hub.
 
 1. Abra uma linha de comandos e instale o **SDK do Serviço Hub IoT do Azure para Python**. Depois de instalar o SDK, feche a linha de comandos.
@@ -134,7 +142,9 @@ Esta secção mostra os passos para criar uma aplicação de consola Python que 
 > 
 
 
-## <a name="create-a-simulated-device-app"></a>Criar uma aplicação de dispositivo simulada
+<a id="create-a-simulated-device-app" class="xliff"></a>
+
+## Criar uma aplicação de dispositivo simulada
 Esta secção mostra os passos para criar uma aplicação de consola Python que simula um dispositivo e envia mensagens do dispositivo para a cloud para o seu hub IoT.
 
 1. Abra uma linha de comandos nova e instale o SDK de Dispositivo do Hub IoT do Azure para Python, da seguinte forma. Após a instalação, feche a linha de comandos.
@@ -251,7 +261,9 @@ Esta secção mostra os passos para criar uma aplicação de consola Python que 
 > 
 > 
 
-## <a name="receive-messages-from-your-simulated-device"></a>Receber mensagens do dispositivo simulado
+<a id="receive-messages-from-your-simulated-device" class="xliff"></a>
+
+## Receber mensagens do dispositivo simulado
 Para receber mensagens de telemetria do seu dispositivo, tem de utilizar um ponto final compatível com os [Hubs de Eventos][lnk-event-hubs-overview] exposto pelo Hub IoT, que lê as mensagens do dispositivo para a cloud. Leia o tutorial [Get Started with Event Hubs][lnk-eventhubs-tutorial] (Introdução aos Hubs de Eventos) para obter informações sobre como processar mensagens a partir dos Hubs de Eventos relativas ao ponto final compatível com o Hub de Eventos do seu hub IoT. Os Hubs de Eventos ainda não suportam a telemetria em Python, pelo que pode criar uma aplicação de consola [Node.js](iot-hub-node-node-getstarted.md#D2C_node) ou [.NET](iot-hub-csharp-csharp-getstarted.md#D2C_csharp) baseada nos Hubs de Eventos para ler as mensagens dos dispositivos para a cloud a partir do Hub IoT. Este tutorial mostra como utilizar a [ferramenta Explorador do Hub IoT][lnk-iot-hub-explorer] par ler as mensagens deste dispositivo.
 
 1. Abra uma linha de comandos e instale o Explorador do Hub IoT. 
@@ -277,7 +289,9 @@ Para receber mensagens de telemetria do seu dispositivo, tem de utilizar um pont
 
     ![Mensagens do dispositivo para a cloud Python][2]
 
-## <a name="next-steps"></a>Passos seguintes
+<a id="next-steps" class="xliff"></a>
+
+## Passos seguintes
 Neste tutorial, configurou um novo Hub IoT no portal do Azure e, em seguida, criou uma identidade de dispositivo no registo de identidades do Hub IoT. Utilizou esta identidade de dispositivo para que a aplicação do dispositivo simulado pudesse enviar mensagens do dispositivo para a cloud ao Hub IoT. Viu as mensagens recebidas pelo hub IoT com a ajuda da ferramenta Explorador do Hub IoT. 
 
 Para explorar aprofundadamente o SDK Python para utilização no Hub IoT do Azure, visite este [repositório do GitHub][lnk-python-github]. Para rever as capacidades de mensagens do SDK do Serviço Hub IoT do Azure para Python, pode transferir e executar [iothub_messaging_sample.py][lnk-messaging-sample]. Para simulação do lado do dispositivo mediante a utilização do SDK de Dispositivo Hub IoT do Azure para Python, pode transferir e executar [iothub_client_sample.py][lnk-client-sample].
@@ -286,9 +300,10 @@ Para continuar a introdução ao Hub IoT e explorar outros cenários de IoT, vej
 
 * [Ligar o seu dispositivo][lnk-connect-device]
 * [Getting started with device management (Introdução à gestão de dispositivos)][lnk-device-management]
-* [Começar a utilizar o Edge IoT do Azure][lnk-gateway-SDK]
+* [Começar a utilizar o Edge IoT do Azure][lnk-iot-edge]
 
 Para saber como expandir a sua solução de IoT e processar mensagens do dispositivo para a cloud em escala, veja o tutorial [Process device-to-cloud messages (Processar mensagens do dispositivo para a cloud)][lnk-process-d2c-tutorial].
+[!INCLUDE [iot-hub-get-started-next-steps](../../includes/iot-hub-get-started-next-steps.md)]
 
 <!-- Images. -->
 [1]: ./media/iot-hub-python-getstarted/createdevice.png
@@ -311,6 +326,7 @@ Para saber como expandir a sua solução de IoT e processar mensagens do disposi
 [lnk-eventhubs-tutorial]: ../event-hubs/event-hubs-csharp-ephcs-getstarted.md
 [lnk-devguide-identity]: iot-hub-devguide-identity-registry.md
 [lnk-event-hubs-overview]: ../event-hubs/event-hubs-overview.md
+[lnk-python-devbox]: https://github.com/Azure/azure-iot-sdk-python/blob/master/doc/python-devbox-setup.md
 
 [lnk-process-d2c-tutorial]: iot-hub-csharp-csharp-process-d2c.md
 
@@ -318,6 +334,6 @@ Para saber como expandir a sua solução de IoT e processar mensagens do disposi
 [lnk-free-trial]: http://azure.microsoft.com/pricing/free-trial/
 
 [lnk-device-management]: iot-hub-node-node-device-management-get-started.md
-[lnk-gateway-SDK]: iot-hub-linux-gateway-sdk-get-started.md
+[lnk-iot-edge]: iot-hub-linux-iot-edge-get-started.md
 [lnk-connect-device]: https://azure.microsoft.com/develop/iot/
 

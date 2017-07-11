@@ -12,16 +12,19 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 04/11/2017
+ms.date: 07/10/2017
 ms.author: spelluru
-translationtype: Human Translation
-ms.sourcegitcommit: aaf97d26c982c1592230096588e0b0c3ee516a73
-ms.openlocfilehash: 834d01a446c77e69c325058fa00ed5860a82d891
-ms.lasthandoff: 04/27/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fc27849f3309f8a780925e3ceec12f318971872c
+ms.openlocfilehash: 59d8b23291adb1e680e70898f5bb82bb699be19d
+ms.contentlocale: pt-pt
+ms.lasthandoff: 06/14/2017
 
 
 ---
-# <a name="tutorial-create-a-pipeline-with-copy-activity-using-net-api"></a>Tutorial: Criar um pipeline com a Atividade de Cópia com a API .NET
+<a id="tutorial-create-a-pipeline-with-copy-activity-using-net-api" class="xliff"></a>
+
+# Tutorial: Criar um pipeline com a Atividade de Cópia com a API .NET
 > [!div class="op_single_selector"]
 > * [Descrição geral e pré-requisitos](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
 > * [Assistente de Cópia](data-factory-copy-data-wizard-tutorial.md)
@@ -32,23 +35,28 @@ ms.lasthandoff: 04/27/2017
 > * [API REST](data-factory-copy-activity-tutorial-using-rest-api.md)
 > * [API .NET](data-factory-copy-activity-tutorial-using-dotnet-api.md)
 
-Este tutorial mostra-lhe como criar e monitorizar uma fábrica de dados do Azure com a API .NET. O pipeline na fábrica de dados utiliza uma Atividade de Cópia para copiar dados do Armazenamento de Blobs do Azure para uma Base de Dados SQL do Azure.
+Neste artigo, vai aprender a utilizar a [API .NET](https://portal.azure.com) para criar uma fábrica de dados com um pipeline que copia dados de um armazenamento de blobs do Azure para uma base de dados do SQL Azure. Se não estiver familiarizado com o Azure Data Factory, leia o artigo [Introduction to Azure Data Factory](data-factory-introduction.md) (Introdução ao Azure Data Factory) antes de fazer este tutorial.   
 
-A Atividade de Cópia executa o movimento de dados no Azure Data Factory. A atividade utiliza a tecnologia de um serviço globalmente disponível que pode copiar dados entre vários arquivos de dados de uma forma segura, fiável e dimensionável. Veja o artigo [Atividades de Movimentos de Dados](data-factory-data-movement-activities.md) para obter detalhes sobre a Atividade de Cópia.
+Neste tutorial, vai criar um pipeline com uma atividade no mesmo: a Atividade de Cópia. A Atividade de Cópia copia dados de um arquivo de dados suportado para um arquivo de dados sink suportado. Para obter uma lista dos arquivos de dados suportados como origens e sinks, veja [Supported data stores](data-factory-data-movement-activities.md#supported-data-stores-and-formats) (Arquivos de dados suportados). A atividade utiliza a tecnologia de um serviço globalmente disponível que pode copiar dados entre vários arquivos de dados de uma forma segura, fiável e dimensionável. Para obter mais informações sobre a Atividade de Cópia, veja [Data Movement Activities](data-factory-data-movement-activities.md) (Atividades de Movimento de Dados).
 
-> [!NOTE]
-> Este artigo não abrange toda a API .NET do Data Factory. Veja [Data Factory .NET API Reference (Referência da API .NET do Data Factory)](https://msdn.microsoft.com/library/mt415893.aspx) para obter detalhes sobre o SDK .NET do Data Factory.
+Um pipeline pode ter mais de uma atividade. Além disso, pode encadear duas atividades (executar uma atividade após a outra) ao definir o conjunto de dados de saída de uma atividade como o conjunto de dados de entrada da outra. Para obter mais informações, veja [Multiple activities in a pipeline](data-factory-scheduling-and-execution.md#multiple-activities-in-a-pipeline) (Várias atividades num pipeline). 
+
+> [!NOTE] 
+> Para obter toda a documentação sobre a API .NET do Data Factory, veja [Data Factory .NET API Reference](/dotnet/api/index?view=azuremgmtdatafactories-4.12.1) (Referência da API .NET do Data Factory).
 > 
-> O pipeline de dados neste tutorial copia dados a partir de um arquivo de dados de origem para um arquivo de dados de destino. Não transforma dados de entrada para produzir dados de saída. Para ver um tutorial sobre como transformar dados através do Azure Data Factory, consulte [Tutorial: Build a pipeline to transform data using Hadoop cluster (Tutorial: Criar um pipeline para transformar dados com o cluster do Hadoop)](data-factory-build-your-first-pipeline.md).
+> O pipeline de dados neste tutorial copia dados a partir de um arquivo de dados de origem para um arquivo de dados de destino. Para ver um tutorial sobre como transformar dados através do Azure Data Factory, consulte [Tutorial: Build a pipeline to transform data using Hadoop cluster (Tutorial: Criar um pipeline para transformar dados com o cluster do Hadoop)](data-factory-build-your-first-pipeline.md).
 
+<a id="prerequisites" class="xliff"></a>
 
-## <a name="prerequisites"></a>Pré-requisitos
+## Pré-requisitos
 * Leia a [Descrição Geral e Pré-requisitos do Tutorial](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) para obter uma descrição geral do tutorial e concluir os passos de **pré-requisitos**.
 * Visual Studio 2012 ou 2013 ou 2015
 * Transferir e instalar o [SDK .NET do Azure](http://azure.microsoft.com/downloads/)
-* Azure PowerShell. Siga as instruções do artigo [Como instalar e configurar o Azure PowerShell](/powershell/azure/overview) para instalar o Azure PowerShell no seu computador. Utilize o Azure PowerShell para criar uma aplicação do Azure Active Directory.
+* Azure PowerShell. Siga as instruções do artigo [Como instalar e configurar o Azure PowerShell](../powershell-install-configure.md) para instalar o Azure PowerShell no seu computador. Utilize o Azure PowerShell para criar uma aplicação do Azure Active Directory.
 
-### <a name="create-an-application-in-azure-active-directory"></a>Criar uma Aplicação no Azure Active Directory
+<a id="create-an-application-in-azure-active-directory" class="xliff"></a>
+
+### Criar uma Aplicação no Azure Active Directory
 Crie uma aplicação no Azure Active Directory, crie um principal de serviço para a aplicação e atribua-a à função **Contribuinte do Data Factory**.
 
 1. Inicie o **Azure PowerShell**.
@@ -104,7 +112,7 @@ Crie uma aplicação no Azure Active Directory, crie um principal de serviço pa
 9. Obtenha o ID da aplicação.
 
     ```PowerShell
-    $azureAdApplication    
+    $azureAdApplication 
     ```
     Tome nota do ID da aplicação (applicationID) a partir do resultado.
 
@@ -115,7 +123,9 @@ Deve obter os quatro valores seguintes destes passos:
 * ID da aplicação
 * Palavra-passe (especificada no primeiro comando)
 
-## <a name="walkthrough"></a>Instruções
+<a id="walkthrough" class="xliff"></a>
+
+## Instruções
 1. Com o Visual Studio 2012/2013/2015, crie uma aplicação de consola de C# .NET.
    1. Inicie o **Visual Studio** 2012/2013/2015.
    2. Clique em **Ficheiro**, aponte para **Novo** e, em seguida, clique em **Projeto**.
@@ -204,6 +214,7 @@ Deve obter os quatro valores seguintes destes passos:
     );
     ```
 
+    Uma fábrica de dados pode ter um ou mais pipelines. Um pipeline pode conter uma atividade ou mais. Por exemplo, uma Atividade de Cópia para copiar dados de uma origem para um arquivo de dados de destino e uma atividade do Hive do HDInsight para executar um script do Hive para transformar dados de entrada em dados de saída do produto. Comecemos este passo com a criação da fábrica de dados.
 8. Adicione o código seguinte, que cria um **serviço ligado do Armazenamento do Azure**, ao método **Principal**.
 
    > [!IMPORTANT]
@@ -227,6 +238,11 @@ Deve obter os quatro valores seguintes destes passos:
     );
     ```
 
+    Os serviços ligados são criados numa fábrica de dados para ligar os seus arquivos de dados e serviços de computação a essa fábrica de dados. Neste tutorial, não vai utilizar serviços de computação, como o Azure HDInsight ou o Azure Data Lake Analytics. Vai utilizar dois arquivos de dados do tipo Armazenamento do Azure (origem) e Base de Dados SQL do Azure (destino). 
+
+    Portanto, cria dois serviços ligados com o nome AzureStorageLinkedService e AzureSqlLinkedService dos tipos: AzureStorage e AzureSqlDatabase.  
+
+    O AzureStorageLinkedService liga a sua conta do Armazenamento do Azure à fábrica de dados. Esta conta de armazenamento é aquela em que criou um contentor e para a qual carregou os dados como parte dos [pré-requisitos](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
 9. Adicione o código seguinte, que cria um **serviço ligado SQL do Azure**, ao método **Principal**.
 
    > [!IMPORTANT]
@@ -250,13 +266,14 @@ Deve obter os quatro valores seguintes destes passos:
     );
     ```
 
+    O AzureSqlLinkedService liga a sua base de dados SQL do Azure à fábrica de dados. Os dados copiados do armazenamento de blobs são armazenados nesta base de dados. Como parte dos [pré-requisitos](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md), criou a tabela emp nesta base de dados.
 10. Adicione o código seguinte, que cria **conjuntos de dados de entrada e saída**, ao método **Principal**.
 
     ```csharp
     // create input and output datasets
     Console.WriteLine("Creating input and output datasets");
-    string Dataset_Source = "DatasetBlobSource";
-    string Dataset_Destination = "DatasetAzureSqlDestination";
+    string Dataset_Source = "InputDataset";
+    string Dataset_Destination = "OutputDataset";
 
     Console.WriteLine("Creating input dataset of type: Azure Blob");
     client.Datasets.CreateOrUpdate(resourceGroupName, dataFactoryName,
@@ -325,14 +342,23 @@ Deve obter os quatro valores seguintes destes passos:
             }
         });
     ```
+    
+    No passo anterior, criou serviços ligados para ligar a sua conta de Armazenamento do Azure e uma base de dados SQL do Azure à fábrica de dados. Neste passo, vai definir dois conjuntos de dados, com os nomes InputDataset e OutputDataset, que representam os dados de entrada e saída que estão armazenados nos arquivos de dados referenciados por AzureStorageLinkedService e AzureSqlLinkedService, respetivamente.
 
-11. Adicione o código seguinte, que **cria e ativa um pipeline**, ao método **Principal**. Este pipeline tem um **CopyActivity** que assume **BlobSource** como uma origem e **BlobSink** como um sink.
+    O serviço ligado do armazenamento do Azure especifica a cadeia de ligação que o serviço Data Factory utiliza no tempo de execução para ligar à sua conta de armazenamento do Azure. Além disso, o conjunto de dados de blobs de entrada (InputDataset) especifica o contentor e a pasta que contém os dados de entrada.  
+
+    Do mesmo modo, o serviço ligado Base de Dados SQL do Azure especifica a cadeia de ligação que o serviço Data Factory utiliza no tempo de execução para ligar à sua base de dados SQL do Azure. E o conjunto de dados da tabela SQL de saída (OututDataset) especifica a tabela na base de dados para a qual os dados do armazenamento de blobs vão ser copiados.
+
+    Neste passo, vai criar um conjunto de dados com o nome InputDataset que aponta para um ficheiro de blobs (emp.text) na pasta raiz de um contentor de blobs (adftutorial) no Armazenamento do Azure, representado pelo serviço ligado AzureStorageLinkedService. Se não especificar um valor para fileName (ou se o ignorar), os dados de todos os blobs da pasta de entrada são copiados para o destino. Neste tutorial, vai especificar um valor para fileName.    
+
+    Neste passo, vai criar um conjunto de dados de saída com o nome **OutputDataset**. Este conjunto de dados aponta para uma tabela SQL na Base de Dados SQL do Azure, representada por **AzureSqlLinkedService**.
+11. Adicione o código seguinte, que **cria e ativa um pipeline**, ao método **Principal**. Neste passo, vai criar um pipeline com uma **atividade de cópia** que utiliza **InputDataset** como entrada e **OutputDataset** como saída.
 
     ```csharp
     // create a pipeline
     Console.WriteLine("Creating a pipeline");
-    DateTime PipelineActivePeriodStartTime = new DateTime(2016, 8, 9, 0, 0, 0, 0, DateTimeKind.Utc);
-    DateTime PipelineActivePeriodEndTime = PipelineActivePeriodStartTime.AddMinutes(60);
+    DateTime PipelineActivePeriodStartTime = new DateTime(2017, 5, 11, 0, 0, 0, 0, DateTimeKind.Utc);
+    DateTime PipelineActivePeriodEndTime = new DateTime(2017, 5, 12, 0, 0, 0, 0, DateTimeKind.Utc);
     string PipelineName = "ADFTutorialPipeline";
 
     client.Pipelines.CreateOrUpdate(resourceGroupName, dataFactoryName,
@@ -383,6 +409,13 @@ Deve obter os quatro valores seguintes destes passos:
         });
     ```
 
+    Tenha em atenção os seguintes pontos:
+   
+    - Na secção atividades, existe apenas uma atividade cujo **type** está definido como **Copy**. Para obter mais informações sobre a atividade de cópia, veja [Data movement activities](data-factory-data-movement-activities.md) (Atividades de movimento de dados). Nas soluções do Data Factory, também pode utilizar [Data transformation activities](data-factory-data-transformation-activities.md) (Atividades de transformação de dados).
+    - A entrada da atividade está definida como **InputDataset** e a saída como **OutputDataset**. 
+    - Na secção **typeProperties**, **BlobSource** está especificado como o tipo de origem e **SqlSink** como o tipo de sink. Para obter uma lista completa dos arquivos de dados que a atividade de cópia suporta como origens e sinks, veja [Supported data stores](data-factory-data-movement-activities.md#supported-data-stores-and-formats) (Arquivos de dados suportados). Para saber como utilizar um arquivo de dados suportado específico como origem/sink, clique na ligação na tabela.  
+   
+    Atualmente, é o conjunto de dados de saída que controla a agenda. Neste tutorial, o conjunto de dados de saída está configurado para produzir um setor uma vez por hora. As horas de início e de fim do pipeline têm um dia de diferença, ou seja, 24 horas. Desta forma, o pipeline produz 24 setores de conjuntos de dados de saída.
 12. Adicione o código seguinte ao método **Principal** para obter o estado de um setor de dados do conjunto de dados de saída. Neste exemplo, é esperado apenas um setor.
 
     ```csharp
@@ -455,6 +488,9 @@ Deve obter os quatro valores seguintes destes passos:
 
 14. Adicione o método de ajuda seguinte, utilizado pelo método **Principal**, à classe de **Programa**.
 
+    > [!NOTE] 
+    > Quando copiar e colar o código a seguir, certifique-se de que o código copiado está ao mesmo nível que o método Main.
+
     ```csharp
     public static async Task<string> GetAuthorizationHeader()
     {
@@ -484,15 +520,19 @@ Deve obter os quatro valores seguintes destes passos:
 18. Execute o exemplo, clicando em **Depurar** -> **Iniciar Depuração** no menu. Quando vir **A obter detalhes da execução de um setor de dados**, aguarde alguns minutos e prima **ENTER**.
 19. Utilize o portal do Azure para verificar se a fábrica de dados **APITutorialFactory** foi criada com os artefactos seguintes:
    * Serviço ligado: **LinkedService_AzureStorage**
-   * Conjunto de dados: **DatasetBlobSource** e **DatasetBlobDestination**.
+   * Conjunto de dados: **InputDataset** e **OutputDataset**.
    * Pipeline: **PipelineBlobSample**
 20. Verifique se os registos dos dois colaboradores são criados na tabela **emp** na base de dados SQL do Azure especificada.
 
-## <a name="next-steps"></a>Passos Seguintes
-| Tópico | Descrição |
-|:--- |:--- |
-| [Pipelines](data-factory-create-pipelines.md) |Este artigo ajuda-o a compreender os pipelines e as atividades no Azure Data Factory. |
-| [Conjuntos de dados](data-factory-create-datasets.md) |Este artigo ajuda-o a compreender os conjuntos de dados no Azure Data Factory. |
-| [Agendamento e execução](data-factory-scheduling-and-execution.md) |Este artigo explica os aspetos de agendamento e execução do modelo da aplicação do Azure Data Factory. |
-[Referência da API .NET do Data Factory](/dotnet/api/) | Fornece detalhes sobre o SDK .NET do Data Factory (procure Microsoft.Azure.Management.DataFactories.Models na vista de árvore).
+<a id="next-steps" class="xliff"></a>
+
+## Passos seguintes
+Para obter toda a documentação sobre a API .NET do Data Factory, veja [Data Factory .NET API Reference](/dotnet/api/index?view=azuremgmtdatafactories-4.12.1) (Referência da API .NET do Data Factory).
+
+Neste tutorial, utilizou o armazenamento de blobs do Azure como arquivo de dados de origem e uma base de dados SQL do Azure como arquivo de dados de destino numa operação de cópia. A tabela seguinte disponibiliza uma lista dos arquivos de dados que a atividade de cópia suporta como origens e destinos: 
+
+[!INCLUDE [data-factory-supported-data-stores](../../includes/data-factory-supported-data-stores.md)]
+
+Para saber como copiar dados de/para um arquivo de dados, clique na ligação relativa a esse arquivo na tabela.
+
 

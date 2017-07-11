@@ -13,16 +13,19 @@ ms.devlang: dotnet
 ms.workload: search
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
-ms.date: 04/21/2017
+ms.date: 05/22/2017
 ms.author: brjohnst
-translationtype: Human Translation
-ms.sourcegitcommit: 9eafbc2ffc3319cbca9d8933235f87964a98f588
-ms.openlocfilehash: 52dcb10495c564c5d8058b9c786b4cd331b6ae18
-ms.lasthandoff: 04/22/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 125f05f5dce5a0e4127348de5b280f06c3491d84
+ms.openlocfilehash: 0531b5c3b63a3fa54bb331f3d8d09c8119e789ea
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/22/2017
 
 
 ---
-# <a name="create-an-azure-search-index-using-the-net-sdk"></a>Criar um índice da Azure Search utilizando o SDK .NET
+<a id="create-an-azure-search-index-using-the-net-sdk" class="xliff"></a>
+
+# Criar um índice da Azure Search utilizando o SDK .NET
 > [!div class="op_single_selector"]
 > * [Descrição geral](search-what-is-an-index.md)
 > * [Portal](search-create-index-portal.md)
@@ -40,7 +43,9 @@ Antes de consultar este guia e criar um índice, deverá já ter [criado um serv
 >
 >
 
-## <a name="identify-your-azure-search-services-admin-api-key"></a>Identificar a sua chave de API do administrador do serviço Azure Search
+<a id="identify-your-azure-search-services-admin-api-key" class="xliff"></a>
+
+## Identificar a sua chave de API do administrador do serviço Azure Search
 Agora que aprovisionou um serviço do Azure Search, está quase pronto para emitir pedidos HTTP contra o seu ponto final de serviço utilizando o SDK .NET. Em primeiro lugar, precisa de obter uma das chaves de API que foi gerada para o serviço de pesquisa que aprovisionou. O SDK .NET irá enviar esta chave de API em cada pedido para o seu serviço. Ter uma chave válida estabelece fidedignidade, numa base por pedido, entre a aplicação a enviar o pedido e o serviço que o processa.
 
 1. Para localizar as chaves de API do seu serviço, inicie sessão no [portal do Azure](https://portal.azure.com/)
@@ -56,16 +61,22 @@ Para o efeito de criação de um índice, pode utilizar tanto a chave de adminis
 
 <a name="CreateSearchServiceClient"></a>
 
-## <a name="create-an-instance-of-the-searchserviceclient-class"></a>Criar uma instância da classe SearchServiceClient
+<a id="create-an-instance-of-the-searchserviceclient-class" class="xliff"></a>
+
+## Criar uma instância da classe SearchServiceClient
 Para começar a utilizar o SDK .NET dAzure Search, terá de criar uma instância da classe `SearchServiceClient`. Esta classe tem vários construtores. O pretendido recebe o nome do serviço de pesquisa e um objeto `SearchCredentials` como parâmetros. `SearchCredentials` molda a sua chave de API.
 
-O código abaixo cria um novo `SearchServiceClient` utilizando valores para o nome do serviço de pesquisa e a chave de API armazenados num ficheiro de configuração da aplicação (`app.config` ou `web.config`):
+O código abaixo cria um novo `SearchServiceClient` com valores para o nome do serviço de pesquisa e a chave de API armazenados num ficheiro de configuração da aplicação (`appsettings.json` no caso do [exemplo de aplicação](http://aka.ms/search-dotnet-howto)):
 
 ```csharp
-string searchServiceName = ConfigurationManager.AppSettings["SearchServiceName"];
-string adminApiKey = ConfigurationManager.AppSettings["SearchServiceAdminApiKey"];
+private static SearchServiceClient CreateSearchServiceClient(IConfigurationRoot configuration)
+{
+    string searchServiceName = configuration["SearchServiceName"];
+    string adminApiKey = configuration["SearchServiceAdminApiKey"];
 
-SearchServiceClient serviceClient = new SearchServiceClient(searchServiceName, new SearchCredentials(adminApiKey));
+    SearchServiceClient serviceClient = new SearchServiceClient(searchServiceName, new SearchCredentials(adminApiKey));
+    return serviceClient;
+}
 ```
 
 `SearchServiceClient` tem uma propriedade `Indexes`. Esta propriedade fornece todos os métodos de que necessita para criar, listar, atualizar ou eliminar os índices da Azure Search.
@@ -77,7 +88,9 @@ SearchServiceClient serviceClient = new SearchServiceClient(searchServiceName, n
 
 <a name="DefineIndex"></a>
 
-## <a name="define-your-azure-search-index"></a>Definir o índice da Azure Search
+<a id="define-your-azure-search-index" class="xliff"></a>
+
+## Definir o índice da Azure Search
 Uma única chamada para o método `Indexes.Create` irá criar o índice. Este método aceita como parâmetro um objeto `Index` que define o índice da Azure Search. Tem de criar um objeto `Index` e inicializá-lo da seguinte forma:
 
 1. Defina a propriedade `Name` do objeto `Index` para o nome do seu índice.
@@ -93,13 +106,19 @@ Uma única chamada para o método `Indexes.Create` irá criar o índice. Este m�
 Para o nosso exemplo, atribuímos o nome "hotéis" ao nosso índice e definimos os nossos campos com uma classe de modelo. Cada propriedade da classe do modelo tem atributos que determinam os comportamentos relacionados com a pesquisa do campo de índice correspondente. A classe de modelo é definida da seguinte forma:
 
 ```csharp
+using System;
+using Microsoft.Azure.Search;
+using Microsoft.Azure.Search.Models;
+using Microsoft.Spatial;
+using Newtonsoft.Json;
+
 // The SerializePropertyNamesAsCamelCase attribute is defined in the Azure Search .NET SDK.
 // It ensures that Pascal-case property names in the model class are mapped to camel-case
 // field names in the index.
 [SerializePropertyNamesAsCamelCase]
 public partial class Hotel
 {
-    [Key]
+    [System.ComponentModel.DataAnnotations.Key]
     [IsFilterable]
     public string HotelId { get; set; }
 
@@ -161,7 +180,9 @@ var definition = new Index()
 };
 ```
 
-## <a name="create-the-index"></a>Criar o índice
+<a id="create-the-index" class="xliff"></a>
+
+## Criar o índice
 Agora que tem um objeto `Index` inicializado, pode criar o índice ao chamar simplesmente `Indexes.Create` no seu objeto `SearchServiceClient`:
 
 ```csharp
@@ -181,7 +202,9 @@ serviceClient.Indexes.Delete("hotels");
 > 
 > 
 
-## <a name="next-steps"></a>Passos seguintes
+<a id="next-steps" class="xliff"></a>
+
+## Passos seguintes
 Depois de criar um índice da Azure Search, estará pronto para [carregar o conteúdo para o índice](search-what-is-data-import.md) para que possa começar a pesquisar os seus dados.
 
 

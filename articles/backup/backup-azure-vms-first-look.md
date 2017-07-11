@@ -12,16 +12,19 @@ ms.workload: storage-backup-recovery
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: hero-article
-ms.date: 3/10/2017
+ms.date: 6/14/2017
 ms.author: markgal;
-translationtype: Human Translation
-ms.sourcegitcommit: c1cd1450d5921cf51f720017b746ff9498e85537
-ms.openlocfilehash: 8883ff1601c521d05068452b1b58cadaee1a941f
-ms.lasthandoff: 03/14/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: ef1e603ea7759af76db595d95171cdbe1c995598
+ms.openlocfilehash: 61328e32763faea90074fc6d499e660c4109ab6d
+ms.contentlocale: pt-pt
+ms.lasthandoff: 06/16/2017
 
 
 ---
-# <a name="first-look-backing-up-azure-virtual-machines"></a>Primeiras impressões: efetuar uma cópia de segurança das máquinas virtuais do Azure
+<a id="first-look-backing-up-azure-virtual-machines" class="xliff"></a>
+
+# Primeiras impressões: efetuar uma cópia de segurança das máquinas virtuais do Azure
 > [!div class="op_single_selector"]
 > * [Proteger VMs com um cofre dos serviços de recuperação](backup-azure-vms-first-look-arm.md)
 > * [Proteger VMs do Azure com um cofre das Cópias de Segurança](backup-azure-vms-first-look.md)
@@ -43,15 +46,21 @@ Para concluir com êxito o tutorial seguinte, estes pré-requisitos têm de exis
 >
 >
 
-## <a name="create-a-backup-vault"></a>Criar um cofre de cópia de segurança
+<a id="create-a-backup-vault" class="xliff"></a>
+
+## Criar um cofre de cópia de segurança
 Um cofre de cópia de segurança é uma entidade que armazena todas as cópias de segurança e os pontos de recuperação que foram criados ao longo do tempo. O cofre de cópia de segurança também contém as políticas de cópia de segurança que são aplicadas às máquinas virtuais cuja cópia de segurança está a ser criada.
 
 > [!IMPORTANT]
-> A partir de março de 2017, já não pode utilizar o portal clássico para criar cofres de Cópia de Segurança. Os cofres de Cópia de Segurança existentes continuam a ser suportados e é possível [utilizar o Azure PowerShell para criar cofres de Cópia de Segurança](./backup-client-automation-classic.md#create-a-backup-vault). No entanto, a Microsoft recomenda a criação de cofres de Serviços de Recuperação para todas as implementações, uma vez que os melhoramentos futuros se aplicam apenas a cofres de Serviços de Recuperação.
+> A partir de março de 2017, já não pode utilizar o portal clássico para criar cofres de Cópia de Segurança.
+> Agora pode atualizar os cofres de Cópia de Segurança para cofres dos Serviços de Recuperação. Para obter detalhes, veja o artigo [Atualizar um cofre de Cópia de Segurança para um cofre dos Serviços de Recuperação](backup-azure-upgrade-backup-to-recovery-services.md). Recomendamos que atualize os cofres de Cópia de Segurança para cofres dos Serviços de Recuperação.<br/> **A partir de 1 de novembro de 2017**:
+>- Quaisquer cofres de Cópia e Segurança restantes serão atualizados automaticamente para cofres dos Serviços de Recuperação.
+>- Não vai conseguir aceder aos dados de cópia de segurança no portal clássico. Em vez disso, utilize o portal do Azure para aceder aos dados de cópia de segurança em cofres dos Serviços de Recuperação.
+>
 
+<a id="discover-and-register-azure-virtual-machines" class="xliff"></a>
 
-
-## <a name="discover-and-register-azure-virtual-machines"></a>Detetar e registar máquinas virtuais do Azure
+## Detetar e registar máquinas virtuais do Azure
 Antes de registar a VM com um cofre, execute o processo de deteção para identificar VMs novas. Deste modo, devolve uma lista de máquinas virtuais na subscrição, juntamente com informações adicionais, como a região e o nome do serviço em nuvem.
 
 1. Inicie sessão no [Portal Clássico do Azure](http://manage.windowsazure.com/)
@@ -98,12 +107,16 @@ Antes de registar a VM com um cofre, execute o processo de deteção para identi
 
     ![Estado do registo 2](./media/backup-azure-vms/register-status02.png)
 
-## <a name="install-the-vm-agent-on-the-virtual-machine"></a>Instalar o Agente da VM na máquina virtual
+<a id="install-the-vm-agent-on-the-virtual-machine" class="xliff"></a>
+
+## Instalar o Agente da VM na máquina virtual
 O Agente da VM do Azure tem de estar instalado na máquina virtual do Azure para que a extensão da Cópia de Segurança funcione. Se a VM foi criada a partir da galeria do Azure, o Agente da VM já se encontra presente na VM; pode avançar para [proteger as suas VMs](backup-azure-vms-first-look.md#create-the-backup-policy).
 
 Se a VM migrou a partir de um datacenter no local, a VM, provavelmente, não tem o Agente da VM instalado. Tem de instalar o Agente da VM na máquina virtual antes de prosseguir para a proteção da VM. Para obter passos detalhados sobre como instalar o Agente da VM, consulte a [secção Agente da VM do artigo VMs de Cópia de Segurança](backup-azure-vms-prepare.md#vm-agent).
 
-## <a name="create-the-backup-policy"></a>Criar a política de cópias de segurança
+<a id="create-the-backup-policy" class="xliff"></a>
+
+## Criar a política de cópias de segurança
 Antes de acionar a tarefa de cópia de segurança inicial, defina a agenda quando forem tirados instantâneos da cópia de segurança. A agenda quando são tirados instantâneos de cópia de segurança e o período de tempo no qual estes instantâneos são mantidos, são a política de cópia de segurança. As informações de retenção baseiam-se no esquema de rotação de cópia de segurança Avô-pai-filho.
 
 1. Navegue para o cofre de cópia de segurança em **Serviços de Recuperação** no portal Clássico do Azure e clique em **Itens Registados**.
@@ -140,7 +153,9 @@ Antes de acionar a tarefa de cópia de segurança inicial, defina a agenda quand
 
     Agora que estabeleceu a política, vá para o passo seguinte e execute a cópia de segurança inicial.
 
-## <a name="initial-backup"></a>Cópia de segurança inicial
+<a id="initial-backup" class="xliff"></a>
+
+## Cópia de segurança inicial
 Após uma máquina virtual ter sido protegida com uma política, pode ver essa relação no separador **Itens Protegidos**. Enquanto a cópia de segurança inicial não ocorrer, o **Estado de Proteção** é **Protegido - (cópia de segurança inicial pendente)**. Por predefinição, a primeira cópia de segurança agendada é a *cópia de segurança inicial*.
 
 ![Cópia de segurança pendente](./media/backup-azure-vms-first-look/protection-pending-border.png)
@@ -164,13 +179,17 @@ Para iniciar a cópia de segurança inicial agora:
    >
    >
 
-## <a name="next-steps"></a>Passos seguintes
+<a id="next-steps" class="xliff"></a>
+
+## Passos seguintes
 Agora que efetuou com êxito a cópia de segurança de uma VM, existem vários passos seguintes que podem ser úteis. O passo mais lógico é familiarizar-se com o restauro de dados para uma VM. No entanto, existem tarefas de gestão que o irão ajudar a compreender como manter os seus dados seguros e minimizar os custos.
 
 * [Gerir e monitorizar as máquinas virtuais](backup-azure-manage-vms.md)
 * [Monitorizar máquinas virtuais](backup-azure-restore-vms.md)
 * [Orientação na resolução de problemas](backup-azure-vms-troubleshoot.md)
 
-## <a name="questions"></a>Tem dúvidas?
+<a id="questions" class="xliff"></a>
+
+## Tem dúvidas?
 Se tiver dúvidas ou se houver alguma funcionalidade que gostaria de ver incluída, [envie-nos comentários](http://aka.ms/azurebackup_feedback).
 

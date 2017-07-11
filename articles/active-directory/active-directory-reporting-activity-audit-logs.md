@@ -13,17 +13,19 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 05/04/2017
+ms.date: 07/05/2017
 ms.author: markvi
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 2db2ba16c06f49fd851581a1088df21f5a87a911
-ms.openlocfilehash: 4065682658bdd99066266b8b4e5e4c4605ff3db9
+ms.sourcegitcommit: c785ad8dbfa427d69501f5f142ef40a2d3530f9e
+ms.openlocfilehash: d8c49272789e7d33c6f0684875765a1ecea5a2ff
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/08/2017
+ms.lasthandoff: 05/26/2017
 
 
 ---
-# <a name="audit-activity-reports-in-the-azure-active-directory-portal"></a>Relatório de atividade de auditoria no portal do Azure Active Directory 
+<a id="audit-activity-reports-in-the-azure-active-directory-portal" class="xliff"></a>
+
+# Relatório de atividade de auditoria no portal do Azure Active Directory 
 
 Com os relatórios no Azure Active Directory (Azure AD), obtenha todas as informações de que precisa para determinar o estado de funcionamento do seu ambiente.
 
@@ -38,9 +40,17 @@ A arquitetura de relatórios no Azure AD consiste nos seguintes componentes:
 
 Este tópico fornece-lhe uma descrição geral das atividades de auditoria.
  
+<a id="who-can-access-the-data" class="xliff"></a>
+
+## Quem pode aceder aos dados?
+* Utilizadores na função de Administrador de Segurança ou de Leitor de Segurança
+* Administradores Globais
+* Os utilizadores individuais (não administradores) podem ver as suas próprias atividades
 
 
-## <a name="audit-logs"></a>Registos de auditoria
+<a id="audit-logs" class="xliff"></a>
+
+## Registos de auditoria
 
 Os registos de auditoria no Azure Active Directory fornecem registos das atividades de sistema para efeitos de conformidade.  
 O primeiro ponto de entrada para todos os dados de auditoria é **Registos de auditoria** na secção **Atividade** do **Azure Active Directory**.
@@ -70,7 +80,9 @@ Ao clicar num item na vista de lista, obtém todos os detalhes sobre o mesmo.
 ![Registos de auditoria](./media/active-directory-reporting-activity-audit-logs/22.png "Registos de auditoria")
 
 
-## <a name="filtering-audit-logs"></a>Filtrar registos de auditoria
+<a id="filtering-audit-logs" class="xliff"></a>
+
+## Filtrar registos de auditoria
 
 Para limitar os dados comunicados a um nível que funcione para si, pode filtrar os dados de auditoria através dos seguintes campos:
 
@@ -102,10 +114,11 @@ O filtro **categoria** permite-lhe selecionar um dos seguintes filtros:
 - Diretório principal
 - Gestão de palavras-passe personalizada
 - Gestão de grupos self-service
-- Aprovisionamento de contas
-- Reversão de palavras-passe automatizada
-- utilizadores convidados
+- Aprovisionamento da conta - substituição automatizada de palavra-passe
+- Utilizadores convidados
 - Serviço MIM
+- Identity Protection
+- B2C
 
 O filtro **tipo de recurso de atividade** permite-lhe selecionar um dos seguintes filtros:
 
@@ -124,161 +137,23 @@ Quando seleciona **Grupo** como o **tipo de recurso de atividade**, obtém uma c
 - O365
 
 
-
-
 O filtro **atividade** baseia-se na categoria e na seleção de Tipo de recurso de atividade que fizer. Pode selecionar uma atividade específica que queira ver ou selecionar todas. 
 
-| Categoria de Atividade| Tipo de Recurso de Atividade| Atividade |
-| :-- | :-: | :-- |
-| Diretório do Núcleo| Grupo| Eliminar Definições de Grupo|
-| Diretório do Núcleo| Diretório| Atualizar Domínio|
-| Diretório do Núcleo| Diretório| Remover Parceiro da Empresa|
-| Diretório do Núcleo| Utilizador| Atualizar Função|
-| Diretório do Núcleo| Utilizador| Adicionar Função a Partir de Modelo|
-| Diretório do Núcleo| Grupo| Adicionar Atribuição de Função de Aplicação a Grupo|
-| Diretório do Núcleo| Grupo| Iniciar Aplicação de Licença Baseada em Grupo a Utilizadores|
-| Diretório do Núcleo| Aplicação| Adicionar Principal de Serviço|
-| Diretório do Núcleo| Política| Atualizar Política|
-| Diretório do Núcleo| Política| Adicionar Política ao Principal de Serviço|
-| Diretório do Núcleo| Dispositivo| Adicionar Proprietário Registado ao Dispositivo|
-| Diretório do Núcleo| Dispositivo| Adicionar Utilizadores Registados ao Dispositivo|
-| Diretório do Núcleo| Dispositivo| Atualizar Configuração de Dispositivo|
-| Gestão de Palavra-passe Personalizada| Utilizador| Repor Palavra-passe (personalizada)|
-| Gestão de Palavra-passe Personalizada| Utilizador| Desbloquear Conta de Utilizador (personalizado)|
-| Gestão de Palavra-passe Personalizada| Utilizador| Repor Palavra-passe (Por Administrador)|
-| Gestão de Grupos Personalizada| Grupo| Eliminar Pedido Pendente para Aderir a Um Grupo|
-| Aprovisionamento de Contas| Aplicação| Processo de Caução|
-| Rollover de Palavra-passe Automatizada| Aplicação| Rollover de Palavra-passe Automatizada|
-| Utilizadores Convidados| Outros| Convites em Lote Processados|
-| Diretório do Núcleo| Diretório| Remover Domínio Verificado|
-| Diretório do Núcleo| Diretório| Adicionar Domínio Não Verificado|
-| Diretório do Núcleo| Diretório| Adicionar Domínio Verificado|
-| Diretório do Núcleo| Diretório| Definir Funcionalidade de Diretório em Inquilino|
-| Diretório do Núcleo| Diretório| Definir o Sinalizador Dirsyncenabled|
-| Diretório do Núcleo| Diretório| Criar Definições da Empresa|
-| Diretório do Núcleo| Diretório| Atualizar Definições da Empresa|
-| Diretório do Núcleo| Diretório| Eliminar Definições da Empresa|
-| Diretório do Núcleo| Diretório| Definir Localização dos Dados Permitida da Empresa|
-| Diretório do Núcleo| Diretório| Definir Funcionalidade Multinacional da Empresa Ativada|
-| Diretório do Núcleo| Utilizador| Atualizar Utilizador|
-| Diretório do Núcleo| Utilizador| Eliminar Utilizador|
-| Diretório do Núcleo| Grupo| Remover Membro do Grupo|
-| Diretório do Núcleo| Grupo| Definir Licença de Grupo|
-| Diretório do Núcleo| Grupo| Criar Definições de Grupo|
-| Diretório do Núcleo| Aplicação| Atualizar Principal de Serviço|
-| Diretório do Núcleo| Aplicação| Eliminar Aplicação|
-| Diretório do Núcleo| Aplicação| Atualizar Aplicação|
-| Diretório do Núcleo| Aplicação| Remover Principal de Serviço|
-| Diretório do Núcleo| Aplicação| Adicionar Credenciais de Principal de Serviço|
-| Diretório do Núcleo| Aplicação| Remover Atribuição de Função de Aplicação do Principal de Serviço|
-| Diretório do Núcleo| Aplicação| Remover Proprietário da Aplicação|
-| Diretório do Núcleo| Dispositivo| Remover Proprietário Registado do Dispositivo|
-| Gestão de Palavra-passe Personalizada| Utilizador| Progresso da Atividade de Fluxo de Reposição de palavras-passe personalizada|
-| Aprovisionamento de Contas| Aplicação| Administração|
-| Aprovisionamento de Contas| Aplicação| Operação de Diretório|
-| Serviço MIM| Grupo| Remover Membro|
-| Diretório do Núcleo| Política| Eliminar Política|
-| Utilizadores Convidados| Utilizador| Criação de Inquilinos Viral|
-| Diretório do Núcleo| Diretório| Atualizar Segredos Externos|
-| Diretório do Núcleo| Diretório| Definir Propriedades do Rights Management|
-| Diretório do Núcleo| Diretório| Atualizar Empresa|
-| Diretório do Núcleo| Utilizador| Adicionar Utilizador|
-| Diretório do Núcleo| Utilizador| Converter Utilizador Federado em Gerido|
-| Diretório do Núcleo| Utilizador| Criar Palavra-passe de Aplicação para Utilizador|
-| Diretório do Núcleo| Grupo| Adicionar Membro ao Grupo|
-| Diretório do Núcleo| Grupo| Adicionar Grupo|
-| Diretório do Núcleo| Aplicação| Autorizar Aplicação|
-| Diretório do Núcleo| Aplicação| Adicionar Aplicação|
-| Diretório do Núcleo| Aplicação| Adicionar Proprietário ao Principal de Serviço|
-| Diretório do Núcleo| Aplicação| Remover Oauth2Permissiongrant|
-| Diretório do Núcleo| Política| Remover Credenciais de Política|
-| Diretório do Núcleo| Dispositivo| Eliminar Configuração de Dispositivo|
-| Gestão de Grupos Personalizada| Grupo| Definir Propriedades de Grupo Dinâmicas|
-| Gestão de Grupos Personalizada| Grupo| Atualizar Política de Gestão de Ciclo de Vida|
-| Aprovisionamento de Contas| Aplicação| Ação de Regra de Sincronização|
-| Utilizadores Convidados| Outros| Convites em Lote Carregados|
-| Serviço MIM| Grupo| Adicionar Membro|
-| Diretório do Núcleo| Utilizador| Definir Propriedades de Licença|
-| Diretório do Núcleo| Utilizador| Restaurar Utilizador|
-| Diretório do Núcleo| Utilizador| Remover Membro de Função|
-| Diretório do Núcleo| Utilizador| Remover Atribuição de Função de Aplicação do Utilizador|
-| Diretório do Núcleo| Utilizador| Remover Membro com Âmbito de Função|
-| Diretório do Núcleo| Grupo| Atualizar Grupo|
-| Diretório do Núcleo| Grupo| Adicionar Proprietário a Grupo|
-| Diretório do Núcleo| Grupo| Concluir a Aplicação de Licença Baseada em Grupo a Utilizadores|
-| Diretório do Núcleo| Grupo| Remover Atribuição de Função de Aplicação do Grupo|
-| Diretório do Núcleo| Grupo| Definir Grupo para Ser Gerido pelo Utilizador|
-| Diretório do Núcleo| Aplicação| Adicionar Oauth2Permissiongrant|
-| Diretório do Núcleo| Aplicação| Adicionar Atribuição de Função de Aplicação ao Principal de Serviço|
-| Diretório do Núcleo| Aplicação| Remover Credenciais de Principal de Serviço|
-| Diretório do Núcleo| Política| Remover Política do Principal de Serviço|
-| Diretório do Núcleo| Dispositivo| Atualizar Dispositivo|
-| Diretório do Núcleo| Dispositivo| Adicionar Dispositivo|
-| Diretório do Núcleo| Dispositivo| Adicionar Configuração do Dispositivo|
-| Gestão de Palavra-passe Personalizada| Utilizador| Alterar Palavra-passe (personalizada)|
-| Gestão de Palavra-passe Personalizada| Utilizador| Utilizador Registado na Reposição de Palavra-passe Personalizada|
-| Gestão de Grupos Personalizada| Grupo| Aprovar Pedido Pendente para Aderir a Um Grupo|
-| Diretório do Núcleo| Diretório| Remover Domínio Não Verificado|
-| Diretório do Núcleo| Diretório| Verificar Domínio|
-| Diretório do Núcleo| Diretório| Definir Autenticação de Domínio|
-| Diretório do Núcleo| Diretório| Definir Política de Palavras-passe|
-| Diretório do Núcleo| Diretório| Adicionar Parceiro a Empresa|
-| Diretório do Núcleo| Diretório| Promover Empresa a Parceiro|
-| Diretório do Núcleo| Diretório| Definir Parceria|
-| Diretório do Núcleo| Diretório| Definir Limiar de Eliminação Acidental|
-| Diretório do Núcleo| Diretório| Despromover Parceiro|
-| Utilizadores Convidados| Utilizador| Convidar utilizador Externo|
-| Aprovisionamento de Contas| Aplicação| Importar|
-| Diretório do Núcleo| Aplicação| Remover Proprietário do Principal de Serviço|
-| Diretório do Núcleo| Dispositivo| Remover Utilizadores Registados do Dispositivo|
-| Diretório do Núcleo| Diretório| Definir Informações da Empresa|
-| Diretório do Núcleo| Diretório| Configurar Definições de Federação em Domínio|
-| Diretório do Núcleo| Diretório| Criar Empresa|
-| Diretório do Núcleo| Diretório| Purgar Propriedades do Rights Management|
-| Diretório do Núcleo| Diretório| Definir Funcionalidade Dirsync|
-| Diretório do Núcleo| Diretório| Verificar Domínio Verificado de E-mail|
-| Diretório do Núcleo| Utilizador| Alterar Licença de Utilizador|
-| Diretório do Núcleo| Utilizador| Alterar Palavra-passe do Utilizador|
-| Diretório do Núcleo| Utilizador| Repor Palavra-passe do Utilizador|
-| Diretório do Núcleo| Utilizador| Adicionar Concessão de Atribuição de Função de Aplicação a Utilizador|
-| Diretório do Núcleo| Utilizador| Adicionar Membro a Função|
-| Diretório do Núcleo| Utilizador| Eliminar Palavra-passe de Aplicação para Utilizador|
-| Diretório do Núcleo| Utilizador| Atualizar Credenciais de Utilizador|
-| Diretório do Núcleo| Utilizador| Definir Gestor de Utilizador|
-| Diretório do Núcleo| Utilizador| Adicionar Membro com Âmbito a Função|
-| Diretório do Núcleo| Grupo| Eliminar Grupo|
-| Diretório do Núcleo| Grupo| Remover Proprietário de Grupo|
-| Diretório do Núcleo| Grupo| Atualizar Definições de Grupo|
-| Diretório do Núcleo| Aplicação| Adicionar Proprietário a Aplicação|
-| Diretório do Núcleo| Aplicação| Revogar Autorização|
-| Diretório do Núcleo| Política| Adicionar Política|
-| Diretório do Núcleo| Dispositivo| Eliminar Dispositivo|
-| Gestão de Palavra-passe Personalizada| Utilizador| Bloqueado de Reposição de Palavras-passe personalizada|
-| Gestão de Grupos Personalizada| Grupo| Pedido para Aderir a um Grupo|
-| Gestão de Grupos Personalizada| Grupo| Criar Política de Gestão de Ciclo de Vida|
-| Gestão de Grupos Personalizada| Grupo| Rejeitar Pedido Pendente para Aderir a um Grupo|
-| Gestão de Grupos Personalizada| Grupo| Cancelar Pedido Pendente para Aderir a um Grupo|
-| Gestão de Grupos Personalizada| Grupo| Renovar Grupo|
-| Aprovisionamento de Contas| Aplicação| Exportar|
-| Aprovisionamento de Contas| Aplicação| Outros|
-| Utilizadores Convidados| Utilizador| Resgatar Convite de Utilizador Externo|
-| Utilizadores Convidados| Utilizador| Criação de Utilizador Viral|
-| Utilizadores Convidados| Utilizador| Atribuir Utilizador Externo a Aplicação|
+Pode obter a lista de todas as Atividades de Auditoria com a Graph API https://graph.windows.net/$tenantdomain/activities/auditActivityTypes?api-version=beta, onde $tenantdomain é o seu nome de domínio ou ver o artigo [Audit report events](active-directory-reporting-audit-events.md#list-of-audit-report-events) (Relatório de eventos de auditoria).
 
 
+<a id="audit-logs-shortcuts" class="xliff"></a>
 
-
-## <a name="audit-logs-shortcuts"></a>Atalhos dos registos de auditoria
+## Atalhos dos registos de auditoria
 
 Para além do **Azure Active Directory**, o portal do Azure proporciona-lhe dois pontos de entrada adicionais para dados de auditoria:
 
 - Utilizadores e grupos
-- Aplicações empresariais
+- Aplicações Empresariais
 
-Para obter uma lista completa de atividades de relatório de auditoria, veja a [lista de eventos de relatório de auditoria](active-directory-reporting-audit-events.md#list-of-audit-report-events).
+<a id="users-and-groups-audit-logs" class="xliff"></a>
 
-
-### <a name="users-and-groups-audit-logs"></a>Registos de auditoria de utilizadores e grupos
+### Registos de auditoria de utilizadores e grupos
 
 Com os relatórios de auditoria baseados em utilizadores e grupos, poderá obter respostas a perguntas como:
 
@@ -302,7 +177,9 @@ Se quiser apenas rever dados de auditoria que estejam relacionados com utilizado
 
 ![Registos de auditoria](./media/active-directory-reporting-activity-audit-logs/93.png "Registos de auditoria")
 
-### <a name="enterprise-applications-audit-logs"></a>Registos de auditoria de aplicações empresariais
+<a id="enterprise-applications-audit-logs" class="xliff"></a>
+
+### Registos de auditoria de aplicações empresariais
 
 Com os relatórios de auditoria baseados em aplicações, poderá obter respostas a perguntas como:
 
@@ -321,7 +198,9 @@ Pode filtrar ainda mais esta vista para apenas **grupos** ou **utilizadores**.
 ![Registos de auditoria](./media/active-directory-reporting-activity-audit-logs/25.png "Registos de auditoria")
 
 
-## <a name="next-steps"></a>Passos seguintes
+<a id="next-steps" class="xliff"></a>
+
+## Passos seguintes
 Veja o [Guia dos Relatórios do Azure Active Directory](active-directory-reporting-guide.md).
 
 

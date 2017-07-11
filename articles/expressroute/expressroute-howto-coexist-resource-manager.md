@@ -15,14 +15,17 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/19/2017
 ms.author: charwen,cherylmc
-translationtype: Human Translation
-ms.sourcegitcommit: aaf97d26c982c1592230096588e0b0c3ee516a73
-ms.openlocfilehash: ec9da5c9818f03a85e858800bd38be49d8ed14e6
-ms.lasthandoff: 04/27/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 09f24fa2b55d298cfbbf3de71334de579fbf2ecd
+ms.openlocfilehash: ffa791cf4c4be15645a67fef4e94bf6ebdc42a6a
+ms.contentlocale: pt-pt
+ms.lasthandoff: 06/07/2017
 
 
 ---
-# <a name="configure-expressroute-and-site-to-site-coexisting-connections"></a>Configurar ligações coexistentes do ExpressRoute e de Site a Site
+<a id="configure-expressroute-and-site-to-site-coexisting-connections" class="xliff"></a>
+
+# Configurar ligações coexistentes do ExpressRoute e de Site a Site
 > [!div class="op_single_selector"]
 > * [PowerShell – Resource Manager](expressroute-howto-coexist-resource-manager.md)
 > * [PowerShell – Clássica](expressroute-howto-coexist-classic.md)
@@ -36,15 +39,21 @@ A configuração de ligações de Rede de VPNs e ExpressRoute coexistentes tem v
 > 
 > 
 
-## <a name="limits-and-limitations"></a>Limites e limitações
+<a id="limits-and-limitations" class="xliff"></a>
+
+## Limites e limitações
 * **Encaminhamento de tráfego não suportado.** Não pode encaminhar (através do Azure) entre a sua rede local ligada através da Rede de VPNs e a sua rede local ligada através do ExpressRoute.
 * **Gateway do SKU Básico não suportado.** Tem de utilizar um gateway do SKU não Básico para o [Gateway do ExpressRoute](expressroute-about-virtual-network-gateways.md) e para o [Gateway de VPN](../vpn-gateway/vpn-gateway-about-vpngateways.md).
 * **É apenas suportado o Gateway de VPN baseado na rota.** Tem de utilizar um [Gateway de VPN](../vpn-gateway/vpn-gateway-about-vpngateways.md) baseado na rota.
 * **A rota estática deve ser configurada para o seu Gateway de VPN.** Se a sua rede local estiver ligada ao ExpressRoute e a uma Rede de VPNs, terá de ter uma rota estática configurada na rede local para encaminhar a ligação de Rede de VPNs para a Internet pública.
-* **O gateway do ExpressRoute tem de ser configurado primeiro.** Tem de criar primeiro o Gateway do ExpressRoute antes de adicionar o Gateway de Rede de VPNs.
+* **O gateway do ExpressRoute tem de ser configurado primeiro e ligado a um circuito.** Tem de criar primeiro o Gateway do ExpressRoute e ligá-lo a um circuito antes de adicionar o Gateway de Rede de VPNs.
 
-## <a name="configuration-designs"></a>Estruturas de configuração
-### <a name="configure-a-site-to-site-vpn-as-a-failover-path-for-expressroute"></a>Configurar uma Rede de VPNs como um caminho de ativação pós-falha para o ExpressRoute
+<a id="configuration-designs" class="xliff"></a>
+
+## Estruturas de configuração
+<a id="configure-a-site-to-site-vpn-as-a-failover-path-for-expressroute" class="xliff"></a>
+
+### Configurar uma Rede de VPNs como um caminho de ativação pós-falha para o ExpressRoute
 Pode configurar uma ligação de Rede de VPNs como uma cópia de segurança para o ExpressRoute. Isto aplica-se apenas às redes virtuais ligadas ao caminho de peering privado do Azure. Não existe qualquer solução de ativação pós-falha baseada em VPN para os serviços acessíveis através dos peerings público do Azure e da Microsoft. O circuito ExpressRoute é sempre a ligação primária. Os dados percorrem o caminho da Rede de VPNs apenas se o circuito ExpressRoute falhar.
 
 > [!NOTE]
@@ -54,7 +63,9 @@ Pode configurar uma ligação de Rede de VPNs como uma cópia de segurança para
 
 ![Coexistir](media/expressroute-howto-coexist-resource-manager/scenario1.jpg)
 
-### <a name="configure-a-site-to-site-vpn-to-connect-to-sites-not-connected-through-expressroute"></a>Configurar uma Rede de VPNs para se ligar a sites não ligados através do ExpressRoute
+<a id="configure-a-site-to-site-vpn-to-connect-to-sites-not-connected-through-expressroute" class="xliff"></a>
+
+### Configurar uma Rede de VPNs para se ligar a sites não ligados através do ExpressRoute
 Pode configurar a sua rede para um local no qual alguns sites se ligam diretamente ao Azure através da Rede de VPNs e alguns sites estabelecem ligação através do ExpressRoute. 
 
 ![Coexistir](media/expressroute-howto-coexist-resource-manager/scenario2.jpg)
@@ -64,7 +75,9 @@ Pode configurar a sua rede para um local no qual alguns sites se ligam diretamen
 > 
 > 
 
-## <a name="selecting-the-steps-to-use"></a>Selecionar os passos a utilizar
+<a id="selecting-the-steps-to-use" class="xliff"></a>
+
+## Selecionar os passos a utilizar
 Existem dois conjuntos de procedimentos diferentes à escolha. O procedimento de configuração que selecionar depende do facto de pretender ligar-se a uma rede virtual já existente ou criar uma nova.
 
 * Não tenho uma VNet e preciso de criar uma.
@@ -87,6 +100,7 @@ Este procedimento orienta-o ao longo da criação de uma VNet e de ligações Ex
   Select-AzureRmSubscription -SubscriptionName 'yoursubscription'
   $location = "Central US"
   $resgrp = New-AzureRmResourceGroup -Name "ErVpnCoex" -Location $location
+  $VNetASN = 65010
   ```
 3. Crie uma rede virtual, incluindo uma Sub-Rede do Gateway. Para obter mais informações sobre a configuração da rede virtual, veja [Configuração da Virtual Network do Azure](../virtual-network/virtual-networks-create-vnet-arm-ps.md).
    
@@ -136,10 +150,10 @@ Este procedimento orienta-o ao longo da criação de uma VNet e de ligações Ex
   New-AzureRmVirtualNetworkGateway -Name "VPNGateway" -ResourceGroupName $resgrp.ResourceGroupName -Location $location -IpConfigurations $gwConfig -GatewayType "Vpn" -VpnType "RouteBased" -GatewaySku "Standard"
   ```
    
-    O Gateway de VPN do Azure suporta o BGP. Pode especificar -EnableBgp no seguinte comando.
+    O gateway de VPN do Azure oferece suporte ao protocolo de encaminhamento BGP. Pode especificar o ASN (Número AS) para essa Rede Virtual, ao adicionar o comutador -Asn no comando seguinte. Se não especificar esse parâmetro, o padrão do número AS será 65515.
 
   ```powershell
-  $azureVpn = New-AzureRmVirtualNetworkGateway -Name "VPNGateway" -ResourceGroupName $resgrp.ResourceGroupName -Location $location -IpConfigurations $gwConfig -GatewayType "Vpn" -VpnType "RouteBased" -GatewaySku "Standard" -EnableBgp $true
+  $azureVpn = New-AzureRmVirtualNetworkGateway -Name "VPNGateway" -ResourceGroupName $resgrp.ResourceGroupName -Location $location -IpConfigurations $gwConfig -GatewayType "Vpn" -VpnType "RouteBased" -GatewaySku "Standard" -Asn $VNetASN
   ```
    
     Pode encontrar o IP do peering de BGP e o número AS que o Azure utiliza para o Gateway de VPN em $azureVpn.BgpSettings.BgpPeeringAddress e $azureVpn.BgpSettings.Asn. Para obter mais informações, veja o artigo [Configure BGP (Configurar o BGP)](../vpn-gateway/vpn-gateway-bgp-resource-manager-ps.md) para o Gateway de VPN do Azure.
@@ -209,7 +223,9 @@ Se a sub-rede do gateway é /27 ou superior e a rede virtual está ligada atrav�
   ```
 5. Nesta fase, já tem uma VNet sem quaisquer gateways. Para criar gateways novos e concluir as suas ligações, pode continuar com [Passo 4 – Criar um gateway ExpressRoute](#gw), presente no conjunto de passos anterior.
 
-## <a name="to-add-point-to-site-configuration-to-the-vpn-gateway"></a>Para adicionar uma configuração ponto a site para o gateway de VPN
+<a id="to-add-point-to-site-configuration-to-the-vpn-gateway" class="xliff"></a>
+
+## Para adicionar uma configuração ponto a site para o gateway de VPN
 Pode seguir os passos abaixo para adicionar a configuração Ponto a Site para o seu gateway de VPN numa configuração de coexistência.
 
 1. Adicione um conjunto de endereços de Cliente de VPN.
@@ -230,6 +246,8 @@ Pode seguir os passos abaixo para adicionar a configuração Ponto a Site para o
 
 Para obter mais informações sobre VPNs Ponto a Site, veja [Configurar uma ligação Ponto a Site](../vpn-gateway/vpn-gateway-howto-point-to-site-rm-ps.md).
 
-## <a name="next-steps"></a>Passos seguintes
+<a id="next-steps" class="xliff"></a>
+
+## Passos seguintes
 Para obter mais informações acerca do ExpressRoute, veja as [FAQs do ExpressRoute](expressroute-faqs.md).
 

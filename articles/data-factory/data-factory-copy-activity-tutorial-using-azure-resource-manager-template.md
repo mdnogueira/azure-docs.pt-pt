@@ -1,6 +1,6 @@
 ---
 title: 'Tutorial: Criar um pipeline com o Modelo do Resource Manager| Microsoft Docs'
-description: "Neste tutorial, irá criar um pipeline do Azure Data Factory com uma Atividade de Cópia com o modelo do Azure Resource Manager."
+description: Neste tutorial, vai criar um pipeline do Azure Data Factory com um modelo do Azure Resource Manager. Este pipeline copia os dados de um armazenamento de blobs do Azure para uma base de dados SQL do Azure.
 services: data-factory
 documentationcenter: 
 author: spelluru
@@ -12,16 +12,19 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 04/11/2017
+ms.date: 07/10/2017
 ms.author: spelluru
-translationtype: Human Translation
-ms.sourcegitcommit: aaf97d26c982c1592230096588e0b0c3ee516a73
-ms.openlocfilehash: d14b4a638868f0206542825f05dd9473fd5e6c95
-ms.lasthandoff: 04/27/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 8f987d079b8658d591994ce678f4a09239270181
+ms.openlocfilehash: aaa8758281f239ad0984d8d1de65f5ea8951d366
+ms.contentlocale: pt-pt
+ms.lasthandoff: 05/18/2017
 
 
 ---
-# <a name="tutorial-create-a-pipeline-with-copy-activity-using-azure-resource-manager-template"></a>Tutorial: Criar um pipeline com a Atividade de Cópia com o Modelo do Azure Resource Manager
+<a id="tutorial-use-azure-resource-manager-template-to-create-a-data-factory-pipeline-to-copy-data" class="xliff"></a>
+
+# Tutorial: Utilizar o modelo do Azure Resource Manager para criar um pipeline do Data Factory e copiar dados 
 > [!div class="op_single_selector"]
 > * [Descrição geral e pré-requisitos](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
 > * [Assistente de Cópia](data-factory-copy-data-wizard-tutorial.md)
@@ -34,19 +37,25 @@ ms.lasthandoff: 04/27/2017
 > 
 > 
 
-Este tutorial mostra-lhe como criar e monitorizar uma fábrica de dados do Azure com o modelo do Azure Resource Manager. O pipeline na fábrica de dados copia dados do Armazenamento de Blobs do Azure para uma Base de Dados SQL do Azure.
+Este tutorial mostra-lhe como utilizar um modelo do Azure Resource Manager para criar uma fábrica de dados do Azure. O pipeline de dados neste tutorial copia dados a partir de um arquivo de dados de origem para um arquivo de dados de destino. Não transforma dados de entrada para produzir dados de saída. Para ver um tutorial sobre como transformar dados através do Azure Data Factory, consulte [Tutorial: Build a pipeline to transform data using Hadoop cluster (Tutorial: Criar um pipeline para transformar dados com o cluster do Hadoop)](data-factory-build-your-first-pipeline.md).
 
-> [!NOTE]
-> O pipeline de dados neste tutorial copia dados a partir de um arquivo de dados de origem para um arquivo de dados de destino. Não transforma dados de entrada para produzir dados de saída. Para ver um tutorial sobre como transformar dados através do Azure Data Factory, consulte [Tutorial: Build a pipeline to transform data using Hadoop cluster (Tutorial: Criar um pipeline para transformar dados com o cluster do Hadoop)](data-factory-build-your-first-pipeline.md).
-> 
-> Pode encadear duas atividades (executar uma atividade após a outra) ao definir o conjunto de dados de saída de uma atividade como o conjunto de dados de entrada da outra atividade. Consulte [Scheduling and execution in Data Factory (Agendamento e execução no Data Factory)](data-factory-scheduling-and-execution.md) para obter informações detalhadas. 
+Neste tutorial, vai criar um pipeline com uma atividade no mesmo: a Atividade de Cópia. A Atividade de Cópia copia dados de um arquivo de dados suportado para um arquivo de dados sink suportado. Para obter uma lista dos arquivos de dados suportados como origens e sinks, veja [Supported data stores](data-factory-data-movement-activities.md#supported-data-stores-and-formats) (Arquivos de dados suportados). A atividade utiliza a tecnologia de um serviço globalmente disponível que pode copiar dados entre vários arquivos de dados de uma forma segura, fiável e dimensionável. Para obter mais informações sobre a Atividade de Cópia, veja [Data Movement Activities](data-factory-data-movement-activities.md) (Atividades de Movimento de Dados).
 
-## <a name="prerequisites"></a>Pré-requisitos
+Um pipeline pode ter mais de uma atividade. Além disso, pode encadear duas atividades (executar uma atividade após a outra) ao definir o conjunto de dados de saída de uma atividade como o conjunto de dados de entrada da outra. Para obter mais informações, veja [Multiple activities in a pipeline](data-factory-scheduling-and-execution.md#multiple-activities-in-a-pipeline) (Várias atividades num pipeline). 
+
+> [!NOTE] 
+> O pipeline de dados neste tutorial copia dados a partir de um arquivo de dados de origem para um arquivo de dados de destino. Para ver um tutorial sobre como transformar dados através do Azure Data Factory, consulte [Tutorial: Build a pipeline to transform data using Hadoop cluster (Tutorial: Criar um pipeline para transformar dados com o cluster do Hadoop)](data-factory-build-your-first-pipeline.md). 
+
+<a id="prerequisites" class="xliff"></a>
+
+## Pré-requisitos
 * Leia o artigo [Descrição Geral do Tutorial e Pré-requisitos](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) e conclua os passos de **pré-requisitos**.
 * Siga as instruções no artigo [How to install and configure Azure PowerShell (Como instalar e configurar o Azure PowerShell)](/powershell/azure/overview) para instalar a versão mais recente do Azure PowerShell no computador. Neste tutorial, utiliza o PowerShell para implementar entidades do Data Factory. 
 * (opcional) Veja [Authoring Azure Resource Manager Templates (Criação de Modelos Azure Resource Manager)](../azure-resource-manager/resource-group-authoring-templates.md) para saber mais sobre os modelos Azure Resource Manager.
 
-## <a name="in-this-tutorial"></a>Neste tutorial
+<a id="in-this-tutorial" class="xliff"></a>
+
+## Neste tutorial
 Neste tutorial, cria uma fábrica de dados com as entidades do Data Factory seguintes:
 
 | Entidade | Descrição |
@@ -63,7 +72,9 @@ Uma fábrica de dados pode ter um ou mais pipelines. Um pipeline pode conter uma
 
 A secção seguinte disponibiliza o modelo do Resource Manager completo para a definição de entidades do Data Factory, para que possa rapidamente dar uma vista de olhos pelo tutorial e testar o modelo. Para compreender como cada entidade do Data Factory está definida, consulte a secção [Data Factory entities in the template (Entidades do Data Factory no modelo)](#data-factory-entities-in-the-template).
 
-## <a name="data-factory-json-template"></a>Modelo JSON do Data Factory
+<a id="data-factory-json-template" class="xliff"></a>
+
+## Modelo JSON do Data Factory
 O modelo do Resource Manager de nível superior para definir uma fábrica de dados é: 
 
 ```json
@@ -183,7 +194,7 @@ Crie um ficheiro JSON com o nome **ADFCopyTutorialARM.json** na pasta **C:\ADFGe
                 }
               },
               "availability": {
-                "frequency": "Day",
+                "frequency": "Hour",
                 "interval": 1
               },
               "external": true
@@ -214,7 +225,7 @@ Crie um ficheiro JSON com o nome **ADFCopyTutorialARM.json** na pasta **C:\ADFGe
                 "tableName": "[parameters('targetSQLTable')]"
               },
               "availability": {
-                "frequency": "Day",
+                "frequency": "Hour",
                 "interval": 1
               }
             }
@@ -267,8 +278,8 @@ Crie um ficheiro JSON com o nome **ADFCopyTutorialARM.json** na pasta **C:\ADFGe
                   }
                 }
               ],
-              "start": "2016-10-02T00:00:00Z",
-              "end": "2016-10-03T00:00:00Z"
+              "start": "2017-05-11T00:00:00Z",
+              "end": "2017-05-12T00:00:00Z"
             }
           }
         ]
@@ -277,13 +288,15 @@ Crie um ficheiro JSON com o nome **ADFCopyTutorialARM.json** na pasta **C:\ADFGe
   }
 ```
 
-## <a name="parameters-json"></a>Parâmetros JSON
+<a id="parameters-json" class="xliff"></a>
+
+## Parâmetros JSON
 Crie um ficheiro JSON com o nome **ADFCopyTutorialARM Parameters.json** que contém os parâmetros para o modelo do Azure Resource Manager. 
 
 > [!IMPORTANT]
-> Especifique o nome e a chave da sua Conta de armazenamento do Azure para os parâmetros **storageAccountName** e **storageAccountKey**.  
+> Especifique o nome e a chave da sua conta de Armazenamento do Azure para os parâmetros storageAccountName e storageAccountKey.  
 > 
-> 
+> Especifique o servidor SQL do Azure, a base de dados, o utilizador e a palavra-passe para os parâmetros sqlServerName, databaseName, sqlServerUserName e sqlServerPassword.  
 
 ```json
 {
@@ -310,17 +323,22 @@ Crie um ficheiro JSON com o nome **ADFCopyTutorialARM Parameters.json** que cont
 > 
 > 
 
-## <a name="create-data-factory"></a>Criar fábrica de dados
+<a id="create-data-factory" class="xliff"></a>
+
+## Criar fábrica de dados
 1. Inicie o **Azure PowerShell** e execute o seguinte comando:
    * Execute o comando seguinte e introduza o nome de utilizador e a palavra-passe que utiliza para iniciar sessão no portal do Azure.
+   
     ```PowerShell
-    Login-AzureRmAccount       
+    Login-AzureRmAccount    
     ```  
    * Execute o comando seguinte para ver todas as subscrições para esta conta.
+   
     ```PowerShell
     Get-AzureRmSubscription
     ```   
-   * Execute o comando seguinte para selecionar a subscrição com a qual pretende trabalhar. 
+   * Execute o comando seguinte para selecionar a subscrição com a qual pretende trabalhar.
+    
     ```PowerShell
     Get-AzureRmSubscription -SubscriptionName <SUBSCRIPTION NAME> | Set-AzureRmContext
     ```    
@@ -330,32 +348,34 @@ Crie um ficheiro JSON com o nome **ADFCopyTutorialARM Parameters.json** que cont
     New-AzureRmResourceGroupDeployment -Name MyARMDeployment -ResourceGroupName ADFTutorialResourceGroup -TemplateFile C:\ADFGetStarted\ADFCopyTutorialARM.json -TemplateParameterFile C:\ADFGetStarted\ADFCopyTutorialARM-Parameters.json
     ```
 
-## <a name="monitor-pipeline"></a>Monitorizar o pipeline
+<a id="monitor-pipeline" class="xliff"></a>
+
+## Monitorizar o pipeline
 
 1. Inicie sessão no [Portal do Azure](https://portal.azure.com) com a sua conta do Azure.
 2. Clique em **Fábricas de dados** no menu da esquerda (ou) clique em **Mais serviços** e clique em **Fábricas de dados** na categoria **INTELIGÊNCIA + ANÁLISE**.
    
     ![Menu de fábricas de dados](media/data-factory-copy-activity-tutorial-using-azure-resource-manager-template/data-factories-menu.png)
-3. Na página **Fábricas de dados**, procure e encontre a sua fábrica de dados. 
+3. Na página **Fábricas de dados**, procure e encontre a sua fábrica de dados (AzureBlobToAzureSQLDatabaseDF). 
    
     ![Procure a fábrica de dados](media/data-factory-copy-activity-tutorial-using-azure-resource-manager-template/search-for-data-factory.png)  
 4. Clique na sua fábrica de dados do Azure. Pode ver a home page da fábrica de dados.
    
     ![Home page da fábrica de dados](media/data-factory-copy-activity-tutorial-using-azure-resource-manager-template/data-factory-home-page.png)  
-5. Clique no mosaico **Diagrama** para ver a vista de diagrama da fábrica de dados.
-   
-    ![Vista de diagrama da fábrica de dados](media/data-factory-copy-activity-tutorial-using-azure-resource-manager-template/data-factory-diagram-view.png)
-6. Na vista de diagrama, faça duplo clique no conjunto de dados **SQLOutputDataset**. Pode ver o estado do setor. Ao concluir a operação de cópia, define o estado como **Pronto**.
-   
-    ![Setor de saída no estado pronto](media/data-factory-copy-activity-tutorial-using-azure-resource-manager-template/output-slice-ready.png)
-7. Quando o setor estiver no estado **Pronto**, certifique-se de que os dados são copiados para a tabela **emp** na base de dados SQL do Azure.
+6. Siga as instruções em [Monitorizar conjuntos de dados e pipeline](data-factory-copy-activity-tutorial-using-azure-portal.md#monitor-pipeline) para monitorizar o pipeline e os conjuntos de dados que criou neste tutorial. Atualmente, o Visual Studio não suporta a monitorização de pipelines do Data Factory.
+7. Quando um setor estiver no estado **Pronto**, certifique-se de que os dados são copiados para a tabela **emp** na base de dados SQL do Azure.
 
-Veja [Monitor datasets and pipeline (Monitorizar os conjuntos de dados e o pipeline)](data-factory-monitor-manage-pipelines.md) para obter instruções sobre como utilizar os painéis do Portal do Azure para monitorizar o pipeline e os conjuntos de dados que criou neste tutorial.
 
-Pode ainda utilizar a Aplicação de Monitorização e Gestão para monitorizar os seus pipelines de dados. Veja [Monitor and manage Azure Data Factory pipelines using Monitoring App (Monitorizar e gerir pipelines do Azure Data Factory com a Aplicação de Monitorização)](data-factory-monitor-manage-app.md) para obter detalhes sobre a utilização da aplicação.
+Para obter mais informações sobre como utilizar os painéis do portal do Azure para monitorizar os conjuntos de dados e o pipeline que criou neste tutorial, veja [Monitor datasets and pipeline](data-factory-monitor-manage-pipelines.md) (Monitorizar os conjuntos de dados e o pipeline).
 
-## <a name="data-factory-entities-in-the-template"></a>Entidades do Data Factory no modelo
-### <a name="define-data-factory"></a>Definir fábrica de dados
+Para obter mais informações sobre como utilizar a aplicação Monitorizar e Gerir para monitorizar os seus pipelines de dados, veja [Monitor and manage Azure Data Factory pipelines using Monitoring App](data-factory-monitor-manage-app.md) (Monitorizar e gerir pipelines do Azure Data Factory com a Aplicação de Monitorização).
+
+<a id="data-factory-entities-in-the-template" class="xliff"></a>
+
+## Entidades do Data Factory no modelo
+<a id="define-data-factory" class="xliff"></a>
+
+### Definir fábrica de dados
 Defina uma fábrica de dados no modelo do Resource Manager, conforme mostrado no exemplo seguinte:  
 
 ```json
@@ -376,7 +396,9 @@ O dataFactoryName é definido como:
 
 É uma cadeia exclusiva com base no ID do grupo do recursos.  
 
-### <a name="defining-data-factory-entities"></a>Definir entidades do Data Factory
+<a id="defining-data-factory-entities" class="xliff"></a>
+
+### Definir entidades do Data Factory
 As seguintes entidades do Data Factory são definidas no modelo JSON: 
 
 1. [Serviço ligado do Armazenamento do Azure](#azure-storage-linked-service)
@@ -385,8 +407,10 @@ As seguintes entidades do Data Factory são definidas no modelo JSON:
 4. [Conjunto de dados SQL do Azure](#azure-sql-dataset)
 5. [Pipeline de dados com uma atividade de cópia](#data-pipeline)
 
-#### <a name="azure-storage-linked-service"></a>Serviço ligado do Storage do Azure
-Especifique o nome e a chave da sua conta de armazenamento do Azure nesta secção. Veja [Azure Storage linked service (Serviço ligado de Armazenamento do Azure)](data-factory-azure-blob-connector.md#azure-storage-linked-service) para obter detalhes sobre as propriedades JSON utilizadas para definir um serviço ligado de Armazenamento do Azure. 
+<a id="azure-storage-linked-service" class="xliff"></a>
+
+#### Serviço ligado do Storage do Azure
+O AzureStorageLinkedService liga a sua conta do Armazenamento do Azure à fábrica de dados. Como parte dos [pré-requisitos](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md), criou um contentor e carregou dados para esta conta de armazenamento. Especifique o nome e a chave da sua conta de armazenamento do Azure nesta secção. Veja [Azure Storage linked service (Serviço ligado de Armazenamento do Azure)](data-factory-azure-blob-connector.md#azure-storage-linked-service) para obter detalhes sobre as propriedades JSON utilizadas para definir um serviço ligado de Armazenamento do Azure. 
 
 ```json
 {
@@ -408,8 +432,10 @@ Especifique o nome e a chave da sua conta de armazenamento do Azure nesta secç�
 
 A connectionString utiliza os parâmetros storageAccountName e storageAccountKey. Os valores para estes parâmetros foram transmitidos através da utilização de um ficheiro de configuração. A definição também utiliza variáveis: azureStroageLinkedService e dataFactoryName definidas no modelo. 
 
-#### <a name="azure-sql-database-linked-service"></a>Serviço ligado da Base de Dados SQL do Azure
-Especifique o nome do servidor SQL do Azure, o nome da base de dados, o nome de utilizador e a palavra-passe do utilizador nesta secção. Consulte o [Azure SQL linked service (Serviço ligado SQL do Azure)](data-factory-azure-sql-connector.md#linked-service-properties) para obter detalhes sobre as propriedades JSON utilizadas para definir um serviço ligado SQL do Azure.  
+<a id="azure-sql-database-linked-service" class="xliff"></a>
+
+#### Serviço ligado da Base de Dados SQL do Azure
+O AzureSqlLinkedService liga a sua base de dados SQL do Azure à fábrica de dados. Os dados copiados do armazenamento de blobs são armazenados nesta base de dados. Como parte dos [pré-requisitos](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md), criou a tabela emp nesta base de dados. Especifique o nome do servidor SQL do Azure, o nome da base de dados, o nome de utilizador e a palavra-passe do utilizador nesta secção. Consulte o [Azure SQL linked service (Serviço ligado SQL do Azure)](data-factory-azure-sql-connector.md#linked-service-properties) para obter detalhes sobre as propriedades JSON utilizadas para definir um serviço ligado SQL do Azure.  
 
 ```json
 {
@@ -431,8 +457,10 @@ Especifique o nome do servidor SQL do Azure, o nome da base de dados, o nome de 
 
 O connectionString utiliza os parâmetros sqlServerName, databaseName, sqlServerUserName e sqlServerPassword, cujos valores são transmitidos através da utilização de um ficheiro de configuração. A definição também utiliza as seguintes variáveis do modelo: azureSqlLinkedServiceName, dataFactoryName.
 
-#### <a name="azure-blob-dataset"></a>Conjunto de dados de blobs do Azure
-Especifique os nomes do contentor de blob, da pasta e do ficheiro que contém os dados de entrada. Veja [Azure Blob dataset properties (Propriedades do conjunto de dados de Blobs do Azure)](data-factory-azure-blob-connector.md#dataset-properties) para obter detalhes sobre as propriedades JSON utilizadas para definir um conjunto de dados de Blobs do Azure. 
+<a id="azure-blob-dataset" class="xliff"></a>
+
+#### Conjunto de dados de blobs do Azure
+O serviço ligado do armazenamento do Azure especifica a cadeia de ligação que o serviço Data Factory utiliza no tempo de execução para ligar à sua conta de armazenamento do Azure. Na definição do conjunto de dados dos blobs do Azure, especifique os nomes do contentor de blob, da pasta e do ficheiro que contém os dados de entrada. Veja [Azure Blob dataset properties (Propriedades do conjunto de dados de Blobs do Azure)](data-factory-azure-blob-connector.md#dataset-properties) para obter detalhes sobre as propriedades JSON utilizadas para definir um conjunto de dados de Blobs do Azure. 
 
 ```json
 {
@@ -465,7 +493,7 @@ Especifique os nomes do contentor de blob, da pasta e do ficheiro que contém os
             }
           },
           "availability": {
-            "frequency": "Day",
+            "frequency": "Hour",
             "interval": 1
           },
           "external": true
@@ -473,7 +501,9 @@ Especifique os nomes do contentor de blob, da pasta e do ficheiro que contém os
 }
 ```
 
-#### <a name="azure-sql-dataset"></a>Conjunto de dados SQL do Azure
+<a id="azure-sql-dataset" class="xliff"></a>
+
+#### Conjunto de dados SQL do Azure
 Especifique o nome da tabela na base de dados SQL do Azure que contém os dados copiados a partir do armazenamento de Blobs do Azure. Consulte [Azure SQL dataset properties (Propriedades do conjunto de dados SQL do Azure)](data-factory-azure-sql-connector.md#dataset-properties) para obter detalhes sobre as propriedades JSON utilizadas para definir um conjunto de dados SQL do Azure. 
 
 ```json
@@ -502,14 +532,16 @@ Especifique o nome da tabela na base de dados SQL do Azure que contém os dados 
             "tableName": "[parameters('targetSQLTable')]"
           },
           "availability": {
-            "frequency": "Day",
+            "frequency": "Hour",
             "interval": 1
           }
     }
 }
 ```
 
-#### <a name="data-pipeline"></a>Pipeline de dados
+<a id="data-pipeline" class="xliff"></a>
+
+#### Pipeline de dados
 Definir um pipeline que copia dados do conjunto de dados de blobs do Azure para o conjunto de dados SQL do Azure. Veja [Pipeline JSON (JSON do Pipeline)](data-factory-create-pipelines.md#pipeline-json) para obter descrições dos elementos JSON utilizados para definir um pipeline neste exemplo. 
 
 ```json
@@ -561,13 +593,15 @@ Definir um pipeline que copia dados do conjunto de dados de blobs do Azure para 
               }
         }
           ],
-          "start": "2016-10-02T00:00:00Z",
-          "end": "2016-10-03T00:00:00Z"
+          "start": "2017-05-11T00:00:00Z",
+          "end": "2017-05-12T00:00:00Z"
     }
 }
 ```
 
-## <a name="reuse-the-template"></a>Reutilizar o modelo
+<a id="reuse-the-template" class="xliff"></a>
+
+## Reutilizar o modelo
 No tutorial, criou um modelo para definir as entidades do Data Factory e um modelo para transmitir os valores dos parâmetros. O pipeline copia dados de uma Conta de armazenamento do Azure para uma base de dados SQL do Azure especificada através de parâmetros. Para utilizar o mesmo modelo para implementar entidades do Data Factory em diferentes ambientes, pode criar um ficheiro de parâmetro para cada ambiente e utilizá-lo quando implementar nesse ambiente.     
 
 Exemplo:  
@@ -586,10 +620,12 @@ Tenha em atenção que o primeiro comando utiliza o ficheiro de parâmetro para 
 
 Também pode reutilizar o modelo para efetuar tarefas repetidas. Por exemplo, tem de criar muitas fábricas de dados com um ou mais pipelines que implementem a mesma lógica, mas cada fábrica de dados utiliza diferentes contas de Armazenamento e da Base de Dados SQL. Neste cenário, utilize o mesmo modelo no mesmo ambiente (programação, teste ou produção) com os diferentes ficheiros de parâmetro para criar fábricas de dados.   
 
-## <a name="see-also"></a>Veja também
-| Tópico | Descrição |
-|:--- |:--- |
-| [Pipelines](data-factory-create-pipelines.md) |Este artigo ajuda-o a compreender os pipelines e as atividades no Azure Data Factory. |
-| [Conjuntos de dados](data-factory-create-datasets.md) |Este artigo ajuda-o a compreender os conjuntos de dados no Azure Data Factory. |
-| [Agendamento e execução](data-factory-scheduling-and-execution.md) |Este artigo explica os aspetos de agendamento e execução do modelo da aplicação do Azure Data Factory. |
+<a id="next-steps" class="xliff"></a>
+
+## Passos seguintes
+Neste tutorial, utilizou o armazenamento de blobs do Azure como arquivo de dados de origem e uma base de dados SQL do Azure como arquivo de dados de destino numa operação de cópia. A tabela seguinte disponibiliza uma lista dos arquivos de dados que a atividade de cópia suporta como origens e destinos: 
+
+[!INCLUDE [data-factory-supported-data-stores](../../includes/data-factory-supported-data-stores.md)]
+
+Para saber como copiar dados de/para um arquivo de dados, clique na ligação relativa a esse arquivo na tabela.
 

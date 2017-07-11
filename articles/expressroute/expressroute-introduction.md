@@ -12,24 +12,28 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 04/04/2017
+ms.date: 05/12/2017
 ms.author: cherylmc
 ms.translationtype: Human Translation
-ms.sourcegitcommit: a3ca1527eee068e952f81f6629d7160803b3f45a
-ms.openlocfilehash: 43f18fb3ce873eef5c2d96a89ab41fc6efc443d8
+ms.sourcegitcommit: 9568210d4df6cfcf5b89ba8154a11ad9322fa9cc
+ms.openlocfilehash: a36fce44efb3c32f83f33b19d2bca5ad73782a1b
 ms.contentlocale: pt-pt
-ms.lasthandoff: 04/27/2017
+ms.lasthandoff: 05/15/2017
 
 
 ---
-# <a name="expressroute-overview"></a>Descrição geral do ExpressRoute
-O Microsoft Azure ExpressRoute permite-lhe expandir as redes no local para a nuvem da Microsoft através de uma ligação privada dedicada facilitada por um fornecedor de conectividade. Com o ExpressRoute, pode estabelecer ligações aos serviços em nuvem da Microsoft, tais como o Microsoft Azure, Office 365 e o CRM Online. 
+<a id="expressroute-overview" class="xliff"></a>
+
+# Descrição geral do ExpressRoute
+O Microsoft Azure ExpressRoute permite-lhe expandir as redes no local para a nuvem da Microsoft através de uma ligação privada dedicada facilitada por um fornecedor de conectividade. Com o ExpressRoute, pode ligar aos serviços cloud da Microsoft, tais como o Microsoft Azure, o Office 365 e o Dynamics 365.
 
 A conectividade pode ser a partir de uma rede qualquer a qualquer (VPN de IP), uma rede Ethernet de ponto a ponto ou uma ligação cruzada virtual através de um fornecedor de conectividade numa localização conjunta. As ligações do ExpressRoute não passam para a Internet pública. Tal permite que as ligações do ExpressRoute ofereçam mais fiabilidade, velocidades superiores, latências inferiores e uma maior segurança do que as ligações típicas através da Internet. Para obter informações sobre como ligar a sua rede à Microsoft com o ExpressRoute, consulte [Modelos de conectividade do ExpressRoute](expressroute-connectivity-models.md).
 
 ![](./media/expressroute-introduction/expressroute-connection-overview.png)
 
-## <a name="key-benefits"></a>Principais vantagens
+<a id="key-benefits" class="xliff"></a>
+
+## Principais vantagens
 
 * A conectividade da Camada 3 entre a sua rede no local e o Microsoft Cloud através de um fornecedor de conectividade. A conectividade pode ser a partir de uma rede qualquer a qualquer (VPN de IP), uma ligação Ethernet ponto a ponto ou através de uma ligação cruzada virtual por meio de uma troca de Ethernet.
 * Conectividade de serviços em nuvem da Microsoft em todas as regiões na região geopolítica.
@@ -41,40 +45,58 @@ A conectividade pode ser a partir de uma rede qualquer a qualquer (VPN de IP), u
 
 Para obter mais informações, consulte as [ExpressRoute FAQ (FAQs do ExpressRoute)](expressroute-faqs.md).
 
-## <a name="features"></a>Funcionalidades
+<a id="features" class="xliff"></a>
 
-### <a name="layer-3-connectivity"></a>Conectividade de Camada 3
+## Funcionalidades
+
+<a id="layer-3-connectivity" class="xliff"></a>
+
+### Conectividade de Camada 3
 A Microsoft utiliza um protocolo de encaminhamento dinâmico (BGP) padrão da indústria para trocar rotas entre a sua rede no local, as instâncias no Azure e os endereços públicos da Microsoft.  Estabelecemos várias sessões BGP com a sua rede para diferentes perfis de tráfego. Pode obter mais detalhes no artigo [Circuitos ExpressRoute e domínios de encaminhamento](expressroute-circuit-peerings.md).
 
-### <a name="redundancy"></a>Redundância
+<a id="redundancy" class="xliff"></a>
+
+### Redundância
 Cada circuito ExpressRoute é composto por duas ligações para dois routers de limite da Microsoft Enterprise (MSEEs) a partir do fornecedor de conectividade/o seu limite de rede. A Microsoft necessita de uma ligação BGP dupla a partir do fornecedor de conectividade/o seu lado – um para cada MSEE. Pode optar por não implementar dispositivos redundantes/Circuitos Ethernet na sua parte. No entanto, os fornecedores de conectividade utilizam dispositivos redundantes para verificar que as ligações são entregues à Microsoft de forma redundante. Uma configuração de conectividade redundante de Camada 3 é um requisito para que o nosso [SLA](https://azure.microsoft.com/support/legal/sla/) seja válido.
 
-### <a name="connectivity-to-microsoft-cloud-services"></a>Conectividade com serviços em nuvem da Microsoft
+<a id="connectivity-to-microsoft-cloud-services" class="xliff"></a>
+
+### Conectividade com serviços em nuvem da Microsoft
 [!INCLUDE [expressroute-office365-include](../../includes/expressroute-office365-include.md)]
 
 As ligações ExpressRoute permitem o acesso aos seguintes serviços:
 
 * Serviços do Microsoft Azure
 * Serviços do Microsoft Office 365
-* Serviços online do Microsoft CRM 
+* Microsoft Dynamics 365
 
 Pode visitar a página [FAQ do ExpressRoute](expressroute-faqs.md) para uma lista detalhada dos serviços suportada através do ExpressRoute.
 
-### <a name="connectivity-to-all-regions-within-a-geopolitical-region"></a>Conectividade a todas as regiões numa região geopolítica
+<a id="connectivity-to-all-regions-within-a-geopolitical-region" class="xliff"></a>
+
+### Conectividade a todas as regiões numa região geopolítica
 Pode ligar-se à Microsoft a partir de uma das nossas [localizações de peering](expressroute-locations.md) e ter acesso a todas as regiões numa região geopolítica. 
 
 Por exemplo, se ligar à Microsoft em Amesterdão através do ExpressRoute, tem acesso a todos os serviços cloud da Microsoft alojados na Europa do Norte e na Europa Ocidental. Consulte [Parceiros ExpressRoute e localizações de peering](expressroute-locations.md) para obter uma descrição geral das regiões geopolíticas, das regiões associadas na cloud da Microsoft e as localizações de peering do ExpressRoute correspondentes.
 
-### <a name="global-connectivity-with-expressroute-premium-add-on"></a>Conectividade global com o suplemento do ExpressRoute Premium
+<a id="global-connectivity-with-expressroute-premium-add-on" class="xliff"></a>
+
+### Conectividade global com o suplemento do ExpressRoute Premium
 Pode ativar a funcionalidade do suplemento ExpressRoute Premium para expandir a conectividade ao longo dos limites geopolíticos. Por exemplo, se estiver ligado à Microsoft em Amesterdão através do ExpressRoute, terá acesso a todos os serviços em nuvem da Microsoft alojados em todas as regiões pelo mundo (exceto nuvens nacionais). Pode aceder aos serviços implementados na América do Sul ou Austrália da mesma forma que acede às regiões da Europa do Norte e Europa Ocidental.
 
-### <a name="rich-connectivity-partner-ecosystem"></a>Ecossistema de parceiro de conectividade avançada
+<a id="rich-connectivity-partner-ecosystem" class="xliff"></a>
+
+### Ecossistema de parceiro de conectividade avançada
 O ExpressRoute tem um crescente ecossistema de fornecedores de conectividade e parceiros de SI. Pode ver o artigo [Fornecedores e localizações do ExpressRoute](expressroute-locations.md) para obter as informações mais recentes.
 
-### <a name="connectivity-to-national-clouds"></a>Conectividade com nuvens nacionais
+<a id="connectivity-to-national-clouds" class="xliff"></a>
+
+### Conectividade com nuvens nacionais
 A Microsoft funciona em ambientes de nuvem isolados para regiões geopolíticas especiais e segmentos de cliente. Veja a página [Fornecedores e localizações do ExpressRoute](expressroute-locations.md) para obter uma lista de nuvens e fornecedores nacionais.
 
-### <a name="bandwidth-options"></a>Opções de largura de banda
+<a id="bandwidth-options" class="xliff"></a>
+
+### Opções de largura de banda
 Pode comprar circuitos ExpressRoute para uma vasta gama de larguras de banda. As larguras de banda suportadas são apresentada abaixo. Confirme que consulta o seu fornecedor de conectividade para determinar a lista de larguras de banda suportadas fornecidas.
 
 * 50 Mbps
@@ -86,10 +108,14 @@ Pode comprar circuitos ExpressRoute para uma vasta gama de larguras de banda. As
 * 5 Gbps
 * 10 Gbps
 
-### <a name="dynamic-scaling-of-bandwidth"></a>Dimensionamento dinâmico da largura de banda
+<a id="dynamic-scaling-of-bandwidth" class="xliff"></a>
+
+### Dimensionamento dinâmico da largura de banda
 Pode aumentar a largura de banda do circuito ExpressRoute (na base de melhor esforço) sem ter de fechar as suas ligações. 
 
-### <a name="flexible-billing-models"></a>Modelos de faturação flexíveis
+<a id="flexible-billing-models" class="xliff"></a>
+
+### Modelos de faturação flexíveis
 Pode escolher um modelo de faturação que funciona melhor para si. Escolha entre os modelos de faturação listados abaixo. Para obter mais informações, consulte as [ExpressRoute FAQ (FAQs do ExpressRoute)](expressroute-faqs.md).
 
 * **Dados ilimitados**. O circuito ExpressRoute é cobrado com base numa taxa mensal e todas as transferências de dados de entrada e saída estão incluídas de forma gratuita. 
@@ -99,11 +125,15 @@ Pode escolher um modelo de faturação que funciona melhor para si. Escolha entr
   * Conectividade global para os serviços. Um circuito ExpressRoute criado em qualquer região (excluindo as nuvens nacionais) terá acesso aos recursos a partir de qualquer outra região do mundo. Por exemplo, uma rede virtual criada na Europa Ocidental pode ser acedida através de um circuito ExpressRoute aprovisionado em Silicon Valley.
   * Aumento do número de ligações VNet por circuito ExpressRoute, de 10 até um limite superior, dependendo da largura de banda do circuito.
 
-## <a name="faq"></a>FAQ
+<a id="faq" class="xliff"></a>
+
+## FAQ
 
 Para perguntas mais frequentes sobre ExpressRoute, veja as [FAQ do ExpressRoute](expressroute-faqs.md).
 
-## <a name="next-steps"></a>Passos seguintes
+<a id="next-steps" class="xliff"></a>
+
+## Passos seguintes
 
 * Saiba mais sobre [ExpressRoute connectivity models (Modelos de conectividade do ExpressRoute)](expressroute-connectivity-models.md).
 * Saiba mais sobre ligações ExpressRoute e domínios de encaminhamento. Veja [Circuitos ExpressRoute e domínios de encaminhamento](expressroute-circuit-peerings.md).
