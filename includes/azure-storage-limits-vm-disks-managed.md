@@ -1,24 +1,24 @@
-**Discos da máquina virtual gerida standard**
+**Standard managed virtual machine disks**
 
-| Tipo de Disco Standard | S4 | S6 | S10 | S20 | S30 |
-| --- | --- |--- | --- | --- | --- |
-| Tamanho do Disco | 30 GB | 64 GB | 128 GB | 512 GB | 1024 GB (1 TB)|
-| IOPs por disco | 500 |500 |500 |500 |500 |
-| Débito por disco | 60 MB/seg | 60 MB/seg | 60 MB/seg | 60 MB/seg | 60 MB/seg | 
+| Standard Disk Type  | S4               | S6               | S10              | S20              | S30              | S40              | S50              | 
+|---------------------|---------------------|---------------------|------------------|------------------|------------------|------------------|------------------| 
+| Disk size           | 32 GB            | 64 GB            | 128 GB           | 512 GB           | 1024 GB (1 TB)   | 2048 GB (2TB)    | 4095 GB (4 TB)   | 
+| IOPS per disk       | 500              | 500              | 500              | 500              | 500              | 500             | 500              | 
+| Throughput per disk | 60 MB/sec | 60 MB/sec | 60 MB/sec | 60 MB/sec | 60 MB/sec | 60 MB/sec | 60 MB/sec | 
 
-**Discos da máquina virtual geridos premium: por limites de disco**
+**Premium managed virtual machine disks: per disk limits**
 
-| Tipo de Disco de Armazenamento Premium | P10 | P20 | P30 |
-| --- | --- | --- | --- |
-| Tamanho do disco |128 GiB |512 GiB |1024 GiB (1 TB) |
-| IOPs Máx por disco |500 |2300 |5000 |
-| Débito máx por disco |100 MB/s |150 MB/s |200 MB/s |
+| Premium Disks Type  | P4    | P6    | P10   | P20   | P30   | P40   | P50   | 
+|---------------------|-------|-------|-------|-------|-------|-------|-------|
+| Disk size           | 32 GB | 64 GB | 128 GB| 512 GB            | 1024 GB (1 TB)    | 2048 GB (2 TB)    | 4095 GB (4 TB)    | 
+| IOPS per disk       | 120   | 240   | 500   | 2300              | 5000              | 7500              | 7500              | 
+| Throughput per disk | 25 MB/sec | 50 MB/sec  | 100 MB/sec | 150 MB/sec | 200 MB/sec | 250 MB/sec | 250 MB/sec |
 
-**Discos da máquina virtual geridos premium: por limites de VM**
+**Premium managed virtual machine disks: per VM limits**
 
-| Recurso | Limite Predefinido |
+| Resource | Default Limit |
 | --- | --- |
-| IOPs Máx Por VM |80.000 IOPS com GS5 VM<sup>1</sup> |
-| Débito máx por VM |2.000 MB/s com GS5 VM<sup>1</sup> |
+| Max IOPS Per VM |80,000 IOPS with GS5 VM<sup>1</sup> |
+| Max throughput per VM |2,000 MB/s with GS5 VM<sup>1</sup> |
 
-<sup>1</sup>Consulte o [Tamanho da VM](../articles/virtual-machines/linux/sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) para limites em outros tamanhos da VM. 
+<sup>1</sup>Refer to [VM Size](../articles/virtual-machines/linux/sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) for limits on other VM sizes. 
