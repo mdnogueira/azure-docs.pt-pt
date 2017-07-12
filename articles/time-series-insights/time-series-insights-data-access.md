@@ -16,14 +16,16 @@ ms.workload: big-data
 ms.date: 05/01/2017
 ms.author: omravi
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 64bd7f356673b385581c8060b17cba721d0cf8e3
-ms.openlocfilehash: 143d48b9fc551ade0d0fd043cdb0cf1f3340a9af
+ms.sourcegitcommit: 300958a69fc854cb8db02120a383a4cbbfcacd7b
+ms.openlocfilehash: e975c6d8f217bc73948c0c046204b16b1a742bc7
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/02/2017
+ms.lasthandoff: 05/20/2017
 
 ---
 
-# <a name="grant-data-access-to-a-time-series-insights-environment-using-azure-portal"></a>Conceder acesso a dados a um ambiente do Time Series Insights com o portal do Azure
+<a id="grant-data-access-to-a-time-series-insights-environment-using-azure-portal" class="xliff"></a>
+
+# Conceder acesso a dados a um ambiente do Time Series Insights com o portal do Azure
 
 Os ambientes do Time Series Insights têm dois tipos de políticas de acesso independentes:
 
@@ -36,11 +38,13 @@ As políticas de acesso de gestão concedem permissões relacionadas com a confi
 *    Criação e eliminação do ambiente, origens de eventos, conjuntos de dados de referência, e
 *    Gestão das políticas de acesso a dados.
 
-As políticas de acesso a dados concedem permissões para emitir consultas de dados, manipular dados de referência no ambiente e consultas partilhadas guardadas e perspetivas associadas ao ambiente.
+As políticas de acesso a dados concedem permissões para emitir consultas de dados, manipular dados de referência no ambiente e partilhar consultas guardadas e perspetivas associadas ao ambiente.
 
 Ambos os tipos de políticas permitem uma clara separação entre o acesso à gestão do ambiente e o acesso aos dados dentro do ambiente. Por exemplo, é possível configurar um ambiente de forma a que o proprietário/criador do mesmo é removido do acesso a dados. Da mesma forma, pode não ser concedido acesso à configuração do ambiente aos utilizadores e serviços que têm permissão para ler dados do mesmo.
 
-## <a name="grant-data-access"></a>Conceder acesso a dados
+<a id="grant-data-access" class="xliff"></a>
+
+## Conceder acesso a dados
 Os passos seguintes mostram como pode conceder acesso a dados a um principal de utilizador:
 
 1.    Inicie sessão no [Portal do Azure](https://portal.azure.com).
@@ -70,7 +74,9 @@ Os passos seguintes mostram como pode conceder acesso a dados a um principal de 
 
   ![Gerir a origem do Time Series Insights - resultados](media/data-access/getstarted-grant-data-access5.png)
 
-## <a name="next-steps"></a>Passos seguintes
+<a id="next-steps" class="xliff"></a>
+
+## Passos seguintes
 
 * [Criar uma origem de eventos](time-series-insights-add-event-source.md)
 * [Enviar eventos](time-series-insights-send-events.md) para a origem de eventos

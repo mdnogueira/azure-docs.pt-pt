@@ -1,0 +1,100 @@
+---
+title: "Lição 9 do tutorial do Azure Analysis Services: Criar hierarquias | Microsoft Docs"
+description: 
+services: analysis-services
+documentationcenter: 
+author: minewiskan
+manager: erikre
+editor: 
+tags: 
+ms.assetid: 
+ms.service: analysis-services
+ms.devlang: NA
+ms.topic: get-started-article
+ms.tgt_pltfrm: NA
+ms.workload: na
+ms.date: 05/26/2017
+ms.author: owend
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 43aab8d52e854636f7ea2ff3aae50d7827735cc7
+ms.openlocfilehash: d628dc621335acf231342a6d9186079de16e85f4
+ms.contentlocale: pt-pt
+ms.lasthandoff: 06/03/2017
+
+---
+<a id="lesson-9-create-hierarchies" class="xliff"></a>
+
+# Lição 9: Criar hierarquias
+
+[!INCLUDE[analysis-services-appliesto-aas-sql2017-later](../../../includes/analysis-services-appliesto-aas-sql2017-later.md)]
+
+Nesta lição, irá criar hierarquias. Hierarquias são grupos de colunas organizados em níveis; por exemplo, uma hierarquia de Geografia pode ter subníveis para país, estado, município e cidade. As hierarquias podem aparecer separadas de outras colunas numa lista de campos de aplicações cliente relatório, tornando mais fácil para os utilizadores clientes navegarem e incluírem num relatório. Para obter mais informações, consulte [Hierarquias](https://docs.microsoft.com/sql/analysis-services/tabular-models/hierarchies-ssas-tabular)
+  
+Para criar hierarquias, use o designer de modelo da *vista de diagrama*. A criação e a gestão de hierarquias não é suportada na vista de dados.  
+  
+Tempo estimado para concluir esta lição: **20 minutos**  
+  
+<a id="prerequisites" class="xliff"></a>
+
+## Pré-requisitos  
+Este tópico faz parte de um tutorial de modelação em tabela que deve ser concluído por ordem. Antes de executar as tarefas nesta lição, deverá ter concluído a lição anterior: [Lição 8: Criar perspetivas](../tutorials/aas-lesson-8-create-perspectives.md).  
+  
+<a id="create-hierarchies" class="xliff"></a>
+
+## Criar hierarquias  
+  
+<a id="to-create-a-category-hierarchy-in-the-dimproduct-table" class="xliff"></a>
+
+#### Para criar uma hierarquia de categoria na tabela DimProduct  
+  
+1.  No designer de modelo (vista de diagrama), clique com botão direito do rato na tabela **DimProduct** > **Criar hierarquia**. Uma nova hierarquia aparece na parte inferior da janela da tabela. Mude o nome da hierarquia **Categoria**.  
+  
+2.  Clique e arraste a coluna **ProductCategoryName** para a nova hierarquia **Categoria**.  
+  
+3.  Na hierarquia **Categoria**, clique com botão direito do rato **ProductCategoryName** > **Mudar nome** e, em seguida, digite **Categoria**.  
+  
+    > [!NOTE]  
+    > Mudar o nome de uma coluna numa hierarquia não muda o nome dessa coluna na tabela. Uma coluna numa hierarquia é apenas uma representação da coluna na tabela.  
+  
+4.  Clique e arraste a coluna **ProductCategoryName** para a nova hierarquia **Categoria**. Mude o nome para **Subcategoria**. 
+  
+5.  Clique com botão direito do rato na coluna **ModelName** > **Adicionar à hierarquia** e, em seguida, selecione **Categoria**. Mude o nome para **Modelo**.
+
+6.  Finalmente, adicione **EnglishProductName** à hierarquia Categoria. Mude o nome para **Produto**.  
+
+    ![aas-lesson9-category](../tutorials/media/aas-lesson9-category.png)
+  
+<a id="to-create-hierarchies-in-the-dimdate-table" class="xliff"></a>
+
+#### Para criar hierarquias na tabela DimDate  
+  
+1.  Na tabela **DimDate**, crie uma hierarquia com o nome **Calendário**.  
+  
+3.  Adicione as seguintes colunas pela ordem:
+
+    *  CalendarYear
+    *  CalendarSemester
+    *  CalendarQuarter
+    *  MonthCalendar
+    *  DayNumberOfMonth
+    
+4.  Na tabela **DimDate**, crie uma hierarquia com o nome **Fiscal**. Inclua as seguintes colunas pela ordem:  
+  
+    *  FiscalYear
+    *  FiscalSemester
+    *  FiscalQuarter
+    *  MonthCalendar
+    *  DayNumberOfMonth
+  
+5.  Por fim, na tabela **DimDate**, crie uma hierarquia **ProductionCalendar**. Inclua as seguintes colunas pela ordem:  
+    *  CalendarYear
+    *  WeekNumberOfYear
+    *  DayNumberOfWeek
+  
+<a id="whats-next" class="xliff"></a>
+
+ ## Passos seguintes?
+[Lição 10: Criar partições](../tutorials/aas-lesson-10-create-partitions.md). 
+  
+  
+

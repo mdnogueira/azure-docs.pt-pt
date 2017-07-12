@@ -13,17 +13,20 @@ ms.devlang: multiple
 ms.topic: hero-article
 ms.tgt_pltfrm: multiple
 ms.workload: na
-ms.date: 05/10/2017
+ms.date: 06/08/2017
 ms.author: glenga
+ms.custom: mvc
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 5e92b1b234e4ceea5e0dd5d09ab3203c4a86f633
-ms.openlocfilehash: abd508631787ba5f839a4ae2ea82e76c4bfab425
+ms.sourcegitcommit: 245ce9261332a3d36a36968f7c9dbc4611a019b2
+ms.openlocfilehash: f00ca3b8a35c0c49277457bd42fe8a314520d5a5
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 06/09/2017
 
 
 ---
-# <a name="create-your-first-function-in-the-azure-portal"></a>Criar a sua primeira função no portal do Azure
+<a id="create-your-first-function-in-the-azure-portal" class="xliff"></a>
+
+# Criar a sua primeira função no portal do Azure
 
 As Funções do Azure permitem-lhe executar o seu código num ambiente sem servidor, sem que tenha de criar primeiro uma VM ou publicar uma aplicação Web. Neste tópico, aprenda a utilizar as Funções para criar uma função “hello world” no portal do Azure.
 
@@ -31,13 +34,15 @@ As Funções do Azure permitem-lhe executar o seu código num ambiente sem servi
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-Deverá demorar menos de cinco minutos para concluir todos os passos neste tópico.
+<a id="log-in-to-azure" class="xliff"></a>
 
-## <a name="log-in-to-azure"></a>Iniciar sessão no Azure
+## Iniciar sessão no Azure
 
 Inicie sessão no [Portal do Azure](https://portal.azure.com/).
 
-## <a name="create-a-function-app"></a>Criar uma aplicação de função
+<a id="create-a-function-app" class="xliff"></a>
+
+## Criar uma aplicação de função
 
 Precisa de uma aplicação Function App para alojar a execução das suas funções. As aplicações App Function permitem-lhe agrupar funções como unidades lógicas para uma gestão, implementação e partilha de recursos mais fácil. 
 
@@ -59,9 +64,11 @@ Em seguida, vai criar uma função na aplicação Function App nova.
 
 É criada uma função na linguagem que escolheu com o modelo de função acionada por HTTP. Pode enviar um pedido HTTP para executar a função nova.
 
-## <a name="test-the-function"></a>Testar a função
+<a id="test-the-function" class="xliff"></a>
 
-1. Na função nova, clique en **</> Obter URL da função** e copie o **URL da Função**. 
+## Testar a função
+
+1. Na sua nova função, clique em **</> Obter URL da função**, selecione **predefinição (tecla de função)** e, em seguida, clique em **Copiar**. 
 
     ![Copiar o URL da função a partir do portal do Azure](./media/functions-create-first-azure-function/function-app-develop-tab-testing.png)
 
@@ -71,17 +78,23 @@ Em seguida, vai criar uma função na aplicação Function App nova.
 
     O URL do pedido inclui uma chave que é necessária, por predefinição, para aceder à sua função através de HTTP.   
 
-## <a name="view-the-function-logs"></a>Ver os registos da função 
+<a id="view-the-function-logs" class="xliff"></a>
+
+## Ver os registos da função 
 
 Quando a sua função é executada, são escritas informações de rastreio nos registos. Para ver a saída de rastreio da execução anterior, regresse à função no portal e clique na seta para cima, na parte inferior do ecrã, para expandir **Registos**. 
 
 ![Visualizador de registo de funções no portal do Azure.](./media/functions-create-first-azure-function/function-view-logs.png)
 
-## <a name="clean-up-resources"></a>Limpar recursos
+<a id="clean-up-resources" class="xliff"></a>
+
+## Limpar recursos
 
 [!INCLUDE [Clean up resources](../../includes/functions-quickstart-cleanup.md)]
 
-## <a name="next-steps"></a>Passos seguintes
+<a id="next-steps" class="xliff"></a>
+
+## Passos seguintes
 
 Criou uma aplicação App Function com uma função acionada por HTTP simples.  
 

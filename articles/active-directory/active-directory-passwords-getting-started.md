@@ -6,25 +6,31 @@ keywords:
 documentationcenter: 
 author: MicrosoftGuyJFlo
 manager: femila
+editor: gahug
 ms.assetid: bde8799f-0b42-446a-ad95-7ebb374c3bec
 ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 04/26/2017
+ms.date: 05/12/2017
 ms.author: joflore
+ms.custom: it-pro
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 2db2ba16c06f49fd851581a1088df21f5a87a911
-ms.openlocfilehash: b4d2819f51506651ebeb5b7b7c2d016c0cfc154d
+ms.sourcegitcommit: 09f24fa2b55d298cfbbf3de71334de579fbf2ecd
+ms.openlocfilehash: 663041285f7b64a8f38ace91bcb3673f46c1218a
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/08/2017
+ms.lasthandoff: 06/07/2017
 
 
 ---
-# <a name="quick-start-azure-ad-self-service-password-reset"></a>Guia de Início Rápido: reposição de palavras-passe self-service do Azure AD
+<a id="quick-start-azure-ad-self-service-password-reset" class="xliff"></a>
 
-## <a name="rapidly-deploy-self-service-password-reset"></a>Implementar rapidamente a reposição de palavras-passe self-service
+# Guia de Início Rápido: reposição de palavras-passe self-service do Azure AD
+
+<a id="rapidly-deploy-self-service-password-reset" class="xliff"></a>
+
+## Implementar rapidamente a reposição de palavras-passe self-service
 
 A reposição de palavras-passe self-service (Self-service Password Reste, SSPR) oferece aos administradores de TI uma forma simples de capacitarem os utilizadores a repor ou desbloquear as palavras-passe ou as contas deles. O sistema inclui relatórios detalhados para controlar quando os utilizadores utilizam o sistema, juntamente com notificações para o alertar quanto a utilizações indevidas ou abusos.
 
@@ -63,19 +69,25 @@ Este guia pressupõe que já tem uma versão de avaliação ou um inquilino lice
 > [!NOTE]
 > Teste o SSPR com um utilizador e não com um administrador, pois a Microsoft aplica requisitos de autenticação fortes às contas de tipo administrador do Azure. Para obter mais informações sobre a política de palavras-passe de administrador, veja o nosso [artigo de política de palavra-passe](active-directory-passwords-policy.md#administrator-password-policy-differences).
 
-## <a name="configure-synchronization-to-existing-identity-source"></a>Configurar a sincronização com a origem de identidades existente
+<a id="configure-synchronization-to-existing-identity-source" class="xliff"></a>
+
+## Configurar a sincronização com a origem de identidades existente
 
 Para ativar a sincronização de identidades no local com o Azure AD, tem de instalar e configurar o [Azure AD Connect](./connect/active-directory-aadconnect.md) num servidor da sua organização. Esta aplicação processa a sincronização de utilizadores e grupos da sua origem de identidades existente com o seu domínio do Azure AD.
 
-[Introdução ao Azure AD Connect com as definições rápidas](./connect/active-directory-aadconnect-get-started-express.md)
+* [Upgrade from DirSync or Azure AD Sync to Azure AD Connect](./connect/active-directory-aadconnect-dirsync-deprecated.md) (Atualizar de DirSync ou do Azure AD Sync para o Azure AD Connect)
+* [Introdução ao Azure AD Connect com as definições rápidas](./connect/active-directory-aadconnect-get-started-express.md)
+* [Configurar a repetição de escrita de palavras-passe](active-directory-passwords-writeback.md#configuring-password-writeback) para gravar palavras-passe do Azure AD no seu diretório local.
 
-[Upgrade from DirSync or Azure AD Sync to Azure AD Connect](./connect/active-directory-aadconnect-dirsync-deprecated.md) (Atualizar de DirSync ou do Azure AD Sync para o Azure AD Connect)
+<a id="disabling-self-service-password-reset" class="xliff"></a>
 
-## <a name="disabling-self-service-password-reset"></a>Desativar a reposição de palavras-passe self-service
+## Desativar a reposição de palavras-passe self-service
 
 Para desativar a reposição de palavras-passe self-service basta abrir o inquilino do Azure AD e aceder a **Reposição de Palavras-passe**, **Propriedades** e escolher **Ninguém**, em **Reposição de Palavras-passe Self-service Ativada**
 
-## <a name="next-steps"></a>Passos seguintes
+<a id="next-steps" class="xliff"></a>
+
+## Passos seguintes
 As ligações seguintes disponibilizam informações adicionais relativamente à reposição de palavras-passe com o Azure AD
 
 * [**Licensing**](active-directory-passwords-licensing.md) - Configure your Azure AD Licensing (Licenciamento - Configurar o Licenciamento do Azure AD)

@@ -1,6 +1,6 @@
 ---
-title: Escrever um programa que utiliza filas do Azure Service Bus | Microsoft Docs
-description: "Como escrever uma aplicação de consola C# para as mensagens do Service Bus"
+title: "Introdução às filas do Azure Service Bus | Microsoft Docs"
+description: "Grave uma aplicação da consola C# que utilize filas das mensagens do Service Bus."
 services: service-bus-messaging
 documentationcenter: .net
 author: sethmanheim
@@ -12,112 +12,150 @@ ms.devlang: tbd
 ms.topic: hero-article
 ms.tgt_pltfrm: dotnet
 ms.workload: na
-ms.date: 03/23/2017
+ms.date: 06/26/2017
 ms.author: sethm
 ms.translationtype: Human Translation
-ms.sourcegitcommit: f92909e0098a543f99baf3df3197a799bc9f1edc
-ms.openlocfilehash: 83649bdad1d369cdfe4edf3c2bdaa67180db8668
+ms.sourcegitcommit: 6efa2cca46c2d8e4c00150ff964f8af02397ef99
+ms.openlocfilehash: 02d0ce093bc42cffa4f3993826c61c8aeca4d033
 ms.contentlocale: pt-pt
-ms.lasthandoff: 02/28/2017
+ms.lasthandoff: 07/01/2017
 
 
 ---
-# <a name="get-started-with-service-bus-queues"></a>Introdução às filas do Service Bus
+<a id="get-started-with-service-bus-queues" class="xliff"></a>
+
+# Introdução às filas do Service Bus
 [!INCLUDE [service-bus-selector-queues](../../includes/service-bus-selector-queues.md)]
 
-## <a name="what-will-be-accomplished"></a>O que será efetuado
-Neste tutorial, iremos realizar o seguinte:
+<a id="what-will-be-accomplished" class="xliff"></a>
+
+## O que será efetuado
+Este tutorial contém os seguintes passos:
 
 1. Criar um espaço de nomes do Service Bus com o Portal do Azure.
-2. Criar uma fila de Mensagens do Service Bus com o Portal do Azure.
+2. Criar uma fila do Service Bus com o portal do Azure.
 3. Escrever uma aplicação de consola para enviar uma mensagem.
-4. Escrever uma aplicação de consola para receber mensagens.
+4. Escrever uma aplicação de consola para receber as mensagens enviadas no passo anterior.
 
-## <a name="prerequisites"></a>Pré-requisitos
-1. [Visual Studio 2015 ou superior](http://www.visualstudio.com). Os exemplos neste tutorial utilizam o Visual Studio 2015.
+<a id="prerequisites" class="xliff"></a>
+
+## Pré-requisitos
+1. [Visual Studio 2015 ou superior](http://www.visualstudio.com). Os exemplos neste tutorial utilizam o Visual Studio 2017.
 2. Uma subscrição do Azure.
 
 [!INCLUDE [create-account-note](../../includes/create-account-note.md)]
 
-## <a name="1-create-a-namespace-using-the-azure-portal"></a>1. Criar um espaço de nomes com o Portal do Azure
-Se já tiver criado um espaço de nomes do Service Bus, avance para a secção [Criar uma fila com o Portal do Azure](#2-create-a-queue-using-the-azure-portal).
+<a id="1-create-a-namespace-using-the-azure-portal" class="xliff"></a>
+
+## 1. Criar um espaço de nomes com o Portal do Azure
+Se já tiver criado um espaço de nomes das mensagens do Service Bus, avance para a secção [Criar uma fila com o portal do Azure](#2-create-a-queue-using-the-azure-portal).
 
 [!INCLUDE [service-bus-create-namespace-portal](../../includes/service-bus-create-namespace-portal.md)]
 
-## <a name="2-create-a-queue-using-the-azure-portal"></a>2. Criar uma fila com o Portal do Azure
+<a id="2-create-a-queue-using-the-azure-portal" class="xliff"></a>
+
+## 2. Criar uma fila com o Portal do Azure
 Se já tiver criado uma fila do Service Bus, avance para a secção [Enviar mensagens para a fila](#3-send-messages-to-the-queue).
 
 [!INCLUDE [service-bus-create-queue-portal](../../includes/service-bus-create-queue-portal.md)]
 
-## <a name="3-send-messages-to-the-queue"></a>3. Enviar mensagens para a fila
-Para enviar mensagens para a fila, vamos criar uma aplicação de consola C# com o Visual Studio.
+<a id="3-send-messages-to-the-queue" class="xliff"></a>
 
-### <a name="create-a-console-application"></a>Criar uma aplicação de consola
+## 3. Enviar mensagens para a fila
+Para enviar mensagens para a fila, escrevemos uma aplicação de consola C# com o Visual Studio.
 
-- Abra o Visual Studio e crie uma nova aplicação de Consola.
+<a id="create-a-console-application" class="xliff"></a>
 
-### <a name="add-the-service-bus-nuget-package"></a>Adicionar o pacote NuGet do Service Bus
+### Criar uma aplicação de consola
+
+Abra o Visual Studio e crie um novo projeto de **Aplicação de consola (.NET Framework)**.
+
+<a id="add-the-service-bus-nuget-package" class="xliff"></a>
+
+### Adicionar o pacote NuGet do Service Bus
 1. Clique com o botão direito do rato no projeto recém-criado e selecione **Gerir Pacotes NuGet**.
-2. Clique no separador **Procurar**, procure “Microsoft Azure Service Bus” e selecione o item **Microsoft Azure Service Bus**. Clique em **Instalar** para concluir a instalação e, em seguida, feche esta caixa de diálogo.
+2. Clique no separador **Procurar**, procure **Microsoft Azure Service Bus** e selecione o item **WindowsAzure.ServiceBus**. Clique em **Instalar** para concluir a instalação e, em seguida, feche esta caixa de diálogo.
    
     ![Selecionar um pacote NuGet][nuget-pkg]
 
-### <a name="write-some-code-to-send-a-message-to-the-queue"></a>Escrever código para enviar uma mensagem para a fila
-1. Adicione a seguinte declaração using na parte superior do ficheiro Program.cs.
+<a id="write-some-code-to-send-a-message-to-the-queue" class="xliff"></a>
+
+### Escrever código para enviar uma mensagem para a fila
+1. Adicione a seguinte declaração `using` na parte superior do ficheiro Program.cs.
    
     ```csharp
     using Microsoft.ServiceBus.Messaging;
     ```
-2. Adicione o seguinte código no método `Main`, defina a variável **connectionString** como a cadeia de ligação obtida ao criar o espaço de nomes e defina o **queueName** como o nome da fila utilizado aquando da criação da fila.
+2. Adicione o seguinte código ao método `Main`. Defina a variável `connectionString` para a cadeia de ligação que obteve ao criar o espaço de nomes e defina `queueName` como o nome da fila que utilizou ao criar a fila.
    
     ```csharp
-    var connectionString = "<Your connection string>";
-    var queueName = "<Your queue name>";
+    var connectionString = "<your connection string>";
+    var queueName = "<your queue name>";
    
     var client = QueueClient.CreateFromConnectionString(connectionString, queueName);
     var message = new BrokeredMessage("This is a test message!");
+
+    Console.WriteLine(String.Format("Message body: {0}", message.GetBody<String>()));
+    Console.WriteLine(String.Format("Message id: {0}", message.MessageId));
+
     client.Send(message);
+
+    Console.WriteLine("Message successfully sent! Press ENTER to exit program");
+    Console.ReadLine();
     ```
    
     O ficheiro Program.cs deve ter o seguinte aspeto.
    
     ```csharp
     using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
     using Microsoft.ServiceBus.Messaging;
-   
-    namespace GettingStartedWithQueues
+
+    namespace qsend
     {
         class Program
         {
             static void Main(string[] args)
             {
-                var connectionString = "<Your connection string>";
-                var queueName = "<Your queue name>";
-   
+                var connectionString = "Endpoint=sb://<your namespace>.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=<your key>";
+                var queueName = "<your queue name>";
+
                 var client = QueueClient.CreateFromConnectionString(connectionString, queueName);
                 var message = new BrokeredMessage("This is a test message!");
-   
+
+                Console.WriteLine(String.Format("Message body: {0}", message.GetBody<String>()));
+                Console.WriteLine(String.Format("Message id: {0}", message.MessageId));
+
                 client.Send(message);
+
+                Console.WriteLine("Message successfully sent! Press ENTER to exit program");
+                Console.ReadLine();
             }
         }
     }
     ```
-3. Execute o programa e consulte o Portal do Azure. Clique no nome da sua fila no painel **Descrição geral** do espaço de nomes. Repare que o valor de **Contagem de mensagens ativas** deve ser agora 1.
+3. Execute o programa e verifique o portal do Azure: clique no nome da sua fila no painel **Descrição geral** do espaço de nomes. É apresentado o painel **Aspetos essenciais** da fila. Repare que o valor de **Contagem de Mensagens Ativas** deve ser agora 1. Sempre que executar a aplicação do remetente sem recuperar as mensagens, esse valor aumenta 1. Note também que o tamanho atual da fila aumenta sempre que a aplicação adiciona uma mensagem à fila.
    
-      ![Contagem de mensagens][queue-message]
+      ![Tamanho da mensagem][queue-message]
 
-## <a name="4-receive-messages-from-the-queue"></a>4. Receber mensagens da fila
-1. Crie uma nova aplicação de consola e adicione uma referência ao pacote NuGet do Service Bus, semelhante à aplicação de envio anterior.
+<a id="4-receive-messages-from-the-queue" class="xliff"></a>
+
+## 4. Receber mensagens da fila
+
+1. Para receber as mensagens que acabou de enviar, crie uma nova aplicação de consola e adicione uma referência ao pacote NuGet do Service Bus, semelhante à aplicação do remetente anterior.
 2. Adicione a seguinte declaração `using` na parte superior do ficheiro Program.cs.
    
     ```csharp
     using Microsoft.ServiceBus.Messaging;
     ```
-3. Adicione o seguinte código no método `Main`, defina a variável **connectionString** como a cadeia de ligação obtida ao criar o espaço de nomes e defina o **queueName** como o nome da fila utilizado aquando da criação da fila.
+3. Adicione o seguinte código ao método `Main`. Defina a variável `connectionString` como a cadeia de ligação que obteve ao criar o espaço de nomes e defina `queueName` como o nome da fila que utilizou ao criar a fila.
    
     ```csharp
-    var connectionString = "";
-    var queueName = "samplequeue";
+    var connectionString = "<your connection string>";
+    var queueName = "<your queue name>";
    
     var client = QueueClient.CreateFromConnectionString(connectionString, queueName);
    
@@ -127,6 +165,7 @@ Para enviar mensagens para a fila, vamos criar uma aplicação de consola C# com
       Console.WriteLine(String.Format("Message id: {0}", message.MessageId));
     });
    
+    Console.WriteLine("Press ENTER to exit program");
     Console.ReadLine();
     ```
    
@@ -142,8 +181,8 @@ Para enviar mensagens para a fila, vamos criar uma aplicação de consola C# com
       {
         static void Main(string[] args)
         {
-          var connectionString = "";
-          var queueName = "samplequeue";
+          var connectionString = "Endpoint=sb://<your namespace>.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=<your key>";;
+          var queueName = "<your queue name>";
    
           var client = QueueClient.CreateFromConnectionString(connectionString, queueName);
    
@@ -152,20 +191,24 @@ Para enviar mensagens para a fila, vamos criar uma aplicação de consola C# com
             Console.WriteLine(String.Format("Message body: {0}", message.GetBody<String>()));
             Console.WriteLine(String.Format("Message id: {0}", message.MessageId));
           });
-   
+
+          Console.WriteLine("Press ENTER to exit program");   
           Console.ReadLine();
         }
       }
     }
     ```
-4. Execute o programa e consulte o portal. Repare que o valor do **Comprimento da Fila** deve ser 0.
+4. Execute o programa e consulte novamente o portal. Tenha em atenção que agora o valor da **Contagem de Mensagens Ativas** e de **Atual** é 0.
    
     ![Comprimento da fila][queue-message-receive]
 
 Parabéns! Acabou de criar uma fila, enviar uma mensagem e receber uma mensagem.
 
-## <a name="next-steps"></a>Passos seguintes
-Consulte o nosso [repositório do GitHub com exemplos](https://github.com/Azure-Samples/azure-servicebus-messaging-samples) que demonstra algumas das funcionalidades mais avançadas das Mensagens do Azure Service Bus.
+<a id="next-steps" class="xliff"></a>
+
+## Passos seguintes
+
+Consulte o nosso [repositório do GitHub com exemplos](https://github.com/Azure/azure-service-bus/tree/master/samples) que demonstram algumas das funcionalidades mais avançadas das mensagens do Service Bus.
 
 <!--Image references-->
 

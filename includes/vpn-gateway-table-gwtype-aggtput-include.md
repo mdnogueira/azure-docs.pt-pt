@@ -1,16 +1,15 @@
-A tabela seguinte mostra os tipos de gateways e o débito agregado estimado pelo SKU do gateway. Esta tabela aplica-se aos modelos de implementação clássica e Resource Manager. Há diferença de preços entre os SKUs de gateway. Para obter mais informações, veja [Preços do Gateway de VPN](https://azure.microsoft.com/pricing/details/vpn-gateway).
+O Azure oferece os seguintes SKU de gateway de VPN:
 
-Tenha em atenção que o SKU do gateway UltraPerformance não está representado nesta tabela. Para obter informações sobre o SKU de UltraPerformance, consulte a documentação do [ExpressRoute](../articles/expressroute/expressroute-about-virtual-network-gateways.md).
+|**SKU**   | **S2S/VNet para VNet<br>Túneis** | **P2S<br>Ligações** | **Agregação<br>Taxa de transferência** |
+|---       | ---                             | ---                    | ---                         |
+|**VpnGw1**| Um máximo de 30                         | Um máximo de 128               | 500 Mbps                    |
+|**VpnGw2**| Um máximo de 30                         | Um máximo de 128               | 1 Gbps                      |
+|**VpnGw3**| Um máximo de 30                         | Um máximo de 128               | 1,25 Gbps                   |
+|**Básica** | Um máximo de 10                         | Um máximo de 128               | 100 Mbps                    | 
+|          |                                 |                        |                             | 
 
-|  | **Débito do Gateway de VPN (1)** | **Máximo de túneis IPsec do Gateway de VPN (2)** | **Débito do Gateway do ExpressRoute** | **Coexistência do ExpressRoute e do Gateway de VPN** |
-| --- | --- | --- | --- | --- |
-| **SKU Básico (3)(5)(6)** |100 Mbps |10 |500 Mbps (6) |Não |
-| **SKU Padrão (4)(5)** |100 Mbps |10 |1000 Mbps |Sim |
-| **SKU de Elevado Desempenho (4)** |200 Mbps |30 |2000 Mbps |Sim |
+- A taxa de transferência é baseada nas medidas de vários túneis agregados por meio de um único gateway. Não é uma taxa de transferência garantida devido a condições de tráfego de Internet e aos comportamentos da sua aplicação.
 
-* (1) O débito da VPN é uma estimativa aproximada baseada em medidas entre VNets na mesma região do Azure. Não é um débito garantido para ligações entre locais na Internet. É a medida de débito mais alta possível.
-* (2) O número de túneis refere-se às VPNs RouteBased. Uma VPN PolicyBased só pode suportar um túnel VPN de Rede de VPNs.
-* (3) O BGP não é suportado para o SKU Básico.
-* (4) As VPNs PolicyBased não são suportadas para este SKU. Só são suportadas para o SKU Básico.
-* (5) As ligações do Gateway de VPN S2S no modo ativo/ativo não são suportadas por este SKU. O modo ativo/ativo é suportado apenas no SKU HighPerformance.
-* (6) o SKU Básico foi descontinuado para utilização com o ExpressRoute.
+- As informações sobre os preços estão disponíveis na página [Preços](https://azure.microsoft.com/pricing/details/vpn-gateway).
+
+- Pode encontrar informações sobre SLA (contrato de nível de serviço) na página do [SLA](https://azure.microsoft.com/en-us/support/legal/sla/vpn-gateway/).

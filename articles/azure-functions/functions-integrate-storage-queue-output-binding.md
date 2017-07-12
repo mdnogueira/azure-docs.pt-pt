@@ -15,27 +15,29 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 05/02/2017
 ms.author: glenga
+ms.custom: mvc
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 71fea4a41b2e3a60f2f610609a14372e678b7ec4
-ms.openlocfilehash: 0e2501b0eb218d3c8a62dd4959b08ff85ec565eb
+ms.sourcegitcommit: cb4d075d283059d613e3e9d8f0a6f9448310d96b
+ms.openlocfilehash: d1ddfbe9a0a0c7c7e0a060776938bd68a87e1ba5
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/10/2017
-
+ms.lasthandoff: 06/26/2017
 
 ---
-# <a name="add-messages-to-an-azure-storage-queue-using-functions"></a>Utilizar as Funções para adicionar mensagens a uma fila do Armazenamento do Azure
+<a id="add-messages-to-an-azure-storage-queue-using-functions" class="xliff"></a>
+
+# Utilizar as Funções para adicionar mensagens a uma fila do Armazenamento do Azure
 
 Nas Funções do Azure, os enlaces de entrada e saída proporcionam uma forma declarativa para ligar aos dados do serviço externo a partir da sua função. Neste tópico, aprenda a atualizar funções existentes ao adicionar um enlace de saída que envia mensagens para o Armazenamento de filas do Azure.  
 
 ![Ver mensagem nos registos.](./media/functions-integrate-storage-queue-output-binding/functions-integrate-storage-binding-in-portal.png)
 
-Deverá demorar menos de cinco minutos para concluir todos os passos neste tópico.
+<a id="prerequisites" class="xliff"></a>
 
-## <a name="prerequisites"></a>Pré-requisitos 
+## Pré-requisitos 
 
 [!INCLUDE [Previous topics](../../includes/functions-quickstart-previous-topics.md)]
 
-Também tem de transferir e instalar o [Microsoft Azure Storage Explorer](http://storageexplorer.com/). 
+* Instale o [Explorador de Armazenamento do Microsoft Azure](http://storageexplorer.com/).
 
 [!INCLUDE [functions-portal-favorite-function-apps](../../includes/functions-portal-favorite-function-apps.md)] 
 
@@ -43,11 +45,11 @@ Também tem de transferir e instalar o [Microsoft Azure Storage Explorer](http:/
  
 1. Expanda a aplicação Function App e a função.
 
-2. Clique em **Integrar** e em **+ Nova saída**, clique em **Armazenamento de filas do Azure** e clique em **Selecionar**.
+2. Selecione **Integrar** e **+ Nova saída**, selecione **Armazenamento de Filas do Azure** e selecione **Selecionar**.
     
     ![Adicione um enlace de saída do Armazenamento de filas a uma função no portal do Azure.](./media/functions-integrate-storage-queue-output-binding/function-add-queue-storage-output-binding.png)
 
-3. Utilize as definições especificadas na tabela e clique em **Guardar**: 
+3. Utilize as definições especificadas na tabela e selecione **Guardar**: 
 
     ![Adicione um enlace de saída do Armazenamento de filas a uma função no portal do Azure.](./media/functions-integrate-storage-queue-output-binding/function-add-queue-storage-output-binding-2.png)
 
@@ -59,11 +61,13 @@ Também tem de transferir e instalar o [Microsoft Azure Storage Explorer](http:/
 
 Agora que tem um enlace de saída definido, tem de atualizar o código para utilizar o enlace para adicionar mensagens a uma fila.  
 
-## <a name="update-the-function-code"></a>Atualizar o código da função
+<a id="update-the-function-code" class="xliff"></a>
 
-1. Clique na sua função para apresentar o código da mesma no editor 
+## Atualizar o código da função
 
-2. Para funções C#, atualize a definição da função da seguinte forma da seguinte forma, para adicionar o parâmetro de enlace de armazenamento **outQueueItem**. Ignore este passo para funções JavaScript.
+1. Selecione a sua função para apresentar o código da mesma no editor. 
+
+2. Para funções C#, atualize a definição da função da seguinte forma, para adicionar o parâmetro de enlace de armazenamento **outQueueItem**. Ignore este passo para funções JavaScript.
 
     ```cs   
     public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, 
@@ -84,11 +88,13 @@ Agora que tem um enlace de saída definido, tem de atualizar o código para util
     outQueueItem.Add("Name passed to the function: " + name);     
     ```
 
-4. Clique em **Guardar** para guardar as alterações.
+4. Selecione **Guardar** para guardar as alterações.
 
 O valor transmitido ao acionador HTTP está incluído numa mensagem adicionada à fila.
  
-## <a name="test-the-function"></a>Testar a função 
+<a id="test-the-function" class="xliff"></a>
+
+## Testar a função 
 
 1. Depois de as alterações ao código serem guardadas, clique em **Executar**. 
 
@@ -98,32 +104,38 @@ O valor transmitido ao acionador HTTP está incluído numa mensagem adicionada �
 
 Em seguida, ligue à sua conta de armazenamento para verificar a fila nova e a mensagem que adicionou à mesma. 
 
-## <a name="connect-to-the-queue"></a>Ligar à fila
+<a id="connect-to-the-queue" class="xliff"></a>
+
+## Ligar à fila
 
 Ignore os três primeiros passos se já tiver instalado o Storage Explorer e ligado à sua conta de armazenamento.    
 
-1. Na sua função, clique em **Integrar** e no enlace de saída do **Armazenamento de filas do Azure** novo e expanda **Documentação**. Copie o **Nome da conta** e a **Chave da conta**. Vai utilizar estas credenciais para ligar à conta de armazenamento.
+1. Na sua função, selecione **Integrar** e o novo enlace de saída do **Armazenamento de Filas do Azure** e, em seguida, expanda **Documentação**. Copie o **Nome da conta** e a **Chave da conta**. Vai utilizar estas credenciais para ligar à conta de armazenamento.
  
     ![Obtenha as credenciais de ligação da conta de Armazenamento.](./media/functions-integrate-storage-queue-output-binding/function-get-storage-account-credentials.png)
 
-2. Execute a ferramenta [Microsoft Azure Storage Explorer](http://storageexplorer.com/), clique no ícone de ligação à esquerda, escolha **Utilizar um nome e uma chave de conta de armazenamento** e clique em **Seguinte**.
+2. Execute a ferramenta [Explorador de Armazenamento do Microsoft Azure](http://storageexplorer.com/), selecione o ícone de ligação à esquerda, escolha **Utilizar um nome e uma chave da conta de armazenamento** e selecione **Seguinte**.
 
     ![Execute a ferramenta Microsoft Azure Storage Explorer.](./media/functions-integrate-storage-queue-output-binding/functions-storage-manager-connect-1.png)
     
-3. Introduza o **Nome da conta** e a **Chave da conta** do passo 1, clique em **Seguinte** e em **Ligar**. 
+3. Cole o **Nome da conta** e a **Chave da conta** do passo 1 nos campos correspondentes e, em seguida, selecione **Seguinte** e **Ligar**. 
   
-    ![Introduza as credenciais de armazenamento e ligue-se.](./media/functions-integrate-storage-queue-output-binding/functions-storage-manager-connect-2.png)
+    ![Cole as credenciais de armazenamento e ligue-se.](./media/functions-integrate-storage-queue-output-binding/functions-storage-manager-connect-2.png)
 
 4. Expanda a conta de armazenamento anexada, clique com o botão direito do rato em **Filas** e confirme se existe uma fila com o nome **myqueue itens**. Também deverá ver uma mensagem já na fila.  
  
     ![Crie uma fila de armazenamento.](./media/functions-integrate-storage-queue-output-binding/function-queue-storage-output-view-queue.png)
  
 
-## <a name="clean-up-resources"></a>Limpar recursos
+<a id="clean-up-resources" class="xliff"></a>
+
+## Limpar recursos
 
 [!INCLUDE [Next steps note](../../includes/functions-quickstart-cleanup.md)]
 
-## <a name="next-steps"></a>Passos seguintes
+<a id="next-steps" class="xliff"></a>
+
+## Passos seguintes
 
 Adicionou um enlace de saída a uma função já existente. 
 

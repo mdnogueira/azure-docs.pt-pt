@@ -1,26 +1,30 @@
 ---
-title: "Alojar vários sites no Gateway de Aplicação | Microsoft Docs"
+title: "Alojar vários sites no Gateway de Aplicações do Azure | Microsoft Docs"
 description: "Esta página fornece uma descrição geral do suporte para vários sites do Gateway de Aplicação."
 documentationcenter: na
 services: application-gateway
 author: amsriva
 manager: rossort
-editor: amsriva
+editor: 
 ms.assetid: 49993fd2-87e5-4a66-b386-8d22056a616d
 ms.service: application-gateway
 ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 12/14/2016
+ms.date: 05/09/2017
 ms.author: amsriva
-translationtype: Human Translation
-ms.sourcegitcommit: 09aeb63d4c2e68f22ec02f8c08f5a30c32d879dc
-ms.openlocfilehash: 68e88483e3dc7c22968d701d9b79364bb55fb896
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 09f24fa2b55d298cfbbf3de71334de579fbf2ecd
+ms.openlocfilehash: 722ab9e8a13ee28342bb30f6810fa503b1aa29f2
+ms.contentlocale: pt-pt
+ms.lasthandoff: 06/07/2017
 
 
 ---
-# <a name="application-gateway-multiple-site-hosting"></a>Alojamento de vários sites do Gateway de Aplicação
+<a id="application-gateway-multiple-site-hosting" class="xliff"></a>
+
+# Alojamento de vários sites do Gateway de Aplicação
 
 O alojamento de vários sites permite-lhe configurar mais do que uma aplicação Web na mesma instância do gateway de aplicação. Esta funcionalidade permite-lhe configurar uma topologia mais eficiente para as suas implementações ao adicionar até 20 sites a um gateway de aplicação. Cada site pode ser direcionado para o seu próprio agrupamento de back-end. No exemplo seguinte, o gateway de aplicação está a enviar tráfego para contoso.com e fabrikam.com a partir de dois agrupamentos de servidores de back-end com o nome ContosoServerPool e FabrikamServerPool.
 
@@ -30,7 +34,9 @@ Os pedidos enviados para http://contoso.com são encaminhados para ContosoServer
 
 Da mesma forma, dois subdomínios do mesmo domínio principal podem ser alojados na mesma implementação do gateway de aplicação. Os exemplos de como utilizar subdomínios podem incluir o http://blog.contoso.com e o http://app.contoso.com alojados numa única implementação do gateway de aplicação.
 
-## <a name="host-headers-and-server-name-indication-sni"></a>Cabeçalhos de anfitrião e Indicação do Nome de Servidor (SNI)
+<a id="host-headers-and-server-name-indication-sni" class="xliff"></a>
+
+## Cabeçalhos de anfitrião e Indicação do Nome de Servidor (SNI)
 
 Existem três mecanismos comuns que permitem alojar vários sites na mesma infraestrutura.
 
@@ -40,7 +46,9 @@ Existem três mecanismos comuns que permitem alojar vários sites na mesma infra
 
 De momento, um gateway de aplicação obtém um endereço IP público exclusivo no qual escuta tráfego. Por conseguinte, atualmente, não é possível suportar várias aplicações, cada uma com o seu próprio endereço IP. O Gateway de Aplicação suporta o alojamento de várias aplicações, cada uma a escutar em portas diferentes. No entanto, este cenário requer que as aplicações aceitem tráfego em portas não padrão, o que, normalmente, não é uma configuração desejada. O Gateway de Aplicação conta com os cabeçalhos de anfitrião HTTP 1.1 para alojar mais do que um site no mesmo endereço IP público e porta. Os sites alojados no gateway de aplicação também podem suportar descarga de SSL com a extensão TLS da Indicação do Nome de Servidor (SNI). Neste cenário, o browser cliente e o web farm de back-end têm de suportar HTTP/1.1 e a extensão TLS conforme definido em RFC 6066.
 
-## <a name="listener-configuration-element"></a>Elemento de configuração do serviço de escuta
+<a id="listener-configuration-element" class="xliff"></a>
+
+## Elemento de configuração do serviço de escuta
 
 O elemento de configuração HTTPListener existente foi melhorado para suportar elementos de nome de anfitrião e de indicação do nome de servidor, os quais são utilizados pelo gateway de aplicação para encaminhar tráfego para o agrupamento de back-end adequado. O seguinte exemplo de código é o fragmento do elemento HttpListeners do ficheiro de modelo.
 
@@ -82,7 +90,9 @@ O elemento de configuração HTTPListener existente foi melhorado para suportar 
 
 Pode visitar o [modelo do Resource Manager através do alojamento de vários sites](https://github.com/Azure/azure-quickstart-templates/blob/master/201-application-gateway-multihosting) para obter uma implementação baseada num modelo ponto a ponto.
 
-## <a name="routing-rule"></a>Regra de encaminhamento
+<a id="routing-rule" class="xliff"></a>
+
+## Regra de encaminhamento
 
 Não há qualquer alteração obrigatória na regra de encaminhamento. Deve continuar a escolher a regra de encaminhamento “Básica” para associar o serviço de escuta de sites ao conjunto de endereços de back-end correspondente.
 
@@ -123,13 +133,10 @@ Não há qualquer alteração obrigatória na regra de encaminhamento. Deve cont
 ]
 ```
 
-## <a name="next-steps"></a>Passos seguintes
+<a id="next-steps" class="xliff"></a>
+
+## Passos seguintes
 
 Depois de saber mais sobre o alojamento de vários sites, veja o artigo [Criar um gateway de aplicação através do alojamento de vários sites](application-gateway-create-multisite-azureresourcemanager-powershell.md) para criar um gateway de aplicação com capacidade para suportar mais do que uma aplicação Web.
-
-
-
-
-<!--HONumber=Dec16_HO3-->
 
 

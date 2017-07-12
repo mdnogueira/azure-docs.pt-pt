@@ -9,29 +9,34 @@ manager: jhubbard
 editor: 
 ms.assetid: 
 ms.service: sql-database
-ms.custom: quick start create
+ms.custom: mvc,DBs & servers
 ms.workload: data-management
 ms.tgt_pltfrm: na
 ms.devlang: PowerShell
 ms.topic: hero-article
 ms.date: 04/17/2017
 ms.author: carlrab
-translationtype: Human Translation
-ms.sourcegitcommit: aaf97d26c982c1592230096588e0b0c3ee516a73
-ms.openlocfilehash: 9a8cf3ad9c252b6a1ace1e7f3cf191428b228d80
-ms.lasthandoff: 04/27/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 8be2bcb9179e9af0957fcee69680ac803fd3d918
+ms.openlocfilehash: e43f2f6bb6d4f7e280f8874c31ec79c01b54a84b
+ms.contentlocale: pt-pt
+ms.lasthandoff: 06/23/2017
 
 ---
 
-# <a name="create-a-single-azure-sql-database-using-powershell"></a>Criar uma única base de dados SQL do Azure com o PowerShell
+<a id="create-a-single-azure-sql-database-using-powershell" class="xliff"></a>
+
+# Criar uma única base de dados SQL do Azure com o PowerShell
 
 O PowerShell é utilizado para criar e gerir recursos do Azure a partir da linha de comandos ou em scripts. Este guia detalha a utilização do PowerShell para implementar uma base de dados SQL do Azure num [grupo de recursos do Azure](../azure-resource-manager/resource-group-overview.md) num [servidor lógico de Base de Dados SQL do Azure](sql-database-features.md).
 
-Para concluir este tutorial, confirme que tem instalado o [Azure PowerShell](/powershell/azure/overview) mais recente. 
-
 Se não tiver uma subscrição do Azure, crie uma conta [gratuita](https://azure.microsoft.com/free/) antes de começar.
 
-## <a name="log-in-to-azure"></a>Iniciar sessão no Azure
+Este tutorial requer a versão 4.0 ou posterior do módulo do Azure PowerShell. Executar ` Get-Module -ListAvailable AzureRM` para localizar a versão. Se precisar de instalar ou atualizar, veja [Install Azure PowerShell module](/powershell/azure/install-azurerm-ps)(Instalar o módulo do Azure PowerShell). 
+
+<a id="log-in-to-azure" class="xliff"></a>
+
+## Iniciar sessão no Azure
 
 Inicie sessão na sua subscrição do Azure com o comando [Add-AzureRmAccount](/powershell/module/azurerm.profile/add-azurermaccount) e siga as instruções no ecrã.
 
@@ -39,7 +44,9 @@ Inicie sessão na sua subscrição do Azure com o comando [Add-AzureRmAccount](/
 Add-AzureRmAccount
 ```
 
-## <a name="create-variables"></a>Criar variáveis
+<a id="create-variables" class="xliff"></a>
+
+## Criar variáveis
 
 Defina variáveis para utilização nos scripts neste guia de introdução.
 
@@ -55,19 +62,23 @@ $adminlogin = "ServerAdmin"
 $password = "ChangeYourAdminPassword1"
 # The ip address range that you want to allow to access your server - change as appropriate
 $startip = "0.0.0.0"
-$endip = "0.0.0.1"
+$endip = "0.0.0.0"
 # The database name
 $databasename = "mySampleDatabase"
 ```
 
-## <a name="create-a-resource-group"></a>Criar um grupo de recursos
+<a id="create-a-resource-group" class="xliff"></a>
+
+## Criar um grupo de recursos
 
 Crie um [grupo de recursos do Azure](../azure-resource-manager/resource-group-overview.md) com o comando [New-AzureRmResourceGroup](/powershell/module/azurerm.resources/new-azurermresourcegroup). Um grupo de recursos é um contentor lógico no qual os recursos do Azure são implementados e geridos como um grupo. O exemplo seguinte cria um grupo de recursos com o nome `myResourceGroup` na localização `westeurope`.
 
 ```powershell
 New-AzureRmResourceGroup -Name $resourcegroupname -Location $location
 ```
-## <a name="create-a-logical-server"></a>Criar um servidor lógico
+<a id="create-a-logical-server" class="xliff"></a>
+
+## Criar um servidor lógico
 
 Crie um [servidor lógico de Base de Dados SQL do Azure](sql-database-features.md) com o comando [New-AzureRmSqlServer](/powershell/module/azurerm.sql/new-azurermsqlserver). Um servidor lógico contém um grupo de bases de dados geridas como um grupo. O exemplo seguinte cria um servidor com um nome aleatório no seu grupo de recursos com um início de sessão de administrador denominado `ServerAdmin` e uma palavra-passe de `ChangeYourAdminPassword1`. Substitua estes valores predefinidos conforme quiser.
 
@@ -78,7 +89,9 @@ New-AzureRmSqlServer -ResourceGroupName $resourcegroupname `
     -SqlAdministratorCredentials $(New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $adminlogin, $(ConvertTo-SecureString -String $password -AsPlainText -Force))
 ```
 
-## <a name="configure-a-server-firewall-rule"></a>Configurar uma regra de firewall do servidor
+<a id="configure-a-server-firewall-rule" class="xliff"></a>
+
+## Configurar uma regra de firewall do servidor
 
 Crie uma [regra de firewall ao nível do servidor da Base de Dados SQL do Azure](sql-database-firewall-configure.md) com o comando [New-AzureRmSqlServerFirewallRule](/powershell/module/azurerm.sql/new-azurermsqlserverfirewallrule). Uma regra de firewall ao nível do servidor permite a uma aplicação externa, como o SQL Server Management Studio ou o utilitário SQLCMD, ligar a uma base de dados SQL através da firewall do serviço Base de Dados SQL. No exemplo seguinte, a firewall apenas é aberta para outros recursos do Azure. Para ativar a conectividade externa, altere o endereço IP para um endereço adequado para o seu ambiente. Para abrir todos os endereços IP, utilize 0.0.0.0 como o endereço IP inicial e 255.255.255.255 como o endereço final.
 
@@ -92,18 +105,23 @@ New-AzureRmSqlServerFirewallRule -ResourceGroupName $resourcegroupname `
 > A Base de Dados SQL comunica através da porta 1433. Se estiver a tentar ligar a partir de uma rede empresarial, o tráfego de saída através da porta 1433 poderá não ser permitido pela firewall da rede. Se assim for, não poderá ligar ao seu servidor de Base de Dados SQL do Azure, a menos que o departamento de TI abra a porta 1433.
 >
 
-## <a name="create-a-blank-database"></a>Criar uma base de dados vazia
+<a id="create-a-database-in-the-server-with-sample-data" class="xliff"></a>
 
-Crie uma base de dados SQL vazia com um [nível de desempenho S0](sql-database-service-tiers.md) no servidor com o comando [New-AzureRmSqlDatabase](/powershell/module/azurerm.sql/new-azurermsqldatabase). O exemplo seguinte cria uma base de dados denominada `mySampleDatabase`. Substitua este valor predefinido conforme quiser.
+## Criar uma base de dados no servidor com dados de exemplo
+
+Crie uma base de dados com um [nível de desempenho S0](sql-database-service-tiers.md) no servidor com o comando [New-AzureRmSqlDatabase](/powershell/module/azurerm.sql/new-azurermsqldatabase). O exemplo seguinte cria uma base de dados denominada `mySampleDatabase` e carrega os dados de exemplo AdventureWorksLT para esta base de dados. Substitua estes valores predefinidos conforme pretender (outros guias de introdução nesta coleção são criados mediante os valores neste guia de introdução).
 
 ```powershell
 New-AzureRmSqlDatabase  -ResourceGroupName $resourcegroupname `
     -ServerName $servername `
     -DatabaseName $databasename `
+    -SampleName "AdventureWorksLT" `
     -RequestedServiceObjectiveName "S0"
 ```
 
-## <a name="clean-up-resources"></a>Limpar recursos
+<a id="clean-up-resources" class="xliff"></a>
+
+## Limpar recursos
 
 Outros guias de introdução nesta coleção são criados através deste guia de introdução. 
 
@@ -115,7 +133,9 @@ Outros guias de introdução nesta coleção são criados através deste guia de
 Remove-AzureRmResourceGroup -ResourceGroupName $resourcegroupname
 ```
 
-## <a name="next-steps"></a>Passos seguintes
+<a id="next-steps" class="xliff"></a>
+
+## Passos seguintes
 
 Agora que tem uma base de dados, pode ligar e consultar com as suas ferramentas favoritas. Saiba mais ao selecionar a sua ferramenta abaixo:
 

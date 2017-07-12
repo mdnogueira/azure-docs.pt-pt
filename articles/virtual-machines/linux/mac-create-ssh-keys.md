@@ -15,26 +15,35 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 03/07/2017
 ms.author: iainfou
-translationtype: Human Translation
-ms.sourcegitcommit: eeb56316b337c90cc83455be11917674eba898a3
-ms.openlocfilehash: 4316f0690ac0941521f84d92f62b4fc3f42f76e0
-ms.lasthandoff: 04/03/2017
+experimental: true
+experiment_id: rasquill-ssh-20170308
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 31ecec607c78da2253fcf16b3638cc716ba3ab89
+ms.openlocfilehash: 49541306c66e066a9d9f75d90bed2f4dfd21ce9d
+ms.contentlocale: pt-pt
+ms.lasthandoff: 06/23/2017
 
 
 ---
 
-# <a name="how-to-create-and-use-an-ssh-public-and-private-key-pair-for-linux-vms-in-azure"></a>Como criar e utilizar um par de chaves públicas e privadas SSH para VMs do Linux no Azure
-Com um par de chaves SSH (secure shell), pode criar máquinas virtuais (VMs) no Azure que utilizam chaves SSH para autenticação e eliminar a necessidade de palavras-passe para iniciar sessão. Este artigo mostra-lhe como gerar e utilizar rapidamente um par de ficheiros de chaves públicas e privadas RSA versão 2 do protocolo SSH para VMs do Linux. Para obter passos mais detalhados e exemplos adicionais, como a utilização com o portal clássico, veja [passos detalhados para criar pares e certificados de chaves SSH](create-ssh-keys-detailed.md).
+<a id="how-to-create-and-use-an-ssh-public-and-private-key-pair-for-linux-vms-in-azure" class="xliff"></a>
 
-## <a name="create-an-ssh-key-pair"></a>Criar um par de chaves SSH
+# Como criar e utilizar um par de chaves públicas e privadas SSH para VMs do Linux no Azure
+Com um par de chaves SSH (secure shell), pode criar máquinas virtuais (VMs) no Azure que utilizam chaves SSH para autenticação e eliminar a necessidade de palavras-passe para iniciar sessão. Este artigo mostra-lhe como gerar e utilizar rapidamente um par de ficheiros de chaves públicas e privadas RSA versão 2 do protocolo SSH para VMs do Linux. Para obter passos mais detalhados e exemplos adicionais, veja [passos detalhados para criar pares e certificados de chaves SSH](create-ssh-keys-detailed.md).
+
+<a id="create-an-ssh-key-pair" class="xliff"></a>
+
+## Criar um par de chaves SSH
 Utilize o comando `ssh-keygen` para criar ficheiros de chaves públicas e privadas SSH criadas, por predefinição, no diretório `~/.ssh`, mas pode especificar uma localização diferente e uma frase de acesso adicional (uma palavra-passe para aceder ao ficheiro de chave privada), quando lhe for pedido. Execute o comando seguinte a partir de uma shell Bash e responda aos pedidos com as suas próprias informações.
 
 ```bash
-ssh-keygen -t rsa -b 2048 
+ssh-keygen -t rsa -b 2048
 ```
 
-## <a name="use-the-ssh-key-pair"></a>Utilizar o par de chaves SSH
-A chave pública que colocar na sua VM do Linux no Azure está armazenada por predefinição em `~/.ssh/id_rsa.pub`, a menos que tenha alterado a localização quando a criou. Se utilizar a [CLI 2.0 do Azure](/cli/azure) para criar a VM, especifique a localização desta chave pública quando utilizar o comando [az vm create](/cli/azure/vm#create) com a opção `--ssh-key-path`. Se copiar e colar o conteúdo do ficheiro de chave pública a utilizar no portal do Azure ou um modelo do Resource Manager, certifique-se de que não copia nenhum espaço em branco adicional. Por exemplo, se utilizar o OS X, pode encaminhar o ficheiro de chave pública (por predefinição, **~/.ssh/id_rsa.pub**) para **pbcopy** para copiar o conteúdo (existem outros programas Linux que fazem o mesmo, tais como `xclip`). 
+<a id="use-the-ssh-key-pair" class="xliff"></a>
+
+## Utilizar o par de chaves SSH
+A chave pública que colocar na sua VM do Linux no Azure está armazenada por predefinição em `~/.ssh/id_rsa.pub`, a menos que tenha alterado a localização quando a criou. Se utilizar a [CLI 2.0 do Azure](/cli/azure) para criar a VM, especifique a localização desta chave pública quando utilizar o comando [az vm create](/cli/azure/vm#create) com a opção `--ssh-key-path`. Se copiar e colar o conteúdo do ficheiro de chave pública a utilizar no portal do Azure ou um modelo do Resource Manager, certifique-se de que não copia nenhum espaço em branco adicional. Por exemplo, se utilizar o OS X, pode encaminhar o ficheiro de chave pública (por predefinição, **~/.ssh/id_rsa.pub**) para **pbcopy** para copiar o conteúdo (existem outros programas Linux que fazem o mesmo, tais como `xclip`).
 
 Se não estiver familiarizado com chaves públicas SSH, pode ver a chave pública ao executar `cat` da seguinte forma e ao substituir `~/.ssh/id_rsa.pub` pela sua própria localização do ficheiro de chave pública:
 
@@ -50,9 +59,11 @@ ssh azureuser@myvm.westus.cloudapp.azure.com
 
 Se tiver indicado uma frase de acesso quando criou o par de chaves, introduza-a quando lhe for pedido durante o processo de início de sessão. (O servidor é adicionado à pasta `~/.ssh/known_hosts` e não lhe será pedido para ligar novamente até a chave pública na VM do Azure ser alterada ou o nome do servidor ser removido do `~/.ssh/known_hosts`.)
 
-## <a name="next-steps"></a>Passos seguintes
+<a id="next-steps" class="xliff"></a>
 
-As VMs criadas com chaves SSH são, por predefinição, configuradas com as palavras-passe desativadas, para tornar as tentativas de adivinhação forçadas muito mais dispendiosas e, desse modo, difíceis. Este tópico descreve a criação de um par de chaves SSH simples para utilização rápida. Se necessitar de mais assistência na criação do par de chaves SSH ou precisar de certificados adicionais, como para utilização com o portal clássico, veja [Passos detalhados para criar pares de chaves e certificados SSH](create-ssh-keys-detailed.md).
+## Passos seguintes
+
+As VMs criadas com chaves SSH são, por predefinição, configuradas com as palavras-passe desativadas, para tornar as tentativas de adivinhação forçadas muito mais dispendiosas e, desse modo, difíceis. Este tópico descreve a criação de um par de chaves SSH simples para utilização rápida. Se necessitar de mais assistência na criação do par de chaves SSH ou precisar de certificados adicionais, veja [Passos detalhados para criar pares de chaves e certificados SSH](create-ssh-keys-detailed.md).
 
 Pode criar VMs que utilizam o par de chaves SSH com o portal do Azure, CLI e modelos:
 

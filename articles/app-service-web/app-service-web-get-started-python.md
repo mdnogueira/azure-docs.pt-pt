@@ -1,6 +1,6 @@
 ---
-title: "Criar a primeira aplicação Web Python no Azure em cinco minutos | Microsoft Docs"
-description: "Implemente em minutos a sua primeira aplicação Python Hello World nas Aplicações Web do Serviço de Aplicações."
+title: "Criar uma aplicação Web em Python no Azure | Microsoft Docs"
+description: "Implemente em minutos a sua primeira aplicação Python Hello World nas Aplicações Web do Serviço de Aplicações do Azure."
 services: app-service\web
 documentationcenter: 
 author: syntaxc4
@@ -14,40 +14,49 @@ ms.devlang: na
 ms.topic: hero-article
 ms.date: 03/17/2017
 ms.author: cfowler
+ms.custom: mvc
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 2db2ba16c06f49fd851581a1088df21f5a87a911
-ms.openlocfilehash: 2916ee6ba4753efdb8823f93c951a4f678b08ae4
+ms.sourcegitcommit: 857267f46f6a2d545fc402ebf3a12f21c62ecd21
+ms.openlocfilehash: 233db1cb74a6c81cf044953ecdf6e9de6cc50ee8
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/08/2017
-
+ms.lasthandoff: 06/28/2017
 
 ---
-# <a name="create-a-python-application-on-web-app"></a>Criar uma aplicação Python nas Aplicações Web
+<a id="create-a-python-web-app-in-azure" class="xliff"></a>
 
-Este tutorial de início rápido orienta-o ao longo do desenvolvimento e da implementação de uma aplicação Python no Azure. Vamos executar a aplicação com um Serviço de Aplicações do Azure e criar e configurar uma aplicação Web nova no mesmo ao utilizar a CLI do Azure. Em seguida, vamos utilizar o git para implementar a nossa aplicação Python no Azure.
+# Criar uma aplicação Web em Python no Azure
 
-![hello-world-in-browser](media/app-service-web-get-started-python/hello-world-in-browser.png)
+[As Aplicações Web do Azure](https://docs.microsoft.com/azure/app-service-web/app-service-web-overview) fornecem um serviço de alojamento na Web altamente dimensionável e com correção automática.  Este guia de início rápido orienta-o ao longo do desenvolvimento e da implementação de uma aplicação Python nas Aplicações Web do Azure. Crie a aplicação Web com a [CLI do Azure](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli) e utilize o Git para implementar o código Python de exemplo na aplicação Web.
 
-Pode seguir os passos abaixo num computador Mac, Windows ou Linux. Deverá demorar apenas cinco minutos a concluí-los.
+![Aplicação Web de exemplo em execução no Azure](media/app-service-web-get-started-python/hello-world-in-browser.png)
 
-## <a name="prerequisites"></a>Pré-requisitos
+Pode seguir os passos abaixo num computador Mac, Windows ou Linux. Depois de instalados os pré-requisitos, demora cerca de cinco minutos a concluir todos os passos.
+<a id="prerequisites" class="xliff"></a>
 
-Antes de executar este exemplo, instale localmente os seguintes pré-requisitos:
+## Pré-requisitos
 
-1. [Transferir e instalar o git](https://git-scm.com/)
-1. [Transferir e instalar o Python](https://www.python.org/downloads/)
-1. Transferir e instalar a [CLI 2.0 do Azure](https://docs.microsoft.com/cli/azure/install-azure-cli)
+Para concluir este tutorial:
 
-## <a name="download-the-sample"></a>Transferir o exemplo
+1. [Instalar o Git](https://git-scm.com/)
+1. [Instalar o Python](https://www.python.org/downloads/)
 
-Clone o repositório da aplicação de exemplo Hello World para o seu computador local.
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
+
+[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+
+Se optar por instalar e usar a CLI localmente, este tópico requer a execução da versão 2.0 ou posterior da CLI do Azure. Executar `az --version` para localizar a versão. Se precisar de instalar ou atualizar, veja [instalar o Azure CLI 2.0]( /cli/azure/install-azure-cli). 
+
+<a id="download-the-sample" class="xliff"></a>
+
+## Transferir o exemplo
+
+Numa janela do terminal, execute o seguinte comando para clonar o repositório da aplicação de exemplo para o seu computador local.
 
 ```bash
 git clone https://github.com/Azure-Samples/python-docs-hello-world
 ```
 
-> [!TIP]
-> Em alternativa, pode [transferir o exemplo](https://github.com/Azure-Samples/Python-docs-hello-world/archive/master.zip) como um ficheiro zip e extraí-lo.
+Utilize essa janela do terminal para executar todos os comandos neste guia de início rápido.
 
 Mude para o diretório que contém o código de exemplo.
 
@@ -55,189 +64,54 @@ Mude para o diretório que contém o código de exemplo.
 cd Python-docs-hello-world
 ```
 
-## <a name="run-the-app-locally"></a>Executar a aplicação localmente
+<a id="run-the-app-locally" class="xliff"></a>
 
-Execute a aplicação localmente ao abrir uma janela de terminal com uma linha de comandos `Python`, para que o exemplo inicie o servidor Web Python incorporado.
+## Executar a aplicação localmente
+
+Execute a aplicação localmente ao abrir uma janela do terminal e utilizar o `Python`comando para iniciar o servidor Web Python incorporado.
 
 ```bash
 python main.py
 ```
 
-Abra um browser e navegue para o exemplo.
-
-```bash
-http://localhost:5000
-```
+Abra um browser e navegue para a aplicação de exemplo em http://localhost:5000.
 
 Pode ver a mensagem **Hello Wordl** da aplicação de exemplo apresentada na página.
 
-![localhost-hello-world-in-browser](media/app-service-web-get-started-python/localhost-hello-world-in-browser.png)
+![Aplicação de exemplo em execução localmente](media/app-service-web-get-started-python/localhost-hello-world-in-browser.png)
 
 Na janela do terminal, prima **Ctrl+C** para sair do servidor Web.
 
-## <a name="log-in-to-azure"></a>Iniciar sessão no Azure
+[!INCLUDE [Log in to Azure](../../includes/login-to-azure.md)] 
 
-Vamos agora utilizar a CLI 2.0 do Azure numa janela do terminal para criar os recursos necessários para alojar a aplicação Python no Azure. Inicie sessão na sua subscrição do Azure com o comando [az login](/cli/azure/#login) e siga as instruções no ecrã.
+[!INCLUDE [Configure deployment user](../../includes/configure-deployment-user.md)] 
 
-```azurecli
-az login
+[!INCLUDE [Create resource group](../../includes/app-service-web-create-resource-group.md)] 
+
+[!INCLUDE [Create app service plan](../../includes/app-service-web-create-app-service-plan.md)] 
+
+[!INCLUDE [Create web app](../../includes/app-service-web-create-web-app.md)] 
+
+![Página da aplicação Web vazia](media/app-service-web-get-started-python/app-service-web-service-created.png)
+
+Acabou de criar uma nova aplicação Web vazia no Azure.
+
+<a id="configure-to-use-python" class="xliff"></a>
+
+## Configurar para utilizar Python
+
+Utilize o comando [az webapp config set](/cli/azure/webapp/config#set) para configurar a aplicação Web para utilizar a versão `3.4` do Python.
+
+```azurecli-interactive
+az webapp config set --python-version 3.4 --name <app_name> --resource-group myResourceGroup
 ```
 
-## <a name="configure-a-deployment-user"></a>Configurar um Utilizador de Implementação
 
-Para FTP e Git local, é necessário ter configurado um utilizador de implementação no servidor, para autenticar a implementação. A criação do utilizador de implementação é uma configuração única; tome nota do nome de utilizador e da palavra-passe, pois vão ser utilizados num passo abaixo.
+Ao definir desta forma a versão do Python, está a utilizar um contentor padrão fornecido pela plataforma. Para utilizar o seu próprio contentor, consulte a referência da CLI para o comando [az webapp config container set](/cli/azure/webapp/config/container#set).
 
-> [!NOTE]
-> Para implementação de FTP e Git Local numa aplicação Web, é necessário um utilizador de implementação.
-> `username` e `password` são ao nível da conta, pelo que, como tal, são diferentes das credenciais da sua subscrição do Azure. **Estas credenciais só têm de ser criadas uma vez**.
->
+[!INCLUDE [Configure local git](../../includes/app-service-web-configure-local-git.md)] 
 
-Utilize o comando [az appservice web deployment user set](/cli/azure/appservice/web/deployment/user#set) para criar as suas credenciais ao nível da conta.
-
-```azurecli
-az appservice web deployment user set --user-name <username> --password <password>
-```
-
-## <a name="create-a-resource-group"></a>Criar um grupo de recursos
-
-Crie um grupo de recursos com o comando [az group create](/cli/azure/group#create). Um grupo de recursos do Azure é um contentor lógico no qual os recursos do Azure, como aplicações Web, bases de dados e contas de armazenamento, são implementados e geridos.
-
-```azurecli
-az group create --name myResourceGroup --location westeurope
-```
-
-## <a name="create-an-azure-app-service"></a>Criar um Serviço de Aplicações do Azure
-
-Crie um plano do Serviço de Aplicações com o comando [az appservice plan create](/cli/azure/appservice/plan#create).
-
-> [!NOTE]
-> Os planos do Serviço de Aplicações representam a coleção de recursos físicos utilizados para alojar as suas aplicações. Todas as aplicações atribuídas a um plano do Serviço de Aplicações partilham os recursos definidos pelo mesmo, o que lhe permite economizar quando alojar várias aplicações.
->
-> Os planos do Serviço de Aplicações definem:
-> * Região (Europa do Norte, E.U.A. Leste, Sudeste Asiático)
-> * Tamanho da Instância (Pequena, Média, Grande)
-> * Contagem de Escalas (uma, duas, três instâncias, etc.)
-> * SKU (Gratuito, Partilhado, Básico, Standard, Premium)
->
-
-O exemplo seguinte cria um Plano do Serviço de Aplicações com o nome `quickStartPlan`, que utiliza o escalão de preços **GRATUITO**.
-
-```azurecli
-az appservice plan create --name quickStartPlan --resource-group myResourceGroup --sku FREE
-```
-
-Quando o Plano do Serviço de Aplicações tiver sido criado, a CLI do Azure mostra informações semelhantes ao seguinte exemplo.
-
-```json
-{
-"appServicePlanName": "quickStartPlan",
-"geoRegion": "North Europe",
-"id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Web/serverfarms/quickStartPlan",
-"kind": "app",
-"location": "North Europe",
-"maximumNumberOfWorkers": 1,
-"name": "quickStartPlan",
-"provisioningState": "Succeeded",
-"resourceGroup": "myResourceGroup",
-"sku": {
-  "capacity": 0,
-  "family": "F",
-  "name": "F1",
-  "size": "F1",
-  "tier": "Free"
-},
-"status": "Ready",
-"type": "Microsoft.Web/serverfarms",
-}
-```
-
-## <a name="create-a-web-app"></a>Criar uma aplicação Web
-
-Agora que já foi criado um Plano do Serviço de Aplicações, crie uma aplicação Web dentro do plano do Serviço de Aplicações `quickStartPlan`. A aplicação Web dá-nos espaço de alojamento para implementar o nosso código, bem como um URL que nos permite ver a aplicação implementada. Utilize o comando [az appservice web create](/cli/azure/appservice/web#create) para criar a aplicação Web.
-
-No comando abaixo, substitua o nome exclusivo da sua aplicação, onde vir o marcador de posição `<app_name>`. O `<app_name>` vai ser utilizado como o site de DNS predefinido para a aplicação Web, daí que o nome tenha de ser exclusivo relativamente a todas as aplicações no Azure. Posteriormente, pode mapear qualquer entrada DNS personalizada para a aplicação Web antes de a expor aos utilizadores.
-
-```azurecli
-az appservice web create --name <app_name> --resource-group myResourceGroup --plan quickStartPlan
-```
-
-Quando a aplicação Web tiver sido criada, a CLI do Azure mostra informações semelhantes ao seguinte exemplo.
-
-```json
-{
-  "clientAffinityEnabled": true,
-  "defaultHostName": "<app_name>.azurewebsites.net",
-  "enabled": true,
-  "enabledHostNames": [
-    "<app_name>.azurewebsites.net",
-    "<app_name>.scm.azurewebsites.net"
-  ],
-  "hostNames": [
-    "<app_name>.azurewebsites.net"
-  ],
-  "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Web/sites/<app_name>",
-  "kind": "app",
-  "location": "North Europe",
-  "outboundIpAddresses": "13.69.190.80,13.69.191.239,13.69.186.193,13.69.187.34",
-  "resourceGroup": "myResourceGroup",
-  "serverFarmId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Web/serverfarms/quickStartPlan",
-  "state": "Running",
-  "type": "Microsoft.Web/sites",
-}
-```
-
-Navegue para o site para ver a sua aplicação Web criada recentemente.
-
-```bash
-http://<app_name>.azurewebsites.net
-```
-
-![app-service-web-service-created](media/app-service-web-get-started-python/app-service-web-service-created.png)
-
-Está agora criada uma aplicação Web vazia nova no Azure. Vamos então configurar a aplicação Web para utilizar Python e implementá-la no mesmo.
-
-## <a name="configure-to-use-python"></a>Configurar para utilizar Python
-
-Utilize o comando [az appservice web config update](/cli/azure/app-service/web/config#update) para configurar a aplicação Web para utilizar a versão `3.4` de Python.
-
-> [!TIP]
-> A definição da versão de Python desta forma utiliza um contentor predefinido disponibilizado pela plataforma. Se quiser utilizar o seu próprio contentor, veja a referência da CLI relativa ao comando [az appservice web config container update](https://docs.microsoft.com/cli/azure/appservice/web/config/container#update).
-
-```azurecli
-az appservice web config update --python-version 3.4 --name <app-name> --resource-group myResourceGroup
-```
-
-## <a name="configure-local-git-deployment"></a>Configurar a implementação do git local
-
-Existem várias formas de implementar na sua aplicação Web, incluindo FTP, Git local, bem como GitHub, Visual Studio Team Services e Bitbucket.
-
-Utilize o comando [az appservice web source-control config-local-git](/cli/azure/appservice/web/source-control#config-local-git) para configurar o acesso ao git local para a aplicação Web.
-
-```azurecli
-az appservice web source-control config-local-git --name <app_name> --resource-group myResourceGroup --query url --output tsv
-```
-
-Copie a saída do terminal, uma vez que vai ser utilizada no próximo passo.
-
-```bash
-https://<username>@<app_name>.scm.azurewebsites.net:443/<app_name>.git
-```
-
-## <a name="push-to-azure-from-git"></a>Enviar para o Azure a partir do Git
-
-Adicione um Azure remoto para o seu repositório do Git local.
-
-```bash
-git remote add azure <paste-previous-command-output-here>
-```
-
-Envie para o Azure remoto para implementar a sua aplicação. Vai ser-lhe pedida a palavra-passe que indicou anteriormente, como parte da criação do utilizador de implementação.
-
-```azurecli
-git push azure master
-```
-
-Durante a implementação, o Serviço de Aplicações do Azure vai comunicar o progresso face ao Git.
+[!INCLUDE [Push to Azure](../../includes/app-service-web-git-push-to-azure.md)] 
 
 ```bash
 Counting objects: 18, done.
@@ -281,7 +155,9 @@ To https://<app_name>.scm.azurewebsites.net/<app_name>.git
  * [new branch]      master -> master
 ```
 
-## <a name="browse-to-the-app"></a>Navegar para a aplicação
+<a id="browse-to-the-app" class="xliff"></a>
+
+## Navegar para a aplicação
 
 Utilize o browser para navegar para a aplicação implementada.
 
@@ -289,13 +165,17 @@ Utilize o browser para navegar para a aplicação implementada.
 http://<app_name>.azurewebsites.net
 ```
 
-Desta vez, a página que apresenta a mensagem Hello World é executada com o código de Python em execução como uma aplicação Web do Serviço de Aplicações do Azure.
+O código Python de exemplo está em execução numa aplicação Web do Serviço de Aplicações do Azure.
 
-![hello-world-in-browser](media/app-service-web-get-started-python/hello-world-in-browser.png)
+![Aplicação Web de exemplo em execução no Azure](media/app-service-web-get-started-python/hello-world-in-browser.png)
 
-## <a name="updating-and-deploying-the-code"></a>Atualizar e Implementar o Código
+**Parabéns!** Implementou a sua primeira aplicação Python no Serviço de Aplicações.
 
-Utilizando um editor de texto local, abra o ficheiro `main.py` na aplicação Python e faça uma pequena alteração ao texto na cadeia junto a declaração `return`:
+<a id="update-and-redeploy-the-code" class="xliff"></a>
+
+## Atualizar e voltar a implementar o código
+
+Através de um editor de texto local, abra o ficheiro `main.py` na aplicação Python e faça uma pequena alteração ao texto junto à declaração `return`:
 
 ```python
 return 'Hello, Azure!'
@@ -308,40 +188,32 @@ git commit -am "updated output"
 git push azure master
 ```
 
-Depois de concluída a implementação, volte para a janela do browser aberta no passo “Navegar para a aplicação” e clique em “atualizar”.
+Depois de concluída a implementação, volte para a janela do browser aberta que abriu no passo [Navegar para a aplicação](#browse-to-the-app) e atualize a página.
 
-![hello-azure-in-browser](media/app-service-web-get-started-python/hello-azure-in-browser.png)
+![Aplicação de exemplo atualizada em execução no Azure](media/app-service-web-get-started-python/hello-azure-in-browser.png)
 
-## <a name="manage-your-new-azure-web-app"></a>Gerir a sua nova aplicação Web do Azure
+<a id="manage-your-new-azure-web-app" class="xliff"></a>
 
-Aceda ao portal do Azure para ver a aplicação Web que acabou de criar.
+## Gerir a sua nova aplicação Web do Azure
 
-Para tal, inicie sessão em [https://portal.azure.com](https://portal.azure.com).
+Aceda ao <a href="https://portal.azure.com" target="_blank">portal do Azure</a> para gerir a aplicação Web que criou.
 
-No menu à esquerda, clique em **Serviços Aplicacionais** e clique no nome da sua aplicação Web do Azure.
+No menu à esquerda, clique em **Serviços de Aplicações** e clique no nome da sua aplicação Web do Azure.
 
-![Navegação no portal para a aplicação Web do Azure](./media/app-service-web-get-started-python/app-service-list.png)
+![Navegação no portal para a aplicação Web do Azure](./media/app-service-web-get-started-nodejs-poc/nodejs-docs-hello-world-app-service-list.png)
 
-Chegou ao _painel_ da sua aplicação Web (uma página do portal que se abre na horizontal).
+É apresentada a página de descrição geral da sua aplicação Web. Aqui, pode realizar tarefas de gestão básicas, como navegar, parar, iniciar, reiniciar e eliminar. 
 
-Por predefinição, o painel da sua aplicação Web mostra a página **Descrição Geral**. Esta página proporciona-lhe uma vista do desempenho da aplicação. Aqui, também pode realizar tarefas de gestão básicas, como navegar, parar, iniciar, reiniciar e eliminar. Os separadores no lado esquerdo do painel mostram as várias páginas de configuração que pode abrir.
+![Painel Serviço de Aplicações no portal do Azure](media/app-service-web-get-started-nodejs-poc/nodejs-docs-hello-world-app-service-detail.png)
 
-![Painel Serviço de Aplicações no portal do Azure](media/app-service-web-get-started-python/app-service-detail.png)
-
-Estes separadores no painel mostram as muitas funcionalidades excelentes que pode adicionar à sua aplicação Web. A lista seguinte dá-lhe apenas algumas das possibilidades:
-
-* Mapear um nome DNS personalizado
-* Vincular um certificado SSL personalizado
-* Configurar a implementação contínua
-* Aumentar e reduzir verticalmente
-* Adicionar a autenticação do utilizador
-
-**Parabéns!** Implementou a sua primeira aplicação Python no Serviço de Aplicações.
+O menu à esquerda fornece diferentes páginas para configurar a sua aplicação. 
 
 [!INCLUDE [cli-samples-clean-up](../../includes/cli-samples-clean-up.md)]
 
-## <a name="next-steps"></a>Passos seguintes
+<a id="next-steps" class="xliff"></a>
+
+## Passos seguintes
 
 > [!div class="nextstepaction"]
-> [Explore os scripts da CLI das Aplicações Web de exemplo](app-service-cli-samples.md)
+> [Python com PostgreSQL](app-service-web-tutorial-docker-python-postgresql-app.md)
 

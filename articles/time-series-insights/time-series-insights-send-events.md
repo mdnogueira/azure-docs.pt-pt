@@ -15,17 +15,22 @@ ms.tgt_pltfrm: na
 ms.workload: big-data
 ms.date: 04/21/2017
 ms.author: venkatja
-translationtype: Human Translation
-ms.sourcegitcommit: 1cc1ee946d8eb2214fd05701b495bbce6d471a49
-ms.openlocfilehash: 92e3e64f235e165a6a1772b6e1724789f3ec3049
-ms.lasthandoff: 04/25/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 6efa2cca46c2d8e4c00150ff964f8af02397ef99
+ms.openlocfilehash: 9f2d3b57a42efb7b04566278d3267b3cdbed713a
+ms.contentlocale: pt-pt
+ms.lasthandoff: 07/01/2017
 
 ---
-# <a name="send-events-to-a-time-series-insights-environment-via-event-hub"></a>Enviar eventos para um ambiente do Time Series Insights
+<a id="send-events-to-a-time-series-insights-environment-via-event-hub" class="xliff"></a>
 
-Este tutorial explica como criar e configurar um hub de eventos e executar uma aplicação de exemplo para enviar eventos. Se tiver um hub de eventos existente que já contém eventos no formato JSON, pode ignorar este tutorial e ver o seu ambiente no [Time Series Explorer](https://insights.timeseries.azure.com).
+# Enviar eventos para um ambiente do Time Series Insights
 
-## <a name="configure-an-event-hub"></a>Configurar um hub de eventos
+Este tutorial explica como criar e configurar um hub de eventos e executar uma aplicação de exemplo para enviar eventos. Se tiver um hub de eventos existente que já contém eventos no formato JSON, pode ignorar este tutorial e ver o seu ambiente no [Time Series Insights](https://insights.timeseries.azure.com).
+
+<a id="configure-an-event-hub" class="xliff"></a>
+
+## Configurar um hub de eventos
 1. Para criar um hub de eventos, siga as instruções na [documentação](https://docs.microsoft.com/azure/event-hubs/event-hubs-create) dos Hubs de Eventos.
 
 2. Confirme que cria um grupo de consumidores que seja utilizado exclusivamente pela sua origem de eventos do Time Series Insights.
@@ -35,25 +40,29 @@ Este tutorial explica como criar e configurar um hub de eventos e executar uma a
 
   ![Selecionar o grupo de consumidores do hub de eventos](media/send-events/consumer-group.png)
 
-3. No hub de eventos, crie “MySendPolicy”, que é utilizada para enviar eventos no exemplo abaixo.
+3. No hub de eventos, crie “MySendPolicy” que é utilizado para enviar eventos no exemplo csharp.
 
   ![Selecione Políticas de acesso partilhado e clique no botão Adicionar](media/send-events/shared-access-policy.png)  
 
   ![Adicionar uma política de acesso partilhado nova](media/send-events/shared-access-policy-2.png)  
 
-## <a name="create-time-series-insights-event-source"></a>Criar a origem de eventos do Time Series Insights
+<a id="create-time-series-insights-event-source" class="xliff"></a>
+
+## Criar a origem de eventos do Time Series Insights
 1. Se não tiver criado uma origem de eventos, siga as instruções especificadas [aqui](time-series-insights-add-event-source.md) para criá-la.
 
-2. Especifique “deviceTimestamp” como o nome da propriedade de carimbo de data/hora. Esta propriedade é utilizada como o carimbo de data/hora real no exemplo seguinte. O nome da propriedade de carimbo de data/hora é sensível a maiúsculas e minúsculas e os valores devem estar no formato __aaaa-MM-ddTHH:mm:ss.FFFFFFFK__, se forem enviados como JSON para um hub de eventos. Se a propriedade não existir no evento, é utilizada a hora a que o evento foi colocado em fila no hub de eventos.
+2. Especifique “deviceTimestamp” como o nome da propriedade de carimbo de data/hora. Esta propriedade é utilizada como o carimbo de data/hora real no exemplo csharp. O nome da propriedade de carimbo de data/hora é sensível a maiúsculas e minúsculas e os valores devem estar no formato __aaaa-MM-ddTHH:mm:ss.FFFFFFFK__, se forem enviados como JSON para um hub de eventos. Se a propriedade não existir no evento, é utilizada a hora a que o evento foi colocado em fila no hub de eventos.
 
   ![Crie a origem de eventos](media/send-events/event-source-1.png)
 
-## <a name="run-sample-code-to-push-events"></a>Executar código de exemplo para enviar eventos
+<a id="sample-code-to-push-events" class="xliff"></a>
+
+## Código de exemplo para eventos push
 1. Aceda à política do hub de eventos “MySendPolicy” e copie a cadeia de ligação com a chave da política.
 
   ![Copie a cadeia de ligação MySendPolicy](media/send-events/sample-code-connection-string.png)
 
-2. Execute o código seguinte, que enviará 600 eventos por cada um dos três dispositivos. Atualize `eventHubConnectionString` com a sua cadeia de ligação.
+2. Execute o código seguinte que enviará 600 eventos por cada um dos três dispositivos. Atualize `eventHubConnectionString` com a sua cadeia de ligação.
 
 ```csharp
 using System;
@@ -122,51 +131,68 @@ namespace Microsoft.Rdx.DataGenerator
 }
 
 ```
-## <a name="supported-json-shapes"></a>Formas JSON suportadas
-### <a name="sample-1"></a>Exemplo 1
+<a id="supported-json-shapes" class="xliff"></a>
 
-#### <a name="input"></a>Input
+## Formas JSON suportadas
+<a id="sample-1" class="xliff"></a>
+
+### Exemplo 1
+
+<a id="input" class="xliff"></a>
+
+#### Input
 
 Um objeto JSON simples.
 
 ```json
 {
-    "deviceId":"device1",
-    "deviceTimestamp":"2016-01-08T01:08:00Z"
+    "id":"device1",
+    "timestamp":"2016-01-08T01:08:00Z"
 }
 ```
-#### <a name="output---1-event"></a>Saída - 1 evento
+<a id="output---1-event" class="xliff"></a>
 
-|deviceId|deviceTimestamp|
+#### Saída - 1 evento
+
+|ID|carimbo de data/hora|
 |--------|---------------|
 |device1|2016-01-08T01:08:00Z|
 
-### <a name="sample-2"></a>Exemplo 2
+<a id="sample-2" class="xliff"></a>
 
-#### <a name="input"></a>Input
+### Exemplo 2
+
+<a id="input" class="xliff"></a>
+
+#### Input
 Uma matriz JSON com dois objetos JSON. Cada objeto JSON será convertido num evento.
 ```json
 [
     {
-        "deviceId":"device1",
-        "deviceTimestamp":"2016-01-08T01:08:00Z"
+        "id":"device1",
+        "timestamp":"2016-01-08T01:08:00Z"
     },
     {
-        "deviceId":"device2",
-        "deviceTimestamp":"2016-01-17T01:17:00Z"
+        "id":"device2",
+        "timestamp":"2016-01-17T01:17:00Z"
     }
 ]
 ```
-#### <a name="output---2-events"></a>Saída - 2 eventos
+<a id="output---2-events" class="xliff"></a>
 
-|deviceId|deviceTimestamp|
+#### Saída - 2 eventos
+
+|ID|carimbo de data/hora|
 |--------|---------------|
 |device1|2016-01-08T01:08:00Z|
 |device2|2016-01-08T01:17:00Z|
+<a id="sample-3" class="xliff"></a>
 
-### <a name="sample-3"></a>Exemplo 3
+### Exemplo 3
 
-#### <a name="input"></a>Input
+<a id="input" class="xliff"></a>
+
+#### Input
 
 Um objeto JSON com uma matriz JSON aninhada que contém dois objetos JSON.
 ```json
@@ -174,50 +200,58 @@ Um objeto JSON com uma matriz JSON aninhada que contém dois objetos JSON.
     "location":"WestUs",
     "events":[
         {
-            "deviceId":"device1",
-            "deviceTimestamp":"2016-01-08T01:08:00Z"
+            "id":"device1",
+            "timestamp":"2016-01-08T01:08:00Z"
         },
         {
-            "deviceId":"device2",
-            "deviceTimestamp":"2016-01-17T01:17:00Z"
+            "id":"device2",
+            "timestamp":"2016-01-17T01:17:00Z"
         }
     ]
 }
 
 ```
-#### <a name="output---2-events"></a>Saída - 2 eventos
+<a id="output---2-events" class="xliff"></a>
+
+#### Saída - 2 eventos
 Tenha em atenção que a propriedade "location" é copiada para cada evento.
 
-|localização|events.deviceId|events.deviceTimestamp|
+|localização|events.id|events.timestamp|
 |--------|---------------|----------------------|
 |WestUs|device1|2016-01-08T01:08:00Z|
 |WestUs|device2|2016-01-08T01:17:00Z|
 
-### <a name="sample-4"></a>Exemplo 4
+<a id="sample-4" class="xliff"></a>
 
-#### <a name="input"></a>Input
+### Exemplo 4
+
+<a id="input" class="xliff"></a>
+
+#### Input
+
+Um objeto JSON com uma matriz JSON aninhada que contém dois objetos JSON. Essa entrada demonstra que as propriedades globais podem ser representadas pelo objeto JSON complexo.
 
 ```json
 {
     "location":"WestUs",
-    "manufacturerInfo":{
+    "manufacturer":{
         "name":"manufacturer1",
         "location":"EastUs"
     },
     "events":[
         {
-            "deviceId":"device1",
-            "deviceTimestamp":"2016-01-08T01:08:00Z",
-            "deviceData":{
+            "id":"device1",
+            "timestamp":"2016-01-08T01:08:00Z",
+            "data":{
                 "type":"pressure",
                 "units":"psi",
                 "value":108.09
             }
         },
         {
-            "deviceId":"device2",
-            "deviceTimestamp":"2016-01-17T01:17:00Z",
-            "deviceData":{
+            "id":"device2",
+            "timestamp":"2016-01-17T01:17:00Z",
+            "data":{
                 "type":"vibration",
                 "units":"abs G",
                 "value":217.09
@@ -226,14 +260,18 @@ Tenha em atenção que a propriedade "location" é copiada para cada evento.
     ]
 }
 ```
-#### <a name="output---2-events"></a>Saída - 2 eventos
+<a id="output---2-events" class="xliff"></a>
 
-|localização|manufacturerInfo.name|manufacturerInfo.location|events.deviceId|events.deviceTimestamp|events.deviceData.type|events.deviceData.units|events.deviceData.value|
+#### Saída - 2 eventos
+
+|localização|manufacturer.name|manufacturer.location|events.id|events.timestamp|events.data.type|events.data.units|events.data.value|
 |---|---|---|---|---|---|---|---|
 |WestUs|manufacturer1|EastUs|device1|2016-01-08T01:08:00Z|pressure|psi|108.09|
-|WestUs|manufacturer1|EastUs|device1|2016-01-08T01:17:00Z|vibration|abs G|217.09|
+|WestUs|manufacturer1|EastUs|device2|2016-01-08T01:17:00Z|vibration|abs G|217.09|
 
-## <a name="next-steps"></a>Passos seguintes
+<a id="next-steps" class="xliff"></a>
+
+## Passos seguintes
 
 * Ver o seu ambiente no [Portal do Time Series Insights](https://insights.timeseries.azure.com)
 

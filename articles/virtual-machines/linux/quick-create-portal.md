@@ -15,21 +15,26 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 05/02/2017
 ms.author: nepeters
+ms.custom: mvc
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 2db2ba16c06f49fd851581a1088df21f5a87a911
-ms.openlocfilehash: ff4bf9c9e3bfbd0e51cdb91be85dec15db6cd758
+ms.sourcegitcommit: 5edc47e03ca9319ba2e3285600703d759963e1f3
+ms.openlocfilehash: 8c51af189e8086a509d44546882e1b26605dddae
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/08/2017
+ms.lasthandoff: 05/31/2017
 
 ---
 
-# <a name="create-a-linux-virtual-machine-with-the-azure-portal"></a>Criar uma máquina virtual Linux com o portal do Azure
+<a id="create-a-linux-virtual-machine-with-the-azure-portal" class="xliff"></a>
+
+# Criar uma máquina virtual Linux com o portal do Azure
 
 As máquinas virtuais podem ser criadas através do portal do Azure. Este método fornece uma interface de utilizador baseada no browser para criar e configurar máquinas virtuais e todos os recursos relacionados. Este Guia de Introdução explica como criar uma máquina virtual e como instalar um servidor Web na VM.
 
 Se não tiver uma subscrição do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
 
-## <a name="create-ssh-key-pair"></a>Criar o par de chaves SSH
+<a id="create-ssh-key-pair" class="xliff"></a>
+
+## Criar o par de chaves SSH
 
 Precisa de um par de chaves SSH para concluir este guia de introdução. Se tiver um par de chaves SSH existente, este passo pode ser ignorado.
 
@@ -39,11 +44,15 @@ A partir de uma shell Bash, execute este comando e siga as direções no ecrã. 
 ssh-keygen -t rsa -b 2048
 ```
 
-## <a name="log-in-to-azure"></a>Iniciar sessão no Azure 
+<a id="log-in-to-azure" class="xliff"></a>
+
+## Iniciar sessão no Azure 
 
 Inicie sessão no portal do Azure em http://portal.azure.com.
 
-## <a name="create-virtual-machine"></a>Criar a máquina virtual
+<a id="create-virtual-machine" class="xliff"></a>
+
+## Criar a máquina virtual
 
 1. Clique no botão **Novo** localizado no canto superior esquerdo do portal do Azure.
 
@@ -64,7 +73,9 @@ Inicie sessão no portal do Azure em http://portal.azure.com.
 7. A VM será afixada ao dashboard do portal do Azure. Depois de concluída a implementação, o painel de resumo da VM abre automaticamente.
 
 
-## <a name="connect-to-virtual-machine"></a>Conectar à máquina virtual
+<a id="connect-to-virtual-machine" class="xliff"></a>
+
+## Conectar à máquina virtual
 
 Crie uma ligação SSH com a máquina virtual.
 
@@ -78,7 +89,9 @@ Crie uma ligação SSH com a máquina virtual.
 ssh azureuser@40.112.21.50
 ```
 
-## <a name="install-nginx"></a>Instalar o NGINX
+<a id="install-nginx" class="xliff"></a>
+
+## Instalar o NGINX
 
 Utilize o script de bash seguinte para atualizar as origens de pacotes e instalar o pacote NGINX mais recente. 
 
@@ -95,7 +108,9 @@ sudo apt-get -y install nginx
 Quando terminar, saia da sessão SSH e volte às propriedades da VM no portal do Azure.
 
 
-## <a name="open-port-80-for-web-traffic"></a>Abrir a porta 80 para o tráfego da Web 
+<a id="open-port-80-for-web-traffic" class="xliff"></a>
+
+## Abrir a porta 80 para o tráfego da Web 
 
 Um Grupo de segurança de rede (NSG) protege os tráfegos de entrada e de saída. Quando cria uma VM a partir do portal do Azure, é criada uma regra de entrada na porta 22 para ligações SSH. Como esta VM aloja um servidor Web, tem de ser criada uma regra NSG para a porta 80.
 
@@ -107,17 +122,23 @@ Um Grupo de segurança de rede (NSG) protege os tráfegos de entrada e de saída
 6. Clique em **OK**.
 
 
-## <a name="view-the-ngix-welcome-page"></a>Ver a página de boas-vindas do NGINX
+<a id="view-the-nginx-welcome-page" class="xliff"></a>
 
-Com o NGINX instalado e a porta 80 aberta para a VM, torna-se possível aceder ao servidor Web a partir da Internet. Abra um browser e introduza o endereço IP público da VM. Pode encontrar o endereço IP público no painel VM no portal do Azure.
+## Ver a página de boas-vindas do NGINX
+
+Com o NGINX instalado e a porta 80 aberta para a VM, torna-se possível aceder ao servidor Web a partir da Internet. Abra um browser e introduza o endereço IP público da VM. Pode encontrar o endereço IP público no painel da VM no portal do Azure.
 
 ![Site predefinido do NGINX](./media/quick-create-cli/nginx.png) 
 
-## <a name="delete-virtual-machine"></a>Eliminar máquina virtual
+<a id="clean-up-resources" class="xliff"></a>
+
+## Limpar recursos
 
 Quando já não for necessário, elimine o grupo de recursos, a máquina virtual e todos os recursos relacionados. Para fazê-lo, selecione o grupo de recursos a partir do painel da máquina virtual e clique em **Eliminar**.
 
-## <a name="next-steps"></a>Passos seguintes
+<a id="next-steps" class="xliff"></a>
+
+## Passos seguintes
 
 Neste guia de introdução, implementou uma máquina virtual simples, uma regra de grupo de segurança de rede e instalou um servidor Web. Para saber mais sobre as máquinas virtuais do Azure, continue para o tutorial das VMs do Linux.
 

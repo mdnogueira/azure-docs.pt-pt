@@ -1,6 +1,6 @@
 Pode ligar a uma VM que é implementada nos VNet criando uma Ligação de Ambiente de Trabalho Remoto para a VM. A melhor forma de verificar, inicialmente, que se pode ligar à VM é ligar-se utilizando o respetivo endereço IP privado, em vez do nome do computador. Dessa forma, está a testar a possibilidade de ligação, não se a resolução de nomes está corretamente configurada.
 
-1. Localizar o endereço IP privado. Pode encontrar o endereço IP privado de uma VM observando as propriedades da VM no portal do Azure ou utilizando o PowerShell.
+1. Localizar o endereço IP privado. Pode encontrar o endereço IP privado de uma VM de várias maneiras. A seguir, mostramos os passos para o portal do Azure e para o PowerShell.
 
   - Portal do Azure - Localizar a máquina virtual no Portal do Azure. Ver as propriedades da VM. O endereço IP privado está listado.
 
@@ -23,7 +23,9 @@ Pode ligar a uma VM que é implementada nos VNet criando uma Ligação de Ambien
 3. Abra a **Ligação de Ambiente de Trabalho Remoto** ao escrever "RDP" ou "Ligação de Ambiente de Trabalho Remoto" na caixa de pesquisa da barra de tarefas e, em seguida, selecione a Ligação de Ambiente de Trabalho Remoto. Também pode abrir a Ligação de Ambiente de Trabalho Remoto utilizando o comando "mstsc" no PowerShell. 
 4. Na Ligação de Ambiente de Trabalho Remoto, introduza o endereço IP privado da VM. Pode clicar em "Mostrar Opções" para ajustar as definições adicionais e, em seguida, em ligar.
 
-### <a name="to-troubleshoot-an-rdp-connection-to-a-vm"></a>Para resolver problemas de ligação RDP numa VM
+<a id="to-troubleshoot-an-rdp-connection-to-a-vm" class="xliff"></a>
+
+### Para resolver problemas de ligação RDP numa VM
 
 Se estiver a ter problemas para estabelecer ligação a uma máquina virtual através da ligação VPN, verifique o seguinte:
 

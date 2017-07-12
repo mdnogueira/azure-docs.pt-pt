@@ -1,6 +1,6 @@
 ---
-title: "Criar uma aplicação Web HTML estática no Azure em cinco minutos | Microsoft Docs"
-description: "Saiba como é fácil executar aplicações Web no Serviço de Aplicações ao implementar uma aplicação de exemplo."
+title: "Criar uma aplicação Web HTML estática no Azure | Microsoft Docs"
+description: "Saiba como é fácil executar aplicações Web no Serviço de Aplicações do Azure ao implementar uma aplicação de exemplo HTML estática."
 services: app-service\web
 documentationcenter: 
 author: rick-anderson
@@ -12,61 +12,124 @@ ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: hero-article
-ms.date: 05/08/2017
+ms.date: 05/26/2017
 ms.author: riande
 ms.custom: mvc
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 71fea4a41b2e3a60f2f610609a14372e678b7ec4
-ms.openlocfilehash: 895906e1ab4bc50093ed3b18f043c3dd515ca054
+ms.sourcegitcommit: f7479260c7c2e10f242b6d8e77170d4abe8634ac
+ms.openlocfilehash: c13108ec70f5613be711c622ab68a7fdfc467300
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 06/21/2017
 
 ---
-# <a name="create-a-static-html-web-app-in-azure-in-five-minutes"></a>Criar uma aplicação Web HTML estática no Azure em cinco minutos
+<a id="create-a-static-html-web-app-in-azure" class="xliff"></a>
 
-Este guia de introdução mostra-lhe como implementar um site HTML+CSS básico no Azure. Vai executar a aplicação através de um [plano do Serviço de Aplicações do Azure](https://docs.microsoft.com/azure/app-service/azure-web-sites-web-hosting-plans-in-depth-overview) e criar uma aplicação Web no mesmo com a [CLI do Azure](https://docs.microsoft.com/en-us/cli/azure/get-started-with-azure-cli). Vai utilizar o Git para implementar a aplicação no Azure. Depois de instalados os pré-requisitos, o tutorial demora cerca de cinco minutos a ser concluído.
+# Criar uma aplicação Web HTML estática no Azure
 
-![hello-world-in-browser](media/app-service-web-get-started-html/hello-world-in-browser-az.png)
+[As Aplicações Web do Azure](https://docs.microsoft.com/azure/app-service-web/app-service-web-overview) fornecem um serviço de alojamento na Web altamente dimensionável e com correção automática.  Este guia de início rápido mostra-lhe como implementar um site HTML+CSS básico nas aplicações Web do Azure. Crie a aplicação Web com a [CLI do Azure](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli) e utilize o Git para implementar o conteúdo HTML de exemplo na aplicação Web.
 
-## <a name="prerequisites"></a>Pré-requisitos
+![Página inicial da aplicação de exemplo](media/app-service-web-get-started-html/hello-world-in-browser-az.png)
 
-Antes de criar este exemplo, transfira e instale os componentes seguintes:
+Pode seguir os passos abaixo num computador Mac, Windows ou Linux. Depois de instalados os pré-requisitos, demora cerca de cinco minutos a concluir todos os passos.
 
-- [Git](https://git-scm.com/)
-- [CLI 2.0 do Azure](https://docs.microsoft.com/cli/azure/install-azure-cli)
+<a id="prerequisites" class="xliff"></a>
 
+## Pré-requisitos
+
+Para concluir este guia de início rápido:
+
+- [Instale o Git](https://git-scm.com/)
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="download-the-sample"></a>Transferir o exemplo
+[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Numa janela do terminal, clone o repositório da aplicação de exemplo para o seu computador local:
+Se optar por instalar e usar a CLI localmente, este tópico requer a execução da versão 2.0 ou posterior da CLI do Azure. Executar `az --version` para localizar a versão. Se precisar de instalar ou atualizar, veja [instalar o Azure CLI 2.0]( /cli/azure/install-azure-cli). 
+
+<a id="download-the-sample" class="xliff"></a>
+
+## Transferir o exemplo
+
+Numa janela do terminal, execute o seguinte comando para clonar o repositório da aplicação de exemplo para o seu computador local.
 
 ```bash
 git clone https://github.com/Azure-Samples/html-docs-hello-world.git
 ```
 
-## <a name="view-the-html"></a>Ver o HTML
+Utilize essa janela do terminal para executar todos os comandos neste guia de início rápido.
+
+<a id="view-the-html" class="xliff"></a>
+
+## Ver o HTML
 
 Navegue para o diretório que contém o HTML de exemplo. Abra o ficheiro *index.html* no browser.
 
-![hello-world-in-browser](media/app-service-web-get-started-html/hello-world-in-browser.png)
+![Home page da aplicação de exemplo](media/app-service-web-get-started-html/hello-world-in-browser.png)
 
-[!INCLUDE [login-to-azure](../../includes/login-to-azure.md)] 
-[!INCLUDE [configure-deployment-user](../../includes/configure-deployment-user.md)] 
+[!INCLUDE [Log in to Azure](../../includes/login-to-azure.md)] 
 
-[!INCLUDE [app-service-web-quickstart1](../../includes/app-service-web-quickstart1.md)] 
+[!INCLUDE [Configure deployment user](../../includes/configure-deployment-user.md)] 
 
-Crie uma [Aplicação Web](app-service-web-overview.md) no plano do Serviço de Aplicações `quickStartPlan`. A aplicação Web fornece um espaço de alojamento para o código e um URL para ver a aplicação implementada.
+[!INCLUDE [Create resource group](../../includes/app-service-web-create-resource-group.md)] 
 
-[!INCLUDE [app-service-web-quickstart2](../../includes/app-service-web-quickstart2.md)] 
+[!INCLUDE [Create app service plan](../../includes/app-service-web-create-app-service-plan.md)] 
 
-A página está a ser executada como uma aplicação Web do Serviço de Aplicações do Azure:
+[!INCLUDE [Create web app](../../includes/app-service-web-create-web-app.md)] 
 
-![hello-world-in-browser](media/app-service-web-get-started-html/hello-world-in-browser-az.png)
+![Página da aplicação Web vazia](media/app-service-web-get-started-html/app-service-web-service-created.png)
 
-## <a name="update-and-redeploy-the-app"></a>Atualizar e reimplementar a aplicação
+Acabou de criar uma nova aplicação Web vazia no Azure.
 
-Abra o ficheiro *index.html*. Altere a marcação. Por exemplo, altere `Hello world!` para `Hello Azure!`
+[!INCLUDE [Configure local git](../../includes/app-service-web-configure-local-git.md)] 
+
+[!INCLUDE [Push to Azure](../../includes/app-service-web-git-push-to-azure.md)] 
+
+```bash
+Counting objects: 13, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (11/11), done.
+Writing objects: 100% (13/13), 2.07 KiB | 0 bytes/s, done.
+Total 13 (delta 2), reused 0 (delta 0)
+remote: Updating branch 'master'.
+remote: Updating submodules.
+remote: Preparing deployment for commit id 'cc39b1e4cb'.
+remote: Generating deployment script.
+remote: Generating deployment script for Web Site
+remote: Generated deployment script files
+remote: Running deployment command...
+remote: Handling Basic Web Site deployment.
+remote: KuduSync.NET from: 'D:\home\site\repository' to: 'D:\home\site\wwwroot'
+remote: Deleting file: 'hostingstart.html'
+remote: Copying file: '.gitignore'
+remote: Copying file: 'LICENSE'
+remote: Copying file: 'README.md'
+remote: Finished successfully.
+remote: Running post deployment command(s)...
+remote: Deployment successful.
+To https://<app_name>.scm.azurewebsites.net/<app_name>.git
+ * [new branch]      master -> master
+```
+
+<a id="browse-to-the-app" class="xliff"></a>
+
+## Navegar para a aplicação
+
+Num browser, aceda ao URL da aplicação Web do Azure:
+
+```
+http://<app_name>.azurewebsites.net
+```
+
+A página está a ser executada como uma aplicação Web do Serviço de Aplicações do Azure.
+
+![Home page da aplicação de exemplo](media/app-service-web-get-started-html/hello-world-in-browser-az.png)
+
+**Parabéns!** Implementou a sua primeira aplicação HTML no Serviço de Aplicações.
+
+<a id="update-and-redeploy-the-app" class="xliff"></a>
+
+## Atualizar e reimplementar a aplicação
+
+Abra o ficheiro *index.html* num editor de texto e faça uma alteração da marcação. Por exemplo, altere o cabeçalho H1 "Serviço de aplicações do Azure – exemplo estático do site HTML" simplesmente para -"serviço de aplicações do Azure".
 
 Consolide as suas alterações no Git e envie as alterações ao código para o Azure.
 
@@ -77,12 +140,30 @@ git push azure master
 
 Depois de concluída a implementação, atualize o browser para ver as alterações.
 
-[!INCLUDE [manage-azure-web-app](../../includes/manage-azure-web-app.md)]
+![Página inicial atualizada da aplicação de exemplo](media/app-service-web-get-started-html/hello-azure-in-browser-az.png)
 
+<a id="manage-your-new-azure-web-app" class="xliff"></a>
+
+## Gerir a sua nova aplicação Web do Azure
+
+Aceda ao <a href="https://portal.azure.com" target="_blank">portal do Azure</a> para gerir a aplicação Web que criou.
+
+No menu à esquerda, clique em **Serviços de Aplicações** e clique no nome da sua aplicação Web do Azure.
+
+![Navegação no portal para a aplicação Web do Azure](./media/app-service-web-get-started-html/portal1.png)
+
+É apresentada a página de descrição geral da sua aplicação Web. Aqui, pode realizar tarefas de gestão básicas, como navegar, parar, iniciar, reiniciar e eliminar. 
+
+![Painel Serviço de Aplicações no portal do Azure](./media/app-service-web-get-started-html/portal2.png)
+
+O menu à esquerda fornece diferentes páginas para configurar a sua aplicação. 
 
 [!INCLUDE [cli-samples-clean-up](../../includes/cli-samples-clean-up.md)]
 
-## <a name="next-steps"></a>Passos seguintes
+<a id="next-steps" class="xliff"></a>
 
-- Explore sample [Web Apps CLI scripts](app-service-cli-samples.md) (Explorar scripts de exemplo da CLI das Aplicações Web).
-- Veja [Map a custom domain name](app-service-web-tutorial-custom-domain.md) (Mapear um nome de domínio personalizado), como contoso.com, para uma [aplicação do Serviço de Aplicações](app-service-web-tutorial-custom-domain.md).
+## Passos seguintes
+
+> [!div class="nextstepaction"]
+> [Mapear domínio personalizado](app-service-web-tutorial-custom-domain.md)
+

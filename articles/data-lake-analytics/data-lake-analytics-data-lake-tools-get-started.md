@@ -1,10 +1,10 @@
 ---
 title: Desenvolver scripts U-SQL com as Ferramentas do Data Lake para Visual Studio | Microsoft Docs
-description: 'Saiba como instalar as Ferramentas do Data Lake para Visual Studio, e como desenvolver e testar scripts U-SQL. '
+description: Saiba como instalar as Ferramentas do Data Lake para Visual Studio e como desenvolver e testar scripts U-SQL.
 services: data-lake-analytics
 documentationcenter: 
-author: edmacauley
-manager: jhubbard
+author: saveenr
+manager: saveenr
 editor: cgronlun
 ms.assetid: ad8a6992-02c7-47d4-a108-62fc5a0777a3
 ms.service: data-lake-analytics
@@ -12,282 +12,124 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: big-data
-ms.date: 04/06/2017
-ms.author: edmaca, yanacai
-translationtype: Human Translation
-ms.sourcegitcommit: 0b53a5ab59779dc16825887b3c970927f1f30821
-ms.openlocfilehash: c26ac89bd7ef494331ba309aacf87de03506ac4c
-ms.lasthandoff: 04/07/2017
+ms.date: 06/28/2017
+ms.author: saveenr, yanacai
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 3716c7699732ad31970778fdfa116f8aee3da70b
+ms.openlocfilehash: 401e2d84e5e2eb9f66a16b299fbb93bd1943e04b
+ms.contentlocale: pt-pt
+ms.lasthandoff: 06/30/2017
 
 
 ---
-# <a name="tutorial-develop-u-sql-scripts-using-data-lake-tools-for-visual-studio"></a>Tutorial: desenvolver scripts U-SQL com as Ferramentas do Data Lake para Visual Studio
+<a id="develop-u-sql-scripts-by-using-data-lake-tools-for-visual-studio" class="xliff"></a>
+
+# Desenvolver scripts U-SQL com as Ferramentas do Data Lake para Visual Studio
 [!INCLUDE [get-started-selector](../../includes/data-lake-analytics-selector-get-started.md)]
 
-Escrever e testar scripts U-SQL com as Ferramentas do Data Lake para Visual Studio.
 
-U-SQL é uma linguagem hiper escalável e altamente extensível para preparar, transformar e analisar todos os dados no Data Lake e além deste. Para obter mais informações, veja [Referência U-SQL](http://go.microsoft.com/fwlink/p/?LinkId=691348).
+Saiba como utilizar o Visual Studio para criar contas do Azure Data Lake Analytics, definir tarefas em [U-SQL](data-lake-analytics-u-sql-get-started.md) e submeter tarefas para o serviço Data Lake Analytics. Para mais informações sobre a Data Lake Analytics, consulte [Descrição geral da Análise do Azure Data Lake](data-lake-analytics-overview.md).
 
-## <a name="prerequisites"></a>Pré-requisitos
-* **Visual Studio 2017 (em armazenamento de dados e carga de trabalho de processamento), Visual Studio 2015 update 3, Visual Studio 2013 update 4 ou Visual Studio 2012. As edições Enterprise (Ultimate/Premium), Professional e Community são suportadas; a edição Express não é suportada.**
-* **SDK do Microsoft Azure para .NET versão 2.7.1 ou superior**.  Instale-lo através do [Instalador de plataforma Web](http://www.microsoft.com/web/downloads/platform.aspx).
-* **[Data Lake Tools para Visual Studio](http://aka.ms/adltoolsvs)**.
 
-    Assim que as Ferramentas do Data Lake para Visual Studio estiverem instaladas, verá um nó de "Data Lake Analytics" no Explorador de Servidores, no nó "Azure" (Abra o Explorador de Servidores ao premir Ctrl+Alt+S).
+<a id="prerequisites" class="xliff"></a>
 
-* **Conta do Data Lake Analytics e dados simples** As ferramentas do Data Lake não suportam a criação de contas do Data Lake Analytics. Crie uma conta com o portal do Azure, o Azure PowerShell, o SDK do .NET ou a CLI do Azure.
-Para sua comodidade, um script do PowerShell para criar um serviço de Data Lake Analytics e carregar o ficheiro de origem de dados pode ser encontrado na [Appx-A PowerShell sample for preparing the tutorial (Amostra de Appx-A PowerShell para preparar o tutorial)](data-lake-analytics-data-lake-tools-get-started.md#appx-a-powershell-sample-for-preparing-the-tutorial).
+## Pré-requisitos
 
-    Opcionalmente, pode avançar para as duas secções seguintes em [Introdução ao Azure Data Lake Analytics com o portal do Azure](data-lake-analytics-get-started-portal.md) para criar a sua conta e carregar dados manualmente:
+* **Visual Studio**: são suportadas todas as edições exceto a Express.
+    * Visual Studio 2017
+    * Visual Studio 2015
+    * Visual Studio 2013
+* Versão 2.7.1 ou superior do **Microsoft Azure SDK para .NET**.  Instale-a através do [instalador de plataforma Web](http://www.microsoft.com/web/downloads/platform.aspx).
+* A conta do **Data Lake Analytics**. Para criar uma conta, consulte [Introdução ao Azure Data Lake Analytics com o portal do Azure](data-lake-analytics-get-started-portal.md).
 
-    1. [Criar uma conta do Azure Data Lake Analytics](data-lake-analytics-get-started-portal.md#create-data-lake-analytics-account).
-    2. [Carregue SearchLog.tsv para a conta de Armazenamento do Data Lake predefinida](data-lake-analytics-get-started-portal.md#prepare-source-data).
+<a id="install-azure-data-lake-tools-for-visual-studio" class="xliff"></a>
 
-## <a name="connect-to-azure"></a>Ligar ao Azure
-**Ligue ao Data Lake Analytics**
+## Instalar as Ferramentas do Azure Data Lake para Visual Studio 
+
+Transfira e instale as Ferramentas do Azure Data Lake para Visual Studio [a partir do centro de transferências](http://aka.ms/adltoolsvs). Após a instalação, tenha em atenção que:
+* O nó do **Server Explorer** > **Azure** contém um nó do **Data Lake Analytics**. 
+* O menu **Ferramentas** inclui um item do **Data Lake**.
+
+<a id="connect-to-an-azure-data-lake-analytics-account" class="xliff"></a>
+
+## Ligar-se a uma conta do Azure Data Lake Analytics
 
 1. Abra o Visual Studio.
-2. No menu **Vista**, clique em **Explorador de Servidores** para abrir o Explorador de Servidores. Ou prima **[CTRL]+[ALT]+S**.
-3. Clique com o botão direito do rato em **Azure**, clique em "Ligar a Subscrição do Microsoft Azure" e, em seguida, siga as instruções.
-4. No **Explorador de Servidores**, expanda **Azure** e, em seguida, expanda **Data Lake Analytics**. Deve ver uma lista das suas contas do Data Lake Analytics, caso existam. Não é possível criar contas do Data Lake Analytics a partir do Visual Studio. Para criar uma conta, veja [Introdução ao Azure Data Lake Analytics com o portal do Azure](data-lake-analytics-get-started-portal.md) ou [Introdução ao Azure Data Lake Analytics com a Azure PowerShell](data-lake-analytics-get-started-powershell.md).
+2. Abra o Server Explorer ao selecionar **Ver** > **Server Explorer**.
+3. Clique com botão direito do rato em **Azure**. Em seguida, selecione **Ligar-se à subscrição do Microsoft Azure** e siga as instruções.
+4. No Server Explorer, selecione **Azure** > **Data Lake Analytics**. Verá uma lista das suas contas do Data Lake Analytics.
 
-## <a name="upload-source-data-files"></a>Carregar ficheiros de dados de origem
-Carregou alguns dados na secção **Pré-requisitos** anteriormente no tutorial.  
 
-Para utilizar os seus dados, siga estes passos para carregar dados a partir do Data Lake Tools.
+<a id="write-your-first-u-sql-script" class="xliff"></a>
 
-**Carregar ficheiros para a conta do Azure Data Lake dependente**
+## Escrever o seu primeiro script U-SQL
 
-1. No **Explorador de Servidores**, expanda **Azure**, expanda **Data Lake Analytics**, expanda a sua conta do Data Lake Analytics, expanda **Contas de Armazenamento**. Deverá ver a conta de Armazenamento do Data Lake predefinida e as contas de Armazenamento do Data Lake ligadas, e as contas de Armazenamento do Azure ligadas. A conta do Data Lake predefinida tem uma etiqueta "Conta de Armazenamento Predefinida".
-2. Clique com o botão direito do rato na conta de Armazenamento do Data Lake predefinida e, em seguida, clique em **Explorador**.  Abrem-se as Ferramentas do Data Lake do painel do Explorador do Visual Studio.  O lado esquerdo mostra uma vista de árvore; a vista de conteúdo está no lado direito.
-3. Procure a pasta para onde pretende carregar ficheiros,
-4. Clique com o botão direito do rato em qualquer espaço em branco e, em seguida, clique em **Carregar**.
+O texto apresentado em seguida é um script U-SQL simples. Este define um pequeno conjunto de dados e grava o conjunto de dados no Data Lake Store como um ficheiro com o nome `/data.csv`.
 
-    ![U-SQL do projeto Visual Studio em U-SQL](./media/data-lake-analytics-data-lake-tools-get-started/data-lake-analytics-data-lake-tools-upload-files.png)
+```
+@a  = 
+    SELECT * FROM 
+        (VALUES
+            ("Contoso", 1500.0),
+            ("Woodgrove", 2700.0)
+        ) AS 
+              D( customer, amount );
+OUTPUT @a
+    TO "/data.csv"
+    USING Outputters.Csv();
+```
 
-**Carregar ficheiros para uma conta de armazenamento de Blobs do Azure ligada**
+<a id="submit-a-data-lake-analytics-job" class="xliff"></a>
 
-1. No **Explorador de Servidores**, expanda **Azure**, expanda **Data Lake Analytics**, expanda a sua conta do Data Lake Analytics, expanda **Contas de Armazenamento**. Deverá ver a conta de Armazenamento do Data Lake predefinida e as contas de Armazenamento do Data Lake ligadas, e as contas de Armazenamento do Azure ligadas.
-2. Expanda a conta de armazenamento do Azure.
-3. Clique com o botão direito do rato no contentor para onde pretende carregar ficheiros e, em seguida, clique em **Explorador**. Se não tiver um contentor, primeiro terá de criar um através do portal do Azure, do Azure PowerShell ou de outras ferramentas.
-4. Procure a pasta para onde pretende carregar ficheiros,
-5. Clique com o botão direito do rato em qualquer espaço em branco e, em seguida, clique em **Carregar**.
+### Submeter uma tarefa do Data Lake Analytics
 
-## <a name="develop-u-sql-scripts"></a>Desenvolver scripts U-SQL
-As tarefas de Data Lake Analytics são escritas em linguagem U-SQL. Para saber mais sobre U-SQL, consulte [Introdução à linguagem U SQL](data-lake-analytics-u-sql-get-started.md) e [Referência de linguagem U-SQL](http://go.microsoft.com/fwlink/?LinkId=691348).
+1. Selecione **Ficheiro** > **Novo** > **Projeto**.
 
-**Criar e submeter uma tarefa do Data Lake Analytics**
+2. Selecione o tipo **Projeto U-SQL** e clique em **OK**. O Visual Studio cria uma solução com um ficheiro **Script.usql**.
 
-1. No menu **Ficheiro**, clique em **Novo** e, em seguida, clique em **Projeto**.
-2. Selecione o tipo **Projeto U-SQL** .
+3. Cole o script anterior na janela **Script.usql**.
 
-    ![novo projeto Visual Studio em U-SQL](./media/data-lake-analytics-data-lake-tools-get-started/data-lake-analytics-data-lake-tools-new-project.png)
-3. Clique em **OK**. O Visual Studio cria uma solução com um ficheiro **Script.usql**.
-4. Introduza o seguinte script no **Script.usql**:
-
-        @searchlog =
-            EXTRACT UserId          int,
-                    Start           DateTime,
-                    Region          string,
-                    Query           string,
-                    Duration        int?,
-                    Urls            string,
-                    ClickedUrls     string
-            FROM "/Samples/Data/SearchLog.tsv"
-            USING Extractors.Tsv();
-
-        @res =
-            SELECT *
-            FROM @searchlog;        
-
-        OUTPUT @res   
-            TO "/Output/SearchLog-from-Data-Lake.csv"
-        USING Outputters.Csv();
-
-    Este script U-SQL lê o ficheiro de dados de origem, utilizando **Extractors.Tsv()**, e, em seguida, cria um ficheiro csv, utilizando **Outputters.Csv()**.
-
-    Não modifique os dois caminhos, exceto se copiou o ficheiro de origem para uma localização diferente.  O Data Lake Analytics cria a pasta de saída, se não existir.
-
-    É mais simples utilizar caminhos relativos para ficheiros armazenados em contas do Data Lake predefinidas. Também pode utilizar caminhos absolutos.  Por exemplo
-
-        adl://<Data LakeStorageAccountName>.azuredatalakestore.net:443/Samples/Data/SearchLog.tsv
-
-    Tem de utilizar caminhos absolutos para aceder a ficheiros em contas de Armazenamento ligadas.  A sintaxe para ficheiros armazenados numa Conta de Armazenamento do Azure ligada é:
-
-        wasb://<BlobContainerName>@<StorageAccountName>.blob.core.windows.net/Samples/Data/SearchLog.tsv
-
-   > [!NOTE]
-   > O contentor de Blobs do Azure com blobs públicos ou permissões de acesso a contentores públicos não são atualmente suportados.  
-   >
-   >
-
-    Tenha em atenção as seguintes funcionalidades:
-
-   * **IntelliSense**
-
-       A conclusão automática de nome e os membros serão mostrados para Conjunto de Linhas, Classes, Bases de Dados, Esquemas e Objetos Definidos pelo Utilizador (UDOs).
-
-       O IntelliSense para entidades de catálogo (Bases de Dados, Esquemas,Tabelas, UDOs, etc.) está relacionado com a sua conta de computação. Pode verificar a conta de computação ativa, a base de dados e o esquema atuais na barra de ferramentas na parte superior e mudá-los com as listas pendentes.
-   * **Expandir * colunas**
-
-       Clique no lado direito de *, deve ver um sublinhado azul sob o *. Faça pairar o cursor do rato no sublinhado azul e, em seguida, clique na seta para baixo.
-       ![É possível expandir as ferramentas do Visual Studio para o Data Lake *](./media/data-lake-analytics-data-lake-tools-get-started/data-lake-analytics-data-lake-tools-expand-asterisk.png)
-
-       Clique em **Expandir Colunas**, a ferramenta irá substituir * com os nomes das colunas.
-   * **Formatação Automática**
-
-       Os utilizadores podem alterar o avanço do script U-SQL com base na estrutura do código em Editar -> Avançadas:
-
-     * Formatar Documento (Ctrl+E, D): Formata todo o documento   
-     * Formatar Seleção (Ctrl+K, Ctrl+F): Formata a seleção. Se nada estiver selecionado, este atalho formata a linha onde se encontrar o cursor.  
-
-       Todas as regras de formatação são configuráveis em Ferramentas->Opções->Editor de Texto->SIP->Formatação.  
-   * **Avanço Inteligente**
-
-       As Ferramentas do Data Lake para Visual Studio conseguem avançar expressões automaticamente enquanto estiver a escrever scripts. Esta funcionalidade está desativada por predefinição, os utilizadores precisam de ativá-la através da verificação U-SQL-> Opções e Definições ->Parâmetros->Ativar Avanço Inteligente.
-   * **Ir para Definição e Localizar Todas as Referências**
-
-       Clicar com o botão direito do rato no nome de um Conjunto de Linhas/parâmetro/coluna/UDO, etc., e clicar em Ir para Definição (F12) permite-lhe navegar para a respetiva definição. Ao clicar em Localizar Todas as Referências (Shift+F12), serão mostradas todas as referências.
-   * **Inserir Caminho do Azure**
-
-       Em vez de memorizar o caminho do ficheiro do Azure e digitá-lo manualmente quando escrever o script, as Ferramentas do Data Lake para Visual Studio fornecem uma solução fácil: clique com o botão direito do rato no editor, clique em Inserir Caminho do Azure. Navegue para o ficheiro na caixa de diálogo do Browser de Blobs do Azure. Clique em **OK**. o caminho do ficheiro será inserido no seu código.
-5. Especifique a conta do Data Lake Analytics, a Base de Dados e o Esquema. Pode selecionar **(local)** para executar o script localmente, para efeitos de teste. Para obter mais informações, veja [Executar U-SQL localmente](#run-u-sql-locally).
+4. No canto superior esquerdo da janela **Script.usql**, especifique a conta do Data Lake Analytics.
 
     ![Submeter projeto do Visual Studio em U-SQL](./media/data-lake-analytics-data-lake-tools-get-started/data-lake-analytics-data-lake-tools-submit-job.png)
 
-    Para obter mais informações, veja [Utilizar catálogo U-SQL](data-lake-analytics-use-u-sql-catalog.md).
-6. No **Explorador de Soluções**, clique com o botão direito do rato em **Script.usql**, e, em seguida, clique em **Criar Script**. Verifique o resultado no painel Resultados.
-7. No **Explorador de Soluções**, clique com o botão direito do rato em **Script.usql**, e, em seguida, clique em **Submeter Script**. Opcionalmente, também pode clicar em **Submeter** a partir do painel Script.usql.  Veja a captura de ecrã anterior.  Clique na seta para baixo junto ao botão Submeter para submeter com as opções de avançar:
-8. Especifique o **Nome da Tarefa**, verifique a **Conta de Análise**, e, em seguida, clique em **Submeter**. Os resultados da submissão e a ligação da tarefa ficam disponíveis na janela de Resultados das Ferramentas do Data Lake para Visual Studio quando a submissão estiver concluída.
+5. No canto superior esquerdo da janela **Script.usql**, selecione **Submeter**.
+6. Verifique a **Conta di Analytics** e, em seguida, selecione **Submeter**. Os resultados da submissão ficam disponíveis nas Ferramentas do Data Lake para Visual Studio quando a submissão estiver concluída.
 
     ![Submeter projeto do Visual Studio em U-SQL](./media/data-lake-analytics-data-lake-tools-get-started/data-lake-analytics-data-lake-tools-submit-job-advanced.png)
-9. Tem de clicar no botão Atualizar para ver o estado da tarefa mais recente e atualizar o ecrã. Quando a tarefa for concluída com êxito, irá mostrar **Gráfico da Tarefa**, **Operações de Metadados**, **Histórico de Estado**, **Diagnóstico**:
+7. Para ver o estado da tarefa mais recente e atualizar o ecrã, clique em **Atualizar**. Quando a tarefa for concluída com êxito, será apresentado o **Gráfico da Tarefa**, as **Operações de Metadados**, o **Histórico do Estado** e o **Diagnóstico**:
 
     ![Gráfico de desempenho da tarefa do Data Lake Analytics no Visual Studio em U-SQL](./media/data-lake-analytics-data-lake-tools-get-started/data-lake-analytics-data-lake-tools-performance-graph.png)
 
-   * Resumo da Tarefa. Mostra as informações de resumo da tarefa atual, por exemplo: Estado, Progresso, Tempo de Execução, Nome de Tempo de Execução, Submissor, etc.   
-   * Detalhes da Tarefa. São fornecidas informações detalhadas sobre esta tarefa, incluindo script, recursos, Vista de Execução de Vértice.
-   * Gráfico da Tarefa. São fornecidos quatro gráficos para visualizar as informações da tarefa: Progresso, Dados Lidos, Dados Escritos, Tempo de Execução, Tempo de Execução Média por Nó, Débito de Entrada, Débito de Saída.
-   * Operações de Metadados. Mostra todas as operações de metadados.
-   * Histórico de Estado.
-   * Diagnóstico. As Ferramentas do Data Lake para Visual Studio irão diagnosticar automaticamente a execução da tarefa. Irá receber alertas quando existirem alguns erros ou problemas de desempenho nas respetivas tarefas. Veja a parte Diagnóstico da Tarefa (ligação TBD) para obter mais informações.
+   * **Resumo da Tarefa** apresenta o resumo da tarefa.   
+   * **Detalhes da Tarefa** apresenta informações mais específicas sobre a tarefa, incluindo o script, recursos e vértices.
+   * **Gráfico da Tarefa** apresenta o progresso da tarefa.
+   * **Operações de Metadados** apresenta todas as ações que foram executadas no catálogo de U-SQL.
+   * **Dados** apresenta todas as entradas e saídas.
+   * **Diagnóstico** oferece uma análise avançada para a otimização do desempenho e a execução da tarefa.
 
-**Para verificar o estado da tarefa**
+<a id="to-check-job-state" class="xliff"></a>
 
-1. No Explorador de Servidores, expanda **Azure**, expanda **Data Lake Analytics**, expanda o nome de conta do Data Lake Analytics
-2. Faça duplo clique **Tarefas** para listar as tarefas.
-3. Clique numa tarefa para ver o estado.
+### Para verificar o estado da tarefa
 
-**Para ver o resultado da tarefa**
+1. No Server Explorer, selecione **Azure** > **Data Lake Analytics**. 
+2. Expanda o nome da conta do Data Lake Analytics.
+3. Faça duplo clique em **Tarefas**.
+4. Selecione a tarefa submetida anteriormente.
 
-1. No **Explorador de Servidores**, expanda **Azure**, expanda **Data Lake Analytics**, expanda a sua conta do Data Lake Analytics, expanda **Contas de Armazenamento**, faça duplo clique na conta de Armazenamento do Data Lake predefinida e, em seguida, clique em **Explorador**.
-2. Faça duplo clique em **resultado** para abrir a pasta
-3. Faça duplo clique em **SearchLog-From-adltools.csv**.
+<a id="to-see-the-output-of-a-job" class="xliff"></a>
 
-### <a name="job-playback"></a>Reprodução de Tarefa
-A reprodução de tarefa permite ver o progresso de execução da tarefa e detetar visualmente anomalias de desempenho e congestionamentos. Esta funcionalidade pode ser utilizada antes de a execução da tarefa ser concluída (ou seja, durante o período de tempo em que a tarefa está ativamente em execução), bem como após a conclusão da execução. Executar a reprodução durante a execução da tarefa permitirá ao utilizador reproduzir o progresso até à hora atual.
+### Para ver a saída de uma tarefa
 
-**Para ver o progresso de execução da tarefa**  
+1. No Server Explorer, navegue até à tarefa submetida.
+2. Clique no separador **Dados**.
+3. No separador **Saídas de Tarefas**, selecione o ficheiro `"/data.csv"`.
 
-1. Clique em **Carregar Perfil** no canto superior direito. Veja a captura de ecrã anterior.
-2. Clique no botão Reproduzir no canto inferior esquerdo para analisar o progresso de execução da tarefa.
-3. Durante a reprodução, clique em **Pausa** para pará-la ou arraste diretamente a barra de progresso para posições específicas.
+<a id="next-steps" class="xliff"></a>
 
-### <a name="heat-map"></a>Mapa Térmico
-As Ferramentas do Data Lake para Visual Studio fornecem sobreposições de cor selecionáveis pelo utilizador na vista de tarefa, para indicar o progresso, E/S de dados, tempo de execução, débito E/S de cada fase. Os utilizadores podem assim descobrir potenciais problemas e a distribuição de propriedades da tarefa, de modo direto e intuitivo. Pode escolher uma origem de dados para apresentar, a partir da lista pendente.  
+## Passos seguintes
 
-## <a name="run-u-sql-locally"></a>Executar o U-SQL localmente
-
-Pode utilizar as Ferramentas do Azure Data Lake para o Visual Studio e o SDK U-SQK do Data Lake do Azure para executar tarefas de U-SQL na estação de trabalho, tal como com o serviço do Azure Data Lake. Estas duas funcionalidades de execução local poupam tempo no teste e na depuração de tarefas U-SQL. 
-
-* [Testar e depurar tarefas U-SQL utilizando a execução local e o SDK U-SQL do Azure Data Lake](data-lake-analytics-data-lake-tools-local-run.md)
-
-
-## <a name="see-also"></a>Consultar também
-Para iniciar o Data Lake Analytics com ferramentas diferentes, veja:
-
-* [Introdução ao Data Lake Analytics com o portal do Azure](data-lake-analytics-get-started-portal.md)
-* [Introdução ao Data Lake Analytics com o Azure PowerShell](data-lake-analytics-get-started-powershell.md)
-* [Introdução ao Data Lake Analytics com o SDK do .NET](data-lake-analytics-get-started-net-sdk.md)
+* Introdução ao Data Lake Analytics com o: [portal do Azure](data-lake-analytics-get-started-portal.md) | [Azure PowerShell](data-lake-analytics-get-started-powershell.md) 
 * [Depuração do código c# nas tarefas U-SQL](data-lake-analytics-debug-u-sql-jobs.md)
-
-Para saber mais sobre as Ferramentas do Data Lake para o Visual Studio Code, veja [Utilizar as Ferramentas do Azure Data Lake para o Visual Studio Code](data-lake-analytics-data-lake-tools-for-vscode.md).
-
-Para ver mais tópicos de desenvolvimento:
-
-* [Analisar blogues com o Data Lake Analytics](data-lake-analytics-analyze-weblogs.md)
-* [Desenvolver scripts U-SQL com as Ferramentas do Data Lake para Visual Studio](data-lake-analytics-data-lake-tools-get-started.md)
-* [Introdução à linguagem U-SQL do Azure Data Lake Analytics](data-lake-analytics-u-sql-get-started.md)
-* [Desenvolver operadores U-SQL definidos pelo utilizador para tarefas do Data Lake Analytics](data-lake-analytics-u-sql-develop-user-defined-operators.md)
-
-## <a name="appx-a-powershell-sample-for-preparing-the-tutorial"></a>Exemplo de Appx-A PowerShell para preparar o tutorial
-O seguinte script do PowerShell prepara uma conta do Azure Data Lake Analytics e a origem de dados para si, para que possa avançar para [Desenvolver scripts U-SQL](data-lake-analytics-data-lake-tools-get-started.md#develop-u-sql-scripts).
-
-    #region - used for creating Azure service names
-    $nameToken = "<Enter an alias>"
-    $namePrefix = $nameToken.ToLower() + (Get-Date -Format "MMdd")
-    #endregion
-
-    #region - service names
-    $resourceGroupName = $namePrefix + "rg"
-    $dataLakeStoreName = $namePrefix + "adas"
-    $dataLakeAnalyticsName = $namePrefix + "adla"
-    $location = "East US 2"
-    #endregion
-
-
-    # Treat all errors as terminating
-    $ErrorActionPreference = "Stop"
-
-    #region - Connect to Azure subscription
-    Write-Host "`nConnecting to your Azure subscription ..." -ForegroundColor Green
-    try{Get-AzureRmContext}
-    catch{Login-AzureRmAccount}
-    #endregion
-
-    #region - Create an Azure Data Lake Analytics service account
-    Write-Host "Create a resource group ..." -ForegroundColor Green
-    New-AzureRmResourceGroup `
-        -Name  $resourceGroupName `
-        -Location $location
-
-    Write-Host "Create a Data Lake account ..."  -ForegroundColor Green
-    New-AzureRmDataLakeStoreAccount `
-        -ResourceGroupName $resourceGroupName `
-        -Name $dataLakeStoreName `
-        -Location $location
-
-    Write-Host "Create a Data Lake Analytics account ..."  -ForegroundColor Green
-    New-AzureRmDataLakeAnalyticsAccount `
-        -Name $dataLakeAnalyticsName `
-        -ResourceGroupName $resourceGroupName `
-        -Location $location `
-        -DefaultDataLake $dataLakeStoreName
-
-    Write-Host "The newly created Data Lake Analytics account ..."  -ForegroundColor Green
-    Get-AzureRmDataLakeAnalyticsAccount `
-        -ResourceGroupName $resourceGroupName `
-        -Name $dataLakeAnalyticsName  
-    #endregion
-
-    #region - prepare the source data
-    Write-Host "Import the source data ..."  -ForegroundColor Green
-    $localFolder = "C:\Tutorials\Downloads\" # A temp location for the file.
-    $storageAccount = "adltutorials"  # Don't modify this value.
-    $container = "adls-sample-data"  #Don't modify this value.
-
-    # Create the temp location  
-    New-Item -Path $localFolder -ItemType Directory -Force
-
-    # Download the sample file from Azure Blob storage
-    $context = New-AzureStorageContext -StorageAccountName $storageAccount -Anonymous
-    $blobs = Azure\Get-AzureStorageBlob -Container $container -Context $context
-    $blobs | Get-AzureStorageBlobContent -Context $context -Destination $localFolder
-
-    # Upload the file to the default Data Lake Store account    
-    Import-AzureRmDataLakeStoreItem -AccountName $dataLakeStoreName -Path $localFolder"SearchLog.tsv" -Destination "/Samples/Data/SearchLog.tsv"
-
-    Write-Host "List the source data ..."  -ForegroundColor Green
-    Get-AzureRmDataLakeStoreChildItem -Account $dataLakeStoreName -Path  "/Samples/Data/"
-    #endregion
+* [Utilizar as Ferramentas do Azure Data Lake para o Visual Studio Code](data-lake-analytics-data-lake-tools-for-vscode.md)
 

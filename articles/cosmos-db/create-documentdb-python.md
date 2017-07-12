@@ -1,14 +1,14 @@
 ---
 title: "Azure Cosmos DB: criar uma aplicação com Python e a DocumentDB API | Microsoft Docs"
 description: "Apresenta um exemplo de código Python que pode utilizar para ligar e consultar a Azure Cosmos DB DocumentDB API"
-services: cosmosdb
+services: cosmos-db
 documentationcenter: 
 author: mimig1
 manager: jhubbard
 editor: 
 ms.assetid: 51c11be2-af6d-425f-a86a-39cbfe61da29
-ms.service: cosmosdb
-ms.custom: quick start connect
+ms.service: cosmos-db
+ms.custom: quick start connect, mvc
 ms.workload: 
 ms.tgt_pltfrm: na
 ms.devlang: python
@@ -16,20 +16,24 @@ ms.topic: hero-article
 ms.date: 05/13/2017
 ms.author: mimig
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 71fea4a41b2e3a60f2f610609a14372e678b7ec4
-ms.openlocfilehash: 6e64614c6ca746d91be535b64e520033c9e7d053
+ms.sourcegitcommit: 07584294e4ae592a026c0d5890686eaf0b99431f
+ms.openlocfilehash: 08d467ea27484e7d1d07d6c21b2e04b6525fbcd8
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 06/01/2017
 
 
 ---
-# <a name="azure-cosmos-db-build-a-documentdb-api-app-with-python-and-the-azure-portal"></a>Azure Cosmos DB: criar uma aplicação de DocumentDB API com Python e o portal do Azure
+<a id="azure-cosmos-db-build-a-documentdb-api-app-with-python-and-the-azure-portal" class="xliff"></a>
+
+# Azure Cosmos DB: criar uma aplicação de DocumentDB API com Python e o portal do Azure
 
 O Azure Cosmos DB é um serviço de bases de dados com vários modelos e distribuído globalmente. Pode criar e consultar rapidamente o documento, a chave/valor e as bases de dados de gráficos, que beneficiam de capacidades de escalamento horizontal e distribuição global no centro do Azure Cosmos DB. 
 
-Este guia de introdução demonstra como criar uma conta do Azure Cosmos DB, bases de dados de documentos e coleções com o portal do Azure. Depois, vai criar e executar uma aplicação de consola criada na [DocumentDB Python API](../documentdb/documentdb-sdk-python.md).
+Este guia de introdução demonstra como criar uma conta do Azure Cosmos DB, bases de dados de documentos e coleções com o portal do Azure. Depois, vai criar e executar uma aplicação de consola criada na [DocumentDB Python API](documentdb-sdk-python.md).
 
-## <a name="prerequisites"></a>Pré-requisitos
+<a id="prerequisites" class="xliff"></a>
+
+## Pré-requisitos
 
 * Antes de poder executar este exemplo, tem de ter os pré-requisitos seguintes:
     * [Visual Studio 2015](http://www.visualstudio.com/) ou superior.
@@ -38,15 +42,21 @@ Este guia de introdução demonstra como criar uma conta do Azure Cosmos DB, bas
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="create-a-database-account"></a>Criar uma conta de base de dados
+<a id="create-a-database-account" class="xliff"></a>
 
-[!INCLUDE [documentdb-create-dbaccount](../../includes/documentdb-create-dbaccount.md)]
+## Criar uma conta de base de dados
 
-## <a name="add-a-collection"></a>Adicionar uma coleção
+[!INCLUDE [cosmos-db-create-dbaccount](../../includes/cosmos-db-create-dbaccount.md)]
 
-[!INCLUDE [cosmosdb-create-collection](../../includes/cosmosdb-create-collection.md)]
+<a id="add-a-collection" class="xliff"></a>
 
-## <a name="clone-the-sample-application"></a>Clonar a aplicação de exemplo
+## Adicionar uma coleção
+
+[!INCLUDE [cosmos-db-create-collection](../../includes/cosmos-db-create-collection.md)]
+
+<a id="clone-the-sample-application" class="xliff"></a>
+
+## Clonar a aplicação de exemplo
 
 Agora, vamos clonar uma aplicação de DocumentDB a partir do GitHub, definir a cadeia de ligação e executá-la. Vai ver como é fácil trabalhar com dados programaticamente. 
 
@@ -57,9 +67,11 @@ Agora, vamos clonar uma aplicação de DocumentDB a partir do GitHub, definir a 
     ```bash
     git clone https://github.com/Azure-Samples/azure-cosmos-db-documentdb-python-getting-started.git
     ```  
-## <a name="review-the-code"></a>Rever o código
+<a id="review-the-code" class="xliff"></a>
 
-Vamos fazer uma breve revisão do que está a acontecer à aplicação. Abra o ficheiro DocumentDBRepository.cs e verá que estas linhas de código criam os recursos do Azure Cosmos DB. 
+## Rever o código
+
+Vamos fazer uma breve revisão do que está a acontecer à aplicação. Abra o ficheiro DocumentDBGetStarted.py e verá que estas linhas de código criam os recursos do Azure Cosmos DB. 
 
 
 * O DocumentClient é inicializado.
@@ -120,7 +132,9 @@ Vamos fazer uma breve revisão do que está a acontecer à aplicação. Abra o f
     print(results)
     ```
 
-## <a name="update-your-connection-string"></a>Atualizar a cadeia de ligação
+<a id="update-your-connection-string" class="xliff"></a>
+
+## Atualizar a cadeia de ligação
 
 Agora, regresse ao portal do Azure para obter as informações da cadeia de ligação e copie-as para a aplicação.
 
@@ -138,7 +152,9 @@ Agora, regresse ao portal do Azure para obter as informações da cadeia de liga
 
     `config.MASTERKEY : "FILLME"`
     
-## <a name="run-the-app"></a>Executar a aplicação
+<a id="run-the-app" class="xliff"></a>
+
+## Executar a aplicação
 1. No Visual Studio, clique com o botão direito do rato no projeto no **Explorador de Soluções**, selecione o ambiente de Python atual e clique com o botão direito do rato.
 
 2. Selecione Instalar Pacote Python e escreva **pydocumentdb**
@@ -147,23 +163,29 @@ Agora, regresse ao portal do Azure para obter as informações da cadeia de liga
 
 Agora, pode voltar ao Data Explorer e ver, consultar, modificar e trabalhar com estes dados novos. 
 
-## <a name="review-slas-in-the-azure-portal"></a>Rever os SLAs no portal do Azure
+<a id="review-slas-in-the-azure-portal" class="xliff"></a>
 
-[!INCLUDE [cosmosdb-tutorial-review-slas](../../includes/cosmosdb-tutorial-review-slas.md)]
+## Rever os SLAs no portal do Azure
 
-## <a name="clean-up-resources"></a>Limpar recursos
+[!INCLUDE [cosmosdb-tutorial-review-slas](../../includes/cosmos-db-tutorial-review-slas.md)]
+
+<a id="clean-up-resources" class="xliff"></a>
+
+## Limpar recursos
 
 Se não pretender continuar a utilizar esta aplicação, elimine todos os recursos criados com este guia de introdução no portal do Azure com os seguintes passos:
 
 1. No menu do lado esquerdo do portal do Azure, clique em **Grupos de recursos** e, em seguida, clique no nome de recurso que criou. 
 2. Na página do grupo de recursos, clique em **Eliminar**, escreva o nome do recurso a eliminar na caixa de texto e, em seguida, clique em **Eliminar**.
 
-## <a name="next-steps"></a>Passos seguintes
+<a id="next-steps" class="xliff"></a>
+
+## Passos seguintes
 
 Neste guia rápido, aprendeu a criar uma conta do Azure Cosmos DB, a criar uma coleção com o Data Explorer e a executar uma aplicação. Agora, pode importar dados adicionais à sua conta do Cosmos DB. 
 
 > [!div class="nextstepaction"]
-> [Import data into Azure Cosmos DB for the DocumentDB API](../documentdb/documentdb-import-data.md) (Importar dados para o Azure Cosmos DB para a DocumentDB API)
+> [Import data into Azure Cosmos DB for the DocumentDB API](import-data.md) (Importar dados para o Azure Cosmos DB para a DocumentDB API)
 
 
 

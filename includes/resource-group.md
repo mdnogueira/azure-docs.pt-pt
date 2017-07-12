@@ -1,0 +1,1 @@
+Um[ grupo de recursos](../articles/azure-resource-manager/resource-group-overview.md#terminology) é um contentor lógico em que os recursos do Azure, como aplicações Web, bases de dados e contas de armazenamento são implementados e geridos.

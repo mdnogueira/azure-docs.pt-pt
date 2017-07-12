@@ -1,6 +1,6 @@
 ---
-title: "Uma introdução ao Apache Kafka no HDInsight | Microsoft Docs"
-description: "Saiba mais sobre o Apache Kafka no HDInsight. O que é, o que faz e onde encontrar exemplos e obter informações de introdução."
+title: "Uma introdução ao Apache Kafka no HDInsight – Azure | Microsoft Docs"
+description: "Saiba mais sobre o Apache Kafka no HDInsight: o que é, o que faz e onde encontrar exemplos e obter informações sobre como começar."
 services: hdinsight
 documentationcenter: 
 author: Blackmist
@@ -13,20 +13,24 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: big-data
-ms.date: 05/03/2017
+ms.date: 06/15/2017
 ms.author: larryfr
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 7c4d5e161c9f7af33609be53e7b82f156bb0e33f
-ms.openlocfilehash: ca48abcdc9f9d05648a4b03bdb5fec7b4a5b7cce
+ms.sourcegitcommit: ff2fb126905d2a68c5888514262212010e108a3d
+ms.openlocfilehash: f6a49be148ded1a90a642b83d3d70a83e572f4e4
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/04/2017
+ms.lasthandoff: 06/17/2017
 
 ---
-# <a name="introducing-apache-kafka-on-hdinsight-preview"></a>Introdução ao Apache Kafka no HDInsight (pré-visualização)
+<a id="introducing-apache-kafka-on-hdinsight-preview" class="xliff"></a>
+
+# Introdução ao Apache Kafka no HDInsight (pré-visualização)
 
 O [Apache Kafka](https://kafka.apache.org) é uma plataforma de transmissão em fluxo distribuída de código aberto que pode ser utilizada para criar aplicações e pipelines de dados de transmissão em fluxo em tempo real. O Kafka também fornece a funcionalidade de mediador de mensagem semelhante a uma fila de mensagens, onde pode publicar e subscrever fluxos de dados nomeados. O Kafka no HDInsight fornece um serviço gerido, altamente escalável e disponível na cloud do Microsoft Azure.
 
-## <a name="why-use-kafka-on-hdinsight"></a>Porquê utilizar o Kaftka no HDInsight?
+<a id="why-use-kafka-on-hdinsight" class="xliff"></a>
+
+## Porquê utilizar o Kaftka no HDInsight?
 
 O Kafka oferece as seguintes funcionalidades:
 
@@ -40,7 +44,15 @@ O Kafka oferece as seguintes funcionalidades:
 
 * Com tolerância a falhas: as partições podem ser replicadas entre nós para fornecer tolerância a falhas.
 
-## <a name="use-cases"></a>Casos de utilização
+* Integração com os Azure Managed Disks: os discos geridos permitem uma maior escala e taxa de débito para os discos utilizados pelas máquinas virtuais no cluster do HDInsight.
+
+    Os discos geridos estão ativados por predefinição para o Kafka no HDInsight e o número de discos utilizados por nó pode ser configurado durante a criação no HDInsight. Para obter mais informações sobre os discos geridos, consulte [Azure Managed Disks](../storage/storage-managed-disks-overview.md).
+
+    Para obter mais informações sobre como configurar os discos geridos com o Kafka no HDInsight, consulte [Increase scalability of Kafka on HDInsight](hdinsight-apache-kafka-scalability.md) (Aumentar a escalabilidade do Kafka no HDInsight).
+
+<a id="use-cases" class="xliff"></a>
+
+## Casos de utilização
 
 * **Mensagens**: uma vez que suporta o padrão de mensagem de publicação-subscrição, o Kafka é frequentemente utilizado como um mediador de mensagem.
 
@@ -50,7 +62,9 @@ O Kafka oferece as seguintes funcionalidades:
 
 * **Transformação**: com o processamento de transmissão em fluxo, pode combinar e enriquecer os dados a partir de vários tópicos de entrada em um ou mais tópicos de saída.
 
-## <a name="next-steps"></a>Passos seguintes
+<a id="next-steps" class="xliff"></a>
+
+## Passos seguintes
 
 Utilize as seguintes ligações para saber como utilizar o Apache Kafka no HDInsight:
 

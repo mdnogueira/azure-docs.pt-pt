@@ -12,17 +12,20 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: multiple
 ms.topic: get-started-article
-ms.date: 03/09/2017
+ms.date: 06/14/2017
 ms.author: sethm
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 8a531f70f0d9e173d6ea9fb72b9c997f73c23244
-ms.openlocfilehash: 9fd40892c77630bd4f0b7abf5c3458a6dc200402
+ms.sourcegitcommit: ef1e603ea7759af76db595d95171cdbe1c995598
+ms.openlocfilehash: 74a0837b7149236faa45ef2cda0a0aee7c46a31b
 ms.contentlocale: pt-pt
-ms.lasthandoff: 03/09/2017
+ms.lasthandoff: 06/16/2017
 
 
 ---
-# <a name="what-is-azure-relay"></a>O que é o Reencaminhamento do Azure?
+<a id="what-is-azure-relay" class="xliff"></a>
+
+# O que é o Reencaminhamento do Azure?
+
 O serviço de Reencaminhamento do Azure facilita as aplicações híbridas, permitindo-lhe expor na cloud pública, de forma segura, os serviços que se encontram numa rede empresarial, sem ter de abrir uma ligação de firewall ou sem ter de fazer alterações intrusivas na infraestrutura da rede empresarial. O Reencaminhamento suporta uma variedade de diferentes protocolos de transporte e de padrões de serviços Web.
 
 O serviço de Reencaminhamento suporta o tradicional tráfego unidirecional, pedido/resposta e ponto a ponto. Também suporta a distribuição de eventos no âmbito de Internet para permitir cenários de publicação-subscrição e comunicação de socket bidirecional para aumentar a eficiência ponto a ponto. 
@@ -47,16 +50,28 @@ Tanto as Ligações Híbridas, como os Reencaminhamentos do WCF, permitem ligaç
 | **Standards-Based Open Protocol (Protocolo Aberto Baseado em Normas)** | |x |
 | **Vários Modelos de Programação de RPC** | |x |
 
-## <a name="hybrid-connections"></a>Ligações Híbridas
+<a id="hybrid-connections" class="xliff"></a>
+
+## Ligações Híbridas
+
 A capacidade de [Ligações Híbridas do Reencaminhamento do Azure](relay-hybrid-connections-protocol.md) é uma evolução segura e de protocolo aberto das funcionalidades atuais do Reencaminhamento, que pode ser implementada em qualquer plataforma e em qualquer idioma que tenha capacidade básica para WebSocket, que inclua explicitamente a API WebSocket em browsers comuns. As Ligações Híbridas baseiam-se em HTTP e WebSockets.
 
-## <a name="wcf-relays"></a>Reencaminhamentos do WCF
+<a id="wcf-relays" class="xliff"></a>
+
+## Reencaminhamentos do WCF
+
 O Reencaminhamento do WCF funciona para o .NET Framework (NETFX) completo e para o WCF. A ligação entre o serviço no local e o serviço de reencaminhamento é iniciada através de um conjunto de enlaces de "reencaminhamento" do WCF. Em segundo plano, os enlaces de reencaminhamento mapeiam para novos elementos de enlace de transporte concebidos para criar os componentes de canal WCF que se integram ao Service Bus na nuvem.
 
-## <a name="service-history"></a>Histórico do Serviço
-As Ligações Híbridas superam a funcionalidade anterior, igualmente chamada “Serviços BizTalk”, que foi criada com base no Reencaminhamento do WCF do Azure Service Bus. A nova capacidade de Ligações Híbridas complementa a funcionalidade de Reencaminhamento do WCF existente e estas duas capacidades do serviço coexistem lado a lado no serviço de Reencaminhamento num futuro próximo. Partilham um gateway comum, mas, de resto, são implementações diferentes.
+<a id="service-history" class="xliff"></a>
 
-## <a name="next-steps"></a>Passos seguintes:
+## Histórico do Serviço
+
+As Ligações Híbridas superam a funcionalidade anterior, igualmente chamada “Serviços BizTalk”, que foi criada com base no Reencaminhamento do WCF do Azure Service Bus. A nova capacidade de Ligações Híbridas complementa a funcionalidade de Reencaminhamento do WCF existente e estas duas capacidades do serviço coexistem lado a lado no serviço de Reencaminhamento do Azure num futuro próximo. Partilham um gateway comum, mas, de resto, são implementações diferentes.
+
+<a id="next-steps" class="xliff"></a>
+
+## Passos seguintes:
+
 * [FAQ de Reencaminhamento](relay-faq.md)
 * [Criar um espaço de nomes](relay-create-namespace-portal.md)
 * [Introdução ao .NET](relay-hybrid-connections-dotnet-get-started.md)

@@ -13,16 +13,19 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 2/21/2017
+ms.date: 6/01/2017
 ms.author: negat
-translationtype: Human Translation
-ms.sourcegitcommit: 503f5151047870aaf87e9bb7ebf2c7e4afa27b83
-ms.openlocfilehash: 4ec20a30f423d4b30e953f873100be90167f987b
-ms.lasthandoff: 03/28/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 07584294e4ae592a026c0d5890686eaf0b99431f
+ms.openlocfilehash: f9cc157f25e70a8154614b659fb7e59b7fd06ed1
+ms.contentlocale: pt-pt
+ms.lasthandoff: 06/01/2017
 
 
 ---
-# <a name="azure-vm-scale-sets-and-managed-disks"></a>Conjuntos de dimensionamento de VMs do Azure e discos geridos
+<a id="azure-vm-scale-sets-and-managed-disks" class="xliff"></a>
+
+# Conjuntos de dimensionamento de VMs do Azure e discos geridos
 
 Agora, os [conjuntos de dimensionamento de máquinas virtuais](/azure/virtual-machine-scale-sets/) do Azure suportam máquinas virtuais com discos geridos. Utilizar discos geridos com conjuntos de dimensionamento apresenta várias vantagens, incluindo:
 
@@ -32,7 +35,9 @@ Agora, os [conjuntos de dimensionamento de máquinas virtuais](/azure/virtual-ma
 
 * Com um disco gerido, um conjunto de dimensionamento pode ter uma capacidade tão elevada como 1000 VMs, se se basear numa imagem de plataforma, ou 100 VMs, se se basear numa imagem personalizada.
 
-## <a name="get-started"></a>Introdução
+<a id="get-started" class="xliff"></a>
+
+## Introdução
 
 Uma forma simples de começar a utilizar os conjuntos de dimensionamento de discos geridos consiste em implementar um conjunto a partir do portal do Azure. Para obter mais informações, consulte [este artigo](./virtual-machine-scale-sets-portal-create.md). Outra forma simples de começar é utilizar a [CLI 2.0 do Azure](https://docs.microsoft.com/cli/azure/install-az-cli2) para implementar um conjunto de dimensionamento. O exemplo seguinte mostra como criar um conjunto de dimensionamento baseado em Ubuntu com 10 VMs, cada uma com um disco de dados de 50 GB e 100 GB:
 
@@ -43,11 +48,15 @@ az vmss create -g dsktest -n dskvmss --image ubuntults --instance-count 10 --dat
 
 Em alternativa, pode consultar o [Repositório do GitHub de Modelos de Início Rápido do Azure](https://github.com/Azure/azure-quickstart-templates) para aceder a pastas que contenham `vmss` para ver exemplos pré-criados de modelos que implementam conjuntos de dimensionamento. Para saber que modelos já estão a utilizar discos geridos, veja [esta lista](https://github.com/Azure/azure-quickstart-templates/blob/master/managed-disk-support-list.md).
 
-## <a name="api-versions"></a>Versões da API
+<a id="api-versions" class="xliff"></a>
 
-A versão atual da API Disponível Em Geral para conjuntos de dimensionamento com discos geridos é `2016-04-30-preview`. Os conjuntos de dimensionamento com discos não geridos continuarão a funcionar como atualmente, mesmo em novas versões de API com suporte para disco gerido. No entanto, os conjuntos de dimensionamento com discos não geridos não obterão os benefícios dos discos geridos, mesmo nestas novas versões de API.
+## Versões da API
 
-## <a name="next-steps"></a>Passos seguintes
+Os conjuntos de escala com discos geridos requerem uma versão de APi Microsoft.Compute de `2016-04-30-preview` ou posterior. Os conjuntos de dimensionamento com discos não geridos continuarão a funcionar como atualmente, mesmo em novas versões de API com suporte para disco gerido. No entanto, os conjuntos de dimensionamento com discos não geridos não obterão os benefícios dos discos geridos, mesmo nestas novas versões de API.
+
+<a id="next-steps" class="xliff"></a>
+
+## Passos seguintes
 
 Para obter mais informações gerais sobre discos geridos, veja [este artigo](../storage/storage-managed-disks-overview.md).
 

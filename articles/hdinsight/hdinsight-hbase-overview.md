@@ -1,5 +1,5 @@
 ---
-title: "O que é o HBase no HDInsight? | Microsoft Docs"
+title: "O que é o HBase no Azure HDInsight? | Microsoft Docs"
 description: "Uma introdução ao Apache HBase no HDInsight, uma base de dados NoSQL baseada no Hadoop. Saiba mais sobre casos de utilização e compare o HBase a outros clusters do Hadoop."
 keywords: "bigtable, nosql, o que é hbase, apache hbase, hbase, descrição geral de habase,"
 services: hdinsight
@@ -10,32 +10,38 @@ manager: jhubbard
 editor: cgronlun
 ms.assetid: d2a76d53-133a-4849-a30c-88d9c794391c
 ms.service: hdinsight
-ms.custom: hdinsightactive
+ms.custom: hdinsightactive,hdiseo17may2017
 ms.workload: big-data
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 03/22/2017
+ms.date: 05/12/2017
 ms.author: jgao
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 71fea4a41b2e3a60f2f610609a14372e678b7ec4
-ms.openlocfilehash: 8f0472425be8dd244cc5c24b585185b07007f4eb
+ms.sourcegitcommit: afa23b1395b8275e72048bd47fffcf38f9dcd334
+ms.openlocfilehash: 61b4038c5878e4e4b92c4bbabc1d535031c78815
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 05/12/2017
 
 
 ---
-# <a name="what-is-hbase-in-hdinsight-a-nosql-database-that-provides-bigtable-like-capabilities-for-hadoop"></a>O que é o HBase no HDInsight: uma base de dados NoSQL que fornece capacidades semelhantes a BigTable para o Hadoop
+<a id="what-is-hbase-in-hdinsight-a-nosql-database-that-provides-bigtable-like-capabilities-for-hadoop" class="xliff"></a>
+
+# O que é o HBase no HDInsight: uma base de dados NoSQL que fornece capacidades semelhantes a BigTable para o Hadoop
 O Apache HBase é uma base de dados NoSQL open source baseada no Hadoop e modelada segundo o Google BigTable. O HBase fornece acesso aleatório e consistência forte para grandes quantidades de dados não estruturados e semiestruturados numa base de dados sem esquema, organizada por famílias de colunas.
 
 Os dados são armazenados nas linhas de uma tabela e os dados de uma linha são agrupados por família de colunas. O HBase é uma base de dados sem esquema uma vez que não é preciso definir as colunas nem os tipos de dados nelas armazenados antes de os utilizar. O código open source é dimensionado linearmente para processar petabytes de dados em milhares de nós. Pode depender da redundância de dados, do processamento em lotes e de outras funcionalidades fornecidas por aplicações distribuídas do ecossistema do Hadoop.
 
-## <a name="how-is-hbase-implemented-in-azure-hdinsight"></a>Como é implementado o HBase no Azure HDInsight?
+<a id="how-is-hbase-implemented-in-azure-hdinsight" class="xliff"></a>
+
+## Como é implementado o HBase no Azure HDInsight?
 O HBase do HDInsight é fornecido como um cluster gerido que está integrado no ambiente do Azure. Os clusters são configurados para armazenar dados diretamente no Armazenamento do Azure, que proporciona baixa latência e uma maior elasticidade em termos de opções de desempenho e custo. Isto permite aos clientes criar sites interativos que funcionam com grandes conjuntos de dados, criar serviços que armazenam dados telemétricos e de sensores de milhões de pontos finais e analisar esses dados com tarefas do Hadoop. O HBase e o Hadoop são bons pontos de partida para projetos de macrodados no Azure; em particular, podem permitir que as aplicações em tempo real trabalhem com grandes conjuntos de dados.
 
 A implementação do HDInsight tira partido da arquitetura de escalamento horizontal do HBase para fornecer fragmentação automática de tabelas, consistência forte para operações de leitura e escrita e ativação pós-falha automática. O desempenho é melhorado graças à colocação em cache dentro da memória para as operações de leitura e à transmissão em fluxo de alto débito para as operações de escrita. O cluster HBase pode ser criado no interior da rede virtual. Para obter mais detalhes, consulte [Create HDInsight clusters on Azure Virtual Network (Criar clusters do HDInsight na Azure Virtual Network)][hbase-provision-vnet].
 
-## <a name="how-is-data-managed-in-hdinsight-hbase"></a>Como são geridos os dados no HBase do HDInsight?
+<a id="how-is-data-managed-in-hdinsight-hbase" class="xliff"></a>
+
+## Como são geridos os dados no HBase do HDInsight?
 É possível gerir os dados no HBase ao utilizar os comandos `create`, `get`, `put` e `scan` da shell do HBase. Os dados são escritos na base de dados através do comando `put` e lidos através do comando `get`. O comando `scan` é utilizado para obter dados de várias linhas numa tabela. É possível ainda gerir os dados através da API C# do HBase, que fornece uma biblioteca de cliente sobre a API REST do HBase. Além disso, é possível consultar uma base de dados do HBase através do Hive. Para uma introdução a estes modelos de programação, consulte [Get started using HBase with Hadoop in HDInsight (Começar a utilizar o HBase com o Hadoop no HDInsight)][hbase-get-started]. Estão também disponíveis coprocessadores, que permitem o processamento de dados nos nós que alojam a base de dados.
 
 >
@@ -43,7 +49,9 @@ A implementação do HDInsight tira partido da arquitetura de escalamento horizo
 > O thrift não é suportado pelo HBase no HDInsight.
 >
 
-## <a name="scenarios-use-cases-for-hbase"></a>Cenários: casos de utilização do HBase
+<a id="scenarios-use-cases-for-hbase" class="xliff"></a>
+
+## Cenários: casos de utilização do HBase
 O caso de utilização canónico para o qual o BigTable (e, por extensão, o HBase) foi criado foi a pesquisa na Web. Os motores de busca criam índices que mapeiam termos para as páginas Web que os contêm. No entanto, o HBase é adequado para muitos outros casos de utilização, sendo que vários deles estão descritos nesta secção.
 
 * Arquivo de chave-valor

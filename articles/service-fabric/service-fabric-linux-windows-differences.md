@@ -12,28 +12,33 @@ ms.devlang: dotNet
 ms.topic: get-started-article
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 03/23/2017
+ms.date: 6/28/2017
 ms.author: subramar
 ms.translationtype: Human Translation
-ms.sourcegitcommit: e155891ff8dc736e2f7de1b95f07ff7b2d5d4e1b
-ms.openlocfilehash: 00c1f10f7df865344233143ce9cdf546e64acca0
+ms.sourcegitcommit: 3716c7699732ad31970778fdfa116f8aee3da70b
+ms.openlocfilehash: 68c7e1f3f51ca5bec30a0f71aaccbafa58078e69
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/02/2017
+ms.lasthandoff: 06/30/2017
 
 
 ---
-# <a name="differences-between-service-fabric-on-linux-preview-and-windows-generally-available"></a>Diferenças entre o Service Fabric no Linux (pré-visualização) e no Windows (disponível em geral)
+<a id="differences-between-service-fabric-on-linux-preview-and-windows-generally-available" class="xliff"></a>
 
-Uma vez que o Service Fabric no Linux é uma pré-visualização, existem algumas funcionalidades que são suportadas no Windows, mas no Linux ainda não. Eventualmente, os conjuntos de funcionalidades ficarão em paridade quando o Service Fabric no Linux se torna disponível em geral.
+# Diferenças entre o Service Fabric no Linux (pré-visualização) e no Windows (disponível em geral)
 
-* As coleções fiáveis (e Serviços com Estado Fiável) não são suportadas no Linux.
-* O ReverseProxy não está disponível no Linux.
-* O instalador autónomo não está disponível no Linux.
-* A validação do esquema XML para os ficheiros de manifesto não é realizada no Linux. 
-* O redirecionamento de consola não é suportado no Linux. 
-* O Serviço de Análise de Falhas (FAS) não está disponível no Linux.
-* O suporte do Azure Active Directory não está disponível no Linux.
-* Alguns equivalentes do comando CLI de comandos do Powershell não estão disponíveis.
+Uma vez que o Service Fabric no Linux é uma pré-visualização, existem algumas funcionalidades que são suportadas no Windows, mas no Linux ainda não. Eventualmente, os conjuntos de funcionalidades ficarão em paridade quando o Service Fabric no Linux se torna disponível em geral. Em versões futuras, essa diferença de funcionalidades será cada vez menor. Existem diferenças entre as versões mais recentes disponíveis (ou seja, entre a versão 5.6 no Windows e a versão 5.5 no Linux): 
+
+* Coleções Fiáveis (e Serviços com Estado Fiável) 
+* ReverseProxy 
+* Instalador autónomo 
+* Validação do esquema XML para os ficheiros de manifesto 
+* Redirecionamento da consola 
+* Serviço de Análise de Falhas (FAS)
+* Composição e volume do docker e controladores de registo para contentores 
+* Governação de recursos para contentores e serviços 
+* Serviço DNS
+* Suporte do Azure Active Directory
+* Equivalentes do comando CLI de determinados comandos do Powershell 
 * Apenas um subconjunto de comandos do Powershell pode ser executado comparativamente a um cluster do Linux (conforme expandido na secção seguinte).
 
 >[!NOTE]
@@ -41,7 +46,9 @@ Uma vez que o Service Fabric no Linux é uma pré-visualização, existem alguma
 
 As ferramentas de desenvolvimento também são diferentes entre o Windows e o Linux. O VisualStudio, Powershell, VSTS e ETW são utilizados no Windows enquanto o Yeoman, Eclipse, Jenkins e LTTng são utilizados no Linux.
 
-## <a name="powershell-cmdlets-that-do-not-work-against-a-linux-service-fabric-cluster"></a>Cmdlets do PowerShell que não funcionam num cluster do Service Fabric do Linux
+<a id="powershell-cmdlets-that-do-not-work-against-a-linux-service-fabric-cluster" class="xliff"></a>
+
+## Cmdlets do PowerShell que não funcionam num cluster do Service Fabric do Linux
 
 * Invoke-ServiceFabricChaosTestScenario
 * Invoke-ServiceFabricFailoverTestScenario
@@ -99,7 +106,9 @@ As ferramentas de desenvolvimento também são diferentes entre o Windows e o Li
 
 
 
-## <a name="next-steps"></a>Passos seguintes
+<a id="next-steps" class="xliff"></a>
+
+## Passos seguintes
 * [Preparar o ambiente de desenvolvimento no Linux](service-fabric-get-started-linux.md)
 * [Prepare your development environment on OSX (Preparar o ambiente de desenvolvimento no OSX)](service-fabric-get-started-mac.md)
 * [Criar e implementar a sua primeira aplicação Java do Service Fabric no Linux com o Yeoman](service-fabric-create-your-first-linux-application-with-java.md)

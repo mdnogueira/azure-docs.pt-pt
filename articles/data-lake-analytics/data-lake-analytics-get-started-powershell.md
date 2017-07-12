@@ -15,72 +15,87 @@ ms.workload: big-data
 ms.date: 05/04/2017
 ms.author: edmaca
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 18d4994f303a11e9ce2d07bc1124aaedf570fc82
-ms.openlocfilehash: 6985dff332928d704f30e167c3bddb62bcc6cac1
+ms.sourcegitcommit: ef1e603ea7759af76db595d95171cdbe1c995598
+ms.openlocfilehash: faf17bcac66a70fc78bb171e172886fd2dcadca8
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/09/2017
+ms.lasthandoff: 06/16/2017
 
 
 ---
-# <a name="tutorial-get-started-with-azure-data-lake-analytics-using-azure-powershell"></a>Tutorial: introdução à Análise do Azure Data Lake ao utilizar o Azure PowerShell
+<a id="get-started-with-azure-data-lake-analytics-using-azure-powershell" class="xliff"></a>
+
+# Introdução ao Azure Data Lake Analytics com o Azure PowerShell
 [!INCLUDE [get-started-selector](../../includes/data-lake-analytics-selector-get-started.md)]
 
 Saiba como utilizar o Azure PowerShell para criar contas do Azure Data Lake Analytics e, em seguida, submeter e executar tarefas de U-SQL. Para mais informações sobre a Data Lake Analytics, consulte [Descrição geral da Análise do Azure Data Lake](data-lake-analytics-overview.md).
 
-## <a name="prerequisites"></a>Pré-requisitos
+<a id="prerequisites" class="xliff"></a>
+
+## Pré-requisitos
+
 Antes de começar este tutorial, tem de ter as seguintes informações:
 
-* **Uma subscrição do Azure**. Consulte [Obter versão de avaliação gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/).
+* **Uma conta do Azure Data Lake Analytics**. Consulte [Introdução ao Data Lake Analytics](https://docs.microsoft.com/en-us/azure/data-lake-analytics/data-lake-analytics-get-started-portal).
 * **Uma estação de trabalho com o Azure PowerShell**. Consulte [Como instalar e configurar o Azure PowerShell](/powershell/azure/overview).
 
-## <a name="preparing-for-the-tutorial"></a>Preparação para o tutorial
-Para criar uma conta do Data Lake Analytics, tem primeiro de definir:
+<a id="log-in-to-azure" class="xliff"></a>
 
-* **Grupo de Recursos do Azure**: uma conta de Data Lake Analytics tem de ser criada dentro de um grupo de Recursos do Azure.
-* **Nome da conta de Data Lake Analytics**: o nome da conta de Data Lake Analytics só pode conter letras minúsculas e números.
-* **Localização**: um dos centros de dados do Azure que suportem a Data Lake Analytics.
-* **Conta do Data Lake Store predefinida**: cada conta do Data Lake Analytics tem uma conta do Data Lake Store predefinida. Estas contas têm de estar na mesma localização.
+## Iniciar sessão no Azure
 
-Os fragmentos de PowerShell neste tutorial utilizam estas variáveis para armazenar estas informações
+Este tutorial pressupõe que já esteja familiarizado com a utilização do Azure PowerShell. Em especial, precisa de saber como iniciar sessão no Azure. Se precisar de ajuda, consulte [Get started with Azure PowerShell](https://docs.microsoft.com/en-us/powershell/azure/get-started-azureps) (Introdução ao Azure PowerShell).
+
+Iniciar sessão com um nome de subscrição:
+
+```
+Login-AzureRmAccount -SubscriptionName "ContosoSubscription"
+```
+
+Em vez do nome de subscrição, também pode utilizar um D de subscrição para iniciar sessão:
+
+```
+Login-AzureRmAccount -SubscriptionId "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+```
+
+Se for bem-sucedido, a saída desse comando tem o aspeto do seguinte texto:
+
+```
+Environment           : AzureCloud
+Account               : joe@contoso.com
+TenantId              : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+SubscriptionId        : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+SubscriptionName      : ContosoSubscription
+CurrentStorageAccount :
+```
+
+<a id="preparing-for-the-tutorial" class="xliff"></a>
+
+## Preparação para o tutorial
+
+Os fragmentos de código do PowerShell neste tutorial utilizam estas variáveis para armazenar estas informações:
 
 ```
 $rg = "<ResourceGroupName>"
-$adls = "<DataLakeAccountName>"
+$adls = "<DataLakeStoreAccountName>"
 $adla = "<DataLakeAnalyticsAccountName>"
 $location = "East US 2"
 ```
 
-## <a name="create-a-data-lake-analytics-account"></a>Criar uma conta de Data Lake Analytics
+<a id="get-information-about-a-data-lake-analytics-account" class="xliff"></a>
 
-Se ainda não tiver um Grupo de Recursos para utilizar, crie um. 
-
-```
-New-AzureRmResourceGroup -Name  $rg -Location $location
-```
-
-Cada conta de Data Lake Analytics requer uma conta de Data Lake Store predefinida que utiliza para armazenar registos. Pode reutilizar uma conta existente ou criar uma conta nova. 
-
-```
-New-AdlStore -ResourceGroupName $rg -Name $adls -Location $location
-```
-
-Assim que um Grupo de Recursos e uma conta de Data Lake Store estiverem disponíveis, crie uma conta de Data Lake Analytics.
-
-```
-New-AdlAnalyticsAccount -ResourceGroupName $rg -Name $adla -Location $location -DefaultDataLake $adls
-```
-
-## <a name="get-information-about-a-data-lake-analytics-account"></a>Obter informações sobre uma conta do Data Lake Analytics
+## Obter informações sobre uma conta do Data Lake Analytics
 
 ```
 Get-AdlAnalyticsAccount -ResourceGroupName $rg -Name $adla  
 ```
 
-## <a name="submit-a-u-sql-job"></a>Submeter uma tarefa de U-SQL
+<a id="submit-a-u-sql-job" class="xliff"></a>
 
-Crie um ficheiro de texto com o seguinte script de U-SQL.
+## Submeter uma tarefa de U-SQL
+
+Crie uma variável do PowerShell para manter o script U-SQL.
 
 ```
+$script = @"
 @a  = 
     SELECT * FROM 
         (VALUES
@@ -91,26 +106,29 @@ Crie um ficheiro de texto com o seguinte script de U-SQL.
 OUTPUT @a
     TO "/data.csv"
     USING Outputters.Csv();
+
+"@
 ```
 
 Submeta o script.
 
 ```
-Submit-AdlJob -AccountName $adla –ScriptPath "d:\test.usql"Submit
+$job = Submit-AdlJob -AccountName $adla –Script $script
 ```
 
-## <a name="monitor-u-sql-jobs"></a>Monitorizar tarefas de U-SQL
-
-Faça uma lista de todas as tarefas na conta. A saída inclui as tarefas atualmente em execução e as tarefas que foram concluídas recentemente.
+Como alternativa, pode guardar o script como um ficheiro e enviar com o seguinte comando:
 
 ```
-Get-AdlJob -Account $adla
+$filename = "d:\test.usql"
+$script | out-File $filename
+$job = Submit-AdlJob -AccountName $adla –ScriptPath $filename
 ```
 
-Obtenha o estado de uma tarefa específica.
+
+Obtenha o estado de uma tarefa específica. Continue a utilizar este cmdlet até perceber que a tarefa está concluída.
 
 ```
-Get-AdlJob -AccountName $adla -JobId $job.JobId
+$job = Get-AdlJob -AccountName $adla -JobId $job.JobId
 ```
 
 Em vez de chamar Get-AdlAnalyticsJob repetidamente até que uma tarefa seja concluída, pode utilizar o cmdlet Wait-AdlJob.
@@ -119,34 +137,15 @@ Em vez de chamar Get-AdlAnalyticsJob repetidamente até que uma tarefa seja conc
 Wait-AdlJob -Account $adla -JobId $job.JobId
 ```
 
-Depois de a tarefa estar concluída, verifique se o ficheiro de saída existe, listando os ficheiros numa pasta.
+Transfira o ficheiro de saída.
 
 ```
-Get-AdlStoreChildItem -Account $adls -Path "/"
+Export-AdlStoreItem -AccountName $adls -Path "/data.csv" -Destination "C:\data.csv"
 ```
 
-Verifique a existência de um ficheiro.
+<a id="see-also" class="xliff"></a>
 
-```
-Test-AdlStoreItem -Account $adls -Path "/data.csv"
-```
-
-## <a name="uploading-and-downloading-files"></a>Carregar e Descarregar ficheiros
-
-Descarregue a saída do script de U-SQL.
-
-```
-Export-AdlStoreItem -AccountName $adls -Path "/data.csv"  -Destination "D:\data.csv"
-```
-
-
-Carregue um ficheiro para ser utilizado como unput de um script de U-SQL.
-
-```
-Import-AdlStoreItem -AccountName $adls -Path "D:\data.tsv" -Destination "/data_copy.csv" 
-```
-
-## <a name="see-also"></a>Consultar também
+## Consultar também
 * Para ver o mesmo tutorial, utilizando outras ferramentas, clique nos seletores de separador no topo da página.
 * Para saber mais sobre U-SQL, consulte [Introdução à linguagem U-SQL da Análise do Azure Data Lake](data-lake-analytics-u-sql-get-started.md).
 * Para tarefas de gestão, veja [Manage Azure Data Lake Analytics using Azure portal (Gerir o Azure Data Lake Analytics com o Portal do Azure)](data-lake-analytics-manage-use-portal.md).

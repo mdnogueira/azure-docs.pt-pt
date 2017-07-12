@@ -1,9 +1,8 @@
-> [!NOTE]
-> Os planos do Serviço de Aplicações representam a coleção de recursos físicos utilizados para alojar as suas aplicações. Todas as aplicações atribuídas a um plano do Serviço de Aplicações partilham os recursos definidos por esse Serviço. Esta partilha permite-lhe poupar dinheiro ao alojar várias aplicações.
->
-> Os planos do Serviço de Aplicações definem:
-> * Região (Europa do Norte, E.U.A. Leste, Sudeste Asiático, etc.)
-> * Tamanho da Instância (Pequena, Média, Grande)
-> * Contagem de Escalas (uma a 20 instâncias por predefinição)
-> * SKU (Gratuito, Partilhado, Básico, Standard, Premium)
-> 
+Um [plano do serviço de aplicações](../articles/app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md) especifica o local, tamanho e funcionalidades da farm de servidores Web que aloja a aplicação. Pode economizar dinheiro ao alojar várias aplicações, configurando as aplicações Web para partilhar um único plano do serviço de aplicações.
+
+Os planos do Serviço de Aplicações definem:
+
+* Região (por exemplo: Norte da Europa, Leste dos EUA, Sudeste da Ásia)
+* Tamanho da instância (pequena, média, grande)
+* Contagem do dimensionamento (1 a 20 instâncias)
+* SKU (Gratuito, Partilhado, Básico, Standard ou Premium)

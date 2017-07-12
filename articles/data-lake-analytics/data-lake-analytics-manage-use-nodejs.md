@@ -14,13 +14,17 @@ ms.tgt_pltfrm: na
 ms.workload: big-data
 ms.date: 12/05/2016
 ms.author: edmaca
-translationtype: Human Translation
-ms.sourcegitcommit: 194b5d79505afbfd0208f63dd182a0e03227ba69
-ms.openlocfilehash: e6440522ced33a48925cfabc64da055b8700b253
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 07584294e4ae592a026c0d5890686eaf0b99431f
+ms.openlocfilehash: 769cf9b09eecd204c8b5b944065dad57a6d73231
+ms.contentlocale: pt-pt
+ms.lasthandoff: 06/01/2017
 
 
 ---
-# <a name="manage-azure-data-lake-analytics-using-azure-sdk-for-nodejs"></a>Gerir a Análise do Azure Data Lake com o Azure SDK para Node.js
+<a id="manage-azure-data-lake-analytics-using-azure-sdk-for-nodejs" class="xliff"></a>
+
+# Gerir a Análise do Azure Data Lake com o Azure SDK para Node.js
 [!INCLUDE [manage-selector](../../includes/data-lake-analytics-selector-manage.md)]
 
 O Azure SDK para Node.js pode ser utilizado para gerir contas, tarefas e catálogos de Análise do Azure Data Lake. Para ver o tópico de gestão sobre a utilização de outras ferramentas, clique para selecionar o separador acima.
@@ -32,17 +36,23 @@ Atualmente, suporta:
 * **Versão de API REST para o Catálogo: 2015-10-01-preview**
 * **Versão de API REST para a Tarefa: 2016-03-20-preview**
 
-## <a name="features"></a>Funcionalidades
-* Gestão de contas: criar, obter, listar, atualizar e eliminar.
-* Gestão de tarefas: submeter, obter, listar, cancelar.
-* Gestão de catálogos: obter, listar, criar (segredos), atualizar (segredos), eliminar (segredos).
+<a id="features" class="xliff"></a>
 
-## <a name="how-to-install"></a>Como instalar
+## Funcionalidades
+* Gestão de contas: criar, obter, listar, atualizar e eliminar.
+* Gestão de tarefas: submeter, obter, listar e cancelar.
+* Gestão de catálogos: obter e listar.
+
+<a id="how-to-install" class="xliff"></a>
+
+## Como instalar
 ```bash
 npm install azure-arm-datalake-analytics
 ```
 
-## <a name="authenticate-using-azure-active-directory"></a>Autenticar com o Azure Active Directory
+<a id="authenticate-using-azure-active-directory" class="xliff"></a>
+
+## Autenticar com o Azure Active Directory
  ```javascript
  var msrestAzure = require('ms-rest-azure');
  //user authentication
@@ -51,7 +61,9 @@ npm install azure-arm-datalake-analytics
  var credentials = new msRestAzure.ApplicationTokenCredentials('your-client-id', 'your-domain', 'your-secret');
  ```
 
-## <a name="create-the-data-lake-analytics-client"></a>Criar o cliente de Data Lake Analytics
+<a id="create-the-data-lake-analytics-client" class="xliff"></a>
+
+## Criar o cliente de Data Lake Analytics
 ```javascript
 var adlaManagement = require("azure-arm-datalake-analytics");
 var acccountClient = new adlaManagement.DataLakeAnalyticsAccountClient(credentials, 'your-subscription-id');
@@ -59,7 +71,9 @@ var jobClient = new adlaManagement.DataLakeAnalyticsJobClient(credentials, 'azur
 var catalogClient = new adlaManagement.DataLakeAnalyticsCatalogClient(credentials, 'azuredatalakeanalytics.net');
 ```
 
-## <a name="create-a-data-lake-analytics-account"></a>Criar uma conta de Data Lake Analytics
+<a id="create-a-data-lake-analytics-account" class="xliff"></a>
+
+## Criar uma conta de Data Lake Analytics
 ```javascript
 var util = require('util');
 var resourceGroupName = 'testrg';
@@ -108,7 +122,9 @@ client.account.create(resourceGroupName, accountName, accountToCreate, function 
 });
 ```
 
-## <a name="get-a-list-of-jobs"></a>Obter uma lista de tarefas
+<a id="get-a-list-of-jobs" class="xliff"></a>
+
+## Obter uma lista de tarefas
 ```javascript
 var util = require('util');
 var accountName = 'testadlaacct';
@@ -121,7 +137,9 @@ jobClient.job.list(accountName, function (err, result, request, response) {
 });
 ```
 
-## <a name="get-a-list-of-databases-in-the-data-lake-analytics-catalog"></a>Obter uma lista de bases de dados no Catálogo de Data Lake Analytics
+<a id="get-a-list-of-databases-in-the-data-lake-analytics-catalog" class="xliff"></a>
+
+## Obter uma lista de bases de dados no Catálogo de Data Lake Analytics
 ```javascript
 var util = require('util');
 var accountName = 'testadlaacct';
@@ -134,13 +152,10 @@ catalogClient.catalog.listDatabases(accountName, function (err, result, request,
 });
 ```
 
-## <a name="see-also"></a>Consultar também
+<a id="see-also" class="xliff"></a>
+
+## Consultar também
 * [Microsoft Azure SDK para Node.js](https://github.com/azure/azure-sdk-for-node)
 * [Microsoft Azure SDK para Node.js - Gestão do Data Lake Store](https://github.com/Azure/azure-sdk-for-node/tree/autorest/lib/services/dataLake.Store)
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 
