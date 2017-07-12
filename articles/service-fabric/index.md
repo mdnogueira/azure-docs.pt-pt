@@ -19,7 +19,9 @@ ms.contentlocale: pt-pt
 ms.lasthandoff: 06/23/2017
 
 ---
-#<a name="service-fabric-documentation"></a>Documentação do Service Fabric
+<a id="service-fabric-documentation" class="xliff"></a>
+
+#Documentação do Service Fabric
 
 Saiba como utilizar o Service Fabric para empacotar, implementar e gerir micro-serviços dimensionáveis e fiáveis. Tutoriais, referências de API e amostras de código mostram como utilizar esta plataforma middleware para criar e gerir aplicações dimensionáveis na cloud.
 
