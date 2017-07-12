@@ -1,45 +1,47 @@
 >[!NOTE]
->Para recursos que não está corrigidos, pode abrir um pedido de suporte para pedir o aumento das quotas. **Não** crie contas dos Serviços de Multimédia do Azure adicionais numa tentativa de obter limites superiores.
+>For resources that are not fixed, you may ask for the quotas to be raised, by opening a support ticket. Do **not** create additional Azure Media Services accounts in an attempt to obtain higher limits.
 
-| Recurso | Limite Predefinido | 
+| Resource | Default Limit | 
 | --- | --- | 
-| Contas dos Serviços de Multimédia do Azure (AMS) numa subscrição individual | 25 (fixo) |
-| Unidades Reservadas de Multimédia (RUs) por conta do AMS |25 (S1, S2)<br/>10 (S3) <sup>(1)</sup> | 
-| Trabalhos por conta do AMS | 50,000<sup>(2)</sup> |
-| Tarefas em cadeia por trabalho | 30 (fixo) |
-| Elementos por conta do AMS | 1 000 000|
-| Elementos por tarefa | 50 |
-| Elementos por trabalho | 100 |
-| Localizadores exclusivos associados a um elemento ao mesmo tempo | 5<sup>(4)</sup> |
-| Canais em direto por conta do AMS |5|
-| Programas no estado de paragem por canal |50|
-| Programas no estado parado por canal |3|
-| Pontos finais de transmissão em fluxo no estado em execução por conta do AMS|2|
-| Unidades de transmissão em fluxo por ponto final de transmissão em fluxo |10 |
-| Contas de armazenamento | 1000<sup>(5)</sup> (fixo) |
-| Políticas | 1,000,000<sup>(6)</sup> |
-| Tamanho dos ficheiros| Em alguns cenários, existe um limite para o tamanho máximo dos ficheiros suportado para processamento nos Serviços de Multimédia. <sup>7</sup> |
+| Azure Media Services (AMS) accounts in a single subscription | 25 (fixed) |
+| Media Reserved Units (RUs) per AMS account |25 (S1, S2)<br/>10 (S3) <sup>(1)</sup> | 
+| Jobs per AMS account | 50,000<sup>(2)</sup> |
+| Chained tasks per job | 30 (fixed) |
+| Assets per AMS account | 1,000,000|
+| Assets per task | 50 |
+| Assets per job | 100 |
+| Unique locators associated with an asset at one time | 5<sup>(4)</sup> |
+| Live channels per AMS account |5|
+| Programs in stopped state per channel |50|
+| Programs in running state per channel |3|
+| Streaming endpoints in running state per AMS account|2|
+| Streaming units per streaming endpoint |10 |
+| Storage accounts | 1,000<sup>(5)</sup> (fixed) |
+| Policies | 1,000,000<sup>(6)</sup> |
+| File size| In some scenarios there is a limit on the maximum file size supported for processing in Media Services. <sup>7</sup> |
   
-<sup>1</sup> As RUs S3 não estão disponíveis na Índia Ocidental.
+<sup>1</sup> S3 RUs are not available in India West.
 
-<sup>2</sup> Este número inclui trabalhos em fila, concluídos, ativos e cancelados. Não inclui trabalhos eliminados. Pode utilizar **IJob.Delete** ou o pedido HTTP **DELETE** para eliminar os trabalhos antigos.
+<sup>2</sup> This number includes queued, finished, active, and canceled jobs. It does not include deleted jobs. You can delete the old jobs using **IJob.Delete** or the **DELETE** HTTP request.
 
-A partir de 1 de abril de 2017, qualquer Registo de tarefa na sua conta com mais de 90 dias será eliminado automaticamente, juntamente com os seus registos de Tarefas associados, mesmo se o número total de registos for inferior à quota máxima. Se precisar de arquivar as informações de tarefas, pode utilizar o código descrito [aqui](../articles/media-services/media-services-dotnet-manage-entities.md).
+Starting April 1, 2017, any Job record in your account older than 90 days will be automatically deleted, along with its associated Task records, even if the total number of records is below the maximum quota. If you need to archive the job/task information, you can use the code described [here](../articles/media-services/media-services-dotnet-manage-entities.md).
 
-<sup>3</sup> Ao fazer pedidos para listar entidades de trabalhos, é devolvido um máximo de mil por pedido. Se tiver de estar a par de todos os Trabalhos submetidos, pode utilizar “top/skip”, conforme descrito em [OData system query options (Opções de consultas de sistema OData)](http://msdn.microsoft.com/library/gg309461.aspx).
+<sup>3</sup> When making a request to list Job entities, a maximum of 1,000 will be returned per request. If you need to keep track of all submitted Jobs, you can use top/skip as described in [OData system query options](http://msdn.microsoft.com/library/gg309461.aspx).
 
-<sup>4</sup> Os localizadores não foram concebidos para gerir o controlo de acesso por utilizador. Para conceder direitos de acesso diferentes a utilizadores individuais, utilize soluções de Gestão de Direitos Digitais (Digital Rights Management, DRM). Para obter mais informações, veja [esta](../articles/media-services/media-services-content-protection-overview.md) secção.
+<sup>4</sup> Locators are not designed for managing per-user access control. To give different access rights to individual users, use Digital Rights Management (DRM) solutions. For more information, see [this](../articles/media-services/media-services-content-protection-overview.md) section.
 
-<sup>5</sup> As contas de armazenamento têm de estar na mesma subscrição do Azure.
+<sup>5</sup> The storage accounts must be from the same Azure subscription.
 
-<sup>6</sup> Existe um limite de um milhão de políticas para diferentes políticas do AMS (por exemplo, para a política Locator ou ContentKeyAuthorizationPolicy). 
+<sup>6</sup> There is a limit of 1,000,000 policies for different AMS policies (for example, for Locator policy or ContentKeyAuthorizationPolicy). 
 
 >[!NOTE]
-> Se estiver sempre a utilizar os mesmos dias, permissões de acesso, etc., deve utilizar o mesmo ID de política. Para obter informações e um exemplo, consulte [esta](../articles/media-services/media-services-dotnet-manage-entities.md#limit-access-policies) secção.
+> You should use the same policy ID if you are always using the same days / access permissions / etc. For information and an example, see [this](../articles/media-services/media-services-dotnet-manage-entities.md#limit-access-policies) section.
 
-<sup>7</sup> Se estiver a carregar conteúdo para um Elemento nos Serviços de Multimédia do Azure e não pretende processá-lo com um dos processadores de multimédia do nosso serviço (ou seja, codificadores como o Media Encoder Standard e o Media Encoder Premium Workflow ou motores de análise como o Face Detector), deve ter em conta os limites seguintes. 
+<sup>7</sup>If you are uploading content to an Asset in Azure Media Services with the intent to process it with one of the media processors in our service (i.e. encoders like Media Encoder Standard and Media Encoder Premium Workflow, or analysis engines like Face Detector), then you should be aware of the constraint on the maximum size. 
 
-| Tipo de Unidade Reservada de Multimédia | Tamanho Máximo do Ficheiro (GB)| 
+As of May 15, 2017, the maximum size supported for a single blob is 195 TB - with file largers than this limit, your Task will fail. We are working a fix to address this limit. In addition, the constraint on the maximum size of the Asset is as follows.
+
+| Media Reserved Unit type | Maximum Input Size (GB)| 
 | --- | --- | 
 |S1    | 325|
 |S2    | 640|
