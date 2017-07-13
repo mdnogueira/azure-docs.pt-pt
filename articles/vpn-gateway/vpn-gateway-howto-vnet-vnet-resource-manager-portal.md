@@ -13,17 +13,18 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 04/21/2017
+ms.date: 07/05/2017
 ms.author: cherylmc
 ms.translationtype: Human Translation
-ms.sourcegitcommit: ff2fb126905d2a68c5888514262212010e108a3d
-ms.openlocfilehash: c614efa25e2e7ddbb9b6c90094cf84fa8b6b4243
+ms.sourcegitcommit: b1d56fcfb472e5eae9d2f01a820f72f8eab9ef08
+ms.openlocfilehash: 8fa97a00978b4efdcf5956ee6b92547960b1d57a
 ms.contentlocale: pt-pt
-ms.lasthandoff: 06/17/2017
+ms.lasthandoff: 07/06/2017
 
 
 ---
-# <a name="configure-a-vnet-to-vnet-vpn-gateway-connection-using-the-azure-portal"></a>Configurar uma ligação de gateway de VPN de VNet a VNet com o Portal do Azure
+# Configurar uma ligação de gateway de VPN de VNet a VNet com o Portal do Azure
+<a id="configure-a-vnet-to-vnet-vpn-gateway-connection-using-the-azure-portal" class="xliff"></a>
 
 Este artigo mostra-lhe como criar uma ligação de gateway de VPN entre redes virtuais. As redes virtuais podem estar nas mesmas regiões ou em regiões diferentes e pertencer às mesmas subscrições ou a subscrições diferentes. Os passos deste artigo aplicam-se ao modelo de implementação Resource Manager e o portal do Azure. Também pode criar esta configuração ao utilizar uma ferramenta de implementação diferente ou modelo de implementação ao selecionar uma opção diferente da lista seguinte:
 
@@ -45,7 +46,8 @@ A comunicação VNet a VNet pode ser combinada com configurações multilocal. D
 
 ![Acerca das ligações](./media/vpn-gateway-howto-vnet-vnet-resource-manager-portal/aboutconnections.png "Acerca das ligações")
 
-### <a name="why-connect-virtual-networks"></a>Por que motivo ligar redes virtuais?
+### Por que motivo ligar redes virtuais?
+<a id="why-connect-virtual-networks" class="xliff"></a>
 
 Poderá pretender ligar redes virtuais pelos seguintes motivos:
 
@@ -111,7 +113,8 @@ Quando utiliza estes passos como um exercício, pode utilizar os valores de defi
 ## <a name="CreatVNet"></a>1. Criar e configurar a TestVNet1
 Se já tiver uma VNet, certifique-se de que as definições são compatíveis com a conceção do seu gateway de VPN. Tenha em especial atenção as sub-redes que se possam sobrepor a outras redes. Se tiver sub-redes sobrepostas, a ligação não funcionará corretamente. Se a VNet estiver configurada com as definições corretas, pode iniciar os passos da secção [Especificar um servidor DNS](#dns).
 
-### <a name="to-create-a-virtual-network"></a>Para criar uma rede virtual
+### Para criar uma rede virtual
+<a id="to-create-a-virtual-network" class="xliff"></a>
 [!INCLUDE [vpn-gateway-basic-vnet-rm-portal](../../includes/vpn-gateway-basic-vnet-rm-portal-include.md)]
 
 ## <a name="subnets"></a>2. Adicionar espaços de endereços adicionais e criar sub-redes
@@ -126,10 +129,11 @@ Se estiver a criar esta configuração como um exercício, veja estes [Definiç�
 
 [!INCLUDE [vpn-gateway-no-nsg](../../includes/vpn-gateway-no-nsg-include.md)]
 
-### <a name="to-create-a-gateway-subnet"></a>Para criar uma sub-rede do gateway
+### Para criar uma sub-rede do gateway
+<a id="to-create-a-gateway-subnet" class="xliff"></a>
 [!INCLUDE [vpn-gateway-add-gwsubnet-rm-portal](../../includes/vpn-gateway-add-gwsubnet-rm-portal-include.md)]
 
-## <a name="DNSServer"></a>4. Especificar um servidor DNS (opcional)
+## <a name="dns"></a>4. Especificar um servidor DNS (opcional)
 O DNS não é necessário para ligações de VNet a VNet. No entanto, se pretender ter a resolução de nomes para recursos que são implementados para a sua rede virtual, deve especificar um servidor DNS. Esta definição permite-lhe especificar o servidor DNS que pretende utilizar para a resolução de nomes desta rede virtual. Não cria um servidor DNS.
 
 [!INCLUDE [vpn-gateway-add-dns-rm-portal](../../includes/vpn-gateway-add-dns-rm-portal-include.md)]
@@ -137,7 +141,8 @@ O DNS não é necessário para ligações de VNet a VNet. No entanto, se pretend
 ## <a name="VNetGateway"></a>5. Criar um gateway de rede virtual
 Neste passo, vai criar o gateway de rede virtual da VNet. Criar um gateway, muitas vezes, pode demorar 45 minutos ou mais, dependendo do SKU de gateway selecionado. Se estiver a criar esta configuração como um exercício, pode ver as [Definições de exemplo](#values).
 
-### <a name="to-create-a-virtual-network-gateway"></a>Para criar um gateway de rede virtual
+### Para criar um gateway de rede virtual
+<a id="to-create-a-virtual-network-gateway" class="xliff"></a>
 [!INCLUDE [vpn-gateway-add-gw-rm-portal](../../includes/vpn-gateway-add-gw-rm-portal-include.md)]
 
 ## <a name="CreateTestVNet4"></a>6. Criar e configurar a TestVNet4
@@ -187,6 +192,7 @@ Veja os detalhes das FAQ para obter informações adicionais sobre ligações VN
 
 [!INCLUDE [vpn-gateway-vnet-vnet-faq](../../includes/vpn-gateway-vnet-vnet-faq-include.md)]
 
-## <a name="next-steps"></a>Passos seguintes
+## Passos seguintes
+<a id="next-steps" class="xliff"></a>
 Assim que a ligação estiver concluída, pode adicionar máquinas virtuais às redes virtuais. Veja a documentação das [Máquinas Virtuais](https://docs.microsoft.com/azure/#pivot=services&panel=Compute) para obter mais informações.
 

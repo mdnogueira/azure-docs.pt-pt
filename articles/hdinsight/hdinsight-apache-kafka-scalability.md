@@ -14,17 +14,16 @@ ms.tgt_pltfrm: na
 ms.workload: big-data
 ms.date: 06/14/2017
 ms.author: larryfr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: ef1e603ea7759af76db595d95171cdbe1c995598
-ms.openlocfilehash: 84c7048bbd608b0b99215d74f71960dc9d1158ef
+ms.translationtype: HT
+ms.sourcegitcommit: 54454e98a2c37736407bdac953fdfe74e9e24d37
+ms.openlocfilehash: 1b3e0d06c8b25158e421f02b587b4ae4836d80ad
 ms.contentlocale: pt-pt
-ms.lasthandoff: 06/16/2017
+ms.lasthandoff: 07/13/2017
 
 ---
 
-<a id="configure-storage-and-scalability-for-apache-kafka-on-hdinsight" class="xliff"></a>
-
 # Configurar o armazenamento e a escalabilidade para o Apache Kafka no HDInsight
+<a id="configure-storage-and-scalability-for-apache-kafka-on-hdinsight" class="xliff"></a>
 
 Saiba como configurar o número de discos geridos utilizados pelo Apache Kafka no HDInsight.
 
@@ -34,9 +33,8 @@ O diagrama seguinte estabelece uma comparação entre o Kafka no HDInsight antes
 
 ![Diagrama que mostra o Kafka no HDInsight com um único VHD por VM vs. vários discos geridos por VM](./media/hdinsight-apache-kafka-scalability/kafka-with-managed-disks-architecture.png)
 
-<a id="configure-managed-disks-azure-portal" class="xliff"></a>
-
 ## Configurar discos geridos: portal do Azure
+<a id="configure-managed-disks-azure-portal" class="xliff"></a>
 
 1. Siga os passos em [Create an HDInsight cluster](hdinsight-hadoop-create-linux-clusters-portal.md) (Criar um cluster no HDInsight) para compreender os passos comuns de criação de um cluster com o portal. Não conclua o processo de criação do portal.
 
@@ -47,9 +45,8 @@ O diagrama seguinte estabelece uma comparação entre o Kafka no HDInsight antes
 
     ![Imagem do painel do tamanho do cluster com os discos por nó de trabalho realçados](./media/hdinsight-apache-kafka-scalability/set-managed-disks-portal.png)
 
-<a id="configure-managed-disks-resource-manager-template" class="xliff"></a>
-
 ## Configurar discos geridos: modelo do Resource Manager
+<a id="configure-managed-disks-resource-manager-template" class="xliff"></a>
 
 Para controlar o número de discos utilizados por nós de trabalho num cluster do Kafka, utilize a seguinte secção do modelo:
 
@@ -63,9 +60,8 @@ Para controlar o número de discos utilizados por nós de trabalho num cluster d
 
 Em [https://hditutorialdata.blob.core.windows.net/armtemplates/create-linux-based-kafka-mirror-cluster-in-vnet-v2.1.json](https://hditutorialdata.blob.core.windows.net/armtemplates/create-linux-based-kafka-mirror-cluster-in-vnet-v2.1.json), pode encontrar um modelo completo que demonstra como configurar discos geridos.
 
-<a id="next-steps" class="xliff"></a>
-
 ## Passos seguintes
+<a id="next-steps" class="xliff"></a>
 
 Para obter mais informações sobre como trabalhar com o Kafka no HDInsight, consulte os documentos seguintes:
 
@@ -74,4 +70,4 @@ Para obter mais informações sobre como trabalhar com o Kafka no HDInsight, con
 * [Utilizar o Apache Spark com Kafka no HDInsight](hdinsight-apache-spark-with-kafka.md)
 * [Ligar ao Kafka através de uma Rede Virtual do Azure](hdinsight-apache-kafka-connect-vpn-gateway.md)
 
-* [Blogue do HDInsight sobre discos geridos com Kafka](https://azure.microsoft.com/blog/announcing-hdinsight-kafka-public-preview-with-azure-managed-disks)
+* [Blogue do HDInsight sobre discos geridos com Kafka](https://azure.microsoft.com/blog/announcing-public-preview-of-apache-kafka-on-hdinsight-with-azure-managed-disks/)
