@@ -12,20 +12,23 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 01/23/2017
+ms.date: 07/12/2017
 ms.author: juliako
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 555e0b6340d09517bfd87efe209f0304f3266788
 ms.openlocfilehash: 76fd245f91e1bfab3df68120859c69e459283e5b
-
+ms.contentlocale: pt-pt
+ms.lasthandoff: 01/27/2017
 
 ---
-# <a name="get-started-with-delivering-content-on-demand-using-the-azure-portal"></a>Introdução à entrega de conteúdos a pedido com o Portal do Azure
+# Introdução à entrega de conteúdos a pedido com o Portal do Azure
+<a id="get-started-with-delivering-content-on-demand-using-the-azure-portal" class="xliff"></a>
 [!INCLUDE [media-services-selector-get-started](../../includes/media-services-selector-get-started.md)]
 
 Este tutorial explica os passos para implementar um serviço básico de entrega de conteúdos de Vídeo a Pedido (VoD) com a aplicação Azure Media Services (AMS) com o Portal do Azure.
 
-## <a name="prerequisites"></a>Pré-requisitos
+## Pré-requisitos
+<a id="prerequisites" class="xliff"></a>
 O seguinte é necessário para concluir o tutorial:
 
 * Uma conta do Azure. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/). 
@@ -39,7 +42,8 @@ Este tutorial inclui as seguintes tarefas:
 4. Publicar o elemento e obter os URLs de transferência progressiva e transmissão em fluxo.  
 5. Reproduzir os conteúdos.
 
-## <a name="start-streaming-endpoints"></a>Iniciar pontos finais de transmissão em fluxo 
+## Iniciar pontos finais de transmissão em fluxo
+<a id="start-streaming-endpoints" class="xliff"></a> 
 
 Ao trabalhar com os Serviços de Multimédia do Azure, uma das situações mais comuns é a entrega de vídeo através de transmissão em fluxo de velocidade de transmissão adaptável. Os Serviços de Multimédia fornecem um empacotamento dinâmico, o que lhe permite entregar os seus conteúdos codificados em MP4 de velocidade de transmissão adaptável em formatos de transmissão em fluxo suportados pelos Serviços de Multimédia (MPEG DASH, HLS, Smooth Streaming) just-in-time, sem ter de armazenar versões pré-empacotadas de cada um destes formatos de transmissão em fluxo.
 
@@ -57,7 +61,8 @@ Para iniciar o ponto final de transmissão em fluxo, faça o seguinte:
 4. Clique no ícone Início.
 5. Clique no botão Guardar para guardar as alterações.
 
-## <a name="upload-files"></a>Carregar ficheiros
+## Carregar ficheiros
+<a id="upload-files" class="xliff"></a>
 Para transmitir vídeos em fluxo através dos Serviços de Multimédia do Azure, tem de carregar os vídeos de origem, codificá-los em múltiplas velocidades de transmissão e publicar o resultado. O primeiro passo é abrangido nesta secção. 
 
 1. Na janela **Definição**, clique em **Elementos**.
@@ -77,14 +82,16 @@ Para transmitir vídeos em fluxo através dos Serviços de Multimédia do Azure,
 
 Após a conclusão do carregamento, verá o novo elemento listado na janela **Elementos**. 
 
-## <a name="encode-assets"></a>Codificar elementos
+## Codificar elementos
+<a id="encode-assets" class="xliff"></a>
 Ao trabalhar com os Azure Media Services, uma das situações mais comuns é a distribuição de transmissão em fluxo de velocidade de transmissão adaptável para os seus clientes. Os Serviços de Multimédia suportam as seguintes tecnologias de transmissão em fluxo de velocidade de transmissão adaptável: HTTP Live Streaming (HLS), Smooth Streaming, MPEG DASH. Para preparar os seus vídeos para transmissão em fluxo de velocidade de transmissão adaptável, terá de codificar o seu vídeo de origem para ficheiros de múltiplas velocidades de transmissão. Deve utilizar o **Codificador de Multimédia Standard** para codificar seus vídeos.  
 
 Os Serviços de Multimédia também fornecem um empacotamento dinâmico, permitindo a entrega dos conteúdos codificados por Transmissão em Fluxo Uniforme ou MP4s de velocidade de transmissão múltipla nos formatos de transmissão em fluxo MPEG DASH, HLS, Smooth Streaming, sem ter de voltar a criar o pacote para estes formatos de transmissão em fluxo. Com o empacotamento dinâmico, só tem de armazenar e pagar os ficheiros num único formato de armazenamento, e os Media Services compilam e disponibilizam a resposta adequada com base nos pedidos de um cliente.
 
 Para tirar partido do empacotamento dinâmico, tem de codificar o ficheiro de origem para um conjunto de ficheiros MP4 com velocidade de transmissão múltipla (os passos da codificação são demonstrados mais à frente nesta secção).
 
-### <a name="to-use-the-portal-to-encode"></a>Para utilizar o portal para codificar
+### Para utilizar o portal para codificar
+<a id="to-use-the-portal-to-encode" class="xliff"></a>
 Esta secção descreve os passos que pode seguir para codificar o conteúdo com o Codificador de Multimédia Standard.
 
 1. Na janela **Definições**, selecione **Elementos**.  
@@ -97,12 +104,14 @@ Esta secção descreve os passos que pode seguir para codificar o conteúdo com 
    ![Codificar elementos](./media/media-services-portal-vod-get-started/media-services-encode1.png)
 5. Prima **Criar**.
 
-### <a name="monitor-encoding-job-progress"></a>Monitorizar o progresso da tarefa de codificação
+### Monitorizar o progresso da tarefa de codificação
+<a id="monitor-encoding-job-progress" class="xliff"></a>
 Para monitorizar o progresso da tarefa de codificação, clique em **Definições** (na parte superior da página) e, em seguida, selecione **Tarefas**.
 
 ![Tarefas](./media/media-services-portal-vod-get-started/media-services-jobs.png)
 
-## <a name="publish-content"></a>Publicar conteúdo
+## Publicar conteúdo
+<a id="publish-content" class="xliff"></a>
 Para fornecer um URL ao utilizador que possa ser utilizado para transmitir ou transferir o conteúdo, primeiro precisa de "publicar" o elemento criando um localizador. Os localizadores fornecem acesso aos ficheiros contidos no elemento. Os Media Services suportam dois tipos de localizadores: 
 
 * Os localizadores de transmissão em fluxo (OnDemandOrigin), utilizados para transmissão em fluxo adaptável (por exemplo, para transmissão em fluxo MPEG DASH, HLS ou Transmissão em Fluxo Uniforme). Para criar um localizador de transmissão, o seu elemento tem de conter um ficheiro .ism. 
@@ -132,7 +141,8 @@ Um URL SAS tem o seguinte formato.
 
 Para atualizar uma data de expiração num localizador, utilize as APIs [REST](https://docs.microsoft.com/rest/api/media/operations/locator#update_a_locator) ou [.NET](http://go.microsoft.com/fwlink/?LinkID=533259). Ao atualizar a data de expiração de um localizador SAS, o URL é alterado.
 
-### <a name="to-use-the-portal-to-publish-an-asset"></a>Para utilizar o portal para publicar um elemento
+### Para utilizar o portal para publicar um elemento
+<a id="to-use-the-portal-to-publish-an-asset" class="xliff"></a>
 Para utilizar o portal para publicar um elemento, faça o seguinte:
 
 1. Selecione **Definições** > **Elementos**.
@@ -145,7 +155,8 @@ Para utilizar o portal para publicar um elemento, faça o seguinte:
 
 O URL é adicionado à lista de **URLs Publicados**.
 
-## <a name="play-content-from-the-portal"></a>Reproduzir conteúdos a partir do portal
+## Reproduzir conteúdos a partir do portal
+<a id="play-content-from-the-portal" class="xliff"></a>
 O Portal do Azure fornece um leitor de conteúdos que pode utilizar para testar o seu vídeo.
 
 Clique no vídeo pretendido e, em seguida, clique no botão **Reproduzir**.
@@ -157,17 +168,14 @@ São aplicáveis algumas considerações:
 * Certifique-se de que o vídeo foi publicado.
 * Este **Media Player** reproduz a partir do ponto final de transmissão em fluxo predefinido. Se pretender reproduzir a partir de um ponto final de transmissão em fluxo não predefinido, clique para copiar o URL e utilize outro leitor. Por exemplo, [Leitor dos Azure Media Services](http://amsplayer.azurewebsites.net/azuremediaplayer.html).
 
-## <a name="next-steps"></a>Passos seguintes
+## Passos seguintes
+<a id="next-steps" class="xliff"></a>
 Rever os percursos de aprendizagem dos Serviços de Multimédia
 
 [!INCLUDE [media-services-learning-paths-include](../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Enviar comentários
+## Enviar comentários
+<a id="provide-feedback" class="xliff"></a>
 [!INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
-
-
-
-
-<!--HONumber=Jan17_HO4-->
 
 

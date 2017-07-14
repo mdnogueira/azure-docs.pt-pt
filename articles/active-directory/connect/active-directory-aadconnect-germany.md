@@ -13,7 +13,7 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 02/07/2017
+ms.date: 07/12/2017
 ms.author: billmath
 ms.translationtype: Human Translation
 ms.sourcegitcommit: 6dbb88577733d5ec0dc17acf7243b2ba7b829b38
@@ -21,10 +21,11 @@ ms.openlocfilehash: 780728950199bac6a317767ef1db4462b3fe6ffd
 ms.contentlocale: pt-pt
 ms.lasthandoff: 07/04/2017
 
-
 ---
-# <a name="azure-ad-connect-in-microsoft-cloud-germany---public-preview"></a>Azure AD Connect no Microsoft Cloud Alemanha - Pré-visualização Pública
-## <a name="introduction"></a>Introdução
+# Azure AD Connect no Microsoft Cloud Alemanha - Pré-visualização Pública
+<a id="azure-ad-connect-in-microsoft-cloud-germany---public-preview" class="xliff"></a>
+## Introdução
+<a id="introduction" class="xliff"></a>
 O Azure AD Connect fornece sincronização entre o Active Directory no local e o Azure Active Directory.
 Atualmente, muitos dos cenários no [Microsoft Cloud Alemanha](https://www.microsoft.com/de-de/cloud/deutschland/default.aspx) têm de ser executados pelo operador. Ao utilizar o Microsoft Cloud Alemanha, tem de ter em atenção o seguinte:
 
@@ -38,10 +39,12 @@ Atualmente, muitos dos cenários no [Microsoft Cloud Alemanha](https://www.micro
   * Azure AD Connect Health
   * Atualizações automáticas
  
-## <a name="download"></a>Transferência
+## Transferência
+<a id="download" class="xliff"></a>
 Pode transferir o Azure AD Connect a partir do painel do Azure AD Connect no portal.  Utilize as instruções abaixo para localizar o painel do Azure AD Connect.
 
-### <a name="the-azure-ad-connect-blade"></a>O Painel do Azure AD Connect
+### O Painel do Azure AD Connect
+<a id="the-azure-ad-connect-blade" class="xliff"></a>
 Depois de iniciar sessão no portal do Azure, faça o seguinte:
 
 1. Vá para Procurar
@@ -60,10 +63,12 @@ A tabela seguinte descreve as funcionalidades apresentadas no painel.
 | ÚLTIMA SINCRONIZAÇÃO |A última vez que uma sincronização bem-sucedida foi concluída. |
 | DOMÍNIOS FEDERADOS |Mostra o número de domínios federados atualmente configurados. |
 
-## <a name="installation"></a>Instalação
+## Instalação
+<a id="installation" class="xliff"></a>
 Para instalar o Azure AD Connect, pode utilizar a documentação [aqui](active-directory-aadconnect.md#install-azure-ad-connect).
 
-## <a name="advanced-features-and-additional-information"></a>Funcionalidades avançadas e Informações Adicionais
+## Funcionalidades avançadas e Informações Adicionais
+<a id="advanced-features-and-additional-information" class="xliff"></a>
 Para obter informações adicionais e orientações sobre definições personalizadas ou configurações avançadas, comece por [Integrar as identidades no local no Azure Active Directory](active-directory-aadconnect.md).  Esta página fornece informações e hiperligações para orientações adicionais.
 
 
