@@ -13,7 +13,7 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-windows
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 03/01/2017
+ms.date: 07/17/2017
 ms.author: davidmu
 ms.custom: mvc
 ms.translationtype: Human Translation
@@ -23,9 +23,9 @@ ms.contentlocale: pt-pt
 ms.lasthandoff: 05/31/2017
 
 ---
+# Descrição Geral das Máquinas Virtuais do Windows no Azure
 <a id="overview-of-windows-virtual-machines-in-azure" class="xliff"></a>
 
-# Descrição Geral das Máquinas Virtuais do Windows no Azure
 As Máquinas Virtuais (VMs) do Azure são um dos vários tipos de [recursos informáticos a pedido](../../app-service-web/choose-web-site-cloud-service-vm.md), dimensionáveis que o Azure oferece. Normalmente, escolher uma VM, se precisar de mais controlo sobre o ambiente informático que as outras opções oferecem. Este artigo dá-lhe informações sobre o que deve considerar antes de criar uma VM, como criá-la e geri-la.
 
 Uma VM do Azure fornece-lhe a flexibilidade de virtualização sem ter de comprar e manter o hardware físico que executa a VM. No entanto, ainda tem de manter a VM a realizar tarefas, como configurar, aplicar patches e instalar o software que é executado na mesma.
@@ -38,9 +38,8 @@ As máquinas virtuais do Azure podem ser utilizadas de várias formas. Alguns ex
 
 O número de VMs que a aplicação utiliza pode ser vertical e horizontalmente aumentado para o valor que for preciso para satisfazer as necessidades.
 
-<a id="what-do-i-need-to-think-about-before-creating-a-vm" class="xliff"></a>
-
 ## O que é preciso ter em conta antes de criar uma VM?
+<a id="what-do-i-need-to-think-about-before-creating-a-vm" class="xliff"></a>
 Existem sempre inúmeras [considerações de design](infrastructure-virtual-machine-guidelines.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) quando está a desenvolver uma infraestrutura de aplicação no Azure. Estes aspetos de uma VM são importantes e devem ser ponderados antes de começar:
 
 * Os nomes dos recursos da aplicação
@@ -51,16 +50,14 @@ Existem sempre inúmeras [considerações de design](infrastructure-virtual-mach
 * A configuração da VM depois de iniciar
 * Os recursos relacionados que a VM precisa
 
-<a id="naming" class="xliff"></a>
-
 ### Atribuição de nomes
+<a id="naming" class="xliff"></a>
 Uma máquina virtual tem um [nome](infrastructure-naming-guidelines.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) atribuído e tem um nome do computador configurado como parte do sistema operativo. O nome de uma VM pode ter até 15 carateres.
 
 Se utilizar o Azure para criar o disco do sistema operativo, o nome do computador e da máquina virtual é o mesmo. Se [carregar e utilizar a sua própria imagem](upload-generalized-managed.md) que contém um sistema operativo configurado anteriormente e utilizá-lo para criar uma máquina virtual, os nomes podem ser diferentes. Recomendamos que, ao carregar o seu próprio ficheiro de imagem, o nome do computador no sistema operativo e o da máquina virtual seja o mesmo.
 
-<a id="locations" class="xliff"></a>
-
 ### Localizações
+<a id="locations" class="xliff"></a>
 Todos os recursos criados no Azure são distribuídos em várias [regiões geográficas](https://azure.microsoft.com/regions/) em todo o mundo. Normalmente, a região é designada por **localização** ao criar uma VM. Para uma VM, a localização especifica onde os discos rígidos virtuais são armazenados.
 
 Esta tabela apresenta algumas das formas de obter uma lista de localizações disponíveis.
@@ -71,21 +68,18 @@ Esta tabela apresenta algumas das formas de obter uma lista de localizações di
 | Azure PowerShell |Utilize o comando [Get-AzureRmLocation](/powershell/module/azurerm.resources/get-azurermlocation). |
 | API REST |Utilize a operação [Listar localizações](https://docs.microsoft.com/rest/api/resources/subscriptions#Subscriptions_ListLocations). |
 
-<a id="vm-size" class="xliff"></a>
-
 ### Tamanho da VM
+<a id="vm-size" class="xliff"></a>
 O [tamanho](sizes.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) da VM que utiliza é determinado pela carga de trabalho que pretende executar. O tamanho que escolher determina fatores como o poder de processamento, a memória e capacidade de armazenamento. O Azure disponibiliza uma vasta variedade de tamanhos para suportar muitos tipos de utilizações.
 
 O Azure cobra um [preço por hora](https://azure.microsoft.com/pricing/details/virtual-machines/windows/) com base no tamanho da VM e do sistema operativo. Para horas parciais, o Azure cobra apenas os minutos utilizados. O armazenamento tem um preço à parte e é cobrado separadamente.
 
-<a id="vm-limits" class="xliff"></a>
-
 ### Limites da VM
+<a id="vm-limits" class="xliff"></a>
 A subscrição tem [limites de quota](../../azure-subscription-service-limits.md) predefinidos num local que pode afetar a implementação de muitas VMs para o seu projeto. O limite atual numa base por subscrição é de 20 VMs por região. Os limites podem ser aumentados ao preencher um pedido de suporte a pedir um aumento.
 
-<a id="operating-system-disks-and-images" class="xliff"></a>
-
 ### Discos do sistema operativo e imagens
+<a id="operating-system-disks-and-images" class="xliff"></a>
 As máquinas virtuais utilizam [discos rígidos virtuais (VHDs)](../../storage/storage-about-disks-and-vhds-windows.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) para armazenar o respetivo sistema operativo (SO) e dados. Os VHDs também são utilizados para as imagens que pode escolher para instalar um SO. 
 
 O Azure oferece muitas [imagens do marketplace](https://azure.microsoft.com/marketplace/virtual-machines/) para utilizar com diversas versões e tipos de sistemas operativos do Windows Server. A imagens do marketplace são identificadas pelo publicador da imagem, oferta, sku e versão (normalmente, a versão especificada é a mais recente). 
@@ -100,9 +94,8 @@ Esta tabela mostra algumas formas para encontrar as informações de uma imagem.
 
 Pode optar por [carregar e utilizar a sua própria imagem](upload-generalized-managed.md#upload-the-vhd-to-your-storage-account) e quando o fizer, o nome do publicador, a oferta e o sku não são utilizados.
 
-<a id="extensions" class="xliff"></a>
-
 ### Extensões
+<a id="extensions" class="xliff"></a>
 As [extensões](extensions-features.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) da VM fornecem capacidades adicionais à sua VM através da configuração pós-implementação e de tarefas automatizadas.
 
 Estas tarefas comuns podem ser realizadas com extensões:
@@ -111,9 +104,8 @@ Estas tarefas comuns podem ser realizadas com extensões:
 * **Implementar e gerir configurações** – a [Extensão da Configuração do Estado Pretendido (DSC) do PowerShell](extensions-dsc-overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) ajuda-o a configurar o DSC numa VM para gerir configurações e ambientes.
 * **Recolher dados de diagnóstico** – a [Extensão do Diagnóstico do Azure](extensions-diagnostics-template.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) ajuda-o a configurar a VM para recolher dados de diagnóstico que podem ser utilizados para monitorizar o estado de funcionamento da aplicação.
 
-<a id="related-resources" class="xliff"></a>
-
 ### Recursos relacionados
+<a id="related-resources" class="xliff"></a>
 Os recursos nesta tabela são utilizados pela VM e têm de existir ou ser criados quando a VM é criada.
 
 | Recurso | Necessário | Descrição |
@@ -125,9 +117,8 @@ Os recursos nesta tabela são utilizados pela VM e têm de existir ou ser criado
 | [Interface de rede](../../virtual-network/virtual-network-network-interface.md) |Sim |A VM precisa da interface de rede para comunicar na rede. |
 | [Discos de dados](attach-disk-portal.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) |Não |A VM pode incluir discos de dados para expandir as capacidades de armazenamento. |
 
-<a id="how-do-i-create-my-first-vm" class="xliff"></a>
-
 ## Como posso criar a minha primeira VM?
+<a id="how-do-i-create-my-first-vm" class="xliff"></a>
 Existem várias opções para criar a sua VM. A opção irá depender do ambiente em que se encontra. 
 
 Esta tabela fornece informações para começar a criar a sua VM.
@@ -142,14 +133,12 @@ Esta tabela fornece informações para começar a criar a sua VM.
 
 Espera que nunca aconteça mas, ocasionalmente, algo corre mal. Se esta situação acontecer, leia as informações em [Troubleshoot Resource Manager deployment issues with creating a Windows virtual machine in Azure (Resolver problemas de implementação do Gestor de Recursos ao criar uma máquina virtual do Windows no Azure)](troubleshoot-deployment-new-vm.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 
-<a id="how-do-i-manage-the-vm-that-i-created" class="xliff"></a>
-
 ## Como posso gerir a VM que criei?
+<a id="how-do-i-manage-the-vm-that-i-created" class="xliff"></a>
 As VMs podem ser geridas com um portal baseado num browser, ferramentas de linha de comandos com suporte para processamento de scripts ou diretamente através de APs. Algumas tarefas de gestão típicas que pode executar são obter informações sobre uma VM, iniciar sessão numa VM, gerir a disponibilidade e efetuar cópias de segurança.
 
-<a id="get-information-about-a-vm" class="xliff"></a>
-
 ### Obter informações sobre uma VM
+<a id="get-information-about-a-vm" class="xliff"></a>
 Esta tabela mostra-lhe algumas das formas de obter informações sobre uma VM.
 
 | Método | Descrição |
@@ -159,26 +148,22 @@ Esta tabela mostra-lhe algumas das formas de obter informações sobre uma VM.
 | API REST |Utilize a operação [Obter informações da VM](https://docs.microsoft.com/rest/api/compute/virtualmachines/virtualmachines-get) para obter informações sobre uma VM. |
 | SDKs do Cliente |Para obter informações sobre como utilizar o C# para gerir VMs, consulte [Manage Azure Virtual Machines using Azure Resource Manager and C# (Gerir Máquinas Virtuais do Azure com o Gestor de Recursos do Azure e o C#)](csharp-manage.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). |
 
-<a id="log-on-to-the-vm" class="xliff"></a>
-
 ### Iniciar sessão na VM
+<a id="log-on-to-the-vm" class="xliff"></a>
 Utilize o botão Ligar no Portal do Azure para [iniciar uma sessão de Ambiente de Trabalho Remoto (RDP)](connect-logon.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). Por vezes, as coisas podem correr ao tentar utilizar uma ligação remota. Se isso acontecer, verifique as informações de ajuda em [Troubleshoot Remote Desktop connections to an Azure virtual machine running Windows (Resolver problemas de ligações do Ambiente de Trabalho Remoto numa máquina virtual do Azure com o Windows)](troubleshoot-rdp-connection.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 
-<a id="manage-availability" class="xliff"></a>
-
 ### Gerir a disponibilidade
+<a id="manage-availability" class="xliff"></a>
 É importante compreender como [garantir a elevada disponibilidade](manage-availability.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) da sua aplicação. Esta configuração envolve a criação de várias VMs para garantir que pelo menos uma está em execução.
 
 Para a sua implementação se qualificar para o nosso Contrato de Nível de Serviço da VM 99.95, tem de implementar duas ou mais VMs que executam a carga de trabalho num [conjunto de disponibilidade](infrastructure-availability-sets-guidelines.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). Esta configuração garante que as VMs são distribuídas em vários domínios de falhas e são implementadas em anfitriões com janelas de manutenção diferentes. O [SLA do Azure](https://azure.microsoft.com/support/legal/sla/virtual-machines/v1_0/) completo explica a disponibilidade garantida do Azure em termos globais.
 
-<a id="back-up-the-vm" class="xliff"></a>
-
 ### Realizar uma cópia de segurança da VM
+<a id="back-up-the-vm" class="xliff"></a>
 Para proteger dados e ativos nos serviços do Azure Backup e do Azure Site Recovery é utilizado um [Cofre dos Serviços de Recuperação](../../backup/backup-introduction-to-azure-backup.md). Pode utilizar um cofre dos Serviços de Recuperação para [implementar e gerir cópias de segurança para VMs implementadas pelo Gestor de Recursos com o PowerShell](../../backup/backup-azure-vms-automation.md). 
 
-<a id="next-steps" class="xliff"></a>
-
 ## Passos seguintes
+<a id="next-steps" class="xliff"></a>
 * Se a sua intenção for trabalhar com VMs do Linux, consulte [Azure e Linux](../linux/overview.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 * Saiba mais sobre as diretrizes em torno da configuração da sua infraestrutura em [Example Azure infrastructure walkthrough (Instruções sobre a infraestrutura do Azure de exemplo)](infrastructure-example.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 * Certifique-se de que segue as [Best Practices for running a Windows VM on Azure (Melhores Práticas para executar uma VM do Windows no Azure)](guidance-compute-single-vm.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).

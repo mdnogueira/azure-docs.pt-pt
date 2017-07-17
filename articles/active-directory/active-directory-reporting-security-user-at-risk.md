@@ -1,5 +1,4 @@
 ---
-
 title: "Utilizadores no relatório de segurança de risco no portal do Azure Active Directory | Microsoft Docs"
 description: "Saiba mais sobre os utilizadores no relatório de segurança de risco no portal do Azure Active Directory"
 services: active-directory
@@ -11,17 +10,18 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 05/04/2017
+ms.date: 07/15/2017
 ms.author: markvi
+ms.reviewer: dhanyahk
 ms.translationtype: Human Translation
 ms.sourcegitcommit: 2db2ba16c06f49fd851581a1088df21f5a87a911
 ms.openlocfilehash: 01ecb98c02b2a01007c7f76805d4db4b7aeee1f0
 ms.contentlocale: pt-pt
 ms.lasthandoff: 05/08/2017
 
-
 ---
-# <a name="users-at-risk-security-report-in-the-azure-active-directory-portal"></a>Utilizadores no relatório de segurança de risco no portal do Azure Active Directory
+# Utilizadores no relatório de segurança de risco no portal do Azure Active Directory
+<a id="users-at-risk-security-report-in-the-azure-active-directory-portal" class="xliff"></a>
 
 Com os relatórios de segurança no Azure Active Directory (Azure AD), pode obter informações sobre a probabilidade de contas de utilizador comprometidas no seu ambiente. 
 
@@ -37,7 +37,8 @@ No portal do Azure, pode encontrar os relatórios de segurança no painel do **A
 
 ![Inícios de Sessão de Risco](./media/active-directory-reporting-security-user-at-risk/10.png)
 
-## <a name="azure-active-directory-free-and-basic-edition"></a>Edição gratuita e básica do Azure Active Directory
+## Edição gratuita e básica do Azure Active Directory
+<a id="azure-active-directory-free-and-basic-edition" class="xliff"></a>
 
 Os utilizadores no relatório de risco nas edições gratuita e básica do Azure Active Directory fornecem uma lista de contas de utilizador que podem ter sido comprometidas. 
 
@@ -49,7 +50,8 @@ Para os utilizadores que estão em risco, pode rever o histórico de início de 
 
 ![Inícios de Sessão de Risco](./media/active-directory-reporting-security-user-at-risk/46.png)
 
-## <a name="azure-active-directory-premium-editions"></a>Edições premium do Azure Active Directory
+## Edições premium do Azure Active Directory
+<a id="azure-active-directory-premium-editions" class="xliff"></a>
 
 Os utilizadores no relatório de risco nas edições premium do Azure Active Directory fornecem-lhe:
 
@@ -86,7 +88,8 @@ Esta ação abre o painel **Detalhes** para este evento de risco. No painel **De
 
 
 
-## <a name="next-steps"></a>Passos seguintes
+## Passos seguintes
+<a id="next-steps" class="xliff"></a>
 
 - Para obter mais informações sobre o Azure Active Directory Identity Protection, veja [Azure Active Directory Identity Protection](active-directory-identityprotection.md).
 

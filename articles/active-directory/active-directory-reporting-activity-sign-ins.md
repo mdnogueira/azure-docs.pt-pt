@@ -12,19 +12,18 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 07/05/2017
+ms.date: 07/15/2017
 ms.author: markvi
+ms.reviewer: dhanyahk
 ms.translationtype: Human Translation
 ms.sourcegitcommit: c785ad8dbfa427d69501f5f142ef40a2d3530f9e
 ms.openlocfilehash: 0e8ae05b5f8644d4dfd0e6205224cabfb0919531
 ms.contentlocale: pt-pt
 ms.lasthandoff: 05/26/2017
 
-
 ---
-<a id="sign-in-activity-reports-in-the-azure-active-directory-portal" class="xliff"></a>
-
 # Relatórios de atividade de início de sessão no portal do Azure Active Directory
+<a id="sign-in-activity-reports-in-the-azure-active-directory-portal" class="xliff"></a>
 
 Com os relatórios no Azure Active Directory (Azure AD) no [portal do Azure](https://portal.azure.com) pode obter todas as informações de que precisa para determinar o estado de funcionamento do seu ambiente.
 
@@ -39,26 +38,22 @@ A arquitetura de relatórios no Azure Active Directory consiste nos seguintes co
 
 Este tópico fornece-lhe uma descrição geral das atividades de início de sessão.
 
+## Pré-requisito
 <a id="pre-requisite" class="xliff"></a>
 
-## Pré-requisito
-
-<a id="who-can-access-the-data" class="xliff"></a>
-
 ### Quem pode aceder aos dados?
+<a id="who-can-access-the-data" class="xliff"></a>
 * Utilizadores na função de Administrador de Segurança ou de Leitor de Segurança
 * Administradores Globais
 * Qualquer utilizador (não administrador) pode aceder aos seus próprios inícios de sessão 
 
-<a id="what-azure-ad-license-do-you-need-to-access-sign-in-activity" class="xliff"></a>
-
 ### Que licença do Azure AD precisa para aceder à atividade de entrada?
+<a id="what-azure-ad-license-do-you-need-to-access-sign-in-activity" class="xliff"></a>
 * O seu inquilino deve ter uma licença do Azure AD Premium associada ao mesmo para ver o relatório de atividade completo de inícios de sessão
 
 
-<a id="signs-in-activities" class="xliff"></a>
-
 ## Atividades de início de sessão
+<a id="signs-in-activities" class="xliff"></a>
 
 Com as informações fornecidas pelo relatório de início de sessão de utilizador, encontrará respostas a perguntas como:
 
@@ -94,9 +89,8 @@ Ao clicar num item na vista de lista, obtém todos os detalhes sobre o mesmo.
 ![Atividade de início de sessão](./media/active-directory-reporting-activity-sign-ins/43.png "Atividade de início de sessão")
 
 
-<a id="filtering-sign-in-activities" class="xliff"></a>
-
 ## Filtrar atividades de início de sessão
+<a id="filtering-sign-in-activities" class="xliff"></a>
 
 Para limitar os dados comunicados para um nível que funcione para si, pode filtrar os dados de inícios de sessão através dos seguintes campos:
 
@@ -132,9 +126,8 @@ O filtro **estado do início de sessão** permite-lhe selecionar um dos seguinte
 - Falha
 
 
-<a id="sign-in-activities-shortcuts" class="xliff"></a>
-
 ## Atalhos de atividades de início de sessão
+<a id="sign-in-activities-shortcuts" class="xliff"></a>
 
 Para além do Azure Active Directory, o portal do Azure fornece-lhe dois pontos de entrada adicionais para dados de atividades de início de sessão:
 
@@ -142,9 +135,8 @@ Para além do Azure Active Directory, o portal do Azure fornece-lhe dois pontos 
 - Aplicações Empresariais
 
 
-<a id="users-and-groups-sign-ins-activities" class="xliff"></a>
-
 ### Atividades de inícios de sessão de utilizadores e grupos
+<a id="users-and-groups-sign-ins-activities" class="xliff"></a>
 
 Com as informações fornecidas pelo relatório de início de sessão de utilizador, encontrará respostas a perguntas como:
 
@@ -180,9 +172,8 @@ A opção **Inícios de sessão** oferece uma descrição geral completa de todo
 
 
 
-<a id="usage-of-managed-applications" class="xliff"></a>
-
 ## Utilização de aplicações geridas
+<a id="usage-of-managed-applications" class="xliff"></a>
 
 Com uma vista centrada em aplicações dos seus dados de início de sessão, poderá responder a perguntas como:
 
@@ -215,9 +206,8 @@ A opção **Inícios de sessão** dá uma visão geral completa de todos os even
 
 
 
-<a id="next-steps" class="xliff"></a>
-
 ## Passos seguintes
+<a id="next-steps" class="xliff"></a>
 Veja o [Guia dos Relatórios do Azure Active Directory](active-directory-reporting-guide.md).
 
 
