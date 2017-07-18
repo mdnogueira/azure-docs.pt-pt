@@ -1,5 +1,5 @@
 ---
-title: "Consultar o Índice da Azure Search através da API REST | Microsoft Docs"
+title: "Consultar um índice (API REST - Azure Search) | Microsoft Docs"
 description: "Crie uma consulta de pesquisa na pesquisa do Azure e utilize parâmetros de pesquisa para filtrar e ordenar os resultados da pesquisa."
 services: search
 documentationcenter: 
@@ -13,17 +13,15 @@ ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.date: 01/12/2017
 ms.author: ashmaka
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9edcaee4d051c3dc05bfe23eecc9c22818cf967c
-ms.openlocfilehash: 1976a514b4469704dcba9381c5fcbe8805a11ecd
+ms.translationtype: HT
+ms.sourcegitcommit: 2ad539c85e01bc132a8171490a27fd807c8823a4
+ms.openlocfilehash: 49062bec233ad35cd457f9665fa94c1855343582
 ms.contentlocale: pt-pt
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 07/12/2017
 
 ---
 
-<a id="query-your-azure-search-index-using-the-rest-api" class="xliff"></a>
-
-# Consultar o índice da Azure Search através da API REST
+# <a name="query-your-azure-search-index-using-the-rest-api"></a>Consultar o índice da Azure Search através da API REST
 > [!div class="op_single_selector"]
 >
 > * [Descrição geral](search-query-overview.md)
@@ -37,9 +35,7 @@ Este artigo mostra-lhe como consultar um índice com a [API REST do Azure Search
 
 Antes de iniciar estas instruções, já deverá ter [criado um índice de Pesquisa do Azure](search-what-is-an-index.md) e [preenchido este com dados](search-what-is-data-import.md). Para obter informações gerais, veja [Como funciona a pesquisa de texto completa do Azure Search](search-lucene-query-architecture.md).
 
-<a id="identify-your-azure-search-services-query-api-key" class="xliff"></a>
-
-## Identificar a sua chave de API de consulta do serviço Azure Search
+## <a name="identify-your-azure-search-services-query-api-key"></a>Identificar a sua chave de API de consulta do serviço Azure Search
 Um elemento-chave de qualquer operação de pesquisa em relação à API REST de Azure Search é a *chave de API* gerada para o serviço prestado por si. Ter uma chave válida estabelece fidedignidade, numa base por pedido, entre a aplicação a enviar o pedido e o serviço que o processa.
 
 1. Para localizar as chaves de API do seu serviço, pode iniciar sessão no [portal do Azure](https://portal.azure.com/)
@@ -53,9 +49,7 @@ O seu serviço tem *chaves de administração* e *chaves de consulta*.
 
 Para efeitos de consulta de um índice, pode utilizar uma das chaves de consulta. As chaves de administração também podem ser utilizadas para consultas, contudo, deve utilizar uma chave de consulta no código da aplicação, uma vez que tal segue melhor o [Princípio de menor privilégio](https://en.wikipedia.org/wiki/Principle_of_least_privilege).
 
-<a id="formulate-your-query" class="xliff"></a>
-
-## Formular a consulta
+## <a name="formulate-your-query"></a>Formular a consulta
 Existem duas formas de [pesquisar o índice através da API REST](https://docs.microsoft.com/rest/api/searchservice/Search-Documents). Uma forma consiste em emitir um pedido de HTTP POST, em que os parâmetros da sua consulta são definidos num objeto JSON no corpo do pedido. A outra forma consiste em emitir um pedido de HTTP GET, em que os parâmetros da consulta são definidos no URL do pedido. O POST tem [limites mais flexíveis](https://docs.microsoft.com/rest/api/searchservice/Search-Documents) em relação ao tamanho dos parâmetros de consulta do que o GET. Por este motivo, recomendamos a utilização do POST, salvo se tiver circunstâncias especiais em que a utilização do GET seja mais conveniente.
 
 Para o POST e o GET, é necessário fornecer o *nome do serviço*, o *nome do índice* e a *versão de API* correta (no momento de publicação deste documento a versão de API atual é `2016-09-01`) no URL do pedido. No GET, os parâmetros de consulta são fornecidos na *cadeia de consulta* no final do URL. Veja a seguir o formato URL:
@@ -64,9 +58,7 @@ Para o POST e o GET, é necessário fornecer o *nome do serviço*, o *nome do í
 
 O formato para o POST é o mesmo, contudo, apenas com a versão de API nos parâmetros de cadeia de consulta.
 
-<a id="example-queries" class="xliff"></a>
-
-#### Consultas de exemplo
+#### <a name="example-queries"></a>Consultas de exemplo
 Eis algumas consultas de exemplo sobre um índice designado "hotéis". Estas consultas são apresentadas nos formatos GET e POST.
 
 Procure no índice completo o termo "orçamento" e devolva apenas o campo `hotelName`:
@@ -108,14 +100,10 @@ POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-ve
 }
 ```
 
-<a id="submit-your-http-request" class="xliff"></a>
-
-## Submeter o pedido de HTTP
+## <a name="submit-your-http-request"></a>Submeter o pedido de HTTP
 Agora que formulou a consulta como parte do URL (para o GET) ou do corpo (para o POST) do pedido de HTTP, pode definir os cabeçalhos do pedido e submeter a consulta.
 
-<a id="request-and-request-headers" class="xliff"></a>
-
-#### Pedido e Cabeçalhos do Pedido
+#### <a name="request-and-request-headers"></a>Pedido e Cabeçalhos do Pedido
 Tem de definir dois cabeçalhos do pedido para o GET ou três para o POST:
 
 1. O cabeçalho `api-key` deve ser definido para a chave de consulta indicada no passo I acima. Também pode utilizar uma chave de administração como o cabeçalho `api-key`, mas recomenda-se a utilização de uma chave de consulta, uma vez que esta concede exclusivamente acesso só de leitura aos índices e documentos.

@@ -16,22 +16,18 @@ ms.topic: hero-article
 ms.date: 05/24/2017
 ms.author: andrela
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 6adaf7026d455210db4d7ce6e7111d13c2b75374
-ms.openlocfilehash: c5d09cf03c87c8da1d8588be62fea3f0cc3eec4f
+ms.sourcegitcommit: f537befafb079256fba0529ee554c034d73f36b0
+ms.openlocfilehash: b25ef8333a2836f976a974d6ea6e7fdcea2745e3
 ms.contentlocale: pt-pt
-ms.lasthandoff: 06/22/2017
+ms.lasthandoff: 07/08/2017
 
 ---
 
-<a id="azure-sql-database-use-ruby-to-connect-and-query-data" class="xliff"></a>
-
-# Base de Dados SQL do Azure: utilizar o Ruby para se ligar e consultar dados
+# <a name="azure-sql-database-use-ruby-to-connect-and-query-data"></a>Base de Dados SQL do Azure: utilizar o Ruby para se ligar e consultar dados
 
 Este guia de início rápido demonstra como utilizar o [Ruby](https://www.ruby-lang.org) para se ligar a uma Base de Dados SQL do Azure; em seguida, utilize as instruções Transact SQL para consultar, inserir, atualizar e eliminar dados na base de dados a partir de plataformas Windows, Mac OS e Ubuntu Linux.
 
-<a id="prerequisites" class="xliff"></a>
-
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 
 Este guia de introdução utiliza como ponto de partida os recursos criados num destes guias de introdução:
 
@@ -39,15 +35,11 @@ Este guia de introdução utiliza como ponto de partida os recursos criados num 
 - [Criar BD - CLI](sql-database-get-started-cli.md)
 - [Criar BD - PowerShell](sql-database-get-started-powershell.md)
 
-<a id="install-ruby-and-database-communication-libraries" class="xliff"></a>
-
-## Instalar as bibliotecas de comunicação e a base de dados Ruby
+## <a name="install-ruby-and-database-communication-libraries"></a>Instalar as bibliotecas de comunicação e a base de dados Ruby
 
 Os passos nesta secção pressupõem que está familiarizado com a programação com Ruby e que nunca trabalhou com a Base de Dados SQL do Azure. Se não estiver familiarizado com a programação com Ruby, aceda a [Build an app using SQL Server](https://www.microsoft.com/en-us/sql-server/developer-get-started/) (Criar uma aplicação com o SQL Server), selecione **Ruby** e, em seguida, selecione o seu sistema operativo.
 
-<a id="mac-os" class="xliff"></a>
-
-### **Mac OS**
+### <a name="mac-os"></a>**Mac OS**
 Abra o terminal e navegue para um diretório no qual pretenda criar o seu script Ruby. Introduza os comandos seguintes para instalar **brew**, **FreeTDS** e **TinyTDS**.
 
 ```bash
@@ -58,9 +50,7 @@ brew install FreeTDS
 gem install tiny_tds
 ```
 
-<a id="linux-ubuntu" class="xliff"></a>
-
-### **Linux (Ubuntu)**
+### <a name="linux-ubuntu"></a>**Linux (Ubuntu)**
 Abra o terminal e navegue para um diretório no qual pretenda criar o seu script Ruby. Introduza os comandos seguintes para instalar **FreeTDS** e **TinyTDS**.
 
 ```bash
@@ -73,9 +63,7 @@ make install
 gem install tiny_tds
 ```
 
-<a id="get-connection-information" class="xliff"></a>
-
-## Obter informações da ligação
+## <a name="sql-server-connection-information"></a>Informações de ligação do servidor SQL
 
 Obtenha as informações de ligação necessárias para ligar à base de dados SQL do Azure. Irá precisar do nome de servidor totalmente qualificado, do nome de base de dados e das informações de início de sessão nos seguintes procedimentos.
 
@@ -88,9 +76,7 @@ Obtenha as informações de ligação necessárias para ligar à base de dados S
 4. Se se esqueceu das informações de início de sessão do seu servidor, navegue para a página de servidor da Base de Dados SQL para visualizar o nome de administrador do servidor e, se necessário, repor a palavra-passe.
     
 
-<a id="select-data" class="xliff"></a>
-
-## Selecionar dados
+## <a name="select-data"></a>Selecionar dados
 Utilize o seguinte código para consultar os 20 melhores produtos por categoria ao utilizar a função [TinyTDS::Client](https://github.com/rails-sqlserver/tiny_tds) com a instrução Transact SQL [SELECT](https://docs.microsoft.com/sql/t-sql/queries/select-transact-sql). A função TinyTDS::Client aceita uma consulta e devolve um conjunto de resultados. O conjunto de resultados é iterado através de [result.each do |row|](https://github.com/rails-sqlserver/tiny_tds). Substitua os parâmetros do servidor, da base de dados, do nome de utilizador e da palavra-passe pelos valores que especificou ao criar a base de dados com os dados de exemplo AdventureWorksLT.
 
 ```ruby
@@ -113,9 +99,7 @@ result.each do |row|
 end
 ```
 
-<a id="insert-data" class="xliff"></a>
-
-## Inserir dados
+## <a name="insert-data"></a>Inserir dados
 Utilize o seguinte código para inserir um novo produto na tabela SalesLT.Product ao utilizar a função [TinyTDS::Client](https://github.com/rails-sqlserver/tiny_tds) com a instrução Transact SQL [INSERT](https://docs.microsoft.com/sql/t-sql/statements/insert-transact-sql). Substitua os parâmetros do servidor, da base de dados, do nome de utilizador e da palavra-passe pelos valores que especificou ao criar a base de dados com os dados de exemplo AdventureWorksLT.
 
 Este exemplo demonstra como executar uma instrução INSERT com segurança, aprovar parâmetros que protegem a sua aplicação contra a vulnerabilidade de [injeção de SQL](https://technet.microsoft.com/library/ms161953(v=sql.105).aspx) e recuperar o valor da [chave primária](https://docs.microsoft.com/sql/relational-databases/tables/primary-and-foreign-key-constraints) gerado automaticamente.    
@@ -153,9 +137,7 @@ end
 insert('BrandNewProduct', '200989', 'Blue', 75, 80, '7/1/2016')
 ```
 
-<a id="update-data" class="xliff"></a>
-
-## Atualizar dados
+## <a name="update-data"></a>Atualizar dados
 Utilize o seguinte código para atualizar o produto novo que foi adicionado anteriormente com a função [TinyTDS::Client](https://github.com/rails-sqlserver/tiny_tds) e a instrução Transact SQL [UPDATE](https://docs.microsoft.com/sql/t-sql/queries/update-transact-sql). Substitua os parâmetros do servidor, da base de dados, do nome de utilizador e da palavra-passe pelos valores que especificou ao criar a base de dados com os dados de exemplo AdventureWorksLT.
 
 ```ruby
@@ -176,9 +158,7 @@ end
 update('BrandNewProduct', 500, client)
 ```
 
-<a id="delete-data" class="xliff"></a>
-
-## Eliminar dados
+## <a name="delete-data"></a>Eliminar dados
 Utilize o seguinte código para eliminar o produto novo que foi adicionado anteriormente com a função [TinyTDS::Client](https://github.com/rails-sqlserver/tiny_tds) e a instrução Transact SQL [DELETE](https://docs.microsoft.com/sql/t-sql/statements/delete-transact-sql). Substitua os parâmetros do servidor, da base de dados, do nome de utilizador e da palavra-passe pelos valores que especificou ao criar a base de dados com os dados de exemplo AdventureWorksLT.
 
 ```ruby
@@ -209,9 +189,7 @@ end
 delete('BrandNewProduct', client)
 ```
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos Seguintes
+## <a name="next-steps"></a>Passos Seguintes
 - [Criar a sua primeira base de dados SQL do Azure](sql-database-design-first-database.md)
 - [Repositório do GitHub para TinyTDS](https://github.com/rails-sqlserver/tiny_tds)
 - [Comunicar problemas/fazer perguntas](https://github.com/rails-sqlserver/tiny_tds/issues)

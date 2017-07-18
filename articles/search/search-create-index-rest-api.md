@@ -1,5 +1,5 @@
 ---
-title: "Crie um índice da Azure Search através da API REST | Microsoft Docs"
+title: "Criar um índice (API REST - Azure Search) | Microsoft Docs"
 description: "Crie um índice no código utilizando a API REST de HTTP da Azure Search."
 services: search
 documentationcenter: 
@@ -15,9 +15,11 @@ ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.date: 12/08/2016
 ms.author: ashmaka
-translationtype: Human Translation
-ms.sourcegitcommit: 702ea254c19d1f9782f83d8445b7f440f11963b9
-ms.openlocfilehash: 7f4bccda8a7cebff0d80627320d34062d4d55add
+ms.translationtype: HT
+ms.sourcegitcommit: 2ad539c85e01bc132a8171490a27fd807c8823a4
+ms.openlocfilehash: 9a64d1436471e406b7d9b700257d3dd96b5edcde
+ms.contentlocale: pt-pt
+ms.lasthandoff: 07/12/2017
 
 ---
 # <a name="create-an-azure-search-index-using-the-rest-api"></a>Criar um índice da Azure Search utilizando a API REST
@@ -107,9 +109,4 @@ Quando terminar com um índice e pretender eliminá-lo, emita apenas um pedido d
 
 ## <a name="next-steps"></a>Passos seguintes
 Depois de criar um índice da Azure Search, estará pronto para [carregar o conteúdo para o índice](search-what-is-data-import.md) para que possa começar a pesquisar os seus dados.
-
-
-
-<!--HONumber=Jan17_HO2-->
-
 

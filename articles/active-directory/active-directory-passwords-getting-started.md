@@ -6,31 +6,26 @@ keywords:
 documentationcenter: 
 author: MicrosoftGuyJFlo
 manager: femila
-editor: gahug
+ms.reviewer: gahug
 ms.assetid: bde8799f-0b42-446a-ad95-7ebb374c3bec
 ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 05/12/2017
+ms.date: 07/17/2017
 ms.author: joflore
 ms.custom: it-pro
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 09f24fa2b55d298cfbbf3de71334de579fbf2ecd
-ms.openlocfilehash: 663041285f7b64a8f38ace91bcb3673f46c1218a
+ms.sourcegitcommit: b1d56fcfb472e5eae9d2f01a820f72f8eab9ef08
+ms.openlocfilehash: 52f89520fef8fc9ddb6e8e10a59ec35600affb2a
 ms.contentlocale: pt-pt
-ms.lasthandoff: 06/07/2017
-
+ms.lasthandoff: 07/06/2017
 
 ---
-<a id="quick-start-azure-ad-self-service-password-reset" class="xliff"></a>
+# <a name="quick-start-azure-ad-self-service-password-reset"></a>Guia de Início Rápido: reposição de palavras-passe self-service do Azure AD
 
-# Guia de Início Rápido: reposição de palavras-passe self-service do Azure AD
-
-<a id="rapidly-deploy-self-service-password-reset" class="xliff"></a>
-
-## Implementar rapidamente a reposição de palavras-passe self-service
+## <a name="rapidly-deploy-self-service-password-reset"></a>Implementar rapidamente a reposição de palavras-passe self-service
 
 A reposição de palavras-passe self-service (Self-service Password Reste, SSPR) oferece aos administradores de TI uma forma simples de capacitarem os utilizadores a repor ou desbloquear as palavras-passe ou as contas deles. O sistema inclui relatórios detalhados para controlar quando os utilizadores utilizam o sistema, juntamente com notificações para o alertar quanto a utilizações indevidas ou abusos.
 
@@ -44,21 +39,21 @@ Este guia pressupõe que já tem uma versão de avaliação ou um inquilino lice
     * Toda a gente - todos os utilizadores com contas no seu inquilino do Azure AD podem utilizar a funcionalidade SSPR
 
 3. No ecrã **"Métodos de autenticação"**, escolha
-    * “Número de métodos necessários para repor” - suportamos um mínimo de um ou um máximo de dois
-    * “Métodos disponíveis para os utilizadores” - precisamos de, pelo menos, um; contudo, não custa nada ter uma opção extra disponível
+    * Número de métodos necessários para repor - suportamos um mínimo de um ou um máximo de dois
+    * Métodos disponíveis para os utilizadores - precisamos de, pelo menos, um; contudo, não custa nada ter uma opção extra disponível
         * **Enviar por E-mail** envia um e-mail com um código para o endereço de e-mail de autenticação configurado do utilizador
         * **Número de Telemóvel** disponibiliza ao utilizador a opção de receber uma chamada ou uma mensagem de texto com um código no telemóvel configurado
         * **Telefone do Escritório** liga para o utilizador e comunica um código no telefone do escritório configurado
         * **Perguntas de Segurança** requer que escolha
-            * “Número de perguntas necessárias para o registo” é o número mínimo para um registo bem-sucedido e significa que o utilizador pode optar por responder a mais para criar um conjunto de perguntas de onde escolher. Esta opção pode ser definida entre três e cinco e tem de ser igual ou maior do que o número de perguntas necessárias para a reposição.
-            * “Número de perguntas necessárias para a reposição” pode ser definido entre três e cinco perguntas que têm de ser respondidas corretamente para que seja possível repor ou desbloquear a palavra-passe do utilizador.
+            * Número de perguntas necessárias para o registo - é o número mínimo para um registo bem-sucedido e significa que o utilizador pode optar por responder a mais para criar um conjunto de perguntas de onde escolher. Esta opção pode ser definida entre três e cinco e tem de ser igual ou maior do que o número de perguntas necessárias para a reposição.
                 * Podem ser adicionadas perguntas personalizadas, clicando no botão “Personalizar” quando escolher as perguntas de segurança
+            * Número de perguntas necessárias para a reposição - podem ser definidas entre três e cinco perguntas que têm de ser respondidas corretamente para que seja possível repor ou desbloquear a palavra-passe do utilizador.
 
 4. RECOMENDADO: **"Personalização"** permite-lhe alterar a ligação "Contactar o administrador" para apontar para um página ou endereço de e-mail que definir
 
 5. OPCIONAL: o ecrã **"Registo"** dá aos administradores as opções para:
-    * "Exigir que os utilizadores se registem ao iniciar sessão”
-    * “Número de dias antes de ser pedido aos utilizadores que reconfirmem as informações de autenticação”
+    * Exigir que os utilizadores se registem ao iniciar sessão
+    * Número de dias antes de ser pedido aos utilizadores que voltem a confirmar as informações de autenticação
 
 6. OPCIONAL: o ecrã **"Notificação"** dá aos administradores as opções para:
     * Notificar os utilizadores sobre reposições de palavras-passe
@@ -69,25 +64,19 @@ Este guia pressupõe que já tem uma versão de avaliação ou um inquilino lice
 > [!NOTE]
 > Teste o SSPR com um utilizador e não com um administrador, pois a Microsoft aplica requisitos de autenticação fortes às contas de tipo administrador do Azure. Para obter mais informações sobre a política de palavras-passe de administrador, veja o nosso [artigo de política de palavra-passe](active-directory-passwords-policy.md#administrator-password-policy-differences).
 
-<a id="configure-synchronization-to-existing-identity-source" class="xliff"></a>
+## <a name="configure-synchronization-to-existing-identity-source"></a>Configurar a sincronização com a origem de identidades existente
 
-## Configurar a sincronização com a origem de identidades existente
-
-Para ativar a sincronização de identidades no local com o Azure AD, tem de instalar e configurar o [Azure AD Connect](./connect/active-directory-aadconnect.md) num servidor da sua organização. Esta aplicação processa a sincronização de utilizadores e grupos da sua origem de identidades existente com o seu domínio do Azure AD.
+Para ativar a sincronização de identidades no local com o Azure AD, tem de instalar e configurar o [Azure AD Connect](./connect/active-directory-aadconnect.md) num servidor da sua organização. Esta aplicação processa a sincronização de utilizadores e grupos da sua origem de identidades existente com o seu inquilino do Azure AD.
 
 * [Upgrade from DirSync or Azure AD Sync to Azure AD Connect](./connect/active-directory-aadconnect-dirsync-deprecated.md) (Atualizar de DirSync ou do Azure AD Sync para o Azure AD Connect)
 * [Introdução ao Azure AD Connect com as definições rápidas](./connect/active-directory-aadconnect-get-started-express.md)
 * [Configurar a repetição de escrita de palavras-passe](active-directory-passwords-writeback.md#configuring-password-writeback) para gravar palavras-passe do Azure AD no seu diretório local.
 
-<a id="disabling-self-service-password-reset" class="xliff"></a>
+## <a name="disabling-self-service-password-reset"></a>Desativar a reposição de palavras-passe self-service
 
-## Desativar a reposição de palavras-passe self-service
+Para desativar a reposição personalizada de palavra-passe basta abrir o inquilino do Azure AD e aceder a **Reposição de Palavras-passe > Propriedades** > escolher **Ninguém**, em **Reposição Personalizada de Palavra-passe Ativada**
 
-Para desativar a reposição de palavras-passe self-service basta abrir o inquilino do Azure AD e aceder a **Reposição de Palavras-passe**, **Propriedades** e escolher **Ninguém**, em **Reposição de Palavras-passe Self-service Ativada**
-
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 As ligações seguintes disponibilizam informações adicionais relativamente à reposição de palavras-passe com o Azure AD
 
 * [**Licensing**](active-directory-passwords-licensing.md) - Configure your Azure AD Licensing (Licenciamento - Configurar o Licenciamento do Azure AD)

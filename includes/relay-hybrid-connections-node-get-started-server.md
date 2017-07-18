@@ -1,21 +1,25 @@
 ### <a name="create-a-nodejs-application"></a>Criar uma aplicação Node.js
-* Criar um novo ficheiro JavaScript denominado `listener.js`.
+
+Criar um novo ficheiro JavaScript denominado `listener.js`.
 
 ### <a name="add-the-relay-npm-package"></a>Adicionar o pacote NPM de Reencaminhamento
-* Execute `npm install hyco-ws` a partir de uma linha de comandos do Nó na sua pasta do projeto.
+
+Execute `npm install hyco-ws` a partir de uma linha de comandos do Nó na sua pasta do projeto.
 
 ### <a name="write-some-code-to-receive-messages"></a>Escrever alguns códigos para receber mensagens
-1. Adicione o seguinte `constant` à parte superior do ficheiro `listener.js`.
+
+1. Adicione a seguinte constante à parte superior do ficheiro `listener.js`.
    
     ```js
     const WebSocket = require('hyco-ws');
     ```
-2. Adicione o Reencaminhamento seguinte `constants` ao `listener.js`, para obter os detalhes da ligação da Ligação Híbrida. Substitua os marcadores de posição entre parênteses retos pelos valores adequados que foram obtidos ao criar a Ligação Híbrida.
+2. Adicione as seguintes constantes ao ficheiro `listener.js` para obter os detalhes da ligação híbrida. Substitua os marcadores de posição entre parênteses retos pelos valores obtidos quando criou a ligação híbrida.
    
-   1. `const ns` - O espaço de nomes de Reencaminhamento (utilize o FQDN - por exemplo, `{namespace}.servicebus.windows.net`)
-   2. `const path` - O nome da Ligação Híbrida
-   3. `const keyrule` - O nome da chave SAS
-   4. `const key` - O valor da chave SAS
+   1. `const ns` - O espaço de nomes do Reencaminhamento. Certifique-se de que utiliza o nome de espaço de nomes totalmente qualificado, por exemplo, `{namespace}.servicebus.windows.net`.
+   2. `const path` - O nome da ligação híbrida.
+   3. `const keyrule` - O nome da chave SAS.
+   4. `const key` - O valor da chave SAS.
+
 3. Adicione o seguinte código ao ficheiro `listener.js`:
    
     ```js

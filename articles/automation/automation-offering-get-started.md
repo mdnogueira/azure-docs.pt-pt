@@ -12,26 +12,22 @@ ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 06/16/2017
+ms.date: 07/12/2017
 ms.author: magoedte
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 3716c7699732ad31970778fdfa116f8aee3da70b
-ms.openlocfilehash: eb7d58c71f6d0daf072045797e30208ffe966ee0
+ms.translationtype: HT
+ms.sourcegitcommit: 54454e98a2c37736407bdac953fdfe74e9e24d37
+ms.openlocfilehash: 0e80e0a1c334bcca0bb15dd16c54306a60f2486e
 ms.contentlocale: pt-pt
-ms.lasthandoff: 06/30/2017
+ms.lasthandoff: 07/13/2017
 
 ---
 
-<a id="getting-started-with-azure-automation" class="xliff"></a>
-
-# Introdução à Automatização do Azure
+# <a name="getting-started-with-azure-automation"></a>Introdução à Automatização do Azure
 
 Este guia de introdução apresenta os conceitos principais relacionados com a implementação da Automatização do Azure. Se não estiver familiarizado com a Automatização no Azure ou tiver experiência com software de fluxo de trabalho de automatização, como o System Center Orchestrator, este guia ajuda-o a compreender como preparar e integrar a Automatização.  Posteriormente, será preparado para começar a desenvolver runbooks para suportar as suas necessidades de automatização de processos. 
 
 
-<a id="automation-architecture-overview" class="xliff"></a>
-
-## Descrição geral da arquitetura de automatização
+## <a name="automation-architecture-overview"></a>Descrição geral da arquitetura de automatização
 
 ![Descrição geral da Automatização do Azure](media/automation-offering-get-started/automation-infradiagram-networkcomms.png)
 
@@ -47,13 +43,9 @@ Runbooks em execução num HRW no contexto da conta do Sistema local no computad
 
 As configurações DSC armazenadas na Automatização do Azure podem ser aplicadas diretamente a máquinas virtuais do Azure. Outras máquinas físicas e virtuais podem solicitar configurações do servidor de solicitação do Automation DSC do Azure.  Para gerir configurações dos seus sistemas Windows e Linux físicos ou virtuais no local, não precisa de implementar qualquer infraestrutura para suportar o servidor de solicitação do Automation DSC, apenas acesso de saída à Internet de cada sistema para ser gerido pelo Automation DSC, comunicando através da porta TCP 443 para o serviço do OMS.   
 
-<a id="prerequisites" class="xliff"></a>
+## <a name="prerequisites"></a>Pré-requisitos
 
-## Pré-requisitos
-
-<a id="automation-dsc" class="xliff"></a>
-
-### Automation DSC
+### <a name="automation-dsc"></a>Automation DSC
 O Azure Automation DSC pode ser utilizado para gerir várias máquinas:
 
 * Máquinas virtuais do Azure (clássicas) com o Windows ou Linux
@@ -64,9 +56,7 @@ O Azure Automation DSC pode ser utilizado para gerir várias máquinas:
 
 A versão mais recente do WMF 5 tem de estar instalada para o agente do PowerShell DSC para o Windows para conseguir comunicar com a Automatização do Azure. A versão mais recente do [agente DSC de PowerShell para Linux](https://www.microsoft.com/en-us/download/details.aspx?id=49150) tem de estar instalada para o Linux ser capaz de comunicar com a Automatização do Azure.
 
-<a id="hybrid-runbook-worker" class="xliff"></a>
-
-### Função de Trabalho de Runbook Híbrida  
+### <a name="hybrid-runbook-worker"></a>Função de Trabalho de Runbook Híbrida  
 Ao designar um computador para executar tarefas de runbook híbridas, este computador tem de ter o seguinte:
 
 * Windows Server 2012 ou posterior
@@ -74,9 +64,7 @@ Ao designar um computador para executar tarefas de runbook híbridas, este compu
 * Mínimo de dois núcleos
 * Mínimo de 4 GB de RAM
 
-<a id="permissions-required-to-create-automation-account" class="xliff"></a>
-
-### Permissões necessárias para criar uma conta de Automatização
+### <a name="permissions-required-to-create-automation-account"></a>Permissões necessárias para criar uma conta de Automatização
 Para criar ou atualizar uma conta de Automatização, tem de ter os seguintes privilégios específicos e as permissões necessárias para concluir este tópico.   
  
 * Para criar uma conta de Automatização, a sua conta de utilizador do AD tem de ser adicionada a uma função com permissões equivalentes à função de Contribuidor para recursos Microsoft.Automation, conforme descrito no artigo [Controlo de acesso baseado em funções na Automatização do Azure](automation-role-based-access-control.md#contributor-role-permissions).  
@@ -84,14 +72,10 @@ Para criar ou atualizar uma conta de Automatização, tem de ter os seguintes pr
 
 Se não for membro da instância do Active Directory da subscrição antes de ser adicionado à função de administrador global/coadministrador da mesma, é adicionado ao Active Directory como convidado. Nesta situação, recebe o aviso "Não tem permissões para criar..." no painel **Adicionar Conta de Automatização**. Os utilizadores que foram adicionados primeiro à função de administrador global/coadministrador podem ser removidos da instância do Active Directory da subscrição e adicionados novamente, para que se tornem em Utilizadores completos no Active Directory. Para verificar esta situação, no painel **Azure Active Directory**, no portal do Azure, selecione **Utilizadores e grupos**, **Todos os utilizadores** e, depois de selecionar o utilizador específico, selecione **Perfil**. O valor do atributo **Tipo de utilizador** sob o perfil de utilizadores não deve ser igual a **Convidado**.
 
-<a id="authentication-planning" class="xliff"></a>
-
-## Planeamento da autenticação
+## <a name="authentication-planning"></a>Planeamento da autenticação
 A Automatização do Azure permite-lhe automatizar tarefas relativamente aos recursos no Azure, no local e outros fornecedores de serviços cloud.  Para um runbook efetuar as ações necessárias, tem de ter permissões para aceder de forma segura aos recursos com os direitos mínimos necessários dentro da subscrição.  
 
-<a id="what-is-an-automation-account" class="xliff"></a>
-
-### O que é uma conta de Automatização 
+### <a name="what-is-an-automation-account"></a>O que é uma conta de Automatização 
 Todas as tarefas de automatização que executa relativamente aos recursos que utilizam os cmdlets do Azure na Automatização do Azure são autenticados no Azure utilizando a autenticação com base em credenciais de identidade organizacional do Azure Active Directory.  Uma conta de Automatização é separada da conta que utiliza para iniciar sessão no portal para configurar e utilizar recursos do Azure.  Os recursos de automatização incluídos numa conta são os seguintes:
 
 * **Certificados** - contém um certificado utilizado para autenticação a partir de um runbook ou configuração DSC.
@@ -100,6 +84,8 @@ Todas as tarefas de automatização que executa relativamente aos recursos que u
 * **Módulos de integração** - módulos do PowerShell incluídos numa conta de Automatização do Azure para utilizar cmdlets em runbooks e configurações DSC.
 * **Agendas** - contém agendas que iniciam ou interrompem um runbook numa hora especificada, incluindo frequências recorrentes.
 * **Variáveis** - contêm valores disponíveis a partir de um runbook ou configuração DSC.
+* **Configurações de DSC** - são scripts do PowerShell que descrevem como configurar uma funcionalidade ou definição do sistema operativo ou instalar uma aplicação num computador Windows ou Linux.  
+* **Runbooks** -são um conjunto de tarefas que efetuam algum processo automatizado na automatização do Azure, com base no Windows PowerShell.    
 
 Os recursos de Automatização de cada conta de Automatização estão associados a uma única região do Azure, mas as contas de Automatização podem gerir todos os recursos na sua subscrição. Crie contas de Automatização em diferentes regiões se tiver políticas que exigem que os dados e os recursos estejam isolados numa região específica.
 
@@ -114,9 +100,7 @@ Quando cria uma conta de Automatização no portal do Azure, são criadas automa
 
 O controlo de acesso baseado em funções está disponível no Azure Resource Manager para conceder ações permitidas a uma conta de utilizador do Azure AD e uma conta Run As e autenticar esse principal de serviço.  Leia [o artigo Role-based access control in Azure Automation (Controlo de acesso baseado em funções na Automatização do Azure)](automation-role-based-access-control.md) para obter mais informações ajudar a desenvolver o seu modelo para a gestão de permissões de Automatização.  
 
-<a id="authentication-methods" class="xliff"></a>
-
-#### Métodos de autenticação
+#### <a name="authentication-methods"></a>Métodos de autenticação
 A tabela seguinte resume os métodos de autenticação diferentes para cada ambiente suportado pela Automatização do Azure.
 
 | Método | Ambiente 
@@ -128,9 +112,7 @@ A tabela seguinte resume os métodos de autenticação diferentes para cada ambi
 
 Na secção **How to\Authentication and Security (Procedimento\Autenticação e segurança)** encontram-se artigos que fornecem passos de descrição geral e de implementação para configurar a autenticação desses ambientes, qualquer um deles com uma conta nova ou existente que dedica nesse ambiente.  Para a conta Run As do Azure e Run As Clássica, o tópico [Update Automation Run As account (Atualizar conta Run As de Automatização)](automation-create-runas-account.md) descreve como atualizar a sua conta de Automatização existente com as contas Run As a partir do portal ou através do PowerShell, se não foi originalmente configurado com uma conta Run As ou uma conta Run As Clássica. Se quiser criar uma conta Run As e Run As Clássica com um certificado emitido pela sua autoridade de certificação empresarial (AC), reveja este artigo para saber como criar as contas através desta configuração.     
  
-<a id="network-planning" class="xliff"></a>
-
-## Planeamento da rede
+## <a name="network-planning"></a>Planeamento da rede
 Para a Função de Trabalho de Runbook Híbrida ligar e registar com o Microsoft Operations Management Suite (OMS), tem de ter acesso ao número da porta e aos URLs descritos abaixo.  Isto é outra forma de as [portas e URLs necessários para o Microsoft Monitoring Agent](../log-analytics/log-analytics-windows-agents.md#network) ligarem ao OMS. Se utilizar um servidor proxy para comunicação entre o agente e o serviço OMS, tem de assegurar que os recursos adequados estão acessíveis. Se utilizar uma firewall para restringir o acesso à Internet, terá de configurar a firewall para permitir acesso.
 
 As informações abaixo listam as portas e os URLs que são necessários para a Função de Trabalho de Runbook Híbrida comunicar com a Automatização.
@@ -161,9 +143,7 @@ Para obter uma lista de endereços IP em vez de nomes, transfira e reveja o fich
 > Este ficheiro contém os intervalos de endereços IP (incluindo intervalos de Computação, SQL e Armazenamento) utilizados no Centro de Transferências da Microsoft. Um ficheiro atualizado é publicado semanalmente, refletindo os intervalos implementados atualmente e as alterações futuras para os intervalos IP. Os novo intervalos que aparecem no ficheiro não serão utilizados nos centros de dados durante, pelo menos, uma semana. Transfira o ficheiro xml novo todas as semanas e efetue as alterações necessárias no seu site para identificar corretamente os serviços em execução no Azure. Os utilizadores Express Route poderão notar este ficheiro utilizado para atualizar o anúncio BGP do espaço Azure na primeira semana de cada mês. 
 > 
 
-<a id="creating-an-automation-account" class="xliff"></a>
-
-## Criar uma conta de Automatização
+## <a name="creating-an-automation-account"></a>Criar uma conta de Automatização
 
 Existem formas diferentes de criar uma conta de Automatização no portal do Azure.  A tabela seguinte apresenta cada tipo de experiência de implementação e as diferenças entre as mesmas.  
 
@@ -175,9 +155,7 @@ Existem formas diferentes de criar uma conta de Automatização no portal do Azu
 
 Este tópico explica-lhe como criar uma conta de Automatização e uma área de trabalho do OMS ao integrar a oferta de Controlo & Automatização.  Para criar uma conta de Automatização para fins de teste ou para pré-visualizar o serviço, reveja o seguinte artigo [Create standalone Automation account (Criar conta de Automatização autónoma)](automation-create-standalone-account.md).  
 
-<a id="create-automation-account-integrated-with-oms" class="xliff"></a>
-
-### Criar conta de Automatização integrada no OMS
+### <a name="create-automation-account-integrated-with-oms"></a>Criar conta de Automatização integrada no OMS
 O método recomendado para carregar a Automatização é selecionar a oferta de Automatização & Controlo do Mercado.  Este procedimento cria uma conta de Automatização e estabelece a integração com uma área de trabalho do OMS, incluindo a opção de instalar soluções de gestão que estão disponíveis com a oferta.  
 
 1. Inicie sessão no portal do Azure com uma conta que seja membro da função Administradores da Subscrição e coadministrador da subscrição.
@@ -211,9 +189,7 @@ O método recomendado para carregar a Automatização é selecionar a oferta de 
 
 Após a integração da oferta, pode começar a criar runbooks, trabalhar com soluções de gestão ativadas por si, implementar uma [Função de Trabalho de Runbook Híbrida](automation-hybrid-runbook-worker.md) ou começar a trabalhar com o [Log Analytics](https://docs.microsoft.com/azure/log-analytics) para recolher dados gerados pelos recursos em ambientes de cloud ou no local.   
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 * Pode confirmar que a sua nova conta de Automatização pode autenticar em relação a recursos do Azure, através da consulta de [test Azure Automation Run As account authentication (testar a autenticação da conta Run As de Automatização do Azure)](automation-verify-runas-authentication.md).
 * Para começar a criação de runbooks, reveja primeiro os [tipos de automatização de runbooks](automation-runbook-types.md) suportados e as considerações relacionadas antes de começar a criar.
 

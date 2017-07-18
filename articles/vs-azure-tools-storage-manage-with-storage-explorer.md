@@ -14,12 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/18/2016
 ms.author: tarcher
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a3ca1527eee068e952f81f6629d7160803b3f45a
-ms.openlocfilehash: fbcd35529c5d2360f5b0c9de4d3c9c4a08a0cc8f
+ms.translationtype: HT
+ms.sourcegitcommit: 2ad539c85e01bc132a8171490a27fd807c8823a4
+ms.openlocfilehash: 83a6543a8fd95139fdcb6c031979382b4736a4ad
 ms.contentlocale: pt-pt
-ms.lasthandoff: 04/27/2017
-
+ms.lasthandoff: 07/12/2017
 
 ---
 # <a name="get-started-with-storage-explorer-preview"></a>Introdução ao Explorador de Armazenamento (Pré-visualização)
@@ -113,7 +112,7 @@ Para a Prova de Conceito (POC) do Azure Stack, tem de exportar o certificado de 
     Os detalhes de cada campo são os seguintes:
 
     * **Nome do ambiente**: o campo pode ser personalizado pelo utilizador.
-    * **Autoridade**: o valor deve ser https://login.windows.net. Para o Azure China, utilize https://login.chinacloudapi.cn.
+    * **Autoridade**: o valor deve ser https://login.microsoftonline.com. Para o Azure China, utilize https://login.chinacloudapi.cn.
     * **ID de recurso de início de sessão**: execute um dos scripts do PowerShell abaixo para obter o valor:
 
         Se for administrador da cloud:

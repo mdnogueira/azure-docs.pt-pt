@@ -14,10 +14,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 10/01/2016
 ms.author: adrianha
-translationtype: Human Translation
-ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
-ms.openlocfilehash: f3b75c10ed0012d682562eb943cb67fc8176ddbb
-ms.lasthandoff: 12/07/2016
+ms.translationtype: HT
+ms.sourcegitcommit: f76de4efe3d4328a37f86f986287092c808ea537
+ms.openlocfilehash: e23a4f182e6bb0ba53927aa6195967c2464e4233
+ms.contentlocale: pt-pt
+ms.lasthandoff: 07/10/2017
 
 
 ---
@@ -46,7 +47,7 @@ No *App Service do Azure*, o código de back-end da *Aplicação Móvel* é exec
 * (Para Node.js) Tire partido de qualquer biblioteca JavaScript pura do ecossistema do Nó, incluindo bibliotecas MVC comuns
 
 ## <a name="access-on-premises-data-using-vnet"></a>Aceder a dados no local utilizando VNet
-Atualmente, os Mobile Services já permitem a utilização de Ligações Híbridas para o acesso a recursos no local. No entanto, existem situações em que uma solução VPN é preferencial. Com o *App Service do Azure* pode utilizar o Azure VNet para o seu código de back-end de Aplicação Móvel.
+Atualmente, os Serviços Móveis já permitem a utilização de Ligações Híbridas para o acesso a recursos no local. No entanto, existem situações em que uma solução VPN é preferencial. Com o *App Service do Azure* pode utilizar o Azure VNet para o seu código de back-end de Aplicação Móvel.
 
 ## <a name="use-your-favorite-backend-language"></a>Utilizar o idioma de back-end favorito
 O *App Service do Azure* oferece um suporte mais amplo e alargado para plataformas ASP.NET e Node.js, incluindo acesso aos tempos de execução mais recentes.

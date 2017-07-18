@@ -22,9 +22,11 @@ Os novos SKU de gateway simplificam os conjuntos de funcionalidades oferecidos e
 
 | **SKU**| **Funcionalidades**|
 | ---    | ---         |
-| VpnGw1<br>VpnGw2<br>VpnGw3|VPN com base em rota até 30 túneis* <br>P2S, BGP, ativo-ativo, política de IPsec/IKE personalizada, coexistência VPN/ExpressRoute <br><br>* Pode configurar "PolicyBasedTrafficSelectors" para se ligar a um gateway de VPN baseado em rota (VpnGw1, VpnGw2, VpnGw3) para vários dispositivos com firewall baseada na política local. Consulte [Gateways de ligação VPN para vários dispositivos VPN com base na política local com o PowerShell](../articles/vpn-gateway/vpn-gateway-connect-multiple-policybased-rm-ps.md) para obter detalhes. |
 |Básica   | Com base em rota: 10 túneis com P2S<br>Baseado em políticas (IKEv1): 1 túnel; Nenhum P2S|
+| VpnGw1, VpnGw2, VpnGw3 |VPN baseada em rota até 30 túneis (*) <br>P2S, BGP, ativo-ativo, política de IPsec/IKE personalizada, coexistência VPN/ExpressRoute |
 |        |             |
+
+(*) Pode configurar "PolicyBasedTrafficSelectors" para se ligar a um gateway de VPN baseada em rota (VpnGw1, VpnGw2, VpnGw3) para vários dispositivos com firewall baseada na política no local. Consulte [Gateways de ligação VPN para vários dispositivos VPN com base na política local com o PowerShell](../articles/vpn-gateway/vpn-gateway-connect-multiple-policybased-rm-ps.md) para obter detalhes.
 
 ###  <a name="resize"></a>Redimensionar dos SKU de gateway
 

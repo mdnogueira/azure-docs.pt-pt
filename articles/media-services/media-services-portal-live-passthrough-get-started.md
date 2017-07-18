@@ -1,5 +1,5 @@
 ---
-title: "Transmitir em fluxo com codificadores no local através do portal do Azure | Microsoft Docs"
+title: Transmitir em fluxo com codificadores no local com o portal do Azure | Microsoft Docs
 description: Este tutorial explica os passos para criar um Canal configurado para uma entrega pass-through.
 services: media-services
 documentationcenter: 
@@ -14,13 +14,15 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 01/23/2017
 ms.author: juliako
-translationtype: Human Translation
-ms.sourcegitcommit: 555e0b6340d09517bfd87efe209f0304f3266788
-ms.openlocfilehash: 0818c3124815b53119a5b2d43f16e3154afbc225
+ms.translationtype: HT
+ms.sourcegitcommit: f76de4efe3d4328a37f86f986287092c808ea537
+ms.openlocfilehash: b28488ac9037b0f0ff7df892b9c3a61167b1eceb
+ms.contentlocale: pt-pt
+ms.lasthandoff: 07/10/2017
 
 
 ---
-# <a name="how-to-perform-live-streaming-with-on-premise-encoders-using-the-azure-portal"></a>Como realizar uma transmissão em fluxo em direto com codificadores no local através do Portal do Azure
+# <a name="how-to-perform-live-streaming-with-on-premises-encoders-using-the-azure-portal"></a>Como realizar uma transmissão em fluxo em direto com codificadores no local através do Portal do Azure
 > [!div class="op_single_selector"]
 > * [Portal](media-services-portal-live-passthrough-get-started.md)
 > * [.NET](media-services-dotnet-live-encode-with-onpremises-encoders.md)
@@ -41,9 +43,9 @@ O seguinte é necessário para concluir o tutorial:
 
 * [Azure Media Services RTMP Support and Live Encoders (Suporte RTMP dos Serviços de Multimédia do Azure e Codificadores em Direto)](https://azure.microsoft.com/blog/2014/09/18/azure-media-services-rtmp-support-and-live-encoders/)
 * [Overview of Live Streaming using Azure Media Services (Descrição Geral da Transmissão em Fluxo em Direto com os Serviços de Multimédia do Azure)](media-services-manage-channels-overview.md)
-* [Live streaming with on-premise encoders that create multi-bitrate streams (Transmissão em fluxo em direto com codificadores no local que criam transmissões com velocidade de transmissão múltipla)](media-services-live-streaming-with-onprem-encoders.md)
+* [Transmissão em fluxo em direto com codificadores no local que criam transmissões com velocidade de transmissão múltipla](media-services-live-streaming-with-onprem-encoders.md)
 
-## <a name="a-idscenarioacommon-live-streaming-scenario"></a><a id="scenario"></a>Cenário comum de transmissão em fluxo em direto
+## <a id="scenario"></a>Cenário comum de transmissão em fluxo em direto
 Os passos seguintes descrevem as tarefas envolvidas na criação de aplicações de transmissão em fluxo em direto comuns que utilizam canais que estão configurados para entrega pass-through. Este tutorial mostra como criar e gerir um canal pass-through e eventos em direto.
 
 >[!NOTE]
@@ -100,7 +102,7 @@ Se pretende manter o conteúdo arquivado, mas não o quer manter disponível par
 ### <a name="to-use-the-portal-to-create-a-channel"></a>Utilizar o portal para criar um canal
 Esta secção mostra como utilizar a opção **Criação Rápida** para criar um canal pass-through.
 
-Para obter mais detalhes sobre canais pass-through, consulte [Transmissão em fluxo em direto com codificadores no local que criam transmissões em fluxo com velocidade de transmissão múltipla](media-services-live-streaming-with-onprem-encoders.md).
+Para obter mais detalhes sobre canais pass-through, veja [Transmissão em fluxo em direto com codificadores no local que criam transmissões em fluxo com velocidade de transmissão múltipla](media-services-live-streaming-with-onprem-encoders.md).
 
 1. No [portal do Azure](https://portal.azure.com/) selecione a sua conta de Serviços de Multimédia do Azure.
 2. Na janela **Definições**, clique em **Transmissão em Fluxo em Direto**. 
@@ -134,7 +136,7 @@ Para ver o evento, clique em **Ver** no Portal do Azure ou copie o URL de transm
 O evento em direto é convertido automaticamente para conteúdo a pedido quando parado.
 
 ## <a name="clean-up"></a>Limpeza
-Para obter mais detalhes sobre canais pass-through, consulte [Transmissão em fluxo em direto com codificadores no local que criam transmissões em fluxo com velocidade de transmissão múltipla](media-services-live-streaming-with-onprem-encoders.md).
+Para obter mais detalhes sobre canais pass-through, veja [Transmissão em fluxo em direto com codificadores no local que criam transmissões em fluxo com velocidade de transmissão múltipla](media-services-live-streaming-with-onprem-encoders.md).
 
 * Um canal pode ser parado apenas quando todos os eventos/programas no canal foram parados.  Assim que o Canal esteja parado, não é cobrado qualquer custo. Quando quiser reiniciar a transmissão, esta terá o mesmo URL de inserção, desta forma, não terá de reconfigurar o codificador.
 * Um canal pode ser eliminado apenas quando todos os eventos em direto canal tiverem sido eliminados.
@@ -153,10 +155,5 @@ Rever os percursos de aprendizagem dos Serviços de Multimédia
 
 ## <a name="provide-feedback"></a>Enviar comentários
 [!INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
-
-
-
-
-<!--HONumber=Jan17_HO4-->
 
 

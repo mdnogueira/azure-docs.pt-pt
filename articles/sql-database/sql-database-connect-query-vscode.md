@@ -18,22 +18,18 @@ ms.topic: hero-article
 ms.date: 06/20/2017
 ms.author: carlrab
 ms.translationtype: Human Translation
-ms.sourcegitcommit: f7479260c7c2e10f242b6d8e77170d4abe8634ac
-ms.openlocfilehash: bc43936310c48f4dad54c829c7511cf2ad5f83af
+ms.sourcegitcommit: f537befafb079256fba0529ee554c034d73f36b0
+ms.openlocfilehash: 4076b1e7ab3a70009217a1deff72da4bff0dc871
 ms.contentlocale: pt-pt
-ms.lasthandoff: 06/21/2017
+ms.lasthandoff: 07/08/2017
 
 
 ---
-<a id="azure-sql-database-use-visual-studio-code-to-connect-and-query-data" class="xliff"></a>
-
-# Base de Dados SQL do Azure: utilize o Visual Studio Code para ligar e consultar dados
+# <a name="azure-sql-database-use-visual-studio-code-to-connect-and-query-data"></a>Base de Dados SQL do Azure: utilize o Visual Studio Code para ligar e consultar dados
 
 O [Visual Studio Code](https://code.visualstudio.com/docs) é um editor de código gráfico para Linux, macOS e Windows que suporta extensões, incluindo a [extensão mssql](https://aka.ms/mssql-marketplace) para consultar o Microsoft SQL Server, a Base de Dados SQL do Azure e o SQL Data Warehouse. Este guia de introdução demonstra como utilizar o Visual Studio Code para ligar a uma base de dados SQL do Azure e, em seguida, utilizar as declarações de Transact-SQL para consultar, inserir, atualizar e eliminar dados na base de dados.
 
-<a id="prerequisites" class="xliff"></a>
-
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 
 Este guia de introdução utiliza como ponto de partida os recursos criados num destes guias de introdução:
 
@@ -43,13 +39,9 @@ Este guia de introdução utiliza como ponto de partida os recursos criados num 
 
 Antes de começar, certifique-se de que instalou a versão mais recente do [Visual Studio Code](https://code.visualstudio.com/Download) e carregou a [extensão mssql](https://aka.ms/mssql-marketplace). Para obter orientações sobre a instalação da extensão mssql, consulte [Install VS Code (Instalar VS Code)](https://docs.microsoft.com/sql/linux/sql-server-linux-develop-use-vscode#install-vs-code) e [mssql for Visual Studio Code (mssql para Visual Studio Code)](https://marketplace.visualstudio.com/items?itemName=ms-mssql.mssql). 
 
-<a id="configure-vs-code" class="xliff"></a>
+## <a name="configure-vs-code"></a>Configurar Código VS 
 
-## Configurar Código VS 
-
-<a id="mac-os" class="xliff"></a>
-
-### **Mac OS**
+### <a name="mac-os"></a>**Mac OS**
 Para macOS, tem de instalar o OpenSSL que é um pré-requisito do DotNet Core que essa extensão do mssql utiliza. Abra o terminal e introduza os comandos seguintes para instalar **brew**, **OpenSSL**. 
 
 ```bash
@@ -61,21 +53,15 @@ ln -s /usr/local/opt/openssl/lib/libcrypto.1.0.0.dylib /usr/local/lib/
 ln -s /usr/local/opt/openssl/lib/libssl.1.0.0.dylib /usr/local/lib/
 ```
 
-<a id="linux-ubuntu" class="xliff"></a>
-
-### **Linux (Ubuntu)**
+### <a name="linux-ubuntu"></a>**Linux (Ubuntu)**
 
 Nenhuma configuração especial necessária.
 
-<a id="windows" class="xliff"></a>
-
-### **Windows**
+### <a name="windows"></a>**Windows**
 
 Nenhuma configuração especial necessária.
 
-<a id="get-connection-information" class="xliff"></a>
-
-## Obter informações da ligação
+## <a name="sql-server-connection-information"></a>Informações de ligação do servidor SQL
 
 Obtenha as informações de ligação necessárias para ligar à base de dados SQL do Azure. Irá precisar do nome de servidor totalmente qualificado, do nome de base de dados e das informações de início de sessão nos seguintes procedimentos.
 
@@ -83,13 +69,11 @@ Obtenha as informações de ligação necessárias para ligar à base de dados S
 2. Selecione **Bases de Dados SQL** a partir do menu do lado esquerdo e clique na sua base de dados na página **Bases de Dados SQL**. 
 3. Na página **Overview (Descrição geral)** da sua base de dados, reveja o nome de servidor totalmente qualificado, como mostrado na imagem seguinte. Pode pairar sobre o nome do servidor para aparecer a opção **Clique para copiar**.
 
-   ![informações da ligação](./media/sql-database-get-started-portal/server-name.png) 
+   ![informações da ligação](./media/sql-database-connect-query-dotnet/server-name.png) 
 
 4. Se se tiver esquecido das informações de início de sessão do seu servidor da Base de Dados SQL do Azure, navegue para a página de servidor da Base de Dados SQL para visualizar o nome de administrador do servidor e, se necessário, repor a palavra-passe. 
 
-<a id="set-language-mode-to-sql" class="xliff"></a>
-
-## Definir modo do idioma para SQL
+## <a name="set-language-mode-to-sql"></a>Definir modo do idioma para SQL
 
 Defina o modo de idioma para **SQL** no Visual Studio Code, para ativar comandos mssql e IntelliSense T-SQL.
 
@@ -100,9 +84,7 @@ Defina o modo de idioma para **SQL** no Visual Studio Code, para ativar comandos
 
    ![Modo de idioma do SQL](./media/sql-database-connect-query-vscode/vscode-language-mode.png)
 
-<a id="connect-to-your-database" class="xliff"></a>
-
-## Ligar à base de dados
+## <a name="connect-to-your-database"></a>Ligar à base de dados
 
 Utilize o Visual Studio Code para estabelecer uma ligação ao servidor da Base de Dados SQL do Azure.
 
@@ -134,9 +116,7 @@ Utilize o Visual Studio Code para estabelecer uma ligação ao servidor da Base 
 
    ![Estado da ligação](./media/sql-database-connect-query-vscode/vscode-connection-status.png)
 
-<a id="query-data" class="xliff"></a>
-
-## Consultar dados
+## <a name="query-data"></a>Consultar dados
 
 Utilize o seguinte código para consultar os 20 melhores produtos por categoria com uma declaração Transact-SQL [SELECIONAR](https://msdn.microsoft.com/library/ms189499.aspx).
 
@@ -153,9 +133,7 @@ Utilize o seguinte código para consultar os 20 melhores produtos por categoria 
 
     ![Consulta](./media/sql-database-connect-query-vscode/query.png)
 
-<a id="insert-data" class="xliff"></a>
-
-## Inserir dados
+## <a name="insert-data"></a>Inserir dados
 
 Utilize o seguinte código para inserir um novo produto na tabela SalesLT.Product com uma declaração Transact-SQL [INSERIR](https://msdn.microsoft.com/library/ms174335.aspx).
 
@@ -183,9 +161,7 @@ Utilize o seguinte código para inserir um novo produto na tabela SalesLT.Produc
 
 2. Prima **CTRL+SHIFT+E** para inserir uma nova linha na tabela Produto.
 
-<a id="update-data" class="xliff"></a>
-
-## Atualizar dados
+## <a name="update-data"></a>Atualizar dados
 
 Utilize o seguinte código para atualizar o produto novo que foi adicionado anteriormente com uma declaração Transact-SQL [ATUALIZAR](https://msdn.microsoft.com/library/ms177523.aspx).
 
@@ -199,9 +175,7 @@ Utilize o seguinte código para atualizar o produto novo que foi adicionado ante
 
 2. Prima **CTRL+SHIFT+E** para atualizar a linha especificada na tabela Produto.
 
-<a id="delete-data" class="xliff"></a>
-
-## Eliminar dados
+## <a name="delete-data"></a>Eliminar dados
 
 Utilize o seguinte código para eliminar o produto novo que foi adicionado anteriormente com uma declaração Transact-SQL [ELIMINAR](https://msdn.microsoft.com/library/ms189835.aspx).
 
@@ -214,9 +188,7 @@ Utilize o seguinte código para eliminar o produto novo que foi adicionado anter
 
 2. Prima **CTRL+SHIFT+E** para eliminar a linha especificada na tabela Produto.
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 
 - Para ligar e consultar com o SQL Server Management Studio, veja [Connect and query with SSMS](sql-database-connect-query-ssms.md) (Ligar e consultar com o SSMS).
 - Para ler um artigo de revista MSDN sobre a utilização do Visual Studio Code, veja [Create a database IDE with MSSQL extension blog post](https://msdn.microsoft.com/magazine/mt809115) (Criar uma base de dados IDE com a mensagem de blogue de extensão do MSSQL).

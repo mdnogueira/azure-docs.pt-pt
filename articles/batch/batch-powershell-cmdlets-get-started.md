@@ -15,10 +15,11 @@ ms.workload: big-compute
 ms.date: 02/27/2017
 ms.author: tamram
 ms.custom: H1Hack27Feb2017
-translationtype: Human Translation
-ms.sourcegitcommit: aaf97d26c982c1592230096588e0b0c3ee516a73
-ms.openlocfilehash: 65c9d6c2b7a7c994a262d463d6a32b41c7e5c33a
-ms.lasthandoff: 04/27/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: f537befafb079256fba0529ee554c034d73f36b0
+ms.openlocfilehash: 5e1819a9f081284fa03e9355730689629166006f
+ms.contentlocale: pt-pt
+ms.lasthandoff: 07/08/2017
 
 
 ---
@@ -201,7 +202,7 @@ Em seguida, crie o conjunto e especifique o objeto de referência do pacote como
 
     New-AzureBatchPool -Id "PoolWithAppPackage" -VirtualMachineSize "Small" -CloudServiceConfiguration $configuration -BatchContext $context -ApplicationPackageReferences $appPackageReference
 
-Pode obter mais informações sobre os pacotes de aplicações em [Application deployment with Azure Batch application packages (Implementação de aplicações com pacotes de aplicações do Azure Batch)](batch-application-packages.md).
+Pode encontrar mais informações sobre pacotes de aplicações em [Implementar aplicações em nós de computação com pacotes de aplicações do Batch](batch-application-packages.md).
 
 > [!IMPORTANT]
 > Tem de [associar uma conta de armazenamento do Azure](#linked-storage-account-autostorage) à sua conta do Batch para utilizar pacotes de aplicações.
@@ -238,6 +239,6 @@ Atualizou as propriedades do conjunto no serviço Batch. Contudo, para implement
 
 ## <a name="next-steps"></a>Passos seguintes
 * Para obter exemplos e a sintaxe detalhada dos cmdlets, veja a [Referência de cmdlets do Azure Batch](/powershell/module/azurerm.batch/#batch).
-* Pode obter mais informações sobre as aplicações e os pacotes de aplicações no Batch, veja [Application deployment with Azure Batch application packages (Implementação de aplicações com pacotes de aplicações do Azure Batch)](batch-application-packages.md).
+* Para obter mais informações sobre as aplicações e os pacotes de aplicações no Batch, veja [Implementar aplicações em nós de computação com pacotes de aplicações do Batch](batch-application-packages.md).
 
 

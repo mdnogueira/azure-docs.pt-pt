@@ -13,21 +13,21 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 02/13/2017
+ms.date: 07/12/2017
 ms.author: cgronlun;tedway;olgali
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 97fa1d1d4dd81b055d5d3a10b6d812eaa9b86214
-ms.openlocfilehash: 247c26b3988664bcf93fb5face6514a3dc74cebc
+ms.translationtype: HT
+ms.sourcegitcommit: 54454e98a2c37736407bdac953fdfe74e9e24d37
+ms.openlocfilehash: a9b47429779417afa664156cd824aa044f7bf04c
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/11/2017
-
+ms.lasthandoff: 07/13/2017
 
 ---
-# <a name="introduction-to-azure-machine-learning-in-the-cloud"></a>Introdução ao Azure Machine Learning na cloud
-## <a name="what-is-machine-learning"></a>O que é o Machine Learning?
-Machine learning é uma técnica da ciência de dados que ajuda os computadores a aprender a partir de dados existentes para prever futuros comportamentos, resultados e tendências.  
+# <a name="introduction-to-machine-learning-in-the-azure-cloud"></a>Introdução ao Machine Learning na cloud do Azure
 
-Estes previsões ou predições do Machine Learning podem tornar as aplicações e dispositivos mais inteligentes. Quando faz compras online, o Machine Learning recomenda outros produtos que poderá gostar com base nos que já comprou. Quando o seu cartão de crédito é usado, o machine learning compara a transação com uma base de dados de transações e ajuda a detetar fraudes. Quando o robô aspirador limpa uma sala, o machine learning ajuda-o a decidir se a tarefa está concluída.
+## <a name="what-is-machine-learning"></a>O que é o Machine Learning?
+A aprendizagem automática é uma técnica da ciência de dados que permite aos computadores utilizar dados existentes para prever futuros comportamentos, resultados e tendências. Ao utilizarem a aprendizagem automática, os computadores aprendem sem serem explicitamente programados.
+
+As previsões ou predições da aprendizagem automática podem tornar as aplicações e os dispositivos mais inteligentes. Quando faz compras online, o Machine Learning recomenda outros produtos que poderá gostar com base nos que já comprou. Quando o seu cartão de crédito é usado, o machine learning compara a transação com uma base de dados de transações e ajuda a detetar fraudes. Quando o robô aspirador limpa uma sala, o machine learning ajuda-o a decidir se a tarefa está concluída.
 
 Para obter uma descrição resumida, experimente a série de vídeos [Ciência de Dados para Principiantes](machine-learning-data-science-for-beginners-the-5-questions-data-science-answers.md). Sem utilizar jargão ou matemática, a Ciência de Dados para Principiantes introduz a machine learning e orienta-o através de um modelo preditivo simples.
 

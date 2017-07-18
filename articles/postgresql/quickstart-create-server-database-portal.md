@@ -10,31 +10,25 @@ ms.service: postgresql-database
 ms.custom: mvc
 ms.topic: hero-article
 ms.date: 06/19/2017
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 7948c99b7b60d77a927743c7869d74147634ddbf
-ms.openlocfilehash: 7bbf70786bff83ad3cfae9cb9b893f41736874b5
+ms.translationtype: HT
+ms.sourcegitcommit: 54454e98a2c37736407bdac953fdfe74e9e24d37
+ms.openlocfilehash: 2b81b9e1ae2abfd332bd6048b7643b4245ca374b
 ms.contentlocale: pt-pt
-ms.lasthandoff: 06/20/2017
+ms.lasthandoff: 07/13/2017
 
 ---
 
-<a id="create-an-azure-database-for-postgresql-in-the-azure-portal" class="xliff"></a>
-
-# Criar uma Base de Dados do Azure para o PostgreSQL no portal do Azure
+# <a name="create-an-azure-database-for-postgresql-in-the-azure-portal"></a>Criar uma Base de Dados do Azure para o PostgreSQL no portal do Azure
 
 A Base de Dados do Azure para o PostgreSQL é um serviço gerido que lhe permite executar, gerir e dimensionar as bases de dados de alta disponibilidade do PostgreSQL na cloud. Este guia de introdução mostra-lhe como criar uma Base de Dados do Azure para o servidor PostgreSQL através do portal do Azure.
 
 Se não tiver uma subscrição do Azure, crie uma conta [gratuita](https://azure.microsoft.com/free/) antes de começar.
 
-<a id="log-in-to-the-azure-portal" class="xliff"></a>
-
-## Iniciar sessão no portal do Azure
+## <a name="log-in-to-the-azure-portal"></a>Iniciar sessão no portal do Azure
 
 Inicie sessão no [Portal do Azure](https://portal.azure.com).
 
-<a id="create-an-azure-database-for-postgresql" class="xliff"></a>
-
-## Criar uma Base de Dados do Azure para o PostgreSQL
+## <a name="create-an-azure-database-for-postgresql"></a>Criar uma Base de Dados do Azure para o PostgreSQL
 
 É criada uma Base de Dados do Azure para o servidor PostgreSQL com um conjunto definido de [recursos de armazenamento e computação](./concepts-compute-unit-and-storage.md). O servidor é criado dentro de um [grupo de recursos do Azure](../azure-resource-manager/resource-group-overview.md).
 
@@ -67,9 +61,7 @@ Siga estes passos para criar uma Base de Dados do Azure para o servidor PostgreS
    
   Por predefinição, é criada a base de dados **postgres** no servidor. A base de dados [postgres](https://www.postgresql.org/docs/9.6/static/app-initdb.html) é uma base de dados predefinida que se destina a ser utilizada por utilizadores, utilitários e aplicações de terceiros. 
 
-<a id="configure-a-server-level-firewall-rule" class="xliff"></a>
-
-## Configurar uma regra de firewall ao nível do servidor
+## <a name="configure-a-server-level-firewall-rule"></a>Configurar uma regra de firewall ao nível do servidor
 
 A Base de Dados do Azure para o serviço PostgreSQL cria uma firewall ao nível do servidor. Esta firewall impede que as aplicações e ferramentas externas estabeleçam ligação ao servidor e a quaisquer bases de dados no servidor, a menos que seja criada uma regra de firewall para abrir a firewall aos endereços IP específicos. 
 
@@ -88,9 +80,7 @@ A Base de Dados do Azure para o serviço PostgreSQL cria uma firewall ao nível 
   > O servidor PostgreSQL do Azure comunica através da porta 5432. Se estiver a tentar ligar a partir de uma rede empresarial, o tráfego de saída através da porta 5432 poderá não ser permitido pela firewall da rede. Se assim for, não poderá ligar ao servidor da Base de Dados SQL do Azure, a menos que o departamento de TI abra a porta 5432.
   >
 
-<a id="get-the-connection-information" class="xliff"></a>
-
-## Obter as informações da ligação
+## <a name="get-the-connection-information"></a>Obter as informações da ligação
 
 Quando criámos a nossa Base de Dados do Azure para o servidor PostgreSQL, também é criada a base de dados **postgres** predefinida. Para ligar ao servidor da base de dados, terá de fornecer as credenciais de acesso e as informações de anfitrião.
 
@@ -103,9 +93,7 @@ Quando criámos a nossa Base de Dados do Azure para o servidor PostgreSQL, tamb�
 
  ![Base de Dados do Azure para o PostgreSQL – Início de Sessão de Administrador do Servidor](./media/quickstart-create-database-portal/6-server-name.png)
 
-<a id="connect-to-postgresql-database-using-psql-in-cloud-shell" class="xliff"></a>
-
-## Ligar-se à base de dados do PostgreSQL com o psql no Cloud Shell
+## <a name="connect-to-postgresql-database-using-psql-in-cloud-shell"></a>Ligar-se à base de dados do PostgreSQL com o psql no Cloud Shell
 
 Agora, vamos utilizar o utilitário da linha de comandos psql para ligar à Base de Dados do Azure para o servidor PostgreSQL. 
 1. Inicie o Azure Cloud Shell através do ícone de terminal no painel de navegação superior.
@@ -116,12 +104,12 @@ Agora, vamos utilizar o utilitário da linha de comandos psql para ligar à Base
 
    ![Base de Dados do Azure para o PostgreSQL – Linha de Comandos Bash do Azure Shell](./media/quickstart-create-database-portal/8-bash.png)
 
-3. Na linha de comandos do Cloud Shell, estabeleça ligação à Base de Dados do Azure para o servidor PostgreSQL com os comandos psql. O formato seguinte é utilizado para estabelecer ligação a uma Base de Dados do Azure para o servidor PostgreSQL com o utilitário [psql](https://www.postgresql.org/docs/9.6/static/app-psql.html):
+3. Na linha de comandos do Cloud Shell, estabeleça ligação à Base de Dados do Azure para o servidor PostgreSQL, ao escrever os comandos psql na linha de comandos. O formato seguinte é utilizado para estabelecer ligação a uma Base de Dados do Azure para o servidor PostgreSQL com o utilitário [psql](https://www.postgresql.org/docs/9.6/static/app-psql.html):
    ```bash
    psql --host=<myserver> --port=<port> --username=<server admin login> --dbname=<database name>
    ```
 
-   Por exemplo, o comando seguinte estabelece ligação à base de dados predefinida, denominada **postgres**, no servidor PostgreSQL **mypgserver 20170401.postgres.database.azure.com** com as credenciais de acesso. Quando lhe for pedido, introduza a palavra-passe de administrador do servidor.
+   Por exemplo, o comando seguinte liga à base de dados predefinida com o nome **postgres** no servidor PostgreSQL **mypgserver-20170401.postgres.database.azure.com** com as credenciais de acesso. Utilize sempre a porta **5432** ao ligar. Quando lhe for pedido, introduza a palavra-passe de administrador do servidor. Utilize espaços entre os comutadores – no comando, conforme mostrado, mas não utilize espaços entre os sinais de igual e os valores de parâmetros.
 
    ```bash
    psql --host=mypgserver-20170401.postgres.database.azure.com --port=5432 --username=mylogin@mypgserver-20170401 --dbname=postgres
@@ -136,9 +124,7 @@ CREATE DATABASE mypgsqldb;
 \c mypgsqldb
 ```
 
-<a id="connect-to-postgresql-database-using-pgadmin" class="xliff"></a>
-
-## Ligar-se à base de dados do PostgreSQL com a pgAdmin
+## <a name="connect-to-postgresql-database-using-pgadmin"></a>Ligar-se à base de dados do PostgreSQL com a pgAdmin
 
 Para ligar ao servidor PostgreSQL do Azure com a ferramenta _pgAdmin_ da GUI
 1.  Inicie a aplicação _pgAdmin_ no computador cliente. Pode instalar a _pgAdmin_ a partir do site http://www.pgadmin.org/.
@@ -168,9 +154,7 @@ Para ligar ao servidor PostgreSQL do Azure com a ferramenta _pgAdmin_ da GUI
  ![pgAdmin – Criar – Base de Dados](./media/quickstart-create-database-portal/11-pgadmin-database.png)
 
 
-<a id="clean-up-resources" class="xliff"></a>
-
-## Limpar recursos
+## <a name="clean-up-resources"></a>Limpar recursos
 Limpe todos os recursos que criou no guia de introdução ao eliminar o [Grupo de recursos do Azure](../azure-resource-manager/resource-group-overview.md).
 
 > [!TIP]
@@ -184,9 +168,7 @@ Se apenas pretender eliminar o servidor recentemente criado:
 2.  Na página Descrição geral, clique no botão Eliminar no painel superior ![Base de Dados do Azure para o PostgreSQL – Eliminar o servidor](./media/quickstart-create-database-portal/12-delete.png)
 3.  Confirme o nome do servidor que pretende eliminar e veja as bases de dados incluídas que são afetadas. Escreva **mypgserver-20170401** na caixa de texto e, em seguida, clique em Eliminar.
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 > [!div class="nextstepaction"]
-> [Migrar a base de dados com as opções Exportar e Importar](./howto-migrate-using-export-and-import.md)
+> [Migrar a base de dados com Exportar e Importar](./howto-migrate-using-export-and-import.md)
 

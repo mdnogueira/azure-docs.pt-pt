@@ -12,28 +12,24 @@ ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 06/21/2017
+ms.date: 07/09/2017
 ms.author: magoedte
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 61fd58063063d69e891d294e627ae40cb878d65b
-ms.openlocfilehash: b4d5ab66db64a50d1b87edd4bf445e49004e67b4
+ms.translationtype: HT
+ms.sourcegitcommit: d941879aee6042b38b7f5569cd4e31cb78b4ad33
+ms.openlocfilehash: 8f83f5d13cb61709653f255c756dc78453073626
 ms.contentlocale: pt-pt
-ms.lasthandoff: 06/22/2017
+ms.lasthandoff: 07/10/2017
 
 
 ---
-<a id="update-management-solution-in-oms" class="xliff"></a>
-
-# Solução de Gestão de Atualizações no OMS
+# <a name="update-management-solution-in-oms"></a>Solução de Gestão de Atualizações no OMS
 
 ![Símbolo de Gestão de Atualizações](./media/oms-solution-update-management/update-management-symbol.png)
 
-A solução de Gestão de Atualizações no OMS permite-lhe gerir atualizações para os seus computadores Windows e Linux.  Pode rapidamente avaliar o estado das atualizações disponíveis em todos os computadores agente e iniciar o processo de instalação de atualizações necessárias para os servidores.
+A solução de Gestão de Atualizações do OMS permite-lhe gerir atualizações de segurança do sistema operativo para os computadores Windows e Linux implementados no Azure, ambientes locais ou outros fornecedores de serviços cloud.  Pode rapidamente avaliar o estado das atualizações disponíveis em todos os computadores agente e gerir o processo de instalação de atualizações necessárias para os servidores.
 
 
-<a id="solution-overview" class="xliff"></a>
-
-## Descrição geral da solução
+## <a name="solution-overview"></a>Descrição geral da solução
 Os computadores geridos pelo OMS utilizam o seguinte para fazer a implementação de avaliações e atualizações:
 
 * Agente do OMS para Windows ou Linux
@@ -41,16 +37,12 @@ Os computadores geridos pelo OMS utilizam o seguinte para fazer a implementaçã
 * Função de Trabalho de Runbook Híbrida da Automatização
 * Microsoft Update ou Windows Server Update Services para computadores Windows
 
-Os diagramas seguintes mostram uma vista conceptual do comportamento e do fluxo de dados com os quais a solução avalia e aplica as atualizações a todos os computadores Windows Server e Linux ligados numa área de trabalho.    
+Os diagramas seguintes mostram uma vista concetual do comportamento e do fluxo de dados com os quais a solução avalia e aplica as atualizações de segurança a todos os computadores Windows Server e Linux ligados numa área de trabalho.    
 
-<a id="windows-server" class="xliff"></a>
-
-#### Windows Server
+#### <a name="windows-server"></a>Windows Server
 ![Fluxo do processo de gestão de atualizações do Windows Server](media/oms-solution-update-management/update-mgmt-windows-updateworkflow.png)
 
-<a id="linux" class="xliff"></a>
-
-#### Linux
+#### <a name="linux"></a>Linux
 ![Fluxo do processo de gestão de atualizações do Linux](media/oms-solution-update-management/update-mgmt-linux-updateworkflow.png)
 
 Depois de o computador realizar uma análise relativamente à conformidade da atualização, o agente do OMS reencaminha as informações em massa para o OMS. Em computadores Windows, a análise de conformidade é realizada de 12 em 12 horas, por predefinição.  Para além da agenda da análise, a análise da conformidade da atualização é iniciada ao fim de 15 minutos, se o Microsoft Monitoring Agent (MMA) for reiniciado, antes da instalação da atualização e após a instalação da mesma.  Em computadores Linux, a análise de conformidade é realizada de três em três horas por predefinição e são iniciadas ao fim de 15 minutos após o agente MMA ser reiniciado.  
@@ -61,9 +53,7 @@ Pode criar uma implementação agendada para implementar e instalar atualizaçõ
 
 Na data e na hora especificadas na implementação de atualização, os computadores de destino executam a implementação em paralelo.  Primeiro, é realizada uma análise para verificar se as atualizações ainda são obrigatórias, que são depois instaladas.  É importante ter em conta que, relativamente a computadores com o cliente WSUS, se as atualizações não forem aprovadas no WSUS, a implementação das atualizações irá falhar.  Os resultados das atualizações aplicadas são reencaminhados para o OMS para serem processados e resumidos nos dashboards ou mediante a pesquisa nos eventos.     
 
-<a id="prerequisites" class="xliff"></a>
-
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 * A solução suporta a realização de avaliações de atualização do Windows Server 2008 e versões posteriores e implementações de atualizações no Windows Server 2008 R2 SP1 e versões posteriores.  Não são suportadas opções de instalação Server Core e Nano Server.
 
     > [!NOTE]
@@ -90,14 +80,10 @@ Na data e na hora especificadas na implementação de atualização, os computad
 
 Para obter mais informações sobre como instalar o Agente do OMS para Linux e transferir a versão mais recente, consulte [Operations Management Suite Agent for Linux](https://github.com/microsoft/oms-agent-for-linux) (Agente do Operations Management Suite para Linux).  Para obter informações sobre como instalar o Agente do OMS para Windows, consultar [Operations Management Suite Agent for Windows](../log-analytics/log-analytics-windows-agents.md) (Agente do Operations Management Suite para Windows).  
 
-<a id="solution-components" class="xliff"></a>
-
-## Componentes da solução
+## <a name="solution-components"></a>Componentes da solução
 Esta solução consiste nos recursos seguintes que são adicionados à sua conta de Automatização e a agentes ligados diretamente ou a grupos de gestão ligados do Operations Manager.
 
-<a id="management-packs" class="xliff"></a>
-
-### Pacotes de gestão
+### <a name="management-packs"></a>Pacotes de gestão
 Se o seu grupo de gestão do System Center Operations Manager estiver ligado a uma área de trabalho do OMS, são instalados os pacotes de gestão seguintes no Operations Manager.  Estes pacotes de gestão também são instalados em computadores Windows ligados diretamente após adicionar esta solução. Estes pacotes de gestão não envolvem qualquer configuração ou gestão.
 
 * Pacote de Informações de Avaliação de Atualização do Microsoft System Center Advisor (Microsoft.IntelligencePacks.UpdateAssessment)
@@ -106,16 +92,12 @@ Se o seu grupo de gestão do System Center Operations Manager estiver ligado a u
 
 Para obter mais informações sobre como são atualizados os pacotes de gestão da solução, veja [Connect Operations Manager to Log Analytics (Ligar o Operations Manager ao Log Analytics)](../log-analytics/log-analytics-om-agents.md).
 
-<a id="hybrid-worker-groups" class="xliff"></a>
-
-### Grupos de Função de Trabalho Híbrida
+### <a name="hybrid-worker-groups"></a>Grupos de Função de Trabalho Híbrida
 Depois de ativar esta solução, qualquer computador Windows ligado diretamente à sua área de trabalho do OMS é configurado automaticamente como uma Função de Trabalho de Runbook Híbrida para suportar os runbooks que estão incluídos nesta solução.  Cada computador Windows gerido pela solução será listado no painel Grupos de Função de Trabalho de Runbook Híbrida da conta de Automatização, seguindo a convenção de nomenclatura *Hostname FQDN_GUID*.  Não pode segmentar estes grupos com runbooks na sua conta, caso contrário, falharão. Estes grupos destinam-se apenas a suportar a solução de gestão.   
 
 No entanto, pode adicionar os computadores Windows a um grupo de Função de Trabalho de Runbook Híbrida na conta de Automatização para suportar runbooks de Automatização, desde que esteja a utilizar a mesma conta para a solução e a subscrição do grupo de Função de Trabalho de Runbook Híbrida.  Esta funcionalidade foi adicionada à versão 7.2.12024.0 da Função de Trabalho de Runbook Híbrida.  
 
-<a id="configuration" class="xliff"></a>
-
-## Configuração
+## <a name="configuration"></a>Configuração
 Execute os seguintes passos para adicionar a solução de Gestão de Atualizações à sua área de trabalho do OMS e confirmar que os agentes estão a reportar. Os agentes do Windows já ligados à área de trabalho são adicionados automaticamente, sem configurações adicionais.
 
 É possível implementar a solução utilizando os seguintes métodos:
@@ -125,9 +107,7 @@ Execute os seguintes passos para adicionar a solução de Gestão de Atualizaç�
 
 Se já tiver associado uma conta de Automatização a uma área de trabalho do OMS no mesmo grupo de recursos e na mesma região, selecionar Automatização e Controlo verificará a sua configuração e instalará apenas a solução e configurá-la-á em ambos os serviços.  Selecionar a solução Gestão de Atualizações no Azure Marketplace proporciona o mesmo comportamento.  Se não tiver nenhum dos serviços implementado na sua subscrição, siga os passos no painel **Criar Nova Solução** e confirme que pretende instalar as outras soluções pré-selecionadas recomendadas.  Opcionalmente, pode adicionar a solução Gestão de Atualizações à sua área de trabalho do OMS através dos passos descritos em [Add OMS solutions](../log-analytics/log-analytics-add-solutions.md) (Adicionar soluções do OMS), na Galeria de Soluções.  
 
-<a id="confirm-oms-agents-and-operations-manager-management-group-connected-to-oms" class="xliff"></a>
-
-### Confirmar os agentes OMS e o grupo de gestão do Operations Manager ligados ao OMS
+### <a name="confirm-oms-agents-and-operations-manager-management-group-connected-to-oms"></a>Confirmar os agentes OMS e o grupo de gestão do Operations Manager ligados ao OMS
 
 Para confirmar que o Agente do OMS ligado diretamente para Linux e Windows está a comunicar com o OMS, pode executar a pesquisa de registos seguinte ao fim de alguns minutos:
 
@@ -152,12 +132,8 @@ Os agentes do Linux adicionados recentemente mostrarão o estado **Atualizado** 
 
 Para confirmar se um grupo de gestão do Operations Management está a comunicar com o OMS, veja [Validate Operations Manager Integration with OMS](../log-analytics/log-analytics-om-agents.md#validate-operations-manager-integration-with-oms) (Validar a Integração do Operations Manager no OMS).
 
-<a id="data-collection" class="xliff"></a>
-
-## Recolha de dados
-<a id="supported-agents" class="xliff"></a>
-
-### Agentes suportados
+## <a name="data-collection"></a>Recolha de dados
+### <a name="supported-agents"></a>Agentes suportados
 A tabela seguinte descreve as origens ligadas que são suportadas por esta solução.
 
 | Origem Ligada | Suportado | Descrição |
@@ -167,32 +143,24 @@ A tabela seguinte descreve as origens ligadas que são suportadas por esta solu�
 | Grupo de gestão do Operations Manager |Sim |A solução recolhe informações sobre atualizações do sistema de agentes num grupo de gestão ligado.<br>Não é necessária uma ligação direta a partir do agente do Operations Manager ao Log Analytics. Os dados são reencaminhados do grupo de gestão para o repositório do OMS. |
 | Conta de armazenamento do Azure |Não |O armazenamento do Azure não inclui informações sobre atualizações do sistema. |
 
-<a id="collection-frequency" class="xliff"></a>
-
-### Frequência da recolha
+### <a name="collection-frequency"></a>Frequência da recolha
 Em cada computador Windows gerido, é feita uma análise duas vezes por dia. A cada 15 minutos, a API do Windows é chamada para consultar a hora da última atualização para determinar se o estado foi alterado e, se for esse o caso, é iniciada uma análise de conformidade.  Em cada computador Linux gerido, é feita uma análise de três em três horas.
 
 O dashboard pode demorar entre 30 minutos a seis horas a apresentar os dados atualizados a partir dos computadores geridos.   
 
-<a id="using-the-solution" class="xliff"></a>
-
-## Utilizar a solução
+## <a name="using-the-solution"></a>Utilizar a solução
 Quando adiciona a solução de Gestão de Atualizações à sua área de trabalho do OMS, é adicionado o mosaico **Gestão de Atualizações** ao dashboard do OMS. Este mosaico apresenta uma contagem e uma representação gráfica do número de computadores no seu ambiente e a respetiva conformidade de atualização.<br><br>
 ![Mosaico de Resumo da Gestão de Atualizações](media/oms-solution-update-management/update-management-summary-tile.png)  
 
 
-<a id="viewing-update-assessments" class="xliff"></a>
-
-## Ver avaliações de atualizações
+## <a name="viewing-update-assessments"></a>Ver avaliações de atualizações
 Clique no mosaico **Gestão de Atualizações** para abrir o dashboard **Gestão de Atualizações**.<br><br> ![Dashboard de Resumo de Gestão de Atualizações](./media/oms-solution-update-management/update-management-dashboard.png)<br>
 
 Este dashboard mostra uma análise detalhada dos estados de atualizações categorizados por tipo de sistema operativo e classificação de atualização - crítica, segurança ou outra (como uma atualização de definição). O mosaico **Implementações de Atualização**, quando selecionado, redireciona-o para a página Implementações de Atualização, onde pode ver agendas, implementações que estão a ser executadas, implementações concluídas ou agendar implementações novas.  
 
 Pode executar uma pesquisa de registos que devolve todos os registos, clicando no mosaico específico, ou, para executar uma consulta de uma categoria específica e com critérios predefinidos, selecione uma da lista disponível na coluna **Consultas de Atualização Comuns**.    
 
-<a id="installing-updates" class="xliff"></a>
-
-## Instalar as atualizações
+## <a name="installing-updates"></a>Instalar as atualizações
 Depois de terem sido avaliadas as atualizações para todos os computadores Linux e Windows na sua área de trabalho, pode instar as atualizações obrigatórias ao criar uma *Implementação de Atualização*.  Uma implementação de atualização é uma instalação agendada de atualizações necessárias num ou mais computadores.  Especifique a data e a hora da implementação, bem como um computador ou grupo de computadores que devem ser incluídos no âmbito da mesma.  Para saber mais sobre grupos de computadores, veja [Computer groups in Log Analytics](../log-analytics/log-analytics-computer-groups.md) (Grupos de computadores no Log Analytics).  Se incluir grupos de computadores na sua implementação de atualizações, a adesão ao grupo é avaliada apenas uma vez no momento da criação da agenda.  As alterações subsequentes a um grupo não são refletidas.  Para contornar este problema, elimine a implementação da atualização agendada e recrie-a.
 
 > [!NOTE]
@@ -200,9 +168,7 @@ Depois de terem sido avaliadas as atualizações para todos os computadores Linu
 
 Para máquinas virtuais criadas a partir de imagens de Red Hat Enterprise Linux (RHEL) a pedido disponíveis no Azure Marketplace, estão registadas para aceder à [Infraestrutura de Atualização do Red Hat (RHUI)](../virtual-machines/virtual-machines-linux-update-infrastructure-redhat.md) implementada no Azure.  Qualquer outra distribuição de Linux tem de ser atualizada a partir do repositório de ficheiros online distros, de acordo com os respetivos métodos suportados.  
 
-<a id="viewing-update-deployments" class="xliff"></a>
-
-### Ver as implementações de atualizações
+### <a name="viewing-update-deployments"></a>Ver as implementações de atualizações
 Clique no mosaico **Implementação de Atualização** para ver a lista de implementações de atualizações existentes.  Estão agrupadas por estado – **Agendada**, **Em Execução** e **Concluída**.<br><br> ![Página de Agenda de Implementações de Atualizações](./media/oms-solution-update-management/update-updatedeployment-schedule-page.png)<br>  
 
 As propriedades apresentadas para cada Implementação de Atualização são descritas na tabela seguinte.
@@ -228,9 +194,7 @@ Selecione uma Implementação de Atualizações para ver o ecrã de detalhes, qu
 | Atualizações do Windows |Mostra as atualizações do Windows incluídas na Implementação de Atualizações e o respetivo estado de instalação por cada atualização.  Selecione uma atualização para executar uma pesquisa de registos que devolva todos os registos de atualização dessa atualização específica ou clique no estado para executar uma pesquisa de registos que devolva todos os registos de atualização da implementação. |
 | Atualizações do Linux |Mostra as atualizações do Linux incluídas na Implementação de Atualizações e o respetivo estado de instalação por cada atualização.  Selecione uma atualização para executar uma pesquisa de registos que devolva todos os registos de atualização dessa atualização específica ou clique no estado para executar uma pesquisa de registos que devolva todos os registos de atualização da implementação. |
 
-<a id="creating-an-update-deployment" class="xliff"></a>
-
-### Criar uma Implementação de Atualizações
+### <a name="creating-an-update-deployment"></a>Criar uma Implementação de Atualizações
 Crie uma Implementação de Atualizações nova ao clicar no botão **Adicionar**, na parte superior do ecrã, para abrir a página **Nova Implementação de Atualizações**.  Tem de indicar valores para as propriedades da tabela seguinte.
 
 | Propriedade | Descrição |
@@ -244,21 +208,15 @@ Crie uma Implementação de Atualizações nova ao clicar no botão **Adicionar*
 
 <br><br> ![Página Nova Implementação de Atualizações](./media/oms-solution-update-management/update-newupdaterun-page.png)
 
-<a id="time-range" class="xliff"></a>
-
-### Intervalo de tempo
+### <a name="time-range"></a>Intervalo de tempo
 Por predefinição, o âmbito dos dados analisados na solução de Gestão de Atualizações são todos os grupos de gestão ligados e gerados durante o último um dia.
 
 Para alterar o intervalo de tempo dos dados, selecione **Dados com base em**, na parte superior do dashboard. Pode selecionar registos criados ou atualizados nos últimos sete dias, um dia ou seis horas. Também pode selecionar **Personalizado** e especificar um intervalo de datas personalizado.
 
-<a id="log-analytics-records" class="xliff"></a>
-
-## Registos do Log Analytics
+## <a name="log-analytics-records"></a>Registos do Log Analytics
 A solução de Gestão de Atualizações cria dois tipos de registos no repositório do OMS.
 
-<a id="update-records" class="xliff"></a>
-
-### Registos de atualizações
+### <a name="update-records"></a>Registos de atualizações
 É criado um registo com um tipo de **Atualização** para cada atualização que esteja instalada ou que seja necessária para cada computador. Os registos de atualizações têm as propriedades da tabela seguinte.
 
 | Propriedade | Descrição |
@@ -299,9 +257,7 @@ Na vista **Lista**, clique na ligação **Vista**, junto ao KBID, para abrir o a
 
 ![Vista de Lista da Pesquisa de Registos com o Mosaico Tipo de Registo de Atualização](./media/oms-solution-update-management/update-la-view-list.png)
 
-<a id="updatesummary-records" class="xliff"></a>
-
-### Registos UpdateSummary
+### <a name="updatesummary-records"></a>Registos UpdateSummary
 É criado um registo com o tipo de **UpdateSummary** em cada computador agente do Windows. Este registo é atualizado sempre que são analisadas atualizações no computador. Os registos **UpdateSummary** têm as propriedades da tabela seguinte.
 
 | Propriedade | Descrição |
@@ -324,9 +280,7 @@ Na vista **Lista**, clique na ligação **Vista**, junto ao KBID, para abrir o a
 | WindowsUpdateSetting |A definição que define como o computador vai instalar as atualizações importantes.<br>Os valores possíveis são:<br>- Desativado<br>- Notificar antes da instalação<br>- Instalação agendada |
 | WSUSServer |O URL do servidor WSUS, se o computador estiver configurado para o utilizar. |
 
-<a id="sample-log-searches" class="xliff"></a>
-
-## Pesquisas de registo de exemplo
+## <a name="sample-log-searches"></a>Pesquisas de registo de exemplo
 A tabela seguinte disponibiliza pesquisas de registos de exemplo para registos de atualizações que esta solução recolhe.
 
 | Consulta | Descrição |
@@ -353,22 +307,16 @@ A tabela seguinte disponibiliza pesquisas de registos de exemplo para registos d
 | Type:UpdateRunProgress UpdateRunName="DeploymentName" &#124; measure Count() by Computer |Computadores que foram atualizados nesta execução de atualizações (substitua o valor pelo nome da sua Implementação de Atualizações) | 
 | Type=Update and OSType=Linux and OSName = Ubuntu &#124; measure count() by Computer |Lista de todos os computadores “Ubuntu” com eventuais atualizações disponíveis | 
 
-<a id="troubleshooting" class="xliff"></a>
-
-## Resolução de problemas
+## <a name="troubleshooting"></a>Resolução de problemas
 
 Esta secção disponibiliza informações para ajudar a resolver problemas com a solução Gestão de Atualizações.  
 
-<a id="how-do-i-troubleshoot-update-deployments" class="xliff"></a>
-
-### Como posso resolver problemas com as implementações de atualizações?
+### <a name="how-do-i-troubleshoot-update-deployments"></a>Como posso resolver problemas com as implementações de atualizações?
 Pode ver os resultados do runbook responsável pela implementação das atualizações incluídas na implementação de atualizações agendada no painel Tarefas da sua conta de Automatização que esteja associada à área de trabalho do OMS que suporte esta solução.  O runbook **Patch-MicrosoftOMSComputer** é um runbook subordinado que segmenta um computador gerido específico e rever o Fluxo verboso apresentará informações detalhadas relativas a essa implementação.  O resultado apresentará que atualizações são aplicáveis, o estado da transferência, o estado da instalação e detalhes adicionais.<br><br> ![Estado da tarefa de Implementação de Atualizações](media/oms-solution-update-management/update-la-patchrunbook-outputstream.png)<br>
 
 Para obter mais informações, veja [Automation runbook output and messages](../automation/automation-runbook-output-and-messages.md) (Resultado e mensagens do runbook de Automatização).   
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 * Utilizar as Pesquisas de Registos no [Log Analytics](../log-analytics/log-analytics-log-searches.md) para ver dados de atualizações detalhados.
 * [Criar os seus próprios dashboards](../log-analytics/log-analytics-dashboards.md), que mostram a conformidade das atualizações para os seus computadores geridos.
 * [Criar alertas](../log-analytics/log-analytics-alerts.md) para quando são detetadas atualizações críticas em falta nos computadores ou quando um computador tiver as atualizações automáticas desativadas.  

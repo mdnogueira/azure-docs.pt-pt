@@ -16,16 +16,14 @@ ms.date: 06/28/2017
 ms.author: tamram
 ms.custom: H1Hack27Feb2017
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 3716c7699732ad31970778fdfa116f8aee3da70b
-ms.openlocfilehash: 0120a63ed398cf3e0e91cd4329c4024ba2fbfdca
+ms.sourcegitcommit: f537befafb079256fba0529ee554c034d73f36b0
+ms.openlocfilehash: 93f80018d71368c800abd3dceb42b2ab51e60659
 ms.contentlocale: pt-pt
-ms.lasthandoff: 06/30/2017
+ms.lasthandoff: 07/08/2017
 
 
 ---
-<a id="develop-large-scale-parallel-compute-solutions-with-batch" class="xliff"></a>
-
-# Desenvolver soluções de computação paralelas em grande escala com o Batch
+# <a name="develop-large-scale-parallel-compute-solutions-with-batch"></a>Desenvolver soluções de computação paralelas em grande escala com o Batch
 
 Nesta descrição geral dos componentes principais do serviço Azure Batch, vamos discutir as funcionalidades e os recursos principais do serviço que os programadores do Batch podem utilizar para criar soluções de computação paralelas em grande escala.
 
@@ -36,9 +34,7 @@ Se está a desenvolver uma aplicação computacional distribuída ou um serviço
 >
 >
 
-<a id="batch-service-workflow" class="xliff"></a>
-
-## Fluxo de trabalho do serviço Batch
+## <a name="batch-service-workflow"></a>Fluxo de trabalho do serviço Batch
 O fluxo de trabalho detalhado que se segue é típico de quase todos os serviços e aplicações que utilizam o serviço Batch para processar cargas de trabalho paralelas:
 
 1. Carregue os **ficheiros de dados** que quer processar para uma conta do [Armazenamento do Azure][azure_storage]. O Batch inclui suporte incorporado para aceder ao Armazenamento de Blobs do Azure e as suas tarefas podem transferir estes ficheiros para [nós de computação](#compute-node) quando são executadas.
@@ -55,9 +51,7 @@ As secções seguintes abordam estes e os outros recursos do Batch permitem o se
 >
 >
 
-<a id="batch-service-resources" class="xliff"></a>
-
-## Recursos do serviço Batch
+## <a name="batch-service-resources"></a>Recursos do serviço Batch
 Todas as soluções que utilizam o serviço Batch precisam de alguns dos recursos seguintes, como contas, nós de computação, conjuntos, trabalhos e tarefas. Outros recursos, como as agendas de trabalhos e os pacotes de aplicações, são funcionalidades úteis, mas opcionais.
 
 * [Conta](#account)
@@ -75,9 +69,7 @@ Todas as soluções que utilizam o serviço Batch precisam de alguns dos recurso
   * [Dependências de tarefas](#task-dependencies)
 * [Pacotes de aplicações](#application-packages)
 
-<a id="account" class="xliff"></a>
-
-## Conta
+## <a name="account"></a>Conta
 Uma conta do Batch é uma entidade identificada exclusivamente no âmbito do serviço Batch. Todo o processamento está associado a uma conta do Batch.
 
 Pode criar uma conta do Azure Batch através do [portal do Azure](batch-account-create-portal.md) ou através de programação, como com a [Biblioteca .NET de Gestão de Batch](batch-management-dotnet.md). Ao criar a conta, pode associar uma conta de armazenamento do Azure.
@@ -109,9 +101,7 @@ Para decidir que configuração de conta utilizar, considere qual destas melhor 
 >
 
 
-<a id="compute-node" class="xliff"></a>
-
-## Nó de computação
+## <a name="compute-node"></a>Nó de computação
 Um nó de computação é uma máquina virtual (VM) ou uma VM de um serviço cloud do Azure dedicada ao processamento de uma parte da carga de trabalho da sua aplicação. O tamanho de um nó determina o número de núcleos de CPU, a capacidade da memória e o tamanho do sistema de ficheiros local que está alocado ao nó. Pode criar conjuntos de nós do Windows ou Linux ao utilizar imagens dos Serviços Cloud do Azure ou imagens de Máquinas Virtuais do Azure Marketplace. Veja a secção [Conjunto](#pool), abaixo, para obter mais informações sobre estas opções.
 
 Os nós podem executar qualquer executável ou script que seja suportado pelo ambiente dos respetivos sistemas operativos. Incluem-se \*.exe, \*. cmd, \*. bat e scripts do PowerShell para o Windows, e binários, shell e scripts Python para Linux.
@@ -122,9 +112,7 @@ Todos os nós de computação do Batch incluem também:
 * Definições de **Firewall** que são configuradas para controlar o acesso.
 * [Acesso remoto](#connecting-to-compute-nodes) para Windows (protocolo RDP (Remote Desktop Protocol)) e nós Linux (Secure Shell (SSH)).
 
-<a id="pool" class="xliff"></a>
-
-## Conjunto
+## <a name="pool"></a>Conjunto
 Um conjunto é uma coleção de nós na qual a sua aplicação é executada. O conjunto pode ser criado manualmente por si ou pelo serviço Batch automaticamente quando especifica o trabalho a ser realizado. Pode criar e gerir um conjunto que cumpra os requisitos de recursos da sua aplicação. Os conjuntos só podem ser utilizados pela conta do Batch em que foram criados. Uma conta do Batch pode ter mais do que um conjunto.
 
 Conjuntos do Azure Batch criados com base na plataforma de computação principal do Azure. Eles proporcionam alocação em grande escala, instalação de aplicações, distribuição de dados, monitorização de estado de funcionamento e o ajuste flexível do número de nós de computação dentro de um conjunto ([dimensionamento](#scaling-compute-resources)).
@@ -150,9 +138,7 @@ Cada uma destas definições está descrita mais detalhadamente nas secções se
 >
 >As contas do Batch criadas com a configuração Subscrição do Utilizador não observam as quotas de serviço do Batch. Em vez disso, partilham a quota de núcleos da subscrição especificada. Para obter mais informações, veja [Virtual Machines limits](../azure-subscription-service-limits.md#virtual-machines-limits) (Limites das Máquinas Virtuais), em [Azure subscription and service limits, quotas, and constraints](../azure-subscription-service-limits.md) (Limites, quotas e limitações das subscrições e serviços do Azure).
 
-<a id="compute-node-operating-system-and-version" class="xliff"></a>
-
-### Sistema operativo e versão do nó de computação
+### <a name="compute-node-operating-system-and-version"></a>Sistema operativo e versão do nó de computação
 
 Quando cria um agrupamento do Batch, pode especificar a configuração da máquina virtual do Azure e o tipo de sistema operativo que quer executar em cada nó de computação do agrupamento. Os dois tipos de configurações disponíveis no Batch são:
 
@@ -170,9 +156,7 @@ Quando cria um agrupamento do Batch, pode especificar a configuração da máqui
 
 Veja a secção [Conta](#account) para obter mais informações sobre como definir o modo de alocação de agrupamentos durante a criação de uma conta do Batch.
 
-<a id="custom-images-for-virtual-machine-pools" class="xliff"></a>
-
-#### Imagens personalizadas para agrupamentos de Máquinas Virtuais
+#### <a name="custom-images-for-virtual-machine-pools"></a>Imagens personalizadas para agrupamentos de Máquinas Virtuais
 
 Para utilizar imagens personalizadas para os seus agrupamentos de Máquinas Virtuais, crie a conta do Batch com a configuração Subscrição de Utilizador. Com esta configuração, os agrupamentos do Batch são alocados à subscrição na qual a conta reside. Veja a secção [Conta](#account) para obter mais informações sobre como definir o modo de alocação de agrupamentos durante a criação de uma conta do Batch.
 
@@ -199,9 +183,7 @@ Para criar um agrupamento a partir de uma imagem personalizada através do porta
 6. Para verificar se um agrupamento se baseia numa imagem personalizada, veja a propriedade **Operating System** na secção de resumo do recurso do painel **Agrupamento**. O valor desta propriedade deve ser **Imagem de VM personalizada**.
 7. São apresentados no painel **Propriedades** do agrupamento todos os VHDs personalizados associados a esse agrupamento.
 
-<a id="compute-node-type-and-target-number-of-nodes" class="xliff"></a>
-
-### Tipo de nó de comutação e número de nós de destino
+### <a name="compute-node-type-and-target-number-of-nodes"></a>Tipo de nó de comutação e número de nós de destino
 
 Quando cria um conjunto, pode especificar quais os tipos de nós de computação que pretende e o número de destino de cada um. Os dois tipos de nós de computação são:
 
@@ -219,9 +201,7 @@ O número de nós de computação é referido com *destino* porque, em algumas s
 
 Para obter informações sobre os preços dos nós de computação de baixa prioridade e dedicados, veja [Preços de Batch](https://azure.microsoft.com/pricing/details/batch/).
 
-<a id="size-of-the-compute-nodes" class="xliff"></a>
-
-### Tamanho dos nós de computação
+### <a name="size-of-the-compute-nodes"></a>Tamanho dos nós de computação
 
 Os tamanhos dos nós de computação de **Configuração de Serviços Cloud** estão listados em [Sizes for Cloud Services (Tamanhos dos Serviços Cloud)](../cloud-services/cloud-services-sizes-specs.md). O Batch suporta todos os tamanhos de Serviços Cloud, exceto `ExtraSmall`, `STANDARD_A1_V2`, e `STANDARD_A2_V2`.
 
@@ -231,15 +211,11 @@ Ao selecionar um tamanho de nó de computação, considere as características e
 
 Todos os nós num conjunto têm de ter o mesmo tamanho. Se quiser executar aplicações com requisitos de sistema e/ou níveis de carga diferentes, recomendamos utilizar conjuntos separados.
 
-<a id="scaling-policy" class="xliff"></a>
-
-### Política de dimensionamento
+### <a name="scaling-policy"></a>Política de dimensionamento
 
 Para cargas de trabalho dinâmicas, pode escrever e aplicar uma [fórmula de dimensionamento automático](#scaling-compute-resources) num conjunto. O serviço Batch avalia periodicamente a fórmula e ajusta o número de nós dentro do conjunto com base em vários parâmetros de conjuntos, trabalhos e tarefas que pode especificar.
 
-<a id="task-scheduling-policy" class="xliff"></a>
-
-### Política de agendamento de tarefas
+### <a name="task-scheduling-policy"></a>Política de agendamento de tarefas
 
 A opção de configuração [máximo de tarefas por nó](batch-parallel-node-tasks.md) determina o número máximo de tarefas que podem ser executadas em paralelo em cada nó de computação dentro do conjunto.
 
@@ -247,9 +223,7 @@ A configuração predefinida especifica que uma tarefa seja executada num nó de
 
 Também pode especificar um *tipo de preenchimento*, que determina se o Batch propaga as tarefas uniformemente em todos os nós de um conjunto ou se preenche cada nó com o número máximo de tarefas antes de atribuir tarefas a outro nó.
 
-<a id="communication-status-for-compute-nodes" class="xliff"></a>
-
-### Estado de comunicação dos nós de computação
+### <a name="communication-status-for-compute-nodes"></a>Estado de comunicação dos nós de computação
 
 Na maioria dos cenários, as tarefas funcionam de forma independente e não têm de comunicar entre si. Contudo, poderão existir algumas aplicações nas quais as tarefas têm de comunicar, como em [cenários de MPI](batch-mpi.md).
 
@@ -257,28 +231,25 @@ Pode configurar um conjunto para permitir a **comunicação entre os nós**, par
 
 Tenha em conta que a comunicação internós também tem impacto na colocação dos nós dentro dos clusters e pode limitar o número máximo de nós num conjunto, devido a restrições de implementação. Se a comunicação entre nós não for necessária para a sua aplicação, o serviço Batch pode alocar um número de nós potencialmente maior ao conjunto a partir de muitos clusters e datacenters diferentes, para proporcionar um poder de processamento paralelo superior.
 
-<a id="start-tasks-for-compute-nodes" class="xliff"></a>
-
-### Tarefas de início dos nós de computação
+### <a name="start-tasks-for-compute-nodes"></a>Tarefas de início dos nós de computação
 
 A *tarefa inicial* opcional é executada em cada nó à medida que é adicionado ao conjunto, e sempre que é reiniciado ou sempre que a respetiva imagem for recriada. A tarefa inicial é especialmente útil para preparar nós de computação para a execução de tarefas, como instalar as aplicações que as suas tarefas executam nos nós de computação.
 
-<a id="application-packages" class="xliff"></a>
+### <a name="application-packages"></a>Pacotes de aplicações
 
-### Pacotes de aplicações
+Pode especificar [pacotes de aplicações](#application-packages) para implementar os nós de computação no conjunto. Os pacotes de aplicações fornecem uma implementação simplificada e o controlo de versões das aplicações que as suas tarefas executam. Os pacotes de aplicações que especificou para um conjunto são instalados em cada nó associado a esse conjunto, e sempre que um nó é reiniciado ou sempre que a respetiva imagem for recriada.
 
-Pode especificar [pacotes de aplicações](#application-packages) para implementar os nós de computação no conjunto. Os pacotes de aplicações fornecem uma implementação simplificada e o controlo de versões das aplicações que as suas tarefas executam. Os pacotes de aplicações que especificou para um conjunto são instalados em cada nó associado a esse conjunto, e sempre que um nó é reiniciado ou sempre que a respetiva imagem for recriada. Os pacotes de aplicações não são atualmente suportados nos nós de computação do Linux.
+> [!NOTE]
+> Os pacotes de aplicações são suportados em todos os conjuntos do Batch criados após 5 de Julho de 2017. Só são suportados em conjuntos do Batch criados entre 10 de Março de 2016 e 5 de Julho de 2017 se o conjunto tiver sido criado com uma configuração de Serviço Cloud. Os conjuntos do Batch criados antes de 10 de Março de 2016 não suportam pacotes de aplicações. Para obter mais informações sobre a utilização de pacotes de aplicações para implementar as aplicações em nós do Batch, veja [Implementar aplicações em nós de computação com pacotes de aplicações do Batch](batch-application-packages.md).
+>
+>
 
-<a id="network-configuration" class="xliff"></a>
-
-### Configuração da rede
+### <a name="network-configuration"></a>Configuração da rede
 
 Pode especificar a sub-rede de uma [rede virtual (VNet)](../virtual-network/virtual-networks-overview.md) do Azure na qual devem ser criados os nós de computação do agrupamento. Veja a secção [Configuração de rede de conjunto](#pool-network-configuration) para obter mais informações.
 
 
-<a id="job" class="xliff"></a>
-
-## Tarefa
+## <a name="job"></a>Tarefa
 Um trabalho é uma coleção de tarefas. Gere de que forma é que a computação é realizada pelas respetivas tarefas nos nós de computação de um conjunto.
 
 * O trabalho especifica o **conjunto** no qual o trabalho será executado. Pode criar um novo conjunto para cada trabalho ou utilizar um conjunto para muitos trabalhos. Pode criar um conjunto para cada trabalho associado a uma agenda de trabalho ou para todos os trabalhos associados a uma agenda de trabalho.
@@ -293,23 +264,17 @@ Um trabalho é uma coleção de tarefas. Gere de que forma é que a computação
 
     Tenha em atenção que o serviço Batch considera um trabalho *sem* tarefas como tendo todas as tarefas concluídas. Por conseguinte, esta opção é frequentemente utilizada com uma [tarefa de gestor de trabalhos](#job-manager-task). Se pretender utilizar a terminação automática do trabalho sem um gestor de trabalhos, deve definir inicialmente uma nova propriedade **onAllTasksComplete** do trabalho como *noaction* e, em seguida, configurá-la para *terminatejob* (terminar o trabalho) apenas depois de terminar de adicionar tarefas ao trabalho.
 
-<a id="job-priority" class="xliff"></a>
-
-### Prioridade dos trabalhos
+### <a name="job-priority"></a>Prioridade dos trabalhos
 Pode atribuir uma prioridade aos trabalhos que cria no Batch. O serviço Batch utiliza o valor de prioridade do trabalho para determinar a ordem de agendamento dos trabalhos numa conta (não deve ser confundido com [trabalhos agendados](#scheduled-jobs)). Os valores de prioridade variam entre -1000 a 1000, sendo -1000 a prioridade mais baixa e 1000 a prioridade mais alta. Para atualizar a prioridade de uma tarefa, realize a operação [Atualizar as propriedades de uma tarefa][rest_update_job] (REST do Batch) ou ao modifique a propriedade [CloudJob.Priority][net_cloudjob_priority] (NET do Batch).
 
 Dentro da mesma conta, os trabalhos de prioridade mais alta têm precedência de agendamento sobre os de prioridade mais baixa. Um trabalho com um valor de prioridade superior numa conta não tem precedência de agendamento sobre outro trabalho com um valor de prioridade inferior numa conta diferente.
 
 O agendamento de tarefas no âmbito dos conjuntos é independente. Entre conjuntos diferentes, não é garantido que um trabalho de prioridade superior seja agendado primeiro se o respetivo conjunto associado tiver poucos nós inativos. No mesmo conjunto, as tarefas com o mesmo nível de prioridade têm as mesmas hipóteses de serem agendadas.
 
-<a id="scheduled-jobs" class="xliff"></a>
-
-### Tarefas agendadas
+### <a name="scheduled-jobs"></a>Tarefas agendadas
 [Agendas de tarefas][rest_job_schedules] permitem-lhe criar tarefas recorrentes no âmbito do serviço Batch. Uma agenda de tarefas especifica quando executar tarefas e inclui as especificações das tarefas a executar. Pode especificar a duração da agenda – quando e durante quanto tempo está em vigor – e com que frequência os trabalhos são criados durante o período agendado.
 
-<a id="task" class="xliff"></a>
-
-## Tarefa
+## <a name="task"></a>Tarefa
 As tarefas são uma unidade de computação que estão associadas a um trabalho. São executadas num nó. As tarefas são atribuídas a um nó para execução ou são colocadas na fila até que um nó fique livre. Resumindo, as tarefas executam um ou mais programas ou scripts num nó de computação para fazer os trabalhos necessários.
 
 Quando cria uma tarefa, pode especificar:
@@ -336,9 +301,7 @@ Além das tarefas que define para realizar a computação num nó, também são 
 * [Tarefas de várias instâncias (MPI)](#multi-instance-tasks)
 * [Dependências de tarefas](#task-dependencies)
 
-<a id="start-task" class="xliff"></a>
-
-### Tarefa de início
+### <a name="start-task"></a>Tarefa de início
 Ao associar uma **tarefa de início** a um conjunto, pode preparar o ambiente de funcionamento dos respetivos nós. Por exemplo, pode realizar ações como instalar as aplicações que as suas tarefas vão executar ou começar processos em segundo plano. A tarefa de início é executada sempre que um nó é iniciado enquanto permanecer no conjunto, incluindo quando o nó for adicionado pela primeira vez ao conjunto e quando é reiniciado ou a respetiva imagem recriada.
 
 Uma das principais vantagens da tarefa de início é o facto de poder conter todas as informações necessárias para configurar um nó de computação e instalar as aplicações de que as tarefas precisam para serem executadas. Por conseguinte, aumentar o número de nós num conjunto é tão simples como especificar a nova contagem de nó de destino. A tarefa de início fornece ao serviço do Batch as informações necessárias para configurar novos nós e prepará-los para aceitar tarefas.
@@ -356,16 +319,14 @@ Se adicionar ou atualizar a tarefa de início para um agrupamento existente, tem
 >[!NOTE]
 > O tamanho total de uma tarefa de início tem de ser inferior ou igual a 32 768 carateres, incluindo ficheiros de recursos e variáveis de ambiente. Para garantir que a sua tarefa de início cumpre este requisito, pode seguir uma de duas abordagens:
 >
-> 1. Pode utilizar pacotes de aplicações para distribuir aplicações ou dados para todos os nós do agrupamento do Batch. Pode obter mais informações sobre os pacotes de aplicações, veja [Application deployment with Azure Batch application packages](batch-application-packages.md) (Implementação de aplicações com pacotes de aplicações do Azure Batch).
+> 1. Pode utilizar pacotes de aplicações para distribuir aplicações ou dados para todos os nós do agrupamento do Batch. Para obter mais informações sobre os pacotes de aplicações, veja [Implementar aplicações em nós de computação com pacotes de aplicações do Batch](batch-application-packages.md).
 > 2. Pode criar manualmente um arquivo zipado que contenha os seus ficheiros de aplicação. Carregue o arquivo zipado para o Armazenamento do Azure como um blob. Especifique este arquivo como um ficheiro de recursos para a tarefa de início. Antes de executar a linha de comandos da tarefa de início, descomprima o arquivo a partir da linha de comandos. 
 >
 >    Para descomprimir o arquivo, pode utilizar uma ferramenta de arquivos à sua escolha. Tem de incluir a ferramenta utilizada para descomprimir o arquivo como um ficheiro de recursos para a tarefa de início.
 >
 >
 
-<a id="job-manager-task" class="xliff"></a>
-
-### Tarefa do gestor de tarefas
+### <a name="job-manager-task"></a>Tarefa do gestor de tarefas
 Geralmente, é utilizada uma **tarefa de gestor de trabalhos** para controlar e/ou monitorizar a execução de trabalhos, por exemplo, para criar e submeter as tarefas de um trabalho, determinar tarefas adicionais a executar e determinar quando o trabalho está concluído. No entanto, as tarefas de gestor de trabalhos não estão confinadas a estas atividades. São tarefas completas que podem realizar quaisquer ações necessárias no âmbito do trabalho. Por exemplo, uma tarefa de gestor de trabalhos pode transferir um ficheiro especificado como um parâmetro, analisar o conteúdo desse ficheiro e submeter mais tarefas com base nesse conteúdo.
 
 A tarefa de gestor de trabalhos é iniciada antes de todas as outras tarefas. Proporciona as seguintes funcionalidades:
@@ -377,9 +338,7 @@ A tarefa de gestor de trabalhos é iniciada antes de todas as outras tarefas. Pr
 * A tarefa do gestor de trabalhos recebe a prioridade mais elevada quando tem de ser reiniciada. Se um nó inativo não estiver disponível, o serviço Batch pode terminar uma das outras tarefas em execução no conjunto, de modo a criar espaço para a tarefa do gestor de trabalhos ser executada.
 * Uma tarefa do gestor de tarefas numa tarefa não tem prioridade sobre as tarefas de outras tarefas. No âmbito das tarefas, apenas as prioridades ao nível da tarefa são respeitadas.
 
-<a id="job-preparation-and-release-tasks" class="xliff"></a>
-
-### Tarefas de preparação e de lançamento da tarefa
+### <a name="job-preparation-and-release-tasks"></a>Tarefas de preparação e de lançamento da tarefa
 O Batch fornece tarefas de preparação de trabalhos para a configuração de execução de trabalho prévia. As tarefas de libertação de trabalhos destinam-se a manutenção ou limpeza pós-trabalho.
 
 * **Tarefa de preparação de trabalho**: as tarefas de preparação de trabalhos são executadas em todos os nós de computação agendados para executar tarefas antes de qualquer uma das outras tarefas de trabalho serem executadas. Pode utilizar uma tarefa de preparação de trabalhos para copiar dados partilhados por todas as tarefas, mas que são exclusivos do trabalho, por exemplo.
@@ -389,16 +348,12 @@ Quer a tarefa de preparação de trabalhos, quer a de libertação de trabalhos,
 
 Para obter mais informações sobre as tarefas de lançamento e de preparação da tarefa, consulte [Executar tarefas de preparação e de conclusão da tarefa em nós de computação do Azure Batch](batch-job-prep-release.md).
 
-<a id="multi-instance-task" class="xliff"></a>
-
-### Tarefa de várias instâncias
+### <a name="multi-instance-task"></a>Tarefa de várias instâncias
 Um [tarefa de várias instâncias](batch-mpi.md) é uma tarefa que está configurada para ser executada simultaneamente em mais do que um nó de computação. Com as tarefas de várias instâncias, pode ativar cenários de computação de alto desempenho que precisam de um grupo de nós de computação alocados em conjunto para processar uma carga de trabalho única (como a Interface de Passagem de Mensagens (Message Passing Interface, MPI)).
 
 Para ver um debate detalhado sobre a execução de trabalhos de MPI no Batch com a biblioteca .NET do Batch, veja [Use multi-instance tasks to run Message Passing Interface (MPI) applications in Azure Batch (Utilizar tarefas de várias instâncias para executar aplicações de Interface de Passagem de Mensagens (MPI) no Azure Batch)](batch-mpi.md).
 
-<a id="task-dependencies" class="xliff"></a>
-
-### Dependências de tarefas
+### <a name="task-dependencies"></a>Dependências de tarefas
 As [dependências de tarefas](batch-task-dependencies.md), como o nome indica, permitem-lhe especificar que uma tarefa depende da conclusão de outras tarefas antes de ser executada. Esta funcionalidade proporciona suporte para situações em que uma tarefa “a jusante” consome o resultado de uma tarefa “a montante” ou quando uma tarefa a montante efetua alguma inicialização que seja necessária para uma tarefa a jusante. Para utilizar esta funcionalidade, tem primeiro de ativar as dependências de tarefas na sua tarefa do Batch. Em seguida, para cada tarefa que dependa de outra (ou de muitas outras), especifique as tarefas das quais essa tarefa depende.
 
 Com as dependências de tarefas, pode configurar cenários como os seguintes:
@@ -409,9 +364,7 @@ Com as dependências de tarefas, pode configurar cenários como os seguintes:
 
 Veja [Task dependencies in Azure Batch (Dependências de tarefas no Azure Batch)](batch-task-dependencies.md) e o exemplo de código [TaskDependencies][github_sample_taskdeps] no repositório do GitHub [azure-batch-samples][github_samples] para obter detalhes mais aprofundados sobre esta funcionalidade.
 
-<a id="environment-settings-for-tasks" class="xliff"></a>
-
-## Definições de ambiente para tarefas
+## <a name="environment-settings-for-tasks"></a>Definições de ambiente para tarefas
 Cada tarefa executada pelo serviço Batch tem acesso às variáveis de ambiente que define nos nós de computação. Estas incluem as variáveis de ambiente definidas pelo serviço Batch ([definidas pelo serviço][msdn_env_vars]) e as variáveis de ambiente personalizadas que pode definir para as suas tarefas. As aplicações e os scripts que as tarefas executam têm acesso a estas variáveis de ambiente durante a execução.
 
 Pode definir variáveis de ambiente personalizadas ao nível da tarefa ou do trabalho ao preencher a propriedade *definições de ambiente* dessas entidades. Por exemplo, veja a operação [Add a task to a job (Adicionar uma tarefa a um trabalho)][rest_add_task] (API REST do Batch) ou as propriedades [CloudTask.EnvironmentSettings][net_cloudtask_env] e [CloudJob.CommonEnvironmentSettings][net_job_env] no .NET do Batch.
@@ -420,9 +373,7 @@ O serviço ou aplicação cliente pode obter as variáveis de ambiente de uma ta
 
 Pode obter uma lista completa de todas as variáveis de ambiente definidas pelo serviço em [Compute node environment variables (Variáveis de ambiente de nó de computação)][msdn_env_vars].
 
-<a id="files-and-directories" class="xliff"></a>
-
-## Ficheiros e diretórios
+## <a name="files-and-directories"></a>Ficheiros e diretórios
 Cada tarefa tem um *diretório de trabalho* no qual cria zero ou mais ficheiros e diretórios. Este diretório de trabalho pode ser utilizado para armazenar o programa que é executado pela tarefa, os dados que processa e o resultado do processamento feito. Todos os ficheiros e diretórios de uma tarefa são propriedade do utilizador da tarefa.
 
 O serviço Batch expõe uma parte do sistema de ficheiros num nó como o *diretório de raiz*. As tarefas podem consultar a variável de ambiente `AZ_BATCH_NODE_ROOT_DIR` para aceder ao diretório de raiz. Para obter mais informações sobre como utilizar as variáveis de ambiente, veja [Definições de ambiente das tarefas](#environment-settings-for-tasks).
@@ -444,25 +395,21 @@ O diretório de raiz contém a seguinte estrutura de diretórios:
 >
 >
 
-<a id="application-packages" class="xliff"></a>
-
-## Pacotes de aplicações
+## <a name="application-packages"></a>Pacotes de aplicações
 A funcionalidade [pacotes de aplicações](batch-application-packages.md) facilita a gestão e a implementação de aplicações nos nós de computação nos seus conjuntos. Pode carregar e gerir facilmente várias versões das aplicações executadas pelas suas tarefas, incluindo os respetivos ficheiros binários e de suporte. Depois, pode implementar automaticamente uma ou mais destas aplicações nos nós de computação do seu conjunto.
 
 Pode especificar os pacotes de aplicações ao nível do conjunto e tarefas. Quando especificar os pacotes de aplicações do conjunto, a aplicação é implementada em todos os nós no conjunto. Quando especificar os pacotes de aplicações de tarefas, a aplicação é implementada apenas nos nós que estão agendados para executarem, pelo menos, uma das tarefas do trabalho, imediatamente antes de a linha de comandos da tarefa ser executada.
 
 O Batch processa os detalhes do trabalho com o Armazenamento do Azure para armazenar os seus pacotes de aplicações e implementá-los em nós de computação, para que o seu código e os custos de gestão possam ser simplificados.
 
-Para saber mais sobre a funcionalidade de pacote de aplicação, consulte [Implementação de aplicações com pacotes de aplicações do Azure Batch](batch-application-packages.md).
+Para saber mais sobre a funcionalidade de pacote de aplicação, veja [Implementar aplicações em nós de computação com pacotes de aplicações do Batch](batch-application-packages.md).
 
 > [!NOTE]
 > Se adicionar pacotes de aplicações de conjunto a um conjunto *existente*, terá de reiniciar os nós de computação para os pacotes de aplicações a serem implementados nos nós.
 >
 >
 
-<a id="pool-and-compute-node-lifetime" class="xliff"></a>
-
-## Duração do nó de computação e de conjunto
+## <a name="pool-and-compute-node-lifetime"></a>Duração do nó de computação e de conjunto
 Quando conceber a sua solução do Azure Batch, tem de tomar uma decisão de design em relação a como e quando são criados os conjuntos e durante quanto tempo os nós de computação são mantidos disponíveis dentro desses conjuntos.
 
 Num extremo do espetro, pode criar um conjunto para cada trabalho que submeter e eliminá-lo assim que a execução das respetivas tarefas terminar. Desta forma, maximiza a utilização, já que os nós só são alocados quando é necessário e são encerrados logo que fiquem inativos. Apesar de isto significar que o trabalho tem de aguardar que os nós sejam alocados, é importante ter em atenção que as tarefas são agendadas para execução assim que os nós estejam individualmente disponíveis e alocados e que a tarefa inicial esteja concluída. O Batch *não* espera que todos os nós de um conjunto estejam disponíveis para lhes atribuir tarefas. Assim, garante-se a máxima utilização de todos os nós disponíveis.
@@ -471,9 +418,7 @@ No outro extremo do espetro, se a prioridade mais elevada for dar início aos tr
 
 Geralmente, é utilizada uma abordagem combinada para lidar com cargas variáveis, mas contínuas. Pode ter um conjunto para o qual são submetidos vários trabalhos, mas pode aumentar e reduzir verticalmente o número de nós de acordo com a carga dos trabalhos (veja [Dimensionar os recursos de computação](#scaling-compute-resources) na secção seguinte). Pode fazer estes ajustes reativamente, com base na carga atual, ou pró-ativamente, se for possível prever a carga.
 
-<a id="pool-network-configuration" class="xliff"></a>
-
-## Configuração de rede de conjunto
+## <a name="pool-network-configuration"></a>Configuração de rede de conjunto
 
 Quando cria um agrupamento de nós de computação no Azure Batch, pode especificar o ID de uma sub-rede de uma [rede virtual (VNet)](../virtual-network/virtual-networks-overview.md) do Azure na qual devem ser criados os nós de computação do agrupamento.
 
@@ -510,9 +455,7 @@ Quando cria um agrupamento de nós de computação no Azure Batch, pode especifi
 
 As definições adicionais para a VNet dependem do modo de alocação do conjunto da conta do Batch.
 
-<a id="vnets-for-pools-provisioned-in-the-batch-service" class="xliff"></a>
-
-### VNets para conjuntos aprovisionados no serviço de Batch
+### <a name="vnets-for-pools-provisioned-in-the-batch-service"></a>VNets para conjuntos aprovisionados no serviço de Batch
 
 No modo de alocação de serviço do Batch, só podem ser atribuídos a VNets conjuntos de **Configuração de Serviços Cloud**. Além disso, a VNet especificada tem de ser uma VNet **clássica**. Não são suportadas VNets criadas com o modelo de implementação Azure Resource Manager.
 
@@ -527,17 +470,13 @@ No modo de alocação de serviço do Batch, só podem ser atribuídos a VNets co
 
 
 
-<a id="vnets-for-pools-provisioned-in-a-user-subscription" class="xliff"></a>
-
-### VNets para conjuntos aprovisionados numa subscrição de utilizador
+### <a name="vnets-for-pools-provisioned-in-a-user-subscription"></a>VNets para conjuntos aprovisionados numa subscrição de utilizador
 
 No modo de alocação de subscrição de utilizador, são suportados apenas conjuntos de **Configuração da Máquina Virtual** e podem ser atribuídos a uma VNet. Além disso, a VNet especificada tem de ser um **Gestor de Recursos** com base na VNet. Não são suportadas VNets criadas com o modelo de implementação clássica.
 
 
 
-<a id="scaling-compute-resources" class="xliff"></a>
-
-## Dimensionar os recursos de computação
+## <a name="scaling-compute-resources"></a>Dimensionar os recursos de computação
 Com o [dimensionamento automático](batch-automatic-scaling.md), pode fazer com que o serviço Batch ajuste dinamicamente o número de nós de computação num conjunto de acordo com a carga de trabalho e a utilização de recursos atual do seu cenário de computação. Esta funcionalidade permite-lhe reduzir o custo global de execução da sua aplicação ao utilizar apenas os recursos de que precisa e libertar aqueles de que não precisa.
 
 A ativação do dimensionamento automático é feita ao escrever uma [fórmula de dimensionamento automático](batch-automatic-scaling.md#automatic-scaling-formulas) e associá-la a um conjunto. O serviço Batch utiliza esta fórmula para determinar o número de destino de nós no conjunto para o próximo intervalo de dimensionamento (um intervalo que pode configurar). Pode especificar as definições de dimensionamento automático de um conjunto quando o criar ou ativar o dimensionamento num conjunto mais tarde. Também pode atualizar as definições de dimensionamento num conjunto preparado para dimensionamento.
@@ -559,23 +498,17 @@ Para obter mais informações sobre o dimensionamento automático de uma aplica�
 >
 >
 
-<a id="security-with-certificates" class="xliff"></a>
-
-## Segurança com certificados
+## <a name="security-with-certificates"></a>Segurança com certificados
 Normalmente, tem de utilizar certificados quando encriptar ou desencriptar informações confidenciais relativas a tarefas, como a chave de uma [conta de Armazenamento do Azure][azure_storage]. Para suportar esta situação, pode instalar certificados em nós. Os segredos encriptados são transmitidos para as tarefas através dos parâmetros da linha de comandos ou incorporados num dos recursos da tarefa, sendo que os certificados instalados podem ser utilizados para desencriptá-los.
 
 Utilize a operação [Adicionar certificado][rest_add_cert] (REST do Batch) ou o método [CertificateOperations.CreateCertificate][net_create_cert] (.NET do Batch) para adicionar um certificado a uma conta do Batch. Em seguida, pode associar o certificado a um conjunto novo ou existente. Quando um certificado é associado a um conjunto, o serviço Batch instala o certificado em cada nó no conjunto. O serviço Batch instala os certificados adequados quando o nó é iniciado, antes de iniciar qualquer tarefa (incluindo a tarefa de início e a tarefa do gestor de trabalhos).
 
 Se adicionar certificados a um conjunto *existente*, terá de reiniciar os nós de computação para os certificados a serem implementados nos nós.
 
-<a id="error-handling" class="xliff"></a>
-
-## Processamento de erros
+## <a name="error-handling"></a>Processamento de erros
 Pode considerar necessário processar falhas de tarefas e de aplicações dentro da sua solução do Batch.
 
-<a id="task-failure-handling" class="xliff"></a>
-
-### Processamento de falhas de tarefas
+### <a name="task-failure-handling"></a>Processamento de falhas de tarefas
 As falhas de tarefas enquadram-se nestas categorias:
 
 * **Falha de pré-processamento**
@@ -602,9 +535,7 @@ As falhas de tarefas enquadram-se nestas categorias:
 
     Quando o tempo máximo tiver sido excedido, a tarefa é marcada como *concluída*, mas o código de saída é definido como `0xC000013A` e o campo *schedulingError* é marcado como `{ category:"ServerError", code="TaskEnded"}`.
 
-<a id="debugging-application-failures" class="xliff"></a>
-
-### Depurar falhas de aplicações
+### <a name="debugging-application-failures"></a>Depurar falhas de aplicações
 * `stderr` e `stdout`
 
     Durante a execução, uma aplicação poderá produzir resultados de diagnóstico que pode utilizar para resolver problemas. Como foi mencionado na secção [Ficheiros e diretórios](#files-and-directories) acima, o serviço Batch escreve resultados padrão e resultados de erro padrão nos ficheiros `stdout.txt` e `stderr.txt` no diretório da tarefa no nó de computação. Pode utilizar o portal do Azure ou um dos SDKs do Batch para transferir estes ficheiros. Por exemplo, pode utilizar [ComputeNode.GetNodeFile][net_getfile_node] e [CloudTask.GetNodeFile][net_getfile_task] na biblioteca .NET do Batch, para obter estes e outros ficheiros para fins de resolução de problemas.
@@ -613,16 +544,12 @@ As falhas de tarefas enquadram-se nestas categorias:
 
     Conforme mencionado anteriormente, o serviço Batch marca uma tarefa como falhada se o processo executado por essa tarefa devolver um código de saída diferente de zero. Quando uma tarefa executa um processo, o Batch preenche a propriedade do código de saída dessa tarefa com o *código de devolução do processo*. É importante que tenha em atenção que o código de saída de uma tarefa **não** é determinado pelo serviço do Batch. É determinado um código de saída de tarefas pelo próprio processo ou o sistema operativo no qual o processo foi executado.
 
-<a id="accounting-for-task-failures-or-interruptions" class="xliff"></a>
-
-### Explicação de falhas ou interrupções de tarefas
+### <a name="accounting-for-task-failures-or-interruptions"></a>Explicação de falhas ou interrupções de tarefas
 Por vezes, as tarefas podem falhar ou ser interrompidas. A própria aplicação da tarefa pode falhar, o nó no qual a tarefa está a ser executada pode ser reiniciado ou o nó pode ser removido do conjunto durante uma operação de redimensionamento se política de desalocação do conjunto estiver definida para remover nós imediatamente sem aguardar que as tarefas estejam concluídas. Em todos os casos, o Batch pode recolocar automaticamente a tarefa na fila para execução noutro nó.
 
 Também é possível que um problema intermitente faça com que uma tarefa fique suspensa ou demore demasiado tempo a ser executada. Pode definir o intervalo de execução máxima de uma tarefa. Se o intervalo de execução máxima for excedido, o serviço de Batch interrompe a aplicação de tarefas.
 
-<a id="connecting-to-compute-nodes" class="xliff"></a>
-
-### Ligar a nós de computação
+### <a name="connecting-to-compute-nodes"></a>Ligar a nós de computação
 Pode iniciar sessão remotamente num nó de computação para realizar depurações e resolução de problemas adicionais. Pode utilizar o portal do Azure para transferir um ficheiro do protocolo RDP (Remote Desktop Protocol) para nós do Windows e obter informações de ligação Secure Shell (SSH) para nós do Linux. Também o pode fazer com as APIs do Batch, como, por exemplo, [.NET do Batch][net_rdpfile] ou [Python do Batch](batch-linux-nodes.md#connect-to-linux-nodes-using-ssh).
 
 > [!IMPORTANT]
@@ -630,9 +557,7 @@ Pode iniciar sessão remotamente num nó de computação para realizar depuraç�
 >
 >
 
-<a id="troubleshooting-problematic-compute-nodes" class="xliff"></a>
-
-### Resolução de problemas de nós de computação problemáticos
+### <a name="troubleshooting-problematic-compute-nodes"></a>Resolução de problemas de nós de computação problemáticos
 Em situações onde algumas das suas tarefas estejam a falhar, a aplicação cliente ou o serviço Batch podem examinar os metadados das tarefas com falhas para identificar um nó a funcionar incorretamente. Cada nó num conjunto recebe um ID exclusivo e o nó no qual é executada uma tarefa está incluído nos metadados da tarefa. Depois de ter identificado um nó de problema, pode tomar várias medidas no mesmo:
 
 * **Reiniciar o nó** ([REST][rest_reboot] | [.NET][net_reboot])
@@ -653,9 +578,7 @@ Em situações onde algumas das suas tarefas estejam a falhar, a aplicação cli
 >
 >
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 * Saiba mais sobre o [Ferramentas e APIs do Batch](batch-apis-tools.md) disponíveis para criação de soluções para o Batch.
 * Ver um guia passo a passo para um exemplo de aplicação do Batch, em [Introdução à biblioteca do Azure Batch para .NET](batch-dotnet-get-started.md). Também existe uma [versão para Python](batch-python-tutorial.md) do tutorial que executa uma carga de trabalho em nós de computação do Linux.
 * Transfira e crie o projeto de exemplo [Batch Explorer][github_batchexplorer] para utilização enquanto programa as suas soluções do Batch. Ao utilizar o Batch Explorer, pode realizar o seguinte e muito mais:

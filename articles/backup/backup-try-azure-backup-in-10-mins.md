@@ -15,10 +15,11 @@ ms.devlang: na
 ms.topic: hero-article
 ms.date: 2/23/2017
 ms.author: markgal;
-translationtype: Human Translation
-ms.sourcegitcommit: b188affca609dd5ff3aa0d2cba3ec81c1c91888f
-ms.openlocfilehash: 916a4e837d003a73a1801dd25b8ebfbfdcd86312
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: b1d56fcfb472e5eae9d2f01a820f72f8eab9ef08
+ms.openlocfilehash: c989ca38e2463f8365b55c509e8b2bcf4572b409
+ms.contentlocale: pt-pt
+ms.lasthandoff: 07/06/2017
 
 
 ---
@@ -163,6 +164,15 @@ Agora que criou um cofre, configure-o para cópia de segurança de ficheiros e p
      >
 
 O agente está agora instalado e a máquina está registada no cofre. Está pronto para configurar e agendar a cópia de segurança.
+
+## <a name="network-and-connectivity-requirements"></a>Requisitos de Rede e Conectividade
+
+Se o computador/proxy tiver limitado o acesso à Internet, certifique-se de que as definições da firewall no computador/proxy estão configuradas para permitir os seguintes URLs: <br>
+    1. www.msftncsi.com
+    2. *.Microsoft.com
+    3. *.WindowsAzure.com
+    4. *.microsoftonline.com
+    5. *.windows.ne
 
 ## <a name="back-up-your-files-and-folders"></a>Efetuar uma cópia de segurança de ficheiros e pastas
 A cópia de segurança inicial inclui duas tarefas principais:

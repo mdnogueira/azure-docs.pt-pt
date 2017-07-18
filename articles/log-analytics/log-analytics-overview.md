@@ -14,30 +14,24 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/12/2017
 ms.author: bwren
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5bbeb9d4516c2b1be4f5e076a7f63c35e4176b36
-ms.openlocfilehash: 391870380280d6783223849ce383113bf1dd6d31
+ms.translationtype: HT
+ms.sourcegitcommit: f76de4efe3d4328a37f86f986287092c808ea537
+ms.openlocfilehash: 9fcf23f5ff47bd7457e5afa69eb2b9b33e0bf0fe
 ms.contentlocale: pt-pt
-ms.lasthandoff: 06/13/2017
+ms.lasthandoff: 07/10/2017
 
 
 ---
-<a id="what-is-log-analytics" class="xliff"></a>
-
-# O que é o Log Analytics?
+# <a name="what-is-log-analytics"></a>O que é o Log Analytics?
 O Log Analytics é um serviço do [Operations Management Suite \(OMS\)](../operations-management-suite/operations-management-suite-overview.md) que monitoriza os seus ambientes na cloud e no local, para manter a disponibilidade e o desempenho dos mesmos.  Recolhe dados gerados por recursos nos seus ambientes na cloud e no local e de outras ferramentas de monitorização, para disponibilizar análises relativas a várias origens.  Este artigo mostra uma breve discussão sobre o valor proporcionado pelo Log Analytics, uma descrição geral de como funciona e contém ligações a conteúdos mais detalhados, para que possa fazer ainda mais.
 
-<a id="is-log-analytics-for-you" class="xliff"></a>
-
-## O Log Analytics é adequado para si?
+## <a name="is-log-analytics-for-you"></a>O Log Analytics é adequado para si?
 Se ainda não tiver monitorização atual aplicada ao seu ambiente do Azure, deve começar com o [Azure Monitor](../monitoring-and-diagnostics/monitoring-overview.md), que recolhe e analisa dados de monitorização dos seus recursos do Azure.  O Log Analytics pode [recolher dados do Azure Monitor](log-analytics-azure-storage.md) para correlacioná-los com outros dados e fornecer análises adicionais.
 
 Se quiser monitorizar o seu ambiente no local ou tiver monitorização existente que utilize serviços como o Azure Monitor ou o System Center Operations Manager, o Log Analytics pode acrescentar valor significativo.  Pode recolher dados diretamente dos seus agentes e também dessas outras ferramentas e reuni-los num único repositório.  As ferramentas de análise do Log Analytics, como as pesquisas de registos, as vistas e as soluções funcionam face a todos os dados recolhidos, dando-lhe análises centralizadas de todo o seu ambiente.
 
 
-<a id="using-log-analytics" class="xliff"></a>
-
-## Utilizar o Log Analytics
+## <a name="using-log-analytics"></a>Utilizar o Log Analytics
 Pode aceder ao Log Analytics através do portal do OMS ou do portal do Azure, que são executados em qualquer browser e lhe proporcionam acesso a definições de configuração e a várias ferramentas para analisar e atuar sobre os dados recolhidos.  No portal, pode tirar partido das [pesquisas de registos](log-analytics-log-searches.md), nas quais constrói as consultas para analisar os dados recolhidos, dos [dashboards](log-analytics-dashboards.md), que pode personalizar com vistas de gráficas das suas pesquisas mais valiosas, e das [soluções](log-analytics-add-solutions.md), que disponibilizam funcionalidades e ferramentas de análise adicionais.
 
 A imagem abaixo é do portal do OMS, que mostra o dashboard que apresenta informações de resumo relativas às [soluções](#add-functionality-with-management-solutions) que estão instaladas na área de trabalho.  Pode clicar em qualquer mosaico para analisar mais detalhadamente os dados dessas soluções.
@@ -54,9 +48,7 @@ Para obter um vislumbre gráfico rápido do estado de funcionamento do seu ambie
 
 Para analisar dados fora do Log Analytics, pode exportá-los do repositório do OMS para outras ferramentas, como [o Power BI](log-analytics-powerbi.md) ou o Excel.  Também pode tirar partido da [API de Pesquisas de Registos](log-analytics-log-search-api.md) para criar soluções personalizadas que se baseiem nos dados do Log Analytics ou para integrar noutros sistemas.
 
-<a id="add-functionality-with-management-solutions" class="xliff"></a>
-
-## Adicionar funcionalidade com soluções de gestão
+## <a name="add-functionality-with-management-solutions"></a>Adicionar funcionalidade com soluções de gestão
 As [soluções de gestão](log-analytics-add-solutions.md) acrescentam funcionalidades ao OMS, proporcionando dados e ferramentas de análises adicionais ao Log Analytics.  Podem também definir novos tipos de registos a serem recolhidos e que podem ser analisados com as Pesquisas de Registos ou através de uma interface de utilizador adicional disponibilizada pela solução no dashboard.  A imagem de exemplo abaixo mostra a [solução Controlo de Alterações](log-analytics-change-tracking.md)
 
 ![Solução de Controlo de Alterações](media/log-analytics-overview/change-tracking.png)
@@ -65,9 +57,7 @@ Estão disponíveis soluções para diversas funções e são constantemente adi
 
 ![Galeria de Soluções](media/log-analytics-overview/solution-gallery.png)
 
-<a id="log-analytics-components" class="xliff"></a>
-
-## Componentes do Log Analytics
+## <a name="log-analytics-components"></a>Componentes do Log Analytics
 No centro do Log Analytics, está o repositório do OMS, que está alojado na nuvem do Azure.  Os dados são recolhidos no repositório a partir de origens ligadas mediante a configuração das origens de dados e da adição de soluções à sua subscrição.  As origens de dados e as soluções criarão, cada uma, diferentes tipos de registos que têm os seus próprios conjuntos de propriedades, mas que podem ser analisados em conjunto em consultas feitas no repositório.  Desta forma, pode utilizar as mesmas ferramentas e métodos para trabalhar com diversos tipos de dados recolhidos por diferentes origens.
 
 ![Repositório do OMS](media/log-analytics-overview/overview.png)
@@ -78,9 +68,7 @@ As [origens de dados](log-analytics-data-sources.md) são os diferentes tipos de
 
 Se tiver requisitos personalizados, pode utilizar a [API de Recoletor de Dados HTTP](log-analytics-data-collector-api.md) para escrever dados no repositório de um cliente de API REST.
 
-<a id="log-analytics-architecture" class="xliff"></a>
-
-## Arquitetura do Log Analytics
+## <a name="log-analytics-architecture"></a>Arquitetura do Log Analytics
 Os requisitos de implementação do Log Analytics são mínimos, uma vez que os componentes centrais estão alojados na nuvem do Azure.  Estes componentes incluem o repositório, para além dos serviços que lhe permitem correlacionar e analisar os dados recolhidos.  O portal pode ser acedido a partir de qualquer browser, pelo que não é necessário nenhum software cliente.
 
 Tem de instalar agentes nos computadores [Windows](log-analytics-windows-agents.md) e [Linux](log-analytics-linux-agents.md), mas não são precisos agentes adicionados para os computadores que já sejam membros de um [grupo de gestão ligado do SCOM](log-analytics-om-agents.md).  Os agentes do SCOM continuarão a comunicar com os servidores de gestão, que reencaminharão os respetivos dados para o Log Analytics.  Contudo, algumas soluções vão precisar de agentes que comuniquem diretamente com o Log Analytics.  Os requisitos de comunicação de cada solução estão especificados nas respetivas documentações.
@@ -89,9 +77,7 @@ Quando se [inscrever no Log Analytics](log-analytics-get-started.md), vai criar 
 
 ![Arquitetura do Log Analytics](media/log-analytics-overview/architecture.png)
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 * [Inscrever-se numa conta do Log Analytics gratuita](log-analytics-get-started.md) para testar no seu ambiente.
 * Ver as diferentes [Origens de Dados](log-analytics-data-sources.md) disponíveis para recolher dados para o repositório do OMS.
 * [Procurar as soluções disponíveis na Galeria de Soluções](log-analytics-add-solutions.md) para acrescentar funcionalidades ao Log Analytics.

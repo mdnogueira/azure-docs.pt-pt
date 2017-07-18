@@ -1,6 +1,4 @@
-<a id="number-of-fault-domains-per-region" class="xliff"></a>
-
-### Número de domínios de falha por região
+### <a name="number-of-fault-domains-per-region"></a>Número de domínios de falha por região
 
 | Região              | N.º máx. de domínios de falha  |
 |---------------------|-------------------------|
@@ -20,12 +18,15 @@
 | Reino Unido Sul            | 2                       |
 | Reino Unido Oeste             | 2                       |
 |                     |                         |
-| Ásia Oriental           | 3                       |
+| Ásia Oriental           | 2                       |
 | Sudeste Asiático     | 2                       |
 | Leste do Japão          | 2                       |
 | Oeste do Japão          | 2                       |
 | Sul da Índia         | 2                       |
 | Índia Central       | 2                       |
+| Índia Ocidental          | 2                       |
+| Coreia Central       | 2                       |
+| Coreia do Sul         | 2                       |
 |                     |                         |
 | Leste da Austrália      | 2                       |
 | Sudeste da Austrália | 2                       |

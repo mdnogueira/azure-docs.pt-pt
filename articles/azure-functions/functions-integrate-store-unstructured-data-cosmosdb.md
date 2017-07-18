@@ -14,35 +14,29 @@ ms.devlang: multiple
 ms.topic: get-started-article
 ms.tgt_pltfrm: multiple
 ms.workload: na
-ms.date: 05/08/2017
+ms.date: 07/08/2017
 ms.author: rachelap
 ms.custom: mvc
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 6adaf7026d455210db4d7ce6e7111d13c2b75374
-ms.openlocfilehash: 785bd144805a472ae457f9a3323d512b5cbf055d
+ms.translationtype: HT
+ms.sourcegitcommit: d941879aee6042b38b7f5569cd4e31cb78b4ad33
+ms.openlocfilehash: 492c916a493bb8d5c5415fc517506e5c1ccffc56
 ms.contentlocale: pt-pt
-ms.lasthandoff: 06/22/2017
+ms.lasthandoff: 07/10/2017
 
 ---
-<a id="store-unstructured-data-using-azure-functions-and-cosmos-db" class="xliff"></a>
-
-# Armazenar dados não estruturados usando as funções do Azure e o Cosmos DB
+# <a name="store-unstructured-data-using-azure-functions-and-cosmos-db"></a>Armazenar dados não estruturados usando as funções do Azure e o Cosmos DB
 
 O Azure Cosmos DB é uma ótima forma de armazenar dados não estruturados e JSON. Combinado com funções do Azure, o Cosmos DB torna o armazenamento de dados rápido e fácil, sendo necessário menos códigos para armazenar dados numa base de dados relacional.
 
 Este tutorial explica como usar o Portal do Azure para criar uma função do Azure que armazena dados não estruturados num documento do Cosmos DB. 
 
-<a id="prerequisites" class="xliff"></a>
-
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 
 [!INCLUDE [Previous quickstart note](../../includes/functions-quickstart-previous-topics.md)]
 
 [!INCLUDE [functions-portal-favorite-function-apps](../../includes/functions-portal-favorite-function-apps.md)]
 
-<a id="create-a-function" class="xliff"></a>
-
-## Criar uma função
+## <a name="create-a-function"></a>Criar uma função
 
 Crie um novo WebHook genérico C# com o nome `MyTaskList`.
 
@@ -51,9 +45,7 @@ Crie um novo WebHook genérico C# com o nome `MyTaskList`.
 
 ![Adicione a nova aplicação de funções C# Generic WebHook](./media/functions-integrate-store-unstructured-data-cosmosdb/functions-create-new-functionapp.png)
 
-<a id="add-an-output-binding" class="xliff"></a>
-
-## Adicionar um enlace de saída
+## <a name="add-an-output-binding"></a>Adicionar um enlace de saída
 
 Uma função do Azure pode ter um acionador e qualquer número de enlaces de entrada ou saída. Neste exemplo, iremos usar um acionador de pedidos HTTP e o documento do Cosmos DB como enlace de saída.
 
@@ -94,9 +86,7 @@ Também deve configurar a ligação à base de dados do Cosmos DB.
 1. Clique no botão *OK*. Talvez seja necessário aguardar alguns minutos enquanto o Azure cria os recursos.
 1. Clique no botão *Guardar*.
 
-<a id="update-the-function-code" class="xliff"></a>
-
-## Atualizar o código da função
+## <a name="update-the-function-code"></a>Atualizar o código da função
 
 Substitua o código de modelo da função com o seguinte:
 
@@ -137,9 +127,7 @@ public static HttpResponseMessage Run(HttpRequestMessage req, out object taskDoc
 
 Este exemplo de código lê as cadeias de consulta dos pedidos de HTTP e atribui-as como membros de uma objeto `taskDocument`. O objeto `taskDocument` guarda automaticamente os dados na base de dados do Cosmos DB e cria ainda a base de dados na primeira utilização.
 
-<a id="test-the-function-and-database" class="xliff"></a>
-
-## Testar a função e a base de dados
+## <a name="test-the-function-and-database"></a>Testar a função e a base de dados
 
 1. No separador de funções, clique na hiperligação *Teste* à direita do portal e introduza as seguintes cadeias de consulta de HTTP:
 
@@ -165,19 +153,13 @@ Confirme se foi feita uma entrada na base de dados do Cosmos DB.
 
 Se os dados estiverem incluídos no documento, então criou com êxito uma função do Azure que armazena dados não estruturados numa base de dados do Cosmos DB.
 
-<a id="clean-up-resources" class="xliff"></a>
-
-## Limpar recursos
+## <a name="clean-up-resources"></a>Limpar recursos
 
 [!INCLUDE [Next steps note](../../includes/functions-quickstart-cleanup.md)]
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
-
-Para obter mais informações sobre Funções do Azure, veja os seguintes tópicos:
-
-[!INCLUDE [Getting help note](../../includes/functions-get-help.md)]
+## <a name="next-steps"></a>Passos seguintes
 
 [!INCLUDE [functions-quickstart-next-steps](../../includes/functions-quickstart-next-steps.md)]
+
+Para obter mais informações sobre o enlace a uma base de dados do Cosmos DB, veja [Enlaces do Cosmos DB das Funções do Azure](functions-bindings-documentdb.md).
 

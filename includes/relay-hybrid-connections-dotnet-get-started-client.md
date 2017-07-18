@@ -1,12 +1,15 @@
 ### <a name="create-a-console-application"></a>Criar uma aplicação de consola
-* Abra o Visual Studio e crie uma nova aplicação de Consola.
+
+Em primeiro lugar, abra o Visual Studio e crie um novo projeto de **Aplicação de Consola (.NET Framework)**.
 
 ### <a name="add-the-relay-nuget-package"></a>Adicionar o pacote NuGet de Reencaminhamento
-1. Clique com o botão direito do rato no projeto recém-criado e selecione **Gerir Pacotes NuGet**.
+
+1. Clique com o botão direito do rato no projeto recém-criado e, em seguida, clique em **Gerir Pacotes NuGet**.
 2. Clique no separador **Procurar**, procure “Microsoft.Azure.Relay” e selecione o item **Reencaminhamento do Microsoft Azure**. Clique em **Instalar** para concluir a instalação e, em seguida, feche esta caixa de diálogo.
 
 ### <a name="write-some-code-to-send-messages"></a>Escrever alguns códigos para enviar mensagens
-1. Substitua as instruções `using` existentes na parte superior do ficheiro Program.cs pelas seguintes instruções:
+
+1. Substitua as instruções `using` existentes na parte superior do ficheiro Program.cs pelas seguintes instruções `using`:
    
     ```csharp
     using System;
@@ -15,7 +18,7 @@
     using System.Threading.Tasks;
     using Microsoft.Azure.Relay;
     ```
-2. Adicione constantes à classe `Program`, para obter os detalhes da ligação da Ligação Híbrida. Substitua os marcadores de posição entre parênteses retos pelos valores adequados que foram obtidos ao criar a Ligação Híbrida. Certifique-se de que utiliza o nome de espaço de nomes totalmente qualificado:
+2. Adicione constantes à classe `Program`, para obter os detalhes da ligação híbrida. Substitua os marcadores de posição entre parênteses retos pelos valores obtidos durante a criação da ligação híbrida. Certifique-se de que utiliza o nome de espaço de nomes totalmente qualificado:
    
     ```csharp
     private const string RelayNamespace = "{RelayNamespace}.servicebus.windows.net";
@@ -23,7 +26,7 @@
     private const string KeyName = "{SASKeyName}";
     private const string Key = "{SASKey}";
     ```
-3. Adicione o novo método seguinte à classe `Program`:
+3. Adicione o seguinte método à classe `Program`:
    
     ```csharp
     private static async Task RunAsync()

@@ -14,19 +14,17 @@ ms.devlang: multiple
 ms.topic: hero-article
 ms.tgt_pltfrm: multiple
 ms.workload: na
-ms.date: 06/25/2017
+ms.date: 07/05/2017
 ms.author: rachelap, glenga
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 857267f46f6a2d545fc402ebf3a12f21c62ecd21
-ms.openlocfilehash: 64769458ad90f14c2f7a87b9a405b80616a478be
+ms.sourcegitcommit: f537befafb079256fba0529ee554c034d73f36b0
+ms.openlocfilehash: 2d539dd51834e935f9c5f7a6be42011ffe9e0870
 ms.contentlocale: pt-pt
-ms.lasthandoff: 06/28/2017
+ms.lasthandoff: 07/08/2017
 
 
 ---
-<a id="create-your-first-function-using-visual-studio" class="xliff"></a>
-
-# Criar a sua primeira função com o Visual Studio 
+# <a name="create-your-first-function-using-visual-studio"></a>Criar a sua primeira função com o Visual Studio 
 
 As Funções do Azure permitem-lhe executar o seu código num ambiente sem servidor, sem que tenha de criar primeiro uma VM ou publicar uma aplicação Web. 
 
@@ -34,9 +32,7 @@ Neste tópico, aprenderá a usar as ferramentas de função do Azure para Visual
 
 ![Código de funções do Azure num projeto do Visual Studio](./media/functions-create-your-first-function-visual-studio/functions-vstools-intro.png)
 
-<a id="prerequisites" class="xliff"></a>
-
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 
 Para concluir este tutorial, instale:
 
@@ -46,25 +42,19 @@ Para concluir este tutorial, instale:
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-<a id="install-azure-functions-tools-for-visual-studio-2017" class="xliff"></a>
-
-## Instalar as ferramentas de funções do Azure para Visual Studio 2017
+## <a name="install-azure-functions-tools-for-visual-studio-2017"></a>Instalar as ferramentas de funções do Azure para Visual Studio 2017
 
 Antes de começar, deverá transferir e instalar as ferramentas de funções do Azure para Visual Studio 2017. Essas ferramentas só podem ser usadas com a versão 15.3 do Visual Studio 2017 Preview ou uma versão posterior. Se já tiver instalado as ferramentas de funções do Azure, pode ignorar esta secção.
 
 [!INCLUDE [Install the Azure Functions Tools for Visual Studio](../../includes/functions-install-vstools.md)]   
 
-<a id="create-an-azure-functions-project-in-visual-studio" class="xliff"></a>
-
-## Criar um projeto de funções do Azure no Visual Studio
+## <a name="create-an-azure-functions-project-in-visual-studio"></a>Criar um projeto de funções do Azure no Visual Studio
 
 [!INCLUDE [Create a project using the Azure Functions template](../../includes/functions-vstools-create.md)]
 
 Agora que criou o projeto, pode criar sua primeira função.
 
-<a id="create-the-function" class="xliff"></a>
-
-## Criar a função
+## <a name="create-the-function"></a>Criar a função
 
 No **Explorador de Soluções**, clique com o botão direito do rato no nó do projeto e selecione **Adicionar** > **Novo item**. Selecione **Função do Azure** e clique em **Adicionar**.
 
@@ -74,9 +64,7 @@ Selecione **HttpTrigger**, digite o **Nome da função**, selecione **Anónimo**
 
 Agora que criou uma função acionada por HTTP, poderá testá-la no seu computador local.
 
-<a id="test-the-function-locally" class="xliff"></a>
-
-## Testar localmente a função
+## <a name="test-the-function-locally"></a>Testar localmente a função
 
 [!INCLUDE [Test the function locally](../../includes/functions-vstools-test.md)]
 
@@ -92,17 +80,13 @@ Para interromper a depuração, clique no botão **Parar** na barra de ferrament
 
 Depois de verificar que a função é executada corretamente no computador local, deve publicar o projeto no Azure.
 
-<a id="publish-the-project-to-azure" class="xliff"></a>
-
-## Publicar o projeto no Azure
+## <a name="publish-the-project-to-azure"></a>Publicar o projeto no Azure
 
 Deverá ter uma aplicação de funções na sua subscrição do Azure antes de poder publicar o seu projeto. Pode criar uma aplicação de funções diretamente a partir do Visual Studio.
 
 [!INCLUDE [Publish the project to Azure](../../includes/functions-vstools-publish.md)]
 
-<a id="test-your-function-in-azure" class="xliff"></a>
-
-## Testar a sua função no Azure
+## <a name="test-your-function-in-azure"></a>Testar a sua função no Azure
 
 Copie a URL de base da aplicação de funções a partir da página de perfil Publicar. Substitua a `localhost:port` parte da URL que utilizou ao testar a localmente a função com a nova URL de base. Tal como antes, certifique-se de que anexa a cadeia de consulta `&name=<yourname>` a este URL e execute o pedido.
 
@@ -114,14 +98,12 @@ Cole este novo URL do pedido HTTP na barra de endereço do browser. A imagem seg
 
 ![Resposta da função no browser](./media/functions-create-your-first-function-visual-studio/functions-test-remote-browser.png)
  
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 
 Utilizou o Visual Studio para criar uma aplicação de função C# com uma função simples acionada por HTTP. 
 
 [!INCLUDE [functions-quickstart-next-steps](../../includes/functions-quickstart-next-steps.md)]
 
-Para saber mais sobre o teste e depuração local usando as ferramentas de núcleo de funções do Azure, consulte [código e teste de funções do Azure localmente](functions-run-local.md). 
+Para saber mais sobre o teste e depuração local usando as ferramentas de núcleo de funções do Azure, consulte [código e teste de funções do Azure localmente](functions-run-local.md). Para obter mais informações sobre o desenvolvimento de funções como bibliotecas de classes do .NET, veja [Utilizar bibliotecas de classes do .NET com as Funções do Azure](functions-dotnet-class-library.md). 
 
 

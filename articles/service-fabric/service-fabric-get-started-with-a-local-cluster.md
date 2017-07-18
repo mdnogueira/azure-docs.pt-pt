@@ -12,13 +12,13 @@ ms.devlang: dotNet
 ms.topic: get-started-article
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 04/07/2017
+ms.date: 07/13/2017
 ms.author: ryanwi;mikhegn
-translationtype: Human Translation
-ms.sourcegitcommit: 538f282b28e5f43f43bf6ef28af20a4d8daea369
-ms.openlocfilehash: c0c5ab8a9db60ff375b7d823e40f83cbc4d2b4c3
-ms.lasthandoff: 04/07/2017
-
+ms.translationtype: Human Translation
+ms.sourcegitcommit: f537befafb079256fba0529ee554c034d73f36b0
+ms.openlocfilehash: ad284e152dcf44f27fb53340dd641d95b103db78
+ms.contentlocale: pt-pt
+ms.lasthandoff: 07/08/2017
 
 ---
 # <a name="get-started-with-deploying-and-upgrading-applications-on-your-local-cluster"></a>Introdução à implementação e atualização de aplicações no seu cluster local
@@ -114,7 +114,7 @@ Agora que implementámos a aplicação, vamos ver alguns dos detalhes da aplica�
    
     ![Lista de serviços para a aplicação no PowerShell][ps-getsfsvc]
    
-    A aplicação é constituída por dois serviços – o front-end Web e o serviço com estado que gere as palavras.
+    A aplicação é constituída por dois serviços, o front-end Web e o serviço com estado que gere as palavras.
 3. Por último, repare na lista de partições para WordCountService:
    
     ```powershell
