@@ -77,6 +77,8 @@ Esta secção mostra os passos para criar uma aplicação de consola Python que 
     CONNECTION_STRING = "[IoTHub Connection String]"
     DEVICE_ID = "MyFirstPythonDevice"
     ```
+   [!INCLUDE [iot-hub-pii-note-naming-device](../../includes/iot-hub-pii-note-naming-device.md)]
+
 3. Adicione a função seguinte para imprimir algumas das informações do dispositivo.
 
     ```python

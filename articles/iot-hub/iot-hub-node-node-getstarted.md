@@ -94,6 +94,8 @@ Nesta secção, vai criar uma aplicação de consola do Node.js que cria uma ide
       }
     }
     ```
+   [!INCLUDE [iot-hub-pii-note-naming-device](../../includes/iot-hub-pii-note-naming-device.md)]
+
 7. Guarde e feche o ficheiro **CreateDeviceIdentity.js**.
 8. Para executar a aplicação **createdeviceidentity** execute o seguinte comando na linha de comandos na pasta createdeviceidentity:
    

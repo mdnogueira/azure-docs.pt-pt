@@ -1,6 +1,4 @@
-<a id="create-a-device-identity" class="xliff"></a>
-
-## Criar uma identidade de dispositivo
+## <a name="create-a-device-identity"></a>Criar uma identidade de dispositivo
 Nesta secção, vai criar uma aplicação de consola .NET que cria uma identidade de dispositivo no registo de identidade do seu Hub IoT. Não é possível ligar um dispositivo ao hub IoT, exceto se tiver uma entrada no registo de identidade. Para obter mais informações, veja a secção "Identity registry" (Registo de identidades) do [Hub IoT developer guide (Guia do programador do Hub IoT)][lnk-devguide-identity]. Ao executar esta aplicação de consola, será gerado um ID de dispositivo único e uma chave que o seu dispositivo pode utilizar para identificar-se quando enviar mensagens do dispositivo para a nuvem ao IoT Hub. Os IDs dos dispositivos são sensíveis às maiúsculas e minúsculas.
 
 1. No Visual Studio, adicione um projeto Visual C# no Ambiente de Trabalho Clássico do Windows a uma solução nova, utilizando o modelo de projeto **Aplicação de Consola (.NET Framework)**. Certifique-se de ter a versão 4.5.1 ou superior do .NET Framework. Atribua ao projeto o nome **CreateDeviceIdentity** e atribua à solução o nome **IoTHubGetStarted**.
@@ -36,6 +34,8 @@ Nesta secção, vai criar uma aplicação de consola .NET que cria uma identidad
         }
    
     Este método cria uma identidade de dispositivo com o ID **myFirstDevice**. (Se o ID desse dispositivo já existir no registo de identidade, o código apenas obtém as informações do dispositivo existente.) De seguida, a aplicação irá apresentar a chave primária para essa identidade. Esta chave vai ser utilizada na aplicação do dispositivo simulado para ligar ao seu hub IoT.
+[!INCLUDE [iot-hub-pii-note-naming-device](iot-hub-pii-note-naming-device.md)]
+
 7. Por fim, adicione as seguintes linhas ao método **Main**:
    
         registryManager = RegistryManager.CreateFromConnectionString(connectionString);

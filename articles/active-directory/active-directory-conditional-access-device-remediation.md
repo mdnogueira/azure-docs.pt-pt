@@ -14,16 +14,15 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 07/05/2017
 ms.author: markvi
+ms.reviewer: jairoc
 ms.translationtype: Human Translation
 ms.sourcegitcommit: f537befafb079256fba0529ee554c034d73f36b0
 ms.openlocfilehash: 4d7704c03bece51957efa2a56577b8808cc62c79
 ms.contentlocale: pt-pt
 ms.lasthandoff: 07/08/2017
 
-
 ---
-# Não pode aceder aí a partir daqui num dispositivo Windows
-<a id="you-cant-get-there-from-here-on-a-windows-device" class="xliff"></a>
+# <a name="you-cant-get-there-from-here-on-a-windows-device"></a>Não pode aceder aí a partir daqui num dispositivo Windows
 
 Durante uma tentativa de, por exemplo, aceder à intranet do SharePoint Online da sua organização, poderá deparar-se com uma página que diz que *não pode aceder aí a partir daqui*. Esta página aparece, porque o seu administrador configurou uma política de acesso condicional que impede o acesso aos recursos da organização sob determinadas condições. Embora possa ser necessário contactar o suporte técnico ou o seu administrador para resolver este problema, pode experimentar algumas coisas, primeiro.
 
@@ -40,8 +39,7 @@ Se estiver a utilizar um dispositivo **Windows**, deve verificar o seguinte:
 
 
 
-## Browser suportado
-<a id="supported-browser" class="xliff"></a>
+## <a name="supported-browser"></a>Browser suportado
 
 Se o administrador tiver configurado uma política de acesso condicional, só pode aceder aos recursos da sua organização através de um browser suportado. Nos dispositivos Windows, só são suportados o **Internet Explorer** e o **Edge**.
 
@@ -52,8 +50,7 @@ Pode determinar facilmente se não consegue aceder a um recurso devido a um brow
 A única remediação é utilizar um browser que a aplicação suporte na plataforma do seu dispositivo. Para obter uma lista completa dos browsers suportados, veja os [browsers suportados](active-directory-conditional-access-supported-apps.md#supported-browsers-for-device-based-policies).  
 
 
-## Versões suportadas do Windows
-<a id="supported-versions-of-windows" class="xliff"></a>
+## <a name="supported-versions-of-windows"></a>Versões suportadas do Windows
 
 As condições abaixo sobre o sistema operativo Windows têm de ser verdadeiras no seu dispositivo: 
 
@@ -61,8 +58,7 @@ As condições abaixo sobre o sistema operativo Windows têm de ser verdadeiras 
 - Se estiver a executar um sistema operativo Windows Server no dispositivo, este tem de ser o Windows Server 2008 R2 ou posterior. 
 
 
-## Dispositivo conforme
-<a id="compliant-device" class="xliff"></a>
+## <a name="compliant-device"></a>Dispositivo conforme
 
 O seu administrador poderá ter configurado uma política de acesso condicional que permita acesso aos recursos da sua organização apenas através de dispositivos conformes. Para ser conforme, o dispositivo tem de ser associado ao seu Active Directory no local ou associado ao seu Azure Active Directory.
 
@@ -71,8 +67,7 @@ Pode determinar facilmente se não consegue aceder a um recurso devido a um disp
 ![Mensagens "Problemas difíceis de resolver" relativas a dispositivos não registados](./media/active-directory-conditional-access-device-remediation/01.png "Cenário")
 
 
-### O dispositivo está associado a um Active Directory no local?
-<a id="is-your-device-joined-to-an-on-premises-active-directory" class="xliff"></a>
+### <a name="is-your-device-joined-to-an-on-premises-active-directory"></a>O dispositivo está associado a um Active Directory no local?
 
 **Se o seu dispositivo estiver associado a um Active Directory no local da sua organização:**
 
@@ -84,8 +79,7 @@ Pode determinar facilmente se não consegue aceder a um recurso devido a um disp
 6. Se vir a mesma página, clique na ligação **Mais detalhes** e, em seguida, contacte o seu administrador com os detalhes.
 
 
-### O dispositivo não está associado a um Active Directory no local?
-<a id="is-your-device-not-joined-to-an-on-premises-active-directory" class="xliff"></a>
+### <a name="is-your-device-not-joined-to-an-on-premises-active-directory"></a>O dispositivo não está associado a um Active Directory no local?
 
 Se o dispositivo não estiver associado a um Active Directory no local e executar o Windows 10, tem duas opções:
 
@@ -100,8 +94,7 @@ Se o dispositivo:
 
 
 
-#### Associação do Azure AD no Windows 10
-<a id="azure-ad-join-on-windows-10" class="xliff"></a>
+#### <a name="azure-ad-join-on-windows-10"></a>Associação do Azure AD no Windows 10
 
 Os passos para associar o dispositivo ao Azure AD estão associados à versão do Windows 10 que está a executar no mesmo. Para determinar a versão do sistema operativo Windows 10, execute o comando **winver**: 
 
@@ -128,8 +121,7 @@ Os passos para associar o dispositivo ao Azure AD estão associados à versão d
 6. Tente aceder novamente à aplicação.
 
 
-#### Associação à Área de Trabalho no Windows 8.1
-<a id="workplace-join-on-windows-81" class="xliff"></a>
+#### <a name="workplace-join-on-windows-81"></a>Associação à Área de Trabalho no Windows 8.1
 
 Se o seu dispositivo não estiver associado a um domínio e executar o Windows 8.1, para fazer o Workplace Join e inscrevê-lo no Microsoft Intune, siga os passos abaixo:
 
@@ -142,8 +134,7 @@ Se o seu dispositivo não estiver associado a um domínio e executar o Windows 8
 
 
 
-#### Adicionar a sua conta profissional ou escolar ao Windows
-<a id="add-your-work-or-school-account-to-windows" class="xliff"></a> 
+#### <a name="add-your-work-or-school-account-to-windows"></a>Adicionar a sua conta profissional ou escolar ao Windows 
 
 
 **Atualização de Aniversário do Windows 10 (Versão 1607):**
@@ -167,8 +158,7 @@ Se o seu dispositivo não estiver associado a um domínio e executar o Windows 8
 
 
 
-## Passos seguintes
-<a id="next-steps" class="xliff"></a>
+## <a name="next-steps"></a>Passos seguintes
 [Acesso condicional ao Azure Active Directory](active-directory-conditional-access.md)
 
 

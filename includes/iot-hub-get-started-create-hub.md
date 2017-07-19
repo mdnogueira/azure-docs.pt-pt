@@ -10,6 +10,8 @@ Crie um hub IoT para ligação da aplicação do dispositivo simulado. Os passos
     ![Painel do hub IoT][2]
    
    1. Na caixa **Nome**, introduza um nome para o hub IoT. Se o **Nome** for válido e estiver disponível, aparece uma marca de verificação verde na caixa **Nome**.
+    [!INCLUDE [iot-hub-pii-note-naming-hub](iot-hub-pii-note-naming-hub.md)]
+   
    1. Selecione um [escalão de preços e dimensionamento][lnk-pricing]. Este tutorial não requer um escalão específico. Para este tutorial, utilize o escalão F1 gratuito.
    1. Em **Grupo de recursos**, crie um grupo de recursos ou selecione um existente. Para obter mais informações, veja [Utilizar grupos de recursos para gerir os recursos do Azure][lnk-resource-groups].
    1. Em **Localização**, selecione a localização para alojar o hub IoT. Para este tutorial, escolha a localização mais próxima.
