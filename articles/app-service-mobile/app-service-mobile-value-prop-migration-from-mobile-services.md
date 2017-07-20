@@ -3,7 +3,7 @@ title: "Utilizo Mobile Services, como é que o App Service me vai ajudar?"
 description: "Conheça as vantagens que o App Service traz para os seus atuais projetos de Mobile Services."
 services: app-service\mobile
 documentationcenter: ios
-author: adrianhall
+author: dhei
 manager: adrianha
 editor: 
 ms.assetid: 26b68a11-8352-4f78-acd2-e4e0ec177781
@@ -19,7 +19,6 @@ ms.sourcegitcommit: f76de4efe3d4328a37f86f986287092c808ea537
 ms.openlocfilehash: e23a4f182e6bb0ba53927aa6195967c2464e4233
 ms.contentlocale: pt-pt
 ms.lasthandoff: 07/10/2017
-
 
 ---
 # <a name="getting-started"> </a>Utilizo os Serviços Móveis, como é que o App Service me vai ajudar?
@@ -65,5 +64,4 @@ Crie automaticamente uma cópia de segurança do seu back-end e da sua base de d
 Com o *App Service do Azure*, pode agora criar vários ambientes de testes e testes privados para as suas Mobile Apps. Utilize-os para realizar testes antes da implementação. Salte para produção sem qualquer período de indisponibilidade. As Web Apps são previamente carregadas, garantindo a melhor experiência para o cliente.
 
 Pode começar a tirar partido do *App Service* do seu Serviço Móvel atual através deste [tutorial](app-service-mobile-migrating-from-mobile-services.md).
-
 

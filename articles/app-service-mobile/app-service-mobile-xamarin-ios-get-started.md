@@ -3,7 +3,7 @@ title: "Introdução às Aplicações Móveis do Serviço de Aplicações do Azu
 description: "Siga este tutorial para começar a utilizar Mobile Apps para o desenvolvimento do Xamarin.iOS"
 services: app-service\mobile
 documentationcenter: xamarin
-author: adrianhall
+author: dhei
 manager: adrianha
 editor: 
 ms.assetid: 14428794-52ad-4b51-956c-deb296cafa34
@@ -14,11 +14,11 @@ ms.devlang: dotnet
 ms.topic: hero-article
 ms.date: 10/01/2016
 ms.author: adrianha
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: b1a633a86bd1b5997d5cbf66b16ec351f1043901
 ms.openlocfilehash: ed289d0755bbad08de01b0f311d14f5514ce0631
+ms.contentlocale: pt-pt
 ms.lasthandoff: 01/20/2017
-
 
 ---
 # <a name="create-a-xamarinios-app"></a>Criar uma aplicação Xamarin.iOS
@@ -38,8 +38,8 @@ Para concluir este tutorial, precisa dos seguintes pré-requisitos:
 
 > [!NOTE]
 > Se pretender começar com o App Service do Azure antes de se inscrever numa conta do Azure, aceda a [Experimentar o App Service](https://azure.microsoft.com/try/app-service/mobile/). Pode criar imediatamente uma aplicação móvel de arranque de curta duração no Serviço de Aplicações: sem cartões de crédito, sem compromissos.
-> 
-> 
+>
+>
 
 ## <a name="create-an-azure-mobile-app-backend"></a>Criar um back-end da Aplicação Móvel do Azure
 Siga estes passos para criar um back-end da Aplicação Móvel.
@@ -56,24 +56,24 @@ Siga os passos seguintes para configurar o projeto de servidor para utilizar o b
 ## <a name="download-and-run-the-xamarinios-app"></a>Transferir e executar a aplicação Xamarin.iOS
 1. Abra o [Portal do Azure] numa janela do browser.
 2. No painel de definições da Aplicação Móvel, clique em **Introdução** > **Xamarin.iOS**. No passo 3, clique em **Criar uma nova aplicação**, se a opção ainda não estiver selecionada.  Em seguida, clique no botão **Transferir**.
-   
+
       Será transferida uma aplicação cliente que liga ao back-end móvel. Guarde o ficheiro de projeto comprimido no computador local e tome nota do local onde o guardou.
 3. Extraia o projeto que transferiu e, em seguida, abra-o no Xamarin Studio (ou Visual Studio).
-   
+
     ![][9]
-   
+
     ![][8]
 4. Prima a tecla F5 para compilar o projeto e iniciar a aplicação no emulador do iPhone.
 5. Na aplicação, digite um texto significativo, tal como *Saber mais sobre o Xamarin*, e clique no botão **+**.
-   
+
     ![][10]
-   
+
     Os dados do pedido são inseridos na tabela TodoItem. Os itens armazenados na tabela são devolvidos pelo back-end da aplicação móvel e os dados são apresentados na lista.
 
 > [!NOTE]
 > Pode rever o código que acede ao seu back-end da aplicação móvel para consultar e inserir dados no ficheiro QSTodoService.cs C#.
-> 
-> 
+>
+>
 
 ## <a name="next-steps"></a>Passos seguintes
 * [Adicionar Sincronização Offline à sua aplicação](app-service-mobile-xamarin-ios-get-started-offline-data.md)
