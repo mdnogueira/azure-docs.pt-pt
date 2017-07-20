@@ -13,6 +13,3 @@
 ### [Introdução à aplicação](microsoft-authenticator-app-how-to.md)
 ### [Iniciar sessão com o telemóvel](microsoft-authenticator-app-phone-signin-faq.md)
 ### [FAQs](microsoft-authenticator-app-faq.md)
-
-# Recursos
-## [Mapa do Azure](https://azure.microsoft.com/roadmap/)
