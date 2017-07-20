@@ -13,47 +13,32 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 05/31/2017
+ms.date: 07/18/2017
 ms.author: danlep
 ms.custom: H1Hack27Feb2017
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 7948c99b7b60d77a927743c7869d74147634ddbf
-ms.openlocfilehash: 929a4dec638da9488dd0b43fd123ed0cce77bcf3
+ms.translationtype: HT
+ms.sourcegitcommit: 26c07d30f9166e0e52cb396cdd0576530939e442
+ms.openlocfilehash: 7d8825da888092988bf39c5a5789a957179b2cff
 ms.contentlocale: pt-pt
-ms.lasthandoff: 06/20/2017
-
+ms.lasthandoff: 07/19/2017
 
 ---
 
-<a id="deploy-kubernetes-cluster-for-windows-containers" class="xliff"></a>
-
-# Implementar o cluster do Kubernetes para contentores do Windows
+# <a name="deploy-kubernetes-cluster-for-windows-containers"></a>Implementar o cluster do Kubernetes para contentores do Windows
 
 A CLI do Azure é utilizada para criar e gerir recursos do Azure a partir da linha de comandos ou em scripts. Este guia explica detalhadamente como deve utilizar a CLI do Azure para implementar um cluster do [Kubernetes](https://kubernetes.io/docs/home/) no [Azure Container Service](container-service-intro.md). Depois de o cluster ser implementado, ligue-se à ferramenta da linha de comandos do Kubernetes `kubectl` e implemente o seu primeiro contentor do Windows.
 
-Este tutorial requer a versão do módulo 2.0.4 ou posterior da CLI do Azure. Executar `az --version` para localizar a versão. Se precisar de atualizar, veja [instalar o Azure CLI 2.0]( /cli/azure/install-azure-cli). 
+Se não tiver uma subscrição do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Se não tiver uma subscrição do Azure, crie uma conta [gratuita](https://azure.microsoft.com/free/) antes de começar.
+Se optar por instalar e usar a CLI localmente, este tópico requer a execução da versão 2.0.4 ou posterior da CLI do Azure. Executar `az --version` para localizar a versão. Se precisar de instalar ou atualizar, veja [instalar o Azure CLI 2.0]( /cli/azure/install-azure-cli). 
 
 > [!NOTE]
 > O suporte para contentores do Windows com Kubernetes no Azure Container Service está em pré-visualização. 
 >
 
-<a id="log-in-to-azure" class="xliff"></a>
-
-## Iniciar sessão no Azure 
-
-Inicie sessão na sua subscrição do Azure com o comando [az login](/cli/azure/#login) e siga as instruções no ecrã.
-
-```azurecli-interactive 
-az login
-```
-
-<a id="create-a-resource-group" class="xliff"></a>
-
-## Criar um grupo de recursos
+## <a name="create-a-resource-group"></a>Criar um grupo de recursos
 
 Crie um grupo de recursos com o comando [az group create](/cli/azure/group#create). Um grupo de recursos do Azure é um grupo lógico, no qual os recursos do Azure são implementados e geridos. 
 
@@ -63,9 +48,7 @@ O exemplo seguinte cria um grupo de recursos com o nome *myResourceGroup* na loc
 az group create --name myResourceGroup --location eastus
 ```
 
-<a id="create-kubernetes-cluster" class="xliff"></a>
-
-## Criar cluster do Kubernetes
+## <a name="create-kubernetes-cluster"></a>Criar cluster do Kubernetes
 Crie um cluster do Kubernetes no Azure Container Service com o comando [az acs create](/cli/azure/acs#create). 
 
 O exemplo seguinte cria um cluster denominado *myK8sCluster* com um nó principal do Linux e dois nós de agente do Linux. Este exemplo cria chaves de SSH necessárias para se ligar ao Linux Master. Este exemplo utiliza *azureuser* para um nome de utilizador administrativo e *myPassword12* como palavra-passe nos nós do Windows. Atualize estes valores para algo adequado ao ambiente. 
@@ -84,9 +67,7 @@ az acs create --orchestrator-type=kubernetes \
 
 Após alguns minutos, o comando é concluído e apresenta informações sobre a implementação.
 
-<a id="install-kubectl" class="xliff"></a>
-
-## Instalar o kubectl
+## <a name="install-kubectl"></a>Instalar o kubectl
 
 Para ligar ao cluster de Kubernetes a partir do computador cliente, utilize [`kubectl`](https://kubernetes.io/docs/user-guide/kubectl/), o cliente de linha de comandos do Kubernetes. 
 
@@ -99,9 +80,7 @@ az acs kubernetes install-cli
 ```
 
 
-<a id="connect-with-kubectl" class="xliff"></a>
-
-## Ligar-se com kubectl
+## <a name="connect-with-kubectl"></a>Ligar-se com kubectl
 
 Para configurar `kubectl` para se ligar ao cluster do Kubernetes, execute o comando [az acs kubernetes get-credentials](/cli/azure/acs/kubernetes#get-credentials) . O exemplo seguinte transfere a configuração do cluster para o cluster do Kubernetes.
 
@@ -125,9 +104,7 @@ k8s-master-98dc3136-0   Ready,SchedulingDisabled   5m        v1.5.3
 
 ```
 
-<a id="deploy-a-windows-iis-container" class="xliff"></a>
-
-## Implementar um contentor do IIS do Windows
+## <a name="deploy-a-windows-iis-container"></a>Implementar um contentor do IIS do Windows
 
 Pode executar um contentor do Docker dentro de um *pod* do Kubernetes, que contém um ou mais contentores. 
 
@@ -183,9 +160,7 @@ NAME     READY        STATUS        RESTARTS    AGE
 iis      1/1          Running       0           32s
 ```
 
-<a id="view-the-iis-welcome-page" class="xliff"></a>
-
-## Ver a página de boas-vindas do IIS
+## <a name="view-the-iis-welcome-page"></a>Ver a página de boas-vindas do IIS
 
 Para expor o pod ao mundo com um endereço IP público, introduza o seguinte comando:
 
@@ -214,9 +189,7 @@ Pode utilizar um browser à sua escolha para ver a página de boas-vindas predef
 ![Imagem de navegação para IIS](media/container-service-kubernetes-windows-walkthrough/kubernetes-iis.png)  
 
 
-<a id="delete-cluster" class="xliff"></a>
-
-## Eliminar o cluster
+## <a name="delete-cluster"></a>Eliminar o cluster
 Quando o cluster já não for necessário, pode utilizar o comando [az group delete](/cli/azure/group#delete) para remover o grupo de recursos, o serviço de contentores e todos os recursos relacionados.
 
 ```azurecli-interactive 
@@ -224,9 +197,7 @@ az group delete --name myResourceGroup
 ```
 
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 
 Neste guia de início rápido, implementou um cluster do Kubernetes, ligado a `kubectl`, e implementou um pod com um contentor IIS. Para saber mais sobre o Azure Container Service, continue o tutorial do Kubernetes.
 

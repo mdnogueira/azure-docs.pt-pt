@@ -1,14 +1,12 @@
 1. Inicie sessão no [Portal do Azure].
 2. Clique em **+NOVO** e escreva **Aplicações Móveis** em *Procurar no marketplace*. Selecione **Início Rápido de Aplicações Móveis** e clique em **Criar**.
-   
-    ![Portal do Azure com Início Rápido de Aplicações Móveis realçado](./media/app-service-mobile-dotnet-backend-create-new-service/search-mobile-apps-quickstart.png)
-3. Para o **Grupo de Recursos**, selecione um grupo de recursos existente ou crie um novo (utilizando o mesmo nome que a sua aplicação). 
+
+    ![Portal do Azure com Início Rápido de Aplicações Móveis realçado][quickstart]
+3. Para o **Grupo de Recursos**, selecione um grupo de recursos existente ou crie um novo (utilizando o mesmo nome que a sua aplicação).
 4. Clique em **Criar**. Antes de prosseguir, aguarde alguns minutos até o serviço ser implementado com êxito.
+
+<!-- Images. -->
+[quickstart]: ./media/app-service-mobile-dotnet-backend-create-new-service/search-mobile-apps-quickstart.png
 
 <!-- URLs. -->
 [Portal do Azure]: https://portal.azure.com/
-
-
-<!--HONumber=Nov16_HO2-->
-
-

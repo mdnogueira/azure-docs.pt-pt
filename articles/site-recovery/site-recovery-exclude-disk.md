@@ -14,12 +14,11 @@ ms.devlang: na
 ms.topic: hero-article
 ms.date: 06/05/2017
 ms.author: nisoneji
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 988e7fe2ae9f837b661b0c11cf30a90644085e16
-ms.openlocfilehash: 6e52a647e817b64e331937c0b0f1d44f9f6c11a0
+ms.translationtype: HT
+ms.sourcegitcommit: 49bc337dac9d3372da188afc3fa7dff8e907c905
+ms.openlocfilehash: fccbe88e3c0c2b2f3e9958f5f2f27adc017e4d03
 ms.contentlocale: pt-pt
-ms.lasthandoff: 04/06/2017
-
+ms.lasthandoff: 07/14/2017
 
 ---
 # <a name="exclude-disks-from-replication"></a>Excluir discos da replicação
@@ -51,7 +50,7 @@ Da mesma forma, pode utilizar os seguintes passos para otimizar um disco que ten
 ## <a name="how-to-exclude-disks-from-replication"></a>Como excluir discos da replicação?
 
 ### <a name="vmware-to-azure"></a>VMware para o Azure
-Siga o fluxo de trabalho [Enable replication (Ativar a replicação)](site-recovery-vmware-to-azure.md#enable-replication) para proteger uma máquina virtual a partir do portal do Azure Site Recovery. No quarto passo do fluxo de trabalho, utilize a coluna **DISK TO REPLICATE (DISCO A REPLICAR)** para excluir discos da replicação. Por predefinição, todos os discos estão selecionados para replicação. Na caixa de verificação, anule a seleção dos discos que pretende excluir da replicação e conclua os passos para ativá-la.
+Siga o fluxo de trabalho [Enable replication (Ativar a replicação)](site-recovery-vmware-to-azure.md) para proteger uma máquina virtual a partir do portal do Azure Site Recovery. No quarto passo do fluxo de trabalho, utilize a coluna **DISK TO REPLICATE (DISCO A REPLICAR)** para excluir discos da replicação. Por predefinição, todos os discos estão selecionados para replicação. Na caixa de verificação, anule a seleção dos discos que pretende excluir da replicação e conclua os passos para ativá-la.
 
 ![Excluir discos da replicação e ativar a replicação para reativação pós-falha do VMware para o Azure](./media/site-recovery-exclude-disk/v2a-enable-replication-exclude-disk1.png)
 
@@ -67,7 +66,7 @@ Siga o fluxo de trabalho [Enable replication (Ativar a replicação)](site-recov
 >
 
 ### <a name="hyper-v-to-azure"></a>Hyper-V para o Azure
-Siga o fluxo de trabalho [Enable replication (Ativar a replicação)](site-recovery-hyper-v-site-to-azure.md#enable-replication) para proteger uma máquina virtual a partir do portal do Azure Site Recovery. No quarto passo do fluxo de trabalho, utilize a coluna **DISK TO REPLICATE (DISCO A REPLICAR)** para excluir discos da replicação. Por predefinição, todos os discos estão selecionados para replicação. Na caixa de verificação, anule a seleção dos discos que pretende excluir da replicação e conclua os passos para ativá-la.
+Siga o fluxo de trabalho [Enable replication (Ativar a replicação)](site-recovery-hyper-v-site-to-azure.md) para proteger uma máquina virtual a partir do portal do Azure Site Recovery. No quarto passo do fluxo de trabalho, utilize a coluna **DISK TO REPLICATE (DISCO A REPLICAR)** para excluir discos da replicação. Por predefinição, todos os discos estão selecionados para replicação. Na caixa de verificação, anule a seleção dos discos que pretende excluir da replicação e conclua os passos para ativá-la.
 
 ![Excluir discos da replicação e ativar a replicação para reativação pós-falha do Hyper-V para o Azure](./media/site-recovery-vmm-to-azure/enable-replication6-with-exclude-disk.png)
 

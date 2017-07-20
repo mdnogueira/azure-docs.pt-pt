@@ -15,10 +15,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 2/7/2017
 ms.author: guybo
-translationtype: Human Translation
-ms.sourcegitcommit: a226bdfeb1e1e70f31b2728db594042578e5f21f
-ms.openlocfilehash: 7ccb76695a6ca0d9f1ff79f05de6a5c071510a43
-
+ms.translationtype: HT
+ms.sourcegitcommit: 19be73fd0aec3a8f03a7cd83c12cfcc060f6e5e7
+ms.openlocfilehash: 9e9eae1623e55c1c05e97aa0b836819ce5dc16f9
+ms.contentlocale: pt-pt
+ms.lasthandoff: 07/13/2017
 
 ---
 # <a name="working-with-large-virtual-machine-scale-sets"></a>Trabalhar com conjuntos de dimensionamento de máquinas virtuais de grande escala
@@ -37,8 +38,8 @@ Para decidir se a aplicação pode utilizar eficazmente os conjuntos de dimensio
 - Os conjuntos de dimensionamento de grande escala requerem Managed Disks do Azure. Os conjuntos de dimensionamento que não são criados com discos geridos requerem várias contas de armazenamento (uma por cada 20 VMs). Os conjuntos de dimensionamento de grande escala são concebidos para funcionar exclusivamente com Managed Disks, para reduzir a sobrecarga da gestão do armazenamento e para evitar o risco de existirem limites de subscrição para contas de armazenamento. Se não utilizar Managed Disks, o conjunto de dimensionamento fica limitado a 100 VMs.
 - Os conjuntos de dimensionamento criados a partir de imagens do Azure Marketplace podem aumentar verticalmente até 1000 VMs.
 - Atualmente, os conjuntos de dimensionamento criados a partir de imagens personalizadas (imagens VM criadas e carregadas por si) podem ser aumentados verticalmente até 100 VMs.
-- O balanceamento de carga de camada&4; com o Balanceador de Carga do Azure não é ainda suportado para conjuntos de dimensionamento compostos por vários grupos de colocação. Se precisar de utilizar o Balanceador de Carga do Azure, certifique-se de que o conjunto de dimensionamento está configurado para utilizar um único grupo de colocação, que é a predefinição.
-- O balanceamento de carga de camada&7; com o Gateway de Aplicação do Azure é suportado para todos os conjuntos de dimensionamento.
+- O balanceamento de carga de camada 4 com o Balanceador de Carga do Azure não é ainda suportado para conjuntos de dimensionamento compostos por vários grupos de colocação. Se precisar de utilizar o Balanceador de Carga do Azure, certifique-se de que o conjunto de dimensionamento está configurado para utilizar um único grupo de colocação, que é a predefinição.
+- O balanceamento de carga de camada 7 com o Gateway de Aplicação do Azure é suportado para todos os conjuntos de dimensionamento.
 - Um conjunto de dimensionamento é definido com uma única sub-rede - certifique-se de que a sub-rede tem um espaço de endereço suficientemente grande para todas as VMs necessárias. Por predefinição, um conjunto de dimensionamento aprovisiona em excesso (cria VMs adicionais no momento da implementação ou ao aumentar horizontalmente, o que não lhe é cobrado) para melhorar a fiabilidade e o desempenho da implementação. Permita um espaço de endereço 20% maior do que o número de VMs que planeia dimensionar.
 - Se estiver a planear implementar muitas VMs, os limites de quota do núcleo de Computação poderão ter de ser aumentados.
 - Os domínios de falha e os domínios de atualização só são consistentes dentro de um grupo de colocação. Esta arquitetura não altera a disponibilidade geral de um conjunto de dimensionamento, uma vez que as VMs são distribuídas por hardware físico distinto, mas tal não significa que, se precisar de garantir que duas VMs estão em hardware diferente, certifique-se de que estão em domínios de falha diferentes no mesmo grupo de colocação. O domínio de falha e o ID do grupo de colocação são apresentados na _vista de instância_ da VM do conjunto de dimensionamento. Pode ver a vista de instância da VM de um conjunto de dimensionamento no [Explorador de Recursos do Azure](https://resources.azure.com/).
@@ -83,16 +84,7 @@ Para obter um exemplo concluído do modelo de um conjunto de dimensionamento de 
 Para que um conjunto de dimensionamento de VMs existente seja capaz de dimensionar para mais de 100 VMs, é necessário alterar a propriedade _singlePlacementGroup_ para _falso_ no modelo do conjunto de dimensionamento. Pode testar a alteração desta propriedade com o [Explorador de Recursos do Azure](https://resources.azure.com/). Localize um conjunto de dimensionamento existente, selecione _Editar_ e altere a propriedade _singlePlacementGroup_. Se não visualizar esta propriedade, poderá estar a ver o conjunto de dimensionamento com uma versão anterior da API Microsoft.Compute.
 
 >[!NOTE] 
-Pode alterar um conjunto de dimensionamento para que não suporte apenas um único grupo de colocação (o comportamento padrão), mas para que suporte vários grupos de colocação. No entanto, não pode fazer a conversão inversa. Por conseguinte, certifique-se de que compreende as propriedades dos conjuntos de dimensionamento de grande escala antes de converter. Em particular, certifique-se de que não precisa de balanceamento de carga de camada&4; com o Balanceador de Carga do Azure.
+Pode alterar um conjunto de dimensionamento para que não suporte apenas um único grupo de colocação (o comportamento padrão), mas para que suporte vários grupos de colocação. No entanto, não pode fazer a conversão inversa. Por conseguinte, certifique-se de que compreende as propriedades dos conjuntos de dimensionamento de grande escala antes de converter. Em particular, certifique-se de que não precisa de balanceamento de carga de camada 4 com o Balanceador de Carga do Azure.
 
-## <a name="additional-notes"></a>Notas adicionais
-O suporte para conjuntos de dimensionamento de grande escala com discos de dados anexados e Managed Disks do Azure foi adicionado à versão [_2016-04-30-preview_](https://github.com/Azure/azure-rest-api-specs/blob/master/arm-compute/2016-04-30-preview/swagger/compute.json) da API Microsoft.Compute. Pode utilizar qualquer SDK ou ferramenta de linha de comandos incluídos nesta versão ou versão posterior da API.
-
-
-
-
-
-
-<!--HONumber=Feb17_HO2-->
 
 
