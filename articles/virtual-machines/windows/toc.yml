@@ -85,8 +85,6 @@
           href: preserving-maintenance.md
         - name: Reinício da manutenção
           href: impactful-maintenance.md
-        - name: Agenda
-          href: planned-maintenance-schedule.md
     - name: Tamanhos de VM
       href: sizes.md
       items:
@@ -409,6 +407,8 @@
               href: troubleshoot-recovery-disks.md
             - name: Portal do Azure
               href: troubleshoot-recovery-disks-portal.md
+        - name: Utilizar o PerfInsights para resolver problemas de desempenho
+          href: how-to-use-perfInsights.md
 - name: Referência
   items:
     - name: CLI do Azure

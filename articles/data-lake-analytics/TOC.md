@@ -6,6 +6,7 @@
 ## [Visual Studio](data-lake-analytics-data-lake-tools-get-started.md)
 ## [PowerShell](data-lake-analytics-get-started-powershell.md)
 ## [CLI 2.0 do Azure](data-lake-analytics-get-started-cli2.md)
+## [Guia de Programação para U-SQL](data-lake-analytics-u-sql-programmability-guide.md)
 
 # Procedimento
 
@@ -28,12 +29,14 @@
 ### [Extensões R do U-SQL](data-lake-analytics-u-sql-r-extensions.md)
 ### [Extensões Cognitivas do U-SQL](data-lake-analytics-u-sql-cognitive.md)
 ### [Analisar registos de Web sites](data-lake-analytics-analyze-weblogs.md)
+### [U-SQL para Visual Studio Code](data-lake-analytics-data-lake-tools-for-vscode.md)
 
 ## Depurar programas em U-SQL
 ### [Monitorizar e resolver problemas de trabalhos](data-lake-analytics-monitor-and-troubleshoot-jobs-tutorial.md)
 ### [Depurar código C# no U-SQL](data-lake-analytics-debug-u-sql-jobs.md)
 ### [Utilizar o Browser de Trabalho e a Vista de Trabalho](data-lake-analytics-data-lake-tools-view-jobs.md)
 ### [Utilizar a Vista de Execução do Vértice](data-lake-analytics-data-lake-tools-use-vertex-execution-view.md)
+### [Execução local e depuração local no VSCode](data-lake-tools-for-vscode-local-run-and-debug.md)
 
 # Referência
 ## [PowerShell](/powershell/module/azurerm.datalakeanalytics)

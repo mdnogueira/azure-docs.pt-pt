@@ -22,7 +22,7 @@
 ### [Configurar alertas no Portal do Azure](insights-alerts-portal.md)
 ### [Configurar alertas com a CLI](insights-alerts-command-line-interface.md)
 ### [Configurar alertas com o PowerShell](insights-alerts-powershell.md)
-### [Fazer um alerta de métrica chamar um webhook](insights-webhooks-alerts.md)
+### [Chamar um webhook através de um alerta de métrica](insights-webhooks-alerts.md)
 ### [Criar um alerta de métrica com um modelo do Resource Manager](monitoring-enable-alerts-using-template.md)
 ## Utilizar dimensionamento automático
 ### [Melhores Práticas](insights-autoscale-best-practices.md)
@@ -50,7 +50,7 @@
 ## Gerir registos de diagnóstico
 ### [Arquivo](monitoring-archive-diagnostic-logs.md)
 ### [Transmitir em Fluxo nos Hubs de Eventos](monitoring-stream-diagnostic-logs-to-event-hubs.md)
-### [Ativar as Definições de Diagnóstico com modelos do Resource Manager](monitoring-enable-diagnostic-logs-using-template.md)
+### [Ativar as definições de Diagnóstico com modelos do Resource Manager](monitoring-enable-diagnostic-logs-using-template.md)
 ## Utilizar a API REST
 ### [Guia de utilização da API REST](monitoring-rest-api-walkthrough.md)
 ## Utilizar a extensão do Diagnóstico do Azure
@@ -74,3 +74,4 @@
 ## [Mapa do Azure](https://azure.microsoft.com/roadmap/)
 ## [Exemplos do PowerShell](insights-powershell-samples.md)
 ## [Vídeos](https://azure.microsoft.com/resources/videos/index/?services=monitor)
+## [Modelos de início rápido](https://azure.microsoft.com/en-us/resources/templates/?resourceType=Microsoft.Insights)

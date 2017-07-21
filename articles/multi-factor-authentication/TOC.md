@@ -15,6 +15,7 @@
 ### [Configurar definições](multi-factor-authentication-whats-next.md)
 ### [Relatórios no MFA](multi-factor-authentication-manage-reports.md)
 ### [Utilizar servidores de política de rede existentes](multi-factor-authentication-nps-extension.md)
+#### [Configuração avançada para a extensão NPS](nps-extension-advanced-configuration.md)
 ### [Criar um Fornecedor de Autenticação](multi-factor-authentication-get-started-auth-provider.md)
 ### MFA do Azure no local
 #### [Instalar o portal de utilizadores](multi-factor-authentication-get-started-portal.md)

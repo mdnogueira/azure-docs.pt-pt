@@ -20,6 +20,7 @@
 ### [Monitorizar VMs com a v2.x de Extensão da VM de Diagnóstico](diagnostic-extension-v2.md)
 ### [Injetar dados personalizados](inject-custom-data.md)
 ### [Repor palavras-passe ou chaves do Linux, corrigir SSH e verificar discos](reset-access.md)
+### [Manutenção](planned-maintenance-schedule.md)
 ### [Criar um anfitrião do Docker com a CLI](cli-use-docker.md)
 ### [Criar um anfitrião do Docker com o portal](portal-use-docker.md)
 ### [Como utilizar o Docker com o Swarn](../../virtual-machines-linux-docker-swarm.md)
