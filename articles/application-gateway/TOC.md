@@ -7,6 +7,7 @@
 ## [Encaminhamento do URL](application-gateway-url-route-overview.md)
 ## [Multilocal](application-gateway-multi-site-overview.md)
 ## [SSL Ponto a Ponto](application-gateway-backend-ssl.md)
+## [Redirecionamento](application-gateway-redirect-overview.md)
 ## [WebSocket](application-gateway-websocket.md)
 ## [Limites do serviço](../azure-subscription-service-limits.md?toc=%2fazure%2fapplication-gateway%2ftoc.json#application-gateway-limits)
 # Introdução
@@ -37,6 +38,8 @@
 ## Configurar o alojamento de múltiplos sites
 ### [Portal](application-gateway-create-multisite-portal.md)
 ### [PowerShell](application-gateway-create-multisite-azureresourcemanager-powershell.md)
+## Configurar o redirecionamento
+### [PowerShell](application-gateway-configure-redirect-powershell.md)
 ## Configurar sondas do estado de funcionamento
 ### [Portal](application-gateway-create-probe-portal.md)
 ### [PowerShell](application-gateway-create-probe-ps.md)
