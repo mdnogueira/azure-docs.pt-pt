@@ -25,6 +25,8 @@
           href: connect-nodejs.md
         - name: Ruby
           href: connect-ruby.md
+        - name: Ir
+          href: connect-go.md
 - name: Tutoriais
   items:
     - name: 1 - Estruturar uma Base de Dados

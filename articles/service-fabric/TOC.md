@@ -290,7 +290,8 @@
 ## Monitorizar e diagnosticar
 ### [Monitorizar e diagnosticar aplicações](service-fabric-diagnostics-overview.md)
 ### Gerar eventos
-#### [Gerar eventos ao nível de infraestrutura](service-fabric-diagnostics-event-generation-infra.md)
+#### [Gerar eventos de nível de plataforma](service-fabric-diagnostics-event-generation-infra.md)
+##### [Canal operacional](service-fabric-diagnostics-event-generation-operational.md)
 ##### [Eventos do Reliable Services](service-fabric-reliable-services-diagnostics.md)
 ##### [Eventos de Reliable Actors](service-fabric-reliable-actors-diagnostics.md)
 ##### [Métricas de desempenho](service-fabric-diagnostics-event-generation-perf.md)

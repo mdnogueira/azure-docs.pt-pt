@@ -29,6 +29,7 @@
 ### [Assistente de Cópia do Data Factory](data-factory-azure-copy-wizard.md)
 #### [Carregar 1 TB em 15 minutos](data-factory-load-sql-data-warehouse.md)
 ### [Guia de desempenho e otimização](data-factory-copy-activity-performance.md)
+### [Tolerância a falhas](data-factory-copy-activity-fault-tolerance.md)
 ### [Considerações de segurança](data-factory-data-movement-security-considerations.md)
 ### Conectores
 #### [Amazon Redshift](data-factory-amazon-redshift-connector.md)

@@ -370,6 +370,10 @@
               href: migration-classic-resource-manager-faq.md
     - name: Resolução de problemas
       items:
+        - name: >-
+            Suportabilidade de adicionar a VM do Azure para um conjunto de
+            disponibilidade existente
+          href: ../virtual-machines-availability-set-supportability.md
         - name: Entender o reinício do sistema
           href: understand-vm-reboot.md
         - name: Ligações do Ambiente de Trabalho Remoto
