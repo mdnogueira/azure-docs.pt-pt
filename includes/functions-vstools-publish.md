@@ -16,10 +16,6 @@ Na caixa de diálogo **Criar Serviço de Aplicações**, utilize as definições
 | **[Plano do Serviço de Aplicações](../articles/azure-functions/functions-scale.md)** | Plano de consumo | Confirme que escolhe o **Consumo** em **Tamanho** quando criar um novo plano.  |
 | **[Conta de armazenamento](../articles/storage/storage-create-storage-account.md#create-a-storage-account)** | Nome globalmente exclusivo | Utilize uma conta de armazenamento existente ou crie uma nova.   |
 
-Clique em **Criar** para criar uma aplicação de funções no Azure com essas definições. 
-
-Após a conclusão do aprovisionamento, clique em **Publicar** para implementar o código do projeto da nova aplicação de funções. 
+Clique em **Criar** para criar uma aplicação de funções no Azure com essas definições. Quando o aprovisionamento estiver concluído, aponte o valor **URL do Site**, que é o endereço da sua aplicação de função no Azure. 
 
 ![Tempo de execução local do Azure](./media/functions-vstools-publish/functions-vstools-publish-profile.png)
-
-Anote o valor do **URL do Site**, que é o endereço da sua aplicação de funções no Azure. 

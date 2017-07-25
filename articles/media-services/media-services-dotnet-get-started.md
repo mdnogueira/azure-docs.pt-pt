@@ -12,13 +12,13 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: hero-article
-ms.date: 01/10/2017
+ms.date: 07/16/2017
 ms.author: juliako
-translationtype: Human Translation
-ms.sourcegitcommit: 1e6ae31b3ef2d9baf578b199233e61936aa3528e
-ms.openlocfilehash: 124eff2edccb6b4ad56ee39a2b37e892ef8c6cb4
-ms.lasthandoff: 04/18/2017
-
+ms.translationtype: HT
+ms.sourcegitcommit: 94d1d4c243bede354ae3deba7fbf5da0652567cb
+ms.openlocfilehash: a8e69933b977f60d09837f0f0360a274ef1b5dcd
+ms.contentlocale: pt-pt
+ms.lasthandoff: 07/18/2017
 
 ---
 
@@ -81,37 +81,8 @@ Para iniciar o ponto final de transmissão em fluxo, faça o seguinte:
 
 ## <a name="create-and-configure-a-visual-studio-project"></a>Criar e configurar um projeto de Visual Studio
 
-1. Crie uma nova Aplicação de Consola C# no Visual Studio. Introduza o **Nome**, **Localização** e **Nome da solução** e, em seguida, clique em **OK**.
-2. Utilize o pacote NuGet [windowsazure.mediaservices.extensions](https://www.nuget.org/packages/windowsazure.mediaservices.extensions) para instalar **Extensões do SDK do .NET dos Serviços de Multimédia do Azure**.  As Extensões do SDK do .NET dos Media Services são um conjunto de métodos de extensão e funções de programa auxiliar que irão simplificar o seu código e facilitar o desenvolvimento com os Media Services. Ao instalar este pacote, também é instalado o **SDK do .NET dos Media Services** e são adicionadas todas as outras dependências necessárias.
-
-    Para adicionar referências com o NuGet, faça o seguinte: no Explorador de Soluções, clique com o botão direito do rato no nome do projeto e selecione **Gerir pacotes NuGet**. Em seguida, procure **windowsazure.mediaservices.extensions** e clique em **Instalar**.
-
-3. Adicione uma referência à assemblagem System.Configuration. Esta assemblagem contém a classe **System.Configuration.ConfigurationManager** que é utilizada para aceder aos ficheiros de configuração, por exemplo, App.config.
-
-    Para adicionar uma referência, faça o seguinte: no Explorador de Soluções, clique com o botão direito do rato no nome do projeto, selecione **Adicionar** > **Referência...** e escreva “configuração” na caixa de pesquisa.
-
-4. Abra o ficheiro App.config (adicione o ficheiro ao seu projeto caso não tenha sido adicionado por predefinição) e adicione uma secção *appSettings* ao ficheiro. Configure os valores do nome de conta e a chave de conta da sua conta de Media Services do Azure, conforme mostrado no exemplo seguinte. Para obter o nome de conta e as informações da chave, aceda ao [portal do Azure](https://portal.azure.com/) e selecione a sua conta AMS. Em seguida, selecione **Definições** > **Chaves**. A janela Gerir chaves mostra o nome da conta e as chaves primária e secundária são apresentadas. Copie os valores do nome da conta e a chave primária.
-
-        <configuration>
-        ...
-          <appSettings>
-            <add key="MediaServicesAccountName" value="Media-Services-Account-Name" />
-            <add key="MediaServicesAccountKey" value="Media-Services-Account-Key" />
-          </appSettings>
-
-        </configuration>
-5. Substitua as declarações **using** existentes no início do ficheiro Program.cs pelo seguinte código.
-
-        using System;
-        using System.Collections.Generic;
-        using System.Linq;
-        using System.Text;
-        using System.Threading.Tasks;
-        using System.Configuration;
-        using System.Threading;
-        using System.IO;
-        using Microsoft.WindowsAzure.MediaServices.Client;
-6. Crie uma nova pasta (a pasta pode estar em qualquer local na unidade local) e copie um ficheiro .mp4 que pretende codificar e transmitir ou transferir progressivamente. Neste exemplo, é utilizado o caminho "C:\VideoFiles".
+1. Configure o seu ambiente de desenvolvimento e preencha o ficheiro app.config com informações da ligação, conforme descrito em [Media Services development with .NET](media-services-dotnet-how-to-use.md) (Desenvolvimento de Serviços de Multimédia com .NET). 
+2. Crie uma nova pasta (a pasta pode estar em qualquer local na unidade local) e copie um ficheiro .mp4 que pretende codificar e transmitir ou transferir progressivamente. Neste exemplo, é utilizado o caminho "C:\VideoFiles".
 
 ## <a name="connect-to-the-media-services-account"></a>Ligar à conta de Media Services
 
@@ -129,48 +100,44 @@ Os métodos de chamadas de função **Main** que serão definidos posteriormente
     class Program
     {
         // Read values from the App.config file.
-        private static readonly string _mediaServicesAccountName =
-            ConfigurationManager.AppSettings["MediaServicesAccountName"];
-        private static readonly string _mediaServicesAccountKey =
-            ConfigurationManager.AppSettings["MediaServicesAccountKey"];
+        private static readonly string _AADTenantDomain =
+        ConfigurationManager.AppSettings["AADTenantDomain"];
+        private static readonly string _RESTAPIEndpoint =
+        ConfigurationManager.AppSettings["MediaServiceRESTAPIEndpoint"];
 
-        // Field for service context.
         private static CloudMediaContext _context = null;
-        private static MediaServicesCredentials _cachedCredentials = null;
 
         static void Main(string[] args)
         {
-            try
-            {
-                // Create and cache the Media Services credentials in a static class variable.
-                _cachedCredentials = new MediaServicesCredentials(
-                                _mediaServicesAccountName,
-                                _mediaServicesAccountKey);
-                // Used the chached credentials to create CloudMediaContext.
-                _context = new CloudMediaContext(_cachedCredentials);
+        try
+        {
+            var tokenCredentials = new AzureAdTokenCredentials(_AADTenantDomain, AzureEnvironments.AzureCloudEnvironment);
+            var tokenProvider = new AzureAdTokenProvider(tokenCredentials);
 
-                // Add calls to methods defined in this section.
-        // Make sure to update the file name and path to where you have your media file.
-                IAsset inputAsset =
-                    UploadFile(@"C:\VideoFiles\BigBuckBunny.mp4", AssetCreationOptions.None);
+            _context = new CloudMediaContext(new Uri(_RESTAPIEndpoint), tokenProvider);
 
-                IAsset encodedAsset =
-                    EncodeToAdaptiveBitrateMP4s(inputAsset, AssetCreationOptions.None);
+            // Add calls to methods defined in this section.
+            // Make sure to update the file name and path to where you have your media file.
+            IAsset inputAsset =
+            UploadFile(@"C:\VideoFiles\BigBuckBunny.mp4", AssetCreationOptions.None);
 
-                PublishAssetGetURLs(encodedAsset);
-            }
-            catch (Exception exception)
-            {
-                // Parse the XML error message in the Media Services response and create a new
-                // exception with its content.
-                exception = MediaServicesExceptionParser.Parse(exception);
+            IAsset encodedAsset =
+            EncodeToAdaptiveBitrateMP4s(inputAsset, AssetCreationOptions.None);
 
-                Console.Error.WriteLine(exception.Message);
-            }
-            finally
-            {
-                Console.ReadLine();
-            }
+            PublishAssetGetURLs(encodedAsset);
+        }
+        catch (Exception exception)
+        {
+            // Parse the XML error message in the Media Services response and create a new
+            // exception with its content.
+            exception = MediaServicesExceptionParser.Parse(exception);
+
+            Console.Error.WriteLine(exception.Message);
+        }
+        finally
+        {
+            Console.ReadLine();
+        }
         }
     }
 
@@ -263,7 +230,7 @@ Para transmitir ou transferir um elemento, primeiro tem de o "publicar" através
 
 ### <a name="some-details-about-url-formats"></a>Alguns detalhes sobre os formatos de URL
 
-Depois de criar os localizadores, pode criar os URLs que seriam utilizados para transmitir ou transferir os seus ficheiros. O exemplo neste tutorial originará URLs que pode colar nos browsers adequados. Esta secção fornece-lhe breves exemplos de como será o aspeto dos de diferentes formatos.
+Depois de criar os localizadores, pode criar os URLs que seriam utilizados para transmitir ou transferir os seus ficheiros. O exemplo neste tutorial originará URLs que pode colar nos browsers adequados. Esta secção disponibiliza apenas breves exemplos de como será o aspeto dos diferentes formatos.
 
 #### <a name="a-streaming-url-for-mpeg-dash-has-the-following-format"></a>Um URL de transmissão em fluxo para MPEG DASH tem o seguinte formato:
 

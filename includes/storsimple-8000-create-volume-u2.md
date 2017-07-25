@@ -1,4 +1,4 @@
-<!--author=alkohli last changed: 01/12/2017-->
+<!--author=alkohli last changed: 07/19/2017-->
 
 #### <a name="to-create-a-volume"></a>Para criar um volume
 1. A partir da lista tabular de dispositivos no painel **Dispositivos**, selecione o seu dispositivo. Clique em **+ Adicionar volume**.
@@ -11,7 +11,7 @@
 
    2. Na lista pendente, selecione o contentor de volumes onde precisa de adicionar um volume. 
 
-   3.  Escreva um **Nome** para o volume.
+   3.  Escreva um **Nome** para o volume. Não pode mudar o nome de um volume depois de o mesmo ter sido criado.
 
    4. Na lista pendente, selecione o **Tipo** do volume. Para cargas de trabalho que necessitem de garantias locais, latências baixas e desempenho superior, selecione um volume **Afixado localmente**. Para todos os outros dados, selecione um volume **Em camadas**. Se estiver a utilizar este volume para os dados de arquivo, marque **Utilizar este volume para dados de arquivo acedidos com menos frequência**.
       

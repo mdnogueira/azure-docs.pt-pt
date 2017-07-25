@@ -14,17 +14,17 @@ ms.devlang: nodejs
 ms.topic: get-started-article
 ms.date: 06/13/2017
 ms.author: rachelap
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 857267f46f6a2d545fc402ebf3a12f21c62ecd21
-ms.openlocfilehash: 8a5d0c60e101f4038dff6f76c8f23dbb2b44661c
+ms.translationtype: HT
+ms.sourcegitcommit: c3ea7cfba9fbf1064e2bd58344a7a00dc81eb148
+ms.openlocfilehash: 49f6a49f3f97841e896ff2d497555c42a1ec8e0d
 ms.contentlocale: pt-pt
-ms.lasthandoff: 06/28/2017
+ms.lasthandoff: 07/19/2017
 
 ---
 # <a name="build-a-nodejs-restful-api-and-deploy-it-to-an-api-app-in-azure"></a>Criar uma API RESTful Node.js e implementá-la numa aplicação API no Azure
 [!INCLUDE [app-service-api-get-started-selector](../../includes/app-service-api-get-started-selector.md)]
 
-Este guia de início rápido mostra como criar um [Express](http://expressjs.com/)framework Node.js REST API a partir de uma definição de [Swagger](http://swagger.io/) e implementá-lo como uma [aplicação de API](app-service-api-apps-why-best-platform.md) no Azure. Crie a aplicação através das ferramentas de linha de comando, configure os recursos com a [CLI do Azure](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli)e implemente a aplicação com o Git.  Quando tiver terminado, terá uma API de REST de amostra de trabalho em execução no Azure.
+Este início rápido mostra como criar uma API REST, escrita com Node.js [Express](http://expressjs.com/), utilizando uma definição do [Swagger](http://swagger.io/) e implementando-a como uma [aplicação API](app-service-api-apps-why-best-platform.md) no Azure. Crie a aplicação através das ferramentas de linha de comando, configure os recursos com a [CLI do Azure](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli) e implemente a aplicação com o Git.  Quando tiver terminado, terá uma API de REST de amostra de trabalho em execução no Azure.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 

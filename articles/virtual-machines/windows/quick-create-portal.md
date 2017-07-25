@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
-ms.date: 05/03/2017
+ms.date: 07/15/2017
 ms.author: nepeters
 ms.custom: mvc
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5edc47e03ca9319ba2e3285600703d759963e1f3
-ms.openlocfilehash: fac46780cfd591a00ce73ea1bb4ce73893d22967
+ms.translationtype: HT
+ms.sourcegitcommit: 94d1d4c243bede354ae3deba7fbf5da0652567cb
+ms.openlocfilehash: 31ac18add9c3fd956e0d37b1e0c1a510265c22e6
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/31/2017
+ms.lasthandoff: 07/18/2017
 
 ---
 
@@ -38,7 +38,7 @@ Inicie sessão no portal do Azure em http://portal.azure.com.
 
 1. Clique no botão **Novo** localizado no canto superior esquerdo do portal do Azure.
 
-2. Selecione **Computação**, **Windows Server 2016 Datacenter** e certifique-se de que **Resource Manager** está selecionado no modelo de implementação. Clique no botão **Criar**. 
+2. Selecione **Computação** e, em seguida, selecione **Windows Server 2016 Datacenter**. 
 
 3. Introduza as informações da máquina virtual. O nome de utilizador e palavra-passe introduzidos aqui são utilizados para iniciar sessão na máquina virtual. Quando terminar, clique em **OK**.
 
@@ -48,7 +48,7 @@ Inicie sessão no portal do Azure em http://portal.azure.com.
 
     ![Captura de ecrã que mostra os tamanhos de VM](./media/quick-create-portal/create-windows-vm-portal-sizes.png)  
 
-5. No painel definições, selecione **Sim** em **Utilizar discos geridos**, mantenha as predefinições para o resto das definições e clique em **OK**.
+5. No painel de definições, mantenha as predefinições e clique em **OK**.
 
 6. Na página de resumo, clique em **Ok** para iniciar a implementação da máquina virtual.
 

@@ -4,7 +4,7 @@ description: Saiba como instalar as Ferramentas do Data Lake para Visual Studio 
 services: data-lake-analytics
 documentationcenter: 
 author: saveenr
-manager: saveenr
+manager: jhubbard
 editor: cgronlun
 ms.assetid: ad8a6992-02c7-47d4-a108-62fc5a0777a3
 ms.service: data-lake-analytics
@@ -14,26 +14,21 @@ ms.tgt_pltfrm: na
 ms.workload: big-data
 ms.date: 06/28/2017
 ms.author: saveenr, yanacai
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 3716c7699732ad31970778fdfa116f8aee3da70b
-ms.openlocfilehash: 401e2d84e5e2eb9f66a16b299fbb93bd1943e04b
+ms.translationtype: HT
+ms.sourcegitcommit: c3ea7cfba9fbf1064e2bd58344a7a00dc81eb148
+ms.openlocfilehash: 7bbbb08ff635477a88403a3ae6bd3486d31838ef
 ms.contentlocale: pt-pt
-ms.lasthandoff: 06/30/2017
-
+ms.lasthandoff: 07/19/2017
 
 ---
-<a id="develop-u-sql-scripts-by-using-data-lake-tools-for-visual-studio" class="xliff"></a>
-
-# Desenvolver scripts U-SQL com as Ferramentas do Data Lake para Visual Studio
+# <a name="develop-u-sql-scripts-by-using-data-lake-tools-for-visual-studio"></a>Desenvolver scripts U-SQL com as Ferramentas do Data Lake para Visual Studio
 [!INCLUDE [get-started-selector](../../includes/data-lake-analytics-selector-get-started.md)]
 
 
 Saiba como utilizar o Visual Studio para criar contas do Azure Data Lake Analytics, definir tarefas em [U-SQL](data-lake-analytics-u-sql-get-started.md) e submeter tarefas para o serviço Data Lake Analytics. Para mais informações sobre a Data Lake Analytics, consulte [Descrição geral da Análise do Azure Data Lake](data-lake-analytics-overview.md).
 
 
-<a id="prerequisites" class="xliff"></a>
-
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 
 * **Visual Studio**: são suportadas todas as edições exceto a Express.
     * Visual Studio 2017
@@ -42,17 +37,13 @@ Saiba como utilizar o Visual Studio para criar contas do Azure Data Lake Analyti
 * Versão 2.7.1 ou superior do **Microsoft Azure SDK para .NET**.  Instale-a através do [instalador de plataforma Web](http://www.microsoft.com/web/downloads/platform.aspx).
 * A conta do **Data Lake Analytics**. Para criar uma conta, consulte [Introdução ao Azure Data Lake Analytics com o portal do Azure](data-lake-analytics-get-started-portal.md).
 
-<a id="install-azure-data-lake-tools-for-visual-studio" class="xliff"></a>
-
-## Instalar as Ferramentas do Azure Data Lake para Visual Studio 
+## <a name="install-azure-data-lake-tools-for-visual-studio"></a>Instalar as Ferramentas do Azure Data Lake para Visual Studio 
 
 Transfira e instale as Ferramentas do Azure Data Lake para Visual Studio [a partir do centro de transferências](http://aka.ms/adltoolsvs). Após a instalação, tenha em atenção que:
 * O nó do **Server Explorer** > **Azure** contém um nó do **Data Lake Analytics**. 
 * O menu **Ferramentas** inclui um item do **Data Lake**.
 
-<a id="connect-to-an-azure-data-lake-analytics-account" class="xliff"></a>
-
-## Ligar-se a uma conta do Azure Data Lake Analytics
+## <a name="connect-to-an-azure-data-lake-analytics-account"></a>Ligar-se a uma conta do Azure Data Lake Analytics
 
 1. Abra o Visual Studio.
 2. Abra o Server Explorer ao selecionar **Ver** > **Server Explorer**.
@@ -60,9 +51,7 @@ Transfira e instale as Ferramentas do Azure Data Lake para Visual Studio [a part
 4. No Server Explorer, selecione **Azure** > **Data Lake Analytics**. Verá uma lista das suas contas do Data Lake Analytics.
 
 
-<a id="write-your-first-u-sql-script" class="xliff"></a>
-
-## Escrever o seu primeiro script U-SQL
+## <a name="write-your-first-u-sql-script"></a>Escrever o seu primeiro script U-SQL
 
 O texto apresentado em seguida é um script U-SQL simples. Este define um pequeno conjunto de dados e grava o conjunto de dados no Data Lake Store como um ficheiro com o nome `/data.csv`.
 
@@ -79,9 +68,7 @@ OUTPUT @a
     USING Outputters.Csv();
 ```
 
-<a id="submit-a-data-lake-analytics-job" class="xliff"></a>
-
-### Submeter uma tarefa do Data Lake Analytics
+### <a name="submit-a-data-lake-analytics-job"></a>Submeter uma tarefa do Data Lake Analytics
 
 1. Selecione **Ficheiro** > **Novo** > **Projeto**.
 
@@ -108,28 +95,22 @@ OUTPUT @a
    * **Dados** apresenta todas as entradas e saídas.
    * **Diagnóstico** oferece uma análise avançada para a otimização do desempenho e a execução da tarefa.
 
-<a id="to-check-job-state" class="xliff"></a>
-
-### Para verificar o estado da tarefa
+### <a name="to-check-job-state"></a>Para verificar o estado da tarefa
 
 1. No Server Explorer, selecione **Azure** > **Data Lake Analytics**. 
 2. Expanda o nome da conta do Data Lake Analytics.
 3. Faça duplo clique em **Tarefas**.
 4. Selecione a tarefa submetida anteriormente.
 
-<a id="to-see-the-output-of-a-job" class="xliff"></a>
-
-### Para ver a saída de uma tarefa
+### <a name="to-see-the-output-of-a-job"></a>Para ver a saída de uma tarefa
 
 1. No Server Explorer, navegue até à tarefa submetida.
 2. Clique no separador **Dados**.
 3. No separador **Saídas de Tarefas**, selecione o ficheiro `"/data.csv"`.
 
-<a id="next-steps" class="xliff"></a>
+## <a name="next-steps"></a>Passos seguintes
 
-## Passos seguintes
-
-* Introdução ao Data Lake Analytics com o: [portal do Azure](data-lake-analytics-get-started-portal.md) | [Azure PowerShell](data-lake-analytics-get-started-powershell.md) 
+* [Run U-SQL scripts on your own workstation for testing and debugging](data-lake-analytics-data-lake-tools-local-run.md) (Executar scripts U-SQL na sua própria área de trabalho para testes e depuração)
 * [Depuração do código c# nas tarefas U-SQL](data-lake-analytics-debug-u-sql-jobs.md)
 * [Utilizar as Ferramentas do Azure Data Lake para o Visual Studio Code](data-lake-analytics-data-lake-tools-for-vscode.md)
 

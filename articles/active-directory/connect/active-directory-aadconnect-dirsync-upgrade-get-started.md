@@ -12,11 +12,13 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 02/07/2017
+ms.date: 07/13/2017
 ms.author: billmath
-translationtype: Human Translation
-ms.sourcegitcommit: e358f6d1937a45f375777cea1153b975a745a719
-ms.openlocfilehash: 08ba157ba783d00069750cdc1c80d13111b6a670
+ms.translationtype: HT
+ms.sourcegitcommit: 19be73fd0aec3a8f03a7cd83c12cfcc060f6e5e7
+ms.openlocfilehash: 7049af4567947d3d799a38c5a3940ba25a2c0f18
+ms.contentlocale: pt-pt
+ms.lasthandoff: 07/13/2017
 
 ---
 
@@ -134,7 +136,7 @@ Se tiver menos de 50 000 objetos mas quiser, mesmo assim, fazer uma implementa�
 1. Execute o instalador do Azure AD Connect (MSI).
 2. Quando vir o ecrã **Bem-vindo ao Azure AD Connect**, saia do assistente de instalação clicando no “X” no canto superior direito da janela.
 3. Abra uma linha de comandos.
-4. Na localização da instalação do Azure AD Connect (predefinição: C:\Programas\Microsoft Azure Active Directory Connect), execute o seguinte comando:  `AzureADConnect.exe /ForceExport`.
+4. Na localização da instalação do Azure AD Connect (predefinição: C:\Programas\Microsoft Azure Active Directory Connect), execute o comando seguinte: `AzureADConnect.exe /ForceExport`.
 5. Clique no botão **Exportar definições**. Ao instalar o Azure AD Connect num servidor separado, estas definições são migradas do DirSync atual para a nova instalação do Azure AD Connect.
 
 ![Análise completa](./media/active-directory-aadconnect-dirsync-upgrade-get-started/forceexport.png)
@@ -147,7 +149,7 @@ Ao instalar o Azure AD Connect num servidor novo, o pressuposto é que pretende 
 1. Execute o instalador do Azure AD Connect (MSI).
 2. Quando vir o ecrã **Bem-vindo ao Azure AD Connect**, saia do assistente de instalação clicando no “X” no canto superior direito da janela.
 3. Abra uma linha de comandos.
-4. Na localização da instalação do Azure AD Connect (predefinição: C:\Programas\Microsoft Azure Active Directory Connect), execute o seguinte comando:  `AzureADConnect.exe /migrate`.
+4. Na localização da instalação do Azure AD Connect (predefinição: C:\Programas\Microsoft Azure Active Directory Connect), execute o seguinte comando: `AzureADConnect.exe /migrate`.
    O assistente de instalação do Azure AD Connect arranca e apresenta o seguinte ecrã:  
    ![Introduzir as credenciais do Azure AD](./media/active-directory-aadconnect-dirsync-upgrade-get-started/ImportSettings.png)
 5. Selecione o ficheiro de definições que exportou na instalação do DirSync.
@@ -216,9 +218,4 @@ Saiba mais acerca destas novas funcionalidades que foram ativadas com a instala�
 Saiba mais acerca destes tópicos comuns: [agendador e como acionar a sincronização](active-directory-aadconnectsync-feature-scheduler.md).
 
 Saiba mais sobre como [Integrar as identidades no local ao Azure Active Directory](active-directory-aadconnect.md).
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 

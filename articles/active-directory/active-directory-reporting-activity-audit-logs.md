@@ -12,18 +12,17 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 07/05/2017
+ms.date: 07/19/2017
 ms.author: markvi
 ms.reviewer: dhanyahk
-ms.translationtype: Human Translation
-ms.sourcegitcommit: c785ad8dbfa427d69501f5f142ef40a2d3530f9e
-ms.openlocfilehash: d8c49272789e7d33c6f0684875765a1ecea5a2ff
+ms.translationtype: HT
+ms.sourcegitcommit: c3ea7cfba9fbf1064e2bd58344a7a00dc81eb148
+ms.openlocfilehash: f2d0332d815c82d7d47625e020de2e9c5099deeb
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/26/2017
+ms.lasthandoff: 07/19/2017
 
 ---
-# Relatório de atividade de auditoria no portal do Azure Active Directory
-<a id="audit-activity-reports-in-the-azure-active-directory-portal" class="xliff"></a> 
+# <a name="audit-activity-reports-in-the-azure-active-directory-portal"></a>Relatório de atividade de auditoria no portal do Azure Active Directory 
 
 Com os relatórios no Azure Active Directory (Azure AD), obtenha todas as informações de que precisa para determinar o estado de funcionamento do seu ambiente.
 
@@ -38,15 +37,13 @@ A arquitetura de relatórios no Azure AD consiste nos seguintes componentes:
 
 Este tópico fornece-lhe uma descrição geral das atividades de auditoria.
  
-## Quem pode aceder aos dados?
-<a id="who-can-access-the-data" class="xliff"></a>
+## <a name="who-can-access-the-data"></a>Quem pode aceder aos dados?
 * Utilizadores na função de Administrador de Segurança ou de Leitor de Segurança
 * Administradores Globais
 * Os utilizadores individuais (não administradores) podem ver as suas próprias atividades
 
 
-## Registos de auditoria
-<a id="audit-logs" class="xliff"></a>
+## <a name="audit-logs"></a>Registos de auditoria
 
 Os registos de auditoria no Azure Active Directory fornecem registos das atividades de sistema para efeitos de conformidade.  
 O primeiro ponto de entrada para todos os dados de auditoria é **Registos de auditoria** na secção **Atividade** do **Azure Active Directory**.
@@ -76,8 +73,7 @@ Ao clicar num item na vista de lista, obtém todos os detalhes sobre o mesmo.
 ![Registos de auditoria](./media/active-directory-reporting-activity-audit-logs/22.png "Registos de auditoria")
 
 
-## Filtrar registos de auditoria
-<a id="filtering-audit-logs" class="xliff"></a>
+## <a name="filtering-audit-logs"></a>Filtrar registos de auditoria
 
 Para limitar os dados comunicados a um nível que funcione para si, pode filtrar os dados de auditoria através dos seguintes campos:
 
@@ -134,19 +130,17 @@ Quando seleciona **Grupo** como o **tipo de recurso de atividade**, obtém uma c
 
 O filtro **atividade** baseia-se na categoria e na seleção de Tipo de recurso de atividade que fizer. Pode selecionar uma atividade específica que queira ver ou selecionar todas. 
 
-Pode obter a lista de todas as Atividades de Auditoria com a Graph API https://graph.windows.net/$tenantdomain/activities/auditActivityTypes?api-version=beta, onde $tenantdomain é o seu nome de domínio ou ver o artigo [Audit report events](active-directory-reporting-audit-events.md#list-of-audit-report-events) (Relatório de eventos de auditoria).
+Pode obter a lista de todas as Atividades de Auditoria com a Graph API https://graph.windows.net/$tenantdomain/activities/auditActivityTypes?api-version=beta, onde $tenantdomain é o seu nome de domínio ou ver o artigo [Audit report events](active-directory-reporting-audit-events.md) (Relatório de eventos de auditoria).
 
 
-## Atalhos dos registos de auditoria
-<a id="audit-logs-shortcuts" class="xliff"></a>
+## <a name="audit-logs-shortcuts"></a>Atalhos dos registos de auditoria
 
 Para além do **Azure Active Directory**, o portal do Azure proporciona-lhe dois pontos de entrada adicionais para dados de auditoria:
 
 - Utilizadores e grupos
 - Aplicações Empresariais
 
-### Registos de auditoria de utilizadores e grupos
-<a id="users-and-groups-audit-logs" class="xliff"></a>
+### <a name="users-and-groups-audit-logs"></a>Registos de auditoria de utilizadores e grupos
 
 Com os relatórios de auditoria baseados em utilizadores e grupos, poderá obter respostas a perguntas como:
 
@@ -170,8 +164,7 @@ Se quiser apenas rever dados de auditoria que estejam relacionados com utilizado
 
 ![Registos de auditoria](./media/active-directory-reporting-activity-audit-logs/93.png "Registos de auditoria")
 
-### Registos de auditoria de aplicações empresariais
-<a id="enterprise-applications-audit-logs" class="xliff"></a>
+### <a name="enterprise-applications-audit-logs"></a>Registos de auditoria de aplicações empresariais
 
 Com os relatórios de auditoria baseados em aplicações, poderá obter respostas a perguntas como:
 
@@ -190,8 +183,8 @@ Pode filtrar ainda mais esta vista para apenas **grupos** ou **utilizadores**.
 ![Registos de auditoria](./media/active-directory-reporting-activity-audit-logs/25.png "Registos de auditoria")
 
 
-## Passos seguintes
-<a id="next-steps" class="xliff"></a>
-Veja o [Guia dos Relatórios do Azure Active Directory](active-directory-reporting-guide.md).
+## <a name="next-steps"></a>Passos seguintes
+
+Para obter uma descrição geral dos relatórios, veja [Relatórios do Azure Active Directory](active-directory-reporting-azure-portal.md).
 
 

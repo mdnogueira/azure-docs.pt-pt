@@ -13,24 +13,23 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 07/06/2017
+ms.date: 07/17/2017
 ms.author: guybo
 ms.translationtype: HT
-ms.sourcegitcommit: f76de4efe3d4328a37f86f986287092c808ea537
-ms.openlocfilehash: 1c9487be5415d05a8699f458259d872591280d3d
+ms.sourcegitcommit: cddb80997d29267db6873373e0a8609d54dd1576
+ms.openlocfilehash: a8520c6d8962cc362fc935f6b515a299c0ce75b3
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/10/2017
-
+ms.lasthandoff: 07/18/2017
 
 ---
 # <a name="networking-for-azure-virtual-machine-scale-sets"></a>Trabalhar em rede em conjuntos de dimensionamento de máquinas virtuais do Azure
 
 Quando implementa um conjunto de dimensionamento de máquinas virtuais do Azure através do portal, determinadas propriedades de rede são predefinidas, como, por exemplo, um Balanceador de Carga do Azure com regras NAT de entrada. Este artigo descreve como utilizar algumas das funcionalidades de rede mais avançadas que podem ser configuradas em conjuntos de dimensionamento.
 
-Pode configurar todas as funcionalidades abordadas neste artigo através de modelos do Azure Resource Manager. Também estão incluídos exemplos da CLI do Azure para determinadas funcionalidades. Utilize a versão da CLI de julho de 2017 ou posterior. Serão adicionados brevemente mais exemplos da CLI e do PowerShell.
+Pode configurar todas as funcionalidades abordadas neste artigo através de modelos do Azure Resource Manager. Também estão incluídos exemplos da CLI do Azure e do PowerShell para determinadas funcionalidades. Utilize a CLI 2.10 e o PowerShell 4.2.0 ou posterior.
 
 ## <a name="accelerated-networking"></a>Redes Aceleradas
-As [Redes Aceleradas](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-create-vm-accelerated-networking) do Azure melhoram o desempenho da rede ao permitirem a virtualização de E/S de raiz única (SR-IOV) para uma máquina virtual. Para utilizar as redes aceleradas com conjuntos de dimensionamento, defina enableAcceleratedNetworking como _Verdadeiro_ nas definições networkInterfaceConfigurations do seu conjunto. Por exemplo:
+As [Redes Aceleradas](../virtual-network/virtual-network-create-vm-accelerated-networking.md) do Azure melhoram o desempenho da rede ao permitirem a virtualização de E/S de raiz única (SR-IOV) para uma máquina virtual. Para utilizar as redes aceleradas com conjuntos de dimensionamento, defina enableAcceleratedNetworking como **Verdadeiro** nas definições networkInterfaceConfigurations do seu conjunto. Por exemplo:
 ```json
 "networkProfile": {
     "networkInterfaceConfigurations": [
@@ -59,9 +58,9 @@ az vmss create -g lbtest -n myvmss --image Canonical:UbuntuServer:16.04-LTS:late
 
 ## <a name="configurable-dns-settings"></a>Definições de DNS Configuráveis
 Por predefinição, os conjuntos de dimensionamento assumem as definições de DNS específicas da VNet e da sub-rede em que foram criados. Contudo, pode configurar as definições de DNS de um conjunto de dimensionamento diretamente.
-
+~
 ### <a name="creating-a-scale-set-with-configurable-dns-servers"></a>Criar um conjunto de dimensionamento com servidores DNS configuráveis
-Para criar um conjunto de dimensionamento com uma configuração DNS personalizada através da CLI 2.0, adicione o argumento --dns-servers ao comando _vmss create_, seguido de endereços ip de servidores separados por espaços. Por exemplo:
+Para criar um conjunto de dimensionamento com uma configuração DNS personalizada através da CLI 2.0, adicione o argumento **--dns-servers** ao comando **vmss create**, seguido de endereços ip de servidores separados por espaços. Por exemplo:
 ```bash
 --dns-servers 10.0.0.6 10.0.0.5
 ```
@@ -73,9 +72,9 @@ Para configurar servidores DNS personalizados num modelo do Azure, adicione uma 
 ```
 
 ### <a name="creating-a-scale-set-with-configurable-virtual-machine-domain-names"></a>Criar um conjunto de dimensionamento com nomes de domínio de máquinas virtuais configuráveis
-Para criar um conjunto de dimensionamento com um nome DNS personalizado para máquinas virtuais com a CLI 2.0, adicione o argumento _--vm-domain-name_ ao comando _vmss create_, seguido de uma cadeia que representa o nome de domínio.
+Para criar um conjunto de dimensionamento com um nome DNS personalizado para máquinas virtuais com a CLI 2.0, adicione o argumento **--vm-domain-name** ao comando **vmss create**, seguido de uma cadeia que representa o nome de domínio.
 
-Para definir o nome de domínio num modelo do Azure, adicione uma propriedade dnsSettings à secção networkInterfaceConfigurations do conjunto de dimensionamento. Por exemplo:
+Para definir o nome de domínio num modelo do Azure, adicione uma propriedade **dnsSettings** à secção **networkInterfaceConfigurations** do conjunto de dimensionamento. Por exemplo:
 
 ```json
 "networkProfile": {
@@ -109,84 +108,7 @@ Para definir o nome de domínio num modelo do Azure, adicione uma propriedade dn
 
 O resultado para um nome dns de máquina virtual individual teria o formato seguinte: 
 ```
-<vmname><vmindex>.<specifiedVmssDomainNameLabel>
-```
-
-## <a name="ipv6-preview-for-public-ips-and-load-balancer-pools"></a>Pré-visualização de IPv6 para IPs públicos e conjuntos de Balanceadores de Carga
-Pode configurar endereços IP públicos IPv6 num balanceador de carga do Azure e encaminhar as ligações para agrupamentos de back-end de conjunto de dimensionamento de máquinas virtuais. Para utilizar IPv6, atualmente em pré-visualização, crie primeiro um recurso de endereço público IPv6. Por exemplo:
-```json
-{
-    "apiVersion": "2016-03-30",
-    "type": "Microsoft.Network/publicIPAddresses",
-    "name": "[parameters('ipv6PublicIPAddressName')]",
-    "location": "[parameters('location')]",
-    "properties": {
-        "publicIPAddressVersion": "IPv6",
-        "publicIPAllocationMethod": "Dynamic",
-        "dnsSettings": {
-            "domainNameLabel": "[parameters('dnsNameforIPv6LbIP')]"
-        }
-    }
-}
-```
-Em seguida, configure as Configurações de IP do front-end do balanceador de carga para IPv4 e IPv6, conforme necessário:
-
-```json
-"frontendIPConfigurations": [
-    {
-        "name": "LoadBalancerFrontEndIPv6",
-        "properties": {
-            "publicIPAddress": {
-                "id": "[resourceId('Microsoft.Network/publicIPAddresses',parameters('ipv6PublicIPAddressName'))]"
-            }
-        }
-    }
-]
-```
-Definir os agrupamentos de back-end necessários:
-```json
-"backendAddressPools": [
-    {
-        "name": "BackendPoolIPv4"
-    },
-    {
-        "name": "BackendPoolIPv6"
-    }
-]
-```
-Definir as regras dos balanceadores de carga:
-```json
-{
-    "name": "LBRuleIPv6-46000",
-    "properties": {
-        "frontendIPConfiguration": {
-            "id": "[variables('ipv6FrontEndIPConfigID')]"
-        },
-        "backendAddressPool": {
-            "id": "[variables('ipv6LbBackendPoolID')]"
-        },
-        "protocol": "tcp",
-        "frontendPort": 46000,
-        "backendPort": 60001,
-        "probe": {
-            "id": "[variables('ipv4ipv6lbProbeID')]"
-        }
-    }
-}
-```
-Por último, referencie o agrupamento de IPv6 na secção IPConfigurations das propriedades de rede do conjunto de dimensionamento:
-```json
-{
-    "name": "ipv6IPConfig",
-    "properties": {
-        "privateIPAddressVersion": "IPv6",
-        "loadBalancerBackendAddressPools": [
-            {
-                "id": "[variables('ipv6LbBackendPoolID')]"
-            }
-        ]
-    }
-}
+<vm><vmindex>.<specifiedVmssDomainNameLabel>
 ```
 
 ## <a name="public-ipv4-per-virtual-machine"></a>IPv4 Público por máquina virtual
@@ -195,9 +117,9 @@ Em geral, as máquinas virtuais de conjuntos de dimensionamento do Azure não pr
 No entanto, alguns cenários requerem que as máquinas virtuais do conjunto de dimensionamento tenham os seus próprios endereços IP públicos. Um exemplo de um cenário destes são os jogos, em que uma consola tem de fazer uma ligação direta a uma máquina virtual na cloud, que está a fazer o processamento físico do jogo. Outro exemplo é quando as máquinas virtuais têm de fazer ligações externas a outras em várias regiões numa base de dados distribuída.
 
 ### <a name="creating-a-scale-set-with-public-ip-per-virtual-machine"></a>Criar um conjunto de dimensionamento com IP público por máquina virtual
-Para criar um conjunto de dimensionamento que atribui um endereço IP público a cada máquina virtual com a CLI 2.0, adicione o parâmetro _--public-ip-per-vm_ ao comando _vmss create_. 
+Para criar um conjunto de dimensionamento que atribui um endereço IP público a cada máquina virtual com a CLI 2.0, adicione o parâmetro **--public-ip-per-vm** ao comando **vmss create**. 
 
-Para criar um conjunto de dimensionamento com um modelo do Azure, confirme que a versão da API do recurso Microsoft.Compute/virtualMachineScaleSets é, no mínimo, a 2017-03-30 e adicione a propriedade JSON _publicIpAddressConfiguration_ à secção ipConfigurations do conjunto. Por exemplo:
+Para criar um conjunto de dimensionamento com um modelo do Azure, confirme que a versão da API do recurso Microsoft.Compute/virtualMachineScaleSets é, no mínimo, a **2017-03-30** e adicione a propriedade JSON **publicIpAddressConfiguration** à secção ipConfigurations do conjunto. Por exemplo:
 
 ```json
 "publicIpAddressConfiguration": {
@@ -210,11 +132,21 @@ Para criar um conjunto de dimensionamento com um modelo do Azure, confirme que a
 Modelo do exemplo: [201-vmss-public-ip-linux](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-public-ip-linux)
 
 ### <a name="querying-the-public-ip-addresses-of-the-virtual-machines-in-a-scale-set"></a>Consultar os endereços IP públicos das máquinas virtuais num conjunto de dimensionamento
-Para listar os endereços IP públicos atribuídos às máquinas virtuais do conjunto de dimensionamento com a CLI 2.0, utilize o comando _az vmss list-instance-public-ips_.
+Para listar os endereços IP públicos atribuídos às máquinas virtuais do conjunto de dimensionamento com a CLI 2.0, utilize o comando **az vmss list-instance-public-ips**.
 
-Também pode consultar os endereços IP públicos atribuídos às máquinas virtuais do conjunto de dimensionamento com o [Azure Resource Explorer](https://resources.azure.com) ou a API REST do Azure com a versão _2017-03-30_ ou superior.
+Para utilizar o PowerShell para listar os endereços IP públicos do conjunto de dimensionamento, utilize o comando _Get-AzureRmPublicIpAddress_. Por exemplo:
+```PowerShell
+PS C:\> Get-AzureRmPublicIpAddress -ResourceGroupName myrg -VirtualMachineScaleSetName myvmss
+```
 
-Para utilizar o Resource Explorer para ver os endereços IP públicos de um conjunto de dimensionamento, veja a secção _publicipaddresses_ desse conjunto. Por exemplo: https://resources.azure.com/subscriptions/_your_sub_id_/resourceGroups/_your_rg_/providers/Microsoft.Compute/virtualMachineScaleSets/_your_vmss_/publicipaddresses
+Também pode consultar os endereços IP públicos ao referenciar diretamente o ID de recurso da configuração desses endereços. Por exemplo:
+```PowerShell
+PS C:\> Get-AzureRmPublicIpAddress -ResourceGroupName myrg -Name myvmsspip
+```
+
+Pode consultar os endereços IP públicos atribuídos às máquinas virtuais do conjunto de dimensionamento com o [Azure Resource Explorer](https://resources.azure.com) ou a API REST do Azure com a versão **2017-03-30** ou superior.
+
+Para utilizar o Resource Explorer para ver os endereços IP públicos de um conjunto de dimensionamento, veja a secção **publicipaddresses** desse conjunto. Por exemplo: https://resources.azure.com/subscriptions/_your_sub_id_/resourceGroups/_your_rg_/providers/Microsoft.Compute/virtualMachineScaleSets/_your_vmss_/publicipaddresses
 
 ```
 GET https://management.azure.com/subscriptions/{your sub ID}/resourceGroups/{RG name}/providers/Microsoft.Compute/virtualMachineScaleSets/{scale set name}/publicipaddresses?api-version=2017-03-30

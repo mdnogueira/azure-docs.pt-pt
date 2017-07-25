@@ -1,7 +1,6 @@
 ---
-
 title: "Relatórios do Azure Active Directory | Microsoft Docs"
-description: "Lista os vários relatórios disponíveis do Azure Active Directory"
+description: "Mostra uma descrição geral dos relatórios do Azure Active Directory."
 services: active-directory
 documentationcenter: 
 author: MarkusVi
@@ -13,190 +12,110 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 07/05/2017
+ms.date: 07/13/2017
 ms.author: markvi
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 2db2ba16c06f49fd851581a1088df21f5a87a911
-ms.openlocfilehash: c7fe995f097c72ab5275249538fe2bb65efac256
+ms.reviewer: dhanyahk
+ms.translationtype: HT
+ms.sourcegitcommit: c999eb5d6b8e191d4268f44d10fb23ab951804e7
+ms.openlocfilehash: 738c8f4a56586b87f03973ec258b0a3023affa60
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/08/2017
-
+ms.lasthandoff: 07/17/2017
 
 ---
 # <a name="azure-active-directory-reporting"></a>Relatórios do Azure Active Directory
 
+Com os relatórios do Azure Active Directory, pode obter informações sobre o desempenho do seu ambiente.  
+Os dados fornecidos permite-lhe:
 
-*Esta documentação faz parte do [Guia dos Relatórios do Azure Active Directory](active-directory-reporting-guide.md).*
+- Determinar de que forma é que os utilizadores utilizam os seus serviços e aplicações
+- Detetar potenciais riscos que afetem o estado de funcionamento do ambiente
+- Resolver problemas que impedem os utilizadores de trabalhar  
 
-Com os relatórios no Azure Active Directory (Azure AD), obtenha todas as informações de que precisa para determinar o estado de funcionamento do seu ambiente.
+A arquitetura dos relatórios baseia-se em dois pilares principais:
 
-Existem duas áreas principais de relatórios:
+- Relatórios de segurança
+- Relatórios de atividade
 
-* **Atividades de início de sessão** – Informações sobre a utilização de aplicações geridas e atividades de início de sessão do utilizador
-* **Registos de auditoria** - informações de atividades do sistema sobre gestão de utilizadores e de grupos, as suas aplicações geridas e atividades de diretório
+![Relatórios](./media/active-directory-reporting-azure-portal/01.png)
 
-Consoante o âmbito dos dados de que está à procura, pode aceder a estes relatórios clicando em **Utilizadores e grupos** ou em **Aplicações empresariais** na lista de serviços no [portal do Azure](https://portal.azure.com).
 
-## <a name="sign-in-activities"></a>Atividades de início de sessão
-### <a name="user-sign-in-activities"></a>Atividades de início de sessão do utilizador
-Com as informações fornecidas pelo relatório de início de sessão de utilizador, encontrará respostas a perguntas como:
 
-* O que é o padrão de início de sessão de um utilizador?
-* Quantos utilizadores iniciaram sessão ao longo de uma semana?
-* Qual é o estado destes inícios de sessão?
+## <a name="security-reports"></a>Relatórios de segurança
 
-O ponto de entrada para estes dados é o gráfico de início de sessão de utilizador na secção **Descrição geral** em **Utilizadores e grupos**.
+Os relatórios de segurança no Azure Active Directory ajudam-no a proteger as identidades da sua organização.  
+Existem dois tipos de relatórios de segurança no Azure Active Directory:
 
- ![Relatórios](./media/active-directory-reporting-azure-portal/05.png "Relatórios")
+- **Utilizadores sinalizados para risco** - com o [relatório de segurança de utilizadores sinalizados para risco](active-directory-reporting-security-user-at-risk.md), obtém uma descrição geral das contas de utilizador que possam ter sido comprometidas.
 
-O gráfico de início de sessão de utilizador mostra as agregações semanais de inícios de sessão de todos os utilizadores num determinado período de tempo. A predefinição do período de tempo é 30 dias.
+- **Inícios de sessão de risco** - com o [relatório de segurança de inícios de sessão de risco](active-directory-reporting-security-risky-sign-ins.md), obtém um indicador para tentativas de início de sessão que possam ter sido realizados por alguém que não seja o legítimo proprietário das contas de utilizador. 
 
-![Relatórios](./media/active-directory-reporting-azure-portal/02.png "Relatórios")
+**De que licença do Azure AD precisa para aceder a um relatório de segurança?**  
+Todas as edições do Azure Active Directory disponibilizam os relatórios de utilizadores sinalizados para risco e de inícios de sessão de risco.  
+No entanto, o nível de granularidade dos relatórios varia entre as edições: 
 
-Quando clica num dia no gráfico de início de sessão, obtém uma lista detalhada das atividades de início de sessão.
+- Nas **edições Gratuita e Básica do Azure Active Directory**, já tem disponível uma lista dos utilizadores sinalizados para risco e dos inícios de sessão de risco. 
 
-![Relatórios](./media/active-directory-reporting-azure-portal/03.png "Relatórios")
+- A edição **Azure Active Directory Premium 1** expande este modelo, permitindo-lhe também examinar alguns dos eventos de risco subjacentes que foram detetados em cada relatório. 
 
-Cada linha na lista de atividades de início de sessão dá-lhe as informações detalhadas sobre o início de sessão selecionado, tais como:
+- A edição **do Azure Active Directory Premium 2** proporciona-lhe as informações mais detalhadas sobre os eventos de risco subjacentes e também lhe permite configurar políticas de segurança que respondam automaticamente aos níveis de risco configurados.
 
-* Quem iniciou sessão?
-* Qual era o UPN relacionado?
-* Que aplicação foi o destino do início de sessão?
-* Qual é o endereço IP do início de sessão?
-* Qual era o estado do início de sessão?
 
-### <a name="usage-of-managed-applications"></a>Utilização de aplicações geridas
-Com uma vista centrada em aplicações dos seus dados de início de sessão, poderá responder a perguntas como:
+## <a name="activity-reports"></a>Relatórios de atividade
 
-* Quem está a utilizar as minhas aplicações?
-* Quais são as três aplicações mais utilizadas na sua organização?
-* Lancei recentemente uma aplicação. Como está a correr?
+Existem dois tipos de relatórios de atividade no Azure Active Directory:
 
-O ponto de entrada para estes dados são as três aplicações mais utilizadas na sua organização no relatório dos últimos 30 dias na secção **Descrição geral** em **Aplicações empresariais**.
+- **Registos de auditoria** - o [relatório de atividade de registos de auditoria](active-directory-reporting-activity-audit-logs.md) dá-lhe acesso ao histórico de cada tarefa executada no seu inquilino.
 
- ![Relatórios](./media/active-directory-reporting-azure-portal/06.png "Relatórios")
+- **Inícios de sessão** – com o [relatório de atividade de inícios de sessão](active-directory-reporting-activity-sign-ins.md), pode saber quem realizou as tarefas reportadas no relatório de registos de auditoria.
 
-As agregações semanais de inícios de sessão do gráfico de utilização da aplicação das três aplicações mais utilizadas num determinado período de tempo. A predefinição do período de tempo é 30 dias.
 
-![Relatórios](./media/active-directory-reporting-azure-portal/78.png "Relatórios")
 
-Se quiser, pode colocar o foco numa aplicação específica.
+O **relatório de registos de auditoria** disponibiliza-lhe registos das atividades do sistema para efeitos de conformidade.
+Entre outras coisas, os dados fornecidos permite-lhe lidar com cenários comuns, como:
 
-![Relatórios](./media/active-directory-reporting-azure-portal/single_spp_usage_graph.png "Relatórios")
+- Um utilizador no meu inquilino obteve acesso a um grupo de administração. Quem lhe deu acesso? 
 
-Quando clica num dia no gráfico de utilização da aplicação, obtém uma lista detalhada das atividades de início de sessão.
+- Quero ver uma lista dos utilizadores que iniciam sessão numa determinada aplicação, porque incluía-a recentemente e quero saber se está a funcionar bem.
 
-![Relatórios](./media/active-directory-reporting-azure-portal/top_app_sign_ins.png "Relatórios")
+- Quero saber quantas reposições de palavras-passe ocorrem no meu inquilino.
 
-A opção **Inícios de sessão** dá uma visão geral completa de todos os eventos de início de sessão nas suas aplicações.
 
-![Relatórios](./media/active-directory-reporting-azure-portal/85.png "Relatórios")
+**De que licença do Azure AD precisa para aceder aos relatórios de registos de auditoria?**  
+O relatório de registos de auditoria está disponível para as funcionalidades para as quais tem licenças. Se tiver uma licença para uma funcionalidade específica, também tem acesso às informações de registo de auditoria relativas à mesma.
 
-Utilizando o seletor de colunas, pode selecionar os campos de dados que pretende apresentar.
+Para obter mais detalhes, veja **Comparação das funcionalidades disponíveis nas edições Free, Basic e Premium**, em [Funcionalidades e capacidades do Azure Active Directory](https://www.microsoft.com/cloud-platform/azure-active-directory-features).   
 
-![Relatórios](./media/active-directory-reporting-azure-portal/column_chooser.png "Relatórios")
 
-### <a name="filtering-sign-ins"></a>Filtrar inícios de sessão
-Pode filtrar inícios de sessão para limitar a quantidade de dados apresentados com os campos seguintes:
 
-* Data e hora 
-* Nome principal do utilizador
-* Nome da aplicação
-* Nome do cliente
-* Estado de início de sessão
+O **relatório de atividade de inícios de sessão** permite-lhe encontrar respostas a perguntas como:
 
-![Relatórios](./media/active-directory-reporting-azure-portal/293.png "Relatórios")
+- O que é o padrão de início de sessão de um utilizador?
+- Quantos utilizadores iniciaram sessão ao longo de uma semana?
+- Qual é o estado destes inícios de sessão?
 
-Outro método para filtrar as entradas das atividades de início de sessão consiste em procurar entradas específicas.
-O método de pesquisa permite-lhe definir o âmbito dos inícios de sessão em torno de **utilizadores**, **grupos** ou **aplicações** específicos.
 
-![Relatórios](./media/active-directory-reporting-azure-portal/84.png "Relatórios")
+**De que licença do Azure AD precisa para aceder aos relatórios de atividade de inícios de sessão?**  
+Para aceder aos relatórios de atividade de inícios de sessão, o seu inquilino tem de ter uma licença do Azure AD Premium associada ao mesmo.
 
-## <a name="audit-logs"></a>Registos de auditoria
-Os registos de auditoria no Azure Active Directory fornecem registos das atividades de sistema para efeitos de conformidade.
 
-Existem três categorias principais para fazer a auditoria de atividades relacionadas no portal do Azure:
+## <a name="programmatic-access"></a>Acesso programático
 
-* Utilizadores e grupos   
-* Aplicações
-* Diretório   
+Para além da interface de utilizador, os relatórios do Azure Active Directory também lhe fornecem [acesso programático](active-directory-reporting-api-getting-started-azure-portal.md) aos dados dos relatórios. Os dados destes relatórios podem ser bastante úteis para as suas aplicações, como sistemas SIEM e ferramentas de auditoria e de business intelligence. As APIs dos relatórios do Azure AD proporcionam acesso programático aos dados através de um conjunto de APIs baseadas em REST. Pode chamar estas APIs a partir de várias linguagens e ferramentas de programação. 
 
-Para obter uma lista completa de atividades de relatório de auditoria, veja a [lista de eventos de relatório de auditoria](active-directory-reporting-audit-events.md#list-of-audit-report-events).
-
-O ponto de entrada para todos os dados de auditoria é **Registos de auditoria** na secção **Atividade** do **Azure Active Directory**.
-
-![Auditoria](./media/active-directory-reporting-azure-portal/61.png "Auditoria")
-
-Um registo de auditoria tem uma vista de lista que mostra os atores (quem), as atividades (o quê) e os destinos.
-
-![Auditoria](./media/active-directory-reporting-azure-portal/345.png "Auditoria")
-
-Ao clicar num item na vista de lista, pode obter mais detalhes sobre o mesmo.
-
-![Auditoria](./media/active-directory-reporting-azure-portal/873.png "Auditoria")
-
-### <a name="users-and-groups-audit-logs"></a>Registos de auditoria de utilizadores e grupos
-Com os relatórios de auditoria baseados em utilizadores e grupos, poderá obter respostas a perguntas como:
-
-* Que tipos de atualizações os utilizadores aplicaram?
-* Quantos utilizadores foram alterados?
-* Quantas palavras-passe foram alteradas?
-* O que fez um administrador num diretório?
-* Quais são os grupos que foram adicionados?
-* Existem grupos com as alterações na associação?
-* Os proprietários do grupo foram alterados?
-* Que licenças foram atribuídas a um grupo ou utilizador?
-
-Se quiser apenas rever dados de auditoria que estejam relacionados com utilizadores e grupos, pode encontrar um vista filtrada em **Registos de auditoria** na secção **Atividade** de **Utilizadores e Grupos**.
-
-![Auditoria](./media/active-directory-reporting-azure-portal/93.png "Auditoria")
-
-### <a name="application-audit-logs"></a>Registos de auditoria de aplicação
-Com os relatórios de auditoria baseados em aplicações, poderá obter respostas a perguntas como:
-
-* Quais são as aplicações que foram adicionadas ou atualizadas?
-* Quais são as aplicações que foram removidas?
-* Um principal de serviço para uma aplicação foi alterado?
-* Os nomes das aplicações foram alterados?
-* Quem autorizou uma aplicação?
-
-Se quiser apenas rever dados de auditoria que estejam relacionados com aplicações, pode encontrar um vista filtrada em **Registos de auditoria** na secção **Atividade** de **Aplicações empresariais**.
-
-![Auditoria](./media/active-directory-reporting-azure-portal/134.png "Auditoria")
-
-### <a name="filtering-audit-logs"></a>Filtrar registos de auditoria
-Pode filtrar inícios de sessão para limitar a quantidade de dados apresentados com os campos seguintes:
-
-* Data e hora
-* Nome principal do ator
-* Tipo de atividade
-* Atividade
-
-![Auditoria](./media/active-directory-reporting-azure-portal/356.png "Auditoria")
-
-O conteúdo da lista **Tipo de Atividade**, está associado ao seu ponto de entrada deste painel.  
-Se o seu ponto de entrada for o Azure Active Directory, esta lista inclui todos os tipos de atividade possíveis:
-
-* Aplicação 
-* Grupo 
-* Utilizador
-* Dispositivo
-* Diretório
-* Política
-* Outros
-
-![Auditoria](./media/active-directory-reporting-azure-portal/825.png "Auditoria")
-
-As atividades listadas são delimitadas por tipo de atividade.
-Por exemplo, se tiver o **Grupo** selecionado como **Tipo de Atividade**, a lista **Atividade** só contém atividades relacionadas com grupos.   
-
-![Auditoria](./media/active-directory-reporting-azure-portal/654.png "Auditoria")
-
-Outro método para filtrar as entradas de um registo de auditoria consiste em procurar entradas específicas.
-
-![Auditoria](./media/active-directory-reporting-azure-portal/237.png "Auditoria")
 
 ## <a name="next-steps"></a>Passos seguintes
-Veja o [Guia dos Relatórios do Azure Active Directory](active-directory-reporting-guide.md).
+
+Se quiser saber mais sobre os vários tipos de relatórios do Azure Active Directory, veja:
+
+- [Relatório de utilizadores sinalizados para risco](active-directory-reporting-security-user-at-risk.md)
+- [Relatório de inícios de sessão de risco](active-directory-reporting-security-risky-sign-ins.md)
+- [Relatório de registos de auditoria](active-directory-reporting-activity-audit-logs.md)
+- [Relatório de registos de inícios de sessão](active-directory-reporting-activity-sign-ins.md)
+
+Se quiser saber mais sobre como aceder aos dados dos relatórios com a API dos relatórios, veja: 
+
+- [Getting started with the Azure Active Directory reporting API](active-directory-reporting-api-getting-started-azure-portal.md) (Introdução à API de relatórios do Azure Active Directory)
 
 
+<!--Image references-->
+[1]: ./media/active-directory-reporting-azure-portal/ic195031.png

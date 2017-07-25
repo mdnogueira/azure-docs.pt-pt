@@ -12,18 +12,17 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 07/15/2017
+ms.date: 07/19/2017
 ms.author: markvi
 ms.reviewer: dhanyahk
-ms.translationtype: Human Translation
-ms.sourcegitcommit: c785ad8dbfa427d69501f5f142ef40a2d3530f9e
-ms.openlocfilehash: 0e8ae05b5f8644d4dfd0e6205224cabfb0919531
+ms.translationtype: HT
+ms.sourcegitcommit: c3ea7cfba9fbf1064e2bd58344a7a00dc81eb148
+ms.openlocfilehash: b9e61950654ba427b09dd608d354589a0804aaa5
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/26/2017
+ms.lasthandoff: 07/19/2017
 
 ---
-# Relatórios de atividade de início de sessão no portal do Azure Active Directory
-<a id="sign-in-activity-reports-in-the-azure-active-directory-portal" class="xliff"></a>
+# <a name="sign-in-activity-reports-in-the-azure-active-directory-portal"></a>Relatórios de atividade de início de sessão no portal do Azure Active Directory
 
 Com os relatórios no Azure Active Directory (Azure AD) no [portal do Azure](https://portal.azure.com) pode obter todas as informações de que precisa para determinar o estado de funcionamento do seu ambiente.
 
@@ -38,22 +37,18 @@ A arquitetura de relatórios no Azure Active Directory consiste nos seguintes co
 
 Este tópico fornece-lhe uma descrição geral das atividades de início de sessão.
 
-## Pré-requisito
-<a id="pre-requisite" class="xliff"></a>
+## <a name="pre-requisite"></a>Pré-requisito
 
-### Quem pode aceder aos dados?
-<a id="who-can-access-the-data" class="xliff"></a>
+### <a name="who-can-access-the-data"></a>Quem pode aceder aos dados?
 * Utilizadores na função de Administrador de Segurança ou de Leitor de Segurança
 * Administradores Globais
 * Qualquer utilizador (não administrador) pode aceder aos seus próprios inícios de sessão 
 
-### Que licença do Azure AD precisa para aceder à atividade de entrada?
-<a id="what-azure-ad-license-do-you-need-to-access-sign-in-activity" class="xliff"></a>
+### <a name="what-azure-ad-license-do-you-need-to-access-sign-in-activity"></a>Que licença do Azure AD precisa para aceder à atividade de entrada?
 * O seu inquilino deve ter uma licença do Azure AD Premium associada ao mesmo para ver o relatório de atividade completo de inícios de sessão
 
 
-## Atividades de início de sessão
-<a id="signs-in-activities" class="xliff"></a>
+## <a name="signs-in-activities"></a>Atividades de início de sessão
 
 Com as informações fornecidas pelo relatório de início de sessão de utilizador, encontrará respostas a perguntas como:
 
@@ -89,8 +84,7 @@ Ao clicar num item na vista de lista, obtém todos os detalhes sobre o mesmo.
 ![Atividade de início de sessão](./media/active-directory-reporting-activity-sign-ins/43.png "Atividade de início de sessão")
 
 
-## Filtrar atividades de início de sessão
-<a id="filtering-sign-in-activities" class="xliff"></a>
+## <a name="filtering-sign-in-activities"></a>Filtrar atividades de início de sessão
 
 Para limitar os dados comunicados para um nível que funcione para si, pode filtrar os dados de inícios de sessão através dos seguintes campos:
 
@@ -126,8 +120,7 @@ O filtro **estado do início de sessão** permite-lhe selecionar um dos seguinte
 - Falha
 
 
-## Atalhos de atividades de início de sessão
-<a id="sign-in-activities-shortcuts" class="xliff"></a>
+## <a name="sign-in-activities-shortcuts"></a>Atalhos de atividades de início de sessão
 
 Para além do Azure Active Directory, o portal do Azure fornece-lhe dois pontos de entrada adicionais para dados de atividades de início de sessão:
 
@@ -135,8 +128,7 @@ Para além do Azure Active Directory, o portal do Azure fornece-lhe dois pontos 
 - Aplicações Empresariais
 
 
-### Atividades de inícios de sessão de utilizadores e grupos
-<a id="users-and-groups-sign-ins-activities" class="xliff"></a>
+### <a name="users-and-groups-sign-ins-activities"></a>Atividades de inícios de sessão de utilizadores e grupos
 
 Com as informações fornecidas pelo relatório de início de sessão de utilizador, encontrará respostas a perguntas como:
 
@@ -172,8 +164,7 @@ A opção **Inícios de sessão** oferece uma descrição geral completa de todo
 
 
 
-## Utilização de aplicações geridas
-<a id="usage-of-managed-applications" class="xliff"></a>
+## <a name="usage-of-managed-applications"></a>Utilização de aplicações geridas
 
 Com uma vista centrada em aplicações dos seus dados de início de sessão, poderá responder a perguntas como:
 
@@ -206,8 +197,8 @@ A opção **Inícios de sessão** dá uma visão geral completa de todos os even
 
 
 
-## Passos seguintes
-<a id="next-steps" class="xliff"></a>
-Veja o [Guia dos Relatórios do Azure Active Directory](active-directory-reporting-guide.md).
+## <a name="next-steps"></a>Passos seguintes
+
+Se quiser saber mais sobre os códigos de erro das atividades de inícios de sessão, veja os [Códigos de erro dos relatórios de atividades de inícios de sessão no portal do Azure Active Directory](active-directory-reporting-activity-sign-ins-errors.md).
 
 

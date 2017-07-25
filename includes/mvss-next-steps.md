@@ -1,9 +1,11 @@
-You can deploy the preceding template by following the [Azure Resource Manager documentation](../articles/azure-resource-manager/resource-group-template-deploy.md).
+Pode seguir a [documentação do Azure Resource Manager](../articles/azure-resource-manager/resource-group-template-deploy.md) para implementar o modelo anterior.
 
-You can start this tutorial series from the [minimum viable scale set template article](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-mvss-start.md).
+Pode começar esta série de tutoriais a partir do [artigo Modelo de conjunto de dimensionamento mínimo viável](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-mvss-start.md).
 
-You can see how to modify the [minimum viable scale set template](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-mvss-start.md) to [deploy the scale set into an existing virtual network](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-mvss-existing-vnet.md).
+Pode ver como modificar o [modelo de conjunto de dimensionamento mínimo viável](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-mvss-start.md) para [implementar o conjunto de dimensionamento numa rede virtual já existente](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-mvss-existing-vnet.md).
 
-You can see how to modify the [minimum viable scale set template](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-mvss-start.md) to [deploy the scale set with a custom image](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-mvss-custom-image.md).
+Pode ver como modificar o [modelo de conjunto de dimensionamento mínimo viável](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-mvss-start.md) para [implementar o conjunto de dimensionamento com uma imagem personalizada](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-mvss-custom-image.md).
 
-For more general information about scale sets, refer to the [scale set overview page](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md).
+Pode ver como modificar o [modelo de conjunto de dimensionamento mínimo viável](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-mvss-start.md) para [implementar um conjunto de dimensionamento do Linux com o dimensionamento automático baseado em convidado](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-mvss-guest-based-autoscale-linux.md).
+
+Para obter mais informações gerais sobre os conjuntos de dimensionamento, veja a [página Descrição geral do conjunto de dimensionamento](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md).

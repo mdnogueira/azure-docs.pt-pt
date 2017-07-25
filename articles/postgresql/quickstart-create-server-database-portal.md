@@ -9,10 +9,10 @@ editor: jasonwhowell
 ms.service: postgresql-database
 ms.custom: mvc
 ms.topic: hero-article
-ms.date: 06/19/2017
+ms.date: 07/12/2017
 ms.translationtype: HT
-ms.sourcegitcommit: 54454e98a2c37736407bdac953fdfe74e9e24d37
-ms.openlocfilehash: 2b81b9e1ae2abfd332bd6048b7643b4245ca374b
+ms.sourcegitcommit: 19be73fd0aec3a8f03a7cd83c12cfcc060f6e5e7
+ms.openlocfilehash: c065d692d2a4ac369cb13a70d09b30498e6c9106
 ms.contentlocale: pt-pt
 ms.lasthandoff: 07/13/2017
 
@@ -38,12 +38,12 @@ Siga estes passos para criar uma Base de Dados do Azure para o servidor PostgreS
  ![Base de Dados do Azure para o PostgreSQL – Criar a base de dados](./media/quickstart-create-database-portal/1-create-database.png)
 
 3.  Preencha os novos detalhes do servidor com as informações seguintes, conforme mostrado na imagem anterior:
-    - Nome do servidor: **mypgserver 20170401** (o nome de um servidor é mapeado para o nome DNS e, por conseguinte, é necessário para ser globalmente exclusivo) 
+    - Nome do servidor: **mypgserver-20170401** (escolha um nome de servidor globalmente exclusivo, uma vez que esse nome é mapeado para o nome DNS)
     - Subscrição: se tiver várias subscrições, escolha a subscrição adequada na qual o recurso existe ou é cobrado.
     - Grupo de recursos: **myresourcegroup**
     - Início de sessão e palavra-passe de administrador do servidor à sua escolha
-    - Localização
-    - Versão do PostgreSQL
+    - Localização: escolha a localização mais perto de si.
+    - Versão de PostgreSQL: escolha a versão mais recente.
 
   > [!IMPORTANT]
   > O início de sessão e a palavra-passe de administrador de servidor que especificar aqui serão necessários para iniciar sessão no servidor e nas respetivas bases de dados mais tarde neste guia de introdução. Lembre-se ou grave estas informações para utilização posterior.

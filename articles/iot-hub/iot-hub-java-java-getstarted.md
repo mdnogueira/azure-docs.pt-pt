@@ -16,19 +16,19 @@ ms.date: 06/29/2017
 ms.author: dobett
 ms.custom: H1Hack27Feb2017
 ms.translationtype: HT
-ms.sourcegitcommit: 54454e98a2c37736407bdac953fdfe74e9e24d37
-ms.openlocfilehash: 7d95ba163712c8a3610839029fe3453bd5c308a8
+ms.sourcegitcommit: 26c07d30f9166e0e52cb396cdd0576530939e442
+ms.openlocfilehash: 7f0fbaf5d8e0379fc67ad62ea7c9ab63c6737150
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/13/2017
+ms.lasthandoff: 07/19/2017
 
 ---
-# <a name="connect-your-simulated-device-to-your-iot-hub-using-java"></a>Ligar o dispositivo simulado ao seu hub IoT com Java
+# <a name="connect-your-device-to-your-iot-hub-using-java"></a>Ligue o seu dispositivo ao seu hub IoT através de Java
 [!INCLUDE [iot-hub-selector-get-started](../../includes/iot-hub-selector-get-started.md)]
 
 No final deste tutorial, terá três aplicações de consola Java:
 
-* **create-device-identity**, que cria uma identidade de dispositivo e a chave de segurança associada para ligar a sua aplicação de dispositivo simulado.
-* **read-d2c-messages**, que apresenta a telemetria enviada pela aplicação de dispositivo simulado.
+* **create-device-identity**, que cria uma identidade de dispositivo e a chave de segurança associada para ligar a sua aplicação de dispositivo.
+* **read-d2c-messages**, que apresenta a telemetria enviada pela aplicação de dispositivo.
 * **simulated-device**, que liga ao seu Hub IoT com a identidade de dispositivo que criou anteriormente e envia uma mensagem de telemetria a cada segundo através do protocolo MQTT.
 
 > [!NOTE]
@@ -93,6 +93,7 @@ Nesta secção, vai criar uma aplicação de consola Java que cria uma identidad
     private static final String connectionString = "{yourhubconnectionstring}";
     private static final String deviceId = "myFirstJavaDevice";
     ```
+[!INCLUDE [iot-hub-pii-note-naming-device](../../includes/iot-hub-pii-note-naming-device.md)]
 
 8. Modifique a assinatura do método **principal** para incluir as exceções da seguinte forma:
 
@@ -302,9 +303,12 @@ Nesta secção, irá criar uma aplicação de consola do Java que lê mensagens 
     mvn clean package -DskipTests
     ```
 
+<<<<<<< HEAD
+## <a name="create-a-device-app"></a>Criar uma aplicação de dispositivo
+=======
 ## <a name="create-a-simulated-device-app"></a>Criar uma aplicação de dispositivo simulada
 
-Nesta secção, irá criar uma aplicação de consola do Java que simula um dispositivo que envia mensagens do dispositivo para a nuvem a um Hub IoT.
+>>>>>>> Nesta secção, vai criar uma aplicação de consola de Java que simula um dispositivo que envia mensagens do dispositivo para a cloud a um hub de IoT.
 
 1. Na pasta iot-java-get-started que criou na secção *Criar uma identidade do dispositivo*, crie um projeto Maven designado **simulated-device** com o seguinte comando na linha de comandos. Tenha em atenção que se trata de um comando único, por extenso:
 
@@ -374,11 +378,19 @@ Nesta secção, irá criar uma aplicação de consola do Java que simula um disp
       }
     }
     ```
+<<<<<<< HEAD
+9. Adicione a seguinte classe aninhada **EventCallback** à classe **App** para apresentar o estado de reconhecimento que o hub de IoT devolve quando processa uma mensagem da aplicação de dispositivo. Este método também notifica o thread principal na aplicação quando a mensagem tiver sido processada:
+   
+    ```
+    private static class EventCallback implements IotHubEventCallback
+    {
+=======
 
-9. Adicione a seguinte classe aninhada **EventCallback** à classe **Aplicação** para apresentar o estatuto de reconhecimento que o Hub IoT devolve quando processa uma mensagem a partir da aplicação de dispositivo simulado. Este método também notifica o thread principal na aplicação quando a mensagem tiver sido processada:
+9. Add the following nested **EventCallback** class inside the **App** class to display the acknowledgement status that the IoT hub returns when it processes a message from the simulated device app. This method also notifies the main thread in the app when the message has been processed:
 
     ```java
     private static class EventCallback implements IotHubEventCallback {
+>>>>>>> master
       public void execute(IotHubStatusCode status, Object context) {
         System.out.println("IoT Hub responded to message with status: " + status.name());
    
@@ -488,8 +500,11 @@ Já está pronto para executar as aplicações.
     ![Mosaico “Utilização do portal do Azure”, que mostra o número de mensagens enviadas para o Hub IoT][43]
 
 ## <a name="next-steps"></a>Passos seguintes
+<<<<<<< HEAD Neste tutorial, configurou um novo hub IoT no portal do Azure e, em seguida, criou uma identidade de dispositivo no registo de identidades do Hub IoT. Utilizou esta identidade de dispositivo para que a aplicação de dispositivo pudesse enviar mensagens do dispositivo para a cloud ao Hub IoT. Também criou uma aplicação que apresenta as mensagens recebidas pelo Hub IoT. 
+=======
 
 Neste tutorial, configurou um novo Hub IoT no portal do Azure e, em seguida, criou uma identidade de dispositivo no registo de identidades do Hub IoT. Utilizou esta identidade de dispositivo para que a aplicação do dispositivo simulado pudesse enviar mensagens do dispositivo para a cloud ao Hub IoT. Também criou uma aplicação que apresenta as mensagens recebidas pelo Hub IoT.
+>>>>>>> master
 
 Para continuar a introdução ao Hub IoT e explorar outros cenários de IoT, veja:
 

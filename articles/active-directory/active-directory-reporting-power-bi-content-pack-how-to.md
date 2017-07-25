@@ -13,22 +13,20 @@ ms.workload: identity
 ms.date: 07/15/2017
 ms.author: markvi
 ms.reviewer: dhanyahk
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 61fd58063063d69e891d294e627ae40cb878d65b
-ms.openlocfilehash: ab95f61e2d88f82bf2b24aea786c7dbadfb9c0fe
+ms.translationtype: HT
+ms.sourcegitcommit: c3ea7cfba9fbf1064e2bd58344a7a00dc81eb148
+ms.openlocfilehash: 5c642bb814a279756e8391f12fdc86b6ec0b4a8f
 ms.contentlocale: pt-pt
-ms.lasthandoff: 06/22/2017
+ms.lasthandoff: 07/19/2017
 
 ---
-# Como utilizar o Pacote de Conteúdos do Power BI para o Azure Active Directory
-<a id="how-to-use-the-azure-active-directory-power-bi-content-pack" class="xliff"></a>
+# <a name="how-to-use-the-azure-active-directory-power-bi-content-pack"></a>Como utilizar o Pacote de Conteúdos do Power BI para o Azure Active Directory
 
 Para os administradores de TI, é fundamental compreender como é que os utilizadores adotam e utilizam as funcionalidades do Azure Active Directory. Desta forma, podem planear a comunicação e a infraestrutura de TI, de modo a aumentar a utilização e tirar o máximo proveito das funcionalidades do AAD. O Pacote de Conteúdos do Power BI para o Azure Active Directory dá-lhe a capacidade de analisar mais aprofundadamente os seus dados, para saber como pode utilizá-los e obter informações mais ricas sobre o que os utilizadores estão a fazer com o Azure Active Directory e as várias capacidades em que confia plenamente.  Com a integração das APIs do Azure Active Directory no Power BI, pode transferir facilmente os pacotes de conteúdos pré-criadas e obter informações relativas a todas as atividades no seu Azure Active Directory com a avançada experiência de visualização que o Power BI oferece. Pode criar o seu próprio dashboard e partilhá-lo facilmente com qualquer pessoa da sua organização. 
 
 Este tópico disponibiliza-lhe instruções passo a passo para instalar e utilizar o pacote de conteúdos no seu ambiente.
 
-## Instalação
-<a id="installation" class="xliff"></a>  
+## <a name="installation"></a>Instalação  
 
 **Para instalar o Pacote de Conteúdos do Power BI:**
 
@@ -69,13 +67,11 @@ Este tópico disponibiliza-lhe instruções passo a passo para instalar e utiliz
  
     ![Pacote de Conteúdos do Power BI para o Azure Active Directory](./media/active-directory-reporting-power-bi-content-pack-how-to/08.png) 
 
-## O que posso fazer com este pacote de conteúdos?
-<a id="what-can-i-do-with-this-content-pack" class="xliff"></a>
+## <a name="what-can-i-do-with-this-content-pack"></a>O que posso fazer com este pacote de conteúdos?
 
 Antes de avançarmos para aquilo que pode fazer com este pacote de conteúdos, segue-se uma pré-visualização rápida dos diversos relatórios que o mesmo contém. Os dados dos relatórios remontam aos **últimos 30 dias**.
 
-### Relatórios incluídos nesta versão do Pacote de Conteúdos de registos do Azure Active Directory
-<a id="reports-included-in-this-version-of-azure-active-directory-logs-content-pack" class="xliff"></a>
+### <a name="reports-included-in-this-version-of-azure-active-directory-logs-content-pack"></a>Relatórios incluídos nesta versão do Pacote de Conteúdos de registos do Azure Active Directory
 
 **Relatório de Utilização de Aplicações e Tendências**: obtenha informações sobre as aplicações utilizadas na sua organização e quais as que o são mais vezes e quando. Pode utilizar este relatório para recolher dados sobre como é que uma aplicação que tenha implementado recentemente na sua organização está a ser utilizada ou para descobrir quais são as aplicações mais populares. Com estas informações, pode melhorar a utilização, se vir que uma determinada aplicação não está a ser utilizada.
 
@@ -100,8 +96,7 @@ Com este relatório, pode ficar a saber quais são os diversos perfis de disposi
 
 **Funil de SSPR**: saiba como é que as reposições de palavras-passe são feitas na sua organização. Veja quantas tentativas de repor palavras-passe foram feitas com a ferramenta SSPR e quantas foram bem-sucedidas. Utilize o funil de SSPR (reposição personalizada de palavras-passe) para analisar os detalhes das falhas de Reposições de palavras-passe e ver por que motivo ocorreram determinadas falhas. Este relatório proporciona informações mais completas sobre a forma como a ferramenta SSPR é utilizada na sua organização, para que possa tomar as decisões certas.
 
-## Personalizar o Pacote de Conteúdos de Atividades do Azure AD
-<a id="customizing-azure-ad-activity-content-pack" class="xliff"></a>
+## <a name="customizing-azure-ad-activity-content-pack"></a>Personalizar o Pacote de Conteúdos de Atividades do Azure AD
 
 **Alterar a Visualização**:pode clicar em **Editar Relatório** para alterar a visualização de um relatório e selecionar a visualização que pretende.
  
@@ -129,15 +124,13 @@ Com este relatório, pode ficar a saber quais são os diversos perfis de disposi
 
 
 
-## Agendar uma atualização diária do seu relatório do Power BI
-<a id="scheduling-a-daily-refresh-of-your-power-bi-report" class="xliff"></a>
+## <a name="scheduling-a-daily-refresh-of-your-power-bi-report"></a>Agendar uma atualização diária do seu relatório do Power BI
 
 Para agendar uma atualização diária do seu relatório do Power BI, aceda a **Conjuntos de dados > Definições > Agendar Atualização** e defina-a conforme mostrado abaixo.
  
 ![Pacote de Conteúdos do Power BI para o Azure Active Directory](./media/active-directory-reporting-power-bi-content-pack-how-to/15.png) 
 
-## Atualizar para uma versão mais recente do pacote de conteúdos
-<a id="updating-to-newer-version-of-content-pack" class="xliff"></a>
+## <a name="updating-to-newer-version-of-content-pack"></a>Atualizar para uma versão mais recente do pacote de conteúdos
 
 Se quiser atualizar um pacote de conteúdos para obter uma versão mais recente:
 
@@ -149,11 +142,12 @@ Se quiser atualizar um pacote de conteúdos para obter uma versão mais recente:
 
 Assim que a versão nova do pacote de conteúdos estiver em funcionamento, pode remover a antiga, se necessário, eliminando os relatórios subjacentes e os conjuntos de dados associados a esse pacote de conteúdos.
 
-## Ainda está com problemas?
-<a id="still-having-issues" class="xliff"></a> 
+## <a name="still-having-issues"></a>Ainda está com problemas? 
 
 Veja o nosso [guia de resolução de problemas](active-directory-reporting-troubleshoot-content-pack.md). Para obter ajuda geral com o Power BI, veja estes [artigos de ajuda](https://powerbi.microsoft.com/en-us/documentation/powerbi-service-get-started/).
  
 
+## <a name="next-steps"></a>Passos seguintes
 
+Para obter uma descrição geral dos relatórios, veja [Relatórios do Azure Active Directory](active-directory-reporting-azure-portal.md).
 

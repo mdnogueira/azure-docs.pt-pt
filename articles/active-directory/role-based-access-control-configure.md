@@ -5,20 +5,20 @@ services: active-directory
 documentationcenter: 
 author: kgremban
 manager: femila
-editor: 
 ms.assetid: 8078f366-a2c4-4fbb-a44b-fc39fd89df81
 ms.service: active-directory
 ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 03/27/2017
+ms.date: 07/17/2017
 ms.author: kgremban
-translationtype: Human Translation
-ms.sourcegitcommit: 0b53a5ab59779dc16825887b3c970927f1f30821
-ms.openlocfilehash: 9fb0fdf1a2a48c5c9daf7d0ec22e85221bfb6b28
-ms.lasthandoff: 04/07/2017
-
+ms.reviewer: rqureshi
+ms.translationtype: HT
+ms.sourcegitcommit: c3ea7cfba9fbf1064e2bd58344a7a00dc81eb148
+ms.openlocfilehash: aff943e797da93e95563c3de3f064dbbfc30a384
+ms.contentlocale: pt-pt
+ms.lasthandoff: 07/19/2017
 
 ---
 # <a name="use-role-based-access-control-to-manage-access-to-your-azure-subscription-resources"></a>Utilize o Controlo de Acesso Baseado em Função para gerir o acesso aos recursos de subscrição do Azure
@@ -41,7 +41,7 @@ Pode ver quem tem acesso a um recurso, grupo de recursos ou subscrição, a part
    
     ![Captura de ecrã Painel de utilizadores – acesso herdado por oposição a atribuído](./media/role-based-access-control-configure/view-access.png)
 
-Tenha em atenção que alguns utilizadores tiveram acesso **Atribuído** enquanto outros **Herdaram**-no. O acesso é atribuído especificamente ao grupo de recursos ou herdado de uma atribuição à subscrição principal.
+Tenha em conta que algumas funções têm o âmbito **Este recurso**, ao passo que outras são **herdadas** de outro âmbito. O acesso é atribuído especificamente ao grupo de recursos ou herdado de uma atribuição à subscrição principal.
 
 > [!NOTE]
 > Os administradores e coadministradores de subscrição clássica são considerados proprietários da subscrição no novo modelo RBAC.
@@ -60,9 +60,10 @@ Pode conceder acesso de dentro do recurso, grupo de recursos ou subscrição, qu
 Depois de adicionar com êxito uma atribuição de função, esta será apresentada no painel **Utilizadores**.
 
 ## <a name="remove-access"></a>Remover o Acesso
-1. Utilize as caixas de verificação no painel de Controlo de acesso para selecionar uma ou mais atribuições de função.
+1. Coloque o cursor sobre o nome da atribuição que pretende remover. É apresentada uma caixa de verificação junto ao nome.
+2. Utilize as caixas de verificação para selecionar uma ou mais atribuições de funções.
 2. Selecione **Remover**.  
-3. Será apresentada uma caixa que lhe pede para confirmar a ação. Selecione **Sim** para remover as atribuições de função.
+3. Selecione **Sim** para confirmar a remoção.
 
 Não foi possível remover atribuições herdadas. Se precisar de remover uma atribuição herdada, terá de o fazer no âmbito em que a atribuição da função foi criada. Na coluna **Âmbito**, junto a **Herdado**, existe uma ligação que o leva aos recursos onde esta função foi atribuída. Ir para o recurso aí listado para remover a atribuição de função.
 

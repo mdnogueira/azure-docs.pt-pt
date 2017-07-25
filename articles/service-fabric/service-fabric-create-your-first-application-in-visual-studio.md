@@ -1,163 +1,138 @@
 ---
-title: "Criar a sua primeira aplicação de microsserviços do Azure | Microsoft Docs"
-description: "Criar, implementar e depurar uma aplicação de Service Fabric com o Visual Studio"
+title: Criar um Reliable Services do Azure Service Fabric com C#
+description: "Crie, implemente e depure uma aplicação Reliable Service compilada no Azure Service Fabric com o Visual Studio."
 services: service-fabric
 documentationcenter: .net
 author: rwike77
 manager: timlt
-editor: 
+editor: vturecek
 ms.assetid: c3655b7b-de78-4eac-99eb-012f8e042109
 ms.service: service-fabric
 ms.devlang: dotNet
 ms.topic: hero-article
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 05/05/2017
+ms.date: 06/28/2017
 ms.author: ryanwi
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 2db2ba16c06f49fd851581a1088df21f5a87a911
-ms.openlocfilehash: dea338477ca82eead9e272ed9a1709cb2643f743
+ms.translationtype: HT
+ms.sourcegitcommit: 9afd12380926d4e16b7384ff07d229735ca94aaa
+ms.openlocfilehash: f93298e6483fd8c9dfda835964aeebd1a430af69
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/08/2017
-
+ms.lasthandoff: 07/15/2017
 
 ---
-# <a name="create-your-first-azure-service-fabric-application"></a>Criar a sua primeira aplicação do Azure Service Fabric
-> [!div class="op_single_selector"]
-> * [C# - Windows](service-fabric-create-your-first-application-in-visual-studio.md)
-> * [Java - Linux](service-fabric-create-your-first-linux-application-with-java.md)
-> * [C# - Linux](service-fabric-create-your-first-linux-application-with-csharp.md)
-> 
-> 
 
-O SDK do Service Fabric inclui um suplemento para Visual Studio que fornece modelos e ferramentas para criar, implementar e depurar aplicações de Service Fabric. Este tópico guia-o no processo de criação da sua primeira aplicação no Visual Studio 2017 ou Visual Studio 2015.
+# <a name="create-your-first-c-service-fabric-stateful-reliable-services-application"></a>Criar a sua primeira aplicação Reliable Services sem monitorização de estado do Service Fabric em C#
+
+Saiba como implementar a sua primeira aplicação do Service Fabric para .NET no Windows em poucos minutos. Quando tiver terminado, terá um cluster local em execução com uma aplicação do Reliable Services.
 
 ## <a name="prerequisites"></a>Pré-requisitos
-Antes de começar, certifique-se de que [configurou o seu ambiente de desenvolvimento](service-fabric-get-started.md).
 
-## <a name="video-walkthrough"></a>Instruções de vídeo
-O vídeo a seguir guia-o pelos passos neste tutorial:
-
-> [!VIDEO https://channel9.msdn.com/Blogs/Azure/Creating-your-first-Service-Fabric-application-in-Visual-Studio/player]
-> 
-> 
+Antes de começar, certifique-se de que [configurou o seu ambiente de desenvolvimento](service-fabric-get-started.md). Esta configuração inclui instalar o Service Fabric SDK e o Visual Studio 2017 ou 2015.
 
 ## <a name="create-the-application"></a>Criar a aplicação
-Uma aplicação de Service Fabric pode conter um ou mais serviços, cada um com uma função específica no fornecimento de funcionalidade da aplicação. Crie um projeto de aplicação, juntamente com o seu primeiro projeto de serviço com o assistente de Novo Projeto. Também pode adicionar mais serviços posteriormente, se pretender.
 
-1. Inicie o Visual Studio como administrador.
-2. Clique em **Ficheiro > Novo Projeto > Nuvem > Aplicação de Service Fabric**.
-3. Atribua um nome à aplicação e clique em **OK**.
+Inicie o Visual Studio como **administrador**.
+
+Criar um projeto com `CTRL`+`SHIFT`+`N`
+
+Na caixa de diálogo **Novo Projeto**, escolha **Cloud > Aplicação do Service Fabric**.
+
+Dê o nome **MyApplication** à aplicação e prima **OK**.
+
    
-    ![Caixa de diálogo de novo projeto no Visual Studio][1]
-4. Na página seguinte, selecione **Com Estado** como o primeiro tipo de serviço a incluir na sua aplicação. Atribua-lhe um nome e clique em **OK**.
-   
-    ![Caixa de diálogo novo serviço no Visual Studio][2]
-   
-   > [!NOTE]
-   > Para obter mais informações sobre as opções, veja [Service Fabric programming model overview (Descrição geral do modelo de programação Service Fabric)](service-fabric-choose-framework.md).
-   > 
-   > 
-   
-    O Visual Studio cria o projeto de aplicação e o projeto de serviço com estado e apresenta-os no Explorador de Soluções.
-   
-    ![Explorador de Soluções a seguir a criação da aplicação com o serviço com estado][3]
-   
-    O projeto de aplicação não contém qualquer código diretamente. Em vez disso, referencia um conjunto de projetos de serviço. Além disso, contém outros três tipos de conteúdo:
-   
-   * **Perfis de publicação**: utiliza-se para gerir as preferências de ferramentas para os diferentes ambientes.
-   * **Scripts**: inclui um script de PowerShell para implementar/atualizar a sua aplicação. O Visual Studio utiliza o script em segundo plano. O script também pode ser invocado diretamente na linha de comandos.
-   * **Definição da aplicação**: inclui o manifesto da aplicação em *ApplicationPackageRoot*. Os ficheiros de parâmetro de aplicação associados em *ApplicationParameters*, definem a aplicação e permitem configurá-la especificamente para um determinado ambiente.
-     
-     Para obter uma descrição geral do conteúdo do projeto de serviço, consulte o artigo [Introdução a Reliable Services](service-fabric-reliable-services-quick-start.md).
+![Caixa de diálogo de novo projeto no Visual Studio][1]
+
+Pode criar qualquer tipo de aplicação do Service Fabric na caixa de diálogo seguinte. Neste Início Rápido, escolha **Serviço Com Estado** .
+
+Dê o nome **MyStatefulService** ao serviço e prima **OK**.
+
+![Caixa de diálogo novo serviço no Visual Studio][2]
+
+
+O Visual Studio cria o projeto de aplicação e o projeto de serviço com estado e apresenta-os no Explorador de Soluções.
+
+![Explorador de Soluções a seguir a criação da aplicação com o serviço com estado][3]
+
+O projeto de aplicação (**MyApplication**) não contém nenhum código diretamente. Em vez disso, referencia um conjunto de projetos de serviço. Além disso, contém outros três tipos de conteúdo:
+
+* **Perfis de publicação**  
+Perfis para implementar em diferentes ambientes.
+
+* **Scripts**  
+Script do PowerShell para implementar/atualizar a sua aplicação.
+
+* **Definição da aplicação**  
+Inclui o ficheiro ApplicationManifest.xml em *ApplicationPackageRoot*, que descreve a composição da sua aplicação. Os ficheiros de parâmetros da aplicação associados estão localizados em *ApplicationParameters*, que podem ser utilizados para especificar parâmetros específicos para o ambiente. O Visual Studio seleciona um ficheiro de parâmetros de aplicação que é especificado no perfil de publicação associado durante a implementação num ambiente específico.
+    
+Para obter uma descrição geral do conteúdo do projeto de serviço, consulte o artigo [Introdução a Reliable Services](service-fabric-reliable-services-quick-start.md).
 
 ## <a name="deploy-and-debug-the-application"></a>Implemente a aplicação e depure-a
-Agora que tem uma aplicação, tente executá-la.
 
-1. Prima F5 no Visual Studio para implementar a aplicação, com o fim de depurá-la.
+Agora que tem uma aplicação, execute-a.
+
+No Visual Studio, prima `F5` para implementar a aplicação, com o fim de depurá-la.
+
+>[!NOTE]
+>Da primeira vez que executar e implementar a aplicação localmente, o Visual Studio cria um cluster local para depuração. Esta operação pode demorar algum tempo. O estado da criação do cluster aparece na janela de saída do Visual Studio.
+
+Quando o cluster estiver pronto, recebe uma notificação da aplicação do gestor de tabuleiro de sistema do cluster local que está incluído no SDK.
    
-   > [!NOTE]
-   > A primeira implementação demorará algum tempo, dado que o Visual Studio está a criar um cluster local para o desenvolvimento. Um cluster local executa o mesmo código de plataforma que se compila num cluster com várias máquinas, mas numa única máquina. O estado de criação do cluster aparece na janela de saída do Visual Studio.
-   > 
-   > 
+![Notificação do tabuleiro de sistema do cluster local][4]
+
+Uma vez iniciada a aplicação, o Visual Studio apresentará automaticamente o **Visualizador de Eventos de Diagnóstico**, onde pode ver os resultados de rastreio dos seus serviços.
    
-    Quando o cluster estiver pronto, recebe uma notificação da aplicação do gestor de tabuleiro de sistema do cluster local que está incluído no SDK.
+![Visualizador de eventos de diagnóstico][5]
+
+O modelo de serviço com estado que utilizámos mostra simplesmente um valor de contador que se incrementa no método `RunAsync` de **MyStatefulService.cs**.
+
+Expanda um dos eventos para ver mais detalhes, incluindo o nó em que se executa o código. Neste caso, é \_Nó\_, embora possa ser diferente no seu computador.
    
-    ![Notificação do tabuleiro de sistema do cluster local][4]
-2. Uma vez iniciada a aplicação, o Visual Studio apresentará automaticamente o Visualizador de Eventos de Diagnóstico, onde pode ver os resultados de rastreio do serviço.
-   
-    ![Visualizador de eventos de diagnóstico][5]
-   
-    No caso do modelo de serviço com estado, as mensagens mostram simplesmente o valor do contador que se incrementa no método `RunAsync` de MyStatefulService.cs.
-3. Expanda um dos eventos para ver mais detalhes, incluindo o nó em que se executa o código. Neste caso, é _Node_2, embora possa ser diferente no seu computador.
-   
-    ![Detalhe do visualizador de eventos de diagnóstico][6]
-   
-    O cluster local contém cinco nós que estão alojados num único computador. Imita um cluster de cinco nós, no qual os nós estão em máquinas distintas. Para simular a perda de uma máquina enquanto executamos o depurador do Visual Studio ao mesmo tempo, vamos desativar um dos nós no cluster local.
-   
-   > [!NOTE]
-   > Os eventos de diagnóstico de aplicações que são emitidos pelo modelo de projeto utilizam a classe `ServiceEventSource` incluída. Para obter mais informações, consulte o artigo [Como monitorizar e diagnosticar os serviços localmente](service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md).
-   > 
-   > 
-4. Procure a classe no seu serviço de projeto que deriva de StatefulService (por exemplo, MyStatefulService) e defina um ponto de interrupção na primeira linha do método `RunAsync`.
-   
-    ![Método RunAsync com ponto de interrupção do serviço com estado ][7]
-5. Para iniciar o Service Fabric Explorer, clique com o botão direito na aplicação de tabuleiro de sistema do Gestor de Clusters Locais e selecione **Gerir Cluster Local**.
-   
-    ![Iniciar o Service Fabric Explorer a partir do Gestor de Clusters Locais][systray-launch-sfx]
-   
-    O Service Fabric Explorer proporciona uma representação visual de um cluster – incluindo o conjunto de aplicações aí implementadas e o conjunto de nós físicos que o constituem. Para saber mais acerca do Service Fabric Explorer, consulte o artigo [Visualizar o seu cluster](service-fabric-visualizing-your-cluster.md).
-6. No painel da esquerda, expanda **Cluster > Nós** e localizar o nó que está a executar o seu código.
-7. Clique em **Ações > Desativar (Reiniciar)** para simular um reinício do computador. Em alternativa, desative o nó da vista de lista de nó no painel da esquerda.)
-   
-    ![Parar um nó no Service Fabric Explorer][sfx-stop-node]
-   
-    Momentaneamente, deverá ver o ponto de interrupção atingido no Visual Studio, dado que a computação que estava a fazer diretamente num nó falha no outro.
-8. Regresse ao Visualizador de Eventos de Diagnóstico e observe as mensagens. O contador não deixa de aumentar, apesar de os eventos, na verdade, estarem a vir por um nó diferente.
-   
-    ![Visualizador de eventos de diagnóstico após falha][diagnostic-events-viewer-detail-post-failover]
+![Detalhe do visualizador de eventos de diagnóstico][6]
+
+O cluster local contém cinco nós que estão alojados num único computador. Num ambiente de produção, cada nó é alojada num computador físico ou virtual diferente. Para simular a perda de uma máquina enquanto executamos o depurador do Visual Studio ao mesmo tempo, vamos desativar um dos nós no cluster local.
+
+Na janela **Explorador de Soluções**, abra **MyStatefulService.cs**. 
+
+Localize o método `RunAsync` e defina um ponto de interrupção na primeira linha do método.
+
+![Método RunAsync com ponto de interrupção do serviço com estado ][7]
+
+Inicie a ferramenta **Service Fabric Explorer**, ao clicar com o botão direito do rato na aplicação de tabuleiro do sistema do **Gestor de Clusters Locais** e escolha **Gerir Cluster Local**.
+
+![Iniciar o Service Fabric Explorer a partir do Gestor de Clusters Locais][systray-launch-sfx]
+
+O [**Service Fabric Explorer**](service-fabric-visualizing-your-cluster.md) oferece uma representação visual de um cluster. Inclui o conjunto de aplicações implementadas no mesmo e o conjunto de nós físicos que o constituem.
+
+No painel da esquerda, expanda **Cluster > Nós** e localizar o nó que está a executar o seu código.
+
+Clique em **Ações > Desativar (Reiniciar)** para simular um reinício do computador.
+
+![Parar um nó no Service Fabric Explorer][sfx-stop-node]
+
+Momentaneamente, deverá ver o ponto de interrupção atingido no Visual Studio, dado que a computação que estava a fazer diretamente num nó falha no outro.
+
+
+Em seguida, regresse ao Visualizador de Eventos de Diagnóstico e observe as mensagens. O contador não deixa de aumentar, apesar de os eventos, na verdade, estarem a vir por um nó diferente.
+
+![Visualizador de eventos de diagnóstico após falha][diagnostic-events-viewer-detail-post-failover]
 
 ## <a name="cleaning-up-the-local-cluster-optional"></a>Limpar o cluster local (opcional)
-Antes de concluir, é importante lembrar-se de que o cluster local é real. Parar o depurador remove a instância da aplicação e anula o registo do tipo de aplicação. Contudo, o cluster continua a ser executado em segundo plano. Tem várias opções para gerir o cluster:
 
-1. Para encerrar o cluster, mas manter os dados de aplicação e o rastreio, clique em **Parar Cluster Local** na aplicação de tabuleiro do sistema.
-2. Para eliminar o cluster totalmente, clique em **Remover Cluster Local** na aplicação de tabuleiro do sistema. Esta opção resultará noutra implementação lenta da próxima vez que premir F5 no Visual Studio. Elimine o cluster apenas se não pretender utilizar o cluster local durante algum tempo ou se precisar de recuperar recursos.
+Lembre-se de que este cluster local é real. Parar o depurador remove a instância da aplicação e anula o registo do tipo de aplicação. Contudo, o cluster continua a ser executado em segundo plano. Quando estiver pronto para parar o cluster local, tem duas opções à sua disposição.
 
-## <a name="deploy-your-application-to-an-azure-cluster"></a>Implementar a sua aplicação num cluster do Azure
-Agora que implementou a aplicação localmente, pode implementar a mesma aplicação no Azure. O documento [criar o primeiro cluster do Service Fabric no Azure](service-fabric-get-started-azure-cluster.md) explica os passos para utilizar o Azure PowerShell ou o portal.
+### <a name="keep-application-and-trace-data"></a>Manter os dados da aplicação e de rastreio
 
-Assim que configurar um cluster do Azure, pode publicar esta aplicação a partir do Visual Studio no Azure, seguindo o artigo [publish to an Azure cluster](service-fabric-publish-app-remote-cluster.md)(publicar num cluster do Azure).  
+Encerre o cluster, ao clicar com o botão direito do rato na aplicação de tabuleiro do sistema **Gestor de Clusters Locais** e escolha **Parar Cluster Local**.
 
-## <a name="switch-cluster-mode-of-your-local-development-cluster"></a>Alternar o modo de cluster do seu cluster de desenvolvimento local
-Por predefinição, o cluster de desenvolvimento local está configurado para ser executado como um cluster de cinco nós, o que é útil na depuração de serviços implementados em vários nós. No entanto, a implementação de uma aplicação no cluster de desenvolvimento de cinco nós pode demorar algum tempo. Se pretender iterar rapidamente alterações de código sem executar a aplicação nos cinco nós, alterne o cluster de desenvolvimento para o modo de um nó. Para executar o código num cluster com um nó, clique com o botão direito do rato no Gestor de Clusters Locais na bandeja do sistema e selecione **Alternar Modo do Cluster -> 1 Nó**.  
+### <a name="delete-the-cluster-and-all-data"></a>Eliminar o cluster e todos os dados
 
-![Alternar o modo do cluster][switch-cluster-mode]
+Remova o cluster, ao clicar com o botão direito do rato na aplicação de tabuleiro do sistema **Gestor de Clusters Locais** e escolha **Remover Cluster Local**. 
 
-O cluster de desenvolvimento é reinicializado quando altera o modo do cluster e todas as aplicações aprovisionadas ou em execução no cluster são removidas.
-
-Também pode alterar o modo de cluster através do PowerShell:
-
-1. Inicie uma nova janela do PowerShell como administrador.
-2. Execute o script de configuração de cluster a partir da pasta SDK:
-   
-    ```powershell
-    & "$ENV:ProgramFiles\Microsoft SDKs\Service Fabric\ClusterSetup\DevClusterSetup.ps1" -CreateOneNodeCluster
-    ```
-   
-    A configuração do cluster demora alguns minutos. Após a conclusão do programa de configuração, deverá ver resultados semelhantes ao seguinte:
-   
-    ![Saída do programa de configuração do cluster][cluster-setup-success-1-node]
-
-
+Se escolher esta opção, o Visual Studio irá reimplementar o cluster da próxima vez que a aplicação for executada. Escolha esta opção se não pretender utilizar o cluster local durante algum tempo ou se precisar de recuperar recursos.
 
 ## <a name="next-steps"></a>Passos seguintes
-* Saiba como criar um [cluster no Azure](service-fabric-cluster-creation-via-portal.md) ou um [cluster autónomo no Windows](service-fabric-cluster-creation-for-windows-server.md).
-* Experimente criar um serviço com os modelos de programação [Reliable Services](service-fabric-reliable-services-quick-start.md) ou [Reliable Actors](service-fabric-reliable-actors-get-started.md).
-* Tente implementar um [contentor do Windows](service-fabric-deploy-container.md) ou uma aplicação existente como [executável convidado](service-fabric-deploy-existing-app.md).
-* Saiba como expor os seus serviços à Internet com um [front-end do serviço Web](service-fabric-add-a-web-frontend.md).
-* Percorra um [laboratório prático](https://msdnshared.blob.core.windows.net/media/2016/07/SF-Lab-Part-I.docx) e crie um serviço sem monitorização de estado, configure relatórios de monitorização e estado de funcionamento e faça uma atualização da aplicação.
-* Saiba mais sobre as [opções de suporte do Service Fabric](service-fabric-support.md)
-
+Leia mais sobre o [Reliable Services](service-fabric-reliable-services-introduction.md).
 <!-- Image References -->
 
 [1]: ./media/service-fabric-create-your-first-application-in-visual-studio/new-project-dialog.png

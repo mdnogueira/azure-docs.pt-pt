@@ -16,17 +16,19 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 07/05/2017
 ms.author: rachelap, glenga
-ms.translationtype: Human Translation
-ms.sourcegitcommit: f537befafb079256fba0529ee554c034d73f36b0
-ms.openlocfilehash: 2d539dd51834e935f9c5f7a6be42011ffe9e0870
+ms.translationtype: HT
+ms.sourcegitcommit: 26c07d30f9166e0e52cb396cdd0576530939e442
+ms.openlocfilehash: be7a9979ba7e6aa26c60b24bcc892ca35af3c1fc
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/08/2017
-
+ms.lasthandoff: 07/19/2017
 
 ---
-# <a name="create-your-first-function-using-visual-studio"></a>Criar a sua primeira função com o Visual Studio 
+# <a name="create-your-first-function-using-visual-studio"></a>Criar a sua primeira função com o Visual Studio
 
-As Funções do Azure permitem-lhe executar o seu código num ambiente sem servidor, sem que tenha de criar primeiro uma VM ou publicar uma aplicação Web. 
+As Funções do Azure permitem-lhe executar o seu código num ambiente sem servidor, sem que tenha de criar primeiro uma VM ou publicar uma aplicação Web.
+
+> [!IMPORTANT]
+> Este tópico utiliza uma Versão de Pré-visualização do Visual Studio para concluir os passos descritos. Antes de continuar, confirme que tem instalada a [versão 15.3 da Pré-visualização do Visual Studio 2017](https://www.visualstudio.com/vs/preview/).
 
 Neste tópico, aprenderá a usar as ferramentas de função do Azure para Visual Studio 2017 para criar e testar localmente uma função de "hello world". Em seguida, publicará o código de função no Azure.
 
@@ -37,7 +39,7 @@ Neste tópico, aprenderá a usar as ferramentas de função do Azure para Visual
 Para concluir este tutorial, instale:
 
 * [Versão de pré-visualização do Visual Studio 2017, versão 15.3](https://www.visualstudio.com/vs/preview/), incluindo a carga de trabalho de **desenvolvimento do Azure**.
-    
+
     ![Instalar o Visual Studio 2017 com a carga de trabalho de desenvolvimento do Azure](./media/functions-create-your-first-function-visual-studio/functions-vs-workloads.png)
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]

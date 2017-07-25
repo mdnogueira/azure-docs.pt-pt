@@ -1,6 +1,6 @@
 ---
-title: "Introdução ao Service Fabric e à CLI do Azure 2.0"
-description: "Como utilizar o módulo de comandos do Service Fabric na CLI do Azure versão 2.0 – inclui ligar-se ao cluster e gerir as aplicações"
+title: "Introdução ao Azure Service Fabric e à CLI 2.0 do Azure"
+description: "Saiba como utilizar o módulo de comandos do Azure Service Fabric na CLI do Azure, versão 2.0. Saiba como ligar a um cluster e como gerir aplicações."
 services: service-fabric
 author: samedder
 manager: timlt
@@ -8,80 +8,70 @@ ms.service: service-fabric
 ms.topic: get-started-article
 ms.date: 06/21/2017
 ms.author: edwardsa
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 6efa2cca46c2d8e4c00150ff964f8af02397ef99
-ms.openlocfilehash: c5cc6e54acf27456185eeb48858c4d981aa46b4b
+ms.translationtype: HT
+ms.sourcegitcommit: 49bc337dac9d3372da188afc3fa7dff8e907c905
+ms.openlocfilehash: ee3302b984ca2f5509755dc17b0a5fd06ace0afe
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/01/2017
+ms.lasthandoff: 07/14/2017
 
 ---
-<a id="service-fabric-and-azure-cli-20" class="xliff"></a>
+# <a name="azure-service-fabric-and-azure-cli-20"></a>Azure Service Fabric e CLI 2.0 do Azure
 
-# Service Fabric e CLI do Azure 2.0
+A versão 2.0 da ferramenta de linha de comandos do Azure (CLI do Azure) inclui comandos que o ajudam a gerir os clusters do Azure Service Fabric. Aprenda a utilizar a CLI do Azure e o Service Fabric.
 
-A nova CLI do Azure 2.0 inclui agora os comandos para gerir os clusters do Service Fabric. Esta documentação inclui os passos para iniciar a CLI do Azure.
+## <a name="install-azure-cli-20"></a>Instalar Azure CLI 2.0
 
-<a id="install-azure-cli-20" class="xliff"></a>
+Pode utilizar os comandos da CLI 2.0 do Azure para interagir e gerir os clusters do Service Fabric. Para obter a versão mais recente da CLI do Azure, siga o [processo de instalação padrão da CLI 2.0 do Azure](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli).
 
-## Instalar Azure CLI 2.0
+Para obter mais informações, veja [Azure CLI 2.0 overview](https://docs.microsoft.com/en-us/cli/azure/overview) (Descrição geral da CLI 2.0 do Azure).
 
-A CLI do Azure inclui agora os comandos para interagir e gerir os clusters do Service Fabric. Pode efetuar o [processo de instalação padrão](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) para obter a CLI do Azure mais recente.
+## <a name="azure-cli-syntax"></a>Sintaxe da CLI do Azure
 
-Para obter mais informações, consulte a [documentação da CLI do Azure 2.0](https://docs.microsoft.com/en-us/cli/azure/overview)
+Na CLI do Azure, todos os comandos do Service Fabric têm o prefixo `az sf`. Para obter informações gerais sobre os comandos que pode utilizar, utilize `az sf -h`. Para obter ajuda com comandos individuais, utilize `az sf <command> -h`.
 
-<a id="cli-syntax" class="xliff"></a>
-
-## Sintaxe da CLI
-
-Todos os comandos do Azure Service Fabric possuem um prefixo com `az sf` na CLI do Azure. Para obter mais informações sobre os comandos disponíveis, pode executar `az sf -h` para obter informações gerais. Ou pode executar `az sf <command> -h` para obter ajuda mais detalhada sobre um único comando.
-
-Os comandos do Azure Service Fabric na CLI seguem um padrão de nomenclatura
+Os comandos do Service Fabric na CLI do Azure seguem este padrão de nomenclatura:
 
 ```azurecli
 az sf <object> <action>
 ```
 
-Aqui, `<object>` é o destino de `<action>`.
+`<object>` é o destino de `<action>`.
 
-<a id="selecting-a-cluster" class="xliff"></a>
+## <a name="select-a-cluster"></a>Selecionar um cluster
 
-## Selecionar um cluster
-
-Antes de executar qualquer operação, tem de selecionar um cluster ao qual deve estabelecer ligação. Por exemplo, consulte o seguinte fragmento de código para se ligar a um cluster não seguro.
+Antes de executar qualquer operação, tem de selecionar um cluster ao qual se deve ligar. Para obter um exemplo, veja o código abaixo. O código liga-se a um cluster não seguro.
 
 > [!WARNING]
-> Não utilizee clusters do Service Fabric não seguros para ambientes de produção
+> Não utilize clusters do Service Fabric não seguros em ambientes de produção.
 
 ```azurecli
 az sf cluster select --endpoint http://testcluster.com:19080
 ```
 
-O ponto final do cluster deve ser antecedido por `http` ou `https`e deve incluir a porta para o gateway HTTP. Essa porta e o endereço são os mesmos que o URL do Service Fabric Explorer.
+O ponto final do cluster tem de ter o prefixo `http` ou `https`. Tem de incluir a porta para o gateway HTTP. A porta e o endereço são os mesmos que o URL do Service Fabric Explorer.
 
-Para proteger os clusters com um certificado, são suportados os ficheiros `pem` ou `crt` e `key` não encriptados.
+Relativamente aos clusters que são protegidos com certificado, pode utilizar ficheiros .pem não encriptados ou ficheiros .crt e .key. Por exemplo:
 
 ```azurecli
 az sf cluster select --endpoint https://testsecurecluster.com:19080 --pem ./client.pem
 ```
 
-Para obter mais informações, consulte o [documento detalhado sobre como se ligar a clusters seguros](service-fabric-connect-to-secure-cluster.md).
+Para obter mais informações, veja [Connect to a secure Azure Service Fabric cluster](service-fabric-connect-to-secure-cluster.md) (Ligar a um cluster do Azure Service Fabric seguro).
 
 > [!NOTE]
-> O comando select não executa nenhuma solicitação antes de retornar. Para verificar se um cluster foi especificado corretamente, execute um comando como `az sf cluster health` e verifique se o comando retorna sem erros.
+> O comando `select` não age sobre nenhum pedido antes de devolver. Para confirmar que especificou um cluster corretamente, utilize um comando como `az sf cluster health`. Certifique-se de que o comando não devolve erros.
 
-<a id="performing-basic-operations" class="xliff"></a>
+## <a name="basic-operations"></a>Operações básicas
 
-## Executar operações básicas
+As informações de ligação do cluster estão presentes em diferentes sessões da CLI do Azure. Depois de selecionar um cluster do Service Fabric, pode executar qualquer comando do Service Fabric no mesmo.
 
-As informações de ligação ao cluster estão presentes em diferentes sessões da CLI do Azure. Quando um cluster do Service Fabric for selecionado, pode executar qualquer comando do Service Fabric.
-
-Por exemplo, para obter o estado de funcionamento do cluster do Service Fabric, execute o seguinte comando
+Por exemplo, para obter o estado de funcionamento do cluster do Service Fabric, utilize o comando seguinte:
 
 ```azurecli
 az sf cluster health
 ```
 
-O comando resulta na seguinte saída, pressupondo que a saída JSON é especificada na configuração da CLI do Azure
+O comando resulta na seguinte saída (pressupondo que a saída JSON é especificada na configuração da CLI do Azure):
 
 ```json
 {
@@ -106,51 +96,41 @@ O comando resulta na seguinte saída, pressupondo que a saída JSON é especific
 }
 ```
 
-<a id="tips-and-faq" class="xliff"></a>
+## <a name="tips-and-troubleshooting"></a>Sugestões e resolução de problemas
 
-## Sugestões e perguntas frequentes
+Se se deparar com problemas ao utilizar os comandos do Service Fabric na CLI do Azure, as informações seguintes poderão ser úteis.
 
-Eis algumas informações que podem ser úteis para a resolução de problemas na utilização dos comandos do Service Fabric na CLI do Azure
+### <a name="convert-a-certificate-from-pfx-to-pem-format"></a>Converter um certificado no formato PFX em PEM
 
-<a id="converting-a-certificate-from-pfx-to-pem" class="xliff"></a>
-
-### Converter um certificado de PFX em PEM
-
-A CLI do Azure suporta ficheiros de certificados de cliente como PEM (extensão `.pem`). Se utilizar ficheiros PFX do Windows, esses certificados têm de ser convertidos no formato PEM. Para a conversão de um ficheiro PFX num ficheiro PEM, utilize o seguinte comando:
+A CLI do Azure suporta ficheiros de certificados de cliente como PEM (extensão .pem). Se utilizar ficheiros PFX do Windows, tem de converter esses certificados no formato PEM. Para converter um ficheiro PFX para ficheiro PEM, utilize o comando seguinte:
 
 ```bash
 openssl pkcs12 -in certificate.pfx -out mycert.pem -nodes
 ```
 
-Consulte a [documentação OpenSSL](https://www.openssl.org/docs/man1.0.1/apps/pkcs12.html) para obter mais detalhes.
+Para obter mais informações, veja a [documentação de OpenSSL](https://www.openssl.org/docs/).
 
-<a id="connection-issues" class="xliff"></a>
+### <a name="connection-issues"></a>Problemas de ligação
 
-### Problemas de ligação
+Algumas operações poderão gerar a mensagem seguinte:
 
-Ao executar as operações, pode encontrar o seguinte erro:
+`Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known`
 
-> `Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known`
+Verifique se o ponto final do cluster especificado está disponível e à escuta. Confirme, também, se a IU do Service Fabric Explorer está disponível no anfitrião e na porta. Para atualizar o ponto final, utilize `az sf cluster select`.
 
-Neste caso, verifique se o ponto final do cluster especificado está acessível e a escutar. Verifique também se a interface do utilizador do Service Fabric Explorer está acessível no sistema anfitrião e na porta. Utilize `az sf cluster select` para atualizar o ponto final.
+### <a name="detailed-logs"></a>Registos detalhados
 
-<a id="getting-detailed-logs" class="xliff"></a>
+Muitas vezes, os registos detalhados são úteis para depurar ou comunicar problemas. A CLI do Azure oferece um sinalizador `--debug` global que aumenta a verbosidade dos ficheiros de registo.
 
-### Obter registos detalhados
+### <a name="command-help-and-syntax"></a>Ajuda de comandos e sintaxe
 
-Quando depurar ou comunicar um problema, é útil incluir registos detalhados. A CLI do Azure inclui um sinalizador `--debug` global que aumenta a verbosidade dos registos.
-
-<a id="command-help-and-syntax" class="xliff"></a>
-
-### Ajuda de comandos e sintaxe
-
-Os comandos do Service Fabric seguem a mesma convenção da CLI do Azure. Especifique o sinalizador `-h` para obter ajuda sobre um comando específico ou um grupo de comandos. Por exemplo:
+Os comandos do Service Fabric seguem as mesmas convenções que a CLI do Azure. Para obter ajuda com um comando específico ou um grupo de comandos, utilize o sinalizador `-h`:
 
 ```azurecli
 az sf application -h
 ```
 
-ou
+Segue-se outro exemplo:
 
 ```azurecli
 az sf application create -h

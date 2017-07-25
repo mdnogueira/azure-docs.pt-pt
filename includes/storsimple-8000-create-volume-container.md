@@ -1,7 +1,6 @@
 <!--author=alkohli last changed: 06/22/17-->
 
-#### Para criar um contentor de volume
-<a id="to-create-a-volume-container" class="xliff"></a>
+#### <a name="to-create-a-volume-container"></a>Para criar um contentor de volume
 1. Aceda ao seu serviço Gestor de Dispositivos do StorSimple e clique em **Dispositivos**. Na lista tabular de dispositivos, selecione e clique num dispositivo. 
 
     ![Painel Contentor de volumes](./media/storsimple-8000-create-volume-container/createvolumecontainer1.png)
@@ -13,7 +12,7 @@
 3. No painel **Adicionar contentor de volumes**:
    
    1. O dispositivo é selecionado automaticamente.
-   2. Forneça um **Nome** para o contentor do volume. O nome tem de ter entre 3 e 32 carateres.
+   2. Forneça um **Nome** para o contentor do volume. O nome tem de ter entre 3 e 32 carateres. Não pode mudar o nome de um contentor de volumes depois de o mesmo ter sido criado.
    3. Selecione **Ativar Encriptação do Armazenamento na Nuvem** para ativar a encriptação dos dados enviados do dispositivo para a nuvem.
    4. Forneça e confirme uma **Chave de Encriptação do Armazenamento na Nuvem** que tenha entre 8 e 32 carateres. Esta chave é utilizada pelo dispositivo para aceder aos dados encriptados.
    5. Selecione uma **Conta de Armazenamento** associada a este contentor de volume Pode escolher uma conta de armazenamento existente ou a conta predefinida que é gerada no momento da criação do serviço. Também pode utilizar a opção **Adicionar nova** para especificar uma conta de armazenamento que não esteja associada a esta subscrição do serviço.

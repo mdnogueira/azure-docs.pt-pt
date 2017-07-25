@@ -13,14 +13,13 @@ ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.custom: H1Hack27Feb2017
 ms.workload: infrastructure-services
-ms.date: 04/27/2017
+ms.date: 07/10/2017
 ms.author: gwallace
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 64bd7f356673b385581c8060b17cba721d0cf8e3
-ms.openlocfilehash: e9dfb5a744a7c63ef9805b1341236c4f3c57ec4d
+ms.translationtype: HT
+ms.sourcegitcommit: c3ea7cfba9fbf1064e2bd58344a7a00dc81eb148
+ms.openlocfilehash: 17fc7e6a19b835e08360d1bf638d69aabb14e121
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/02/2017
-
+ms.lasthandoff: 07/19/2017
 
 ---
 # <a name="overview-of-application-gateway"></a>Descrição geral do Gateway de Aplicação
@@ -43,6 +42,7 @@ O Gateway de Aplicação, atualmente, fornece as seguintes capacidades:
 * **[Encaminhamento multilocal](application-gateway-multi-site-overview.md)** - O gateway de aplicação permite-lhe consolidar até 20 Web sites num gateway de aplicação único.
 * **[Suporte de Websocket](application-gateway-websocket.md)** - Outra funcionalidade excelente de Gateway de Aplicação é o suporte nativo para Websocket.
 * **[Monitorização de estado de funcionamento](application-gateway-probe-overview.md)** - O gateway de aplicação fornece monitorização do estado de funcionamento predefinido e sondas personalizadas para monitorizar cenários mais específicos.
+* **[Redirecionamento de pedidos](application-gateway-redirect-overview.md)** - esta funcionalidade proporciona a capacidade de redirecionar pedidos HTTP para um serviço de escuta de HTTPS.
 * **[Diagnóstico avançado](application-gateway-diagnostics.md)** - o gateway de aplicação fornece o diagnóstico completo e registos de acesso. Os registos de firewall estão disponíveis para recursos de gateway de aplicações que tenham a WAF ativada.
 
 ## <a name="benefits"></a>Benefícios

@@ -12,35 +12,28 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 06/16/2017
+ms.date: 07/18/2017
 ms.author: yurid
-ms.translationtype: Human Translation
-ms.sourcegitcommit: ff2fb126905d2a68c5888514262212010e108a3d
-ms.openlocfilehash: 2593e6846c897644017083b49ad4ba8219696c6c
+ms.translationtype: HT
+ms.sourcegitcommit: 26c07d30f9166e0e52cb396cdd0576530939e442
+ms.openlocfilehash: aefec15c72c6cf8389a29b03be70abb4c7f020b9
 ms.contentlocale: pt-pt
-ms.lasthandoff: 06/17/2017
-
+ms.lasthandoff: 07/19/2017
 
 ---
-<a id="set-security-policies-in-azure-security-center" class="xliff"></a>
-
-# Definir políticas de segurança no Centro de Segurança do Azure
+# <a name="set-security-policies-in-azure-security-center"></a>Definir políticas de segurança no Centro de Segurança do Azure
 Este documento ajuda-o a configurar as políticas de segurança no Centro de Segurança, ao servir de orientação pelos passos necessários para realizar esta tarefa.
 
 >[!NOTE] 
 >A partir do início de junho de 2017, o Centro de Segurança irá utilizar o Microsoft Monitoring Agent para recolher e armazenar dados. Veja [Azure Security Center Platform Migration](security-center-platform-migration.md) (Migração da Plataforma do Centro de Segurança do Azure) para saber mais. As informações neste artigo representam a funcionalidade do Centro de Segurança após a transição para o Agente de Monitorização da Microsoft.
 >
 
-<a id="what-are-security-policies" class="xliff"></a>
-
-## O que são políticas de segurança?
+## <a name="what-are-security-policies"></a>O que são políticas de segurança?
 Uma política de segurança define o conjunto de controlos que são recomendados para recursos dentro da subscrição especificada. No Centro de Segurança, pode definir políticas para as suas subscrições do Azure, de acordo com as necessidades de segurança da empresa e do tipo de aplicações ou sensibilidade dos dados em cada subscrição.
 
 Por exemplo, os recursos que são utilizados para programação ou testes podem ter requisitos de segurança diferentes dos que são utilizados para aplicações de produção. Da mesma forma, as aplicações que utilizam dados regulados como informação identificativa podem exigir um nível mais elevado de segurança. As políticas de segurança que são ativadas no Centro de Segurança do Azure aplicam recomendações de segurança e monitorização para o ajudar a identificar potenciais vulnerabilidades e a mitigar ameaças. Leia o [Guia de Operações e Planeamento do Centro de Segurança do Azure](security-center-planning-and-operations-guide.md) para obter mais informações sobre como determinar a opção mais adequada para si.
 
-<a id="set-security-policies" class="xliff"></a>
-
-## Definir políticas de segurança
+## <a name="set-security-policies"></a>Definir políticas de segurança
 Pode configurar políticas de segurança para cada subscrição. Para modificar uma política de segurança, tem de ser um proprietário ou contribuinte dessa subscrição. Inicie sessão no portal do Azure e siga os passos subsequentes para configurar as políticas de segurança no Centro de Segurança:
 
 1. Clique no mosaico **Política** no dashboard do Centro de Segurança.
@@ -49,7 +42,7 @@ Pode configurar políticas de segurança para cada subscrição. Para modificar 
     ![Definir política](./media/security-center-policies/security-center-policies-fig1-ga.png)
 3. O painel **Política de segurança** da subscrição selecionada abre-se com um conjunto de opções. As opções disponíveis neste painel são:
 
-   * **Política de prevenção de**: utilize esta opção para configurar políticas por subscrição ou grupo de recursos.  
+   * **Política de prevenção**: utilize esta opção para configurar políticas por subscrição.  
    * **Notificação por e-mail**: utilize esta opção para configurar uma notificação por e-mail que é enviada na primeira ocorrência diária de um alerta e relativamente a alertas de gravidade elevada. As preferências de e-mail só podem ser configuradas para as políticas de subscrição. Leia [Provide security contact details in Azure Security Center (Fornecer detalhes de contacto de segurança no Centro de Segurança do Azure)](security-center-provide-security-contact-details.md) para obter mais informações sobre como configurar uma notificação por e-mail.
    * **Escalão de preço**: utilize esta opção para atualizar a seleção do escalão de preço. Consulte os [Preços do Centro de Segurança](security-center-pricing.md) para saber mais sobre as opções de preços.
 4. Certifique-se de que a opção **Recolher dados de máquinas virtuais** está **Ativada**. Essa opção permite a coleção de registos automáticos para os recursos novos e existentes com o Microsoft Monitoring Agent – este é o mesmo agente utilizado pelo serviço do Operations Management Suite e do Log Analytics. Os dados recolhidos por este agente serão armazenados na(s) área(s) de trabalho do Log Analytics existente, associada(s) à sua subscrição do Azure ou na(s) nova(s) área(s) de trabalho, tendo em conta a geografia da VM.
@@ -81,9 +74,7 @@ Assim que configurar todas as opções, clique em **OK** no painel **Política d
 >
 >
 
-<a id="see-also" class="xliff"></a>
-
-## Consultar também
+## <a name="see-also"></a>Consultar também
 Neste documento, aprendeu a configurar as políticas de segurança no Centro de Segurança do Azure. Para saber mais acerca do Centro de Segurança do Azure, consulte o seguinte:
 
 * [Guia de operações e planeamento do Centro de Segurança do Azure](security-center-planning-and-operations-guide.md). Saiba como planear e compreender as considerações de conceção para adoção do Centro de Segurança do Azure.

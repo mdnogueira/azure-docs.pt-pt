@@ -1,6 +1,6 @@
 ---
 title: "Analisar a utilização de dados do Log Analytics | Microsoft Docs"
-description: "Pode utilizar o dashboard Utilização do Log Analytics para ver a quantidade de dados que estão a ser enviados para o serviço do OMS."
+description: "Utilize o dashboard Utilização do Log Analytics para ver a quantidade de dados que estão a ser enviados para o serviço Log Analytics e resolver problemas relativos aos motivos por que estão a ser enviadas grandes quantidades."
 services: log-analytics
 documentationcenter: 
 author: MGoedtel
@@ -12,26 +12,19 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 04/12/2017
+ms.date: 07/14/2017
 ms.author: magoedte
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 7e3d4b83fefdc70f292cf85b682cf8ed756bf4c5
-ms.openlocfilehash: e7f04df679604f274c8ad9bf4daddc63c8b5418a
+ms.translationtype: HT
+ms.sourcegitcommit: c999eb5d6b8e191d4268f44d10fb23ab951804e7
+ms.openlocfilehash: 46766e29287ca130e68aa0f027cbb1ded2526af3
 ms.contentlocale: pt-pt
-ms.lasthandoff: 02/22/2017
-
+ms.lasthandoff: 07/17/2017
 
 ---
 # <a name="analyze-data-usage-in-log-analytics"></a>Analisar a utilização de dados do Log Analytics
-O Log Analytics recolhe dados e envia-os para o serviço do OMS periodicamente.  Pode utilizar o dashboard **Utilização do Log Analytics** para ver a quantidade de dados que estão a ser enviados para o serviço do OMS. O dashboard também apresenta a quantidade de dados que estão a ser enviados pelas soluções e a frequência com que os seus servidores estão a enviar dados.
+O Log Analytics inclui informações sobre a quantidade de dados recolhidos, que computadores os enviaram e os diferentes tipos de dados enviados.  Utilize o dashboard **Utilização do Log Analytics** para ver a quantidade de dados enviados para o serviço Log Analytics. O dashboard mostra quantos dados são recolhidos por cada solução e a quantidade de dados que os seus computadores estão a enviar.
 
-> [!NOTE]
-> Se tiver uma conta gratuita, está limitado ao envio de 500 MB de dados para o serviço do OMS diariamente. Se atingir o limite diário, a análise de dados para e é retomada no início do dia seguinte. Nesse caso, terá de reenviar os dados que não tenham sido aceites ou processados pelo OMS.
-
-Se tiver excedido ou estiver quase a atingir o limite de utilização, pode, opcionalmente, remover uma solução para reduzir a quantidade de dados que envia para o serviço do OMS. Para mais informações sobre a remoção de soluções, veja [Adicionar soluções Log Analytics a partir da Galeria de Soluções](log-analytics-add-solutions.md).
-
-![dashboard de utilização](./media/log-analytics-usage/usage-dashboard01.png)
-
+## <a name="understand-the-usage-dashboard"></a>Compreender o dashboard Utilização
 O dashboard **Utilização do Log Analytics** apresenta as informações seguintes:
 
 - Volume de dados
@@ -49,13 +42,9 @@ O dashboard **Utilização do Log Analytics** apresenta as informações seguint
     - Tempo decorrido para recolher e indexar dados
 - Lista de consultas
 
-## <a name="understanding-nodes-for-oms-offers"></a>Noções básicas sobre as ofertas do OMS
+![dashboard de utilização](./media/log-analytics-usage/usage-dashboard01.png)
 
-Se estiver no escalão de preço *por nó (OMS)*, é-lhe cobrado com base no número de nós e soluções ativados. Pode ver quantos nós de cada oferta estão a ser utilizados na secção *ofertas* do dashboard de utilização.
-
-![dashboard de utilização](./media/log-analytics-usage/log-analytics-usage-offerings.png)
-
-## <a name="to-work-with-usage-data"></a>Trabalhar com dados de utilização
+### <a name="to-work-with-usage-data"></a>Trabalhar com dados de utilização
 1. Se ainda não o fez, inicie sessão no [portal do Azure](https://portal.azure.com) através da sua subscrição do Azure.
 2. No menu **Hub**, clique em **Mais serviços** e, na lista de recursos, escreva **Log Analytics**. À medida que começa a escrever, a lista filtra com base na sua entrada. Clique em **Log Analytics**.  
     ![Hub do Azure](./media/log-analytics-usage/hub.png)
@@ -68,7 +57,95 @@ Se estiver no escalão de preço *por nó (OMS)*, é-lhe cobrado com base no nú
 7. No dashboard da Pesquisa de Registos, reveja os resultados devolvidos pela pesquisa.  
     ![exemplo de pesquisa de registos de utilização](./media/log-analytics-usage/usage-log-search.png)
 
+## <a name="create-an-alert-when-data-collection-is-higher-than-expected"></a>Criar um alerta quando a recolha de dados for superior ao esperado
+Esta secção descreve como criar um alerta se:
+- O volume de dados exceder uma determinada quantidade.
+- Se previr que o volume de dados vai exceder uma determinada quantidade.
+
+Os [alertas](log-analytics-alerts-creating.md) do Log Analytics utilizam consultas de pesquisa. A consulta seguinte tem um resultado quando são recolhidos mais de 100 GB de dados nas últimas 24 horas:
+
+`Type=Usage QuantityUnit=MBytes IsBillable=true | measure sum(div(Quantity,1024)) as DataGB by Type | where DataGB > 100`
+
+A consulta seguinte utiliza uma fórmula simples para prever quando é que vão ser enviados mais de 100 GB de dados num dia: 
+
+`Type=Usage QuantityUnit=MBytes IsBillable=true | measure sum(div(mul(Quantity,8),1024)) as EstimatedGB by Type | where EstimatedGB > 100`
+
+Para alertar relativamente a volumes de dados diferentes, altere o 100 nas consultas para o número de GB para o qual quer receber o alerta.
+
+Utilize os passos descritos em [Create an alert rule](log-analytics-alerts-creating.md#create-an-alert-rule) (Criar uma regra de alerta) para ser notificado de quando a recolha de dados for superior ao esperado.
+
+Quando criar o alerta para a primeira consulta – quando existem mais de 100 GB de dados em 24 horas –, defina:
+- O **nome** como *Volume de dados maior do que 100 GB em 24 horas*
+- A **gravidade** como *Aviso*
+- A **consulta de pesquisa** como `Type=Usage QuantityUnit=MBytes IsBillable=true | measure sum(div(Quantity,1024)) as DataGB by Type | where DataGB > 100`
+- A **Janela de tempo** como *24 Horas*.
+- A **frequência do alerta** como uma hora, pois os dados de utilização só são atualizados uma vez por hora.
+- **Gerar alerta com base em** como o *número de resultados*
+- O **número de resultados** como *Superior a 0*
+
+Utilize os passos descritos em [Add actions to alert rules](log-analytics-alerts-actions.md) (Adicionar ações a regras de alertas) para configurar uma ação de e-mail, webhook ou runbook para a regra de alerta.
+
+Quando criar o alerta para a segunda consulta – quando se previr que vai haver mais de 100 GB de dados em 24 horas –, defina:
+- O **nome** como *Previsto volume de dados maior do que 100 GB em 24 horas*
+- A **gravidade** como *Aviso*
+- A **consulta de pesquisa** como `Type=Usage QuantityUnit=MBytes IsBillable=true | measure sum(div(mul(Quantity,8),1024)) as EstimatedGB by Type | where EstimatedGB > 100`
+- A **Janela de tempo** como *3 Horas*.
+- A **frequência do alerta** como uma hora, pois os dados de utilização só são atualizados uma vez por hora.
+- **Gerar alerta com base em** como o *número de resultados*
+- O **número de resultados** como *Superior a 0*
+
+Quando receber um alerta, utilize os passos da secção seguinte para resolver o motivo pelo qual a utilização é superior ao esperado.
+
+## <a name="troubleshooting-why-usage-is-higher-than-expected"></a>Resolver o motivo pelo qual a utilização é superior ao esperado
+O dashboard de utilização ajuda-o a identificar o porquê de a utilização (e consequentemente o custo) ser superior ao que estava à espera.
+
+A utilização superior deve-se a um ou a ambos os motivos abaixo:
+- Estão a ser enviados para o Log Analytics mais dados do que o esperado
+- Estão a ser enviados dados para o Log Analytics por mais nós do que o esperado
+
+### <a name="check-if-there-is-more-data-than-expected"></a>Verificar se há mais dados do que o esperado 
+Há duas secções principais da página de utilização que ajudam a identificar o porquê de estarem a ser recolhidos mais dados.
+
+O gráfico *Volume de dados ao longo do tempo* mostra o volume total de dados enviados e os computadores que enviam mais dados. O gráfico na parte superior permite-lhe ver se a utilização de dados global está a crescer, permanece estável ou diminui. A lista de computadores mostra os dez computadores que estão a enviar mais dados.
+
+O gráfico *Volume de dados por solução* mostra o volume de dados que são enviados por cada solução e as soluções que estão a enviar mais dados. O gráfico na parte superior mostra o volume total de dados que são enviados por cada solução ao longo do tempo. Com estas informações, pode determinar se uma solução está a enviar mais dados, mais ou menos a mesma quantidade de dados ou menos dados ao longo do tempo. A lista de soluções mostra as dez soluções que estão a enviar mais dados. 
+
+![gráficos de volumes de dados](./media/log-analytics-usage/log-analytics-usage-data-volume.png)
+
+Observe o gráfico *Volume de dados ao longo do tempo*. Para ver as soluções e os tipos de dados que estão a enviar mais dados relativamente a um determinado computador, clique no nome do computador. Clique no nome do primeiro computador na lista.
+
+Na captura de ecrã seguinte, o tipo de dados *Gestão de Registos / Desempenho* está a enviar mais dados para o computador. 
+![volume de dados de um computador](./media/log-analytics-usage/log-analytics-usage-data-volume-computer.png)
+
+
+Em seguida, regresse ao dashboard *Utilização* e veja o gráfico *Volume de dados por solução*. Para ver que computadores estão a enviar mais dados relativamente a uma solução, clique no nome da solução na lista. Clique no nome da primeira solução na lista. 
+
+Na captura de ecrã seguinte, confirma-se que é o computador *acmetomcat* que está a enviar mais dados para a solução Gestão de Registos.
+
+![volume de dados de uma solução](./media/log-analytics-usage/log-analytics-usage-data-volume-solution.png)
+
+
+Utilize os seguintes passos para reduzir o volume de registos recolhidos:
+
+| Origem do volume de dados elevado | Como reduzir o volume de dados |
+| -------------------------- | ------------------------- |
+| Eventos de segurança            | Selecione [eventos de segurança comuns ou mínimos](https://blogs.technet.microsoft.com/msoms/2016/11/08/filter-the-security-events-the-oms-security-collects/) <br> Altere a política de auditoria de segurança. Por exemplo, desative os eventos de [plataforma de filtragem de auditoria](https://technet.microsoft.com/library/dd772749(WS.10).aspx). |
+| Contadores de desempenho       | Altere a [configuração do contador de desempenho](log-analytics-data-sources-performance-counters.md) para: <br> - Reduzir a frequência da recolha <br> - Reduzir o número de contadores de desempenho |
+| Registos de eventos                 | Altere a [configuração do registo de eventos](log-analytics-data-sources-windows-events.md) para: <br> - Reduzir o número de registos de eventos recolhidos <br> - Recolher apenas níveis de eventos necessários. Por exemplo, não recolher eventos de nível *Informação* |
+| Syslog                     | Altere a [configuração do syslog](log-analytics-data-sources-syslog.md) para: <br> - Reduzir o número de instalações recolhidas <br> - Recolher apenas níveis de eventos necessários. Por exemplo, não recolher eventos de nível *Informação* e *Depuração* |
+| Dados de solução de computadores que não precisam da solução | Utilize a [segmentação de soluções](../operations-management-suite/operations-management-suite-solution-targeting.md) para recolher dados apenas de grupos de computadores necessários.
+
+### <a name="check-if-there-are-more-nodes-than-expected"></a>Verificar se há mais nós do que o esperado
+Se estiver no escalão de preço *por nó (OMS)*, é cobrado com base no número de nós e soluções que utilizar. Pode ver quantos nós de cada oferta estão a ser utilizados na secção *ofertas* do dashboard de utilização.
+
+![dashboard de utilização](./media/log-analytics-usage/log-analytics-usage-offerings.png)
+
+Clique em **Ver todos...** para ver a lista completa dos computadores que estão a enviar dados para a oferta selecionada.
+
+Utilize a [segmentação de soluções](../operations-management-suite/operations-management-suite-solution-targeting.md) para recolher dados apenas de grupos de computadores necessários.
+
 
 ## <a name="next-steps"></a>Passos seguintes
-* Veja [Log searches in Log Analytics (Pesquisas de registos no Log Analytics)](log-analytics-log-searches.md) para ver informações detalhadas que são recolhidas e enviadas para OMS por funcionalidades e soluções.
+* Veja [Pesquisas de registos no Log Analytics](log-analytics-log-searches.md) para aprender a utilizar a linguagem de pesquisa. Pode utilizar as consultas de pesquisa para executar análises adicionais aos dados de utilização.
+* Utilize os passos descritos em [Create an alert rule](log-analytics-alerts-creating.md#create-an-alert-rule) (Criar uma regra de alerta) para ser notificado de quando um critério de pesquisa for cumprido.
 
