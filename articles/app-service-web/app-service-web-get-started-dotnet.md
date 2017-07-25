@@ -15,28 +15,24 @@ ms.topic: hero-article
 ms.date: 06/14/2017
 ms.author: cephalin
 ms.custom: mvc
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 7948c99b7b60d77a927743c7869d74147634ddbf
-ms.openlocfilehash: 2b447bcc5930550af3996cb40925ab59d203dc7c
+ms.translationtype: HT
+ms.sourcegitcommit: 8021f8641ff3f009104082093143ec8eb087279e
+ms.openlocfilehash: b5a7f3ebe5e95d3838e71b7b17b91e85da0d51a2
 ms.contentlocale: pt-pt
-ms.lasthandoff: 06/20/2017
+ms.lasthandoff: 07/21/2017
 
 ---
-<a id="create-an-aspnet-web-app-in-azure" class="xliff"></a>
-
-# Criar uma aplicação Web ASP.NET no Azure
+# <a name="create-an-aspnet-web-app-in-azure"></a>Criar uma aplicação Web ASP.NET no Azure
 
 [As Aplicações Web do Azure](https://docs.microsoft.com/azure/app-service-web/app-service-web-overview) fornecem um serviço de alojamento na Web altamente dimensionável e com correção automática.  Este guia de início rápido mostra como implementar uma aplicação Web ASP.NET em aplicações Web do Azure. Quando terminar, terá um grupo de recursos que consiste num plano de serviços de aplicações e uma aplicação Web do Azure com uma aplicação Web implementada.
 
 ![Aplicação Web ASP.NET no Serviço de Aplicações do Azure](./media/app-service-web-get-started-dotnet/updated-azure-web-app.png)
 
-<a id="prerequisites" class="xliff"></a>
-
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 
 Para concluir este tutorial:
 
-* Instale o [2017 do Visual Studio](https://www.visualstudio.com/en-us/visual-studio-homepage-vs.aspx) com as seguintes cargas de trabalho:
+* Instale o [2017 do Visual Studio](https://www.visualstudio.com/downloads/) com as seguintes cargas de trabalho:
     - **Desenvolvimento do ASP.NET e Web**
     - **Desenvolvimento do Azure**
 
@@ -44,9 +40,7 @@ Para concluir este tutorial:
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-<a id="create-an-aspnet-web-app" class="xliff"></a>
-
-## Criar uma aplicação Web ASP.NET
+## <a name="create-an-aspnet-web-app"></a>Criar uma aplicação Web ASP.NET
 
 No Visual Studio, crie um projeto ao selecionar **Ficheiro > Novo > Projeto**. 
 
@@ -66,9 +60,7 @@ No menu, selecione **Depurar > Iniciar sem depuração** para executar a aplica�
 
 ![Executar a aplicação localmente](./media/app-service-web-get-started-dotnet/local-web-app.png)
 
-<a id="publish-to-azure" class="xliff"></a>
-
-## Publicar no Azure
+## <a name="publish-to-azure"></a>Publicar no Azure
 
 No **Explorador de Soluções**, clique com o botão direito do rato no projeto **myFirstAzureWebApp** e selecione **Publicar**.
 
@@ -80,11 +72,9 @@ Certifique-se de que o **Serviço de Aplicações do Microsoft Azure** está sel
 
 É aberta a caixa de diálogo **Criar Serviço de Aplicações**, que o ajuda a criar todos os recursos do Azure necessários para executar a sua aplicação Web ASP.NET no Azure.
 
-<a id="sign-in-to-azure" class="xliff"></a>
+## <a name="sign-in-to-azure"></a>Iniciar sessão no Azure
 
-## Iniciar sessão no Azure
-
-Na caixa de diálogo **Criar Serviço de Aplicações**, selecione **Adicionar uma conta** e inicie sessão na sua subscrição do Azure. Se já tiver sessão iniciada, confirme se a conta inclui a sua subscrição do Azure. Pode selecionar a conta com sessão iniciada para adicionar a conta correta.
+Na caixa de diálogo **Criar Serviço de Aplicações**, selecione **Adicionar uma conta** e inicie sessão na sua subscrição do Azure. Se já tem sessão iniciada, selecione a conta que contém a subscrição pretendida na lista pendente.
 
 > [!NOTE]
 > Se já tiver sessão iniciada, não selecione ainda **Criar**.
@@ -93,11 +83,7 @@ Na caixa de diálogo **Criar Serviço de Aplicações**, selecione **Adicionar u
    
 ![Iniciar sessão no Azure](./media/app-service-web-get-started-dotnet/sign-in-azure.png)
 
-Depois de iniciar sessão, está pronto para criar todos os recursos de que precisa para a sua aplicação Web do Azure nesta caixa de diálogo.
-
-<a id="create-a-resource-group" class="xliff"></a>
-
-## Criar um grupo de recursos
+## <a name="create-a-resource-group"></a>Criar um grupo de recursos
 
 [!INCLUDE [resource group intro text](../../includes/resource-group.md)]
 
@@ -105,9 +91,7 @@ Junto a **Grupo de recursos**, selecione **Novo**.
 
 Atribua ao grupo de recursos o nome **myResourceGroup** e selecione **OK**.
 
-<a id="create-an-app-service-plan" class="xliff"></a>
-
-## Crie um plano do Serviço de Aplicações
+## <a name="create-an-app-service-plan"></a>Crie um plano do Serviço de Aplicações
 
 [!INCLUDE [app-service-plan](../../includes/app-service-plan.md)]
 
@@ -125,13 +109,9 @@ Na caixa de diálogo **Configurar Plano do Serviço de Aplicações**, use as de
 
 Selecione **OK**.
 
-<a id="create-and-publish-the-web-app" class="xliff"></a>
+## <a name="create-and-publish-the-web-app"></a>Criar e publicar a aplicação Web
 
-## Criar e publicar a aplicação Web
-
-Em **Nome da Aplicação Web**, escreva um nome exclusivo para a aplicação (os caracteres válidos são `a-z`, `0-9` e `-`). O URL da aplicação Web é `http://<app_name>.azurewebsites.net`, onde `<app_name>` é o nome da aplicação Web. 
-
-Também pode aceitar o nome gerado automaticamente, que já é exclusivo.
+No **Nome da Aplicação Web**, escreva um nome único para a aplicação (os carateres válidos são `a-z`, `0-9` e `-`) ou aceite o nome exclusivo gerado automaticamente. O URL da aplicação Web é `http://<app_name>.azurewebsites.net`, onde `<app_name>` é o nome da aplicação Web.
 
 Selecione **Criar** para começar a criar os recursos do Azure.
 
@@ -141,13 +121,11 @@ Depois de concluir o assistente, este publica a aplicação Web ASP.NET no Azure
 
 ![Aplicação Web ASP.NET publicada no Azure](./media/app-service-web-get-started-dotnet/published-azure-web-app.png)
 
-O URL utiliza o nome da aplicação Web que especificou anteriormente, com o formato `http://<app_name>.azurewebsites.net`. 
+O nome da aplicação Web especificado no [passo para criar e publicar](#create-and-publish-the-web-app) é utilizado como o prefixo de URL no formato `http://<app_name>.azurewebsites.net`.
 
 Parabéns, a primeira aplicação Web ASP.NET está em execução em direto no Serviço de Aplicações do Azure.
 
-<a id="update-the-app-and-redeploy" class="xliff"></a>
-
-## Atualizar a aplicação e reimplementar
+## <a name="update-the-app-and-redeploy"></a>Atualizar a aplicação e reimplementar
 
 No **Explorador de Soluções**, abra _Views\Home\Index.cshtml_.
 
@@ -168,9 +146,7 @@ Quando a publicação estiver concluída, o Visual Studio inicia um browser para
 
 ![Aplicação Web ASP.NET atualizada no Azure](./media/app-service-web-get-started-dotnet/updated-azure-web-app.png)
 
-<a id="manage-the-azure-web-app" class="xliff"></a>
-
-## Gerir a aplicação Web do Azure
+## <a name="manage-the-azure-web-app"></a>Gerir a aplicação Web do Azure
 
 Aceda ao <a href="https://portal.azure.com" target="_blank">portal do Azure</a> para gerir a aplicação Web.
 
@@ -186,9 +162,7 @@ O menu à esquerda fornece diferentes páginas para configurar a sua aplicação
 
 [!INCLUDE [Clean-up section](../../includes/clean-up-section-portal.md)]
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 
 > [!div class="nextstepaction"]
 > [ASP.NET com Base de Dados SQL](app-service-web-tutorial-dotnet-sqldatabase.md)
