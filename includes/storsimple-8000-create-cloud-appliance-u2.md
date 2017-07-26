@@ -5,7 +5,7 @@
     ![StorSimple cria aplicação da cloud](./media/storsimple-8000-create-cloud-appliance-u2/sca-create1.png)
 3. No painel **Criar aplicação da cloud**, especifique os seguintes detalhes.
    
-    ![StorSimple cria aplicação da cloud](./media/storsimple-8000-create-cloud-appliance-u2/sca-create2.png)
+    ![StorSimple cria aplicação da cloud](./media/storsimple-8000-create-cloud-appliance-u2/sca-create2m.png)
    
    1. **Nome** – um nome exclusivo para a sua aplicação da cloud.
    2. **Modelo** – escolha o modelo da aplicação da cloud. Um dispositivo 8010 oferece 30 TB de armazenamento Standard ao passo que o 8020 tem 64 TB de armazenamento Premium. Especifique o 8010 para implementar cenários de obtenção ao nível de itens a partir de cópias de segurança. Selecione 8020 para implementar cargas de trabalho de elevado desempenho e de baixa latência ou para utilizar como um dispositivo secundário para recuperação após desastre.
