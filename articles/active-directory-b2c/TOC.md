@@ -89,7 +89,7 @@
 
 # Recursos
 ## [Fórum de comentários do Azure AD B2C](https://feedback.azure.com/forums/169401-azure-active-directory/category/160596-b2c)
-## [Mapa do Azure](https://azure.microsoft.com/roadmap/)
+## [Mapa do Azure](https://azure.microsoft.com/roadmap/?category=security-identity)
 ## [Perguntas mais frequentes](active-directory-b2c-faqs.md)
 ## [Preços](https://azure.microsoft.com/pricing/details/active-directory-b2c/)
 ## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=active-directory-b2c)

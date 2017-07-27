@@ -42,7 +42,7 @@
 ## [REST](/rest/api/)
 
 # Recursos
-## [Mapa do Azure](https://azure.microsoft.com/roadmap/)
+## [Mapa do Azure](https://azure.microsoft.com/roadmap/?category=compute)
 ## [Fórum do MSDN](https://social.msdn.microsoft.com/Forums/en-US/home?forum=WAVirtualMachinesforWindows&filter=alltypes&brandIgnore=True&sort=relevancedesc&searchTerm=SQL+Server)
 ## [SQL Server Data Tools (SSDT)](https://msdn.microsoft.com/library/mt204009.aspx)
 ## [SQL Server Management Studio (SSMS)](https://msdn.microsoft.com/library/mt238290.aspx)

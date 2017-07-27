@@ -384,7 +384,7 @@
 
 # Recursos
 ## [Fórum de comentários do Azure](https://feedback.azure.com/forums/169401-azure-active-directory)
-## [Mapa do Azure](https://azure.microsoft.com/roadmap/)
+## [Mapa do Azure](https://azure.microsoft.com/roadmap/?category=security-identity)
 ## [Fórum do MSDN](https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=WindowsAzureAD)
 ## [Preços](https://azure.microsoft.com/pricing/details/active-directory/)
 ## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=active-directory)

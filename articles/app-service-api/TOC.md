@@ -80,7 +80,6 @@
 ### Domínios personalizados
 #### [Comprar e configurar domínios personalizados](../app-service-web/custom-dns-web-site-buydomains-web-app.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
 #### [Mapear o seu domínio personalizado](../app-service-web/web-sites-custom-domain-name.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
-#### [Configurar domínios da GoDaddy](../app-service-web/web-sites-godaddy-custom-domain-name.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
 #### [Domínios personalizados com o Gestor de Tráfego](../app-service-web/web-sites-traffic-manager-custom-domain-name.md?toc=%2fazure%2fapp-service-api%2ftoc.json)
 
 ### [Clonar uma aplicação existente](../app-service-web/app-service-web-app-cloning-portal.md?toc=%2fazure%2fapp-service-api%2ftoc.json)

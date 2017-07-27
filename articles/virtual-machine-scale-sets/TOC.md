@@ -52,7 +52,7 @@
 ## [REST](/rest/api/virtualmachinescalesets/)
 
 # Recursos
-## [Mapa do Azure](https://azure.microsoft.com/roadmap/)
+## [Mapa do Azure](https://azure.microsoft.com/roadmap/?category=compute)
 ## [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-vm-scale-set)
 ## Preços 
 ### [Linux](https://azure.microsoft.com/pricing/details/virtual-machine-scale-sets/linux/)

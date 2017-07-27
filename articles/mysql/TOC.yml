@@ -38,11 +38,9 @@
     - name: 2 - Criar uma Aplicação Web
       items:
         - name: Wordpress - Portal
-          href: >-
-            ../app-service-web/app-service-web-create-web-app-from-marketplace.md?toc=%2fazure%2fmysql%2ftoc.json
+          href: ../app-service-web/app-service-web-create-web-app-from-marketplace.md?toc=%2fazure%2fmysql%2ftoc.json
         - name: PHP - CLI do Azure
-          href: >-
-            ../app-service-web/app-service-web-tutorial-php-mysql.md?toc=%2fazure%2fmysql%2ftoc.json
+          href: ../app-service-web/app-service-web-tutorial-php-mysql.md?toc=%2fazure%2fmysql%2ftoc.json
 - name: Amostras
   items:
     - name: CLI do Azure
@@ -113,15 +111,16 @@
   items:
     - name: CLI do Azure
       href: /cli/azure/mysql
+    - name: API REST
+      href: /rest/api/mysql
 - name: Recursos
   items:
     - name: Mapa do Azure
-      href: 'https://azure.microsoft.com/roadmap/'
+      href: 'https://azure.microsoft.com/roadmap/?category=databases'
     - name: Preços
       href: 'https://azure.microsoft.com/pricing/details/mysql/'
     - name: Fórum do MSDN
-      href: >-
-        https://social.msdn.microsoft.com/forums/security/en-US/home?forum=AzureDatabaseforMySQL
+      href: 'https://social.msdn.microsoft.com/forums/security/en-US/home?forum=AzureDatabaseforMySQL'
     - name: Stack Overflow
       href: 'http://stackoverflow.com/questions/tagged/azure-database-mysql'
     - name: Vídeos

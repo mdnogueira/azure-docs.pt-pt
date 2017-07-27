@@ -27,4 +27,4 @@
 ## [Azure Active Directory](/azure/active-directory/)
 ## [Controlo de Acesso Baseado em Funções](../role-based-access-control-what-is.md)
 # Recursos
-## [Mapa do Azure](https://azure.microsoft.com/roadmap/)
+## [Mapa do Azure](https://azure.microsoft.com/roadmap/?category=security-identity)

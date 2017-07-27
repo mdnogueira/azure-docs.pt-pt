@@ -66,6 +66,7 @@
 ## Resolução de problemas
 ### [Implementações de VMs](troubleshoot-deployment-new-vm.md)
 ### [Reiniciar ou redimensionar uma VM](restart-resize-error-troubleshooting.md)
+### [Anexar o disco rígido virtual para resolver problemas de VMs](troubleshoot-recovery-disks-portal.md)
 
 # Referência
 ## [PowerShell](/powershell/azure/overview)
@@ -79,7 +80,7 @@
 
 
 # Recursos
-## [Mapa do Azure](https://azure.microsoft.com/roadmap/)
+## [Mapa do Azure](https://azure.microsoft.com/roadmap/?category=compute)
 ## [Preços](https://azure.microsoft.com/pricing/details/virtual-machines/#Linux)
 ## [Disponibilidade regional](https://azure.microsoft.com/regions/services)
 ## [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-virtual-machine)

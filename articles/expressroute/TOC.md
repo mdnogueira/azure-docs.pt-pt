@@ -19,12 +19,15 @@
 ## Criar e modificar um circuito
 ### [Portal do Azure](expressroute-howto-circuit-portal-resource-manager.md)
 ### [PowerShell](expressroute-howto-circuit-arm.md)
+### [CLI do Azure](howto-circuit-cli.md)
 ## Criar e modificar a configuração de peering
 ### [Portal do Azure](expressroute-howto-routing-portal-resource-manager.md)
 ### [PowerShell](expressroute-howto-routing-arm.md)
+### [CLI do Azure](howto-routing-cli.md)
 ## Ligar uma rede virtual a um circuito ExpressRoute
 ### [Portal do Azure](expressroute-howto-linkvnet-portal-resource-manager.md)
 ### [PowerShell](expressroute-howto-linkvnet-arm.md)
+### [CLI do Azure](howto-linkvnet-cli.md)
 ## Configurar um gateway de rede virtual para o ExpressRoute
 ### [Portal do Azure](expressroute-howto-add-gateway-portal-resource-manager.md)
 ### [PowerShell](expressroute-howto-add-gateway-resource-manager.md)
@@ -60,7 +63,7 @@
 ## [Gestor de Tráfego](/azure/traffic-manager/)
 
 # Recursos
-## [Mapa do Azure](https://azure.microsoft.com/roadmap/)
+## [Mapa do Azure](https://azure.microsoft.com/roadmap/?category=networking)
 ## [Casos de Estudo](https://customers.microsoft.com/Pages/advancedsearch.aspx?mrmcproducts=More%20Products)
 ## [Blogue das Redes](https://azure.microsoft.com/blog/topics/networking/)
 ## [Preços](https://azure.microsoft.com/pricing/details/expressroute/)

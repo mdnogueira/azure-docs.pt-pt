@@ -128,7 +128,7 @@
 ## [REST](/rest/api/resources/)
 
 # Recursos
-## [Mapa do Azure](https://azure.microsoft.com/roadmap/)
+## [Mapa do Azure](https://azure.microsoft.com/roadmap/?category=monitoring-management)
 ## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=azure-resource-manager)
 ## [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-resource-manager)
 ## [Limitar pedidos](resource-manager-request-limits.md)

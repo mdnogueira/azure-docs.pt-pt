@@ -37,8 +37,7 @@ Antes de consultar este guia e criar um índice, deverá já ter [criado um serv
 
 > [!NOTE]
 > Todo o código de exemplo neste artigo está escrito em C#. Pode localizar o código de origem completo [no GitHub](http://aka.ms/search-dotnet-howto). Também pode ler sobre o [Azure Search .NET SDK (SDK .NET do Azure Search)](search-howto-dotnet-sdk.md) para um percurso mais detalhado através do código de exemplo.
->
->
+
 
 ## <a name="identify-your-azure-search-services-admin-api-key"></a>Identificar a sua chave de API do administrador do serviço Azure Search
 Agora que aprovisionou um serviço do Azure Search, está quase pronto para emitir pedidos HTTP contra o seu ponto final de serviço utilizando o SDK .NET. Em primeiro lugar, precisa de obter uma das chaves de API que foi gerada para o serviço de pesquisa que aprovisionou. O SDK .NET irá enviar esta chave de API em cada pedido para o seu serviço. Ter uma chave válida estabelece fidedignidade, numa base por pedido, entre a aplicação a enviar o pedido e o serviço que o processa.

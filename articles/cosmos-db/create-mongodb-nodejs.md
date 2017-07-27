@@ -150,7 +150,7 @@ Substitua o conteúdo deste ficheiro pelo código seguinte. Certifique-se també
 
 module.exports = {
   db: {
-    uri: 'mongodb://<cosmosdb-name>:<primary_master_key>@<cosmosdb-name>.documents.azure.com:10250/mean-dev?ssl=true&sslverifycertificate=false'
+    uri: 'mongodb://<cosmosdb-name>:<primary_master_key>@<cosmosdb-name>.documents.azure.com:10255/mean-dev?ssl=true&sslverifycertificate=false'
   }
 };
 ```
@@ -211,7 +211,7 @@ No repositório MEAN.js, abra `config/env/production.js`.
 No objeto `db`, substitua o valor do `uri`, conforme apresentado no exemplo seguinte. Confirme que substitui os marcadores de posição, como indicado anteriormente.
 
 ```javascript
-'mongodb://<cosmosdb-name>:<primary_master_key>@<cosmosdb-name>.documents.azure.com:10250/mean?ssl=true&sslverifycertificate=false',
+'mongodb://<cosmosdb-name>:<primary_master_key>@<cosmosdb-name>.documents.azure.com:10255/mean?ssl=true&sslverifycertificate=false',
 ```
 
 > [!NOTE] 

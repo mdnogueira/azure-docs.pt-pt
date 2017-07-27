@@ -1,149 +1,77 @@
 # Descrição geral
-
 ## [O que é o Azure Batch](batch-technical-overview.md)
-
 ## [Descrição geral das funcionalidades](batch-api-basics.md)
-
 ## [APIs e ferramentas](batch-apis-tools.md)
-
 ## [Quotas e limites](batch-quota-limit.md)
-
 # Introdução
-
 ## [Criar uma conta do Batch](batch-account-create-portal.md)
-
 ## [Tutorial .NET do Batch](batch-dotnet-get-started.md)
-
 ## [Tutorial Python do Batch](batch-python-tutorial.md)
-
 ## [Tutorial Node.js do Batch](batch-nodejs-get-started.md)
-
 # Procedimento
-
 ## Programar
-
 ### [Pacotes de aplicações](batch-application-packages.md)
-
 ### [Nós de computação com dimensionamento automático](batch-automatic-scaling.md)
-
 ### Autenticação do Azure AD
-
 #### [Azure AD com o serviço Batch](batch-aad-auth.md)
-
 #### [Azure AD com a Gestão do Batch](batch-aad-auth-management.md)
-
 ### [Tarefas de nós simultâneas](batch-parallel-node-tasks.md)
-
 ### [Consultas de lista eficientes](batch-efficient-list-queries.md)
-
 ### [Tarefas de preparação e conclusão de trabalhos](batch-job-prep-release.md)
-
 ### [Nós de computação do Linux](batch-linux-nodes.md)
-
 ### [VMs de baixa prioridade](batch-low-pri-vms.md)
-
 ### [Gerir contas do Batch com a Gestão de Lotes .NET](batch-management-dotnet.md)
-
 ### [Manter saída de trabalhos e tarefas](batch-task-output.md)
-
 #### [Manter a saída com a API de Batch](batch-task-output-files.md)
-
 #### [Manter a saída com a biblioteca Convenções de Ficheiros](batch-task-output-file-conventions.md)
-
 ### [Executar Trabalhos de MPI no Batch](batch-mpi.md)
-
 ### [Dependências de tarefas](batch-task-dependencies.md)
-
 ### [Contas de utilizador para executar tarefas](batch-user-accounts.md)
-
 ### [Modelos de projetos do Visual Studio para o Batch](batch-visual-studio-templates.md)
-
 ## Gerir
-
 ### [Cmdlets do PowerShell do Batch](batch-powershell-cmdlets-get-started.md)
-
 ### [CLI do Azure](batch-cli-get-started.md)
-
-#### [Criar uma conta do Batch](./scripts/batch-cli-sample-create-account.md)
-
 #### [Executar tarefas de Lote sem código](batch-cli-templates.md)
-
+#### [Criar uma conta do Batch](./scripts/batch-cli-sample-create-account.md)
 #### [Adicionar uma aplicação](./scripts/batch-cli-sample-add-application.md)
-
 #### [Gerir conjuntos](./scripts/batch-cli-sample-manage-pool.md)
-
 #### [Executar uma tarefa e tarefas](./scripts/batch-cli-sample-run-job.md)
 
-
 # Referência
-
 ## [PowerShell](/powershell/module/azurerm.batch)
-
 ## [CLI do Azure](/cli/azure/batch)
-
 ## [.NET](/dotnet/api/microsoft.azure.batch)
-
 ## [Java](/java/api/com.microsoft.azure.batch)
-
 ## [Node.js](http://azure.github.io/azure-sdk-for-node/azure-batch/latest)
-
 ## [Python SDK](http://azure-sdk-for-python.readthedocs.io/en/latest/ref/azure.batch.html)
-
 ## [REST](/rest/api/batchservice)
-
 ## [Registos de diagnóstico do Batch](batch-diagnostics.md)
-
 ## [Batch Analytics](batch-analytics.md)
-
 ### [Evento de criação de conjunto](batch-pool-create-event.md)
-
 ### [Evento de início de eliminação de conjunto](batch-pool-delete-start-event.md)
-
 ### [Evento de conclusão de eliminação de conjunto](batch-pool-delete-complete-event.md)
-
 ### [Evento de início de redimensionamento de conjunto](batch-pool-resize-start-event.md)
-
 ### [Evento de conclusão de redimensionamento de conjunto](batch-pool-resize-complete-event.md)
-
 ### [Evento de início de tarefa](batch-task-start-event.md)
-
 ### [Evento de conclusão de tarefa](batch-task-complete-event.md)
-
 ### [Evento de falha de tarefa](batch-task-fail-event.md)
-
 ## [Variáveis de ambiente do nó de computação do Azure Batch](batch-compute-node-environment-variables.md)
 
-
 # Relacionado
-
 ## [Batch Shipyard](https://github.com/Azure/batch-shipyard)
-
 ## [Processamento de dados com o Batch e o Data Factory](../data-factory/data-factory-data-processing-using-batch.md?toc=%2fazure%2fbatch%2ftoc.json)
-
 ## [Soluções Batch e HPC na cloud do Azure](batch-hpc-solutions.md)
 
-
 # Recursos
-
 ## [Mapa do Azure](https://azure.microsoft.com/roadmap/)
-
 ## [Recursos de Macrocomputação](big-compute-resources.md)
-
 ## [Blogue](https://blogs.technet.microsoft.com/windowshpc/)
-
 ## [Exemplos de código C#](https://github.com/Azure/azure-batch-samples/tree/master/CSharp/)
-
 ## [Fórum do MSDN](https://social.msdn.microsoft.com/Forums/en-us/home?forum=azurebatch)
-
 ## [Preços](https://azure.microsoft.com/pricing/details/batch/)
-
 ## [Exemplos de código Python](https://github.com/Azure/azure-batch-samples/tree/master/Python/Batch)
-
 ## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=batch&updatetype=&platform=)
-
 ## [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-batch)
-
 ## [Vídeos](https://azure.microsoft.com/documentation/videos/index/?services=batch)
-
 
 

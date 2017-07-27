@@ -25,7 +25,7 @@
 ## [REST](/rest/api/scheduler)
 
 # Recursos
-## [Mapa do Azure](https://azure.microsoft.com/roadmap/)
+## [Mapa do Azure](https://azure.microsoft.com/roadmap/?category=monitoring-management)
 ## [Fórum do MSDN](https://social.msdn.microsoft.com/Forums/home?forum=azurescheduler)
 ## [Preços](https://azure.microsoft.com/pricing/details/scheduler/)
 ## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=scheduler)
