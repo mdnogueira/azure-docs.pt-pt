@@ -15,10 +15,10 @@ ms.topic: get-started-article
 ms.date: 07/10/2017
 ms.author: juliako
 ms.translationtype: HT
-ms.sourcegitcommit: 2ad539c85e01bc132a8171490a27fd807c8823a4
-ms.openlocfilehash: 9ab5368c173f016f44546d6c8acb360598f5f5ab
+ms.sourcegitcommit: 74b75232b4b1c14dbb81151cdab5856a1e4da28c
+ms.openlocfilehash: f6bcb18a04be9a802e14b960a1e2d04a71a691cc
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/12/2017
+ms.lasthandoff: 07/26/2017
 
 ---
 # <a name="create-an-azure-media-services-account-using-the-azure-portal"></a>Criar uma conta dos Serviços de Multimédia do Azure com o Portal do Azure
@@ -44,7 +44,7 @@ O acesso aos Media Services requer duas contas associadas:
 * Uma conta de armazenamento do Azure. As contas de armazenamento têm de estar localizadas na mesma região geográfica que a conta dos Serviços de Multimédia. Quando cria uma conta de Media Services, pode optar por uma conta do Storage existente na mesma região ou pode criar uma nova conta do Storage na mesma região. Se eliminar uma conta de Media Services, os blobs na sua conta do Storage relacionada não são eliminados.
 
 > [!NOTE]
-> Para obter informações sobre a disponibilidade das funcionalidades dos Serviços de Multimédia do Azure em regiões diferentes, veja [disponibilidade das funcionalidades do AMS em datacenters](scenarios-and-availability.md#a-idavailabilitya-availability-of-media-services-features-across-datacenters).
+> Para obter informações sobre a disponibilidade das funcionalidades dos Serviços de Multimédia do Azure em regiões diferentes, veja [disponibilidade das funcionalidades do AMS em datacenters](scenarios-and-availability.md#availability).
 
 ## <a name="create-an-ams-account"></a>Criar uma conta do AMS
 Os passos nesta secção explicam como criar uma conta dos AMS.
