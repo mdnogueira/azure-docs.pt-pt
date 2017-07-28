@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 07/10/2017
 ms.author: gwallace
 ms.translationtype: HT
-ms.sourcegitcommit: c3ea7cfba9fbf1064e2bd58344a7a00dc81eb148
-ms.openlocfilehash: 17fc7e6a19b835e08360d1bf638d69aabb14e121
+ms.sourcegitcommit: bde1bc7e140f9eb7bb864c1c0a1387b9da5d4d22
+ms.openlocfilehash: c9aafa13ebdeeb84a35e55e25650f334ddc71af5
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/19/2017
+ms.lasthandoff: 07/21/2017
 
 ---
 # <a name="overview-of-application-gateway"></a>Descrição geral do Gateway de Aplicação
@@ -103,4 +103,6 @@ Para perguntas mais frequentes sobre o Gateway de Aplicação, consulte [Applica
 Após aprender sobre o Gateway de aplicação, pode [criar um gateway de aplicação](application-gateway-create-gateway-portal.md) ou [criar uma descarga SSL de gateway de aplicação](application-gateway-ssl-arm.md) para ligações de HTTPS com carga balanceada.
 
 Para saber como criar um gateway de aplicação com encaminhamento de conteúdo baseado em URL, aceda a [Create an application gateway using URL-based routing (Criar um gateway de aplicação com encaminhamento baseado em URL)](application-gateway-create-url-route-arm-ps.md) para obter mais informações.
+
+Para saber mais sobre algumas das outras capacidades de rede do Azure, veja [Rede do Azure]((../networking/networking-overview.md).
 

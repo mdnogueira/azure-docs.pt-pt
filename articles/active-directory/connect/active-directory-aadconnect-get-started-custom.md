@@ -15,10 +15,10 @@ ms.topic: get-started-article
 ms.date: 07/12/2017
 ms.author: billmath
 ms.translationtype: HT
-ms.sourcegitcommit: 19be73fd0aec3a8f03a7cd83c12cfcc060f6e5e7
-ms.openlocfilehash: 669ed9465e4ce4539b8aa642b4dc0eca6bad128a
+ms.sourcegitcommit: 8021f8641ff3f009104082093143ec8eb087279e
+ms.openlocfilehash: 82e8d7e0ea975f140eaf73a625d181a4ec68eaa7
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/13/2017
+ms.lasthandoff: 07/21/2017
 
 ---
 # <a name="custom-installation-of-azure-ad-connect"></a>Instalação personalizada do Azure AD Connect
@@ -28,7 +28,7 @@ Antes de começar a instalar o Azure AD Connect, certifique-se de que [transferi
 
 Se as definições personalizadas não coincidirem com a topologia, por exemplo, para atualizar o DirSync, consulte [documentação relacionada](#related-documentation) para obter outros cenários.
 
-## <a name="custom-settings-installation-of-azure-ad-connect"></a>Instalação de definições personalizadas do Azure AD Connect 
+## <a name="custom-settings-installation-of-azure-ad-connect"></a>Instalação de definições personalizadas do Azure AD Connect
 ### <a name="express-settings"></a>Definições Rápidas
 Nesta página, clique em **Personalizar** para iniciar uma instalação de definições personalizadas.
 
@@ -127,10 +127,10 @@ A funcionalidade Correspondência entre florestas permite-lhe definir o modo com
 | Definição | Descrição |
 | --- | --- |
 | [Os utilizadores são representados apenas uma vez em todas as florestas](active-directory-aadconnect-topologies.md#multiple-forests-single-azure-ad-tenant) |Todos os utilizadores são criados como objetos individuais no Azure AD. Os objetos não estão associados no metaverso. |
-| [Atributo de correio](active-directory-aadconnect-topologies.md#multiple-forests-single-azure-ad-tenant) |Esta opção associa utilizadores e contactos se o atributo de correio tiver o mesmo valor em florestas diferentes. Utilize esta opção quando os contactos foram criados utilizando GALSync. |
+| [Atributo de correio](active-directory-aadconnect-topologies.md#multiple-forests-single-azure-ad-tenant) |Esta opção associa utilizadores e contactos se o atributo de correio tiver o mesmo valor em florestas diferentes. Utilize esta opção quando os contactos foram criados utilizando GALSync. Se esta opção for escolhida, os objetos de Utilizador cujo atributo Mail não estiver preenchido não será sincronizados com o Azure AD. |
 | [ObjectSID e msExchangeMasterAccountSID/msRTCSIP-OriginatorSid](active-directory-aadconnect-topologies.md#multiple-forests-single-azure-ad-tenant) |Esta opção associa um utilizador ativado numa floresta conta a um utilizador desativado numa floresta de recursos. No Exchange, esta configuração é conhecida como uma caixa de correio ligada. Também pode ser utilizada esta opção se utilizar apenas o Lync e o Exchange não estiver presente na floresta de recursos. |
 | sAMAccountName e MailNickName |Esta opção associa atributos em que se espera que o ID de início de sessão do utilizador possa ser encontrado. |
-| Um atributo específico |Esta opção permite-lhe selecionar o seu próprio atributo. **Limitação:** certifique-se de que escolhe um atributo que já pode ser encontrado no metaverso. Se escolher um atributo personalizado (não no metaverso), não é possível concluir o assistente. |
+| Um atributo específico |Esta opção permite-lhe selecionar o seu próprio atributo. Se esta opção for escolhida, os objetos de Utilizador cujo atributo (selecionado) não estiver preenchido não serão sincronizados com o Azure AD. **Limitação:** certifique-se de que escolhe um atributo que já pode ser encontrado no metaverso. Se escolher um atributo personalizado (não no metaverso), não é possível concluir o assistente. |
 
 #### <a name="select-how-users-should-be-identified-with-azure-ad---source-anchor"></a>Selecione a forma como os utilizadores devem ser identificados com o Azure AD - Âncora de Origem
 O atributo sourceAnchor é imutável durante o ciclo de vida de um objeto de utilizador. É a chave primária da ligação do utilizador no local com o utilizador no Azure AD.

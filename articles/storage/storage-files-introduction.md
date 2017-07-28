@@ -15,15 +15,15 @@ ms.topic: get-started-article
 ms.date: 05/27/2017
 ms.author: renash
 ms.translationtype: HT
-ms.sourcegitcommit: 2ad539c85e01bc132a8171490a27fd807c8823a4
-ms.openlocfilehash: 4393a9a71dcbdc709845eb4cd3078b4497b8b9a3
+ms.sourcegitcommit: 0425da20f3f0abcfa3ed5c04cec32184210546bb
+ms.openlocfilehash: 16fdd3aafef1a50554932a0e7843d347182c9b6a
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/12/2017
+ms.lasthandoff: 07/20/2017
 
 ---
 
 # <a name="introduction-to-azure-file-storage"></a>Introdução ao armazenamento de Ficheiros do Azure
-O armazenamento de Ficheiros do Azure oferece partilhas de ficheiros de rede na cloud através do [Protocolo SMB (Server Message Block)](https://msdn.microsoft.com/library/windows/desktop/aa365233.aspx) norma da indústria e de [SAMBA/Common Internet File System (CIFS)](https://technet.microsoft.com/library/cc939973.aspx). As partilhas de Ficheiros do Azure podem ser montadas em simultâneo por clientes, como, por exemplo, implementações no local de Windows, macOS, Linux ou Máquinas Virtuais do Azure. 
+O armazenamento de Ficheiros do Azure oferece partilhas de ficheiros de rede na cloud através do [Protocolo SMB (Server Message Block)](https://msdn.microsoft.com/library/windows/desktop/aa365233.aspx) norma da indústria e de [SAMBA/Common Internet File System (CIFS)](https://technet.microsoft.com/library/cc939973.aspx). As partilhas de Ficheiros do Azure podem ser montadas em simultâneo por clientes, como, por exemplo, implementações no local de Windows, macOS, Linux ou Máquinas Virtuais do Azure. Uma conta de armazenamento para fins gerais dá-lhe acesso ao Armazenamento de Ficheiros do Azure e a outros serviços, como Blobs, discos de máquinas virtuais do Azure e Filas em contas individuais.
 
 
 

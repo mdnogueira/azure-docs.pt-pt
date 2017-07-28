@@ -12,13 +12,13 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 07/14/2017
+ms.date: 07/21/2017
 ms.author: magoedte
 ms.translationtype: HT
-ms.sourcegitcommit: c999eb5d6b8e191d4268f44d10fb23ab951804e7
-ms.openlocfilehash: 46766e29287ca130e68aa0f027cbb1ded2526af3
+ms.sourcegitcommit: 8021f8641ff3f009104082093143ec8eb087279e
+ms.openlocfilehash: 5f57cbdb1678dd61eda449d2103125d8db83892e
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/17/2017
+ms.lasthandoff: 07/21/2017
 
 ---
 # <a name="analyze-data-usage-in-log-analytics"></a>Analisar a utilização de dados do Log Analytics
@@ -110,13 +110,15 @@ O gráfico *Volume de dados ao longo do tempo* mostra o volume total de dados en
 
 O gráfico *Volume de dados por solução* mostra o volume de dados que são enviados por cada solução e as soluções que estão a enviar mais dados. O gráfico na parte superior mostra o volume total de dados que são enviados por cada solução ao longo do tempo. Com estas informações, pode determinar se uma solução está a enviar mais dados, mais ou menos a mesma quantidade de dados ou menos dados ao longo do tempo. A lista de soluções mostra as dez soluções que estão a enviar mais dados. 
 
+Estes dois gráficos apresentam todos os dados. Alguns dados estão sujeitos a faturação, enquanto outros dados são gratuitos. Para se centrar apenas nos dados sujeitos a faturação, modifique a consulta na página de pesquisa de forma a incluir `IsBillable=true`.  
+
 ![gráficos de volumes de dados](./media/log-analytics-usage/log-analytics-usage-data-volume.png)
 
 Observe o gráfico *Volume de dados ao longo do tempo*. Para ver as soluções e os tipos de dados que estão a enviar mais dados relativamente a um determinado computador, clique no nome do computador. Clique no nome do primeiro computador na lista.
 
 Na captura de ecrã seguinte, o tipo de dados *Gestão de Registos / Desempenho* está a enviar mais dados para o computador. 
-![volume de dados de um computador](./media/log-analytics-usage/log-analytics-usage-data-volume-computer.png)
 
+![volume de dados de um computador](./media/log-analytics-usage/log-analytics-usage-data-volume-computer.png)
 
 Em seguida, regresse ao dashboard *Utilização* e veja o gráfico *Volume de dados por solução*. Para ver que computadores estão a enviar mais dados relativamente a uma solução, clique no nome da solução na lista. Clique no nome da primeira solução na lista. 
 
@@ -124,16 +126,31 @@ Na captura de ecrã seguinte, confirma-se que é o computador *acmetomcat* que e
 
 ![volume de dados de uma solução](./media/log-analytics-usage/log-analytics-usage-data-volume-solution.png)
 
+Se for necessário, execute uma análise adicional para identificar volumes de grandes dimensões dentro de uma solução ou tipo de dados. As consultas de exemplo incluem:
+
++ Solução de **Segurança**
+  - `Type=SecurityEvent | measure count() by EventID`
++ Solução de **Gestão de Registos**
+  - `Type=Usage Solution=LogManagement IsBillable=true | measure count() by DataType`
++ Tipo de dados de **Desempenho**
+  - `Type=Perf | measure count() by CounterPath`
+  - `Type=Perf | measure count() by CounterName`
++ Tipo de dados de **Evento**
+  - `Type=Event | measure count() by EventID`
+  - `Type=Event | measure count() by EventLog, EventLevelName`
++ Tipo de dados de **Syslog**
+  - `Type=Syslog | measure count() by Facility, SeverityLevel`
+  - `Type=Syslog | measure count() by ProcessName`
 
 Utilize os seguintes passos para reduzir o volume de registos recolhidos:
 
 | Origem do volume de dados elevado | Como reduzir o volume de dados |
 | -------------------------- | ------------------------- |
-| Eventos de segurança            | Selecione [eventos de segurança comuns ou mínimos](https://blogs.technet.microsoft.com/msoms/2016/11/08/filter-the-security-events-the-oms-security-collects/) <br> Altere a política de auditoria de segurança. Por exemplo, desative os eventos de [plataforma de filtragem de auditoria](https://technet.microsoft.com/library/dd772749(WS.10).aspx). |
+| Eventos de segurança            | Selecione [eventos de segurança comuns ou mínimos](https://blogs.technet.microsoft.com/msoms/2016/11/08/filter-the-security-events-the-oms-security-collects/) <br> Altere a política de auditoria de segurança para recolher apenas os eventos necessários. Em particular, reveja a necessidade de recolher eventos para <br> - [auditar a plataforma de filtragem](https://technet.microsoft.com/library/dd772749(WS.10).aspx) <br> - [auditar o registo](https://docs.microsoft.com/windows/device-security/auditing/audit-registry)<br> - [auditar o sistema de ficheiros](https://docs.microsoft.com/windows/device-security/auditing/audit-file-system)<br> - [auditar o objeto de kernel](https://docs.microsoft.com/windows/device-security/auditing/audit-kernel-object)<br> - [auditar a manipulação de identificadores](https://docs.microsoft.com/windows/device-security/auditing/audit-handle-manipulation)<br> - [auditar o armazenamento amovível](https://docs.microsoft.com/windows/device-security/auditing/audit-removable-storage) |
 | Contadores de desempenho       | Altere a [configuração do contador de desempenho](log-analytics-data-sources-performance-counters.md) para: <br> - Reduzir a frequência da recolha <br> - Reduzir o número de contadores de desempenho |
 | Registos de eventos                 | Altere a [configuração do registo de eventos](log-analytics-data-sources-windows-events.md) para: <br> - Reduzir o número de registos de eventos recolhidos <br> - Recolher apenas níveis de eventos necessários. Por exemplo, não recolher eventos de nível *Informação* |
 | Syslog                     | Altere a [configuração do syslog](log-analytics-data-sources-syslog.md) para: <br> - Reduzir o número de instalações recolhidas <br> - Recolher apenas níveis de eventos necessários. Por exemplo, não recolher eventos de nível *Informação* e *Depuração* |
-| Dados de solução de computadores que não precisam da solução | Utilize a [segmentação de soluções](../operations-management-suite/operations-management-suite-solution-targeting.md) para recolher dados apenas de grupos de computadores necessários.
+| Dados de solução de computadores que não precisam da solução | Utilize a [segmentação de soluções](../operations-management-suite/operations-management-suite-solution-targeting.md) para recolher dados apenas de grupos de computadores necessários. |
 
 ### <a name="check-if-there-are-more-nodes-than-expected"></a>Verificar se há mais nós do que o esperado
 Se estiver no escalão de preço *por nó (OMS)*, é cobrado com base no número de nós e soluções que utilizar. Pode ver quantos nós de cada oferta estão a ser utilizados na secção *ofertas* do dashboard de utilização.
@@ -148,4 +165,9 @@ Utilize a [segmentação de soluções](../operations-management-suite/operation
 ## <a name="next-steps"></a>Passos seguintes
 * Veja [Pesquisas de registos no Log Analytics](log-analytics-log-searches.md) para aprender a utilizar a linguagem de pesquisa. Pode utilizar as consultas de pesquisa para executar análises adicionais aos dados de utilização.
 * Utilize os passos descritos em [Create an alert rule](log-analytics-alerts-creating.md#create-an-alert-rule) (Criar uma regra de alerta) para ser notificado de quando um critério de pesquisa for cumprido.
+* Utilize a [segmentação de soluções](../operations-management-suite/operations-management-suite-solution-targeting.md) para recolher dados apenas de grupos de computadores necessários
+* Selecione [eventos de segurança comuns ou mínimos](https://blogs.technet.microsoft.com/msoms/2016/11/08/filter-the-security-events-the-oms-security-collects/)
+* Altere a [configuração do contador de desempenho](log-analytics-data-sources-performance-counters.md)
+* Altere a [configuração do registo de eventos](log-analytics-data-sources-windows-events.md)
+* Altere a [configuração do syslog](log-analytics-data-sources-syslog.md)
 

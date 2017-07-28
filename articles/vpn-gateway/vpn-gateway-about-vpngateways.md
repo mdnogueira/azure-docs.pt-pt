@@ -15,25 +15,20 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/05/2017
 ms.author: cherylmc
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 6adaf7026d455210db4d7ce6e7111d13c2b75374
-ms.openlocfilehash: c24f7770e4d0721f9c584b80df9eb857442dfa0b
+ms.translationtype: HT
+ms.sourcegitcommit: bde1bc7e140f9eb7bb864c1c0a1387b9da5d4d22
+ms.openlocfilehash: 6ab2b4c905d2095e8eec09ccebcb8ebdfa91bb3a
 ms.contentlocale: pt-pt
-ms.lasthandoff: 06/22/2017
-
+ms.lasthandoff: 07/21/2017
 
 ---
-<a id="about-vpn-gateway" class="xliff"></a>
-
-# Acerca do VPN Gateway
+# <a name="about-vpn-gateway"></a>Acerca do VPN Gateway
 
 Um gateway de VPN é um tipo de gateway de rede virtual que envia o tráfego encriptado através de uma ligação pública para uma localização no local. Também pode utilizar gateways de VPN para enviar tráfego encriptado entre as redes virtuais do Azure através da rede da Microsoft. Para enviar tráfego de rede encriptado entre a sua rede virtual do Azure e o seu site no local, tem de criar um gateway de VPN para a sua rede virtual.
 
 Cada rede virtual apenas pode ter um gateway de VPN. No entanto, pode criar várias ligações ao mesmo gateway de VPN. Um exemplo disto é uma configuração de ligação multilocal. Quando cria várias ligações para o mesmo gateway de VPN, todos os túneis de VPN, incluindo as VPNs Ponto a Site, partilham a largura de banda que está disponível para o gateway.
 
-<a id="what-is-a-virtual-network-gateway" class="xliff"></a>
-
-### O que é um gateway de rede virtual?
+### <a name="what-is-a-virtual-network-gateway"></a>O que é um gateway de rede virtual?
 
 Um gateway de rede virtual é composto por duas ou mais máquinas virtuais implementadas numa sub-rede específica denominada GatewaySubnet. As VMs localizadas no GatewaySubnet são criadas quando criar o gateway de rede virtual. As VMs do gateway de rede virtual são configuradas para conter tabelas de encaminhamento e serviços de gateway específicos do gateway. Não pode configurar diretamente as VMs que fazem parte do gateway de rede virtual e nunca deve implementar recursos adicionais no GatewaySubnet.
 
@@ -43,27 +38,19 @@ Quando criar um gateway de rede virtual com o tipo de gateway 'Vpn', é criado u
 
 [!INCLUDE [vpn-gateway-gwsku-include](../../includes/vpn-gateway-gwsku-include.md)]
 
-<a id="configuring-a-vpn-gateway" class="xliff"></a>
-
-## Configurar um Gateway de VPN
+## <a name="configuring-a-vpn-gateway"></a>Configurar um Gateway de VPN
 
 Uma ligação de gateway de VPN depende de vários recursos que estão configurados com definições específicas. A maior parte dos recursos podem ser configurados em separado, embora estes, em alguns casos, devam ser configurados numa determinada ordem.
 
-<a id="settings" class="xliff"></a>
-
-### Definições
+### <a name="settings"></a>Definições
 
 As definições que escolheu para cada recurso são essenciais para a criação de uma ligação com êxito. Para obter informações sobre recursos individuais e sobre definições para o Gateway de VPN, consulte [definições sobre o Gateway de VPN](vpn-gateway-about-vpn-gateway-settings.md). Encontrará informações para ajudar a compreender os tipos de gateways, os tipos de VPN, os tipos de ligação, as sub-redes de gateways, os gateways de rede local e várias outras definições de recursos que poderá querer considerar.
 
-<a id="deployment-tools" class="xliff"></a>
-
-### Ferramentas de implementação
+### <a name="deployment-tools"></a>Ferramentas de implementação
 
 Pode começar por criar e configurar recursos utilizando uma ferramenta de configuração, como o portal do Azure. Mais tarde, pode decidir mudar para outra ferramenta, como o PowerShell, para configurar recursos adicionais ou modificar os recursos existentes, quando aplicável. Atualmente, não pode configurar todos os recursos e definições de recursos no portal do Azure. As instruções nos artigos para cada topologia de ligação especificam quando uma ferramenta de configuração especifica é necessária. 
 
-<a id="deployment-model" class="xliff"></a>
-
-### Modelo de implementação
+### <a name="deployment-model"></a>Modelo de implementação
 
 Ao configurar um gateway de VPN, os passos seguidos dependem do modelo de implementação que utilizou para criar a rede virtual. Por exemplo, se tiver criado a VNet com o modelo de implementação clássica, utilize as diretrizes e as instruções do modelo de implementação clássica para criar e configurar as definições do gateway de VPN. Para mais informações sobre os modelos de implementação, consulte [Compreender o Gestor de Recursos e modelos de implementação clássicos](../azure-resource-manager/resource-manager-deployment-model.md).
 
@@ -77,9 +64,7 @@ Ao configurar um gateway de VPN, os passos seguidos dependem do modelo de implem
 
 Utilize os diagramas e as descrições para ajudar a selecionar a topologia de ligação para corresponder aos requisitos. Os diagramas mostram as principais topologias de linha de base, mas é possível criar configurações mais complexas utilizando os diagramas como orientação.
 
-<a id="site-to-site-and-multi-site-ipsecike-vpn-tunnel" class="xliff"></a>
-
-## Rede Site a Site e Multilocal (túnel VPN IPsec/IKE)
+## <a name="site-to-site-and-multi-site-ipsecike-vpn-tunnel"></a>Rede Site a Site e Multilocal (túnel VPN IPsec/IKE)
 
 ### <a name="S2S"></a>Rede de VPN
 
@@ -93,9 +78,7 @@ Este tipo de ligação é uma variação da ligação Rede de VPNs. Cria mais de
 
 ![Exemplo de ligação Multilocal de Gateway de VPN do Azure](./media/vpn-gateway-about-vpngateways/vpngateway-multisite-connection-diagram.png)
 
-<a id="deployment-models-and-methods-for-site-to-site-and-multi-site" class="xliff"></a>
-
-### Métodos de implementação e métodos de Site para Site e Multilocal
+### <a name="deployment-models-and-methods-for-site-to-site-and-multi-site"></a>Métodos de implementação e métodos de Site para Site e Multilocal
 
 [!INCLUDE [vpn-gateway-table-site-to-site](../../includes/vpn-gateway-table-site-to-site-include.md)]
 
@@ -105,9 +88,7 @@ Uma ligação de gateway de VPN de Ponto a Site (P2S) permite-lhe criar uma liga
 
 ![Exemplo de ligação Ponto a Site de Gateway de VPN do Azure](./media/vpn-gateway-about-vpngateways/vpngateway-point-to-site-connection-diagram.png)
 
-<a id="deployment-models-and-methods-for-point-to-site" class="xliff"></a>
-
-### Métodos e modelos de implementação de Ponto para Site
+### <a name="deployment-models-and-methods-for-point-to-site"></a>Métodos e modelos de implementação de Ponto para Site
 
 [!INCLUDE [vpn-gateway-table-point-to-site](../../includes/vpn-gateway-table-point-to-site-include.md)]
 
@@ -123,21 +104,15 @@ As VNets que liga podem estar:
 
 ![Exemplo de ligação VNet a VNet de Gateway de VPN do Azure](./media/vpn-gateway-about-vpngateways/vpngateway-vnet-to-vnet-connection-diagram.png)
 
-<a id="connections-between-deployment-models" class="xliff"></a>
-
-### Ligações entre modelos de implementação
+### <a name="connections-between-deployment-models"></a>Ligações entre modelos de implementação
 
 Atualmente, o Azure tem dois modelos de implementação: clássico e Resource Manager. Se tem utilizado o Azure durante algum tempo, provavelmente as VMs do Azure e as funções de instância estão em execução numa VNet clássica. As VMs mais recentes e as instâncias da função poderão estar em execução numa VNet criada no Resource Manager. Pode criar uma ligação entre as VNets para permitir que os recursos numa VNet comuniquem diretamente com recursos de outra.
 
-<a id="vnet-peering" class="xliff"></a>
-
-### VNet peering
+### <a name="vnet-peering"></a>VNet peering
 
 Poderá utilizar o VNet peering para criar a ligação, desde que a rede virtual cumpra determinados requisitos. O VNet peering não utiliza um gateway de rede virtual. Para obter mais informações, veja [VNet peering](../virtual-network/virtual-network-peering-overview.md).
 
-<a id="deployment-models-and-methods-for-vnet-to-vnet" class="xliff"></a>
-
-### Modelos de implementação e métodos para VNet para VNet
+### <a name="deployment-models-and-methods-for-vnet-to-vnet"></a>Modelos de implementação e métodos para VNet para VNet
 
 [!INCLUDE [vpn-gateway-table-vnet-to-vnet](../../includes/vpn-gateway-table-vnet-to-vnet-include.md)]
 
@@ -157,30 +132,23 @@ Pode configurar uma Rede de VPNs como um caminho de ativação pós-falha seguro
 
 ![Exemplo de ligações coexistentes do ExpressRoute e Gateway de VPN](./media/vpn-gateway-about-vpngateways/expressroute-vpngateway-coexisting-connections-diagram.png)
 
-<a id="deployment-models-and-methods-for-s2s-and-expressroute" class="xliff"></a>
-
-### Métodos e modelos de implementação para S2S e para ExpressRoute
+### <a name="deployment-models-and-methods-for-s2s-and-expressroute"></a>Métodos e modelos de implementação para S2S e para ExpressRoute
 
 [!INCLUDE [vpn-gateway-table-coexist](../../includes/vpn-gateway-table-coexist-include.md)]
 
-<a id="pricing" class="xliff"></a>
-
-## Preços
+## <a name="pricing"></a>Preços
 
 [!INCLUDE [vpn-gateway-about-pricing-include](../../includes/vpn-gateway-about-pricing-include.md)]
 
 Para obter mais informações sobre os SKUs de gateway para o Gateway de VPN, veja [SKUs de Gateway](vpn-gateway-about-vpn-gateway-settings.md#gwsku).
 
-<a id="faq" class="xliff"></a>
-
-## FAQ
+## <a name="faq"></a>FAQ
 
 Para perguntas mais frequentes sobre o Gateway de Aplicação, veja as [FAQ do Gateway de VPN](vpn-gateway-vpn-faq.md).
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 
 - Planeie a configuração do gateway de VPN. Veja [VPN Gateway Planning and Design (Planear e Conceber o Gateway de VPN)](vpn-gateway-plan-design.md)
 - Veja as [FAQ do Gateway de VPN](vpn-gateway-vpn-faq.md) para obter mais informações.
 - Veja [Subscription and service limits (Subscrições e limites do serviço)](../azure-subscription-service-limits.md#networking-limits).
+- Saiba mais sobre algumas das outras principais [capacidades de rede](../networking/networking-overview.md) do Azure.
