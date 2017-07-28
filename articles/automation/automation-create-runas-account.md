@@ -12,7 +12,7 @@ ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 06/29/2017
+ms.date: 07/27/2017
 ms.author: magoedte
 ms.translationtype: Human Translation
 ms.sourcegitcommit: 3716c7699732ad31970778fdfa116f8aee3da70b
@@ -22,9 +22,7 @@ ms.lasthandoff: 06/30/2017
 
 ---
 
-<a id="update-your-automation-account-authentication-with-run-as-accounts" class="xliff"></a>
-
-# Atualizar a autenticação da conta de Automatização com contas Run As 
+# <a name="update-your-automation-account-authentication-with-run-as-accounts"></a>Atualizar a autenticação da conta de Automatização com contas Run As 
 Pode atualizar a sua conta de Automatização já existente a partir do portal ou utilizar o PowerShell se:
 
 * Criar uma conta de Automatização, mas rejeitar criar a conta Run As.
@@ -32,9 +30,7 @@ Pode atualizar a sua conta de Automatização já existente a partir do portal o
 * Já tiver uma conta de automatização para gerir os recursos clássicos e quer atualizá-la para utilizar a Run As Clássica em vez de criar uma nova conta e migrar os runbooks e recursos para a mesma.   
 * Quiser criar uma conta Run As e uma conta Run As Clássica mediante a utilização de um certificado emitido pela sua autoridade de certificação empresarial (AC).
 
-<a id="prerequisites" class="xliff"></a>
-
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 
 * O script só pode ser executado no Windows 10 e no Windows Server 2016 com os módulos do Azure Resource Manager 3.0.0 e posterior. Não é suportado em versões anteriores do Windows.
 * Azure PowerShell 1.0 e posterior. Para obter mais informações sobre a versão do PowerShell 1.0, veja [How to install and configure Azure PowerShell](/powershell/azureps-cmdlets-docs) (Como instalar e configurar o Azure PowerShell).
@@ -46,9 +42,7 @@ Para obter os valores para *SubscriptionID*, *ResourceGroup* e *AutomationAccoun
 2. No painel **Todas as definições**, em **Definições da Conta**, selecione **Propriedades**. 
 3. Repare nos valores no painel **Propriedades**.<br><br> ![O painel “Propriedades” da conta de Automatização](media/automation-create-runas-account/automation-account-properties.png)  
 
-<a id="required-permissions-to-update-your-automation-account" class="xliff"></a>
-
-### Permissões necessárias para atualizar a conta de Automatização
+### <a name="required-permissions-to-update-your-automation-account"></a>Permissões necessárias para atualizar a conta de Automatização
 Para atualizar uma conta de Automatização, tem de ter os seguintes privilégios específicos e as permissões necessárias para concluir este tópico.   
  
 * A sua conta de utilizador do AD tem de ser adicionada a uma função com permissões equivalentes à função de Contribuidor para recursos Microsoft.Automation, conforme descrito no artigo [Controlo de acesso baseado em funções na Automatização do Azure](automation-role-based-access-control.md#contributor-role-permissions).  
@@ -56,9 +50,7 @@ Para atualizar uma conta de Automatização, tem de ter os seguintes privilégio
 
 Se não for membro da instância do Active Directory da subscrição antes de ser adicionado à função de administrador global/coadministrador da mesma, é adicionado ao Active Directory como convidado. Nesta situação, recebe o aviso "Não tem permissões para criar..." no painel **Adicionar Conta de Automatização**. Os utilizadores que foram adicionados primeiro à função de administrador global/coadministrador podem ser removidos da instância do Active Directory da subscrição e adicionados novamente, para que se tornem em Utilizadores completos no Active Directory. Para verificar esta situação, no painel **Azure Active Directory**, no portal do Azure, selecione **Utilizadores e grupos**, **Todos os utilizadores** e, depois de selecionar o utilizador específico, selecione **Perfil**. O valor do atributo **Tipo de utilizador** sob o perfil de utilizadores não deve ser igual a **Convidado**.
 
-<a id="create-run-as-account-from-the-portal" class="xliff"></a>
-
-## Criar conta Run As no portal
+## <a name="create-run-as-account-from-the-portal"></a>Criar conta Run As no portal
 Nesta secção, executa os seguintes passos para atualizar a sua conta de Automatização do Azure no portal do Azure.  Cria as contas Run As e Run As Clássica individualmente e, se não tiver de gerir recursos no portal clássico do Azure, pode criar apenas a conta Run As do Azure.  
 
 O processo cria os seguintes itens na sua conta de Automatização.
@@ -79,9 +71,7 @@ O processo cria os seguintes itens na sua conta de Automatização.
 3. Consoante a conta que precisar, selecione **Conta Run As do Azure** ou **Conta Run As Clássica do Azure**.  Depois de selecionar **Adicionar Conta Run As do Azure** ou **Adicionar Conta Run As Clássica do Azure**, é apresentado o painel e, depois de rever as informações de descrição geral, clique em **Criar** para prosseguir com a criação da conta Run As.  
 4. Enquanto o Azure cria a conta Run As, pode acompanhar o progresso em **Notificações** no menu e é apresentada uma faixa a informar que a conta está a ser criada.  Este processo pode demorar alguns minutos a concluir.  
 
-<a id="create-run-as-account-using-powershell-script" class="xliff"></a>
-
-## Criar conta Run As com o script do PowerShell
+## <a name="create-run-as-account-using-powershell-script"></a>Criar conta Run As com o script do PowerShell
 Este script do PowerShell inclui suporte para as seguintes configurações:
 
 * Utilizar um certificado autoassinado para criar uma conta Run As.
@@ -166,7 +156,7 @@ Consoante a opção de configuração que selecionar, o script cria os itens seg
 
         $KeyCredential = New-Object  Microsoft.Azure.Commands.Resources.Models.ActiveDirectory.PSADKeyCredential
         $KeyCredential.StartDate = $CurrentDate
-        $KeyCredential.EndDate= [DateTime]$PfxCert.GetExpirationDateString()
+        $KeyCredential.EndDate = Get-Date $PfxCert.GetExpirationDateString()
         $KeyCredential.EndDate = $KeyCredential.EndDate.AddDays(-1)
         $KeyCredential.KeyId = $KeyId
         $KeyCredential.CertValue  = $keyValue
@@ -307,8 +297,6 @@ Depois de o script ser executado com êxito, tenha em conta o seguinte:
 * Se tiver criado uma conta Run As Clássica com um certificado público empresarial (ficheiro .cer), utilize esse certificado. Siga as instruções relativas a [carregar certificados de API de gestão para o portal clássico do Azure](../azure-api-management-certs.md) e utilize o [código de exemplo para autenticar com os Recursos de Implementação Clássica](automation-verify-runas-authentication.md#classic-run-as-authentication) para validar a configuração da credencial com recursos de implementação clássica. 
 * Se *não* tiver criado uma conta Run As Clássica, autentique com recursos do Resource Manager e utilize o [código de exemplo para autenticar com recursos da Gestão do Serviço](automation-verify-runas-authentication.md#automation-run-as-authentication) para validar a configuração da credencial.
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 * Para mais informações sobre Principais de Serviço, consulte a [Objetos da Aplicação e Objetos de Principais de Serviço](../active-directory/active-directory-application-objects.md).
 * Para obter mais informações sobre certificados e serviços do Azure, consulte [Certificates overview for Azure Cloud Services (Descrição geral de certificados para Serviços Cloud do Azure)](../cloud-services/cloud-services-certs-create.md).

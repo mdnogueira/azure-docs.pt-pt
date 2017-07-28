@@ -13,7 +13,12 @@
 
 # Introdução
 ## [Começar com o Hadoop](hdinsight-hadoop-linux-tutorial-get-started.md)
-## [Começar com o Spark](hdinsight-apache-spark-jupyter-spark-sql.md)
+## Começar com o Spark
+### [Criar um cluster do Spark](hdinsight-apache-spark-jupyter-spark-sql.md)
+### [Executar consultas num cluster do Spark](hdinsight-apache-spark-load-data-run-query.md)
+### [Analisar dados com ferramentas do BI](hdinsight-apache-spark-use-bi-tools.md)
+### [Gerir recursos de cluster](hdinsight-apache-spark-resource-manager.md)
+### [Depurar tarefas do Spark](hdinsight-apache-spark-job-debugging.md)
 ## [Começar com R Server](hdinsight-hadoop-r-server-get-started.md)
 ## [Começar com o HBase e o NoSQL](hdinsight-hbase-tutorial-get-started-linux.md)
 ## [Começar com o Storm](hdinsight-apache-storm-tutorial-get-started-linux.md)
@@ -59,7 +64,6 @@
 ### [ScaleR e SparkR](hdinsight-hadoop-r-scaler-sparkr.md)
 ## Utilizar o Spark para processamento na memória
 ### [Com o Data Lake Store](hdinsight-apache-spark-use-with-data-lake-store.md)
-### [Com as ferramentas de BI](hdinsight-apache-spark-use-bi-tools.md)
 ### [Criar uma aplicação autónoma](hdinsight-apache-spark-create-standalone-application.md)
 ### [Criar aplicações com o Eclipse](hdinsight-apache-spark-eclipse-tool-plugin.md)
 ### [Criar aplicações com o IntelliJ](hdinsight-apache-spark-intellij-tool-plugin.md)
@@ -76,8 +80,6 @@
 ### [Utilizar um bloco de notas Jupyter local](hdinsight-apache-spark-jupyter-notebook-install-locally.md)
 ### [Tarefas remotas com Livy](hdinsight-apache-spark-livy-rest-interface.md)
 ### [Depurar tarefas remotamente com o IntelliJ através da VPN](hdinsight-apache-spark-intellij-tool-plugin-debug-jobs-remotely.md)
-### [Gerir recursos](hdinsight-apache-spark-resource-manager.md)
-### [Acompanhar e depurar tarefas](hdinsight-apache-spark-job-debugging.md)
 ### [Problemas conhecidos](hdinsight-apache-spark-known-issues.md)
 ## Utilizar o HBase
 ### [Utilizar Phoenix e SQLLine](hdinsight-hbase-phoenix-squirrel-linux.md)
@@ -234,7 +236,7 @@
 ### [Monitorizar clusters com a API do Ambari](hdinsight-monitor-use-ambari-api.md)
 
 # Recursos
-## [Mapa do Azure](https://azure.microsoft.com/roadmap/)
+## [Mapa do Azure](https://azure.microsoft.com/roadmap/?category=intelligence-analytics)
 ## [Obter ajuda no fórum](https://social.msdn.microsoft.com/forums/azure/en-US/home?forum=hdinsight)
 ## [Percurso de aprendizagem](https://azure.microsoft.com/documentation/learning-paths/hdinsight-self-guided-hadoop-training/)
 ## [Microsoft Professional Program para Macrodados](https://academy.microsoft.com/en-us/professional-program/big-data/)

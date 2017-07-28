@@ -17,7 +17,7 @@
 ### Fazer cópias de segurança de VMs
 #### [Fazer cópia de segurança de máquinas virtuais do Azure para um cofre dos Serviços de Recuperação](backup-azure-arm-vms.md)
 #### [Fazer cópias de segurança de máquinas virtuais encriptadas](backup-azure-vms-encryption.md)
-#### [Fazer cópias de segurança de máquinas virtuais do Azure para o cofre de cópias de segurança](backup-azure-vms.md)
+#### [Fazer uma cópia de segurança de máquinas virtuais do Azure](backup-azure-vms.md)
 ### Gerir e monitorizar VMs
 #### [Gerir cópias de segurança de VMs do Azure no Portal do Azure](backup-azure-manage-vms.md)
 #### [Monitorizar alertas para cópias de segurança de VMs do Azure no Portal do Azure](backup-azure-monitor-vms.md)
@@ -57,7 +57,7 @@
 ### [Preparar as cargas de trabalho do DPM no portal do Azure](backup-azure-dpm-introduction.md)
 ### [Preparar as cargas de trabalho do DPM no portal clássico](backup-azure-dpm-introduction-classic.md)
 ### [Utilizar o DPM do System Center para fazer a cópia de segurança do servidor do Exchange](backup-azure-backup-exchange-server.md)
-### [Recuperar dados no cofre de Cópia de Segurança para um servidor alternativo do DPM](backup-azure-alternate-dpm-server.md)
+### [Recuperar dados para um servidor DPM alternativo](backup-azure-alternate-dpm-server.md)
 ### [Utilizar o DPM para efetuar cópias de segurança de cargas de trabalho do SQL Server](backup-azure-backup-sql.md)
 ### [Utilizar o DPM para fazer cópia de segurança de um farm do SharePoint](backup-azure-backup-sharepoint.md)
 
@@ -90,11 +90,12 @@
 # Conceitos
 ## [Descrição geral dos cofres dos Serviços de Recuperação](backup-azure-recovery-services-vault-overview.md)
 ## [Atualizar um cofre de Cópia de Segurança para um cofre dos Serviços de Recuperação](backup-azure-upgrade-backup-to-recovery-services.md)
-## [Eliminar um cofre do Azure Backup](backup-azure-delete-vault.md)
+## [Eliminar um cofre dos Serviços de Recuperação](backup-azure-delete-vault.md)
 ## [Controlo de Acesso Baseado em Funções](backup-rbac-rs-vault.md)
 ## [Segurança para cópias de segurança híbridas](backup-azure-security-feature.md)
 ## [Configurar relatórios do Azure Backup](backup-azure-configure-reports.md)
 ## [Modelo de dados para relatórios do Azure Backup](backup-azure-reports-data-model.md)
+## [Modelo de dados do Log Analytics para o Azure Backup](backup-azure-log-analytics-data-model.md)
 ## [Configurar a cópia de segurança offline](backup-azure-backup-import-export.md)
 ## [Substituir a sua biblioteca de unidades de banda](backup-azure-backup-cloud-as-tape.md)
 ## [Cópias de segurança de VMs do Linux consistentes com a aplicação](backup-azure-linux-app-consistent.md)
