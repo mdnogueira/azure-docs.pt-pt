@@ -13,7 +13,7 @@ ms.topic: get-started-article
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 06/13/2017
+ms.date: 07/18/2017
 ms.author: yurid
 ms.translationtype: Human Translation
 ms.sourcegitcommit: ff2fb126905d2a68c5888514262212010e108a3d
@@ -21,21 +21,14 @@ ms.openlocfilehash: 5753511d26c06f385fd4ff717d8592c321338172
 ms.contentlocale: pt-pt
 ms.lasthandoff: 06/17/2017
 
-
 ---
-<a id="getting-started-with-operations-management-suite-security-and-audit-solution" class="xliff"></a>
-
-# Introdução à Solução de Segurança e Auditoria do Operations Management Suite
+# <a name="getting-started-with-operations-management-suite-security-and-audit-solution"></a>Introdução à Solução de Segurança e Auditoria do Operations Management Suite
 Este documento ajuda-o a começar rapidamente com as funções da solução de Segurança e Auditoria do Operations Management Suite (OMS) guiando-o ao longo de cada opção.
 
-<a id="what-is-oms" class="xliff"></a>
-
-## O que é o OMS?
+## <a name="what-is-oms"></a>O que é o OMS?
 O Microsoft Operations Management Suite (OMS) é a solução de gestão de TI baseada na nuvem da Microsoft que o ajuda a gerir e a proteger a sua infraestrutura no local e na nuvem. Para mais informações sobre o OMS, leia o artigo [Operations Management Suite](https://technet.microsoft.com/library/mt484091.aspx).
 
-<a id="oms-security-and-audit-dashboard" class="xliff"></a>
-
-## Dashboard de Segurança e Auditoria do OMS
+## <a name="oms-security-and-audit-dashboard"></a>Dashboard de Segurança e Auditoria do OMS
 A solução de Segurança e Auditoria do OMS permite uma visão abrangente da postura de segurança de TI da organização com consultas de pesquisa incorporada para problemas relevantes que requerem a sua atenção. O dashboard de **Segurança e Auditoria** é o ecrã principal de tudo o que se relacione com a segurança no OMS. Fornece informações de alto nível sobre o estado de segurança dos computadores. Também inclui a capacidade de ver todos os eventos das últimas 24 horas, 7 dias ou qualquer outro intervalo de tempo personalizado. Para aceder ao dashboard de **Segurança e Auditoria**, siga estes passos:
 
 1. No dashboard principal do **Microsoft Operations Management Suite** clique no mosaico **Definições** à esquerda.
@@ -66,9 +59,7 @@ O dashboard de Segurança e Auditoria do OMS está organizado em quatro categori
 > 
 > 
 
-<a id="security-domains" class="xliff"></a>
-
-## Domínios de segurança
+## <a name="security-domains"></a>Domínios de segurança
 Ao monitorizar os recursos, é importante poder aceder rapidamente ao estado atual do ambiente. No entanto, também é importante poder monitorizar eventos passados que permitam uma melhor compreensão do que está a decorrer no ambiente em determinado momento. 
 
 > [!NOTE]
@@ -82,6 +73,8 @@ Os cenários de investigação forense e de resposta a incidentes beneficiarão 
 
 Ao clicar neste mosaico, o painel **Pesquisa** é aberto, apresentando um resultado de consulta para **Eventos de Segurança** (Tipo = SecurityEvents) com dados baseados nos últimos sete dias, conforme apresentado abaixo:
 
+[!include[log-analytics-log-search-nextgeneration](../../includes/log-analytics-log-search-nextgeneration.md)]
+
 ![Registos de segurança ao longo do tempo](./media/oms-security-getting-started/oms-getting-started-fig3.JPG)
 
 O resultado de pesquisa está dividido em dois painéis: o painel esquerdo apresenta o número de eventos de segurança que foram encontrados, os computadores em que estes eventos foram encontrados, o número de contas detetadas nestes computadores e os tipos de atividades. O painel da direita fornece-lhe os resultados totais e uma vista cronológica dos eventos de segurança com a atividade do evento e o nome do computador. Também pode clicar em **Mostrar Mais** para ver mais detalhes sobre este evento, tais como os dados do evento, o ID do evento e a origem do evento.
@@ -91,9 +84,7 @@ O resultado de pesquisa está dividido em dois painéis: o painel esquerdo apres
 > 
 > 
 
-<a id="antimalware-assessment" class="xliff"></a>
-
-### Avaliação de antimalware
+### <a name="antimalware-assessment"></a>Avaliação de antimalware
 Esta opção permite-lhe identificar rapidamente os computadores com proteção insuficiente e os computadores que estejam comprometidos por um software maligno. O estado de avaliação de software maligno e as ameaças detetadas nos servidores monitorizados são lidos e, em seguida, os dados são enviados para o serviço OMS na nuvem para processamento. Os servidores com ameaças detetadas e os servidores com proteção insuficiente são apresentados no dashboard de avaliação do software maligno, que está acessível depois de clicar no mosaico **Avaliação de Antimalware**. 
 
 ![avaliação de software maligno](./media/oms-security-getting-started/oms-getting-started-fig4-ga.png)
@@ -109,9 +100,7 @@ Tal como qualquer outro mosaico dinâmico disponível no Dashboard OMS, ao clica
 
 Se clicar no nome do computador, terá a vista cronológica do estado de proteção para este computador. Isto é muito útil para cenários em que tem de perceber se o antimalware foi instalado e removido em determinada altura.   
 
-<a id="update-assessment" class="xliff"></a>
-
-### Avaliação de atualização
+### <a name="update-assessment"></a>Avaliação de atualização
 Esta opção permite-lhe determinar rapidamente a exposição geral a potenciais problemas de segurança e até que ponto estas atualizações são críticas para o ambiente. A solução de Segurança e Auditoria do OMS apenas fornece a visualização destas atualizações, os dados reais são provenientes das [Soluções de Gestão de Atualizações](oms-solution-update-management.md), que é um módulo diferentes dentro do OMS. Eis um exemplo das atualizações:
 
 ![atualizações do sistema](./media/oms-security-getting-started/oms-getting-started-fig6-new.png)
@@ -121,9 +110,7 @@ Esta opção permite-lhe determinar rapidamente a exposição geral a potenciais
 > 
 > 
 
-<a id="identity-and-access" class="xliff"></a>
-
-### Identidade e Acesso
+### <a name="identity-and-access"></a>Identidade e Acesso
 A identidade deve ser o plano de controlo da sua empresa e proteger a sua identidade deve ser a sua prioridade. Enquanto no passado existiam perímetros à volta das organizações e esses perímetros eram um dos limites de defesa primários, hoje em dia, com mais dados e mais aplicações a moverem-se para a nuvem, a identidade torna-se o novo perímetro. 
 
 > [!NOTE]
@@ -143,18 +130,14 @@ As informações disponíveis neste dashboard podem ajudá-lo a identificar imed
 
 O relatório detalhado fornece informações importantes sobre este evento, incluindo: o computador de destino, o tipo de início de sessão (neste caso início de sessão de Rede), a atividade (neste caso o evento 4625) e uma linha cronológica abrangente de cada tentativa. 
 
-<a id="computers" class="xliff"></a>
-
-### Computadores
+### <a name="computers"></a>Computadores
 Este mosaico pode ser utilizado para aceder a todos os computadores que tenham eventos de segurança ativamente. Ao clicar neste mosaico irá ver a lista de computadores com eventos de segurança e o número de eventos em cada computador:
 
 ![Computadores](./media/oms-security-getting-started/oms-getting-started-fig9.JPG)
 
 Pode continuar a investigação clicando em cada computador e rever os eventos de segurança que foram sinalizados.
 
-<a id="threat-intelligence" class="xliff"></a>
-
-### Informações sobre Ameaças
+### <a name="threat-intelligence"></a>Informações sobre Ameaças
 
 Ao utilizar a opção de Análise de Ameaças disponível na Auditoria e Segurança de OMS, os administradores de TI podem identificar ameaças de segurança contra o ambiente, por exemplo, identificar se um determinado computador faz parte de um botnet. Os computadores podem tornar-se nós de um botnet quando os atacantes instalam ilicitamente malware que liga secretamente este computador ao comando e controlo. Também poderá identificar potenciais ameaças provenientes de canais de comunicação underground, como o darknet. Saiba mais sobre a Análise de Ameaças ao ler o artigo [Monitoring and responding to security alerts in Operations Management Suite Security and Audit Solution (Monitorização e resposta aos alertas de segurança na Solução de Segurança e Auditoria do Operations Management Suite)](oms-security-responding-alerts.md).
 
@@ -164,29 +147,21 @@ Em alguns cenários, pode observar um IP potencialmente mal-intencionado que foi
 
 Este alerta e outros dentro da mesma categoria, são gerados através da Segurança do OMS, ao tirar partido das [Informações sobre Ameaças da Microsoft](https://youtu.be/O4WtxgUrDc8). Os dados das Informações sobre Ameaças são recolhidos pela Microsoft e são comprados aos principais fornecedores de inteligência de ameaças. Estes dados são atualizados com frequência e adaptados para ameaças rápidas. Devido à sua natureza, devem ser combinados com outras fontes de informações de segurança ao [investigar](https://blogs.technet.microsoft.com/msoms/2016/12/08/investigating-suspicious-activity-in-a-hybrid-cloud-with-oms-security/) um alerta de segurança. 
 
-<a id="baseline-assessment" class="xliff"></a>
-
-### Avaliação da Linha de Base
+### <a name="baseline-assessment"></a>Avaliação da Linha de Base
 
 A Microsoft, juntamente com o setor e as organizações governamentais em todo o mundo, define uma configuração do Windows que representa implementações de servidor altamente seguras. Esta configuração é um conjunto de chaves de registo, definições de política de auditoria e definições de política de segurança juntamente com os valores recomendados da Microsoft para estas definições. Este conjunto de regras é conhecido como linha de base de Segurança. Leia [Avaliação da Linha de Base em Solução de Segurança e Auditoria do Operations Management Suite](oms-security-baseline.md) para obter mais informações sobre esta opção.
 
-<a id="azure-security-center" class="xliff"></a>
-
-### Centro de Segurança do Azure
+### <a name="azure-security-center"></a>Centro de Segurança do Azure
 Este mosaico é basicamente um atalho para aceder ao dashboard do Centro de Segurança do Azure. Leia [Introdução ao Centro de Segurança do Azure](../security-center/security-center-get-started.md) para obter mais informações sobre esta solução.
 
-<a id="notable-issues" class="xliff"></a>
-
-## Problemas relevantes
+## <a name="notable-issues"></a>Problemas relevantes
 A intenção principal deste grupo de opções consiste em fornecer uma vista rápida dos problemas que existem no ambiente, categorizando-os como Crítico, Aviso e Informativo. O mosaico do tipo de problema Ativo é uma visualização destes problemas, mas não lhe permite explorar mais detalhes sobre os mesmos. Para isso tem de utilizar a parte inferior deste mosaico que inclui o nome do problema (NOME), com quantos objetos ocorreu (CONTAGEM) e quão crítico é (GRAVIDADE).
 
 ![Problemas relevantes](./media/oms-security-getting-started/oms-getting-started-fig10.JPG)
 
 Pode ver que estes problemas já foram abordados em diferentes áreas do grupo **Domínios de Segurança**, o que reforça a intenção desta vista: visualizar os problemas mais importantes do ambiente a partir de um único local.
 
-<a id="detections-preview" class="xliff"></a>
-
-## Deteções (Pré-visualização)
+## <a name="detections-preview"></a>Deteções (Pré-visualização)
 A intenção principal desta opção é permitir que as TI identifiquem rapidamente potenciais ameaças para o ambiente e a respetiva gravidade.
 
 ![Informações sobre Ameaças](./media/oms-security-getting-started/oms-getting-started-fig12.png)
@@ -198,18 +173,14 @@ Esta opção também pode ser utilizada durante uma [investigação de resposta 
 > 
 > 
 
-<a id="threat-intelligence" class="xliff"></a>
-
-## Informações sobre Ameaças
+## <a name="threat-intelligence"></a>Informações sobre Ameaças
 A nova secção de informações sobre ameaças da solução de Segurança e Auditoria visualiza os padrões de ataque possíveis de diversas formas: o número total de servidores com tráfego de IPs maliciosos de saída, o tipo malicioso da ameaça e um mapa que mostra a proveniência desses IPs. Pode interagir com o mapa e clicar nos IPs para obter mais informações.
 
 Os alfinetes amarelos no mapa indicam o tráfego de entrada de IPs maliciosos. Não é incomum que os servidores expostos à Internet recebam tráfego de entrada malicioso, mas é recomendável rever estas tentativas para certificar-se de que nenhuma foi concluída com êxito. Estes indicadores baseiam-se nos registos do IIS, no WireData e nos registos de Firewall do Windows.  
 
 ![Informações sobre Ameaças](./media/oms-security-getting-started/oms-getting-started-fig11-ga.png)
 
-<a id="common-security-queries" class="xliff"></a>
-
-## Consultas de segurança comuns
+## <a name="common-security-queries"></a>Consultas de segurança comuns
 A lista de consultas de segurança comuns disponível pode ser útil para aceder rapidamente a informações do recurso e personalizá-lo com base nas necessidades do ambiente. Estas consultas comuns são:
 
 * todas as Atividades de Segurança
@@ -223,9 +194,7 @@ A lista de consultas de segurança comuns disponível pode ser útil para aceder
 * atividade de Início de Sessão por Conta
 * contas que iniciaram sessão remotamente no computador "computer01.contoso.com" (substitua com o nome do computador)
 
-<a id="see-also" class="xliff"></a>
-
-## Consultar também
+## <a name="see-also"></a>Consultar também
 Neste documento, foi-lhe apresentada a solução de Segurança e Auditoria do OMS. Para saber mais sobre a Segurança do OMS, veja os artigos seguintes:
 
 * [Descrição geral do Operations Management Suite (OMS)](operations-management-suite-overview.md)

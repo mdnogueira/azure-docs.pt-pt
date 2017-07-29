@@ -12,7 +12,7 @@ ms.devlang: dotNet
 ms.topic: get-started-article
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 6/28/2017
+ms.date: 7/27/2017
 ms.author: subramar
 ms.translationtype: Human Translation
 ms.sourcegitcommit: 3716c7699732ad31970778fdfa116f8aee3da70b
@@ -20,11 +20,8 @@ ms.openlocfilehash: 68c7e1f3f51ca5bec30a0f71aaccbafa58078e69
 ms.contentlocale: pt-pt
 ms.lasthandoff: 06/30/2017
 
-
 ---
-<a id="differences-between-service-fabric-on-linux-preview-and-windows-generally-available" class="xliff"></a>
-
-# Diferenças entre o Service Fabric no Linux (pré-visualização) e no Windows (disponível em geral)
+# <a name="differences-between-service-fabric-on-linux-preview-and-windows-generally-available"></a>Diferenças entre o Service Fabric no Linux (pré-visualização) e no Windows (disponível em geral)
 
 Uma vez que o Service Fabric no Linux é uma pré-visualização, existem algumas funcionalidades que são suportadas no Windows, mas no Linux ainda não. Eventualmente, os conjuntos de funcionalidades ficarão em paridade quando o Service Fabric no Linux se torna disponível em geral. Em versões futuras, essa diferença de funcionalidades será cada vez menor. Existem diferenças entre as versões mais recentes disponíveis (ou seja, entre a versão 5.6 no Windows e a versão 5.5 no Linux): 
 
@@ -46,9 +43,7 @@ Uma vez que o Service Fabric no Linux é uma pré-visualização, existem alguma
 
 As ferramentas de desenvolvimento também são diferentes entre o Windows e o Linux. O VisualStudio, Powershell, VSTS e ETW são utilizados no Windows enquanto o Yeoman, Eclipse, Jenkins e LTTng são utilizados no Linux.
 
-<a id="powershell-cmdlets-that-do-not-work-against-a-linux-service-fabric-cluster" class="xliff"></a>
-
-## Cmdlets do PowerShell que não funcionam num cluster do Service Fabric do Linux
+## <a name="powershell-cmdlets-that-do-not-work-against-a-linux-service-fabric-cluster"></a>Cmdlets do PowerShell que não funcionam num cluster do Service Fabric do Linux
 
 * Invoke-ServiceFabricChaosTestScenario
 * Invoke-ServiceFabricFailoverTestScenario
@@ -106,9 +101,7 @@ As ferramentas de desenvolvimento também são diferentes entre o Windows e o Li
 
 
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 * [Preparar o ambiente de desenvolvimento no Linux](service-fabric-get-started-linux.md)
 * [Prepare your development environment on OSX (Preparar o ambiente de desenvolvimento no OSX)](service-fabric-get-started-mac.md)
 * [Criar e implementar a sua primeira aplicação Java do Service Fabric no Linux com o Yeoman](service-fabric-create-your-first-linux-application-with-java.md)
